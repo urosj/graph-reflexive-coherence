@@ -26,7 +26,7 @@ from build_i8_classification_and_handoff import (  # noqa: E402
 
 
 def closeout_support_available() -> bool:
-    return FULL_SUITE_PATH.exists()
+    return FULL_SUITE_PATH.exists() and read_json(FULL_SUITE_PATH)["status"] == "passed"
 
 
 def test_i8_consumes_the_accepted_empty_i4_set() -> None:
@@ -165,3 +165,19 @@ def test_closeout_contract_is_json_and_uses_no_absolute_paths() -> None:
     contract = json.loads(CONFIG_PATH.read_text(encoding="utf-8"))
     assert contract["schema_version"] == "b2_i8_closeout_contract_v2"
     assert contract["closeout_decision"]["extension_selected"] is False
+
+
+def test_failed_full_suite_blocks_closeout_when_present() -> None:
+    failure_audit_path = (
+        ROOT / "outputs" / "gates" / "b2_i8_full_suite_failure_audit.json"
+    )
+    if not failure_audit_path.exists():
+        return
+    audit = read_json(failure_audit_path)
+    assert audit["failed_test_count"] == 26
+    assert audit["missing_ignored_evidence_path_count"] == 12
+    assert audit["telemetry_replay_digest_failure_present"] is True
+    assert audit["src_specs_tests_equal_main"] is True
+    assert audit["B2_regression_established"] is False
+    assert audit["full_repository_suite_passed"] is False
+    assert audit["B2_C6_ready"] is False

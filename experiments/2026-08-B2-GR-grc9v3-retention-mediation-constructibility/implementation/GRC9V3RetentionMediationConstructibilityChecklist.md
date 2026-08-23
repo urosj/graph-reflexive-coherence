@@ -702,6 +702,15 @@ lifecycle accounting only.
 - [x] Name no target-specific extension because no extension is selected.
 - [x] Keep extension implementation and specification outside B2-GR.
 - [x] Produce a bounded closeout candidate and next-route handoff for separate human review.
+- [x] Reconstruct the complete I4 attempt population in memory and retain only compact
+  branch/preparation and effective-stratum matrices rather than sharded ledgers.
+- [x] Split terminal classification from scientific constructibility resolution.
+- [x] Split the merged apparent-carrier category into provenance-negative authored
+  rows and localized attribution-precision debt.
+- [x] Audit bounded-negative uniqueness, outside-envelope mechanisms, near misses,
+  discovery/confirmation accounting, and planned versus executed branch allocation.
+- [x] Run the full existing repository test suite before closeout.
+- [ ] Require the full existing repository test suite to pass before `B2-C6`.
 - [ ] Assign `B2-C6` only after separate human review.
 - [x] Keep B1-L and N32 unauthorized unless a later independent admission says otherwise.
 
@@ -709,12 +718,16 @@ Expected artifacts:
 
 ```text
 outputs/b2_i8_classification_and_handoff.json
+outputs/b2_i8_empty_path_audit.json
 outputs/gates/b2_i8_result_receipt.json
+outputs/gates/b2_i8_full_suite_verification.json
+outputs/gates/b2_i8_full_suite_failure_audit.json
 outputs/gates/b2_closeout_acceptance_anchor.json
 reports/b2_i8_classification_and_handoff.md
+reports/b2_i8_empty_path_audit.md
 ```
 
-### Iteration 8 Result - Awaiting Scientific Review
+### Iteration 8 Initial Result - Superseded Before Scientific Review
 
 ```text
 status = passed
@@ -752,14 +765,106 @@ receipt_payload_sha256 = ef209fd0f5c669839b125a6673f3a9cfd88f362c0e6efedb6e2ced9
 closeout_acceptance_anchor_created = false
 ```
 
+This initial candidate was not accepted. The later reconstruction audit showed
+that `resolved_attempt_count = 9648` meant terminal machine classification,
+not scientific constructibility resolution, and split the merged 1,706-row
+headline. Commit `d250ade` therefore remains provenance for the superseded
+candidate rather than current closeout evidence.
+
 Interpretation:
 
 - I8 consumes the accepted empty I4 candidate set without reopening discovery or manufacturing a diagnostic candidate. I5-I7 are accounting-only non-applicable lanes and assign neither GRR nor B2 process rungs.
-- All 9,648 attempts resolved, but the empty result is heterogeneous. Only 27 are clean bounded negatives; 1,706 contain an apparent carrier whose runtime-generated component is not identifiable; 7,915 are outside the clean primary envelope.
+- All 9,648 attempts were terminally classified, but the empty result is heterogeneous. Only 27 are clean bounded negatives; 1,706 require formation-attribution classification; 7,915 are outside the clean primary envelope.
 - All 48 accepted branches received attempts. Only 26 admitted a nontrivial resolved clean-primary-lane attempt; the remaining 22 are accessibility debt, not negative constructibility evidence.
 - B2 adds no GRR rung above the inherited B1-GR `GRR2` context. Branch relation, temporal slow-cluster qualification, mediation, and GRR5 controls are not testable without a runtime-reached I4 lineage.
 - Unchanged-runtime constructibility remains open outside the frozen envelope. The result neither establishes global impossibility nor localizes one missing causal role strongly enough to select an extension.
 - Separate human review is required before assigning `B2-C6` and closing the tranche.
+
+### Iteration 8 Empty-Path Audit - Passed
+
+```text
+audit_role = closeout_interpretation_hardening_only
+accepted_I4_attempt_population_reconstructed = 9648/9648
+terminally_classified_attempt_count = 9648
+terminal_classification_is_scientific_constructibility_resolution = false
+scientifically_clean_bounded_negative_attempt_count = 27
+provenance_negative_authored_within_numerical_uncertainty_count = 1705
+localized_attribution_precision_debt_count = 1
+runtime_residual_above_separation_below_formation_floor_count = 0
+outside_primary_envelope_attempt_count = 7915
+branch_preparation_stratum_count = 144
+effective_stratum_count = 2928
+fully_clean_effective_stratum_count = 242
+partly_clean_effective_stratum_count = 531
+zero_clean_effective_stratum_count = 2155
+bounded_negative_unique_source_branch_count = 27
+bounded_negative_unique_preparation_family_count = 1
+outside_eventful_attempt_count = 0
+outside_topology_mutating_attempt_count = 0
+all_attempts_inside_frozen_proposal_grid = true
+discovery_candidate_count_before_confirmation = 0
+fresh_confirmation_attempt_count = 0
+confirmed_candidate_count = 0
+I4_candidate_set_reopened = false
+GRR_rung_assigned = false
+extension_selected = false
+full_attempt_rows_retained = false
+audit_artifact_payload_sha256 = 7711e5c88a5cd536b53e814793a730c2acc20c0180ba2b7f4eef5fb94709268a
+```
+
+Interpretation:
+
+- The 27 bounded negatives are distinct state/history rows across 27 branches,
+  but all belong to `native_spontaneous_no_driver`. They support bounded
+  no-spontaneous-formation baselines, not universal absence under nontrivial
+  native preparation.
+- Of the earlier merged 1,706 rows, 1,705 are attributable to authored
+  preparation within numerical uncertainty. One F3 C-pulse row has a runtime
+  residual above uncertainty but below the separation floor and reaches only
+  `0.0010267517269083237` of the formation floor. This localizes precision debt
+  without supporting broad identifiability debt or reopening admission.
+- The 7,915 outside-envelope rows are not eventful, topology-mutating, or
+  out-of-grid proposals. They expose categorical or constraint-supported
+  history paths that remain a separate scientific lane from clean-primary GRR
+  evidence.
+- The compact audit covers all 48 planned branch allocations, 144
+  branch/preparation groups, and 2,928 effective strata. No 40 MB sharded
+  attempt ledgers are retained.
+- No discovery row reached provisional candidate status, so no confirmation
+  attempt failed. `GRR3`, `GRR4`, and `GRR5` remain not testable on a B2
+  lineage, not false; inherited B1 `GRR2` remains context only.
+
+### Iteration 8 Repository Verification - Blocking
+
+```text
+full_suite_command = .venv/bin/python -m pytest -q
+full_suite_input_execution_revision = e7d171f67c8bce60686af64d68e961f634586a03
+full_suite_status = failed
+full_suite_exit_code = 1
+full_suite_passed_test_count = 1988
+full_suite_passed_subtest_count = 1041
+full_suite_failed_test_count = 26
+failed_set_diagnostic_command = .venv/bin/python -m pytest -q --lf
+failed_set_diagnostic_result = 26_failed_1988_deselected
+missing_ignored_evidence_path_count = 12
+telemetry_replay_digest_failure_present = true
+src_specs_tests_equal_main = true
+B2_changed_runtime_or_existing_tests = false
+B2_regression_established = false
+full_repository_suite_passed = false
+B2_closeout_ceiling = B2-C3
+B2_closeout_rung_assigned = false
+B2-C6-ready = false
+```
+
+The full suite blocker is repository debt rather than a B2 regression: the
+branch has no differences from `main` under `src/`, `specs/`, or existing
+`tests/`. Most failures consume locally absent ignored phenomenology evidence;
+one independent GRCV3 representative telemetry test has unequal primary/replay
+snapshot digests. That localization does not waive the closeout gate and does
+not authorize repair inside B2. The hardened v2 I8 builder remains blocked by
+the failed suite receipt, so no superseding closeout artifact or acceptance
+anchor has been emitted.
 
 ## Serial Acceptance Discipline
 
