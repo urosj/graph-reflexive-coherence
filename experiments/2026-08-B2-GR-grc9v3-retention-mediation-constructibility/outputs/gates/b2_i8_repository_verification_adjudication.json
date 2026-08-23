@@ -1,0 +1,39 @@
+{
+  "adjudication_id": "B2-I8-repository-verification-exception",
+  "gate_id": "B2-I8",
+  "adjudication_status": "accepted_bounded_environment_exception",
+  "accepted_by": "Uros Jovanovic (urosj)",
+  "acceptance_role": "experiment_owner",
+  "acceptance_timestamp": "2026-08-23T17:53:42Z",
+  "acceptance_signature_or_ref": "repository_authenticated_user_instruction:full_tests_always_fail_here_due_to_missing_ignored_evidence_accept_and_close_b2",
+  "source_full_suite_receipt_path": "experiments/2026-08-B2-GR-grc9v3-retention-mediation-constructibility/outputs/gates/b2_i8_full_suite_verification.json",
+  "source_full_suite_receipt_sha256": "07ddd002584bc09de088f80794253c43bdc7baeb2368482964dfc7f394dbd553",
+  "source_failure_audit_path": "experiments/2026-08-B2-GR-grc9v3-retention-mediation-constructibility/outputs/gates/b2_i8_full_suite_failure_audit.json",
+  "source_failure_audit_sha256": "a25decc35835404a5a640fe1e091e79de87fd4531a5980e23677e4a020b047f3",
+  "adjudicated_revision": "c289e0da94d4374be3ffa79e724c189f23d0d566",
+  "full_repository_suite_passed": false,
+  "full_repository_suite_failed_test_count": 26,
+  "missing_ignored_evidence_path_count": 12,
+  "telemetry_replay_digest_failure_preserved_as_repository_debt": true,
+  "src_specs_tests_equal_main": true,
+  "B2_regression_established": false,
+  "verification_exception_accepted_for_B2_closeout": true,
+  "B2_C6_assignment_authorized": true,
+  "exception_scope": "B2_closeout_only",
+  "exception_does_not_assert": [
+    "full_repository_suite_passed",
+    "missing_ignored_evidence_restored",
+    "telemetry_replay_digest_mismatch_resolved",
+    "repository_verification_debt_closed",
+    "B2_positive_evidence_opened",
+    "new_GRR_rung_supported",
+    "runtime_extension_required"
+  ],
+  "carried_repository_debt": [
+    "ignored_phenomenology_and_pressure_evidence_required_by_existing_tests_is_locally_absent",
+    "GRCV3_representative_telemetry_primary_and_replay_snapshot_digests_are_unequal"
+  ],
+  "runtime_change_authorized": false,
+  "spec_extension_authorized": false,
+  "scientific_boundary": "human_acceptance_closes_B2_despite_known_environment_verification_debt_without_relabeling_failure_as_pass"
+}

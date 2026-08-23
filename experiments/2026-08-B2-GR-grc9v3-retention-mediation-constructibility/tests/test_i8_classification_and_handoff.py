@@ -21,12 +21,28 @@ from build_i8_classification_and_handoff import (  # noqa: E402
     OUTPUT_PATH,
     RECEIPT_PATH,
     REPORT_PATH,
+    SPEC_HANDOFF_OUTPUT_PATH,
+    SPEC_HANDOFF_REPORT_PATH,
+    VERIFICATION_ADJUDICATION_PATH,
     build_payload,
 )
 
 
 def closeout_support_available() -> bool:
-    return FULL_SUITE_PATH.exists() and read_json(FULL_SUITE_PATH)["status"] == "passed"
+    if not FULL_SUITE_PATH.exists():
+        return False
+    suite = read_json(FULL_SUITE_PATH)
+    if suite["status"] == "passed" and suite["exit_code"] == 0:
+        return True
+    if not VERIFICATION_ADJUDICATION_PATH.exists():
+        return False
+    adjudication = read_json(VERIFICATION_ADJUDICATION_PATH)
+    return (
+        adjudication["adjudication_status"]
+        == "accepted_bounded_environment_exception"
+        and adjudication["verification_exception_accepted_for_B2_closeout"] is True
+        and adjudication["B2_C6_assignment_authorized"] is True
+    )
 
 
 def test_i8_consumes_the_accepted_empty_i4_set() -> None:
@@ -139,18 +155,36 @@ def test_closeout_selects_no_extension_or_impossibility_claim() -> None:
     assert all(
         row["status"] == "not_selected" for row in payload["extension_trigger_matrix"]
     )
-    assert payload["closeout_support"]["full_suite_status"] == "passed"
+    assert payload["closeout_support"]["full_suite_status"] == "failed"
+    assert payload["closeout_support"]["full_repository_suite_passed"] is False
+    assert (
+        payload["closeout_support"]["repository_verification_exception_status"]
+        == "accepted_bounded_environment_exception"
+    )
+    assert payload["repository_verification_debt"][
+        "failure_not_relabelled_as_pass"
+    ] is True
+    assert payload["specification_reconciliation_handoff"]["extension_selected"] is False
+    assert payload["next_route_boundary"]["GRC9V3_specification_reconciliation"] == (
+        "next_before_any_extension_selection"
+    )
 
 
 def test_generated_i8_artifacts_are_self_consistent_when_present() -> None:
-    if not OUTPUT_PATH.exists():
+    expected_paths = {
+        OUTPUT_PATH,
+        REPORT_PATH,
+        SPEC_HANDOFF_OUTPUT_PATH,
+        SPEC_HANDOFF_REPORT_PATH,
+        *LIFECYCLE_PATHS.values(),
+    }
+    if not RECEIPT_PATH.exists() or not all(path.exists() for path in expected_paths):
         return
     artifact = read_json(OUTPUT_PATH)
     receipt = read_json(RECEIPT_PATH)
     assert_envelope_digest(artifact)
     assert receipt["receipt_payload_sha256"] == receipt_digest(receipt)
     assert receipt["output_payload_sha256"] == artifact["payload_sha256"]
-    expected_paths = {OUTPUT_PATH, REPORT_PATH, *LIFECYCLE_PATHS.values()}
     expected = {
         str(path.resolve().relative_to(ROOT.parents[1].resolve())).replace("\\", "/")
         for path in expected_paths
@@ -159,6 +193,13 @@ def test_generated_i8_artifacts_are_self_consistent_when_present() -> None:
     for relative, digest in receipt["output_artifact_digests"].items():
         path = ROOT.parents[1] / relative
         assert sha256_file(path) == digest
+
+    handoff = read_json(SPEC_HANDOFF_OUTPUT_PATH)
+    assert_envelope_digest(handoff)
+    assert handoff["payload"]["extension_selected"] is False
+    assert handoff["payload"]["claim_boundary"][
+        "global_native_carrier_absence_established"
+    ] is False
 
 
 def test_closeout_contract_is_json_and_uses_no_absolute_paths() -> None:

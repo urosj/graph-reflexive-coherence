@@ -33,9 +33,21 @@ I4_RESULT_PATH = EXPERIMENT_ROOT / "outputs/b2_i4_native_preparation_reachabilit
 I4_ANCHOR_PATH = EXPERIMENT_ROOT / "outputs/gates/b2_i4_acceptance_anchor.json"
 EMPTY_PATH_AUDIT_PATH = EXPERIMENT_ROOT / "outputs/b2_i8_empty_path_audit.json"
 FULL_SUITE_PATH = EXPERIMENT_ROOT / "outputs/gates/b2_i8_full_suite_verification.json"
+FULL_SUITE_FAILURE_AUDIT_PATH = (
+    EXPERIMENT_ROOT / "outputs/gates/b2_i8_full_suite_failure_audit.json"
+)
+VERIFICATION_ADJUDICATION_PATH = (
+    EXPERIMENT_ROOT / "outputs/gates/b2_i8_repository_verification_adjudication.json"
+)
 PROTECTED_MANIFEST_PATH = EXPERIMENT_ROOT / "outputs/b2_i1_protected_path_manifest.json"
 OUTPUT_PATH = EXPERIMENT_ROOT / "outputs/b2_i8_classification_and_handoff.json"
 REPORT_PATH = EXPERIMENT_ROOT / "reports/b2_i8_classification_and_handoff.md"
+SPEC_HANDOFF_OUTPUT_PATH = (
+    EXPERIMENT_ROOT / "outputs/b2_grc9v3_specification_reconciliation_handoff.json"
+)
+SPEC_HANDOFF_REPORT_PATH = (
+    EXPERIMENT_ROOT / "reports/b2_grc9v3_specification_reconciliation_handoff.md"
+)
 RECEIPT_PATH = EXPERIMENT_ROOT / "outputs/gates/b2_i8_result_receipt.json"
 LIFECYCLE_PATHS = {
     "B2-I5": EXPERIMENT_ROOT / "outputs/gates/b2_i5_non_applicability_record.json",
@@ -103,12 +115,22 @@ def validate_i4(config: dict[str, Any]) -> dict[str, Any]:
 
 def validate_closeout_support(
     config: dict[str, Any],
-) -> tuple[dict[str, Any], dict[str, Any]]:
+) -> tuple[dict[str, Any], dict[str, Any], dict[str, Any], dict[str, Any]]:
     prereq = config["prerequisites"]
     if repo_relative(EMPTY_PATH_AUDIT_PATH) != prereq["empty_path_audit_path"]:
         raise ValueError("empty-path audit path differs from closeout contract")
     if repo_relative(FULL_SUITE_PATH) != prereq["full_suite_verification_path"]:
         raise ValueError("full-suite receipt path differs from closeout contract")
+    if (
+        repo_relative(FULL_SUITE_FAILURE_AUDIT_PATH)
+        != prereq["full_suite_failure_audit_path"]
+    ):
+        raise ValueError("full-suite failure-audit path differs from closeout contract")
+    if (
+        repo_relative(VERIFICATION_ADJUDICATION_PATH)
+        != prereq["repository_verification_adjudication_path"]
+    ):
+        raise ValueError("verification-adjudication path differs from closeout contract")
 
     audit = read_json(EMPTY_PATH_AUDIT_PATH)
     assert_envelope_digest(audit)
@@ -122,12 +144,56 @@ def validate_closeout_support(
         raise ValueError("empty-path audit does not reconstruct accepted I4")
 
     suite = read_json(FULL_SUITE_PATH)
-    if suite["status"] != "passed" or suite["exit_code"] != 0:
-        raise ValueError("full repository suite has not passed")
     if suite["scientific_evidence_role"] != "verification_only":
         raise ValueError("full-suite receipt has an invalid evidence role")
     git("merge-base", "--is-ancestor", suite["input_execution_revision"], "HEAD")
-    return audit["payload"], suite
+
+    failure_audit = read_json(FULL_SUITE_FAILURE_AUDIT_PATH)
+    if (
+        sha256_file(FULL_SUITE_FAILURE_AUDIT_PATH)
+        != prereq["full_suite_failure_audit_sha256"]
+    ):
+        raise ValueError("full-suite failure audit changed")
+    adjudication = read_json(VERIFICATION_ADJUDICATION_PATH)
+    if (
+        sha256_file(VERIFICATION_ADJUDICATION_PATH)
+        != prereq["repository_verification_adjudication_sha256"]
+    ):
+        raise ValueError("repository verification adjudication changed")
+
+    suite_passed = suite["status"] == "passed" and suite["exit_code"] == 0
+    if not suite_passed:
+        if failure_audit["source_full_suite_receipt_sha256"] != sha256_file(
+            FULL_SUITE_PATH
+        ):
+            raise ValueError("failure audit does not bind the full-suite receipt")
+        if failure_audit["full_repository_suite_passed"] is not False:
+            raise ValueError("failure audit relabels the failed suite")
+        if failure_audit["B2_regression_established"] is not False:
+            raise ValueError("verification exception cannot waive a B2 regression")
+        if adjudication["source_full_suite_receipt_sha256"] != sha256_file(
+            FULL_SUITE_PATH
+        ):
+            raise ValueError("adjudication does not bind the full-suite receipt")
+        if adjudication["source_failure_audit_sha256"] != sha256_file(
+            FULL_SUITE_FAILURE_AUDIT_PATH
+        ):
+            raise ValueError("adjudication does not bind the failure audit")
+        required_adjudication = {
+            "adjudication_status": "accepted_bounded_environment_exception",
+            "full_repository_suite_passed": False,
+            "src_specs_tests_equal_main": True,
+            "B2_regression_established": False,
+            "verification_exception_accepted_for_B2_closeout": True,
+            "B2_C6_assignment_authorized": True,
+            "exception_scope": "B2_closeout_only",
+            "runtime_change_authorized": False,
+            "spec_extension_authorized": False,
+        }
+        for field, expected in required_adjudication.items():
+            if adjudication.get(field) != expected:
+                raise ValueError(f"invalid verification adjudication field: {field}")
+    return audit["payload"], suite, failure_audit, adjudication
 
 
 def build_lifecycle_records(
@@ -261,7 +327,7 @@ def build_payload() -> tuple[dict[str, Any], list[dict[str, Any]]]:
     input_revision = git("rev-parse", "HEAD")
     sources = accepted_source_chain()
     i4 = validate_i4(config)
-    audit, suite = validate_closeout_support(config)
+    audit, suite, failure_audit, adjudication = validate_closeout_support(config)
     protected = read_json(PROTECTED_MANIFEST_PATH)
     assert_envelope_digest(protected)
     protected_tree_unchanged = verify_file_manifest(protected["payload"])
@@ -317,6 +383,47 @@ def build_payload() -> tuple[dict[str, Any], list[dict[str, Any]]]:
             "full_suite_input_execution_revision": suite["input_execution_revision"],
             "full_suite_passed_test_count": suite["passed_test_count"],
             "full_suite_status": suite["status"],
+            "full_repository_suite_passed": suite["status"] == "passed",
+            "full_suite_failure_audit_path": repo_relative(
+                FULL_SUITE_FAILURE_AUDIT_PATH
+            ),
+            "full_suite_failure_audit_sha256": sha256_file(
+                FULL_SUITE_FAILURE_AUDIT_PATH
+            ),
+            "repository_verification_adjudication_path": repo_relative(
+                VERIFICATION_ADJUDICATION_PATH
+            ),
+            "repository_verification_adjudication_sha256": sha256_file(
+                VERIFICATION_ADJUDICATION_PATH
+            ),
+            "repository_verification_exception_status": adjudication[
+                "adjudication_status"
+            ],
+            "verification_exception_accepted_for_B2_closeout": adjudication[
+                "verification_exception_accepted_for_B2_closeout"
+            ],
+            "B2_regression_established": failure_audit[
+                "B2_regression_established"
+            ],
+        },
+        "repository_verification_debt": {
+            "full_repository_suite_passed": False,
+            "failed_test_count": failure_audit["failed_test_count"],
+            "missing_ignored_evidence_path_count": failure_audit[
+                "missing_ignored_evidence_path_count"
+            ],
+            "missing_ignored_evidence_paths": failure_audit[
+                "missing_ignored_evidence_paths"
+            ],
+            "telemetry_replay_digest_failure_present": failure_audit[
+                "telemetry_replay_digest_failure_present"
+            ],
+            "src_specs_tests_equal_main": failure_audit["src_specs_tests_equal_main"],
+            "B2_regression_established": False,
+            "repair_authorized_in_B2": False,
+            "verification_exception_scope": adjudication["exception_scope"],
+            "carried_repository_debt": adjudication["carried_repository_debt"],
+            "failure_not_relabelled_as_pass": True,
         },
         "downstream_gate_lifecycle": [record["payload"] for record in lifecycle],
         "search_coverage": coverage,
@@ -477,11 +584,17 @@ def build_payload() -> tuple[dict[str, Any], list[dict[str, Any]]]:
             "categorical_or_constraint_supported_history": (
                 "eligible_only_as_separate_scientific_lane"
             ),
+            "GRC9V3_specification_reconciliation": (
+                "next_before_any_extension_selection"
+            ),
             "revision_distinct_GRC_extension": (
-                "blocked_pending_target_and_role_localization"
+                "blocked_pending_specification_reconciliation_target_and_role_localization"
             ),
             "LGRC_specific_work": "not_authorized_by_B2",
         },
+        "specification_reconciliation_handoff": config[
+            "specification_reconciliation_handoff"
+        ],
         "claim_boundary": config["required_claim_boundary"],
         "claim_ceiling": (
             "bounded_unchanged_GRC9V3_constructibility_search_with_empty_runtime_reached_"
@@ -504,6 +617,7 @@ def render_report(payload: dict[str, Any]) -> str:
     attribution = payload["formation_attribution"]
     bounded = payload["bounded_negative_scope"]
     near = payload["near_miss_audit"]
+    verification = payload["repository_verification_debt"]
     return "\n".join(
         [
             "# B2-GR Iteration 8 Classification And Handoff",
@@ -598,6 +712,36 @@ def render_report(payload: dict[str, Any]) -> str:
             "claim, localized role, target-relevant coverage, and rival/identifiability",
             "accounting. LGRC-specific work is not authorized here.",
             "",
+            "## Repository Verification Exception",
+            "",
+            "The full repository suite did not pass and is not relabelled as passing.",
+            f"It recorded `{verification['failed_test_count']}` failures, including",
+            f"`{verification['missing_ignored_evidence_path_count']}` locally absent",
+            "ignored evidence paths and an independent GRCV3 telemetry replay digest",
+            "mismatch. `src/`, `specs/`, and existing `tests/` are byte-identical to",
+            "`main`; the failure audit establishes no B2 regression.",
+            "",
+            "The experiment owner accepted a bounded environment exception for B2",
+            "closeout only. The exception does not repair repository debt, assert that",
+            "the suite passed, open positive evidence, assign a GRR rung, or authorize",
+            "runtime/specification changes.",
+            "",
+            "## GRC9V3 Specification Reconciliation Handoff",
+            "",
+            "B1-GR and B2-GR now support a separate reconciliation of the normative",
+            "GRC9V3 specification before any extension is selected. The main specification",
+            "should describe the legacy synchronous substrate and its causal-state and",
+            "retention semantics; bounded B1/B2 counts and thresholds belong in a separate",
+            "evidence profile.",
+            "",
+            "The supported boundary is narrow: GRC9V3 has immediate constitutive state",
+            "recurrence, while no distinct retained-state primitive, projector, or update",
+            "law is specified, and B2 found no confirmed native carrier formation witness",
+            "in its bounded admissible clean lane. This does not establish global absence,",
+            "require a new field, temporalize conductance, or select an extension.",
+            "Future extensions should be revision-distinct rather than reinterpret legacy",
+            "GRC9V3 semantics.",
+            "",
             "## Claim Boundary",
             "",
             f"`{payload['claim_ceiling']}`",
@@ -607,6 +751,99 @@ def render_report(payload: dict[str, Any]) -> str:
             "",
         ]
     )
+
+
+def build_specification_handoff(payload: dict[str, Any]) -> dict[str, Any]:
+    handoff = {
+        "experiment_id": "B2-GR",
+        "handoff_id": "B2-GR-to-GRC9V3-specification-reconciliation",
+        "status": "ready_after_B2_closeout_acceptance",
+        "source_i8_artifact_path": repo_relative(OUTPUT_PATH),
+        "source_i8_payload_sha256": semantic_digest(payload),
+        "source_B1_context_ceiling": "GRR2",
+        "B2_maximum_new_GRR_rung": "none",
+        "B2_candidate_set_status": payload["source_i4_candidate_set_status"],
+        **payload["specification_reconciliation_handoff"],
+        "recommended_repository_flow": [
+            "B1-GR_characterize_existing_GRC9V3",
+            "B2-GR_test_bounded_unchanged_runtime_constructibility",
+            "GRC9V3_normative_specification_reconciliation",
+            "freeze_legacy_GRC9V3_semantics",
+            "choose_next_scientific_question",
+        ],
+        "claim_boundary": {
+            "global_native_carrier_absence_established": False,
+            "retention_globally_absent": False,
+            "new_field_required": False,
+            "extension_necessity_established": False,
+            "extension_selected": False,
+            "runtime_change_authorized": False,
+            "LGRC_work_authorized": False,
+        },
+        "repository_verification_exception": {
+            "full_repository_suite_passed": False,
+            "accepted_for_B2_closeout_only": True,
+            "debt_carried_forward": payload["repository_verification_debt"][
+                "carried_repository_debt"
+            ],
+        },
+    }
+    if find_absolute_paths(handoff):
+        raise ValueError("absolute paths found in specification handoff")
+    return handoff
+
+
+def render_specification_handoff(handoff: dict[str, Any]) -> str:
+    supported = "\n".join(
+        f"- `{item}`" for item in handoff["supported_semantic_boundaries"]
+    )
+    forbidden = "\n".join(
+        f"- `{item}`" for item in handoff["forbidden_specification_upgrades"]
+    )
+    flow = "\n".join(
+        f"{index}. `{item}`"
+        for index, item in enumerate(handoff["recommended_repository_flow"], 1)
+    )
+    return f"""# B2-GR GRC9V3 Specification Reconciliation Handoff
+
+## Purpose
+
+B2-GR closes the bounded unchanged-runtime constructibility search without a
+confirmed natively formed retained-carrier candidate. Together with B1-GR, this
+is sufficient to reconcile the specification of legacy GRC9V3 before choosing
+any extension. It is not an extension selection or implementation authority.
+
+## Document Split
+
+- Normative substrate semantics: `{handoff['normative_spec_target']}`
+- Bounded B1/B2 evidence: `{handoff['evidence_profile_target']}`
+
+The normative specification should describe what GRC9V3 is. Experimental
+counts, thresholds, accessibility limits, and not-testable outcomes belong in
+the evidence profile.
+
+## Supported Semantic Boundaries
+
+{supported}
+
+## Forbidden Upgrades
+
+{forbidden}
+
+## Recommended Flow
+
+{flow}
+
+Future extensions should use revision-distinct profiles rather than changing
+the meaning of legacy GRC9V3. B2 selects no extension and authorizes no runtime,
+specification-extension, or LGRC work.
+
+## Verification Debt
+
+The full repository suite remained failed. A bounded human exception closes B2
+only; it does not relabel the suite, repair locally absent ignored evidence, or
+resolve the independent telemetry replay digest mismatch.
+"""
 
 
 def main() -> None:
@@ -619,7 +856,23 @@ def main() -> None:
     write_json(OUTPUT_PATH, artifact)
     REPORT_PATH.parent.mkdir(parents=True, exist_ok=True)
     REPORT_PATH.write_text(render_report(payload), encoding="utf-8")
-    output_paths = [OUTPUT_PATH, REPORT_PATH, *LIFECYCLE_PATHS.values()]
+    specification_handoff = build_specification_handoff(payload)
+    specification_handoff_artifact = envelope(
+        specification_handoff,
+        "b2_grc9v3_specification_reconciliation_handoff_v1",
+        COMMAND,
+    )
+    write_json(SPEC_HANDOFF_OUTPUT_PATH, specification_handoff_artifact)
+    SPEC_HANDOFF_REPORT_PATH.write_text(
+        render_specification_handoff(specification_handoff), encoding="utf-8"
+    )
+    output_paths = [
+        OUTPUT_PATH,
+        REPORT_PATH,
+        SPEC_HANDOFF_OUTPUT_PATH,
+        SPEC_HANDOFF_REPORT_PATH,
+        *LIFECYCLE_PATHS.values(),
+    ]
     receipt = finalize_receipt(
         {
             "gate_id": "B2-I8",
@@ -640,6 +893,28 @@ def main() -> None:
             "full_suite_passed_test_count": payload["closeout_support"][
                 "full_suite_passed_test_count"
             ],
+            "full_repository_suite_passed": False,
+            "repository_verification_exception_status": payload[
+                "closeout_support"
+            ]["repository_verification_exception_status"],
+            "full_suite_failure_audit_path": repo_relative(
+                FULL_SUITE_FAILURE_AUDIT_PATH
+            ),
+            "full_suite_failure_audit_sha256": sha256_file(
+                FULL_SUITE_FAILURE_AUDIT_PATH
+            ),
+            "repository_verification_adjudication_path": repo_relative(
+                VERIFICATION_ADJUDICATION_PATH
+            ),
+            "repository_verification_adjudication_sha256": sha256_file(
+                VERIFICATION_ADJUDICATION_PATH
+            ),
+            "specification_reconciliation_handoff_path": repo_relative(
+                SPEC_HANDOFF_OUTPUT_PATH
+            ),
+            "specification_reconciliation_handoff_payload_sha256": (
+                specification_handoff_artifact["payload_sha256"]
+            ),
             "output_artifact_digests": {
                 repo_relative(path): sha256_file(path) for path in output_paths
             },
@@ -650,6 +925,7 @@ def main() -> None:
             "ready_for_human_closeout_review": True,
             "blocked_gates": ["B2-I8-acceptance"],
             "not_applicable_gates": ["B2-I5", "B2-I6", "B2-I7"],
+            "repository_verification_debt_carried": True,
         }
     )
     write_json(RECEIPT_PATH, receipt)

@@ -9,7 +9,11 @@
     "empty_path_audit_path": "experiments/2026-08-B2-GR-grc9v3-retention-mediation-constructibility/outputs/b2_i8_empty_path_audit.json",
     "empty_path_audit_sha256": "7caa0369b90f83d57495798fbbdff1d6051b45fe3588b13244c8b8101681dd74",
     "empty_path_audit_payload_sha256": "7711e5c88a5cd536b53e814793a730c2acc20c0180ba2b7f4eef5fb94709268a",
-    "full_suite_verification_path": "experiments/2026-08-B2-GR-grc9v3-retention-mediation-constructibility/outputs/gates/b2_i8_full_suite_verification.json"
+    "full_suite_verification_path": "experiments/2026-08-B2-GR-grc9v3-retention-mediation-constructibility/outputs/gates/b2_i8_full_suite_verification.json",
+    "full_suite_failure_audit_path": "experiments/2026-08-B2-GR-grc9v3-retention-mediation-constructibility/outputs/gates/b2_i8_full_suite_failure_audit.json",
+    "full_suite_failure_audit_sha256": "a25decc35835404a5a640fe1e091e79de87fd4531a5980e23677e4a020b047f3",
+    "repository_verification_adjudication_path": "experiments/2026-08-B2-GR-grc9v3-retention-mediation-constructibility/outputs/gates/b2_i8_repository_verification_adjudication.json",
+    "repository_verification_adjudication_sha256": "1a9eaab10f0bd7567df5856196ef4e84bc2d159344a8e39690afd1f7f59bc9c4"
   },
   "empty_path_lifecycle": [
     {
@@ -102,6 +106,33 @@
       "reason": "not_implicated_by_the_empty_formation_search"
     }
   ],
+  "specification_reconciliation_handoff": {
+    "route_status": "ready_for_separate_GRC9V3_specification_reconciliation",
+    "normative_spec_target": "specs/grc-9-v3-spec.md",
+    "evidence_profile_target": "specs/grc-9-v3-evidence-profile.md",
+    "supported_semantic_boundaries": [
+      "GRC9V3_is_a_synchronous_graph_RC_realization_with_immediate_constitutive_state_recurrence",
+      "C_is_the_admitted_independent_complete_step_coordinate_on_verified_smooth_fixed_topology_strata",
+      "W_and_J_are_load_bearing_stage_surfaces_not_established_independent_slow_coordinates",
+      "sign_even_old_current_squared_into_W_does_not_retain_historical_current_orientation",
+      "GRC9V3_does_not_specify_a_distinct_retained_state_primitive_projector_or_update_law",
+      "W_must_not_be_relabelled_as_durable_memory_or_retention_from_stage_local_current_contribution_alone",
+      "ordinary_C_persistence_does_not_by_itself_establish_a_retained_historical_sector",
+      "B2_found_no_confirmed_natively_formed_carrier_under_its_bounded_admissible_clean_lane"
+    ],
+    "forbidden_specification_upgrades": [
+      "GRC9V3_cannot_form_retained_carriers",
+      "GRC9V3_has_no_retention_globally",
+      "GRC9V3_requires_a_new_M_field",
+      "W_must_be_temporalized",
+      "current_must_be_independently_relaxing",
+      "retention_exists_only_through_events_or_topology_change",
+      "B2_selected_a_substrate_extension"
+    ],
+    "evidence_profile_role": "bounded_B1_and_B2_counts_thresholds_accessibility_and_not_testable_results",
+    "future_extension_boundary": "revision_distinct_profile_not_reinterpretation_of_legacy_GRC9V3",
+    "extension_selected": false
+  },
   "required_claim_boundary": {
     "maximum_new_GRR_rung": "none",
     "inherited_B1_GR_context_ceiling": "GRR2",
