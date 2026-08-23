@@ -7,13 +7,14 @@
     "all_calibrations_usable": true,
     "calibration_role": "pre_positive_admission_floor_not_source_current_runtime_measurement",
     "gate_id": "B2-I3-threshold-calibration",
-    "input_execution_revision": "e33f43da6f015e275eb8e53699d50842005c00d3",
+    "input_execution_revision": "8f791ed23f85c460d37d71317d63a85da3e3147f",
     "positive_search_must_also_apply_row_numerical_uncertainty": true,
     "positive_search_opened": false,
     "records": [
       {
         "calculation": "max(minimum_absolute_floor, maximum_absolute_fixture_value_plus_safety_multiplier_times_fixture_uncertainty)",
         "calibration_status": "usable",
+        "comparison_operator": ">",
         "declared_before_positive_search": true,
         "fixture_role": "matched_sham_and_no_forming_action",
         "fixture_uncertainty": 1e-10,
@@ -27,16 +28,20 @@
         "instantiated_value_decimal": "0.000000001000",
         "maximum_permitted_threshold": 0.001,
         "metric": "carrier_projected_driver_minus_matched_sham_norm_normalized_by_reference_carrier_scale",
+        "minimum_absolute_floor": 1e-10,
         "null_population": "I3_matched_sham_and_no_forming_action_rows",
         "null_population_digest": "eb12ec0a5c937f2ac4f4b4f3345d95045d13a82b5c3a4f8349849521bc89955b",
         "recipe_digest": "c28a2db6dd7007963f181de1bebfc94f408431bb7991bdf27175f843f9a2b3c1",
         "rounding_rule": "round_up_to_12_decimal_places",
+        "safety_multiplier": 10.0,
+        "strictness": "strict_equality_is_not_positive",
         "threshold_id": "formation_contrast_floor_v1",
         "unrounded_value": 1e-09
       },
       {
         "calculation": "max(minimum_absolute_floor, maximum_absolute_fixture_value_plus_safety_multiplier_times_fixture_uncertainty)",
         "calibration_status": "usable",
+        "comparison_operator": ">",
         "declared_before_positive_search": true,
         "fixture_role": "ordinary_slow_mode_and_sham_occupancy",
         "fixture_uncertainty": 1e-05,
@@ -50,16 +55,20 @@
         "instantiated_value_decimal": "0.000100000000",
         "maximum_permitted_threshold": 0.05,
         "metric": "candidate_slow_occupancy_minus_matched_sham_or_amplitude_matched_null_occupancy",
+        "minimum_absolute_floor": 0.0001,
         "null_population": "I3_ordinary_slow_mode_and_sham_occupancy_rows",
         "null_population_digest": "c70da1e62b09c02dba393d32ec4e11a17f68126abd763bb9ff4a63be460f0af9",
         "recipe_digest": "c23e93f36265b4dda34ab73fefb2caef48823ee3d2f3edff51a185f9ff77f6c6",
         "rounding_rule": "round_up_to_12_decimal_places",
+        "safety_multiplier": 10.0,
+        "strictness": "strict_equality_is_not_positive",
         "threshold_id": "formation_specific_occupancy_excess_floor_v1",
         "unrounded_value": 0.0001
       },
       {
         "calculation": "max(minimum_absolute_floor, maximum_absolute_fixture_value_plus_safety_multiplier_times_fixture_uncertainty)",
         "calibration_status": "usable",
+        "comparison_operator": ">",
         "declared_before_positive_search": true,
         "fixture_role": "zero_probe_synthetic_probe_and_noncarrier_mismatch",
         "fixture_uncertainty": 1e-10,
@@ -73,16 +82,20 @@
         "instantiated_value_decimal": "0.000000001000",
         "maximum_permitted_threshold": 0.001,
         "metric": "maximum_absolute_component_of_signed_carrier_by_probe_interaction_normalized_by_probe_scale",
+        "minimum_absolute_floor": 1e-10,
         "null_population": "I3_zero_probe_synthetic_probe_and_noncarrier_mismatch_rows",
         "null_population_digest": "615a433d1a4559c7bd909b0cae0c9d1505998718e84dc55e00a3bf6bcc90192d",
         "recipe_digest": "8e4a84a5383c799712bea9e561ac682b9150a78edb0e6ef97d0a53b0f187d2f4",
         "rounding_rule": "round_up_to_12_decimal_places",
+        "safety_multiplier": 10.0,
+        "strictness": "strict_equality_is_not_positive",
         "threshold_id": "oriented_interaction_component_floor_v1",
         "unrounded_value": 1e-09
       },
       {
         "calculation": "max(minimum_absolute_floor, maximum_absolute_fixture_value_plus_safety_multiplier_times_fixture_uncertainty)",
         "calibration_status": "usable",
+        "comparison_operator": "<",
         "declared_before_positive_search": true,
         "fixture_role": "structurally_valid_control_null",
         "fixture_uncertainty": 1e-09,
@@ -96,10 +109,13 @@
         "instantiated_value_decimal": "0.000000010000",
         "maximum_permitted_threshold": 0.01,
         "metric": "normalized_claim_target_residual_after_control",
+        "minimum_absolute_floor": 1e-10,
         "null_population": "I3_structurally_valid_reset_swap_and_bypass_null_rows",
         "null_population_digest": "8d0756ae3eaad21faf4400df0bbb50d3b1673bc71aad8f95a148ad6974222cd8",
         "recipe_digest": "7aac3ad3f3151d7e63dc856bbf5151940681cde116582d80dec53b170911a721",
         "rounding_rule": "round_up_to_12_decimal_places",
+        "safety_multiplier": 10.0,
+        "strictness": "strict_equality_is_not_positive",
         "threshold_id": "control_target_residual_ceiling_v1",
         "unrounded_value": 1e-08
       }
@@ -108,6 +124,6 @@
     "source_I2_payload_sha256": "bae04386692f35749c0897292f5a3ae99f8364a7251c6b7826817bdc8a4e4e28",
     "source_current_evidence_opened": false
   },
-  "payload_sha256": "5fd452312900680bb0374f02b29e28d33157642818f1a1b9af64280caa9e3324",
-  "schema_version": "b2_i3_threshold_calibration_v2"
+  "payload_sha256": "297bb166ef65b66e5e66a4c5d79e8ae7e21be4a2c71224a8c3054364481941e3",
+  "schema_version": "b2_i3_threshold_calibration_v3"
 }

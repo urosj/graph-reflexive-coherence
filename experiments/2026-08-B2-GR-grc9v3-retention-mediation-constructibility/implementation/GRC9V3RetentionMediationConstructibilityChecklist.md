@@ -375,9 +375,54 @@ Interpretation:
 - [x] Serialize sentinel reference/test/paired-atomic gate-vector digests.
 - [x] Serialize threshold test values, threshold values, comparators, and signed margins.
 - [x] Make calibration rows self-contained with floors, multipliers, comparators, and strictness.
-- [ ] Execute the semantic-hardening package from a clean committed revision.
-- [ ] Produce and verify the superseding I3 artifact, report, calibration, and receipt.
+- [x] Execute the semantic-hardening package from a clean committed revision.
+- [x] Produce and verify the superseding I3 artifact, report, calibration, and receipt.
 - [ ] Obtain human acceptance before assigning `B2-C2` or opening I4.
+
+### Iteration 3 Effect-Scope Result - Awaiting Human Review
+
+```text
+status = passed
+acceptance_state = awaiting_scientific_review
+input_execution_revision = 8f791ed23f85c460d37d71317d63a85da3e3147f
+checks = 59/59 passed
+failed_checks = []
+validator_case_count = 162
+atomic_null_count = 52
+pass_through_sentinel_count = 52
+compound_precedence_count = 4
+focused_boundary_audit_count = 54
+rung_blocker_count = 32
+lane_specific_blocker_count = 8
+route_only_count = 5
+claim_only_blocker_count = 4
+duplicate_only_count = 2
+robustness_only_count = 1
+failed_closed_row_count = 52
+failed_open_row_count = 0
+artifact_payload_sha256 = a9749a11bde99da30a40aeea20114a8fabe76bf1db2b55d62d8ac79824d04d6a
+threshold_calibration_payload_sha256 = 297bb166ef65b66e5e66a4c5d79e8ae7e21be4a2c71224a8c3054364481941e3
+receipt_payload_sha256 = 9f13fda65a07659f7d34122f9b903a065961c906680013424850fd7351042e64
+adjudicator_schema_version = b2_constructibility_adjudicator_v2
+adjudicator_sha256 = ee323a5c115705f6ef9bb1bed9c84f56ed0458c35f92e08449907b22e0e803c6
+acceptance_anchor_created = false
+B2_positive_evidence_opened = false
+GRR_rung_assigned = false
+B2_closeout_rung_assigned = false
+B2_closeout_ceiling = B2-C2-ready
+ready_for_I4 = false_pending_I3_acceptance
+```
+
+Interpretation:
+
+- The accepted I2 rules, threshold recipes, applicability matrix, and scientific ladder remain unchanged. This rerun corrects how I3 applies their effects.
+- The 32 true rung blockers demote only their dependent GRR surfaces. Four claim-only guards reject stronger labels while preserving the underlying witness and rung.
+- The cross-branch generalization guard narrows robustness without turning a clean single witness into a failure. Five route guards block invalid search/closeout or extension inferences without demoting an independently valid witness.
+- Eight lane-specific guards block only the claimed lane and use `lane_blocked_rungs`; their global `blocked_rungs` remain empty. This preserves retained-`C`, eventful-history, reduced-diagnostic, and other independently valid alternatives.
+- Two duplicate guards collapse multiple representations or histories to one physical witness without erasing it.
+- Required `not_run` is recorded as `gate_incomplete_required_control_not_run`, blocks its dependent rung, and does not falsify the mechanism. Optional failure, non-identifiability, or omission narrows or leaves robustness unresolved without rung demotion.
+- Every sentinel binds reference, tested, and paired-atomic gate-vector digests. Every threshold audit serializes test value, threshold, comparator, and signed margin. Calibration rows now serialize their floors, multipliers, comparators, and strictness.
+- The result remains fixture/control evidence only. Human acceptance may assign `B2-C2` and open I4; no automatic acceptance anchor or positive B2 evidence was created.
 
 ## Iteration 4 - Native Preparation And Reachability Search
 

@@ -5,7 +5,7 @@
 ```text
 status = passed
 acceptance_state = awaiting_scientific_review
-checks = 48/48 passed
+checks = 59/59 passed
 failed_checks = []
 active_null_rows = 52
 failed_closed_rows = 52
@@ -20,7 +20,7 @@ B2_closeout_ceiling = B2-C2-ready
 
 ## Admission Boundary
 
-All 52 frozen I2 false-positive paths are instantiated exactly once as atomic rule-vector mutations. Every mutation reaches its intended gate with all other frozen rule gates passing. `failed_closed` means the blocker triggered and the dependent claim was rejected; it does not mean that a positive scientific control failed. These rows are deterministic admission fixtures, not runtime measurements, source-current candidate evidence, or replay evidence.
+All 52 frozen I2 false-positive paths are instantiated exactly once as atomic rule-vector mutations. Every mutation reaches its intended gate with all other frozen rule gates passing. `failed_closed` means the prohibited interpretation was rejected with a typed effect; it does not imply that an underlying witness or positive scientific control failed. These rows are deterministic admission fixtures, not runtime measurements, source-current candidate evidence, or replay evidence.
 
 The null surface covers temporal/spectral relabels, branch relation and search coverage, formation provenance and full-path cleanliness, probe provenance and matched mediation, reset/swap/bypass semantics, carrier lineage/equivalence, and selection/threshold/claim governance.
 
@@ -28,11 +28,13 @@ The null surface covers temporal/spectral relabels, branch relation and search c
 
 The 52 atomic nulls are paired with 52 pass-through sentinels under the same adjudicator. The sentinels assign no evidence; they prove that a nearby fixture with all frozen gates satisfied is not rejected. Four compound cases verify deterministic primary/secondary demotion precedence. Alternative classifications such as eventful-history persistence, regenerated carrier, ordinary slow relaxation, and branch relocation remain visible while the prohibited stronger relabel is rejected.
 
+Every atomic result separates `candidate_disposition`, `rung_effect`, `claim_effect`, `robustness_effect`, `route_effect`, and `duplicate_effect`. Claim-only, robustness-only, route-only, and duplicate-only guards preserve the underlying witness and do not demote its rung. Lane-specific blockers reject only the claimed lane while retaining its typed alternative. Only true rung blockers demote the dependent GRR surface.
+
 The same experiment-local adjudicator is bound by path, schema version, and SHA-256. I4-I8 must consume that exact digest. An adjudicator implementation change requires rerunning I3; a scientific rule or applicability change requires revision and human reacceptance of I2.
 
 ## Focused Boundary Audits
 
-Held-out exact/inside/outside threshold twins, the complete required/optional control-state truth table, partial authored-carrier subtraction, lineage transport and representation changes, malformed numerical/projector cases, and search/closeout semantics all pass their preregistered expectations. Numerical failures remain numerical failures, duplicate witnesses remain duplicates, unresolved searches remain unresolved, and no fixture can select an extension.
+Held-out exact/inside/outside threshold twins serialize their tested values, comparators, and signed margins. Pass-through sentinels bind their reference, tested, and paired-atomic rule-vector digests. The complete required/optional control-state truth table preserves the I2 distinction between gate incompleteness, mechanism failure, and optional robustness debt. Partial authored-carrier subtraction, lineage transport and representation changes, malformed numerical/projector cases, and search/closeout semantics all pass their preregistered expectations.
 
 ## Threshold Calibration
 
@@ -47,4 +49,4 @@ The four I2 calibration recipes were instantiated from preregistered determinist
 
 I3 is mechanically ready for scientific review. Human acceptance may assign `B2-C2` and open I4 native preparation/reachability search. It cannot assign a GRR rung or support constructibility by itself.
 
-Artifact payload SHA-256: `52384117c91e10ba053eec2d0edbb451f4c487162c5a1fac4dcf2b77f801d4c4`
+Artifact payload SHA-256: `a9749a11bde99da30a40aeea20114a8fabe76bf1db2b55d62d8ac79824d04d6a`
