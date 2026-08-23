@@ -229,6 +229,11 @@ Interpretation:
 - [ ] Keep all nulls `derived_report_only` or fixture-only.
 - [ ] Assign no positive GRR rung.
 - [ ] Confirm eventful persistence, zero-margin witnesses, hidden-state mismatch, projector selection, and stage-skipping bypass all fail closed.
+- [ ] Preserve explicit control families without adding new post-I2 scientific rules.
+- [ ] Instantiate all four frozen I2 threshold-calibration recipes from committed null fixtures.
+- [ ] Record calibration as a pre-positive admission floor, not a runtime measurement or evidence source.
+- [ ] Require later positive rows to retain row-local numerical-uncertainty gates.
+- [ ] Block I4 if any calibration is missing, unusable, or above its frozen maximum.
 - [ ] Confirm readiness for Iteration 4 only if every required null fails closed.
 - [ ] Mark the result `B2-C2-ready`; assign `B2-C2` only through human-reviewed acceptance.
 
@@ -236,6 +241,7 @@ Expected artifacts:
 
 ```text
 outputs/b2_i3_active_nulls.json
+outputs/b2_i3_threshold_calibration.json
 outputs/gates/b2_i3_result_receipt.json
 outputs/gates/b2_i3_acceptance_anchor.json
 reports/b2_i3_active_nulls.md

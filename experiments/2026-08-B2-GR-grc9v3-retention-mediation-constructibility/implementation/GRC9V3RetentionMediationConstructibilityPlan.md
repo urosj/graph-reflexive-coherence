@@ -1032,7 +1032,17 @@ and extension-selection boundary.
 ### Iteration 3 - Active Nulls And Failure Baselines
 
 Instantiate the frozen false-positive surface. Nulls are report/fixture-level
-admission controls only; they cannot support `GRR3-GRR5`.
+admission controls only; they cannot support `GRR1-GRR5`. Preserve explicit
+control families for temporal/spectral admission, branch relation, formation
+provenance and full-path cleanliness, probe mediation, reset/swap/bypass,
+carrier lineage/equivalence, and search/claim governance.
+
+Instantiate the four frozen I2 threshold-calibration recipes from committed
+deterministic null fixtures before any I4 search. These values are admission
+floors, not runtime measurements. Every later row must still apply its own
+numerical-uncertainty bound and the stronger I2 row-local margin rule. If any
+calibration exceeds its frozen maximum or its null population is missing, block
+I4 and revision/reaccept I2 rather than changing a recipe after results.
 
 ### Iteration 4 - Native Preparation And Reachability Search
 
