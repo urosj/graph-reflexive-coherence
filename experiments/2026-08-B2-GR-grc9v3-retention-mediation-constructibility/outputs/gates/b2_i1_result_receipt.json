@@ -1,0 +1,36 @@
+{
+  "blocked_gates": [
+    "B2-I2",
+    "B2-I3",
+    "B2-I4",
+    "B2-I5",
+    "B2-I6",
+    "B2-I7",
+    "B2-I8"
+  ],
+  "claim_ceiling": "B2-C0-ready_source_admission_only_no_positive_constructibility_evidence",
+  "config_path": "experiments/2026-08-B2-GR-grc9v3-retention-mediation-constructibility/configs/b2_i1_source_contract.json",
+  "config_sha256": "a6f5c86f214700ce21191f4080119d54455068ae8c15448aae42fbb47ef34ab6",
+  "gate_id": "B2-I1",
+  "generating_script_path": "experiments/2026-08-B2-GR-grc9v3-retention-mediation-constructibility/scripts/build_i1_source_handoff_inventory.py",
+  "generating_script_sha256": "81b145d23c4cf990506893861a01b6b94fa07a7489847e4bd6c9ecd8f34f9aeb",
+  "input_execution_revision": "b24c9669e6463af6bc4602d91b50d0bf14fadaf6",
+  "input_experiment_tree_sha256": "2e1307a261edc4979e68fd8222de557923cf22d3cb6d93dd0440a85bce17d880",
+  "output_artifact_digests": {
+    "experiments/2026-08-B2-GR-grc9v3-retention-mediation-constructibility/outputs/b2_i1_protected_path_manifest.json": "dd3f62373751255905b1c3331bff7469778da0e6d0a0d2fd371c44ce726785e6",
+    "experiments/2026-08-B2-GR-grc9v3-retention-mediation-constructibility/outputs/b2_i1_source_handoff_inventory.json": "2ddcc380ca809e4401c8ddcbb337fa2b48ca19e6f4c647ef948f4ff9cc7c4791",
+    "experiments/2026-08-B2-GR-grc9v3-retention-mediation-constructibility/reports/b2_i1_source_handoff_inventory.md": "32a4db9658e34952a95e18924f8a8465f5db7ba1eb46488e74204193f97b534d"
+  },
+  "prerequisite_acceptance_anchors": [
+    {
+      "acceptance_status": "accepted",
+      "assigned_closeout_rung": "GRV-C6",
+      "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/outputs/gates/grv8_closeout_acceptance_anchor.json",
+      "sha256": "239417d959f92bb3b32f2506b35fc279d8193722e46b8517001d3d29fa272da3"
+    }
+  ],
+  "prerequisite_result_receipt_digests": [],
+  "receipt_payload_sha256": "13583b4f29d80becd5d1876437f07146b77dbcbabef3c4cd0a5fe4dd6997bce2",
+  "status": "awaiting_scientific_review",
+  "substrate_base_revision": "5ec4c5315254bc7f8ef8f1d34c9961d0b40b0418"
+}

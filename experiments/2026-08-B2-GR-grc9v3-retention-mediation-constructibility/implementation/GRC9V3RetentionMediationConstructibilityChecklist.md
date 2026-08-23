@@ -45,25 +45,39 @@ outputs/gates/b2_i1_acceptance_anchor.json
 reports/b2_i1_source_handoff_inventory.md
 ```
 
-### Iteration 1 Hardening Status
+### Iteration 1 Result - Awaiting Human Review
 
 ```text
-status = hardening_revision_prepared_not_executed
+status = passed
+acceptance_state = awaiting_scientific_review
+input_execution_revision = b24c9669e6463af6bc4602d91b50d0bf14fadaf6
+source_record_count = 25
+graph_source_record_count = 23
+theory_source_record_count = 2
+consumed_field_record_count = 71
+accepted_B1_branch_population_count = 48
+unchanged_runtime_file_count = 23
+checks = 33/33 passed
+failed_checks = []
+artifact_payload_sha256 = 53c09e2d700ad7eee659eaa4758d657bb027c5e2a6c8bf12c0fea47940f2156e
+protected_manifest_payload_sha256 = 62915bb46ae85019da08260d0ee930885d2224dbf147068104e4040cff2c084c
+receipt_payload_sha256 = 13583b4f29d80becd5d1876437f07146b77dbcbabef3c4cd0a5fe4dd6997bce2
 preliminary_result_status = superseded_before_human_acceptance
 acceptance_anchor_created = false
 B2_positive_evidence_opened = false
 GRR_rung_assigned = false
 B2_closeout_rung_assigned = false
-B2_closeout_ceiling = not_assigned
+B2_closeout_ceiling = B2-C0-ready
 ready_for_I2 = false
 ```
 
 Interpretation:
 
-- The first mechanically correct I1 candidate was not accepted and received no anchor.
-- Review exposed provenance hardening needed before `B2-C0`: field-level roles, runtime identity, revision ancestry, dependency closure, raw/final consistency, authoritative ladder identity, and complete branch crosswalk.
-- The hardening implementation changes no scientific state and executes no GRC transition.
-- A clean committed hardening revision must generate the replacement I1 result before human review.
+- The first mechanically correct candidate was superseded before human acceptance and received no anchor.
+- The replacement binds field-level source roles, the exact closeout candidate revision, accepted-revision ancestry, a first-class unchanged-runtime identity, dependency closure, raw/final consistency, the authoritative GRR ladder, and all 48 accepted B1 branches across required machine surfaces.
+- Source precedence resolves interpretation and lifecycle authority only; it cannot replace contradictory raw evidence.
+- All B1 fields carry `positive_B2_rung_credit = false`, and no B2 branch eligibility set or branch ranking exists yet.
+- No scientific transition was executed. Iteration 2 remains blocked until a human-reviewed `B2-C0` acceptance anchor exists.
 
 ## Iteration 2 - Constructibility Schema Freeze
 
