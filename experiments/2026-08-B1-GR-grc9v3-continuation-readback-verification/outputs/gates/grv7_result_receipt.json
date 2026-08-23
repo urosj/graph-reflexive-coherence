@@ -2,17 +2,18 @@
   "blocked_gates": [
     "GRV8"
   ],
-  "claim_ceiling": "bounded_spatial_temporal_and_continuation_threshold_non_equivalence_without_universal_noncorrelation_or_readback_claim_pending_human_review",
+  "claim_ceiling": "bounded_clamped_W_reduced_spatial_continuation_and_discrete_threshold_non_equivalence_without_runtime_spatial_vs_full_temporal_non_equivalence_or_readback_claim_pending_human_review",
   "gate_id": "GRV7",
   "grv7_summary": {
     "GRV8_authorized": false,
     "GRV_C5_assigned": false,
     "GRV_C5_candidate": true,
     "all_branch_identity_audits_passed": true,
-    "all_continuation_points_admitted": true,
-    "bounded_spatial_temporal_non_equivalence_supported": true,
+    "all_frozen_continuation_comparator_points_admitted": true,
     "complete_step_comparison_blocked_symmetry_inclusive_point_count": 11,
     "complete_step_complex_unit_circle_reached": false,
+    "complete_step_informative_nontrivial_temporal_classes_reached": [],
+    "complete_step_plus_one_interpretation": "admitted_near_unit_spectrum_but_nontriviality_unresolved",
     "complete_step_temporal_blocked_primary_point_count": 11,
     "complete_step_temporal_classes_reached": [
       "plus_one_marginality"
@@ -37,10 +38,14 @@
     ],
     "full_map_non_equivalence_supported": false,
     "mechanical_status": "passed",
+    "non_equivalence_scope": "clamped_W_reduced_spatial_continuation_and_discrete_threshold_only",
     "predeclared_selected_source_branch_count": 7,
     "primary_continuation_point_count": 27,
     "readback_supported": false,
+    "reduced_spatial_continuation_temporal_non_equivalence_supported": true,
     "retention_supported": false,
+    "runtime_spatial_vs_full_temporal_non_equivalence_supported": false,
+    "selected_source_branches_fully_accounted": true,
     "source_branch_accounting_count": 48,
     "supported_bounded_counterexample_count": 2,
     "supported_full_map_counterexample_count": 0,
@@ -49,12 +54,12 @@
     "universal_threshold_identity_supported": false,
     "writeback_supported": false
   },
-  "input_execution_revision": "10d07aa09e5e6ad6cf2bdced94c3cb37a2679719",
-  "input_experiment_tree_sha256": "9dc8658252e00e699aed082cce0df60fe73a6bc3f376f42e7596354d52b4b041",
+  "input_execution_revision": "47589bff66e6f720da428dc98bc7b71e2166c3f0",
+  "input_experiment_tree_sha256": "df4bbad12f2906870be71485b3b743ac1b2ef87a3ecedf8bed0fb1679f8216f7",
   "output_artifact_digests": {
     "outputs/protected_path_manifest_v7.json": "d23d89fe8723d1cac5042965616bb1ae07908ddcdec6c331083cfe882592a491",
-    "outputs/spatial_temporal_threshold_matrix.json": "8ea96972745353efa1a2a6be48adc766eb3ca9af794436596813042cec826c13",
-    "reports/b1_grv7_spatial_temporal_continuation_thresholds.md": "51746216a83a7e8c7f03ca8156c5408357f14a25deb7e036f821ff88aa5b65d0"
+    "outputs/spatial_temporal_threshold_matrix.json": "cd9cf6e3041a309f1d993377b3201f672c7b9c64364cdd91c3911b3860e52849",
+    "reports/b1_grv7_spatial_temporal_continuation_thresholds.md": "7f31355de0970b323c031d00f9f1c5bc7e99e5df3ada9d96af6f19371ea3494d"
   },
   "prerequisite_acceptance_anchors": [
     {
@@ -67,7 +72,7 @@
   "prerequisite_result_receipt_digests": [
     "705b6967eedb86fe0d0d7d895998a3ad1147ede312502dae6567a9021fb449c3"
   ],
-  "receipt_payload_sha256": "c1f8986b08c0295a7e0678eb370d12216c3201df9b95f78c7eac8345039f8750",
+  "receipt_payload_sha256": "2d29dedbedaf66a8295574c548ddf7d06c6ee12cbc529e93ef10e720e5ad46cb",
   "status": "awaiting_scientific_review",
   "substrate_base_revision": "589f933e5649c34d3ad54a5f8dbdba2a20e968d7"
 }

@@ -4,7 +4,7 @@
 
 ```text
 branch = experiment-B1-continuation-readback
-status = grv6_P6_3_accepted_GRV7_authorized
+status = grv7_P7_review_scope_hardened_awaiting_acceptance_anchor
 controlling_specification = draft_3_4_1_pre_execution_mathematical_execution_sealed
 controlling_specification_sha256 = 7ad99fb4acc6a7691d184a514f4836ffa3927600fc7cf504eb059134f3948e44
 runtime_under_test = unchanged_GRC9V3
@@ -13,7 +13,7 @@ src_change_authorized = false
 existing_test_change_authorized = false
 positive_evidence_opened = true_bounded_GRV2_branch_and_GRV5_GRR2_evidence
 positive_retention_evidence_opened = bounded_GRR2_neutral_coordinate_persistence_only
-current_gate = GRV7_authorized_not_started
+current_gate = GRV7_mechanically_passed_awaiting_acceptance_anchor
 verification_closeout_ladder_rung_assigned = true
 verification_closeout_rung = GRV-C4
 verification_closeout_ceiling = GRV-C5_pending_GRV7
@@ -1591,8 +1591,10 @@ load-bearing checks machine-readable without changing branch selection,
 parameter paths, thresholds, or claim ceiling. A first hardened preliminary
 result then exposed an audit-only error: the CE1 bracket named the nearest
 off-threshold witnesses but computed headroom from the farthest endpoints. The
-final GRV7 rerun executed from clean corrected method revision
-`10d07aa09e5e6ad6cf2bdced94c3cb37a2679719`.
+acceptance-scope hardening then made WLS identifiability, complete-step `+1`
+nontriviality, reduced/full claim separation, and source-branch role accounting
+explicit. The final GRV7 rerun executed from clean corrected method revision
+`47589bff66e6f720da428dc98bc7b71e2166c3f0`.
 
 The frozen scope retains all 48 GRV2 branches in source accounting and selects
 seven source/symmetry branches before spectra for six continuation paths. The
@@ -1614,12 +1616,14 @@ blocked by the GRV3 categorical-stratum gate and are not counted as threshold
 disagreements.
 
 The homogeneous F1 scale path supplies the first bounded counterexample. Its
-runtime row-basis unsigned, signed, and WLS Hessian record has one digest over
-all five points, while the analytical constrained second variation has five
-digests and covers negative, zero, and positive eigenvalue signs. The frozen-
-`W` multiplier reaches unstable exterior, `+1`, and stable interior. This shows
-that the exact runtime local Hessian diagnostics do not identify the analytical
-continuation threshold on this path.
+runtime row-basis unsigned and signed diagnostics have one digest over all five
+points, while the analytical constrained second variation has five digests and
+covers negative, zero, and positive eigenvalue signs. The frozen-`W` multiplier
+reaches unstable exterior, `+1`, and stable interior. The WLS comparison is
+reproducible but non-identifying: each node has one sample for a six-feature
+quadratic fit, raw design rank is one, regularization is declared as `1e-9`, and
+threshold interpretation is forbidden. CE1 is therefore a failure of cross-
+object identification, not disagreement among three admitted runtime thresholds.
 
 The CE1 analytical zero residual is `4.000e-12`, its frozen `+1` residual is
 `8.000e-13`, and the nearest off-threshold separation margin is
@@ -1645,7 +1649,10 @@ complete-step spectra with finite-difference convergence, alternate-basis
 covariance, administrative-phase invariance, and graph-symmetry covariance.
 Their multipliers remain within `2.603e-11` of `+1`; this is a bounded spatial/
 temporal correlation at the solved nonuniform branch condition, not a universal
-threshold identity. Every available real-invariant cluster match passes. The
+threshold identity. The zero-sum basis removes the conservation mode and no
+gauge is declared, but branch-tangent overlap is not separately identified;
+all 16 are admitted near-unit clusters with nontriviality unresolved, not
+informative nontrivial `+1` thresholds. Every available real-invariant cluster match passes. The
 maximum symmetry conjugacy error is `1.697e-11`; the maximum adjacent cluster-
 centroid distance is `1.000000000002`, below the preregistered `1.1` limit.
 
@@ -1655,11 +1662,18 @@ remain at `+1`. This is recorded as unavailable in the preregistered envelope,
 not as global nonexistence evidence. Event, sink, basin, collapse, spark, and
 topology surfaces remain separately recorded for every point.
 
+The seven selected branches are fully accounted for across six paths. F1 branches
+`grv2-f1-004` and `grv2-f1-014` each provide one primary path. F2 branches
+`grv2-f2-017` and `grv2-f2-018` provide primary/symmetry roles on both `dt` and
+`eta` paths. F3 branches `grv2-f3-033`, `grv2-f3-034`, and `grv2-f3-035` provide
+one primary and two symmetry roles on both `dt` and `eta` paths. No selected
+branch is omitted.
+
 The matrix payload digest is
-`18f53d7e1a4213d0ec453e0e59a5d485da8755fd4d3656d5a3be2abac0964130`.
-Receipt `c1f8986b08c0295a7e0678eb370d12216c3201df9b95f78c7eac8345039f8750`
+`cfa80c47b7a7063c97133cad23261025064b15b92c6785f189915d8b8c39cde1`.
+Receipt `2d29dedbedaf66a8295574c548ddf7d06c6ee12cbc529e93ef10e720e5ad46cb`
 binds all outputs and is awaiting human review. The experiment-local suite
-passes `94` tests, protected source/spec/root-test tree
+passes `95` tests, protected source/spec/root-test tree
 `4a398c1b50a55c40418bfae3af4e4e3dc07a1a313f79b3747a546dfa27c453a2`
 is unchanged, `GRV-C5` remains a candidate rather than an assigned rung, and
 GRV8 remains blocked pending a separate GRV7 acceptance anchor.
@@ -1667,8 +1681,13 @@ GRV8 remains blocked pending a separate GRV7 acceptance anchor.
 ```text
 mechanical_status = passed
 scientific_acceptance = awaiting_human_review
-bounded_spatial_temporal_non_equivalence_supported = true
+non_equivalence_scope = clamped_W_reduced_spatial_continuation_and_discrete_threshold_only
+reduced_spatial_continuation_temporal_non_equivalence_supported = true
+runtime_spatial_vs_full_temporal_non_equivalence_supported = false
 full_map_non_equivalence_supported = false
+all_frozen_continuation_comparator_points_admitted = true
+selected_source_branches_fully_accounted = true
+complete_step_informative_nontrivial_temporal_classes_reached = []
 all_branch_identity_audits_passed = true
 frozen_reduction_or_admissibility_blocked_points = 0
 decisive_uncertainty_separated_counterexamples = 2

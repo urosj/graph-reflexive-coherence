@@ -17,7 +17,7 @@ only analogically, as a measurable diagnostic, or not at all.
 
 ```text
 experiment_id = B1-GR
-status = grv7_P7_mechanically_passed_awaiting_human_review
+status = grv7_P7_review_scope_hardened_awaiting_acceptance_anchor
 specification_state = draft_3_4_1_pre_execution_mathematical_execution_sealed
 controlling_specification_sha256 = 7ad99fb4acc6a7691d184a514f4836ffa3927600fc7cf504eb059134f3948e44
 runtime_under_test = unchanged_GRC9V3
@@ -30,7 +30,8 @@ positive_readback_evidence_opened = false
 positive_writeback_evidence_opened = false
 verification_closeout_rung = GRV-C4
 verification_closeout_ceiling = GRV-C5_candidate_pending_GRV7_acceptance
-bounded_spatial_temporal_non_equivalence_candidate = true
+reduced_spatial_continuation_temporal_non_equivalence_candidate = true
+runtime_spatial_vs_full_temporal_non_equivalence_supported = false
 full_map_non_equivalence_supported = false
 B1_L_execution_authorized = false
 N32_selected = false
@@ -386,8 +387,8 @@ Acceptance does not assign `GRV-C5`; spatial, temporal, and continuation-
 threshold evidence remains required from GRV7.
 
 GRV7 then ran six preregistered continuation paths. Its unaccepted preliminary
-results remain in history; the final hardened rerun uses clean corrected method
-revision `10d07aa`. The hardening changes no branch, path, threshold, or claim
+results remain in history; the final acceptance-scope rerun uses clean corrected
+method revision `47589bf`. The hardening changes no branch, path, threshold, or claim
 ceiling. It makes the load-bearing discriminator explicit: typed operators,
 branch identity, reduction validity, critical-subspace identity, uncertainty-
 separated thresholds, and categorical-boundary separation.
@@ -408,17 +409,29 @@ threshold disagreements. Both decisive F1 examples use the same exact one-
 dimensional critical subspace and have nearest off-threshold separation margins
 of approximately `1.0`, well outside the declared numerical tolerances.
 
-Two bounded non-equivalence counterexamples are supported. Along the F1 scale
-path, the exact runtime row-basis unsigned, signed, and WLS Hessian surfaces stay
+Two bounded reduced non-equivalence counterexamples are supported. Along the F1
+scale path, the exact runtime row-basis unsigned and signed diagnostics stay
 unchanged while the analytical constrained second variation crosses zero and
-the frozen-`W` multiplier reaches `+1`. Along the F1 timestep path, both runtime
+the frozen-`W` multiplier reaches `+1`. The reproducible WLS comparison remains
+non-identifying: each node supplies one sample to a six-feature quadratic fit,
+so its raw design has rank one and its regularized output is not threshold
+evidence. Along the F1 timestep path, both runtime
 spatial diagnostics and the analytical continuation Hessian stay unchanged
 while the frozen-`W` multiplier crosses the stable interior and `-1`. These are
 exact clamped-comparator results, not complete-step counterexamples. The F2/F3
-complete-step spectra remain near `+1` and constitute bounded correlation only;
-no full-map or complex-unit-circle crossing is claimed.
+complete-step spectra remain near `+1`; conservation has been projected out and
+no gauge is declared, but branch-tangent nontriviality is unresolved. They are
+therefore admitted near-unit spectra, not informative nontrivial temporal
+thresholds. No full-map or complex-unit-circle crossing is claimed.
 
-Receipt `c1f8986b...` is mechanically valid and awaiting human review. It leaves
+Seven selected source branches feed six paths because the F2 pair and F3 triplet
+are reused across distinct `dt` and `eta` paths: one primary and its declared
+symmetry partners in each family. Both F1 branches each feed one path. Every
+selected branch has an explicit path/role mapping; none was dropped after
+spectrum inspection.
+
+Receipt `2d29dedb...` over matrix payload `cfa80c47...` is mechanically valid and
+awaiting its separate acceptance anchor. It leaves
 `GRV-C5` unassigned and GRV8 blocked. The result does not claim universal
 non-correlation, continuation, retention, Read-Back, or write-back.
 
