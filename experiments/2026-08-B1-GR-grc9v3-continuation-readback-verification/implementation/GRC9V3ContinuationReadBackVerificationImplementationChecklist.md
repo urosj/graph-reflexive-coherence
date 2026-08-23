@@ -1548,20 +1548,89 @@ GRV_C5_status = pending_GRV7_threshold_evidence
 
 ## Iteration 8 - GRV7 Spatial, Temporal, And Continuation Thresholds
 
-- [ ] Select admitted homogeneous and nonuniform branch families.
-- [ ] Preregister branch matching, cluster matching, maximum step, and bifurcation restart rules.
-- [ ] Preregister parameter sweeps and threshold rules.
-- [ ] Sweep `+1`, stable-interior, `-1`, and available complex crossings.
-- [ ] Record complete-step multipliers.
-- [ ] Record frozen-`W` comparator spectrum.
-- [ ] Record row-basis unsigned Hessian.
-- [ ] Record signed Hessian.
-- [ ] Record WLS comparison Hessian.
-- [ ] Record event, sink, basin, collapse, and spark evidence separately.
-- [ ] Search for a strong temporal/spatial non-equivalence counterexample.
-- [ ] Record bounded correlations without universalizing them.
-- [ ] Emit `spatial_temporal_threshold_matrix.json` and report.
-- [ ] Emit and validate the GRV7 result receipt and separate acceptance anchor.
+- [x] Select admitted homogeneous and nonuniform branch families.
+- [x] Preregister branch matching, cluster matching, maximum step, and bifurcation restart rules.
+- [x] Preregister parameter sweeps and threshold rules.
+- [x] Sweep `+1`, stable-interior, `-1`, and classify available complex crossings.
+- [x] Record complete-step multipliers.
+- [x] Record frozen-`W` comparator spectrum.
+- [x] Record row-basis unsigned Hessian.
+- [x] Record signed Hessian.
+- [x] Record WLS comparison Hessian.
+- [x] Record event, sink, basin, collapse, and spark evidence separately.
+- [x] Search for a strong temporal/spatial non-equivalence counterexample.
+- [x] Record bounded correlations without universalizing them.
+- [x] Emit `spatial_temporal_threshold_matrix.json` and report.
+- [x] Emit and validate the GRV7 result receipt.
+- [ ] Accept GRV7 and emit the separate acceptance anchor.
+
+GRV7 executed from clean method revision `0f9d0de3743eee6bad9cae525c451832671fc78b`.
+The frozen scope retains all 48 GRV2 branches in source accounting and selects
+seven source/symmetry branches before spectra for six continuation paths. The
+run records 27 primary points and 51 points including graph-symmetry partners.
+Every point passes the same-branch invariant, declared parameter-step maximum,
+native stage canonicalization, branch residual, event, topology, and categorical
+gates. The maximum full-step branch residual is `1.085265211031583e-10`; the
+maximum parameter-canonicalization physical `(C,W,J)` delta is
+`2.0000001654607423e-11`.
+
+The homogeneous F1 scale path supplies the first bounded counterexample. Its
+runtime row-basis unsigned, signed, and WLS Hessian record has one digest over
+all five points, while the analytical constrained second variation has five
+digests and covers negative, zero, and positive eigenvalue signs. The frozen-
+`W` multiplier reaches unstable exterior, `+1`, and stable interior. This shows
+that the exact runtime local Hessian diagnostics do not identify the analytical
+continuation threshold on this path.
+
+The homogeneous F1 timestep path supplies the second bounded counterexample.
+Both its runtime spatial-diagnostic digest and analytical continuation-Hessian
+digest remain constant over six points, while the frozen-`W` multiplier moves
+from `0.9` through the stable interior to approximately `-1` at `dt = 1.0` and
+then to `-2`. A spatial Hessian alone therefore does not identify the discrete
+flip threshold without the timestep and mobility. Both F1 results remain
+clamped-counterfactual evidence: all 11 primary F1 complete-step Jacobians are
+blocked at the zero-current sink/basin identity stratum, not treated as
+unconverged and not promoted to full-map counterexamples.
+
+All 16 primary F2/F3 points, and 40 points including symmetry partners, admit
+complete-step spectra with finite-difference convergence, alternate-basis
+covariance, administrative-phase invariance, and graph-symmetry covariance.
+Their multipliers remain within `2.603e-11` of `+1`; this is a bounded spatial/
+temporal correlation at the solved nonuniform branch condition, not a universal
+threshold identity. Every available real-invariant cluster match passes. The
+maximum symmetry conjugacy error is `1.697e-11`; the maximum adjacent cluster-
+centroid distance is `1.000000000002`, below the preregistered `1.1` limit.
+
+No complex unit-circle crossing is reached. The real self-adjoint frozen
+comparator cannot supply one in this scope, and the admitted complete-step paths
+remain at `+1`. This is recorded as unavailable in the preregistered envelope,
+not as global nonexistence evidence. Event, sink, basin, collapse, spark, and
+topology surfaces remain separately recorded for every point.
+
+The matrix payload digest is
+`c5392a42396e1454d2a6a01d1aab2a9d30b2cf9c3e4b309443664710e9ce7a67`.
+Receipt `7034aebaf1de4fc594074e151ac18d4943fe66f7fe3c17cfa61e47cff6ba912d`
+binds all outputs and is awaiting human review. The experiment-local suite
+passes `90` tests, protected source/spec/root-test tree
+`4a398c1b50a55c40418bfae3af4e4e3dc07a1a313f79b3747a546dfa27c453a2`
+is unchanged, `GRV-C5` remains a candidate rather than an assigned rung, and
+GRV8 remains blocked pending a separate GRV7 acceptance anchor.
+
+```text
+mechanical_status = passed
+scientific_acceptance = awaiting_human_review
+bounded_spatial_temporal_non_equivalence_supported = true
+full_map_non_equivalence_supported = false
+frozen_plus_one_reached = true
+frozen_stable_interior_reached = true
+frozen_minus_one_reached = true
+complex_unit_circle_crossing_reached = false
+complete_step_primary_points_admitted = 16
+complete_step_primary_points_blocked = 11
+GRV_C5_candidate = true
+GRV_C5_assigned = false
+GRV8_authorized = false
+```
 
 ## Iteration 9 - GRV8 Classification, Route Decision, And Handoff
 

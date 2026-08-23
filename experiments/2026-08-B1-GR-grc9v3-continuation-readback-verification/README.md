@@ -17,7 +17,7 @@ only analogically, as a measurable diagnostic, or not at all.
 
 ```text
 experiment_id = B1-GR
-status = grv6_P6_3_accepted_GRV7_authorized
+status = grv7_P7_mechanically_passed_awaiting_human_review
 specification_state = draft_3_4_1_pre_execution_mathematical_execution_sealed
 controlling_specification_sha256 = 7ad99fb4acc6a7691d184a514f4836ffa3927600fc7cf504eb059134f3948e44
 runtime_under_test = unchanged_GRC9V3
@@ -29,7 +29,9 @@ positive_retention_evidence_opened = bounded_GRR2_neutral_coordinate_persistence
 positive_readback_evidence_opened = false
 positive_writeback_evidence_opened = false
 verification_closeout_rung = GRV-C4
-verification_closeout_ceiling = GRV-C5_pending_GRV7
+verification_closeout_ceiling = GRV-C5_candidate_pending_GRV7_acceptance
+bounded_spatial_temporal_non_equivalence_candidate = true
+full_map_non_equivalence_supported = false
 B1_L_execution_authorized = false
 N32_selected = false
 l04_selected = false
@@ -382,6 +384,30 @@ Human review accepted P6.3 at result revision `07cf6784`. The separate
 `705b6967...` and preserves every bounded claim above. GRV7 is now authorized.
 Acceptance does not assign `GRV-C5`; spatial, temporal, and continuation-
 threshold evidence remains required from GRV7.
+
+GRV7 then ran six preregistered continuation paths from clean method revision
+`0f9d0de`: two homogeneous F1 paths and four nonuniform F2/F3 paths. All 27
+primary points and all 51 symmetry-inclusive points pass branch matching,
+parameter-step, native surface-canonicalization, branch-residual, event, and
+topology gates. Forty symmetry-inclusive points admit complete-step temporal
+spectra with finite-difference convergence, basis covariance, administrative-
+phase invariance, and graph-symmetry covariance. The 11 F1 primary points retain
+their GRV3 classical-derivative block at the zero-current sink/basin identity
+boundary.
+
+Two bounded non-equivalence counterexamples are supported. Along the F1 scale
+path, the exact runtime row-basis unsigned, signed, and WLS Hessian surfaces stay
+unchanged while the analytical constrained second variation crosses zero and
+the frozen-`W` multiplier reaches `+1`. Along the F1 timestep path, both runtime
+spatial diagnostics and the analytical continuation Hessian stay unchanged
+while the frozen-`W` multiplier crosses the stable interior and `-1`. These are
+exact clamped-comparator results, not complete-step counterexamples. The F2/F3
+complete-step spectra remain near `+1` and constitute bounded correlation only;
+no full-map or complex-unit-circle crossing is claimed.
+
+Receipt `7034aeba...` is mechanically valid and awaiting human review. It leaves
+`GRV-C5` unassigned and GRV8 blocked. The result does not claim universal
+non-correlation, continuation, retention, Read-Back, or write-back.
 
 ## Central Question
 

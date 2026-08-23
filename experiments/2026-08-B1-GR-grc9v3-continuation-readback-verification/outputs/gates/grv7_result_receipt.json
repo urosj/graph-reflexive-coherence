@@ -1,0 +1,68 @@
+{
+  "blocked_gates": [
+    "GRV8"
+  ],
+  "claim_ceiling": "bounded_spatial_temporal_and_continuation_threshold_non_equivalence_without_universal_noncorrelation_or_readback_claim_pending_human_review",
+  "gate_id": "GRV7",
+  "grv7_summary": {
+    "GRV8_authorized": false,
+    "GRV_C5_assigned": false,
+    "GRV_C5_candidate": true,
+    "all_continuation_points_admitted": true,
+    "bounded_spatial_temporal_non_equivalence_supported": true,
+    "complete_step_complex_unit_circle_reached": false,
+    "complete_step_temporal_blocked_primary_point_count": 11,
+    "complete_step_temporal_classes_reached": [
+      "plus_one_marginality"
+    ],
+    "complete_step_temporal_interpretation_admitted_primary_point_count": 16,
+    "complex_crossing_absence_is_global_nonexistence": false,
+    "complex_crossing_status": "not_reached_in_preregistered_real_symmetric_and_admitted_complete_step_envelope",
+    "continuation_path_count": 6,
+    "continuation_supported": false,
+    "frozen_complex_unit_circle_reached": false,
+    "frozen_minus_one_reached": true,
+    "frozen_plus_one_reached": true,
+    "frozen_stable_interior_reached": true,
+    "frozen_temporal_classes_reached": [
+      "minus_one_flip_marginality",
+      "plus_one_marginality",
+      "stable_interior",
+      "unstable_exterior"
+    ],
+    "full_map_non_equivalence_supported": false,
+    "mechanical_status": "passed",
+    "predeclared_selected_source_branch_count": 7,
+    "primary_continuation_point_count": 27,
+    "readback_supported": false,
+    "retention_supported": false,
+    "source_branch_accounting_count": 48,
+    "supported_bounded_counterexample_count": 2,
+    "supported_full_map_counterexample_count": 0,
+    "symmetry_inclusive_continuation_point_count": 51,
+    "universal_noncorrelation_supported": false,
+    "universal_threshold_identity_supported": false,
+    "writeback_supported": false
+  },
+  "input_execution_revision": "0f9d0de3743eee6bad9cae525c451832671fc78b",
+  "input_experiment_tree_sha256": "2fe81a6205889e8bc950aaa4eb4e3f36724db6c15913c376e6dada8ae232c16d",
+  "output_artifact_digests": {
+    "outputs/protected_path_manifest_v7.json": "d23d89fe8723d1cac5042965616bb1ae07908ddcdec6c331083cfe882592a491",
+    "outputs/spatial_temporal_threshold_matrix.json": "d18c38ec8b895ce80969015fa5f0e669eecbd033bdb0b0e2a4e151ea2300351c",
+    "reports/b1_grv7_spatial_temporal_continuation_thresholds.md": "5d14b368c1fa6f89b4c0cc3a62b655506dd9964e967fb519697e251fb177830f"
+  },
+  "prerequisite_acceptance_anchors": [
+    {
+      "anchor_payload_sha256": "bfa8d1f619f7d50d0a7b8fa1f3d98411b7f1743d6a6b70e7fdf6658a9e7c1cbe",
+      "gate_id": "GRV6",
+      "immutable_ref": "git:9606f2466769d89e10145e112ed5136704a5ad79"
+    }
+  ],
+  "prerequisite_acceptance_status": "accepted",
+  "prerequisite_result_receipt_digests": [
+    "705b6967eedb86fe0d0d7d895998a3ad1147ede312502dae6567a9021fb449c3"
+  ],
+  "receipt_payload_sha256": "7034aebaf1de4fc594074e151ac18d4943fe66f7fe3c17cfa61e47cff6ba912d",
+  "status": "awaiting_scientific_review",
+  "substrate_base_revision": "589f933e5649c34d3ad54a5f8dbdba2a20e968d7"
+}
