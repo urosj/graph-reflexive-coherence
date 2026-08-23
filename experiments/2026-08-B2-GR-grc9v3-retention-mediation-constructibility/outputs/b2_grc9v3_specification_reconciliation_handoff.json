@@ -1,0 +1,67 @@
+{
+  "metadata": {
+    "generating_command": ".venv/bin/python experiments/2026-08-B2-GR-grc9v3-retention-mediation-constructibility/scripts/build_i8_classification_and_handoff.py",
+    "reproducibility_class": "byte_reproducible"
+  },
+  "payload": {
+    "B2_candidate_set_status": "accepted_empty_no_runtime_reached_candidate",
+    "B2_maximum_new_GRR_rung": "none",
+    "claim_boundary": {
+      "LGRC_work_authorized": false,
+      "extension_necessity_established": false,
+      "extension_selected": false,
+      "global_native_carrier_absence_established": false,
+      "new_field_required": false,
+      "retention_globally_absent": false,
+      "runtime_change_authorized": false
+    },
+    "evidence_profile_role": "bounded_B1_and_B2_counts_thresholds_accessibility_and_not_testable_results",
+    "evidence_profile_target": "specs/grc-9-v3-evidence-profile.md",
+    "experiment_id": "B2-GR",
+    "extension_selected": false,
+    "forbidden_specification_upgrades": [
+      "GRC9V3_cannot_form_retained_carriers",
+      "GRC9V3_has_no_retention_globally",
+      "GRC9V3_requires_a_new_M_field",
+      "W_must_be_temporalized",
+      "current_must_be_independently_relaxing",
+      "retention_exists_only_through_events_or_topology_change",
+      "B2_selected_a_substrate_extension"
+    ],
+    "future_extension_boundary": "revision_distinct_profile_not_reinterpretation_of_legacy_GRC9V3",
+    "handoff_id": "B2-GR-to-GRC9V3-specification-reconciliation",
+    "normative_spec_target": "specs/grc-9-v3-spec.md",
+    "recommended_repository_flow": [
+      "B1-GR_characterize_existing_GRC9V3",
+      "B2-GR_test_bounded_unchanged_runtime_constructibility",
+      "GRC9V3_normative_specification_reconciliation",
+      "freeze_legacy_GRC9V3_semantics",
+      "choose_next_scientific_question"
+    ],
+    "repository_verification_exception": {
+      "accepted_for_B2_closeout_only": true,
+      "debt_carried_forward": [
+        "ignored_phenomenology_and_pressure_evidence_required_by_existing_tests_is_locally_absent",
+        "GRCV3_representative_telemetry_primary_and_replay_snapshot_digests_are_unequal"
+      ],
+      "full_repository_suite_passed": false
+    },
+    "route_status": "ready_for_separate_GRC9V3_specification_reconciliation",
+    "source_B1_context_ceiling": "GRR2",
+    "source_i8_artifact_path": "experiments/2026-08-B2-GR-grc9v3-retention-mediation-constructibility/outputs/b2_i8_classification_and_handoff.json",
+    "source_i8_payload_sha256": "64236a65bc9bb8915df850f835c5da2633eaa0d42a46d18d557feb6b5e97e432",
+    "status": "ready_after_B2_closeout_acceptance",
+    "supported_semantic_boundaries": [
+      "GRC9V3_is_a_synchronous_graph_RC_realization_with_immediate_constitutive_state_recurrence",
+      "C_is_the_admitted_independent_complete_step_coordinate_on_verified_smooth_fixed_topology_strata",
+      "W_and_J_are_load_bearing_stage_surfaces_not_established_independent_slow_coordinates",
+      "sign_even_old_current_squared_into_W_does_not_retain_historical_current_orientation",
+      "GRC9V3_does_not_specify_a_distinct_retained_state_primitive_projector_or_update_law",
+      "W_must_not_be_relabelled_as_durable_memory_or_retention_from_stage_local_current_contribution_alone",
+      "ordinary_C_persistence_does_not_by_itself_establish_a_retained_historical_sector",
+      "B2_found_no_confirmed_natively_formed_carrier_under_its_bounded_admissible_clean_lane"
+    ]
+  },
+  "payload_sha256": "78bcc1090d39841cd9e86b28a567abf08b6f4a1def466679f95cf4edddcf0d6a",
+  "schema_version": "b2_grc9v3_specification_reconciliation_handoff_v1"
+}

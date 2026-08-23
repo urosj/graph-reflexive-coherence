@@ -10,7 +10,7 @@
     "execution_status": "not_applicable_no_GRR3_lineage",
     "failure_status": false,
     "gate_id": "B2-I6",
-    "input_execution_revision": "f433e9510128ccb233987f12d936f8af1d99e277",
+    "input_execution_revision": "bee7699cc83ed97c3bf98f14760f845d219e608d",
     "lifecycle_role": "accounting_only_not_scientific_evidence",
     "positive_evidence_generated": false,
     "scientific_gate_executed": false,
@@ -18,6 +18,6 @@
     "source_i4_acceptance_anchor_sha256": "ce8b09ff7a54658ee62180ce5446579059611545ee4ba3c47ea88690aa4d5fe3",
     "status": "not_applicable"
   },
-  "payload_sha256": "d3f152ddde2ac061af89a74e31ad84fe30d5b3c969981ccb7788c27794521db9",
+  "payload_sha256": "99b709f24d70a9a3b8137c5acb4c7afa1508ccf75758ee53c5c4303166bc448c",
   "schema_version": "b2_downstream_non_applicability_record_v1"
 }

@@ -9,12 +9,18 @@
     "acceptance_state": "awaiting_scientific_review",
     "bounded_alternative_mechanisms": [
       {
-        "attempt_count": 1706,
-        "mechanism": "directly_authored_or_unidentifiable_apparent_carrier",
-        "role": "typed_nonpositive_result_not_native_formation"
+        "attempt_count": 1705,
+        "mechanism": "apparent_carrier_authored_within_numerical_uncertainty",
+        "role": "provenance_negative_not_broad_identifiability_debt"
+      },
+      {
+        "attempt_count": 1,
+        "mechanism": "runtime_residual_above_uncertainty_below_separation_floor",
+        "role": "localized_attribution_precision_debt_not_candidate"
       },
       {
         "attempt_count": 7915,
+        "eventful_attempt_count": 0,
         "failure_mode_counts": {
           "categorical_transition_in_first_post_driver_transition": 144,
           "categorical_transition_in_preparation_history": 2064,
@@ -22,37 +28,75 @@
           "constraint_supported_preparation_history": 5648,
           "positive_coherence_interior_not_preserved": 4
         },
-        "mechanism": "eventful_categorical_or_constraint_supported_history",
-        "role": "observed_alternative_path_family_outside_clean_primary_lane"
+        "mechanism": "categorical_or_constraint_supported_history",
+        "role": "separate_scientific_lane_outside_clean_primary_GRR_evidence",
+        "topology_mutating_attempt_count": 0
       },
       {
         "attempt_count": 27,
         "mechanism": "clean_resolved_no_attributable_carrier_above_floor",
-        "role": "bounded_negative_inside_frozen_clean_lane_only"
+        "preparation_family_count": 1,
+        "role": "bounded_no_spontaneous_formation_baselines_only"
       },
       {
         "branch_count": 22,
-        "mechanism": "clean_lane_inaccessible_branch",
+        "mechanism": "clean_lane_inaccessible_under_B2_frozen_preparation_contract",
         "role": "coverage_debt_not_negative_constructibility_evidence"
       }
     ],
+    "bounded_negative_scope": {
+      "attempt_count": 27,
+      "preparation_scope": "native_spontaneous_no_driver_only",
+      "supports_bounded_no_spontaneous_formation_baselines": true,
+      "supports_universal_native_retention_absence": false,
+      "unique_history_aware_identity_count": 27,
+      "unique_preparation_family_count": 1,
+      "unique_source_branch_count": 27,
+      "unique_state_identity_count": 27,
+      "unique_symmetry_signature_count": 23
+    },
+    "bounded_open_dimensions": {
+      "eligible_future_work": [
+        "principled_upstream_preparation_family_expansion_for_the_same_clean_target",
+        "targeted_formation_attribution_precision_for_the_single_above_uncertainty_subthreshold_row",
+        "separate_constraint_or_categorical_history_dependence_investigation"
+      ],
+      "not_authorized": [
+        "arbitrary_parameter_widening_until_a_witness_appears",
+        "synthetic_internal_carrier_insertion",
+        "automatic_runtime_extension",
+        "eventful_or_constraint_history_as_clean_GRR3_evidence",
+        "B1_L_execution",
+        "N32_selection"
+      ]
+    },
+    "candidate_confirmation_accounting": {
+      "confirmed_candidate_count": 0,
+      "discovery_candidate_count_before_confirmation": 0,
+      "fresh_confirmation_attempt_count": 0,
+      "fresh_confirmation_failure_count": 0
+    },
     "causal_role_classification": {
       "GRR3_candidate_count": 0,
+      "GRR3_status": "not_testable_no_confirmed_I4_lineage",
       "GRR4_candidate_count": 0,
+      "GRR4_status": "not_testable_no_GRR3_lineage",
       "GRR5_candidate_count": 0,
-      "branch_relation": "not_testable_no_runtime_reached_I4_candidate",
-      "closed_loop_effect": "not_established_in_B2",
-      "eventful_or_constraint_supported_history_dependence": "observed_outside_clean_primary_lane_not_classified_as_persistence",
+      "GRR5_status": "not_testable_no_GRR4_lineage",
+      "branch_relation": "not_testable_no_confirmed_I4_lineage",
+      "categorical_or_constraint_supported_history_dependence": "observed_outside_clean_primary_lane_not_classified_as_GRR_persistence",
+      "closed_loop_effect": "not_testable_no_GRR4_lineage",
       "global_max_GRR": "none_new_in_B2",
       "global_max_GRR_derivation": "max_row_local_max_GRR_over_empty_eligible_candidate_set_is_none",
       "inherited_B1_GR_context_ceiling": "GRR2",
       "maximum_new_GRR_rung": "none",
-      "mediation_without_GRR3": "not_observed_on_B2_candidate_lineage",
-      "persistence_without_mediation": "not_observed_on_B2_candidate_lineage",
+      "mediation_without_GRR3": "not_testable_no_GRR3_lineage",
+      "native_admissible_formation_candidate": "not_found_in_frozen_I4_search_envelope",
+      "persistence_without_mediation": "not_testable_no_GRR3_lineage",
       "read_effect": "not_testable_no_GRR3_lineage",
-      "retention_effect": "not_testable_no_runtime_reached_I4_candidate",
+      "retention_effect": "not_testable_no_confirmed_I4_lineage",
       "row_local_max_GRR": [],
-      "write_effect": "not_established_in_B2"
+      "write_effect": "not_testable_no_GRR4_lineage"
     },
     "claim_boundary": {
       "B2_positive_evidence_opened": false,
@@ -76,8 +120,27 @@
       "localized_missing_causal_role_established": false,
       "primary_route": "unchanged_GRC9V3_search_remains_open",
       "runtime_change_authorized": false,
-      "secondary_route": "analysis_or_identifiability_debt",
+      "secondary_route": "localized_formation_attribution_precision_debt_single_subthreshold_row",
       "spec_extension_authorized": false
+    },
+    "closeout_support": {
+      "B2_regression_established": false,
+      "audit_reconstructs_accepted_I4": true,
+      "empty_path_audit_path": "experiments/2026-08-B2-GR-grc9v3-retention-mediation-constructibility/outputs/b2_i8_empty_path_audit.json",
+      "empty_path_audit_payload_sha256": "7711e5c88a5cd536b53e814793a730c2acc20c0180ba2b7f4eef5fb94709268a",
+      "empty_path_audit_sha256": "7caa0369b90f83d57495798fbbdff1d6051b45fe3588b13244c8b8101681dd74",
+      "full_repository_suite_passed": false,
+      "full_suite_failure_audit_path": "experiments/2026-08-B2-GR-grc9v3-retention-mediation-constructibility/outputs/gates/b2_i8_full_suite_failure_audit.json",
+      "full_suite_failure_audit_sha256": "a25decc35835404a5a640fe1e091e79de87fd4531a5980e23677e4a020b047f3",
+      "full_suite_input_execution_revision": "e7d171f67c8bce60686af64d68e961f634586a03",
+      "full_suite_passed_test_count": 1988,
+      "full_suite_status": "failed",
+      "full_suite_verification_path": "experiments/2026-08-B2-GR-grc9v3-retention-mediation-constructibility/outputs/gates/b2_i8_full_suite_verification.json",
+      "full_suite_verification_sha256": "07ddd002584bc09de088f80794253c43bdc7baeb2368482964dfc7f394dbd553",
+      "repository_verification_adjudication_path": "experiments/2026-08-B2-GR-grc9v3-retention-mediation-constructibility/outputs/gates/b2_i8_repository_verification_adjudication.json",
+      "repository_verification_adjudication_sha256": "1a9eaab10f0bd7567df5856196ef4e84bc2d159344a8e39690afd1f7f59bc9c4",
+      "repository_verification_exception_status": "accepted_bounded_environment_exception",
+      "verification_exception_accepted_for_B2_closeout": true
     },
     "downstream_gate_lifecycle": [
       {
@@ -87,7 +150,7 @@
         "execution_status": "not_applicable_empty_I4_candidate_set",
         "failure_status": false,
         "gate_id": "B2-I5",
-        "input_execution_revision": "f433e9510128ccb233987f12d936f8af1d99e277",
+        "input_execution_revision": "bee7699cc83ed97c3bf98f14760f845d219e608d",
         "lifecycle_role": "accounting_only_not_scientific_evidence",
         "positive_evidence_generated": false,
         "scientific_gate_executed": false,
@@ -102,7 +165,7 @@
         "execution_status": "not_applicable_no_GRR3_lineage",
         "failure_status": false,
         "gate_id": "B2-I6",
-        "input_execution_revision": "f433e9510128ccb233987f12d936f8af1d99e277",
+        "input_execution_revision": "bee7699cc83ed97c3bf98f14760f845d219e608d",
         "lifecycle_role": "accounting_only_not_scientific_evidence",
         "positive_evidence_generated": false,
         "scientific_gate_executed": false,
@@ -117,7 +180,7 @@
         "execution_status": "not_applicable_no_GRR4_lineage",
         "failure_status": false,
         "gate_id": "B2-I7",
-        "input_execution_revision": "f433e9510128ccb233987f12d936f8af1d99e277",
+        "input_execution_revision": "bee7699cc83ed97c3bf98f14760f845d219e608d",
         "lifecycle_role": "accounting_only_not_scientific_evidence",
         "positive_evidence_generated": false,
         "scientific_gate_executed": false,
@@ -127,37 +190,308 @@
       }
     ],
     "experiment_id": "B2-GR",
+    "extension_trigger_matrix": [
+      {
+        "extension_target": "retained_carrier",
+        "reason": "no_native_formation_or_retention_lineage_was_admitted",
+        "status": "not_selected"
+      },
+      {
+        "extension_target": "read_path",
+        "reason": "no_GRR3_carrier_lineage_existed_for_mediation_testing",
+        "status": "not_selected"
+      },
+      {
+        "extension_target": "current_temporalization",
+        "reason": "not_localized_by_the_B2_formation_search",
+        "status": "not_selected"
+      },
+      {
+        "extension_target": "geometry_mobility_split",
+        "reason": "not_implicated_by_the_empty_formation_search",
+        "status": "not_selected"
+      }
+    ],
+    "formation_attribution": {
+      "I4_admission_changed_by_split": false,
+      "broad_formation_identifiability_debt_supported": false,
+      "by_fixture_and_preparation": [
+        {
+          "attempt_count": 56,
+          "fixture_id": "F2",
+          "preparation_family": "budget_respecting_zero_sum_C_pair_pulse",
+          "split_counts": {
+            "apparent_carrier_authored_within_numerical_uncertainty": 56
+          }
+        },
+        {
+          "attempt_count": 528,
+          "fixture_id": "F2",
+          "preparation_family": "temporary_parameter_history_after_C_pair_pulse",
+          "split_counts": {
+            "apparent_carrier_authored_within_numerical_uncertainty": 528
+          }
+        },
+        {
+          "attempt_count": 242,
+          "fixture_id": "F3",
+          "preparation_family": "budget_respecting_zero_sum_C_pair_pulse",
+          "split_counts": {
+            "apparent_carrier_authored_within_numerical_uncertainty": 241,
+            "runtime_residual_above_uncertainty_below_separation_floor": 1
+          }
+        },
+        {
+          "attempt_count": 880,
+          "fixture_id": "F3",
+          "preparation_family": "temporary_parameter_history_after_C_pair_pulse",
+          "split_counts": {
+            "apparent_carrier_authored_within_numerical_uncertainty": 880
+          }
+        }
+      ],
+      "localized_attribution_precision_debt_count": 1,
+      "maximum_residual_carrier_counts": {
+        "C_ZERO_SUM_V1": 92,
+        "W_EDGE_CONDUCTANCE_OBSERVATION_V1": 1614
+      },
+      "policy": {
+        "authored_within_numerical_uncertainty_ceiling": 1e-12,
+        "carrier_separation_floor": 1e-10,
+        "classes": [
+          "apparent_carrier_authored_within_numerical_uncertainty",
+          "runtime_residual_above_uncertainty_below_separation_floor",
+          "runtime_residual_above_separation_below_formation_floor"
+        ],
+        "formation_admission_floor": 1e-09,
+        "numerically_unresolved_rows_are_not_reclassified": true,
+        "split_changes_i4_admission": false
+      },
+      "provenance_negative_authored_within_uncertainty_count": 1705,
+      "runtime_residual_above_separation_below_formation_floor_count": 0,
+      "split": [
+        {
+          "attempt_count": 1705,
+          "attribution_class": "apparent_carrier_authored_within_numerical_uncertainty",
+          "maximum_runtime_generated_residual_norm": 9.670249990174279e-13,
+          "minimum_runtime_generated_residual_norm": 2.123981709377698e-15
+        },
+        {
+          "attempt_count": 1,
+          "attribution_class": "runtime_residual_above_uncertainty_below_separation_floor",
+          "maximum_runtime_generated_residual_norm": 1.0267517269083237e-12,
+          "minimum_runtime_generated_residual_norm": 1.0267517269083237e-12
+        },
+        {
+          "attempt_count": 0,
+          "attribution_class": "runtime_residual_above_separation_below_formation_floor",
+          "maximum_runtime_generated_residual_norm": null,
+          "minimum_runtime_generated_residual_norm": null
+        }
+      ]
+    },
     "gate_id": "B2-I8",
-    "input_execution_revision": "f433e9510128ccb233987f12d936f8af1d99e277",
+    "input_execution_revision": "bee7699cc83ed97c3bf98f14760f845d219e608d",
     "iteration": 8,
+    "near_miss_audit": {
+      "delayed_post_driver_formation_count": 0,
+      "internal_stage_only_candidate_count": 0,
+      "largest_runtime_residual_fraction_of_formation_floor": 0.0010267517269083237,
+      "near_admission_boundary_found": false,
+      "overwritten_or_nonpersistent_candidate_count": 0,
+      "ranking_is_diagnostic_not_admission": true,
+      "top_sham_drift_fraction_of_formation_reference": 0.03982273622703627,
+      "top_subthreshold_runtime_residual_row": {
+        "amplitude_fraction": 0.01,
+        "attempt_id": "grv2-f3-048--C-pulse--e1-u_to_v--a0.0100--h8",
+        "attribution_split": "runtime_residual_above_uncertainty_below_separation_floor",
+        "fixture_id": "F3",
+        "formation_floor": 1e-09,
+        "formation_floor_fraction": 0.0010267517269083237,
+        "history_length": 8,
+        "maximum_residual_carrier": "C_ZERO_SUM_V1",
+        "maximum_runtime_generated_residual_norm": 1.0267517269083237e-12,
+        "parameter_variant_id": "evaluation_parameters",
+        "preparation_family": "budget_respecting_zero_sum_C_pair_pulse",
+        "sham_drift_fraction": 0.019911172159773387,
+        "source_branch_id": "grv2-f3-048"
+      }
+    },
     "next_route_boundary": {
+      "GRC9V3_specification_reconciliation": "next_before_any_extension_selection",
       "LGRC_specific_work": "not_authorized_by_B2",
+      "categorical_or_constraint_supported_history": "eligible_only_as_separate_scientific_lane",
       "required_before_any_extension": [
         "explicit_target_claim",
         "localized_missing_causal_role",
         "resolved_target_relevant_search_coverage",
         "rival_and_identifiability_accounting"
       ],
-      "revision_distinct_GRC_extension": "blocked_pending_target_and_role_localization",
+      "revision_distinct_GRC_extension": "blocked_pending_specification_reconciliation_target_and_role_localization",
       "unchanged_runtime_broader_search": "eligible_only_under_new_preregistered_scope"
     },
     "open_debt": [
       "constructibility_outside_frozen_preparation_parameter_history_and_carrier_envelope",
       "clean_primary_lane_accessibility_for_22_of_48_accepted_source_branches",
-      "causal_role_of_eventful_and_constraint_supported_history_dependence",
+      "causal_role_of_categorical_and_constraint_supported_history_dependence",
+      "formation_attribution_precision_for_one_subthreshold_F3_C_pulse_row",
       "branch_relation_slow_cluster_and_mediation_unopened_without_I4_candidate",
       "localized_missing_causal_role_not_established"
     ],
+    "outside_primary_envelope": {
+      "all_attempts_were_inside_frozen_proposal_grid": true,
+      "attempt_count": 7915,
+      "eventful_attempt_count": 0,
+      "exclusive_failure_mode_combinations": [
+        {
+          "attempt_count": 1442,
+          "failure_modes": [
+            "categorical_transition_in_preparation_history"
+          ]
+        },
+        {
+          "attempt_count": 74,
+          "failure_modes": [
+            "categorical_transition_in_preparation_history",
+            "categorical_transition_in_first_post_driver_transition"
+          ]
+        },
+        {
+          "attempt_count": 102,
+          "failure_modes": [
+            "categorical_transition_in_preparation_history",
+            "constraint_supported_first_post_driver_transition"
+          ]
+        },
+        {
+          "attempt_count": 15,
+          "failure_modes": [
+            "categorical_transition_in_preparation_history",
+            "constraint_supported_first_post_driver_transition",
+            "categorical_transition_in_first_post_driver_transition"
+          ]
+        },
+        {
+          "attempt_count": 2,
+          "failure_modes": [
+            "categorical_transition_in_preparation_history",
+            "constraint_supported_first_post_driver_transition",
+            "positive_coherence_interior_not_preserved"
+          ]
+        },
+        {
+          "attempt_count": 632,
+          "failure_modes": [
+            "constraint_supported_first_post_driver_transition"
+          ]
+        },
+        {
+          "attempt_count": 2646,
+          "failure_modes": [
+            "constraint_supported_preparation_history"
+          ]
+        },
+        {
+          "attempt_count": 334,
+          "failure_modes": [
+            "constraint_supported_preparation_history",
+            "categorical_transition_in_preparation_history"
+          ]
+        },
+        {
+          "attempt_count": 33,
+          "failure_modes": [
+            "constraint_supported_preparation_history",
+            "categorical_transition_in_preparation_history",
+            "categorical_transition_in_first_post_driver_transition"
+          ]
+        },
+        {
+          "attempt_count": 38,
+          "failure_modes": [
+            "constraint_supported_preparation_history",
+            "categorical_transition_in_preparation_history",
+            "constraint_supported_first_post_driver_transition"
+          ]
+        },
+        {
+          "attempt_count": 22,
+          "failure_modes": [
+            "constraint_supported_preparation_history",
+            "categorical_transition_in_preparation_history",
+            "constraint_supported_first_post_driver_transition",
+            "categorical_transition_in_first_post_driver_transition"
+          ]
+        },
+        {
+          "attempt_count": 2,
+          "failure_modes": [
+            "constraint_supported_preparation_history",
+            "categorical_transition_in_preparation_history",
+            "constraint_supported_first_post_driver_transition",
+            "positive_coherence_interior_not_preserved"
+          ]
+        },
+        {
+          "attempt_count": 2573,
+          "failure_modes": [
+            "constraint_supported_preparation_history",
+            "constraint_supported_first_post_driver_transition"
+          ]
+        }
+      ],
+      "failure_mode_counts_overlap_allowed": {
+        "categorical_transition_in_first_post_driver_transition": 144,
+        "categorical_transition_in_preparation_history": 2064,
+        "constraint_supported_first_post_driver_transition": 3386,
+        "constraint_supported_preparation_history": 5648,
+        "positive_coherence_interior_not_preserved": 4
+      },
+      "scientific_interpretation": "categorical_or_constraint_supported_history_paths_excluded_from_clean_primary_GRR_evidence",
+      "topology_mutating_attempt_count": 0
+    },
     "protected_path_manifest_path": "experiments/2026-08-B2-GR-grc9v3-retention-mediation-constructibility/outputs/b2_i1_protected_path_manifest.json",
     "protected_path_manifest_payload_sha256": "62915bb46ae85019da08260d0ee930885d2224dbf147068104e4040cff2c084c",
     "protected_src_spec_test_tree_unchanged": true,
     "ready_for_human_closeout_review": true,
+    "repository_verification_debt": {
+      "B2_regression_established": false,
+      "carried_repository_debt": [
+        "ignored_phenomenology_and_pressure_evidence_required_by_existing_tests_is_locally_absent",
+        "GRCV3_representative_telemetry_primary_and_replay_snapshot_digests_are_unequal"
+      ],
+      "failed_test_count": 26,
+      "failure_not_relabelled_as_pass": true,
+      "full_repository_suite_passed": false,
+      "missing_ignored_evidence_path_count": 12,
+      "missing_ignored_evidence_paths": [
+        "outputs/grc9/phenomenology_discovery/sessions/S0005/reports/run_report.json",
+        "outputs/grc9/phenomenology_discovery/sessions/S0006/reports/run_report.json",
+        "outputs/grc9/phenomenology_discovery/sessions/S0010/reports/run_report.json",
+        "outputs/grc9/phenomenology_discovery/sessions/S0020/reports/run_report.json",
+        "outputs/grc9/phenomenology_discovery/sessions/S0022/reports/selector_validation_report.json",
+        "outputs/grc9/phenomenology_discovery/sessions/S0022/selector_manifest.json",
+        "outputs/grc9/phenomenology_discovery/sessions/S0025/reviewed_motif_catalog.json",
+        "outputs/grc9/phenomenology_discovery/sessions/S0038/generated_lanes/front_capacity_growth_pressure_boundary_positive_control/telemetry/run_summary.json",
+        "outputs/grc9v3/phenomenology_discovery/sessions/S0006/reports/run_report.json",
+        "outputs/grc9v3/phenomenology_discovery/sessions/S0007/selector_manifest.json",
+        "outputs/grc9v3/phenomenology_discovery/sessions/S0008/reports/run_report.json",
+        "outputs/grc9v3/phenomenology_discovery/sessions/S0009/selector_manifest.json"
+      ],
+      "repair_authorized_in_B2": false,
+      "src_specs_tests_equal_main": true,
+      "telemetry_replay_digest_failure_present": true,
+      "verification_exception_scope": "B2_closeout_only"
+    },
     "search_coverage": {
       "aggregate_attempt_ledger_digest": "6aee824e6285b4e73ce84b1ccda0b8075399aa6247cd6d25063d39ecfb3600f5",
+      "all_planned_branch_allocations_completed": true,
       "allocated_attempt_count": 9648,
       "attempt_population_identity_digest": "49495e170195bd96ddc8702b7d0c503caef4146b8d0a4b1086731bf052bdd06f",
       "attempted_count": 9648,
       "bounded_negative_count": 27,
+      "branch_preparation_matrix_digest": "f3b500d80e11ff1819b52ac8dd521a96b3116e2dc1d6c59ad5a2fc597073c235",
+      "branch_preparation_stratum_count": 144,
       "branches_eligible_and_attempted": 48,
       "branches_inaccessible_under_frozen_preparation_family": 22,
       "branches_with_nontrivial_resolved_clean_primary_lane_attempt": 26,
@@ -167,14 +501,11 @@
         "JOINT_C_W_BLOCK_V1"
       ],
       "duplicate_candidate_count": 0,
+      "effective_stratum_count": 2928,
+      "effective_stratum_matrix_digest": "95b0f3740c9824b4efe3260282d41cbbeccbaf07d464463fd0465ad939f0b1ef",
+      "formation_attribution_blocked_attempt_count": 1706,
       "formation_entirely_authored_or_unidentifiable_count": 1706,
-      "full_path_failure_mode_counts": {
-        "categorical_transition_in_first_post_driver_transition": 144,
-        "categorical_transition_in_preparation_history": 2064,
-        "constraint_supported_first_post_driver_transition": 3386,
-        "constraint_supported_preparation_history": 5648,
-        "positive_coherence_interior_not_preserved": 4
-      },
+      "fully_clean_effective_stratum_count": 242,
       "history_lengths_covered": [
         1,
         2,
@@ -184,6 +515,7 @@
       "inaccessible_branch_is_negative_constructibility_evidence": false,
       "numerical_failure_count": 0,
       "outside_envelope_count": 7915,
+      "outside_primary_envelope_attempt_count": 7915,
       "parameter_envelope_covered": {
         "amplitude_fractions": [
           0.0001,
@@ -231,17 +563,21 @@
           ]
         ]
       },
+      "partly_clean_effective_stratum_count": 531,
       "preparation_families_eligible_and_searched": {
         "budget_respecting_zero_sum_C_pair_pulse": 1920,
         "native_spontaneous_no_driver": 48,
         "temporary_parameter_history_after_C_pair_pulse": 7680
       },
       "primary_search_native_steps": 45696,
-      "resolved_attempt_count": 9648,
       "resolved_candidate_count": 0,
+      "scientifically_clean_bounded_negative_attempt_count": 27,
       "search_budget_consumed_fraction": 1.0,
       "source_reconstruction_failure_count": 0,
-      "unresolved_candidate_count": 0
+      "terminal_classification_is_scientific_constructibility_resolution": false,
+      "terminally_classified_attempt_count": 9648,
+      "unresolved_candidate_count": 0,
+      "zero_clean_effective_stratum_count": 2155
     },
     "source_chain": [
       {
@@ -287,8 +623,35 @@
     ],
     "source_i4_candidate_set_digest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
     "source_i4_candidate_set_status": "accepted_empty_no_runtime_reached_candidate",
+    "specification_reconciliation_handoff": {
+      "evidence_profile_role": "bounded_B1_and_B2_counts_thresholds_accessibility_and_not_testable_results",
+      "evidence_profile_target": "specs/grc-9-v3-evidence-profile.md",
+      "extension_selected": false,
+      "forbidden_specification_upgrades": [
+        "GRC9V3_cannot_form_retained_carriers",
+        "GRC9V3_has_no_retention_globally",
+        "GRC9V3_requires_a_new_M_field",
+        "W_must_be_temporalized",
+        "current_must_be_independently_relaxing",
+        "retention_exists_only_through_events_or_topology_change",
+        "B2_selected_a_substrate_extension"
+      ],
+      "future_extension_boundary": "revision_distinct_profile_not_reinterpretation_of_legacy_GRC9V3",
+      "normative_spec_target": "specs/grc-9-v3-spec.md",
+      "route_status": "ready_for_separate_GRC9V3_specification_reconciliation",
+      "supported_semantic_boundaries": [
+        "GRC9V3_is_a_synchronous_graph_RC_realization_with_immediate_constitutive_state_recurrence",
+        "C_is_the_admitted_independent_complete_step_coordinate_on_verified_smooth_fixed_topology_strata",
+        "W_and_J_are_load_bearing_stage_surfaces_not_established_independent_slow_coordinates",
+        "sign_even_old_current_squared_into_W_does_not_retain_historical_current_orientation",
+        "GRC9V3_does_not_specify_a_distinct_retained_state_primitive_projector_or_update_law",
+        "W_must_not_be_relabelled_as_durable_memory_or_retention_from_stage_local_current_contribution_alone",
+        "ordinary_C_persistence_does_not_by_itself_establish_a_retained_historical_sector",
+        "B2_found_no_confirmed_natively_formed_carrier_under_its_bounded_admissible_clean_lane"
+      ]
+    },
     "status": "passed"
   },
-  "payload_sha256": "e2404cb6cb0c62d2e88fd22492f7f8674ca97c088758726bbb431282209dfbda",
-  "schema_version": "b2_i8_classification_and_handoff_v1"
+  "payload_sha256": "64236a65bc9bb8915df850f835c5da2633eaa0d42a46d18d557feb6b5e97e432",
+  "schema_version": "b2_i8_classification_and_handoff_v2"
 }
