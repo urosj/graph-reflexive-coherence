@@ -9,7 +9,7 @@ or specified.
 
 ```text
 experiment_id = B2-GR
-status = iteration_3_execution_package_prepared
+status = iteration_3_active_nulls_passed_awaiting_human_review
 source_experiment = B1-GR
 source_closeout = accepted_GRV-C6
 source_maximum_retention_rung = GRR2
@@ -43,7 +43,15 @@ assigned_closeout_rung = B2-C1
 ready_for_iteration_3 = true
 iteration_3_required_active_null_count = 52
 iteration_3_threshold_calibration_recipe_count = 4
-iteration_3_execution = pending_clean_revision
+iteration_3_input_revision = 1e623e68a062bbaaccd25f144de9601b15e05e98
+iteration_3_checks = 29_of_29_passed
+iteration_3_failed_closed_rows = 52
+iteration_3_failed_open_rows = 0
+iteration_3_all_threshold_calibrations_usable = true
+iteration_3_artifact_payload_sha256 = 7260e5e2e1b23a97554107ad72f39f47f0e758a84797d5a9e3931ce1f5b97e0b
+iteration_3_threshold_payload_sha256 = c71388f43c5e16718aa0405bca5d383343193055363e0d6220592d2d6e7a55fa
+iteration_3_receipt_payload_sha256 = 340ba221310d147151f00a3e91545ea2bc99364cfce94e09e7aa1ae7f560920a
+iteration_3_execution = passed_awaiting_human_review
 iteration_3_acceptance_anchor_created = false
 ready_for_iteration_4 = false_pending_I3_execution_and_acceptance
 extension_target_selected = false

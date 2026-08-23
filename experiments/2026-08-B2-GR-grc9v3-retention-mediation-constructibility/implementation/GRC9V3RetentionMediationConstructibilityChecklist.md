@@ -222,20 +222,20 @@ Interpretation:
 
 ## Iteration 3 - Active Nulls And Failure Baselines
 
-- [ ] Instantiate every required active null from the plan.
-- [ ] Require every null to fail closed.
-- [ ] Record `failed_closed` as blocker-triggered claim rejection.
-- [ ] Record `failed_open` as a gate failure that blocks positive probes.
-- [ ] Keep all nulls `derived_report_only` or fixture-only.
-- [ ] Assign no positive GRR rung.
-- [ ] Confirm eventful persistence, zero-margin witnesses, hidden-state mismatch, projector selection, and stage-skipping bypass all fail closed.
-- [ ] Preserve explicit control families without adding new post-I2 scientific rules.
-- [ ] Instantiate all four frozen I2 threshold-calibration recipes from committed null fixtures.
-- [ ] Record calibration as a pre-positive admission floor, not a runtime measurement or evidence source.
-- [ ] Require later positive rows to retain row-local numerical-uncertainty gates.
-- [ ] Block I4 if any calibration is missing, unusable, or above its frozen maximum.
-- [ ] Confirm readiness for Iteration 4 only if every required null fails closed.
-- [ ] Mark the result `B2-C2-ready`; assign `B2-C2` only through human-reviewed acceptance.
+- [x] Instantiate every required active null from the plan.
+- [x] Require every null to fail closed.
+- [x] Record `failed_closed` as blocker-triggered claim rejection.
+- [x] Record `failed_open` as a gate failure that blocks positive probes.
+- [x] Keep all nulls `derived_report_only` or fixture-only.
+- [x] Assign no positive GRR rung.
+- [x] Confirm eventful persistence, zero-margin witnesses, hidden-state mismatch, projector selection, and stage-skipping bypass all fail closed.
+- [x] Preserve explicit control families without adding new post-I2 scientific rules.
+- [x] Instantiate all four frozen I2 threshold-calibration recipes from committed null fixtures.
+- [x] Record calibration as a pre-positive admission floor, not a runtime measurement or evidence source.
+- [x] Require later positive rows to retain row-local numerical-uncertainty gates.
+- [x] Block I4 if any calibration is missing, unusable, or above its frozen maximum.
+- [x] Confirm readiness for Iteration 4 only if every required null fails closed.
+- [x] Mark the result `B2-C2-ready`; assign `B2-C2` only through human-reviewed acceptance.
 
 Expected artifacts:
 
@@ -246,6 +246,40 @@ outputs/gates/b2_i3_result_receipt.json
 outputs/gates/b2_i3_acceptance_anchor.json
 reports/b2_i3_active_nulls.md
 ```
+
+### Iteration 3 Result - Awaiting Human Review
+
+```text
+status = passed
+acceptance_state = awaiting_scientific_review
+input_execution_revision = 1e623e68a062bbaaccd25f144de9601b15e05e98
+checks = 29/29 passed
+failed_checks = []
+active_null_row_count = 52
+failed_closed_row_count = 52
+failed_open_row_count = 0
+control_family_count = 7
+threshold_calibration_recipe_count = 4
+all_threshold_calibrations_usable = true
+artifact_payload_sha256 = 7260e5e2e1b23a97554107ad72f39f47f0e758a84797d5a9e3931ce1f5b97e0b
+threshold_calibration_payload_sha256 = c71388f43c5e16718aa0405bca5d383343193055363e0d6220592d2d6e7a55fa
+receipt_payload_sha256 = 340ba221310d147151f00a3e91545ea2bc99364cfce94e09e7aa1ae7f560920a
+acceptance_anchor_created = false
+B2_positive_evidence_opened = false
+GRR_rung_assigned = false
+B2_closeout_rung_assigned = false
+B2_closeout_ceiling = B2-C2-ready
+ready_for_I4 = false_pending_I3_acceptance
+```
+
+Interpretation:
+
+- Every null frozen by accepted I2 is instantiated exactly once and rejects its false-positive path. `failed_closed` means the blocker worked; no positive control was executed or failed.
+- Nulls are fixture/report-only and contain no source-current inputs or positive artifacts. They can reject invalid evidence paths but cannot support GRR formation, persistence, slow-cluster, mediation, controls, or replay.
+- The seven control families cover slow/temporal admission, branch relation, formation/full-path provenance, probe mediation, reset/swap/bypass, carrier lineage/equivalence, and search/claim governance.
+- The four threshold values are preregistered admission floors derived from inherited tolerance bases or the frozen dimensionless floor. They are not empirical noise estimates or runtime evidence.
+- Later positive rows must apply both these floors and their row-local numerical uncertainty. Any unusable calibration would have blocked I4; none did.
+- I3 supports only the false-positive-control portion of B2. Human acceptance may assign `B2-C2` and open the I4 unchanged-runtime preparation search.
 
 ## Iteration 4 - Native Preparation And Reachability Search
 

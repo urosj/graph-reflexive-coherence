@@ -1,0 +1,41 @@
+{
+  "blocked_gates": [
+    "B2-I4",
+    "B2-I5",
+    "B2-I6",
+    "B2-I7",
+    "B2-I8"
+  ],
+  "claim_ceiling": "B2-C2-ready_active_nulls_only_no_positive_constructibility_evidence",
+  "config_path": "experiments/2026-08-B2-GR-grc9v3-retention-mediation-constructibility/configs/b2_i3_active_null_contract.json",
+  "config_sha256": "45e0eadf12eb800763ea39d440c6b0192b16aa582710391b503d8dec130c14d8",
+  "gate_id": "B2-I3",
+  "generating_script_path": "experiments/2026-08-B2-GR-grc9v3-retention-mediation-constructibility/scripts/build_i3_active_nulls.py",
+  "generating_script_sha256": "b4a9ac51246794e89b669c7c0d001a795168aafcca4f0d85c75f80f482c1a8b8",
+  "input_execution_revision": "1e623e68a062bbaaccd25f144de9601b15e05e98",
+  "output_artifact_digests": {
+    "experiments/2026-08-B2-GR-grc9v3-retention-mediation-constructibility/outputs/b2_i3_active_nulls.json": "54c98dd6e779bca52800f5f7a641de01931bcbd705c16e065de26ed5acbd19a1",
+    "experiments/2026-08-B2-GR-grc9v3-retention-mediation-constructibility/outputs/b2_i3_threshold_calibration.json": "5847627a9d0ac2304c1d4d124f55182865bc66d5ed11e7dcd472bcbe9de62ca5",
+    "experiments/2026-08-B2-GR-grc9v3-retention-mediation-constructibility/reports/b2_i3_active_nulls.md": "f3ec5009b59d25d780e207a7d3371564a40aa116dca078459fac806936cf2e11"
+  },
+  "output_payload_sha256": "7260e5e2e1b23a97554107ad72f39f47f0e758a84797d5a9e3931ce1f5b97e0b",
+  "prerequisite_acceptance_anchors": [
+    {
+      "acceptance_status": "accepted",
+      "assigned_closeout_rung": "B2-C1",
+      "path": "experiments/2026-08-B2-GR-grc9v3-retention-mediation-constructibility/outputs/gates/b2_i2_acceptance_anchor.json",
+      "result_revision": "b0584b9b61eadbcd34255fa07d5afde05370bb77",
+      "sha256": "f803961b2a8ef414dd0ba8a79f1a27f208bb44d6eac06fa143cf0f0df5f062c2"
+    }
+  ],
+  "prerequisite_result_receipt_digests": [
+    {
+      "path": "experiments/2026-08-B2-GR-grc9v3-retention-mediation-constructibility/outputs/gates/b2_i2_result_receipt.json",
+      "receipt_payload_sha256": "764c2f42ef6d28b4dda6c6d9f18e829d317c2ec60687e255597f79819185b088",
+      "sha256": "f02ada12ffd2d8ed0d97214a053b0996a7da7c986ccb54bfc843fdca04fab2c6"
+    }
+  ],
+  "receipt_payload_sha256": "340ba221310d147151f00a3e91545ea2bc99364cfce94e09e7aa1ae7f560920a",
+  "status": "awaiting_scientific_review",
+  "threshold_calibration_payload_sha256": "c71388f43c5e16718aa0405bca5d383343193055363e0d6220592d2d6e7a55fa"
+}
