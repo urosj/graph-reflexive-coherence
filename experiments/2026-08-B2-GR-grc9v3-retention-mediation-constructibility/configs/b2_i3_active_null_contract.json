@@ -1,0 +1,281 @@
+{
+  "schema_version": "b2_i3_active_null_contract_v3",
+  "source_gate": {
+    "acceptance_anchor_path": "experiments/2026-08-B2-GR-grc9v3-retention-mediation-constructibility/outputs/gates/b2_i2_acceptance_anchor.json",
+    "required_acceptance_status": "accepted",
+    "required_closeout_rung": "B2-C1",
+    "required_ready_for_iteration_3": true
+  },
+  "supersession": {
+    "supersedes_result_revision": "b27d89ab5b0e022b77c61ec71dcbfa1608052ac5",
+    "supersedes_artifact_payload_sha256": "52384117c91e10ba053eec2d0edbb451f4c487162c5a1fac4dcf2b77f801d4c4",
+    "supersedes_receipt_payload_sha256": "36dc10d022799e8e3f88e3bcaa6b42006096c7ee2a12388a405cdf3a0e4f67fe",
+    "prior_acceptance_state": "awaiting_scientific_review",
+    "prior_acceptance_anchor_created": false,
+    "supersession_reason": "validator_review_found_claim_rung_robustness_route_and_duplicate_effect_conflation"
+  },
+  "supersession_history": [
+    {
+      "result_revision": "99e814ffb03d4f71fe590f9842938605ba617a0e",
+      "artifact_payload_sha256": "7260e5e2e1b23a97554107ad72f39f47f0e758a84797d5a9e3931ce1f5b97e0b",
+      "receipt_payload_sha256": "340ba221310d147151f00a3e91545ea2bc99364cfce94e09e7aa1ae7f560920a",
+      "reason": "reject_all_specificity_and_adjudicator_binding_gaps"
+    },
+    {
+      "result_revision": "b27d89ab5b0e022b77c61ec71dcbfa1608052ac5",
+      "artifact_payload_sha256": "52384117c91e10ba053eec2d0edbb451f4c487162c5a1fac4dcf2b77f801d4c4",
+      "receipt_payload_sha256": "36dc10d022799e8e3f88e3bcaa6b42006096c7ee2a12388a405cdf3a0e4f67fe",
+      "reason": "claim_rung_robustness_route_and_duplicate_effect_conflation"
+    }
+  ],
+  "fixture_semantics": {
+    "schema_instantiation_only": true,
+    "derived_report_only": true,
+    "positive_evidence_admissible": false,
+    "source_current_inputs": [],
+    "artifact_manifest": [],
+    "observed_result_semantics": "preregistered_false_positive_condition_instantiated_as_admission_fixture_not_runtime_measurement",
+    "failed_closed_meaning": "blocker_triggered_and_dependent_claim_correctly_rejected",
+    "failed_open_meaning": "blocker_triggered_but_dependent_claim_remained_admitted",
+    "maximum_GRR_rung": "not_assigned"
+  },
+  "adjudicator_contract": {
+    "required_schema_version": "b2_constructibility_adjudicator_v2",
+    "later_iterations_must_use_same_adjudicator_digest": true,
+    "adjudicator_change_requires_I3_rerun": true,
+    "scientific_rule_change_requires_I2_revision_and_reacceptance": true
+  },
+  "effect_scope_contract": {
+    "allowed_scopes": [
+      "rung_blocker",
+      "claim_only_blocker",
+      "robustness_only",
+      "route_only",
+      "lane_specific_blocker",
+      "duplicate_only"
+    ],
+    "default_scope": "rung_blocker",
+    "claim_only_blocker_rules": [
+      "label_only_readback",
+      "retention_as_memory_or_learning",
+      "zero_probe_control_relabelled_as_core_passive_null",
+      "unrelated_state_residual_as_reset_swap_or_bypass_failure"
+    ],
+    "robustness_only_rules": [
+      "failure_to_generalize_across_branches_relabelled_as_witness_failure"
+    ],
+    "route_only_rules": [
+      "failed_search_as_impossibility",
+      "extension_selected_by_missing_symbol",
+      "search_budget_migrated_after_outcome",
+      "discovery_optimized_on_future_gate_adjudication_score",
+      "budget_consumed_as_resolved_coverage"
+    ],
+    "lane_specific_blocker_rules": [
+      "branch_tangent_relocation_as_retained_carrier",
+      "frozen_W_sensitivity_as_native_full_step_mediation",
+      "parameter_continuation_tangent_relabelled_as_same_configuration_branch_relocation",
+      "regenerated_W_from_retained_C_relabelled_as_durable_W_carrier",
+      "event_or_topology_change_relabelled_as_fixed_topology_retention",
+      "budget_projection_or_clipping_supported_persistence",
+      "eventful_preparation_as_clean_primary_lane",
+      "synthetic_internal_probe_as_native_GRR4"
+    ],
+    "duplicate_only_rules": [
+      "overlapping_carrier_representations_as_independent_witnesses",
+      "distinct_histories_same_state_as_independent_retention_witnesses"
+    ],
+    "scope_lists_must_be_disjoint": true,
+    "unlisted_rules_use_default_scope": true
+  },
+  "rule_dispositions": {
+    "finite_horizon_persistence_as_slow_cluster": {"failure_disposition": "bounded_negative", "alternative_classification": "finite_horizon_persistence_only"},
+    "branch_tangent_relocation_as_retained_carrier": {"failure_disposition": "bounded_negative", "alternative_classification": "branch_tangent_neutral_displacement"},
+    "synthetic_only_preparation_as_runtime_reached": {"failure_disposition": "source_or_provenance_failure"},
+    "driver_authored_carrier_relabelled_as_native_write": {"failure_disposition": "source_or_provenance_failure"},
+    "off_manifold_internal_state_as_native_carrier": {"failure_disposition": "invalid_candidate"},
+    "different_no_probe_baseline_as_mediation": {"failure_disposition": "required_assumption_failed"},
+    "frozen_W_sensitivity_as_native_full_step_mediation": {"failure_disposition": "bounded_negative", "alternative_classification": "reduced_frozen_W_diagnostic"},
+    "probe_main_effect_without_carrier_probe_interaction": {"failure_disposition": "required_assumption_failed"},
+    "full_noncarrier_causal_state_mismatch": {"failure_disposition": "required_assumption_failed"},
+    "forming_intervention_not_exhausted": {"failure_disposition": "required_assumption_failed"},
+    "reset_does_not_remove_effect": {"failure_disposition": "required_control_failed"},
+    "swap_does_not_follow_carrier": {"failure_disposition": "required_control_failed"},
+    "bypass_preserves_claimed_effect": {"failure_disposition": "required_control_failed"},
+    "post_hoc_branch_selection": {"failure_disposition": "source_or_provenance_failure"},
+    "post_hoc_threshold_selection": {"failure_disposition": "source_or_provenance_failure"},
+    "label_only_readback": {"failure_disposition": "source_or_provenance_failure"},
+    "retention_as_memory_or_learning": {"failure_disposition": "bounded_negative", "alternative_classification": "retained_carrier_without_semantic_memory"},
+    "failed_search_as_impossibility": {"failure_disposition": "search_unresolved"},
+    "extension_selected_by_missing_symbol": {"failure_disposition": "source_or_provenance_failure"},
+    "ordinary_slow_C_relaxation_relabelled_as_history_specific_carrier": {"failure_disposition": "bounded_negative", "alternative_classification": "ordinary_branch_slow_relaxation"},
+    "parameter_continuation_tangent_relabelled_as_same_configuration_branch_relocation": {"failure_disposition": "bounded_negative", "alternative_classification": "parameter_continuation_tangent"},
+    "conservation_or_gauge_mode_relabelled_as_retained_slow_cluster": {"failure_disposition": "bounded_negative", "alternative_classification": "excluded_conservation_or_gauge_mode"},
+    "candidate_selected_under_one_metric_then_projector_changed_to_capture_it": {"failure_disposition": "source_or_provenance_failure"},
+    "projector_recomputed_to_follow_candidate_across_horizons": {"failure_disposition": "required_assumption_failed"},
+    "artificial_independent_W_or_J_eigensystem_relabelled_as_admitted_temporal_mode": {"failure_disposition": "invalid_candidate"},
+    "externally_maintained_difference_relabelled_as_post_input_retention": {"failure_disposition": "bounded_negative", "alternative_classification": "externally_maintained_difference"},
+    "regenerated_W_from_retained_C_relabelled_as_durable_W_carrier": {"failure_disposition": "bounded_negative", "alternative_classification": "regenerated_carrier_from_retained_state"},
+    "event_or_topology_change_relabelled_as_fixed_topology_retention": {"failure_disposition": "outside_envelope", "alternative_classification": "eventful_history_persistence"},
+    "budget_projection_or_clipping_supported_persistence": {"failure_disposition": "outside_envelope", "alternative_classification": "constraint_supported_history"},
+    "probe_changes_carrier_before_the_measured_readout": {"failure_disposition": "required_assumption_failed"},
+    "matched_pair_differs_in_hidden_causal_state_or_administrative_phase": {"failure_disposition": "required_assumption_failed"},
+    "cross_lineage_rung_composition_relabelled_as_GRR5": {"failure_disposition": "required_assumption_failed"},
+    "zero_probe_control_relabelled_as_core_passive_null": {"failure_disposition": "bounded_negative", "alternative_classification": "GRR4_zero_probe_control_only"},
+    "synthetic_reset_or_swap_outside_constitutive_manifold_treated_as_native_control": {"failure_disposition": "invalid_candidate"},
+    "bypass_implemented_by_skipping_native_runtime_stage": {"failure_disposition": "invalid_candidate"},
+    "single_pathological_zero_margin_witness_treated_as_clean_constructibility": {"failure_disposition": "bounded_negative"},
+    "failure_to_generalize_across_branches_relabelled_as_witness_failure": {"failure_disposition": "bounded_negative", "alternative_classification": "clean_single_witness_with_bounded_robustness"},
+    "no_matched_sham_as_native_formation": {"failure_disposition": "required_assumption_failed"},
+    "ordinary_drift_against_original_branch_as_native_write": {"failure_disposition": "bounded_negative", "alternative_classification": "ordinary_matched_sham_drift"},
+    "eventful_preparation_as_clean_primary_lane": {"failure_disposition": "outside_envelope", "alternative_classification": "eventful_history_persistence"},
+    "search_budget_migrated_after_outcome": {"failure_disposition": "source_or_provenance_failure"},
+    "discovery_optimized_on_future_gate_adjudication_score": {"failure_disposition": "source_or_provenance_failure"},
+    "slow_cluster_exists_without_formation_specific_excess_occupancy": {"failure_disposition": "bounded_negative", "alternative_classification": "ordinary_slow_mode_occupied_without_formation_attribution"},
+    "overlapping_carrier_representations_as_independent_witnesses": {"failure_disposition": "duplicate_candidate", "alternative_classification": "carrier_equivalent_representation"},
+    "serialized_diagnostic_surface_as_causal_carrier": {"failure_disposition": "invalid_candidate"},
+    "insufficient_branch_manifold_coverage_as_relocation_rejected": {"failure_disposition": "search_unresolved", "alternative_classification": "unresolved_branch_relation"},
+    "synthetic_internal_probe_as_native_GRR4": {"failure_disposition": "source_or_provenance_failure"},
+    "response_norm_difference_without_oriented_interaction": {"failure_disposition": "required_assumption_failed"},
+    "unrelated_state_residual_as_reset_swap_or_bypass_failure": {"failure_disposition": "bounded_negative", "alternative_classification": "control_target_passed_with_unrelated_state_residual"},
+    "control_null_false_or_missing_collapsed_into_status": {"failure_disposition": "invalid_candidate"},
+    "budget_consumed_as_resolved_coverage": {"failure_disposition": "search_unresolved"},
+    "distinct_histories_same_state_as_independent_retention_witnesses": {"failure_disposition": "duplicate_candidate", "alternative_classification": "formation_robustness_only"}
+  },
+  "control_families": [
+    {
+      "family_id": "slow_cluster_and_temporal_operator",
+      "blocked_gate_family": "GRR3_slow_cluster_admission",
+      "blocked_rungs": ["GRR3", "GRR4", "GRR5"],
+      "null_ids": [
+        "finite_horizon_persistence_as_slow_cluster",
+        "ordinary_slow_C_relaxation_relabelled_as_history_specific_carrier",
+        "conservation_or_gauge_mode_relabelled_as_retained_slow_cluster",
+        "candidate_selected_under_one_metric_then_projector_changed_to_capture_it",
+        "projector_recomputed_to_follow_candidate_across_horizons",
+        "artificial_independent_W_or_J_eigensystem_relabelled_as_admitted_temporal_mode",
+        "slow_cluster_exists_without_formation_specific_excess_occupancy"
+      ]
+    },
+    {
+      "family_id": "branch_relation_and_search_coverage",
+      "blocked_gate_family": "same_configuration_branch_relation",
+      "blocked_rungs": ["GRR3", "GRR4", "GRR5"],
+      "null_ids": [
+        "branch_tangent_relocation_as_retained_carrier",
+        "post_hoc_branch_selection",
+        "parameter_continuation_tangent_relabelled_as_same_configuration_branch_relocation",
+        "insufficient_branch_manifold_coverage_as_relocation_rejected"
+      ]
+    },
+    {
+      "family_id": "formation_provenance_and_full_path",
+      "blocked_gate_family": "GRR1_native_formation_and_GRR2_persistence",
+      "blocked_rungs": ["GRR1", "GRR2", "GRR3", "GRR4", "GRR5"],
+      "null_ids": [
+        "synthetic_only_preparation_as_runtime_reached",
+        "driver_authored_carrier_relabelled_as_native_write",
+        "off_manifold_internal_state_as_native_carrier",
+        "forming_intervention_not_exhausted",
+        "externally_maintained_difference_relabelled_as_post_input_retention",
+        "regenerated_W_from_retained_C_relabelled_as_durable_W_carrier",
+        "event_or_topology_change_relabelled_as_fixed_topology_retention",
+        "budget_projection_or_clipping_supported_persistence",
+        "no_matched_sham_as_native_formation",
+        "ordinary_drift_against_original_branch_as_native_write",
+        "eventful_preparation_as_clean_primary_lane"
+      ]
+    },
+    {
+      "family_id": "probe_provenance_matching_and_interaction",
+      "blocked_gate_family": "GRR4_matched_probe_mediation",
+      "blocked_rungs": ["GRR4", "GRR5"],
+      "null_ids": [
+        "different_no_probe_baseline_as_mediation",
+        "frozen_W_sensitivity_as_native_full_step_mediation",
+        "probe_main_effect_without_carrier_probe_interaction",
+        "full_noncarrier_causal_state_mismatch",
+        "probe_changes_carrier_before_the_measured_readout",
+        "matched_pair_differs_in_hidden_causal_state_or_administrative_phase",
+        "zero_probe_control_relabelled_as_core_passive_null",
+        "synthetic_internal_probe_as_native_GRR4",
+        "response_norm_difference_without_oriented_interaction"
+      ]
+    },
+    {
+      "family_id": "reset_swap_bypass_and_control_states",
+      "blocked_gate_family": "GRR5_required_controls",
+      "blocked_rungs": ["GRR5"],
+      "null_ids": [
+        "reset_does_not_remove_effect",
+        "swap_does_not_follow_carrier",
+        "bypass_preserves_claimed_effect",
+        "synthetic_reset_or_swap_outside_constitutive_manifold_treated_as_native_control",
+        "bypass_implemented_by_skipping_native_runtime_stage",
+        "unrelated_state_residual_as_reset_swap_or_bypass_failure",
+        "control_null_false_or_missing_collapsed_into_status"
+      ]
+    },
+    {
+      "family_id": "carrier_lineage_and_replication",
+      "blocked_gate_family": "same_carrier_lineage_and_independent_witness_accounting",
+      "blocked_rungs": ["GRR3", "GRR4", "GRR5"],
+      "null_ids": [
+        "cross_lineage_rung_composition_relabelled_as_GRR5",
+        "overlapping_carrier_representations_as_independent_witnesses",
+        "serialized_diagnostic_surface_as_causal_carrier",
+        "distinct_histories_same_state_as_independent_retention_witnesses"
+      ]
+    },
+    {
+      "family_id": "selection_threshold_claim_and_coverage_governance",
+      "blocked_gate_family": "claim_hygiene_and_search_governance",
+      "blocked_rungs": ["GRR1", "GRR2", "GRR3", "GRR4", "GRR5"],
+      "null_ids": [
+        "post_hoc_threshold_selection",
+        "label_only_readback",
+        "retention_as_memory_or_learning",
+        "failed_search_as_impossibility",
+        "extension_selected_by_missing_symbol",
+        "single_pathological_zero_margin_witness_treated_as_clean_constructibility",
+        "failure_to_generalize_across_branches_relabelled_as_witness_failure",
+        "search_budget_migrated_after_outcome",
+        "discovery_optimized_on_future_gate_adjudication_score",
+        "budget_consumed_as_resolved_coverage"
+      ]
+    }
+  ],
+  "threshold_null_fixtures": [
+    {
+      "threshold_id": "formation_contrast_floor_v1",
+      "fixture_values": [0.0, 0.0, 0.0],
+      "fixture_uncertainty": 1e-10,
+      "fixture_uncertainty_basis": "maximum_inherited_C_and_W_absolute_replay_tolerance",
+      "fixture_role": "matched_sham_and_no_forming_action"
+    },
+    {
+      "threshold_id": "formation_specific_occupancy_excess_floor_v1",
+      "fixture_values": [0.0, 0.0, 0.0],
+      "fixture_uncertainty": 1e-5,
+      "fixture_uncertainty_basis": "I2_dimensionless_minimum_floor_divided_by_safety_multiplier_not_empirical_noise",
+      "fixture_role": "ordinary_slow_mode_and_sham_occupancy"
+    },
+    {
+      "threshold_id": "oriented_interaction_component_floor_v1",
+      "fixture_values": [0.0, 0.0, 0.0],
+      "fixture_uncertainty": 1e-10,
+      "fixture_uncertainty_basis": "inherited_J_absolute_replay_tolerance",
+      "fixture_role": "zero_probe_synthetic_probe_and_noncarrier_mismatch"
+    },
+    {
+      "threshold_id": "control_target_residual_ceiling_v1",
+      "fixture_values": [0.0, 0.0, 0.0],
+      "fixture_uncertainty": 1e-9,
+      "fixture_uncertainty_basis": "maximum_inherited_Phi_G_and_identity_absolute_replay_tolerance",
+      "fixture_role": "structurally_valid_control_null"
+    }
+  ],
+  "rounding_decimal_places": 12,
+  "calibration_role": "pre_positive_admission_floor_not_source_current_runtime_measurement",
+  "positive_search_must_also_apply_row_numerical_uncertainty": true
+}
