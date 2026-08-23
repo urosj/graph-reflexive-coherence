@@ -1,11 +1,15 @@
 {
-  "schema_version": "b2_i8_closeout_contract_v1",
+  "schema_version": "b2_i8_closeout_contract_v2",
   "gate_id": "B2-I8",
   "prerequisites": {
     "i4_acceptance_anchor_path": "experiments/2026-08-B2-GR-grc9v3-retention-mediation-constructibility/outputs/gates/b2_i4_acceptance_anchor.json",
     "i4_acceptance_anchor_sha256": "ce8b09ff7a54658ee62180ce5446579059611545ee4ba3c47ea88690aa4d5fe3",
     "required_i4_candidate_set_status": "accepted_empty_no_runtime_reached_candidate",
-    "required_i4_closeout_rung": "B2-C3"
+    "required_i4_closeout_rung": "B2-C3",
+    "empty_path_audit_path": "experiments/2026-08-B2-GR-grc9v3-retention-mediation-constructibility/outputs/b2_i8_empty_path_audit.json",
+    "empty_path_audit_sha256": "7caa0369b90f83d57495798fbbdff1d6051b45fe3588b13244c8b8101681dd74",
+    "empty_path_audit_payload_sha256": "7711e5c88a5cd536b53e814793a730c2acc20c0180ba2b7f4eef5fb94709268a",
+    "full_suite_verification_path": "experiments/2026-08-B2-GR-grc9v3-retention-mediation-constructibility/outputs/gates/b2_i8_full_suite_verification.json"
   },
   "empty_path_lifecycle": [
     {
@@ -51,7 +55,7 @@
   },
   "closeout_decision": {
     "primary_route": "unchanged_GRC9V3_search_remains_open",
-    "secondary_route": "analysis_or_identifiability_debt",
+    "secondary_route": "localized_formation_attribution_precision_debt_single_subthreshold_row",
     "extension_route": "no_extension_route_selected",
     "global_impossibility_established": false,
     "localized_missing_causal_role_established": false,
@@ -61,6 +65,43 @@
     "B1_L_execution_authorized": false,
     "N32_selection_authorized": false
   },
+  "bounded_open_dimensions": {
+    "eligible_future_work": [
+      "principled_upstream_preparation_family_expansion_for_the_same_clean_target",
+      "targeted_formation_attribution_precision_for_the_single_above_uncertainty_subthreshold_row",
+      "separate_constraint_or_categorical_history_dependence_investigation"
+    ],
+    "not_authorized": [
+      "arbitrary_parameter_widening_until_a_witness_appears",
+      "synthetic_internal_carrier_insertion",
+      "automatic_runtime_extension",
+      "eventful_or_constraint_history_as_clean_GRR3_evidence",
+      "B1_L_execution",
+      "N32_selection"
+    ]
+  },
+  "extension_trigger_matrix": [
+    {
+      "extension_target": "retained_carrier",
+      "status": "not_selected",
+      "reason": "no_native_formation_or_retention_lineage_was_admitted"
+    },
+    {
+      "extension_target": "read_path",
+      "status": "not_selected",
+      "reason": "no_GRR3_carrier_lineage_existed_for_mediation_testing"
+    },
+    {
+      "extension_target": "current_temporalization",
+      "status": "not_selected",
+      "reason": "not_localized_by_the_B2_formation_search"
+    },
+    {
+      "extension_target": "geometry_mobility_split",
+      "status": "not_selected",
+      "reason": "not_implicated_by_the_empty_formation_search"
+    }
+  ],
   "required_claim_boundary": {
     "maximum_new_GRR_rung": "none",
     "inherited_B1_GR_context_ceiling": "GRR2",
