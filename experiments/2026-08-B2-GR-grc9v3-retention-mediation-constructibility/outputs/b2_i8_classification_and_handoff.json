@@ -1,0 +1,294 @@
+{
+  "metadata": {
+    "generating_command": ".venv/bin/python experiments/2026-08-B2-GR-grc9v3-retention-mediation-constructibility/scripts/build_i8_classification_and_handoff.py",
+    "reproducibility_class": "byte_reproducible"
+  },
+  "payload": {
+    "B2_closeout_ceiling": "B2-C6-ready",
+    "B2_closeout_rung_assigned": false,
+    "acceptance_state": "awaiting_scientific_review",
+    "bounded_alternative_mechanisms": [
+      {
+        "attempt_count": 1706,
+        "mechanism": "directly_authored_or_unidentifiable_apparent_carrier",
+        "role": "typed_nonpositive_result_not_native_formation"
+      },
+      {
+        "attempt_count": 7915,
+        "failure_mode_counts": {
+          "categorical_transition_in_first_post_driver_transition": 144,
+          "categorical_transition_in_preparation_history": 2064,
+          "constraint_supported_first_post_driver_transition": 3386,
+          "constraint_supported_preparation_history": 5648,
+          "positive_coherence_interior_not_preserved": 4
+        },
+        "mechanism": "eventful_categorical_or_constraint_supported_history",
+        "role": "observed_alternative_path_family_outside_clean_primary_lane"
+      },
+      {
+        "attempt_count": 27,
+        "mechanism": "clean_resolved_no_attributable_carrier_above_floor",
+        "role": "bounded_negative_inside_frozen_clean_lane_only"
+      },
+      {
+        "branch_count": 22,
+        "mechanism": "clean_lane_inaccessible_branch",
+        "role": "coverage_debt_not_negative_constructibility_evidence"
+      }
+    ],
+    "causal_role_classification": {
+      "GRR3_candidate_count": 0,
+      "GRR4_candidate_count": 0,
+      "GRR5_candidate_count": 0,
+      "branch_relation": "not_testable_no_runtime_reached_I4_candidate",
+      "closed_loop_effect": "not_established_in_B2",
+      "eventful_or_constraint_supported_history_dependence": "observed_outside_clean_primary_lane_not_classified_as_persistence",
+      "global_max_GRR": "none_new_in_B2",
+      "global_max_GRR_derivation": "max_row_local_max_GRR_over_empty_eligible_candidate_set_is_none",
+      "inherited_B1_GR_context_ceiling": "GRR2",
+      "maximum_new_GRR_rung": "none",
+      "mediation_without_GRR3": "not_observed_on_B2_candidate_lineage",
+      "persistence_without_mediation": "not_observed_on_B2_candidate_lineage",
+      "read_effect": "not_testable_no_GRR3_lineage",
+      "retention_effect": "not_testable_no_runtime_reached_I4_candidate",
+      "row_local_max_GRR": [],
+      "write_effect": "not_established_in_B2"
+    },
+    "claim_boundary": {
+      "B2_positive_evidence_opened": false,
+      "agency": false,
+      "extension_necessity": false,
+      "global_impossibility": false,
+      "inherited_B1_GR_context_ceiling": "GRR2",
+      "learning": false,
+      "maximum_new_GRR_rung": "none",
+      "mediation_established": false,
+      "memory": false,
+      "retention_established": false
+    },
+    "claim_ceiling": "bounded_unchanged_GRC9V3_constructibility_search_with_empty_runtime_reached_candidate_set_no_impossibility_or_extension_selection",
+    "closeout_decision": {
+      "B1_L_execution_authorized": false,
+      "N32_selection_authorized": false,
+      "extension_route": "no_extension_route_selected",
+      "extension_selected": false,
+      "global_impossibility_established": false,
+      "localized_missing_causal_role_established": false,
+      "primary_route": "unchanged_GRC9V3_search_remains_open",
+      "runtime_change_authorized": false,
+      "secondary_route": "analysis_or_identifiability_debt",
+      "spec_extension_authorized": false
+    },
+    "downstream_gate_lifecycle": [
+      {
+        "GRR_rung_assigned": false,
+        "blocked_rung": "GRR3",
+        "eligible_candidate_count": 0,
+        "execution_status": "not_applicable_empty_I4_candidate_set",
+        "failure_status": false,
+        "gate_id": "B2-I5",
+        "input_execution_revision": "f433e9510128ccb233987f12d936f8af1d99e277",
+        "lifecycle_role": "accounting_only_not_scientific_evidence",
+        "positive_evidence_generated": false,
+        "scientific_gate_executed": false,
+        "source_i4_acceptance_anchor_path": "experiments/2026-08-B2-GR-grc9v3-retention-mediation-constructibility/outputs/gates/b2_i4_acceptance_anchor.json",
+        "source_i4_acceptance_anchor_sha256": "ce8b09ff7a54658ee62180ce5446579059611545ee4ba3c47ea88690aa4d5fe3",
+        "status": "not_applicable"
+      },
+      {
+        "GRR_rung_assigned": false,
+        "blocked_rung": "GRR4",
+        "eligible_candidate_count": 0,
+        "execution_status": "not_applicable_no_GRR3_lineage",
+        "failure_status": false,
+        "gate_id": "B2-I6",
+        "input_execution_revision": "f433e9510128ccb233987f12d936f8af1d99e277",
+        "lifecycle_role": "accounting_only_not_scientific_evidence",
+        "positive_evidence_generated": false,
+        "scientific_gate_executed": false,
+        "source_i4_acceptance_anchor_path": "experiments/2026-08-B2-GR-grc9v3-retention-mediation-constructibility/outputs/gates/b2_i4_acceptance_anchor.json",
+        "source_i4_acceptance_anchor_sha256": "ce8b09ff7a54658ee62180ce5446579059611545ee4ba3c47ea88690aa4d5fe3",
+        "status": "not_applicable"
+      },
+      {
+        "GRR_rung_assigned": false,
+        "blocked_rung": "GRR5",
+        "eligible_candidate_count": 0,
+        "execution_status": "not_applicable_no_GRR4_lineage",
+        "failure_status": false,
+        "gate_id": "B2-I7",
+        "input_execution_revision": "f433e9510128ccb233987f12d936f8af1d99e277",
+        "lifecycle_role": "accounting_only_not_scientific_evidence",
+        "positive_evidence_generated": false,
+        "scientific_gate_executed": false,
+        "source_i4_acceptance_anchor_path": "experiments/2026-08-B2-GR-grc9v3-retention-mediation-constructibility/outputs/gates/b2_i4_acceptance_anchor.json",
+        "source_i4_acceptance_anchor_sha256": "ce8b09ff7a54658ee62180ce5446579059611545ee4ba3c47ea88690aa4d5fe3",
+        "status": "not_applicable"
+      }
+    ],
+    "experiment_id": "B2-GR",
+    "gate_id": "B2-I8",
+    "input_execution_revision": "f433e9510128ccb233987f12d936f8af1d99e277",
+    "iteration": 8,
+    "next_route_boundary": {
+      "LGRC_specific_work": "not_authorized_by_B2",
+      "required_before_any_extension": [
+        "explicit_target_claim",
+        "localized_missing_causal_role",
+        "resolved_target_relevant_search_coverage",
+        "rival_and_identifiability_accounting"
+      ],
+      "revision_distinct_GRC_extension": "blocked_pending_target_and_role_localization",
+      "unchanged_runtime_broader_search": "eligible_only_under_new_preregistered_scope"
+    },
+    "open_debt": [
+      "constructibility_outside_frozen_preparation_parameter_history_and_carrier_envelope",
+      "clean_primary_lane_accessibility_for_22_of_48_accepted_source_branches",
+      "causal_role_of_eventful_and_constraint_supported_history_dependence",
+      "branch_relation_slow_cluster_and_mediation_unopened_without_I4_candidate",
+      "localized_missing_causal_role_not_established"
+    ],
+    "protected_path_manifest_path": "experiments/2026-08-B2-GR-grc9v3-retention-mediation-constructibility/outputs/b2_i1_protected_path_manifest.json",
+    "protected_path_manifest_payload_sha256": "62915bb46ae85019da08260d0ee930885d2224dbf147068104e4040cff2c084c",
+    "protected_src_spec_test_tree_unchanged": true,
+    "ready_for_human_closeout_review": true,
+    "search_coverage": {
+      "aggregate_attempt_ledger_digest": "6aee824e6285b4e73ce84b1ccda0b8075399aa6247cd6d25063d39ecfb3600f5",
+      "allocated_attempt_count": 9648,
+      "attempt_population_identity_digest": "49495e170195bd96ddc8702b7d0c503caef4146b8d0a4b1086731bf052bdd06f",
+      "attempted_count": 9648,
+      "bounded_negative_count": 27,
+      "branches_eligible_and_attempted": 48,
+      "branches_inaccessible_under_frozen_preparation_family": 22,
+      "branches_with_nontrivial_resolved_clean_primary_lane_attempt": 26,
+      "carrier_definitions_tested": [
+        "C_ZERO_SUM_V1",
+        "W_EDGE_CONDUCTANCE_OBSERVATION_V1",
+        "JOINT_C_W_BLOCK_V1"
+      ],
+      "duplicate_candidate_count": 0,
+      "formation_entirely_authored_or_unidentifiable_count": 1706,
+      "full_path_failure_mode_counts": {
+        "categorical_transition_in_first_post_driver_transition": 144,
+        "categorical_transition_in_preparation_history": 2064,
+        "constraint_supported_first_post_driver_transition": 3386,
+        "constraint_supported_preparation_history": 5648,
+        "positive_coherence_interior_not_preserved": 4
+      },
+      "history_lengths_covered": [
+        1,
+        2,
+        4,
+        8
+      ],
+      "inaccessible_branch_is_negative_constructibility_evidence": false,
+      "numerical_failure_count": 0,
+      "outside_envelope_count": 7915,
+      "parameter_envelope_covered": {
+        "amplitude_fractions": [
+          0.0001,
+          0.001,
+          0.01
+        ],
+        "carrier_definitions": [
+          "C_ZERO_SUM_V1",
+          "W_EDGE_CONDUCTANCE_OBSERVATION_V1",
+          "JOINT_C_W_BLOCK_V1"
+        ],
+        "evaluation_parameters_restored_before_k0": true,
+        "fixed_topology_event_free_primary_lane": true,
+        "history_lengths_native_steps": [
+          1,
+          2,
+          4,
+          8
+        ],
+        "preparation_families": [
+          "native_spontaneous_no_driver",
+          "budget_respecting_zero_sum_C_pair_pulse",
+          "temporary_parameter_history_after_C_pair_pulse"
+        ],
+        "temporary_parameter_variants": [
+          [
+            "dt_x_0p5",
+            "dt",
+            0.5
+          ],
+          [
+            "dt_x_1p5",
+            "dt",
+            1.5
+          ],
+          [
+            "eta_x_0p5",
+            "eta",
+            0.5
+          ],
+          [
+            "eta_x_2p0",
+            "eta",
+            2.0
+          ]
+        ]
+      },
+      "preparation_families_eligible_and_searched": {
+        "budget_respecting_zero_sum_C_pair_pulse": 1920,
+        "native_spontaneous_no_driver": 48,
+        "temporary_parameter_history_after_C_pair_pulse": 7680
+      },
+      "primary_search_native_steps": 45696,
+      "resolved_attempt_count": 9648,
+      "resolved_candidate_count": 0,
+      "search_budget_consumed_fraction": 1.0,
+      "source_reconstruction_failure_count": 0,
+      "unresolved_candidate_count": 0
+    },
+    "source_chain": [
+      {
+        "acceptance_anchor_path": "experiments/2026-08-B2-GR-grc9v3-retention-mediation-constructibility/outputs/gates/b2_i1_acceptance_anchor.json",
+        "acceptance_anchor_sha256": "0d4bdf9e64277448f928699eedea9d1ca83c0e2c1d5126ffbfe7d090c44e3a03",
+        "assigned_closeout_rung": "B2-C0",
+        "gate_id": "B2-I1",
+        "result_artifact_path": "experiments/2026-08-B2-GR-grc9v3-retention-mediation-constructibility/outputs/b2_i1_source_handoff_inventory.json",
+        "result_artifact_payload_sha256": "53c09e2d700ad7eee659eaa4758d657bb027c5e2a6c8bf12c0fea47940f2156e",
+        "result_receipt_path": "experiments/2026-08-B2-GR-grc9v3-retention-mediation-constructibility/outputs/gates/b2_i1_result_receipt.json",
+        "result_revision": "ff2fe054b14aab7f9ac058464a880c185d8977d5"
+      },
+      {
+        "acceptance_anchor_path": "experiments/2026-08-B2-GR-grc9v3-retention-mediation-constructibility/outputs/gates/b2_i2_acceptance_anchor.json",
+        "acceptance_anchor_sha256": "f803961b2a8ef414dd0ba8a79f1a27f208bb44d6eac06fa143cf0f0df5f062c2",
+        "assigned_closeout_rung": "B2-C1",
+        "gate_id": "B2-I2",
+        "result_artifact_path": "experiments/2026-08-B2-GR-grc9v3-retention-mediation-constructibility/outputs/b2_i2_constructibility_schema.json",
+        "result_artifact_payload_sha256": "bae04386692f35749c0897292f5a3ae99f8364a7251c6b7826817bdc8a4e4e28",
+        "result_receipt_path": "experiments/2026-08-B2-GR-grc9v3-retention-mediation-constructibility/outputs/gates/b2_i2_result_receipt.json",
+        "result_revision": "b0584b9b61eadbcd34255fa07d5afde05370bb77"
+      },
+      {
+        "acceptance_anchor_path": "experiments/2026-08-B2-GR-grc9v3-retention-mediation-constructibility/outputs/gates/b2_i3_acceptance_anchor.json",
+        "acceptance_anchor_sha256": "3c4d0002304c8978dc7e1d116813cdb52036f841003a85ade893c2ef05bedae5",
+        "assigned_closeout_rung": "B2-C2",
+        "gate_id": "B2-I3",
+        "result_artifact_path": "experiments/2026-08-B2-GR-grc9v3-retention-mediation-constructibility/outputs/b2_i3_active_nulls.json",
+        "result_artifact_payload_sha256": "a9749a11bde99da30a40aeea20114a8fabe76bf1db2b55d62d8ac79824d04d6a",
+        "result_receipt_path": "experiments/2026-08-B2-GR-grc9v3-retention-mediation-constructibility/outputs/gates/b2_i3_result_receipt.json",
+        "result_revision": "259913bc48af798645cb86e44f2205323df537ba"
+      },
+      {
+        "acceptance_anchor_path": "experiments/2026-08-B2-GR-grc9v3-retention-mediation-constructibility/outputs/gates/b2_i4_acceptance_anchor.json",
+        "acceptance_anchor_sha256": "ce8b09ff7a54658ee62180ce5446579059611545ee4ba3c47ea88690aa4d5fe3",
+        "assigned_closeout_rung": "B2-C3",
+        "gate_id": "B2-I4",
+        "result_artifact_path": "experiments/2026-08-B2-GR-grc9v3-retention-mediation-constructibility/outputs/b2_i4_native_preparation_reachability.json",
+        "result_artifact_payload_sha256": "334ae6907c3241b44b4d22720e8f356561773091b7d51109b4872091e8b7fe2c",
+        "result_receipt_path": "experiments/2026-08-B2-GR-grc9v3-retention-mediation-constructibility/outputs/gates/b2_i4_result_receipt.json",
+        "result_revision": "f3c290d358b00e1ac16cab3959c74aa6e38329e5"
+      }
+    ],
+    "source_i4_candidate_set_digest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "source_i4_candidate_set_status": "accepted_empty_no_runtime_reached_candidate",
+    "status": "passed"
+  },
+  "payload_sha256": "e2404cb6cb0c62d2e88fd22492f7f8674ca97c088758726bbb431282209dfbda",
+  "schema_version": "b2_i8_classification_and_handoff_v1"
+}

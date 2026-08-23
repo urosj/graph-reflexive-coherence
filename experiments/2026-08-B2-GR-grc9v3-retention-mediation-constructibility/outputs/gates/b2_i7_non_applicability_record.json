@@ -1,0 +1,23 @@
+{
+  "metadata": {
+    "generating_command": ".venv/bin/python experiments/2026-08-B2-GR-grc9v3-retention-mediation-constructibility/scripts/build_i8_classification_and_handoff.py",
+    "reproducibility_class": "byte_reproducible"
+  },
+  "payload": {
+    "GRR_rung_assigned": false,
+    "blocked_rung": "GRR5",
+    "eligible_candidate_count": 0,
+    "execution_status": "not_applicable_no_GRR4_lineage",
+    "failure_status": false,
+    "gate_id": "B2-I7",
+    "input_execution_revision": "f433e9510128ccb233987f12d936f8af1d99e277",
+    "lifecycle_role": "accounting_only_not_scientific_evidence",
+    "positive_evidence_generated": false,
+    "scientific_gate_executed": false,
+    "source_i4_acceptance_anchor_path": "experiments/2026-08-B2-GR-grc9v3-retention-mediation-constructibility/outputs/gates/b2_i4_acceptance_anchor.json",
+    "source_i4_acceptance_anchor_sha256": "ce8b09ff7a54658ee62180ce5446579059611545ee4ba3c47ea88690aa4d5fe3",
+    "status": "not_applicable"
+  },
+  "payload_sha256": "26f84a7ef286ee940c4a7dee488c7222816699f7b707fc438177158b447341f3",
+  "schema_version": "b2_downstream_non_applicability_record_v1"
+}

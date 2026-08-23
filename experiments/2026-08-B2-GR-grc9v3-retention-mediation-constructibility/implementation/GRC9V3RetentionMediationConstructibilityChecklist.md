@@ -576,6 +576,22 @@ outputs/gates/b2_i5_acceptance_anchor.json
 reports/b2_i5_slow_cluster_transversality.md
 ```
 
+### Iteration 5 Positive Lane - Not Applicable
+
+```text
+execution_status = not_applicable_empty_I4_candidate_set
+eligible_candidate_count = 0
+scientific_gate_executed = false
+positive_evidence_generated = false
+GRR3_rung_assigned = false
+B2-C4_assigned = false
+lifecycle_record_payload_sha256 = 20f930acc6523fa067e2bee774d338e0910265b5f8739e609952dd7a48d3fea1
+```
+
+The accepted I4 candidate set is empty. The positive I5 artifacts above are
+therefore not emitted; `outputs/gates/b2_i5_non_applicability_record.json`
+records lifecycle accounting only.
+
 ## Iteration 6 - Matched-Probe Mediation Matrix
 
 - [ ] Execute the complete carrier-by-probe 2x2 contrast for every candidate.
@@ -605,6 +621,22 @@ outputs/gates/b2_i6_acceptance_anchor.json
 reports/b2_i6_matched_probe_mediation.md
 ```
 
+### Iteration 6 Positive Lane - Not Applicable
+
+```text
+execution_status = not_applicable_no_GRR3_lineage
+eligible_candidate_count = 0
+scientific_gate_executed = false
+positive_evidence_generated = false
+GRR4_rung_assigned = false
+B2-C5_assigned = false
+lifecycle_record_payload_sha256 = d3f152ddde2ac061af89a74e31ad84fe30d5b3c969981ccb7788c27794521db9
+```
+
+No accepted GRR3 lineage exists. The positive I6 artifacts above are therefore
+not emitted; `outputs/gates/b2_i6_non_applicability_record.json` records
+lifecycle accounting only.
+
 ## Iteration 7 - Controls, Replay, And Stress
 
 - [ ] Execute structurally valid reset controls against every provisional carrier.
@@ -633,30 +665,45 @@ outputs/gates/b2_i7_acceptance_anchor.json
 reports/b2_i7_control_replay_stress.md
 ```
 
+### Iteration 7 Positive Lane - Not Applicable
+
+```text
+execution_status = not_applicable_no_GRR4_lineage
+eligible_candidate_count = 0
+scientific_gate_executed = false
+positive_evidence_generated = false
+GRR5_rung_assigned = false
+lifecycle_record_payload_sha256 = 26f84a7ef286ee940c4a7dee488c7222816699f7b707fc438177158b447341f3
+```
+
+No accepted GRR4 lineage exists. The positive I7 artifacts above are therefore
+not emitted; `outputs/gates/b2_i7_non_applicability_record.json` records
+lifecycle accounting only.
+
 ## Iteration 8 - Classification And Closeout
 
-- [ ] Consume the accepted empty I4 candidate set without manufacturing diagnostic candidates for I5-I7.
-- [ ] Emit separate machine-readable lifecycle records for the skipped positive lanes:
+- [x] Consume the accepted empty I4 candidate set without manufacturing diagnostic candidates for I5-I7.
+- [x] Emit separate machine-readable lifecycle records for the skipped positive lanes:
   `I5 = not_applicable_empty_I4_candidate_set`,
   `I6 = not_applicable_no_GRR3_lineage`, and
   `I7 = not_applicable_no_GRR4_lineage`.
-- [ ] Record zero eligible candidate rows in each non-applicable lane without treating non-execution as failure, evidence, or a completed positive gate.
-- [ ] Classify the maximum supported GRR rung per row and globally.
-- [ ] Classify retention, read effect, write effect, and loop evidence separately.
-- [ ] Preserve search envelope, failed searches, rivals, and uncertainty.
-- [ ] Preserve branch relocation and eventful-history persistence as separate alternative mechanisms.
-- [ ] Keep bounded negatives, unresolved searches, numerical failures, and non-identifiable controls distinct.
-- [ ] Report resolved search coverage across the complete frozen envelope.
-- [ ] Preserve `mediation_without_GRR3` and `persistence_without_mediation` as causal-role outcomes.
-- [ ] Require `global_max_GRR = max(row_local_max_GRR)` on one row/lineage rather than synthesized arrows.
-- [ ] Decide whether unchanged-runtime constructibility remains open.
-- [ ] Keep zero confirmed I4 candidates from becoming global impossibility, retained-carrier necessity, or automatic extension selection.
-- [ ] Select no extension unless a target claim and missing role are both explicit.
-- [ ] If selected, name exactly one target-specific extension contract or justify a split.
-- [ ] Keep extension implementation and specification outside B2-GR.
-- [ ] Produce an accepted bounded closeout and next-route handoff.
+- [x] Record zero eligible candidate rows in each non-applicable lane without treating non-execution as failure, evidence, or a completed positive gate.
+- [x] Classify the maximum supported GRR rung per row and globally.
+- [x] Classify retention, read effect, write effect, and loop evidence separately.
+- [x] Preserve search envelope, failed searches, rivals, and uncertainty.
+- [x] Classify branch relation as untestable without an I4 candidate and preserve eventful/constraint-supported history dependence outside the clean primary lane without relabeling it as persistence.
+- [x] Keep bounded negatives, unresolved searches, numerical failures, and non-identifiable controls distinct.
+- [x] Report resolved search coverage across the complete frozen envelope.
+- [x] Preserve `mediation_without_GRR3` and `persistence_without_mediation` as causal-role outcomes.
+- [x] Require `global_max_GRR = max(row_local_max_GRR)` on one row/lineage rather than synthesized arrows; the eligible row set is empty, so the B2 maximum is none.
+- [x] Decide that unchanged-runtime constructibility remains open outside the frozen envelope.
+- [x] Keep zero confirmed I4 candidates from becoming global impossibility, retained-carrier necessity, or automatic extension selection.
+- [x] Select no extension because no localized missing causal role is established.
+- [x] Name no target-specific extension because no extension is selected.
+- [x] Keep extension implementation and specification outside B2-GR.
+- [x] Produce a bounded closeout candidate and next-route handoff for separate human review.
 - [ ] Assign `B2-C6` only after separate human review.
-- [ ] Keep B1-L and N32 unauthorized unless a later independent admission says otherwise.
+- [x] Keep B1-L and N32 unauthorized unless a later independent admission says otherwise.
 
 Expected artifacts:
 
@@ -667,12 +714,59 @@ outputs/gates/b2_closeout_acceptance_anchor.json
 reports/b2_i8_classification_and_handoff.md
 ```
 
+### Iteration 8 Result - Awaiting Scientific Review
+
+```text
+status = passed
+acceptance_state = awaiting_scientific_review
+input_execution_revision = f433e9510128ccb233987f12d936f8af1d99e277
+accepted_I4_candidate_count = 0
+I5_execution_status = not_applicable_empty_I4_candidate_set
+I6_execution_status = not_applicable_no_GRR3_lineage
+I7_execution_status = not_applicable_no_GRR4_lineage
+allocated_attempt_count = 9648
+resolved_attempt_count = 9648
+bounded_negative_count = 27
+formation_entirely_authored_or_unidentifiable_count = 1706
+outside_envelope_count = 7915
+unresolved_count = 0
+source_reconstruction_failure_count = 0
+numerical_failure_count = 0
+clean_primary_lane_accessible_branches = 26/48
+clean_primary_lane_inaccessible_branches = 22/48
+maximum_new_GRR_rung = none
+inherited_B1_GR_context_ceiling = GRR2
+global_max_GRR_derivation = max_row_local_over_empty_eligible_set_is_none
+primary_route = unchanged_GRC9V3_search_remains_open
+secondary_route = analysis_or_identifiability_debt
+extension_route = no_extension_route_selected
+global_impossibility_established = false
+localized_missing_causal_role_established = false
+extension_selected = false
+runtime_change_authorized = false
+protected_src_spec_test_tree_unchanged = true
+B2_closeout_ceiling = B2-C6-ready
+B2_closeout_rung_assigned = false
+artifact_payload_sha256 = e2404cb6cb0c62d2e88fd22492f7f8674ca97c088758726bbb431282209dfbda
+receipt_payload_sha256 = ef209fd0f5c669839b125a6673f3a9cfd88f362c0e6efedb6e2ced975b74b23c
+closeout_acceptance_anchor_created = false
+```
+
+Interpretation:
+
+- I8 consumes the accepted empty I4 candidate set without reopening discovery or manufacturing a diagnostic candidate. I5-I7 are accounting-only non-applicable lanes and assign neither GRR nor B2 process rungs.
+- All 9,648 attempts resolved, but the empty result is heterogeneous. Only 27 are clean bounded negatives; 1,706 contain an apparent carrier whose runtime-generated component is not identifiable; 7,915 are outside the clean primary envelope.
+- All 48 accepted branches received attempts. Only 26 admitted a nontrivial resolved clean-primary-lane attempt; the remaining 22 are accessibility debt, not negative constructibility evidence.
+- B2 adds no GRR rung above the inherited B1-GR `GRR2` context. Branch relation, temporal slow-cluster qualification, mediation, and GRR5 controls are not testable without a runtime-reached I4 lineage.
+- Unchanged-runtime constructibility remains open outside the frozen envelope. The result neither establishes global impossibility nor localizes one missing causal role strongly enough to select an extension.
+- Separate human review is required before assigning `B2-C6` and closing the tranche.
+
 ## Serial Acceptance Discipline
 
-- [ ] Start every execution from a clean committed input revision.
-- [ ] Produce an immutable result receipt before scientific review.
+- [x] Start every execution from a clean committed input revision.
+- [x] Produce an immutable result receipt before scientific review.
 - [ ] Produce an acceptance anchor before the next iteration consumes a result.
 - [ ] Bind input revision, script, config, result, receipt, and acceptance-anchor digests per gate.
-- [ ] Consume accepted artifacts by immutable revision/anchor rather than mutable working-tree paths.
+- [x] Consume accepted artifacts by immutable revision/anchor rather than mutable working-tree paths.
 - [ ] Map accepted iterations to `B2-C0` through `B2-C6` exactly as frozen in the plan.
-- [ ] Never reopen the accepted I4 discovery set in I5 or the accepted I5 projector rule in I6.
+- [x] Never reopen the accepted I4 discovery set; no I5 projector exists on the empty path.
