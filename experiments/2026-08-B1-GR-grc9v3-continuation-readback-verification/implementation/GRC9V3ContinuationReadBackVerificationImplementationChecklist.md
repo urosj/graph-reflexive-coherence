@@ -1739,7 +1739,7 @@ from accepting itself or manufacturing its own closeout.
 - [ ] Produce the versioned evidence-grounded successor specification.
 - [x] Preserve Drafts 3.2, 3.3, and 3.4 and the accepted controlling Draft 3.4.1 unchanged.
 - [x] Emit `equivalence_classification.json` with the complete scientific classification candidate.
-- [ ] Accept the GRV8 scientific classification through a separate acceptance anchor.
+- [x] Accept the GRV8 scientific classification through a separate acceptance anchor.
 - [ ] Freeze `evidence_bundle_manifest.json` only after GRV8 scientific acceptance and before successor generation.
 - [ ] Exclude the evidence-bundle manifest, successor, and later closeout anchor from the bundle payload.
 - [ ] Emit and accept `outputs/gates/grv8_closeout_acceptance_anchor.json`
@@ -1752,7 +1752,7 @@ from accepting itself or manufacturing its own closeout.
 - [x] Rerun and record the complete existing suite from the GRV8 clean input revision.
 - [x] Verify all protected paths remain unchanged.
 - [x] Emit and validate the GRV8 result receipt.
-- [ ] Emit the separate GRV8 scientific acceptance anchor after human review.
+- [x] Emit the separate GRV8 scientific acceptance anchor after human review.
 - [ ] Assign `GRV-C6` only when classification and routing are complete.
 - [x] Keep B1-L unopened unless its complete entry contract is accepted.
 
@@ -2001,7 +2001,28 @@ protected_manifest_sha256 = d2e2aa1556ef4f5977e27d3dc0c00c71129036d4d4e6cfdc5f29
 P8.2 preserves both earlier GRV8 candidates as non-consumable historical
 results. It changes classification propagation and interpretation only: no
 accepted GRV0-GRV7 artifact, fixture, threshold, runtime behavior, or claim
-ceiling was reopened. The corrected receipt is now the sole candidate eligible
-for human scientific review. Until that review accepts it, no GRV8 acceptance
-anchor, evidence bundle, successor specification, LGRC handoff, closeout
-anchor, or `GRV-C6` assignment may be produced.
+ceiling was reopened. The corrected receipt was the sole candidate eligible
+for human scientific review and is the result bound by the acceptance anchor
+below. No evidence bundle, successor specification, routed handoff, closeout
+anchor, or `GRV-C6` assignment existed at classification acceptance time.
+
+P8.2 classification acceptance:
+
+```text
+acceptance_status = accepted
+accepted_result_revision = 570f715a54b7235be81725907a71e4a4b461ece7
+accepted_receipt_payload_sha256 = 1884c2f75a748ce928f4ae69025d933811ff892948b40e4312530c280314eaa5
+acceptance_anchor = outputs/gates/grv8_acceptance_anchor.json
+stage_2_authorized = true
+evidence_bundle_frozen = false
+successor_generated = false
+route_handoff_generated = false
+closeout_anchor_emitted = false
+GRV_C6_assigned = false
+```
+
+The accepted classification routes first to unchanged-GRC constructibility and
+conditional GRC extension work where the evidence selects those lanes. LGRC
+event, delay, lineage, and topology-changing questions remain a distinct
+downstream lane. Stage 2 therefore requires a general continuation/read-back
+route handoff rather than an LGRC-only umbrella handoff.

@@ -17,7 +17,7 @@ only analogically, as a measurable diagnostic, or not at all.
 
 ```text
 experiment_id = B1-GR
-status = grv8_P8_2_classification_candidate_awaiting_human_review
+status = grv8_P8_2_classification_accepted_stage2_route_handoff_pending
 specification_state = draft_3_4_1_pre_execution_mathematical_execution_sealed
 controlling_specification_sha256 = 7ad99fb4acc6a7691d184a514f4836ffa3927600fc7cf504eb059134f3948e44
 runtime_under_test = unchanged_GRC9V3
@@ -479,11 +479,11 @@ digests validate independently, the complete repository suite remains at
 `1,354` passing tests, the post-generation experiment suite passes `115`
 tests, and the unchanged 379-path protected manifest remains exact.
 
-The corrected candidate remains the first of two GRV8 review stages. The
-evidence bundle, evidence-grounded successor, LGRC handoff, GRV8 acceptance
-anchors, and
-`GRV-C6` remain absent until the classification receipt is reviewed and
-accepted.
+The corrected classification was accepted at result revision `570f715` through
+`outputs/gates/grv8_acceptance_anchor.json`. This closes the first of two GRV8
+review stages. The evidence bundle, evidence-grounded successor, routed
+GRC/LGRC handoff, closeout acceptance anchor, and `GRV-C6` remain absent until
+the separately reviewable Stage 2 package is generated and accepted.
 
 ## Central Question
 

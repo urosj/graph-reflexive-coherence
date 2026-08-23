@@ -1,0 +1,11 @@
+{
+  "acceptance_role": "experiment_owner",
+  "acceptance_signature_or_ref": "repository_authenticated_user_instruction:branch_is_now_accepted",
+  "acceptance_status": "accepted",
+  "acceptance_timestamp": "2026-08-23T06:26:20Z",
+  "accepted_by": "Uros Jovanovic (urosj)",
+  "gate_id": "GRV8",
+  "receipt_payload_sha256": "1884c2f75a748ce928f4ae69025d933811ff892948b40e4312530c280314eaa5",
+  "result_revision": "570f715a54b7235be81725907a71e4a4b461ece7",
+  "review_method": "human_review_of_P8_2_corrected_traceability_transport_routing_and_correspondence_classification"
+}
