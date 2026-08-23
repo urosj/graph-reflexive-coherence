@@ -1,0 +1,292 @@
+# GRC9V4 Constitutive Design Investigation Checklist
+
+**Date:** 2026-08-23  
+**Status:** Initialized; no design gate accepted  
+**Plan:** [`GRC9V4ConstitutiveDesignPlan.md`](./GRC9V4ConstitutiveDesignPlan.md)  
+**Basis:** [`GRC9V4ConstitutiveDesignBasis.md`](./GRC9V4ConstitutiveDesignBasis.md)  
+**Ledger:** [`GRC9V4ConstitutiveDesignDecisionLedger.md`](./GRC9V4ConstitutiveDesignDecisionLedger.md)
+**Initialization:** [`GRC9V4ConstitutiveDesignInitialization.json`](./GRC9V4ConstitutiveDesignInitialization.json)
+
+## Global Boundaries
+
+- [x] Create a dedicated investigation branch and directory.
+- [x] Keep the work under `implementation/investigations/`.
+- [x] Record that no GRC9V4 architecture is selected at initialization.
+- [x] Record that no normative GRC9V4 specification exists yet.
+- [x] Block `src/` and existing runtime-test changes during D0-D10.
+- [x] Block GRC9V3 reinterpretation or retroactive claim upgrades.
+- [x] Preserve analysis/runtime causal-state separation.
+- [x] Preserve current-candidate-set exhaustion as a valid route to named
+      theory, constitutive, candidate-admission, or discriminator work.
+- [x] Require D10 acceptance before spec writing begins.
+- [x] Keep D1 candidate admission separate from D10 architecture selection.
+- [x] Keep current slaving/deslavement as an orthogonal D6 decision.
+- [x] Require immutable decision identities and typed bounded debt.
+- [x] Freeze the structured initialization predecessor and semantic digest.
+- [x] Require every `accepted_bounded` debt to name its blocking scope,
+      forbidden downstream assumption, resolution gate, and D10 obligation.
+- [x] Permit rejected-all, missing-theory, or missing-discriminator results to
+      route to bounded D10 closeout without executing irrelevant gates.
+
+## D0. Target, Inheritance, And Claim Ceiling
+
+Status: pending.
+
+- [ ] Consume initialization predecessor digest
+      `7daf0693e2603b8e0c7062c77789a4ae71b6372b5605e31024be304a282e2654`.
+- [ ] Freeze current theory source revisions and hashes.
+- [ ] Freeze B1 Draft 3.4.1 and evidence-grounded successor identities.
+- [ ] Freeze accepted B1/B2 closeout and evidence identities.
+- [ ] Freeze reconciled GRC9V3 spec/evidence-profile and Phase 7 identities.
+- [ ] Build a B1-contract -> B1 -> B2 -> reconciliation -> V4 historical
+      lineage record.
+- [ ] Record direct B1/B2 artifact citations and source envelopes.
+- [ ] Freeze `may_consume_as` and `must_not_consume_as` for each B1/B2 source.
+- [ ] Audit every B1-derived theory statement against the current core revision.
+- [ ] Classify theory drift as unchanged, narrowed, broadened, superseded,
+      historical-only, or requiring rederivation.
+- [ ] Block B1 verification constructs from becoming literal V4 semantics.
+- [ ] Block B2 bounded empty search from becoming global impossibility,
+      independent-state necessity, or architecture selection.
+- [ ] Build the provenance-classified inheritance ledger.
+- [ ] Separate core claims from candidate constitutive completions.
+- [ ] Freeze target, non-targets, and claim ceiling.
+- [ ] Freeze the D1 candidate set, source-admission rule, and admission deadline.
+- [ ] Freeze the candidate-neutral V3 reference transition and reduction
+      comparison surfaces.
+- [ ] Freeze allowed exact/projected/tolerance semantics, added-state
+      initialization requirements, serialization rules, and lifecycle scope.
+- [ ] Require each D1 candidate to construct `i_a`, `pi_a`, disabled-state
+      initialization, and reduction obligations without a premature witness.
+- [ ] Freeze the design/verification topology envelope separately from the
+      normative runtime capability scope.
+- [ ] Freeze topology transport/accounting, explicit capability disablement, or
+      event-boundary semantics.
+- [ ] Mark deferred full-runtime topology closure as `must_close_before_D10`.
+- [ ] Separate hard veto requirements from selection preferences.
+- [ ] Record all theory and substrate debts carried into D1.
+- [ ] Obtain human acceptance.
+
+## D1. Retained-Representation Ontology And Candidate Admission
+
+Status: blocked on D0.
+
+- [ ] Compare `V4-A-temporalized-W`.
+- [ ] Compare `V4-B-independent-derived-carrier`.
+- [ ] Compare `V4-C-constitutive-C-sector`.
+- [ ] Compare any D0-admitted `V4-D-source-admitted-structural` candidate.
+- [ ] Audit causal type, formation inputs, and ownership.
+- [ ] Classify state authority independently for every candidate.
+- [ ] Classify resource accounting independently for every candidate.
+- [ ] Classify a set of transport roles independently for every candidate.
+- [ ] Test reconstruction/elimination in the design argument or prototype.
+- [ ] Record candidate reduction embedding, projection, and disabled-state
+      initialization.
+- [ ] Record construction status, obligations, and structural blockers; reserve
+      completed-transition witness status for D9.
+- [ ] Record selector inputs, constitutive authority, statefulness, sector
+      identity/transport, and hidden-history/future-information requirements for
+      every derived constitutive representation.
+- [ ] Block observer-selected or retrospectively discovered sectors from runtime
+      retained-representation status.
+- [ ] Require historical selector state to be explicit serialized causal state,
+      or require deterministic selection from current declared causal state.
+- [ ] Separate runtime state from analysis projectors.
+- [ ] Record `admitted_candidate_set` and `rejected_on_ontology`.
+- [ ] Record `sole_surviving_candidate` without treating it as final selection.
+- [ ] If empty, record `current_candidate_set_exhausted`, missing role, required
+      next derivation/admission work, reopening condition, and resume gate.
+- [ ] Keep current temporalization out of D1.
+- [ ] Obtain human acceptance.
+
+## D2. Formation, Retention, Release, And Write Interface
+
+Status: blocked on D1.
+
+- [ ] Define formation.
+- [ ] Define post-input retention.
+- [ ] Define release/reconfiguration.
+- [ ] Define transfer, if in scope.
+- [ ] Define write ownership, admissible write inputs, and update-order bounds.
+- [ ] Name and define `no_forming_or_write_input` retention/release behavior.
+- [ ] Define conservation and budget treatment for every accounting type.
+- [ ] Block hidden resource duplication or an unbounded second reservoir.
+- [ ] Reject recomputed proxies without historical causal content,
+      indefinite accumulators, and trivial slow-cache substitutes.
+- [ ] Permit a `C`-derived retained sector only if it is historically formed and
+      later constitutively load-bearing.
+- [ ] For the constitutive `C` sector, distinguish ordinary `C` update,
+      retained-sector occupation/change, and later retained-conditioned read.
+- [ ] Obtain human acceptance.
+
+## D3. Continuation Requirements And Structural Domain
+
+Status: blocked on D2.
+
+- [ ] Define formed state and formed branch.
+- [ ] Define reference branch and transport.
+- [ ] Define admitted perturbation state and clock.
+- [ ] Define requirements for the later complete effective transition.
+- [ ] Separate structural `alpha`, temporal `gamma`/multipliers, Read-Back
+      `beta`, and spatial `lambda`.
+- [ ] Block `slow_temporal_mode == low_continuation_stiffness`.
+- [ ] Distinguish `F_struct(C)`, conditional `F_struct(C; T_*)`, and genuinely
+      joint source-backed `F_struct(C,T)` structural cases.
+- [ ] State whether `delta_T` is an admitted structural coordinate.
+- [ ] Block construction of a continuation Hessian from runtime `DF(C,T)`.
+- [ ] Build a support matrix over no-current, frozen-current, smoothly
+      slaved-current, and independently active-current references.
+- [ ] Record supported/conditional/open/blocked status, conditions, current
+      elimination/freezing, structural-coordinate, and active-joint-theory
+      status for every matrix row.
+- [ ] Keep runtime current-regime selection in D6.
+- [ ] Block an inherited self-adjoint Hessian for active `(C,T,J)` without a
+      source-backed derivation.
+- [ ] Freeze the derived-representation tangent constraint and block independent
+      `delta_T_M` without D1 independent-state authority.
+- [ ] Separate fast temporal relaxation, branch displacement, and retained
+      structural continuation.
+- [ ] Freeze topology/event strata and blocked derivative cases.
+- [ ] Obtain human acceptance.
+
+## D4. Geometry, Mobility, And Topology Ownership
+
+Status: blocked on D3.
+
+- [ ] Define whether each representation is geometry, conditions geometry, or
+      remains separate structural state.
+- [ ] Define relation to `W`, `h`, constitutive/geometry-inducing `K`, any
+      separately realized mobility `M`/`A`, analytic labels, and node tensors.
+- [ ] Do not preassign `K` as transport mobility.
+- [ ] Define relation to topology and basin hierarchy.
+- [ ] Apply both the D0 verification envelope and normative runtime topology
+      capability scope.
+- [ ] Separate structural geometry from transport mobility where required.
+- [ ] Prevent one field from owning incompatible causal and analytical roles.
+- [ ] Obtain human acceptance.
+
+## D5. Directional Read-Back
+
+Status: blocked on D4.
+
+- [ ] Define typed graph map into oriented edge cochains.
+- [ ] Freeze the present-current convention.
+- [ ] Require passive null.
+- [ ] Require edge-coordinate orientation-relabel covariance.
+- [ ] Define physical present-current reversal response separately.
+- [ ] Define retained-representation orientation/chirality content.
+- [ ] Separate `J0`, `j`, and total `J_C`.
+- [ ] Name and define the `zero_present_current` passive-null control.
+- [ ] Separate direct retained-conditioned `J0` from `(T_M,J_C) -> j` Read-Back.
+- [ ] Audit path overlap/double counting and preserve direct `J0` under read-off
+      where structurally possible.
+- [ ] Define retained-state and rival-carrier controls.
+- [ ] Block scalar, label, score, and projector relabels.
+- [ ] Obtain human acceptance.
+
+## D6. Total-Current Closure
+
+Status: blocked on D5.
+
+- [ ] Define algebraic current closure and solve order.
+- [ ] Define the full effective loop block.
+- [ ] Define uniqueness/invertibility requirements.
+- [ ] Define failure and singular-boundary semantics.
+- [ ] Decide slaved, explicitly deslaved, or blocked current closure for each
+      surviving retained-representation candidate.
+- [ ] Admit temporalized current only under a recorded trigger.
+- [ ] Preserve direct-retained-to-`J0` and Read-Back-to-`j` attribution through
+      total-current closure.
+- [ ] Obtain human acceptance.
+
+## D7. Closed Write/Read Loop
+
+Status: blocked on D6.
+
+- [ ] Close `T_M -> j -> J_C -> declared downstream consequence -> T_M`.
+- [ ] Select exact write inputs from the D2 admissible set.
+- [ ] Define the complete effective transition.
+- [ ] Define read-off and write-off controls.
+- [ ] Define passive and frozen-carrier controls.
+- [ ] Define reversed-orientation and rival-carrier controls.
+- [ ] Freeze loop-closure validity, admissibility, singular/invalid, and
+      reconfiguration boundaries.
+- [ ] Defer structural/temporal stability classification to D8.
+- [ ] Block one-way-path-to-loop relabeling.
+- [ ] Do not require `C_(k+1)` as the sole write mediator without evidence.
+- [ ] Block generic `C` evolution from becoming tautological C-sector
+      write-back.
+- [ ] Obtain human acceptance.
+
+## D8. Continuation Realization And Analysis Contract
+
+Status: blocked on D7.
+
+- [ ] Define structural functional/Hessian and `alpha` semantics.
+- [ ] Define temporal generator/effective-map and `gamma`/multiplier semantics.
+- [ ] Define Read-Back derivative and `beta` semantics.
+- [ ] Define spatial operator and `lambda` semantics.
+- [ ] Define cluster/subspace, projector transport, basis/symmetry covariance,
+      non-normality, and static/dynamic comparison contracts.
+- [ ] Record operator domain, tangent space, inner product/weight, physical and
+      reduced representations, representation map, projector transport,
+      moving-space identification, and cluster conditioning.
+- [ ] Block analysis-coordinate projectors from physical-coordinate use without
+      declared conjugation/transport.
+- [ ] Enforce derived-representation tangent constraints in every joint analysis.
+- [ ] Keep analysis projectors out of runtime state unless independently
+      admitted for constitutive reasons.
+- [ ] Block cross-spectrum relabels and undeclared universal-generator claims.
+- [ ] Obtain human acceptance.
+
+## D9. Complete Step And Lifecycle Contract
+
+Status: blocked on D8.
+
+- [ ] Freeze complete-step order and causal-state schema.
+- [ ] Freeze serialization and restoration identity.
+- [ ] Freeze reset-baseline behavior.
+- [ ] Freeze RNG and deterministic replay behavior.
+- [ ] Freeze capability/profile identity.
+- [ ] Verify the selected candidate's D1 embedding/projection construction
+      against the completed D7 transition on every equivalence surface.
+- [ ] Freeze the actual reduction witness and exact/projected/tolerance status
+      with migration behavior.
+- [ ] Enforce normative topology transport/accounting, explicit capability
+      disablement, or event-boundary termination/reset as selected in D0.
+- [ ] Keep a fixed early verification envelope from discharging normative
+      runtime topology debt.
+- [ ] Freeze test, telemetry, and analysis ownership.
+- [ ] Block silent legacy snapshot promotion.
+- [ ] Obtain human acceptance.
+
+## D10. Design Synthesis And Spec-Writing Decision
+
+Status: blocked on D9 or an explicit rejected-all/missing-theory/
+missing-discriminator terminal route.
+
+- [ ] Reconcile all executed gate decisions into one architecture or bounded
+      no-selection closeout.
+- [ ] Verify no field or operator has incompatible roles.
+- [ ] Record rejected alternatives and adjudicate every D10-blocking debt.
+- [ ] Freeze claim ceiling and blocked relabels.
+- [ ] Produce a verification/constructibility outline.
+- [ ] Select one D10 disposition.
+- [ ] Block candidate exhaustion from becoming rejection of the GRC9V4 target.
+- [ ] Obtain human acceptance.
+- [ ] Set `specification_authorized = true` only for an accepted complete design.
+- [ ] Keep runtime implementation unauthorized.
+
+## Current State
+
+```text
+branch = investigation-GRC9V4-constitutive-design
+D0 = pending
+D1-D10 = blocked_on_predecessor
+D10_early_terminal_route = available_for_rejected_all_missing_theory_or_missing_discriminator
+architecture_selected = false
+specification_authorized = false
+runtime_implementation_authorized = false
+src_changed = false
+normative_GRC9V4_spec_exists = false
+```
