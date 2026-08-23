@@ -211,6 +211,34 @@ class GRV7SpatialTemporalThresholdTest(unittest.TestCase):
             audit["minimum_off_threshold_separation_margin"],
         )
 
+    def test_decisive_subspace_claim_is_exactly_one_dimensional(self) -> None:
+        matrix = json.loads(
+            (ROOT / "outputs/spatial_temporal_threshold_matrix.json").read_text(
+                encoding="utf-8"
+            )
+        )["payload"]
+        path_by_id = {row["path_id"]: row for row in matrix["path_rows"]}
+        decisive = [
+            row
+            for row in matrix["counterexamples"]
+            if row.get("status") == "supported"
+        ]
+        self.assertEqual(2, len(decisive))
+        for counterexample in decisive:
+            audit = counterexample["critical_subspace_audit"]
+            self.assertEqual(1, audit["critical_subspace_dimension"])
+            self.assertEqual(0.0, audit["principal_angle_radians"])
+            self.assertEqual(0.0, audit["projector_distance_l2"])
+            for row in path_by_id[counterexample["path_id"]]["primary_points"]:
+                self.assertEqual(
+                    1,
+                    len(row["analytical_continuation_hessian"]["eigenvalues"]),
+                )
+                self.assertEqual(
+                    1,
+                    len(row["frozen_W_temporal_comparator"]["multipliers"]),
+                )
+
     def test_claim_ceiling_preserves_full_map_and_global_boundaries(self) -> None:
         claims = self.config["claim_boundary"]
         self.assertFalse(claims["frozen_comparator_is_complete_step_map"])

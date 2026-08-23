@@ -90,7 +90,7 @@
           "frozen_plus_one_residual": 8.000267115448878e-13,
           "interpretation": "analytical_structural_and_frozen_plus_one_threshold_is_resolved_while_runtime_local_diagnostics_are_unchanged",
           "lower_off_threshold_witness": 0.5,
-          "minimum_off_threshold_separation_margin": 1.9999999989959996,
+          "minimum_off_threshold_separation_margin": 0.9999999989959999,
           "passed": true,
           "runtime_local_diagnostic_invariance": "exact_semantic_digest_identity",
           "spatial_zero_tolerance": 1e-09,
@@ -39639,7 +39639,7 @@
       "GRV6_receipt_payload_sha256": "705b6967eedb86fe0d0d7d895998a3ad1147ede312502dae6567a9021fb449c3",
       "GRV6_result_revision": "07cf6784abe600eb2ad345e2cf9c1ed2e109be3d",
       "all_48_source_branches_retained_in_accounting": true,
-      "input_execution_revision": "f002b2c18c516b96709811eb96a1d31e2bf492aa",
+      "input_execution_revision": "10d07aa09e5e6ad6cf2bdced94c3cb37a2679719",
       "selected_source_branch_ids": [
         "grv2-f1-004",
         "grv2-f1-014",
@@ -39707,6 +39707,6 @@
       "strong_counterexample_requires_preregistered_path": true
     }
   },
-  "payload_sha256": "7ae3a4c379b1ff424c3cbbd5adedaae78c42a0f633ec896b26de605faa666f8a",
+  "payload_sha256": "18f53d7e1a4213d0ec453e0e59a5d485da8755fd4d3656d5a3be2abac0964130",
   "schema_version": "b1_grv7_spatial_temporal_threshold_matrix_v1"
 }

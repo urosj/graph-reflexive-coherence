@@ -99,7 +99,7 @@ GRV8 remains unopened.
 
 ## Provenance
 
-- Input execution revision: `f002b2c18c516b96709811eb96a1d31e2bf492aa`
+- Input execution revision: `10d07aa09e5e6ad6cf2bdced94c3cb37a2679719`
 - GRV6 receipt: `705b6967eedb86fe0d0d7d895998a3ad1147ede312502dae6567a9021fb449c3`
 - GRV6 acceptance commit: `9606f2466769d89e10145e112ed5136704a5ad79`
 - Runtime source/spec/root-test paths: unchanged under `protected_path_manifest_v7.json`

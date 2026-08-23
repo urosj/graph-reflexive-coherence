@@ -1577,7 +1577,15 @@ GRV_C5_status = pending_GRV7_threshold_evidence
 - [x] Emit and validate the GRV7 result receipt.
 - [ ] Accept GRV7 and emit the separate acceptance anchor.
 
-GRV7 executed from clean method revision `0f9d0de3743eee6bad9cae525c451832671fc78b`.
+The initial unaccepted GRV7 result from method revision `0f9d0de` is retained in
+history and superseded. Scientific-discriminator hardening made the six
+load-bearing checks machine-readable without changing branch selection,
+parameter paths, thresholds, or claim ceiling. A first hardened preliminary
+result then exposed an audit-only error: the CE1 bracket named the nearest
+off-threshold witnesses but computed headroom from the farthest endpoints. The
+final GRV7 rerun executed from clean corrected method revision
+`10d07aa09e5e6ad6cf2bdced94c3cb37a2679719`.
+
 The frozen scope retains all 48 GRV2 branches in source accounting and selects
 seven source/symmetry branches before spectra for six continuation paths. The
 run records 27 primary points and 51 points including graph-symmetry partners.
@@ -1587,6 +1595,16 @@ gates. The maximum full-step branch residual is `1.085265211031583e-10`; the
 maximum parameter-canonicalization physical `(C,W,J)` delta is
 `2.0000001654607423e-11`.
 
+All six branch-sheet audits pass. Exact branch-state digest identity is not
+required because parameter continuation may change constitutive `W/J` or move
+`C` within the preregistered branch tolerance; source sheet, ordered topology,
+adjacent `C`, total coherence, and categorical identity remain load-bearing.
+All frozen comparators pass the positive-mobility gate. They are clamped-`W`
+zero-sum-`C` constructions, not current-slaving reductions, so `I-B_eff`
+invertibility is explicitly not applicable. The 11 F1 complete-step rows remain
+blocked by the GRV3 categorical-stratum gate and are not counted as threshold
+disagreements.
+
 The homogeneous F1 scale path supplies the first bounded counterexample. Its
 runtime row-basis unsigned, signed, and WLS Hessian record has one digest over
 all five points, while the analytical constrained second variation has five
@@ -1594,6 +1612,15 @@ digests and covers negative, zero, and positive eigenvalue signs. The frozen-
 `W` multiplier reaches unstable exterior, `+1`, and stable interior. This shows
 that the exact runtime local Hessian diagnostics do not identify the analytical
 continuation threshold on this path.
+
+The CE1 analytical zero residual is `4.000e-12`, its frozen `+1` residual is
+`8.000e-13`, and the nearest off-threshold separation margin is
+`0.999999998996`. CE2 keeps `H_cont` at least `1.000000000004` from zero,
+reaches `-1` within `4.000e-12`, and has minimum stable/exterior separation
+margin `0.999998999998`. Both use the exact one-dimensional two-node zero-sum
+`C` critical subspace with zero principal angle and projector distance; no
+sorted eigenvalue-index pairing is used. Runtime local Hessian subspaces are
+not falsely identified with that `C`-tangent operator.
 
 The homogeneous F1 timestep path supplies the second bounded counterexample.
 Both its runtime spatial-diagnostic digest and analytical continuation-Hessian
@@ -1621,10 +1648,10 @@ not as global nonexistence evidence. Event, sink, basin, collapse, spark, and
 topology surfaces remain separately recorded for every point.
 
 The matrix payload digest is
-`c5392a42396e1454d2a6a01d1aab2a9d30b2cf9c3e4b309443664710e9ce7a67`.
-Receipt `7034aebaf1de4fc594074e151ac18d4943fe66f7fe3c17cfa61e47cff6ba912d`
+`18f53d7e1a4213d0ec453e0e59a5d485da8755fd4d3656d5a3be2abac0964130`.
+Receipt `c1f8986b08c0295a7e0678eb370d12216c3201df9b95f78c7eac8345039f8750`
 binds all outputs and is awaiting human review. The experiment-local suite
-passes `90` tests, protected source/spec/root-test tree
+passes `94` tests, protected source/spec/root-test tree
 `4a398c1b50a55c40418bfae3af4e4e3dc07a1a313f79b3747a546dfa27c453a2`
 is unchanged, `GRV-C5` remains a candidate rather than an assigned rung, and
 GRV8 remains blocked pending a separate GRV7 acceptance anchor.
@@ -1634,6 +1661,9 @@ mechanical_status = passed
 scientific_acceptance = awaiting_human_review
 bounded_spatial_temporal_non_equivalence_supported = true
 full_map_non_equivalence_supported = false
+all_branch_identity_audits_passed = true
+frozen_reduction_or_admissibility_blocked_points = 0
+decisive_uncertainty_separated_counterexamples = 2
 frozen_plus_one_reached = true
 frozen_stable_interior_reached = true
 frozen_minus_one_reached = true

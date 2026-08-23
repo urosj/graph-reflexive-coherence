@@ -385,8 +385,14 @@ Human review accepted P6.3 at result revision `07cf6784`. The separate
 Acceptance does not assign `GRV-C5`; spatial, temporal, and continuation-
 threshold evidence remains required from GRV7.
 
-GRV7 then ran six preregistered continuation paths from clean method revision
-`0f9d0de`: two homogeneous F1 paths and four nonuniform F2/F3 paths. All 27
+GRV7 then ran six preregistered continuation paths. Its unaccepted preliminary
+results remain in history; the final hardened rerun uses clean corrected method
+revision `10d07aa`. The hardening changes no branch, path, threshold, or claim
+ceiling. It makes the load-bearing discriminator explicit: typed operators,
+branch identity, reduction validity, critical-subspace identity, uncertainty-
+separated thresholds, and categorical-boundary separation.
+
+The run contains two homogeneous F1 paths and four nonuniform F2/F3 paths. All 27
 primary points and all 51 symmetry-inclusive points pass branch matching,
 parameter-step, native surface-canonicalization, branch-residual, event, and
 topology gates. Forty symmetry-inclusive points admit complete-step temporal
@@ -394,6 +400,13 @@ spectra with finite-difference convergence, basis covariance, administrative-
 phase invariance, and graph-symmetry covariance. The 11 F1 primary points retain
 their GRV3 classical-derivative block at the zero-current sink/basin identity
 boundary.
+
+All branch-sheet audits pass. The frozen comparator is a clamped-`W`, zero-sum-
+`C` construction with positive tangent mobility; it uses no current-slaving
+inverse. Blocked complete-step rows therefore remain blocked comparisons, not
+threshold disagreements. Both decisive F1 examples use the same exact one-
+dimensional critical subspace and have nearest off-threshold separation margins
+of approximately `1.0`, well outside the declared numerical tolerances.
 
 Two bounded non-equivalence counterexamples are supported. Along the F1 scale
 path, the exact runtime row-basis unsigned, signed, and WLS Hessian surfaces stay
@@ -405,7 +418,7 @@ exact clamped-comparator results, not complete-step counterexamples. The F2/F3
 complete-step spectra remain near `+1` and constitute bounded correlation only;
 no full-map or complex-unit-circle crossing is claimed.
 
-Receipt `7034aeba...` is mechanically valid and awaiting human review. It leaves
+Receipt `c1f8986b...` is mechanically valid and awaiting human review. It leaves
 `GRV-C5` unassigned and GRV8 blocked. The result does not claim universal
 non-correlation, continuation, retention, Read-Back, or write-back.
 
