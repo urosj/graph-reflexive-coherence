@@ -11,6 +11,7 @@ complete_step_temporal_blocked_points = 11
 frozen_temporal_classes_reached = ['minus_one_flip_marginality', 'plus_one_marginality', 'stable_interior', 'unstable_exterior']
 complete_step_temporal_classes_reached = ['plus_one_marginality']
 supported_bounded_counterexample_count = 2
+decisive_uncertainty_separated_counterexample_count = 2
 supported_full_map_counterexample_count = 0
 bounded_spatial_temporal_non_equivalence_supported = true
 full_map_non_equivalence_supported = false
@@ -18,6 +19,28 @@ scientific_acceptance = awaiting_human_review
 GRV_C5_assigned = false
 GRV8_authorized = false
 ```
+
+## Load-Bearing Scientific Discriminators
+
+GRV7 treats six checks as load-bearing rather than presenting generic
+provenance hygiene as equally probative. `H_row`, `H_signed`, `H_WLS`,
+`H_cont^{W*}`, `A_W H_cont^{W*}`, and `A_full` have separate domains,
+metrics, sign conventions, and threshold rules. Cross-operator eigenvalue
+index pairing is forbidden.
+
+Every continuation sheet remains bound to its preregistered source branch;
+symmetry copies remain separate variants. The frozen comparator is a clamped-
+`W` zero-sum-`C` construction, not current slaving, so an `I-B_eff` inverse
+is not used or claimed. Its tangent mobility gate passes at every point.
+Complete-step comparisons remain independently governed by the GRV3 stratum
+and spectral gates; blocked rows are not threshold disagreements.
+
+The two decisive F1 examples share one exact one-dimensional zero-sum-`C`
+critical subspace, so their relation does not depend on sorted eigenvalue
+indices. Their threshold witnesses and off-threshold brackets are separated
+from the preregistered tolerances. No corresponding full-map threshold
+crossing was reached, so no full-map critical-subspace or non-equivalence
+claim is available.
 
 GRV7 follows preregistered branches rather than assembling unrelated solved
 points after seeing spectra. All 48 GRV2 branches remain in source accounting;
@@ -55,14 +78,14 @@ global nonexistence evidence.
 
 ## Counterexamples
 
-| Counterexample | Status | Full-map evidence |
-| --- | --- | --- |
-| `CE1_runtime_spatial_vs_analytical_continuation_threshold` | `supported` | `false` |
-| `CE2_fixed_spatial_vs_discrete_flip_threshold` | `supported` | `false` |
-| `F2_dt_nonuniform_path_complete_step_screen` | `bounded_correlation_only_no_preregistered_full_threshold_crossing` | `false` |
-| `F2_eta_nonuniform_path_complete_step_screen` | `bounded_correlation_only_no_preregistered_full_threshold_crossing` | `false` |
-| `F3_dt_nonuniform_path_complete_step_screen` | `bounded_correlation_only_no_preregistered_full_threshold_crossing` | `false` |
-| `F3_eta_nonuniform_path_complete_step_screen` | `bounded_correlation_only_no_preregistered_full_threshold_crossing` | `false` |
+| Counterexample | Status | Separation | Full-map evidence |
+| --- | --- | --- | --- |
+| `CE1_runtime_spatial_vs_analytical_continuation_threshold` | `supported` | `passed` | `false` |
+| `CE2_fixed_spatial_vs_discrete_flip_threshold` | `supported` | `passed` | `false` |
+| `F2_dt_nonuniform_path_complete_step_screen` | `bounded_correlation_only_no_preregistered_full_threshold_crossing` | `not_applicable` | `false` |
+| `F2_eta_nonuniform_path_complete_step_screen` | `bounded_correlation_only_no_preregistered_full_threshold_crossing` | `not_applicable` | `false` |
+| `F3_dt_nonuniform_path_complete_step_screen` | `bounded_correlation_only_no_preregistered_full_threshold_crossing` | `not_applicable` | `false` |
+| `F3_eta_nonuniform_path_complete_step_screen` | `bounded_correlation_only_no_preregistered_full_threshold_crossing` | `not_applicable` | `false` |
 
 ## Claim Boundary
 
@@ -76,7 +99,7 @@ GRV8 remains unopened.
 
 ## Provenance
 
-- Input execution revision: `0f9d0de3743eee6bad9cae525c451832671fc78b`
+- Input execution revision: `f002b2c18c516b96709811eb96a1d31e2bf492aa`
 - GRV6 receipt: `705b6967eedb86fe0d0d7d895998a3ad1147ede312502dae6567a9021fb449c3`
 - GRV6 acceptance commit: `9606f2466769d89e10145e112ed5136704a5ad79`
 - Runtime source/spec/root-test paths: unchanged under `protected_path_manifest_v7.json`

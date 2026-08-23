@@ -60,6 +60,19 @@
         "claim_allowed": true,
         "complete_step_scope": "blocked_by_zero_current_categorical_stratum",
         "counterexample_id": "CE1_runtime_spatial_vs_analytical_continuation_threshold",
+        "critical_subspace_audit": {
+          "common_domain": "fixed_topology_zero_sum_C_tangent",
+          "critical_subspace_dimension": 1,
+          "eigenvalue_index_pairing_used": false,
+          "physical_support": [
+            "C"
+          ],
+          "principal_angle_radians": 0.0,
+          "projector_distance_l2": 0.0,
+          "runtime_local_Hessian_cross_object_subspace_comparison": "not_defined_per_node_geometry_diagnostic_is_not_C_tangent_operator",
+          "status": "passed_exact_one_dimensional_common_C_tangent",
+          "symmetry_character": "unique_two_node_zero_sum_mode"
+        },
         "frozen_temporal_classes": [
           "plus_one_marginality",
           "stable_interior",
@@ -67,8 +80,24 @@
         ],
         "full_map_counterexample": false,
         "path_id": "F1_scale_structural_path",
+        "reduction_admissibility": "admitted_clamped_W_no_current_slaving",
         "runtime_spatial_diagnostic_digest_count": 1,
-        "status": "supported"
+        "status": "supported",
+        "threshold_separation_audit": {
+          "analytical_zero_residual": 3.999967547742785e-12,
+          "axis": "site_potential_scale",
+          "discrete_multiplier_tolerance": 1e-06,
+          "frozen_plus_one_residual": 8.000267115448878e-13,
+          "interpretation": "analytical_structural_and_frozen_plus_one_threshold_is_resolved_while_runtime_local_diagnostics_are_unchanged",
+          "lower_off_threshold_witness": 0.5,
+          "minimum_off_threshold_separation_margin": 1.9999999989959996,
+          "passed": true,
+          "runtime_local_diagnostic_invariance": "exact_semantic_digest_identity",
+          "spatial_zero_tolerance": 1e-09,
+          "status": "passed",
+          "threshold_witness": 1.0,
+          "upper_off_threshold_witness": 1.5
+        }
       },
       {
         "analytical_continuation_hessian_digest_count": 1,
@@ -76,6 +105,19 @@
         "claim_allowed": true,
         "complete_step_scope": "blocked_by_zero_current_categorical_stratum",
         "counterexample_id": "CE2_fixed_spatial_vs_discrete_flip_threshold",
+        "critical_subspace_audit": {
+          "common_domain": "fixed_topology_zero_sum_C_tangent",
+          "critical_subspace_dimension": 1,
+          "eigenvalue_index_pairing_used": false,
+          "physical_support": [
+            "C"
+          ],
+          "principal_angle_radians": 0.0,
+          "projector_distance_l2": 0.0,
+          "runtime_local_Hessian_cross_object_subspace_comparison": "not_defined_per_node_geometry_diagnostic_is_not_C_tangent_operator",
+          "status": "passed_exact_one_dimensional_common_C_tangent",
+          "symmetry_character": "unique_two_node_zero_sum_mode"
+        },
         "frozen_temporal_classes": [
           "minus_one_flip_marginality",
           "stable_interior",
@@ -83,8 +125,25 @@
         ],
         "full_map_counterexample": false,
         "path_id": "F1_dt_flip_path",
+        "reduction_admissibility": "admitted_clamped_W_no_current_slaving",
         "runtime_spatial_diagnostic_digest_count": 1,
-        "status": "supported"
+        "status": "supported",
+        "threshold_separation_audit": {
+          "axis": "dt",
+          "discrete_multiplier_tolerance": 1e-06,
+          "frozen_minus_one_residual": 3.999911513119514e-12,
+          "interpretation": "discrete_flip_is_resolved_across_stable_threshold_and_unstable_witnesses_while_H_cont_is_fixed_away_from_zero",
+          "maximum_stable_interior_margin": 0.999999999998,
+          "maximum_unstable_exterior_margin": 1.0000000000059996,
+          "minimum_off_threshold_separation_margin": 0.999998999998,
+          "minimum_spatial_distance_from_zero": 1.0000000000040001,
+          "minus_one_threshold_witness": 1.0,
+          "passed": true,
+          "spatial_zero_tolerance": 1e-09,
+          "stable_interior_witness": 0.5,
+          "status": "passed",
+          "unstable_exterior_witness": 1.5
+        }
       },
       {
         "claim_allowed": false,
@@ -128,11 +187,72 @@
       }
     ],
     "gate_id": "GRV7",
+    "operator_contract": {
+      "A_W_H_cont_W_star": {
+        "domain": "fixed_topology_zero_sum_C_tangent_at_clamped_W_star",
+        "metric": "mobility_similarity_metric_with_self_adjoint_representative",
+        "sign_convention": "positive_is_temporal_relaxation_and_generator_is_its_negative",
+        "threshold_rule": "frozen_multiplier_I_minus_dt_A_W_H_cont_at_plus_one_minus_one_or_unit_circle"
+      },
+      "A_full": {
+        "domain": "GRV3_admitted_C_causal_chart_with_native_stage_reconstruction",
+        "metric": "GRV3_branch_RMS_physical_state_metric_and_declared_C_chart_basis",
+        "sign_convention": "discrete_complete_step_multiplier",
+        "threshold_rule": "plus_one_minus_one_or_complex_unit_circle_only_when_GRV3_stratum_and_spectrum_gates_admit"
+      },
+      "H_WLS": {
+        "domain": "per_node_weighted_least_squares_local_geometry_diagnostic",
+        "metric": "runtime_WLS_embedding_metric",
+        "sign_convention": "runtime_comparison_backend_convention",
+        "threshold_rule": "comparison_backend_only_no_primary_GRV7_threshold_rule"
+      },
+      "H_cont_W_star": {
+        "domain": "fixed_topology_zero_sum_C_tangent_at_clamped_W_star",
+        "metric": "orthonormal_zero_sum_C_basis",
+        "sign_convention": "H_cont_equals_minus_H_P",
+        "threshold_rule": "structural_zero_when_absolute_eigenvalue_lte_spatial_zero_tolerance"
+      },
+      "H_row": {
+        "domain": "per_node_native_row_basis_local_geometry_diagnostic",
+        "metric": "native_runtime_row_basis",
+        "sign_convention": "unsigned_runtime_diagnostic",
+        "threshold_rule": "no_primary_GRV7_threshold_rule_diagnostic_only"
+      },
+      "H_signed": {
+        "domain": "per_node_native_row_basis_local_geometry_diagnostic",
+        "metric": "native_runtime_row_basis",
+        "sign_convention": "runtime_hessian_sign_applied",
+        "threshold_rule": "no_primary_GRV7_threshold_rule_diagnostic_only"
+      },
+      "cross_operator_comparison_requires_common_domain_or_declared_embedding": true,
+      "cross_operator_eigenvalue_index_pairing_allowed": false
+    },
     "path_rows": [
       {
         "all_applicable_symmetry_controls_passed": true,
         "all_points_admitted": true,
         "axis": "site_potential_scale",
+        "branch_identity_audit": {
+          "passed": true,
+          "per_source_branch": [
+            {
+              "branch_C_topology_digest_count": 1,
+              "categorical_signature_digest_count": 1,
+              "constitutive_W_J_digest_count": 1,
+              "constitutive_W_J_variation_is_branch_jump": false,
+              "continuation_sheet_key_count": 1,
+              "decision": "same_branch_sheet_preserved",
+              "exact_branch_state_digest_identity_required": false,
+              "maximum_adjacent_coherence_state_l2": 0.0,
+              "maximum_adjacent_total_coherence_delta": 0.0,
+              "passed": true,
+              "source_branch_id": "grv2-f1-004"
+            }
+          ],
+          "post_spectrum_sheet_selection_allowed": false,
+          "status": "passed",
+          "symmetry_copies_tracked_as_separate_source_branches": true
+        },
         "cluster_matching": {
           "all_available_cluster_matches_passed": true,
           "blocked_complete_step_pairs_retained": 4,
@@ -341,6 +461,16 @@
                 "topology_equal": true,
                 "total_coherence_delta": 0.0
               },
+              "branch_sheet_identity": {
+                "branch_C_topology_sha256": "62cb22808d82ec308fc5d6e72efee6e0ec6938638f2024c96a77663ebcf04ba0",
+                "branch_sheet_selected_before_GRV7_spectra": true,
+                "categorical_signature_sha256": "15b965df64d528ee5d56af7935acad902ba8b629bc59e07b524e366891c9ff21",
+                "constitutive_W_J_sha256": "0ae01ccc42c00671c9e730ee5819b0d8032e896495383ea23afde0aa9f1ed8a8",
+                "continuation_sheet_key": "F1:grv2-f1-004",
+                "fixture_id": "F1",
+                "source_branch_id": "grv2-f1-004",
+                "symmetry_copy_substitution_allowed": false
+              },
               "categorical_evidence": {
                 "baseline_signature": {
                   "basins": {},
@@ -425,6 +555,21 @@
                 "continuation_point_supported": true,
                 "frozen_comparator_is_full_map": false,
                 "retention_readback_or_writeback_supported": false
+              },
+              "comparison_admissibility": {
+                "complete_step": {
+                  "admitted": false,
+                  "blocked_comparison_is_threshold_disagreement": false,
+                  "status": "comparison_blocked_by_GRV3_stratum_or_spectral_gate"
+                },
+                "frozen_W_comparator": {
+                  "I_minus_B_eff_invertibility_status": "not_applicable_no_current_slaving_or_feedback_elimination",
+                  "admitted": true,
+                  "current_slaving_used": false,
+                  "fast_slaving_claim_allowed": false,
+                  "mobility_positive_definite_on_zero_sum_C_tangent": true,
+                  "status": "admitted_clamped_W_C_tangent_comparator"
+                }
               },
               "complete_step_temporal": {
                 "baseline_stratum_margins": {
@@ -678,6 +823,16 @@
                 "topology_equal": true,
                 "total_coherence_delta": 0.0
               },
+              "branch_sheet_identity": {
+                "branch_C_topology_sha256": "62cb22808d82ec308fc5d6e72efee6e0ec6938638f2024c96a77663ebcf04ba0",
+                "branch_sheet_selected_before_GRV7_spectra": true,
+                "categorical_signature_sha256": "15b965df64d528ee5d56af7935acad902ba8b629bc59e07b524e366891c9ff21",
+                "constitutive_W_J_sha256": "0ae01ccc42c00671c9e730ee5819b0d8032e896495383ea23afde0aa9f1ed8a8",
+                "continuation_sheet_key": "F1:grv2-f1-004",
+                "fixture_id": "F1",
+                "source_branch_id": "grv2-f1-004",
+                "symmetry_copy_substitution_allowed": false
+              },
               "categorical_evidence": {
                 "baseline_signature": {
                   "basins": {},
@@ -762,6 +917,21 @@
                 "continuation_point_supported": true,
                 "frozen_comparator_is_full_map": false,
                 "retention_readback_or_writeback_supported": false
+              },
+              "comparison_admissibility": {
+                "complete_step": {
+                  "admitted": false,
+                  "blocked_comparison_is_threshold_disagreement": false,
+                  "status": "comparison_blocked_by_GRV3_stratum_or_spectral_gate"
+                },
+                "frozen_W_comparator": {
+                  "I_minus_B_eff_invertibility_status": "not_applicable_no_current_slaving_or_feedback_elimination",
+                  "admitted": true,
+                  "current_slaving_used": false,
+                  "fast_slaving_claim_allowed": false,
+                  "mobility_positive_definite_on_zero_sum_C_tangent": true,
+                  "status": "admitted_clamped_W_C_tangent_comparator"
+                }
               },
               "complete_step_temporal": {
                 "baseline_stratum_margins": {
@@ -1015,6 +1185,16 @@
                 "topology_equal": true,
                 "total_coherence_delta": 0.0
               },
+              "branch_sheet_identity": {
+                "branch_C_topology_sha256": "62cb22808d82ec308fc5d6e72efee6e0ec6938638f2024c96a77663ebcf04ba0",
+                "branch_sheet_selected_before_GRV7_spectra": true,
+                "categorical_signature_sha256": "15b965df64d528ee5d56af7935acad902ba8b629bc59e07b524e366891c9ff21",
+                "constitutive_W_J_sha256": "0ae01ccc42c00671c9e730ee5819b0d8032e896495383ea23afde0aa9f1ed8a8",
+                "continuation_sheet_key": "F1:grv2-f1-004",
+                "fixture_id": "F1",
+                "source_branch_id": "grv2-f1-004",
+                "symmetry_copy_substitution_allowed": false
+              },
               "categorical_evidence": {
                 "baseline_signature": {
                   "basins": {},
@@ -1099,6 +1279,21 @@
                 "continuation_point_supported": true,
                 "frozen_comparator_is_full_map": false,
                 "retention_readback_or_writeback_supported": false
+              },
+              "comparison_admissibility": {
+                "complete_step": {
+                  "admitted": false,
+                  "blocked_comparison_is_threshold_disagreement": false,
+                  "status": "comparison_blocked_by_GRV3_stratum_or_spectral_gate"
+                },
+                "frozen_W_comparator": {
+                  "I_minus_B_eff_invertibility_status": "not_applicable_no_current_slaving_or_feedback_elimination",
+                  "admitted": true,
+                  "current_slaving_used": false,
+                  "fast_slaving_claim_allowed": false,
+                  "mobility_positive_definite_on_zero_sum_C_tangent": true,
+                  "status": "admitted_clamped_W_C_tangent_comparator"
+                }
               },
               "complete_step_temporal": {
                 "baseline_stratum_margins": {
@@ -1352,6 +1547,16 @@
                 "topology_equal": true,
                 "total_coherence_delta": 0.0
               },
+              "branch_sheet_identity": {
+                "branch_C_topology_sha256": "62cb22808d82ec308fc5d6e72efee6e0ec6938638f2024c96a77663ebcf04ba0",
+                "branch_sheet_selected_before_GRV7_spectra": true,
+                "categorical_signature_sha256": "15b965df64d528ee5d56af7935acad902ba8b629bc59e07b524e366891c9ff21",
+                "constitutive_W_J_sha256": "0ae01ccc42c00671c9e730ee5819b0d8032e896495383ea23afde0aa9f1ed8a8",
+                "continuation_sheet_key": "F1:grv2-f1-004",
+                "fixture_id": "F1",
+                "source_branch_id": "grv2-f1-004",
+                "symmetry_copy_substitution_allowed": false
+              },
               "categorical_evidence": {
                 "baseline_signature": {
                   "basins": {},
@@ -1436,6 +1641,21 @@
                 "continuation_point_supported": true,
                 "frozen_comparator_is_full_map": false,
                 "retention_readback_or_writeback_supported": false
+              },
+              "comparison_admissibility": {
+                "complete_step": {
+                  "admitted": false,
+                  "blocked_comparison_is_threshold_disagreement": false,
+                  "status": "comparison_blocked_by_GRV3_stratum_or_spectral_gate"
+                },
+                "frozen_W_comparator": {
+                  "I_minus_B_eff_invertibility_status": "not_applicable_no_current_slaving_or_feedback_elimination",
+                  "admitted": true,
+                  "current_slaving_used": false,
+                  "fast_slaving_claim_allowed": false,
+                  "mobility_positive_definite_on_zero_sum_C_tangent": true,
+                  "status": "admitted_clamped_W_C_tangent_comparator"
+                }
               },
               "complete_step_temporal": {
                 "baseline_stratum_margins": {
@@ -1689,6 +1909,16 @@
                 "topology_equal": true,
                 "total_coherence_delta": 0.0
               },
+              "branch_sheet_identity": {
+                "branch_C_topology_sha256": "62cb22808d82ec308fc5d6e72efee6e0ec6938638f2024c96a77663ebcf04ba0",
+                "branch_sheet_selected_before_GRV7_spectra": true,
+                "categorical_signature_sha256": "15b965df64d528ee5d56af7935acad902ba8b629bc59e07b524e366891c9ff21",
+                "constitutive_W_J_sha256": "0ae01ccc42c00671c9e730ee5819b0d8032e896495383ea23afde0aa9f1ed8a8",
+                "continuation_sheet_key": "F1:grv2-f1-004",
+                "fixture_id": "F1",
+                "source_branch_id": "grv2-f1-004",
+                "symmetry_copy_substitution_allowed": false
+              },
               "categorical_evidence": {
                 "baseline_signature": {
                   "basins": {},
@@ -1773,6 +2003,21 @@
                 "continuation_point_supported": true,
                 "frozen_comparator_is_full_map": false,
                 "retention_readback_or_writeback_supported": false
+              },
+              "comparison_admissibility": {
+                "complete_step": {
+                  "admitted": false,
+                  "blocked_comparison_is_threshold_disagreement": false,
+                  "status": "comparison_blocked_by_GRV3_stratum_or_spectral_gate"
+                },
+                "frozen_W_comparator": {
+                  "I_minus_B_eff_invertibility_status": "not_applicable_no_current_slaving_or_feedback_elimination",
+                  "admitted": true,
+                  "current_slaving_used": false,
+                  "fast_slaving_claim_allowed": false,
+                  "mobility_positive_definite_on_zero_sum_C_tangent": true,
+                  "status": "admitted_clamped_W_C_tangent_comparator"
+                }
               },
               "complete_step_temporal": {
                 "baseline_stratum_margins": {
@@ -2025,6 +2270,16 @@
               "topology_equal": true,
               "total_coherence_delta": 0.0
             },
+            "branch_sheet_identity": {
+              "branch_C_topology_sha256": "62cb22808d82ec308fc5d6e72efee6e0ec6938638f2024c96a77663ebcf04ba0",
+              "branch_sheet_selected_before_GRV7_spectra": true,
+              "categorical_signature_sha256": "15b965df64d528ee5d56af7935acad902ba8b629bc59e07b524e366891c9ff21",
+              "constitutive_W_J_sha256": "0ae01ccc42c00671c9e730ee5819b0d8032e896495383ea23afde0aa9f1ed8a8",
+              "continuation_sheet_key": "F1:grv2-f1-004",
+              "fixture_id": "F1",
+              "source_branch_id": "grv2-f1-004",
+              "symmetry_copy_substitution_allowed": false
+            },
             "categorical_evidence": {
               "baseline_signature": {
                 "basins": {},
@@ -2109,6 +2364,21 @@
               "continuation_point_supported": true,
               "frozen_comparator_is_full_map": false,
               "retention_readback_or_writeback_supported": false
+            },
+            "comparison_admissibility": {
+              "complete_step": {
+                "admitted": false,
+                "blocked_comparison_is_threshold_disagreement": false,
+                "status": "comparison_blocked_by_GRV3_stratum_or_spectral_gate"
+              },
+              "frozen_W_comparator": {
+                "I_minus_B_eff_invertibility_status": "not_applicable_no_current_slaving_or_feedback_elimination",
+                "admitted": true,
+                "current_slaving_used": false,
+                "fast_slaving_claim_allowed": false,
+                "mobility_positive_definite_on_zero_sum_C_tangent": true,
+                "status": "admitted_clamped_W_C_tangent_comparator"
+              }
             },
             "complete_step_temporal": {
               "baseline_stratum_margins": {
@@ -2352,6 +2622,16 @@
               "topology_equal": true,
               "total_coherence_delta": 0.0
             },
+            "branch_sheet_identity": {
+              "branch_C_topology_sha256": "62cb22808d82ec308fc5d6e72efee6e0ec6938638f2024c96a77663ebcf04ba0",
+              "branch_sheet_selected_before_GRV7_spectra": true,
+              "categorical_signature_sha256": "15b965df64d528ee5d56af7935acad902ba8b629bc59e07b524e366891c9ff21",
+              "constitutive_W_J_sha256": "0ae01ccc42c00671c9e730ee5819b0d8032e896495383ea23afde0aa9f1ed8a8",
+              "continuation_sheet_key": "F1:grv2-f1-004",
+              "fixture_id": "F1",
+              "source_branch_id": "grv2-f1-004",
+              "symmetry_copy_substitution_allowed": false
+            },
             "categorical_evidence": {
               "baseline_signature": {
                 "basins": {},
@@ -2436,6 +2716,21 @@
               "continuation_point_supported": true,
               "frozen_comparator_is_full_map": false,
               "retention_readback_or_writeback_supported": false
+            },
+            "comparison_admissibility": {
+              "complete_step": {
+                "admitted": false,
+                "blocked_comparison_is_threshold_disagreement": false,
+                "status": "comparison_blocked_by_GRV3_stratum_or_spectral_gate"
+              },
+              "frozen_W_comparator": {
+                "I_minus_B_eff_invertibility_status": "not_applicable_no_current_slaving_or_feedback_elimination",
+                "admitted": true,
+                "current_slaving_used": false,
+                "fast_slaving_claim_allowed": false,
+                "mobility_positive_definite_on_zero_sum_C_tangent": true,
+                "status": "admitted_clamped_W_C_tangent_comparator"
+              }
             },
             "complete_step_temporal": {
               "baseline_stratum_margins": {
@@ -2679,6 +2974,16 @@
               "topology_equal": true,
               "total_coherence_delta": 0.0
             },
+            "branch_sheet_identity": {
+              "branch_C_topology_sha256": "62cb22808d82ec308fc5d6e72efee6e0ec6938638f2024c96a77663ebcf04ba0",
+              "branch_sheet_selected_before_GRV7_spectra": true,
+              "categorical_signature_sha256": "15b965df64d528ee5d56af7935acad902ba8b629bc59e07b524e366891c9ff21",
+              "constitutive_W_J_sha256": "0ae01ccc42c00671c9e730ee5819b0d8032e896495383ea23afde0aa9f1ed8a8",
+              "continuation_sheet_key": "F1:grv2-f1-004",
+              "fixture_id": "F1",
+              "source_branch_id": "grv2-f1-004",
+              "symmetry_copy_substitution_allowed": false
+            },
             "categorical_evidence": {
               "baseline_signature": {
                 "basins": {},
@@ -2763,6 +3068,21 @@
               "continuation_point_supported": true,
               "frozen_comparator_is_full_map": false,
               "retention_readback_or_writeback_supported": false
+            },
+            "comparison_admissibility": {
+              "complete_step": {
+                "admitted": false,
+                "blocked_comparison_is_threshold_disagreement": false,
+                "status": "comparison_blocked_by_GRV3_stratum_or_spectral_gate"
+              },
+              "frozen_W_comparator": {
+                "I_minus_B_eff_invertibility_status": "not_applicable_no_current_slaving_or_feedback_elimination",
+                "admitted": true,
+                "current_slaving_used": false,
+                "fast_slaving_claim_allowed": false,
+                "mobility_positive_definite_on_zero_sum_C_tangent": true,
+                "status": "admitted_clamped_W_C_tangent_comparator"
+              }
             },
             "complete_step_temporal": {
               "baseline_stratum_margins": {
@@ -3006,6 +3326,16 @@
               "topology_equal": true,
               "total_coherence_delta": 0.0
             },
+            "branch_sheet_identity": {
+              "branch_C_topology_sha256": "62cb22808d82ec308fc5d6e72efee6e0ec6938638f2024c96a77663ebcf04ba0",
+              "branch_sheet_selected_before_GRV7_spectra": true,
+              "categorical_signature_sha256": "15b965df64d528ee5d56af7935acad902ba8b629bc59e07b524e366891c9ff21",
+              "constitutive_W_J_sha256": "0ae01ccc42c00671c9e730ee5819b0d8032e896495383ea23afde0aa9f1ed8a8",
+              "continuation_sheet_key": "F1:grv2-f1-004",
+              "fixture_id": "F1",
+              "source_branch_id": "grv2-f1-004",
+              "symmetry_copy_substitution_allowed": false
+            },
             "categorical_evidence": {
               "baseline_signature": {
                 "basins": {},
@@ -3090,6 +3420,21 @@
               "continuation_point_supported": true,
               "frozen_comparator_is_full_map": false,
               "retention_readback_or_writeback_supported": false
+            },
+            "comparison_admissibility": {
+              "complete_step": {
+                "admitted": false,
+                "blocked_comparison_is_threshold_disagreement": false,
+                "status": "comparison_blocked_by_GRV3_stratum_or_spectral_gate"
+              },
+              "frozen_W_comparator": {
+                "I_minus_B_eff_invertibility_status": "not_applicable_no_current_slaving_or_feedback_elimination",
+                "admitted": true,
+                "current_slaving_used": false,
+                "fast_slaving_claim_allowed": false,
+                "mobility_positive_definite_on_zero_sum_C_tangent": true,
+                "status": "admitted_clamped_W_C_tangent_comparator"
+              }
             },
             "complete_step_temporal": {
               "baseline_stratum_margins": {
@@ -3333,6 +3678,16 @@
               "topology_equal": true,
               "total_coherence_delta": 0.0
             },
+            "branch_sheet_identity": {
+              "branch_C_topology_sha256": "62cb22808d82ec308fc5d6e72efee6e0ec6938638f2024c96a77663ebcf04ba0",
+              "branch_sheet_selected_before_GRV7_spectra": true,
+              "categorical_signature_sha256": "15b965df64d528ee5d56af7935acad902ba8b629bc59e07b524e366891c9ff21",
+              "constitutive_W_J_sha256": "0ae01ccc42c00671c9e730ee5819b0d8032e896495383ea23afde0aa9f1ed8a8",
+              "continuation_sheet_key": "F1:grv2-f1-004",
+              "fixture_id": "F1",
+              "source_branch_id": "grv2-f1-004",
+              "symmetry_copy_substitution_allowed": false
+            },
             "categorical_evidence": {
               "baseline_signature": {
                 "basins": {},
@@ -3417,6 +3772,21 @@
               "continuation_point_supported": true,
               "frozen_comparator_is_full_map": false,
               "retention_readback_or_writeback_supported": false
+            },
+            "comparison_admissibility": {
+              "complete_step": {
+                "admitted": false,
+                "blocked_comparison_is_threshold_disagreement": false,
+                "status": "comparison_blocked_by_GRV3_stratum_or_spectral_gate"
+              },
+              "frozen_W_comparator": {
+                "I_minus_B_eff_invertibility_status": "not_applicable_no_current_slaving_or_feedback_elimination",
+                "admitted": true,
+                "current_slaving_used": false,
+                "fast_slaving_claim_allowed": false,
+                "mobility_positive_definite_on_zero_sum_C_tangent": true,
+                "status": "admitted_clamped_W_C_tangent_comparator"
+              }
             },
             "complete_step_temporal": {
               "baseline_stratum_margins": {
@@ -3587,6 +3957,27 @@
         "all_applicable_symmetry_controls_passed": true,
         "all_points_admitted": true,
         "axis": "dt",
+        "branch_identity_audit": {
+          "passed": true,
+          "per_source_branch": [
+            {
+              "branch_C_topology_digest_count": 1,
+              "categorical_signature_digest_count": 1,
+              "constitutive_W_J_digest_count": 1,
+              "constitutive_W_J_variation_is_branch_jump": false,
+              "continuation_sheet_key_count": 1,
+              "decision": "same_branch_sheet_preserved",
+              "exact_branch_state_digest_identity_required": false,
+              "maximum_adjacent_coherence_state_l2": 0.0,
+              "maximum_adjacent_total_coherence_delta": 0.0,
+              "passed": true,
+              "source_branch_id": "grv2-f1-014"
+            }
+          ],
+          "post_spectrum_sheet_selection_allowed": false,
+          "status": "passed",
+          "symmetry_copies_tracked_as_separate_source_branches": true
+        },
         "cluster_matching": {
           "all_available_cluster_matches_passed": true,
           "blocked_complete_step_pairs_retained": 5,
@@ -3823,6 +4214,16 @@
                 "topology_equal": true,
                 "total_coherence_delta": 0.0
               },
+              "branch_sheet_identity": {
+                "branch_C_topology_sha256": "62cb22808d82ec308fc5d6e72efee6e0ec6938638f2024c96a77663ebcf04ba0",
+                "branch_sheet_selected_before_GRV7_spectra": true,
+                "categorical_signature_sha256": "15b965df64d528ee5d56af7935acad902ba8b629bc59e07b524e366891c9ff21",
+                "constitutive_W_J_sha256": "0ae01ccc42c00671c9e730ee5819b0d8032e896495383ea23afde0aa9f1ed8a8",
+                "continuation_sheet_key": "F1:grv2-f1-014",
+                "fixture_id": "F1",
+                "source_branch_id": "grv2-f1-014",
+                "symmetry_copy_substitution_allowed": false
+              },
               "categorical_evidence": {
                 "baseline_signature": {
                   "basins": {},
@@ -3907,6 +4308,21 @@
                 "continuation_point_supported": true,
                 "frozen_comparator_is_full_map": false,
                 "retention_readback_or_writeback_supported": false
+              },
+              "comparison_admissibility": {
+                "complete_step": {
+                  "admitted": false,
+                  "blocked_comparison_is_threshold_disagreement": false,
+                  "status": "comparison_blocked_by_GRV3_stratum_or_spectral_gate"
+                },
+                "frozen_W_comparator": {
+                  "I_minus_B_eff_invertibility_status": "not_applicable_no_current_slaving_or_feedback_elimination",
+                  "admitted": true,
+                  "current_slaving_used": false,
+                  "fast_slaving_claim_allowed": false,
+                  "mobility_positive_definite_on_zero_sum_C_tangent": true,
+                  "status": "admitted_clamped_W_C_tangent_comparator"
+                }
               },
               "complete_step_temporal": {
                 "baseline_stratum_margins": {
@@ -4160,6 +4576,16 @@
                 "topology_equal": true,
                 "total_coherence_delta": 0.0
               },
+              "branch_sheet_identity": {
+                "branch_C_topology_sha256": "62cb22808d82ec308fc5d6e72efee6e0ec6938638f2024c96a77663ebcf04ba0",
+                "branch_sheet_selected_before_GRV7_spectra": true,
+                "categorical_signature_sha256": "15b965df64d528ee5d56af7935acad902ba8b629bc59e07b524e366891c9ff21",
+                "constitutive_W_J_sha256": "0ae01ccc42c00671c9e730ee5819b0d8032e896495383ea23afde0aa9f1ed8a8",
+                "continuation_sheet_key": "F1:grv2-f1-014",
+                "fixture_id": "F1",
+                "source_branch_id": "grv2-f1-014",
+                "symmetry_copy_substitution_allowed": false
+              },
               "categorical_evidence": {
                 "baseline_signature": {
                   "basins": {},
@@ -4244,6 +4670,21 @@
                 "continuation_point_supported": true,
                 "frozen_comparator_is_full_map": false,
                 "retention_readback_or_writeback_supported": false
+              },
+              "comparison_admissibility": {
+                "complete_step": {
+                  "admitted": false,
+                  "blocked_comparison_is_threshold_disagreement": false,
+                  "status": "comparison_blocked_by_GRV3_stratum_or_spectral_gate"
+                },
+                "frozen_W_comparator": {
+                  "I_minus_B_eff_invertibility_status": "not_applicable_no_current_slaving_or_feedback_elimination",
+                  "admitted": true,
+                  "current_slaving_used": false,
+                  "fast_slaving_claim_allowed": false,
+                  "mobility_positive_definite_on_zero_sum_C_tangent": true,
+                  "status": "admitted_clamped_W_C_tangent_comparator"
+                }
               },
               "complete_step_temporal": {
                 "baseline_stratum_margins": {
@@ -4497,6 +4938,16 @@
                 "topology_equal": true,
                 "total_coherence_delta": 0.0
               },
+              "branch_sheet_identity": {
+                "branch_C_topology_sha256": "62cb22808d82ec308fc5d6e72efee6e0ec6938638f2024c96a77663ebcf04ba0",
+                "branch_sheet_selected_before_GRV7_spectra": true,
+                "categorical_signature_sha256": "15b965df64d528ee5d56af7935acad902ba8b629bc59e07b524e366891c9ff21",
+                "constitutive_W_J_sha256": "0ae01ccc42c00671c9e730ee5819b0d8032e896495383ea23afde0aa9f1ed8a8",
+                "continuation_sheet_key": "F1:grv2-f1-014",
+                "fixture_id": "F1",
+                "source_branch_id": "grv2-f1-014",
+                "symmetry_copy_substitution_allowed": false
+              },
               "categorical_evidence": {
                 "baseline_signature": {
                   "basins": {},
@@ -4581,6 +5032,21 @@
                 "continuation_point_supported": true,
                 "frozen_comparator_is_full_map": false,
                 "retention_readback_or_writeback_supported": false
+              },
+              "comparison_admissibility": {
+                "complete_step": {
+                  "admitted": false,
+                  "blocked_comparison_is_threshold_disagreement": false,
+                  "status": "comparison_blocked_by_GRV3_stratum_or_spectral_gate"
+                },
+                "frozen_W_comparator": {
+                  "I_minus_B_eff_invertibility_status": "not_applicable_no_current_slaving_or_feedback_elimination",
+                  "admitted": true,
+                  "current_slaving_used": false,
+                  "fast_slaving_claim_allowed": false,
+                  "mobility_positive_definite_on_zero_sum_C_tangent": true,
+                  "status": "admitted_clamped_W_C_tangent_comparator"
+                }
               },
               "complete_step_temporal": {
                 "baseline_stratum_margins": {
@@ -4834,6 +5300,16 @@
                 "topology_equal": true,
                 "total_coherence_delta": 0.0
               },
+              "branch_sheet_identity": {
+                "branch_C_topology_sha256": "62cb22808d82ec308fc5d6e72efee6e0ec6938638f2024c96a77663ebcf04ba0",
+                "branch_sheet_selected_before_GRV7_spectra": true,
+                "categorical_signature_sha256": "15b965df64d528ee5d56af7935acad902ba8b629bc59e07b524e366891c9ff21",
+                "constitutive_W_J_sha256": "0ae01ccc42c00671c9e730ee5819b0d8032e896495383ea23afde0aa9f1ed8a8",
+                "continuation_sheet_key": "F1:grv2-f1-014",
+                "fixture_id": "F1",
+                "source_branch_id": "grv2-f1-014",
+                "symmetry_copy_substitution_allowed": false
+              },
               "categorical_evidence": {
                 "baseline_signature": {
                   "basins": {},
@@ -4918,6 +5394,21 @@
                 "continuation_point_supported": true,
                 "frozen_comparator_is_full_map": false,
                 "retention_readback_or_writeback_supported": false
+              },
+              "comparison_admissibility": {
+                "complete_step": {
+                  "admitted": false,
+                  "blocked_comparison_is_threshold_disagreement": false,
+                  "status": "comparison_blocked_by_GRV3_stratum_or_spectral_gate"
+                },
+                "frozen_W_comparator": {
+                  "I_minus_B_eff_invertibility_status": "not_applicable_no_current_slaving_or_feedback_elimination",
+                  "admitted": true,
+                  "current_slaving_used": false,
+                  "fast_slaving_claim_allowed": false,
+                  "mobility_positive_definite_on_zero_sum_C_tangent": true,
+                  "status": "admitted_clamped_W_C_tangent_comparator"
+                }
               },
               "complete_step_temporal": {
                 "baseline_stratum_margins": {
@@ -5171,6 +5662,16 @@
                 "topology_equal": true,
                 "total_coherence_delta": 0.0
               },
+              "branch_sheet_identity": {
+                "branch_C_topology_sha256": "62cb22808d82ec308fc5d6e72efee6e0ec6938638f2024c96a77663ebcf04ba0",
+                "branch_sheet_selected_before_GRV7_spectra": true,
+                "categorical_signature_sha256": "15b965df64d528ee5d56af7935acad902ba8b629bc59e07b524e366891c9ff21",
+                "constitutive_W_J_sha256": "0ae01ccc42c00671c9e730ee5819b0d8032e896495383ea23afde0aa9f1ed8a8",
+                "continuation_sheet_key": "F1:grv2-f1-014",
+                "fixture_id": "F1",
+                "source_branch_id": "grv2-f1-014",
+                "symmetry_copy_substitution_allowed": false
+              },
               "categorical_evidence": {
                 "baseline_signature": {
                   "basins": {},
@@ -5255,6 +5756,21 @@
                 "continuation_point_supported": true,
                 "frozen_comparator_is_full_map": false,
                 "retention_readback_or_writeback_supported": false
+              },
+              "comparison_admissibility": {
+                "complete_step": {
+                  "admitted": false,
+                  "blocked_comparison_is_threshold_disagreement": false,
+                  "status": "comparison_blocked_by_GRV3_stratum_or_spectral_gate"
+                },
+                "frozen_W_comparator": {
+                  "I_minus_B_eff_invertibility_status": "not_applicable_no_current_slaving_or_feedback_elimination",
+                  "admitted": true,
+                  "current_slaving_used": false,
+                  "fast_slaving_claim_allowed": false,
+                  "mobility_positive_definite_on_zero_sum_C_tangent": true,
+                  "status": "admitted_clamped_W_C_tangent_comparator"
+                }
               },
               "complete_step_temporal": {
                 "baseline_stratum_margins": {
@@ -5508,6 +6024,16 @@
                 "topology_equal": true,
                 "total_coherence_delta": 0.0
               },
+              "branch_sheet_identity": {
+                "branch_C_topology_sha256": "62cb22808d82ec308fc5d6e72efee6e0ec6938638f2024c96a77663ebcf04ba0",
+                "branch_sheet_selected_before_GRV7_spectra": true,
+                "categorical_signature_sha256": "15b965df64d528ee5d56af7935acad902ba8b629bc59e07b524e366891c9ff21",
+                "constitutive_W_J_sha256": "0ae01ccc42c00671c9e730ee5819b0d8032e896495383ea23afde0aa9f1ed8a8",
+                "continuation_sheet_key": "F1:grv2-f1-014",
+                "fixture_id": "F1",
+                "source_branch_id": "grv2-f1-014",
+                "symmetry_copy_substitution_allowed": false
+              },
               "categorical_evidence": {
                 "baseline_signature": {
                   "basins": {},
@@ -5592,6 +6118,21 @@
                 "continuation_point_supported": true,
                 "frozen_comparator_is_full_map": false,
                 "retention_readback_or_writeback_supported": false
+              },
+              "comparison_admissibility": {
+                "complete_step": {
+                  "admitted": false,
+                  "blocked_comparison_is_threshold_disagreement": false,
+                  "status": "comparison_blocked_by_GRV3_stratum_or_spectral_gate"
+                },
+                "frozen_W_comparator": {
+                  "I_minus_B_eff_invertibility_status": "not_applicable_no_current_slaving_or_feedback_elimination",
+                  "admitted": true,
+                  "current_slaving_used": false,
+                  "fast_slaving_claim_allowed": false,
+                  "mobility_positive_definite_on_zero_sum_C_tangent": true,
+                  "status": "admitted_clamped_W_C_tangent_comparator"
+                }
               },
               "complete_step_temporal": {
                 "baseline_stratum_margins": {
@@ -5844,6 +6385,16 @@
               "topology_equal": true,
               "total_coherence_delta": 0.0
             },
+            "branch_sheet_identity": {
+              "branch_C_topology_sha256": "62cb22808d82ec308fc5d6e72efee6e0ec6938638f2024c96a77663ebcf04ba0",
+              "branch_sheet_selected_before_GRV7_spectra": true,
+              "categorical_signature_sha256": "15b965df64d528ee5d56af7935acad902ba8b629bc59e07b524e366891c9ff21",
+              "constitutive_W_J_sha256": "0ae01ccc42c00671c9e730ee5819b0d8032e896495383ea23afde0aa9f1ed8a8",
+              "continuation_sheet_key": "F1:grv2-f1-014",
+              "fixture_id": "F1",
+              "source_branch_id": "grv2-f1-014",
+              "symmetry_copy_substitution_allowed": false
+            },
             "categorical_evidence": {
               "baseline_signature": {
                 "basins": {},
@@ -5928,6 +6479,21 @@
               "continuation_point_supported": true,
               "frozen_comparator_is_full_map": false,
               "retention_readback_or_writeback_supported": false
+            },
+            "comparison_admissibility": {
+              "complete_step": {
+                "admitted": false,
+                "blocked_comparison_is_threshold_disagreement": false,
+                "status": "comparison_blocked_by_GRV3_stratum_or_spectral_gate"
+              },
+              "frozen_W_comparator": {
+                "I_minus_B_eff_invertibility_status": "not_applicable_no_current_slaving_or_feedback_elimination",
+                "admitted": true,
+                "current_slaving_used": false,
+                "fast_slaving_claim_allowed": false,
+                "mobility_positive_definite_on_zero_sum_C_tangent": true,
+                "status": "admitted_clamped_W_C_tangent_comparator"
+              }
             },
             "complete_step_temporal": {
               "baseline_stratum_margins": {
@@ -6171,6 +6737,16 @@
               "topology_equal": true,
               "total_coherence_delta": 0.0
             },
+            "branch_sheet_identity": {
+              "branch_C_topology_sha256": "62cb22808d82ec308fc5d6e72efee6e0ec6938638f2024c96a77663ebcf04ba0",
+              "branch_sheet_selected_before_GRV7_spectra": true,
+              "categorical_signature_sha256": "15b965df64d528ee5d56af7935acad902ba8b629bc59e07b524e366891c9ff21",
+              "constitutive_W_J_sha256": "0ae01ccc42c00671c9e730ee5819b0d8032e896495383ea23afde0aa9f1ed8a8",
+              "continuation_sheet_key": "F1:grv2-f1-014",
+              "fixture_id": "F1",
+              "source_branch_id": "grv2-f1-014",
+              "symmetry_copy_substitution_allowed": false
+            },
             "categorical_evidence": {
               "baseline_signature": {
                 "basins": {},
@@ -6255,6 +6831,21 @@
               "continuation_point_supported": true,
               "frozen_comparator_is_full_map": false,
               "retention_readback_or_writeback_supported": false
+            },
+            "comparison_admissibility": {
+              "complete_step": {
+                "admitted": false,
+                "blocked_comparison_is_threshold_disagreement": false,
+                "status": "comparison_blocked_by_GRV3_stratum_or_spectral_gate"
+              },
+              "frozen_W_comparator": {
+                "I_minus_B_eff_invertibility_status": "not_applicable_no_current_slaving_or_feedback_elimination",
+                "admitted": true,
+                "current_slaving_used": false,
+                "fast_slaving_claim_allowed": false,
+                "mobility_positive_definite_on_zero_sum_C_tangent": true,
+                "status": "admitted_clamped_W_C_tangent_comparator"
+              }
             },
             "complete_step_temporal": {
               "baseline_stratum_margins": {
@@ -6498,6 +7089,16 @@
               "topology_equal": true,
               "total_coherence_delta": 0.0
             },
+            "branch_sheet_identity": {
+              "branch_C_topology_sha256": "62cb22808d82ec308fc5d6e72efee6e0ec6938638f2024c96a77663ebcf04ba0",
+              "branch_sheet_selected_before_GRV7_spectra": true,
+              "categorical_signature_sha256": "15b965df64d528ee5d56af7935acad902ba8b629bc59e07b524e366891c9ff21",
+              "constitutive_W_J_sha256": "0ae01ccc42c00671c9e730ee5819b0d8032e896495383ea23afde0aa9f1ed8a8",
+              "continuation_sheet_key": "F1:grv2-f1-014",
+              "fixture_id": "F1",
+              "source_branch_id": "grv2-f1-014",
+              "symmetry_copy_substitution_allowed": false
+            },
             "categorical_evidence": {
               "baseline_signature": {
                 "basins": {},
@@ -6582,6 +7183,21 @@
               "continuation_point_supported": true,
               "frozen_comparator_is_full_map": false,
               "retention_readback_or_writeback_supported": false
+            },
+            "comparison_admissibility": {
+              "complete_step": {
+                "admitted": false,
+                "blocked_comparison_is_threshold_disagreement": false,
+                "status": "comparison_blocked_by_GRV3_stratum_or_spectral_gate"
+              },
+              "frozen_W_comparator": {
+                "I_minus_B_eff_invertibility_status": "not_applicable_no_current_slaving_or_feedback_elimination",
+                "admitted": true,
+                "current_slaving_used": false,
+                "fast_slaving_claim_allowed": false,
+                "mobility_positive_definite_on_zero_sum_C_tangent": true,
+                "status": "admitted_clamped_W_C_tangent_comparator"
+              }
             },
             "complete_step_temporal": {
               "baseline_stratum_margins": {
@@ -6825,6 +7441,16 @@
               "topology_equal": true,
               "total_coherence_delta": 0.0
             },
+            "branch_sheet_identity": {
+              "branch_C_topology_sha256": "62cb22808d82ec308fc5d6e72efee6e0ec6938638f2024c96a77663ebcf04ba0",
+              "branch_sheet_selected_before_GRV7_spectra": true,
+              "categorical_signature_sha256": "15b965df64d528ee5d56af7935acad902ba8b629bc59e07b524e366891c9ff21",
+              "constitutive_W_J_sha256": "0ae01ccc42c00671c9e730ee5819b0d8032e896495383ea23afde0aa9f1ed8a8",
+              "continuation_sheet_key": "F1:grv2-f1-014",
+              "fixture_id": "F1",
+              "source_branch_id": "grv2-f1-014",
+              "symmetry_copy_substitution_allowed": false
+            },
             "categorical_evidence": {
               "baseline_signature": {
                 "basins": {},
@@ -6909,6 +7535,21 @@
               "continuation_point_supported": true,
               "frozen_comparator_is_full_map": false,
               "retention_readback_or_writeback_supported": false
+            },
+            "comparison_admissibility": {
+              "complete_step": {
+                "admitted": false,
+                "blocked_comparison_is_threshold_disagreement": false,
+                "status": "comparison_blocked_by_GRV3_stratum_or_spectral_gate"
+              },
+              "frozen_W_comparator": {
+                "I_minus_B_eff_invertibility_status": "not_applicable_no_current_slaving_or_feedback_elimination",
+                "admitted": true,
+                "current_slaving_used": false,
+                "fast_slaving_claim_allowed": false,
+                "mobility_positive_definite_on_zero_sum_C_tangent": true,
+                "status": "admitted_clamped_W_C_tangent_comparator"
+              }
             },
             "complete_step_temporal": {
               "baseline_stratum_margins": {
@@ -7152,6 +7793,16 @@
               "topology_equal": true,
               "total_coherence_delta": 0.0
             },
+            "branch_sheet_identity": {
+              "branch_C_topology_sha256": "62cb22808d82ec308fc5d6e72efee6e0ec6938638f2024c96a77663ebcf04ba0",
+              "branch_sheet_selected_before_GRV7_spectra": true,
+              "categorical_signature_sha256": "15b965df64d528ee5d56af7935acad902ba8b629bc59e07b524e366891c9ff21",
+              "constitutive_W_J_sha256": "0ae01ccc42c00671c9e730ee5819b0d8032e896495383ea23afde0aa9f1ed8a8",
+              "continuation_sheet_key": "F1:grv2-f1-014",
+              "fixture_id": "F1",
+              "source_branch_id": "grv2-f1-014",
+              "symmetry_copy_substitution_allowed": false
+            },
             "categorical_evidence": {
               "baseline_signature": {
                 "basins": {},
@@ -7236,6 +7887,21 @@
               "continuation_point_supported": true,
               "frozen_comparator_is_full_map": false,
               "retention_readback_or_writeback_supported": false
+            },
+            "comparison_admissibility": {
+              "complete_step": {
+                "admitted": false,
+                "blocked_comparison_is_threshold_disagreement": false,
+                "status": "comparison_blocked_by_GRV3_stratum_or_spectral_gate"
+              },
+              "frozen_W_comparator": {
+                "I_minus_B_eff_invertibility_status": "not_applicable_no_current_slaving_or_feedback_elimination",
+                "admitted": true,
+                "current_slaving_used": false,
+                "fast_slaving_claim_allowed": false,
+                "mobility_positive_definite_on_zero_sum_C_tangent": true,
+                "status": "admitted_clamped_W_C_tangent_comparator"
+              }
             },
             "complete_step_temporal": {
               "baseline_stratum_margins": {
@@ -7479,6 +8145,16 @@
               "topology_equal": true,
               "total_coherence_delta": 0.0
             },
+            "branch_sheet_identity": {
+              "branch_C_topology_sha256": "62cb22808d82ec308fc5d6e72efee6e0ec6938638f2024c96a77663ebcf04ba0",
+              "branch_sheet_selected_before_GRV7_spectra": true,
+              "categorical_signature_sha256": "15b965df64d528ee5d56af7935acad902ba8b629bc59e07b524e366891c9ff21",
+              "constitutive_W_J_sha256": "0ae01ccc42c00671c9e730ee5819b0d8032e896495383ea23afde0aa9f1ed8a8",
+              "continuation_sheet_key": "F1:grv2-f1-014",
+              "fixture_id": "F1",
+              "source_branch_id": "grv2-f1-014",
+              "symmetry_copy_substitution_allowed": false
+            },
             "categorical_evidence": {
               "baseline_signature": {
                 "basins": {},
@@ -7563,6 +8239,21 @@
               "continuation_point_supported": true,
               "frozen_comparator_is_full_map": false,
               "retention_readback_or_writeback_supported": false
+            },
+            "comparison_admissibility": {
+              "complete_step": {
+                "admitted": false,
+                "blocked_comparison_is_threshold_disagreement": false,
+                "status": "comparison_blocked_by_GRV3_stratum_or_spectral_gate"
+              },
+              "frozen_W_comparator": {
+                "I_minus_B_eff_invertibility_status": "not_applicable_no_current_slaving_or_feedback_elimination",
+                "admitted": true,
+                "current_slaving_used": false,
+                "fast_slaving_claim_allowed": false,
+                "mobility_positive_definite_on_zero_sum_C_tangent": true,
+                "status": "admitted_clamped_W_C_tangent_comparator"
+              }
             },
             "complete_step_temporal": {
               "baseline_stratum_margins": {
@@ -7733,6 +8424,40 @@
         "all_applicable_symmetry_controls_passed": true,
         "all_points_admitted": true,
         "axis": "dt",
+        "branch_identity_audit": {
+          "passed": true,
+          "per_source_branch": [
+            {
+              "branch_C_topology_digest_count": 4,
+              "categorical_signature_digest_count": 1,
+              "constitutive_W_J_digest_count": 1,
+              "constitutive_W_J_variation_is_branch_jump": false,
+              "continuation_sheet_key_count": 1,
+              "decision": "same_branch_sheet_preserved",
+              "exact_branch_state_digest_identity_required": false,
+              "maximum_adjacent_coherence_state_l2": 1.1313615230627158e-11,
+              "maximum_adjacent_total_coherence_delta": 0.0,
+              "passed": true,
+              "source_branch_id": "grv2-f2-017"
+            },
+            {
+              "branch_C_topology_digest_count": 4,
+              "categorical_signature_digest_count": 1,
+              "constitutive_W_J_digest_count": 1,
+              "constitutive_W_J_variation_is_branch_jump": false,
+              "continuation_sheet_key_count": 1,
+              "decision": "same_branch_sheet_preserved",
+              "exact_branch_state_digest_identity_required": false,
+              "maximum_adjacent_coherence_state_l2": 1.1313615230627158e-11,
+              "maximum_adjacent_total_coherence_delta": 0.0,
+              "passed": true,
+              "source_branch_id": "grv2-f2-018"
+            }
+          ],
+          "post_spectrum_sheet_selection_allowed": false,
+          "status": "passed",
+          "symmetry_copies_tracked_as_separate_source_branches": true
+        },
         "cluster_matching": {
           "all_available_cluster_matches_passed": true,
           "blocked_complete_step_pairs_retained": 0,
@@ -7955,6 +8680,16 @@
                 "topology_equal": true,
                 "total_coherence_delta": 0.0
               },
+              "branch_sheet_identity": {
+                "branch_C_topology_sha256": "e198d66920c5fdb4fb6af7df32081abbc58dd983e7dd974c46b4fddec7af37de",
+                "branch_sheet_selected_before_GRV7_spectra": true,
+                "categorical_signature_sha256": "a74ef52e2b5c6d0163e7df301230f03fa922e26fc3a0f34d3b5be5db588133e5",
+                "constitutive_W_J_sha256": "b720847bea13aa2025f4949c4eeacc9c908dd6bd45c81097ceba5efc1cd8d6e6",
+                "continuation_sheet_key": "F2:grv2-f2-017",
+                "fixture_id": "F2",
+                "source_branch_id": "grv2-f2-017",
+                "symmetry_copy_substitution_allowed": false
+              },
               "categorical_evidence": {
                 "baseline_signature": {
                   "basins": {
@@ -8060,6 +8795,21 @@
                 "continuation_point_supported": true,
                 "frozen_comparator_is_full_map": false,
                 "retention_readback_or_writeback_supported": false
+              },
+              "comparison_admissibility": {
+                "complete_step": {
+                  "admitted": true,
+                  "blocked_comparison_is_threshold_disagreement": false,
+                  "status": "admitted_GRV3_stratum_and_spectral_contract"
+                },
+                "frozen_W_comparator": {
+                  "I_minus_B_eff_invertibility_status": "not_applicable_no_current_slaving_or_feedback_elimination",
+                  "admitted": true,
+                  "current_slaving_used": false,
+                  "fast_slaving_claim_allowed": false,
+                  "mobility_positive_definite_on_zero_sum_C_tangent": true,
+                  "status": "admitted_clamped_W_C_tangent_comparator"
+                }
               },
               "complete_step_temporal": {
                 "baseline_stratum_margins": {
@@ -8412,6 +9162,16 @@
                   "topology_equal": true,
                   "total_coherence_delta": 0.0
                 },
+                "branch_sheet_identity": {
+                  "branch_C_topology_sha256": "54b2fc07da639fc04a414e8302d3e08cce97ffe258bd17ec860477cb991bca59",
+                  "branch_sheet_selected_before_GRV7_spectra": true,
+                  "categorical_signature_sha256": "629b0639465e0cbfda3c21b23db09e0fbabe0717b7d3b13c034f97f22243fa1e",
+                  "constitutive_W_J_sha256": "bdd835640000a23da8b4763e88101839fccd898e7e9aba24f2f97e500826b653",
+                  "continuation_sheet_key": "F2:grv2-f2-018",
+                  "fixture_id": "F2",
+                  "source_branch_id": "grv2-f2-018",
+                  "symmetry_copy_substitution_allowed": false
+                },
                 "categorical_evidence": {
                   "baseline_signature": {
                     "basins": {
@@ -8517,6 +9277,21 @@
                   "continuation_point_supported": true,
                   "frozen_comparator_is_full_map": false,
                   "retention_readback_or_writeback_supported": false
+                },
+                "comparison_admissibility": {
+                  "complete_step": {
+                    "admitted": true,
+                    "blocked_comparison_is_threshold_disagreement": false,
+                    "status": "admitted_GRV3_stratum_and_spectral_contract"
+                  },
+                  "frozen_W_comparator": {
+                    "I_minus_B_eff_invertibility_status": "not_applicable_no_current_slaving_or_feedback_elimination",
+                    "admitted": true,
+                    "current_slaving_used": false,
+                    "fast_slaving_claim_allowed": false,
+                    "mobility_positive_definite_on_zero_sum_C_tangent": true,
+                    "status": "admitted_clamped_W_C_tangent_comparator"
+                  }
                 },
                 "complete_step_temporal": {
                   "baseline_stratum_margins": {
@@ -8851,6 +9626,16 @@
                 "topology_equal": true,
                 "total_coherence_delta": 0.0
               },
+              "branch_sheet_identity": {
+                "branch_C_topology_sha256": "f273db3d19bb56aebbfe77a90ea0b1b9251e20694928089d4f03060fac7d21af",
+                "branch_sheet_selected_before_GRV7_spectra": true,
+                "categorical_signature_sha256": "a74ef52e2b5c6d0163e7df301230f03fa922e26fc3a0f34d3b5be5db588133e5",
+                "constitutive_W_J_sha256": "b720847bea13aa2025f4949c4eeacc9c908dd6bd45c81097ceba5efc1cd8d6e6",
+                "continuation_sheet_key": "F2:grv2-f2-017",
+                "fixture_id": "F2",
+                "source_branch_id": "grv2-f2-017",
+                "symmetry_copy_substitution_allowed": false
+              },
               "categorical_evidence": {
                 "baseline_signature": {
                   "basins": {
@@ -8956,6 +9741,21 @@
                 "continuation_point_supported": true,
                 "frozen_comparator_is_full_map": false,
                 "retention_readback_or_writeback_supported": false
+              },
+              "comparison_admissibility": {
+                "complete_step": {
+                  "admitted": true,
+                  "blocked_comparison_is_threshold_disagreement": false,
+                  "status": "admitted_GRV3_stratum_and_spectral_contract"
+                },
+                "frozen_W_comparator": {
+                  "I_minus_B_eff_invertibility_status": "not_applicable_no_current_slaving_or_feedback_elimination",
+                  "admitted": true,
+                  "current_slaving_used": false,
+                  "fast_slaving_claim_allowed": false,
+                  "mobility_positive_definite_on_zero_sum_C_tangent": true,
+                  "status": "admitted_clamped_W_C_tangent_comparator"
+                }
               },
               "complete_step_temporal": {
                 "baseline_stratum_margins": {
@@ -9308,6 +10108,16 @@
                   "topology_equal": true,
                   "total_coherence_delta": 0.0
                 },
+                "branch_sheet_identity": {
+                  "branch_C_topology_sha256": "c5a07e1ada3fe2487cd4ac8201636a4164033cbff519e7c7a4cb3e9702de0f4f",
+                  "branch_sheet_selected_before_GRV7_spectra": true,
+                  "categorical_signature_sha256": "629b0639465e0cbfda3c21b23db09e0fbabe0717b7d3b13c034f97f22243fa1e",
+                  "constitutive_W_J_sha256": "bdd835640000a23da8b4763e88101839fccd898e7e9aba24f2f97e500826b653",
+                  "continuation_sheet_key": "F2:grv2-f2-018",
+                  "fixture_id": "F2",
+                  "source_branch_id": "grv2-f2-018",
+                  "symmetry_copy_substitution_allowed": false
+                },
                 "categorical_evidence": {
                   "baseline_signature": {
                     "basins": {
@@ -9413,6 +10223,21 @@
                   "continuation_point_supported": true,
                   "frozen_comparator_is_full_map": false,
                   "retention_readback_or_writeback_supported": false
+                },
+                "comparison_admissibility": {
+                  "complete_step": {
+                    "admitted": true,
+                    "blocked_comparison_is_threshold_disagreement": false,
+                    "status": "admitted_GRV3_stratum_and_spectral_contract"
+                  },
+                  "frozen_W_comparator": {
+                    "I_minus_B_eff_invertibility_status": "not_applicable_no_current_slaving_or_feedback_elimination",
+                    "admitted": true,
+                    "current_slaving_used": false,
+                    "fast_slaving_claim_allowed": false,
+                    "mobility_positive_definite_on_zero_sum_C_tangent": true,
+                    "status": "admitted_clamped_W_C_tangent_comparator"
+                  }
                 },
                 "complete_step_temporal": {
                   "baseline_stratum_margins": {
@@ -9747,6 +10572,16 @@
                 "topology_equal": true,
                 "total_coherence_delta": 0.0
               },
+              "branch_sheet_identity": {
+                "branch_C_topology_sha256": "a35e601be8d67745ed07cd9dd2dc7e93d6d5d4d26adf6ff407fcab541ef9895d",
+                "branch_sheet_selected_before_GRV7_spectra": true,
+                "categorical_signature_sha256": "a74ef52e2b5c6d0163e7df301230f03fa922e26fc3a0f34d3b5be5db588133e5",
+                "constitutive_W_J_sha256": "b720847bea13aa2025f4949c4eeacc9c908dd6bd45c81097ceba5efc1cd8d6e6",
+                "continuation_sheet_key": "F2:grv2-f2-017",
+                "fixture_id": "F2",
+                "source_branch_id": "grv2-f2-017",
+                "symmetry_copy_substitution_allowed": false
+              },
               "categorical_evidence": {
                 "baseline_signature": {
                   "basins": {
@@ -9852,6 +10687,21 @@
                 "continuation_point_supported": true,
                 "frozen_comparator_is_full_map": false,
                 "retention_readback_or_writeback_supported": false
+              },
+              "comparison_admissibility": {
+                "complete_step": {
+                  "admitted": true,
+                  "blocked_comparison_is_threshold_disagreement": false,
+                  "status": "admitted_GRV3_stratum_and_spectral_contract"
+                },
+                "frozen_W_comparator": {
+                  "I_minus_B_eff_invertibility_status": "not_applicable_no_current_slaving_or_feedback_elimination",
+                  "admitted": true,
+                  "current_slaving_used": false,
+                  "fast_slaving_claim_allowed": false,
+                  "mobility_positive_definite_on_zero_sum_C_tangent": true,
+                  "status": "admitted_clamped_W_C_tangent_comparator"
+                }
               },
               "complete_step_temporal": {
                 "baseline_stratum_margins": {
@@ -10204,6 +11054,16 @@
                   "topology_equal": true,
                   "total_coherence_delta": 0.0
                 },
+                "branch_sheet_identity": {
+                  "branch_C_topology_sha256": "4c01aa0ef13c3d475423e42f8377a59dbbd16248d0fdcc9a2850aa47826f6fed",
+                  "branch_sheet_selected_before_GRV7_spectra": true,
+                  "categorical_signature_sha256": "629b0639465e0cbfda3c21b23db09e0fbabe0717b7d3b13c034f97f22243fa1e",
+                  "constitutive_W_J_sha256": "bdd835640000a23da8b4763e88101839fccd898e7e9aba24f2f97e500826b653",
+                  "continuation_sheet_key": "F2:grv2-f2-018",
+                  "fixture_id": "F2",
+                  "source_branch_id": "grv2-f2-018",
+                  "symmetry_copy_substitution_allowed": false
+                },
                 "categorical_evidence": {
                   "baseline_signature": {
                     "basins": {
@@ -10309,6 +11169,21 @@
                   "continuation_point_supported": true,
                   "frozen_comparator_is_full_map": false,
                   "retention_readback_or_writeback_supported": false
+                },
+                "comparison_admissibility": {
+                  "complete_step": {
+                    "admitted": true,
+                    "blocked_comparison_is_threshold_disagreement": false,
+                    "status": "admitted_GRV3_stratum_and_spectral_contract"
+                  },
+                  "frozen_W_comparator": {
+                    "I_minus_B_eff_invertibility_status": "not_applicable_no_current_slaving_or_feedback_elimination",
+                    "admitted": true,
+                    "current_slaving_used": false,
+                    "fast_slaving_claim_allowed": false,
+                    "mobility_positive_definite_on_zero_sum_C_tangent": true,
+                    "status": "admitted_clamped_W_C_tangent_comparator"
+                  }
                 },
                 "complete_step_temporal": {
                   "baseline_stratum_margins": {
@@ -10643,6 +11518,16 @@
                 "topology_equal": true,
                 "total_coherence_delta": 0.0
               },
+              "branch_sheet_identity": {
+                "branch_C_topology_sha256": "7093b5403af8c42ad85509943d783632367a5c5be7a6d3cbd38ad46aa9c12c46",
+                "branch_sheet_selected_before_GRV7_spectra": true,
+                "categorical_signature_sha256": "a74ef52e2b5c6d0163e7df301230f03fa922e26fc3a0f34d3b5be5db588133e5",
+                "constitutive_W_J_sha256": "b720847bea13aa2025f4949c4eeacc9c908dd6bd45c81097ceba5efc1cd8d6e6",
+                "continuation_sheet_key": "F2:grv2-f2-017",
+                "fixture_id": "F2",
+                "source_branch_id": "grv2-f2-017",
+                "symmetry_copy_substitution_allowed": false
+              },
               "categorical_evidence": {
                 "baseline_signature": {
                   "basins": {
@@ -10748,6 +11633,21 @@
                 "continuation_point_supported": true,
                 "frozen_comparator_is_full_map": false,
                 "retention_readback_or_writeback_supported": false
+              },
+              "comparison_admissibility": {
+                "complete_step": {
+                  "admitted": true,
+                  "blocked_comparison_is_threshold_disagreement": false,
+                  "status": "admitted_GRV3_stratum_and_spectral_contract"
+                },
+                "frozen_W_comparator": {
+                  "I_minus_B_eff_invertibility_status": "not_applicable_no_current_slaving_or_feedback_elimination",
+                  "admitted": true,
+                  "current_slaving_used": false,
+                  "fast_slaving_claim_allowed": false,
+                  "mobility_positive_definite_on_zero_sum_C_tangent": true,
+                  "status": "admitted_clamped_W_C_tangent_comparator"
+                }
               },
               "complete_step_temporal": {
                 "baseline_stratum_margins": {
@@ -11100,6 +12000,16 @@
                   "topology_equal": true,
                   "total_coherence_delta": 0.0
                 },
+                "branch_sheet_identity": {
+                  "branch_C_topology_sha256": "8ce1e3f514357497236e37eff6da41fa8b52a38288b3cb5f2a1c3a86e923fc15",
+                  "branch_sheet_selected_before_GRV7_spectra": true,
+                  "categorical_signature_sha256": "629b0639465e0cbfda3c21b23db09e0fbabe0717b7d3b13c034f97f22243fa1e",
+                  "constitutive_W_J_sha256": "bdd835640000a23da8b4763e88101839fccd898e7e9aba24f2f97e500826b653",
+                  "continuation_sheet_key": "F2:grv2-f2-018",
+                  "fixture_id": "F2",
+                  "source_branch_id": "grv2-f2-018",
+                  "symmetry_copy_substitution_allowed": false
+                },
                 "categorical_evidence": {
                   "baseline_signature": {
                     "basins": {
@@ -11205,6 +12115,21 @@
                   "continuation_point_supported": true,
                   "frozen_comparator_is_full_map": false,
                   "retention_readback_or_writeback_supported": false
+                },
+                "comparison_admissibility": {
+                  "complete_step": {
+                    "admitted": true,
+                    "blocked_comparison_is_threshold_disagreement": false,
+                    "status": "admitted_GRV3_stratum_and_spectral_contract"
+                  },
+                  "frozen_W_comparator": {
+                    "I_minus_B_eff_invertibility_status": "not_applicable_no_current_slaving_or_feedback_elimination",
+                    "admitted": true,
+                    "current_slaving_used": false,
+                    "fast_slaving_claim_allowed": false,
+                    "mobility_positive_definite_on_zero_sum_C_tangent": true,
+                    "status": "admitted_clamped_W_C_tangent_comparator"
+                  }
                 },
                 "complete_step_temporal": {
                   "baseline_stratum_margins": {
@@ -11538,6 +12463,16 @@
               "topology_equal": true,
               "total_coherence_delta": 0.0
             },
+            "branch_sheet_identity": {
+              "branch_C_topology_sha256": "e198d66920c5fdb4fb6af7df32081abbc58dd983e7dd974c46b4fddec7af37de",
+              "branch_sheet_selected_before_GRV7_spectra": true,
+              "categorical_signature_sha256": "a74ef52e2b5c6d0163e7df301230f03fa922e26fc3a0f34d3b5be5db588133e5",
+              "constitutive_W_J_sha256": "b720847bea13aa2025f4949c4eeacc9c908dd6bd45c81097ceba5efc1cd8d6e6",
+              "continuation_sheet_key": "F2:grv2-f2-017",
+              "fixture_id": "F2",
+              "source_branch_id": "grv2-f2-017",
+              "symmetry_copy_substitution_allowed": false
+            },
             "categorical_evidence": {
               "baseline_signature": {
                 "basins": {
@@ -11643,6 +12578,21 @@
               "continuation_point_supported": true,
               "frozen_comparator_is_full_map": false,
               "retention_readback_or_writeback_supported": false
+            },
+            "comparison_admissibility": {
+              "complete_step": {
+                "admitted": true,
+                "blocked_comparison_is_threshold_disagreement": false,
+                "status": "admitted_GRV3_stratum_and_spectral_contract"
+              },
+              "frozen_W_comparator": {
+                "I_minus_B_eff_invertibility_status": "not_applicable_no_current_slaving_or_feedback_elimination",
+                "admitted": true,
+                "current_slaving_used": false,
+                "fast_slaving_claim_allowed": false,
+                "mobility_positive_definite_on_zero_sum_C_tangent": true,
+                "status": "admitted_clamped_W_C_tangent_comparator"
+              }
             },
             "complete_step_temporal": {
               "baseline_stratum_margins": {
@@ -11972,6 +12922,16 @@
               "topology_equal": true,
               "total_coherence_delta": 0.0
             },
+            "branch_sheet_identity": {
+              "branch_C_topology_sha256": "f273db3d19bb56aebbfe77a90ea0b1b9251e20694928089d4f03060fac7d21af",
+              "branch_sheet_selected_before_GRV7_spectra": true,
+              "categorical_signature_sha256": "a74ef52e2b5c6d0163e7df301230f03fa922e26fc3a0f34d3b5be5db588133e5",
+              "constitutive_W_J_sha256": "b720847bea13aa2025f4949c4eeacc9c908dd6bd45c81097ceba5efc1cd8d6e6",
+              "continuation_sheet_key": "F2:grv2-f2-017",
+              "fixture_id": "F2",
+              "source_branch_id": "grv2-f2-017",
+              "symmetry_copy_substitution_allowed": false
+            },
             "categorical_evidence": {
               "baseline_signature": {
                 "basins": {
@@ -12077,6 +13037,21 @@
               "continuation_point_supported": true,
               "frozen_comparator_is_full_map": false,
               "retention_readback_or_writeback_supported": false
+            },
+            "comparison_admissibility": {
+              "complete_step": {
+                "admitted": true,
+                "blocked_comparison_is_threshold_disagreement": false,
+                "status": "admitted_GRV3_stratum_and_spectral_contract"
+              },
+              "frozen_W_comparator": {
+                "I_minus_B_eff_invertibility_status": "not_applicable_no_current_slaving_or_feedback_elimination",
+                "admitted": true,
+                "current_slaving_used": false,
+                "fast_slaving_claim_allowed": false,
+                "mobility_positive_definite_on_zero_sum_C_tangent": true,
+                "status": "admitted_clamped_W_C_tangent_comparator"
+              }
             },
             "complete_step_temporal": {
               "baseline_stratum_margins": {
@@ -12406,6 +13381,16 @@
               "topology_equal": true,
               "total_coherence_delta": 0.0
             },
+            "branch_sheet_identity": {
+              "branch_C_topology_sha256": "a35e601be8d67745ed07cd9dd2dc7e93d6d5d4d26adf6ff407fcab541ef9895d",
+              "branch_sheet_selected_before_GRV7_spectra": true,
+              "categorical_signature_sha256": "a74ef52e2b5c6d0163e7df301230f03fa922e26fc3a0f34d3b5be5db588133e5",
+              "constitutive_W_J_sha256": "b720847bea13aa2025f4949c4eeacc9c908dd6bd45c81097ceba5efc1cd8d6e6",
+              "continuation_sheet_key": "F2:grv2-f2-017",
+              "fixture_id": "F2",
+              "source_branch_id": "grv2-f2-017",
+              "symmetry_copy_substitution_allowed": false
+            },
             "categorical_evidence": {
               "baseline_signature": {
                 "basins": {
@@ -12511,6 +13496,21 @@
               "continuation_point_supported": true,
               "frozen_comparator_is_full_map": false,
               "retention_readback_or_writeback_supported": false
+            },
+            "comparison_admissibility": {
+              "complete_step": {
+                "admitted": true,
+                "blocked_comparison_is_threshold_disagreement": false,
+                "status": "admitted_GRV3_stratum_and_spectral_contract"
+              },
+              "frozen_W_comparator": {
+                "I_minus_B_eff_invertibility_status": "not_applicable_no_current_slaving_or_feedback_elimination",
+                "admitted": true,
+                "current_slaving_used": false,
+                "fast_slaving_claim_allowed": false,
+                "mobility_positive_definite_on_zero_sum_C_tangent": true,
+                "status": "admitted_clamped_W_C_tangent_comparator"
+              }
             },
             "complete_step_temporal": {
               "baseline_stratum_margins": {
@@ -12840,6 +13840,16 @@
               "topology_equal": true,
               "total_coherence_delta": 0.0
             },
+            "branch_sheet_identity": {
+              "branch_C_topology_sha256": "7093b5403af8c42ad85509943d783632367a5c5be7a6d3cbd38ad46aa9c12c46",
+              "branch_sheet_selected_before_GRV7_spectra": true,
+              "categorical_signature_sha256": "a74ef52e2b5c6d0163e7df301230f03fa922e26fc3a0f34d3b5be5db588133e5",
+              "constitutive_W_J_sha256": "b720847bea13aa2025f4949c4eeacc9c908dd6bd45c81097ceba5efc1cd8d6e6",
+              "continuation_sheet_key": "F2:grv2-f2-017",
+              "fixture_id": "F2",
+              "source_branch_id": "grv2-f2-017",
+              "symmetry_copy_substitution_allowed": false
+            },
             "categorical_evidence": {
               "baseline_signature": {
                 "basins": {
@@ -12945,6 +13955,21 @@
               "continuation_point_supported": true,
               "frozen_comparator_is_full_map": false,
               "retention_readback_or_writeback_supported": false
+            },
+            "comparison_admissibility": {
+              "complete_step": {
+                "admitted": true,
+                "blocked_comparison_is_threshold_disagreement": false,
+                "status": "admitted_GRV3_stratum_and_spectral_contract"
+              },
+              "frozen_W_comparator": {
+                "I_minus_B_eff_invertibility_status": "not_applicable_no_current_slaving_or_feedback_elimination",
+                "admitted": true,
+                "current_slaving_used": false,
+                "fast_slaving_claim_allowed": false,
+                "mobility_positive_definite_on_zero_sum_C_tangent": true,
+                "status": "admitted_clamped_W_C_tangent_comparator"
+              }
             },
             "complete_step_temporal": {
               "baseline_stratum_margins": {
@@ -13202,6 +14227,40 @@
         "all_applicable_symmetry_controls_passed": true,
         "all_points_admitted": true,
         "axis": "eta",
+        "branch_identity_audit": {
+          "passed": true,
+          "per_source_branch": [
+            {
+              "branch_C_topology_digest_count": 4,
+              "categorical_signature_digest_count": 1,
+              "constitutive_W_J_digest_count": 4,
+              "constitutive_W_J_variation_is_branch_jump": false,
+              "continuation_sheet_key_count": 1,
+              "decision": "same_branch_sheet_preserved",
+              "exact_branch_state_digest_identity_required": false,
+              "maximum_adjacent_coherence_state_l2": 5.656729110145905e-12,
+              "maximum_adjacent_total_coherence_delta": 0.0,
+              "passed": true,
+              "source_branch_id": "grv2-f2-017"
+            },
+            {
+              "branch_C_topology_digest_count": 4,
+              "categorical_signature_digest_count": 1,
+              "constitutive_W_J_digest_count": 4,
+              "constitutive_W_J_variation_is_branch_jump": false,
+              "continuation_sheet_key_count": 1,
+              "decision": "same_branch_sheet_preserved",
+              "exact_branch_state_digest_identity_required": false,
+              "maximum_adjacent_coherence_state_l2": 5.656729110145905e-12,
+              "maximum_adjacent_total_coherence_delta": 0.0,
+              "passed": true,
+              "source_branch_id": "grv2-f2-018"
+            }
+          ],
+          "post_spectrum_sheet_selection_allowed": false,
+          "status": "passed",
+          "symmetry_copies_tracked_as_separate_source_branches": true
+        },
         "cluster_matching": {
           "all_available_cluster_matches_passed": true,
           "blocked_complete_step_pairs_retained": 0,
@@ -13424,6 +14483,16 @@
                 "topology_equal": true,
                 "total_coherence_delta": 0.0
               },
+              "branch_sheet_identity": {
+                "branch_C_topology_sha256": "e198d66920c5fdb4fb6af7df32081abbc58dd983e7dd974c46b4fddec7af37de",
+                "branch_sheet_selected_before_GRV7_spectra": true,
+                "categorical_signature_sha256": "a74ef52e2b5c6d0163e7df301230f03fa922e26fc3a0f34d3b5be5db588133e5",
+                "constitutive_W_J_sha256": "b720847bea13aa2025f4949c4eeacc9c908dd6bd45c81097ceba5efc1cd8d6e6",
+                "continuation_sheet_key": "F2:grv2-f2-017",
+                "fixture_id": "F2",
+                "source_branch_id": "grv2-f2-017",
+                "symmetry_copy_substitution_allowed": false
+              },
               "categorical_evidence": {
                 "baseline_signature": {
                   "basins": {
@@ -13529,6 +14598,21 @@
                 "continuation_point_supported": true,
                 "frozen_comparator_is_full_map": false,
                 "retention_readback_or_writeback_supported": false
+              },
+              "comparison_admissibility": {
+                "complete_step": {
+                  "admitted": true,
+                  "blocked_comparison_is_threshold_disagreement": false,
+                  "status": "admitted_GRV3_stratum_and_spectral_contract"
+                },
+                "frozen_W_comparator": {
+                  "I_minus_B_eff_invertibility_status": "not_applicable_no_current_slaving_or_feedback_elimination",
+                  "admitted": true,
+                  "current_slaving_used": false,
+                  "fast_slaving_claim_allowed": false,
+                  "mobility_positive_definite_on_zero_sum_C_tangent": true,
+                  "status": "admitted_clamped_W_C_tangent_comparator"
+                }
               },
               "complete_step_temporal": {
                 "baseline_stratum_margins": {
@@ -13881,6 +14965,16 @@
                   "topology_equal": true,
                   "total_coherence_delta": 0.0
                 },
+                "branch_sheet_identity": {
+                  "branch_C_topology_sha256": "54b2fc07da639fc04a414e8302d3e08cce97ffe258bd17ec860477cb991bca59",
+                  "branch_sheet_selected_before_GRV7_spectra": true,
+                  "categorical_signature_sha256": "629b0639465e0cbfda3c21b23db09e0fbabe0717b7d3b13c034f97f22243fa1e",
+                  "constitutive_W_J_sha256": "bdd835640000a23da8b4763e88101839fccd898e7e9aba24f2f97e500826b653",
+                  "continuation_sheet_key": "F2:grv2-f2-018",
+                  "fixture_id": "F2",
+                  "source_branch_id": "grv2-f2-018",
+                  "symmetry_copy_substitution_allowed": false
+                },
                 "categorical_evidence": {
                   "baseline_signature": {
                     "basins": {
@@ -13986,6 +15080,21 @@
                   "continuation_point_supported": true,
                   "frozen_comparator_is_full_map": false,
                   "retention_readback_or_writeback_supported": false
+                },
+                "comparison_admissibility": {
+                  "complete_step": {
+                    "admitted": true,
+                    "blocked_comparison_is_threshold_disagreement": false,
+                    "status": "admitted_GRV3_stratum_and_spectral_contract"
+                  },
+                  "frozen_W_comparator": {
+                    "I_minus_B_eff_invertibility_status": "not_applicable_no_current_slaving_or_feedback_elimination",
+                    "admitted": true,
+                    "current_slaving_used": false,
+                    "fast_slaving_claim_allowed": false,
+                    "mobility_positive_definite_on_zero_sum_C_tangent": true,
+                    "status": "admitted_clamped_W_C_tangent_comparator"
+                  }
                 },
                 "complete_step_temporal": {
                   "baseline_stratum_margins": {
@@ -14320,6 +15429,16 @@
                 "topology_equal": true,
                 "total_coherence_delta": 0.0
               },
+              "branch_sheet_identity": {
+                "branch_C_topology_sha256": "f273db3d19bb56aebbfe77a90ea0b1b9251e20694928089d4f03060fac7d21af",
+                "branch_sheet_selected_before_GRV7_spectra": true,
+                "categorical_signature_sha256": "a74ef52e2b5c6d0163e7df301230f03fa922e26fc3a0f34d3b5be5db588133e5",
+                "constitutive_W_J_sha256": "ec966b71ec2787e6556a8c9cac5a257fbdc8b7dc705510b9c462c2c7c97dbe3f",
+                "continuation_sheet_key": "F2:grv2-f2-017",
+                "fixture_id": "F2",
+                "source_branch_id": "grv2-f2-017",
+                "symmetry_copy_substitution_allowed": false
+              },
               "categorical_evidence": {
                 "baseline_signature": {
                   "basins": {
@@ -14425,6 +15544,21 @@
                 "continuation_point_supported": true,
                 "frozen_comparator_is_full_map": false,
                 "retention_readback_or_writeback_supported": false
+              },
+              "comparison_admissibility": {
+                "complete_step": {
+                  "admitted": true,
+                  "blocked_comparison_is_threshold_disagreement": false,
+                  "status": "admitted_GRV3_stratum_and_spectral_contract"
+                },
+                "frozen_W_comparator": {
+                  "I_minus_B_eff_invertibility_status": "not_applicable_no_current_slaving_or_feedback_elimination",
+                  "admitted": true,
+                  "current_slaving_used": false,
+                  "fast_slaving_claim_allowed": false,
+                  "mobility_positive_definite_on_zero_sum_C_tangent": true,
+                  "status": "admitted_clamped_W_C_tangent_comparator"
+                }
               },
               "complete_step_temporal": {
                 "baseline_stratum_margins": {
@@ -14777,6 +15911,16 @@
                   "topology_equal": true,
                   "total_coherence_delta": 0.0
                 },
+                "branch_sheet_identity": {
+                  "branch_C_topology_sha256": "c5a07e1ada3fe2487cd4ac8201636a4164033cbff519e7c7a4cb3e9702de0f4f",
+                  "branch_sheet_selected_before_GRV7_spectra": true,
+                  "categorical_signature_sha256": "629b0639465e0cbfda3c21b23db09e0fbabe0717b7d3b13c034f97f22243fa1e",
+                  "constitutive_W_J_sha256": "52bb139c0ec5ae1bad8d5023ad5184baf68df872a53ca45480e981fafb26eb80",
+                  "continuation_sheet_key": "F2:grv2-f2-018",
+                  "fixture_id": "F2",
+                  "source_branch_id": "grv2-f2-018",
+                  "symmetry_copy_substitution_allowed": false
+                },
                 "categorical_evidence": {
                   "baseline_signature": {
                     "basins": {
@@ -14882,6 +16026,21 @@
                   "continuation_point_supported": true,
                   "frozen_comparator_is_full_map": false,
                   "retention_readback_or_writeback_supported": false
+                },
+                "comparison_admissibility": {
+                  "complete_step": {
+                    "admitted": true,
+                    "blocked_comparison_is_threshold_disagreement": false,
+                    "status": "admitted_GRV3_stratum_and_spectral_contract"
+                  },
+                  "frozen_W_comparator": {
+                    "I_minus_B_eff_invertibility_status": "not_applicable_no_current_slaving_or_feedback_elimination",
+                    "admitted": true,
+                    "current_slaving_used": false,
+                    "fast_slaving_claim_allowed": false,
+                    "mobility_positive_definite_on_zero_sum_C_tangent": true,
+                    "status": "admitted_clamped_W_C_tangent_comparator"
+                  }
                 },
                 "complete_step_temporal": {
                   "baseline_stratum_margins": {
@@ -15216,6 +16375,16 @@
                 "topology_equal": true,
                 "total_coherence_delta": 0.0
               },
+              "branch_sheet_identity": {
+                "branch_C_topology_sha256": "c0c26ef92cda651e116545fb0a01b05088d75fd576e8f69b1ce5c7c855d37f84",
+                "branch_sheet_selected_before_GRV7_spectra": true,
+                "categorical_signature_sha256": "a74ef52e2b5c6d0163e7df301230f03fa922e26fc3a0f34d3b5be5db588133e5",
+                "constitutive_W_J_sha256": "8431e74289b8724bc5f9c7cb94dc45512d87b9c753002b8348797fc267e869b8",
+                "continuation_sheet_key": "F2:grv2-f2-017",
+                "fixture_id": "F2",
+                "source_branch_id": "grv2-f2-017",
+                "symmetry_copy_substitution_allowed": false
+              },
               "categorical_evidence": {
                 "baseline_signature": {
                   "basins": {
@@ -15321,6 +16490,21 @@
                 "continuation_point_supported": true,
                 "frozen_comparator_is_full_map": false,
                 "retention_readback_or_writeback_supported": false
+              },
+              "comparison_admissibility": {
+                "complete_step": {
+                  "admitted": true,
+                  "blocked_comparison_is_threshold_disagreement": false,
+                  "status": "admitted_GRV3_stratum_and_spectral_contract"
+                },
+                "frozen_W_comparator": {
+                  "I_minus_B_eff_invertibility_status": "not_applicable_no_current_slaving_or_feedback_elimination",
+                  "admitted": true,
+                  "current_slaving_used": false,
+                  "fast_slaving_claim_allowed": false,
+                  "mobility_positive_definite_on_zero_sum_C_tangent": true,
+                  "status": "admitted_clamped_W_C_tangent_comparator"
+                }
               },
               "complete_step_temporal": {
                 "baseline_stratum_margins": {
@@ -15673,6 +16857,16 @@
                   "topology_equal": true,
                   "total_coherence_delta": 0.0
                 },
+                "branch_sheet_identity": {
+                  "branch_C_topology_sha256": "26ea886a61117d4d9c740e749e9b0a46583e702c48fb152fa3633efabbc22bc7",
+                  "branch_sheet_selected_before_GRV7_spectra": true,
+                  "categorical_signature_sha256": "629b0639465e0cbfda3c21b23db09e0fbabe0717b7d3b13c034f97f22243fa1e",
+                  "constitutive_W_J_sha256": "c33e376be03c48082ce13e0f11bef651bf0aac8024dd845f77aa9ba9054132dd",
+                  "continuation_sheet_key": "F2:grv2-f2-018",
+                  "fixture_id": "F2",
+                  "source_branch_id": "grv2-f2-018",
+                  "symmetry_copy_substitution_allowed": false
+                },
                 "categorical_evidence": {
                   "baseline_signature": {
                     "basins": {
@@ -15778,6 +16972,21 @@
                   "continuation_point_supported": true,
                   "frozen_comparator_is_full_map": false,
                   "retention_readback_or_writeback_supported": false
+                },
+                "comparison_admissibility": {
+                  "complete_step": {
+                    "admitted": true,
+                    "blocked_comparison_is_threshold_disagreement": false,
+                    "status": "admitted_GRV3_stratum_and_spectral_contract"
+                  },
+                  "frozen_W_comparator": {
+                    "I_minus_B_eff_invertibility_status": "not_applicable_no_current_slaving_or_feedback_elimination",
+                    "admitted": true,
+                    "current_slaving_used": false,
+                    "fast_slaving_claim_allowed": false,
+                    "mobility_positive_definite_on_zero_sum_C_tangent": true,
+                    "status": "admitted_clamped_W_C_tangent_comparator"
+                  }
                 },
                 "complete_step_temporal": {
                   "baseline_stratum_margins": {
@@ -16112,6 +17321,16 @@
                 "topology_equal": true,
                 "total_coherence_delta": 0.0
               },
+              "branch_sheet_identity": {
+                "branch_C_topology_sha256": "d5dbb6f038c7b64048ca87cf4989a397505a1928896f5371d0128b16f7e6696d",
+                "branch_sheet_selected_before_GRV7_spectra": true,
+                "categorical_signature_sha256": "a74ef52e2b5c6d0163e7df301230f03fa922e26fc3a0f34d3b5be5db588133e5",
+                "constitutive_W_J_sha256": "c2269e66d7051bffffd883d9a630e86792d5568d3a7f6dbabd2d3bc7ce4a7f05",
+                "continuation_sheet_key": "F2:grv2-f2-017",
+                "fixture_id": "F2",
+                "source_branch_id": "grv2-f2-017",
+                "symmetry_copy_substitution_allowed": false
+              },
               "categorical_evidence": {
                 "baseline_signature": {
                   "basins": {
@@ -16217,6 +17436,21 @@
                 "continuation_point_supported": true,
                 "frozen_comparator_is_full_map": false,
                 "retention_readback_or_writeback_supported": false
+              },
+              "comparison_admissibility": {
+                "complete_step": {
+                  "admitted": true,
+                  "blocked_comparison_is_threshold_disagreement": false,
+                  "status": "admitted_GRV3_stratum_and_spectral_contract"
+                },
+                "frozen_W_comparator": {
+                  "I_minus_B_eff_invertibility_status": "not_applicable_no_current_slaving_or_feedback_elimination",
+                  "admitted": true,
+                  "current_slaving_used": false,
+                  "fast_slaving_claim_allowed": false,
+                  "mobility_positive_definite_on_zero_sum_C_tangent": true,
+                  "status": "admitted_clamped_W_C_tangent_comparator"
+                }
               },
               "complete_step_temporal": {
                 "baseline_stratum_margins": {
@@ -16569,6 +17803,16 @@
                   "topology_equal": true,
                   "total_coherence_delta": 0.0
                 },
+                "branch_sheet_identity": {
+                  "branch_C_topology_sha256": "f01d59c39175c80a760d87d9866d9a709bfed0b2a168cbbff780e604859b2b42",
+                  "branch_sheet_selected_before_GRV7_spectra": true,
+                  "categorical_signature_sha256": "629b0639465e0cbfda3c21b23db09e0fbabe0717b7d3b13c034f97f22243fa1e",
+                  "constitutive_W_J_sha256": "f1785c9434bb88358c060c1e15cd71979c36de3611965a069e7bb75c75832c0c",
+                  "continuation_sheet_key": "F2:grv2-f2-018",
+                  "fixture_id": "F2",
+                  "source_branch_id": "grv2-f2-018",
+                  "symmetry_copy_substitution_allowed": false
+                },
                 "categorical_evidence": {
                   "baseline_signature": {
                     "basins": {
@@ -16674,6 +17918,21 @@
                   "continuation_point_supported": true,
                   "frozen_comparator_is_full_map": false,
                   "retention_readback_or_writeback_supported": false
+                },
+                "comparison_admissibility": {
+                  "complete_step": {
+                    "admitted": true,
+                    "blocked_comparison_is_threshold_disagreement": false,
+                    "status": "admitted_GRV3_stratum_and_spectral_contract"
+                  },
+                  "frozen_W_comparator": {
+                    "I_minus_B_eff_invertibility_status": "not_applicable_no_current_slaving_or_feedback_elimination",
+                    "admitted": true,
+                    "current_slaving_used": false,
+                    "fast_slaving_claim_allowed": false,
+                    "mobility_positive_definite_on_zero_sum_C_tangent": true,
+                    "status": "admitted_clamped_W_C_tangent_comparator"
+                  }
                 },
                 "complete_step_temporal": {
                   "baseline_stratum_margins": {
@@ -17007,6 +18266,16 @@
               "topology_equal": true,
               "total_coherence_delta": 0.0
             },
+            "branch_sheet_identity": {
+              "branch_C_topology_sha256": "e198d66920c5fdb4fb6af7df32081abbc58dd983e7dd974c46b4fddec7af37de",
+              "branch_sheet_selected_before_GRV7_spectra": true,
+              "categorical_signature_sha256": "a74ef52e2b5c6d0163e7df301230f03fa922e26fc3a0f34d3b5be5db588133e5",
+              "constitutive_W_J_sha256": "b720847bea13aa2025f4949c4eeacc9c908dd6bd45c81097ceba5efc1cd8d6e6",
+              "continuation_sheet_key": "F2:grv2-f2-017",
+              "fixture_id": "F2",
+              "source_branch_id": "grv2-f2-017",
+              "symmetry_copy_substitution_allowed": false
+            },
             "categorical_evidence": {
               "baseline_signature": {
                 "basins": {
@@ -17112,6 +18381,21 @@
               "continuation_point_supported": true,
               "frozen_comparator_is_full_map": false,
               "retention_readback_or_writeback_supported": false
+            },
+            "comparison_admissibility": {
+              "complete_step": {
+                "admitted": true,
+                "blocked_comparison_is_threshold_disagreement": false,
+                "status": "admitted_GRV3_stratum_and_spectral_contract"
+              },
+              "frozen_W_comparator": {
+                "I_minus_B_eff_invertibility_status": "not_applicable_no_current_slaving_or_feedback_elimination",
+                "admitted": true,
+                "current_slaving_used": false,
+                "fast_slaving_claim_allowed": false,
+                "mobility_positive_definite_on_zero_sum_C_tangent": true,
+                "status": "admitted_clamped_W_C_tangent_comparator"
+              }
             },
             "complete_step_temporal": {
               "baseline_stratum_margins": {
@@ -17441,6 +18725,16 @@
               "topology_equal": true,
               "total_coherence_delta": 0.0
             },
+            "branch_sheet_identity": {
+              "branch_C_topology_sha256": "f273db3d19bb56aebbfe77a90ea0b1b9251e20694928089d4f03060fac7d21af",
+              "branch_sheet_selected_before_GRV7_spectra": true,
+              "categorical_signature_sha256": "a74ef52e2b5c6d0163e7df301230f03fa922e26fc3a0f34d3b5be5db588133e5",
+              "constitutive_W_J_sha256": "ec966b71ec2787e6556a8c9cac5a257fbdc8b7dc705510b9c462c2c7c97dbe3f",
+              "continuation_sheet_key": "F2:grv2-f2-017",
+              "fixture_id": "F2",
+              "source_branch_id": "grv2-f2-017",
+              "symmetry_copy_substitution_allowed": false
+            },
             "categorical_evidence": {
               "baseline_signature": {
                 "basins": {
@@ -17546,6 +18840,21 @@
               "continuation_point_supported": true,
               "frozen_comparator_is_full_map": false,
               "retention_readback_or_writeback_supported": false
+            },
+            "comparison_admissibility": {
+              "complete_step": {
+                "admitted": true,
+                "blocked_comparison_is_threshold_disagreement": false,
+                "status": "admitted_GRV3_stratum_and_spectral_contract"
+              },
+              "frozen_W_comparator": {
+                "I_minus_B_eff_invertibility_status": "not_applicable_no_current_slaving_or_feedback_elimination",
+                "admitted": true,
+                "current_slaving_used": false,
+                "fast_slaving_claim_allowed": false,
+                "mobility_positive_definite_on_zero_sum_C_tangent": true,
+                "status": "admitted_clamped_W_C_tangent_comparator"
+              }
             },
             "complete_step_temporal": {
               "baseline_stratum_margins": {
@@ -17875,6 +19184,16 @@
               "topology_equal": true,
               "total_coherence_delta": 0.0
             },
+            "branch_sheet_identity": {
+              "branch_C_topology_sha256": "c0c26ef92cda651e116545fb0a01b05088d75fd576e8f69b1ce5c7c855d37f84",
+              "branch_sheet_selected_before_GRV7_spectra": true,
+              "categorical_signature_sha256": "a74ef52e2b5c6d0163e7df301230f03fa922e26fc3a0f34d3b5be5db588133e5",
+              "constitutive_W_J_sha256": "8431e74289b8724bc5f9c7cb94dc45512d87b9c753002b8348797fc267e869b8",
+              "continuation_sheet_key": "F2:grv2-f2-017",
+              "fixture_id": "F2",
+              "source_branch_id": "grv2-f2-017",
+              "symmetry_copy_substitution_allowed": false
+            },
             "categorical_evidence": {
               "baseline_signature": {
                 "basins": {
@@ -17980,6 +19299,21 @@
               "continuation_point_supported": true,
               "frozen_comparator_is_full_map": false,
               "retention_readback_or_writeback_supported": false
+            },
+            "comparison_admissibility": {
+              "complete_step": {
+                "admitted": true,
+                "blocked_comparison_is_threshold_disagreement": false,
+                "status": "admitted_GRV3_stratum_and_spectral_contract"
+              },
+              "frozen_W_comparator": {
+                "I_minus_B_eff_invertibility_status": "not_applicable_no_current_slaving_or_feedback_elimination",
+                "admitted": true,
+                "current_slaving_used": false,
+                "fast_slaving_claim_allowed": false,
+                "mobility_positive_definite_on_zero_sum_C_tangent": true,
+                "status": "admitted_clamped_W_C_tangent_comparator"
+              }
             },
             "complete_step_temporal": {
               "baseline_stratum_margins": {
@@ -18309,6 +19643,16 @@
               "topology_equal": true,
               "total_coherence_delta": 0.0
             },
+            "branch_sheet_identity": {
+              "branch_C_topology_sha256": "d5dbb6f038c7b64048ca87cf4989a397505a1928896f5371d0128b16f7e6696d",
+              "branch_sheet_selected_before_GRV7_spectra": true,
+              "categorical_signature_sha256": "a74ef52e2b5c6d0163e7df301230f03fa922e26fc3a0f34d3b5be5db588133e5",
+              "constitutive_W_J_sha256": "c2269e66d7051bffffd883d9a630e86792d5568d3a7f6dbabd2d3bc7ce4a7f05",
+              "continuation_sheet_key": "F2:grv2-f2-017",
+              "fixture_id": "F2",
+              "source_branch_id": "grv2-f2-017",
+              "symmetry_copy_substitution_allowed": false
+            },
             "categorical_evidence": {
               "baseline_signature": {
                 "basins": {
@@ -18414,6 +19758,21 @@
               "continuation_point_supported": true,
               "frozen_comparator_is_full_map": false,
               "retention_readback_or_writeback_supported": false
+            },
+            "comparison_admissibility": {
+              "complete_step": {
+                "admitted": true,
+                "blocked_comparison_is_threshold_disagreement": false,
+                "status": "admitted_GRV3_stratum_and_spectral_contract"
+              },
+              "frozen_W_comparator": {
+                "I_minus_B_eff_invertibility_status": "not_applicable_no_current_slaving_or_feedback_elimination",
+                "admitted": true,
+                "current_slaving_used": false,
+                "fast_slaving_claim_allowed": false,
+                "mobility_positive_definite_on_zero_sum_C_tangent": true,
+                "status": "admitted_clamped_W_C_tangent_comparator"
+              }
             },
             "complete_step_temporal": {
               "baseline_stratum_margins": {
@@ -18671,6 +20030,53 @@
         "all_applicable_symmetry_controls_passed": true,
         "all_points_admitted": true,
         "axis": "dt",
+        "branch_identity_audit": {
+          "passed": true,
+          "per_source_branch": [
+            {
+              "branch_C_topology_digest_count": 4,
+              "categorical_signature_digest_count": 1,
+              "constitutive_W_J_digest_count": 3,
+              "constitutive_W_J_variation_is_branch_jump": false,
+              "continuation_sheet_key_count": 1,
+              "decision": "same_branch_sheet_preserved",
+              "exact_branch_state_digest_identity_required": false,
+              "maximum_adjacent_coherence_state_l2": 1.370291932091661e-11,
+              "maximum_adjacent_total_coherence_delta": 0.0,
+              "passed": true,
+              "source_branch_id": "grv2-f3-033"
+            },
+            {
+              "branch_C_topology_digest_count": 4,
+              "categorical_signature_digest_count": 1,
+              "constitutive_W_J_digest_count": 3,
+              "constitutive_W_J_variation_is_branch_jump": false,
+              "continuation_sheet_key_count": 1,
+              "decision": "same_branch_sheet_preserved",
+              "exact_branch_state_digest_identity_required": false,
+              "maximum_adjacent_coherence_state_l2": 1.370291932091661e-11,
+              "maximum_adjacent_total_coherence_delta": 0.0,
+              "passed": true,
+              "source_branch_id": "grv2-f3-034"
+            },
+            {
+              "branch_C_topology_digest_count": 4,
+              "categorical_signature_digest_count": 1,
+              "constitutive_W_J_digest_count": 3,
+              "constitutive_W_J_variation_is_branch_jump": false,
+              "continuation_sheet_key_count": 1,
+              "decision": "same_branch_sheet_preserved",
+              "exact_branch_state_digest_identity_required": false,
+              "maximum_adjacent_coherence_state_l2": 1.370291932091661e-11,
+              "maximum_adjacent_total_coherence_delta": 0.0,
+              "passed": true,
+              "source_branch_id": "grv2-f3-035"
+            }
+          ],
+          "post_spectrum_sheet_selection_allowed": false,
+          "status": "passed",
+          "symmetry_copies_tracked_as_separate_source_branches": true
+        },
         "cluster_matching": {
           "all_available_cluster_matches_passed": true,
           "blocked_complete_step_pairs_retained": 0,
@@ -18941,6 +20347,16 @@
                 "topology_equal": true,
                 "total_coherence_delta": 0.0
               },
+              "branch_sheet_identity": {
+                "branch_C_topology_sha256": "20a5b1fd0161dd1d7ad03590af7e53e2dc64a11cba2813b1d52f2e62c54ceb5b",
+                "branch_sheet_selected_before_GRV7_spectra": true,
+                "categorical_signature_sha256": "88a53491e1779e0a687769d56a5b3bb1aa9ba7d5cfeb01fefb1c5fccd7887fbf",
+                "constitutive_W_J_sha256": "a946cec5ab5d641def77ea4afba92dd16f2ceed9c44a1bc2176037e911623c7a",
+                "continuation_sheet_key": "F3:grv2-f3-033",
+                "fixture_id": "F3",
+                "source_branch_id": "grv2-f3-033",
+                "symmetry_copy_substitution_allowed": false
+              },
               "categorical_evidence": {
                 "baseline_signature": {
                   "basins": {
@@ -19102,6 +20518,21 @@
                 "continuation_point_supported": true,
                 "frozen_comparator_is_full_map": false,
                 "retention_readback_or_writeback_supported": false
+              },
+              "comparison_admissibility": {
+                "complete_step": {
+                  "admitted": true,
+                  "blocked_comparison_is_threshold_disagreement": false,
+                  "status": "admitted_GRV3_stratum_and_spectral_contract"
+                },
+                "frozen_W_comparator": {
+                  "I_minus_B_eff_invertibility_status": "not_applicable_no_current_slaving_or_feedback_elimination",
+                  "admitted": true,
+                  "current_slaving_used": false,
+                  "fast_slaving_claim_allowed": false,
+                  "mobility_positive_definite_on_zero_sum_C_tangent": true,
+                  "status": "admitted_clamped_W_C_tangent_comparator"
+                }
               },
               "complete_step_temporal": {
                 "baseline_stratum_margins": {
@@ -19545,6 +20976,16 @@
                   "topology_equal": true,
                   "total_coherence_delta": 0.0
                 },
+                "branch_sheet_identity": {
+                  "branch_C_topology_sha256": "fd7904e98b2570f6e3d7ac6da5036e1dd21cadf12dc9efa220a4ff2a24741e91",
+                  "branch_sheet_selected_before_GRV7_spectra": true,
+                  "categorical_signature_sha256": "4dc5ffddcf0562f0e9510188e65afb0e6f57b75eba1206719610bc395236d776",
+                  "constitutive_W_J_sha256": "79684ac5e5666ce8a987aed094690b5328e409e707363547d9a7d54d3e28e5ab",
+                  "continuation_sheet_key": "F3:grv2-f3-034",
+                  "fixture_id": "F3",
+                  "source_branch_id": "grv2-f3-034",
+                  "symmetry_copy_substitution_allowed": false
+                },
                 "categorical_evidence": {
                   "baseline_signature": {
                     "basins": {
@@ -19706,6 +21147,21 @@
                   "continuation_point_supported": true,
                   "frozen_comparator_is_full_map": false,
                   "retention_readback_or_writeback_supported": false
+                },
+                "comparison_admissibility": {
+                  "complete_step": {
+                    "admitted": true,
+                    "blocked_comparison_is_threshold_disagreement": false,
+                    "status": "admitted_GRV3_stratum_and_spectral_contract"
+                  },
+                  "frozen_W_comparator": {
+                    "I_minus_B_eff_invertibility_status": "not_applicable_no_current_slaving_or_feedback_elimination",
+                    "admitted": true,
+                    "current_slaving_used": false,
+                    "fast_slaving_claim_allowed": false,
+                    "mobility_positive_definite_on_zero_sum_C_tangent": true,
+                    "status": "admitted_clamped_W_C_tangent_comparator"
+                  }
                 },
                 "complete_step_temporal": {
                   "baseline_stratum_margins": {
@@ -20105,6 +21561,16 @@
                   "topology_equal": true,
                   "total_coherence_delta": 0.0
                 },
+                "branch_sheet_identity": {
+                  "branch_C_topology_sha256": "c017cc3cfc986784725e3419eea8015eeebdd7317866e95d2fc94c835ac335b3",
+                  "branch_sheet_selected_before_GRV7_spectra": true,
+                  "categorical_signature_sha256": "80f3dbd0303148108c968170bbe53847249dfb3b3e50c1456bf326df8ecc0b04",
+                  "constitutive_W_J_sha256": "7f59b9bd5cc8031ec34f67d033685a6cbb61a2d44c3cf96264ba0fcb27d24d45",
+                  "continuation_sheet_key": "F3:grv2-f3-035",
+                  "fixture_id": "F3",
+                  "source_branch_id": "grv2-f3-035",
+                  "symmetry_copy_substitution_allowed": false
+                },
                 "categorical_evidence": {
                   "baseline_signature": {
                     "basins": {
@@ -20266,6 +21732,21 @@
                   "continuation_point_supported": true,
                   "frozen_comparator_is_full_map": false,
                   "retention_readback_or_writeback_supported": false
+                },
+                "comparison_admissibility": {
+                  "complete_step": {
+                    "admitted": true,
+                    "blocked_comparison_is_threshold_disagreement": false,
+                    "status": "admitted_GRV3_stratum_and_spectral_contract"
+                  },
+                  "frozen_W_comparator": {
+                    "I_minus_B_eff_invertibility_status": "not_applicable_no_current_slaving_or_feedback_elimination",
+                    "admitted": true,
+                    "current_slaving_used": false,
+                    "fast_slaving_claim_allowed": false,
+                    "mobility_positive_definite_on_zero_sum_C_tangent": true,
+                    "status": "admitted_clamped_W_C_tangent_comparator"
+                  }
                 },
                 "complete_step_temporal": {
                   "baseline_stratum_margins": {
@@ -20670,6 +22151,16 @@
                 "topology_equal": true,
                 "total_coherence_delta": 0.0
               },
+              "branch_sheet_identity": {
+                "branch_C_topology_sha256": "99df79531211411da578696afeb1076292209b73c5988ffe5f99421ed240d191",
+                "branch_sheet_selected_before_GRV7_spectra": true,
+                "categorical_signature_sha256": "88a53491e1779e0a687769d56a5b3bb1aa9ba7d5cfeb01fefb1c5fccd7887fbf",
+                "constitutive_W_J_sha256": "957a81b90bb218a2cb8b83f3fe03b8d843281884370f3977c7a491b38079ed05",
+                "continuation_sheet_key": "F3:grv2-f3-033",
+                "fixture_id": "F3",
+                "source_branch_id": "grv2-f3-033",
+                "symmetry_copy_substitution_allowed": false
+              },
               "categorical_evidence": {
                 "baseline_signature": {
                   "basins": {
@@ -20831,6 +22322,21 @@
                 "continuation_point_supported": true,
                 "frozen_comparator_is_full_map": false,
                 "retention_readback_or_writeback_supported": false
+              },
+              "comparison_admissibility": {
+                "complete_step": {
+                  "admitted": true,
+                  "blocked_comparison_is_threshold_disagreement": false,
+                  "status": "admitted_GRV3_stratum_and_spectral_contract"
+                },
+                "frozen_W_comparator": {
+                  "I_minus_B_eff_invertibility_status": "not_applicable_no_current_slaving_or_feedback_elimination",
+                  "admitted": true,
+                  "current_slaving_used": false,
+                  "fast_slaving_claim_allowed": false,
+                  "mobility_positive_definite_on_zero_sum_C_tangent": true,
+                  "status": "admitted_clamped_W_C_tangent_comparator"
+                }
               },
               "complete_step_temporal": {
                 "baseline_stratum_margins": {
@@ -21274,6 +22780,16 @@
                   "topology_equal": true,
                   "total_coherence_delta": 0.0
                 },
+                "branch_sheet_identity": {
+                  "branch_C_topology_sha256": "2f31d48702483c98c895590d4d5618ed0fcb523fc3bcb4fda3ca5104d8e2256d",
+                  "branch_sheet_selected_before_GRV7_spectra": true,
+                  "categorical_signature_sha256": "4dc5ffddcf0562f0e9510188e65afb0e6f57b75eba1206719610bc395236d776",
+                  "constitutive_W_J_sha256": "80d223d04c572791c0d6f581a6b83d8c7ed9fb2cc194b3537559a220e657531e",
+                  "continuation_sheet_key": "F3:grv2-f3-034",
+                  "fixture_id": "F3",
+                  "source_branch_id": "grv2-f3-034",
+                  "symmetry_copy_substitution_allowed": false
+                },
                 "categorical_evidence": {
                   "baseline_signature": {
                     "basins": {
@@ -21435,6 +22951,21 @@
                   "continuation_point_supported": true,
                   "frozen_comparator_is_full_map": false,
                   "retention_readback_or_writeback_supported": false
+                },
+                "comparison_admissibility": {
+                  "complete_step": {
+                    "admitted": true,
+                    "blocked_comparison_is_threshold_disagreement": false,
+                    "status": "admitted_GRV3_stratum_and_spectral_contract"
+                  },
+                  "frozen_W_comparator": {
+                    "I_minus_B_eff_invertibility_status": "not_applicable_no_current_slaving_or_feedback_elimination",
+                    "admitted": true,
+                    "current_slaving_used": false,
+                    "fast_slaving_claim_allowed": false,
+                    "mobility_positive_definite_on_zero_sum_C_tangent": true,
+                    "status": "admitted_clamped_W_C_tangent_comparator"
+                  }
                 },
                 "complete_step_temporal": {
                   "baseline_stratum_margins": {
@@ -21834,6 +23365,16 @@
                   "topology_equal": true,
                   "total_coherence_delta": 0.0
                 },
+                "branch_sheet_identity": {
+                  "branch_C_topology_sha256": "75020cde40a120f2beaf74a1f14bd7c1594118ee4ccd7bd9cab8d01c91296a14",
+                  "branch_sheet_selected_before_GRV7_spectra": true,
+                  "categorical_signature_sha256": "80f3dbd0303148108c968170bbe53847249dfb3b3e50c1456bf326df8ecc0b04",
+                  "constitutive_W_J_sha256": "a74c9aa88f9e2aaf9cf1af573ebd0b88a34c9d232deea4ddf06293731fd92da4",
+                  "continuation_sheet_key": "F3:grv2-f3-035",
+                  "fixture_id": "F3",
+                  "source_branch_id": "grv2-f3-035",
+                  "symmetry_copy_substitution_allowed": false
+                },
                 "categorical_evidence": {
                   "baseline_signature": {
                     "basins": {
@@ -21995,6 +23536,21 @@
                   "continuation_point_supported": true,
                   "frozen_comparator_is_full_map": false,
                   "retention_readback_or_writeback_supported": false
+                },
+                "comparison_admissibility": {
+                  "complete_step": {
+                    "admitted": true,
+                    "blocked_comparison_is_threshold_disagreement": false,
+                    "status": "admitted_GRV3_stratum_and_spectral_contract"
+                  },
+                  "frozen_W_comparator": {
+                    "I_minus_B_eff_invertibility_status": "not_applicable_no_current_slaving_or_feedback_elimination",
+                    "admitted": true,
+                    "current_slaving_used": false,
+                    "fast_slaving_claim_allowed": false,
+                    "mobility_positive_definite_on_zero_sum_C_tangent": true,
+                    "status": "admitted_clamped_W_C_tangent_comparator"
+                  }
                 },
                 "complete_step_temporal": {
                   "baseline_stratum_margins": {
@@ -22399,6 +23955,16 @@
                 "topology_equal": true,
                 "total_coherence_delta": 0.0
               },
+              "branch_sheet_identity": {
+                "branch_C_topology_sha256": "c23fbad6f84e29275a91532968c349db165a371f47d08f7ba6f6c9e81b43470c",
+                "branch_sheet_selected_before_GRV7_spectra": true,
+                "categorical_signature_sha256": "88a53491e1779e0a687769d56a5b3bb1aa9ba7d5cfeb01fefb1c5fccd7887fbf",
+                "constitutive_W_J_sha256": "35a435572c039911fb63b0921d579e703c1d4205cf9f311ae33993c2388215a1",
+                "continuation_sheet_key": "F3:grv2-f3-033",
+                "fixture_id": "F3",
+                "source_branch_id": "grv2-f3-033",
+                "symmetry_copy_substitution_allowed": false
+              },
               "categorical_evidence": {
                 "baseline_signature": {
                   "basins": {
@@ -22560,6 +24126,21 @@
                 "continuation_point_supported": true,
                 "frozen_comparator_is_full_map": false,
                 "retention_readback_or_writeback_supported": false
+              },
+              "comparison_admissibility": {
+                "complete_step": {
+                  "admitted": true,
+                  "blocked_comparison_is_threshold_disagreement": false,
+                  "status": "admitted_GRV3_stratum_and_spectral_contract"
+                },
+                "frozen_W_comparator": {
+                  "I_minus_B_eff_invertibility_status": "not_applicable_no_current_slaving_or_feedback_elimination",
+                  "admitted": true,
+                  "current_slaving_used": false,
+                  "fast_slaving_claim_allowed": false,
+                  "mobility_positive_definite_on_zero_sum_C_tangent": true,
+                  "status": "admitted_clamped_W_C_tangent_comparator"
+                }
               },
               "complete_step_temporal": {
                 "baseline_stratum_margins": {
@@ -23003,6 +24584,16 @@
                   "topology_equal": true,
                   "total_coherence_delta": 0.0
                 },
+                "branch_sheet_identity": {
+                  "branch_C_topology_sha256": "c04377f14cfd5fc5d8c5b6ae021d261056f31ac318237a288de6dfb77ad27896",
+                  "branch_sheet_selected_before_GRV7_spectra": true,
+                  "categorical_signature_sha256": "4dc5ffddcf0562f0e9510188e65afb0e6f57b75eba1206719610bc395236d776",
+                  "constitutive_W_J_sha256": "64ba40a7f8bfb6bdc25b7d700f915e0ea16da2f11a0436ba987d02aba13f2487",
+                  "continuation_sheet_key": "F3:grv2-f3-034",
+                  "fixture_id": "F3",
+                  "source_branch_id": "grv2-f3-034",
+                  "symmetry_copy_substitution_allowed": false
+                },
                 "categorical_evidence": {
                   "baseline_signature": {
                     "basins": {
@@ -23164,6 +24755,21 @@
                   "continuation_point_supported": true,
                   "frozen_comparator_is_full_map": false,
                   "retention_readback_or_writeback_supported": false
+                },
+                "comparison_admissibility": {
+                  "complete_step": {
+                    "admitted": true,
+                    "blocked_comparison_is_threshold_disagreement": false,
+                    "status": "admitted_GRV3_stratum_and_spectral_contract"
+                  },
+                  "frozen_W_comparator": {
+                    "I_minus_B_eff_invertibility_status": "not_applicable_no_current_slaving_or_feedback_elimination",
+                    "admitted": true,
+                    "current_slaving_used": false,
+                    "fast_slaving_claim_allowed": false,
+                    "mobility_positive_definite_on_zero_sum_C_tangent": true,
+                    "status": "admitted_clamped_W_C_tangent_comparator"
+                  }
                 },
                 "complete_step_temporal": {
                   "baseline_stratum_margins": {
@@ -23563,6 +25169,16 @@
                   "topology_equal": true,
                   "total_coherence_delta": 0.0
                 },
+                "branch_sheet_identity": {
+                  "branch_C_topology_sha256": "f20b1e3785ab5e9d300ffadde49fe8787fed9d7f919974512187898f6a58525a",
+                  "branch_sheet_selected_before_GRV7_spectra": true,
+                  "categorical_signature_sha256": "80f3dbd0303148108c968170bbe53847249dfb3b3e50c1456bf326df8ecc0b04",
+                  "constitutive_W_J_sha256": "f861c4ef812291b771cfe7c250f27ff0f7379da04cac2c19d771a4f71b36ad04",
+                  "continuation_sheet_key": "F3:grv2-f3-035",
+                  "fixture_id": "F3",
+                  "source_branch_id": "grv2-f3-035",
+                  "symmetry_copy_substitution_allowed": false
+                },
                 "categorical_evidence": {
                   "baseline_signature": {
                     "basins": {
@@ -23724,6 +25340,21 @@
                   "continuation_point_supported": true,
                   "frozen_comparator_is_full_map": false,
                   "retention_readback_or_writeback_supported": false
+                },
+                "comparison_admissibility": {
+                  "complete_step": {
+                    "admitted": true,
+                    "blocked_comparison_is_threshold_disagreement": false,
+                    "status": "admitted_GRV3_stratum_and_spectral_contract"
+                  },
+                  "frozen_W_comparator": {
+                    "I_minus_B_eff_invertibility_status": "not_applicable_no_current_slaving_or_feedback_elimination",
+                    "admitted": true,
+                    "current_slaving_used": false,
+                    "fast_slaving_claim_allowed": false,
+                    "mobility_positive_definite_on_zero_sum_C_tangent": true,
+                    "status": "admitted_clamped_W_C_tangent_comparator"
+                  }
                 },
                 "complete_step_temporal": {
                   "baseline_stratum_margins": {
@@ -24128,6 +25759,16 @@
                 "topology_equal": true,
                 "total_coherence_delta": 0.0
               },
+              "branch_sheet_identity": {
+                "branch_C_topology_sha256": "5b73c740c6041082af9b6c6f000b78e3072b8dfcb83084e82072321f5390f44f",
+                "branch_sheet_selected_before_GRV7_spectra": true,
+                "categorical_signature_sha256": "88a53491e1779e0a687769d56a5b3bb1aa9ba7d5cfeb01fefb1c5fccd7887fbf",
+                "constitutive_W_J_sha256": "a946cec5ab5d641def77ea4afba92dd16f2ceed9c44a1bc2176037e911623c7a",
+                "continuation_sheet_key": "F3:grv2-f3-033",
+                "fixture_id": "F3",
+                "source_branch_id": "grv2-f3-033",
+                "symmetry_copy_substitution_allowed": false
+              },
               "categorical_evidence": {
                 "baseline_signature": {
                   "basins": {
@@ -24289,6 +25930,21 @@
                 "continuation_point_supported": true,
                 "frozen_comparator_is_full_map": false,
                 "retention_readback_or_writeback_supported": false
+              },
+              "comparison_admissibility": {
+                "complete_step": {
+                  "admitted": true,
+                  "blocked_comparison_is_threshold_disagreement": false,
+                  "status": "admitted_GRV3_stratum_and_spectral_contract"
+                },
+                "frozen_W_comparator": {
+                  "I_minus_B_eff_invertibility_status": "not_applicable_no_current_slaving_or_feedback_elimination",
+                  "admitted": true,
+                  "current_slaving_used": false,
+                  "fast_slaving_claim_allowed": false,
+                  "mobility_positive_definite_on_zero_sum_C_tangent": true,
+                  "status": "admitted_clamped_W_C_tangent_comparator"
+                }
               },
               "complete_step_temporal": {
                 "baseline_stratum_margins": {
@@ -24732,6 +26388,16 @@
                   "topology_equal": true,
                   "total_coherence_delta": 0.0
                 },
+                "branch_sheet_identity": {
+                  "branch_C_topology_sha256": "d586f7df06f3cadccc5079a06fddb87c94bafe297c18e4863ddfe346904815a1",
+                  "branch_sheet_selected_before_GRV7_spectra": true,
+                  "categorical_signature_sha256": "4dc5ffddcf0562f0e9510188e65afb0e6f57b75eba1206719610bc395236d776",
+                  "constitutive_W_J_sha256": "79684ac5e5666ce8a987aed094690b5328e409e707363547d9a7d54d3e28e5ab",
+                  "continuation_sheet_key": "F3:grv2-f3-034",
+                  "fixture_id": "F3",
+                  "source_branch_id": "grv2-f3-034",
+                  "symmetry_copy_substitution_allowed": false
+                },
                 "categorical_evidence": {
                   "baseline_signature": {
                     "basins": {
@@ -24893,6 +26559,21 @@
                   "continuation_point_supported": true,
                   "frozen_comparator_is_full_map": false,
                   "retention_readback_or_writeback_supported": false
+                },
+                "comparison_admissibility": {
+                  "complete_step": {
+                    "admitted": true,
+                    "blocked_comparison_is_threshold_disagreement": false,
+                    "status": "admitted_GRV3_stratum_and_spectral_contract"
+                  },
+                  "frozen_W_comparator": {
+                    "I_minus_B_eff_invertibility_status": "not_applicable_no_current_slaving_or_feedback_elimination",
+                    "admitted": true,
+                    "current_slaving_used": false,
+                    "fast_slaving_claim_allowed": false,
+                    "mobility_positive_definite_on_zero_sum_C_tangent": true,
+                    "status": "admitted_clamped_W_C_tangent_comparator"
+                  }
                 },
                 "complete_step_temporal": {
                   "baseline_stratum_margins": {
@@ -25292,6 +26973,16 @@
                   "topology_equal": true,
                   "total_coherence_delta": 0.0
                 },
+                "branch_sheet_identity": {
+                  "branch_C_topology_sha256": "0f6ffd0078da5d85f02aadfebe2c48ec8ffd7b939f6e47e2a103f150e45f4ba0",
+                  "branch_sheet_selected_before_GRV7_spectra": true,
+                  "categorical_signature_sha256": "80f3dbd0303148108c968170bbe53847249dfb3b3e50c1456bf326df8ecc0b04",
+                  "constitutive_W_J_sha256": "7f59b9bd5cc8031ec34f67d033685a6cbb61a2d44c3cf96264ba0fcb27d24d45",
+                  "continuation_sheet_key": "F3:grv2-f3-035",
+                  "fixture_id": "F3",
+                  "source_branch_id": "grv2-f3-035",
+                  "symmetry_copy_substitution_allowed": false
+                },
                 "categorical_evidence": {
                   "baseline_signature": {
                     "basins": {
@@ -25453,6 +27144,21 @@
                   "continuation_point_supported": true,
                   "frozen_comparator_is_full_map": false,
                   "retention_readback_or_writeback_supported": false
+                },
+                "comparison_admissibility": {
+                  "complete_step": {
+                    "admitted": true,
+                    "blocked_comparison_is_threshold_disagreement": false,
+                    "status": "admitted_GRV3_stratum_and_spectral_contract"
+                  },
+                  "frozen_W_comparator": {
+                    "I_minus_B_eff_invertibility_status": "not_applicable_no_current_slaving_or_feedback_elimination",
+                    "admitted": true,
+                    "current_slaving_used": false,
+                    "fast_slaving_claim_allowed": false,
+                    "mobility_positive_definite_on_zero_sum_C_tangent": true,
+                    "status": "admitted_clamped_W_C_tangent_comparator"
+                  }
                 },
                 "complete_step_temporal": {
                   "baseline_stratum_margins": {
@@ -25856,6 +27562,16 @@
               "topology_equal": true,
               "total_coherence_delta": 0.0
             },
+            "branch_sheet_identity": {
+              "branch_C_topology_sha256": "20a5b1fd0161dd1d7ad03590af7e53e2dc64a11cba2813b1d52f2e62c54ceb5b",
+              "branch_sheet_selected_before_GRV7_spectra": true,
+              "categorical_signature_sha256": "88a53491e1779e0a687769d56a5b3bb1aa9ba7d5cfeb01fefb1c5fccd7887fbf",
+              "constitutive_W_J_sha256": "a946cec5ab5d641def77ea4afba92dd16f2ceed9c44a1bc2176037e911623c7a",
+              "continuation_sheet_key": "F3:grv2-f3-033",
+              "fixture_id": "F3",
+              "source_branch_id": "grv2-f3-033",
+              "symmetry_copy_substitution_allowed": false
+            },
             "categorical_evidence": {
               "baseline_signature": {
                 "basins": {
@@ -26017,6 +27733,21 @@
               "continuation_point_supported": true,
               "frozen_comparator_is_full_map": false,
               "retention_readback_or_writeback_supported": false
+            },
+            "comparison_admissibility": {
+              "complete_step": {
+                "admitted": true,
+                "blocked_comparison_is_threshold_disagreement": false,
+                "status": "admitted_GRV3_stratum_and_spectral_contract"
+              },
+              "frozen_W_comparator": {
+                "I_minus_B_eff_invertibility_status": "not_applicable_no_current_slaving_or_feedback_elimination",
+                "admitted": true,
+                "current_slaving_used": false,
+                "fast_slaving_claim_allowed": false,
+                "mobility_positive_definite_on_zero_sum_C_tangent": true,
+                "status": "admitted_clamped_W_C_tangent_comparator"
+              }
             },
             "complete_step_temporal": {
               "baseline_stratum_margins": {
@@ -26416,6 +28147,16 @@
               "topology_equal": true,
               "total_coherence_delta": 0.0
             },
+            "branch_sheet_identity": {
+              "branch_C_topology_sha256": "99df79531211411da578696afeb1076292209b73c5988ffe5f99421ed240d191",
+              "branch_sheet_selected_before_GRV7_spectra": true,
+              "categorical_signature_sha256": "88a53491e1779e0a687769d56a5b3bb1aa9ba7d5cfeb01fefb1c5fccd7887fbf",
+              "constitutive_W_J_sha256": "957a81b90bb218a2cb8b83f3fe03b8d843281884370f3977c7a491b38079ed05",
+              "continuation_sheet_key": "F3:grv2-f3-033",
+              "fixture_id": "F3",
+              "source_branch_id": "grv2-f3-033",
+              "symmetry_copy_substitution_allowed": false
+            },
             "categorical_evidence": {
               "baseline_signature": {
                 "basins": {
@@ -26577,6 +28318,21 @@
               "continuation_point_supported": true,
               "frozen_comparator_is_full_map": false,
               "retention_readback_or_writeback_supported": false
+            },
+            "comparison_admissibility": {
+              "complete_step": {
+                "admitted": true,
+                "blocked_comparison_is_threshold_disagreement": false,
+                "status": "admitted_GRV3_stratum_and_spectral_contract"
+              },
+              "frozen_W_comparator": {
+                "I_minus_B_eff_invertibility_status": "not_applicable_no_current_slaving_or_feedback_elimination",
+                "admitted": true,
+                "current_slaving_used": false,
+                "fast_slaving_claim_allowed": false,
+                "mobility_positive_definite_on_zero_sum_C_tangent": true,
+                "status": "admitted_clamped_W_C_tangent_comparator"
+              }
             },
             "complete_step_temporal": {
               "baseline_stratum_margins": {
@@ -26976,6 +28732,16 @@
               "topology_equal": true,
               "total_coherence_delta": 0.0
             },
+            "branch_sheet_identity": {
+              "branch_C_topology_sha256": "c23fbad6f84e29275a91532968c349db165a371f47d08f7ba6f6c9e81b43470c",
+              "branch_sheet_selected_before_GRV7_spectra": true,
+              "categorical_signature_sha256": "88a53491e1779e0a687769d56a5b3bb1aa9ba7d5cfeb01fefb1c5fccd7887fbf",
+              "constitutive_W_J_sha256": "35a435572c039911fb63b0921d579e703c1d4205cf9f311ae33993c2388215a1",
+              "continuation_sheet_key": "F3:grv2-f3-033",
+              "fixture_id": "F3",
+              "source_branch_id": "grv2-f3-033",
+              "symmetry_copy_substitution_allowed": false
+            },
             "categorical_evidence": {
               "baseline_signature": {
                 "basins": {
@@ -27137,6 +28903,21 @@
               "continuation_point_supported": true,
               "frozen_comparator_is_full_map": false,
               "retention_readback_or_writeback_supported": false
+            },
+            "comparison_admissibility": {
+              "complete_step": {
+                "admitted": true,
+                "blocked_comparison_is_threshold_disagreement": false,
+                "status": "admitted_GRV3_stratum_and_spectral_contract"
+              },
+              "frozen_W_comparator": {
+                "I_minus_B_eff_invertibility_status": "not_applicable_no_current_slaving_or_feedback_elimination",
+                "admitted": true,
+                "current_slaving_used": false,
+                "fast_slaving_claim_allowed": false,
+                "mobility_positive_definite_on_zero_sum_C_tangent": true,
+                "status": "admitted_clamped_W_C_tangent_comparator"
+              }
             },
             "complete_step_temporal": {
               "baseline_stratum_margins": {
@@ -27536,6 +29317,16 @@
               "topology_equal": true,
               "total_coherence_delta": 0.0
             },
+            "branch_sheet_identity": {
+              "branch_C_topology_sha256": "5b73c740c6041082af9b6c6f000b78e3072b8dfcb83084e82072321f5390f44f",
+              "branch_sheet_selected_before_GRV7_spectra": true,
+              "categorical_signature_sha256": "88a53491e1779e0a687769d56a5b3bb1aa9ba7d5cfeb01fefb1c5fccd7887fbf",
+              "constitutive_W_J_sha256": "a946cec5ab5d641def77ea4afba92dd16f2ceed9c44a1bc2176037e911623c7a",
+              "continuation_sheet_key": "F3:grv2-f3-033",
+              "fixture_id": "F3",
+              "source_branch_id": "grv2-f3-033",
+              "symmetry_copy_substitution_allowed": false
+            },
             "categorical_evidence": {
               "baseline_signature": {
                 "basins": {
@@ -27697,6 +29488,21 @@
               "continuation_point_supported": true,
               "frozen_comparator_is_full_map": false,
               "retention_readback_or_writeback_supported": false
+            },
+            "comparison_admissibility": {
+              "complete_step": {
+                "admitted": true,
+                "blocked_comparison_is_threshold_disagreement": false,
+                "status": "admitted_GRV3_stratum_and_spectral_contract"
+              },
+              "frozen_W_comparator": {
+                "I_minus_B_eff_invertibility_status": "not_applicable_no_current_slaving_or_feedback_elimination",
+                "admitted": true,
+                "current_slaving_used": false,
+                "fast_slaving_claim_allowed": false,
+                "mobility_positive_definite_on_zero_sum_C_tangent": true,
+                "status": "admitted_clamped_W_C_tangent_comparator"
+              }
             },
             "complete_step_temporal": {
               "baseline_stratum_margins": {
@@ -28019,6 +29825,53 @@
         "all_applicable_symmetry_controls_passed": true,
         "all_points_admitted": true,
         "axis": "eta",
+        "branch_identity_audit": {
+          "passed": true,
+          "per_source_branch": [
+            {
+              "branch_C_topology_digest_count": 4,
+              "categorical_signature_digest_count": 1,
+              "constitutive_W_J_digest_count": 4,
+              "constitutive_W_J_variation_is_branch_jump": false,
+              "continuation_sheet_key_count": 1,
+              "decision": "same_branch_sheet_preserved",
+              "exact_branch_state_digest_identity_required": false,
+              "maximum_adjacent_coherence_state_l2": 6.851555075616635e-12,
+              "maximum_adjacent_total_coherence_delta": 0.0,
+              "passed": true,
+              "source_branch_id": "grv2-f3-033"
+            },
+            {
+              "branch_C_topology_digest_count": 4,
+              "categorical_signature_digest_count": 1,
+              "constitutive_W_J_digest_count": 4,
+              "constitutive_W_J_variation_is_branch_jump": false,
+              "continuation_sheet_key_count": 1,
+              "decision": "same_branch_sheet_preserved",
+              "exact_branch_state_digest_identity_required": false,
+              "maximum_adjacent_coherence_state_l2": 6.851555075616635e-12,
+              "maximum_adjacent_total_coherence_delta": 0.0,
+              "passed": true,
+              "source_branch_id": "grv2-f3-034"
+            },
+            {
+              "branch_C_topology_digest_count": 4,
+              "categorical_signature_digest_count": 1,
+              "constitutive_W_J_digest_count": 4,
+              "constitutive_W_J_variation_is_branch_jump": false,
+              "continuation_sheet_key_count": 1,
+              "decision": "same_branch_sheet_preserved",
+              "exact_branch_state_digest_identity_required": false,
+              "maximum_adjacent_coherence_state_l2": 6.851555075616635e-12,
+              "maximum_adjacent_total_coherence_delta": 0.0,
+              "passed": true,
+              "source_branch_id": "grv2-f3-035"
+            }
+          ],
+          "post_spectrum_sheet_selection_allowed": false,
+          "status": "passed",
+          "symmetry_copies_tracked_as_separate_source_branches": true
+        },
         "cluster_matching": {
           "all_available_cluster_matches_passed": true,
           "blocked_complete_step_pairs_retained": 0,
@@ -28289,6 +30142,16 @@
                 "topology_equal": true,
                 "total_coherence_delta": 0.0
               },
+              "branch_sheet_identity": {
+                "branch_C_topology_sha256": "20a5b1fd0161dd1d7ad03590af7e53e2dc64a11cba2813b1d52f2e62c54ceb5b",
+                "branch_sheet_selected_before_GRV7_spectra": true,
+                "categorical_signature_sha256": "88a53491e1779e0a687769d56a5b3bb1aa9ba7d5cfeb01fefb1c5fccd7887fbf",
+                "constitutive_W_J_sha256": "a946cec5ab5d641def77ea4afba92dd16f2ceed9c44a1bc2176037e911623c7a",
+                "continuation_sheet_key": "F3:grv2-f3-033",
+                "fixture_id": "F3",
+                "source_branch_id": "grv2-f3-033",
+                "symmetry_copy_substitution_allowed": false
+              },
               "categorical_evidence": {
                 "baseline_signature": {
                   "basins": {
@@ -28450,6 +30313,21 @@
                 "continuation_point_supported": true,
                 "frozen_comparator_is_full_map": false,
                 "retention_readback_or_writeback_supported": false
+              },
+              "comparison_admissibility": {
+                "complete_step": {
+                  "admitted": true,
+                  "blocked_comparison_is_threshold_disagreement": false,
+                  "status": "admitted_GRV3_stratum_and_spectral_contract"
+                },
+                "frozen_W_comparator": {
+                  "I_minus_B_eff_invertibility_status": "not_applicable_no_current_slaving_or_feedback_elimination",
+                  "admitted": true,
+                  "current_slaving_used": false,
+                  "fast_slaving_claim_allowed": false,
+                  "mobility_positive_definite_on_zero_sum_C_tangent": true,
+                  "status": "admitted_clamped_W_C_tangent_comparator"
+                }
               },
               "complete_step_temporal": {
                 "baseline_stratum_margins": {
@@ -28893,6 +30771,16 @@
                   "topology_equal": true,
                   "total_coherence_delta": 0.0
                 },
+                "branch_sheet_identity": {
+                  "branch_C_topology_sha256": "fd7904e98b2570f6e3d7ac6da5036e1dd21cadf12dc9efa220a4ff2a24741e91",
+                  "branch_sheet_selected_before_GRV7_spectra": true,
+                  "categorical_signature_sha256": "4dc5ffddcf0562f0e9510188e65afb0e6f57b75eba1206719610bc395236d776",
+                  "constitutive_W_J_sha256": "79684ac5e5666ce8a987aed094690b5328e409e707363547d9a7d54d3e28e5ab",
+                  "continuation_sheet_key": "F3:grv2-f3-034",
+                  "fixture_id": "F3",
+                  "source_branch_id": "grv2-f3-034",
+                  "symmetry_copy_substitution_allowed": false
+                },
                 "categorical_evidence": {
                   "baseline_signature": {
                     "basins": {
@@ -29054,6 +30942,21 @@
                   "continuation_point_supported": true,
                   "frozen_comparator_is_full_map": false,
                   "retention_readback_or_writeback_supported": false
+                },
+                "comparison_admissibility": {
+                  "complete_step": {
+                    "admitted": true,
+                    "blocked_comparison_is_threshold_disagreement": false,
+                    "status": "admitted_GRV3_stratum_and_spectral_contract"
+                  },
+                  "frozen_W_comparator": {
+                    "I_minus_B_eff_invertibility_status": "not_applicable_no_current_slaving_or_feedback_elimination",
+                    "admitted": true,
+                    "current_slaving_used": false,
+                    "fast_slaving_claim_allowed": false,
+                    "mobility_positive_definite_on_zero_sum_C_tangent": true,
+                    "status": "admitted_clamped_W_C_tangent_comparator"
+                  }
                 },
                 "complete_step_temporal": {
                   "baseline_stratum_margins": {
@@ -29453,6 +31356,16 @@
                   "topology_equal": true,
                   "total_coherence_delta": 0.0
                 },
+                "branch_sheet_identity": {
+                  "branch_C_topology_sha256": "c017cc3cfc986784725e3419eea8015eeebdd7317866e95d2fc94c835ac335b3",
+                  "branch_sheet_selected_before_GRV7_spectra": true,
+                  "categorical_signature_sha256": "80f3dbd0303148108c968170bbe53847249dfb3b3e50c1456bf326df8ecc0b04",
+                  "constitutive_W_J_sha256": "7f59b9bd5cc8031ec34f67d033685a6cbb61a2d44c3cf96264ba0fcb27d24d45",
+                  "continuation_sheet_key": "F3:grv2-f3-035",
+                  "fixture_id": "F3",
+                  "source_branch_id": "grv2-f3-035",
+                  "symmetry_copy_substitution_allowed": false
+                },
                 "categorical_evidence": {
                   "baseline_signature": {
                     "basins": {
@@ -29614,6 +31527,21 @@
                   "continuation_point_supported": true,
                   "frozen_comparator_is_full_map": false,
                   "retention_readback_or_writeback_supported": false
+                },
+                "comparison_admissibility": {
+                  "complete_step": {
+                    "admitted": true,
+                    "blocked_comparison_is_threshold_disagreement": false,
+                    "status": "admitted_GRV3_stratum_and_spectral_contract"
+                  },
+                  "frozen_W_comparator": {
+                    "I_minus_B_eff_invertibility_status": "not_applicable_no_current_slaving_or_feedback_elimination",
+                    "admitted": true,
+                    "current_slaving_used": false,
+                    "fast_slaving_claim_allowed": false,
+                    "mobility_positive_definite_on_zero_sum_C_tangent": true,
+                    "status": "admitted_clamped_W_C_tangent_comparator"
+                  }
                 },
                 "complete_step_temporal": {
                   "baseline_stratum_margins": {
@@ -30018,6 +31946,16 @@
                 "topology_equal": true,
                 "total_coherence_delta": 0.0
               },
+              "branch_sheet_identity": {
+                "branch_C_topology_sha256": "99df79531211411da578696afeb1076292209b73c5988ffe5f99421ed240d191",
+                "branch_sheet_selected_before_GRV7_spectra": true,
+                "categorical_signature_sha256": "88a53491e1779e0a687769d56a5b3bb1aa9ba7d5cfeb01fefb1c5fccd7887fbf",
+                "constitutive_W_J_sha256": "9e98c7b2c76b3ce7765c36701bdd697c21de0cd9bc03accdb535d8e02fda2e48",
+                "continuation_sheet_key": "F3:grv2-f3-033",
+                "fixture_id": "F3",
+                "source_branch_id": "grv2-f3-033",
+                "symmetry_copy_substitution_allowed": false
+              },
               "categorical_evidence": {
                 "baseline_signature": {
                   "basins": {
@@ -30179,6 +32117,21 @@
                 "continuation_point_supported": true,
                 "frozen_comparator_is_full_map": false,
                 "retention_readback_or_writeback_supported": false
+              },
+              "comparison_admissibility": {
+                "complete_step": {
+                  "admitted": true,
+                  "blocked_comparison_is_threshold_disagreement": false,
+                  "status": "admitted_GRV3_stratum_and_spectral_contract"
+                },
+                "frozen_W_comparator": {
+                  "I_minus_B_eff_invertibility_status": "not_applicable_no_current_slaving_or_feedback_elimination",
+                  "admitted": true,
+                  "current_slaving_used": false,
+                  "fast_slaving_claim_allowed": false,
+                  "mobility_positive_definite_on_zero_sum_C_tangent": true,
+                  "status": "admitted_clamped_W_C_tangent_comparator"
+                }
               },
               "complete_step_temporal": {
                 "baseline_stratum_margins": {
@@ -30622,6 +32575,16 @@
                   "topology_equal": true,
                   "total_coherence_delta": 0.0
                 },
+                "branch_sheet_identity": {
+                  "branch_C_topology_sha256": "2f31d48702483c98c895590d4d5618ed0fcb523fc3bcb4fda3ca5104d8e2256d",
+                  "branch_sheet_selected_before_GRV7_spectra": true,
+                  "categorical_signature_sha256": "4dc5ffddcf0562f0e9510188e65afb0e6f57b75eba1206719610bc395236d776",
+                  "constitutive_W_J_sha256": "6b80b7ac2fd853b79172c75886e835d4e76a4485306dde1363b93d4ab2aaf3ca",
+                  "continuation_sheet_key": "F3:grv2-f3-034",
+                  "fixture_id": "F3",
+                  "source_branch_id": "grv2-f3-034",
+                  "symmetry_copy_substitution_allowed": false
+                },
                 "categorical_evidence": {
                   "baseline_signature": {
                     "basins": {
@@ -30783,6 +32746,21 @@
                   "continuation_point_supported": true,
                   "frozen_comparator_is_full_map": false,
                   "retention_readback_or_writeback_supported": false
+                },
+                "comparison_admissibility": {
+                  "complete_step": {
+                    "admitted": true,
+                    "blocked_comparison_is_threshold_disagreement": false,
+                    "status": "admitted_GRV3_stratum_and_spectral_contract"
+                  },
+                  "frozen_W_comparator": {
+                    "I_minus_B_eff_invertibility_status": "not_applicable_no_current_slaving_or_feedback_elimination",
+                    "admitted": true,
+                    "current_slaving_used": false,
+                    "fast_slaving_claim_allowed": false,
+                    "mobility_positive_definite_on_zero_sum_C_tangent": true,
+                    "status": "admitted_clamped_W_C_tangent_comparator"
+                  }
                 },
                 "complete_step_temporal": {
                   "baseline_stratum_margins": {
@@ -31182,6 +33160,16 @@
                   "topology_equal": true,
                   "total_coherence_delta": 0.0
                 },
+                "branch_sheet_identity": {
+                  "branch_C_topology_sha256": "75020cde40a120f2beaf74a1f14bd7c1594118ee4ccd7bd9cab8d01c91296a14",
+                  "branch_sheet_selected_before_GRV7_spectra": true,
+                  "categorical_signature_sha256": "80f3dbd0303148108c968170bbe53847249dfb3b3e50c1456bf326df8ecc0b04",
+                  "constitutive_W_J_sha256": "8fe9efaedb414e44effb9a0c91b85b58905a42f9acdcfde21fb280c37b91f2c9",
+                  "continuation_sheet_key": "F3:grv2-f3-035",
+                  "fixture_id": "F3",
+                  "source_branch_id": "grv2-f3-035",
+                  "symmetry_copy_substitution_allowed": false
+                },
                 "categorical_evidence": {
                   "baseline_signature": {
                     "basins": {
@@ -31343,6 +33331,21 @@
                   "continuation_point_supported": true,
                   "frozen_comparator_is_full_map": false,
                   "retention_readback_or_writeback_supported": false
+                },
+                "comparison_admissibility": {
+                  "complete_step": {
+                    "admitted": true,
+                    "blocked_comparison_is_threshold_disagreement": false,
+                    "status": "admitted_GRV3_stratum_and_spectral_contract"
+                  },
+                  "frozen_W_comparator": {
+                    "I_minus_B_eff_invertibility_status": "not_applicable_no_current_slaving_or_feedback_elimination",
+                    "admitted": true,
+                    "current_slaving_used": false,
+                    "fast_slaving_claim_allowed": false,
+                    "mobility_positive_definite_on_zero_sum_C_tangent": true,
+                    "status": "admitted_clamped_W_C_tangent_comparator"
+                  }
                 },
                 "complete_step_temporal": {
                   "baseline_stratum_margins": {
@@ -31747,6 +33750,16 @@
                 "topology_equal": true,
                 "total_coherence_delta": 0.0
               },
+              "branch_sheet_identity": {
+                "branch_C_topology_sha256": "c6bb0b39303ae4241e20e304502f5b76918f53354c612343eda6950a0d130d56",
+                "branch_sheet_selected_before_GRV7_spectra": true,
+                "categorical_signature_sha256": "88a53491e1779e0a687769d56a5b3bb1aa9ba7d5cfeb01fefb1c5fccd7887fbf",
+                "constitutive_W_J_sha256": "d7fbb955632f9275536fdbc785c76b346038d8d70cf51a4909e5605c3281cb7b",
+                "continuation_sheet_key": "F3:grv2-f3-033",
+                "fixture_id": "F3",
+                "source_branch_id": "grv2-f3-033",
+                "symmetry_copy_substitution_allowed": false
+              },
               "categorical_evidence": {
                 "baseline_signature": {
                   "basins": {
@@ -31908,6 +33921,21 @@
                 "continuation_point_supported": true,
                 "frozen_comparator_is_full_map": false,
                 "retention_readback_or_writeback_supported": false
+              },
+              "comparison_admissibility": {
+                "complete_step": {
+                  "admitted": true,
+                  "blocked_comparison_is_threshold_disagreement": false,
+                  "status": "admitted_GRV3_stratum_and_spectral_contract"
+                },
+                "frozen_W_comparator": {
+                  "I_minus_B_eff_invertibility_status": "not_applicable_no_current_slaving_or_feedback_elimination",
+                  "admitted": true,
+                  "current_slaving_used": false,
+                  "fast_slaving_claim_allowed": false,
+                  "mobility_positive_definite_on_zero_sum_C_tangent": true,
+                  "status": "admitted_clamped_W_C_tangent_comparator"
+                }
               },
               "complete_step_temporal": {
                 "baseline_stratum_margins": {
@@ -32351,6 +34379,16 @@
                   "topology_equal": true,
                   "total_coherence_delta": 0.0
                 },
+                "branch_sheet_identity": {
+                  "branch_C_topology_sha256": "1b71664cdc7399c5eea60ae0190509e6fcc21f252735e5c2a4e82ea7d357851a",
+                  "branch_sheet_selected_before_GRV7_spectra": true,
+                  "categorical_signature_sha256": "4dc5ffddcf0562f0e9510188e65afb0e6f57b75eba1206719610bc395236d776",
+                  "constitutive_W_J_sha256": "a762af1b2821000d62079b44f79fae310eeb64ec933cfbfdfe7b39dd8bc25a9e",
+                  "continuation_sheet_key": "F3:grv2-f3-034",
+                  "fixture_id": "F3",
+                  "source_branch_id": "grv2-f3-034",
+                  "symmetry_copy_substitution_allowed": false
+                },
                 "categorical_evidence": {
                   "baseline_signature": {
                     "basins": {
@@ -32512,6 +34550,21 @@
                   "continuation_point_supported": true,
                   "frozen_comparator_is_full_map": false,
                   "retention_readback_or_writeback_supported": false
+                },
+                "comparison_admissibility": {
+                  "complete_step": {
+                    "admitted": true,
+                    "blocked_comparison_is_threshold_disagreement": false,
+                    "status": "admitted_GRV3_stratum_and_spectral_contract"
+                  },
+                  "frozen_W_comparator": {
+                    "I_minus_B_eff_invertibility_status": "not_applicable_no_current_slaving_or_feedback_elimination",
+                    "admitted": true,
+                    "current_slaving_used": false,
+                    "fast_slaving_claim_allowed": false,
+                    "mobility_positive_definite_on_zero_sum_C_tangent": true,
+                    "status": "admitted_clamped_W_C_tangent_comparator"
+                  }
                 },
                 "complete_step_temporal": {
                   "baseline_stratum_margins": {
@@ -32911,6 +34964,16 @@
                   "topology_equal": true,
                   "total_coherence_delta": 0.0
                 },
+                "branch_sheet_identity": {
+                  "branch_C_topology_sha256": "8aaf3777e57ea90da742f3793f01f7d508298bad1bce12f83bf06c48f1cc810f",
+                  "branch_sheet_selected_before_GRV7_spectra": true,
+                  "categorical_signature_sha256": "80f3dbd0303148108c968170bbe53847249dfb3b3e50c1456bf326df8ecc0b04",
+                  "constitutive_W_J_sha256": "cdfad0dad2be2715c43b9be7a39a540fc44c37297f22a2fcdaea0ee5fd370702",
+                  "continuation_sheet_key": "F3:grv2-f3-035",
+                  "fixture_id": "F3",
+                  "source_branch_id": "grv2-f3-035",
+                  "symmetry_copy_substitution_allowed": false
+                },
                 "categorical_evidence": {
                   "baseline_signature": {
                     "basins": {
@@ -33072,6 +35135,21 @@
                   "continuation_point_supported": true,
                   "frozen_comparator_is_full_map": false,
                   "retention_readback_or_writeback_supported": false
+                },
+                "comparison_admissibility": {
+                  "complete_step": {
+                    "admitted": true,
+                    "blocked_comparison_is_threshold_disagreement": false,
+                    "status": "admitted_GRV3_stratum_and_spectral_contract"
+                  },
+                  "frozen_W_comparator": {
+                    "I_minus_B_eff_invertibility_status": "not_applicable_no_current_slaving_or_feedback_elimination",
+                    "admitted": true,
+                    "current_slaving_used": false,
+                    "fast_slaving_claim_allowed": false,
+                    "mobility_positive_definite_on_zero_sum_C_tangent": true,
+                    "status": "admitted_clamped_W_C_tangent_comparator"
+                  }
                 },
                 "complete_step_temporal": {
                   "baseline_stratum_margins": {
@@ -33476,6 +35554,16 @@
                 "topology_equal": true,
                 "total_coherence_delta": 0.0
               },
+              "branch_sheet_identity": {
+                "branch_C_topology_sha256": "6f16e71076927d09c18094432575f277b38b91378568108123607d11317d9dc9",
+                "branch_sheet_selected_before_GRV7_spectra": true,
+                "categorical_signature_sha256": "88a53491e1779e0a687769d56a5b3bb1aa9ba7d5cfeb01fefb1c5fccd7887fbf",
+                "constitutive_W_J_sha256": "b47d18b15d8ba57f36aa6f31cd21060849242901fd15e2381d8e9b52278538f7",
+                "continuation_sheet_key": "F3:grv2-f3-033",
+                "fixture_id": "F3",
+                "source_branch_id": "grv2-f3-033",
+                "symmetry_copy_substitution_allowed": false
+              },
               "categorical_evidence": {
                 "baseline_signature": {
                   "basins": {
@@ -33637,6 +35725,21 @@
                 "continuation_point_supported": true,
                 "frozen_comparator_is_full_map": false,
                 "retention_readback_or_writeback_supported": false
+              },
+              "comparison_admissibility": {
+                "complete_step": {
+                  "admitted": true,
+                  "blocked_comparison_is_threshold_disagreement": false,
+                  "status": "admitted_GRV3_stratum_and_spectral_contract"
+                },
+                "frozen_W_comparator": {
+                  "I_minus_B_eff_invertibility_status": "not_applicable_no_current_slaving_or_feedback_elimination",
+                  "admitted": true,
+                  "current_slaving_used": false,
+                  "fast_slaving_claim_allowed": false,
+                  "mobility_positive_definite_on_zero_sum_C_tangent": true,
+                  "status": "admitted_clamped_W_C_tangent_comparator"
+                }
               },
               "complete_step_temporal": {
                 "baseline_stratum_margins": {
@@ -34080,6 +36183,16 @@
                   "topology_equal": true,
                   "total_coherence_delta": 0.0
                 },
+                "branch_sheet_identity": {
+                  "branch_C_topology_sha256": "542aaaaaae6329ad42d873bcee3875a07c44bd78cf0f820b7d7d509c85c2a76e",
+                  "branch_sheet_selected_before_GRV7_spectra": true,
+                  "categorical_signature_sha256": "4dc5ffddcf0562f0e9510188e65afb0e6f57b75eba1206719610bc395236d776",
+                  "constitutive_W_J_sha256": "072e0a320738de49c21201b7f206c9ad5ff33c938635e0464a62f6c712c955ed",
+                  "continuation_sheet_key": "F3:grv2-f3-034",
+                  "fixture_id": "F3",
+                  "source_branch_id": "grv2-f3-034",
+                  "symmetry_copy_substitution_allowed": false
+                },
                 "categorical_evidence": {
                   "baseline_signature": {
                     "basins": {
@@ -34241,6 +36354,21 @@
                   "continuation_point_supported": true,
                   "frozen_comparator_is_full_map": false,
                   "retention_readback_or_writeback_supported": false
+                },
+                "comparison_admissibility": {
+                  "complete_step": {
+                    "admitted": true,
+                    "blocked_comparison_is_threshold_disagreement": false,
+                    "status": "admitted_GRV3_stratum_and_spectral_contract"
+                  },
+                  "frozen_W_comparator": {
+                    "I_minus_B_eff_invertibility_status": "not_applicable_no_current_slaving_or_feedback_elimination",
+                    "admitted": true,
+                    "current_slaving_used": false,
+                    "fast_slaving_claim_allowed": false,
+                    "mobility_positive_definite_on_zero_sum_C_tangent": true,
+                    "status": "admitted_clamped_W_C_tangent_comparator"
+                  }
                 },
                 "complete_step_temporal": {
                   "baseline_stratum_margins": {
@@ -34640,6 +36768,16 @@
                   "topology_equal": true,
                   "total_coherence_delta": 0.0
                 },
+                "branch_sheet_identity": {
+                  "branch_C_topology_sha256": "e381967c8ae7ff15e73f468a58312d516af524989c483f03fc95c521843d16aa",
+                  "branch_sheet_selected_before_GRV7_spectra": true,
+                  "categorical_signature_sha256": "80f3dbd0303148108c968170bbe53847249dfb3b3e50c1456bf326df8ecc0b04",
+                  "constitutive_W_J_sha256": "26f6201c192aa364042fe537ad80b5166f25fd6a2e12cb6c43fb05168a43abd5",
+                  "continuation_sheet_key": "F3:grv2-f3-035",
+                  "fixture_id": "F3",
+                  "source_branch_id": "grv2-f3-035",
+                  "symmetry_copy_substitution_allowed": false
+                },
                 "categorical_evidence": {
                   "baseline_signature": {
                     "basins": {
@@ -34801,6 +36939,21 @@
                   "continuation_point_supported": true,
                   "frozen_comparator_is_full_map": false,
                   "retention_readback_or_writeback_supported": false
+                },
+                "comparison_admissibility": {
+                  "complete_step": {
+                    "admitted": true,
+                    "blocked_comparison_is_threshold_disagreement": false,
+                    "status": "admitted_GRV3_stratum_and_spectral_contract"
+                  },
+                  "frozen_W_comparator": {
+                    "I_minus_B_eff_invertibility_status": "not_applicable_no_current_slaving_or_feedback_elimination",
+                    "admitted": true,
+                    "current_slaving_used": false,
+                    "fast_slaving_claim_allowed": false,
+                    "mobility_positive_definite_on_zero_sum_C_tangent": true,
+                    "status": "admitted_clamped_W_C_tangent_comparator"
+                  }
                 },
                 "complete_step_temporal": {
                   "baseline_stratum_margins": {
@@ -35204,6 +37357,16 @@
               "topology_equal": true,
               "total_coherence_delta": 0.0
             },
+            "branch_sheet_identity": {
+              "branch_C_topology_sha256": "20a5b1fd0161dd1d7ad03590af7e53e2dc64a11cba2813b1d52f2e62c54ceb5b",
+              "branch_sheet_selected_before_GRV7_spectra": true,
+              "categorical_signature_sha256": "88a53491e1779e0a687769d56a5b3bb1aa9ba7d5cfeb01fefb1c5fccd7887fbf",
+              "constitutive_W_J_sha256": "a946cec5ab5d641def77ea4afba92dd16f2ceed9c44a1bc2176037e911623c7a",
+              "continuation_sheet_key": "F3:grv2-f3-033",
+              "fixture_id": "F3",
+              "source_branch_id": "grv2-f3-033",
+              "symmetry_copy_substitution_allowed": false
+            },
             "categorical_evidence": {
               "baseline_signature": {
                 "basins": {
@@ -35365,6 +37528,21 @@
               "continuation_point_supported": true,
               "frozen_comparator_is_full_map": false,
               "retention_readback_or_writeback_supported": false
+            },
+            "comparison_admissibility": {
+              "complete_step": {
+                "admitted": true,
+                "blocked_comparison_is_threshold_disagreement": false,
+                "status": "admitted_GRV3_stratum_and_spectral_contract"
+              },
+              "frozen_W_comparator": {
+                "I_minus_B_eff_invertibility_status": "not_applicable_no_current_slaving_or_feedback_elimination",
+                "admitted": true,
+                "current_slaving_used": false,
+                "fast_slaving_claim_allowed": false,
+                "mobility_positive_definite_on_zero_sum_C_tangent": true,
+                "status": "admitted_clamped_W_C_tangent_comparator"
+              }
             },
             "complete_step_temporal": {
               "baseline_stratum_margins": {
@@ -35764,6 +37942,16 @@
               "topology_equal": true,
               "total_coherence_delta": 0.0
             },
+            "branch_sheet_identity": {
+              "branch_C_topology_sha256": "99df79531211411da578696afeb1076292209b73c5988ffe5f99421ed240d191",
+              "branch_sheet_selected_before_GRV7_spectra": true,
+              "categorical_signature_sha256": "88a53491e1779e0a687769d56a5b3bb1aa9ba7d5cfeb01fefb1c5fccd7887fbf",
+              "constitutive_W_J_sha256": "9e98c7b2c76b3ce7765c36701bdd697c21de0cd9bc03accdb535d8e02fda2e48",
+              "continuation_sheet_key": "F3:grv2-f3-033",
+              "fixture_id": "F3",
+              "source_branch_id": "grv2-f3-033",
+              "symmetry_copy_substitution_allowed": false
+            },
             "categorical_evidence": {
               "baseline_signature": {
                 "basins": {
@@ -35925,6 +38113,21 @@
               "continuation_point_supported": true,
               "frozen_comparator_is_full_map": false,
               "retention_readback_or_writeback_supported": false
+            },
+            "comparison_admissibility": {
+              "complete_step": {
+                "admitted": true,
+                "blocked_comparison_is_threshold_disagreement": false,
+                "status": "admitted_GRV3_stratum_and_spectral_contract"
+              },
+              "frozen_W_comparator": {
+                "I_minus_B_eff_invertibility_status": "not_applicable_no_current_slaving_or_feedback_elimination",
+                "admitted": true,
+                "current_slaving_used": false,
+                "fast_slaving_claim_allowed": false,
+                "mobility_positive_definite_on_zero_sum_C_tangent": true,
+                "status": "admitted_clamped_W_C_tangent_comparator"
+              }
             },
             "complete_step_temporal": {
               "baseline_stratum_margins": {
@@ -36324,6 +38527,16 @@
               "topology_equal": true,
               "total_coherence_delta": 0.0
             },
+            "branch_sheet_identity": {
+              "branch_C_topology_sha256": "c6bb0b39303ae4241e20e304502f5b76918f53354c612343eda6950a0d130d56",
+              "branch_sheet_selected_before_GRV7_spectra": true,
+              "categorical_signature_sha256": "88a53491e1779e0a687769d56a5b3bb1aa9ba7d5cfeb01fefb1c5fccd7887fbf",
+              "constitutive_W_J_sha256": "d7fbb955632f9275536fdbc785c76b346038d8d70cf51a4909e5605c3281cb7b",
+              "continuation_sheet_key": "F3:grv2-f3-033",
+              "fixture_id": "F3",
+              "source_branch_id": "grv2-f3-033",
+              "symmetry_copy_substitution_allowed": false
+            },
             "categorical_evidence": {
               "baseline_signature": {
                 "basins": {
@@ -36485,6 +38698,21 @@
               "continuation_point_supported": true,
               "frozen_comparator_is_full_map": false,
               "retention_readback_or_writeback_supported": false
+            },
+            "comparison_admissibility": {
+              "complete_step": {
+                "admitted": true,
+                "blocked_comparison_is_threshold_disagreement": false,
+                "status": "admitted_GRV3_stratum_and_spectral_contract"
+              },
+              "frozen_W_comparator": {
+                "I_minus_B_eff_invertibility_status": "not_applicable_no_current_slaving_or_feedback_elimination",
+                "admitted": true,
+                "current_slaving_used": false,
+                "fast_slaving_claim_allowed": false,
+                "mobility_positive_definite_on_zero_sum_C_tangent": true,
+                "status": "admitted_clamped_W_C_tangent_comparator"
+              }
             },
             "complete_step_temporal": {
               "baseline_stratum_margins": {
@@ -36884,6 +39112,16 @@
               "topology_equal": true,
               "total_coherence_delta": 0.0
             },
+            "branch_sheet_identity": {
+              "branch_C_topology_sha256": "6f16e71076927d09c18094432575f277b38b91378568108123607d11317d9dc9",
+              "branch_sheet_selected_before_GRV7_spectra": true,
+              "categorical_signature_sha256": "88a53491e1779e0a687769d56a5b3bb1aa9ba7d5cfeb01fefb1c5fccd7887fbf",
+              "constitutive_W_J_sha256": "b47d18b15d8ba57f36aa6f31cd21060849242901fd15e2381d8e9b52278538f7",
+              "continuation_sheet_key": "F3:grv2-f3-033",
+              "fixture_id": "F3",
+              "source_branch_id": "grv2-f3-033",
+              "symmetry_copy_substitution_allowed": false
+            },
             "categorical_evidence": {
               "baseline_signature": {
                 "basins": {
@@ -37045,6 +39283,21 @@
               "continuation_point_supported": true,
               "frozen_comparator_is_full_map": false,
               "retention_readback_or_writeback_supported": false
+            },
+            "comparison_admissibility": {
+              "complete_step": {
+                "admitted": true,
+                "blocked_comparison_is_threshold_disagreement": false,
+                "status": "admitted_GRV3_stratum_and_spectral_contract"
+              },
+              "frozen_W_comparator": {
+                "I_minus_B_eff_invertibility_status": "not_applicable_no_current_slaving_or_feedback_elimination",
+                "admitted": true,
+                "current_slaving_used": false,
+                "fast_slaving_claim_allowed": false,
+                "mobility_positive_definite_on_zero_sum_C_tangent": true,
+                "status": "admitted_clamped_W_C_tangent_comparator"
+              }
             },
             "complete_step_temporal": {
               "baseline_stratum_margins": {
@@ -37364,12 +39617,29 @@
         ]
       }
     ],
+    "reduction_admissibility_contract": {
+      "I_minus_B_eff_invertibility_requirement": "not_applicable_no_current_slaving_or_feedback_elimination",
+      "complete_step_comparison_requires_GRV3_stratum_and_spectral_admission": true,
+      "current_slaving_used": false,
+      "failed_reduction_or_stratum_gate_classification": "comparison_blocked_not_threshold_disagreement",
+      "fast_slaving_claim_allowed": false,
+      "frozen_W_comparator_kind": "clamped_counterfactual_not_current_slaving",
+      "frozen_comparator_requires_positive_definite_mobility_on_zero_sum_C_tangent": true
+    },
+    "scientific_discriminator_priority": [
+      "operator_identity",
+      "branch_identity",
+      "reduction_validity",
+      "critical_subspace_identity",
+      "uncertainty_separated_threshold_relation",
+      "categorical_boundary_separation"
+    ],
     "source_contract": {
       "GRV6_acceptance_commit": "9606f2466769d89e10145e112ed5136704a5ad79",
       "GRV6_receipt_payload_sha256": "705b6967eedb86fe0d0d7d895998a3ad1147ede312502dae6567a9021fb449c3",
       "GRV6_result_revision": "07cf6784abe600eb2ad345e2cf9c1ed2e109be3d",
       "all_48_source_branches_retained_in_accounting": true,
-      "input_execution_revision": "0f9d0de3743eee6bad9cae525c451832671fc78b",
+      "input_execution_revision": "f002b2c18c516b96709811eb96a1d31e2bf492aa",
       "selected_source_branch_ids": [
         "grv2-f1-004",
         "grv2-f1-014",
@@ -37385,8 +39655,10 @@
       "GRV8_authorized": false,
       "GRV_C5_assigned": false,
       "GRV_C5_candidate": true,
+      "all_branch_identity_audits_passed": true,
       "all_continuation_points_admitted": true,
       "bounded_spatial_temporal_non_equivalence_supported": true,
+      "complete_step_comparison_blocked_symmetry_inclusive_point_count": 11,
       "complete_step_complex_unit_circle_reached": false,
       "complete_step_temporal_blocked_primary_point_count": 11,
       "complete_step_temporal_classes_reached": [
@@ -37397,9 +39669,12 @@
       "complex_crossing_status": "not_reached_in_preregistered_real_symmetric_and_admitted_complete_step_envelope",
       "continuation_path_count": 6,
       "continuation_supported": false,
+      "critical_subspace_comparison_scope": "decisive_F1_reduced_counterexamples_share_exact_one_dimensional_C_tangent;_no_full_map_threshold_crossing_available",
+      "decisive_uncertainty_separated_counterexample_count": 2,
       "frozen_complex_unit_circle_reached": false,
       "frozen_minus_one_reached": true,
       "frozen_plus_one_reached": true,
+      "frozen_reduction_or_admissibility_blocked_point_count": 0,
       "frozen_stable_interior_reached": true,
       "frozen_temporal_classes_reached": [
         "minus_one_flip_marginality",
@@ -37432,6 +39707,6 @@
       "strong_counterexample_requires_preregistered_path": true
     }
   },
-  "payload_sha256": "c5392a42396e1454d2a6a01d1aab2a9d30b2cf9c3e4b309443664710e9ce7a67",
+  "payload_sha256": "7ae3a4c379b1ff424c3cbbd5adedaae78c42a0f633ec896b26de605faa666f8a",
   "schema_version": "b1_grv7_spatial_temporal_threshold_matrix_v1"
 }
