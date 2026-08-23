@@ -451,6 +451,27 @@ validator. That sentinel remains fixture-only and is not scientific evidence.
 
 ## Iteration 4 - Native Preparation And Reachability Search
 
+### Pre-execution hardening
+
+- [x] Freeze `k=0` after preparation and parameter restoration but before the first evaluation-parameter transition; prohibit an unplanned washout beat.
+- [x] Record state-production and current evaluation parameter vectors separately.
+- [x] Require the matched sham to reproduce the full native-step, parameter, administrative, and causal-RNG history while omitting only the forming pulse.
+- [x] Audit positive and sham ancestry across preparation and the first post-driver transition rather than inferring cleanliness from the endpoint.
+- [x] Separate constraint-stage execution from observed state change; treat every observed nonzero correction as load-bearing regardless of reporting tolerance.
+- [x] Put eventful, topology-changing, floor-supported, categorically transitioning, and constraint-supported paths outside the clean primary lane while preserving typed failure records.
+- [x] Require strong B1 source reconstruction and fixed-branch hold checks; classify failed source reconstruction as unresolved provenance rather than descendant negative evidence.
+- [x] Exclude the directly authored `C` direction vectorially and record authored-only or unidentifiable apparent carriers separately.
+- [x] Keep complete-step `W` as a derived observation of the `C` lineage and block internal-stage transients from candidate admission.
+- [x] Freeze delayed post-driver formation as unresolved rather than inventing an I4 admission rule.
+- [x] Freeze deterministic, order-independent attempt IDs, batch allocation, no cross-stratum optimizer state, no early stop, and no proposal clipping.
+- [x] Preserve full preparation histories during deduplication and report history-distinct same-state witnesses separately.
+- [x] Base state deduplication on the complete admitted causal `k=0` state, excluding only B1-classified observer surfaces rather than reducing identity to `C/W/J`.
+- [x] Require fresh-process confirmation of source, positive and sham paths, exhaustion, `k=0`, carrier contrast, mechanism execution/change, internal-stage provenance, first post-driver transition, margins, and history-aware identity.
+- [x] Report clean-lane branch accessibility separately from resolved negative constructibility.
+- [x] Flag boundary witnesses, sham-drift outliers, amplification, and branch-relocation debt without using them to optimize or rank candidates.
+- [x] Enforce the I5 feature firewall and assign no GRR rung in I4.
+- [x] Run the pre-execution hardening tests and inspect the machinery before any discovery batch.
+
 - [ ] Execute only the preregistered search algorithms, budgets, seeds, and stopping rules.
 - [ ] Start every positive candidate through declared ancestry from an accepted B1-GR branch.
 - [ ] Use unchanged runtime evolution for every positive preparation path.
@@ -466,7 +487,7 @@ validator. That sentinel remains fixture-only and is not scientific evidence.
 - [ ] Preserve branch-relocation as open until Iteration 5 resolves it.
 - [ ] Freeze the accepted discovery candidate set and acceptance anchor before Iteration 5.
 - [ ] Fresh-process reconstruct every discovered candidate from its source B1 branch before `B2-C3` acceptance.
-- [ ] Assign at most descriptive `GRR2` candidate status.
+- [ ] Assign no GRR rung; freeze only runtime-reached post-driver candidates pending I5 `GRR2` qualification.
 - [ ] Mark the frozen candidate result `B2-C3-ready`; assign `B2-C3` only through human-reviewed acceptance.
 
 Expected artifacts:

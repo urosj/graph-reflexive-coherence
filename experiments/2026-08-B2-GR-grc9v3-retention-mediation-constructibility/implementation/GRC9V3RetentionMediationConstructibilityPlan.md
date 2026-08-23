@@ -1092,6 +1092,78 @@ reconstruct it from its source B1 branch in a fresh process and reproduce its
 reached state and admissibility margins. Only confirmed candidates enter the
 immutable Iteration 4 set consumed by Iteration 5.
 
+#### Iteration 4 pre-execution hardening
+
+Iteration 4 is a discovery gate, so a prepared trajectory must not look native
+only because of timing, endpoint sampling, wrapper correction, or incomplete
+ancestry. The executable I4 contract therefore adds these interpretations before
+any search batch runs:
+
+```text
+k=0:
+  state after the declared preparation history and parameter restoration
+  before any transition under the restored evaluation parameters
+
+first post-driver transition:
+  F_theta_eval(X_k0) -> X_k1
+```
+
+For parameter histories, the state-production parameter vector and current
+evaluation parameter vector are recorded separately. No washout beat is inserted.
+The matched sham follows the same native-step count, parameter schedule,
+administrative advancement, and causal RNG history; it omits only the forming
+`C` pulse.
+
+The complete positive and sham paths are audited from the accepted B1 source
+through preparation and the first post-driver transition. Events, topology
+mutation, conductance-floor support, categorical transition, or any observed
+budget/boundary correction put the row outside the clean primary lane. A called
+constraint stage that changes nothing remains a recorded no-op. A nonzero state
+change is load-bearing even when its norm is below a reporting tolerance;
+counterfactual constraint removal is not inferred when it would require replacing
+or reordering native `step()`.
+
+`C`-driver to `C`-carrier attribution removes the vector component parallel to
+the directly authored zero-sum pulse before applying the formation floor. A large
+apparent carrier with no separable runtime-generated component is recorded as
+authored or unidentifiable, not native write. Complete-step `W` remains a derived
+runtime observation of the same `C` lineage, not independent causal-state
+replication. Internal-stage `W` transients are diagnostic only. A carrier absent
+at `k=0` but appearing after the first post-driver transition is frozen as
+unresolved delayed formation; I4 does not invent an admission rule for it.
+
+The search is a deterministic exhaustive grid, not an optimizer. Attempt identity
+and budget allocation are independent of batch order, no state is shared across
+strata, no proposal is clipped into the envelope, and no success-based early stop
+is allowed. State duplicates and history-distinct same-state rows are classified
+separately; symmetry is characterization only unless the full source, driver
+history, runtime configuration, and candidate transform together.
+The state identity consumes the complete current-state serialization surface and
+excludes only the B1-classified observer surfaces `event_log`, `observables`, and
+`coarse_cache`; it does not collapse causal caches, registries, counters, RNG, or
+parameter identity into the narrower `C/W/J` display projection.
+
+Fresh-process confirmation reconstructs the accepted B1 source and full positive
+and sham causal paths, including exhaustion point, `k=0`, carrier contrast,
+constraint execution/change records, internal-stage provenance, first post-driver
+transition, margins, and history-aware identity. A source reconstruction failure
+contaminates its descendants and is unresolved provenance, not bounded-negative
+constructibility evidence. Unexpected implementation errors abort a batch instead
+of becoming scientific negatives.
+
+Branch accessibility is reported separately. A branch with no nontrivial clean-
+lane attempt is outside or unresolved under the frozen preparation family; it is
+not pooled with a branch whose admissible search resolved negatively. Boundary
+witnesses remain bounded constructibility observations, not robustness claims.
+Amplifying departures are flagged without ranking, and branch relocation remains
+open for I5.
+
+I4 uses only reachability, state validity, formation contrast, and its declared
+one-transition persistence magnitude. It does not inspect slow clusters,
+branch-transverse projectors, or future GRR classifications. I4 assigns no GRR
+rung: a confirmed row is a runtime-reached post-driver candidate pending I5, not
+yet a retained sector.
+
 ### Iteration 5 - Slow-Cluster And Branch-Transversality Matrix
 
 Test whether persistent candidate displacement is distinguishable from the
