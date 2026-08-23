@@ -34,7 +34,16 @@ The implementation strategy assumed by these specs is:
 - `grc-9-spec.md`
   Nine-slot mechanical substrate implementation from `papers/2026-04-GRC-9.md`, with single dynamical conductance and shared analytic edge labels.
 - `grc-9-v3-spec.md`
-  Hybrid implementation: G‑RC‑9 substrate with GRC‑v3 semantic lift, especially basin attributes, signed-Hessian hybrid spark semantics, and explicit separation between default Lane A and the opt-in `grc9v3_column_h_assisted` spark lane.
+  Normative legacy hybrid implementation: G‑RC‑9 substrate with GRC‑v3
+  semantic lift, especially basin attributes, signed-Hessian hybrid spark
+  semantics, immediate constitutive recurrence, complete-step causal-state
+  boundaries, and explicit separation between default Lane A and the opt-in
+  `grc9v3_column_h_assisted` spark lane.
+- `grc-9-v3-evidence-profile.md`
+  Bounded Phase 7, B1-GR, and B2-GR verification basis for the GRC9V3
+  causal-state, persistence, retention, and Read-Back boundaries. Experimental
+  counts and negative searches remain here rather than becoming universal
+  normative semantics.
 - `lgrc-9-v3-spec.md`
   Lorentzian/event-driven nine-port V3 target. The file uses the hyphenated
   paper/spec naming convention, while the executable runtime name is
