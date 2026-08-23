@@ -471,6 +471,9 @@ validator. That sentinel remains fixture-only and is not scientific evidence.
 - [x] Flag boundary witnesses, sham-drift outliers, amplification, and branch-relocation debt without using them to optimize or rank candidates.
 - [x] Enforce the I5 feature firewall and assign no GRR rung in I4.
 - [x] Run the pre-execution hardening tests and inspect the machinery before any discovery batch.
+- [x] Correct the preliminary exact-coordinate source audit to consume B1's frozen `C` tolerance before any F2 scientific attempt or F3 execution.
+- [x] Keep the accepted registry/crosswalk signature authoritative and the snapshot-coordinate signature diagnostic only.
+- [x] Add an F2 nonuniform-branch regression test and supersede all preliminary batch files before restarting the search.
 
 - [ ] Execute only the preregistered search algorithms, budgets, seeds, and stopping rules.
 - [ ] Start every positive candidate through declared ancestry from an accepted B1-GR branch.

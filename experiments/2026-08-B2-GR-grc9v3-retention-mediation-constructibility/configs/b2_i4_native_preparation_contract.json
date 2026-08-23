@@ -137,6 +137,10 @@
     "manual_outlier_thresholds_do_not_affect_admission": true,
     "substantial_sham_drift_fraction_for_manual_review": 0.1,
     "source_reconstruction_policy": {
+      "accepted_branch_identity_source": "B1_fixed_branch_registry_crosswalk_not_snapshot_coordinate_rehash",
+      "B1_C_absolute_tolerance_path": "absolute_tolerances.C",
+      "snapshot_coordinate_signature_role": "diagnostic_only_not_branch_identity",
+      "snapshot_coherence_match_rule": "l_inf_to_B1_registry_coordinate_lte_frozen_B1_C_absolute_tolerance",
       "descendants_of_failed_source_reconstruction_are_negative_evidence": false,
       "fresh_loaded_branch_must_match_B1_registry": true,
       "native_spontaneous_requires_fresh_fixed_branch_hold": true
@@ -153,6 +157,8 @@
     "b1_fixed_branch_registry_sha256": "56bd1857f892f187c6b99d6fcbd419ddd68ae0e17133b3a0bf7dda79b197e366",
     "b1_grv2_acceptance_anchor_path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/outputs/gates/grv2_acceptance_anchor.json",
     "b1_grv2_acceptance_anchor_sha256": "b832cc670c9c0b0a7e7edf6b8639e94710f0aea938a1420253873162b49c3193",
+    "b1_numerical_tolerances_path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/configs/numerical_tolerances.json",
+    "b1_numerical_tolerances_sha256": "c4d1323f14f7b21735777e9aa407f491707fef6cbae386bf4f2637c64ffa174f",
     "i2_schema_path": "experiments/2026-08-B2-GR-grc9v3-retention-mediation-constructibility/outputs/b2_i2_constructibility_schema.json",
     "i2_schema_payload_sha256": "bae04386692f35749c0897292f5a3ae99f8364a7251c6b7826817bdc8a4e4e28",
     "i2_schema_sha256": "80dd5546c1291f8c2ccfa4873849a0205c6d5c165c52b26ec40b49aad6a1ec5d",
@@ -165,5 +171,5 @@
     "threshold_calibration_payload_sha256": "297bb166ef65b66e5e66a4c5d79e8ae7e21be4a2c71224a8c3054364481941e3",
     "threshold_calibration_sha256": "feb6a1655d0a2595063fadf5eabd6853bc7a0ad2ff3ad2902c01058ad40a81cf"
   },
-  "schema_version": "b2_i4_native_preparation_contract_v3"
+  "schema_version": "b2_i4_native_preparation_contract_v4"
 }

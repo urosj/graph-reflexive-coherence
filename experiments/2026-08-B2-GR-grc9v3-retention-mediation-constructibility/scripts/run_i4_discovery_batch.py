@@ -62,6 +62,7 @@ def validate_prerequisites(config: dict[str, Any]) -> dict[str, Any]:
         ("i3_adjudicator", "i3_adjudicator_path"),
         ("b1_fixed_branch_registry", "b1_fixed_branch_registry_path"),
         ("b1_grv2_acceptance_anchor", "b1_grv2_acceptance_anchor_path"),
+        ("b1_numerical_tolerances", "b1_numerical_tolerances_path"),
     ):
         path = REPO_ROOT / prerequisite[path_key]
         expected = prerequisite[f"{key_prefix}_sha256"]
@@ -102,6 +103,9 @@ def validate_prerequisites(config: dict[str, Any]) -> dict[str, Any]:
     )
     if b1_acceptance["acceptance_status"] != "accepted":
         raise ValueError("B1 GRV2 acceptance anchor is not accepted")
+    b1_tolerances = read_json(
+        REPO_ROOT / prerequisite["b1_numerical_tolerances_path"]
+    )
     return {
         "i2": i2,
         "calibration": calibration,
@@ -111,6 +115,9 @@ def validate_prerequisites(config: dict[str, Any]) -> dict[str, Any]:
         "b1_registry": {
             row["branch_id"]: row for row in b1_registry["payload"]["branches"]
         },
+        "b1_C_absolute_tolerance": float(
+            b1_tolerances["absolute_tolerances"]["C"]
+        ),
     }
 
 
@@ -144,6 +151,9 @@ def build_batch(batch_id: str) -> dict[str, Any]:
             branch_row,
             prerequisites["b1_registry"][branch_row["branch_id"]],
             formation_floor=formation_floor,
+            source_coherence_abs_tolerance=prerequisites[
+                "b1_C_absolute_tolerance"
+            ],
             numerical_uncertainty=float(
                 config["i4_admission"]["numerical_uncertainty_floor"]
             ),

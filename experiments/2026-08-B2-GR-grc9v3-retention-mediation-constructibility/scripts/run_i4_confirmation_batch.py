@@ -44,9 +44,15 @@ def _confirm_candidate(
     registry_row: dict[str, Any],
     config: dict[str, Any],
     formation_floor: float,
+    source_coherence_abs_tolerance: float,
 ) -> dict[str, Any]:
     base_model = GRC9V3.load(str(REPO_ROOT / Path(branch_row["source_snapshot_path"])))
-    source_audit = source_reconstruction_audit(base_model, branch_row, registry_row)
+    source_audit = source_reconstruction_audit(
+        base_model,
+        branch_row,
+        registry_row,
+        coherence_abs_tolerance=source_coherence_abs_tolerance,
+    )
     reproduced = evaluate_attempt(
         base_model,
         branch_row,
@@ -176,6 +182,7 @@ def build_confirmation(batch_id: str) -> dict[str, Any]:
                 prerequisites["b1_registry"][branch_id],
                 config,
                 formation_floor,
+                prerequisites["b1_C_absolute_tolerance"],
             )
         )
     result_payload = {

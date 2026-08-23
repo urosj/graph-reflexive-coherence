@@ -483,10 +483,15 @@ def source_reconstruction_audit(
     model: GRC9V3,
     branch_row: dict[str, Any],
     registry_row: dict[str, Any],
+    *,
+    coherence_abs_tolerance: float,
 ) -> dict[str, Any]:
     coherence = coherence_vector(model).tolist()
+    registry_coherence = np.asarray(registry_row["coherence"], dtype=float)
+    snapshot_coherence = np.asarray(coherence, dtype=float)
+    coherence_l_inf = _l_inf(snapshot_coherence - registry_coherence)
     parameter_hash = str(model.get_params().params_hash)
-    canonical_signature = semantic_digest(
+    snapshot_coordinate_signature = semantic_digest(
         {
             "fixture_id": branch_row["fixture_id"],
             "sorted_coherence": sorted(round(value, 12) for value in coherence),
@@ -503,15 +508,16 @@ def source_reconstruction_audit(
     )
     checks = {
         "branch_id_matches": branch_row["branch_id"] == registry_row["branch_id"],
-        "coherence_matches_registry": np.array_equal(
-            np.asarray(coherence), np.asarray(registry_row["coherence"])
+        "snapshot_coherence_within_frozen_B1_C_absolute_tolerance": (
+            coherence_l_inf <= coherence_abs_tolerance
         ),
         "runtime_parameter_digest_matches_crosswalk": parameter_hash
         == branch_row["runtime_parameter_vector_digest"],
         "B1_search_parameter_hash_matches_registry": registry_row["parameter_hash"]
         == branch_row["parameter_hash"],
-        "canonical_branch_signature_matches": canonical_signature
-        == branch_row["canonical_branch_signature"]
+        "accepted_canonical_branch_signature_matches": branch_row[
+            "canonical_branch_signature"
+        ]
         == registry_row["canonical_branch_signature"],
         "topology_node_order_matches": list(node_order(model))
         == branch_row["node_order"],
@@ -529,7 +535,13 @@ def source_reconstruction_audit(
     return {
         "source_branch_id": branch_row["branch_id"],
         "source_state_digest": source_state["state_digest"],
-        "canonical_branch_signature_observed": canonical_signature,
+        "accepted_canonical_branch_signature": branch_row[
+            "canonical_branch_signature"
+        ],
+        "snapshot_coordinate_signature_diagnostic": snapshot_coordinate_signature,
+        "snapshot_coordinate_signature_role": "diagnostic_only_not_branch_identity",
+        "snapshot_coherence_l_inf_to_registry": coherence_l_inf,
+        "frozen_B1_C_absolute_tolerance": coherence_abs_tolerance,
         "fresh_hold_physical_l_inf": physical_hold_residual,
         "fresh_hold_audit": hold_audit,
         "checks": checks,
@@ -1265,13 +1277,19 @@ def evaluate_branch(
     registry_row: dict[str, Any],
     *,
     formation_floor: float,
+    source_coherence_abs_tolerance: float,
     numerical_uncertainty: float,
     persistence_horizon: int,
     carrier_priority: list[str],
 ) -> dict[str, Any]:
     base_model = GRC9V3.load(str(REPO_ROOT / Path(branch_row["source_snapshot_path"])))
     specs = attempt_specs(base_model, branch_row["branch_id"])
-    source_audit = source_reconstruction_audit(base_model, branch_row, registry_row)
+    source_audit = source_reconstruction_audit(
+        base_model,
+        branch_row,
+        registry_row,
+        coherence_abs_tolerance=source_coherence_abs_tolerance,
+    )
     if source_audit["status"] != "passed":
         return {
             "source_audit": source_audit,

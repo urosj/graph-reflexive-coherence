@@ -1158,6 +1158,18 @@ witnesses remain bounded constructibility observations, not robustness claims.
 Amplifying departures are flagged without ranking, and branch relocation remains
 open for I5.
 
+The first preliminary F2 source audit exposed a pre-scientific implementation
+error before any F2 attempt executed: I4 required exact equality between the B1
+registry coordinate and its accepted source snapshot. B1 instead admits the
+snapshot within its frozen `C` absolute tolerance; for example, the registered
+`[1.0, 3.0]` branch is serialized after certification as approximately
+`[1.000000000001, 2.999999999999]`. The corrected audit binds B1's numerical
+tolerance artifact by path and SHA, checks this displacement numerically, and
+keeps the registry/crosswalk canonical signature as branch identity. A signature
+recomputed from the snapshot coordinate is diagnostic only. The preliminary F1
+and F2 batch files are superseded and all batches restart from the corrected,
+committed execution revision; no inspected candidate result informed the change.
+
 I4 uses only reachability, state validity, formation contrast, and its declared
 one-transition persistence magnitude. It does not inspect slow clusters,
 branch-transverse projectors, or future GRR classifications. I4 assigns no GRR

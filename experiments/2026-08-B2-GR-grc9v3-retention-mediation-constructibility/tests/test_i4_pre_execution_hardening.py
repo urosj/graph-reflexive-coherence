@@ -173,10 +173,44 @@ class I4PreExecutionHardeningTests(unittest.TestCase):
             model,
             branch,
             self.prerequisites["b1_registry"][branch["branch_id"]],
+            coherence_abs_tolerance=self.prerequisites[
+                "b1_C_absolute_tolerance"
+            ],
         )
         self.assertEqual(audit["status"], "passed")
         self.assertTrue(all(audit["checks"].values()))
         self.assertEqual(audit["fresh_hold_physical_l_inf"], 0.0)
+
+    def test_nonuniform_source_snapshot_uses_frozen_B1_tolerance(self) -> None:
+        branch = next(
+            row
+            for row in self.crosswalk
+            if row["branch_id"] == "grv2-f2-017"
+        )
+        registry = self.prerequisites["b1_registry"][branch["branch_id"]]
+        model = GRC9V3.load(str(REPO_ROOT / branch["source_snapshot_path"]))
+        audit = source_reconstruction_audit(
+            model,
+            branch,
+            registry,
+            coherence_abs_tolerance=self.prerequisites[
+                "b1_C_absolute_tolerance"
+            ],
+        )
+        self.assertEqual(audit["status"], "passed")
+        self.assertGreater(audit["snapshot_coherence_l_inf_to_registry"], 0.0)
+        self.assertLessEqual(
+            audit["snapshot_coherence_l_inf_to_registry"],
+            audit["frozen_B1_C_absolute_tolerance"],
+        )
+        self.assertEqual(
+            audit["accepted_canonical_branch_signature"],
+            registry["canonical_branch_signature"],
+        )
+        self.assertEqual(
+            audit["snapshot_coordinate_signature_role"],
+            "diagnostic_only_not_branch_identity",
+        )
 
     def test_source_and_resolved_parameter_identities_are_not_collapsed(self) -> None:
         branch = self.crosswalk[0]
@@ -195,7 +229,14 @@ class I4PreExecutionHardeningTests(unittest.TestCase):
         branch = self.crosswalk[0]
         registry = self.prerequisites["b1_registry"][branch["branch_id"]]
         model = GRC9V3.load(str(REPO_ROOT / branch["source_snapshot_path"]))
-        audit = source_reconstruction_audit(model, branch, registry)
+        audit = source_reconstruction_audit(
+            model,
+            branch,
+            registry,
+            coherence_abs_tolerance=self.prerequisites[
+                "b1_C_absolute_tolerance"
+            ],
+        )
         spec = next(
             row
             for row in attempt_specs(model, branch["branch_id"])
