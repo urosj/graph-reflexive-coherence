@@ -37,6 +37,12 @@
       "required": [
         "object_id",
         "classification_scope",
+        "fixture_branch_envelope",
+        "runtime_stage",
+        "continuous_stratum",
+        "secondary_qualifiers",
+        "unknown_outside_envelope",
+        "accepted_evidence_records",
         "implementation_status",
         "correspondence_level",
         "claim_ids",
@@ -53,6 +59,12 @@
         "classification_scope": {
           "const": "bounded_B1_GR_unchanged_GRC9V3_evidence_envelope"
         },
+        "fixture_branch_envelope": {"type": "string", "minLength": 1},
+        "runtime_stage": {"type": "string", "minLength": 1},
+        "continuous_stratum": {"type": "string", "minLength": 1},
+        "secondary_qualifiers": {"type": "array", "minItems": 1},
+        "unknown_outside_envelope": {"type": "boolean"},
+        "accepted_evidence_records": {"type": "array", "minItems": 1},
         "implementation_status": {"$ref": "#/$defs/implementationStatus"},
         "correspondence_level": {"$ref": "#/$defs/correspondenceLevel"},
         "primary_decision_route": {"$ref": "#/$defs/decisionRoute"}
@@ -60,7 +72,7 @@
     }
   },
   "type": "object",
-  "required": ["gate_id", "source_id_map", "rows", "summary", "highest_supported_claim", "blocked_claims"],
+  "required": ["gate_id", "source_id_map", "implementation_status_enum", "correspondence_level_enum", "correspondence_level_definitions", "rows", "summary", "highest_supported_claim", "blocked_claims"],
   "properties": {
     "gate_id": {"const": "GRV8"},
     "source_id_map": {

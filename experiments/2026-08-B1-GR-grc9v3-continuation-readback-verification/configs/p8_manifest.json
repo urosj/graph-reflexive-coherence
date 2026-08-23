@@ -1,6 +1,6 @@
 {
   "schema_version": "b1_grv8_p8_package_manifest_v1",
-  "package_status": "P8_classification_method_frozen_ready_for_clean_execution",
+  "package_status": "P8_1_object_envelope_and_role_hardening_ready_for_clean_execution",
   "gate_id": "GRV8",
   "controlling_specification_id": "b1_grc9v3_continuation_readback_verification_v3_4_1",
   "prerequisite": {
@@ -8,7 +8,15 @@
     "result_revision": "60d045ddf5b523e0922d17f18f3a94c3de5cd020",
     "receipt_payload_sha256": "2d29dedbedaf66a8295574c548ddf7d06c6ee12cbc529e93ef10e720e5ad46cb",
     "acceptance_anchor_path": "outputs/gates/grv7_acceptance_anchor.json",
-    "acceptance_anchor_commit": "3d11154abbf4b84f5f3199b54ed83237a9fa7630"
+    "acceptance_anchor_commit": "3d11154abbf4b84f5f3199b54ed83237a9fa7630",
+    "verification_closeout_rung": "GRV-C5",
+    "grv8_authorized": true
+  },
+  "superseded_unaccepted_result": {
+    "result_revision": "144875709359d477c05ef7d47382bc76342223f5",
+    "receipt_payload_sha256": "0f974b0bb44623494424f5ebc50a2cabbf5c48deba7de6998956c6ce6882c714",
+    "acceptance_anchor_existed": false,
+    "consumable_as_scientific_evidence": false
   },
   "protected_boundaries": {
     "runtime_change_authorized": false,
@@ -23,9 +31,13 @@
     "scripts/route_contradictions_and_theory_reopening.py",
     "scripts/run_all.py",
     "tests/test_grv8_classification.py",
-    "schemas/grv8_classification.schema.json"
+    "schemas/grv8_classification.schema.json",
+    "schemas/grv8_causal_role.schema.json"
   ],
-  "execution_contract": "configs/grv8_classification_policy.json",
+  "execution_contract": [
+    "configs/grv8_classification_policy.json",
+    "configs/grv8_scope_and_role_policy.json"
+  ],
   "command": ".venv/bin/python experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/scripts/run_all.py --gate GRV8",
   "claim_ceiling": "bounded_unchanged_GRC9V3_classification_and_route_decision_pending_human_review_without_GRV_C6_or_LGRC_execution"
 }

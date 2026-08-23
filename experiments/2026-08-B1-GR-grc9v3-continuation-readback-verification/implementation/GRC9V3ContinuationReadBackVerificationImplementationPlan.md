@@ -1184,6 +1184,31 @@ only after a human acceptance anchor binds the Stage 1 receipt. It then freezes
 the non-self-referential evidence bundle, emits the evidence-grounded successor
 and handoff, and submits those closeout artifacts for their separate acceptance.
 
+The first P8 Stage 1 candidate at revision `1448757` remains unaccepted and is
+superseded by P8.1. P8.1 hardens classification without adding a new scientific
+probe. It must:
+
+1. classify native current recurrence separately from the `j = J_C` mapping;
+2. decompose transport conductance, stage-local write, post-activity
+   persistence, durable carrier, later mediation, baseline transport, reduced
+   susceptibility, magnitude, axis, orientation, cycle current, and typed
+   one-form bridge roles;
+3. bind every cross-gate fact to an accepted gate revision, acceptance-anchor
+   digest, artifact digest, exact field or row, and consumed-value digest;
+4. serialize the controlling L0-L5 wording unchanged;
+5. record branch/fixture envelope, runtime stage, continuous stratum, secondary
+   qualifiers, and outside-envelope uncertainty for every object;
+6. preserve the GRR2 synthetic-input ceiling and branch-relocation rival in an
+   arrow-by-arrow causal-role matrix;
+7. distinguish current temporalization, retained-carrier, oriented-current,
+   unchanged-runtime constructibility, analysis-only, theory-open, and LGRC
+   routes rather than selecting one global next architecture;
+8. prepare a two-sided LGRC boundary while keeping the final handoff blocked
+   until Stage 1 acceptance and distinguishing legacy B1-L from future LGRC-N;
+9. retain a primary cause, secondary alternatives, rejected routes, and next
+   action for every contradiction entry; and
+10. preserve reasons and replacement wording for superseded exploratory claims.
+
 1. Assign all required assumption statuses before classifying claims.
 2. Assign one of the six implementation statuses and L0-L5 correspondence to
    every tested object.
@@ -1212,6 +1237,7 @@ and handoff, and submits those closeout artifacts for their separate acceptance.
 outputs/assumption_status_matrix.json
 outputs/final_contradiction_routing.json
 outputs/equivalence_classification.json
+outputs/final_causal_role_classification.json
 outputs/final_claim_classification.json
 outputs/final_theory_debt_register.json
 outputs/final_theory_test_traceability.json

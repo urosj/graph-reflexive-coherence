@@ -1,0 +1,398 @@
+{
+  "schema_version": "b1_grv8_scope_and_role_policy_v1",
+  "gate_id": "GRV8",
+  "replacement_method_id": "P8_1_object_envelope_and_role_hardening",
+  "scope_profiles": {
+    "GRV0_FIXED": {
+      "fixture_branch_envelope": "declared_fixed_topology_B1_GR_envelope",
+      "runtime_stage": "fixed_topology_contract",
+      "continuous_stratum": "fixed_node_and_edge_support",
+      "secondary_qualifiers": ["tested_envelope_only", "unknown_outside_envelope"]
+    },
+    "GRV1_RUNTIME": {
+      "fixture_branch_envelope": "F0_fixed_topology_no_event_instrumentation_fixture",
+      "runtime_stage": "native_stagewise_and_complete_step",
+      "continuous_stratum": "fixed_topology_no_event",
+      "secondary_qualifiers": ["stage_local_where_declared", "tested_envelope_only", "unknown_outside_envelope"]
+    },
+    "GRV2_BRANCH": {
+      "fixture_branch_envelope": "48_accepted_F1_F2_F3_rows_across_32_symmetry_orbits",
+      "runtime_stage": "complete_step_fixed_branch",
+      "continuous_stratum": "fixed_topology_no_event_formed_branch",
+      "secondary_qualifiers": ["branch_relative", "tested_envelope_only", "unknown_outside_envelope"]
+    },
+    "GRV3_CAUSAL": {
+      "fixture_branch_envelope": "48_GRV2_branches_with_row_local_derivative_admission",
+      "runtime_stage": "complete_synchronous_transition",
+      "continuous_stratum": "F2_F3_admitted_smooth_strata_with_F1_identity_boundary_blocked",
+      "secondary_qualifiers": ["branch_relative", "stratum_relative", "analysis_only", "unknown_outside_envelope"]
+    },
+    "GRV4_FROZEN": {
+      "fixture_branch_envelope": "48_frozen_comparators_and_32_admitted_full_map_rows",
+      "runtime_stage": "clamped_W_semidiscrete_and_discrete_comparator",
+      "continuous_stratum": "fixed_W_zero_sum_C_tangent",
+      "secondary_qualifiers": ["substrate_reduced", "first_order_local_only", "analysis_only", "unknown_outside_envelope"]
+    },
+    "GRV5_RETENTION": {
+      "fixture_branch_envelope": "synthetic_valid_old_current_preparation_over_48_accepted_branches",
+      "runtime_stage": "native_write_stage_then_complete_step_and_bounded_horizon",
+      "continuous_stratum": "fixed_topology_no_event_with_synthetic_valid_formation_input",
+      "secondary_qualifiers": ["synthetic_input_provenance", "not_naturally_reached", "GRR2_ceiling", "branch_relocation_rival_open", "unknown_outside_envelope"]
+    },
+    "GRV6_ORBIT": {
+      "fixture_branch_envelope": "tested_cycle_capable_F3_branches_and_resolved_period_2_to_8_candidates",
+      "runtime_stage": "native_complete_step_return_map",
+      "continuous_stratum": "closed_fixed_topology_potential_flow_sector",
+      "secondary_qualifiers": ["bounded_null_only", "ill_conditioned_rows_unresolved", "relative_orbits_not_tested", "unknown_outside_envelope"]
+    },
+    "GRV7_THRESHOLD": {
+      "fixture_branch_envelope": "six_predeclared_paths_from_seven_selected_source_branches",
+      "runtime_stage": "clamped_W_continuation_and_complete_step_threshold_comparison",
+      "continuous_stratum": "path_local_fixed_topology_strata",
+      "secondary_qualifiers": ["reduced_counterexample_only", "no_full_map_crossing", "analysis_only", "unknown_outside_envelope"]
+    },
+    "THEORY_OPEN": {
+      "fixture_branch_envelope": "B1_GR_fixed_topology_evidence_plus_unresolved_theory_role",
+      "runtime_stage": "not_constitutively_selected",
+      "continuous_stratum": "not_admitted",
+      "secondary_qualifiers": ["theory_open", "no_runtime_admission", "unknown_outside_envelope"]
+    }
+  },
+  "object_scope_policy": {
+    "formed_zero_current_branches": {
+      "profile_id": "GRV2_BRANCH",
+      "evidence_pointers": [
+        "outputs/fixed_branch_registry.json#/payload/claim_boundary/claim_ceiling",
+        "outputs/fixed_branch_registry.json#/payload/selection_accounting"
+      ]
+    },
+    "bounded_runtime_causal_state": {
+      "profile_id": "GRV3_CAUSAL",
+      "evidence_pointers": [
+        "outputs/complete_step_jacobians.json#/payload/causal_field_inventory",
+        "outputs/complete_step_jacobians.json#/payload/summary/full_C_W_J_jacobian_admitted_count"
+      ]
+    },
+    "fixed_W_constrained_continuation_comparator": {
+      "profile_id": "GRV4_FROZEN",
+      "evidence_pointers": [
+        "outputs/frozen_full_comparison.json#/payload/claim_boundary/frozen_operator_class",
+        "outputs/frozen_full_comparison.json#/payload/summary/primary_no_resolved_difference_within_uncertainty_count"
+      ]
+    },
+    "complete_step_temporal_spectrum": {
+      "profile_id": "GRV3_CAUSAL",
+      "evidence_pointers": [
+        "outputs/complete_step_jacobians.json#/payload/summary/branches_with_temporal_mode_evidence_after_all_gates",
+        "outputs/complete_step_jacobians.json#/payload/claim_boundary/full_C_W_J_transition_jacobian_supported"
+      ]
+    },
+    "stable_neutral_unstable_temporal_subspaces": {
+      "profile_id": "GRV3_CAUSAL",
+      "evidence_pointers": [
+        "outputs/complete_step_jacobians.json#/payload/summary/temporal_mode_interpretation_pass_matrix_count",
+        "outputs/complete_step_jacobians.json#/payload/summary/temporal_mode_interpretation_blocked_matrix_rows",
+        "outputs/slow_cluster_registry.json#/payload/retention_claim_allowed"
+      ]
+    },
+    "post_activity_joint_state_persistence": {
+      "profile_id": "GRV5_RETENTION",
+      "evidence_pointers": [
+        "outputs/conductance_retention_probe.json#/payload/summary/maximum_local_evidence_ladder_rung",
+        "outputs/conductance_retention_probe.json#/payload/summary/bounded_persistence_count",
+        "outputs/conductance_retention_probe.json#/payload/claim_boundary/branch_relocation_rival_must_remain_open"
+      ]
+    },
+    "native_carrier_mediated_read_effect": {
+      "profile_id": "GRV5_RETENTION",
+      "evidence_pointers": [
+        "outputs/conductance_retention_probe.json#/payload/summary/native_mediation_count",
+        "outputs/conductance_retention_probe.json#/payload/summary/native_readback_supported"
+      ]
+    },
+    "activity_conditioned_write_effect": {
+      "profile_id": "GRV5_RETENTION",
+      "evidence_pointers": [
+        "outputs/conductance_retention_probe.json#/payload/summary/activity_stage_write_count",
+        "outputs/conductance_retention_probe.json#/payload/summary/forming_old_current_input_runtime_reached"
+      ]
+    },
+    "distinct_directional_read_current": {
+      "profile_id": "GRV5_RETENTION",
+      "evidence_pointers": [
+        "outputs/conductance_retention_probe.json#/payload/present_current_convention/native_external_present_current_input_available",
+        "outputs/conductance_retention_probe.json#/payload/claim_boundary/core_readback_requires_native_present_current_conditioned_directional_relation"
+      ]
+    },
+    "j_equals_J_C_limit": {
+      "profile_id": "GRV5_RETENTION",
+      "secondary_qualifiers": ["candidate_mapping_rejected", "analogy_only", "passive_null_not_identifiable"],
+      "evidence_pointers": [
+        "outputs/conductance_retention_probe.json#/payload/present_current_convention/coherence_driven_current_is_external_present_current",
+        "outputs/conductance_retention_probe.json#/payload/present_current_convention/native_external_present_current_input_available",
+        "outputs/conductance_retention_probe.json#/payload/summary/native_readback_supported"
+      ]
+    },
+    "current_magnitude_inscription": {
+      "profile_id": "GRV1_RUNTIME",
+      "evidence_pointers": [
+        "outputs/instrumentation_validation.json#/payload/current_sign_control/checks/old_current_magnitude_enters_conductance_exactly",
+        "outputs/instrumentation_validation.json#/payload/current_sign_control/classification/magnitude_persistence"
+      ]
+    },
+    "historical_orientation_retention": {
+      "profile_id": "GRV1_RUNTIME",
+      "evidence_pointers": [
+        "outputs/instrumentation_validation.json#/payload/current_sign_control/classification/orientation_persistence",
+        "outputs/return_orbit_registry.json#/payload/summary/all_cycle_orientations_overwritten_at_first_transport"
+      ]
+    },
+    "field_current_full_equivalence_hierarchy": {
+      "profile_id": "GRV5_RETENTION",
+      "evidence_pointers": [
+        "outputs/causal_role_matrix.json#/payload/summary/maximum_local_evidence_ladder_rung",
+        "outputs/conductance_retention_probe.json#/payload/claim_boundary/frozen_W_result_can_upgrade_native"
+      ]
+    },
+    "K_hybrid_node_tensor": {
+      "profile_id": "GRV1_RUNTIME",
+      "evidence_pointers": [
+        "outputs/instrumentation_validation.json#/payload/K_counterfactual/classification",
+        "outputs/instrumentation_validation.json#/payload/K_counterfactual/global_causal_absence_claimed"
+      ]
+    },
+    "geometry_mobility_separation": {
+      "profile_id": "GRV4_FROZEN",
+      "evidence_pointers": [
+        "outputs/frozen_full_comparison.json#/payload/summary/verified_strong_disagreement_count",
+        "outputs/frozen_full_comparison.json#/payload/claim_boundary/geometry_only_attribution_claim_allowed",
+        "outputs/frozen_full_comparison.json#/payload/claim_boundary/mobility_only_attribution_claim_allowed"
+      ]
+    },
+    "active_stationary_circulation": {
+      "profile_id": "GRV6_ORBIT",
+      "evidence_pointers": [
+        "outputs/return_orbit_registry.json#/payload/summary/stationary_cycle_current_supported",
+        "outputs/return_orbit_registry.json#/payload/claim_boundary/no_orbit_found_is_global_nonexistence_proof"
+      ]
+    },
+    "recurrent_transport_orbits": {
+      "profile_id": "GRV6_ORBIT",
+      "evidence_pointers": [
+        "outputs/return_orbit_registry.json#/payload/summary/primitive_return_orbit_count",
+        "outputs/return_orbit_registry.json#/payload/summary/return_jacobian_ill_conditioned_count",
+        "outputs/return_orbit_registry.json#/payload/summary/relative_periodic_orbit_search_executed"
+      ]
+    },
+    "moving_retained_slow_bundle": {
+      "profile_id": "THEORY_OPEN",
+      "evidence_pointers": [
+        "outputs/slow_cluster_registry.json#/payload/cluster_count",
+        "outputs/fixed_topology_envelope.json#/payload/fixed_topology"
+      ]
+    },
+    "runtime_row_signed_Hessian_relation_to_continuation": {
+      "profile_id": "GRV7_THRESHOLD",
+      "evidence_pointers": [
+        "outputs/spatial_temporal_threshold_matrix.json#/payload/summary/reduced_spatial_continuation_temporal_non_equivalence_supported",
+        "outputs/spatial_temporal_threshold_matrix.json#/payload/summary/runtime_spatial_vs_full_temporal_non_equivalence_supported",
+        "outputs/spatial_temporal_threshold_matrix.json#/payload/summary/full_map_non_equivalence_supported"
+      ]
+    },
+    "native_transport_conductance": {
+      "profile_id": "GRV1_RUNTIME",
+      "evidence_pointers": [
+        "outputs/surface_authority_map.json#/payload/checks/W_base_only_changes_consumer_output",
+        "outputs/instrumentation_validation.json#/payload/transport_anchor/status"
+      ]
+    },
+    "native_current_recurrence": {
+      "profile_id": "GRV1_RUNTIME",
+      "evidence_pointers": [
+        "outputs/instrumentation_validation.json#/payload/current_sign_control/checks/stagewise_current_is_reconstructed_equal",
+        "outputs/instrumentation_validation.json#/payload/current_sign_control/classification/transient_sign_summary"
+      ]
+    },
+    "independent_current_temporal_state": {
+      "profile_id": "GRV3_CAUSAL",
+      "secondary_qualifiers": ["stage_local_input", "algebraically_reconstructed_output", "deadbeat_overwrite_on_tested_path"],
+      "evidence_pointers": [
+        "outputs/complete_step_jacobians.json#/payload/causal_field_inventory",
+        "outputs/return_orbit_registry.json#/payload/summary/all_cycle_orientations_overwritten_at_first_transport"
+      ]
+    },
+    "geometry_conditioned_baseline_transport": {
+      "profile_id": "GRV1_RUNTIME",
+      "evidence_pointers": [
+        "outputs/surface_authority_map.json#/payload/checks/W_base_only_changes_consumer_output",
+        "outputs/instrumentation_validation.json#/payload/transport_anchor/status"
+      ]
+    },
+    "frozen_W_carrier_conditioned_susceptibility": {
+      "profile_id": "GRV4_FROZEN",
+      "evidence_pointers": [
+        "outputs/frozen_full_comparison.json#/payload/claim_boundary/frozen_operator_class",
+        "outputs/conductance_retention_probe.json#/payload/summary/substrate_reduced_sensitivity_count"
+      ]
+    },
+    "durable_native_retained_carrier": {
+      "profile_id": "GRV5_RETENTION",
+      "evidence_pointers": [
+        "outputs/conductance_retention_probe.json#/payload/summary/later_C_mediation_specifically_by_transient_W_supported",
+        "outputs/conductance_retention_probe.json#/payload/summary/transverse_branch_relative_retention_supported"
+      ]
+    },
+    "joint_state_mediated_later_response": {
+      "profile_id": "GRV5_RETENTION",
+      "evidence_pointers": [
+        "outputs/conductance_retention_probe.json#/payload/summary/native_mediation_count",
+        "outputs/causal_role_matrix.json#/payload/summary/closed_loop_row_count"
+      ]
+    },
+    "current_axis_or_channel_inscription": {
+      "profile_id": "GRV1_RUNTIME",
+      "evidence_pointers": [
+        "outputs/instrumentation_validation.json#/payload/current_sign_control/checks/stagewise_conductance_is_sign_even",
+        "outputs/instrumentation_validation.json#/payload/current_sign_control/classification/unoriented_axis_persistence"
+      ]
+    },
+    "present_current_directional_response": {
+      "profile_id": "GRV5_RETENTION",
+      "evidence_pointers": [
+        "outputs/conductance_retention_probe.json#/payload/present_current_convention/native_external_present_current_input_available",
+        "outputs/conductance_retention_probe.json#/payload/assumption_statuses/A-PASSIVE-result"
+      ]
+    },
+    "cycle_space_orientation": {
+      "profile_id": "GRV6_ORBIT",
+      "evidence_pointers": [
+        "outputs/return_orbit_registry.json#/payload/summary/cycle_seed_persistence_count",
+        "outputs/return_orbit_registry.json#/payload/summary/all_cycle_orientations_overwritten_at_first_transport"
+      ]
+    },
+    "typed_graph_one_form_bridge": {
+      "profile_id": "THEORY_OPEN",
+      "evidence_pointers": [
+        "outputs/instrumentation_validation.json#/payload/claim_boundary/exact_orientation_semantics_supported",
+        "outputs/conductance_retention_probe.json#/payload/summary/native_readback_supported"
+      ]
+    },
+    "active_joint_C_J_continuation": {
+      "profile_id": "GRV3_CAUSAL",
+      "evidence_pointers": [
+        "outputs/complete_step_jacobians.json#/payload/summary/full_C_W_J_jacobian_admitted_count",
+        "outputs/complete_step_jacobians.json#/payload/claim_boundary/joint_C_W_mode_claim_allowed"
+      ]
+    }
+  },
+  "causal_role_classifications": [
+    {
+      "role_id": "activity_to_W_write",
+      "status": "supported_exact_stage_local",
+      "maximum_supported_claim": "synthetic_valid_old_current_is_consumed_by_the_exact_native_sign_even_J_squared_to_W_stage",
+      "blocked_claims": ["naturally_reached_write", "persistent_write", "writeback"],
+      "evidence_pointers": ["outputs/conductance_retention_probe.json#/payload/summary/activity_stage_write_count"]
+    },
+    {
+      "role_id": "activity_to_complete_step_C_or_joint_consequence",
+      "status": "supported_bounded_after_synthetic_intervention",
+      "maximum_supported_claim": "unchanged_runtime_produces_a_later_C_dominated_joint_state_difference_after_the_synthetic_valid_formation_input",
+      "blocked_claims": ["naturally_reached_regime", "retained_sector_identified"],
+      "evidence_pointers": ["outputs/conductance_retention_probe.json#/payload/summary/activity_complete_step_joint_write_count"]
+    },
+    {
+      "role_id": "post_activity_persistence",
+      "status": "supported_bounded_GRR2",
+      "maximum_supported_claim": "bounded_C_dominated_neutral_coordinate_persistence_with_branch_relocation_rival_unresolved",
+      "blocked_claims": ["GRR3", "durable_W_carrier", "branch_relative_retained_sector"],
+      "evidence_pointers": ["outputs/conductance_retention_probe.json#/payload/summary/maximum_local_evidence_ladder_rung", "outputs/conductance_retention_probe.json#/payload/summary/branch_relocation_rival_unresolved_GRR2_row_count"]
+    },
+    {
+      "role_id": "stable_neutral_growing_classification",
+      "status": "partial_neutral_only_for_retention_candidate",
+      "maximum_supported_claim": "the_GRR2_candidate_occupies_a_neutral_C_dominated_coordinate_while_broader_temporal_clusters_remain_branch_and_conditioning_bounded",
+      "blocked_claims": ["isolated_retained_slow_cluster", "growing_formative_retention"],
+      "evidence_pointers": ["outputs/conductance_retention_probe.json#/payload/summary/maximum_GRR2_admitted_C_projection_residual_l2", "outputs/complete_step_jacobians.json#/payload/summary/temporal_mode_interpretation_blocked_matrix_rows"]
+    },
+    {
+      "role_id": "W_mediated_later_response",
+      "status": "unsupported_in_tested_native_path",
+      "maximum_supported_claim": "substrate_reduced_frozen_W_sensitivity_only",
+      "blocked_claims": ["native_W_mediation", "readback"],
+      "evidence_pointers": ["outputs/conductance_retention_probe.json#/payload/summary/later_C_mediation_specifically_by_transient_W_supported"]
+    },
+    {
+      "role_id": "joint_state_mediated_later_response",
+      "status": "unresolved_not_identified",
+      "maximum_supported_claim": "bounded_joint_state_difference_without_identified_later_probe_mediation",
+      "blocked_claims": ["joint_retained_carrier", "GRR4", "readback"],
+      "evidence_pointers": ["outputs/conductance_retention_probe.json#/payload/summary/native_mediation_count"]
+    },
+    {
+      "role_id": "distinct_read_current",
+      "status": "absent_from_tested_native_runtime",
+      "maximum_supported_claim": "baseline_potential_flow_current_only",
+      "blocked_claims": ["passive_null_identified", "directional_readback"],
+      "evidence_pointers": ["outputs/conductance_retention_probe.json#/payload/present_current_convention/native_external_present_current_input_available"]
+    },
+    {
+      "role_id": "probe_induced_later_write",
+      "status": "unsupported_in_tested_native_path",
+      "maximum_supported_claim": "no_native_probe_read_then_later_write_arrow",
+      "blocked_claims": ["writeback", "reflexive_update"],
+      "evidence_pointers": ["outputs/conductance_retention_probe.json#/payload/summary/writeback_supported"]
+    },
+    {
+      "role_id": "closed_read_write_loop",
+      "status": "unsupported_in_tested_native_path",
+      "maximum_supported_claim": "no_closed_loop_row",
+      "blocked_claims": ["core_readback_loop", "memory", "learning"],
+      "evidence_pointers": ["outputs/causal_role_matrix.json#/payload/summary/closed_loop_row_count"]
+    }
+  ],
+  "lgrc_route_partition": {
+    "B1_L_legacy": "eligible_only_after_GRV_C6_to_characterize_event_driven_delta_over_unchanged_GRC9V3",
+    "future_LGRC_N": "separate_deferred_investigation_over_any_revision_distinct_GRC_constitutive_kernel",
+    "same_question": false,
+    "B1_L_execution_authorized": false
+  },
+  "lgrc_boundary_candidate": {
+    "positive_inherited_grc_base": [
+      "formed_fixed_topology_branches_with_declared_branch_and_gauge",
+      "bounded_C_independent_causal_coordinate_with_W_and_J_reconstructed_or_stage_dependent",
+      "native_potential_flow_current_reconstruction",
+      "exact_sign_even_old_current_squared_to_conductance_write_stage",
+      "admitted_branch_and_clock_specific_complete_step_temporal_objects",
+      "runtime_spatial_diagnostics_and_reduced_clamped_W_comparators_kept_distinct",
+      "bounded_synthetic_input_C_dominated_GRR2_persistence_with_branch_relocation_rival_open"
+    ],
+    "negative_or_blocked_grc_boundaries": [
+      "no_native_distinct_present_current_read_operator",
+      "no_native_W_mediated_later_matched_probe_response",
+      "no_stable_durable_W_retention_identified",
+      "no_historical_current_orientation_retention",
+      "authored_cycle_current_overwritten_on_tested_F3_branches",
+      "no_admitted_primitive_period_2_to_8_return_orbit_among_resolved_candidates",
+      "no_full_map_spatial_temporal_threshold_non_equivalence",
+      "active_joint_C_J_continuation_unresolved_or_absent_on_tested_strata",
+      "j_equals_J_C_not_admitted_as_a_declared_runtime_reduction"
+    ],
+    "lgrc_only_questions": [
+      "queue_drained_retention",
+      "delay_versus_retention",
+      "proper_time_relaxation",
+      "event_local_read_write_ordering",
+      "packet_lineage",
+      "topology_changing_interspace_transport"
+    ],
+    "final_handoff_emitted": false
+  },
+  "forbidden_lgrc_relabels": [
+    "packet_ledger_is_retained_continuation_sector",
+    "event_queue_is_memory",
+    "proper_time_is_relaxation_spectrum",
+    "pulse_surface_is_readback",
+    "lineage_is_canonical_continuation_mode_transport",
+    "producer_reading_history_is_native_constitutive_readback"
+  ]
+}

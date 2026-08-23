@@ -4,7 +4,7 @@
 
 ```text
 branch = experiment-B1-continuation-readback
-status = grv8_P8_classification_candidate_awaiting_human_review
+status = grv8_P8_unaccepted_candidate_superseded_P8_1_method_hardening
 controlling_specification = draft_3_4_1_pre_execution_mathematical_execution_sealed
 controlling_specification_sha256 = 7ad99fb4acc6a7691d184a514f4836ffa3927600fc7cf504eb059134f3948e44
 runtime_under_test = unchanged_GRC9V3
@@ -13,7 +13,7 @@ src_change_authorized = false
 existing_test_change_authorized = false
 positive_evidence_opened = true_bounded_GRV2_branch_and_GRV5_GRR2_evidence
 positive_retention_evidence_opened = bounded_GRR2_neutral_coordinate_persistence_only
-current_gate = GRV8_stage_1_scientific_review_pending
+current_gate = GRV8_P8_1_clean_execution_pending
 verification_closeout_ladder_rung_assigned = true
 verification_closeout_rung = GRV-C5
 verification_closeout_ceiling = GRV-C5_assigned_GRV8_pending
@@ -1768,13 +1768,14 @@ from accepting itself or manufacturing its own closeout.
 - [x] Do not claim memory, learning, agency, organism, or life.
 - [x] Treat a negative, blocked, mixed, or no-extension result as a valid closeout when source-backed.
 
-### Iteration 9 Stage 1 Result
+### Iteration 9 P8 Stage 1 Superseded Result
 
 ```text
 input_execution_revision = 7d039408f845400cf3ab0ad2b4b2ad0585dfb95d
+result_revision = 144875709359d477c05ef7d47382bc76342223f5
 grv8_result_receipt_payload_sha256 = 0f974b0bb44623494424f5ebc50a2cabbf5c48deba7de6998956c6ce6882c714
 mechanical_status = passed
-scientific_acceptance = awaiting_human_review
+scientific_acceptance = superseded_unaccepted
 assumption_count = 19
 claim_count = 33
 tested_object_count = 19
@@ -1812,3 +1813,61 @@ GRV0-GRV7 receipts remain exact, and no machine-local path marker is present.
 The evidence bundle, evidence-grounded successor, LGRC handoff,
 `grv8_acceptance_anchor.json`, `grv8_closeout_acceptance_anchor.json`, and
 `GRV-C6` are deliberately absent pending human review.
+
+Review did not accept this candidate. It found that the broad route decisions
+were useful but the machine classification was too coarse: object rows lacked
+exact accepted-field provenance and per-envelope qualifiers, current recurrence
+was not separated from the `j = J_C` mapping, causal roles were not serialized
+arrow by arrow, and the LGRC route partition was not explicit. The candidate is
+historical input to P8.1 only and cannot support Stage 2.
+
+### Iteration 9 P8.1 Hardening
+
+The external 27-point review maps to P8.1 as follows:
+
+1. [x] Gate admission binds accepted GRV7, explicit `GRV-C5`, and a clean input revision.
+2. [x] Cross-gate facts bind accepted result revisions, anchors, artifact digests, and exact fields.
+3. [x] Every object records fixture/branch envelope, runtime stage, and continuous stratum.
+4. [x] Every object has one primary status plus bounded secondary qualifiers.
+5. [x] The controlling L0-L5 definitions are serialized unchanged and cross-checked.
+6. [x] Nine causal arrows are classified independently.
+7. [x] Synthetic-valid formation is distinct from natural unchanged-runtime reachability.
+8. [x] GRR2 keeps branch relocation and ordinary persistent-state rivals open.
+9. [x] Baseline geometry-conditioned transport is distinct from carrier-mediated reading.
+10. [x] `j = J_C` is tested as a mapping and demoted to analogy, not inferred from variable reuse.
+11. [x] Current is classified as stage-local input and reconstructed/overwritten output, not independent temporal state.
+12. [x] Magnitude, edge-axis/channel, historical orientation, present directional response, and cycle orientation are separate.
+13. [x] Cycle-current and orbit nulls remain bounded; unresolved and relative-orbit rows stay open.
+14. [x] Reduced Hessian/threshold non-equivalence is separate from unsupported full-map non-equivalence.
+15. [x] `K` remains diagnostic only on the tested fixed-topology/no-event path.
+16. [x] Geometry/mobility conflation is recorded without opening a split absent a blocked observable.
+17. [x] Current carrier absence, target-conditioned carrier need, and `W` versus new-`M` choice are separate.
+18. [x] Directional read response, historical orientation, and cycle current are separate extension questions.
+19. [x] GRR3-GRR5 remain eligible for unchanged-runtime constructibility search before extension selection.
+20. [x] Contradictions record one primary cause, secondary alternatives, rejected routes, and next action.
+21. [x] Cross-gate synthesis cannot create a positive causal arrow.
+22. [x] Superseded claims retain source, reason, disposition, replacement, and evidence.
+23. [x] The Stage 1 LGRC boundary candidate is two-sided; the final handoff remains blocked.
+24. [x] Legacy B1-L and future LGRC-N are distinct investigations over distinct bases.
+25. [x] All final prohibited claims remain explicit.
+26. [x] Classification acceptance precedes bundle, successor, closeout anchor, and `GRV-C6`.
+27. [ ] Replacement clean execution, complete-suite rerun, and protected-path successor remain pending.
+
+- [x] Preserve the unaccepted P8 candidate and record its supersession reason.
+- [x] Expand the object atlas from 19 broad rows to 31 role-specific rows.
+- [x] Classify native current recurrence exactly and demote `j = J_C` to analogy.
+- [x] Add fixture/branch envelope, runtime stage, stratum, qualifiers, and outside-envelope status per object.
+- [x] Bind exact accepted artifact fields and consumed-value digests per object and claim.
+- [x] Serialize the controlling L0-L5 definitions unchanged.
+- [x] Add nine arrow-by-arrow causal-role classifications with a GRR2 ceiling.
+- [x] Preserve synthetic-input provenance and the branch-relocation rival.
+- [x] Add target-conditioned current-temporalization and unchanged-runtime constructibility routes.
+- [x] Distinguish B1-L over legacy GRC9V3 from future LGRC-N over a revised kernel.
+- [x] Add negative LGRC relabel boundaries without emitting the final handoff.
+- [x] Add primary cause, alternatives, rejected routes, and next action to contradiction rows.
+- [x] Add reason, disposition, and supporting artifacts to superseded claims.
+- [ ] Commit the P8.1 method revision.
+- [ ] Execute replacement GRV8 from the clean P8.1 revision.
+- [ ] Validate the replacement receipt, artifacts, protected paths, and complete suite.
+- [ ] Submit the replacement candidate for human scientific review.
+- [ ] Keep Stage 2 bundle, successor, handoff, closeout anchor, and `GRV-C6` blocked.

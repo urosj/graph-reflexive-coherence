@@ -56,6 +56,14 @@ CORRESPONDENCE_LEVELS = {
     "L4_derived_reduced_limit",
     "L5_robust_realization",
 }
+CORRESPONDENCE_LEVEL_DEFINITIONS = {
+    "L0_analogy": "The substrate contains a suggestive resemblance.",
+    "L1_representability": "The substrate state can carry a correctly typed candidate object.",
+    "L2_operational_signature": "Controlled evidence distinguishes the candidate from some rival mechanisms.",
+    "L3_constitutive_realization": "Interventions establish the required causal factorization.",
+    "L4_derived_reduced_limit": "A declared mathematical reduction connects the core and graph equations.",
+    "L5_robust_realization": "The mapping survives parameter, relabeling, branch, and held-out stress within scope.",
+}
 ASSUMPTION_STATUSES = {
     "satisfied",
     "failed",
@@ -77,13 +85,13 @@ REQUIRED_OBJECT_IDS = {
     "fixed_W_constrained_continuation_comparator",
     "complete_step_temporal_spectrum",
     "stable_neutral_unstable_temporal_subspaces",
-    "conductance_mediated_retention",
-    "native_read_effect",
+    "post_activity_joint_state_persistence",
+    "native_carrier_mediated_read_effect",
     "activity_conditioned_write_effect",
     "distinct_directional_read_current",
     "j_equals_J_C_limit",
-    "magnitude_and_axis_inscription",
-    "orientation_retention",
+    "current_magnitude_inscription",
+    "historical_orientation_retention",
     "field_current_full_equivalence_hierarchy",
     "K_hybrid_node_tensor",
     "geometry_mobility_separation",
@@ -91,11 +99,27 @@ REQUIRED_OBJECT_IDS = {
     "recurrent_transport_orbits",
     "moving_retained_slow_bundle",
     "runtime_row_signed_Hessian_relation_to_continuation",
+    "native_transport_conductance",
+    "native_current_recurrence",
+    "independent_current_temporal_state",
+    "geometry_conditioned_baseline_transport",
+    "frozen_W_carrier_conditioned_susceptibility",
+    "durable_native_retained_carrier",
+    "joint_state_mediated_later_response",
+    "current_axis_or_channel_inscription",
+    "present_current_directional_response",
+    "cycle_space_orientation",
+    "typed_graph_one_form_bridge",
+    "active_joint_C_J_continuation",
 }
 SOURCE_IDS = {
     "SRC-CONTINUATION": "core/2026-08-TheContinuationSpectrum.md",
     "SRC-READBACK": "core/2026-08-ReadBack.md",
 }
+
+
+def scope_policy() -> dict[str, Any]:
+    return read_json(EXPERIMENT_ROOT / "configs/grv8_scope_and_role_policy.json")
 
 
 def source_id_map() -> dict[str, dict[str, str]]:
@@ -135,6 +159,11 @@ def validate_prerequisite() -> tuple[dict[str, Any], dict[str, Any]]:
         raise ValueError("GRV7 is not scientifically accepted")
     if anchor["receipt_payload_sha256"] != receipt["receipt_payload_sha256"]:
         raise ValueError("GRV7 anchor does not bind the current result receipt")
+    package = read_json(EXPERIMENT_ROOT / "configs/p8_manifest.json")
+    if package["prerequisite"]["verification_closeout_rung"] != "GRV-C5":
+        raise ValueError("GRV8 requires the explicit GRV-C5 prerequisite assignment")
+    if package["prerequisite"]["grv8_authorized"] is not True:
+        raise ValueError("GRV8 is not authorized by the P8 package")
     return receipt, anchor
 
 
@@ -165,6 +194,121 @@ def validate_accepted_chain() -> list[dict[str, Any]]:
     return rows
 
 
+def accepted_evidence_index() -> dict[str, dict[str, Any]]:
+    index: dict[str, dict[str, Any]] = {}
+    for gate_index in range(8):
+        gate_id = f"GRV{gate_index}"
+        receipt_path = EXPERIMENT_ROOT / f"outputs/gates/grv{gate_index}_result_receipt.json"
+        anchor_path = EXPERIMENT_ROOT / f"outputs/gates/grv{gate_index}_acceptance_anchor.json"
+        receipt = read_json(receipt_path)
+        anchor = read_json(anchor_path)
+        validate_receipt(receipt)
+        validate_acceptance_anchor(anchor)
+        for relative, expected_sha256 in receipt["output_artifact_digests"].items():
+            artifact_path = EXPERIMENT_ROOT / relative
+            if sha256_file(artifact_path) != expected_sha256:
+                raise ValueError(f"accepted evidence changed after {gate_id}: {relative}")
+            if relative in index:
+                raise ValueError(f"accepted artifact has multiple owning gates: {relative}")
+            payload_sha256 = None
+            if artifact_path.suffix == ".json":
+                artifact = read_json(artifact_path)
+                if "payload" in artifact and "payload_sha256" in artifact:
+                    assert_payload_digest(artifact)
+                    payload_sha256 = artifact["payload_sha256"]
+            index[relative] = {
+                "source_gate": gate_id,
+                "result_revision": anchor["result_revision"],
+                "acceptance_anchor_path": anchor_path.relative_to(EXPERIMENT_ROOT).as_posix(),
+                "acceptance_anchor_sha256": sha256_file(anchor_path),
+                "acceptance_anchor_semantic_sha256": semantic_digest(anchor),
+                "artifact_path": relative,
+                "artifact_sha256": expected_sha256,
+                "artifact_payload_sha256": payload_sha256,
+            }
+    return index
+
+
+def json_pointer_value(document: Any, pointer: str) -> Any:
+    if not pointer.startswith("/"):
+        raise ValueError(f"JSON pointer must start with '/': {pointer}")
+    current = document
+    for raw_token in pointer.removeprefix("/").split("/"):
+        token = raw_token.replace("~1", "/").replace("~0", "~")
+        if isinstance(current, list):
+            current = current[int(token)]
+        else:
+            current = current[token]
+    return current
+
+
+def bind_evidence(
+    pointers: list[str], evidence_index: dict[str, dict[str, Any]]
+) -> list[dict[str, Any]]:
+    records = []
+    for qualified_pointer in pointers:
+        relative, separator, pointer = qualified_pointer.partition("#")
+        if not separator or not pointer:
+            raise ValueError(f"evidence pointer must bind an exact JSON field: {qualified_pointer}")
+        if relative not in evidence_index:
+            raise ValueError(f"evidence artifact is not bound by an accepted gate: {relative}")
+        document = read_json(EXPERIMENT_ROOT / relative)
+        value = json_pointer_value(document, pointer)
+        records.append(
+            {
+                **evidence_index[relative],
+                "exact_field_or_row": pointer,
+                "consumed_value_semantic_sha256": semantic_digest(value),
+            }
+        )
+    return records
+
+
+def evidence_pointers_for_ids(
+    policy: dict[str, Any],
+    scope: dict[str, Any],
+    *,
+    claim_ids: list[str] | None = None,
+    debt_ids: list[str] | None = None,
+) -> list[str]:
+    claims = set(claim_ids or [])
+    debts = set(debt_ids or [])
+    return sorted(
+        {
+            pointer
+            for obj in policy["object_classifications"]
+            if claims.intersection(obj["claim_ids"]) or debts.intersection(obj["debt_ids"])
+            for pointer in scope["object_scope_policy"][obj["object_id"]][
+                "evidence_pointers"
+            ]
+        }
+    )
+
+
+def resolved_object_scope(
+    object_id: str, scope: dict[str, Any], evidence_index: dict[str, dict[str, Any]]
+) -> dict[str, Any]:
+    object_policy = scope["object_scope_policy"][object_id]
+    profile = scope["scope_profiles"][object_policy["profile_id"]]
+    qualifiers = sorted(
+        set(profile["secondary_qualifiers"] + object_policy.get("secondary_qualifiers", []))
+    )
+    return {
+        "fixture_branch_envelope": object_policy.get(
+            "fixture_branch_envelope", profile["fixture_branch_envelope"]
+        ),
+        "runtime_stage": object_policy.get("runtime_stage", profile["runtime_stage"]),
+        "continuous_stratum": object_policy.get(
+            "continuous_stratum", profile["continuous_stratum"]
+        ),
+        "secondary_qualifiers": qualifiers,
+        "unknown_outside_envelope": "unknown_outside_envelope" in qualifiers,
+        "accepted_evidence_records": bind_evidence(
+            object_policy["evidence_pointers"], evidence_index
+        ),
+    }
+
+
 def validate_policy(policy: dict[str, Any]) -> dict[str, Any]:
     assumption_source = envelope_payload("theory_assumption_registry")
     claim_source = envelope_payload("theory_claim_ledger")
@@ -191,6 +335,18 @@ def validate_policy(policy: dict[str, Any]) -> dict[str, Any]:
         raise ValueError("all six implementation statuses must be instantiated")
     if any(row["correspondence_level"] not in CORRESPONDENCE_LEVELS for row in object_rows):
         raise ValueError("invalid correspondence level")
+    scope = scope_policy()
+    if set(scope["object_scope_policy"]) != object_ids:
+        raise ValueError("GRV8 scope policy must cover every and only classified object")
+    if len({row["role_id"] for row in scope["causal_role_classifications"]}) != len(
+        scope["causal_role_classifications"]
+    ):
+        raise ValueError("duplicate GRV8 causal-role classification")
+    for object_id, object_scope in scope["object_scope_policy"].items():
+        if object_scope["profile_id"] not in scope["scope_profiles"]:
+            raise ValueError(f"unknown scope profile for {object_id}")
+        if not object_scope["evidence_pointers"]:
+            raise ValueError(f"missing exact evidence pointers for {object_id}")
     if set(policy["debt_routes"]) != debt_ids:
         raise ValueError("every theory debt must receive one primary route")
     if any(route not in DECISION_ROUTES for route in policy["debt_routes"].values()):
@@ -210,6 +366,7 @@ def validate_policy(policy: dict[str, Any]) -> dict[str, Any]:
         "assumption_source": assumption_source,
         "claim_source": claim_source,
         "debt_source": debt_source,
+        "scope_policy": scope,
     }
 
 
@@ -251,6 +408,8 @@ def claim_classification(
     policy: dict[str, Any],
     source_claims: list[dict[str, Any]],
     proof_note_ids: set[str],
+    scope: dict[str, Any],
+    evidence_index: dict[str, dict[str, Any]],
 ) -> dict[str, Any]:
     dispositions = disposition_index(policy)
     assumption_decisions = policy["assumption_statuses"]
@@ -275,6 +434,28 @@ def claim_classification(
         )
         if not evidence_refs:
             evidence_refs = ["outputs/theory_source_manifest.json"]
+        evidence_pointers = sorted(
+            {
+                pointer
+                for obj in object_rows
+                if claim_id in obj["claim_ids"]
+                for pointer in scope["object_scope_policy"][obj["object_id"]][
+                    "evidence_pointers"
+                ]
+            }
+        )
+        object_correspondences = sorted(
+            [
+                {
+                    "object_id": obj["object_id"],
+                    "implementation_status": obj["implementation_status"],
+                    "correspondence_level": obj["correspondence_level"],
+                }
+                for obj in object_rows
+                if claim_id in obj["claim_ids"]
+            ],
+            key=lambda row: row["object_id"],
+        )
         proof_id = f"PN-{claim_id.removeprefix('T-')}"
         rows.append(
             {
@@ -285,6 +466,13 @@ def claim_classification(
                 "required_assumption_ids": required,
                 "assumption_statuses": statuses,
                 "evidence_refs": evidence_refs,
+                "accepted_evidence_records": (
+                    bind_evidence(evidence_pointers, evidence_index)
+                    if evidence_pointers
+                    else []
+                ),
+                "object_correspondences": object_correspondences,
+                "classification_scope": "bounded_B1_GR_unchanged_GRC9V3_evidence_envelope",
                 "source_ids": sorted(SOURCE_IDS),
                 "proof_note_ids": [proof_id] if proof_id in proof_note_ids else [],
                 "debt_ids": policy["claim_debt_map"].get(claim_id, []),
@@ -318,17 +506,24 @@ def claim_classification(
     }
 
 
-def equivalence_classification(policy: dict[str, Any], claim_rows: list[dict[str, Any]]) -> dict[str, Any]:
+def equivalence_classification(
+    policy: dict[str, Any],
+    claim_rows: list[dict[str, Any]],
+    scope: dict[str, Any],
+    evidence_index: dict[str, dict[str, Any]],
+) -> dict[str, Any]:
     assumption_by_claim = {
         row["claim_id"]: row["required_assumption_ids"] for row in claim_rows
     }
     proof_by_claim = {row["claim_id"]: row["proof_note_ids"] for row in claim_rows}
     rows = []
     for source in policy["object_classifications"]:
+        scoped = resolved_object_scope(source["object_id"], scope, evidence_index)
         rows.append(
             {
                 **source,
                 "classification_scope": "bounded_B1_GR_unchanged_GRC9V3_evidence_envelope",
+                **scoped,
                 "assumption_ids": sorted(
                     {
                         assumption_id
@@ -356,6 +551,7 @@ def equivalence_classification(policy: dict[str, Any], claim_rows: list[dict[str
         "source_id_map": source_id_map(),
         "implementation_status_enum": sorted(IMPLEMENTATION_STATUSES),
         "correspondence_level_enum": sorted(CORRESPONDENCE_LEVELS),
+        "correspondence_level_definitions": CORRESPONDENCE_LEVEL_DEFINITIONS,
         "rows": rows,
         "summary": {
             "object_count": len(rows),
@@ -372,6 +568,12 @@ def equivalence_classification(policy: dict[str, Any], claim_rows: list[dict[str
             "retained_carrier_extension_opened": False,
             "oriented_current_extension_selected": False,
             "K_decision": "remains_explicitly_diagnostic",
+            "current_recurrence_classification": "exact_native_mechanism_distinct_from_core_readback",
+            "j_equals_J_C_runtime_mapping": "analogy_only_candidate_mapping_rejected",
+            "reduced_spatial_continuation_non_equivalence_supported": True,
+            "reduced_structural_discrete_threshold_non_equivalence_supported": True,
+            "runtime_spatial_vs_full_temporal_non_equivalence_supported": False,
+            "full_map_non_equivalence_supported": False,
         },
         "highest_supported_claim": "evidence_grounded_unchanged_GRC9V3_correspondence_atlas_pending_human_review",
         "blocked_claims": [
@@ -384,7 +586,50 @@ def equivalence_classification(policy: dict[str, Any], claim_rows: list[dict[str
     }
 
 
-def final_debt_register(policy: dict[str, Any], source_debts: list[dict[str, Any]]) -> dict[str, Any]:
+def final_causal_role_classification(
+    scope: dict[str, Any], evidence_index: dict[str, dict[str, Any]]
+) -> dict[str, Any]:
+    rows = []
+    for source in scope["causal_role_classifications"]:
+        rows.append(
+            {
+                **source,
+                "classification_scope": "bounded_GRV5_synthetic_valid_formation_and_native_continuation_envelope",
+                "accepted_evidence_records": bind_evidence(
+                    source["evidence_pointers"], evidence_index
+                ),
+            }
+        )
+    return {
+        "gate_id": "GRV8",
+        "rows": rows,
+        "summary": {
+            "role_count": len(rows),
+            "maximum_retention_ladder_rung": "GRR2",
+            "native_mediation_supported": False,
+            "native_readback_supported": False,
+            "native_writeback_supported": False,
+            "closed_loop_supported": False,
+            "synthetic_input_provenance_preserved": True,
+            "branch_relocation_rival_unresolved": True,
+            "cross_gate_synthesis_creates_positive_arrow": False,
+        },
+        "highest_supported_claim": "arrow_by_arrow_GRR2_bounded_role_classification_without_partial_readback_relabel",
+        "blocked_claims": [
+            "partial_readback",
+            "GRR3_or_stronger",
+            "native_retained_carrier",
+            "closed_read_write_loop",
+        ],
+    }
+
+
+def final_debt_register(
+    policy: dict[str, Any],
+    source_debts: list[dict[str, Any]],
+    scope: dict[str, Any],
+    evidence_index: dict[str, dict[str, Any]],
+) -> dict[str, Any]:
     objects = policy["object_classifications"]
     rows = []
     for source in source_debts:
@@ -397,12 +642,25 @@ def final_debt_register(policy: dict[str, Any], source_debts: list[dict[str, Any
                 for ref in obj["evidence_refs"]
             }
         )
+        evidence_pointers = sorted(
+            {
+                pointer
+                for obj in objects
+                if debt_id in obj["debt_ids"]
+                for pointer in scope["object_scope_policy"][obj["object_id"]][
+                    "evidence_pointers"
+                ]
+            }
+        )
         rows.append(
             {
                 **source,
                 "GRV8_status": "open_with_bounded_route",
                 "GRV8_primary_route": policy["debt_routes"][debt_id],
                 "evidence_refs": evidence_refs or ["outputs/theory_source_manifest.json"],
+                "accepted_evidence_records": bind_evidence(
+                    evidence_pointers, evidence_index
+                ),
                 "debt_closed": False,
             }
         )
@@ -450,6 +708,11 @@ def completed_traceability(
                         for ref in claims[claim_id]["evidence_refs"]
                     }
                 ),
+                "accepted_evidence_records": [
+                    record
+                    for claim_id in claim_ids
+                    for record in claims[claim_id]["accepted_evidence_records"]
+                ],
             }
         )
     return {
@@ -521,6 +784,7 @@ def write_report(
     assumptions: dict[str, Any],
     claims: dict[str, Any],
     equivalence: dict[str, Any],
+    causal_roles: dict[str, Any],
     contradictions: dict[str, Any],
     extensions: dict[str, Any],
     reopening: dict[str, Any],
@@ -540,6 +804,7 @@ def write_report(
         f"classified_assumption_count = {len(assumptions['rows'])}",
         f"classified_claim_count = {len(claims['rows'])}",
         f"classified_object_count = {len(equivalence['rows'])}",
+        f"classified_causal_role_count = {len(causal_roles['rows'])}",
         f"contradiction_route_count = {len(contradictions['entries'])}",
         f"extension_decision_count = {len(extensions['decisions'])}",
         "theory_reopening_required = false",
@@ -551,12 +816,20 @@ def write_report(
         "retroactively upgrade reduced, synthetic, diagnostic, or blocked rows.",
         "The classification result must be accepted before the evidence bundle,",
         "evidence-grounded successor, LGRC handoff, or `GRV-C6` closeout can exist.",
+        "This P8.1 result supersedes the unaccepted P8 candidate at revision",
+        "`1448757`; it does not alter any accepted GRV0-GRV7 result.",
         "",
         "## Main Classification",
         "",
         "- Formed fixed-topology branches are exact bounded runtime results.",
         "- The synchronous causal closure is a bounded simplifying limit with `C`",
         "  independent and `W/J` reconstructed or stage-dependent.",
+        "- Native current recurrence is an exact stage sequence: old `J` informs a",
+        "  sign-even `J^2 -> W` write, then potential flow reconstructs current and",
+        "  advances `C`. This is a real reflexive mechanism, not core Read-Back.",
+        "- The `j = J_C` runtime mapping is rejected as a declared simplifying limit.",
+        "  Reuse of one current variable does not satisfy the passive-null or",
+        "  carrier-sensitive reduced read closure; the correspondence is analogical.",
         "- The fixed-`W` continuation construction and complete-step spectra are",
         "  analysis surfaces, not native retained-sector or Read-Back objects.",
         "- GRV5 supports only synthetic, `C`-dominated neutral persistence; native",
@@ -566,9 +839,24 @@ def write_report(
         "- GRV7 supports reduced clamped-`W` non-equivalence, not runtime/full-map",
         "  non-equivalence or an informative nontrivial complete-step `+1` threshold.",
         "",
-        "## Extension And Theory Routes",
+        "## Arrow-By-Arrow Causal Roles",
         "",
     ]
+    for row in causal_roles["rows"]:
+        lines.append(
+            f"- `{row['role_id']}`: `{row['status']}`; ceiling `{row['maximum_supported_claim']}`."
+        )
+    lines.extend(
+        [
+        "",
+        "The GRR2 persistence row remains synthetic-input, `C`-dominated, and",
+        "compatible with branch relocation. It is not partial Read-Back, a durable",
+        "native carrier, or later carrier mediation.",
+        "",
+        "## Extension And Theory Routes",
+        "",
+        ]
+    )
     for row in extensions["decisions"]:
         lines.append(f"- `{row['decision_id']}`: `{row['route']}`.")
     lines.extend(
@@ -577,9 +865,12 @@ def write_report(
             "",
             "`K` remains diagnostic. Geometry/mobility and retained-carrier",
             "extensions are not opened because their preregistered triggers were not",
-            "met. An oriented-current extension is conditionally selectable only if a",
-            "future target explicitly requires directional Read-Back or active",
-            "circulation; B1-GR does not select that target.",
+            "met. GRR3-GRR5 constructibility under unchanged GRC remains unresolved",
+            "and is routed to a revision-distinct witness search before extension",
+            "selection. Current temporalization is conditionally selectable only for",
+            "a target requiring independent current relaxation. Oriented current is",
+            "conditionally selectable only for directional Read-Back or active",
+            "circulation. B1-GR selects neither target.",
             "",
             "## Assumption And Contradiction Discipline",
             "",
@@ -604,6 +895,15 @@ def write_report(
             "- Protected source/spec/root-test tree: unchanged from GRV7.",
             f"- Accepted prerequisite gates: `{', '.join(row['gate_id'] for row in accepted_chain)}`.",
             "",
+            "## LGRC Handoff Boundary Candidate",
+            "",
+            "B1-L over legacy GRC9V3 and a future LGRC-N over a revised GRC kernel",
+            "are separate investigations. Neither is authorized by this unaccepted",
+            "classification. Packet ledgers, queues, proper time, pulse surfaces,",
+            "lineage, and producer-read history must not be relabeled as retained",
+            "continuation, memory, relaxation spectrum, Read-Back, canonical mode",
+            "transport, or native constitutive reading.",
+            "",
             "## Claim Boundary",
             "",
             "The result does not establish full core Read-Back, a unique retained",
@@ -623,6 +923,8 @@ def run_grv8() -> None:
     accepted_chain = validate_accepted_chain()
     policy = read_json(EXPERIMENT_ROOT / "configs/grv8_classification_policy.json")
     source = validate_policy(policy)
+    scope = source["scope_policy"]
+    evidence_index = accepted_evidence_index()
     input_revision = git("rev-parse", "HEAD")
     input_tree = file_manifest(tracked_files([EXPERIMENT_RELATIVE]))
 
@@ -632,25 +934,49 @@ def run_grv8() -> None:
         policy,
         source["claim_source"]["records"],
         {row["proof_note_id"] for row in proof_notes["records"]},
+        scope,
+        evidence_index,
     )
     claims_by_id = {row["claim_id"]: row for row in claims_payload["rows"]}
-    equivalence_payload = equivalence_classification(policy, claims_payload["rows"])
-    debts_payload = final_debt_register(policy, source["debt_source"]["records"])
+    equivalence_payload = equivalence_classification(
+        policy, claims_payload["rows"], scope, evidence_index
+    )
+    causal_roles_payload = final_causal_role_classification(scope, evidence_index)
+    debts_payload = final_debt_register(
+        policy, source["debt_source"]["records"], scope, evidence_index
+    )
     traceability_source = envelope_payload("theory_test_traceability")
     traceability_payload = completed_traceability(
         traceability_source["records"], claims_by_id, policy
     )
+    contradiction_rows = contradiction_entries()
+    for row in contradiction_rows:
+        row["accepted_evidence_records"] = bind_evidence(
+            evidence_pointers_for_ids(
+                policy, scope, claim_ids=row["claim_ids"]
+            ),
+            evidence_index,
+        )
     contradictions_payload = {
         "gate_id": "GRV8",
         "allowed_routes": sorted(ALLOWED_CONTRADICTION_ROUTES),
-        "entries": contradiction_entries(),
+        "entries": contradiction_rows,
         "theory_contradiction_count": 0,
         "highest_supported_claim": "all_material_mismatches_have_one_primary_non_theory_reopening_route",
         "blocked_claims": ["substrate_nonrealization_is_theory_falsification"],
     }
+    extension_rows = extension_decisions(policy)
+    for row in extension_rows:
+        row["accepted_evidence_records"] = bind_evidence(
+            evidence_pointers_for_ids(policy, scope, debt_ids=row["debt_ids"]),
+            evidence_index,
+        )
     extensions_payload = {
         "gate_id": "GRV8",
-        "decisions": extension_decisions(policy),
+        "decisions": extension_rows,
+        "lgrc_route_partition": scope["lgrc_route_partition"],
+        "lgrc_boundary_candidate": scope["lgrc_boundary_candidate"],
+        "forbidden_lgrc_relabels": scope["forbidden_lgrc_relabels"],
         "runtime_implementation_opened": False,
         "highest_supported_claim": "bounded_selectable_extension_routing_without_implementation",
         "blocked_claims": ["extension_selected_by_missing_symbol", "runtime_change_authorized"],
@@ -673,14 +999,15 @@ def run_grv8() -> None:
 
     payloads = {
         "assumption_status_matrix.json": (assumptions_payload, "b1_grv8_assumption_status_matrix_v1"),
-        "final_claim_classification.json": (claims_payload, "b1_grv8_final_claim_classification_v1"),
-        "equivalence_classification.json": (equivalence_payload, "b1_grv8_equivalence_classification_v1"),
-        "final_theory_debt_register.json": (debts_payload, "b1_grv8_final_theory_debt_register_v1"),
-        "final_theory_test_traceability.json": (traceability_payload, "b1_grv8_final_theory_test_traceability_v1"),
-        "final_contradiction_routing.json": (contradictions_payload, "b1_grv8_final_contradiction_routing_v1"),
-        "extension_decision.json": (extensions_payload, "b1_grv8_extension_decision_v1"),
+        "final_claim_classification.json": (claims_payload, "b1_grv8_final_claim_classification_v2"),
+        "equivalence_classification.json": (equivalence_payload, "b1_grv8_equivalence_classification_v2"),
+        "final_causal_role_classification.json": (causal_roles_payload, "b1_grv8_final_causal_role_classification_v1"),
+        "final_theory_debt_register.json": (debts_payload, "b1_grv8_final_theory_debt_register_v2"),
+        "final_theory_test_traceability.json": (traceability_payload, "b1_grv8_final_theory_test_traceability_v2"),
+        "final_contradiction_routing.json": (contradictions_payload, "b1_grv8_final_contradiction_routing_v2"),
+        "extension_decision.json": (extensions_payload, "b1_grv8_extension_decision_v2"),
         "theory_reopening_decision.json": (reopening_payload, "b1_grv8_theory_reopening_decision_v1"),
-        "superseded_exploratory_claims.json": (superseded_payload, "b1_grv8_superseded_exploratory_claims_v1"),
+        "superseded_exploratory_claims.json": (superseded_payload, "b1_grv8_superseded_exploratory_claims_v2"),
         "grv8_existing_test_result.json": (test_payload, "b1_grv8_existing_test_result_v1"),
     }
     output_paths: list[Path] = []
@@ -698,6 +1025,7 @@ def run_grv8() -> None:
         assumptions_payload,
         claims_payload,
         equivalence_payload,
+        causal_roles_payload,
         contradictions_payload,
         extensions_payload,
         reopening_payload,
@@ -722,6 +1050,12 @@ def run_grv8() -> None:
                 }
             ],
             "accepted_gate_chain": accepted_chain,
+            "superseded_unaccepted_result": {
+                "result_revision": "144875709359d477c05ef7d47382bc76342223f5",
+                "receipt_payload_sha256": "0f974b0bb44623494424f5ebc50a2cabbf5c48deba7de6998956c6ce6882c714",
+                "acceptance_anchor_existed": False,
+                "reason": "P8_1_object_envelope_role_and_provenance_hardening",
+            },
             "output_artifact_digests": {
                 path.relative_to(EXPERIMENT_ROOT).as_posix(): sha256_file(path)
                 for path in sorted(output_paths)
@@ -730,6 +1064,7 @@ def run_grv8() -> None:
                 "assumption_count": len(assumptions_payload["rows"]),
                 "claim_count": len(claims_payload["rows"]),
                 "object_count": len(equivalence_payload["rows"]),
+                "causal_role_count": len(causal_roles_payload["rows"]),
                 "contradiction_route_count": len(contradictions_payload["entries"]),
                 "extension_decision_count": len(extensions_payload["decisions"]),
                 "theory_reopening_required": False,
@@ -740,6 +1075,7 @@ def run_grv8() -> None:
                 "successor_generated": False,
                 "GRV_C6_assigned": False,
                 "B1_L_execution_authorized": False,
+                "unaccepted_P8_candidate_superseded": True,
             },
             "status": "awaiting_scientific_review",
             "blocked_gates": ["GRV8_bundle_and_closeout", "B1-L"],

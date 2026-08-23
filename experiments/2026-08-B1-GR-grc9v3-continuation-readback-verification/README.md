@@ -17,7 +17,7 @@ only analogically, as a measurable diagnostic, or not at all.
 
 ```text
 experiment_id = B1-GR
-status = grv8_P8_classification_candidate_awaiting_human_review
+status = grv8_P8_unaccepted_candidate_superseded_P8_1_method_hardening
 specification_state = draft_3_4_1_pre_execution_mathematical_execution_sealed
 controlling_specification_sha256 = 7ad99fb4acc6a7691d184a514f4836ffa3927600fc7cf504eb059134f3948e44
 runtime_under_test = unchanged_GRC9V3
@@ -433,24 +433,26 @@ spectrum inspection.
 Receipt `2d29dedb...` over matrix payload `cfa80c47...` is mechanically valid.
 Human review accepted the result at revision `60d045d`; the separate
 `outputs/gates/grv7_acceptance_anchor.json` binds that revision and receipt.
-`GRV-C5` is assigned. GRV8 ran from clean method revision `7d03940` and emitted
-classification receipt `0f974b0b...`; scientific acceptance is pending.
+`GRV-C5` is assigned. GRV8 first ran from clean method revision `7d03940` and
+emitted classification receipt `0f974b0b...`, but that candidate was not
+accepted. Review exposed insufficient object-envelope, exact-provenance,
+causal-role, and `j = J_C` mapping discipline. P8.1 supersedes it while
+preserving the candidate at revision `1448757` as non-consumable history.
 Acceptance of GRV7 does
 not claim universal non-correlation, runtime spatial/full-temporal non-
 equivalence, an informative nontrivial complete-step `+1` threshold,
 continuation, retention from GRV7, Read-Back, or write-back.
 
-GRV8 classifies 19 assumptions, all 33 source claims, 19 tested objects, all 13
-debts, and 17 theory-to-test rows. It finds no native Read-Back or write-back
-loop and no reason to reopen the controlling theory. Geometry/mobility and
-retained-carrier extensions remain unopened because their triggers were not
-met; `K` remains diagnostic. An oriented-current extension is conditionally
-selectable only for a future target that explicitly requires directional
-Read-Back or active circulation, and is not selected by B1-GR. All 1,354
-repository tests and 105 experiment tests pass, and protected source, spec, and
-root-test paths remain unchanged.
+P8.1 keeps the 19-assumption, 33-claim, 13-debt, and 17-row source coverage but
+expands the object atlas to 31 separately scoped roles plus nine arrow-by-arrow
+causal-role rows. It classifies native current recurrence as an exact GRC9V3
+mechanism while rejecting `j = J_C` as a declared runtime reduction: variable
+reuse does not establish the passive-null and carrier-sensitive reduced read
+closure. Every cross-gate classification must now bind an accepted source gate,
+result revision, acceptance-anchor digest, artifact digest, exact field, and
+consumed-value digest.
 
-This is the first of two GRV8 review stages. The evidence bundle,
+P8.1 remains the first of two GRV8 review stages. The evidence bundle,
 evidence-grounded successor, LGRC handoff, GRV8 acceptance anchors, and
 `GRV-C6` remain absent until the classification receipt is reviewed and
 accepted.
