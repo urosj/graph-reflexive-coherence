@@ -45,11 +45,11 @@ outputs/gates/b2_i1_acceptance_anchor.json
 reports/b2_i1_source_handoff_inventory.md
 ```
 
-### Iteration 1 Result - Awaiting Human Review
+### Iteration 1 Result - Accepted
 
 ```text
 status = passed
-acceptance_state = awaiting_scientific_review
+acceptance_state = accepted
 input_execution_revision = b24c9669e6463af6bc4602d91b50d0bf14fadaf6
 source_record_count = 25
 graph_source_record_count = 23
@@ -63,12 +63,12 @@ artifact_payload_sha256 = 53c09e2d700ad7eee659eaa4758d657bb027c5e2a6c8bf12c0fea4
 protected_manifest_payload_sha256 = 62915bb46ae85019da08260d0ee930885d2224dbf147068104e4040cff2c084c
 receipt_payload_sha256 = 13583b4f29d80becd5d1876437f07146b77dbcbabef3c4cd0a5fe4dd6997bce2
 preliminary_result_status = superseded_before_human_acceptance
-acceptance_anchor_created = false
+acceptance_anchor_created = true
 B2_positive_evidence_opened = false
 GRR_rung_assigned = false
-B2_closeout_rung_assigned = false
-B2_closeout_ceiling = B2-C0-ready
-ready_for_I2 = false
+B2_closeout_rung_assigned = true
+B2_closeout_rung = B2-C0
+ready_for_I2 = true
 ```
 
 Interpretation:
@@ -77,7 +77,8 @@ Interpretation:
 - The replacement binds field-level source roles, the exact closeout candidate revision, accepted-revision ancestry, a first-class unchanged-runtime identity, dependency closure, raw/final consistency, the authoritative GRR ladder, and all 48 accepted B1 branches across required machine surfaces.
 - Source precedence resolves interpretation and lifecycle authority only; it cannot replace contradictory raw evidence.
 - All B1 fields carry `positive_B2_rung_credit = false`, and no B2 branch eligibility set or branch ranking exists yet.
-- No scientific transition was executed. Iteration 2 remains blocked until a human-reviewed `B2-C0` acceptance anchor exists.
+- No scientific transition was executed and no GRR rung was assigned.
+- Human review accepted the hardened result at revision `ff2fe054b14aab7f9ac058464a880c185d8977d5`; the acceptance anchor assigns `B2-C0` and opens Iteration 2 only.
 
 ## Iteration 2 - Constructibility Schema Freeze
 

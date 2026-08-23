@@ -9,7 +9,7 @@ or specified.
 
 ```text
 experiment_id = B2-GR
-status = iteration_1_hardened_passed_awaiting_human_review
+status = iteration_1_accepted
 source_experiment = B1-GR
 source_closeout = accepted_GRV-C6
 source_maximum_retention_rung = GRR2
@@ -26,9 +26,9 @@ iteration_1_accepted_B1_branch_count = 48
 iteration_1_unchanged_runtime_file_count = 23
 iteration_1_checks = 33_of_33_passed
 iteration_1_preliminary_result = superseded_before_human_acceptance
-iteration_1_acceptance_anchor_created = false
-iteration_1_ceiling = B2-C0-ready
-ready_for_iteration_2 = false_pending_hardened_I1_acceptance
+iteration_1_acceptance_anchor_created = true
+assigned_closeout_rung = B2-C0
+ready_for_iteration_2 = true
 extension_target_selected = false
 B1_L_execution_authorized = false
 N32_selected = false
