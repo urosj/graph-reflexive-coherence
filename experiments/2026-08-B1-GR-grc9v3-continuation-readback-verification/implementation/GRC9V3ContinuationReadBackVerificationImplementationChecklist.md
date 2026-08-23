@@ -4,7 +4,7 @@
 
 ```text
 branch = experiment-B1-continuation-readback
-status = grv7_P7_review_scope_hardened_awaiting_acceptance_anchor
+status = grv7_P7_accepted_GRV8_authorized
 controlling_specification = draft_3_4_1_pre_execution_mathematical_execution_sealed
 controlling_specification_sha256 = 7ad99fb4acc6a7691d184a514f4836ffa3927600fc7cf504eb059134f3948e44
 runtime_under_test = unchanged_GRC9V3
@@ -13,10 +13,10 @@ src_change_authorized = false
 existing_test_change_authorized = false
 positive_evidence_opened = true_bounded_GRV2_branch_and_GRV5_GRR2_evidence
 positive_retention_evidence_opened = bounded_GRR2_neutral_coordinate_persistence_only
-current_gate = GRV7_mechanically_passed_awaiting_acceptance_anchor
+current_gate = GRV8_authorized_not_started
 verification_closeout_ladder_rung_assigned = true
-verification_closeout_rung = GRV-C4
-verification_closeout_ceiling = GRV-C5_pending_GRV7
+verification_closeout_rung = GRV-C5
+verification_closeout_ceiling = GRV-C5_assigned_GRV8_pending
 B1_L_execution_authorized = false
 N32_selected = false
 l04_selected = false
@@ -1583,7 +1583,7 @@ GRV_C5_status = pending_GRV7_threshold_evidence
 - [x] Record bounded correlations without universalizing them.
 - [x] Emit `spatial_temporal_threshold_matrix.json` and report.
 - [x] Emit and validate the GRV7 result receipt.
-- [ ] Accept GRV7 and emit the separate acceptance anchor.
+- [x] Accept GRV7 and emit the separate acceptance anchor.
 
 The initial unaccepted GRV7 result from method revision `0f9d0de` is retained in
 history and superseded. Scientific-discriminator hardening made the six
@@ -1675,8 +1675,8 @@ Receipt `2d29dedbedaf66a8295574c548ddf7d06c6ee12cbc529e93ef10e720e5ad46cb`
 binds all outputs and is awaiting human review. The experiment-local suite
 passes `95` tests, protected source/spec/root-test tree
 `4a398c1b50a55c40418bfae3af4e4e3dc07a1a313f79b3747a546dfa27c453a2`
-is unchanged, `GRV-C5` remains a candidate rather than an assigned rung, and
-GRV8 remains blocked pending a separate GRV7 acceptance anchor.
+is unchanged. In this immutable pre-acceptance result, `GRV-C5` remains a
+candidate and GRV8 remains blocked pending a separate GRV7 acceptance anchor.
 
 ```text
 mechanical_status = passed
@@ -1701,6 +1701,16 @@ GRV_C5_candidate = true
 GRV_C5_assigned = false
 GRV8_authorized = false
 ```
+
+Human review accepted this immutable result at revision
+`60d045ddf5b523e0922d17f18f3a94c3de5cd020`. The separate GRV7 acceptance
+anchor binds receipt
+`2d29dedbedaf66a8295574c548ddf7d06c6ee12cbc529e93ef10e720e5ad46cb`
+and preserves the reduced-comparator claim ceiling. Its review record confirms
+that WLS is non-identifying, complete-step `+1` nontriviality is unresolved, and
+all seven selected branches are accounted for across six paths. The result
+block above remains the immutable pre-acceptance machine state; the accepted
+current lifecycle state is `GRV-C5` assigned and GRV8 authorized but not started.
 
 ## Iteration 9 - GRV8 Classification, Route Decision, And Handoff
 

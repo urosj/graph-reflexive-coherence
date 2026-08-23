@@ -17,7 +17,7 @@ only analogically, as a measurable diagnostic, or not at all.
 
 ```text
 experiment_id = B1-GR
-status = grv7_P7_review_scope_hardened_awaiting_acceptance_anchor
+status = grv7_P7_accepted_GRV8_authorized
 specification_state = draft_3_4_1_pre_execution_mathematical_execution_sealed
 controlling_specification_sha256 = 7ad99fb4acc6a7691d184a514f4836ffa3927600fc7cf504eb059134f3948e44
 runtime_under_test = unchanged_GRC9V3
@@ -28,8 +28,8 @@ positive_continuation_evidence_opened = false
 positive_retention_evidence_opened = bounded_GRR2_neutral_coordinate_persistence_only
 positive_readback_evidence_opened = false
 positive_writeback_evidence_opened = false
-verification_closeout_rung = GRV-C4
-verification_closeout_ceiling = GRV-C5_candidate_pending_GRV7_acceptance
+verification_closeout_rung = GRV-C5
+verification_closeout_ceiling = GRV-C5_assigned_GRV8_pending
 reduced_spatial_continuation_temporal_non_equivalence_candidate = true
 runtime_spatial_vs_full_temporal_non_equivalence_supported = false
 full_map_non_equivalence_supported = false
@@ -430,10 +430,13 @@ symmetry partners in each family. Both F1 branches each feed one path. Every
 selected branch has an explicit path/role mapping; none was dropped after
 spectrum inspection.
 
-Receipt `2d29dedb...` over matrix payload `cfa80c47...` is mechanically valid and
-awaiting its separate acceptance anchor. It leaves
-`GRV-C5` unassigned and GRV8 blocked. The result does not claim universal
-non-correlation, continuation, retention, Read-Back, or write-back.
+Receipt `2d29dedb...` over matrix payload `cfa80c47...` is mechanically valid.
+Human review accepted the result at revision `60d045d`; the separate
+`outputs/gates/grv7_acceptance_anchor.json` binds that revision and receipt.
+`GRV-C5` is assigned and GRV8 is authorized but has not started. Acceptance does
+not claim universal non-correlation, runtime spatial/full-temporal non-
+equivalence, an informative nontrivial complete-step `+1` threshold,
+continuation, retention from GRV7, Read-Back, or write-back.
 
 ## Central Question
 
