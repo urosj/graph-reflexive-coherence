@@ -181,11 +181,11 @@ Interpretation:
 - The constitutional review identified machine-contract gaps before acceptance. The revised I2 package adds matched-sham formation attribution, full-path cleanliness, stratified nonmigrating search, discovery/adjudication separation, formation-specific slow occupancy, carrier equivalence and causal eligibility, branch-search sufficiency, probe provenance, oriented GRR4 effects, control truth tables, calibration recipes, and explicit ledger/duplicate semantics.
 - Iteration 3 remains blocked until the revised I2 package is executed and accepted.
 
-### Iteration 2 Constitutional Revision Result - Awaiting Human Review
+### Iteration 2 Constitutional Revision Result - Accepted
 
 ```text
 status = passed
-acceptance_state = awaiting_scientific_review
+acceptance_state = accepted
 schema_version = b2_i2_constructibility_schema_v2
 input_execution_revision = b6669b8e0ad1ad70def6ab4c99dbe926a9e906ee
 checks = 66/66 passed
@@ -199,12 +199,12 @@ carrier_adjudication_slots = 28944
 threshold_calibration_recipe_count = 4
 artifact_payload_sha256 = bae04386692f35749c0897292f5a3ae99f8364a7251c6b7826817bdc8a4e4e28
 receipt_payload_sha256 = 764c2f42ef6d28b4dda6c6d9f18e829d317c2ec60687e255597f79819185b088
-acceptance_anchor_created = false
+acceptance_anchor_created = true
 B2_positive_evidence_opened = false
 GRR_rung_assigned = false
-B2_closeout_rung_assigned = false
-B2_closeout_ceiling = B2-C1-ready
-ready_for_I3 = false_pending_I2_acceptance
+B2_closeout_rung_assigned = true
+assigned_closeout_rung = B2-C1
+ready_for_I3 = true
 ```
 
 Interpretation:
@@ -218,6 +218,7 @@ Interpretation:
 - Reset, swap, and bypass have frozen target statistics, expected effects, applicability, and machine truth tables. Positive-control `failed` remains distinct from active-null `failed_closed`.
 - I3 may instantiate, but not revise, the four frozen calibration recipes. An unusable or over-maximum calibration blocks I4 and requires a revised, reaccepted I2.
 - This revision remains schema-only. It opens no constructibility evidence, assigns no GRR rung, and selects no extension.
+- Human review accepted the constitutional revision at result revision `b0584b9b61eadbcd34255fa07d5afde05370bb77`; the acceptance anchor assigns `B2-C1` and opens Iteration 3 only.
 
 ## Iteration 3 - Active Nulls And Failure Baselines
 

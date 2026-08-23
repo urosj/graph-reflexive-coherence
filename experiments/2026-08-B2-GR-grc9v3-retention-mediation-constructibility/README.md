@@ -9,7 +9,7 @@ or specified.
 
 ```text
 experiment_id = B2-GR
-status = iteration_2_constitutional_schema_v2_frozen_awaiting_human_review
+status = iteration_2_accepted
 source_experiment = B1-GR
 source_closeout = accepted_GRV-C6
 source_maximum_retention_rung = GRR2
@@ -35,12 +35,12 @@ iteration_2_carrier_definition_count = 3
 iteration_2_active_null_definition_count = 52
 iteration_2_maximum_discovery_rows = 9648
 iteration_2_preliminary_result = superseded_before_human_acceptance
-iteration_2_constitutional_revision_execution = passed_awaiting_human_review
+iteration_2_constitutional_revision_execution = passed_and_accepted
 iteration_2_artifact_payload_sha256 = bae04386692f35749c0897292f5a3ae99f8364a7251c6b7826817bdc8a4e4e28
 iteration_2_receipt_payload_sha256 = 764c2f42ef6d28b4dda6c6d9f18e829d317c2ec60687e255597f79819185b088
-iteration_2_acceptance_anchor_created = false
-iteration_2_closeout_ceiling = B2-C1-ready
-ready_for_iteration_3 = false_pending_I2_acceptance
+iteration_2_acceptance_anchor_created = true
+assigned_closeout_rung = B2-C1
+ready_for_iteration_3 = true
 extension_target_selected = false
 B1_L_execution_authorized = false
 N32_selected = false
