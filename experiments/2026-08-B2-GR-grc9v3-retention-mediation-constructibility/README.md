@@ -9,7 +9,7 @@ or specified.
 
 ```text
 experiment_id = B2-GR
-status = iteration_3_effect_scope_active_nulls_passed_awaiting_human_review
+status = iteration_3_effect_scope_active_nulls_accepted_iteration_4_open
 source_experiment = B1-GR
 source_closeout = accepted_GRV-C6
 source_maximum_retention_rung = GRR2
@@ -20,7 +20,7 @@ src_change_authorized = false
 spec_extension_authorized = false
 positive_B2_evidence_opened = false
 closeout_ladder_rung_assigned = true
-current_closeout_rung = B2-C0
+current_closeout_rung = B2-C2
 iteration_1_source_record_count = 25
 iteration_1_consumed_field_record_count = 71
 iteration_1_accepted_B1_branch_count = 48
@@ -39,7 +39,7 @@ iteration_2_constitutional_revision_execution = passed_and_accepted
 iteration_2_artifact_payload_sha256 = bae04386692f35749c0897292f5a3ae99f8364a7251c6b7826817bdc8a4e4e28
 iteration_2_receipt_payload_sha256 = 764c2f42ef6d28b4dda6c6d9f18e829d317c2ec60687e255597f79819185b088
 iteration_2_acceptance_anchor_created = true
-assigned_closeout_rung = B2-C1
+iteration_2_assigned_closeout_rung = B2-C1
 ready_for_iteration_3 = true
 iteration_3_required_active_null_count = 52
 iteration_3_threshold_calibration_recipe_count = 4
@@ -73,13 +73,27 @@ iteration_3_effect_scope_artifact_payload_sha256 = a9749a11bde99da30a40aeea20114
 iteration_3_effect_scope_threshold_payload_sha256 = 297bb166ef65b66e5e66a4c5d79e8ae7e21be4a2c71224a8c3054364481941e3
 iteration_3_effect_scope_receipt_payload_sha256 = 9f13fda65a07659f7d34122f9b903a065961c906680013424850fd7351042e64
 iteration_3_effect_scope_adjudicator_sha256 = ee323a5c115705f6ef9bb1bed9c84f56ed0458c35f92e08449907b22e0e803c6
-iteration_3_effect_scope_execution = passed_awaiting_human_review
-iteration_3_acceptance_anchor_created = false
-ready_for_iteration_4 = false_pending_I3_execution_and_acceptance
+iteration_3_effect_scope_execution = passed_and_accepted
+iteration_3_acceptance_result_revision = 259913bc48af798645cb86e44f2205323df537ba
+iteration_3_acceptance_anchor_created = true
+iteration_3_assigned_closeout_rung = B2-C2
+ready_for_iteration_4 = true
 extension_target_selected = false
 B1_L_execution_authorized = false
 N32_selected = false
 ```
+
+## Iteration 3 Null Topography
+
+The 52 active nulls are easier to consume as two surfaces: 32 global
+rung-admission blockers arranged as a hole-free GRR suffix staircase, and 20
+non-global lane, claim, route, duplicate, or robustness guards. Each atomic
+null is paired with a passing fixture-only sentinel under the same frozen rule
+vector. The sentinel validates adjudicator permissiveness; it is not scientific
+evidence.
+
+- [Explanation and validated counts](reports/b2_i3_null_topography.md)
+- [Interactive topography](reports/b2_i3_null_topography.html)
 
 ## Why This Experiment Comes Before An Extension
 

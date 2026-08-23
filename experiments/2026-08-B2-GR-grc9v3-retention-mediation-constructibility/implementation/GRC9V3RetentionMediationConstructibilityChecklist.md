@@ -377,13 +377,13 @@ Interpretation:
 - [x] Make calibration rows self-contained with floors, multipliers, comparators, and strictness.
 - [x] Execute the semantic-hardening package from a clean committed revision.
 - [x] Produce and verify the superseding I3 artifact, report, calibration, and receipt.
-- [ ] Obtain human acceptance before assigning `B2-C2` or opening I4.
+- [x] Obtain human acceptance before assigning `B2-C2` or opening I4.
 
-### Iteration 3 Effect-Scope Result - Awaiting Human Review
+### Iteration 3 Effect-Scope Result - Accepted
 
 ```text
 status = passed
-acceptance_state = awaiting_scientific_review
+acceptance_state = accepted
 input_execution_revision = 8f791ed23f85c460d37d71317d63a85da3e3147f
 checks = 59/59 passed
 failed_checks = []
@@ -405,12 +405,13 @@ threshold_calibration_payload_sha256 = 297bb166ef65b66e5e66a4c5d79e8ae7e21be4a2c
 receipt_payload_sha256 = 9f13fda65a07659f7d34122f9b903a065961c906680013424850fd7351042e64
 adjudicator_schema_version = b2_constructibility_adjudicator_v2
 adjudicator_sha256 = ee323a5c115705f6ef9bb1bed9c84f56ed0458c35f92e08449907b22e0e803c6
-acceptance_anchor_created = false
+acceptance_result_revision = 259913bc48af798645cb86e44f2205323df537ba
+acceptance_anchor_created = true
 B2_positive_evidence_opened = false
 GRR_rung_assigned = false
-B2_closeout_rung_assigned = false
-B2_closeout_ceiling = B2-C2-ready
-ready_for_I4 = false_pending_I3_acceptance
+B2_closeout_rung_assigned = true
+assigned_B2_closeout_rung = B2-C2
+ready_for_I4 = true
 ```
 
 Interpretation:
@@ -422,7 +423,31 @@ Interpretation:
 - Two duplicate guards collapse multiple representations or histories to one physical witness without erasing it.
 - Required `not_run` is recorded as `gate_incomplete_required_control_not_run`, blocks its dependent rung, and does not falsify the mechanism. Optional failure, non-identifiability, or omission narrows or leaves robustness unresolved without rung demotion.
 - Every sentinel binds reference, tested, and paired-atomic gate-vector digests. Every threshold audit serializes test value, threshold, comparator, and signed margin. Calibration rows now serialize their floors, multipliers, comparators, and strictness.
-- The result remains fixture/control evidence only. Human acceptance may assign `B2-C2` and open I4; no automatic acceptance anchor or positive B2 evidence was created.
+- Human review accepted the effect-scoped active-null result at result revision `259913bc48af798645cb86e44f2205323df537ba`. The acceptance anchor assigns `B2-C2` and opens I4.
+- The accepted result remains fixture/control evidence only. Acceptance opens no positive B2 evidence and assigns no GRR rung.
+
+### Iteration 3 Consumption Companion
+
+- [x] Validate the null topography independently from the flat report rows.
+- [x] Confirm the exact 32 global rung blockers / 20 non-global governance guards split.
+- [x] Confirm all 32 global rung masks are contiguous ladder suffixes with no holes.
+- [x] Confirm all 52 atomic/sentinel gate-vector digest pairs reconstruct and every sentinel is a non-evidence pass-through.
+- [x] Add a reproducible interactive view of effect scope, lowest blocked rung, disposition-by-family reason, and atomic/sentinel flip.
+
+The 52 nulls contain two different kinds of rejection. Thirty-two close a
+global GRR admission surface. The other 20 constrain lane, claim, route,
+deduplication, or robustness interpretation without globally demoting the
+underlying witness. The global masks form a prerequisite staircase: 9 first
+seal `GRR1`, 11 first seal `GRR3`, 6 first seal `GRR4`, and 6 first seal
+`GRR5`; every mask then remains closed through `GRR5`.
+
+The reason for each rejection is the product of its
+`expected_primary_disposition` and `control_family`. Its paired sentinel keeps
+the same frozen rule vector with the target gate true and passes through the
+validator. That sentinel remains fixture-only and is not scientific evidence.
+
+- [Null-topography explanation](../reports/b2_i3_null_topography.md)
+- [Interactive null topography](../reports/b2_i3_null_topography.html)
 
 ## Iteration 4 - Native Preparation And Reachability Search
 
