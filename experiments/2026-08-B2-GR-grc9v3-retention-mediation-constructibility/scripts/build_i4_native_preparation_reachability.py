@@ -8,7 +8,6 @@ from typing import Any
 
 from b2_artifact_io import (
     EXPERIMENT_ROOT,
-    REPO_ROOT,
     assert_envelope_digest,
     envelope,
     finalize_receipt,
@@ -179,8 +178,13 @@ def _outliers(
             for key, value in sorted(largest.items())
         ],
         "smallest_positive_formation_margin": smallest,
-        "flagged_attempt_ids": {
-            key: sorted(values) for key, values in sorted(flag_ids.items())
+        "flagged_attempt_groups": {
+            key: {
+                "count": len(values),
+                "attempt_ids_digest": semantic_digest(sorted(values)),
+                "sample_attempt_ids": sorted(values)[:12],
+            }
+            for key, values in sorted(flag_ids.items())
         },
         "history_distinct_same_state_groups": history_distinct_groups,
         "failed_fresh_process_confirmation_candidate_ids": sorted(
@@ -191,6 +195,32 @@ def _outliers(
         "resolution_by_search_stratum": resolution_records,
         "outlier_thresholds_used_for_admission": False,
     }
+
+
+def _classification_matrix(attempts: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    groups: dict[tuple[Any, ...], int] = Counter(
+        (
+            row["branch_family_id"],
+            row["source_branch_id"],
+            row["preparation_family"],
+            row["candidate_status"],
+            row["primary_demotion_reason"],
+            tuple(row.get("full_path_failure_modes", [])),
+        )
+        for row in attempts
+    )
+    return [
+        {
+            "branch_family_id": key[0],
+            "source_branch_id": key[1],
+            "preparation_family": key[2],
+            "candidate_status": key[3],
+            "primary_demotion_reason": key[4],
+            "full_path_failure_modes": list(key[5]),
+            "attempt_count": count,
+        }
+        for key, count in sorted(groups.items())
+    ]
 
 
 def _branch_coverage(attempts: list[dict[str, Any]]) -> list[dict[str, Any]]:
@@ -256,14 +286,13 @@ def _continuation_routing(
     }
 
 
-def build_payload() -> tuple[dict[str, Any], list[Path]]:
+def build_payload() -> dict[str, Any]:
     config = read_json(CONFIG_PATH)
     validate_prerequisites(config)
     batch_ids = sorted(batch_registry())
     attempts: list[dict[str, Any]] = []
     confirmations: list[dict[str, Any]] = []
     batch_records = []
-    artifact_paths: list[Path] = []
     for batch_id in batch_ids:
         discovery_path, confirmation_path = _batch_paths(batch_id)
         discovery = read_json(discovery_path)
@@ -276,18 +305,27 @@ def build_payload() -> tuple[dict[str, Any], list[Path]]:
             raise ValueError(f"confirmation batch identity mismatch: {batch_id}")
         attempts.extend(discovery["payload"]["attempt_rows"])
         confirmations.extend(confirmation["payload"]["confirmation_rows"])
-        artifact_paths.extend((discovery_path, confirmation_path))
         batch_records.append(
             {
                 "batch_id": batch_id,
-                "discovery_path": repo_relative(discovery_path),
-                "discovery_sha256": sha256_file(discovery_path),
-                "discovery_payload_sha256": discovery["payload_sha256"],
-                "confirmation_path": repo_relative(confirmation_path),
-                "confirmation_sha256": sha256_file(confirmation_path),
-                "confirmation_payload_sha256": confirmation["payload_sha256"],
+                "fixture_id": discovery["payload"]["fixture_id"],
+                "source_branch_ids": discovery["payload"]["branch_ids"],
+                "input_execution_revision": discovery["payload"][
+                    "input_execution_revision"
+                ],
+                "config_sha256": discovery["payload"]["config_sha256"],
+                "transient_discovery_sha256": sha256_file(discovery_path),
+                "transient_discovery_payload_sha256": discovery["payload_sha256"],
+                "transient_confirmation_sha256": sha256_file(confirmation_path),
+                "transient_confirmation_payload_sha256": confirmation[
+                    "payload_sha256"
+                ],
+                "transient_batch_artifacts_retained": False,
                 "attempted_count": discovery["payload"]["attempted_count"],
                 "resolved_count": discovery["payload"]["resolved_count"],
+                "primary_search_native_steps": discovery["payload"][
+                    "primary_search_native_steps"
+                ],
                 "candidate_count": discovery["payload"][
                     "candidate_count_pre_global_deduplication"
                 ],
@@ -349,10 +387,7 @@ def build_payload() -> tuple[dict[str, Any], list[Path]]:
             ),
             "unresolved_count": len(unresolved),
             "primary_search_native_steps": sum(
-                read_json(Path(REPO_ROOT / record["discovery_path"]))["payload"][
-                    "primary_search_native_steps"
-                ]
-                for record in batch_records
+                record["primary_search_native_steps"] for record in batch_records
             ),
             "status_counts": dict(sorted(status_counts.items())),
             "full_path_failure_mode_counts": dict(sorted(failure_mode_counts.items())),
@@ -366,21 +401,24 @@ def build_payload() -> tuple[dict[str, Any], list[Path]]:
             "resume_or_shard_order_changes_attempt_population": False,
         },
         "attempt_ledger_storage": {
-            "mode": "sharded_discovery_batch_artifacts",
+            "mode": "transient_shards_compacted_to_retained_summary",
             "attempt_count": len(attempts),
             "batch_count": len(batch_records),
-            "batch_paths_and_digests": [
-                {
-                    "batch_id": row["batch_id"],
-                    "path": row["discovery_path"],
-                    "sha256": row["discovery_sha256"],
-                    "payload_sha256": row["discovery_payload_sha256"],
-                }
-                for row in batch_records
-            ],
+            "every_attempt_serialized_and_validated_during_execution": True,
+            "transient_shards_retained": False,
             "aggregate_attempt_ledger_digest": semantic_digest(attempts),
-            "aggregate_does_not_duplicate_attempt_rows": True,
+            "attempt_population_identity_digest": semantic_digest(
+                sorted(row["attempt_id"] for row in attempts)
+            ),
+            "retained_clean_bounded_negative_row_count": sum(
+                row["candidate_status"] == "bounded_negative" for row in attempts
+            ),
+            "retained_noncandidate_rows_are_sufficient_statistics": True,
         },
+        "clean_bounded_negative_rows": [
+            row for row in attempts if row["candidate_status"] == "bounded_negative"
+        ],
+        "negative_classification_matrix": _classification_matrix(attempts),
         "branch_primary_lane_coverage": branch_coverage,
         "branch_accessibility_summary": {
             "accepted_source_branch_count": len(branch_coverage),
@@ -451,7 +489,7 @@ def build_payload() -> tuple[dict[str, Any], list[Path]]:
     }
     if find_absolute_paths(payload):
         raise ValueError("I4 aggregate payload contains absolute paths")
-    return payload, artifact_paths
+    return payload
 
 
 def render_report(payload: dict[str, Any]) -> str:
@@ -516,9 +554,11 @@ def render_report(payload: dict[str, Any]) -> str:
             for mode, count in accounting["full_path_failure_mode_counts"].items()
         ],
         "",
-        "Attempt rows live once in the 12 digest-bound discovery shards. The aggregate",
-        "stores their paths, hashes, total count, and one aggregate ledger digest rather",
-        "than duplicating the complete ledger.",
+        "All attempt rows were serialized and validated in transient execution shards.",
+        "The retained artifact keeps the attempt-population and aggregate-ledger digests,",
+        "per-batch identities and counts, all 27 clean bounded-negative rows, branch",
+        "coverage, the classification matrix, and compact outlier groups. The transient",
+        "shards are not repository evidence and are not retained.",
         "",
         "The I2 empty-path rule therefore makes I5-I7 positive lanes not applicable",
         "and routes the accepted empty candidate set to bounded I8 closeout. This is",
@@ -538,7 +578,7 @@ def render_report(payload: dict[str, Any]) -> str:
 
 
 def main() -> None:
-    payload, batch_paths = build_payload()
+    payload = build_payload()
     artifact = envelope(payload, "b2_i4_native_preparation_reachability_v2", COMMAND)
     write_json(OUTPUT_PATH, artifact)
     REPORT_PATH.write_text(render_report(payload), encoding="utf-8")
@@ -554,7 +594,7 @@ def main() -> None:
             "output_payload_sha256": artifact["payload_sha256"],
             "output_artifact_digests": {
                 repo_relative(path): sha256_file(path)
-                for path in [*batch_paths, OUTPUT_PATH, REPORT_PATH]
+                for path in [OUTPUT_PATH, REPORT_PATH]
             },
             "claim_ceiling": payload["claim_ceiling"],
             "assigned_GRR_rung": "not_assigned",

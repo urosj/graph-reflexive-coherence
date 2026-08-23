@@ -476,7 +476,7 @@ validator. That sentinel remains fixture-only and is not scientific evidence.
 - [x] Add an F2 nonuniform-branch regression test and supersede all preliminary batch files before restarting the search.
 - [x] Preserve exact full-path failure modes on nonpositive attempt-ledger rows rather than collapsing them into a generic cleanliness failure.
 - [x] Apply I2 empty-path semantics: zero confirmed I4 candidates makes I5-I7 positive lanes not applicable and routes to bounded closeout.
-- [x] Store the complete attempt ledger once in digest-bound shards and keep the aggregate as a reconstructible index rather than duplicating all 9,648 rows.
+- [x] Serialize and validate every attempt in transient shards, then retain only digests, batch/count matrices, branch coverage, all clean bounded-negative rows, and compact outlier evidence.
 
 - [ ] Execute only the preregistered search algorithms, budgets, seeds, and stopping rules.
 - [ ] Start every positive candidate through declared ancestry from an accepted B1-GR branch.

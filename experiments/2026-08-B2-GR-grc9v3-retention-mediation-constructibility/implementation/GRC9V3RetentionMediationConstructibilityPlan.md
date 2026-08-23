@@ -1179,13 +1179,14 @@ freezes an empty `B2-C3-ready` set, marks I5-I7 positive lanes `not_applicable`,
 and routes to bounded I8 closeout. All batches are rerun from the corrected,
 committed revision so their execution identity remains coherent.
 
-The attempt ledger is stored once in 12 digest-bound discovery shards. Per-row
-history records retain the full schedule and parameter-vector digests while the
-accepted source snapshot and frozen variant reconstruct the complete parameter
-objects. The aggregate binds every shard and one aggregate ledger digest rather
-than duplicating all rows. This is a representation compaction only: attempt
-identity, classification, margins, full-path failure modes, and candidate records
-are unchanged.
+Every attempt is serialized and validated in a transient execution shard. Those
+shards are not retained as repository evidence. The retained aggregate stores the
+attempt-population and aggregate-ledger digests, per-batch execution identities
+and counts, all clean bounded-negative rows, branch coverage, failure-mode and
+classification matrices, and compact outlier digests/samples. Per-row histories
+bind full parameter vectors by digest while the accepted source snapshot and
+frozen variant reconstruct them. This compaction changes no attempt identity,
+classification, margin, full-path failure mode, or candidate record.
 
 I4 uses only reachability, state validity, formation contrast, and its declared
 one-transition persistence magnitude. It does not inspect slow clusters,
