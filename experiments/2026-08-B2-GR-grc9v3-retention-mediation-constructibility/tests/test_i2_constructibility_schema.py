@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from pathlib import Path
+import re
 import sys
 import unittest
 
@@ -41,6 +42,19 @@ class I2ConstructibilitySchemaTests(unittest.TestCase):
         self.assertEqual(
             fields["artifact_sha256_status"]["positive_required_value"], "all_match"
         )
+
+    def test_candidate_schema_contains_every_plan_required_field(self) -> None:
+        plan = (
+            EXPERIMENT_ROOT
+            / "implementation/GRC9V3RetentionMediationConstructibilityPlan.md"
+        ).read_text(encoding="utf-8")
+        section = plan.split("## 7. Required Candidate Record", 1)[1]
+        block = re.search(r"```text\n(.*?)```", section, re.DOTALL)
+        self.assertIsNotNone(block)
+        planned_fields = {
+            line.strip() for line in block.group(1).splitlines() if line.strip()
+        }
+        self.assertEqual(planned_fields - set(REQUIRED_CANDIDATE_FIELDS), set())
 
     def test_grr_and_closeout_ladders_are_separate_and_complete(self) -> None:
         self.assertEqual(
@@ -81,6 +95,17 @@ class I2ConstructibilitySchemaTests(unittest.TestCase):
             envelope["search_algorithm"], "deterministic_lexicographic_exhaustive_grid"
         )
         self.assertEqual(envelope["maximum_discovery_rows"], 9648)
+        self.assertEqual(
+            envelope["discovery_row_count_breakdown"],
+            {
+                "native_spontaneous_rows": 48,
+                "source_total_oriented_edge_count": 160,
+                "base_C_pulse_rows": 1920,
+                "temporary_parameter_history_rows": 7680,
+                "formula": "48 + (160 * 3 amplitudes * 4 history lengths) + (160 * 3 amplitudes * 4 parameter variants * 4 history lengths)",
+                "total": 9648,
+            },
+        )
         self.assertEqual(envelope["history_lengths_native_steps"], [1, 2, 4, 8])
         self.assertEqual(
             envelope["persistence_horizons_native_steps"], [1, 2, 4, 8, 16, 32]

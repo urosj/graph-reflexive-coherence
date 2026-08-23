@@ -78,6 +78,14 @@
     "history_lengths_native_steps": [1, 2, 4, 8],
     "persistence_horizons_native_steps": [1, 2, 4, 8, 16, 32],
     "seed_rule": "consume_each_source_branch_rng_state_without_reseeding_or_post_hoc_seed_selection",
+    "discovery_row_count_breakdown": {
+      "native_spontaneous_rows": 48,
+      "source_total_oriented_edge_count": 160,
+      "base_C_pulse_rows": 1920,
+      "temporary_parameter_history_rows": 7680,
+      "formula": "48 + (160 * 3 amplitudes * 4 history lengths) + (160 * 3 amplitudes * 4 parameter variants * 4 history lengths)",
+      "total": 9648
+    },
     "maximum_discovery_rows": 9648,
     "maximum_discovery_native_steps": 50000,
     "maximum_fresh_process_confirmations": 9600,

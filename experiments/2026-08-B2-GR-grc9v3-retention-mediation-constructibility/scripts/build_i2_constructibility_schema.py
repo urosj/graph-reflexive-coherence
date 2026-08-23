@@ -580,6 +580,11 @@ def build_checks(payload: dict[str, Any]) -> dict[str, bool]:
         ]
         == 48
         and "without_ranking" in payload["search_envelope"]["source_branch_rule"],
+        "discovery_row_budget_arithmetic_frozen": payload["search_envelope"][
+            "discovery_row_count_breakdown"
+        ]["total"]
+        == payload["search_envelope"]["maximum_discovery_rows"]
+        == 9648,
         "primary_lane_fixed_topology_event_free": payload["primary_lane"][
             "fixed_topology"
         ]
@@ -702,6 +707,14 @@ def build_payload(input_revision: str) -> dict[str, Any]:
     contract = read_json(REPO_ROOT / CONFIG_RELATIVE)
     source = load_and_validate_i1(input_revision)
     i1_payload = source["artifact"]["payload"]
+    oriented_edge_count = sum(
+        2 * len(row["edge_order"]) for row in i1_payload["B1_branch_crosswalk"]["rows"]
+    )
+    expected_oriented_edge_count = contract["search_envelope"][
+        "discovery_row_count_breakdown"
+    ]["source_total_oriented_edge_count"]
+    if oriented_edge_count != expected_oriented_edge_count:
+        raise ValueError("I2 search-envelope oriented-edge count does not match I1")
     carrier_schema = deepcopy(contract["carrier_definitions"])
     for row in carrier_schema:
         row["driver_carrier_overlap_effect"] = row.pop("direct_C_driver_overlap_effect")
