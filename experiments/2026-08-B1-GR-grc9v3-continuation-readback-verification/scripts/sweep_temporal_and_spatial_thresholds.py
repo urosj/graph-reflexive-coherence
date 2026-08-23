@@ -847,8 +847,12 @@ def _ce1_threshold_separation(
         for row in rows
         for value in row["analytical_continuation_hessian"]["eigenvalues"]
     ]
-    negative_witness = max(-value for value in eigenvalues if value < 0.0)
-    positive_witness = max(value for value in eigenvalues if value > 0.0)
+    negative_witness = min(
+        -value for value in eigenvalues if value < -spatial_tolerance
+    )
+    positive_witness = min(
+        value for value in eigenvalues if value > spatial_tolerance
+    )
     zero_residual = min(abs(value) for value in eigenvalues)
     plus_one_residual = min(
         abs(float(mode["real"]) - 1.0)

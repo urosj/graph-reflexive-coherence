@@ -13,7 +13,10 @@ from branch_continuation import (  # noqa: E402
     classify_discrete_spectrum,
     match_real_invariant_clusters,
 )
-from sweep_temporal_and_spatial_thresholds import _plain_config  # noqa: E402
+from sweep_temporal_and_spatial_thresholds import (  # noqa: E402
+    _ce1_threshold_separation,
+    _plain_config,
+)
 
 
 class GRV7SpatialTemporalThresholdTest(unittest.TestCase):
@@ -178,6 +181,34 @@ class GRV7SpatialTemporalThresholdTest(unittest.TestCase):
         self.assertEqual(
             "comparison_blocked_not_threshold_disagreement",
             contract["failed_reduction_or_stratum_gate_classification"],
+        )
+
+    def test_ce1_separation_uses_nearest_off_threshold_witnesses(self) -> None:
+        rows = []
+        for eigenvalue, multiplier in (
+            (-2.0, 1.4),
+            (-1.0, 1.2),
+            (0.0, 1.0),
+            (1.0, 0.8),
+            (2.0, 0.6),
+        ):
+            rows.append(
+                {
+                    "analytical_continuation_hessian": {
+                        "eigenvalues": [eigenvalue]
+                    },
+                    "frozen_W_temporal_comparator": {
+                        "multipliers": [
+                            {"real": multiplier, "imag": 0.0}
+                        ]
+                    },
+                }
+            )
+        audit = _ce1_threshold_separation(rows, self.config)
+        self.assertTrue(audit["passed"])
+        self.assertAlmostEqual(
+            1.0 - self.config["thresholds"]["spatial_zero_tolerance"],
+            audit["minimum_off_threshold_separation_margin"],
         )
 
     def test_claim_ceiling_preserves_full_map_and_global_boundaries(self) -> None:
