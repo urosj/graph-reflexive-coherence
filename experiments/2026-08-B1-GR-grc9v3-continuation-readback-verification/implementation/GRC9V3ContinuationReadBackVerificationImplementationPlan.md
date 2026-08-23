@@ -1124,7 +1124,9 @@ for the threshold relation.
 
 1. Type `H_row`, `H_signed`, `H_WLS`, `H_cont^{W*}`, `A_W H_cont^{W*}`, and
    `A_full` by domain, metric, sign convention, and threshold rule before
-   comparing them. Do not pair modes by sorted eigenvalue index.
+   comparing them. Do not pair modes by sorted eigenvalue index. A reproducible
+   WLS output is not identifying threshold evidence when its raw quadratic
+   design is rank deficient; declared regularization must remain visible.
 2. Continue accepted branch families across `+1`, stable-interior, `-1`, and
    any complex unit-circle transition available in scope using preregistered
    branch matching, cluster matching, parameter-step, and restart rules.
@@ -1137,11 +1139,18 @@ for the threshold relation.
    and symmetry character where a crossing is claimed.
 5. Record full transition multipliers, frozen comparators, row/signed/WLS
    Hessians, event status, and basin/spark evidence.
-6. Require an uncertainty-separated threshold witness and off-threshold bracket
+6. Audit any admitted complete-step `+1` cluster for conservation, gauge,
+   branch-tangent, block-participation, conditioning, and uncertainty status.
+   If nontriviality is unresolved, retain it as an admitted near-unit spectrum
+   rather than an informative temporal threshold.
+7. Require an uncertainty-separated threshold witness and off-threshold bracket
    for a decisive counterexample.
-7. Stop smooth continuation at event, topology, sink/basin, budget-active-set,
+8. Stop smooth continuation at event, topology, sink/basin, budget-active-set,
    clipping, or other categorical boundaries.
-8. Preserve bounded correlation findings without universalizing them.
+9. Map every selected source branch to each primary or symmetry path use so
+   repeated branch use across parameter axes cannot look like post-spectrum
+   branch omission.
+10. Preserve bounded correlation findings without universalizing them.
 
 ### Required outputs
 

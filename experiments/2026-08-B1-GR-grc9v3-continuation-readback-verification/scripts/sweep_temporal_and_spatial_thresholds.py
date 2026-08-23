@@ -277,6 +277,62 @@ def _branch_certification(
 def _spatial_diagnostics(model: GRC9V3) -> dict[str, Any]:
     model.rebuild_differential_state()
     state = model.get_state()
+    row_neighborhoods = state.cached_quantities.get("row_neighborhoods", {})
+    regularization = float(
+        model.get_params().raw_config["evolution"].get(
+            "hessian_regularization", 0.0
+        )
+    )
+    wls_identifiability_by_node: dict[str, Any] = {}
+    for node_id in sorted(state.topology.iter_live_node_ids()):
+        node_rows = row_neighborhoods.get(str(node_id), {})
+        features = []
+        weights = []
+        for row_id, edge_ids in sorted(node_rows.items(), key=lambda item: int(item[0])):
+            row_index = int(row_id) - 1
+            feature = np.zeros(6, dtype=float)
+            feature[row_index] = 0.5
+            for edge_id in edge_ids:
+                weight = float(state.base_conductance[int(edge_id)])
+                if weight > 0.0:
+                    features.append(feature.copy())
+                    weights.append(weight)
+        design = (
+            np.asarray(features, dtype=float)
+            if features
+            else np.zeros((0, 6), dtype=float)
+        )
+        raw_normal = sum(
+            (
+                weight * np.outer(feature, feature)
+                for feature, weight in zip(design, weights, strict=True)
+            ),
+            start=np.zeros((6, 6), dtype=float),
+        )
+        raw_rank = int(np.linalg.matrix_rank(raw_normal, tol=1e-12))
+        regularized_normal = raw_normal + regularization * np.eye(6)
+        regularized_condition = (
+            float(np.linalg.cond(regularized_normal))
+            if regularization > 0.0
+            else None
+        )
+        raw_identifiable = raw_rank == 6
+        wls_identifiability_by_node[str(node_id)] = {
+            "sample_count": len(features),
+            "quadratic_feature_dimension": 6,
+            "raw_design_rank": raw_rank,
+            "raw_design_full_rank": raw_identifiable,
+            "declared_regularization": regularization,
+            "regularization_used": regularization > 0.0,
+            "regularization_is_silent": False,
+            "regularized_normal_condition_number": regularized_condition,
+            "threshold_interpretation_allowed": raw_identifiable,
+            "status": (
+                "admitted_identifying_WLS_comparison"
+                if raw_identifiable
+                else "available_regularized_comparison_output_raw_design_rank_deficient"
+            ),
+        }
     record = {
         "row_basis_unsigned_hessian_by_node": deepcopy(
             state.cached_quantities.get("row_basis_hessian_unsigned", {})
@@ -293,6 +349,39 @@ def _spatial_diagnostics(model: GRC9V3) -> dict[str, Any]:
             "hessian_backend"
         ),
         "weighted_least_squares_role": "comparison_backend_only",
+        "diagnostic_identifiability": {
+            "row_basis_unsigned": {
+                "status": "admitted_exact_runtime_local_diagnostic",
+                "threshold_rule_defined": False,
+                "threshold_interpretation_allowed": False,
+                "rank_or_conditioning_requirement": "not_applicable_exact_row_aggregation",
+                "silent_regularization_used": False,
+            },
+            "signed_row_basis": {
+                "status": "admitted_exact_runtime_local_diagnostic",
+                "threshold_rule_defined": False,
+                "threshold_interpretation_allowed": False,
+                "rank_or_conditioning_requirement": "not_applicable_exact_row_aggregation",
+                "silent_regularization_used": False,
+            },
+            "weighted_least_squares": {
+                "status": (
+                    "admitted_identifying_comparison"
+                    if all(
+                        row["raw_design_full_rank"]
+                        for row in wls_identifiability_by_node.values()
+                    )
+                    else "available_nonidentifying_comparison_only"
+                ),
+                "threshold_rule_defined": False,
+                "threshold_interpretation_allowed": False,
+                "no_silent_regularization": True,
+                "per_node": wls_identifiability_by_node,
+            },
+            "CE1_claim_kind": (
+                "failure_of_cross_object_identification_not_disagreement_between_two_admitted_runtime_threshold_crossings"
+            ),
+        },
     }
     record["runtime_spatial_diagnostics_sha256"] = semantic_digest(record)
     return record
@@ -387,6 +476,93 @@ def _comparison_admissibility(
     }
 
 
+def _complete_step_plus_one_audit(
+    audit: dict[str, Any],
+    classification: dict[str, Any],
+    *,
+    multiplier_tolerance: float,
+) -> dict[str, Any]:
+    if audit["square_transition_jacobian_status"] != "admitted":
+        return {
+            "status": "not_applicable_complete_step_matrix_blocked",
+            "plus_one_cluster_present": False,
+            "informative_nontrivial_plus_one_threshold_supported": False,
+        }
+    diagnostics = audit["temporal_mode_diagnostics"]
+    plus_one_modes = []
+    for mode in diagnostics["modes"]:
+        eigenvalue = complex(
+            float(mode["eigenvalue"]["real"]),
+            float(mode["eigenvalue"]["imag"]),
+        )
+        if abs(eigenvalue - 1.0) <= multiplier_tolerance:
+            plus_one_modes.append(mode)
+    convergence_errors = [
+        float(value)
+        for value in audit["spectral_convergence"]["adjacent_eigenvalue_set_errors"]
+    ]
+    unit_circle_uncertainty = max(
+        [multiplier_tolerance, *convergence_errors]
+    )
+    conservation_status = diagnostics["conservation_mode_policy"]
+    gauge_status = diagnostics["gauge_mode_status"]
+    branch_tangent_status = diagnostics["branch_tangent_status"]
+    branch_tangent_resolved = branch_tangent_status not in {
+        "not_separately_identified",
+        "not_identifiable",
+        "unresolved",
+    }
+    informative = bool(
+        plus_one_modes
+        and branch_tangent_resolved
+        and classification["plus_one_reached"]
+    )
+    return {
+        "status": (
+            "informative_nontrivial_plus_one_threshold"
+            if informative
+            else (
+                "admitted_near_unit_cluster_nontriviality_unresolved"
+                if plus_one_modes
+                else "no_plus_one_cluster"
+            )
+        ),
+        "plus_one_cluster_present": bool(plus_one_modes),
+        "plus_one_mode_count": len(plus_one_modes),
+        "conservation_overlap": conservation_status,
+        "gauge_overlap": gauge_status,
+        "branch_tangent_overlap": branch_tangent_status,
+        "C_W_J_participation": [
+            {
+                "mode_index": int(mode["mode_index"]),
+                "C": float(mode["block_participation"]["normalized"].get("C", 0.0)),
+                "W": "not_independent_in_declared_C_causal_chart",
+                "J": "not_independent_in_declared_C_causal_chart",
+            }
+            for mode in plus_one_modes
+        ],
+        "maximum_left_residual_l2": float(
+            diagnostics["maximum_left_residual_l2"]
+        ),
+        "maximum_right_residual_l2": float(
+            diagnostics["maximum_right_residual_l2"]
+        ),
+        "eigenvector_condition_number": diagnostics[
+            "eigenvector_condition_number"
+        ],
+        "individual_eigenvector_condition_passed": diagnostics[
+            "nonnormal_control"
+        ]["individual_eigenvector_condition_passed"],
+        "unit_circle_uncertainty": unit_circle_uncertainty,
+        "trivial_mode_exclusion_result": (
+            "conservation_removed_and_no_gauge_but_branch_tangent_not_separately_identified"
+            if plus_one_modes and not branch_tangent_resolved
+            else "resolved_or_not_applicable"
+        ),
+        "informative_nontrivial_plus_one_threshold_supported": informative,
+    }
+
+
 def _temporal_diagnostics(
     model: GRC9V3,
     config: dict[str, Any],
@@ -443,6 +619,11 @@ def _temporal_diagnostics(
         threshold_tolerance=float(thresholds["discrete_multiplier_tolerance"]),
         complex_imaginary_floor=float(thresholds["complex_imaginary_floor"]),
     )
+    plus_one_audit = _complete_step_plus_one_audit(
+        audit,
+        classification,
+        multiplier_tolerance=float(thresholds["discrete_multiplier_tolerance"]),
+    )
     return (
         {
             "square_transition_jacobian_status": audit[
@@ -455,6 +636,7 @@ def _temporal_diagnostics(
             "temporal_interpretation_admitted": interpretation_admitted,
             "complete_step_multipliers": _complex_records(values),
             "classification": classification,
+            "plus_one_mode_audit": plus_one_audit,
             "baseline_stratum_margins": audit["baseline_stratum_margins"],
         },
         matrix if interpretation_admitted else None,
@@ -964,6 +1146,14 @@ def _counterexamples(
         }
         if path["path_id"] == "F1_scale_structural_path":
             separation = _ce1_threshold_separation(rows, config)
+            identifiability = rows[0]["spatial_diagnostics"][
+                "diagnostic_identifiability"
+            ]
+            identifiability_stable = all(
+                row["spatial_diagnostics"]["diagnostic_identifiability"]
+                == identifiability
+                for row in rows
+            )
             structural_signs = {
                 "negative": any(
                     min(row["analytical_continuation_hessian"]["eigenvalues"])
@@ -985,6 +1175,13 @@ def _counterexamples(
                 and all(structural_signs.values())
                 and "plus_one_marginality" in frozen_classes
                 and separation["passed"]
+                and identifiability_stable
+                and identifiability["row_basis_unsigned"]["status"]
+                == "admitted_exact_runtime_local_diagnostic"
+                and identifiability["signed_row_basis"]["status"]
+                == "admitted_exact_runtime_local_diagnostic"
+                and identifiability["weighted_least_squares"]["status"]
+                == "available_nonidentifying_comparison_only"
                 and all(
                     row["comparison_admissibility"]["frozen_W_comparator"][
                         "admitted"
@@ -1007,7 +1204,15 @@ def _counterexamples(
                     "reduction_admissibility": "admitted_clamped_W_no_current_slaving",
                     "critical_subspace_audit": _one_dimensional_critical_subspace_audit(),
                     "threshold_separation_audit": separation,
-                    "claim": "runtime_row_signed_and_WLS_Hessians_do_not_identify_analytical_structural_plus_one_threshold_on_this_path",
+                    "runtime_diagnostic_identifiability": identifiability,
+                    "admitted_runtime_diagnostic_roles": [
+                        "row_basis_unsigned_exact_local_diagnostic_non_thresholding",
+                        "signed_row_basis_exact_local_diagnostic_non_thresholding",
+                    ],
+                    "nonidentifying_runtime_comparison_roles": [
+                        "weighted_least_squares_regularized_raw_design_rank_deficient"
+                    ],
+                    "claim": "runtime_row_and_signed_local_diagnostics_remain_unchanged_and_the_nonidentifying_WLS_comparison_is_not_used_as_a_threshold_while_the_analytical_structural_plus_one_threshold_is_crossed",
                     "claim_allowed": passed,
                     "full_map_counterexample": False,
                 }
@@ -1060,6 +1265,31 @@ def _counterexamples(
                 }
             )
     return results
+
+
+def _selected_source_branch_path_map(config: dict[str, Any]) -> list[dict[str, Any]]:
+    mapping: dict[str, list[dict[str, str]]] = {}
+    for path in config["paths"]:
+        mapping.setdefault(path["source_branch_id"], []).append(
+            {"path_id": path["path_id"], "role": "primary", "status": "executed"}
+        )
+        for source_id in path["symmetry_partner_source_branch_ids"]:
+            mapping.setdefault(source_id, []).append(
+                {
+                    "path_id": path["path_id"],
+                    "role": "symmetry_partner",
+                    "status": "executed",
+                }
+            )
+    return [
+        {
+            "source_branch_id": source_id,
+            "path_uses": uses,
+            "path_use_count": len(uses),
+            "fully_accounted": bool(uses),
+        }
+        for source_id, uses in sorted(mapping.items())
+    ]
 
 
 def execute_grv7(config: dict[str, Any]) -> dict[str, Any]:
@@ -1180,6 +1410,16 @@ def execute_grv7(config: dict[str, Any]) -> dict[str, Any]:
         ]
         for row in full_rows
     }
+    informative_full_classes = sorted(
+        {
+            "plus_one_marginality"
+            for row in full_rows
+            if row["complete_step_temporal"]["plus_one_mode_audit"][
+                "informative_nontrivial_plus_one_threshold_supported"
+            ]
+        }
+    )
+    branch_path_map = _selected_source_branch_path_map(config)
     supported_counterexamples = [
         row for row in counterexamples if row.get("status") == "supported"
     ]
@@ -1211,8 +1451,10 @@ def execute_grv7(config: dict[str, Any]) -> dict[str, Any]:
         "continuation_path_count": len(path_records),
         "primary_continuation_point_count": len(primary_points),
         "symmetry_inclusive_continuation_point_count": len(all_points),
-        "all_continuation_points_admitted": all(
-            row["path_point_admitted"] for row in all_points
+        "all_frozen_continuation_comparator_points_admitted": all(
+            row["path_point_admitted"]
+            and row["comparison_admissibility"]["frozen_W_comparator"]["admitted"]
+            for row in all_points
         ),
         "complete_step_temporal_interpretation_admitted_primary_point_count": len(
             full_rows
@@ -1221,6 +1463,12 @@ def execute_grv7(config: dict[str, Any]) -> dict[str, Any]:
         - len(full_rows),
         "frozen_temporal_classes_reached": sorted(frozen_classes),
         "complete_step_temporal_classes_reached": sorted(full_classes),
+        "complete_step_informative_nontrivial_temporal_classes_reached": informative_full_classes,
+        "complete_step_plus_one_interpretation": (
+            "admitted_near_unit_spectrum_but_nontriviality_unresolved"
+            if "plus_one_marginality" in full_classes and not informative_full_classes
+            else "see_per_row_plus_one_mode_audit"
+        ),
         "frozen_plus_one_reached": "plus_one_marginality" in frozen_classes,
         "frozen_stable_interior_reached": "stable_interior" in frozen_classes,
         "frozen_minus_one_reached": "minus_one_flip_marginality" in frozen_classes,
@@ -1233,10 +1481,18 @@ def execute_grv7(config: dict[str, Any]) -> dict[str, Any]:
             decisive_counterexamples
         ),
         "supported_full_map_counterexample_count": len(full_counterexamples),
-        "bounded_spatial_temporal_non_equivalence_supported": bool(
+        "non_equivalence_scope": (
+            "clamped_W_reduced_spatial_continuation_and_discrete_threshold_only"
+        ),
+        "reduced_spatial_continuation_temporal_non_equivalence_supported": bool(
             supported_counterexamples
         ),
+        "runtime_spatial_vs_full_temporal_non_equivalence_supported": False,
         "full_map_non_equivalence_supported": bool(full_counterexamples),
+        "selected_source_branches_fully_accounted": bool(
+            len(branch_path_map) == len(selected_branch_ids)
+            and all(row["fully_accounted"] for row in branch_path_map)
+        ),
         "all_branch_identity_audits_passed": all(
             path["branch_identity_audit"]["passed"] for path in path_records
         ),
@@ -1272,6 +1528,7 @@ def execute_grv7(config: dict[str, Any]) -> dict[str, Any]:
                 "source_branch_selection"
             ],
             "selected_source_branch_ids": sorted(selected_branch_ids),
+            "selected_source_branch_path_map": branch_path_map,
             "all_48_source_branches_retained_in_accounting": True,
         },
         "scientific_discriminator_priority": config[
@@ -1288,7 +1545,8 @@ def execute_grv7(config: dict[str, Any]) -> dict[str, Any]:
         "counterexamples": counterexamples,
         "bounded_correlations": {
             "nonuniform_complete_step_classes": sorted(full_classes),
-            "interpretation": "admitted_nonuniform_points_are_bounded_correlations_only_and_do_not_establish_a_universal_spatial_temporal_identity",
+            "informative_nontrivial_complete_step_classes": informative_full_classes,
+            "interpretation": "admitted_nonuniform_near_unit_spectra_have_unresolved_branch_tangent_overlap_and_are_bounded_correlations_only_not_informative_nontrivial_thresholds_or_a_universal_spatial_temporal_identity",
         },
         "summary": summary,
         "claim_boundary": config["claim_boundary"],
@@ -1298,6 +1556,15 @@ def execute_grv7(config: dict[str, Any]) -> dict[str, Any]:
 def write_report(payload: dict[str, Any]) -> Any:
     summary = payload["summary"]
     counterexamples = payload["counterexamples"]
+    source_accounting_rows = []
+    for row in payload["source_contract"]["selected_source_branch_path_map"]:
+        path_uses = ", ".join(
+            f"`{use['path_id']}`" for use in row["path_uses"]
+        )
+        roles = ", ".join(f"`{use['role']}`" for use in row["path_uses"])
+        source_accounting_rows.append(
+            f"| `{row['source_branch_id']}` | {path_uses} | {roles} | `executed` |"
+        )
     report = (
         EXPERIMENT_ROOT
         / "reports/b1_grv7_spatial_temporal_continuation_thresholds.md"
@@ -1315,11 +1582,13 @@ def write_report(payload: dict[str, Any]) -> Any:
         f"complete_step_temporal_blocked_points = {summary['complete_step_temporal_blocked_primary_point_count']}",
         f"frozen_temporal_classes_reached = {summary['frozen_temporal_classes_reached']}",
         f"complete_step_temporal_classes_reached = {summary['complete_step_temporal_classes_reached']}",
+        f"complete_step_informative_nontrivial_temporal_classes_reached = {summary['complete_step_informative_nontrivial_temporal_classes_reached']}",
         f"supported_bounded_counterexample_count = {summary['supported_bounded_counterexample_count']}",
         f"decisive_uncertainty_separated_counterexample_count = {summary['decisive_uncertainty_separated_counterexample_count']}",
         f"supported_full_map_counterexample_count = {summary['supported_full_map_counterexample_count']}",
-        f"bounded_spatial_temporal_non_equivalence_supported = {str(summary['bounded_spatial_temporal_non_equivalence_supported']).lower()}",
-        f"full_map_non_equivalence_supported = {str(summary['full_map_non_equivalence_supported']).lower()}",
+        f"non_equivalence_scope = {summary['non_equivalence_scope']}",
+        f"reduced_spatial_continuation_temporal_non_equivalence_supported = {str(summary['reduced_spatial_continuation_temporal_non_equivalence_supported']).lower()}",
+        f"runtime_spatial_vs_full_temporal_non_equivalence_supported = {str(summary['runtime_spatial_vs_full_temporal_non_equivalence_supported']).lower()}",
         "scientific_acceptance = awaiting_human_review",
         "GRV_C5_assigned = false",
         "GRV8_authorized = false",
@@ -1353,11 +1622,24 @@ def write_report(payload: dict[str, Any]) -> Any:
         "stops on topology, event, categorical, residual, state-match, or parameter-step",
         "failure. An unreached threshold is not counted as negative evidence.",
         "",
+        "## Selected Source Accounting",
+        "",
+        "Seven unique source branches feed six primary parameter paths because the same",
+        "F2 pair and F3 triplet are reused across separate `dt` and `eta` paths. No",
+        "selected branch was dropped after spectrum inspection.",
+        "",
+        "| Source branch | Path uses | Roles | Status |",
+        "| --- | --- | --- | --- |",
+        *source_accounting_rows,
+        "",
         "## Threshold Evidence",
         "",
         "The F1 scale path holds the graph and coherence state fixed while changing",
-        "the quadratic potential scale. Its exact runtime row-basis unsigned, signed,",
-        "and WLS spatial diagnostics remain identical, while the separately derived",
+        "the quadratic potential scale. Its exact runtime row-basis unsigned and signed",
+        "local diagnostics remain identical. The WLS surface is also reproducible but",
+        "is not threshold evidence: each node has one sample for a six-feature quadratic",
+        "fit, so its raw design is rank deficient and the emitted zero matrix depends on",
+        "declared regularization. The separately derived",
         "analytical constrained second variation passes through zero and the frozen-`W`",
         "multiplier reaches `+1`. This distinguishes the runtime local spatial",
         "diagnostics from the analytical continuation Hessian.",
@@ -1373,7 +1655,10 @@ def write_report(payload: dict[str, Any]) -> Any:
         "perturbations leave the zero-current sink/basin identity stratum. GRV7 preserves",
         "that block rather than treating it as finite-difference nonconvergence. F2/F3",
         "nonuniform points retain admitted complete-step spectra with basis, phase, and",
-        "symmetry controls. Their observed relation is reported as bounded correlation;",
+        "symmetry controls. Their near-`+1` modes have the conservation direction removed",
+        "and no declared gauge, but branch-tangent overlap is not separately identified.",
+        "They are therefore admitted near-unit spectra, not informative nontrivial",
+        "thresholds. Their observed relation is reported as bounded correlation;",
         "the preregistered paths do not supply a complete-step threshold crossing.",
         "",
         "No complex unit-circle crossing was reached. The frozen comparator is real",
@@ -1392,8 +1677,9 @@ def write_report(payload: dict[str, Any]) -> Any:
         "",
         "## Claim Boundary",
         "",
-        "GRV7 may support bounded non-equivalence among runtime spatial diagnostics,",
-        "the analytical continuation Hessian, and discrete frozen-`W` thresholds. It",
+        "GRV7 supports only bounded reduced non-equivalence among admitted runtime local",
+        "spatial diagnostics, the analytical continuation Hessian, and discrete frozen-",
+        "`W` thresholds. It",
         "does not prove spatial Hessians never correlate with temporal or basin",
         "transitions, does not turn the frozen comparator into the complete step map,",
         "and does not establish continuation, retention, Read-Back, or write-back.",
@@ -1458,7 +1744,7 @@ def run_grv7() -> None:
             "grv7_summary": payload["summary"],
             "status": "awaiting_scientific_review",
             "blocked_gates": ["GRV8"],
-            "claim_ceiling": "bounded_spatial_temporal_and_continuation_threshold_non_equivalence_without_universal_noncorrelation_or_readback_claim_pending_human_review",
+            "claim_ceiling": "bounded_clamped_W_reduced_spatial_continuation_and_discrete_threshold_non_equivalence_without_runtime_spatial_vs_full_temporal_non_equivalence_or_readback_claim_pending_human_review",
         }
     )
     validate_receipt(receipt)

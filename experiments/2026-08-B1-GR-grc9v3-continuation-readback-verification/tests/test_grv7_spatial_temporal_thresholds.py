@@ -15,6 +15,7 @@ from branch_continuation import (  # noqa: E402
 )
 from sweep_temporal_and_spatial_thresholds import (  # noqa: E402
     _ce1_threshold_separation,
+    _selected_source_branch_path_map,
     _plain_config,
 )
 
@@ -242,12 +243,38 @@ class GRV7SpatialTemporalThresholdTest(unittest.TestCase):
     def test_claim_ceiling_preserves_full_map_and_global_boundaries(self) -> None:
         claims = self.config["claim_boundary"]
         self.assertFalse(claims["frozen_comparator_is_complete_step_map"])
+        self.assertTrue(
+            claims[
+                "reduced_spatial_continuation_temporal_non_equivalence_may_be_supported"
+            ]
+        )
+        self.assertFalse(
+            claims[
+                "runtime_spatial_vs_full_temporal_non_equivalence_may_be_supported"
+            ]
+        )
         self.assertFalse(claims["universal_threshold_identity_may_be_supported"])
         self.assertFalse(
             claims["spatial_hessians_never_correlate_with_temporal_transitions"]
         )
         self.assertFalse(claims["continuation_supported"])
         self.assertFalse(claims["readback_supported"])
+
+    def test_all_selected_source_branches_have_explicit_path_roles(self) -> None:
+        mapping = _selected_source_branch_path_map(self.config)
+        self.assertEqual(7, len(mapping))
+        self.assertTrue(all(row["fully_accounted"] for row in mapping))
+        by_id = {row["source_branch_id"]: row for row in mapping}
+        self.assertEqual(
+            {"F2_dt_nonuniform_path", "F2_eta_nonuniform_path"},
+            {use["path_id"] for use in by_id["grv2-f2-018"]["path_uses"]},
+        )
+        self.assertTrue(
+            all(
+                use["role"] == "symmetry_partner"
+                for use in by_id["grv2-f2-018"]["path_uses"]
+            )
+        )
 
 
 if __name__ == "__main__":

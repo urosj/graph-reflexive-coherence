@@ -1553,7 +1553,11 @@ GRV_C5_status = pending_GRV7_threshold_evidence
   as the load-bearing scientific discriminator.
 - [x] Type every compared operator by domain, metric, sign convention, and
   threshold rule; forbid sorted-eigenvalue cross-operator pairing.
+- [x] Record raw WLS design rank, declared regularization, conditioning, and
+  threshold-identifiability status before including WLS in CE1 wording.
 - [x] Select admitted homogeneous and nonuniform branch families.
+- [x] Map all seven selected source branches to their primary or symmetry roles
+  across all six parameter paths.
 - [x] Preregister branch matching, cluster matching, maximum step, and bifurcation restart rules.
 - [x] Preregister parameter sweeps and threshold rules.
 - [x] Fail closed when a reduced comparator or complete-step stratum is
@@ -1562,6 +1566,10 @@ GRV_C5_status = pending_GRV7_threshold_evidence
   `I-B_eff` loop inverse.
 - [x] Compare the actual critical subspace where a decisive threshold relation
   is claimed, including physical support and symmetry character.
+- [x] Audit admitted complete-step `+1` clusters for conservation, gauge,
+  branch-tangent, block participation, conditioning, and unit-circle uncertainty.
+- [x] Separate reduced non-equivalence from runtime-spatial/full-temporal
+  non-equivalence in the machine summary and receipt.
 - [x] Require threshold witnesses and off-threshold brackets separated from
   preregistered uncertainty.
 - [x] Sweep `+1`, stable-interior, `-1`, and classify available complex crossings.
