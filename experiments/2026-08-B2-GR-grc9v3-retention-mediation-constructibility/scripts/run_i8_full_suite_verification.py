@@ -26,6 +26,7 @@ def main() -> None:
     ]
     summary = summary_lines[-1] if summary_lines else "no_pytest_summary"
     match = re.search(r"(?P<count>\d+) passed", result.stdout)
+    failed_nodeids = re.findall(r"^FAILED (?P<nodeid>\S+)", result.stdout, re.MULTILINE)
     payload = {
         "verification_id": "B2-I8-full-repository-suite",
         "status": "passed" if result.returncode == 0 and match else "failed",
@@ -35,6 +36,8 @@ def main() -> None:
         "passed_test_count": int(match.group("count")) if match else 0,
         "summary_without_duration": re.sub(r" in \d+(?:\.\d+)?s", "", summary),
         "verification_scope": "full_repository_pytest_suite",
+        "failed_test_count": len(failed_nodeids),
+        "failed_test_nodeids": failed_nodeids,
         "runtime_change_authorized": False,
         "scientific_evidence_role": "verification_only",
     }

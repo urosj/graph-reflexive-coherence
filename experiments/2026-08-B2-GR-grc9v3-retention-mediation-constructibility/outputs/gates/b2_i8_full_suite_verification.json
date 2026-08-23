@@ -1,0 +1,12 @@
+{
+  "command": ".venv/bin/python -m pytest -q",
+  "exit_code": 1,
+  "input_execution_revision": "e7d171f67c8bce60686af64d68e961f634586a03",
+  "passed_test_count": 1988,
+  "runtime_change_authorized": false,
+  "scientific_evidence_role": "verification_only",
+  "status": "failed",
+  "summary_without_duration": "26 failed, 1988 passed, 6 warnings, 1041 subtests passed (0:23:39)",
+  "verification_id": "B2-I8-full-repository-suite",
+  "verification_scope": "full_repository_pytest_suite"
+}
