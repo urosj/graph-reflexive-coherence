@@ -17,7 +17,7 @@ only analogically, as a measurable diagnostic, or not at all.
 
 ```text
 experiment_id = B1-GR
-status = grv8_P8_2_classification_accepted_stage2_route_handoff_pending
+status = grv8_stage2_closeout_candidate_awaiting_human_review
 specification_state = draft_3_4_1_pre_execution_mathematical_execution_sealed
 controlling_specification_sha256 = 7ad99fb4acc6a7691d184a514f4836ffa3927600fc7cf504eb059134f3948e44
 runtime_under_test = unchanged_GRC9V3
@@ -491,6 +491,16 @@ constructibility where the accepted evidence still requires it, followed by
 target-conditioned GRC extension work. Analysis and identifiability debt remain
 separate, and LGRC event/delay/lineage/topology questions form a downstream
 lane over an explicitly selected GRC base.
+
+Stage 2 executed from clean method revision `b82aab6`. The non-self-referential
+evidence bundle covers all nine accepted gates and anchors and validates 130
+current artifact digests. Evidence-grounded successor v1 references the
+unchanged accepted pre-execution specification by exact path and digest rather
+than copying or rewriting it. The generalized next-route handoff orders GRC
+constructibility, selectable GRC extensions, analysis/identifiability debt, and
+LGRC-specific investigation as four separate lanes. Receipt `bbd78c9e...`
+remains `awaiting_scientific_review`; the closeout anchor, `GRV-C6`, B1-L, and
+all runtime changes remain blocked.
 
 ## Central Question
 

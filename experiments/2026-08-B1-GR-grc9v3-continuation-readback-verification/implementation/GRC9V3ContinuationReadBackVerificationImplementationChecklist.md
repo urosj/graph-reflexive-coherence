@@ -1736,19 +1736,19 @@ from accepting itself or manufacturing its own closeout.
 - [x] Decide `K` route.
 - [x] Exclude mapping, theory-strength, identifiability, numerical, and source-fidelity explanations before recommending an extension.
 - [x] Produce extension decisions without implementing them.
-- [ ] Produce the versioned evidence-grounded successor specification.
+- [x] Produce the versioned evidence-grounded successor specification.
 - [x] Preserve Drafts 3.2, 3.3, and 3.4 and the accepted controlling Draft 3.4.1 unchanged.
 - [x] Emit `equivalence_classification.json` with the complete scientific classification candidate.
 - [x] Accept the GRV8 scientific classification through a separate acceptance anchor.
-- [ ] Freeze `evidence_bundle_manifest.json` only after GRV8 scientific acceptance and before successor generation.
-- [ ] Exclude the evidence-bundle manifest, successor, and later closeout anchor from the bundle payload.
+- [x] Freeze `evidence_bundle_manifest.json` only after GRV8 scientific acceptance and before successor generation.
+- [x] Exclude the evidence-bundle manifest, successor, and later closeout anchor from the bundle payload.
 - [ ] Emit and accept `outputs/gates/grv8_closeout_acceptance_anchor.json`
   before assigning `GRV-C6`.
-- [ ] Record predecessor/evidence digests and changed claim/assumption/debt rows.
+- [x] Record predecessor/evidence digests and changed claim/assumption/debt rows.
 - [x] Emit `superseded_exploratory_claims.json`.
 - [x] Complete every theory-to-test traceability row with assumption statuses, result, and route.
-- [ ] Freeze the unchanged-GRC evidence bundle.
-- [ ] Produce `continuation_readback_next_route_handoff.json` with GRC-first,
+- [x] Freeze the unchanged-GRC evidence bundle.
+- [x] Produce `continuation_readback_next_route_handoff.json` with GRC-first,
   analysis/debt, and LGRC-specific lanes plus positive and negative boundaries.
 - [x] Rerun and record the complete existing suite from the GRV8 clean input revision.
 - [x] Verify all protected paths remain unchanged.
@@ -2027,3 +2027,40 @@ conditional GRC extension work where the evidence selects those lanes. LGRC
 event, delay, lineage, and topology-changing questions remain a distinct
 downstream lane. Stage 2 therefore requires a general continuation/read-back
 route handoff rather than an LGRC-only umbrella handoff.
+
+### Iteration 9 Stage 2 Closeout Candidate
+
+```text
+input_execution_revision = b82aab63cd90e8877eb87ead6272bf8a98dc03cd
+mechanical_status = passed
+scientific_acceptance = awaiting_human_review
+accepted_GRV8_classification = true
+accepted_gate_count = 9
+accepted_anchor_count = 9
+evidence_bundle_artifact_count = 130
+superseded_or_replaced_bundle_artifact_count = 0
+evidence_bundle_payload_sha256 = 2373541a0cd5102bda6ac1d1959edb9c3fcf57f93bebd4f8f43fb783deb4107c
+successor_sha256 = 120da823f5e6b3bc5e91092891ef392cc73b8f1d992ad420347802babd228fed
+route_handoff_payload_sha256 = 6ee469edcfdb88f53d465bf418211cf7d8f059ab1814312f0d026a81c6d61849
+closeout_receipt_payload_sha256 = bbd78c9e5bdfe30b1fd6c8c0f2b9e18243021b76761e5d5a7e98fbb8b180ffbf
+post_generation_B1_GR_tests = 119_passed
+preexecution_specification_referenced_by_exact_path_and_digest = true
+preexecution_specification_copied_or_rewritten = false
+handoff_lane_1 = GRC_UNCHANGED_CONSTRUCTIBILITY
+handoff_lane_2 = GRC_SELECTABLE_EXTENSIONS
+handoff_lane_3 = GRC_ANALYSIS_AND_IDENTIFIABILITY
+handoff_lane_4 = LGRC_SPECIFIC_INVESTIGATION
+legacy_lgrc_handoff_is_umbrella = false
+runtime_change_authorized = false
+closeout_anchor_emitted = false
+GRV_C6_assigned = false
+B1_L_execution_authorized = false
+```
+
+The bundle was frozen before the successor and excludes itself, the successor,
+the generalized handoff, the Stage 2 receipt, and the later closeout anchor.
+The successor records all final assumption, claim, debt, extension,
+contradiction, and superseded-statement rows while retaining the accepted
+predecessor as an immutable external reference. The Stage 2 receipt is a
+candidate for separate human closeout review; it cannot accept itself or
+authorize any GRC/LGRC implementation.

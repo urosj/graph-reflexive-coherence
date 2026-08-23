@@ -1,0 +1,30 @@
+{
+  "blocked_gates": [
+    "GRV8_closeout_acceptance",
+    "GRV-C6",
+    "B1-L"
+  ],
+  "claim_ceiling": "accepted_bounded_B1_GR_classification_and_next_route_contract_without_runtime_extension_readback_or_GRV_C6_closeout",
+  "gate_id": "GRV8",
+  "input_execution_revision": "b82aab63cd90e8877eb87ead6272bf8a98dc03cd",
+  "input_experiment_tree_sha256": "d233cedd10481b0dd4212be8a728e3adffdd5849655135102cdcdcf4de9b0254",
+  "output_artifact_digests": {
+    "implementation/GRC9V3ContinuationReadBackVerificationSpecification_EvidenceGrounded_v1.md": "120da823f5e6b3bc5e91092891ef392cc73b8f1d992ad420347802babd228fed",
+    "outputs/continuation_readback_next_route_handoff.json": "ed3b3ec5ce6a5aba04df70ec14c257ce0ab3256cc28fb08b5890ba954f7bd615",
+    "outputs/evidence_bundle_manifest.json": "ee98aa5281c21324e9e8c4258e4ff8cac065df4e77029e9e95faacc3d53df706",
+    "reports/b1_grv8_stage2_closeout_candidate.md": "af3a177872504eb4463c7c13f14e01467172a00f4554b1e81d1f7649229284b3"
+  },
+  "prerequisite_acceptance_anchors": [
+    {
+      "anchor_payload_sha256": "c51cfc04d3cc474ea0c09e744faff6a01aeff0a57a93d1d189ad0ee43ae434ce",
+      "gate_id": "GRV8",
+      "immutable_ref": "git:570f715a54b7235be81725907a71e4a4b461ece7"
+    }
+  ],
+  "prerequisite_result_receipt_digests": [
+    "1884c2f75a748ce928f4ae69025d933811ff892948b40e4312530c280314eaa5"
+  ],
+  "receipt_payload_sha256": "bbd78c9e5bdfe30b1fd6c8c0f2b9e18243021b76761e5d5a7e98fbb8b180ffbf",
+  "status": "awaiting_scientific_review",
+  "substrate_base_revision": "589f933e5649c34d3ad54a5f8dbdba2a20e968d7"
+}
