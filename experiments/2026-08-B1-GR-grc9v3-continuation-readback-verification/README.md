@@ -17,7 +17,7 @@ only analogically, as a measurable diagnostic, or not at all.
 
 ```text
 experiment_id = B1-GR
-status = grv7_P7_accepted_GRV8_authorized
+status = grv7_P7_accepted_GRV8_P8_method_frozen
 specification_state = draft_3_4_1_pre_execution_mathematical_execution_sealed
 controlling_specification_sha256 = 7ad99fb4acc6a7691d184a514f4836ffa3927600fc7cf504eb059134f3948e44
 runtime_under_test = unchanged_GRC9V3
@@ -433,7 +433,8 @@ spectrum inspection.
 Receipt `2d29dedb...` over matrix payload `cfa80c47...` is mechanically valid.
 Human review accepted the result at revision `60d045d`; the separate
 `outputs/gates/grv7_acceptance_anchor.json` binds that revision and receipt.
-`GRV-C5` is assigned and GRV8 is authorized but has not started. Acceptance does
+`GRV-C5` is assigned. The GRV8 classification method is frozen and awaits clean
+execution. Acceptance does
 not claim universal non-correlation, runtime spatial/full-temporal non-
 equivalence, an informative nontrivial complete-step `+1` threshold,
 continuation, retention from GRV7, Read-Back, or write-back.

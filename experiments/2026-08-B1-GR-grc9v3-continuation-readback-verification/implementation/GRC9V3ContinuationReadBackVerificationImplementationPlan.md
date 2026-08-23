@@ -1175,6 +1175,15 @@ next route for every tested role.
 
 ### Work
 
+GRV8 executes in two separately reviewed stages. Stage 1 emits the scientific
+classification, routing artifacts, protected-path successor, complete-suite
+result, report, and `grv8_result_receipt.json`. It stops with
+`awaiting_scientific_review`: the evidence bundle, successor specification,
+LGRC handoff, closeout anchor, and `GRV-C6` do not yet exist. Stage 2 may begin
+only after a human acceptance anchor binds the Stage 1 receipt. It then freezes
+the non-self-referential evidence bundle, emits the evidence-grounded successor
+and handoff, and submits those closeout artifacts for their separate acceptance.
+
 1. Assign all required assumption statuses before classifying claims.
 2. Assign one of the six implementation statuses and L0-L5 correspondence to
    every tested object.
@@ -1201,9 +1210,11 @@ next route for every tested role.
 
 ```text
 outputs/assumption_status_matrix.json
-outputs/contradiction_register.json
+outputs/final_contradiction_routing.json
 outputs/equivalence_classification.json
 outputs/final_claim_classification.json
+outputs/final_theory_debt_register.json
+outputs/final_theory_test_traceability.json
 outputs/extension_decision.json
 outputs/theory_reopening_decision.json
 outputs/evidence_bundle_manifest.json

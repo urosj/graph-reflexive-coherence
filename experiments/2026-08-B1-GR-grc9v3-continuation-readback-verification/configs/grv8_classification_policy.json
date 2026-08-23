@@ -1,0 +1,402 @@
+{
+  "schema_version": "b1_grv8_classification_policy_v1",
+  "gate_id": "GRV8",
+  "classification_phase": "scientific_classification_before_bundle_and_closeout",
+  "assumption_statuses": {
+    "A-PASSIVE": {
+      "status": "not_identifiable",
+      "scope": "native_GRC9V3_readback_operator",
+      "rationale": "The present-current convention was controlled, but unchanged GRC9V3 exposes no distinct native read current on which the full passive-null relation can be identified.",
+      "evidence_refs": ["outputs/conductance_retention_probe.json", "outputs/causal_role_matrix.json"]
+    },
+    "A-SMOOTH": {
+      "status": "satisfied",
+      "scope": "admitted_fixed_stratum_derivative_rows_only",
+      "rationale": "Converged two-sided derivatives are admitted on smooth F2/F3 strata; F1 zero-current categorical-boundary rows remain explicitly blocked.",
+      "evidence_refs": ["outputs/complete_step_jacobians.json", "outputs/spatial_temporal_threshold_matrix.json"]
+    },
+    "A-REGULAR-SLAVING": {
+      "status": "not_applicable",
+      "scope": "unchanged_runtime_without_independent_current_relaxation_coordinate",
+      "rationale": "The tested runtime reconstructs current and does not expose an independently admitted current block for regular elimination.",
+      "evidence_refs": ["outputs/complete_step_jacobians.json", "outputs/frozen_full_comparison.json"]
+    },
+    "A-LOOP-INVERT": {
+      "status": "not_applicable",
+      "scope": "no_admitted_current_slaving_loop",
+      "rationale": "No I-B_eff current-slaving inverse is used by the accepted frozen comparator or native transition classification.",
+      "evidence_refs": ["outputs/frozen_full_comparison.json", "outputs/spatial_temporal_threshold_matrix.json"]
+    },
+    "A-ISOLATION": {
+      "status": "satisfied",
+      "scope": "admitted_cluster_or_invariant_subspace_rows",
+      "rationale": "Cluster interpretation is admitted where convergence and conditioning pass; individual eigenvectors remain blocked on the declared exceptional rows.",
+      "evidence_refs": ["outputs/complete_step_jacobians.json", "outputs/slow_cluster_registry.json"]
+    },
+    "A-MOBILITY": {
+      "status": "satisfied",
+      "scope": "tested_fixed_topology_zero_sum_tangent_and_closed_cycle_controls",
+      "rationale": "Positive tangent mobility and the native conductance-compatible edge metric pass on all admitted comparator and cycle-control rows.",
+      "evidence_refs": ["outputs/frozen_full_comparison.json", "outputs/return_orbit_registry.json", "outputs/spatial_temporal_threshold_matrix.json"]
+    },
+    "A-CLOSED": {
+      "status": "satisfied",
+      "scope": "declared_no_through_flow_GRV6_fixtures",
+      "rationale": "Closed cycle controls are separated from boundary-driven alternatives in the GRV6 envelope.",
+      "evidence_refs": ["outputs/return_orbit_registry.json"]
+    },
+    "A-UNIQUENESS": {
+      "status": "satisfied",
+      "scope": "deterministic_exact_zero_and_finite_seed_controls",
+      "rationale": "Exact zero remains invariant while finite authored seeds are tracked separately and overwritten rather than relabeled as autonomous selection.",
+      "evidence_refs": ["outputs/return_orbit_registry.json"]
+    },
+    "A-BRANCH": {
+      "status": "satisfied",
+      "scope": "predeclared_GRV2_branches_and_GRV7_continuation_sheets",
+      "rationale": "Reference branches, gauges, selected sheets, and symmetry roles were fixed before downstream spectra and probes.",
+      "evidence_refs": ["outputs/fixed_branch_registry.json", "outputs/spatial_temporal_threshold_matrix.json"]
+    },
+    "A-CLOCK": {
+      "status": "satisfied",
+      "scope": "native_complete_step_and_declared_finite_horizons",
+      "rationale": "Every temporal, persistence, and return claim records the GRC9V3 beat, timestep, horizon, and norm.",
+      "evidence_refs": ["outputs/complete_step_jacobians.json", "outputs/conductance_retention_probe.json", "outputs/return_orbit_registry.json"]
+    },
+    "A-CONSERVE": {
+      "status": "satisfied",
+      "scope": "fixed_topology_zero_sum_coherence_tangent",
+      "rationale": "Total coherence, tangent constraints, budget no-op behavior, and conservation-mode removal are explicit and pass within tolerance.",
+      "evidence_refs": ["outputs/fixed_branch_registry.json", "outputs/complete_step_jacobians.json", "outputs/spatial_temporal_threshold_matrix.json"]
+    },
+    "A-ORIENTATION": {
+      "status": "satisfied",
+      "scope": "measurement_convention_and_covariance_not_orientation_retention",
+      "rationale": "Canonical edge orientation, reversal actions, and covariance are controlled; this does not supply a retained oriented carrier.",
+      "evidence_refs": ["outputs/instrumentation_validation.json", "outputs/return_orbit_registry.json"]
+    },
+    "A-TRANSPORT": {
+      "status": "not_applicable",
+      "scope": "fixed_topology_B1_GR_only",
+      "rationale": "Canonical coordinate identity suffices in this fixed-topology experiment; interspace transport remains an LGRC handoff debt.",
+      "evidence_refs": ["outputs/fixed_topology_envelope.json", "outputs/fixed_branch_registry.json"]
+    },
+    "A-SIGN-EVEN": {
+      "status": "satisfied",
+      "scope": "old_current_squared_to_conductance_channel",
+      "rationale": "Sign reversal preserves the quadratic conductance-write response and does not preserve current orientation.",
+      "evidence_refs": ["outputs/instrumentation_validation.json", "outputs/conductance_retention_probe.json"]
+    },
+    "A-FIXED-TOPOLOGY": {
+      "status": "satisfied",
+      "scope": "all_B1_GR_positive_and_negative_rows",
+      "rationale": "Node/edge support, ordering, dimensions, and categorical topology remain fixed throughout the tested transition family.",
+      "evidence_refs": ["outputs/fixed_topology_envelope.json", "outputs/fixed_branch_registry.json"]
+    },
+    "A-REACHABLE": {
+      "status": "satisfied",
+      "scope": "runtime_reached_and_synthetic_valid_rows_explicitly_separated",
+      "rationale": "Native branches and successors are distinguished from synthetic-valid interventions, and synthetic rows receive a lower claim ceiling.",
+      "evidence_refs": ["outputs/complete_step_jacobians.json", "outputs/conductance_retention_probe.json", "outputs/causal_role_matrix.json"]
+    },
+    "A-NONNORMAL-CONTROL": {
+      "status": "satisfied",
+      "scope": "admitted_temporal_cluster_rows_only",
+      "rationale": "Finite-horizon and cluster controls pass where temporal interpretation is admitted; failed convergence rows remain blocked.",
+      "evidence_refs": ["outputs/complete_step_jacobians.json", "outputs/slow_cluster_registry.json"]
+    },
+    "A-FAST-SLOW": {
+      "status": "not_applicable",
+      "scope": "no_independent_current_relaxation_sector",
+      "rationale": "The current is reconstructed by the transition rather than admitted as a separately relaxing fast state.",
+      "evidence_refs": ["outputs/complete_step_jacobians.json", "outputs/frozen_full_comparison.json"]
+    },
+    "A-STATE-CLOSURE": {
+      "status": "satisfied",
+      "scope": "bounded_synchronous_GRC9V3_branch_strata_and_horizons",
+      "rationale": "Matched causal states continue equivalently within the accepted synchronous GRC envelope; this does not settle event-driven LGRC state closure.",
+      "evidence_refs": ["outputs/complete_step_jacobians.json", "outputs/conductance_retention_probe.json"]
+    }
+  },
+  "claim_disposition_groups": {
+    "bounded_supported_distinction": [
+      "T-S02", "T-RW01", "T-RW03", "T-RW04", "T-RW05", "T-RW06",
+      "T-RW09", "T-RW10", "T-RW11", "T-M01", "T-M02", "T-M03",
+      "T-M04", "T-C01", "T-C02", "T-C03", "T-B01", "T-B02",
+      "T-B03", "T-A02", "T-A03", "T-A04", "T-A05", "T-O02", "T-O03"
+    ],
+    "source_backed_boundary_not_runtime_admission": ["T-S01", "T-RW07", "T-RW08"],
+    "not_admitted_under_tested_assumptions": ["T-RW02", "T-A01"],
+    "not_tested_fixed_topology_scope": ["T-B04", "T-A06"],
+    "theory_open_no_native_realization": ["T-O01"]
+  },
+  "claim_debt_map": {
+    "T-RW02": ["D-R01"],
+    "T-RW05": ["D-R02"],
+    "T-RW07": ["D-R01", "D-C02"],
+    "T-RW09": ["D-R03"],
+    "T-RW11": ["D-R02", "D-P01"],
+    "T-M01": ["D-C01", "D-C02"],
+    "T-M02": ["D-R02", "D-M02"],
+    "T-M04": ["D-M02"],
+    "T-C01": ["D-C01", "D-C02"],
+    "T-C02": ["D-G02", "D-C01"],
+    "T-B03": ["D-B01"],
+    "T-B04": ["D-T01"],
+    "T-A01": ["D-A01", "D-R01"],
+    "T-A02": ["D-A01"],
+    "T-A03": ["D-A01"],
+    "T-A05": ["D-A01"],
+    "T-O01": ["D-R03"],
+    "T-O02": ["D-C02"],
+    "T-O03": ["D-M01"]
+  },
+  "object_classifications": [
+    {
+      "object_id": "formed_zero_current_branches",
+      "implementation_status": "already_implemented_exactly",
+      "correspondence_level": "L5_robust_realization",
+      "claim_ids": ["T-B01", "T-B02"],
+      "debt_ids": ["D-B01"],
+      "evidence_refs": ["outputs/fixed_branch_registry.json"],
+      "maximum_supported_claim": "bounded_homogeneous_and_nonuniform_fixed_topology_formed_branch_existence_with_replay_and_held_out_controls",
+      "blocked_claims": ["global_branch_identity_theorem", "continuation", "retention"]
+    },
+    {
+      "object_id": "bounded_runtime_causal_state",
+      "implementation_status": "implemented_as_declared_simplifying_limit",
+      "correspondence_level": "L4_derived_reduced_limit",
+      "claim_ids": ["T-S01", "T-S02", "T-O03"],
+      "debt_ids": ["D-M01"],
+      "evidence_refs": ["outputs/complete_step_jacobians.json"],
+      "maximum_supported_claim": "branch_and_stratum_relative_synchronous_GRC_causal_closure_with_C_independent_and_W_J_reconstructed",
+      "blocked_claims": ["universal_C_J_primitive_identity", "LGRC_state_closure"]
+    },
+    {
+      "object_id": "fixed_W_constrained_continuation_comparator",
+      "implementation_status": "measurable_from_existing_state_but_not_constitutive",
+      "correspondence_level": "L4_derived_reduced_limit",
+      "claim_ids": ["T-C01", "T-C02", "T-C03"],
+      "debt_ids": ["D-C01", "D-G02"],
+      "evidence_refs": ["outputs/frozen_full_comparison.json", "outputs/spatial_temporal_threshold_matrix.json"],
+      "maximum_supported_claim": "clamped_W_zero_sum_C_reduced_structural_and_discrete_temporal_comparator",
+      "blocked_claims": ["complete_step_map", "active_joint_continuation_operator"]
+    },
+    {
+      "object_id": "complete_step_temporal_spectrum",
+      "implementation_status": "measurable_from_existing_state_but_not_constitutive",
+      "correspondence_level": "L2_operational_signature",
+      "claim_ids": ["T-M02", "T-M03", "T-C01"],
+      "debt_ids": ["D-C01", "D-C02", "D-M02"],
+      "evidence_refs": ["outputs/complete_step_jacobians.json", "outputs/spatial_temporal_threshold_matrix.json"],
+      "maximum_supported_claim": "bounded_branch_clock_and_stratum_specific_transition_spectra",
+      "blocked_claims": ["unified_temporal_generator", "constitutive_retained_sector"]
+    },
+    {
+      "object_id": "stable_neutral_unstable_temporal_subspaces",
+      "implementation_status": "measurable_from_existing_state_but_not_constitutive",
+      "correspondence_level": "L2_operational_signature",
+      "claim_ids": ["T-M02", "T-M03", "T-M04", "T-B03"],
+      "debt_ids": ["D-R02", "D-M02"],
+      "evidence_refs": ["outputs/slow_cluster_registry.json", "outputs/complete_step_jacobians.json"],
+      "maximum_supported_claim": "admitted_cluster_level_temporal_classification_on_bounded_branches",
+      "blocked_claims": ["unique_retained_projector", "observer_independent_memory_sector"]
+    },
+    {
+      "object_id": "conductance_mediated_retention",
+      "implementation_status": "implemented_only_analogically",
+      "correspondence_level": "L2_operational_signature",
+      "claim_ids": ["T-RW01", "T-RW05", "T-RW06", "T-RW11"],
+      "debt_ids": ["D-R02", "D-P01"],
+      "evidence_refs": ["outputs/conductance_retention_probe.json", "outputs/causal_role_matrix.json"],
+      "maximum_supported_claim": "bounded_synthetic_old_current_conditioned_C_dominated_neutral_direction_persistence",
+      "blocked_claims": ["transverse_branch_relative_retention", "specific_transient_W_mediation", "native_readback"]
+    },
+    {
+      "object_id": "native_read_effect",
+      "implementation_status": "absent_from_substrate",
+      "correspondence_level": "L0_analogy",
+      "claim_ids": ["T-RW02", "T-RW07", "T-O01"],
+      "debt_ids": ["D-R01", "D-R03"],
+      "evidence_refs": ["outputs/conductance_retention_probe.json", "outputs/causal_role_matrix.json"],
+      "maximum_supported_claim": "generic_geometry_conditioned_transport_and_substrate_reduced_sensitivity_only",
+      "blocked_claims": ["native_present_current_conditioned_readback", "closed_read_write_loop"]
+    },
+    {
+      "object_id": "activity_conditioned_write_effect",
+      "implementation_status": "implemented_only_analogically",
+      "correspondence_level": "L2_operational_signature",
+      "claim_ids": ["T-RW06", "T-RW08", "T-RW11"],
+      "debt_ids": ["D-R02", "D-P01"],
+      "evidence_refs": ["outputs/conductance_retention_probe.json"],
+      "maximum_supported_claim": "exact_stage_local_J_squared_to_W_write_from_synthetic_valid_input",
+      "blocked_claims": ["native_reached_writeback", "persistent_retained_write", "reflexive_closed_loop"]
+    },
+    {
+      "object_id": "distinct_directional_read_current",
+      "implementation_status": "absent_from_substrate",
+      "correspondence_level": "L0_analogy",
+      "claim_ids": ["T-RW03", "T-RW07", "T-O01"],
+      "debt_ids": ["D-R01", "D-R03"],
+      "evidence_refs": ["outputs/instrumentation_validation.json", "outputs/conductance_retention_probe.json"],
+      "maximum_supported_claim": "native_baseline_transport_current_only",
+      "blocked_claims": ["separate_read_current", "oriented_retained_readback"]
+    },
+    {
+      "object_id": "j_equals_J_C_limit",
+      "implementation_status": "implemented_as_declared_simplifying_limit",
+      "correspondence_level": "L4_derived_reduced_limit",
+      "claim_ids": ["T-RW03", "T-RW04"],
+      "debt_ids": ["D-R01"],
+      "evidence_refs": ["outputs/instrumentation_validation.json"],
+      "maximum_supported_claim": "existing_J_C_can_instantiate_the_declared_nonselective_j_equals_J_C_limit",
+      "blocked_claims": ["general_readback", "retention_selectivity"]
+    },
+    {
+      "object_id": "magnitude_and_axis_inscription",
+      "implementation_status": "already_implemented_exactly",
+      "correspondence_level": "L3_constitutive_realization",
+      "claim_ids": ["T-RW08", "T-RW09"],
+      "debt_ids": ["D-R03"],
+      "evidence_refs": ["outputs/instrumentation_validation.json", "outputs/conductance_retention_probe.json"],
+      "maximum_supported_claim": "sign_even_current_magnitude_or_unoriented_axis_conditioned_conductance_write",
+      "blocked_claims": ["orientation_retention", "directional_readback"]
+    },
+    {
+      "object_id": "orientation_retention",
+      "implementation_status": "absent_from_substrate",
+      "correspondence_level": "L0_analogy",
+      "claim_ids": ["T-RW09", "T-A03", "T-O01"],
+      "debt_ids": ["D-R03", "D-A01"],
+      "evidence_refs": ["outputs/conductance_retention_probe.json", "outputs/return_orbit_registry.json"],
+      "maximum_supported_claim": "orientation_covariant_measurement_without_retained_oriented_carrier",
+      "blocked_claims": ["orientation_memory", "spontaneous_direction_selection"]
+    },
+    {
+      "object_id": "field_current_full_equivalence_hierarchy",
+      "implementation_status": "measurable_from_existing_state_but_not_constitutive",
+      "correspondence_level": "L2_operational_signature",
+      "claim_ids": ["T-RW10"],
+      "debt_ids": ["D-R03", "D-C02"],
+      "evidence_refs": ["outputs/return_orbit_registry.json", "outputs/causal_role_matrix.json"],
+      "maximum_supported_claim": "field_current_and_full_causal_equality_are_separately_testable",
+      "blocked_claims": ["field_equality_implies_current_equality", "full_reflexive_equivalence"]
+    },
+    {
+      "object_id": "K_hybrid_node_tensor",
+      "implementation_status": "measurable_from_existing_state_but_not_constitutive",
+      "correspondence_level": "L1_representability",
+      "claim_ids": [],
+      "debt_ids": ["D-G01"],
+      "evidence_refs": ["outputs/instrumentation_validation.json", "outputs/surface_authority_map.json"],
+      "maximum_supported_claim": "diagnostic_cache_not_consumed_on_tested_fixed_topology_no_event_path",
+      "blocked_claims": ["load_bearing_metric", "global_causal_absence"]
+    },
+    {
+      "object_id": "geometry_mobility_separation",
+      "implementation_status": "absent_from_substrate",
+      "correspondence_level": "L1_representability",
+      "claim_ids": ["T-C01", "T-C02"],
+      "debt_ids": ["D-G02"],
+      "evidence_refs": ["outputs/frozen_full_comparison.json"],
+      "maximum_supported_claim": "W_is_load_bearing_conductance_with_structural_and_transport_interpretations_not_independently_factored",
+      "blocked_claims": ["separate_alpha_and_gamma_carriers", "extension_required_now"]
+    },
+    {
+      "object_id": "active_stationary_circulation",
+      "implementation_status": "absent_from_substrate",
+      "correspondence_level": "L3_constitutive_realization",
+      "claim_ids": ["T-A03", "T-A05"],
+      "debt_ids": ["D-A01"],
+      "evidence_refs": ["outputs/return_orbit_registry.json"],
+      "maximum_supported_claim": "bounded_exclusion_from_closed_regular_gradient_potential_sector_under_tested_assumptions",
+      "blocked_claims": ["global_cycle_current_nonexistence", "boundary_or_null_sector_exclusion"]
+    },
+    {
+      "object_id": "recurrent_transport_orbits",
+      "implementation_status": "measurable_from_existing_state_but_not_constitutive",
+      "correspondence_level": "L2_operational_signature",
+      "claim_ids": ["T-A03", "T-A04", "T-A05"],
+      "debt_ids": ["D-A01"],
+      "evidence_refs": ["outputs/return_orbit_registry.json"],
+      "maximum_supported_claim": "bounded_search_found_no_primitive_period_2_to_8_return_and_seeded_cycle_current_was_overwritten",
+      "blocked_claims": ["global_return_orbit_nonexistence", "relative_periodic_orbit_nonexistence"]
+    },
+    {
+      "object_id": "moving_retained_slow_bundle",
+      "implementation_status": "theoretically_underdetermined_open",
+      "correspondence_level": "L0_analogy",
+      "claim_ids": ["T-B03", "T-B04", "T-M02"],
+      "debt_ids": ["D-R02", "D-T01", "D-B01"],
+      "evidence_refs": ["outputs/slow_cluster_registry.json", "outputs/fixed_topology_envelope.json"],
+      "maximum_supported_claim": "fixed_topology_cluster_tracking_only",
+      "blocked_claims": ["topology_changing_mode_transport", "lineage_as_retained_bundle_transport"]
+    },
+    {
+      "object_id": "runtime_row_signed_Hessian_relation_to_continuation",
+      "implementation_status": "measurable_from_existing_state_but_not_constitutive",
+      "correspondence_level": "L2_operational_signature",
+      "claim_ids": ["T-M01", "T-C01", "T-C02"],
+      "debt_ids": ["D-C01", "D-G01"],
+      "evidence_refs": ["outputs/spatial_temporal_threshold_matrix.json"],
+      "maximum_supported_claim": "bounded_reduced_non_equivalence_between_runtime_local_diagnostics_analytical_continuation_and_frozen_discrete_thresholds",
+      "blocked_claims": ["runtime_full_temporal_non_equivalence", "universal_noncorrelation"]
+    }
+  ],
+  "debt_routes": {
+    "D-R01": "blocked_by_identifiability",
+    "D-R02": "analysis_only_measurement",
+    "D-R03": "selectable_grc_extension",
+    "D-G01": "unchanged_grc_interpretation",
+    "D-G02": "unchanged_grc_interpretation",
+    "D-C01": "analysis_only_measurement",
+    "D-C02": "unchanged_grc_interpretation",
+    "D-M01": "lgrc_specific_investigation",
+    "D-M02": "analysis_only_measurement",
+    "D-A01": "selectable_grc_extension",
+    "D-T01": "lgrc_specific_investigation",
+    "D-B01": "analysis_only_measurement",
+    "D-P01": "blocked_by_identifiability"
+  },
+  "extension_decisions": [
+    {
+      "decision_id": "EXT-GEOMETRY-MOBILITY",
+      "target": "separate_structural_geometry_and_transport_mobility",
+      "route": "not_opened_trigger_not_met",
+      "source_evidence": ["outputs/frozen_full_comparison.json", "outputs/spatial_temporal_threshold_matrix.json"],
+      "claim_ceiling": "W_role_conflation_remains_a_limitation_but_no_material_full_vs_frozen_difference_was_resolved",
+      "debt_ids": ["D-G02"]
+    },
+    {
+      "decision_id": "EXT-RETAINED-CARRIER",
+      "target": "separate_persistent_retained_geometry_carrier",
+      "route": "not_opened_native_mediation_and_reachability_not_established",
+      "source_evidence": ["outputs/conductance_retention_probe.json", "outputs/causal_role_matrix.json"],
+      "claim_ceiling": "bounded_synthetic_C_dominated_neutral_persistence_with_branch_relocation_rival_open",
+      "debt_ids": ["D-R02", "D-P01"]
+    },
+    {
+      "decision_id": "EXT-ORIENTED-CURRENT",
+      "target": "oriented_read_or_cycle_current_channel",
+      "route": "conditionally_selectable_if_future_target_requires_directional_readback_or_active_circulation",
+      "source_evidence": ["outputs/conductance_retention_probe.json", "outputs/return_orbit_registry.json"],
+      "claim_ceiling": "baseline_identifies_missing_oriented_role_but_B1_GR_does_not_select_the_target",
+      "debt_ids": ["D-R03", "D-A01"]
+    },
+    {
+      "decision_id": "EXT-K",
+      "target": "hybrid_node_tensor_K",
+      "route": "remain_explicitly_diagnostic",
+      "source_evidence": ["outputs/instrumentation_validation.json", "outputs/surface_authority_map.json"],
+      "claim_ceiling": "not_consumed_on_tested_fixed_topology_no_event_path_without_global_absence_claim",
+      "debt_ids": ["D-G01"]
+    }
+  ],
+  "theory_reopening_decision": {
+    "decision_id": "TR-GRV8-001",
+    "claim_ids": ["T-M01", "T-C01", "T-RW01", "T-O01"],
+    "trigger": "No accepted result independently contradicts the controlling theory after assumption, mapping, identifiability, and substrate-realization routing.",
+    "route": "no_theory_reopening_required",
+    "status": "closed_for_B1_GR_scope"
+  }
+}

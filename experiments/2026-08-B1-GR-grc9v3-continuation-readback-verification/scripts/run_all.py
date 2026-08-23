@@ -7,6 +7,7 @@ from pathlib import Path
 
 from artifact_io import EXPERIMENT_ROOT, git, sha256_file, write_json
 from capture_repository_baseline import capture
+from classify_claims_and_extensions import run_grv8
 from compare_frozen_and_full_dynamics import run_grv4
 from compute_complete_step_jacobian import run_grv3
 from gate_receipts import finalize_receipt, validate_receipt
@@ -179,6 +180,14 @@ def main() -> None:
                 f"{args.gate} blocked: prerequisite accepted anchor is missing"
             )
         run_grv7()
+        return
+    if args.gate == "GRV8":
+        anchor = prerequisite_anchor_path(args.gate)
+        if not anchor.exists():
+            raise SystemExit(
+                f"{args.gate} blocked: prerequisite accepted anchor is missing"
+            )
+        run_grv8()
         return
     if args.gate != "GRV0":
         anchor = prerequisite_anchor_path(args.gate)

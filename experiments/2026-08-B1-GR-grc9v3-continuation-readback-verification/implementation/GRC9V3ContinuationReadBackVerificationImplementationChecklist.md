@@ -4,7 +4,7 @@
 
 ```text
 branch = experiment-B1-continuation-readback
-status = grv7_P7_accepted_GRV8_authorized
+status = grv7_P7_accepted_GRV8_P8_method_frozen
 controlling_specification = draft_3_4_1_pre_execution_mathematical_execution_sealed
 controlling_specification_sha256 = 7ad99fb4acc6a7691d184a514f4836ffa3927600fc7cf504eb059134f3948e44
 runtime_under_test = unchanged_GRC9V3
@@ -13,7 +13,7 @@ src_change_authorized = false
 existing_test_change_authorized = false
 positive_evidence_opened = true_bounded_GRV2_branch_and_GRV5_GRR2_evidence
 positive_retention_evidence_opened = bounded_GRR2_neutral_coordinate_persistence_only
-current_gate = GRV8_authorized_not_started
+current_gate = GRV8_P8_clean_execution_pending
 verification_closeout_ladder_rung_assigned = true
 verification_closeout_rung = GRV-C5
 verification_closeout_ceiling = GRV-C5_assigned_GRV8_pending
@@ -1713,6 +1713,14 @@ block above remains the immutable pre-acceptance machine state; the accepted
 current lifecycle state is `GRV-C5` assigned and GRV8 authorized but not started.
 
 ## Iteration 9 - GRV8 Classification, Route Decision, And Handoff
+
+GRV8 is deliberately split at the human-review boundary. The first execution
+may emit only the classification/routing artifacts, protected-path successor,
+complete-suite result, report, and result receipt. It must stop at
+`awaiting_scientific_review`. The evidence bundle, successor specification,
+LGRC handoff, closeout anchor, and `GRV-C6` remain blocked until a separate
+acceptance anchor binds that result receipt. This prevents the classification
+from accepting itself or manufacturing its own closeout.
 
 - [ ] Assign every required assumption status first.
 - [ ] Mark claims with failed/unidentifiable assumptions as not admitted unless independently contradicted.

@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "b1/grv8_classification.schema.json",
+  "$defs": {
+    "implementationStatus": {
+      "enum": [
+        "already_implemented_exactly",
+        "implemented_as_declared_simplifying_limit",
+        "implemented_only_analogically",
+        "measurable_from_existing_state_but_not_constitutive",
+        "absent_from_substrate",
+        "theoretically_underdetermined_open"
+      ]
+    },
+    "correspondenceLevel": {
+      "enum": [
+        "L0_analogy",
+        "L1_representability",
+        "L2_operational_signature",
+        "L3_constitutive_realization",
+        "L4_derived_reduced_limit",
+        "L5_robust_realization"
+      ]
+    },
+    "decisionRoute": {
+      "enum": [
+        "unchanged_grc_interpretation",
+        "analysis_only_measurement",
+        "selectable_grc_extension",
+        "lgrc_specific_investigation",
+        "theory_revision_or_reopening",
+        "blocked_by_identifiability"
+      ]
+    },
+    "objectRow": {
+      "type": "object",
+      "required": [
+        "object_id",
+        "classification_scope",
+        "implementation_status",
+        "correspondence_level",
+        "claim_ids",
+        "debt_ids",
+        "assumption_ids",
+        "proof_note_ids",
+        "source_ids",
+        "evidence_refs",
+        "maximum_supported_claim",
+        "blocked_claims",
+        "primary_decision_route"
+      ],
+      "properties": {
+        "classification_scope": {
+          "const": "bounded_B1_GR_unchanged_GRC9V3_evidence_envelope"
+        },
+        "implementation_status": {"$ref": "#/$defs/implementationStatus"},
+        "correspondence_level": {"$ref": "#/$defs/correspondenceLevel"},
+        "primary_decision_route": {"$ref": "#/$defs/decisionRoute"}
+      }
+    }
+  },
+  "type": "object",
+  "required": ["gate_id", "source_id_map", "rows", "summary", "highest_supported_claim", "blocked_claims"],
+  "properties": {
+    "gate_id": {"const": "GRV8"},
+    "source_id_map": {
+      "type": "object",
+      "required": ["SRC-CONTINUATION", "SRC-READBACK"]
+    },
+    "rows": {"type": "array", "items": {"$ref": "#/$defs/objectRow"}},
+    "summary": {"type": "object"},
+    "highest_supported_claim": {"type": "string"},
+    "blocked_claims": {"type": "array"}
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "schema_version": "b1_grv8_p8_package_manifest_v1",
+  "package_status": "P8_classification_method_frozen_ready_for_clean_execution",
+  "gate_id": "GRV8",
+  "controlling_specification_id": "b1_grc9v3_continuation_readback_verification_v3_4_1",
+  "prerequisite": {
+    "gate_id": "GRV7",
+    "result_revision": "60d045ddf5b523e0922d17f18f3a94c3de5cd020",
+    "receipt_payload_sha256": "2d29dedbedaf66a8295574c548ddf7d06c6ee12cbc529e93ef10e720e5ad46cb",
+    "acceptance_anchor_path": "outputs/gates/grv7_acceptance_anchor.json",
+    "acceptance_anchor_commit": "3d11154abbf4b84f5f3199b54ed83237a9fa7630"
+  },
+  "protected_boundaries": {
+    "runtime_change_authorized": false,
+    "src_change_authorized": false,
+    "existing_test_change_authorized": false,
+    "GRV0_through_GRV7_result_mutation_authorized": false,
+    "classification_can_manufacture_scientific_acceptance": false,
+    "bundle_or_successor_before_GRV8_acceptance_authorized": false
+  },
+  "executable_surfaces": [
+    "scripts/classify_claims_and_extensions.py",
+    "scripts/route_contradictions_and_theory_reopening.py",
+    "scripts/run_all.py",
+    "tests/test_grv8_classification.py",
+    "schemas/grv8_classification.schema.json"
+  ],
+  "execution_contract": "configs/grv8_classification_policy.json",
+  "command": ".venv/bin/python experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/scripts/run_all.py --gate GRV8",
+  "claim_ceiling": "bounded_unchanged_GRC9V3_classification_and_route_decision_pending_human_review_without_GRV_C6_or_LGRC_execution"
+}
