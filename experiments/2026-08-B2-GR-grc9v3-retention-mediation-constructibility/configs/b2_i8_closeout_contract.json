@@ -1,0 +1,76 @@
+{
+  "schema_version": "b2_i8_closeout_contract_v1",
+  "gate_id": "B2-I8",
+  "prerequisites": {
+    "i4_acceptance_anchor_path": "experiments/2026-08-B2-GR-grc9v3-retention-mediation-constructibility/outputs/gates/b2_i4_acceptance_anchor.json",
+    "i4_acceptance_anchor_sha256": "ce8b09ff7a54658ee62180ce5446579059611545ee4ba3c47ea88690aa4d5fe3",
+    "required_i4_candidate_set_status": "accepted_empty_no_runtime_reached_candidate",
+    "required_i4_closeout_rung": "B2-C3"
+  },
+  "empty_path_lifecycle": [
+    {
+      "gate_id": "B2-I5",
+      "execution_status": "not_applicable_empty_I4_candidate_set",
+      "eligible_candidate_count": 0,
+      "blocked_rung": "GRR3"
+    },
+    {
+      "gate_id": "B2-I6",
+      "execution_status": "not_applicable_no_GRR3_lineage",
+      "eligible_candidate_count": 0,
+      "blocked_rung": "GRR4"
+    },
+    {
+      "gate_id": "B2-I7",
+      "execution_status": "not_applicable_no_GRR4_lineage",
+      "eligible_candidate_count": 0,
+      "blocked_rung": "GRR5"
+    }
+  ],
+  "frozen_search_envelope": {
+    "preparation_families": [
+      "native_spontaneous_no_driver",
+      "budget_respecting_zero_sum_C_pair_pulse",
+      "temporary_parameter_history_after_C_pair_pulse"
+    ],
+    "amplitude_fractions": [0.0001, 0.001, 0.01],
+    "history_lengths_native_steps": [1, 2, 4, 8],
+    "temporary_parameter_variants": [
+      ["dt_x_0p5", "dt", 0.5],
+      ["dt_x_1p5", "dt", 1.5],
+      ["eta_x_0p5", "eta", 0.5],
+      ["eta_x_2p0", "eta", 2.0]
+    ],
+    "carrier_definitions": [
+      "C_ZERO_SUM_V1",
+      "W_EDGE_CONDUCTANCE_OBSERVATION_V1",
+      "JOINT_C_W_BLOCK_V1"
+    ],
+    "evaluation_parameters_restored_before_k0": true,
+    "fixed_topology_event_free_primary_lane": true
+  },
+  "closeout_decision": {
+    "primary_route": "unchanged_GRC9V3_search_remains_open",
+    "secondary_route": "analysis_or_identifiability_debt",
+    "extension_route": "no_extension_route_selected",
+    "global_impossibility_established": false,
+    "localized_missing_causal_role_established": false,
+    "extension_selected": false,
+    "runtime_change_authorized": false,
+    "spec_extension_authorized": false,
+    "B1_L_execution_authorized": false,
+    "N32_selection_authorized": false
+  },
+  "required_claim_boundary": {
+    "maximum_new_GRR_rung": "none",
+    "inherited_B1_GR_context_ceiling": "GRR2",
+    "B2_positive_evidence_opened": false,
+    "retention_established": false,
+    "mediation_established": false,
+    "global_impossibility": false,
+    "extension_necessity": false,
+    "memory": false,
+    "learning": false,
+    "agency": false
+  }
+}
