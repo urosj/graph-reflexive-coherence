@@ -75,33 +75,36 @@
     "B1_L_execution_authorized": false,
     "GRV_C6_assigned": false,
     "assumption_count": 19,
+    "causal_role_count": 9,
     "claim_count": 33,
     "classification_complete_candidate": true,
     "contradiction_route_count": 6,
     "evidence_bundle_frozen": false,
     "existing_tests_run": 1354,
-    "extension_decision_count": 4,
-    "object_count": 19,
+    "extension_decision_count": 6,
+    "object_count": 31,
     "protected_paths_unchanged": true,
     "successor_generated": false,
-    "theory_reopening_required": false
+    "theory_reopening_required": false,
+    "unaccepted_P8_candidate_superseded": true
   },
-  "input_execution_revision": "7d039408f845400cf3ab0ad2b4b2ad0585dfb95d",
-  "input_experiment_tree_sha256": "19a8656b04dd244ed66bacd30a2251d11267fe846b4e725a4de95fe713608157",
+  "input_execution_revision": "bfb3de100deee6c86b98d839d0b6d89fde8e0f59",
+  "input_experiment_tree_sha256": "2f92a77bc06e9ff025f329459e1e8aaf3e6517dfdf07552b5a14303986bfde4f",
   "output_artifact_digests": {
     "outputs/assumption_status_matrix.json": "277d271f81f0b2bd2f587941ab1c9657dd0b43165f6b9fffacf5502a92f7227d",
-    "outputs/equivalence_classification.json": "034fc5049cc22a850eb73180f1d70a9c5c6cab892ecb568833f682c67a52e56e",
-    "outputs/extension_decision.json": "4846da9e12c4631dae8d4ed8f976610086c71a8e05ed1e1405fdd8959a308d63",
-    "outputs/final_claim_classification.json": "131e3b0a682cd980a44f1daedc06a79dcd5520a6f1f5797e5255e67fa855153b",
-    "outputs/final_contradiction_routing.json": "03e538facb3fdb9d9649aa5f2a0d013642cc8f9005bb4fe298ea09a7b9c603ae",
-    "outputs/final_theory_debt_register.json": "f4ac6d9011dee0a4c791746404c4432a28fdee9fb23536f60ba6b4b072c7c07d",
-    "outputs/final_theory_test_traceability.json": "4559f6d1c578aefae9dda931ecd5b5c4f97dc4b945601729098f11a3f86218a0",
-    "outputs/grv8_existing_test_result.json": "0fae9839e8f8c50164a4bb36676dc2ad42015145a82dd14e5ba77ab78a61ae87",
-    "outputs/logs/grv8_existing_tests.log": "06437ecef36d5606b11dcc159c196a8b87b951300f30cbb79ea1402b46005814",
+    "outputs/equivalence_classification.json": "a03aa372942ec68100c6c847b4c355b8294a1c931ffc485ff97858dde8a9dfe5",
+    "outputs/extension_decision.json": "51bf77e5329c4ff0e10fa5b7f0430d70f9646638d17c42a78d9a30167795c76e",
+    "outputs/final_causal_role_classification.json": "18a881f6d2a13f28dc59246c47ad07c208faa56cf03ebe6134bd868253f2c3e0",
+    "outputs/final_claim_classification.json": "65b9f4543d57b60d558998d693f62a3bb11f64f81e92027aaa456b45dd639883",
+    "outputs/final_contradiction_routing.json": "c0ece07c528478fd587fd72503b80e34aa6f61bfcdf87539e8651cc2e438f3cb",
+    "outputs/final_theory_debt_register.json": "89140965db530c80590be8fe8db5ae4e87e6e5cb0a5d5dc882d97db09b248ff8",
+    "outputs/final_theory_test_traceability.json": "7bc101a938f28d4edde9bdf4528237f071ba48a60644a16aa5cf6368735dc5c4",
+    "outputs/grv8_existing_test_result.json": "37d735cdf607708516365db99f265bf1599a4f95d3376cc40ede544e564e26d6",
+    "outputs/logs/grv8_existing_tests.log": "cb0c856a6af32e02c51297f75b2e2d52e35eb2ed1efa1f174f91593c7d39f3ec",
     "outputs/protected_path_manifest_v8.json": "d2e2aa1556ef4f5977e27d3dc0c00c71129036d4d4e6cfdc5f298d406baf35db",
-    "outputs/superseded_exploratory_claims.json": "b4ad4a6ecdfa9aeedf9282b991bf6bcd313eed714fdf084a06aaac0f41786913",
+    "outputs/superseded_exploratory_claims.json": "6daf135066f51d81ba78711b84510d77de27a6f4e80401c1bca1ca1045243a5b",
     "outputs/theory_reopening_decision.json": "4a43dc3c50749a961602d2104daedeb4ea5787bd1ec92b65dbcfd23d8a33b337",
-    "reports/b1_grc9v3_verification_report.md": "7892f050ce43f5cc0758282996da7f8998daa5d6abfbf44bb60034db7d6a6f94"
+    "reports/b1_grc9v3_verification_report.md": "7eaa8c5905c4bf1e9cc98a1bcb437947f792d16843c4a40cf62e2d547fec3136"
   },
   "prerequisite_acceptance_anchors": [
     {
@@ -114,7 +117,13 @@
   "prerequisite_result_receipt_digests": [
     "2d29dedbedaf66a8295574c548ddf7d06c6ee12cbc529e93ef10e720e5ad46cb"
   ],
-  "receipt_payload_sha256": "0f974b0bb44623494424f5ebc50a2cabbf5c48deba7de6998956c6ce6882c714",
+  "receipt_payload_sha256": "24b30abc8b8db8134f0ecb335bd286f5866caef34e05b5fd5ecf459831cf5b8d",
   "status": "awaiting_scientific_review",
-  "substrate_base_revision": "589f933e5649c34d3ad54a5f8dbdba2a20e968d7"
+  "substrate_base_revision": "589f933e5649c34d3ad54a5f8dbdba2a20e968d7",
+  "superseded_unaccepted_result": {
+    "acceptance_anchor_existed": false,
+    "reason": "P8_1_object_envelope_role_and_provenance_hardening",
+    "receipt_payload_sha256": "0f974b0bb44623494424f5ebc50a2cabbf5c48deba7de6998956c6ce6882c714",
+    "result_revision": "144875709359d477c05ef7d47382bc76342223f5"
+  }
 }

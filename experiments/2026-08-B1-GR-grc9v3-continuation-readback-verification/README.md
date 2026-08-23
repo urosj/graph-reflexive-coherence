@@ -17,7 +17,7 @@ only analogically, as a measurable diagnostic, or not at all.
 
 ```text
 experiment_id = B1-GR
-status = grv8_P8_unaccepted_candidate_superseded_P8_1_method_hardening
+status = grv8_P8_1_classification_candidate_awaiting_human_review
 specification_state = draft_3_4_1_pre_execution_mathematical_execution_sealed
 controlling_specification_sha256 = 7ad99fb4acc6a7691d184a514f4836ffa3927600fc7cf504eb059134f3948e44
 runtime_under_test = unchanged_GRC9V3
@@ -452,7 +452,11 @@ closure. Every cross-gate classification must now bind an accepted source gate,
 result revision, acceptance-anchor digest, artifact digest, exact field, and
 consumed-value digest.
 
-P8.1 remains the first of two GRV8 review stages. The evidence bundle,
+P8.1 executed from clean method revision `bfb3de1` and emitted replacement
+classification receipt `24b30abc...`. The complete repository suite passes
+`1,354` tests, the post-generation experiment suite passes `111` tests, and
+the 379-path protected source/spec/root-test manifest remains unchanged. The
+replacement candidate remains the first of two GRV8 review stages. The evidence bundle,
 evidence-grounded successor, LGRC handoff, GRV8 acceptance anchors, and
 `GRV-C6` remain absent until the classification receipt is reviewed and
 accepted.

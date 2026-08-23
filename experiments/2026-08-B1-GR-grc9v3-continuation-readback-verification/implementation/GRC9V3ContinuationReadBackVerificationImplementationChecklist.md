@@ -4,7 +4,7 @@
 
 ```text
 branch = experiment-B1-continuation-readback
-status = grv8_P8_unaccepted_candidate_superseded_P8_1_method_hardening
+status = grv8_P8_1_classification_candidate_awaiting_human_review
 controlling_specification = draft_3_4_1_pre_execution_mathematical_execution_sealed
 controlling_specification_sha256 = 7ad99fb4acc6a7691d184a514f4836ffa3927600fc7cf504eb059134f3948e44
 runtime_under_test = unchanged_GRC9V3
@@ -13,7 +13,7 @@ src_change_authorized = false
 existing_test_change_authorized = false
 positive_evidence_opened = true_bounded_GRV2_branch_and_GRV5_GRR2_evidence
 positive_retention_evidence_opened = bounded_GRR2_neutral_coordinate_persistence_only
-current_gate = GRV8_P8_1_clean_execution_pending
+current_gate = GRV8_P8_1_stage_1_scientific_review_pending
 verification_closeout_ladder_rung_assigned = true
 verification_closeout_rung = GRV-C5
 verification_closeout_ceiling = GRV-C5_assigned_GRV8_pending
@@ -1851,7 +1851,7 @@ The external 27-point review maps to P8.1 as follows:
 24. [x] Legacy B1-L and future LGRC-N are distinct investigations over distinct bases.
 25. [x] All final prohibited claims remain explicit.
 26. [x] Classification acceptance precedes bundle, successor, closeout anchor, and `GRV-C6`.
-27. [ ] Replacement clean execution, complete-suite rerun, and protected-path successor remain pending.
+27. [x] Replacement clean execution, complete-suite rerun, and protected-path successor pass.
 
 - [x] Preserve the unaccepted P8 candidate and record its supersession reason.
 - [x] Expand the object atlas from 19 broad rows to 31 role-specific rows.
@@ -1866,8 +1866,60 @@ The external 27-point review maps to P8.1 as follows:
 - [x] Add negative LGRC relabel boundaries without emitting the final handoff.
 - [x] Add primary cause, alternatives, rejected routes, and next action to contradiction rows.
 - [x] Add reason, disposition, and supporting artifacts to superseded claims.
-- [ ] Commit the P8.1 method revision.
-- [ ] Execute replacement GRV8 from the clean P8.1 revision.
-- [ ] Validate the replacement receipt, artifacts, protected paths, and complete suite.
-- [ ] Submit the replacement candidate for human scientific review.
-- [ ] Keep Stage 2 bundle, successor, handoff, closeout anchor, and `GRV-C6` blocked.
+- [x] Commit the P8.1 method revision.
+- [x] Execute replacement GRV8 from the clean P8.1 revision.
+- [x] Validate the replacement receipt, artifacts, protected paths, and complete suite.
+- [x] Submit the replacement candidate for human scientific review.
+- [x] Keep Stage 2 bundle, successor, handoff, closeout anchor, and `GRV-C6` blocked.
+
+P8.1 replacement candidate awaiting human scientific review:
+
+```text
+input_execution_revision = bfb3de100deee6c86b98d839d0b6d89fde8e0f59
+mechanical_status = passed
+scientific_acceptance = awaiting_human_review
+accepted_prerequisite_gate_count = 8
+verification_closeout_rung = GRV-C5
+classified_assumption_count = 19
+classified_claim_count = 33
+classified_object_count = 31
+classified_causal_role_count = 9
+contradiction_route_count = 6
+extension_decision_count = 6
+maximum_retention_ladder_rung = GRR2
+native_current_recurrence = exact_native_mechanism_distinct_from_core_readback
+j_equals_J_C_runtime_mapping = analogy_only_candidate_mapping_rejected
+native_readback_supported = false
+native_writeback_supported = false
+closed_read_write_loop_supported = false
+theory_reopening_required = false
+evidence_bundle_frozen = false
+successor_generated = false
+GRV_C6_assigned = false
+B1_L_execution_authorized = false
+repository_tests = 1354_passed
+post_generation_B1_GR_tests = 111_passed
+protected_path_count = 379
+protected_paths_unchanged = true
+grv8_result_receipt_payload_sha256 = 24b30abc8b8db8134f0ecb335bd286f5866caef34e05b5fd5ecf459831cf5b8d
+equivalence_classification_sha256 = a03aa372942ec68100c6c847b4c355b8294a1c931ffc485ff97858dde8a9dfe5
+final_causal_role_classification_sha256 = 18a881f6d2a13f28dc59246c47ad07c208faa56cf03ebe6134bd868253f2c3e0
+final_claim_classification_sha256 = 65b9f4543d57b60d558998d693f62a3bb11f64f81e92027aaa456b45dd639883
+extension_decision_sha256 = 51bf77e5329c4ff0e10fa5b7f0430d70f9646638d17c42a78d9a30167795c76e
+protected_manifest_sha256 = d2e2aa1556ef4f5977e27d3dc0c00c71129036d4d4e6cfdc5f298d406baf35db
+```
+
+The replacement preserves the accepted GRV0-GRV7 chain and the mixed B1-GR
+result. Native current recurrence is an exact stage-local GRC9V3 mechanism,
+but it is not core Read-Back and does not establish the declared `j = J_C`
+reduction. The strongest retention result remains synthetic-input,
+`C`-dominated `GRR2` persistence with branch relocation unresolved. Reduced
+clamped-`W` non-equivalence remains supported while full-map non-equivalence,
+native mediation, durable carrier retention, directional Read-Back,
+write-back, and closed-loop claims remain blocked.
+
+The Stage 1 LGRC boundary candidate is now explicit but is not a handoff.
+Legacy B1-L over unchanged GRC9V3 and future LGRC-N over a revised
+constitutive kernel are separate investigations. Human acceptance of this
+replacement classification is required before the evidence bundle, successor,
+final handoff, closeout anchor, or `GRV-C6` may be emitted.

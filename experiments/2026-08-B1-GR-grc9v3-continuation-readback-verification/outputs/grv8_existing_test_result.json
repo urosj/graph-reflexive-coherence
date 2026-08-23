@@ -11,10 +11,10 @@
     "failed_or_error": 0,
     "highest_supported_claim": "protected_repository_suite_passes_at_GRV8_input_revision",
     "log_path": "outputs/logs/grv8_existing_tests.log",
-    "log_sha256": "06437ecef36d5606b11dcc159c196a8b87b951300f30cbb79ea1402b46005814",
+    "log_sha256": "cb0c856a6af32e02c51297f75b2e2d52e35eb2ed1efa1f174f91593c7d39f3ec",
     "status": "passed",
     "tests_run": 1354
   },
-  "payload_sha256": "38942595832977df1ec3089e5be5427395f9d977b017b68d8fbcf404abaa286e",
+  "payload_sha256": "8e828fd259b90a248cd1cb03b9ad905fc789d10166c8da0d043cf2673ac09460",
   "schema_version": "b1_grv8_existing_test_result_v1"
 }

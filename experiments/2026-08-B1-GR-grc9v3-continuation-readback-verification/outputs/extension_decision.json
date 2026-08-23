@@ -10,6 +10,106 @@
     ],
     "decisions": [
       {
+        "accepted_evidence_records": [
+          {
+            "acceptance_anchor_path": "outputs/gates/grv5_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "e62df0c5f65051a8d682b2ba2e423d5f97fd269d8698c347392c6c2a827efe41",
+            "acceptance_anchor_sha256": "06df24f77ed7f6beb5d58424a21a34d71447b13bf3b84ad4109cd56cc0891026",
+            "artifact_path": "outputs/conductance_retention_probe.json",
+            "artifact_payload_sha256": "0a3b4ce1ca2abaa681466abe0a03f95393ff4b80bb91fd650aeaf08b2a265989",
+            "artifact_sha256": "bba1472177a2f182359ad9bc1ade634cd388f55088428fd030e6e32e74ed5766",
+            "consumed_value_semantic_sha256": "7b1a278f5abe8e9da907fc9c29dfd432d60dc76e17b0fabab659d2a508bc65c4",
+            "exact_field_or_row": "/payload/summary/substrate_reduced_sensitivity_count",
+            "result_revision": "317092e9e86bf618dac4d31ffc47f74d9fa270f6",
+            "source_gate": "GRV5"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv4_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "d2de26d458f4f03c8b910eebe256ca32657d1500e5aace8acc04b6bd2b503d49",
+            "acceptance_anchor_sha256": "15136eacdb7e82074a3bce0724e36b4a7a51ff9310a123d3ede80eaefe6747cc",
+            "artifact_path": "outputs/frozen_full_comparison.json",
+            "artifact_payload_sha256": "34eabb8e4b65d225943e8cfb0c77db617b7a96a536b6c46edf224e2e818ad7a3",
+            "artifact_sha256": "5c07aff644cb56e8936a4f7be0ecae05c6ab7177910ea5b3f4fb0af8a6b4cd34",
+            "consumed_value_semantic_sha256": "a742938feddb99f37e153dbae0b88f48df86c436f281653f5b535fe3ccc1b81c",
+            "exact_field_or_row": "/payload/claim_boundary/frozen_operator_class",
+            "result_revision": "e99a8a3d07ef4860bcc756d60cb4fb54056a6ddb",
+            "source_gate": "GRV4"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv4_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "d2de26d458f4f03c8b910eebe256ca32657d1500e5aace8acc04b6bd2b503d49",
+            "acceptance_anchor_sha256": "15136eacdb7e82074a3bce0724e36b4a7a51ff9310a123d3ede80eaefe6747cc",
+            "artifact_path": "outputs/frozen_full_comparison.json",
+            "artifact_payload_sha256": "34eabb8e4b65d225943e8cfb0c77db617b7a96a536b6c46edf224e2e818ad7a3",
+            "artifact_sha256": "5c07aff644cb56e8936a4f7be0ecae05c6ab7177910ea5b3f4fb0af8a6b4cd34",
+            "consumed_value_semantic_sha256": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa",
+            "exact_field_or_row": "/payload/claim_boundary/geometry_only_attribution_claim_allowed",
+            "result_revision": "e99a8a3d07ef4860bcc756d60cb4fb54056a6ddb",
+            "source_gate": "GRV4"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv4_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "d2de26d458f4f03c8b910eebe256ca32657d1500e5aace8acc04b6bd2b503d49",
+            "acceptance_anchor_sha256": "15136eacdb7e82074a3bce0724e36b4a7a51ff9310a123d3ede80eaefe6747cc",
+            "artifact_path": "outputs/frozen_full_comparison.json",
+            "artifact_payload_sha256": "34eabb8e4b65d225943e8cfb0c77db617b7a96a536b6c46edf224e2e818ad7a3",
+            "artifact_sha256": "5c07aff644cb56e8936a4f7be0ecae05c6ab7177910ea5b3f4fb0af8a6b4cd34",
+            "consumed_value_semantic_sha256": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa",
+            "exact_field_or_row": "/payload/claim_boundary/mobility_only_attribution_claim_allowed",
+            "result_revision": "e99a8a3d07ef4860bcc756d60cb4fb54056a6ddb",
+            "source_gate": "GRV4"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv4_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "d2de26d458f4f03c8b910eebe256ca32657d1500e5aace8acc04b6bd2b503d49",
+            "acceptance_anchor_sha256": "15136eacdb7e82074a3bce0724e36b4a7a51ff9310a123d3ede80eaefe6747cc",
+            "artifact_path": "outputs/frozen_full_comparison.json",
+            "artifact_payload_sha256": "34eabb8e4b65d225943e8cfb0c77db617b7a96a536b6c46edf224e2e818ad7a3",
+            "artifact_sha256": "5c07aff644cb56e8936a4f7be0ecae05c6ab7177910ea5b3f4fb0af8a6b4cd34",
+            "consumed_value_semantic_sha256": "e29c9c180c6279b0b02abd6a1801c7c04082cf486ec027aa13515e4f3884bb6b",
+            "exact_field_or_row": "/payload/summary/primary_no_resolved_difference_within_uncertainty_count",
+            "result_revision": "e99a8a3d07ef4860bcc756d60cb4fb54056a6ddb",
+            "source_gate": "GRV4"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv4_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "d2de26d458f4f03c8b910eebe256ca32657d1500e5aace8acc04b6bd2b503d49",
+            "acceptance_anchor_sha256": "15136eacdb7e82074a3bce0724e36b4a7a51ff9310a123d3ede80eaefe6747cc",
+            "artifact_path": "outputs/frozen_full_comparison.json",
+            "artifact_payload_sha256": "34eabb8e4b65d225943e8cfb0c77db617b7a96a536b6c46edf224e2e818ad7a3",
+            "artifact_sha256": "5c07aff644cb56e8936a4f7be0ecae05c6ab7177910ea5b3f4fb0af8a6b4cd34",
+            "consumed_value_semantic_sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+            "exact_field_or_row": "/payload/summary/verified_strong_disagreement_count",
+            "result_revision": "e99a8a3d07ef4860bcc756d60cb4fb54056a6ddb",
+            "source_gate": "GRV4"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv1_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "37bab077d3c0c467f82b678341302013a19a7ba93453d2a70ad8ea40790f7353",
+            "acceptance_anchor_sha256": "de3b969a255c297de067d00fa6493353d1a81ace4189d16ab01abb20de7cd70e",
+            "artifact_path": "outputs/instrumentation_validation.json",
+            "artifact_payload_sha256": "12b11b813e382313b4591971f608191abbefdf1441737711bbd26ee5c42d9800",
+            "artifact_sha256": "455f3a4c3f3a1071bd17dbd405494ac22b876ec0fe592e03d6bea5296016ff9b",
+            "consumed_value_semantic_sha256": "559532ad927252eed5d9b6687d55203a96b956d822055f4570f196a93a42bece",
+            "exact_field_or_row": "/payload/transport_anchor/status",
+            "result_revision": "3c43918b1051389c5943ae28f505e585a542c621",
+            "source_gate": "GRV1"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv1_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "37bab077d3c0c467f82b678341302013a19a7ba93453d2a70ad8ea40790f7353",
+            "acceptance_anchor_sha256": "de3b969a255c297de067d00fa6493353d1a81ace4189d16ab01abb20de7cd70e",
+            "artifact_path": "outputs/surface_authority_map.json",
+            "artifact_payload_sha256": "1a97e98452e1d13750c12979962d18c1f82b0e20443bf619f14dd63c85948436",
+            "artifact_sha256": "6c997644ca50618df229e9d8c6123d80925cd1bdda2f30eb2d7e8af76cb5b777",
+            "consumed_value_semantic_sha256": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b",
+            "exact_field_or_row": "/payload/checks/W_base_only_changes_consumer_output",
+            "result_revision": "3c43918b1051389c5943ae28f505e585a542c621",
+            "source_gate": "GRV1"
+          }
+        ],
+        "analysis_only_split_explains_verified_mismatch": false,
+        "architectural_limitation_status": "W_structural_and_transport_roles_are_conflated",
         "claim_ceiling": "W_role_conflation_remains_a_limitation_but_no_material_full_vs_frozen_difference_was_resolved",
         "debt_ids": [
           "D-G02"
@@ -20,29 +120,509 @@
           "outputs/frozen_full_comparison.json",
           "outputs/spatial_temporal_threshold_matrix.json"
         ],
-        "target": "separate_structural_geometry_and_transport_mobility"
+        "target": "separate_structural_geometry_and_transport_mobility",
+        "verified_observable_blocked_by_conflation": false
       },
       {
+        "accepted_evidence_records": [
+          {
+            "acceptance_anchor_path": "outputs/gates/grv5_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "e62df0c5f65051a8d682b2ba2e423d5f97fd269d8698c347392c6c2a827efe41",
+            "acceptance_anchor_sha256": "06df24f77ed7f6beb5d58424a21a34d71447b13bf3b84ad4109cd56cc0891026",
+            "artifact_path": "outputs/causal_role_matrix.json",
+            "artifact_payload_sha256": "20d24879e858c89a08d87eb680974215f553401cc92fd6f9160ae0cc9f9513a8",
+            "artifact_sha256": "a1cffd76061aa3ae3380a704e458d8bfeb64b97bb15201ca0b4ec775a5af3681",
+            "consumed_value_semantic_sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+            "exact_field_or_row": "/payload/summary/closed_loop_row_count",
+            "result_revision": "317092e9e86bf618dac4d31ffc47f74d9fa270f6",
+            "source_gate": "GRV5"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv3_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "51a3251a69da6a9b2cc3b041a3e8d50bbd2f790b21f53d033e2e3f9da51dfa9d",
+            "acceptance_anchor_sha256": "a263cfc887dbbc79856bab7a9e3d5d0b3ec524fc9fc658641f49e57ae08ca6a1",
+            "artifact_path": "outputs/complete_step_jacobians.json",
+            "artifact_payload_sha256": "a4f9a308c4c968d1b09fbd5fec2cf50d3a93f4c7c4764aa451e83a21655fbe26",
+            "artifact_sha256": "e4de4b9351ef7258baa88e7b675e8ce82f39ffe9db3ce9df395713e4f610c5ec",
+            "consumed_value_semantic_sha256": "c32bf7738863c8e7e059fb99041dff5525308f09ca47d4f0ed604a307d890341",
+            "exact_field_or_row": "/payload/summary/temporal_mode_interpretation_blocked_matrix_rows",
+            "result_revision": "0dedbf96f2a067442ec42ab67707aa694a35fdec",
+            "source_gate": "GRV3"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv3_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "51a3251a69da6a9b2cc3b041a3e8d50bbd2f790b21f53d033e2e3f9da51dfa9d",
+            "acceptance_anchor_sha256": "a263cfc887dbbc79856bab7a9e3d5d0b3ec524fc9fc658641f49e57ae08ca6a1",
+            "artifact_path": "outputs/complete_step_jacobians.json",
+            "artifact_payload_sha256": "a4f9a308c4c968d1b09fbd5fec2cf50d3a93f4c7c4764aa451e83a21655fbe26",
+            "artifact_sha256": "e4de4b9351ef7258baa88e7b675e8ce82f39ffe9db3ce9df395713e4f610c5ec",
+            "consumed_value_semantic_sha256": "d029fa3a95e174a19934857f535eb9427d967218a36ea014b70ad704bc6c8d1c",
+            "exact_field_or_row": "/payload/summary/temporal_mode_interpretation_pass_matrix_count",
+            "result_revision": "0dedbf96f2a067442ec42ab67707aa694a35fdec",
+            "source_gate": "GRV3"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv5_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "e62df0c5f65051a8d682b2ba2e423d5f97fd269d8698c347392c6c2a827efe41",
+            "acceptance_anchor_sha256": "06df24f77ed7f6beb5d58424a21a34d71447b13bf3b84ad4109cd56cc0891026",
+            "artifact_path": "outputs/conductance_retention_probe.json",
+            "artifact_payload_sha256": "0a3b4ce1ca2abaa681466abe0a03f95393ff4b80bb91fd650aeaf08b2a265989",
+            "artifact_sha256": "bba1472177a2f182359ad9bc1ade634cd388f55088428fd030e6e32e74ed5766",
+            "consumed_value_semantic_sha256": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b",
+            "exact_field_or_row": "/payload/claim_boundary/branch_relocation_rival_must_remain_open",
+            "result_revision": "317092e9e86bf618dac4d31ffc47f74d9fa270f6",
+            "source_gate": "GRV5"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv5_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "e62df0c5f65051a8d682b2ba2e423d5f97fd269d8698c347392c6c2a827efe41",
+            "acceptance_anchor_sha256": "06df24f77ed7f6beb5d58424a21a34d71447b13bf3b84ad4109cd56cc0891026",
+            "artifact_path": "outputs/conductance_retention_probe.json",
+            "artifact_payload_sha256": "0a3b4ce1ca2abaa681466abe0a03f95393ff4b80bb91fd650aeaf08b2a265989",
+            "artifact_sha256": "bba1472177a2f182359ad9bc1ade634cd388f55088428fd030e6e32e74ed5766",
+            "consumed_value_semantic_sha256": "98010bd9270f9b100b6214a21754fd33bdc8d41b2bc9f9dd16ff54d3c34ffd71",
+            "exact_field_or_row": "/payload/summary/activity_stage_write_count",
+            "result_revision": "317092e9e86bf618dac4d31ffc47f74d9fa270f6",
+            "source_gate": "GRV5"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv5_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "e62df0c5f65051a8d682b2ba2e423d5f97fd269d8698c347392c6c2a827efe41",
+            "acceptance_anchor_sha256": "06df24f77ed7f6beb5d58424a21a34d71447b13bf3b84ad4109cd56cc0891026",
+            "artifact_path": "outputs/conductance_retention_probe.json",
+            "artifact_payload_sha256": "0a3b4ce1ca2abaa681466abe0a03f95393ff4b80bb91fd650aeaf08b2a265989",
+            "artifact_sha256": "bba1472177a2f182359ad9bc1ade634cd388f55088428fd030e6e32e74ed5766",
+            "consumed_value_semantic_sha256": "e29c9c180c6279b0b02abd6a1801c7c04082cf486ec027aa13515e4f3884bb6b",
+            "exact_field_or_row": "/payload/summary/bounded_persistence_count",
+            "result_revision": "317092e9e86bf618dac4d31ffc47f74d9fa270f6",
+            "source_gate": "GRV5"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv5_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "e62df0c5f65051a8d682b2ba2e423d5f97fd269d8698c347392c6c2a827efe41",
+            "acceptance_anchor_sha256": "06df24f77ed7f6beb5d58424a21a34d71447b13bf3b84ad4109cd56cc0891026",
+            "artifact_path": "outputs/conductance_retention_probe.json",
+            "artifact_payload_sha256": "0a3b4ce1ca2abaa681466abe0a03f95393ff4b80bb91fd650aeaf08b2a265989",
+            "artifact_sha256": "bba1472177a2f182359ad9bc1ade634cd388f55088428fd030e6e32e74ed5766",
+            "consumed_value_semantic_sha256": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa",
+            "exact_field_or_row": "/payload/summary/forming_old_current_input_runtime_reached",
+            "result_revision": "317092e9e86bf618dac4d31ffc47f74d9fa270f6",
+            "source_gate": "GRV5"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv5_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "e62df0c5f65051a8d682b2ba2e423d5f97fd269d8698c347392c6c2a827efe41",
+            "acceptance_anchor_sha256": "06df24f77ed7f6beb5d58424a21a34d71447b13bf3b84ad4109cd56cc0891026",
+            "artifact_path": "outputs/conductance_retention_probe.json",
+            "artifact_payload_sha256": "0a3b4ce1ca2abaa681466abe0a03f95393ff4b80bb91fd650aeaf08b2a265989",
+            "artifact_sha256": "bba1472177a2f182359ad9bc1ade634cd388f55088428fd030e6e32e74ed5766",
+            "consumed_value_semantic_sha256": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa",
+            "exact_field_or_row": "/payload/summary/later_C_mediation_specifically_by_transient_W_supported",
+            "result_revision": "317092e9e86bf618dac4d31ffc47f74d9fa270f6",
+            "source_gate": "GRV5"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv5_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "e62df0c5f65051a8d682b2ba2e423d5f97fd269d8698c347392c6c2a827efe41",
+            "acceptance_anchor_sha256": "06df24f77ed7f6beb5d58424a21a34d71447b13bf3b84ad4109cd56cc0891026",
+            "artifact_path": "outputs/conductance_retention_probe.json",
+            "artifact_payload_sha256": "0a3b4ce1ca2abaa681466abe0a03f95393ff4b80bb91fd650aeaf08b2a265989",
+            "artifact_sha256": "bba1472177a2f182359ad9bc1ade634cd388f55088428fd030e6e32e74ed5766",
+            "consumed_value_semantic_sha256": "b1a805c7628f78d7db4938a37ca1549f201740c007a983d425d0ebb47ef47fda",
+            "exact_field_or_row": "/payload/summary/maximum_local_evidence_ladder_rung",
+            "result_revision": "317092e9e86bf618dac4d31ffc47f74d9fa270f6",
+            "source_gate": "GRV5"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv5_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "e62df0c5f65051a8d682b2ba2e423d5f97fd269d8698c347392c6c2a827efe41",
+            "acceptance_anchor_sha256": "06df24f77ed7f6beb5d58424a21a34d71447b13bf3b84ad4109cd56cc0891026",
+            "artifact_path": "outputs/conductance_retention_probe.json",
+            "artifact_payload_sha256": "0a3b4ce1ca2abaa681466abe0a03f95393ff4b80bb91fd650aeaf08b2a265989",
+            "artifact_sha256": "bba1472177a2f182359ad9bc1ade634cd388f55088428fd030e6e32e74ed5766",
+            "consumed_value_semantic_sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+            "exact_field_or_row": "/payload/summary/native_mediation_count",
+            "result_revision": "317092e9e86bf618dac4d31ffc47f74d9fa270f6",
+            "source_gate": "GRV5"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv5_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "e62df0c5f65051a8d682b2ba2e423d5f97fd269d8698c347392c6c2a827efe41",
+            "acceptance_anchor_sha256": "06df24f77ed7f6beb5d58424a21a34d71447b13bf3b84ad4109cd56cc0891026",
+            "artifact_path": "outputs/conductance_retention_probe.json",
+            "artifact_payload_sha256": "0a3b4ce1ca2abaa681466abe0a03f95393ff4b80bb91fd650aeaf08b2a265989",
+            "artifact_sha256": "bba1472177a2f182359ad9bc1ade634cd388f55088428fd030e6e32e74ed5766",
+            "consumed_value_semantic_sha256": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa",
+            "exact_field_or_row": "/payload/summary/transverse_branch_relative_retention_supported",
+            "result_revision": "317092e9e86bf618dac4d31ffc47f74d9fa270f6",
+            "source_gate": "GRV5"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv0_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "52ad1a2a21d0032666ed3f42091c58fc4c015cf645490e668ff5462ad703dc82",
+            "acceptance_anchor_sha256": "b397d4a5f3d70e63e1a34660d7d6e7d74086c91b1d81f4cd58842d9c6cfdca25",
+            "artifact_path": "outputs/fixed_topology_envelope.json",
+            "artifact_payload_sha256": "4b8e34b4da641662249090a5b09d2a2290514b157b506459d3dfdeeb0f29d8aa",
+            "artifact_sha256": "0db935f8e0107a75d91fd5513ef9ede36dd52f0bdb110046a9852afe0f377b01",
+            "consumed_value_semantic_sha256": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b",
+            "exact_field_or_row": "/payload/fixed_topology",
+            "result_revision": "97a9a6bf9cd20ca6c1adcc0feee26712df9569fb",
+            "source_gate": "GRV0"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv3_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "51a3251a69da6a9b2cc3b041a3e8d50bbd2f790b21f53d033e2e3f9da51dfa9d",
+            "acceptance_anchor_sha256": "a263cfc887dbbc79856bab7a9e3d5d0b3ec524fc9fc658641f49e57ae08ca6a1",
+            "artifact_path": "outputs/slow_cluster_registry.json",
+            "artifact_payload_sha256": "dda4acee042731d63e8a4e9e07ad6f9c68728dd2eab0ea2d516ae66830ef4004",
+            "artifact_sha256": "dc2e5c8d2c11284ac5b4977fc9f9c932b5320d871319b749debeec37671f6141",
+            "consumed_value_semantic_sha256": "7b1a278f5abe8e9da907fc9c29dfd432d60dc76e17b0fabab659d2a508bc65c4",
+            "exact_field_or_row": "/payload/cluster_count",
+            "result_revision": "0dedbf96f2a067442ec42ab67707aa694a35fdec",
+            "source_gate": "GRV3"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv3_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "51a3251a69da6a9b2cc3b041a3e8d50bbd2f790b21f53d033e2e3f9da51dfa9d",
+            "acceptance_anchor_sha256": "a263cfc887dbbc79856bab7a9e3d5d0b3ec524fc9fc658641f49e57ae08ca6a1",
+            "artifact_path": "outputs/slow_cluster_registry.json",
+            "artifact_payload_sha256": "dda4acee042731d63e8a4e9e07ad6f9c68728dd2eab0ea2d516ae66830ef4004",
+            "artifact_sha256": "dc2e5c8d2c11284ac5b4977fc9f9c932b5320d871319b749debeec37671f6141",
+            "consumed_value_semantic_sha256": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa",
+            "exact_field_or_row": "/payload/retention_claim_allowed",
+            "result_revision": "0dedbf96f2a067442ec42ab67707aa694a35fdec",
+            "source_gate": "GRV3"
+          }
+        ],
         "claim_ceiling": "bounded_synthetic_C_dominated_neutral_persistence_with_branch_relocation_rival_open",
+        "current_durable_native_carrier_status": "unsupported_in_tested_complete_step_path",
         "debt_ids": [
           "D-R02",
           "D-P01"
         ],
         "decision_id": "EXT-RETAINED-CARRIER",
+        "realization_choice": "temporalized_W_versus_new_M_theoretically_underdetermined",
         "route": "not_opened_native_mediation_and_reachability_not_established",
         "source_evidence": [
           "outputs/conductance_retention_probe.json",
           "outputs/causal_role_matrix.json"
         ],
-        "target": "separate_persistent_retained_geometry_carrier"
+        "target": "separate_persistent_retained_geometry_carrier",
+        "target_conditioned_role_requirement": "required_only_if_future_native_retained_read_write_loop_is_selected"
       },
       {
+        "accepted_evidence_records": [
+          {
+            "acceptance_anchor_path": "outputs/gates/grv5_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "e62df0c5f65051a8d682b2ba2e423d5f97fd269d8698c347392c6c2a827efe41",
+            "acceptance_anchor_sha256": "06df24f77ed7f6beb5d58424a21a34d71447b13bf3b84ad4109cd56cc0891026",
+            "artifact_path": "outputs/causal_role_matrix.json",
+            "artifact_payload_sha256": "20d24879e858c89a08d87eb680974215f553401cc92fd6f9160ae0cc9f9513a8",
+            "artifact_sha256": "a1cffd76061aa3ae3380a704e458d8bfeb64b97bb15201ca0b4ec775a5af3681",
+            "consumed_value_semantic_sha256": "b1a805c7628f78d7db4938a37ca1549f201740c007a983d425d0ebb47ef47fda",
+            "exact_field_or_row": "/payload/summary/maximum_local_evidence_ladder_rung",
+            "result_revision": "317092e9e86bf618dac4d31ffc47f74d9fa270f6",
+            "source_gate": "GRV5"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv3_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "51a3251a69da6a9b2cc3b041a3e8d50bbd2f790b21f53d033e2e3f9da51dfa9d",
+            "acceptance_anchor_sha256": "a263cfc887dbbc79856bab7a9e3d5d0b3ec524fc9fc658641f49e57ae08ca6a1",
+            "artifact_path": "outputs/complete_step_jacobians.json",
+            "artifact_payload_sha256": "a4f9a308c4c968d1b09fbd5fec2cf50d3a93f4c7c4764aa451e83a21655fbe26",
+            "artifact_sha256": "e4de4b9351ef7258baa88e7b675e8ce82f39ffe9db3ce9df395713e4f610c5ec",
+            "consumed_value_semantic_sha256": "892fa0dae0c4e61c96daff5f89e6c01f24a37decc45616be47c80a83474788b1",
+            "exact_field_or_row": "/payload/causal_field_inventory",
+            "result_revision": "0dedbf96f2a067442ec42ab67707aa694a35fdec",
+            "source_gate": "GRV3"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv3_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "51a3251a69da6a9b2cc3b041a3e8d50bbd2f790b21f53d033e2e3f9da51dfa9d",
+            "acceptance_anchor_sha256": "a263cfc887dbbc79856bab7a9e3d5d0b3ec524fc9fc658641f49e57ae08ca6a1",
+            "artifact_path": "outputs/complete_step_jacobians.json",
+            "artifact_payload_sha256": "a4f9a308c4c968d1b09fbd5fec2cf50d3a93f4c7c4764aa451e83a21655fbe26",
+            "artifact_sha256": "e4de4b9351ef7258baa88e7b675e8ce82f39ffe9db3ce9df395713e4f610c5ec",
+            "consumed_value_semantic_sha256": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa",
+            "exact_field_or_row": "/payload/claim_boundary/joint_C_W_mode_claim_allowed",
+            "result_revision": "0dedbf96f2a067442ec42ab67707aa694a35fdec",
+            "source_gate": "GRV3"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv3_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "51a3251a69da6a9b2cc3b041a3e8d50bbd2f790b21f53d033e2e3f9da51dfa9d",
+            "acceptance_anchor_sha256": "a263cfc887dbbc79856bab7a9e3d5d0b3ec524fc9fc658641f49e57ae08ca6a1",
+            "artifact_path": "outputs/complete_step_jacobians.json",
+            "artifact_payload_sha256": "a4f9a308c4c968d1b09fbd5fec2cf50d3a93f4c7c4764aa451e83a21655fbe26",
+            "artifact_sha256": "e4de4b9351ef7258baa88e7b675e8ce82f39ffe9db3ce9df395713e4f610c5ec",
+            "consumed_value_semantic_sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+            "exact_field_or_row": "/payload/summary/full_C_W_J_jacobian_admitted_count",
+            "result_revision": "0dedbf96f2a067442ec42ab67707aa694a35fdec",
+            "source_gate": "GRV3"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv5_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "e62df0c5f65051a8d682b2ba2e423d5f97fd269d8698c347392c6c2a827efe41",
+            "acceptance_anchor_sha256": "06df24f77ed7f6beb5d58424a21a34d71447b13bf3b84ad4109cd56cc0891026",
+            "artifact_path": "outputs/conductance_retention_probe.json",
+            "artifact_payload_sha256": "0a3b4ce1ca2abaa681466abe0a03f95393ff4b80bb91fd650aeaf08b2a265989",
+            "artifact_sha256": "bba1472177a2f182359ad9bc1ade634cd388f55088428fd030e6e32e74ed5766",
+            "consumed_value_semantic_sha256": "02688fb9f7b538181d8d6eb40e13d8a24a5f55dacccde538b4e05b44f61e5785",
+            "exact_field_or_row": "/payload/assumption_statuses/A-PASSIVE-result",
+            "result_revision": "317092e9e86bf618dac4d31ffc47f74d9fa270f6",
+            "source_gate": "GRV5"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv5_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "e62df0c5f65051a8d682b2ba2e423d5f97fd269d8698c347392c6c2a827efe41",
+            "acceptance_anchor_sha256": "06df24f77ed7f6beb5d58424a21a34d71447b13bf3b84ad4109cd56cc0891026",
+            "artifact_path": "outputs/conductance_retention_probe.json",
+            "artifact_payload_sha256": "0a3b4ce1ca2abaa681466abe0a03f95393ff4b80bb91fd650aeaf08b2a265989",
+            "artifact_sha256": "bba1472177a2f182359ad9bc1ade634cd388f55088428fd030e6e32e74ed5766",
+            "consumed_value_semantic_sha256": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b",
+            "exact_field_or_row": "/payload/claim_boundary/core_readback_requires_native_present_current_conditioned_directional_relation",
+            "result_revision": "317092e9e86bf618dac4d31ffc47f74d9fa270f6",
+            "source_gate": "GRV5"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv5_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "e62df0c5f65051a8d682b2ba2e423d5f97fd269d8698c347392c6c2a827efe41",
+            "acceptance_anchor_sha256": "06df24f77ed7f6beb5d58424a21a34d71447b13bf3b84ad4109cd56cc0891026",
+            "artifact_path": "outputs/conductance_retention_probe.json",
+            "artifact_payload_sha256": "0a3b4ce1ca2abaa681466abe0a03f95393ff4b80bb91fd650aeaf08b2a265989",
+            "artifact_sha256": "bba1472177a2f182359ad9bc1ade634cd388f55088428fd030e6e32e74ed5766",
+            "consumed_value_semantic_sha256": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa",
+            "exact_field_or_row": "/payload/claim_boundary/frozen_W_result_can_upgrade_native",
+            "result_revision": "317092e9e86bf618dac4d31ffc47f74d9fa270f6",
+            "source_gate": "GRV5"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv5_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "e62df0c5f65051a8d682b2ba2e423d5f97fd269d8698c347392c6c2a827efe41",
+            "acceptance_anchor_sha256": "06df24f77ed7f6beb5d58424a21a34d71447b13bf3b84ad4109cd56cc0891026",
+            "artifact_path": "outputs/conductance_retention_probe.json",
+            "artifact_payload_sha256": "0a3b4ce1ca2abaa681466abe0a03f95393ff4b80bb91fd650aeaf08b2a265989",
+            "artifact_sha256": "bba1472177a2f182359ad9bc1ade634cd388f55088428fd030e6e32e74ed5766",
+            "consumed_value_semantic_sha256": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa",
+            "exact_field_or_row": "/payload/present_current_convention/native_external_present_current_input_available",
+            "result_revision": "317092e9e86bf618dac4d31ffc47f74d9fa270f6",
+            "source_gate": "GRV5"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv5_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "e62df0c5f65051a8d682b2ba2e423d5f97fd269d8698c347392c6c2a827efe41",
+            "acceptance_anchor_sha256": "06df24f77ed7f6beb5d58424a21a34d71447b13bf3b84ad4109cd56cc0891026",
+            "artifact_path": "outputs/conductance_retention_probe.json",
+            "artifact_payload_sha256": "0a3b4ce1ca2abaa681466abe0a03f95393ff4b80bb91fd650aeaf08b2a265989",
+            "artifact_sha256": "bba1472177a2f182359ad9bc1ade634cd388f55088428fd030e6e32e74ed5766",
+            "consumed_value_semantic_sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+            "exact_field_or_row": "/payload/summary/native_mediation_count",
+            "result_revision": "317092e9e86bf618dac4d31ffc47f74d9fa270f6",
+            "source_gate": "GRV5"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv5_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "e62df0c5f65051a8d682b2ba2e423d5f97fd269d8698c347392c6c2a827efe41",
+            "acceptance_anchor_sha256": "06df24f77ed7f6beb5d58424a21a34d71447b13bf3b84ad4109cd56cc0891026",
+            "artifact_path": "outputs/conductance_retention_probe.json",
+            "artifact_payload_sha256": "0a3b4ce1ca2abaa681466abe0a03f95393ff4b80bb91fd650aeaf08b2a265989",
+            "artifact_sha256": "bba1472177a2f182359ad9bc1ade634cd388f55088428fd030e6e32e74ed5766",
+            "consumed_value_semantic_sha256": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa",
+            "exact_field_or_row": "/payload/summary/native_readback_supported",
+            "result_revision": "317092e9e86bf618dac4d31ffc47f74d9fa270f6",
+            "source_gate": "GRV5"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv1_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "37bab077d3c0c467f82b678341302013a19a7ba93453d2a70ad8ea40790f7353",
+            "acceptance_anchor_sha256": "de3b969a255c297de067d00fa6493353d1a81ace4189d16ab01abb20de7cd70e",
+            "artifact_path": "outputs/instrumentation_validation.json",
+            "artifact_payload_sha256": "12b11b813e382313b4591971f608191abbefdf1441737711bbd26ee5c42d9800",
+            "artifact_sha256": "455f3a4c3f3a1071bd17dbd405494ac22b876ec0fe592e03d6bea5296016ff9b",
+            "consumed_value_semantic_sha256": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b",
+            "exact_field_or_row": "/payload/claim_boundary/exact_orientation_semantics_supported",
+            "result_revision": "3c43918b1051389c5943ae28f505e585a542c621",
+            "source_gate": "GRV1"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv1_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "37bab077d3c0c467f82b678341302013a19a7ba93453d2a70ad8ea40790f7353",
+            "acceptance_anchor_sha256": "de3b969a255c297de067d00fa6493353d1a81ace4189d16ab01abb20de7cd70e",
+            "artifact_path": "outputs/instrumentation_validation.json",
+            "artifact_payload_sha256": "12b11b813e382313b4591971f608191abbefdf1441737711bbd26ee5c42d9800",
+            "artifact_sha256": "455f3a4c3f3a1071bd17dbd405494ac22b876ec0fe592e03d6bea5296016ff9b",
+            "consumed_value_semantic_sha256": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b",
+            "exact_field_or_row": "/payload/current_sign_control/checks/old_current_magnitude_enters_conductance_exactly",
+            "result_revision": "3c43918b1051389c5943ae28f505e585a542c621",
+            "source_gate": "GRV1"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv1_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "37bab077d3c0c467f82b678341302013a19a7ba93453d2a70ad8ea40790f7353",
+            "acceptance_anchor_sha256": "de3b969a255c297de067d00fa6493353d1a81ace4189d16ab01abb20de7cd70e",
+            "artifact_path": "outputs/instrumentation_validation.json",
+            "artifact_payload_sha256": "12b11b813e382313b4591971f608191abbefdf1441737711bbd26ee5c42d9800",
+            "artifact_sha256": "455f3a4c3f3a1071bd17dbd405494ac22b876ec0fe592e03d6bea5296016ff9b",
+            "consumed_value_semantic_sha256": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b",
+            "exact_field_or_row": "/payload/current_sign_control/checks/stagewise_conductance_is_sign_even",
+            "result_revision": "3c43918b1051389c5943ae28f505e585a542c621",
+            "source_gate": "GRV1"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv1_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "37bab077d3c0c467f82b678341302013a19a7ba93453d2a70ad8ea40790f7353",
+            "acceptance_anchor_sha256": "de3b969a255c297de067d00fa6493353d1a81ace4189d16ab01abb20de7cd70e",
+            "artifact_path": "outputs/instrumentation_validation.json",
+            "artifact_payload_sha256": "12b11b813e382313b4591971f608191abbefdf1441737711bbd26ee5c42d9800",
+            "artifact_sha256": "455f3a4c3f3a1071bd17dbd405494ac22b876ec0fe592e03d6bea5296016ff9b",
+            "consumed_value_semantic_sha256": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b",
+            "exact_field_or_row": "/payload/current_sign_control/checks/stagewise_current_is_reconstructed_equal",
+            "result_revision": "3c43918b1051389c5943ae28f505e585a542c621",
+            "source_gate": "GRV1"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv1_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "37bab077d3c0c467f82b678341302013a19a7ba93453d2a70ad8ea40790f7353",
+            "acceptance_anchor_sha256": "de3b969a255c297de067d00fa6493353d1a81ace4189d16ab01abb20de7cd70e",
+            "artifact_path": "outputs/instrumentation_validation.json",
+            "artifact_payload_sha256": "12b11b813e382313b4591971f608191abbefdf1441737711bbd26ee5c42d9800",
+            "artifact_sha256": "455f3a4c3f3a1071bd17dbd405494ac22b876ec0fe592e03d6bea5296016ff9b",
+            "consumed_value_semantic_sha256": "6b9097ad59aa205c99b31b988ecace0534a10f7d8e731e5ead4e3573c5272a82",
+            "exact_field_or_row": "/payload/current_sign_control/classification/magnitude_persistence",
+            "result_revision": "3c43918b1051389c5943ae28f505e585a542c621",
+            "source_gate": "GRV1"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv1_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "37bab077d3c0c467f82b678341302013a19a7ba93453d2a70ad8ea40790f7353",
+            "acceptance_anchor_sha256": "de3b969a255c297de067d00fa6493353d1a81ace4189d16ab01abb20de7cd70e",
+            "artifact_path": "outputs/instrumentation_validation.json",
+            "artifact_payload_sha256": "12b11b813e382313b4591971f608191abbefdf1441737711bbd26ee5c42d9800",
+            "artifact_sha256": "455f3a4c3f3a1071bd17dbd405494ac22b876ec0fe592e03d6bea5296016ff9b",
+            "consumed_value_semantic_sha256": "ccad3f4371f5e7079e45fc4efcc1955b89f2f849fe50a1b13ae693d3ed03b420",
+            "exact_field_or_row": "/payload/current_sign_control/classification/orientation_persistence",
+            "result_revision": "3c43918b1051389c5943ae28f505e585a542c621",
+            "source_gate": "GRV1"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv1_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "37bab077d3c0c467f82b678341302013a19a7ba93453d2a70ad8ea40790f7353",
+            "acceptance_anchor_sha256": "de3b969a255c297de067d00fa6493353d1a81ace4189d16ab01abb20de7cd70e",
+            "artifact_path": "outputs/instrumentation_validation.json",
+            "artifact_payload_sha256": "12b11b813e382313b4591971f608191abbefdf1441737711bbd26ee5c42d9800",
+            "artifact_sha256": "455f3a4c3f3a1071bd17dbd405494ac22b876ec0fe592e03d6bea5296016ff9b",
+            "consumed_value_semantic_sha256": "95294c0db0c2ac8b90b4efecf04d0ad5068d4fa1cee45a20128c81a07dc16c96",
+            "exact_field_or_row": "/payload/current_sign_control/classification/transient_sign_summary",
+            "result_revision": "3c43918b1051389c5943ae28f505e585a542c621",
+            "source_gate": "GRV1"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv1_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "37bab077d3c0c467f82b678341302013a19a7ba93453d2a70ad8ea40790f7353",
+            "acceptance_anchor_sha256": "de3b969a255c297de067d00fa6493353d1a81ace4189d16ab01abb20de7cd70e",
+            "artifact_path": "outputs/instrumentation_validation.json",
+            "artifact_payload_sha256": "12b11b813e382313b4591971f608191abbefdf1441737711bbd26ee5c42d9800",
+            "artifact_sha256": "455f3a4c3f3a1071bd17dbd405494ac22b876ec0fe592e03d6bea5296016ff9b",
+            "consumed_value_semantic_sha256": "eb77a04996f18ed386b1d94d4f3554709cada432088d84fa861dfdd3866e4676",
+            "exact_field_or_row": "/payload/current_sign_control/classification/unoriented_axis_persistence",
+            "result_revision": "3c43918b1051389c5943ae28f505e585a542c621",
+            "source_gate": "GRV1"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv6_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "bfa8d1f619f7d50d0a7b8fa1f3d98411b7f1743d6a6b70e7fdf6658a9e7c1cbe",
+            "acceptance_anchor_sha256": "954dd5e5dec600840a82c07e6e1aa80a7940590958de374406f94d96cb0c979b",
+            "artifact_path": "outputs/return_orbit_registry.json",
+            "artifact_payload_sha256": "6bdaa57582cec01aceaeb3a351777c5e87a4917515f81124878b2aa9edef54e1",
+            "artifact_sha256": "f9af1524153d31ee2528f2d275b8274d5f65ca4a0c438ce3d15540e9d1c68e9e",
+            "consumed_value_semantic_sha256": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa",
+            "exact_field_or_row": "/payload/claim_boundary/no_orbit_found_is_global_nonexistence_proof",
+            "result_revision": "07cf6784abe600eb2ad345e2cf9c1ed2e109be3d",
+            "source_gate": "GRV6"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv6_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "bfa8d1f619f7d50d0a7b8fa1f3d98411b7f1743d6a6b70e7fdf6658a9e7c1cbe",
+            "acceptance_anchor_sha256": "954dd5e5dec600840a82c07e6e1aa80a7940590958de374406f94d96cb0c979b",
+            "artifact_path": "outputs/return_orbit_registry.json",
+            "artifact_payload_sha256": "6bdaa57582cec01aceaeb3a351777c5e87a4917515f81124878b2aa9edef54e1",
+            "artifact_sha256": "f9af1524153d31ee2528f2d275b8274d5f65ca4a0c438ce3d15540e9d1c68e9e",
+            "consumed_value_semantic_sha256": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b",
+            "exact_field_or_row": "/payload/summary/all_cycle_orientations_overwritten_at_first_transport",
+            "result_revision": "07cf6784abe600eb2ad345e2cf9c1ed2e109be3d",
+            "source_gate": "GRV6"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv6_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "bfa8d1f619f7d50d0a7b8fa1f3d98411b7f1743d6a6b70e7fdf6658a9e7c1cbe",
+            "acceptance_anchor_sha256": "954dd5e5dec600840a82c07e6e1aa80a7940590958de374406f94d96cb0c979b",
+            "artifact_path": "outputs/return_orbit_registry.json",
+            "artifact_payload_sha256": "6bdaa57582cec01aceaeb3a351777c5e87a4917515f81124878b2aa9edef54e1",
+            "artifact_sha256": "f9af1524153d31ee2528f2d275b8274d5f65ca4a0c438ce3d15540e9d1c68e9e",
+            "consumed_value_semantic_sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+            "exact_field_or_row": "/payload/summary/cycle_seed_persistence_count",
+            "result_revision": "07cf6784abe600eb2ad345e2cf9c1ed2e109be3d",
+            "source_gate": "GRV6"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv6_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "bfa8d1f619f7d50d0a7b8fa1f3d98411b7f1743d6a6b70e7fdf6658a9e7c1cbe",
+            "acceptance_anchor_sha256": "954dd5e5dec600840a82c07e6e1aa80a7940590958de374406f94d96cb0c979b",
+            "artifact_path": "outputs/return_orbit_registry.json",
+            "artifact_payload_sha256": "6bdaa57582cec01aceaeb3a351777c5e87a4917515f81124878b2aa9edef54e1",
+            "artifact_sha256": "f9af1524153d31ee2528f2d275b8274d5f65ca4a0c438ce3d15540e9d1c68e9e",
+            "consumed_value_semantic_sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+            "exact_field_or_row": "/payload/summary/primitive_return_orbit_count",
+            "result_revision": "07cf6784abe600eb2ad345e2cf9c1ed2e109be3d",
+            "source_gate": "GRV6"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv6_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "bfa8d1f619f7d50d0a7b8fa1f3d98411b7f1743d6a6b70e7fdf6658a9e7c1cbe",
+            "acceptance_anchor_sha256": "954dd5e5dec600840a82c07e6e1aa80a7940590958de374406f94d96cb0c979b",
+            "artifact_path": "outputs/return_orbit_registry.json",
+            "artifact_payload_sha256": "6bdaa57582cec01aceaeb3a351777c5e87a4917515f81124878b2aa9edef54e1",
+            "artifact_sha256": "f9af1524153d31ee2528f2d275b8274d5f65ca4a0c438ce3d15540e9d1c68e9e",
+            "consumed_value_semantic_sha256": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa",
+            "exact_field_or_row": "/payload/summary/relative_periodic_orbit_search_executed",
+            "result_revision": "07cf6784abe600eb2ad345e2cf9c1ed2e109be3d",
+            "source_gate": "GRV6"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv6_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "bfa8d1f619f7d50d0a7b8fa1f3d98411b7f1743d6a6b70e7fdf6658a9e7c1cbe",
+            "acceptance_anchor_sha256": "954dd5e5dec600840a82c07e6e1aa80a7940590958de374406f94d96cb0c979b",
+            "artifact_path": "outputs/return_orbit_registry.json",
+            "artifact_payload_sha256": "6bdaa57582cec01aceaeb3a351777c5e87a4917515f81124878b2aa9edef54e1",
+            "artifact_sha256": "f9af1524153d31ee2528f2d275b8274d5f65ca4a0c438ce3d15540e9d1c68e9e",
+            "consumed_value_semantic_sha256": "8b6cd7c429e83373dbd412f43d7422c0c4a127d93d0f2ad15909f0c2a3e7b320",
+            "exact_field_or_row": "/payload/summary/return_jacobian_ill_conditioned_count",
+            "result_revision": "07cf6784abe600eb2ad345e2cf9c1ed2e109be3d",
+            "source_gate": "GRV6"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv6_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "bfa8d1f619f7d50d0a7b8fa1f3d98411b7f1743d6a6b70e7fdf6658a9e7c1cbe",
+            "acceptance_anchor_sha256": "954dd5e5dec600840a82c07e6e1aa80a7940590958de374406f94d96cb0c979b",
+            "artifact_path": "outputs/return_orbit_registry.json",
+            "artifact_payload_sha256": "6bdaa57582cec01aceaeb3a351777c5e87a4917515f81124878b2aa9edef54e1",
+            "artifact_sha256": "f9af1524153d31ee2528f2d275b8274d5f65ca4a0c438ce3d15540e9d1c68e9e",
+            "consumed_value_semantic_sha256": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa",
+            "exact_field_or_row": "/payload/summary/stationary_cycle_current_supported",
+            "result_revision": "07cf6784abe600eb2ad345e2cf9c1ed2e109be3d",
+            "source_gate": "GRV6"
+          }
+        ],
         "claim_ceiling": "baseline_identifies_missing_oriented_role_but_B1_GR_does_not_select_the_target",
+        "cycle_current_persistence_status": "excluded_on_tested_F3_branches",
         "debt_ids": [
           "D-R03",
           "D-A01"
         ],
         "decision_id": "EXT-ORIENTED-CURRENT",
+        "directional_read_response_status": "absent_from_tested_native_runtime",
+        "historical_orientation_field_required_now": false,
+        "historical_orientation_retention_status": "absent_on_tested_path",
         "route": "conditionally_selectable_if_future_target_requires_directional_readback_or_active_circulation",
         "source_evidence": [
           "outputs/conductance_retention_probe.json",
@@ -51,6 +631,551 @@
         "target": "oriented_read_or_cycle_current_channel"
       },
       {
+        "accepted_evidence_records": [
+          {
+            "acceptance_anchor_path": "outputs/gates/grv3_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "51a3251a69da6a9b2cc3b041a3e8d50bbd2f790b21f53d033e2e3f9da51dfa9d",
+            "acceptance_anchor_sha256": "a263cfc887dbbc79856bab7a9e3d5d0b3ec524fc9fc658641f49e57ae08ca6a1",
+            "artifact_path": "outputs/complete_step_jacobians.json",
+            "artifact_payload_sha256": "a4f9a308c4c968d1b09fbd5fec2cf50d3a93f4c7c4764aa451e83a21655fbe26",
+            "artifact_sha256": "e4de4b9351ef7258baa88e7b675e8ce82f39ffe9db3ce9df395713e4f610c5ec",
+            "consumed_value_semantic_sha256": "892fa0dae0c4e61c96daff5f89e6c01f24a37decc45616be47c80a83474788b1",
+            "exact_field_or_row": "/payload/causal_field_inventory",
+            "result_revision": "0dedbf96f2a067442ec42ab67707aa694a35fdec",
+            "source_gate": "GRV3"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv3_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "51a3251a69da6a9b2cc3b041a3e8d50bbd2f790b21f53d033e2e3f9da51dfa9d",
+            "acceptance_anchor_sha256": "a263cfc887dbbc79856bab7a9e3d5d0b3ec524fc9fc658641f49e57ae08ca6a1",
+            "artifact_path": "outputs/complete_step_jacobians.json",
+            "artifact_payload_sha256": "a4f9a308c4c968d1b09fbd5fec2cf50d3a93f4c7c4764aa451e83a21655fbe26",
+            "artifact_sha256": "e4de4b9351ef7258baa88e7b675e8ce82f39ffe9db3ce9df395713e4f610c5ec",
+            "consumed_value_semantic_sha256": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa",
+            "exact_field_or_row": "/payload/claim_boundary/joint_C_W_mode_claim_allowed",
+            "result_revision": "0dedbf96f2a067442ec42ab67707aa694a35fdec",
+            "source_gate": "GRV3"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv3_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "51a3251a69da6a9b2cc3b041a3e8d50bbd2f790b21f53d033e2e3f9da51dfa9d",
+            "acceptance_anchor_sha256": "a263cfc887dbbc79856bab7a9e3d5d0b3ec524fc9fc658641f49e57ae08ca6a1",
+            "artifact_path": "outputs/complete_step_jacobians.json",
+            "artifact_payload_sha256": "a4f9a308c4c968d1b09fbd5fec2cf50d3a93f4c7c4764aa451e83a21655fbe26",
+            "artifact_sha256": "e4de4b9351ef7258baa88e7b675e8ce82f39ffe9db3ce9df395713e4f610c5ec",
+            "consumed_value_semantic_sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+            "exact_field_or_row": "/payload/summary/full_C_W_J_jacobian_admitted_count",
+            "result_revision": "0dedbf96f2a067442ec42ab67707aa694a35fdec",
+            "source_gate": "GRV3"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv1_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "37bab077d3c0c467f82b678341302013a19a7ba93453d2a70ad8ea40790f7353",
+            "acceptance_anchor_sha256": "de3b969a255c297de067d00fa6493353d1a81ace4189d16ab01abb20de7cd70e",
+            "artifact_path": "outputs/instrumentation_validation.json",
+            "artifact_payload_sha256": "12b11b813e382313b4591971f608191abbefdf1441737711bbd26ee5c42d9800",
+            "artifact_sha256": "455f3a4c3f3a1071bd17dbd405494ac22b876ec0fe592e03d6bea5296016ff9b",
+            "consumed_value_semantic_sha256": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b",
+            "exact_field_or_row": "/payload/current_sign_control/checks/stagewise_current_is_reconstructed_equal",
+            "result_revision": "3c43918b1051389c5943ae28f505e585a542c621",
+            "source_gate": "GRV1"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv1_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "37bab077d3c0c467f82b678341302013a19a7ba93453d2a70ad8ea40790f7353",
+            "acceptance_anchor_sha256": "de3b969a255c297de067d00fa6493353d1a81ace4189d16ab01abb20de7cd70e",
+            "artifact_path": "outputs/instrumentation_validation.json",
+            "artifact_payload_sha256": "12b11b813e382313b4591971f608191abbefdf1441737711bbd26ee5c42d9800",
+            "artifact_sha256": "455f3a4c3f3a1071bd17dbd405494ac22b876ec0fe592e03d6bea5296016ff9b",
+            "consumed_value_semantic_sha256": "ccad3f4371f5e7079e45fc4efcc1955b89f2f849fe50a1b13ae693d3ed03b420",
+            "exact_field_or_row": "/payload/current_sign_control/classification/orientation_persistence",
+            "result_revision": "3c43918b1051389c5943ae28f505e585a542c621",
+            "source_gate": "GRV1"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv1_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "37bab077d3c0c467f82b678341302013a19a7ba93453d2a70ad8ea40790f7353",
+            "acceptance_anchor_sha256": "de3b969a255c297de067d00fa6493353d1a81ace4189d16ab01abb20de7cd70e",
+            "artifact_path": "outputs/instrumentation_validation.json",
+            "artifact_payload_sha256": "12b11b813e382313b4591971f608191abbefdf1441737711bbd26ee5c42d9800",
+            "artifact_sha256": "455f3a4c3f3a1071bd17dbd405494ac22b876ec0fe592e03d6bea5296016ff9b",
+            "consumed_value_semantic_sha256": "95294c0db0c2ac8b90b4efecf04d0ad5068d4fa1cee45a20128c81a07dc16c96",
+            "exact_field_or_row": "/payload/current_sign_control/classification/transient_sign_summary",
+            "result_revision": "3c43918b1051389c5943ae28f505e585a542c621",
+            "source_gate": "GRV1"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv6_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "bfa8d1f619f7d50d0a7b8fa1f3d98411b7f1743d6a6b70e7fdf6658a9e7c1cbe",
+            "acceptance_anchor_sha256": "954dd5e5dec600840a82c07e6e1aa80a7940590958de374406f94d96cb0c979b",
+            "artifact_path": "outputs/return_orbit_registry.json",
+            "artifact_payload_sha256": "6bdaa57582cec01aceaeb3a351777c5e87a4917515f81124878b2aa9edef54e1",
+            "artifact_sha256": "f9af1524153d31ee2528f2d275b8274d5f65ca4a0c438ce3d15540e9d1c68e9e",
+            "consumed_value_semantic_sha256": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa",
+            "exact_field_or_row": "/payload/claim_boundary/no_orbit_found_is_global_nonexistence_proof",
+            "result_revision": "07cf6784abe600eb2ad345e2cf9c1ed2e109be3d",
+            "source_gate": "GRV6"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv6_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "bfa8d1f619f7d50d0a7b8fa1f3d98411b7f1743d6a6b70e7fdf6658a9e7c1cbe",
+            "acceptance_anchor_sha256": "954dd5e5dec600840a82c07e6e1aa80a7940590958de374406f94d96cb0c979b",
+            "artifact_path": "outputs/return_orbit_registry.json",
+            "artifact_payload_sha256": "6bdaa57582cec01aceaeb3a351777c5e87a4917515f81124878b2aa9edef54e1",
+            "artifact_sha256": "f9af1524153d31ee2528f2d275b8274d5f65ca4a0c438ce3d15540e9d1c68e9e",
+            "consumed_value_semantic_sha256": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b",
+            "exact_field_or_row": "/payload/summary/all_cycle_orientations_overwritten_at_first_transport",
+            "result_revision": "07cf6784abe600eb2ad345e2cf9c1ed2e109be3d",
+            "source_gate": "GRV6"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv6_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "bfa8d1f619f7d50d0a7b8fa1f3d98411b7f1743d6a6b70e7fdf6658a9e7c1cbe",
+            "acceptance_anchor_sha256": "954dd5e5dec600840a82c07e6e1aa80a7940590958de374406f94d96cb0c979b",
+            "artifact_path": "outputs/return_orbit_registry.json",
+            "artifact_payload_sha256": "6bdaa57582cec01aceaeb3a351777c5e87a4917515f81124878b2aa9edef54e1",
+            "artifact_sha256": "f9af1524153d31ee2528f2d275b8274d5f65ca4a0c438ce3d15540e9d1c68e9e",
+            "consumed_value_semantic_sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+            "exact_field_or_row": "/payload/summary/cycle_seed_persistence_count",
+            "result_revision": "07cf6784abe600eb2ad345e2cf9c1ed2e109be3d",
+            "source_gate": "GRV6"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv6_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "bfa8d1f619f7d50d0a7b8fa1f3d98411b7f1743d6a6b70e7fdf6658a9e7c1cbe",
+            "acceptance_anchor_sha256": "954dd5e5dec600840a82c07e6e1aa80a7940590958de374406f94d96cb0c979b",
+            "artifact_path": "outputs/return_orbit_registry.json",
+            "artifact_payload_sha256": "6bdaa57582cec01aceaeb3a351777c5e87a4917515f81124878b2aa9edef54e1",
+            "artifact_sha256": "f9af1524153d31ee2528f2d275b8274d5f65ca4a0c438ce3d15540e9d1c68e9e",
+            "consumed_value_semantic_sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+            "exact_field_or_row": "/payload/summary/primitive_return_orbit_count",
+            "result_revision": "07cf6784abe600eb2ad345e2cf9c1ed2e109be3d",
+            "source_gate": "GRV6"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv6_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "bfa8d1f619f7d50d0a7b8fa1f3d98411b7f1743d6a6b70e7fdf6658a9e7c1cbe",
+            "acceptance_anchor_sha256": "954dd5e5dec600840a82c07e6e1aa80a7940590958de374406f94d96cb0c979b",
+            "artifact_path": "outputs/return_orbit_registry.json",
+            "artifact_payload_sha256": "6bdaa57582cec01aceaeb3a351777c5e87a4917515f81124878b2aa9edef54e1",
+            "artifact_sha256": "f9af1524153d31ee2528f2d275b8274d5f65ca4a0c438ce3d15540e9d1c68e9e",
+            "consumed_value_semantic_sha256": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa",
+            "exact_field_or_row": "/payload/summary/relative_periodic_orbit_search_executed",
+            "result_revision": "07cf6784abe600eb2ad345e2cf9c1ed2e109be3d",
+            "source_gate": "GRV6"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv6_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "bfa8d1f619f7d50d0a7b8fa1f3d98411b7f1743d6a6b70e7fdf6658a9e7c1cbe",
+            "acceptance_anchor_sha256": "954dd5e5dec600840a82c07e6e1aa80a7940590958de374406f94d96cb0c979b",
+            "artifact_path": "outputs/return_orbit_registry.json",
+            "artifact_payload_sha256": "6bdaa57582cec01aceaeb3a351777c5e87a4917515f81124878b2aa9edef54e1",
+            "artifact_sha256": "f9af1524153d31ee2528f2d275b8274d5f65ca4a0c438ce3d15540e9d1c68e9e",
+            "consumed_value_semantic_sha256": "8b6cd7c429e83373dbd412f43d7422c0c4a127d93d0f2ad15909f0c2a3e7b320",
+            "exact_field_or_row": "/payload/summary/return_jacobian_ill_conditioned_count",
+            "result_revision": "07cf6784abe600eb2ad345e2cf9c1ed2e109be3d",
+            "source_gate": "GRV6"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv6_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "bfa8d1f619f7d50d0a7b8fa1f3d98411b7f1743d6a6b70e7fdf6658a9e7c1cbe",
+            "acceptance_anchor_sha256": "954dd5e5dec600840a82c07e6e1aa80a7940590958de374406f94d96cb0c979b",
+            "artifact_path": "outputs/return_orbit_registry.json",
+            "artifact_payload_sha256": "6bdaa57582cec01aceaeb3a351777c5e87a4917515f81124878b2aa9edef54e1",
+            "artifact_sha256": "f9af1524153d31ee2528f2d275b8274d5f65ca4a0c438ce3d15540e9d1c68e9e",
+            "consumed_value_semantic_sha256": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa",
+            "exact_field_or_row": "/payload/summary/stationary_cycle_current_supported",
+            "result_revision": "07cf6784abe600eb2ad345e2cf9c1ed2e109be3d",
+            "source_gate": "GRV6"
+          }
+        ],
+        "claim_ceiling": "native_current_is_stage_local_then_reconstructed_or_overwritten_but_B1_GR_does_not_select_a_temporal_current_law",
+        "debt_ids": [
+          "D-A01"
+        ],
+        "decision_id": "EXT-CURRENT-TEMPORALIZATION",
+        "extension_selected_now": false,
+        "independent_current_state_present": false,
+        "native_current_temporal_status": "stage_local_input_then_algebraically_reconstructed_or_overwritten",
+        "route": "conditionally_selectable_if_future_target_requires_independent_current_relaxation",
+        "source_evidence": [
+          "outputs/instrumentation_validation.json",
+          "outputs/complete_step_jacobians.json",
+          "outputs/return_orbit_registry.json"
+        ],
+        "target": "independent_synchronous_current_relaxation_or_branch_state"
+      },
+      {
+        "accepted_evidence_records": [
+          {
+            "acceptance_anchor_path": "outputs/gates/grv5_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "e62df0c5f65051a8d682b2ba2e423d5f97fd269d8698c347392c6c2a827efe41",
+            "acceptance_anchor_sha256": "06df24f77ed7f6beb5d58424a21a34d71447b13bf3b84ad4109cd56cc0891026",
+            "artifact_path": "outputs/causal_role_matrix.json",
+            "artifact_payload_sha256": "20d24879e858c89a08d87eb680974215f553401cc92fd6f9160ae0cc9f9513a8",
+            "artifact_sha256": "a1cffd76061aa3ae3380a704e458d8bfeb64b97bb15201ca0b4ec775a5af3681",
+            "consumed_value_semantic_sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+            "exact_field_or_row": "/payload/summary/closed_loop_row_count",
+            "result_revision": "317092e9e86bf618dac4d31ffc47f74d9fa270f6",
+            "source_gate": "GRV5"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv3_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "51a3251a69da6a9b2cc3b041a3e8d50bbd2f790b21f53d033e2e3f9da51dfa9d",
+            "acceptance_anchor_sha256": "a263cfc887dbbc79856bab7a9e3d5d0b3ec524fc9fc658641f49e57ae08ca6a1",
+            "artifact_path": "outputs/complete_step_jacobians.json",
+            "artifact_payload_sha256": "a4f9a308c4c968d1b09fbd5fec2cf50d3a93f4c7c4764aa451e83a21655fbe26",
+            "artifact_sha256": "e4de4b9351ef7258baa88e7b675e8ce82f39ffe9db3ce9df395713e4f610c5ec",
+            "consumed_value_semantic_sha256": "c32bf7738863c8e7e059fb99041dff5525308f09ca47d4f0ed604a307d890341",
+            "exact_field_or_row": "/payload/summary/temporal_mode_interpretation_blocked_matrix_rows",
+            "result_revision": "0dedbf96f2a067442ec42ab67707aa694a35fdec",
+            "source_gate": "GRV3"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv3_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "51a3251a69da6a9b2cc3b041a3e8d50bbd2f790b21f53d033e2e3f9da51dfa9d",
+            "acceptance_anchor_sha256": "a263cfc887dbbc79856bab7a9e3d5d0b3ec524fc9fc658641f49e57ae08ca6a1",
+            "artifact_path": "outputs/complete_step_jacobians.json",
+            "artifact_payload_sha256": "a4f9a308c4c968d1b09fbd5fec2cf50d3a93f4c7c4764aa451e83a21655fbe26",
+            "artifact_sha256": "e4de4b9351ef7258baa88e7b675e8ce82f39ffe9db3ce9df395713e4f610c5ec",
+            "consumed_value_semantic_sha256": "d029fa3a95e174a19934857f535eb9427d967218a36ea014b70ad704bc6c8d1c",
+            "exact_field_or_row": "/payload/summary/temporal_mode_interpretation_pass_matrix_count",
+            "result_revision": "0dedbf96f2a067442ec42ab67707aa694a35fdec",
+            "source_gate": "GRV3"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv5_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "e62df0c5f65051a8d682b2ba2e423d5f97fd269d8698c347392c6c2a827efe41",
+            "acceptance_anchor_sha256": "06df24f77ed7f6beb5d58424a21a34d71447b13bf3b84ad4109cd56cc0891026",
+            "artifact_path": "outputs/conductance_retention_probe.json",
+            "artifact_payload_sha256": "0a3b4ce1ca2abaa681466abe0a03f95393ff4b80bb91fd650aeaf08b2a265989",
+            "artifact_sha256": "bba1472177a2f182359ad9bc1ade634cd388f55088428fd030e6e32e74ed5766",
+            "consumed_value_semantic_sha256": "02688fb9f7b538181d8d6eb40e13d8a24a5f55dacccde538b4e05b44f61e5785",
+            "exact_field_or_row": "/payload/assumption_statuses/A-PASSIVE-result",
+            "result_revision": "317092e9e86bf618dac4d31ffc47f74d9fa270f6",
+            "source_gate": "GRV5"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv5_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "e62df0c5f65051a8d682b2ba2e423d5f97fd269d8698c347392c6c2a827efe41",
+            "acceptance_anchor_sha256": "06df24f77ed7f6beb5d58424a21a34d71447b13bf3b84ad4109cd56cc0891026",
+            "artifact_path": "outputs/conductance_retention_probe.json",
+            "artifact_payload_sha256": "0a3b4ce1ca2abaa681466abe0a03f95393ff4b80bb91fd650aeaf08b2a265989",
+            "artifact_sha256": "bba1472177a2f182359ad9bc1ade634cd388f55088428fd030e6e32e74ed5766",
+            "consumed_value_semantic_sha256": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b",
+            "exact_field_or_row": "/payload/claim_boundary/branch_relocation_rival_must_remain_open",
+            "result_revision": "317092e9e86bf618dac4d31ffc47f74d9fa270f6",
+            "source_gate": "GRV5"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv5_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "e62df0c5f65051a8d682b2ba2e423d5f97fd269d8698c347392c6c2a827efe41",
+            "acceptance_anchor_sha256": "06df24f77ed7f6beb5d58424a21a34d71447b13bf3b84ad4109cd56cc0891026",
+            "artifact_path": "outputs/conductance_retention_probe.json",
+            "artifact_payload_sha256": "0a3b4ce1ca2abaa681466abe0a03f95393ff4b80bb91fd650aeaf08b2a265989",
+            "artifact_sha256": "bba1472177a2f182359ad9bc1ade634cd388f55088428fd030e6e32e74ed5766",
+            "consumed_value_semantic_sha256": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b",
+            "exact_field_or_row": "/payload/claim_boundary/core_readback_requires_native_present_current_conditioned_directional_relation",
+            "result_revision": "317092e9e86bf618dac4d31ffc47f74d9fa270f6",
+            "source_gate": "GRV5"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv5_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "e62df0c5f65051a8d682b2ba2e423d5f97fd269d8698c347392c6c2a827efe41",
+            "acceptance_anchor_sha256": "06df24f77ed7f6beb5d58424a21a34d71447b13bf3b84ad4109cd56cc0891026",
+            "artifact_path": "outputs/conductance_retention_probe.json",
+            "artifact_payload_sha256": "0a3b4ce1ca2abaa681466abe0a03f95393ff4b80bb91fd650aeaf08b2a265989",
+            "artifact_sha256": "bba1472177a2f182359ad9bc1ade634cd388f55088428fd030e6e32e74ed5766",
+            "consumed_value_semantic_sha256": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa",
+            "exact_field_or_row": "/payload/present_current_convention/coherence_driven_current_is_external_present_current",
+            "result_revision": "317092e9e86bf618dac4d31ffc47f74d9fa270f6",
+            "source_gate": "GRV5"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv5_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "e62df0c5f65051a8d682b2ba2e423d5f97fd269d8698c347392c6c2a827efe41",
+            "acceptance_anchor_sha256": "06df24f77ed7f6beb5d58424a21a34d71447b13bf3b84ad4109cd56cc0891026",
+            "artifact_path": "outputs/conductance_retention_probe.json",
+            "artifact_payload_sha256": "0a3b4ce1ca2abaa681466abe0a03f95393ff4b80bb91fd650aeaf08b2a265989",
+            "artifact_sha256": "bba1472177a2f182359ad9bc1ade634cd388f55088428fd030e6e32e74ed5766",
+            "consumed_value_semantic_sha256": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa",
+            "exact_field_or_row": "/payload/present_current_convention/native_external_present_current_input_available",
+            "result_revision": "317092e9e86bf618dac4d31ffc47f74d9fa270f6",
+            "source_gate": "GRV5"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv5_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "e62df0c5f65051a8d682b2ba2e423d5f97fd269d8698c347392c6c2a827efe41",
+            "acceptance_anchor_sha256": "06df24f77ed7f6beb5d58424a21a34d71447b13bf3b84ad4109cd56cc0891026",
+            "artifact_path": "outputs/conductance_retention_probe.json",
+            "artifact_payload_sha256": "0a3b4ce1ca2abaa681466abe0a03f95393ff4b80bb91fd650aeaf08b2a265989",
+            "artifact_sha256": "bba1472177a2f182359ad9bc1ade634cd388f55088428fd030e6e32e74ed5766",
+            "consumed_value_semantic_sha256": "98010bd9270f9b100b6214a21754fd33bdc8d41b2bc9f9dd16ff54d3c34ffd71",
+            "exact_field_or_row": "/payload/summary/activity_stage_write_count",
+            "result_revision": "317092e9e86bf618dac4d31ffc47f74d9fa270f6",
+            "source_gate": "GRV5"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv5_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "e62df0c5f65051a8d682b2ba2e423d5f97fd269d8698c347392c6c2a827efe41",
+            "acceptance_anchor_sha256": "06df24f77ed7f6beb5d58424a21a34d71447b13bf3b84ad4109cd56cc0891026",
+            "artifact_path": "outputs/conductance_retention_probe.json",
+            "artifact_payload_sha256": "0a3b4ce1ca2abaa681466abe0a03f95393ff4b80bb91fd650aeaf08b2a265989",
+            "artifact_sha256": "bba1472177a2f182359ad9bc1ade634cd388f55088428fd030e6e32e74ed5766",
+            "consumed_value_semantic_sha256": "e29c9c180c6279b0b02abd6a1801c7c04082cf486ec027aa13515e4f3884bb6b",
+            "exact_field_or_row": "/payload/summary/bounded_persistence_count",
+            "result_revision": "317092e9e86bf618dac4d31ffc47f74d9fa270f6",
+            "source_gate": "GRV5"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv5_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "e62df0c5f65051a8d682b2ba2e423d5f97fd269d8698c347392c6c2a827efe41",
+            "acceptance_anchor_sha256": "06df24f77ed7f6beb5d58424a21a34d71447b13bf3b84ad4109cd56cc0891026",
+            "artifact_path": "outputs/conductance_retention_probe.json",
+            "artifact_payload_sha256": "0a3b4ce1ca2abaa681466abe0a03f95393ff4b80bb91fd650aeaf08b2a265989",
+            "artifact_sha256": "bba1472177a2f182359ad9bc1ade634cd388f55088428fd030e6e32e74ed5766",
+            "consumed_value_semantic_sha256": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa",
+            "exact_field_or_row": "/payload/summary/forming_old_current_input_runtime_reached",
+            "result_revision": "317092e9e86bf618dac4d31ffc47f74d9fa270f6",
+            "source_gate": "GRV5"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv5_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "e62df0c5f65051a8d682b2ba2e423d5f97fd269d8698c347392c6c2a827efe41",
+            "acceptance_anchor_sha256": "06df24f77ed7f6beb5d58424a21a34d71447b13bf3b84ad4109cd56cc0891026",
+            "artifact_path": "outputs/conductance_retention_probe.json",
+            "artifact_payload_sha256": "0a3b4ce1ca2abaa681466abe0a03f95393ff4b80bb91fd650aeaf08b2a265989",
+            "artifact_sha256": "bba1472177a2f182359ad9bc1ade634cd388f55088428fd030e6e32e74ed5766",
+            "consumed_value_semantic_sha256": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa",
+            "exact_field_or_row": "/payload/summary/later_C_mediation_specifically_by_transient_W_supported",
+            "result_revision": "317092e9e86bf618dac4d31ffc47f74d9fa270f6",
+            "source_gate": "GRV5"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv5_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "e62df0c5f65051a8d682b2ba2e423d5f97fd269d8698c347392c6c2a827efe41",
+            "acceptance_anchor_sha256": "06df24f77ed7f6beb5d58424a21a34d71447b13bf3b84ad4109cd56cc0891026",
+            "artifact_path": "outputs/conductance_retention_probe.json",
+            "artifact_payload_sha256": "0a3b4ce1ca2abaa681466abe0a03f95393ff4b80bb91fd650aeaf08b2a265989",
+            "artifact_sha256": "bba1472177a2f182359ad9bc1ade634cd388f55088428fd030e6e32e74ed5766",
+            "consumed_value_semantic_sha256": "b1a805c7628f78d7db4938a37ca1549f201740c007a983d425d0ebb47ef47fda",
+            "exact_field_or_row": "/payload/summary/maximum_local_evidence_ladder_rung",
+            "result_revision": "317092e9e86bf618dac4d31ffc47f74d9fa270f6",
+            "source_gate": "GRV5"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv5_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "e62df0c5f65051a8d682b2ba2e423d5f97fd269d8698c347392c6c2a827efe41",
+            "acceptance_anchor_sha256": "06df24f77ed7f6beb5d58424a21a34d71447b13bf3b84ad4109cd56cc0891026",
+            "artifact_path": "outputs/conductance_retention_probe.json",
+            "artifact_payload_sha256": "0a3b4ce1ca2abaa681466abe0a03f95393ff4b80bb91fd650aeaf08b2a265989",
+            "artifact_sha256": "bba1472177a2f182359ad9bc1ade634cd388f55088428fd030e6e32e74ed5766",
+            "consumed_value_semantic_sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+            "exact_field_or_row": "/payload/summary/native_mediation_count",
+            "result_revision": "317092e9e86bf618dac4d31ffc47f74d9fa270f6",
+            "source_gate": "GRV5"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv5_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "e62df0c5f65051a8d682b2ba2e423d5f97fd269d8698c347392c6c2a827efe41",
+            "acceptance_anchor_sha256": "06df24f77ed7f6beb5d58424a21a34d71447b13bf3b84ad4109cd56cc0891026",
+            "artifact_path": "outputs/conductance_retention_probe.json",
+            "artifact_payload_sha256": "0a3b4ce1ca2abaa681466abe0a03f95393ff4b80bb91fd650aeaf08b2a265989",
+            "artifact_sha256": "bba1472177a2f182359ad9bc1ade634cd388f55088428fd030e6e32e74ed5766",
+            "consumed_value_semantic_sha256": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa",
+            "exact_field_or_row": "/payload/summary/native_readback_supported",
+            "result_revision": "317092e9e86bf618dac4d31ffc47f74d9fa270f6",
+            "source_gate": "GRV5"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv5_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "e62df0c5f65051a8d682b2ba2e423d5f97fd269d8698c347392c6c2a827efe41",
+            "acceptance_anchor_sha256": "06df24f77ed7f6beb5d58424a21a34d71447b13bf3b84ad4109cd56cc0891026",
+            "artifact_path": "outputs/conductance_retention_probe.json",
+            "artifact_payload_sha256": "0a3b4ce1ca2abaa681466abe0a03f95393ff4b80bb91fd650aeaf08b2a265989",
+            "artifact_sha256": "bba1472177a2f182359ad9bc1ade634cd388f55088428fd030e6e32e74ed5766",
+            "consumed_value_semantic_sha256": "7b1a278f5abe8e9da907fc9c29dfd432d60dc76e17b0fabab659d2a508bc65c4",
+            "exact_field_or_row": "/payload/summary/substrate_reduced_sensitivity_count",
+            "result_revision": "317092e9e86bf618dac4d31ffc47f74d9fa270f6",
+            "source_gate": "GRV5"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv5_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "e62df0c5f65051a8d682b2ba2e423d5f97fd269d8698c347392c6c2a827efe41",
+            "acceptance_anchor_sha256": "06df24f77ed7f6beb5d58424a21a34d71447b13bf3b84ad4109cd56cc0891026",
+            "artifact_path": "outputs/conductance_retention_probe.json",
+            "artifact_payload_sha256": "0a3b4ce1ca2abaa681466abe0a03f95393ff4b80bb91fd650aeaf08b2a265989",
+            "artifact_sha256": "bba1472177a2f182359ad9bc1ade634cd388f55088428fd030e6e32e74ed5766",
+            "consumed_value_semantic_sha256": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa",
+            "exact_field_or_row": "/payload/summary/transverse_branch_relative_retention_supported",
+            "result_revision": "317092e9e86bf618dac4d31ffc47f74d9fa270f6",
+            "source_gate": "GRV5"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv0_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "52ad1a2a21d0032666ed3f42091c58fc4c015cf645490e668ff5462ad703dc82",
+            "acceptance_anchor_sha256": "b397d4a5f3d70e63e1a34660d7d6e7d74086c91b1d81f4cd58842d9c6cfdca25",
+            "artifact_path": "outputs/fixed_topology_envelope.json",
+            "artifact_payload_sha256": "4b8e34b4da641662249090a5b09d2a2290514b157b506459d3dfdeeb0f29d8aa",
+            "artifact_sha256": "0db935f8e0107a75d91fd5513ef9ede36dd52f0bdb110046a9852afe0f377b01",
+            "consumed_value_semantic_sha256": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b",
+            "exact_field_or_row": "/payload/fixed_topology",
+            "result_revision": "97a9a6bf9cd20ca6c1adcc0feee26712df9569fb",
+            "source_gate": "GRV0"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv4_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "d2de26d458f4f03c8b910eebe256ca32657d1500e5aace8acc04b6bd2b503d49",
+            "acceptance_anchor_sha256": "15136eacdb7e82074a3bce0724e36b4a7a51ff9310a123d3ede80eaefe6747cc",
+            "artifact_path": "outputs/frozen_full_comparison.json",
+            "artifact_payload_sha256": "34eabb8e4b65d225943e8cfb0c77db617b7a96a536b6c46edf224e2e818ad7a3",
+            "artifact_sha256": "5c07aff644cb56e8936a4f7be0ecae05c6ab7177910ea5b3f4fb0af8a6b4cd34",
+            "consumed_value_semantic_sha256": "a742938feddb99f37e153dbae0b88f48df86c436f281653f5b535fe3ccc1b81c",
+            "exact_field_or_row": "/payload/claim_boundary/frozen_operator_class",
+            "result_revision": "e99a8a3d07ef4860bcc756d60cb4fb54056a6ddb",
+            "source_gate": "GRV4"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv1_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "37bab077d3c0c467f82b678341302013a19a7ba93453d2a70ad8ea40790f7353",
+            "acceptance_anchor_sha256": "de3b969a255c297de067d00fa6493353d1a81ace4189d16ab01abb20de7cd70e",
+            "artifact_path": "outputs/instrumentation_validation.json",
+            "artifact_payload_sha256": "12b11b813e382313b4591971f608191abbefdf1441737711bbd26ee5c42d9800",
+            "artifact_sha256": "455f3a4c3f3a1071bd17dbd405494ac22b876ec0fe592e03d6bea5296016ff9b",
+            "consumed_value_semantic_sha256": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b",
+            "exact_field_or_row": "/payload/claim_boundary/exact_orientation_semantics_supported",
+            "result_revision": "3c43918b1051389c5943ae28f505e585a542c621",
+            "source_gate": "GRV1"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv1_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "37bab077d3c0c467f82b678341302013a19a7ba93453d2a70ad8ea40790f7353",
+            "acceptance_anchor_sha256": "de3b969a255c297de067d00fa6493353d1a81ace4189d16ab01abb20de7cd70e",
+            "artifact_path": "outputs/instrumentation_validation.json",
+            "artifact_payload_sha256": "12b11b813e382313b4591971f608191abbefdf1441737711bbd26ee5c42d9800",
+            "artifact_sha256": "455f3a4c3f3a1071bd17dbd405494ac22b876ec0fe592e03d6bea5296016ff9b",
+            "consumed_value_semantic_sha256": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b",
+            "exact_field_or_row": "/payload/current_sign_control/checks/stagewise_current_is_reconstructed_equal",
+            "result_revision": "3c43918b1051389c5943ae28f505e585a542c621",
+            "source_gate": "GRV1"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv1_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "37bab077d3c0c467f82b678341302013a19a7ba93453d2a70ad8ea40790f7353",
+            "acceptance_anchor_sha256": "de3b969a255c297de067d00fa6493353d1a81ace4189d16ab01abb20de7cd70e",
+            "artifact_path": "outputs/instrumentation_validation.json",
+            "artifact_payload_sha256": "12b11b813e382313b4591971f608191abbefdf1441737711bbd26ee5c42d9800",
+            "artifact_sha256": "455f3a4c3f3a1071bd17dbd405494ac22b876ec0fe592e03d6bea5296016ff9b",
+            "consumed_value_semantic_sha256": "95294c0db0c2ac8b90b4efecf04d0ad5068d4fa1cee45a20128c81a07dc16c96",
+            "exact_field_or_row": "/payload/current_sign_control/classification/transient_sign_summary",
+            "result_revision": "3c43918b1051389c5943ae28f505e585a542c621",
+            "source_gate": "GRV1"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv3_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "51a3251a69da6a9b2cc3b041a3e8d50bbd2f790b21f53d033e2e3f9da51dfa9d",
+            "acceptance_anchor_sha256": "a263cfc887dbbc79856bab7a9e3d5d0b3ec524fc9fc658641f49e57ae08ca6a1",
+            "artifact_path": "outputs/slow_cluster_registry.json",
+            "artifact_payload_sha256": "dda4acee042731d63e8a4e9e07ad6f9c68728dd2eab0ea2d516ae66830ef4004",
+            "artifact_sha256": "dc2e5c8d2c11284ac5b4977fc9f9c932b5320d871319b749debeec37671f6141",
+            "consumed_value_semantic_sha256": "7b1a278f5abe8e9da907fc9c29dfd432d60dc76e17b0fabab659d2a508bc65c4",
+            "exact_field_or_row": "/payload/cluster_count",
+            "result_revision": "0dedbf96f2a067442ec42ab67707aa694a35fdec",
+            "source_gate": "GRV3"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv3_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "51a3251a69da6a9b2cc3b041a3e8d50bbd2f790b21f53d033e2e3f9da51dfa9d",
+            "acceptance_anchor_sha256": "a263cfc887dbbc79856bab7a9e3d5d0b3ec524fc9fc658641f49e57ae08ca6a1",
+            "artifact_path": "outputs/slow_cluster_registry.json",
+            "artifact_payload_sha256": "dda4acee042731d63e8a4e9e07ad6f9c68728dd2eab0ea2d516ae66830ef4004",
+            "artifact_sha256": "dc2e5c8d2c11284ac5b4977fc9f9c932b5320d871319b749debeec37671f6141",
+            "consumed_value_semantic_sha256": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa",
+            "exact_field_or_row": "/payload/retention_claim_allowed",
+            "result_revision": "0dedbf96f2a067442ec42ab67707aa694a35fdec",
+            "source_gate": "GRV3"
+          }
+        ],
+        "claim_ceiling": "higher_retention_and_mediation_rungs_remain_unresolved_not_mechanically_impossible",
+        "current_maximum_rung": "GRR2",
+        "debt_ids": [
+          "D-R01",
+          "D-R02",
+          "D-P01"
+        ],
+        "decision_id": "EXT-UNCHANGED-CONSTRUCTIBILITY",
+        "mechanical_impossibility_established": false,
+        "revision_distinct_search_required": true,
+        "route": "unchanged_runtime_constructibility_search_before_extension",
+        "source_evidence": [
+          "outputs/conductance_retention_probe.json",
+          "outputs/causal_role_matrix.json"
+        ],
+        "target": "GRR3_to_GRR5_witnesses_under_unchanged_GRC9V3"
+      },
+      {
+        "accepted_evidence_records": [
+          {
+            "acceptance_anchor_path": "outputs/gates/grv1_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "37bab077d3c0c467f82b678341302013a19a7ba93453d2a70ad8ea40790f7353",
+            "acceptance_anchor_sha256": "de3b969a255c297de067d00fa6493353d1a81ace4189d16ab01abb20de7cd70e",
+            "artifact_path": "outputs/instrumentation_validation.json",
+            "artifact_payload_sha256": "12b11b813e382313b4591971f608191abbefdf1441737711bbd26ee5c42d9800",
+            "artifact_sha256": "455f3a4c3f3a1071bd17dbd405494ac22b876ec0fe592e03d6bea5296016ff9b",
+            "consumed_value_semantic_sha256": "6fb8629635b683d058c9703072f7573a3d8211bb42cc6574576005d95ff0bdc4",
+            "exact_field_or_row": "/payload/K_counterfactual/classification",
+            "result_revision": "3c43918b1051389c5943ae28f505e585a542c621",
+            "source_gate": "GRV1"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv1_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "37bab077d3c0c467f82b678341302013a19a7ba93453d2a70ad8ea40790f7353",
+            "acceptance_anchor_sha256": "de3b969a255c297de067d00fa6493353d1a81ace4189d16ab01abb20de7cd70e",
+            "artifact_path": "outputs/instrumentation_validation.json",
+            "artifact_payload_sha256": "12b11b813e382313b4591971f608191abbefdf1441737711bbd26ee5c42d9800",
+            "artifact_sha256": "455f3a4c3f3a1071bd17dbd405494ac22b876ec0fe592e03d6bea5296016ff9b",
+            "consumed_value_semantic_sha256": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa",
+            "exact_field_or_row": "/payload/K_counterfactual/global_causal_absence_claimed",
+            "result_revision": "3c43918b1051389c5943ae28f505e585a542c621",
+            "source_gate": "GRV1"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv7_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "d5c1aac6ccf3cfc5044092b28a6a7f914268e43f9391c99ad5ee2e634180d483",
+            "acceptance_anchor_sha256": "764656d56868c227410c9a7600f3e87db3aa32aefd739f1fdf94648f41c5f363",
+            "artifact_path": "outputs/spatial_temporal_threshold_matrix.json",
+            "artifact_payload_sha256": "cfa80c47b7a7063c97133cad23261025064b15b92c6785f189915d8b8c39cde1",
+            "artifact_sha256": "cd9cf6e3041a309f1d993377b3201f672c7b9c64364cdd91c3911b3860e52849",
+            "consumed_value_semantic_sha256": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa",
+            "exact_field_or_row": "/payload/summary/full_map_non_equivalence_supported",
+            "result_revision": "60d045ddf5b523e0922d17f18f3a94c3de5cd020",
+            "source_gate": "GRV7"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv7_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "d5c1aac6ccf3cfc5044092b28a6a7f914268e43f9391c99ad5ee2e634180d483",
+            "acceptance_anchor_sha256": "764656d56868c227410c9a7600f3e87db3aa32aefd739f1fdf94648f41c5f363",
+            "artifact_path": "outputs/spatial_temporal_threshold_matrix.json",
+            "artifact_payload_sha256": "cfa80c47b7a7063c97133cad23261025064b15b92c6785f189915d8b8c39cde1",
+            "artifact_sha256": "cd9cf6e3041a309f1d993377b3201f672c7b9c64364cdd91c3911b3860e52849",
+            "consumed_value_semantic_sha256": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b",
+            "exact_field_or_row": "/payload/summary/reduced_spatial_continuation_temporal_non_equivalence_supported",
+            "result_revision": "60d045ddf5b523e0922d17f18f3a94c3de5cd020",
+            "source_gate": "GRV7"
+          },
+          {
+            "acceptance_anchor_path": "outputs/gates/grv7_acceptance_anchor.json",
+            "acceptance_anchor_semantic_sha256": "d5c1aac6ccf3cfc5044092b28a6a7f914268e43f9391c99ad5ee2e634180d483",
+            "acceptance_anchor_sha256": "764656d56868c227410c9a7600f3e87db3aa32aefd739f1fdf94648f41c5f363",
+            "artifact_path": "outputs/spatial_temporal_threshold_matrix.json",
+            "artifact_payload_sha256": "cfa80c47b7a7063c97133cad23261025064b15b92c6785f189915d8b8c39cde1",
+            "artifact_sha256": "cd9cf6e3041a309f1d993377b3201f672c7b9c64364cdd91c3911b3860e52849",
+            "consumed_value_semantic_sha256": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa",
+            "exact_field_or_row": "/payload/summary/runtime_spatial_vs_full_temporal_non_equivalence_supported",
+            "result_revision": "60d045ddf5b523e0922d17f18f3a94c3de5cd020",
+            "source_gate": "GRV7"
+          }
+        ],
         "claim_ceiling": "not_consumed_on_tested_fixed_topology_no_event_path_without_global_absence_claim",
         "debt_ids": [
           "D-G01"
@@ -64,10 +1189,55 @@
         "target": "hybrid_node_tensor_K"
       }
     ],
+    "forbidden_lgrc_relabels": [
+      "packet_ledger_is_retained_continuation_sector",
+      "event_queue_is_memory",
+      "proper_time_is_relaxation_spectrum",
+      "pulse_surface_is_readback",
+      "lineage_is_canonical_continuation_mode_transport",
+      "producer_reading_history_is_native_constitutive_readback"
+    ],
     "gate_id": "GRV8",
     "highest_supported_claim": "bounded_selectable_extension_routing_without_implementation",
+    "lgrc_boundary_candidate": {
+      "final_handoff_emitted": false,
+      "lgrc_only_questions": [
+        "queue_drained_retention",
+        "delay_versus_retention",
+        "proper_time_relaxation",
+        "event_local_read_write_ordering",
+        "packet_lineage",
+        "topology_changing_interspace_transport"
+      ],
+      "negative_or_blocked_grc_boundaries": [
+        "no_native_distinct_present_current_read_operator",
+        "no_native_W_mediated_later_matched_probe_response",
+        "no_stable_durable_W_retention_identified",
+        "no_historical_current_orientation_retention",
+        "authored_cycle_current_overwritten_on_tested_F3_branches",
+        "no_admitted_primitive_period_2_to_8_return_orbit_among_resolved_candidates",
+        "no_full_map_spatial_temporal_threshold_non_equivalence",
+        "active_joint_C_J_continuation_unresolved_or_absent_on_tested_strata",
+        "j_equals_J_C_not_admitted_as_a_declared_runtime_reduction"
+      ],
+      "positive_inherited_grc_base": [
+        "formed_fixed_topology_branches_with_declared_branch_and_gauge",
+        "bounded_C_independent_causal_coordinate_with_W_and_J_reconstructed_or_stage_dependent",
+        "native_potential_flow_current_reconstruction",
+        "exact_sign_even_old_current_squared_to_conductance_write_stage",
+        "admitted_branch_and_clock_specific_complete_step_temporal_objects",
+        "runtime_spatial_diagnostics_and_reduced_clamped_W_comparators_kept_distinct",
+        "bounded_synthetic_input_C_dominated_GRR2_persistence_with_branch_relocation_rival_open"
+      ]
+    },
+    "lgrc_route_partition": {
+      "B1_L_execution_authorized": false,
+      "B1_L_legacy": "eligible_only_after_GRV_C6_to_characterize_event_driven_delta_over_unchanged_GRC9V3",
+      "future_LGRC_N": "separate_deferred_investigation_over_any_revision_distinct_GRC_constitutive_kernel",
+      "same_question": false
+    },
     "runtime_implementation_opened": false
   },
-  "payload_sha256": "167e7ff6c2c7a1521111be8cca47b2a29082f0aed1ff976dfdc3584fe10ffdcc",
-  "schema_version": "b1_grv8_extension_decision_v1"
+  "payload_sha256": "b1e335c1ab877112c7c7c89cce72ece9cbc688c8e22d56d137ec2ec813630acc",
+  "schema_version": "b1_grv8_extension_decision_v2"
 }

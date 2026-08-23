@@ -13,37 +13,81 @@
     "historical_artifacts_mutated": false,
     "records": [
       {
+        "disposition": "rejected_mapping",
         "exploratory_claim_id": "SX-GRV3-001",
+        "reason_superseded": "stage_reconstruction_and_omitted_field_audits_do_not_admit_W_or_J_as_independent_complete_step_coordinates",
         "replacement": "C_is_the_admitted_independent_coordinate_on_bounded_strata_while_W_and_J_are_reconstructed_or_stage_dependent",
+        "source_document_or_section": "GRV3_pre_hardening_causal_state_candidate",
         "source_ref": "outputs/complete_step_jacobians.json",
-        "superseded_statement": "stored_W_and_J_are_independent_complete_step_state_coordinates"
+        "superseded_statement": "stored_W_and_J_are_independent_complete_step_state_coordinates",
+        "supporting_gate_artifacts": [
+          "outputs/complete_step_jacobians.json"
+        ]
       },
       {
+        "disposition": "narrowed",
         "exploratory_claim_id": "SX-GRV4-001",
+        "reason_superseded": "all_primary_rows_show_no_resolved_difference_within_a_weakly_discriminating_uncertainty_envelope_not_equivalence",
         "replacement": "no_difference_is_resolved_within_the_admitted_first_order_uncertainty_envelope",
+        "source_document_or_section": "GRV4_pre_acceptance_agreement_wording",
         "source_ref": "outputs/frozen_full_comparison.json",
-        "superseded_statement": "frozen_W_and_full_recurrence_are_equivalent"
+        "superseded_statement": "frozen_W_and_full_recurrence_are_equivalent",
+        "supporting_gate_artifacts": [
+          "outputs/frozen_full_comparison.json"
+        ]
       },
       {
+        "disposition": "unverified_and_narrowed",
         "exploratory_claim_id": "SX-GRV5-001",
+        "reason_superseded": "native_mediation_count_is_zero_and_C_dominated_persistence_does_not_exclude_branch_relocation",
         "replacement": "bounded_C_dominated_neutral_persistence_with_branch_relocation_rival_unresolved",
+        "source_document_or_section": "GRV5_exploratory_retention_interpretation",
         "source_ref": "outputs/conductance_retention_probe.json",
-        "superseded_statement": "transient_W_specifically_mediates_later_C_retention"
+        "superseded_statement": "transient_W_specifically_mediates_later_C_retention",
+        "supporting_gate_artifacts": [
+          "outputs/conductance_retention_probe.json",
+          "outputs/causal_role_matrix.json"
+        ]
       },
       {
+        "disposition": "rejected_within_tested_envelope",
         "exploratory_claim_id": "SX-GRV6-001",
+        "reason_superseded": "certified_cycle_seeds_are_overwritten_and_no_resolved_candidate_returns_to_full_causal_state",
         "replacement": "authored_cycle_seeds_are_overwritten_and_no_primitive_period_2_to_8_return_was_found_in_scope",
+        "source_document_or_section": "GRV6_seeded_cycle_exploration",
         "source_ref": "outputs/return_orbit_registry.json",
-        "superseded_statement": "nonzero_or_seeded_current_is_active_recurrent_circulation"
+        "superseded_statement": "nonzero_or_seeded_current_is_active_recurrent_circulation",
+        "supporting_gate_artifacts": [
+          "outputs/return_orbit_registry.json"
+        ]
       },
       {
+        "disposition": "narrowed",
         "exploratory_claim_id": "SX-GRV7-001",
+        "reason_superseded": "decisive_counterexamples_exist_only_for_the_reduced_clamped_W_comparator_and_no_full_map_threshold_crossing_was_reached",
         "replacement": "only_clamped_W_reduced_spatial_continuation_and_discrete_threshold_non_equivalence_is_supported",
+        "source_document_or_section": "GRV7_pre_correction_non_equivalence_wording",
         "source_ref": "outputs/spatial_temporal_threshold_matrix.json",
-        "superseded_statement": "runtime_spatial_and_full_temporal_non_equivalence_is_supported"
+        "superseded_statement": "runtime_spatial_and_full_temporal_non_equivalence_is_supported",
+        "supporting_gate_artifacts": [
+          "outputs/spatial_temporal_threshold_matrix.json"
+        ]
+      },
+      {
+        "disposition": "rejected_mapping",
+        "exploratory_claim_id": "SX-GRV8-001",
+        "reason_superseded": "one_runtime_current_variable_is_reused_but_the_implementation_does_not_declare_or_satisfy_the_passive_null_and_carrier_sensitive_reduced_read_closure",
+        "replacement": "native_current_recurrence_is_exact_while_j_equals_J_C_is_only_an_analogical_candidate_mapping",
+        "source_document_or_section": "GRV8_P8_unaccepted_equivalence_candidate",
+        "source_ref": "outputs/conductance_retention_probe.json",
+        "superseded_statement": "unchanged_GRC9V3_implements_the_declared_j_equals_J_C_simplifying_limit",
+        "supporting_gate_artifacts": [
+          "outputs/instrumentation_validation.json",
+          "outputs/conductance_retention_probe.json"
+        ]
       }
     ]
   },
-  "payload_sha256": "0905e54dbcebffd798a6e9ae030c72ef0243fd648f071507aa69f44460bf4228",
-  "schema_version": "b1_grv8_superseded_exploratory_claims_v1"
+  "payload_sha256": "a53a631dc5d6466e61ee3c246d083c900e945ee6d88df946248c834753a96551",
+  "schema_version": "b1_grv8_superseded_exploratory_claims_v2"
 }

@@ -8,9 +8,10 @@ scientific_acceptance = awaiting_human_review
 accepted_prerequisite_gate_count = 8
 classified_assumption_count = 19
 classified_claim_count = 33
-classified_object_count = 19
+classified_object_count = 31
+classified_causal_role_count = 9
 contradiction_route_count = 6
-extension_decision_count = 4
+extension_decision_count = 6
 theory_reopening_required = false
 GRV_C6_assigned = false
 B1_L_execution_authorized = false
@@ -20,12 +21,20 @@ GRV8 classifies the accepted unchanged-`GRC9V3` evidence. It does not
 retroactively upgrade reduced, synthetic, diagnostic, or blocked rows.
 The classification result must be accepted before the evidence bundle,
 evidence-grounded successor, LGRC handoff, or `GRV-C6` closeout can exist.
+This P8.1 result supersedes the unaccepted P8 candidate at revision
+`1448757`; it does not alter any accepted GRV0-GRV7 result.
 
 ## Main Classification
 
 - Formed fixed-topology branches are exact bounded runtime results.
 - The synchronous causal closure is a bounded simplifying limit with `C`
   independent and `W/J` reconstructed or stage-dependent.
+- Native current recurrence is an exact stage sequence: old `J` informs a
+  sign-even `J^2 -> W` write, then potential flow reconstructs current and
+  advances `C`. This is a real reflexive mechanism, not core Read-Back.
+- The `j = J_C` runtime mapping is rejected as a declared simplifying limit.
+  Reuse of one current variable does not satisfy the passive-null or
+  carrier-sensitive reduced read closure; the correspondence is analogical.
 - The fixed-`W` continuation construction and complete-step spectra are
   analysis surfaces, not native retained-sector or Read-Back objects.
 - GRV5 supports only synthetic, `C`-dominated neutral persistence; native
@@ -35,19 +44,40 @@ evidence-grounded successor, LGRC handoff, or `GRV-C6` closeout can exist.
 - GRV7 supports reduced clamped-`W` non-equivalence, not runtime/full-map
   non-equivalence or an informative nontrivial complete-step `+1` threshold.
 
+## Arrow-By-Arrow Causal Roles
+
+- `activity_to_W_write`: `supported_exact_stage_local`; ceiling `synthetic_valid_old_current_is_consumed_by_the_exact_native_sign_even_J_squared_to_W_stage`.
+- `activity_to_complete_step_C_or_joint_consequence`: `supported_bounded_after_synthetic_intervention`; ceiling `unchanged_runtime_produces_a_later_C_dominated_joint_state_difference_after_the_synthetic_valid_formation_input`.
+- `post_activity_persistence`: `supported_bounded_GRR2`; ceiling `bounded_C_dominated_neutral_coordinate_persistence_with_branch_relocation_rival_unresolved`.
+- `stable_neutral_growing_classification`: `partial_neutral_only_for_retention_candidate`; ceiling `the_GRR2_candidate_occupies_a_neutral_C_dominated_coordinate_while_broader_temporal_clusters_remain_branch_and_conditioning_bounded`.
+- `W_mediated_later_response`: `unsupported_in_tested_native_path`; ceiling `substrate_reduced_frozen_W_sensitivity_only`.
+- `joint_state_mediated_later_response`: `unresolved_not_identified`; ceiling `bounded_joint_state_difference_without_identified_later_probe_mediation`.
+- `distinct_read_current`: `absent_from_tested_native_runtime`; ceiling `baseline_potential_flow_current_only`.
+- `probe_induced_later_write`: `unsupported_in_tested_native_path`; ceiling `no_native_probe_read_then_later_write_arrow`.
+- `closed_read_write_loop`: `unsupported_in_tested_native_path`; ceiling `no_closed_loop_row`.
+
+The GRR2 persistence row remains synthetic-input, `C`-dominated, and
+compatible with branch relocation. It is not partial Read-Back, a durable
+native carrier, or later carrier mediation.
+
 ## Extension And Theory Routes
 
 - `EXT-GEOMETRY-MOBILITY`: `not_opened_trigger_not_met`.
 - `EXT-RETAINED-CARRIER`: `not_opened_native_mediation_and_reachability_not_established`.
 - `EXT-ORIENTED-CURRENT`: `conditionally_selectable_if_future_target_requires_directional_readback_or_active_circulation`.
+- `EXT-CURRENT-TEMPORALIZATION`: `conditionally_selectable_if_future_target_requires_independent_current_relaxation`.
+- `EXT-UNCHANGED-CONSTRUCTIBILITY`: `unchanged_runtime_constructibility_search_before_extension`.
 - `EXT-K`: `remain_explicitly_diagnostic`.
 - Theory reopening: `no_theory_reopening_required`.
 
 `K` remains diagnostic. Geometry/mobility and retained-carrier
 extensions are not opened because their preregistered triggers were not
-met. An oriented-current extension is conditionally selectable only if a
-future target explicitly requires directional Read-Back or active
-circulation; B1-GR does not select that target.
+met. GRR3-GRR5 constructibility under unchanged GRC remains unresolved
+and is routed to a revision-distinct witness search before extension
+selection. Current temporalization is conditionally selectable only for
+a target requiring independent current relaxation. Oriented current is
+conditionally selectable only for directional Read-Back or active
+circulation. B1-GR selects neither target.
 
 ## Assumption And Contradiction Discipline
 
@@ -69,6 +99,15 @@ transport is not applicable rather than silently generalized to LGRC.
 - Complete existing suite: `passed` (1354 tests).
 - Protected source/spec/root-test tree: unchanged from GRV7.
 - Accepted prerequisite gates: `GRV0, GRV1, GRV2, GRV3, GRV4, GRV5, GRV6, GRV7`.
+
+## LGRC Handoff Boundary Candidate
+
+B1-L over legacy GRC9V3 and a future LGRC-N over a revised GRC kernel
+are separate investigations. Neither is authorized by this unaccepted
+classification. Packet ledgers, queues, proper time, pulse surfaces,
+lineage, and producer-read history must not be relabeled as retained
+continuation, memory, relaxation spectrum, Read-Back, canonical mode
+transport, or native constitutive reading.
 
 ## Claim Boundary
 
