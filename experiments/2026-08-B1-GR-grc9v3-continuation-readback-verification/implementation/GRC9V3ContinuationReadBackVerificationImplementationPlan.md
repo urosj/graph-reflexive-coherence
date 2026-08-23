@@ -1166,7 +1166,7 @@ reports/b1_grv7_spatial_temporal_continuation_thresholds.md
 The gate may establish bounded non-equivalence. It may record correlations but
 cannot promote them to a universal threshold identity or prove they never occur.
 
-## Iteration 9 - GRV8 Classification, Route Decision, And B1-L Handoff
+## Iteration 9 - GRV8 Classification, Route Decision, And Next-Route Handoff
 
 ### Objective
 
@@ -1179,7 +1179,7 @@ GRV8 executes in two separately reviewed stages. Stage 1 emits the scientific
 classification, routing artifacts, protected-path successor, complete-suite
 result, report, and `grv8_result_receipt.json`. It stops with
 `awaiting_scientific_review`: the evidence bundle, successor specification,
-LGRC handoff, closeout anchor, and `GRV-C6` do not yet exist. Stage 2 may begin
+next-route handoff, closeout anchor, and `GRV-C6` do not yet exist. Stage 2 may begin
 only after a human acceptance anchor binds the Stage 1 receipt. It then freezes
 the non-self-referential evidence bundle, emits the evidence-grounded successor
 and handoff, and submits those closeout artifacts for their separate acceptance.
@@ -1244,8 +1244,10 @@ must:
    Drafts 3.2, 3.3, and 3.4 and the accepted controlling Draft 3.4.1 unchanged,
    then accept the bundle/successor through the separate GRV8 closeout anchor.
 9. Emit the superseded-claims register.
-10. Freeze `lgrc_handoff.json`, including positive and negative inherited
-   boundaries.
+10. Freeze `continuation_readback_next_route_handoff.json`, ordering unchanged-
+    GRC constructibility, target-conditioned GRC extensions, analysis/theory
+    debt, and LGRC-specific investigation as separate lanes. The historical
+    `lgrc_handoff.json` schema is not the umbrella closeout contract.
 11. Complete every traceability-matrix row with assumptions, result, and route.
 12. Rerun the complete existing suite from the GRV8 clean input revision.
 13. Freeze the unchanged-GRC evidence bundle and verify protected runtime/spec/test
@@ -1265,9 +1267,10 @@ outputs/extension_decision.json
 outputs/theory_reopening_decision.json
 outputs/evidence_bundle_manifest.json
 outputs/superseded_exploratory_claims.json
-outputs/lgrc_handoff.json
+outputs/continuation_readback_next_route_handoff.json
 outputs/gates/grv8_result_receipt.json
 outputs/gates/grv8_acceptance_anchor.json
+outputs/gates/grv8_closeout_result_receipt.json
 outputs/gates/grv8_closeout_acceptance_anchor.json
 reports/b1_grc9v3_verification_report.md
 ```

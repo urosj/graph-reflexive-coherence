@@ -1,0 +1,91 @@
+{
+  "$id": "b1/continuation_readback_handoff.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "metadata": {
+      "type": "object"
+    },
+    "payload": {
+      "additionalProperties": false,
+      "properties": {
+        "accepted_grv8_anchor": {
+          "type": "object"
+        },
+        "blocked_claims": {
+          "type": "array"
+        },
+        "evidence_bundle": {
+          "type": "object"
+        },
+        "grv_c6_assigned": {
+          "const": false
+        },
+        "handoff_id": {
+          "const": "B1_GR_continuation_readback_next_route_v1"
+        },
+        "handoff_lanes": {
+          "items": {
+            "type": "object"
+          },
+          "minItems": 4,
+          "type": "array"
+        },
+        "handoff_status": {
+          "const": "candidate_pending_closeout_review"
+        },
+        "legacy_lgrc_handoff_disposition": {
+          "type": "string"
+        },
+        "source_artifacts": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "source_closeout_ceiling": {
+          "const": "GRV-C5"
+        },
+        "source_closeout_target": {
+          "const": "GRV-C6"
+        },
+        "source_experiment": {
+          "const": "B1-GR"
+        },
+        "successor_specification": {
+          "type": "object"
+        }
+      },
+      "required": [
+        "handoff_id",
+        "source_experiment",
+        "source_closeout_ceiling",
+        "source_closeout_target",
+        "accepted_grv8_anchor",
+        "evidence_bundle",
+        "successor_specification",
+        "handoff_status",
+        "handoff_lanes",
+        "legacy_lgrc_handoff_disposition",
+        "blocked_claims",
+        "source_artifacts",
+        "grv_c6_assigned"
+      ],
+      "type": "object"
+    },
+    "payload_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "schema_version": {
+      "const": "b1_continuation_readback_handoff_v1"
+    }
+  },
+  "required": [
+    "schema_version",
+    "metadata",
+    "payload",
+    "payload_sha256"
+  ],
+  "type": "object"
+}

@@ -21,7 +21,7 @@ class SchemaCoverageTest(unittest.TestCase):
             "grv8_causal_role.schema.json",
             "grv8_traceability.schema.json",
             "evidence_bundle_manifest.schema.json", "assumption_status_matrix.schema.json",
-            "lgrc_handoff.schema.json",
+            "continuation_readback_handoff.schema.json", "lgrc_handoff.schema.json",
         }
         actual = {path.name for path in (ROOT / "schemas").glob("*.schema.json")}
         self.assertEqual(expected, actual)

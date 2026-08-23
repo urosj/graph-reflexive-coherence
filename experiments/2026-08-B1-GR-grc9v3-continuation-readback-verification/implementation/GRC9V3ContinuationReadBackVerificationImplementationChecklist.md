@@ -1712,13 +1712,13 @@ all seven selected branches are accounted for across six paths. The result
 block above remains the immutable pre-acceptance machine state; the accepted
 current lifecycle state is `GRV-C5` assigned and GRV8 authorized but not started.
 
-## Iteration 9 - GRV8 Classification, Route Decision, And Handoff
+## Iteration 9 - GRV8 Classification, Route Decision, And Next-Route Handoff
 
 GRV8 is deliberately split at the human-review boundary. The first execution
 may emit only the classification/routing artifacts, protected-path successor,
 complete-suite result, report, and result receipt. It must stop at
 `awaiting_scientific_review`. The evidence bundle, successor specification,
-LGRC handoff, closeout anchor, and `GRV-C6` remain blocked until a separate
+next-route handoff, closeout anchor, and `GRV-C6` remain blocked until a separate
 acceptance anchor binds that result receipt. This prevents the classification
 from accepting itself or manufacturing its own closeout.
 
@@ -1748,7 +1748,8 @@ from accepting itself or manufacturing its own closeout.
 - [x] Emit `superseded_exploratory_claims.json`.
 - [x] Complete every theory-to-test traceability row with assumption statuses, result, and route.
 - [ ] Freeze the unchanged-GRC evidence bundle.
-- [ ] Produce `lgrc_handoff.json` with positive and negative boundaries.
+- [ ] Produce `continuation_readback_next_route_handoff.json` with GRC-first,
+  analysis/debt, and LGRC-specific lanes plus positive and negative boundaries.
 - [x] Rerun and record the complete existing suite from the GRV8 clean input revision.
 - [x] Verify all protected paths remain unchanged.
 - [x] Emit and validate the GRV8 result receipt.

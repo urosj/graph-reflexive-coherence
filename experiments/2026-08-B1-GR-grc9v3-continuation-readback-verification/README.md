@@ -485,6 +485,13 @@ review stages. The evidence bundle, evidence-grounded successor, routed
 GRC/LGRC handoff, closeout acceptance anchor, and `GRV-C6` remain absent until
 the separately reviewable Stage 2 package is generated and accepted.
 
+The Stage 2 umbrella artifact is a continuation/read-back next-route handoff,
+not an LGRC-only handoff. Its first lanes are GRC-side: unchanged-runtime
+constructibility where the accepted evidence still requires it, followed by
+target-conditioned GRC extension work. Analysis and identifiability debt remain
+separate, and LGRC event/delay/lineage/topology questions form a downstream
+lane over an explicitly selected GRC base.
+
 ## Central Question
 
 ```text

@@ -1,1 +1,40 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","$id":"b1/evidence_bundle_manifest.schema.json","type":"object","required":["experiment_id","accepted_gate_results","accepted_anchor_digests","artifacts","claim_ceiling","contradictions","open_debt"],"properties":{"experiment_id":{"const":"B1-GR"},"accepted_gate_results":{"type":"array"},"accepted_anchor_digests":{"type":"array"},"artifacts":{"type":"array"},"claim_ceiling":{"type":"string"},"contradictions":{"type":"array"},"open_debt":{"type":"array"}}}
+{
+  "$id": "b1/evidence_bundle_manifest.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "metadata": {"type": "object"},
+    "payload": {
+      "additionalProperties": false,
+      "properties": {
+        "accepted_anchor_digests": {"items": {"type": "object"}, "type": "array"},
+        "accepted_gate_results": {"items": {"type": "object"}, "minItems": 9, "type": "array"},
+        "artifacts": {"items": {"type": "object"}, "type": "array"},
+        "bundle_excluded_paths": {"items": {"type": "string"}, "type": "array"},
+        "claim_ceiling": {"type": "string"},
+        "contradictions": {"items": {"type": "object"}, "type": "array"},
+        "experiment_id": {"const": "B1-GR"},
+        "grv_c6_assigned": {"const": false},
+        "open_debt": {"items": {"type": "object"}, "type": "array"},
+        "superseded_or_replaced_artifacts": {"items": {"type": "object"}, "type": "array"}
+      },
+      "required": [
+        "experiment_id",
+        "accepted_gate_results",
+        "accepted_anchor_digests",
+        "artifacts",
+        "superseded_or_replaced_artifacts",
+        "bundle_excluded_paths",
+        "claim_ceiling",
+        "contradictions",
+        "open_debt",
+        "grv_c6_assigned"
+      ],
+      "type": "object"
+    },
+    "payload_sha256": {"pattern": "^[0-9a-f]{64}$", "type": "string"},
+    "schema_version": {"const": "b1_grv8_evidence_bundle_manifest_v1"}
+  },
+  "required": ["schema_version", "metadata", "payload", "payload_sha256"],
+  "type": "object"
+}
