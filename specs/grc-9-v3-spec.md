@@ -5,6 +5,25 @@ Source papers:
 - `papers/2026-04-GRC-9.md`
 - `papers/2026-02-GRC-V3.md`
 
+Implemented Phase 7 contract:
+
+- [`../implementation/Phase-7-ImplementationPlan.md`](../implementation/Phase-7-ImplementationPlan.md)
+- [`../implementation/Phase-7-EquationMap.md`](../implementation/Phase-7-EquationMap.md)
+- [`../implementation/Phase-7-StepLoop.md`](../implementation/Phase-7-StepLoop.md)
+- [`../implementation/Phase-7-ImplementationChecklist.md`](../implementation/Phase-7-ImplementationChecklist.md)
+- [`../implementation/Phase-7-MidGate-Review.md`](../implementation/Phase-7-MidGate-Review.md)
+- [`../implementation/Phase-7-RepresentativeRuntime.md`](../implementation/Phase-7-RepresentativeRuntime.md)
+- [`../implementation/Phase-7-Closeout.md`](../implementation/Phase-7-Closeout.md)
+
+Verification profile:
+
+- [`grc-9-v3-evidence-profile.md`](grc-9-v3-evidence-profile.md)
+
+This file is the normative contract for the legacy synchronous `GRC9V3`
+profile. The evidence profile records the bounded verification basis for the
+causal-state and retention boundaries below. Experimental counts and search
+results do not define runtime semantics by themselves.
+
 ## Purpose
 
 `GRC9V3` is the hybrid class:
@@ -97,6 +116,50 @@ class GRC9V3State(GRCState):
 are the GRC9V3-specific state surface; inherited runtime fields remain part of
 the runtime and snapshot contract and must be preserved by save/load.
 
+Serialization of a field does not by itself make that field an independent
+complete-step causal coordinate. On verified smooth, fixed-topology,
+event-free strata, `coherence` (`C`) is the admitted independent complete-step
+coordinate. Differential summaries, `base_conductance` (`W`), potential, and
+port-edge flux (`J`) are load-bearing within a beat, but are reconstructed or
+stage-dependent under the baseline step contract. Topology, registries, event
+state, RNG state, and reset-baseline state remain lifecycle state and are not
+covered by that smooth-stratum coordinate statement.
+
+## Complete-Step Causal-State Semantics
+
+Baseline `GRC9V3` is a synchronous graph-RC realization with immediate
+constitutive recurrence. On the verified fixed-topology, event-free profile,
+the relevant stage relation is:
+
+```text
+incoming C and port-edge J
+  -> differential summaries
+  -> W from C, gradient differences, and sign-even incoming J^2
+  -> potential from C and W
+  -> fresh potential-flow J
+  -> continuity update of C
+  -> final reconstruction of differential, transport, and identity surfaces
+```
+
+The runtime stores `W`, potential, labels, and `J` so a complete snapshot can
+be restored and inspected exactly under the applicable restoration contract.
+That storage does not change their causal type:
+
+- `W` is recomputed from current coherence, differential summaries, and the
+  incoming edge flux magnitude before fresh potential and flux are computed;
+- the incoming-current term is quadratic and sign-even, so it can carry
+  magnitude or an unoriented-axis effect but not historical current direction;
+- fresh `J` is reconstructed from the current scalar conductance and potential
+  difference; and
+- the final refresh reconstructs these surfaces again after continuity,
+  boundary, growth, event, and budget stages.
+
+Consequently, baseline `W` and `J` must not be advertised as independent slow
+coordinates merely because they are serialized or participate causally within
+the beat. A revision that gives either field independent complete-step
+evolution, relaxation, or retained-state authority is a new constitutive
+profile and must be specified separately.
+
 ## Parameters
 
 Includes all `GRC9` parameters plus:
@@ -133,23 +196,31 @@ Includes all `GRC9` parameters plus:
 
 Each `step()` must perform:
 
-1. compute row-based gradient summaries
-2. compute row-basis Hessian summaries and signed Hessian convention
-3. update node tensors
-4. update base conductance
-5. compute selected analytic edge labels
-6. compute potential
-7. compute flux
-8. extract sinks and basins
-9. identify basin seeds from gradient/Hessian conditions
-10. detect spark candidates from saturation plus basin degeneracy
-11. execute mechanical expansion
-12. register completed sparks only after post-event child-basin stabilization
-13. update optional choice/collapse/learning state
-14. apply configured boundary behavior
-15. apply continuity update
-16. enforce quadrature-style budget
-17. refresh/invalidate coarse-state cache
+1. rebuild row-based gradient, Hessian, flux-summary, and node-tensor surfaces
+   from the incoming complete-step state;
+2. rebuild scalar conductance from coherence, gradients, and incoming
+   current-squared;
+3. compute pre-flux labels, potential, fresh potential-flow current, and
+   post-flux labels;
+4. refresh differential summaries against the fresh current;
+5. rebuild sink, basin, geometric-seed, and basin-mass identity surfaces;
+6. detect spark candidates, execute any admitted mechanical expansion, and
+   register completed sparks only after child-basin stabilization;
+7. update optional choice/collapse/learning state;
+8. apply configured growth and boundary behavior;
+9. apply the continuity update;
+10. enforce the quadrature-style budget;
+11. rebuild pre-transport differential surfaces, transport surfaces,
+    post-transport differential surfaces, and identity surfaces for the final
+    complete-step state;
+12. refresh/invalidate coarse-state cache, compute observables, and advance the
+    step index and synchronous time.
+
+The ordering is causal, not presentational. In particular, callers must not
+interpret incoming stored `W` or `J` as independent state that bypasses the
+reconstruction stages. Reduced or frozen-surface experiments may hold a stage
+surface fixed for analysis, but that does not change the native `step()`
+contract.
 
 ## Spark Semantics
 
@@ -225,6 +296,11 @@ Minimum implementation requirement:
 - detect collapse when one route becomes dominant,
 - log learning as a post-collapse state change event with affected nodes/modules.
 
+The legacy `learning` name on this event surface denotes the configured
+post-collapse state-change and event bookkeeping defined by the Phase 7
+contract. It does not assert retained memory, adaptive learning, agentic
+learning, or core Read-Back.
+
 ## Edge Labels
 
 As in `GRCV3`, this class must distinguish:
@@ -265,6 +341,64 @@ with `mu_i == 1` as the default. Mechanical expansion must preserve this quantit
 `temporal_delay` is an analytic propagation label. In baseline `GRC9V3`, it must not be presented as proper time or as a complete discrete Lorentzian metric.
 
 If an implementation adds lapse/shift-like data, causal cones, or other explicit spacetime structure, it must advertise `causal_layer` explicitly and serialize the extra causal-state fields needed to make that layer reproducible.
+
+## Historical Persistence, Retention, And Read-Back
+
+The legacy profile distinguishes four claims that must not be collapsed:
+
+```text
+constitutive recurrence
+  a field participates in the ordered native step and changes a later stage
+
+ordinary state persistence
+  a complete-step coordinate remains displaced on later beats
+
+retained historical sector
+  a separately identified post-driver carrier persists relative to its
+  reference branch and has an admitted formation/update relation
+
+Read-Back
+  a later present-current-conditioned directional read relation consumes an
+  admitted retained sector under the required passive and rival controls
+```
+
+Baseline `GRC9V3` specifies the first relation. It does not specify a distinct
+retained-state primitive, constitutive retained-sector projector,
+retained-carrier update law, or native read current. An analysis-only projector
+or observer surface derived from existing state does not by itself add a
+runtime causal object.
+
+The stage-local path from incoming current magnitude into conductance is real:
+
+```text
+incoming J^2 -> reconstructed W -> potential -> fresh J -> later C
+```
+
+It is not by itself a retained-history implementation. In particular:
+
+- `base_conductance` is a load-bearing mechanical transport field, but its
+  baseline complete-step value is reconstructed and must not be called durable
+  memory merely because incoming current contributes to that reconstruction;
+- the quadratic current contribution is sign-even and does not retain
+  historical current orientation;
+- potential-flow current is freshly reconstructed, so incoming orientation is
+  not a native independently relaxing current coordinate; and
+- persistence of `C` alone may be ordinary state continuation, neutral
+  coordinate displacement, or branch relocation and does not establish a
+  separate retained historical sector.
+
+The bounded B1-GR and B2-GR evidence supporting this type boundary is recorded
+in [`grc-9-v3-evidence-profile.md`](grc-9-v3-evidence-profile.md). That evidence
+does not establish that GRC9V3 can never form a retained carrier, that retention
+is globally absent, or that any particular replacement mechanism is required.
+
+Any future profile that introduces independent conductance/current relaxation,
+a new retained causal carrier or update law, a retained-sector projector that
+is consumed constitutively by the runtime, or native Read-Back changes the
+constitutive causal state. It must use a revision-distinct specification and
+capability/profile identity rather than reinterpret this legacy contract.
+Analysis-only projectors or observer surfaces do not by themselves define a new
+runtime profile.
 
 ## Scale Semantics
 
