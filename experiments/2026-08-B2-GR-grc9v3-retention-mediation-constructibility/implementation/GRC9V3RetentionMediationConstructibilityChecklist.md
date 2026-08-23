@@ -491,7 +491,7 @@ validator. That sentinel remains fixture-only and is not scientific evidence.
 - [x] Require positive admissibility margins and no load-bearing clipping or budget projection.
 - [x] Classify overwritten, nonpersistent, unmatched, unresolved, invalid, duplicate, and outside-envelope rows distinctly.
 - [x] Preserve branch-relocation as unresolved when no runtime-reached candidate exists for Iteration 5 analysis.
-- [ ] Freeze the accepted discovery candidate set and acceptance anchor before Iteration 5.
+- [x] Freeze the accepted empty discovery candidate set and acceptance anchor before downstream consumption.
 - [x] Fresh-process reconstruct every discovered candidate from its source B1 branch before `B2-C3` acceptance; the discovered candidate set is empty, so no confirmation row was eligible to run.
 - [x] Assign no GRR rung; no runtime-reached post-driver candidate exists for I5 `GRR2` qualification.
 - [x] Mark the empty candidate result `B2-C3-ready`; assign `B2-C3` only through human-reviewed acceptance.
@@ -507,11 +507,11 @@ conditional after human acceptance:
 outputs/gates/b2_i4_acceptance_anchor.json
 ```
 
-### Iteration 4 Result - Awaiting Scientific Review
+### Iteration 4 Result - Accepted
 
 ```text
 status = passed
-acceptance_state = awaiting_scientific_review
+acceptance_state = accepted
 input_execution_revision = dbc24f5d202920aa2a8d65581b128b04a918965b
 batch_count = 12
 attempted_count = 9648
@@ -529,13 +529,14 @@ inaccessible_under_frozen_preparation_family_count = 22/48
 candidate_set_status = empty_no_runtime_reached_candidate
 claim_ceiling = bounded_negative_unchanged_runtime_search_no_runtime_reached_candidate_within_frozen_envelope
 GRR_rung_assigned = false
-B2_closeout_ceiling = B2-C3-ready
+B2_closeout_rung = B2-C3
 ready_for_I5 = false
 ready_for_I8_bounded_closeout = true
 I5_to_I7_positive_lane_status = not_applicable_empty_I4_candidate_set
 artifact_payload_sha256 = 334ae6907c3241b44b4d22720e8f356561773091b7d51109b4872091e8b7fe2c
 receipt_payload_sha256 = f198c36122df9e4c28b8767b56bd13d5b7471164ab8d1dfee4b51ebbc908f06d
-acceptance_anchor_created = false
+acceptance_result_revision = f3c290d358b00e1ac16cab3959c74aa6e38329e5
+acceptance_anchor_created = true
 ```
 
 Interpretation:
@@ -544,7 +545,7 @@ Interpretation:
 - No attempt produced a runtime-reached post-driver candidate. The result therefore assigns no GRR rung and cannot open the I5-I7 positive qualification lanes.
 - The 27 clean bounded-negative rows are evidence only inside the frozen branch, preparation, parameter, history-length, and carrier envelope. The 22 inaccessible branches are coverage debt, not negative constructibility evidence.
 - All attempt rows were serialized and validated during execution. The repository retains the attempt-population and aggregate-ledger digests, per-batch identities and counts, all clean bounded-negative rows, branch coverage, the classification matrix, and compact outlier groups. The approximately 40 MB transient shard set is not retained evidence.
-- Human acceptance may freeze this empty candidate set at `B2-C3` and route B2 directly to bounded I8 closeout. Until then, the current result remains `B2-C3-ready` and no acceptance anchor exists.
+- Human review accepted the empty candidate set at result revision `f3c290d358b00e1ac16cab3959c74aa6e38329e5`. The acceptance anchor assigns `B2-C3`, leaves all GRR rungs unassigned, makes I5-I7 positive lanes not applicable, and routes B2 directly to bounded I8 closeout.
 
 ## Iteration 5 - Slow-Cluster And Branch-Transversality Matrix
 
