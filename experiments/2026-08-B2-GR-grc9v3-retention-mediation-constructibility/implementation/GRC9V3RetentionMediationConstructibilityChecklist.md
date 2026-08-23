@@ -181,6 +181,44 @@ Interpretation:
 - The constitutional review identified machine-contract gaps before acceptance. The revised I2 package adds matched-sham formation attribution, full-path cleanliness, stratified nonmigrating search, discovery/adjudication separation, formation-specific slow occupancy, carrier equivalence and causal eligibility, branch-search sufficiency, probe provenance, oriented GRR4 effects, control truth tables, calibration recipes, and explicit ledger/duplicate semantics.
 - Iteration 3 remains blocked until the revised I2 package is executed and accepted.
 
+### Iteration 2 Constitutional Revision Result - Awaiting Human Review
+
+```text
+status = passed
+acceptance_state = awaiting_scientific_review
+schema_version = b2_i2_constructibility_schema_v2
+input_execution_revision = b6669b8e0ad1ad70def6ab4c99dbe926a9e906ee
+checks = 66/66 passed
+failed_checks = []
+candidate_required_field_count = 183
+carrier_definition_count = 3
+active_null_definition_count = 52
+maximum_discovery_rows = 9648
+stratified_attempt_allocation = F1:1936, F2:1936, F3:5776
+carrier_adjudication_slots = 28944
+threshold_calibration_recipe_count = 4
+artifact_payload_sha256 = bae04386692f35749c0897292f5a3ae99f8364a7251c6b7826817bdc8a4e4e28
+receipt_payload_sha256 = 764c2f42ef6d28b4dda6c6d9f18e829d317c2ec60687e255597f79819185b088
+acceptance_anchor_created = false
+B2_positive_evidence_opened = false
+GRR_rung_assigned = false
+B2_closeout_rung_assigned = false
+B2_closeout_ceiling = B2-C1-ready
+ready_for_I3 = false_pending_I2_acceptance
+```
+
+Interpretation:
+
+- Every inherited `GRR0-GRR5` meaning is preserved verbatim beside a separate B2 admission-hardening contract; stronger B2 controls narrow admission without rewriting the ladder.
+- Native write now requires a carrier-projected positive-versus-matched-sham formation contrast. The clean primary lane covers source ancestry, preparation, `k=0`, persistence, probe, and controls.
+- The primary search is a deterministic, nonmigrating, no-early-stop 9,648-attempt grid. All attempts remain ledgered; consumed budget, resolved coverage, numerical failure, and duplicate classes are separate quantities.
+- GRR3 requires slow-cluster existence, candidate occupancy, and formation-specific excess occupancy. The discrete mode taxonomy separately handles oscillatory, complex, marginal, unstable, deadbeat, defective, and nonnormal cases.
+- `C`, `W`, and joint `C-W` are causally classified and equivalence-deduplicated. A `C`-primary candidate still needs the inherited runtime-generated conductance or joint-state consequence to earn GRR1 or stronger.
+- Direct internal `C`, old-`J`, cache, or hidden-state probes are diagnostic-only and cannot open native GRR4. GRR4 uses a signed/oriented interaction vector before norm reduction.
+- Reset, swap, and bypass have frozen target statistics, expected effects, applicability, and machine truth tables. Positive-control `failed` remains distinct from active-null `failed_closed`.
+- I3 may instantiate, but not revise, the four frozen calibration recipes. An unusable or over-maximum calibration blocks I4 and requires a revised, reaccepted I2.
+- This revision remains schema-only. It opens no constructibility evidence, assigns no GRR rung, and selects no extension.
+
 ## Iteration 3 - Active Nulls And Failure Baselines
 
 - [ ] Instantiate every required active null from the plan.
