@@ -17,7 +17,7 @@ only analogically, as a measurable diagnostic, or not at all.
 
 ```text
 experiment_id = B1-GR
-status = grv8_P8_1_classification_candidate_awaiting_human_review
+status = grv8_P8_1_unaccepted_candidate_superseded_P8_2_method_correction
 specification_state = draft_3_4_1_pre_execution_mathematical_execution_sealed
 controlling_specification_sha256 = 7ad99fb4acc6a7691d184a514f4836ffa3927600fc7cf504eb059134f3948e44
 runtime_under_test = unchanged_GRC9V3
@@ -456,7 +456,21 @@ P8.1 executed from clean method revision `bfb3de1` and emitted replacement
 classification receipt `24b30abc...`. The complete repository suite passes
 `1,354` tests, the post-generation experiment suite passes `111` tests, and
 the 379-path protected source/spec/root-test manifest remains unchanged. The
-replacement candidate remains the first of two GRV8 review stages. The evidence bundle,
+candidate was not accepted because review found traceability assumption
+propagation errors, fixed-topology `A-TRANSPORT` misclassified as not
+applicable, stationary-cycle and unresolved-orbit routes conflated, and no
+derivation for the sole L4 causal-state row.
+
+P8.2 corrects those final-classification defects without reopening GRV0-GRV7.
+It splits the duplicated `D-M01` traceability ownership while preserving the
+controlling source row, derives other traceability assumptions row-locally,
+deduplicates provenance, treats canonical fixed-topology identification as a
+satisfied bounded `A-TRANSPORT` case, separates stationary-cycle
+nonrealization from unresolved orbit constructibility, and narrows bounded
+runtime causal closure to exact L3 because no commuting no-current,
+frozen-current, or smoothly slaved-current reduction was derived.
+
+The corrected candidate remains the first of two GRV8 review stages. The evidence bundle,
 evidence-grounded successor, LGRC handoff, GRV8 acceptance anchors, and
 `GRV-C6` remain absent until the classification receipt is reviewed and
 accepted.

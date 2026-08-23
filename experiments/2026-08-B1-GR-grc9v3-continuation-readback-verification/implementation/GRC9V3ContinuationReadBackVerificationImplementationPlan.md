@@ -1209,6 +1209,26 @@ probe. It must:
    action for every contradiction entry; and
 10. preserve reasons and replacement wording for superseded exploratory claims.
 
+The P8.1 result at revision `bb9be8d` also remains unaccepted and is superseded
+by P8.2. P8.2 is a classification correction, not another scientific gate. It
+must:
+
+1. preserve the accepted controlling traceability matrix while recording a
+   final-row correction that separates `T-S02` from duplicated `D-M01`
+   ownership and leaves `D-M01` with `TR-17`;
+2. derive every other final traceability assumption envelope from that row's
+   own `Required assumptions` field and deduplicate exact evidence records;
+3. classify `A-TRANSPORT` as satisfied only for the declared canonical
+   fixed-topology coordinate identity while keeping topology-changing
+   interspace transport untested under `D-T01`;
+4. route stationary cycle-space current nonrealization separately from the
+   bounded, ill-conditioned, and incomplete return-orbit search;
+5. require an explicit commuting reduction before assigning L4 to the bounded
+   runtime causal state; absent that derivation, preserve the runtime fact as
+   exact L3 and block a declared core-reduction claim; and
+6. leave every accepted GRV0-GRV7 artifact, scientific claim ceiling, Stage 2
+   artifact, acceptance anchor, and `GRV-C6` boundary unchanged.
+
 1. Assign all required assumption statuses before classifying claims.
 2. Assign one of the six implementation statuses and L0-L5 correspondence to
    every tested object.

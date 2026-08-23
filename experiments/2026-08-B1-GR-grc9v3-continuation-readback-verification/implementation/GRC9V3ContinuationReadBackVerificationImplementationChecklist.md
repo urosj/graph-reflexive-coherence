@@ -4,7 +4,7 @@
 
 ```text
 branch = experiment-B1-continuation-readback
-status = grv8_P8_1_classification_candidate_awaiting_human_review
+status = grv8_P8_1_unaccepted_candidate_superseded_P8_2_method_correction
 controlling_specification = draft_3_4_1_pre_execution_mathematical_execution_sealed
 controlling_specification_sha256 = 7ad99fb4acc6a7691d184a514f4836ffa3927600fc7cf504eb059134f3948e44
 runtime_under_test = unchanged_GRC9V3
@@ -13,7 +13,7 @@ src_change_authorized = false
 existing_test_change_authorized = false
 positive_evidence_opened = true_bounded_GRV2_branch_and_GRV5_GRR2_evidence
 positive_retention_evidence_opened = bounded_GRR2_neutral_coordinate_persistence_only
-current_gate = GRV8_P8_1_stage_1_scientific_review_pending
+current_gate = GRV8_P8_2_clean_execution_pending
 verification_closeout_ladder_rung_assigned = true
 verification_closeout_rung = GRV-C5
 verification_closeout_ceiling = GRV-C5_assigned_GRV8_pending
@@ -1923,3 +1923,32 @@ Legacy B1-L over unchanged GRC9V3 and future LGRC-N over a revised
 constitutive kernel are separate investigations. Human acceptance of this
 replacement classification is required before the evidence bundle, successor,
 final handoff, closeout anchor, or `GRV-C6` may be emitted.
+
+Review did not accept P8.1. The candidate remains useful non-consumable
+history, but its final traceability assumptions do not agree with eight source
+rows, fixed-topology `A-TRANSPORT` is misclassified as not applicable,
+stationary cycle-current nonrealization is conflated with unresolved orbit
+constructibility, and the sole declared-simplifying-limit row lacks a commuting
+core-reduction derivation.
+
+### Iteration 9 P8.2 Classification Correction
+
+- [x] Preserve P8 and P8.1 as unaccepted, non-consumable result revisions.
+- [x] Preserve the controlling traceability source rows inside the corrected artifact.
+- [x] Split `TR-01` into `T-S02` only and leave `D-M01` ownership solely with `TR-17`.
+- [x] Bind `TR-01` to `A-BRANCH`, `A-CLOCK`, and `A-CONSERVE` with an explicit adjustment record.
+- [x] Derive all other final traceability assumption IDs from their own source rows.
+- [x] Deduplicate exact accepted evidence records in every traceability row.
+- [x] Classify fixed-topology canonical-coordinate `A-TRANSPORT` as satisfied.
+- [x] Keep topology-changing interspace transport untested under `D-T01` and `T-B04`.
+- [x] Split stationary cycle-space current into bounded substrate nonrealization.
+- [x] Split period-2-to-8 return orbits into unresolved constructibility evidence.
+- [x] Audit the bounded-runtime causal-state L4 correspondence.
+- [x] Record that no no-current, frozen-current, or smoothly slaved-current commuting reduction was derived.
+- [x] Narrow bounded runtime causal closure to exact L3 without weakening the runtime result.
+- [x] Add regression coverage for all four correction families.
+- [ ] Commit the P8.2 method revision.
+- [ ] Execute replacement GRV8 from the clean P8.2 revision.
+- [ ] Validate corrected artifacts, complete suite, and protected paths.
+- [ ] Submit the P8.2 candidate for human scientific review.
+- [x] Keep Stage 2 bundle, successor, handoff, closeout anchor, and `GRV-C6` blocked.

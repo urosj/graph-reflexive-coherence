@@ -103,10 +103,14 @@ class GRV8ClassificationTest(unittest.TestCase):
             if any(status in {"failed", "not_identifiable"} for status in row["assumption_statuses"].values()):
                 self.assertNotEqual("bounded_supported_distinction", row["disposition"])
 
-    def test_required_objects_and_all_six_statuses_are_present(self) -> None:
+    def test_required_objects_use_only_the_six_available_statuses(self) -> None:
         rows = self.equivalence["rows"]
         self.assertEqual(REQUIRED_OBJECT_IDS, {row["object_id"] for row in rows})
-        self.assertEqual(IMPLEMENTATION_STATUSES, {row["implementation_status"] for row in rows})
+        self.assertTrue(
+            {row["implementation_status"] for row in rows}.issubset(
+                IMPLEMENTATION_STATUSES
+            )
+        )
         for row in rows:
             self.assertTrue(row["maximum_supported_claim"])
             self.assertTrue(row["blocked_claims"])
@@ -169,6 +173,74 @@ class GRV8ClassificationTest(unittest.TestCase):
             rows["j_equals_J_C_limit"]["secondary_qualifiers"],
         )
 
+    def test_bounded_runtime_causal_state_is_exact_L3_not_forced_L4(self) -> None:
+        rows = {row["object_id"]: row for row in self.equivalence["rows"]}
+        causal_state = rows["bounded_runtime_causal_state"]
+        self.assertEqual(
+            "already_implemented_exactly", causal_state["implementation_status"]
+        )
+        self.assertEqual("L3_constitutive_realization", causal_state["correspondence_level"])
+        self.assertFalse(
+            causal_state["reduction_mapping_audit"]["declared_core_limit_identified"]
+        )
+        self.assertFalse(
+            causal_state["reduction_mapping_audit"][
+                "complete_beat_commuting_reduction_derived"
+            ]
+        )
+        self.assertNotIn(
+            "implemented_as_declared_simplifying_limit",
+            {row["implementation_status"] for row in self.equivalence["rows"]},
+        )
+
+    def test_fixed_topology_transport_is_satisfied_without_upgrading_topology_change(self) -> None:
+        assumptions = {
+            row["assumption_id"]: row for row in self.assumptions["rows"]
+        }
+        self.assertEqual("satisfied", assumptions["A-TRANSPORT"]["status"])
+        self.assertEqual(
+            {"satisfied": 15, "not_applicable": 3, "not_identifiable": 1},
+            self.assumptions["summary"],
+        )
+        claims = {row["claim_id"]: row for row in self.claims["rows"]}
+        self.assertEqual("not_tested_fixed_topology_scope", claims["T-B04"]["disposition"])
+        self.assertIn("A-TRANSPORT", claims["T-B04"]["assumption_scope_notes"])
+
+    def test_traceability_assumptions_match_final_source_rows_and_evidence_is_unique(self) -> None:
+        rows = {row["traceability_row_id"]: row for row in self.traceability["rows"]}
+        expected = {
+            "TR-01": {"A-BRANCH", "A-CLOCK", "A-CONSERVE"},
+            "TR-02": {"A-BRANCH", "A-CLOCK", "A-REACHABLE"},
+            "TR-06": {"A-ORIENTATION", "A-CONSERVE", "A-TRANSPORT"},
+            "TR-07": {"A-BRANCH", "A-CLOCK", "A-CONSERVE"},
+            "TR-08": {"A-BRANCH", "A-CLOCK", "A-ISOLATION", "A-NONNORMAL-CONTROL"},
+            "TR-10": {"A-BRANCH", "A-ISOLATION", "A-TRANSPORT"},
+            "TR-15": {"A-ORIENTATION", "A-PASSIVE"},
+            "TR-17": {"A-STATE-CLOSURE", "A-REACHABLE"},
+        }
+        for row_id, assumption_ids in expected.items():
+            self.assertEqual(assumption_ids, set(rows[row_id]["assumption_ids"]))
+            self.assertEqual(assumption_ids, set(rows[row_id]["assumption_statuses"]))
+        self.assertEqual(["T-S02"], rows["TR-01"]["claim_ids"])
+        self.assertEqual([], rows["TR-01"]["debt_ids"])
+        self.assertTrue(rows["TR-01"]["source_row_adjusted"])
+        self.assertEqual(["T-O03"], rows["TR-17"]["claim_ids"])
+        self.assertEqual(["D-M01"], rows["TR-17"]["debt_ids"])
+        self.assertEqual(["lgrc_specific_investigation"], rows["TR-17"]["primary_routes"])
+        for row in rows.values():
+            records = row["accepted_evidence_records"]
+            keys = {
+                (
+                    record["source_gate"],
+                    record["result_revision"],
+                    record["artifact_path"],
+                    record["exact_field_or_row"],
+                    record["consumed_value_semantic_sha256"],
+                )
+                for record in records
+            }
+            self.assertEqual(len(records), len(keys))
+
     def test_correspondence_level_wording_is_frozen_exactly(self) -> None:
         self.assertEqual(
             CORRESPONDENCE_LEVEL_DEFINITIONS,
@@ -223,6 +295,17 @@ class GRV8ClassificationTest(unittest.TestCase):
             self.assertTrue(row["assumption_statuses"])
             self.assertTrue(row["rejected_routes"])
             self.assertTrue(row["required_next_action"])
+
+    def test_stationary_cycle_and_return_orbit_routes_are_separate(self) -> None:
+        rows = {row["contradiction_id"]: row for row in contradiction_entries()}
+        self.assertEqual("substrate_nonrealization", rows["CR-GRV8-005A"]["route"])
+        self.assertEqual(
+            "construct_not_identifiable_with_available_interventions",
+            rows["CR-GRV8-005B"]["route"],
+        )
+        self.assertEqual(["T-A05"], rows["CR-GRV8-005A"]["claim_ids"])
+        self.assertEqual(["T-A03", "T-A04"], rows["CR-GRV8-005B"]["claim_ids"])
+        self.assertIn("relative_orbit", rows["CR-GRV8-005B"]["scope_limit"])
 
     def test_contradiction_and_extension_rows_bind_exact_accepted_fields(self) -> None:
         for row in contradiction_entries():

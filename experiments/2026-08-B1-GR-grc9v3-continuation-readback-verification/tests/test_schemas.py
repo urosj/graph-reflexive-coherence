@@ -19,6 +19,7 @@ class SchemaCoverageTest(unittest.TestCase):
             "spatial_temporal_threshold_matrix.schema.json",
             "grv8_classification.schema.json",
             "grv8_causal_role.schema.json",
+            "grv8_traceability.schema.json",
             "evidence_bundle_manifest.schema.json", "assumption_status_matrix.schema.json",
             "lgrc_handoff.schema.json",
         }

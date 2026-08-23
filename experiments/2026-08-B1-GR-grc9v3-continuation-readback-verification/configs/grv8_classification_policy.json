@@ -76,9 +76,9 @@
       "evidence_refs": ["outputs/instrumentation_validation.json", "outputs/return_orbit_registry.json"]
     },
     "A-TRANSPORT": {
-      "status": "not_applicable",
-      "scope": "fixed_topology_B1_GR_only",
-      "rationale": "Canonical coordinate identity suffices in this fixed-topology experiment; interspace transport remains an LGRC handoff debt.",
+      "status": "satisfied",
+      "scope": "fixed_topology_B1_GR_canonical_coordinate_identification_only",
+      "rationale": "The declared canonical serialized chart supplies the coordinate-identity ambient identification for fixed topology. This does not satisfy topology-changing interspace transport, which remains untested under D-T01.",
       "evidence_refs": ["outputs/fixed_topology_envelope.json", "outputs/fixed_branch_registry.json"]
     },
     "A-SIGN-EVEN": {
@@ -151,6 +151,11 @@
     "T-O02": ["D-C02"],
     "T-O03": ["D-M01"]
   },
+  "claim_assumption_scope_notes": {
+    "T-B04": {
+      "A-TRANSPORT": "satisfied only for the fixed-topology canonical coordinate identity; topology-changing interspace transport remains untested and T-B04 remains outside B1-GR scope"
+    }
+  },
   "object_classifications": [
     {
       "object_id": "formed_zero_current_branches",
@@ -164,13 +169,19 @@
     },
     {
       "object_id": "bounded_runtime_causal_state",
-      "implementation_status": "implemented_as_declared_simplifying_limit",
-      "correspondence_level": "L4_derived_reduced_limit",
+      "implementation_status": "already_implemented_exactly",
+      "correspondence_level": "L3_constitutive_realization",
       "claim_ids": ["T-S01", "T-S02", "T-O03"],
       "debt_ids": ["D-M01"],
       "evidence_refs": ["outputs/complete_step_jacobians.json"],
-      "maximum_supported_claim": "branch_and_stratum_relative_synchronous_GRC_causal_closure_with_C_independent_and_W_J_reconstructed",
-      "blocked_claims": ["universal_C_J_primitive_identity", "LGRC_state_closure"]
+      "maximum_supported_claim": "branch_and_stratum_relative_bounded_C_W_J_runtime_causal_closure_with_C_admitted_as_an_independent_derivative_coordinate_and_W_J_reconstructed_or_stage_dependent",
+      "blocked_claims": ["declared_no_current_frozen_or_smoothly_slaved_core_reduction", "universal_C_J_primitive_identity", "LGRC_state_closure"],
+      "reduction_mapping_audit": {
+        "declared_core_limit_identified": false,
+        "candidate_limits_checked": ["no_current", "frozen_current", "smoothly_slaved_current"],
+        "complete_beat_commuting_reduction_derived": false,
+        "decision": "narrow_runtime_fact_to_exact_L3_without_L4_core_reduction_claim"
+      }
     },
     {
       "object_id": "fixed_W_constrained_continuation_comparator",

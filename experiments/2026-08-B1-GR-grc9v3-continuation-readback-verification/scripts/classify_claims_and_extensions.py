@@ -122,6 +122,12 @@ def scope_policy() -> dict[str, Any]:
     return read_json(EXPERIMENT_ROOT / "configs/grv8_scope_and_role_policy.json")
 
 
+def traceability_correction_policy() -> dict[str, Any]:
+    return read_json(
+        EXPERIMENT_ROOT / "configs/grv8_traceability_correction_policy.json"
+    )
+
+
 def source_id_map() -> dict[str, dict[str, str]]:
     manifest = envelope_payload("theory_source_manifest")
     records_by_path = {row["path"]: row for row in manifest["sources"]}
@@ -264,6 +270,17 @@ def bind_evidence(
     return records
 
 
+def deduplicate_evidence_records(
+    records: list[dict[str, Any]], policy: dict[str, Any]
+) -> list[dict[str, Any]]:
+    key_fields = policy["accepted_evidence_deduplication_key"]
+    unique: dict[tuple[Any, ...], dict[str, Any]] = {}
+    for record in records:
+        key = tuple(record[field] for field in key_fields)
+        unique.setdefault(key, record)
+    return [unique[key] for key in sorted(unique)]
+
+
 def evidence_pointers_for_ids(
     policy: dict[str, Any],
     scope: dict[str, Any],
@@ -331,8 +348,10 @@ def validate_policy(policy: dict[str, Any]) -> dict[str, Any]:
     object_ids = {row["object_id"] for row in object_rows}
     if object_ids != REQUIRED_OBJECT_IDS or len(object_rows) != len(object_ids):
         raise ValueError("GRV8 object classification coverage mismatch")
-    if {row["implementation_status"] for row in object_rows} != IMPLEMENTATION_STATUSES:
-        raise ValueError("all six implementation statuses must be instantiated")
+    if not {row["implementation_status"] for row in object_rows}.issubset(
+        IMPLEMENTATION_STATUSES
+    ):
+        raise ValueError("invalid implementation status")
     if any(row["correspondence_level"] not in CORRESPONDENCE_LEVELS for row in object_rows):
         raise ValueError("invalid correspondence level")
     scope = scope_policy()
@@ -465,6 +484,9 @@ def claim_classification(
                 "disposition": disposition,
                 "required_assumption_ids": required,
                 "assumption_statuses": statuses,
+                "assumption_scope_notes": policy.get(
+                    "claim_assumption_scope_notes", {}
+                ).get(claim_id, {}),
                 "evidence_refs": evidence_refs,
                 "accepted_evidence_records": (
                     bind_evidence(evidence_pointers, evidence_index)
@@ -678,29 +700,62 @@ def completed_traceability(
     claims: dict[str, dict[str, Any]],
     policy: dict[str, Any],
 ) -> dict[str, Any]:
+    correction_policy = traceability_correction_policy()
+    corrections = correction_policy["row_corrections"]
     rows = []
     for index, source in enumerate(source_rows, start=1):
-        combined = " ".join(str(value) for value in source.values())
-        claim_ids = ids_in(combined, "T")
-        debt_ids = ids_in(combined, "D")
+        row_id = f"TR-{index:02d}"
+        source_claim_ids = ids_in(source["Claim or debt"], "T")
+        source_debt_ids = ids_in(source["Claim or debt"], "D")
+        source_assumption_ids = ids_in(source["Required assumptions"], "A")
+        correction = corrections.get(row_id)
+        corrected_source = dict(source)
+        if correction:
+            corrected_source.update(correction["corrected_source_fields"])
+            claim_ids = correction["claim_ids"]
+            debt_ids = correction["debt_ids"]
+            assumption_ids = correction["assumption_ids"]
+            primary_routes = correction["primary_routes"]
+        else:
+            claim_ids = source_claim_ids
+            debt_ids = source_debt_ids
+            assumption_ids = source_assumption_ids
+            primary_routes = sorted(
+                {policy["debt_routes"][debt_id] for debt_id in debt_ids}
+                or {"unchanged_grc_interpretation"}
+            )
+        evidence_records = [
+            record
+            for claim_id in claim_ids
+            for record in claims[claim_id]["accepted_evidence_records"]
+        ]
         rows.append(
             {
-                "traceability_row_id": f"TR-{index:02d}",
-                "source_row": source,
+                "traceability_row_id": row_id,
+                "controlling_source_row": source,
+                "source_row": corrected_source,
+                "source_row_adjusted": correction is not None,
+                "source_row_adjustment": (
+                    {
+                        "reason": correction["reason"],
+                        "original_claim_ids": source_claim_ids,
+                        "original_debt_ids": source_debt_ids,
+                        "original_assumption_ids": source_assumption_ids,
+                    }
+                    if correction
+                    else None
+                ),
                 "claim_ids": claim_ids,
                 "debt_ids": debt_ids,
+                "assumption_ids": assumption_ids,
                 "assumption_statuses": {
                     assumption_id: policy["assumption_statuses"][assumption_id]["status"]
-                    for claim_id in claim_ids
-                    for assumption_id in claims[claim_id]["required_assumption_ids"]
+                    for assumption_id in assumption_ids
                 },
                 "result_dispositions": {
                     claim_id: claims[claim_id]["disposition"] for claim_id in claim_ids
                 },
-                "primary_routes": sorted(
-                    {policy["debt_routes"][debt_id] for debt_id in debt_ids}
-                    or {"unchanged_grc_interpretation"}
-                ),
+                "primary_routes": primary_routes,
                 "evidence_refs": sorted(
                     {
                         ref
@@ -708,18 +763,31 @@ def completed_traceability(
                         for ref in claims[claim_id]["evidence_refs"]
                     }
                 ),
-                "accepted_evidence_records": [
-                    record
-                    for claim_id in claim_ids
-                    for record in claims[claim_id]["accepted_evidence_records"]
-                ],
+                "accepted_evidence_records": deduplicate_evidence_records(
+                    evidence_records, correction_policy
+                ),
             }
         )
+    for debt_id, expected_rows in correction_policy["required_debt_ownership"].items():
+        actual_rows = [
+            row["traceability_row_id"] for row in rows if debt_id in row["debt_ids"]
+        ]
+        if actual_rows != expected_rows:
+            raise ValueError(
+                f"traceability debt ownership mismatch for {debt_id}: {actual_rows}"
+            )
     return {
         "gate_id": "GRV8",
         "rows": rows,
+        "controlling_source_matrix_preserved": correction_policy[
+            "source_matrix_preserved"
+        ],
+        "source_row_adjustment_count": sum(
+            row["source_row_adjusted"] for row in rows
+        ),
+        "accepted_evidence_records_deduplicated": True,
         "results_pending": False,
-        "highest_supported_claim": "completed_claim_assumption_result_and_route_traceability",
+        "highest_supported_claim": "source_preserving_corrected_claim_assumption_result_and_route_traceability",
         "blocked_claims": ["traceability_row_is_independent_evidence"],
     }
 
@@ -816,14 +884,17 @@ def write_report(
         "retroactively upgrade reduced, synthetic, diagnostic, or blocked rows.",
         "The classification result must be accepted before the evidence bundle,",
         "evidence-grounded successor, LGRC handoff, or `GRV-C6` closeout can exist.",
-        "This P8.1 result supersedes the unaccepted P8 candidate at revision",
-        "`1448757`; it does not alter any accepted GRV0-GRV7 result.",
+        "This P8.2 result supersedes the unaccepted P8 and P8.1 candidates. It",
+        "does not alter any accepted GRV0-GRV7 result or rerun a scientific gate.",
         "",
         "## Main Classification",
         "",
         "- Formed fixed-topology branches are exact bounded runtime results.",
-        "- The synchronous causal closure is a bounded simplifying limit with `C`",
-        "  independent and `W/J` reconstructed or stage-dependent.",
+        "- The synchronous `C/W/J` causal closure is an exact bounded runtime",
+        "  realization. `C` is admitted as an independent derivative coordinate",
+        "  while `W/J` are reconstructed or stage-dependent. No no-current,",
+        "  frozen-current, or smoothly slaved-current reduction was derived, so",
+        "  this row is L3 rather than a declared L4 simplifying limit.",
         "- Native current recurrence is an exact stage sequence: old `J` informs a",
         "  sign-even `J^2 -> W` write, then potential flow reconstructs current and",
         "  advances `C`. This is a real reflexive mechanism, not core Read-Back.",
@@ -877,8 +948,10 @@ def write_report(
             f"Assumption statuses: `{assumptions['summary']}`.",
             "A failed or unidentifiable required assumption cannot become a positive",
             "runtime claim. The native Read-Back passive null remains unidentifiable",
-            "because no distinct native read operator was admitted. Fixed-topology",
-            "transport is not applicable rather than silently generalized to LGRC.",
+            "because no distinct native read operator was admitted. `A-TRANSPORT`",
+            "is satisfied only by the canonical coordinate identity in fixed",
+            "topology; topology-changing interspace transport remains untested and",
+            "routed to LGRC under `D-T01`.",
             "",
         ]
     )
@@ -921,6 +994,7 @@ def run_grv8() -> None:
         raise SystemExit("GRV8 requires a clean committed P8 input revision")
     receipt7, anchor7 = validate_prerequisite()
     accepted_chain = validate_accepted_chain()
+    package = read_json(EXPERIMENT_ROOT / "configs/p8_manifest.json")
     policy = read_json(EXPERIMENT_ROOT / "configs/grv8_classification_policy.json")
     source = validate_policy(policy)
     scope = source["scope_policy"]
@@ -998,13 +1072,13 @@ def run_grv8() -> None:
     protected = protected_manifest_v8()
 
     payloads = {
-        "assumption_status_matrix.json": (assumptions_payload, "b1_grv8_assumption_status_matrix_v1"),
-        "final_claim_classification.json": (claims_payload, "b1_grv8_final_claim_classification_v2"),
-        "equivalence_classification.json": (equivalence_payload, "b1_grv8_equivalence_classification_v2"),
+        "assumption_status_matrix.json": (assumptions_payload, "b1_grv8_assumption_status_matrix_v2"),
+        "final_claim_classification.json": (claims_payload, "b1_grv8_final_claim_classification_v3"),
+        "equivalence_classification.json": (equivalence_payload, "b1_grv8_equivalence_classification_v3"),
         "final_causal_role_classification.json": (causal_roles_payload, "b1_grv8_final_causal_role_classification_v1"),
         "final_theory_debt_register.json": (debts_payload, "b1_grv8_final_theory_debt_register_v2"),
-        "final_theory_test_traceability.json": (traceability_payload, "b1_grv8_final_theory_test_traceability_v2"),
-        "final_contradiction_routing.json": (contradictions_payload, "b1_grv8_final_contradiction_routing_v2"),
+        "final_theory_test_traceability.json": (traceability_payload, "b1_grv8_final_theory_test_traceability_v3"),
+        "final_contradiction_routing.json": (contradictions_payload, "b1_grv8_final_contradiction_routing_v3"),
         "extension_decision.json": (extensions_payload, "b1_grv8_extension_decision_v2"),
         "theory_reopening_decision.json": (reopening_payload, "b1_grv8_theory_reopening_decision_v1"),
         "superseded_exploratory_claims.json": (superseded_payload, "b1_grv8_superseded_exploratory_claims_v2"),
@@ -1051,11 +1125,13 @@ def run_grv8() -> None:
             ],
             "accepted_gate_chain": accepted_chain,
             "superseded_unaccepted_result": {
-                "result_revision": "144875709359d477c05ef7d47382bc76342223f5",
-                "receipt_payload_sha256": "0f974b0bb44623494424f5ebc50a2cabbf5c48deba7de6998956c6ce6882c714",
+                **package["superseded_unaccepted_results"][-1],
                 "acceptance_anchor_existed": False,
-                "reason": "P8_1_object_envelope_role_and_provenance_hardening",
+                "reason": "P8_2_traceability_transport_contradiction_and_L4_correction",
             },
+            "superseded_unaccepted_results": package[
+                "superseded_unaccepted_results"
+            ],
             "output_artifact_digests": {
                 path.relative_to(EXPERIMENT_ROOT).as_posix(): sha256_file(path)
                 for path in sorted(output_paths)
@@ -1076,6 +1152,9 @@ def run_grv8() -> None:
                 "GRV_C6_assigned": False,
                 "B1_L_execution_authorized": False,
                 "unaccepted_P8_candidate_superseded": True,
+                "unaccepted_candidate_count_superseded": len(
+                    package["superseded_unaccepted_results"]
+                ),
             },
             "status": "awaiting_scientific_review",
             "blocked_gates": ["GRV8_bundle_and_closeout", "B1-L"],

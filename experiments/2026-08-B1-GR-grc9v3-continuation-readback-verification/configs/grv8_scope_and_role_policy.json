@@ -68,8 +68,10 @@
     },
     "bounded_runtime_causal_state": {
       "profile_id": "GRV3_CAUSAL",
+      "secondary_qualifiers": ["exact_runtime_closure_not_declared_core_reduction"],
       "evidence_pointers": [
         "outputs/complete_step_jacobians.json#/payload/causal_field_inventory",
+        "outputs/complete_step_jacobians.json#/payload/summary/causal_closure_pass_count",
         "outputs/complete_step_jacobians.json#/payload/summary/full_C_W_J_jacobian_admitted_count"
       ]
     },
