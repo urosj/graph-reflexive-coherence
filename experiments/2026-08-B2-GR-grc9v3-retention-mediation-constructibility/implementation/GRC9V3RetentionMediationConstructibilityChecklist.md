@@ -710,8 +710,13 @@ lifecycle accounting only.
 - [x] Audit bounded-negative uniqueness, outside-envelope mechanisms, near misses,
   discovery/confirmation accounting, and planned versus executed branch allocation.
 - [x] Run the full existing repository test suite before closeout.
-- [ ] Require the full existing repository test suite to pass before `B2-C6`.
-- [ ] Assign `B2-C6` only after separate human review.
+- [x] Preserve the failed full-suite receipt, localize the failures, and establish
+  that no B2 regression is supported before any exception is considered.
+- [x] Bind an explicit human adjudication that accepts the known environment
+  exception for B2 closeout only without relabelling the failed suite as passed.
+- [x] Assign `B2-C6` only after separate human review.
+- [x] Produce a separate GRC9V3 specification-reconciliation handoff before any
+  revision-distinct extension is selected.
 - [x] Keep B1-L and N32 unauthorized unless a later independent admission says otherwise.
 
 Expected artifacts:
@@ -722,9 +727,12 @@ outputs/b2_i8_empty_path_audit.json
 outputs/gates/b2_i8_result_receipt.json
 outputs/gates/b2_i8_full_suite_verification.json
 outputs/gates/b2_i8_full_suite_failure_audit.json
+outputs/gates/b2_i8_repository_verification_adjudication.json
 outputs/gates/b2_closeout_acceptance_anchor.json
+outputs/b2_grc9v3_specification_reconciliation_handoff.json
 reports/b2_i8_classification_and_handoff.md
 reports/b2_i8_empty_path_audit.md
+reports/b2_grc9v3_specification_reconciliation_handoff.md
 ```
 
 ### Iteration 8 Initial Result - Superseded Before Scientific Review
@@ -834,7 +842,7 @@ Interpretation:
   attempt failed. `GRR3`, `GRR4`, and `GRR5` remain not testable on a B2
   lineage, not false; inherited B1 `GRR2` remains context only.
 
-### Iteration 8 Repository Verification - Blocking
+### Iteration 8 Repository Verification - Failed, Then Explicitly Adjudicated
 
 ```text
 full_suite_command = .venv/bin/python -m pytest -q
@@ -857,21 +865,73 @@ B2_closeout_rung_assigned = false
 B2-C6-ready = false
 ```
 
-The full suite blocker is repository debt rather than a B2 regression: the
+The full suite failure is repository debt rather than a B2 regression: the
 branch has no differences from `main` under `src/`, `specs/`, or existing
 `tests/`. Most failures consume locally absent ignored phenomenology evidence;
 one independent GRCV3 representative telemetry test has unequal primary/replay
-snapshot digests. That localization does not waive the closeout gate and does
-not authorize repair inside B2. The hardened v2 I8 builder remains blocked by
-the failed suite receipt, so no superseding closeout artifact or acceptance
-anchor has been emitted.
+snapshot digests. B2 does not repair either debt and does not relabel the suite.
+
+The experiment owner subsequently accepted a bounded environment exception for
+B2 closeout only. The adjudication is bound to the exact failed-suite receipt
+and failure audit, requires `src_specs_tests_equal_main = true` and
+`B2_regression_established = false`, and authorizes `B2-C6` without asserting
+that the repository suite passed. This exception opens no positive evidence,
+assigns no GRR rung, and authorizes no runtime or specification extension.
+
+### Iteration 8 Final Closeout - Accepted
+
+```text
+result_input_revision = bee7699cc83ed97c3bf98f14760f845d219e608d
+result_revision = dc3ce5484b203a1140781707e4f088d20725f5a3
+status = passed
+acceptance_status = accepted
+accepted_I4_candidate_count = 0
+maximum_new_GRR_rung = none
+inherited_B1_GR_context_ceiling = GRR2
+GRR3_status = not_testable_no_confirmed_I4_lineage
+GRR4_status = not_testable_no_GRR3_lineage
+GRR5_status = not_testable_no_GRR4_lineage
+full_repository_suite_passed = false
+repository_verification_exception = accepted_bounded_environment_exception
+B2_regression_established = false
+extension_selected = false
+runtime_change_authorized = false
+spec_extension_authorized = false
+B2_closeout_rung = B2-C6
+result_artifact_payload_sha256 = 64236a65bc9bb8915df850f835c5da2633eaa0d42a46d18d557feb6b5e97e432
+result_receipt_payload_sha256 = 8db5fbc136f19dea1138b6d5bc8dea5d78e1b4dd413f367140ddcb71fcd5222f
+specification_handoff_payload_sha256 = 78bcc1090d39841cd9e86b28a567abf08b6f4a1def466679f95cf4edddcf0d6a
+closeout_acceptance_anchor_created = true
+```
+
+Interpretation:
+
+- B2 reached the bounded native formation boundary and found no confirmed
+  runtime-formed carrier in the frozen admissible fixed-topology, event-free
+  clean lane. This is not a global nonexistence result.
+- Of 1,706 apparent-carrier rows, 1,705 are attributable to authored preparation
+  within numerical uncertainty. The remaining row reaches about `0.00103` of
+  the formation floor and remains below the carrier-separation floor.
+- The 7,915 outside-primary rows are categorical, constraint, or path-admission
+  exclusions, not evidence that retention is hidden in events or topology
+  changes. The 27 clean bounded negatives are no-driver baselines from one
+  preparation family.
+- `GRR3-GRR5` are not testable on a B2 lineage. No extension is selected and
+  unchanged-runtime constructibility remains open outside the frozen envelope.
+- B1 and B2 now route first to a separate GRC9V3 normative specification
+  reconciliation and bounded evidence profile. Legacy GRC9V3 should be described
+  as synchronous graph RC with immediate constitutive recurrence, without
+  relabelling stage-local `W`/`J` or ordinary `C` persistence as an admitted
+  distinct retained-history sector.
+- Future extensions, if selected by later evidence, should be revision-distinct
+  rather than reinterpretations of legacy GRC9V3.
 
 ## Serial Acceptance Discipline
 
 - [x] Start every execution from a clean committed input revision.
 - [x] Produce an immutable result receipt before scientific review.
-- [ ] Produce an acceptance anchor before the next iteration consumes a result.
-- [ ] Bind input revision, script, config, result, receipt, and acceptance-anchor digests per gate.
+- [x] Produce an acceptance anchor before the next iteration consumes a result.
+- [x] Bind input revision, script, config, result, receipt, and acceptance-anchor digests per gate.
 - [x] Consume accepted artifacts by immutable revision/anchor rather than mutable working-tree paths.
-- [ ] Map accepted iterations to `B2-C0` through `B2-C6` exactly as frozen in the plan.
+- [x] Map accepted iterations to `B2-C0` through `B2-C6` exactly as frozen in the plan.
 - [x] Never reopen the accepted I4 discovery set; no I5 projector exists on the empty path.

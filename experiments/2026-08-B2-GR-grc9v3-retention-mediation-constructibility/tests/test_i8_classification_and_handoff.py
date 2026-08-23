@@ -7,6 +7,7 @@ import sys
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
+ACCEPTANCE_ANCHOR_PATH = ROOT / "outputs/gates/b2_closeout_acceptance_anchor.json"
 
 from b2_artifact_io import (  # noqa: E402
     assert_envelope_digest,
@@ -222,3 +223,35 @@ def test_failed_full_suite_blocks_closeout_when_present() -> None:
     assert audit["B2_regression_established"] is False
     assert audit["full_repository_suite_passed"] is False
     assert audit["B2_C6_ready"] is False
+
+
+def test_closeout_acceptance_preserves_verification_debt_when_present() -> None:
+    if not ACCEPTANCE_ANCHOR_PATH.exists():
+        return
+    anchor = read_json(ACCEPTANCE_ANCHOR_PATH)
+    assert anchor["acceptance_status"] == "accepted"
+    assert anchor["assigned_closeout_rung"] == "B2-C6"
+    assert anchor["maximum_new_GRR_rung"] == "none"
+    assert anchor["full_repository_suite_passed"] is False
+    assert anchor["verification_exception_accepted_for_B2_closeout"] is True
+    assert anchor["verification_exception_scope"] == "B2_closeout_only"
+    assert anchor["runtime_change_authorized"] is False
+    assert anchor["spec_extension_authorized"] is False
+
+    bound_paths = {
+        "result_artifact_path": "result_artifact_sha256",
+        "result_receipt_path": "result_receipt_sha256",
+        "report_path": "report_sha256",
+        "specification_reconciliation_handoff_path": (
+            "specification_reconciliation_handoff_sha256"
+        ),
+        "specification_reconciliation_report_path": (
+            "specification_reconciliation_report_sha256"
+        ),
+        "repository_verification_adjudication_path": (
+            "repository_verification_adjudication_sha256"
+        ),
+        "full_suite_failure_audit_path": "full_suite_failure_audit_sha256",
+    }
+    for path_field, digest_field in bound_paths.items():
+        assert sha256_file(ROOT.parents[1] / anchor[path_field]) == anchor[digest_field]

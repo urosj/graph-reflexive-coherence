@@ -1286,3 +1286,29 @@ B2-GR succeeds by resolving the bounded constructibility question honestly. A
 positive `GRR3-GRR5` witness, a mixed result, or a bounded search that selects
 no extension are all valid outcomes. The closeout must not turn unresolved
 constructibility into impossibility or extension preference into evidence.
+
+### Accepted closeout route
+
+The accepted empty-path result assigns `B2-C6` with no new GRR rung. The full
+repository suite remains failed; an exact human adjudication accepts the known
+environment exception for B2 closeout only after confirming that the branch
+does not alter `src/`, `specs/`, or existing `tests/` relative to `main` and
+that the failure audit establishes no B2 regression. This exception does not
+claim that the suite passed or that repository verification debt is resolved.
+
+Before selecting an extension, B2 routes to a separate GRC9V3 specification
+reconciliation:
+
+```text
+normative legacy substrate semantics -> specs/grc-9-v3-spec.md
+bounded B1/B2 verification basis     -> specs/grc-9-v3-evidence-profile.md
+```
+
+The reconciliation may state that GRC9V3 is synchronous graph RC with immediate
+constitutive recurrence and does not specify a distinct retained-state
+primitive, projector, or update law. It may cite the bounded B2 result that no
+native formation witness was confirmed in the frozen admissible clean lane. It
+must not promote that bounded result into global absence, require a new field,
+temporalize conductance/current by assertion, or select an extension. Any later
+extension should use a revision-distinct profile rather than reinterpret legacy
+GRC9V3.

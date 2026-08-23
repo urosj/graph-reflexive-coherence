@@ -9,7 +9,7 @@ or specified.
 
 ```text
 experiment_id = B2-GR
-status = iteration_3_effect_scope_active_nulls_accepted_iteration_4_open
+status = closed_bounded_empty_native_formation_search
 source_experiment = B1-GR
 source_closeout = accepted_GRV-C6
 source_maximum_retention_rung = GRR2
@@ -20,7 +20,7 @@ src_change_authorized = false
 spec_extension_authorized = false
 positive_B2_evidence_opened = false
 closeout_ladder_rung_assigned = true
-current_closeout_rung = B2-C2
+current_closeout_rung = B2-C6
 iteration_1_source_record_count = 25
 iteration_1_consumed_field_record_count = 71
 iteration_1_accepted_B1_branch_count = 48
@@ -77,11 +77,42 @@ iteration_3_effect_scope_execution = passed_and_accepted
 iteration_3_acceptance_result_revision = 259913bc48af798645cb86e44f2205323df537ba
 iteration_3_acceptance_anchor_created = true
 iteration_3_assigned_closeout_rung = B2-C2
-ready_for_iteration_4 = true
+ready_for_iteration_4 = false
+iteration_4_candidate_set_status = accepted_empty_no_runtime_reached_candidate
+iteration_4_confirmed_candidate_count = 0
+iteration_5_to_7_status = not_applicable_empty_positive_lineage
+iteration_8_status = accepted
+iteration_8_maximum_new_GRR_rung = none
+iteration_8_full_repository_suite_passed = false
+iteration_8_repository_verification_exception = accepted_for_B2_closeout_only
+iteration_8_B2_regression_established = false
+iteration_8_specification_reconciliation_handoff = ready
 extension_target_selected = false
 B1_L_execution_authorized = false
 N32_selected = false
 ```
+
+## Accepted Closeout
+
+B2-GR tested whether unchanged `GRC9V3` could natively form a retained-carrier
+candidate in the preregistered fixed-topology, event-free clean lane. It found
+no confirmed candidate. This closes the bounded search at `B2-C6` without a new
+GRR rung, global impossibility claim, or extension selection.
+
+The next graph-side step is a separate reconciliation of legacy GRC9V3's
+normative specification and evidence profile. B1/B2 support describing immediate
+constitutive recurrence without relabelling stage-local `W`/`J` or ordinary
+`C` persistence as an admitted distinct retained-history sector. Any future
+extension should be revision-distinct.
+
+- [Accepted I8 result](outputs/b2_i8_classification_and_handoff.json)
+- [GRC9V3 specification-reconciliation handoff](outputs/b2_grc9v3_specification_reconciliation_handoff.json)
+- [Closeout acceptance anchor](outputs/gates/b2_closeout_acceptance_anchor.json)
+
+The full repository suite remained failed due to known locally absent ignored
+evidence plus an independent telemetry replay digest mismatch. The accepted
+exception is scoped to B2 closeout and does not claim that those debts are
+resolved or that the suite passed.
 
 ## Iteration 3 Null Topography
 
