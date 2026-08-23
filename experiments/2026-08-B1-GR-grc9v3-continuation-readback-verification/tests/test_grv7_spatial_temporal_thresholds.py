@@ -13,6 +13,7 @@ from branch_continuation import (  # noqa: E402
     classify_discrete_spectrum,
     match_real_invariant_clusters,
 )
+from sweep_temporal_and_spatial_thresholds import _plain_config  # noqa: E402
 
 
 class GRV7SpatialTemporalThresholdTest(unittest.TestCase):
@@ -80,6 +81,17 @@ class GRV7SpatialTemporalThresholdTest(unittest.TestCase):
             maximum_total_delta=1e-10,
         )
         self.assertFalse(state["passed"])
+
+    def test_nested_immutable_parameter_mapping_is_thawed(self) -> None:
+        from types import MappingProxyType
+
+        source = MappingProxyType(
+            {"dt": 0.1, "evolution": MappingProxyType({"eta": 0.5})}
+        )
+        thawed = _plain_config(source)
+        self.assertEqual({"dt": 0.1, "evolution": {"eta": 0.5}}, thawed)
+        thawed["evolution"]["eta"] = 1.0
+        self.assertEqual(0.5, source["evolution"]["eta"])
 
     def test_real_invariant_cluster_matching_ignores_index_order(self) -> None:
         match = match_real_invariant_clusters(

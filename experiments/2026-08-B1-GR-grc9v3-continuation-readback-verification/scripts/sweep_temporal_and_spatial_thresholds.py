@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from copy import deepcopy
+from collections.abc import Mapping
 import sys
 from typing import Any
 
@@ -155,10 +156,22 @@ def _point_parameters(path: dict[str, Any], value: float) -> dict[str, float]:
     }
 
 
+def _plain_config(value: Any) -> Any:
+    """Thaw nested immutable parameter mappings without changing values."""
+
+    if isinstance(value, Mapping):
+        return {str(key): _plain_config(child) for key, child in value.items()}
+    if isinstance(value, tuple):
+        return [_plain_config(child) for child in value]
+    if isinstance(value, list):
+        return [_plain_config(child) for child in value]
+    return value
+
+
 def _apply_parameters(
     model: GRC9V3, parameters: dict[str, float]
 ) -> GRC9V3:
-    params = deepcopy(model.get_params().raw_config)
+    params = _plain_config(model.get_params().raw_config)
     params["dt"] = float(parameters["dt"])
     params["evolution"]["eta"] = float(parameters["eta"])
     params["evolution"]["site_potential_params"]["scale"] = float(
@@ -199,7 +212,7 @@ def _branch_certification(
         model, current_zero_band=current_zero_band
     )
     stepped = GRC9V3.from_state(
-        deepcopy(model.get_state()), deepcopy(model.get_params().raw_config)
+        deepcopy(model.get_state()), _plain_config(model.get_params().raw_config)
     )
     result = stepped.step()
     observed = block_projection(stepped)
@@ -259,7 +272,7 @@ def _spatial_diagnostics(model: GRC9V3) -> dict[str, Any]:
 def _categorical_evidence(model: GRC9V3, current_zero_band: float) -> dict[str, Any]:
     baseline = categorical_signature(model, current_zero_band=current_zero_band)
     stepped = GRC9V3.from_state(
-        deepcopy(model.get_state()), deepcopy(model.get_params().raw_config)
+        deepcopy(model.get_state()), _plain_config(model.get_params().raw_config)
     )
     result = stepped.step()
     state = stepped.get_state()
