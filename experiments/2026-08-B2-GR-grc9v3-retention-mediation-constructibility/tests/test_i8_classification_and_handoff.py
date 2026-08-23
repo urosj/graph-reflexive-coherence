@@ -30,6 +30,11 @@ def test_i8_consumes_the_accepted_empty_i4_set() -> None:
         "accepted_empty_no_runtime_reached_candidate"
     )
     assert payload["causal_role_classification"]["maximum_new_GRR_rung"] == "none"
+    assert payload["causal_role_classification"]["row_local_max_GRR"] == []
+    assert payload["causal_role_classification"]["global_max_GRR"] == "none_new_in_B2"
+    assert payload["causal_role_classification"]["branch_relation"] == (
+        "not_testable_no_runtime_reached_I4_candidate"
+    )
     assert payload["B2_closeout_ceiling"] == "B2-C6-ready"
     assert payload["B2_closeout_rung_assigned"] is False
 

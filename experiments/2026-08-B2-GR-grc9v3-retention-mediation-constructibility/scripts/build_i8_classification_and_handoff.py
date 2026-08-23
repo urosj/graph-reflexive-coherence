@@ -208,15 +208,24 @@ def build_payload() -> tuple[dict[str, Any], list[dict[str, Any]]]:
         "causal_role_classification": {
             "maximum_new_GRR_rung": "none",
             "inherited_B1_GR_context_ceiling": "GRR2",
+            "row_local_max_GRR": [],
+            "global_max_GRR": "none_new_in_B2",
+            "global_max_GRR_derivation": (
+                "max_row_local_max_GRR_over_empty_eligible_candidate_set_is_none"
+            ),
             "GRR3_candidate_count": 0,
             "GRR4_candidate_count": 0,
             "GRR5_candidate_count": 0,
+            "branch_relation": "not_testable_no_runtime_reached_I4_candidate",
             "retention_effect": "not_testable_no_runtime_reached_I4_candidate",
             "read_effect": "not_testable_no_GRR3_lineage",
             "write_effect": "not_established_in_B2",
             "closed_loop_effect": "not_established_in_B2",
             "persistence_without_mediation": "not_observed_on_B2_candidate_lineage",
             "mediation_without_GRR3": "not_observed_on_B2_candidate_lineage",
+            "eventful_or_constraint_supported_history_dependence": (
+                "observed_outside_clean_primary_lane_not_classified_as_persistence"
+            ),
         },
         "bounded_alternative_mechanisms": [
             {
