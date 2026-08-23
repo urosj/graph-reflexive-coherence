@@ -1,0 +1,353 @@
+{
+  "metadata": {
+    "generating_command": ".venv/bin/python experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/scripts/run_all.py --gate GRV8",
+    "reproducibility_class": "byte_reproducible"
+  },
+  "payload": {
+    "blocked_claims": [
+      "assumption_status_is_global_theorem",
+      "GRC_status_automatically_applies_to_LGRC"
+    ],
+    "gate_id": "GRV8",
+    "highest_supported_claim": "bounded_assumption_status_assignment_for_unchanged_GRC9V3",
+    "rows": [
+      {
+        "affected_claim_ids": [
+          "T-A06",
+          "T-B01",
+          "T-B02",
+          "T-C02",
+          "T-C03",
+          "T-M02",
+          "T-RW11",
+          "T-S02"
+        ],
+        "assumption_id": "A-BRANCH",
+        "blocked_use": "outside_declared_scope_or_as_unrecorded_assumption",
+        "evidence_refs": [
+          "outputs/fixed_branch_registry.json",
+          "outputs/spatial_temporal_threshold_matrix.json"
+        ],
+        "maximum_supported_use": "predeclared_GRV2_branches_and_GRV7_continuation_sheets",
+        "rationale": "Reference branches, gauges, selected sheets, and symmetry roles were fixed before downstream spectra and probes.",
+        "scope": "predeclared_GRV2_branches_and_GRV7_continuation_sheets",
+        "status": "satisfied"
+      },
+      {
+        "affected_claim_ids": [
+          "T-A06",
+          "T-M02",
+          "T-M03",
+          "T-M04",
+          "T-RW11",
+          "T-S02"
+        ],
+        "assumption_id": "A-CLOCK",
+        "blocked_use": "outside_declared_scope_or_as_unrecorded_assumption",
+        "evidence_refs": [
+          "outputs/complete_step_jacobians.json",
+          "outputs/conductance_retention_probe.json",
+          "outputs/return_orbit_registry.json"
+        ],
+        "maximum_supported_use": "native_complete_step_and_declared_finite_horizons",
+        "rationale": "Every temporal, persistence, and return claim records the GRC9V3 beat, timestep, horizon, and norm.",
+        "scope": "native_complete_step_and_declared_finite_horizons",
+        "status": "satisfied"
+      },
+      {
+        "affected_claim_ids": [
+          "T-A05"
+        ],
+        "assumption_id": "A-CLOSED",
+        "blocked_use": "outside_declared_scope_or_as_unrecorded_assumption",
+        "evidence_refs": [
+          "outputs/return_orbit_registry.json"
+        ],
+        "maximum_supported_use": "declared_no_through_flow_GRV6_fixtures",
+        "rationale": "Closed cycle controls are separated from boundary-driven alternatives in the GRV6 envelope.",
+        "scope": "declared_no_through_flow_GRV6_fixtures",
+        "status": "satisfied"
+      },
+      {
+        "affected_claim_ids": [
+          "T-A05",
+          "T-C02",
+          "T-RW10",
+          "T-S02"
+        ],
+        "assumption_id": "A-CONSERVE",
+        "blocked_use": "outside_declared_scope_or_as_unrecorded_assumption",
+        "evidence_refs": [
+          "outputs/fixed_branch_registry.json",
+          "outputs/complete_step_jacobians.json",
+          "outputs/spatial_temporal_threshold_matrix.json"
+        ],
+        "maximum_supported_use": "fixed_topology_zero_sum_coherence_tangent",
+        "rationale": "Total coherence, tangent constraints, budget no-op behavior, and conservation-mode removal are explicit and pass within tolerance.",
+        "scope": "fixed_topology_zero_sum_coherence_tangent",
+        "status": "satisfied"
+      },
+      {
+        "affected_claim_ids": [
+          "T-A01"
+        ],
+        "assumption_id": "A-FAST-SLOW",
+        "blocked_use": "outside_declared_scope_or_as_unrecorded_assumption",
+        "evidence_refs": [
+          "outputs/complete_step_jacobians.json",
+          "outputs/frozen_full_comparison.json"
+        ],
+        "maximum_supported_use": "no_independent_current_relaxation_sector",
+        "rationale": "The current is reconstructed by the transition rather than admitted as a separately relaxing fast state.",
+        "scope": "no_independent_current_relaxation_sector",
+        "status": "not_applicable"
+      },
+      {
+        "affected_claim_ids": [],
+        "assumption_id": "A-FIXED-TOPOLOGY",
+        "blocked_use": "outside_declared_scope_or_as_unrecorded_assumption",
+        "evidence_refs": [
+          "outputs/fixed_topology_envelope.json",
+          "outputs/fixed_branch_registry.json"
+        ],
+        "maximum_supported_use": "all_B1_GR_positive_and_negative_rows",
+        "rationale": "Node/edge support, ordering, dimensions, and categorical topology remain fixed throughout the tested transition family.",
+        "scope": "all_B1_GR_positive_and_negative_rows",
+        "status": "satisfied"
+      },
+      {
+        "affected_claim_ids": [
+          "T-A06",
+          "T-B03"
+        ],
+        "assumption_id": "A-ISOLATION",
+        "blocked_use": "outside_declared_scope_or_as_unrecorded_assumption",
+        "evidence_refs": [
+          "outputs/complete_step_jacobians.json",
+          "outputs/slow_cluster_registry.json"
+        ],
+        "maximum_supported_use": "admitted_cluster_or_invariant_subspace_rows",
+        "rationale": "Cluster interpretation is admitted where convergence and conditioning pass; individual eigenvectors remain blocked on the declared exceptional rows.",
+        "scope": "admitted_cluster_or_invariant_subspace_rows",
+        "status": "satisfied"
+      },
+      {
+        "affected_claim_ids": [
+          "T-A01",
+          "T-RW07"
+        ],
+        "assumption_id": "A-LOOP-INVERT",
+        "blocked_use": "outside_declared_scope_or_as_unrecorded_assumption",
+        "evidence_refs": [
+          "outputs/frozen_full_comparison.json",
+          "outputs/spatial_temporal_threshold_matrix.json"
+        ],
+        "maximum_supported_use": "no_admitted_current_slaving_loop",
+        "rationale": "No I-B_eff current-slaving inverse is used by the accepted frozen comparator or native transition classification.",
+        "scope": "no_admitted_current_slaving_loop",
+        "status": "not_applicable"
+      },
+      {
+        "affected_claim_ids": [
+          "T-A05"
+        ],
+        "assumption_id": "A-MOBILITY",
+        "blocked_use": "outside_declared_scope_or_as_unrecorded_assumption",
+        "evidence_refs": [
+          "outputs/frozen_full_comparison.json",
+          "outputs/return_orbit_registry.json",
+          "outputs/spatial_temporal_threshold_matrix.json"
+        ],
+        "maximum_supported_use": "tested_fixed_topology_zero_sum_tangent_and_closed_cycle_controls",
+        "rationale": "Positive tangent mobility and the native conductance-compatible edge metric pass on all admitted comparator and cycle-control rows.",
+        "scope": "tested_fixed_topology_zero_sum_tangent_and_closed_cycle_controls",
+        "status": "satisfied"
+      },
+      {
+        "affected_claim_ids": [
+          "T-B03",
+          "T-M04"
+        ],
+        "assumption_id": "A-NONNORMAL-CONTROL",
+        "blocked_use": "outside_declared_scope_or_as_unrecorded_assumption",
+        "evidence_refs": [
+          "outputs/complete_step_jacobians.json",
+          "outputs/slow_cluster_registry.json"
+        ],
+        "maximum_supported_use": "admitted_temporal_cluster_rows_only",
+        "rationale": "Finite-horizon and cluster controls pass where temporal interpretation is admitted; failed convergence rows remain blocked.",
+        "scope": "admitted_temporal_cluster_rows_only",
+        "status": "satisfied"
+      },
+      {
+        "affected_claim_ids": [
+          "T-A03",
+          "T-O01",
+          "T-RW03",
+          "T-RW09",
+          "T-RW10"
+        ],
+        "assumption_id": "A-ORIENTATION",
+        "blocked_use": "outside_declared_scope_or_as_unrecorded_assumption",
+        "evidence_refs": [
+          "outputs/instrumentation_validation.json",
+          "outputs/return_orbit_registry.json"
+        ],
+        "maximum_supported_use": "measurement_convention_and_covariance_not_orientation_retention",
+        "rationale": "Canonical edge orientation, reversal actions, and covariance are controlled; this does not supply a retained oriented carrier.",
+        "scope": "measurement_convention_and_covariance_not_orientation_retention",
+        "status": "satisfied"
+      },
+      {
+        "affected_claim_ids": [
+          "T-RW02",
+          "T-RW08"
+        ],
+        "assumption_id": "A-PASSIVE",
+        "blocked_use": "outside_declared_scope_or_as_unrecorded_assumption",
+        "evidence_refs": [
+          "outputs/conductance_retention_probe.json",
+          "outputs/causal_role_matrix.json"
+        ],
+        "maximum_supported_use": "native_GRC9V3_readback_operator",
+        "rationale": "The present-current convention was controlled, but unchanged GRC9V3 exposes no distinct native read current on which the full passive-null relation can be identified.",
+        "scope": "native_GRC9V3_readback_operator",
+        "status": "not_identifiable"
+      },
+      {
+        "affected_claim_ids": [],
+        "assumption_id": "A-REACHABLE",
+        "blocked_use": "outside_declared_scope_or_as_unrecorded_assumption",
+        "evidence_refs": [
+          "outputs/complete_step_jacobians.json",
+          "outputs/conductance_retention_probe.json",
+          "outputs/causal_role_matrix.json"
+        ],
+        "maximum_supported_use": "runtime_reached_and_synthetic_valid_rows_explicitly_separated",
+        "rationale": "Native branches and successors are distinguished from synthetic-valid interventions, and synthetic rows receive a lower claim ceiling.",
+        "scope": "runtime_reached_and_synthetic_valid_rows_explicitly_separated",
+        "status": "satisfied"
+      },
+      {
+        "affected_claim_ids": [
+          "T-A02"
+        ],
+        "assumption_id": "A-REGULAR-SLAVING",
+        "blocked_use": "outside_declared_scope_or_as_unrecorded_assumption",
+        "evidence_refs": [
+          "outputs/complete_step_jacobians.json",
+          "outputs/frozen_full_comparison.json"
+        ],
+        "maximum_supported_use": "unchanged_runtime_without_independent_current_relaxation_coordinate",
+        "rationale": "The tested runtime reconstructs current and does not expose an independently admitted current block for regular elimination.",
+        "scope": "unchanged_runtime_without_independent_current_relaxation_coordinate",
+        "status": "not_applicable"
+      },
+      {
+        "affected_claim_ids": [
+          "T-RW08",
+          "T-RW09"
+        ],
+        "assumption_id": "A-SIGN-EVEN",
+        "blocked_use": "outside_declared_scope_or_as_unrecorded_assumption",
+        "evidence_refs": [
+          "outputs/instrumentation_validation.json",
+          "outputs/conductance_retention_probe.json"
+        ],
+        "maximum_supported_use": "old_current_squared_to_conductance_channel",
+        "rationale": "Sign reversal preserves the quadratic conductance-write response and does not preserve current orientation.",
+        "scope": "old_current_squared_to_conductance_channel",
+        "status": "satisfied"
+      },
+      {
+        "affected_claim_ids": [
+          "T-A01",
+          "T-A02",
+          "T-C02",
+          "T-RW07",
+          "T-RW08"
+        ],
+        "assumption_id": "A-SMOOTH",
+        "blocked_use": "outside_declared_scope_or_as_unrecorded_assumption",
+        "evidence_refs": [
+          "outputs/complete_step_jacobians.json",
+          "outputs/spatial_temporal_threshold_matrix.json"
+        ],
+        "maximum_supported_use": "admitted_fixed_stratum_derivative_rows_only",
+        "rationale": "Converged two-sided derivatives are admitted on smooth F2/F3 strata; F1 zero-current categorical-boundary rows remain explicitly blocked.",
+        "scope": "admitted_fixed_stratum_derivative_rows_only",
+        "status": "satisfied"
+      },
+      {
+        "affected_claim_ids": [
+          "T-M04",
+          "T-O03",
+          "T-RW05",
+          "T-S01"
+        ],
+        "assumption_id": "A-STATE-CLOSURE",
+        "blocked_use": "outside_declared_scope_or_as_unrecorded_assumption",
+        "evidence_refs": [
+          "outputs/complete_step_jacobians.json",
+          "outputs/conductance_retention_probe.json"
+        ],
+        "maximum_supported_use": "bounded_synchronous_GRC9V3_branch_strata_and_horizons",
+        "rationale": "Matched causal states continue equivalently within the accepted synchronous GRC envelope; this does not settle event-driven LGRC state closure.",
+        "scope": "bounded_synchronous_GRC9V3_branch_strata_and_horizons",
+        "status": "satisfied"
+      },
+      {
+        "affected_claim_ids": [
+          "T-B03",
+          "T-B04",
+          "T-M02"
+        ],
+        "assumption_id": "A-TRANSPORT",
+        "blocked_use": "outside_declared_scope_or_as_unrecorded_assumption",
+        "evidence_refs": [
+          "outputs/fixed_topology_envelope.json",
+          "outputs/fixed_branch_registry.json"
+        ],
+        "maximum_supported_use": "fixed_topology_B1_GR_only",
+        "rationale": "Canonical coordinate identity suffices in this fixed-topology experiment; interspace transport remains an LGRC handoff debt.",
+        "scope": "fixed_topology_B1_GR_only",
+        "status": "not_applicable"
+      },
+      {
+        "affected_claim_ids": [
+          "T-A03"
+        ],
+        "assumption_id": "A-UNIQUENESS",
+        "blocked_use": "outside_declared_scope_or_as_unrecorded_assumption",
+        "evidence_refs": [
+          "outputs/return_orbit_registry.json"
+        ],
+        "maximum_supported_use": "deterministic_exact_zero_and_finite_seed_controls",
+        "rationale": "Exact zero remains invariant while finite authored seeds are tracked separately and overwritten rather than relabeled as autonomous selection.",
+        "scope": "deterministic_exact_zero_and_finite_seed_controls",
+        "status": "satisfied"
+      }
+    ],
+    "source_id_map": {
+      "SRC-CONTINUATION": {
+        "git_blob": "6e3edec632b4dee892d300bb442e04790a0a7493",
+        "path": "core/2026-08-TheContinuationSpectrum.md",
+        "sha256": "14ee948d04c8803ae2c05e0d602d94c40d67bbed5399a8ef539bd024e77d95c5",
+        "source_role": "controlling_continuation_theory"
+      },
+      "SRC-READBACK": {
+        "git_blob": "f44c729318433fafd8ce674b8914098da462f4de",
+        "path": "core/2026-08-ReadBack.md",
+        "sha256": "04c0bb8398febf58592297326e741271b46a52f504f6a0cea17a0bd6624efbb2",
+        "source_role": "controlling_readback_theory"
+      }
+    },
+    "summary": {
+      "not_applicable": 4,
+      "not_identifiable": 1,
+      "satisfied": 14
+    }
+  },
+  "payload_sha256": "81a28b5c3767d8de26e342bd07b4491f0a652a69723da977212d9edd6831c0e0",
+  "schema_version": "b1_grv8_assumption_status_matrix_v1"
+}

@@ -1,0 +1,73 @@
+{
+  "metadata": {
+    "generating_command": ".venv/bin/python experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/scripts/run_all.py --gate GRV8",
+    "reproducibility_class": "byte_reproducible"
+  },
+  "payload": {
+    "blocked_claims": [
+      "extension_selected_by_missing_symbol",
+      "runtime_change_authorized"
+    ],
+    "decisions": [
+      {
+        "claim_ceiling": "W_role_conflation_remains_a_limitation_but_no_material_full_vs_frozen_difference_was_resolved",
+        "debt_ids": [
+          "D-G02"
+        ],
+        "decision_id": "EXT-GEOMETRY-MOBILITY",
+        "route": "not_opened_trigger_not_met",
+        "source_evidence": [
+          "outputs/frozen_full_comparison.json",
+          "outputs/spatial_temporal_threshold_matrix.json"
+        ],
+        "target": "separate_structural_geometry_and_transport_mobility"
+      },
+      {
+        "claim_ceiling": "bounded_synthetic_C_dominated_neutral_persistence_with_branch_relocation_rival_open",
+        "debt_ids": [
+          "D-R02",
+          "D-P01"
+        ],
+        "decision_id": "EXT-RETAINED-CARRIER",
+        "route": "not_opened_native_mediation_and_reachability_not_established",
+        "source_evidence": [
+          "outputs/conductance_retention_probe.json",
+          "outputs/causal_role_matrix.json"
+        ],
+        "target": "separate_persistent_retained_geometry_carrier"
+      },
+      {
+        "claim_ceiling": "baseline_identifies_missing_oriented_role_but_B1_GR_does_not_select_the_target",
+        "debt_ids": [
+          "D-R03",
+          "D-A01"
+        ],
+        "decision_id": "EXT-ORIENTED-CURRENT",
+        "route": "conditionally_selectable_if_future_target_requires_directional_readback_or_active_circulation",
+        "source_evidence": [
+          "outputs/conductance_retention_probe.json",
+          "outputs/return_orbit_registry.json"
+        ],
+        "target": "oriented_read_or_cycle_current_channel"
+      },
+      {
+        "claim_ceiling": "not_consumed_on_tested_fixed_topology_no_event_path_without_global_absence_claim",
+        "debt_ids": [
+          "D-G01"
+        ],
+        "decision_id": "EXT-K",
+        "route": "remain_explicitly_diagnostic",
+        "source_evidence": [
+          "outputs/instrumentation_validation.json",
+          "outputs/surface_authority_map.json"
+        ],
+        "target": "hybrid_node_tensor_K"
+      }
+    ],
+    "gate_id": "GRV8",
+    "highest_supported_claim": "bounded_selectable_extension_routing_without_implementation",
+    "runtime_implementation_opened": false
+  },
+  "payload_sha256": "167e7ff6c2c7a1521111be8cca47b2a29082f0aed1ff976dfdc3584fe10ffdcc",
+  "schema_version": "b1_grv8_extension_decision_v1"
+}

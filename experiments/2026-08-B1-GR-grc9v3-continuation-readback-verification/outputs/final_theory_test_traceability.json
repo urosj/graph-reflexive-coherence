@@ -1,0 +1,599 @@
+{
+  "metadata": {
+    "generating_command": ".venv/bin/python experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/scripts/run_all.py --gate GRV8",
+    "reproducibility_class": "byte_reproducible"
+  },
+  "payload": {
+    "blocked_claims": [
+      "traceability_row_is_independent_evidence"
+    ],
+    "gate_id": "GRV8",
+    "highest_supported_claim": "completed_claim_assumption_result_and_route_traceability",
+    "results_pending": false,
+    "rows": [
+      {
+        "assumption_statuses": {
+          "A-BRANCH": "satisfied",
+          "A-CLOCK": "satisfied",
+          "A-CONSERVE": "satisfied"
+        },
+        "claim_ids": [
+          "T-S02"
+        ],
+        "debt_ids": [
+          "D-M01"
+        ],
+        "evidence_refs": [
+          "outputs/complete_step_jacobians.json"
+        ],
+        "primary_routes": [
+          "lgrc_specific_investigation"
+        ],
+        "result_dispositions": {
+          "T-S02": "bounded_supported_distinction"
+        },
+        "source_row": {
+          "Claim or debt": "T-S02`, `D-M01",
+          "GRC extension route": "enlarge state only if closure fails",
+          "LGRC route": "test queue, delay, phase, proper-time state",
+          "Maximum positive claim": "branch-specific runtime causal state",
+          "Negative or ambiguous result means": "smaller state may suffice, assumption fails, or state is unidentifiable",
+          "Primary gate": "GRV3",
+          "Reopen condition": "same accepted present state, different future",
+          "Required assumptions": "A-STATE-CLOSURE`, `A-REACHABLE",
+          "Required control": "matched-state closure tests; reached and synthetic states separated"
+        },
+        "traceability_row_id": "TR-01"
+      },
+      {
+        "assumption_statuses": {
+          "A-BRANCH": "satisfied",
+          "A-CLOCK": "satisfied"
+        },
+        "claim_ids": [
+          "T-RW01",
+          "T-RW06",
+          "T-RW11"
+        ],
+        "debt_ids": [],
+        "evidence_refs": [
+          "outputs/causal_role_matrix.json",
+          "outputs/conductance_retention_probe.json"
+        ],
+        "primary_routes": [
+          "unchanged_grc_interpretation"
+        ],
+        "result_dispositions": {
+          "T-RW01": "bounded_supported_distinction",
+          "T-RW06": "bounded_supported_distinction",
+          "T-RW11": "bounded_supported_distinction"
+        },
+        "source_row": {
+          "Claim or debt": "T-RW01`, `T-RW06`, `T-RW11",
+          "GRC extension route": "carrier or read extension only for missing role",
+          "LGRC route": "separate transit, retention, and native read",
+          "Maximum positive claim": "bounded arrow or closed-loop evidence",
+          "Negative or ambiguous result means": "absence of one arrow does not erase others",
+          "Primary gate": "GRV5`, `GRV8",
+          "Reopen condition": "causal-role matrix cannot classify outcome",
+          "Required assumptions": "A-BRANCH`, `A-CLOCK`, `A-REACHABLE",
+          "Required control": "retention, read, write, reset, swap, and authorship evaluated separately"
+        },
+        "traceability_row_id": "TR-02"
+      },
+      {
+        "assumption_statuses": {
+          "A-LOOP-INVERT": "not_applicable",
+          "A-PASSIVE": "not_identifiable",
+          "A-SMOOTH": "satisfied"
+        },
+        "claim_ids": [
+          "T-RW02",
+          "T-RW07"
+        ],
+        "debt_ids": [],
+        "evidence_refs": [
+          "outputs/causal_role_matrix.json",
+          "outputs/conductance_retention_probe.json",
+          "outputs/instrumentation_validation.json"
+        ],
+        "primary_routes": [
+          "unchanged_grc_interpretation"
+        ],
+        "result_dispositions": {
+          "T-RW02": "not_admitted_under_tested_assumptions",
+          "T-RW07": "source_backed_boundary_not_runtime_admission"
+        },
+        "source_row": {
+          "Claim or debt": "T-RW02`, `T-RW07",
+          "GRC extension route": "oriented read extension only if target requires it",
+          "LGRC route": "event-driven native read test",
+          "Maximum positive claim": "passive retained-conditioned response candidate",
+          "Negative or ambiguous result means": "generic geometry-conditioned transport, failed null, or no read path",
+          "Primary gate": "GRV5",
+          "Reopen condition": "passive-null convention cannot be implemented",
+          "Required assumptions": "`A-PASSIVE`, `A-SMOOTH`; `A-LOOP-INVERT` for slaving",
+          "Required control": "zero-present-probe and matched-retained-state controls"
+        },
+        "traceability_row_id": "TR-03"
+      },
+      {
+        "assumption_statuses": {
+          "A-PASSIVE": "not_identifiable",
+          "A-SIGN-EVEN": "satisfied",
+          "A-SMOOTH": "satisfied"
+        },
+        "claim_ids": [
+          "T-RW08"
+        ],
+        "debt_ids": [],
+        "evidence_refs": [
+          "outputs/conductance_retention_probe.json",
+          "outputs/instrumentation_validation.json"
+        ],
+        "primary_routes": [
+          "unchanged_grc_interpretation"
+        ],
+        "result_dispositions": {
+          "T-RW08": "source_backed_boundary_not_runtime_admission"
+        },
+        "source_row": {
+          "Claim or debt": "T-RW08",
+          "GRC extension route": "no extension unless target needs missing order",
+          "LGRC route": "packet orientation may preserve first-order state",
+          "Maximum positive claim": "first- versus second-order channel separation",
+          "Negative or ambiguous result means": "assumption failure, channel conflation, or different mechanism",
+          "Primary gate": "GRV1`, `GRV5",
+          "Reopen condition": "source contradicts perturbative classification",
+          "Required assumptions": "A-PASSIVE`, `A-SMOOTH`, `A-SIGN-EVEN",
+          "Required control": "linear current perturbation and quadratic sign-even write compared"
+        },
+        "traceability_row_id": "TR-04"
+      },
+      {
+        "assumption_statuses": {
+          "A-ORIENTATION": "satisfied",
+          "A-SIGN-EVEN": "satisfied"
+        },
+        "claim_ids": [
+          "T-RW09"
+        ],
+        "debt_ids": [],
+        "evidence_refs": [
+          "outputs/conductance_retention_probe.json",
+          "outputs/instrumentation_validation.json",
+          "outputs/return_orbit_registry.json"
+        ],
+        "primary_routes": [
+          "unchanged_grc_interpretation"
+        ],
+        "result_dispositions": {
+          "T-RW09": "bounded_supported_distinction"
+        },
+        "source_row": {
+          "Claim or debt": "T-RW09",
+          "GRC extension route": "oriented one-form/cycle channel",
+          "LGRC route": "packet/route orientation investigation",
+          "Maximum positive claim": "magnitude, axis, or orientation semantics",
+          "Negative or ambiguous result means": "orientation is reconstructed, erased, or convention is invalid",
+          "Primary gate": "GRV1-D`, `GRV5`, `GRV6",
+          "Reopen condition": "sign control changes through hidden state",
+          "Required assumptions": "A-ORIENTATION`, `A-SIGN-EVEN",
+          "Required control": "$J$ versus $-J$ and cycle-orientation controls"
+        },
+        "traceability_row_id": "TR-05"
+      },
+      {
+        "assumption_statuses": {
+          "A-CONSERVE": "satisfied",
+          "A-ORIENTATION": "satisfied"
+        },
+        "claim_ids": [
+          "T-RW10"
+        ],
+        "debt_ids": [],
+        "evidence_refs": [
+          "outputs/causal_role_matrix.json",
+          "outputs/return_orbit_registry.json"
+        ],
+        "primary_routes": [
+          "unchanged_grc_interpretation"
+        ],
+        "result_dispositions": {
+          "T-RW10": "bounded_supported_distinction"
+        },
+        "source_row": {
+          "Claim or debt": "T-RW10",
+          "GRC extension route": "cycle-current extension only if required",
+          "LGRC route": "return-map/current equivalence",
+          "Maximum positive claim": "field-, current-, or full-level equivalence",
+          "Negative or ambiguous result means": "field match is insufficient",
+          "Primary gate": "GRV6",
+          "Reopen condition": "equivalence level cannot be isolated",
+          "Required assumptions": "`A-ORIENTATION`, `A-CONSERVE`, `A-TRANSPORT` where needed",
+          "Required control": "compare divergence, current, geometry, and future state"
+        },
+        "traceability_row_id": "TR-06"
+      },
+      {
+        "assumption_statuses": {},
+        "claim_ids": [
+          "T-C01",
+          "T-M01"
+        ],
+        "debt_ids": [],
+        "evidence_refs": [
+          "outputs/complete_step_jacobians.json",
+          "outputs/frozen_full_comparison.json",
+          "outputs/spatial_temporal_threshold_matrix.json"
+        ],
+        "primary_routes": [
+          "unchanged_grc_interpretation"
+        ],
+        "result_dispositions": {
+          "T-C01": "bounded_supported_distinction",
+          "T-M01": "bounded_supported_distinction"
+        },
+        "source_row": {
+          "Claim or debt": "T-M01`, `T-C01",
+          "GRC extension route": "analysis comparator only",
+          "LGRC route": "preserve same distinction",
+          "Maximum positive claim": "bounded relation or non-equivalence",
+          "Negative or ambiguous result means": "no universal identification",
+          "Primary gate": "GRV4`, `GRV7",
+          "Reopen condition": "verified universal relation contradicts boundary",
+          "Required assumptions": "A-BRANCH`, `A-CLOCK`, `A-CONSERVE",
+          "Required control": "spatial, frozen structural, and full temporal operators compared"
+        },
+        "traceability_row_id": "TR-07"
+      },
+      {
+        "assumption_statuses": {
+          "A-BRANCH": "satisfied",
+          "A-CLOCK": "satisfied",
+          "A-TRANSPORT": "not_applicable"
+        },
+        "claim_ids": [
+          "T-M02",
+          "T-M03"
+        ],
+        "debt_ids": [
+          "D-M02"
+        ],
+        "evidence_refs": [
+          "outputs/complete_step_jacobians.json",
+          "outputs/fixed_topology_envelope.json",
+          "outputs/slow_cluster_registry.json",
+          "outputs/spatial_temporal_threshold_matrix.json"
+        ],
+        "primary_routes": [
+          "analysis_only_measurement"
+        ],
+        "result_dispositions": {
+          "T-M02": "bounded_supported_distinction",
+          "T-M03": "bounded_supported_distinction"
+        },
+        "source_row": {
+          "Claim or debt": "T-M02`, `T-M03`, `D-M02",
+          "GRC extension route": "analysis first; constitutive carrier later",
+          "LGRC route": "return-map slow sector",
+          "Maximum positive claim": "branch- and clock-specific slow cluster",
+          "Negative or ambiguous result means": "growth, staging, delay, or non-normal transient",
+          "Primary gate": "GRV3`, `GRV5`, `GRV6",
+          "Reopen condition": "no declared clock explains result",
+          "Required assumptions": "`A-BRANCH`, `A-CLOCK`, `A-ISOLATION`, `A-NONNORMAL-CONTROL` as applicable",
+          "Required control": "stable/neutral/unstable classification and finite-horizon controls"
+        },
+        "traceability_row_id": "TR-08"
+      },
+      {
+        "assumption_statuses": {
+          "A-BRANCH": "satisfied",
+          "A-CONSERVE": "satisfied",
+          "A-SMOOTH": "satisfied"
+        },
+        "claim_ids": [
+          "T-C02",
+          "T-C03"
+        ],
+        "debt_ids": [],
+        "evidence_refs": [
+          "outputs/frozen_full_comparison.json",
+          "outputs/spatial_temporal_threshold_matrix.json"
+        ],
+        "primary_routes": [
+          "unchanged_grc_interpretation"
+        ],
+        "result_dispositions": {
+          "T-C02": "bounded_supported_distinction",
+          "T-C03": "bounded_supported_distinction"
+        },
+        "source_row": {
+          "Claim or debt": "T-C02`, `T-C03",
+          "GRC extension route": "geometry/mobility or branch extension",
+          "LGRC route": "inherit accepted baseline",
+          "Maximum positive claim": "reduced structural comparator and dynamic branch classification",
+          "Negative or ambiguous result means": "reduction fails or branch is not dynamically formed",
+          "Primary gate": "GRV2`, `GRV4",
+          "Reopen condition": "source-level sign or branch assumptions fail",
+          "Required assumptions": "A-BRANCH`, `A-SMOOTH`, `A-CONSERVE",
+          "Required control": "strong branch, fixed-$W$, and full-map comparison"
+        },
+        "traceability_row_id": "TR-09"
+      },
+      {
+        "assumption_statuses": {
+          "A-BRANCH": "satisfied",
+          "A-ISOLATION": "satisfied",
+          "A-NONNORMAL-CONTROL": "satisfied",
+          "A-TRANSPORT": "not_applicable"
+        },
+        "claim_ids": [
+          "T-B02",
+          "T-B03"
+        ],
+        "debt_ids": [],
+        "evidence_refs": [
+          "outputs/complete_step_jacobians.json",
+          "outputs/fixed_branch_registry.json",
+          "outputs/fixed_topology_envelope.json",
+          "outputs/slow_cluster_registry.json"
+        ],
+        "primary_routes": [
+          "unchanged_grc_interpretation"
+        ],
+        "result_dispositions": {
+          "T-B02": "bounded_supported_distinction",
+          "T-B03": "bounded_supported_distinction"
+        },
+        "source_row": {
+          "Claim or debt": "T-B02`, `T-B03",
+          "GRC extension route": "analysis transport only",
+          "LGRC route": "needed for event return maps",
+          "Maximum positive claim": "branch-relative mode or subspace evidence",
+          "Negative or ambiguous result means": "labels are non-invariant or branch fit is retrospective",
+          "Primary gate": "GRV2`, `GRV3`, `GRV6",
+          "Reopen condition": "results depend on retrospective branch fit",
+          "Required assumptions": "A-BRANCH`, `A-ISOLATION`, `A-TRANSPORT",
+          "Required control": "branch rule fixed before spectrum; cluster-level matching"
+        },
+        "traceability_row_id": "TR-10"
+      },
+      {
+        "assumption_statuses": {
+          "A-TRANSPORT": "not_applicable"
+        },
+        "claim_ids": [
+          "T-B04"
+        ],
+        "debt_ids": [
+          "D-T01"
+        ],
+        "evidence_refs": [
+          "outputs/fixed_topology_envelope.json",
+          "outputs/slow_cluster_registry.json"
+        ],
+        "primary_routes": [
+          "lgrc_specific_investigation"
+        ],
+        "result_dispositions": {
+          "T-B04": "not_tested_fixed_topology_scope"
+        },
+        "source_row": {
+          "Claim or debt": "T-B04`, `D-T01",
+          "GRC extension route": "none in fixed GRC",
+          "LGRC route": "mandatory LGRC gate",
+          "Maximum positive claim": "topology-relative continuation candidate",
+          "Negative or ambiguous result means": "lineage is identity bookkeeping only",
+          "Primary gate": "Part III only",
+          "Reopen condition": "topology claim attempted without transport",
+          "Required assumptions": "A-TRANSPORT",
+          "Required control": "explicit interspace map and lineage null"
+        },
+        "traceability_row_id": "TR-11"
+      },
+      {
+        "assumption_statuses": {
+          "A-FAST-SLOW": "not_applicable",
+          "A-LOOP-INVERT": "not_applicable",
+          "A-REGULAR-SLAVING": "not_applicable",
+          "A-SMOOTH": "satisfied"
+        },
+        "claim_ids": [
+          "T-A01",
+          "T-A02"
+        ],
+        "debt_ids": [
+          "D-A01"
+        ],
+        "evidence_refs": [
+          "outputs/theory_source_manifest.json"
+        ],
+        "primary_routes": [
+          "selectable_grc_extension"
+        ],
+        "result_dispositions": {
+          "T-A01": "not_admitted_under_tested_assumptions",
+          "T-A02": "bounded_supported_distinction"
+        },
+        "source_row": {
+          "Claim or debt": "T-A01`, `T-A02`, `D-A01",
+          "GRC extension route": "selectable temporal/current extension if targeted",
+          "LGRC route": "event-cycle return map",
+          "Maximum positive claim": "temporal current semantics of unchanged GRC",
+          "Negative or ambiguous result means": "current is overwritten, sign-even, potential-derived, or assumptions fail",
+          "Primary gate": "GRV3`, `GRV6",
+          "Reopen condition": "algebraic fast-limit interpretation contradicted",
+          "Required assumptions": "`A-SMOOTH`, `A-REGULAR-SLAVING`, `A-LOOP-INVERT`, `A-FAST-SLOW` as applicable",
+          "Required control": "current Jacobian, seed, saturation, fixed/return map"
+        },
+        "traceability_row_id": "TR-12"
+      },
+      {
+        "assumption_statuses": {
+          "A-ORIENTATION": "satisfied",
+          "A-UNIQUENESS": "satisfied"
+        },
+        "claim_ids": [
+          "T-A03",
+          "T-A04"
+        ],
+        "debt_ids": [],
+        "evidence_refs": [
+          "outputs/conductance_retention_probe.json",
+          "outputs/return_orbit_registry.json"
+        ],
+        "primary_routes": [
+          "unchanged_grc_interpretation"
+        ],
+        "result_dispositions": {
+          "T-A03": "bounded_supported_distinction",
+          "T-A04": "bounded_supported_distinction"
+        },
+        "source_row": {
+          "Claim or debt": "T-A03`, `T-A04",
+          "GRC extension route": "do not add selection unless target requires it",
+          "LGRC route": "producer/event asymmetry distinguished",
+          "Maximum positive claim": "seed amplification or threshold separation",
+          "Negative or ambiguous result means": "no autonomous ignition claim",
+          "Primary gate": "GRV6`, `GRV8",
+          "Reopen condition": "exact zero leaves under satisfied symmetry assumptions",
+          "Required assumptions": "A-UNIQUENESS`, `A-ORIENTATION",
+          "Required control": "exact-zero, finite-seed, sign, spark/collapse exclusion"
+        },
+        "traceability_row_id": "TR-13"
+      },
+      {
+        "assumption_statuses": {
+          "A-CLOSED": "satisfied",
+          "A-CONSERVE": "satisfied",
+          "A-MOBILITY": "satisfied"
+        },
+        "claim_ids": [
+          "T-A05"
+        ],
+        "debt_ids": [],
+        "evidence_refs": [
+          "outputs/return_orbit_registry.json"
+        ],
+        "primary_routes": [
+          "unchanged_grc_interpretation"
+        ],
+        "result_dispositions": {
+          "T-A05": "bounded_supported_distinction"
+        },
+        "source_row": {
+          "Claim or debt": "T-A05",
+          "GRC extension route": "cycle-current extension only if targeted",
+          "LGRC route": "packet through-flow separated from closed circulation",
+          "Maximum positive claim": "exclusion of regular gradient stationary circulation",
+          "Negative or ambiguous result means": "boundary or null-sector alternative remains",
+          "Primary gate": "GRV6",
+          "Reopen condition": "nonzero closed gradient current under satisfied assumptions",
+          "Required assumptions": "A-CLOSED`, `A-MOBILITY`, `A-CONSERVE",
+          "Required control": "closed cycle-current and boundary-drive controls"
+        },
+        "traceability_row_id": "TR-14"
+      },
+      {
+        "assumption_statuses": {
+          "A-ORIENTATION": "satisfied"
+        },
+        "claim_ids": [
+          "T-O01"
+        ],
+        "debt_ids": [
+          "D-R03"
+        ],
+        "evidence_refs": [
+          "outputs/causal_role_matrix.json",
+          "outputs/conductance_retention_probe.json",
+          "outputs/instrumentation_validation.json",
+          "outputs/return_orbit_registry.json"
+        ],
+        "primary_routes": [
+          "selectable_grc_extension"
+        ],
+        "result_dispositions": {
+          "T-O01": "theory_open_no_native_realization"
+        },
+        "source_row": {
+          "Claim or debt": "T-O01`, `D-R03",
+          "GRC extension route": "oriented read extension only after evidence",
+          "LGRC route": "packet direction remains transit until mediation shown",
+          "Maximum positive claim": "operational bridge candidate",
+          "Negative or ambiguous result means": "no canonical read channel",
+          "Primary gate": "GRV5`, `GRV8",
+          "Reopen condition": "a unique bridge is derived",
+          "Required assumptions": "A-ORIENTATION`, `A-PASSIVE",
+          "Required control": "Section 8.7 typed scalar/joint-to-edge mediation"
+        },
+        "traceability_row_id": "TR-15"
+      },
+      {
+        "assumption_statuses": {},
+        "claim_ids": [
+          "T-O02"
+        ],
+        "debt_ids": [
+          "D-C02"
+        ],
+        "evidence_refs": [
+          "outputs/theory_source_manifest.json"
+        ],
+        "primary_routes": [
+          "unchanged_grc_interpretation"
+        ],
+        "result_dispositions": {
+          "T-O02": "bounded_supported_distinction"
+        },
+        "source_row": {
+          "Claim or debt": "T-O02`, `D-C02",
+          "GRC extension route": "no unified API or runtime label",
+          "LGRC route": "return-map-specific generator",
+          "Maximum positive claim": "bounded common reduction",
+          "Negative or ambiguous result means": "keep objects separate",
+          "Primary gate": "GRV3`, `GRV4`, `GRV6",
+          "Reopen condition": "one generator derived and validated",
+          "Required assumptions": "branch-specific",
+          "Required control": "separate spectra and full-map comparison"
+        },
+        "traceability_row_id": "TR-16"
+      },
+      {
+        "assumption_statuses": {
+          "A-STATE-CLOSURE": "satisfied"
+        },
+        "claim_ids": [
+          "T-O03"
+        ],
+        "debt_ids": [
+          "D-M01"
+        ],
+        "evidence_refs": [
+          "outputs/complete_step_jacobians.json"
+        ],
+        "primary_routes": [
+          "lgrc_specific_investigation"
+        ],
+        "result_dispositions": {
+          "T-O03": "bounded_supported_distinction"
+        },
+        "source_row": {
+          "Claim or debt": "T-O03`, `D-M01",
+          "GRC extension route": "add state only if synchronous GRC needs it",
+          "LGRC route": "central LGRC admission question",
+          "Maximum positive claim": "bounded Markov sufficiency",
+          "Negative or ambiguous result means": "missing history or phase",
+          "Primary gate": "`GRV3`, `GRV5`, Part III",
+          "Reopen condition": "future differs under identical accepted state",
+          "Required assumptions": "A-STATE-CLOSURE`, `A-REACHABLE",
+          "Required control": "matched present-state counterfactuals"
+        },
+        "traceability_row_id": "TR-17"
+      }
+    ]
+  },
+  "payload_sha256": "d25e1c3d6e92497c576618b421b4beeb239ee80287ee3e4037215ba522b2749c",
+  "schema_version": "b1_grv8_final_theory_test_traceability_v1"
+}

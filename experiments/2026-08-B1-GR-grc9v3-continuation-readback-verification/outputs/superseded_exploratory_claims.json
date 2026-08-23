@@ -1,0 +1,49 @@
+{
+  "metadata": {
+    "generating_command": ".venv/bin/python experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/scripts/run_all.py --gate GRV8",
+    "reproducibility_class": "byte_reproducible"
+  },
+  "payload": {
+    "blocked_claims": [
+      "history_deleted",
+      "superseded_claim_remains_consumable"
+    ],
+    "gate_id": "GRV8",
+    "highest_supported_claim": "exploratory_overclaims_superseded_by_accepted_bounded_results",
+    "historical_artifacts_mutated": false,
+    "records": [
+      {
+        "exploratory_claim_id": "SX-GRV3-001",
+        "replacement": "C_is_the_admitted_independent_coordinate_on_bounded_strata_while_W_and_J_are_reconstructed_or_stage_dependent",
+        "source_ref": "outputs/complete_step_jacobians.json",
+        "superseded_statement": "stored_W_and_J_are_independent_complete_step_state_coordinates"
+      },
+      {
+        "exploratory_claim_id": "SX-GRV4-001",
+        "replacement": "no_difference_is_resolved_within_the_admitted_first_order_uncertainty_envelope",
+        "source_ref": "outputs/frozen_full_comparison.json",
+        "superseded_statement": "frozen_W_and_full_recurrence_are_equivalent"
+      },
+      {
+        "exploratory_claim_id": "SX-GRV5-001",
+        "replacement": "bounded_C_dominated_neutral_persistence_with_branch_relocation_rival_unresolved",
+        "source_ref": "outputs/conductance_retention_probe.json",
+        "superseded_statement": "transient_W_specifically_mediates_later_C_retention"
+      },
+      {
+        "exploratory_claim_id": "SX-GRV6-001",
+        "replacement": "authored_cycle_seeds_are_overwritten_and_no_primitive_period_2_to_8_return_was_found_in_scope",
+        "source_ref": "outputs/return_orbit_registry.json",
+        "superseded_statement": "nonzero_or_seeded_current_is_active_recurrent_circulation"
+      },
+      {
+        "exploratory_claim_id": "SX-GRV7-001",
+        "replacement": "only_clamped_W_reduced_spatial_continuation_and_discrete_threshold_non_equivalence_is_supported",
+        "source_ref": "outputs/spatial_temporal_threshold_matrix.json",
+        "superseded_statement": "runtime_spatial_and_full_temporal_non_equivalence_is_supported"
+      }
+    ]
+  },
+  "payload_sha256": "0905e54dbcebffd798a6e9ae030c72ef0243fd648f071507aa69f44460bf4228",
+  "schema_version": "b1_grv8_superseded_exploratory_claims_v1"
+}

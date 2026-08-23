@@ -4,7 +4,7 @@
 
 ```text
 branch = experiment-B1-continuation-readback
-status = grv7_P7_accepted_GRV8_P8_method_frozen
+status = grv8_P8_classification_candidate_awaiting_human_review
 controlling_specification = draft_3_4_1_pre_execution_mathematical_execution_sealed
 controlling_specification_sha256 = 7ad99fb4acc6a7691d184a514f4836ffa3927600fc7cf504eb059134f3948e44
 runtime_under_test = unchanged_GRC9V3
@@ -13,7 +13,7 @@ src_change_authorized = false
 existing_test_change_authorized = false
 positive_evidence_opened = true_bounded_GRV2_branch_and_GRV5_GRR2_evidence
 positive_retention_evidence_opened = bounded_GRR2_neutral_coordinate_persistence_only
-current_gate = GRV8_P8_clean_execution_pending
+current_gate = GRV8_stage_1_scientific_review_pending
 verification_closeout_ladder_rung_assigned = true
 verification_closeout_rung = GRV-C5
 verification_closeout_ceiling = GRV-C5_assigned_GRV8_pending
@@ -1722,46 +1722,93 @@ LGRC handoff, closeout anchor, and `GRV-C6` remain blocked until a separate
 acceptance anchor binds that result receipt. This prevents the classification
 from accepting itself or manufacturing its own closeout.
 
-- [ ] Assign every required assumption status first.
-- [ ] Mark claims with failed/unidentifiable assumptions as not admitted unless independently contradicted.
-- [ ] Assign one of the six implementation statuses to every tested object.
-- [ ] Assign L0-L5 correspondence levels.
-- [ ] Bind claim, debt, assumption, proof-note, and source IDs.
-- [ ] State maximum supported and blocked claims for every result.
-- [ ] Complete contradiction routing.
-- [ ] Complete theory-reopening decision.
-- [ ] Decide geometry/mobility separation route.
-- [ ] Decide retained-carrier route.
-- [ ] Decide oriented-current route.
-- [ ] Decide `K` route.
-- [ ] Exclude mapping, theory-strength, identifiability, numerical, and source-fidelity explanations before recommending an extension.
-- [ ] Produce extension decisions without implementing them.
+- [x] Assign every required assumption status first.
+- [x] Mark claims with failed/unidentifiable assumptions as not admitted unless independently contradicted.
+- [x] Assign one of the six implementation statuses to every tested object.
+- [x] Assign L0-L5 correspondence levels.
+- [x] Bind claim, debt, assumption, proof-note, and source IDs.
+- [x] State maximum supported and blocked claims for every result.
+- [x] Complete contradiction routing.
+- [x] Complete theory-reopening decision.
+- [x] Decide geometry/mobility separation route.
+- [x] Decide retained-carrier route.
+- [x] Decide oriented-current route.
+- [x] Decide `K` route.
+- [x] Exclude mapping, theory-strength, identifiability, numerical, and source-fidelity explanations before recommending an extension.
+- [x] Produce extension decisions without implementing them.
 - [ ] Produce the versioned evidence-grounded successor specification.
-- [ ] Preserve Drafts 3.2, 3.3, and 3.4 and the accepted controlling Draft 3.4.1 unchanged.
-- [ ] Emit and accept `equivalence_classification.json` with the final scientific classification set.
+- [x] Preserve Drafts 3.2, 3.3, and 3.4 and the accepted controlling Draft 3.4.1 unchanged.
+- [x] Emit `equivalence_classification.json` with the complete scientific classification candidate.
+- [ ] Accept the GRV8 scientific classification through a separate acceptance anchor.
 - [ ] Freeze `evidence_bundle_manifest.json` only after GRV8 scientific acceptance and before successor generation.
 - [ ] Exclude the evidence-bundle manifest, successor, and later closeout anchor from the bundle payload.
 - [ ] Emit and accept `outputs/gates/grv8_closeout_acceptance_anchor.json`
   before assigning `GRV-C6`.
 - [ ] Record predecessor/evidence digests and changed claim/assumption/debt rows.
-- [ ] Emit `superseded_exploratory_claims.json`.
-- [ ] Complete every theory-to-test traceability row with assumption statuses, result, and route.
+- [x] Emit `superseded_exploratory_claims.json`.
+- [x] Complete every theory-to-test traceability row with assumption statuses, result, and route.
 - [ ] Freeze the unchanged-GRC evidence bundle.
 - [ ] Produce `lgrc_handoff.json` with positive and negative boundaries.
-- [ ] Rerun and record the complete existing suite from the GRV8 clean input revision.
-- [ ] Verify all protected paths remain unchanged.
-- [ ] Emit and validate the GRV8 result receipt and separate acceptance anchor.
+- [x] Rerun and record the complete existing suite from the GRV8 clean input revision.
+- [x] Verify all protected paths remain unchanged.
+- [x] Emit and validate the GRV8 result receipt.
+- [ ] Emit the separate GRV8 scientific acceptance anchor after human review.
 - [ ] Assign `GRV-C6` only when classification and routing are complete.
-- [ ] Keep B1-L unopened unless its complete entry contract is accepted.
+- [x] Keep B1-L unopened unless its complete entry contract is accepted.
 
 ## Final Claim Audit
 
-- [ ] Do not claim full core Read-Back without direct evidence.
-- [ ] Do not claim a unique retained projector.
-- [ ] Do not combine `alpha`, `gamma`, and `beta` into one spectrum.
-- [ ] Do not equate temporal marginality with spark or basin birth.
-- [ ] Do not claim active stationary circulation from recurrent transport alone.
-- [ ] Do not claim LGRC retention or Read-Back.
-- [ ] Do not select N32 through B1-GR bookkeeping.
-- [ ] Do not claim memory, learning, agency, organism, or life.
-- [ ] Treat a negative, blocked, mixed, or no-extension result as a valid closeout when source-backed.
+- [x] Do not claim full core Read-Back without direct evidence.
+- [x] Do not claim a unique retained projector.
+- [x] Do not combine `alpha`, `gamma`, and `beta` into one spectrum.
+- [x] Do not equate temporal marginality with spark or basin birth.
+- [x] Do not claim active stationary circulation from recurrent transport alone.
+- [x] Do not claim LGRC retention or Read-Back.
+- [x] Do not select N32 through B1-GR bookkeeping.
+- [x] Do not claim memory, learning, agency, organism, or life.
+- [x] Treat a negative, blocked, mixed, or no-extension result as a valid closeout when source-backed.
+
+### Iteration 9 Stage 1 Result
+
+```text
+input_execution_revision = 7d039408f845400cf3ab0ad2b4b2ad0585dfb95d
+grv8_result_receipt_payload_sha256 = 0f974b0bb44623494424f5ebc50a2cabbf5c48deba7de6998956c6ce6882c714
+mechanical_status = passed
+scientific_acceptance = awaiting_human_review
+assumption_count = 19
+claim_count = 33
+tested_object_count = 19
+theory_debt_count = 13
+traceability_row_count = 17
+contradiction_route_count = 6
+extension_decision_count = 4
+repository_tests = 1354_passed
+experiment_tests = 105_passed
+protected_paths_unchanged = true
+theory_reopening_required = false
+geometry_mobility_extension_opened = false
+retained_carrier_extension_opened = false
+oriented_current_extension_selected = false
+K_decision = remains_explicitly_diagnostic
+native_readback_supported = false
+native_writeback_supported = false
+closed_read_write_loop_supported = false
+evidence_bundle_frozen = false
+successor_generated = false
+GRV_C6_assigned = false
+B1_L_execution_authorized = false
+```
+
+The classification distinguishes exact bounded runtime results, declared
+simplifying limits, analogical implementations, diagnostic measurements,
+substrate absences, and theory-open objects. It does not turn missing native
+Read-Back into theory falsification or an automatic extension requirement. The
+oriented-current route remains conditional because B1-GR identifies the missing
+directional role but does not select a future target that requires it.
+
+All 13 emitted artifacts match the GRV8 receipt. Every JSON payload digest and
+the receipt payload digest validate, all 98 artifacts bound by accepted
+GRV0-GRV7 receipts remain exact, and no machine-local path marker is present.
+The evidence bundle, evidence-grounded successor, LGRC handoff,
+`grv8_acceptance_anchor.json`, `grv8_closeout_acceptance_anchor.json`, and
+`GRV-C6` are deliberately absent pending human review.

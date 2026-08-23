@@ -1,0 +1,751 @@
+{
+  "metadata": {
+    "generating_command": ".venv/bin/python experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/scripts/run_all.py --gate GRV8",
+    "reproducibility_class": "byte_reproducible"
+  },
+  "payload": {
+    "blocked_claims": [
+      "full_core_Read_Back",
+      "unique_retained_projector",
+      "unified_alpha_gamma_beta_spectrum",
+      "LGRC_retention_or_readback",
+      "memory_learning_agency_organism_or_life"
+    ],
+    "correspondence_level_enum": [
+      "L0_analogy",
+      "L1_representability",
+      "L2_operational_signature",
+      "L3_constitutive_realization",
+      "L4_derived_reduced_limit",
+      "L5_robust_realization"
+    ],
+    "gate_id": "GRV8",
+    "highest_supported_claim": "evidence_grounded_unchanged_GRC9V3_correspondence_atlas_pending_human_review",
+    "implementation_status_enum": [
+      "absent_from_substrate",
+      "already_implemented_exactly",
+      "implemented_as_declared_simplifying_limit",
+      "implemented_only_analogically",
+      "measurable_from_existing_state_but_not_constitutive",
+      "theoretically_underdetermined_open"
+    ],
+    "rows": [
+      {
+        "assumption_ids": [
+          "A-BRANCH"
+        ],
+        "blocked_claims": [
+          "global_branch_identity_theorem",
+          "continuation",
+          "retention"
+        ],
+        "claim_ids": [
+          "T-B01",
+          "T-B02"
+        ],
+        "classification_scope": "bounded_B1_GR_unchanged_GRC9V3_evidence_envelope",
+        "correspondence_level": "L5_robust_realization",
+        "debt_ids": [
+          "D-B01"
+        ],
+        "evidence_refs": [
+          "outputs/fixed_branch_registry.json"
+        ],
+        "implementation_status": "already_implemented_exactly",
+        "maximum_supported_claim": "bounded_homogeneous_and_nonuniform_fixed_topology_formed_branch_existence_with_replay_and_held_out_controls",
+        "object_id": "formed_zero_current_branches",
+        "primary_decision_route": "analysis_only_measurement",
+        "proof_note_ids": [],
+        "source_ids": [
+          "SRC-CONTINUATION",
+          "SRC-READBACK"
+        ]
+      },
+      {
+        "assumption_ids": [
+          "A-BRANCH",
+          "A-CLOCK",
+          "A-CONSERVE",
+          "A-STATE-CLOSURE"
+        ],
+        "blocked_claims": [
+          "universal_C_J_primitive_identity",
+          "LGRC_state_closure"
+        ],
+        "claim_ids": [
+          "T-S01",
+          "T-S02",
+          "T-O03"
+        ],
+        "classification_scope": "bounded_B1_GR_unchanged_GRC9V3_evidence_envelope",
+        "correspondence_level": "L4_derived_reduced_limit",
+        "debt_ids": [
+          "D-M01"
+        ],
+        "evidence_refs": [
+          "outputs/complete_step_jacobians.json"
+        ],
+        "implementation_status": "implemented_as_declared_simplifying_limit",
+        "maximum_supported_claim": "branch_and_stratum_relative_synchronous_GRC_causal_closure_with_C_independent_and_W_J_reconstructed",
+        "object_id": "bounded_runtime_causal_state",
+        "primary_decision_route": "lgrc_specific_investigation",
+        "proof_note_ids": [],
+        "source_ids": [
+          "SRC-CONTINUATION",
+          "SRC-READBACK"
+        ]
+      },
+      {
+        "assumption_ids": [
+          "A-BRANCH",
+          "A-CONSERVE",
+          "A-SMOOTH"
+        ],
+        "blocked_claims": [
+          "complete_step_map",
+          "active_joint_continuation_operator"
+        ],
+        "claim_ids": [
+          "T-C01",
+          "T-C02",
+          "T-C03"
+        ],
+        "classification_scope": "bounded_B1_GR_unchanged_GRC9V3_evidence_envelope",
+        "correspondence_level": "L4_derived_reduced_limit",
+        "debt_ids": [
+          "D-C01",
+          "D-G02"
+        ],
+        "evidence_refs": [
+          "outputs/frozen_full_comparison.json",
+          "outputs/spatial_temporal_threshold_matrix.json"
+        ],
+        "implementation_status": "measurable_from_existing_state_but_not_constitutive",
+        "maximum_supported_claim": "clamped_W_zero_sum_C_reduced_structural_and_discrete_temporal_comparator",
+        "object_id": "fixed_W_constrained_continuation_comparator",
+        "primary_decision_route": "analysis_only_measurement",
+        "proof_note_ids": [
+          "PN-C03"
+        ],
+        "source_ids": [
+          "SRC-CONTINUATION",
+          "SRC-READBACK"
+        ]
+      },
+      {
+        "assumption_ids": [
+          "A-BRANCH",
+          "A-CLOCK",
+          "A-TRANSPORT"
+        ],
+        "blocked_claims": [
+          "unified_temporal_generator",
+          "constitutive_retained_sector"
+        ],
+        "claim_ids": [
+          "T-M02",
+          "T-M03",
+          "T-C01"
+        ],
+        "classification_scope": "bounded_B1_GR_unchanged_GRC9V3_evidence_envelope",
+        "correspondence_level": "L2_operational_signature",
+        "debt_ids": [
+          "D-C01",
+          "D-C02",
+          "D-M02"
+        ],
+        "evidence_refs": [
+          "outputs/complete_step_jacobians.json",
+          "outputs/spatial_temporal_threshold_matrix.json"
+        ],
+        "implementation_status": "measurable_from_existing_state_but_not_constitutive",
+        "maximum_supported_claim": "bounded_branch_clock_and_stratum_specific_transition_spectra",
+        "object_id": "complete_step_temporal_spectrum",
+        "primary_decision_route": "analysis_only_measurement",
+        "proof_note_ids": [],
+        "source_ids": [
+          "SRC-CONTINUATION",
+          "SRC-READBACK"
+        ]
+      },
+      {
+        "assumption_ids": [
+          "A-BRANCH",
+          "A-CLOCK",
+          "A-ISOLATION",
+          "A-NONNORMAL-CONTROL",
+          "A-STATE-CLOSURE",
+          "A-TRANSPORT"
+        ],
+        "blocked_claims": [
+          "unique_retained_projector",
+          "observer_independent_memory_sector"
+        ],
+        "claim_ids": [
+          "T-M02",
+          "T-M03",
+          "T-M04",
+          "T-B03"
+        ],
+        "classification_scope": "bounded_B1_GR_unchanged_GRC9V3_evidence_envelope",
+        "correspondence_level": "L2_operational_signature",
+        "debt_ids": [
+          "D-R02",
+          "D-M02"
+        ],
+        "evidence_refs": [
+          "outputs/slow_cluster_registry.json",
+          "outputs/complete_step_jacobians.json"
+        ],
+        "implementation_status": "measurable_from_existing_state_but_not_constitutive",
+        "maximum_supported_claim": "admitted_cluster_level_temporal_classification_on_bounded_branches",
+        "object_id": "stable_neutral_unstable_temporal_subspaces",
+        "primary_decision_route": "analysis_only_measurement",
+        "proof_note_ids": [
+          "PN-B03",
+          "PN-M04"
+        ],
+        "source_ids": [
+          "SRC-CONTINUATION",
+          "SRC-READBACK"
+        ]
+      },
+      {
+        "assumption_ids": [
+          "A-BRANCH",
+          "A-CLOCK",
+          "A-STATE-CLOSURE"
+        ],
+        "blocked_claims": [
+          "transverse_branch_relative_retention",
+          "specific_transient_W_mediation",
+          "native_readback"
+        ],
+        "claim_ids": [
+          "T-RW01",
+          "T-RW05",
+          "T-RW06",
+          "T-RW11"
+        ],
+        "classification_scope": "bounded_B1_GR_unchanged_GRC9V3_evidence_envelope",
+        "correspondence_level": "L2_operational_signature",
+        "debt_ids": [
+          "D-R02",
+          "D-P01"
+        ],
+        "evidence_refs": [
+          "outputs/conductance_retention_probe.json",
+          "outputs/causal_role_matrix.json"
+        ],
+        "implementation_status": "implemented_only_analogically",
+        "maximum_supported_claim": "bounded_synthetic_old_current_conditioned_C_dominated_neutral_direction_persistence",
+        "object_id": "conductance_mediated_retention",
+        "primary_decision_route": "analysis_only_measurement",
+        "proof_note_ids": [],
+        "source_ids": [
+          "SRC-CONTINUATION",
+          "SRC-READBACK"
+        ]
+      },
+      {
+        "assumption_ids": [
+          "A-LOOP-INVERT",
+          "A-ORIENTATION",
+          "A-PASSIVE",
+          "A-SMOOTH"
+        ],
+        "blocked_claims": [
+          "native_present_current_conditioned_readback",
+          "closed_read_write_loop"
+        ],
+        "claim_ids": [
+          "T-RW02",
+          "T-RW07",
+          "T-O01"
+        ],
+        "classification_scope": "bounded_B1_GR_unchanged_GRC9V3_evidence_envelope",
+        "correspondence_level": "L0_analogy",
+        "debt_ids": [
+          "D-R01",
+          "D-R03"
+        ],
+        "evidence_refs": [
+          "outputs/conductance_retention_probe.json",
+          "outputs/causal_role_matrix.json"
+        ],
+        "implementation_status": "absent_from_substrate",
+        "maximum_supported_claim": "generic_geometry_conditioned_transport_and_substrate_reduced_sensitivity_only",
+        "object_id": "native_read_effect",
+        "primary_decision_route": "blocked_by_identifiability",
+        "proof_note_ids": [],
+        "source_ids": [
+          "SRC-CONTINUATION",
+          "SRC-READBACK"
+        ]
+      },
+      {
+        "assumption_ids": [
+          "A-BRANCH",
+          "A-CLOCK",
+          "A-PASSIVE",
+          "A-SIGN-EVEN",
+          "A-SMOOTH"
+        ],
+        "blocked_claims": [
+          "native_reached_writeback",
+          "persistent_retained_write",
+          "reflexive_closed_loop"
+        ],
+        "claim_ids": [
+          "T-RW06",
+          "T-RW08",
+          "T-RW11"
+        ],
+        "classification_scope": "bounded_B1_GR_unchanged_GRC9V3_evidence_envelope",
+        "correspondence_level": "L2_operational_signature",
+        "debt_ids": [
+          "D-R02",
+          "D-P01"
+        ],
+        "evidence_refs": [
+          "outputs/conductance_retention_probe.json"
+        ],
+        "implementation_status": "implemented_only_analogically",
+        "maximum_supported_claim": "exact_stage_local_J_squared_to_W_write_from_synthetic_valid_input",
+        "object_id": "activity_conditioned_write_effect",
+        "primary_decision_route": "analysis_only_measurement",
+        "proof_note_ids": [
+          "PN-RW08"
+        ],
+        "source_ids": [
+          "SRC-CONTINUATION",
+          "SRC-READBACK"
+        ]
+      },
+      {
+        "assumption_ids": [
+          "A-LOOP-INVERT",
+          "A-ORIENTATION",
+          "A-SMOOTH"
+        ],
+        "blocked_claims": [
+          "separate_read_current",
+          "oriented_retained_readback"
+        ],
+        "claim_ids": [
+          "T-RW03",
+          "T-RW07",
+          "T-O01"
+        ],
+        "classification_scope": "bounded_B1_GR_unchanged_GRC9V3_evidence_envelope",
+        "correspondence_level": "L0_analogy",
+        "debt_ids": [
+          "D-R01",
+          "D-R03"
+        ],
+        "evidence_refs": [
+          "outputs/instrumentation_validation.json",
+          "outputs/conductance_retention_probe.json"
+        ],
+        "implementation_status": "absent_from_substrate",
+        "maximum_supported_claim": "native_baseline_transport_current_only",
+        "object_id": "distinct_directional_read_current",
+        "primary_decision_route": "blocked_by_identifiability",
+        "proof_note_ids": [],
+        "source_ids": [
+          "SRC-CONTINUATION",
+          "SRC-READBACK"
+        ]
+      },
+      {
+        "assumption_ids": [
+          "A-ORIENTATION"
+        ],
+        "blocked_claims": [
+          "general_readback",
+          "retention_selectivity"
+        ],
+        "claim_ids": [
+          "T-RW03",
+          "T-RW04"
+        ],
+        "classification_scope": "bounded_B1_GR_unchanged_GRC9V3_evidence_envelope",
+        "correspondence_level": "L4_derived_reduced_limit",
+        "debt_ids": [
+          "D-R01"
+        ],
+        "evidence_refs": [
+          "outputs/instrumentation_validation.json"
+        ],
+        "implementation_status": "implemented_as_declared_simplifying_limit",
+        "maximum_supported_claim": "existing_J_C_can_instantiate_the_declared_nonselective_j_equals_J_C_limit",
+        "object_id": "j_equals_J_C_limit",
+        "primary_decision_route": "blocked_by_identifiability",
+        "proof_note_ids": [],
+        "source_ids": [
+          "SRC-CONTINUATION",
+          "SRC-READBACK"
+        ]
+      },
+      {
+        "assumption_ids": [
+          "A-ORIENTATION",
+          "A-PASSIVE",
+          "A-SIGN-EVEN",
+          "A-SMOOTH"
+        ],
+        "blocked_claims": [
+          "orientation_retention",
+          "directional_readback"
+        ],
+        "claim_ids": [
+          "T-RW08",
+          "T-RW09"
+        ],
+        "classification_scope": "bounded_B1_GR_unchanged_GRC9V3_evidence_envelope",
+        "correspondence_level": "L3_constitutive_realization",
+        "debt_ids": [
+          "D-R03"
+        ],
+        "evidence_refs": [
+          "outputs/instrumentation_validation.json",
+          "outputs/conductance_retention_probe.json"
+        ],
+        "implementation_status": "already_implemented_exactly",
+        "maximum_supported_claim": "sign_even_current_magnitude_or_unoriented_axis_conditioned_conductance_write",
+        "object_id": "magnitude_and_axis_inscription",
+        "primary_decision_route": "selectable_grc_extension",
+        "proof_note_ids": [
+          "PN-RW08",
+          "PN-RW09"
+        ],
+        "source_ids": [
+          "SRC-CONTINUATION",
+          "SRC-READBACK"
+        ]
+      },
+      {
+        "assumption_ids": [
+          "A-ORIENTATION",
+          "A-SIGN-EVEN",
+          "A-UNIQUENESS"
+        ],
+        "blocked_claims": [
+          "orientation_memory",
+          "spontaneous_direction_selection"
+        ],
+        "claim_ids": [
+          "T-RW09",
+          "T-A03",
+          "T-O01"
+        ],
+        "classification_scope": "bounded_B1_GR_unchanged_GRC9V3_evidence_envelope",
+        "correspondence_level": "L0_analogy",
+        "debt_ids": [
+          "D-R03",
+          "D-A01"
+        ],
+        "evidence_refs": [
+          "outputs/conductance_retention_probe.json",
+          "outputs/return_orbit_registry.json"
+        ],
+        "implementation_status": "absent_from_substrate",
+        "maximum_supported_claim": "orientation_covariant_measurement_without_retained_oriented_carrier",
+        "object_id": "orientation_retention",
+        "primary_decision_route": "selectable_grc_extension",
+        "proof_note_ids": [
+          "PN-A03",
+          "PN-RW09"
+        ],
+        "source_ids": [
+          "SRC-CONTINUATION",
+          "SRC-READBACK"
+        ]
+      },
+      {
+        "assumption_ids": [
+          "A-CONSERVE",
+          "A-ORIENTATION"
+        ],
+        "blocked_claims": [
+          "field_equality_implies_current_equality",
+          "full_reflexive_equivalence"
+        ],
+        "claim_ids": [
+          "T-RW10"
+        ],
+        "classification_scope": "bounded_B1_GR_unchanged_GRC9V3_evidence_envelope",
+        "correspondence_level": "L2_operational_signature",
+        "debt_ids": [
+          "D-R03",
+          "D-C02"
+        ],
+        "evidence_refs": [
+          "outputs/return_orbit_registry.json",
+          "outputs/causal_role_matrix.json"
+        ],
+        "implementation_status": "measurable_from_existing_state_but_not_constitutive",
+        "maximum_supported_claim": "field_current_and_full_causal_equality_are_separately_testable",
+        "object_id": "field_current_full_equivalence_hierarchy",
+        "primary_decision_route": "selectable_grc_extension",
+        "proof_note_ids": [
+          "PN-RW10"
+        ],
+        "source_ids": [
+          "SRC-CONTINUATION",
+          "SRC-READBACK"
+        ]
+      },
+      {
+        "assumption_ids": [],
+        "blocked_claims": [
+          "load_bearing_metric",
+          "global_causal_absence"
+        ],
+        "claim_ids": [],
+        "classification_scope": "bounded_B1_GR_unchanged_GRC9V3_evidence_envelope",
+        "correspondence_level": "L1_representability",
+        "debt_ids": [
+          "D-G01"
+        ],
+        "evidence_refs": [
+          "outputs/instrumentation_validation.json",
+          "outputs/surface_authority_map.json"
+        ],
+        "implementation_status": "measurable_from_existing_state_but_not_constitutive",
+        "maximum_supported_claim": "diagnostic_cache_not_consumed_on_tested_fixed_topology_no_event_path",
+        "object_id": "K_hybrid_node_tensor",
+        "primary_decision_route": "unchanged_grc_interpretation",
+        "proof_note_ids": [],
+        "source_ids": [
+          "SRC-CONTINUATION",
+          "SRC-READBACK"
+        ]
+      },
+      {
+        "assumption_ids": [
+          "A-BRANCH",
+          "A-CONSERVE",
+          "A-SMOOTH"
+        ],
+        "blocked_claims": [
+          "separate_alpha_and_gamma_carriers",
+          "extension_required_now"
+        ],
+        "claim_ids": [
+          "T-C01",
+          "T-C02"
+        ],
+        "classification_scope": "bounded_B1_GR_unchanged_GRC9V3_evidence_envelope",
+        "correspondence_level": "L1_representability",
+        "debt_ids": [
+          "D-G02"
+        ],
+        "evidence_refs": [
+          "outputs/frozen_full_comparison.json"
+        ],
+        "implementation_status": "absent_from_substrate",
+        "maximum_supported_claim": "W_is_load_bearing_conductance_with_structural_and_transport_interpretations_not_independently_factored",
+        "object_id": "geometry_mobility_separation",
+        "primary_decision_route": "unchanged_grc_interpretation",
+        "proof_note_ids": [],
+        "source_ids": [
+          "SRC-CONTINUATION",
+          "SRC-READBACK"
+        ]
+      },
+      {
+        "assumption_ids": [
+          "A-CLOSED",
+          "A-CONSERVE",
+          "A-MOBILITY",
+          "A-ORIENTATION",
+          "A-UNIQUENESS"
+        ],
+        "blocked_claims": [
+          "global_cycle_current_nonexistence",
+          "boundary_or_null_sector_exclusion"
+        ],
+        "claim_ids": [
+          "T-A03",
+          "T-A05"
+        ],
+        "classification_scope": "bounded_B1_GR_unchanged_GRC9V3_evidence_envelope",
+        "correspondence_level": "L3_constitutive_realization",
+        "debt_ids": [
+          "D-A01"
+        ],
+        "evidence_refs": [
+          "outputs/return_orbit_registry.json"
+        ],
+        "implementation_status": "absent_from_substrate",
+        "maximum_supported_claim": "bounded_exclusion_from_closed_regular_gradient_potential_sector_under_tested_assumptions",
+        "object_id": "active_stationary_circulation",
+        "primary_decision_route": "selectable_grc_extension",
+        "proof_note_ids": [
+          "PN-A03",
+          "PN-A05"
+        ],
+        "source_ids": [
+          "SRC-CONTINUATION",
+          "SRC-READBACK"
+        ]
+      },
+      {
+        "assumption_ids": [
+          "A-CLOSED",
+          "A-CONSERVE",
+          "A-MOBILITY",
+          "A-ORIENTATION",
+          "A-UNIQUENESS"
+        ],
+        "blocked_claims": [
+          "global_return_orbit_nonexistence",
+          "relative_periodic_orbit_nonexistence"
+        ],
+        "claim_ids": [
+          "T-A03",
+          "T-A04",
+          "T-A05"
+        ],
+        "classification_scope": "bounded_B1_GR_unchanged_GRC9V3_evidence_envelope",
+        "correspondence_level": "L2_operational_signature",
+        "debt_ids": [
+          "D-A01"
+        ],
+        "evidence_refs": [
+          "outputs/return_orbit_registry.json"
+        ],
+        "implementation_status": "measurable_from_existing_state_but_not_constitutive",
+        "maximum_supported_claim": "bounded_search_found_no_primitive_period_2_to_8_return_and_seeded_cycle_current_was_overwritten",
+        "object_id": "recurrent_transport_orbits",
+        "primary_decision_route": "selectable_grc_extension",
+        "proof_note_ids": [
+          "PN-A03",
+          "PN-A05"
+        ],
+        "source_ids": [
+          "SRC-CONTINUATION",
+          "SRC-READBACK"
+        ]
+      },
+      {
+        "assumption_ids": [
+          "A-BRANCH",
+          "A-CLOCK",
+          "A-ISOLATION",
+          "A-NONNORMAL-CONTROL",
+          "A-TRANSPORT"
+        ],
+        "blocked_claims": [
+          "topology_changing_mode_transport",
+          "lineage_as_retained_bundle_transport"
+        ],
+        "claim_ids": [
+          "T-B03",
+          "T-B04",
+          "T-M02"
+        ],
+        "classification_scope": "bounded_B1_GR_unchanged_GRC9V3_evidence_envelope",
+        "correspondence_level": "L0_analogy",
+        "debt_ids": [
+          "D-R02",
+          "D-T01",
+          "D-B01"
+        ],
+        "evidence_refs": [
+          "outputs/slow_cluster_registry.json",
+          "outputs/fixed_topology_envelope.json"
+        ],
+        "implementation_status": "theoretically_underdetermined_open",
+        "maximum_supported_claim": "fixed_topology_cluster_tracking_only",
+        "object_id": "moving_retained_slow_bundle",
+        "primary_decision_route": "analysis_only_measurement",
+        "proof_note_ids": [
+          "PN-B03",
+          "PN-B04"
+        ],
+        "source_ids": [
+          "SRC-CONTINUATION",
+          "SRC-READBACK"
+        ]
+      },
+      {
+        "assumption_ids": [
+          "A-BRANCH",
+          "A-CONSERVE",
+          "A-SMOOTH"
+        ],
+        "blocked_claims": [
+          "runtime_full_temporal_non_equivalence",
+          "universal_noncorrelation"
+        ],
+        "claim_ids": [
+          "T-M01",
+          "T-C01",
+          "T-C02"
+        ],
+        "classification_scope": "bounded_B1_GR_unchanged_GRC9V3_evidence_envelope",
+        "correspondence_level": "L2_operational_signature",
+        "debt_ids": [
+          "D-C01",
+          "D-G01"
+        ],
+        "evidence_refs": [
+          "outputs/spatial_temporal_threshold_matrix.json"
+        ],
+        "implementation_status": "measurable_from_existing_state_but_not_constitutive",
+        "maximum_supported_claim": "bounded_reduced_non_equivalence_between_runtime_local_diagnostics_analytical_continuation_and_frozen_discrete_thresholds",
+        "object_id": "runtime_row_signed_Hessian_relation_to_continuation",
+        "primary_decision_route": "analysis_only_measurement",
+        "proof_note_ids": [],
+        "source_ids": [
+          "SRC-CONTINUATION",
+          "SRC-READBACK"
+        ]
+      }
+    ],
+    "source_id_map": {
+      "SRC-CONTINUATION": {
+        "git_blob": "6e3edec632b4dee892d300bb442e04790a0a7493",
+        "path": "core/2026-08-TheContinuationSpectrum.md",
+        "sha256": "14ee948d04c8803ae2c05e0d602d94c40d67bbed5399a8ef539bd024e77d95c5",
+        "source_role": "controlling_continuation_theory"
+      },
+      "SRC-READBACK": {
+        "git_blob": "f44c729318433fafd8ce674b8914098da462f4de",
+        "path": "core/2026-08-ReadBack.md",
+        "sha256": "04c0bb8398febf58592297326e741271b46a52f504f6a0cea17a0bd6624efbb2",
+        "source_role": "controlling_readback_theory"
+      }
+    },
+    "summary": {
+      "K_decision": "remains_explicitly_diagnostic",
+      "closed_read_write_loop_supported": false,
+      "correspondence_level_counts": {
+        "L0_analogy": 4,
+        "L1_representability": 2,
+        "L2_operational_signature": 7,
+        "L3_constitutive_realization": 2,
+        "L4_derived_reduced_limit": 3,
+        "L5_robust_realization": 1
+      },
+      "geometry_mobility_extension_opened": false,
+      "implementation_status_counts": {
+        "absent_from_substrate": 5,
+        "already_implemented_exactly": 2,
+        "implemented_as_declared_simplifying_limit": 2,
+        "implemented_only_analogically": 2,
+        "measurable_from_existing_state_but_not_constitutive": 7,
+        "theoretically_underdetermined_open": 1
+      },
+      "native_readback_supported": false,
+      "native_writeback_supported": false,
+      "object_count": 19,
+      "oriented_current_extension_selected": false,
+      "retained_carrier_extension_opened": false
+    }
+  },
+  "payload_sha256": "cb6c91824184f4aefd5a83ed2d3ebfe3d3f03ccf3c9aa12c25380d374318afe6",
+  "schema_version": "b1_grv8_equivalence_classification_v1"
+}

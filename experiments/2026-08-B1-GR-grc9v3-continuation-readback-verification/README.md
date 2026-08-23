@@ -17,7 +17,7 @@ only analogically, as a measurable diagnostic, or not at all.
 
 ```text
 experiment_id = B1-GR
-status = grv7_P7_accepted_GRV8_P8_method_frozen
+status = grv8_P8_classification_candidate_awaiting_human_review
 specification_state = draft_3_4_1_pre_execution_mathematical_execution_sealed
 controlling_specification_sha256 = 7ad99fb4acc6a7691d184a514f4836ffa3927600fc7cf504eb059134f3948e44
 runtime_under_test = unchanged_GRC9V3
@@ -433,11 +433,27 @@ spectrum inspection.
 Receipt `2d29dedb...` over matrix payload `cfa80c47...` is mechanically valid.
 Human review accepted the result at revision `60d045d`; the separate
 `outputs/gates/grv7_acceptance_anchor.json` binds that revision and receipt.
-`GRV-C5` is assigned. The GRV8 classification method is frozen and awaits clean
-execution. Acceptance does
+`GRV-C5` is assigned. GRV8 ran from clean method revision `7d03940` and emitted
+classification receipt `0f974b0b...`; scientific acceptance is pending.
+Acceptance of GRV7 does
 not claim universal non-correlation, runtime spatial/full-temporal non-
 equivalence, an informative nontrivial complete-step `+1` threshold,
 continuation, retention from GRV7, Read-Back, or write-back.
+
+GRV8 classifies 19 assumptions, all 33 source claims, 19 tested objects, all 13
+debts, and 17 theory-to-test rows. It finds no native Read-Back or write-back
+loop and no reason to reopen the controlling theory. Geometry/mobility and
+retained-carrier extensions remain unopened because their triggers were not
+met; `K` remains diagnostic. An oriented-current extension is conditionally
+selectable only for a future target that explicitly requires directional
+Read-Back or active circulation, and is not selected by B1-GR. All 1,354
+repository tests and 105 experiment tests pass, and protected source, spec, and
+root-test paths remain unchanged.
+
+This is the first of two GRV8 review stages. The evidence bundle,
+evidence-grounded successor, LGRC handoff, GRV8 acceptance anchors, and
+`GRV-C6` remain absent until the classification receipt is reviewed and
+accepted.
 
 ## Central Question
 

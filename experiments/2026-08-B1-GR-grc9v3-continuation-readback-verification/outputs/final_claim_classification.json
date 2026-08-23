@@ -1,0 +1,1081 @@
+{
+  "metadata": {
+    "generating_command": ".venv/bin/python experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/scripts/run_all.py --gate GRV8",
+    "reproducibility_class": "byte_reproducible"
+  },
+  "payload": {
+    "all_source_claim_ids_classified": true,
+    "blocked_claims": [
+      "full_core_Read_Back",
+      "unique_retained_projector",
+      "unified_spectrum"
+    ],
+    "gate_id": "GRV8",
+    "highest_supported_claim": "bounded_claim_by_claim_GRC9V3_realization_and_boundary_classification",
+    "rows": [
+      {
+        "assumption_statuses": {
+          "A-STATE-CLOSURE": "satisfied"
+        },
+        "blocked_claims": [
+          "unbounded_generalization",
+          "automatic_LGRC_inheritance",
+          "memory_learning_agency_or_life"
+        ],
+        "claim_id": "T-S01",
+        "debt_ids": [],
+        "disposition": "source_backed_boundary_not_runtime_admission",
+        "evidence_refs": [
+          "outputs/complete_step_jacobians.json"
+        ],
+        "maximum_supported_claim": "source_backed_boundary_preserved_without_native_runtime_realization_claim",
+        "primary_decision_route": "unchanged_grc_interpretation",
+        "proof_note_ids": [],
+        "provenance": "core_inherited",
+        "required_assumption_ids": [
+          "A-STATE-CLOSURE"
+        ],
+        "source_ids": [
+          "SRC-CONTINUATION",
+          "SRC-READBACK"
+        ],
+        "statement": "The mature primitive coherence state is $(C,J_C)$."
+      },
+      {
+        "assumption_statuses": {
+          "A-BRANCH": "satisfied",
+          "A-CLOCK": "satisfied",
+          "A-CONSERVE": "satisfied"
+        },
+        "blocked_claims": [
+          "unbounded_generalization",
+          "automatic_LGRC_inheritance",
+          "memory_learning_agency_or_life"
+        ],
+        "claim_id": "T-S02",
+        "debt_ids": [],
+        "disposition": "bounded_supported_distinction",
+        "evidence_refs": [
+          "outputs/complete_step_jacobians.json"
+        ],
+        "maximum_supported_claim": "source_backed_distinction_supported_within_the_bounded_GRC9V3_evidence_envelope",
+        "primary_decision_route": "unchanged_grc_interpretation",
+        "proof_note_ids": [],
+        "provenance": "core_derived",
+        "required_assumption_ids": [
+          "A-BRANCH",
+          "A-CLOCK",
+          "A-CONSERVE"
+        ],
+        "source_ids": [
+          "SRC-CONTINUATION",
+          "SRC-READBACK"
+        ],
+        "statement": "Core primitive state, runtime causal state, and analytical perturbation state are distinct questions."
+      },
+      {
+        "assumption_statuses": {},
+        "blocked_claims": [
+          "unbounded_generalization",
+          "automatic_LGRC_inheritance",
+          "memory_learning_agency_or_life"
+        ],
+        "claim_id": "T-RW01",
+        "debt_ids": [],
+        "disposition": "bounded_supported_distinction",
+        "evidence_refs": [
+          "outputs/causal_role_matrix.json",
+          "outputs/conductance_retention_probe.json"
+        ],
+        "maximum_supported_claim": "source_backed_distinction_supported_within_the_bounded_GRC9V3_evidence_envelope",
+        "primary_decision_route": "unchanged_grc_interpretation",
+        "proof_note_ids": [],
+        "provenance": "core_inherited",
+        "required_assumption_ids": [],
+        "source_ids": [
+          "SRC-CONTINUATION",
+          "SRC-READBACK"
+        ],
+        "statement": "Retention, read-back, and write-back are distinct causal roles."
+      },
+      {
+        "assumption_statuses": {
+          "A-PASSIVE": "not_identifiable"
+        },
+        "blocked_claims": [
+          "unbounded_generalization",
+          "automatic_LGRC_inheritance",
+          "memory_learning_agency_or_life"
+        ],
+        "claim_id": "T-RW02",
+        "debt_ids": [
+          "D-R01"
+        ],
+        "disposition": "not_admitted_under_tested_assumptions",
+        "evidence_refs": [
+          "outputs/causal_role_matrix.json",
+          "outputs/conductance_retention_probe.json"
+        ],
+        "maximum_supported_claim": "theory_statement_retained_but_native_GRC9V3_claim_not_admitted",
+        "primary_decision_route": "blocked_by_identifiability",
+        "proof_note_ids": [],
+        "provenance": "core_inherited",
+        "required_assumption_ids": [
+          "A-PASSIVE"
+        ],
+        "source_ids": [
+          "SRC-CONTINUATION",
+          "SRC-READBACK"
+        ],
+        "statement": "Read-back obeys the passive null $\\mathfrak R_M(\\mathcal T_M,h;0)=0$."
+      },
+      {
+        "assumption_statuses": {
+          "A-ORIENTATION": "satisfied"
+        },
+        "blocked_claims": [
+          "unbounded_generalization",
+          "automatic_LGRC_inheritance",
+          "memory_learning_agency_or_life"
+        ],
+        "claim_id": "T-RW03",
+        "debt_ids": [],
+        "disposition": "bounded_supported_distinction",
+        "evidence_refs": [
+          "outputs/conductance_retention_probe.json",
+          "outputs/instrumentation_validation.json"
+        ],
+        "maximum_supported_claim": "source_backed_distinction_supported_within_the_bounded_GRC9V3_evidence_envelope",
+        "primary_decision_route": "unchanged_grc_interpretation",
+        "proof_note_ids": [],
+        "provenance": "core_inherited",
+        "required_assumption_ids": [
+          "A-ORIENTATION"
+        ],
+        "source_ids": [
+          "SRC-CONTINUATION",
+          "SRC-READBACK"
+        ],
+        "statement": "$j$ is a derived current-like contribution, not another primitive conserved stream."
+      },
+      {
+        "assumption_statuses": {},
+        "blocked_claims": [
+          "unbounded_generalization",
+          "automatic_LGRC_inheritance",
+          "memory_learning_agency_or_life"
+        ],
+        "claim_id": "T-RW04",
+        "debt_ids": [],
+        "disposition": "bounded_supported_distinction",
+        "evidence_refs": [
+          "outputs/instrumentation_validation.json"
+        ],
+        "maximum_supported_claim": "source_backed_distinction_supported_within_the_bounded_GRC9V3_evidence_envelope",
+        "primary_decision_route": "unchanged_grc_interpretation",
+        "proof_note_ids": [],
+        "provenance": "core_inherited",
+        "required_assumption_ids": [],
+        "source_ids": [
+          "SRC-CONTINUATION",
+          "SRC-READBACK"
+        ],
+        "statement": "$j=J_C$ is a declared simplifying limit, not a derivation of general read-back."
+      },
+      {
+        "assumption_statuses": {
+          "A-STATE-CLOSURE": "satisfied"
+        },
+        "blocked_claims": [
+          "unbounded_generalization",
+          "automatic_LGRC_inheritance",
+          "memory_learning_agency_or_life"
+        ],
+        "claim_id": "T-RW05",
+        "debt_ids": [
+          "D-R02"
+        ],
+        "disposition": "bounded_supported_distinction",
+        "evidence_refs": [
+          "outputs/causal_role_matrix.json",
+          "outputs/conductance_retention_probe.json"
+        ],
+        "maximum_supported_claim": "source_backed_distinction_supported_within_the_bounded_GRC9V3_evidence_envelope",
+        "primary_decision_route": "analysis_only_measurement",
+        "proof_note_ids": [],
+        "provenance": "core_derived",
+        "required_assumption_ids": [
+          "A-STATE-CLOSURE"
+        ],
+        "source_ids": [
+          "SRC-CONTINUATION",
+          "SRC-READBACK"
+        ],
+        "statement": "Retention capacity, retained content, and historical record are different."
+      },
+      {
+        "assumption_statuses": {},
+        "blocked_claims": [
+          "unbounded_generalization",
+          "automatic_LGRC_inheritance",
+          "memory_learning_agency_or_life"
+        ],
+        "claim_id": "T-RW06",
+        "debt_ids": [],
+        "disposition": "bounded_supported_distinction",
+        "evidence_refs": [
+          "outputs/causal_role_matrix.json",
+          "outputs/conductance_retention_probe.json"
+        ],
+        "maximum_supported_claim": "source_backed_distinction_supported_within_the_bounded_GRC9V3_evidence_envelope",
+        "primary_decision_route": "unchanged_grc_interpretation",
+        "proof_note_ids": [],
+        "provenance": "core_derived",
+        "required_assumption_ids": [],
+        "source_ids": [
+          "SRC-CONTINUATION",
+          "SRC-READBACK"
+        ],
+        "statement": "Retention, read-back, and write-back must be accepted or rejected arrow by arrow; the full loop is not required to establish one arrow."
+      },
+      {
+        "assumption_statuses": {
+          "A-LOOP-INVERT": "not_applicable",
+          "A-SMOOTH": "satisfied"
+        },
+        "blocked_claims": [
+          "unbounded_generalization",
+          "automatic_LGRC_inheritance",
+          "memory_learning_agency_or_life"
+        ],
+        "claim_id": "T-RW07",
+        "debt_ids": [
+          "D-R01",
+          "D-C02"
+        ],
+        "disposition": "source_backed_boundary_not_runtime_admission",
+        "evidence_refs": [
+          "outputs/causal_role_matrix.json",
+          "outputs/conductance_retention_probe.json",
+          "outputs/instrumentation_validation.json"
+        ],
+        "maximum_supported_claim": "source_backed_boundary_preserved_without_native_runtime_realization_claim",
+        "primary_decision_route": "blocked_by_identifiability",
+        "proof_note_ids": [],
+        "provenance": "core_inherited` + `core_derived",
+        "required_assumption_ids": [
+          "A-LOOP-INVERT",
+          "A-SMOOTH"
+        ],
+        "source_ids": [
+          "SRC-CONTINUATION",
+          "SRC-READBACK"
+        ],
+        "statement": "Baseline current, direct read current, and effective closed-loop feedback are distinct."
+      },
+      {
+        "assumption_statuses": {
+          "A-PASSIVE": "not_identifiable",
+          "A-SIGN-EVEN": "satisfied",
+          "A-SMOOTH": "satisfied"
+        },
+        "blocked_claims": [
+          "unbounded_generalization",
+          "automatic_LGRC_inheritance",
+          "memory_learning_agency_or_life"
+        ],
+        "claim_id": "T-RW08",
+        "debt_ids": [],
+        "disposition": "source_backed_boundary_not_runtime_admission",
+        "evidence_refs": [
+          "outputs/conductance_retention_probe.json",
+          "outputs/instrumentation_validation.json"
+        ],
+        "maximum_supported_claim": "source_backed_boundary_preserved_without_native_runtime_realization_claim",
+        "primary_decision_route": "unchanged_grc_interpretation",
+        "proof_note_ids": [
+          "PN-RW08"
+        ],
+        "provenance": "core_derived",
+        "required_assumption_ids": [
+          "A-PASSIVE",
+          "A-SIGN-EVEN",
+          "A-SMOOTH"
+        ],
+        "source_ids": [
+          "SRC-CONTINUATION",
+          "SRC-READBACK"
+        ],
+        "statement": "At zero background, linear read response and sign-even quadratic geometric inscription occur at different perturbative orders."
+      },
+      {
+        "assumption_statuses": {
+          "A-ORIENTATION": "satisfied",
+          "A-SIGN-EVEN": "satisfied"
+        },
+        "blocked_claims": [
+          "unbounded_generalization",
+          "automatic_LGRC_inheritance",
+          "memory_learning_agency_or_life"
+        ],
+        "claim_id": "T-RW09",
+        "debt_ids": [
+          "D-R03"
+        ],
+        "disposition": "bounded_supported_distinction",
+        "evidence_refs": [
+          "outputs/conductance_retention_probe.json",
+          "outputs/instrumentation_validation.json",
+          "outputs/return_orbit_registry.json"
+        ],
+        "maximum_supported_claim": "source_backed_distinction_supported_within_the_bounded_GRC9V3_evidence_envelope",
+        "primary_decision_route": "selectable_grc_extension",
+        "proof_note_ids": [
+          "PN-RW09"
+        ],
+        "provenance": "core_inherited` + `core_derived",
+        "required_assumption_ids": [
+          "A-ORIENTATION",
+          "A-SIGN-EVEN"
+        ],
+        "source_ids": [
+          "SRC-CONTINUATION",
+          "SRC-READBACK"
+        ],
+        "statement": "$j\\otimes j$ and sign-even graph quantities preserve magnitude or an unoriented axis, not current orientation."
+      },
+      {
+        "assumption_statuses": {
+          "A-CONSERVE": "satisfied",
+          "A-ORIENTATION": "satisfied"
+        },
+        "blocked_claims": [
+          "unbounded_generalization",
+          "automatic_LGRC_inheritance",
+          "memory_learning_agency_or_life"
+        ],
+        "claim_id": "T-RW10",
+        "debt_ids": [],
+        "disposition": "bounded_supported_distinction",
+        "evidence_refs": [
+          "outputs/causal_role_matrix.json",
+          "outputs/return_orbit_registry.json"
+        ],
+        "maximum_supported_claim": "source_backed_distinction_supported_within_the_bounded_GRC9V3_evidence_envelope",
+        "primary_decision_route": "unchanged_grc_interpretation",
+        "proof_note_ids": [
+          "PN-RW10"
+        ],
+        "provenance": "core_derived",
+        "required_assumption_ids": [
+          "A-CONSERVE",
+          "A-ORIENTATION"
+        ],
+        "source_ids": [
+          "SRC-CONTINUATION",
+          "SRC-READBACK"
+        ],
+        "statement": "Field-trajectory, current-level, and full reflexive equivalence are progressively stronger claims."
+      },
+      {
+        "assumption_statuses": {
+          "A-BRANCH": "satisfied",
+          "A-CLOCK": "satisfied"
+        },
+        "blocked_claims": [
+          "unbounded_generalization",
+          "automatic_LGRC_inheritance",
+          "memory_learning_agency_or_life"
+        ],
+        "claim_id": "T-RW11",
+        "debt_ids": [
+          "D-R02",
+          "D-P01"
+        ],
+        "disposition": "bounded_supported_distinction",
+        "evidence_refs": [
+          "outputs/causal_role_matrix.json",
+          "outputs/conductance_retention_probe.json"
+        ],
+        "maximum_supported_claim": "source_backed_distinction_supported_within_the_bounded_GRC9V3_evidence_envelope",
+        "primary_decision_route": "analysis_only_measurement",
+        "proof_note_ids": [],
+        "provenance": "core_derived",
+        "required_assumption_ids": [
+          "A-BRANCH",
+          "A-CLOCK"
+        ],
+        "source_ids": [
+          "SRC-CONTINUATION",
+          "SRC-READBACK"
+        ],
+        "statement": "Sector update, effective retained write, and reflexive write-back are separate claim levels."
+      },
+      {
+        "assumption_statuses": {},
+        "blocked_claims": [
+          "unbounded_generalization",
+          "automatic_LGRC_inheritance",
+          "memory_learning_agency_or_life"
+        ],
+        "claim_id": "T-M01",
+        "debt_ids": [
+          "D-C01",
+          "D-C02"
+        ],
+        "disposition": "bounded_supported_distinction",
+        "evidence_refs": [
+          "outputs/spatial_temporal_threshold_matrix.json"
+        ],
+        "maximum_supported_claim": "source_backed_distinction_supported_within_the_bounded_GRC9V3_evidence_envelope",
+        "primary_decision_route": "analysis_only_measurement",
+        "proof_note_ids": [],
+        "provenance": "core_inherited",
+        "required_assumption_ids": [],
+        "source_ids": [
+          "SRC-CONTINUATION",
+          "SRC-READBACK"
+        ],
+        "statement": "Low spatial modes are not generally dynamically slow retained modes."
+      },
+      {
+        "assumption_statuses": {
+          "A-BRANCH": "satisfied",
+          "A-CLOCK": "satisfied",
+          "A-TRANSPORT": "not_applicable"
+        },
+        "blocked_claims": [
+          "unbounded_generalization",
+          "automatic_LGRC_inheritance",
+          "memory_learning_agency_or_life"
+        ],
+        "claim_id": "T-M02",
+        "debt_ids": [
+          "D-R02",
+          "D-M02"
+        ],
+        "disposition": "bounded_supported_distinction",
+        "evidence_refs": [
+          "outputs/complete_step_jacobians.json",
+          "outputs/fixed_topology_envelope.json",
+          "outputs/slow_cluster_registry.json",
+          "outputs/spatial_temporal_threshold_matrix.json"
+        ],
+        "maximum_supported_claim": "source_backed_distinction_supported_within_the_bounded_GRC9V3_evidence_envelope",
+        "primary_decision_route": "analysis_only_measurement",
+        "proof_note_ids": [],
+        "provenance": "core_inherited` + `core_derived",
+        "required_assumption_ids": [
+          "A-BRANCH",
+          "A-CLOCK",
+          "A-TRANSPORT"
+        ],
+        "source_ids": [
+          "SRC-CONTINUATION",
+          "SRC-READBACK"
+        ],
+        "statement": "Dynamic retention belongs to the temporal closure, clock, branch, representation, and horizon actually declared."
+      },
+      {
+        "assumption_statuses": {
+          "A-CLOCK": "satisfied"
+        },
+        "blocked_claims": [
+          "unbounded_generalization",
+          "automatic_LGRC_inheritance",
+          "memory_learning_agency_or_life"
+        ],
+        "claim_id": "T-M03",
+        "debt_ids": [],
+        "disposition": "bounded_supported_distinction",
+        "evidence_refs": [
+          "outputs/complete_step_jacobians.json",
+          "outputs/slow_cluster_registry.json",
+          "outputs/spatial_temporal_threshold_matrix.json"
+        ],
+        "maximum_supported_claim": "source_backed_distinction_supported_within_the_bounded_GRC9V3_evidence_envelope",
+        "primary_decision_route": "unchanged_grc_interpretation",
+        "proof_note_ids": [],
+        "provenance": "core_derived",
+        "required_assumption_ids": [
+          "A-CLOCK"
+        ],
+        "source_ids": [
+          "SRC-CONTINUATION",
+          "SRC-READBACK"
+        ],
+        "statement": "Stable slow retention, exact neutrality, and growing formative instability are different."
+      },
+      {
+        "assumption_statuses": {
+          "A-CLOCK": "satisfied",
+          "A-NONNORMAL-CONTROL": "satisfied",
+          "A-STATE-CLOSURE": "satisfied"
+        },
+        "blocked_claims": [
+          "unbounded_generalization",
+          "automatic_LGRC_inheritance",
+          "memory_learning_agency_or_life"
+        ],
+        "claim_id": "T-M04",
+        "debt_ids": [
+          "D-M02"
+        ],
+        "disposition": "bounded_supported_distinction",
+        "evidence_refs": [
+          "outputs/complete_step_jacobians.json",
+          "outputs/slow_cluster_registry.json"
+        ],
+        "maximum_supported_claim": "source_backed_distinction_supported_within_the_bounded_GRC9V3_evidence_envelope",
+        "primary_decision_route": "analysis_only_measurement",
+        "proof_note_ids": [
+          "PN-M04"
+        ],
+        "provenance": "core_derived",
+        "required_assumption_ids": [
+          "A-CLOCK",
+          "A-NONNORMAL-CONTROL",
+          "A-STATE-CLOSURE"
+        ],
+        "source_ids": [
+          "SRC-CONTINUATION",
+          "SRC-READBACK"
+        ],
+        "statement": "Finite-horizon persistence under non-normal dynamics is generally observer-relative unless the runtime has the required predictive state or declared schedule."
+      },
+      {
+        "assumption_statuses": {},
+        "blocked_claims": [
+          "unbounded_generalization",
+          "automatic_LGRC_inheritance",
+          "memory_learning_agency_or_life"
+        ],
+        "claim_id": "T-C01",
+        "debt_ids": [
+          "D-C01",
+          "D-C02"
+        ],
+        "disposition": "bounded_supported_distinction",
+        "evidence_refs": [
+          "outputs/complete_step_jacobians.json",
+          "outputs/frozen_full_comparison.json",
+          "outputs/spatial_temporal_threshold_matrix.json"
+        ],
+        "maximum_supported_claim": "source_backed_distinction_supported_within_the_bounded_GRC9V3_evidence_envelope",
+        "primary_decision_route": "analysis_only_measurement",
+        "proof_note_ids": [],
+        "provenance": "core_inherited",
+        "required_assumption_ids": [],
+        "source_ids": [
+          "SRC-CONTINUATION",
+          "SRC-READBACK"
+        ],
+        "statement": "Spatial scale, continuation curvature, relaxation rate, read-back gain, spatial Hessian, and transition multiplier are distinct objects."
+      },
+      {
+        "assumption_statuses": {
+          "A-BRANCH": "satisfied",
+          "A-CONSERVE": "satisfied",
+          "A-SMOOTH": "satisfied"
+        },
+        "blocked_claims": [
+          "unbounded_generalization",
+          "automatic_LGRC_inheritance",
+          "memory_learning_agency_or_life"
+        ],
+        "claim_id": "T-C02",
+        "debt_ids": [
+          "D-G02",
+          "D-C01"
+        ],
+        "disposition": "bounded_supported_distinction",
+        "evidence_refs": [
+          "outputs/frozen_full_comparison.json",
+          "outputs/spatial_temporal_threshold_matrix.json"
+        ],
+        "maximum_supported_claim": "source_backed_distinction_supported_within_the_bounded_GRC9V3_evidence_envelope",
+        "primary_decision_route": "unchanged_grc_interpretation",
+        "proof_note_ids": [],
+        "provenance": "core_inherited",
+        "required_assumption_ids": [
+          "A-BRANCH",
+          "A-CONSERVE",
+          "A-SMOOTH"
+        ],
+        "source_ids": [
+          "SRC-CONTINUATION",
+          "SRC-READBACK"
+        ],
+        "statement": "The published continuation Hessian applies to no-current, frozen-current, or smoothly slaved-current branches."
+      },
+      {
+        "assumption_statuses": {
+          "A-BRANCH": "satisfied"
+        },
+        "blocked_claims": [
+          "unbounded_generalization",
+          "automatic_LGRC_inheritance",
+          "memory_learning_agency_or_life"
+        ],
+        "claim_id": "T-C03",
+        "debt_ids": [],
+        "disposition": "bounded_supported_distinction",
+        "evidence_refs": [
+          "outputs/frozen_full_comparison.json",
+          "outputs/spatial_temporal_threshold_matrix.json"
+        ],
+        "maximum_supported_claim": "source_backed_distinction_supported_within_the_bounded_GRC9V3_evidence_envelope",
+        "primary_decision_route": "unchanged_grc_interpretation",
+        "proof_note_ids": [
+          "PN-C03"
+        ],
+        "provenance": "core_derived",
+        "required_assumption_ids": [
+          "A-BRANCH"
+        ],
+        "source_ids": [
+          "SRC-CONTINUATION",
+          "SRC-READBACK"
+        ],
+        "statement": "Structural formation and dynamic realization are separate requirements."
+      },
+      {
+        "assumption_statuses": {
+          "A-BRANCH": "satisfied"
+        },
+        "blocked_claims": [
+          "unbounded_generalization",
+          "automatic_LGRC_inheritance",
+          "memory_learning_agency_or_life"
+        ],
+        "claim_id": "T-B01",
+        "debt_ids": [],
+        "disposition": "bounded_supported_distinction",
+        "evidence_refs": [
+          "outputs/fixed_branch_registry.json"
+        ],
+        "maximum_supported_claim": "source_backed_distinction_supported_within_the_bounded_GRC9V3_evidence_envelope",
+        "primary_decision_route": "unchanged_grc_interpretation",
+        "proof_note_ids": [],
+        "provenance": "core_inherited` + `core_derived",
+        "required_assumption_ids": [
+          "A-BRANCH"
+        ],
+        "source_ids": [
+          "SRC-CONTINUATION",
+          "SRC-READBACK"
+        ],
+        "statement": "Formed state, formed branch, tracked reference branch, and actual trajectory are different."
+      },
+      {
+        "assumption_statuses": {
+          "A-BRANCH": "satisfied"
+        },
+        "blocked_claims": [
+          "unbounded_generalization",
+          "automatic_LGRC_inheritance",
+          "memory_learning_agency_or_life"
+        ],
+        "claim_id": "T-B02",
+        "debt_ids": [],
+        "disposition": "bounded_supported_distinction",
+        "evidence_refs": [
+          "outputs/fixed_branch_registry.json"
+        ],
+        "maximum_supported_claim": "source_backed_distinction_supported_within_the_bounded_GRC9V3_evidence_envelope",
+        "primary_decision_route": "unchanged_grc_interpretation",
+        "proof_note_ids": [],
+        "provenance": "core_derived",
+        "required_assumption_ids": [
+          "A-BRANCH"
+        ],
+        "source_ids": [
+          "SRC-CONTINUATION",
+          "SRC-READBACK"
+        ],
+        "statement": "The reference branch and branch gauge must be declared before evaluating retained displacement."
+      },
+      {
+        "assumption_statuses": {
+          "A-ISOLATION": "satisfied",
+          "A-NONNORMAL-CONTROL": "satisfied",
+          "A-TRANSPORT": "not_applicable"
+        },
+        "blocked_claims": [
+          "unbounded_generalization",
+          "automatic_LGRC_inheritance",
+          "memory_learning_agency_or_life"
+        ],
+        "claim_id": "T-B03",
+        "debt_ids": [
+          "D-B01"
+        ],
+        "disposition": "bounded_supported_distinction",
+        "evidence_refs": [
+          "outputs/complete_step_jacobians.json",
+          "outputs/fixed_topology_envelope.json",
+          "outputs/slow_cluster_registry.json"
+        ],
+        "maximum_supported_claim": "source_backed_distinction_supported_within_the_bounded_GRC9V3_evidence_envelope",
+        "primary_decision_route": "analysis_only_measurement",
+        "proof_note_ids": [
+          "PN-B03"
+        ],
+        "provenance": "core_inherited` + `core_derived",
+        "required_assumption_ids": [
+          "A-ISOLATION",
+          "A-NONNORMAL-CONTROL",
+          "A-TRANSPORT"
+        ],
+        "source_ids": [
+          "SRC-CONTINUATION",
+          "SRC-READBACK"
+        ],
+        "statement": "Individual mode identity is valid only while the mode is simple and isolated; otherwise the continuing object is a cluster or subspace."
+      },
+      {
+        "assumption_statuses": {
+          "A-TRANSPORT": "not_applicable"
+        },
+        "blocked_claims": [
+          "unbounded_generalization",
+          "automatic_LGRC_inheritance",
+          "memory_learning_agency_or_life"
+        ],
+        "claim_id": "T-B04",
+        "debt_ids": [
+          "D-T01"
+        ],
+        "disposition": "not_tested_fixed_topology_scope",
+        "evidence_refs": [
+          "outputs/fixed_topology_envelope.json",
+          "outputs/slow_cluster_registry.json"
+        ],
+        "maximum_supported_claim": "no_fixed_topology_GRC_result",
+        "primary_decision_route": "lgrc_specific_investigation",
+        "proof_note_ids": [
+          "PN-B04"
+        ],
+        "provenance": "core_derived",
+        "required_assumption_ids": [
+          "A-TRANSPORT"
+        ],
+        "source_ids": [
+          "SRC-CONTINUATION",
+          "SRC-READBACK"
+        ],
+        "statement": "Topology-changing continuation requires an explicit interspace transport; lineage is not automatically that transport."
+      },
+      {
+        "assumption_statuses": {
+          "A-FAST-SLOW": "not_applicable",
+          "A-LOOP-INVERT": "not_applicable",
+          "A-SMOOTH": "satisfied"
+        },
+        "blocked_claims": [
+          "unbounded_generalization",
+          "automatic_LGRC_inheritance",
+          "memory_learning_agency_or_life"
+        ],
+        "claim_id": "T-A01",
+        "debt_ids": [
+          "D-A01",
+          "D-R01"
+        ],
+        "disposition": "not_admitted_under_tested_assumptions",
+        "evidence_refs": [
+          "outputs/theory_source_manifest.json"
+        ],
+        "maximum_supported_claim": "theory_statement_retained_but_native_GRC9V3_claim_not_admitted",
+        "primary_decision_route": "selectable_grc_extension",
+        "proof_note_ids": [],
+        "provenance": "candidate_constitutive_completion",
+        "required_assumption_ids": [
+          "A-FAST-SLOW",
+          "A-LOOP-INVERT",
+          "A-SMOOTH"
+        ],
+        "source_ids": [
+          "SRC-CONTINUATION",
+          "SRC-READBACK"
+        ],
+        "statement": "Algebraic read-back may be a normally attracting fast temporal limit."
+      },
+      {
+        "assumption_statuses": {
+          "A-REGULAR-SLAVING": "not_applicable",
+          "A-SMOOTH": "satisfied"
+        },
+        "blocked_claims": [
+          "unbounded_generalization",
+          "automatic_LGRC_inheritance",
+          "memory_learning_agency_or_life"
+        ],
+        "claim_id": "T-A02",
+        "debt_ids": [
+          "D-A01"
+        ],
+        "disposition": "bounded_supported_distinction",
+        "evidence_refs": [
+          "outputs/theory_source_manifest.json"
+        ],
+        "maximum_supported_claim": "source_backed_distinction_supported_within_the_bounded_GRC9V3_evidence_envelope",
+        "primary_decision_route": "selectable_grc_extension",
+        "proof_note_ids": [
+          "PN-A02"
+        ],
+        "provenance": "core_derived",
+        "required_assumption_ids": [
+          "A-REGULAR-SLAVING",
+          "A-SMOOTH"
+        ],
+        "source_ids": [
+          "SRC-CONTINUATION",
+          "SRC-READBACK"
+        ],
+        "statement": "Loss of local current-block invertibility prevents the regular algebraic elimination of the corresponding critical current direction; a claimed branch passage must retain that direction as an explicit local coordinate or provide another justified higher-order resolution."
+      },
+      {
+        "assumption_statuses": {
+          "A-ORIENTATION": "satisfied",
+          "A-UNIQUENESS": "satisfied"
+        },
+        "blocked_claims": [
+          "unbounded_generalization",
+          "automatic_LGRC_inheritance",
+          "memory_learning_agency_or_life"
+        ],
+        "claim_id": "T-A03",
+        "debt_ids": [
+          "D-A01"
+        ],
+        "disposition": "bounded_supported_distinction",
+        "evidence_refs": [
+          "outputs/conductance_retention_probe.json",
+          "outputs/return_orbit_registry.json"
+        ],
+        "maximum_supported_claim": "source_backed_distinction_supported_within_the_bounded_GRC9V3_evidence_envelope",
+        "primary_decision_route": "selectable_grc_extension",
+        "proof_note_ids": [
+          "PN-A03"
+        ],
+        "provenance": "core_derived",
+        "required_assumption_ids": [
+          "A-ORIENTATION",
+          "A-UNIQUENESS"
+        ],
+        "source_ids": [
+          "SRC-CONTINUATION",
+          "SRC-READBACK"
+        ],
+        "statement": "In a deterministic locally unique reversal-symmetric system, exact symmetric zero cannot select an oriented active branch without a seed, bias, inherited oriented state, boundary asymmetry, or declared stochasticity."
+      },
+      {
+        "assumption_statuses": {},
+        "blocked_claims": [
+          "unbounded_generalization",
+          "automatic_LGRC_inheritance",
+          "memory_learning_agency_or_life"
+        ],
+        "claim_id": "T-A04",
+        "debt_ids": [],
+        "disposition": "bounded_supported_distinction",
+        "evidence_refs": [
+          "outputs/return_orbit_registry.json"
+        ],
+        "maximum_supported_claim": "source_backed_distinction_supported_within_the_bounded_GRC9V3_evidence_envelope",
+        "primary_decision_route": "unchanged_grc_interpretation",
+        "proof_note_ids": [],
+        "provenance": "core_inherited` + `core_derived",
+        "required_assumption_ids": [],
+        "source_ids": [
+          "SRC-CONTINUATION",
+          "SRC-READBACK"
+        ],
+        "statement": "Current deslavement, structural marginality, spark, basin birth, collapse, and tracking failure are distinct thresholds."
+      },
+      {
+        "assumption_statuses": {
+          "A-CLOSED": "satisfied",
+          "A-CONSERVE": "satisfied",
+          "A-MOBILITY": "satisfied"
+        },
+        "blocked_claims": [
+          "unbounded_generalization",
+          "automatic_LGRC_inheritance",
+          "memory_learning_agency_or_life"
+        ],
+        "claim_id": "T-A05",
+        "debt_ids": [
+          "D-A01"
+        ],
+        "disposition": "bounded_supported_distinction",
+        "evidence_refs": [
+          "outputs/return_orbit_registry.json"
+        ],
+        "maximum_supported_claim": "source_backed_distinction_supported_within_the_bounded_GRC9V3_evidence_envelope",
+        "primary_decision_route": "selectable_grc_extension",
+        "proof_note_ids": [
+          "PN-A05"
+        ],
+        "provenance": "core_derived",
+        "required_assumption_ids": [
+          "A-CLOSED",
+          "A-CONSERVE",
+          "A-MOBILITY"
+        ],
+        "source_ids": [
+          "SRC-CONTINUATION",
+          "SRC-READBACK"
+        ],
+        "statement": "On a closed no-through-flow branch with positive nondegenerate mobility and regular gradient/potential current, a nonzero stationary current cannot be supplied by the dissipative gradient sector alone."
+      },
+      {
+        "assumption_statuses": {
+          "A-BRANCH": "satisfied",
+          "A-CLOCK": "satisfied",
+          "A-ISOLATION": "satisfied"
+        },
+        "blocked_claims": [
+          "unbounded_generalization",
+          "automatic_LGRC_inheritance",
+          "memory_learning_agency_or_life"
+        ],
+        "claim_id": "T-A06",
+        "debt_ids": [],
+        "disposition": "not_tested_fixed_topology_scope",
+        "evidence_refs": [
+          "outputs/theory_source_manifest.json"
+        ],
+        "maximum_supported_claim": "no_fixed_topology_GRC_result",
+        "primary_decision_route": "unchanged_grc_interpretation",
+        "proof_note_ids": [
+          "PN-A06"
+        ],
+        "provenance": "core_derived",
+        "required_assumption_ids": [
+          "A-BRANCH",
+          "A-CLOCK",
+          "A-ISOLATION"
+        ],
+        "source_ids": [
+          "SRC-CONTINUATION",
+          "SRC-READBACK"
+        ],
+        "statement": "Tracking failure can occur while the instantaneous branch remains structurally and temporally stable."
+      },
+      {
+        "assumption_statuses": {
+          "A-ORIENTATION": "satisfied"
+        },
+        "blocked_claims": [
+          "unbounded_generalization",
+          "automatic_LGRC_inheritance",
+          "memory_learning_agency_or_life"
+        ],
+        "claim_id": "T-O01",
+        "debt_ids": [
+          "D-R03"
+        ],
+        "disposition": "theory_open_no_native_realization",
+        "evidence_refs": [
+          "outputs/causal_role_matrix.json",
+          "outputs/conductance_retention_probe.json",
+          "outputs/instrumentation_validation.json",
+          "outputs/return_orbit_registry.json"
+        ],
+        "maximum_supported_claim": "open_theory_role_with_no_native_GRC9V3_realization_identified",
+        "primary_decision_route": "selectable_grc_extension",
+        "proof_note_ids": [],
+        "provenance": "open",
+        "required_assumption_ids": [
+          "A-ORIENTATION"
+        ],
+        "source_ids": [
+          "SRC-CONTINUATION",
+          "SRC-READBACK"
+        ],
+        "statement": "The scalar or joint retained sector does not yet canonically determine the directional one-form read-back response."
+      },
+      {
+        "assumption_statuses": {},
+        "blocked_claims": [
+          "unbounded_generalization",
+          "automatic_LGRC_inheritance",
+          "memory_learning_agency_or_life"
+        ],
+        "claim_id": "T-O02",
+        "debt_ids": [
+          "D-C02"
+        ],
+        "disposition": "bounded_supported_distinction",
+        "evidence_refs": [
+          "outputs/theory_source_manifest.json"
+        ],
+        "maximum_supported_claim": "source_backed_distinction_supported_within_the_bounded_GRC9V3_evidence_envelope",
+        "primary_decision_route": "unchanged_grc_interpretation",
+        "proof_note_ids": [],
+        "provenance": "core_inherited",
+        "required_assumption_ids": [],
+        "source_ids": [
+          "SRC-CONTINUATION",
+          "SRC-READBACK"
+        ],
+        "statement": "No universal generator yet unifies $\\alpha$, $\\gamma$, $\\beta$, and discrete temporal multipliers."
+      },
+      {
+        "assumption_statuses": {
+          "A-STATE-CLOSURE": "satisfied"
+        },
+        "blocked_claims": [
+          "unbounded_generalization",
+          "automatic_LGRC_inheritance",
+          "memory_learning_agency_or_life"
+        ],
+        "claim_id": "T-O03",
+        "debt_ids": [
+          "D-M01"
+        ],
+        "disposition": "bounded_supported_distinction",
+        "evidence_refs": [
+          "outputs/complete_step_jacobians.json"
+        ],
+        "maximum_supported_claim": "source_backed_distinction_supported_within_the_bounded_GRC9V3_evidence_envelope",
+        "primary_decision_route": "lgrc_specific_investigation",
+        "proof_note_ids": [],
+        "provenance": "core_inherited",
+        "required_assumption_ids": [
+          "A-STATE-CLOSURE"
+        ],
+        "source_ids": [
+          "SRC-CONTINUATION",
+          "SRC-READBACK"
+        ],
+        "statement": "Markov sufficiency of the declared present state remains open."
+      }
+    ],
+    "source_id_map": {
+      "SRC-CONTINUATION": {
+        "git_blob": "6e3edec632b4dee892d300bb442e04790a0a7493",
+        "path": "core/2026-08-TheContinuationSpectrum.md",
+        "sha256": "14ee948d04c8803ae2c05e0d602d94c40d67bbed5399a8ef539bd024e77d95c5",
+        "source_role": "controlling_continuation_theory"
+      },
+      "SRC-READBACK": {
+        "git_blob": "f44c729318433fafd8ce674b8914098da462f4de",
+        "path": "core/2026-08-ReadBack.md",
+        "sha256": "04c0bb8398febf58592297326e741271b46a52f504f6a0cea17a0bd6624efbb2",
+        "source_role": "controlling_readback_theory"
+      }
+    },
+    "summary": {
+      "bounded_supported_distinction": 25,
+      "not_admitted_under_tested_assumptions": 2,
+      "not_tested_fixed_topology_scope": 2,
+      "source_backed_boundary_not_runtime_admission": 3,
+      "theory_open_no_native_realization": 1
+    }
+  },
+  "payload_sha256": "18714dfd036cf0f0e94629f199fdbb86dd29afb38f2460a0549da72ab86439ef",
+  "schema_version": "b1_grv8_final_claim_classification_v1"
+}
