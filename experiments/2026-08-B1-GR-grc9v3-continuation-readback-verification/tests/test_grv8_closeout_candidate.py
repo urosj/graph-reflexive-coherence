@@ -7,13 +7,14 @@ import unittest
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from artifact_io import artifact_envelope, read_json  # noqa: E402
+from artifact_io import artifact_envelope, read_json, semantic_digest, sha256_file  # noqa: E402
 from build_grv8_closeout_candidate import (  # noqa: E402
     accepted_grv8,
     collect_evidence_bundle,
     handoff_payload,
     render_successor,
 )
+from gate_receipts import validate_acceptance_anchor  # noqa: E402
 
 
 class GRV8CloseoutCandidateTest(unittest.TestCase):
@@ -85,6 +86,69 @@ class GRV8CloseoutCandidateTest(unittest.TestCase):
             successor,
         )
         self.assertIn("This successor does not copy or rewrite the predecessor", successor)
+
+    def test_closeout_anchor_binds_the_immutable_stage_2_candidate(self) -> None:
+        closeout = read_json(ROOT / "outputs/gates/grv8_closeout_acceptance_anchor.json")
+        schema = read_json(ROOT / "schemas/grv8_closeout_acceptance.schema.json")
+        receipt = read_json(ROOT / "outputs/gates/grv8_closeout_result_receipt.json")
+        bundle = read_json(ROOT / closeout["evidence_bundle_path"])
+        handoff = read_json(ROOT / closeout["next_route_handoff_path"])
+
+        validate_acceptance_anchor(closeout)
+        self.assertEqual(set(schema["required"]), set(closeout))
+        self.assertEqual(set(schema["properties"]), set(closeout))
+        self.assertEqual("accepted", closeout["acceptance_status"])
+        self.assertEqual("GRV-C6", closeout["assigned_closeout_rung"])
+        self.assertEqual(
+            "d6b57e1e973eb2c6232af0e0693599a3f51abe01",
+            closeout["result_revision"],
+        )
+        self.assertEqual(
+            receipt["receipt_payload_sha256"],
+            closeout["receipt_payload_sha256"],
+        )
+        self.assertEqual(
+            sha256_file(ROOT / closeout["accepted_grv8_anchor_path"]),
+            closeout["accepted_grv8_anchor_sha256"],
+        )
+        self.assertEqual(
+            sha256_file(ROOT / closeout["evidence_bundle_path"]),
+            closeout["evidence_bundle_sha256"],
+        )
+        self.assertEqual(
+            semantic_digest(bundle["payload"]),
+            closeout["evidence_bundle_payload_sha256"],
+        )
+        self.assertEqual(
+            sha256_file(ROOT / closeout["successor_specification_path"]),
+            closeout["successor_specification_sha256"],
+        )
+        self.assertEqual(
+            sha256_file(ROOT / closeout["next_route_handoff_path"]),
+            closeout["next_route_handoff_sha256"],
+        )
+        self.assertEqual(
+            semantic_digest(handoff["payload"]),
+            closeout["next_route_handoff_payload_sha256"],
+        )
+        self.assertFalse(closeout["runtime_change_authorized"])
+        self.assertFalse(closeout["B1_L_execution_authorized"])
+
+        artifact_paths = {row["path"] for row in bundle["payload"]["artifacts"]}
+        self.assertNotIn(
+            "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/"
+            "outputs/gates/grv8_closeout_acceptance_anchor.json",
+            artifact_paths,
+        )
+        self.assertEqual(
+            [
+                "GRC_UNCHANGED_CONSTRUCTIBILITY",
+                "GRC_SELECTABLE_EXTENSIONS",
+                "GRC_ANALYSIS_AND_IDENTIFIABILITY",
+                "LGRC_SPECIFIC_INVESTIGATION",
+            ],
+            [row["lane_id"] for row in handoff["payload"]["handoff_lanes"]],
+        )
 
 
 if __name__ == "__main__":

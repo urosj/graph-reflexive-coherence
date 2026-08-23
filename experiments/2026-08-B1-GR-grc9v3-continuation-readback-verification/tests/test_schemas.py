@@ -20,6 +20,7 @@ class SchemaCoverageTest(unittest.TestCase):
             "grv8_classification.schema.json",
             "grv8_causal_role.schema.json",
             "grv8_traceability.schema.json",
+            "grv8_closeout_acceptance.schema.json",
             "evidence_bundle_manifest.schema.json", "assumption_status_matrix.schema.json",
             "continuation_readback_handoff.schema.json", "lgrc_handoff.schema.json",
         }

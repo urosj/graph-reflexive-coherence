@@ -17,7 +17,7 @@ only analogically, as a measurable diagnostic, or not at all.
 
 ```text
 experiment_id = B1-GR
-status = grv8_stage2_closeout_candidate_awaiting_human_review
+status = closed_GRV_C6
 specification_state = draft_3_4_1_pre_execution_mathematical_execution_sealed
 controlling_specification_sha256 = 7ad99fb4acc6a7691d184a514f4836ffa3927600fc7cf504eb059134f3948e44
 runtime_under_test = unchanged_GRC9V3
@@ -28,8 +28,8 @@ positive_continuation_evidence_opened = false
 positive_retention_evidence_opened = bounded_GRR2_neutral_coordinate_persistence_only
 positive_readback_evidence_opened = false
 positive_writeback_evidence_opened = false
-verification_closeout_rung = GRV-C5
-verification_closeout_ceiling = GRV-C5_assigned_GRV8_pending
+verification_closeout_rung = GRV-C6
+verification_closeout_ceiling = GRV-C6_assigned
 reduced_spatial_continuation_temporal_non_equivalence_candidate = true
 runtime_spatial_vs_full_temporal_non_equivalence_supported = false
 full_map_non_equivalence_supported = false
@@ -502,6 +502,16 @@ LGRC-specific investigation as four separate lanes. Receipt `bbd78c9e...`
 remains `awaiting_scientific_review`; the closeout anchor, `GRV-C6`, B1-L, and
 all runtime changes remain blocked.
 
+The experiment owner subsequently accepted that exact committed Stage 2
+candidate at revision `d6b57e1` through
+`outputs/gates/grv8_closeout_acceptance_anchor.json`. B1-GR is closed at
+`GRV-C6`. The closeout rung records completion of the bounded verification and
+routing process; it does not promote any blocked scientific claim. No runtime
+change or downstream experiment is authorized by closeout. The accepted route
+order remains GRC unchanged-runtime constructibility, selectable GRC
+extensions, analysis/identifiability debt, and only then LGRC-specific
+investigation.
+
 ## Central Question
 
 ```text
@@ -582,8 +592,11 @@ investigation.
 
 [B1-L](../2026-08-B1-L-lgrc9v3-continuation-readback-delta/README.md) is a
 deferred downstream experiment identity only. It originates in Part III of the
-B1-GR specification and cannot begin before accepted `GRV-C6` evidence and an
-accepted `lgrc_handoff.json`.
+B1-GR specification. Accepted `GRV-C6` makes it eligible for later route
+admission, but does not authorize its execution. The accepted umbrella is the
+general `continuation_readback_next_route_handoff.json`; B1-L remains one
+downstream LGRC-specific route after the GRC-first lanes, not the handoff
+itself.
 
 ## Documents
 
@@ -593,3 +606,7 @@ accepted `lgrc_handoff.json`.
 - [Preserved Draft 3.4 identification/lifecycle revision](implementation/GRC9V3ContinuationReadBackVerificationSpecification_Draft3_4.md)
 - [Implementation plan](implementation/GRC9V3ContinuationReadBackVerificationImplementationPlan.md)
 - [Implementation checklist](implementation/GRC9V3ContinuationReadBackVerificationImplementationChecklist.md)
+- [Evidence-grounded successor specification](implementation/GRC9V3ContinuationReadBackVerificationSpecification_EvidenceGrounded_v1.md)
+- [General next-route handoff](outputs/continuation_readback_next_route_handoff.json)
+- [GRV8 closeout acceptance anchor](outputs/gates/grv8_closeout_acceptance_anchor.json)
+- [Final closeout report](reports/b1_grv8_closeout.md)

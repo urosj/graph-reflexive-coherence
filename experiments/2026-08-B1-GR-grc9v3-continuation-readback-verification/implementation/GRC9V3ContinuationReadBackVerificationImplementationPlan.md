@@ -1273,6 +1273,7 @@ outputs/gates/grv8_acceptance_anchor.json
 outputs/gates/grv8_closeout_result_receipt.json
 outputs/gates/grv8_closeout_acceptance_anchor.json
 reports/b1_grc9v3_verification_report.md
+reports/b1_grv8_closeout.md
 ```
 
 ### Ceiling

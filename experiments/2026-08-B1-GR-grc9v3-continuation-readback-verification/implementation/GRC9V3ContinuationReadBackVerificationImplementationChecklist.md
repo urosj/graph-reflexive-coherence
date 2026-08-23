@@ -1742,7 +1742,7 @@ from accepting itself or manufacturing its own closeout.
 - [x] Accept the GRV8 scientific classification through a separate acceptance anchor.
 - [x] Freeze `evidence_bundle_manifest.json` only after GRV8 scientific acceptance and before successor generation.
 - [x] Exclude the evidence-bundle manifest, successor, and later closeout anchor from the bundle payload.
-- [ ] Emit and accept `outputs/gates/grv8_closeout_acceptance_anchor.json`
+- [x] Emit and accept `outputs/gates/grv8_closeout_acceptance_anchor.json`
   before assigning `GRV-C6`.
 - [x] Record predecessor/evidence digests and changed claim/assumption/debt rows.
 - [x] Emit `superseded_exploratory_claims.json`.
@@ -1754,7 +1754,7 @@ from accepting itself or manufacturing its own closeout.
 - [x] Verify all protected paths remain unchanged.
 - [x] Emit and validate the GRV8 result receipt.
 - [x] Emit the separate GRV8 scientific acceptance anchor after human review.
-- [ ] Assign `GRV-C6` only when classification and routing are complete.
+- [x] Assign `GRV-C6` only when classification and routing are complete.
 - [x] Keep B1-L unopened unless its complete entry contract is accepted.
 
 ## Final Claim Audit
@@ -2064,3 +2064,30 @@ contradiction, and superseded-statement rows while retaining the accepted
 predecessor as an immutable external reference. The Stage 2 receipt is a
 candidate for separate human closeout review; it cannot accept itself or
 authorize any GRC/LGRC implementation.
+
+### Iteration 9 Final Closeout Acceptance
+
+```text
+scientific_acceptance = accepted
+accepted_stage_2_result_revision = d6b57e1e973eb2c6232af0e0693599a3f51abe01
+closeout_acceptance_anchor = outputs/gates/grv8_closeout_acceptance_anchor.json
+closeout_receipt_payload_sha256 = bbd78c9e5bdfe30b1fd6c8c0f2b9e18243021b76761e5d5a7e98fbb8b180ffbf
+evidence_bundle_payload_sha256 = 2373541a0cd5102bda6ac1d1959edb9c3fcf57f93bebd4f8f43fb783deb4107c
+successor_sha256 = 120da823f5e6b3bc5e91092891ef392cc73b8f1d992ad420347802babd228fed
+route_handoff_payload_sha256 = 6ee469edcfdb88f53d465bf418211cf7d8f059ab1814312f0d026a81c6d61849
+verification_closeout_rung = GRV-C6
+experiment_status = closed
+runtime_change_authorized = false
+B1_L_execution_authorized = false
+N32_selected = false
+l04_selected = false
+```
+
+The acceptance anchor binds the immutable Stage 2 candidate rather than
+rewriting its pre-acceptance receipt or generated artifacts. `GRV-C6` closes
+the verification and route-classification lifecycle; it does not raise the
+scientific claim ceiling beyond the accepted bounded classification. The
+general handoff remains GRC-first: unchanged-runtime constructibility,
+selectable GRC extensions, analysis/identifiability debt, and then
+LGRC-specific investigation. Closing the branch selects no implementation
+route and does not start B1-L.
