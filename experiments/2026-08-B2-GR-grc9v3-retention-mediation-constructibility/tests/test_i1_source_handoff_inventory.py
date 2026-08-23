@@ -16,12 +16,15 @@ from b2_artifact_io import (  # noqa: E402
     B1_ROOT,
     assert_envelope_digest,
     find_absolute_paths,
+    git,
     receipt_digest,
     semantic_digest,
+    verify_file_manifest,
 )
 from build_i1_source_handoff_inventory import (  # noqa: E402
     build_payload,
     graph_source_record,
+    protected_manifest,
     source_contract,
     theory_source_record,
 )
@@ -64,6 +67,28 @@ class I1SourceHandoffInventoryTests(unittest.TestCase):
         self.assertFalse(payload["claim_boundary"]["GRR_rung_assigned"])
         self.assertFalse(payload["claim_boundary"]["ready_for_I2"])
         self.assertEqual(find_absolute_paths(payload), [])
+
+    def test_hardened_source_authority_surfaces_are_complete(self) -> None:
+        payload = build_payload()
+        self.assertTrue(payload["cross_artifact_consistency_audit"]["all_rows_consistent"])
+        self.assertTrue(payload["source_dependency_closure"]["all_required_sources_admitted"])
+        self.assertTrue(payload["revision_ancestry"]["all_accepted_revisions_exist_and_are_ancestors"])
+        self.assertTrue(payload["GRR_ladder_definition"]["all_rungs_present_verbatim"])
+        self.assertTrue(payload["unchanged_runtime_identity"]["all_runtime_blobs_match_input_revision"])
+        self.assertTrue(payload["unchanged_runtime_identity"]["protected_manifest_live_verification"])
+        self.assertTrue(payload["B1_branch_crosswalk"]["all_branch_identity_fields_match"])
+        self.assertTrue(payload["B1_branch_crosswalk"]["all_branches_present_on_each_required_surface"])
+        self.assertFalse(payload["B1_branch_crosswalk"]["B2_search_eligible_population_selected"])
+        self.assertFalse(payload["B1_branch_crosswalk"]["branch_ranking_performed"])
+        self.assertTrue(all(not row["positive_B2_rung_credit"] for row in payload["consumed_field_registry"]))
+
+    def test_protected_manifest_can_be_reverified_against_live_tree(self) -> None:
+        revision = git("rev-parse", "HEAD")
+        manifest = protected_manifest(revision, git("merge-base", "main", revision))
+        self.assertTrue(verify_file_manifest(manifest["payload"]))
+        tampered = dict(manifest["payload"])
+        tampered["tree_sha256"] = "0" * 64
+        self.assertFalse(verify_file_manifest(tampered))
 
     def test_preacceptance_handoff_state_is_resolved_by_closeout_anchor(self) -> None:
         resolution = build_payload()["source_precedence_resolution"]

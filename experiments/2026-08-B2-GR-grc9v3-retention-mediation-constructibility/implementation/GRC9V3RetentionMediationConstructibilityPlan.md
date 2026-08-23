@@ -47,12 +47,20 @@ outputs/final_causal_role_classification.json
 outputs/final_claim_classification.json
 outputs/extension_decision.json
 outputs/final_theory_debt_register.json
+outputs/assumption_status_matrix.json
+outputs/equivalence_classification.json
+outputs/final_contradiction_routing.json
+outputs/final_theory_test_traceability.json
+outputs/superseded_exploratory_claims.json
+implementation/GRC9V3ContinuationReadBackVerificationSpecification.md
 implementation/GRC9V3ContinuationReadBackVerificationSpecification_EvidenceGrounded_v1.md
 outputs/gates/grv5_acceptance_anchor.json
 outputs/conductance_retention_probe.json
 outputs/complete_step_jacobians.json
+outputs/slow_cluster_registry.json
 outputs/fixed_branch_registry.json
 outputs/grv5_intervention_registry.json
+outputs/causal_role_matrix.json
 reports/b1_grv5_retention_read_write_mediation.md
 ```
 
@@ -70,8 +78,20 @@ Source precedence is:
 5. theory papers for definitions and vocabulary
 ```
 
-If an intermediate report conflicts with a final accepted classification, B2-GR
-must consume the final accepted classification and record the conflict.
+Precedence resolves interpretation, claim wording, and lifecycle authority. It
+does not turn a synthesis into empirical evidence and cannot overwrite a
+contradictory raw measurement. A material raw/final disagreement is a
+`source_consistency_failure` that blocks source admission. Every consumed field
+must carry its own semantic digest, role, allowed use, forbidden use, and an
+explicit declaration that it earns no positive B2 rung credit.
+
+Iteration 1 also freezes a first-class `unchanged_runtime_identity`, the exact
+accepted B1 branch population and cross-artifact branch crosswalk, the
+authoritative B1 `GRR0-GRR5` ladder section, accepted-revision ancestry, and the
+dependency ordering between raw gate artifacts, final synthesis, the evidence
+bundle, the handoff/successor, and closeout acceptance. Evidence-bundle
+exclusions that arise from deliberate non-self-referential lifecycle ordering
+are recorded as post-bundle derivatives rather than treated as missing files.
 
 ## 3. B1-GR Starting Boundary
 
@@ -677,8 +697,13 @@ acceptance_anchor_digest
 ### Iteration 1 - Source And Handoff Admission
 
 Freeze exact B1-GR acceptance, evidence-bundle, handoff, branch, GRV3, and GRV5
-identities. Record what may be consumed as evidence, context, method, or
-boundary. Open no B2 positive evidence.
+identities. Bind the closeout candidate revision, accepted-revision ancestry,
+named unchanged-runtime identity, dependency closure, authoritative GRR ladder,
+field-level consumption registry, raw/final consistency audit, and all-branch
+crosswalk. Admit all accepted B1 branches before any B2 eligibility selection
+and perform no branch ranking. Record what may be consumed as evidence,
+context, method, vocabulary, or boundary. Open no B2 positive evidence and run
+no scientific transition.
 
 ### Iteration 2 - Constructibility Schema Freeze
 

@@ -14,18 +14,27 @@
 
 ## Iteration 1 - Source And Handoff Admission
 
-- [ ] Bind the accepted B1-GR closeout anchor and candidate revision.
-- [ ] Bind the evidence bundle and general next-route handoff by file and payload digest.
-- [ ] Bind final causal-role classification, claim classification, extension decision, and theory-debt register.
-- [ ] Bind B1-GR GRV3 and GRV5 accepted artifacts and anchors.
-- [ ] Bind the accepted fixed-branch registry and intervention registry.
-- [ ] Record exact theory source revision, paths, blob IDs, and SHA-256 values.
-- [ ] Classify each source as evidence, context, method, vocabulary, or boundary.
-- [ ] Freeze source precedence with final accepted classifications above intermediate reports.
-- [ ] Record allowed and forbidden downstream consumption per source.
-- [ ] Confirm all referenced files exist and all declared digests match.
-- [ ] Confirm no B2 positive evidence or GRR rung is assigned.
-- [ ] Mark the result `B2-C0-ready`; assign `B2-C0` only through human-reviewed acceptance.
+- [x] Bind the accepted B1-GR closeout anchor and candidate revision.
+- [x] Bind the evidence bundle and general next-route handoff by file and payload digest.
+- [x] Bind final causal-role classification, claim classification, extension decision, and theory-debt register.
+- [x] Bind final assumption, equivalence, contradiction-routing, traceability, and supersession surfaces.
+- [x] Bind B1-GR GRV3 and GRV5 accepted artifacts and anchors.
+- [x] Bind the accepted fixed-branch, slow-cluster, intervention, retention, and causal-role registries.
+- [x] Record exact theory source revision, paths, blob IDs, and SHA-256 values.
+- [x] Bind the authoritative B1-GR `GRR0-GRR5` definition and section digest.
+- [x] Classify each consumed field as evidence, context, method, vocabulary, or boundary.
+- [x] Freeze source precedence for interpretation and lifecycle authority, never for overwriting raw measurements.
+- [x] Record allowed and forbidden downstream consumption plus zero positive-B2-rung credit per consumed field.
+- [x] Freeze a named unchanged-runtime identity for the GRC9V3/core files and protected source/spec/test trees.
+- [x] Verify accepted result revisions exist and precede the B2 input revision.
+- [x] Audit raw gate measurements against final classifications; fail closed on material disagreement.
+- [x] Audit dependency closure, evidence-bundle membership, post-bundle derivatives, deduplication, and acyclic provenance.
+- [x] Crosswalk all accepted B1 branches across branch, operator, slow-cluster, intervention, retention, and causal-role surfaces.
+- [x] Admit all accepted B1 branches before I2 eligibility selection and perform no branch ranking in I1.
+- [x] Confirm all referenced files exist and all declared digests match.
+- [x] Provide a live protected-manifest re-verification utility for I2 and later gates.
+- [x] Confirm no B2 positive evidence or GRR rung is assigned.
+- [x] Mark the result `B2-C0-ready`; assign `B2-C0` only through human-reviewed acceptance.
 
 Expected artifacts:
 
@@ -35,6 +44,26 @@ outputs/gates/b2_i1_result_receipt.json
 outputs/gates/b2_i1_acceptance_anchor.json
 reports/b2_i1_source_handoff_inventory.md
 ```
+
+### Iteration 1 Hardening Status
+
+```text
+status = hardening_revision_prepared_not_executed
+preliminary_result_status = superseded_before_human_acceptance
+acceptance_anchor_created = false
+B2_positive_evidence_opened = false
+GRR_rung_assigned = false
+B2_closeout_rung_assigned = false
+B2_closeout_ceiling = not_assigned
+ready_for_I2 = false
+```
+
+Interpretation:
+
+- The first mechanically correct I1 candidate was not accepted and received no anchor.
+- Review exposed provenance hardening needed before `B2-C0`: field-level roles, runtime identity, revision ancestry, dependency closure, raw/final consistency, authoritative ladder identity, and complete branch crosswalk.
+- The hardening implementation changes no scientific state and executes no GRC transition.
+- A clean committed hardening revision must generate the replacement I1 result before human review.
 
 ## Iteration 2 - Constructibility Schema Freeze
 

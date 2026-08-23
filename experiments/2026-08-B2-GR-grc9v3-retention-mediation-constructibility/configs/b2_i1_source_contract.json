@@ -8,6 +8,44 @@
     "reports",
     "theory_definitions_and_vocabulary"
   ],
+  "semantic_digest_contract": {
+    "algorithm": "sha256",
+    "canonicalization": "utf8_json_sort_keys_compact_separators_ensure_ascii_false_allow_nan_false",
+    "envelope_payload_rule": "digest_payload_only_excluding_envelope_metadata_and_payload_sha256",
+    "receipt_rule": "digest_complete_receipt_excluding_receipt_payload_sha256"
+  },
+  "unchanged_runtime_paths": [
+    "src/pygrc/core",
+    "src/pygrc/models/grc_9_coarse.py",
+    "src/pygrc/models/grc_9_ports.py",
+    "src/pygrc/models/grc_9_state.py",
+    "src/pygrc/models/grc_9_v3.py",
+    "src/pygrc/models/grc_9_v3_choice.py",
+    "src/pygrc/models/grc_9_v3_runtime.py",
+    "src/pygrc/models/grc_9_v3_sparks.py",
+    "src/pygrc/models/grc_9_v3_state.py"
+  ],
+  "grr_ladder_contract": {
+    "source_id": "B1_AUTHORITATIVE_SPECIFICATION",
+    "heading": "## Local evidence ladder",
+    "rungs": {
+      "GRR0": "no attributable conductance/joint carrier",
+      "GRR1": "activity changes a causal conductance or joint state",
+      "GRR2": "the difference persists after forming intervention stops",
+      "GRR3": "the persistent difference occupies an isolated temporal slow cluster",
+      "GRR4": "a matched later probe causally depends on the candidate carrier",
+      "GRR5": "write, persistence, mediation, reset/swap controls, and replay pass"
+    },
+    "claim_ceiling": "retained_geometry_or_joint_retention_candidate_not_core_ReadBack"
+  },
+  "required_fact_domains": {
+    "accepted_closeout_and_route": ["B1_CLOSEOUT_ACCEPTANCE", "B1_EVIDENCE_BUNDLE", "B1_NEXT_ROUTE_HANDOFF"],
+    "final_claim_and_debt_boundary": ["B1_FINAL_CAUSAL_ROLES", "B1_FINAL_CLAIMS", "B1_EXTENSION_DECISION", "B1_FINAL_THEORY_DEBT"],
+    "final_traceability_and_supersession": ["B1_ASSUMPTION_STATUS", "B1_EQUIVALENCE_CLASSIFICATION", "B1_FINAL_CONTRADICTION_ROUTING", "B1_FINAL_TRACEABILITY", "B1_SUPERSEDED_CLAIMS"],
+    "accepted_branch_operator_and_reachability": ["B1_FIXED_BRANCH_REGISTRY", "B1_COMPLETE_STEP_JACOBIANS", "B1_SLOW_CLUSTER_REGISTRY", "B1_INTERVENTION_REGISTRY", "B1_RETENTION_PROBE", "B1_CAUSAL_ROLE_MATRIX"],
+    "inherited_ladder_and_method": ["B1_AUTHORITATIVE_SPECIFICATION", "B1_EVIDENCE_GROUNDED_SUCCESSOR"],
+    "historical_theory_identity": ["THEORY_CONTINUATION_SPECTRUM", "THEORY_READBACK"]
+  },
   "graph_sources": [
     {
       "source_id": "B1_CLOSEOUT_ACCEPTANCE",
@@ -16,7 +54,7 @@
       "precedence_rank": 1,
       "may_consume_as": ["acceptance_authority", "GRV_C6_assignment", "artifact_binding", "runtime_change_boundary"],
       "must_not_consume_as": ["B2_positive_evidence", "GRR3_to_GRR5_evidence", "runtime_extension_authorization"],
-      "consumed_pointers": ["/assigned_closeout_rung", "/acceptance_status", "/runtime_change_authorized", "/B1_L_execution_authorized"]
+      "consumed_pointers": ["/assigned_closeout_rung", "/acceptance_status", "/result_revision", "/runtime_change_authorized", "/B1_L_execution_authorized"]
     },
     {
       "source_id": "B1_EVIDENCE_BUNDLE",
@@ -43,7 +81,7 @@
       "precedence_rank": 1,
       "may_consume_as": ["GRR2_boundary", "causal_role_status", "unresolved_rivals"],
       "must_not_consume_as": ["B2_positive_evidence", "native_GRR3", "native_mediation"],
-      "consumed_pointers": ["/payload/highest_supported_claim", "/payload/summary", "/payload/rows"]
+      "consumed_pointers": ["/payload/highest_supported_claim", "/payload/summary/maximum_retention_ladder_rung", "/payload/summary/synthetic_input_provenance_preserved", "/payload/summary/branch_relocation_rival_unresolved", "/payload/summary/native_mediation_supported", "/payload/rows"]
     },
     {
       "source_id": "B1_FINAL_CLAIMS",
@@ -117,7 +155,7 @@
       "precedence_rank": 2,
       "may_consume_as": ["GRR2_prerequisite_boundary", "synthetic_provenance_boundary", "branch_relocation_rival", "native_mediation_negative_boundary"],
       "must_not_consume_as": ["B2_positive_evidence", "runtime_reached_formation", "GRR3", "GRR4", "core_ReadBack"],
-      "consumed_pointers": ["/payload/summary", "/payload/claim_boundary", "/payload/assumption_statuses", "/payload/present_current_convention"]
+      "consumed_pointers": ["/payload/summary/maximum_local_evidence_ladder_rung", "/payload/summary/forming_old_current_input_runtime_reached", "/payload/summary/native_mediation_count", "/payload/summary/branch_relocation_rival_unresolved_GRR2_row_count", "/payload/candidate_rows", "/payload/claim_boundary", "/payload/assumption_statuses", "/payload/present_current_convention"]
     },
     {
       "source_id": "B1_INTERVENTION_REGISTRY",
@@ -127,6 +165,85 @@
       "may_consume_as": ["control_vocabulary", "intervention_provenance", "structural_control_boundary"],
       "must_not_consume_as": ["automatic_B2_control_admission", "B2_positive_evidence", "native_control_result"],
       "consumed_pointers": ["/payload/canonical_control_operations", "/payload/interventions", "/payload/summary"]
+    },
+    {
+      "source_id": "B1_SLOW_CLUSTER_REGISTRY",
+      "path": "outputs/slow_cluster_registry.json",
+      "source_classification": "accepted_gate_evidence",
+      "precedence_rank": 2,
+      "acceptance_source_id": "B1_GRV3_ACCEPTANCE",
+      "may_consume_as": ["accepted_temporal_operator_domain", "blocked_and_admitted_slow_cluster_rows", "branch_operator_crosswalk"],
+      "must_not_consume_as": ["B2_slow_cluster_evidence", "new_GRR3", "post_hoc_projector_selection"],
+      "consumed_pointers": ["/payload/cluster_count", "/payload/retention_claim_allowed", "/payload/rows"]
+    },
+    {
+      "source_id": "B1_CAUSAL_ROLE_MATRIX",
+      "path": "outputs/causal_role_matrix.json",
+      "source_classification": "accepted_gate_evidence",
+      "precedence_rank": 2,
+      "acceptance_source_id": "B1_GRV5_ACCEPTANCE",
+      "may_consume_as": ["raw_role_classification", "reachability_semantics", "branch_preparation_crosswalk"],
+      "must_not_consume_as": ["B2_positive_evidence", "native_mediation", "automatic_rung_credit"],
+      "consumed_pointers": ["/payload/source_result_payload_sha256", "/payload/summary", "/payload/rows"]
+    },
+    {
+      "source_id": "B1_ASSUMPTION_STATUS",
+      "path": "outputs/assumption_status_matrix.json",
+      "source_classification": "accepted_final_assumption_boundary",
+      "precedence_rank": 1,
+      "acceptance_source_id": "B1_CLOSEOUT_ACCEPTANCE",
+      "may_consume_as": ["assumption_status", "scope_boundary", "not_identifiable_boundary"],
+      "must_not_consume_as": ["B2_positive_evidence", "assumption_as_measurement"],
+      "consumed_pointers": ["/payload/summary", "/payload/rows", "/payload/blocked_claims"]
+    },
+    {
+      "source_id": "B1_EQUIVALENCE_CLASSIFICATION",
+      "path": "outputs/equivalence_classification.json",
+      "source_classification": "accepted_final_interpretive_boundary",
+      "precedence_rank": 1,
+      "acceptance_source_id": "B1_CLOSEOUT_ACCEPTANCE",
+      "may_consume_as": ["accepted_correspondence_class", "runtime_role_boundary", "source_evidence_deduplication"],
+      "must_not_consume_as": ["raw_measurement", "B2_positive_evidence", "extension_authorization"],
+      "consumed_pointers": ["/payload/summary", "/payload/rows", "/payload/blocked_claims"]
+    },
+    {
+      "source_id": "B1_FINAL_CONTRADICTION_ROUTING",
+      "path": "outputs/final_contradiction_routing.json",
+      "source_classification": "accepted_final_route_boundary",
+      "precedence_rank": 1,
+      "acceptance_source_id": "B1_CLOSEOUT_ACCEPTANCE",
+      "may_consume_as": ["contradiction_status", "allowed_route_boundary"],
+      "must_not_consume_as": ["raw_measurement", "B2_positive_evidence", "automatic_extension_selection"],
+      "consumed_pointers": ["/payload/theory_contradiction_count", "/payload/entries", "/payload/allowed_routes"]
+    },
+    {
+      "source_id": "B1_FINAL_TRACEABILITY",
+      "path": "outputs/final_theory_test_traceability.json",
+      "source_classification": "accepted_final_traceability_map",
+      "precedence_rank": 1,
+      "acceptance_source_id": "B1_CLOSEOUT_ACCEPTANCE",
+      "may_consume_as": ["accepted_evidence_deduplication", "claim_to_raw_evidence_traceability", "source_adjustment_boundary"],
+      "must_not_consume_as": ["duplicate_empirical_support", "B2_positive_evidence"],
+      "consumed_pointers": ["/payload/accepted_evidence_records_deduplicated", "/payload/rows", "/payload/results_pending"]
+    },
+    {
+      "source_id": "B1_SUPERSEDED_CLAIMS",
+      "path": "outputs/superseded_exploratory_claims.json",
+      "source_classification": "accepted_supersession_map",
+      "precedence_rank": 1,
+      "acceptance_source_id": "B1_CLOSEOUT_ACCEPTANCE",
+      "may_consume_as": ["superseded_revision_rejection", "accepted_replacement_wording"],
+      "must_not_consume_as": ["superseded_claim_as_evidence", "B2_positive_evidence"],
+      "consumed_pointers": ["/payload/historical_artifacts_mutated", "/payload/records"]
+    },
+    {
+      "source_id": "B1_AUTHORITATIVE_SPECIFICATION",
+      "path": "implementation/GRC9V3ContinuationReadBackVerificationSpecification.md",
+      "source_classification": "accepted_experiment_contract",
+      "precedence_rank": 2,
+      "may_consume_as": ["GRR_ladder_definition", "retention_acceptance_contract", "causal_role_definitions"],
+      "must_not_consume_as": ["empirical_result", "B2_positive_evidence", "runtime_specification"],
+      "consumed_pointers": []
     },
     {
       "source_id": "B1_EVIDENCE_GROUNDED_SUCCESSOR",

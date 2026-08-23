@@ -131,6 +131,22 @@ def file_manifest(paths: Iterable[str], root: Path = REPO_ROOT) -> dict[str, Any
     return {"files": entries, "tree_sha256": semantic_digest(entries)}
 
 
+def verify_file_manifest(manifest: dict[str, Any], root: Path = REPO_ROOT) -> bool:
+    entries = manifest.get("files", [])
+    if manifest.get("tree_sha256") != semantic_digest(entries):
+        return False
+    for entry in entries:
+        relative = require_relative(entry["path"])
+        path = root / relative
+        if not path.is_file():
+            return False
+        if path.stat().st_size != entry["size_bytes"]:
+            return False
+        if sha256_file(path) != entry["sha256"]:
+            return False
+    return True
+
+
 def receipt_digest(receipt: dict[str, Any]) -> str:
     payload = dict(receipt)
     payload.pop("receipt_payload_sha256", None)
