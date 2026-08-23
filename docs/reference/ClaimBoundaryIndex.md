@@ -450,6 +450,38 @@ re-admitted. RCAE must generate new ecology-side evidence; a combined B-R+C.2
 provider is a new composition requiring separate controls. N32 remains
 unselected.
 
+## B1-GR Continuation And Read-Back Verification
+
+Bounded claim: B1-GR closes at `GRV-C6` after a nine-gate verification over
+unchanged `GRC9V3`. It accepts bounded fixed-topology formed branches, exact
+stage-local current recurrence, bounded L3 causal closure, reduced
+continuation/transition diagnostics, and synthetic `C`-dominated neutral
+persistence at `GRR2`. Native current recurrence is a real reflexive mechanism
+but is not the core Read-Back relation.
+
+Evidence pointers:
+
+- [B1-GR README](../../experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/README.md): Experiment state, serial gate history, bounded claim summary, and final route position.
+- [GRV8 closeout report](../../experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/reports/b1_grv8_closeout.md): Final human closeout disposition, `GRV-C6` assignment, and non-authorization boundary.
+- [GRV8 classification report](../../experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/reports/b1_grc9v3_verification_report.md): Arrow-by-arrow causal roles, extension routes, contradiction handling, and maximum supported scientific claims.
+- [Evidence-grounded successor specification](../../experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/implementation/GRC9V3ContinuationReadBackVerificationSpecification_EvidenceGrounded_v1.md): Accepted assumption, claim, debt, contradiction, and extension classification over the preserved pre-execution specification.
+- [Nine-gate evidence bundle](../../experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/outputs/evidence_bundle_manifest.json): Non-self-referential manifest over 130 verified artifacts and all nine accepted gate anchors.
+- [General next-route handoff](../../experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/outputs/continuation_readback_next_route_handoff.json): GRC-first route order and positive/negative downstream consumption boundaries.
+- [Closeout acceptance anchor](../../experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/outputs/gates/grv8_closeout_acceptance_anchor.json): Authority-bearing acceptance of the immutable Stage 2 package.
+
+Claim ceiling: bounded verification and route classification for unchanged
+`GRC9V3`. B1-GR does not establish a native Read-Back operator, write-back,
+closed read/write loop, unique retained projector, full-state classical
+Jacobian across categorical boundaries, unrestricted continuation, or global
+orbit nonexistence. `GRV-C6` does not authorize a runtime extension, B1-L,
+N32, `l04`, memory, learning, agency, organism/life, or any LGRC claim.
+
+Continuation boundary: the accepted handoff orders unchanged-GRC
+constructibility first, target-conditioned selectable GRC extensions second,
+analysis/identifiability debt third, and LGRC-specific investigation fourth.
+Closing B1-GR selects none of those routes automatically. B1-L is a deferred
+LGRC-specific scaffold, not the umbrella handoff.
+
 ## Forward Catalog Orientation
 
 The N30+ roadmap package is a planning and ontology layer for future
