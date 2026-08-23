@@ -126,6 +126,60 @@ class GRV7SpatialTemporalThresholdTest(unittest.TestCase):
             ]
         )
 
+    def test_load_bearing_operator_contract_is_typed(self) -> None:
+        self.assertEqual(
+            [
+                "operator_identity",
+                "branch_identity",
+                "reduction_validity",
+                "critical_subspace_identity",
+                "uncertainty_separated_threshold_relation",
+                "categorical_boundary_separation",
+            ],
+            self.config["scientific_discriminator_priority"],
+        )
+        operators = self.config["operator_contract"]
+        self.assertEqual(
+            {
+                "H_row",
+                "H_signed",
+                "H_WLS",
+                "H_cont_W_star",
+                "A_W_H_cont_W_star",
+                "A_full",
+            },
+            {key for key in operators if not key.endswith("allowed") and key != "cross_operator_comparison_requires_common_domain_or_declared_embedding"},
+        )
+        for operator_id in (
+            "H_row",
+            "H_signed",
+            "H_WLS",
+            "H_cont_W_star",
+            "A_W_H_cont_W_star",
+            "A_full",
+        ):
+            self.assertEqual(
+                {"domain", "metric", "sign_convention", "threshold_rule"},
+                set(operators[operator_id]),
+            )
+        self.assertFalse(operators["cross_operator_eigenvalue_index_pairing_allowed"])
+
+    def test_reduction_contract_does_not_invent_current_slaving(self) -> None:
+        contract = self.config["reduction_admissibility_contract"]
+        self.assertEqual(
+            "clamped_counterfactual_not_current_slaving",
+            contract["frozen_W_comparator_kind"],
+        )
+        self.assertFalse(contract["current_slaving_used"])
+        self.assertEqual(
+            "not_applicable_no_current_slaving_or_feedback_elimination",
+            contract["I_minus_B_eff_invertibility_requirement"],
+        )
+        self.assertEqual(
+            "comparison_blocked_not_threshold_disagreement",
+            contract["failed_reduction_or_stratum_gate_classification"],
+        )
+
     def test_claim_ceiling_preserves_full_map_and_global_boundaries(self) -> None:
         claims = self.config["claim_boundary"]
         self.assertFalse(claims["frozen_comparator_is_complete_step_map"])

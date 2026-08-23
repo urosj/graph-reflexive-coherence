@@ -1106,13 +1106,42 @@ identified with temporal and continuation thresholds.
 
 ### Work
 
-1. Continue accepted branch families across `+1`, stable-interior, `-1`, and
+The scientific discriminator is prioritized as:
+
+```text
+operator identity
+-> branch identity
+-> reduction validity
+-> critical-subspace identity
+-> uncertainty-separated threshold relation
+-> categorical-boundary separation
+```
+
+Conditional controls such as complex-plane tracking or WLS conditioning become
+load-bearing only when the corresponding surface is used. Generic provenance
+hygiene remains required for the artifact lifecycle but is not itself evidence
+for the threshold relation.
+
+1. Type `H_row`, `H_signed`, `H_WLS`, `H_cont^{W*}`, `A_W H_cont^{W*}`, and
+   `A_full` by domain, metric, sign convention, and threshold rule before
+   comparing them. Do not pair modes by sorted eigenvalue index.
+2. Continue accepted branch families across `+1`, stable-interior, `-1`, and
    any complex unit-circle transition available in scope using preregistered
    branch matching, cluster matching, parameter-step, and restart rules.
-2. Record full transition multipliers, frozen comparators, row/signed/WLS
+3. Audit every reduced comparison at each point. A failed reduction or stratum
+   gate blocks the comparison; it is not threshold disagreement. Record current
+   slaving and loop-invertibility as not applicable where the comparator is a
+   clamped-`W` construction rather than an elimination.
+4. Compare critical invariant subspaces through a declared common domain or
+   embedding, including dimension, projector/principal-angle, physical support,
+   and symmetry character where a crossing is claimed.
+5. Record full transition multipliers, frozen comparators, row/signed/WLS
    Hessians, event status, and basin/spark evidence.
-3. Search for a preregistered strong non-equivalence counterexample.
-4. Preserve bounded correlation findings without universalizing them.
+6. Require an uncertainty-separated threshold witness and off-threshold bracket
+   for a decisive counterexample.
+7. Stop smooth continuation at event, topology, sink/basin, budget-active-set,
+   clipping, or other categorical boundaries.
+8. Preserve bounded correlation findings without universalizing them.
 
 ### Required outputs
 

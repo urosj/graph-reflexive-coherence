@@ -10,10 +10,21 @@
     "payload_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
     "payload": {
       "type": "object",
-      "required": ["gate_id", "source_contract", "path_rows", "counterexamples", "summary", "claim_boundary"],
+      "required": ["gate_id", "source_contract", "scientific_discriminator_priority", "operator_contract", "reduction_admissibility_contract", "path_rows", "counterexamples", "summary", "claim_boundary"],
       "properties": {
         "gate_id": {"const": "GRV7"},
         "source_contract": {"type": "object"},
+        "scientific_discriminator_priority": {
+          "type": "array",
+          "minItems": 6,
+          "uniqueItems": true,
+          "items": {"type": "string"}
+        },
+        "operator_contract": {
+          "type": "object",
+          "required": ["H_row", "H_signed", "H_WLS", "H_cont_W_star", "A_W_H_cont_W_star", "A_full"]
+        },
+        "reduction_admissibility_contract": {"type": "object"},
         "path_rows": {"type": "array", "minItems": 1},
         "counterexamples": {"type": "array"},
         "summary": {"type": "object"},

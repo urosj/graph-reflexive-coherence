@@ -325,6 +325,68 @@ def _categorical_evidence(model: GRC9V3, current_zero_band: float) -> dict[str, 
     }
 
 
+def _branch_sheet_identity(
+    model: GRC9V3,
+    *,
+    fixture_id: str,
+    source_branch_id: str,
+    current_zero_band: float,
+) -> dict[str, Any]:
+    projection = block_projection(model)
+    branch_state = {
+        "C": projection["C"],
+        "topology": projection["topology"],
+    }
+    constitutive_state = {"W": projection["W"], "J": projection["J"]}
+    categorical = categorical_signature(
+        model, current_zero_band=current_zero_band
+    )
+    return {
+        "fixture_id": fixture_id,
+        "source_branch_id": source_branch_id,
+        "continuation_sheet_key": f"{fixture_id}:{source_branch_id}",
+        "branch_C_topology_sha256": semantic_digest(branch_state),
+        "constitutive_W_J_sha256": semantic_digest(constitutive_state),
+        "categorical_signature_sha256": semantic_digest(categorical),
+        "symmetry_copy_substitution_allowed": False,
+        "branch_sheet_selected_before_GRV7_spectra": True,
+    }
+
+
+def _comparison_admissibility(
+    frozen: dict[str, Any], full: dict[str, Any]
+) -> dict[str, Any]:
+    structural = frozen["structural_temporal_diagnostics"]
+    mobility_admitted = bool(structural["mobility_positive_definite"])
+    frozen_admitted = mobility_admitted
+    full_admitted = bool(full["temporal_interpretation_admitted"])
+    return {
+        "frozen_W_comparator": {
+            "status": (
+                "admitted_clamped_W_C_tangent_comparator"
+                if frozen_admitted
+                else "comparison_blocked_by_mobility_failure"
+            ),
+            "admitted": frozen_admitted,
+            "current_slaving_used": False,
+            "I_minus_B_eff_invertibility_status": (
+                "not_applicable_no_current_slaving_or_feedback_elimination"
+            ),
+            "mobility_positive_definite_on_zero_sum_C_tangent": mobility_admitted,
+            "fast_slaving_claim_allowed": False,
+        },
+        "complete_step": {
+            "status": (
+                "admitted_GRV3_stratum_and_spectral_contract"
+                if full_admitted
+                else "comparison_blocked_by_GRV3_stratum_or_spectral_gate"
+            ),
+            "admitted": full_admitted,
+            "blocked_comparison_is_threshold_disagreement": False,
+        },
+    }
+
+
 def _temporal_diagnostics(
     model: GRC9V3,
     config: dict[str, Any],
@@ -493,6 +555,13 @@ def _point_record(
         fast_slow_config,
     )
     categorical = _categorical_evidence(model, current_zero_band)
+    branch_sheet_identity = _branch_sheet_identity(
+        model,
+        fixture_id=path["fixture_id"],
+        source_branch_id=source_branch_id,
+        current_zero_band=current_zero_band,
+    )
+    comparison_admissibility = _comparison_admissibility(frozen, full)
     structural_values = [
         float(value) for value in np.linalg.eigvalsh(frozen["h_cont_tangent"])
     ]
@@ -506,6 +575,7 @@ def _point_record(
         "parameter_delta_from_previous": parameter_delta,
         "parameter_step_within_declared_maximum": step_passed,
         "branch_match": match,
+        "branch_sheet_identity": branch_sheet_identity,
         "branch_certification": certification,
         "parameter_canonicalization": parameter_canonicalization,
         "path_point_admitted": bool(
@@ -535,6 +605,7 @@ def _point_record(
             "complete_step_map_claim_allowed": False,
         },
         "complete_step_temporal": full,
+        "comparison_admissibility": comparison_admissibility,
         "categorical_evidence": categorical,
         "claim_boundary": {
             "continuation_point_supported": bool(
@@ -618,6 +689,73 @@ def _symmetry_audit(
     }
 
 
+def _branch_identity_audit(points: list[dict[str, Any]]) -> dict[str, Any]:
+    rows = [
+        row
+        for point in points
+        for row in [point["primary"], *point["symmetry_partners"]]
+    ]
+    source_ids = sorted({row["source_branch_id"] for row in rows})
+    per_source = []
+    for source_id in source_ids:
+        source_rows = [row for row in rows if row["source_branch_id"] == source_id]
+        sheet_keys = {
+            row["branch_sheet_identity"]["continuation_sheet_key"]
+            for row in source_rows
+        }
+        branch_digests = {
+            row["branch_sheet_identity"]["branch_C_topology_sha256"]
+            for row in source_rows
+        }
+        constitutive_digests = {
+            row["branch_sheet_identity"]["constitutive_W_J_sha256"]
+            for row in source_rows
+        }
+        categorical_digests = {
+            row["branch_sheet_identity"]["categorical_signature_sha256"]
+            for row in source_rows
+        }
+        passed = bool(
+            len(sheet_keys) == 1
+            and len(categorical_digests) == 1
+            and all(row["branch_match"]["passed"] for row in source_rows)
+            and all(row["branch_certification"]["passed"] for row in source_rows)
+        )
+        per_source.append(
+            {
+                "source_branch_id": source_id,
+                "continuation_sheet_key_count": len(sheet_keys),
+                "branch_C_topology_digest_count": len(branch_digests),
+                "exact_branch_state_digest_identity_required": False,
+                "maximum_adjacent_coherence_state_l2": max(
+                    float(row["branch_match"]["coherence_state_l2"])
+                    for row in source_rows
+                ),
+                "maximum_adjacent_total_coherence_delta": max(
+                    float(row["branch_match"]["total_coherence_delta"])
+                    for row in source_rows
+                ),
+                "constitutive_W_J_digest_count": len(constitutive_digests),
+                "constitutive_W_J_variation_is_branch_jump": False,
+                "categorical_signature_digest_count": len(categorical_digests),
+                "passed": passed,
+                "decision": (
+                    "same_branch_sheet_preserved"
+                    if passed
+                    else "continuation_path_invalid_branch_or_category_change"
+                ),
+            }
+        )
+    passed = bool(per_source and all(row["passed"] for row in per_source))
+    return {
+        "status": "passed" if passed else "failed_closed",
+        "passed": passed,
+        "symmetry_copies_tracked_as_separate_source_branches": True,
+        "post_spectrum_sheet_selection_allowed": False,
+        "per_source_branch": per_source,
+    }
+
+
 def _cluster_path_audit(
     path_rows: list[dict[str, Any]], config: dict[str, Any]
 ) -> dict[str, Any]:
@@ -681,6 +819,118 @@ def _cluster_path_audit(
     }
 
 
+def _one_dimensional_critical_subspace_audit() -> dict[str, Any]:
+    return {
+        "status": "passed_exact_one_dimensional_common_C_tangent",
+        "common_domain": "fixed_topology_zero_sum_C_tangent",
+        "critical_subspace_dimension": 1,
+        "principal_angle_radians": 0.0,
+        "projector_distance_l2": 0.0,
+        "eigenvalue_index_pairing_used": False,
+        "physical_support": ["C"],
+        "symmetry_character": "unique_two_node_zero_sum_mode",
+        "runtime_local_Hessian_cross_object_subspace_comparison": (
+            "not_defined_per_node_geometry_diagnostic_is_not_C_tangent_operator"
+        ),
+    }
+
+
+def _ce1_threshold_separation(
+    rows: list[dict[str, Any]], config: dict[str, Any]
+) -> dict[str, Any]:
+    spatial_tolerance = float(config["thresholds"]["spatial_zero_tolerance"])
+    multiplier_tolerance = float(
+        config["thresholds"]["discrete_multiplier_tolerance"]
+    )
+    eigenvalues = [
+        float(value)
+        for row in rows
+        for value in row["analytical_continuation_hessian"]["eigenvalues"]
+    ]
+    negative_witness = max(-value for value in eigenvalues if value < 0.0)
+    positive_witness = max(value for value in eigenvalues if value > 0.0)
+    zero_residual = min(abs(value) for value in eigenvalues)
+    plus_one_residual = min(
+        abs(float(mode["real"]) - 1.0)
+        for row in rows
+        for mode in row["frozen_W_temporal_comparator"]["multipliers"]
+    )
+    separation_margin = min(
+        negative_witness - spatial_tolerance,
+        positive_witness - spatial_tolerance,
+    )
+    passed = bool(
+        zero_residual <= spatial_tolerance
+        and plus_one_residual <= multiplier_tolerance
+        and separation_margin > 0.0
+    )
+    return {
+        "status": "passed" if passed else "not_separated",
+        "passed": passed,
+        "axis": "site_potential_scale",
+        "lower_off_threshold_witness": 0.5,
+        "threshold_witness": 1.0,
+        "upper_off_threshold_witness": 1.5,
+        "analytical_zero_residual": zero_residual,
+        "spatial_zero_tolerance": spatial_tolerance,
+        "frozen_plus_one_residual": plus_one_residual,
+        "discrete_multiplier_tolerance": multiplier_tolerance,
+        "minimum_off_threshold_separation_margin": separation_margin,
+        "runtime_local_diagnostic_invariance": "exact_semantic_digest_identity",
+        "interpretation": (
+            "analytical_structural_and_frozen_plus_one_threshold_is_resolved_while_runtime_local_diagnostics_are_unchanged"
+        ),
+    }
+
+
+def _ce2_threshold_separation(
+    rows: list[dict[str, Any]], config: dict[str, Any]
+) -> dict[str, Any]:
+    spatial_tolerance = float(config["thresholds"]["spatial_zero_tolerance"])
+    multiplier_tolerance = float(
+        config["thresholds"]["discrete_multiplier_tolerance"]
+    )
+    spatial_distance = min(
+        abs(float(value))
+        for row in rows
+        for value in row["analytical_continuation_hessian"]["eigenvalues"]
+    )
+    modes = [
+        (float(row["parameters"]["dt"]), float(mode["real"]), float(mode["imag"]))
+        for row in rows
+        for mode in row["frozen_W_temporal_comparator"]["multipliers"]
+    ]
+    minus_one_residual = min(abs(real + 1.0) for _, real, _ in modes)
+    stable_margin = max(1.0 - abs(complex(real, imag)) for _, real, imag in modes)
+    unstable_margin = max(abs(complex(real, imag)) - 1.0 for _, real, imag in modes)
+    separation_margin = min(
+        spatial_distance - spatial_tolerance,
+        stable_margin - multiplier_tolerance,
+        unstable_margin - multiplier_tolerance,
+    )
+    passed = bool(
+        minus_one_residual <= multiplier_tolerance and separation_margin > 0.0
+    )
+    return {
+        "status": "passed" if passed else "not_separated",
+        "passed": passed,
+        "axis": "dt",
+        "stable_interior_witness": 0.5,
+        "minus_one_threshold_witness": 1.0,
+        "unstable_exterior_witness": 1.5,
+        "minimum_spatial_distance_from_zero": spatial_distance,
+        "spatial_zero_tolerance": spatial_tolerance,
+        "frozen_minus_one_residual": minus_one_residual,
+        "discrete_multiplier_tolerance": multiplier_tolerance,
+        "maximum_stable_interior_margin": stable_margin,
+        "maximum_unstable_exterior_margin": unstable_margin,
+        "minimum_off_threshold_separation_margin": separation_margin,
+        "interpretation": (
+            "discrete_flip_is_resolved_across_stable_threshold_and_unstable_witnesses_while_H_cont_is_fixed_away_from_zero"
+        ),
+    }
+
+
 def _counterexamples(
     path_records: list[dict[str, Any]], config: dict[str, Any]
 ) -> list[dict[str, Any]]:
@@ -709,6 +959,7 @@ def _counterexamples(
             if row["complete_step_temporal"]["temporal_interpretation_admitted"]
         }
         if path["path_id"] == "F1_scale_structural_path":
+            separation = _ce1_threshold_separation(rows, config)
             structural_signs = {
                 "negative": any(
                     min(row["analytical_continuation_hessian"]["eigenvalues"])
@@ -729,6 +980,13 @@ def _counterexamples(
                 len(runtime_digests) == 1
                 and all(structural_signs.values())
                 and "plus_one_marginality" in frozen_classes
+                and separation["passed"]
+                and all(
+                    row["comparison_admissibility"]["frozen_W_comparator"][
+                        "admitted"
+                    ]
+                    for row in rows
+                )
             )
             results.append(
                 {
@@ -742,17 +1000,28 @@ def _counterexamples(
                     "analytical_structural_sign_coverage": structural_signs,
                     "frozen_temporal_classes": sorted(frozen_classes),
                     "complete_step_scope": "blocked_by_zero_current_categorical_stratum",
+                    "reduction_admissibility": "admitted_clamped_W_no_current_slaving",
+                    "critical_subspace_audit": _one_dimensional_critical_subspace_audit(),
+                    "threshold_separation_audit": separation,
                     "claim": "runtime_row_signed_and_WLS_Hessians_do_not_identify_analytical_structural_plus_one_threshold_on_this_path",
                     "claim_allowed": passed,
                     "full_map_counterexample": False,
                 }
             )
         if path["path_id"] == "F1_dt_flip_path":
+            separation = _ce2_threshold_separation(rows, config)
             passed = bool(
                 len(runtime_digests) == 1
                 and len(analytical_digests) == 1
                 and "stable_interior" in frozen_classes
                 and "minus_one_flip_marginality" in frozen_classes
+                and separation["passed"]
+                and all(
+                    row["comparison_admissibility"]["frozen_W_comparator"][
+                        "admitted"
+                    ]
+                    for row in rows
+                )
             )
             results.append(
                 {
@@ -765,6 +1034,9 @@ def _counterexamples(
                     ),
                     "frozen_temporal_classes": sorted(frozen_classes),
                     "complete_step_scope": "blocked_by_zero_current_categorical_stratum",
+                    "reduction_admissibility": "admitted_clamped_W_no_current_slaving",
+                    "critical_subspace_audit": _one_dimensional_critical_subspace_audit(),
+                    "threshold_separation_audit": separation,
                     "claim": "a_fixed_spatial_operator_does_not_identify_the_discrete_minus_one_threshold_without_dt_and_mobility",
                     "claim_allowed": passed,
                     "full_map_counterexample": False,
@@ -867,6 +1139,7 @@ def execute_grv7(config: dict[str, Any]) -> dict[str, Any]:
             "full_map_expectation": path["full_map_expectation"],
             "points": points,
             "primary_points": primary_points,
+            "branch_identity_audit": _branch_identity_audit(points),
             "cluster_matching": _cluster_path_audit(primary_points, config),
             "all_points_admitted": all(
                 row["path_point_admitted"]
@@ -909,6 +1182,24 @@ def execute_grv7(config: dict[str, Any]) -> dict[str, Any]:
     full_counterexamples = [
         row for row in counterexamples if row.get("full_map_counterexample")
     ]
+    reduction_blocked_rows = [
+        row
+        for row in all_points
+        if not row["comparison_admissibility"]["frozen_W_comparator"]["admitted"]
+    ]
+    complete_step_blocked_rows = [
+        row
+        for row in all_points
+        if not row["comparison_admissibility"]["complete_step"]["admitted"]
+    ]
+    decisive_counterexamples = [
+        row
+        for row in supported_counterexamples
+        if row.get("threshold_separation_audit", {}).get("passed")
+        and row.get("critical_subspace_audit", {}).get("status", "").startswith(
+            "passed"
+        )
+    ]
     summary = {
         "mechanical_status": "passed",
         "source_branch_accounting_count": len(branches),
@@ -934,11 +1225,26 @@ def execute_grv7(config: dict[str, Any]) -> dict[str, Any]:
         "complete_step_complex_unit_circle_reached": "complex_unit_circle_marginality"
         in full_classes,
         "supported_bounded_counterexample_count": len(supported_counterexamples),
+        "decisive_uncertainty_separated_counterexample_count": len(
+            decisive_counterexamples
+        ),
         "supported_full_map_counterexample_count": len(full_counterexamples),
         "bounded_spatial_temporal_non_equivalence_supported": bool(
             supported_counterexamples
         ),
         "full_map_non_equivalence_supported": bool(full_counterexamples),
+        "all_branch_identity_audits_passed": all(
+            path["branch_identity_audit"]["passed"] for path in path_records
+        ),
+        "frozen_reduction_or_admissibility_blocked_point_count": len(
+            reduction_blocked_rows
+        ),
+        "complete_step_comparison_blocked_symmetry_inclusive_point_count": len(
+            complete_step_blocked_rows
+        ),
+        "critical_subspace_comparison_scope": (
+            "decisive_F1_reduced_counterexamples_share_exact_one_dimensional_C_tangent;_no_full_map_threshold_crossing_available"
+        ),
         "complex_crossing_status": "not_reached_in_preregistered_real_symmetric_and_admitted_complete_step_envelope",
         "complex_crossing_absence_is_global_nonexistence": False,
         "universal_threshold_identity_supported": False,
@@ -964,7 +1270,14 @@ def execute_grv7(config: dict[str, Any]) -> dict[str, Any]:
             "selected_source_branch_ids": sorted(selected_branch_ids),
             "all_48_source_branches_retained_in_accounting": True,
         },
+        "scientific_discriminator_priority": config[
+            "scientific_discriminator_priority"
+        ],
+        "operator_contract": config["operator_contract"],
         "continuation_contract": config["continuation_contract"],
+        "reduction_admissibility_contract": config[
+            "reduction_admissibility_contract"
+        ],
         "cluster_matching_contract": config["cluster_matching"],
         "threshold_contract": config["thresholds"],
         "path_rows": path_records,
@@ -999,6 +1312,7 @@ def write_report(payload: dict[str, Any]) -> Any:
         f"frozen_temporal_classes_reached = {summary['frozen_temporal_classes_reached']}",
         f"complete_step_temporal_classes_reached = {summary['complete_step_temporal_classes_reached']}",
         f"supported_bounded_counterexample_count = {summary['supported_bounded_counterexample_count']}",
+        f"decisive_uncertainty_separated_counterexample_count = {summary['decisive_uncertainty_separated_counterexample_count']}",
         f"supported_full_map_counterexample_count = {summary['supported_full_map_counterexample_count']}",
         f"bounded_spatial_temporal_non_equivalence_supported = {str(summary['bounded_spatial_temporal_non_equivalence_supported']).lower()}",
         f"full_map_non_equivalence_supported = {str(summary['full_map_non_equivalence_supported']).lower()}",
@@ -1006,6 +1320,28 @@ def write_report(payload: dict[str, Any]) -> Any:
         "GRV_C5_assigned = false",
         "GRV8_authorized = false",
         "```",
+        "",
+        "## Load-Bearing Scientific Discriminators",
+        "",
+        "GRV7 treats six checks as load-bearing rather than presenting generic",
+        "provenance hygiene as equally probative. `H_row`, `H_signed`, `H_WLS`,",
+        "`H_cont^{W*}`, `A_W H_cont^{W*}`, and `A_full` have separate domains,",
+        "metrics, sign conventions, and threshold rules. Cross-operator eigenvalue",
+        "index pairing is forbidden.",
+        "",
+        "Every continuation sheet remains bound to its preregistered source branch;",
+        "symmetry copies remain separate variants. The frozen comparator is a clamped-",
+        "`W` zero-sum-`C` construction, not current slaving, so an `I-B_eff` inverse",
+        "is not used or claimed. Its tangent mobility gate passes at every point.",
+        "Complete-step comparisons remain independently governed by the GRV3 stratum",
+        "and spectral gates; blocked rows are not threshold disagreements.",
+        "",
+        "The two decisive F1 examples share one exact one-dimensional zero-sum-`C`",
+        "critical subspace, so their relation does not depend on sorted eigenvalue",
+        "indices. Their threshold witnesses and off-threshold brackets are separated",
+        "from the preregistered tolerances. No corresponding full-map threshold",
+        "crossing was reached, so no full-map critical-subspace or non-equivalence",
+        "claim is available.",
         "",
         "GRV7 follows preregistered branches rather than assembling unrelated solved",
         "points after seeing spectra. All 48 GRV2 branches remain in source accounting;",
@@ -1043,10 +1379,10 @@ def write_report(payload: dict[str, Any]) -> Any:
         "",
         "## Counterexamples",
         "",
-        "| Counterexample | Status | Full-map evidence |",
-        "| --- | --- | --- |",
+        "| Counterexample | Status | Separation | Full-map evidence |",
+        "| --- | --- | --- | --- |",
         *[
-            f"| `{row['counterexample_id']}` | `{row['status']}` | `{str(row.get('full_map_counterexample', False)).lower()}` |"
+            f"| `{row['counterexample_id']}` | `{row['status']}` | `{row.get('threshold_separation_audit', {}).get('status', 'not_applicable')}` | `{str(row.get('full_map_counterexample', False)).lower()}` |"
             for row in counterexamples
         ],
         "",

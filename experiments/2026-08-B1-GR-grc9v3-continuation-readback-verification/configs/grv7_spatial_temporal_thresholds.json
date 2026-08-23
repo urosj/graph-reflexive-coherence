@@ -39,6 +39,63 @@
     "automatic_restart_after_stop": false,
     "unreached_threshold_is_negative_evidence": false
   },
+  "scientific_discriminator_priority": [
+    "operator_identity",
+    "branch_identity",
+    "reduction_validity",
+    "critical_subspace_identity",
+    "uncertainty_separated_threshold_relation",
+    "categorical_boundary_separation"
+  ],
+  "operator_contract": {
+    "H_row": {
+      "domain": "per_node_native_row_basis_local_geometry_diagnostic",
+      "metric": "native_runtime_row_basis",
+      "sign_convention": "unsigned_runtime_diagnostic",
+      "threshold_rule": "no_primary_GRV7_threshold_rule_diagnostic_only"
+    },
+    "H_signed": {
+      "domain": "per_node_native_row_basis_local_geometry_diagnostic",
+      "metric": "native_runtime_row_basis",
+      "sign_convention": "runtime_hessian_sign_applied",
+      "threshold_rule": "no_primary_GRV7_threshold_rule_diagnostic_only"
+    },
+    "H_WLS": {
+      "domain": "per_node_weighted_least_squares_local_geometry_diagnostic",
+      "metric": "runtime_WLS_embedding_metric",
+      "sign_convention": "runtime_comparison_backend_convention",
+      "threshold_rule": "comparison_backend_only_no_primary_GRV7_threshold_rule"
+    },
+    "H_cont_W_star": {
+      "domain": "fixed_topology_zero_sum_C_tangent_at_clamped_W_star",
+      "metric": "orthonormal_zero_sum_C_basis",
+      "sign_convention": "H_cont_equals_minus_H_P",
+      "threshold_rule": "structural_zero_when_absolute_eigenvalue_lte_spatial_zero_tolerance"
+    },
+    "A_W_H_cont_W_star": {
+      "domain": "fixed_topology_zero_sum_C_tangent_at_clamped_W_star",
+      "metric": "mobility_similarity_metric_with_self_adjoint_representative",
+      "sign_convention": "positive_is_temporal_relaxation_and_generator_is_its_negative",
+      "threshold_rule": "frozen_multiplier_I_minus_dt_A_W_H_cont_at_plus_one_minus_one_or_unit_circle"
+    },
+    "A_full": {
+      "domain": "GRV3_admitted_C_causal_chart_with_native_stage_reconstruction",
+      "metric": "GRV3_branch_RMS_physical_state_metric_and_declared_C_chart_basis",
+      "sign_convention": "discrete_complete_step_multiplier",
+      "threshold_rule": "plus_one_minus_one_or_complex_unit_circle_only_when_GRV3_stratum_and_spectrum_gates_admit"
+    },
+    "cross_operator_eigenvalue_index_pairing_allowed": false,
+    "cross_operator_comparison_requires_common_domain_or_declared_embedding": true
+  },
+  "reduction_admissibility_contract": {
+    "frozen_W_comparator_kind": "clamped_counterfactual_not_current_slaving",
+    "current_slaving_used": false,
+    "I_minus_B_eff_invertibility_requirement": "not_applicable_no_current_slaving_or_feedback_elimination",
+    "frozen_comparator_requires_positive_definite_mobility_on_zero_sum_C_tangent": true,
+    "complete_step_comparison_requires_GRV3_stratum_and_spectral_admission": true,
+    "failed_reduction_or_stratum_gate_classification": "comparison_blocked_not_threshold_disagreement",
+    "fast_slaving_claim_allowed": false
+  },
   "cluster_matching": {
     "method": "real_invariant_clusters_minimum_total_centroid_distance_with_dimension_preservation",
     "complex_pair_tolerance": 1e-8,

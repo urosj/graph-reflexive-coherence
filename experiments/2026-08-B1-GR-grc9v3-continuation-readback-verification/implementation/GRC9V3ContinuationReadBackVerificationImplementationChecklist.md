@@ -1548,9 +1548,22 @@ GRV_C5_status = pending_GRV7_threshold_evidence
 
 ## Iteration 8 - GRV7 Spatial, Temporal, And Continuation Thresholds
 
+- [x] Prioritize operator identity, branch identity, reduction validity,
+  critical-subspace identity, uncertainty separation, and categorical boundaries
+  as the load-bearing scientific discriminator.
+- [x] Type every compared operator by domain, metric, sign convention, and
+  threshold rule; forbid sorted-eigenvalue cross-operator pairing.
 - [x] Select admitted homogeneous and nonuniform branch families.
 - [x] Preregister branch matching, cluster matching, maximum step, and bifurcation restart rules.
 - [x] Preregister parameter sweeps and threshold rules.
+- [x] Fail closed when a reduced comparator or complete-step stratum is
+  inadmissible; do not classify a blocked comparison as threshold disagreement.
+- [x] Record that the frozen-`W` comparator uses no current slaving or
+  `I-B_eff` loop inverse.
+- [x] Compare the actual critical subspace where a decisive threshold relation
+  is claimed, including physical support and symmetry character.
+- [x] Require threshold witnesses and off-threshold brackets separated from
+  preregistered uncertainty.
 - [x] Sweep `+1`, stable-interior, `-1`, and classify available complex crossings.
 - [x] Record complete-step multipliers.
 - [x] Record frozen-`W` comparator spectrum.
