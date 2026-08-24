@@ -1,7 +1,7 @@
 # GRC9V4 Constitutive Design Investigation Checklist
 
 **Date:** 2026-08-23  
-**Status:** D0-D7 and D4-v2 accepted bounded; D5-v2 authorized but not started; D6-v2-D8 blocked
+**Status:** D0-D7, D4-v2, and D5-v2 accepted bounded; D6-v2 authorized but not started; D7-v2-D8 blocked
 **Plan:** [`GRC9V4ConstitutiveDesignPlan.md`](./GRC9V4ConstitutiveDesignPlan.md)  
 **Basis:** [`GRC9V4ConstitutiveDesignBasis.md`](./GRC9V4ConstitutiveDesignBasis.md)  
 **Ledger:** [`GRC9V4ConstitutiveDesignDecisionLedger.md`](./GRC9V4ConstitutiveDesignDecisionLedger.md)
@@ -779,8 +779,8 @@ pre-D10 technical results must exist before D10 consumes them.
 
 ## D4-v2-D7G. Candidate Completion And Structural-Closure Successor Tranche
 
-Status: active; D4-v2 accepted bounded and D5-v2 authorized but not started.
-Accepted D4-D7 records remain immutable until a successor is accepted.
+Status: active; D4-v2 and D5-v2 accepted bounded, with D6-v2 authorized but not
+started. Accepted D4-D7 records remain immutable until a successor is accepted.
 
 Common successor rules:
 
@@ -971,36 +971,85 @@ src_changed = false
 
 ### D5-v2. Candidate-Specific Directional Read-Back Completion
 
-Status: authorized; not started.
+Status: accepted bounded.
 
-- [ ] Propagate only lanes with admitted D4-v2 causal objects.
-- [ ] Preserve unaffected accepted D5 contracts without ornamental rewrites.
-- [ ] For B, derive typed one-cochain `R_B`, domain/codomain, orientation and
+- [x] Propagate only lanes with admitted D4-v2 causal objects.
+- [x] Preserve unaffected accepted D5 contracts without ornamental rewrites.
+- [x] For B, derive typed one-cochain `R_B`, domain/codomain, orientation and
       basis covariance, passive/read-off behavior, resource boundary, and
       lawful retained-`T_B` dependence; consume the D4-v2-frozen current-space
       identification explicitly.
-- [ ] If B gains a `j_B tensor j_B -> K_4` route, separate it from direct
+- [x] If B gains a `j_B tensor j_B -> K_4` route, separate it from direct
       `T_B -> K_4` with read-off, gain-off, path-overlap, and double-count
       controls; do not use either route as evidence for the other.
-- [ ] For C, test whether `R_C` is now genuinely retained-conditioned through
+- [x] For C, test whether `R_C` is now genuinely retained-conditioned through
       `T_C -> H_M -> h_M`, rather than only externally parameterized by `h_M`.
-- [ ] Consume `I_4M^pre` explicitly in the C operator typing without promoting
+- [x] Consume `I_4M^pre` explicitly in the C operator typing without promoting
       it to final physical/global compatibility.
-- [ ] Map C's `h_M`-represented Read-Back current through
+- [x] Map C's `h_M`-represented Read-Back current through
       `(I_4M^pre)^-1` before any common physical-one-form `K_4` tensor
       assembly; equal array dimensions do not establish representation identity.
-- [ ] Require lawful on-manifold selected-content and matched-complement
+- [x] Require lawful on-manifold selected-content and matched-complement
       counterfactuals for C.
-- [ ] Carry accepted A D5 unchanged unless a named earlier reopening changes
+- [x] Carry accepted A D5 unchanged unless a named earlier reopening changes
       its causal object.
-- [ ] Emit exact operator or localized closure dispositions per lane.
-- [ ] Produce `decisions/D5v2DirectionalReadBackCompletion.json`.
-- [ ] Produce `decisions/D5v2DirectionalReadBackCompletion.md`.
-- [ ] Obtain human acceptance before D6-v2.
+- [x] Emit exact operator or localized closure dispositions per lane.
+- [x] Produce `decisions/D5v2DirectionalReadBackCompletion.json`.
+- [x] Produce `decisions/D5v2DirectionalReadBackCompletion.md`.
+- [x] Obtain human acceptance before D6-v2.
+
+#### D5-v2 result
+
+```text
+record_id = GRC9V4-CD-D5V2-v1
+status = accepted_bounded
+decision_digest = 212c7db173fbe286816965070a4beebd1e5ba8e39ccc3ffb73bbecde8410cf1c
+predecessor = accepted_D4-v2
+supersedes_scope = accepted_D5-v1_B_C_and_common_comparison_only
+
+A = carried_unchanged_accepted_D5_operator_family
+A_changed_causal_object = false
+
+B = admitted_bounded_candidate_directional_Read_Back_completion
+B_operator = R_B = chi_B H_1_pre^-1 T_B
+B_derivation = canonical_Riesz_endomorphism_of_admitted_bilinear_carrier
+B_self_adjoint_space = H_1_pre_inner_product
+B_bound = norm_H1(A_B) = norm_2(Theta_B) <= t_B_max
+B_positivity_required = false
+B_retained_mediation = closed_at_operator_level
+B_direct_path = T_B -> kappa_B T_B -> K_4
+B_current_path = T_B -> R_B -> j_B -> future_local_current_tensor_K_4
+B_path_double_count_allowed = false
+
+C = admitted_bounded_candidate_retained_mediated_directional_Read_Back_completion
+C_retained_response = R_C_M = chi_C (I + tau_C Delta_1_M)^-1
+C_physical_response = inverse_I_4M_pre R_C_M I_4M_pre
+C_selected_content_witness_delta_j_l2 = 0.00603311694477177
+C_matched_complement_delta_j_l2 = 0.0
+C_kappa_zero_delta_j_l2 = 0.0
+C_tau_zero_delta_j_l2 = floating_roundoff_only
+C_retained_mediation = closed_at_operator_level_on_fixed_rank_smooth_stratum
+C_physical_contraction_claim = false_pending_D6v2_nonisometric_norm_audit
+C_direct_T_C_to_K4 = not_admitted
+
+candidate_set_after_D5-v2 = [A, B, C]
+D6-v2_eligible_candidate_set = [A, B, C]
+candidate_rejected_count = 0
+candidate_ranking_performed = false
+physical_channel_identification_count = 0
+control_row_count = 60
+current_typed_debt_count = 19
+inherited_immediate_debt_row_count = 2
+inherited_transitive_debt_row_count = 20
+complete_live_debt_union_row_count = 41
+C_mediation_gate = existential_compatible_probe_not_universal_probe_response
+D6-v2_authorized = true
+src_changed = false
+```
 
 ### D6-v2. Updated Total-Current Closure
 
-Status: blocked on D5-v2.
+Status: authorized; not started.
 
 - [ ] Rebuild the complete within-solve dependency graph and effective current
       block for every changed lane.
@@ -1009,6 +1058,16 @@ Status: blocked on D5-v2.
 - [ ] Recheck regularity, support, singular boundary, orientation, conservation,
       branch, and failure-atomicity contracts.
 - [ ] Reuse accepted D6 only with an explicit unchanged-causal-object proof.
+- [ ] For B, classify exact regularity from `1 - zeta_B lambda_i(A_B)` and
+      record `|zeta_B| t_B,max < 1` as a sufficient uniform region.
+- [ ] Use `T_B -> -T_B` to distinguish the sign-odd direct `kappa_B T_B`
+      path from the sign-even future `j_B tensor j_B` path.
+- [ ] For C, prove exact invertibility through similarity of
+      `I - zeta_C Rbar_C` and `I - zeta_C R_C,M`.
+- [ ] Report C exact branch regularity separately from physical conditioning
+      amplified by `cond(I_4M^pre)`.
+- [ ] Keep retained-conditioned `J_0`, explicit `j`, and future current-tensor
+      geometry stages factorized without same-beat geometry re-entry.
 - [ ] Block endpoint compatibility from standing in for crossing/operator
       equivalence.
 - [ ] Prevent any lane without a regular total-current closure from entering
@@ -1189,8 +1248,13 @@ D4-v2_B = admitted_bounded_candidate_geometry_and_carrier_completion
 D4-v2_C = admitted_bounded_candidate_retained_geometry_completion
 D4-v2_candidate_rejected_count = 0
 D4-v2_global_H4_closed = false
-D5-v2 = authorized_not_started
-D6-v2 = blocked_on_D5-v2
+D5-v2 = accepted_bounded
+D5-v2_A = carried_unchanged_accepted_D5_operator_family
+D5-v2_B = admitted_bounded_Riesz_Read_Back_operator_level_mediation
+D5-v2_C = admitted_bounded_retained_Hodge_Read_Back_operator_level_mediation
+D5-v2_candidate_rejected_count = 0
+D5-v2_physical_channel_identification_count = 0
+D6-v2 = authorized_not_started
 D7-v2 = blocked_on_D6-v2
 D7G = blocked_on_D7-v2
 D8-D10 = blocked_on_D7G_or_terminal_route

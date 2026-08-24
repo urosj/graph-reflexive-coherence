@@ -1,6 +1,6 @@
 # GRC9V4 Constitutive Design Decision Ledger
 
-**Status:** D0-D7 and D4-v2 accepted bounded; D5-v2 authorized but not started; D6-v2-D8 blocked
+**Status:** D0-D7, D4-v2, and D5-v2 accepted bounded; D6-v2 authorized but not started; D7-v2-D8 blocked
 
 This ledger is the additive decision record for D0-D10. The design basis and
 plan define questions and constraints; this file records accepted answers.
@@ -492,7 +492,7 @@ writer temporal side.
 
 ## D4-v2-D7G. Candidate Completion And Structural-Closure Successor Tranche
 
-Status: D4-v2 accepted bounded; D5-v2 authorized but not started; later gates blocked.
+Status: D4-v2 and D5-v2 accepted bounded; D6-v2 authorized but not started; later gates blocked.
 
 This append-only tranche does not modify or supersede accepted D4-D7 until a
 specific successor record is accepted. It prevents A's earlier completeness
@@ -501,8 +501,8 @@ structural map their named derivation attempts before comparative D8.
 
 ```text
 D4-v2 = GRC9V4-CD-D4V2-v1, accepted_bounded
-D5-v2 = GRC9V4-CD-D5V2-v1, authorized_not_started
-D6-v2 = GRC9V4-CD-D6V2-v1, blocked_on_D5-v2
+D5-v2 = GRC9V4-CD-D5V2-v1, accepted_bounded
+D6-v2 = GRC9V4-CD-D6V2-v1, authorized_not_started
 D7-v2 = GRC9V4-CD-D7V2-v1, blocked_on_D6-v2
 D7G = GRC9V4-CD-D7G-v1, blocked_on_D7-v2
 
@@ -619,7 +619,75 @@ candidate_rejected_count = 0
 architecture_selected = false
 H_4 = deferred_to_D7G
 D5-v2_eligible_candidate_set = [B, C]
-D5-v2 = authorized_not_started
+D5-v2 = accepted_bounded
+```
+
+D5-v2 execution record:
+
+```text
+decision_digest = 212c7db173fbe286816965070a4beebd1e5ba8e39ccc3ffb73bbecde8410cf1c
+chronological_predecessor = accepted_D4-v2
+superseded_scope = accepted_D5-v1_B_C_and_common_comparison_only
+
+A:
+  accepted D5 operator carried unchanged
+  changed causal object = false
+  D6-v2 reuse requires explicit unchanged-object proof
+
+B:
+  A_B = H_1,pre^-1 T_B
+  R_B = chi_B A_B
+  j_B = R_B J_trial
+  derivation = Riesz endomorphism of admitted symmetric bilinear carrier
+  units = dimensionless operator on physical one-form current
+  norm_H1(A_B) = norm_2(Theta_B) <= t_B_max
+  positivity = not required; signed response allowed
+  retained mediation = closed at operator level
+  direct path = T_B -> kappa_B T_B -> K_4
+  current path = T_B -> R_B -> j_B -> future local j_B tensor j_B -> K_4
+  direct/current double counting = forbidden
+
+C:
+  R_C,M = chi_C (I + tau_C Delta_1,M)^-1
+  Rbar_C = inverse(I_4M^pre) R_C,M I_4M^pre
+  j_C,phys = Rbar_C J_trial,phys
+  selected-content witness = nonzero physical output change
+  matched-complement witness = zero output change
+  kappa_M,C zero = removes retained-conditioned difference
+  tau_C zero = removes retained selectivity
+  retained mediation = closed at operator level on fixed-rank smooth stratum
+  retained-space contraction != physical-space contraction
+  direct T_C -> K_4 = not admitted
+
+candidate_set_after_D5-v2 = [A, B, C]
+D6-v2_eligible_candidate_set = [A, B, C]
+physical_channel_identification_count = 0
+control_rows = 60, all fail closed
+chronological_predecessor_debt_dispositions = 16
+superseded_D5_debt_dispositions = 27
+current_typed_debts = 19
+inherited_immediate_debt_rows = 2, exact identity/status/blocker binding
+inherited_transitive_debt_rows = 20, exact identity/status/blocker binding
+complete_live_debt_union_rows = 41
+C mediation gate = at least one compatible selected-content probe changes;
+                   null-direction probes may remain unchanged
+D6-v2 = authorized_not_started
+```
+
+D6-v2 handoff obligations:
+
+```text
+B exact regularity = classify 1 - zeta_B lambda_i(A_B)
+B sufficient region = |zeta_B| t_B,max < 1
+B path parity = T_B sign reversal flips direct K_4 and j_B,
+                but preserves j_B tensor j_B
+
+C exact regularity = similarity invariant between
+                     I - zeta_C Rbar_C and I - zeta_C R_C,M
+C robust conditioning = separately bounded through cond(I_4M^pre)
+
+common staging = retained-conditioned J_0, explicit j, and future current
+                 tensor remain separate with no same-beat geometry re-entry
 ```
 
 The candidate-local tranche has two separately attributable starting rows in

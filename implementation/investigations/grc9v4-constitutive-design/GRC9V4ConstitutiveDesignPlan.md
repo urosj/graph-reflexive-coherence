@@ -1,7 +1,7 @@
 # GRC9V4 Constitutive Design Investigation Plan
 
 **Date:** 2026-08-23  
-**Status:** D0-D7 and D4-v2 accepted bounded; D5-v2 authorized but not started; D6-v2-D8 blocked
+**Status:** D0-D7, D4-v2, and D5-v2 accepted bounded; D6-v2 authorized but not started; D7-v2-D8 blocked
 **Design basis:** [`GRC9V4ConstitutiveDesignBasis.md`](./GRC9V4ConstitutiveDesignBasis.md)  
 **Checklist:** [`GRC9V4ConstitutiveDesignChecklist.md`](./GRC9V4ConstitutiveDesignChecklist.md)  
 **Decision ledger:** [`GRC9V4ConstitutiveDesignDecisionLedger.md`](./GRC9V4ConstitutiveDesignDecisionLedger.md)
@@ -1104,10 +1104,10 @@ The local fixed-topology stratum remains an analysis profile, not a
 fixed-topology V4 target. Neither candidate is rejected or ranked, and `H_4`
 remains D7G work.
 
-D5-v2 is authorized but not started. Both B and C are eligible for
-candidate-specific directional Read-Back completion. Their constitutive laws
-are bounded V4 choices, not unique core-theory deductions. D6-v2 and all later
-gates remain blocked.
+D5-v2 was authorized by D4-v2 acceptance and is now implemented awaiting human
+review. Both B and C remain eligible for candidate-specific directional
+Read-Back completion under bounded V4 choices, not unique core-theory
+deductions. D6-v2 and all later gates remain blocked.
 
 ### D5-v2. Candidate-Specific Directional Read-Back Completion
 
@@ -1139,7 +1139,73 @@ Carry accepted A D5 unchanged unless a named earlier reopening changes its
 causal object. Do not manufacture an A-v2 operator merely to keep all lanes
 visually symmetric.
 
+#### D5-v2 implementation result
+
+D5-v2 is accepted bounded under record
+`GRC9V4-CD-D5V2-v1`. It consumes accepted D4-v2 as its chronological
+predecessor, supersedes only the B/C and common-comparison scope of D5-v1, and
+carries A's accepted D5 operator unchanged.
+
+Candidate B now has the canonical Riesz endomorphism of the admitted D4-v2
+bilinear carrier:
+
+```text
+A_B = H_1,pre^-1 T_B
+R_B = chi_B A_B
+j_B = R_B J_trial
+```
+
+The defining relation is `<u,A_B v>_H1pre = T_B(u,v)`. It preserves B's full
+bounded graph-local directional content without the unit error of applying a
+bilinear form directly or the representation error of applying `Theta_B` in
+physical coordinates. The operator is `H_1,pre`-self-adjoint and bounded by
+the accepted `Theta_B` capacity, but it need not be positive. Signed response
+is not continuation hardening or softening.
+
+B's direct and current-mediated structural paths remain distinct:
+
+```text
+direct:           T_B -> kappa_B T_B -> K_4
+current-mediated: T_B -> R_B -> j_B -> future local j_B tensor j_B -> K_4
+```
+
+`chi_B`, `kappa_B`, and future `zeta_B` controls isolate those paths. The
+current-tensor route receives no load-bearing credit before D6-v2 and D7G.
+
+Candidate C retains the accepted Hodge resolvent but now consumes the D4-v2
+retained geometry and non-isometric metric identification exactly:
+
+```text
+R_C,M = chi_C (I + tau_C Delta_1,M)^-1
+Rbar_C = (I_4M^pre)^-1 R_C,M I_4M^pre
+j_C,phys = Rbar_C J_trial,phys
+```
+
+An equal-resource selected-sector perturbation changes `H_1,M`, `Rbar_C`, and
+one compatible probe output; a matched complement perturbation leaves `T_C`
+and the complete response unchanged. This closes C retained mediation at the
+constitutive-operator level on the fixed-rank smooth selector stratum. It does
+not establish runtime mediation. Because `I_4M^pre` is not assumed isometric,
+retained-space positivity and contraction are not promoted into physical
+`H_1,pre` norm claims.
+
+The implementation records 60 fail-closed controls, dispositions for all 16
+current chronological D4-v2 debts and all 27 superseded D5-v1 debts, and 19
+current typed debts. It also rebinds the exact 2 immediate plus 20 transitive
+debt rows inherited through accepted D4-v2, producing a 41-row complete live
+debt union. C mediation uses an existential compatible-probe gate: one
+null-direction probe may remain unchanged, while the claim requires at least
+one preregistered lawful selected-content probe with nonzero response.
+
+All A/B/C rows are D6-v2 eligible after human acceptance, but A may be reused
+only with an explicit unchanged-causal-object proof. Total-current closure,
+complete transitions, common `H_4`, runtime evidence, physical channel
+identification, candidate ranking, specification, and implementation remain
+blocked.
+
 ### D6-v2. Updated Total-Current Closure
+
+Status: authorized; not started.
 
 Planned record: `GRC9V4-CD-D6V2-v1`, with outputs
 `decisions/D6v2UpdatedTotalCurrentClosure.json` and
@@ -1155,6 +1221,27 @@ Reusing accepted D6 is allowed only with an explicit unchanged-causal-object
 proof. Endpoint compatibility is not evidence that the crossing or effective
 operator is unchanged. A candidate that lacks a regular total-current closure
 cannot proceed to D7-v2.
+
+D6-v2 must use the exact operator structure now available. For B, classify
+`I - zeta_B A_B` by the generalized eigenvalues of the `H_1,pre`-self-adjoint
+`A_B`; `|zeta_B| t_B,max < 1` is a sufficient uniform regularity region rather
+than a generic untyped small-gain assertion. Use `T_B -> -T_B` as a path
+discriminator: the direct linear `kappa_B T_B` contribution changes sign,
+while `j_B -> -j_B` makes the future `j_B tensor j_B` contribution even.
+
+For C, exploit the exact similarity:
+
+```text
+I - zeta_C Rbar_C
+  = inverse(I_4M^pre) (I - zeta_C R_C,M) I_4M^pre
+```
+
+Exact invertibility is therefore similarity-invariant on the regular
+identification domain, while physical singular-value conditioning may degrade
+with `cond(I_4M^pre)`. Report exact branch regularity and robust physical
+conditioning separately. For both candidates, keep retained-conditioned `J_0`,
+explicit `j`, and later `j tensor j` geometry stages factorized without
+same-beat geometry re-entry.
 
 ### D7-v2. Candidate Transition Completion And Comparative Admission
 
