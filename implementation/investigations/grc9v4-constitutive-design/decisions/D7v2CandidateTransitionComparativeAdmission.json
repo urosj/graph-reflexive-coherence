@@ -1,0 +1,676 @@
+{
+  "schema_version": "1.0",
+  "record_type": "constitutive_design_gate_decision",
+  "record_id": "GRC9V4-CD-D7V2-v1",
+  "gate_id": "D7-v2",
+  "status": "accepted_bounded",
+  "supersedes": {
+    "record_id": "GRC9V4-CD-D7-v1",
+    "decision_digest": "7ffaf92b1672aa4fb116539ca5da36aef8bc7f3caf088827fd71f3ec7b483fea",
+    "scope": "comparative_A_B_C_candidate_local_transition_partition_with_A_transition_reused_unchanged_and_B_C_dispositions_added",
+    "unchanged_contracts_remain_in_force": true
+  },
+  "predecessor_decision_digest": "ad02150010c4759d1c0ac4ba079c81cff99bad1f35b715f52b980aaf404eac0a",
+  "decision_record_digest": "f0d355c3e769b43fe48f0eb8ab6e986ce80838dd55e884ad33c66e988b65106e",
+  "human_acceptance": {
+    "accepted": true,
+    "accepted_by": "experiment_owner",
+    "accepted_date": "2026-08-24",
+    "status": "accepted_bounded"
+  },
+  "source_identities": [
+    {
+      "record_id": "GRC9V4-CD-D2-v1",
+      "decision_digest": "ea2b953685bb23dfe979b2f5d2ae0f22f364a51484d6536c1721f144c9cad740",
+      "file_sha256": "d20e9a2ce8dd4fcb3cf49dbfd3ebd56fa940979e0aec2288dcc3a6a51156b8bd",
+      "role": "candidate_write_and_lifecycle_interface"
+    },
+    {
+      "record_id": "GRC9V4-CD-D4V2-v1",
+      "decision_digest": "5862cbab0d36e1137dc647d7d21d48f77666a77bf9e7b178c830d323e4ed6309",
+      "file_sha256": "042769ba96e543bd0805c245918d2e33e6453e68dea98e503094393e25708b7c",
+      "role": "candidate_geometry_carrier_and_selector_completion"
+    },
+    {
+      "record_id": "GRC9V4-CD-D5V2-v1",
+      "decision_digest": "212c7db173fbe286816965070a4beebd1e5ba8e39ccc3ffb73bbecde8410cf1c",
+      "file_sha256": "5c32129b06271f18d0bcc98b2d1c362d4b4fde86541668996cc8fd8262602d21",
+      "role": "candidate_directional_Read_Back_completion"
+    },
+    {
+      "record_id": "GRC9V4-CD-D6V2-v1",
+      "decision_digest": "ad02150010c4759d1c0ac4ba079c81cff99bad1f35b715f52b980aaf404eac0a",
+      "file_sha256": "c0b634cd084d76a2ab8993dec4bde0075a3e893aa420f506493eb98b7b63ded0",
+      "role": "authoritative_candidate_local_total_current_closures"
+    },
+    {
+      "record_id": "GRC9V4-CD-D7-v1",
+      "decision_digest": "7ffaf92b1672aa4fb116539ca5da36aef8bc7f3caf088827fd71f3ec7b483fea",
+      "file_sha256": "be5bbda2ec17aff844d7da02515149238e78da0eba3c76eb5c32ace51fc8e27c",
+      "role": "accepted_candidate_A_transition_source"
+    },
+    {
+      "record_id": "GRC9V4-CONSTITUTIVE-DESIGN-BASIS-v1",
+      "decision_digest": null,
+      "file_sha256": "07683d7d04d28a8a63952491d2f6e5c0c264657af54c69645092fda030610531",
+      "role": "frozen_design_and_claim_boundary"
+    }
+  ],
+  "assumptions": [
+    {
+      "assumption_id": "D7V2-SCOPE-01",
+      "statement": "D7-v2 completes or closes candidate-local transitions; it does not derive the common K_4 to H_4 to h_4 structural crossing."
+    },
+    {
+      "assumption_id": "D7V2-STRATUM-01",
+      "statement": "Candidate-local transition admission is evaluated on a fixed-topology, fixed-boundary, fixed-rank smooth stratum. Event and rank-change semantics remain explicit D8/D9 debt and do not narrow the eventual V4 target."
+    },
+    {
+      "assumption_id": "D7V2-A-REUSE-01",
+      "statement": "Candidate A may be reused only if its accepted D7 transition object is bound by canonical row hash without causal modification and its still-open global H_4 boundary remains explicit."
+    },
+    {
+      "assumption_id": "D7V2-B-DERIVATION-01",
+      "statement": "B requires an exact source-backed U_B. A writer copied from A, an EMA label, an untyped current outer product, or a post-hoc target chosen to retain B is not a derivation."
+    },
+    {
+      "assumption_id": "D7V2-C-AUTHORITY-01",
+      "statement": "T_C is a derived decomposition P_M_Delta C and has no independent writer or resource authority; authoritative continuity writes C exactly once and T_C is then recomputed."
+    },
+    {
+      "assumption_id": "D7V2-C-STAGING-01",
+      "statement": "The initial C profile uses the D4-v2 lagged reference geometry and fixed selector during one candidate-local beat; D7G must reopen the earliest changed gate if global h_4 changes P_M_Delta, H_M, I_4M, R_C, or J_0."
+    },
+    {
+      "assumption_id": "D7V2-CONTROL-01",
+      "statement": "Literal interventions are used only where ontologically lawful. Derived C-sector objects are controlled with on-manifold matched C states or algebraic probes rather than impossible independent T_C writes."
+    },
+    {
+      "assumption_id": "D7V2-TERMINAL-01",
+      "statement": "A terminal current-tranche closure localizes a missing theory or constitutive derivation. It is not candidate ranking, ontology rejection, or evidence that another candidate is more faithful to RC theory."
+    },
+    {
+      "assumption_id": "D7V2-EVIDENCE-01",
+      "statement": "Analytical closure and finite-dimensional witnesses are design evidence, not runtime reachability, implementation evidence, temporal stability, or architecture selection."
+    },
+    {
+      "assumption_id": "D7V2-DEBT-01",
+      "statement": "Every D6-v2 current debt and every exact inherited debt remains accounted for by exact carry, explicit supersession, resolution, or terminal-candidate archival with a named reopening condition."
+    }
+  ],
+  "candidates_considered": [
+    "V4-A-temporalized-W",
+    "V4-B-independent-derived-carrier",
+    "V4-C-constitutive-C-sector"
+  ],
+  "decision": {
+    "gate_role": "candidate_local_transition_completion_and_comparative_admission_not_global_structure_or_selection",
+    "scope": "complete_or_terminally_close_every_D6v2_eligible_A_B_C_lane_before_D7G",
+    "architecture_selected": false,
+    "candidate_ranking_performed": false,
+    "terminal_disposition_contract": {
+      "allowed": [
+        "D7G_eligible_complete_candidate_transition",
+        "current_tranche_closed_missing_theory",
+        "current_tranche_closed_missing_constitutive_derivation",
+        "current_tranche_rejected_target_incompatibility"
+      ],
+      "paused_control_flow_only": "reopen_at_named_earlier_gate",
+      "forbidden_terminal": "routed_not_rejected"
+    },
+    "common_transition_contract": {
+      "required_properties": [
+        "Markov_closed_on_declared_state",
+        "fully_stage_ordered",
+        "single_atomic_commit_or_explicit_fail_closed",
+        "resource_and_nonresource_accounted",
+        "no_hidden_RNG_cache_queue_or_history",
+        "candidate_specific_control_realizations",
+        "event_boundary_explicit"
+      ],
+      "control_roles": [
+        "passive",
+        "read_off",
+        "write_off",
+        "frozen_carrier",
+        "rival_carrier",
+        "reversal_and_covariance",
+        "event_boundary"
+      ],
+      "control_realization_types": [
+        "lawful_literal_runtime_intervention",
+        "preregistered_on_manifold_matched_counterfactual",
+        "explicitly_labelled_algebraic_probe"
+      ],
+      "off_manifold_control_manufacture_allowed": false,
+      "load_bearing_arrow_may_remain_requirement_prose": false
+    },
+    "candidate_partition_before_D7v2": {
+      "eligible": [
+        "V4-A-temporalized-W",
+        "V4-B-independent-derived-carrier",
+        "V4-C-constitutive-C-sector"
+      ],
+      "closed": [],
+      "rejected": []
+    },
+    "unchanged_A_transition_proof": {
+      "source_record": "GRC9V4-CD-D7-v1",
+      "source_candidate_id": "V4-A-temporalized-W",
+      "source_candidate_row_canonical_sha256": "8a9bc131e9a2d2a901db324b3817cfaf31d104030e6d6c1cdd7fccc1fd7c0484",
+      "causal_object_changed": false,
+      "state_changed": false,
+      "stage_order_changed": false,
+      "equation_changed": false,
+      "controls_weakened": false,
+      "global_H4_boundary_closed": false,
+      "reuse_mechanism": "immutable_source_row_reference_not_condensed_restatement",
+      "authoritative_row_location": "GRC9V4-CD-D7-v1.decision.candidate_transition_registry[V4-A-temporalized-W]",
+      "D7v2_registry_entry_role": "source_reference_plus_comparative_disposition_only",
+      "reuse_disposition": "exact_candidate_transition_reuse_with_open_H4_boundary"
+    },
+    "candidate_transition_registry": [
+      {
+        "candidate_id": "V4-A-temporalized-W",
+        "transition_id": "GRC9V4-D7-A-BOUNDED-KINETIC-WRITE-READ-LOOP-v1",
+        "terminal_disposition": "D7G_eligible_complete_candidate_transition",
+        "complete_candidate_local_transition": true,
+        "D7G_eligible": true,
+        "candidate_rejected": false,
+        "registry_entry_role": "immutable_source_row_reference_plus_D7v2_comparative_disposition",
+        "authoritative_source_record": "GRC9V4-CD-D7-v1",
+        "authoritative_source_candidate_row_canonical_sha256": "8a9bc131e9a2d2a901db324b3817cfaf31d104030e6d6c1cdd7fccc1fd7c0484",
+        "source_row_modified_by_D7v2": false,
+        "global_H4_boundary_status": "open_until_D7G",
+        "claim_ceiling": "exactly_reused_bounded_A_fixed_stratum_kinetic_recurrence_pending_D7G_not_architecture_selection_runtime_evidence_or_normative_V4"
+      },
+      {
+        "candidate_id": "V4-B-independent-derived-carrier",
+        "transition_id": "GRC9V4-D7V2-B-INCOMPLETE-WRITER-AUDIT-v1",
+        "terminal_disposition": "current_tranche_closed_missing_constitutive_derivation",
+        "complete_candidate_local_transition": false,
+        "D7G_eligible": false,
+        "candidate_rejected": false,
+        "ontology_rejected": false,
+        "completed_arrows": [
+          "T_B_k_to_S_4_B_equals_T_B_k",
+          "T_B_k_to_K_4_B_candidate_payload_equals_K_4_base_plus_kappa_B_T_B_k",
+          "T_B_k_to_A_B_equals_H_1_pre_inverse_T_B_k",
+          "A_B_to_R_B_equals_chi_B_A_B",
+          "R_B_and_J_trial_to_j_B",
+          "D6v2_regular_closure_to_J_C_B",
+          "J_C_B_to_authoritative_continuity_and_typed_future_current_tensor_payload"
+        ],
+        "missing_load_bearing_arrow": {
+          "arrow": "declared_downstream_consequence_to_exact_U_B_to_T_B_k_plus_1",
+          "required_signature": "U_B(T_B_k,C_k,J_C_B_k,declared_downstream_state,geometry_topology_context,clock,lifecycle)_to_T_B_k_plus_1",
+          "why_load_bearing": "without_U_B_the_independent_serialized_carrier_has_no_formation_retention_release_or_next_beat_causal_law",
+          "source_status": "no_frozen_core_B1_B2_D0_D6v2_source_derives_or_selects_the_operator",
+          "placeholder_status": "D2_explicitly_left_U_B_abstract_pending_source_backed_D7_derivation"
+        },
+        "writer_family_pressure": [
+          {
+            "family": "copy_A_log_geometric_writer",
+            "disposition": "rejected_invalid_type_and_ontology_transfer",
+            "reason": "A_updates_positive_scalar_mobility_toward_an_existing_G_W_target_while_B_is_a_signed_symmetric_bilinear_carrier_with_no_source_backed_target"
+          },
+          {
+            "family": "EMA_of_current_or_geometry_observable",
+            "disposition": "rejected_cache_substitution",
+            "reason": "slowness_does_not_supply_Bs_formation_release_capacity_or_independent_causal_authority"
+          },
+          {
+            "family": "raw_J_C_outer_J_C_target",
+            "disposition": "rejected_unadmitted_constitutive_law",
+            "reason": "it_is_sign_even_positive_semidefinite_and_does_not_derive_the_signed_T_B_family_or_its_units_capacity_and_release"
+          },
+          {
+            "family": "difference_of_current_tensors_or_baseline_subtraction",
+            "disposition": "not_admitted_without_new_theory",
+            "reason": "the_reference_choice_gain_normalization_and_sign_semantics_would_be_post_hoc_revision_content"
+          },
+          {
+            "family": "relax_T_B_to_zero",
+            "disposition": "insufficient",
+            "reason": "it_supplies_release_but_no_native_formation_or_counter_write"
+          },
+          {
+            "family": "hold_T_B_fixed",
+            "disposition": "control_only",
+            "reason": "it_tests_read_authority_but_is_not_a_complete_transition"
+          }
+        ],
+        "scientific_interpretation": {
+          "what_survives": "B_remains_a_coherent_typed_revision_candidate_with_geometry_Read_Back_and_regular_current_closures",
+          "what_closes": "the_current_design_tranche_cannot_complete_B_without_inventing_U_B",
+          "not_implied": [
+            "A_or_C_is_more_RC_faithful",
+            "independent_carriers_are_impossible",
+            "B_ontology_is_rejected",
+            "future_source_backed_B_successor_is_blocked"
+          ],
+          "reopening_condition": "a_named_theory_or_constitutive_successor_derives_U_B_with_type_units_capacity_release_covariance_and_lifecycle_semantics_then_reopens_D2_D7v2_for_B"
+        },
+        "claim_ceiling": "typed_B_carrier_geometry_Read_Back_and_current_closure_with_current_tranche_terminally_closed_at_missing_exact_writer"
+      },
+      {
+        "candidate_id": "V4-C-constitutive-C-sector",
+        "transition_id": "GRC9V4-D7V2-C-FIXED-SECTOR-HODGE-WRITE-READ-LOOP-v1",
+        "terminal_disposition": "D7G_eligible_complete_candidate_transition",
+        "complete_candidate_local_transition": true,
+        "D7G_eligible": true,
+        "candidate_rejected": false,
+        "independent_state": [
+          "authoritative_C_k_on_live_nodes",
+          "fixed_topology_boundary_and_pre_read_graph_Hodge_package",
+          "fixed_profile_parameters_Lambda_C_C_ref_kappa_M_C_tau_C_chi_C_zeta_C",
+          "declared_lifecycle_context"
+        ],
+        "derived_not_independent": [
+          "P_M_Delta",
+          "T_C_k=P_M_Delta C_k",
+          "H_M_and_h_M",
+          "I_4M_pre",
+          "R_C_M_and_Rbar_C",
+          "J0_C_J_C_C_and_j_C"
+        ],
+        "stage_order": [
+          "derive_the_fixed_rank_P_M_Delta_from_h_4_pre_under_the_preregistered_spectral_gap",
+          "derive_T_C_k=P_M_Delta_C_k",
+          "derive_positive_H_M_h_M_and_I_4M_pre_from_T_C_k_without_present_J_C",
+          "derive_R_C_M_and_Rbar_C",
+          "construct_the_h_M_conditioned_J0_C_from_C_k_and_the_declared_pre_read_geometry",
+          "solve_D6v2_C_total_current_J_C_C_and_derive_j_C_M_and_j_C_phys",
+          "apply_authoritative_continuity_once_to_obtain_C_k_plus_1",
+          "hold_the_within_beat_selector_fixed_and_recompute_T_C_k_plus_1=P_M_Delta_C_k_plus_1",
+          "record_content_change_and_zero_within_stratum_projector_motion_separately",
+          "atomically_commit_C_k_plus_1_only"
+        ],
+        "core_equations": {
+          "sector": "T_C_k=P_M_Delta C_k",
+          "metric": "H_1_M=D_C H_1_pre D_C; D_C=diag(exp(0.5 kappa_M_C r_C(T_C_k)))",
+          "response": "R_C_M=(I+tau_C Delta_1_M)^-1; Rbar_C=I_4M_pre^-1 R_C_M I_4M_pre",
+          "closure": "J_C_C=(I-zeta_C chi_C Rbar_C)^-1 J0_C",
+          "read": "j_C_phys=chi_C Rbar_C J_C_C",
+          "continuity": "C_k_plus_1=C_k-Delta_t div(J_C_C)+declared_boundary_terms",
+          "next_sector": "T_C_k_plus_1=P_M_Delta C_k_plus_1",
+          "change_identity": "Delta T_C=P_M_Delta Delta C_on_the_fixed_selector_stratum;_the_general_selector_motion_term_is_zero_only_within_this_stratum"
+        },
+        "authority_and_accounting": {
+          "resource": "C_is_counted_once_and_written_only_by_authoritative_continuity",
+          "sector": "T_C_is_a_nonresource_decomposition_and_never_committed_as_independent_state",
+          "current": "postsolve_J_C_C_is_authoritative_for_continuity_and_declared_downstream_consequences",
+          "selector": "deterministic_pre_read_derived_authority_on_the_fixed_gap_stratum",
+          "write_count": "one_C_commit_and_zero_independent_T_C_commits_per_valid_beat",
+          "hidden_state": false
+        },
+        "closed_loop": {
+          "direct_retained_geometry_loop": "C_k_to_T_C_k_to_H_M_h_M_to_J0_C_and_J_C_C_to_C_k_plus_1_to_T_C_k_plus_1",
+          "explicit_Read_Back_loop": "T_C_k_to_H_M_to_R_C_to_j_C_to_J_C_C_to_C_k_plus_1_to_T_C_k_plus_1",
+          "loop_closed_on_declared_state": true,
+          "same_beat_new_sector_read": false,
+          "same_beat_geometry_reentry": false,
+          "global_structural_cultivation_loop": "open_until_D7G"
+        },
+        "formation_retention_release_contract": {
+          "projected_sector_write_status": "closed_formal_recurrence_an_attributable_P_M_Delta_projected_C_change_relative_to_a_matched_no_forming_state_changes_T_C_by_a_preregistered_nonzero_margin",
+          "retained_conditioned_mediation_status": "established_at_constitutive_operator_level_T_C_changes_H_M_R_C_and_later_response_on_the_declared_selected_sector_domain",
+          "effective_retained_write_status": "open_D8_requires_executed_branch_clock_horizon_norm_persistence_criterion_and_stability_classification_after_forming_preparation_is_stopped_or_standardized",
+          "dynamic_retention_status": "open_D8",
+          "temporal_persistence_class": "unassigned",
+          "retention_criterion_not_result": "selected_sector_content_must_remain_addressable_and_load_bearing_on_later_H_M_and_R_C_after_the_original_forming_input_is_absent_or_standardized",
+          "release_or_reconfiguration_criterion_not_result": "accounted_C_redistribution_returns_attributable_sector_content_to_its_matched_baseline_or_moves_it_out_of_the_sector;_rank_change_alone_is_not_release",
+          "driver_refresh_allowed": false,
+          "administrative_reset_is_release": false,
+          "runtime_evidence_claimed": false
+        },
+        "lawful_control_realization": {
+          "read_off": "chi_C=0_removes_explicit_R_C_read_while_preserving_T_C_conditioned_H_M_to_J0_C",
+          "gain_off": "zeta_C=0_makes_J_C_C=J0_C_and_leaves_diagnostic_j_C_without_a_causal_consumer",
+          "retained_geometry_off": "kappa_M_C=0_removes_T_C_conditioning_from_H_M_and_the_direct_baseline_path",
+          "tau_zero": "tau_C=0_makes_R_C_M_identity_and_removes_the_retained_Hodge_filter_shape",
+          "on_manifold_write_counterfactual": "an_independent_T_C_switch_is_unlawful;_compare_reachable_matched_C_transitions_that_differ_only_in_the_declared_qualifying_projected_write_contribution",
+          "continuity_stop_staging_probe": "stopping_before_authoritative_continuity_is_an_algebraic_stage_boundary_probe_only;_it_removes_the_transition_and_is_not_a_write_off_or_causal_write_counterfactual",
+          "frozen_carrier": "not_a_lawful_independent_runtime_state;_use_an_algebraic_fixed_T_C_operator_probe_or_a_reachable_matched_C_state",
+          "rival_carrier": "match_C_total_fixed_topology_boundary_h_4_pre_and_selector_rank_then_use_selected_sector_vs_Ker_P_M_Delta_perturbations",
+          "reversal_and_covariance": "node_edge_relabeling_conjugates_all_maps;_physical_current_reversal_is_distinct_from_coordinate_reorientation",
+          "event_boundary": "rank_gap_boundary_or_topology_change_exits_D7v2_and_routes_to_D8_D9"
+        },
+        "finite_dimensional_composition_witness": {
+          "source": "D5v2_and_D6v2_three_node_two_edge_path_witnesses",
+          "selector_range": "constant_mode_plus_first_nonconstant_path_mode",
+          "C_selected": [1.2, 1.0, 0.8],
+          "J0_C": [1.0, -0.4],
+          "zeta_C": 0.5,
+          "J_C_C": [1.39069504569393, -0.4396646248281818],
+          "j_C_phys": [0.78139009138786, -0.0793292496563636],
+          "D6v2_closure_residual_l2": 5.551115123125783e-17,
+          "D5v2_selected_delta_j_l2": 0.00603311694477177,
+          "role": "analytical_stage_composition_witness_not_runtime_formation_retention_or_margin_evidence"
+        },
+        "global_structure_boundary": {
+          "candidate_K_4_payload": "zeta_C_vertex_star_assembled_graph_local_j_C_phys_tensor_j_C_phys",
+          "H_4": "open_until_D7G",
+          "h_4_to_h_M_compatibility": "open_until_D7G",
+          "I_4M_pre_finality": false,
+          "required_reopen_rule": "if_D7G_changes_h_4_pre_P_M_Delta_H_M_I_4M_R_C_or_J0_reopen_the_earliest_changed_gate_and_propagate_forward"
+        },
+        "claim_ceiling": "bounded_complete_C_fixed_selector_stratum_projected_sector_Hodge_recurrence_with_retained_conditioned_mediation_pending_D7G_and_D8_not_effective_retained_write_dynamic_retention_persistence_class_stability_variable_rank_event_lifecycle_runtime_evidence_or_normative_V4"
+      }
+    ],
+    "candidate_completion_table": [
+      {
+        "candidate_id": "V4-A-temporalized-W",
+        "state_closed": true,
+        "read_closed": true,
+        "current_closed": true,
+        "write_closed": true,
+        "physical_C_resource_accounting_closed_for_fixed_stratum": true,
+        "retained_coordinate_accounting_closed_for_fixed_stratum": true,
+        "global_H4_closed": false,
+        "terminal_disposition": "D7G_eligible_complete_candidate_transition"
+      },
+      {
+        "candidate_id": "V4-B-independent-derived-carrier",
+        "state_closed": true,
+        "read_closed": true,
+        "current_closed": true,
+        "write_closed": false,
+        "physical_C_resource_accounting_closed_for_fixed_stratum": true,
+        "present_T_B_nonresource_read_accounting_closed_for_fixed_stratum": true,
+        "cross_beat_T_B_carrier_lifecycle_accounting_closed": false,
+        "global_H4_closed": false,
+        "terminal_disposition": "current_tranche_closed_missing_constitutive_derivation"
+      },
+      {
+        "candidate_id": "V4-C-constitutive-C-sector",
+        "state_closed": true,
+        "read_closed": true,
+        "current_closed": true,
+        "write_closed": true,
+        "physical_C_resource_accounting_closed_for_fixed_stratum": true,
+        "derived_T_C_decomposition_accounting_closed_for_fixed_stratum": true,
+        "global_H4_closed": false,
+        "terminal_disposition": "D7G_eligible_complete_candidate_transition"
+      }
+    ],
+    "candidate_partition_after_D7v2": {
+      "D7G_eligible_complete_candidate_transitions": [
+        "V4-A-temporalized-W",
+        "V4-C-constitutive-C-sector"
+      ],
+      "current_tranche_closed_missing_constitutive_derivation": [
+        "V4-B-independent-derived-carrier"
+      ],
+      "rejected_target_incompatibility": [],
+      "paused_for_earlier_gate_reopen": []
+    },
+    "ontological_comparison_interpretation": {
+      "A": "independent_retained_mobility_with_an_explicit_cross_beat_writer",
+      "B": "independent_structural_carrier_with_a_complete_conditional_constitutive_read_current_mechanism_but_no_endogenous_formative_writer",
+      "C": "no_independent_carrier_state_selected_content_is_a_sector_of_C_and_the_authoritative_C_transition_closes_the_formal_recurrence",
+      "B_key_distinction": "constitutive_structure_is_not_a_formative_law;_given_T_B_the_candidate_specifies_what_the_structure_does_but_not_how_T_B_becomes_or_reconfigures",
+      "C_key_distinction": "no_U_C_is_missing_because_T_C_is_recomputed_from_authoritative_C;_whether_selected_content_is_dynamically_slow_or_persistent_remains_D8",
+      "comparative_result_is_ranking": false,
+      "D7G_question": "whether_the_distinct_A_and_C_local_recurrences_remain_causally_coherent_when_coupled_to_common_K_4_to_H_4_to_h_4_without_upstream_reopening"
+    },
+    "complete_candidate_local_transition_count": 2,
+    "terminally_closed_candidate_count": 1,
+    "rejected_candidate_count": 0,
+    "D7G_survivor_count": 2,
+    "D7G_ready_after_human_acceptance": true,
+    "D7G_authorized": true,
+    "D8_authorized": false,
+    "claim_ceiling": "two_bounded_complete_candidate_local_transitions_and_one_localized_missing_writer_closure_pending_global_H4_D8_D9_D10_specification_implementation_and_runtime_evidence",
+    "control_contract": [
+      {"control_id": "D7V2-COMMON-PASSIVE", "scope": "A_C", "realization": "candidate_specific_lawful_zero_or_no_forming_input_profile", "effect": "no_hidden_external_maintenance_or_resource_creation"},
+      {"control_id": "D7V2-COMMON-ATOMICITY", "scope": "A_C", "realization": "failed_current_continuity_or_bound_check", "effect": "no_partial_candidate_or_C_commit"},
+      {"control_id": "D7V2-COMMON-RIVAL-TOPOLOGY", "scope": "A_B_C", "realization": "fixed_topology_stratum_and_event_exit", "effect": "topology_history_cannot_be_attributed_to_the_candidate"},
+      {"control_id": "D7V2-COMMON-RIVAL-BOUNDARY", "scope": "A_B_C", "realization": "matched_or_zero_boundary_ledger", "effect": "boundary_forcing_cannot_supply_retention"},
+      {"control_id": "D7V2-COMMON-HIDDEN-STATE", "scope": "A_B_C", "realization": "complete_declared_state_reconstruction", "effect": "cache_queue_RNG_or_unsaved_history_changes_fail_closed"},
+      {"control_id": "D7V2-COMMON-ORIENTATION", "scope": "A_B_C", "realization": "signed_edge_coordinate_reversal", "effect": "cochains_transform_and_scalar_or_bilinear_objects_follow_their_declared_types"},
+      {"control_id": "D7V2-COMMON-ISOMORPHISM", "scope": "A_B_C", "realization": "graph_relabeling_conjugation", "effect": "transition_surfaces_transform_covariantly"},
+      {"control_id": "D7V2-COMMON-EVENT", "scope": "A_B_C", "realization": "topology_rank_gap_or_boundary_event", "effect": "exit_fixed_stratum_and_route_to_D8_D9_without_smooth_claim"},
+      {"control_id": "D7V2-A-READ-OFF", "scope": "A", "realization": "chi_A_zero", "effect": "explicit_j_A_off_direct_W_A_mobility_path_preserved"},
+      {"control_id": "D7V2-A-GAIN-OFF", "scope": "A", "realization": "zeta_A_zero", "effect": "diagnostic_j_A_has_no_causal_consumer"},
+      {"control_id": "D7V2-A-WRITE-OFF", "scope": "A", "realization": "hold_W_A_at_prewrite_value_after_valid_current_and_continuity", "effect": "next_beat_read_difference_tests_cross_beat_writer_authority"},
+      {"control_id": "D7V2-A-FROZEN-CARRIER", "scope": "A", "realization": "hold_W_A_constant_while_other_declared_state_advances", "effect": "separates_W_A_write_from_C_and_reference_surface_motion"},
+      {"control_id": "D7V2-A-RIVAL-C", "scope": "A", "realization": "matched_C_or_separate_C_intervention", "effect": "ordinary_C_persistence_is_not_W_A_retention"},
+      {"control_id": "D7V2-A-PHYSICAL-REVERSAL", "scope": "A", "realization": "reverse_physical_J_C_not_just_edge_coordinates", "effect": "J_squared_is_even_but_C_k_plus_1_and_complete_W_target_may_change"},
+      {"control_id": "D7V2-A-STALE-POSTSTATE", "scope": "A", "realization": "attempt_to_reuse_C_k_differential_cache_in_W_drv", "effect": "fails_closed_postcontinuity_refresh_required"},
+      {"control_id": "D7V2-A-GLOBAL-H4-PREMOTION", "scope": "A", "realization": "record_K_without_consumed_H4", "effect": "cannot_claim_structural_cultivation"},
+      {"control_id": "D7V2-B-A-WRITER-COPY", "scope": "B", "realization": "substitute_A_log_writer", "effect": "invalid_type_and_target_transfer_rejected"},
+      {"control_id": "D7V2-B-EMA", "scope": "B", "realization": "EMA_of_current_or_geometry", "effect": "slow_cache_does_not_close_U_B"},
+      {"control_id": "D7V2-B-OUTER-PRODUCT", "scope": "B", "realization": "J_C_outer_J_C_target", "effect": "unadmitted_sign_even_PSD_writer_does_not_derive_signed_T_B"},
+      {"control_id": "D7V2-B-ZERO-RELAXATION", "scope": "B", "realization": "relax_T_B_to_zero", "effect": "release_only_does_not_supply_formation"},
+      {"control_id": "D7V2-B-FROZEN-CARRIER", "scope": "B", "realization": "hold_T_B_fixed", "effect": "valid_read_authority_probe_not_complete_transition"},
+      {"control_id": "D7V2-B-SOURCE-OMISSION", "scope": "B", "realization": "no_source_backed_U_B", "effect": "terminal_current_tranche_closure_without_candidate_rejection"},
+      {"control_id": "D7V2-C-READ-OFF", "scope": "C", "realization": "chi_C_zero", "effect": "explicit_R_C_read_off_direct_T_C_conditioned_baseline_preserved"},
+      {"control_id": "D7V2-C-GAIN-OFF", "scope": "C", "realization": "zeta_C_zero", "effect": "J_C_equals_J0_and_diagnostic_j_C_has_no_causal_consumer"},
+      {"control_id": "D7V2-C-GEOMETRY-OFF", "scope": "C", "realization": "kappa_M_C_zero", "effect": "T_C_conditioning_removed_from_H_M_and_J0_C"},
+      {"control_id": "D7V2-C-TAU-ZERO", "scope": "C", "realization": "tau_C_zero", "effect": "R_C_identity_control_without_removing_C_resource"},
+      {"control_id": "D7V2-C-WRITE-COUNTERFACTUAL", "scope": "C", "realization": "reachable_matched_C_transitions_differing_only_in_the_declared_qualifying_projected_write_contribution", "effect": "tests_projected_sector_write_without_an_unlawful_independent_T_C_switch"},
+      {"control_id": "D7V2-C-CONTINUITY-STOP-STAGING-PROBE", "scope": "C", "realization": "stop_before_authoritative_continuity", "effect": "algebraic_stage_boundary_probe_only_not_a_write_off_or_causal_write_counterfactual"},
+      {"control_id": "D7V2-C-FROZEN-CARRIER-BOUNDARY", "scope": "C", "realization": "hold_T_C_while_C_changes", "effect": "rejected_off_manifold_unless_realized_by_reachable_matched_C_state"},
+      {"control_id": "D7V2-C-SELECTED-COMPLEMENT", "scope": "C", "realization": "matched_delta_C_in_Ran_P_vs_Ker_P_with_equal_resource_total", "effect": "only_selected_content_changes_T_C_H_M_R_C"},
+      {"control_id": "D7V2-C-PROJECTOR-MOTION", "scope": "C", "realization": "separate_fixed_selector_content_term_from_selector_motion_term", "effect": "basis_motion_cannot_be_relabelled_as_sector_write"},
+      {"control_id": "D7V2-C-RANK-BOUNDARY", "scope": "C", "realization": "cutoff_gap_loss_or_rank_change", "effect": "exits_smooth_stratum_and_does_not_count_as_release"},
+      {"control_id": "D7V2-C-DIRECT-SECTOR-WRITE", "scope": "C", "realization": "attempt_to_overwrite_T_C", "effect": "fails_closed_C_continuity_is_the_only_resource_writer"},
+      {"control_id": "D7V2-C-DOUBLE-RESOURCE", "scope": "C", "realization": "add_T_C_to_C_budget", "effect": "fails_closed_T_C_is_a_decomposition"},
+      {"control_id": "D7V2-C-STALE-SELECTOR", "scope": "C", "realization": "reuse_mode_membership_after_physical_h4_change", "effect": "requires_D7G_recompute_and_readmission"},
+      {"control_id": "D7V2-C-RAW-ARRAY-BACKMAP", "scope": "C", "realization": "treat_h_M_and_h4_edge_arrays_as_identical", "effect": "fails_closed_I_4M_pre_required"},
+      {"control_id": "D7V2-C-GLOBAL-H4-PREMOTION", "scope": "C", "realization": "record_j_tensor_without_H4", "effect": "cannot_claim_structural_cultivation"},
+      {"control_id": "D7V2-ALL-PARAMETER-RANKING", "scope": "all", "realization": "compare_gain_margin_or_state_dimension_as_score", "effect": "blocked_candidate_selection_not_performed"},
+      {"control_id": "D7V2-ALL-DESIGN-AS-RUNTIME", "scope": "all", "realization": "promote_analytical_witness_to_runtime_evidence", "effect": "blocked"},
+      {"control_id": "D7V2-ALL-BOUNDED-AS-STABLE", "scope": "all", "realization": "promote_one_step_bounds_to_temporal_or_structural_stability", "effect": "blocked_pending_D8"},
+      {"control_id": "D7V2-ALL-LOOP-AS-AGENCY", "scope": "all", "realization": "relabel_constitutive_recurrence_as_learning_choice_or_agency", "effect": "blocked"},
+      {"control_id": "D7V2-ALL-DEBT-DROP", "scope": "all", "realization": "omit_current_or_inherited_debt_due_candidate_partition", "effect": "blocked_by_explicit_lineage_and_terminal_archival"}
+    ],
+    "control_contract_row_count": 42,
+    "pressure_audit": [
+      {"pressure_id": "D7V2-P01", "scope": "common", "question": "Does D7-v2 close global H_4?", "result": "no_deferred_to_D7G", "status": "satisfied"},
+      {"pressure_id": "D7V2-P02", "scope": "common", "question": "Is every candidate terminal?", "result": "A_C_eligible_B_closed", "status": "satisfied"},
+      {"pressure_id": "D7V2-P03", "scope": "common", "question": "Is routed_not_rejected used as terminal?", "result": "no", "status": "satisfied"},
+      {"pressure_id": "D7V2-P04", "scope": "common", "question": "Is candidate ranking performed?", "result": "no", "status": "satisfied"},
+      {"pressure_id": "D7V2-P05", "scope": "common", "question": "Are fixed-topology results presented as normative scope?", "result": "no_local_verification_stratum_only", "status": "satisfied"},
+      {"pressure_id": "D7V2-P06", "scope": "common", "question": "Can an event remain inside the smooth transition?", "result": "no_routes_to_D8_D9", "status": "satisfied"},
+      {"pressure_id": "D7V2-P07", "scope": "common", "question": "Can a failed solve partially write state?", "result": "no_atomic_fail_closed", "status": "satisfied"},
+      {"pressure_id": "D7V2-P08", "scope": "common", "question": "Can hidden RNG or cache history change the future?", "result": "no", "status": "satisfied"},
+      {"pressure_id": "D7V2-P09", "scope": "A", "question": "Is the accepted A transition changed?", "result": "no_exact_row_hash_bound", "status": "satisfied"},
+      {"pressure_id": "D7V2-P10", "scope": "A", "question": "Are postcontinuity surfaces refreshed?", "result": "yes", "status": "satisfied"},
+      {"pressure_id": "D7V2-P11", "scope": "A", "question": "Can new W reenter the same current solve?", "result": "no", "status": "satisfied"},
+      {"pressure_id": "D7V2-P12", "scope": "A", "question": "Can diagnostic j write W directly?", "result": "no", "status": "satisfied"},
+      {"pressure_id": "D7V2-P13", "scope": "A", "question": "Does write-off isolate next-beat authority?", "result": "yes", "status": "satisfied"},
+      {"pressure_id": "D7V2-P14", "scope": "A", "question": "Does physical reversal collapse into coordinate reversal?", "result": "no", "status": "satisfied"},
+      {"pressure_id": "D7V2-P15", "scope": "A", "question": "Is a K tensor claimed as executed geometry?", "result": "no", "status": "satisfied"},
+      {"pressure_id": "D7V2-P16", "scope": "A", "question": "Is bounded recurrence called stable?", "result": "no_D8_debt", "status": "satisfied"},
+      {"pressure_id": "D7V2-P17", "scope": "B", "question": "Is exact U_B present in frozen sources?", "result": "no", "status": "satisfied_negative"},
+      {"pressure_id": "D7V2-P18", "scope": "B", "question": "Can A's writer be copied lawfully?", "result": "no_type_and_target_mismatch", "status": "satisfied"},
+      {"pressure_id": "D7V2-P19", "scope": "B", "question": "Does an EMA establish B?", "result": "no_cache_substitute", "status": "satisfied"},
+      {"pressure_id": "D7V2-P20", "scope": "B", "question": "Does J outer J derive signed T_B?", "result": "no_sign_even_PSD_mismatch", "status": "satisfied"},
+      {"pressure_id": "D7V2-P21", "scope": "B", "question": "Does zero relaxation provide formation?", "result": "no", "status": "satisfied"},
+      {"pressure_id": "D7V2-P22", "scope": "B", "question": "Does frozen T_B provide a transition?", "result": "no_control_only", "status": "satisfied"},
+      {"pressure_id": "D7V2-P23", "scope": "B", "question": "Is B rejected ontologically?", "result": "no_current_tranche_only", "status": "satisfied"},
+      {"pressure_id": "D7V2-P24", "scope": "B", "question": "Is a reopening condition named?", "result": "yes_source_backed_U_B_successor", "status": "satisfied"},
+      {"pressure_id": "D7V2-P25", "scope": "C", "question": "Is T_C independently serialized?", "result": "no_derived_from_C", "status": "satisfied"},
+      {"pressure_id": "D7V2-P26", "scope": "C", "question": "Is C counted twice?", "result": "no", "status": "satisfied"},
+      {"pressure_id": "D7V2-P27", "scope": "C", "question": "Is the selector future-looking?", "result": "no_pre_read_derived", "status": "satisfied"},
+      {"pressure_id": "D7V2-P28", "scope": "C", "question": "Is present J_C used in H_M?", "result": "no", "status": "satisfied"},
+      {"pressure_id": "D7V2-P29", "scope": "C", "question": "Is selector motion hidden in content write?", "result": "no_separate_identity", "status": "satisfied"},
+      {"pressure_id": "D7V2-P30", "scope": "C", "question": "Can T_C be switched off independently?", "result": "no_off_manifold", "status": "satisfied"},
+      {"pressure_id": "D7V2-P31", "scope": "C", "question": "Is there an on-manifold selected/complement control?", "result": "yes_D5v2_witness", "status": "satisfied"},
+      {"pressure_id": "D7V2-P32", "scope": "C", "question": "Does chi_C zero isolate explicit read?", "result": "yes", "status": "satisfied"},
+      {"pressure_id": "D7V2-P33", "scope": "C", "question": "Does kappa_M_C zero isolate retained geometry?", "result": "yes", "status": "satisfied"},
+      {"pressure_id": "D7V2-P34", "scope": "C", "question": "Does zeta_C zero leave diagnostic current causally inert?", "result": "yes", "status": "satisfied"},
+      {"pressure_id": "D7V2-P35", "scope": "C", "question": "Does continuity write C exactly once?", "result": "yes", "status": "satisfied"},
+      {"pressure_id": "D7V2-P36", "scope": "C", "question": "Is next T_C recomputed only after C commit?", "result": "yes", "status": "satisfied"},
+      {"pressure_id": "D7V2-P37", "scope": "C", "question": "Does rank change count as release?", "result": "no", "status": "satisfied"},
+      {"pressure_id": "D7V2-P38", "scope": "C", "question": "Is h4-hM compatibility preaccepted?", "result": "no_D7G_debt", "status": "satisfied"},
+      {"pressure_id": "D7V2-P39", "scope": "C", "question": "Can raw equal-dimension arrays replace I_4M?", "result": "no", "status": "satisfied"},
+      {"pressure_id": "D7V2-P40", "scope": "C", "question": "Is the algebraic witness called runtime evidence?", "result": "no", "status": "satisfied"},
+      {"pressure_id": "D7V2-P41", "scope": "lineage", "question": "Are all 22 D6v2 current debts dispositioned?", "result": "yes", "status": "satisfied"},
+      {"pressure_id": "D7V2-P42", "scope": "lineage", "question": "Are all 22 inherited rows retained or adjudicated?", "result": "yes", "status": "satisfied"},
+      {"pressure_id": "D7V2-P43", "scope": "lineage", "question": "Can B debt block A or C after terminal closure?", "result": "no_archived_with_named_reopen", "status": "satisfied"},
+      {"pressure_id": "D7V2-P44", "scope": "lineage", "question": "Can B debt silently disappear?", "result": "no_nonblocking_future_debt_retained", "status": "satisfied"},
+      {"pressure_id": "D7V2-P45", "scope": "claims", "question": "Does D7-v2 select architecture?", "result": "no", "status": "satisfied"},
+      {"pressure_id": "D7V2-P46", "scope": "claims", "question": "Does D7-v2 authorize D8?", "result": "no_D7G_first", "status": "satisfied"},
+      {"pressure_id": "D7V2-P47", "scope": "claims", "question": "Does D7-v2 authorize specification or src changes?", "result": "no", "status": "satisfied"},
+      {"pressure_id": "D7V2-P48", "scope": "claims", "question": "Does loop closure imply learning or agency?", "result": "no", "status": "satisfied"},
+      {"pressure_id": "D7V2-P49", "scope": "C", "question": "Is stopping before continuity mislabelled as a write-off counterfactual?", "result": "no_staging_probe_is_separate_from_on_manifold_write_counterfactual", "status": "satisfied"}
+    ],
+    "pressure_audit_row_count": 49,
+    "predecessor_debt_lineage_contract": {
+      "source_record": "GRC9V4-CD-D6V2-v1",
+      "source_current_debt_count": 22,
+      "required_disposition_count": 22,
+      "allowed_dispositions": [
+        "carried_exact",
+        "superseded",
+        "resolved",
+        "terminal_candidate_archived_with_reopen"
+      ],
+      "silent_drop_allowed": false
+    },
+    "predecessor_debt_disposition": [
+      {"debt_id": "D6V2-DEBT-GLOBAL-H4-STRUCTURAL-CROSSING", "status": "carried_exact"},
+      {"debt_id": "D5V2-DEBT-B-WRITER-AND-LIFECYCLE", "status": "terminal_candidate_archived_with_reopen", "superseded_by": [], "archived_under": "D7V2-DEBT-B-FUTURE-SOURCE-BACKED-WRITER", "reactivates_when": "source_backed_U_B_is_admitted"},
+      {"debt_id": "D6V2-DEBT-B-DIRECT-READ-TENSOR-FACTORIZATION", "status": "terminal_candidate_archived_with_reopen", "superseded_by": [], "archived_under": "D7V2-DEBT-B-FUTURE-SOURCE-BACKED-WRITER", "reactivates_when": "source_backed_U_B_is_admitted"},
+      {"debt_id": "D6V2-DEBT-B-POST-H4-CAPACITY", "status": "terminal_candidate_archived_with_reopen", "superseded_by": [], "archived_under": "D7V2-DEBT-B-FUTURE-SOURCE-BACKED-WRITER", "reactivates_when": "source_backed_U_B_is_admitted"},
+      {"debt_id": "D6V2-DEBT-B-MATHEMATICAL-ABSORBABILITY", "status": "terminal_candidate_archived_with_reopen", "superseded_by": [], "archived_under": "D7V2-DEBT-B-FUTURE-SOURCE-BACKED-WRITER", "reactivates_when": "source_backed_U_B_is_admitted"},
+      {"debt_id": "D5V2-DEBT-C-TRANSITION-WRITER-AND-SELECTOR-LIFECYCLE", "status": "superseded", "superseded_by": ["D7V2-DEBT-C-DYNAMIC-SELECTOR-AND-EVENT-LIFECYCLE"], "resolved_scope": "fixed_selector_stratum_transition_and_atomic_C_write"},
+      {"debt_id": "D6V2-DEBT-C-POST-H4-METRIC-CONDITION", "status": "carried_exact"},
+      {"debt_id": "D6V2-DEBT-C-MATHEMATICAL-ABSORBABILITY", "status": "carried_exact"},
+      {"debt_id": "D6V2-DEBT-UNITS-GAINS-AND-TENSOR-CAPACITY", "status": "carried_exact"},
+      {"debt_id": "D5V2-DEBT-D7V2-COMPLETE-TRANSITIONS", "status": "resolved", "resolution": "A_and_C_complete_B_terminally_closed_under_allowed_disposition"},
+      {"debt_id": "D5V2-DEBT-D8-ANALYSIS", "status": "carried_exact"},
+      {"debt_id": "D7-DEBT-A-CORE-STATUS", "status": "carried_exact"},
+      {"debt_id": "D7-DEBT-A-DISABLED-PROFILE-STAGING", "status": "carried_exact"},
+      {"debt_id": "D7-DEBT-A-TOPOLOGY-LIFECYCLE", "status": "carried_exact"},
+      {"debt_id": "D7-DEBT-A-ABSORBABILITY", "status": "carried_exact"},
+      {"debt_id": "D7-DEBT-A-UNITS-AND-GAUGE", "status": "carried_exact"},
+      {"debt_id": "D7-DEBT-A-REDUCED-TEMPORAL-STABILITY", "status": "carried_exact"},
+      {"debt_id": "D7-DEBT-D9-COMPLETE-LIFECYCLE", "status": "superseded", "superseded_by": ["D7V2-DEBT-D9-SURVIVOR-LIFECYCLE"]},
+      {"debt_id": "D7-DEBT-FORMED-BRANCH-RUNTIME", "status": "carried_exact"},
+      {"debt_id": "D7-DEBT-PHYSICAL-CHANNEL-ATTRIBUTION", "status": "carried_exact"},
+      {"debt_id": "D7-DEBT-COVARIANCE-VERIFICATION", "status": "carried_exact"},
+      {"debt_id": "D5V2-DEBT-CURRENT-SINGULAR-SUCCESSOR", "status": "carried_exact"}
+    ],
+    "predecessor_debt_disposition_count": 22,
+    "archived_candidate_debt_register": {
+      "candidate_id": "V4-B-independent-derived-carrier",
+      "archive_status": "inactive_for_current_A_C_tranche_not_resolved_or_superseded",
+      "trigger_debt_id": "D7V2-DEBT-B-FUTURE-SOURCE-BACKED-WRITER",
+      "reactivation_trigger": "admission_of_a_source_backed_exact_U_B",
+      "reactivates_debt_ids": [
+        "D5V2-DEBT-B-WRITER-AND-LIFECYCLE",
+        "D6V2-DEBT-B-DIRECT-READ-TENSOR-FACTORIZATION",
+        "D6V2-DEBT-B-POST-H4-CAPACITY",
+        "D6V2-DEBT-B-MATHEMATICAL-ABSORBABILITY"
+      ],
+      "reactivation_order": [
+        "reopen_D2_and_D7v2_for_U_B_type_formation_retention_release_and_lifecycle",
+        "reopen_D7G_for_direct_read_tensor_factorization_and_post_H4_capacity",
+        "reopen_D8_for_absorbability_and_comparative_analysis"
+      ],
+      "archived_row_count": 4
+    },
+    "inherited_debt_reference": {
+      "source_record": "GRC9V4-CD-D5V2-v1",
+      "source_decision_digest": "212c7db173fbe286816965070a4beebd1e5ba8e39ccc3ffb73bbecde8410cf1c",
+      "source_sha256": "5c32129b06271f18d0bcc98b2d1c362d4b4fde86541668996cc8fd8262602d21",
+      "exact_inherited_row_count": 22,
+      "exact_inherited_debt_ids": [
+        "D5-DEBT-C-HODGE-NORMATIVE-ENCODING",
+        "D5-DEBT-C-DYNAMIC-SECTOR",
+        "D4-DEBT-GLOBAL-METRIC-CLOSURE",
+        "D4-DEBT-A-UPDATE-AND-TOPOLOGY",
+        "D4-DEBT-TOPOLOGY-INTERSPACE",
+        "D4-DEBT-RUNTIME-ANALYTICAL-MOBILITY",
+        "D4-DEBT-GAUGE-UNITS-NORMALIZATION-AND-REGULARIZATION",
+        "D4-DEBT-C-SELECTOR-GEOMETRY-FIXED-POINT",
+        "D1-DEBT-REDUCTION-CONSTRUCTION",
+        "D1-DEBT-INFORMATION-CAPACITY-AND-RELEASE",
+        "D1-DEBT-HIDDEN-HELPER-AND-ADMIN-STATE",
+        "D1-DEBT-CANDIDATE-EQUIVALENCE",
+        "D1-DEBT-CANDIDATE-D-CLOSED-SLOT",
+        "D2-DEBT-EXACT-UPDATE-OPERATORS",
+        "D2-DEBT-MULTIWRITE-INFORMATION-COVARIANCE-AND-RNG",
+        "D3-DEBT-FORMED-BRANCH-CONSTRUCTION",
+        "D3-DEBT-A-JOINT-STRUCTURAL-THEORY",
+        "D3-DEBT-B-JOINT-STRUCTURAL-THEORY",
+        "D3-DEBT-ACTIVE-CURRENT-JOINT-STRUCTURE",
+        "D3-DEBT-OPERATOR-REPRESENTATION-AND-TRANSPORT",
+        "D3-DEBT-FUNCTIONAL-NORMALIZATION-METRIC-AND-NULLS",
+        "D3-DEBT-NONSMOOTH-SELECTOR-BOUNDARY-AND-TANGENT-CONE"
+      ],
+      "exact_rows_remain_bound": true,
+      "candidate_B_scoped_obligations": "the_B_portions_of_D1_information_capacity_D2_exact_update_and_D3_B_joint_structure_are_terminally_archived_for_the_current_tranche_and_reopen_with_D7V2_DEBT_B_FUTURE_SOURCE_BACKED_WRITER;_their_source_rows_remain_immutable_evidence",
+      "common_A_C_and_noncandidate_specific_obligations": "remain_live_exactly",
+      "silent_drop_allowed": false
+    },
+    "current_typed_debt_count": 18,
+    "inherited_debt_row_count": 22,
+    "current_live_plus_exact_inherited_bound_count": 40,
+    "terminally_archived_predecessor_debt_row_count": 4,
+    "complete_lineage_evidence_identity_count": 44
+  },
+  "open_debt": [
+    {"debt_id": "D6V2-DEBT-GLOBAL-H4-STRUCTURAL-CROSSING", "blocking_scope": "common_K_4_partition_normalization_H_4_h_4_map_structural_sign_and_metric_relative_candidate_readmission", "candidate_scope": "A_and_C_D7G_survivors", "issue": "candidate_local_payloads_are_not_yet_consumed_by_a_global_structural_map", "assumption_forbidden_downstream": "candidate_local_K_4_payload_is_executed_geometry", "resolution_gate": "D7G_or_named_theory_successor", "must_close_before_D10": true},
+    {"debt_id": "D7V2-DEBT-B-FUTURE-SOURCE-BACKED-WRITER", "blocking_scope": "future_B_reopening_only_not_A_or_C_current_tranche", "candidate_scope": "V4-B-independent-derived-carrier", "issue": "exact_U_B_formation_retention_release_capacity_and_lifecycle_law_is_missing", "assumption_forbidden_downstream": "B_has_a_complete_transition_or_can_copy_A_C_writer_semantics", "resolution_gate": "named_theory_or_constitutive_successor_then_reopen_D2_D7v2_for_B", "must_close_before_D10": false, "reactivates_debt_ids": ["D5V2-DEBT-B-WRITER-AND-LIFECYCLE", "D6V2-DEBT-B-DIRECT-READ-TENSOR-FACTORIZATION", "D6V2-DEBT-B-POST-H4-CAPACITY", "D6V2-DEBT-B-MATHEMATICAL-ABSORBABILITY"], "required_reactivation_sequence": ["D2_and_D7v2_writer_readmission", "D7G_factorization_and_post_H4_capacity", "D8_absorbability_and_comparative_analysis"]},
+    {"debt_id": "D7V2-DEBT-C-DYNAMIC-SELECTOR-AND-EVENT-LIFECYCLE", "blocking_scope": "C_rank_change_gap_loss_selector_motion_basis_transport_and_topology_event_semantics", "candidate_scope": "V4-C-constitutive-C-sector", "issue": "D7v2_closes_only_the_fixed_selector_stratum", "assumption_forbidden_downstream": "fixed_rank_sector_identity_survives_events_or_rank_changes_automatically", "resolution_gate": "D8_and_D9", "must_close_before_D10": true},
+    {"debt_id": "D6V2-DEBT-C-POST-H4-METRIC-CONDITION", "blocking_scope": "I_4M_identification_Hodge_response_and_physical_condition_bound_after_global_h4", "candidate_scope": "V4-C-constitutive-C-sector", "issue": "D7G_may_change_the_pre_read_metric_objects", "assumption_forbidden_downstream": "I_4M_pre_and_R_C_remain_valid_after_h4_changes", "resolution_gate": "D7G", "must_close_before_D10": true},
+    {"debt_id": "D6V2-DEBT-C-MATHEMATICAL-ABSORBABILITY", "blocking_scope": "C_explicit_read_nonredundancy_relative_to_complete_h_M_conditioned_baseline", "candidate_scope": "V4-C-constitutive-C-sector", "issue": "closed_transition_does_not_prove_nonabsorbability", "assumption_forbidden_downstream": "C_explicit_Read_Back_is_a_distinct_physical_channel_on_every_model_class", "resolution_gate": "D8_then_pre_D10_classification", "must_close_before_D10": true},
+    {"debt_id": "D6V2-DEBT-UNITS-GAINS-AND-TENSOR-CAPACITY", "blocking_scope": "physical_units_gauge_shared_zeta_current_tensor_scale_and_post_H4_capacity", "candidate_scope": "A_and_C_D7G_survivors", "issue": "candidate_local_gains_are_not_a_common_global_units_contract", "assumption_forbidden_downstream": "A_and_C_gains_or_margins_are_directly_comparable", "resolution_gate": "D7G_and_D8", "must_close_before_D10": true},
+    {"debt_id": "D5V2-DEBT-D8-ANALYSIS", "blocking_scope": "candidate_specific_kinetic_gain_continuation_temporal_stability_absorbability_and_comparative_analysis", "candidate_scope": "A_and_C_surviving_D7G", "issue": "complete_transitions_have_not_been_differentiated_or_compared", "assumption_forbidden_downstream": "bounded_one_step_transition_is_stable_or_superior", "resolution_gate": "D8", "must_close_before_D10": true},
+    {"debt_id": "D7-DEBT-A-CORE-STATUS", "blocking_scope": "pre_D10_provenance_and_claim_classification_of_A_write_and_Read_Back", "candidate_scope": "V4-A-temporalized-W", "issue": "A_is_revision_specific_not_inherited_core_law", "assumption_forbidden_downstream": "A_is_core_theory_or_unique_V4_completion", "resolution_gate": "D8_then_pre_D10_core_status_classification", "must_close_before_D10": true},
+    {"debt_id": "D7-DEBT-A-DISABLED-PROFILE-STAGING", "blocking_scope": "enabled_to_disabled_A_stage_and_reduction_commutation", "candidate_scope": "V4-A-temporalized-W", "issue": "disabled_profile_exact_V3_staging_not_yet_proved", "assumption_forbidden_downstream": "turning_gain_off_restores_V3_transition_exactly", "resolution_gate": "D9", "must_close_before_D10": true},
+    {"debt_id": "D7-DEBT-A-TOPOLOGY-LIFECYCLE", "blocking_scope": "W_A_birth_death_split_merge_relabel_reset_and_event_transport", "candidate_scope": "V4-A-temporalized-W", "issue": "fixed_stratum_transition_does_not_define_event lifecycle", "assumption_forbidden_downstream": "W_A_transports_across_topology_events_automatically", "resolution_gate": "D9", "must_close_before_D10": true},
+    {"debt_id": "D7-DEBT-A-ABSORBABILITY", "blocking_scope": "A_explicit_Read_Back_nonredundancy_on_selected_model_class", "candidate_scope": "V4-A-temporalized-W", "issue": "closed_transition_does_not_exclude_all_effective_mobility_reparameterizations", "assumption_forbidden_downstream": "A_explicit_read_is_nonabsorbable_on_every_fixture", "resolution_gate": "D8_then_pre_D10_absorbability_classification", "must_close_before_D10": true},
+    {"debt_id": "D7-DEBT-A-UNITS-AND-GAUGE", "blocking_scope": "A_current_tensor_metric_mobility_clock_floor_units_and_gauge", "candidate_scope": "V4-A-temporalized-W", "issue": "A_local_formula_does_not_close_global_scale semantics", "assumption_forbidden_downstream": "A_zeta_and_tensor_terms_have_final_physical_units", "resolution_gate": "D8_or_pre_D10_units_audit", "must_close_before_D10": true},
+    {"debt_id": "D7-DEBT-A-REDUCED-TEMPORAL-STABILITY", "blocking_scope": "temporal_multiplier_and_nonsmooth_floor_analysis", "candidate_scope": "V4-A-temporalized-W", "issue": "bounded recurrence_is_not_stability", "assumption_forbidden_downstream": "large_tau_or_positive_bounds_establish_retention_stability", "resolution_gate": "D8", "must_close_before_D10": true},
+    {"debt_id": "D7V2-DEBT-D9-SURVIVOR-LIFECYCLE", "blocking_scope": "serialization_restoration_reset_RNG_capability_migration_event_and_interspace_lifecycle", "candidate_scope": "A_and_C_D7G_survivors", "issue": "candidate_local_smooth_transitions_do_not_close_complete_runtime_lifecycle", "assumption_forbidden_downstream": "smooth_stratum_state_identity_is_complete_runtime_identity", "resolution_gate": "D9", "must_close_before_D10": true},
+    {"debt_id": "D7-DEBT-FORMED-BRANCH-RUNTIME", "blocking_scope": "runtime_reachability_formation_retention_release_and_replay", "candidate_scope": "any_implemented_V4_profile", "issue": "design_witnesses_are_not_runtime evidence", "assumption_forbidden_downstream": "A_or_C_has_been_reached_or_observed_in_runtime", "resolution_gate": "post_spec_implementation_and_verification_tranche", "must_close_before_D10": false},
+    {"debt_id": "D7-DEBT-PHYSICAL-CHANNEL-ATTRIBUTION", "blocking_scope": "empirical_nonabsorbability_and_rival_carrier_attribution", "candidate_scope": "any_implemented_V4_profile", "issue": "analytical_factorization_does_not_identify_physical_channel", "assumption_forbidden_downstream": "explicit_operator_is_empirically_distinct", "resolution_gate": "post_spec_causal_verification", "must_close_before_D10": false},
+    {"debt_id": "D7-DEBT-COVARIANCE-VERIFICATION", "blocking_scope": "executable_graph_orientation_component_cycle_boundary_and_adapter_covariance", "candidate_scope": "any_implemented_V4_profile", "issue": "design_covariance_has_not_been_executed", "assumption_forbidden_downstream": "formula_level_covariance_is_runtime_verified", "resolution_gate": "D8_and_post_spec_verification", "must_close_before_D10": false},
+    {"debt_id": "D5V2-DEBT-CURRENT-SINGULAR-SUCCESSOR", "blocking_scope": "passage_through_loss_of_D6_current_regularness_if_later_required", "candidate_scope": "A_and_C_regular_profiles_and_future_B_successor", "issue": "singular_boundary_is_outside_current_profile", "assumption_forbidden_downstream": "regular_profile_crosses_singular_boundary", "resolution_gate": "named_D6v2_successor_if_activated", "must_close_before_D10": false}
+  ],
+  "evidence_or_argument": [
+    "Accepted D7 supplies Candidate A's exact complete transition and a canonical candidate-row hash prevents silent modification.",
+    "D4-v2 through D6-v2 close B's carrier type, direct and current-mediated paths, and regular current solve, but D2's exact recursive U_B remains source-undetermined.",
+    "D4-v2 through D6-v2 close C's fixed-selector H_M, physical identification, Hodge response, current solve, and authoritative continuity path; D2 already fixes C's no-independent-writer identity.",
+    "The D5-v2 selected-versus-complement witness and D6-v2 current witness provide a nondegenerate analytical composition check without being promoted to runtime evidence.",
+    "B is a complete conditional constitutive/read-current mechanism but not a complete formative mechanism: given an admissible T_B it specifies effects, not endogenous becoming.",
+    "C closes the formal projected-sector recurrence and retained-conditioned mediation, while effective retained write and temporal persistence remain D8 questions.",
+    "All terminal dispositions preserve the common global H_4 boundary for D7G and the claim ceiling blocks architecture selection."
+  ],
+  "rejected_alternatives": [
+    "invent_a_B_writer_to_keep_all_three_candidates_alive",
+    "treat_Bs_fixed_carrier_read_probe_as_a_complete_transition",
+    "serialize_T_C_as_an_independent_C_resource_copy",
+    "manufacture_an_independent_T_C_write_off_control",
+    "preaccept_Cs_h4_hM_compatibility",
+    "promote_A_or_C_to_D8_before_D7G",
+    "rank_candidates_by_margin_state_dimension_or_current_completion_order"
+  ],
+  "blocked_relabels": [
+    "B_current_tranche_closure_as_B_ontology_rejection",
+    "A_or_C_completion_as_theory_preference",
+    "candidate_local_K_4_payload_as_global_structural_cultivation",
+    "fixed_selector_C_transition_as_variable_rank_lifecycle",
+    "C_projected_sector_recurrence_as_effective_retained_write_or_dynamic_retention",
+    "spatial_low_mode_as_temporal_slowness",
+    "analytical_witness_as_runtime_evidence",
+    "closed_recurrence_as_temporal_stability_learning_memory_choice_or_agency",
+    "D7G_eligibility_as_D8_or_specification_authorization"
+  ],
+  "authorization_effect": {
+    "D7G_ready_after_human_acceptance": true,
+    "D7G_authorized": true,
+    "D8_authorized": false,
+    "D9_authorized": false,
+    "D10_authorized": false,
+    "specification_authorized": false,
+    "implementation_authorized": false,
+    "runtime_or_src_change_authorized": false
+  }
+}

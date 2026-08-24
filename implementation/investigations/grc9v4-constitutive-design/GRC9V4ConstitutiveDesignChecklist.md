@@ -1,7 +1,7 @@
 # GRC9V4 Constitutive Design Investigation Checklist
 
 **Date:** 2026-08-23  
-**Status:** D0-D7 and D4-v2-D6-v2 accepted bounded; D7-v2 authorized; D7G-D8 blocked
+**Status:** D0-D7 and D4-v2-D6-v2 accepted bounded; D7-v2 implemented awaiting review; D7G-D8 blocked
 **Plan:** [`GRC9V4ConstitutiveDesignPlan.md`](./GRC9V4ConstitutiveDesignPlan.md)  
 **Basis:** [`GRC9V4ConstitutiveDesignBasis.md`](./GRC9V4ConstitutiveDesignBasis.md)  
 **Ledger:** [`GRC9V4ConstitutiveDesignDecisionLedger.md`](./GRC9V4ConstitutiveDesignDecisionLedger.md)
@@ -779,9 +779,9 @@ pre-D10 technical results must exist before D10 consumes them.
 
 ## D4-v2-D7G. Candidate Completion And Structural-Closure Successor Tranche
 
-Status: active; D4-v2 through D6-v2 accepted bounded, with D7-v2 authorized
-but not started. Accepted D4-D7 records remain immutable until a successor is
-accepted.
+Status: active; D4-v2 through D7-v2 accepted bounded, with D7G authorized and
+not started. Accepted D4-D7 records remain immutable until a
+successor is accepted.
 
 Common successor rules:
 
@@ -1134,37 +1134,89 @@ src_changed = false
 
 ### D7-v2. Candidate Transition Completion And Comparative Admission
 
-Status: authorized; not started.
+Status: accepted bounded.
 
-- [ ] Preserve A's accepted kinetic recurrence and explicit open `H_4` boundary.
-- [ ] Write B's complete `T_B -> G_B/h_B -> R_B -> J_C -> consequence -> U_B
+- [x] Preserve A's accepted kinetic recurrence and explicit open `H_4` boundary.
+- [x] Write B's complete `T_B -> G_B/h_B -> R_B -> J_C -> consequence -> U_B
       -> T_B[k+1]` transition or close B for this tranche.
-- [ ] Write C's complete `T_C -> H_M/h_M -> R_C -> J_C -> C/selector ->
+- [x] Write C's complete `T_C -> H_M/h_M -> R_C -> J_C -> C/selector ->
       T_C[k+1]` transition or close C for this tranche.
-- [ ] Require each completed transition to be Markov-closed, stage ordered,
+- [x] Require each completed transition to be Markov-closed, stage ordered,
       atomic, resource-accounted, and equipped with candidate-specific controls.
-- [ ] Realize common control roles through lawful literal interventions,
+- [x] Realize common control roles through lawful literal interventions,
       preregistered on-manifold matched counterfactuals, or explicitly labelled
       algebraic probes; never manufacture an off-manifold intervention for
       superficial control symmetry.
-- [ ] Produce one candidate-local terminal A/B/C disposition.
-- [ ] Allow only these candidate terminal dispositions:
+- [x] Produce one candidate-local terminal A/B/C disposition.
+- [x] Allow only these candidate terminal dispositions:
       `D7G_eligible_complete_candidate_transition`,
       `current_tranche_closed_missing_theory`,
       `current_tranche_closed_missing_constitutive_derivation`,
       or `current_tranche_rejected_target_incompatibility`.
-- [ ] Record `reopen_at_named_earlier_gate` only as paused control flow and
+- [x] Record `reopen_at_named_earlier_gate` only as paused control flow and
       resume D7-v2 after the named successor propagates forward.
-- [ ] Block `routed_not_rejected` as a D7-v2 terminal disposition.
-- [ ] Admit complete candidate-local transitions to D7G, not directly to D8.
-- [ ] Route zero survivors to bounded D10 closeout or a named theory successor.
-- [ ] Produce `decisions/D7v2CandidateTransitionComparativeAdmission.json`.
-- [ ] Produce `decisions/D7v2CandidateTransitionComparativeAdmission.md`.
-- [ ] Obtain human acceptance before D7G.
+- [x] Block `routed_not_rejected` as a D7-v2 terminal disposition.
+- [x] Admit complete candidate-local transitions to D7G, not directly to D8.
+- [x] Route zero survivors to bounded D10 closeout or a named theory successor.
+- [x] Produce `decisions/D7v2CandidateTransitionComparativeAdmission.json`.
+- [x] Produce `decisions/D7v2CandidateTransitionComparativeAdmission.md`.
+- [x] Obtain human acceptance before D7G.
+
+Implementation result:
+
+```text
+record_id = GRC9V4-CD-D7V2-v1
+status = accepted_bounded
+decision_digest = f0d355c3e769b43fe48f0eb8ab6e986ce80838dd55e884ad33c66e988b65106e
+supersedes = GRC9V4-CD-D7-v1
+supersession_scope = comparative_A_B_C_partition_with_A_transition_unchanged
+
+candidate_A_terminal = D7G_eligible_complete_candidate_transition
+candidate_A_reuse = exact_accepted_D7_row_bound_by_immutable_source_reference_and_canonical_hash
+
+candidate_B_terminal = current_tranche_closed_missing_constitutive_derivation
+candidate_B_ontology_rejected = false
+candidate_B_missing_arrow = exact_source_backed_U_B_to_T_B_k_plus_1
+candidate_B_reopen = named_theory_or_constitutive_successor
+candidate_B_interpretation = complete_conditional_constitutive_read_current_mechanism_not_complete_formative_mechanism
+candidate_B_reactivated_debt_count_after_valid_U_B = 4
+
+candidate_C_terminal = D7G_eligible_complete_candidate_transition
+candidate_C_transition_scope = fixed_topology_fixed_boundary_fixed_rank_strict_gap_stratum
+candidate_C_authoritative_write = C_continuity_once
+candidate_C_independent_T_C_write = false
+candidate_C_projected_sector_write_status = closed_formal_recurrence
+candidate_C_retained_conditioned_mediation_status = established_at_constitutive_operator_level
+candidate_C_effective_retained_write_status = open_D8
+candidate_C_dynamic_retention_status = open_D8
+candidate_C_temporal_persistence_class = unassigned
+
+complete_candidate_local_transition_count = 2
+terminally_closed_candidate_count = 1
+candidate_rejected_count = 0
+candidate_ranking_performed = false
+
+control_contract_row_count = 42
+pressure_audit_row_count = 49
+D6-v2_current_debts_dispositioned = 22_of_22
+exact_inherited_debt_rows_bound = 22_of_22
+current_typed_debt_count = 18
+current_live_plus_exact_inherited_bound_count = 40
+terminally_archived_B_predecessor_debt_count = 4
+complete_lineage_evidence_identity_count = 44
+
+D7G_ready_after_human_acceptance = true
+D7G_authorized = true
+D8_authorized = false
+specification_authorized = false
+implementation_authorized = false
+human_acceptance = accepted_bounded_2026-08-24
+src_changed = false
+```
 
 ### D7G. Global Metric And Structural-Cultivation Closure
 
-Status: blocked on D7-v2.
+Status: authorized; not started.
 
 - [ ] Begin only after every A/B/C lane has a terminal D7-v2 disposition.
 - [ ] Derive or formally close the global `K_4 -> H_4 -> h_4` structural map
@@ -1317,8 +1369,10 @@ D6-v2_A = carried_unchanged_bounded_regular_algebraic_slaving
 D6-v2_B = admitted_bounded_signed_Riesz_algebraic_current_closure
 D6-v2_C = admitted_bounded_nonisometric_Hodge_algebraic_current_closure
 D6-v2_D7-v2_eligible_candidate_set = [A, B, C]
-D7-v2 = authorized_not_started
-D7G = blocked_on_D7-v2
+D7-v2 = accepted_bounded
+D7-v2_D7G_eligible_candidate_set = [A, C]
+D7-v2_current_tranche_closed_candidate_set = [B]
+D7G = authorized_not_started
 D8-D10 = blocked_on_D7G_or_terminal_route
 D10_early_terminal_route = available_for_rejected_all_missing_theory_or_missing_discriminator
 architecture_selected = false

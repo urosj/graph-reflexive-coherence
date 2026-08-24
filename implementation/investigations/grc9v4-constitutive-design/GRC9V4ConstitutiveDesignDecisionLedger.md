@@ -1,6 +1,6 @@
 # GRC9V4 Constitutive Design Decision Ledger
 
-**Status:** D0-D7 and D4-v2-D6-v2 accepted bounded; D7-v2 authorized; D7G-D8 blocked
+**Status:** D0-D7 and D4-v2-D6-v2 accepted bounded; D7-v2 implemented awaiting review; D7G-D8 blocked
 
 This ledger is the additive decision record for D0-D10. The design basis and
 plan define questions and constraints; this file records accepted answers.
@@ -495,8 +495,8 @@ writer temporal side.
 
 ## D4-v2-D7G. Candidate Completion And Structural-Closure Successor Tranche
 
-Status: D4-v2 through D6-v2 accepted bounded; D7-v2 authorized but not
-started; later gates blocked.
+Status: D4-v2 through D7-v2 accepted bounded; D7G authorized and not started;
+later gates blocked.
 
 This append-only tranche does not modify or supersede accepted D4-D7 until a
 specific successor record is accepted. It prevents A's earlier completeness
@@ -507,8 +507,8 @@ structural map their named derivation attempts before comparative D8.
 D4-v2 = GRC9V4-CD-D4V2-v1, accepted_bounded
 D5-v2 = GRC9V4-CD-D5V2-v1, accepted_bounded
 D6-v2 = GRC9V4-CD-D6V2-v1, accepted_bounded
-D7-v2 = GRC9V4-CD-D7V2-v1, authorized_not_started
-D7G = GRC9V4-CD-D7G-v1, blocked_on_D7-v2
+D7-v2 = GRC9V4-CD-D7V2-v1, accepted_bounded
+D7G = GRC9V4-CD-D7G-v1, authorized_not_started
 
 default_successor_lineage_when_no_earlier_gate_reopens =
   D4-v2:
@@ -749,8 +749,8 @@ dropped D5-v2 current debt rows = 0
 exact inherited live debt rows = 22
 complete live debt union = 44
 
-D7-v2 = authorized_not_started
-D7G = blocked_on_D7-v2
+D7-v2 = accepted_bounded
+D7G = authorized_not_started
 D8 = blocked_on_D7G_or_terminal_route
 ```
 
@@ -810,6 +810,58 @@ every candidate claiming structural cultivation.
 For B, D7G must distinguish graph-local assembly of `j_B tensor j_B` from the
 causal support of `j_B`: the D6-v2 inverse may already propagate baseline
 influence throughout a connected live-edge component.
+
+D7-v2 is accepted bounded under
+`GRC9V4-CD-D7V2-v1`, digest
+`f0d355c3e769b43fe48f0eb8ab6e986ce80838dd55e884ad33c66e988b65106e`.
+Its terminal candidate-local partition is:
+
+```text
+A = D7G_eligible_complete_candidate_transition
+B = current_tranche_closed_missing_constitutive_derivation
+C = D7G_eligible_complete_candidate_transition
+```
+
+A is bound unchanged to the accepted D7 candidate row by immutable source-row
+reference and canonical hash; no condensed duplicate becomes authoritative. D7-v2
+supersedes D7-v1 for the comparative A/B/C partition while retaining unchanged
+D7 contracts. C closes one fixed-selector-stratum formal recurrence with `C` as the sole resource and
+authoritative write: continuity commits `C[k+1]`, then
+`T_C[k+1] = P_M,Delta C[k+1]` is recomputed as a derived decomposition. No
+independent `T_C` state or writer is admitted. Selector motion, rank change,
+and event transport remain D8/D9 debt, and `h_4 <-> h_M` remains D7G debt.
+Projected-sector writing and retained-conditioned mediation are closed at the
+formal/operator level; effective retained write, dynamical retention,
+persistence class, and stability remain open to D8.
+
+B retains its typed independent carrier, direct candidate geometry payload,
+Riesz Read-Back, and regular current closure. It closes only because no frozen
+source derives the exact recursive `U_B`. A copied A writer, EMA, untyped
+current tensor target, or zero-relaxation law does not close that missing
+formation/retention/release arrow. This is neither B ontology rejection nor
+candidate ranking. B is a complete conditional constitutive/read-current
+mechanism, not a complete formative mechanism. A named source-backed writer
+successor may reopen B.
+
+The resulting ontology comparison is:
+
+```text
+A = independent retained mobility plus explicit writer
+B = independent structural carrier plus conditional effects, missing formation
+C = selected content of C, with no independent carrier state
+```
+
+All 22 D6-v2 current debts are dispositioned and all 22 exact inherited rows
+remain bound. The 18 current D7-v2 debts preserve A/C blockers and archive B's
+missing-writer obligations under an explicit nonblocking future reopening
+record. A valid future `U_B` reactivates four distinct predecessor obligations
+rather than superseding them: writer/lifecycle, path factorization, post-`H_4`
+capacity, and absorbability. The count is 40 current-live plus exact-inherited
+bound rows, four archived predecessor rows, and 44 complete lineage evidence
+identities. D7G is authorized by human acceptance and is not yet started. D8 and
+all specification, implementation, runtime, and `src/` work remain blocked.
+
+Human acceptance: `accepted_bounded_2026-08-24`.
 
 ## D8. Continuation Realization And Analysis Contract
 

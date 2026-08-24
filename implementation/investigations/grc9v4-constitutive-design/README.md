@@ -59,6 +59,8 @@ Start with:
 - [D5-v2 interpretation](./decisions/D5v2DirectionalReadBackCompletion.md).
 - [D6-v2 structured decision](./decisions/D6v2UpdatedTotalCurrentClosure.json);
 - [D6-v2 interpretation](./decisions/D6v2UpdatedTotalCurrentClosure.md).
+- [D7-v2 structured decision](./decisions/D7v2CandidateTransitionComparativeAdmission.json);
+- [D7-v2 interpretation](./decisions/D7v2CandidateTransitionComparativeAdmission.md).
 
 Current gate status:
 
@@ -74,8 +76,8 @@ D7 = accepted_bounded
 D4-v2 = accepted_bounded
 D5-v2 = accepted_bounded
 D6-v2 = accepted_bounded
-D7-v2 = authorized_not_started
-D7G = blocked_on_D7-v2
+D7-v2 = accepted_bounded
+D7G = authorized_not_started
 D8 = blocked_on_D7G_or_terminal_route
 ```
 
@@ -119,8 +121,27 @@ current. `A_B` remains radius-one line-graph local, while its solved inverse is
 only component-confined and may propagate influence beyond one hop. D6-v2 also
 preserves D5-v2 debt lineage exactly: 15 unchanged current rows are copied
 verbatim, four changed obligations have explicit successors, and no row is
-dropped. All three candidates are D7-v2 eligible. D6-v2 is accepted bounded;
-D7-v2 is authorized but not started, and later gates remain blocked.
+dropped. All three candidates entered D7-v2. D6-v2 is accepted bounded.
+
+D7-v2 supersedes D7-v1 for the comparative partition while binding A's
+accepted transition unchanged. It closes C's complete fixed-selector-stratum
+formal recurrence and terminally closes B for the current
+tranche at the missing exact source-backed `U_B`. C counts `C` once:
+authoritative continuity commits `C[k+1]` and the derived nonresource sector is
+then recomputed as `T_C[k+1] = P_M,Delta C[k+1]`; it has no independent writer.
+B is therefore a complete conditional constitutive/read-current mechanism, not
+a complete formative mechanism. C has projected-sector writing and
+retained-conditioned mediation, but effective retained write, dynamical
+retention, persistence class, and stability remain D8 questions.
+B's typed carrier, geometry, Read-Back, and current closures remain bounded
+work, and its terminal result is not ontology rejection or preference for A/C.
+A named constitutive successor may reopen B if it derives the writer's type,
+units, capacity, formation, release, covariance, and lifecycle semantics; that
+reopening reactivates B's path-factorization, post-`H_4` capacity, and
+absorbability debts rather than silently resolving them.
+All 22 D6-v2 current debts are dispositioned and all 22 inherited rows remain
+bound. Human acceptance now authorizes A and C to proceed to D7G. Global `H_4`,
+D8, specification, implementation, and runtime claims remain blocked.
 
 D5 currently defines two bounded candidate operator channels (A and C), routes
 B to a named derivation, and physically identifies zero channels. Its 68-point

@@ -1,7 +1,7 @@
 # GRC9V4 Constitutive Design Investigation Plan
 
 **Date:** 2026-08-23  
-**Status:** D0-D7 and D4-v2-D6-v2 accepted bounded; D7-v2 authorized; D7G-D8 blocked
+**Status:** D0-D7 and D4-v2-D6-v2 accepted bounded; D7-v2 implemented awaiting review; D7G-D8 blocked
 **Design basis:** [`GRC9V4ConstitutiveDesignBasis.md`](./GRC9V4ConstitutiveDesignBasis.md)  
 **Checklist:** [`GRC9V4ConstitutiveDesignChecklist.md`](./GRC9V4ConstitutiveDesignChecklist.md)  
 **Decision ledger:** [`GRC9V4ConstitutiveDesignDecisionLedger.md`](./GRC9V4ConstitutiveDesignDecisionLedger.md)
@@ -1336,7 +1336,66 @@ per A/B/C lane. Every complete lane is marked
 because the common structural closure remains open. If no candidate survives,
 skip D7G and route to bounded D10 closeout or a named theory successor.
 
+D7-v2 is accepted bounded under record
+`GRC9V4-CD-D7V2-v1`, decision digest
+`f0d355c3e769b43fe48f0eb8ab6e986ce80838dd55e884ad33c66e988b65106e`.
+The candidate-local partition is:
+
+```text
+A = D7G_eligible_complete_candidate_transition
+B = current_tranche_closed_missing_constitutive_derivation
+C = D7G_eligible_complete_candidate_transition
+```
+
+A is bound without causal change to the accepted D7 transition by immutable
+source-row reference and canonical candidate-row hash; D7-v2 does not maintain
+a condensed duplicate of that authoritative row. D7-v2 supersedes D7-v1 only for the comparative A/B/C
+partition; unchanged D7 contracts remain in force. C closes on the initial fixed-topology, fixed-boundary,
+fixed-rank, strict-selector-gap stratum: authoritative continuity writes `C`
+once and the derived nonresource sector is recomputed as
+`T_C[k+1] = P_M,Delta C[k+1]`. Selector motion, rank change, and event transport
+remain D8/D9 debt. This establishes a formal projected-sector recurrence and
+retained-conditioned mediation, not effective retained write, dynamical
+retention, a persistence class, or stability. Those remain D8 questions.
+
+B's independent carrier, direct geometry payload, metric-raised Read-Back, and
+regular D6-v2 current closure remain valid bounded work. The current tranche
+closes B because no frozen source derives the exact recursive `U_B`. Copying
+A's positive-mobility writer, calling an EMA a carrier, or inventing a
+current-tensor target would add a load-bearing constitutive law after the
+admission boundary. This is not ontology rejection, candidate ranking, or a
+claim that A/C is more faithful to RC theory. A named theory or constitutive
+successor may reopen B by deriving `U_B` with its type, units, capacity,
+formation, release, covariance, and lifecycle semantics.
+
+The comparative interpretation is:
+
+```text
+A = independent retained mobility with an explicit writer
+B = independent structural carrier with complete conditional effects but no
+    endogenous formative writer
+C = no independent carrier; selected content is a sector of authoritative C
+```
+
+B therefore separates constitutive structure from formative law: given an
+admissible `T_B`, its accepted equations state what the structure does, not how
+it becomes. C instead separates formal recurrence from dynamical retention:
+there is no missing independent `U_C`, but D8 must still determine whether the
+selected content is slow, persistent, neutral, growing, or transient.
+
+All 22 D6-v2 current debts are dispositioned and all 22 exact inherited debt
+rows remain bound. Candidate-B obligations are terminally archived with a
+named reopening debt rather than dropped or allowed to block A/C. A future
+`U_B` reactivates four separate B obligations: writer/lifecycle,
+direct/read/tensor factorization, post-`H_4` capacity, and absorbability. The
+record distinguishes 40 current-live plus exact-inherited-bound rows from four
+terminally archived predecessor rows, preserving 44 lineage evidence
+identities. Human acceptance authorizes D7G, which is not yet started. D8,
+specification, implementation, runtime, and `src/` changes remain unauthorized.
+
 ### D7G. Global Metric And Structural-Cultivation Closure
+
+Status: authorized; not started.
 
 Planned record: `GRC9V4-CD-D7G-v1`, with outputs
 `decisions/D7GGlobalMetricAndStructuralCultivationClosure.json` and
