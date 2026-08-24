@@ -1,7 +1,7 @@
 # GRC9V4 Constitutive Design Investigation Plan
 
 **Date:** 2026-08-23  
-**Status:** D0-D6 accepted bounded; D7 authorized
+**Status:** D0-D7 accepted bounded; D8 authorization deferred
 **Design basis:** [`GRC9V4ConstitutiveDesignBasis.md`](./GRC9V4ConstitutiveDesignBasis.md)  
 **Checklist:** [`GRC9V4ConstitutiveDesignChecklist.md`](./GRC9V4ConstitutiveDesignChecklist.md)  
 **Decision ledger:** [`GRC9V4ConstitutiveDesignDecisionLedger.md`](./GRC9V4ConstitutiveDesignDecisionLedger.md)
@@ -718,9 +718,85 @@ write/read arrows are not ordinary `C` evolution under new names.
 
 At D7, freeze formed-loop conditions, admissibility and singular/invalid
 boundaries, reconfiguration triggers, and the questions D8 must answer. Defer
-structural and temporal stability classification to D8.
+the concrete reduced transition's temporal stability and floor-nonsmoothness
+classification to D8. Normative structural continuation and stability remain
+blocked on the missing `H_4` map and require later reanalysis after that map
+exists.
+
+### D7 implementation result
+
+D7 closes one bounded reduced transition without treating that result as a
+complete normative architecture. Candidate A receives an exact fixed-topology,
+fixed-geometry kinetic profile:
+
+```text
+C[k], W_A[k]
+  -> graph-coupled Phi_A and J0_A
+  -> W_hat_A = G_W(C[k], J0_A)
+  -> q_A, j_A, regular postsolve J_C_A
+  -> incidence continuity C[k+1]
+  -> rebuild writer differential/gradient summaries from C[k+1]
+  -> W_drv_A = G_W(C[k+1], J_C_A[k])
+  -> log-geometric retained write W_A[k+1]
+```
+
+The retained write is one-beat delayed, consumes authoritative postsolve
+`J_C`, has one deterministic writer, preserves a positive bounded interval,
+and provides native release toward the zero-forming-current target. It is an
+explicit V4 candidate completion based on the existing graph conductance
+functional, not a unique law inherited from core theory.
+
+The exact downstream mediator is `D_A[k] = (C[k+1], J_C_A[k])`. The result
+separates two loops: the direct retained-mobility recurrence remains available
+when `chi_A = 0`, while the explicit Read-Back subloop is constitutively
+load-bearing only on admissible states with nonzero `chi_A`, `zeta_A`, `q_A`,
+`J0_A`, and writer sensitivity. Exact mathematical absorbability on the
+selected model class remains open to a named post-D8, pre-D10 classification;
+D10 consumes that classification rather than deriving it. Post-spec physical
+channel attribution remains separate. Changes in `W_A`, `W_hat_A`, and their
+moving neutral relation are attributed separately.
+
+Stored-edge coordinate reorientation, local current parity, and full physical
+history reversal are distinct. Scalar `W_A`, `W_hat_A`, `W_drv_A`, and `q_A`
+are invariant under arbitrary stored-edge coordinate reversal, and the
+explicit `J_C squared` contribution in `G_W` is sign-even. Reversing the
+physical current generally changes `C[k+1]`, however, so the complete
+`W_drv_A` and `W_A[k+1]` need not be invariant. A therefore stores no
+intrinsically signed cochain coordinate while its scalar spatial pattern may
+still distinguish reversed physical histories through continuity-mediated
+`C`.
+
+This closes A's kinetic recurrence only. The exact
+`K_4 -> H_4 -> h_4` map remains open, so a recorded `j tensor j` contribution
+does not establish structural cultivation or a complete normative GRC9V4
+transition. Candidate B remains routed through its typed carrier/geometry and
+Read-Back derivations. Candidate C retains the core-derived sector write
+equation but remains routed because `T_C -> H_M -> h_M` is not closed on
+manifold. D8 may analyze only the concrete reduced A transition and its
+explicit structural limitation after a separate human direction.
+
+The initial 72-row pressure matrix is supplemented by a 96-row adversarial
+closure audit. That audit binds every concern to a satisfied contract, a
+bounded open debt, or a named B/C/D8/D9/D10 route; it does not convert routed
+or deferred questions into positive evidence.
+
+D7 carries 16 current debts. It explicitly dispositions all 25 immediate D6
+generation rows: 23 are resolved or superseded into named D7 debts and two
+nonblocking rows remain independently carried. D10 consumes the three-way
+union of current D7 debts, unresolved immediate predecessor dispositions, and
+unresolved transitive predecessor dispositions. A technical debt marked
+`must_close_before_D10` requires a named earlier result; D10 may consume but
+may not generate that missing result.
+
+D7 is accepted bounded, but D8 authorization is separately deferred. The later
+specification and implementation must recompute every differential or gradient
+summary consumed by `G_W(C[k+1], J_C[k])` from post-continuity `C[k+1]`.
+Reusing the pre-continuity `C[k]` summaries would violate the accepted writer
+temporal side and stale-derived-surface prohibition.
 
 ## D8. Continuation Realization And Analysis Contract
+
+Status: blocked pending separate human direction after D7 acceptance.
 
 Analyze the concrete completed D7 transition while keeping four objects
 separate:
@@ -765,6 +841,11 @@ Freeze candidate complete-step ordering, causal state, serialization,
 restoration identity, reset baseline, RNG use, deterministic replay,
 capabilities, profile identity, migration from GRC9V3, disabled behavior, and
 test/telemetry/analysis ownership.
+
+For Candidate A, freeze the post-continuity writer refresh explicitly: after
+`C[k+1]` is accepted, rebuild all differential and gradient summaries consumed
+by `G_W(C[k+1], J_C[k])` before constructing `W_drv_A`. Pre-continuity
+summaries from `C[k]` are not admissible writer inputs.
 
 After D7 closes the candidate transition, verify the selected candidate's D1
 embedding/projection construction on every declared equivalence surface. Freeze

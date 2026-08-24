@@ -1,6 +1,6 @@
 # GRC9V4 Constitutive Design Decision Ledger
 
-**Status:** D0-D6 accepted bounded; D7 authorized
+**Status:** D0-D7 accepted bounded; D8 authorization deferred
 
 This ledger is the additive decision record for D0-D10. The design basis and
 plan define questions and constraints; this file records accepted answers.
@@ -415,11 +415,84 @@ transitive ledger and the 25 current-generation open debts.
 
 ## D7. Closed Write/Read Loop
 
-Status: authorized; not started.
+```text
+record_id = GRC9V4-CD-D7-v1
+status = accepted_bounded
+predecessor_decision_digest = 0c78ede1551ece13c4b4fc916f60531bdc30219791bf90be574e5b0f80aa3f16
+decision_record_digest = 7ffaf92b1672aa4fb116539ca5da36aef8bc7f3caf088827fd71f3ec7b483fea
+candidate_set_after_D7 = [V4-A-temporalized-W, V4-B-independent-derived-carrier, V4-C-constitutive-C-sector]
+D8_eligible_candidate_set = [V4-A-temporalized-W]
+routed_candidate_set = [V4-B-independent-derived-carrier, V4-C-constitutive-C-sector]
+complete_reduced_transition_count = 1
+complete_normative_transition_count = 0
+closed_write_read_loop_count = 1
+closed_retained_mobility_recurrence_count = 1
+constitutively_load_bearing_explicit_Read_Back_subloop_count = 1
+empirically_attributed_explicit_Read_Back_loop_count = 0
+closed_structural_cultivation_loop_count = 0
+candidate_rejected_count = 0
+control_contract_rows = 70
+D7_pressure_audit_rows = 72
+D7_adversarial_audit_rows = 96
+predecessor_debt_disposition_rows = 25
+immediate_predecessor_superseded_or_resolved_rows = 23
+immediate_predecessor_independently_carried_rows = 2
+immediate_predecessor_independently_carried_pre_D10_blockers = 0
+transitive_predecessor_debt_disposition_rows = 20
+transitive_predecessor_must_close_before_D10_rows = 16
+open_debt_rows = 16
+candidate_ranking_performed = false
+architecture_selected = false
+D8_authorized = false
+D8_authorization_status = deferred_pending_separate_human_direction
+D8_authorized_after_human_acceptance = false
+D8_authorization_requires_separate_human_direction = true
+```
+
+D7 defines one exact Candidate A fixed-topology, fixed-geometry kinetic reduced
+transition. Its graph-coupled baseline uses authoritative `W_A`; its
+instantaneous reference is staged from `C` and pre-read `J0`; its D5/D6
+edge-contrast current closure remains unchanged; and postsolve `J_C` plus
+postcontinuity `C` construct one positive bounded log-geometric write to
+`W_A[k+1]`. The result closes the direct retained-mobility recurrence and makes
+the explicit cross-beat Read-Back subloop constitutively load-bearing on a
+declared nondegenerate domain, without introducing independent current state,
+direct `j` write authority, RNG, clipping, or hidden helper history. Exact
+physical nonabsorbability remains open.
+
+The result is deliberately reduced. The exact global `H_4` map remains open,
+so the staged `j tensor j` contribution cannot yet establish structural
+cultivation or a complete normative GRC9V4 transition. B remains routed through
+its geometry and typed-operator derivations. C retains the core-derived sector
+write equation but remains routed because the `T_C -> H_M -> h_M` mediation,
+selector regularity, and event-space transport are missing. No candidate is
+rejected or selected.
+
+D7 dispositions all 25 D6 current-generation debts and all 20 transitive
+inherited rows. Its 72-row pressure audit and additional 96-row adversarial
+closure audit separate current/write authority,
+formation/retention/release, orientation, rivals, failure atomicity,
+moving-neutral attribution, arrow-specific loop sensitivity, absorbability,
+reduced-versus-normative scope, and routing. D7 is accepted bounded; D8 remains
+unauthorized pending a separate human direction, with eligible scope limited to
+the concrete A reduced transition.
+
+The immediate ledger is explicit: 23 rows are resolved or superseded into
+named D7 debts and two nonblocking rows remain independently carried. D10 uses
+a three-way union of current D7 debt plus unresolved immediate and transitive
+predecessor dispositions. A's core-status, absorbability, and units/gauge
+technical results require named pre-D10 audits. D8 may close only reduced A
+temporal-transition stability and floor nonsmoothness; normative structural
+stability remains blocked on the missing `H_4` map.
+
+The later specification and implementation must rebuild every differential or
+gradient summary consumed by `G_W(C[k+1], J_C[k])` from post-continuity
+`C[k+1]`. Reusing pre-continuity `C[k]` summaries would violate the accepted
+writer temporal side.
 
 ## D8. Continuation Realization And Analysis Contract
 
-Status: blocked on D7.
+Status: blocked pending separate human direction after D7 acceptance.
 
 ## D9. Complete Step And Lifecycle Contract
 

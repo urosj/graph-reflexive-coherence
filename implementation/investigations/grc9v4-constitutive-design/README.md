@@ -51,6 +51,8 @@ Start with:
 - [D5 interpretation](./decisions/D5DirectionalReadBack.md).
 - [D6 structured decision](./decisions/D6TotalCurrentClosure.json);
 - [D6 interpretation](./decisions/D6TotalCurrentClosure.md).
+- [D7 structured decision](./decisions/D7ClosedWriteReadLoop.json);
+- [D7 interpretation](./decisions/D7ClosedWriteReadLoop.md).
 
 Current gate status:
 
@@ -62,7 +64,8 @@ D3 = accepted_bounded
 D4 = accepted_bounded
 D5 = accepted_bounded
 D6 = accepted_bounded
-D7 = authorized_not_started
+D7 = accepted_bounded
+D8 = authorization_deferred_pending_separate_human_direction
 ```
 
 D5 currently defines two bounded candidate operator channels (A and C), routes
@@ -86,7 +89,35 @@ shared current/geometry gain, and mathematical absorbability from those later
 claims. Postsolve `J_C` is D7's authoritative causal current; diagnostic `j`
 cannot bypass it as a direct write input. Transitive debt persistence keeps 20
 older unresolved IDs, including 16 pre-D10 blockers, visible beside the 25
-current debts. D6 was accepted bounded on 2026-08-24, and D7 is authorized.
+current debts. D6 was accepted bounded on 2026-08-24; D7 has now been executed
+and awaits human review.
+
+D7 now defines one complete Candidate A fixed-stratum kinetic reduced
+transition. Authoritative `W_A` drives the graph baseline, the accepted D5/D6
+edge-contrast operator closes total current, and the exact downstream mediator
+`D_A[k] = (C[k+1], J_C_A[k])` writes one bounded positive `W_A[k+1]` through a
+log-geometric one-beat update. This closes the direct retained-mobility
+recurrence. The explicit Read-Back subloop is separately constitutively
+load-bearing on its declared nondegenerate domain; exact physical
+nonabsorbability remains open.
+It does not close the normative structural path: `K_4 -> H_4 -> h_4` remains
+underdefined, so structural cultivation and a complete GRC9V4 architecture are
+still unsupported. B and C remain routed, not rejected. D7 is accepted bounded;
+D8 remains unauthorized pending a separate human direction, with eligible
+scope limited to A's concrete reduced transition and its explicit structural
+boundary. The original 72-row pressure audit and an additional 96-row
+adversarial audit preserve these distinctions item by item.
+The explicit `J_C squared` writer term is sign-even, but full physical history
+reversal may change continuity-mediated `C[k+1]` and therefore the complete A
+writer; scalar state is not relabeled as signed cochain memory. D7 also freezes
+a three-way D10 debt union, with named pre-D10 audits required for A's
+core-status, absorbability, and units/gauge questions. Reduced temporal
+stability is a D8 question; normative structural stability remains blocked on
+the missing `H_4` map.
+The later specification and implementation must also rebuild every
+differential or gradient summary used by `G_W(C[k+1], J_C[k])` from
+post-continuity `C[k+1]`; pre-continuity cache reuse is outside the accepted
+writer contract.
 
 Hard boundary:
 

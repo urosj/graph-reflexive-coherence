@@ -1,7 +1,7 @@
 # GRC9V4 Constitutive Design Investigation Checklist
 
 **Date:** 2026-08-23  
-**Status:** D0-D6 accepted bounded; D7 authorized
+**Status:** D0-D7 accepted bounded; D8 authorization deferred
 **Plan:** [`GRC9V4ConstitutiveDesignPlan.md`](./GRC9V4ConstitutiveDesignPlan.md)  
 **Basis:** [`GRC9V4ConstitutiveDesignBasis.md`](./GRC9V4ConstitutiveDesignBasis.md)  
 **Ledger:** [`GRC9V4ConstitutiveDesignDecisionLedger.md`](./GRC9V4ConstitutiveDesignDecisionLedger.md)
@@ -659,33 +659,122 @@ remain jointly adjudicable for D10.
 
 ## D7. Closed Write/Read Loop
 
-Status: authorized; not started.
+Status: accepted bounded; D8 authorization separately deferred.
 
-- [ ] Close `T_M -> j -> J_C -> declared downstream consequence -> T_M`.
-- [ ] Consume postsolve `J_C` as the authoritative causal current; do not use
+- [x] Close `T_M -> j -> J_C -> declared downstream consequence -> T_M` for
+      the bounded Candidate A fixed-stratum kinetic profile.
+- [x] Consume postsolve `J_C` as the authoritative causal current; do not use
       diagnostic or geometry-conditioning `j` as a direct retained-state write
       shortcut unless a named D6 successor derives the non-bypassing path.
-- [ ] Write the complete `X_(k+1) = F_V4(X_k)` transition for each remaining
-      candidate, including equations, stage order, state ownership, release,
-      read, write, and accounting surfaces.
-- [ ] Reject or route any candidate that still has only requirement prose.
-- [ ] Select exact write inputs from the D2 admissible set.
-- [ ] Define the complete effective transition.
-- [ ] Define read-off and write-off controls.
-- [ ] Define passive and frozen-carrier controls.
-- [ ] Define reversed-orientation and rival-carrier controls.
-- [ ] Freeze loop-closure validity, admissibility, singular/invalid, and
+- [x] Write the complete reduced `X_(k+1) = F_V4(X_k)` transition for Candidate
+      A, including equations, stage order, state ownership, release, read,
+      write, and accounting surfaces; keep the normative structural profile
+      open on the missing `H_4` map.
+- [x] Route candidates that still have missing load-bearing equations: B through
+      its typed geometry/operator derivations and C through its retained-
+      geometry mediation derivation. Reject neither candidate by omission.
+- [x] Select exact A write inputs from the D2 admissible set.
+- [x] Define the complete A fixed-stratum kinetic transition.
+- [x] Define read-off and write-off controls.
+- [x] Define passive and frozen-carrier controls.
+- [x] Define reversed-orientation and rival-carrier controls.
+- [x] Freeze loop-closure validity, admissibility, singular/invalid, and
       reconfiguration boundaries.
-- [ ] Defer structural/temporal stability classification to D8.
-- [ ] Block one-way-path-to-loop relabeling.
-- [ ] Do not require `C_(k+1)` as the sole write mediator without evidence.
-- [ ] Block generic `C` evolution from becoming tautological C-sector
+- [x] Defer reduced A temporal-transition stability and floor nonsmoothness to
+      D8 while keeping normative structural continuation/stability blocked on
+      the missing `H_4` map and later reanalysis.
+- [x] Block one-way-path-to-loop relabeling.
+- [x] Do not require `C_(k+1)` as the sole write mediator without evidence.
+- [x] Block generic `C` evolution from becoming tautological C-sector
       write-back.
-- [ ] Obtain human acceptance.
+- [x] Preserve the core-derived C-sector write relation while blocking it from
+      becoming closed mediation without `H_M`.
+- [x] Separate the closed A kinetic loop from the open structural-cultivation
+      path and normative topology scope.
+- [x] Separate the direct retained-mobility recurrence from the conditionally
+      load-bearing explicit Read-Back subloop.
+- [x] Freeze `D_A[k] = (C[k+1], J_C_A[k])` as the exact downstream writer
+      mediator and add arrow-specific constitutive interventions.
+- [x] Separate authoritative `W_A` write/release, derived `W_hat_A` motion, and
+      neutral-relation motion.
+- [x] Name all A rival carriers, exclude hidden lagged-current state, and expose
+      the complete Jacobian-ready smooth-stage factorization.
+- [x] Record C write-off/frozen-package controls as unavailable on-manifold
+      rather than inventing runtime switches.
+- [x] Disposition all 25 D6 current debts and all 20 transitive inherited debt
+      rows.
+- [x] Freeze the three-way D10 debt union and require technical pre-D10 debts
+      to resolve in named earlier audits rather than at D10 itself.
+- [x] Require writer differential and gradient summaries to be rebuilt from
+      post-continuity `C[k+1]`; block pre-continuity cache reuse.
+- [x] Produce the 72-row D7 pressure audit and fail-closed control matrix.
+- [x] Disposition the additional 96-row adversarial closure audit item by item.
+- [x] Produce `decisions/D7ClosedWriteReadLoop.json`.
+- [x] Produce `decisions/D7ClosedWriteReadLoop.md`.
+- [x] Obtain human acceptance.
+
+Current D7 result:
+
+```text
+record_id = GRC9V4-CD-D7-v1
+status = accepted_bounded
+predecessor_decision_digest = 0c78ede1551ece13c4b4fc916f60531bdc30219791bf90be574e5b0f80aa3f16
+decision_record_digest = 7ffaf92b1672aa4fb116539ca5da36aef8bc7f3caf088827fd71f3ec7b483fea
+candidate_set_after_D7 = [V4-A-temporalized-W, V4-B-independent-derived-carrier, V4-C-constitutive-C-sector]
+D8_eligible_candidate_set = [V4-A-temporalized-W]
+routed_candidate_set = [V4-B-independent-derived-carrier, V4-C-constitutive-C-sector]
+complete_reduced_transition_count = 1
+complete_normative_transition_count = 0
+closed_write_read_loop_count = 1
+closed_retained_mobility_recurrence_count = 1
+constitutively_load_bearing_explicit_Read_Back_subloop_count = 1
+empirically_attributed_explicit_Read_Back_loop_count = 0
+closed_structural_cultivation_loop_count = 0
+candidate_rejected_count = 0
+control_contract_rows = 70
+D7_pressure_audit_rows = 72
+D7_adversarial_audit_rows = 96
+predecessor_debt_disposition_rows = 25
+immediate_predecessor_superseded_or_resolved_rows = 23
+immediate_predecessor_independently_carried_rows = 2
+immediate_predecessor_independently_carried_pre_D10_blockers = 0
+transitive_predecessor_debt_disposition_rows = 20
+transitive_predecessor_must_close_before_D10_rows = 16
+open_debt_rows = 16
+architecture_selected = false
+claim_ceiling = GRC9V4-CD-D7-bounded-complete-A-fixed-stratum-kinetic-recurrence-with-direct-retained-mobility-and-conditionally-load-bearing-explicit-Read-Back-subloop-with-B-C-and-structural-geometry-routed-without-physical-nonabsorbability-stability-runtime-evidence-normative-architecture-or-selection
+D8_authorized = false
+D8_authorization_status = deferred_pending_separate_human_direction
+D8_authorized_after_human_acceptance = false
+D8_authorization_requires_separate_human_direction = true
+specification_authorized = false
+runtime_implementation_authorized = false
+```
+
+D7 closes one bounded Candidate A kinetic recurrence. The exact graph
+baseline, D5/D6 current closure, incidence continuity, and positive delayed
+`W_A` write form a complete fixed-stratum reduced transition. The global
+`H_4` map remains open, so structural cultivation and a complete normative V4
+transition remain unsupported. The direct retained-mobility recurrence is
+separate from the explicit Read-Back subloop, which is constitutively
+load-bearing only on its declared nondegenerate domain; physical
+nonabsorbability is still open. B and C are routed, not rejected. D7 is
+accepted bounded, while D8 remains blocked pending a separate human direction.
+
+Stored-edge coordinate reorientation leaves scalar A surfaces invariant, and
+the explicit `J_C squared` contribution is sign-even. Full physical current
+history reversal can nevertheless change `C[k+1]`, `W_drv_A`, and
+`W_A[k+1]`; D7 therefore does not claim complete writer-history invariance.
+Reduced temporal stability belongs to D8, while normative structural
+stability remains blocked on `H_4`. The 16 current debts participate in a
+three-way D10 union with unresolved immediate and transitive predecessors;
+pre-D10 technical results must exist before D10 consumes them.
 
 ## D8. Continuation Realization And Analysis Contract
 
-Status: blocked on D7.
+Status: blocked pending separate human direction after D7 acceptance. Its
+eligible scope remains the Candidate A fixed-stratum kinetic reduced transition
+only.
 
 - [ ] Define structural functional/Hessian and `alpha` semantics.
 - [ ] Define temporal generator/effective-map and `gamma`/multiplier semantics.
@@ -714,6 +803,9 @@ Status: blocked on D7.
 Status: blocked on D8.
 
 - [ ] Freeze complete-step order and causal-state schema.
+- [ ] Freeze post-continuity recomputation of every differential and gradient
+      summary consumed by the Candidate A writer; prohibit reuse of
+      pre-continuity `C[k]` caches.
 - [ ] Freeze serialization and restoration identity.
 - [ ] Freeze reset-baseline behavior.
 - [ ] Freeze RNG and deterministic replay behavior.
@@ -758,8 +850,17 @@ D3 = accepted_bounded
 D4 = accepted_bounded
 D5 = accepted_bounded
 D6 = accepted_bounded
-D7 = authorized_not_started
-D8-D10 = blocked_on_predecessor
+D7 = accepted_bounded
+D7_complete_reduced_transition_count = 1
+D7_complete_normative_transition_count = 0
+D7_closed_write_read_loop_count = 1
+D7_closed_retained_mobility_recurrence_count = 1
+D7_constitutively_load_bearing_explicit_Read_Back_subloop_count = 1
+D7_empirically_attributed_explicit_Read_Back_loop_count = 0
+D7_closed_structural_cultivation_loop_count = 0
+D7_D8_eligible_candidate_set = [V4-A-temporalized-W]
+D7_routed_candidate_set = [V4-B-independent-derived-carrier, V4-C-constitutive-C-sector]
+D8-D10 = blocked_pending_separate_human_direction_and_predecessors
 D10_early_terminal_route = available_for_rejected_all_missing_theory_or_missing_discriminator
 architecture_selected = false
 specification_authorized = false
