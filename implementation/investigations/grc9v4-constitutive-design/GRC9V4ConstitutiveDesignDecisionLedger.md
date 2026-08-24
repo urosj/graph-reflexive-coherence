@@ -1,6 +1,6 @@
 # GRC9V4 Constitutive Design Decision Ledger
 
-**Status:** D0-D7, D4-v2-D7-v2, D7G-v1, D7G-v2, the D7G-post-v2 correction, and D8-A accepted bounded; the geometry-temporal-realization successor is authorized; D8-B remains blocked on a complete temporal realization
+**Status:** D0-D7, D4-v2-D7-v2, D7G-v1, D7G-v2, the D7G-post-v2 correction, D8-A, and coupled/implicit A+C accepted bounded; architecture-local D8-B for coupled A and C is authorized, while comparative D8-B and successor-family closeout remain blocked
 
 This ledger is the additive decision record for D0-D10. The design basis and
 plan define questions and constraints; this file records accepted answers.
@@ -1231,10 +1231,155 @@ topology/event lifecycle remain D9 debt while stability classification remains
 D8-B work. Requiring those later results before admission is fail-closed as
 circular governance.
 
+## Geometry-Temporal Realization Successor: Coupled/Implicit
+
+Status: accepted bounded.
+
+```text
+record = GRC9V4-GTRS-CI-v1
+status = accepted_bounded
+decision_record_digest = a0292d35d3dfc18e6386a78c26ae9bc2a4b6de9f31e505cf67edf7c094aea3a3
+human_acceptance = accepted_bounded_2026-08-25
+
+family = coupled_implicit
+unknown_A = (J_A_flux, h_A)
+unknown_C = (J_C_flux, h_C)
+C_reference = accepted_D6v2_C_root_transferred_through_Q_C_similarity_at_kappa_H_zero_and_h4_ref
+C_reference_full_block = [[L_C_flux_ref, B_C], [0, I]]
+C_reference_full_block_invertible = true
+C_old_physical_singular_margin_reused = false
+C_Q_C_conditioning_required = true
+C_local_IFT_branch = accepted_bounded_candidate
+A_reference = accepted_D6_D7_A_root_with_reference_relative_geometry_correction_zero
+A_reference_full_block = [[L_A, B_A], [0, I]]
+A_reference_full_block_invertible = true
+A_local_IFT_branch = accepted_bounded_candidate
+C_global_branch = unsupported
+A_global_branch = unsupported
+A_C_numeric_uniform_epsilon = unsupported
+A_C_temporal_stability = unsupported
+
+C_structural_path = J_flux_to_G_J_flat_to_retained_intrinsic_response_to_chi_C_causal_j_flat_to_zeta_C_iota_C_K4_to_H_profile
+C_physical_path = chi_C_causal_j_flat_to_G_J_sharp_to_j_flux_to_zeta_C_current_closure_and_continuity
+C_ungated_resolvent = Rhat_C_M=(I+tau_C_Delta_1_M)^-1
+C_historical_D5v2_gated_R_C_M_notation_reused = false
+C_zeta_squared = false
+C_zeta_external_to_iota_C = true
+C_I_4M_signature = I_4M(T_C,h)
+C_full_regularness_object = joint_J_h_block
+C_lagged_L_C_is_full_regularness_object = false
+C_delta_G_J_J_retained = true
+C_projected_visibility_test_frozen = true
+C_projected_visibility_witness = passed_formal_constitutive_direct_field_visibility_not_runtime_evidence
+C_projected_visibility_pre_adapter_value = -0.014842807194071116
+C_nonempty_visible_subdomain_proven = true
+
+A_equal_burden = applied
+A_result = accepted_bounded_complete_reference_relative_coupled_realization_candidate
+A_geometry_consumer = Phi_A_D7_plus_kappa_Ah_times_Delta0_h_minus_Delta0_href_applied_to_C
+A_kappa_Ah_units = Phi_A_per_Delta0_times_C
+A_kappa_Ah_enabled_profile = +1.0_in_declared_unit_basis_preregistered_before_D8B
+A_kappa_Ah_ablation = 0
+A_kappa_Ah_sign = revision_specific_not_theory_fixed
+A_W_hat_stage = recomputed_inside_every_joint_root_residual_after_J0_A_CI_and_before_q_A
+A_zeta_external_to_iota_A = true
+A_mobility_owner = W_A_only
+A_writer = accepted_D7_postcontinuity_writer_unchanged
+A_direct_h_to_W_A_writer = false
+A_full_regularness_object = joint_J_h_block
+A_projected_visibility_witness = passed_formal_constitutive_direct_field_visibility_not_runtime_evidence
+A_projected_visibility_pre_adapter_value = 0.41999999999999993
+A_nonempty_visible_subdomain_proven = true
+A_rejected = false
+A_or_C_selected_or_ranked = false
+B_reopened = false
+
+predecessor_debt_dispositions = 28
+carried_predecessor_debts = 23
+resolved_predecessor_projected_visibility_debt = 1
+current_successor_debts = 10
+live_debt_union = 33
+controls = 55
+remaining_family_pressure_complete = false
+
+architecture_local_D8B_A_authorized = true
+architecture_local_D8B_C_authorized = true
+comparative_D8B_authorized = false
+runtime_or_src_changed = false
+```
+
+Candidate C supplies a complete same-step root because its accepted geometry
+chain is already load-bearing in `J0_C` and the retained response. This
+successor names the ungated resolvent
+`Rhat_C,M = (I + tau_C Delta_1,M)^-1`; historical D5-v2 notation that included
+`chi_C` inside `R_C,M` is not reused. The causal read is
+`j_C^flat = chi_C r_C^flat`. The shared `zeta_C` gain appears once in the
+current use and as an external multiplier of `iota_C(A_star(j_C^flat))`, so no
+adapter homogeneity or hidden squared gain is assumed. `I_4M(T_C,h)` exposes
+the full selector/retained-metric dependency.
+
+At `kappa_H = 0`, the physical current block is exactly similar to the
+accepted retained D6-v2 block through `Q_C = I_4M G_J`. Exact invertibility
+therefore transfers, while robust physical conditioning separately requires a
+finite `cond(Q_C)` and a new inverse bound. With the identity geometry block,
+the implicit function theorem admits a unique local smooth C branch on the
+declared fixed-rank, fixed-topology, smooth SPD domain.
+
+The root uses independent symmetric `H1_form` coordinates in the fixed
+oriented-edge basis; all other geometry/current metric objects are derived or
+candidate-owned, so the residual is square. This is a revision-distinct C
+successor to D6 staging. Accepted D6-v2 bytes remain unchanged, C retains its
+D7 state authority, and the changed joint solve stage is propagated into the
+D8-B rederivation burden.
+
+Away from the reference point, the full joint block includes all active
+selector, retained-Hodge, identification, flat/sharp, profile, baseline, and
+structural derivatives. It explicitly retains `(delta G_J) J`. A Schur
+complement is subordinate to separate geometry-pivot regularity.
+
+The declared D8-B surface is `D_X Y_C = -B_full,C^-1 D_X F_C`, followed by
+continuity and the C commit map. `kappa_H = 0` reduces to the accepted D6-v2 C
+root only; complete V3 reduction and topology/event lifecycle remain D9 debt.
+
+Candidate A uses D4's accepted geometry/mobility separation and D7's exact
+baseline and writer. The reference-relative profile
+`Phi_A^CI = Phi_A^D7 + kappa_Ah [Delta_0(h)-Delta_0(h_ref)] C` makes generated
+geometry load-bearing in `J0_A` while `W_A` remains the sole mobility owner.
+At `h = h_ref`, the correction vanishes and the accepted A baseline returns
+exactly. The accepted D7 writer remains unchanged and has no direct `h` input.
+`kappa_Ah` has units `[Phi_A]/([Delta_0][C])`, uses the preregistered enabled
+value `+1.0` in that unit basis, and uses zero only as the explicit geometry
+consumer ablation; its sign is revision-specific and may not be tuned after
+D8-B results. `W_hat_A(h)` is recomputed inside every joint-root residual after
+`J0_A^CI(h)` and before `q_A`. The structural gain `zeta_A` remains external to
+`iota_A`. The accepted A current margin and identity geometry block provide a
+local IFT branch on the smooth `G_W` floor-inactive chart.
+
+The successor closes D8-A's projected-target witness burden for both branches.
+The D5-v2 C selected-sector receipt gives pre-adapter projected value
+`-0.014842807194071116`; an admissible A three-node star receipt gives
+`0.41999999999999993`. For the accepted non-erasing adapters, a connected
+three-node tree maps the zero-sum node tangent isomorphically onto the two-edge
+form space, so each nonzero post-adapter symmetric metric variation has some
+lawful projected pair. These are formal constitutive direct-field visibility
+receipts only, not runtime, complete transition-chain, Hessian, temporal, or
+stability evidence.
+
+This accepted record authorizes Candidates A and C separately for
+architecture-local D8-B rederivation. Cross-candidate and cross-family
+comparison remains blocked. The
+operator-split, persistent-carrier, and reconstructed families remain open for
+successor-family completeness and architecture selection.
+
+The authoritative records are
+[`GeometryTemporalRealizationSuccessorCoupledImplicit.json`](./decisions/GeometryTemporalRealizationSuccessorCoupledImplicit.json)
+and its
+[`scientific interpretation`](./decisions/GeometryTemporalRealizationSuccessorCoupledImplicit.md).
+
 ## D9. Complete Step And Lifecycle Contract
 
-Status: blocked on the typed temporal geometry realization and completed D8-B
-full continuation comparison.
+Status: blocked on architecture-local D8-B completion plus the remaining
+realization-family pressure and comparative/selection boundary.
 
 ## D10. Design Synthesis And Spec-Writing Decision
 

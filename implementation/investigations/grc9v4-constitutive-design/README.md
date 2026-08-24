@@ -69,6 +69,8 @@ Start with:
 - [D7G-post-v2 correction interpretation](./decisions/D7GPostv2GraphHodgeTypeCorrection.md).
 - [D8-A structured decision](./decisions/D8ABranchAppropriateStructuralTargetExtraction.json);
 - [D8-A interpretation](./decisions/D8ABranchAppropriateStructuralTargetExtraction.md).
+- [coupled/implicit geometry-temporal successor decision](./decisions/GeometryTemporalRealizationSuccessorCoupledImplicit.json);
+- [coupled/implicit successor interpretation](./decisions/GeometryTemporalRealizationSuccessorCoupledImplicit.md).
 
 Current gate status:
 
@@ -95,10 +97,16 @@ D7G-post-v2 graph-Hodge type correction = accepted_bounded
 automatic_D4-v3-D7-v3_cycle = not_authorized
 D8-A = accepted_bounded
 D8_authorized = true
-D8_authorized_scope = D8-A_branch_appropriate_scope_classified_structural_target_extraction_only
-D8-B_full_continuation = blocked_on_concrete_geometry_temporal_realization
+D8_authorized_scope = D8-A_plus_coupled_A_and_C_architecture_local_D8B
+D8-B_full_continuation = architecture_local_A_C_authorized_comparative_blocked
 next_route_after_accepted_D8-A = GRC9V4-GEOMETRY-TEMPORAL-REALIZATION-SUCCESSOR
 geometry_temporal_realization_successor_authorized = true
+geometry_temporal_realization_successor_coupled_implicit = accepted_bounded
+coupled_implicit_C = accepted_bounded_complete_realization_candidate
+coupled_implicit_A = accepted_bounded_complete_realization_candidate
+architecture_local_D8B_A_authorized = true
+architecture_local_D8B_C_authorized = true
+comparative_D8B_authorized = false
 ```
 
 D4-v2 now gives B and C bounded revision-specific constitutive completions
@@ -338,6 +346,44 @@ genuinely cannot be finalized before temporal realization. The latter are
 generated-geometry influence on a later transition and temporal `gamma`/`mu`.
 The correction receipt and D8-A are jointly accepted bounded. This authorizes
 the named realization successor, not D8-B directly.
+
+The successor's first family pass now pressures coupled/implicit realization.
+Candidate C supplies a complete same-step root for `(J_C,flux, h_C)` because
+its accepted geometry chain is already load-bearing in `J0_C` and its retained
+response. It uses the ungated
+`Rhat_C,M = (I + tau_C Delta_1,M)^-1`, applies `chi_C` only in the explicit
+causal read, and keeps shared `zeta_C` outside the candidate adapter. Its
+corrected physical current block is exactly similar to the
+accepted retained D6-v2 block through `Q_C = I_4M(T_C,h) G_J(h)`, so exact
+invertibility transfers while physical conditioning remains separate debt.
+
+Candidate A now also supplies a complete same-step root. D4 permits geometry
+and `W_A` mobility to enter baseline transport through distinct typed roles;
+D7 supplies the exact reference baseline and writer. A's revision-specific
+profile adds `[Delta_0(h)-Delta_0(h_ref)] C` to the baseline potential, keeps
+`W_A` as the sole mobility owner, and preserves the D7 writer. The correction
+vanishes exactly at reference geometry. Its typed `kappa_Ah` uses a
+preregistered finite enabled value and a zero ablation, `W_hat_A(h)` is
+recomputed inside every joint-root residual, and shared `zeta_A` remains
+outside the candidate adapter.
+
+The successor also supplies formal projected direct-field visibility receipts
+for both candidates. The C selected-sector receipt has pre-adapter projected
+value `-0.014842807194071116`; the A receipt has value
+`0.41999999999999993`. Accepted non-erasure plus exact-gradient surjectivity on
+the connected three-node tree establishes nonempty post-adapter visible
+subdomains. These receipts close the D8-A witness obligation but do not provide
+runtime, complete transition-chain, Hessian, temporal, or stability evidence.
+
+Both candidates therefore have block-triangular reference Jacobians and local
+implicit-function branches on their declared smooth fixed-stratum domains.
+These are local constitutive existence results, not global branches, numeric
+coupling margins, stability results, or unique core-theory laws. The pass does
+not rank A and C or select the coupled family. Human acceptance authorizes A
+and C separately for architecture-local D8-B rederivation, while comparative
+D8-B and the remaining operator-split, persistent, and reconstructed family
+pressure stay open. The coupled family record is complete; the overall
+geometry-temporal successor is not.
 
 The later specification and implementation must also rebuild every
 differential or gradient summary used by `G_W(C[k+1], J_C[k])` from

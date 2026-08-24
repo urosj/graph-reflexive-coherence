@@ -1,7 +1,7 @@
 # GRC9V4 Constitutive Design Investigation Checklist
 
 **Date:** 2026-08-23  
-**Status:** D0-D7, D4-v2-D7-v2, D7G-v1, D7G-v2, the D7G-post-v2 correction, and D8-A accepted bounded; the geometry-temporal-realization successor is authorized; D8-B remains blocked on a complete temporal realization
+**Status:** D0-D7, D4-v2-D7-v2, D7G-v1, D7G-v2, the D7G-post-v2 correction, D8-A, and coupled/implicit A+C accepted bounded; architecture-local D8-B for coupled A and C is authorized, while comparative D8-B and successor-family closeout remain blocked
 **Plan:** [`GRC9V4ConstitutiveDesignPlan.md`](./GRC9V4ConstitutiveDesignPlan.md)  
 **Basis:** [`GRC9V4ConstitutiveDesignBasis.md`](./GRC9V4ConstitutiveDesignBasis.md)  
 **Ledger:** [`GRC9V4ConstitutiveDesignDecisionLedger.md`](./GRC9V4ConstitutiveDesignDecisionLedger.md)
@@ -1672,7 +1672,130 @@ implementation_authorized = false
 - [x] Obtain human acceptance of the D7G-post-v2 correction receipt.
 - [x] Obtain human acceptance of D8-A.
 
-### D8-B And Full Analysis (Blocked)
+### Geometry-Temporal Realization Successor: Coupled/Implicit (Awaiting Review)
+
+- [x] Keep the successor distinct from D8-A and D8-B.
+- [x] Bind D4, D5-v2, D6-v2, D7, D7-v2, D7G-v2, the Hodge correction, and
+      D8-A by exact decision digest and file SHA-256.
+- [x] Pressure A and C under the same coupled-family admission burden without
+      requiring identical equations.
+- [x] Freeze Candidate C's complete unknown as `(J_C,flux, h_C)`.
+- [x] Represent `h_C` by independent symmetric `H1_form` coordinates on the
+      fixed-stratum SPD chart and keep derived operators out of the root state.
+- [x] Verify the current and geometry residual dimensions form a square system.
+- [x] Freeze the complete C current and geometry residual equations.
+- [x] Separate C's intrinsic response `r_C^flat`, `chi_C`-gated causal read
+      `j_C^flat`, and physical `j_C,flux`.
+- [x] Freeze `Rhat_C,M = (I + tau_C Delta_1,M)^-1` as the ungated successor
+      resolvent and block historical D5-v2 internal-`chi_C` notation.
+- [x] Apply shared `zeta_C` exactly once to the current use and once outside
+      `iota_C` on the quadratic structural use; reject `zeta_C^2` insertion or
+      reliance on unstated adapter homogeneity.
+- [x] Preserve candidate-specific `iota_C`; introduce no common `kappa_K` and
+      do not hide `zeta_C` inside `iota_C`.
+- [x] Use `I_4M(T_C,h)` and retain the complete
+      `h -> P_M -> T_C -> H_M -> I_4M` derivative chain.
+- [x] Keep `J` and `h` as same-step algebraic variables rather than new
+      persistent state.
+- [x] Prove the corrected C physical current block is exactly similar to the
+      accepted retained D6-v2 block through `Q_C = I_4M G_J`.
+- [x] Keep exact C invertibility separate from robust physical conditioning;
+      carry `cond(Q_C)` and a new physical inverse bound as debt.
+- [x] Prove the C reference full block is triangular and invertible at
+      `kappa_H = 0`.
+- [x] Record the fixed-stratum implicit-function theorem and its local-only
+      claim boundary.
+- [x] Derive the complete `(J,h)` chain-rule block away from the reference.
+- [x] Record the result as a revision-distinct C successor to D6 staging rather
+      than a correction of accepted D6-v2.
+- [x] Preserve C's D7 committed-state authority while propagating the changed
+      joint solve stage into D8-B rederivation obligations.
+- [x] Retain `(delta G_J) J` and every active C selector, Hodge,
+      identification, response, flat/sharp, profile, and baseline derivative.
+- [x] Permit the current Schur complement only after the geometry pivot is
+      separately regular.
+- [x] Freeze `D_X Y_C = -B_full,C^-1 D_X F_C` as the architecture-local D8-B
+      linearization surface, subordinate to continuity and the C commit map.
+- [x] Distinguish exact `kappa_H = 0` reduction to D6-v2 C from complete V3
+      transition reduction, which remains D9 debt.
+- [x] Keep topology, support, and selector-rank crossing outside the local root
+      and carry full event lifecycle to D9.
+- [x] Freeze exact root-branch selection, domain failure, and atomic no-commit
+      behavior.
+- [x] Apply the D8-A projected structural visibility test to every regular
+      branch point and distinguish visible from projected-kernel subdomains.
+- [x] Keep nonzero `Delta K4` from substituting for the visibility test.
+- [x] Consume D4's geometry/mobility separation and D7's exact A baseline and
+      writer as direct source contracts.
+- [x] Freeze A's reference-relative geometry consumer
+      `Phi_A^CI = Phi_A^D7 + kappa_Ah [Delta_0(h)-Delta_0(h_ref)] C`.
+- [x] Freeze `[kappa_Ah] = [Phi_A]/([Delta_0][C])`, enabled value `+1.0` in
+      that unit basis, `kappa_Ah = 0` ablation, and no post-hoc D8-B tuning.
+- [x] Keep `W_A` as the sole transport mobility owner and preserve the D7
+      postsolve writer without direct `h -> W_A` authority.
+- [x] Verify exact A reference reduction at `h = h_ref`.
+- [x] Freeze the complete A joint root, reference triangular block, and local
+      IFT route on the smooth `G_W` floor-inactive chart.
+- [x] Retain A's complete
+      `h -> Delta_0 -> Phi -> J0 -> W_hat -> q -> j -> K4 -> h` chain.
+- [x] Recompute `W_hat_A(h) = G_W(C,J0_A^CI(h))` inside every residual
+      evaluation after `J0_A^CI(h)` and before `q_A`.
+- [x] Place `zeta_A` outside `iota_A(A_star(j_A^flat))` without assuming
+      adapter homogeneity.
+- [x] Classify the A profile as a minimal revision-specific completion rather
+      than a unique core-theory or normative V4 law.
+- [x] Keep A and C family-local completeness from ranking either candidate or
+      selecting the coupled family.
+- [x] Recompute the D5-v2 C three-node selected-sector star receipt and record
+      pre-adapter projected value `-0.014842807194071116`.
+- [x] Instantiate an admissible A three-node `q/J` star receipt and record
+      pre-adapter projected value `0.41999999999999993`.
+- [x] Use accepted non-erasure plus tree exact-gradient surjectivity to prove a
+      nonempty post-adapter projected direct-field subdomain for A and C.
+- [x] Keep the visibility receipts formal/constitutive and separate from
+      runtime, full-chain, Hessian, temporal, or stability evidence.
+- [x] Preserve the remaining operator-split, persistent, and reconstructed
+      family pressure.
+- [x] Give all 28 D8-A debts one explicit disposition.
+- [x] Resolve the D8-A projected-target witness debt, preserve 23 carried
+      predecessor debts, record ten current successor debts, and freeze the
+      33-row live union.
+- [x] Record 55 fail-closed controls.
+- [x] Keep runtime, `src/`, normative specification, D9, and D10 closed.
+- [x] Obtain human acceptance.
+
+```text
+record = GRC9V4-GTRS-CI-v1
+status = accepted_bounded
+decision_digest = a0292d35d3dfc18e6386a78c26ae9bc2a4b6de9f31e505cf67edf7c094aea3a3
+human_acceptance = accepted_bounded_2026-08-25
+
+coupled_implicit_C = accepted_bounded_complete_realization_candidate
+coupled_implicit_A = accepted_bounded_complete_realization_candidate
+C_reference_regularness = Q_C_similarity_plus_block_triangular_IFT_at_kappa_H_zero
+A_reference_regularness = exact_D7_reduction_plus_block_triangular_IFT_at_kappa_H_zero
+C_full_regularness_object = full_joint_J_h_block
+A_full_regularness_object = full_joint_J_h_block
+A_C_global_branch_or_numeric_radius = unsupported
+A_C_nonempty_projected_visibility_witness = passed_formal_constitutive
+A_C_projected_visibility_witness_count = 2
+
+A_or_C_selected = false
+A_rejected = false
+B_reopened = false
+remaining_family_pressure_complete = false
+
+architecture_local_D8B_A_authorized = true
+architecture_local_D8B_C_authorized = true
+comparative_D8B_authorized = false
+carried_predecessor_debts = 23
+current_successor_debts = 10
+live_debt_union = 33
+controls = 55
+runtime_or_src_changed = false
+```
+
+### D8-B Architecture-Local Analysis (Authorized) And Comparison (Blocked)
 
 - [ ] Define structural functional/Hessian and `alpha` semantics.
 - [ ] Define temporal generator/effective-map and `gamma`/multiplier semantics.
@@ -1701,8 +1824,8 @@ implementation_authorized = false
 
 ## D9. Complete Step And Lifecycle Contract
 
-Status: blocked on the typed temporal geometry realization and completed D8-B
-full continuation comparison.
+Status: blocked on architecture-local D8-B completion plus the remaining
+realization-family pressure and comparative/selection boundary.
 
 - [ ] Freeze complete-step order and causal-state schema.
 - [ ] Freeze post-continuity recomputation of every differential and gradient
@@ -1801,9 +1924,16 @@ automatic_D4-v3-D7-v3_cycle = not_authorized
 D8-A_structural_target_extraction = accepted_bounded
 D8-A_decision_digest = 5e3af8a6b8b327b3d98b5c5f6ac934ff528f048c3927a085c59194262afba021
 geometry_temporal_realization_successor_authorized = true
+geometry_temporal_realization_successor_coupled_implicit = accepted_bounded
+coupled_implicit_C = accepted_bounded_complete_realization_candidate
+coupled_implicit_A = accepted_bounded_complete_realization_candidate
+architecture_local_D8B_A_authorized = true
+architecture_local_D8B_C_authorized = true
+comparative_D8B_authorized = false
+remaining_minimum_family_pressure_complete = false
 D8_authorized = true
-D8_authorized_scope = D8-A_branch_appropriate_scope_classified_structural_target_extraction_only
-D8_full_continuation_through_D10 = blocked_on_typed_temporal_realization_successor
+D8_authorized_scope = D8-A_plus_coupled_A_and_C_architecture_local_D8B
+D8_full_continuation_through_D10 = blocked_on_architecture_local_D8B_remaining_family_pressure_and_comparative_selection_boundary
 D10_early_terminal_route = available_for_rejected_all_missing_theory_or_missing_discriminator
 architecture_selected = false
 specification_authorized = false

@@ -1,7 +1,7 @@
 # GRC9V4 Constitutive Design Investigation Plan
 
 **Date:** 2026-08-23  
-**Status:** D0-D7, D4-v2-D7-v2, D7G-v1, D7G-v2, the D7G-post-v2 correction, and D8-A accepted bounded; the geometry-temporal-realization successor is authorized; D8-B remains blocked on a complete temporal realization
+**Status:** D0-D7, D4-v2-D7-v2, D7G-v1, D7G-v2, the D7G-post-v2 correction, D8-A, and coupled/implicit A+C accepted bounded; architecture-local D8-B for coupled A and C is authorized, while comparative D8-B and successor-family closeout remain blocked
 **Design basis:** [`GRC9V4ConstitutiveDesignBasis.md`](./GRC9V4ConstitutiveDesignBasis.md)  
 **Checklist:** [`GRC9V4ConstitutiveDesignChecklist.md`](./GRC9V4ConstitutiveDesignChecklist.md)  
 **Decision ledger:** [`GRC9V4ConstitutiveDesignDecisionLedger.md`](./GRC9V4ConstitutiveDesignDecisionLedger.md)
@@ -2001,11 +2001,187 @@ broaden or return a bounded unresolved result. The common `H_profile` does not
 force A and C to use identical temporal equations. Candidate neutrality means
 the same acceptance criteria and burden of proof.
 
-### D8-B. Full Continuation Comparison
+#### First Family Pass: Coupled/Implicit
 
-Blocked until the geometry-temporal realization successor instantiates a
-bounded complete step and propagates any changed authority or stage through the
-earliest affected gate.
+The successor begins with the coupled/implicit family because D6 already
+supplies an accepted regular current reference and the core effective loop
+admits same-solve `J -> j -> K4 -> h -> J0 -> J` dependence. This ordering is
+not an architecture preference.
+
+For Candidate C, freeze the algebraic unknown `Y_C = (J_C,flux, h_C)`. The
+intrinsic retained response, causal read, physical current, and structural use
+are distinct:
+
+```text
+r_C^flat
+  = I_4M(T_C,h)^-1 Rhat_C,M(T_C,h) I_4M(T_C,h) G_J(h) J_C,flux
+
+j_C^flat = chi_C r_C^flat
+j_C,flux = G_J(h)^-1 j_C^flat
+
+Delta K4_C = zeta_C iota_C(A_star(j_C^flat)).
+```
+
+`Rhat_C,M = (I + tau_C Delta_1,M)^-1` is explicitly ungated. Historical D5-v2
+notation with `chi_C` inside `R_C,M` is not used by this successor.
+`chi_C` therefore gates the explicit read and its structural branch. `zeta_C`
+gates both causal uses exactly once as an external multiplier and is not
+inserted inside `j_C^flat` or `iota_C`. No adapter homogeneity is assumed.
+`I_4M(T_C,h)` exposes the complete
+`h -> P_M -> T_C -> H_M -> I_4M` derivative chain. Solve
+
+```text
+F_J,C
+  = J_C,flux
+    - J0_C(C_k,T_C,h_C,context)
+    - zeta_C j_C,flux(J_C,flux,h_C)
+  = 0
+
+F_h,C
+  = h_C
+    - H_profile(
+        K4_base + Delta K4_C(J_C,flux,h_C),
+        h4_ref,
+        context)
+  = 0.
+```
+
+Only physical flux enters continuity. Candidate-specific `iota_C` remains the
+typed structural adapter and excludes the shared `zeta_C`. The same-step `J`
+and `h` variables do not become persistent state.
+
+At `kappa_H = 0`, define
+
+```text
+Q_C,ref = I_4M(T_C,ref,h4_ref) G_J(h4_ref)
+
+L_C,flux,ref
+  = Q_C,ref^-1
+    (I - zeta_C chi_C Rhat_C,M,ref)
+    Q_C,ref.
+```
+
+The physical block is exactly similar to the accepted retained D6-v2 block,
+so invertibility transfers. The old physical singular-value margin does not.
+Robust physical conditioning additionally requires finite `cond(Q_C,ref)` and
+a new inverse bound. The reference root derivative is
+
+```text
+[ L_C,flux,ref  B_C ]
+[       0        I  ].
+```
+
+On the fixed stratum, `h` is represented by the independent symmetric
+coordinates of `H1_form` in the declared oriented-edge basis. `H0`, incidence,
+boundary, and live order are fixed; `G_J` and candidate operators are derived
+rather than independent root coordinates. The residual is therefore square in
+a local SPD chart.
+
+The implicit function theorem therefore admits a unique local smooth coupled
+branch for sufficiently small `|kappa_H|`. This is a local existence and
+uniqueness result, not a numeric radius, global branch, or stability result.
+This is a revision-distinct C successor to D6 staging, not a correction of
+accepted D6-v2. C keeps its D7 state authority but jointly solves current and
+geometry before continuity, so D8-A's lagged targets require D8-B rederivation.
+
+Away from the reference point, the authoritative regularity object is the full
+`(J,h)` block. It must retain every active derivative through `P_M`, `T_C`,
+`H_M`, `I_4M`, `Rhat_C,M`, `G_J`, flat/sharp, `K4`, and `H_profile`. In particular,
+`(delta G_J) J` cannot be dropped. A current-only Schur complement is valid
+only after its geometry pivot is separately proved regular.
+
+The later architecture-local D8-B linearization surface is
+
+```text
+D_X Y_C = -B_full,C^-1 D_X F_C,
+```
+
+composed with continuity and the C commit map. `kappa_H = 0` returns the
+accepted D6-v2 C root, not the complete V3 transition; full disabled reduction
+and topology/event lifecycle remain D9 debt.
+
+Candidate A receives the same family burden. D4 already separates structural
+geometry from retained mobility while admitting both as typed inputs to
+baseline transport, and D7 freezes the reference baseline and writer. The
+successor therefore defines a reference-relative geometry consumer:
+
+```text
+Delta_0(h) = H0,ref^-1 B H1_form(h) B^T
+
+Phi_A^CI
+  = Phi_A^D7
+    + kappa_Ah [Delta_0(h) - Delta_0(h_ref)] C
+
+M4_A = eta Diag(W_A)
+J0_A^CI = -M4_A d0 Phi_A^CI.
+```
+
+`W_A` remains the sole mobility owner. At `h = h_ref`, the correction vanishes
+and the accepted D7 baseline returns exactly. The existing `G_W`, `q_A`,
+directional read, structural adapter, continuity, and postsolve D7 writer are
+preserved. Generated geometry has no direct writer authority; it acts through
+the baseline current, authoritative total current, and continuity.
+
+Freeze
+
+```text
+[kappa_Ah] = [Phi_A] / ([Delta_0] [C])
+enabled kappa_Ah = +1.0 in that declared unit basis
+ablation kappa_Ah = 0.
+```
+
+The enabled value is preregistered before D8-B, not selected to optimize
+visibility or stability; its sign is a profile convention rather than a
+theory-fixed sign. `W_hat_A(h) = G_W(C,J0_A^CI(h))` is recomputed inside every
+joint-root residual evaluation after `J0_A^CI(h)` and before `q_A`. “Pre-read”
+describes this internal order, not evaluation outside the root. A's structural
+increment is `Delta K4_A = zeta_A iota_A(A_star(j_A^flat))`.
+
+The A root uses `Y_A = (J_A,flux,h_A)` and the same current/geometry residual
+shape as C with A-specific maps. At `kappa_H = 0`, its reference block is
+`[[L_A,B_A],[0,I]]`; the accepted
+`sigma_min(L_A) >= 1-zeta_bar_A > 0` bound supplies a local IFT branch on the
+smooth chart where the `G_W` floor is inactive. Away from the reference, the
+complete derivative must retain
+`h -> Delta_0 -> Phi_A^CI -> J0_A^CI -> W_hat_A -> q_A -> j_A -> K4 -> h`.
+The reference-relative profile is a minimal revision-specific completion, not
+a unique core-theory or normative V4 law.
+
+Every admitted branch point is classified by the D8-A projected visibility
+test. A point may be a lawful complete root while lying in the direct
+structural target kernel. Nonzero `Delta K4` alone does not establish a
+nonzero constrained continuation target. This pass closes the instantiated
+branch obligation with two formal constitutive receipts:
+
+```text
+C D5-v2 selected-minus-base star receipt:
+  (d0 u)^T delta A_star (d0 u) = -0.014842807194071116
+
+A admitted q/J star receipt:
+  (d0 u)^T delta A_star (d0 u) = 0.41999999999999993
+```
+
+Both use the connected three-node path. Accepted non-erasing adapters and
+nonzero profile gains preserve a nonzero metric variation; exact-gradient
+tangents span the full two-edge form space, so an admissible post-adapter
+projected pair exists. These are direct-field visibility receipts, not runtime,
+full-chain, Hessian, or stability evidence.
+
+The provisional result is recorded in
+[`GeometryTemporalRealizationSuccessorCoupledImplicit.json`](./decisions/GeometryTemporalRealizationSuccessorCoupledImplicit.json)
+and its
+[`scientific interpretation`](./decisions/GeometryTemporalRealizationSuccessorCoupledImplicit.md).
+It is accepted bounded. Candidates A and C are separately authorized for
+architecture-local D8-B rederivation. Comparative D8-B and successor-family
+closeout remain blocked on the other realization families or an explicit
+contract revision.
+
+### D8-B. Full Continuation Analysis And Comparison
+
+Architecture-local D8-B is authorized for coupled/implicit A and C. Comparative
+D8-B remains blocked until the minimum realization-family pressure is complete
+or an explicit contract revision closes that obligation. Local analysis must
+not be relabeled as cross-candidate or cross-family comparison.
 
 Where meaningful, compare A and C under a matched realization family. If their
 ontologies justify different realizations, treat each `(candidate,
@@ -2051,8 +2227,8 @@ not new evidence and does not close D8.
 
 ## D9. Complete Step And Lifecycle Contract
 
-Status: blocked on the typed temporal geometry realization and completed D8-B
-full continuation comparison.
+Status: blocked on architecture-local D8-B completion plus the remaining
+realization-family pressure and comparative/selection boundary.
 
 Freeze candidate complete-step ordering, causal state, serialization,
 restoration identity, reset baseline, RNG use, deterministic replay,
