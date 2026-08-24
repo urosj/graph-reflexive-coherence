@@ -1,7 +1,7 @@
 # GRC9V4 Constitutive Design Investigation Plan
 
 **Date:** 2026-08-23  
-**Status:** D0-D7, D4-v2-D7-v2, and D7G-v1 accepted bounded; D7G-v2 authorized and unexecuted; D8 blocked
+**Status:** D0-D7, D4-v2-D7-v2, D7G-v1, and D7G-v2 accepted bounded; bounded D8-A structural-target extraction authorized; D8-B remains blocked on a complete temporal realization
 **Design basis:** [`GRC9V4ConstitutiveDesignBasis.md`](./GRC9V4ConstitutiveDesignBasis.md)  
 **Checklist:** [`GRC9V4ConstitutiveDesignChecklist.md`](./GRC9V4ConstitutiveDesignChecklist.md)  
 **Decision ledger:** [`GRC9V4ConstitutiveDesignDecisionLedger.md`](./GRC9V4ConstitutiveDesignDecisionLedger.md)
@@ -1400,8 +1400,9 @@ specification, implementation, runtime, and `src/` changes remain unauthorized.
 Status: accepted bounded. D7G-v1 freezes a typed `H_4`
 constitutive interface and admits one bounded affine profile family conditional
 on an exact `E_ref` that current V3 source does not define. D7G-v2 must admit
-that embedding, close the geometry handoff, and establish geometry-parametric
-or bounded profile-specific A/C closure before D7G can complete.
+that embedding, establish geometry-parametric or bounded profile-specific A/C
+closure, and classify generated-geometry feedback relative to the selected
+temporal realization before the profile/stage audit can complete.
 
 Planned record: `GRC9V4-CD-D7G-v1`, with outputs
 `decisions/D7GGlobalMetricAndStructuralCultivationClosure.json` and
@@ -1414,7 +1415,10 @@ derives or formally closes the common:
 candidate-local admitted structural input K_4^a
   -> H_4
   -> h_4
-  -> later candidate transition consequence
+
+then distinguish:
+  h_4 -> branch-appropriate structural continuation consequence
+  h_4+[k] -> discrete runtime geometry context for F[k+1]
 ```
 
 Core RC leaves `g[K]` constitutively incomplete. D7G therefore freezes a typed
@@ -1491,6 +1495,7 @@ D7G emits one of these per-candidate scientific dispositions:
 
 ```text
 D8_comparable_complete_transition
+candidate_local_transition_valid_selected_lagged_explicit_geometry_feedback_unresolved
 current_tranche_closed_missing_theory
 current_tranche_closed_missing_constitutive_derivation
 current_tranche_rejected_target_incompatibility
@@ -1624,24 +1629,37 @@ to the conditional affine family. It must:
   remain well typed and regular over `H_adm`;
 - for C, define `P_M(h)`, `H_M(T_C,h)`, `I_4M(h)`, and `R_C(h_M)` on a declared
   SPD subdomain with explicit spectral-gap, conditioning, and regularity bounds;
-- preserve `J_C[k] -> j[k] -> K_4[k] -> h_4+[k] -> later transition` staging;
-- close that later-stage arrow by deterministic reconstruction from committed
-  Markov state, precommit consumption into an admitted committed effect, or a
-  named D1 successor admitting persistent geometry state; cache history is
-  forbidden;
+- preserve the accepted `J_C[k] -> j[k] -> K_4[k] -> h_4+[k]` order only as
+  the selected lagged explicit realization under audit, not as a general V4
+  temporal requirement;
+- distinguish supplied pre-read sensitivity `D_(h_pre) F_a` from generated
+  geometry sensitivity through `Gamma_a` or another complete realization;
+  absent `Gamma_a` makes the latter undefined, not zero;
+- for C, distinguish nonzero internal-map derivatives, nonzero current
+  sensitivity, and nonzero full-transition sensitivity; do not promote one
+  level to the next without the complete downstream chain or a matched witness;
+- ready a non-exhaustive minimum pressure set covering coupled/implicit,
+  operator-split same-beat, persistent carrier, and reconstructed geometry;
+  cache history is forbidden, and failure of those four does not establish V4
+  impossibility without a separate completeness proof;
 - distinguish graph-local assembly from inverse, identification, solver, and
   causal support;
 - emit a geometry-parametric equivalence receipt, bounded profile-specific
   receipt, named earlier-gate reopening, or terminal disposition for A and C;
   and
-- admit a candidate to D8 only after `delta h_4` has a declared later
-  transition consequence under the corresponding receipt.
+- admit a candidate to full D8 continuation comparison only after `delta h_4`
+  has a declared later transition consequence under the corresponding receipt;
+  bounded D8-A structural-target extraction may proceed earlier when it derives
+  a branch-appropriate continuation object and does not repeat the known absent
+  `Gamma_a` diagnosis.
 
-D7G-v2 also owns D7G finalization. It closes the full per-candidate
-`delta T_a -> delta K_4^a -> delta h_4 -> delta F_a,later` chain, emits the
-final D7G disposition for A and C, and routes zero survivors or a hard global
-blocker directly to bounded D10 closeout or a named theory successor. These are
-not written back as unfinished D7G-v1 tasks.
+D7G-v2 also owns D7G profile/stage finalization. It classifies the
+per-candidate `delta T_a -> delta K_4^a -> delta h_4` chain, separates its
+branch-appropriate structural consequence from complete temporal realization,
+and emits the current D7G disposition for A and C. Missing generated-geometry
+feedback in the selected lagged explicit realization does not terminally close
+candidate-local A/C theory, impose a cross-beat handoff on V4, or prove a hard
+global blocker. These results are not written back as unfinished D7G-v1 tasks.
 
 ##### D7G-v2 Formal Pre-Acceptance Protocol (`D7G-v2-PREACCEPT-v1`)
 
@@ -1651,22 +1669,26 @@ pressure list. The audit order is fixed:
 ```text
 1. definitions and load-bearing symbol/noun registry
 2. quantifiers, domains, norms, constants, and uniform bounds
-3. causal beat/state graph and geometry handoff
-4. Candidate A proof or bounded receipt
-5. Candidate C proof or bounded receipt
-6. per-candidate causal non-erasure / later consequence
-7. authority mutation and earlier-gate reopening audit
-8. claim-word audit
-9. debt lineage and machine integrity
-10. final canonical digest
+3. H_adm geometry-state / P_adm profile-map separation
+4. exact reference and K_4,base definition closure
+5. causal beat/state graph and selected temporal realization
+6. Candidate A proof or bounded receipt
+7. Candidate C proof or bounded receipt
+8. per-candidate causal non-erasure / structural-target-versus-realization consequence
+9. authority mutation and earlier-gate reopening audit
+10. reference neutrality / complete reduction separation
+11. claim-word audit
+12. debt lineage, machine integrity, and canonical digest
 ```
 
 The symbol registry must state type, space, units/gauge, owner, independent or
 derived status, evaluation stage, serialization or deterministic
-reconstruction rule, and causal consumers for every load-bearing object. At a
-minimum it covers `H_adm`, `P_adm`, profile `context`, `E_ref`, `K_4,base`,
-`Delta K_4`, `M_4`, `H_1(h)`, `P_M(h)`, `I_4M(h)`, and the named later
-transition.
+reconstruction rule, runtime causal consumers, and analysis consumers where
+applicable for every load-bearing object. Analysis access must not be relabeled
+as runtime causal consumption. At a minimum it covers `H_adm`, `P_adm`, profile
+`context`, `E_ref`, `K_4,base`,
+`Delta K_4`, `M_4`, `H_1(h)`, `P_M(h)`, `I_4M(h)`, `Gamma_a`, `S_H`, and the
+branch-appropriate structural continuation object.
 
 Every use of `all`, `any`, `uniform`, `bounded`, `admissible`, `equivalent`,
 `regular`, `stable`, `preserves`, `same`, `exact`, `later`, or
@@ -1681,9 +1703,9 @@ The acceptance rule is fail-closed:
 > or reproducible witness, an explicitly bounded assumption/profile
 > restriction, or a named open debt that the claim ceiling does not consume.
 
-D7G-v2 does not optimize for placing both A and C into D8. An asymmetric result
-such as geometry-parametric A closure and profile-specific C closure is valid
-when that is what the evidence supports.
+D7G-v2 does not optimize for placing both A and C into full D8 continuation
+comparison. An asymmetric result such as geometry-parametric A closure and
+profile-specific C closure is valid when that is what the evidence supports.
 
 After D7G-v2 acceptance, newly discovered work must be named either
 `D7G-post-v2` or an earlier-gate reopening. The plan does not reopen an accepted
@@ -1693,13 +1715,170 @@ Profile variation within `H_adm` is reevaluation of the same constitutive
 family. It is not an automatic D4-D7 restart. Earlier reopening is reserved for
 changed authority, changed same-beat staging, or invalidated operator families.
 
+#### D7G-v2 Implementation Result
+
+D7G-v2 executed the complete 12-pass pre-acceptance protocol and was accepted
+bounded on 2026-08-24 under record `GRC9V4-CD-D7G-v2`, decision digest
+`c52912d83797ee294799709b3e770574043df37f80073b51eebfaf8b2fd27efb`.
+
+The gate admits a revision-specific reference embedding:
+
+```text
+H_0,ref = diag(V3 positive quadrature weights)
+H_1,ref = diag(W_V3^-1)
+B_ref   = oriented live-edge incidence
+```
+
+The edge convention consumes B1-GR's primary native constitutive metric and
+does not relabel the regularized runtime `geometric_length` diagnostic as the
+exact embedding. The affine graph-Hodge family is therefore instantiated as a
+bounded V4 profile, not inherited as baseline V3 physical `h_4` and not
+promoted to a unique core `g[K]`.
+
+Candidate A retains bounded D5-D7 regularness over supplied admitted geometry
+while `W_A` remains the sole transport-mobility authority. Candidate C closes a
+bounded theorem-shaped supplied-geometry domain with positive `H_1`, positive
+`H_1,M`, strict selector gap, finite `I_4M` condition, retained-response bound,
+and positive D6 margin. These results close profile mathematics, not the full
+causal chain.
+
+The accepted A transition writes `C[k+1]` and `W_A[k+1]` without consuming
+postsolve `h_4+[k]`. The accepted C transition commits only `C[k+1]` and cannot
+reconstruct prior postsolve `h_4+[k]` from that poststate. Consequently the
+selected lagged explicit realization has no `Gamma_A` or `Gamma_C`:
+
+```text
+delta T_a -> delta K_4^a -> delta h_4 -?-> delta F_a,later
+```
+
+The generated-geometry derivative is undefined under that factorization, not
+zero. It is distinct from supplied pre-read sensitivity. C has load-bearing
+supplied geometry and conditionally nonzero dependence in named internal maps,
+but nonzero `D_(h_pre) J_C` and nonzero `D_(h_pre) F_C` remain unproved because
+downstream annihilation, cancellation, or divergence-free response have not
+been excluded. A's receipt is an invariance/type-regularness result and has not
+made supplied geometry load-bearing. This does not terminally close either
+candidate.
+A and C both receive:
+
+```text
+candidate-local transition valid
+geometry-parametric regularness valid
+selected lagged explicit geometry feedback unresolved
+```
+
+Human acceptance authorizes D8-A to
+derive each branch-appropriate continuation object and classify each target as
+realization-invariant, accepted-lagged-branch-relative, or not finalizable
+before temporal realization. Only invariant targets constrain every successor;
+lagged-branch targets require D8-B rederivation if the slaving relation changes.
+D8-A may not assume one common self-adjoint Hessian, promote C internal-map
+sensitivity into full-transition sensitivity, count the known absent `Gamma_a`
+as new evidence, or count its analysis access as runtime causal consumption.
+
+The scope-classified targets then constrain
+`GRC9V4-GEOMETRY-TEMPORAL-REALIZATION-SUCCESSOR`. Its `S_H` interface is only a
+start: the successor must instantiate and pressure at least one bounded
+complete step while treating coupled/implicit, operator-split, persistent, and
+reconstructed forms as a minimum, non-exhaustive pressure set. Failure of all
+four requires broader search or bounded unresolved closeout unless the family
+classification is independently proven complete. A and C receive the same
+burden of proof but need not share an equation. Core theory need not uniquely
+select one, and convenience cannot select one. Cache-only history and
+least-incomplete candidate selection remain blocked. The authoritative records are
+[`D7Gv2GeometryParametricClosureAndFinalization.json`](./decisions/D7Gv2GeometryParametricClosureAndFinalization.json)
+and its
+[`scientific report`](./decisions/D7Gv2GeometryParametricClosureAndFinalization.md).
+
 ## D8. Continuation Realization And Analysis Contract
 
-Status: blocked pending accepted D7G comparative admission or an explicit
-terminal closeout route.
+Status: D8-A is authorized by accepted D7G-v2. D8-B full continuation
+comparison remains blocked on an instantiated complete geometry temporal
+realization.
 
-Analyze every concrete completed transition admitted by D7G on the common
-declared comparison scope while keeping four objects separate:
+### D8-A. Branch-Appropriate Structural-Target Extraction
+
+For A and C, first derive the branch-appropriate structural continuation object
+under the accepted D6 closure. Do not assume one common self-adjoint Hessian:
+
+```text
+smoothly slaved branch -> reduced self-adjoint Hessian may be admissible
+active/joint branch    -> joint, nonselfadjoint, or DAE object may be required
+```
+
+Then extract admissible directions `v` for which the derived structural object
+responds to `delta h_4` and classify each as realization-invariant,
+accepted-lagged-branch-relative, or not finalizable before temporal
+realization. Only invariant directions become universal non-erasure
+requirements. If the successor changes the slaving relation, lagged-branch
+directions must be rederived in D8-B before they constrain that realization.
+
+D8-A must keep these derivatives separate:
+
+```text
+D_(h_pre) F_a
+D_(h_generated) F_a,later through Gamma_a or an equivalent realization
+```
+
+The second is currently undefined, not zero. Recomputing the already known
+absence of `Gamma_a` is not a D8-A result. For C, nonzero derivatives of
+internal maps do not establish nonzero `D_(h_pre) J_C` or `D_(h_pre) F_C`
+without a complete chain derivation or matched witness. D8-A is an analysis
+consumer of `h_4+`, not a runtime causal consumer.
+
+### Geometry-Temporal Realization Successor
+
+After accepted D8-A, freeze `S_H` as a common interface and common burden of
+proof, then pressure at least these four concrete realization families equally:
+
+```text
+coupled/implicit:
+  existence, uniqueness, complete B_eff chain rule, fixed-point regularity
+
+operator-split same beat:
+  ordering, conservation, splitting error, atomicity
+
+persistent structural carrier:
+  D1 authority, writer, lifecycle, reset, serialization
+
+reconstructed geometry:
+  exact reconstructibility, no lost J-dependent information, Markov closure
+```
+
+Admission of a concrete realization to D8-B requires its complete equations,
+state authority, stage order, fixed-stratum Markov closure,
+conservation/accounting, design covariance, failure semantics, bounded local
+well-posedness/regularity, and a declared linearization surface. It must also
+declare disabled behavior, lifecycle requirements, and the later stability
+analysis surface. Exact disabled V4-to-V3 reduction remains D9 debt, full
+topology/event lifecycle remains D9 debt, and stability classification remains
+D8-B work. Requiring those later results before admission would be circular.
+
+The implicit family must receive serious treatment because the core effective
+loop already admits algebraic `J -> j -> K -> h -> J0 -> J` dependence. It may
+require a D6 successor; that is a new constitutive solution, not a correction
+of accepted D6.
+
+The four families are a non-exhaustive minimum pressure set. The successor
+cannot close with an interface-only result and must instantiate and pressure at
+least one bounded complete realization. Failure of all four is not a V4
+impossibility without a separate completeness proof; otherwise the search must
+broaden or return a bounded unresolved result. The common `H_profile` does not
+force A and C to use identical temporal equations. Candidate neutrality means
+the same acceptance criteria and burden of proof.
+
+### D8-B. Full Continuation Comparison
+
+Blocked until the geometry-temporal realization successor instantiates a
+bounded complete step and propagates any changed authority or stage through the
+earliest affected gate.
+
+Where meaningful, compare A and C under a matched realization family. If their
+ontologies justify different realizations, treat each `(candidate,
+realization)` pair as an architecture and identify realization effects
+separately from candidate effects.
+
+Within the later authorized scope, keep four objects separate:
 
 ```text
 structural functional/Hessian H_*       -> alpha_n
@@ -1737,6 +1916,9 @@ which are inapplicable. Recreating GRV3/GRV4/GRV7 unchanged as design prose is
 not new evidence and does not close D8.
 
 ## D9. Complete Step And Lifecycle Contract
+
+Status: blocked on the typed temporal geometry realization and completed D8-B
+full continuation comparison.
 
 Freeze candidate complete-step ordering, causal state, serialization,
 restoration identity, reset baseline, RNG use, deterministic replay,

@@ -1,6 +1,6 @@
 # GRC9V4 Constitutive Design Decision Ledger
 
-**Status:** D0-D7, D4-v2-D7-v2, and D7G-v1 accepted bounded; D7G-v2 authorized and unexecuted; D8 blocked
+**Status:** D0-D7, D4-v2-D7-v2, D7G-v1, and D7G-v2 accepted bounded; bounded D8-A structural-target extraction authorized; D8-B remains blocked on a complete temporal realization
 
 This ledger is the additive decision record for D0-D10. The design basis and
 plan define questions and constraints; this file records accepted answers.
@@ -495,8 +495,9 @@ writer temporal side.
 
 ## D4-v2-D7G. Candidate Completion And Structural-Closure Successor Tranche
 
-Status: D4-v2 through D7-v2 and D7G-v1 accepted bounded; D7G-v2 authorized
-and unexecuted; later gates blocked.
+Status: D4-v2 through D7-v2, D7G-v1, and D7G-v2 accepted bounded; bounded
+D8-A structural-target extraction is authorized while full continuation is
+blocked.
 
 This append-only tranche does not modify or supersede accepted D4-D7 until a
 specific successor record is accepted. It prevents A's earlier completeness
@@ -509,6 +510,7 @@ D5-v2 = GRC9V4-CD-D5V2-v1, accepted_bounded
 D6-v2 = GRC9V4-CD-D6V2-v1, accepted_bounded
 D7-v2 = GRC9V4-CD-D7V2-v1, accepted_bounded
 D7G = GRC9V4-CD-D7G-v1, accepted_bounded_requires_D7G-v2_parametric_closure_and_finalization
+D7G-v2 = GRC9V4-CD-D7G-v2, accepted_bounded_with_A_C_D8A_structural_target_authorization_and_no_full_D8_survivor
 
 default_successor_lineage_when_no_earlier_gate_reopens =
   D4-v2:
@@ -751,8 +753,12 @@ complete live debt union = 44
 
 D7-v2 = accepted_bounded
 D7G-v1 = accepted_bounded
-D7G-v2 = authorized_unexecuted
-D8 = blocked_on_completed_D7G_or_terminal_route
+D7G-v2 = accepted_bounded
+D8-A = structural_target_extraction_authorized
+D8_authorized = true
+D8_authorized_scope = D8-A_branch_appropriate_scope_classified_structural_target_extraction_only
+D8_full_continuation = blocked_on_typed_temporal_geometry_realization
+named_next_route_after_D8-A = GRC9V4-GEOMETRY-TEMPORAL-REALIZATION-SUCCESSOR
 ```
 
 Human acceptance: `accepted_bounded_2026-08-24`.
@@ -956,11 +962,13 @@ close how postsolve `h_4+[k]` reaches a later transition: deterministic
 reconstruction from committed Markov state, precommit consumption into an
 admitted committed effect, or a named D1 successor. Cache history is forbidden.
 
-Pre-acceptance is governed by `D7G-v2-PREACCEPT-v1`. The fixed order is
-definitions, quantifiers/bounds, causal-state graph, A proof, C proof, causal
-non-erasure, authority mutation, claim audit, debt lineage, and digest. Every
-load-bearing statement must resolve to a definition, derivation/reproducible
-witness, bounded restriction, or named debt outside the consumed claim ceiling.
+Pre-acceptance is governed by `D7G-v2-PREACCEPT-v1`. Its 12 passes cover
+definitions, quantifiers/bounds, geometry/profile class separation,
+reference/base closure, causal-state graph, A proof, C proof, causal
+non-erasure, authority mutation, neutral/full reduction separation, claim
+audit, and machine integrity/lineage. Every load-bearing statement must resolve
+to a definition, derivation/reproducible witness, bounded restriction, or named
+debt outside the consumed claim ceiling.
 The protocol permits asymmetric candidate receipts and forbids broadening the
 admissible class merely to place both A and C into D8.
 
@@ -987,14 +995,134 @@ reduction, a lawful cross-beat geometry handoff, or the later transition
 consequence, complete structural cultivation, stability, runtime evidence,
 architecture selection, specification, or implementation.
 
+### D7G-v2. Geometry-Parametric Closure And Finalization
+
+Authoritative structured record:
+[`D7Gv2GeometryParametricClosureAndFinalization.json`](./decisions/D7Gv2GeometryParametricClosureAndFinalization.json)
+
+Scientific report:
+[`D7Gv2GeometryParametricClosureAndFinalization.md`](./decisions/D7Gv2GeometryParametricClosureAndFinalization.md)
+
+```text
+record_id = GRC9V4-CD-D7G-v2
+status = accepted_bounded
+predecessor_decision_digest = b173c03f7dbe55aa53b22960da2be55e42e86dda769cac1356e36499f658d071
+decision_record_digest = c52912d83797ee294799709b3e770574043df37f80073b51eebfaf8b2fd27efb
+
+E_ref_status = admitted_revision_specific
+affine_profile_status = instantiated_bounded
+A_receipt = bounded_candidate_local_transition_and_profile_receipt_selected_lagged_explicit_geometry_feedback_unresolved
+C_receipt = bounded_candidate_local_transition_and_profile_receipt_selected_lagged_explicit_geometry_feedback_unresolved
+D8-A_structural_target_candidate_set = [A, C]
+D8_full_continuation_comparable_candidate_set = []
+global_blocker = selected_lagged_explicit_realization_missing_geometry_feedback_completion
+C_internal_D_h_pre = load_bearing_and_conditionally_nonzero_on_named_strict_gap_directions
+D_h_pre_J_C = nonzero_sensitivity_not_established
+D_h_pre_F_C = load_bearing_not_identically_excluded_nonzero_full_transition_sensitivity_unproved
+D_h_generated_F_A_C = undefined_absent_Gamma_or_equivalent_complete_realization
+D7G_profile_stage_audit_complete = true
+D7G_global_structural_cultivation_complete = false
+named_successor = GRC9V4-GEOMETRY-TEMPORAL-REALIZATION-SUCCESSOR
+D8-A_ready_after_human_acceptance = true
+D8-A_authorized = true
+D8_authorized = true
+D8_authorized_scope = D8-A_branch_appropriate_scope_classified_structural_target_extraction_only
+control_rows = 39
+human_acceptance = accepted_bounded_2026-08-24
+```
+
+D7G-v2 admits
+`H_0,ref = diag(mu_V3)` and `H_1,ref = diag(W_V3^-1)` as an explicit
+revision-specific V4 reference embedding. The edge convention consumes B1's
+primary native constitutive metric; the runtime's regularized inverse-
+conductance label is not substituted for that exact map. This instantiates the
+bounded affine graph-Hodge profile while preserving the distinction between
+physical geometry, transport mobility, and A's authoritative `W_A`.
+
+The gate freezes separate `H_adm` geometry-state and `P_adm` profile-map
+classes, an 18-row load-bearing symbol registry including the future typed
+`S_H` interface, candidate-specific `Gamma_a`, and branch-appropriate
+`C_struct,a`, a 13-row quantifier ledger, and
+explicit lower/upper geometry, selector-gap, identification-condition, and D6
+regularness bounds. Candidate A remains regular over supplied admitted
+geometry without making that geometry load-bearing; this is an invariance/type
+receipt, not demonstrated geometry sensitivity. Candidate C has a bounded
+strict-gap SPD supplied-geometry domain in which `P_M`, `H_M`, `I_4M`, `R_C`,
+`J0_C`, and its current closure are well defined. Geometry is load-bearing in
+that internal chain, but nonzero `D_(h_pre) J_C` and `D_(h_pre) F_C` remain
+unproved because downstream cancellation, annihilation, and divergence-free
+response have not been excluded.
+
+Neither result closes structural cultivation. A's accepted writer does not
+consume postsolve `h_4+`; C commits only `C` and cannot reconstruct prior
+postsolve `h_4+` from that poststate. Thus both explicit runtime chains stop
+after nonzero `delta h_4` under the selected lagged D6/D7 realization. This is
+a realization-relative feedback gap, not a terminal candidate-local A/C
+failure, a general V4 impossibility, or evidence that core requires a
+cross-beat handoff.
+
+D7G-v2 separates:
+
+```text
+delta h_4 -> delta branch-appropriate structural continuation object
+D_(h_pre) F_a
+D_(h_generated) F_a,later through Gamma_a or an equivalent realization
+```
+
+A and C are ready, only after D7G-v2 acceptance, for bounded D8-A extraction
+of branch-appropriate structural objects and target directions classified as
+realization-invariant, accepted-lagged-branch-relative, or not finalizable
+before realization. The generated-geometry derivative is currently undefined
+rather than zero. D8-A is an analysis consumer of `h_4+`, not a runtime causal
+consumer. Full continuation comparison remains blocked. Neither candidate is
+rejected, ranked, or selected.
+
+The gate does not reopen D1-D7 by procedure. D8-A must first derive the
+branch-appropriate reduced, joint, nonselfadjoint, or DAE continuation object
+and scope its target directions; only invariant targets constrain every
+successor, while lagged-branch targets require D8-B rederivation after changed
+slaving. Repeating the already known absent-`Gamma_a` diagnosis is not
+evidence. The named successor then pressures coupled/implicit, operator-split
+same-beat, persistent-carrier, and reconstructed-geometry families as a
+non-exhaustive minimum set under the same burden of proof. Its typed `S_H`
+interface cannot close the successor by itself: at least one bounded complete
+realization must be instantiated and pressured. Failure of all four is not V4
+impossibility without a separate completeness proof; otherwise the search
+broadens or closes bounded unresolved. A and C need not use identical equations
+when their retained ontologies independently justify different realizations.
+D8-B must match realization families where meaningful or treat each
+`(candidate, realization)` pair as an architecture and isolate realization
+effects. Only an admitted realization reopens the earliest affected owner or
+stage. Cache-only history, least-incomplete selection, and promotion of the
+lagged realization into a core requirement are fail-closed.
+
+All 26 D7G-v1 debts have one explicit disposition. The live D7G-v2 ledger has
+24 typed debts, continues to bind the 22 exact inherited rows, and preserves
+the four archived B obligations. No runtime, normative specification,
+implementation, or `src/` authority is opened.
+
 ## D8. Continuation Realization And Analysis Contract
 
-Status: blocked pending accepted D7G comparative admission or an explicit
-terminal closeout route.
+Status: D8-A structural-target extraction is authorized by accepted D7G-v2.
+It derives branch-appropriate continuation objects and classifies targets as
+realization-invariant, accepted-lagged-branch-relative, or not finalizable
+before realization. It does not classify stability or compare completed
+temporal architectures.
+
+D8-B remains blocked on a concrete typed temporal geometry realization. A
+realization may enter D8-B after freezing complete equations, state authority,
+stage order, fixed-stratum Markov closure, conservation/accounting, design
+covariance, failure semantics, bounded local well-posedness/regularity, and a
+linearization surface. It must declare disabled behavior, lifecycle
+requirements, and stability-analysis surfaces, but exact V3 reduction and full
+topology/event lifecycle remain D9 debt while stability classification remains
+D8-B work. Requiring those later results before admission is fail-closed as
+circular governance.
 
 ## D9. Complete Step And Lifecycle Contract
 
-Status: blocked on D8.
+Status: blocked on the typed temporal geometry realization and completed D8-B
+full continuation comparison.
 
 ## D10. Design Synthesis And Spec-Writing Decision
 
