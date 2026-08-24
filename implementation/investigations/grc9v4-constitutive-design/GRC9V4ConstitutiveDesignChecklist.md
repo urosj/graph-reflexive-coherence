@@ -341,6 +341,21 @@ D4_authorized = false_pending_human_acceptance
 
 Status: blocked on D3.
 
+- [ ] Enforce the D4-D9 no-redo rule: no gate closes solely by restating B1/B2
+      or reconfirming absence in unchanged GRC9V3.
+- [ ] Revisit inherited distinctions, controls, and negative results whenever
+      V4 changes the causal object, state space, or operator under test.
+- [ ] Classify every consumed B1/B2 item as `legacy_fact`,
+      `verification_control`, `design_pressure`, or `open_hypothesis`.
+- [ ] Treat `legacy_fact` as hard only for its frozen V3 revision/envelope and
+      prevent every category from dictating V4 ontology or equations.
+- [ ] Require every surviving candidate to add a constitutive fact, receive a
+      named rejection, or route to a named missing derivation.
+- [ ] Produce one candidate-specific ownership record for A, B, and C.
+- [ ] Record the exact retained object, geometry owner/map, mobility owner/map,
+      `K` role, legacy `W` role, and topology/basin relation for each candidate.
+- [ ] Record an explicit constitutive map between retained representation and
+      geometry or reject/route the candidate when no defensible map exists.
 - [ ] Define whether each representation is geometry, conditions geometry, or
       remains separate structural state.
 - [ ] Define relation to `W`, `h`, constitutive/geometry-inducing `K`, any
@@ -351,6 +366,9 @@ Status: blocked on D3.
       capability scope.
 - [ ] Separate structural geometry from transport mobility where required.
 - [ ] Prevent one field from owning incompatible causal and analytical roles.
+- [ ] Assign each candidate one disposition: coherent bounded ownership,
+      blocked named derivation, rejected incompatible roles, or named successor
+      investigation.
 - [ ] Obtain human acceptance.
 
 ## D5. Directional Read-Back
@@ -358,6 +376,10 @@ Status: blocked on D3.
 Status: blocked on D4.
 
 - [ ] Define typed graph map into oriented edge cochains.
+- [ ] Produce the actual candidate-specific Read-Back operator family or route
+      a named missing derivation; requirements alone do not close D5.
+- [ ] Record operator equation/signature, domain, codomain, typed inputs, and
+      output cochain for every surviving candidate.
 - [ ] Freeze the present-current convention.
 - [ ] Require passive null.
 - [ ] Require edge-coordinate orientation-relabel covariance.
@@ -377,6 +399,10 @@ Status: blocked on D4.
 Status: blocked on D5.
 
 - [ ] Define algebraic current closure and solve order.
+- [ ] Write the selected algebraic closure equation or temporal current law for
+      each surviving candidate; generic alternatives do not close D6.
+- [ ] Record why the selected architecture requires that closure and reject or
+      route candidates for which neither closure is admissible.
 - [ ] Define the full effective loop block.
 - [ ] Define uniqueness/invertibility requirements.
 - [ ] Define failure and singular-boundary semantics.
@@ -392,6 +418,10 @@ Status: blocked on D5.
 Status: blocked on D6.
 
 - [ ] Close `T_M -> j -> J_C -> declared downstream consequence -> T_M`.
+- [ ] Write the complete `X_(k+1) = F_V4(X_k)` transition for each remaining
+      candidate, including equations, stage order, state ownership, release,
+      read, write, and accounting surfaces.
+- [ ] Reject or route any candidate that still has only requirement prose.
 - [ ] Select exact write inputs from the D2 admissible set.
 - [ ] Define the complete effective transition.
 - [ ] Define read-off and write-off controls.
@@ -425,6 +455,11 @@ Status: blocked on D7.
 - [ ] Keep analysis projectors out of runtime state unless independently
       admitted for constitutive reasons.
 - [ ] Block cross-spectrum relabels and undeclared universal-generator claims.
+- [ ] Map selected V4 operators to applicable B1/B2 verification discriminators
+      and classify each as reusable, V4-adaptation/rederivation-required, or
+      inapplicable.
+- [ ] Block recreation of GRV3/GRV4/GRV7 as design prose from counting as a new
+      D8 constitutive result.
 - [ ] Obtain human acceptance.
 
 ## D9. Complete Step And Lifecycle Contract

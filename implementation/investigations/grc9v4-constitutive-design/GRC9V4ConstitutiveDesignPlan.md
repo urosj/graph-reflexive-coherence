@@ -21,6 +21,17 @@ implementation tranche and not a normative specification.
   evidence, and design preference separately labeled.
 - Treat the B1 contract and B1/B2 experiments as historical decision lineage
   and bounded evidence, never as a literal V4 architecture template.
+- From D4 onward, do not rerun B1/B2 merely to rediscover their bounded V3
+  conclusions. Revisit an inherited distinction, control, or negative result
+  when a V4 choice changes the causal object, state space, or operator to which
+  it applied.
+- Classify each B1/B2 item consumed by D4+ as `legacy_fact`,
+  `verification_control`, `design_pressure`, or `open_hypothesis`. Only a
+  `legacy_fact` is a hard historical premise, and only about frozen GRC9V3; no
+  category dictates V4 ontology or equations.
+- Every D4-D9 gate must add a candidate-specific constitutive fact, reject a
+  candidate for a named incompatibility, or route a named missing derivation.
+  Requirement-only prose is not a completed design gate.
 - Compare all admitted architectures under the same gate criteria.
 - Preserve `current_candidate_set_exhausted` as a valid route to named theory,
   constitutive, candidate-admission, or discriminator work.
@@ -352,13 +363,72 @@ observed trajectory. Structural marginality must remain distinct from spark,
 collapse, topology change, current deslavement, temporal lifetime, nonnormal
 survival, and any specific finite basin.
 
+## D4-D10. Verification-To-Design Inflection
+
+D0-D3 establish the bridge from unchanged-runtime verification to a bounded V4
+candidate set; D3 human acceptance still governs D4 authorization. These gates
+do not need to rediscover the accepted B1/B2 boundary. Nor may that boundary
+become a timeless V4 template. From D4 onward the governing question is no
+longer only what a valid V4 would have to respect, but what constitutive
+architecture each surviving candidate actually supplies.
+
+The no-redo rule is:
+
+```text
+rerun whose only purpose is rediscovering a bounded V3 conclusion
+  != new V4 constitutive fact
+
+reconfirmed absence in unchanged GRC9V3
+  != V4 design decision
+
+inherited result applied to a changed V4 causal object/state/operator
+  -> rederive, adapt, or retest under the new constitutive semantics
+
+candidate-specific map, equation, ownership, solve order, or named rejection
+  = admissible D4-D9 design output
+```
+
+B1/B2 provide bounded V3 facts, controls, design pressure, and hypotheses. Their
+distinctions remain valuable until the selected V4 architecture changes the
+object under test; then D4+ must state what is retained, revised, or replaced
+and why. After a V4 specification and implementation are separately authorized,
+applicable B1/B2 discriminators should be reused or adapted against the selected
+V4 profile. They are not substitutes for selecting its constitutive equations.
+
 ## D4. Geometry, Mobility, And Topology Ownership
 
-Decide whether each retained representation is geometry, conditions geometry,
-or remains a separate structural carrier. Define its relation to scalar `W`,
-analytic edge labels, node tensors, constitutive/induced geometry `h`, the
-geometry-inducing or constitutive object `K`, any separately realized mobility
-operator `M` or `A`, topology, and basin hierarchy.
+Produce a candidate-specific constitutive ownership record. For every surviving
+candidate, identify the exact retained object, the owner of induced geometry
+`h`, the owner of transport mobility `M` or `A`, the role of `K`, the role of
+legacy scalar `W`, and the topology/basin relation. Supply the constitutive maps
+between those objects rather than only listing possible roles.
+
+At minimum, resolve these candidate-local questions:
+
+```text
+A:
+  what is authoritative retained W?
+  what induces h?
+  what realizes mobility?
+  how are retained W, instantaneous W, K, h, and mobility related?
+
+B:
+  what exact map carries T into h or another structural object?
+  what role remains for W and K?
+  what realizes mobility without turning T into undeclared resource?
+
+C:
+  how does the constitutive C-sector condition h or another structural object?
+  what role remains for W and K?
+  how are selector motion, topology, and mobility kept distinct?
+```
+
+Each candidate must receive one D4 disposition: coherent bounded ownership,
+blocked pending a named constitutive/theory derivation, rejected for incompatible
+roles, or routed to a named successor investigation. Repeating that geometry
+and mobility may be conflated is not a D4 result; B1 already established that
+as a V3 design debt. D4 may revise the inherited distinction when a new V4
+object or map makes the revision explicit and source-backed.
 
 Prevent one field from silently serving as retained structure, mobility,
 directional current, and analysis projector. Do not preassign `K` as transport
@@ -367,11 +437,20 @@ frozen in D0.
 
 ## D5. Directional Read-Back
 
-Define the graph-native retained-conditioned current map, passive null,
+Produce the actual candidate-specific graph-native retained-conditioned
+operator family, or route the candidate to a named missing derivation. Record
+its equation/signature, domain, codomain, typed inputs, output cochain, and
+composition with present current. The operator must expose the passive null,
 edge-coordinate orientation covariance, physical present-current reversal
 response, retained-representation orientation/chirality content,
 present-current convention, retained-state counterfactual, rival-carrier
 controls, and output cochain space.
+
+D5 consumes the B1 typed-cochain bridge as a strong starting derivation and
+verification control, not as immutable V4 semantics. It may refine or replace
+that bridge when current core theory and the selected V4 geometry justify the
+change. Restating the inherited requirements without an operator family or
+named derivation does not close D5.
 
 Name the passive-null control `zero_present_current`. Separately record the
 direct `T_M -> h/W/mobility -> J0` path, the `(T_M,J_C) -> j` Read-Back path,
@@ -382,7 +461,10 @@ Separate `J0`, `j`, and total `J_C`. Reject scalar/label/proxy relabels.
 
 ## D6. Total-Current Closure
 
-Define regular algebraic slaving, the full effective loop block, solve order,
+Choose and write the candidate-specific total-current closure. A surviving row
+must provide either an actual regular algebraic relation such as
+`J_C = Psi(C,T,...)` with the full effective loop block, or an explicit temporal
+current state law with its trigger and clock. Record solve order,
 uniqueness/invertibility, failure semantics, and deslavement trigger.
 
 For every surviving representation candidate, decide the orthogonal axis:
@@ -396,6 +478,12 @@ candidate blocked because neither closure is admissible
 Current temporalization is admitted only if regular closure fails under that
 candidate or a separately declared target requires independent current
 dynamics.
+
+D6 consumes B1's algebraic-slaving and singular-boundary results as bounded V3
+facts, controls, and design pressure. A changed V4 current operator requires a
+fresh closure derivation rather than mechanical inheritance. Listing slaved and
+temporalized current as generic possibilities is not a D6 decision; the gate
+must select or reject one for each surviving architecture.
 
 The closure record must preserve the direct-retained-to-`J0` and Read-Back-to-
 `j` decomposition through total-current formation and reject double counting.
@@ -419,6 +507,12 @@ retention, reconfiguration, and the later stability questions without promoting
 a one-way path to a closed loop or requiring `C_(k+1)` as the sole mediator
 without evidence.
 
+By D7, write the complete candidate transition `X_(k+1) = F_V4(X_k)` with
+constitutive equations, stage order, state ownership, write inputs, release or
+reconfiguration law, Read-Back law, and all accounting surfaces. A candidate
+that cannot supply such a transition must be rejected or routed to a named
+derivation rather than carried by requirement prose.
+
 For a constitutive `C` sector, preserve the D2 factorization and prove that the
 write/read arrows are not ordinary `C` evolution under new names.
 
@@ -428,7 +522,8 @@ structural and temporal stability classification to D8.
 
 ## D8. Continuation Realization And Analysis Contract
 
-Analyze the completed D7 transition while keeping four objects separate:
+Analyze the concrete completed D7 transition while keeping four objects
+separate:
 
 ```text
 structural functional/Hessian H_*       -> alpha_n
@@ -457,6 +552,12 @@ No temporal slow mode, spatial Hessian, graph Laplacian eigenvalue,
 Read-Back response, or frozen-carrier response may be relabeled as low
 structural continuation stiffness. Compare them only under declared mappings
 and assumptions.
+
+D8 must map the selected V4 operators to applicable B1/B2 discriminators and
+identify which tests can be reused after implementation, which require a
+V4-specific adaptation or rederivation because the causal object changed, and
+which are inapplicable. Recreating GRV3/GRV4/GRV7 unchanged as design prose is
+not new evidence and does not close D8.
 
 ## D9. Complete Step And Lifecycle Contract
 

@@ -22,6 +22,14 @@ investigation compares the admitted candidates against one frozen target:
 > temporally classified continuation and is conditionally read by present
 > activity into an oriented current contribution.
 
+D0-D3 are the verification-to-design bridge. From D4 onward, B1/B2 provide
+bounded V3 facts, verification controls, design pressure, and open hypotheses;
+they do not dictate V4 ontology. Their conclusions should not be rerun merely
+to rediscover V3, but must be revisited when V4 changes the causal object,
+state space, or operator. Every gate must add a candidate-specific constitutive
+fact, reject a candidate for a named incompatibility, or route a named missing
+derivation.
+
 Start with:
 
 - [constitutive design basis](./GRC9V4ConstitutiveDesignBasis.md);

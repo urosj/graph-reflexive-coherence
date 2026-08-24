@@ -241,6 +241,24 @@ Joint A/B structure and independently active-current structure remain
 conditional, nonblocking debts. They become D10-blocking only if D6/D8 selects
 a claim that requires the corresponding independent structural coordinate.
 
+Forward execution boundary:
+
+```text
+D0-D3 = verification-to-design bridge; D3 acceptance still gates D4
+D4-D9 = candidate-specific constitutive design
+bounded V3 conclusion rerun without a changed question = not a completed gate
+reconfirmed unchanged-GRC9V3 absence = not a completed gate
+changed V4 causal object/state/operator = inherited result must be reclassified
+```
+
+B1/B2 now supply four explicitly different inputs: `legacy_fact`,
+`verification_control`, `design_pressure`, and `open_hypothesis`. Only a legacy
+fact is a hard premise, and only about its frozen V3 revision and envelope.
+D4 onward may depart from inherited assumptions when the change is explicit,
+source-backed, and tied to the new V4 causal object. It must add concrete
+ownership maps, operators, closure equations, complete-transition equations,
+or named candidate rejection/routing outcomes.
+
 ## D4. Geometry, Mobility, And Topology Ownership
 
 Status: blocked on D3.
