@@ -1,7 +1,7 @@
 # GRC9V4 Constitutive Design Investigation Plan
 
 **Date:** 2026-08-23  
-**Status:** D0-D2 accepted; D3 authorized
+**Status:** D0-D2 accepted; D3 complete and awaiting human review
 **Design basis:** [`GRC9V4ConstitutiveDesignBasis.md`](./GRC9V4ConstitutiveDesignBasis.md)  
 **Checklist:** [`GRC9V4ConstitutiveDesignChecklist.md`](./GRC9V4ConstitutiveDesignChecklist.md)  
 **Decision ledger:** [`GRC9V4ConstitutiveDesignDecisionLedger.md`](./GRC9V4ConstitutiveDesignDecisionLedger.md)
@@ -277,14 +277,16 @@ topology interspace transport may not be conflated.
 
 ## D3. Continuation Requirements And Structural Domain
 
-Define formed structural state, formed branch, reference transport, admitted
+Define structural reference state, retained structural state, formed branch,
+reference transport, admitted
 perturbation state, clock, and the requirements a later complete transition
 must satisfy. Specify how ordinary branch displacement, fast temporal
 relaxation, and retained structural continuation are distinguished.
 
 For each admitted candidate, decide where structural continuation lives while
 reserving `F` for the runtime transition, `F_struct` for a structural
-functional, `P_M`/`P_slow` for projectors, and `pi_a` for reduction projections:
+functional, `P_M`/`P_slow_analysis`/`P_slow_runtime` for projectors, and `pi_a`
+for reduction projections:
 
 ```text
 C-only: H_C is derived from F_struct(C)
@@ -309,6 +311,11 @@ elimination/freezing rule; whether current would be a structural coordinate;
 and active-joint-continuation theory status. D3 does not choose the runtime
 regime. D6 selects closure and D8 consumes the corresponding row. Do not inherit
 a self-adjoint Hessian for active `(C,T,J)` without a source-backed derivation.
+Missing joint A/B or independently active-current structural theory remains a
+claim-local, conditional debt while a valid conditional or reduced lane stays
+open. If D6/D8 later selects a claim that needs the missing independent
+structural coordinate, that gate must create a named D10-blocking successor
+debt before the claim can proceed.
 
 For every derived representation, freeze the tangent constraint relating
 `delta_T_M` to perturbations of its declared causal inputs. Independent
@@ -316,6 +323,34 @@ For every derived representation, freeze the tangent constraint relating
 
 Keep topology/event strata explicit. D3 freezes requirements, not the final
 operator of a loop that has not yet been closed.
+
+Distinguish D2 `retained_formed` from D3 `structurally_formed`; neither implies
+the other. A structural reference state need not have been produced by D2;
+only the stronger retained-structural claim requires both contracts. Classify
+candidate runtime viability separately from C-only, conditional, and joint
+structural-claim viability. A retained carrier may condition a C-only spectrum
+without owning an alpha spectrum of its own.
+
+Freeze the functional normalization, perturbation metric, constraint scope,
+symmetry/gauge null treatment, and fixed-geometry versus total induced-geometry
+derivative convention before any alpha magnitude or zero mode is interpreted.
+If retained state conditions the measure, include that response in the
+conservation tangent without reclassifying nonresource state as resource.
+
+Require the A `R_W` coupled tangent and the exact C selector tangent. Block
+continuation-derived, analysis-only, or retrospectively selected temporal-slow
+projectors from becoming constitutive by relabel. Preserve the conditional
+route for a runtime-owned dynamic slow projector only under an executed
+temporal law, declared clock/branch, isolation, causal runtime consumption,
+and any required self-consistent projector fixed point. At active
+inequality bounds, clipping, hard cutoffs, rank/mode crossings, and topology
+events, use the appropriate tangent-cone, stratified, or event object rather
+than reporting an undefined Hessian as `alpha = 0`.
+
+Freeze branch gauge prospectively and block retrospective fitting to the
+observed trajectory. Structural marginality must remain distinct from spark,
+collapse, topology change, current deslavement, temporal lifetime, nonnormal
+survival, and any specific finite basin.
 
 ## D4. Geometry, Mobility, And Topology Ownership
 

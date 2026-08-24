@@ -1,6 +1,6 @@
 # GRC9V4 Constitutive Design Decision Ledger
 
-**Status:** D0-D2 accepted; D3 authorized
+**Status:** D0-D2 accepted; D3 complete and awaiting human review
 
 This ledger is the additive decision record for D0-D10. The design basis and
 plan define questions and constraints; this file records accepted answers.
@@ -196,7 +196,50 @@ ownership, runtime effects, and reduction remain open.
 
 ## D3. Continuation Requirements And Structural Domain
 
-Status: authorized; not started.
+```text
+record_id = GRC9V4-CD-D3-v1
+status = awaiting_human_review
+predecessor_decision_digest = ea2b953685bb23dfe979b2f5d2ae0f22f364a51484d6536c1721f144c9cad740
+decision_record_digest = 423f20f161fc16e6179b1f77ea665fd887bd87f7502668361165367d9f4e20f8
+candidate_set_after_D3 = [V4-A-temporalized-W, V4-B-independent-derived-carrier, V4-C-constitutive-C-sector]
+candidate_domain_status = [A: conditionally_supported, B: conditionally_supported, C: supported_bounded]
+support_matrix_rows = 12
+support_matrix_cell_detail_rows = 12
+support_matrix_status_counts = [supported: 2, conditionally_supported: 7, theory_open: 3, blocked: 0]
+control_contract_rows = 39
+D3_pressure_audit_rows = 42
+predecessor_debt_rows_classified = 15
+open_debt_rows = 24
+must_close_before_D10_debt_rows = 20
+conditional_nonblocking_debt_rows = 3
+all_non_D10_blocking_debt_rows = 4
+joint_structural_candidate_supported = false
+current_regime_selected = false
+architecture_selected = false
+claim_ceiling = GRC9V4-CD-D3-bounded-structural-domain
+D4_authorized = false_pending_human_acceptance
+specification_authorized = false
+runtime_implementation_authorized = false
+```
+
+D3 admits C-only structure for Candidate C on smooth fixed-rank reduced
+branches and conditional C structure for A/B with their retained coordinates
+frozen. It separates structural reference states from the stronger
+D2-retained structural intersection and separates candidate viability from
+continuation-claim viability. It does not admit
+independent `delta_W` or `delta_T` into a structural Hessian. Functional
+normalization, gauge/null treatment, geometry chain rules, tangent-cone and
+nonsmooth-selector boundaries, and every matrix-cell claim are explicit.
+Independently active-current rows remain theory-open for all candidates; D6
+still owns current-regime selection. Analysis-only and retrospective temporal
+projectors cannot become constitutive by relabel, while a future runtime-owned
+dynamic projector remains conditionally admissible under the full temporal,
+isolation, causal-consumption, and fixed-point contract. No Hessian, spectrum,
+formed branch, complete transition, or architecture is claimed.
+
+Joint A/B structure and independently active-current structure remain
+conditional, nonblocking debts. They become D10-blocking only if D6/D8 selects
+a claim that requires the corresponding independent structural coordinate.
 
 ## D4. Geometry, Mobility, And Topology Ownership
 

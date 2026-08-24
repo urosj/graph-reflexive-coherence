@@ -35,6 +35,8 @@ Start with:
 - [D1 interpretation](./decisions/D1RetainedRepresentationOntologyAndCandidateAdmission.md).
 - [D2 structured decision](./decisions/D2FormationRetentionReleaseAndWriteInterface.json);
 - [D2 interpretation](./decisions/D2FormationRetentionReleaseAndWriteInterface.md).
+- [D3 structured decision](./decisions/D3ContinuationRequirementsAndStructuralDomain.json);
+- [D3 interpretation](./decisions/D3ContinuationRequirementsAndStructuralDomain.md).
 
 Current gate status:
 
@@ -42,7 +44,8 @@ Current gate status:
 D0 = accepted
 D1 = accepted_bounded
 D2 = accepted_bounded
-D3 = authorized_not_started
+D3 = complete_awaiting_human_review
+D4 = blocked_pending_D3_acceptance
 ```
 
 Hard boundary:

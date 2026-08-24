@@ -1,7 +1,7 @@
 # GRC9V4 Constitutive Design Investigation Checklist
 
 **Date:** 2026-08-23  
-**Status:** D0-D2 accepted; D3 authorized
+**Status:** D0-D2 accepted; D3 complete and awaiting human review
 **Plan:** [`GRC9V4ConstitutiveDesignPlan.md`](./GRC9V4ConstitutiveDesignPlan.md)  
 **Basis:** [`GRC9V4ConstitutiveDesignBasis.md`](./GRC9V4ConstitutiveDesignBasis.md)  
 **Ledger:** [`GRC9V4ConstitutiveDesignDecisionLedger.md`](./GRC9V4ConstitutiveDesignDecisionLedger.md)
@@ -254,33 +254,88 @@ human_acceptance = accepted_bounded_2026-08-24
 
 ## D3. Continuation Requirements And Structural Domain
 
-Status: authorized; not started.
+Status: complete; awaiting human review.
 
-- [ ] Define formed state and formed branch.
-- [ ] Define reference branch and transport.
-- [ ] Define admitted perturbation state and clock.
-- [ ] Define requirements for the later complete effective transition.
-- [ ] Separate structural `alpha`, temporal `gamma`/multipliers, Read-Back
+- [x] Define formed state and formed branch.
+- [x] Define reference branch and transport.
+- [x] Define admitted perturbation state and clock.
+- [x] Define requirements for the later complete effective transition.
+- [x] Separate structural `alpha`, temporal `gamma`/multipliers, Read-Back
       `beta`, and spatial `lambda`.
-- [ ] Block `slow_temporal_mode == low_continuation_stiffness`.
-- [ ] Distinguish `F_struct(C)`, conditional `F_struct(C; T_*)`, and genuinely
+- [x] Block `slow_temporal_mode == low_continuation_stiffness`.
+- [x] Distinguish `F_struct(C)`, conditional `F_struct(C; T_*)`, and genuinely
       joint source-backed `F_struct(C,T)` structural cases.
-- [ ] State whether `delta_T` is an admitted structural coordinate.
-- [ ] Block construction of a continuation Hessian from runtime `DF(C,T)`.
-- [ ] Build a support matrix over no-current, frozen-current, smoothly
+- [x] State whether `delta_T` is an admitted structural coordinate.
+- [x] Block construction of a continuation Hessian from runtime `DF(C,T)`.
+- [x] Build a support matrix over no-current, frozen-current, smoothly
       slaved-current, and independently active-current references.
-- [ ] Record supported/conditional/open/blocked status, conditions, current
+- [x] Record supported/conditional/open/blocked status, conditions, current
       elimination/freezing, structural-coordinate, and active-joint-theory
       status for every matrix row.
-- [ ] Keep runtime current-regime selection in D6.
-- [ ] Block an inherited self-adjoint Hessian for active `(C,T,J)` without a
+- [x] Keep runtime current-regime selection in D6.
+- [x] Block an inherited self-adjoint Hessian for active `(C,T,J)` without a
       source-backed derivation.
-- [ ] Freeze the derived-representation tangent constraint and block independent
+- [x] Freeze the derived-representation tangent constraint and block independent
       `delta_T_M` without D1 independent-state authority.
-- [ ] Separate fast temporal relaxation, branch displacement, and retained
+- [x] Separate fast temporal relaxation, branch displacement, and retained
       structural continuation.
-- [ ] Freeze topology/event strata and blocked derivative cases.
+- [x] Freeze topology/event strata and blocked derivative cases.
+- [x] Distinguish D2 `retained_formed`, D3 structural reference state, and the
+      stronger combined retained-structural state.
+- [x] Separate runtime candidate viability from C-only, conditional, and joint
+      structural-claim viability.
+- [x] Block conditioned-C alpha from becoming a carrier alpha spectrum.
+- [x] Freeze functional normalization, perturbation metric, constraint scope,
+      and raw-alpha comparison boundaries.
+- [x] Freeze fixed-geometry, induced-geometry total, smooth-current-eliminated,
+      and joint derivative conventions.
+- [x] Freeze A's coupled `R_W` tangent and C's exact selector/composite-functional
+      tangent obligations.
+- [x] Block continuation-derived, analysis-only, and retrospective
+      temporal-slow projectors from constitutive relabel while preserving the
+      source-backed conditional route for a runtime-owned dynamic projector.
+- [x] Freeze prospective branch gauge and block retrospective branch fitting.
+- [x] Freeze conservation-scope, symmetry/gauge-null, tangent-cone, and
+      nonsmooth-boundary rules.
+- [x] Freeze isolated-cluster/filter/event requirements for hard spectral
+      selectors and variable-rank domains.
+- [x] Separate alpha sign labels from spark, collapse, topology, deslavement,
+      finite basin, lifetime, and nonnormal-survival claims.
+- [x] Record complete per-cell functional, constraint, tangent, derivative,
+      retained-role, claim-ceiling, and later-dependency details.
+- [x] Classify all 42 independent D3 pressure points.
+- [x] Freeze 39 fail-closed structural-domain controls.
+- [x] Classify all 15 D2 open debts and add nine typed D3 debts.
+- [x] Keep optional joint A/B and independently active-current theory debts
+      claim-blocking but nonblocking for D10 unless a later selected
+      architecture activates them through a named successor debt.
 - [ ] Obtain human acceptance.
+
+Current D3 result:
+
+```text
+record_id = GRC9V4-CD-D3-v1
+decision_record_digest = 423f20f161fc16e6179b1f77ea665fd887bd87f7502668361165367d9f4e20f8
+candidate_set_after_D3 = [V4-A-temporalized-W, V4-B-independent-derived-carrier, V4-C-constitutive-C-sector]
+candidate_structural_domain_rows = 3
+support_matrix_rows = 12
+support_matrix_cell_detail_rows = 12
+support_matrix_supported = 2
+support_matrix_conditionally_supported = 7
+support_matrix_theory_open = 3
+support_matrix_blocked = 0
+control_contract_rows = 39
+D3_pressure_audit_rows = 42
+predecessor_debt_rows_classified = 15
+open_debt_rows = 24
+must_close_before_D10_debt_rows = 20
+conditional_nonblocking_debt_rows = 3
+all_non_D10_blocking_debt_rows = 4
+joint_structural_candidate_supported = false
+current_regime_selected = false
+architecture_selected = false
+D4_authorized = false_pending_human_acceptance
+```
 
 ## D4. Geometry, Mobility, And Topology Ownership
 
@@ -417,7 +472,7 @@ branch = investigation-GRC9V4-constitutive-design
 D0 = accepted
 D1 = accepted_bounded
 D2 = accepted_bounded
-D3 = authorized_not_started
+D3 = complete_awaiting_human_review
 D4-D10 = blocked_on_predecessor
 D10_early_terminal_route = available_for_rejected_all_missing_theory_or_missing_discriminator
 architecture_selected = false
