@@ -1,6 +1,6 @@
 # GRC9V4 Constitutive Design Decision Ledger
 
-**Status:** D0-D7, D4-v2-D7-v2, D7G-v1, and D7G-v2 accepted bounded; bounded D8-A structural-target extraction authorized; D8-B remains blocked on a complete temporal realization
+**Status:** D0-D7, D4-v2-D7-v2, D7G-v1, D7G-v2, the D7G-post-v2 correction, and D8-A accepted bounded; the geometry-temporal-realization successor is authorized; D8-B remains blocked on a complete temporal realization
 
 This ledger is the additive decision record for D0-D10. The design basis and
 plan define questions and constraints; this file records accepted answers.
@@ -754,11 +754,15 @@ complete live debt union = 44
 D7-v2 = accepted_bounded
 D7G-v1 = accepted_bounded
 D7G-v2 = accepted_bounded
-D8-A = structural_target_extraction_authorized
+D7G-post-v2_Hodge_type_correction = accepted_bounded
+D7G-post-v2_Hodge_type_correction_digest = 2e2f4d53e0abf3134f586cc60467bf5881cc60414af82df35bf6ac7772400984
+D8-A = accepted_bounded
+D8-A_decision_digest = 5e3af8a6b8b327b3d98b5c5f6ac934ff528f048c3927a085c59194262afba021
 D8_authorized = true
 D8_authorized_scope = D8-A_branch_appropriate_scope_classified_structural_target_extraction_only
 D8_full_continuation = blocked_on_typed_temporal_geometry_realization
-named_next_route_after_D8-A = GRC9V4-GEOMETRY-TEMPORAL-REALIZATION-SUCCESSOR
+named_next_route_after_accepted_D8-A = GRC9V4-GEOMETRY-TEMPORAL-REALIZATION-SUCCESSOR
+geometry_temporal_realization_successor_authorized = true
 ```
 
 Human acceptance: `accepted_bounded_2026-08-24`.
@@ -1101,13 +1105,121 @@ All 26 D7G-v1 debts have one explicit disposition. The live D7G-v2 ledger has
 the four archived B obligations. No runtime, normative specification,
 implementation, or `src/` authority is opened.
 
+### D7G-post-v2 Graph-Hodge Type Correction
+
+Status: accepted bounded. The narrow correction receipt separates
+`H1_form`, the structural one-form Hodge/Dirichlet weight, from `G_J`, the
+dual current/flux resistance metric and flat map, and from causally distinct
+transport mobility `M4`. The simple V3 reference is
+`H1_form = diag(W)` and `G_J = diag(W^-1)`. Candidate C's physical response is
+retagged as an explicit flux/flat/response/sharp/flux composite. The accepted
+identity-metric witness survives within binary roundoff, but general
+nonidentity conditioning remains pre-D10 debt. Physical `j_flux` remains the
+continuity current, while structural `K4` consumes lowered
+`j_struct^flat tensor j_struct^flat`. The correction freezes the variable-
+metric tangent and a nonidentity tensor-separation regression. Candidate-
+specific `iota_a` adapters preserve accepted payload gains; no common
+`kappa_K` is introduced. Accepted historical records and candidate
+dispositions are unchanged. D8-A consumes this correction under their joint
+accepted-bounded status.
+
 ## D8. Continuation Realization And Analysis Contract
 
-Status: D8-A structural-target extraction is authorized by accepted D7G-v2.
-It derives branch-appropriate continuation objects and classifies targets as
-realization-invariant, accepted-lagged-branch-relative, or not finalizable
+Status: D8-A is accepted bounded. It derives branch-appropriate continuation
+objects and classifies
+targets as realization-invariant, accepted-lagged-branch-relative,
+accepted-lagged-branch work not yet instantiated, or genuinely not finalizable
 before realization. It does not classify stability or compare completed
 temporal architectures.
+
+```text
+D8-A = GRC9V4-CD-D8A-v1
+status = accepted_bounded
+human_acceptance = accepted_bounded_2026-08-24
+predecessor_decision_digest = c52912d83797ee294799709b3e770574043df37f80073b51eebfaf8b2fd27efb
+decision_record_digest = 5e3af8a6b8b327b3d98b5c5f6ac934ff528f048c3927a085c59194262afba021
+
+A_object = conditional_C_given_W_A_reduced_form_on_smoothly_slaved_branch
+C_object = C_only_exact_derived_sector_reduced_form_on_smoothly_slaved_branch
+graph_Hodge_type_correction = D7G-post-v2_H1_form_G_J_M4_separation
+H1_form_ref = diag(W_V3)
+G_J_ref = diag(W_V3^-1)
+M4_authority = causally_distinct_transport_mobility
+C_physical_pipeline = flux_to_flat_to_Hodge_response_to_sharp_to_flux
+C_structural_rank_one_input = j_struct_flat_tensor_j_struct_flat_before_sharp
+A_structural_rank_one_input = G_J_pre_j_A_flux_tensor_G_J_pre_j_A_flux
+structural_gain_authority = candidate_specific_iota_a_no_common_kappa_K
+lagged_delta_G_J_pre = 0
+variable_metric_successor_rule = retain_(delta_G_J)_j_flux
+common_direct_field_target = exact_kappa_C_(d0_u)^T_delta_H1_form_(d0_v)
+delta_H1_form = kappa_H_delta_K4
+complete_Hessian_response = not_finalized
+
+target_scope_rows = 10
+realization_invariant = 4
+accepted_lagged_branch_relative = 2
+accepted_lagged_branch_not_instantiated = 2
+not_finalizable_before_temporal_realization = 2
+
+full_lagged_branch_Hessian = potentially_derivable_before_temporal_synthesis_not_instantiated
+lagged_alpha = potentially_computable_before_temporal_synthesis_not_instantiated
+generated_geometry_later_transition_and_gamma_mu = genuinely_temporal_realization_dependent
+
+nonzero_delta_K4_implies_nonzero_complete_structural_target = false
+alpha_or_gamma_assigned = false
+stability_classified = false
+candidate_ranking = false
+architecture_selected = false
+
+predecessor_debt_dispositions = 24
+correction_debt_dispositions = 5
+current_typed_debts = 28
+controls = 40
+runtime_or_src_changed = false
+
+joint_acceptance_of_Hodge_type_correction_required = true
+successor_ready_if_accepted = GRC9V4-GEOMETRY-TEMPORAL-REALIZATION-SUCCESSOR
+successor_authorized = true
+D8-B_authorized = false
+```
+
+The exact positive result is the direct field metric-response target under the
+typed D7G-post-v2 correction. D5's structural one-form Hodge uses the
+conductance-like `H1_form`; B1-GR's inverse-conductance object survives as the
+dual current metric and flat map `G_J`; `M4` remains causally distinct
+transport mobility. Candidate C now has an explicit
+flux/flat/response/sharp/flux chain. Its identity-metric witness survives
+within binary roundoff, while nonidentity conditioning remains pre-D10 debt.
+The structural route branches before sharp: physical `j_flux` goes to
+continuity, while lowered `j_struct^flat` enters the rank-one `K4` map. The
+accepted lagged rows set `delta G_J,pre = 0` because pre-read geometry is
+frozen; successors with variable `G_J` inside the chain must retain the
+additional metric-variation term.
+The result remains bounded because the constrained pullback can vanish and
+because the full induced-geometry and constraint second variations are not
+instantiated. The `H0`-weighted matrix representative
+includes `kappa_C`, and target orthogonality uses the declared `H0`-weighted
+candidate structural inner product. A's candidate-generated
+pullback and C's exact-selector pullback use the accepted D6-v2 lagged slaving
+and therefore must be rederived when a successor changes that relation. The
+candidate authority boundaries and direct metric-response map are the
+realization-invariant constraints.
+
+The full accepted-lagged-branch Hessian and its `alpha` spectrum are
+potentially derivable before temporal synthesis, but D8-A does not instantiate
+them. Generated-geometry influence on a later transition and temporal
+`gamma`/`mu` remain genuinely blocked on a complete temporal realization. The
+accepted predecessor digest `c52912d...` and file SHA `364b1b05...`, plus the
+correction digest `2e2f4d5...` and file SHA `bbef6c3...`, were independently
+recomputed exactly during the revision.
+
+The authoritative records are
+[`D7GPostv2GraphHodgeTypeCorrection.json`](./decisions/D7GPostv2GraphHodgeTypeCorrection.json),
+its
+[`interpretation`](./decisions/D7GPostv2GraphHodgeTypeCorrection.md),
+[`D8ABranchAppropriateStructuralTargetExtraction.json`](./decisions/D8ABranchAppropriateStructuralTargetExtraction.json)
+and
+[`D8ABranchAppropriateStructuralTargetExtraction.md`](./decisions/D8ABranchAppropriateStructuralTargetExtraction.md).
 
 D8-B remains blocked on a concrete typed temporal geometry realization. A
 realization may enter D8-B after freezing complete equations, state authority,

@@ -1,7 +1,7 @@
 # GRC9V4 Constitutive Design Investigation Checklist
 
 **Date:** 2026-08-23  
-**Status:** D0-D7, D4-v2-D7-v2, D7G-v1, and D7G-v2 accepted bounded; bounded D8-A structural-target extraction authorized; D8-B remains blocked on a complete temporal realization
+**Status:** D0-D7, D4-v2-D7-v2, D7G-v1, D7G-v2, the D7G-post-v2 correction, and D8-A accepted bounded; the geometry-temporal-realization successor is authorized; D8-B remains blocked on a complete temporal realization
 **Plan:** [`GRC9V4ConstitutiveDesignPlan.md`](./GRC9V4ConstitutiveDesignPlan.md)  
 **Basis:** [`GRC9V4ConstitutiveDesignBasis.md`](./GRC9V4ConstitutiveDesignBasis.md)  
 **Ledger:** [`GRC9V4ConstitutiveDesignDecisionLedger.md`](./GRC9V4ConstitutiveDesignDecisionLedger.md)
@@ -1425,7 +1425,8 @@ human_acceptance = accepted_bounded_2026-08-24
 - [x] Require D8-A to derive a branch-appropriate reduced, joint,
       nonselfadjoint, or DAE continuation object before using `H_*`/`alpha`.
 - [x] Require D8-A to classify each structural target as realization-invariant,
-      accepted-lagged-branch-relative, or not finalizable before realization;
+      accepted-lagged-branch-relative, accepted-lagged-branch work not yet
+      instantiated, or genuinely not finalizable before realization;
       repeating the absent-`Gamma_a` diagnosis is not evidence.
 - [x] Prevent nonzero C internal-map derivatives from being promoted to
       nonzero `D_(h_pre) J_C` or `D_(h_pre) F_C` without a complete chain
@@ -1526,26 +1527,152 @@ target extraction comes first; the successor must then instantiate a bounded
 complete realization while pressuring the four named families as a
 non-exhaustive minimum before any earlier gate is reopened.
 
+### D7G-post-v2 Graph-Hodge Type Correction (Accepted Bounded)
+
+- [x] Separate `H1_form`, `G_J`, and `M4` by edge-space type and causal role.
+- [x] Correct the V3 reference embedding to
+      `H1_form = diag(W)` and `G_J = diag(W^-1)`.
+- [x] Retag Candidate C as an explicit
+      flux/flat/response/sharp/flux composite.
+- [x] Freeze physical `j_flux` for continuity and lowered
+      `j_struct^flat tensor j_struct^flat` for structural `K4` assembly.
+- [x] Preserve candidate-specific `iota_a` structural adapters and payload
+      gains; introduce no generic `kappa_K`.
+- [x] Carry the same typing to a future B current-mediated path only after a
+      separately admitted `iota_B`, without reopening B here.
+- [x] Freeze the variable-metric tangent
+      `delta j_struct^flat = (delta G_J) j_flux + G_J delta j_flux` and the
+      accepted lagged-row reduction under `delta G_J,pre = 0`.
+- [x] Recompute the accepted identity-metric C witness within binary roundoff.
+- [x] Add a nonidentity energy-duality regression.
+- [x] Add a nonidentity rank-one tensor-separation regression.
+- [x] Preserve accepted historical bytes, digests, and candidate dispositions.
+- [x] Record five typed correction debts and fourteen fail-closed controls.
+- [x] Obtain human acceptance of the correction receipt jointly with D8-A.
+
 ## D8. Continuation Realization And Analysis Contract
 
-Status: D8-A is authorized by accepted D7G-v2. Full D8-B continuation
-comparison remains blocked.
+Status: D8-A is accepted bounded and the named geometry-temporal-realization
+successor is authorized. Full D8-B continuation comparison remains blocked.
 
-- [ ] Derive each candidate's branch-appropriate reduced, joint,
+- [x] Derive each candidate's branch-appropriate reduced, joint,
       nonselfadjoint, or DAE continuation object before assigning `alpha`.
-- [ ] Classify extracted structural directions as realization-invariant,
-      accepted-lagged-branch-relative, or not finalizable before realization.
-- [ ] Apply only invariant targets across all successors; rederive lagged-branch
+- [x] Classify extracted structural directions as realization-invariant,
+      accepted-lagged-branch-relative, accepted-lagged-branch work not yet
+      instantiated, or genuinely not finalizable before realization.
+- [x] Apply only invariant targets across all successors; rederive lagged-branch
       targets in D8-B when a realization changes the slaving relation.
-- [ ] Keep `D_(h_pre) F_a` separate from generated-geometry sensitivity through
+- [x] Keep `D_(h_pre) F_a` separate from generated-geometry sensitivity through
       `Gamma_a`; record the latter undefined while no realization exists.
-- [ ] For C, keep internal-map dependence, current sensitivity, and full-
+- [x] For C, keep internal-map dependence, current sensitivity, and full-
       transition sensitivity separate until a complete chain or matched witness
       supports the stronger level.
-- [ ] Keep D8-A analysis consumption distinct from runtime causal consumption.
-- [ ] Do not count repetition of the absent-`Gamma_a` diagnosis as evidence.
-- [ ] Feed scope-classified target directions into the non-exhaustive minimum
+- [x] Keep D8-A analysis consumption distinct from runtime causal consumption.
+- [x] Do not count repetition of the absent-`Gamma_a` diagnosis as evidence.
+- [x] Feed scope-classified target directions into the non-exhaustive minimum
       realization pressure set before full D8-B comparison.
+
+### D8-A Accepted-Bounded Result
+
+```text
+record = GRC9V4-CD-D8A-v1
+status = accepted_bounded
+human_acceptance = accepted_bounded_2026-08-24
+decision_digest = 5e3af8a6b8b327b3d98b5c5f6ac934ff528f048c3927a085c59194262afba021
+
+A_structural_object = conditional_C_given_W_A_reduced_form_on_D6v2_slaved_branch
+C_structural_object = C_only_exact_derived_sector_reduced_form_on_D6v2_slaved_branch
+one_common_Hessian_assumed = false
+
+graph_Hodge_type_correction = D7G-post-v2_H1_form_G_J_M4_separation
+H1_form_ref = diag(W_V3)
+G_J_ref = diag(W_V3^-1)
+M4_authority = causally_distinct_even_when_reference_arrays_coincide
+graph_Hodge_discretization_unique_or_normative = false
+C_physical_pipeline = flux_to_flat_to_Hodge_response_to_sharp_to_flux
+C_structural_rank_one_input = j_struct_flat_tensor_j_struct_flat_before_sharp
+A_structural_rank_one_input = G_J_pre_j_A_flux_tensor_G_J_pre_j_A_flux
+structural_gain_authority = candidate_specific_iota_a_no_common_kappa_K
+lagged_pullback_metric_stage = delta_G_J_pre_zero
+variable_metric_pullback_rule = retain_(delta_G_J)_j_flux_term
+C_identity_metric_witness_preserved_within_binary_roundoff = true
+nonidentity_energy_duality_regression_error = 0.0
+nonidentity_rank_one_tensor_regression_passed = true
+direct_field_metric_target = derived_exactly_under_typed_H1_form_contract
+delta_Q_field = kappa_C (d0 u)^T delta_H1_form (d0 v)
+delta_H1_form = kappa_H delta_K4
+H0_weighted_matrix_representative_includes_kappa_C = true
+target_orthogonality_metric = H0_weighted_candidate_structural_inner_product
+nonzero_delta_K4_sufficient_for_nonzero_constrained_target = false
+complete_geometry_constraint_Hessian_response = not_finalized
+
+target_rows = 10
+realization_invariant_targets = 4
+accepted_lagged_branch_targets = 2
+accepted_lagged_branch_not_instantiated_targets = 2
+not_finalizable_before_realization_targets = 2
+
+full_lagged_branch_Hessian = potentially_derivable_before_temporal_synthesis_not_instantiated
+lagged_alpha_spectrum = potentially_computable_before_temporal_synthesis_not_instantiated
+architecture_final_Hessian = rederive_if_successor_changes_slaving_or_typed_structural_Hodge_current_metric_dictionary
+generated_geometry_later_transition_and_gamma_mu = genuinely_temporal_realization_dependent
+
+alpha_spectrum_calculated = false
+temporal_generator_calculated = false
+stability_classified = false
+candidate_ranking_performed = false
+architecture_selected = false
+
+predecessor_debt_dispositions = 24
+correction_debt_dispositions = 5
+current_typed_debts = 28
+controls = 40
+runtime_or_src_changed = false
+
+joint_acceptance_of_Hodge_type_correction_required = true
+geometry_temporal_realization_successor_ready_if_accepted = true
+geometry_temporal_realization_successor_authorized = true
+D8-B_authorized = false
+specification_authorized = false
+implementation_authorized = false
+```
+
+- [x] Derive the direct graph-Hodge field target as a bilinear form and keep
+      its coordinate matrix representation subordinate.
+- [x] Correct the edge-space type conflation: freeze `H1_form` as the
+      structural one-form Hodge, `G_J` as the current/flux flat metric, and
+      `M4` as causally distinct transport mobility.
+- [x] Preserve accepted historical record bytes while issuing a separate
+      D7G-post-v2 correction receipt with exact source identities.
+- [x] Recompute Candidate C through the explicit
+      flux/flat/response/sharp/flux pipeline and preserve the identity-metric
+      witness only within its demonstrated scope.
+- [x] Add a nonidentity energy-duality regression and retain general
+      nonidentity C conditioning as pre-D10 debt.
+- [x] Route both candidate-generated lagged pullbacks through lowered
+      `delta j_struct^flat` before `delta K4`.
+- [x] Fail closed when physical `j_flux tensor j_flux` is substituted for the
+      structural one-form rank-one input.
+- [x] Fail closed when a generic `kappa_K` replaces accepted candidate-specific
+      `iota_a` structural scaling.
+- [x] Include `kappa_C` in the coordinate representative and bind target
+      orthogonality to the declared `H0`-weighted structural inner product.
+- [x] Classify the full lagged-branch Hessian and lagged `alpha` as potentially
+      derivable before temporal synthesis but not instantiated by D8-A.
+- [x] Reserve true temporal unavailability for generated-geometry runtime
+      influence and `gamma`/`mu` of the complete transition.
+- [x] Recompute the accepted D7G-v2 decision digest and file SHA-256 exactly.
+- [x] Require a projected target witness or explicit kernel result before a
+      nonzero complete structural target claim.
+- [x] Keep cultivation/context directions `s_a` distinct from continuation
+      test directions `u` and `v`.
+- [x] Give all 24 D7G-v2 debts one explicit disposition.
+- [x] Give all five D7G-post-v2 correction debts one explicit disposition.
+- [x] Preserve 28 typed current debts and 40 fail-closed controls.
+- [x] Obtain human acceptance of the D7G-post-v2 correction receipt.
+- [x] Obtain human acceptance of D8-A.
+
+### D8-B And Full Analysis (Blocked)
 
 - [ ] Define structural functional/Hessian and `alpha` semantics.
 - [ ] Define temporal generator/effective-map and `gamma`/multiplier semantics.
@@ -1668,8 +1795,12 @@ D7G-v2_D_h_generated_F = undefined_absent_Gamma_or_equivalent_complete_realizati
 D7G-v2_profile_stage_audit_complete = true
 D7G-v2_global_structural_cultivation_complete = false
 D7G-v2_named_successor = GRC9V4-GEOMETRY-TEMPORAL-REALIZATION-SUCCESSOR
+D7G-post-v2_Hodge_type_correction = accepted_bounded
+D7G-post-v2_Hodge_type_correction_digest = 2e2f4d53e0abf3134f586cc60467bf5881cc60414af82df35bf6ac7772400984
 automatic_D4-v3-D7-v3_cycle = not_authorized
-D8-A_structural_target_extraction = authorized
+D8-A_structural_target_extraction = accepted_bounded
+D8-A_decision_digest = 5e3af8a6b8b327b3d98b5c5f6ac934ff528f048c3927a085c59194262afba021
+geometry_temporal_realization_successor_authorized = true
 D8_authorized = true
 D8_authorized_scope = D8-A_branch_appropriate_scope_classified_structural_target_extraction_only
 D8_full_continuation_through_D10 = blocked_on_typed_temporal_realization_successor

@@ -65,6 +65,10 @@ Start with:
 - [D7G-v1 interpretation](./decisions/D7GGlobalMetricAndStructuralCultivationClosure.md).
 - [D7G-v2 structured decision](./decisions/D7Gv2GeometryParametricClosureAndFinalization.json);
 - [D7G-v2 interpretation](./decisions/D7Gv2GeometryParametricClosureAndFinalization.md).
+- [D7G-post-v2 graph-Hodge type correction](./decisions/D7GPostv2GraphHodgeTypeCorrection.json);
+- [D7G-post-v2 correction interpretation](./decisions/D7GPostv2GraphHodgeTypeCorrection.md).
+- [D8-A structured decision](./decisions/D8ABranchAppropriateStructuralTargetExtraction.json);
+- [D8-A interpretation](./decisions/D8ABranchAppropriateStructuralTargetExtraction.md).
 
 Current gate status:
 
@@ -87,12 +91,14 @@ D7G-v2 = accepted_bounded
 D7G-v2 disposition = reference_profile_instantiated_A_C_candidate_local_transitions_valid_selected_lagged_explicit_geometry_feedback_unresolved
 D7G-v2 profile/stage audit complete = true
 D7G-v2 global structural cultivation complete = false
+D7G-post-v2 graph-Hodge type correction = accepted_bounded
 automatic_D4-v3-D7-v3_cycle = not_authorized
-D8-A = structural_target_extraction_authorized
+D8-A = accepted_bounded
 D8_authorized = true
 D8_authorized_scope = D8-A_branch_appropriate_scope_classified_structural_target_extraction_only
 D8-B_full_continuation = blocked_on_concrete_geometry_temporal_realization
-next_route_after_D8-A = GRC9V4-GEOMETRY-TEMPORAL-REALIZATION-SUCCESSOR
+next_route_after_accepted_D8-A = GRC9V4-GEOMETRY-TEMPORAL-REALIZATION-SUCCESSOR
+geometry_temporal_realization_successor_authorized = true
 ```
 
 D4-v2 now gives B and C bounded revision-specific constitutive completions
@@ -289,6 +295,50 @@ stability remains a future D8 question. D7G-v2 readies bounded D8-A
 branch-appropriate structural-target extraction after acceptance, while full
 continuation comparison still waits for a concrete typed temporal geometry
 realization.
+
+D8-A now extracts separate A and C reduced structural forms under the accepted
+D6-v2 smoothly slaved current closure. A remains conditional C structure at
+frozen `W_A`; C remains C-only structure with the exact derived `T_C` tangent.
+The D7G-post-v2 correction separates the structural one-form Hodge `H1_form`,
+the dual current/flux metric `G_J`, and causally distinct transport mobility
+`M4`. On the simple V3 reference, `H1_form = diag(W)` and
+`G_J = diag(W^-1)`. Candidate C now uses an explicit
+flux/flat/response/sharp/flux chain; its identity-metric witness survives
+within binary roundoff, while general nonidentity conditioning remains debt.
+The correction also separates physical `j_flux`, consumed by continuity, from
+lowered `j_struct^flat`, whose rank-one tensor is consumed by structural `K4`.
+Candidate-specific `iota_a` adapters preserve the accepted A/C payload gains;
+the correction introduces no common `kappa_K`.
+The accepted lagged A/C pullbacks freeze pre-read geometry and therefore use
+`delta j_struct^flat = G_J,pre delta j_flux`; variable-metric successors must
+also retain `(delta G_J) j_flux`. A nonidentity regression confirms that the
+flux and lowered-form outer products are not interchangeable.
+Under that typed contract D8-A derives the exact direct field metric target
+
+```text
+D_H1_form Q_field[delta H1_form](u,v)
+  = kappa_C (d0 u)^T delta H1_form (d0 v),
+
+delta H1_form = kappa_H delta K4.
+```
+
+This is not yet a full Hessian or stability result. A nonzero metric increment
+can vanish after exact-gradient and conservation/gauge pullback, and the
+induced-geometry plus constraint second variations remain branch-specific.
+The simple reference weights are not a unique normative graph-DEC
+discretization; successors changing edge-volume factors, the structural-Hodge
+profile, or flux/form identification must rederive the affected response. The
+matrix representative includes `kappa_C`, and target orthogonality is
+`H0`-weighted.
+
+D8-A classifies four invariant targets, two accepted-lagged-branch pullbacks,
+two additional lagged-branch structural targets that are potentially
+derivable before temporal synthesis but not instantiated, and two targets that
+genuinely cannot be finalized before temporal realization. The latter are
+generated-geometry influence on a later transition and temporal `gamma`/`mu`.
+The correction receipt and D8-A are jointly accepted bounded. This authorizes
+the named realization successor, not D8-B directly.
+
 The later specification and implementation must also rebuild every
 differential or gradient summary used by `G_W(C[k+1], J_C[k])` from
 post-continuity `C[k+1]`; pre-continuity cache reuse is outside the accepted

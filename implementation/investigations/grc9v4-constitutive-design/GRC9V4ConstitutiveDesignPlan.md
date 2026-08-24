@@ -1,7 +1,7 @@
 # GRC9V4 Constitutive Design Investigation Plan
 
 **Date:** 2026-08-23  
-**Status:** D0-D7, D4-v2-D7-v2, D7G-v1, and D7G-v2 accepted bounded; bounded D8-A structural-target extraction authorized; D8-B remains blocked on a complete temporal realization
+**Status:** D0-D7, D4-v2-D7-v2, D7G-v1, D7G-v2, the D7G-post-v2 correction, and D8-A accepted bounded; the geometry-temporal-realization successor is authorized; D8-B remains blocked on a complete temporal realization
 **Design basis:** [`GRC9V4ConstitutiveDesignBasis.md`](./GRC9V4ConstitutiveDesignBasis.md)  
 **Checklist:** [`GRC9V4ConstitutiveDesignChecklist.md`](./GRC9V4ConstitutiveDesignChecklist.md)  
 **Decision ledger:** [`GRC9V4ConstitutiveDesignDecisionLedger.md`](./GRC9V4ConstitutiveDesignDecisionLedger.md)
@@ -1790,11 +1790,26 @@ least-incomplete candidate selection remain blocked. The authoritative records a
 and its
 [`scientific report`](./decisions/D7Gv2GeometryParametricClosureAndFinalization.md).
 
+### D7G-post-v2 Graph-Hodge Type Correction (Accepted Bounded)
+
+The jointly accepted narrow correction receipt
+separates the structural one-form Hodge `H1_form`, the current/flux flat metric
+`G_J`, and transport mobility `M4`. The correction preserves accepted
+historical bytes and dispositions, retags Candidate C's physical response as
+an explicit flux/flat/response/sharp/flux chain, and requires exact source
+identity, energy-duality, rank-one tensor-separation, and witness-recalculation
+checks. It also freezes physical `j_flux` as the continuity current and lowered
+`j_struct^flat` as the structural input to
+`j_struct^flat tensor j_struct^flat -> K4`. General nonidentity conditioning,
+richer graph-DEC edge-volume factors, topology transport, and normative
+encoding remain typed debt. The correction is authoritative for D8-A and
+future consumers but does not authorize runtime work.
+
 ## D8. Continuation Realization And Analysis Contract
 
-Status: D8-A is authorized by accepted D7G-v2. D8-B full continuation
-comparison remains blocked on an instantiated complete geometry temporal
-realization.
+Status: D8-A is accepted bounded and the named geometry-temporal-realization
+successor is authorized. D8-B full continuation comparison remains blocked on
+an instantiated complete geometry-temporal realization.
 
 ### D8-A. Branch-Appropriate Structural-Target Extraction
 
@@ -1808,8 +1823,9 @@ active/joint branch    -> joint, nonselfadjoint, or DAE object may be required
 
 Then extract admissible directions `v` for which the derived structural object
 responds to `delta h_4` and classify each as realization-invariant,
-accepted-lagged-branch-relative, or not finalizable before temporal
-realization. Only invariant directions become universal non-erasure
+accepted-lagged-branch-relative, accepted-lagged-branch work not yet
+instantiated, or genuinely not finalizable before temporal realization. Only
+invariant directions become universal non-erasure
 requirements. If the successor changes the slaving relation, lagged-branch
 directions must be rederived in D8-B before they constrain that realization.
 
@@ -1825,6 +1841,124 @@ absence of `Gamma_a` is not a D8-A result. For C, nonzero derivatives of
 internal maps do not establish nonzero `D_(h_pre) J_C` or `D_(h_pre) F_C`
 without a complete chain derivation or matched witness. D8-A is an analysis
 consumer of `h_4+`, not a runtime causal consumer.
+
+#### D8-A Accepted-Bounded Result
+
+D8-A binds Candidate A to D3's conditional-C-given-`W_A` smoothly slaved row
+and Candidate C to D3's C-only exact-derived-sector smoothly slaved row. It
+derives separate reduced constrained second-variation forms; it does not assign
+either candidate a joint retained-state or independent-current structural
+coordinate.
+
+The D7G-post-v2 correction resolves a source-level type conflation. D5's
+`H1` is the structural one-form Hodge/Gram weight used by the scalar
+Dirichlet form, while B1-GR's inverse-conductance object is the dual metric and
+flat map on physical edge currents. Transport mobility remains a third,
+causally distinct object:
+
+```text
+H1_form,ref = diag(W_V3)
+G_J,ref     = diag(W_V3^-1)
+M4          = candidate/realization-owned transport mobility.
+```
+
+Numerical coincidence between `H1_form,ref` and legacy mobility does not merge
+their authority. Candidate C therefore uses an explicit
+`flux -> flat -> Hodge response -> sharp -> flux` pipeline. Its existing
+identity-metric D5-v2/D6-v2 witness survives within binary roundoff, while
+general nonidentity conditioning remains pre-D10 debt.
+
+The corrected path branches before sharp. Continuity consumes `j_flux`, while
+structural assembly consumes the lowered Read-Back one-form:
+
+```text
+A: j_A,flux -> G_J,pre -> j_A,struct^flat -> K4_A
+C: retained response -> j_C,struct^flat -> K4_C
+                             |
+                             +-> G_J,pre^-1 -> j_C,flux for continuity.
+```
+
+The candidate-generated tangent is generally
+
+```text
+delta j_struct^flat
+  = (delta G_J) j_flux + G_J delta j_flux.
+```
+
+The accepted lagged rows freeze pre-read geometry, so their
+`delta G_J,pre` term is zero. Coupled or implicit successors must retain that
+term when `G_J` varies inside the reflexive chain.
+
+Candidate-specific structural scaling is unchanged:
+
+```text
+Delta K4^a = iota_a(A_star(j_a,struct^flat)).
+```
+
+`iota_a` is each candidate's already accepted typed structural adapter and
+gain, not a new common `kappa_K`. The same type rule applies to B only if B is
+later reopened with a separately admitted current-mediated path and `iota_B`.
+
+Under that typed correction, the direct field response to the affine
+structural profile is exact. With `d0 = B_ref^T`:
+
+```text
+Q_field,h[u,v]
+  = kappa_C (d0 u)^T H1_form (d0 v)
+  + u^T H0 diag(W_pot''(C_star)) v
+
+delta H1_form = kappa_H delta K4
+
+D_H1_form Q_field[delta H1_form](u,v)
+  = kappa_C (d0 u)^T delta H1_form (d0 v).
+```
+
+Here `W_pot` is the core local structural potential, not Candidate A's `W_A`.
+The `H0`-weighted matrix representative includes the same `kappa_C` factor,
+and target orthogonality is taken in the declared `H0`-weighted candidate
+structural inner product. A successor that changes the structural-Hodge
+profile, graph-DEC edge-volume factors, or flux/form identification must
+rederive the affected response. It may not substitute `G_J` for `H1_form` by
+symbol or array shape.
+
+This is a structural target, not a complete Hessian or runtime feedback result.
+`delta K4 != 0` does not ensure a nonzero constrained target: the pullback may
+lie in an exact-gradient, constraint, gauge, or branch-specific kernel. The
+full induced-geometry and constraint second variations also remain open.
+
+D8-A classifies ten target rows:
+
+```text
+realization-invariant structural targets = 4
+accepted-lagged-branch targets = 2
+accepted-lagged-branch structural targets not instantiated = 2
+not finalizable before temporal realization = 2
+```
+
+The invariant rows preserve the conditional direct field metric response,
+metric-aware
+conservation tangent, A conditional-coordinate boundary, and C exact derived
+sector tangent. The candidate-generated A/C pullbacks through accepted D6-v2
+slaving and the typed `delta j_flux -> delta j_struct^flat -> delta K4`
+crossing are lagged-branch-relative and require D8-B rederivation if the
+successor changes slaving, metric timing, or stage. The full
+accepted-lagged-branch Hessian and
+its `alpha` spectrum are potentially derivable before temporal synthesis, but
+D8-A does not instantiate them; they become architecture-final only when the
+successor preserves that slaving and typed structural-Hodge/current-metric
+dictionary. Generated-
+geometry runtime sensitivity and temporal generators remain genuinely not
+finalizable before a complete temporal realization.
+
+The authoritative records are the
+[`D7G-post-v2 graph-Hodge type correction`](./decisions/D7GPostv2GraphHodgeTypeCorrection.json),
+its
+[`interpretation`](./decisions/D7GPostv2GraphHodgeTypeCorrection.md),
+[`D8ABranchAppropriateStructuralTargetExtraction.json`](./decisions/D8ABranchAppropriateStructuralTargetExtraction.json)
+and its
+[`scientific interpretation`](./decisions/D8ABranchAppropriateStructuralTargetExtraction.md).
+Joint accepted-bounded status authorizes only the named geometry-temporal
+realization successor. It does not authorize D8-B or any runtime work.
 
 ### Geometry-Temporal Realization Successor
 

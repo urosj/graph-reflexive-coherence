@@ -1,0 +1,239 @@
+{
+  "record_type": "graph_Hodge_edge_space_type_correction_receipt",
+  "record_id": "GRC9V4-CD-D7G-post-v2-HODGE-TYPE-CORRECTION-v1",
+  "schema_version": "GRC9V4-CD-CORRECTION-v1.0",
+  "gate_id": "D7G-post-v2",
+  "status": "accepted_bounded",
+  "correction_scope": "typed_edge_space_ontology_reference_embedding_C_Read_Back_representation_j_flat_structural_tensor_input_and_D8A_structural_energy_input",
+  "accepted_record_bytes_modified": false,
+  "accepted_decision_dispositions_reopened": false,
+  "source_identities": [
+    {
+      "source_id": "D5",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D5DirectionalReadBack.json",
+      "decision_digest": "453416f42beefa1c9e725b675a0af7d4fd49c3e83691ee16e3e3bcfb6d37f213",
+      "file_sha256": "1f561fb8feaefacf0e331333d2f7153057e5667f5a450f5f6644766774c340f3",
+      "consumed_as": "accepted_graph_Hodge_d0_delta1_inner_product_and_one_form_response_contract"
+    },
+    {
+      "source_id": "D5-v2",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D5v2DirectionalReadBackCompletion.json",
+      "decision_digest": "212c7db173fbe286816965070a4beebd1e5ba8e39ccc3ffb73bbecde8410cf1c",
+      "file_sha256": "5c32129b06271f18d0bcc98b2d1c362d4b4fde86541668996cc8fd8262602d21",
+      "consumed_as": "accepted_C_retained_Hodge_identification_response_and_finite_witness_contract"
+    },
+    {
+      "source_id": "D6-v2",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D6v2UpdatedTotalCurrentClosure.json",
+      "decision_digest": "ad02150010c4759d1c0ac4ba079c81cff99bad1f35b715f52b980aaf404eac0a",
+      "file_sha256": "c0b634cd084d76a2ab8993dec4bde0075a3e893aa420f506493eb98b7b63ded0",
+      "consumed_as": "accepted_C_total_current_closure_and_finite_witness_contract"
+    },
+    {
+      "source_id": "D7G-v2",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D7Gv2GeometryParametricClosureAndFinalization.json",
+      "decision_digest": "c52912d83797ee294799709b3e770574043df37f80073b51eebfaf8b2fd27efb",
+      "file_sha256": "364b1b05ccac3c1220677ac9dbc6e46259beb47ef4cabcafaf381e3bc7ef3c38",
+      "consumed_as": "accepted_reference_embedding_affine_profile_and_geometry_mobility_separation_contract_requiring_typed_correction"
+    },
+    {
+      "source_id": "B1-GR-specification",
+      "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/implementation/GRC9V3ContinuationReadBackVerificationSpecification.md",
+      "file_sha256": "7ad99fb4acc6a7691d184a514f4836ffa3927600fc7cf504eb059134f3948e44",
+      "consumed_as": "native_V3_conductance_weighted_structural_functional_and_inverse_conductance_current_cycle_metric"
+    },
+    {
+      "source_id": "Continuation-Spectrum",
+      "path": "external:geometric-reflexive-coherence/core/2026-08-TheContinuationSpectrum.md",
+      "file_sha256": "14ee948d04c8803ae2c05e0d602d94c40d67bbed5399a8ef539bd024e77d95c5",
+      "consumed_as": "continuum_scalar_field_Dirichlet_energy_and_structural_second_variation"
+    },
+    {
+      "source_id": "Read-Back",
+      "path": "external:geometric-reflexive-coherence/core/2026-08-ReadBack.md",
+      "file_sha256": "04c0bb8398febf58592297326e741271b46a52f504f6a0cea17a0bd6624efbb2",
+      "consumed_as": "current_flat_response_sharp_bundle_typing_boundary"
+    }
+  ],
+  "decision": {
+    "problem": "accepted_D5_uses_H1_as_the_one_form_Hodge_Gram_weight_while_D7Gv2_placed_B1_inverse_conductance_current_metric_into_the_same_H1_structural_slot_and_D5_treated_runtime_flux_coordinates_as_already_lowered_one_forms",
+    "correction_class": "typed_semantic_and_finite_witness_propagation_correction_not_candidate_reselection_or_runtime_change",
+    "typed_edge_objects": {
+      "H1_form": {
+        "type": "structural_one_form_Hodge_or_Gram_operator",
+        "domain": "oriented_exact_and_general_edge_one_cochains",
+        "uses": [
+          "scalar_Dirichlet_energy",
+          "codifferential_and_graph_Hodge_operators",
+          "one_form_inner_product",
+          "structural_metric_profile"
+        ],
+        "reference": "H1_form_ref=diag(W_V3)_up_to_separately_declared_edge_volume_factors",
+        "profile": "H1_form_plus=H1_form_ref+kappa_H*Delta_K4"
+      },
+      "G_J": {
+        "type": "current_or_flux_resistance_metric_and_flat_map",
+        "domain": "physical_oriented_edge_flux_coordinates",
+        "uses": [
+          "current_cycle_metric",
+          "flat_h_G_from_flux_to_one_form",
+          "sharp_h_G_from_one_form_to_flux"
+        ],
+        "reference": "G_J_ref=diag(W_V3_inverse)",
+        "simple_metric_dual_profile": "G_J_of_h=H1_form_of_h_inverse_when_the_paired_graph_Hodge_realization_is_selected"
+      },
+      "M4": {
+        "type": "transport_mobility_operator",
+        "authority": "candidate_or_temporal_realization_specific",
+        "reference": "may_be_numerically_diag(W_V3)_in_the_legacy_reduction",
+        "causal_relation": "distinct_from_H1_form_and_G_J_even_when_reference_arrays_coincide_numerically"
+      }
+    },
+    "reference_embedding_correction": {
+      "old_untyped_shape": "E_ref_to_H0_ref_H1_ref_equals_diag_W_inverse_B_ref_boundary_ref",
+      "corrected_typed_shape": "E_ref_to_H0_ref_H1_form_ref_G_J_ref_B_ref_boundary_ref",
+      "H0_ref": "diag(mu_V3)",
+      "H1_form_ref": "diag(W_V3)",
+      "G_J_ref": "diag(W_V3_inverse)",
+      "B_ref": "oriented_node_by_live_edge_incidence",
+      "boundary_ref": "declared_fixed_V3_boundary_class",
+      "interpretation": "the_old_W_inverse_source_grounding_survives_as_G_J_and_was_attached_to_the_wrong_structural_role"
+    },
+    "duality_invariant": {
+      "premise": "e=d0*C_and_J=H1_form_ref*e_in_the_simple_reference_reduction",
+      "identity": "e^T*H1_form_ref*e=J^T*G_J_ref*J",
+      "paired_relation": "G_J_ref=H1_form_ref_inverse",
+      "nontrivial_regression_row": {
+        "H1_form_ref_diagonal": [2.0, 3.0],
+        "G_J_ref_diagonal": [0.5, 0.3333333333333333],
+        "e": [0.7, -0.2],
+        "J": [1.4, -0.6000000000000001],
+        "field_energy": 1.0999999999999999,
+        "flux_energy": 1.0999999999999999,
+        "absolute_error": 0.0
+      }
+    },
+    "candidate_C_typed_pipeline": {
+      "input_type": "physical_edge_flux_J_trial_flux",
+      "flat": "J_trial_flat_pre=G_J_pre*J_trial_flux",
+      "one_form_geometry_identification": "J_trial_flat_M=I_4M_pre*J_trial_flat_pre",
+      "retained_response": "j_flat_M=R_C_M*J_trial_flat_M_with_R_C_M=(I+tau_C*Delta1_M)^-1",
+      "back_identification": "j_flat_pre=I_4M_pre_inverse*j_flat_M",
+      "sharp": "j_flux=G_J_pre_inverse*j_flat_pre",
+      "physical_composite": "R_C_flux=G_J_pre_inverse*I_4M_pre_inverse*R_C_M*I_4M_pre*G_J_pre",
+      "continuity_and_D6_coordinates": "physical_edge_flux_only",
+      "I_4M_scope": "identification_between_one_form_Hodge_spaces_not_flux_to_form_lowering"
+    },
+    "structural_rank_one_input_contract": {
+      "common_rule": "K4_rank_one_structural_input_consumes_j_struct_flat_not_physical_j_flux",
+      "continuity_and_accounting_input": "physical_j_flux",
+      "structural_input_type": "read_back_current_one_form_j_struct_flat_in_the_pre_geometry_one_form_space",
+      "candidate_A": {
+        "physical_read_current": "j_A_flux=chi_A*q_A*J_C_A",
+        "lowering": "j_A_struct_flat=G_J_pre*j_A_flux",
+        "K4_input": "j_A_struct_flat_tensor_j_A_struct_flat"
+      },
+      "candidate_C": {
+        "retained_output": "j_C_struct_flat=j_flat_pre=I_4M_pre_inverse*R_C_M*I_4M_pre*G_J_pre*J_trial_flux",
+        "physical_branch": "j_C_flux=G_J_pre_inverse*j_C_struct_flat_for_continuity_and_current_accounting",
+        "K4_input": "j_C_struct_flat_tensor_j_C_struct_flat"
+      },
+      "star_assembly": "Delta_K4_a=iota_a(A_star(j_a_struct_flat))_with_A_star_sum_v_R_v_transpose*((D_v*R_v*j_a_struct_flat)*(D_v*R_v*j_a_struct_flat)_transpose)*R_v",
+      "gain_authority": "iota_a_is_the_already_accepted_candidate_specific_typed_structural_adapter_and_gain;_the_correction_introduces_no_new_common_kappa_K",
+      "candidate_scaling_preserved": "A_and_C_keep_their_accepted_payload_coefficients_and_units_through_iota_A_and_iota_C",
+      "future_B_scope": "if_B_is_reopened_with_a_current_mediated_rank_one_path_the_same_flux_to_j_struct_flat_typing_applies_through_its_separately_admitted_iota_B_without_reopening_B_here",
+      "variable_metric_derivative": "delta_j_struct_flat=(delta_G_J)*j_flux+G_J*delta_j_flux",
+      "simple_paired_profile_inverse_derivative": "delta_G_J=-G_J*(delta_H1_form)*G_J",
+      "rank_one_derivative": "delta_jflat_outer_jflat=delta_j_struct_flat_outer_j_struct_flat+j_struct_flat_outer_delta_j_struct_flat",
+      "lagged_pre_geometry_stage_reduction": "when_G_J_pre_is_frozen_in_the_matched_lagged_row_delta_G_J_pre=0_and_delta_j_struct_flat=G_J_pre*delta_j_flux",
+      "coupled_or_implicit_rule": "a_successor_with_variable_G_J_inside_the_reflexive_chain_must_retain_the_delta_G_J_term"
+    },
+    "nonidentity_rank_one_tensor_regression": {
+      "H1_form_ref_diagonal": [2.0, 3.0],
+      "G_J_ref_diagonal": [0.5, 0.3333333333333333],
+      "j_flux": [1.4, -0.6000000000000001],
+      "j_struct_flat": [0.7, -0.2],
+      "j_flux_outer_j_flux": [[1.9599999999999997, -0.8400000000000001], [-0.8400000000000001, 0.3600000000000001]],
+      "j_struct_flat_outer_j_struct_flat": [[0.48999999999999994, -0.13999999999999999], [-0.13999999999999999, 0.04000000000000001]],
+      "outer_products_equal": false,
+      "max_absolute_component_difference": 1.4699999999999998,
+      "interpretation": "identity_metric_array_coincidence_cannot_validate_the_structural_j_flat_tensor_j_flat_crossing"
+    },
+    "candidate_C_witness_recomputation": {
+      "status": "passed_exactly_within_binary_floating_roundoff_under_explicit_flat_response_sharp_typing",
+      "reason_numbers_survive": "the_D5v2_D6v2_three_node_path_witness_uses_H1_form_pre_identity_so_G_J_pre_identity_and_the_corrected_composite_is_numerically_equal_to_the_old_untyped_composite",
+      "D5v2_selected_j_flux": [0.551829966576439, -0.10823883523404383],
+      "D5v2_recorded_selected_j_phys": [0.551829966576439, -0.10823883523404387],
+      "D5v2_max_absolute_component_difference": 4.163336342344337e-17,
+      "D6v2_J_C_flux": [1.39069504569393, -0.4396646248281818],
+      "D6v2_recorded_J_C": [1.39069504569393, -0.4396646248281818],
+      "D6v2_j_flux": [0.78139009138786, -0.0793292496563636],
+      "D6v2_recorded_j_phys": [0.78139009138786, -0.0793292496563636],
+      "corrected_closure_residual_l2": 2.0816681711721685e-17,
+      "recorded_closure_residual_l2": 5.551115123125783e-17,
+      "residual_interpretation": "both_are_machine_zero_and_the_difference_is_evaluation_order_not_scientific_change",
+      "nonidentity_H1_form_witness_still_required_before_D10": true
+    },
+    "propagation": {
+      "D4_D5_D6_D7_candidate_dispositions_changed": false,
+      "A_equations_changed": false,
+      "C_SPD_resolvent_and_strict_gap_arguments_changed": false,
+      "C_general_physical_composite_formula_changed": true,
+      "A_C_structural_rank_one_input_typing_changed": true,
+      "candidate_generated_D8A_pullback_requires_j_flat_stage": true,
+      "D7G_reference_embedding_typing_changed": true,
+      "D8A_direct_field_derivative_changed": false,
+      "accepted_record_bytes_changed": false,
+      "future_consumption_rule": "consume_this_receipt_alongside_the_accepted_historical_records_and_never_silently_reuse_the_untyped_H1_flux_as_already_flat_or_physical_flux_outer_product_as_structural_K4_semantics"
+    },
+    "claim_ceiling": "typed_graph_Hodge_edge_space_and_structural_j_flat_rank_one_input_correction_exact_reference_energy_duality_nonidentity_tensor_separation_and_identity_metric_C_witness_preservation_not_runtime_implementation_general_nonidentity_C_numeric_conditioning_temporal_realization_stability_or_normative_GRC9V4"
+  },
+  "open_debt": [
+    {"debt_id":"HODGE-CORR-DEBT-NONIDENTITY-C-WITNESS","blocking_scope":"general_C_numeric_conditioning_and_covariance_claim","candidate_scope":"V4-C-constitutive-C-sector","issue":"existing_C_witness_uses_identity_H1_form_and_does_not_pressure_nontrivial_flat_sharp_conditioning","assumption_forbidden_downstream":"identity_metric_numeric_preservation_is_called_general_nonidentity_validation","resolution_gate":"pre_D10_nonidentity_C_typed_witness_or_D8B_executable_analysis","must_close_before_D10":true},
+    {"debt_id":"HODGE-CORR-DEBT-EDGE-VOLUME-FACTORS","blocking_scope":"unique_or_normative_graph_DEC_discretization","candidate_scope":"A_C_and_future_profiles","issue":"H1_form_ref_equals_diag_W_is_the_simple_V3_reference_and_richer_DEC_edge_volume_factors_are_not_classified","assumption_forbidden_downstream":"simple_reference_weight_is_called_the_unique_continuum_or_normative_discretization","resolution_gate":"pre_D10_profile_and_discretization_classification","must_close_before_D10":true},
+    {"debt_id":"HODGE-CORR-DEBT-GENERAL-FLAT-SHARP-REGULARITY","blocking_scope":"general_SPD_flux_form_conversion","candidate_scope":"V4-C_and_future_current_geometry_consumers","issue":"general_G_J_conditioning_orientation_covariance_and_inverse_solver_are_formally_typed_but_not_executably_verified","assumption_forbidden_downstream":"typed_flat_sharp_maps_are_called_implemented_or_uniformly_conditioned","resolution_gate":"D8B_or_post_spec_executable_verification_as_applicable","must_close_before_D10":true},
+    {"debt_id":"HODGE-CORR-DEBT-TOPOLOGY-TRANSPORT","blocking_scope":"flux_form_and_Hodge_transport_across_dimension_change","candidate_scope":"all_survivors","issue":"the_correction_is_fixed_stratum_and_does_not_define_interspace_flat_sharp_or_Hodge_transport","assumption_forbidden_downstream":"fixed_stratum_type_identity_is_extended_across_topology_events","resolution_gate":"D9","must_close_before_D10":true},
+    {"debt_id":"HODGE-CORR-DEBT-NORMATIVE-ENCODING","blocking_scope":"normative_GRC9V4_symbol_and_equation_ownership","candidate_scope":"all_survivors","issue":"the_correction_is_an_investigation_receipt_not_a_normative_specification","assumption_forbidden_downstream":"receipt_symbols_are_called_implemented_or_normative_before_D10_authorization","resolution_gate":"post_D10_normative_specification_if_authorized","must_close_before_D10":false}
+  ],
+  "control_contract": [
+    {"control_id":"HODGE-CORR-CTRL-H1-GJ-CONFLATION","status":"failed_closed","blocked_condition":"H1_form_and_G_J_share_one_untyped_H1_slot"},
+    {"control_id":"HODGE-CORR-CTRL-GJ-AS-DIRICHLET-WEIGHT","status":"failed_closed","blocked_condition":"inverse_conductance_current_metric_used_as_the_exact_differential_energy_weight"},
+    {"control_id":"HODGE-CORR-CTRL-H1-AS-CURRENT-METRIC","status":"failed_closed","blocked_condition":"conductance_like_one_form_Hodge_used_to_measure_physical_flux_without_flat_typing"},
+    {"control_id":"HODGE-CORR-CTRL-M4-AUTHORITY","status":"failed_closed","blocked_condition":"numerical_W_coincidence_merges_geometry_and_transport_authority"},
+    {"control_id":"HODGE-CORR-CTRL-FLUX-AS-ALREADY-FLAT","status":"failed_closed","blocked_condition":"runtime_flux_array_called_J_flat_by_equal_dimension_alone"},
+    {"control_id":"HODGE-CORR-CTRL-I4M-AS-FLAT","status":"failed_closed","blocked_condition":"one_form_geometry_identification_silently_performs_flux_lowering"},
+    {"control_id":"HODGE-CORR-CTRL-MISSING-SHARP","status":"failed_closed","blocked_condition":"retained_one_form_response_written_directly_to_continuity_as_physical_flux"},
+    {"control_id":"HODGE-CORR-CTRL-PHYSICAL-FLUX-OUTER-PRODUCT-AS-K4","status":"failed_closed","blocked_condition":"physical_j_flux_outer_product_is_used_as_the_structural_K4_rank_one_input_without_the_declared_G_J_flat_map"},
+    {"control_id":"HODGE-CORR-CTRL-NEW-COMMON-K4-GAIN","status":"failed_closed","blocked_condition":"the_type_correction_introduces_a_new_generic_kappa_K_or_overwrites_candidate_specific_iota_a_payload_scaling"},
+    {"control_id":"HODGE-CORR-CTRL-IDENTITY-WITNESS-AS-GENERAL","status":"failed_closed","blocked_condition":"identity_metric_witness_called_general_flat_sharp_conditioning_evidence"},
+    {"control_id":"HODGE-CORR-CTRL-OLD-RECORD-REWRITE","status":"failed_closed","blocked_condition":"accepted_historical_record_bytes_or_digests_are_mutated"},
+    {"control_id":"HODGE-CORR-CTRL-CANDIDATE-RESELECTION","status":"failed_closed","blocked_condition":"type_correction_used_to_rank_or_reject_A_B_or_C"},
+    {"control_id":"HODGE-CORR-CTRL-RUNTIME-CLAIM","status":"failed_closed","blocked_condition":"formal_correction_and_recomputation_called_runtime_implementation"},
+    {"control_id":"HODGE-CORR-CTRL-NORMATIVE-CLAIM","status":"failed_closed","blocked_condition":"investigation_receipt_called_normative_GRC9V4"}
+  ],
+  "verification": {
+    "source_identity_count": 7,
+    "typed_edge_object_count": 3,
+    "open_debt_count": 5,
+    "control_count": 14,
+    "nonidentity_rank_one_tensor_regression_passed": true,
+    "accepted_record_bytes_modified": false,
+    "runtime_or_src_changed": false,
+    "absolute_machine_local_paths_in_record": false
+  },
+  "authorization_effect": {
+    "D8A_may_consume_if_this_receipt_and_D8A_are_jointly_accepted": true,
+    "D8A_consumption_authorized": true,
+    "D8B_authorized": false,
+    "specification_authorized": false,
+    "implementation_authorized": false,
+    "runtime_or_src_change_authorized": false
+  },
+  "human_acceptance": {
+    "accepted": true,
+    "accepted_by": "experiment_owner",
+    "accepted_date": "2026-08-24",
+    "status": "accepted_bounded"
+  },
+  "decision_record_digest": "2e2f4d53e0abf3134f586cc60467bf5881cc60414af82df35bf6ac7772400984"
+}
