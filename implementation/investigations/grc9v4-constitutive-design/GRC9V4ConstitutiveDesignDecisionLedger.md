@@ -1,6 +1,6 @@
 # GRC9V4 Constitutive Design Decision Ledger
 
-**Status:** D0-D2 accepted; D3 complete and awaiting human review
+**Status:** D0-D4 accepted bounded; D5 authorized and not started
 
 This ledger is the additive decision record for D0-D10. The design basis and
 plan define questions and constraints; this file records accepted answers.
@@ -198,9 +198,9 @@ ownership, runtime effects, and reduction remain open.
 
 ```text
 record_id = GRC9V4-CD-D3-v1
-status = awaiting_human_review
+status = accepted_bounded
 predecessor_decision_digest = ea2b953685bb23dfe979b2f5d2ae0f22f364a51484d6536c1721f144c9cad740
-decision_record_digest = 423f20f161fc16e6179b1f77ea665fd887bd87f7502668361165367d9f4e20f8
+decision_record_digest = 8e7db364cc4402b9794d825629962d1851fc15a2f0b71fa015cfaeb01f42643d
 candidate_set_after_D3 = [V4-A-temporalized-W, V4-B-independent-derived-carrier, V4-C-constitutive-C-sector]
 candidate_domain_status = [A: conditionally_supported, B: conditionally_supported, C: supported_bounded]
 support_matrix_rows = 12
@@ -217,7 +217,7 @@ joint_structural_candidate_supported = false
 current_regime_selected = false
 architecture_selected = false
 claim_ceiling = GRC9V4-CD-D3-bounded-structural-domain
-D4_authorized = false_pending_human_acceptance
+D4_authorized = true
 specification_authorized = false
 runtime_implementation_authorized = false
 ```
@@ -244,7 +244,7 @@ a claim that requires the corresponding independent structural coordinate.
 Forward execution boundary:
 
 ```text
-D0-D3 = verification-to-design bridge; D3 acceptance still gates D4
+D0-D3 = accepted verification-to-design bridge
 D4-D9 = candidate-specific constitutive design
 bounded V3 conclusion rerun without a changed question = not a completed gate
 reconfirmed unchanged-GRC9V3 absence = not a completed gate
@@ -261,11 +261,44 @@ or named candidate rejection/routing outcomes.
 
 ## D4. Geometry, Mobility, And Topology Ownership
 
-Status: blocked on D3.
+```text
+record_id = GRC9V4-CD-D4-v1
+status = accepted_bounded
+predecessor_decision_digest = 8e7db364cc4402b9794d825629962d1851fc15a2f0b71fa015cfaeb01f42643d
+decision_record_digest = c3c4507d4623ee526e636c4434bc13b4af23bdd3f6051cf1db99a2ce5736215c
+candidate_dispositions = [A: coherent_bounded_ownership, B: routed_named_missing_derivation, C: routed_named_missing_derivation]
+architecture_selected = false
+D5_authorized = true
+```
+
+D4 assigns geometry to `K_4 -> h_4`, keeps mobility as a causally distinct
+`A_4/M_4` role, and binds legacy scalar `W` to the discrete mobility role rather
+than to the metric. Candidate A uses retained `W_A` as the single enabled
+transport authority; `R_W` remains the D2 relation to `W_hat`, not mobility
+authority.
+Baseline geometry follows declared source inputs through `K_4 -> h_4 -> J0`;
+present `J_C` enters geometry only after a D5 `J_C -> j` map. Candidate C's
+direct `H_M` map excludes present `J_C`. B is routed to an independent-carrier
+geometry closure; C is routed to the exact retained-geometry closure that the
+core paper explicitly leaves open. Neither route is a rejection or a completed
+constitutive equation.
+
+An analysis projector does not gain runtime authority by analysis alone.
+Candidate C may consume a dynamic sector only when it is deterministically
+reconstructable under D1/D3 or separately admitted as runtime causal state;
+analysis-only sectors remain unavailable to `H_M`.
+
+The hardened D4 record contains 12 object rows, 15 typed causal arrows, three
+candidate event-transport rows, three D3-feedback rows, 39 controls, 50 pressure
+rows, 15 localized failure codes, and 23 open debts. It distinguishes roles
+from stored fields, runtime mobility from the D8 analytical operator, structural
+from kinetic effects, baseline `J0` from Read-Back `j`, and zero mobility from
+metric degeneracy or topology deletion. A's direct retained-`W` structural
+claim is demoted without rejecting its retained-mobility architecture.
 
 ## D5. Directional Read-Back
 
-Status: blocked on D4.
+Status: authorized by accepted D4; not started.
 
 ## D6. Total-Current Closure
 

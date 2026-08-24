@@ -1,7 +1,7 @@
 # GRC9V4 Constitutive Design Investigation Checklist
 
 **Date:** 2026-08-23  
-**Status:** D0-D2 accepted; D3 complete and awaiting human review
+**Status:** D0-D4 accepted bounded; D5 authorized and not started
 **Plan:** [`GRC9V4ConstitutiveDesignPlan.md`](./GRC9V4ConstitutiveDesignPlan.md)  
 **Basis:** [`GRC9V4ConstitutiveDesignBasis.md`](./GRC9V4ConstitutiveDesignBasis.md)  
 **Ledger:** [`GRC9V4ConstitutiveDesignDecisionLedger.md`](./GRC9V4ConstitutiveDesignDecisionLedger.md)
@@ -254,7 +254,7 @@ human_acceptance = accepted_bounded_2026-08-24
 
 ## D3. Continuation Requirements And Structural Domain
 
-Status: complete; awaiting human review.
+Status: accepted bounded.
 
 - [x] Define formed state and formed branch.
 - [x] Define reference branch and transport.
@@ -309,13 +309,13 @@ Status: complete; awaiting human review.
 - [x] Keep optional joint A/B and independently active-current theory debts
       claim-blocking but nonblocking for D10 unless a later selected
       architecture activates them through a named successor debt.
-- [ ] Obtain human acceptance.
+- [x] Obtain human acceptance.
 
 Current D3 result:
 
 ```text
 record_id = GRC9V4-CD-D3-v1
-decision_record_digest = 423f20f161fc16e6179b1f77ea665fd887bd87f7502668361165367d9f4e20f8
+decision_record_digest = 8e7db364cc4402b9794d825629962d1851fc15a2f0b71fa015cfaeb01f42643d
 candidate_set_after_D3 = [V4-A-temporalized-W, V4-B-independent-derived-carrier, V4-C-constitutive-C-sector]
 candidate_structural_domain_rows = 3
 support_matrix_rows = 12
@@ -334,46 +334,122 @@ all_non_D10_blocking_debt_rows = 4
 joint_structural_candidate_supported = false
 current_regime_selected = false
 architecture_selected = false
-D4_authorized = false_pending_human_acceptance
+D4_authorized = true
 ```
 
 ## D4. Geometry, Mobility, And Topology Ownership
 
-Status: blocked on D3.
+Status: accepted bounded.
 
-- [ ] Enforce the D4-D9 no-redo rule: no gate closes solely by restating B1/B2
+- [x] Enforce the D4-D9 no-redo rule: no gate closes solely by restating B1/B2
       or reconfirming absence in unchanged GRC9V3.
-- [ ] Revisit inherited distinctions, controls, and negative results whenever
+- [x] Revisit inherited distinctions, controls, and negative results whenever
       V4 changes the causal object, state space, or operator under test.
-- [ ] Classify every consumed B1/B2 item as `legacy_fact`,
+- [x] Classify every consumed B1/B2 item as `legacy_fact`,
       `verification_control`, `design_pressure`, or `open_hypothesis`.
-- [ ] Treat `legacy_fact` as hard only for its frozen V3 revision/envelope and
+- [x] Treat `legacy_fact` as hard only for its frozen V3 revision/envelope and
       prevent every category from dictating V4 ontology or equations.
-- [ ] Require every surviving candidate to add a constitutive fact, receive a
+- [x] Require every surviving candidate to add a constitutive fact, receive a
       named rejection, or route to a named missing derivation.
-- [ ] Produce one candidate-specific ownership record for A, B, and C.
-- [ ] Record the exact retained object, geometry owner/map, mobility owner/map,
+- [x] Produce one candidate-specific ownership record for A, B, and C.
+- [x] Record the exact retained object, geometry owner/map, mobility owner/map,
       `K` role, legacy `W` role, and topology/basin relation for each candidate.
-- [ ] Record an explicit constitutive map between retained representation and
+- [x] Preserve D2 nomenclature: `W_A` is authoritative positive `W[k]`, while
+      `R_W` is its declared relation to `W_hat` and is not mobility authority.
+- [x] Record an explicit constitutive map between retained representation and
       geometry or reject/route the candidate when no defensible map exists.
-- [ ] Define whether each representation is geometry, conditions geometry, or
+- [x] Define whether each representation is geometry, conditions geometry, or
       remains separate structural state.
-- [ ] Define relation to `W`, `h`, constitutive/geometry-inducing `K`, any
+- [x] Define relation to `W`, `h`, constitutive/geometry-inducing `K`, any
       separately realized mobility `M`/`A`, analytic labels, and node tensors.
-- [ ] Do not preassign `K` as transport mobility.
-- [ ] Define relation to topology and basin hierarchy.
-- [ ] Apply both the D0 verification envelope and normative runtime topology
+- [x] Do not preassign `K` as transport mobility.
+- [x] Define relation to topology and basin hierarchy.
+- [x] Apply both the D0 verification envelope and normative runtime topology
       capability scope.
-- [ ] Separate structural geometry from transport mobility where required.
-- [ ] Prevent one field from owning incompatible causal and analytical roles.
-- [ ] Assign each candidate one disposition: coherent bounded ownership,
+- [x] Separate structural geometry from transport mobility where required.
+- [x] Prevent one field from owning incompatible causal and analytical roles.
+- [x] Assign each candidate one disposition: coherent bounded ownership,
       blocked named derivation, rejected incompatible roles, or named successor
       investigation.
-- [ ] Obtain human acceptance.
+- [x] Separate causal-role factorization from stored-field count and require
+      explicit maps when one object parameterizes multiple roles.
+- [x] Separate runtime transport mobility from the analytical D8 relaxation
+      mobility/operator.
+- [x] Freeze metric/mobility positivity, nonreciprocal-mobility, orientation,
+      gauge, units, normalization, and load-bearing regularization boundaries.
+- [x] Record 12 object-ownership rows and block stale derived geometry,
+      projector, factorization, inverse, preconditioner, and solver caches from
+      acquiring hidden state authority.
+- [x] Record 15 causal arrows with status, temporal side, locality,
+      invertibility, resource/measure effect, smooth domain, and topology-event
+      obligation.
+- [x] Separate retained-conditioned baseline `J0` paths from D5 Read-Back `j`.
+- [x] Preserve the staged source order: baseline terms prepare `K_4 -> h_4 ->
+      J0`, while present `J_C` may enter `K_4` only through later D5 `j`.
+- [x] Exclude present `J_C` from Candidate C's direct `H_M` inputs and reserve it
+      for the subsequent D5 Read-Back map.
+- [x] Prevent analysis-only projectors from acquiring runtime authority; require
+      deterministic reconstruction or D1 reclassification/successor admission
+      before Candidate C can consume an optional dynamic sector in `H_M`.
+- [x] Freeze A staging and single-authority composition, B previous-beat versus
+      same-beat geometry/write closure, and C selector/geometry fixed-point
+      obligations.
+- [x] Feed D4 results back into D3 consumption: demote A's direct
+      retained-`W` structural claim while preserving runtime viability and
+      retain B/C role-specific open boundaries.
+- [x] Separate near-zero mobility, exact-zero mobility, inactive retained edge,
+      metric degeneracy, threshold event, and adjacency deletion.
+- [x] Record candidate-specific birth, split, merge, deletion, relabel, rank,
+      basis, and nonduplication obligations.
+- [x] Treat persistent topology mutation as a rival historical carrier even
+      when it is not the claimed retained representation.
+- [x] Classify all 50 D4 pressure points.
+- [x] Freeze 39 fail-closed ownership controls and 15 localized failure codes.
+- [x] Obtain human acceptance.
+
+Current D4 result:
+
+```text
+record_id = GRC9V4-CD-D4-v1
+status = accepted_bounded
+predecessor_decision_digest = 8e7db364cc4402b9794d825629962d1851fc15a2f0b71fa015cfaeb01f42643d
+decision_record_digest = c3c4507d4623ee526e636c4434bc13b4af23bdd3f6051cf1db99a2ce5736215c
+candidate_set_after_D4 = [V4-A-temporalized-W, V4-B-independent-derived-carrier, V4-C-constitutive-C-sector]
+candidate_dispositions = [A: coherent_bounded_ownership, B: routed_named_missing_derivation, C: routed_named_missing_derivation]
+coherent_bounded_ownership_candidates = [V4-A-temporalized-W]
+named_derivation_routes = [GRC9V4-D4-B-INDEPENDENT-CARRIER-GEOMETRY-CLOSURE, GRC9V4-D4-C-RETAINED-GEOMETRY-CLOSURE]
+rejected_on_D4_ownership = []
+B1_B2_consumption_rows = 8
+object_ownership_rows = 12
+candidate_causal_graph_rows = 3
+causal_arrow_rows = 15
+candidate_event_transport_rows = 3
+D3_support_feedback_rows = 3
+control_contract_rows = 39
+D4_pressure_audit_rows = 50
+failure_code_rows = 15
+open_debt_rows = 23
+architecture_selected = false
+claim_ceiling = GRC9V4-CD-D4-bounded-ownership-and-missing-closure-routing
+D5_authorized = true
+specification_authorized = false
+runtime_implementation_authorized = false
+```
+
+D4 separates induced geometry `K_4 -> h_4` from transport mobility as causal
+roles while allowing a future explicitly factorized object to parameterize
+both. Candidate A receives one enabled transport authority, retained `W_A`,
+without gaining direct geometry ownership; its D3 retained-`W` structural claim
+is demoted while runtime viability remains. Candidate B remains
+revision-distinct but lacks a source-backed `T -> K/h` map. Candidate C retains
+a source-backed retained-geometry role, but its selector/geometry fixed point
+and exact `h_M` closure remain open. The named routes, object/arrow records,
+topology taxonomy, and 50-row pressure audit preserve those boundaries without
+invented equations or whole-candidate rejection.
 
 ## D5. Directional Read-Back
 
-Status: blocked on D4.
+Status: authorized by accepted D4; not started.
 
 - [ ] Define typed graph map into oriented edge cochains.
 - [ ] Produce the actual candidate-specific Read-Back operator family or route
@@ -507,8 +583,10 @@ branch = investigation-GRC9V4-constitutive-design
 D0 = accepted
 D1 = accepted_bounded
 D2 = accepted_bounded
-D3 = complete_awaiting_human_review
-D4-D10 = blocked_on_predecessor
+D3 = accepted_bounded
+D4 = accepted_bounded
+D5 = authorized_not_started
+D6-D10 = blocked_on_predecessor
 D10_early_terminal_route = available_for_rejected_all_missing_theory_or_missing_discriminator
 architecture_selected = false
 specification_authorized = false

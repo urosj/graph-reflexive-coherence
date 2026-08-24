@@ -1,7 +1,7 @@
 # GRC9V4 Constitutive Design Investigation Plan
 
 **Date:** 2026-08-23  
-**Status:** D0-D2 accepted; D3 complete and awaiting human review
+**Status:** D0-D4 accepted bounded; D5 authorized and not started
 **Design basis:** [`GRC9V4ConstitutiveDesignBasis.md`](./GRC9V4ConstitutiveDesignBasis.md)  
 **Checklist:** [`GRC9V4ConstitutiveDesignChecklist.md`](./GRC9V4ConstitutiveDesignChecklist.md)  
 **Decision ledger:** [`GRC9V4ConstitutiveDesignDecisionLedger.md`](./GRC9V4ConstitutiveDesignDecisionLedger.md)
@@ -434,6 +434,59 @@ Prevent one field from silently serving as retained structure, mobility,
 directional current, and analysis projector. Do not preassign `K` as transport
 mobility. Apply both topology scopes and the event transport/accounting boundary
 frozen in D0.
+
+Current D4 execution resolves ownership without selecting an architecture:
+
+```text
+A = coherent bounded retained-mobility ownership
+B = routed to GRC9V4-D4-B-INDEPENDENT-CARRIER-GEOMETRY-CLOSURE
+C = source-backed retained-geometry role routed to
+    GRC9V4-D4-C-RETAINED-GEOMETRY-CLOSURE for its exact map
+```
+
+For A, enabled `W_A` replaces legacy reconstructed `W_hat` as the single
+transport authority; it does not become `h`. Here `W_A` is D2's authoritative
+positive `W[k]`, while `R_W` remains the declared relation between `W_A` and
+`W_hat` and is not itself mobility authority. For B, an intended geometry role
+without a selected `T -> K/h` map is insufficient. For C, the core supports a
+retained-geometry role but explicitly leaves `h_M` underdetermined. D5 may
+derive candidate-specific operator families only within these ownership and
+missing-closure boundaries.
+
+Preserve the source-stage ordering rather than treating stored current as a
+generic geometry input. Baseline `K_4` consumes `C`, gradient-`C`, and other
+declared source-typed terms; D5 may later map present `J_C` to directional `j`,
+which may then enter `K_4`, induce `h_4`, and condition a later `J0`. Candidate
+C's `H_M` consumes the retained sector, an optional D1-admitted or
+deterministically reconstructable dynamic sector, `C`, and base/reference
+geometry, not present `J_C`; present current belongs to the subsequent
+Read-Back map. Analysis alone does not grant a projector runtime authority. A
+dynamic sector that needs its own persistent history requires D1
+reclassification or successor admission, while an analysis-only sector cannot
+be consumed by `H_M` at runtime.
+
+D4 pressure records should make the ownership graph inspectable rather than
+count fields. For every load-bearing object, record causal-state status,
+derivation and serialization, writer, native consumers, units/gauge,
+orientation, positivity/domain, cache status, and topology transport. For every
+arrow, record whether it is constitutive, derived, analytical, or theory-open;
+its temporal side, locality, invertibility, resource/measure effect,
+smooth-stratum domain, and event obligation. One object may parameterize
+multiple roles only through explicit factorized maps. Runtime mobility is not
+the D8 analytical relaxation operator without a derived push-forward.
+
+Feed D4 conclusions back into D3 consumption without rewriting the accepted D3
+record. In particular, mobility-only Candidate A retains runtime viability but
+does not retain a direct `W_A`-conditioned structural claim. Candidate C must
+resolve its selector/geometry fixed point and show sector-specific causal
+consumption; ordinary full-`C` geometry is not enough. Keep baseline-current
+paths through retained-conditioned geometry or mobility distinct from the D5
+Read-Back path.
+
+Treat persistent topology mutation as a possible rival historical carrier even
+when topology is not the candidate's claimed retained representation. Candidate
+credit requires that topology-mediated history be isolated and included in
+write/read and event accounting.
 
 ## D5. Directional Read-Back
 

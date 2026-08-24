@@ -1,8 +1,8 @@
 # D3 Continuation Requirements And Structural Domain
 
-**Record:** `GRC9V4-CD-D3-v1`  
-**Status:** awaiting human review  
-**Decision digest:** `423f20f161fc16e6179b1f77ea665fd887bd87f7502668361165367d9f4e20f8`
+**Record:** `GRC9V4-CD-D3-v1`
+**Status:** accepted bounded
+**Decision digest:** `8e7db364cc4402b9794d825629962d1851fc15a2f0b71fa015cfaeb01f42643d`
 
 ## Purpose
 
@@ -514,7 +514,7 @@ specification or runtime implementation.
 ## Authorization
 
 ```text
-D4_authorized = false_pending_human_acceptance
+D4_authorized = true
 specification_authorized = false
 runtime_implementation_authorized = false
 src_change_authorized = false

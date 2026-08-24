@@ -3,10 +3,10 @@
   "record_type": "constitutive_design_gate_decision",
   "record_id": "GRC9V4-CD-D3-v1",
   "gate_id": "D3",
-  "status": "awaiting_human_review",
+  "status": "accepted_bounded",
   "supersedes": null,
   "predecessor_decision_digest": "ea2b953685bb23dfe979b2f5d2ae0f22f364a51484d6536c1721f144c9cad740",
-  "decision_record_digest": "423f20f161fc16e6179b1f77ea665fd887bd87f7502668361165367d9f4e20f8",
+  "decision_record_digest": "8e7db364cc4402b9794d825629962d1851fc15a2f0b71fa015cfaeb01f42643d",
   "assumptions": [
     {
       "assumption_id": "D3-STRUCTURAL-01",
@@ -704,13 +704,13 @@
     {"repository":"graph-reflexive-coherence","path":"specs/grc-9-v3-spec.md","role":"legacy_reduced_reference_and_disabled_profile_context","sha256":"7b1f0c03988be7dbe3feb8ba926d43d891d70daa0dbbae9804fc70f2a4950f2f"}
   ],
   "human_acceptance": {
-    "accepted": false,
-    "accepted_by": null,
-    "accepted_date": null,
-    "status": "awaiting_human_review"
+    "accepted": true,
+    "accepted_by": "experiment_owner",
+    "accepted_date": "2026-08-24",
+    "status": "accepted_bounded"
   },
   "authorization_effect": {
-    "D4_authorized": false,
+    "D4_authorized": true,
     "D4_authorized_after_human_acceptance": true,
     "existing_runtime_test_change_authorized": false,
     "normative_specification_authorized": false,
