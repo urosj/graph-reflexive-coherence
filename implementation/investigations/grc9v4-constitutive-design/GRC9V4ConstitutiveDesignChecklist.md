@@ -1,7 +1,7 @@
 # GRC9V4 Constitutive Design Investigation Checklist
 
 **Date:** 2026-08-23  
-**Status:** D0 accepted; D1 open
+**Status:** D0 and D1 accepted; D2 open
 **Plan:** [`GRC9V4ConstitutiveDesignPlan.md`](./GRC9V4ConstitutiveDesignPlan.md)  
 **Basis:** [`GRC9V4ConstitutiveDesignBasis.md`](./GRC9V4ConstitutiveDesignBasis.md)  
 **Ledger:** [`GRC9V4ConstitutiveDesignDecisionLedger.md`](./GRC9V4ConstitutiveDesignDecisionLedger.md)
@@ -112,39 +112,83 @@ Status: accepted.
 
 ## D1. Retained-Representation Ontology And Candidate Admission
 
-Status: open; not yet executed.
+Status: accepted bounded.
 
-- [ ] Compare `V4-A-temporalized-W`.
-- [ ] Compare `V4-B-independent-derived-carrier`.
-- [ ] Compare `V4-C-constitutive-C-sector`.
-- [ ] Compare any D0-admitted `V4-D-source-admitted-structural` candidate.
-- [ ] Audit causal type, formation inputs, and ownership.
-- [ ] Classify state authority independently for every candidate.
-- [ ] Classify resource accounting independently for every candidate.
-- [ ] Classify a set of transport roles independently for every candidate.
-- [ ] Test reconstruction/elimination in the design argument or prototype.
-- [ ] Record candidate reduction embedding, projection, and disabled-state
+- [x] Compare `V4-A-temporalized-W`.
+- [x] Compare `V4-B-independent-derived-carrier`.
+- [x] Compare `V4-C-constitutive-C-sector`.
+- [x] Compare any D0-admitted `V4-D-source-admitted-structural` candidate.
+- [x] Audit causal type, formation inputs, and ownership.
+- [x] Classify state authority independently for every candidate.
+- [x] Classify resource accounting independently for every candidate.
+- [x] Classify a set of transport roles independently for every candidate.
+- [x] Test reconstruction/elimination in the design argument or prototype.
+- [x] Record candidate reduction embedding, projection, and disabled-state
       initialization.
-- [ ] Record construction status, obligations, and structural blockers; reserve
+- [x] Record construction status, obligations, and structural blockers; reserve
       completed-transition witness status for D9.
-- [ ] Record selector inputs, constitutive authority, statefulness, sector
+- [x] Record selector inputs, constitutive authority, statefulness, sector
       identity/transport, and hidden-history/future-information requirements for
       every derived constitutive representation.
-- [ ] Block observer-selected or retrospectively discovered sectors from runtime
+- [x] Block observer-selected or retrospectively discovered sectors from runtime
       retained-representation status.
-- [ ] Require historical selector state to be explicit serialized causal state,
+- [x] Require historical selector state to be explicit serialized causal state,
       or require deterministic selection from current declared causal state.
-- [ ] Separate runtime state from analysis projectors.
-- [ ] Record `admitted_candidate_set` and `rejected_on_ontology`.
-- [ ] Record `sole_surviving_candidate` without treating it as final selection.
-- [ ] If empty, record `current_candidate_set_exhausted`, missing role, required
+- [x] Separate runtime state from analysis projectors.
+- [x] Apply the five-way elimination/reconstruction classification.
+- [x] Require counterfactual causal authority for independent state rather than
+      serialization alone.
+- [x] Distinguish a derived update law from an algebraically derived present
+      value for Candidate B.
+- [x] Type legacy instantaneous `W`, retained `W`, and their unresolved
+      composition for Candidate A.
+- [x] Record selector motion, crossing, symmetry, branch, and variable-rank
+      pressure for Candidate C.
+- [x] Audit hidden producer/helper state and administrative/RNG dependencies.
+- [x] Record candidate-local information-capacity and release obligations.
+- [x] Freeze projected-resource non-double-counting and the independent-resource
+      theory boundary.
+- [x] Audit disabled-embedding multiplicity and obvious disabled causal activity.
+- [x] Audit pairwise candidate equivalence by causal conjugacy rather than state
+      dimension.
+- [x] Record historical-content and native-consumer rationales independently.
+- [x] Record established, unresolved, later-gate, and rejection conditions for
+      every candidate.
+- [x] Confirm that all 28 D1 pressure checks are satisfied or explicitly
+      deferred as typed later-gate obligations.
+- [x] Record `admitted_candidate_set` and `rejected_on_ontology`.
+- [x] Record `sole_surviving_candidate` without treating it as final selection.
+- [x] If empty, record `current_candidate_set_exhausted`, missing role, required
       next derivation/admission work, reopening condition, and resume gate.
-- [ ] Keep current temporalization out of D1.
-- [ ] Obtain human acceptance.
+- [x] Keep current temporalization out of D1.
+- [x] Obtain human acceptance.
+
+Current D1 result:
+
+```text
+record_id = GRC9V4-CD-D1-v1
+decision_record_digest = f8ae101beb9fa6e9827555eba64452087c1d19b6933325966f10c4c4ec64c507
+admitted_candidate_set = [V4-A-temporalized-W, V4-B-independent-derived-carrier, V4-C-constitutive-C-sector]
+rejected_on_ontology = [V4-D-source-admitted-structural]
+V4-D_reason = uninstantiated_admission_slot_not_materially_distinct
+sole_surviving_candidate = none
+current_candidate_set_exhausted = false
+architecture_selected = false
+pressure_audit_rows = 28
+pressure_audit_unaddressed = 0
+open_debt_rows = 9
+open_debt_rows_with_complete_ledger_schema = 9
+must_close_before_D10_debt_rows = 8
+transport_role_status = provisional_candidate_signatures_pending_D4
+verification_envelope = fixed_topology_event_free_smooth_strata
+normative_target = full_topology_capable_GRC9V4_successor
+D2_authorized = true
+human_acceptance = accepted_bounded_2026-08-24
+```
 
 ## D2. Formation, Retention, Release, And Write Interface
 
-Status: blocked on D1.
+Status: open; not yet executed.
 
 - [ ] Define formation.
 - [ ] Define post-input retention.
@@ -324,8 +368,10 @@ missing-discriminator terminal route.
 
 ```text
 branch = investigation-GRC9V4-constitutive-design
-D0 = pending
-D1-D10 = blocked_on_predecessor
+D0 = accepted
+D1 = accepted_bounded
+D2 = open_not_yet_executed
+D3-D10 = blocked_on_predecessor
 D10_early_terminal_route = available_for_rejected_all_missing_theory_or_missing_discriminator
 architecture_selected = false
 specification_authorized = false

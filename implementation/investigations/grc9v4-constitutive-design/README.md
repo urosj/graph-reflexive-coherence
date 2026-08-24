@@ -31,12 +31,15 @@ Start with:
 - [frozen initialization predecessor](./GRC9V4ConstitutiveDesignInitialization.json);
 - [D0 structured decision](./decisions/D0TargetInheritanceAndClaimCeiling.json);
 - [D0 interpretation](./decisions/D0TargetInheritanceAndClaimCeiling.md).
+- [D1 structured decision](./decisions/D1RetainedRepresentationOntologyAndCandidateAdmission.json);
+- [D1 interpretation](./decisions/D1RetainedRepresentationOntologyAndCandidateAdmission.md).
 
 Current gate status:
 
 ```text
 D0 = accepted
-D1 = open_not_yet_executed
+D1 = accepted_bounded
+D2 = open_not_yet_executed
 ```
 
 Hard boundary:

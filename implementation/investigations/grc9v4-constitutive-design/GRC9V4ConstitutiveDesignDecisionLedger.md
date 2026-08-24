@@ -1,6 +1,6 @@
 # GRC9V4 Constitutive Design Decision Ledger
 
-**Status:** D0 accepted; D1 open
+**Status:** D0 and D1 accepted; D2 open
 
 This ledger is the additive decision record for D0-D10. The design basis and
 plan define questions and constraints; this file records accepted answers.
@@ -132,11 +132,40 @@ runtime_implementation_authorized = false
 
 ## D1. Retained-Representation Ontology And Candidate Admission
 
-Status: open; not yet executed.
+```text
+record_id = GRC9V4-CD-D1-v1
+status = accepted_bounded
+predecessor_decision_digest = b38b07311afc24bfe1016d75e985f886718e5a9d104c69c59e29318801f457c0
+decision_record_digest = f8ae101beb9fa6e9827555eba64452087c1d19b6933325966f10c4c4ec64c507
+admitted_candidate_set = [V4-A-temporalized-W, V4-B-independent-derived-carrier, V4-C-constitutive-C-sector]
+rejected_on_ontology = [V4-D-source-admitted-structural]
+rejection_reason = uninstantiated_admission_slot_not_materially_distinct
+sole_surviving_candidate = none
+current_candidate_set_exhausted = false
+architecture_selected = false
+current_temporalization = deferred_to_D6
+transport_role_status = provisional_candidate_signatures_pending_D4
+verification_envelope = fixed_topology_event_free_smooth_strata
+normative_target = full_topology_capable_GRC9V4_successor
+claim_ceiling = GRC9V4-CD-D1-bounded-ontology-admission
+open_debt_rows = 9
+must_close_before_D10_debt_rows = 8
+D2_authorized = true
+specification_authorized = false
+runtime_implementation_authorized = false
+```
+
+D1 admits A, B, and C as bounded ontology families without ranking them. D is
+closed because the frozen source search produced no materially distinct fourth
+causal object; all concrete forms classify under A, B, C, or analysis-only.
+Candidate-specific embeddings and projections are constructed at the state-space
+level only. D7/D9 still own transition commutation and invariant disabled-profile
+parity. Fixed topology remains a local verification envelope, not the final V4
+capability scope.
 
 ## D2. Formation, Retention, Release, And Write Interface
 
-Status: blocked on D1.
+Status: open; not yet executed.
 
 ## D3. Continuation Requirements And Structural Domain
 

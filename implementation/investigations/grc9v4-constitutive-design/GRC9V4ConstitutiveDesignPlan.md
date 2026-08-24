@@ -1,7 +1,7 @@
 # GRC9V4 Constitutive Design Investigation Plan
 
 **Date:** 2026-08-23  
-**Status:** D0 accepted; D1 open
+**Status:** D0 and D1 accepted; D2 open
 **Design basis:** [`GRC9V4ConstitutiveDesignBasis.md`](./GRC9V4ConstitutiveDesignBasis.md)  
 **Checklist:** [`GRC9V4ConstitutiveDesignChecklist.md`](./GRC9V4ConstitutiveDesignChecklist.md)  
 **Decision ledger:** [`GRC9V4ConstitutiveDesignDecisionLedger.md`](./GRC9V4ConstitutiveDesignDecisionLedger.md)
@@ -172,7 +172,8 @@ Required outputs:
   nonresource structural information, or no resource role;
 - transport roles: a set containing `conditions_geometry`,
   `conditions_mobility`, and/or `direct_transport_parameter`, with the empty set
-  meaning none;
+  meaning none; D1 records provisional candidate signatures and D4 owns final
+  confirmation, narrowing, or reclassification;
 - formation inputs;
 - complete-step causal authority, whether derived or independently serialized;
 - relation to `C`, `W`, `J`, topology, and lifecycle state;
@@ -185,6 +186,18 @@ Required outputs:
   sector identity/transport, and hidden-history/future-information audit for
   every derived constitutive representation;
 - hidden-state audit;
+- five-way elimination/reconstruction classification, including finite-history
+  reconstruction and independent variation under constraints;
+- a candidate-specific historical-content rationale and native-consumer
+  rationale;
+- hidden producer/helper, administrative, scheduler, registry, and RNG
+  dependence;
+- state dimension, value-domain, information-capacity growth, and release or
+  pruning obligations;
+- candidate equivalence classes and pairwise causal-conjugacy audit;
+- disabled-embedding multiplicity and obvious disabled-mode causal activity;
+- candidate-local `established_in_D1`, `unresolved_but_permitted`,
+  `must_be_proved_by_gate`, and `would_reject_if_failed` fields;
 - `admitted_candidate_set` and `rejected_on_ontology`; and
 - `sole_surviving_candidate`, if applicable, without final selection.
 
@@ -198,6 +211,14 @@ rejected as a runtime retained representation.
 Any selector state that depends on its own history is explicit serialized
 causal state; otherwise the selector must be deterministic from current
 declared causal state.
+
+D1 rejects only ontological contradictions. Missing exact D2-D9 laws become
+named obligations rather than premature D1 failures. Independent state requires
+a possible counterfactual future difference, not serialization alone. A
+derived update law does not imply that the current value is algebraically
+derived from current state. Candidate equivalence requires a bijective causal
+state transform preserving transition, outputs, accounting, transport, and
+lifecycle; equal state dimension is insufficient.
 
 ## D2. Formation, Retention, Release, And Write Interface
 
