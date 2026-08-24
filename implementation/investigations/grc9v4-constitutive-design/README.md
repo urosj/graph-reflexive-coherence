@@ -57,6 +57,8 @@ Start with:
 - [D4-v2 interpretation](./decisions/D4v2CandidateGeometryAndCarrierCompletion.md).
 - [D5-v2 structured decision](./decisions/D5v2DirectionalReadBackCompletion.json);
 - [D5-v2 interpretation](./decisions/D5v2DirectionalReadBackCompletion.md).
+- [D6-v2 structured decision](./decisions/D6v2UpdatedTotalCurrentClosure.json);
+- [D6-v2 interpretation](./decisions/D6v2UpdatedTotalCurrentClosure.md).
 
 Current gate status:
 
@@ -71,8 +73,8 @@ D6 = accepted_bounded
 D7 = accepted_bounded
 D4-v2 = accepted_bounded
 D5-v2 = accepted_bounded
-D6-v2 = authorized_not_started
-D7-v2 = blocked_on_D6-v2
+D6-v2 = accepted_bounded
+D7-v2 = authorized_not_started
 D7G = blocked_on_D7-v2
 D8 = blocked_on_D7G_or_terminal_route
 ```
@@ -107,8 +109,18 @@ changes the physical response while a matched complement does not; null
 directions remain valid compatibility controls. The record preserves the full
 41-row live debt union, including the 22 exact inherited rows bound through
 D4-v2. These are operator-level constitutive results, not runtime or physical
-channel evidence. D5-v2 is accepted bounded. D6-v2 is authorized but not
-started; later gates remain blocked.
+channel evidence. D5-v2 is accepted bounded. D6-v2 now carries A's accepted
+closure unchanged, admits B's signed Riesz closure through exact
+generalized-eigenvalue regularity, and admits C's non-isometric Hodge closure
+while separating exact similarity invariance from robust physical
+conditioning. B's fixed-probe sign discriminator is preserved, but active
+feedback has mixed parity and later tensor assembly must use the solved
+current. `A_B` remains radius-one line-graph local, while its solved inverse is
+only component-confined and may propagate influence beyond one hop. D6-v2 also
+preserves D5-v2 debt lineage exactly: 15 unchanged current rows are copied
+verbatim, four changed obligations have explicit successors, and no row is
+dropped. All three candidates are D7-v2 eligible. D6-v2 is accepted bounded;
+D7-v2 is authorized but not started, and later gates remain blocked.
 
 D5 currently defines two bounded candidate operator channels (A and C), routes
 B to a named derivation, and physically identifies zero channels. Its 68-point

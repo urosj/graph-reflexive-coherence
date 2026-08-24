@@ -1,7 +1,7 @@
 # GRC9V4 Constitutive Design Investigation Plan
 
 **Date:** 2026-08-23  
-**Status:** D0-D7, D4-v2, and D5-v2 accepted bounded; D6-v2 authorized but not started; D7-v2-D8 blocked
+**Status:** D0-D7 and D4-v2-D6-v2 accepted bounded; D7-v2 authorized; D7G-D8 blocked
 **Design basis:** [`GRC9V4ConstitutiveDesignBasis.md`](./GRC9V4ConstitutiveDesignBasis.md)  
 **Checklist:** [`GRC9V4ConstitutiveDesignChecklist.md`](./GRC9V4ConstitutiveDesignChecklist.md)  
 **Decision ledger:** [`GRC9V4ConstitutiveDesignDecisionLedger.md`](./GRC9V4ConstitutiveDesignDecisionLedger.md)
@@ -1205,7 +1205,7 @@ blocked.
 
 ### D6-v2. Updated Total-Current Closure
 
-Status: authorized; not started.
+Status: accepted bounded.
 
 Planned record: `GRC9V4-CD-D6V2-v1`, with outputs
 `decisions/D6v2UpdatedTotalCurrentClosure.json` and
@@ -1225,9 +1225,18 @@ cannot proceed to D7-v2.
 D6-v2 must use the exact operator structure now available. For B, classify
 `I - zeta_B A_B` by the generalized eigenvalues of the `H_1,pre`-self-adjoint
 `A_B`; `|zeta_B| t_B,max < 1` is a sufficient uniform regularity region rather
-than a generic untyped small-gain assertion. Use `T_B -> -T_B` as a path
-discriminator: the direct linear `kappa_B T_B` contribution changes sign,
-while `j_B -> -j_B` makes the future `j_B tensor j_B` contribution even.
+than a generic untyped small-gain assertion. Use `T_B -> -T_B` as a
+fixed-probe path discriminator: the direct linear `kappa_B T_B` contribution
+and fixed-probe `j_B` change sign, while that fixed-probe `j_B tensor j_B`
+contribution is even. Audit active solved-loop parity separately because the
+feedback inverse also changes under carrier sign reversal. Any displayed
+closed-loop parity formulas that omit `chi_B` are explicitly scoped to active
+read `chi_B = 1`. Keep the D4-v2 radius-one locality claim on `A_B` separate
+from the solved inverse: repeated couplings may propagate influence throughout
+one connected live-edge component, so D6-v2 claims component confinement and
+not one-hop support of `J_C,B`. Preserve `chi` in singular loci:
+`zeta_B chi_B = 1 / lambda_i` for B and `zeta_C chi_C = 1` on C harmonic
+modes; the familiar `zeta`-only forms are active-read special cases.
 
 For C, exploit the exact similarity:
 
@@ -1242,6 +1251,52 @@ with `cond(I_4M^pre)`. Report exact branch regularity and robust physical
 conditioning separately. For both candidates, keep retained-conditioned `J_0`,
 explicit `j`, and later `j tensor j` geometry stages factorized without
 same-beat geometry re-entry.
+
+#### D6-v2 implementation result
+
+D6-v2 is accepted bounded under record
+`GRC9V4-CD-D6V2-v1`, decision digest
+`ad02150010c4759d1c0ac4ba079c81cff99bad1f35b715f52b980aaf404eac0a`.
+Candidate A is reused only after an exact unchanged
+causal-object proof against accepted D6. Candidate B now has the regular
+algebraic closure
+
+```text
+L_B = I - zeta_B chi_B H_1,pre^-1 T_B.
+```
+
+Its exact regularity is classified by the generalized eigenvalues of
+`(T_B,H_1,pre)`, while `|zeta_B| t_B,max < 1` supplies a sufficient uniform
+margin. The `T_B -> -T_B` discriminator is now explicitly stage-scoped: it is
+sign-odd for the fixed-probe operator response, but the active solved feedback
+has a generally nonzero even component because its inverse changes too. D7G
+must therefore assemble the future tensor from the actual solved `j_B` rather
+than assuming full-loop tensor parity.
+
+Candidate C now uses
+
+```text
+Lbar_C = inverse(I_4M^pre) L_C,M I_4M^pre.
+```
+
+Exact invertibility is similarity-invariant. Robust physical conditioning is
+separate and requires a finite declared cross-metric condition bound for
+`I_4M^pre`; retained-space contraction is not promoted into an unqualified
+physical-space claim.
+
+The implementation consumes 67 unchanged D6 controls, replaces five changed
+B/C controls, and adds 40 D6-v2 controls, producing 107 active controls. It
+preserves 90 unchanged D6 pressure rows and adds 40 after superseding six
+changed-premise rows, producing 130 active pressure rows. All 19 D5-v2 current
+debts are dispositioned: 15 unchanged rows are copied exactly, while four
+changed obligations are explicitly narrowed or superseded into seven D6-v2
+debts. No predecessor debt is dropped. The exact 22 inherited debt rows remain
+bound. The resulting live union contains 22 current plus 22 inherited rows.
+
+All A/B/C closures are D7-v2 eligible, and D7-v2 is authorized but not started.
+No current temporalization, complete transition,
+global `H_4`, candidate ranking, specification, implementation, or runtime
+claim is opened.
 
 ### D7-v2. Candidate Transition Completion And Comparative Admission
 
@@ -1296,6 +1351,11 @@ candidate-local admitted structural input K_4^a
   -> h_4
   -> later candidate transition consequence
 ```
+
+For B, graph-local assembly of `j_B tensor j_B` does not imply one-hop causal
+dependence of the assembled values. The D6-v2 inverse may already make `j_B`
+depend on baseline current throughout its connected live-edge component. D7G
+must keep assembly locality separate from causal-support attribution.
 
 Freeze the global map's domain, codomain, state/derived authority, measure,
 units, gauge, covariance, boundary and topology/event behavior, stage order,
@@ -1487,9 +1547,11 @@ human_acceptance
 Accepted records are append-only. A revised gate creates a new record and names
 the record it supersedes; accepted decision payloads are never rewritten. The
 decision digest hashes the canonical gate record with
-`decision_record_digest` omitted, using sorted-key compact ASCII-escaped UTF-8
-JSON with array order preserved. The predecessor digest names the accepted
-serial predecessor; `supersedes` names an earlier record of the same gate.
+`decision_record_digest` omitted, using Python
+`json.dumps(..., sort_keys=True, separators=(",", ":"), ensure_ascii=True,
+allow_nan=False)` encoded as UTF-8, with array order preserved. The predecessor
+digest names the accepted serial predecessor; `supersedes` names an earlier
+record of the same gate.
 
 Numerical or prototype artifacts are optional and subordinate to the decision
 record. They become load-bearing only when explicitly admitted and frozen.

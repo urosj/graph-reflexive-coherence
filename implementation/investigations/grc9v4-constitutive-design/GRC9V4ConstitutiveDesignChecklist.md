@@ -1,7 +1,7 @@
 # GRC9V4 Constitutive Design Investigation Checklist
 
 **Date:** 2026-08-23  
-**Status:** D0-D7, D4-v2, and D5-v2 accepted bounded; D6-v2 authorized but not started; D7-v2-D8 blocked
+**Status:** D0-D7 and D4-v2-D6-v2 accepted bounded; D7-v2 authorized; D7G-D8 blocked
 **Plan:** [`GRC9V4ConstitutiveDesignPlan.md`](./GRC9V4ConstitutiveDesignPlan.md)  
 **Basis:** [`GRC9V4ConstitutiveDesignBasis.md`](./GRC9V4ConstitutiveDesignBasis.md)  
 **Ledger:** [`GRC9V4ConstitutiveDesignDecisionLedger.md`](./GRC9V4ConstitutiveDesignDecisionLedger.md)
@@ -779,8 +779,9 @@ pre-D10 technical results must exist before D10 consumes them.
 
 ## D4-v2-D7G. Candidate Completion And Structural-Closure Successor Tranche
 
-Status: active; D4-v2 and D5-v2 accepted bounded, with D6-v2 authorized but not
-started. Accepted D4-D7 records remain immutable until a successor is accepted.
+Status: active; D4-v2 through D6-v2 accepted bounded, with D7-v2 authorized
+but not started. Accepted D4-D7 records remain immutable until a successor is
+accepted.
 
 Common successor rules:
 
@@ -1049,36 +1050,91 @@ src_changed = false
 
 ### D6-v2. Updated Total-Current Closure
 
-Status: authorized; not started.
+Status: accepted bounded.
 
-- [ ] Rebuild the complete within-solve dependency graph and effective current
+- [x] Rebuild the complete within-solve dependency graph and effective current
       block for every changed lane.
-- [ ] Audit new same-beat retained-geometry/current dependencies and preserve or
+- [x] Audit new same-beat retained-geometry/current dependencies and preserve or
       revise lagged/staged semantics explicitly.
-- [ ] Recheck regularity, support, singular boundary, orientation, conservation,
+- [x] Recheck regularity, support, singular boundary, orientation, conservation,
       branch, and failure-atomicity contracts.
-- [ ] Reuse accepted D6 only with an explicit unchanged-causal-object proof.
-- [ ] For B, classify exact regularity from `1 - zeta_B lambda_i(A_B)` and
+- [x] Reuse accepted D6 only with an explicit unchanged-causal-object proof.
+- [x] For B, classify exact regularity from `1 - zeta_B lambda_i(A_B)` and
       record `|zeta_B| t_B,max < 1` as a sufficient uniform region.
-- [ ] Use `T_B -> -T_B` to distinguish the sign-odd direct `kappa_B T_B`
-      path from the sign-even future `j_B tensor j_B` path.
-- [ ] For C, prove exact invertibility through similarity of
+- [x] Scope `T_B -> -T_B` correctly: retain sign-odd direct/fixed-probe
+      response and fixed-probe tensor evenness, while recording the mixed
+      parity of the active solved feedback and its future tensor; state that
+      the displayed active-loop formulas use `chi_B = 1`.
+- [x] Distinguish radius-one locality of `A_B` from component-wide influence
+      through its inverse; claim component confinement, not one-hop support of
+      solved `J_C,B`.
+- [x] For C, prove exact invertibility through similarity of
       `I - zeta_C Rbar_C` and `I - zeta_C R_C,M`.
-- [ ] Report C exact branch regularity separately from physical conditioning
+- [x] Report C exact branch regularity separately from physical conditioning
       amplified by `cond(I_4M^pre)`.
-- [ ] Keep retained-conditioned `J_0`, explicit `j`, and future current-tensor
+- [x] Keep retained-conditioned `J_0`, explicit `j`, and future current-tensor
       geometry stages factorized without same-beat geometry re-entry.
-- [ ] Block endpoint compatibility from standing in for crossing/operator
+- [x] Block endpoint compatibility from standing in for crossing/operator
       equivalence.
-- [ ] Prevent any lane without a regular total-current closure from entering
+- [x] Prevent any lane without a regular total-current closure from entering
       D7-v2 as complete.
-- [ ] Produce `decisions/D6v2UpdatedTotalCurrentClosure.json`.
-- [ ] Produce `decisions/D6v2UpdatedTotalCurrentClosure.md`.
-- [ ] Obtain human acceptance before D7-v2.
+- [x] Produce `decisions/D6v2UpdatedTotalCurrentClosure.json`.
+- [x] Produce `decisions/D6v2UpdatedTotalCurrentClosure.md`.
+- [x] Obtain human acceptance before D7-v2.
+
+#### D6-v2 result
+
+```text
+record_id = GRC9V4-CD-D6V2-v1
+status = accepted_bounded
+decision_digest = ad02150010c4759d1c0ac4ba079c81cff99bad1f35b715f52b980aaf404eac0a
+predecessor = accepted_D5-v2
+supersedes = accepted_D6-v1
+
+A = carried_unchanged_bounded_regular_algebraic_slaving
+A_source_row_canonical_sha256 = 82bea78821e721c52f9d54addb21a78dcff823e82d2b9a3cf695479c4825fa6f
+A_changed_causal_object = false
+
+B = admitted_bounded_regular_algebraic_slaving
+B_closure = I - zeta_B chi_B H_1_pre^-1 T_B
+B_exact_margin = min_i |1 - zeta_B chi_B lambda_i|
+B_uniform_sufficient_region = |zeta_B| t_B_max < 1
+B_singular_locus = zeta_B chi_B = 1 / lambda_i
+B_fixed_probe_sign_parity = odd
+B_active_closed_loop_parity = mixed_odd_and_even
+B_active_tensor_sign_invariance = not_assumed
+
+C = admitted_bounded_retained_mediated_regular_algebraic_slaving
+C_similarity = Lbar_C = inverse_I_4M_pre L_C_M I_4M_pre
+C_exact_invertibility = similarity_invariant
+C_robust_physical_margin = (1 - zeta_bar_C) / kappa_bar_C
+C_harmonic_singular_locus = zeta_C chi_C = 1
+C_retained_contraction_as_physical_contraction = false
+
+candidate_set_after_D6-v2 = [A, B, C]
+D7-v2_eligible_candidate_set = [A, B, C]
+current_temporalized_candidate_count = 0
+candidate_rejected_count = 0
+candidate_ranking_performed = false
+
+active_control_count = 107
+active_pressure_row_count = 130
+current_typed_debt_count = 22
+D5-v2_predecessor_current_debt_row_count = 19
+unchanged_predecessor_debt_rows_exactly_carried = 15
+superseded_or_narrowed_predecessor_debt_rows = 4
+dropped_predecessor_debt_rows = 0
+inherited_live_debt_row_count = 22
+complete_live_debt_union_row_count = 44
+
+D7-v2_authorized = true
+human_acceptance = accepted_bounded_2026-08-24
+src_changed = false
+```
 
 ### D7-v2. Candidate Transition Completion And Comparative Admission
 
-Status: blocked on D6-v2.
+Status: authorized; not started.
 
 - [ ] Preserve A's accepted kinetic recurrence and explicit open `H_4` boundary.
 - [ ] Write B's complete `T_B -> G_B/h_B -> R_B -> J_C -> consequence -> U_B
@@ -1118,6 +1174,8 @@ Status: blocked on D7-v2.
       lagged semantics.
 - [ ] Relate each surviving candidate's admitted `K_4^a` to the common `H_4`
       map without borrowing another candidate's retained ontology.
+- [ ] For B, distinguish graph-local tensor assembly from causal support of
+      `j_B`, which may already depend on its connected live-edge component.
 - [ ] Keep C's physical `h_4 <-> h_M` compatibility open until this gate even
       if D4-v2 closed its retained `h_M` construction.
 - [ ] Validate or replace C's provisional `I_4M^pre`; route any replacement
@@ -1254,8 +1312,12 @@ D5-v2_B = admitted_bounded_Riesz_Read_Back_operator_level_mediation
 D5-v2_C = admitted_bounded_retained_Hodge_Read_Back_operator_level_mediation
 D5-v2_candidate_rejected_count = 0
 D5-v2_physical_channel_identification_count = 0
-D6-v2 = authorized_not_started
-D7-v2 = blocked_on_D6-v2
+D6-v2 = accepted_bounded
+D6-v2_A = carried_unchanged_bounded_regular_algebraic_slaving
+D6-v2_B = admitted_bounded_signed_Riesz_algebraic_current_closure
+D6-v2_C = admitted_bounded_nonisometric_Hodge_algebraic_current_closure
+D6-v2_D7-v2_eligible_candidate_set = [A, B, C]
+D7-v2 = authorized_not_started
 D7G = blocked_on_D7-v2
 D8-D10 = blocked_on_D7G_or_terminal_route
 D10_early_terminal_route = available_for_rejected_all_missing_theory_or_missing_discriminator

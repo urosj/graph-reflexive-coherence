@@ -1,6 +1,6 @@
 # GRC9V4 Constitutive Design Decision Ledger
 
-**Status:** D0-D7, D4-v2, and D5-v2 accepted bounded; D6-v2 authorized but not started; D7-v2-D8 blocked
+**Status:** D0-D7 and D4-v2-D6-v2 accepted bounded; D7-v2 authorized; D7G-D8 blocked
 
 This ledger is the additive decision record for D0-D10. The design basis and
 plan define questions and constraints; this file records accepted answers.
@@ -38,9 +38,12 @@ record with `predecessor_decision_digest` and `supersedes`; it does not edit the
 accepted payload. The canonical decision payload is the complete gate record
 with `decision_record_digest` omitted, serialized as UTF-8 JSON with object keys
 sorted lexicographically, compact `,` and `:` separators, ASCII escaping
-enabled, and array order preserved. `decision_record_digest` is the SHA-256 of
-those canonical bytes. A prose-only record cannot receive an accepted digest
-unless an equivalent structured decision object is frozen with it.
+enabled, finite-number formatting supplied by Python
+`json.dumps(..., sort_keys=True, separators=(",", ":"), ensure_ascii=True,
+allow_nan=False)`, and array order preserved. `decision_record_digest` is the
+SHA-256 of those canonical bytes. A prose-only record cannot receive an
+accepted digest unless an equivalent structured decision object is frozen
+with it.
 
 `predecessor_decision_digest` names the accepted serial predecessor gate.
 `supersedes` names an earlier record of the same gate when that gate is reopened.
@@ -492,7 +495,8 @@ writer temporal side.
 
 ## D4-v2-D7G. Candidate Completion And Structural-Closure Successor Tranche
 
-Status: D4-v2 and D5-v2 accepted bounded; D6-v2 authorized but not started; later gates blocked.
+Status: D4-v2 through D6-v2 accepted bounded; D7-v2 authorized but not
+started; later gates blocked.
 
 This append-only tranche does not modify or supersede accepted D4-D7 until a
 specific successor record is accepted. It prevents A's earlier completeness
@@ -502,8 +506,8 @@ structural map their named derivation attempts before comparative D8.
 ```text
 D4-v2 = GRC9V4-CD-D4V2-v1, accepted_bounded
 D5-v2 = GRC9V4-CD-D5V2-v1, accepted_bounded
-D6-v2 = GRC9V4-CD-D6V2-v1, authorized_not_started
-D7-v2 = GRC9V4-CD-D7V2-v1, blocked_on_D6-v2
+D6-v2 = GRC9V4-CD-D6V2-v1, accepted_bounded
+D7-v2 = GRC9V4-CD-D7V2-v1, authorized_not_started
 D7G = GRC9V4-CD-D7G-v1, blocked_on_D7-v2
 
 default_successor_lineage_when_no_earlier_gate_reopens =
@@ -671,7 +675,7 @@ inherited_transitive_debt_rows = 20, exact identity/status/blocker binding
 complete_live_debt_union_rows = 41
 C mediation gate = at least one compatible selected-content probe changes;
                    null-direction probes may remain unchanged
-D6-v2 = authorized_not_started
+D6-v2_at_D5-v2_closeout = authorized_not_started
 ```
 
 D6-v2 handoff obligations:
@@ -679,8 +683,10 @@ D6-v2 handoff obligations:
 ```text
 B exact regularity = classify 1 - zeta_B lambda_i(A_B)
 B sufficient region = |zeta_B| t_B,max < 1
-B path parity = T_B sign reversal flips direct K_4 and j_B,
-                but preserves j_B tensor j_B
+B fixed-probe path parity = T_B sign reversal flips direct K_4 and j_B,
+                            but preserves fixed-probe j_B tensor j_B
+B active-loop parity obligation = audit changed inverse; do not assume the
+                                  solved tensor remains even
 
 C exact regularity = similarity invariant between
                      I - zeta_C Rbar_C and I - zeta_C R_C,M
@@ -689,6 +695,66 @@ C robust conditioning = separately bounded through cond(I_4M^pre)
 common staging = retained-conditioned J_0, explicit j, and future current
                  tensor remain separate with no same-beat geometry re-entry
 ```
+
+D6-v2 execution record:
+
+```text
+record_id = GRC9V4-CD-D6V2-v1
+status = accepted_bounded
+decision_digest = ad02150010c4759d1c0ac4ba079c81cff99bad1f35b715f52b980aaf404eac0a
+chronological_predecessor = accepted_D5-v2
+supersedes = accepted_D6-v1
+
+A:
+  accepted D6 closure reused after exact unchanged-causal-object proof
+  source candidate row canonical SHA =
+    82bea78821e721c52f9d54addb21a78dcff823e82d2b9a3cf695479c4825fa6f
+  no ornamental A-v2 formula
+
+B:
+  L_B = I - zeta_B chi_B H_1,pre^-1 T_B
+  exact regularity = 1 - zeta_B chi_B lambda_i != 0 for every
+                     generalized eigenvalue of (T_B,H_1,pre)
+  sufficient uniform region = |zeta_B| t_B,max < 1
+  singular locus = zeta_B chi_B = 1 / lambda_i
+  operator support = radius-one line-graph locality
+  solved inverse support = may propagate through the connected live-edge component
+  claimed support boundary = component confinement, not one-hop preservation
+  fixed-probe T_B sign reversal = sign-odd j_B, sign-even tensor
+  active closed-loop sign reversal = mixed odd/even response because the
+                                     inverse changes
+  active closed-loop displayed formulas = chi_B = 1
+  future tensor = assembled from actual solved j_B, no parity shortcut
+
+C:
+  Lbar_C = inverse(I_4M^pre) L_C,M I_4M^pre
+  exact invertibility = similarity invariant
+  robust physical inverse bound = kappa_bar_C / (1 - zeta_bar_C)
+  robust physical margin = (1 - zeta_bar_C) / kappa_bar_C
+  harmonic singular locus = zeta_C chi_C = 1
+  retained-space contraction != unqualified physical-space contraction
+  fixed selector, H_M, I_4M^pre, and J0_C remain pre-read
+
+candidate_set_after_D6-v2 = [A, B, C]
+D7-v2_eligible_candidate_set = [A, B, C]
+current temporalization = not selected
+candidate ranking = not performed
+
+active controls = 107
+active pressure rows = 130
+current typed debts = 22
+exact unchanged D5-v2 current debt rows = 15
+explicitly superseded or narrowed D5-v2 current debt rows = 4
+dropped D5-v2 current debt rows = 0
+exact inherited live debt rows = 22
+complete live debt union = 44
+
+D7-v2 = authorized_not_started
+D7G = blocked_on_D7-v2
+D8 = blocked_on_D7G_or_terminal_route
+```
+
+Human acceptance: `accepted_bounded_2026-08-24`.
 
 The candidate-local tranche has two separately attributable starting rows in
 one combined D4-v2 execution:
@@ -740,6 +806,10 @@ affected gate and must propagate back to D7G before D8 admission. D7G must also
 validate or replace C's `I_4M^pre` and establish a non-erasing
 `delta T_a -> delta K_4^a -> delta h_4 -> later consequence` direction for
 every candidate claiming structural cultivation.
+
+For B, D7G must distinguish graph-local assembly of `j_B tensor j_B` from the
+causal support of `j_B`: the D6-v2 inverse may already propagate baseline
+influence throughout a connected live-edge component.
 
 ## D8. Continuation Realization And Analysis Contract
 
