@@ -1,7 +1,7 @@
 # GRC9V4 Constitutive Design Investigation Plan
 
 **Date:** 2026-08-23  
-**Status:** D0-D5 accepted bounded; D6 authorized
+**Status:** D0-D6 accepted bounded; D7 authorized
 **Design basis:** [`GRC9V4ConstitutiveDesignBasis.md`](./GRC9V4ConstitutiveDesignBasis.md)  
 **Checklist:** [`GRC9V4ConstitutiveDesignChecklist.md`](./GRC9V4ConstitutiveDesignChecklist.md)  
 **Decision ledger:** [`GRC9V4ConstitutiveDesignDecisionLedger.md`](./GRC9V4ConstitutiveDesignDecisionLedger.md)
@@ -612,6 +612,81 @@ must select or reject one for each surviving architecture.
 
 The closure record must preserve the direct-retained-to-`J0` and Read-Back-to-
 `j` decomposition through total-current formation and reject double counting.
+Postsolve `J_C` is the authoritative causal current available to D7. D6 does
+not authorize a direct `j -> retained state` write; `j` is available only to
+the declared shared-gain `j tensor j` geometry path and telemetry/analysis
+unless D7 derives a lawful non-bypassing successor. Under `zeta = 0`, diagnostic
+`j` has no causal downstream consumer in the initial profile.
+
+Current D6 execution selects regular same-beat algebraic slaving for A and C
+and routes B without rejection:
+
+```text
+A:
+  J_C,e = J0,A,e / (1 - zeta_A chi_A q_A,e)
+  q_A,e = (W_A,e - W_hat,e) / (W_A,e + W_hat,e)
+
+C:
+  J_C^M = (I - zeta_C chi_C R_C)^-1 J0,C^M
+  R_C = (I + tau_C Delta1,M)^-1
+
+B:
+  routed to the existing D4 geometry and D5 typed-operator derivations
+```
+
+Both admitted profiles use `0 < zeta_a <= zeta_bar,a < 1`, freeze `J0`,
+geometry, retained state, and `X_read` before the solve, and therefore have
+`B_eff,D6 = zeta_a chi_a R_a`. This effective block is complete only for that
+declared solve staging. Moving a `J_C`-dependent geometry, mobility, retained-
+state, or baseline path inside the solve requires D6 rederivation with the full
+chain rule.
+
+This lagged-geometry order is an explicit revision-distinct GRC9V4
+discrete-beat constitutive realization. It does not assert that the core
+simultaneous active-current loop generally reduces to `(I - zeta R)`. A profile
+that places `J -> j -> K -> h -> J0` inside one solve must reopen D6 and include
+the complete chain-rule effective block.
+
+Loss of bounded invertibility fails closed. It does not select temporalized
+current, a pseudoinverse, a critical-mode deletion, spark, basin birth, or
+topology change. Algebraic slaving is not claimed as a demonstrated fast
+temporal limit. D6 resolves same-beat total-current closure only; D7 still owns
+the cross-beat write/read loop and complete transition.
+
+The hardened D6 execution distinguishes regular algebraic slaving, partial
+critical-subspace deslavement, full current temporalization, and blocked/routed
+closure. A/C remain in the first class on the selected subunit-gain profiles;
+partial deslavement is the first successor question if only a proper subspace
+later loses regular elimination. A critical runtime subspace cannot be named by
+an analysis mode index without constitutive authority and event transport.
+
+Solve on the declared transport-current space with closed-channel and boundary
+conditions inside the equation. Potential gauge nulls are removed upstream and
+do not count as current singularity. Numerical solver path, damping, seed,
+regularization, or iteration count cannot select a physical branch or become a
+clock. Robust closure uses a singular-value or inverse-norm margin; `+1` in the
+full effective-block spectrum is the finite-dimensional singularity condition,
+not spectral radius one in general.
+
+For C, tree and cycle topology are separated: harmonic response remains unit
+for every `tau_C`, but subunit gain retains a uniform margin. Unit gain on a
+cycle is a singular boundary and harmonics may not be projected away to rescue
+the solve. For A, the exact `(zeta_A,q_A)` domain is recorded and the selected
+subunit gain supplies a uniform margin without requiring a D7 `W_A` cap.
+
+D6 also freezes a single shared `zeta_a` for the linear `j` current contribution
+and the later staged `j tensor j` geometry contribution in an initial
+normalized profile. Separate gains require a successor. Physical unit and
+tensor compatibility remain under the inherited D4 gauge/units audit. Exact
+A/C absorbability relative to their complete baseline model
+classes remains a pre-D10 mathematical debt, distinct from post-spec empirical
+identification. Explicit `J0 + zeta j` notation alone cannot establish a
+nonredundant Read-Back mechanism.
+
+Debt persistence is transitive. D6 must preserve both its 25 current-generation
+open debts and the 20 still-open older IDs incorporated through D5; all 16
+transitive pre-D10 blockers remain adjudicable even when they do not receive a
+new D5 or D6 identifier.
 
 ## D7. Closed Write/Read Loop
 

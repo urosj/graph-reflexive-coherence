@@ -49,6 +49,8 @@ Start with:
 - [D4 interpretation](./decisions/D4GeometryMobilityAndTopologyOwnership.md).
 - [D5 structured decision](./decisions/D5DirectionalReadBack.json);
 - [D5 interpretation](./decisions/D5DirectionalReadBack.md).
+- [D6 structured decision](./decisions/D6TotalCurrentClosure.json);
+- [D6 interpretation](./decisions/D6TotalCurrentClosure.md).
 
 Current gate status:
 
@@ -59,7 +61,8 @@ D2 = accepted_bounded
 D3 = accepted_bounded
 D4 = accepted_bounded
 D5 = accepted_bounded
-D6 = authorized_not_started
+D6 = accepted_bounded
+D7 = authorized_not_started
 ```
 
 D5 currently defines two bounded candidate operator channels (A and C), routes
@@ -70,6 +73,20 @@ operator-family admission is separate from closed retained mediation, all D4
 debts have explicit successor dispositions, and pre-spec design obligations are
 separated from post-spec causal verification. B remains an architecture
 candidate while routed out of D6; it has not been eliminated.
+
+D6 now selects bounded same-beat algebraic slaving for A and parameterized C
+and keeps B routed without rejection. The declared solve freezes all noncurrent
+context, making `zeta chi R` the complete within-solve block only for that
+revision-distinct lagged-geometry staging, not for the core simultaneous loop
+in general. Loss of invertibility fails closed; it does not establish a temporal
+current law, fast-limit interpretation, stability threshold, write-back, or a
+closed reflexive loop. Its 96-point hardening audit also separates partial
+deslavement, solver behavior, admissible current support, harmonic topology,
+shared current/geometry gain, and mathematical absorbability from those later
+claims. Postsolve `J_C` is D7's authoritative causal current; diagnostic `j`
+cannot bypass it as a direct write input. Transitive debt persistence keeps 20
+older unresolved IDs, including 16 pre-D10 blockers, visible beside the 25
+current debts. D6 was accepted bounded on 2026-08-24, and D7 is authorized.
 
 Hard boundary:
 

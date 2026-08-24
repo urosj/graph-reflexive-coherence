@@ -1,7 +1,7 @@
 # GRC9V4 Constitutive Design Investigation Checklist
 
 **Date:** 2026-08-23  
-**Status:** D0-D5 accepted bounded; D6 authorized
+**Status:** D0-D6 accepted bounded; D7 authorized
 **Plan:** [`GRC9V4ConstitutiveDesignPlan.md`](./GRC9V4ConstitutiveDesignPlan.md)  
 **Basis:** [`GRC9V4ConstitutiveDesignBasis.md`](./GRC9V4ConstitutiveDesignBasis.md)  
 **Ledger:** [`GRC9V4ConstitutiveDesignDecisionLedger.md`](./GRC9V4ConstitutiveDesignDecisionLedger.md)
@@ -557,28 +557,114 @@ and D8 Hodge construction closure is separate from later normative encoding.
 
 ## D6. Total-Current Closure
 
-Status: authorized; not started.
+Status: accepted bounded.
 
-- [ ] Define algebraic current closure and solve order.
-- [ ] Write the selected algebraic closure equation or temporal current law for
+- [x] Define algebraic current closure and solve order.
+- [x] Write the selected algebraic closure equation or temporal current law for
       each surviving candidate; generic alternatives do not close D6.
-- [ ] Record why the selected architecture requires that closure and reject or
+- [x] Record why the selected architecture requires that closure and reject or
       route candidates for which neither closure is admissible.
-- [ ] Define the full effective loop block.
-- [ ] Define uniqueness/invertibility requirements.
-- [ ] Define failure and singular-boundary semantics.
-- [ ] Decide slaved, explicitly deslaved, or blocked current closure for each
+- [x] Define the full effective loop block for the frozen pre-read solve and
+      require D6 reopening if D7 introduces another within-solve current path.
+- [x] Define uniqueness/invertibility requirements.
+- [x] Define failure and singular-boundary semantics.
+- [x] Decide slaved, explicitly deslaved, or blocked current closure for each
       surviving retained-representation candidate.
-- [ ] Admit temporalized current only under a recorded trigger.
-- [ ] Preserve direct-retained-to-`J0` and Read-Back-to-`j` attribution through
+- [x] Admit temporalized current only under a recorded trigger; select none for
+      the initial regular A/C profiles.
+- [x] Preserve direct-retained-to-`J0` and Read-Back-to-`j` attribution through
       total-current closure.
-- [ ] Obtain human acceptance.
+- [x] Preserve B in the architecture candidate set while routing it out of D6.
+- [x] Freeze A's exact edgewise inverse, zero-mobility support rule, and bounded
+      denominator domain.
+- [x] Freeze C's parameterized Hodge inverse, metric-space requirements,
+      component separation, and positive-mobility domain without closing H_M.
+- [x] Separate algebraic slaving from a demonstrated fast temporal limit.
+- [x] Block singularity-to-temporal-law, structural-marginality, spark,
+      basin-birth, topology-change, and stability relabels.
+- [x] Freeze partial critical-subspace deslavement as distinct from full current
+      temporalization and prohibit analysis mode labels as runtime state.
+- [x] Freeze admissible current-space, closed-channel, boundary-drive, and
+      potential-gauge semantics inside the solve.
+- [x] Freeze exact branch selection independently of solver seed, history,
+      damping, line search, preconditioner, tolerance, or iteration count.
+- [x] Distinguish exact invertibility from robust singular-value/inverse-norm
+      conditioning and block spectral-radius-one overgeneralization.
+- [x] Freeze A's exact `(zeta_A,q_A)` classification and no-`W_max` dependency
+      for the selected subunit profile.
+- [x] Freeze C's tree/cycle/harmonic regularity boundary and block harmonic
+      projection or `tau_C` as a unit-gain harmonic rescue.
+- [x] Freeze one shared `zeta_a` for current and staged `j tensor j` geometry in
+      the initial normalized profile; route split gains to a named successor
+      and preserve the inherited physical-units audit.
+- [x] Freeze postsolve `J_C` as D7's authoritative causal current and restrict
+      `j` to the declared `zeta (j tensor j)` geometry path plus
+      telemetry/analysis; block an unqualified direct `j` write shortcut.
+- [x] Freeze gain-off so a nonzero diagnostic `j` has no causal downstream
+      consumer in the initial profile.
+- [x] Record lagged geometry as a revision-distinct GRC9V4 beat-staging choice,
+      not a general reduction of the core simultaneous active-current loop.
+- [x] Use unambiguous parenthesized C resolvent notation in the machine record.
+- [x] Audit exact A/C mathematical absorbability separately from post-spec
+      empirical identification and create pre-D10 debts where the complete
+      baseline maps remain open.
+- [x] Feed the selected algebraic closures back into D3 without upgrading A's
+      direct structural role or C's retained mediation.
+- [x] Classify all 96 D6 pressure points and freeze 72 fail-closed controls.
+- [x] Classify all 27 D5 debts without silent disappearance.
+- [x] Incorporate 20 still-open transitive predecessor debt IDs by reference,
+      including all 16 inherited pre-D10 blockers.
+- [x] Obtain human acceptance.
+
+Current D6 result:
+
+```text
+record_id = GRC9V4-CD-D6-v1
+status = accepted_bounded
+predecessor_decision_digest = 453416f42beefa1c9e725b675a0af7d4fd49c3e83691ee16e3e3bcfb6d37f213
+decision_record_digest = 0c78ede1551ece13c4b4fc916f60531bdc30219791bf90be574e5b0f80aa3f16
+candidate_set_after_D6 = [V4-A-temporalized-W, V4-B-independent-derived-carrier, V4-C-constitutive-C-sector]
+D7_eligible_candidate_set = [V4-A-temporalized-W, V4-C-constitutive-C-sector]
+routed_candidate_set = [V4-B-independent-derived-carrier]
+algebraically_slaved_candidate_count = 2
+current_temporalized_candidate_count = 0
+routed_candidate_count = 1
+candidate_rejected_count = 0
+control_contract_rows = 72
+D6_pressure_audit_rows = 96
+predecessor_debt_disposition_rows = 27
+transitive_predecessor_debt_disposition_rows = 20
+transitive_predecessor_must_close_before_D10_rows = 16
+open_debt_rows = 25
+architecture_selected = false
+claim_ceiling = GRC9V4-CD-D6-bounded-regular-algebraic-current-closures-with-mathematical-nonredundancy-open-and-without-temporal-current_writeback_runtime_or_architecture-selection
+D7_authorized = true
+human_acceptance = accepted_bounded_2026-08-24
+specification_authorized = false
+runtime_implementation_authorized = false
+```
+
+D6 provides exact bounded same-beat algebraic current closures for A and
+parameterized C. B remains routed, not rejected. The current solve freezes
+`J0`, retained state, geometry, mobility, and `X_read`, so its complete local
+block is `zeta chi R`; changing that staging reopens D6. Loss of invertibility
+fails closed and does not choose a temporal current law. The result does not
+close write-back, retention, the cross-beat reflexive loop, stability, physical
+channel identification, runtime reachability, or architecture selection.
+Lagged geometry is an explicit V4 beat-staging choice, not a theorem about the
+core simultaneous loop. Postsolve `J_C` is D7's authoritative causal current;
+`j` is not a free write input, and gain-off diagnostic `j` has no causal
+downstream consumer. The 25 current debts and 20 transitive inherited debts
+remain jointly adjudicable for D10.
 
 ## D7. Closed Write/Read Loop
 
-Status: blocked on D6.
+Status: authorized; not started.
 
 - [ ] Close `T_M -> j -> J_C -> declared downstream consequence -> T_M`.
+- [ ] Consume postsolve `J_C` as the authoritative causal current; do not use
+      diagnostic or geometry-conditioning `j` as a direct retained-state write
+      shortcut unless a named D6 successor derives the non-bypassing path.
 - [ ] Write the complete `X_(k+1) = F_V4(X_k)` transition for each remaining
       candidate, including equations, stage order, state ownership, release,
       read, write, and accounting surfaces.
@@ -671,7 +757,9 @@ D2 = accepted_bounded
 D3 = accepted_bounded
 D4 = accepted_bounded
 D5 = accepted_bounded
-D6-D10 = blocked_on_predecessor
+D6 = accepted_bounded
+D7 = authorized_not_started
+D8-D10 = blocked_on_predecessor
 D10_early_terminal_route = available_for_rejected_all_missing_theory_or_missing_discriminator
 architecture_selected = false
 specification_authorized = false

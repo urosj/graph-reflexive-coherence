@@ -1,6 +1,6 @@
 # GRC9V4 Constitutive Design Decision Ledger
 
-**Status:** D0-D5 accepted bounded; D6 authorized
+**Status:** D0-D6 accepted bounded; D7 authorized
 
 This ledger is the additive decision record for D0-D10. The design basis and
 plan define questions and constraints; this file records accepted answers.
@@ -349,11 +349,73 @@ construction closure at D8 is separated from post-D10 normative encoding.
 
 ## D6. Total-Current Closure
 
-Status: authorized; not started.
+```text
+record_id = GRC9V4-CD-D6-v1
+status = accepted_bounded
+predecessor_decision_digest = 453416f42beefa1c9e725b675a0af7d4fd49c3e83691ee16e3e3bcfb6d37f213
+decision_record_digest = 0c78ede1551ece13c4b4fc916f60531bdc30219791bf90be574e5b0f80aa3f16
+candidate_set_after_D6 = [V4-A-temporalized-W, V4-B-independent-derived-carrier, V4-C-constitutive-C-sector]
+D7_eligible_candidate_set = [V4-A-temporalized-W, V4-C-constitutive-C-sector]
+routed_candidate_set = [V4-B-independent-derived-carrier]
+algebraically_slaved_candidate_count = 2
+current_temporalized_candidate_count = 0
+routed_candidate_count = 1
+candidate_rejected_count = 0
+control_contract_rows = 72
+D6_pressure_audit_rows = 96
+predecessor_debt_disposition_rows = 27
+transitive_predecessor_debt_disposition_rows = 20
+transitive_predecessor_must_close_before_D10_rows = 16
+open_debt_rows = 25
+candidate_ranking_performed = false
+architecture_selected = false
+D7_authorized = true
+human_acceptance = accepted_bounded_2026-08-24
+```
+
+D6 assigns A and parameterized C exact bounded same-beat algebraic current
+closures. It freezes all noncurrent constitutive context before the solve, so
+the declared full within-solve block is `B_eff,D6 = zeta chi R`; any later
+same-beat re-entry requires a D6 successor and a full chain-rule derivation. A's
+diagonal inverse preserves baseline support and closes the initial exact-zero-
+mobility edge case. C's Hodge inverse is a bounded positive modal response on a
+regular retained-geometry metric space, but remains parameterized by `h_M` and
+does not close `T_C` mediation.
+
+B remains in the candidate set and is routed through its D4/D5 missing
+derivations. No current is independently temporalized. Loss of invertibility
+fails closed and does not select a temporal completion or identify structural
+marginality, spark, basin birth, or topology change. D6 supplies neither a
+demonstrated fast temporal limit nor write-back, a closed loop, stability,
+runtime evidence, physical channel identification, architecture selection, or
+specification authority.
+
+The 96-point hardening pass further freezes the admissible current space,
+potential-gauge boundary, exact solver-independent branch rule, robust
+singular-value conditioning, and partial critical-subspace successor. A's
+subunit profile is uniformly regular without a future `W_A` cap. C is regular
+on trees and cycle graphs below unit gain, while its harmonic sector is singular
+at unit gain and cannot be repaired by `tau_C` or projection. The initial
+profile uses one shared `zeta_a` for current and staged `j tensor j` geometry.
+Exact A/C mathematical absorbability remains typed pre-D10 debt; it is not
+collapsed into later empirical identifiability.
+
+The lagged-geometry closure is a revision-distinct GRC9V4 discrete-beat
+realization, not a general reduction of the core simultaneous
+`J -> j -> K -> h -> J0` loop. Postsolve `J_C` is the authoritative causal
+current handed to D7. `j` is restricted to the declared shared-gain geometry
+path and telemetry/analysis; it is not an authorized direct retained-state
+write input, and gain-off diagnostic `j` has no causal consumer. The shared
+gain is dimensionless only in the initial normalized current profile pending
+the inherited D4 physical-units audit.
+
+D6 also incorporates by reference all 20 still-open older debt IDs carried
+through D5. Sixteen remain pre-D10 blockers. D10 must consume the union of that
+transitive ledger and the 25 current-generation open debts.
 
 ## D7. Closed Write/Read Loop
 
-Status: blocked on D6.
+Status: authorized; not started.
 
 ## D8. Continuation Realization And Analysis Contract
 
