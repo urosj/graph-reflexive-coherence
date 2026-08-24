@@ -28,7 +28,16 @@ Start with:
 - [D0-D10 investigation plan](./GRC9V4ConstitutiveDesignPlan.md);
 - [execution checklist](./GRC9V4ConstitutiveDesignChecklist.md);
 - [decision ledger](./GRC9V4ConstitutiveDesignDecisionLedger.md);
-- [frozen initialization predecessor](./GRC9V4ConstitutiveDesignInitialization.json).
+- [frozen initialization predecessor](./GRC9V4ConstitutiveDesignInitialization.json);
+- [D0 structured decision](./decisions/D0TargetInheritanceAndClaimCeiling.json);
+- [D0 interpretation](./decisions/D0TargetInheritanceAndClaimCeiling.md).
+
+Current gate status:
+
+```text
+D0 = accepted
+D1 = open_not_yet_executed
+```
 
 Hard boundary:
 

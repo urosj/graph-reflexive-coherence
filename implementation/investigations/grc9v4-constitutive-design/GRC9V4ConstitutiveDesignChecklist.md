@@ -1,7 +1,7 @@
 # GRC9V4 Constitutive Design Investigation Checklist
 
 **Date:** 2026-08-23  
-**Status:** Initialized; no design gate accepted  
+**Status:** D0 accepted; D1 open
 **Plan:** [`GRC9V4ConstitutiveDesignPlan.md`](./GRC9V4ConstitutiveDesignPlan.md)  
 **Basis:** [`GRC9V4ConstitutiveDesignBasis.md`](./GRC9V4ConstitutiveDesignBasis.md)  
 **Ledger:** [`GRC9V4ConstitutiveDesignDecisionLedger.md`](./GRC9V4ConstitutiveDesignDecisionLedger.md)
@@ -30,46 +30,89 @@
 
 ## D0. Target, Inheritance, And Claim Ceiling
 
-Status: pending.
+Status: accepted.
 
-- [ ] Consume initialization predecessor digest
+- [x] Consume initialization predecessor digest
       `7daf0693e2603b8e0c7062c77789a4ae71b6372b5605e31024be304a282e2654`.
-- [ ] Freeze current theory source revisions and hashes.
-- [ ] Freeze B1 Draft 3.4.1 and evidence-grounded successor identities.
-- [ ] Freeze accepted B1/B2 closeout and evidence identities.
-- [ ] Freeze reconciled GRC9V3 spec/evidence-profile and Phase 7 identities.
-- [ ] Build a B1-contract -> B1 -> B2 -> reconciliation -> V4 historical
+- [x] Freeze current theory source revisions and hashes.
+- [x] Freeze B1 Draft 3.4.1 and evidence-grounded successor identities.
+- [x] Freeze accepted B1/B2 closeout and evidence identities.
+- [x] Freeze reconciled GRC9V3 spec/evidence-profile and Phase 7 identities.
+- [x] Build a B1-contract -> B1 -> B2 -> reconciliation -> V4 historical
       lineage record.
-- [ ] Record direct B1/B2 artifact citations and source envelopes.
-- [ ] Freeze `may_consume_as` and `must_not_consume_as` for each B1/B2 source.
-- [ ] Audit every B1-derived theory statement against the current core revision.
-- [ ] Classify theory drift as unchanged, narrowed, broadened, superseded,
+- [x] Record direct B1/B2 artifact citations and source envelopes.
+- [x] Freeze `may_consume_as` and `must_not_consume_as` for each B1/B2 source.
+- [x] Audit every B1-derived theory statement against the current core revision.
+- [x] Classify theory drift as unchanged, narrowed, broadened, superseded,
       historical-only, or requiring rederivation.
-- [ ] Block B1 verification constructs from becoming literal V4 semantics.
-- [ ] Block B2 bounded empty search from becoming global impossibility,
+- [x] Block B1 verification constructs from becoming literal V4 semantics.
+- [x] Block B2 bounded empty search from becoming global impossibility,
       independent-state necessity, or architecture selection.
-- [ ] Build the provenance-classified inheritance ledger.
-- [ ] Separate core claims from candidate constitutive completions.
-- [ ] Freeze target, non-targets, and claim ceiling.
-- [ ] Freeze the D1 candidate set, source-admission rule, and admission deadline.
-- [ ] Freeze the candidate-neutral V3 reference transition and reduction
+- [x] Build the provenance-classified inheritance ledger.
+- [x] Separate core claims from candidate constitutive completions.
+- [x] Freeze target, non-targets, and claim ceiling.
+- [x] Freeze the D1 candidate set, source-admission rule, and admission deadline.
+- [x] Freeze the candidate-neutral V3 reference transition and reduction
       comparison surfaces.
-- [ ] Freeze allowed exact/projected/tolerance semantics, added-state
+- [x] Freeze allowed exact/projected/tolerance semantics, added-state
       initialization requirements, serialization rules, and lifecycle scope.
-- [ ] Require each D1 candidate to construct `i_a`, `pi_a`, disabled-state
+- [x] Require each D1 candidate to construct `i_a`, `pi_a`, disabled-state
       initialization, and reduction obligations without a premature witness.
-- [ ] Freeze the design/verification topology envelope separately from the
+- [x] Freeze the design/verification topology envelope separately from the
       normative runtime capability scope.
-- [ ] Freeze topology transport/accounting, explicit capability disablement, or
+- [x] Freeze topology transport/accounting, explicit capability disablement, or
       event-boundary semantics.
-- [ ] Mark deferred full-runtime topology closure as `must_close_before_D10`.
-- [ ] Separate hard veto requirements from selection preferences.
-- [ ] Record all theory and substrate debts carried into D1.
-- [ ] Obtain human acceptance.
+- [x] Mark deferred full-runtime topology closure as `must_close_before_D10`.
+- [x] Separate hard veto requirements from selection preferences.
+- [x] Record all theory and substrate debts carried into D1.
+- [x] Freeze missing-relation statuses so source absence does not become theory
+      prohibition.
+- [x] Mark the candidate universe exhaustive only over named pre-D1 families.
+- [x] Freeze candidate-family overlap, reclassification, and material-hybrid
+      admission rules.
+- [x] Freeze the broad first-principles meaning of `source-backed`.
+- [x] Freeze source cutoff and distinct missed-source/new-theory reopening paths.
+- [x] Bind all 33 theory-drift rows to claim-level source anchors.
+- [x] Freeze the ten-entry symbol/typing ledger.
+- [x] Audit current GRC9V3 source against the reconciled V3 basis.
+- [x] Separate external complete-step parity from internal solver staging.
+- [x] Require an invariant disabled-profile V3 subspace and block hidden
+      disabled-history accumulation.
+- [x] Require a topology-scope label on every later result.
+- [x] Type hard vetoes by claim/candidate/gate/specification scope.
+- [x] Make preference-only status mechanically explicit.
+- [x] Freeze the D0 non-claim block.
+- [x] Keep B1/B2 failed mappings from becoming permanent V4 vetoes.
+- [x] Freeze separate evidence/design provenance labels.
+- [x] Preserve open alternatives in every typed debt.
+- [x] Freeze domain-specific authority conflict handling.
+- [x] Freeze the positive reopening payload for candidate-set exhaustion.
+- [x] Obtain human acceptance.
+
+### D0 Result
+
+- Structured record: [`decisions/D0TargetInheritanceAndClaimCeiling.json`](./decisions/D0TargetInheritanceAndClaimCeiling.json)
+- Interpretation: [`decisions/D0TargetInheritanceAndClaimCeiling.md`](./decisions/D0TargetInheritanceAndClaimCeiling.md)
+- Decision digest: `b38b07311afc24bfe1016d75e985f886718e5a9d104c69c59e29318801f457c0`
+- Source identities: 34 load-bearing files across two clean repositories.
+- Theory drift: all 33 B1 statement IDs unchanged because the two B1 theory
+  hashes exactly match the current core hashes; each row has a claim-level
+  anchor and no provenance promotion.
+- Current V3 audit: all five runtime modules exactly match the reconciled source
+  basis; no runtime drift or spec/runtime mismatch at the frozen source level.
+- Candidate set: four families frozen; D1 admission is not final selection.
+- Candidate universe: complete only over named pre-D1 families, with explicit
+  reclassification, source cutoff, and reopening rules.
+- Topology: fixed-topology smooth analysis envelope, full-capability successor
+  scope, explicit interspace transport/accounting debt before D10.
+- Reduction: repeated-step invariant legacy subspace, external clock parity,
+  and no hidden disabled-history accumulation; internal staging remains open.
+- Claim ceiling: D0 contract freeze only; D1 is open, while D2 and all
+  specification/runtime work remain blocked.
 
 ## D1. Retained-Representation Ontology And Candidate Admission
 
-Status: blocked on D0.
+Status: open; not yet executed.
 
 - [ ] Compare `V4-A-temporalized-W`.
 - [ ] Compare `V4-B-independent-derived-carrier`.

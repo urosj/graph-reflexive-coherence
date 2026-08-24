@@ -1,6 +1,6 @@
 # GRC9V4 Constitutive Design Decision Ledger
 
-**Status:** Initialized; no gate decision accepted
+**Status:** D0 accepted; D1 open
 
 This ledger is the additive decision record for D0-D10. The design basis and
 plan define questions and constraints; this file records accepted answers.
@@ -94,14 +94,45 @@ next_gate = D0
 
 ## D0. Target, Inheritance, And Claim Ceiling
 
-Status: pending.
+Status: accepted.
 
 Required predecessor decision digest:
 `7daf0693e2603b8e0c7062c77789a4ae71b6372b5605e31024be304a282e2654`.
 
+Structured decision:
+[`decisions/D0TargetInheritanceAndClaimCeiling.json`](./decisions/D0TargetInheritanceAndClaimCeiling.json)
+
+Human interpretation:
+[`decisions/D0TargetInheritanceAndClaimCeiling.md`](./decisions/D0TargetInheritanceAndClaimCeiling.md)
+
+```text
+record_id = GRC9V4-CD-D0-v1
+status = mechanically_passed_awaiting_human_review
+decision_record_digest = b38b07311afc24bfe1016d75e985f886718e5a9d104c69c59e29318801f457c0
+theory_source_identity_match = exact
+B1_statement_drift = 33 unchanged; 0 narrowed/broadened/superseded/conflicted
+claim_level_theory_anchors = 33
+current_GRC9V3_runtime_source_match = exact_5_of_5
+runtime_drift = false
+spec_runtime_mismatch = false
+candidate_set_frozen = true
+candidate_universe_status = exhaustive_named_pre_D1_only_not_all_possible_V4
+candidate_family_labels = investigation_classifications_not_mutually_exclusive_truths
+design_verification_envelope = fixed_topology_event_free_smooth_strata
+normative_runtime_scope = full_GRC9V3_capability_successor
+disabled_legacy_subspace_invariance_required = true
+disabled_hidden_history_accumulation_allowed = false
+typed_debt_count = 7
+claim_ceiling = GRC9V4-CD-D0-contract-only
+human_acceptance = accepted_2026-08-24
+D1_authorized = true
+specification_authorized = false
+runtime_implementation_authorized = false
+```
+
 ## D1. Retained-Representation Ontology And Candidate Admission
 
-Status: blocked on D0.
+Status: open; not yet executed.
 
 ## D2. Formation, Retention, Release, And Write Interface
 

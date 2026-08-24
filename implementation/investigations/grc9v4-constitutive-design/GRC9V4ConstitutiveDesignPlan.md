@@ -1,7 +1,7 @@
 # GRC9V4 Constitutive Design Investigation Plan
 
 **Date:** 2026-08-23  
-**Status:** Initialized; D0 not yet executed  
+**Status:** D0 accepted; D1 open
 **Design basis:** [`GRC9V4ConstitutiveDesignBasis.md`](./GRC9V4ConstitutiveDesignBasis.md)  
 **Checklist:** [`GRC9V4ConstitutiveDesignChecklist.md`](./GRC9V4ConstitutiveDesignChecklist.md)  
 **Decision ledger:** [`GRC9V4ConstitutiveDesignDecisionLedger.md`](./GRC9V4ConstitutiveDesignDecisionLedger.md)
@@ -135,6 +135,25 @@ Before D1, also freeze:
   added-state initialization, and reduction obligations without claiming a
   completed-transition witness before D7/D9; and
 - the hard-veto requirements separately from selection preferences.
+
+D0 also freezes closure guardrails. The named candidate universe is exhaustive
+only over the preregistered D1 families, not all possible V4 architectures.
+Candidate families are investigation classifications and may be reclassified
+without new admission only when their causal architecture is unchanged.
+Source absence is classified as contradiction, undefined relation,
+underdetermined completion, or new-theory requirement rather than treated as a
+blanket prohibition.
+
+The V3 reduction target must be audited against current runtime source, the
+reconciled normative specification, and the historical B1/B2 evidence
+revisions. Disabled-profile reduction requires an invariant legacy subspace
+over repeated steps, external complete-step clock parity, and no hidden history
+accumulation. It does not require identical internal solver staging.
+
+Every later result must declare whether it belongs to the fixed verification
+envelope, a fixed-topology normative subprofile, or a full-topology-capable V4.
+Vetoes must be typed as claim-scope or architecture/gate blocking, and evidence
+provenance must remain separate from constitutive design arguments.
 
 ## D1. Retained-Representation Ontology And Candidate Admission
 
