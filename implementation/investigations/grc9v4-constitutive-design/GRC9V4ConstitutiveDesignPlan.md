@@ -1,7 +1,7 @@
 # GRC9V4 Constitutive Design Investigation Plan
 
 **Date:** 2026-08-23  
-**Status:** D0 and D1 accepted; D2 open
+**Status:** D0-D2 accepted; D3 authorized
 **Design basis:** [`GRC9V4ConstitutiveDesignBasis.md`](./GRC9V4ConstitutiveDesignBasis.md)  
 **Checklist:** [`GRC9V4ConstitutiveDesignChecklist.md`](./GRC9V4ConstitutiveDesignChecklist.md)  
 **Decision ledger:** [`GRC9V4ConstitutiveDesignDecisionLedger.md`](./GRC9V4ConstitutiveDesignDecisionLedger.md)
@@ -241,6 +241,39 @@ For `V4-C-constitutive-C-sector`, require a recoverable factorization between
 ordinary `C` update, activity-induced retained-sector occupation/change, and
 the later retained-conditioned read effect. Generic `C` continuity is not
 retained write-back.
+
+Freeze initialization, `no_forming_or_write_input`, `write_off`,
+`retained_state_frozen`, and administrative reset as distinct interventions.
+Formation and post-input retention are separate causal arrows. Permit multiple
+explicit retention mechanisms, but reject small rates and hidden external
+maintenance as sufficient retention. Require some constitutive native release
+or reconfiguration route distinct from administrative reset. Require smooth
+fixed-topology release only when claimed; admit event-mediated release only
+after D4/D9 define its causal, accounting, interspace, and lifecycle contract.
+
+Classify every write input as `pre_solve`, `post_solve`, or
+`post_state_update`. Flag any prospective same-beat algebraic cycle for D6/D7.
+Freeze multiwrite composition, information-content, orientation-covariance, and
+serialized-RNG obligations without selecting the eventual numerical law. For
+order-sensitive composition, require deterministic recovery from declared
+current causal state, input batch, and constitutive ordering, or serialize any
+persistent order state.
+
+Candidate-specific pressure requirements are load-bearing:
+
+- A must separate instantaneous and retained write attribution, distinguish
+  retained `W` from its persistent effect on `C`, and classify clipping,
+  saturation, and normalization scope constitutively;
+- B must be Markov-closed on declared state, bound information capacity, reject
+  an EMA rate as sufficient structural justification, and prevent nonresource
+  `T` from restoring depleted physical `C`;
+- C must separate content change, projector motion, rank change, basis
+  transport, and sector exit/re-entry before formation, release, or transfer
+  labels are allowed.
+
+Record capacity and lifetime as independent axes. Transfer may remain out of
+scope for the initial profile, but copying, replication, resource transfer, and
+topology interspace transport may not be conflated.
 
 ## D3. Continuation Requirements And Structural Domain
 

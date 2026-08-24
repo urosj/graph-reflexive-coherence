@@ -1,7 +1,7 @@
 # GRC9V4 Constitutive Design Investigation Checklist
 
 **Date:** 2026-08-23  
-**Status:** D0 and D1 accepted; D2 open
+**Status:** D0-D2 accepted; D3 authorized
 **Plan:** [`GRC9V4ConstitutiveDesignPlan.md`](./GRC9V4ConstitutiveDesignPlan.md)  
 **Basis:** [`GRC9V4ConstitutiveDesignBasis.md`](./GRC9V4ConstitutiveDesignBasis.md)  
 **Ledger:** [`GRC9V4ConstitutiveDesignDecisionLedger.md`](./GRC9V4ConstitutiveDesignDecisionLedger.md)
@@ -188,27 +188,73 @@ human_acceptance = accepted_bounded_2026-08-24
 
 ## D2. Formation, Retention, Release, And Write Interface
 
-Status: open; not yet executed.
+Status: accepted bounded.
 
-- [ ] Define formation.
-- [ ] Define post-input retention.
-- [ ] Define release/reconfiguration.
-- [ ] Define transfer, if in scope.
-- [ ] Define write ownership, admissible write inputs, and update-order bounds.
-- [ ] Name and define `no_forming_or_write_input` retention/release behavior.
-- [ ] Define conservation and budget treatment for every accounting type.
-- [ ] Block hidden resource duplication or an unbounded second reservoir.
-- [ ] Reject recomputed proxies without historical causal content,
+- [x] Define formation.
+- [x] Define post-input retention.
+- [x] Define release/reconfiguration.
+- [x] Define transfer, if in scope.
+- [x] Define write ownership, admissible write inputs, and update-order bounds.
+- [x] Name and define `no_forming_or_write_input` retention/release behavior.
+- [x] Define conservation and budget treatment for every accounting type.
+- [x] Block hidden resource duplication or an unbounded second reservoir.
+- [x] Reject recomputed proxies without historical causal content,
       indefinite accumulators, and trivial slow-cache substitutes.
-- [ ] Permit a `C`-derived retained sector only if it is historically formed and
+- [x] Permit a `C`-derived retained sector only if it is historically formed and
       later constitutively load-bearing.
-- [ ] For the constitutive `C` sector, distinguish ordinary `C` update,
+- [x] For the constitutive `C` sector, distinguish ordinary `C` update,
       retained-sector occupation/change, and later retained-conditioned read.
-- [ ] Obtain human acceptance.
+- [x] Freeze one authoritative write or explicit no-write per candidate per beat.
+- [x] Block same-beat consumption of the newly written representation absent a
+      D6 implicit-closure decision.
+- [x] Freeze candidate-local capacity, pruning, release, and reset ownership.
+- [x] Carry D1 transport roles as provisional signatures pending D4.
+- [x] Separate initialization, no-forming-input, write-off, frozen-state, and
+      administrative-reset interventions.
+- [x] Separate formation from post-input retention and block hidden external
+      maintenance.
+- [x] Permit explicit retention classes without accepting a small rate as
+      structural retention.
+- [x] Require a constitutive native release/reconfiguration route distinct from
+      reset; require smooth release only if claimed and route event-mediated
+      release contracts to D4/D9.
+- [x] Classify write inputs as pre-solve, post-solve, or post-state-update and
+      route prospective same-beat cycles to D6/D7.
+- [x] Freeze simultaneous-write composition, information-content,
+      orientation-covariance, and RNG-state obligations.
+- [x] Freeze Candidate A double-write, clipping/saturation, effect-persistence,
+      and normalization-scope audits.
+- [x] Freeze Candidate B EMA, Markov-closure, bounded-capacity, and
+      resource-regeneration audits.
+- [x] Freeze Candidate C content/projector, rank, basis, and sector
+      exit/re-entry audits.
+- [x] Separate capacity from lifetime and transfer from replication.
+- [x] Classify all 30 independent D2 pressure points.
+- [x] Freeze the 33-control future transition matrix.
+- [x] Obtain human acceptance.
+
+Current D2 result:
+
+```text
+record_id = GRC9V4-CD-D2-v1
+decision_record_digest = ea2b953685bb23dfe979b2f5d2ae0f22f364a51484d6536c1721f144c9cad740
+candidate_set_after_D2 = [V4-A-temporalized-W, V4-B-independent-derived-carrier, V4-C-constitutive-C-sector]
+rejected_on_D2_interface = []
+reclassified_or_revision_needed = []
+control_contract_rows = 33
+D2_pressure_audit_rows = 30
+predecessor_debt_rows_classified = 9
+open_debt_rows = 15
+must_close_before_D10_debt_rows = 14
+same_beat_new_state_read_allowed = false
+architecture_selected = false
+D3_authorized = true
+human_acceptance = accepted_bounded_2026-08-24
+```
 
 ## D3. Continuation Requirements And Structural Domain
 
-Status: blocked on D2.
+Status: authorized; not started.
 
 - [ ] Define formed state and formed branch.
 - [ ] Define reference branch and transport.
@@ -370,8 +416,9 @@ missing-discriminator terminal route.
 branch = investigation-GRC9V4-constitutive-design
 D0 = accepted
 D1 = accepted_bounded
-D2 = open_not_yet_executed
-D3-D10 = blocked_on_predecessor
+D2 = accepted_bounded
+D3 = authorized_not_started
+D4-D10 = blocked_on_predecessor
 D10_early_terminal_route = available_for_rejected_all_missing_theory_or_missing_discriminator
 architecture_selected = false
 specification_authorized = false

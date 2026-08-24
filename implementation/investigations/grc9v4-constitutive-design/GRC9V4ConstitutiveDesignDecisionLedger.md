@@ -1,6 +1,6 @@
 # GRC9V4 Constitutive Design Decision Ledger
 
-**Status:** D0 and D1 accepted; D2 open
+**Status:** D0-D2 accepted; D3 authorized
 
 This ledger is the additive decision record for D0-D10. The design basis and
 plan define questions and constraints; this file records accepted answers.
@@ -107,7 +107,7 @@ Human interpretation:
 
 ```text
 record_id = GRC9V4-CD-D0-v1
-status = mechanically_passed_awaiting_human_review
+status = accepted
 decision_record_digest = b38b07311afc24bfe1016d75e985f886718e5a9d104c69c59e29318801f457c0
 theory_source_identity_match = exact
 B1_statement_drift = 33 unchanged; 0 narrowed/broadened/superseded/conflicted
@@ -165,11 +165,38 @@ capability scope.
 
 ## D2. Formation, Retention, Release, And Write Interface
 
-Status: open; not yet executed.
+```text
+record_id = GRC9V4-CD-D2-v1
+status = accepted_bounded
+predecessor_decision_digest = f8ae101beb9fa6e9827555eba64452087c1d19b6933325966f10c4c4ec64c507
+decision_record_digest = ea2b953685bb23dfe979b2f5d2ae0f22f364a51484d6536c1721f144c9cad740
+candidate_set_after_D2 = [V4-A-temporalized-W, V4-B-independent-derived-carrier, V4-C-constitutive-C-sector]
+rejected_on_D2_interface = []
+same_beat_new_state_read_allowed = false
+control_contract_rows = 33
+D2_pressure_audit_rows = 30
+open_debt_rows = 15
+must_close_before_D10_debt_rows = 14
+claim_ceiling = GRC9V4-CD-D2-bounded-write-interface
+D3_authorized = true
+human_acceptance = accepted_bounded_2026-08-24
+specification_authorized = false
+runtime_implementation_authorized = false
+```
+
+D2 freezes one-beat-delayed candidate write interfaces; distinct initialization,
+no-forming-input, write-off, frozen-state, and reset controls; bounded native
+release/reconfiguration; and resource/capacity/lifetime boundaries. The
+33-control contract and 30-row pressure audit cover A double-write and
+normalization, B cache/Markov/resource-regeneration, C projector/rank/sector
+identity, and cross-candidate multiwrite/covariance/RNG risks. A writes
+authoritative enabled `W`; B writes independent `T`; C writes only through
+authoritative `C` and derives its sector. Exact operators, D4 transport
+ownership, runtime effects, and reduction remain open.
 
 ## D3. Continuation Requirements And Structural Domain
 
-Status: blocked on D2.
+Status: authorized; not started.
 
 ## D4. Geometry, Mobility, And Topology Ownership
 

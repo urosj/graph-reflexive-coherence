@@ -33,13 +33,16 @@ Start with:
 - [D0 interpretation](./decisions/D0TargetInheritanceAndClaimCeiling.md).
 - [D1 structured decision](./decisions/D1RetainedRepresentationOntologyAndCandidateAdmission.json);
 - [D1 interpretation](./decisions/D1RetainedRepresentationOntologyAndCandidateAdmission.md).
+- [D2 structured decision](./decisions/D2FormationRetentionReleaseAndWriteInterface.json);
+- [D2 interpretation](./decisions/D2FormationRetentionReleaseAndWriteInterface.md).
 
 Current gate status:
 
 ```text
 D0 = accepted
 D1 = accepted_bounded
-D2 = open_not_yet_executed
+D2 = accepted_bounded
+D3 = authorized_not_started
 ```
 
 Hard boundary:
