@@ -1,7 +1,7 @@
 # GRC9V4 Constitutive Design Investigation Checklist
 
 **Date:** 2026-08-23  
-**Status:** D0-D4 accepted bounded; D5 authorized and not started
+**Status:** D0-D5 accepted bounded; D6 authorized
 **Plan:** [`GRC9V4ConstitutiveDesignPlan.md`](./GRC9V4ConstitutiveDesignPlan.md)  
 **Basis:** [`GRC9V4ConstitutiveDesignBasis.md`](./GRC9V4ConstitutiveDesignBasis.md)  
 **Ledger:** [`GRC9V4ConstitutiveDesignDecisionLedger.md`](./GRC9V4ConstitutiveDesignDecisionLedger.md)
@@ -449,30 +449,115 @@ invented equations or whole-candidate rejection.
 
 ## D5. Directional Read-Back
 
-Status: authorized by accepted D4; not started.
+Status: accepted bounded.
 
-- [ ] Define typed graph map into oriented edge cochains.
-- [ ] Produce the actual candidate-specific Read-Back operator family or route
+- [x] Define typed graph map into oriented edge cochains.
+- [x] Produce the actual candidate-specific Read-Back operator family or route
       a named missing derivation; requirements alone do not close D5.
-- [ ] Record operator equation/signature, domain, codomain, typed inputs, and
+- [x] Record operator equation/signature, domain, codomain, typed inputs, and
       output cochain for every surviving candidate.
-- [ ] Freeze the present-current convention.
-- [ ] Require passive null.
-- [ ] Require edge-coordinate orientation-relabel covariance.
-- [ ] Define physical present-current reversal response separately.
-- [ ] Define retained-representation orientation/chirality content.
-- [ ] Separate `J0`, `j`, and total `J_C`.
-- [ ] Name and define the `zero_present_current` passive-null control.
-- [ ] Separate direct retained-conditioned `J0` from `(T_M,J_C) -> j` Read-Back.
-- [ ] Audit path overlap/double counting and preserve direct `J0` under read-off
+- [x] Widen the common signature with declared nonretained current-step
+      `X_read` context and block hidden historical state in that context.
+- [x] Separate `typed_operator_family` from `retained_mediation_closed`.
+- [x] Propagate `X_read` into the D6 recurrence and freeze it at the declared
+      pre-read stage during the solve.
+- [x] Freeze an unsolved `J_trial` present-current convention and prevent D5
+      from silently solving the D6 total-current recurrence.
+- [x] Require passive null.
+- [x] Separate operator passive null from zero `J0`, energetic passivity, and
+      full-loop equilibrium or stability.
+- [x] Require edge-coordinate orientation-relabel covariance.
+- [x] Require arbitrary edge-subset reorientation and node-permutation / graph-
+      isomorphism covariance.
+- [x] Define physical present-current reversal response separately.
+- [x] Separate storage reorientation, present-current reversal, reversed forming
+      history, and simultaneous retained/current reversal.
+- [x] Define retained-representation orientation/chirality content.
+- [x] Classify edge-local, cross-edge, cut/cycle/harmonic, and chiral scope per
+      candidate.
+- [x] Separate `J0`, `j`, and total `J_C`.
+- [x] Name and define the `zero_present_current` passive-null control.
+- [x] Separate direct retained-conditioned `J0` from `(T_M,J_trial) -> j` D5
+      Read-Back design.
+- [x] Audit path overlap/double counting and preserve direct `J0` under read-off
       where structurally possible.
-- [ ] Define retained-state and rival-carrier controls.
-- [ ] Block scalar, label, score, and projector relabels.
-- [ ] Obtain human acceptance.
+- [x] Freeze the `J0`/`j` decomposition gauge and the `zeta`/`j` scale gauge
+      without claiming physical channel identifiability.
+- [x] Separate read-off, carrier-neutral, and frozen-carrier controls.
+- [x] Label algebraic/off-manifold counterfactuals separately from runtime-
+      reachable evidence and freeze lawful candidate-specific interventions.
+- [x] Freeze live-edge support, zero-mobility debt, locality, disconnected-
+      component behavior, divergence, boundary, and cut/cycle accounting.
+- [x] Define retained-state and rival-carrier controls.
+- [x] Block scalar, label, score, and projector relabels.
+- [x] Freeze A's bounded normalized edge-contrast operator without redefining
+      D2 `R_W` or claiming historical chirality.
+- [x] Route B to a named typed-operator derivation rather than multiplying an
+      untyped `T_B` by current.
+- [x] Freeze C's graph Hodge-resolvent family on regular `h_M` one-form space
+      without closing `H_M` or claiming temporal persistence.
+- [x] Classify all 68 D5 pressure points and freeze 57 fail-closed controls.
+- [x] Split pre-D10 factorization and rival-control availability from post-spec
+      physical-identification and empirical-attribution debts.
+- [x] Mark the excluded C dynamic sector dormant unless later admitted.
+- [x] Classify all 23 predecessor D4 debts without silent disappearance.
+- [x] Preserve routed Candidate B in the post-D5 architecture candidate set
+      while excluding it from the D6-eligible set.
+- [x] Carry the C selector/geometry fixed-point debt independently from lawful
+      counterfactual evidence.
+- [x] Split pre-D10 Hodge construction closure from post-D10 normative encoding.
+- [x] Record C's resolvent as a D5 isotropic specialization of the core
+      Hodge-response candidate class, not a unique core law.
+- [x] Obtain human acceptance.
+
+Current D5 result:
+
+```text
+record_id = GRC9V4-CD-D5-v1
+status = accepted_bounded
+predecessor_decision_digest = c3c4507d4623ee526e636c4434bc13b4af23bdd3f6051cf1db99a2ce5736215c
+decision_record_digest = 453416f42beefa1c9e725b675a0af7d4fd49c3e83691ee16e3e3bcfb6d37f213
+operator_family_count = 2
+operator_channel_definition_count = 2
+physically_identified_Read_Back_channel_count = 0
+D6_eligible_candidates = [V4-A-temporalized-W, V4-C-constitutive-C-sector]
+candidate_set_after_D5 = [V4-A-temporalized-W, V4-B-independent-derived-carrier, V4-C-constitutive-C-sector]
+D6_eligible_candidate_set = [V4-A-temporalized-W, V4-C-constitutive-C-sector]
+routed_candidate_set = [V4-B-independent-derived-carrier]
+routed_not_rejected = [V4-B-independent-derived-carrier]
+named_D5_route = GRC9V4-D5-B-TYPED-READBACK-DERIVATION
+control_contract_rows = 57
+D5_pressure_audit_rows = 68
+open_debt_rows = 27
+predecessor_debt_disposition_rows = 23
+source_identity_rows = 10
+architecture_selected = false
+candidate_ranking_performed = false
+claim_ceiling = GRC9V4-CD-D5-bounded-candidate-Read-Back-operator-families-with-physical-identifiability-open
+D6_authorized = true
+human_acceptance = accepted_bounded_2026-08-24
+specification_authorized = false
+runtime_implementation_authorized = false
+```
+
+D5 admits an explicit bounded A edge-contrast response and a bounded C
+retained-geometry Hodge-resolvent family under the widened
+`R(T,h,X_read;J_trial)` signature. A is an explicit V4 extension with an
+operator-level retained intervention, not a core retained-geometry derivation,
+and its physical distinction from mobility remains open. C is a typed family
+conditional on `h_M`; retained mediation remains open until `H_M` is derived.
+B cannot type an operator and is routed rather than rejected. Read-off preserves
+each admitted candidate's direct `J0` path while disabling only explicit `j`;
+D6 owns the total-current solve, support policy, physical gain, and
+overlap/identifiability audit. The 27 D5 debts separate pre-spec design closure
+from post-spec causal verification, while the 23-row predecessor disposition
+prevents inherited debt from disappearing. B remains in the architecture
+candidate set while routed out of D6. C's fixed-point obligation remains open,
+and D8 Hodge construction closure is separate from later normative encoding.
 
 ## D6. Total-Current Closure
 
-Status: blocked on D5.
+Status: authorized; not started.
 
 - [ ] Define algebraic current closure and solve order.
 - [ ] Write the selected algebraic closure equation or temporal current law for
@@ -585,7 +670,7 @@ D1 = accepted_bounded
 D2 = accepted_bounded
 D3 = accepted_bounded
 D4 = accepted_bounded
-D5 = authorized_not_started
+D5 = accepted_bounded
 D6-D10 = blocked_on_predecessor
 D10_early_terminal_route = available_for_rejected_all_missing_theory_or_missing_discriminator
 architecture_selected = false

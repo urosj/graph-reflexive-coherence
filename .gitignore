@@ -38,3 +38,4 @@ dist/
 
 # Local tool state
 .codex/
+.continue/

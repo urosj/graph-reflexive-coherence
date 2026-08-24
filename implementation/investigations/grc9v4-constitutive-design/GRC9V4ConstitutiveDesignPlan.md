@@ -1,7 +1,7 @@
 # GRC9V4 Constitutive Design Investigation Plan
 
 **Date:** 2026-08-23  
-**Status:** D0-D4 accepted bounded; D5 authorized and not started
+**Status:** D0-D5 accepted bounded; D6 authorized
 **Design basis:** [`GRC9V4ConstitutiveDesignBasis.md`](./GRC9V4ConstitutiveDesignBasis.md)  
 **Checklist:** [`GRC9V4ConstitutiveDesignChecklist.md`](./GRC9V4ConstitutiveDesignChecklist.md)  
 **Decision ledger:** [`GRC9V4ConstitutiveDesignDecisionLedger.md`](./GRC9V4ConstitutiveDesignDecisionLedger.md)
@@ -491,9 +491,13 @@ write/read and event accounting.
 ## D5. Directional Read-Back
 
 Produce the actual candidate-specific graph-native retained-conditioned
-operator family, or route the candidate to a named missing derivation. Record
-its equation/signature, domain, codomain, typed inputs, output cochain, and
-composition with present current. The operator must expose the passive null,
+operator family, or route the candidate to a named missing derivation. Use the
+widened signature `R_a(T_a,h_a,X_read_a,k;J_trial)`, where `X_read` is declared
+nonretained current-step context and may not hide prior history. Record its
+equation/signature, domain, codomain, typed inputs, output cochain, and
+composition with an unsolved present trial current in the later total-current
+space. D5 must not silently solve D6 by treating the trial argument as an
+already self-consistent `J_C`. The operator must expose the passive null,
 edge-coordinate orientation covariance, physical present-current reversal
 response, retained-representation orientation/chirality content,
 present-current convention, retained-state counterfactual, rival-carrier
@@ -506,11 +510,79 @@ change. Restating the inherited requirements without an operator family or
 named derivation does not close D5.
 
 Name the passive-null control `zero_present_current`. Separately record the
-direct `T_M -> h/W/mobility -> J0` path, the `(T_M,J_C) -> j` Read-Back path,
+direct `T_M -> h/W/mobility -> J0` path, the `(T_M,J_trial) -> j` D5 path,
 and any overlap/double-count risk. Where structurally possible, read-off must
 disable `j` while preserving the direct retained-conditioned `J0` path.
 
 Separate `J0`, `j`, and total `J_C`. Reject scalar/label/proxy relabels.
+
+The hardening audit further requires graph-isomorphism covariance, arbitrary
+edge-subset reorientation, four distinct reversal cases, candidate-specific
+directionality class, decomposition and gain gauges, and separate read-off,
+carrier-neutral, and frozen-carrier controls. Every counterfactual must be
+labelled algebraic/off-manifold or runtime-reachable. Freeze live-edge support,
+exact-zero mobility debt, locality, disconnected-component behavior,
+divergence/boundary accounting, and cut/cycle/harmonic scope. Passive null is
+not energetic passivity or full-loop stability. A typed operator family is
+distinct from closed retained mediation. The former requires a lawful typed map
+and controls; the latter additionally requires an admitted retained-state-to-
+conditioning path and counterfactual. Neither is yet a physically identified
+channel when its effect may be absorbed into the retained-conditioned baseline
+path.
+
+Current D5 execution produces two bounded operator families and one named
+derivation route:
+
+```text
+A:
+  q_A = (W_A - W_hat) / (W_A + W_hat)
+  j_A = chi_A Diag(q_A) J_trial
+  status = explicit V4 extension family; not inherited core Read-Back
+
+B:
+  status = routed to GRC9V4-D5-B-TYPED-READBACK-DERIVATION
+  reason = T_B and G_B do not yet type a one-cochain response
+
+C:
+  Delta1_M = B^T H0^-1 B H1
+  j_C^M = chi_C (I + tau_C Delta1_M)^-1 J_trial^M
+  status = explicit isotropic resolvent specialization of the core candidate
+           Hodge-response class, parameterized by h_M
+```
+
+The A contrast is dimensionless, bounded, invariant under stored-edge
+orientation reversal, and distinct from D2's `R_W`. It does not make `W_A`
+retained geometry or historical chirality. C's graph Hodge resolvent is a
+positive contraction on a regular fixed-topology, fixed-rank retained-geometry
+one-form space. Its larger response on low or harmonic Hodge modes is a read
+gain, not temporal persistence.
+
+For both admitted families, `zero_present_current` enforces the passive null.
+Physical current reversal is separate from edge-coordinate reorientation.
+Read-off sets only the candidate read gate `chi_a = 0`, preserving A's direct
+`W_A -> J0` path or C's conditional direct `h_M -> J0` path. D6 must include
+both direct and explicit read paths in the full effective loop and reject
+unattributed double counting.
+
+Candidate C remains blocked from final architecture status by the named `H_M`
+derivation, metric-identification, and lawful `T_C`-mediation debts. The current
+C operator consumes `h_M`; it has no direct `T_C` consumer, and a fixed-`h_M`
+`T_C` swap must be a negative control. Candidate B remains routed rather than
+rejected. A's explicit channel remains physically unidentifiable from mobility
+until D6 and later interventions close the decomposition debt. D5 therefore
+defines two operator channels but identifies zero physical Read-Back channels.
+The equations are constitutive design outputs, not runtime implementation or
+positive runtime evidence. During D6, `X_read_a,k` remains frozen at its
+D5-declared pre-read stage while solving the total-current recurrence; it may
+not be silently recomputed from the unknown `J_C`. D5 must also classify every
+predecessor debt and
+separate pre-D10 factorization/control-availability obligations from post-spec
+physical-identification and empirical rival-attribution work. Optional sectors
+excluded from an initial profile remain dormant rather than blocking that
+profile unconditionally. D8 must freeze C's Hodge-star construction, boundary
+convention, and discretization semantics before D10; later normative encoding
+is not itself a D10 blocker. A routed candidate remains in the architecture
+candidate set unless explicitly rejected.
 
 ## D6. Total-Current Closure
 

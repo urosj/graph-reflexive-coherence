@@ -47,6 +47,8 @@ Start with:
 - [D3 interpretation](./decisions/D3ContinuationRequirementsAndStructuralDomain.md).
 - [D4 structured decision](./decisions/D4GeometryMobilityAndTopologyOwnership.json);
 - [D4 interpretation](./decisions/D4GeometryMobilityAndTopologyOwnership.md).
+- [D5 structured decision](./decisions/D5DirectionalReadBack.json);
+- [D5 interpretation](./decisions/D5DirectionalReadBack.md).
 
 Current gate status:
 
@@ -56,8 +58,18 @@ D1 = accepted_bounded
 D2 = accepted_bounded
 D3 = accepted_bounded
 D4 = accepted_bounded
-D5 = authorized_not_started
+D5 = accepted_bounded
+D6 = authorized_not_started
 ```
+
+D5 currently defines two bounded candidate operator channels (A and C), routes
+B to a named derivation, and physically identifies zero channels. Its 68-point
+hardening audit keeps trial current distinct from the D6 total-current solve and
+keeps A/mobility attribution plus C/`T_C` mediation explicitly open. Typed
+operator-family admission is separate from closed retained mediation, all D4
+debts have explicit successor dispositions, and pre-spec design obligations are
+separated from post-spec causal verification. B remains an architecture
+candidate while routed out of D6; it has not been eliminated.
 
 Hard boundary:
 

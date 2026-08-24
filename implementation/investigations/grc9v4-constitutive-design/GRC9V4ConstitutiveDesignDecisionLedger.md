@@ -1,6 +1,6 @@
 # GRC9V4 Constitutive Design Decision Ledger
 
-**Status:** D0-D4 accepted bounded; D5 authorized and not started
+**Status:** D0-D5 accepted bounded; D6 authorized
 
 This ledger is the additive decision record for D0-D10. The design basis and
 plan define questions and constraints; this file records accepted answers.
@@ -298,11 +298,58 @@ claim is demoted without rejecting its retained-mobility architecture.
 
 ## D5. Directional Read-Back
 
-Status: authorized by accepted D4; not started.
+```text
+record_id = GRC9V4-CD-D5-v1
+status = accepted_bounded
+predecessor_decision_digest = c3c4507d4623ee526e636c4434bc13b4af23bdd3f6051cf1db99a2ce5736215c
+decision_record_digest = 453416f42beefa1c9e725b675a0af7d4fd49c3e83691ee16e3e3bcfb6d37f213
+operator_family_count = 2
+operator_channel_definition_count = 2
+physically_identified_Read_Back_channel_count = 0
+D6_eligible_candidates = [V4-A-temporalized-W, V4-C-constitutive-C-sector]
+candidate_set_after_D5 = [V4-A-temporalized-W, V4-B-independent-derived-carrier, V4-C-constitutive-C-sector]
+D6_eligible_candidate_set = [V4-A-temporalized-W, V4-C-constitutive-C-sector]
+routed_candidate_set = [V4-B-independent-derived-carrier]
+routed_not_rejected = [V4-B-independent-derived-carrier]
+control_contract_rows = 57
+D5_pressure_audit_rows = 68
+open_debt_rows = 27
+predecessor_debt_disposition_rows = 23
+candidate_ranking_performed = false
+architecture_selected = false
+D6_authorized = true
+human_acceptance = accepted_bounded_2026-08-24
+```
+
+D5 assigns Candidate A the bounded explicit V4 edge-contrast family
+`j_A = Diag((W_A-W_hat)/(W_A+W_hat)) J_trial`. It is not inherited core
+retained-geometry Read-Back and does not redefine D2 `R_W`. Candidate C receives
+an explicit isotropic graph-resolvent specialization of the core Hodge-response
+candidate class,
+`j_C^M = (I + tau_C Delta1_M)^-1 J_trial^M`, parameterized by regular `h_M`; the
+exact `H_M` closure remains open. Candidate B remains unrejected but is routed
+to `GRC9V4-D5-B-TYPED-READBACK-DERIVATION` because its carrier and geometry map
+cannot yet type a one-cochain operator.
+
+Both admitted families obey the operator passive null, graph-isomorphism and
+orientation covariance, candidate-specific reversal rules, support/accounting
+contracts, and read-off that preserves direct retained-conditioned `J0`. They
+define candidate channels but physically identify none: A may remain absorbable
+into mobility, while C has no direct `T_C` consumer until `H_M` is derived. D6
+owns total-current closure, gain, support, regularity, and the full direct/read
+overlap and identifiability audit. No operator has been implemented or run.
+The generic signature includes declared nonretained `X_read` context, and typed
+operator-family admission is separate from closed retained mediation. All 23 D4
+debts have explicit D5 dispositions. Pre-D10 factorization and rival-control
+availability are separated from post-spec physical identification and empirical
+attribution; the excluded C dynamic sector is dormant unless later admitted.
+B remains in the post-D5 architecture candidate set while routed out of D6.
+The C selector/geometry fixed-point debt remains independently open, and Hodge
+construction closure at D8 is separated from post-D10 normative encoding.
 
 ## D6. Total-Current Closure
 
-Status: blocked on D5.
+Status: authorized; not started.
 
 ## D7. Closed Write/Read Loop
 
