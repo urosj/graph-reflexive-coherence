@@ -65,7 +65,12 @@ D4 = accepted_bounded
 D5 = accepted_bounded
 D6 = accepted_bounded
 D7 = accepted_bounded
-D8 = authorization_deferred_pending_separate_human_direction
+D4-v2 = planned_not_started
+D5-v2 = blocked_on_D4-v2
+D6-v2 = blocked_on_D5-v2
+D7-v2 = blocked_on_D6-v2
+D7G = blocked_on_D7-v2
+D8 = blocked_on_D7G_or_terminal_route
 ```
 
 D5 currently defines two bounded candidate operator channels (A and C), routes
@@ -89,8 +94,7 @@ shared current/geometry gain, and mathematical absorbability from those later
 claims. Postsolve `J_C` is D7's authoritative causal current; diagnostic `j`
 cannot bypass it as a direct write input. Transitive debt persistence keeps 20
 older unresolved IDs, including 16 pre-D10 blockers, visible beside the 25
-current debts. D6 was accepted bounded on 2026-08-24; D7 has now been executed
-and awaits human review.
+current debts. D6 was accepted bounded on 2026-08-24; D7 is accepted bounded.
 
 D7 now defines one complete Candidate A fixed-stratum kinetic reduced
 transition. Authoritative `W_A` drives the graph baseline, the accepted D5/D6
@@ -102,11 +106,21 @@ load-bearing on its declared nondegenerate domain; exact physical
 nonabsorbability remains open.
 It does not close the normative structural path: `K_4 -> H_4 -> h_4` remains
 underdefined, so structural cultivation and a complete GRC9V4 architecture are
-still unsupported. B and C remain routed, not rejected. D7 is accepted bounded;
-D8 remains unauthorized pending a separate human direction, with eligible
-scope limited to A's concrete reduced transition and its explicit structural
-boundary. The original 72-row pressure audit and an additional 96-row
-adversarial audit preserve these distinctions item by item.
+still unsupported. B and C remain routed, not rejected. A's earlier completion
+does not select or prefer it over B or C. Before D8, an append-only
+D4-v2-D7-v2 tranche will complete or close B geometry/operator/writer and C
+retained-geometry pathways, then D7G will address the global `H_4` structural
+closure over the completed A/B/C candidate-local set. D4-v2 first freezes the
+common payload boundary `S_4^a -> iota_a -> K_4^a`, so candidate-local `h_B`
+or `h_M` cannot silently become rival owners of physical `h_4`. This prevents
+the global law from being shaped around A merely because A became concrete
+first. The adapter must preserve at least one lawful candidate-specific
+retained distinction rather than merely type-checking. D4-v2 also freezes the
+provisional current-space identifications needed to type B/C before global
+`h_4`; C's `I_4M^pre` remains candidate-local and must be validated or replaced
+by D7G. The
+original 72-row pressure audit and an additional 96-row adversarial audit
+preserve the D7 distinctions item by item.
 The explicit `J_C squared` writer term is sign-even, but full physical history
 reversal may change continuity-mediated `C[k+1]` and therefore the complete A
 writer; scalar state is not relabeled as signed cochain memory. D7 also freezes
@@ -118,6 +132,25 @@ The later specification and implementation must also rebuild every
 differential or gradient summary used by `G_W(C[k+1], J_C[k])` from
 post-continuity `C[k+1]`; pre-continuity cache reuse is outside the accepted
 writer contract.
+
+By D7-v2, each A/B/C row must either expose a complete candidate-local
+transition admissible to D7G or close for this tranche with a localized
+missing-theory, missing-derivation, or target-incompatibility result.
+`routed_not_rejected` is not a terminal v2 status, and reopening is paused
+control flow rather than scientific closure. D7G is a distinct integration
+gate that extends D7-v2 and supersedes nothing. It derives or closes
+`K_4^a -> H_4 -> h_4`, emits a structural-propagation receipt, and reopens the
+earliest affected gate if global `h_4` changes an upstream causal object. Only
+after that propagation closes can it determine D8 comparability. A sole
+surviving candidate remains unselected until D10 evaluates the frozen target
+and all veto debts.
+
+The documented successor lineage is the default no-reopening path. Any earlier
+gate change gives the resumed successor a new identity whose predecessor is the
+latest accepted record in the propagated chain. Unresolved debt follows that
+chronological predecessor, not merely the older gate being superseded. Zero
+survivors map to `rejected_all_candidates`/current-candidate-set exhaustion;
+one common theory blocker may instead map to `blocked_missing_theory`.
 
 Hard boundary:
 

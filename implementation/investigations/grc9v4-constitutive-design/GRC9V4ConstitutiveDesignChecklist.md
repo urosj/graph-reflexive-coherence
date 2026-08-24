@@ -1,7 +1,7 @@
 # GRC9V4 Constitutive Design Investigation Checklist
 
 **Date:** 2026-08-23  
-**Status:** D0-D7 accepted bounded; D8 authorization deferred
+**Status:** D0-D7 accepted bounded; D4-v2-D7G candidate-completion and structural-closure tranche planned; D8 blocked
 **Plan:** [`GRC9V4ConstitutiveDesignPlan.md`](./GRC9V4ConstitutiveDesignPlan.md)  
 **Basis:** [`GRC9V4ConstitutiveDesignBasis.md`](./GRC9V4ConstitutiveDesignBasis.md)  
 **Ledger:** [`GRC9V4ConstitutiveDesignDecisionLedger.md`](./GRC9V4ConstitutiveDesignDecisionLedger.md)
@@ -27,6 +27,13 @@
       forbidden downstream assumption, resolution gate, and D10 obligation.
 - [x] Permit rejected-all, missing-theory, or missing-discriminator results to
       route to bounded D10 closeout without executing irrelevant gates.
+- [x] Insert an append-only D4-v2-D7G candidate-completion and
+      structural-closure tranche before D8.
+- [x] Block A's earlier completeness or implementation fit from becoming
+      candidate preference or selection evidence.
+- [x] Require reopening from the earliest accepted gate whose decision changes.
+- [x] Require B and C to receive their named derivation attempts before
+      comparative D8, without requiring either candidate to survive.
 
 ## D0. Target, Inheritance, And Claim Ceiling
 
@@ -770,11 +777,214 @@ stability remains blocked on `H_4`. The 16 current debts participate in a
 three-way D10 union with unresolved immediate and transitive predecessors;
 pre-D10 technical results must exist before D10 consumes them.
 
+## D4-v2-D7G. Candidate Completion And Structural-Closure Successor Tranche
+
+Status: planned; not started. Accepted D4-D7 records remain immutable.
+
+Common successor rules:
+
+- [ ] Bind every v2 record to the exact accepted predecessor digest and name
+      the changed decision scope.
+- [ ] Enforce the default lineage table when no earlier gate reopens: D4-v2
+      follows accepted D7-v1 and supersedes D4-v1; D5-v2 through D7-v2 form
+      one chronological chain and supersede their matching v1 gates; D7G
+      extends D7-v2 and supersedes nothing.
+- [ ] When reopening changes an earlier accepted gate, give the resumed
+      successor a new record/version identity and bind it to the latest
+      accepted record in the fully propagated serial chain.
+- [ ] Bind the tranche to current core theory, the constitutive design basis,
+      and accepted D0-D7 records; keep B1/B2 and GRC9V3 as historical evidence
+      and compatibility boundaries rather than V4 constitutive authority.
+- [ ] Carry every unaffected accepted contract and unresolved debt forward.
+- [ ] Derive successor debt from the complete unresolved union of the
+      chronological predecessor; use superseded-gate debt only as a
+      provenance/disposition source.
+- [ ] Keep Candidate B and Candidate C completion rows separately attributable
+      through D7-v2, then evaluate global `H_4` in D7G over the completed
+      candidate-local set.
+- [ ] Apply the same hard vetoes, provenance rules, and claim ceiling to all
+      candidates.
+- [ ] Block A's current completeness, code proximity, or lower implementation
+      cost from candidate ranking.
+- [ ] Reopen D1 only if retained ontology changes, D2 only if resource/write
+      admission changes, and D3 only if structural tangent authority changes.
+- [ ] Permit `routed_not_rejected` only as an intermediate D4-v2-D6-v2 status.
+- [ ] Require every lane to reach a terminal D7-v2 completion/closure status.
+- [ ] Treat `reopen_at_named_earlier_gate` as pausing control flow, not a
+      terminal scientific disposition or admission to the next gate.
+- [ ] Preserve a named future route for any current-tranche closure without
+      relabeling it as global impossibility.
+- [ ] Set `rejected_all_candidates` plus
+      `current_candidate_set_exhausted = true` when candidate-local terminal
+      dispositions leave zero survivors, while preserving individual reasons.
+- [ ] Permit `blocked_missing_theory` instead when one common theory gap blocks
+      all otherwise admitted paths; neither status rejects GRC9V4.
+
+### D4-v2. Candidate Geometry And Carrier Completion
+
+Status: planned; not started.
+
+- [ ] Carry accepted A D4 ownership unchanged and defer common
+      `K_4 -> H_4 -> h_4` closure until D7G.
+- [ ] Type `T_B`: graph object, rank, orientation, units, covariance, state
+      authority, resource status, serialization role, and capacity/release
+      boundary.
+- [ ] Derive or formally close exact `G_B(C,T_B,...) -> S_4^B`.
+- [ ] Derive or formally close `T_C,C,selector context -> H_M -> h_M`.
+- [ ] Freeze C Hodge-star/metric construction, selector timing, lagged/staged or
+      uniquely regular fixed-point semantics, and fixed-stratum rank/boundary
+      admissibility.
+- [ ] Freeze the common future-`H_4` input interface
+      `S_4^a -> iota_a -> K_4^a` without deriving `H_4`.
+- [ ] Record each payload/adapter domain, codomain, authority, units, gauge,
+      covariance, orientation, boundary/topology behavior, information loss,
+      and identity/derived/absent status.
+- [ ] Require B to expose `K_4^B` or typed `iota_B`; keep direct `h_B`
+      candidate-local and block it from rival physical-`h_4` ownership.
+- [ ] Keep C `h_M` candidate-local while requiring `K_4^C` or typed `iota_C`
+      for any future physical/global effect.
+- [ ] Require at least one matched lawful retained-state intervention for which
+      `iota_a` preserves a candidate-specific distinction as changed `K_4^a`;
+      reject a structurally inert adapter as crossing evidence.
+- [ ] Freeze C provisional `I_4M^pre : Omega^1(h_4^pre) -> Omega^1(h_M)` with
+      source/target geometry, orientation, units, covariance,
+      invertibility/information loss, stage validity, and fixed-profile scope.
+- [ ] Mark `I_4M^pre` candidate-local typing only and defer final physical
+      `h_4 <-> h_M` compatibility to D7G.
+- [ ] Freeze the one-form/current geometry consumed by B's future `R_B` and its
+      lawful identification with authoritative physical current without
+      requiring a separate `h_B`.
+- [ ] Block B or C from borrowing A's ontology or each other's equations.
+- [ ] Block symbols, interface requirements, and convenient numerical closures
+      from counting as constitutive derivations.
+- [ ] Emit one typed disposition for the B and C lanes.
+- [ ] Produce `decisions/D4v2CandidateGeometryAndCarrierCompletion.json`.
+- [ ] Produce `decisions/D4v2CandidateGeometryAndCarrierCompletion.md`.
+- [ ] Obtain human acceptance before D5-v2.
+
+### D5-v2. Candidate-Specific Directional Read-Back Completion
+
+Status: blocked on D4-v2.
+
+- [ ] Propagate only lanes with admitted D4-v2 causal objects.
+- [ ] Preserve unaffected accepted D5 contracts without ornamental rewrites.
+- [ ] For B, derive typed one-cochain `R_B`, domain/codomain, orientation and
+      basis covariance, passive/read-off behavior, resource boundary, and
+      lawful retained-`T_B` dependence; consume the D4-v2-frozen current-space
+      identification explicitly.
+- [ ] For C, test whether `R_C` is now genuinely retained-conditioned through
+      `T_C -> H_M -> h_M`, rather than only externally parameterized by `h_M`.
+- [ ] Consume `I_4M^pre` explicitly in the C operator typing without promoting
+      it to final physical/global compatibility.
+- [ ] Require lawful on-manifold selected-content and matched-complement
+      counterfactuals for C.
+- [ ] Carry accepted A D5 unchanged unless a named earlier reopening changes
+      its causal object.
+- [ ] Emit exact operator or localized closure dispositions per lane.
+- [ ] Produce `decisions/D5v2DirectionalReadBackCompletion.json`.
+- [ ] Produce `decisions/D5v2DirectionalReadBackCompletion.md`.
+- [ ] Obtain human acceptance before D6-v2.
+
+### D6-v2. Updated Total-Current Closure
+
+Status: blocked on D5-v2.
+
+- [ ] Rebuild the complete within-solve dependency graph and effective current
+      block for every changed lane.
+- [ ] Audit new same-beat retained-geometry/current dependencies and preserve or
+      revise lagged/staged semantics explicitly.
+- [ ] Recheck regularity, support, singular boundary, orientation, conservation,
+      branch, and failure-atomicity contracts.
+- [ ] Reuse accepted D6 only with an explicit unchanged-causal-object proof.
+- [ ] Block endpoint compatibility from standing in for crossing/operator
+      equivalence.
+- [ ] Prevent any lane without a regular total-current closure from entering
+      D7-v2 as complete.
+- [ ] Produce `decisions/D6v2UpdatedTotalCurrentClosure.json`.
+- [ ] Produce `decisions/D6v2UpdatedTotalCurrentClosure.md`.
+- [ ] Obtain human acceptance before D7-v2.
+
+### D7-v2. Candidate Transition Completion And Comparative Admission
+
+Status: blocked on D6-v2.
+
+- [ ] Preserve A's accepted kinetic recurrence and explicit open `H_4` boundary.
+- [ ] Write B's complete `T_B -> G_B/h_B -> R_B -> J_C -> consequence -> U_B
+      -> T_B[k+1]` transition or close B for this tranche.
+- [ ] Write C's complete `T_C -> H_M/h_M -> R_C -> J_C -> C/selector ->
+      T_C[k+1]` transition or close C for this tranche.
+- [ ] Require each completed transition to be Markov-closed, stage ordered,
+      atomic, resource-accounted, and equipped with candidate-specific controls.
+- [ ] Realize common control roles through lawful literal interventions,
+      preregistered on-manifold matched counterfactuals, or explicitly labelled
+      algebraic probes; never manufacture an off-manifold intervention for
+      superficial control symmetry.
+- [ ] Produce one candidate-local terminal A/B/C disposition.
+- [ ] Allow only these candidate terminal dispositions:
+      `D7G_eligible_complete_candidate_transition`,
+      `current_tranche_closed_missing_theory`,
+      `current_tranche_closed_missing_constitutive_derivation`,
+      or `current_tranche_rejected_target_incompatibility`.
+- [ ] Record `reopen_at_named_earlier_gate` only as paused control flow and
+      resume D7-v2 after the named successor propagates forward.
+- [ ] Block `routed_not_rejected` as a D7-v2 terminal disposition.
+- [ ] Admit complete candidate-local transitions to D7G, not directly to D8.
+- [ ] Route zero survivors to bounded D10 closeout or a named theory successor.
+- [ ] Produce `decisions/D7v2CandidateTransitionComparativeAdmission.json`.
+- [ ] Produce `decisions/D7v2CandidateTransitionComparativeAdmission.md`.
+- [ ] Obtain human acceptance before D7G.
+
+### D7G. Global Metric And Structural-Cultivation Closure
+
+Status: blocked on D7-v2.
+
+- [ ] Begin only after every A/B/C lane has a terminal D7-v2 disposition.
+- [ ] Derive or formally close the global `K_4 -> H_4 -> h_4` structural map
+      over the D7-v2 survivor set.
+- [ ] Record domain, codomain, state/derived authority, measure, units, gauge,
+      covariance, boundary/topology behavior, stage order, and fixed-point or
+      lagged semantics.
+- [ ] Relate each surviving candidate's admitted `K_4^a` to the common `H_4`
+      map without borrowing another candidate's retained ontology.
+- [ ] Keep C's physical `h_4 <-> h_M` compatibility open until this gate even
+      if D4-v2 closed its retained `h_M` construction.
+- [ ] Validate or replace C's provisional `I_4M^pre`; route any replacement
+      through the structural-propagation reopening rule.
+- [ ] Require an explicit theory/constitutive basis for any candidate-indexed
+      `H_4` family; block candidate-preservation convenience as justification.
+- [ ] Prove that resulting `h_4` re-enters a later candidate transition without
+      same-beat circularity, hidden state, duplicate authority, or broken
+      resource/accounting semantics.
+- [ ] Emit `H4_upstream_effect` as `no_upstream_causal_change`, a required
+      D4/D5/D6/D7 successor, or `candidate_incompatible` for every survivor.
+- [ ] If global `h_4` changes a previously frozen upstream object, pause D7G,
+      reopen the earliest changed gate, propagate forward, and return before
+      claiming global closure.
+- [ ] Preserve a candidate-local transition unchanged only when the structural
+      propagation receipt establishes no upstream causal change.
+- [ ] For each structural-cultivation claimant, establish one admissible
+      nondegenerate matched direction with `delta T_a != 0`,
+      `delta K_4^a != 0`, `delta h_4 != 0`, and a declared later consequence.
+- [ ] Block a globally typed `H_4` from closing a candidate crossing when its
+      adapter or global map erases every candidate-specific retained
+      distinction.
+- [ ] Emit one global structural disposition and one terminal disposition for
+      each D7-v2 survivor.
+- [ ] Allow D8 admission only as `D8_comparable_complete_transition`; otherwise
+      close the lane with a localized scientific reason.
+- [ ] Treat named earlier reopening as control flow, not terminal closure or D8
+      admission.
+- [ ] Record that one D8 survivor is not automatic architecture selection.
+- [ ] Route zero D8 survivors or a hard global structural blocker to bounded
+      D10 closeout or a named theory successor.
+- [ ] Produce `decisions/D7GGlobalMetricAndStructuralCultivationClosure.json`.
+- [ ] Produce `decisions/D7GGlobalMetricAndStructuralCultivationClosure.md`.
+- [ ] Obtain human acceptance before D8.
+
 ## D8. Continuation Realization And Analysis Contract
 
-Status: blocked pending separate human direction after D7 acceptance. Its
-eligible scope remains the Candidate A fixed-stratum kinetic reduced transition
-only.
+Status: blocked pending accepted D7G comparative admission or an explicit
+terminal closeout route.
 
 - [ ] Define structural functional/Hessian and `alpha` semantics.
 - [ ] Define temporal generator/effective-map and `gamma`/multiplier semantics.
@@ -791,9 +1001,9 @@ only.
 - [ ] Keep analysis projectors out of runtime state unless independently
       admitted for constitutive reasons.
 - [ ] Block cross-spectrum relabels and undeclared universal-generator claims.
-- [ ] Map selected V4 operators to applicable B1/B2 verification discriminators
-      and classify each as reusable, V4-adaptation/rederivation-required, or
-      inapplicable.
+- [ ] Map every D7G-admitted candidate's V4 operators to applicable B1/B2
+      verification discriminators and classify each as reusable,
+      V4-adaptation/rederivation-required, or inapplicable.
 - [ ] Block recreation of GRV3/GRV4/GRV7 as design prose from counting as a new
       D8 constitutive result.
 - [ ] Obtain human acceptance.
@@ -810,8 +1020,9 @@ Status: blocked on D8.
 - [ ] Freeze reset-baseline behavior.
 - [ ] Freeze RNG and deterministic replay behavior.
 - [ ] Freeze capability/profile identity.
-- [ ] Verify the selected candidate's D1 embedding/projection construction
-      against the completed D7 transition on every equivalence surface.
+- [ ] Verify every surviving candidate's D1 embedding/projection construction
+      against its D7G structurally closed transition on every equivalence
+      surface.
 - [ ] Freeze the actual reduction witness and exact/projected/tolerance status
       with migration behavior.
 - [ ] Enforce normative topology transport/accounting, explicit capability
@@ -860,7 +1071,12 @@ D7_empirically_attributed_explicit_Read_Back_loop_count = 0
 D7_closed_structural_cultivation_loop_count = 0
 D7_D8_eligible_candidate_set = [V4-A-temporalized-W]
 D7_routed_candidate_set = [V4-B-independent-derived-carrier, V4-C-constitutive-C-sector]
-D8-D10 = blocked_pending_separate_human_direction_and_predecessors
+D4-v2 = planned_not_started
+D5-v2 = blocked_on_D4-v2
+D6-v2 = blocked_on_D5-v2
+D7-v2 = blocked_on_D6-v2
+D7G = blocked_on_D7-v2
+D8-D10 = blocked_on_D7G_or_terminal_route
 D10_early_terminal_route = available_for_rejected_all_missing_theory_or_missing_discriminator
 architecture_selected = false
 specification_authorized = false

@@ -1,6 +1,6 @@
 # GRC9V4 Constitutive Design Decision Ledger
 
-**Status:** D0-D7 accepted bounded; D8 authorization deferred
+**Status:** D0-D7 accepted bounded; D4-v2-D7G candidate-completion and structural-closure tranche planned; D8 blocked
 
 This ledger is the additive decision record for D0-D10. The design basis and
 plan define questions and constraints; this file records accepted answers.
@@ -490,9 +490,122 @@ gradient summary consumed by `G_W(C[k+1], J_C[k])` from post-continuity
 `C[k+1]`. Reusing pre-continuity `C[k]` summaries would violate the accepted
 writer temporal side.
 
+## D4-v2-D7G. Candidate Completion And Structural-Closure Successor Tranche
+
+Status: planned; not started.
+
+This append-only tranche does not modify or supersede accepted D4-D7 until a
+specific successor record is accepted. It prevents A's earlier completeness
+from becoming an implicit selection criterion and gives B, C, and the global
+structural map their named derivation attempts before comparative D8.
+
+```text
+D4-v2 = GRC9V4-CD-D4V2-v1, planned_not_started
+D5-v2 = GRC9V4-CD-D5V2-v1, blocked_on_D4-v2
+D6-v2 = GRC9V4-CD-D6V2-v1, blocked_on_D5-v2
+D7-v2 = GRC9V4-CD-D7V2-v1, blocked_on_D6-v2
+D7G = GRC9V4-CD-D7G-v1, blocked_on_D7-v2
+
+default_successor_lineage_when_no_earlier_gate_reopens =
+  D4-v2:
+    predecessor = 7ffaf92b1672aa4fb116539ca5da36aef8bc7f3caf088827fd71f3ec7b483fea
+    supersedes = c3c4507d4623ee526e636c4434bc13b4af23bdd3f6051cf1db99a2ce5736215c
+  D5-v2:
+    predecessor = accepted_D4-v2_digest
+    supersedes = 453416f42beefa1c9e725b675a0af7d4fd49c3e83691ee16e3e3bcfb6d37f213
+  D6-v2:
+    predecessor = accepted_D5-v2_digest
+    supersedes = 0c78ede1551ece13c4b4fc916f60531bdc30219791bf90be574e5b0f80aa3f16
+  D7-v2:
+    predecessor = accepted_D6-v2_digest
+    supersedes = 7ffaf92b1672aa4fb116539ca5da36aef8bc7f3caf088827fd71f3ec7b483fea
+  D7G:
+    predecessor = accepted_D7-v2_digest
+    supersedes = null
+    relation_to_D7-v2 = extends_with_global_structural_integration
+
+reopening_lineage_rule =
+  paused gate does not retain the obsolete default predecessor
+  resumed successor receives a new record/version identity
+  predecessor = latest accepted record in propagated serial chain
+  supersedes = latest accepted record for same logical gate when one exists
+
+successor_debt_input = complete unresolved debt union of predecessor record
+superseded_gate_debt_role = provenance_and_disposition_source_only
+
+required_D7-v2_lane_terminal_status =
+  D7G_eligible_complete_candidate_transition
+  | current_tranche_closed_missing_theory
+  | current_tranche_closed_missing_constitutive_derivation
+  | current_tranche_rejected_target_incompatibility
+
+D7-v2_control_flow_disposition = reopen_at_named_earlier_gate
+
+required_D7G_survivor_terminal_status =
+  D8_comparable_complete_transition
+  | current_tranche_closed_missing_theory
+  | current_tranche_closed_missing_constitutive_derivation
+  | current_tranche_rejected_target_incompatibility
+
+D7G_control_flow_disposition = reopen_at_named_earlier_gate
+
+zero_survivor_gate_status =
+  rejected_all_candidates
+  current_candidate_set_exhausted = true
+  preserve_candidate_local_close_reasons = true
+
+common_theory_gap_gate_status =
+  blocked_missing_theory
+  current_candidate_set_exhausted = false unless no candidate remains admitted
+
+D8 = blocked_on_accepted_D7G_comparative_admission_or_terminal_route
+```
+
+The candidate-local tranche has two separately attributable starting rows in
+one combined D4-v2 execution:
+
+```text
+B = typed T_B plus G_B(C,T_B,...) -> S_4^B
+C = T_C,C,selector context -> H_M -> h_M
+
+common future-H_4 interface =
+  S_4^a -> iota_a -> K_4^a in common K_4 domain
+
+adapter_load_bearing_gate =
+  matched lawful retained-state intervention changes K_4^a after iota_a
+  structurally inert adapter does not close candidate crossing
+
+C provisional current-space identification =
+  I_4M^pre : Omega^1(h_4^pre) -> Omega^1(h_M)
+  status = candidate_local_typing_only
+  final_h_4_h_M_compatibility = deferred_to_D7G
+
+B current-space requirement =
+  freeze R_B one-form/current geometry and physical-current identification
+  separate h_B is optional, implicit current space is forbidden
+```
+
+Successful derivations propagate only through affected D5-v2, D6-v2, and
+D7-v2 contracts. A lane that cannot close without arbitrary invention receives
+a bounded current-tranche closure and a named future route. `routed_not_rejected`
+is not a permitted D7-v2 terminal state. A sole survivor is not selected by
+survival alone. Reopening is paused control flow, not scientific closure.
+
+Only after D7-v2 closes every A/B/C candidate-local lane does D7G address
+the common `K_4^a -> H_4 -> h_4` structural crossing. This ordering prevents a
+global metric law from being shaped around A merely because A became concrete
+first. D7G decides which candidate-local survivors become D8-comparable and
+which close on a localized structural gap. D7G must emit a per-candidate
+`H4_upstream_effect`; any changed upstream causal object reopens the earliest
+affected gate and must propagate back to D7G before D8 admission. D7G must also
+validate or replace C's `I_4M^pre` and establish a non-erasing
+`delta T_a -> delta K_4^a -> delta h_4 -> later consequence` direction for
+every candidate claiming structural cultivation.
+
 ## D8. Continuation Realization And Analysis Contract
 
-Status: blocked pending separate human direction after D7 acceptance.
+Status: blocked pending accepted D7G comparative admission or an explicit
+terminal closeout route.
 
 ## D9. Complete Step And Lifecycle Contract
 
