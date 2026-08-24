@@ -53,6 +53,8 @@ Start with:
 - [D6 interpretation](./decisions/D6TotalCurrentClosure.md).
 - [D7 structured decision](./decisions/D7ClosedWriteReadLoop.json);
 - [D7 interpretation](./decisions/D7ClosedWriteReadLoop.md).
+- [D4-v2 structured decision](./decisions/D4v2CandidateGeometryAndCarrierCompletion.json);
+- [D4-v2 interpretation](./decisions/D4v2CandidateGeometryAndCarrierCompletion.md).
 
 Current gate status:
 
@@ -65,13 +67,35 @@ D4 = accepted_bounded
 D5 = accepted_bounded
 D6 = accepted_bounded
 D7 = accepted_bounded
-D4-v2 = planned_not_started
-D5-v2 = blocked_on_D4-v2
+D4-v2 = accepted_bounded
+D5-v2 = authorized_not_started
 D6-v2 = blocked_on_D5-v2
 D7-v2 = blocked_on_D6-v2
 D7G = blocked_on_D7-v2
 D8 = blocked_on_D7G_or_terminal_route
 ```
+
+D4-v2 now gives B and C bounded revision-specific constitutive completions
+without selecting A. Candidate B is a bounded graph-local symmetric bilinear
+carrier on the oriented edge one-form space, metric-typed relative to
+`H_1,pre`, bounded through dimensionless `Theta_B`, and restricted to a
+radius-one line-graph mask. Candidate C combines an instantiated weighted graph
+spectral selector with an explicitly scaled cutoff, a pressured retained-to-edge
+map, a positive graph-Hodge congruence, and an instantiated candidate-local
+`I_4M^pre` that is not assumed isometric. D4-v2 does not add a direct
+`T_C -> K_4` adapter: C's common structural crossing remains the source-backed
+retained-mediated route pending D5-v2, D6-v2, and D7G, with `j_C` mapped from
+the `h_M` representation through `(I_4M^pre)^-1` before common physical
+`j_C tensor j_C` assembly. Retained-geometry-off, read-off, and gain-off are
+separate controls; read-off and gain-off preserve the `h_M`-conditioned
+baseline path. Direct
+candidate contributions enter an assembled finite-radius graph-local `K_4`
+domain rather than an arbitrary dense edge matrix; exact overlap/partition
+normalization remains D7G debt. A's causal architecture is
+unchanged, but its vertex-star local assembly is newly typed by D4-v2. Both B
+and C are D5-v2 eligible. These are constrained V4 choices, not unique
+core-theory formulas. Global `H_4` remains D7G work. D5-v2 is authorized but
+not started; D6-v2 and all later gates remain blocked.
 
 D5 currently defines two bounded candidate operator channels (A and C), routes
 B to a named derivation, and physically identifies zero channels. Its 68-point

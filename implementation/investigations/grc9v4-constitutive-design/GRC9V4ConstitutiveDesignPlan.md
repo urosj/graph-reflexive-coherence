@@ -1,7 +1,7 @@
 # GRC9V4 Constitutive Design Investigation Plan
 
 **Date:** 2026-08-23  
-**Status:** D0-D7 accepted bounded; D4-v2-D7G candidate-completion and structural-closure tranche planned; D8 blocked
+**Status:** D0-D7 and D4-v2 accepted bounded; D5-v2 authorized but not started; D6-v2-D8 blocked
 **Design basis:** [`GRC9V4ConstitutiveDesignBasis.md`](./GRC9V4ConstitutiveDesignBasis.md)  
 **Checklist:** [`GRC9V4ConstitutiveDesignChecklist.md`](./GRC9V4ConstitutiveDesignChecklist.md)  
 **Decision ledger:** [`GRC9V4ConstitutiveDesignDecisionLedger.md`](./GRC9V4ConstitutiveDesignDecisionLedger.md)
@@ -962,6 +962,20 @@ candidate-local structural payload S_4^a
   -> deferred h_4
 ```
 
+The initial common `K_4` domain is graph-local and assembled, not the full
+dense matrix algebra on all live edges. Candidate contributions take the form
+`sum_s R_s^T K_4,s R_s` over declared finite-radius stalks. Candidate A uses
+vertex-star current-tensor assembly, B uses radius-one line-graph support, and C
+may enter only through a retained-mediated candidate-local current followed by
+the same graph-local current-tensor assembly. Any graph-global nonlocal `K_4`
+requires a named successor and cannot enter accidentally through a global
+`j j^T` array.
+
+Any local quadrature or partition weight must be preregistered as part of its
+`K_4,s`. D4-v2 freezes the exact locality/covariance class only; D7G must freeze
+assembly normalization and show that overlapping stalk multiplicity does not
+silently rescale the global contribution.
+
 For every candidate row, freeze the payload and adapter domain/codomain,
 authority, units, gauge, covariance, orientation, boundary/topology behavior,
 information loss, and whether the adapter is identity, derived, or absent.
@@ -969,16 +983,23 @@ Candidate A carries its accepted structural input into this interface. Candidate
 B must expose `K_4^B` in the common domain or a typed `iota_B`; direct `h_B` may
 remain candidate-local read geometry but cannot become a rival owner of
 physical `h_4`. Candidate C may retain `h_M` as retained/read geometry, but any
-claimed physical/global effect must expose `K_4^C` or a typed `iota_C` into the
-same common domain. An absent lawful adapter closes the global-crossing route;
-it cannot be filled later by relabeling `h_B` or `h_M` as `h_4`.
+claimed physical/global effect must expose a typed crossing into the same common
+domain. For C, D4-v2 may defer that crossing to the source-backed
+`T_C -> H_M -> R_C -> j_C^(M,flat) -> (I_4M^pre)^-1 -> j_C^(phys,flat) ->
+graph-local (j_C^phys tensor j_C^phys) -> K_4` route rather than inventing a
+direct `T_C -> K_4` adapter. An absent lawful direct adapter
+closes that direct route; it cannot be filled later by relabeling `h_B` or
+`h_M` as `h_4`.
 
-The adapter must also be load-bearing rather than merely type-correct. For any
-candidate claiming retained structural cultivation, preregister at least one
+Any claimed direct adapter must also be load-bearing rather than merely
+type-correct. For any candidate claiming a direct retained structural crossing,
+preregister at least one
 lawful retained-state intervention with matched nonretained inputs for which
 `K_4^a` changes after `iota_a`. An adapter that maps every candidate-specific
 retained distinction to the same baseline `K_4` does not close the structural
-crossing.
+crossing. A candidate that defers the crossing to a retained-mediated current
+route must record that route as deferred and may not receive direct-crossing
+credit at D4-v2.
 
 D4-v2 must also type the candidate-local current spaces needed before global
 `h_4` exists. Candidate C freezes a provisional fixed-profile identification:
@@ -1009,6 +1030,85 @@ contracts or close the affected lane with a localized theory/constitutive
 reason. Symbols, interface requirements, or a convenient numerical closure do
 not count as derivations.
 
+#### D4-v2 implementation result
+
+D4-v2 is accepted bounded under record
+`GRC9V4-CD-D4V2-v1`, decision digest
+`5862cbab0d36e1137dc647d7d21d48f77666a77bf9e7b178c830d323e4ed6309`.
+It consumed accepted D7-v1 as its chronological predecessor and supersedes only
+the D4-v1 B/C completion and common-interface scope.
+
+The corrected constitutive standard does not require a uniquely theory-selected
+representation. D4-v2 first pressures the admissible representation family and
+then permits a bounded revision-specific choice, as earlier gates did for A and
+the C Hodge response. A selected broader family is not called minimal when a
+strictly smaller admissible subprofile already has the required consumer.
+
+The two candidate rows remain separately attributable:
+
+```text
+B:
+  T_B = bounded graph-local symmetric bilinear form on Omega^1_G
+  minimal subprofile = diagonal unoriented-edge scalar
+  [T_B] = [H_1,pre]
+  Theta_B = H_1,pre^-1/2 T_B H_1,pre^-1/2 is dimensionless and bounded
+  locality = d_L(G)(e,f) <= 1, covariant and independent of array order
+  authority = independent serialized nonresource
+  G_B = T_B
+  iota_B(S) = kappa_B S into common K_4 graph domain
+  kappa_B = finite preregistered nonzero conversion coefficient
+  signed spectrum = direction of K_4 bilinear contribution only,
+                    not continuation hardening or softening before H_4/D8
+  D7G capacity rule = recompute Theta_B under accepted h_4/H_1 and readmit;
+                      no silent clipping or renormalization
+  future R_B space = Omega^1(h_4^pre)
+  disposition = admitted_bounded_candidate_geometry_and_carrier_completion
+
+C:
+  L_0,sym,pre = H_0,pre^-1/2 B_pre H_1,pre B_pre^T H_0,pre^-1/2
+  Lambda_C = bar_Lambda_C sigma_L,pre with explicit operator units/gauge
+  sigma_L,pre = fixed profile-owned dimensional reference declared before
+                evaluation, not selected from observed spectrum or outcomes
+  P_M^Delta = H_0,pre^-1/2 1_[0,Lambda_C](L_0,sym,pre) H_0,pre^1/2
+  T_C = P_M^Delta C on a fixed-rank strict-gap no-flux stratum
+  dynamic sector = analysis-only outside the initial runtime profile
+  selector stage = h_4^pre -> P_M^Delta -> T_C
+  H_1,M = D_C H_1,pre D_C with D_C = diag(exp(kappa_M,C r_C / 2))
+  inner map = pressured smooth bounded odd family with tanh representative
+              and symmetric endpoint lift; not uniquely theory-selected
+  I_4M^pre = H_1,M H_1,pre^-1, instantiated but not assumed isometric
+  local log scaling = kappa_M,C diag(r_C), not global H_4 relative log
+  H_M load-bearing = same-state kappa_M,C on/off with nonzero r_C
+  direct T_C -> K_4 adapter = not admitted
+  future common route = T_C -> H_M -> R_C -> j_C^(M,flat)
+                        -> (I_4M^pre)^-1 -> j_C^(phys,flat)
+                        -> graph-local (j_C^phys tensor j_C^phys) -> K_4
+  retained_geometry_off = kappa_M,C = 0 removes H_M-conditioned J_0,C path
+  read_off = chi_C = 0 removes explicit j_C/tensor route but preserves
+             H_M-conditioned J_0,C
+  gain_off = zeta_C = 0 allows diagnostic j_C but blocks its total-current and
+             K_4 effect while preserving H_M-conditioned J_0,C
+  disposition = admitted_bounded_candidate_retained_geometry_completion
+```
+
+The gate freezes the common graph `K_4` domain as assembled finite-radius
+symmetric bilinear forms on the oriented live-edge one-form space and applies
+the load-bearing adapter test to candidates claiming direct crossings.
+Candidate A's causal architecture is unchanged, while its vertex-star local
+assembly is a new D4-v2 common-interface discretization result rather than an
+accepted D7 result. C receives no direct-crossing credit at this gate.
+The record binds the 2 immediate and 20 transitive live D7 debt rows by exact
+machine-readable identity, status, blocker flag, source SHA, and D7 digest;
+counts alone are not an admissible debt handoff.
+The local fixed-topology stratum remains an analysis profile, not a
+fixed-topology V4 target. Neither candidate is rejected or ranked, and `H_4`
+remains D7G work.
+
+D5-v2 is authorized but not started. Both B and C are eligible for
+candidate-specific directional Read-Back completion. Their constitutive laws
+are bounded V4 choices, not unique core-theory deductions. D6-v2 and all later
+gates remain blocked.
+
 ### D5-v2. Candidate-Specific Directional Read-Back Completion
 
 Planned record: `GRC9V4-CD-D5V2-v1`, with outputs
@@ -1026,6 +1126,14 @@ Hodge response becomes genuinely conditioned by retained `T_C` through the
 new `H_M`, rather than remaining only an externally parameterized `h_M`
 family. Consume `I_4M^pre` explicitly and require lawful on-manifold
 selected-content and matched-complement counterfactuals.
+
+If B's derived `R_B` supports a source-patterned
+`j_B tensor j_B -> K_4` route, keep it distinct from the already admitted
+direct `T_B -> K_4` route. Freeze read-off, gain-off, path-overlap, and
+double-count controls before either route is credited as evidence for the
+other. For C, map any `h_M`-represented Read-Back current back through
+`(I_4M^pre)^-1` before common physical-one-form tensor assembly; matching edge
+array dimension is not sufficient typing.
 
 Carry accepted A D5 unchanged unless a named earlier reopening changes its
 causal object. Do not manufacture an A-v2 operator merely to keep all lanes

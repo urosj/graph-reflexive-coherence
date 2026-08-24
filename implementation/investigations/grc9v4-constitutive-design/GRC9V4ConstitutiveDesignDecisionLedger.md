@@ -1,6 +1,6 @@
 # GRC9V4 Constitutive Design Decision Ledger
 
-**Status:** D0-D7 accepted bounded; D4-v2-D7G candidate-completion and structural-closure tranche planned; D8 blocked
+**Status:** D0-D7 and D4-v2 accepted bounded; D5-v2 authorized but not started; D6-v2-D8 blocked
 
 This ledger is the additive decision record for D0-D10. The design basis and
 plan define questions and constraints; this file records accepted answers.
@@ -492,7 +492,7 @@ writer temporal side.
 
 ## D4-v2-D7G. Candidate Completion And Structural-Closure Successor Tranche
 
-Status: planned; not started.
+Status: D4-v2 accepted bounded; D5-v2 authorized but not started; later gates blocked.
 
 This append-only tranche does not modify or supersede accepted D4-D7 until a
 specific successor record is accepted. It prevents A's earlier completeness
@@ -500,8 +500,8 @@ from becoming an implicit selection criterion and gives B, C, and the global
 structural map their named derivation attempts before comparative D8.
 
 ```text
-D4-v2 = GRC9V4-CD-D4V2-v1, planned_not_started
-D5-v2 = GRC9V4-CD-D5V2-v1, blocked_on_D4-v2
+D4-v2 = GRC9V4-CD-D4V2-v1, accepted_bounded
+D5-v2 = GRC9V4-CD-D5V2-v1, authorized_not_started
 D6-v2 = GRC9V4-CD-D6V2-v1, blocked_on_D5-v2
 D7-v2 = GRC9V4-CD-D7V2-v1, blocked_on_D6-v2
 D7G = GRC9V4-CD-D7G-v1, blocked_on_D7-v2
@@ -561,6 +561,67 @@ common_theory_gap_gate_status =
 D8 = blocked_on_accepted_D7G_comparative_admission_or_terminal_route
 ```
 
+D4-v2 execution record:
+
+```text
+decision_digest = 5862cbab0d36e1137dc647d7d21d48f77666a77bf9e7b178c830d323e4ed6309
+chronological_predecessor = accepted_D7_v1
+superseded_scope = accepted_D4_v1_B_C_completion_and_common_interface
+
+B:
+  selected constitutive type = bounded graph-local symmetric bilinear form
+  minimal subprofile = diagonal unoriented-edge scalar
+  units = H_1,pre bilinear-form units
+  normalized carrier = Theta_B = H_1,pre^-1/2 T_B H_1,pre^-1/2
+  locality = radius-one line-graph mask, graph-covariant and array-order independent
+  signed spectrum = direction of K_4 bilinear contribution only;
+                    no pre-H_4/D8 hardening or softening claim
+  D7G capacity lifecycle = recompute Theta_B under accepted h_4/H_1,
+                           readmit without clipping or renormalization
+  authority = independent serialized nonresource
+  G_B = T_B
+  adapter = finite preregistered nonzero kappa_B-scaled injection into common K_4
+  future current space = Omega^1(h_4^pre)
+  disposition = admitted_bounded_candidate_geometry_and_carrier_completion
+
+C:
+  T_C spatial sector = source-backed
+  selector = H_0,pre-weighted graph scalar spectral projector at
+             Lambda_C = bar_Lambda_C sigma_L,pre with explicit units/gauge
+  sigma_L,pre authority = fixed profile-owned dimensional reference,
+                          not outcome-adaptive
+  selector staging = pre-read fixed-rank strict-gap no-flux smooth stratum
+  selector lifecycle = D7G recomputation/readmission after h_4 scale change
+  inner map = pressured smooth bounded odd family with selected tanh representative
+              and symmetric endpoint lift; not uniquely theory-selected
+  H_M = positive graph-Hodge congruence specialized by retained T_C
+  I_4M^pre = instantiated canonical metric-lowering map, not assumed isometric
+  read-geometry gain = kappa_M,C
+  H_M load bearing = same-state kappa_M,C on/off with nonzero r_C
+  direct T_C -> K_4 adapter = not admitted
+  future common structural route = T_C -> H_M -> R_C -> j_C^(M,flat)
+                                   -> inverse I_4M^pre -> j_C^(phys,flat)
+                                   -> graph-local j_C^phys tensor j_C^phys -> K_4
+  retained geometry off = kappa_M,C zero removes H_M-conditioned J_0,C path
+  read_off = chi_C zero removes explicit j_C/tensor route but preserves
+             H_M-conditioned J_0,C
+  gain_off = zeta_C zero blocks current/K_4 gain while preserving diagnostic
+             j_C and H_M-conditioned J_0,C
+  disposition = admitted_bounded_candidate_retained_geometry_completion
+
+A = causal architecture carried unchanged; vertex-star current-tensor assembly
+    is a new D4-v2 common-interface discretization result
+common K_4 = assembled finite-radius graph-local symmetric bilinear forms;
+             local weights live in K_4,s and exact normalization is D7G debt
+inherited D7 debt binding = exact 2 immediate + 20 transitive row identities,
+                            statuses, blocker flags, source SHA, and D7 digest
+candidate_rejected_count = 0
+architecture_selected = false
+H_4 = deferred_to_D7G
+D5-v2_eligible_candidate_set = [B, C]
+D5-v2 = authorized_not_started
+```
+
 The candidate-local tranche has two separately attributable starting rows in
 one combined D4-v2 execution:
 
@@ -572,8 +633,10 @@ common future-H_4 interface =
   S_4^a -> iota_a -> K_4^a in common K_4 domain
 
 adapter_load_bearing_gate =
+  applies to candidate claiming direct retained structural crossing
   matched lawful retained-state intervention changes K_4^a after iota_a
   structurally inert adapter does not close candidate crossing
+  C direct crossing is not admitted; its source-backed current route is deferred
 
 C provisional current-space identification =
   I_4M^pre : Omega^1(h_4^pre) -> Omega^1(h_M)
@@ -583,6 +646,14 @@ C provisional current-space identification =
 B current-space requirement =
   freeze R_B one-form/current geometry and physical-current identification
   separate h_B is optional, implicit current space is forbidden
+
+D5-v2 B path pressure =
+  if j_B tensor j_B -> K_4 is admitted, separate it from direct T_B -> K_4
+  freeze read-off, gain-off, overlap, and double-count controls
+
+D5-v2 C representation pressure =
+  map j_C^(M,flat) through inverse I_4M^pre before common K_4 assembly
+  equal edge-array dimension is not physical-one-form identity
 ```
 
 Successful derivations propagate only through affected D5-v2, D6-v2, and
