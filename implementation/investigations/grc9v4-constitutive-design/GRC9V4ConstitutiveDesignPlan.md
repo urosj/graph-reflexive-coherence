@@ -1,7 +1,7 @@
 # GRC9V4 Constitutive Design Investigation Plan
 
 **Date:** 2026-08-23  
-**Status:** D0-D7 and D4-v2-D6-v2 accepted bounded; D7-v2 implemented awaiting review; D7G-D8 blocked
+**Status:** D0-D7, D4-v2-D7-v2, and D7G-v1 accepted bounded; D7G-v2 authorized and unexecuted; D8 blocked
 **Design basis:** [`GRC9V4ConstitutiveDesignBasis.md`](./GRC9V4ConstitutiveDesignBasis.md)  
 **Checklist:** [`GRC9V4ConstitutiveDesignChecklist.md`](./GRC9V4ConstitutiveDesignChecklist.md)  
 **Decision ledger:** [`GRC9V4ConstitutiveDesignDecisionLedger.md`](./GRC9V4ConstitutiveDesignDecisionLedger.md)
@@ -716,7 +716,8 @@ retention, reconfiguration, and the later stability questions without promoting
 a one-way path to a closed loop or requiring `C_(k+1)` as the sole mediator
 without evidence.
 
-By D7, write the complete candidate transition `X_(k+1) = F_V4(X_k)` with
+By D7, write the complete candidate-local transition
+`X_(k+1) = F_V4(X_k; h_pre)` conditional on an admitted pre-read geometry with
 constitutive equations, stage order, state ownership, write inputs, release or
 reconfiguration law, Read-Back law, and all accounting surfaces. A candidate
 that cannot supply such a transition must be rejected or routed to a named
@@ -1390,12 +1391,17 @@ named reopening debt rather than dropped or allowed to block A/C. A future
 direct/read/tensor factorization, post-`H_4` capacity, and absorbability. The
 record distinguishes 40 current-live plus exact-inherited-bound rows from four
 terminally archived predecessor rows, preserving 44 lineage evidence
-identities. Human acceptance authorizes D7G, which is not yet started. D8,
+identities. D7G-v1 is accepted bounded and authorizes the D7G-v2
+geometry-parametric closure and finalization tranche. D8,
 specification, implementation, runtime, and `src/` changes remain unauthorized.
 
 ### D7G. Global Metric And Structural-Cultivation Closure
 
-Status: authorized; not started.
+Status: accepted bounded. D7G-v1 freezes a typed `H_4`
+constitutive interface and admits one bounded affine profile family conditional
+on an exact `E_ref` that current V3 source does not define. D7G-v2 must admit
+that embedding, close the geometry handoff, and establish geometry-parametric
+or bounded profile-specific A/C closure before D7G can complete.
 
 Planned record: `GRC9V4-CD-D7G-v1`, with outputs
 `decisions/D7GGlobalMetricAndStructuralCultivationClosure.json` and
@@ -1411,22 +1417,35 @@ candidate-local admitted structural input K_4^a
   -> later candidate transition consequence
 ```
 
+Core RC leaves `g[K]` constitutively incomplete. D7G therefore freezes a typed
+substrate interface rather than a universal metric law:
+
+```text
+H_profile : (Delta K_4, h_4,ref, context[K_4,base]) -> h_4+
+```
+
+Named profiles must declare positivity/nondegeneracy, covariance,
+locality/support and inverse/solver support, units/gauge/capacity,
+boundary/topology behavior, neutral reduction, temporal staging, geometry /
+mobility factorization, and derivative access when consumed by analysis.
+
 For B, graph-local assembly of `j_B tensor j_B` does not imply one-hop causal
 dependence of the assembled values. The D6-v2 inverse may already make `j_B`
 depend on baseline current throughout its connected live-edge component. D7G
 must keep assembly locality separate from causal-support attribution.
 
-Freeze the global map's domain, codomain, state/derived authority, measure,
-units, gauge, covariance, boundary and topology/event behavior, stage order,
-fixed-point or lagged semantics, and relation to every surviving candidate's
-local geometry map. A common `H_4` law is preferred only when theory supports
-one; a candidate-indexed family requires an explicit theory/constitutive basis
-and may not be introduced merely to keep a candidate alive.
+Freeze the interface contract and every admitted profile's domain, codomain,
+state/derived authority, measure, units, gauge, covariance, boundary and
+topology/event behavior, stage order, fixed-point or lagged semantics, and
+relation to every surviving candidate's local geometry map. A
+candidate-indexed profile requires an explicit theory/constitutive basis and
+may not be introduced merely to keep a candidate alive.
 
 For Candidate C, D4-v2 may close the retained `h_M` construction and its typed
 structural interface, but the physical `h_4 <-> h_M` compatibility remains open
 until this gate. Candidate-local closure cannot pre-accept that identification;
-D7G must validate or replace `I_4M^pre` and propagate any replacement backward.
+D7G-v2 must replace witness-only `I_4M^pre` with `I_4M(h)` on the admitted
+geometry class or emit a bounded profile-specific/terminal receipt.
 
 For each D7-v2 survivor, prove that its admitted `K_4^a` reaches the global map
 lawfully and that the resulting `h_4` re-enters a later transition without
@@ -1438,6 +1457,7 @@ each survivor emit this structural-propagation receipt:
 ```text
 H4_upstream_effect =
   no_upstream_causal_change
+  | requires_geometry_parametric_closure_audit
   | requires_D4_successor
   | requires_D5_successor
   | requires_D6_successor
@@ -1445,13 +1465,14 @@ H4_upstream_effect =
   | candidate_incompatible
 ```
 
-If `h_4` changes an object previously frozen in D4-v2-D7-v2, including `J_0`,
-`I_4M`, `H_0/H_1`, `P_M`, `R_C`, or a B geometry-conditioned current input,
-the gate pauses and reopens the earliest changed successor. The complete
-reopen, forward-propagation, and return cycle must succeed before global
-structural closure can finish for that candidate. Only
-`no_upstream_causal_change`, or a completed propagation cycle that returns with
-an equivalent receipt, can produce D8 admission.
+The D7G-v1 architectural correction treats `H_4` as a constitutive profile
+parameter rather than a late universal completion. D4-D7 results are therefore
+conditional candidate-local results over supplied pre-read geometry. D7G-v2
+must lift those witnesses to a declared admissible geometry class or label them
+as bounded profile-specific results. Changing between admitted profiles does
+not itself reopen D4-D7. Reopen the earliest owning gate only when a profile
+leaves the admitted class, changes state/write authority, changes same-beat
+staging, or invalidates a candidate's declared operator family.
 
 For every candidate claiming structural cultivation, D7G must establish at
 least one admissible nondegenerate direction with matched nonretained inputs:
@@ -1483,6 +1504,194 @@ it is a sole survivor, not a selected architecture. If no candidate reaches
 D8 or the global structural map remains a hard target blocker, route to bounded
 D10 closeout or a named theory successor rather than selecting the least
 incomplete candidate.
+
+#### D7G-v1 Implementation Result
+
+D7G-v1 audited the implemented GRC9V3 source before freezing the V4
+constitutive interface and conditionally admitting an affine profile family.
+The source already provides an executable scalar geometry/transport law and a
+separate row-basis hybrid node tensor, but the tensor is cached for diagnostics
+and telemetry and is not consumed by scalar `base_conductance`, potential, or
+flux. The current GRC9V3 specification explicitly reserves tensor-derived or
+channel-specific transport for an `anisotropic_edges` extension. Thus current
+GRC9V3 does not already close `K -> g[K]`. This source result does not imply
+that V4 `h_4` must replace transport mobility or select `anisotropic_edges`.
+
+D7G-v1 freezes
+`H_profile : (Delta K_4, h_4,ref, context[K_4,base]) -> h_4+` and admits one
+common affine profile family conditional on an exact V4 reference embedding
+`E_ref : W_V3 -> H_1,ref`. Source and specification inspection found no unique
+repository-owned convention for that embedding. D7G-v2 must define and admit
+it, or close the affine family without instantiation. This prevents scalar V3
+conductance from being relabeled as already-existing physical `h_4`:
+
+```text
+Delta K_4^a = K_4^a - K_4,base
+Theta_4^a = kappa_H H_1,ref^(-1/2) Delta K_4^a H_1,ref^(-1/2)
+
+H_1,read+^a
+  = H_1,ref^(1/2) (I + Theta_4^a) H_1,ref^(1/2)
+  = H_1,ref + kappa_H Delta K_4^a
+
+H_0,read+^a = H_0,ref
+```
+
+The admitted domain requires `I + Theta_4^a` positive definite. The family is
+a bounded revision-specific construction, not a unique core-theory formula,
+canonical V4 completion, or continuum metric theorem. It is common to A and C,
+preserves graph locality, is signed-edge/graph covariant, and is non-erasing because
+`delta H_1 = kappa_H delta K_4` for nonzero `kappa_H`.
+
+Exact affine neutrality is closed only relative to a supplied `h_4,ref`:
+
+```text
+Delta K_4 = 0 -> h_4+ = h_4,ref
+```
+
+The complete disabled-transition reduction `F_V4,disabled = F_V3` remains a
+separate D7G-v2/full-factorization obligation.
+
+The admitted vertex-star partition closes diagonal edge multiplicity, not a
+unique off-diagonal pair normalization. Sparse/local assembly also does not
+imply sparse/local inverse, identification, or solver support; both remain
+typed profile pressure.
+
+D4-D7 are now explicitly interpreted as candidate-local transitions
+conditional on supplied pre-read geometry. The affine profile demonstrates a
+non-erasing `delta K_4 -> delta h_4` direction, but a fixed witness does not
+establish closure over an admissible geometry class:
+
+B's missing source-backed `U_B` result remains independent of this correction;
+its metric-raised response is constitutively valid while its formative writer
+remains absent. A/C operator and transition results remain conditional
+mathematics rather than discarded work.
+
+```text
+A.H4_upstream_effect = requires_geometry_parametric_closure_audit
+C.H4_upstream_effect = requires_geometry_parametric_closure_audit
+
+global_structural_disposition =
+  H4_interface_frozen_affine_reference_profile_family_conditionally_admitted_
+  D7Gv2_embedding_parametric_and_handoff_closure_required
+```
+
+D7G-v1 acceptance authorizes the append-only next gate:
+
+```text
+D7G-v2 = A/C geometry-parametric closure under H_profile
+```
+
+It must preserve geometry/mobility factorization and the lagged
+`J_C[k] -> j[k] -> K_4[k] -> h_4+[k] -> later transition` stage. A profile
+change reopens an earlier gate only if it leaves the admitted class, changes
+state/write authority or same-beat staging, or invalidates the declared
+operator family.
+
+D7G-v1 establishes the bounded `delta T_a -> delta K_4^a -> delta h_4`
+direction for both survivors, but it does not claim the later transition
+consequence before that parametric audit. D7G is incomplete, no candidate is yet
+D8-comparable, and specification, implementation, runtime, stability, and
+architecture-selection claims remain blocked. The authoritative records are
+[`D7GGlobalMetricAndStructuralCultivationClosure.json`](./decisions/D7GGlobalMetricAndStructuralCultivationClosure.json)
+and its
+[`scientific report`](./decisions/D7GGlobalMetricAndStructuralCultivationClosure.md).
+
+#### D7G-v2 Planned Geometry-Parametric Closure And Finalization
+
+D7G-v2 must declare two different objects:
+
+```text
+H_adm = admissible geometry-state class
+P_adm = admissible H_profile map class landing in H_adm
+```
+
+It must separate candidate closure over `H_adm`, profile-map sensitivity under
+`D_K H_profile` or a declared nonsmooth replacement, and conclusions specific
+to the conditional affine family. It must:
+
+- define and admit exact `E_ref`, or close the affine family without
+  instantiation;
+- keep exact affine reference neutrality separate from complete disabled
+  V4-to-V3 transition reduction;
+- freeze `Delta K_4` as the primary profile input and declare `K_4,base` in the
+  named profile context;
+- preserve the distinction among `K_4`, physical `h_4`, transport mobility
+  `M_4`, and A's `W_A` authority through an explicit current factorization;
+- preregister quantitative uniform bounds for `lambda_min(H_1)`,
+  `lambda_max(H_1)`, C's selector gap, `cond(I_4M)`, and each D6 current-closure
+  regularity margin;
+- show whether A's D5 operator, D6 regularity argument, and D7 writer/state law
+  remain well typed and regular over `H_adm`;
+- for C, define `P_M(h)`, `H_M(T_C,h)`, `I_4M(h)`, and `R_C(h_M)` on a declared
+  SPD subdomain with explicit spectral-gap, conditioning, and regularity bounds;
+- preserve `J_C[k] -> j[k] -> K_4[k] -> h_4+[k] -> later transition` staging;
+- close that later-stage arrow by deterministic reconstruction from committed
+  Markov state, precommit consumption into an admitted committed effect, or a
+  named D1 successor admitting persistent geometry state; cache history is
+  forbidden;
+- distinguish graph-local assembly from inverse, identification, solver, and
+  causal support;
+- emit a geometry-parametric equivalence receipt, bounded profile-specific
+  receipt, named earlier-gate reopening, or terminal disposition for A and C;
+  and
+- admit a candidate to D8 only after `delta h_4` has a declared later
+  transition consequence under the corresponding receipt.
+
+D7G-v2 also owns D7G finalization. It closes the full per-candidate
+`delta T_a -> delta K_4^a -> delta h_4 -> delta F_a,later` chain, emits the
+final D7G disposition for A and C, and routes zero survivors or a hard global
+blocker directly to bounded D10 closeout or a named theory successor. These are
+not written back as unfinished D7G-v1 tasks.
+
+##### D7G-v2 Formal Pre-Acceptance Protocol (`D7G-v2-PREACCEPT-v1`)
+
+D7G-v2 is audited as a formal closure gate, not by another undifferentiated
+pressure list. The audit order is fixed:
+
+```text
+1. definitions and load-bearing symbol/noun registry
+2. quantifiers, domains, norms, constants, and uniform bounds
+3. causal beat/state graph and geometry handoff
+4. Candidate A proof or bounded receipt
+5. Candidate C proof or bounded receipt
+6. per-candidate causal non-erasure / later consequence
+7. authority mutation and earlier-gate reopening audit
+8. claim-word audit
+9. debt lineage and machine integrity
+10. final canonical digest
+```
+
+The symbol registry must state type, space, units/gauge, owner, independent or
+derived status, evaluation stage, serialization or deterministic
+reconstruction rule, and causal consumers for every load-bearing object. At a
+minimum it covers `H_adm`, `P_adm`, profile `context`, `E_ref`, `K_4,base`,
+`Delta K_4`, `M_4`, `H_1(h)`, `P_M(h)`, `I_4M(h)`, and the named later
+transition.
+
+Every use of `all`, `any`, `uniform`, `bounded`, `admissible`, `equivalent`,
+`regular`, `stable`, `preserves`, `same`, `exact`, `later`, or
+`profile-invariant` must bind a set, norm, constant, and independence scope as
+applicable. If a uniform result is unavailable, D7G-v2 emits a bounded
+profile-specific receipt rather than enlarging `H_adm` until both candidates
+pass.
+
+The acceptance rule is fail-closed:
+
+> Every load-bearing statement must trace to an exact definition, a derivation
+> or reproducible witness, an explicitly bounded assumption/profile
+> restriction, or a named open debt that the claim ceiling does not consume.
+
+D7G-v2 does not optimize for placing both A and C into D8. An asymmetric result
+such as geometry-parametric A closure and profile-specific C closure is valid
+when that is what the evidence supports.
+
+After D7G-v2 acceptance, newly discovered work must be named either
+`D7G-post-v2` or an earlier-gate reopening. The plan does not reopen an accepted
+barrier merely to complete a task that belonged to a later tranche.
+
+Profile variation within `H_adm` is reevaluation of the same constitutive
+family. It is not an automatic D4-D7 restart. Earlier reopening is reserved for
+changed authority, changed same-beat staging, or invalidated operator families.
 
 ## D8. Continuation Realization And Analysis Contract
 

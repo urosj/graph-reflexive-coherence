@@ -61,6 +61,8 @@ Start with:
 - [D6-v2 interpretation](./decisions/D6v2UpdatedTotalCurrentClosure.md).
 - [D7-v2 structured decision](./decisions/D7v2CandidateTransitionComparativeAdmission.json);
 - [D7-v2 interpretation](./decisions/D7v2CandidateTransitionComparativeAdmission.md).
+- [D7G-v1 structured decision](./decisions/D7GGlobalMetricAndStructuralCultivationClosure.json);
+- [D7G-v1 interpretation](./decisions/D7GGlobalMetricAndStructuralCultivationClosure.md).
 
 Current gate status:
 
@@ -77,8 +79,11 @@ D4-v2 = accepted_bounded
 D5-v2 = accepted_bounded
 D6-v2 = accepted_bounded
 D7-v2 = accepted_bounded
-D7G = authorized_not_started
-D8 = blocked_on_D7G_or_terminal_route
+D7G-v1 = accepted_bounded
+D7G-v1 disposition = H4_interface_frozen_affine_reference_profile_family_conditionally_admitted_D7Gv2_embedding_parametric_and_handoff_closure_required
+D7G-v2 = authorized_unexecuted
+automatic_D4-v3-D7-v3_cycle = not_authorized
+D8 = blocked_on_completed_D7G_or_terminal_route
 ```
 
 D4-v2 now gives B and C bounded revision-specific constitutive completions
@@ -96,8 +101,9 @@ the `h_M` representation through `(I_4M^pre)^-1` before common physical
 separate controls; read-off and gain-off preserve the `h_M`-conditioned
 baseline path. Direct
 candidate contributions enter an assembled finite-radius graph-local `K_4`
-domain rather than an arbitrary dense edge matrix; exact overlap/partition
-normalization remains D7G debt. A's causal architecture is
+domain rather than an arbitrary dense edge matrix; diagonal overlap
+multiplicity is closed for D7G-v1's admitted partition choice while
+off-diagonal pair normalization remains explicit profile pressure. A's causal architecture is
 unchanged, but its vertex-star local assembly is newly typed by D4-v2. Both B
 and C are D5-v2 eligible. These are constrained V4 choices, not unique
 core-theory formulas. Global `H_4` remains D7G work.
@@ -142,6 +148,44 @@ absorbability debts rather than silently resolving them.
 All 22 D6-v2 current debts are dispositioned and all 22 inherited rows remain
 bound. Human acceptance now authorizes A and C to proceed to D7G. Global `H_4`,
 D8, specification, implementation, and runtime claims remain blocked.
+
+D7G-v1 confirms from current source that GRC9V3 is implemented but has not
+resolved `g[K]`: the row-basis hybrid node tensor is a diagnostic/cache surface,
+while operative transport is rebuilt independently through scalar
+`base_conductance`, potential, and flux. The GRC9V3 specification also reserves
+tensor-derived transport for a named `anisotropic_edges` extension. That V3
+boundary does not imply that V4 `h_4` must replace mobility or select that
+extension. Core RC leaves `g[K]` constitutively incomplete, so D7G-v1 freezes a
+typed `H_profile` substrate interface and conditionally admits one bounded
+common affine profile family without relabeling it as inherited behavior:
+
+```text
+E_ref : W_V3 -> H_1,ref
+H_1,read+ = H_1,ref + kappa_H Delta K_4
+H_0,read+ = H_0,ref
+```
+
+on the explicit positive domain. Current V3 source does not define a unique
+`E_ref`, so the family is not yet an instantiated profile. It is
+reference-relative, graph-covariant, local, reference-neutral, and non-erasing,
+but it is not a unique core-theory, canonical V4, or continuum-metric result.
+Exact reference neutrality also does not prove full disabled-transition
+reduction. A and C both reach `delta h_4 != 0` through their accepted structural
+inputs for a supplied reference surface. D4-D7 are now explicitly interpreted
+as candidate-local transitions conditional on admitted pre-read geometry.
+D7G-v2 must separate the geometry-state class `H_adm` from the profile-map
+class `P_adm`, admit `E_ref`, freeze quantitative uniform bounds, and close the
+Markov-safe postsolve-geometry handoff while preserving geometry/mobility
+factorization and lagged structural staging. Its formal pre-acceptance protocol
+runs definitions, quantifiers/bounds, causal-state graph, A/C proofs, causal
+non-erasure, authority/claim audits, lineage, and digest in that order; it does
+not optimize for admitting both candidates. Neither candidate is rejected or
+admitted to D8. D7G-v2 also owns final D7G candidate dispositions and any
+triggered zero-survivor route; later discoveries become `D7G-post-v2` or an
+explicit earlier-gate reopening rather than edits back into D7G-v1.
+Specification,
+implementation, runtime evidence, stability, and architecture selection remain
+blocked.
 
 D5 currently defines two bounded candidate operator channels (A and C), routes
 B to a named derivation, and physically identifies zero channels. Its 68-point
@@ -197,21 +241,23 @@ writer; scalar state is not relabeled as signed cochain memory. D7 also freezes
 a three-way D10 debt union, with named pre-D10 audits required for A's
 core-status, absorbability, and units/gauge questions. Reduced temporal
 stability is a D8 question; normative structural stability remains blocked on
-the missing `H_4` map.
+D7G-v2 geometry-parametric closure and later analysis.
 The later specification and implementation must also rebuild every
 differential or gradient summary used by `G_W(C[k+1], J_C[k])` from
 post-continuity `C[k+1]`; pre-continuity cache reuse is outside the accepted
 writer contract.
 
 By D7-v2, each A/B/C row must either expose a complete candidate-local
-transition admissible to D7G or close for this tranche with a localized
+transition conditional on admitted pre-read geometry and admissible to D7G, or
+close for this tranche with a localized
 missing-theory, missing-derivation, or target-incompatibility result.
 `routed_not_rejected` is not a terminal v2 status, and reopening is paused
 control flow rather than scientific closure. D7G is a distinct integration
-gate that extends D7-v2 and supersedes nothing. It derives or closes
-`K_4^a -> H_4 -> h_4`, emits a structural-propagation receipt, and reopens the
-earliest affected gate if global `h_4` changes an upstream causal object. Only
-after that propagation closes can it determine D8 comparability. A sole
+gate that extends D7-v2 and supersedes nothing. It freezes the typed
+`H_profile` interface, admits named realizations, and tests whether candidate
+families close parametrically over an admitted geometry class. A profile
+change alone does not reopen D4-D7; authority, staging, or operator-family
+changes do. Only after that audit closes can it determine D8 comparability. A sole
 surviving candidate remains unselected until D10 evaluates the frozen target
 and all veto debts.
 

@@ -1,6 +1,6 @@
 # GRC9V4 Constitutive Design Decision Ledger
 
-**Status:** D0-D7 and D4-v2-D6-v2 accepted bounded; D7-v2 implemented awaiting review; D7G-D8 blocked
+**Status:** D0-D7, D4-v2-D7-v2, and D7G-v1 accepted bounded; D7G-v2 authorized and unexecuted; D8 blocked
 
 This ledger is the additive decision record for D0-D10. The design basis and
 plan define questions and constraints; this file records accepted answers.
@@ -495,8 +495,8 @@ writer temporal side.
 
 ## D4-v2-D7G. Candidate Completion And Structural-Closure Successor Tranche
 
-Status: D4-v2 through D7-v2 accepted bounded; D7G authorized and not started;
-later gates blocked.
+Status: D4-v2 through D7-v2 and D7G-v1 accepted bounded; D7G-v2 authorized
+and unexecuted; later gates blocked.
 
 This append-only tranche does not modify or supersede accepted D4-D7 until a
 specific successor record is accepted. It prevents A's earlier completeness
@@ -508,7 +508,7 @@ D4-v2 = GRC9V4-CD-D4V2-v1, accepted_bounded
 D5-v2 = GRC9V4-CD-D5V2-v1, accepted_bounded
 D6-v2 = GRC9V4-CD-D6V2-v1, accepted_bounded
 D7-v2 = GRC9V4-CD-D7V2-v1, accepted_bounded
-D7G = GRC9V4-CD-D7G-v1, authorized_not_started
+D7G = GRC9V4-CD-D7G-v1, accepted_bounded_requires_D7G-v2_parametric_closure_and_finalization
 
 default_successor_lineage_when_no_earlier_gate_reopens =
   D4-v2:
@@ -750,8 +750,9 @@ exact inherited live debt rows = 22
 complete live debt union = 44
 
 D7-v2 = accepted_bounded
-D7G = authorized_not_started
-D8 = blocked_on_D7G_or_terminal_route
+D7G-v1 = accepted_bounded
+D7G-v2 = authorized_unexecuted
+D8 = blocked_on_completed_D7G_or_terminal_route
 ```
 
 Human acceptance: `accepted_bounded_2026-08-24`.
@@ -858,10 +859,133 @@ record. A valid future `U_B` reactivates four distinct predecessor obligations
 rather than superseding them: writer/lifecycle, path factorization, post-`H_4`
 capacity, and absorbability. The count is 40 current-live plus exact-inherited
 bound rows, four archived predecessor rows, and 44 complete lineage evidence
-identities. D7G is authorized by human acceptance and is not yet started. D8 and
-all specification, implementation, runtime, and `src/` work remain blocked.
+identities. D7G-v1 is accepted bounded and authorizes the D7G-v2
+geometry-parametric closure and finalization route. D8 and all specification, implementation,
+runtime, and `src/` work remain blocked.
 
 Human acceptance: `accepted_bounded_2026-08-24`.
+
+## D7G. Global Metric And Structural-Cultivation Closure
+
+Authoritative structured record:
+[`D7GGlobalMetricAndStructuralCultivationClosure.json`](./decisions/D7GGlobalMetricAndStructuralCultivationClosure.json)
+
+Scientific report:
+[`D7GGlobalMetricAndStructuralCultivationClosure.md`](./decisions/D7GGlobalMetricAndStructuralCultivationClosure.md)
+
+```text
+record_id = GRC9V4-CD-D7G-v1
+status = accepted_bounded
+predecessor_decision_digest = f0d355c3e769b43fe48f0eb8ab6e986ce80838dd55e884ad33c66e988b65106e
+decision_record_digest = b173c03f7dbe55aa53b22960da2be55e42e86dda769cac1356e36499f658d071
+supersedes = null
+
+source_GRC9V3_implemented = true
+source_GRC9V3_K_tensor_operational_geometry = false
+source_GRC9V3_transport = scalar_base_conductance
+
+H4_interface = H_profile(Delta_K_4,h_4_ref,context_with_K_4_base)->h_4_plus
+H4_interface_status = frozen_substrate_contract_not_universal_profile
+admitted_H4_reference_profile_family = reference_relative_affine_graph_Hodge_update
+H4_reference_profile_status = bounded_revision_specific_family_conditional_on_E_ref
+E_ref_status = pending_D7G-v2_not_defined_by_current_V3_source
+H4_common_to_A_and_C = true
+H4_non_erasing = true
+H4_unique_core_theory_formula = false
+H4_continuum_metric_claim = false
+
+A_H4_upstream_effect = requires_geometry_parametric_closure_audit
+C_H4_upstream_effect = requires_geometry_parametric_closure_audit
+global_structural_disposition = H4_interface_frozen_affine_reference_profile_family_conditionally_admitted_D7Gv2_embedding_parametric_and_handoff_closure_required
+D7G_complete = false
+D8_authorized = false
+human_acceptance = accepted_bounded_2026-08-24
+```
+
+The GRC9V3 source audit is load-bearing. `compute_hybrid_node_tensors()`
+materializes the GRC9 Eq. (1) row-basis tensor into cached diagnostics, while
+`compute_base_conductance()` independently rebuilds the operative scalar edge
+weights from coherence, gradient mismatch, and incoming current squared. No
+source consumer maps the cached tensor into conductance, potential, or flux.
+The V3 spec also requires an explicit `anisotropic_edges` capability for
+tensor-derived transport. D7G therefore does not relabel implemented V3 as
+missing, but it also does not treat V3 as having already resolved `g[K]`.
+
+D7G-v1 freezes a typed graph-substrate `H_profile` interface and conditionally
+admits one bounded reference-relative affine graph-Hodge profile family.
+`E_ref` would be an explicit V4 embedding of scalar V3 conductance into
+`H_1,ref`, not a claim that V3 already possessed physical `h_4`. Current V3
+source and specification do not define a unique `E_ref`, so D7G-v2 must admit
+the exact embedding or close this family without instantiation:
+
+```text
+Theta_4 = kappa_H H_1,ref^(-1/2) Delta K_4 H_1,ref^(-1/2)
+H_1,read+ = H_1,ref^(1/2) (I + Theta_4) H_1,ref^(1/2)
+            = H_1,ref + kappa_H Delta K_4
+H_0,read+ = H_0,ref
+```
+
+The domain requires `I + Theta_4` positive definite. The family is common,
+graph-covariant, local in assembly, reference-neutral, and non-erasing. Exact
+reference neutrality does not prove the complete disabled V4 transition
+reduces to V3; that remains separate debt. This is one revision-specific
+family rather than a unique core-theory, canonical V4, or continuum-metric
+result. The partition identity closes
+diagonal overlap multiplicity for the admitted vertex-star choice but does not
+uniquely determine off-diagonal pair normalization. Local `H_1` also does not
+imply local inverse or solver support.
+
+D4-D7 are now explicitly interpreted as candidate-local results conditional on
+an admitted pre-read geometry. `H_adm` contains geometry states; `P_adm`
+contains profile maps landing in that class. The conditional affine family
+supplies an algebraic witness for a supplied reference, not an instantiated
+embedding or closure over all admitted profiles. Physical `h_4` remains distinct from
+transport mobility unless an explicit factorization states otherwise. Both A
+and C therefore pause for D7G-v2 geometry-parametric closure; neither receives
+a terminal scientific disposition or D8 admission.
+
+D7G-v1 acceptance authorizes the append-only next gate:
+
+```text
+D7G-v2 = A/C geometry-parametric closure under H_profile
+```
+
+D7G-v2 must freeze quantitative `H_1` lower/upper bounds, C selector gap,
+`I_4M` conditioning, and D6 regularity margins before evaluation. It must also
+close how postsolve `h_4+[k]` reaches a later transition: deterministic
+reconstruction from committed Markov state, precommit consumption into an
+admitted committed effect, or a named D1 successor. Cache history is forbidden.
+
+Pre-acceptance is governed by `D7G-v2-PREACCEPT-v1`. The fixed order is
+definitions, quantifiers/bounds, causal-state graph, A proof, C proof, causal
+non-erasure, authority mutation, claim audit, debt lineage, and digest. Every
+load-bearing statement must resolve to a definition, derivation/reproducible
+witness, bounded restriction, or named debt outside the consumed claim ceiling.
+The protocol permits asymmetric candidate receipts and forbids broadening the
+admissible class merely to place both A and C into D8.
+
+D7G-v2 owns the remaining D7G chain closure, final A/C dispositions, and any
+triggered zero-survivor/hard-blocker route. Those tasks are not written back
+into D7G-v1. Work discovered after accepted D7G-v2 must be named
+`D7G-post-v2` or reopen the earliest affected gate explicitly.
+
+An earlier D4-D7 gate reopens only if a profile leaves the admitted class,
+changes state/write authority or same-beat staging, or invalidates a declared
+operator family. Profile change alone does not trigger a restart.
+
+The 18 D7-v2 current debts are explicitly dispositioned. The D5-v2 reference
+continues to bind all 22 exact inherited rows, and B's four archived
+obligations remain attached to its named future writer reopening. The current
+ledger contains 26 typed D7G debts plus the 22 exact inherited rows, with four
+additional archived B predecessor identities retained as evidence. No debt is
+silently dropped.
+
+D7G-v1 supports `delta T_a -> delta K_4^a -> delta h_4` for A and C under the
+bounded affine family conditional on a supplied admissible reference surface.
+It does not support an admitted exact `E_ref`, complete disabled-transition
+reduction, a lawful cross-beat geometry handoff, or the later transition
+consequence, complete structural cultivation, stability, runtime evidence,
+architecture selection, specification, or implementation.
 
 ## D8. Continuation Realization And Analysis Contract
 
