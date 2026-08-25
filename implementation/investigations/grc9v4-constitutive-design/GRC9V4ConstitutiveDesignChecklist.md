@@ -1895,8 +1895,8 @@ conditional pre-D10 or post-specification implementation evidence.
 
 ### Remaining Realization-Family Pressure
 
-Status: operator-split same-beat accepted bounded; reconstructed geometry is
-next and authorized.
+Status: operator-split same-beat and reconstructed geometry accepted bounded;
+persistent structural carrier is next and authorized.
 
 Common row contract:
 
@@ -2007,20 +2007,118 @@ equation-level geometry consumption into an executed complete-chain effect.
 
 GTRS-RG, reconstructed geometry:
 
-- [ ] Test exact deterministic reconstruction from authoritative current state
-      and declared same-step inputs.
-- [ ] Exclude hidden cache, prior-step receipt, solver history, and RNG.
-- [ ] Test whether reconstruction loses load-bearing `J`-dependent information.
-- [ ] Verify Markov closure and covariance without new persistent authority.
-- [ ] Treat historical lagged-state nonreconstructibility as pressure, not an
+- [x] Freeze direct reconstructed geometry as
+      `R_a:(X_a,k,U_k)->h_a`, with no independent geometry authority.
+- [x] Freeze the semantic classification: solving the exact current-geometry
+      fixed point is CI even if closed-form; using frozen-current predictors
+      is OS; using hidden history is invalid; omitting current information
+      loses the accepted `J`-dependent path.
+- [x] State that an exact state-only evaluator may exist and remains
+      constitutively CI-equivalent rather than claiming formula nonexistence.
+- [x] Test same-beat deterministic reconstruction from authoritative current state,
+      declared same-step inputs, and admitted local branch without claiming
+      global root uniqueness.
+- [x] Exclude hidden cache, prior-step receipt, solver history, and RNG.
+- [x] Test whether same-beat reconstruction preserves load-bearing
+      `J`-dependent information.
+- [x] Block postcommit reconstruction from counting as same-beat consumption.
+- [x] Permit reconstructibility to close as a property of CI/OS rather than
+      forcing it to become a third temporal family.
+- [x] Treat historical lagged-state nonreconstructibility as pressure, not an
       architecture-specific impossibility theorem.
+- [x] Freeze RG-2 next-beat factorization as `G_a = R_a+ o Phi_a` and the
+      equivalent committed-state fiber-constancy criterion.
+- [x] Freeze local positive `D Phi_a` invertibility and local negative
+      `ker(D Phi_a) not subset ker(D G_a)` evidence routes.
+- [x] Forbid previous root, prior geometry, solver continuation state, and
+      per-step dynamic branch IDs in `U`; require equivariant reconstruction.
+- [x] Prove the A and C complete commit maps extend to identity at
+      `Delta_t=0` and use derivative continuity for local CI/OS poststate
+      reconstruction without calling it a distinct family.
+- [x] Freeze the distinct lagged invariant-section equation
+      `Gamma(Phi_lag(X,Gamma(X))) = G(X,Gamma(X))`.
+- [x] Freeze the neutral constant section at `kappa_H=0` and replace the
+      section-dependent common-image assumption with an inner-chart neutral
+      extension and fixed-domain global inverse construction.
+- [x] Freeze value-radius and Lipschitz-ceiling self-map conditions and the
+      corrected `C0` contraction bound including section variation.
+- [x] Use typed geometry gain `epsilon_H=norm(D_K H_profile)_(K4->geometry)`
+      rather than untyped `abs(kappa_H)` as the theorem smallness object.
+- [x] Derive one unique local Lipschitz invariant section for A and C on their
+      named smooth small-positive-`Delta_t`, small-`epsilon_H` charts.
+- [x] Carry `C1` regularity as derivative-graph analysis debt rather than a
+      family-admission claim.
+- [x] Forbid an executed-zero-step claim, arbitrary unavailable input recovery,
+      global/event continuation, and a trajectory-updated `Gamma`.
+- [x] Restrict the present theorem to fixed context and require explicit state
+      augmentation before admitting a time-varying schedule.
+- [x] Freeze an equivariant family-local extension/profile completion as
+      constitutive profile configuration, not runtime state, history, or
+      trajectory-dependent tuning.
+- [x] Freeze nested domains `K_- compactly contained in K compactly contained
+      in U` and require `Psi_(a,Gamma)(K_-)` to remain inside `K`, so every
+      claimed real transition evaluates only the accepted candidate maps.
+- [x] State uniqueness relative to the frozen extension/profile completion;
+      do not claim extension-independent uniqueness unless separately proved.
+- [x] Freeze `Gamma` as the unique section for that completion, not an
+      independently authored, fitted, learned, or tuned runtime law.
+- [x] Redirect persistent-carrier pressure toward capabilities outside the local
+      invariant-section domain rather than an assumed information deficit.
+
+Result:
+
+```text
+record = GRC9V4-GTRS-RG-v1
+status = accepted_bounded
+top_level_disposition = bounded_local_reconstructed_geometry_family_complete_A_C
+decision_record_digest = dce24993ac0dd39a5fa5bcd35e46d9166fa28628d3811e9b33724c210ada4c0b
+predecessor = GRC9V4-GTRS-OS-v1
+predecessor_decision_digest = 36c98542c7920d468e932287872cf4dabf8720d5d2c6b0c0e30e6f94b113605f
+
+RG1_A_same_beat_distinct_family = family_level_obstruction
+RG1_C_same_beat_distinct_family = family_level_obstruction
+RG1_exact_state_only_formula = allowed_but_CI_equivalent_when_exact
+RG2_A_existing_CI_OS_poststate_reconstruction = supported_local_property
+RG2_C_existing_CI_OS_poststate_reconstruction = supported_local_property
+RG2_A_lagged_invariant_section = bounded_complete_realization
+RG2_C_lagged_invariant_section = bounded_complete_realization
+deterministic_same_beat_reconstructibility = supported_by_CI_and_OS_on_admitted_local_branches
+global_root_uniqueness = unsupported
+next_beat_fiber_collision_witnesses = 0
+next_beat_local_inverse_witnesses = 2_identity_limit_IFT
+zero_duration_identity_extension_is_executed_step = false
+numeric_epsilon_t_epsilon_H = unsupported
+universal_reconstruction_impossibility = false
+future_direct_geometry_candidates_rejected = false
+candidate_ranking = false
+
+predecessor_live_debts = 37
+predecessor_debts_dispositioned = 37
+current_debts = 3
+live_debt_union = 39
+controls = 62
+
+human_acceptance_recorded = true
+GTRS-RG2_authorized = false
+GTRS-PC_authorized_after_acceptance = true
+GTRS-PC_authorized = true
+GTRS-COMP_authorized = false
+D9_authorized = false
+runtime_or_src_changed = false
+```
+
+The RG-1 obstruction is narrow. Exact same-beat reconstruction is CI and
+staged same-beat reconstruction is OS. RG-2 first proves local poststate
+reconstruction for existing CI/OS steps, then closes a distinct lagged A/C
+architecture through a fixed local invariant section. The theorem is bounded
+to smooth fixed-context small-step/small-coupling charts.
 
 GTRS-PC, persistent structural carrier:
 
 - [ ] Freeze D1-compatible authority, writer, no-input behavior, lifecycle,
       serialization, restoration, reset, migration, and event semantics.
-- [ ] Verify the carrier adds a causal capability rather than only lifecycle
-      complexity.
+- [ ] Verify the carrier adds a causal capability beyond local invariant-section
+      RG rather than only lifecycle complexity.
 - [ ] Preserve exact disabled behavior and prevent hidden duplicate authority.
 
 GTRS-COMP, comparative realization synthesis:
@@ -2035,7 +2133,7 @@ GTRS-COMP, comparative realization synthesis:
 
 ## D9. Complete Step And Lifecycle Contract
 
-Status: blocked on GTRS-RG, GTRS-PC, and GTRS-COMP, plus any
+Status: blocked on GTRS-PC and GTRS-COMP, plus any
 pre-D10 numerical-stability obligation activated by comparative synthesis.
 
 - [ ] Freeze complete-step order and causal-state schema.

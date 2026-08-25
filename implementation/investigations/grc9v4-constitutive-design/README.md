@@ -114,7 +114,12 @@ architecture_local_D8B_A_authorized = true
 architecture_local_D8B_C_authorized = true
 comparative_D8B_authorized = false
 GTRS-OS_operator_split_same_beat = accepted_bounded_two_bounded_complete_design_rows
-next_substantive_route = GTRS-RG_reconstructed_geometry
+GTRS-RG_reconstructed_geometry = accepted_bounded_local_family_complete_A_C
+GTRS-RG1_same_beat_A_C = family_level_obstruction_exact_CI_or_staged_OS_equivalence
+GTRS-RG2_existing_CI_OS_poststate_A_C = supported_local_reconstructibility_property
+GTRS-RG2_lagged_invariant_section_A_C = bounded_complete_realization
+GTRS-RG_universal_reconstruction_impossibility = false
+next_substantive_route = GTRS-PC_capability_beyond_local_invariant_section
 remaining_family_order = operator_split_then_reconstructed_then_persistent_then_comparative_synthesis
 D9_before_remaining_family_pressure = false
 ```
@@ -444,6 +449,34 @@ before applying the relative Hodge norm. The resulting residual is quadratic
 in `kappa_H` on the D8-B `C2` charts. It is not relabeled as an
 `O(Delta_t)` time-integration error, and no numeric split envelope or executed
 complete-chain witness is claimed.
+
+The reconstructed-geometry pressure now supplies an accepted bounded local A/C
+family result. RG-1 closes same-beat distinct-family identity:
+an exact reduced evaluator is constitutively CI-equivalent, while staged
+evaluation is OS. An exact state-only formula may exist; formula nonexistence
+is not claimed.
+
+RG-2 first proves local poststate reconstruction as a property of existing
+CI/OS steps from their zero-duration identity limits. It then closes a distinct
+lagged A/C architecture through a unique local Lipschitz invariant section near
+the constant `kappa_H=0` section, relative to a frozen equivariant family-local
+extension/profile completion. Nested `K_-`, `K`, and `U` domains plus forward
+containment keep the claimed transition on the accepted candidate maps. The
+result requires smooth fixed-context charts, small positive `Delta_t`, small
+typed geometry gain `epsilon_H`, value and Lipschitz self-map bounds, and the
+corrected `C0` contraction. It does not provide numeric radii, `C1` section
+regularity, global reconstruction, event continuation, or extension-independent
+uniqueness.
+
+Persistent-carrier pressure is next. It must test capability
+beyond the local invariant section, such as noninvertible or multivalued
+regions, topology/rank/context events, hysteresis, or a larger valid parameter
+domain. It may not begin from an assumed local information deficit.
+
+The authoritative RG records are
+[`GeometryTemporalRealizationSuccessorReconstructedGeometry.json`](./decisions/GeometryTemporalRealizationSuccessorReconstructedGeometry.json)
+and its
+[`scientific interpretation`](./decisions/GeometryTemporalRealizationSuccessorReconstructedGeometry.md).
 
 The later specification and implementation must also rebuild every
 differential or gradient summary used by `G_W(C[k+1], J_C[k])` from

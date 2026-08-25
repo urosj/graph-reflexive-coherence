@@ -1460,7 +1460,8 @@ and its
 
 ## Remaining Realization-Family Pressure
 
-Status: `GTRS-OS` accepted bounded; `GTRS-RG` is next and authorized.
+Status: `GTRS-OS` and `GTRS-RG` accepted bounded; `GTRS-PC` is next and
+authorized.
 
 ```text
 execution_order = operator_split_same_beat -> reconstructed_geometry -> persistent_structural_carrier -> comparative_realization_synthesis
@@ -1535,9 +1536,92 @@ The authoritative records are
 and its
 [`scientific interpretation`](./decisions/GeometryTemporalRealizationSuccessorOperatorSplit.md).
 
+### GTRS-RG: Reconstructed Geometry
+
+GTRS-RG-v1 separates same-beat family identity, reconstruction as a property of
+an already complete transition, and a distinct lagged invariant-section
+architecture.
+
+```text
+RG-1 exact same-beat reconstruction = coupled/implicit equivalence
+RG-1 staged same-beat reconstruction = operator-split equivalence
+
+RG-2a existing CI/OS local reconstruction = G_a o local_inverse(Phi_a)
+RG-2b lagged invariant section = Gamma_a o Phi_a,lag = G_a
+```
+
+An exact closed-form, symbolically eliminated, generated, or otherwise reduced
+same-beat evaluator may exist. When it reproduces the fixed point exactly it is
+constitutively CI-equivalent, not a third family. RG-1 therefore closes both A
+and C as `family_level_obstruction` for distinct family identity.
+
+RG-2a closes locally because A and C complete commit maps extend to identity at
+`Delta_t=0`; derivative continuity and the inverse function theorem provide
+local poststate reconstruction for small step size. This remains a CI/OS
+property, not a distinct family.
+
+RG-2b closes the original lagged step. At `kappa_H=0`, `Gamma_a=h_ref` is an
+exact constant invariant section and the section derivative of the graph
+transform vanishes. A frozen, equivariant family-local extension/profile
+completion supplies one fixed base domain and a global inverse for the
+extended near-identity base map. Nested domains
+`K_- compactly contained in K compactly contained in U` and
+`Psi_(a,Gamma)(K_-) subset K` ensure that every claimed transition on `K_-`
+uses only the accepted candidate maps on `K`. Typed `epsilon_H`, value and
+Lipschitz self-map bounds, and the corrected `C0` contraction give a unique
+local Lipschitz invariant section for A and C relative to that frozen
+completion. Extension-independent uniqueness is not claimed. The completion
+is profile configuration, not serialized geometry, runtime state, history, or
+trajectory-dependent tuning. `C1` regularity remains separate analysis debt.
+
+```text
+record = GRC9V4-GTRS-RG-v1
+status = accepted_bounded
+top_level_disposition = bounded_local_reconstructed_geometry_family_complete_A_C
+decision_record_digest = dce24993ac0dd39a5fa5bcd35e46d9166fa28628d3811e9b33724c210ada4c0b
+
+RG1_A = family_level_obstruction
+RG1_C = family_level_obstruction
+RG2_A = bounded_complete_realization
+RG2_C = bounded_complete_realization
+existing_CI_OS_local_poststate_reconstructibility = supported
+exact_state_only_formula_nonexistence = not_claimed
+universal_impossibility = false
+
+predecessor_live_debts = 37
+predecessor_debt_dispositions = 37
+current_successor_debts = 3
+live_debt_union = 39
+controls = 62
+
+GTRS_RG2_authorized = false
+GTRS_PC_authorized_after_acceptance = true
+GTRS_PC_authorized = true
+D9_authorized = false
+runtime_or_src_changed = false
+```
+
+The zero-duration limit is a smooth-extension reference, not an executed step.
+The result does not provide numeric theorem radii, global reconstruction,
+event continuation, `C1` section regularity, or extension-independent
+uniqueness. Context is fixed. `Gamma_a` is the unique section relative to the
+frozen equivariant family-local completion, not an independently authored
+runtime law; fitting or updating it from trajectory history would be hidden
+authority.
+
+GTRS-PC must now test capabilities beyond the local RG domain: loss of local
+invertibility, multivalued sections, topology/rank/context events, hysteresis,
+or a wider coupling/step-size range. It cannot start from an assumed local
+information deficit or default to storing full `h`.
+
+The authoritative records are
+[`GeometryTemporalRealizationSuccessorReconstructedGeometry.json`](./decisions/GeometryTemporalRealizationSuccessorReconstructedGeometry.json)
+and its
+[`scientific interpretation`](./decisions/GeometryTemporalRealizationSuccessorReconstructedGeometry.md).
+
 ## D9. Complete Step And Lifecycle Contract
 
-Status: blocked on `GTRS-RG`, `GTRS-PC`, and `GTRS-COMP`, plus any
+Status: blocked on `GTRS-PC` and `GTRS-COMP`, plus any
 pre-D10 numerical-stability obligation activated by comparative synthesis.
 
 ## D10. Design Synthesis And Spec-Writing Decision

@@ -2475,13 +2475,177 @@ same-step inputs. Require:
 no independent geometry authority
 no hidden cache, solver-history, RNG, or prior-step receipt
 no loss of load-bearing J-dependent information
-same complete authoritative state and inputs imply the same reconstruction
+same complete authoritative state, inputs, and admitted local branch imply the
+same reconstruction; global root uniqueness is not assumed
 reconstruction remains Markovian and covariant
 ```
+
+Freeze reconstructed geometry as a *distinct realization family* before
+pressure. For candidate `a`, let
+
+```text
+X_a,k = authoritative committed state
+U_k   = declared same-step boundary/context and fixed constitutive
+        chart/equivariant root-selection profile configuration
+C_a(h;X_a,k,U_k) = accepted fixed-h current solution
+S_a(J,h) = accepted K_4-valued structural map.
+```
+
+A direct reconstructed family would require a deterministic map
+
+```text
+R_a : (X_a,k,U_k) -> h_a
+```
+
+that preserves the accepted `J`-dependent structural information without new
+persistent geometry authority. Classify rather than hide these cases:
+
+```text
+R_a solves h = H_profile(K4_base + S_a(C_a(h),h))
+  -> coupled/implicit semantics, regardless of closed-form or solver algorithm
+
+R_a evaluates one or more frozen-current predictors before a corrector
+  -> operator-split semantics; each new stage order is a named OS successor
+
+R_a uses prior-step current, cache, receipt, RNG, or solver history
+  -> invalid hidden authority
+
+R_a omits current information or substitutes a report/diagnostic proxy
+  -> loses the accepted J-dependent structural path
+```
+
+Reconstruction after `X_(k+1)` commits cannot establish same-beat geometry
+consumption, but it is a lawful candidate for next-beat use. Freeze that case
+separately. For admissible execution `E`, let
+
+```text
+Phi_a(E) = X_a,k+1
+G_a(E)   = h_a,k+.
+```
+
+Exact no-new-state next-beat reconstruction exists only when
+
+```text
+G_a = R_a+ o Phi_a,
+```
+
+equivalently when `G_a` is constant on every fiber of `Phi_a` with next-beat
+inputs fixed. A positive local result may instead prove `D Phi_a` invertible
+on a named chart and construct `R_a+ = G_a o local_inverse(Phi_a)`. A negative
+differential result may exhibit `v in ker(D Phi_a)` with `D G_a[v] != 0`.
+Apparent noninvertibility, dimension counting, or a cycle-space direction not
+shown reachable by the constitutive map is pressure, not evidence.
+
+A fixed constitutive chart or equivariant root-selection rule may be profile
+configuration. Previous root, previous geometry, solver continuation state, or
+a per-step dynamic branch token may not enter `U`. Any lawful `R_a+` and any
+selected inverse branch must be graph-relabeling and reorientation covariant.
+
+The pressure may therefore find that deterministic reconstructibility is a
+state-ownership property already satisfied by an admitted CI or OS map rather
+than a third temporal realization family. Such a result is a family-level
+classification, not a rejection of reconstruction or of future candidates
+whose geometry is source-backed as a direct function of committed state.
 
 The earlier failure to reconstruct old postsolve `h+` from lagged committed
 state is historical pressure, not an impossibility result for these new
 architecture-specific maps.
+
+GTRS-RG-v1 applies the same-beat partition to A and C. For both candidates,
+exact information-preserving reconstruction is constitutively equivalent to
+the coupled fixed point; staged reconstruction is operator-split. A closed-form
+state-only evaluator may exist and remains CI-equivalent when exact. The RG-1
+row dispositions are:
+
+```text
+A distinct reconstructed-geometry family = family_level_obstruction
+C distinct reconstructed-geometry family = family_level_obstruction
+```
+
+Same-beat reconstruction is therefore a state-ownership property of CI/OS,
+not a third temporal relation.
+
+RG-2 first establishes a local property of already-complete CI/OS steps. On
+the smooth zero-duration extension, both A and C commit maps are identity: C
+because continuity has no finite impulse, and A because continuity is identity
+and `a_A=exp(-Delta_t/tau_A)` becomes one, leaving `W_A+ = W_A`. The inverse
+function theorem therefore supplies local poststate reconstruction for small
+`abs(Delta_t)`. This is not a distinct temporal family.
+
+The distinct RG-2 architecture instead closes the original lagged step with a
+fixed invariant section:
+
+```text
+h_k = Gamma_a(X_k)
+J_k uses h_k
+h_k+ = G_a(X_k,h_k)
+X_k+1 = Phi_a,lag(X_k,h_k)
+
+Gamma_a(Phi_a,lag(X,Gamma_a(X))) = G_a(X,Gamma_a(X)).
+```
+
+At `kappa_H=0`, `Gamma_a,0=h_ref` is an exact constant section and the section
+derivative of the graph transform is zero. A merely common local image is not
+a fixed Banach domain. Choose `K_minus` compactly contained in `K`, with `K`
+compactly contained in the admitted chart. Freeze one equivariant family-local
+extension profile completion whose maps agree exactly with the real candidate
+maps on `K`, return outside a compact neighborhood to `X+=X`, `h+=h_ref`, and
+require
+
+```text
+Psi_a,Gamma = identity + f_a,Gamma
+Lip(f_a,Gamma) < 1
+M_inverse <= 1 / (1 - Lip(f_a,Gamma)).
+```
+
+Work on one fixed complete class of bounded Lipschitz sections with value
+radius `r` and Lipschitz ceiling `L_Gamma`. Use the typed profile gain
+
+```text
+epsilon_H = norm(D_K H_profile)_(K4 -> geometry)
+```
+
+and require
+
+```text
+epsilon_H M_G <= r
+epsilon_H (L_G_X + L_G_h L_Gamma) M_inverse <= L_Gamma
+
+q_a,0 <= epsilon_H [
+           L_G_h
+           + (L_G_X + L_G_h L_Gamma) M_inverse L_Phi_h
+         ] < 1.
+```
+
+The graph transform then has a unique local Lipschitz fixed section for
+sufficiently small positive `Delta_t` and `epsilon_H`; restrict it back to
+`K_minus`.
+`C1` regularity requires a separate derivative-graph or `C1,1` bunching result.
+Apply the admission theorem only on fixed-context charts: A is floor-inactive
+with positive `W_A`; C has fixed selector rank and strict gap. Time-varying
+context requires explicit state augmentation. A boundary/source impulse or
+unavailable exogenous input blocks the identity/factorization argument.
+
+Also require `Psi_a,Gamma(K_minus)` to be a subset of `K`, and restrict the real
+architecture claim to `K_minus`. Section uniqueness is relative to the frozen
+extension completion; independence from other admissible extensions is not
+claimed. The completion is profile configuration, not causal state or runtime
+tuning.
+
+This produces no simultaneous root, no same-beat corrector, and no serialized
+geometry, current, cache, or branch token. Relative to the frozen extension
+completion, `Gamma_a` is the uniquely derived family-local constitutive section,
+not an independently authored, fitted, learned, or trajectory-updated carrier.
+Therefore:
+
+```text
+A lagged invariant-section reconstruction = bounded_complete_realization
+C lagged invariant-section reconstruction = bounded_complete_realization
+```
+
+Status: `accepted_bounded` with disposition
+`bounded_local_reconstructed_geometry_family_complete_A_C`. GTRS-PC is next.
+D9 remains blocked on PC and comparative synthesis.
 
 ##### GTRS-PC: Persistent Structural Carrier
 
@@ -2490,8 +2654,9 @@ families. A bounded row must freeze D1-compatible authority, formation and
 writer semantics, no-input persistence/release, serialization, restoration
 identity, reset baseline, migration, topology/event lifecycle, and exact
 disabled behavior. Persistence is not credited merely for adding another state
-variable; the row must identify what causal capability it supplies that the
-less stateful families do not.
+variable; the row must identify what causal capability it supplies beyond
+local invariant-section RG, such as noninvertible or multivalued regions,
+topology/rank/context events, hysteresis, or a larger coupling/step-size domain.
 
 ##### GTRS-COMP: Comparative Realization Synthesis
 
@@ -2506,7 +2671,7 @@ family obstruction into D9/D10.
 
 ## D9. Complete Step And Lifecycle Contract
 
-Status: blocked on GTRS-RG, GTRS-PC, and GTRS-COMP, plus any
+Status: blocked on GTRS-PC and GTRS-COMP, plus any
 pre-D10 numerical-stability obligation activated by comparative synthesis.
 
 Freeze candidate complete-step ordering, causal state, serialization,
