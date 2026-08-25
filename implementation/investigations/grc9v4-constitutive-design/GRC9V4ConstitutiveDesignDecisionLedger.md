@@ -1,6 +1,6 @@
 # GRC9V4 Constitutive Design Decision Ledger
 
-**Status:** D0-D7, D4-v2-D7-v2, D7G-v1/v2, the D7G-post-v2 correction, D8-A, coupled/implicit A+C, coupled A+C architecture-local D8-B, GTRS-OS, GTRS-RG, GTRS-PC, and GTRS-COMP accepted bounded; narrow GTRS-CI-PC is authorized; D9 and D10 remain blocked
+**Status:** D0-D7, D4-v2-D7-v2, D7G-v1/v2, the D7G-post-v2 correction, D8-A, coupled/implicit A+C, coupled A+C architecture-local D8-B, GTRS-OS, GTRS-RG, GTRS-PC, GTRS-COMP, and GTRS-CI-PC accepted bounded; D9 authorized but not yet executed; D10 remains blocked
 
 This ledger is the additive decision record for D0-D10. The design basis and
 plan define questions and constraints; this file records accepted answers.
@@ -1837,7 +1837,7 @@ and its
 
 ## Narrow Coupled-Implicit Plus Persistent-Carrier Pressure
 
-Status: authorized by accepted GTRS-COMP.
+Status: accepted bounded.
 
 GTRS-CI-PC is the only hybrid pressure currently routed. It must determine
 whether retained `Z_4,k` and source-current `Delta_K_4(J,h)` can share one typed
@@ -1857,11 +1857,69 @@ serialization/restoration/reset/migration/event boundaries for both A and C.
 OS+PC and RG+PC remain visible as unpressured, conditionally reactivatable
 compositions.
 
+The executed primary profile composes retained prior structure with a
+source-current structural increment without assigning them duplicate same-beat
+authority:
+
+```text
+h = H_profile(K_4,base + Z_4,k + rho_inst Delta_K_4(J,h))
+F_J,a(J,h; X_a,k) = 0
+
+after valid root and authoritative continuity:
+  Z_4,k+1 = a_PC,a Z_4,k + (1-a_PC,a) Delta_K_4,a(J,h)
+```
+
+`rho_inst = 1` is fixed for the primary profile and `rho_inst = 0` is the exact
+PC timing ablation. Both A and C admit bounded complete hybrid realizations on
+the declared `B_2R` composite profile/current domain. Joint-root regularity is
+local and parametric: at `kappa_H = 0` the derivative is block triangular with
+the accepted candidate current block and identity geometry block. The result
+does not claim a numerical envelope, global root, topology-event continuation,
+stability, or universal timing-history composability.
+
+Strict reference source slack plus uniform root/source continuity closes the
+same-root source ball for a nonzero local coupling envelope; the convex writer
+then preserves the carrier ball. Exact derivatives prove retained-path
+nonannihilation for nonzero admissible `delta Z` and immediate-path
+nonannihilation where the same-root source is nonzero. Committed endpoint
+nonannihilation remains debt.
+
+For constant source, the unit-plus-unit primary profile has `Z -> S` and hence
+steady structural argument `K_4,base + 2S`. This is not amplitude-equivalent to
+CI or PC. A normalized two-gain profile remains a possible D10 comparison and
+does not replace the current pressure row.
+
+```text
+record = GRC9V4-GTRS-CI-PC-v1
+status = accepted_bounded
+decision_record_digest = 5f003ff5f4dbbb60788ac50827b5a3ccff7ff7e194173721f15503bc6024682a
+
+A_CI_PC = bounded_complete_hybrid_realization
+C_CI_PC = bounded_complete_hybrid_realization
+predecessor_live_debts = 43
+predecessor_debt_dispositions = 43
+carried_predecessor_debts = 42
+resolved_predecessor_debts = 1
+current_successor_debts = 5
+live_debt_union = 47
+controls = 93
+
+human_acceptance_recorded = true
+D9_ready_after_human_acceptance = true
+D9_authorized = true
+D10_authorized = false
+runtime_or_src_changed = false
+```
+
+The authoritative records are
+[`GeometryTemporalRealizationHybridCoupledPersistentCarrier.json`](./decisions/GeometryTemporalRealizationHybridCoupledPersistentCarrier.json)
+and its
+[`scientific interpretation`](./decisions/GeometryTemporalRealizationHybridCoupledPersistentCarrier.md).
+
 ## D9. Complete Step And Lifecycle Contract
 
-Status: blocked on human acceptance of `GTRS-COMP` and completion of narrow
-`GTRS-CI-PC`; D10 remains subject to conditional numerical-discrimination
-obligations.
+Status: authorized by accepted `GTRS-CI-PC`; not yet executed. D10 remains
+subject to conditional numerical-discrimination obligations.
 
 ## D10. Design Synthesis And Spec-Writing Decision
 

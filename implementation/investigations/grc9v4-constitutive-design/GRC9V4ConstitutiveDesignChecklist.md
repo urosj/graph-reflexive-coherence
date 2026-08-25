@@ -1,7 +1,7 @@
 # GRC9V4 Constitutive Design Investigation Checklist
 
 **Date:** 2026-08-23  
-**Status:** D0-D7, D4-v2-D7-v2, D7G-v1/v2, the D7G-post-v2 correction, D8-A, coupled/implicit A+C, coupled A+C architecture-local D8-B, GTRS-OS, GTRS-RG, GTRS-PC, and GTRS-COMP accepted bounded; narrow GTRS-CI-PC is authorized; D9 and D10 remain blocked
+**Status:** D0-D7, D4-v2-D7-v2, D7G-v1/v2, the D7G-post-v2 correction, D8-A, coupled/implicit A+C, coupled A+C architecture-local D8-B, GTRS-OS, GTRS-RG, GTRS-PC, GTRS-COMP, and GTRS-CI-PC accepted bounded; D9 authorized but not yet executed; D10 remains blocked
 **Plan:** [`GRC9V4ConstitutiveDesignPlan.md`](./GRC9V4ConstitutiveDesignPlan.md)  
 **Basis:** [`GRC9V4ConstitutiveDesignBasis.md`](./GRC9V4ConstitutiveDesignBasis.md)  
 **Ledger:** [`GRC9V4ConstitutiveDesignDecisionLedger.md`](./GRC9V4ConstitutiveDesignDecisionLedger.md)
@@ -2312,31 +2312,82 @@ Numeric stability is not an unconditional pre-D10 gate; it activates if D10
 attempts exclusive preference, numeric ranking, or stability-based selection.
 
 GTRS-CI-PC, narrow coupled-implicit plus persistent-carrier pressure
-(`authorized`):
+(`accepted_bounded`):
 
-- [ ] Consume accepted COMP, CI, PC, D7G/D8-A, and candidate A/C transition
+- [x] Consume accepted COMP, CI, PC, D7G/D8-A, and candidate A/C transition
       records by digest and SHA.
-- [ ] Freeze the primary `(X_k,Z_k) -> joint (J,h) root -> (X_k+1,Z_k+1)`
+- [x] Freeze the primary `(X_k,Z_k) -> joint (J,h) root -> (X_k+1,Z_k+1)`
       stage order before pressure.
-- [ ] Audit whether `K_base + Z_k + Delta_K_4(J,h)` is the lawful typed
+- [x] Audit whether `K_base + Z_k + Delta_K_4(J,h)` is the lawful typed
       composition or whether it double-counts source/gain authority.
-- [ ] Freeze the composite invariant domain and joint-root regularity for
+- [x] Freeze the composite invariant domain and joint-root regularity for
       `Z_k + Delta_K_4`, not only the carrier ball for `Z_k`.
-- [ ] Freeze CI-off, PC-off, `chi`, `zeta`, `kappa_H`, read-off, and retained
+- [x] Freeze CI-off, PC-off, `chi`, `zeta`, `kappa_H`, read-off, and retained
       historical-state semantics.
-- [ ] Require root-failure atomicity and prohibit same-beat read of newly
+- [x] Require root-failure atomicity and prohibit same-beat read of newly
       written `Z_k+1`.
-- [ ] Freeze snapshot, restoration identity, reset baseline, `set_state`,
+- [x] Freeze snapshot, restoration identity, reset baseline, `set_state`,
       duplicate, migration, replay, profile mismatch, and context/event
       boundaries for the hybrid state.
-- [ ] Produce separate A and C dispositions without candidate ranking.
-- [ ] Keep OS+PC and RG+PC as unpressured, conditionally reactivatable
+- [x] Produce separate A and C dispositions without candidate ranking.
+- [x] Keep OS+PC and RG+PC as unpressured, conditionally reactivatable
       compositions rather than rejected or impossible rows.
+
+Result:
+
+```text
+record = GRC9V4-GTRS-CI-PC-v1
+status = accepted_bounded
+decision_record_digest = 5f003ff5f4dbbb60788ac50827b5a3ccff7ff7e194173721f15503bc6024682a
+
+A_CI_PC = bounded_complete_hybrid_realization
+C_CI_PC = bounded_complete_hybrid_realization
+primary_rho_inst = 1.0
+primary_composite_profile_domain = B_2R
+same_beat_double_count_detected = false
+strict_reference_source_slack_required = true
+same_root_source_ball_closed_by_continuity = true
+carrier_ball_invariance_proved = true
+primary_steady_source_structural_gain = 2.0
+amplitude_equivalence_to_CI_or_PC_claimed = false
+retained_path_root_nonannihilation_proved = true
+instantaneous_path_root_nonannihilation_proved_on_nonzero_source_domain = true
+committed_endpoint_nonannihilation_proved = false
+root_failure_is_atomic = true
+new_carrier_read_same_beat = false
+
+predecessor_live_debts = 43
+predecessor_debts_dispositioned = 43
+carried_predecessor_debts = 42
+resolved_predecessor_debts = 1
+current_debts = 5
+live_debt_union = 47
+controls = 93
+
+human_acceptance_recorded = true
+D9_ready_after_human_acceptance = true
+D9_authorized = true
+D10_authorized = false
+runtime_or_src_changed = false
+```
+
+The result supports local A/C timing-history composability for the named pair,
+not universal axis composability. It keeps OS+PC and RG+PC unpressured and
+conditionally reactivatable, and leaves quantitative envelopes, complete-chain
+analysis, full lifecycle integration, and the final composition-profile status
+as explicit successor debt.
+
+The source-ball closure is derived from strict reference slack and uniform
+continuity rather than assumed inside the admitted root chart. The
+unit-plus-unit profile records steady-source gain two explicitly, while exact
+`Z` and `rho_inst` root derivatives establish both paths as load-bearing only
+at the joint-root level. The composition-profile debt must be classified at D10
+entry before any selection or specification authorization.
 
 ## D9. Complete Step And Lifecycle Contract
 
-Status: blocked on completion of the narrow GTRS-CI-PC pressure. D10 remains
-subject to conditional numerical-discrimination obligations.
+Status: authorized by accepted GTRS-CI-PC; not yet executed. D10 remains subject
+to conditional numerical-discrimination obligations.
 
 - [ ] Freeze complete-step order and causal-state schema.
 - [ ] Freeze post-continuity recomputation of every differential and gradient

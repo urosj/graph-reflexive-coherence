@@ -1,7 +1,7 @@
 # GRC9V4 Constitutive Design Investigation Plan
 
 **Date:** 2026-08-23  
-**Status:** D0-D7, D4-v2-D7-v2, D7G-v1/v2, the D7G-post-v2 correction, D8-A, coupled/implicit A+C, coupled A+C architecture-local D8-B, GTRS-OS, GTRS-RG, GTRS-PC, and GTRS-COMP accepted bounded; narrow GTRS-CI-PC is authorized; D9 and D10 remain blocked
+**Status:** D0-D7, D4-v2-D7-v2, D7G-v1/v2, the D7G-post-v2 correction, D8-A, coupled/implicit A+C, coupled A+C architecture-local D8-B, GTRS-OS, GTRS-RG, GTRS-PC, GTRS-COMP, and GTRS-CI-PC accepted bounded; D9 authorized but not yet executed; D10 remains blocked
 **Design basis:** [`GRC9V4ConstitutiveDesignBasis.md`](./GRC9V4ConstitutiveDesignBasis.md)  
 **Checklist:** [`GRC9V4ConstitutiveDesignChecklist.md`](./GRC9V4ConstitutiveDesignChecklist.md)  
 **Decision ledger:** [`GRC9V4ConstitutiveDesignDecisionLedger.md`](./GRC9V4ConstitutiveDesignDecisionLedger.md)
@@ -2893,7 +2893,7 @@ preference, numeric ranking, or a stability claim.
 
 ##### GTRS-CI-PC: Narrow Coupled-Implicit Plus Persistent-Carrier Pressure
 
-Status: authorized by accepted GTRS-COMP.
+Status: accepted bounded.
 
 Pressure only the A and C pair identified by COMP. This is not a general hybrid
 campaign. The primary constitutive question is whether retained past structure
@@ -2936,10 +2936,79 @@ OS+PC and RG+PC remain recorded as unpressured compositions. Reopen them only
 if a later selection uses solver cost, failure surface, latency, or
 state-conditioned lagged geometry in a way that could make either material.
 
+The executed result admits bounded complete hybrid realizations for both A and
+C. The primary profile freezes `rho_inst = 1` as a revision-specific,
+dimensionless immediate-source coefficient:
+
+```text
+h = H_profile(K_4,base + Z_4,k + rho_inst Delta_K_4(J,h))
+F_J,a(J,h; X_a,k) = 0
+
+after a valid root and authoritative continuity only:
+  Z_4,k+1 = a_PC,a Z_4,k + (1-a_PC,a) Delta_K_4,a(J,h)
+```
+
+`Z_4,k` carries prior committed history; `Delta_K_4(J,h)` carries only the
+current root source. The new carrier is not read in the same beat. Gain
+placement is explicit and single-use, and the primary composite profile/current
+domain is the declared `B_2R` envelope induced by `Z in B_R` and
+`Delta_K_4 in B_R`. At `kappa_H = 0`, the joint derivative is block triangular
+with the accepted candidate current block and an identity geometry block, so a
+nonzero local compact small-coupling envelope follows by the IFT; no numerical,
+global-root, event-continuation, or stability claim is made.
+
+The strengthened theorem closes the source ball instead of assuming it. Strict
+reference slack `M_a,0 <= R_a-delta_a`, plus uniform root/source continuity on
+the compact chart, gives a small nonzero coupling envelope where the same-root
+source remains in `B_R`; the convex writer then preserves the carrier ball. On
+the regular enabled domain, exact derivatives prove the retained path is
+nonannihilated for nonzero admissible `delta Z` and the immediate path is
+nonannihilated where the same-root source is nonzero. This joint-root result
+remains below a committed endpoint or stability witness.
+
+The unit-plus-unit primary profile is not amplitude-neutral. For constant
+source, `Z -> S`, hence its steady structural argument is `K_4,base + 2S`.
+That is a valid parallel fast-plus-slow response, not amplitude equivalence to
+CI or PC. A normalized two-gain profile may be considered during D10
+comparison, but is not current evidence or a replacement for the primary row.
+
+Exact ablations recover PC (`rho_inst = 0`, carrier retained), CI (PC disabled,
+`Z = 0`, `rho_inst = 1`), and the fixed-reference transition (both disabled).
+The hybrid lifecycle freezes atomic failure, snapshot/restoration/reset,
+profile identity, migration, replay, and typed event transport. The result
+resolves the COMP hybrid-pair debt, dispositions all 43 predecessor debts,
+adds five successor debts, and carries a 47-debt live union under 93 controls.
+
+```text
+record = GRC9V4-GTRS-CI-PC-v1
+status = accepted_bounded
+decision_record_digest = 5f003ff5f4dbbb60788ac50827b5a3ccff7ff7e194173721f15503bc6024682a
+
+A_CI_PC = bounded_complete_hybrid_realization
+C_CI_PC = bounded_complete_hybrid_realization
+predecessor_live_debts = 43
+resolved_predecessor_debts = 1
+carried_predecessor_debts = 42
+current_debts = 5
+live_debt_union = 47
+controls = 93
+
+human_acceptance_recorded = true
+D9_ready_after_human_acceptance = true
+D9_authorized = true
+D10_authorized = false
+runtime_or_src_changed = false
+```
+
+The authoritative records are
+[`GeometryTemporalRealizationHybridCoupledPersistentCarrier.json`](./decisions/GeometryTemporalRealizationHybridCoupledPersistentCarrier.json)
+and its
+[`scientific interpretation`](./decisions/GeometryTemporalRealizationHybridCoupledPersistentCarrier.md).
+
 ## D9. Complete Step And Lifecycle Contract
 
-Status: blocked on completion of the narrow GTRS-CI-PC pressure. D10 remains
-subject to conditional numerical-discrimination obligations.
+Status: authorized by accepted GTRS-CI-PC; not yet executed. D10 remains subject
+to conditional numerical-discrimination obligations.
 
 Freeze candidate complete-step ordering, causal state, serialization,
 restoration identity, reset baseline, RNG use, deterministic replay,
