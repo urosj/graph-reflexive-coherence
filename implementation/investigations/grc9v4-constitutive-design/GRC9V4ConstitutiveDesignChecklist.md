@@ -1,7 +1,7 @@
 # GRC9V4 Constitutive Design Investigation Checklist
 
 **Date:** 2026-08-23  
-**Status:** D0-D7, D4-v2-D7-v2, D7G-v1/v2, the D7G-post-v2 correction, D8-A, coupled/implicit A+C, coupled A+C architecture-local D8-B, GTRS-OS, GTRS-RG, GTRS-PC, GTRS-COMP, and GTRS-CI-PC accepted bounded; D9 authorized but not yet executed; D10 remains blocked
+**Status:** D0-D7, D4-v2-D7-v2, D7G-v1/v2, the D7G-post-v2 correction, D8-A, coupled/implicit A+C, coupled A+C architecture-local D8-B, GTRS-OS, GTRS-RG, GTRS-PC, GTRS-COMP, GTRS-CI-PC, and D9 accepted bounded; D10 is authorized to begin
 **Plan:** [`GRC9V4ConstitutiveDesignPlan.md`](./GRC9V4ConstitutiveDesignPlan.md)  
 **Basis:** [`GRC9V4ConstitutiveDesignBasis.md`](./GRC9V4ConstitutiveDesignBasis.md)  
 **Ledger:** [`GRC9V4ConstitutiveDesignDecisionLedger.md`](./GRC9V4ConstitutiveDesignDecisionLedger.md)
@@ -2386,34 +2386,127 @@ entry before any selection or specification authorization.
 
 ## D9. Complete Step And Lifecycle Contract
 
-Status: authorized by accepted GTRS-CI-PC; not yet executed. D10 remains subject
-to conditional numerical-discrimination obligations.
+Status: accepted bounded. D10 is authorized to begin.
 
-- [ ] Freeze complete-step order and causal-state schema.
-- [ ] Freeze post-continuity recomputation of every differential and gradient
+- [x] Freeze complete-step order and causal-state schema.
+- [x] Freeze post-continuity recomputation of every differential and gradient
       summary consumed by the Candidate A writer; prohibit reuse of
       pre-continuity `C[k]` caches.
-- [ ] Freeze serialization and restoration identity.
-- [ ] Freeze reset-baseline behavior.
-- [ ] Freeze RNG and deterministic replay behavior.
-- [ ] Freeze capability/profile identity.
-- [ ] Verify every surviving candidate's D1 embedding/projection construction
+- [x] Freeze serialization and restoration identity.
+- [x] Freeze reset-baseline behavior.
+- [x] Freeze RNG and deterministic replay behavior.
+- [x] Freeze capability/profile identity.
+- [x] Verify every surviving candidate's D1 embedding/projection construction
       against its D7G structurally closed transition on every equivalence
       surface.
-- [ ] Freeze the actual reduction witness and exact/projected/tolerance status
+- [x] Freeze the actual reduction witness and exact/projected/tolerance status
       with migration behavior.
-- [ ] Enforce normative topology transport/accounting, explicit capability
-      disablement, or event-boundary termination/reset as selected in D0.
-- [ ] Keep a fixed early verification envelope from discharging normative
+- [x] Enforce typed topology resource transport/accounting plus candidate-
+      specific nonresource history transport or explicit archive/reset,
+      target reconstruction/readmission, receipts, and atomic commit.
+- [x] Keep a fixed early verification envelope from discharging normative
       runtime topology debt.
-- [ ] Freeze test, telemetry, and analysis ownership.
-- [ ] Block silent legacy snapshot promotion.
-- [ ] Obtain human acceptance.
+- [x] Freeze test, telemetry, and analysis ownership.
+- [x] Block silent legacy snapshot promotion.
+- [x] Produce the ten-profile state/lifecycle registry.
+- [x] Produce the `10 x 26` adversarial coverage matrix with 260 explicit
+      cells and no blanks.
+- [x] Derive the complete-step unit-measure charge, full tangent, structural
+      `H0`-weighted C-sector projector, and canonical tangent retraction from
+      the current closed-internal write path without claiming a full-state
+      orthogonal projector.
+- [x] Freeze the general charge-covector, `T_C_evt` resource-event map,
+      conservative condition, event exchange receipt, generalized tangent,
+      and generalized structural projector.
+- [x] Disambiguate event resource transport as `T_C_evt` from Candidate C's
+      derived nonresource `T_C` coordinate.
+- [x] Extend events and profile migrations to the whole lifecycle tuple
+      `(X_current, X_reset, Q_target)`; transform the reset baseline with the
+      same morphism and update `Q_target` by `Delta_Q_event`.
+- [x] Require post-continuity `C` to lie on the serialized nonnegative
+      `Q_target` simplex before any final-`C` writer; make the current budget
+      stage an identity/no-op and fail on nontrivial correction.
+- [x] Freeze atomic solver/writer failure and zero-commit retry semantics.
+- [x] Scope zero-duration identity to an already admitted state, profile, and
+      context with valid preconditions; represent an instantaneous impulse as
+      a separate typed event jump.
+- [x] Keep A floor activation runtime-valid but nonsmooth and admit all C rank
+      changes through basis-independent selector strata with exactly one
+      regular self-consistent root; reject threshold/nonregular boundary roots
+      until a separate boundary-root contract is admitted.
+- [x] Freeze bounded-domain A CI/CI+PC root uniqueness and stratum-local C
+      uniqueness under explicit self-map and contraction inequalities without
+      claiming arbitrary globality or cross-stratum smoothness.
+- [x] Admit typed topology-event continuation for all ten profiles, including
+      exact V3 history-free A initialization, typed `L_K4_evt` carrier
+      transport or explicit `Z=0` reset, and RG target-section reconstruction.
+- [x] Restrict `L_1 Z L_1_star` to an explicit factorization of
+      `L_K4_evt` with a declared source/target pairing and adjoint.
+- [x] Split context-contract identity from mutable current context input.
+- [x] Replace blanket A/C migration rejection with lossy A-to-C admission and
+      history-free C-to-A admission using exact V3 `W` reconstruction.
+- [x] Separate V3 transition, snapshot/state, observable, and lifecycle/event
+      reduction surfaces and serialize `Q_target` as lifecycle identity.
+- [x] Record 16 independent multi-authority write-off, freeze, and immediate-
+      path subcases in the three affected matrix rows.
+- [x] Keep Candidate B underdetermined and visible; do not relabel the PC
+      carrier as B's missing signed formation source.
+- [x] Resolve generic lossless history preservation without sufficient event
+      lineage as a bounded negative result; retain explicit archive/reset as
+      the lawful generic fallback and block continuation-spectrum identity
+      claims from lifecycle continuation alone.
+- [x] Disposition all 47 predecessor debts and reconcile the 29-debt scientific
+      live union, zero current D9 debts, one resolved negative result, and four
+      post-spec verification obligations without silent drops or conflation.
+- [x] Bind every resolved quantitative predecessor row to
+      `D9-VERIFY-QUANTITATIVE-PARAMETER-ENVELOPES`.
+- [x] Obtain human acceptance.
+
+```text
+record = GRC9V4-CD-D9-v1
+status = accepted_bounded
+decision_record_digest = 33c8fe75ae7fda716e97bb9714d5f297911bc4d606f5d382d77f9c3092aa4586
+
+positive_profiles = 10
+candidate_B = routed_not_rejected_no_lifecycle_profile
+coverage_columns = 26
+coverage_cells = 260
+blank_coverage_cells = 0
+exact_V3_disabled_reduction_witnesses = 10
+typed_topology_event_continuation_profiles = 10
+lossy_topology_event_continuation_profiles = 10
+untyped_topology_event_supported_profiles = 0
+multi_authority_intervention_rows = 3
+multi_authority_intervention_subcases = 16
+
+predecessor_live_debts = 47
+carried_predecessor_debts = 29
+resolved_predecessor_debts = 18
+superseded_predecessor_debts = 0
+current_D9_debts = 0
+D9_resolved_negative_results = 1
+live_debt_union = 29
+post_spec_verification_obligations = 4
+controls = 130
+
+D10_ready_after_human_acceptance = true
+human_acceptance = accepted_bounded_2026-08-25
+D10_authorized = true
+specification_authorized = false
+implementation_authorized = false
+runtime_or_src_changed = false
+```
+
+The authoritative records are
+[`D9CompleteStepAndLifecycleContract.json`](./decisions/D9CompleteStepAndLifecycleContract.json),
+its [scientific interpretation](./decisions/D9CompleteStepAndLifecycleContract.md),
+the [profile/state/lifecycle registry](./decisions/D9ProfileStateLifecycleRegistry.json),
+the [adversarial coverage matrix](./decisions/D9LifecycleCoverageMatrix.json),
+and the [residual debt ledger](./decisions/D9ResidualDebtLedger.json).
 
 ## D10. Design Synthesis And Spec-Writing Decision
 
-Status: blocked on D9 or an explicit rejected-all/missing-theory/
-missing-discriminator terminal route.
+Status: authorized; not yet executed.
 
 - [ ] Reconcile all executed gate decisions into one architecture or bounded
       no-selection closeout.

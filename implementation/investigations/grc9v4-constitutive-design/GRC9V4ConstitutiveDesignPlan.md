@@ -1,7 +1,7 @@
 # GRC9V4 Constitutive Design Investigation Plan
 
 **Date:** 2026-08-23  
-**Status:** D0-D7, D4-v2-D7-v2, D7G-v1/v2, the D7G-post-v2 correction, D8-A, coupled/implicit A+C, coupled A+C architecture-local D8-B, GTRS-OS, GTRS-RG, GTRS-PC, GTRS-COMP, and GTRS-CI-PC accepted bounded; D9 authorized but not yet executed; D10 remains blocked
+**Status:** D0-D7, D4-v2-D7-v2, D7G-v1/v2, the D7G-post-v2 correction, D8-A, coupled/implicit A+C, coupled A+C architecture-local D8-B, GTRS-OS, GTRS-RG, GTRS-PC, GTRS-COMP, GTRS-CI-PC, and D9 accepted bounded; D10 is authorized to begin
 **Design basis:** [`GRC9V4ConstitutiveDesignBasis.md`](./GRC9V4ConstitutiveDesignBasis.md)  
 **Checklist:** [`GRC9V4ConstitutiveDesignChecklist.md`](./GRC9V4ConstitutiveDesignChecklist.md)  
 **Decision ledger:** [`GRC9V4ConstitutiveDesignDecisionLedger.md`](./GRC9V4ConstitutiveDesignDecisionLedger.md)
@@ -3007,8 +3007,7 @@ and its
 
 ## D9. Complete Step And Lifecycle Contract
 
-Status: authorized by accepted GTRS-CI-PC; not yet executed. D10 remains subject
-to conditional numerical-discrimination obligations.
+Status: accepted bounded. D10 is authorized to begin.
 
 Freeze candidate complete-step ordering, causal state, serialization,
 restoration identity, reset baseline, RNG use, deterministic replay,
@@ -3026,15 +3025,87 @@ equivalence surface.
 Freeze each actual `pi_a o F_V4_a_disabled o i_a = F_V3` witness and its exact,
 projected, or tolerance-bounded classifications as the lifecycle/migration
 contract. Do not use singular "selected candidate" language before D10.
-Enforce the normative topology capability decision: freeze
-parent-to-child retained-representation transport, resource accounting, reset,
-and replay semantics; explicitly disable topology-changing capabilities in a
-fixed-topology subprofile; or freeze deterministic event-boundary termination
-or reset. A fixed early verification envelope cannot discharge a full-runtime
-topology debt.
+Enforce the normative topology capability decision without equating
+continuation with lossless transport of every V4 coordinate. Freeze typed
+resource transport and charge receipts, then require candidate-specific
+history transport or explicit archive/reset, target reconstruction,
+readmission, replay identity, and atomic commit. Events and profile migrations
+map the whole lifecycle tuple `(X_current, X_reset, Q_target)`, so reset cannot
+resurrect an obsolete graph or profile. Generic lossless history preservation
+without sufficient event lineage is a resolved negative boundary, not a
+precondition for lifecycle continuation or an open D9 debt.
 
 No legacy GRC9V3 snapshot may be silently interpreted as containing retained
 state it never serialized.
+
+D9 is deliberately anti-happy-path. It freezes ten independent A/C lifecycle
+profiles across CI, OS, RG2b, PC, and CI+PC rather than using one reference
+transition as a proxy for the population. Candidate B remains
+`routed_not_rejected_no_lifecycle_profile`.
+
+The complete-step charge is derived from the actual unit-measure closed-
+internal write path:
+
+```text
+Q(X) = sum_i C_i
+Q(X_k+1) - Q(X_k) = B_ext + S_ext
+current admitted profile: B_ext = S_ext = 0
+V_Q = kernel(DQ)
+Pi_Q_C_H0 = H0-weighted projection on the zero-sum C tangent
+full tangent retraction = identity extension on nonresource coordinates
+
+general profile/event form:
+  Q_varpi(C) = varpi^T C
+  T_C_evt = event resource transport, not Candidate C derived T_C
+  C+ = T_C_evt C- + Delta_C_event
+  varpi+^T T_C_evt = varpi-^T
+  Delta_Q_event = varpi+^T C+ - varpi-^T C-
+  Q_target+ = Q_target- + Delta_Q_event = varpi+^T C+
+```
+
+The current closed profile requires continuity to land on the finite,
+nonnegative serialized `Q_target` simplex before any final-`C` writer. Its
+budget projection is therefore an identity/no-op; a nontrivial correction
+fails rather than following the A/C poststate writers. The structural
+`Pi_Q_C_H0` and its canonical full-tangent retraction do not claim a full-state
+orthogonal projector before a product analysis metric is frozen.
+
+All ten profiles admit typed topology-event continuation. Candidate A uses an
+admitted `W_A` lineage map or the exact V3 history-free reconstruction. PC and
+CI+PC require a typed bounded, symmetry/PSD-preserving, covariant
+`L_K4_evt`; `L_1 Z L_1_star` is only an admitted factorization under an
+explicit source/target pairing and adjoint. Without that map they archive and
+reset `Z` to zero with a loss receipt. RG reconstructs the target-graph
+completion and invariant section. C selector-rank changes use a basis-
+independent stratified-root rule that accepts exactly one regular self-
+consistent root. A CI and CI+PC gain bounded-domain root uniqueness; C freezes
+the self-map and contraction theorem separately inside each regular selector
+stratum before comparing the self-consistent roots. Threshold-boundary roots
+remain fail-closed. D9 also freezes atomic
+solver/writer failure, scoped zero-duration identity with separate typed event
+impulses, separate V3 transition/state/observable/lifecycle reduction
+surfaces, both directional A/C migrations, context-contract versus context-
+value semantics, restoration/reset/replay identity, representation covariance,
+and smooth/nonsmooth/invalid regime boundaries.
+
+The required anti-happy-path artifacts are:
+
+- a ten-profile state/lifecycle registry;
+- a `10 x 26` matrix with 260 explicit cells, no blanks, and explicit
+  multi-authority intervention subcases;
+- a complete residual-debt ledger; and
+- the D9 decision and interpretation.
+
+The 47-debt predecessor population closes as 29 carried, 18 resolved, and zero
+superseded. D9 has zero open tranche-local scientific debts and one resolved
+negative no-lineage history-preservation result, for a 29-debt scientific live
+union with no silent drop. Four numerical/implementation items are tracked
+separately as post-spec verification obligations rather than unresolved D9
+mathematics, and every resolved quantitative predecessor points to its exact
+successor verification obligation. Typed substrate continuation does not by
+itself establish continuation-spectrum identity preservation. D9 acceptance
+authorizes D10 investigation, but does not authorize specification writing or
+runtime changes.
 
 ## D10. Design Synthesis And Spec-Writing Decision
 

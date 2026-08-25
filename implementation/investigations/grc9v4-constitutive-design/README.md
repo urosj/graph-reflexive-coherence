@@ -75,6 +75,19 @@ Start with:
 - [D8-B coupled architecture-local interpretation](./decisions/D8BCoupledArchitectureLocalContinuationAnalysis.md).
 - [operator-split same-beat successor decision](./decisions/GeometryTemporalRealizationSuccessorOperatorSplit.json);
 - [operator-split same-beat successor interpretation](./decisions/GeometryTemporalRealizationSuccessorOperatorSplit.md).
+- [reconstructed-geometry successor decision](./decisions/GeometryTemporalRealizationSuccessorReconstructedGeometry.json);
+- [reconstructed-geometry successor interpretation](./decisions/GeometryTemporalRealizationSuccessorReconstructedGeometry.md);
+- [persistent-carrier successor decision](./decisions/GeometryTemporalRealizationSuccessorPersistentCarrier.json);
+- [persistent-carrier successor interpretation](./decisions/GeometryTemporalRealizationSuccessorPersistentCarrier.md);
+- [comparative realization synthesis](./decisions/GeometryTemporalRealizationComparativeSynthesis.json);
+- [comparative synthesis interpretation](./decisions/GeometryTemporalRealizationComparativeSynthesis.md);
+- [coupled-implicit plus persistent-carrier decision](./decisions/GeometryTemporalRealizationHybridCoupledPersistentCarrier.json);
+- [hybrid interpretation](./decisions/GeometryTemporalRealizationHybridCoupledPersistentCarrier.md);
+- [D9 complete-step and lifecycle decision](./decisions/D9CompleteStepAndLifecycleContract.json);
+- [D9 scientific interpretation](./decisions/D9CompleteStepAndLifecycleContract.md);
+- [D9 profile/state/lifecycle registry](./decisions/D9ProfileStateLifecycleRegistry.json);
+- [D9 adversarial coverage matrix](./decisions/D9LifecycleCoverageMatrix.json);
+- [D9 residual debt ledger](./decisions/D9ResidualDebtLedger.json).
 
 Current gate status:
 
@@ -122,9 +135,24 @@ GTRS-RG_universal_reconstruction_impossibility = false
 GTRS-PC_persistent_K4_carrier = accepted_bounded_two_bounded_complete_design_rows
 GTRS-PC_capability_beyond_local_RG = independent_retained_structural_state_without_inverse_or_graph_transform
 GTRS-PC_base_state_hysteresis = unsupported_pending_complete_chain_witnesses
-next_substantive_route = GTRS-COMP_comparative_realization_synthesis
+GTRS-COMP = accepted_bounded
+GTRS-CI-PC = accepted_bounded
+D9 = accepted_bounded_lifecycle_and_typed_event_closure
+D9_positive_profiles = 10
+D9_coverage_cells = 260
+D9_blank_cells = 0
+D9_multi_authority_intervention_subcases = 16
+D9_typed_topology_event_continuation_profiles = 10
+D9_lossy_topology_event_continuation_profiles = 10
+D9_untyped_topology_event_supported_profiles = 0
+D9_current_scientific_debts = 0
+D9_resolved_negative_results = 1
+D9_live_scientific_debt_union = 29
+D9_post_spec_verification_obligations = 4
+next_substantive_route = D10_design_synthesis_and_spec_writing_decision
 remaining_family_order = operator_split_then_reconstructed_then_persistent_then_comparative_synthesis
 D9_before_remaining_family_pressure = false
+D10_authorized = true
 ```
 
 D4-v2 now gives B and C bounded revision-specific constitutive completions
@@ -428,11 +456,12 @@ parameter set, so D8-B reports no `alpha`, `beta`, `gamma`, `mu`, or `lambda`
 values and no stability classification. B1/B2 verification methods are mapped
 for later reuse or V4-specific adaptation, while all V3 numerical outputs stay
 historical. The A and C direct-field visibility receipts remain narrower than
-complete-chain nonannihilation. Comparative D8-B, remaining realization-family
-pressure, and D9 stay blocked pending later gates.
+complete-chain nonannihilation. At D8-B acceptance, comparative D8-B,
+remaining realization-family pressure, and D9 remained blocked pending later
+gates.
 
-The immediate route is the remaining realization-family pressure, not D9 and
-not a numerical-spectrum campaign. Operator-split same-beat is first,
+The route from D8-B was the remaining realization-family pressure, not D9 and
+not a numerical-spectrum campaign. Operator-split same-beat came first,
 reconstructed geometry second, and persistent structural carrier third;
 comparative realization synthesis follows. The ordering minimizes unnecessary
 new state authority and does not rank the families. Each row asks whether the
@@ -521,12 +550,50 @@ still fail closed without a typed interspace map. Comparative synthesis must
 audit full `K_4` versus the exact profile-kernel quotient, treat this as the
 scalar-ZOH representative rather than a universal single-timescale PC law, and
 test persistence as a potentially orthogonal axis to CI/OS/lagged timing. PC is
-accepted bounded; comparative realization synthesis is next.
+accepted bounded and routed comparative realization synthesis.
 
 The authoritative PC records are
 [`GeometryTemporalRealizationSuccessorPersistentCarrier.json`](./decisions/GeometryTemporalRealizationSuccessorPersistentCarrier.json)
 and its
 [`scientific interpretation`](./decisions/GeometryTemporalRealizationSuccessorPersistentCarrier.md).
+
+Comparative synthesis subsequently retained eight positive primary A/C rows,
+two RG-1 obstruction rows, and Candidate B as routed rather than rejected. It
+separated candidate ontology, geometry/current timing, and history authority
+without ranking them. The narrow CI+PC pressure then established that coupled
+same-beat timing and independently persistent `K_4` history compose locally
+for A and C under the preregistered unit-plus-unit profile. The steady source
+therefore has structural gain two; this was not normalized away.
+
+D9 now closes design-level operational semantics across all ten positive
+profiles. Its registry and 260-cell matrix freeze complete-step ordering,
+charge, failure atomicity, temporal edges, disablement, exact V3 reduction,
+migration, restoration identity, replay, covariance, and regime boundaries.
+The charge is derived from the actual closed-internal unit-measure write path
+as `Q=sum(C)` and generalized to `Q_varpi=varpi^T C` for typed resource events.
+Its structural `H0`-weighted C-sector projector extends to a canonical full
+tangent retraction without claiming a full-state orthogonal projector. The
+current budget stage is an identity/no-op before final-`C` writers.
+
+All ten rows admit typed topology continuation through an event-supplied
+resource map, explicit charge receipt, candidate-specific history transport or
+lossy reset, target reconstruction, readmission, and atomic commit over the
+whole lifecycle tuple `(X_current, X_reset, Q_target)`. Exact V3
+base-conductance reconstruction supplies the history-free A initializer,
+persistent carriers use a typed `L_K4_evt` when sufficient lineage exists or
+an explicit reset receipt when it does not, RG reconstructs its target section,
+and C rank changes use stratum-local contraction plus basis-independent root
+selection. Topology continuation therefore does not imply lossless history
+transport. Generic preservation without sufficient lineage is closed as a
+bounded negative result, leaving zero open D9 lifecycle-mathematics debts and a
+29-debt inherited scientific live union. Typed lifecycle continuation also does
+not establish continuation-spectrum identity preservation. Four
+numerical/runtime conformance items remain post-spec verification obligations
+rather than missing design mathematics. Candidate B remains
+underdetermined because PC does not derive its signed symmetric formation
+source. The matrix also exposes 16 independent interventions across its three
+multi-authority rows. D9 is awaiting human review, and D10 remains unauthorized
+until that acceptance.
 
 The later specification and implementation must also rebuild every
 differential or gradient summary used by `G_W(C[k+1], J_C[k])` from

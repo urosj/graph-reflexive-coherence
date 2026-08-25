@@ -1,6 +1,6 @@
 # GRC9V4 Constitutive Design Decision Ledger
 
-**Status:** D0-D7, D4-v2-D7-v2, D7G-v1/v2, the D7G-post-v2 correction, D8-A, coupled/implicit A+C, coupled A+C architecture-local D8-B, GTRS-OS, GTRS-RG, GTRS-PC, GTRS-COMP, and GTRS-CI-PC accepted bounded; D9 authorized but not yet executed; D10 remains blocked
+**Status:** D0-D7, D4-v2-D7-v2, D7G-v1/v2, the D7G-post-v2 correction, D8-A, coupled/implicit A+C, coupled A+C architecture-local D8-B, GTRS-OS, GTRS-RG, GTRS-PC, GTRS-COMP, GTRS-CI-PC, and D9 accepted bounded; D10 is authorized to begin
 
 This ledger is the additive decision record for D0-D10. The design basis and
 plan define questions and constraints; this file records accepted answers.
@@ -1918,12 +1918,119 @@ and its
 
 ## D9. Complete Step And Lifecycle Contract
 
-Status: authorized by accepted `GTRS-CI-PC`; not yet executed. D10 remains
-subject to conditional numerical-discrimination obligations.
+Status: `accepted_bounded`.
+
+D9 freezes operational semantics for ten independent positive profiles:
+
+```text
+A/C x CI, OS, RG2b, PC
+A/C x CI+PC
+```
+
+Candidate B remains `routed_not_rejected_no_lifecycle_profile`. D9 does not
+rank candidates or realizations and does not infer B failure from the absence
+of an admitted `U_B` transition. PC establishes viable independent structural
+state but does not derive B's signed symmetric formation source, so B remains
+underdetermined rather than rejected or solved by relabel.
+
+The complete-step charge is derived from the current closed-internal,
+unit-measure write path:
+
+```text
+Q(X) = sum_i C_i
+Q(X_k+1) - Q(X_k) = B_ext + S_ext
+current admitted profile: B_ext = S_ext = 0
+V_Q = kernel(DQ)
+Pi_Q_C_H0 = H0-weighted zero-sum projector on C
+full tangent retraction = identity extension on nonresource coordinates
+
+general event profile:
+  Q_varpi(C) = varpi^T C
+  T_C_evt = event resource transport, not Candidate C derived T_C
+  C+ = T_C_evt C- + Delta_C_event
+  varpi+^T T_C_evt = varpi-^T
+  receipt = varpi+^T C+ - varpi-^T C-
+  Q_target+ = Q_target- + receipt = varpi+^T C+
+```
+
+The only authoritative nonresource state is `W_A` where present and `Z_4`
+where present. Candidate C's `T_C`, geometry, current, substages, RG section,
+solver work, and analysis projectors remain derived or transient. The structural projector and its
+canonical full-tangent retraction do not claim a full-state orthogonal
+projector before the product metric is frozen. Post-continuity `C` must already
+be finite, nonnegative, and on serialized `Q_target`; the current budget stage
+is an identity/no-op, and a nontrivial correction fails before any final-`C`
+writer.
+
+The complete-step transaction validates profile and state, derives or solves
+all uncommitted geometry/current stages, validates the authoritative solver
+disposition, applies antisymmetric continuity once, validates the simplex and
+budget no-op, refreshes final-`C` surfaces, runs the A/C poststate writer,
+writes persistent carriers once without same-beat readback, refreshes derived
+surfaces, and commits atomically. Failure at any solver or writer stage changes
+nothing authoritative.
+
+Disablement, migration/drop, causal switch-off, and native release remain
+distinct. All ten disabled profiles have separately scoped GRC9V3 transition,
+state-projection, observable, and lifecycle/event reduction surfaces.
+Migration maps are direction-specific: A-to-C is admitted as lossy, while
+C-to-A uses exact V3 base-conductance reconstruction as its history-free A
+initializer. Context-contract identity is separate from mutable current
+context input.
+
+The ten-profile by 26-operation matrix contains all 260 cells, with 16
+additional independent intervention subcases in three multi-authority rows. A
+floor activation is runtime-valid but nonsmooth under the frozen total policy.
+All C selector-rank changes use basis-independent strata. Each regular stratum
+has its own self-map and contraction domain; coupled profiles accept exactly
+one regular self-consistent root across the stratum union and otherwise return
+no or multiple admitted roots. Threshold-boundary roots fail closed. All ten
+rows admit typed topology continuation through `T_C_evt` resource accounting,
+whole-lifecycle migration of current state, reset baseline, and `Q_target`,
+typed `L_K4_evt` history transport or explicit reset, target reconstruction,
+readmission, and atomic commit. Generic lossless history preservation without
+sufficient lineage is resolved negative, not an optional open debt, and typed
+lifecycle continuation does not establish continuation-spectrum identity.
+
+```text
+record = GRC9V4-CD-D9-v1
+decision_record_digest = 33c8fe75ae7fda716e97bb9714d5f297911bc4d606f5d382d77f9c3092aa4586
+
+positive_profile_rows = 10
+coverage_cells = 260
+blank_cells = 0
+exact_V3_reduction_witnesses = 10
+controls = 130
+
+predecessor_live_debts = 47
+carried = 29
+resolved = 18
+superseded = 0
+current_D9_debts = 0
+D9_resolved_negative_results = 1
+live_debt_union = 29
+post_spec_verification_obligations = 4
+silent_drop_count = 0
+
+human_acceptance_recorded = true
+D10_ready_after_human_acceptance = true
+human_acceptance = accepted_bounded_2026-08-25
+D10_authorized = true
+specification_authorized = false
+implementation_authorized = false
+runtime_or_src_changed = false
+```
+
+The authoritative records are
+[`D9CompleteStepAndLifecycleContract.json`](./decisions/D9CompleteStepAndLifecycleContract.json),
+its [scientific interpretation](./decisions/D9CompleteStepAndLifecycleContract.md),
+the [profile registry](./decisions/D9ProfileStateLifecycleRegistry.json),
+the [coverage matrix](./decisions/D9LifecycleCoverageMatrix.json), and the
+[residual debt ledger](./decisions/D9ResidualDebtLedger.json).
 
 ## D10. Design Synthesis And Spec-Writing Decision
 
-Status: blocked on D9 or explicit early terminal route.
+Status: authorized; not yet executed.
 
 Permitted final dispositions:
 
