@@ -1458,11 +1458,87 @@ The authoritative records are
 and its
 [`scientific interpretation`](./decisions/D8BCoupledArchitectureLocalContinuationAnalysis.md).
 
+## Remaining Realization-Family Pressure
+
+Status: `GTRS-OS` accepted bounded; `GTRS-RG` is next and authorized.
+
+```text
+execution_order = operator_split_same_beat -> reconstructed_geometry -> persistent_structural_carrier -> comparative_realization_synthesis
+ordering_is_architecture_ranking = false
+common_question = can_this_family_produce_a_bounded_complete_step_from_existing_A_C_constitutive_content
+row_dispositions = [bounded_complete_realization, candidate_local_blocker, family_level_obstruction, bounded_unresolved]
+D8A_rerun_required_for_admission = false
+numeric_alpha_mu_gamma_required_for_admission = false
+D9_before_family_pressure = false
+```
+
+Operator-split receives first pressure because it is the closest causal
+alternative to the coupled root and tests explicit versus implicit same-beat
+feedback with minimal new ontology. Reconstructed geometry follows to test
+whether authoritative state already suffices. Persistent carrier is last
+because it introduces state and lifecycle authority. Comparative synthesis
+then enumerates the actual architecture population and separates candidate
+effects from realization effects before D9.
+
+### GTRS-OS: Operator-Split Same-Beat
+
+The preregistered primary realization uses exactly one predictor, one geometry
+update, one fixed-geometry corrector, and one atomic commit. A second geometry
+update from the corrector current is forbidden in this row. Both A and C admit
+bounded local equation-level complete realizations without new persistent
+state:
+
+```text
+A = bounded_complete_realization
+C = bounded_complete_realization
+```
+
+The family exposes rather than hides its closure defect:
+
+```text
+r_h^OS = h^(1) - H_profile(K4_base + Delta K4(J^(1),h^(1))).
+```
+
+Because the corrector solves the fixed-geometry current equation exactly, the
+authoritative residual identity is
+
+```text
+F_a^CI(J_a^(1),h_a^(1)) = (0,r_h,a^OS).
+```
+
+The pair is current-consistent with the coupled equations and leaves only the
+geometry fixed point unclosed. The structural map remains `K_4`-valued and
+enters the relative `H1_form` operator norm only through the typed affine
+profile adapter `P_0: K_4 -> T_h H1_form`. With
+`g_0=||P_0||_(K->H)`, the D8-B `C2` subcharts and named current/structural
+Lipschitz constants give
+
+```text
+||r_h^OS||
+  <= |kappa_H|^2 g_0^2 L_S M_S (1+L_C).
+```
+
+The corresponding first-Picard-iterate comparison has the bound
+`|kappa_H|^2 L_T M_G / (1-|kappa_H| L_T)` when
+`|kappa_H| L_T < 1`. No `O(Delta_t)` order, nonsmooth-boundary extension, or
+numeric bound is claimed.
+
+The result establishes explicit equation-level geometry consumers in A and C,
+not executed nonzero complete-state effects. The latter remain tied to
+`D_h J_a^(1) = -(D_J F_J,a)^(-1) D_h F_J,a` and the two current OS witness
+debts. A's mobility/writer authority, C's derived `T_C`, exact switch
+semantics, final-current accounting, and failure atomicity remain unchanged.
+The result adds no runtime state and makes no source change.
+
+The authoritative records are
+[`GeometryTemporalRealizationSuccessorOperatorSplit.json`](./decisions/GeometryTemporalRealizationSuccessorOperatorSplit.json)
+and its
+[`scientific interpretation`](./decisions/GeometryTemporalRealizationSuccessorOperatorSplit.md).
+
 ## D9. Complete Step And Lifecycle Contract
 
-Status: blocked on disposition of the coupled architecture-local D8-B numerical
-stability debt, the remaining
-realization-family pressure, and the comparative/selection boundary.
+Status: blocked on `GTRS-RG`, `GTRS-PC`, and `GTRS-COMP`, plus any
+pre-D10 numerical-stability obligation activated by comparative synthesis.
 
 ## D10. Design Synthesis And Spec-Writing Decision
 

@@ -73,6 +73,8 @@ Start with:
 - [coupled/implicit successor interpretation](./decisions/GeometryTemporalRealizationSuccessorCoupledImplicit.md).
 - [D8-B coupled architecture-local decision](./decisions/D8BCoupledArchitectureLocalContinuationAnalysis.json);
 - [D8-B coupled architecture-local interpretation](./decisions/D8BCoupledArchitectureLocalContinuationAnalysis.md).
+- [operator-split same-beat successor decision](./decisions/GeometryTemporalRealizationSuccessorOperatorSplit.json);
+- [operator-split same-beat successor interpretation](./decisions/GeometryTemporalRealizationSuccessorOperatorSplit.md).
 
 Current gate status:
 
@@ -111,6 +113,10 @@ coupled_implicit_A = accepted_bounded_complete_realization_candidate
 architecture_local_D8B_A_authorized = true
 architecture_local_D8B_C_authorized = true
 comparative_D8B_authorized = false
+GTRS-OS_operator_split_same_beat = accepted_bounded_two_bounded_complete_design_rows
+next_substantive_route = GTRS-RG_reconstructed_geometry
+remaining_family_order = operator_split_then_reconstructed_then_persistent_then_comparative_synthesis
+D9_before_remaining_family_pressure = false
 ```
 
 D4-v2 now gives B and C bounded revision-specific constitutive completions
@@ -416,6 +422,28 @@ for later reuse or V4-specific adaptation, while all V3 numerical outputs stay
 historical. The A and C direct-field visibility receipts remain narrower than
 complete-chain nonannihilation. Comparative D8-B, remaining realization-family
 pressure, and D9 stay blocked pending later gates.
+
+The immediate route is the remaining realization-family pressure, not D9 and
+not a numerical-spectrum campaign. Operator-split same-beat is first,
+reconstructed geometry second, and persistent structural carrier third;
+comparative realization synthesis follows. The ordering minimizes unnecessary
+new state authority and does not rank the families. Each row asks whether the
+family can produce a bounded complete A/C step and terminates as a bounded
+complete realization, candidate-local blocker, family-level obstruction, or
+bounded unresolved result.
+
+The operator-split primary row is accepted bounded. It freezes
+one predictor, one generated-geometry stage, one fixed-geometry corrector, and
+one atomic commit, with no retroactive geometry correction. A and C each admit
+a bounded complete design realization with an explicit equation-level same-
+beat geometry consumer. The split pair solves the coupled current equation
+exactly; its only coupled-equation residual is the deliberately unclosed final-
+current geometry fixed point. A typed normed local theorem keeps `Delta K4`
+in the common `K_4` norm and maps it through `P_0: K_4 -> T_h H1_form`
+before applying the relative Hodge norm. The resulting residual is quadratic
+in `kappa_H` on the D8-B `C2` charts. It is not relabeled as an
+`O(Delta_t)` time-integration error, and no numeric split envelope or executed
+complete-chain witness is claimed.
 
 The later specification and implementation must also rebuild every
 differential or gradient summary used by `G_W(C[k+1], J_C[k])` from

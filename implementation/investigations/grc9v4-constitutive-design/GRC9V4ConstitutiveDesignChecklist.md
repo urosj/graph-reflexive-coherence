@@ -1893,11 +1893,150 @@ contract. It does not fill absent numerical spectra with V3 values,
 direct-field terms, or formal IFT regularness. Numeric stability remains
 conditional pre-D10 or post-specification implementation evidence.
 
+### Remaining Realization-Family Pressure
+
+Status: operator-split same-beat accepted bounded; reconstructed geometry is
+next and authorized.
+
+Common row contract:
+
+- [x] Use only already-derived candidate-local constitutive content or identify
+      every new family-local completion explicitly.
+- [x] Freeze exact equations, state authority, stage order, accounting,
+      covariance, failure atomicity, disabled behavior, and linearization
+      surface before assigning a positive disposition.
+- [x] Require the geometry-producing substage to be an explicit equation-level
+      input to a later complete-step substage; keep nonzero complete-state
+      effect as a separate witness and reject endpoint/interface-only evidence.
+- [x] Assign exactly one row disposition:
+      `bounded_complete_realization`, `candidate_local_blocker`,
+      `family_level_obstruction`, or `bounded_unresolved`.
+- [x] Do not rerun D8-A or require numerical `alpha`, `mu`, or `gamma` merely
+      to admit a bounded complete realization.
+- [x] Keep the D8-B charge, complete-chain, conditioning, global-root, and event
+      debts open without using them to block minimum family pressure.
+
+GTRS-OS, operator-split same-beat:
+
+- [x] Freeze the primary order as one
+      `X_k -> J^(0) -> j_flat^(0) -> Delta K4^(0) -> h^(1) -> J^(1) -> X_(k+1)`
+      predictor/geometry/corrector/atomic-commit pass before outcomes.
+- [x] Forbid a second geometry solve from `J^(1)` and route any alternative
+      stage order or repeated correction to a separately named successor row.
+- [x] Freeze C's full geometry-dependent corrector reconstruction at fixed
+      `h_C^(1)` and permit only `J_C^(1)` to enter continuity.
+- [x] Freeze A's reference-relative `Phi_A^OS` geometry consumer, full
+      `J0_A^OS -> W_hat_A -> q_A` recomputation, and unchanged continuity plus
+      D7 writer.
+- [x] Freeze `r_h^OS = h^(1) - h_hat^(1)` with `h_hat^(1)` generated from the
+      final corrector current and the same accepted profile.
+- [x] Freeze the exact identity
+      `F_a^CI(J_a^(1),h_a^(1)) = (0,r_h,a^OS)` and interpret the split as
+      current-consistent with an intentionally unclosed geometry fixed point.
+- [x] Freeze the relative `H1_form` operator norm used for `r_h^OS`.
+- [x] Freeze a separate common-`K_4` structural norm, the typed affine profile
+      adapter `P_0: K_4 -> T_h H1_form`, and
+      `G_a,kappa = kappa_H P_0[S_a]`; never apply the Hodge norm directly to
+      `S_a = Delta K4_a`.
+- [x] Prove the local bound
+      `||r_h^OS||_H <= |kappa_H|^2 g_0^2 L_S M_S (1+L_C)` under named Lipschitz
+      hypotheses on A's floor-inactive and C's fixed-rank/strict-gap D8-B `C2`
+      subcharts.
+- [x] Freeze the first-Picard-iterate comparison bound under
+      `|kappa_H| L_T < 1`; do not extend it through nonsmooth boundaries.
+- [x] Keep nonzero `r_h^OS` as an explicit splitting defect rather than an
+      automatic failure or a value that may be repaired post hoc.
+- [x] Pressure `r_h^OS(Delta_t,kappa_H)` and `Psi^OS-Psi^CI` separately; do
+      not assume a time-step order for the algebraic split.
+- [x] Test ordering, atomicity, conservation/accounting, splitting error, and
+      step-size dependence.
+- [x] Verify generated geometry is an explicit equation-level input to a later
+      same-beat substage.
+- [x] Keep equation-level consumption distinct from executed complete-chain
+      nonannihilation and freeze
+      `D_h J_a^(1) = -(D_J F_J,a)^(-1) D_h F_J,a` as the future witness surface.
+- [x] Separate realization effects from changes to candidate ontology.
+- [x] Block producer-authored post-hoc correction of splitting or conservation
+      failure.
+- [x] Preserve `chi_a = 0`, `zeta_a = 0`, A mobility/writer authority, derived
+      C `T_C`, cache/history exclusion, and all-or-nothing commit semantics.
+
+### GTRS-OS Accepted-Bounded Result
+
+```text
+record = GRC9V4-GTRS-OS-v1
+status = accepted_bounded
+decision_digest = 36c98542c7920d468e932287872cf4dabf8720d5d2c6b0c0e30e6f94b113605f
+
+primary_realization = single_predictor_geometry_corrector_atomic_commit
+second_geometry_iteration = forbidden_in_primary_row
+
+A_disposition = bounded_complete_realization
+C_disposition = bounded_complete_realization
+new_persistent_state = false
+split_consistency_residual = defined
+exact_coupled_residual_identity = passed
+geometry_residual_norm = relative_H1_form_operator_norm
+K4_structural_norm = reference_scaled_common_K4_operator_norm
+profile_pushforward = P0_K4_to_H1_form
+K4_H1_norm_conflation = rejected
+split_residual_numeric_envelope = uninstantiated
+complete_chain_nonannihilation_witnesses = 0
+equation_level_geometry_consumers = 2
+time_step_order_assumed = false
+conditional_local_coupling_order = O(kappa_H^2)
+
+predecessor_live_debts = 34
+predecessor_debts_dispositioned = 34
+current_debts = 4
+live_debt_union = 37
+controls = 42
+
+human_acceptance_recorded = true
+GTRS-RG_authorized = true
+GTRS-PC_authorized = false
+GTRS-COMP_authorized = false
+D9_authorized = false
+runtime_or_src_changed = false
+```
+
+The positive row dispositions are local equation-level design results. They
+do not convert the conditional small-coupling order into a numeric envelope,
+do not treat the algebraic split as `O(Delta_t)`, and do not promote explicit
+equation-level geometry consumption into an executed complete-chain effect.
+
+GTRS-RG, reconstructed geometry:
+
+- [ ] Test exact deterministic reconstruction from authoritative current state
+      and declared same-step inputs.
+- [ ] Exclude hidden cache, prior-step receipt, solver history, and RNG.
+- [ ] Test whether reconstruction loses load-bearing `J`-dependent information.
+- [ ] Verify Markov closure and covariance without new persistent authority.
+- [ ] Treat historical lagged-state nonreconstructibility as pressure, not an
+      architecture-specific impossibility theorem.
+
+GTRS-PC, persistent structural carrier:
+
+- [ ] Freeze D1-compatible authority, writer, no-input behavior, lifecycle,
+      serialization, restoration, reset, migration, and event semantics.
+- [ ] Verify the carrier adds a causal capability rather than only lifecycle
+      complexity.
+- [ ] Preserve exact disabled behavior and prevent hidden duplicate authority.
+
+GTRS-COMP, comparative realization synthesis:
+
+- [ ] Enumerate every bounded, blocked, obstructed, and unresolved
+      `(candidate, realization)` row.
+- [ ] Compare matched families only under declared representation maps and
+      record noncomparability where no lawful map exists.
+- [ ] Separate candidate-ontology effects from realization-family effects.
+- [ ] Decide whether any numerical stability debt becomes pre-D10.
+- [ ] Close or explicitly route the remaining-family debt before D9.
+
 ## D9. Complete Step And Lifecycle Contract
 
-Status: blocked on disposition of the coupled architecture-local D8-B numerical
-stability debt, the remaining
-realization-family pressure, and the comparative/selection boundary.
+Status: blocked on GTRS-RG, GTRS-PC, and GTRS-COMP, plus any
+pre-D10 numerical-stability obligation activated by comparative synthesis.
 
 - [ ] Freeze complete-step order and causal-state schema.
 - [ ] Freeze post-continuity recomputation of every differential and gradient

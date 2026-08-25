@@ -2277,11 +2277,237 @@ complete-step charge/projector selection, and Candidate A analysis-metric
 selection.
 Comparative D8-B remains blocked.
 
+#### Remaining Realization-Family Pressure
+
+D8-B acceptance does not route directly to D9. The next substantive work is
+the minimum pressure on the three realization families still open in the
+accepted coupled-successor contract, followed by comparative realization
+synthesis:
+
+```text
+GTRS-OS  operator-split same-beat
+GTRS-RG  reconstructed geometry
+GTRS-PC  persistent structural carrier
+GTRS-COMP comparative realization synthesis
+```
+
+This order minimizes unnecessary new state authority; it is not an
+architecture ranking. Operator-split is the closest causal alternative to the
+accepted coupled root. Reconstructed geometry then tests whether existing
+authoritative state suffices without a new carrier. Persistent carrier is last
+because it adds lifecycle, serialization, reset, and migration obligations.
+
+For each family and Candidate A/C row, ask only whether the family can produce
+a bounded complete step from the already derived candidate-local constitutive
+content. Freeze one disposition:
+
+```text
+bounded_complete_realization
+candidate_local_blocker
+family_level_obstruction
+bounded_unresolved
+```
+
+A successful row must provide exact equations, state authority, stage order,
+accounting/conservation, atomic failure behavior, covariance, disabled
+behavior, and a declared architecture-local linearization surface. It must
+show at minimum that the geometry-producing substage is an explicit
+equation-level input to a later complete-step substage. A nonzero complete-
+state effect is a separate witness obligation. Endpoint coverage, interface
+compatibility, or a nonzero intermediate geometry value is insufficient.
+
+Family pressure does not rerun D8-A and does not require numerical `alpha`,
+`mu`, or `gamma` before admission. Once a family yields a bounded complete
+realization, derive only enough architecture-local operator and representation
+semantics to make later comparison lawful. Numerical spectra and stability
+remain a separate evidence decision. D8-B's still-open charge, complete-chain,
+conditioning, global-root, and event debts do not block this family pressure.
+
+##### GTRS-OS: Operator-Split Same-Beat
+
+Pressure an ordered within-beat realization of the accepted A/C maps against
+the coupled root. The preregistered primary realization is one predictor,
+one geometry update, one fixed-geometry corrector, and one atomic commit:
+
+```text
+X_k
+  -> J^(0)
+  -> j_flat^(0)
+  -> Delta K4^(0)
+  -> h^(1)
+  -> J^(1)
+  -> X_(k+1)
+```
+
+`J^(1)` may not feed a second geometry update in this primary row. Any second
+predictor/corrector pass or alternative stage order is a separately named
+successor realization, not a repair made after observing this row.
+
+For C, `J_C^(0)` is the accepted fixed-geometry C current at `h_ref`. It
+produces `j_C^flat,(0)`, `Delta K4_C^(0)`, and `h_C^(1)`. At fixed
+`h_C^(1)`, recompute the entire C geometry-dependent selector,
+identification, response, baseline-current, and current-closure construction
+and solve `J_C^(1)`. Only `J_C^(1)` enters continuity.
+
+For A, `J_A^(0)` is the accepted A reference current at `h_ref`. It produces
+`h_A^(1)`. At fixed `h_A^(1)`, use the admitted reference-relative consumer
+
+```text
+Phi_A^OS
+  = Phi_A^D7
+    + kappa_Ah [Delta_0(h_A^(1)) - Delta_0(h_ref)] C,
+```
+
+then recompute `J0_A^OS -> W_hat_A -> q_A`, solve `J_A^(1)`, and run the
+unchanged continuity and D7 writer stages.
+
+Freeze the split-consistency diagnostic
+
+```text
+h_hat^(1)
+  = H_profile(K4_base + Delta K4(J^(1), h^(1)))
+
+r_h^OS = h^(1) - h_hat^(1).
+```
+
+Because the corrector solves the accepted fixed-`h^(1)` current equation
+exactly, freeze the stronger coupled-equation identity
+
+```text
+F_a^CI(J_a^(1),h_a^(1)) = (0,r_h,a^OS).
+```
+
+The operator split is therefore exactly current-consistent with the coupled
+constitutive equations; its sole coupled-equation residual is the deliberately
+unclosed final-current geometry fixed point.
+
+The coupled root has zero residual by construction. A nonzero one-pass
+residual is not automatically a failed realization; it must remain explicit,
+bounded on the admitted chart, and compatible with the complete step's causal,
+accounting, and atomicity contracts. Do not assume `r_h^OS = O(Delta_t)`.
+Pressure `r_h^OS(Delta_t, kappa_H)` and `Psi^OS - Psi^CI` independently. Any
+small-coupling order must be derived from the declared maps and regularity
+bounds, not imported from time-integrator terminology.
+
+Use the relative Hodge operator norm
+
+```text
+||delta h||_(H1,ref)
+  = ||H1_form,ref^(-1/2)
+       delta H1_form
+       H1_form,ref^(-1/2)||_2.
+```
+
+Keep the common structural and Hodge spaces dimensionally distinct:
+
+```text
+S_a(J,h) = Delta K4_a(J,h) in K_4
+P_0 = (1/kappa_H) D_K H_profile : K_4 -> T_h H1_form
+G_a,kappa(J,h) = kappa_H P_0[S_a(J,h)] in T_h H1_form
+g_0 = ||P_0||_(K->H)
+g_H = |kappa_H| g_0.
+```
+
+Use a reference-scaled operator norm `||.||_K` on the accepted common `K_4`
+coordinate/unit basis. Never apply the relative `H1_form` norm directly to
+`S_a`; only its typed profile push-forward is geometry-valued.
+
+On A's D8-B floor-inactive `C2` chart and C's fixed-rank, strict-gap `C2`
+chart, write `J=C_a(h)`, `S_a(J,h)=Delta K4_a(J,h)`, and
+`M_S=||S_a(J^(0),h_ref)||_K`. If `C_a` and `S_a` have local Lipschitz
+constants `L_C` and `L_S` in the declared current and geometry norms, require
+the exact bound
+
+```text
+||r_h^OS||_(H1,ref)
+  <= |kappa_H|^2 g_0^2 L_S M_S (1+L_C)
+   = g_H^2 L_S M_S (1+L_C).
+```
+
+For `T_a(h)=P_0[S_a(C_a(h),h)]`, let
+`M_G=||P_0[S_a(J^(0),h_ref)]||_(H1,ref) <= g_0 M_S`. If
+`|kappa_H| L_T < 1`, also freeze
+
+```text
+||h_star-h^(1)||_(H1,ref)
+  <= |kappa_H|^2 L_T M_G
+     / (1-|kappa_H| L_T).
+```
+
+These statements establish a conditional local quadratic coupling defect and
+matched coupled/split order. They do not cross nonsmooth stratum boundaries
+and are not numeric or uniform envelopes.
+
+Freeze this substage order before seeing outcomes and test:
+
+```text
+explicit same-beat feedback versus implicit feedback
+substage authority and atomic commit
+conservation/accounting at every substage and complete beat
+splitting error and step-size dependence
+whether generated geometry is consumed by a later substage in the same beat
+whether ordering changes the candidate ontology or only its realization
+```
+
+No producer-authored correction may hide the splitting error or restore a
+failed conservation result after the fact. `chi_a = 0` and `zeta_a = 0` retain
+their accepted switch semantics; generated geometry must be an explicit input
+to the `J^(1)` equation rather than merely be emitted. This equation-level
+consumer does not establish a nonzero complete-state effect. The future exact
+witness surface is
+
+```text
+D_h J_a^(1) = -(D_J F_J,a)^(-1) D_h F_J,a.
+```
+
+A retains `W_A` as mobility authority and its D7
+writer, C retains derived `T_C`, cache or solver-history authority is
+forbidden, and failure in any substage commits nothing. Comparison with the
+coupled root is a realization-effect comparison, not candidate ranking.
+
+##### GTRS-RG: Reconstructed Geometry
+
+Test whether the needed structural surface is exactly and deterministically
+reconstructible from already-authoritative candidate state and declared
+same-step inputs. Require:
+
+```text
+no independent geometry authority
+no hidden cache, solver-history, RNG, or prior-step receipt
+no loss of load-bearing J-dependent information
+same complete authoritative state and inputs imply the same reconstruction
+reconstruction remains Markovian and covariant
+```
+
+The earlier failure to reconstruct old postsolve `h+` from lagged committed
+state is historical pressure, not an impossibility result for these new
+architecture-specific maps.
+
+##### GTRS-PC: Persistent Structural Carrier
+
+Pressure a declared persistent structural carrier only after the less stateful
+families. A bounded row must freeze D1-compatible authority, formation and
+writer semantics, no-input persistence/release, serialization, restoration
+identity, reset baseline, migration, topology/event lifecycle, and exact
+disabled behavior. Persistence is not credited merely for adding another state
+variable; the row must identify what causal capability it supplies that the
+less stateful families do not.
+
+##### GTRS-COMP: Comparative Realization Synthesis
+
+After all three families receive minimum pressure, enumerate the actual
+architecture population. Compare matched `(candidate, realization)` rows where
+lawful and declare noncomparability otherwise. Separate candidate-ontology
+effects from temporal-realization effects. Determine whether reconstruction
+loses information, whether persistence adds capability beyond lifecycle cost,
+and whether coupled/implicit differs materially from operator-split. Only this
+synthesis may close the remaining-family debt or route a named unresolved
+family obstruction into D9/D10.
+
 ## D9. Complete Step And Lifecycle Contract
 
-Status: blocked on disposition of the coupled architecture-local D8-B numerical
-stability debt, the remaining
-realization-family pressure, and the comparative/selection boundary.
+Status: blocked on GTRS-RG, GTRS-PC, and GTRS-COMP, plus any
+pre-D10 numerical-stability obligation activated by comparative synthesis.
 
 Freeze candidate complete-step ordering, causal state, serialization,
 restoration identity, reset baseline, RNG use, deterministic replay,
