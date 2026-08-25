@@ -1,6 +1,6 @@
 # GRC9V4 Constitutive Design Decision Ledger
 
-**Status:** D0-D7, D4-v2-D7-v2, D7G-v1/v2, the D7G-post-v2 correction, D8-A, coupled/implicit A+C, coupled A+C architecture-local D8-B, GTRS-OS, GTRS-RG, and GTRS-PC accepted bounded; GTRS-COMP is authorized; D9 and numerical stability remain blocked
+**Status:** D0-D7, D4-v2-D7-v2, D7G-v1/v2, the D7G-post-v2 correction, D8-A, coupled/implicit A+C, coupled A+C architecture-local D8-B, GTRS-OS, GTRS-RG, GTRS-PC, and GTRS-COMP accepted bounded; narrow GTRS-CI-PC is authorized; D9 and D10 remain blocked
 
 This ledger is the additive decision record for D0-D10. The design basis and
 plan define questions and constraints; this file records accepted answers.
@@ -1460,8 +1460,8 @@ and its
 
 ## Remaining Realization-Family Pressure
 
-Status: `GTRS-OS` and `GTRS-RG` accepted bounded; `GTRS-PC` is executed and
-awaiting human review. `GTRS-COMP` follows acceptance.
+Status: `GTRS-OS`, `GTRS-RG`, `GTRS-PC`, and `GTRS-COMP` accepted bounded;
+`GTRS-CI-PC` is authorized.
 
 ```text
 execution_order = operator_split_same_beat -> reconstructed_geometry -> persistent_structural_carrier -> comparative_realization_synthesis
@@ -1710,14 +1710,16 @@ mutation. Ordinary context retention requires unchanged profile/carrier/writer
 semantics. Event termination is not carrier transport.
 
 GTRS-COMP must audit full `K_4` against the exact profile-kernel quotient before
-assigning PC state cost, and must not universalize the scalar single-timescale
-writer; a multi-timescale operator-semigroup profile remains a nonprimary later
+assigning PC state cost. A zero profile kernel establishes irreducibility under
+that equivalence, not absolute minimal reachable-state representation. COMP
+must also avoid universalizing the scalar single-timescale writer; a
+multi-timescale operator-semigroup profile remains a nonprimary later
 alternative.
 
-COMP must also test whether persistence is an orthogonal history-authority axis
-to CI/OS/lagged timing rather than assuming four mutually exclusive families.
-No hybrid campaign is opened now, but any hybrid that could materially dominate
-must be identified as an exact missing row before selection.
+COMP must also separate history authority analytically from CI/OS/lagged timing
+without assuming composability. No hybrid campaign is opened, but the first
+hybrid that could materially change the population must be identified and
+routed before lifecycle freeze.
 
 ```text
 record = GRC9V4-GTRS-PC-v1
@@ -1755,10 +1757,111 @@ The authoritative records are
 and its
 [`scientific interpretation`](./decisions/GeometryTemporalRealizationSuccessorPersistentCarrier.md).
 
+## Comparative Realization Synthesis
+
+Status: `accepted_bounded`.
+
+GTRS-COMP enumerates eight positive primary A/C rows, preserves two RG-1
+same-beat family obstructions, and keeps Candidate B visible as routed rather
+than rejected. It does not rank a candidate or architecture.
+
+The architecture population has three analytically separable dimensions:
+
+```text
+candidate ontology
+geometry/current timing
+history authority
+```
+
+CI and OS share committed candidate-state coordinates and are lawfully related
+through derived `(J,h)` analysis lifts and the exact split residual. RG-2b is
+comparable only through its invariant-section analysis lift. Neither lift adds
+state authority. PC projects many-to-one onto the base candidate state and
+loses `Z_4` history, so it supports capability/state-cost comparison but not
+transition equivalence. A and C have no lawful common state isomorphism for
+numeric ranking.
+
+The PC quotient audit closes for the accepted enabled affine profile:
+
+```text
+D_K H_profile = kappa_H I
+kappa_H != 0
+kernel(D_K H_profile) = {0}
+no nontrivial profile-kernel quotient = true
+absolute minimal reachable-state representation = unproved
+```
+
+This result is profile-local. Future noninjective profiles must repeat the
+quotient and writer well-definedness audit. The scalar-ZOH one-`tau_PC` writer
+remains a representative, not the family law.
+
+Timing and history authority are analytically separable, but their composition
+is not automatic. The first materially missing pair is coupled-implicit plus
+persistent `K_4` for A and C. No hybrid matrix is opened; that narrow pair must
+be pressured before D9. OS+PC and RG+PC remain unpressured and not currently
+required, with reactivation if selection later uses solver cost, failure
+surface, latency, or state-conditioned lagged geometry.
+
+Numerical stability is not activated as an unconditional pre-D10 gate. It
+becomes mandatory with matched branches, D9 charge/projector semantics, and
+lawful metrics if D10 attempts exclusive preference, numeric ranking, or a
+stability claim.
+
+```text
+record = GRC9V4-GTRS-COMP-v1
+status = accepted_bounded
+decision_record_digest = 67a9c97a79525dc70c2233fb2b6706c47d2e31388c9160520f6842d7dc63a84b
+
+positive_primary_rows = 8
+family_level_obstruction_rows = 2
+routed_not_rejected_candidates = 1
+
+predecessor_live_debts = 43
+predecessor_debt_dispositions = 43
+current_successor_debts = 3
+live_debt_union = 43
+controls = 68
+
+remaining_family_pressure_complete = true
+GTRS_CI_PC_authorized = true
+D9_ready_after_human_acceptance = false
+D9_authorized = false
+D10_authorized = false
+runtime_or_src_changed = false
+```
+
+The authoritative records are
+[`GeometryTemporalRealizationComparativeSynthesis.json`](./decisions/GeometryTemporalRealizationComparativeSynthesis.json)
+and its
+[`scientific interpretation`](./decisions/GeometryTemporalRealizationComparativeSynthesis.md).
+
+## Narrow Coupled-Implicit Plus Persistent-Carrier Pressure
+
+Status: authorized by accepted GTRS-COMP.
+
+GTRS-CI-PC is the only hybrid pressure currently routed. It must determine
+whether retained `Z_4,k` and source-current `Delta_K_4(J,h)` can share one typed
+same-beat profile without hidden gain duplication:
+
+```text
+(X_k, Z_4,k)
+  -> joint root candidate using K_4,base + Z_4,k + Delta_K_4(J,h)
+  -> atomic X_k+1 commit
+  -> Z_4,k+1 = a_PC Z_4,k + (1-a_PC) Delta_K_4(J,h)
+```
+
+The displayed composition is a pressure target, not an accepted equation. The
+gate owns composite-domain regularity, disabled/read-off behavior, failure
+atomicity, no same-beat read of new carrier state, and full hybrid
+serialization/restoration/reset/migration/event boundaries for both A and C.
+OS+PC and RG+PC remain visible as unpressured, conditionally reactivatable
+compositions.
+
 ## D9. Complete Step And Lifecycle Contract
 
-Status: blocked on `GTRS-COMP`, plus any
-pre-D10 numerical-stability obligation activated by comparative synthesis.
+Status: blocked on human acceptance of `GTRS-COMP` and completion of narrow
+`GTRS-CI-PC`; D10 remains subject to conditional numerical-discrimination
+obligations.
 
 ## D10. Design Synthesis And Spec-Writing Decision
 

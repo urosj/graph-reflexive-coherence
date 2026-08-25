@@ -1,7 +1,7 @@
 # GRC9V4 Constitutive Design Investigation Checklist
 
 **Date:** 2026-08-23  
-**Status:** D0-D7, D4-v2-D7-v2, D7G-v1/v2, the D7G-post-v2 correction, D8-A, coupled/implicit A+C, coupled A+C architecture-local D8-B, GTRS-OS, GTRS-RG, and GTRS-PC accepted bounded; GTRS-COMP is authorized; D9 and numerical stability remain blocked
+**Status:** D0-D7, D4-v2-D7-v2, D7G-v1/v2, the D7G-post-v2 correction, D8-A, coupled/implicit A+C, coupled A+C architecture-local D8-B, GTRS-OS, GTRS-RG, GTRS-PC, and GTRS-COMP accepted bounded; narrow GTRS-CI-PC is authorized; D9 and D10 remain blocked
 **Plan:** [`GRC9V4ConstitutiveDesignPlan.md`](./GRC9V4ConstitutiveDesignPlan.md)  
 **Basis:** [`GRC9V4ConstitutiveDesignBasis.md`](./GRC9V4ConstitutiveDesignBasis.md)  
 **Ledger:** [`GRC9V4ConstitutiveDesignDecisionLedger.md`](./GRC9V4ConstitutiveDesignDecisionLedger.md)
@@ -1895,8 +1895,9 @@ conditional pre-D10 or post-specification implementation evidence.
 
 ### Remaining Realization-Family Pressure
 
-Status: operator-split same-beat and reconstructed geometry accepted bounded;
-persistent structural carrier is executed and awaiting human review.
+Status: operator-split same-beat, reconstructed geometry, persistent structural
+carrier, and comparative synthesis accepted bounded; narrow GTRS-CI-PC is
+authorized.
 
 Common row contract:
 
@@ -2228,27 +2229,114 @@ treating the scalar single-timescale writer as universal.
 
 GTRS-COMP, comparative realization synthesis:
 
-- [ ] Enumerate every bounded, blocked, obstructed, and unresolved
+- [x] Enumerate every bounded, blocked, obstructed, and unresolved
       `(candidate, realization)` row.
-- [ ] Compare matched families only under declared representation maps and
+- [x] Compare matched families only under declared representation maps and
       record noncomparability where no lawful map exists.
-- [ ] Separate candidate-ontology effects from realization-family effects.
-- [ ] For PC, audit full `K_4` against the exact
-      `K_4/kernel(D_K H_profile)` carrier and price only the minimal lawful
-      state/lifecycle surface.
-- [ ] Treat scalar-ZOH/one-`tau_PC` as the primary PC representative, not the
+- [x] Separate candidate-ontology effects from realization-family effects.
+- [x] For PC, audit full `K_4` against the exact
+      `K_4/kernel(D_K H_profile)` carrier; distinguish profile-kernel
+      irreducibility from absolute minimal reachable-state representation.
+- [x] Treat scalar-ZOH/one-`tau_PC` as the primary PC representative, not the
       family law; record the multi-timescale operator-semigroup alternative
       without requiring a new PC gate.
-- [ ] Determine whether persistence is exclusive with CI/OS/RG or is an
-      orthogonal history-authority axis; identify an exact missing hybrid row
-      before selection only when it could materially dominate.
-- [ ] Decide whether any numerical stability debt becomes pre-D10.
-- [ ] Close or explicitly route the remaining-family debt before D9.
+- [x] Determine whether timing and history authority are analytically separable
+      without assuming composability; identify and route the first exact
+      missing hybrid row when it could materially change the population.
+- [x] Decide whether any numerical stability debt becomes pre-D10.
+- [x] Close or explicitly route the remaining-family debt before D9.
+
+Result:
+
+```text
+record = GRC9V4-GTRS-COMP-v1
+status = accepted_bounded
+decision_record_digest = 67a9c97a79525dc70c2233fb2b6706c47d2e31388c9160520f6842d7dc63a84b
+
+positive_primary_rows = 8
+family_level_obstruction_rows = 2
+routed_not_rejected_candidates = 1
+
+architecture_dimensions = candidate_ontology x geometry_current_timing x history_authority
+timing_history_composability_proved = false
+PC_enabled_affine_profile_kernel = {0}
+PC_full_K4_profile_kernel_irreducible = true
+PC_absolute_minimal_reachable_state_representation_proved = false
+scalar_ZOH_universal_PC_law_claimed = false
+
+first_materially_missing_hybrid_pair = [A_coupled_implicit_plus_PC, C_coupled_implicit_plus_PC]
+combinatorial_hybrid_campaign_authorized = false
+OS_PC_status = unpressured_not_currently_required
+RG_PC_status = unpressured_not_currently_required
+unconditional_pre_D10_numeric_stability_gate_activated = false
+conditional_numeric_selection_gate_frozen = true
+
+predecessor_live_debts = 43
+predecessor_debts_dispositioned = 43
+carried_predecessor_debts = 40
+superseded_predecessor_debts = 2
+resolved_predecessor_debts = 1
+current_debts = 3
+live_debt_union = 43
+controls = 68
+
+remaining_family_pressure_complete = true
+candidate_or_architecture_selected = false
+GTRS_CI_PC_authorized = true
+D9_ready_after_human_acceptance = false
+D9_authorized = false
+D10_authorized = false
+runtime_or_src_changed = false
+```
+
+GTRS-COMP finds three analytically separable architecture dimensions rather
+than four exclusive family columns. It does not prove their composability. CI
+and OS are lawfully comparable within a candidate through derived `(J,h)`
+analysis lifts that do not add state authority; RG-2b is comparable only through
+its invariant-section analysis lift; PC projects many-to-one onto the base
+candidate state and therefore adds real history authority and state/lifecycle
+cost. Cross-candidate A/C numeric ranking remains unlawful without a separate
+model.
+
+For the current enabled affine profile,
+`D_K H_profile = kappa_H I` with nonzero `kappa_H`, so its kernel is zero and
+full `K_4` has no nontrivial exact profile-kernel quotient. Absolute minimal
+reachable-state representation is not proved. The scalar-ZOH writer remains
+one representative.
+
+The first materially missing hybrid pair is coupled-implicit plus persistent
+`K_4` for A and C, and it receives narrow pressure before D9. OS+PC and RG+PC
+remain unpressured and not currently required; reassess them if selection uses
+solver cost, failure surface, latency, or state-conditioned lagged geometry.
+Numeric stability is not an unconditional pre-D10 gate; it activates if D10
+attempts exclusive preference, numeric ranking, or stability-based selection.
+
+GTRS-CI-PC, narrow coupled-implicit plus persistent-carrier pressure
+(`authorized`):
+
+- [ ] Consume accepted COMP, CI, PC, D7G/D8-A, and candidate A/C transition
+      records by digest and SHA.
+- [ ] Freeze the primary `(X_k,Z_k) -> joint (J,h) root -> (X_k+1,Z_k+1)`
+      stage order before pressure.
+- [ ] Audit whether `K_base + Z_k + Delta_K_4(J,h)` is the lawful typed
+      composition or whether it double-counts source/gain authority.
+- [ ] Freeze the composite invariant domain and joint-root regularity for
+      `Z_k + Delta_K_4`, not only the carrier ball for `Z_k`.
+- [ ] Freeze CI-off, PC-off, `chi`, `zeta`, `kappa_H`, read-off, and retained
+      historical-state semantics.
+- [ ] Require root-failure atomicity and prohibit same-beat read of newly
+      written `Z_k+1`.
+- [ ] Freeze snapshot, restoration identity, reset baseline, `set_state`,
+      duplicate, migration, replay, profile mismatch, and context/event
+      boundaries for the hybrid state.
+- [ ] Produce separate A and C dispositions without candidate ranking.
+- [ ] Keep OS+PC and RG+PC as unpressured, conditionally reactivatable
+      compositions rather than rejected or impossible rows.
 
 ## D9. Complete Step And Lifecycle Contract
 
-Status: blocked on GTRS-COMP, plus any
-pre-D10 numerical-stability obligation activated by comparative synthesis.
+Status: blocked on completion of the narrow GTRS-CI-PC pressure. D10 remains
+subject to conditional numerical-discrimination obligations.
 
 - [ ] Freeze complete-step order and causal-state schema.
 - [ ] Freeze post-continuity recomputation of every differential and gradient

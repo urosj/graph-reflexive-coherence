@@ -1,7 +1,7 @@
 # GRC9V4 Constitutive Design Investigation Plan
 
 **Date:** 2026-08-23  
-**Status:** D0-D7, D4-v2-D7-v2, D7G-v1/v2, the D7G-post-v2 correction, D8-A, coupled/implicit A+C, coupled A+C architecture-local D8-B, GTRS-OS, GTRS-RG, and GTRS-PC accepted bounded; GTRS-COMP is authorized; D9 and numerical stability remain blocked
+**Status:** D0-D7, D4-v2-D7-v2, D7G-v1/v2, the D7G-post-v2 correction, D8-A, coupled/implicit A+C, coupled A+C architecture-local D8-B, GTRS-OS, GTRS-RG, GTRS-PC, and GTRS-COMP accepted bounded; narrow GTRS-CI-PC is authorized; D9 and D10 remain blocked
 **Design basis:** [`GRC9V4ConstitutiveDesignBasis.md`](./GRC9V4ConstitutiveDesignBasis.md)  
 **Checklist:** [`GRC9V4ConstitutiveDesignChecklist.md`](./GRC9V4ConstitutiveDesignChecklist.md)  
 **Decision ledger:** [`GRC9V4ConstitutiveDesignDecisionLedger.md`](./GRC9V4ConstitutiveDesignDecisionLedger.md)
@@ -2795,16 +2795,20 @@ classical analysis. Carrier-space-changing topology/reindex/split/merge/birth/
 death events require typed `L_event^K4` or abort before mutation. Event
 termination is not carrier transport.
 
-GTRS-COMP must audit whether full `K_4` is minimal or whether the exact profile
-quotient `K_4/kernel(D_K H_profile)` carries all runtime-relevant information.
+GTRS-COMP must audit whether the exact profile quotient
+`K_4/kernel(D_K H_profile)` removes any current profile-equivalent carrier
+directions. Profile-kernel irreducibility must not be promoted into absolute
+minimal reachable-state representation without a separate reachability,
+writer-invariant-subspace, runtime-equivalence, and lossless-coordinate audit.
 It must also call this profile the scalar-ZOH representative; a future typed
 contractive operator semigroup may carry multiple timescales but is not opened
 as another PC gate here.
 
-COMP must additionally test whether persistence is exclusive with CI/OS/RG or
-is an orthogonal history-authority axis that can augment coupled, split, or
-lagged timing. No hybrid campaign is required now, but COMP must name any exact
-missing hybrid row that could materially dominate before selection.
+COMP must additionally test whether timing and history authority are
+analytically separable dimensions. Separation is not automatic composability.
+No hybrid campaign is required, but COMP must name the first exact missing
+hybrid row that could materially change the architecture population and route
+it before the gate whose lifecycle contract depends on that population.
 
 The architecture-local derivative surface is the block transition
 
@@ -2843,15 +2847,99 @@ possible multi-timescale contractive operator-semigroup profile. Only this
 synthesis may close the remaining-family debt or route a named unresolved
 family obstruction into D9/D10.
 
-Do not assume `{CI,OS,RG,PC}` are mutually exclusive columns. Test the product
-of geometry/current timing and history authority. Pressure no combinatorial
-hybrid matrix by default; identify a precise missing hybrid row only when it
-could materially change architecture selection.
+Do not assume `{CI,OS,RG,PC}` are mutually exclusive columns. Separate
+geometry/current timing from history authority analytically without assuming
+that arbitrary compositions are lawful. Pressure no combinatorial hybrid
+matrix by default; identify and route the first precise missing hybrid row when
+it could materially change the architecture population.
+
+Executed result:
+
+```text
+record = GRC9V4-GTRS-COMP-v1
+status = accepted_bounded
+decision_record_digest = 67a9c97a79525dc70c2233fb2b6706c47d2e31388c9160520f6842d7dc63a84b
+
+positive_primary_rows = 8
+family_level_obstruction_rows = 2
+routed_not_rejected_candidates = 1
+
+architecture_dimensions = candidate_ontology x geometry_current_timing x history_authority
+timing_history_composability_proved = false
+PC_enabled_affine_profile_kernel = {0}
+PC_full_K4_profile_kernel_irreducible = true
+PC_absolute_minimal_reachable_state_representation_proved = false
+scalar_ZOH_is_universal_PC_law = false
+first_materially_missing_hybrid_pair = [A_CI_PC, C_CI_PC]
+
+unconditional_pre_D10_numeric_stability_gate = false
+conditional_selection_or_stability_gate = true
+remaining_family_pressure_complete = true
+candidate_or_architecture_selected = false
+GTRS_CI_PC_authorized = true
+D9_ready_after_human_acceptance = false
+D9_authorized = false
+D10_authorized = false
+```
+
+The result shows that timing and history authority are analytically separable,
+but does not assume their composition. It closes minimum family pressure
+without ranking the population. The named CI+PC pair is the first materially
+missing hybrid and receives narrow pressure before D9. OS+PC and RG+PC remain
+unpressured, not currently required, and may reactivate if solver cost, failure
+surface, latency, or state-conditioned lagged geometry becomes a selection
+axis. Numerical evidence becomes pre-D10 only if D10 attempts exclusive
+preference, numeric ranking, or a stability claim.
+
+##### GTRS-CI-PC: Narrow Coupled-Implicit Plus Persistent-Carrier Pressure
+
+Status: authorized by accepted GTRS-COMP.
+
+Pressure only the A and C pair identified by COMP. This is not a general hybrid
+campaign. The primary constitutive question is whether retained past structure
+and source-current same-beat geometry can compose lawfully in one atomic step:
+
+```text
+committed state = (X_a,k, Z_4,a,k)
+
+joint root candidate:
+  h_a = H_profile(K_4,base + Z_4,a,k + Delta_K_4,a(J_a,h_a))
+  F_J,a(J_a,h_a; X_a,k) = 0
+
+after a valid root only:
+  X_a,k+1 = candidate commit from authoritative J_a
+  Z_4,a,k+1 = a_PC,a Z_4,a,k + (1-a_PC,a) Delta_K_4,a(J_a,h_a)
+```
+
+The displayed sum is a pressure target, not an accepted equation. The gate must
+determine whether retained and source-current structural increments share one
+typed `K_4` authority, whether gains are applied exactly once, and whether the
+current source's same-beat geometry effect plus later retained effect is the
+declared temporal contract rather than accidental double counting.
+
+The gate must also freeze:
+
+- the invariant source/root domain for
+  `Z_4 + Delta_K_4`, not only the carrier ball for `Z_4`;
+- uniform joint-root regularity on that composite domain;
+- `chi`, `zeta`, `kappa_H`, CI-off, PC-off, read-off, and retained-`Z_4`
+  semantics without deleting lawful past state accidentally;
+- failure atomicity: a failed root commits neither candidate state nor carrier;
+- writer timing: new `Z_4,k+1` is not read back in the same beat;
+- serialization, restoration identity, reset baseline, `set_state`, duplicate,
+  migration, replay, and profile-mismatch behavior for the hybrid state;
+- representation-preserving context change and carrier-space-changing event
+  boundaries;
+- exact A/C row dispositions without ranking either candidate.
+
+OS+PC and RG+PC remain recorded as unpressured compositions. Reopen them only
+if a later selection uses solver cost, failure surface, latency, or
+state-conditioned lagged geometry in a way that could make either material.
 
 ## D9. Complete Step And Lifecycle Contract
 
-Status: blocked on GTRS-COMP, plus any
-pre-D10 numerical-stability obligation activated by comparative synthesis.
+Status: blocked on completion of the narrow GTRS-CI-PC pressure. D10 remains
+subject to conditional numerical-discrimination obligations.
 
 Freeze candidate complete-step ordering, causal state, serialization,
 restoration identity, reset baseline, RNG use, deterministic replay,
