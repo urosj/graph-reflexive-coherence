@@ -119,7 +119,10 @@ GTRS-RG1_same_beat_A_C = family_level_obstruction_exact_CI_or_staged_OS_equivale
 GTRS-RG2_existing_CI_OS_poststate_A_C = supported_local_reconstructibility_property
 GTRS-RG2_lagged_invariant_section_A_C = bounded_complete_realization
 GTRS-RG_universal_reconstruction_impossibility = false
-next_substantive_route = GTRS-PC_capability_beyond_local_invariant_section
+GTRS-PC_persistent_K4_carrier = accepted_bounded_two_bounded_complete_design_rows
+GTRS-PC_capability_beyond_local_RG = independent_retained_structural_state_without_inverse_or_graph_transform
+GTRS-PC_base_state_hysteresis = unsupported_pending_complete_chain_witnesses
+next_substantive_route = GTRS-COMP_comparative_realization_synthesis
 remaining_family_order = operator_split_then_reconstructed_then_persistent_then_comparative_synthesis
 D9_before_remaining_family_pressure = false
 ```
@@ -468,15 +471,62 @@ corrected `C0` contraction. It does not provide numeric radii, `C1` section
 regularity, global reconstruction, event continuation, or extension-independent
 uniqueness.
 
-Persistent-carrier pressure is next. It must test capability
-beyond the local invariant section, such as noninvertible or multivalued
-regions, topology/rank/context events, hysteresis, or a larger valid parameter
-domain. It may not begin from an assumed local information deficit.
+Persistent-carrier pressure tests independently retained structural state
+beyond the local invariant section without requiring local inversion or a
+single-valued section. It may also expose representation-preserving context
+continuation, while base-state hysteresis remains a stronger complete-chain
+claim. It may not begin from an assumed local information deficit.
 
 The authoritative RG records are
 [`GeometryTemporalRealizationSuccessorReconstructedGeometry.json`](./decisions/GeometryTemporalRealizationSuccessorReconstructedGeometry.json)
 and its
 [`scientific interpretation`](./decisions/GeometryTemporalRealizationSuccessorReconstructedGeometry.md).
+
+The persistent-carrier pressure now supplies bounded complete A/C design rows
+with an explicit new state cost. Each row stores one bounded candidate-specific
+`K_4` coordinate `Z_4`, derives current geometry from it, and updates it once
+per beat through
+
+```text
+Z_4+ = a_PC Z_4 + (1-a_PC) Delta K_4(J_C,h),
+a_PC = exp(-Delta_t/tau_PC).
+```
+
+On a constructively admitted carrier ball satisfying `m(R)<=R`, profile
+admissibility, and uniform fixed-geometry current regularity
+`sigma_min(D_JF_J)>=m_J>0`, this writer forms from nonzero current, retains
+state at every finite time, releases asymptotically under zero source, and
+remains bounded without clipping. The sufficient radius theorem uses
+`||S||<=M_0+L_Z||Z||`, `L_Z<1`, and caps `R` by the profile and current-
+regularity radii; numerical constants remain uninstantiated. Variable-step
+convergence requires accumulated elapsed time to diverge, and matched forcing
+strictly contracts carrier differences. A keeps `W_A` as mobility authority;
+C keeps `T_C` derived. Current and full geometry are not serialized.
+
+PC is not native coherence-only theory. It is a revision-specific completion
+that tests the core's open Markov-sufficiency boundary and explicitly adds D1
+B-like independent structural authority to A or C. Its positive capability is
+independently retained path-dependent state: the same base A or C state may
+coexist with different carrier histories, so geometry need not be a single-
+valued local `Gamma(X)`. Nonsingularity of `a_PC I+O(epsilon_H)` preserves those
+differences in complete PC state, but base-state hysteresis and nonzero future
+`C/W` effects remain debt.
+
+Snapshot, restoration, reset-baseline, migration, disabled-profile, D2
+intervention, and atomic failure semantics are frozen. Representation-preserving
+context/boundary changes retain the carrier and refresh surfaces only when
+profile/carrier/writer semantics are unchanged; semantic profile changes require
+explicit migration and target re-admission. Carrier-space topology changes
+still fail closed without a typed interspace map. Comparative synthesis must
+audit full `K_4` versus the exact profile-kernel quotient, treat this as the
+scalar-ZOH representative rather than a universal single-timescale PC law, and
+test persistence as a potentially orthogonal axis to CI/OS/lagged timing. PC is
+accepted bounded; comparative realization synthesis is next.
+
+The authoritative PC records are
+[`GeometryTemporalRealizationSuccessorPersistentCarrier.json`](./decisions/GeometryTemporalRealizationSuccessorPersistentCarrier.json)
+and its
+[`scientific interpretation`](./decisions/GeometryTemporalRealizationSuccessorPersistentCarrier.md).
 
 The later specification and implementation must also rebuild every
 differential or gradient summary used by `G_W(C[k+1], J_C[k])` from

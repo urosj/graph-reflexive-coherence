@@ -1,7 +1,7 @@
 # GRC9V4 Constitutive Design Investigation Plan
 
 **Date:** 2026-08-23  
-**Status:** D0-D7, D4-v2-D7-v2, D7G-v1, D7G-v2, the D7G-post-v2 correction, D8-A, coupled/implicit A+C, and coupled A+C architecture-local D8-B accepted bounded; numerical stability, comparative D8-B, and successor-family closeout remain blocked
+**Status:** D0-D7, D4-v2-D7-v2, D7G-v1/v2, the D7G-post-v2 correction, D8-A, coupled/implicit A+C, coupled A+C architecture-local D8-B, GTRS-OS, GTRS-RG, and GTRS-PC accepted bounded; GTRS-COMP is authorized; D9 and numerical stability remain blocked
 **Design basis:** [`GRC9V4ConstitutiveDesignBasis.md`](./GRC9V4ConstitutiveDesignBasis.md)  
 **Checklist:** [`GRC9V4ConstitutiveDesignChecklist.md`](./GRC9V4ConstitutiveDesignChecklist.md)  
 **Decision ledger:** [`GRC9V4ConstitutiveDesignDecisionLedger.md`](./GRC9V4ConstitutiveDesignDecisionLedger.md)
@@ -2656,7 +2656,178 @@ identity, reset baseline, migration, topology/event lifecycle, and exact
 disabled behavior. Persistence is not credited merely for adding another state
 variable; the row must identify what causal capability it supplies beyond
 local invariant-section RG, such as noninvertible or multivalued regions,
-topology/rank/context events, hysteresis, or a larger coupling/step-size domain.
+independently retained structural state, representation-preserving context
+changes, or a larger coupling/step-size domain. Base-state hysteresis requires
+a complete-chain witness rather than serialization alone.
+
+GTRS-PC-v1 freezes one primary realization before disposition. For candidate
+`a` in `{A,C}`, add a bounded authoritative structural coordinate
+
+```text
+Z_4,a,k in B_R,a subset K_4,a
+
+K_4,a,k = K_4,base + Z_4,a,k
+h_a,k   = H_profile(K_4,a,k).
+```
+
+`Z_4` has the same candidate-local structural type as the accepted
+`Delta K_4` source. It is not coherence resource, `W_A`, `T_C`, full geometry,
+current, or solver state. The mature coherence-only theory does not authorize
+an independent memory field; PC is therefore an explicit revision-specific
+constitutive completion, not a core primitive. Its success also does not prove
+that coherence-only Markov sufficiency fails.
+
+After the accepted fixed-geometry current solve, derive
+
+```text
+S_a,k = Delta K_4,a(J_C,a,k,h_a,k)
+a_PC,k = exp(-Delta_t,k / tau_PC,a),  tau_PC,a > 0
+
+Z_4,a,k+1 = a_PC,k Z_4,a,k + (1-a_PC,k) S_a,k.
+```
+
+This is the exact held-source step of
+`tau_PC,a dot Z_4,a = -Z_4,a + S_a`. It is the scalar-ZOH primary
+representative, not the universal persistent-carrier law. It is a family-local
+completion motivated by, but not normatively inherited from, the historical
+slow-field form. Declare a `K_4` norm and compact base chart, then admit a ball
+`B_R,a` only when
+
+```text
+m_a(R) = sup_{X in K_X,a, Z in B_R,a} ||S_a(X,Z)||_K <= R
+H_profile(K_4,base+B_R,a) subset H_adm.
+
+(X,H_profile(K_4,base+Z)) in D_reg,a for all X,Z
+inf_{X,Z} sigma_min(D_J F_J,a) >= m_J,a > 0.
+```
+
+The constructive sufficient condition is
+
+```text
+||S_a(X,Z)||_K <= M_0,a + L_Z,a ||Z||_K
+0 <= L_Z,a < 1
+M_0,a/(1-L_Z,a) <= R <= min(R_profile_adm,a,R_reg,a).
+```
+
+Here `D_reg,A` includes floor-inactive positive-domain A conditions, while
+`D_reg,C` includes fixed rank, strict gap, positive domain, and the accepted C
+current conditions. Compact reference charts and continuity provide positive
+`R_reg,a`. This proves parametric local carrier and current-substep admission
+without clipping; numerical constants and an unconditional runtime envelope
+remain open. For positive duration require `0<a_PC<1`; `a_PC=1` is allowed only
+at the zero-duration identity reference.
+
+The writer supplies the D2 lifecycle directly:
+
+```text
+nonzero S from neutral -> formation
+zero S with nonzero Z  -> retention at every finite time
+sustained zero S       -> asymptotic gradual release to neutral
+constant S             -> bounded maintenance toward S
+changed S              -> reconfiguration
+```
+
+Administrative reset, profile disable, migration, and threshold labels do not
+count as native release.
+
+Freeze D2 interventions separately. Natural no-input and explicit `write_off`
+both use `S=0, Z+=a_PC Z` in this scalar profile but emit distinct receipts.
+`retained_state_frozen` uses `Z+=Z`; administrative reset restores the baseline;
+full PC disable enforces `Z=Z+=0` and `h=h_ref`. With PC enabled, `chi=0` or
+`zeta=0` stops new inscription but does not erase existing carrier state; the
+retained geometry remains load-bearing while `Z` decays.
+
+For variable steps, zero-source and constant-source convergence use
+`T_n=sum_{k<n}Delta_t,k` and require `T_n -> infinity`. On the sufficient chart,
+matched future forcing contracts carrier differences by
+`a_PC+(1-a_PC)L_Z<1`, giving explicit finite-capacity forgetting.
+
+Freeze the complete PC order:
+
+```text
+validate Z/profile/context
+-> derive h_k from Z_k
+-> solve accepted fixed-h candidate current
+-> derive j_k and S_k
+-> continuity C_k+1
+-> unchanged A writer or C poststate sector derivation
+-> carrier writer Z_k+1
+-> atomic commit.
+```
+
+`Z_k+1` is not read in the same beat. Candidate A has state `(C,W_A,Z_4,A)`;
+`W_A` remains the sole mobility authority and its writer is unchanged.
+Candidate C has state `(C,Z_4,C)`; `T_C` remains derived and uncommitted. In
+both rows, `Z_4` is bounded nonresource structural information and `C` is
+counted exactly once.
+
+PC adds a real capability beyond local RG. RG requires one locally
+single-valued `h=Gamma_a(X_a)`. PC admits distinct complete states
+`(X_a,Z_4,a^(1))` and `(X_a,Z_4,a^(2))` with the same base `X_a`. This adds a
+D1 B-like independent structural coordinate to A or C and is not
+ontology-neutral relative to CI, OS, or RG. At vanishing geometry sensitivity,
+`D_Z U_PC=a_PC I` is nonsingular and remains so for sufficiently small geometry
+coupling, establishing independent retained complete-state capacity. Along an
+accepted D8-A direct-field visibility direction, the carrier difference changes
+the geometry entering a named current-equation term. This supports
+equation-level path dependence without a base-map inverse, graph-transform
+contraction, or section uniqueness. It does not yet prove base-state hysteresis,
+a nonzero future `C/W` effect, or a larger numeric operating envelope.
+
+Snapshots serialize the current carrier, profile identity, graph identity,
+`tau_PC`, and reset-baseline carrier. Save/load restores both current and
+baseline state; reset returns to the construction baseline; `set_state` does
+not silently rebase. Non-PC migration initializes canonical zero without
+inventing history. Disabled PC keeps `Z_4=0`, `Z_4+=0`, and `h=h_ref`; this
+removes PC but does not by itself close full V3 reduction.
+
+Changing `H_profile`, `K_4,base`, the representation, carrier norm/domain, or
+writer semantics requires explicit migration and target re-admission even when
+array shapes match. Such a change is not ordinary context continuation.
+
+The positive profile remains fixed-topology and fixed-`K_4`-representation,
+with a fixed-rank strict-gap smooth chart for C. Representation-preserving
+context or boundary changes retain `Z_4` and recompute all declared surfaces.
+That permission applies only while profile, base, representation, carrier
+domain, and writer semantics are unchanged.
+Same-space nonsmooth changes require a deterministic runtime map and block
+classical analysis. Carrier-space-changing topology/reindex/split/merge/birth/
+death events require typed `L_event^K4` or abort before mutation. Event
+termination is not carrier transport.
+
+GTRS-COMP must audit whether full `K_4` is minimal or whether the exact profile
+quotient `K_4/kernel(D_K H_profile)` carries all runtime-relevant information.
+It must also call this profile the scalar-ZOH representative; a future typed
+contractive operator semigroup may carry multiple timescales but is not opened
+as another PC gate here.
+
+COMP must additionally test whether persistence is exclusive with CI/OS/RG or
+is an orthogonal history-authority axis that can augment coupled, split, or
+lagged timing. No hybrid campaign is required now, but COMP must name any exact
+missing hybrid row that could materially dominate before selection.
+
+The architecture-local derivative surface is the block transition
+
+```text
+M_PC,a = [[D_X Phi_a, D_Z Phi_a],
+          [D_X U_PC,a, D_Z U_PC,a]],
+
+D_Z U_PC,a
+  = a_PC I + (1-a_PC)(D_J S_a D_Z J_a + D_h S_a D_Z h_a).
+```
+
+No numeric spectrum or stability classification is implied.
+
+The executed dispositions are:
+
+```text
+A persistent K_4 carrier = bounded_complete_realization
+C persistent K_4 carrier = bounded_complete_realization
+```
+
+Status: `accepted_bounded` with top-level disposition
+`accepted_bounded_persistent_K4_carrier_family_complete_A_C`. GTRS-COMP is now
+authorized. D9 remains blocked on comparative synthesis.
 
 ##### GTRS-COMP: Comparative Realization Synthesis
 
@@ -2665,13 +2836,21 @@ architecture population. Compare matched `(candidate, realization)` rows where
 lawful and declare noncomparability otherwise. Separate candidate-ontology
 effects from temporal-realization effects. Determine whether reconstruction
 loses information, whether persistence adds capability beyond lifecycle cost,
-and whether coupled/implicit differs materially from operator-split. Only this
+and whether coupled/implicit differs materially from operator-split. For PC,
+compare full `K_4` with its exact profile-kernel quotient before assigning
+state/lifecycle cost, and distinguish the scalar-ZOH representative from a
+possible multi-timescale contractive operator-semigroup profile. Only this
 synthesis may close the remaining-family debt or route a named unresolved
 family obstruction into D9/D10.
 
+Do not assume `{CI,OS,RG,PC}` are mutually exclusive columns. Test the product
+of geometry/current timing and history authority. Pressure no combinatorial
+hybrid matrix by default; identify a precise missing hybrid row only when it
+could materially change architecture selection.
+
 ## D9. Complete Step And Lifecycle Contract
 
-Status: blocked on GTRS-PC and GTRS-COMP, plus any
+Status: blocked on GTRS-COMP, plus any
 pre-D10 numerical-stability obligation activated by comparative synthesis.
 
 Freeze candidate complete-step ordering, causal state, serialization,
