@@ -71,6 +71,8 @@ Start with:
 - [D8-A interpretation](./decisions/D8ABranchAppropriateStructuralTargetExtraction.md).
 - [coupled/implicit geometry-temporal successor decision](./decisions/GeometryTemporalRealizationSuccessorCoupledImplicit.json);
 - [coupled/implicit successor interpretation](./decisions/GeometryTemporalRealizationSuccessorCoupledImplicit.md).
+- [D8-B coupled architecture-local decision](./decisions/D8BCoupledArchitectureLocalContinuationAnalysis.json);
+- [D8-B coupled architecture-local interpretation](./decisions/D8BCoupledArchitectureLocalContinuationAnalysis.md).
 
 Current gate status:
 
@@ -98,7 +100,9 @@ automatic_D4-v3-D7-v3_cycle = not_authorized
 D8-A = accepted_bounded
 D8_authorized = true
 D8_authorized_scope = D8-A_plus_coupled_A_and_C_architecture_local_D8B
-D8-B_full_continuation = architecture_local_A_C_authorized_comparative_blocked
+D8-B_coupled_architecture_local = accepted_bounded_charge_parametric_design_operator_contract
+D8-B_numeric_spectrum_and_stability = uninstantiated
+D8-B_full_continuation = comparative_blocked
 next_route_after_accepted_D8-A = GRC9V4-GEOMETRY-TEMPORAL-REALIZATION-SUCCESSOR
 geometry_temporal_realization_successor_authorized = true
 geometry_temporal_realization_successor_coupled_implicit = accepted_bounded
@@ -384,6 +388,34 @@ and C separately for architecture-local D8-B rederivation, while comparative
 D8-B and the remaining operator-split, persistent, and reconstructed family
 pressure stay open. The coupled family record is complete; the overall
 geometry-temporal successor is not.
+
+D8-B now derives the exact analysis surfaces made available by the accepted
+coupled roots. For A and C separately it defines the full implicit first and
+second root derivatives, architecture-local constrained structural second
+variation, complete committed-state Jacobian, direct Read-Back operator,
+spatial graph operator, projector/reference transport, covariance, and
+nonnormal stability diagnostics. Candidate A remains conditional C structure
+at fixed `W_A`; Candidate C remains C-only with a derived `T_C` tangent.
+
+The hardened result requires `C2` subcharts for classical Hessians, instantiates
+the graph-field second-variation formula, separates intrinsic response `r_a`
+from enacted gain `beta_a = zeta_a r_a`, and uses a transported temporal
+cocycle with the correct `k+1` output transport on moving branches. `beta`
+remains spectral; direct-response singular values are separate diagnostics.
+Constraint and measure curvature stay inside the differentiated Lagrangian,
+while projector transport is not additive Hessian curvature. The result leaves
+the complete-step V4 charge/projector and Candidate A's relative `C`/`log W_A`
+analysis metric as explicit debts
+rather than inferring them from legacy GRC9V3 or an arbitrary norm.
+
+This is a design-level operator completion, not a numerical spectrum result.
+There is no instantiated formed V4 critical branch or normalized functional
+parameter set, so D8-B reports no `alpha`, `beta`, `gamma`, `mu`, or `lambda`
+values and no stability classification. B1/B2 verification methods are mapped
+for later reuse or V4-specific adaptation, while all V3 numerical outputs stay
+historical. The A and C direct-field visibility receipts remain narrower than
+complete-chain nonannihilation. Comparative D8-B, remaining realization-family
+pressure, and D9 stay blocked pending later gates.
 
 The later specification and implementation must also rebuild every
 differential or gradient summary used by `G_W(C[k+1], J_C[k])` from

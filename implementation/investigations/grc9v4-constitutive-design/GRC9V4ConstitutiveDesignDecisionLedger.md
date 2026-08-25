@@ -1376,10 +1376,93 @@ The authoritative records are
 and its
 [`scientific interpretation`](./decisions/GeometryTemporalRealizationSuccessorCoupledImplicit.md).
 
+## D8-B. Coupled Architecture-Local Continuation Analysis
+
+Status: accepted bounded.
+
+```text
+record = GRC9V4-CD-D8B-CI-v1
+status = accepted_bounded
+decision_record_digest = 53ed6d6ee616ab42c59ce6dabb6bc106a595f5c70ad1acaedc445c7fa73a5b7f
+predecessor = GRC9V4-GTRS-CI-v1
+predecessor_decision_digest = a0292d35d3dfc18e6386a78c26ae9bc2a4b6de9f31e505cf67edf7c094aea3a3
+
+family = coupled_implicit
+architecture_local_rows = [A, C]
+cross_candidate_comparison = blocked
+cross_family_comparison = blocked
+
+implicit_first_derivative = D_X_Y_a=-B_a^-1_D_X_F_a
+implicit_second_derivative = full_XX_XY_YX_YY_chain
+classical_second_variation_chart = C2_required
+A_structural_domain = conditional_C_given_fixed_W_A
+C_structural_domain = C_only_exact_derived_T_C_tangent
+A_complete_step_domain = (C,W_A)
+C_complete_step_domain = C
+
+structural_alpha_surface = charge_parametric_defined_not_numerically_instantiated
+temporal_mu_gamma_surface = defined_not_numerically_instantiated
+direct_beta_surface = defined_not_numerically_instantiated
+direct_response_singular_value_surface = defined_separately_from_beta
+intrinsic_response_gain_rule = beta_a=zeta_a*r_a
+spatial_lambda_surface = defined_not_numerically_instantiated
+moving_branch_temporal_object = U_kplus1_to_ref*M_k*U_ref_to_k_transported_Jacobian_cocycle
+projector_transport = defined
+covariance = defined_at_design_level
+nonnormality_tests = defined
+
+formed_V4_branch_instantiated = false
+numeric_spectrum_rows = 0
+full_chain_nonannihilation_witnesses = 0
+structural_or_temporal_stability = unsupported
+candidate_ranking = false
+
+B1_B2_discriminator_rows = 8
+immediate_predecessor_debt_dispositions = 10
+transitive_predecessor_debt_dispositions = 23
+current_successor_debts = 7
+live_debt_union = 34
+controls = 54
+
+D9_authorized = false
+runtime_or_src_changed = false
+```
+
+The result derives each operator from the accepted coupled root instead of
+reusing D8-A's lagged pullback. The structural object uses the full implicit
+second derivative of the candidate-local geometry branch on a declared `C2`
+subchart. The graph-field Hessian includes first- and second-order geometry
+slaving. Constraint curvature and measure dependence remain inside the
+differentiated Lagrangian, while projector transport is a comparison operation,
+not additive Hessian curvature. The complete-step conserved charge/projector
+remains typed D9/pre-D10 debt rather than being inferred from `H0`. Candidate A remains
+conditional C structure with `delta W_A = 0`; Candidate C remains C-only and
+retains the exact derived selector tangent. The temporal object is the complete
+committed-state Jacobian, not the root block and not a relabeled structural
+Hessian. Intrinsic response `r_a`, spectral enacted
+`beta_a = zeta_a r_a`, separately reported response singular values, temporal
+`mu`/`gamma`, structural `alpha`, retained-sector `lambda_M`, and spatial
+`lambda` remain different analytical objects. Moving branches transport each
+Jacobian output from `k+1` or transport only the native cocycle endpoints.
+
+The accepted design sources do not instantiate a formed V4 critical branch,
+functional normalization values, or numerical root derivatives. D8-B
+therefore records exact operator and falsification surfaces but emits no
+numeric spectrum and no stability result. The A and C direct-field visibility
+receipts remain insufficient for a complete-chain nonannihilation claim.
+B1/B2 contribute discriminator and control methods only; V3 numeric outputs
+are not promoted to V4 evidence.
+
+The authoritative records are
+[`D8BCoupledArchitectureLocalContinuationAnalysis.json`](./decisions/D8BCoupledArchitectureLocalContinuationAnalysis.json)
+and its
+[`scientific interpretation`](./decisions/D8BCoupledArchitectureLocalContinuationAnalysis.md).
+
 ## D9. Complete Step And Lifecycle Contract
 
-Status: blocked on architecture-local D8-B completion plus the remaining
-realization-family pressure and comparative/selection boundary.
+Status: blocked on disposition of the coupled architecture-local D8-B numerical
+stability debt, the remaining
+realization-family pressure, and the comparative/selection boundary.
 
 ## D10. Design Synthesis And Spec-Writing Decision
 

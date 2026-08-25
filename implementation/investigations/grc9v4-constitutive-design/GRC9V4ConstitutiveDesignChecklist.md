@@ -1,7 +1,7 @@
 # GRC9V4 Constitutive Design Investigation Checklist
 
 **Date:** 2026-08-23  
-**Status:** D0-D7, D4-v2-D7-v2, D7G-v1, D7G-v2, the D7G-post-v2 correction, D8-A, and coupled/implicit A+C accepted bounded; architecture-local D8-B for coupled A and C is authorized, while comparative D8-B and successor-family closeout remain blocked
+**Status:** D0-D7, D4-v2-D7-v2, D7G-v1, D7G-v2, the D7G-post-v2 correction, D8-A, coupled/implicit A+C, and coupled A+C architecture-local D8-B accepted bounded; numerical stability, comparative D8-B, and successor-family closeout remain blocked
 **Plan:** [`GRC9V4ConstitutiveDesignPlan.md`](./GRC9V4ConstitutiveDesignPlan.md)  
 **Basis:** [`GRC9V4ConstitutiveDesignBasis.md`](./GRC9V4ConstitutiveDesignBasis.md)  
 **Ledger:** [`GRC9V4ConstitutiveDesignDecisionLedger.md`](./GRC9V4ConstitutiveDesignDecisionLedger.md)
@@ -1797,35 +1797,107 @@ runtime_or_src_changed = false
 
 ### D8-B Architecture-Local Analysis (Authorized) And Comparison (Blocked)
 
-- [ ] Define structural functional/Hessian and `alpha` semantics.
-- [ ] Define temporal generator/effective-map and `gamma`/multiplier semantics.
-- [ ] Define Read-Back derivative and `beta` semantics.
-- [ ] Define spatial operator and `lambda` semantics.
-- [ ] Define cluster/subspace, projector transport, basis/symmetry covariance,
+- [x] Define structural functional/Hessian and `alpha` semantics.
+- [x] Define temporal generator/effective-map and `gamma`/multiplier semantics.
+- [x] Define Read-Back derivative and `beta` semantics.
+- [x] Define spatial operator and `lambda` semantics.
+- [x] Define cluster/subspace, projector transport, basis/symmetry covariance,
       non-normality, and static/dynamic comparison contracts.
-- [ ] Record operator domain, tangent space, inner product/weight, physical and
+- [x] Record operator domain, tangent space, inner product/weight, physical and
       reduced representations, representation map, projector transport,
       moving-space identification, and cluster conditioning.
-- [ ] Block analysis-coordinate projectors from physical-coordinate use without
+- [x] Block analysis-coordinate projectors from physical-coordinate use without
       declared conjugation/transport.
-- [ ] Enforce derived-representation tangent constraints in every joint analysis.
-- [ ] Keep analysis projectors out of runtime state unless independently
+- [x] Enforce derived-representation tangent constraints in every joint analysis.
+- [x] Keep analysis projectors out of runtime state unless independently
       admitted for constitutive reasons.
-- [ ] Block cross-spectrum relabels and undeclared universal-generator claims.
-- [ ] Compare candidates under matched realization families where meaningful;
+- [x] Block cross-spectrum relabels and undeclared universal-generator claims.
+- [x] Enforce the matched-realization comparison gate; comparative analysis is
+      blocked in this pass. Where later meaningful, compare candidates under
+      matched realization families;
       otherwise treat each `(candidate, realization)` pair as an architecture
       and separate candidate effects from realization effects.
-- [ ] Map every D7G-admitted candidate's V4 operators to applicable B1/B2
+- [x] Map every D7G-admitted candidate's V4 operators to applicable B1/B2
       verification discriminators and classify each as reusable,
       V4-adaptation/rederivation-required, or inapplicable.
-- [ ] Block recreation of GRV3/GRV4/GRV7 as design prose from counting as a new
+- [x] Block recreation of GRV3/GRV4/GRV7 as design prose from counting as a new
       D8 constitutive result.
-- [ ] Obtain human acceptance.
+- [x] Require a declared `C2` subchart for classical second variation; do not
+      promote the accepted `C1` implicit-function result into a Hessian.
+- [x] Instantiate the graph-field second variation with all first- and
+      second-order geometry-slaving terms.
+- [x] Keep constraint curvature and measure dependence inside the differentiated
+      Lagrangian; do not append them again, and keep projector transport out of
+      the additive fixed-state Hessian.
+- [x] Bind structural charge/projector selection to the complete V4 transition
+      and carry the unresolved choice as typed D9/pre-D10 debt.
+- [x] Separate intrinsic response `r_a` from enacted gain
+      `beta_a = zeta_a r_a`.
+- [x] Keep `beta` as an eigenvalue and report direct-response singular values
+      separately.
+- [x] Require `U_(k+1 -> ref) M_k U_(ref -> k)` or endpoint transport of the
+      native Jacobian cocycle on moving branches, plus explicit analysis metrics
+      for nonnormality claims.
+- [x] Freeze exact complete-chain parameter sensitivity and quantitative
+      Neumann regularity certificate surfaces without inventing numeric values.
+- [x] Obtain human acceptance.
+
+### D8-B Coupled Architecture-Local Result
+
+```text
+record = GRC9V4-CD-D8B-CI-v1
+status = accepted_bounded
+decision_record_digest = 53ed6d6ee616ab42c59ce6dabb6bc106a595f5c70ad1acaedc445c7fa73a5b7f
+predecessor = GRC9V4-GTRS-CI-v1
+predecessor_decision_digest = a0292d35d3dfc18e6386a78c26ae9bc2a4b6de9f31e505cf67edf7c094aea3a3
+
+realization_family = coupled_implicit
+architecture_rows = [A, C]
+architecture_local_operator_contract_A_complete = true
+architecture_local_operator_contract_C_complete = true
+structural_operator_contract = charge_parametric_until_D9_charge_tangent_freeze
+
+A_structural_domain = conditional_C_given_fixed_W_A
+C_structural_domain = C_only_with_derived_T_C_tangent
+full_implicit_first_derivative = defined
+full_implicit_second_derivative = defined
+complete_step_Jacobian_A = defined_on_(C,W_A)
+complete_step_Jacobian_C = defined_on_C
+direct_Read_Back_operator_A = defined
+direct_Read_Back_operator_C = defined
+spatial_operator_A_C = defined_separately
+projector_transport_and_covariance = defined
+nonnormality_contract = defined
+
+numeric_alpha_beta_gamma_mu_lambda = not_instantiated
+formed_V4_branch = not_instantiated
+full_chain_nonannihilation_witnesses = 0
+temporal_or_structural_stability = unsupported
+candidate_comparison_or_ranking = false
+
+B1_B2_discriminator_rows = 8
+predecessor_live_debts = 33
+predecessor_debt_dispositions = 33
+current_successor_debts = 7
+live_debt_union = 34
+controls = 54
+
+comparative_D8B_authorized = false
+D9_authorized = false
+runtime_or_src_changed = false
+```
+
+The accepted bounded result closes the equation-level architecture-local D8-B
+burden for the coupled A and C roots, parametrically in the D9 charge/tangent
+contract. It does not fill absent numerical spectra with V3 values,
+direct-field terms, or formal IFT regularness. Numeric stability remains
+conditional pre-D10 or post-specification implementation evidence.
 
 ## D9. Complete Step And Lifecycle Contract
 
-Status: blocked on architecture-local D8-B completion plus the remaining
-realization-family pressure and comparative/selection boundary.
+Status: blocked on disposition of the coupled architecture-local D8-B numerical
+stability debt, the remaining
+realization-family pressure, and the comparative/selection boundary.
 
 - [ ] Freeze complete-step order and causal-state schema.
 - [ ] Freeze post-continuity recomputation of every differential and gradient

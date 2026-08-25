@@ -1,7 +1,7 @@
 # GRC9V4 Constitutive Design Investigation Plan
 
 **Date:** 2026-08-23  
-**Status:** D0-D7, D4-v2-D7-v2, D7G-v1, D7G-v2, the D7G-post-v2 correction, D8-A, and coupled/implicit A+C accepted bounded; architecture-local D8-B for coupled A and C is authorized, while comparative D8-B and successor-family closeout remain blocked
+**Status:** D0-D7, D4-v2-D7-v2, D7G-v1, D7G-v2, the D7G-post-v2 correction, D8-A, coupled/implicit A+C, and coupled A+C architecture-local D8-B accepted bounded; numerical stability, comparative D8-B, and successor-family closeout remain blocked
 **Design basis:** [`GRC9V4ConstitutiveDesignBasis.md`](./GRC9V4ConstitutiveDesignBasis.md)  
 **Checklist:** [`GRC9V4ConstitutiveDesignChecklist.md`](./GRC9V4ConstitutiveDesignChecklist.md)  
 **Decision ledger:** [`GRC9V4ConstitutiveDesignDecisionLedger.md`](./GRC9V4ConstitutiveDesignDecisionLedger.md)
@@ -2225,10 +2225,63 @@ V4-specific adaptation or rederivation because the causal object changed, and
 which are inapplicable. Recreating GRV3/GRV4/GRV7 unchanged as design prose is
 not new evidence and does not close D8.
 
+#### D8-B Coupled Architecture-Local Result
+
+The coupled/implicit A and C pass is recorded in
+[`D8BCoupledArchitectureLocalContinuationAnalysis.json`](./decisions/D8BCoupledArchitectureLocalContinuationAnalysis.json)
+and its
+[`scientific interpretation`](./decisions/D8BCoupledArchitectureLocalContinuationAnalysis.md).
+It is accepted bounded.
+
+The pass derives the complete architecture-local implicit first and second
+derivative surfaces for each accepted coupled root. It uses those surfaces to
+define the charge-parametric architecture-local structural second variation,
+complete once D9 freezes the conserved charge and tangent, plus the committed
+state Jacobian, direct Read-Back response operator, spatial graph operator,
+cluster/projector transport, covariance, nonnormality, and stability tests.
+Candidate A remains conditional C structure at fixed `W_A`; Candidate C
+remains C-only with an exact derived selector tangent. Neither `W_A`, `T_C`,
+`J`, nor `h` receives a new structural or persistent-state authority.
+
+Classical second variation is admitted only on declared `C2` subcharts; the
+accepted `C1` implicit-function result is not overpromoted into a Hessian. The
+field contribution is instantiated from the graph functional, including first
+and second geometry-slaving terms. The structural tangent must be bound to the
+actual conserved charge of the complete V4 transition, which remains explicit
+D9/pre-D10 debt rather than being inferred from `H0` or legacy GRC9V3.
+
+The primary temporal object is the complete discrete multiplier map
+`M_a = D_X Phi_a`; moving branches require a transported cocycle rather than
+one permanent spectrum, with the output transported from `k+1`, not `k`. A
+continuous `gamma` requires a declared clock and logarithm branch or a
+separately derived generator. Intrinsic response `r_a`
+is separated from enacted Read-Back gain `beta_a = zeta_a r_a`; `beta` remains
+spectral while direct-response singular values are reported separately.
+Structural `alpha`, temporal `mu`/`gamma`, direct `beta`, retained-sector
+`lambda_M`, and formed-geometry spatial `lambda` remain separate. The B1/B2 methods are
+classified for reuse or V4 adaptation; their V3 numerical results are not
+consumed as V4 evidence.
+
+No formed V4 constrained critical branch, normalized functional parameter set,
+or numerical root derivative is instantiated by the accepted design sources.
+The pass therefore emits no numeric spectrum and makes no temporal or
+structural stability claim. The existing A and C direct-field receipts do not
+close complete-chain nonannihilation. Those are bounded results, not missing
+rows to be filled with V3 values or partial graph-Hodge proxies.
+
+The complete predecessor live-debt union is dispositioned: 10 immediate
+coupled-successor debts plus 23 transitive D8-A debts. Equation-level
+architecture-local rederivation is closed; seven successor debts preserve
+formed-branch alpha, temporal stability, comparative reference-space work,
+complete-step charge/projector selection, and Candidate A analysis-metric
+selection.
+Comparative D8-B remains blocked.
+
 ## D9. Complete Step And Lifecycle Contract
 
-Status: blocked on architecture-local D8-B completion plus the remaining
-realization-family pressure and comparative/selection boundary.
+Status: blocked on disposition of the coupled architecture-local D8-B numerical
+stability debt, the remaining
+realization-family pressure, and the comparative/selection boundary.
 
 Freeze candidate complete-step ordering, causal state, serialization,
 restoration identity, reset baseline, RNG use, deterministic replay,
