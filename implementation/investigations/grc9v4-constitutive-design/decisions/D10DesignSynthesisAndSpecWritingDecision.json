@@ -1,0 +1,818 @@
+{
+  "schema_version": "grc9v4_constitutive_design_d10_v2",
+  "record_type": "design_synthesis_and_specification_authorization_decision",
+  "record_id": "GRC9V4-CD-D10-v1",
+  "gate_id": "D10",
+  "status": "accepted_bounded",
+  "predecessor_record_id": "GRC9V4-CD-D9-v1",
+  "predecessor_decision_digest": "33c8fe75ae7fda716e97bb9714d5f297911bc4d606f5d382d77f9c3092aa4586",
+  "source_identities": [
+    {
+      "source_id": "GRC9V4-CD-D0-v1",
+      "source_kind": "accepted_decision_or_support_record",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D0TargetInheritanceAndClaimCeiling.json",
+      "source_digest": "b38b07311afc24bfe1016d75e985f886718e5a9d104c69c59e29318801f457c0",
+      "file_sha256": "13dcc4965ecfd375be35a7a3c23406628fb8e13db56df8972fcf90f919fac234",
+      "consumed_as": "accepted_claim_debt_and_architecture_lineage"
+    },
+    {
+      "source_id": "GRC9V4-CD-D1-v1",
+      "source_kind": "accepted_decision_or_support_record",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D1RetainedRepresentationOntologyAndCandidateAdmission.json",
+      "source_digest": "f8ae101beb9fa6e9827555eba64452087c1d19b6933325966f10c4c4ec64c507",
+      "file_sha256": "66d8cba043604c5ffd95c4e1b66af0f1c22abb335641583ebecc491ace62e6b6",
+      "consumed_as": "accepted_claim_debt_and_architecture_lineage"
+    },
+    {
+      "source_id": "GRC9V4-CD-D2-v1",
+      "source_kind": "accepted_decision_or_support_record",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D2FormationRetentionReleaseAndWriteInterface.json",
+      "source_digest": "ea2b953685bb23dfe979b2f5d2ae0f22f364a51484d6536c1721f144c9cad740",
+      "file_sha256": "d20e9a2ce8dd4fcb3cf49dbfd3ebd56fa940979e0aec2288dcc3a6a51156b8bd",
+      "consumed_as": "accepted_claim_debt_and_architecture_lineage"
+    },
+    {
+      "source_id": "GRC9V4-CD-D3-v1",
+      "source_kind": "accepted_decision_or_support_record",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D3ContinuationRequirementsAndStructuralDomain.json",
+      "source_digest": "8e7db364cc4402b9794d825629962d1851fc15a2f0b71fa015cfaeb01f42643d",
+      "file_sha256": "a4e0d808370e3eb734668e4431bde3f2d20309b287a34b1039664650a50c3c03",
+      "consumed_as": "accepted_claim_debt_and_architecture_lineage"
+    },
+    {
+      "source_id": "GRC9V4-CD-D4-v1",
+      "source_kind": "accepted_decision_or_support_record",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D4GeometryMobilityAndTopologyOwnership.json",
+      "source_digest": "c3c4507d4623ee526e636c4434bc13b4af23bdd3f6051cf1db99a2ce5736215c",
+      "file_sha256": "080c4ce5c040d6f2c9c7a63c5981512cd64ddc2a5fbaf9a02b581ae945ad78c9",
+      "consumed_as": "accepted_claim_debt_and_architecture_lineage"
+    },
+    {
+      "source_id": "GRC9V4-CD-D4V2-v1",
+      "source_kind": "accepted_decision_or_support_record",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D4v2CandidateGeometryAndCarrierCompletion.json",
+      "source_digest": "5862cbab0d36e1137dc647d7d21d48f77666a77bf9e7b178c830d323e4ed6309",
+      "file_sha256": "042769ba96e543bd0805c245918d2e33e6453e68dea98e503094393e25708b7c",
+      "consumed_as": "accepted_claim_debt_and_architecture_lineage"
+    },
+    {
+      "source_id": "GRC9V4-CD-D5-v1",
+      "source_kind": "accepted_decision_or_support_record",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D5DirectionalReadBack.json",
+      "source_digest": "453416f42beefa1c9e725b675a0af7d4fd49c3e83691ee16e3e3bcfb6d37f213",
+      "file_sha256": "1f561fb8feaefacf0e331333d2f7153057e5667f5a450f5f6644766774c340f3",
+      "consumed_as": "accepted_claim_debt_and_architecture_lineage"
+    },
+    {
+      "source_id": "GRC9V4-CD-D5V2-v1",
+      "source_kind": "accepted_decision_or_support_record",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D5v2DirectionalReadBackCompletion.json",
+      "source_digest": "212c7db173fbe286816965070a4beebd1e5ba8e39ccc3ffb73bbecde8410cf1c",
+      "file_sha256": "5c32129b06271f18d0bcc98b2d1c362d4b4fde86541668996cc8fd8262602d21",
+      "consumed_as": "accepted_claim_debt_and_architecture_lineage"
+    },
+    {
+      "source_id": "GRC9V4-CD-D6-v1",
+      "source_kind": "accepted_decision_or_support_record",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D6TotalCurrentClosure.json",
+      "source_digest": "0c78ede1551ece13c4b4fc916f60531bdc30219791bf90be574e5b0f80aa3f16",
+      "file_sha256": "5ae4e998a79537a7cb00deca8a033548532e8f04c2e80a484060b16c3c480c19",
+      "consumed_as": "accepted_claim_debt_and_architecture_lineage"
+    },
+    {
+      "source_id": "GRC9V4-CD-D6V2-v1",
+      "source_kind": "accepted_decision_or_support_record",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D6v2UpdatedTotalCurrentClosure.json",
+      "source_digest": "ad02150010c4759d1c0ac4ba079c81cff99bad1f35b715f52b980aaf404eac0a",
+      "file_sha256": "c0b634cd084d76a2ab8993dec4bde0075a3e893aa420f506493eb98b7b63ded0",
+      "consumed_as": "accepted_claim_debt_and_architecture_lineage"
+    },
+    {
+      "source_id": "GRC9V4-CD-D7-v1",
+      "source_kind": "accepted_decision_or_support_record",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D7ClosedWriteReadLoop.json",
+      "source_digest": "7ffaf92b1672aa4fb116539ca5da36aef8bc7f3caf088827fd71f3ec7b483fea",
+      "file_sha256": "be5bbda2ec17aff844d7da02515149238e78da0eba3c76eb5c32ace51fc8e27c",
+      "consumed_as": "accepted_claim_debt_and_architecture_lineage"
+    },
+    {
+      "source_id": "GRC9V4-CD-D7G-v1",
+      "source_kind": "accepted_decision_or_support_record",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D7GGlobalMetricAndStructuralCultivationClosure.json",
+      "source_digest": "b173c03f7dbe55aa53b22960da2be55e42e86dda769cac1356e36499f658d071",
+      "file_sha256": "2824f7db18682bc41b857e172f252a6269fc1e8bd5273443d29827710ef02363",
+      "consumed_as": "accepted_claim_debt_and_architecture_lineage"
+    },
+    {
+      "source_id": "GRC9V4-CD-D7G-post-v2-HODGE-TYPE-CORRECTION-v1",
+      "source_kind": "accepted_decision_or_support_record",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D7GPostv2GraphHodgeTypeCorrection.json",
+      "source_digest": "2e2f4d53e0abf3134f586cc60467bf5881cc60414af82df35bf6ac7772400984",
+      "file_sha256": "bbef6c37449ab7d58b3388f5d030bffbbd750ba470216d0660573d7af27f895f",
+      "consumed_as": "accepted_claim_debt_and_architecture_lineage"
+    },
+    {
+      "source_id": "GRC9V4-CD-D7G-v2",
+      "source_kind": "accepted_decision_or_support_record",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D7Gv2GeometryParametricClosureAndFinalization.json",
+      "source_digest": "c52912d83797ee294799709b3e770574043df37f80073b51eebfaf8b2fd27efb",
+      "file_sha256": "364b1b05ccac3c1220677ac9dbc6e46259beb47ef4cabcafaf381e3bc7ef3c38",
+      "consumed_as": "accepted_claim_debt_and_architecture_lineage"
+    },
+    {
+      "source_id": "GRC9V4-CD-D7V2-v1",
+      "source_kind": "accepted_decision_or_support_record",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D7v2CandidateTransitionComparativeAdmission.json",
+      "source_digest": "f0d355c3e769b43fe48f0eb8ab6e986ce80838dd55e884ad33c66e988b65106e",
+      "file_sha256": "b1796dd90c0be50036812454eb84223ccd40549b13c61be9caaa41f09f38828b",
+      "consumed_as": "accepted_claim_debt_and_architecture_lineage"
+    },
+    {
+      "source_id": "GRC9V4-CD-D8A-v1",
+      "source_kind": "accepted_decision_or_support_record",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D8ABranchAppropriateStructuralTargetExtraction.json",
+      "source_digest": "5e3af8a6b8b327b3d98b5c5f6ac934ff528f048c3927a085c59194262afba021",
+      "file_sha256": "743e2f6c2f85c4b203a5558063fcb0257ddb766fcbaedf356d910720f4ce766d",
+      "consumed_as": "accepted_claim_debt_and_architecture_lineage"
+    },
+    {
+      "source_id": "GRC9V4-CD-D8B-CI-v1",
+      "source_kind": "accepted_decision_or_support_record",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D8BCoupledArchitectureLocalContinuationAnalysis.json",
+      "source_digest": "53ed6d6ee616ab42c59ce6dabb6bc106a595f5c70ad1acaedc445c7fa73a5b7f",
+      "file_sha256": "c797949d76c5167e485fd27c8f7d3a8e6a05565d89fed6bd3f661c6f9b66ec10",
+      "consumed_as": "accepted_claim_debt_and_architecture_lineage"
+    },
+    {
+      "source_id": "GRC9V4-CD-D9-v1",
+      "source_kind": "accepted_decision_or_support_record",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D9CompleteStepAndLifecycleContract.json",
+      "source_digest": "33c8fe75ae7fda716e97bb9714d5f297911bc4d606f5d382d77f9c3092aa4586",
+      "file_sha256": "7bcf60ece19a272e77dd6ea94b0aa7fbebaa893934c743bc741056e108d3332f",
+      "consumed_as": "accepted_claim_debt_and_architecture_lineage"
+    },
+    {
+      "source_id": "GRC9V4-D9-LIFECYCLE-COVERAGE-MATRIX-v1",
+      "source_kind": "accepted_decision_or_support_record",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D9LifecycleCoverageMatrix.json",
+      "source_digest": "34d1b638f7bfc558364efb471d67db94c611c8861f86ca3e616a46051369b762",
+      "file_sha256": "fcd3201fb428e34d1e12eda82358abd341e1c20a4805e7e66fb1e5257da9f2c7",
+      "consumed_as": "accepted_claim_debt_and_architecture_lineage"
+    },
+    {
+      "source_id": "GRC9V4-D9-PROFILE-STATE-LIFECYCLE-REGISTRY-v1",
+      "source_kind": "accepted_decision_or_support_record",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D9ProfileStateLifecycleRegistry.json",
+      "source_digest": "5e3222134db3db043cbe51b2b2a4a5c6b55fa96967ecfff2c56c20881338359c",
+      "file_sha256": "e8bd3e78f170f8d9f6df7adf6e7c2a0d084575c138d71066d5ffc1ca5ae67815",
+      "consumed_as": "accepted_claim_debt_and_architecture_lineage"
+    },
+    {
+      "source_id": "GRC9V4-D9-RESIDUAL-DEBT-LEDGER-v1",
+      "source_kind": "accepted_decision_or_support_record",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D9ResidualDebtLedger.json",
+      "source_digest": "8c37c23c0c28915f9ac15ce867ea0e1532a1e5c233c93d37af932975b4225da8",
+      "file_sha256": "fc5cf30d1eca35dda5a12f8799665d33a7041f47d1b53fa94137f021fc69609a",
+      "consumed_as": "accepted_claim_debt_and_architecture_lineage"
+    },
+    {
+      "source_id": "GRC9V4-GTRS-COMP-v1",
+      "source_kind": "accepted_decision_or_support_record",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/GeometryTemporalRealizationComparativeSynthesis.json",
+      "source_digest": "67a9c97a79525dc70c2233fb2b6706c47d2e31388c9160520f6842d7dc63a84b",
+      "file_sha256": "a2ce74ae0f644f923dd8d5f0a4e4327ef3ae94f499d253141abcf6e0a69f3d38",
+      "consumed_as": "accepted_claim_debt_and_architecture_lineage"
+    },
+    {
+      "source_id": "GRC9V4-GTRS-CI-PC-v1",
+      "source_kind": "accepted_decision_or_support_record",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/GeometryTemporalRealizationHybridCoupledPersistentCarrier.json",
+      "source_digest": "5f003ff5f4dbbb60788ac50827b5a3ccff7ff7e194173721f15503bc6024682a",
+      "file_sha256": "d30a8078aaa9fa5b39e3646b0c481e48494cf90a909eb2722d8c8c04293d9480",
+      "consumed_as": "accepted_claim_debt_and_architecture_lineage"
+    },
+    {
+      "source_id": "GRC9V4-GTRS-CI-v1",
+      "source_kind": "accepted_decision_or_support_record",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/GeometryTemporalRealizationSuccessorCoupledImplicit.json",
+      "source_digest": "a0292d35d3dfc18e6386a78c26ae9bc2a4b6de9f31e505cf67edf7c094aea3a3",
+      "file_sha256": "312602466e06801b48c2620f8ddc62d20513b68ad455750949ffed9c38dcd57b",
+      "consumed_as": "accepted_claim_debt_and_architecture_lineage"
+    },
+    {
+      "source_id": "GRC9V4-GTRS-OS-v1",
+      "source_kind": "accepted_decision_or_support_record",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/GeometryTemporalRealizationSuccessorOperatorSplit.json",
+      "source_digest": "36c98542c7920d468e932287872cf4dabf8720d5d2c6b0c0e30e6f94b113605f",
+      "file_sha256": "113415f17f4034afe81f66a955771fdfd1532c790e9f936bc5ae99a4c350f223",
+      "consumed_as": "accepted_claim_debt_and_architecture_lineage"
+    },
+    {
+      "source_id": "GRC9V4-GTRS-PC-v1",
+      "source_kind": "accepted_decision_or_support_record",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/GeometryTemporalRealizationSuccessorPersistentCarrier.json",
+      "source_digest": "d1e38d6aa36b03154715c1e26c0b4a1b181dab19ed4bbfbd1575c94c9962e49a",
+      "file_sha256": "e6328fe5366acf0a2dcbfe78966e8aa4efcafd214d08951998fcf6ce8f88f9d7",
+      "consumed_as": "accepted_claim_debt_and_architecture_lineage"
+    },
+    {
+      "source_id": "GRC9V4-GTRS-RG-v1",
+      "source_kind": "accepted_decision_or_support_record",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/GeometryTemporalRealizationSuccessorReconstructedGeometry.json",
+      "source_digest": "dce24993ac0dd39a5fa5bcd35e46d9166fa28628d3811e9b33724c210ada4c0b",
+      "file_sha256": "b3586ce7bc6fd7e127724b99a490940012a4ee2688ecdac980cea054e86415aa",
+      "consumed_as": "accepted_claim_debt_and_architecture_lineage"
+    }
+  ],
+  "artifact_manifest": [
+    {
+      "role": "normative_claim_topology",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D10NormativeClaimTopology.json",
+      "artifact_digest": "2bd78fc5d9a075d0958813dd199a8a57a8c23565e10b68fce89c967d4b3ee373",
+      "file_sha256": "f516fe696a55dd3f77f42b0d539e211689640f3ce8d3dd1134283cd47a06a94f"
+    },
+    {
+      "role": "debt_claim_transformation_ledger",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D10DebtClaimTransformationLedger.json",
+      "artifact_digest": "da3cb887be1c256666e74c7bb01da5b038d06f88484b91b24ec25954f1ab3e82",
+      "file_sha256": "68190c133d8bda7067dfb4cb9b55980e578ce02051bc5d24066b0349f6f8a23a"
+    },
+    {
+      "role": "specification_authorization_profile",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D10SpecificationAuthorizationProfile.json",
+      "artifact_digest": "3adafb4703b88ce7faf48b9c4e6b3bcb3c359224066df9d084c2a2f2b9bac159",
+      "file_sha256": "ab723c35aaaa971662d3f3c21742d8d99c943661cb8e93ef2e46a54ccce6cd0b"
+    }
+  ],
+  "decision": {
+    "governing_rule": "debt_is_a_stressed_edge_in_an_evolving_claim_topology_not_a_checklist_item",
+    "claim_flow": "claim_to_debt_to_pressure_or_evidence_to_claim_transformation",
+    "selected_architecture": "profile_explicit_lineage_local_GRC9V4_common_substrate_interface_with_named_complete_constitutive_and_realization_profiles",
+    "selection_semantics": "select_the_lineage_local_profile_explicit_common_interface_and_invariant_architecture_without_flattening_or_ranking_candidate_or_realization_profiles",
+    "claim_topology": {
+      "normative": [
+        "D10-CL-N-001",
+        "D10-CL-N-002",
+        "D10-CL-N-003",
+        "D10-CL-N-004",
+        "D10-CL-N-005",
+        "D10-CL-N-006",
+        "D10-CL-N-007",
+        "D10-CL-N-008",
+        "D10-CL-N-009"
+      ],
+      "optional": [
+        "D10-CL-O-001",
+        "D10-CL-O-002",
+        "D10-CL-O-003",
+        "D10-CL-O-004",
+        "D10-CL-O-005",
+        "D10-CL-O-006",
+        "D10-CL-O-007"
+      ],
+      "conditional": [
+        "D10-CL-C-001",
+        "D10-CL-C-002",
+        "D10-CL-C-003",
+        "D10-CL-C-004",
+        "D10-CL-C-005",
+        "D10-CL-C-006",
+        "D10-CL-C-007",
+        "D10-CL-C-008",
+        "D10-CL-C-009",
+        "D10-CL-C-010",
+        "D10-CL-C-011",
+        "D10-CL-C-012"
+      ],
+      "open": [
+        "D10-CL-U-001",
+        "D10-CL-U-002",
+        "D10-CL-U-003",
+        "D10-CL-U-004",
+        "D10-CL-U-005"
+      ],
+      "negative": [
+        "D10-CL-X-001",
+        "D10-CL-X-002",
+        "D10-CL-X-003",
+        "D10-CL-X-004",
+        "D10-CL-X-006",
+        "D10-CL-X-005"
+      ],
+      "historical_predecessor_claim_node_count": 29,
+      "reciprocal_typed_claim_debt_edge_count": 129
+    },
+    "debt_synthesis": {
+      "D9_carried_debt_count": 29,
+      "D10_transformed_debt_count": 29,
+      "claimless_debt_disposition_count": 0,
+      "transformation_counts": {
+        "confirmed": 1,
+        "strengthened": 0,
+        "narrowed": 7,
+        "generalized": 0,
+        "split": 2,
+        "replaced": 0,
+        "resolved_negative": 1,
+        "routed": 18
+      },
+      "scientific_open_claim_count": 5,
+      "verification_obligation_count": 11
+    },
+    "candidate_disposition": {
+      "A": "named_optional_normalized_nondimensional_revision_specific_profile_family",
+      "C": "named_optional_revision_specific_profile_family",
+      "B": "reserved_successor_extension_slot_routed_not_rejected_no_executable_profile"
+    },
+    "realization_disposition": {
+      "CI": "named_optional_A_bounded_domain_contraction_unique_and_C_stratum_local_contraction_unique_self_consistent_profile",
+      "OS": "named_optional_one_pass_profile_with_split_residual",
+      "RG2b": "named_optional_bounded_Lipschitz_profile",
+      "PC": "named_optional_scalar_ZOH_one_tau_PC_independent_persistent_K4_history_profile",
+      "CI_PC": "named_optional_revision_specific_gain_two_A_bounded_domain_and_C_stratified_unique_composition_profile"
+    },
+    "executable_profile_conformance_grammar": {
+      "constitutive_family_cardinality_per_runtime_state": "exactly_one",
+      "realization_cardinality_per_runtime_state": "exactly_one",
+      "admitted_constitutive_families": [
+        "A",
+        "C"
+      ],
+      "admitted_realizations": [
+        "CI",
+        "OS",
+        "RG2b",
+        "PC",
+        "CI_PC"
+      ],
+      "admitted_complete_profile_ids": [
+        "A_CI",
+        "A_OS",
+        "A_RG2b",
+        "A_PC",
+        "A_CI_PC",
+        "C_CI",
+        "C_OS",
+        "C_RG2b",
+        "C_PC",
+        "C_CI_PC"
+      ],
+      "admitted_complete_profile_count": 10,
+      "implementation_support_rule": "an_implementation_may_support_any_nonempty_subset_of_the_admitted_complete_profiles",
+      "runtime_state_binding_rule": "X_current_X_reset_and_each_snapshot_bind_exactly_one_unambiguous_complete_profile_identity",
+      "profile_migration_receipt_binding_rule": "each_migration_receipt_binds_the_ordered_pair_p_source_p_target",
+      "topology_event_receipt_binding_rule": "each_topology_event_receipt_binds_the_ordered_pair_p_source_p_target_with_equality_when_the_complete_profile_is_unchanged",
+      "current_admitted_profile_population_scope": "complete_for_the_initial_lineage_local_specification_population_not_exhaustive_over_future_lawful_V4_profiles",
+      "current_profile_population_is_future_exhaustive": false,
+      "future_profile_admission_rule": "a_materially_distinct_successor_requires_explicit_provenance_or_derivation_a_new_complete_profile_identity_and_reopening_of_the_earliest_accepted_contract_whose_authority_staging_state_geometry_accounting_or_lifecycle_semantics_it_changes",
+      "zero_candidate_or_zero_realization_executable_instance_allowed": false,
+      "Candidate_B_executable": false
+    },
+    "unfolding_trajectory": {
+      "current_topology_role": "freeze_the_currently_justified_claim_topology_and_currently_admitted_specification_population_not_a_fixed_successor_schedule",
+      "normative_claim_route": "may_unfold_into_specification_after_D10_acceptance",
+      "conditional_and_open_activation_rule": "activate_only_when_the_named_stronger_claim_or_successor_direction_is_attempted",
+      "verification_obligation_rule": "gate_only_the_claims_they_name_not_a_mandatory_linear_backlog",
+      "successor_profile_admission_rule": "new_constitutive_realization_hybrid_or_geometry_profiles_require_explicit_successor_admission_and_earliest_affected_contract_reopening",
+      "negative_claim_rule": "remain_current_boundaries_until_new_evidence_transforms_them",
+      "preclosure_convergence_rule": "the_substrate_provenance_audit_remains_mandatory_before_final_V4_substrate_naming_and_closure",
+      "prescribed_successor_schedule": false
+    },
+    "scientific_disposition": "accepted_bounded_lineage_local_profile_explicit_spec_authorization",
+    "claim_ceiling": "bounded_design_level_lineage_local_profile_explicit_GRC9V4_architecture_with_exactly_one_A_or_C_and_exactly_one_CI_OS_RG2b_PC_or_CI_PC_runtime_identity_typed_lifecycle_and_unclosed_final_substrate_identity",
+    "blocked_relabels": [
+      "no_unique_candidate_or_realization_preference",
+      "no_stability_or_continuation_spectrum_claim",
+      "no_universal_nonabsorbability_or_physical_channel_claim",
+      "no_runtime_implemented_or_formed_branch_claim",
+      "no_cross_profile_capacity_or_numeric_ranking",
+      "no_current_profile_roster_as_future_completeness_theorem",
+      "no_current_scalar_ZOH_PC_as_universal_persistent_carrier_law",
+      "no_promotion_to_generic_Graph_GRC_V4_without_independent_derivation"
+    ]
+  },
+  "control_contract": [
+    {
+      "control_id": "D10-C001",
+      "status": "passed",
+      "rule": "accepted_D9_predecessor_digest_and_SHA_match"
+    },
+    {
+      "control_id": "D10-C002",
+      "status": "passed",
+      "rule": "all_accepted_D0_D9_sources_are_bound_by_digest_and_SHA"
+    },
+    {
+      "control_id": "D10-C003",
+      "status": "passed",
+      "rule": "claim_categories_are_normative_optional_conditional_open_negative"
+    },
+    {
+      "control_id": "D10-C004",
+      "status": "passed",
+      "rule": "claim_ids_are_unique"
+    },
+    {
+      "control_id": "D10-C005",
+      "status": "passed",
+      "rule": "all_29_D9_carried_debts_are_present_exactly_once"
+    },
+    {
+      "control_id": "D10-C006",
+      "status": "passed",
+      "rule": "no_non_D9_debt_is_invented"
+    },
+    {
+      "control_id": "D10-C007",
+      "status": "passed",
+      "rule": "every_debt_names_blocked_and_supported_claims"
+    },
+    {
+      "control_id": "D10-C008",
+      "status": "passed",
+      "rule": "every_debt_names_a_nonbinary_claim_transformation"
+    },
+    {
+      "control_id": "D10-C009",
+      "status": "passed",
+      "rule": "every_debt_names_successor_claims"
+    },
+    {
+      "control_id": "D10-C010",
+      "status": "passed",
+      "rule": "every_debt_has_full_predecessor_lineage"
+    },
+    {
+      "control_id": "D10-C011",
+      "status": "passed",
+      "rule": "all_lineage_paths_are_repo_relative"
+    },
+    {
+      "control_id": "D10-C012",
+      "status": "passed",
+      "rule": "all_lineage_digests_and_SHAs_match"
+    },
+    {
+      "control_id": "D10-C013",
+      "status": "passed",
+      "rule": "no_scope_exclusion_is_called_scientific_resolution"
+    },
+    {
+      "control_id": "D10-C014",
+      "status": "passed",
+      "rule": "resolved_negative_claims_are_preserved"
+    },
+    {
+      "control_id": "D10-C015",
+      "status": "passed",
+      "rule": "verification_obligations_are_separate_from_scientific_design_debt"
+    },
+    {
+      "control_id": "D10-C016",
+      "status": "passed",
+      "rule": "all_normative_claims_list_bearing_debts_or_an_empty_exact_set"
+    },
+    {
+      "control_id": "D10-C017",
+      "status": "passed",
+      "rule": "all_claim_debt_references_exist"
+    },
+    {
+      "control_id": "D10-C018",
+      "status": "passed",
+      "rule": "all_debt_claim_references_exist"
+    },
+    {
+      "control_id": "D10-C019",
+      "status": "passed",
+      "rule": "all_29_historical_predecessor_claim_nodes_are_preserved"
+    },
+    {
+      "control_id": "D10-C020",
+      "status": "passed",
+      "rule": "every_claim_to_debt_edge_has_a_corresponding_typed_debt_to_claim_edge"
+    },
+    {
+      "control_id": "D10-C021",
+      "status": "passed",
+      "rule": "every_debt_to_claim_edge_has_a_corresponding_claim_to_debt_edge"
+    },
+    {
+      "control_id": "D10-C022",
+      "status": "passed",
+      "rule": "blocked_by_is_temporally_restricted_to_historical_conditional_or_open_claims"
+    },
+    {
+      "control_id": "D10-C023",
+      "status": "passed",
+      "rule": "profile_explicit_architecture_is_selected"
+    },
+    {
+      "control_id": "D10-C024",
+      "status": "passed",
+      "rule": "unique_candidate_selection_is_false"
+    },
+    {
+      "control_id": "D10-C025",
+      "status": "passed",
+      "rule": "unique_realization_selection_is_false"
+    },
+    {
+      "control_id": "D10-C026",
+      "status": "passed",
+      "rule": "Candidate_A_is_normalized_nondimensional_revision_specific_optional"
+    },
+    {
+      "control_id": "D10-C027",
+      "status": "passed",
+      "rule": "Candidate_C_is_revision_specific_optional"
+    },
+    {
+      "control_id": "D10-C028",
+      "status": "passed",
+      "rule": "Candidate_B_is_routed_not_rejected"
+    },
+    {
+      "control_id": "D10-C029",
+      "status": "passed",
+      "rule": "PC_does_not_relabel_as_B"
+    },
+    {
+      "control_id": "D10-C030",
+      "status": "passed",
+      "rule": "every_executable_runtime_state_binds_exactly_one_complete_profile"
+    },
+    {
+      "control_id": "D10-C031",
+      "status": "passed",
+      "rule": "current_reset_and_snapshot_each_bind_one_complete_profile_identity"
+    },
+    {
+      "control_id": "D10-C032",
+      "status": "passed",
+      "rule": "migration_receipts_bind_ordered_source_and_target_complete_profile_identities"
+    },
+    {
+      "control_id": "D10-C033",
+      "status": "passed",
+      "rule": "topology_event_receipts_bind_ordered_source_and_target_complete_profile_identities"
+    },
+    {
+      "control_id": "D10-C034",
+      "status": "passed",
+      "rule": "implementations_may_support_any_nonempty_subset_of_the_ten_complete_profiles"
+    },
+    {
+      "control_id": "D10-C035",
+      "status": "passed",
+      "rule": "current_ten_profile_roster_is_not_a_future_completeness_theorem"
+    },
+    {
+      "control_id": "D10-C036",
+      "status": "passed",
+      "rule": "current_PC_is_scalar_ZOH_one_tau_not_the_universal_persistent_carrier_law"
+    },
+    {
+      "control_id": "D10-C037",
+      "status": "passed",
+      "rule": "future_profiles_require_explicit_successor_admission_and_earliest_affected_contract_reopening"
+    },
+    {
+      "control_id": "D10-C038",
+      "status": "passed",
+      "rule": "unfolding_trajectory_does_not_prescribe_a_fixed_successor_schedule"
+    },
+    {
+      "control_id": "D10-C039",
+      "status": "passed",
+      "rule": "verification_obligations_gate_named_claims_not_a_linear_backlog"
+    },
+    {
+      "control_id": "D10-C040",
+      "status": "passed",
+      "rule": "negative_claims_remain_boundaries_until_transformed_by_new_evidence"
+    },
+    {
+      "control_id": "D10-C041",
+      "status": "passed",
+      "rule": "Candidate_B_is_excluded_from_the_current_executable_profile_set"
+    },
+    {
+      "control_id": "D10-C042",
+      "status": "passed",
+      "rule": "CI_preserves_D9_bounded_and_stratified_uniqueness"
+    },
+    {
+      "control_id": "D10-C043",
+      "status": "passed",
+      "rule": "OS_is_optional_with_split_residual"
+    },
+    {
+      "control_id": "D10-C044",
+      "status": "passed",
+      "rule": "RG2b_is_optional_Lipschitz_only"
+    },
+    {
+      "control_id": "D10-C045",
+      "status": "passed",
+      "rule": "PC_is_optional_independent_history"
+    },
+    {
+      "control_id": "D10-C046",
+      "status": "passed",
+      "rule": "CI_PC_is_optional_gain_two_revision_specific"
+    },
+    {
+      "control_id": "D10-C047",
+      "status": "passed",
+      "rule": "CI_PC_preserves_D9_bounded_and_stratified_uniqueness"
+    },
+    {
+      "control_id": "D10-C048",
+      "status": "passed",
+      "rule": "A_present_law_inherited_core_provenance_is_resolved_negative"
+    },
+    {
+      "control_id": "D10-C049",
+      "status": "passed",
+      "rule": "A_future_core_derivability_is_not_resolved_negative"
+    },
+    {
+      "control_id": "D10-C050",
+      "status": "passed",
+      "rule": "A_unique_completion_is_resolved_negative"
+    },
+    {
+      "control_id": "D10-C051",
+      "status": "passed",
+      "rule": "A_physical_dimensionalization_requires_a_future_bridge"
+    },
+    {
+      "control_id": "D10-C052",
+      "status": "passed",
+      "rule": "A_nonabsorbability_is_not_claimed"
+    },
+    {
+      "control_id": "D10-C053",
+      "status": "passed",
+      "rule": "C_nonabsorbability_is_not_claimed"
+    },
+    {
+      "control_id": "D10-C054",
+      "status": "passed",
+      "rule": "physical_channel_attribution_is_open"
+    },
+    {
+      "control_id": "D10-C055",
+      "status": "passed",
+      "rule": "formed_branch_runtime_is_open"
+    },
+    {
+      "control_id": "D10-C056",
+      "status": "passed",
+      "rule": "numeric_stability_is_open"
+    },
+    {
+      "control_id": "D10-C057",
+      "status": "passed",
+      "rule": "matched_profile_ranking_is_not_claimed"
+    },
+    {
+      "control_id": "D10-C058",
+      "status": "passed",
+      "rule": "matched_profile_discrimination_debt_is_routed_not_resolved_negative"
+    },
+    {
+      "control_id": "D10-C059",
+      "status": "passed",
+      "rule": "cross_profile_capacity_comparison_is_conditional"
+    },
+    {
+      "control_id": "D10-C060",
+      "status": "passed",
+      "rule": "reference_Hodge_normalization_is_not_unique"
+    },
+    {
+      "control_id": "D10-C061",
+      "status": "passed",
+      "rule": "Hodge_type_correction_is_normative"
+    },
+    {
+      "control_id": "D10-C062",
+      "status": "passed",
+      "rule": "general_SPD_runtime_conformance_is_not_claimed"
+    },
+    {
+      "control_id": "D10-C063",
+      "status": "passed",
+      "rule": "regular_profiles_fail_closed_at_current_singularity"
+    },
+    {
+      "control_id": "D10-C064",
+      "status": "passed",
+      "rule": "lossless_event_history_requires_lineage"
+    },
+    {
+      "control_id": "D10-C065",
+      "status": "passed",
+      "rule": "generic_no_lineage_history_preservation_remains_resolved_negative"
+    },
+    {
+      "control_id": "D10-C066",
+      "status": "passed",
+      "rule": "typed_lifecycle_does_not_imply_continuation_spectrum_identity"
+    },
+    {
+      "control_id": "D10-C067",
+      "status": "passed",
+      "rule": "complete_chain_consumption_does_not_imply_endpoint_effect"
+    },
+    {
+      "control_id": "D10-C068",
+      "status": "passed",
+      "rule": "constructibility_does_not_imply_stability"
+    },
+    {
+      "control_id": "D10-C069",
+      "status": "passed",
+      "rule": "lineage_local_spec_authorization_does_not_close_final_substrate_identity"
+    },
+    {
+      "control_id": "D10-C070",
+      "status": "passed",
+      "rule": "preclosure_substrate_provenance_audit_is_registered"
+    },
+    {
+      "control_id": "D10-C071",
+      "status": "passed",
+      "rule": "specification_authorization_follows_bounded_human_acceptance"
+    },
+    {
+      "control_id": "D10-C072",
+      "status": "passed",
+      "rule": "implementation_authorization_is_false"
+    },
+    {
+      "control_id": "D10-C073",
+      "status": "passed",
+      "rule": "runtime_or_src_change_authorization_is_false"
+    }
+  ],
+  "control_contract_count": 73,
+  "verification": {
+    "accepted_source_count": 27,
+    "supporting_artifact_count": 3,
+    "supporting_artifact_digest_and_SHA_match": true,
+    "claim_count": 39,
+    "historical_claim_count": 29,
+    "total_claim_node_count": 68,
+    "reciprocal_typed_claim_debt_edge_count": 129,
+    "claim_category_counts": {
+      "normative": 9,
+      "optional": 7,
+      "conditional": 12,
+      "open": 5,
+      "negative": 6
+    },
+    "D9_carried_debt_count": 29,
+    "D10_transformed_debt_count": 29,
+    "claimless_debt_disposition_count": 0,
+    "debt_without_full_lineage_count": 0,
+    "unknown_claim_reference_count": 0,
+    "scope_exclusion_relabelled_as_resolution_count": 0,
+    "verification_obligation_count": 11,
+    "unique_candidate_selected": false,
+    "unique_realization_selected": false,
+    "Candidate_B_rejected": false,
+    "executable_complete_profile_count": 10,
+    "preclosure_substrate_provenance_audit_registered": true,
+    "specification_authorized_after_human_acceptance": true,
+    "specification_authorization_scope": "lineage_local_profile_explicit_GRC9V4",
+    "final_substrate_identity_closed": false,
+    "preclosure_substrate_provenance_audit_required": true,
+    "specification_authorized": true,
+    "implementation_authorized": false,
+    "runtime_or_src_changed": false,
+    "control_count": 73,
+    "duplicate_control_id_count": 0,
+    "human_acceptance_recorded": true,
+    "absolute_machine_local_paths_in_record": false
+  },
+  "authorization_effect": {
+    "D10_complete_after_human_acceptance": true,
+    "specification_authorized_after_human_acceptance": true,
+    "specification_authorization_scope": "lineage_local_profile_explicit_GRC9V4",
+    "final_substrate_identity_closed": false,
+    "preclosure_substrate_provenance_audit_required": true,
+    "specification_authorized": true,
+    "implementation_plan_authorized": false,
+    "implementation_authorized": false,
+    "runtime_or_src_change_authorized": false
+  },
+  "human_acceptance": {
+    "accepted": true,
+    "status": "accepted_bounded_2026-08-26",
+    "scope": "lineage_local_profile_explicit_specification_authorization_only"
+  },
+  "decision_record_digest": "3e673b335ad428d01006f231765d060a9bdd5f134332b143048f774de94bad00"
+}

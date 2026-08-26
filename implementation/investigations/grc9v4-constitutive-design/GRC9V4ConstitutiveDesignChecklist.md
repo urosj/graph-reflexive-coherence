@@ -1,7 +1,7 @@
 # GRC9V4 Constitutive Design Investigation Checklist
 
 **Date:** 2026-08-23  
-**Status:** D0-D7, D4-v2-D7-v2, D7G-v1/v2, the D7G-post-v2 correction, D8-A, coupled/implicit A+C, coupled A+C architecture-local D8-B, GTRS-OS, GTRS-RG, GTRS-PC, GTRS-COMP, GTRS-CI-PC, and D9 accepted bounded; D10 is authorized to begin
+**Status:** D0-D10.2 accepted bounded; GRCv4/GRC9v4 specification writing authorized; implementation remains unauthorized
 **Plan:** [`GRC9V4ConstitutiveDesignPlan.md`](./GRC9V4ConstitutiveDesignPlan.md)  
 **Basis:** [`GRC9V4ConstitutiveDesignBasis.md`](./GRC9V4ConstitutiveDesignBasis.md)  
 **Ledger:** [`GRC9V4ConstitutiveDesignDecisionLedger.md`](./GRC9V4ConstitutiveDesignDecisionLedger.md)
@@ -2386,7 +2386,8 @@ entry before any selection or specification authorization.
 
 ## D9. Complete Step And Lifecycle Contract
 
-Status: accepted bounded. D10 is authorized to begin.
+Status: accepted bounded. D10 was authorized and has now executed pending human
+review.
 
 - [x] Freeze complete-step order and causal-state schema.
 - [x] Freeze post-continuity recomputation of every differential and gradient
@@ -2506,19 +2507,287 @@ and the [residual debt ledger](./decisions/D9ResidualDebtLedger.json).
 
 ## D10. Design Synthesis And Spec-Writing Decision
 
-Status: authorized; not yet executed.
+Status: `accepted_bounded`.
 
-- [ ] Reconcile all executed gate decisions into one architecture or bounded
+- [x] Freeze the governing rule that debt is a stressed claim-topology edge,
+      not a binary checklist item.
+- [x] Enforce no debt disposition without a claim-ledger disposition.
+- [x] Enforce no normative claim without tracing every bearing debt.
+- [x] Preserve one historical predecessor claim node per D9-carried debt.
+- [x] Enforce reciprocal typed claim-to-debt and debt-to-claim edges.
+- [x] Restrict `blocked_by` to historical predecessors or current
+      conditional/open claims that remain unearned.
+- [x] Reconcile all executed gate decisions into one architecture or bounded
       no-selection closeout.
-- [ ] Verify no field or operator has incompatible roles.
-- [ ] Record rejected alternatives and adjudicate every D10-blocking debt.
-- [ ] Freeze claim ceiling and blocked relabels.
-- [ ] Produce a verification/constructibility outline.
-- [ ] Select one D10 disposition.
-- [ ] Block candidate exhaustion from becoming rejection of the GRC9V4 target.
-- [ ] Obtain human acceptance.
-- [ ] Set `specification_authorized = true` only for an accepted complete design.
-- [ ] Keep runtime implementation unauthorized.
+- [x] Verify no field or operator has incompatible roles.
+- [x] Record rejected alternatives and transform every D9-carried debt.
+- [x] Preserve narrowing, routing, splitting, and resolved negatives as typed
+      claim transformations rather than binary closure.
+- [x] Separate scientific open claims from implementation and numerical
+      verification obligations.
+- [x] Freeze claim ceiling and blocked relabels.
+- [x] Produce a verification/constructibility outline.
+- [x] Select one D10 disposition.
+- [x] Block candidate exhaustion from becoming rejection of the GRC9V4 target.
+- [x] Produce the normative/optional/conditional/open/negative claim topology.
+- [x] Produce the full-lineage debt/claim transformation ledger.
+- [x] Produce the profile-explicit specification authorization profile.
+- [x] Freeze exactly one candidate plus exactly one realization per executable
+      runtime state over the ten currently admitted complete profiles.
+- [x] Bind migration and topology-event receipts to ordered source/target
+      complete-profile identities, allowing equality when unchanged.
+- [x] Freeze the ten-profile roster as complete for the initial specification
+      population without treating it as exhaustive over future lawful V4.
+- [x] Scope the current PC identity to the scalar-ZOH, one-`tau_PC`
+      persistent-`K_4` realization rather than a universal carrier law.
+- [x] Record a claim-activated unfolding trajectory without prescribing a
+      successor schedule or linear verification backlog.
+- [x] Admit the present Candidate A law only as a normalized nondimensional
+      profile; route physical dimensionalization to a future units/gauge bridge.
+- [x] Preserve D9 bounded-domain A and stratum-local uniquely self-consistent C
+      root results for CI and CI+PC.
+- [x] Register the pre-closure substrate-provenance audit and keep final
+      substrate identity open.
+- [x] Obtain bounded human acceptance.
+- [x] Set `specification_authorized = true` for the accepted lineage-local
+      specification scope only.
+- [x] Keep runtime implementation unauthorized.
+
+```text
+record = GRC9V4-CD-D10-v1
+status = accepted_bounded
+human_acceptance = accepted_bounded_2026-08-26
+decision_record_digest = 3e673b335ad428d01006f231765d060a9bdd5f134332b143048f774de94bad00
+
+selected_architecture = profile_explicit_lineage_local_GRC9V4_common_substrate_interface
+unique_candidate_selected = false
+unique_realization_selected = false
+candidate_A = named_optional_normalized_nondimensional_revision_specific_profile_family
+candidate_C = named_optional_revision_specific_profile_family
+candidate_B = routed_not_rejected_reserved_nonexecutable_successor_slot
+realization_profiles = [CI, OS, RG2b, PC, CI+PC]
+executable_complete_profiles = 10
+runtime_complete_profile_binding = exactly_one_candidate_plus_exactly_one_realization
+migration_receipt_profile_binding = ordered_source_target_complete_profile_pair
+topology_event_receipt_profile_binding = ordered_source_target_complete_profile_pair_equal_when_unchanged
+current_profile_population_future_exhaustive = false
+current_PC_profile = scalar_ZOH_one_tau_PC_persistent_K4_history
+unfolding_trajectory = claim_activated_not_fixed_successor_schedule
+
+normative_claims = 9
+optional_claims = 7
+conditional_claims = 12
+open_claims = 5
+negative_claims = 6
+historical_predecessor_claim_nodes = 29
+reciprocal_typed_claim_debt_edges = 129
+D9_carried_debts = 29
+D10_transformed_debts = 29
+claimless_debt_dispositions = 0
+transformation_counts = {confirmed: 1, narrowed: 7, split: 2, resolved_negative: 1, routed: 18}
+verification_obligations = 11
+controls = 73
+
+scientific_disposition = accepted_bounded_lineage_local_profile_explicit_spec_authorization
+final_substrate_identity_closed = false
+preclosure_substrate_provenance_audit_required = true
+specification_authorized_after_human_acceptance = true
+specification_authorized = true
+implementation_plan_authorized = false
+implementation_authorized = false
+runtime_or_src_changed = false
+```
+
+The authoritative records are
+[`D10DesignSynthesisAndSpecWritingDecision.json`](./decisions/D10DesignSynthesisAndSpecWritingDecision.json),
+its [scientific interpretation](./decisions/D10DesignSynthesisAndSpecWritingDecision.md),
+the [claim topology](./decisions/D10NormativeClaimTopology.json), the
+[debt/claim transformation ledger](./decisions/D10DebtClaimTransformationLedger.json),
+and the [specification authorization profile](./decisions/D10SpecificationAuthorizationProfile.json).
+
+## D10.1. Preliminary Substrate Provenance And Nine-Port Necessity
+
+Status: `accepted_preliminary_bounded_substrate_provenance_separation`.
+
+- [x] Bind accepted D10 as the unchanged predecessor.
+- [x] Bind the reconciled GRC9V3 and GRCV3 specifications, Phase 7 equation
+      ownership, accepted D7/D7G/D9 decisions, and both runtime sources.
+- [x] Record that GRC9V3 provenance is load-bearing.
+- [x] Record that current evidence does not establish intrinsic nine-port
+      necessity without claiming that nine ports are unnecessary.
+- [x] Classify Candidate A as GRC9V3-derived with independent derivation over
+      GRCv3 differential/transport contracts pending.
+- [x] Classify Candidate C and `K_4`/Hodge as stronger GRC-level candidates
+      without promotion from the GRC9 lineage to GRCv4.
+- [x] Preserve ordered ports, row/column mechanics, expansion, hybrid sparks,
+      stabilization, coarse-graining, and exact legacy lifecycle as substantive
+      GRC9 specialization content.
+- [x] Separate GRC9-intrinsic mechanics from GRC9-specific compatibility and
+      lifecycle targeting.
+- [x] Bind D0 directly rather than leaving it as an unresolved lineage ID.
+- [x] Separate inherited `G_W` functional form from A's revision-specific
+      pre-read and postcontinuity-writer staging.
+- [x] Separate general charge-covector accounting from the current unit-measure
+      `Q = sum(C)` reference profile.
+- [x] Bind CI, OS, RG2b, PC, and CI+PC to their direct realization decisions.
+- [x] Freeze the representative `(E, P_E, L_E, S_E)` audit tuple.
+- [x] Separate substrate disposition from promotion status.
+- [x] Freeze `GRCv3` as general graph GRC and `GRC9v3` as its nine-port
+      specialization/profile.
+- [x] Record the GRCv4/GRC9v4/GRC9v3-disabled working factorization as a
+      hypothesis only.
+- [x] Keep D10's accepted claim topology and authorization unchanged.
+- [x] Keep the final equation-by-equation pre-closure audit open.
+- [x] Keep GRCv4 specification and all implementation work unauthorized.
+- [x] Generate the structured decision and scientific interpretation.
+- [x] Pass source, digest, classification, ceiling, and report audit checks.
+- [x] Obtain bounded human acceptance.
+
+```text
+record = GRC9V4-CD-D10.1-v1
+status = accepted_preliminary_bounded_substrate_provenance_separation
+human_acceptance = accepted_preliminary_bounded_substrate_provenance_separation_2026-08-26
+decision_record_digest = 51572056af21abd3c4c623e72bf7a20ba34c54dafae8b23086979d2c761c939f
+
+source_identities = 16
+preliminary_findings = 5
+representative_provenance_rows = 12
+controls = 15
+audit_checks = 113/113
+
+working_factorization = GRCV4 ->[nine-port specialization] GRC9V4 ->[disabled V4 profile] GRC9V3
+working_factorization_status = hypothesis_supported_by_preliminary_provenance_separation
+D10_claim_topology_unchanged = true
+equation_by_equation_audit_complete = false
+promotion_proved = false
+final_substrate_identity_closed = false
+preclosure_substrate_provenance_audit_still_required = true
+GRCV4_specification_authorized = false
+implementation_authorized = false
+runtime_or_src_changed = false
+```
+
+The authoritative records are the
+[`D10.1 structured decision`](./decisions/D10_1PreliminarySubstrateProvenance.json)
+and its
+[`scientific interpretation`](./decisions/D10_1PreliminarySubstrateProvenance.md).
+
+## D10.2. Full Substrate Provenance And GRCV4 Promotion Audit
+
+Status: `accepted_bounded`.
+
+- [x] Bind accepted D10.1 as the immediate predecessor without rewriting D10.
+- [x] Bind the accepted D10 claim topology, specification population, D0-D9
+      lineage, all five realization decisions, GRCv3/GRC9v3 specifications,
+      Phase 7 ownership map, and both transport runtimes.
+- [x] Audit the complete claim-to-parent-object-to-subordinate-contract
+      hierarchy without enumerating every algebraic intermediate.
+- [x] Cover all 39 accepted D10 claim nodes with no orphan claim or object.
+- [x] Verify exact claim-set equality across the accepted D10 decision, claim
+      topology, and specification authorization surfaces; preserve
+      `D10-CL-C-012` as accepted D10 content.
+- [x] Refine the D10.1 substrate taxonomy by separating
+      `core_theory_substrate_independent` physics from
+      `substrate_independent_specification_meta` governance.
+- [x] Apply the GRC9v3-premise deletion test to every audited object.
+- [x] Record twelve independent GRC derivations, including separate mobility
+      and Candidate-A initializer derivations.
+- [x] Derive exactly the accepted curvature-disabled Candidate A `G_W` over
+      the GRCv3 differential contract while retaining the fixed row-basis
+      backend as GRC9-intrinsic and curvature-conditioned successors open.
+- [x] Promote Candidate A's reference, contrast, Read-Back, retained writer,
+      and state-authority contracts to `GRC_derived`.
+- [x] Promote Candidate C's derived sector, selector, Hodge maps, Read-Back,
+      and C-only authority to `GRC_derived`.
+- [x] Separate the substrate-independent core `K -> g[K]` role from graph
+      `K_4`, which is a `GRC_derived` symmetric bilinear form on oriented
+      one-forms.
+- [x] Restore `M_4` as separately owned candidate-specific transport mobility;
+      keep overlap-normalized assembly with graph `K_4`.
+- [x] Construct the GRCv4 reference Hodge package explicitly from GRCv3 graph
+      measure and positive base conductance surfaces.
+- [x] Promote CI, OS, RG2b, PC, and CI+PC without ranking them or making the
+      current population future-exhaustive.
+- [x] Promote complete-step, lifecycle, generic migration, event, receipt, and
+      fail-closed contracts while retaining runtime conformance as verification.
+- [x] Separate generic migration, the GRCv4 Candidate-A initializer, and the
+      exact GRC9v3 initializer binding; retain only the last as
+      `GRC9_specialization_specific`.
+- [x] Keep exact GRC9v3 disabled transition, state, observable, and lifecycle targets
+      `GRC9_specialization_specific`.
+- [x] Add separate disabled transition, state, observable, and lifecycle
+      contracts for all ten current complete profiles (`40` rows total).
+- [x] Audit `DQ_varpi`, `V_Q,varpi`, the structural `H0` projector, and its
+      canonical full-tangent retraction as distinct normative contracts.
+- [x] Add candidate-specific CI and CI+PC root/selection contracts rather than
+      treating realization-family promotion as equation-level provenance.
+- [x] Add explicit PC, OS, RG2b, Candidate C chain, structural-geometry, and
+      typed topology-event equation/contract rows.
+- [x] Preserve `C_plus = T_C_evt C_minus + Delta_C_event`; keep conservative
+      transport, resource-coordinate increment, charge receipt, and
+      `Q_target` update as separate event-accounting surfaces.
+- [x] Make ordinary-step and topology-event charge checks stage-explicit so an
+      already updated `Q_target_plus` cannot receive `Delta_Q_event` twice.
+- [x] Cover all 67 parent objects and all 39 accepted claims in the 152-row
+      subordinate registry with no duplicate ID or promotion-pending row.
+- [x] Keep row-basis differential semantics, ordered ports, fixed chart,
+      saturation, mechanical expansion, hybrid spark/stabilization, and column
+      coarse-graining `GRC9_intrinsic`.
+- [x] Record zero remaining `GRC9V3_derived_GRC_rederivation_required` rows.
+- [x] Earn the GRCv4/GRC9v4/GRC9v3 factorization only for the current initial
+      specification population.
+- [x] Route specification writing to GRCv4 first and GRC9v4 specialization
+      second under the accepted D10.2 factorization.
+- [x] Keep all normative spec files, implementation plans, runtime, and `src/`
+      unchanged in D10.2.
+- [x] Generate deterministic structured and interpretive artifacts.
+- [x] Pass source, digest, lineage, claim coverage, derivation, disposition,
+      factorization, ceiling, and report checks.
+- [x] Record bounded human acceptance.
+
+```text
+record = GRC9V4-CD-D10.2-v1
+status = accepted_bounded
+predecessor_decision_digest = 51572056af21abd3c4c623e72bf7a20ba34c54dafae8b23086979d2c761c939f
+decision_record_digest = 28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c
+human_acceptance = accepted_bounded_2026-08-26
+
+source_identities = 36
+accepted_D10_claims_covered = 39
+independent_GRC_derivations = 12
+normatively_load_bearing_objects = 67
+normative_equation_contracts = 152
+explicit_equation_contracts = 85
+disabled_reduction_matrix_rows = 40
+object_families = 9
+controls = 48
+audit_checks = 289/289
+
+GRC_derived = 45
+core_theory_substrate_independent = 1
+substrate_independent_specification_meta = 8
+GRC9_intrinsic = 8
+GRC9_specialization_specific = 5
+promotion_pending_rows = 0
+
+factorization = GRCV4 ->[nine-port specialization] GRC9V4 ->[disabled V4 profile] GRC9V3
+factorization_earned = true
+factorization_scope = current_D10_initial_specification_population_only
+final_substrate_identity_closed_for_current_population = true
+final_substrate_identity_globally_closed_for_all_future_profiles = false
+GRCV4_specification_authorized_after_human_acceptance = true
+GRC9V4_specialization_specification_authorized_after_human_acceptance = true
+GRCV4_specification_authorized_now = true
+GRC9V4_specialization_specification_authorized_now = true
+normative_spec_files_written_by_D10_2 = false
+implementation_authorized = false
+runtime_or_src_changed = false
+```
+
+The authoritative records are the
+[`D10.2 structured audit`](./decisions/D10_2FullSubstrateProvenanceAndPromotionAudit.json)
+and its
+[`scientific interpretation`](./decisions/D10_2FullSubstrateProvenanceAndPromotionAudit.md).
 
 ## Current State
 
@@ -2585,14 +2854,36 @@ coupled_implicit_A = accepted_bounded_complete_realization_candidate
 architecture_local_D8B_A_authorized = true
 architecture_local_D8B_C_authorized = true
 comparative_D8B_authorized = false
-remaining_minimum_family_pressure_complete = false
+remaining_minimum_family_pressure_complete = true
 D8_authorized = true
 D8_authorized_scope = D8-A_plus_coupled_A_and_C_architecture_local_D8B
-D8_full_continuation_through_D10 = blocked_on_architecture_local_D8B_remaining_family_pressure_and_comparative_selection_boundary
+D8_full_continuation_through_D10 = completed_at_bounded_design_level_by_profile_explicit_nonranking_synthesis
 D10_early_terminal_route = available_for_rejected_all_missing_theory_or_missing_discriminator
-architecture_selected = false
-specification_authorized = false
+GTRS-OS = accepted_bounded
+GTRS-RG = accepted_bounded
+GTRS-PC = accepted_bounded
+GTRS-COMP = accepted_bounded
+GTRS-CI-PC = accepted_bounded
+D9 = accepted_bounded_lifecycle_and_typed_event_closure
+D10 = accepted_bounded
+D10.1 = accepted_preliminary_bounded_substrate_provenance_separation
+D10.2 = accepted_bounded
+architecture_selected = profile_explicit_lineage_local_GRC9V4_common_substrate_interface
+unique_candidate_selected = false
+unique_realization_selected = false
+final_substrate_identity_closed = false
+preclosure_substrate_provenance_audit_required = true
+D10.1_working_factorization = GRCV4_to_nine_port_GRC9V4_to_disabled_GRC9V3
+D10.1_promotion_proved = false
+D10.2_factorization_earned = true
+D10.2_factorization_scope = current_D10_initial_specification_population_only
+D10.2_promotion_pending_rows = 0
+D10.2_human_acceptance = accepted_bounded_2026-08-26
+D10.2_final_substrate_identity_closed = true
+preclosure_substrate_provenance_audit_required = false
+specification_authorized = true
 runtime_implementation_authorized = false
 src_changed = false
+normative_GRCV4_spec_exists = false
 normative_GRC9V4_spec_exists = false
 ```

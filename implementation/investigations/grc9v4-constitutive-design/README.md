@@ -1,21 +1,23 @@
 # GRC9V4 Constitutive Design Investigation
 
-**Disposition:** Active pre-specification investigation
+**Disposition:** D10.2 accepted bounded; GRCv4/GRC9v4 specification writing authorized; implementation remains unauthorized
 
-This directory owns the decision work required before a normative GRC9V4
-specification can be written. It consumes the Continuation/Read-Back 3.4.1
-theory-to-graph contract, the accepted B1-GR and B2-GR boundaries, the
-reconciled legacy GRC9V3 specification, and the Phase 7 implementation record.
+This directory records the accepted bounded decision work authorizing a
+normative GRCv4 specification followed by a substantive GRC9v4 nine-port
+specialization. It consumes the Continuation/Read-Back 3.4.1 theory-to-graph
+contract, the accepted B1-GR and B2-GR boundaries, the reconciled legacy
+GRC9V3 specification, and the Phase 7 implementation record.
 This is also the historical chain that produced the V4 question. B1 made the
 theory distinctions executable against unchanged GRC9V3; B2 tested stronger
 unchanged-runtime constructibility. Their bounded results constrain this work
 but do not prescribe a V4 architecture.
 
-The investigation does not assume that GRC9V4 is temporalized conductance,
+The investigation did not assume that GRC9V4 is temporalized conductance,
 introduces a new independent retained carrier, or temporalizes current. D1
-admits retained-representation ontologies; D6 separately decides whether
-current remains slaved. Final architecture selection belongs only to D10. The
-investigation compares the admitted candidates against one frozen target:
+admitted retained-representation ontologies; D6 separately decided whether
+current remains slaved; D10 then classified the accepted current profile
+population without selecting a unique candidate or realization. The
+investigation compared the admitted candidates against one frozen target:
 
 > GRC9V4 is a possible revision-distinct synchronous GRC profile in which an
 > admitted retained causal representation participates in structurally and
@@ -88,6 +90,12 @@ Start with:
 - [D9 profile/state/lifecycle registry](./decisions/D9ProfileStateLifecycleRegistry.json);
 - [D9 adversarial coverage matrix](./decisions/D9LifecycleCoverageMatrix.json);
 - [D9 residual debt ledger](./decisions/D9ResidualDebtLedger.json).
+- [D10 design synthesis](./decisions/D10DesignSynthesisAndSpecWritingDecision.json);
+- [D10 scientific interpretation](./decisions/D10DesignSynthesisAndSpecWritingDecision.md);
+- [D10.1 preliminary substrate provenance decision](./decisions/D10_1PreliminarySubstrateProvenance.json);
+- [D10.1 preliminary substrate provenance interpretation](./decisions/D10_1PreliminarySubstrateProvenance.md).
+- [D10.2 full substrate provenance and promotion audit](./decisions/D10_2FullSubstrateProvenanceAndPromotionAudit.json);
+- [D10.2 scientific interpretation](./decisions/D10_2FullSubstrateProvenanceAndPromotionAudit.md).
 
 Current gate status:
 
@@ -149,10 +157,65 @@ D9_current_scientific_debts = 0
 D9_resolved_negative_results = 1
 D9_live_scientific_debt_union = 29
 D9_post_spec_verification_obligations = 4
-next_substantive_route = D10_design_synthesis_and_spec_writing_decision
+next_substantive_route = GRCV4_normative_specification_then_GRC9V4_specialization
 remaining_family_order = operator_split_then_reconstructed_then_persistent_then_comparative_synthesis
 D9_before_remaining_family_pressure = false
 D10_authorized = true
+D10 = accepted_bounded
+D10.1 = accepted_preliminary_bounded_substrate_provenance_separation
+D10.2 = accepted_bounded
+D10.2_human_acceptance = accepted_bounded_2026-08-26
+D10_human_acceptance = accepted_bounded_2026-08-26
+D10_selected_architecture = profile_explicit_lineage_local_GRC9V4_common_substrate_interface
+D10_unique_candidate_selected = false
+D10_unique_realization_selected = false
+D10_claim_topology = {normative: 9, optional: 7, conditional: 12, open: 5, negative: 6}
+D10_historical_predecessor_claim_nodes = 29
+D10_reciprocal_typed_claim_debt_edges = 129
+D10_transformed_D9_debts = 29
+D10_claimless_debt_dispositions = 0
+D10_verification_obligations = 11
+D10_executable_complete_profiles = 10
+D10_runtime_complete_profile_binding = exactly_one_candidate_plus_exactly_one_realization
+D10_migration_receipt_profile_binding = ordered_source_target_complete_profile_pair
+D10_topology_event_receipt_profile_binding = ordered_source_target_complete_profile_pair_equal_when_unchanged
+D10_current_profile_population_future_exhaustive = false
+D10_current_PC_profile = scalar_ZOH_one_tau_PC_persistent_K4_history
+D10_unfolding_trajectory = claim_activated_not_fixed_successor_schedule
+D10_final_substrate_identity_closed = false
+D10_preclosure_substrate_provenance_audit_required = true
+D10.1_working_factorization = GRCV4_to_nine_port_GRC9V4_to_disabled_GRC9V3
+D10.1_promotion_proved = false
+D10.2_factorization_earned = true
+D10.2_factorization_scope = current_D10_initial_specification_population_only
+D10.2_normatively_load_bearing_objects = 67
+D10.2_normative_equation_contracts = 152
+D10.2_explicit_equation_contracts = 85
+D10.2_disabled_reduction_matrix_rows = 40
+D10.2_accepted_D10_claims_covered = 39
+D10.2_accepted_D10_claim_surfaces_exact = true
+D10.2_D10_CL_C_012_is_accepted_D10_content = true
+D10.2_independent_GRC_derivations = 12
+D10.2_core_K_separate_from_graph_K4 = true
+D10.2_M4_is_separate_transport_mobility = true
+D10.2_Candidate_A_promoted_profile = accepted_D7_curvature_disabled_G_W
+D10.2_generic_migration_separate_from_exact_GRC9V3_A_initializer = true
+D10.2_reference_Hodge_embedding_rederived_from_GRCV3_surfaces = true
+D10.2_core_theory_and_specification_meta_categories_separate = true
+D10.2_promotion_pending_rows = 0
+D10.2_equation_contract_promotion_pending_rows = 0
+D10.2_event_resource_increment_separate_from_conservative_transport = true
+D10.2_charge_target_stage_separation = true
+D10.2_audit_checks = 289/289
+D10.2_final_substrate_identity_closed_for_current_population = true
+D10.2_final_substrate_identity_globally_closed_for_all_future_profiles = false
+D10.2_GRCV4_specification_authorized_after_human_acceptance = true
+D10.2_GRC9V4_specialization_specification_authorized_after_human_acceptance = true
+D10.2_GRCV4_specification_authorized_now = true
+D10.2_GRC9V4_specialization_specification_authorized_now = true
+D10_scientific_disposition = accepted_bounded_lineage_local_profile_explicit_spec_authorization
+specification_authorized = true
+implementation_authorized = false
 ```
 
 D4-v2 now gives B and C bounded revision-specific constitutive completions
@@ -592,8 +655,9 @@ numerical/runtime conformance items remain post-spec verification obligations
 rather than missing design mathematics. Candidate B remains
 underdetermined because PC does not derive its signed symmetric formation
 source. The matrix also exposes 16 independent interventions across its three
-multi-authority rows. D9 is awaiting human review, and D10 remains unauthorized
-until that acceptance.
+multi-authority rows. D9 is accepted bounded. D10 and its D10.1/D10.2
+provenance successors are accepted bounded. The current-population substrate
+identity is closed, and GRCv4-first specification writing is authorized.
 
 The later specification and implementation must also rebuild every
 differential or gradient summary used by `G_W(C[k+1], J_C[k])` from
@@ -621,20 +685,21 @@ chronological predecessor, not merely the older gate being superseded. Zero
 survivors map to `rejected_all_candidates`/current-candidate-set exhaustion;
 one common theory blocker may instead map to `blocked_missing_theory`.
 
-Hard boundary:
+Current boundary:
 
 ```text
-D0-D10 accepted design closeout
-  -> may authorize a separate normative GRC9V4 specification tranche
+D0-D10.2 accepted bounded design and provenance closeout
+  -> authorizes a GRCv4 normative specification
+  -> then authorizes a substantive GRC9v4 nine-port specialization
+  -> requires exact disabled-profile compatibility from GRC9v4 to GRC9v3
+  -> does not authorize implementation or src/ changes
 
-anything earlier
-  -> no grc-9-v4-spec.md
-  -> no src/ changes
-  -> no GRC9V4 capability claim
+future constitutive or realization profiles outside the current D10 population
+  -> reopen provenance and the earliest accepted contract they affect
+  -> do not inherit current-population promotion automatically
 ```
 
-The current design tranche may close unresolved without selecting an
-architecture, but that does not reject the GRC9V4 target. Candidate exhaustion
-must localize the missing role and route named theory, constitutive,
-candidate-admission, or discriminator work. That is preferable to encoding a
-convenient memory field that the theory and evidence do not justify.
+The accepted route is specification work, not a claim that GRCv4 or GRC9v4 is
+already runnable. Candidate A and C profiles and the admitted realization
+families remain claim-qualified current-population choices; Candidate B remains
+a routed successor slot rather than a rejected ontology.

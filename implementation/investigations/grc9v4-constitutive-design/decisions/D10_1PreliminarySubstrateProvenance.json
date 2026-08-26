@@ -1,0 +1,548 @@
+{
+  "record_id": "GRC9V4-CD-D10.1-v1",
+  "gate_id": "D10.1",
+  "title": "Preliminary Substrate Provenance And Nine-Port Necessity Classification",
+  "status": "accepted_preliminary_bounded_substrate_provenance_separation",
+  "date": "2026-08-26",
+  "predecessor_decision_digest": "3e673b335ad428d01006f231765d060a9bdd5f134332b143048f774de94bad00",
+  "supersedes": null,
+  "purpose": "record_the_first_bounded_substantive_result_on_D10_final_substrate_identity_without_performing_or_preempting_the_final_preclosure_equation_by_equation_audit",
+  "scope": {
+    "D10_authorization_unchanged": true,
+    "D10_claim_topology_unchanged": true,
+    "representative_provenance_classification_only": true,
+    "equation_by_equation_audit_complete": false,
+    "promotion_proved": false,
+    "final_substrate_identity_closed": false,
+    "runtime_or_src_changed": false
+  },
+  "source_identities": [
+    {
+      "source_id": "GRC9V4-CD-D10-v1",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D10DesignSynthesisAndSpecWritingDecision.json",
+      "file_sha256": "519a6ef56c52750b6d3da673b0dc9988e43a8676e209dd205d5d6c988d7c81b6",
+      "consumed_as": "accepted_predecessor_and_open_substrate_identity_boundary",
+      "source_digest": "3e673b335ad428d01006f231765d060a9bdd5f134332b143048f774de94bad00"
+    },
+    {
+      "source_id": "GRC9V4-CD-D0-v1",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D0TargetInheritanceAndClaimCeiling.json",
+      "file_sha256": "13dcc4965ecfd375be35a7a3c23406628fb8e13db56df8972fcf90f919fac234",
+      "consumed_as": "exact_GRC9V3_inheritance_target_and_disabled_profile_boundary",
+      "source_digest": "b38b07311afc24bfe1016d75e985f886718e5a9d104c69c59e29318801f457c0"
+    },
+    {
+      "source_id": "GRC9V4-CD-D7-v1",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D7ClosedWriteReadLoop.json",
+      "file_sha256": "be5bbda2ec17aff844d7da02515149238e78da0eba3c76eb5c32ace51fc8e27c",
+      "consumed_as": "candidate_A_exact_GRC9V3_formula_reuse_and_revision_specific_writer",
+      "source_digest": "7ffaf92b1672aa4fb116539ca5da36aef8bc7f3caf088827fd71f3ec7b483fea"
+    },
+    {
+      "source_id": "GRC9V4-CD-D7G-v1",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D7GGlobalMetricAndStructuralCultivationClosure.json",
+      "file_sha256": "2824f7db18682bc41b857e172f252a6269fc1e8bd5273443d29827710ef02363",
+      "consumed_as": "GRC9V3_source_check_and_missing_K_to_h_crossing",
+      "source_digest": "b173c03f7dbe55aa53b22960da2be55e42e86dda769cac1356e36499f658d071"
+    },
+    {
+      "source_id": "GRC9V4-CD-D7G-v2",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D7Gv2GeometryParametricClosureAndFinalization.json",
+      "file_sha256": "364b1b05ccac3c1220677ac9dbc6e46259beb47ef4cabcafaf381e3bc7ef3c38",
+      "consumed_as": "V3_reference_embedding_and_revision_specific_geometry_profile",
+      "source_digest": "c52912d83797ee294799709b3e770574043df37f80073b51eebfaf8b2fd27efb"
+    },
+    {
+      "source_id": "GRC9V4-CD-D9-v1",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D9CompleteStepAndLifecycleContract.json",
+      "file_sha256": "7bcf60ece19a272e77dd6ea94b0aa7fbebaa893934c743bc741056e108d3332f",
+      "consumed_as": "exact_disabled_GRC9V3_reduction_and_typed_graph_event_contract",
+      "source_digest": "33c8fe75ae7fda716e97bb9714d5f297911bc4d606f5d382d77f9c3092aa4586"
+    },
+    {
+      "source_id": "GRC9V4-GTRS-CI-v1",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/GeometryTemporalRealizationSuccessorCoupledImplicit.json",
+      "file_sha256": "312602466e06801b48c2620f8ddc62d20513b68ad455750949ffed9c38dcd57b",
+      "consumed_as": "direct_coupled_implicit_realization_source",
+      "source_digest": "a0292d35d3dfc18e6386a78c26ae9bc2a4b6de9f31e505cf67edf7c094aea3a3"
+    },
+    {
+      "source_id": "GRC9V4-GTRS-OS-v1",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/GeometryTemporalRealizationSuccessorOperatorSplit.json",
+      "file_sha256": "113415f17f4034afe81f66a955771fdfd1532c790e9f936bc5ae99a4c350f223",
+      "consumed_as": "direct_operator_split_realization_source",
+      "source_digest": "36c98542c7920d468e932287872cf4dabf8720d5d2c6b0c0e30e6f94b113605f"
+    },
+    {
+      "source_id": "GRC9V4-GTRS-RG-v1",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/GeometryTemporalRealizationSuccessorReconstructedGeometry.json",
+      "file_sha256": "b3586ce7bc6fd7e127724b99a490940012a4ee2688ecdac980cea054e86415aa",
+      "consumed_as": "direct_reconstructed_geometry_realization_source",
+      "source_digest": "dce24993ac0dd39a5fa5bcd35e46d9166fa28628d3811e9b33724c210ada4c0b"
+    },
+    {
+      "source_id": "GRC9V4-GTRS-PC-v1",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/GeometryTemporalRealizationSuccessorPersistentCarrier.json",
+      "file_sha256": "e6328fe5366acf0a2dcbfe78966e8aa4efcafd214d08951998fcf6ce8f88f9d7",
+      "consumed_as": "direct_persistent_carrier_realization_source",
+      "source_digest": "d1e38d6aa36b03154715c1e26c0b4a1b181dab19ed4bbfbd1575c94c9962e49a"
+    },
+    {
+      "source_id": "GRC9V4-GTRS-CI-PC-v1",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/GeometryTemporalRealizationHybridCoupledPersistentCarrier.json",
+      "file_sha256": "d30a8078aaa9fa5b39e3646b0c481e48494cf90a909eb2722d8c8c04293d9480",
+      "consumed_as": "direct_coupled_persistent_hybrid_realization_source",
+      "source_digest": "5f003ff5f4dbbb60788ac50827b5a3ccff7ff7e194173721f15503bc6024682a"
+    },
+    {
+      "source_id": "GRC9V3-NORMATIVE-SPEC",
+      "path": "specs/grc-9-v3-spec.md",
+      "file_sha256": "7b1f0c03988be7dbe3feb8ba926d43d891d70daa0dbbae9804fc70f2a4950f2f",
+      "consumed_as": "legacy_nine_port_substrate_and_complete_step_contract"
+    },
+    {
+      "source_id": "GRCV3-NORMATIVE-SPEC",
+      "path": "specs/grc-v3-spec.md",
+      "file_sha256": "aeb88b4842b00d3ee0f12f3d7ec337d8ce7f61373100d3674ace8b6c8df4e8d8",
+      "consumed_as": "general_GRC_semantic_and_differential_comparison_surface"
+    },
+    {
+      "source_id": "PHASE7-GRC9V3-EQUATION-MAP",
+      "path": "implementation/Phase-7-EquationMap.md",
+      "file_sha256": "94461cdf43f9fb4bc7bb0996822ea4e6130f7256ac1a041594eea99656c3555c",
+      "consumed_as": "GRC9_mechanical_GRCV3_semantic_and_hybrid_ownership_map"
+    },
+    {
+      "source_id": "GRC9V3-RUNTIME-SOURCE",
+      "path": "src/pygrc/models/grc_9_v3_runtime.py",
+      "file_sha256": "f6f12de4e9bf66cd97b4063854ea225ae00874fed7073d4e72775891db54f502",
+      "consumed_as": "implemented_conductance_potential_flux_and_row_basis_mechanics"
+    },
+    {
+      "source_id": "GRCV3-RUNTIME-SOURCE",
+      "path": "src/pygrc/models/grc_v3.py",
+      "file_sha256": "01081bc3f2b394a0797d93c38539a3d6139c6bb412323f6eda09a4fe7c66b473",
+      "consumed_as": "implemented_general_GRC_conductance_potential_and_flux_comparison"
+    }
+  ],
+  "classification_schema": {
+    "required_tuple": [
+      "E",
+      "P_E",
+      "L_E",
+      "S_E"
+    ],
+    "meanings": {
+      "E": "equation_contract_lifecycle_rule_or_capability",
+      "P_E": "premises_actually_used_in_derivation",
+      "L_E": "source_lineage",
+      "S_E": "substrate_disposition"
+    },
+    "substrate_dispositions": [
+      "core_substrate_independent",
+      "GRC_derived",
+      "GRC9V3_derived_GRC_rederivation_required",
+      "GRC9_specialization_specific",
+      "GRC9_intrinsic"
+    ],
+    "promotion_statuses": [
+      "promotion_proved",
+      "promotion_pending",
+      "specialization_only"
+    ],
+    "classification_rule": "classify_from_actual_derivation_premises_and_lineage_not_symbol_or_formula_appearance"
+  },
+  "preliminary_findings": [
+    {
+      "finding_id": "D10.1-P1",
+      "statement": "GRC9V3_provenance_is_load_bearing_for_the_current_lineage_local_design",
+      "evidence_refs": [
+        "GRC9V4-CD-D7-v1",
+        "GRC9V4-CD-D9-v1",
+        "GRC9V3-RUNTIME-SOURCE"
+      ],
+      "current_status": "supported_preliminary",
+      "blocked_overread": "the_design_is_only_generically_inspired_and_does_not_consume_GRC9V3"
+    },
+    {
+      "finding_id": "D10.1-P2",
+      "statement": "current_evidence_does_not_establish_intrinsic_nine_port_necessity_for_the_new_constitutive_architecture",
+      "evidence_refs": [
+        "GRC9V4-CD-D7G-v1",
+        "GRCV3-RUNTIME-SOURCE",
+        "PHASE7-GRC9V3-EQUATION-MAP"
+      ],
+      "current_status": "supported_negative_current_evidence_boundary",
+      "blocked_overread": "nine_ports_are_unnecessary"
+    },
+    {
+      "finding_id": "D10.1-P3",
+      "statement": "Candidate_A_is_GRC9V3_derived_and_appears_liftable_to_GRCV4_but_requires_an_independent_derivation_over_GRCV3_differential_and_transport_contracts_before_promotion_from_the_GRC9_lineage",
+      "evidence_refs": [
+        "GRC9V4-CD-D7-v1",
+        "GRC9V3-RUNTIME-SOURCE",
+        "GRCV3-RUNTIME-SOURCE"
+      ],
+      "current_status": "supported_preliminary_promotion_pending",
+      "blocked_overread": "Candidate_A_is_already_GRC_derived"
+    },
+    {
+      "finding_id": "D10.1-P4",
+      "statement": "Candidate_C_and_the_K4_Hodge_realization_surface_are_stronger_GRC_level_candidates_but_are_not_yet_promoted_from_the_GRC9_lineage_to_GRCV4",
+      "evidence_refs": [
+        "GRC9V4-CD-D7G-v1",
+        "GRC9V4-CD-D7G-v2",
+        "GRC9V4-CD-D10-v1"
+      ],
+      "current_status": "supported_preliminary_promotion_pending",
+      "blocked_overread": "graph_shaped_notation_alone_proves_GRC_level_provenance"
+    },
+    {
+      "finding_id": "D10.1-P5",
+      "statement": "ordered_ports_fixed_row_column_mechanics_mechanical_expansion_hybrid_sparks_child_basin_stabilization_and_column_coarse_graining_are_GRC9_intrinsic_while_exact_disabled_reduction_and_lifecycle_targeting_are_GRC9_specialization_specific",
+      "evidence_refs": [
+        "GRC9V3-NORMATIVE-SPEC",
+        "PHASE7-GRC9V3-EQUATION-MAP",
+        "GRC9V4-CD-D9-v1"
+      ],
+      "current_status": "supported_preliminary_specialization_boundary",
+      "blocked_overread": "an_abstractable_constitutive_core_makes_GRC9_a_compatibility_shim"
+    }
+  ],
+  "representative_provenance_rows": [
+    {
+      "object_id": "legacy_disabled_transition_and_lifecycle_reduction",
+      "object_kind": "compatibility_contract",
+      "premises_used": [
+        "exact_GRC9V3_transition_state_observable_event_and_lifecycle_semantics"
+      ],
+      "source_lineage": [
+        "GRC9V4-CD-D0-v1",
+        "GRC9V4-CD-D9-v1"
+      ],
+      "substrate_disposition": "GRC9_specialization_specific",
+      "promotion_status": "specialization_only",
+      "current_finding": "load_bearing_exact_GRC9V3_compatibility_target_that_is_deliberately_specific_to_the_nine_port_specialization",
+      "evidence_refs": [
+        "GRC9V4-CD-D9-v1"
+      ]
+    },
+    {
+      "object_id": "A_baseline_potential_and_potential_flow_current",
+      "object_kind": "equation_family",
+      "premises_used": [
+        "live_graph_incidence",
+        "scalar_edge_mobility",
+        "site_potential",
+        "GRC9V3_stage_contract"
+      ],
+      "source_lineage": [
+        "GRC9V3-RUNTIME-SOURCE",
+        "GRC9V4-CD-D7-v1",
+        "GRCV3-RUNTIME-SOURCE"
+      ],
+      "substrate_disposition": "GRC9V3_derived_GRC_rederivation_required",
+      "promotion_status": "promotion_pending",
+      "current_finding": "exactly_reused_from_GRC9V3_and_equation_shaped_like_GRCV3_but_not_yet_independently_rederived_over_GRCV3_contracts",
+      "evidence_refs": [
+        "GRC9V4-CD-D7-v1",
+        "GRC9V3-RUNTIME-SOURCE",
+        "GRCV3-RUNTIME-SOURCE"
+      ]
+    },
+    {
+      "object_id": "A_instantaneous_conductance_target_G_W",
+      "object_kind": "equation_family",
+      "premises_used": [
+        "inherited_GRC9V3_conductance_functional",
+        "GRC9V3_row_basis_gradient_backend",
+        "sign_even_current_squared_functional_dependence",
+        "positive_floor",
+        "enabled_A_pre_read_uses_fresh_J0_A_not_incoming_stored_current",
+        "enabled_A_writer_uses_postcontinuity_C_and_solved_JC_A"
+      ],
+      "source_lineage": [
+        "GRC9V3-RUNTIME-SOURCE",
+        "GRC9V4-CD-D7-v1"
+      ],
+      "substrate_disposition": "GRC9V3_derived_GRC_rederivation_required",
+      "promotion_status": "promotion_pending",
+      "current_finding": "the_functional_form_is_inherited_from_GRC9V3_but_enabled_A_uses_revision_distinct_pre_read_and_writer_staging_while_the_backend_remains_to_be_rederived_over_GRCV3_contracts",
+      "evidence_refs": [
+        "GRC9V3-RUNTIME-SOURCE",
+        "GRCV3-RUNTIME-SOURCE",
+        "GRC9V4-CD-D7-v1"
+      ]
+    },
+    {
+      "object_id": "general_GRC_continuity_and_charge_covector_accounting",
+      "object_kind": "invariant_contract",
+      "premises_used": [
+        "oriented_graph_incidence",
+        "typed_resource_measure",
+        "atomic_resource_write"
+      ],
+      "source_lineage": [
+        "GRCV3-NORMATIVE-SPEC",
+        "GRC9V4-CD-D9-v1"
+      ],
+      "substrate_disposition": "GRC_derived",
+      "promotion_status": "promotion_pending",
+      "current_finding": "ordinary_graph_GRC_continuity_and_general_charge_covector_accounting_with_no_identified_nine_port_premise",
+      "evidence_refs": [
+        "GRC9V4-CD-D9-v1"
+      ]
+    },
+    {
+      "object_id": "unit_measure_Q_equals_sum_C_reference_profile",
+      "object_kind": "current_reference_profile_contract",
+      "premises_used": [
+        "unit_site_measure",
+        "Q_equals_sum_of_site_coherence",
+        "current_population_profile"
+      ],
+      "source_lineage": [
+        "GRCV3-NORMATIVE-SPEC",
+        "GRC9V4-CD-D9-v1"
+      ],
+      "substrate_disposition": "GRC_derived",
+      "promotion_status": "specialization_only",
+      "current_finding": "ordinary_GRC_level_unit_measure_profile_that_does_not_define_the_general_GRCV4_charge_contract",
+      "evidence_refs": [
+        "GRCV3-NORMATIVE-SPEC",
+        "GRC9V4-CD-D9-v1"
+      ]
+    },
+    {
+      "object_id": "A_directional_contrast_Read_Back_and_total_current_closure",
+      "object_kind": "revision_specific_constitutive_completion",
+      "premises_used": [
+        "positive_edge_mobility",
+        "present_current",
+        "oriented_edge_cochain",
+        "regular_gain_domain"
+      ],
+      "source_lineage": [
+        "GRC9V4-CD-D7-v1"
+      ],
+      "substrate_disposition": "GRC_derived",
+      "promotion_status": "promotion_pending",
+      "current_finding": "the_admitted_read_and_closure_use_graph_edge_objects_without_an_identified_nine_port_only_premise",
+      "evidence_refs": [
+        "GRC9V4-CD-D7-v1"
+      ]
+    },
+    {
+      "object_id": "A_log_geometric_retained_mobility_writer",
+      "object_kind": "revision_specific_constitutive_completion",
+      "premises_used": [
+        "positive_mobility_domain",
+        "postcontinuity_G_W_target",
+        "one_beat_delayed_writer"
+      ],
+      "source_lineage": [
+        "GRC9V4-CD-D7-v1"
+      ],
+      "substrate_disposition": "GRC_derived",
+      "promotion_status": "promotion_pending",
+      "current_finding": "new_V4_completion_built_from_the_GRC9V3_target_surface_not_inherited_core_or_nine_port_mechanics",
+      "evidence_refs": [
+        "GRC9V4-CD-D7-v1"
+      ]
+    },
+    {
+      "object_id": "C_derived_sector_graph_Hodge_Read_Back",
+      "object_kind": "revision_specific_constitutive_completion",
+      "premises_used": [
+        "graph_incidence",
+        "positive_Hodge_stars",
+        "derived_C_sector",
+        "typed_flat_sharp_maps"
+      ],
+      "source_lineage": [
+        "GRC9V4-CD-D7G-v2",
+        "GRC9V4-CD-D10-v1"
+      ],
+      "substrate_disposition": "GRC_derived",
+      "promotion_status": "promotion_pending",
+      "current_finding": "strong_GRC_level_candidate_with_no_identified_ordered_port_premise",
+      "evidence_refs": [
+        "GRC9V4-CD-D7G-v2",
+        "GRC9V4-CD-D10-v1"
+      ]
+    },
+    {
+      "object_id": "K4_H4_h4_structural_crossing_and_Hodge_typing",
+      "object_kind": "core_to_graph_realization_contract",
+      "premises_used": [
+        "core_K_to_g_requirement",
+        "graph_local_bilinear_assembly",
+        "form_space_Hodge_typing"
+      ],
+      "source_lineage": [
+        "GRC9V4-CD-D7G-v1",
+        "GRC9V4-CD-D7G-v2"
+      ],
+      "substrate_disposition": "GRC_derived",
+      "promotion_status": "promotion_pending",
+      "current_finding": "the_crossing_is_new_and_was_not_already_executed_by_the_GRC9V3_row_basis_tensor_cache",
+      "evidence_refs": [
+        "GRC9V4-CD-D7G-v1",
+        "GRC9V4-CD-D7G-v2"
+      ]
+    },
+    {
+      "object_id": "CI_OS_RG2b_PC_and_CI_PC_realization_contracts",
+      "object_kind": "temporal_and_history_realization_families",
+      "premises_used": [
+        "accepted_A_or_C_constitutive_maps",
+        "graph_geometry_profile",
+        "declared_state_and_stage_authority"
+      ],
+      "source_lineage": [
+        "GRC9V4-GTRS-CI-v1",
+        "GRC9V4-GTRS-OS-v1",
+        "GRC9V4-GTRS-RG-v1",
+        "GRC9V4-GTRS-PC-v1",
+        "GRC9V4-GTRS-CI-PC-v1",
+        "GRC9V4-CD-D10-v1"
+      ],
+      "substrate_disposition": "GRC_derived",
+      "promotion_status": "promotion_pending",
+      "current_finding": "no_current_result_makes_the_realization_families_intrinsically_nine_port",
+      "evidence_refs": [
+        "GRC9V4-GTRS-CI-v1",
+        "GRC9V4-GTRS-OS-v1",
+        "GRC9V4-GTRS-RG-v1",
+        "GRC9V4-GTRS-PC-v1",
+        "GRC9V4-GTRS-CI-PC-v1",
+        "GRC9V4-CD-D10-v1"
+      ]
+    },
+    {
+      "object_id": "typed_topology_event_and_profile_migration_grammar",
+      "object_kind": "lifecycle_contract",
+      "premises_used": [
+        "typed_source_target_graph_map",
+        "resource_receipt",
+        "history_transport_or_loss",
+        "target_readmission"
+      ],
+      "source_lineage": [
+        "GRC9V4-CD-D9-v1"
+      ],
+      "substrate_disposition": "GRC_derived",
+      "promotion_status": "promotion_pending",
+      "current_finding": "the_grammar_is_graph_typed_while_exact_GRC9V3_event_parity_remains_specialization_content",
+      "evidence_refs": [
+        "GRC9V4-CD-D9-v1"
+      ]
+    },
+    {
+      "object_id": "ordered_nine_port_chart_mechanical_expansion_hybrid_spark_and_column_coarse_graining",
+      "object_kind": "substrate_capability_family",
+      "premises_used": [
+        "nine_ordered_ports",
+        "fixed_3_by_3_row_column_chart",
+        "port_saturation",
+        "GRC9_mechanical_expansion"
+      ],
+      "source_lineage": [
+        "GRC9V3-NORMATIVE-SPEC",
+        "PHASE7-GRC9V3-EQUATION-MAP"
+      ],
+      "substrate_disposition": "GRC9_intrinsic",
+      "promotion_status": "specialization_only",
+      "current_finding": "genuine_nine_port_specialization_content_preserved_by_the_lineage_local_successor_scope",
+      "evidence_refs": [
+        "GRC9V3-NORMATIVE-SPEC",
+        "PHASE7-GRC9V3-EQUATION-MAP"
+      ]
+    }
+  ],
+  "taxonomy_contract": {
+    "GRCV3": "general_graph_GRC_without_the_nine_port_specialization",
+    "GRC9V3": "nine_port_specialization_profile_of_GRCV3",
+    "GRCV4": "prospective_general_graph_GRC_V4_constitutive_architecture",
+    "GRC9V4": "prospective_nine_port_specialization_profile_of_GRCV4",
+    "historical_D10_generic_Graph_GRC_V4_phrase": "descriptive_reference_to_GRCV4_not_a_distinct_naming_family"
+  },
+  "working_factorization_hypothesis": {
+    "expression": "GRCV4 ->[nine-port specialization] GRC9V4 ->[disabled V4 profile] GRC9V3",
+    "status": "hypothesis_supported_by_preliminary_provenance_separation",
+    "promotion_proved": false,
+    "interpretation": "a_possible_GRCV4_constitutive_architecture_with_GRC9V4_as_its_substantive_nine_port_specialization_and_GRC9V3_as_the_exact_disabled_profile_compatibility_target"
+  },
+  "final_audit_handoff": {
+    "obligation_id": "D10-PRECLOSE-SUBSTRATE-PROVENANCE-AUDIT",
+    "still_required": true,
+    "must_cover_every_selected_normative_equation_and_contract": true,
+    "must_supply_independent_derivation_over_GRCV3_contracts_before_promotion_to_GRCV4": true,
+    "must_separate_constitutive_core_specialization_capabilities_and_compatibility_reduction": true,
+    "must_not_classify_from_formula_appearance": true
+  },
+  "controls": [
+    "GRCV3_is_general_graph_GRC_and_GRC9V3_is_its_nine_port_specialization",
+    "GraphGRCV4_is_not_a_distinct_naming_family_from_GRCV4",
+    "formula_contains_no_9_does_not_prove_GRC_level_provenance",
+    "GRC9V3_lineage_does_not_prove_nine_port_intrinsicness",
+    "absence_of_demonstrated_nine_port_necessity_does_not_prove_nine_ports_unnecessary",
+    "abstractable_constitutive_core_does_not_reduce_GRC9_specialization_to_a_shim",
+    "representative_preliminary_rows_do_not_claim_equation_by_equation_audit_completeness",
+    "D10_1_does_not_modify_the_accepted_D10_claim_topology",
+    "working_factorization_is_not_final_taxonomy_or_promotion",
+    "promotion_from_the_GRC9_lineage_to_GRCV4_requires_independent_derivation_over_GRCV3_contracts_not_notational_relabeling",
+    "exact_GRC9V3_disabled_reduction_remains_required_for_the_current_lineage_local_profiles",
+    "inherited_functional_form_provenance_is_separate_from_enabled_revision_specific_staging",
+    "general_charge_covector_accounting_is_separate_from_the_unit_measure_reference_profile",
+    "composite_realization_classification_binds_each_direct_realization_decision",
+    "no_specification_or_implementation_authority_is_added_by_D10_1"
+  ],
+  "checks": {
+    "source_identity_count": 16,
+    "preliminary_finding_count": 5,
+    "representative_provenance_row_count": 12,
+    "control_count": 15,
+    "all_required_findings_present": true,
+    "nine_port_intrinsic_row_present": true,
+    "GRC9V3_derived_rows_present": true,
+    "GRC_derived_rows_present": true,
+    "GRC9_specialization_specific_row_present": true,
+    "promotion_proved": false,
+    "final_substrate_identity_closed": false
+  },
+  "decision": {
+    "scientific_disposition": "accepted_preliminary_bounded_substrate_provenance_separation",
+    "lineage_local_name_meaning": "derivation_and_compatibility_provenance_not_intrinsic_nine_port_necessity",
+    "GRC9V3_provenance_load_bearing": true,
+    "intrinsic_nine_port_necessity_established": false,
+    "nine_ports_unnecessary_established": false,
+    "Candidate_A_GRCV4_promotion": "pending_independent_derivation_over_GRCV3_differential_and_transport_contracts",
+    "Candidate_C_and_K4_Hodge_GRCV4_promotion": "pending_full_provenance_stripping_and_independent_GRC_level_derivation",
+    "GRC9_specialization_content_remains_substantive": true,
+    "final_audit_replaced": false
+  },
+  "claim_ceiling": "preliminary_provenance_separation_and_working_factorization_hypothesis_only",
+  "blocked_relabels": [
+    "GRC9V4_is_intrinsically_nine_port",
+    "nine_ports_are_unnecessary",
+    "Candidate_A_is_already_GRC_derived",
+    "Candidate_C_graph_notation_proves_GRCV4_promotion",
+    "GRC9_is_only_a_compatibility_shim",
+    "preclosure_provenance_audit_complete",
+    "final_substrate_identity_closed",
+    "GRCV4_specification_authorized"
+  ],
+  "open_obligations": [
+    "D10-PRECLOSE-SUBSTRATE-PROVENANCE-AUDIT"
+  ],
+  "authorization_effect": {
+    "D10_lineage_local_specification_authorization_unchanged": true,
+    "GRCV4_specification_authorized": false,
+    "implementation_plan_authorized": false,
+    "implementation_authorized": false,
+    "runtime_or_src_changed": false
+  },
+  "human_acceptance": "accepted_preliminary_bounded_substrate_provenance_separation_2026-08-26",
+  "decision_record_digest": "51572056af21abd3c4c623e72bf7a20ba34c54dafae8b23086979d2c761c939f"
+}
