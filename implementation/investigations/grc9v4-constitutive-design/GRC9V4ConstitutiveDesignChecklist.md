@@ -1,0 +1,2889 @@
+# GRC9V4 Constitutive Design Investigation Checklist
+
+**Date:** 2026-08-23  
+**Status:** D0-D10.2 accepted bounded; GRCv4/GRC9v4 specification writing authorized; implementation remains unauthorized
+**Plan:** [`GRC9V4ConstitutiveDesignPlan.md`](./GRC9V4ConstitutiveDesignPlan.md)  
+**Basis:** [`GRC9V4ConstitutiveDesignBasis.md`](./GRC9V4ConstitutiveDesignBasis.md)  
+**Ledger:** [`GRC9V4ConstitutiveDesignDecisionLedger.md`](./GRC9V4ConstitutiveDesignDecisionLedger.md)
+**Initialization:** [`GRC9V4ConstitutiveDesignInitialization.json`](./GRC9V4ConstitutiveDesignInitialization.json)
+
+## Global Boundaries
+
+- [x] Create a dedicated investigation branch and directory.
+- [x] Keep the work under `implementation/investigations/`.
+- [x] Record that no GRC9V4 architecture is selected at initialization.
+- [x] Record that no normative GRC9V4 specification exists yet.
+- [x] Block `src/` and existing runtime-test changes during D0-D10.
+- [x] Block GRC9V3 reinterpretation or retroactive claim upgrades.
+- [x] Preserve analysis/runtime causal-state separation.
+- [x] Preserve current-candidate-set exhaustion as a valid route to named
+      theory, constitutive, candidate-admission, or discriminator work.
+- [x] Require D10 acceptance before spec writing begins.
+- [x] Keep D1 candidate admission separate from D10 architecture selection.
+- [x] Keep current slaving/deslavement as an orthogonal D6 decision.
+- [x] Require immutable decision identities and typed bounded debt.
+- [x] Freeze the structured initialization predecessor and semantic digest.
+- [x] Require every `accepted_bounded` debt to name its blocking scope,
+      forbidden downstream assumption, resolution gate, and D10 obligation.
+- [x] Permit rejected-all, missing-theory, or missing-discriminator results to
+      route to bounded D10 closeout without executing irrelevant gates.
+- [x] Insert an append-only D4-v2-D7G candidate-completion and
+      structural-closure tranche before D8.
+- [x] Block A's earlier completeness or implementation fit from becoming
+      candidate preference or selection evidence.
+- [x] Require reopening from the earliest accepted gate whose decision changes.
+- [x] Require B and C to receive their named derivation attempts before
+      comparative D8, without requiring either candidate to survive.
+
+## D0. Target, Inheritance, And Claim Ceiling
+
+Status: accepted.
+
+- [x] Consume initialization predecessor digest
+      `7daf0693e2603b8e0c7062c77789a4ae71b6372b5605e31024be304a282e2654`.
+- [x] Freeze current theory source revisions and hashes.
+- [x] Freeze B1 Draft 3.4.1 and evidence-grounded successor identities.
+- [x] Freeze accepted B1/B2 closeout and evidence identities.
+- [x] Freeze reconciled GRC9V3 spec/evidence-profile and Phase 7 identities.
+- [x] Build a B1-contract -> B1 -> B2 -> reconciliation -> V4 historical
+      lineage record.
+- [x] Record direct B1/B2 artifact citations and source envelopes.
+- [x] Freeze `may_consume_as` and `must_not_consume_as` for each B1/B2 source.
+- [x] Audit every B1-derived theory statement against the current core revision.
+- [x] Classify theory drift as unchanged, narrowed, broadened, superseded,
+      historical-only, or requiring rederivation.
+- [x] Block B1 verification constructs from becoming literal V4 semantics.
+- [x] Block B2 bounded empty search from becoming global impossibility,
+      independent-state necessity, or architecture selection.
+- [x] Build the provenance-classified inheritance ledger.
+- [x] Separate core claims from candidate constitutive completions.
+- [x] Freeze target, non-targets, and claim ceiling.
+- [x] Freeze the D1 candidate set, source-admission rule, and admission deadline.
+- [x] Freeze the candidate-neutral V3 reference transition and reduction
+      comparison surfaces.
+- [x] Freeze allowed exact/projected/tolerance semantics, added-state
+      initialization requirements, serialization rules, and lifecycle scope.
+- [x] Require each D1 candidate to construct `i_a`, `pi_a`, disabled-state
+      initialization, and reduction obligations without a premature witness.
+- [x] Freeze the design/verification topology envelope separately from the
+      normative runtime capability scope.
+- [x] Freeze topology transport/accounting, explicit capability disablement, or
+      event-boundary semantics.
+- [x] Mark deferred full-runtime topology closure as `must_close_before_D10`.
+- [x] Separate hard veto requirements from selection preferences.
+- [x] Record all theory and substrate debts carried into D1.
+- [x] Freeze missing-relation statuses so source absence does not become theory
+      prohibition.
+- [x] Mark the candidate universe exhaustive only over named pre-D1 families.
+- [x] Freeze candidate-family overlap, reclassification, and material-hybrid
+      admission rules.
+- [x] Freeze the broad first-principles meaning of `source-backed`.
+- [x] Freeze source cutoff and distinct missed-source/new-theory reopening paths.
+- [x] Bind all 33 theory-drift rows to claim-level source anchors.
+- [x] Freeze the ten-entry symbol/typing ledger.
+- [x] Audit current GRC9V3 source against the reconciled V3 basis.
+- [x] Separate external complete-step parity from internal solver staging.
+- [x] Require an invariant disabled-profile V3 subspace and block hidden
+      disabled-history accumulation.
+- [x] Require a topology-scope label on every later result.
+- [x] Type hard vetoes by claim/candidate/gate/specification scope.
+- [x] Make preference-only status mechanically explicit.
+- [x] Freeze the D0 non-claim block.
+- [x] Keep B1/B2 failed mappings from becoming permanent V4 vetoes.
+- [x] Freeze separate evidence/design provenance labels.
+- [x] Preserve open alternatives in every typed debt.
+- [x] Freeze domain-specific authority conflict handling.
+- [x] Freeze the positive reopening payload for candidate-set exhaustion.
+- [x] Obtain human acceptance.
+
+### D0 Result
+
+- Structured record: [`decisions/D0TargetInheritanceAndClaimCeiling.json`](./decisions/D0TargetInheritanceAndClaimCeiling.json)
+- Interpretation: [`decisions/D0TargetInheritanceAndClaimCeiling.md`](./decisions/D0TargetInheritanceAndClaimCeiling.md)
+- Decision digest: `b38b07311afc24bfe1016d75e985f886718e5a9d104c69c59e29318801f457c0`
+- Source identities: 34 load-bearing files across two clean repositories.
+- Theory drift: all 33 B1 statement IDs unchanged because the two B1 theory
+  hashes exactly match the current core hashes; each row has a claim-level
+  anchor and no provenance promotion.
+- Current V3 audit: all five runtime modules exactly match the reconciled source
+  basis; no runtime drift or spec/runtime mismatch at the frozen source level.
+- Candidate set: four families frozen; D1 admission is not final selection.
+- Candidate universe: complete only over named pre-D1 families, with explicit
+  reclassification, source cutoff, and reopening rules.
+- Topology: fixed-topology smooth analysis envelope, full-capability successor
+  scope, explicit interspace transport/accounting debt before D10.
+- Reduction: repeated-step invariant legacy subspace, external clock parity,
+  and no hidden disabled-history accumulation; internal staging remains open.
+- Claim ceiling: D0 contract freeze only; D1 is open, while D2 and all
+  specification/runtime work remain blocked.
+
+## D1. Retained-Representation Ontology And Candidate Admission
+
+Status: accepted bounded.
+
+- [x] Compare `V4-A-temporalized-W`.
+- [x] Compare `V4-B-independent-derived-carrier`.
+- [x] Compare `V4-C-constitutive-C-sector`.
+- [x] Compare any D0-admitted `V4-D-source-admitted-structural` candidate.
+- [x] Audit causal type, formation inputs, and ownership.
+- [x] Classify state authority independently for every candidate.
+- [x] Classify resource accounting independently for every candidate.
+- [x] Classify a set of transport roles independently for every candidate.
+- [x] Test reconstruction/elimination in the design argument or prototype.
+- [x] Record candidate reduction embedding, projection, and disabled-state
+      initialization.
+- [x] Record construction status, obligations, and structural blockers; reserve
+      completed-transition witness status for D9.
+- [x] Record selector inputs, constitutive authority, statefulness, sector
+      identity/transport, and hidden-history/future-information requirements for
+      every derived constitutive representation.
+- [x] Block observer-selected or retrospectively discovered sectors from runtime
+      retained-representation status.
+- [x] Require historical selector state to be explicit serialized causal state,
+      or require deterministic selection from current declared causal state.
+- [x] Separate runtime state from analysis projectors.
+- [x] Apply the five-way elimination/reconstruction classification.
+- [x] Require counterfactual causal authority for independent state rather than
+      serialization alone.
+- [x] Distinguish a derived update law from an algebraically derived present
+      value for Candidate B.
+- [x] Type legacy instantaneous `W`, retained `W`, and their unresolved
+      composition for Candidate A.
+- [x] Record selector motion, crossing, symmetry, branch, and variable-rank
+      pressure for Candidate C.
+- [x] Audit hidden producer/helper state and administrative/RNG dependencies.
+- [x] Record candidate-local information-capacity and release obligations.
+- [x] Freeze projected-resource non-double-counting and the independent-resource
+      theory boundary.
+- [x] Audit disabled-embedding multiplicity and obvious disabled causal activity.
+- [x] Audit pairwise candidate equivalence by causal conjugacy rather than state
+      dimension.
+- [x] Record historical-content and native-consumer rationales independently.
+- [x] Record established, unresolved, later-gate, and rejection conditions for
+      every candidate.
+- [x] Confirm that all 28 D1 pressure checks are satisfied or explicitly
+      deferred as typed later-gate obligations.
+- [x] Record `admitted_candidate_set` and `rejected_on_ontology`.
+- [x] Record `sole_surviving_candidate` without treating it as final selection.
+- [x] If empty, record `current_candidate_set_exhausted`, missing role, required
+      next derivation/admission work, reopening condition, and resume gate.
+- [x] Keep current temporalization out of D1.
+- [x] Obtain human acceptance.
+
+Current D1 result:
+
+```text
+record_id = GRC9V4-CD-D1-v1
+decision_record_digest = f8ae101beb9fa6e9827555eba64452087c1d19b6933325966f10c4c4ec64c507
+admitted_candidate_set = [V4-A-temporalized-W, V4-B-independent-derived-carrier, V4-C-constitutive-C-sector]
+rejected_on_ontology = [V4-D-source-admitted-structural]
+V4-D_reason = uninstantiated_admission_slot_not_materially_distinct
+sole_surviving_candidate = none
+current_candidate_set_exhausted = false
+architecture_selected = false
+pressure_audit_rows = 28
+pressure_audit_unaddressed = 0
+open_debt_rows = 9
+open_debt_rows_with_complete_ledger_schema = 9
+must_close_before_D10_debt_rows = 8
+transport_role_status = provisional_candidate_signatures_pending_D4
+verification_envelope = fixed_topology_event_free_smooth_strata
+normative_target = full_topology_capable_GRC9V4_successor
+D2_authorized = true
+human_acceptance = accepted_bounded_2026-08-24
+```
+
+## D2. Formation, Retention, Release, And Write Interface
+
+Status: accepted bounded.
+
+- [x] Define formation.
+- [x] Define post-input retention.
+- [x] Define release/reconfiguration.
+- [x] Define transfer, if in scope.
+- [x] Define write ownership, admissible write inputs, and update-order bounds.
+- [x] Name and define `no_forming_or_write_input` retention/release behavior.
+- [x] Define conservation and budget treatment for every accounting type.
+- [x] Block hidden resource duplication or an unbounded second reservoir.
+- [x] Reject recomputed proxies without historical causal content,
+      indefinite accumulators, and trivial slow-cache substitutes.
+- [x] Permit a `C`-derived retained sector only if it is historically formed and
+      later constitutively load-bearing.
+- [x] For the constitutive `C` sector, distinguish ordinary `C` update,
+      retained-sector occupation/change, and later retained-conditioned read.
+- [x] Freeze one authoritative write or explicit no-write per candidate per beat.
+- [x] Block same-beat consumption of the newly written representation absent a
+      D6 implicit-closure decision.
+- [x] Freeze candidate-local capacity, pruning, release, and reset ownership.
+- [x] Carry D1 transport roles as provisional signatures pending D4.
+- [x] Separate initialization, no-forming-input, write-off, frozen-state, and
+      administrative-reset interventions.
+- [x] Separate formation from post-input retention and block hidden external
+      maintenance.
+- [x] Permit explicit retention classes without accepting a small rate as
+      structural retention.
+- [x] Require a constitutive native release/reconfiguration route distinct from
+      reset; require smooth release only if claimed and route event-mediated
+      release contracts to D4/D9.
+- [x] Classify write inputs as pre-solve, post-solve, or post-state-update and
+      route prospective same-beat cycles to D6/D7.
+- [x] Freeze simultaneous-write composition, information-content,
+      orientation-covariance, and RNG-state obligations.
+- [x] Freeze Candidate A double-write, clipping/saturation, effect-persistence,
+      and normalization-scope audits.
+- [x] Freeze Candidate B EMA, Markov-closure, bounded-capacity, and
+      resource-regeneration audits.
+- [x] Freeze Candidate C content/projector, rank, basis, and sector
+      exit/re-entry audits.
+- [x] Separate capacity from lifetime and transfer from replication.
+- [x] Classify all 30 independent D2 pressure points.
+- [x] Freeze the 33-control future transition matrix.
+- [x] Obtain human acceptance.
+
+Current D2 result:
+
+```text
+record_id = GRC9V4-CD-D2-v1
+decision_record_digest = ea2b953685bb23dfe979b2f5d2ae0f22f364a51484d6536c1721f144c9cad740
+candidate_set_after_D2 = [V4-A-temporalized-W, V4-B-independent-derived-carrier, V4-C-constitutive-C-sector]
+rejected_on_D2_interface = []
+reclassified_or_revision_needed = []
+control_contract_rows = 33
+D2_pressure_audit_rows = 30
+predecessor_debt_rows_classified = 9
+open_debt_rows = 15
+must_close_before_D10_debt_rows = 14
+same_beat_new_state_read_allowed = false
+architecture_selected = false
+D3_authorized = true
+human_acceptance = accepted_bounded_2026-08-24
+```
+
+## D3. Continuation Requirements And Structural Domain
+
+Status: accepted bounded.
+
+- [x] Define formed state and formed branch.
+- [x] Define reference branch and transport.
+- [x] Define admitted perturbation state and clock.
+- [x] Define requirements for the later complete effective transition.
+- [x] Separate structural `alpha`, temporal `gamma`/multipliers, Read-Back
+      `beta`, and spatial `lambda`.
+- [x] Block `slow_temporal_mode == low_continuation_stiffness`.
+- [x] Distinguish `F_struct(C)`, conditional `F_struct(C; T_*)`, and genuinely
+      joint source-backed `F_struct(C,T)` structural cases.
+- [x] State whether `delta_T` is an admitted structural coordinate.
+- [x] Block construction of a continuation Hessian from runtime `DF(C,T)`.
+- [x] Build a support matrix over no-current, frozen-current, smoothly
+      slaved-current, and independently active-current references.
+- [x] Record supported/conditional/open/blocked status, conditions, current
+      elimination/freezing, structural-coordinate, and active-joint-theory
+      status for every matrix row.
+- [x] Keep runtime current-regime selection in D6.
+- [x] Block an inherited self-adjoint Hessian for active `(C,T,J)` without a
+      source-backed derivation.
+- [x] Freeze the derived-representation tangent constraint and block independent
+      `delta_T_M` without D1 independent-state authority.
+- [x] Separate fast temporal relaxation, branch displacement, and retained
+      structural continuation.
+- [x] Freeze topology/event strata and blocked derivative cases.
+- [x] Distinguish D2 `retained_formed`, D3 structural reference state, and the
+      stronger combined retained-structural state.
+- [x] Separate runtime candidate viability from C-only, conditional, and joint
+      structural-claim viability.
+- [x] Block conditioned-C alpha from becoming a carrier alpha spectrum.
+- [x] Freeze functional normalization, perturbation metric, constraint scope,
+      and raw-alpha comparison boundaries.
+- [x] Freeze fixed-geometry, induced-geometry total, smooth-current-eliminated,
+      and joint derivative conventions.
+- [x] Freeze A's coupled `R_W` tangent and C's exact selector/composite-functional
+      tangent obligations.
+- [x] Block continuation-derived, analysis-only, and retrospective
+      temporal-slow projectors from constitutive relabel while preserving the
+      source-backed conditional route for a runtime-owned dynamic projector.
+- [x] Freeze prospective branch gauge and block retrospective branch fitting.
+- [x] Freeze conservation-scope, symmetry/gauge-null, tangent-cone, and
+      nonsmooth-boundary rules.
+- [x] Freeze isolated-cluster/filter/event requirements for hard spectral
+      selectors and variable-rank domains.
+- [x] Separate alpha sign labels from spark, collapse, topology, deslavement,
+      finite basin, lifetime, and nonnormal-survival claims.
+- [x] Record complete per-cell functional, constraint, tangent, derivative,
+      retained-role, claim-ceiling, and later-dependency details.
+- [x] Classify all 42 independent D3 pressure points.
+- [x] Freeze 39 fail-closed structural-domain controls.
+- [x] Classify all 15 D2 open debts and add nine typed D3 debts.
+- [x] Keep optional joint A/B and independently active-current theory debts
+      claim-blocking but nonblocking for D10 unless a later selected
+      architecture activates them through a named successor debt.
+- [x] Obtain human acceptance.
+
+Current D3 result:
+
+```text
+record_id = GRC9V4-CD-D3-v1
+decision_record_digest = 8e7db364cc4402b9794d825629962d1851fc15a2f0b71fa015cfaeb01f42643d
+candidate_set_after_D3 = [V4-A-temporalized-W, V4-B-independent-derived-carrier, V4-C-constitutive-C-sector]
+candidate_structural_domain_rows = 3
+support_matrix_rows = 12
+support_matrix_cell_detail_rows = 12
+support_matrix_supported = 2
+support_matrix_conditionally_supported = 7
+support_matrix_theory_open = 3
+support_matrix_blocked = 0
+control_contract_rows = 39
+D3_pressure_audit_rows = 42
+predecessor_debt_rows_classified = 15
+open_debt_rows = 24
+must_close_before_D10_debt_rows = 20
+conditional_nonblocking_debt_rows = 3
+all_non_D10_blocking_debt_rows = 4
+joint_structural_candidate_supported = false
+current_regime_selected = false
+architecture_selected = false
+D4_authorized = true
+```
+
+## D4. Geometry, Mobility, And Topology Ownership
+
+Status: accepted bounded.
+
+- [x] Enforce the D4-D9 no-redo rule: no gate closes solely by restating B1/B2
+      or reconfirming absence in unchanged GRC9V3.
+- [x] Revisit inherited distinctions, controls, and negative results whenever
+      V4 changes the causal object, state space, or operator under test.
+- [x] Classify every consumed B1/B2 item as `legacy_fact`,
+      `verification_control`, `design_pressure`, or `open_hypothesis`.
+- [x] Treat `legacy_fact` as hard only for its frozen V3 revision/envelope and
+      prevent every category from dictating V4 ontology or equations.
+- [x] Require every surviving candidate to add a constitutive fact, receive a
+      named rejection, or route to a named missing derivation.
+- [x] Produce one candidate-specific ownership record for A, B, and C.
+- [x] Record the exact retained object, geometry owner/map, mobility owner/map,
+      `K` role, legacy `W` role, and topology/basin relation for each candidate.
+- [x] Preserve D2 nomenclature: `W_A` is authoritative positive `W[k]`, while
+      `R_W` is its declared relation to `W_hat` and is not mobility authority.
+- [x] Record an explicit constitutive map between retained representation and
+      geometry or reject/route the candidate when no defensible map exists.
+- [x] Define whether each representation is geometry, conditions geometry, or
+      remains separate structural state.
+- [x] Define relation to `W`, `h`, constitutive/geometry-inducing `K`, any
+      separately realized mobility `M`/`A`, analytic labels, and node tensors.
+- [x] Do not preassign `K` as transport mobility.
+- [x] Define relation to topology and basin hierarchy.
+- [x] Apply both the D0 verification envelope and normative runtime topology
+      capability scope.
+- [x] Separate structural geometry from transport mobility where required.
+- [x] Prevent one field from owning incompatible causal and analytical roles.
+- [x] Assign each candidate one disposition: coherent bounded ownership,
+      blocked named derivation, rejected incompatible roles, or named successor
+      investigation.
+- [x] Separate causal-role factorization from stored-field count and require
+      explicit maps when one object parameterizes multiple roles.
+- [x] Separate runtime transport mobility from the analytical D8 relaxation
+      mobility/operator.
+- [x] Freeze metric/mobility positivity, nonreciprocal-mobility, orientation,
+      gauge, units, normalization, and load-bearing regularization boundaries.
+- [x] Record 12 object-ownership rows and block stale derived geometry,
+      projector, factorization, inverse, preconditioner, and solver caches from
+      acquiring hidden state authority.
+- [x] Record 15 causal arrows with status, temporal side, locality,
+      invertibility, resource/measure effect, smooth domain, and topology-event
+      obligation.
+- [x] Separate retained-conditioned baseline `J0` paths from D5 Read-Back `j`.
+- [x] Preserve the staged source order: baseline terms prepare `K_4 -> h_4 ->
+      J0`, while present `J_C` may enter `K_4` only through later D5 `j`.
+- [x] Exclude present `J_C` from Candidate C's direct `H_M` inputs and reserve it
+      for the subsequent D5 Read-Back map.
+- [x] Prevent analysis-only projectors from acquiring runtime authority; require
+      deterministic reconstruction or D1 reclassification/successor admission
+      before Candidate C can consume an optional dynamic sector in `H_M`.
+- [x] Freeze A staging and single-authority composition, B previous-beat versus
+      same-beat geometry/write closure, and C selector/geometry fixed-point
+      obligations.
+- [x] Feed D4 results back into D3 consumption: demote A's direct
+      retained-`W` structural claim while preserving runtime viability and
+      retain B/C role-specific open boundaries.
+- [x] Separate near-zero mobility, exact-zero mobility, inactive retained edge,
+      metric degeneracy, threshold event, and adjacency deletion.
+- [x] Record candidate-specific birth, split, merge, deletion, relabel, rank,
+      basis, and nonduplication obligations.
+- [x] Treat persistent topology mutation as a rival historical carrier even
+      when it is not the claimed retained representation.
+- [x] Classify all 50 D4 pressure points.
+- [x] Freeze 39 fail-closed ownership controls and 15 localized failure codes.
+- [x] Obtain human acceptance.
+
+Current D4 result:
+
+```text
+record_id = GRC9V4-CD-D4-v1
+status = accepted_bounded
+predecessor_decision_digest = 8e7db364cc4402b9794d825629962d1851fc15a2f0b71fa015cfaeb01f42643d
+decision_record_digest = c3c4507d4623ee526e636c4434bc13b4af23bdd3f6051cf1db99a2ce5736215c
+candidate_set_after_D4 = [V4-A-temporalized-W, V4-B-independent-derived-carrier, V4-C-constitutive-C-sector]
+candidate_dispositions = [A: coherent_bounded_ownership, B: routed_named_missing_derivation, C: routed_named_missing_derivation]
+coherent_bounded_ownership_candidates = [V4-A-temporalized-W]
+named_derivation_routes = [GRC9V4-D4-B-INDEPENDENT-CARRIER-GEOMETRY-CLOSURE, GRC9V4-D4-C-RETAINED-GEOMETRY-CLOSURE]
+rejected_on_D4_ownership = []
+B1_B2_consumption_rows = 8
+object_ownership_rows = 12
+candidate_causal_graph_rows = 3
+causal_arrow_rows = 15
+candidate_event_transport_rows = 3
+D3_support_feedback_rows = 3
+control_contract_rows = 39
+D4_pressure_audit_rows = 50
+failure_code_rows = 15
+open_debt_rows = 23
+architecture_selected = false
+claim_ceiling = GRC9V4-CD-D4-bounded-ownership-and-missing-closure-routing
+D5_authorized = true
+specification_authorized = false
+runtime_implementation_authorized = false
+```
+
+D4 separates induced geometry `K_4 -> h_4` from transport mobility as causal
+roles while allowing a future explicitly factorized object to parameterize
+both. Candidate A receives one enabled transport authority, retained `W_A`,
+without gaining direct geometry ownership; its D3 retained-`W` structural claim
+is demoted while runtime viability remains. Candidate B remains
+revision-distinct but lacks a source-backed `T -> K/h` map. Candidate C retains
+a source-backed retained-geometry role, but its selector/geometry fixed point
+and exact `h_M` closure remain open. The named routes, object/arrow records,
+topology taxonomy, and 50-row pressure audit preserve those boundaries without
+invented equations or whole-candidate rejection.
+
+## D5. Directional Read-Back
+
+Status: accepted bounded.
+
+- [x] Define typed graph map into oriented edge cochains.
+- [x] Produce the actual candidate-specific Read-Back operator family or route
+      a named missing derivation; requirements alone do not close D5.
+- [x] Record operator equation/signature, domain, codomain, typed inputs, and
+      output cochain for every surviving candidate.
+- [x] Widen the common signature with declared nonretained current-step
+      `X_read` context and block hidden historical state in that context.
+- [x] Separate `typed_operator_family` from `retained_mediation_closed`.
+- [x] Propagate `X_read` into the D6 recurrence and freeze it at the declared
+      pre-read stage during the solve.
+- [x] Freeze an unsolved `J_trial` present-current convention and prevent D5
+      from silently solving the D6 total-current recurrence.
+- [x] Require passive null.
+- [x] Separate operator passive null from zero `J0`, energetic passivity, and
+      full-loop equilibrium or stability.
+- [x] Require edge-coordinate orientation-relabel covariance.
+- [x] Require arbitrary edge-subset reorientation and node-permutation / graph-
+      isomorphism covariance.
+- [x] Define physical present-current reversal response separately.
+- [x] Separate storage reorientation, present-current reversal, reversed forming
+      history, and simultaneous retained/current reversal.
+- [x] Define retained-representation orientation/chirality content.
+- [x] Classify edge-local, cross-edge, cut/cycle/harmonic, and chiral scope per
+      candidate.
+- [x] Separate `J0`, `j`, and total `J_C`.
+- [x] Name and define the `zero_present_current` passive-null control.
+- [x] Separate direct retained-conditioned `J0` from `(T_M,J_trial) -> j` D5
+      Read-Back design.
+- [x] Audit path overlap/double counting and preserve direct `J0` under read-off
+      where structurally possible.
+- [x] Freeze the `J0`/`j` decomposition gauge and the `zeta`/`j` scale gauge
+      without claiming physical channel identifiability.
+- [x] Separate read-off, carrier-neutral, and frozen-carrier controls.
+- [x] Label algebraic/off-manifold counterfactuals separately from runtime-
+      reachable evidence and freeze lawful candidate-specific interventions.
+- [x] Freeze live-edge support, zero-mobility debt, locality, disconnected-
+      component behavior, divergence, boundary, and cut/cycle accounting.
+- [x] Define retained-state and rival-carrier controls.
+- [x] Block scalar, label, score, and projector relabels.
+- [x] Freeze A's bounded normalized edge-contrast operator without redefining
+      D2 `R_W` or claiming historical chirality.
+- [x] Route B to a named typed-operator derivation rather than multiplying an
+      untyped `T_B` by current.
+- [x] Freeze C's graph Hodge-resolvent family on regular `h_M` one-form space
+      without closing `H_M` or claiming temporal persistence.
+- [x] Classify all 68 D5 pressure points and freeze 57 fail-closed controls.
+- [x] Split pre-D10 factorization and rival-control availability from post-spec
+      physical-identification and empirical-attribution debts.
+- [x] Mark the excluded C dynamic sector dormant unless later admitted.
+- [x] Classify all 23 predecessor D4 debts without silent disappearance.
+- [x] Preserve routed Candidate B in the post-D5 architecture candidate set
+      while excluding it from the D6-eligible set.
+- [x] Carry the C selector/geometry fixed-point debt independently from lawful
+      counterfactual evidence.
+- [x] Split pre-D10 Hodge construction closure from post-D10 normative encoding.
+- [x] Record C's resolvent as a D5 isotropic specialization of the core
+      Hodge-response candidate class, not a unique core law.
+- [x] Obtain human acceptance.
+
+Current D5 result:
+
+```text
+record_id = GRC9V4-CD-D5-v1
+status = accepted_bounded
+predecessor_decision_digest = c3c4507d4623ee526e636c4434bc13b4af23bdd3f6051cf1db99a2ce5736215c
+decision_record_digest = 453416f42beefa1c9e725b675a0af7d4fd49c3e83691ee16e3e3bcfb6d37f213
+operator_family_count = 2
+operator_channel_definition_count = 2
+physically_identified_Read_Back_channel_count = 0
+D6_eligible_candidates = [V4-A-temporalized-W, V4-C-constitutive-C-sector]
+candidate_set_after_D5 = [V4-A-temporalized-W, V4-B-independent-derived-carrier, V4-C-constitutive-C-sector]
+D6_eligible_candidate_set = [V4-A-temporalized-W, V4-C-constitutive-C-sector]
+routed_candidate_set = [V4-B-independent-derived-carrier]
+routed_not_rejected = [V4-B-independent-derived-carrier]
+named_D5_route = GRC9V4-D5-B-TYPED-READBACK-DERIVATION
+control_contract_rows = 57
+D5_pressure_audit_rows = 68
+open_debt_rows = 27
+predecessor_debt_disposition_rows = 23
+source_identity_rows = 10
+architecture_selected = false
+candidate_ranking_performed = false
+claim_ceiling = GRC9V4-CD-D5-bounded-candidate-Read-Back-operator-families-with-physical-identifiability-open
+D6_authorized = true
+human_acceptance = accepted_bounded_2026-08-24
+specification_authorized = false
+runtime_implementation_authorized = false
+```
+
+D5 admits an explicit bounded A edge-contrast response and a bounded C
+retained-geometry Hodge-resolvent family under the widened
+`R(T,h,X_read;J_trial)` signature. A is an explicit V4 extension with an
+operator-level retained intervention, not a core retained-geometry derivation,
+and its physical distinction from mobility remains open. C is a typed family
+conditional on `h_M`; retained mediation remains open until `H_M` is derived.
+B cannot type an operator and is routed rather than rejected. Read-off preserves
+each admitted candidate's direct `J0` path while disabling only explicit `j`;
+D6 owns the total-current solve, support policy, physical gain, and
+overlap/identifiability audit. The 27 D5 debts separate pre-spec design closure
+from post-spec causal verification, while the 23-row predecessor disposition
+prevents inherited debt from disappearing. B remains in the architecture
+candidate set while routed out of D6. C's fixed-point obligation remains open,
+and D8 Hodge construction closure is separate from later normative encoding.
+
+## D6. Total-Current Closure
+
+Status: accepted bounded.
+
+- [x] Define algebraic current closure and solve order.
+- [x] Write the selected algebraic closure equation or temporal current law for
+      each surviving candidate; generic alternatives do not close D6.
+- [x] Record why the selected architecture requires that closure and reject or
+      route candidates for which neither closure is admissible.
+- [x] Define the full effective loop block for the frozen pre-read solve and
+      require D6 reopening if D7 introduces another within-solve current path.
+- [x] Define uniqueness/invertibility requirements.
+- [x] Define failure and singular-boundary semantics.
+- [x] Decide slaved, explicitly deslaved, or blocked current closure for each
+      surviving retained-representation candidate.
+- [x] Admit temporalized current only under a recorded trigger; select none for
+      the initial regular A/C profiles.
+- [x] Preserve direct-retained-to-`J0` and Read-Back-to-`j` attribution through
+      total-current closure.
+- [x] Preserve B in the architecture candidate set while routing it out of D6.
+- [x] Freeze A's exact edgewise inverse, zero-mobility support rule, and bounded
+      denominator domain.
+- [x] Freeze C's parameterized Hodge inverse, metric-space requirements,
+      component separation, and positive-mobility domain without closing H_M.
+- [x] Separate algebraic slaving from a demonstrated fast temporal limit.
+- [x] Block singularity-to-temporal-law, structural-marginality, spark,
+      basin-birth, topology-change, and stability relabels.
+- [x] Freeze partial critical-subspace deslavement as distinct from full current
+      temporalization and prohibit analysis mode labels as runtime state.
+- [x] Freeze admissible current-space, closed-channel, boundary-drive, and
+      potential-gauge semantics inside the solve.
+- [x] Freeze exact branch selection independently of solver seed, history,
+      damping, line search, preconditioner, tolerance, or iteration count.
+- [x] Distinguish exact invertibility from robust singular-value/inverse-norm
+      conditioning and block spectral-radius-one overgeneralization.
+- [x] Freeze A's exact `(zeta_A,q_A)` classification and no-`W_max` dependency
+      for the selected subunit profile.
+- [x] Freeze C's tree/cycle/harmonic regularity boundary and block harmonic
+      projection or `tau_C` as a unit-gain harmonic rescue.
+- [x] Freeze one shared `zeta_a` for current and staged `j tensor j` geometry in
+      the initial normalized profile; route split gains to a named successor
+      and preserve the inherited physical-units audit.
+- [x] Freeze postsolve `J_C` as D7's authoritative causal current and restrict
+      `j` to the declared `zeta (j tensor j)` geometry path plus
+      telemetry/analysis; block an unqualified direct `j` write shortcut.
+- [x] Freeze gain-off so a nonzero diagnostic `j` has no causal downstream
+      consumer in the initial profile.
+- [x] Record lagged geometry as a revision-distinct GRC9V4 beat-staging choice,
+      not a general reduction of the core simultaneous active-current loop.
+- [x] Use unambiguous parenthesized C resolvent notation in the machine record.
+- [x] Audit exact A/C mathematical absorbability separately from post-spec
+      empirical identification and create pre-D10 debts where the complete
+      baseline maps remain open.
+- [x] Feed the selected algebraic closures back into D3 without upgrading A's
+      direct structural role or C's retained mediation.
+- [x] Classify all 96 D6 pressure points and freeze 72 fail-closed controls.
+- [x] Classify all 27 D5 debts without silent disappearance.
+- [x] Incorporate 20 still-open transitive predecessor debt IDs by reference,
+      including all 16 inherited pre-D10 blockers.
+- [x] Obtain human acceptance.
+
+Current D6 result:
+
+```text
+record_id = GRC9V4-CD-D6-v1
+status = accepted_bounded
+predecessor_decision_digest = 453416f42beefa1c9e725b675a0af7d4fd49c3e83691ee16e3e3bcfb6d37f213
+decision_record_digest = 0c78ede1551ece13c4b4fc916f60531bdc30219791bf90be574e5b0f80aa3f16
+candidate_set_after_D6 = [V4-A-temporalized-W, V4-B-independent-derived-carrier, V4-C-constitutive-C-sector]
+D7_eligible_candidate_set = [V4-A-temporalized-W, V4-C-constitutive-C-sector]
+routed_candidate_set = [V4-B-independent-derived-carrier]
+algebraically_slaved_candidate_count = 2
+current_temporalized_candidate_count = 0
+routed_candidate_count = 1
+candidate_rejected_count = 0
+control_contract_rows = 72
+D6_pressure_audit_rows = 96
+predecessor_debt_disposition_rows = 27
+transitive_predecessor_debt_disposition_rows = 20
+transitive_predecessor_must_close_before_D10_rows = 16
+open_debt_rows = 25
+architecture_selected = false
+claim_ceiling = GRC9V4-CD-D6-bounded-regular-algebraic-current-closures-with-mathematical-nonredundancy-open-and-without-temporal-current_writeback_runtime_or_architecture-selection
+D7_authorized = true
+human_acceptance = accepted_bounded_2026-08-24
+specification_authorized = false
+runtime_implementation_authorized = false
+```
+
+D6 provides exact bounded same-beat algebraic current closures for A and
+parameterized C. B remains routed, not rejected. The current solve freezes
+`J0`, retained state, geometry, mobility, and `X_read`, so its complete local
+block is `zeta chi R`; changing that staging reopens D6. Loss of invertibility
+fails closed and does not choose a temporal current law. The result does not
+close write-back, retention, the cross-beat reflexive loop, stability, physical
+channel identification, runtime reachability, or architecture selection.
+Lagged geometry is an explicit V4 beat-staging choice, not a theorem about the
+core simultaneous loop. Postsolve `J_C` is D7's authoritative causal current;
+`j` is not a free write input, and gain-off diagnostic `j` has no causal
+downstream consumer. The 25 current debts and 20 transitive inherited debts
+remain jointly adjudicable for D10.
+
+## D7. Closed Write/Read Loop
+
+Status: accepted bounded; D8 authorization separately deferred.
+
+- [x] Close `T_M -> j -> J_C -> declared downstream consequence -> T_M` for
+      the bounded Candidate A fixed-stratum kinetic profile.
+- [x] Consume postsolve `J_C` as the authoritative causal current; do not use
+      diagnostic or geometry-conditioning `j` as a direct retained-state write
+      shortcut unless a named D6 successor derives the non-bypassing path.
+- [x] Write the complete reduced `X_(k+1) = F_V4(X_k)` transition for Candidate
+      A, including equations, stage order, state ownership, release, read,
+      write, and accounting surfaces; keep the normative structural profile
+      open on the missing `H_4` map.
+- [x] Route candidates that still have missing load-bearing equations: B through
+      its typed geometry/operator derivations and C through its retained-
+      geometry mediation derivation. Reject neither candidate by omission.
+- [x] Select exact A write inputs from the D2 admissible set.
+- [x] Define the complete A fixed-stratum kinetic transition.
+- [x] Define read-off and write-off controls.
+- [x] Define passive and frozen-carrier controls.
+- [x] Define reversed-orientation and rival-carrier controls.
+- [x] Freeze loop-closure validity, admissibility, singular/invalid, and
+      reconfiguration boundaries.
+- [x] Defer reduced A temporal-transition stability and floor nonsmoothness to
+      D8 while keeping normative structural continuation/stability blocked on
+      the missing `H_4` map and later reanalysis.
+- [x] Block one-way-path-to-loop relabeling.
+- [x] Do not require `C_(k+1)` as the sole write mediator without evidence.
+- [x] Block generic `C` evolution from becoming tautological C-sector
+      write-back.
+- [x] Preserve the core-derived C-sector write relation while blocking it from
+      becoming closed mediation without `H_M`.
+- [x] Separate the closed A kinetic loop from the open structural-cultivation
+      path and normative topology scope.
+- [x] Separate the direct retained-mobility recurrence from the conditionally
+      load-bearing explicit Read-Back subloop.
+- [x] Freeze `D_A[k] = (C[k+1], J_C_A[k])` as the exact downstream writer
+      mediator and add arrow-specific constitutive interventions.
+- [x] Separate authoritative `W_A` write/release, derived `W_hat_A` motion, and
+      neutral-relation motion.
+- [x] Name all A rival carriers, exclude hidden lagged-current state, and expose
+      the complete Jacobian-ready smooth-stage factorization.
+- [x] Record C write-off/frozen-package controls as unavailable on-manifold
+      rather than inventing runtime switches.
+- [x] Disposition all 25 D6 current debts and all 20 transitive inherited debt
+      rows.
+- [x] Freeze the three-way D10 debt union and require technical pre-D10 debts
+      to resolve in named earlier audits rather than at D10 itself.
+- [x] Require writer differential and gradient summaries to be rebuilt from
+      post-continuity `C[k+1]`; block pre-continuity cache reuse.
+- [x] Produce the 72-row D7 pressure audit and fail-closed control matrix.
+- [x] Disposition the additional 96-row adversarial closure audit item by item.
+- [x] Produce `decisions/D7ClosedWriteReadLoop.json`.
+- [x] Produce `decisions/D7ClosedWriteReadLoop.md`.
+- [x] Obtain human acceptance.
+
+Current D7 result:
+
+```text
+record_id = GRC9V4-CD-D7-v1
+status = accepted_bounded
+predecessor_decision_digest = 0c78ede1551ece13c4b4fc916f60531bdc30219791bf90be574e5b0f80aa3f16
+decision_record_digest = 7ffaf92b1672aa4fb116539ca5da36aef8bc7f3caf088827fd71f3ec7b483fea
+candidate_set_after_D7 = [V4-A-temporalized-W, V4-B-independent-derived-carrier, V4-C-constitutive-C-sector]
+D8_eligible_candidate_set = [V4-A-temporalized-W]
+routed_candidate_set = [V4-B-independent-derived-carrier, V4-C-constitutive-C-sector]
+complete_reduced_transition_count = 1
+complete_normative_transition_count = 0
+closed_write_read_loop_count = 1
+closed_retained_mobility_recurrence_count = 1
+constitutively_load_bearing_explicit_Read_Back_subloop_count = 1
+empirically_attributed_explicit_Read_Back_loop_count = 0
+closed_structural_cultivation_loop_count = 0
+candidate_rejected_count = 0
+control_contract_rows = 70
+D7_pressure_audit_rows = 72
+D7_adversarial_audit_rows = 96
+predecessor_debt_disposition_rows = 25
+immediate_predecessor_superseded_or_resolved_rows = 23
+immediate_predecessor_independently_carried_rows = 2
+immediate_predecessor_independently_carried_pre_D10_blockers = 0
+transitive_predecessor_debt_disposition_rows = 20
+transitive_predecessor_must_close_before_D10_rows = 16
+open_debt_rows = 16
+architecture_selected = false
+claim_ceiling = GRC9V4-CD-D7-bounded-complete-A-fixed-stratum-kinetic-recurrence-with-direct-retained-mobility-and-conditionally-load-bearing-explicit-Read-Back-subloop-with-B-C-and-structural-geometry-routed-without-physical-nonabsorbability-stability-runtime-evidence-normative-architecture-or-selection
+D8_authorized = false
+D8_authorization_status = deferred_pending_separate_human_direction
+D8_authorized_after_human_acceptance = false
+D8_authorization_requires_separate_human_direction = true
+specification_authorized = false
+runtime_implementation_authorized = false
+```
+
+D7 closes one bounded Candidate A kinetic recurrence. The exact graph
+baseline, D5/D6 current closure, incidence continuity, and positive delayed
+`W_A` write form a complete fixed-stratum reduced transition. The global
+`H_4` map remains open, so structural cultivation and a complete normative V4
+transition remain unsupported. The direct retained-mobility recurrence is
+separate from the explicit Read-Back subloop, which is constitutively
+load-bearing only on its declared nondegenerate domain; physical
+nonabsorbability is still open. B and C are routed, not rejected. D7 is
+accepted bounded, while D8 remains blocked pending a separate human direction.
+
+Stored-edge coordinate reorientation leaves scalar A surfaces invariant, and
+the explicit `J_C squared` contribution is sign-even. Full physical current
+history reversal can nevertheless change `C[k+1]`, `W_drv_A`, and
+`W_A[k+1]`; D7 therefore does not claim complete writer-history invariance.
+Reduced temporal stability belongs to D8, while normative structural
+stability remains blocked on `H_4`. The 16 current debts participate in a
+three-way D10 union with unresolved immediate and transitive predecessors;
+pre-D10 technical results must exist before D10 consumes them.
+
+## D4-v2-D7G. Candidate Completion And Structural-Closure Successor Tranche
+
+Status: active; D4-v2 through D7-v2 accepted bounded, with D7G authorized and
+not started. Accepted D4-D7 records remain immutable until a
+successor is accepted.
+
+Common successor rules:
+
+- [x] Bind every v2 record to the exact accepted predecessor digest and name
+      the changed decision scope.
+- [x] Enforce the default lineage table when no earlier gate reopens: D4-v2
+      follows accepted D7-v1 and supersedes D4-v1; D5-v2 through D7-v2 form
+      one chronological chain and supersede their matching v1 gates; D7G
+      extends D7-v2 and supersedes nothing.
+- [x] When reopening changes an earlier accepted gate, give the resumed
+      successor a new record/version identity and bind it to the latest
+      accepted record in the fully propagated serial chain.
+- [x] Bind the tranche to current core theory, the constitutive design basis,
+      and accepted D0-D7 records; keep B1/B2 and GRC9V3 as historical evidence
+      and compatibility boundaries rather than V4 constitutive authority.
+- [x] Carry every unaffected accepted contract and unresolved debt forward.
+- [x] Derive successor debt from the complete unresolved union of the
+      chronological predecessor; use superseded-gate debt only as a
+      provenance/disposition source.
+- [x] Keep Candidate B and Candidate C completion rows separately attributable
+      through D7-v2, then evaluate global `H_4` in D7G over the completed
+      candidate-local set.
+- [x] Apply the same hard vetoes, provenance rules, and claim ceiling to all
+      candidates.
+- [x] Block A's current completeness, code proximity, or lower implementation
+      cost from candidate ranking.
+- [x] Reopen D1 only if retained ontology changes, D2 only if resource/write
+      admission changes, and D3 only if structural tangent authority changes.
+- [x] Permit `routed_not_rejected` only as an intermediate D4-v2-D6-v2 status.
+- [x] Require every lane to reach a terminal D7-v2 completion/closure status.
+- [x] Treat `reopen_at_named_earlier_gate` as pausing control flow, not a
+      terminal scientific disposition or admission to the next gate.
+- [x] Preserve a named future route for any current-tranche closure without
+      relabeling it as global impossibility.
+- [x] Set `rejected_all_candidates` plus
+      `current_candidate_set_exhausted = true` when candidate-local terminal
+      dispositions leave zero survivors, while preserving individual reasons.
+- [x] Permit `blocked_missing_theory` instead when one common theory gap blocks
+      all otherwise admitted paths; neither status rejects GRC9V4.
+
+### D4-v2. Candidate Geometry And Carrier Completion
+
+Status: accepted bounded.
+
+- [x] Carry accepted A D4 ownership unchanged and defer common
+      `K_4 -> H_4 -> h_4` closure until D7G.
+- [x] Pressure the admissible `T_B` representation family, then type the
+      selected bounded graph-local symmetric bilinear carrier across graph
+      object, rank, orientation, units, covariance, state authority, resource
+      status, serialization role, and capacity/release boundary.
+- [x] Preserve bounded graph-local general endomorphism / symmetric-plus-skew B
+      as a broader admissible family while selecting a bounded symmetric family
+      whose diagonal unoriented-edge scalar is the minimal admitted subprofile.
+- [x] Type `T_B` with `H_1,pre` bilinear-form units; reserve dimensionless status
+      for `Theta_B = H_1,pre^-1/2 T_B H_1,pre^-1/2` and
+      `H_1,pre^-1 T_B`.
+- [x] Freeze `L_B` as the radius-one line-graph mask, covariant under graph
+      relabeling/reorientation and reconstructed independently of array order.
+- [x] Restrict B's signed generalized spectrum to the direction of its `K_4`
+      bilinear contribution; do not infer continuation hardening/softening
+      before global `H_4` and D8.
+- [x] Require finite preregistered nonzero `kappa_B`; block post-hoc or
+      effectively unbounded conversion from defeating bounded `Theta_B`.
+- [x] Require D7G to recompute `Theta_B` and readmit the B capacity domain after
+      any accepted `h_4/H_1` change; forbid silent clipping or renormalization.
+- [x] Derive or formally close exact `G_B(C,T_B,...) -> S_4^B`.
+- [x] Derive or formally close `T_C,C,selector context -> H_M -> h_M`.
+- [x] Freeze the source-supported C selector and select a bounded positive
+      graph-Hodge congruence as a bounded V4 constitutive specialization without
+      claiming uniqueness or core-theorem status.
+- [x] Instantiate the C selector through the `H_0,pre`-weighted graph scalar
+      Laplacian, preregistered `Lambda_C`, self-adjoint closed/no-flux boundary,
+      strict cutoff gap, and graph-isomorphism covariance.
+- [x] Type `Lambda_C = bar_Lambda_C sigma_L,pre` with the scalar-Laplacian
+      units/gauge, and require D7G selector recomputation/readmission after any
+      accepted pre-read metric-scale change.
+- [x] Freeze `sigma_L,pre` as a profile-owned dimensional reference declared
+      before evaluation, not an adaptive function of observed eigenvalues,
+      outcomes, or desired mode membership.
+- [x] Pressure the C inner-map family across unsaturated normalized amplitude,
+      smooth bounded odd maps, the selected `tanh` representative,
+      gradient/even lifts, and symmetric endpoint averaging; block uniqueness
+      or core-theory promotion of the selected formulas.
+- [x] Isolate C retained-geometry load bearing through a same-state
+      `kappa_M,C` on/off intervention with matched `C`, selector, retained state,
+      topology, boundary, and pre-read geometry.
+- [x] Freeze selector timing as pre-read staged and fixed-stratum rank/boundary
+      admissibility without claiming a same-beat fixed point.
+- [x] Freeze the common future-`H_4` input interface
+      `S_4^a -> iota_a -> K_4^a` without deriving `H_4`.
+- [x] Freeze common `K_4` as an assembled finite-radius graph-local symmetric
+      bilinear domain; block arbitrary dense global `j j^T` as a local tensor
+      discretization.
+- [x] Treat local quadrature/partition weights as part of `K_4,s`, defer exact
+      assembly normalization to D7G, and block unrecorded overlap multiplicity.
+- [x] Record each payload/adapter domain, codomain, authority, units, gauge,
+      covariance, orientation, boundary/topology behavior, information loss,
+      and identity/derived/absent status.
+- [x] Require B to expose `K_4^B` or typed `iota_B`; keep direct `h_B`
+      candidate-local and block it from rival physical-`h_4` ownership.
+- [x] Keep C `h_M` candidate-local and reject a direct
+      `T_C -> diag(r_C) -> K_4` adapter as a second unadmitted mechanism and a
+      baseline-geometry attribution confound.
+- [x] Defer C's common structural crossing to the source-backed
+      `T_C -> H_M -> R_C -> j_C^(M,flat) -> (I_4M^pre)^-1 ->
+      j_C^(phys,flat) -> graph-local (j_C^phys tensor j_C^phys) -> K_4` route,
+      pending D5-v2, D6-v2, and D7G; block raw `h_M` arrays in common `K_4`.
+- [x] Keep C switches distinct: `kappa_M,C = 0` removes retained geometry;
+      `chi_C = 0` removes explicit Read-Back current but preserves
+      `h_M -> J_0,C`; `zeta_C = 0` permits diagnostic current while blocking
+      its total-current and `K_4` effect and preserving `h_M -> J_0,C`.
+- [x] Treat `T_C = 0` only as an algebraic neutral unless a matched admissible
+      runtime reference exists, and call `log(D_C^2)` a local scaling generator
+      rather than a basis-free global `H_4` relative logarithm.
+- [x] Require at least one matched lawful retained-state intervention for which
+      `iota_a` preserves a candidate-specific distinction as changed `K_4^a`;
+      reject a structurally inert adapter as crossing evidence for candidates
+      claiming a direct retained structural crossing; assign no such direct
+      crossing credit to C.
+- [x] Freeze C provisional `I_4M^pre : Omega^1(h_4^pre) -> Omega^1(h_M)` with
+      source/target geometry, orientation, units, covariance,
+      invertibility/information loss, stage validity, and fixed-profile scope.
+- [x] Mark `I_4M^pre` candidate-local typing only and defer final physical
+      `h_4 <-> h_M` compatibility to D7G.
+- [x] Freeze `Omega^1(h_4^pre)` as the one-form/current geometry consumed by
+      B's future `R_B`, including its relation to authoritative physical
+      current and the `H_1,pre^-1 T_B` conditioning endomorphism.
+- [x] Block B or C from borrowing A's ontology or each other's equations.
+- [x] Record that A's causal architecture is unchanged while vertex-star local
+      assembly of its abstract `j_A tensor j_A` contribution is a new D4-v2
+      common-interface discretization result, not inherited D7 content.
+- [x] Bind all 2 immediate and 20 transitive live D7 debts by exact IDs,
+      statuses, pre-D10 blocker flags, source SHA, and accepted D7 digest;
+      reject count-only carry-forward.
+- [x] Block symbols, interface requirements, and convenient numerical closures
+      from counting as constitutive derivations.
+- [x] Emit one typed disposition for the B and C lanes.
+- [x] Produce `decisions/D4v2CandidateGeometryAndCarrierCompletion.json`.
+- [x] Produce `decisions/D4v2CandidateGeometryAndCarrierCompletion.md`.
+- [x] Obtain human acceptance before D5-v2.
+
+#### D4-v2 result
+
+```text
+record_id = GRC9V4-CD-D4V2-v1
+status = accepted_bounded
+decision_digest = 5862cbab0d36e1137dc647d7d21d48f77666a77bf9e7b178c830d323e4ed6309
+predecessor = accepted_D7_v1
+supersedes_scope = accepted_D4_v1_B_C_completion_and_common_interface_only
+
+B = admitted_bounded_candidate_geometry_and_carrier_completion
+B_type = bounded_graph_local_symmetric_bilinear_form_on_Omega1_G
+B_units = H_1_pre_bilinear_form_units
+B_dimensionless_object = Theta_B
+B_locality = radius_one_line_graph_mask
+B_minimal_subprofile = diagonal_unoriented_edge_scalar
+B_signed_spectrum_scope = K4_bilinear_contribution_direction_only
+B_capacity_revalidation = required_at_D7G_after_h4_or_H1_change
+B_kappa_B = finite_preregistered_nonzero_before_candidate_evaluation
+B_G_B_and_adapter = admitted
+C = admitted_bounded_candidate_retained_geometry_completion
+C_selector = instantiated_weighted_graph_spectral_projector_with_preregistered_Lambda_C
+C_cutoff = bar_Lambda_C_times_sigma_L_pre_with_units_and_gauge
+C_cutoff_scale_authority = fixed_profile_owned_dimensional_reference_not_outcome_adaptive
+C_inner_map = pressured_bounded_V4_choice_not_theory_unique
+C_H_M = admitted_positive_graph_Hodge_specialization
+C_I_4M_pre = instantiated_not_assumed_isometric
+C_read_gain = kappa_M_C
+C_H_M_load_bearing_scope = same_state_kappa_M_C_on_off_with_nonzero_r_C
+C_direct_T_C_to_K4_adapter = not_admitted
+C_future_common_K4_route = retained_mediated_j_C_M_inverse_I4M_to_j_C_phys_tensor_local_assembly
+C_switches = kappa_M_geometry_off_chi_read_off_zeta_gain_off_distinct
+C_read_off_and_gain_off = preserve_H_M_conditioned_J0_C
+
+common_K_4 = assembled_finite_radius_graph_local_symmetric_bilinear_forms
+common_K_4_normalization = D7G_debt_no_unrecorded_overlap_multiplicity
+control_row_count = 46
+
+candidate_A_causal_architecture_changed = false
+candidate_A_common_interface_discretization_new = true
+candidate_rejected_count = 0
+candidate_ranking_performed = false
+global_H_4_closed = false
+D5-v2_eligible_candidate_set = [V4-B-independent-derived-carrier, V4-C-constitutive-C-sector]
+D5-v2_authorized = true
+src_changed = false
+```
+
+### D5-v2. Candidate-Specific Directional Read-Back Completion
+
+Status: accepted bounded.
+
+- [x] Propagate only lanes with admitted D4-v2 causal objects.
+- [x] Preserve unaffected accepted D5 contracts without ornamental rewrites.
+- [x] For B, derive typed one-cochain `R_B`, domain/codomain, orientation and
+      basis covariance, passive/read-off behavior, resource boundary, and
+      lawful retained-`T_B` dependence; consume the D4-v2-frozen current-space
+      identification explicitly.
+- [x] If B gains a `j_B tensor j_B -> K_4` route, separate it from direct
+      `T_B -> K_4` with read-off, gain-off, path-overlap, and double-count
+      controls; do not use either route as evidence for the other.
+- [x] For C, test whether `R_C` is now genuinely retained-conditioned through
+      `T_C -> H_M -> h_M`, rather than only externally parameterized by `h_M`.
+- [x] Consume `I_4M^pre` explicitly in the C operator typing without promoting
+      it to final physical/global compatibility.
+- [x] Map C's `h_M`-represented Read-Back current through
+      `(I_4M^pre)^-1` before any common physical-one-form `K_4` tensor
+      assembly; equal array dimensions do not establish representation identity.
+- [x] Require lawful on-manifold selected-content and matched-complement
+      counterfactuals for C.
+- [x] Carry accepted A D5 unchanged unless a named earlier reopening changes
+      its causal object.
+- [x] Emit exact operator or localized closure dispositions per lane.
+- [x] Produce `decisions/D5v2DirectionalReadBackCompletion.json`.
+- [x] Produce `decisions/D5v2DirectionalReadBackCompletion.md`.
+- [x] Obtain human acceptance before D6-v2.
+
+#### D5-v2 result
+
+```text
+record_id = GRC9V4-CD-D5V2-v1
+status = accepted_bounded
+decision_digest = 212c7db173fbe286816965070a4beebd1e5ba8e39ccc3ffb73bbecde8410cf1c
+predecessor = accepted_D4-v2
+supersedes_scope = accepted_D5-v1_B_C_and_common_comparison_only
+
+A = carried_unchanged_accepted_D5_operator_family
+A_changed_causal_object = false
+
+B = admitted_bounded_candidate_directional_Read_Back_completion
+B_operator = R_B = chi_B H_1_pre^-1 T_B
+B_derivation = canonical_Riesz_endomorphism_of_admitted_bilinear_carrier
+B_self_adjoint_space = H_1_pre_inner_product
+B_bound = norm_H1(A_B) = norm_2(Theta_B) <= t_B_max
+B_positivity_required = false
+B_retained_mediation = closed_at_operator_level
+B_direct_path = T_B -> kappa_B T_B -> K_4
+B_current_path = T_B -> R_B -> j_B -> future_local_current_tensor_K_4
+B_path_double_count_allowed = false
+
+C = admitted_bounded_candidate_retained_mediated_directional_Read_Back_completion
+C_retained_response = R_C_M = chi_C (I + tau_C Delta_1_M)^-1
+C_physical_response = inverse_I_4M_pre R_C_M I_4M_pre
+C_selected_content_witness_delta_j_l2 = 0.00603311694477177
+C_matched_complement_delta_j_l2 = 0.0
+C_kappa_zero_delta_j_l2 = 0.0
+C_tau_zero_delta_j_l2 = floating_roundoff_only
+C_retained_mediation = closed_at_operator_level_on_fixed_rank_smooth_stratum
+C_physical_contraction_claim = false_pending_D6v2_nonisometric_norm_audit
+C_direct_T_C_to_K4 = not_admitted
+
+candidate_set_after_D5-v2 = [A, B, C]
+D6-v2_eligible_candidate_set = [A, B, C]
+candidate_rejected_count = 0
+candidate_ranking_performed = false
+physical_channel_identification_count = 0
+control_row_count = 60
+current_typed_debt_count = 19
+inherited_immediate_debt_row_count = 2
+inherited_transitive_debt_row_count = 20
+complete_live_debt_union_row_count = 41
+C_mediation_gate = existential_compatible_probe_not_universal_probe_response
+D6-v2_authorized = true
+src_changed = false
+```
+
+### D6-v2. Updated Total-Current Closure
+
+Status: accepted bounded.
+
+- [x] Rebuild the complete within-solve dependency graph and effective current
+      block for every changed lane.
+- [x] Audit new same-beat retained-geometry/current dependencies and preserve or
+      revise lagged/staged semantics explicitly.
+- [x] Recheck regularity, support, singular boundary, orientation, conservation,
+      branch, and failure-atomicity contracts.
+- [x] Reuse accepted D6 only with an explicit unchanged-causal-object proof.
+- [x] For B, classify exact regularity from `1 - zeta_B lambda_i(A_B)` and
+      record `|zeta_B| t_B,max < 1` as a sufficient uniform region.
+- [x] Scope `T_B -> -T_B` correctly: retain sign-odd direct/fixed-probe
+      response and fixed-probe tensor evenness, while recording the mixed
+      parity of the active solved feedback and its future tensor; state that
+      the displayed active-loop formulas use `chi_B = 1`.
+- [x] Distinguish radius-one locality of `A_B` from component-wide influence
+      through its inverse; claim component confinement, not one-hop support of
+      solved `J_C,B`.
+- [x] For C, prove exact invertibility through similarity of
+      `I - zeta_C Rbar_C` and `I - zeta_C R_C,M`.
+- [x] Report C exact branch regularity separately from physical conditioning
+      amplified by `cond(I_4M^pre)`.
+- [x] Keep retained-conditioned `J_0`, explicit `j`, and future current-tensor
+      geometry stages factorized without same-beat geometry re-entry.
+- [x] Block endpoint compatibility from standing in for crossing/operator
+      equivalence.
+- [x] Prevent any lane without a regular total-current closure from entering
+      D7-v2 as complete.
+- [x] Produce `decisions/D6v2UpdatedTotalCurrentClosure.json`.
+- [x] Produce `decisions/D6v2UpdatedTotalCurrentClosure.md`.
+- [x] Obtain human acceptance before D7-v2.
+
+#### D6-v2 result
+
+```text
+record_id = GRC9V4-CD-D6V2-v1
+status = accepted_bounded
+decision_digest = ad02150010c4759d1c0ac4ba079c81cff99bad1f35b715f52b980aaf404eac0a
+predecessor = accepted_D5-v2
+supersedes = accepted_D6-v1
+
+A = carried_unchanged_bounded_regular_algebraic_slaving
+A_source_row_canonical_sha256 = 82bea78821e721c52f9d54addb21a78dcff823e82d2b9a3cf695479c4825fa6f
+A_changed_causal_object = false
+
+B = admitted_bounded_regular_algebraic_slaving
+B_closure = I - zeta_B chi_B H_1_pre^-1 T_B
+B_exact_margin = min_i |1 - zeta_B chi_B lambda_i|
+B_uniform_sufficient_region = |zeta_B| t_B_max < 1
+B_singular_locus = zeta_B chi_B = 1 / lambda_i
+B_fixed_probe_sign_parity = odd
+B_active_closed_loop_parity = mixed_odd_and_even
+B_active_tensor_sign_invariance = not_assumed
+
+C = admitted_bounded_retained_mediated_regular_algebraic_slaving
+C_similarity = Lbar_C = inverse_I_4M_pre L_C_M I_4M_pre
+C_exact_invertibility = similarity_invariant
+C_robust_physical_margin = (1 - zeta_bar_C) / kappa_bar_C
+C_harmonic_singular_locus = zeta_C chi_C = 1
+C_retained_contraction_as_physical_contraction = false
+
+candidate_set_after_D6-v2 = [A, B, C]
+D7-v2_eligible_candidate_set = [A, B, C]
+current_temporalized_candidate_count = 0
+candidate_rejected_count = 0
+candidate_ranking_performed = false
+
+active_control_count = 107
+active_pressure_row_count = 130
+current_typed_debt_count = 22
+D5-v2_predecessor_current_debt_row_count = 19
+unchanged_predecessor_debt_rows_exactly_carried = 15
+superseded_or_narrowed_predecessor_debt_rows = 4
+dropped_predecessor_debt_rows = 0
+inherited_live_debt_row_count = 22
+complete_live_debt_union_row_count = 44
+
+D7-v2_authorized = true
+human_acceptance = accepted_bounded_2026-08-24
+src_changed = false
+```
+
+### D7-v2. Candidate Transition Completion And Comparative Admission
+
+Status: accepted bounded.
+
+- [x] Preserve A's accepted kinetic recurrence and explicit open `H_4` boundary.
+- [x] Write B's complete `T_B -> G_B/h_B -> R_B -> J_C -> consequence -> U_B
+      -> T_B[k+1]` transition or close B for this tranche.
+- [x] Write C's complete `T_C -> H_M/h_M -> R_C -> J_C -> C/selector ->
+      T_C[k+1]` transition or close C for this tranche.
+- [x] Require each completed candidate-local transition, conditional on its
+      admitted pre-read geometry, to be Markov-closed, stage ordered,
+      atomic, resource-accounted, and equipped with candidate-specific controls.
+- [x] Realize common control roles through lawful literal interventions,
+      preregistered on-manifold matched counterfactuals, or explicitly labelled
+      algebraic probes; never manufacture an off-manifold intervention for
+      superficial control symmetry.
+- [x] Produce one candidate-local terminal A/B/C disposition.
+- [x] Allow only these candidate terminal dispositions:
+      `D7G_eligible_complete_candidate_transition`,
+      `current_tranche_closed_missing_theory`,
+      `current_tranche_closed_missing_constitutive_derivation`,
+      or `current_tranche_rejected_target_incompatibility`.
+- [x] Record `reopen_at_named_earlier_gate` only as paused control flow and
+      resume D7-v2 after the named successor propagates forward.
+- [x] Block `routed_not_rejected` as a D7-v2 terminal disposition.
+- [x] Admit complete candidate-local transitions conditional on admitted
+      pre-read geometry to D7G, not directly to D8.
+- [x] Route zero survivors to bounded D10 closeout or a named theory successor.
+- [x] Produce `decisions/D7v2CandidateTransitionComparativeAdmission.json`.
+- [x] Produce `decisions/D7v2CandidateTransitionComparativeAdmission.md`.
+- [x] Obtain human acceptance before D7G.
+
+Implementation result:
+
+```text
+record_id = GRC9V4-CD-D7V2-v1
+status = accepted_bounded
+decision_digest = f0d355c3e769b43fe48f0eb8ab6e986ce80838dd55e884ad33c66e988b65106e
+supersedes = GRC9V4-CD-D7-v1
+supersession_scope = comparative_A_B_C_partition_with_A_transition_unchanged
+
+candidate_A_terminal = D7G_eligible_complete_candidate_transition
+candidate_A_reuse = exact_accepted_D7_row_bound_by_immutable_source_reference_and_canonical_hash
+
+candidate_B_terminal = current_tranche_closed_missing_constitutive_derivation
+candidate_B_ontology_rejected = false
+candidate_B_missing_arrow = exact_source_backed_U_B_to_T_B_k_plus_1
+candidate_B_reopen = named_theory_or_constitutive_successor
+candidate_B_interpretation = complete_conditional_constitutive_read_current_mechanism_not_complete_formative_mechanism
+candidate_B_reactivated_debt_count_after_valid_U_B = 4
+
+candidate_C_terminal = D7G_eligible_complete_candidate_transition
+candidate_C_transition_scope = fixed_topology_fixed_boundary_fixed_rank_strict_gap_stratum
+candidate_C_authoritative_write = C_continuity_once
+candidate_C_independent_T_C_write = false
+candidate_C_projected_sector_write_status = closed_formal_recurrence
+candidate_C_retained_conditioned_mediation_status = established_at_constitutive_operator_level
+candidate_C_effective_retained_write_status = open_D8
+candidate_C_dynamic_retention_status = open_D8
+candidate_C_temporal_persistence_class = unassigned
+
+complete_candidate_local_transition_count = 2
+terminally_closed_candidate_count = 1
+candidate_rejected_count = 0
+candidate_ranking_performed = false
+
+control_contract_row_count = 42
+pressure_audit_row_count = 49
+D6-v2_current_debts_dispositioned = 22_of_22
+exact_inherited_debt_rows_bound = 22_of_22
+current_typed_debt_count = 18
+current_live_plus_exact_inherited_bound_count = 40
+terminally_archived_B_predecessor_debt_count = 4
+complete_lineage_evidence_identity_count = 44
+
+D7G_ready_after_human_acceptance = true
+D7G_authorized = true
+D8_authorized = false
+specification_authorized = false
+implementation_authorized = false
+human_acceptance = accepted_bounded_2026-08-24
+src_changed = false
+```
+
+### D7G. Global Metric And Structural-Cultivation Closure
+
+Status: accepted bounded. D7G-v1 froze a typed `H_profile`
+interface, conditionally admitted one bounded affine profile family, and
+identified the D7G-v2 reference-embedding, geometry-parametric, quantitative,
+and Markov-handoff closure requirements for A and C.
+
+- [x] Begin only after every A/B/C lane has a terminal D7-v2 disposition.
+- [x] Audit implemented GRC9V3 source and distinguish its diagnostic hybrid
+      tensor from its operative scalar conductance/potential/current path.
+- [x] Freeze the graph-substrate
+      `H_profile : (Delta K_4, h_4,ref, context[K_4,base]) -> h_4+`
+      interface without claiming a universal core-theory geometry law.
+- [x] Admit one nondegenerate affine profile family under that interface,
+      conditional on an exact `E_ref`; do not call it instantiated yet.
+- [x] Separate admissible geometry states `H_adm` from admissible profile maps
+      `P_adm` and separate candidate regularity from `D_K H_profile`
+      sensitivity.
+- [x] Keep exact affine reference neutrality separate from complete disabled
+      V4-to-V3 transition reduction.
+- [x] Freeze `Delta K_4` as the primary interface input and require explicit
+      profile-context declaration of `K_4,base`.
+- [x] Record domain, codomain, state/derived authority, measure, units, gauge,
+      covariance, boundary/topology behavior, stage order, and fixed-point or
+      lagged semantics.
+- [x] Relate each surviving candidate's admitted `K_4^a` to the common `H_4`
+      map without borrowing another candidate's retained ontology.
+- [x] For B, distinguish graph-local tensor assembly from causal support of
+      `j_B`, which may already depend on its connected live-edge component.
+- [x] Keep C's physical `h_4 <-> h_M` compatibility open until this gate even
+      if D4-v2 closed its retained `h_M` construction.
+- [x] Reject finality of C's witness-only `I_4M^pre`; require D7G-v2 to define
+      `I_4M(h)` on the admitted geometry class or emit a bounded
+      profile-specific/terminal receipt.
+- [x] Require an explicit theory/constitutive basis for any candidate-indexed
+      `H_4` family; block candidate-preservation convenience as justification.
+- [x] Audit whether resulting `h_4` can re-enter a later candidate transition
+      without same-beat circularity, hidden state, duplicate authority, or
+      broken resource/accounting semantics; fail closed to the earliest
+      successor when it cannot yet do so.
+- [x] Emit `H4_upstream_effect` as `no_upstream_causal_change`,
+      `requires_geometry_parametric_closure_audit`, a required D4/D5/D6/D7
+      successor for a genuine authority/staging change, or
+      `candidate_incompatible` for every survivor.
+- [x] Reinterpret D4-D7 as candidate-local transition results conditional on an
+      admitted pre-read geometry; do not call a fixed-geometry witness
+      geometry-parametric closure.
+- [x] Require D7G-v2 parametric or bounded profile-specific receipts; reopen an
+      earlier gate only if a profile leaves the admitted class, changes
+      state/write authority or same-beat staging, or invalidates the declared
+      operator family.
+- [x] Block a globally typed `H_4` from closing a candidate crossing when its
+      adapter or global map erases every candidate-specific retained
+      distinction.
+- [x] Emit the D7G-v1 global structural disposition and a control-flow
+      disposition for each survivor.
+- [x] Allow D8 admission only as `D8_comparable_complete_transition`; otherwise
+      close the lane with a localized scientific reason.
+- [x] Treat named earlier reopening as control flow, not terminal closure or D8
+      admission.
+- [x] Record that one D8 survivor is not automatic architecture selection.
+- [x] Preserve the bounded D10/theory-successor route for zero D8 survivors or
+      a hard global structural blocker; do not invoke it while the required
+      geometry-parametric closure audit remains live.
+- [x] Produce `decisions/D7GGlobalMetricAndStructuralCultivationClosure.json`.
+- [x] Produce `decisions/D7GGlobalMetricAndStructuralCultivationClosure.md`.
+- [x] Obtain human acceptance before D7G-v2.
+
+#### D7G-v1 Result
+
+```text
+record_id = GRC9V4-CD-D7G-v1
+status = accepted_bounded
+predecessor_decision_digest = f0d355c3e769b43fe48f0eb8ab6e986ce80838dd55e884ad33c66e988b65106e
+decision_record_digest = b173c03f7dbe55aa53b22960da2be55e42e86dda769cac1356e36499f658d071
+pressure_audit_rows = 63
+control_rows = 37
+current_typed_debt_rows = 26
+
+GRC9V3_runtime_implemented = true
+GRC9V3_hybrid_tensor_transport_consumer_present = false
+GRC9V3_operational_transport = scalar_base_conductance_to_potential_to_flux
+GRC9V3_K_to_gK_crossing_closed = false
+
+admitted_H4_reference_profile_family = reference_relative_affine_graph_Hodge_update
+admitted_H4_reference_profile_status = bounded_revision_specific_family_conditional_on_E_ref
+reference_embedding_status = pending_D7G-v2_not_defined_by_current_V3_source
+admitted_H4_reference_profile_unique_core_theory_formula = false
+admitted_H4_reference_profile_canonical_V4_completion = false
+admitted_H4_reference_profile_continuum_metric_claim = false
+common_vertex_star_diagonal_overlap_normalization = closed_for_admitted_partition_choice
+common_vertex_star_pair_normalization = bounded_nonunique_profile_choice
+H4_interface = H_profile(Delta_K_4,h_4_ref,context_with_K_4_base)->h_4_plus
+H4_interface_status = frozen_substrate_contract_not_universal_profile
+reference_embedding_requirement = E_ref(W_V3)->H_1_ref
+reference_neutrality = passed_conditional_on_supplied_h_4_ref
+complete_disabled_transition_reduction = pending_D7G-v2_and_full_factorization
+
+A_delta_T_to_delta_K4_to_delta_h4 = supported_constitutive
+C_delta_T_to_delta_K4_to_delta_h4 = supported_constitutive
+delta_h4_to_later_transition_consequence = pending_geometry_parametric_closure
+A_H4_upstream_effect = requires_geometry_parametric_closure_audit
+C_H4_upstream_effect = requires_geometry_parametric_closure_audit
+C_I_4M_pre_final = false
+
+global_structural_disposition = H4_interface_frozen_affine_reference_profile_family_conditionally_admitted_D7Gv2_embedding_parametric_and_handoff_closure_required
+next_gate = D7G-v2_geometry_parametric_closure
+automatic_D4-v3_through_D7-v3_cycle = false
+D7G_complete = false
+D8_comparable_candidate_set = []
+D8_authorized = false
+architecture_selected = false
+specification_authorized = false
+implementation_authorized = false
+runtime_or_src_changed = false
+human_acceptance = accepted_bounded_2026-08-24
+```
+
+#### D7G-v2 Geometry-Parametric Closure And Finalization
+
+- [x] Declare `H_adm` as a class of admissible geometry states and `P_adm` as
+      a separate class of profile maps landing in `H_adm`.
+- [x] Define and admit exact `E_ref`, or close the conditional affine family
+      without instantiation.
+- [x] Test exact affine reference neutrality separately from complete disabled
+      V4-to-V3 transition reduction.
+- [x] Separate profile-invariant candidate conclusions, profile-map sensitivity
+      under `D_K H_profile` or a declared nonsmooth replacement, and
+      affine-family-specific conclusions.
+- [x] Freeze before evaluation quantitative uniform bounds for
+      `lambda_min(H_1)`, `lambda_max(H_1)`, C's selector gap, `cond(I_4M)`, and
+      the A/C D6 current-closure regularity margins.
+- [x] Preserve explicit `K_4` / `h_4` / `M_4` / `W_A` ownership and current
+      factorization; block geometry-as-mobility relabeling.
+- [x] For A, test whether the accepted D5 operator, D6 regularity argument, and
+      D7 writer/state law remain well typed and regular over `H_adm`.
+- [x] For C, define `P_M(h)`, `H_M(T_C,h)`, `I_4M(h)`, and `R_C(h_M)` on a
+      declared SPD subdomain with spectral-gap, conditioning, and regularity
+      bounds.
+- [x] Preserve lagged `J_C[k] -> j[k] -> K_4[k] -> h_4+[k]` only as the
+      selected D6/D7 explicit realization; reject its promotion into a general
+      V4 temporal requirement.
+- [x] Distinguish supplied pre-read `D_(h_pre) F_a` from generated-geometry
+      sensitivity through `Gamma_a` or an equivalent complete realization;
+      record the latter as undefined, not zero, when that map is absent.
+- [x] Freeze a non-exhaustive minimum pressure set covering coupled/implicit,
+      operator-split same-beat, persistent carrier, and reconstructed geometry;
+      reject cache-only history and four-family failure as V4 impossibility
+      without a separate completeness proof.
+- [x] Keep local assembly distinct from inverse, identification, solver, and
+      causal support.
+- [x] Emit a geometry-parametric equivalence receipt, bounded profile-specific
+      receipt, named earlier-gate reopening, selected-realization boundary, or
+      terminal disposition for A and C.
+- [x] Admit a candidate to full D8 continuation comparison only after its
+      `delta h_4` has a declared later transition consequence; permit bounded
+      D8-A branch-appropriate structural-target extraction when those arrows
+      remain explicitly separated.
+- [x] Run `D7G-v2-PREACCEPT-v1` in order; do not skip directly to candidate
+      mathematics or machine bookkeeping.
+- [x] Produce a load-bearing symbol/noun registry covering type, space,
+      units/gauge, owner, independent/derived status, evaluation stage,
+      serialization/reconstruction, runtime causal consumers, and separate
+      analysis consumers where applicable.
+- [x] Produce a quantifier ledger for every `all`, `any`, `uniform`, `bounded`,
+      `admissible`, `equivalent`, `regular`, `stable`, `preserves`, `same`,
+      `exact`, `later`, and `profile-invariant` claim.
+- [x] Label every conclusion as geometry-parametric over `H_adm` or
+      profile-specific for a named member of `P_adm`.
+- [x] Emit a beat-indexed causal/state dependency graph naming `Gamma_a` or an
+      equivalent complete realization, or record it undefined under the
+      selected lagged explicit contract without treating that result as zero
+      sensitivity or proof against a structural continuation consequence.
+- [x] For A, record the factorized geometry path, `q_A` domain, D6 denominator
+      margin, D7 authority preservation, and a matched
+      `delta h_4 -> delta F_A` direction or bounded/terminal receipt.
+- [x] For C, type every parametric map and record coercivity, selector-gap,
+      identification-condition, retained-response, and D6-margin bounds on the
+      actual claimed subdomain or issue a bounded/terminal receipt.
+- [x] Require per-candidate causal non-erasure through a named downstream
+      operator and matched control for full cultivation credit; route an
+      unconsumed nonzero geometry object only to D8-A structural-target
+      extraction.
+- [x] For each candidate seeking complete structural-cultivation credit, require one
+      admissible nondegenerate matched direction
+      `delta T_a -> delta K_4^a -> delta h_4 -> delta F_a,later`; fail closed
+      and route any candidate whose chain stops before the later consequence.
+- [x] Audit every formula for state/write/stage/current-authority mutation and
+      reopen the earliest affected gate when a parametric receipt is
+      insufficient.
+- [x] Run the claim-word audit only after the mathematical passes; do not turn
+      parametric closure into universal closure, later consequence into
+      stability, formal recurrence into retention, or survival into selection.
+- [x] Run digest, count, Markdown/JSON, supersession, archive/reactivation,
+      debt/control/receipt, and historical-symbol integrity checks last.
+- [x] Require every load-bearing statement to resolve by exact definition,
+      derivation/reproducible witness, bounded assumption/profile restriction,
+      or named debt outside the consumed claim ceiling.
+- [x] Do not optimize for admitting both A and C to D8; asymmetric receipt
+      classes are scientifically admissible.
+- [x] Emit the final D7G scientific disposition for each A/C survivor after all
+      D7G-v2 protocol passes complete.
+- [x] If no full-D8-comparable survivor remains, distinguish candidate-local
+      failure from a selected-realization gap; mark D8-A ready after acceptance
+      when structural consequence remains open rather than authorizing it
+      prematurely or forcing terminal closeout.
+- [x] Require D8-A to derive a branch-appropriate reduced, joint,
+      nonselfadjoint, or DAE continuation object before using `H_*`/`alpha`.
+- [x] Require D8-A to classify each structural target as realization-invariant,
+      accepted-lagged-branch-relative, accepted-lagged-branch work not yet
+      instantiated, or genuinely not finalizable before realization;
+      repeating the absent-`Gamma_a` diagnosis is not evidence.
+- [x] Prevent nonzero C internal-map derivatives from being promoted to
+      nonzero `D_(h_pre) J_C` or `D_(h_pre) F_C` without a complete chain
+      derivation or matched witness.
+- [x] Record D8-A as an analysis consumer of `h_4+`, never as its runtime causal
+      consumer.
+- [x] Require the realization successor to instantiate and pressure at least
+      one bounded complete realization; an `S_H` interface alone cannot close
+      it, and failure of the minimum family set requires broader search or
+      bounded unresolved closeout unless taxonomy completeness is proven.
+- [x] Separate realization contracts required before D8-B admission from later
+      declared verification surfaces: exact V3 reduction and full lifecycle
+      remain D9 debt, while stability classification remains D8-B work.
+- [x] Block circular admission rules that require D8-B or D9 results before a
+      realization can enter those gates.
+- [x] Apply equal acceptance criteria to A/C without requiring identical
+      temporal equations for their different retained ontologies.
+- [x] Require D8-B to compare matched realization families where meaningful or
+      treat each `(candidate, realization)` pair as an architecture and
+      separate realization effects from candidate effects.
+- [x] Split profile/stage audit completion from global structural-cultivation
+      completion in every machine-readable surface.
+- [x] Keep `D8_authorized = false` until D7G-v2 human acceptance.
+- [x] Recompute and verify the accepted D7G-v1 predecessor digest and file SHA
+      against the exact working-tree artifact.
+- [x] Do not write unfinished D7G-v2 work back into D7G-v1. Work discovered
+      only after D7G-v2 acceptance must become an explicit `D7G-post-v2`
+      tranche or a named earlier-gate reopening.
+- [x] Obtain human acceptance before D8-A.
+
+#### D7G-v2 Result
+
+```text
+record_id = GRC9V4-CD-D7G-v2
+status = accepted_bounded
+predecessor_decision_digest = b173c03f7dbe55aa53b22960da2be55e42e86dda769cac1356e36499f658d071
+decision_record_digest = c52912d83797ee294799709b3e770574043df37f80073b51eebfaf8b2fd27efb
+
+E_ref = admitted_revision_specific
+H_0_ref = diag(V3_positive_quadrature_weights)
+H_1_ref = diag(W_V3_inverse)
+runtime_geometric_length_as_exact_E_ref = false
+affine_profile = instantiated_bounded_revision_specific
+reference_neutrality = passed_exactly
+complete_disabled_V4_to_V3_reduction = not_established
+
+H_adm = bounded_positive_graph_Hodge_geometry_states
+P_adm = typed_profile_maps_landing_in_H_adm
+symbol_registry_rows = 18
+quantifier_ledger_rows = 13
+formal_preacceptance_passes = 12
+control_rows = 39
+
+A_parametric_receipt = bounded_candidate_local_transition_and_profile_receipt_selected_lagged_explicit_geometry_feedback_unresolved
+C_parametric_receipt = bounded_candidate_local_transition_and_profile_receipt_selected_lagged_explicit_geometry_feedback_unresolved
+A_complete_cultivation_chain = false
+C_complete_cultivation_chain = false
+D8-A_structural_target_candidate_set = [A, C]
+D8_full_continuation_comparable_candidate_set = []
+
+A_scientific_disposition = candidate_local_transition_valid_geometry_parametric_regularness_valid_selected_lagged_explicit_geometry_feedback_unresolved
+C_scientific_disposition = candidate_local_transition_valid_geometry_parametric_regularness_valid_selected_lagged_explicit_geometry_feedback_unresolved
+global_blocker = selected_lagged_explicit_realization_missing_geometry_feedback_completion
+named_successor = GRC9V4-GEOMETRY-TEMPORAL-REALIZATION-SUCCESSOR
+C_internal_D_h_pre = load_bearing_and_conditionally_nonzero_on_named_strict_gap_directions
+D_h_pre_J_C = nonzero_sensitivity_not_established
+D_h_pre_F_C = load_bearing_not_identically_excluded_nonzero_full_transition_sensitivity_unproved
+D_h_generated_F_A_C = undefined_absent_Gamma_or_equivalent_realization
+D7G_profile_stage_audit_complete = true
+D7G_global_structural_cultivation_complete = false
+
+predecessor_debt_disposition_rows = 26
+current_typed_debt_rows = 24
+exact_inherited_debt_rows_bound = 22
+archived_B_debt_rows = 4
+src_changed = false
+architecture_selected = false
+D8-A_ready_after_human_acceptance = true
+D8-A_authorized = true
+D8_authorized = true
+D8_authorized_scope = D8-A_branch_appropriate_scope_classified_structural_target_extraction_only
+D8_full_continuation_comparison_authorized = false
+specification_authorized = false
+implementation_authorized = false
+human_acceptance = accepted_bounded_2026-08-24
+```
+
+The result closes the current D7G profile/staging classification but not the
+structural-cultivation chain. The affine profile now has an exact V4 reference
+embedding and bounded parametric domains. A and C both produce nonzero
+postsolve geometry, but the selected lagged explicit realization defines no
+`Gamma_A` or `Gamma_C`. Generated-geometry sensitivity is therefore undefined,
+not zero. That realization-relative negative does not terminally close either
+candidate or prove a branch-appropriate structural continuation object
+insensitive. C's internal operator chain is load-bearing in supplied geometry,
+but nonzero full-transition sensitivity is unproved. D8-A scope-classified
+target extraction comes first; the successor must then instantiate a bounded
+complete realization while pressuring the four named families as a
+non-exhaustive minimum before any earlier gate is reopened.
+
+### D7G-post-v2 Graph-Hodge Type Correction (Accepted Bounded)
+
+- [x] Separate `H1_form`, `G_J`, and `M4` by edge-space type and causal role.
+- [x] Correct the V3 reference embedding to
+      `H1_form = diag(W)` and `G_J = diag(W^-1)`.
+- [x] Retag Candidate C as an explicit
+      flux/flat/response/sharp/flux composite.
+- [x] Freeze physical `j_flux` for continuity and lowered
+      `j_struct^flat tensor j_struct^flat` for structural `K4` assembly.
+- [x] Preserve candidate-specific `iota_a` structural adapters and payload
+      gains; introduce no generic `kappa_K`.
+- [x] Carry the same typing to a future B current-mediated path only after a
+      separately admitted `iota_B`, without reopening B here.
+- [x] Freeze the variable-metric tangent
+      `delta j_struct^flat = (delta G_J) j_flux + G_J delta j_flux` and the
+      accepted lagged-row reduction under `delta G_J,pre = 0`.
+- [x] Recompute the accepted identity-metric C witness within binary roundoff.
+- [x] Add a nonidentity energy-duality regression.
+- [x] Add a nonidentity rank-one tensor-separation regression.
+- [x] Preserve accepted historical bytes, digests, and candidate dispositions.
+- [x] Record five typed correction debts and fourteen fail-closed controls.
+- [x] Obtain human acceptance of the correction receipt jointly with D8-A.
+
+## D8. Continuation Realization And Analysis Contract
+
+Status: D8-A is accepted bounded and the named geometry-temporal-realization
+successor is authorized. Full D8-B continuation comparison remains blocked.
+
+- [x] Derive each candidate's branch-appropriate reduced, joint,
+      nonselfadjoint, or DAE continuation object before assigning `alpha`.
+- [x] Classify extracted structural directions as realization-invariant,
+      accepted-lagged-branch-relative, accepted-lagged-branch work not yet
+      instantiated, or genuinely not finalizable before realization.
+- [x] Apply only invariant targets across all successors; rederive lagged-branch
+      targets in D8-B when a realization changes the slaving relation.
+- [x] Keep `D_(h_pre) F_a` separate from generated-geometry sensitivity through
+      `Gamma_a`; record the latter undefined while no realization exists.
+- [x] For C, keep internal-map dependence, current sensitivity, and full-
+      transition sensitivity separate until a complete chain or matched witness
+      supports the stronger level.
+- [x] Keep D8-A analysis consumption distinct from runtime causal consumption.
+- [x] Do not count repetition of the absent-`Gamma_a` diagnosis as evidence.
+- [x] Feed scope-classified target directions into the non-exhaustive minimum
+      realization pressure set before full D8-B comparison.
+
+### D8-A Accepted-Bounded Result
+
+```text
+record = GRC9V4-CD-D8A-v1
+status = accepted_bounded
+human_acceptance = accepted_bounded_2026-08-24
+decision_digest = 5e3af8a6b8b327b3d98b5c5f6ac934ff528f048c3927a085c59194262afba021
+
+A_structural_object = conditional_C_given_W_A_reduced_form_on_D6v2_slaved_branch
+C_structural_object = C_only_exact_derived_sector_reduced_form_on_D6v2_slaved_branch
+one_common_Hessian_assumed = false
+
+graph_Hodge_type_correction = D7G-post-v2_H1_form_G_J_M4_separation
+H1_form_ref = diag(W_V3)
+G_J_ref = diag(W_V3^-1)
+M4_authority = causally_distinct_even_when_reference_arrays_coincide
+graph_Hodge_discretization_unique_or_normative = false
+C_physical_pipeline = flux_to_flat_to_Hodge_response_to_sharp_to_flux
+C_structural_rank_one_input = j_struct_flat_tensor_j_struct_flat_before_sharp
+A_structural_rank_one_input = G_J_pre_j_A_flux_tensor_G_J_pre_j_A_flux
+structural_gain_authority = candidate_specific_iota_a_no_common_kappa_K
+lagged_pullback_metric_stage = delta_G_J_pre_zero
+variable_metric_pullback_rule = retain_(delta_G_J)_j_flux_term
+C_identity_metric_witness_preserved_within_binary_roundoff = true
+nonidentity_energy_duality_regression_error = 0.0
+nonidentity_rank_one_tensor_regression_passed = true
+direct_field_metric_target = derived_exactly_under_typed_H1_form_contract
+delta_Q_field = kappa_C (d0 u)^T delta_H1_form (d0 v)
+delta_H1_form = kappa_H delta_K4
+H0_weighted_matrix_representative_includes_kappa_C = true
+target_orthogonality_metric = H0_weighted_candidate_structural_inner_product
+nonzero_delta_K4_sufficient_for_nonzero_constrained_target = false
+complete_geometry_constraint_Hessian_response = not_finalized
+
+target_rows = 10
+realization_invariant_targets = 4
+accepted_lagged_branch_targets = 2
+accepted_lagged_branch_not_instantiated_targets = 2
+not_finalizable_before_realization_targets = 2
+
+full_lagged_branch_Hessian = potentially_derivable_before_temporal_synthesis_not_instantiated
+lagged_alpha_spectrum = potentially_computable_before_temporal_synthesis_not_instantiated
+architecture_final_Hessian = rederive_if_successor_changes_slaving_or_typed_structural_Hodge_current_metric_dictionary
+generated_geometry_later_transition_and_gamma_mu = genuinely_temporal_realization_dependent
+
+alpha_spectrum_calculated = false
+temporal_generator_calculated = false
+stability_classified = false
+candidate_ranking_performed = false
+architecture_selected = false
+
+predecessor_debt_dispositions = 24
+correction_debt_dispositions = 5
+current_typed_debts = 28
+controls = 40
+runtime_or_src_changed = false
+
+joint_acceptance_of_Hodge_type_correction_required = true
+geometry_temporal_realization_successor_ready_if_accepted = true
+geometry_temporal_realization_successor_authorized = true
+D8-B_authorized = false
+specification_authorized = false
+implementation_authorized = false
+```
+
+- [x] Derive the direct graph-Hodge field target as a bilinear form and keep
+      its coordinate matrix representation subordinate.
+- [x] Correct the edge-space type conflation: freeze `H1_form` as the
+      structural one-form Hodge, `G_J` as the current/flux flat metric, and
+      `M4` as causally distinct transport mobility.
+- [x] Preserve accepted historical record bytes while issuing a separate
+      D7G-post-v2 correction receipt with exact source identities.
+- [x] Recompute Candidate C through the explicit
+      flux/flat/response/sharp/flux pipeline and preserve the identity-metric
+      witness only within its demonstrated scope.
+- [x] Add a nonidentity energy-duality regression and retain general
+      nonidentity C conditioning as pre-D10 debt.
+- [x] Route both candidate-generated lagged pullbacks through lowered
+      `delta j_struct^flat` before `delta K4`.
+- [x] Fail closed when physical `j_flux tensor j_flux` is substituted for the
+      structural one-form rank-one input.
+- [x] Fail closed when a generic `kappa_K` replaces accepted candidate-specific
+      `iota_a` structural scaling.
+- [x] Include `kappa_C` in the coordinate representative and bind target
+      orthogonality to the declared `H0`-weighted structural inner product.
+- [x] Classify the full lagged-branch Hessian and lagged `alpha` as potentially
+      derivable before temporal synthesis but not instantiated by D8-A.
+- [x] Reserve true temporal unavailability for generated-geometry runtime
+      influence and `gamma`/`mu` of the complete transition.
+- [x] Recompute the accepted D7G-v2 decision digest and file SHA-256 exactly.
+- [x] Require a projected target witness or explicit kernel result before a
+      nonzero complete structural target claim.
+- [x] Keep cultivation/context directions `s_a` distinct from continuation
+      test directions `u` and `v`.
+- [x] Give all 24 D7G-v2 debts one explicit disposition.
+- [x] Give all five D7G-post-v2 correction debts one explicit disposition.
+- [x] Preserve 28 typed current debts and 40 fail-closed controls.
+- [x] Obtain human acceptance of the D7G-post-v2 correction receipt.
+- [x] Obtain human acceptance of D8-A.
+
+### Geometry-Temporal Realization Successor: Coupled/Implicit (Awaiting Review)
+
+- [x] Keep the successor distinct from D8-A and D8-B.
+- [x] Bind D4, D5-v2, D6-v2, D7, D7-v2, D7G-v2, the Hodge correction, and
+      D8-A by exact decision digest and file SHA-256.
+- [x] Pressure A and C under the same coupled-family admission burden without
+      requiring identical equations.
+- [x] Freeze Candidate C's complete unknown as `(J_C,flux, h_C)`.
+- [x] Represent `h_C` by independent symmetric `H1_form` coordinates on the
+      fixed-stratum SPD chart and keep derived operators out of the root state.
+- [x] Verify the current and geometry residual dimensions form a square system.
+- [x] Freeze the complete C current and geometry residual equations.
+- [x] Separate C's intrinsic response `r_C^flat`, `chi_C`-gated causal read
+      `j_C^flat`, and physical `j_C,flux`.
+- [x] Freeze `Rhat_C,M = (I + tau_C Delta_1,M)^-1` as the ungated successor
+      resolvent and block historical D5-v2 internal-`chi_C` notation.
+- [x] Apply shared `zeta_C` exactly once to the current use and once outside
+      `iota_C` on the quadratic structural use; reject `zeta_C^2` insertion or
+      reliance on unstated adapter homogeneity.
+- [x] Preserve candidate-specific `iota_C`; introduce no common `kappa_K` and
+      do not hide `zeta_C` inside `iota_C`.
+- [x] Use `I_4M(T_C,h)` and retain the complete
+      `h -> P_M -> T_C -> H_M -> I_4M` derivative chain.
+- [x] Keep `J` and `h` as same-step algebraic variables rather than new
+      persistent state.
+- [x] Prove the corrected C physical current block is exactly similar to the
+      accepted retained D6-v2 block through `Q_C = I_4M G_J`.
+- [x] Keep exact C invertibility separate from robust physical conditioning;
+      carry `cond(Q_C)` and a new physical inverse bound as debt.
+- [x] Prove the C reference full block is triangular and invertible at
+      `kappa_H = 0`.
+- [x] Record the fixed-stratum implicit-function theorem and its local-only
+      claim boundary.
+- [x] Derive the complete `(J,h)` chain-rule block away from the reference.
+- [x] Record the result as a revision-distinct C successor to D6 staging rather
+      than a correction of accepted D6-v2.
+- [x] Preserve C's D7 committed-state authority while propagating the changed
+      joint solve stage into D8-B rederivation obligations.
+- [x] Retain `(delta G_J) J` and every active C selector, Hodge,
+      identification, response, flat/sharp, profile, and baseline derivative.
+- [x] Permit the current Schur complement only after the geometry pivot is
+      separately regular.
+- [x] Freeze `D_X Y_C = -B_full,C^-1 D_X F_C` as the architecture-local D8-B
+      linearization surface, subordinate to continuity and the C commit map.
+- [x] Distinguish exact `kappa_H = 0` reduction to D6-v2 C from complete V3
+      transition reduction, which remains D9 debt.
+- [x] Keep topology, support, and selector-rank crossing outside the local root
+      and carry full event lifecycle to D9.
+- [x] Freeze exact root-branch selection, domain failure, and atomic no-commit
+      behavior.
+- [x] Apply the D8-A projected structural visibility test to every regular
+      branch point and distinguish visible from projected-kernel subdomains.
+- [x] Keep nonzero `Delta K4` from substituting for the visibility test.
+- [x] Consume D4's geometry/mobility separation and D7's exact A baseline and
+      writer as direct source contracts.
+- [x] Freeze A's reference-relative geometry consumer
+      `Phi_A^CI = Phi_A^D7 + kappa_Ah [Delta_0(h)-Delta_0(h_ref)] C`.
+- [x] Freeze `[kappa_Ah] = [Phi_A]/([Delta_0][C])`, enabled value `+1.0` in
+      that unit basis, `kappa_Ah = 0` ablation, and no post-hoc D8-B tuning.
+- [x] Keep `W_A` as the sole transport mobility owner and preserve the D7
+      postsolve writer without direct `h -> W_A` authority.
+- [x] Verify exact A reference reduction at `h = h_ref`.
+- [x] Freeze the complete A joint root, reference triangular block, and local
+      IFT route on the smooth `G_W` floor-inactive chart.
+- [x] Retain A's complete
+      `h -> Delta_0 -> Phi -> J0 -> W_hat -> q -> j -> K4 -> h` chain.
+- [x] Recompute `W_hat_A(h) = G_W(C,J0_A^CI(h))` inside every residual
+      evaluation after `J0_A^CI(h)` and before `q_A`.
+- [x] Place `zeta_A` outside `iota_A(A_star(j_A^flat))` without assuming
+      adapter homogeneity.
+- [x] Classify the A profile as a minimal revision-specific completion rather
+      than a unique core-theory or normative V4 law.
+- [x] Keep A and C family-local completeness from ranking either candidate or
+      selecting the coupled family.
+- [x] Recompute the D5-v2 C three-node selected-sector star receipt and record
+      pre-adapter projected value `-0.014842807194071116`.
+- [x] Instantiate an admissible A three-node `q/J` star receipt and record
+      pre-adapter projected value `0.41999999999999993`.
+- [x] Use accepted non-erasure plus tree exact-gradient surjectivity to prove a
+      nonempty post-adapter projected direct-field subdomain for A and C.
+- [x] Keep the visibility receipts formal/constitutive and separate from
+      runtime, full-chain, Hessian, temporal, or stability evidence.
+- [x] Preserve the remaining operator-split, persistent, and reconstructed
+      family pressure.
+- [x] Give all 28 D8-A debts one explicit disposition.
+- [x] Resolve the D8-A projected-target witness debt, preserve 23 carried
+      predecessor debts, record ten current successor debts, and freeze the
+      33-row live union.
+- [x] Record 55 fail-closed controls.
+- [x] Keep runtime, `src/`, normative specification, D9, and D10 closed.
+- [x] Obtain human acceptance.
+
+```text
+record = GRC9V4-GTRS-CI-v1
+status = accepted_bounded
+decision_digest = a0292d35d3dfc18e6386a78c26ae9bc2a4b6de9f31e505cf67edf7c094aea3a3
+human_acceptance = accepted_bounded_2026-08-25
+
+coupled_implicit_C = accepted_bounded_complete_realization_candidate
+coupled_implicit_A = accepted_bounded_complete_realization_candidate
+C_reference_regularness = Q_C_similarity_plus_block_triangular_IFT_at_kappa_H_zero
+A_reference_regularness = exact_D7_reduction_plus_block_triangular_IFT_at_kappa_H_zero
+C_full_regularness_object = full_joint_J_h_block
+A_full_regularness_object = full_joint_J_h_block
+A_C_global_branch_or_numeric_radius = unsupported
+A_C_nonempty_projected_visibility_witness = passed_formal_constitutive
+A_C_projected_visibility_witness_count = 2
+
+A_or_C_selected = false
+A_rejected = false
+B_reopened = false
+remaining_family_pressure_complete = false
+
+architecture_local_D8B_A_authorized = true
+architecture_local_D8B_C_authorized = true
+comparative_D8B_authorized = false
+carried_predecessor_debts = 23
+current_successor_debts = 10
+live_debt_union = 33
+controls = 55
+runtime_or_src_changed = false
+```
+
+### D8-B Architecture-Local Analysis (Authorized) And Comparison (Blocked)
+
+- [x] Define structural functional/Hessian and `alpha` semantics.
+- [x] Define temporal generator/effective-map and `gamma`/multiplier semantics.
+- [x] Define Read-Back derivative and `beta` semantics.
+- [x] Define spatial operator and `lambda` semantics.
+- [x] Define cluster/subspace, projector transport, basis/symmetry covariance,
+      non-normality, and static/dynamic comparison contracts.
+- [x] Record operator domain, tangent space, inner product/weight, physical and
+      reduced representations, representation map, projector transport,
+      moving-space identification, and cluster conditioning.
+- [x] Block analysis-coordinate projectors from physical-coordinate use without
+      declared conjugation/transport.
+- [x] Enforce derived-representation tangent constraints in every joint analysis.
+- [x] Keep analysis projectors out of runtime state unless independently
+      admitted for constitutive reasons.
+- [x] Block cross-spectrum relabels and undeclared universal-generator claims.
+- [x] Enforce the matched-realization comparison gate; comparative analysis is
+      blocked in this pass. Where later meaningful, compare candidates under
+      matched realization families;
+      otherwise treat each `(candidate, realization)` pair as an architecture
+      and separate candidate effects from realization effects.
+- [x] Map every D7G-admitted candidate's V4 operators to applicable B1/B2
+      verification discriminators and classify each as reusable,
+      V4-adaptation/rederivation-required, or inapplicable.
+- [x] Block recreation of GRV3/GRV4/GRV7 as design prose from counting as a new
+      D8 constitutive result.
+- [x] Require a declared `C2` subchart for classical second variation; do not
+      promote the accepted `C1` implicit-function result into a Hessian.
+- [x] Instantiate the graph-field second variation with all first- and
+      second-order geometry-slaving terms.
+- [x] Keep constraint curvature and measure dependence inside the differentiated
+      Lagrangian; do not append them again, and keep projector transport out of
+      the additive fixed-state Hessian.
+- [x] Bind structural charge/projector selection to the complete V4 transition
+      and carry the unresolved choice as typed D9/pre-D10 debt.
+- [x] Separate intrinsic response `r_a` from enacted gain
+      `beta_a = zeta_a r_a`.
+- [x] Keep `beta` as an eigenvalue and report direct-response singular values
+      separately.
+- [x] Require `U_(k+1 -> ref) M_k U_(ref -> k)` or endpoint transport of the
+      native Jacobian cocycle on moving branches, plus explicit analysis metrics
+      for nonnormality claims.
+- [x] Freeze exact complete-chain parameter sensitivity and quantitative
+      Neumann regularity certificate surfaces without inventing numeric values.
+- [x] Obtain human acceptance.
+
+### D8-B Coupled Architecture-Local Result
+
+```text
+record = GRC9V4-CD-D8B-CI-v1
+status = accepted_bounded
+decision_record_digest = 53ed6d6ee616ab42c59ce6dabb6bc106a595f5c70ad1acaedc445c7fa73a5b7f
+predecessor = GRC9V4-GTRS-CI-v1
+predecessor_decision_digest = a0292d35d3dfc18e6386a78c26ae9bc2a4b6de9f31e505cf67edf7c094aea3a3
+
+realization_family = coupled_implicit
+architecture_rows = [A, C]
+architecture_local_operator_contract_A_complete = true
+architecture_local_operator_contract_C_complete = true
+structural_operator_contract = charge_parametric_until_D9_charge_tangent_freeze
+
+A_structural_domain = conditional_C_given_fixed_W_A
+C_structural_domain = C_only_with_derived_T_C_tangent
+full_implicit_first_derivative = defined
+full_implicit_second_derivative = defined
+complete_step_Jacobian_A = defined_on_(C,W_A)
+complete_step_Jacobian_C = defined_on_C
+direct_Read_Back_operator_A = defined
+direct_Read_Back_operator_C = defined
+spatial_operator_A_C = defined_separately
+projector_transport_and_covariance = defined
+nonnormality_contract = defined
+
+numeric_alpha_beta_gamma_mu_lambda = not_instantiated
+formed_V4_branch = not_instantiated
+full_chain_nonannihilation_witnesses = 0
+temporal_or_structural_stability = unsupported
+candidate_comparison_or_ranking = false
+
+B1_B2_discriminator_rows = 8
+predecessor_live_debts = 33
+predecessor_debt_dispositions = 33
+current_successor_debts = 7
+live_debt_union = 34
+controls = 54
+
+comparative_D8B_authorized = false
+D9_authorized = false
+runtime_or_src_changed = false
+```
+
+The accepted bounded result closes the equation-level architecture-local D8-B
+burden for the coupled A and C roots, parametrically in the D9 charge/tangent
+contract. It does not fill absent numerical spectra with V3 values,
+direct-field terms, or formal IFT regularness. Numeric stability remains
+conditional pre-D10 or post-specification implementation evidence.
+
+### Remaining Realization-Family Pressure
+
+Status: operator-split same-beat, reconstructed geometry, persistent structural
+carrier, and comparative synthesis accepted bounded; narrow GTRS-CI-PC is
+authorized.
+
+Common row contract:
+
+- [x] Use only already-derived candidate-local constitutive content or identify
+      every new family-local completion explicitly.
+- [x] Freeze exact equations, state authority, stage order, accounting,
+      covariance, failure atomicity, disabled behavior, and linearization
+      surface before assigning a positive disposition.
+- [x] Require the geometry-producing substage to be an explicit equation-level
+      input to a later complete-step substage; keep nonzero complete-state
+      effect as a separate witness and reject endpoint/interface-only evidence.
+- [x] Assign exactly one row disposition:
+      `bounded_complete_realization`, `candidate_local_blocker`,
+      `family_level_obstruction`, or `bounded_unresolved`.
+- [x] Do not rerun D8-A or require numerical `alpha`, `mu`, or `gamma` merely
+      to admit a bounded complete realization.
+- [x] Keep the D8-B charge, complete-chain, conditioning, global-root, and event
+      debts open without using them to block minimum family pressure.
+
+GTRS-OS, operator-split same-beat:
+
+- [x] Freeze the primary order as one
+      `X_k -> J^(0) -> j_flat^(0) -> Delta K4^(0) -> h^(1) -> J^(1) -> X_(k+1)`
+      predictor/geometry/corrector/atomic-commit pass before outcomes.
+- [x] Forbid a second geometry solve from `J^(1)` and route any alternative
+      stage order or repeated correction to a separately named successor row.
+- [x] Freeze C's full geometry-dependent corrector reconstruction at fixed
+      `h_C^(1)` and permit only `J_C^(1)` to enter continuity.
+- [x] Freeze A's reference-relative `Phi_A^OS` geometry consumer, full
+      `J0_A^OS -> W_hat_A -> q_A` recomputation, and unchanged continuity plus
+      D7 writer.
+- [x] Freeze `r_h^OS = h^(1) - h_hat^(1)` with `h_hat^(1)` generated from the
+      final corrector current and the same accepted profile.
+- [x] Freeze the exact identity
+      `F_a^CI(J_a^(1),h_a^(1)) = (0,r_h,a^OS)` and interpret the split as
+      current-consistent with an intentionally unclosed geometry fixed point.
+- [x] Freeze the relative `H1_form` operator norm used for `r_h^OS`.
+- [x] Freeze a separate common-`K_4` structural norm, the typed affine profile
+      adapter `P_0: K_4 -> T_h H1_form`, and
+      `G_a,kappa = kappa_H P_0[S_a]`; never apply the Hodge norm directly to
+      `S_a = Delta K4_a`.
+- [x] Prove the local bound
+      `||r_h^OS||_H <= |kappa_H|^2 g_0^2 L_S M_S (1+L_C)` under named Lipschitz
+      hypotheses on A's floor-inactive and C's fixed-rank/strict-gap D8-B `C2`
+      subcharts.
+- [x] Freeze the first-Picard-iterate comparison bound under
+      `|kappa_H| L_T < 1`; do not extend it through nonsmooth boundaries.
+- [x] Keep nonzero `r_h^OS` as an explicit splitting defect rather than an
+      automatic failure or a value that may be repaired post hoc.
+- [x] Pressure `r_h^OS(Delta_t,kappa_H)` and `Psi^OS-Psi^CI` separately; do
+      not assume a time-step order for the algebraic split.
+- [x] Test ordering, atomicity, conservation/accounting, splitting error, and
+      step-size dependence.
+- [x] Verify generated geometry is an explicit equation-level input to a later
+      same-beat substage.
+- [x] Keep equation-level consumption distinct from executed complete-chain
+      nonannihilation and freeze
+      `D_h J_a^(1) = -(D_J F_J,a)^(-1) D_h F_J,a` as the future witness surface.
+- [x] Separate realization effects from changes to candidate ontology.
+- [x] Block producer-authored post-hoc correction of splitting or conservation
+      failure.
+- [x] Preserve `chi_a = 0`, `zeta_a = 0`, A mobility/writer authority, derived
+      C `T_C`, cache/history exclusion, and all-or-nothing commit semantics.
+
+### GTRS-OS Accepted-Bounded Result
+
+```text
+record = GRC9V4-GTRS-OS-v1
+status = accepted_bounded
+decision_digest = 36c98542c7920d468e932287872cf4dabf8720d5d2c6b0c0e30e6f94b113605f
+
+primary_realization = single_predictor_geometry_corrector_atomic_commit
+second_geometry_iteration = forbidden_in_primary_row
+
+A_disposition = bounded_complete_realization
+C_disposition = bounded_complete_realization
+new_persistent_state = false
+split_consistency_residual = defined
+exact_coupled_residual_identity = passed
+geometry_residual_norm = relative_H1_form_operator_norm
+K4_structural_norm = reference_scaled_common_K4_operator_norm
+profile_pushforward = P0_K4_to_H1_form
+K4_H1_norm_conflation = rejected
+split_residual_numeric_envelope = uninstantiated
+complete_chain_nonannihilation_witnesses = 0
+equation_level_geometry_consumers = 2
+time_step_order_assumed = false
+conditional_local_coupling_order = O(kappa_H^2)
+
+predecessor_live_debts = 34
+predecessor_debts_dispositioned = 34
+current_debts = 4
+live_debt_union = 37
+controls = 42
+
+human_acceptance_recorded = true
+GTRS-RG_authorized = true
+GTRS-PC_authorized = false
+GTRS-COMP_authorized = false
+D9_authorized = false
+runtime_or_src_changed = false
+```
+
+The positive row dispositions are local equation-level design results. They
+do not convert the conditional small-coupling order into a numeric envelope,
+do not treat the algebraic split as `O(Delta_t)`, and do not promote explicit
+equation-level geometry consumption into an executed complete-chain effect.
+
+GTRS-RG, reconstructed geometry:
+
+- [x] Freeze direct reconstructed geometry as
+      `R_a:(X_a,k,U_k)->h_a`, with no independent geometry authority.
+- [x] Freeze the semantic classification: solving the exact current-geometry
+      fixed point is CI even if closed-form; using frozen-current predictors
+      is OS; using hidden history is invalid; omitting current information
+      loses the accepted `J`-dependent path.
+- [x] State that an exact state-only evaluator may exist and remains
+      constitutively CI-equivalent rather than claiming formula nonexistence.
+- [x] Test same-beat deterministic reconstruction from authoritative current state,
+      declared same-step inputs, and admitted local branch without claiming
+      global root uniqueness.
+- [x] Exclude hidden cache, prior-step receipt, solver history, and RNG.
+- [x] Test whether same-beat reconstruction preserves load-bearing
+      `J`-dependent information.
+- [x] Block postcommit reconstruction from counting as same-beat consumption.
+- [x] Permit reconstructibility to close as a property of CI/OS rather than
+      forcing it to become a third temporal family.
+- [x] Treat historical lagged-state nonreconstructibility as pressure, not an
+      architecture-specific impossibility theorem.
+- [x] Freeze RG-2 next-beat factorization as `G_a = R_a+ o Phi_a` and the
+      equivalent committed-state fiber-constancy criterion.
+- [x] Freeze local positive `D Phi_a` invertibility and local negative
+      `ker(D Phi_a) not subset ker(D G_a)` evidence routes.
+- [x] Forbid previous root, prior geometry, solver continuation state, and
+      per-step dynamic branch IDs in `U`; require equivariant reconstruction.
+- [x] Prove the A and C complete commit maps extend to identity at
+      `Delta_t=0` and use derivative continuity for local CI/OS poststate
+      reconstruction without calling it a distinct family.
+- [x] Freeze the distinct lagged invariant-section equation
+      `Gamma(Phi_lag(X,Gamma(X))) = G(X,Gamma(X))`.
+- [x] Freeze the neutral constant section at `kappa_H=0` and replace the
+      section-dependent common-image assumption with an inner-chart neutral
+      extension and fixed-domain global inverse construction.
+- [x] Freeze value-radius and Lipschitz-ceiling self-map conditions and the
+      corrected `C0` contraction bound including section variation.
+- [x] Use typed geometry gain `epsilon_H=norm(D_K H_profile)_(K4->geometry)`
+      rather than untyped `abs(kappa_H)` as the theorem smallness object.
+- [x] Derive one unique local Lipschitz invariant section for A and C on their
+      named smooth small-positive-`Delta_t`, small-`epsilon_H` charts.
+- [x] Carry `C1` regularity as derivative-graph analysis debt rather than a
+      family-admission claim.
+- [x] Forbid an executed-zero-step claim, arbitrary unavailable input recovery,
+      global/event continuation, and a trajectory-updated `Gamma`.
+- [x] Restrict the present theorem to fixed context and require explicit state
+      augmentation before admitting a time-varying schedule.
+- [x] Freeze an equivariant family-local extension/profile completion as
+      constitutive profile configuration, not runtime state, history, or
+      trajectory-dependent tuning.
+- [x] Freeze nested domains `K_- compactly contained in K compactly contained
+      in U` and require `Psi_(a,Gamma)(K_-)` to remain inside `K`, so every
+      claimed real transition evaluates only the accepted candidate maps.
+- [x] State uniqueness relative to the frozen extension/profile completion;
+      do not claim extension-independent uniqueness unless separately proved.
+- [x] Freeze `Gamma` as the unique section for that completion, not an
+      independently authored, fitted, learned, or tuned runtime law.
+- [x] Redirect persistent-carrier pressure toward capabilities outside the local
+      invariant-section domain rather than an assumed information deficit.
+
+Result:
+
+```text
+record = GRC9V4-GTRS-RG-v1
+status = accepted_bounded
+top_level_disposition = bounded_local_reconstructed_geometry_family_complete_A_C
+decision_record_digest = dce24993ac0dd39a5fa5bcd35e46d9166fa28628d3811e9b33724c210ada4c0b
+predecessor = GRC9V4-GTRS-OS-v1
+predecessor_decision_digest = 36c98542c7920d468e932287872cf4dabf8720d5d2c6b0c0e30e6f94b113605f
+
+RG1_A_same_beat_distinct_family = family_level_obstruction
+RG1_C_same_beat_distinct_family = family_level_obstruction
+RG1_exact_state_only_formula = allowed_but_CI_equivalent_when_exact
+RG2_A_existing_CI_OS_poststate_reconstruction = supported_local_property
+RG2_C_existing_CI_OS_poststate_reconstruction = supported_local_property
+RG2_A_lagged_invariant_section = bounded_complete_realization
+RG2_C_lagged_invariant_section = bounded_complete_realization
+deterministic_same_beat_reconstructibility = supported_by_CI_and_OS_on_admitted_local_branches
+global_root_uniqueness = unsupported
+next_beat_fiber_collision_witnesses = 0
+next_beat_local_inverse_witnesses = 2_identity_limit_IFT
+zero_duration_identity_extension_is_executed_step = false
+numeric_epsilon_t_epsilon_H = unsupported
+universal_reconstruction_impossibility = false
+future_direct_geometry_candidates_rejected = false
+candidate_ranking = false
+
+predecessor_live_debts = 37
+predecessor_debts_dispositioned = 37
+current_debts = 3
+live_debt_union = 39
+controls = 62
+
+human_acceptance_recorded = true
+GTRS-RG2_authorized = false
+GTRS-PC_authorized_after_acceptance = true
+GTRS-PC_authorized = true
+GTRS-COMP_authorized = false
+D9_authorized = false
+runtime_or_src_changed = false
+```
+
+The RG-1 obstruction is narrow. Exact same-beat reconstruction is CI and
+staged same-beat reconstruction is OS. RG-2 first proves local poststate
+reconstruction for existing CI/OS steps, then closes a distinct lagged A/C
+architecture through a fixed local invariant section. The theorem is bounded
+to smooth fixed-context small-step/small-coupling charts.
+
+GTRS-PC, persistent structural carrier:
+
+- [x] Freeze D1-compatible authority, writer, no-input behavior, lifecycle,
+      serialization, restoration, reset, migration, and event semantics.
+- [x] Classify PC as a revision-specific constitutive completion rather than an
+      inherited coherence-only core primitive or evidence that Markov closure
+      fails.
+- [x] Freeze `Z_4,a` in the same candidate-specific `K_4` structural space as
+      `Delta K_4,a`, separate from `C`, `W_A`, `T_C`, `h`, and `J`.
+- [x] Freeze a candidate `K_4` norm, compact base chart, exact source-invariant
+      ball criterion `m_a(R)<=R`, and profile-admissible radius.
+- [x] Require uniform fixed-`h` current-substep admission over the full carrier
+      ball, with positive `m_J,a` margin and candidate-specific regular chart.
+- [x] Prove the constructive sufficient condition
+      `||S||<=M_0+L_Z||Z||`, `L_Z<1`, and
+      `M_0/(1-L_Z)<=R<=min(R_profile_adm,R_reg)`; keep numeric constants
+      uninstantiated.
+- [x] Freeze `a_PC=exp(-Delta_t/tau_PC)` and
+      `Z_4+=a_PC Z_4+(1-a_PC)S_a` before candidate disposition.
+- [x] Prove parametric bounded-domain invariance without clipping or projection
+      and block any unconditional or numerical carrier-domain claim.
+- [x] Freeze formation from neutral, finite no-source persistence, gradual
+      no-source release, bounded constant-source maintenance, and changed-source
+      reconfiguration.
+- [x] Qualify zero/constant-source convergence by accumulated elapsed time
+      `sum Delta_t -> infinity`.
+- [x] Prove matched-forcing carrier contraction
+      `a_PC+(1-a_PC)L_Z<1` on the sufficient chart.
+- [x] Exclude positive-duration `a_PC=1`, administrative reset, profile disable,
+      migration drop, and threshold labels from native release evidence.
+- [x] Freeze distinct D2 receipts for initialization, natural no-input,
+      `write_off`, retained-state freeze, administrative reset, and full PC
+      disable.
+- [x] Freeze `chi=0` or `zeta=0` as inscription-off rather than carrier erasure:
+      existing `Z_4` remains load-bearing and relaxes through `a_PC Z_4`.
+- [x] Freeze the complete order from committed carrier to derived geometry,
+      fixed-h current, structural source, continuity, candidate writer, carrier
+      writer, and atomic commit.
+- [x] Preserve A's sole `W_A` mobility authority and unchanged writer.
+- [x] Preserve C's derived, uncommitted `T_C` sector.
+- [x] Verify the carrier adds a causal capability beyond local invariant-section
+      RG rather than only lifecycle complexity.
+- [x] Classify PC as adding independent D1 B-like structural authority to A/C,
+      not as ontology-neutral temporal staging.
+- [x] Prove independent retained complete-state capacity from nonsingularity of
+      `a_PC I+O(epsilon_H)` while leaving base-state hysteresis behind the A/C
+      full-chain witnesses.
+- [x] Separate equation-level D8-A visibility from unproved complete-state
+      nonannihilation.
+- [x] Freeze snapshot, restoration identity, reset baseline, `set_state`,
+      duplicate, migration, and profile-mismatch semantics.
+- [x] Require explicit migration and target re-admission when profile, base,
+      representation, carrier norm/domain, or writer semantics change, even if
+      shapes match.
+- [x] Preserve exact disabled behavior and prevent hidden duplicate authority.
+- [x] Retain `Z_4` across deterministic representation-preserving context or
+      boundary changes and recompute all declared surfaces.
+- [x] Fail closed before carrier-space-changing topology/reindex/split/merge/
+      birth/death mutation without an admitted typed `L_event^K4` map; block
+      smooth analysis across unmapped rank/nonsmooth events.
+- [x] Route the full-`K_4` versus profile-kernel quotient audit to GTRS-COMP.
+- [x] Name the current writer the scalar-ZOH PC representative and prevent its
+      single timescale from becoming the universal PC family law.
+- [x] Freeze the architecture-local block Jacobian without emitting numerical
+      spectrum or stability claims.
+
+Result:
+
+```text
+record = GRC9V4-GTRS-PC-v1
+status = accepted_bounded
+top_level_disposition = accepted_bounded_persistent_K4_carrier_family_complete_A_C
+decision_record_digest = d1e38d6aa36b03154715c1e26c0b4a1b181dab19ed4bbfbd1575c94c9962e49a
+predecessor = GRC9V4-GTRS-RG-v1
+predecessor_decision_digest = dce24993ac0dd39a5fa5bcd35e46d9166fa28628d3811e9b33724c210ada4c0b
+
+primary_carrier = bounded_candidate_specific_K4_structural_coordinate_Z_4
+writer = Z_4_plus_equals_a_PC_Z_4_plus_(1_minus_a_PC)_S_a
+a_PC = exp(-Delta_t/tau_PC)
+invariant_domain = constructive_parametric_ball_plus_uniform_current_regularity_criterion_numeric_constants_uninstantiated
+PC_ontology_effect = independent_D1_B_like_structural_state_added_to_A_or_C
+representation_preserving_context_change = retained_carrier_and_surface_refresh
+
+A_PC = bounded_complete_realization
+C_PC = bounded_complete_realization
+capability_beyond_local_RG = independent_retained_structural_state_without_inverse_or_graph_transform
+base_state_hysteresis_supported = false
+complete_state_nonannihilation_witnesses = 0
+topology_event_transport_instantiated = false
+numeric_spectrum_or_stability = uninstantiated
+
+predecessor_live_debts = 39
+predecessor_debts_dispositioned = 39
+current_debts = 5
+live_debt_union = 43
+controls = 82
+
+human_acceptance_recorded = true
+GTRS-COMP_authorized_after_acceptance = true
+GTRS-COMP_authorized = true
+D9_authorized = false
+runtime_or_src_changed = false
+```
+
+PC completes the minimum family pressure at design level but does not select
+or rank a realization. The new carrier is explicit V4 state authority and
+therefore carries more lifecycle and ontology cost than CI, OS, or RG. Its
+positive distinction is equally explicit: it can preserve path-dependent
+geometry when no single-valued local `Gamma(X)` is available. Comparative
+synthesis must evaluate that capability against the added ontology/state cost,
+audit the exact profile-kernel quotient before pricing full `K_4`, and avoid
+treating the scalar single-timescale writer as universal.
+
+GTRS-COMP, comparative realization synthesis:
+
+- [x] Enumerate every bounded, blocked, obstructed, and unresolved
+      `(candidate, realization)` row.
+- [x] Compare matched families only under declared representation maps and
+      record noncomparability where no lawful map exists.
+- [x] Separate candidate-ontology effects from realization-family effects.
+- [x] For PC, audit full `K_4` against the exact
+      `K_4/kernel(D_K H_profile)` carrier; distinguish profile-kernel
+      irreducibility from absolute minimal reachable-state representation.
+- [x] Treat scalar-ZOH/one-`tau_PC` as the primary PC representative, not the
+      family law; record the multi-timescale operator-semigroup alternative
+      without requiring a new PC gate.
+- [x] Determine whether timing and history authority are analytically separable
+      without assuming composability; identify and route the first exact
+      missing hybrid row when it could materially change the population.
+- [x] Decide whether any numerical stability debt becomes pre-D10.
+- [x] Close or explicitly route the remaining-family debt before D9.
+
+Result:
+
+```text
+record = GRC9V4-GTRS-COMP-v1
+status = accepted_bounded
+decision_record_digest = 67a9c97a79525dc70c2233fb2b6706c47d2e31388c9160520f6842d7dc63a84b
+
+positive_primary_rows = 8
+family_level_obstruction_rows = 2
+routed_not_rejected_candidates = 1
+
+architecture_dimensions = candidate_ontology x geometry_current_timing x history_authority
+timing_history_composability_proved = false
+PC_enabled_affine_profile_kernel = {0}
+PC_full_K4_profile_kernel_irreducible = true
+PC_absolute_minimal_reachable_state_representation_proved = false
+scalar_ZOH_universal_PC_law_claimed = false
+
+first_materially_missing_hybrid_pair = [A_coupled_implicit_plus_PC, C_coupled_implicit_plus_PC]
+combinatorial_hybrid_campaign_authorized = false
+OS_PC_status = unpressured_not_currently_required
+RG_PC_status = unpressured_not_currently_required
+unconditional_pre_D10_numeric_stability_gate_activated = false
+conditional_numeric_selection_gate_frozen = true
+
+predecessor_live_debts = 43
+predecessor_debts_dispositioned = 43
+carried_predecessor_debts = 40
+superseded_predecessor_debts = 2
+resolved_predecessor_debts = 1
+current_debts = 3
+live_debt_union = 43
+controls = 68
+
+remaining_family_pressure_complete = true
+candidate_or_architecture_selected = false
+GTRS_CI_PC_authorized = true
+D9_ready_after_human_acceptance = false
+D9_authorized = false
+D10_authorized = false
+runtime_or_src_changed = false
+```
+
+GTRS-COMP finds three analytically separable architecture dimensions rather
+than four exclusive family columns. It does not prove their composability. CI
+and OS are lawfully comparable within a candidate through derived `(J,h)`
+analysis lifts that do not add state authority; RG-2b is comparable only through
+its invariant-section analysis lift; PC projects many-to-one onto the base
+candidate state and therefore adds real history authority and state/lifecycle
+cost. Cross-candidate A/C numeric ranking remains unlawful without a separate
+model.
+
+For the current enabled affine profile,
+`D_K H_profile = kappa_H I` with nonzero `kappa_H`, so its kernel is zero and
+full `K_4` has no nontrivial exact profile-kernel quotient. Absolute minimal
+reachable-state representation is not proved. The scalar-ZOH writer remains
+one representative.
+
+The first materially missing hybrid pair is coupled-implicit plus persistent
+`K_4` for A and C, and it receives narrow pressure before D9. OS+PC and RG+PC
+remain unpressured and not currently required; reassess them if selection uses
+solver cost, failure surface, latency, or state-conditioned lagged geometry.
+Numeric stability is not an unconditional pre-D10 gate; it activates if D10
+attempts exclusive preference, numeric ranking, or stability-based selection.
+
+GTRS-CI-PC, narrow coupled-implicit plus persistent-carrier pressure
+(`accepted_bounded`):
+
+- [x] Consume accepted COMP, CI, PC, D7G/D8-A, and candidate A/C transition
+      records by digest and SHA.
+- [x] Freeze the primary `(X_k,Z_k) -> joint (J,h) root -> (X_k+1,Z_k+1)`
+      stage order before pressure.
+- [x] Audit whether `K_base + Z_k + Delta_K_4(J,h)` is the lawful typed
+      composition or whether it double-counts source/gain authority.
+- [x] Freeze the composite invariant domain and joint-root regularity for
+      `Z_k + Delta_K_4`, not only the carrier ball for `Z_k`.
+- [x] Freeze CI-off, PC-off, `chi`, `zeta`, `kappa_H`, read-off, and retained
+      historical-state semantics.
+- [x] Require root-failure atomicity and prohibit same-beat read of newly
+      written `Z_k+1`.
+- [x] Freeze snapshot, restoration identity, reset baseline, `set_state`,
+      duplicate, migration, replay, profile mismatch, and context/event
+      boundaries for the hybrid state.
+- [x] Produce separate A and C dispositions without candidate ranking.
+- [x] Keep OS+PC and RG+PC as unpressured, conditionally reactivatable
+      compositions rather than rejected or impossible rows.
+
+Result:
+
+```text
+record = GRC9V4-GTRS-CI-PC-v1
+status = accepted_bounded
+decision_record_digest = 5f003ff5f4dbbb60788ac50827b5a3ccff7ff7e194173721f15503bc6024682a
+
+A_CI_PC = bounded_complete_hybrid_realization
+C_CI_PC = bounded_complete_hybrid_realization
+primary_rho_inst = 1.0
+primary_composite_profile_domain = B_2R
+same_beat_double_count_detected = false
+strict_reference_source_slack_required = true
+same_root_source_ball_closed_by_continuity = true
+carrier_ball_invariance_proved = true
+primary_steady_source_structural_gain = 2.0
+amplitude_equivalence_to_CI_or_PC_claimed = false
+retained_path_root_nonannihilation_proved = true
+instantaneous_path_root_nonannihilation_proved_on_nonzero_source_domain = true
+committed_endpoint_nonannihilation_proved = false
+root_failure_is_atomic = true
+new_carrier_read_same_beat = false
+
+predecessor_live_debts = 43
+predecessor_debts_dispositioned = 43
+carried_predecessor_debts = 42
+resolved_predecessor_debts = 1
+current_debts = 5
+live_debt_union = 47
+controls = 93
+
+human_acceptance_recorded = true
+D9_ready_after_human_acceptance = true
+D9_authorized = true
+D10_authorized = false
+runtime_or_src_changed = false
+```
+
+The result supports local A/C timing-history composability for the named pair,
+not universal axis composability. It keeps OS+PC and RG+PC unpressured and
+conditionally reactivatable, and leaves quantitative envelopes, complete-chain
+analysis, full lifecycle integration, and the final composition-profile status
+as explicit successor debt.
+
+The source-ball closure is derived from strict reference slack and uniform
+continuity rather than assumed inside the admitted root chart. The
+unit-plus-unit profile records steady-source gain two explicitly, while exact
+`Z` and `rho_inst` root derivatives establish both paths as load-bearing only
+at the joint-root level. The composition-profile debt must be classified at D10
+entry before any selection or specification authorization.
+
+## D9. Complete Step And Lifecycle Contract
+
+Status: accepted bounded. D10 was authorized and has now executed pending human
+review.
+
+- [x] Freeze complete-step order and causal-state schema.
+- [x] Freeze post-continuity recomputation of every differential and gradient
+      summary consumed by the Candidate A writer; prohibit reuse of
+      pre-continuity `C[k]` caches.
+- [x] Freeze serialization and restoration identity.
+- [x] Freeze reset-baseline behavior.
+- [x] Freeze RNG and deterministic replay behavior.
+- [x] Freeze capability/profile identity.
+- [x] Verify every surviving candidate's D1 embedding/projection construction
+      against its D7G structurally closed transition on every equivalence
+      surface.
+- [x] Freeze the actual reduction witness and exact/projected/tolerance status
+      with migration behavior.
+- [x] Enforce typed topology resource transport/accounting plus candidate-
+      specific nonresource history transport or explicit archive/reset,
+      target reconstruction/readmission, receipts, and atomic commit.
+- [x] Keep a fixed early verification envelope from discharging normative
+      runtime topology debt.
+- [x] Freeze test, telemetry, and analysis ownership.
+- [x] Block silent legacy snapshot promotion.
+- [x] Produce the ten-profile state/lifecycle registry.
+- [x] Produce the `10 x 26` adversarial coverage matrix with 260 explicit
+      cells and no blanks.
+- [x] Derive the complete-step unit-measure charge, full tangent, structural
+      `H0`-weighted C-sector projector, and canonical tangent retraction from
+      the current closed-internal write path without claiming a full-state
+      orthogonal projector.
+- [x] Freeze the general charge-covector, `T_C_evt` resource-event map,
+      conservative condition, event exchange receipt, generalized tangent,
+      and generalized structural projector.
+- [x] Disambiguate event resource transport as `T_C_evt` from Candidate C's
+      derived nonresource `T_C` coordinate.
+- [x] Extend events and profile migrations to the whole lifecycle tuple
+      `(X_current, X_reset, Q_target)`; transform the reset baseline with the
+      same morphism and update `Q_target` by `Delta_Q_event`.
+- [x] Require post-continuity `C` to lie on the serialized nonnegative
+      `Q_target` simplex before any final-`C` writer; make the current budget
+      stage an identity/no-op and fail on nontrivial correction.
+- [x] Freeze atomic solver/writer failure and zero-commit retry semantics.
+- [x] Scope zero-duration identity to an already admitted state, profile, and
+      context with valid preconditions; represent an instantaneous impulse as
+      a separate typed event jump.
+- [x] Keep A floor activation runtime-valid but nonsmooth and admit all C rank
+      changes through basis-independent selector strata with exactly one
+      regular self-consistent root; reject threshold/nonregular boundary roots
+      until a separate boundary-root contract is admitted.
+- [x] Freeze bounded-domain A CI/CI+PC root uniqueness and stratum-local C
+      uniqueness under explicit self-map and contraction inequalities without
+      claiming arbitrary globality or cross-stratum smoothness.
+- [x] Admit typed topology-event continuation for all ten profiles, including
+      exact V3 history-free A initialization, typed `L_K4_evt` carrier
+      transport or explicit `Z=0` reset, and RG target-section reconstruction.
+- [x] Restrict `L_1 Z L_1_star` to an explicit factorization of
+      `L_K4_evt` with a declared source/target pairing and adjoint.
+- [x] Split context-contract identity from mutable current context input.
+- [x] Replace blanket A/C migration rejection with lossy A-to-C admission and
+      history-free C-to-A admission using exact V3 `W` reconstruction.
+- [x] Separate V3 transition, snapshot/state, observable, and lifecycle/event
+      reduction surfaces and serialize `Q_target` as lifecycle identity.
+- [x] Record 16 independent multi-authority write-off, freeze, and immediate-
+      path subcases in the three affected matrix rows.
+- [x] Keep Candidate B underdetermined and visible; do not relabel the PC
+      carrier as B's missing signed formation source.
+- [x] Resolve generic lossless history preservation without sufficient event
+      lineage as a bounded negative result; retain explicit archive/reset as
+      the lawful generic fallback and block continuation-spectrum identity
+      claims from lifecycle continuation alone.
+- [x] Disposition all 47 predecessor debts and reconcile the 29-debt scientific
+      live union, zero current D9 debts, one resolved negative result, and four
+      post-spec verification obligations without silent drops or conflation.
+- [x] Bind every resolved quantitative predecessor row to
+      `D9-VERIFY-QUANTITATIVE-PARAMETER-ENVELOPES`.
+- [x] Obtain human acceptance.
+
+```text
+record = GRC9V4-CD-D9-v1
+status = accepted_bounded
+decision_record_digest = 33c8fe75ae7fda716e97bb9714d5f297911bc4d606f5d382d77f9c3092aa4586
+
+positive_profiles = 10
+candidate_B = routed_not_rejected_no_lifecycle_profile
+coverage_columns = 26
+coverage_cells = 260
+blank_coverage_cells = 0
+exact_V3_disabled_reduction_witnesses = 10
+typed_topology_event_continuation_profiles = 10
+lossy_topology_event_continuation_profiles = 10
+untyped_topology_event_supported_profiles = 0
+multi_authority_intervention_rows = 3
+multi_authority_intervention_subcases = 16
+
+predecessor_live_debts = 47
+carried_predecessor_debts = 29
+resolved_predecessor_debts = 18
+superseded_predecessor_debts = 0
+current_D9_debts = 0
+D9_resolved_negative_results = 1
+live_debt_union = 29
+post_spec_verification_obligations = 4
+controls = 130
+
+D10_ready_after_human_acceptance = true
+human_acceptance = accepted_bounded_2026-08-25
+D10_authorized = true
+specification_authorized = false
+implementation_authorized = false
+runtime_or_src_changed = false
+```
+
+The authoritative records are
+[`D9CompleteStepAndLifecycleContract.json`](./decisions/D9CompleteStepAndLifecycleContract.json),
+its [scientific interpretation](./decisions/D9CompleteStepAndLifecycleContract.md),
+the [profile/state/lifecycle registry](./decisions/D9ProfileStateLifecycleRegistry.json),
+the [adversarial coverage matrix](./decisions/D9LifecycleCoverageMatrix.json),
+and the [residual debt ledger](./decisions/D9ResidualDebtLedger.json).
+
+## D10. Design Synthesis And Spec-Writing Decision
+
+Status: `accepted_bounded`.
+
+- [x] Freeze the governing rule that debt is a stressed claim-topology edge,
+      not a binary checklist item.
+- [x] Enforce no debt disposition without a claim-ledger disposition.
+- [x] Enforce no normative claim without tracing every bearing debt.
+- [x] Preserve one historical predecessor claim node per D9-carried debt.
+- [x] Enforce reciprocal typed claim-to-debt and debt-to-claim edges.
+- [x] Restrict `blocked_by` to historical predecessors or current
+      conditional/open claims that remain unearned.
+- [x] Reconcile all executed gate decisions into one architecture or bounded
+      no-selection closeout.
+- [x] Verify no field or operator has incompatible roles.
+- [x] Record rejected alternatives and transform every D9-carried debt.
+- [x] Preserve narrowing, routing, splitting, and resolved negatives as typed
+      claim transformations rather than binary closure.
+- [x] Separate scientific open claims from implementation and numerical
+      verification obligations.
+- [x] Freeze claim ceiling and blocked relabels.
+- [x] Produce a verification/constructibility outline.
+- [x] Select one D10 disposition.
+- [x] Block candidate exhaustion from becoming rejection of the GRC9V4 target.
+- [x] Produce the normative/optional/conditional/open/negative claim topology.
+- [x] Produce the full-lineage debt/claim transformation ledger.
+- [x] Produce the profile-explicit specification authorization profile.
+- [x] Freeze exactly one candidate plus exactly one realization per executable
+      runtime state over the ten currently admitted complete profiles.
+- [x] Bind migration and topology-event receipts to ordered source/target
+      complete-profile identities, allowing equality when unchanged.
+- [x] Freeze the ten-profile roster as complete for the initial specification
+      population without treating it as exhaustive over future lawful V4.
+- [x] Scope the current PC identity to the scalar-ZOH, one-`tau_PC`
+      persistent-`K_4` realization rather than a universal carrier law.
+- [x] Record a claim-activated unfolding trajectory without prescribing a
+      successor schedule or linear verification backlog.
+- [x] Admit the present Candidate A law only as a normalized nondimensional
+      profile; route physical dimensionalization to a future units/gauge bridge.
+- [x] Preserve D9 bounded-domain A and stratum-local uniquely self-consistent C
+      root results for CI and CI+PC.
+- [x] Register the pre-closure substrate-provenance audit and keep final
+      substrate identity open.
+- [x] Obtain bounded human acceptance.
+- [x] Set `specification_authorized = true` for the accepted lineage-local
+      specification scope only.
+- [x] Keep runtime implementation unauthorized.
+
+```text
+record = GRC9V4-CD-D10-v1
+status = accepted_bounded
+human_acceptance = accepted_bounded_2026-08-26
+decision_record_digest = 3e673b335ad428d01006f231765d060a9bdd5f134332b143048f774de94bad00
+
+selected_architecture = profile_explicit_lineage_local_GRC9V4_common_substrate_interface
+unique_candidate_selected = false
+unique_realization_selected = false
+candidate_A = named_optional_normalized_nondimensional_revision_specific_profile_family
+candidate_C = named_optional_revision_specific_profile_family
+candidate_B = routed_not_rejected_reserved_nonexecutable_successor_slot
+realization_profiles = [CI, OS, RG2b, PC, CI+PC]
+executable_complete_profiles = 10
+runtime_complete_profile_binding = exactly_one_candidate_plus_exactly_one_realization
+migration_receipt_profile_binding = ordered_source_target_complete_profile_pair
+topology_event_receipt_profile_binding = ordered_source_target_complete_profile_pair_equal_when_unchanged
+current_profile_population_future_exhaustive = false
+current_PC_profile = scalar_ZOH_one_tau_PC_persistent_K4_history
+unfolding_trajectory = claim_activated_not_fixed_successor_schedule
+
+normative_claims = 9
+optional_claims = 7
+conditional_claims = 12
+open_claims = 5
+negative_claims = 6
+historical_predecessor_claim_nodes = 29
+reciprocal_typed_claim_debt_edges = 129
+D9_carried_debts = 29
+D10_transformed_debts = 29
+claimless_debt_dispositions = 0
+transformation_counts = {confirmed: 1, narrowed: 7, split: 2, resolved_negative: 1, routed: 18}
+verification_obligations = 11
+controls = 73
+
+scientific_disposition = accepted_bounded_lineage_local_profile_explicit_spec_authorization
+final_substrate_identity_closed = false
+preclosure_substrate_provenance_audit_required = true
+specification_authorized_after_human_acceptance = true
+specification_authorized = true
+implementation_plan_authorized = false
+implementation_authorized = false
+runtime_or_src_changed = false
+```
+
+The authoritative records are
+[`D10DesignSynthesisAndSpecWritingDecision.json`](./decisions/D10DesignSynthesisAndSpecWritingDecision.json),
+its [scientific interpretation](./decisions/D10DesignSynthesisAndSpecWritingDecision.md),
+the [claim topology](./decisions/D10NormativeClaimTopology.json), the
+[debt/claim transformation ledger](./decisions/D10DebtClaimTransformationLedger.json),
+and the [specification authorization profile](./decisions/D10SpecificationAuthorizationProfile.json).
+
+## D10.1. Preliminary Substrate Provenance And Nine-Port Necessity
+
+Status: `accepted_preliminary_bounded_substrate_provenance_separation`.
+
+- [x] Bind accepted D10 as the unchanged predecessor.
+- [x] Bind the reconciled GRC9V3 and GRCV3 specifications, Phase 7 equation
+      ownership, accepted D7/D7G/D9 decisions, and both runtime sources.
+- [x] Record that GRC9V3 provenance is load-bearing.
+- [x] Record that current evidence does not establish intrinsic nine-port
+      necessity without claiming that nine ports are unnecessary.
+- [x] Classify Candidate A as GRC9V3-derived with independent derivation over
+      GRCv3 differential/transport contracts pending.
+- [x] Classify Candidate C and `K_4`/Hodge as stronger GRC-level candidates
+      without promotion from the GRC9 lineage to GRCv4.
+- [x] Preserve ordered ports, row/column mechanics, expansion, hybrid sparks,
+      stabilization, coarse-graining, and exact legacy lifecycle as substantive
+      GRC9 specialization content.
+- [x] Separate GRC9-intrinsic mechanics from GRC9-specific compatibility and
+      lifecycle targeting.
+- [x] Bind D0 directly rather than leaving it as an unresolved lineage ID.
+- [x] Separate inherited `G_W` functional form from A's revision-specific
+      pre-read and postcontinuity-writer staging.
+- [x] Separate general charge-covector accounting from the current unit-measure
+      `Q = sum(C)` reference profile.
+- [x] Bind CI, OS, RG2b, PC, and CI+PC to their direct realization decisions.
+- [x] Freeze the representative `(E, P_E, L_E, S_E)` audit tuple.
+- [x] Separate substrate disposition from promotion status.
+- [x] Freeze `GRCv3` as general graph GRC and `GRC9v3` as its nine-port
+      specialization/profile.
+- [x] Record the GRCv4/GRC9v4/GRC9v3-disabled working factorization as a
+      hypothesis only.
+- [x] Keep D10's accepted claim topology and authorization unchanged.
+- [x] Keep the final equation-by-equation pre-closure audit open.
+- [x] Keep GRCv4 specification and all implementation work unauthorized.
+- [x] Generate the structured decision and scientific interpretation.
+- [x] Pass source, digest, classification, ceiling, and report audit checks.
+- [x] Obtain bounded human acceptance.
+
+```text
+record = GRC9V4-CD-D10.1-v1
+status = accepted_preliminary_bounded_substrate_provenance_separation
+human_acceptance = accepted_preliminary_bounded_substrate_provenance_separation_2026-08-26
+decision_record_digest = 51572056af21abd3c4c623e72bf7a20ba34c54dafae8b23086979d2c761c939f
+
+source_identities = 16
+preliminary_findings = 5
+representative_provenance_rows = 12
+controls = 15
+audit_checks = 113/113
+
+working_factorization = GRCV4 ->[nine-port specialization] GRC9V4 ->[disabled V4 profile] GRC9V3
+working_factorization_status = hypothesis_supported_by_preliminary_provenance_separation
+D10_claim_topology_unchanged = true
+equation_by_equation_audit_complete = false
+promotion_proved = false
+final_substrate_identity_closed = false
+preclosure_substrate_provenance_audit_still_required = true
+GRCV4_specification_authorized = false
+implementation_authorized = false
+runtime_or_src_changed = false
+```
+
+The authoritative records are the
+[`D10.1 structured decision`](./decisions/D10_1PreliminarySubstrateProvenance.json)
+and its
+[`scientific interpretation`](./decisions/D10_1PreliminarySubstrateProvenance.md).
+
+## D10.2. Full Substrate Provenance And GRCV4 Promotion Audit
+
+Status: `accepted_bounded`.
+
+- [x] Bind accepted D10.1 as the immediate predecessor without rewriting D10.
+- [x] Bind the accepted D10 claim topology, specification population, D0-D9
+      lineage, all five realization decisions, GRCv3/GRC9v3 specifications,
+      Phase 7 ownership map, and both transport runtimes.
+- [x] Audit the complete claim-to-parent-object-to-subordinate-contract
+      hierarchy without enumerating every algebraic intermediate.
+- [x] Cover all 39 accepted D10 claim nodes with no orphan claim or object.
+- [x] Verify exact claim-set equality across the accepted D10 decision, claim
+      topology, and specification authorization surfaces; preserve
+      `D10-CL-C-012` as accepted D10 content.
+- [x] Refine the D10.1 substrate taxonomy by separating
+      `core_theory_substrate_independent` physics from
+      `substrate_independent_specification_meta` governance.
+- [x] Apply the GRC9v3-premise deletion test to every audited object.
+- [x] Record twelve independent GRC derivations, including separate mobility
+      and Candidate-A initializer derivations.
+- [x] Derive exactly the accepted curvature-disabled Candidate A `G_W` over
+      the GRCv3 differential contract while retaining the fixed row-basis
+      backend as GRC9-intrinsic and curvature-conditioned successors open.
+- [x] Promote Candidate A's reference, contrast, Read-Back, retained writer,
+      and state-authority contracts to `GRC_derived`.
+- [x] Promote Candidate C's derived sector, selector, Hodge maps, Read-Back,
+      and C-only authority to `GRC_derived`.
+- [x] Separate the substrate-independent core `K -> g[K]` role from graph
+      `K_4`, which is a `GRC_derived` symmetric bilinear form on oriented
+      one-forms.
+- [x] Restore `M_4` as separately owned candidate-specific transport mobility;
+      keep overlap-normalized assembly with graph `K_4`.
+- [x] Construct the GRCv4 reference Hodge package explicitly from GRCv3 graph
+      measure and positive base conductance surfaces.
+- [x] Promote CI, OS, RG2b, PC, and CI+PC without ranking them or making the
+      current population future-exhaustive.
+- [x] Promote complete-step, lifecycle, generic migration, event, receipt, and
+      fail-closed contracts while retaining runtime conformance as verification.
+- [x] Separate generic migration, the GRCv4 Candidate-A initializer, and the
+      exact GRC9v3 initializer binding; retain only the last as
+      `GRC9_specialization_specific`.
+- [x] Keep exact GRC9v3 disabled transition, state, observable, and lifecycle targets
+      `GRC9_specialization_specific`.
+- [x] Add separate disabled transition, state, observable, and lifecycle
+      contracts for all ten current complete profiles (`40` rows total).
+- [x] Audit `DQ_varpi`, `V_Q,varpi`, the structural `H0` projector, and its
+      canonical full-tangent retraction as distinct normative contracts.
+- [x] Add candidate-specific CI and CI+PC root/selection contracts rather than
+      treating realization-family promotion as equation-level provenance.
+- [x] Add explicit PC, OS, RG2b, Candidate C chain, structural-geometry, and
+      typed topology-event equation/contract rows.
+- [x] Preserve `C_plus = T_C_evt C_minus + Delta_C_event`; keep conservative
+      transport, resource-coordinate increment, charge receipt, and
+      `Q_target` update as separate event-accounting surfaces.
+- [x] Make ordinary-step and topology-event charge checks stage-explicit so an
+      already updated `Q_target_plus` cannot receive `Delta_Q_event` twice.
+- [x] Cover all 67 parent objects and all 39 accepted claims in the 152-row
+      subordinate registry with no duplicate ID or promotion-pending row.
+- [x] Keep row-basis differential semantics, ordered ports, fixed chart,
+      saturation, mechanical expansion, hybrid spark/stabilization, and column
+      coarse-graining `GRC9_intrinsic`.
+- [x] Record zero remaining `GRC9V3_derived_GRC_rederivation_required` rows.
+- [x] Earn the GRCv4/GRC9v4/GRC9v3 factorization only for the current initial
+      specification population.
+- [x] Route specification writing to GRCv4 first and GRC9v4 specialization
+      second under the accepted D10.2 factorization.
+- [x] Keep all normative spec files, implementation plans, runtime, and `src/`
+      unchanged in D10.2.
+- [x] Generate deterministic structured and interpretive artifacts.
+- [x] Pass source, digest, lineage, claim coverage, derivation, disposition,
+      factorization, ceiling, and report checks.
+- [x] Record bounded human acceptance.
+
+```text
+record = GRC9V4-CD-D10.2-v1
+status = accepted_bounded
+predecessor_decision_digest = 51572056af21abd3c4c623e72bf7a20ba34c54dafae8b23086979d2c761c939f
+decision_record_digest = 28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c
+human_acceptance = accepted_bounded_2026-08-26
+
+source_identities = 36
+accepted_D10_claims_covered = 39
+independent_GRC_derivations = 12
+normatively_load_bearing_objects = 67
+normative_equation_contracts = 152
+explicit_equation_contracts = 85
+disabled_reduction_matrix_rows = 40
+object_families = 9
+controls = 48
+audit_checks = 289/289
+
+GRC_derived = 45
+core_theory_substrate_independent = 1
+substrate_independent_specification_meta = 8
+GRC9_intrinsic = 8
+GRC9_specialization_specific = 5
+promotion_pending_rows = 0
+
+factorization = GRCV4 ->[nine-port specialization] GRC9V4 ->[disabled V4 profile] GRC9V3
+factorization_earned = true
+factorization_scope = current_D10_initial_specification_population_only
+final_substrate_identity_closed_for_current_population = true
+final_substrate_identity_globally_closed_for_all_future_profiles = false
+GRCV4_specification_authorized_after_human_acceptance = true
+GRC9V4_specialization_specification_authorized_after_human_acceptance = true
+GRCV4_specification_authorized_now = true
+GRC9V4_specialization_specification_authorized_now = true
+normative_spec_files_written_by_D10_2 = false
+implementation_authorized = false
+runtime_or_src_changed = false
+```
+
+The authoritative records are the
+[`D10.2 structured audit`](./decisions/D10_2FullSubstrateProvenanceAndPromotionAudit.json)
+and its
+[`scientific interpretation`](./decisions/D10_2FullSubstrateProvenanceAndPromotionAudit.md).
+
+## Current State
+
+```text
+branch = investigation-GRC9V4-constitutive-design
+D0 = accepted
+D1 = accepted_bounded
+D2 = accepted_bounded
+D3 = accepted_bounded
+D4 = accepted_bounded
+D5 = accepted_bounded
+D6 = accepted_bounded
+D7 = accepted_bounded
+D7_complete_reduced_transition_count = 1
+D7_complete_normative_transition_count = 0
+D7_closed_write_read_loop_count = 1
+D7_closed_retained_mobility_recurrence_count = 1
+D7_constitutively_load_bearing_explicit_Read_Back_subloop_count = 1
+D7_empirically_attributed_explicit_Read_Back_loop_count = 0
+D7_closed_structural_cultivation_loop_count = 0
+D7_D8_eligible_candidate_set = [V4-A-temporalized-W]
+D7_routed_candidate_set = [V4-B-independent-derived-carrier, V4-C-constitutive-C-sector]
+D4-v2 = accepted_bounded
+D4-v2_B = admitted_bounded_candidate_geometry_and_carrier_completion
+D4-v2_C = admitted_bounded_candidate_retained_geometry_completion
+D4-v2_candidate_rejected_count = 0
+D4-v2_global_H4_closed = false
+D5-v2 = accepted_bounded
+D5-v2_A = carried_unchanged_accepted_D5_operator_family
+D5-v2_B = admitted_bounded_Riesz_Read_Back_operator_level_mediation
+D5-v2_C = admitted_bounded_retained_Hodge_Read_Back_operator_level_mediation
+D5-v2_candidate_rejected_count = 0
+D5-v2_physical_channel_identification_count = 0
+D6-v2 = accepted_bounded
+D6-v2_A = carried_unchanged_bounded_regular_algebraic_slaving
+D6-v2_B = admitted_bounded_signed_Riesz_algebraic_current_closure
+D6-v2_C = admitted_bounded_nonisometric_Hodge_algebraic_current_closure
+D6-v2_D7-v2_eligible_candidate_set = [A, B, C]
+D7-v2 = accepted_bounded
+D7-v2_D7G_eligible_candidate_set = [A, C]
+D7-v2_current_tranche_closed_candidate_set = [B]
+D7G-v1 = accepted_bounded
+D7G-v1_global_disposition = H4_interface_frozen_affine_reference_profile_family_conditionally_admitted_D7Gv2_embedding_parametric_and_handoff_closure_required
+D7G-v1_A_H4_upstream_effect = requires_geometry_parametric_closure_audit
+D7G-v1_C_H4_upstream_effect = requires_geometry_parametric_closure_audit
+D7G-v1_complete = false
+D7G-v2 = accepted_bounded
+D7G-v2_D8-A_structural_target_candidate_set = [A, C]
+D7G-v2_D8_full_continuation_comparable_candidate_set = []
+D7G-v2_global_blocker = selected_lagged_explicit_realization_missing_geometry_feedback_completion
+D7G-v2_D_h_generated_F = undefined_absent_Gamma_or_equivalent_complete_realization
+D7G-v2_profile_stage_audit_complete = true
+D7G-v2_global_structural_cultivation_complete = false
+D7G-v2_named_successor = GRC9V4-GEOMETRY-TEMPORAL-REALIZATION-SUCCESSOR
+D7G-post-v2_Hodge_type_correction = accepted_bounded
+D7G-post-v2_Hodge_type_correction_digest = 2e2f4d53e0abf3134f586cc60467bf5881cc60414af82df35bf6ac7772400984
+automatic_D4-v3-D7-v3_cycle = not_authorized
+D8-A_structural_target_extraction = accepted_bounded
+D8-A_decision_digest = 5e3af8a6b8b327b3d98b5c5f6ac934ff528f048c3927a085c59194262afba021
+geometry_temporal_realization_successor_authorized = true
+geometry_temporal_realization_successor_coupled_implicit = accepted_bounded
+coupled_implicit_C = accepted_bounded_complete_realization_candidate
+coupled_implicit_A = accepted_bounded_complete_realization_candidate
+architecture_local_D8B_A_authorized = true
+architecture_local_D8B_C_authorized = true
+comparative_D8B_authorized = false
+remaining_minimum_family_pressure_complete = true
+D8_authorized = true
+D8_authorized_scope = D8-A_plus_coupled_A_and_C_architecture_local_D8B
+D8_full_continuation_through_D10 = completed_at_bounded_design_level_by_profile_explicit_nonranking_synthesis
+D10_early_terminal_route = available_for_rejected_all_missing_theory_or_missing_discriminator
+GTRS-OS = accepted_bounded
+GTRS-RG = accepted_bounded
+GTRS-PC = accepted_bounded
+GTRS-COMP = accepted_bounded
+GTRS-CI-PC = accepted_bounded
+D9 = accepted_bounded_lifecycle_and_typed_event_closure
+D10 = accepted_bounded
+D10.1 = accepted_preliminary_bounded_substrate_provenance_separation
+D10.2 = accepted_bounded
+architecture_selected = profile_explicit_lineage_local_GRC9V4_common_substrate_interface
+unique_candidate_selected = false
+unique_realization_selected = false
+final_substrate_identity_closed = false
+preclosure_substrate_provenance_audit_required = true
+D10.1_working_factorization = GRCV4_to_nine_port_GRC9V4_to_disabled_GRC9V3
+D10.1_promotion_proved = false
+D10.2_factorization_earned = true
+D10.2_factorization_scope = current_D10_initial_specification_population_only
+D10.2_promotion_pending_rows = 0
+D10.2_human_acceptance = accepted_bounded_2026-08-26
+D10.2_final_substrate_identity_closed = true
+preclosure_substrate_provenance_audit_required = false
+specification_authorized = true
+runtime_implementation_authorized = false
+src_changed = false
+normative_GRCV4_spec_exists = false
+normative_GRC9V4_spec_exists = false
+```

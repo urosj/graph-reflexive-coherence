@@ -1,0 +1,913 @@
+{
+  "schema_version": "1.0",
+  "record_type": "constitutive_design_gate_decision",
+  "record_id": "GRC9V4-CD-D2-v1",
+  "gate_id": "D2",
+  "status": "accepted_bounded",
+  "supersedes": null,
+  "predecessor_decision_digest": "f8ae101beb9fa6e9827555eba64452087c1d19b6933325966f10c4c4ec64c507",
+  "decision_record_digest": "ea2b953685bb23dfe979b2f5d2ae0f22f364a51484d6536c1721f144c9cad740",
+  "assumptions": [
+    {
+      "assumption_id": "D2-INTERFACE-01",
+      "statement": "D2 freezes causal interfaces and admissible operator properties, not final numerical constitutive equations or parameters."
+    },
+    {
+      "assumption_id": "D2-ORDER-01",
+      "statement": "The retained representation read at beat k may condition current at k; declared current or downstream consequences may write the retained representation for k+1; same-beat use of the new value requires a later D6 implicit-closure decision."
+    },
+    {
+      "assumption_id": "D2-RESOURCE-01",
+      "statement": "A and B carry nonresource structural information; C projects the existing C resource. No admitted D2 candidate carries an independent physical resource."
+    },
+    {
+      "assumption_id": "D2-TOPOLOGY-01",
+      "statement": "D2 defines fixed-stratum lifecycle semantics and topology-event obligations; D4 and D9 still own concrete interspace transport and parity."
+    }
+  ],
+  "candidates_considered": [
+    "V4-A-temporalized-W",
+    "V4-B-independent-derived-carrier",
+    "V4-C-constitutive-C-sector"
+  ],
+  "decision": {
+    "gate_role": "formation_retention_release_reconfiguration_transfer_and_write_interface",
+    "scope": {
+      "verification_envelope": "fixed_topology_event_free_smooth_strata_for_local_interface_definition",
+      "normative_target": "full_topology_capable_GRC9V4_successor",
+      "transport_roles_remain_provisional_until_D4": true,
+      "current_temporalization_considered": false,
+      "directional_Read_Back_operator_defined": false,
+      "complete_transition_defined": false
+    },
+    "terminology": {
+      "forming_or_write_driver": "declared_source_current_input_or_downstream_state_consequence_admitted_by_the_candidate_write_interface",
+      "formed_representation": "candidate_representation_that_has_left_its_neutral_or_instantaneously_reconstructed_baseline_through_a_qualifying_attributable_write",
+      "post_input_retention": "formed_candidate_content_remains_causally_available_after_the_forming_or_write_driver_is_absent",
+      "release": "declared_return_to_neutral_baseline_or_declared_removal_of_retained_content_with_accounting_and_lifecycle_provenance",
+      "reconfiguration": "lawful_change_of_retained_content_or_address_without_claiming_new formation",
+      "transfer": "movement_or_interspace_reassignment_of_retained_content_with_explicit_source_destination_and_accounting",
+      "write": "declared transition from the beat-k representation and admitted inputs to the beat-k-plus-1 representation",
+      "no_forming_or_write_input": "forming_and_write_driver_absent_while_ordinary_runtime_evolution_may_continue",
+      "zero_present_current": "separate_D5_passive_null_and_not_the_D2_no_input_control"
+    },
+    "lifecycle_state_machine": {
+      "states": [
+        "neutral",
+        "forming",
+        "formed",
+        "retaining",
+        "reconfiguring",
+        "releasing",
+        "released"
+      ],
+      "required_transition_provenance": [
+        "pre_state_identity",
+        "qualifying_input_identity_or_no_input_status",
+        "writer_identity",
+        "post_state_identity",
+        "resource_or_nonresource_accounting",
+        "topology_and_lifecycle_context"
+      ],
+      "forbidden_shortcuts": [
+        "label_only_formation",
+        "report_only_release",
+        "post_hoc_writer_assignment",
+        "unbounded_append_only_history",
+        "hidden_reset_as_release"
+      ]
+    },
+    "update_order_contract": {
+      "default_explicit_beat_order": [
+        "read_declared_retained_representation_at_k",
+        "form_baseline_or_direct_current_J0_k",
+        "apply_future_D5_read_contribution_if_enabled",
+        "close_future_D6_total_current_J_C_k",
+        "apply_declared_downstream_C_or_runtime_consequence",
+        "compute_forming_or_write_driver",
+        "write_retained_representation_at_k_plus_1_once",
+        "apply_bounds_release_and_lifecycle_recording",
+        "serialize_complete_post_state"
+      ],
+      "same_beat_new_state_read_allowed": false,
+      "implicit_same_beat_closure_route": "D6_successor_decision_with_regular_solve_and_causal_state_audit",
+      "write_count_per_candidate_per_beat": "exactly_one_authoritative_write_or_explicit_no_write",
+      "hidden_pre_step_or_post_step_writer_allowed": false
+    },
+    "write_input_contract": {
+      "admissible_inputs": [
+        "candidate_representation_at_k",
+        "C_k",
+        "J_C_k_after_declared_current_closure",
+        "C_k_plus_1_or_other_declared_downstream_state_consequence",
+        "declared_geometry_mobility_and_topology_context",
+        "declared_lifecycle_state",
+        "declared_step_duration_or_clock",
+        "serialized_RNG_state_only_if_stochastic_write_is_explicitly_admitted"
+      ],
+      "forbidden_inputs": [
+        "future_state_beyond_k_plus_1",
+        "future_persistence_or_basin_outcome",
+        "analysis_only_projector_result_unless_promoted_by_constitutive_contract",
+        "report_label_or_success_classification",
+        "unsaved_accumulator_optimizer_or_adaptive_basis",
+        "undeclared_scheduler_registry_or_RNG_state"
+      ],
+      "driver_persistence_is_retained_state_persistence": false,
+      "forming_driver_may_end_before_retained_state_releases": true
+    },
+    "write_input_temporal_classes": {
+      "pre_solve": [
+        "candidate_representation_at_k",
+        "C_k",
+        "declared_incoming_or_preclosure_current_surfaces",
+        "declared_geometry_topology_lifecycle_and_clock_at_k"
+      ],
+      "post_solve": [
+        "J_C_k_only_after_D6_defines_and_solves_the_total_current_closure"
+      ],
+      "post_state_update": [
+        "C_k_plus_1",
+        "other_declared_downstream_state_consequence_at_k_plus_1"
+      ],
+      "prospective_cycle_rule": "if_J_C_k_depends_on_the_new_candidate_state_at_k_plus_1_the_write_is_an_implicit_cycle_blocked_until_D6_D7",
+      "ambiguous_current_symbol_allowed": false
+    },
+    "control_separation": {
+      "initialization": "construct_or_load_a_declared_starting_candidate_state_without_claiming_native_formation",
+      "no_forming_or_write_input": "remove_the_external_or_activity_forming_driver_while_leaving_the_constitutive_write_law_and_ordinary_runtime_active",
+      "write_off": "disable_the_candidate_constitutive_write_coupling",
+      "retained_state_frozen": "hold_the_candidate_representation_fixed_while_other_runtime_state_advances",
+      "administrative_reset": "restore_the_declared_reset_baseline_and_never_count_as_native_release",
+      "pairwise_conflation_allowed": false
+    },
+    "retention_mechanism_classes": {
+      "permitted_if_explicit_and_causally_closed": [
+        "passive_persistence",
+        "bounded_decay",
+        "activity_maintained_persistence_after_external_forming_driver_absence",
+        "regeneration_from_another_declared_retained_coordinate",
+        "transfer_between_declared_retained_representations",
+        "metastable_persistence"
+      ],
+      "slow_rate_alone_is_retention": false,
+      "endogenous_maintenance_allowed": true,
+      "endogenous_maintenance_boundary": "all_maintenance_inputs_and_state_must_be_declared_inside_the_complete_causal_state",
+      "external_maintenance_blockers": [
+        "lingering_boundary_input",
+        "parameter_schedule_not_returned_to_baseline",
+        "scheduler_flag",
+        "producer_queue",
+        "stale_current_cache",
+        "mutable_registry",
+        "repeated_driver_event",
+        "undeclared_RNG_driven_injection"
+      ]
+    },
+    "release_and_reconfiguration_contract": {
+      "native_release_or_reconfiguration_required": true,
+      "release_is_inverse_of_formation_required": false,
+      "permitted_native_mechanisms": [
+        "gradual_decay",
+        "opposing_activity",
+        "inactivity_threshold",
+        "saturation_triggered_reorganization",
+        "explicit_native_reconfiguration",
+        "sector_transfer",
+        "topology_event_release"
+      ],
+      "administrative_reset_is_native_release": false,
+      "smooth_fixed_topology_release": {
+        "required_only_if_candidate_claims_smooth_lane_release": true,
+        "not_a_global_D2_requirement": true
+      },
+      "event_or_topology_mediated_release": {
+        "admissible_in_principle": true,
+        "requires_explicit_event_interspace_causal_accounting_and_lifecycle_contract": true,
+        "resolution_gates": ["D4", "D9"]
+      },
+      "release_must_be_bounded_attributable_and_lifecycle_recorded": true
+    },
+    "multiwrite_contract": {
+      "writes_arrive_as": "one_declared_write_batch_per_candidate_per_beat",
+      "candidate_rule_required": true,
+      "allowed_composition_classes": [
+        "commutative_sum_with_bounds",
+        "declared_ordered_composition_with_serialized_order",
+        "competition_or_normalization_with_declared_scope",
+        "deterministic_priority_with_recorded_priority"
+      ],
+      "undefined_iteration_order_allowed": false,
+      "order_sensitive_composition_rule": "order_must_be_deterministically_recoverable_from_declared_current_causal_state_input_batch_and_constitutive_ordering_rule_or_persistent_order_state_must_be_serialized",
+      "external_producer_sequence_memory_allowed": false
+    },
+    "write_information_and_covariance_contract": {
+      "required_content_flags": [
+        "signed_orientation",
+        "axis_only",
+        "magnitude_or_activity",
+        "temporal_order",
+        "none"
+      ],
+      "net_zero_activity_may_be_nontrivial": true,
+      "J_squared_preserves_orientation": false,
+      "edge_orientation_relabel_rule": "write_output_transforms_under_the_declared_candidate_representation_and_may_not_depend_on_storage_orientation_by_accident",
+      "scalar_or_axis_carrier_storage_orientation_invariant": true,
+      "directional_carrier_requires_explicit_cochain_or_oriented_type": true
+    },
+    "stochastic_write_contract": {
+      "stochastic_write_allowed": true,
+      "allowed_stochastic_sites": ["formation", "release", "selector_change", "multiwrite_competition"],
+      "requirements": [
+        "serialized_RNG_state",
+        "declared_consumption_order",
+        "replay_equivalence",
+        "site_specific_attribution"
+      ],
+      "irreproducible_carrier_allowed": false
+    },
+    "transfer_profile": {
+      "initial_profile": "transfer_out_of_scope_for_initial_profile_except_ordinary_C_transport_already_owned_by_candidate_C_state_dynamics",
+      "nonresource_copy_is_transfer": false,
+      "replication_requires_distinct_semantics": true,
+      "resource_transfer_requires_source_debit_and_destination_credit": true,
+      "topology_interspace_transfer_gate": "D4_and_D9"
+    },
+    "capacity_lifetime_and_saturation_contract": {
+      "capacity_and_lifetime_are_independent_axes": true,
+      "bounded_dimension_proves_release": false,
+      "finite_lifetime_proves_bounded_capacity": false,
+      "saturation_or_clipping_may_be_constitutive": true,
+      "numerical_safety_relabel_as_history_allowed": false,
+      "normalization_scope_must_be_one_of": ["local", "basin_local", "graph_wide"],
+      "normalization_scope_is_causally_load_bearing": true
+    },
+    "no_forming_or_write_input_control": {
+      "control_id": "no_forming_or_write_input",
+      "setup": "begin_from_a_formed_candidate_state_then_remove_or_zero_only_the_declared_external_or_activity_forming_driver_without_disabling_the_constitutive_writer_while_preserving_other_admissible_ordinary_runtime_dynamics",
+      "allowed_results": [
+        "bounded_retention",
+        "declared_relaxation",
+        "declared_release_to_neutral",
+        "declared_reconfiguration_from_ordinary_dynamics"
+      ],
+      "required_observations": [
+        "driver_absence",
+        "candidate_state_or_sector_identity",
+        "resource_or_nonresource_accounting",
+        "release_or_reconfiguration_event_if_any",
+        "absence_of_hidden_reformation"
+      ],
+      "blocks": [
+        "driver_persistence_as_retention",
+        "hidden_producer_refresh",
+        "immediate_recomputed_proxy_claimed_as_history",
+        "release_by_unrecorded_reset"
+      ],
+      "not_the_same_as": "zero_present_current_Read_Back_passive_null"
+    },
+    "resource_and_capacity_contract": {
+      "carries_independent_resource": "not_admitted_for_A_B_or_C;_requires_named_theory_level_conservation_reopening",
+      "projects_existing_resource": "count_C_once_and_use_sector_terms_only_as_decomposition_or_transfer_within_C",
+      "nonresource_structural_information": "may_condition_future_constitutive_calculation_but_may_not_source_sink_or_duplicate_C",
+      "bounded_capacity_requirements": [
+        "fixed_or_event_accounted_dimension",
+        "declared_bounded_or_coercively_controlled_value_domain",
+        "no_append_only_history",
+        "declared_pruning_release_or_reconfiguration",
+        "serialization_and_reset_ownership"
+      ],
+      "hidden_second_reservoir_allowed": false,
+      "resource_label_from_transport_role_allowed": false
+    },
+    "candidate_interfaces": [
+      {
+        "candidate_id": "V4-A-temporalized-W",
+        "D2_status": "interface_admitted_bounded",
+        "initialization": "declared_W_k_and_reset_baseline_may_seed_a_control_but_do_not_establish_native_formation",
+        "forming_inputs": ["source_current_C_k", "declared_current_surface", "declared_downstream_state_consequence"],
+        "forming_driver_provenance": "must_name_the_runtime_stage_source_state_and_exhaustion_boundary",
+        "formation_operator": "abstract_U_A_write_component_pending_source_backed_D7_derivation",
+        "formation_attribution": "formed_W_run_minus_matched_initialized_or_no_forming_input_control",
+        "retained_representation_at_k": "authoritative_enabled_W_k",
+        "instantaneous_reference": "W_hat_k_reconstructed_from_current_GRC9V3_permitted_surfaces_and_not_independent_state",
+        "retained_content_coordinate": "R_W_k_equals_declared_difference_or_relation_between_W_k_and_W_hat_k",
+        "formation": {
+          "neutral_baseline": "R_W_equals_zero_or_the_declared_neutral_relation_to_W_hat",
+          "qualifying_input": "source_current_C_J_C_or_downstream_state_consequence_changes_the_authoritative_W_write_proposal",
+          "formed_condition": "R_W_leaves_neutral_by_a_preregistered_nonzero_attributable_margin",
+          "label_or_persistence_only_is_formation": false
+        },
+        "retention": {
+          "post_input_condition": "R_W_remains_nonneutral_or_causally_available_after_no_forming_or_write_input",
+          "driver_refresh_allowed": false,
+          "numerical_inertia_alone_is_structural_retention": false,
+          "bounded_state_required": true
+        },
+        "no_forming_or_write_input_behavior": "U_A_remains_active_but_receives_no_external_or_activity_forming_driver;_W_may_retain_relax_release_or_reconfigure_only_from_declared_causal_state",
+        "endogenous_maintenance_allowed": true,
+        "external_maintenance_blockers": "inherit_global_external_maintenance_blockers_and_require_candidate_local_absence_evidence",
+        "retention_mechanism_class": "unselected_from_the_explicit_D2_permitted_classes_pending_D7",
+        "release_or_reconfiguration": {
+          "release_target": "R_W_returns_to_neutral_and_W_rejoins_the_declared_instantaneous_baseline_relation",
+          "allowed_causes": ["declared_internal_relaxation", "declared_release_threshold", "declared_native_reconfiguration", "topology_event_rule_pending_D4"],
+          "must_emit_lifecycle_provenance": true,
+          "silent_overwrite_allowed": false
+        },
+        "release_mechanism": "native_release_or_reconfiguration_route_required;_smooth_lane_release_only_if_claimed;_event_mediated_route_conditional_on_D4_D9_contract",
+        "reconfiguration_mechanism": "bounded_constitutive_W_change_with_provenance;_topology_event_rule_pending_D4_D9",
+        "administrative_reset_is_native_release": false,
+        "transfer": {
+          "fixed_topology_peer_transfer": "not_part_of_current_A_interface_unless_D4_defines_source_destination_semantics",
+          "topology_interspace_transfer": "deferred_to_D4_and_D9",
+          "lineage_as_transfer": false
+        },
+        "write_interface": {
+          "writer": "single_candidate_A_W_update_stage",
+          "admissible_inputs": ["W_k", "W_hat_k", "C_k", "J_C_k", "declared_downstream_state_consequence", "clock", "lifecycle_context"],
+          "output": "W_k_plus_1",
+          "write_law_shape": "W_k_plus_1_equals_U_A_of_declared_inputs_with_bounded_retention_and_release",
+          "exact_operator_and_parameters": "open_for_D7_candidate_transition",
+          "same_beat_output_read": false
+        },
+        "write_inputs_pre_or_post_solve": {
+          "pre_solve": ["W_k", "W_hat_k", "C_k", "declared_preclosure_current_surface"],
+          "post_solve": ["J_C_k_only_after_D6_closure"],
+          "post_state_update": ["declared_downstream_state_consequence"],
+          "selected_temporal_side": "open_for_D7"
+        },
+        "multiwrite_composition_rule": "must_select_one_global_D2_composition_class_before_execution",
+        "W_instantaneous_write": "W_hat_k_is_reconstructed_once_from_declared_current_surfaces_and_has_no_retained_write_authority",
+        "W_retained_write": "U_A_writes_authoritative_W_k_plus_1_once",
+        "double_write_audit": {
+          "same_activity_term_may_enter_both_paths_without_attribution": false,
+          "required_table": ["input_term", "instantaneous_contribution", "retained_contribution", "joint_use_justification"],
+          "joint_use_requires_nonduplicative_constitutive_derivation": true
+        },
+        "W_effective_composition_obligation": "D4_must_select_additive_nonlinear_or_replacement_semantics_and_reject_activity_double_counting",
+        "effect_persistence_distinction": "persistence_of_history_induced_C_branch_change_does_not_establish_persistence_of_W_or_R_W",
+        "information_capacity_bound": "bounded_or_coercive_edge_state_with_declared_local_basin_local_or_graph_wide_normalization_scope",
+        "sign_orientation_axis_magnitude_content": "must_be_declared_by_D7;_J_squared_input_cannot_support_signed_orientation",
+        "order_sensitivity": "order_must_be_deterministically_recoverable_from_declared_current_state_batch_and_rule_or_persistent_order_state_must_be_serialized_in_W;_external_memory_forbidden",
+        "saturation_policy": "clipping_floor_ceiling_or_normalization_is_constitutive_if_it_changes_future_state_and_cannot_be_called_numerical_hygiene",
+        "projection_or_clipping_role": "open_typed_obligation_for_D4_D7",
+        "hidden_producer_state": "forbidden",
+        "RNG_dependence": "none_unless_explicitly_admitted_serialized_and_replayable",
+        "candidate_specific_edge_cases": ["instantaneous_retained_double_write", "clipping_as_memory", "global_normalization_rewrites_unaddressed_edges", "W_state_vs_C_effect_persistence"],
+        "later_gate_obligations": ["D4_effective_W_composition_and_normalization_scope", "D7_exact_update_release_saturation_and_information_type", "D9_reset_and_topology_lifecycle"],
+        "accounting": {
+          "resource_role": "nonresource_structural_information",
+          "C_budget_effect": "none_directly;_any_current_conditioned_C_transport_remains_in_the_C_budget",
+          "unbounded_information_growth_allowed": false
+        },
+        "provisional_transport_roles": ["conditions_mobility", "direct_transport_parameter"],
+        "D4_may_confirm_narrow_or_reclassify": true,
+        "would_reject_or_reclassify_if_failed": [
+          "W_write_is_only_legacy_reconstruction",
+          "retention_requires_hidden_refresh_or_helper_state",
+          "release_is_only_silent_overwrite",
+          "instantaneous_and_retained_W_authority_cannot_be_typed_without_new_state"
+        ]
+      },
+      {
+        "candidate_id": "V4-B-independent-derived-carrier",
+        "D2_status": "interface_admitted_bounded",
+        "initialization": "declared_T_k_and_reset_baseline_may_seed_a_control_but_do_not_establish_native_formation",
+        "forming_inputs": ["source_current_C_k", "declared_current_surface", "declared_downstream_state_consequence", "declared_geometry_or_topology_context"],
+        "forming_driver_provenance": "must_name_the_runtime_stage_source_state_and_exhaustion_boundary",
+        "formation_operator": "abstract_recursive_U_B_pending_source_backed_D7_derivation",
+        "formation_attribution": "formed_T_run_minus_matched_initialized_or_no_forming_input_control",
+        "retained_representation_at_k": "independent_serialized_T_k",
+        "present_value_is_instantaneous_function_of_C_J": false,
+        "formation": {
+          "neutral_baseline": "canonical_T_neutral",
+          "qualifying_input": "declared_RC_source_current_or_downstream_state_consequence_enters_U_B",
+          "formed_condition": "T_k_plus_1_differs_from_T_neutral_by_a_preregistered_attributable_margin",
+          "update_dependency": "T_k_plus_1_equals_U_B_of_T_k_and_permitted_declared_inputs",
+          "label_or_serialization_only_is_formation": false
+        },
+        "retention": {
+          "post_input_condition": "T_remains_nonneutral_or_causally_available_after_no_forming_or_write_input",
+          "finite_history_reconstruction_audit": "if_the_required_history_is_already_declared_complete_state_T_is_redundant;_otherwise_T_may_be_a_Markov_completion_but_not_an_unsaved_history_cache",
+          "driver_refresh_allowed": false,
+          "bounded_state_required": true
+        },
+        "no_forming_or_write_input_behavior": "U_B_remains_active_on_declared_causal_state_without_the_external_or_activity_forming_driver",
+        "endogenous_maintenance_allowed": true,
+        "external_maintenance_blockers": "inherit_global_external_maintenance_blockers_and_require_candidate_local_absence_evidence",
+        "retention_mechanism_class": "unselected_from_the_explicit_D2_permitted_classes_pending_D7",
+        "T_recursive_dependence": "T_k_plus_1_must_be_Markov_closed_on_T_k_and_declared_k_or_k_plus_1_inputs",
+        "Markov_closure": "full_prior_trajectory_is_forbidden_unless_promoted_to_bounded_serialized_causal_state",
+        "slow_cache_substitute_audit": "EMA_is_only_a_candidate_form;_eta_below_one_or_small_eta_does_not_establish_retained_RC_structure_and_creates_a_major_D3_D7_obligation",
+        "resource_regeneration_audit": "depleted_physical_C_may_not_be_restored_solely_from_nonresource_T;_such_behavior_requires_resource_reclassification_and_conservation_reopening",
+        "release_or_reconfiguration": {
+          "release_target": "canonical_T_neutral_or_declared_removed_component_with_nonresource_ledger",
+          "allowed_causes": ["declared_internal_relaxation", "declared_release_threshold", "declared_native_reconfiguration", "topology_event_rule_pending_D4"],
+          "must_emit_lifecycle_provenance": true,
+          "append_only_retention_allowed": false
+        },
+        "release_mechanism": "native_release_or_reconfiguration_route_required;_smooth_lane_release_only_if_claimed;_event_mediated_route_conditional_on_D4_D9_contract",
+        "reconfiguration_mechanism": "bounded_recursive_T_change_with_nonresource_ledger",
+        "administrative_reset_is_native_release": false,
+        "transfer": {
+          "fixed_topology_peer_transfer": "not_admitted_without_explicit_source_destination_nonresource_accounting",
+          "topology_interspace_transfer": "deferred_to_D4_and_D9",
+          "copy_as_transfer": false
+        },
+        "write_interface": {
+          "writer": "single_candidate_B_T_update_stage",
+          "admissible_inputs": ["T_k", "C_k", "J_C_k", "declared_downstream_state_consequence", "geometry_or_topology_context", "clock", "lifecycle_context"],
+          "output": "T_k_plus_1",
+          "write_law_shape": "T_k_plus_1_equals_U_B_of_declared_inputs_with_bounded_retention_and_release",
+          "RC_derived_update_does_not_mean_present_value_reconstruction": true,
+          "exact_operator_and_parameters": "open_for_D7_candidate_transition",
+          "same_beat_output_read": false
+        },
+        "write_inputs_pre_or_post_solve": {
+          "pre_solve": ["T_k", "C_k", "declared_preclosure_current_surface", "geometry_or_topology_context"],
+          "post_solve": ["J_C_k_only_after_D6_closure"],
+          "post_state_update": ["declared_downstream_state_consequence"],
+          "selected_temporal_side": "open_for_D7"
+        },
+        "multiwrite_composition_rule": "must_select_one_global_D2_composition_class_before_execution",
+        "information_capacity_bound": "fixed_or_event_accounted_dimension_plus_bounded_or_coercive_values_plus_release;_no_append_only_history",
+        "sign_orientation_axis_magnitude_content": "must_be_declared_by_D7_and_supported_by_T_type",
+        "order_sensitivity": "order_must_be_deterministically_recoverable_from_declared_current_state_batch_and_rule_or_persistent_order_state_must_be_serialized_in_T",
+        "saturation_policy": "constitutive_if_load_bearing_and_never_relabelled_as_numerical_hygiene",
+        "projection_or_clipping_role": "open_typed_obligation_for_D4_D7",
+        "hidden_producer_state": "forbidden",
+        "RNG_dependence": "none_unless_explicitly_admitted_serialized_and_replayable",
+        "candidate_specific_edge_cases": ["EMA_as_retention_substitute", "unbounded_history_capacity", "nonresource_T_as_covert_C_reservoir", "undeclared_trajectory_reconstruction"],
+        "later_gate_obligations": ["D3_structural_justification_beyond_slow_cache", "D4_transport_and_geometry_role", "D7_exact_Markov_update_release_capacity_and_resource_regeneration_controls", "D9_lifecycle"],
+        "accounting": {
+          "resource_role": "nonresource_structural_information",
+          "C_budget_effect": "none_directly",
+          "independent_resource_variant_in_scope": false,
+          "unbounded_information_growth_allowed": false
+        },
+        "provisional_transport_roles": ["conditions_geometry"],
+        "D4_may_confirm_narrow_or_reclassify": true,
+        "would_reject_or_reclassify_if_failed": [
+          "T_is_algebraically_reconstructable_from_current_declared_state",
+          "T_has_no_permitted_native_consumer",
+          "T_requires_hidden_helper_history",
+          "T_duplicates_C_resource",
+          "release_or_capacity_bound_cannot_be_defined"
+        ]
+      },
+      {
+        "candidate_id": "V4-C-constitutive-C-sector",
+        "D2_status": "interface_admitted_bounded",
+        "initialization": "preselected_sector_or_nonzero_sector_occupation_is_a_control_and_does_not_establish_native_formation",
+        "forming_inputs": ["source_current_J_C_or_declared_downstream_C_update", "current_constitutive_selector_inputs"],
+        "forming_driver_provenance": "must_name_the_C_update_stage_selector_state_and_matched_no_forming_input_control",
+        "formation_operator": "authoritative_C_update_plus_constitutive_projection_with_no_independent_T_C_writer",
+        "formation_attribution": "T_C_k_plus_1_forming_minus_T_C_k_plus_1_matched_no_forming_input",
+        "retained_representation_at_k": "T_C_k_equals_S_k_of_C_k_under_the_D1_constitutive_selector",
+        "independent_write_to_T_C_allowed": false,
+        "formation": {
+          "neutral_baseline": "declared_baseline_sector_occupation_under_matched_no_forming_input",
+          "qualifying_input": "declared_J_C_or_downstream_C_update_changes_sector_content_relative_to_a_matched_no_forming_input_control",
+          "formed_condition": "attributable_sector_change_exceeds_a_preregistered_margin_and_remains_addressable",
+          "attribution_relation": "Delta_T_write_equals_T_k_plus_1_forming_minus_T_k_plus_1_matched_no_forming",
+          "generic_C_continuity_is_formation": false
+        },
+        "retention_selective_factorization": {
+          "state_relation": "T_C_k_equals_S_k_C_k",
+          "discrete_change_identity": "T_C[k+1]-T_C[k] = S[k](C[k+1]-C[k]) + (S[k+1]-S[k])C[k+1]",
+          "ordinary_C_update": "C_k_to_C_k_plus_1_under_declared_runtime_continuity",
+          "activity_induced_sector_change": "matched_difference_attributable_to_the_qualifying_forming_or_write_driver",
+          "selector_or_basis_drift": "second_term_in_the_discrete_change_identity_with_rank_and_transport_accounting",
+          "later_retained_conditioned_read_effect": "deferred_to_D5_and_D7_and_must_remain_separate",
+          "three_arrows_collapsed_allowed": false
+        },
+        "content_change_component": "S_k_times_C_k_plus_1_minus_C_k",
+        "projector_motion_component": "S_k_plus_1_minus_S_k_times_C_k_plus_1",
+        "rank_change_semantics": "rank_increase_or_decrease_is_sector_membership_change_not_automatic_formation_or_release",
+        "sector_entry_exit_semantics": "exit_reentry_may_be_release_reformation_selector_motion_transfer_or_basis_transport_and_remains_typed_D4_D8_debt",
+        "retention": {
+          "post_input_condition": "selected_sector_content_remains_addressable_after_no_forming_or_write_input_while_ordinary_C_evolution_continues",
+          "driver_refresh_allowed": false,
+          "current_recomputation_alone_is_historical_retention": false,
+          "future_native_consumer_required": true
+        },
+        "no_forming_or_write_input_behavior": "ordinary_C_and_selector_dynamics_continue_without_the_qualifying_forming_driver_and_are_compared_to_the_matched_factorization",
+        "endogenous_maintenance_allowed": true,
+        "external_maintenance_blockers": "inherit_global_external_maintenance_blockers_and_require_candidate_local_absence_evidence",
+        "retention_mechanism_class": "constitutive_sector_occupation_or_reorganization_pending_D3_D4_D7_admission",
+        "release_or_reconfiguration": {
+          "release_target": "attributable_sector_content_returns_to_declared_baseline_or_leaves_the_sector_through_accounted_C_redistribution",
+          "rank_change_interpretation": "decomposition_change_not_resource_creation_or_destruction",
+          "required_accounting": ["content_entering_sector", "content_leaving_sector", "selector_drift", "C_budget_once"],
+          "silent_label_change_allowed": false
+        },
+        "release_mechanism": "native_release_or_reconfiguration_route_required;_smooth_sector_exit_or_relaxation_only_if_claimed;_event_mediated_route_conditional_on_D4_D9;_rank_drop_alone_is_not_release",
+        "reconfiguration_mechanism": "accounted_C_redistribution_selector_motion_or_basis_transport_with_distinct_provenance",
+        "administrative_reset_is_native_release": false,
+        "transfer": {
+          "separate_T_resource_transfer": "not_applicable",
+          "fixed_topology_transfer": "ordinary_C_transport_with_sector_attribution",
+          "topology_interspace_transfer": "projector_and_C_transport_rule_deferred_to_D4_and_D9",
+          "copy_as_transfer": false
+        },
+        "write_interface": {
+          "writer": "ordinary_authoritative_C_update_only",
+          "admissible_inputs": ["C_k", "J_C_k", "declared_downstream_state_consequence", "current_selector_inputs", "clock", "lifecycle_context"],
+          "output": "C_k_plus_1_then_T_C_k_plus_1_is_recomputed_constitutively",
+          "direct_sector_overwrite_allowed": false,
+          "same_beat_output_read": false
+        },
+        "write_inputs_pre_or_post_solve": {
+          "pre_solve": ["C_k", "current_selector_inputs", "declared_preclosure_current_surface"],
+          "post_solve": ["J_C_k_only_after_D6_closure"],
+          "post_state_update": ["C_k_plus_1_as_the_authoritative_write_result"],
+          "selected_temporal_side": "post_state_update_for_sector_recomputation"
+        },
+        "multiwrite_composition_rule": "all_physical_writes_compose_through_the_single_authoritative_C_update_before_constitutive_sector_recomputation",
+        "information_capacity_bound": "selector_rank_and_basis_are_fixed_or_event_accounted_and_C_is_counted_once",
+        "sign_orientation_axis_magnitude_content": "sector_content_type_inherits_declared_C_and_selector_type_and_must_not_infer_orientation_from_unoriented_observables",
+        "order_sensitivity": "order_must_be_deterministically_recoverable_from_declared_current_state_batch_and_rule_or_persistent_order_state_must_be_serialized_in_authoritative_C_or_selector_state",
+        "saturation_policy": "any_selector_or_C_bound_that_changes_sector_history_is_constitutive_and_accounted",
+        "projection_or_clipping_role": "projection_is_constitutive_only_after_D3_D4_admission_and_not_an_observer_only_cache",
+        "hidden_producer_state": "forbidden",
+        "RNG_dependence": "none_unless_selector_stochasticity_is_explicitly_admitted_serialized_and_replayable",
+        "candidate_specific_edge_cases": ["projector_motion_as_content_write", "rank_change_as_formation_or_release", "sector_exit_reentry_identity", "generic_C_continuity_as_write"],
+        "later_gate_obligations": ["D3_structural_sector_admission", "D4_selector_rank_basis_and_transport", "D5_later_native_consumer", "D7_intervenable_factorization", "D8_variable_rank_and_sector_identity", "D9_lifecycle"],
+        "accounting": {
+          "resource_role": "projects_existing_C_resource",
+          "physical_budget_map": "count_C_once_and_treat_T_C_as_a_decomposition",
+          "serialized_view_if_any": "representation_cache_only_and_not_second_resource",
+          "unbounded_information_growth_allowed": false
+        },
+        "provisional_transport_roles": ["conditions_geometry"],
+        "D4_may_confirm_narrow_or_reclassify": true,
+        "would_reject_or_reclassify_if_failed": [
+          "sector_change_cannot_be_attributed_beyond_generic_C_continuity",
+          "selector_requires_hidden_or_future_state",
+          "later_native_consumer_cannot_be_defined",
+          "rank_change_duplicates_or_loses_C_resource_without_accounting",
+          "direct_sector_write_is_required_outside_C_update"
+        ]
+      }
+    ],
+    "candidate_set_after_D2": [
+      "V4-A-temporalized-W",
+      "V4-B-independent-derived-carrier",
+      "V4-C-constitutive-C-sector"
+    ],
+    "rejected_on_D2_interface": [],
+    "reclassified_or_revision_needed": [],
+    "architecture_selected": false,
+    "candidate_equivalence_resolved": false,
+    "control_contract": [
+      {"control_id":"no_forming_or_write_input","blocks":"driver_persistence_hidden_refresh_or_recomputed_proxy_as_retention"},
+      {"control_id":"nonneutral_initialization_as_formation","blocks":"seeded_carrier_or_preselected_sector_as_native_formation"},
+      {"control_id":"formation_source_omission","blocks":"formation_without_permitted_source_current_input"},
+      {"control_id":"write_off","blocks":"constitutive_write_coupling_effect_conflated_with_forming_driver_absence"},
+      {"control_id":"retained_state_frozen","blocks":"candidate_update_effect_conflated_with_persistence_of_the_retained_coordinate"},
+      {"control_id":"writer_ownership_swap","blocks":"multiple_or_post_hoc_write_authority"},
+      {"control_id":"multiwrite_order_and_composition","blocks":"undefined_iteration_order_or_external_sequence_memory"},
+      {"control_id":"indefinite_accumulator","blocks":"unbounded_history_capacity_without_release"},
+      {"control_id":"arbitrary_slow_cache","blocks":"small_update_rate_as_structural_retention"},
+      {"control_id":"B_EMA_substitute","blocks":"eta_below_one_as_the_only_constitutive_retention_justification"},
+      {"control_id":"hidden_resource_duplication","blocks":"A_or_B_as_second_C_budget_or_C_sector_double_counting"},
+      {"control_id":"B_resource_regeneration","blocks":"restoration_of_depleted_physical_C_solely_from_nonresource_T"},
+      {"control_id":"hidden_helper_state","blocks":"undeclared_accumulator_optimizer_basis_registry_or_RNG_authority"},
+      {"control_id":"hidden_external_maintenance","blocks":"boundary_schedule_queue_cache_registry_event_or_RNG_injection_as_endogenous_retention"},
+      {"control_id":"same_beat_new_state_read","blocks":"instantaneous_self_loop_without_D6_closure"},
+      {"control_id":"silent_release_reset","blocks":"unrecorded_reset_or_overwrite_as_release"},
+      {"control_id":"administrative_reset_as_native_release","blocks":"reset_API_as_constitutive_release_evidence"},
+      {"control_id":"uncontracted_event_release","blocks":"event_or_topology_mediated_release_without_D4_D9_causal_accounting_and_lifecycle_contract"},
+      {"control_id":"driver_vs_state_persistence","blocks":"continued_forming_input_as_post_input_retention"},
+      {"control_id":"formation_retention_arrow_collapse","blocks":"formation_inferred_from_persistence_or_retention_inferred_from_write"},
+      {"control_id":"A_instantaneous_retained_double_write","blocks":"same_activity_history_counted_in_both_W_hat_and_retained_W_without_derivation"},
+      {"control_id":"A_clipping_or_normalization_as_hidden_memory","blocks":"numerical_floor_ceiling_or_normalization_as_undeclared_constitutive_history"},
+      {"control_id":"A_W_state_vs_C_effect_persistence","blocks":"history_induced_C_branch_persistence_as_continued_W_retention"},
+      {"control_id":"C_generic_continuity_relabel","blocks":"ordinary_C_update_as_retained_write_back"},
+      {"control_id":"C_projector_motion_relabel","blocks":"selector_or_basis_motion_as_content_write"},
+      {"control_id":"C_rank_change_relabel","blocks":"rank_increase_as_formation_or_rank_decrease_as_release"},
+      {"control_id":"C_sector_exit_reentry_relabel","blocks":"unresolved_sector_identity_as_automatic_release_reformation_or_transfer"},
+      {"control_id":"net_zero_or_squared_history_collapse","blocks":"unsupported_signed_axis_magnitude_or_order_information_claim"},
+      {"control_id":"write_orientation_covariance","blocks":"storage_orientation_as_physical_write_direction"},
+      {"control_id":"stochastic_write_replay","blocks":"unserialized_RNG_or_undeclared_consumption_order"},
+      {"control_id":"capacity_as_lifetime","blocks":"bounded_dimension_as_release_or_finite_lifetime_as_bounded_capacity"},
+      {"control_id":"saturation_as_numerical_hygiene","blocks":"load_bearing_saturation_or_branch_selection_hidden_as_numeric_safety"},
+      {"control_id":"topology_lineage_transfer","blocks":"lineage_or_ID_as_interspace_transport"}
+    ],
+    "D2_pressure_audit": [
+      {"pressure_id":1,"topic":"initialization_vs_formation","D2_disposition":"satisfied","binding":"candidate_initialization_formation_operator_and_matched_attribution_are_separate"},
+      {"pressure_id":2,"topic":"no_forming_input_vs_write_off_vs_frozen_state","D2_disposition":"satisfied","binding":"control_separation"},
+      {"pressure_id":3,"topic":"hidden_continued_forcing","D2_disposition":"satisfied","binding":"retention_mechanism_classes.external_maintenance_blockers"},
+      {"pressure_id":4,"topic":"formation_and_retention_as_separate_arrows","D2_disposition":"satisfied","binding":"candidate_formation_and_post_input_retention_records_plus_control"},
+      {"pressure_id":5,"topic":"retention_not_defined_by_slow_decay","D2_disposition":"satisfied_with_later_operator_debt","binding":"retention_mechanism_classes_and_arbitrary_slow_cache_controls"},
+      {"pressure_id":6,"topic":"release_need_not_invert_formation","D2_disposition":"satisfied","binding":"release_and_reconfiguration_contract"},
+      {"pressure_id":7,"topic":"administrative_reset_is_not_native_release","D2_disposition":"satisfied","binding":"control_separation_and_release_contract"},
+      {"pressure_id":8,"topic":"precise_write_temporal_side","D2_disposition":"satisfied_with_D7_selection_open","binding":"write_input_temporal_classes_and_candidate_temporal_maps"},
+      {"pressure_id":9,"topic":"prospective_algebraic_cycle","D2_disposition":"satisfied","binding":"D6_D7_cycle_rule"},
+      {"pressure_id":10,"topic":"A_instantaneous_retained_double_write","D2_disposition":"satisfied_as_hard_attribution_obligation","binding":"candidate_A.double_write_audit"},
+      {"pressure_id":11,"topic":"A_clipping_floor_or_saturation_as_memory","D2_disposition":"satisfied_as_constitutive_classification_obligation","binding":"candidate_A.saturation_policy"},
+      {"pressure_id":12,"topic":"A_W_state_vs_history_induced_C_persistence","D2_disposition":"satisfied","binding":"candidate_A.effect_persistence_distinction"},
+      {"pressure_id":13,"topic":"A_normalization_scope","D2_disposition":"typed_debt_for_D4_D7","binding":"candidate_A.information_capacity_bound"},
+      {"pressure_id":14,"topic":"B_EMA_trap","D2_disposition":"satisfied_with_major_D3_D7_obligation","binding":"candidate_B.slow_cache_substitute_audit"},
+      {"pressure_id":15,"topic":"B_bounded_information_capacity","D2_disposition":"satisfied_as_bounded_interface","binding":"candidate_B.information_capacity_bound"},
+      {"pressure_id":16,"topic":"B_covert_C_resource_reservoir","D2_disposition":"satisfied_as_rejection_and_conservation_reopening_rule","binding":"candidate_B.resource_regeneration_audit"},
+      {"pressure_id":17,"topic":"B_Markov_closure","D2_disposition":"satisfied","binding":"candidate_B.Markov_closure"},
+      {"pressure_id":18,"topic":"C_content_change_vs_projector_motion","D2_disposition":"satisfied_as_explicit_factorization","binding":"candidate_C.content_change_component_and_projector_motion_component"},
+      {"pressure_id":19,"topic":"C_rank_change_not_automatic_formation_or_release","D2_disposition":"satisfied","binding":"candidate_C.rank_change_semantics"},
+      {"pressure_id":20,"topic":"C_sector_exit_and_reentry","D2_disposition":"typed_debt_for_D4_D8","binding":"candidate_C.sector_entry_exit_semantics"},
+      {"pressure_id":21,"topic":"generic_C_continuity_is_not_write","D2_disposition":"satisfied_as_factorization_and_control","binding":"C_generic_continuity_relabel"},
+      {"pressure_id":22,"topic":"write_information_content","D2_disposition":"satisfied_as_required_candidate_declaration_pending_D7","binding":"write_information_and_covariance_contract"},
+      {"pressure_id":23,"topic":"order_dependence_as_declared_or_recoverable_causal_semantics","D2_disposition":"satisfied","binding":"multiwrite_contract_and_candidate_order_sensitivity"},
+      {"pressure_id":24,"topic":"simultaneous_multiwrite_composition","D2_disposition":"satisfied_as_pre_execution_selection_obligation","binding":"multiwrite_contract"},
+      {"pressure_id":25,"topic":"orientation_and_gauge_covariance","D2_disposition":"satisfied_as_D7_conformance_obligation","binding":"write_information_and_covariance_contract"},
+      {"pressure_id":26,"topic":"stochastic_write_RNG_semantics","D2_disposition":"satisfied","binding":"stochastic_write_contract"},
+      {"pressure_id":27,"topic":"transfer_conservation_or_explicit_exclusion","D2_disposition":"satisfied","binding":"transfer_profile"},
+      {"pressure_id":28,"topic":"saturation_as_constitutive_reconfiguration","D2_disposition":"satisfied","binding":"capacity_lifetime_and_saturation_contract"},
+      {"pressure_id":29,"topic":"native_release_or_reconfiguration_without_premature_regime_ownership","D2_disposition":"satisfied_as_required_route_with_conditional_smooth_or_event_contracts","binding":"release_and_reconfiguration_contract"},
+      {"pressure_id":30,"topic":"capacity_vs_lifetime","D2_disposition":"satisfied","binding":"capacity_lifetime_and_saturation_contract"}
+    ],
+    "predecessor_debt_disposition": [
+      {"debt_id":"D1-DEBT-A-W-AUTHORITY-SPLIT","D2_status":"narrowed_not_closed","reason":"instantaneous_reference_authoritative_W_and_single_writer_are_typed_but_effective_transport_composition_and_transition_remain_open"},
+      {"debt_id":"D1-DEBT-B-CONSTITUTIVE-JUSTIFICATION","D2_status":"narrowed_not_closed","reason":"recursive_update_nonresource_role_and_release_contract_are_typed_but_exact_source_backed_operator_remains_open"},
+      {"debt_id":"D1-DEBT-C-SELECTOR-AND-FACTORISATION","D2_status":"narrowed_not_closed","reason":"three_part_factorization_is_frozen_but_runtime_load_bearing_and_topology_transport_remain_open"},
+      {"debt_id":"D1-DEBT-REDUCTION-CONSTRUCTION","D2_status":"carried_open","reason":"D2_does_not_execute_transition_commutation"},
+      {"debt_id":"D1-DEBT-TOPOLOGY-TRANSPORT","D2_status":"carried_open","reason":"D4_and_D9_own_interspace_semantics"},
+      {"debt_id":"D1-DEBT-INFORMATION-CAPACITY-AND-RELEASE","D2_status":"narrowed_not_closed","reason":"bounded_capacity_and_release_rules_are_frozen_but_concrete_domains_and_event_rules_remain_open"},
+      {"debt_id":"D1-DEBT-HIDDEN-HELPER-AND-ADMIN-STATE","D2_status":"narrowed_not_closed","reason":"write_inputs_and_hidden_authority_controls_are_frozen_but_transition_proof_remains_open"},
+      {"debt_id":"D1-DEBT-CANDIDATE-EQUIVALENCE","D2_status":"carried_open","reason":"interface_differences_do_not_prove_absence_of_future_causal_conjugacy"},
+      {"debt_id":"D1-DEBT-CANDIDATE-D-CLOSED-SLOT","D2_status":"carried_nonblocking","reason":"no_new_source_or_D0_successor"}
+    ],
+    "claim_ceiling": {
+      "ceiling_id": "GRC9V4-CD-D2-bounded-write-interface",
+      "supports": [
+        "candidate_specific_formation_retention_release_reconfiguration_transfer_and_write_interface_contracts",
+        "explicit_no_forming_or_write_input_control",
+        "resource_and_information_capacity_boundaries",
+        "C_sector_retention_selective_factorization",
+        "three_candidates_ready_for_D3_structural_domain_analysis_after_acceptance"
+      ],
+      "does_not_support": [
+        "exact_numerical_update_operator_or_parameters",
+        "empirical_retention_or_release",
+        "formed_structural_branch_or_continuation_spectrum",
+        "final_geometry_or_mobility_ownership",
+        "directional_Read_Back",
+        "total_current_closure",
+        "complete_transition",
+        "topology_interspace_transport",
+        "GRC9V3_reduction_witness",
+        "architecture_selection",
+        "normative_specification_or_runtime_implementation"
+      ]
+    }
+  },
+  "evidence_or_argument": {
+    "evidence_kind": "source_bound_constitutive_interface_design_argument",
+    "runtime_probe_executed": false,
+    "prototype_executed": false,
+    "control_contract_executed": false,
+    "argument_steps": [
+      "consume_the_accepted_D1_state_resource_transport_and_reduction_classifications",
+      "separate_forming_driver_persistence_from_retained_state_persistence",
+      "freeze_one_authoritative_write_boundary_from_k_to_k_plus_1",
+      "define_no_forming_or_write_input_behavior_and_release_provenance",
+      "preserve_nonresource_or_projected_resource_accounting",
+      "factor_C_sector_change_without_relabelling_generic_C_continuity",
+      "carry_exact_operator_transition_topology_and_readback_work_to_their_named_gates"
+    ],
+    "provenance_boundary": "D2_defines_admissible_interfaces_and_invariants_but_does_not_claim_runtime_evidence_or_final_constitutive_laws"
+  },
+  "open_debt": [
+    {
+      "debt_id": "D1-DEBT-A-W-AUTHORITY-SPLIT",
+      "blocking_scope": "candidate_A_effective_W_composition_transition_and_lifecycle_authority",
+      "candidate_scope": "V4-A-temporalized-W",
+      "assumption_forbidden_downstream": "The_D2_W_hat_W_and_R_W_typing_may_not_be_treated_as_a_selected_effective_W_composition_or_completed_update_law.",
+      "resolution_gate": "D4_D7_and_D9",
+      "must_close_before_D10": true
+    },
+    {
+      "debt_id": "D1-DEBT-B-CONSTITUTIVE-JUSTIFICATION",
+      "blocking_scope": "candidate_B_exact_RC_derived_update_and_constitutive_geometry_mapping",
+      "candidate_scope": "V4-B-independent-derived-carrier",
+      "assumption_forbidden_downstream": "The_abstract_U_B_interface_may_not_be_treated_as_a_source_backed_numerical_operator_or_as_proof_that_T_is_nonredundant_and_load_bearing.",
+      "resolution_gate": "D3_D4_and_D7",
+      "must_close_before_D10": true
+    },
+    {
+      "debt_id": "D1-DEBT-C-SELECTOR-AND-FACTORISATION",
+      "blocking_scope": "candidate_C_exact_selector_rank_transport_and_later_native_consumer",
+      "candidate_scope": "V4-C-constitutive-C-sector",
+      "assumption_forbidden_downstream": "The_D2_discrete_factorization_may_not_be_treated_as_empirical_historical_retention_or_a_load_bearing_read_effect.",
+      "resolution_gate": "D3_D4_D5_D7_and_D8",
+      "must_close_before_D10": true
+    },
+    {
+      "debt_id": "D1-DEBT-REDUCTION-CONSTRUCTION",
+      "blocking_scope": "candidate_specific_disabled_profile_transition_and_lifecycle_parity",
+      "candidate_scope": "all_admitted_candidates",
+      "assumption_forbidden_downstream": "D2_interface_compatibility_may_not_be_promoted_to_transition_commutation_or_invariant_disabled_subspace.",
+      "resolution_gate": "D7_and_D9",
+      "must_close_before_D10": true
+    },
+    {
+      "debt_id": "D1-DEBT-TOPOLOGY-TRANSPORT",
+      "blocking_scope": "full_topology_capable_retained_state_interspace_semantics",
+      "candidate_scope": "all_admitted_candidates",
+      "assumption_forbidden_downstream": "Fixed_stratum_release_and_transfer_obligations_may_not_be_promoted_to_topology_event_transport_reconfiguration_or_budget_closure.",
+      "resolution_gate": "D4_and_D9",
+      "must_close_before_D10": true
+    },
+    {
+      "debt_id": "D1-DEBT-INFORMATION-CAPACITY-AND-RELEASE",
+      "blocking_scope": "concrete_state_domains_release_thresholds_rank_change_and_event_accounting",
+      "candidate_scope": "all_admitted_candidates",
+      "assumption_forbidden_downstream": "Abstract_bounded_or_coercive_requirements_may_not_be_treated_as_concrete_capacity_bounds_release_parameters_or_event_accounting.",
+      "resolution_gate": "D4_and_D7",
+      "must_close_before_D10": true
+    },
+    {
+      "debt_id": "D1-DEBT-HIDDEN-HELPER-AND-ADMIN-STATE",
+      "blocking_scope": "complete_causal_state_and_write_stage_implementation",
+      "candidate_scope": "all_admitted_candidates",
+      "assumption_forbidden_downstream": "Declared_write_inputs_and_controls_may_not_be_treated_as_proof_that_a_future_transition_has_no_hidden_helper_RNG_scheduler_event_or_registry_state.",
+      "resolution_gate": "D7_and_D9",
+      "must_close_before_D10": true
+    },
+    {
+      "debt_id": "D1-DEBT-CANDIDATE-EQUIVALENCE",
+      "blocking_scope": "D10_architecture_distinguishability_and_selection",
+      "candidate_scope": "all_admitted_candidates",
+      "assumption_forbidden_downstream": "Different_D2_interfaces_may_not_be_treated_as_proof_that_candidates_are_not_related_by_a_causal_conjugacy_after_their_transitions_are_defined.",
+      "resolution_gate": "D7_and_D10",
+      "must_close_before_D10": true
+    },
+    {
+      "debt_id": "D1-DEBT-CANDIDATE-D-CLOSED-SLOT",
+      "blocking_scope": "future_candidate_admission_outside_the_current_A_B_C_set",
+      "candidate_scope": "future_source_admitted_candidate_work",
+      "assumption_forbidden_downstream": "The_closed_D_slot_may_not_be_filled_without_a_new_source_or_transparent_distinct_derivation_and_an_accepted_D0_successor.",
+      "resolution_gate": "named_future_D0_successor_only_if_new_source_or_derivation_exists",
+      "must_close_before_D10": false
+    },
+    {
+      "debt_id": "D2-DEBT-EXACT-UPDATE-OPERATORS",
+      "blocking_scope": "candidate_specific_numerical_transition_and_runtime_execution",
+      "candidate_scope": "all_admitted_candidates",
+      "assumption_forbidden_downstream": "The_D2_operator_shapes_U_A_U_B_and_the_C_factorization_may_not_be_instantiated_with_convenient_rates_thresholds_or_parameters_without_source_backed_D7_transition_derivation_and_preregistration.",
+      "resolution_gate": "D7",
+      "must_close_before_D10": true
+    },
+    {
+      "debt_id": "D2-DEBT-A-DOUBLE-WRITE-SATURATION-AND-NORMALIZATION",
+      "blocking_scope": "candidate_A_effective_W_attribution_saturation_and_capacity_scope",
+      "candidate_scope": "V4-A-temporalized-W",
+      "assumption_forbidden_downstream": "A_may_not_count_one_activity_term_twice_treat_clipping_as_numerical_hygiene_conflate_W_state_with_C_effect_persistence_or_leave_normalization_scope_implicit.",
+      "resolution_gate": "D4_and_D7",
+      "must_close_before_D10": true
+    },
+    {
+      "debt_id": "D2-DEBT-B-CACHE-MARKOV-AND-RESOURCE-REGENERATION",
+      "blocking_scope": "candidate_B_structural_justification_Markov_closure_capacity_and_nonresource_boundary",
+      "candidate_scope": "V4-B-independent-derived-carrier",
+      "assumption_forbidden_downstream": "An_EMA_or_slow_rate_may_not_be_promoted_to_retained_RC_structure_and_nonresource_T_may_not_restore_depleted_C_without_resource_reclassification.",
+      "resolution_gate": "D3_D4_and_D7",
+      "must_close_before_D10": true
+    },
+    {
+      "debt_id": "D2-DEBT-C-SECTOR-ENTRY-EXIT-RANK-AND-BASIS",
+      "blocking_scope": "candidate_C_content_projector_rank_basis_and_sector_identity_semantics",
+      "candidate_scope": "V4-C-constitutive-C-sector",
+      "assumption_forbidden_downstream": "Projector_motion_rank_change_or_sector_exit_reentry_may_not_be_counted_automatically_as_content_write_formation_release_or_transfer.",
+      "resolution_gate": "D3_D4_D7_and_D8",
+      "must_close_before_D10": true
+    },
+    {
+      "debt_id": "D2-DEBT-MULTIWRITE-INFORMATION-COVARIANCE-AND-RNG",
+      "blocking_scope": "candidate_write_information_type_composition_order_covariance_and_stochastic_replay",
+      "candidate_scope": "all_admitted_candidates",
+      "assumption_forbidden_downstream": "A_future_write_operator_may_not_claim_orientation_axis_magnitude_or_order_content_without_a_declared_type_composition_rule_covariance_audit_and_complete_RNG_state_when_stochastic.",
+      "resolution_gate": "D5_and_D7",
+      "must_close_before_D10": true
+    },
+    {
+      "debt_id": "D2-DEBT-RELEASE-ROUTE-CAPACITY-AND-LIFETIME",
+      "blocking_scope": "candidate_native_release_or_reconfiguration_route_and_independent_capacity_lifetime_bounds",
+      "candidate_scope": "all_admitted_candidates",
+      "assumption_forbidden_downstream": "Administrative_reset_may_not_substitute_for_native_release_event_mediated_release_may_not_be_assumed_without_D4_D9_contract_and_capacity_may_not_be_inferred_from_lifetime_or_vice_versa.",
+      "resolution_gate": "D4_D7_and_D9",
+      "must_close_before_D10": true
+    }
+  ],
+  "blocked_relabels": [
+    "write_interface_as_executed_write_law",
+    "driver_persistence_as_retained_state_persistence",
+    "small_decay_rate_or_numerical_inertia_as_structural_retention",
+    "recomputed_proxy_as_historical_causal_state",
+    "serialized_cache_as_independent_state",
+    "ordinary_C_update_as_retained_write_back",
+    "C_sector_representation_as_second_C_resource",
+    "nonresource_A_or_B_state_as_hidden_C_reservoir",
+    "release_by_silent_overwrite_or_unrecorded_reset",
+    "lineage_or_identifier_as_topology_interspace_transfer",
+    "same_beat_new_state_read_as_regular_explicit_closure",
+    "nonneutral_initialization_as_native_formation",
+    "write_off_or_retained_state_freeze_as_no_forming_input",
+    "endogenous_maintenance_from_undeclared_external_forcing",
+    "A_double_written_activity_as_two_independent_history_terms",
+    "A_clipping_or_normalization_as_numerical_only_when_load_bearing",
+    "history_induced_C_persistence_as_W_retention",
+    "B_EMA_or_small_eta_as_sufficient_structural_retention",
+    "nonresource_T_as_a_restorable_C_reservoir",
+    "C_projector_motion_or_rank_change_as_content_formation_or_release",
+    "unresolved_sector_exit_reentry_as_transfer_or_continuous_identity",
+    "undefined_multiwrite_order_or_external_sequence_memory",
+    "storage_edge_orientation_as_physical_write_direction",
+    "administrative_reset_as_native_release_or_uncontracted_event_release",
+    "bounded_capacity_as_finite_lifetime_or_finite_lifetime_as_bounded_capacity",
+    "D2_transport_signature_as_final_D4_ownership",
+    "D2_interface_as_empirical_retention_Read_Back_or_complete_transition",
+    "D2_candidate_survival_as_final_architecture_selection"
+  ],
+  "rejected_alternatives": [
+    {
+      "alternative": "choose_exact_decay_rates_thresholds_or_update_equations_in_D2",
+      "reason": "D2_freezes_interface_semantics_and_invariants;_exact_candidate_transition_derivation_belongs_to_D7_after_structural_geometry_and_current_decisions"
+    },
+    {
+      "alternative": "allow_T_k_plus_1_to_feed_J_C_k_immediately",
+      "reason": "this_creates_an_implicit_same_beat_loop_that_requires_the_D6_closure_and_regular_solve_audit"
+    },
+    {
+      "alternative": "write_candidate_C_sector_directly",
+      "reason": "C_has_derived_constitutive_authority_and_must_change_through_the_authoritative_C_update_or_reclassify_as_independent_state"
+    },
+    {
+      "alternative": "treat_continued_forming_input_as_post_input_retention",
+      "reason": "the_no_forming_or_write_input_control_requires_driver_absence"
+    },
+    {
+      "alternative": "resolve_topology_transfer_from_lineage",
+      "reason": "D1_and_D0_block_lineage_as_interspace_transport_and_D4_D9_own_the_actual_contract"
+    }
+  ],
+  "source_identities": [
+    {
+      "repository": "graph-reflexive-coherence",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D1RetainedRepresentationOntologyAndCandidateAdmission.json",
+      "role": "accepted_bounded_predecessor",
+      "semantic_decision_digest": "f8ae101beb9fa6e9827555eba64452087c1d19b6933325966f10c4c4ec64c507",
+      "sha256": "66d8cba043604c5ffd95c4e1b66af0f1c22abb335641583ebecc491ace62e6b6"
+    },
+    {
+      "repository": "graph-reflexive-coherence",
+      "path": "implementation/investigations/grc9v4-constitutive-design/GRC9V4ConstitutiveDesignBasis.md",
+      "role": "controlling_design_basis",
+      "sha256": "07683d7d04d28a8a63952491d2f6e5c0c264657af54c69645092fda030610531"
+    },
+    {
+      "repository": "geometric-reflexive-coherence",
+      "path": "core/2026-08-TheContinuationSpectrum.md",
+      "role": "core_continuation_authority",
+      "sha256": "14ee948d04c8803ae2c05e0d602d94c40d67bbed5399a8ef539bd024e77d95c5"
+    },
+    {
+      "repository": "geometric-reflexive-coherence",
+      "path": "core/2026-08-ReadBack.md",
+      "role": "core_retention_write_and_readback_authority",
+      "sha256": "04c0bb8398febf58592297326e741271b46a52f504f6a0cea17a0bd6624efbb2"
+    },
+    {
+      "repository": "graph-reflexive-coherence",
+      "path": "specs/grc-9-v3-spec.md",
+      "role": "legacy_disabled_profile_semantics",
+      "sha256": "7b1f0c03988be7dbe3feb8ba926d43d891d70daa0dbbae9804fc70f2a4950f2f"
+    },
+    {
+      "repository": "graph-reflexive-coherence",
+      "path": "implementation/Phase-7-StepLoop.md",
+      "role": "legacy_complete_step_order",
+      "sha256": "a5d52562e771317b9d669ef62cd337ac98bba8dfd21f7cd521e9ae7c04ad17fb"
+    },
+    {
+      "repository": "graph-reflexive-coherence",
+      "path": "implementation/Phase-7-EquationMap.md",
+      "role": "legacy_equation_and_writer_ownership",
+      "sha256": "94461cdf43f9fb4bc7bb0996822ea4e6130f7256ac1a041594eea99656c3555c"
+    }
+  ],
+  "human_acceptance": {
+    "accepted": true,
+    "accepted_by": "experiment_owner",
+    "accepted_date": "2026-08-24",
+    "status": "accepted_bounded"
+  },
+  "authorization_effect": {
+    "D3_authorized": true,
+    "D3_authorized_after_human_acceptance": true,
+    "existing_runtime_test_change_authorized": false,
+    "normative_specification_authorized": false,
+    "runtime_implementation_authorized": false,
+    "src_change_authorized": false
+  }
+}

@@ -1,0 +1,974 @@
+{
+  "schema_version": "1.0",
+  "record_type": "constitutive_design_gate_decision",
+  "record_id": "GRC9V4-CD-D1-v1",
+  "gate_id": "D1",
+  "status": "accepted_bounded",
+  "supersedes": null,
+  "predecessor_decision_digest": "b38b07311afc24bfe1016d75e985f886718e5a9d104c69c59e29318801f457c0",
+  "decision_record_digest": "f8ae101beb9fa6e9827555eba64452087c1d19b6933325966f10c4c4ec64c507",
+  "assumptions": [
+    {
+      "assumption_id": "D1-ONTOLOGY-01",
+      "statement": "D1 tests whether a candidate causal representation can be stated coherently; it does not select the GRC9V4 architecture or prove the candidate transition."
+    },
+    {
+      "assumption_id": "D1-CORE-01",
+      "statement": "An independent serialized constitutive coordinate is a candidate completion, not a new core RC primitive and not a relation inherited from the 2026-08 core papers."
+    },
+    {
+      "assumption_id": "D1-TOPOLOGY-01",
+      "statement": "State-space constructions are local to a fixed-topology verification envelope; every surviving candidate still owes explicit event-local interspace transport or release semantics before D10."
+    },
+    {
+      "assumption_id": "D1-REDUCTION-01",
+      "statement": "A disabled-profile embedding and projection establish only state-space compatibility. Transition commutation and invariant-subspace parity remain D7/D9 obligations."
+    }
+  ],
+  "candidates_considered": [
+    "V4-A-temporalized-W",
+    "V4-B-independent-derived-carrier",
+    "V4-C-constitutive-C-sector",
+    "V4-D-source-admitted-structural"
+  ],
+  "decision": {
+    "gate_role": "retained_representation_ontology_admission_not_final_selection",
+    "scope": {
+      "verification_envelope": "fixed_topology_event_free_smooth_strata",
+      "normative_target": "full_topology_capable_GRC9V4_successor",
+      "fixed_topology_is_final_runtime_scope": false,
+      "current_temporalization_considered": false,
+      "current_temporalization_gate": "D6"
+    },
+    "classification_axes": {
+      "state_authority": [
+        "independent_state",
+        "derived_constitutive_representation",
+        "reconstructed_view",
+        "observer_only"
+      ],
+      "resource_accounting": [
+        "carries_independent_resource",
+        "projects_existing_resource",
+        "nonresource_structural_information",
+        "no_resource_role"
+      ],
+      "transport_roles": [
+        "conditions_geometry",
+        "conditions_mobility",
+        "direct_transport_parameter"
+      ]
+    },
+    "transport_role_policy": {
+      "D1_role_status": "provisional_candidate_transport_signatures",
+      "D4_authority": "confirm_narrow_or_reclassify_geometry_mobility_and_direct_transport_roles",
+      "D1_assignment_is_final_D4_ownership_decision": false,
+      "reclassification_boundary": "a_material_change_to_state_accounting_or_causal_architecture_requires_a_successor_record_while_role_narrowing_within_the_same_architecture_is_a_D4_decision"
+    },
+    "gate_disposition_contract": {
+      "admitted": "the_representation_is_ontologically_coherent_enough_to_proceed_to_formation_and_write_dynamics",
+      "rejected_on_ontology": "a_specific_hidden_state_authority_accounting_addressability_or_reduction_contradiction_cannot_be_repaired_without_changing_the_architecture",
+      "reclassified_or_revision_needed": "closing_the_issue_changes_the_candidate_causal_state_or_role_enough_to_leave_the_original_D0_family",
+      "later_gate_absence_is_not_a_D1_rejection": [
+        "exact_D2_formation_write_release_law",
+        "D3_structural_continuation_operator",
+        "D4_geometry_mobility_and_topology_map",
+        "D5_directional_Read_Back_operator",
+        "D6_total_current_closure",
+        "D7_completed_transition",
+        "D8_perturbative_consistency",
+        "D9_reduction_witness"
+      ],
+      "candidate_locality_rule": "failure_or_necessity_is_local_to_the_declared_candidate_and_never_proves_that_all_retention_architectures_fail_or_require_the_same_representation"
+    },
+    "elimination_reconstruction_classification": [
+      "algebraically_reconstructable_now",
+      "reconstructable_only_with_declared_history",
+      "reconstructable_only_with_hidden_state",
+      "independently_variable_under_constraints",
+      "observationally_redundant_but_not_algebraically_redundant"
+    ],
+    "candidate_equivalence_policy": {
+      "equivalence_requires": [
+        "bijective_causal_state_transform",
+        "transition_conjugacy",
+        "preserved_runtime_outputs",
+        "preserved_resource_accounting",
+        "preserved_transport_and_lifecycle_roles"
+      ],
+      "same_dimension_is_sufficient": false,
+      "family_overlap_without_conjugacy_is_equivalence": false,
+      "reclassification_rule": "persistent_selector_or_helper_state_is_explicit_causal_state_and_may_reclassify_C_toward_B;_material_hybrids_outside_A_B_C_require_a_D0_successor"
+    },
+    "hidden_authority_policy": {
+      "helper_objects_requiring_state_classification": [
+        "internal_accumulator",
+        "optimizer_state",
+        "running_covariance",
+        "previous_current_cache",
+        "adaptive_basis",
+        "producer_schedule_state",
+        "mutable_registry_state"
+      ],
+      "rule": "any_helper_that_changes_future_behavior_and_is_not_deterministically_reconstructable_from_declared_state_is_serialized_causal_state",
+      "administrative_dependencies": {
+        "rng": "allowed_only_when_the_existing_or_added_RNG_state_and_consumption_order_are_declared_and_serialized",
+        "scheduler_phase": "must_be_declared_if_causally_consumed",
+        "event_index": "must_be_declared_if_causally_consumed",
+        "registry_state": "must_be_declared_and_serialized_if_causally_consumed"
+      }
+    },
+    "resource_and_information_policy": {
+      "projected_resource_non_double_counting": "a_derived_C_sector_is_a_view_or_partition_of_C_and_never_an_additional_conserved_quantity",
+      "serialized_duplicate_representation_is_physical_resource_duplication": false,
+      "independent_resource_bar": "requires_named_theory_level_conservation_and_constitutive_derivation_not_ordinary_D1_admission",
+      "nonresource_information_rule": "nonresource_state_may_not_become_an_unbounded_unreleased_history_reservoir",
+      "required_capacity_fields": [
+        "state_dimension_fixed_or_variable",
+        "value_domain_bounded_or_unbounded",
+        "information_capacity_growth",
+        "pruning_or_release_obligation"
+      ]
+    },
+    "disabled_reduction_ontology_policy": {
+      "internal_representation_reorganization_allowed": true,
+      "must_preserve_when_projected": [
+        "step_outcomes",
+        "observable_names_types_categories_and_frozen_numeric_semantics",
+        "event_identity_order_and_payload",
+        "topology_and_registries",
+        "contractually_visible_RNG_consumption",
+        "clock_step_and_reset_baseline",
+        "replay_identity_under_the_D0_allowance"
+      ],
+      "D1_structural_rejection_conditions": [
+        "disabled_added_state_remains_causally_active",
+        "disabled_added_state_changes_serialized_observables_or_event_registries",
+        "disabled_mode_accumulates_hidden_history_that_changes_later_reenable_behavior",
+        "no_candidate_specific_embedding_or_projection_can_be_stated"
+      ],
+      "transition_commutation_proof_gate": "D9_after_D7_transition_closure"
+    },
+    "candidate_matrix": [
+      {
+        "candidate_id": "V4-A-temporalized-W",
+        "candidate_status": "admitted_bounded",
+        "causal_type": "independently_persisted_cross_beat_conductance_or_mobility_state",
+        "state_authority": "independent_state",
+        "resource_accounting": "nonresource_structural_information",
+        "resource_accounting_detail": "W_may_condition_transport_but_does_not_carry_a_second_coherence_budget;_any_future_independent_resource_claim_requires_new_theory_admission",
+        "transport_roles": [
+          "conditions_mobility",
+          "direct_transport_parameter"
+        ],
+        "transport_role_status": "provisional_candidate_signature_pending_D4_confirmation_narrowing_or_reclassification",
+        "transport_role_boundary": "conditions_geometry_is_unresolved_and_may_not_be_inferred_from_the_symbol_W_before_D4",
+        "W_contribution_typing": {
+          "legacy_instantaneous_W": "reconstructed_from_current_C_gradients_and_incoming_J_squared_under_GRC9V3",
+          "retained_W": "independent_enabled_cross_beat_contribution",
+          "composition_status": "unresolved_but_must_be_typed_before_D4",
+          "admissible_shapes_to_compare": [
+            "W_effective_equals_W_instantaneous_plus_W_retained",
+            "declared_nonlinear_composition",
+            "replacement_with_explicit_loss_of_legacy_law"
+          ],
+          "rejection_or_revision_condition": "if_one_field_cannot_unambiguously_own_instantaneous_and_retained_contributions_A_requires_a_split_or_hybrid_reclassification"
+        },
+        "formation_inputs": [
+          "declared_current_C",
+          "declared_current_J_C",
+          "declared_current_geometry_and_lifecycle_state"
+        ],
+        "formation_law_status": "deferred_to_D2",
+        "historical_content_rationale": "at_step_k_enabled_W_may_carry_prior_activity_through_its_own_serialized_update_history_rather_than_only_the_current_GRC9V3_reconstruction",
+        "historical_content_boundary": "mere_numerical_inertia_or_failure_to_overwrite_W_is_not_yet_retained_structural_meaning_and_creates_a_D2_D3_obligation",
+        "native_consumer_rationale": "the_native_transport_current_calculation_is_permitted_to_consume_declared_W_effective",
+        "information_capacity": {
+          "state_dimension_fixed_or_variable": "fixed_per_declared_topology_and_variable_only_through_explicit_topology_events",
+          "value_domain_bounded_or_unbounded": "must_be_declared_bounded_or_coercively_controlled_in_D2",
+          "information_capacity_growth": "unbounded_history_accumulation_blocked",
+          "pruning_or_release_obligation": "D2_release_and_D4_topology_event_semantics"
+        },
+        "complete_step_causal_authority": {
+          "authority": "independently_serialized_across_complete_steps_when_enabled",
+          "writer": "candidate_owned_update_stage_to_be_frozen_in_D2",
+          "legacy_disabled_profile": "reconstruct_W_under_exact_GRC9V3_semantics_each_step",
+          "serialized": true
+        },
+        "relations": {
+          "C": "permitted_formation_or_update_input_not_identical_to_W",
+          "W": "retained_carrier_and_direct_transport_parameter",
+          "J_C": "conditioned_by_W_and_permitted_as_update_input_only_under_D2_budget_rules",
+          "topology": "event_local_transport_reconfiguration_or_release_unresolved",
+          "lifecycle": "must_participate_in_snapshot_load_reset_duplicate_and_event_ordering"
+        },
+        "elimination_reconstruction_test": {
+          "algebraically_reconstructable_from_current_declared_C_J_and_lifecycle": false,
+          "classification": "independently_variable_under_constraints",
+          "algebraically_reconstructable_now": false,
+          "reconstructable_only_with_declared_history": "unknown_pending_D2_update_law",
+          "reconstructable_only_with_hidden_state": false,
+          "independently_variable_under_constraints": "required_for_A_admission_and_to_be_demonstrated_by_D7",
+          "observationally_redundant_but_not_algebraically_redundant": "unknown_pending_D7_bypass_or_swap_control",
+          "required_future_discriminator": "matched_declared_state_with_distinct_admissible_W_history_must_change_future_when_enabled",
+          "failure_effect": "if_W_is_only_reconstructed_each_step_the_candidate_collapses_to_a_reconstructed_view_and_fails_A"
+        },
+        "selector_contract": {
+          "representation_selector": "not_applicable_independent_state",
+          "selector_inputs": [],
+          "selector_is_constitutive": true,
+          "selector_statefulness": "not_applicable",
+          "sector_identity_at_k": "W_state_identity",
+          "sector_identity_transport_rule": "explicit_state_transport_or_release_required_at_topology_events",
+          "requires_hidden_history": false,
+          "requires_future_information": false
+        },
+        "hidden_state_audit": {
+          "status": "passes_at_design_level_with_obligations",
+          "conditions": [
+            "W_is_the_only_owner_of_its_persisted_history",
+            "all_enabled_W_state_is_serialized",
+            "update_stage_uses_only_declared_current_state_and_inputs",
+            "no_analysis_projector_or_cache_adds_unsaved_authority"
+          ],
+          "producer_state_audit": "any_accumulator_optimizer_previous_current_cache_or_adaptive_basis_used_by_the_W_update_is_declared_serialized_state_or_deterministically_reconstructed",
+          "administrative_and_RNG_audit": "any_scheduler_event_registry_or_RNG_dependency_is_part_of_the_declared_complete_state_and_reduction_contract"
+        },
+        "v3_reduction_construction": {
+          "state_space": "X_V4_A_contains_the_existing_V3_fields_with_revised_enabled_W_authority",
+          "embedding_i_a": "copy_every_GRC9V3_field_exactly_and_set_the_enabled_temporal_W_policy_to_disabled",
+          "embedding_multiplicity_audit": "unique_legacy_semantic_embedding;_no_alternative_retained_W_initialization_is_admitted_in_the_parity_profile",
+          "projection_pi_a": "drop_only_V4_policy_metadata_and_return_all_GRC9V3_fields",
+          "disabled_added_state_initialization": "not_applicable_no_added_physical_coordinate",
+          "disabled_transition_requirement": "use_legacy_GRC9V3_W_reconstruction_with_no_persistent_W_history",
+          "candidate_reduction_construction_status": "constructed_state_space_and_ownership_only_pending_D7_transition_and_D9_witness",
+          "structural_blockers": [
+            "enabled_and_disabled_W_authority_must_not_be_ambiguous",
+            "disabled_mode_must_not_accumulate_hidden_W_history",
+            "lifecycle_and_topology_parity_unproven"
+          ]
+        },
+        "candidate_equivalence": {
+          "candidate_equivalence_class": "EQ-A-temporal-direct-transport-state",
+          "coordinate_transform": "none_established",
+          "causal_roles_preserved_under_transform": false,
+          "accounting_roles_preserved_under_transform": "not_demonstrated",
+          "comparison_note": "A_could_be_conjugate_to_B_only_if_an_explicit_bijection_preserves_direct_transport_geometry_accounting_transition_and_lifecycle_roles"
+        },
+        "gate_obligation_matrix": {
+          "established_in_D1": [
+            "independent_W_authority_is_a_coherent_candidate_type",
+            "legacy_and_enabled_W_authorities_are_distinct",
+            "candidate_local_counterfactual_causal_test_is_defined"
+          ],
+          "unresolved_but_permitted": [
+            "exact_W_update_law",
+            "retained_and_instantaneous_W_composition",
+            "structural_interpretation_beyond_inertia",
+            "geometry_role"
+          ],
+          "must_be_proved_by_gate": {
+            "D2": "formation_retention_release_write_and_capacity_bounds",
+            "D3": "structural_domain_or_explicit_alpha_block",
+            "D4": "W_geometry_mobility_and_topology_ownership",
+            "D7": "counterfactual_causal_authority_and_completed_transition",
+            "D9": "disabled_profile_reduction_witness"
+          },
+          "would_reject_or_reclassify_if_failed": [
+            "W_has_no_independent_causal_variation",
+            "enabled_history_requires_unsaved_helper_state",
+            "instantaneous_and_retained_W_cannot_be_typed_without_a_new_hybrid",
+            "disabled_profile_is_structurally_causally_active"
+          ]
+        },
+        "admission_basis": [
+          "D0_allows_temporalized_geometry_or_mobility_as_an_underdetermined_candidate_completion",
+          "legacy_GRC9V3_already_exposes_W_as_a_transport_surface_but_not_as_independent_cross_beat_state"
+        ],
+        "admission_boundary": "admission_does_not_identify_W_with_metric_geometry_or_prove_a_temporal_update_law"
+      },
+      {
+        "candidate_id": "V4-B-independent-derived-carrier",
+        "candidate_status": "admitted_bounded",
+        "causal_type": "separate_independently_serialized_retained_structural_carrier_with_RC_derived_update",
+        "state_authority": "independent_state",
+        "resource_accounting": "nonresource_structural_information",
+        "resource_accounting_detail": "T_carries_structural_information_only_and_cannot_source_sink_or_duplicate_C;_an_independent_resource_variant_is_outside_current_B_and_requires_theory_reopening",
+        "transport_roles": [
+          "conditions_geometry"
+        ],
+        "transport_role_status": "provisional_candidate_signature_pending_D4_confirmation_narrowing_or_reclassification",
+        "transport_role_boundary": "mobility_or_direct_transport_authority_requires_an_explicit_D4_map_and_is_not_inherited_from_carrier_status",
+        "formation_inputs": [
+          "declared_current_C",
+          "declared_current_J_C",
+          "declared_current_geometry_and_lifecycle_state"
+        ],
+        "formation_law_status": "deferred_to_D2_and_must_be_derived_from_permitted_RC_variables",
+        "derived_update_vs_derived_value": {
+          "required_form": "T_k_plus_1_equals_U_of_T_k_C_k_J_k_and_other_declared_current_state",
+          "present_value_identity_T_k_equals_f_of_C_k_J_k": false,
+          "boundary": "an_RC_derived_update_does_not_make_the_present_value_algebraically_derived_from_current_RC_variables",
+          "reclassification_if_present_value_identity_holds": "V4-C_or_reconstructed_view"
+        },
+        "historical_content_rationale": "T_k_may_encode_prior_activity_through_recursive_dependence_on_T_k_minus_1_after_forming_inputs_are_exhausted",
+        "native_consumer_rationale": "a_declared_native_constitutive_geometry_map_is_permitted_to_consume_T_before_transport_is_computed",
+        "information_capacity": {
+          "state_dimension_fixed_or_variable": "fixed_per_declared_topology_unless_D4_defines_event_local_interspace_change",
+          "value_domain_bounded_or_unbounded": "must_be_declared_bounded_or_coercively_controlled_in_D2",
+          "information_capacity_growth": "no_append_only_or_dimension_growing_history_log",
+          "pruning_or_release_obligation": "D2_release_and_D4_topology_event_semantics"
+        },
+        "complete_step_causal_authority": {
+          "authority": "independently_serialized_across_complete_steps",
+          "writer": "candidate_owned_formation_retention_release_stage_to_be_frozen_in_D2",
+          "reader": "constitutive_geometry_map_to_be_frozen_in_D4",
+          "serialized": true
+        },
+        "relations": {
+          "C": "formation_and_update_source_while_T_remains_a_distinct_causal_coordinate_after_formation",
+          "W": "remains_a_separate_transport_surface_conditioned_only_through_an_explicit_D4_map",
+          "J_C": "permitted_formation_or_write_input_and_later_conditioned_current_not_identical_to_T",
+          "topology": "carrier_interspace_transport_reconfiguration_or_release_unresolved",
+          "lifecycle": "T_must_have_explicit_snapshot_load_reset_duplicate_and_event_ownership"
+        },
+        "elimination_reconstruction_test": {
+          "algebraically_reconstructable_from_current_declared_C_J_and_lifecycle": false,
+          "classification": "independently_variable_under_constraints",
+          "algebraically_reconstructable_now": false,
+          "reconstructable_only_with_declared_history": "classification_pending_D2;_if_the_required_finite_history_is_already_in_declared_complete_state_T_is_redundant_but_if_it_is_not_T_may_be_a_legitimate_Markov_completion_and_not_an_undeclared_history_cache",
+          "reconstructable_only_with_hidden_state": false,
+          "independently_variable_under_constraints": "required_for_B_admission_and_to_be_demonstrated_by_D7",
+          "observationally_redundant_but_not_algebraically_redundant": "unknown_pending_D7_bypass_or_swap_control",
+          "required_future_discriminator": "same_reduced_declared_C_J_geometry_and_lifecycle_with_distinct_admissible_T_must_produce_distinct_future",
+          "failure_effect": "if_T_is_deterministically_reconstructable_from_current_declared_state_reclassify_to_C_or_reconstructed_view"
+        },
+        "selector_contract": {
+          "representation_selector": "not_applicable_independent_state",
+          "selector_inputs": [],
+          "selector_is_constitutive": true,
+          "selector_statefulness": "not_applicable",
+          "sector_identity_at_k": "serialized_T_identity",
+          "sector_identity_transport_rule": "explicit_state_transport_or_release_required_at_topology_events",
+          "requires_hidden_history": false,
+          "requires_future_information": false
+        },
+        "hidden_state_audit": {
+          "status": "passes_at_design_level_with_obligations",
+          "conditions": [
+            "all_T_state_is_serialized",
+            "T_does_not_duplicate_or_create_coherence_budget",
+            "formation_and_release_use_declared_inputs",
+            "no_cache_or_selector_owns_additional_history"
+          ],
+          "producer_state_audit": "any_accumulator_optimizer_running_covariance_previous_current_cache_or_adaptive_basis_used_to_update_T_is_declared_serialized_state_or_deterministically_reconstructed",
+          "administrative_and_RNG_audit": "any_scheduler_event_registry_or_RNG_dependency_is_part_of_the_declared_complete_state_and_reduction_contract"
+        },
+        "v3_reduction_construction": {
+          "state_space": "X_V4_B_equals_X_V3_times_T",
+          "embedding_i_a": "copy_every_GRC9V3_field_exactly_and_initialize_T_to_canonical_neutral",
+          "embedding_multiplicity_audit": {
+            "admitted_parity_embedding": "canonical_constant_T_neutral",
+            "state_dependent_equilibrium_T_star_of_x": "not_admitted_without_a_successor_reduction_contract_because_it_can_encode_V3_state_and_change_reenable_history",
+            "opportunistic_post_result_initialization_allowed": false
+          },
+          "projection_pi_a": "drop_canonical_neutral_T_and_return_every_GRC9V3_field",
+          "disabled_added_state_initialization": "T_equals_canonical_neutral",
+          "disabled_transition_requirement": "T_remains_neutral_and_causally_inert_with_no_budget_RNG_event_or_future_history_effect",
+          "candidate_reduction_construction_status": "constructed_state_space_and_ownership_only_pending_D7_transition_and_D9_witness",
+          "structural_blockers": [
+            "canonical_neutral_T_and_its_invariance_not_yet_implemented",
+            "no_hidden_resource_role_must_be_proved",
+            "lifecycle_and_topology_parity_unproven"
+          ]
+        },
+        "candidate_equivalence": {
+          "candidate_equivalence_class": "EQ-B-independent-structural-carrier",
+          "coordinate_transform": "none_established",
+          "causal_roles_preserved_under_transform": false,
+          "accounting_roles_preserved_under_transform": "not_demonstrated",
+          "comparison_note": "equal_dimension_with_A_is_not_equivalence;_a_bijection_must_preserve_Bs_separate_geometry_conditioner_role_and_As_direct_transport_role"
+        },
+        "gate_obligation_matrix": {
+          "established_in_D1": [
+            "independent_T_authority_is_a_coherent_candidate_completion",
+            "derived_update_is_distinct_from_algebraically_derived_present_value",
+            "counterfactual_causal_authority_test_is_defined"
+          ],
+          "unresolved_but_permitted": [
+            "exact_RC_derived_update_law",
+            "nonresource_value_bounds_and_release",
+            "geometry_map",
+            "joint_structural_alpha"
+          ],
+          "must_be_proved_by_gate": {
+            "D2": "formation_retention_release_write_and_information_capacity_bounds",
+            "D3": "structural_domain_or_explicit_joint_alpha_block",
+            "D4": "T_to_geometry_mobility_and_topology_map",
+            "D7": "counterfactual_causal_authority_and_completed_transition",
+            "D9": "neutral_T_reduction_witness"
+          },
+          "would_reject_or_reclassify_if_failed": [
+            "T_is_invariant_under_every_admissible_future_transition",
+            "T_is_algebraically_reconstructable_from_current_declared_state",
+            "T_requires_unsaved_helper_history",
+            "T_duplicates_or_creates_coherence_resource_without_new_theory",
+            "disabled_T_is_structurally_causally_active"
+          ]
+        },
+        "admission_basis": [
+          "the_core_leaves_Markov_sufficiency_and_exact_constitutive_completion_open",
+          "D0_allows_an_independent_retained_representation_as_a_candidate_completion_without_calling_it_a_core_primitive"
+        ],
+        "admission_boundary": "candidate_B_is_a_revision_level_constitutive_completion_requiring_explicit_theory_and_budget_closure_not_an_inherited_coherence_only_relation"
+      },
+      {
+        "candidate_id": "V4-C-constitutive-C-sector",
+        "candidate_status": "admitted_bounded",
+        "causal_type": "historically_formed_constitutively_addressable_sector_of_the_current_coherence_state",
+        "state_authority": "derived_constitutive_representation",
+        "resource_accounting": "projects_existing_resource",
+        "resource_accounting_detail": {
+          "physical_map": "T_M_equals_P_M_C_is_a_view_or_partition_of_the_same_C_resource",
+          "additional_conserved_quantity": false,
+          "serialized_view_if_any": "representation_duplicate_not_physical_resource_duplicate",
+          "D2_non_double_counting_requirement": "budget_equations_count_C_once_and_use_sector_terms_only_as_decomposition_or_transfer_within_C"
+        },
+        "transport_roles": [
+          "conditions_geometry"
+        ],
+        "transport_role_status": "provisional_candidate_signature_pending_D4_confirmation_narrowing_or_reclassification",
+        "transport_role_boundary": "the_sector_does_not_gain_direct_transport_or_mobility_authority_without_D4_derivation",
+        "formation_inputs": [
+          "declared_current_C",
+          "declared_J_C_through_the_C_continuity_and_write_relation",
+          "declared_current_geometry",
+          "declared_constitutive_projector_parameters"
+        ],
+        "formation_law_status": "historical_formation_must_be_visible_in_C_and_separated_from_generic_C_continuity_in_D2",
+        "historical_content_rationale": "prior_activity_may_remain_in_the_present_distribution_of_C_and_be_addressed_by_the_declared_sector_without_adding_a_second_resource_or_state_field",
+        "historical_content_boundary": "current_sector_membership_alone_is_not_historical;_D2_D7_must_separate_prior_formation_generic_C_continuity_and_later_sector_conditioned_effect",
+        "native_consumer_rationale": "a_declared_runtime_constitutive_geometry_or_Read_Back_calculation_is_permitted_to_consume_the_exact_selected_C_sector",
+        "information_capacity": {
+          "state_dimension_fixed_or_variable": "sector_rank_may_vary_with_current_declared_state_but_never_exceeds_or_adds_to_the_C_state_dimension",
+          "value_domain_bounded_or_unbounded": "inherits_the_declared_C_domain_and_budget",
+          "information_capacity_growth": "no_additional_capacity_beyond_C;_serialized_view_is_representation_duplication_only",
+          "pruning_or_release_obligation": "rank_change_and_sector_exit_require_D2_D4_accounting_without_creating_or_destroying_C_by_relabel"
+        },
+        "complete_step_causal_authority": {
+          "authority": "deterministically_derived_and_constitutively_consumed_from_current_declared_state",
+          "writer": "ordinary_C_update_plus_declared_projector_transport_terms_to_be_frozen_in_D2",
+          "reader": "runtime_constitutive_read_of_the_selected_sector_not_analysis_postprocessing",
+          "serialized": false
+        },
+        "relations": {
+          "C": "T_M_is_a_projected_sector_of_C_and_cannot_be_budgeted_twice",
+          "W": "may_be_conditioned_only_through_an_explicit_D4_constitutive_map",
+          "J_C": "forms_or_transports_sector_content_through_the_declared_C_continuity_and_write_terms",
+          "topology": "projector_and_sector_require_explicit_interspace_transport_or_event_local_release",
+          "lifecycle": "selector_inputs_and_parameters_must_be_restorable_even_when_the_derived_value_is_recomputed"
+        },
+        "elimination_reconstruction_test": {
+          "algebraically_reconstructable_from_current_declared_C_J_and_lifecycle": true,
+          "classification": "algebraically_reconstructable_now_with_noneliminable_candidate_constitutive_read",
+          "algebraically_reconstructable_now": true,
+          "reconstructable_only_with_declared_history": false,
+          "reconstructable_only_with_hidden_state": false,
+          "independently_variable_under_constraints": false,
+          "observationally_redundant_but_not_algebraically_redundant": "not_admitted;_runtime_consumption_must_be_causally_load_bearing",
+          "stored_coordinate_eliminable": true,
+          "constitutive_runtime_read_eliminable": false,
+          "required_future_discriminator": "bypass_or_replace_the_exact_selected_sector_while_matching_nonselected_current_state_and_show_loss_or_change_of_later_effect",
+          "failure_effect": "if_runtime_never_consumes_the_selected_sector_it_is_only_a_reconstructed_view_or_observer_and_fails_C"
+        },
+        "selector_contract": {
+          "representation_selector": "P_M_Delta_of_current_C_geometry_and_preregistered_cutoff",
+          "selector_inputs": [
+            "current_declared_C",
+            "current_declared_geometry_or_measure",
+            "preregistered_constitutive_cutoff_or_sector_rule"
+          ],
+          "selector_is_constitutive": true,
+          "selector_statefulness": "stateless_deterministic_from_current_declared_causal_state",
+          "sector_identity_at_k": "projector_range_under_declared_current_state_and_cutoff",
+          "sector_identity_transport_rule": "covariant_projector_transport_on_smooth_strata_and_explicit_interspace_rule_at_topology_events",
+          "selector_pressure_cases": [
+            "P_M_at_k_differs_from_P_M_at_k_plus_1",
+            "projector_rank_change",
+            "mode_crossing",
+            "symmetry_exchange",
+            "branch_transition",
+            "topology_change"
+          ],
+          "variable_rank_policy": {
+            "allowed_in_candidate_family": true,
+            "interpretation": "rank_change_is_a_change_of_current_constitutive_decomposition_not_automatic_creation_or_destruction_of_resource",
+            "required_later_accounting": [
+              "content_entering_and_leaving_sector",
+              "basis_or_projector_transport",
+              "rank_change_attribution",
+              "tangent_space_compatibility",
+              "topology_event_interspace_rule"
+            ],
+            "fixed_rank_may_not_be_assumed_by_D3_or_D8": true
+          },
+          "requires_hidden_history": false,
+          "requires_future_information": false,
+          "forbidden_selector_forms": [
+            "retrospective_selection_by_later_persistence",
+            "future_trajectory_classification",
+            "selection_by_empirical_lifetime_over_future_N_beats",
+            "selection_by_ultimately_reached_basin",
+            "analysis_only_slow_cluster_without_runtime_consumption",
+            "unsaved_stateful_sector_tracker"
+          ],
+          "stateful_selector_reclassification": "any_selector_with_own_history_becomes_explicit_serialized_state_and_reclassifies_toward_V4_B"
+        },
+        "hidden_state_audit": {
+          "status": "passes_at_design_level_only_for_stateless_current_state_selection",
+          "conditions": [
+            "cutoff_and_projector_policy_are_declared",
+            "selector_uses_no_future_information",
+            "sector_history_resides_in_C_not_an_unsaved_tracker",
+            "runtime_not_report_layer_consumes_the_sector"
+          ],
+          "producer_state_audit": "any_hysteresis_tracker_running_covariance_adaptive_basis_or_previous_projector_cache_is_explicit_serialized_state_and_reclassifies_toward_B_unless_deterministically_reconstructed",
+          "administrative_and_RNG_audit": "selector_may_not_depend_on_unrecorded_scheduler_event_registry_or_RNG_state;_declared_serialized_dependence_changes_the_selector_state_contract"
+        },
+        "v3_reduction_construction": {
+          "state_space": "X_V4_C_uses_X_V3_with_a_derived_nonindependent_sector_view",
+          "embedding_i_a": "identity_on_every_GRC9V3_field_with_constitutive_sector_Read_Back_disabled",
+          "embedding_multiplicity_audit": "unique_identity_embedding_on_V3_causal_state;_derived_view_cache_representation_is_not_a_distinct_embedding",
+          "projection_pi_a": "identity_on_every_GRC9V3_field_and_erase_only_the_recomputable_view",
+          "disabled_added_state_initialization": "not_applicable_no_independent_added_state",
+          "disabled_transition_requirement": "sector_may_be_recomputed_for_diagnostics_but_has_no_write_read_budget_RNG_event_or_future_effect",
+          "candidate_reduction_construction_status": "constructed_state_space_selector_and_ownership_only_pending_D7_transition_and_D9_witness",
+          "structural_blockers": [
+            "exact_constitutive_selector_and_cutoff_unfrozen",
+            "historical_formation_must_be_separated_from_generic_C_persistence",
+            "lifecycle_and_topology_parity_unproven"
+          ]
+        },
+        "candidate_equivalence": {
+          "candidate_equivalence_class": "EQ-C-derived-constitutive-C-sector",
+          "coordinate_transform": "none_established_to_A_or_B",
+          "causal_roles_preserved_under_transform": false,
+          "accounting_roles_preserved_under_transform": false,
+          "comparison_note": "a_stateful_selector_is_not_a_coordinate_variant_of_C;_it_adds_causal_state_and_reclassifies_toward_B"
+        },
+        "gate_obligation_matrix": {
+          "established_in_D1": [
+            "a_current_state_deterministic_C_sector_can_have_constitutive_authority_without_independent_storage",
+            "the_sector_projects_existing_C_resource_without_double_counting",
+            "retrospective_and_future_selected_sectors_are_blocked"
+          ],
+          "unresolved_but_permitted": [
+            "exact_projector_and_cutoff",
+            "variable_rank_transport_and_accounting",
+            "historical_formation_factorization",
+            "geometry_or_Read_Back_consumer"
+          ],
+          "must_be_proved_by_gate": {
+            "D2": "formation_retention_release_write_factorization_and_rank_change_accounting",
+            "D3": "derived_sector_tangent_constraints_and_structural_domain",
+            "D4": "projector_geometry_mobility_and_topology_transport",
+            "D7": "sector_bypass_replacement_and_runtime_load_bearing_effect",
+            "D8": "variable_rank_or_fixed_stratum_perturbation_contract",
+            "D9": "identity_reduction_witness"
+          },
+          "would_reject_or_reclassify_if_failed": [
+            "selector_requires_future_behavior",
+            "selector_requires_unsaved_history",
+            "runtime_does_not_consume_the_exact_sector",
+            "historical_formation_cannot_be_separated_from_generic_C_persistence",
+            "persistent_selector_state_is_required_without_B_like_reclassification"
+          ]
+        },
+        "admission_basis": [
+          "Read_Back_defines_C_M_Delta_as_an_instantaneous_state_functional_of_C",
+          "the_coherence_only_ontology_prefers_retained_content_carried_by_C_when_constitutive_runtime_addressability_is_real"
+        ],
+        "admission_boundary": "admission_does_not_make_an_analysis_projector_a_runtime_carrier_or_treat_ordinary_C_persistence_as_historical_retention"
+      },
+      {
+        "candidate_id": "V4-D-source-admitted-structural",
+        "candidate_status": "rejected_on_ontology_uninstantiated_admission_slot",
+        "causal_type": "no_materially_distinct_source_backed_causal_representation_identified_before_D1_deadline",
+        "state_authority": "observer_only",
+        "resource_accounting": "no_resource_role",
+        "transport_roles": [],
+        "transport_role_status": "not_applicable_rejected_uninstantiated_slot",
+        "formation_inputs": [],
+        "formation_law_status": "not_applicable_no_instantiated_candidate",
+        "historical_content_rationale": "none_no_instantiated_representation",
+        "native_consumer_rationale": "none_no_instantiated_representation",
+        "information_capacity": {
+          "state_dimension_fixed_or_variable": "not_applicable",
+          "value_domain_bounded_or_unbounded": "not_applicable",
+          "information_capacity_growth": "not_applicable",
+          "pruning_or_release_obligation": "not_applicable"
+        },
+        "complete_step_causal_authority": {
+          "authority": "none",
+          "serialized": false
+        },
+        "relations": {
+          "C": "all_currently_source_backed_C_derived_forms_classify_under_C",
+          "W": "all_temporalized_W_forms_classify_under_A",
+          "J_C": "all_independent_history_bearing_structural_forms_classify_under_B_or_require_a_reopened_candidate_admission",
+          "topology": "no_distinct_rule",
+          "lifecycle": "no_distinct_rule"
+        },
+        "elimination_reconstruction_test": {
+          "result": "no_causal_object_exists_to_test",
+          "reason": "the_placeholder_label_does_not_define_state_authority_formation_resource_or_transition_ownership"
+        },
+        "selector_contract": {
+          "representation_selector": "not_applicable",
+          "selector_inputs": [],
+          "selector_is_constitutive": false,
+          "selector_statefulness": "not_applicable",
+          "sector_identity_at_k": "not_applicable",
+          "sector_identity_transport_rule": "not_applicable",
+          "requires_hidden_history": false,
+          "requires_future_information": false
+        },
+        "hidden_state_audit": {
+          "status": "passes_only_as_rejected_empty_slot",
+          "reason": "no_hidden_fourth_candidate_was_invented_after_the_source_cutoff"
+        },
+        "v3_reduction_construction": {
+          "state_space": "not_constructed",
+          "embedding_i_a": "not_constructed",
+          "projection_pi_a": "not_constructed",
+          "disabled_added_state_initialization": "not_applicable",
+          "candidate_reduction_construction_status": "not_applicable_rejected_before_state_space_construction",
+          "structural_blockers": [
+            "no_materially_distinct_source_backed_ontology"
+          ]
+        },
+        "candidate_equivalence": {
+          "candidate_equivalence_class": "none_uninstantiated_slot",
+          "coordinate_transform": "not_applicable",
+          "causal_roles_preserved_under_transform": false,
+          "accounting_roles_preserved_under_transform": false
+        },
+        "gate_obligation_matrix": {
+          "established_in_D1": [
+            "no_distinct_D_ontology_exists_under_the_frozen_source_cutoff"
+          ],
+          "unresolved_but_permitted": [],
+          "must_be_proved_by_gate": {},
+          "would_reject_or_reclassify_if_failed": []
+        },
+        "rejection_reason": "D0_admitted_a_source_bounded_search_slot_not_a_predefined_fourth_causal_object;_the_frozen_sources_produce_no_distinct_representation_outside_A_B_C",
+        "reopening_rule": "a_new_source_or_transparent_constitutive_derivation_requires_a_D0_successor_and_reopened_D1_comparison"
+      }
+    ],
+    "pairwise_candidate_equivalence_audit": [
+      {
+        "pair": ["V4-A-temporalized-W", "V4-B-independent-derived-carrier"],
+        "equivalence_status": "not_established",
+        "reason": "A_gives_the_retained_coordinate_direct_transport_authority_while_B_keeps_T_separate_from_W_and_conditions_geometry",
+        "future_equivalence_test": "require_explicit_bijection_transition_conjugacy_and_preservation_of_accounting_transport_outputs_and_lifecycle"
+      },
+      {
+        "pair": ["V4-A-temporalized-W", "V4-C-constitutive-C-sector"],
+        "equivalence_status": "not_established",
+        "reason": "A_has_independent_state_authority_while_C_is_recomputed_from_current_C_and_projects_existing_resource",
+        "future_equivalence_test": "would_require_eliminating_As_independent_variation_without_changing_transition_or_outputs"
+      },
+      {
+        "pair": ["V4-B-independent-derived-carrier", "V4-C-constitutive-C-sector"],
+        "equivalence_status": "not_established",
+        "reason": "B_has_independent_serialized_state_while_C_is_statelessly_selected_from_current_C",
+        "future_equivalence_test": "a_C_selector_with_persistent_identity_state_reclassifies_toward_B_but_is_not_currently_a_coordinate_conjugacy"
+      }
+    ],
+    "historical_evidence_consumption_boundary": {
+      "B1_B2_support": "legacy_GRC9V3_W_is_reconstructed_and_not_an_established_retained_carrier_in_the_tested_envelopes",
+      "B1_B2_do_not_support": [
+        "rejection_of_revision_distinct_temporalized_W",
+        "necessity_of_independent_T",
+        "failure_of_all_coherence_sector_architectures",
+        "ranking_A_B_or_C"
+      ],
+      "V4_A_required_change": "A_must_materially_change_W_causal_authority_and_may_not_claim_legacy_W_already_had_retained_authority"
+    },
+    "D1_pressure_audit": [
+      {"pressure_id":"D1-P01","status":"satisfied","response":"later_gate_absence_is_recorded_as_obligation_not_D1_rejection"},
+      {"pressure_id":"D1-P02","status":"satisfied","response":"independent_state_requires_counterfactual_future_difference_not_serialization_alone"},
+      {"pressure_id":"D1-P03","status":"satisfied","response":"five_way_elimination_reconstruction_taxonomy_frozen_and_applied"},
+      {"pressure_id":"D1-P04","status":"satisfied","response":"B_distinguishes_RC_derived_update_from_current_value_reconstruction"},
+      {"pressure_id":"D1-P05","status":"deferred_as_typed_obligation","response":"A_instantaneous_retained_W_composition_shapes_recorded_for_D2_D4_without_selection"},
+      {"pressure_id":"D1-P06","status":"deferred_as_typed_obligation","response":"A_numerical_inertia_is_not_retained_structure_and_must_close_in_D2_D3"},
+      {"pressure_id":"D1-P07","status":"satisfied","response":"C_selector_is_constitutive_and_pressure_cases_are_explicit"},
+      {"pressure_id":"D1-P08","status":"deferred_as_typed_obligation","response":"variable_rank_is_allowed_but_D2_D4_D8_accounting_and_transport_are_required"},
+      {"pressure_id":"D1-P09","status":"satisfied","response":"future_empirical_lifetime_basin_outcome_and_trajectory_selection_are_blocked"},
+      {"pressure_id":"D1-P10","status":"satisfied","response":"pairwise_equivalence_requires_causal_conjugacy_and_role_preservation"},
+      {"pressure_id":"D1-P11","status":"satisfied","response":"equal_state_dimension_is_not_equivalence"},
+      {"pressure_id":"D1-P12","status":"satisfied","response":"persistent_selector_or_helper_state_reclassifies_and_material_hybrids_require_D0_successor"},
+      {"pressure_id":"D1-P13","status":"satisfied","response":"producer_helper_and_adaptive_state_is_included_in_hidden_authority_audit"},
+      {"pressure_id":"D1-P14","status":"satisfied","response":"RNG_scheduler_event_and_registry_dependencies_must_be_declared_and_serialized_when_causal"},
+      {"pressure_id":"D1-P15","status":"deferred_as_typed_obligation","response":"state_dimension_domain_capacity_growth_and_release_fields_recorded_per_candidate"},
+      {"pressure_id":"D1-P16","status":"satisfied","response":"C_sector_is_a_projected_view_of_C_and_budget_is_counted_once"},
+      {"pressure_id":"D1-P17","status":"satisfied","response":"independent_resource_variant_requires_new_theory_and_is_outside_current_A_B"},
+      {"pressure_id":"D1-P18","status":"satisfied","response":"disabled_embedding_multiplicity_audited_and_opportunistic_initialization_blocked"},
+      {"pressure_id":"D1-P19","status":"satisfied","response":"obviously_active_disabled_state_is_a_D1_structural_rejection_condition"},
+      {"pressure_id":"D1-P20","status":"satisfied","response":"projected_V3_semantics_not_hidden_internal_decomposition_define_reduction_obligation"},
+      {"pressure_id":"D1-P21","status":"satisfied","response":"noneliminability_and_necessity_statements_are_candidate_local"},
+      {"pressure_id":"D1-P22","status":"satisfied","response":"C_failure_does_not_reject_coherence_carried_retention_beyond_the_current_selector_family"},
+      {"pressure_id":"D1-P23","status":"satisfied","response":"B1_B2_bound_legacy_W_only_and_do_not_reject_revision_distinct_A"},
+      {"pressure_id":"D1-P24","status":"satisfied","response":"minimal_state_expansion_beauty_and_code_size_are_not_ranked"},
+      {"pressure_id":"D1-P25","status":"satisfied","response":"candidate_specific_historical_content_rationale_recorded"},
+      {"pressure_id":"D1-P26","status":"satisfied","response":"candidate_specific_native_consumer_rationale_recorded"},
+      {"pressure_id":"D1-P27","status":"satisfied","response":"absence_of_joint_structural_alpha_is_a_D3_obligation_not_D1_rejection"},
+      {"pressure_id":"D1-P28","status":"satisfied","response":"established_unresolved_gate_proof_and_rejection_fields_recorded_per_candidate"}
+    ],
+    "source_admission_audit": {
+      "source_cutoff_preserved": true,
+      "post_result_candidate_added": false,
+      "missed_pre_D0_source_found": false,
+      "distinct_D_candidate_found": false,
+      "classification_result": "all_concrete_source_backed_forms_map_to_A_B_C_or_remain_analysis_only",
+      "D_rejection_is_global_architecture_impossibility": false
+    },
+    "admitted_candidate_set": [
+      "V4-A-temporalized-W",
+      "V4-B-independent-derived-carrier",
+      "V4-C-constitutive-C-sector"
+    ],
+    "rejected_on_ontology": [
+      {
+        "candidate_id": "V4-D-source-admitted-structural",
+        "reason_code": "uninstantiated_admission_slot_not_materially_distinct"
+      }
+    ],
+    "sole_surviving_candidate": null,
+    "current_candidate_set_exhausted": false,
+    "architecture_selected": false,
+    "selection_or_ranking_performed": false,
+    "candidate_properties_not_rankings": {
+      "V4-A-temporalized-W": "closest_to_existing_GRC9V3_transport_mechanics",
+      "V4-B-independent-derived-carrier": "clearest_separation_of_retention_geometry_mobility_and_current_authority",
+      "V4-C-constitutive-C-sector": "closest_to_the_inherited_coherence_only_state_vocabulary"
+    },
+    "claim_ceiling": {
+      "ceiling_id": "GRC9V4-CD-D1-bounded-ontology-admission",
+      "supports": [
+        "three_causally_coherent_retained_representation_candidate_families",
+        "candidate_specific_state_resource_transport_and_reduction_obligations",
+        "rejection_of_an_uninstantiated_fourth_admission_slot"
+      ],
+      "does_not_support": [
+        "final_GRC9V4_architecture_selection",
+        "candidate_transition_correctness",
+        "formation_retention_release_or_write_law",
+        "joint_structural_continuation_operator",
+        "directional_Read_Back_closure",
+        "current_temporalization_or_slaving_decision",
+        "topology_changing_retained_state_transport",
+        "GRC9V3_disabled_profile_transition_parity",
+        "normative_GRC9V4_specification",
+        "runtime_implementation"
+      ]
+    }
+  },
+  "evidence_or_argument": {
+    "evidence_kind": "source_bound_constitutive_design_argument",
+    "runtime_probe_executed": false,
+    "prototype_executed": false,
+    "argument_steps": [
+      "apply_the_D0_source_cutoff_and_candidate_admission_contract",
+      "separate_state_authority_resource_accounting_and_transport_role",
+      "reject_analysis_only_or_future_selected_representations",
+      "construct_candidate_specific_disabled_profile_state_maps_without_claiming_transition_commutation",
+      "retain_only_candidates_with_declared_complete_step_authority_and_no_hidden_history",
+      "classify_the_uninstantiated_D_slot_without_inventing_a_post_cutoff_candidate"
+    ],
+    "provenance_boundary": "theory_and_legacy_sources_constrain_the_argument;_B1_B2_results_do_not_select_or_reject_an_architecture_globally"
+  },
+  "open_debt": [
+    {
+      "debt_id": "D1-DEBT-A-W-AUTHORITY-SPLIT",
+      "candidate_scope": "V4-A-temporalized-W",
+      "blocking_scope": "candidate_A_enabled_state_transport_and_lifecycle_authority",
+      "assumption_forbidden_downstream": "Enabled_retained_W_may_not_be_treated_as_identical_to_legacy_reconstructed_W_or_as_structurally_meaningful_merely_because_it_persists.",
+      "issue": "enabled_independent_W_and_disabled_legacy_reconstructed_W_require_unambiguous_stage_and_lifecycle_ownership",
+      "resolution_gate": "D2_D4_D7_D9",
+      "must_close_before_D10": true
+    },
+    {
+      "debt_id": "D1-DEBT-B-CONSTITUTIVE-JUSTIFICATION",
+      "candidate_scope": "V4-B-independent-derived-carrier",
+      "blocking_scope": "candidate_B_independent_state_update_resource_and_constitutive_status",
+      "assumption_forbidden_downstream": "Serialized_T_may_not_be_called_a_core_primitive_nonresource_by_assertion_or_RC_derived_without_an_explicit_update_and_budget_derivation.",
+      "issue": "independent_T_requires_a_source_backed_update_law_nonresource_accounting_and_a_clear_status_as_constitutive_completion_not_core_primitive",
+      "resolution_gate": "D2_D3_D4",
+      "must_close_before_D10": true
+    },
+    {
+      "debt_id": "D1-DEBT-C-SELECTOR-AND-FACTORISATION",
+      "candidate_scope": "V4-C-constitutive-C-sector",
+      "blocking_scope": "candidate_C_constitutive_addressability_rank_transport_and_historical_factorization",
+      "assumption_forbidden_downstream": "A_current_or_analysis_selected_C_sector_may_not_be_treated_as_historically_retained_or_load_bearing_without_a_runtime_selector_formation_factorization_and_native_consumer.",
+      "issue": "exact_selector_sector_transport_historical_formation_and_later_constitutive_read_must_be_separated_from_generic_C_continuity",
+      "resolution_gate": "D2_D4_D7",
+      "must_close_before_D10": true
+    },
+    {
+      "debt_id": "D1-DEBT-REDUCTION-CONSTRUCTION",
+      "candidate_scope": "all_admitted_candidates",
+      "blocking_scope": "candidate_specific_disabled_profile_transition_and_lifecycle_parity",
+      "assumption_forbidden_downstream": "State_space_embedding_and_projection_may_not_be_promoted_to_transition_commutation_invariant_subspace_or_replay_parity.",
+      "issue": "state_space_maps_are_constructed_but_invariant_disabled_transition_and_lifecycle_parity_are_unproven",
+      "resolution_gate": "D7_and_D9",
+      "must_close_before_D10": true
+    },
+    {
+      "debt_id": "D1-DEBT-TOPOLOGY-TRANSPORT",
+      "candidate_scope": "all_admitted_candidates",
+      "blocking_scope": "full_topology_capable_retained_state_interspace_semantics",
+      "assumption_forbidden_downstream": "Fixed_topology_ontology_success_lineage_or_stable_identifiers_may_not_substitute_for_event_local_retained_state_transport_reconfiguration_release_or_budget_accounting.",
+      "issue": "fixed_envelope_ontology_does_not_define_full_runtime_interspace_transport_reconfiguration_release_or_budget_accounting",
+      "resolution_gate": "D4_and_D9",
+      "must_close_before_D10": true
+    },
+    {
+      "debt_id": "D1-DEBT-INFORMATION-CAPACITY-AND-RELEASE",
+      "candidate_scope": "all_admitted_candidates",
+      "blocking_scope": "bounded_information_capacity_resource_accounting_and_release",
+      "assumption_forbidden_downstream": "Nonresource_structural_state_or_variable_rank_sector_state_may_not_be_used_as_an_unbounded_history_reservoir_or_as_an_additional_copy_of_C_resource.",
+      "issue": "nonresource_state_and_variable_rank_sector_semantics_require_bounded_capacity_pruning_release_and_no_double_counting_rules",
+      "resolution_gate": "D2_and_D4",
+      "must_close_before_D10": true
+    },
+    {
+      "debt_id": "D1-DEBT-HIDDEN-HELPER-AND-ADMIN-STATE",
+      "candidate_scope": "all_admitted_candidates",
+      "blocking_scope": "complete_causal_state_serialization_and_deterministic_reconstruction",
+      "assumption_forbidden_downstream": "Producer_helper_adaptive_RNG_scheduler_event_or_registry_state_may_not_change_future_behavior while remaining outside the declared complete state.",
+      "issue": "producer_helper_adaptive_RNG_scheduler_event_and_registry_dependencies_must_be_included_in_complete_state_or_proved_reconstructable",
+      "resolution_gate": "D2_D7_and_D9",
+      "must_close_before_D10": true
+    },
+    {
+      "debt_id": "D1-DEBT-CANDIDATE-EQUIVALENCE",
+      "candidate_scope": "all_admitted_candidates",
+      "blocking_scope": "D10_architecture_distinguishability_and_selection",
+      "assumption_forbidden_downstream": "Candidate_labels_or_equal_dimension_may_not_be_treated_as_substantively_distinct_architectures_without_a_causal_conjugacy_accounting_transport_output_and_lifecycle_audit.",
+      "issue": "pairwise_non_equivalence_is_currently_role_based;_D10_selection_must_not_distinguish_coordinate_conjugates_without_transition_output_accounting_transport_and_lifecycle_audit",
+      "resolution_gate": "D7_and_D10",
+      "must_close_before_D10": true
+    },
+    {
+      "debt_id": "D1-DEBT-CANDIDATE-D-CLOSED-SLOT",
+      "candidate_scope": "future_source_admitted_candidate_work",
+      "blocking_scope": "future_candidate_admission_outside_the_current_A_B_C_set",
+      "assumption_forbidden_downstream": "The_closed_D_admission_slot_may_not_be_reopened_or_filled_silently_without_a_new_source_or_transparent_distinct_derivation_and_an_accepted_D0_successor.",
+      "issue": "the_current_D_slot_is_closed_without_a_distinct_candidate;_new_work_requires_a_D0_successor_not_silent_D1_insertion",
+      "resolution_gate": "named_future_D0_successor_only_if_new_source_or_derivation_exists",
+      "must_close_before_D10": false
+    }
+  ],
+  "blocked_relabels": [
+    "admitted_candidate_as_selected_GRC9V4_architecture",
+    "independent_runtime_coordinate_as_new_core_RC_primitive",
+    "closest_to_core_vocabulary_as_best_architecture",
+    "closest_to_existing_mechanics_as_smallest_correct_extension",
+    "cleanest_authority_separation_as_empirical_superiority",
+    "analysis_projector_as_constitutive_retained_sector",
+    "ordinary_C_persistence_as_historical_retention",
+    "reconstructed_or_future_selected_sector_as_runtime_state",
+    "state_space_reduction_construction_as_transition_commutation_witness",
+    "fixed_topology_verification_envelope_as_final_GRC9V4_topology_scope",
+    "D_rejection_as_global_exhaustion_or_GRC9V4_impossibility",
+    "D1_ontology_admission_as_specification_or_runtime_authority"
+  ],
+  "rejected_alternatives": [
+    {
+      "alternative": "select_one_of_A_B_C_during_D1",
+      "reason": "D1_admission_precedes_the_formation_operator_readback_current_and_transition_discriminators_needed_for_selection"
+    },
+    {
+      "alternative": "retain_D_as_an_abstract_admitted_candidate",
+      "reason": "a_placeholder_without_state_resource_transport_formation_or_lifecycle_authority_is_not_a_causal_ontology"
+    },
+    {
+      "alternative": "instantiate_D_as_a_hybrid_after_comparing_A_B_C",
+      "reason": "post_result_hybridization_would_violate_the_D0_admission_deadline_and_require_a_successor_record"
+    },
+    {
+      "alternative": "reject_B_because_it_adds_independent_runtime_state",
+      "reason": "the_core_does_not_define_B_but_D0_classifies_it_as_an_underdetermined_candidate_completion;_the_correct_boundary_is_new_constitutive_state_not_new_core_primitive"
+    },
+    {
+      "alternative": "admit_C_from_an_analysis_only_slow_projector",
+      "reason": "runtime_constitutive_addressability_and_no_future_or_hidden_selector_information_are_required"
+    }
+  ],
+  "source_identities": [
+    {
+      "repository": "graph-reflexive-coherence",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D0TargetInheritanceAndClaimCeiling.json",
+      "role": "accepted_predecessor_and_source_cutoff",
+      "sha256": "13dcc4965ecfd375be35a7a3c23406628fb8e13db56df8972fcf90f919fac234"
+    },
+    {
+      "repository": "graph-reflexive-coherence",
+      "path": "implementation/investigations/grc9v4-constitutive-design/GRC9V4ConstitutiveDesignBasis.md",
+      "role": "controlling_design_basis",
+      "sha256": "07683d7d04d28a8a63952491d2f6e5c0c264657af54c69645092fda030610531"
+    },
+    {
+      "repository": "geometric-reflexive-coherence",
+      "path": "core/2026-08-TheContinuationSpectrum.md",
+      "role": "core_continuation_authority",
+      "sha256": "14ee948d04c8803ae2c05e0d602d94c40d67bbed5399a8ef539bd024e77d95c5"
+    },
+    {
+      "repository": "geometric-reflexive-coherence",
+      "path": "core/2026-08-ReadBack.md",
+      "role": "core_retention_and_readback_authority",
+      "sha256": "04c0bb8398febf58592297326e741271b46a52f504f6a0cea17a0bd6624efbb2"
+    },
+    {
+      "repository": "graph-reflexive-coherence",
+      "path": "specs/grc-9-v3-spec.md",
+      "role": "legacy_reduction_semantics",
+      "sha256": "7b1f0c03988be7dbe3feb8ba926d43d891d70daa0dbbae9804fc70f2a4950f2f"
+    },
+    {
+      "repository": "graph-reflexive-coherence",
+      "path": "specs/grc-9-v3-evidence-profile.md",
+      "role": "bounded_legacy_evidence_profile",
+      "sha256": "89a445dca1e4e9797a2e89ca8aad22b8678d2db3af888510890d8e786d8987d8"
+    },
+    {
+      "repository": "graph-reflexive-coherence",
+      "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/implementation/GRC9V3ContinuationReadBackVerificationSpecification.md",
+      "role": "historical_verification_contract_not_runtime_ontology",
+      "sha256": "7ad99fb4acc6a7691d184a514f4836ffa3927600fc7cf504eb059134f3948e44"
+    },
+    {
+      "repository": "graph-reflexive-coherence",
+      "path": "implementation/Phase-7-EquationMap.md",
+      "role": "legacy_complete_step_ownership",
+      "sha256": "94461cdf43f9fb4bc7bb0996822ea4e6130f7256ac1a041594eea99656c3555c"
+    }
+  ],
+  "human_acceptance": {
+    "accepted": true,
+    "accepted_by": "experiment_owner",
+    "accepted_date": "2026-08-24",
+    "status": "accepted_bounded"
+  },
+  "authorization_effect": {
+    "D2_authorized": true,
+    "D2_authorized_after_human_acceptance": true,
+    "existing_runtime_test_change_authorized": false,
+    "normative_specification_authorized": false,
+    "runtime_implementation_authorized": false,
+    "src_change_authorized": false
+  }
+}

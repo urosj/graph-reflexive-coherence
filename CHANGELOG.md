@@ -11,6 +11,24 @@ at `version = "0.1"`.
 
 ## Unreleased
 
+### Constitutive Design And Specification Direction
+
+- **B2-GR: unchanged-GRC9V3 retention/mediation constructibility.** Closed the
+  bounded preregistered search at `B2-C6` with no confirmed retained-carrier
+  candidate, no new GRR rung, and no selected extension. The result is a
+  bounded negative over the searched clean lane, not a global impossibility
+  claim. See the [accepted B2-GR boundary](experiments/2026-08-B2-GR-grc9v3-retention-mediation-constructibility/README.md).
+- **GRCv4/GRC9v4 constitutive design.** Accepted the D0-D10.2 investigation as
+  bounded design and provenance closure. For the current D10 initial
+  specification population it earns
+  `GRCv4 -> GRC9v4 ->[disabled] GRC9v3`, covers all 39 accepted D10 claims with
+  67 parent objects and 152 normative equation/contract rows, and leaves zero
+  promotion-pending rows. It authorizes a GRCv4 normative specification first
+  and a substantive GRC9v4 nine-port specialization second. It does not add or
+  authorize runtime implementation. See the
+  [investigation index](implementation/investigations/grc9v4-constitutive-design/README.md)
+  and [D10.2 audit](implementation/investigations/grc9v4-constitutive-design/decisions/D10_2FullSubstrateProvenanceAndPromotionAudit.md).
+
 ### Persistence And Compatibility
 
 - Corrected the repository-wide snapshot/reset contract for `GRCV2`, `GRCV3`,

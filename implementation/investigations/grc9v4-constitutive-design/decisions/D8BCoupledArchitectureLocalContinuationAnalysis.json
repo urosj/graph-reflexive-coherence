@@ -1,0 +1,738 @@
+{
+  "schema_version": "grc9v4_d8b_coupled_architecture_local_continuation_analysis_v1",
+  "record_type": "grc9v4_constitutive_design_decision",
+  "gate_id": "GRC9V4-CD-D8B-COUPLED-ARCHITECTURE-LOCAL",
+  "record_id": "GRC9V4-CD-D8B-CI-v1",
+  "status": "accepted_bounded",
+  "human_acceptance": {
+    "accepted": true,
+    "accepted_by": "experiment_owner",
+    "accepted_date": "2026-08-25",
+    "status": "accepted_bounded"
+  },
+  "predecessor_record_id": "GRC9V4-GTRS-CI-v1",
+  "predecessor_decision_digest": "a0292d35d3dfc18e6386a78c26ae9bc2a4b6de9f31e505cf67edf7c094aea3a3",
+  "source_identities": [
+    {
+      "source_id": "GTRS-CI",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/GeometryTemporalRealizationSuccessorCoupledImplicit.json",
+      "decision_digest": "a0292d35d3dfc18e6386a78c26ae9bc2a4b6de9f31e505cf67edf7c094aea3a3",
+      "file_sha256": "312602466e06801b48c2620f8ddc62d20513b68ad455750949ffed9c38dcd57b",
+      "consumed_as": "accepted_coupled_implicit_A_C_equations_full_root_blocks_local_regularness_surfaces_and_architecture_local_D8B_authorization"
+    },
+    {
+      "source_id": "D8-A",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D8ABranchAppropriateStructuralTargetExtraction.json",
+      "decision_digest": "5e3af8a6b8b327b3d98b5c5f6ac934ff528f048c3927a085c59194262afba021",
+      "file_sha256": "743e2f6c2f85c4b203a5558063fcb0257ddb766fcbaedf356d910720f4ce766d",
+      "consumed_as": "accepted_structural_functional_domain_direct_field_target_spectral_separation_and_representation_requirements"
+    },
+    {
+      "source_id": "D3",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D3ContinuationRequirementsAndStructuralDomain.json",
+      "decision_digest": "8e7db364cc4402b9794d825629962d1851fc15a2f0b71fa015cfaeb01f42643d",
+      "file_sha256": "a4e0d808370e3eb734668e4431bde3f2d20309b287a34b1039664650a50c3c03",
+      "consumed_as": "accepted_conditional_A_and_C_only_structural_domains_functional_normalization_and_alpha_gamma_beta_lambda_separation"
+    },
+    {
+      "source_id": "Continuation-Spectrum",
+      "path": "external:geometric-reflexive-coherence/core/2026-08-TheContinuationSpectrum.md",
+      "file_sha256": "14ee948d04c8803ae2c05e0d602d94c40d67bbed5399a8ef539bd024e77d95c5",
+      "consumed_as": "core_constrained_second_variation_conserved_tangent_relaxation_representation_projector_transport_and_criticality_boundary"
+    },
+    {
+      "source_id": "Read-Back",
+      "path": "external:geometric-reflexive-coherence/core/2026-08-ReadBack.md",
+      "file_sha256": "04c0bb8398febf58592297326e741271b46a52f504f6a0cea17a0bd6624efbb2",
+      "consumed_as": "core_direct_Read_Back_gain_current_closure_geometry_feedback_and_unified_generator_boundary"
+    },
+    {
+      "source_id": "B1-GRV7-matrix",
+      "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/outputs/spatial_temporal_threshold_matrix.json",
+      "file_sha256": "cd9cf6e3041a309f1d993377b3201f672c7b9c64364cdd91c3911b3860e52849",
+      "consumed_as": "historical_V3_operator_separation_cross_operator_pairing_blocker_and_projector_comparison_method_pressure_only"
+    },
+    {
+      "source_id": "B1-GRV3-complete-step-Jacobians",
+      "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/outputs/complete_step_jacobians.json",
+      "file_sha256": "e4de4b9351ef7258baa88e7b675e8ce82f39ffe9db3ce9df395713e4f610c5ec",
+      "consumed_as": "historical_finite_difference_causal_state_stratum_and_complete_step_Jacobian_method_pressure_not_V4_numeric_evidence"
+    },
+    {
+      "source_id": "B1-GRV3-clusters",
+      "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/outputs/slow_cluster_registry.json",
+      "file_sha256": "dc2e5c8d2c11284ac5b4977fc9f9c932b5320d871319b749debeec37671f6141",
+      "consumed_as": "historical_cluster_projector_and_symmetry_orbit_method_pressure_not_V4_cluster_evidence"
+    },
+    {
+      "source_id": "B1-closeout-acceptance",
+      "path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/outputs/gates/grv8_closeout_acceptance_anchor.json",
+      "file_sha256": "239417d959f92bb3b32f2506b35fc279d8193722e46b8517001d3d29fa272da3",
+      "consumed_as": "accepted_GRV_C6_lifecycle_authority_for_the_historical_B1_method_artifacts"
+    },
+    {
+      "source_id": "B2-closeout",
+      "path": "experiments/2026-08-B2-GR-grc9v3-retention-mediation-constructibility/outputs/b2_i8_classification_and_handoff.json",
+      "payload_sha256": "64236a65bc9bb8915df850f835c5da2633eaa0d42a46d18d557feb6b5e97e432",
+      "file_sha256": "138ee93667181f0a73012636ad90ee2919f0999d1c47a75d0e800079035af370",
+      "consumed_as": "bounded_empty_unchanged_V3_constructibility_search_and_no_impossibility_or_extension_selection_boundary"
+    },
+    {
+      "source_id": "B2-closeout-acceptance",
+      "path": "experiments/2026-08-B2-GR-grc9v3-retention-mediation-constructibility/outputs/gates/b2_closeout_acceptance_anchor.json",
+      "file_sha256": "2a4b6b3220eae0fe0b3e3e4a698d47ab893841a3be15bafea0bf3755cac1143c",
+      "consumed_as": "accepted_B2_closeout_lifecycle_authority_for_the_historical_bounded_empty_search"
+    },
+    {
+      "source_id": "GRC9V3-runtime-continuity",
+      "path": "src/pygrc/models/grc_9_v3.py",
+      "file_sha256": "d297def1eddfaf79a7ad3d6b676caaeebb29e6d7235f4fac5c6729bd7e26ca9e",
+      "consumed_as": "historical_unweighted_node_coherence_continuity_sum_and_complete_step_stage_reference_not_a_V4_charge_selection"
+    },
+    {
+      "source_id": "GRC9V3-reconciled-spec",
+      "path": "specs/grc-9-v3-spec.md",
+      "file_sha256": "7b1f0c03988be7dbe3feb8ba926d43d891d70daa0dbbae9804fc70f2a4950f2f",
+      "consumed_as": "historical_complete_step_causal_state_continuity_and_reconstruction_boundary_not_a_normative_V4_constraint_projector"
+    }
+  ],
+  "decision": {
+    "gate_role": "derive_and_classify_architecture_local_continuation_analysis_surfaces_for_the_accepted_coupled_implicit_A_and_C_realizations_without_cross_candidate_comparison_or_invented_numeric_spectra",
+    "scope": {
+      "realization_family": "coupled_implicit",
+      "architecture_rows": [
+        "V4-A-temporalized-W_coupled_implicit",
+        "V4-C-constitutive-C-sector_coupled_implicit"
+      ],
+      "analysis_stratum": "smooth_fixed_topology_fixed_boundary_fixed_live_support_with_A_floor_inactive_and_C_fixed_selector_rank_strict_gap",
+      "architecture_local_analysis_performed": true,
+      "cross_candidate_comparison_performed": false,
+      "cross_family_comparison_performed": false,
+      "formed_V4_branch_instantiated": false,
+      "runtime_probe_executed": false,
+      "numeric_eigenvalue_or_multiplier_table_emitted": false,
+      "runtime_or_src_changed": false
+    },
+    "result_summary": {
+      "disposition": "architecture_local_operator_contract_complete_at_design_level_numeric_formed_branch_spectra_and_stability_uninstantiated",
+      "candidate_A": "charge_parametric_structural_pullback_complete_step_Jacobian_direct_Read_Back_and_spatial_operator_surfaces_defined",
+      "candidate_C": "charge_parametric_structural_pullback_complete_step_Jacobian_direct_Read_Back_and_spatial_operator_surfaces_defined",
+      "new_positive_result": "the_accepted_joint_root_blocks_are_sufficient_to_derive_the_complete_architecture_local_first_and_second_implicit_derivative_surfaces_and_the_charge_parametric_structural_operator_contract_without_promoting_J_or_h_to_persistent_state",
+      "new_negative_boundary": "local_IFT_regularness_and_direct_field_visibility_do_not_determine_alpha_gamma_mu_or_stability_signs_without_an_instantiated_formed_branch_and_normalized_structural_functional",
+      "A_or_C_selected_or_ranked": false,
+      "D9_authorized": false
+    },
+    "notation_registry": {
+      "X_A": "committed_state_(C,W_A)",
+      "X_C": "committed_state_C",
+      "Y_a": "same_step_algebraic_root_(J_a_flux,h_a)",
+      "B_a": "D_Y_F_a_the_full_joint_root_block",
+      "S_a": "D_X_Y_a=-B_a^-1_D_X_F_a",
+      "S2_a": "D_X_squared_Y_a_the_second_implicit_root_derivative",
+      "Phi_a": "complete_committed_state_transition_after_root_continuity_and_candidate_writer",
+      "M_a": "D_X_Phi_a_the_complete_step_Jacobian",
+      "Q_struct_a": "architecture_local_constrained_structural_second_variation",
+      "C_struct_a": "Riesz_operator_representing_Q_struct_a_on_the_declared_weighted_tangent_space",
+      "L_a": "P_struct(C,h)-eta_a*(Q(C,h)-Q0)_before_architecture_local_geometry_slaving",
+      "alpha": "eigenvalue_of_C_struct_a_only",
+      "mu": "eigenvalue_of_M_a_only",
+      "gamma": "continuous_rate_derived_from_mu_only_under_a_declared_clock_and_logarithm_branch_or_from_a_separately_derived_generator",
+      "B_rb_a": "zeta_a_times_the_direct_frozen_geometry_Read_Back_derivative_D_J_j_a",
+      "beta": "eigenvalue_in_Spec(B_rb_a)_in_its_declared_current_or_form_representation_with_singular_response_amplification_reported_separately_as_sigma_rb",
+      "r_a": "intrinsic_direct_response_eigenvalue_of_D_J_j_a_before_the_external_enactment_gain_zeta_a",
+      "L_sp_a": "positive_graph_spatial_operator_Delta_0(h_a_star)",
+      "lambda": "generalized_H0_weighted_eigenvalue_of_L_sp_a",
+      "Pi_Q_a": "charge_parametric_H0_weighted_projector_to_the_conservation_and_boundary_tangent_complete_once_D9_freezes_the_complete_step_charge"
+    },
+    "common_implicit_derivative_contract": {
+      "root": "F_a(Y_a;X_a)=0",
+      "first_derivative": "D_X_Y_a[u]=-B_a^-1*D_X_F_a[u]",
+      "second_derivative": "D_X_squared_Y_a[u,v]=-B_a^-1*(D_XX_squared_F_a[u,v]+D_XY_squared_F_a[u,D_X_Y_a[v]]+D_YX_squared_F_a[D_X_Y_a[u],v]+D_YY_squared_F_a[D_X_Y_a[u],D_X_Y_a[v]])",
+      "required_regularness": "B_a_invertible_with_finite_declared_inverse_bound_on_the_same_local_chart",
+      "required_analysis_smoothness": "C2_for_classical_second_variation_while_the_accepted_C1_IFT_result_alone_is_insufficient",
+      "candidate_A_C2_subchart": "fixed_topology_fixed_boundary_floor_inactive_G_W_chart_with_all_root_profile_and_writer_maps_C2",
+      "candidate_C_C2_subchart": "fixed_topology_fixed_boundary_fixed_selector_rank_strict_gap_chart_with_all_selector_Hodge_identification_root_and_profile_maps_C2",
+      "root_solver_trace_is_a_derivative": false,
+      "finite_difference_allowed_later": "only_as_a_validation_of_the_analytic_or_automatic_derivative_on_the_same_causal_stratum",
+      "singular_or_stratum_crossing_disposition": "classical_derivative_blocked_not_reported_as_zero_or_unconverged"
+    },
+    "structural_operator_contract": {
+      "common_reduced_functional": "F_struct_a_red(C)=L_a(C,h_a(C;fixed_candidate_context))_with_L_a=P_struct-eta_a*(Q-Q0)",
+      "instantiated_graph_field_functional": "P_G(C,H)=kappa_C_over_2*(d0*C)^T*H*(d0*C)+sum_i_H0_ii*W_pot(C_i)",
+      "architecture_local_geometry_slaving": "h_a(C)=P_h*Y_a(C;fixed_candidate_context)_on_the_unique_local_coupled_root_branch",
+      "formed_state_condition": "D_C_F_struct_a_red(C_star)[u]=0_for_every_u_in_V_a",
+      "first_geometry_tangent": "D_C_h_a=P_h*D_C_Y_a",
+      "second_geometry_tangent": "D_C_squared_h_a=P_h*D_C_squared_Y_a",
+      "first_H1_form_tangent": "H_a_prime[u]=D_h_H1_form[D_C_h_a[u]]_with_every_direct_C_or_candidate_context_term_included",
+      "second_H1_form_tangent": "H_a_second[u,v]=D_h_H1_form[D_C_squared_h_a[u,v]]+D_hh_squared_H1_form[D_C_h_a[u],D_C_h_a[v]]_plus_any_direct_C_cross_terms",
+      "affine_profile_specialization": "H1_form=H1_form_ref+kappa_H*Delta_K4_has_no_intrinsic_second_derivative_in_Delta_K4_but_H_a_second_is_generally_nonzero_through_the_nonlinear_coupled_K4_branch",
+      "full_second_variation": "Q_struct_a[u,v]=D_squared_of_L_a(C,h_a(C))_at_C_star[u,v]_for_u_v_in_V_a;_constraint_curvature_is_already_the_minus_eta_a_D_squared_Q_part_of_D_squared_L_a;_measure_dependence_is_included_through_the_h_and_H0_dependence_of_P_struct_and_Q;_explicit_boundary_terms_remain_inside_the_functional_while_boundary_support_conditions_restrict_the_domain;_projector_or_tangent_transport_is_not_an_additive_fixed_state_Hessian_term",
+      "explicit_graph_field_second_variation": "kappa_C*(d0*u)^T*H_a*(d0*v)+u^T*H0*Diag(W_pot_second(C_star))*v+kappa_C*(d0*u)^T*H_a_prime[v]*e_star+kappa_C*(d0*v)^T*H_a_prime[u]*e_star+kappa_C_over_2*e_star^T*H_a_second[u,v]*e_star_with_e_star=d0*C_star",
+      "admissible_tangent": "V_a(DQ_a)=kernel_DQ_a_intersect_declared_boundary_support_symmetry_gauge_and_candidate_authority_constraints_with_DQ_a_parameterized_until_D9_freezes_the_complete_step_charge",
+      "charge_projector_rule": "bind_DQ_a_to_the_actual_conserved_quantity_of_the_complete_candidate_transition;_do_not_infer_q_Q_from_H0_or_the_analysis_inner_product",
+      "legacy_reference_fact": "event_free_fixed_topology_GRC9V3_incidence_continuity_preserves_the_unweighted_sum_1^T*C_before_other_budget_boundary_or_event_stages_but_this_does_not_by_itself_freeze_the_V4_complete_step_charge",
+      "fixed_H0_linear_charge_specialization": "when_H0_is_fixed_and_Q_G(C)=q_Q^T*C_is_linear_D_squared_Q_G_is_zero_so_the_constraint_changes_the_tangent_without_adding_second_order_curvature",
+      "operator_definition": "Q_struct_a[u,v]=inner_a(u,C_struct_a*v)_a_on_V_a_when_the_charge_parametric_full_form_is_closed",
+      "projector_transport_role": "transport_or_compare_the_Hessian_form_and_its_spectral_projectors_along_a_moving_branch;_do_not_add_projector_transport_as_local_Hessian_curvature",
+      "generalized_eigenproblem": "after_D9_freezes_DQ_a_and_a_tangent_basis_Z_a_the_charge_parametric_problem_becomes_Z_a^T*K_a*Z_a*xi_n=alpha_a_n*Z_a^T*H0*Z_a*xi_n_after_protected_null_removal",
+      "alpha_definition": "C_struct_a*u_n=alpha_n*u_n_in_the_declared_H0_weighted_or_explicitly_mapped_inner_product",
+      "functional_normalization": "the_source_normalization_of_P_struct_eta_a_Q_and_the_perturbation_metric_must_be_frozen_before_numeric_alpha_values",
+      "structural_stability_rule": "positive_gap_on_all_unprotected_admissible_modes_supports_local_structural_stability;_zero_is_marginal_only_after_protected_null_classification;_negative_is_structural_instability",
+      "numeric_alpha_status": "not_instantiated",
+      "reason_numeric_alpha_unavailable": "no_formed_V4_constrained_critical_branch_complete_functional_coefficients_or_normalization_values_exist_in_the_accepted_design_records",
+      "D8A_direct_field_target_role": "retained_as_one_exact_term_of_the_charge_parametric_full_second_variation_not_relabelled_as_the_complete_Hessian"
+    },
+    "candidate_A_structural_analysis": {
+      "architecture_id": "V4-A-temporalized-W_coupled_implicit",
+      "structural_domain": "conditional_C_given_fixed_W_A_star",
+      "structural_coordinates": ["delta_C"],
+      "excluded_structural_coordinates": ["delta_W_A", "delta_J_A_flux", "delta_h_A"],
+      "tangent_rule": "delta_W_A=0_while_delta_J_A_and_delta_h_A_follow_the_full_implicit_root_derivative",
+      "rederived_chain": "delta_C_to_delta_Y_A_to_delta_h_A_to_Delta0_and_Phi_A_CI_to_J0_A_CI_to_W_hat_A_to_q_A_to_j_A_to_Delta_K4_A_to_h_A_with_all_implicit_second_derivatives_retained",
+      "independent_alpha_of_W_A": false,
+      "formal_Hessian_surface_status": "charge_parametric_operator_formula_derived_on_the_declared_local_chart_complete_once_D9_freezes_the_charge_and_tangent",
+      "numeric_alpha_status": "blocked_pending_formed_branch_functional_instantiation",
+      "direct_field_visibility_receipt_role": "nonempty_direct_metric_response_subdomain_only_not_full_Hessian_sign_or_nonannihilation"
+    },
+    "candidate_C_structural_analysis": {
+      "architecture_id": "V4-C-constitutive-C-sector_coupled_implicit",
+      "structural_domain": "C_only_on_fixed_rank_strict_gap_selector_stratum",
+      "structural_coordinates": ["delta_C"],
+      "excluded_structural_coordinates": ["independent_delta_T_C", "delta_J_C_flux", "delta_h_C"],
+      "derived_sector_tangent": "delta_T_C=P_M*delta_C+(D_C_P_M[delta_C]+D_h_P_M[delta_h_C])*C_star_with_delta_h_C_from_the_full_implicit_root",
+      "second_selector_tangent": "all_D_CC_squared_P_M_D_Ch_squared_P_M_D_hh_squared_P_M_and_D_C_squared_h_C_terms_required_in_the_full_second_variation",
+      "rederived_chain": "delta_C_to_selector_T_C_H_M_I_4M_Rhat_C_M_G_J_J0_C_and_full_delta_G_J_times_J_then_joint_root_geometry_and_constraint_terms",
+      "independent_alpha_of_T_C": false,
+      "formal_Hessian_surface_status": "charge_parametric_operator_formula_derived_on_the_declared_local_chart_complete_once_D9_freezes_the_charge_and_tangent",
+      "numeric_alpha_status": "blocked_pending_formed_branch_functional_instantiation",
+      "direct_field_visibility_receipt_role": "nonempty_direct_metric_response_subdomain_only_not_full_Hessian_sign_or_nonannihilation"
+    },
+    "temporal_transition_contract": {
+      "primary_discrete_object": "M_a=D_X_Phi_a_on_the_committed_state_tangent",
+      "primary_spectrum": "mu_in_Spec(M_a)",
+      "continuous_gamma_rule": "gamma=-log(mu)/Delta_t_only_for_a_declared_logarithm_branch_and_clock;_complex_or_nonpositive_mu_requires_full_multiplier_reporting_or_a_separately_derived_generator",
+      "effective_I_minus_M_over_Delta_t_is_normative_generator": false,
+      "stability_rule": "spectral_radius_of_M_a_less_than_one_on_unprotected_admissible_modes_is_asymptotic_linear_step_stability_but_nonnormal_transient_growth_must_be_reported_separately",
+      "marginal_rule": "absolute_mu_equal_one_is_marginal_only_after_uncertainty_protected_null_and_Jordan_or_nonnormal_checks",
+      "moving_branch_rule": "for_M_k_mapping_T_Xk_to_T_Xkplus1_use_Mtilde_k=U_kplus1_to_ref*M_k*U_ref_to_k_and_Mtilde_n_to_0=Mtilde_nminus1_times_dotdotdot_times_Mtilde_0_or_compose_M_nminus1_times_dotdotdot_times_M_0_in_native_spaces_then_transport_only_the_endpoints;_same_k_output_transport_and_one_permanent_multiplier_spectrum_are_forbidden",
+      "numeric_mu_gamma_status": "not_instantiated",
+      "IFT_root_regularness_is_temporal_stability": false
+    },
+    "candidate_A_temporal_analysis": {
+      "continuity_derivative": "delta_C_plus=delta_C-Delta_t*B_ref*delta_J_A_plus_D_boundary_A[delta_X]",
+      "writer_derivative": "delta_W_plus=a_A*Diag(W_plus_over_W_A)*delta_W_A+(1-a_A)*Diag(W_plus_over_W_drv_A)*D_G_W[delta_C_plus,delta_J_A]",
+      "root_current_blocks": "J_C=D_C_J_A_and_J_W=D_W_J_A_from_the_full_implicit_derivative",
+      "continuity_blocks": "P_C=I-Delta_t*B_ref*J_C_plus_D_C_boundary_A_and_P_W=-Delta_t*B_ref*J_W_plus_D_W_boundary_A",
+      "driver_blocks": "D_C_W_drv=G_C_W*P_C+G_J_W*J_C_and_D_W_W_drv=G_C_W*P_W+G_J_W*J_W",
+      "writer_blocks": "D_C_W_plus=Diag(W_plus)*(1-a_A)*Diag(W_drv^-1)*D_C_W_drv_and_D_W_W_plus=Diag(W_plus)*(a_A*Diag(W_A^-1)+(1-a_A)*Diag(W_drv^-1)*D_W_W_drv)",
+      "block_Jacobian": "M_A=[[P_C,P_W],[D_C_W_plus,D_W_W_plus]]",
+      "complete_step_Jacobian": "M_A=D_X(C_plus,W_plus)_with_delta_J_A_and_delta_h_A_from_S_A=-B_A^-1*D_X_F_A",
+      "committed_domain": "conservation_boundary_tangent_in_C_direct_sum_positive_W_A_tangent_with_declared_gauge_quotient",
+      "writer_refresh_rule": "all_G_W_differential_inputs_are_recomputed_from_postcontinuity_C_plus_and_authoritative_J_A_before_D_G_W_is_applied",
+      "direct_h_to_writer_derivative": false,
+      "log_W_analysis_coordinate": "omega=log(W_A_over_W_ref)_is_a_local_similarity_coordinate_at_a_fixed_point_but_requires_distinct_pre_post_transport_on_a_moving_branch",
+      "writer_retention_parameter_is_full_temporal_spectrum": false,
+      "nonnormality_expected_possible": true,
+      "numeric_stability_classification": "unresolved_without_instantiated_branch_and_parameters"
+    },
+    "candidate_C_temporal_analysis": {
+      "continuity_derivative": "delta_C_plus=delta_C-Delta_t*B_ref*delta_J_C_plus_D_boundary_C[delta_C]",
+      "complete_step_Jacobian": "M_C=I-Delta_t*B_ref*P_J*(-B_C^-1*D_C_F_C)+D_boundary_C",
+      "committed_domain": "C_conservation_boundary_tangent_on_the_fixed_rank_fixed_topology_stratum",
+      "T_C_J_C_h_C_are_committed_temporal_coordinates": false,
+      "nonnormality_expected_possible": true,
+      "numeric_stability_classification": "unresolved_without_instantiated_branch_and_parameters"
+    },
+    "read_back_operator_contract": {
+      "definition": "B_rb_a=zeta_a*D_J_j_a_at_fixed_committed_state_and_fixed_same_step_geometry_reference",
+      "intrinsic_response_definition": "R_dir_a=D_J_j_a_with_intrinsic_response_eigenvalues_r_a",
+      "core_gain_convention": "beta_a=zeta_a*r_a_as_fixed_by_the_Read_Back_core;_omitting_zeta_reports_intrinsic_response_r_a_not_enacted_Read_Back_gain_beta_a",
+      "beta_definition": "beta_n_is_an_eigenvalue_in_Spec(B_rb_a)_including_for_nonnormal_or_defective_operators_with_isolated_spectral_clusters_or_Riesz_projectors_used_when_individual_eigenvectors_are_ill_conditioned",
+      "direct_response_amplification_singular_values": "sigma_rb_n=sigma_n(B_rb_a)_reported_separately_from_beta_n",
+      "direct_beta_is_complete_root_multiplier": false,
+      "direct_beta_is_structural_alpha": false,
+      "kinetic_singularity_rule": "one_in_Spec(B_rb_a)_blocks_the_frozen_direct_current_inverse_but_does_not_by_itself_establish_structural_or_complete_step_instability",
+      "candidate_A": {
+        "operator": "B_rb_A=zeta_A*chi_A*Diag(q_A_star)",
+        "intrinsic_response_eigenvalues": "r_A_e=chi_A*q_A_e",
+        "enacted_gain_eigenvalues": "beta_A_e=zeta_A*chi_A*q_A_e",
+        "bounded_intrinsic_response": "minus_1_less_than_q_A_e_less_than_1_on_the_positive_W_A_and_W_hat_A_domain",
+        "domain": "physical_edge_current_space_with_declared_live_edge_order_and_G_J_weight",
+        "q_dependency": "q_A_star_is_frozen_for_the_direct_operator_while_its_total_X_and_h_derivatives_remain_inside_B_A_and_M_A",
+        "normality": "diagonal_in_the_declared_edge_basis_for_the_direct_operator_only"
+      },
+      "candidate_C": {
+        "physical_operator": "B_rb_C=zeta_C*chi_C*Q_C^-1*Rhat_C_M*Q_C",
+        "retained_form_operator": "B_rb_C_M=zeta_C*chi_C*Rhat_C_M",
+        "intrinsic_response_eigenvalues": "r_C_m=chi_C/(1+tau_C*lambda_M_m)_when_Delta_1_M_has_eigenvalue_lambda_M_m",
+        "enacted_gain_eigenvalues": "beta_C_m=zeta_C*chi_C/(1+tau_C*lambda_M_m)",
+        "similarity": "B_rb_C=Q_C^-1*B_rb_C_M*Q_C",
+        "eigenvalue_invariance": true,
+        "Euclidean_singular_value_invariance": false,
+        "weighted_response_metric": "W_beta_C=Q_C^T*H1_M*Q_C_in_which_the_physical_direct_operator_is_self_adjoint_when_Rhat_C_M_is_H1_M_self_adjoint",
+        "apparent_Euclidean_nonnormality": "representational_for_the_direct_C_operator_under_the_accepted_similarity_but_not_for_the_complete_temporal_map"
+      },
+      "closed_loop_state_susceptibility": "D_X_j_a=j_a_X-j_a_Y*B_a^-1*F_a_X_is_a_complementary_total_response_and_must_not_be_called_beta",
+      "numeric_beta_status": "not_instantiated_but_operator_family_and_threshold_semantics_are_complete"
+    },
+    "spatial_operator_contract": {
+      "operator": "L_sp_a=Delta_0(h_a_star)=H0_ref^-1*B_ref*H1_form(h_a_star)*B_ref_transpose",
+      "generalized_eigenproblem": "B_ref*H1_form*B_ref_transpose*phi_n=lambda_n*H0_ref*phi_n",
+      "domain": "node_field_domain_with_declared_boundary_conditions_and_conservation_or_constant_mode_classification",
+      "inner_product": "phi_transpose*H0_ref*psi",
+      "candidate_scope": "evaluated_separately_at_h_A_star_and_h_C_star_without_cross_candidate_mode_pairing",
+      "C_internal_Delta_1_M_is_spatial_lambda_operator": false,
+      "C_retained_sector_spectrum": "lambda_M_m_of_Delta_1_M_is_reported_separately_as_a_retained_one_form_Hodge_scale_and_enters_r_C_m_without_replacing_the_formed_geometry_node_lambda",
+      "lambda_is_alpha_gamma_or_beta": false,
+      "numeric_lambda_status": "not_instantiated_for_a_V4_formed_branch"
+    },
+    "projector_transport_and_covariance_contract": {
+      "cluster_rule": "construct_projectors_for_isolated_spectral_clusters_not_sorted_individual_mode_indices",
+      "structural_projector": "H0_weighted_Riesz_projector_of_C_struct_a_on_V_a_after_the_complete_step_charge_and_tangent_are_frozen",
+      "temporal_projector": "Riesz_or_real_Schur_invariant_subspace_projector_of_M_a_on_the_committed_state_tangent",
+      "Read_Back_projector": "response_space_projector_or_singular_subspace_of_B_rb_a_in_the_declared_current_metric",
+      "spatial_projector": "H0_weighted_spectral_projector_of_L_sp_a",
+      "cross_operator_index_matching_allowed": false,
+      "reference_transport": "U_theta_to_theta0_must_transport_measure_fiber_metric_constraint_tangent_candidate_representation_and_isolated_cluster_projector_before_comparison",
+      "physical_to_reduced_projector": "P_physical=U^-1*P_reference*U_or_the_explicit_candidate_embedding_projection_conjugation",
+      "A_domain_mismatch": "structural_alpha_lives_on_C_given_W_A_while_M_A_lives_on_(C,W_A);_comparison_requires_declared_injection_projection_and_is_not_identity",
+      "C_domain_relation": "both_structural_and_temporal_objects_are_C_based_but_have_different_metrics_and_operator_semantics_so_identity_of_coordinates_is_not_identity_of_projectors",
+      "node_relabel_covariance": "operators_transform_by_similarity_and_bilinear_forms_by_congruence_under_the_declared_node_permutation",
+      "edge_reorientation_covariance": "flux_form_and_H1_G_J_objects_transform_with_the_declared_signed_edge_map_while_node_spectra_remain_covariant",
+      "analysis_projector_runtime_authority": false,
+      "cross_rank_or_topology_transport": "blocked_until_D9_or_a_named_interspace_contract"
+    },
+    "nonnormality_contract": {
+      "objects_requiring_check": ["M_A", "M_C", "physical_B_rb_C", "any_reduced_Schur_operator"],
+      "minimum_diagnostics_after_instantiation": [
+        "eigenvalues_and_conditioned_invariant_subspaces",
+        "singular_values",
+        "Schur_form_or_equivalent_stable_invariant_subspace_representation",
+        "resolvent_or_pseudospectral_distance_near_the_stability_boundary",
+        "finite_horizon_norms_of_M_a_powers_or_equivalent_transient_growth_bound"
+      ],
+      "weighted_adjoint": "M_dagger=W_analysis^-1*M^T*W_analysis",
+      "commutator_diagnostic": "norm_W(M_dagger*M-M*M_dagger)_with_the_norm_declared",
+      "finite_horizon_amplification": "G_H=max_for_0_le_k_le_H_norm_W(M^k)_at_a_fixed_point_or_the_corresponding_transported_cocycle_norm_on_a_moving_branch",
+      "candidate_A_metric_boundary": "the_log_W_coordinate_is_natural_but_the_absolute_relative_weight_between_C_and_log_W_is_not_source_fixed_and_must_be_declared_before_reporting_nonnormal_magnitude_or_cross_block_principal_angles",
+      "candidate_C_metric": "H0_is_the_natural_committed_node_state_analysis_metric_on_the_fixed_H0_profile",
+      "spectral_radius_alone_is_transient_stability_proof": false,
+      "self_adjoint_proxy_may_replace_complete_step_map": false
+    },
+    "full_chain_nonannihilation_classification": {
+      "candidate_A": "not_closed;_the_existing_0.42_direct_field_receipt_does_not_exclude_cancellation_through_the_joint_root_continuity_and_writer",
+      "candidate_C": "not_closed;_the_existing_minus_0.014842807194071116_direct_field_receipt_does_not_exclude_cancellation_through_the_joint_root_and_continuity",
+      "required_future_witness": "matched_enabled_versus_geometry_consumer_off_branch_with_the_same_committed_input_and_all_other_parameters_fixed_then_nonzero_D_X_Phi_difference_or_nonzero_declared_sensitivity_component",
+      "exact_parameter_sensitivity": "Y_kappa_a=-B_a^-1*F_a_kappa_H_and_partial_kappa_H_Phi_a=Phi_a_Y*Y_kappa_a+Phi_a_kappa_H_at_the_preregistered_reference",
+      "primary_pass_condition": "partial_kappa_H_Phi_a_not_equal_zero_on_a_preregistered_admissible_direction",
+      "stronger_pass_condition": "D_X_Phi_a_at_enabled_kappa_H_minus_D_X_Phi_a_at_zero_not_equal_zero_under_the_matched_control",
+      "post_hoc_direction_selection_allowed": false
+    },
+    "quantitative_regularness_certificate": {
+      "reference_block": "B0_a=D_Y_F_a_at_the_accepted_reference",
+      "Neumann_quantity": "eta_a=norm(B0_a^-1*(B_a-B0_a))",
+      "certificate": "eta_a_less_than_1_implies_B_a_invertible_and_norm(B_a^-1)_less_than_or_equal_norm(B0_a^-1)/(1-eta_a)",
+      "radius_route": "a_declared_Lipschitz_bound_norm(B_a-B0_a)_less_than_or_equal_L_B_a*norm((Y,kappa_H)-(Y0,0))_yields_a_conservative_computable_local_radius",
+      "candidate_A_reference_bound": "norm(L_A^-1)_less_than_or_equal_1/(1-zeta_bar_A)_on_the_admitted_smooth_subunit_gain_chart",
+      "candidate_C_reference_bound": "norm(L_C_flux_ref^-1)_less_than_or_equal_cond(Q_C)/(1-zeta_bar_C)_under_the_retained_contraction_bound",
+      "numeric_certificate_status": "not_instantiated"
+    },
+    "analysis_layer_contract": {
+      "role": "pure_architecture_local_analysis_consumer_of_a_candidate_state_and_its_complete_coupled_root",
+      "operations": [
+        "solve_or_consume_coupled_root_and_full_B_block",
+        "implicit_first_derivative",
+        "implicit_second_derivative_action",
+        "constrained_structural_form_and_generalized_alpha_problem",
+        "complete_transition_Jacobian_and_mu_nonnormality_surfaces",
+        "direct_intrinsic_response_and_enacted_Read_Back_operator",
+        "formed_geometry_spatial_operator",
+        "geometry_chain_control_and_quantitative_regularness_certificate"
+      ],
+      "may_read_candidate_state_and_root": true,
+      "may_emit_analysis_derivatives_projectors_conditioning_and_controls": true,
+      "may_modify_candidate_transition": false,
+      "may_become_causal_state": false,
+      "guardrail": "D8B_observes_the_complete_coupled_V4_step_and_does_not_become_part_of_that_step"
+    },
+    "B1_B2_discriminator_map": [
+      {
+        "source": "B1-GRV3-causal-state-and-stratum-audit",
+        "classification": "V4_specific_adaptation_required",
+        "reason": "A_commits_(C,W_A)_and_C_commits_C_while_both_use_a_joint_algebraic_J_h_root_absent_from_V3",
+        "later_use": "verify_complete_causal_coordinates_cache_exclusion_two_sided_same_stratum_derivatives_and_branch_residual_over_h"
+      },
+      {
+        "source": "B1-GRV3-complete-step-finite-difference-Jacobian",
+        "classification": "method_reusable_after_implementation_numeric_values_not_reusable",
+        "reason": "the_odd_even_step_size_and_decoder_audits_remain_valid_but_the_V4_map_and_state_dimensions_changed"
+      },
+      {
+        "source": "B1-GRV4-frozen-versus-full-recurrence",
+        "classification": "V4_specific_rederivation_required",
+        "reason": "freezing_read_back_geometry_or_candidate_writer_defines_architecture_specific_ablation_maps_not_the_V3_frozen_W_comparator"
+      },
+      {
+        "source": "B1-GRV5-retention-and-matched-probe",
+        "classification": "post_implementation_candidate_specific",
+        "reason": "A_has_independent_W_A_retention_while_C_has_only_constitutively_derived_T_C_and_must_not_be_given_an_independent_carrier_probe"
+      },
+      {
+        "source": "B1-GRV6-return_orbits",
+        "classification": "post_implementation_V4_adaptation_required",
+        "reason": "return_must_be_measured_in_each_committed_state_space_with_root_and_geometry_surfaces_recomputed"
+      },
+      {
+        "source": "B1-GRV7-spectrum_cluster_and_projector_rules",
+        "classification": "design_method_reused_numeric_result_inapplicable",
+        "reason": "operator_separation_cluster_projectors_and_no_cross_index_pairing_are_retained_while_all_V3_spectra_are_historical_only"
+      },
+      {
+        "source": "B2-active_null_and_provenance_controls",
+        "classification": "control_shape_reusable",
+        "reason": "authored_state_report_only_effect_and_relabel_controls_remain_valid_without supplying_V4_positive_evidence"
+      },
+      {
+        "source": "B2-bounded-empty-unchanged-runtime-search",
+        "classification": "legacy_fact_only",
+        "reason": "the_empty_V3_candidate_set_neither_invalidates_nor_selects_a_revision_distinct_V4_architecture"
+      }
+    ],
+    "cross_surface_interpretation": {
+      "alpha_vs_mu": "related_only_after_the_declared_kinematic_mobility_and_representation_map;_no_equality_or_mode_index_pairing",
+      "beta_vs_mu": "B_rb_a_is_one_direct_current_subloop_inside_the_full_root_and_complete_step_map_not_the_complete_multiplier",
+      "lambda_vs_alpha": "lambda_describes_spatial_scale_while_alpha_describes_normalized_structural_curvature",
+      "direct_field_visibility_vs_alpha_change": "nonzero_metric_response_does_not_fix_the_sign_or_net_value_of_the_full_Hessian_response",
+      "root_regularness_vs_stability": "invertible_B_a_establishes_local_algebraic_well_posedness_not_temporal_or_structural_stability",
+      "unified_generator_claim": "blocked;_the_complete_discrete_map_M_a_is_a_valid_architecture_local_temporal_object_but_does_not_merge_alpha_beta_and_lambda_into_one_spectrum"
+    },
+    "claim_ceiling": "D8B_defines_architecture_local_A_and_C_coupled_implicit_charge_parametric_structural_second_variation_complete_step_Read_Back_spatial_projector_transport_covariance_nonnormality_and_stability_test_surfaces_at_design_level_complete_once_the_D9_charge_tangent_contract_is_frozen;_it_does_not_supply_an_instantiated_formed_V4_branch_numeric_alpha_beta_gamma_mu_or_lambda_values_nonzero_complete_transition_chain_witness_temporal_or_structural_stability_global_root_or_event_continuation_cross_candidate_or_cross_family_comparison_candidate_selection_runtime_implementation_or_normative_GRC9V4_specification",
+    "gate_propagation": {
+      "architecture_local_D8B_operator_contract_A_complete": true,
+      "architecture_local_D8B_operator_contract_C_complete": true,
+      "architecture_local_structural_operator_contract_charge_parametric": true,
+      "complete_step_charge_and_tangent_frozen": false,
+      "architecture_local_D8B_numeric_spectrum_A_complete": false,
+      "architecture_local_D8B_numeric_spectrum_C_complete": false,
+      "architecture_local_D8B_stability_A_complete": false,
+      "architecture_local_D8B_stability_C_complete": false,
+      "comparative_D8B_authorized": false,
+      "remaining_realization_family_pressure_required": true,
+      "D9_authorized": false,
+      "D10_authorized": false,
+      "specification_authorized": false,
+      "implementation_authorized": false
+    }
+  },
+  "predecessor_debt_lineage_contract": {
+    "immediate_source_record": "GRC9V4-GTRS-CI-v1",
+    "immediate_source_debt_count": 10,
+    "transitive_source_record": "GRC9V4-CD-D8A-v1",
+    "transitive_carried_debt_count": 23,
+    "total_live_predecessor_debt_count": 33,
+    "required_disposition_count": 33,
+    "silent_drop_allowed": false
+  },
+  "immediate_predecessor_debt_disposition": [
+    {
+      "debt_id": "GTRS-CI-DEBT-REMAINING-FAMILY-PRESSURE",
+      "status": "carried"
+    },
+    {
+      "debt_id": "GTRS-CI-DEBT-A-D8B-STRUCTURAL-REDERIVATION",
+      "status": "superseded",
+      "successor_debt_ids": ["D8B-CI-DEBT-A-FORMED-BRANCH-ALPHA"],
+      "resolution": "the_complete_coupled_A_implicit_second_variation_surface_is_now_derived_while_numeric_formed_branch_alpha_remains_open"
+    },
+    {
+      "debt_id": "GTRS-CI-DEBT-C-D8B-STRUCTURAL-REDERIVATION",
+      "status": "superseded",
+      "successor_debt_ids": ["D8B-CI-DEBT-C-FORMED-BRANCH-ALPHA"],
+      "resolution": "the_complete_coupled_C_implicit_second_variation_surface_is_now_derived_while_numeric_formed_branch_alpha_remains_open"
+    },
+    {
+      "debt_id": "GTRS-CI-DEBT-A-NONZERO-CHAIN-WITNESS",
+      "status": "carried"
+    },
+    {
+      "debt_id": "GTRS-CI-DEBT-C-NONZERO-CHAIN-WITNESS",
+      "status": "carried"
+    },
+    {
+      "debt_id": "GTRS-CI-DEBT-A-QUANTITATIVE-IFT-RADIUS",
+      "status": "carried"
+    },
+    {
+      "debt_id": "GTRS-CI-DEBT-C-QUANTITATIVE-IFT-AND-Q-CONDITIONING",
+      "status": "carried"
+    },
+    {
+      "debt_id": "GTRS-CI-DEBT-A-GLOBAL-ROOT-AND-TOPOLOGY",
+      "status": "carried"
+    },
+    {
+      "debt_id": "GTRS-CI-DEBT-C-GLOBAL-ROOT-AND-TOPOLOGY",
+      "status": "carried"
+    },
+    {
+      "debt_id": "GTRS-CI-DEBT-ARCHITECTURE-LOCAL-D8B",
+      "status": "superseded",
+      "successor_debt_ids": [
+        "D8B-CI-DEBT-A-FORMED-BRANCH-ALPHA",
+        "D8B-CI-DEBT-C-FORMED-BRANCH-ALPHA",
+        "D8B-CI-DEBT-A-TEMPORAL-STABILITY",
+        "D8B-CI-DEBT-C-TEMPORAL-STABILITY",
+        "D8B-CI-DEBT-COMPARATIVE-REFERENCE-SPACE",
+        "D8B-CI-DEBT-CHARGE-CONSTRAINT-PROJECTOR",
+        "D8B-CI-DEBT-A-ANALYSIS-METRIC"
+      ],
+      "resolution": "all_A_C_operator_and_test_surfaces_are_defined_at_design_level_while_numeric_branch_classification_and_comparison_remain_open"
+    }
+  ],
+  "transitive_predecessor_debt_disposition": [
+    {
+      "debt_id": "D8A-DEBT-FULL-STRUCTURAL-BRANCH-AND-SECOND-VARIATION",
+      "status": "superseded",
+      "successor_debt_ids": ["D8B-CI-DEBT-A-FORMED-BRANCH-ALPHA", "D8B-CI-DEBT-C-FORMED-BRANCH-ALPHA"]
+    },
+    {"debt_id": "D8A-DEBT-C-DYNAMIC-SELECTOR-AND-STRATA", "status": "carried"},
+    {"debt_id": "D8A-DEBT-C-NONIDENTITY-FLAT-SHARP-WITNESS", "status": "carried"},
+    {
+      "debt_id": "D8A-DEBT-D8B-SPECTRUM-AND-STABILITY",
+      "status": "superseded",
+      "successor_debt_ids": [
+        "D8B-CI-DEBT-A-FORMED-BRANCH-ALPHA",
+        "D8B-CI-DEBT-C-FORMED-BRANCH-ALPHA",
+        "D8B-CI-DEBT-A-TEMPORAL-STABILITY",
+        "D8B-CI-DEBT-C-TEMPORAL-STABILITY"
+      ]
+    },
+    {
+      "debt_id": "D8A-DEBT-REPRESENTATION-NORMALIZATION-AND-TRANSPORT",
+      "status": "superseded",
+      "successor_debt_ids": [
+        "D8B-CI-DEBT-COMPARATIVE-REFERENCE-SPACE",
+        "D8B-CI-DEBT-CHARGE-CONSTRAINT-PROJECTOR",
+        "D8B-CI-DEBT-A-ANALYSIS-METRIC"
+      ],
+      "resolution": "architecture_local_representation_projector_and_transport_rules_are_frozen_while_cross_architecture_instantiation_remains_blocked"
+    },
+    {"debt_id": "D7GV2-DEBT-DISABLED-TRANSITION-REDUCTION", "status": "carried"},
+    {"debt_id": "D7GV2-DEBT-H4-CAPACITY-AND-PROFILE-COMPARABILITY", "status": "carried"},
+    {"debt_id": "D7GV2-DEBT-METRIC-INVERSE-SOLVER-AND-COVARIANCE-VERIFICATION", "status": "carried"},
+    {"debt_id": "D7G-DEBT-TOPOLOGY-AND-BOUNDARY-TRANSPORT", "status": "carried"},
+    {"debt_id": "D7G-DEBT-STAR-PAIR-NORMALIZATION-ALTERNATIVES", "status": "carried"},
+    {"debt_id": "D7V2-DEBT-B-FUTURE-SOURCE-BACKED-WRITER", "status": "carried"},
+    {"debt_id": "D6V2-DEBT-C-MATHEMATICAL-ABSORBABILITY", "status": "carried"},
+    {"debt_id": "D7-DEBT-A-CORE-STATUS", "status": "carried"},
+    {"debt_id": "D7-DEBT-A-DISABLED-PROFILE-STAGING", "status": "carried"},
+    {"debt_id": "D7-DEBT-A-TOPOLOGY-LIFECYCLE", "status": "carried"},
+    {"debt_id": "D7-DEBT-A-ABSORBABILITY", "status": "carried"},
+    {"debt_id": "D7-DEBT-A-UNITS-AND-GAUGE", "status": "carried"},
+    {"debt_id": "D7V2-DEBT-D9-SURVIVOR-LIFECYCLE", "status": "carried"},
+    {"debt_id": "D7-DEBT-FORMED-BRANCH-RUNTIME", "status": "carried"},
+    {"debt_id": "D7-DEBT-PHYSICAL-CHANNEL-ATTRIBUTION", "status": "carried"},
+    {"debt_id": "D7-DEBT-COVARIANCE-VERIFICATION", "status": "carried"},
+    {"debt_id": "D5V2-DEBT-CURRENT-SINGULAR-SUCCESSOR", "status": "carried"},
+    {"debt_id": "D8A-DEBT-HODGE-CORRECTION-NORMATIVE-ENCODING", "status": "carried"}
+  ],
+  "open_debt": [
+    {
+      "debt_id": "D8B-CI-DEBT-A-FORMED-BRANCH-ALPHA",
+      "blocking_scope": "numeric_A_alpha_modes_clusters_and_structural_stability",
+      "candidate_scope": "V4-A-temporalized-W_coupled_implicit",
+      "issue": "the_complete_second_variation_surface_is_derived_on_a_declared_C2_subchart_but_no_formed_constrained_critical_branch_functional_coefficients_normalization_or_numeric_operator_is_instantiated",
+      "assumption_forbidden_downstream": "the_formal_A_Hessian_surface_or_direct_field_witness_is_called_a_numeric_alpha_spectrum_or_structural_stability_result",
+      "resolution_gate": "pre_D10_branch_instantiation_if_architecture_selection_requires_numeric_stability_or_post_spec_implementation_verification_if_D10_accepts_design_level_classification",
+      "must_close_before_D10": false,
+      "activation_condition": "D10_architecture_selection_requires_numeric_structural_stability_before_specification",
+      "activation_effect": "this_debt_becomes_a_D10_blocker_and_requires_pre_D10_branch_instantiation"
+    },
+    {
+      "debt_id": "D8B-CI-DEBT-C-FORMED-BRANCH-ALPHA",
+      "blocking_scope": "numeric_C_alpha_modes_clusters_and_structural_stability",
+      "candidate_scope": "V4-C-constitutive-C-sector_coupled_implicit",
+      "issue": "the_complete_fixed_rank_second_variation_surface_is_derived_on_a_declared_C2_subchart_but_no_formed_constrained_critical_branch_functional_coefficients_normalization_or_numeric_operator_is_instantiated",
+      "assumption_forbidden_downstream": "the_formal_C_Hessian_surface_or_direct_field_witness_is_called_a_numeric_alpha_spectrum_or_structural_stability_result",
+      "resolution_gate": "pre_D10_branch_instantiation_if_architecture_selection_requires_numeric_stability_or_post_spec_implementation_verification_if_D10_accepts_design_level_classification",
+      "must_close_before_D10": false,
+      "activation_condition": "D10_architecture_selection_requires_numeric_structural_stability_before_specification",
+      "activation_effect": "this_debt_becomes_a_D10_blocker_and_requires_pre_D10_branch_instantiation"
+    },
+    {
+      "debt_id": "D8B-CI-DEBT-A-TEMPORAL-STABILITY",
+      "blocking_scope": "numeric_A_mu_gamma_nonnormal_growth_and_temporal_stability",
+      "candidate_scope": "V4-A-temporalized-W_coupled_implicit",
+      "issue": "the_exact_complete_step_Jacobian_surface_is_derived_but_no_formed_branch_parameter_vector_root_derivative_or_numeric_map_is_instantiated",
+      "assumption_forbidden_downstream": "A_local_IFT_regularness_writer_persistence_or_formal_M_A_is_called_temporal_stability_or_slow_mode_evidence",
+      "resolution_gate": "pre_D10_if_required_for_architecture_selection_or_post_spec_implementation_and_complete_step_Jacobian_verification",
+      "must_close_before_D10": false,
+      "activation_condition": "D10_architecture_selection_requires_numeric_temporal_stability_before_specification",
+      "activation_effect": "this_debt_becomes_a_D10_blocker_and_requires_pre_D10_complete_step_analysis"
+    },
+    {
+      "debt_id": "D8B-CI-DEBT-C-TEMPORAL-STABILITY",
+      "blocking_scope": "numeric_C_mu_gamma_nonnormal_growth_and_temporal_stability",
+      "candidate_scope": "V4-C-constitutive-C-sector_coupled_implicit",
+      "issue": "the_exact_C_only_complete_step_Jacobian_surface_is_derived_but_no_formed_branch_parameter_vector_root_derivative_or_numeric_map_is_instantiated",
+      "assumption_forbidden_downstream": "C_local_IFT_regularness_resolvent_contraction_or_formal_M_C_is_called_temporal_stability_or_slow_mode_evidence",
+      "resolution_gate": "pre_D10_if_required_for_architecture_selection_or_post_spec_implementation_and_complete_step_Jacobian_verification",
+      "must_close_before_D10": false,
+      "activation_condition": "D10_architecture_selection_requires_numeric_temporal_stability_before_specification",
+      "activation_effect": "this_debt_becomes_a_D10_blocker_and_requires_pre_D10_complete_step_analysis"
+    },
+    {
+      "debt_id": "D8B-CI-DEBT-COMPARATIVE-REFERENCE-SPACE",
+      "blocking_scope": "cross_candidate_cross_family_mode_cluster_threshold_or_stability_comparison",
+      "candidate_scope": "all_surviving_realization_architectures",
+      "issue": "architecture_local_domains_metrics_and_projector_transport_are_defined_but_no_common_instantiated_reference_space_or_remaining_family_population_exists",
+      "assumption_forbidden_downstream": "A_C_or_family_spectra_are_ranked_by_raw_values_sorted_indices_or_unmapped_projectors",
+      "resolution_gate": "remaining_realization_family_pressure_then_explicit_comparative_D8B_contract_or_D10_noncomparative_disposition",
+      "must_close_before_D10": true
+    },
+    {
+      "debt_id": "D8B-CI-DEBT-CHARGE-CONSTRAINT-PROJECTOR",
+      "blocking_scope": "numeric_structural_alpha_projectors_and_any_cross_architecture_structural_comparison",
+      "candidate_scope": "V4-A-and-V4-C-coupled_implicit",
+      "issue": "the_complete_V4_step_has_not_yet_frozen_its_actual_conserved_charge_and_therefore_the_authoritative_DQ_a_tangent_and_Pi_Q_a_projector_are_not_instantiated;_the_unweighted_GRC9V3_sum_is_historical_evidence_only",
+      "assumption_forbidden_downstream": "H0_the_analysis_inner_product_or_the_legacy_unweighted_sum_is_silently_promoted_to_the_V4_complete_step_charge",
+      "resolution_gate": "D9_complete_step_accounting_and_lifecycle_contract_then_pre_D10_structural_projector_freeze_if_numeric_alpha_or_comparison_is_required",
+      "must_close_before_D10": true
+    },
+    {
+      "debt_id": "D8B-CI-DEBT-A-ANALYSIS-METRIC",
+      "blocking_scope": "absolute_A_nonnormality_magnitudes_cross_block_angles_and_cross_architecture_temporal_comparison",
+      "candidate_scope": "V4-A-temporalized-W_coupled_implicit",
+      "issue": "the_log_W_coordinate_is_natural_but_source_material_does_not_fix_the_relative_weight_between_C_and_log_W_in_the_complete_state_analysis_metric",
+      "assumption_forbidden_downstream": "an_arbitrary_C_to_log_W_scaling_is_hidden_inside_A_nonnormality_or_comparative_stability_claims",
+      "resolution_gate": "pre_D10_metric_freeze_if_architecture_selection_requires_absolute_nonnormality_or_cross_architecture_temporal_comparison_or_post_spec_verification_for_architecture_local_qualitative_analysis",
+      "must_close_before_D10": false,
+      "activation_condition": "D10_uses_absolute_A_nonnormality_cross_block_angles_or_cross_architecture_temporal_magnitudes",
+      "activation_effect": "this_debt_becomes_a_D10_blocker_and_requires_a_preregistered_dimensionally_consistent_analysis_metric"
+    }
+  ],
+  "live_debt_union_contract": {
+    "carried_immediate_predecessor_debt_count": 7,
+    "carried_transitive_predecessor_debt_count": 20,
+    "resolved_narrowed_or_superseded_live_predecessor_debt_count": 6,
+    "current_successor_debt_count": 7,
+    "live_debt_union_count": 34,
+    "D10_consumption_rule": "consume_the_7_carried_GTRS_CI_rows_the_20_carried_D8A_rows_and_the_7_current_D8B_CI_rows_by_exact_identity;_do_not_reopen_the_6_superseded_operator_level_obligations",
+    "silent_drop_allowed": false
+  },
+  "control_contract": [
+    {"control_id": "D8B-CI-C01", "rule": "cross_candidate_comparison_remains_blocked"},
+    {"control_id": "D8B-CI-C02", "rule": "cross_family_comparison_remains_blocked"},
+    {"control_id": "D8B-CI-C03", "rule": "V3_numeric_spectra_are_not_V4_evidence"},
+    {"control_id": "D8B-CI-C04", "rule": "B1_B2_methods_may_be_reused_only_with_explicit_V4_applicability"},
+    {"control_id": "D8B-CI-C05", "rule": "root_solver_convergence_is_not_root_regularness"},
+    {"control_id": "D8B-CI-C06", "rule": "root_regularness_is_not_temporal_stability"},
+    {"control_id": "D8B-CI-C07", "rule": "direct_field_visibility_is_not_full_Hessian_nonannihilation"},
+    {"control_id": "D8B-CI-C08", "rule": "direct_field_visibility_sign_is_not_alpha_change_sign"},
+    {"control_id": "D8B-CI-C09", "rule": "alpha_requires_the_charge_parametric_normalized_constrained_second_variation_without_double_counting_constraint_curvature_measure_dependence_or_projector_transport"},
+    {"control_id": "D8B-CI-C10", "rule": "A_delta_W_is_not_a_structural_coordinate"},
+    {"control_id": "D8B-CI-C11", "rule": "C_delta_T_C_is_derived_not_independent"},
+    {"control_id": "D8B-CI-C12", "rule": "J_and_h_are_algebraic_root_variables_not_persistent_state"},
+    {"control_id": "D8B-CI-C13", "rule": "complete_implicit_first_derivative_uses_the_full_B_block"},
+    {"control_id": "D8B-CI-C14", "rule": "complete_implicit_second_derivative_retains_all_XX_XY_YX_YY_terms"},
+    {"control_id": "D8B-CI-C15", "rule": "C_selector_second_derivatives_are_not_dropped"},
+    {"control_id": "D8B-CI-C16", "rule": "C_delta_G_J_times_J_is_not_dropped"},
+    {"control_id": "D8B-CI-C17", "rule": "A_W_hat_is_recomputed_inside_the_root"},
+    {"control_id": "D8B-CI-C18", "rule": "A_writer_uses_postcontinuity_refreshed_inputs"},
+    {"control_id": "D8B-CI-C19", "rule": "A_h_has_no_direct_writer_authority"},
+    {"control_id": "D8B-CI-C20", "rule": "beta_is_not_alpha"},
+    {"control_id": "D8B-CI-C21", "rule": "beta_is_a_spectral_eigenvalue_not_a_complete_step_multiplier_or_a_singular_response_amplification_value"},
+    {"control_id": "D8B-CI-C22", "rule": "mu_is_not_alpha"},
+    {"control_id": "D8B-CI-C23", "rule": "lambda_is_not_alpha"},
+    {"control_id": "D8B-CI-C24", "rule": "C_Delta_1_M_is_not_the_field_spatial_lambda_operator"},
+    {"control_id": "D8B-CI-C25", "rule": "gamma_requires_a_declared_clock_and_generator_or_log_branch"},
+    {"control_id": "D8B-CI-C26", "rule": "I_minus_M_over_Delta_t_is_not_automatically_the_normative_generator"},
+    {"control_id": "D8B-CI-C27", "rule": "spectral_radius_alone_does_not_control_nonnormal_transients"},
+    {"control_id": "D8B-CI-C28", "rule": "sorted_cross_operator_eigenvalue_index_pairing_is_forbidden"},
+    {"control_id": "D8B-CI-C29", "rule": "cluster_projectors_require_isolated_clusters"},
+    {"control_id": "D8B-CI-C30", "rule": "projector_comparison_requires_reference_space_transport_which_is_not_an_additive_fixed_state_Hessian_term"},
+    {"control_id": "D8B-CI-C31", "rule": "analysis_projectors_do_not_become_runtime_state"},
+    {"control_id": "D8B-CI-C32", "rule": "physical_and_reduced_projectors_require_declared_conjugation"},
+    {"control_id": "D8B-CI-C33", "rule": "C_similarity_preserves_eigenvalues_not_Euclidean_singular_values"},
+    {"control_id": "D8B-CI-C34", "rule": "A_structural_and_temporal_domains_are_not_identical"},
+    {"control_id": "D8B-CI-C35", "rule": "C_shared_coordinates_do_not_make_operator_semantics_identical"},
+    {"control_id": "D8B-CI-C36", "rule": "node_relabel_and_edge_reorientation_covariance_are_separate_checks"},
+    {"control_id": "D8B-CI-C37", "rule": "fixed_stratum_analysis_does_not_cross_rank_or_topology_events"},
+    {"control_id": "D8B-CI-C38", "rule": "protected_nulls_are_classified_before_zero_modes"},
+    {"control_id": "D8B-CI-C39", "rule": "no_numeric_spectrum_is_filled_from_uninstantiated_symbols"},
+    {"control_id": "D8B-CI-C40", "rule": "no_post_hoc_direction_or_parameter_selection_for_nonannihilation"},
+    {"control_id": "D8B-CI-C41", "rule": "local_chart_results_are_not_global_branch_claims"},
+    {"control_id": "D8B-CI-C42", "rule": "current_singular_boundary_is_not_reported_as_a_soft_structural_mode"},
+    {"control_id": "D8B-CI-C43", "rule": "selector_gap_closure_is_not_reported_as_alpha_zero"},
+    {"control_id": "D8B-CI-C44", "rule": "kinetic_beta_one_threshold_is_not_structural_marginality"},
+    {"control_id": "D8B-CI-C45", "rule": "runtime_or_src_change_is_not_authorized"},
+    {"control_id": "D8B-CI-C46", "rule": "normative_GRC9V4_specification_is_not_authorized"},
+    {"control_id": "D8B-CI-C47", "rule": "candidate_selection_is_not_performed"},
+    {"control_id": "D8B-CI-C48", "rule": "remaining_realization_family_pressure_is_not_waived"},
+    {"control_id": "D8B-CI-C49", "rule": "a_classical_structural_Hessian_requires_a_declared_C2_chart_and_is_not_inferred_from_the_accepted_C1_IFT_result"},
+    {"control_id": "D8B-CI-C50", "rule": "the_complete_step_conserved_charge_and_constraint_projector_are_not_inferred_from_H0_or_the_analysis_inner_product"},
+    {"control_id": "D8B-CI-C51", "rule": "intrinsic_response_r_a_is_not_relabelled_as_enacted_gain_beta_a_without_the_zeta_a_factor"},
+    {"control_id": "D8B-CI-C52", "rule": "a_moving_formed_branch_uses_U_kplus1_to_ref_on_the_output_and_U_ref_to_k_on_the_input_or_endpoint_transport_of_the_native_cocycle_not_one_permanent_multiplier_spectrum"},
+    {"control_id": "D8B-CI-C53", "rule": "A_absolute_nonnormality_and_cross_block_angles_require_an_explicit_C_to_log_W_analysis_metric"},
+    {"control_id": "D8B-CI-C54", "rule": "C_direct_Read_Back_self_adjointness_is_claimed_in_the_pulled_back_Q_C_transpose_H1_M_Q_C_metric_not_the_unweighted_Euclidean_metric"}
+  ],
+  "control_contract_count": 54,
+  "verification": {
+    "source_identity_count": 13,
+    "architecture_count": 2,
+    "immediate_predecessor_debt_count": 10,
+    "immediate_predecessor_debt_disposition_count": 10,
+    "transitive_predecessor_debt_count": 23,
+    "transitive_predecessor_debt_disposition_count": 23,
+    "silent_predecessor_debt_drop_count": 0,
+    "current_successor_debt_count": 7,
+    "live_debt_union_count": 34,
+    "control_count": 54,
+    "duplicate_control_id_count": 0,
+    "A_structural_surface_defined": true,
+    "C_structural_surface_defined": true,
+    "structural_surfaces_charge_parametric_until_D9": true,
+    "classical_second_variation_C2_subcharts_declared": true,
+    "constrained_Hessian_terms_not_double_counted": true,
+    "complete_step_charge_projector_left_explicitly_unresolved": true,
+    "A_complete_step_Jacobian_surface_defined": true,
+    "C_complete_step_Jacobian_surface_defined": true,
+    "moving_branch_cocycle_rule_defined": true,
+    "A_direct_Read_Back_operator_defined": true,
+    "C_direct_Read_Back_operator_defined": true,
+    "intrinsic_response_and_enacted_gain_separated": true,
+    "beta_spectrum_and_response_singular_values_separated": true,
+    "C_pulled_back_response_metric_defined": true,
+    "A_spatial_operator_defined": true,
+    "C_spatial_operator_defined": true,
+    "projector_transport_contract_defined": true,
+    "moving_branch_cocycle_output_transport_uses_kplus1": true,
+    "nonnormality_contract_defined": true,
+    "A_complete_state_analysis_metric_left_explicitly_unresolved": true,
+    "exact_complete_chain_parameter_sensitivity_defined": true,
+    "quantitative_regularness_certificate_defined": true,
+    "analysis_layer_kept_out_of_causal_transition": true,
+    "B1_B2_discriminator_rows": 8,
+    "numeric_spectrum_rows": 0,
+    "formed_V4_branch_instantiated": false,
+    "full_chain_nonannihilation_witness_count": 0,
+    "candidate_ranking_performed": false,
+    "human_acceptance_recorded": true,
+    "runtime_or_src_changed": false,
+    "absolute_machine_local_paths_in_record": false
+  },
+  "authorization_effect": {
+    "architecture_local_D8B_design_operator_contract_A_ready_for_review": true,
+    "architecture_local_D8B_design_operator_contract_C_ready_for_review": true,
+    "architecture_local_structural_contract_ready_only_charge_parametrically": true,
+    "architecture_local_D8B_numeric_spectrum_or_stability_claim_authorized": false,
+    "comparative_D8B_authorized": false,
+    "remaining_realization_family_pressure_authorized": true,
+    "D9_authorized": false,
+    "D10_authorized": false,
+    "specification_authorized": false,
+    "implementation_authorized": false,
+    "runtime_or_src_change_authorized": false
+  },
+  "decision_record_digest": "53ed6d6ee616ab42c59ce6dabb6bc106a595f5c70ad1acaedc445c7fa73a5b7f"
+}

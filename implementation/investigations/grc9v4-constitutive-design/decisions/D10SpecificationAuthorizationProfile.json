@@ -1,0 +1,146 @@
+{
+  "schema_version": "grc9v4_d10_specification_authorization_profile_v2",
+  "artifact_id": "GRC9V4-D10-SPECIFICATION-AUTHORIZATION-PROFILE-v2",
+  "gate_id": "D10",
+  "status": "accepted_bounded",
+  "selected_architecture": "profile_explicit_lineage_local_GRC9V4_common_substrate_interface_with_named_complete_constitutive_and_realization_profiles",
+  "normative_common_claim_ids": [
+    "D10-CL-N-001",
+    "D10-CL-N-002",
+    "D10-CL-N-003",
+    "D10-CL-N-004",
+    "D10-CL-N-005",
+    "D10-CL-N-006",
+    "D10-CL-N-007",
+    "D10-CL-N-008",
+    "D10-CL-N-009"
+  ],
+  "optional_profile_claim_ids": [
+    "D10-CL-O-001",
+    "D10-CL-O-002",
+    "D10-CL-O-003",
+    "D10-CL-O-004",
+    "D10-CL-O-005",
+    "D10-CL-O-006",
+    "D10-CL-O-007"
+  ],
+  "conditional_claim_ids": [
+    "D10-CL-C-001",
+    "D10-CL-C-002",
+    "D10-CL-C-003",
+    "D10-CL-C-004",
+    "D10-CL-C-005",
+    "D10-CL-C-006",
+    "D10-CL-C-007",
+    "D10-CL-C-008",
+    "D10-CL-C-009",
+    "D10-CL-C-010",
+    "D10-CL-C-011",
+    "D10-CL-C-012"
+  ],
+  "open_claim_ids": [
+    "D10-CL-U-001",
+    "D10-CL-U-002",
+    "D10-CL-U-003",
+    "D10-CL-U-004",
+    "D10-CL-U-005"
+  ],
+  "negative_claim_ids": [
+    "D10-CL-X-001",
+    "D10-CL-X-002",
+    "D10-CL-X-003",
+    "D10-CL-X-004",
+    "D10-CL-X-006",
+    "D10-CL-X-005"
+  ],
+  "candidate_profiles": {
+    "A": "named_optional_normalized_nondimensional_revision_specific_profile_family",
+    "C": "named_optional_revision_specific_profile_family",
+    "B": "reserved_successor_extension_slot_routed_not_rejected_no_executable_profile"
+  },
+  "realization_profiles": {
+    "CI": "named_optional_A_bounded_domain_contraction_unique_and_C_stratum_local_contraction_unique_self_consistent_profile",
+    "OS": "named_optional_one_pass_profile_with_split_residual",
+    "RG2b": "named_optional_bounded_Lipschitz_profile",
+    "PC": "named_optional_scalar_ZOH_one_tau_PC_independent_persistent_K4_history_profile",
+    "CI_PC": "named_optional_revision_specific_gain_two_A_bounded_domain_and_C_stratified_unique_composition_profile"
+  },
+  "executable_profile_conformance_grammar": {
+    "constitutive_family_cardinality_per_runtime_state": "exactly_one",
+    "realization_cardinality_per_runtime_state": "exactly_one",
+    "admitted_constitutive_families": [
+      "A",
+      "C"
+    ],
+    "admitted_realizations": [
+      "CI",
+      "OS",
+      "RG2b",
+      "PC",
+      "CI_PC"
+    ],
+    "admitted_complete_profile_ids": [
+      "A_CI",
+      "A_OS",
+      "A_RG2b",
+      "A_PC",
+      "A_CI_PC",
+      "C_CI",
+      "C_OS",
+      "C_RG2b",
+      "C_PC",
+      "C_CI_PC"
+    ],
+    "admitted_complete_profile_count": 10,
+    "implementation_support_rule": "an_implementation_may_support_any_nonempty_subset_of_the_admitted_complete_profiles",
+    "runtime_state_binding_rule": "X_current_X_reset_and_each_snapshot_bind_exactly_one_unambiguous_complete_profile_identity",
+    "profile_migration_receipt_binding_rule": "each_migration_receipt_binds_the_ordered_pair_p_source_p_target",
+    "topology_event_receipt_binding_rule": "each_topology_event_receipt_binds_the_ordered_pair_p_source_p_target_with_equality_when_the_complete_profile_is_unchanged",
+    "current_admitted_profile_population_scope": "complete_for_the_initial_lineage_local_specification_population_not_exhaustive_over_future_lawful_V4_profiles",
+    "current_profile_population_is_future_exhaustive": false,
+    "future_profile_admission_rule": "a_materially_distinct_successor_requires_explicit_provenance_or_derivation_a_new_complete_profile_identity_and_reopening_of_the_earliest_accepted_contract_whose_authority_staging_state_geometry_accounting_or_lifecycle_semantics_it_changes",
+    "zero_candidate_or_zero_realization_executable_instance_allowed": false,
+    "Candidate_B_executable": false
+  },
+  "unfolding_trajectory": {
+    "current_topology_role": "freeze_the_currently_justified_claim_topology_and_currently_admitted_specification_population_not_a_fixed_successor_schedule",
+    "normative_claim_route": "may_unfold_into_specification_after_D10_acceptance",
+    "conditional_and_open_activation_rule": "activate_only_when_the_named_stronger_claim_or_successor_direction_is_attempted",
+    "verification_obligation_rule": "gate_only_the_claims_they_name_not_a_mandatory_linear_backlog",
+    "successor_profile_admission_rule": "new_constitutive_realization_hybrid_or_geometry_profiles_require_explicit_successor_admission_and_earliest_affected_contract_reopening",
+    "negative_claim_rule": "remain_current_boundaries_until_new_evidence_transforms_them",
+    "preclosure_convergence_rule": "the_substrate_provenance_audit_remains_mandatory_before_final_V4_substrate_naming_and_closure",
+    "prescribed_successor_schedule": false
+  },
+  "normative_specification_requirements": [
+    "common_resource_state_authority_current_geometry_lifecycle_interface_and_invariant_contract_with_profile_supplied_constitutive_laws",
+    "exactly_one_constitutive_family_plus_exactly_one_realization_per_executable_runtime_state",
+    "ordered_source_target_complete_profile_identity_pairs_on_migration_and_topology_event_receipts",
+    "current_ten_profile_population_is_complete_for_initial_specification_but_not_exhaustive_over_future_lawful_V4_profiles",
+    "explicit_candidate_realization_normalization_units_gauge_domain_solver_and_composition_profile_identity",
+    "accepted_graph_Hodge_type_correction_and_typed_K4_event_transport",
+    "profile_local_claim_ceilings_and_blocked_relabels",
+    "B_extension_slot_without_B_rejection_or_PC_relabel",
+    "verification_obligation_registry_separate_from_scientific_claim_topology",
+    "lineage_local_GRC9V4_naming_until_the_preclosure_substrate_provenance_audit"
+  ],
+  "selection_prohibitions": [
+    "no_unique_candidate_or_realization_preference",
+    "no_stability_or_continuation_spectrum_claim",
+    "no_universal_nonabsorbability_or_physical_channel_claim",
+    "no_runtime_implemented_or_formed_branch_claim",
+    "no_cross_profile_capacity_or_numeric_ranking",
+    "no_current_profile_roster_as_future_completeness_theorem",
+    "no_current_scalar_ZOH_PC_as_universal_persistent_carrier_law",
+    "no_promotion_to_generic_Graph_GRC_V4_without_independent_derivation"
+  ],
+  "authorization_scope": "lineage_local_profile_explicit_GRC9V4_specification_only",
+  "final_substrate_identity_closed": false,
+  "preclosure_obligation_id": "D10-PRECLOSE-SUBSTRATE-PROVENANCE-AUDIT",
+  "D10_disposition": "accepted_bounded_lineage_local_profile_explicit_spec_authorization",
+  "specification_authorized_after_human_acceptance": true,
+  "specification_authorized_now": true,
+  "implementation_authorized": false,
+  "runtime_or_src_change_authorized": false,
+  "artifact_digest": "3adafb4703b88ce7faf48b9c4e6b3bcb3c359224066df9d084c2a2f2b9bac159"
+}

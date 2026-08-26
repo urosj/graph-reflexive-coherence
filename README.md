@@ -40,11 +40,13 @@ graph substrates: how continuous-field expectations translate into graph and
 port-graph dynamics, how substrate choices and implementation details affect
 emergent structures, and which patterns survive artifact-backed reconstruction.
 
-The most active frontier is `LGRC9V3`, the event-driven causal-history
-substrate. It is used to study packetized coherence transport, delayed handoff,
-local proper-time evidence, recurrent pulse circuits, route choice,
-memory/trail affordance, goal-proxy regulation, and bounded agentic-like
-integration.
+The most developed executable frontier is `LGRC9V3`, the event-driven
+causal-history substrate. It is used to study packetized coherence transport,
+delayed handoff, local proper-time evidence, recurrent pulse circuits, route
+choice, memory/trail affordance, goal-proxy regulation, and bounded
+agentic-like integration. The active synchronous-design frontier is the
+accepted GRCv4/GRC9v4 constitutive investigation described below; it is not yet
+a runtime family.
 
 The becoming-primitive / ecology-bridge and first N30+ shared-medium arc has
 closed through `N31-C6`. The Phase 8
@@ -105,6 +107,18 @@ read/write loop. Its accepted next-route handoff is GRC-first: unchanged-runtime
 constructibility, selectable GRC extensions, analysis/identifiability debt,
 and then LGRC-specific investigation. No runtime change or B1-L execution is
 authorized by the closeout.
+
+B2-GR then closed its preregistered unchanged-`GRC9V3` constructibility search
+at `B2-C6` without finding a confirmed retained-carrier candidate and without
+selecting an extension. The resulting
+[GRCv4/GRC9v4 constitutive design investigation](implementation/investigations/grc9v4-constitutive-design/README.md)
+is now accepted bounded through D10.2. For the current D10 specification
+population it earns the factorization
+`GRCv4 -> GRC9v4 ->[disabled] GRC9v3`: general constitutive content is promoted
+to a GRC-level contract, while ordered ports, the fixed nine-port chart, and
+related mechanics remain GRC9 specialization content. This authorizes a
+GRCv4 normative specification followed by a substantive GRC9v4 specialization;
+it does not authorize a V4 runtime or any `src/` change.
 
 Some experiments use declared producer or policy scaffolding on top of field
 dynamics. That hybrid path is intentional: it lowers the gap between current
@@ -181,6 +195,7 @@ record rather than the paper list alone:
 | --- | --- |
 | [implementation/ImplementationPhases.md](implementation/ImplementationPhases.md) | Top-level phase map from core substrate through runtimes, telemetry, visualization, landscapes, and LGRC. |
 | [implementation/corrections/README.md](implementation/corrections/README.md) | Bounded corrections to existing runtime or persistence contracts that do not constitute new dynamics phases. |
+| [GRCv4/GRC9v4 constitutive design investigation](implementation/investigations/grc9v4-constitutive-design/README.md) | Accepted D0-D10.2 design lineage, current profile grammar, substrate-provenance audit, and the authorized GRCv4-first specification route. |
 | [specs/README.md](specs/README.md) | Implementation contracts and family capability matrix for `GRCV2`, `GRCV3`, `GRC9`, `GRC9V3`, and `LGRC9V3`. |
 | [Phase T implementation plan: telemetry and evidence discipline](implementation/Phase-T-ImplementationPlan.md) | Artifact layout, reports, replay, and evidence discipline. |
 | [implementation/Phase-V-ImplementationPlan.md](implementation/Phase-V-ImplementationPlan.md) | Visualization as a downstream consumer of saved telemetry and graph checkpoints. |
@@ -376,6 +391,7 @@ full link-heavy evidence index is kept in
 | Landscape, telemetry, and visualization | Landscape-authored seeds can be lowered, stepped, captured, and rendered; telemetry/checkpoints/visualization are evidence consumers over runtime artifacts. | Not proof of a complete agent architecture; visuals are not an independent proof layer. | [quickstart](examples/quickstart/spark_a_cell.py), [telemetry guide](docs/reference/Telemetry-ReferenceGuide.md), [visualization guide](docs/reference/GraphVisualization-ReferenceGuide.md), [claim index](docs/reference/ClaimBoundaryIndex.md#landscape-telemetry-and-visualization) |
 | `LGRC9V3` causal-history substrate | `LGRC9V3` supports packet/event queue experiments, causal-history surfaces, and current agency-adjacent evidence lanes. | Not general agency, intention, biological identity, personhood, or native support. | [LGRC9V3 spec](specs/lgrc-9-v3-spec.md), [Phase 8 closeout](implementation/Phase-8-LGRC9-Closeout.md), [claim index](docs/reference/ClaimBoundaryIndex.md#lgrc9v3-causal-history-substrate) |
 | B1-GR continuation/read-back verification | B1-GR closes at `GRV-C6` over unchanged `GRC9V3`: bounded formed branches and L3 causal closure are accepted, native current recurrence is exact but distinct from core Read-Back, and retention reaches only synthetic `C`-dominated `GRR2`. | Not native Read-Back, write-back, a closed read/write loop, a unique retained projector, unrestricted continuation, a runtime extension, B1-L execution, or N32 selection. | [B1-GR README](experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/README.md), [closeout report](experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/reports/b1_grv8_closeout.md), [general next-route handoff](experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/outputs/continuation_readback_next_route_handoff.json), [claim index](docs/reference/ClaimBoundaryIndex.md#b1-gr-continuation-and-read-back-verification) |
+| GRCv4/GRC9v4 constitutive design | B2-GR closes a bounded unchanged-runtime search with no confirmed retained carrier; D10.2 then earns, for the current D10 population, `GRCv4 -> GRC9v4 ->[disabled] GRC9v3` and authorizes GRCv4-first specification writing. | Design and provenance closure only: not a V4 runtime, formed-branch or numerical-stability result, unique candidate/realization ranking, or future-exhaustive V4 taxonomy. | [investigation](implementation/investigations/grc9v4-constitutive-design/README.md), [D10.2 audit](implementation/investigations/grc9v4-constitutive-design/decisions/D10_2FullSubstrateProvenanceAndPromotionAudit.md), [claim index](docs/reference/ClaimBoundaryIndex.md#grcv4grc9v4-constitutive-design) |
 | N05-N11 foundation arc | N05-N11 record a bounded LGRC agentic-like foundation arc with explicit claim ceilings. | Not unbounded agency or hidden-steering-free native general intelligence. | [N05-N11 roadmap](experiments/N05-N11-LGRC-AgenticLikeFoundationRoadmap.md), [claim index](docs/reference/ClaimBoundaryIndex.md#n05-n11-foundation-arc) |
 | N12-N19 review arc | N12-N19 close the artifact-level agency-prerequisite and native-readiness review stack; AP4/AP5 NAT4 gaps remain blockers. | Not full native AP3-AP8 ladder generation, agency, native support, Phase 8 implementation, identity acceptance, or unrestricted autonomy. | [N12-N18 roadmap](experiments/N12-N18-LGRC-AgencyPrerequisitesRoadmap.md), [N19 closeout report](experiments/2026-06-N19-lgrc-native-naturalization-review-ap3-ap8/reports/n19_closeout_and_handoff.md), [claim index](docs/reference/ClaimBoundaryIndex.md#n12-n19-review-arc) |
 | N20-N29 becoming/ecology bridge arc | N20-N29 close bounded becoming-primitive evidence through N28 and close N29 at `EB6` / `N29-C6` with a prototype atlas and first ecology probe contracts. | Not executed ecology runtime, native ant/colony agency, biological agency, organism/life, resource economy, cooperation/exploitation, semantic goals/choice/learning, AP4/AP5 gap resolution, Phase 8 completion, or unrestricted autonomy. | [N20-N29 roadmap](experiments/N20-N29-LGRC-BecomingAgencyEcologyRoadmap.md), [N29 closeout report](experiments/2026-06-N29-lgrc-agentic-ecology-convergence-bridge/reports/n29_closeout_and_ecology_handoff_i18.md), [claim index](docs/reference/ClaimBoundaryIndex.md#n20-n29-becomingecology-bridge-arc) |

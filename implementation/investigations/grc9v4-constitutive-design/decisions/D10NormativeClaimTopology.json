@@ -1,0 +1,3690 @@
+{
+  "schema_version": "grc9v4_d10_claim_topology_v2",
+  "artifact_id": "GRC9V4-D10-CLAIM-TOPOLOGY-v2",
+  "gate_id": "D10",
+  "status": "accepted_bounded",
+  "governing_rule": "debt_is_not_a_checklist_item_it_is_a_stressed_edge_in_an_evolving_claim_topology",
+  "invariants": [
+    "no_debt_disposition_without_a_claim_ledger_disposition",
+    "no_normative_D10_claim_without_tracing_all_debts_that_bear_on_it",
+    "every_claim_to_debt_edge_has_a_corresponding_typed_debt_to_claim_edge",
+    "historical_predecessor_claims_remain_first_class_nodes",
+    "blocked_by_applies_only_to_historical_predecessors_or_still_unearned_conditional_or_open_current_claims",
+    "scope_exclusion_is_routed_not_scientifically_resolved",
+    "resolved_negatives_are_first_class_claims",
+    "implementation_and_numeric_obligations_do_not_masquerade_as_scientific_design_debt",
+    "the_current_complete_profile_roster_is_not_a_completeness_theorem_over_future_lawful_V4_profiles",
+    "successor_work_activates_claim_local_topology_without_a_prescribed_linear_schedule"
+  ],
+  "architecture_selection": {
+    "selected_architecture": "profile_explicit_lineage_local_GRC9V4_common_substrate_interface_with_named_A_C_and_CI_OS_RG2b_PC_CI_PC_complete_profiles",
+    "unique_candidate_selected": false,
+    "unique_realization_selected": false,
+    "selection_basis": "shared_authority_complete_step_lifecycle_representation_and_claim_ceiling_contract_not_numeric_ranking",
+    "current_admitted_profile_population_is_future_exhaustive": false,
+    "final_substrate_identity_closed": false
+  },
+  "claim_categories": {
+    "normative": [
+      "D10-CL-N-001",
+      "D10-CL-N-002",
+      "D10-CL-N-003",
+      "D10-CL-N-004",
+      "D10-CL-N-005",
+      "D10-CL-N-006",
+      "D10-CL-N-007",
+      "D10-CL-N-008",
+      "D10-CL-N-009"
+    ],
+    "optional": [
+      "D10-CL-O-001",
+      "D10-CL-O-002",
+      "D10-CL-O-003",
+      "D10-CL-O-004",
+      "D10-CL-O-005",
+      "D10-CL-O-006",
+      "D10-CL-O-007"
+    ],
+    "conditional": [
+      "D10-CL-C-001",
+      "D10-CL-C-002",
+      "D10-CL-C-003",
+      "D10-CL-C-004",
+      "D10-CL-C-005",
+      "D10-CL-C-006",
+      "D10-CL-C-007",
+      "D10-CL-C-008",
+      "D10-CL-C-009",
+      "D10-CL-C-010",
+      "D10-CL-C-011",
+      "D10-CL-C-012"
+    ],
+    "open": [
+      "D10-CL-U-001",
+      "D10-CL-U-002",
+      "D10-CL-U-003",
+      "D10-CL-U-004",
+      "D10-CL-U-005"
+    ],
+    "negative": [
+      "D10-CL-X-001",
+      "D10-CL-X-002",
+      "D10-CL-X-003",
+      "D10-CL-X-004",
+      "D10-CL-X-006",
+      "D10-CL-X-005"
+    ]
+  },
+  "claims": [
+    {
+      "claim_id": "D10-CL-N-001",
+      "claim_class": "normative",
+      "statement": "GRC9V4_is_a_profile_explicit_architecture_with_one_common_resource_state_authority_current_geometry_lifecycle_interface_and_invariant_contract_while_constitutive_current_and_geometry_laws_are_supplied_by_the_selected_profile",
+      "evidence_refs": [
+        "GRC9V4-CD-D7G-v2",
+        "GRC9V4-GTRS-COMP-v1",
+        "GRC9V4-CD-D9-v1"
+      ],
+      "bearing_debt_ids": [
+        "D7V2-DEBT-B-FUTURE-SOURCE-BACKED-WRITER",
+        "GTRS-CI-PC-DEBT-COMPOSITION-PROFILE-STATUS",
+        "GTRS-COMP-DEBT-MATCHED-RUNTIME-DISCRIMINATION"
+      ],
+      "activation_condition": "always",
+      "normative_effect": "the_spec_must_define_the_common_interface_and_invariant_contract_and_require_an_explicit_complete_profile_identity_without_flattening_A_C_or_selecting_one_candidate_or_realization_as_universally_preferred",
+      "blocked_relabels": [
+        "unique_candidate_selected",
+        "unique_realization_selected",
+        "design_constructibility_is_architecture_superiority"
+      ],
+      "debt_edges": [
+        {
+          "debt_id": "D7V2-DEBT-B-FUTURE-SOURCE-BACKED-WRITER",
+          "edge_types": [
+            "supported_by",
+            "successor_of"
+          ]
+        },
+        {
+          "debt_id": "GTRS-CI-PC-DEBT-COMPOSITION-PROFILE-STATUS",
+          "edge_types": [
+            "supported_by",
+            "successor_of"
+          ]
+        },
+        {
+          "debt_id": "GTRS-COMP-DEBT-MATCHED-RUNTIME-DISCRIMINATION",
+          "edge_types": [
+            "supported_by",
+            "successor_of"
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "D10-CL-N-002",
+      "claim_class": "normative",
+      "statement": "C_is_the_only_resource_coordinate_and_each_enabled_profile_declares_its_authoritative_nonresource_state_while_T_C_h_J_solver_and_analysis_surfaces_remain_derived_or_transient",
+      "evidence_refs": [
+        "GRC9V4-CD-D1-v1",
+        "GRC9V4-CD-D7V2-v1",
+        "GRC9V4-CD-D9-v1"
+      ],
+      "bearing_debt_ids": [
+        "D7-DEBT-A-CORE-STATUS",
+        "D7V2-DEBT-B-FUTURE-SOURCE-BACKED-WRITER"
+      ],
+      "activation_condition": "always",
+      "normative_effect": "the_spec_must_publish_state_authority_per_profile_and_must_not_promote_derived_Candidate_C_or_solver_state",
+      "blocked_relabels": [
+        "Candidate_C_T_C_is_authoritative",
+        "solver_cache_is_state",
+        "B_is_present_without_U_B"
+      ],
+      "debt_edges": [
+        {
+          "debt_id": "D7-DEBT-A-CORE-STATUS",
+          "edge_types": [
+            "supported_by",
+            "successor_of"
+          ]
+        },
+        {
+          "debt_id": "D7V2-DEBT-B-FUTURE-SOURCE-BACKED-WRITER",
+          "edge_types": [
+            "supported_by",
+            "successor_of"
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "D10-CL-N-003",
+      "claim_class": "normative",
+      "statement": "every_profile_uses_a_declared_complete_step_with_one_authoritative_current_one_continuity_write_postcontinuity_refresh_atomic_failure_and_no_hidden_same_beat_authority",
+      "evidence_refs": [
+        "GRC9V4-CD-D6V2-v1",
+        "GRC9V4-CD-D7V2-v1",
+        "GRC9V4-CD-D9-v1"
+      ],
+      "bearing_debt_ids": [
+        "D7-DEBT-FORMED-BRANCH-RUNTIME",
+        "GTRS-CI-DEBT-A-NONZERO-CHAIN-WITNESS",
+        "GTRS-CI-DEBT-C-NONZERO-CHAIN-WITNESS"
+      ],
+      "activation_condition": "always",
+      "normative_effect": "the_spec_must_freeze_order_atomicity_and_authority_but_must_not_call_the_unexecuted_endpoint_effect_empirically_verified",
+      "blocked_relabels": [
+        "formal_consumer_is_executed_endpoint_witness",
+        "failed_substage_partially_commits"
+      ],
+      "debt_edges": [
+        {
+          "debt_id": "D7-DEBT-FORMED-BRANCH-RUNTIME",
+          "edge_types": [
+            "supported_by",
+            "successor_of"
+          ]
+        },
+        {
+          "debt_id": "GTRS-CI-DEBT-A-NONZERO-CHAIN-WITNESS",
+          "edge_types": [
+            "supported_by",
+            "successor_of"
+          ]
+        },
+        {
+          "debt_id": "GTRS-CI-DEBT-C-NONZERO-CHAIN-WITNESS",
+          "edge_types": [
+            "supported_by",
+            "successor_of"
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "D10-CL-N-004",
+      "claim_class": "normative",
+      "statement": "complete_step_charge_budget_and_tangent_are_derived_from_the_actual_resource_write_path_with_typed_external_and_event_receipts",
+      "evidence_refs": [
+        "GRC9V4-CD-D8B-CI-v1",
+        "GRC9V4-CD-D9-v1"
+      ],
+      "bearing_debt_ids": [],
+      "activation_condition": "always",
+      "normative_effect": "the_spec_must_define_Q_varpi_Q_target_the_charge_tangent_and_identity_budget_stage_before_final_C_consumers",
+      "blocked_relabels": [
+        "nonresource_state_is_charge",
+        "budget_repair_after_writers",
+        "impulse_is_zero_duration_beat"
+      ],
+      "debt_edges": []
+    },
+    {
+      "claim_id": "D10-CL-N-005",
+      "claim_class": "normative",
+      "statement": "lifecycle_identity_contains_current_state_reset_baseline_and_Q_target_while_typed_event_and_migration_receipts_bind_ordered_source_and_target_complete_profile_identities_and_transform_the_whole_tuple_before_atomic_commit",
+      "evidence_refs": [
+        "GRC9V4-CD-D9-v1"
+      ],
+      "bearing_debt_ids": [
+        "D5V2-DEBT-CURRENT-SINGULAR-SUCCESSOR"
+      ],
+      "activation_condition": "always",
+      "normative_effect": "the_spec_must_encode_typed_lossy_continuation_and_fail_closed_outside_admitted_regular_or_event_profiles",
+      "blocked_relabels": [
+        "reset_resurrects_old_graph",
+        "untyped_topology_event",
+        "regular_profile_crosses_singularity"
+      ],
+      "debt_edges": [
+        {
+          "debt_id": "D5V2-DEBT-CURRENT-SINGULAR-SUCCESSOR",
+          "edge_types": [
+            "supported_by",
+            "successor_of"
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "D10-CL-N-006",
+      "claim_class": "normative",
+      "statement": "K4_and_graph_Hodge_objects_use_the_corrected_form_space_typing_reference_pairing_covariance_and_typed_event_transport_contract",
+      "evidence_refs": [
+        "GRC9V4-CD-D7G-post-v2-HODGE-TYPE-CORRECTION-v1",
+        "GRC9V4-CD-D8A-v1",
+        "GRC9V4-CD-D9-v1"
+      ],
+      "bearing_debt_ids": [
+        "D7-DEBT-COVARIANCE-VERIFICATION",
+        "D7G-DEBT-STAR-PAIR-NORMALIZATION-ALTERNATIVES",
+        "D7GV2-DEBT-METRIC-INVERSE-SOLVER-AND-COVARIANCE-VERIFICATION",
+        "D8A-DEBT-C-NONIDENTITY-FLAT-SHARP-WITNESS",
+        "D8A-DEBT-HODGE-CORRECTION-NORMATIVE-ENCODING"
+      ],
+      "activation_condition": "always",
+      "normative_effect": "the_spec_must_encode_the_correction_and_name_the_reference_normalization_without_claiming_unique_continuum_normalization_or_executable_general_SPD_validation",
+      "blocked_relabels": [
+        "vertex_space_K4",
+        "transpose_without_typed_adjoint",
+        "reference_normalization_is_unique_continuum_law"
+      ],
+      "debt_edges": [
+        {
+          "debt_id": "D7-DEBT-COVARIANCE-VERIFICATION",
+          "edge_types": [
+            "supported_by",
+            "successor_of"
+          ]
+        },
+        {
+          "debt_id": "D7G-DEBT-STAR-PAIR-NORMALIZATION-ALTERNATIVES",
+          "edge_types": [
+            "supported_by",
+            "successor_of"
+          ]
+        },
+        {
+          "debt_id": "D7GV2-DEBT-METRIC-INVERSE-SOLVER-AND-COVARIANCE-VERIFICATION",
+          "edge_types": [
+            "supported_by",
+            "successor_of"
+          ]
+        },
+        {
+          "debt_id": "D8A-DEBT-C-NONIDENTITY-FLAT-SHARP-WITNESS",
+          "edge_types": [
+            "supported_by",
+            "successor_of"
+          ]
+        },
+        {
+          "debt_id": "D8A-DEBT-HODGE-CORRECTION-NORMATIVE-ENCODING",
+          "edge_types": [
+            "supported_by",
+            "successor_of"
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "D10-CL-N-007",
+      "claim_class": "normative",
+      "statement": "each_profile_has_scoped_disabled_transition_state_observable_and_lifecycle_reduction_surfaces_to_GRC9V3",
+      "evidence_refs": [
+        "GRC9V4-CD-D0-v1",
+        "GRC9V4-CD-D9-v1"
+      ],
+      "bearing_debt_ids": [],
+      "activation_condition": "always",
+      "normative_effect": "the_spec_must_state_each_reduction_surface_separately_and_must_not_infer_snapshot_or_event_equivalence_from_transition_equivalence",
+      "blocked_relabels": [
+        "single_disabled_witness_proves_all_equivalence_surfaces"
+      ],
+      "debt_edges": []
+    },
+    {
+      "claim_id": "D10-CL-N-008",
+      "claim_class": "normative",
+      "statement": "all_profile_parameters_units_gauge_normalization_domain_solver_and_composition_choices_are_declared_profile_identity_not_hidden_universal_constants",
+      "evidence_refs": [
+        "GRC9V4-CD-D7V2-v1",
+        "GRC9V4-GTRS-COMP-v1",
+        "GRC9V4-CD-D9-v1"
+      ],
+      "bearing_debt_ids": [
+        "D7-DEBT-A-UNITS-AND-GAUGE",
+        "D7G-DEBT-STAR-PAIR-NORMALIZATION-ALTERNATIVES",
+        "D7GV2-DEBT-H4-CAPACITY-AND-PROFILE-COMPARABILITY",
+        "GTRS-CI-PC-DEBT-COMPOSITION-PROFILE-STATUS"
+      ],
+      "activation_condition": "always",
+      "normative_effect": "the_spec_must_require_profile_local_dimensional_and_gauge_declarations_and_block_cross_profile_magnitude_comparison_without_a_separate_bridge",
+      "blocked_relabels": [
+        "one_profile_scale_is_universal",
+        "common_symbol_implies_common_capacity",
+        "gain_two_is_amplitude_equivalent_to_CI_or_PC"
+      ],
+      "debt_edges": [
+        {
+          "debt_id": "D7-DEBT-A-UNITS-AND-GAUGE",
+          "edge_types": [
+            "supported_by",
+            "successor_of"
+          ]
+        },
+        {
+          "debt_id": "D7G-DEBT-STAR-PAIR-NORMALIZATION-ALTERNATIVES",
+          "edge_types": [
+            "supported_by",
+            "successor_of"
+          ]
+        },
+        {
+          "debt_id": "D7GV2-DEBT-H4-CAPACITY-AND-PROFILE-COMPARABILITY",
+          "edge_types": [
+            "supported_by",
+            "successor_of"
+          ]
+        },
+        {
+          "debt_id": "GTRS-CI-PC-DEBT-COMPOSITION-PROFILE-STATUS",
+          "edge_types": [
+            "supported_by",
+            "successor_of"
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "D10-CL-N-009",
+      "claim_class": "normative",
+      "statement": "every_executable_GRC9V4_instance_binds_exactly_one_admitted_constitutive_family_and_exactly_one_admitted_realization_as_one_unambiguous_complete_profile_identity",
+      "evidence_refs": [
+        "GRC9V4-CD-D7V2-v1",
+        "GRC9V4-GTRS-COMP-v1",
+        "GRC9V4-CD-D9-v1"
+      ],
+      "bearing_debt_ids": [
+        "D7V2-DEBT-B-FUTURE-SOURCE-BACKED-WRITER",
+        "GTRS-CI-PC-DEBT-COMPOSITION-PROFILE-STATUS"
+      ],
+      "activation_condition": "always",
+      "normative_effect": "the_spec_must_define_the_current_executable_profile_set_as_A_C_cross_CI_OS_RG2b_PC_CI_PC_allow_implementations_to_support_any_nonempty_subset_and_require_each_runtime_state_to_bind_exactly_one_complete_identity",
+      "blocked_relabels": [
+        "executable_profile_has_no_candidate",
+        "executable_profile_has_no_realization",
+        "runtime_state_has_ambiguous_profile_identity",
+        "Candidate_B_is_executable_before_writer_readmission"
+      ],
+      "debt_edges": [
+        {
+          "debt_id": "D7V2-DEBT-B-FUTURE-SOURCE-BACKED-WRITER",
+          "edge_types": [
+            "supported_by",
+            "successor_of"
+          ]
+        },
+        {
+          "debt_id": "GTRS-CI-PC-DEBT-COMPOSITION-PROFILE-STATUS",
+          "edge_types": [
+            "supported_by",
+            "successor_of"
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "D10-CL-O-001",
+      "claim_class": "optional",
+      "statement": "Candidate_A_is_an_admitted_normalized_nondimensional_revision_specific_temporalized_mobility_and_Read_Back_profile_family",
+      "evidence_refs": [
+        "GRC9V4-CD-D7-v1",
+        "GRC9V4-CD-D7V2-v1",
+        "GRC9V4-CD-D8A-v1"
+      ],
+      "bearing_debt_ids": [
+        "D7-DEBT-A-ABSORBABILITY",
+        "D7-DEBT-A-CORE-STATUS",
+        "D7-DEBT-A-UNITS-AND-GAUGE"
+      ],
+      "activation_condition": "always",
+      "normative_effect": "the_spec_may_define_the_present_A_law_as_a_named_optional_normalized_nondimensional_family_without_inherited_core_provenance_unique_completion_or_universally_nonabsorbable_status;_physical_dimensionalization_requires_a_future_units_and_gauge_bridge",
+      "blocked_relabels": [
+        "current_A_law_is_inherited_core_by_provenance",
+        "A_is_unique_V4",
+        "A_is_universally_nonabsorbable",
+        "normalized_A_is_already_physically_dimensionalized"
+      ],
+      "debt_edges": [
+        {
+          "debt_id": "D7-DEBT-A-ABSORBABILITY",
+          "edge_types": [
+            "supported_by",
+            "successor_of"
+          ]
+        },
+        {
+          "debt_id": "D7-DEBT-A-CORE-STATUS",
+          "edge_types": [
+            "supported_by",
+            "successor_of"
+          ]
+        },
+        {
+          "debt_id": "D7-DEBT-A-UNITS-AND-GAUGE",
+          "edge_types": [
+            "supported_by",
+            "successor_of"
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "D10-CL-O-002",
+      "claim_class": "optional",
+      "statement": "Candidate_C_is_an_admitted_revision_specific_derived_C_sector_Hodge_response_profile_family",
+      "evidence_refs": [
+        "GRC9V4-CD-D4V2-v1",
+        "GRC9V4-CD-D7V2-v1",
+        "GRC9V4-CD-D8A-v1"
+      ],
+      "bearing_debt_ids": [
+        "D6V2-DEBT-C-MATHEMATICAL-ABSORBABILITY",
+        "D8A-DEBT-C-NONIDENTITY-FLAT-SHARP-WITNESS"
+      ],
+      "activation_condition": "always",
+      "normative_effect": "the_spec_may_define_C_as_a_named_optional_family_with_T_C_derived_and_without_universal_nonabsorbability_or_general_numeric_conditioning_claims",
+      "blocked_relabels": [
+        "Candidate_C_T_C_is_authoritative",
+        "C_is_universally_nonabsorbable",
+        "identity_metric_witness_is_general_SPD_validation"
+      ],
+      "debt_edges": [
+        {
+          "debt_id": "D6V2-DEBT-C-MATHEMATICAL-ABSORBABILITY",
+          "edge_types": [
+            "supported_by",
+            "successor_of"
+          ]
+        },
+        {
+          "debt_id": "D8A-DEBT-C-NONIDENTITY-FLAT-SHARP-WITNESS",
+          "edge_types": [
+            "supported_by",
+            "successor_of"
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "D10-CL-O-003",
+      "claim_class": "optional",
+      "statement": "coupled_implicit_admits_A_with_bounded_domain_uniqueness_under_the_declared_self_map_and_contraction_contract_and_C_with_stratum_local_uniqueness_plus_exactly_one_required_self_consistent_regular_root_across_strata",
+      "evidence_refs": [
+        "GRC9V4-GTRS-CI-v1",
+        "GRC9V4-CD-D8B-CI-v1",
+        "GRC9V4-CD-D9-v1",
+        "GRC9V4-D9-PROFILE-STATE-LIFECYCLE-REGISTRY-v1"
+      ],
+      "bearing_debt_ids": [
+        "D8B-CI-DEBT-A-ANALYSIS-METRIC",
+        "D8B-CI-DEBT-A-FORMED-BRANCH-ALPHA",
+        "D8B-CI-DEBT-A-TEMPORAL-STABILITY",
+        "D8B-CI-DEBT-C-FORMED-BRANCH-ALPHA",
+        "D8B-CI-DEBT-C-TEMPORAL-STABILITY",
+        "GTRS-CI-DEBT-A-NONZERO-CHAIN-WITNESS",
+        "GTRS-CI-DEBT-C-NONZERO-CHAIN-WITNESS"
+      ],
+      "activation_condition": "always",
+      "normative_effect": "the_spec_may_define_A_CI_on_its_declared_bounded_contraction_domain_and_C_CI_on_regular_selector_strata_with_unique_self_consistent_root_selection_without_numeric_stability_endpoint_or_preference_claims",
+      "blocked_relabels": [
+        "local_root_is_global",
+        "regularness_is_stability",
+        "formal_path_is_endpoint_witness"
+      ],
+      "debt_edges": [
+        {
+          "debt_id": "D8B-CI-DEBT-A-ANALYSIS-METRIC",
+          "edge_types": [
+            "supported_by",
+            "successor_of"
+          ]
+        },
+        {
+          "debt_id": "D8B-CI-DEBT-A-FORMED-BRANCH-ALPHA",
+          "edge_types": [
+            "supported_by",
+            "successor_of"
+          ]
+        },
+        {
+          "debt_id": "D8B-CI-DEBT-A-TEMPORAL-STABILITY",
+          "edge_types": [
+            "supported_by",
+            "successor_of"
+          ]
+        },
+        {
+          "debt_id": "D8B-CI-DEBT-C-FORMED-BRANCH-ALPHA",
+          "edge_types": [
+            "supported_by",
+            "successor_of"
+          ]
+        },
+        {
+          "debt_id": "D8B-CI-DEBT-C-TEMPORAL-STABILITY",
+          "edge_types": [
+            "supported_by",
+            "successor_of"
+          ]
+        },
+        {
+          "debt_id": "GTRS-CI-DEBT-A-NONZERO-CHAIN-WITNESS",
+          "edge_types": [
+            "supported_by",
+            "successor_of"
+          ]
+        },
+        {
+          "debt_id": "GTRS-CI-DEBT-C-NONZERO-CHAIN-WITNESS",
+          "edge_types": [
+            "supported_by",
+            "successor_of"
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "D10-CL-O-004",
+      "claim_class": "optional",
+      "statement": "operator_split_is_an_admitted_one_pass_predictor_geometry_corrector_realization_for_A_and_C_with_an_explicit_split_consistency_residual",
+      "evidence_refs": [
+        "GRC9V4-GTRS-OS-v1"
+      ],
+      "bearing_debt_ids": [
+        "GTRS-OS-DEBT-A-COMPLETE-CHAIN-WITNESS",
+        "GTRS-OS-DEBT-C-COMPLETE-CHAIN-WITNESS"
+      ],
+      "activation_condition": "always",
+      "normative_effect": "the_spec_may_define_OS_as_optional_and_must_preserve_its_nonzero_bounded_split_defect_and_no_second_iteration_rule",
+      "blocked_relabels": [
+        "OS_equals_CI",
+        "split_defect_is_time_truncation_without_proof",
+        "formal_consumer_is_endpoint_witness"
+      ],
+      "debt_edges": [
+        {
+          "debt_id": "GTRS-OS-DEBT-A-COMPLETE-CHAIN-WITNESS",
+          "edge_types": [
+            "supported_by",
+            "successor_of"
+          ]
+        },
+        {
+          "debt_id": "GTRS-OS-DEBT-C-COMPLETE-CHAIN-WITNESS",
+          "edge_types": [
+            "supported_by",
+            "successor_of"
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "D10-CL-O-005",
+      "claim_class": "optional",
+      "statement": "RG2b_is_an_admitted_bounded_reconstructed_geometry_realization_for_A_and_C_relative_to_a_frozen_equivariant_extension_profile",
+      "evidence_refs": [
+        "GRC9V4-GTRS-RG-v1"
+      ],
+      "bearing_debt_ids": [
+        "GTRS-RG-DEBT-C1-SECTION-REGULARITY"
+      ],
+      "activation_condition": "always",
+      "normative_effect": "the_spec_may_define_RG2b_as_Lipschitz_only_and_must_exclude_classical_derivative_or_continuation_spectrum_claims_without_a_C1_successor",
+      "blocked_relabels": [
+        "RG_section_is_C1",
+        "extension_relative_uniqueness_is_extension_independence"
+      ],
+      "debt_edges": [
+        {
+          "debt_id": "GTRS-RG-DEBT-C1-SECTION-REGULARITY",
+          "edge_types": [
+            "supported_by",
+            "successor_of"
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "D10-CL-O-006",
+      "claim_class": "optional",
+      "statement": "PC_current_is_an_admitted_scalar_ZOH_one_tau_PC_independent_persistent_K4_history_realization_for_A_and_C",
+      "evidence_refs": [
+        "GRC9V4-GTRS-PC-v1"
+      ],
+      "bearing_debt_ids": [
+        "GTRS-PC-DEBT-A-COMPLETE-CHAIN-WITNESS",
+        "GTRS-PC-DEBT-C-COMPLETE-CHAIN-WITNESS"
+      ],
+      "activation_condition": "always",
+      "normative_effect": "the_spec_may_define_the_current_scalar_ZOH_one_tau_PC_profile_with_explicit_Z4_authority_writer_lifecycle_and_release_while_leaving_committed_endpoint_hysteresis_as_evidence_debt_and_routing_materially_distinct_persistent_carrier_laws_to_successor_admission",
+      "blocked_relabels": [
+        "distinct_Z_is_endpoint_hysteresis",
+        "PC_is_relabelled_as_B",
+        "current_PC_is_the_universal_persistent_carrier_law"
+      ],
+      "debt_edges": [
+        {
+          "debt_id": "GTRS-PC-DEBT-A-COMPLETE-CHAIN-WITNESS",
+          "edge_types": [
+            "supported_by",
+            "successor_of"
+          ]
+        },
+        {
+          "debt_id": "GTRS-PC-DEBT-C-COMPLETE-CHAIN-WITNESS",
+          "edge_types": [
+            "supported_by",
+            "successor_of"
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "D10-CL-O-007",
+      "claim_class": "optional",
+      "statement": "CI_plus_PC_is_an_admitted_revision_specific_unit_immediate_plus_unit_retained_composition_for_A_with_bounded_domain_contraction_uniqueness_and_C_with_stratum_local_composite_contraction_plus_exactly_one_self_consistent_regular_root_and_steady_source_gain_two",
+      "evidence_refs": [
+        "GRC9V4-GTRS-CI-PC-v1",
+        "GRC9V4-CD-D9-v1",
+        "GRC9V4-D9-PROFILE-STATE-LIFECYCLE-REGISTRY-v1"
+      ],
+      "bearing_debt_ids": [
+        "GTRS-CI-PC-DEBT-COMPLETE-CHAIN-AND-ANALYSIS",
+        "GTRS-CI-PC-DEBT-COMPOSITION-PROFILE-STATUS"
+      ],
+      "activation_condition": "always",
+      "normative_effect": "the_spec_may_define_this_exact_gain_two_profile_as_optional_but_not_unique_required_amplitude_equivalent_core_or_preferred",
+      "blocked_relabels": [
+        "CI_PC_is_unique_composition",
+        "gain_two_is_amplitude_equivalent",
+        "joint_root_nonannihilation_is_committed_endpoint_hysteresis"
+      ],
+      "debt_edges": [
+        {
+          "debt_id": "GTRS-CI-PC-DEBT-COMPLETE-CHAIN-AND-ANALYSIS",
+          "edge_types": [
+            "supported_by",
+            "successor_of"
+          ]
+        },
+        {
+          "debt_id": "GTRS-CI-PC-DEBT-COMPOSITION-PROFILE-STATUS",
+          "edge_types": [
+            "supported_by",
+            "successor_of"
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "D10-CL-C-001",
+      "claim_class": "conditional",
+      "statement": "classical_structural_Hessian_and_alpha_claims_require_the_declared_C2_subchart_a_formed_branch_and_instantiated_coefficients_normalization_and_operator",
+      "evidence_refs": [
+        "GRC9V4-CD-D8B-CI-v1"
+      ],
+      "bearing_debt_ids": [
+        "D8B-CI-DEBT-A-FORMED-BRANCH-ALPHA",
+        "D8B-CI-DEBT-C-FORMED-BRANCH-ALPHA"
+      ],
+      "activation_condition": "formed_branch_structural_analysis_claimed",
+      "normative_effect": "the_spec_may_define_the_formal_operator_surface_but_evidence_profiles_must_gate_numeric_alpha_or_structural_stability",
+      "blocked_relabels": [
+        "formal_Hessian_is_numeric_alpha",
+        "C1_branch_has_unqualified_Hessian"
+      ],
+      "debt_edges": [
+        {
+          "debt_id": "D8B-CI-DEBT-A-FORMED-BRANCH-ALPHA",
+          "edge_types": [
+            "blocked_by",
+            "conditioned_by",
+            "successor_of"
+          ]
+        },
+        {
+          "debt_id": "D8B-CI-DEBT-C-FORMED-BRANCH-ALPHA",
+          "edge_types": [
+            "blocked_by",
+            "conditioned_by",
+            "successor_of"
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "D10-CL-C-002",
+      "claim_class": "conditional",
+      "statement": "lossless_history_preserving_topology_continuation_requires_sufficient_typed_event_lineage_and_target_profile_readmission",
+      "evidence_refs": [
+        "GRC9V4-CD-D9-v1"
+      ],
+      "bearing_debt_ids": [],
+      "activation_condition": "lossless_event_history_preservation_claimed",
+      "normative_effect": "the_spec_must_default_to_archive_or_reset_without_lineage_and_may_admit_stronger_preservation_only through_L_K4_evt_or_typed_W_lineage",
+      "blocked_relabels": [
+        "generic_lossless_history_without_lineage"
+      ],
+      "debt_edges": []
+    },
+    {
+      "claim_id": "D10-CL-C-003",
+      "claim_class": "conditional",
+      "statement": "passage_through_current_singularity_requires_a_separately_admitted_named_singular_successor_profile_is_not_supplied_by_the_currently_admitted_regular_A_C_profiles_and_is_not_implied_merely_by_reopening_Candidate_B",
+      "evidence_refs": [
+        "GRC9V4-CD-D5V2-v1",
+        "GRC9V4-CD-D9-v1"
+      ],
+      "bearing_debt_ids": [
+        "D5V2-DEBT-CURRENT-SINGULAR-SUCCESSOR"
+      ],
+      "activation_condition": "singular_boundary_passage_claimed",
+      "normative_effect": "the_initial_spec_must_fail_closed_at_singular_boundaries_and_reserve_a_successor_extension_point",
+      "blocked_relabels": [
+        "singular_boundary_is_regular_transition",
+        "solver_failure_is_event_semantics"
+      ],
+      "debt_edges": [
+        {
+          "debt_id": "D5V2-DEBT-CURRENT-SINGULAR-SUCCESSOR",
+          "edge_types": [
+            "blocked_by",
+            "conditioned_by",
+            "successor_of"
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "D10-CL-C-004",
+      "claim_class": "conditional",
+      "statement": "nonzero_committed_endpoint_effect_requires_a_complete_chain_witness_and_cannot_be_inferred_from_equation_level_consumption_root_level_nonannihilation_or_distinct_retained_state",
+      "evidence_refs": [
+        "GRC9V4-GTRS-CI-v1",
+        "GRC9V4-GTRS-OS-v1",
+        "GRC9V4-GTRS-PC-v1",
+        "GRC9V4-GTRS-CI-PC-v1"
+      ],
+      "bearing_debt_ids": [
+        "D8A-DEBT-C-NONIDENTITY-FLAT-SHARP-WITNESS",
+        "GTRS-CI-DEBT-A-NONZERO-CHAIN-WITNESS",
+        "GTRS-CI-DEBT-C-NONZERO-CHAIN-WITNESS",
+        "GTRS-CI-PC-DEBT-COMPLETE-CHAIN-AND-ANALYSIS",
+        "GTRS-OS-DEBT-A-COMPLETE-CHAIN-WITNESS",
+        "GTRS-OS-DEBT-C-COMPLETE-CHAIN-WITNESS",
+        "GTRS-PC-DEBT-A-COMPLETE-CHAIN-WITNESS",
+        "GTRS-PC-DEBT-C-COMPLETE-CHAIN-WITNESS"
+      ],
+      "activation_condition": "endpoint_effect_or_hysteresis_claimed",
+      "normative_effect": "the_spec_may_define_the_causal_path_but_runtime_or_evidence_profiles_must_gate_endpoint_effect_and_hysteresis_claims",
+      "blocked_relabels": [
+        "formal_path_is_endpoint_effect",
+        "distinct_state_is_hysteresis"
+      ],
+      "debt_edges": [
+        {
+          "debt_id": "D8A-DEBT-C-NONIDENTITY-FLAT-SHARP-WITNESS",
+          "edge_types": [
+            "conditioned_by",
+            "successor_of"
+          ]
+        },
+        {
+          "debt_id": "GTRS-CI-DEBT-A-NONZERO-CHAIN-WITNESS",
+          "edge_types": [
+            "blocked_by",
+            "conditioned_by",
+            "successor_of"
+          ]
+        },
+        {
+          "debt_id": "GTRS-CI-DEBT-C-NONZERO-CHAIN-WITNESS",
+          "edge_types": [
+            "blocked_by",
+            "conditioned_by",
+            "successor_of"
+          ]
+        },
+        {
+          "debt_id": "GTRS-CI-PC-DEBT-COMPLETE-CHAIN-AND-ANALYSIS",
+          "edge_types": [
+            "blocked_by",
+            "conditioned_by",
+            "successor_of"
+          ]
+        },
+        {
+          "debt_id": "GTRS-OS-DEBT-A-COMPLETE-CHAIN-WITNESS",
+          "edge_types": [
+            "blocked_by",
+            "conditioned_by",
+            "successor_of"
+          ]
+        },
+        {
+          "debt_id": "GTRS-OS-DEBT-C-COMPLETE-CHAIN-WITNESS",
+          "edge_types": [
+            "blocked_by",
+            "conditioned_by",
+            "successor_of"
+          ]
+        },
+        {
+          "debt_id": "GTRS-PC-DEBT-A-COMPLETE-CHAIN-WITNESS",
+          "edge_types": [
+            "blocked_by",
+            "conditioned_by",
+            "successor_of"
+          ]
+        },
+        {
+          "debt_id": "GTRS-PC-DEBT-C-COMPLETE-CHAIN-WITNESS",
+          "edge_types": [
+            "blocked_by",
+            "conditioned_by",
+            "successor_of"
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "D10-CL-C-005",
+      "claim_class": "conditional",
+      "statement": "temporal_or_structural_stability_continuation_spectrum_and_slow_mode_claims_require_formed_branch_numeric_operators_and_declared_analysis_metrics",
+      "evidence_refs": [
+        "GRC9V4-CD-D8B-CI-v1",
+        "GRC9V4-GTRS-COMP-v1"
+      ],
+      "bearing_debt_ids": [
+        "D8B-CI-DEBT-A-ANALYSIS-METRIC",
+        "D8B-CI-DEBT-A-FORMED-BRANCH-ALPHA",
+        "D8B-CI-DEBT-A-TEMPORAL-STABILITY",
+        "D8B-CI-DEBT-C-FORMED-BRANCH-ALPHA",
+        "D8B-CI-DEBT-C-TEMPORAL-STABILITY",
+        "GTRS-COMP-DEBT-MATCHED-RUNTIME-DISCRIMINATION",
+        "GTRS-RG-DEBT-C1-SECTION-REGULARITY"
+      ],
+      "activation_condition": "stability_or_continuation_spectrum_claimed",
+      "normative_effect": "the_design_spec_must_not_claim_stability_or_continuation_spectrum;_a_separate_evidence_profile_may_after_these_gates_pass",
+      "blocked_relabels": [
+        "constructibility_is_stability",
+        "lifecycle_continuation_is_spectrum_identity",
+        "arbitrary_metric_is_nonnormality"
+      ],
+      "debt_edges": [
+        {
+          "debt_id": "D8B-CI-DEBT-A-ANALYSIS-METRIC",
+          "edge_types": [
+            "blocked_by",
+            "conditioned_by",
+            "successor_of"
+          ]
+        },
+        {
+          "debt_id": "D8B-CI-DEBT-A-FORMED-BRANCH-ALPHA",
+          "edge_types": [
+            "conditioned_by",
+            "successor_of"
+          ]
+        },
+        {
+          "debt_id": "D8B-CI-DEBT-A-TEMPORAL-STABILITY",
+          "edge_types": [
+            "blocked_by",
+            "conditioned_by",
+            "successor_of"
+          ]
+        },
+        {
+          "debt_id": "D8B-CI-DEBT-C-FORMED-BRANCH-ALPHA",
+          "edge_types": [
+            "conditioned_by",
+            "successor_of"
+          ]
+        },
+        {
+          "debt_id": "D8B-CI-DEBT-C-TEMPORAL-STABILITY",
+          "edge_types": [
+            "blocked_by",
+            "conditioned_by",
+            "successor_of"
+          ]
+        },
+        {
+          "debt_id": "GTRS-COMP-DEBT-MATCHED-RUNTIME-DISCRIMINATION",
+          "edge_types": [
+            "conditioned_by",
+            "successor_of"
+          ]
+        },
+        {
+          "debt_id": "GTRS-RG-DEBT-C1-SECTION-REGULARITY",
+          "edge_types": [
+            "conditioned_by",
+            "successor_of"
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "D10-CL-C-006",
+      "claim_class": "conditional",
+      "statement": "general_SPD_conditioning_executable_covariance_and_runtime_solver_claims_require_implementation_level_verification",
+      "evidence_refs": [
+        "GRC9V4-CD-D7G-post-v2-HODGE-TYPE-CORRECTION-v1",
+        "GRC9V4-CD-D8A-v1"
+      ],
+      "bearing_debt_ids": [
+        "D7-DEBT-COVARIANCE-VERIFICATION",
+        "D7GV2-DEBT-METRIC-INVERSE-SOLVER-AND-COVARIANCE-VERIFICATION",
+        "D8A-DEBT-C-NONIDENTITY-FLAT-SHARP-WITNESS"
+      ],
+      "activation_condition": "implemented_conditioning_or_covariance_claimed",
+      "normative_effect": "the_spec_may freeze typed equations and covariance laws_but_must_not_claim_executable_conformance",
+      "blocked_relabels": [
+        "formula_covariance_is_runtime_verified",
+        "identity_metric_is_general_SPD"
+      ],
+      "debt_edges": [
+        {
+          "debt_id": "D7-DEBT-COVARIANCE-VERIFICATION",
+          "edge_types": [
+            "blocked_by",
+            "conditioned_by",
+            "successor_of"
+          ]
+        },
+        {
+          "debt_id": "D7GV2-DEBT-METRIC-INVERSE-SOLVER-AND-COVARIANCE-VERIFICATION",
+          "edge_types": [
+            "blocked_by",
+            "conditioned_by",
+            "successor_of"
+          ]
+        },
+        {
+          "debt_id": "D8A-DEBT-C-NONIDENTITY-FLAT-SHARP-WITNESS",
+          "edge_types": [
+            "blocked_by",
+            "conditioned_by",
+            "successor_of"
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "D10-CL-C-007",
+      "claim_class": "conditional",
+      "statement": "A_or_C_physical_nonabsorbability_requires_a_declared_baseline_model_class_and_an_exact_or_causal_nonredundancy_result",
+      "evidence_refs": [
+        "GRC9V4-CD-D7V2-v1",
+        "GRC9V4-CD-D8A-v1"
+      ],
+      "bearing_debt_ids": [
+        "D6V2-DEBT-C-MATHEMATICAL-ABSORBABILITY",
+        "D7-DEBT-A-ABSORBABILITY",
+        "D7-DEBT-PHYSICAL-CHANNEL-ATTRIBUTION"
+      ],
+      "activation_condition": "nonabsorbability_or_physical_channel_claimed",
+      "normative_effect": "the_spec_may define_the_operator_paths_but_must_not_label_them_universally_irreducible_or_physically_distinct",
+      "blocked_relabels": [
+        "operator_factorization_is_physical_channel",
+        "closed_transition_is_nonabsorbability"
+      ],
+      "debt_edges": [
+        {
+          "debt_id": "D6V2-DEBT-C-MATHEMATICAL-ABSORBABILITY",
+          "edge_types": [
+            "blocked_by",
+            "conditioned_by",
+            "successor_of"
+          ]
+        },
+        {
+          "debt_id": "D7-DEBT-A-ABSORBABILITY",
+          "edge_types": [
+            "blocked_by",
+            "conditioned_by",
+            "successor_of"
+          ]
+        },
+        {
+          "debt_id": "D7-DEBT-PHYSICAL-CHANNEL-ATTRIBUTION",
+          "edge_types": [
+            "supported_by",
+            "conditioned_by",
+            "successor_of"
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "D10-CL-C-008",
+      "claim_class": "conditional",
+      "statement": "exclusive_profile_preference_or_numeric_ranking_requires_a_matched_formed_branch_charge_metric_and_runtime_discrimination_matrix",
+      "evidence_refs": [
+        "GRC9V4-GTRS-COMP-v1"
+      ],
+      "bearing_debt_ids": [
+        "D7GV2-DEBT-H4-CAPACITY-AND-PROFILE-COMPARABILITY",
+        "D8B-CI-DEBT-A-ANALYSIS-METRIC",
+        "GTRS-COMP-DEBT-MATCHED-RUNTIME-DISCRIMINATION"
+      ],
+      "activation_condition": "exclusive_preference_or_numeric_ranking_claimed",
+      "normative_effect": "the_spec_must remain_nonranking_and_profile_explicit_until_a_successor_evidence_tranche_supports_comparison",
+      "blocked_relabels": [
+        "first_working_profile_is_preferred",
+        "common_symbol_is_common_capacity",
+        "design_bound_is_numeric_superiority"
+      ],
+      "debt_edges": [
+        {
+          "debt_id": "D7GV2-DEBT-H4-CAPACITY-AND-PROFILE-COMPARABILITY",
+          "edge_types": [
+            "conditioned_by",
+            "successor_of"
+          ]
+        },
+        {
+          "debt_id": "D8B-CI-DEBT-A-ANALYSIS-METRIC",
+          "edge_types": [
+            "conditioned_by",
+            "successor_of"
+          ]
+        },
+        {
+          "debt_id": "GTRS-COMP-DEBT-MATCHED-RUNTIME-DISCRIMINATION",
+          "edge_types": [
+            "blocked_by",
+            "conditioned_by",
+            "successor_of"
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "D10-CL-C-009",
+      "claim_class": "conditional",
+      "statement": "RG_classical_derivative_analysis_requires_C1_or_equivalent_bunching_regularization_beyond_the_accepted_Lipschitz_section",
+      "evidence_refs": [
+        "GRC9V4-GTRS-RG-v1"
+      ],
+      "bearing_debt_ids": [
+        "GTRS-RG-DEBT-C1-SECTION-REGULARITY"
+      ],
+      "activation_condition": "RG_derivative_or_spectrum_claimed",
+      "normative_effect": "the_spec_must type_RG_as_Lipschitz_only_and_route_derivative_analysis_to_a_named_successor",
+      "blocked_relabels": [
+        "Lipschitz_is_C1",
+        "RG_classical_Jacobian_without_regularization"
+      ],
+      "debt_edges": [
+        {
+          "debt_id": "GTRS-RG-DEBT-C1-SECTION-REGULARITY",
+          "edge_types": [
+            "blocked_by",
+            "conditioned_by",
+            "successor_of"
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "D10-CL-C-010",
+      "claim_class": "conditional",
+      "statement": "physical_dimensionalization_of_the_present_A_profile_or_cross_candidate_capacity_gain_or_magnitude_comparison_requires_an_explicit_units_gauge_normalization_and_profile_bridge",
+      "evidence_refs": [
+        "GRC9V4-CD-D7G-v2",
+        "GRC9V4-GTRS-COMP-v1"
+      ],
+      "bearing_debt_ids": [
+        "D7-DEBT-A-UNITS-AND-GAUGE",
+        "D7G-DEBT-STAR-PAIR-NORMALIZATION-ALTERNATIVES",
+        "D7GV2-DEBT-H4-CAPACITY-AND-PROFILE-COMPARABILITY"
+      ],
+      "activation_condition": "physical_A_dimensionalization_or_cross_profile_magnitude_claimed",
+      "normative_effect": "the_spec_must keep_capacity_and_gain_profile_local",
+      "blocked_relabels": [
+        "shared_H4_symbol_is_equal_capacity",
+        "profile_local_scale_is_cross_profile_metric"
+      ],
+      "debt_edges": [
+        {
+          "debt_id": "D7-DEBT-A-UNITS-AND-GAUGE",
+          "edge_types": [
+            "blocked_by",
+            "conditioned_by",
+            "successor_of"
+          ]
+        },
+        {
+          "debt_id": "D7G-DEBT-STAR-PAIR-NORMALIZATION-ALTERNATIVES",
+          "edge_types": [
+            "blocked_by",
+            "conditioned_by",
+            "successor_of"
+          ]
+        },
+        {
+          "debt_id": "D7GV2-DEBT-H4-CAPACITY-AND-PROFILE-COMPARABILITY",
+          "edge_types": [
+            "blocked_by",
+            "conditioned_by",
+            "successor_of"
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "D10-CL-C-011",
+      "claim_class": "conditional",
+      "statement": "promotion_of_the_lineage_local_GRC9V4_contract_to_generic_Graph_GRC_V4_or_other_substrate_identity_requires_an_independent_equation_by_equation_substrate_provenance_audit_and_graph_generic_derivation",
+      "evidence_refs": [
+        "GRC9V4-CD-D0-v1",
+        "GRC9V4-CD-D9-v1"
+      ],
+      "bearing_debt_ids": [],
+      "activation_condition": "promotion_beyond_lineage_local_GRC9V4_naming_claimed",
+      "normative_effect": "D10_may_authorize_lineage_local_GRC9V4_specification_writing_but_final_substrate_identity_and_promotion_remain_open_until_the_preclosure_audit",
+      "blocked_relabels": [
+        "GRC9_lineage_is_proof_of_nine_port_intrinsicness",
+        "graph_generic_promotion_by_renaming",
+        "final_substrate_identity_is_closed_at_D10"
+      ],
+      "debt_edges": []
+    },
+    {
+      "claim_id": "D10-CL-C-012",
+      "claim_class": "conditional",
+      "statement": "the_current_A_C_cross_CI_OS_RG2b_PC_CI_PC_roster_is_complete_for_the_initial_lineage_local_specification_population_but_is_not_a_completeness_theorem_over_future_constitutive_families_temporal_or_history_realizations_hybrids_or_geometry_profiles",
+      "evidence_refs": [
+        "GRC9V4-CD-D0-v1",
+        "GRC9V4-CD-D1-v1",
+        "GRC9V4-CD-D7G-v2",
+        "GRC9V4-GTRS-COMP-v1"
+      ],
+      "bearing_debt_ids": [],
+      "activation_condition": "new_constitutive_realization_hybrid_or_geometry_profile_proposed",
+      "normative_effect": "a_materially_distinct_successor_requires_explicit_provenance_or_derivation_a_new_complete_profile_identity_and_reopening_of_the_earliest_accepted_contract_whose_authority_staging_state_geometry_accounting_or_lifecycle_semantics_it_changes",
+      "blocked_relabels": [
+        "A_C_exhaust_all_future_constitutive_families",
+        "five_realizations_are_exhaustive",
+        "current_PC_is_the_universal_persistent_carrier_law"
+      ],
+      "debt_edges": []
+    },
+    {
+      "claim_id": "D10-CL-U-001",
+      "claim_class": "open",
+      "statement": "Candidate_B_requires_a_source_backed_U_B_formation_retention_release_capacity_and_lifecycle_writer_before_readmission",
+      "evidence_refs": [
+        "GRC9V4-CD-D7V2-v1",
+        "GRC9V4-GTRS-COMP-v1",
+        "GRC9V4-CD-D9-v1"
+      ],
+      "bearing_debt_ids": [
+        "D7V2-DEBT-B-FUTURE-SOURCE-BACKED-WRITER"
+      ],
+      "activation_condition": "B_reopened",
+      "normative_effect": "reserve_a_named_B_extension_slot_but_do_not_include_B_as_an_executable_V4_profile",
+      "blocked_relabels": [
+        "B_is_rejected",
+        "PC_is_B",
+        "A_or_C_writer_is_copied_into_B"
+      ],
+      "debt_edges": [
+        {
+          "debt_id": "D7V2-DEBT-B-FUTURE-SOURCE-BACKED-WRITER",
+          "edge_types": [
+            "blocked_by",
+            "routed_through",
+            "successor_of"
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "D10-CL-U-002",
+      "claim_class": "open",
+      "statement": "formed_branch_runtime_reachability_formation_retention_release_replay_and_nonzero_endpoint_effect_remain_unexecuted",
+      "evidence_refs": [
+        "GRC9V4-CD-D7V2-v1",
+        "GRC9V4-CD-D9-v1"
+      ],
+      "bearing_debt_ids": [
+        "D7-DEBT-FORMED-BRANCH-RUNTIME",
+        "GTRS-CI-DEBT-A-NONZERO-CHAIN-WITNESS",
+        "GTRS-CI-DEBT-C-NONZERO-CHAIN-WITNESS",
+        "GTRS-CI-PC-DEBT-COMPLETE-CHAIN-AND-ANALYSIS",
+        "GTRS-OS-DEBT-A-COMPLETE-CHAIN-WITNESS",
+        "GTRS-OS-DEBT-C-COMPLETE-CHAIN-WITNESS",
+        "GTRS-PC-DEBT-A-COMPLETE-CHAIN-WITNESS",
+        "GTRS-PC-DEBT-C-COMPLETE-CHAIN-WITNESS"
+      ],
+      "activation_condition": "runtime_evidence_claimed",
+      "normative_effect": "the_specification_may_be_written_but_runtime_capability_claims_wait_for_implementation_and_evidence",
+      "blocked_relabels": [
+        "design_record_is_runtime_evidence"
+      ],
+      "debt_edges": [
+        {
+          "debt_id": "D7-DEBT-FORMED-BRANCH-RUNTIME",
+          "edge_types": [
+            "blocked_by",
+            "routed_through",
+            "successor_of"
+          ]
+        },
+        {
+          "debt_id": "GTRS-CI-DEBT-A-NONZERO-CHAIN-WITNESS",
+          "edge_types": [
+            "routed_through",
+            "successor_of"
+          ]
+        },
+        {
+          "debt_id": "GTRS-CI-DEBT-C-NONZERO-CHAIN-WITNESS",
+          "edge_types": [
+            "routed_through",
+            "successor_of"
+          ]
+        },
+        {
+          "debt_id": "GTRS-CI-PC-DEBT-COMPLETE-CHAIN-AND-ANALYSIS",
+          "edge_types": [
+            "routed_through",
+            "successor_of"
+          ]
+        },
+        {
+          "debt_id": "GTRS-OS-DEBT-A-COMPLETE-CHAIN-WITNESS",
+          "edge_types": [
+            "routed_through",
+            "successor_of"
+          ]
+        },
+        {
+          "debt_id": "GTRS-OS-DEBT-C-COMPLETE-CHAIN-WITNESS",
+          "edge_types": [
+            "routed_through",
+            "successor_of"
+          ]
+        },
+        {
+          "debt_id": "GTRS-PC-DEBT-A-COMPLETE-CHAIN-WITNESS",
+          "edge_types": [
+            "routed_through",
+            "successor_of"
+          ]
+        },
+        {
+          "debt_id": "GTRS-PC-DEBT-C-COMPLETE-CHAIN-WITNESS",
+          "edge_types": [
+            "routed_through",
+            "successor_of"
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "D10-CL-U-003",
+      "claim_class": "open",
+      "statement": "physical_channel_attribution_and_A_C_nonabsorbability_remain_model_class_and_evidence_questions",
+      "evidence_refs": [
+        "GRC9V4-CD-D7V2-v1",
+        "GRC9V4-CD-D8A-v1"
+      ],
+      "bearing_debt_ids": [
+        "D6V2-DEBT-C-MATHEMATICAL-ABSORBABILITY",
+        "D7-DEBT-A-ABSORBABILITY",
+        "D7-DEBT-PHYSICAL-CHANNEL-ATTRIBUTION"
+      ],
+      "activation_condition": "physical_attribution_study_exists",
+      "normative_effect": "keep_the_operator_paths_without_physical_irreducibility_labels",
+      "blocked_relabels": [
+        "formal_operator_is_physical_channel"
+      ],
+      "debt_edges": [
+        {
+          "debt_id": "D6V2-DEBT-C-MATHEMATICAL-ABSORBABILITY",
+          "edge_types": [
+            "routed_through",
+            "successor_of"
+          ]
+        },
+        {
+          "debt_id": "D7-DEBT-A-ABSORBABILITY",
+          "edge_types": [
+            "routed_through",
+            "successor_of"
+          ]
+        },
+        {
+          "debt_id": "D7-DEBT-PHYSICAL-CHANNEL-ATTRIBUTION",
+          "edge_types": [
+            "blocked_by",
+            "routed_through",
+            "successor_of"
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "D10-CL-U-004",
+      "claim_class": "open",
+      "statement": "numeric_structural_temporal_and_matched_profile_evidence_remains_to_be_instantiated",
+      "evidence_refs": [
+        "GRC9V4-CD-D8B-CI-v1",
+        "GRC9V4-GTRS-COMP-v1"
+      ],
+      "bearing_debt_ids": [
+        "D8B-CI-DEBT-A-ANALYSIS-METRIC",
+        "D8B-CI-DEBT-A-FORMED-BRANCH-ALPHA",
+        "D8B-CI-DEBT-A-TEMPORAL-STABILITY",
+        "D8B-CI-DEBT-C-FORMED-BRANCH-ALPHA",
+        "D8B-CI-DEBT-C-TEMPORAL-STABILITY",
+        "GTRS-CI-PC-DEBT-COMPLETE-CHAIN-AND-ANALYSIS",
+        "GTRS-COMP-DEBT-MATCHED-RUNTIME-DISCRIMINATION"
+      ],
+      "activation_condition": "numeric_evidence_tranche_runs",
+      "normative_effect": "route_to_post_spec_verification_without_blocking_bounded_design_specification",
+      "blocked_relabels": [
+        "no_numeric_evidence_means_no_design_spec"
+      ],
+      "debt_edges": [
+        {
+          "debt_id": "D8B-CI-DEBT-A-ANALYSIS-METRIC",
+          "edge_types": [
+            "routed_through",
+            "successor_of"
+          ]
+        },
+        {
+          "debt_id": "D8B-CI-DEBT-A-FORMED-BRANCH-ALPHA",
+          "edge_types": [
+            "routed_through",
+            "successor_of"
+          ]
+        },
+        {
+          "debt_id": "D8B-CI-DEBT-A-TEMPORAL-STABILITY",
+          "edge_types": [
+            "routed_through",
+            "successor_of"
+          ]
+        },
+        {
+          "debt_id": "D8B-CI-DEBT-C-FORMED-BRANCH-ALPHA",
+          "edge_types": [
+            "routed_through",
+            "successor_of"
+          ]
+        },
+        {
+          "debt_id": "D8B-CI-DEBT-C-TEMPORAL-STABILITY",
+          "edge_types": [
+            "routed_through",
+            "successor_of"
+          ]
+        },
+        {
+          "debt_id": "GTRS-CI-PC-DEBT-COMPLETE-CHAIN-AND-ANALYSIS",
+          "edge_types": [
+            "routed_through",
+            "successor_of"
+          ]
+        },
+        {
+          "debt_id": "GTRS-COMP-DEBT-MATCHED-RUNTIME-DISCRIMINATION",
+          "edge_types": [
+            "routed_through",
+            "successor_of"
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "D10-CL-U-005",
+      "claim_class": "open",
+      "statement": "alternative_star_pair_normalizations_and_richer_DEC_edge_volume_profiles_remain_available_as_named_successor_profiles",
+      "evidence_refs": [
+        "GRC9V4-CD-D7G-post-v2-HODGE-TYPE-CORRECTION-v1",
+        "GRC9V4-CD-D8A-v1"
+      ],
+      "bearing_debt_ids": [
+        "D7G-DEBT-STAR-PAIR-NORMALIZATION-ALTERNATIVES"
+      ],
+      "activation_condition": "alternative_discretization_profile_proposed",
+      "normative_effect": "encode_the_accepted_reference_normalization_as_a_named_profile_not_a_uniqueness_theorem",
+      "blocked_relabels": [
+        "reference_normalization_exhausts_all_lawful_profiles"
+      ],
+      "debt_edges": [
+        {
+          "debt_id": "D7G-DEBT-STAR-PAIR-NORMALIZATION-ALTERNATIVES",
+          "edge_types": [
+            "routed_through",
+            "successor_of"
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "D10-CL-X-001",
+      "claim_class": "negative",
+      "statement": "generic_lossless_history_preservation_without_sufficient_event_lineage_is_not_canonically_definable",
+      "evidence_refs": [
+        "GRC9V4-CD-D9-v1"
+      ],
+      "bearing_debt_ids": [],
+      "activation_condition": "always",
+      "normative_effect": "the_spec_must_use_explicit_archive_or_reset_as_the_generic_fallback",
+      "blocked_relabels": [
+        "arbitrary_history_embedding_is_native_continuation"
+      ],
+      "debt_edges": []
+    },
+    {
+      "claim_id": "D10-CL-X-002",
+      "claim_class": "negative",
+      "statement": "the_accepted_design_evidence_does_not_support_unique_candidate_unique_realization_unique_composition_or_stability_based_architecture_preference",
+      "evidence_refs": [
+        "GRC9V4-GTRS-COMP-v1",
+        "GRC9V4-CD-D9-v1"
+      ],
+      "bearing_debt_ids": [
+        "D7GV2-DEBT-H4-CAPACITY-AND-PROFILE-COMPARABILITY",
+        "GTRS-CI-PC-DEBT-COMPOSITION-PROFILE-STATUS",
+        "GTRS-COMP-DEBT-MATCHED-RUNTIME-DISCRIMINATION"
+      ],
+      "activation_condition": "always",
+      "normative_effect": "the_spec_must_be_profile_explicit_and_nonranking",
+      "blocked_relabels": [
+        "A_preferred_because_first",
+        "CI_preferred_because_first",
+        "constructibility_is_superiority"
+      ],
+      "debt_edges": [
+        {
+          "debt_id": "D7GV2-DEBT-H4-CAPACITY-AND-PROFILE-COMPARABILITY",
+          "edge_types": [
+            "negative_successor_of",
+            "successor_of"
+          ]
+        },
+        {
+          "debt_id": "GTRS-CI-PC-DEBT-COMPOSITION-PROFILE-STATUS",
+          "edge_types": [
+            "negative_successor_of",
+            "successor_of"
+          ]
+        },
+        {
+          "debt_id": "GTRS-COMP-DEBT-MATCHED-RUNTIME-DISCRIMINATION",
+          "edge_types": [
+            "supported_by",
+            "negative_successor_of",
+            "successor_of"
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "D10-CL-X-003",
+      "claim_class": "negative",
+      "statement": "bounded_constructibility_regularness_lifecycle_validity_and_persistence_do_not_establish_temporal_or_structural_stability",
+      "evidence_refs": [
+        "GRC9V4-CD-D8B-CI-v1",
+        "GRC9V4-CD-D9-v1"
+      ],
+      "bearing_debt_ids": [
+        "D8B-CI-DEBT-A-FORMED-BRANCH-ALPHA",
+        "D8B-CI-DEBT-A-TEMPORAL-STABILITY",
+        "D8B-CI-DEBT-C-FORMED-BRANCH-ALPHA",
+        "D8B-CI-DEBT-C-TEMPORAL-STABILITY"
+      ],
+      "activation_condition": "always",
+      "normative_effect": "the_spec_claim_ceiling_stops_below_stability",
+      "blocked_relabels": [
+        "regularness_is_stability",
+        "retention_timescale_is_slow_mode_evidence"
+      ],
+      "debt_edges": [
+        {
+          "debt_id": "D8B-CI-DEBT-A-FORMED-BRANCH-ALPHA",
+          "edge_types": [
+            "negative_successor_of",
+            "successor_of"
+          ]
+        },
+        {
+          "debt_id": "D8B-CI-DEBT-A-TEMPORAL-STABILITY",
+          "edge_types": [
+            "negative_successor_of",
+            "successor_of"
+          ]
+        },
+        {
+          "debt_id": "D8B-CI-DEBT-C-FORMED-BRANCH-ALPHA",
+          "edge_types": [
+            "negative_successor_of",
+            "successor_of"
+          ]
+        },
+        {
+          "debt_id": "D8B-CI-DEBT-C-TEMPORAL-STABILITY",
+          "edge_types": [
+            "negative_successor_of",
+            "successor_of"
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "D10-CL-X-004",
+      "claim_class": "negative",
+      "statement": "the_present_Candidate_A_completion_is_not_inherited_core_by_provenance_because_it_is_an_explicit_revision_specific_constitutive_completion",
+      "evidence_refs": [
+        "GRC9V4-CD-D7-v1",
+        "GRC9V4-CD-D7V2-v1"
+      ],
+      "bearing_debt_ids": [
+        "D7-DEBT-A-CORE-STATUS"
+      ],
+      "activation_condition": "always",
+      "normative_effect": "classify_the_present_A_law_as_revision_specific_optional_constitutive_content_without_claiming_that_no_A_like_law_can_ever_be_derived_from_core",
+      "blocked_relabels": [
+        "present_A_is_native_core_by_provenance",
+        "revision_specific_use_of_core_surfaces_is_inherited_core_derivation"
+      ],
+      "debt_edges": [
+        {
+          "debt_id": "D7-DEBT-A-CORE-STATUS",
+          "edge_types": [
+            "negative_successor_of",
+            "successor_of"
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "D10-CL-X-006",
+      "claim_class": "negative",
+      "statement": "Candidate_A_is_not_a_unique_GRC9V4_constitutive_completion_because_Candidate_C_also_survives_bounded_constitutive_admission",
+      "evidence_refs": [
+        "GRC9V4-CD-D7V2-v1",
+        "GRC9V4-CD-D9-v1"
+      ],
+      "bearing_debt_ids": [
+        "D7-DEBT-A-CORE-STATUS"
+      ],
+      "activation_condition": "always",
+      "normative_effect": "the_spec_must_not_present_A_as_the_unique_required_or_preferred_V4_completion",
+      "blocked_relabels": [
+        "A_is_unique_completion",
+        "A_is_preferred_because_constructed_first"
+      ],
+      "debt_edges": [
+        {
+          "debt_id": "D7-DEBT-A-CORE-STATUS",
+          "edge_types": [
+            "negative_successor_of",
+            "successor_of"
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "D10-CL-X-005",
+      "claim_class": "negative",
+      "statement": "PC_does_not_supply_or_substitute_for_Candidate_Bs_missing_source_backed_writer",
+      "evidence_refs": [
+        "GRC9V4-GTRS-PC-v1",
+        "GRC9V4-GTRS-COMP-v1",
+        "GRC9V4-CD-D9-v1"
+      ],
+      "bearing_debt_ids": [
+        "D7V2-DEBT-B-FUTURE-SOURCE-BACKED-WRITER"
+      ],
+      "activation_condition": "always",
+      "normative_effect": "keep_B_routed_not_rejected_and_PC_separate",
+      "blocked_relabels": [
+        "PC_is_B",
+        "B_is_rejected_by_missing_writer"
+      ],
+      "debt_edges": [
+        {
+          "debt_id": "D7V2-DEBT-B-FUTURE-SOURCE-BACKED-WRITER",
+          "edge_types": [
+            "supported_by",
+            "negative_successor_of",
+            "successor_of"
+          ]
+        }
+      ]
+    }
+  ],
+  "historical_claim_nodes": [
+    {
+      "claim_id": "D10-HCL-GTRS-RG-DEBT-C1-SECTION-REGULARITY",
+      "claim_class": "historical_predecessor",
+      "statement": "family_admission_proves_one_unique_bounded_Lipschitz_section_but_does_not_execute_a_derivative_graph_C1_1_or_equivalent_bunching_theorem",
+      "stronger_claim_blocked": "classical_derivative_continuation_spectrum_or_any_claim_that_the_RG_invariant_section_is_C1_or_smoother",
+      "assumption_forbidden_downstream": "Lipschitz_invariant_section_existence_is_called_C1_differentiability_or_used_in_a_classical_Jacobian_without_a_separate_regularization_proof",
+      "D9_predecessor_reason": "RG2b_runtime_lifecycle_does_not_upgrade_the_Lipschitz_section_to_C1",
+      "evidence_refs": [
+        "GRC9V4-D9-RESIDUAL-DEBT-LEDGER-v1",
+        "GRC9V4-GTRS-CI-PC-v1",
+        "GRC9V4-GTRS-COMP-v1",
+        "GRC9V4-GTRS-PC-v1",
+        "GRC9V4-GTRS-RG-v1"
+      ],
+      "transformed_by_debt_id": "GTRS-RG-DEBT-C1-SECTION-REGULARITY",
+      "successor_claim_ids": [
+        "D10-CL-C-005",
+        "D10-CL-C-009",
+        "D10-CL-O-005"
+      ],
+      "debt_edges": [
+        {
+          "debt_id": "GTRS-RG-DEBT-C1-SECTION-REGULARITY",
+          "edge_types": [
+            "predecessor_claim"
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "D10-HCL-GTRS-OS-DEBT-A-COMPLETE-CHAIN-WITNESS",
+      "claim_class": "historical_predecessor",
+      "statement": "the_geometry_consumer_and_nonempty_direct_field_visibility_surface_are_present_but_no_matched_exact_or_finite_complete_chain_nonannihilation_witness_is_executed",
+      "stronger_claim_blocked": "executed_nonzero_generated_geometry_effect_on_the_A_operator_split_transition",
+      "assumption_forbidden_downstream": "formal_A_geometry_consumption_is_called_an_executed_nonzero_complete_transition_effect",
+      "D9_predecessor_reason": "lifecycle_closure_is_not_an_executed_endpoint_witness",
+      "evidence_refs": [
+        "GRC9V4-D9-RESIDUAL-DEBT-LEDGER-v1",
+        "GRC9V4-GTRS-CI-PC-v1",
+        "GRC9V4-GTRS-COMP-v1",
+        "GRC9V4-GTRS-OS-v1",
+        "GRC9V4-GTRS-PC-v1",
+        "GRC9V4-GTRS-RG-v1"
+      ],
+      "transformed_by_debt_id": "GTRS-OS-DEBT-A-COMPLETE-CHAIN-WITNESS",
+      "successor_claim_ids": [
+        "D10-CL-C-004",
+        "D10-CL-O-004",
+        "D10-CL-U-002"
+      ],
+      "debt_edges": [
+        {
+          "debt_id": "GTRS-OS-DEBT-A-COMPLETE-CHAIN-WITNESS",
+          "edge_types": [
+            "predecessor_claim"
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "D10-HCL-GTRS-OS-DEBT-C-COMPLETE-CHAIN-WITNESS",
+      "claim_class": "historical_predecessor",
+      "statement": "the_full_geometry_dependent_corrector_and_nonempty_direct_field_visibility_surface_are_present_but_no_matched_exact_or_finite_complete_chain_nonannihilation_witness_is_executed",
+      "stronger_claim_blocked": "executed_nonzero_generated_geometry_effect_on_the_C_operator_split_transition",
+      "assumption_forbidden_downstream": "formal_C_geometry_consumption_is_called_an_executed_nonzero_complete_transition_effect",
+      "D9_predecessor_reason": "lifecycle_closure_is_not_an_executed_endpoint_witness",
+      "evidence_refs": [
+        "GRC9V4-D9-RESIDUAL-DEBT-LEDGER-v1",
+        "GRC9V4-GTRS-CI-PC-v1",
+        "GRC9V4-GTRS-COMP-v1",
+        "GRC9V4-GTRS-OS-v1",
+        "GRC9V4-GTRS-PC-v1",
+        "GRC9V4-GTRS-RG-v1"
+      ],
+      "transformed_by_debt_id": "GTRS-OS-DEBT-C-COMPLETE-CHAIN-WITNESS",
+      "successor_claim_ids": [
+        "D10-CL-C-004",
+        "D10-CL-O-004",
+        "D10-CL-U-002"
+      ],
+      "debt_edges": [
+        {
+          "debt_id": "GTRS-OS-DEBT-C-COMPLETE-CHAIN-WITNESS",
+          "edge_types": [
+            "predecessor_claim"
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "D10-HCL-D8B-CI-DEBT-A-FORMED-BRANCH-ALPHA",
+      "claim_class": "historical_predecessor",
+      "statement": "the_complete_second_variation_surface_is_derived_on_a_declared_C2_subchart_but_no_formed_constrained_critical_branch_functional_coefficients_normalization_or_numeric_operator_is_instantiated",
+      "stronger_claim_blocked": "numeric_A_alpha_modes_clusters_and_structural_stability",
+      "assumption_forbidden_downstream": "the_formal_A_Hessian_surface_or_direct_field_witness_is_called_a_numeric_alpha_spectrum_or_structural_stability_result",
+      "D9_predecessor_reason": "D9_supplies_charge_tangent_but_not_formed_branch_alpha",
+      "evidence_refs": [
+        "GRC9V4-CD-D8B-CI-v1",
+        "GRC9V4-D9-RESIDUAL-DEBT-LEDGER-v1",
+        "GRC9V4-GTRS-CI-PC-v1",
+        "GRC9V4-GTRS-COMP-v1",
+        "GRC9V4-GTRS-OS-v1",
+        "GRC9V4-GTRS-PC-v1",
+        "GRC9V4-GTRS-RG-v1"
+      ],
+      "transformed_by_debt_id": "D8B-CI-DEBT-A-FORMED-BRANCH-ALPHA",
+      "successor_claim_ids": [
+        "D10-CL-C-001",
+        "D10-CL-C-005",
+        "D10-CL-O-003",
+        "D10-CL-U-004",
+        "D10-CL-X-003"
+      ],
+      "debt_edges": [
+        {
+          "debt_id": "D8B-CI-DEBT-A-FORMED-BRANCH-ALPHA",
+          "edge_types": [
+            "predecessor_claim"
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "D10-HCL-D8B-CI-DEBT-C-FORMED-BRANCH-ALPHA",
+      "claim_class": "historical_predecessor",
+      "statement": "the_complete_fixed_rank_second_variation_surface_is_derived_on_a_declared_C2_subchart_but_no_formed_constrained_critical_branch_functional_coefficients_normalization_or_numeric_operator_is_instantiated",
+      "stronger_claim_blocked": "numeric_C_alpha_modes_clusters_and_structural_stability",
+      "assumption_forbidden_downstream": "the_formal_C_Hessian_surface_or_direct_field_witness_is_called_a_numeric_alpha_spectrum_or_structural_stability_result",
+      "D9_predecessor_reason": "D9_supplies_charge_tangent_but_not_formed_branch_alpha",
+      "evidence_refs": [
+        "GRC9V4-CD-D8B-CI-v1",
+        "GRC9V4-D9-RESIDUAL-DEBT-LEDGER-v1",
+        "GRC9V4-GTRS-CI-PC-v1",
+        "GRC9V4-GTRS-COMP-v1",
+        "GRC9V4-GTRS-OS-v1",
+        "GRC9V4-GTRS-PC-v1",
+        "GRC9V4-GTRS-RG-v1"
+      ],
+      "transformed_by_debt_id": "D8B-CI-DEBT-C-FORMED-BRANCH-ALPHA",
+      "successor_claim_ids": [
+        "D10-CL-C-001",
+        "D10-CL-C-005",
+        "D10-CL-O-003",
+        "D10-CL-U-004",
+        "D10-CL-X-003"
+      ],
+      "debt_edges": [
+        {
+          "debt_id": "D8B-CI-DEBT-C-FORMED-BRANCH-ALPHA",
+          "edge_types": [
+            "predecessor_claim"
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "D10-HCL-D8B-CI-DEBT-A-TEMPORAL-STABILITY",
+      "claim_class": "historical_predecessor",
+      "statement": "the_exact_complete_step_Jacobian_surface_is_derived_but_no_formed_branch_parameter_vector_root_derivative_or_numeric_map_is_instantiated",
+      "stronger_claim_blocked": "numeric_A_mu_gamma_nonnormal_growth_and_temporal_stability",
+      "assumption_forbidden_downstream": "A_local_IFT_regularness_writer_persistence_or_formal_M_A_is_called_temporal_stability_or_slow_mode_evidence",
+      "D9_predecessor_reason": "lifecycle_validity_is_not_temporal_stability",
+      "evidence_refs": [
+        "GRC9V4-CD-D8B-CI-v1",
+        "GRC9V4-D9-RESIDUAL-DEBT-LEDGER-v1",
+        "GRC9V4-GTRS-CI-PC-v1",
+        "GRC9V4-GTRS-COMP-v1",
+        "GRC9V4-GTRS-OS-v1",
+        "GRC9V4-GTRS-PC-v1",
+        "GRC9V4-GTRS-RG-v1"
+      ],
+      "transformed_by_debt_id": "D8B-CI-DEBT-A-TEMPORAL-STABILITY",
+      "successor_claim_ids": [
+        "D10-CL-C-005",
+        "D10-CL-O-003",
+        "D10-CL-U-004",
+        "D10-CL-X-003"
+      ],
+      "debt_edges": [
+        {
+          "debt_id": "D8B-CI-DEBT-A-TEMPORAL-STABILITY",
+          "edge_types": [
+            "predecessor_claim"
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "D10-HCL-D8B-CI-DEBT-C-TEMPORAL-STABILITY",
+      "claim_class": "historical_predecessor",
+      "statement": "the_exact_C_only_complete_step_Jacobian_surface_is_derived_but_no_formed_branch_parameter_vector_root_derivative_or_numeric_map_is_instantiated",
+      "stronger_claim_blocked": "numeric_C_mu_gamma_nonnormal_growth_and_temporal_stability",
+      "assumption_forbidden_downstream": "C_local_IFT_regularness_resolvent_contraction_or_formal_M_C_is_called_temporal_stability_or_slow_mode_evidence",
+      "D9_predecessor_reason": "lifecycle_validity_is_not_temporal_stability",
+      "evidence_refs": [
+        "GRC9V4-CD-D8B-CI-v1",
+        "GRC9V4-D9-RESIDUAL-DEBT-LEDGER-v1",
+        "GRC9V4-GTRS-CI-PC-v1",
+        "GRC9V4-GTRS-COMP-v1",
+        "GRC9V4-GTRS-OS-v1",
+        "GRC9V4-GTRS-PC-v1",
+        "GRC9V4-GTRS-RG-v1"
+      ],
+      "transformed_by_debt_id": "D8B-CI-DEBT-C-TEMPORAL-STABILITY",
+      "successor_claim_ids": [
+        "D10-CL-C-005",
+        "D10-CL-O-003",
+        "D10-CL-U-004",
+        "D10-CL-X-003"
+      ],
+      "debt_edges": [
+        {
+          "debt_id": "D8B-CI-DEBT-C-TEMPORAL-STABILITY",
+          "edge_types": [
+            "predecessor_claim"
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "D10-HCL-D8B-CI-DEBT-A-ANALYSIS-METRIC",
+      "claim_class": "historical_predecessor",
+      "statement": "the_log_W_coordinate_is_natural_but_source_material_does_not_fix_the_relative_weight_between_C_and_log_W_in_the_complete_state_analysis_metric",
+      "stronger_claim_blocked": "absolute_A_nonnormality_magnitudes_cross_block_angles_and_cross_architecture_temporal_comparison",
+      "assumption_forbidden_downstream": "an_arbitrary_C_to_log_W_scaling_is_hidden_inside_A_nonnormality_or_comparative_stability_claims",
+      "D9_predecessor_reason": "the_C_sector_projector_and_full_tangent_do_not_select_a_product_metric_or_full_state_orthogonal_projector_for_A",
+      "evidence_refs": [
+        "GRC9V4-CD-D8B-CI-v1",
+        "GRC9V4-D9-RESIDUAL-DEBT-LEDGER-v1",
+        "GRC9V4-GTRS-CI-PC-v1",
+        "GRC9V4-GTRS-COMP-v1",
+        "GRC9V4-GTRS-OS-v1",
+        "GRC9V4-GTRS-PC-v1",
+        "GRC9V4-GTRS-RG-v1"
+      ],
+      "transformed_by_debt_id": "D8B-CI-DEBT-A-ANALYSIS-METRIC",
+      "successor_claim_ids": [
+        "D10-CL-C-005",
+        "D10-CL-C-008",
+        "D10-CL-O-003",
+        "D10-CL-U-004"
+      ],
+      "debt_edges": [
+        {
+          "debt_id": "D8B-CI-DEBT-A-ANALYSIS-METRIC",
+          "edge_types": [
+            "predecessor_claim"
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "D10-HCL-GTRS-CI-DEBT-A-NONZERO-CHAIN-WITNESS",
+      "claim_class": "historical_predecessor",
+      "statement": "the_complete_h_to_Delta0_to_J0_to_W_hat_to_q_to_j_chain_is_derived_but_no_matched_finite_or_exact_nonannihilation_witness_is_executed",
+      "stronger_claim_blocked": "nonzero_generated_geometry_effect_on_A_transition",
+      "assumption_forbidden_downstream": "load_bearing_A_map_presence_is_called_nonzero_complete_transition_sensitivity",
+      "D9_predecessor_reason": "D9_does_not_execute_a_nonzero_committed_endpoint_witness",
+      "evidence_refs": [
+        "GRC9V4-CD-D8B-CI-v1",
+        "GRC9V4-D9-RESIDUAL-DEBT-LEDGER-v1",
+        "GRC9V4-GTRS-CI-PC-v1",
+        "GRC9V4-GTRS-CI-v1",
+        "GRC9V4-GTRS-COMP-v1",
+        "GRC9V4-GTRS-OS-v1",
+        "GRC9V4-GTRS-PC-v1",
+        "GRC9V4-GTRS-RG-v1"
+      ],
+      "transformed_by_debt_id": "GTRS-CI-DEBT-A-NONZERO-CHAIN-WITNESS",
+      "successor_claim_ids": [
+        "D10-CL-C-004",
+        "D10-CL-N-003",
+        "D10-CL-O-003",
+        "D10-CL-U-002"
+      ],
+      "debt_edges": [
+        {
+          "debt_id": "GTRS-CI-DEBT-A-NONZERO-CHAIN-WITNESS",
+          "edge_types": [
+            "predecessor_claim"
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "D10-HCL-GTRS-CI-DEBT-C-NONZERO-CHAIN-WITNESS",
+      "claim_class": "historical_predecessor",
+      "statement": "the_complete_chain_rule_block_is_derived_but_no_matched_finite_or_exact_nonannihilation_witness_is_executed",
+      "stronger_claim_blocked": "nonzero_generated_geometry_effect_on_C_transition",
+      "assumption_forbidden_downstream": "load_bearing_map_presence_is_called_nonzero_complete_transition_sensitivity",
+      "D9_predecessor_reason": "D9_does_not_execute_a_nonzero_committed_endpoint_witness",
+      "evidence_refs": [
+        "GRC9V4-CD-D8B-CI-v1",
+        "GRC9V4-D9-RESIDUAL-DEBT-LEDGER-v1",
+        "GRC9V4-GTRS-CI-PC-v1",
+        "GRC9V4-GTRS-CI-v1",
+        "GRC9V4-GTRS-COMP-v1",
+        "GRC9V4-GTRS-OS-v1",
+        "GRC9V4-GTRS-PC-v1",
+        "GRC9V4-GTRS-RG-v1"
+      ],
+      "transformed_by_debt_id": "GTRS-CI-DEBT-C-NONZERO-CHAIN-WITNESS",
+      "successor_claim_ids": [
+        "D10-CL-C-004",
+        "D10-CL-N-003",
+        "D10-CL-O-003",
+        "D10-CL-U-002"
+      ],
+      "debt_edges": [
+        {
+          "debt_id": "GTRS-CI-DEBT-C-NONZERO-CHAIN-WITNESS",
+          "edge_types": [
+            "predecessor_claim"
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "D10-HCL-D8A-DEBT-C-NONIDENTITY-FLAT-SHARP-WITNESS",
+      "claim_class": "historical_predecessor",
+      "statement": "the_corrected_C_flat_response_sharp_pipeline_preserves_the_existing_identity_metric_witness_and_the_nonidentity_tensor_regression proves flux/form outer products differ_but_no_general_nonidentity_C_response_and_K4_pipeline_witness_exists",
+      "stronger_claim_blocked": "general_C_numeric_conditioning_covariance_structural_rank_one_and_nonzero_geometry_sensitivity_claim",
+      "assumption_forbidden_downstream": "identity_metric_preservation_or_tensor_separation_is_called_general_nonidentity_C_flat_sharp_K4_validation_or_nonzero_full_transition_sensitivity",
+      "D9_predecessor_reason": "lifecycle_closure_does_not_supply_the_witness",
+      "evidence_refs": [
+        "GRC9V4-CD-D8A-v1",
+        "GRC9V4-CD-D8B-CI-v1",
+        "GRC9V4-D9-RESIDUAL-DEBT-LEDGER-v1",
+        "GRC9V4-GTRS-CI-PC-v1",
+        "GRC9V4-GTRS-CI-v1",
+        "GRC9V4-GTRS-COMP-v1",
+        "GRC9V4-GTRS-OS-v1",
+        "GRC9V4-GTRS-PC-v1",
+        "GRC9V4-GTRS-RG-v1"
+      ],
+      "transformed_by_debt_id": "D8A-DEBT-C-NONIDENTITY-FLAT-SHARP-WITNESS",
+      "successor_claim_ids": [
+        "D10-CL-C-004",
+        "D10-CL-C-006",
+        "D10-CL-N-006",
+        "D10-CL-O-002"
+      ],
+      "debt_edges": [
+        {
+          "debt_id": "D8A-DEBT-C-NONIDENTITY-FLAT-SHARP-WITNESS",
+          "edge_types": [
+            "predecessor_claim"
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "D10-HCL-D7GV2-DEBT-H4-CAPACITY-AND-PROFILE-COMPARABILITY",
+      "claim_class": "historical_predecessor",
+      "statement": "E_ref_units_are_typed_but_kappa_H_capacity_and_candidate_input_normalization_are_not_physically_identified",
+      "stronger_claim_blocked": "units_gain_capacity_and_cross_candidate_profile_comparison",
+      "assumption_forbidden_downstream": "equal_kappa_H_or_equal_K4_array_norm_means_equal_physical_geometry_effect",
+      "D9_predecessor_reason": "D9_preserves_profile_identity_without_ranking_capacity_profiles",
+      "evidence_refs": [
+        "GRC9V4-CD-D7G-v2",
+        "GRC9V4-CD-D8A-v1",
+        "GRC9V4-CD-D8B-CI-v1",
+        "GRC9V4-D9-RESIDUAL-DEBT-LEDGER-v1",
+        "GRC9V4-GTRS-CI-PC-v1",
+        "GRC9V4-GTRS-CI-v1",
+        "GRC9V4-GTRS-COMP-v1",
+        "GRC9V4-GTRS-OS-v1",
+        "GRC9V4-GTRS-PC-v1",
+        "GRC9V4-GTRS-RG-v1"
+      ],
+      "transformed_by_debt_id": "D7GV2-DEBT-H4-CAPACITY-AND-PROFILE-COMPARABILITY",
+      "successor_claim_ids": [
+        "D10-CL-C-008",
+        "D10-CL-C-010",
+        "D10-CL-N-008",
+        "D10-CL-X-002"
+      ],
+      "debt_edges": [
+        {
+          "debt_id": "D7GV2-DEBT-H4-CAPACITY-AND-PROFILE-COMPARABILITY",
+          "edge_types": [
+            "predecessor_claim"
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "D10-HCL-D7GV2-DEBT-METRIC-INVERSE-SOLVER-AND-COVARIANCE-VERIFICATION",
+      "claim_class": "historical_predecessor",
+      "statement": "D8A_and_the_correction_freeze_typed_form_level_maps_but_do_not_executably_verify_general_nonidentity_G_J_flat_sharp_conditioning_or_covariance",
+      "stronger_claim_blocked": "general_SPD_G_J_flat_sharp_inverse_solver_conditioning_and_executable_covariance",
+      "assumption_forbidden_downstream": "symbolic_typed_maps_are_called_implemented_solver_uniform_conditioning_or_numeric_covariance_evidence",
+      "D9_predecessor_reason": "D9_freezes_solver_and_covariance_contracts_but_not_numeric_implementation_verification",
+      "evidence_refs": [
+        "GRC9V4-CD-D7G-v2",
+        "GRC9V4-CD-D8A-v1",
+        "GRC9V4-CD-D8B-CI-v1",
+        "GRC9V4-D9-RESIDUAL-DEBT-LEDGER-v1",
+        "GRC9V4-GTRS-CI-PC-v1",
+        "GRC9V4-GTRS-CI-v1",
+        "GRC9V4-GTRS-COMP-v1",
+        "GRC9V4-GTRS-OS-v1",
+        "GRC9V4-GTRS-PC-v1",
+        "GRC9V4-GTRS-RG-v1"
+      ],
+      "transformed_by_debt_id": "D7GV2-DEBT-METRIC-INVERSE-SOLVER-AND-COVARIANCE-VERIFICATION",
+      "successor_claim_ids": [
+        "D10-CL-C-006",
+        "D10-CL-N-006"
+      ],
+      "debt_edges": [
+        {
+          "debt_id": "D7GV2-DEBT-METRIC-INVERSE-SOLVER-AND-COVARIANCE-VERIFICATION",
+          "edge_types": [
+            "predecessor_claim"
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "D10-HCL-D7G-DEBT-STAR-PAIR-NORMALIZATION-ALTERNATIVES",
+      "claim_class": "historical_predecessor",
+      "statement": "the_partition_identity_fixes_diagonal_multiplicity_but_does_not_uniquely_determine_off_diagonal_pair_normalization",
+      "stronger_claim_blocked": "off_diagonal_edge_pair_weighting_across_overlapping_local_stalks",
+      "assumption_forbidden_downstream": "the_selected_m_e_inverse_half_vertex_star_normalization_is_the_unique_graph_covariant_assembly",
+      "D9_predecessor_reason": "D9_does_not_select_a_normative_normalization",
+      "evidence_refs": [
+        "GRC9V4-CD-D7G-v1",
+        "GRC9V4-CD-D7G-v2",
+        "GRC9V4-CD-D8A-v1",
+        "GRC9V4-CD-D8B-CI-v1",
+        "GRC9V4-D9-RESIDUAL-DEBT-LEDGER-v1",
+        "GRC9V4-GTRS-CI-PC-v1",
+        "GRC9V4-GTRS-CI-v1",
+        "GRC9V4-GTRS-COMP-v1",
+        "GRC9V4-GTRS-OS-v1",
+        "GRC9V4-GTRS-PC-v1",
+        "GRC9V4-GTRS-RG-v1"
+      ],
+      "transformed_by_debt_id": "D7G-DEBT-STAR-PAIR-NORMALIZATION-ALTERNATIVES",
+      "successor_claim_ids": [
+        "D10-CL-C-010",
+        "D10-CL-N-006",
+        "D10-CL-N-008",
+        "D10-CL-U-005"
+      ],
+      "debt_edges": [
+        {
+          "debt_id": "D7G-DEBT-STAR-PAIR-NORMALIZATION-ALTERNATIVES",
+          "edge_types": [
+            "predecessor_claim"
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "D10-HCL-D7V2-DEBT-B-FUTURE-SOURCE-BACKED-WRITER",
+      "claim_class": "historical_predecessor",
+      "statement": "B_has_no_source_backed_exact_writer",
+      "stronger_claim_blocked": "B_formation_retention_release_and_recursive_U_B",
+      "assumption_forbidden_downstream": "common_H4_or_A_C_selected_realization_feedback_gap_closes_B",
+      "D9_predecessor_reason": "B_remains_routed_not_rejected_without_a_lifecycle_profile",
+      "evidence_refs": [
+        "GRC9V4-CD-D7G-v1",
+        "GRC9V4-CD-D7G-v2",
+        "GRC9V4-CD-D7V2-v1",
+        "GRC9V4-CD-D8A-v1",
+        "GRC9V4-CD-D8B-CI-v1",
+        "GRC9V4-D9-RESIDUAL-DEBT-LEDGER-v1",
+        "GRC9V4-GTRS-CI-PC-v1",
+        "GRC9V4-GTRS-CI-v1",
+        "GRC9V4-GTRS-COMP-v1",
+        "GRC9V4-GTRS-OS-v1",
+        "GRC9V4-GTRS-PC-v1",
+        "GRC9V4-GTRS-RG-v1"
+      ],
+      "transformed_by_debt_id": "D7V2-DEBT-B-FUTURE-SOURCE-BACKED-WRITER",
+      "successor_claim_ids": [
+        "D10-CL-N-001",
+        "D10-CL-N-002",
+        "D10-CL-N-009",
+        "D10-CL-U-001",
+        "D10-CL-X-005"
+      ],
+      "debt_edges": [
+        {
+          "debt_id": "D7V2-DEBT-B-FUTURE-SOURCE-BACKED-WRITER",
+          "edge_types": [
+            "predecessor_claim"
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "D10-HCL-D6V2-DEBT-C-MATHEMATICAL-ABSORBABILITY",
+      "claim_class": "historical_predecessor",
+      "statement": "C_retained_conditioned_response_distinction_from_baseline_reparameterization_remains_open",
+      "stronger_claim_blocked": "C_nonabsorbability",
+      "assumption_forbidden_downstream": "structural_target_is_called_nonabsorbable_Read_Back",
+      "D9_predecessor_reason": "lifecycle_closure_does_not_resolve_absorbability",
+      "evidence_refs": [
+        "GRC9V4-CD-D6V2-v1",
+        "GRC9V4-CD-D7G-v1",
+        "GRC9V4-CD-D7G-v2",
+        "GRC9V4-CD-D7V2-v1",
+        "GRC9V4-CD-D8A-v1",
+        "GRC9V4-CD-D8B-CI-v1",
+        "GRC9V4-D9-RESIDUAL-DEBT-LEDGER-v1",
+        "GRC9V4-GTRS-CI-PC-v1",
+        "GRC9V4-GTRS-CI-v1",
+        "GRC9V4-GTRS-COMP-v1",
+        "GRC9V4-GTRS-OS-v1",
+        "GRC9V4-GTRS-PC-v1",
+        "GRC9V4-GTRS-RG-v1"
+      ],
+      "transformed_by_debt_id": "D6V2-DEBT-C-MATHEMATICAL-ABSORBABILITY",
+      "successor_claim_ids": [
+        "D10-CL-C-007",
+        "D10-CL-O-002",
+        "D10-CL-U-003"
+      ],
+      "debt_edges": [
+        {
+          "debt_id": "D6V2-DEBT-C-MATHEMATICAL-ABSORBABILITY",
+          "edge_types": [
+            "predecessor_claim"
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "D10-HCL-D7-DEBT-A-CORE-STATUS",
+      "claim_class": "historical_predecessor",
+      "statement": "inherited_core_provenance_of_the_present_A_completion_was_unclassified",
+      "stronger_claim_blocked": "the_present_A_completion_is_inherited_core_by_provenance",
+      "assumption_forbidden_downstream": "use_of_core_or_GRC9V3_surfaces_proves_inherited_core_provenance",
+      "D9_predecessor_reason": "D9_does_not_classify_A_as_core_or_extension",
+      "evidence_refs": [
+        "GRC9V4-CD-D4V2-v1",
+        "GRC9V4-CD-D5V2-v1",
+        "GRC9V4-CD-D6V2-v1",
+        "GRC9V4-CD-D7-v1",
+        "GRC9V4-CD-D7G-v1",
+        "GRC9V4-CD-D7G-v2",
+        "GRC9V4-CD-D7V2-v1",
+        "GRC9V4-CD-D8A-v1",
+        "GRC9V4-CD-D8B-CI-v1",
+        "GRC9V4-D9-RESIDUAL-DEBT-LEDGER-v1",
+        "GRC9V4-GTRS-CI-PC-v1",
+        "GRC9V4-GTRS-CI-v1",
+        "GRC9V4-GTRS-COMP-v1",
+        "GRC9V4-GTRS-OS-v1",
+        "GRC9V4-GTRS-PC-v1",
+        "GRC9V4-GTRS-RG-v1"
+      ],
+      "transformed_by_debt_id": "D7-DEBT-A-CORE-STATUS",
+      "successor_claim_ids": [
+        "D10-CL-N-002",
+        "D10-CL-O-001",
+        "D10-CL-X-004",
+        "D10-CL-X-006"
+      ],
+      "debt_edges": [
+        {
+          "debt_id": "D7-DEBT-A-CORE-STATUS",
+          "edge_types": [
+            "predecessor_claim",
+            "blocked_by"
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "D10-HCL-D7-DEBT-A-ABSORBABILITY",
+      "claim_class": "historical_predecessor",
+      "statement": "closed_transition_does_not_exclude_all_effective_mobility_reparameterizations",
+      "stronger_claim_blocked": "A_explicit_Read_Back_nonredundancy_on_selected_model_class",
+      "assumption_forbidden_downstream": "A_explicit_read_is_nonabsorbable_on_every_fixture",
+      "D9_predecessor_reason": "D9_does_not_resolve_A_absorbability",
+      "evidence_refs": [
+        "GRC9V4-CD-D4V2-v1",
+        "GRC9V4-CD-D5V2-v1",
+        "GRC9V4-CD-D6V2-v1",
+        "GRC9V4-CD-D7-v1",
+        "GRC9V4-CD-D7G-v1",
+        "GRC9V4-CD-D7G-v2",
+        "GRC9V4-CD-D7V2-v1",
+        "GRC9V4-CD-D8A-v1",
+        "GRC9V4-CD-D8B-CI-v1",
+        "GRC9V4-D9-RESIDUAL-DEBT-LEDGER-v1",
+        "GRC9V4-GTRS-CI-PC-v1",
+        "GRC9V4-GTRS-CI-v1",
+        "GRC9V4-GTRS-COMP-v1",
+        "GRC9V4-GTRS-OS-v1",
+        "GRC9V4-GTRS-PC-v1",
+        "GRC9V4-GTRS-RG-v1"
+      ],
+      "transformed_by_debt_id": "D7-DEBT-A-ABSORBABILITY",
+      "successor_claim_ids": [
+        "D10-CL-C-007",
+        "D10-CL-O-001",
+        "D10-CL-U-003"
+      ],
+      "debt_edges": [
+        {
+          "debt_id": "D7-DEBT-A-ABSORBABILITY",
+          "edge_types": [
+            "predecessor_claim"
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "D10-HCL-D7-DEBT-A-UNITS-AND-GAUGE",
+      "claim_class": "historical_predecessor",
+      "statement": "D8A_preserves_the_conditional_D7G_units_contract_without_closing_all_A_units_and_gauge",
+      "stronger_claim_blocked": "A_W_q_zeta_K4_H4_units_and_gauge",
+      "assumption_forbidden_downstream": "formal_target_magnitude_is_compared_before_units_and_gauge_close",
+      "D9_predecessor_reason": "D9_preserves_but_does_not_close_the_units_and_gauge_audit",
+      "evidence_refs": [
+        "GRC9V4-CD-D4V2-v1",
+        "GRC9V4-CD-D5V2-v1",
+        "GRC9V4-CD-D6V2-v1",
+        "GRC9V4-CD-D7-v1",
+        "GRC9V4-CD-D7G-v1",
+        "GRC9V4-CD-D7G-v2",
+        "GRC9V4-CD-D7V2-v1",
+        "GRC9V4-CD-D8A-v1",
+        "GRC9V4-CD-D8B-CI-v1",
+        "GRC9V4-D9-RESIDUAL-DEBT-LEDGER-v1",
+        "GRC9V4-GTRS-CI-PC-v1",
+        "GRC9V4-GTRS-CI-v1",
+        "GRC9V4-GTRS-COMP-v1",
+        "GRC9V4-GTRS-OS-v1",
+        "GRC9V4-GTRS-PC-v1",
+        "GRC9V4-GTRS-RG-v1"
+      ],
+      "transformed_by_debt_id": "D7-DEBT-A-UNITS-AND-GAUGE",
+      "successor_claim_ids": [
+        "D10-CL-C-010",
+        "D10-CL-N-008",
+        "D10-CL-O-001"
+      ],
+      "debt_edges": [
+        {
+          "debt_id": "D7-DEBT-A-UNITS-AND-GAUGE",
+          "edge_types": [
+            "predecessor_claim"
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "D10-HCL-D7-DEBT-FORMED-BRANCH-RUNTIME",
+      "claim_class": "historical_predecessor",
+      "statement": "D8A_uses_formal_branch_contracts_without_runtime_formed_branch_evidence",
+      "stronger_claim_blocked": "runtime_reachability_and_formed_branch_evidence",
+      "assumption_forbidden_downstream": "formal_branch_is_called_runtime_reached",
+      "D9_predecessor_reason": "D9_is_design_level_not_formed_branch_runtime_evidence",
+      "evidence_refs": [
+        "GRC9V4-CD-D4V2-v1",
+        "GRC9V4-CD-D5V2-v1",
+        "GRC9V4-CD-D6V2-v1",
+        "GRC9V4-CD-D7-v1",
+        "GRC9V4-CD-D7G-v1",
+        "GRC9V4-CD-D7G-v2",
+        "GRC9V4-CD-D7V2-v1",
+        "GRC9V4-CD-D8A-v1",
+        "GRC9V4-CD-D8B-CI-v1",
+        "GRC9V4-D9-RESIDUAL-DEBT-LEDGER-v1",
+        "GRC9V4-GTRS-CI-PC-v1",
+        "GRC9V4-GTRS-CI-v1",
+        "GRC9V4-GTRS-COMP-v1",
+        "GRC9V4-GTRS-OS-v1",
+        "GRC9V4-GTRS-PC-v1",
+        "GRC9V4-GTRS-RG-v1"
+      ],
+      "transformed_by_debt_id": "D7-DEBT-FORMED-BRANCH-RUNTIME",
+      "successor_claim_ids": [
+        "D10-CL-N-003",
+        "D10-CL-U-002"
+      ],
+      "debt_edges": [
+        {
+          "debt_id": "D7-DEBT-FORMED-BRANCH-RUNTIME",
+          "edge_types": [
+            "predecessor_claim"
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "D10-HCL-D7-DEBT-PHYSICAL-CHANNEL-ATTRIBUTION",
+      "claim_class": "historical_predecessor",
+      "statement": "D8A_is_formal_analysis_only",
+      "stronger_claim_blocked": "empirical_channel_attribution",
+      "assumption_forbidden_downstream": "formal_metric_target_is_called_empirically_attributed_channel",
+      "D9_predecessor_reason": "lifecycle_contracts_do_not_supply_physical_attribution",
+      "evidence_refs": [
+        "GRC9V4-CD-D4V2-v1",
+        "GRC9V4-CD-D5V2-v1",
+        "GRC9V4-CD-D6V2-v1",
+        "GRC9V4-CD-D7-v1",
+        "GRC9V4-CD-D7G-v1",
+        "GRC9V4-CD-D7G-v2",
+        "GRC9V4-CD-D7V2-v1",
+        "GRC9V4-CD-D8A-v1",
+        "GRC9V4-CD-D8B-CI-v1",
+        "GRC9V4-D9-RESIDUAL-DEBT-LEDGER-v1",
+        "GRC9V4-GTRS-CI-PC-v1",
+        "GRC9V4-GTRS-CI-v1",
+        "GRC9V4-GTRS-COMP-v1",
+        "GRC9V4-GTRS-OS-v1",
+        "GRC9V4-GTRS-PC-v1",
+        "GRC9V4-GTRS-RG-v1"
+      ],
+      "transformed_by_debt_id": "D7-DEBT-PHYSICAL-CHANNEL-ATTRIBUTION",
+      "successor_claim_ids": [
+        "D10-CL-C-007",
+        "D10-CL-U-003"
+      ],
+      "debt_edges": [
+        {
+          "debt_id": "D7-DEBT-PHYSICAL-CHANNEL-ATTRIBUTION",
+          "edge_types": [
+            "predecessor_claim"
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "D10-HCL-D7-DEBT-COVARIANCE-VERIFICATION",
+      "claim_class": "historical_predecessor",
+      "statement": "D8A_has_form_level_covariance_without_execution",
+      "stronger_claim_blocked": "executable_relabel_reorientation_and_basis_covariance",
+      "assumption_forbidden_downstream": "symbolic_covariance_is_called_test_pass",
+      "D9_predecessor_reason": "representation_rules_are_frozen_but_executable_covariance_verification_remains",
+      "evidence_refs": [
+        "GRC9V4-CD-D4V2-v1",
+        "GRC9V4-CD-D5V2-v1",
+        "GRC9V4-CD-D6V2-v1",
+        "GRC9V4-CD-D7-v1",
+        "GRC9V4-CD-D7G-v1",
+        "GRC9V4-CD-D7G-v2",
+        "GRC9V4-CD-D7V2-v1",
+        "GRC9V4-CD-D8A-v1",
+        "GRC9V4-CD-D8B-CI-v1",
+        "GRC9V4-D9-RESIDUAL-DEBT-LEDGER-v1",
+        "GRC9V4-GTRS-CI-PC-v1",
+        "GRC9V4-GTRS-CI-v1",
+        "GRC9V4-GTRS-COMP-v1",
+        "GRC9V4-GTRS-OS-v1",
+        "GRC9V4-GTRS-PC-v1",
+        "GRC9V4-GTRS-RG-v1"
+      ],
+      "transformed_by_debt_id": "D7-DEBT-COVARIANCE-VERIFICATION",
+      "successor_claim_ids": [
+        "D10-CL-C-006",
+        "D10-CL-N-006"
+      ],
+      "debt_edges": [
+        {
+          "debt_id": "D7-DEBT-COVARIANCE-VERIFICATION",
+          "edge_types": [
+            "predecessor_claim"
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "D10-HCL-D5V2-DEBT-CURRENT-SINGULAR-SUCCESSOR",
+      "claim_class": "historical_predecessor",
+      "statement": "singular_boundary_is_outside_current_profile",
+      "stronger_claim_blocked": "passage_through_loss_of_D6_current_regularness_if_later_required",
+      "assumption_forbidden_downstream": "regular_profile_crosses_singular_boundary",
+      "D9_predecessor_reason": "singular_disposition_fails_closed_without_constructing_a_singular_successor",
+      "evidence_refs": [
+        "GRC9V4-CD-D5V2-v1",
+        "GRC9V4-CD-D6V2-v1",
+        "GRC9V4-CD-D7G-v1",
+        "GRC9V4-CD-D7G-v2",
+        "GRC9V4-CD-D7V2-v1",
+        "GRC9V4-CD-D8A-v1",
+        "GRC9V4-CD-D8B-CI-v1",
+        "GRC9V4-D9-RESIDUAL-DEBT-LEDGER-v1",
+        "GRC9V4-GTRS-CI-PC-v1",
+        "GRC9V4-GTRS-CI-v1",
+        "GRC9V4-GTRS-COMP-v1",
+        "GRC9V4-GTRS-OS-v1",
+        "GRC9V4-GTRS-PC-v1",
+        "GRC9V4-GTRS-RG-v1"
+      ],
+      "transformed_by_debt_id": "D5V2-DEBT-CURRENT-SINGULAR-SUCCESSOR",
+      "successor_claim_ids": [
+        "D10-CL-C-003",
+        "D10-CL-N-005"
+      ],
+      "debt_edges": [
+        {
+          "debt_id": "D5V2-DEBT-CURRENT-SINGULAR-SUCCESSOR",
+          "edge_types": [
+            "predecessor_claim"
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "D10-HCL-D8A-DEBT-HODGE-CORRECTION-NORMATIVE-ENCODING",
+      "claim_class": "historical_predecessor",
+      "statement": "the_H1_form_G_J_M4_split_is_an_investigation_correction_receipt_not_a_normative_specification",
+      "stronger_claim_blocked": "normative_GRC9V4_symbol_equation_and_reference_embedding_ownership",
+      "assumption_forbidden_downstream": "correction_symbols_or_formulas_are_called_implemented_or_normative_before_D10_authorization",
+      "D9_predecessor_reason": "D9_consumes_the_correction_but_normative_encoding_waits_for_D10",
+      "evidence_refs": [
+        "GRC9V4-CD-D8A-v1",
+        "GRC9V4-CD-D8B-CI-v1",
+        "GRC9V4-D9-RESIDUAL-DEBT-LEDGER-v1",
+        "GRC9V4-GTRS-CI-PC-v1",
+        "GRC9V4-GTRS-CI-v1",
+        "GRC9V4-GTRS-COMP-v1",
+        "GRC9V4-GTRS-OS-v1",
+        "GRC9V4-GTRS-PC-v1",
+        "GRC9V4-GTRS-RG-v1"
+      ],
+      "transformed_by_debt_id": "D8A-DEBT-HODGE-CORRECTION-NORMATIVE-ENCODING",
+      "successor_claim_ids": [
+        "D10-CL-N-006"
+      ],
+      "debt_edges": [
+        {
+          "debt_id": "D8A-DEBT-HODGE-CORRECTION-NORMATIVE-ENCODING",
+          "edge_types": [
+            "predecessor_claim",
+            "blocked_by"
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "D10-HCL-GTRS-PC-DEBT-A-COMPLETE-CHAIN-WITNESS",
+      "claim_class": "historical_predecessor",
+      "statement": "A_has_an_equation_level_D8A_visibility_direction_but_no_executed_or_analytic_nonzero_full_PC_transition_witness",
+      "stronger_claim_blocked": "nonzero_base_state_effect_and_quantitative_PC_hysteresis_for_candidate_A",
+      "assumption_forbidden_downstream": "distinct_Z_4_A_or_h_A_is_called_a_nonzero_complete_A_future_effect_without_propagating_through_current_continuity_and_W_writer",
+      "D9_predecessor_reason": "lifecycle_closure_is_not_a_nonzero_endpoint_witness",
+      "evidence_refs": [
+        "GRC9V4-D9-RESIDUAL-DEBT-LEDGER-v1",
+        "GRC9V4-GTRS-CI-PC-v1",
+        "GRC9V4-GTRS-COMP-v1",
+        "GRC9V4-GTRS-PC-v1"
+      ],
+      "transformed_by_debt_id": "GTRS-PC-DEBT-A-COMPLETE-CHAIN-WITNESS",
+      "successor_claim_ids": [
+        "D10-CL-C-004",
+        "D10-CL-O-006",
+        "D10-CL-U-002"
+      ],
+      "debt_edges": [
+        {
+          "debt_id": "GTRS-PC-DEBT-A-COMPLETE-CHAIN-WITNESS",
+          "edge_types": [
+            "predecessor_claim"
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "D10-HCL-GTRS-PC-DEBT-C-COMPLETE-CHAIN-WITNESS",
+      "claim_class": "historical_predecessor",
+      "statement": "C_has_an_equation_level_D8A_visibility_direction_but_no_executed_or_analytic_nonzero_full_PC_transition_witness",
+      "stronger_claim_blocked": "nonzero_base_state_effect_and_quantitative_PC_hysteresis_for_candidate_C",
+      "assumption_forbidden_downstream": "distinct_Z_4_C_or_h_C_is_called_a_nonzero_complete_C_future_effect_without_propagating_through_selector_Hodge_current_and_continuity",
+      "D9_predecessor_reason": "lifecycle_closure_is_not_a_nonzero_endpoint_witness",
+      "evidence_refs": [
+        "GRC9V4-D9-RESIDUAL-DEBT-LEDGER-v1",
+        "GRC9V4-GTRS-CI-PC-v1",
+        "GRC9V4-GTRS-COMP-v1",
+        "GRC9V4-GTRS-PC-v1"
+      ],
+      "transformed_by_debt_id": "GTRS-PC-DEBT-C-COMPLETE-CHAIN-WITNESS",
+      "successor_claim_ids": [
+        "D10-CL-C-004",
+        "D10-CL-O-006",
+        "D10-CL-U-002"
+      ],
+      "debt_edges": [
+        {
+          "debt_id": "GTRS-PC-DEBT-C-COMPLETE-CHAIN-WITNESS",
+          "edge_types": [
+            "predecessor_claim"
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "D10-HCL-GTRS-COMP-DEBT-MATCHED-RUNTIME-DISCRIMINATION",
+      "claim_class": "historical_predecessor",
+      "statement": "COMP_defines_lawful_design_level_maps_and_noncomparability_but_no_common_formed_branch_charge_projector_reference_metric_or_matched_runtime_matrix_exists",
+      "stronger_claim_blocked": "exclusive_preference_numeric_ranking_or_stability_based_selection_across_candidates_or_realizations",
+      "assumption_forbidden_downstream": "design_level_regularness_split_bounds_contraction_or_persistence_is_relabelled_as_numeric_stability_or_architecture_superiority",
+      "D9_predecessor_reason": "D9_does_not_rank_profiles_or_execute_matched_runtime_rows",
+      "evidence_refs": [
+        "GRC9V4-D9-RESIDUAL-DEBT-LEDGER-v1",
+        "GRC9V4-GTRS-CI-PC-v1",
+        "GRC9V4-GTRS-COMP-v1"
+      ],
+      "transformed_by_debt_id": "GTRS-COMP-DEBT-MATCHED-RUNTIME-DISCRIMINATION",
+      "successor_claim_ids": [
+        "D10-CL-C-005",
+        "D10-CL-C-008",
+        "D10-CL-N-001",
+        "D10-CL-U-004",
+        "D10-CL-X-002"
+      ],
+      "debt_edges": [
+        {
+          "debt_id": "GTRS-COMP-DEBT-MATCHED-RUNTIME-DISCRIMINATION",
+          "edge_types": [
+            "predecessor_claim"
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "D10-HCL-GTRS-CI-PC-DEBT-COMPLETE-CHAIN-AND-ANALYSIS",
+      "claim_class": "historical_predecessor",
+      "statement": "the_hybrid_has_analytic_nonannihilation_of_both_paths_at_the_joint_root_and_a_complete_transition_but_no_executed_nonzero_committed_C_W_full_chain_witness_or_hybrid_specific_structural_temporal_operator_instantiation",
+      "stronger_claim_blocked": "nonzero_hybrid_base_state_effect_architecture_local_D8B_surface_and_numeric_stability",
+      "assumption_forbidden_downstream": "root_level_path_nonannihilation_or_distinct_Z_is_called_nonzero_committed_base_state_hysteresis_alpha_mu_gamma_or_stability_evidence",
+      "D9_predecessor_reason": "D9_preserves_root_level_nonannihilation_without_committed_endpoint_analysis",
+      "evidence_refs": [
+        "GRC9V4-D9-RESIDUAL-DEBT-LEDGER-v1",
+        "GRC9V4-GTRS-CI-PC-v1"
+      ],
+      "transformed_by_debt_id": "GTRS-CI-PC-DEBT-COMPLETE-CHAIN-AND-ANALYSIS",
+      "successor_claim_ids": [
+        "D10-CL-C-004",
+        "D10-CL-O-007",
+        "D10-CL-U-002",
+        "D10-CL-U-004"
+      ],
+      "debt_edges": [
+        {
+          "debt_id": "GTRS-CI-PC-DEBT-COMPLETE-CHAIN-AND-ANALYSIS",
+          "edge_types": [
+            "predecessor_claim"
+          ]
+        }
+      ]
+    },
+    {
+      "claim_id": "D10-HCL-GTRS-CI-PC-DEBT-COMPOSITION-PROFILE-STATUS",
+      "claim_class": "historical_predecessor",
+      "statement": "rho_inst=1_and_the_additive_K4_composition_are_bounded_revision_specific_family_completions_with_unit_immediate_plus_unit_retained_steady_source_gain_two_not_unique_amplitude_preserving_or_core_theory_laws",
+      "stronger_claim_blocked": "normative_selection_of_rho_inst_and_the_Z_plus_S_composition_as_a_GRC9V4_profile",
+      "assumption_forbidden_downstream": "the_successful_hybrid_profile_is_called_unique_required_amplitude_equivalent_to_CI_or_PC_native_core_RC_or_preferred_without_D10_entry_classification",
+      "D9_predecessor_reason": "unit_plus_unit_gain_two_profile_requires_D10_entry_classification_before_spec_authorization",
+      "evidence_refs": [
+        "GRC9V4-D9-RESIDUAL-DEBT-LEDGER-v1",
+        "GRC9V4-GTRS-CI-PC-v1"
+      ],
+      "transformed_by_debt_id": "GTRS-CI-PC-DEBT-COMPOSITION-PROFILE-STATUS",
+      "successor_claim_ids": [
+        "D10-CL-N-001",
+        "D10-CL-N-008",
+        "D10-CL-N-009",
+        "D10-CL-O-007",
+        "D10-CL-X-002"
+      ],
+      "debt_edges": [
+        {
+          "debt_id": "GTRS-CI-PC-DEBT-COMPOSITION-PROFILE-STATUS",
+          "edge_types": [
+            "predecessor_claim",
+            "blocked_by"
+          ]
+        }
+      ]
+    }
+  ],
+  "claim_debt_edges": [
+    {
+      "claim_id": "D10-CL-N-001",
+      "debt_id": "D7V2-DEBT-B-FUTURE-SOURCE-BACKED-WRITER",
+      "edge_types": [
+        "supported_by",
+        "successor_of"
+      ]
+    },
+    {
+      "claim_id": "D10-CL-N-001",
+      "debt_id": "GTRS-CI-PC-DEBT-COMPOSITION-PROFILE-STATUS",
+      "edge_types": [
+        "supported_by",
+        "successor_of"
+      ]
+    },
+    {
+      "claim_id": "D10-CL-N-001",
+      "debt_id": "GTRS-COMP-DEBT-MATCHED-RUNTIME-DISCRIMINATION",
+      "edge_types": [
+        "supported_by",
+        "successor_of"
+      ]
+    },
+    {
+      "claim_id": "D10-CL-N-002",
+      "debt_id": "D7-DEBT-A-CORE-STATUS",
+      "edge_types": [
+        "supported_by",
+        "successor_of"
+      ]
+    },
+    {
+      "claim_id": "D10-CL-N-002",
+      "debt_id": "D7V2-DEBT-B-FUTURE-SOURCE-BACKED-WRITER",
+      "edge_types": [
+        "supported_by",
+        "successor_of"
+      ]
+    },
+    {
+      "claim_id": "D10-CL-N-003",
+      "debt_id": "D7-DEBT-FORMED-BRANCH-RUNTIME",
+      "edge_types": [
+        "supported_by",
+        "successor_of"
+      ]
+    },
+    {
+      "claim_id": "D10-CL-N-003",
+      "debt_id": "GTRS-CI-DEBT-A-NONZERO-CHAIN-WITNESS",
+      "edge_types": [
+        "supported_by",
+        "successor_of"
+      ]
+    },
+    {
+      "claim_id": "D10-CL-N-003",
+      "debt_id": "GTRS-CI-DEBT-C-NONZERO-CHAIN-WITNESS",
+      "edge_types": [
+        "supported_by",
+        "successor_of"
+      ]
+    },
+    {
+      "claim_id": "D10-CL-N-005",
+      "debt_id": "D5V2-DEBT-CURRENT-SINGULAR-SUCCESSOR",
+      "edge_types": [
+        "supported_by",
+        "successor_of"
+      ]
+    },
+    {
+      "claim_id": "D10-CL-N-006",
+      "debt_id": "D7-DEBT-COVARIANCE-VERIFICATION",
+      "edge_types": [
+        "supported_by",
+        "successor_of"
+      ]
+    },
+    {
+      "claim_id": "D10-CL-N-006",
+      "debt_id": "D7G-DEBT-STAR-PAIR-NORMALIZATION-ALTERNATIVES",
+      "edge_types": [
+        "supported_by",
+        "successor_of"
+      ]
+    },
+    {
+      "claim_id": "D10-CL-N-006",
+      "debt_id": "D7GV2-DEBT-METRIC-INVERSE-SOLVER-AND-COVARIANCE-VERIFICATION",
+      "edge_types": [
+        "supported_by",
+        "successor_of"
+      ]
+    },
+    {
+      "claim_id": "D10-CL-N-006",
+      "debt_id": "D8A-DEBT-C-NONIDENTITY-FLAT-SHARP-WITNESS",
+      "edge_types": [
+        "supported_by",
+        "successor_of"
+      ]
+    },
+    {
+      "claim_id": "D10-CL-N-006",
+      "debt_id": "D8A-DEBT-HODGE-CORRECTION-NORMATIVE-ENCODING",
+      "edge_types": [
+        "supported_by",
+        "successor_of"
+      ]
+    },
+    {
+      "claim_id": "D10-CL-N-008",
+      "debt_id": "D7-DEBT-A-UNITS-AND-GAUGE",
+      "edge_types": [
+        "supported_by",
+        "successor_of"
+      ]
+    },
+    {
+      "claim_id": "D10-CL-N-008",
+      "debt_id": "D7G-DEBT-STAR-PAIR-NORMALIZATION-ALTERNATIVES",
+      "edge_types": [
+        "supported_by",
+        "successor_of"
+      ]
+    },
+    {
+      "claim_id": "D10-CL-N-008",
+      "debt_id": "D7GV2-DEBT-H4-CAPACITY-AND-PROFILE-COMPARABILITY",
+      "edge_types": [
+        "supported_by",
+        "successor_of"
+      ]
+    },
+    {
+      "claim_id": "D10-CL-N-008",
+      "debt_id": "GTRS-CI-PC-DEBT-COMPOSITION-PROFILE-STATUS",
+      "edge_types": [
+        "supported_by",
+        "successor_of"
+      ]
+    },
+    {
+      "claim_id": "D10-CL-N-009",
+      "debt_id": "D7V2-DEBT-B-FUTURE-SOURCE-BACKED-WRITER",
+      "edge_types": [
+        "supported_by",
+        "successor_of"
+      ]
+    },
+    {
+      "claim_id": "D10-CL-N-009",
+      "debt_id": "GTRS-CI-PC-DEBT-COMPOSITION-PROFILE-STATUS",
+      "edge_types": [
+        "supported_by",
+        "successor_of"
+      ]
+    },
+    {
+      "claim_id": "D10-CL-O-001",
+      "debt_id": "D7-DEBT-A-ABSORBABILITY",
+      "edge_types": [
+        "supported_by",
+        "successor_of"
+      ]
+    },
+    {
+      "claim_id": "D10-CL-O-001",
+      "debt_id": "D7-DEBT-A-CORE-STATUS",
+      "edge_types": [
+        "supported_by",
+        "successor_of"
+      ]
+    },
+    {
+      "claim_id": "D10-CL-O-001",
+      "debt_id": "D7-DEBT-A-UNITS-AND-GAUGE",
+      "edge_types": [
+        "supported_by",
+        "successor_of"
+      ]
+    },
+    {
+      "claim_id": "D10-CL-O-002",
+      "debt_id": "D6V2-DEBT-C-MATHEMATICAL-ABSORBABILITY",
+      "edge_types": [
+        "supported_by",
+        "successor_of"
+      ]
+    },
+    {
+      "claim_id": "D10-CL-O-002",
+      "debt_id": "D8A-DEBT-C-NONIDENTITY-FLAT-SHARP-WITNESS",
+      "edge_types": [
+        "supported_by",
+        "successor_of"
+      ]
+    },
+    {
+      "claim_id": "D10-CL-O-003",
+      "debt_id": "D8B-CI-DEBT-A-ANALYSIS-METRIC",
+      "edge_types": [
+        "supported_by",
+        "successor_of"
+      ]
+    },
+    {
+      "claim_id": "D10-CL-O-003",
+      "debt_id": "D8B-CI-DEBT-A-FORMED-BRANCH-ALPHA",
+      "edge_types": [
+        "supported_by",
+        "successor_of"
+      ]
+    },
+    {
+      "claim_id": "D10-CL-O-003",
+      "debt_id": "D8B-CI-DEBT-A-TEMPORAL-STABILITY",
+      "edge_types": [
+        "supported_by",
+        "successor_of"
+      ]
+    },
+    {
+      "claim_id": "D10-CL-O-003",
+      "debt_id": "D8B-CI-DEBT-C-FORMED-BRANCH-ALPHA",
+      "edge_types": [
+        "supported_by",
+        "successor_of"
+      ]
+    },
+    {
+      "claim_id": "D10-CL-O-003",
+      "debt_id": "D8B-CI-DEBT-C-TEMPORAL-STABILITY",
+      "edge_types": [
+        "supported_by",
+        "successor_of"
+      ]
+    },
+    {
+      "claim_id": "D10-CL-O-003",
+      "debt_id": "GTRS-CI-DEBT-A-NONZERO-CHAIN-WITNESS",
+      "edge_types": [
+        "supported_by",
+        "successor_of"
+      ]
+    },
+    {
+      "claim_id": "D10-CL-O-003",
+      "debt_id": "GTRS-CI-DEBT-C-NONZERO-CHAIN-WITNESS",
+      "edge_types": [
+        "supported_by",
+        "successor_of"
+      ]
+    },
+    {
+      "claim_id": "D10-CL-O-004",
+      "debt_id": "GTRS-OS-DEBT-A-COMPLETE-CHAIN-WITNESS",
+      "edge_types": [
+        "supported_by",
+        "successor_of"
+      ]
+    },
+    {
+      "claim_id": "D10-CL-O-004",
+      "debt_id": "GTRS-OS-DEBT-C-COMPLETE-CHAIN-WITNESS",
+      "edge_types": [
+        "supported_by",
+        "successor_of"
+      ]
+    },
+    {
+      "claim_id": "D10-CL-O-005",
+      "debt_id": "GTRS-RG-DEBT-C1-SECTION-REGULARITY",
+      "edge_types": [
+        "supported_by",
+        "successor_of"
+      ]
+    },
+    {
+      "claim_id": "D10-CL-O-006",
+      "debt_id": "GTRS-PC-DEBT-A-COMPLETE-CHAIN-WITNESS",
+      "edge_types": [
+        "supported_by",
+        "successor_of"
+      ]
+    },
+    {
+      "claim_id": "D10-CL-O-006",
+      "debt_id": "GTRS-PC-DEBT-C-COMPLETE-CHAIN-WITNESS",
+      "edge_types": [
+        "supported_by",
+        "successor_of"
+      ]
+    },
+    {
+      "claim_id": "D10-CL-O-007",
+      "debt_id": "GTRS-CI-PC-DEBT-COMPLETE-CHAIN-AND-ANALYSIS",
+      "edge_types": [
+        "supported_by",
+        "successor_of"
+      ]
+    },
+    {
+      "claim_id": "D10-CL-O-007",
+      "debt_id": "GTRS-CI-PC-DEBT-COMPOSITION-PROFILE-STATUS",
+      "edge_types": [
+        "supported_by",
+        "successor_of"
+      ]
+    },
+    {
+      "claim_id": "D10-CL-C-001",
+      "debt_id": "D8B-CI-DEBT-A-FORMED-BRANCH-ALPHA",
+      "edge_types": [
+        "blocked_by",
+        "conditioned_by",
+        "successor_of"
+      ]
+    },
+    {
+      "claim_id": "D10-CL-C-001",
+      "debt_id": "D8B-CI-DEBT-C-FORMED-BRANCH-ALPHA",
+      "edge_types": [
+        "blocked_by",
+        "conditioned_by",
+        "successor_of"
+      ]
+    },
+    {
+      "claim_id": "D10-CL-C-003",
+      "debt_id": "D5V2-DEBT-CURRENT-SINGULAR-SUCCESSOR",
+      "edge_types": [
+        "blocked_by",
+        "conditioned_by",
+        "successor_of"
+      ]
+    },
+    {
+      "claim_id": "D10-CL-C-004",
+      "debt_id": "D8A-DEBT-C-NONIDENTITY-FLAT-SHARP-WITNESS",
+      "edge_types": [
+        "conditioned_by",
+        "successor_of"
+      ]
+    },
+    {
+      "claim_id": "D10-CL-C-004",
+      "debt_id": "GTRS-CI-DEBT-A-NONZERO-CHAIN-WITNESS",
+      "edge_types": [
+        "blocked_by",
+        "conditioned_by",
+        "successor_of"
+      ]
+    },
+    {
+      "claim_id": "D10-CL-C-004",
+      "debt_id": "GTRS-CI-DEBT-C-NONZERO-CHAIN-WITNESS",
+      "edge_types": [
+        "blocked_by",
+        "conditioned_by",
+        "successor_of"
+      ]
+    },
+    {
+      "claim_id": "D10-CL-C-004",
+      "debt_id": "GTRS-CI-PC-DEBT-COMPLETE-CHAIN-AND-ANALYSIS",
+      "edge_types": [
+        "blocked_by",
+        "conditioned_by",
+        "successor_of"
+      ]
+    },
+    {
+      "claim_id": "D10-CL-C-004",
+      "debt_id": "GTRS-OS-DEBT-A-COMPLETE-CHAIN-WITNESS",
+      "edge_types": [
+        "blocked_by",
+        "conditioned_by",
+        "successor_of"
+      ]
+    },
+    {
+      "claim_id": "D10-CL-C-004",
+      "debt_id": "GTRS-OS-DEBT-C-COMPLETE-CHAIN-WITNESS",
+      "edge_types": [
+        "blocked_by",
+        "conditioned_by",
+        "successor_of"
+      ]
+    },
+    {
+      "claim_id": "D10-CL-C-004",
+      "debt_id": "GTRS-PC-DEBT-A-COMPLETE-CHAIN-WITNESS",
+      "edge_types": [
+        "blocked_by",
+        "conditioned_by",
+        "successor_of"
+      ]
+    },
+    {
+      "claim_id": "D10-CL-C-004",
+      "debt_id": "GTRS-PC-DEBT-C-COMPLETE-CHAIN-WITNESS",
+      "edge_types": [
+        "blocked_by",
+        "conditioned_by",
+        "successor_of"
+      ]
+    },
+    {
+      "claim_id": "D10-CL-C-005",
+      "debt_id": "D8B-CI-DEBT-A-ANALYSIS-METRIC",
+      "edge_types": [
+        "blocked_by",
+        "conditioned_by",
+        "successor_of"
+      ]
+    },
+    {
+      "claim_id": "D10-CL-C-005",
+      "debt_id": "D8B-CI-DEBT-A-FORMED-BRANCH-ALPHA",
+      "edge_types": [
+        "conditioned_by",
+        "successor_of"
+      ]
+    },
+    {
+      "claim_id": "D10-CL-C-005",
+      "debt_id": "D8B-CI-DEBT-A-TEMPORAL-STABILITY",
+      "edge_types": [
+        "blocked_by",
+        "conditioned_by",
+        "successor_of"
+      ]
+    },
+    {
+      "claim_id": "D10-CL-C-005",
+      "debt_id": "D8B-CI-DEBT-C-FORMED-BRANCH-ALPHA",
+      "edge_types": [
+        "conditioned_by",
+        "successor_of"
+      ]
+    },
+    {
+      "claim_id": "D10-CL-C-005",
+      "debt_id": "D8B-CI-DEBT-C-TEMPORAL-STABILITY",
+      "edge_types": [
+        "blocked_by",
+        "conditioned_by",
+        "successor_of"
+      ]
+    },
+    {
+      "claim_id": "D10-CL-C-005",
+      "debt_id": "GTRS-COMP-DEBT-MATCHED-RUNTIME-DISCRIMINATION",
+      "edge_types": [
+        "conditioned_by",
+        "successor_of"
+      ]
+    },
+    {
+      "claim_id": "D10-CL-C-005",
+      "debt_id": "GTRS-RG-DEBT-C1-SECTION-REGULARITY",
+      "edge_types": [
+        "conditioned_by",
+        "successor_of"
+      ]
+    },
+    {
+      "claim_id": "D10-CL-C-006",
+      "debt_id": "D7-DEBT-COVARIANCE-VERIFICATION",
+      "edge_types": [
+        "blocked_by",
+        "conditioned_by",
+        "successor_of"
+      ]
+    },
+    {
+      "claim_id": "D10-CL-C-006",
+      "debt_id": "D7GV2-DEBT-METRIC-INVERSE-SOLVER-AND-COVARIANCE-VERIFICATION",
+      "edge_types": [
+        "blocked_by",
+        "conditioned_by",
+        "successor_of"
+      ]
+    },
+    {
+      "claim_id": "D10-CL-C-006",
+      "debt_id": "D8A-DEBT-C-NONIDENTITY-FLAT-SHARP-WITNESS",
+      "edge_types": [
+        "blocked_by",
+        "conditioned_by",
+        "successor_of"
+      ]
+    },
+    {
+      "claim_id": "D10-CL-C-007",
+      "debt_id": "D6V2-DEBT-C-MATHEMATICAL-ABSORBABILITY",
+      "edge_types": [
+        "blocked_by",
+        "conditioned_by",
+        "successor_of"
+      ]
+    },
+    {
+      "claim_id": "D10-CL-C-007",
+      "debt_id": "D7-DEBT-A-ABSORBABILITY",
+      "edge_types": [
+        "blocked_by",
+        "conditioned_by",
+        "successor_of"
+      ]
+    },
+    {
+      "claim_id": "D10-CL-C-007",
+      "debt_id": "D7-DEBT-PHYSICAL-CHANNEL-ATTRIBUTION",
+      "edge_types": [
+        "supported_by",
+        "conditioned_by",
+        "successor_of"
+      ]
+    },
+    {
+      "claim_id": "D10-CL-C-008",
+      "debt_id": "D7GV2-DEBT-H4-CAPACITY-AND-PROFILE-COMPARABILITY",
+      "edge_types": [
+        "conditioned_by",
+        "successor_of"
+      ]
+    },
+    {
+      "claim_id": "D10-CL-C-008",
+      "debt_id": "D8B-CI-DEBT-A-ANALYSIS-METRIC",
+      "edge_types": [
+        "conditioned_by",
+        "successor_of"
+      ]
+    },
+    {
+      "claim_id": "D10-CL-C-008",
+      "debt_id": "GTRS-COMP-DEBT-MATCHED-RUNTIME-DISCRIMINATION",
+      "edge_types": [
+        "blocked_by",
+        "conditioned_by",
+        "successor_of"
+      ]
+    },
+    {
+      "claim_id": "D10-CL-C-009",
+      "debt_id": "GTRS-RG-DEBT-C1-SECTION-REGULARITY",
+      "edge_types": [
+        "blocked_by",
+        "conditioned_by",
+        "successor_of"
+      ]
+    },
+    {
+      "claim_id": "D10-CL-C-010",
+      "debt_id": "D7-DEBT-A-UNITS-AND-GAUGE",
+      "edge_types": [
+        "blocked_by",
+        "conditioned_by",
+        "successor_of"
+      ]
+    },
+    {
+      "claim_id": "D10-CL-C-010",
+      "debt_id": "D7G-DEBT-STAR-PAIR-NORMALIZATION-ALTERNATIVES",
+      "edge_types": [
+        "blocked_by",
+        "conditioned_by",
+        "successor_of"
+      ]
+    },
+    {
+      "claim_id": "D10-CL-C-010",
+      "debt_id": "D7GV2-DEBT-H4-CAPACITY-AND-PROFILE-COMPARABILITY",
+      "edge_types": [
+        "blocked_by",
+        "conditioned_by",
+        "successor_of"
+      ]
+    },
+    {
+      "claim_id": "D10-CL-U-001",
+      "debt_id": "D7V2-DEBT-B-FUTURE-SOURCE-BACKED-WRITER",
+      "edge_types": [
+        "blocked_by",
+        "routed_through",
+        "successor_of"
+      ]
+    },
+    {
+      "claim_id": "D10-CL-U-002",
+      "debt_id": "D7-DEBT-FORMED-BRANCH-RUNTIME",
+      "edge_types": [
+        "blocked_by",
+        "routed_through",
+        "successor_of"
+      ]
+    },
+    {
+      "claim_id": "D10-CL-U-002",
+      "debt_id": "GTRS-CI-DEBT-A-NONZERO-CHAIN-WITNESS",
+      "edge_types": [
+        "routed_through",
+        "successor_of"
+      ]
+    },
+    {
+      "claim_id": "D10-CL-U-002",
+      "debt_id": "GTRS-CI-DEBT-C-NONZERO-CHAIN-WITNESS",
+      "edge_types": [
+        "routed_through",
+        "successor_of"
+      ]
+    },
+    {
+      "claim_id": "D10-CL-U-002",
+      "debt_id": "GTRS-CI-PC-DEBT-COMPLETE-CHAIN-AND-ANALYSIS",
+      "edge_types": [
+        "routed_through",
+        "successor_of"
+      ]
+    },
+    {
+      "claim_id": "D10-CL-U-002",
+      "debt_id": "GTRS-OS-DEBT-A-COMPLETE-CHAIN-WITNESS",
+      "edge_types": [
+        "routed_through",
+        "successor_of"
+      ]
+    },
+    {
+      "claim_id": "D10-CL-U-002",
+      "debt_id": "GTRS-OS-DEBT-C-COMPLETE-CHAIN-WITNESS",
+      "edge_types": [
+        "routed_through",
+        "successor_of"
+      ]
+    },
+    {
+      "claim_id": "D10-CL-U-002",
+      "debt_id": "GTRS-PC-DEBT-A-COMPLETE-CHAIN-WITNESS",
+      "edge_types": [
+        "routed_through",
+        "successor_of"
+      ]
+    },
+    {
+      "claim_id": "D10-CL-U-002",
+      "debt_id": "GTRS-PC-DEBT-C-COMPLETE-CHAIN-WITNESS",
+      "edge_types": [
+        "routed_through",
+        "successor_of"
+      ]
+    },
+    {
+      "claim_id": "D10-CL-U-003",
+      "debt_id": "D6V2-DEBT-C-MATHEMATICAL-ABSORBABILITY",
+      "edge_types": [
+        "routed_through",
+        "successor_of"
+      ]
+    },
+    {
+      "claim_id": "D10-CL-U-003",
+      "debt_id": "D7-DEBT-A-ABSORBABILITY",
+      "edge_types": [
+        "routed_through",
+        "successor_of"
+      ]
+    },
+    {
+      "claim_id": "D10-CL-U-003",
+      "debt_id": "D7-DEBT-PHYSICAL-CHANNEL-ATTRIBUTION",
+      "edge_types": [
+        "blocked_by",
+        "routed_through",
+        "successor_of"
+      ]
+    },
+    {
+      "claim_id": "D10-CL-U-004",
+      "debt_id": "D8B-CI-DEBT-A-ANALYSIS-METRIC",
+      "edge_types": [
+        "routed_through",
+        "successor_of"
+      ]
+    },
+    {
+      "claim_id": "D10-CL-U-004",
+      "debt_id": "D8B-CI-DEBT-A-FORMED-BRANCH-ALPHA",
+      "edge_types": [
+        "routed_through",
+        "successor_of"
+      ]
+    },
+    {
+      "claim_id": "D10-CL-U-004",
+      "debt_id": "D8B-CI-DEBT-A-TEMPORAL-STABILITY",
+      "edge_types": [
+        "routed_through",
+        "successor_of"
+      ]
+    },
+    {
+      "claim_id": "D10-CL-U-004",
+      "debt_id": "D8B-CI-DEBT-C-FORMED-BRANCH-ALPHA",
+      "edge_types": [
+        "routed_through",
+        "successor_of"
+      ]
+    },
+    {
+      "claim_id": "D10-CL-U-004",
+      "debt_id": "D8B-CI-DEBT-C-TEMPORAL-STABILITY",
+      "edge_types": [
+        "routed_through",
+        "successor_of"
+      ]
+    },
+    {
+      "claim_id": "D10-CL-U-004",
+      "debt_id": "GTRS-CI-PC-DEBT-COMPLETE-CHAIN-AND-ANALYSIS",
+      "edge_types": [
+        "routed_through",
+        "successor_of"
+      ]
+    },
+    {
+      "claim_id": "D10-CL-U-004",
+      "debt_id": "GTRS-COMP-DEBT-MATCHED-RUNTIME-DISCRIMINATION",
+      "edge_types": [
+        "routed_through",
+        "successor_of"
+      ]
+    },
+    {
+      "claim_id": "D10-CL-U-005",
+      "debt_id": "D7G-DEBT-STAR-PAIR-NORMALIZATION-ALTERNATIVES",
+      "edge_types": [
+        "routed_through",
+        "successor_of"
+      ]
+    },
+    {
+      "claim_id": "D10-CL-X-002",
+      "debt_id": "D7GV2-DEBT-H4-CAPACITY-AND-PROFILE-COMPARABILITY",
+      "edge_types": [
+        "negative_successor_of",
+        "successor_of"
+      ]
+    },
+    {
+      "claim_id": "D10-CL-X-002",
+      "debt_id": "GTRS-CI-PC-DEBT-COMPOSITION-PROFILE-STATUS",
+      "edge_types": [
+        "negative_successor_of",
+        "successor_of"
+      ]
+    },
+    {
+      "claim_id": "D10-CL-X-002",
+      "debt_id": "GTRS-COMP-DEBT-MATCHED-RUNTIME-DISCRIMINATION",
+      "edge_types": [
+        "supported_by",
+        "negative_successor_of",
+        "successor_of"
+      ]
+    },
+    {
+      "claim_id": "D10-CL-X-003",
+      "debt_id": "D8B-CI-DEBT-A-FORMED-BRANCH-ALPHA",
+      "edge_types": [
+        "negative_successor_of",
+        "successor_of"
+      ]
+    },
+    {
+      "claim_id": "D10-CL-X-003",
+      "debt_id": "D8B-CI-DEBT-A-TEMPORAL-STABILITY",
+      "edge_types": [
+        "negative_successor_of",
+        "successor_of"
+      ]
+    },
+    {
+      "claim_id": "D10-CL-X-003",
+      "debt_id": "D8B-CI-DEBT-C-FORMED-BRANCH-ALPHA",
+      "edge_types": [
+        "negative_successor_of",
+        "successor_of"
+      ]
+    },
+    {
+      "claim_id": "D10-CL-X-003",
+      "debt_id": "D8B-CI-DEBT-C-TEMPORAL-STABILITY",
+      "edge_types": [
+        "negative_successor_of",
+        "successor_of"
+      ]
+    },
+    {
+      "claim_id": "D10-CL-X-004",
+      "debt_id": "D7-DEBT-A-CORE-STATUS",
+      "edge_types": [
+        "negative_successor_of",
+        "successor_of"
+      ]
+    },
+    {
+      "claim_id": "D10-CL-X-006",
+      "debt_id": "D7-DEBT-A-CORE-STATUS",
+      "edge_types": [
+        "negative_successor_of",
+        "successor_of"
+      ]
+    },
+    {
+      "claim_id": "D10-CL-X-005",
+      "debt_id": "D7V2-DEBT-B-FUTURE-SOURCE-BACKED-WRITER",
+      "edge_types": [
+        "supported_by",
+        "negative_successor_of",
+        "successor_of"
+      ]
+    },
+    {
+      "claim_id": "D10-HCL-GTRS-RG-DEBT-C1-SECTION-REGULARITY",
+      "debt_id": "GTRS-RG-DEBT-C1-SECTION-REGULARITY",
+      "edge_types": [
+        "predecessor_claim"
+      ]
+    },
+    {
+      "claim_id": "D10-HCL-GTRS-OS-DEBT-A-COMPLETE-CHAIN-WITNESS",
+      "debt_id": "GTRS-OS-DEBT-A-COMPLETE-CHAIN-WITNESS",
+      "edge_types": [
+        "predecessor_claim"
+      ]
+    },
+    {
+      "claim_id": "D10-HCL-GTRS-OS-DEBT-C-COMPLETE-CHAIN-WITNESS",
+      "debt_id": "GTRS-OS-DEBT-C-COMPLETE-CHAIN-WITNESS",
+      "edge_types": [
+        "predecessor_claim"
+      ]
+    },
+    {
+      "claim_id": "D10-HCL-D8B-CI-DEBT-A-FORMED-BRANCH-ALPHA",
+      "debt_id": "D8B-CI-DEBT-A-FORMED-BRANCH-ALPHA",
+      "edge_types": [
+        "predecessor_claim"
+      ]
+    },
+    {
+      "claim_id": "D10-HCL-D8B-CI-DEBT-C-FORMED-BRANCH-ALPHA",
+      "debt_id": "D8B-CI-DEBT-C-FORMED-BRANCH-ALPHA",
+      "edge_types": [
+        "predecessor_claim"
+      ]
+    },
+    {
+      "claim_id": "D10-HCL-D8B-CI-DEBT-A-TEMPORAL-STABILITY",
+      "debt_id": "D8B-CI-DEBT-A-TEMPORAL-STABILITY",
+      "edge_types": [
+        "predecessor_claim"
+      ]
+    },
+    {
+      "claim_id": "D10-HCL-D8B-CI-DEBT-C-TEMPORAL-STABILITY",
+      "debt_id": "D8B-CI-DEBT-C-TEMPORAL-STABILITY",
+      "edge_types": [
+        "predecessor_claim"
+      ]
+    },
+    {
+      "claim_id": "D10-HCL-D8B-CI-DEBT-A-ANALYSIS-METRIC",
+      "debt_id": "D8B-CI-DEBT-A-ANALYSIS-METRIC",
+      "edge_types": [
+        "predecessor_claim"
+      ]
+    },
+    {
+      "claim_id": "D10-HCL-GTRS-CI-DEBT-A-NONZERO-CHAIN-WITNESS",
+      "debt_id": "GTRS-CI-DEBT-A-NONZERO-CHAIN-WITNESS",
+      "edge_types": [
+        "predecessor_claim"
+      ]
+    },
+    {
+      "claim_id": "D10-HCL-GTRS-CI-DEBT-C-NONZERO-CHAIN-WITNESS",
+      "debt_id": "GTRS-CI-DEBT-C-NONZERO-CHAIN-WITNESS",
+      "edge_types": [
+        "predecessor_claim"
+      ]
+    },
+    {
+      "claim_id": "D10-HCL-D8A-DEBT-C-NONIDENTITY-FLAT-SHARP-WITNESS",
+      "debt_id": "D8A-DEBT-C-NONIDENTITY-FLAT-SHARP-WITNESS",
+      "edge_types": [
+        "predecessor_claim"
+      ]
+    },
+    {
+      "claim_id": "D10-HCL-D7GV2-DEBT-H4-CAPACITY-AND-PROFILE-COMPARABILITY",
+      "debt_id": "D7GV2-DEBT-H4-CAPACITY-AND-PROFILE-COMPARABILITY",
+      "edge_types": [
+        "predecessor_claim"
+      ]
+    },
+    {
+      "claim_id": "D10-HCL-D7GV2-DEBT-METRIC-INVERSE-SOLVER-AND-COVARIANCE-VERIFICATION",
+      "debt_id": "D7GV2-DEBT-METRIC-INVERSE-SOLVER-AND-COVARIANCE-VERIFICATION",
+      "edge_types": [
+        "predecessor_claim"
+      ]
+    },
+    {
+      "claim_id": "D10-HCL-D7G-DEBT-STAR-PAIR-NORMALIZATION-ALTERNATIVES",
+      "debt_id": "D7G-DEBT-STAR-PAIR-NORMALIZATION-ALTERNATIVES",
+      "edge_types": [
+        "predecessor_claim"
+      ]
+    },
+    {
+      "claim_id": "D10-HCL-D7V2-DEBT-B-FUTURE-SOURCE-BACKED-WRITER",
+      "debt_id": "D7V2-DEBT-B-FUTURE-SOURCE-BACKED-WRITER",
+      "edge_types": [
+        "predecessor_claim"
+      ]
+    },
+    {
+      "claim_id": "D10-HCL-D6V2-DEBT-C-MATHEMATICAL-ABSORBABILITY",
+      "debt_id": "D6V2-DEBT-C-MATHEMATICAL-ABSORBABILITY",
+      "edge_types": [
+        "predecessor_claim"
+      ]
+    },
+    {
+      "claim_id": "D10-HCL-D7-DEBT-A-CORE-STATUS",
+      "debt_id": "D7-DEBT-A-CORE-STATUS",
+      "edge_types": [
+        "predecessor_claim",
+        "blocked_by"
+      ]
+    },
+    {
+      "claim_id": "D10-HCL-D7-DEBT-A-ABSORBABILITY",
+      "debt_id": "D7-DEBT-A-ABSORBABILITY",
+      "edge_types": [
+        "predecessor_claim"
+      ]
+    },
+    {
+      "claim_id": "D10-HCL-D7-DEBT-A-UNITS-AND-GAUGE",
+      "debt_id": "D7-DEBT-A-UNITS-AND-GAUGE",
+      "edge_types": [
+        "predecessor_claim"
+      ]
+    },
+    {
+      "claim_id": "D10-HCL-D7-DEBT-FORMED-BRANCH-RUNTIME",
+      "debt_id": "D7-DEBT-FORMED-BRANCH-RUNTIME",
+      "edge_types": [
+        "predecessor_claim"
+      ]
+    },
+    {
+      "claim_id": "D10-HCL-D7-DEBT-PHYSICAL-CHANNEL-ATTRIBUTION",
+      "debt_id": "D7-DEBT-PHYSICAL-CHANNEL-ATTRIBUTION",
+      "edge_types": [
+        "predecessor_claim"
+      ]
+    },
+    {
+      "claim_id": "D10-HCL-D7-DEBT-COVARIANCE-VERIFICATION",
+      "debt_id": "D7-DEBT-COVARIANCE-VERIFICATION",
+      "edge_types": [
+        "predecessor_claim"
+      ]
+    },
+    {
+      "claim_id": "D10-HCL-D5V2-DEBT-CURRENT-SINGULAR-SUCCESSOR",
+      "debt_id": "D5V2-DEBT-CURRENT-SINGULAR-SUCCESSOR",
+      "edge_types": [
+        "predecessor_claim"
+      ]
+    },
+    {
+      "claim_id": "D10-HCL-D8A-DEBT-HODGE-CORRECTION-NORMATIVE-ENCODING",
+      "debt_id": "D8A-DEBT-HODGE-CORRECTION-NORMATIVE-ENCODING",
+      "edge_types": [
+        "predecessor_claim",
+        "blocked_by"
+      ]
+    },
+    {
+      "claim_id": "D10-HCL-GTRS-PC-DEBT-A-COMPLETE-CHAIN-WITNESS",
+      "debt_id": "GTRS-PC-DEBT-A-COMPLETE-CHAIN-WITNESS",
+      "edge_types": [
+        "predecessor_claim"
+      ]
+    },
+    {
+      "claim_id": "D10-HCL-GTRS-PC-DEBT-C-COMPLETE-CHAIN-WITNESS",
+      "debt_id": "GTRS-PC-DEBT-C-COMPLETE-CHAIN-WITNESS",
+      "edge_types": [
+        "predecessor_claim"
+      ]
+    },
+    {
+      "claim_id": "D10-HCL-GTRS-COMP-DEBT-MATCHED-RUNTIME-DISCRIMINATION",
+      "debt_id": "GTRS-COMP-DEBT-MATCHED-RUNTIME-DISCRIMINATION",
+      "edge_types": [
+        "predecessor_claim"
+      ]
+    },
+    {
+      "claim_id": "D10-HCL-GTRS-CI-PC-DEBT-COMPLETE-CHAIN-AND-ANALYSIS",
+      "debt_id": "GTRS-CI-PC-DEBT-COMPLETE-CHAIN-AND-ANALYSIS",
+      "edge_types": [
+        "predecessor_claim"
+      ]
+    },
+    {
+      "claim_id": "D10-HCL-GTRS-CI-PC-DEBT-COMPOSITION-PROFILE-STATUS",
+      "debt_id": "GTRS-CI-PC-DEBT-COMPOSITION-PROFILE-STATUS",
+      "edge_types": [
+        "predecessor_claim",
+        "blocked_by"
+      ]
+    }
+  ],
+  "claim_count": 39,
+  "historical_claim_count": 29,
+  "total_claim_node_count": 68,
+  "claim_debt_edge_count": 129,
+  "category_counts": {
+    "normative": 9,
+    "optional": 7,
+    "conditional": 12,
+    "open": 5,
+    "negative": 6
+  },
+  "artifact_digest": "2bd78fc5d9a075d0958813dd199a8a57a8c23565e10b68fce89c967d4b3ee373"
+}

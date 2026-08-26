@@ -1,0 +1,112 @@
+{
+  "schema_version": "grc9v4_d9_residual_debt_ledger_v1",
+  "artifact_id": "GRC9V4-D9-RESIDUAL-DEBT-LEDGER-v1",
+  "gate_id": "D9",
+  "status": "accepted_bounded",
+  "predecessor_record_id": "GRC9V4-GTRS-CI-PC-v1",
+  "predecessor_decision_digest": "5f003ff5f4dbbb60788ac50827b5a3ccff7ff7e194173721f15503bc6024682a",
+  "predecessor_live_debt_count": 47,
+  "predecessor_dispositions": [
+    {"debt_id": "GTRS-RG-DEBT-INVARIANT-SECTION-ENVELOPE-AND-EVENTS", "status": "resolved", "reason": "D9_constructs_the_target_graph_completion_and_invariant_section_under_the_existing_bounded_graph_transform_theorem;_numeric_bound_instantiation_is_routed_to_verification", "successor_verification_obligation_id": "D9-VERIFY-QUANTITATIVE-PARAMETER-ENVELOPES"},
+    {"debt_id": "GTRS-RG-DEBT-C1-SECTION-REGULARITY", "status": "carried", "reason": "RG2b_runtime_lifecycle_does_not_upgrade_the_Lipschitz_section_to_C1"},
+    {"debt_id": "GTRS-OS-DEBT-QUANTITATIVE-SPLIT-ENVELOPE", "status": "resolved", "reason": "the_constructive_split_bound_is_design_complete_and_numerical_parameter_instantiation_is_routed_to_verification", "successor_verification_obligation_id": "D9-VERIFY-QUANTITATIVE-PARAMETER-ENVELOPES"},
+    {"debt_id": "GTRS-OS-DEBT-A-COMPLETE-CHAIN-WITNESS", "status": "carried", "reason": "lifecycle_closure_is_not_an_executed_endpoint_witness"},
+    {"debt_id": "GTRS-OS-DEBT-C-COMPLETE-CHAIN-WITNESS", "status": "carried", "reason": "lifecycle_closure_is_not_an_executed_endpoint_witness"},
+    {"debt_id": "D8B-CI-DEBT-A-FORMED-BRANCH-ALPHA", "status": "carried", "reason": "D9_supplies_charge_tangent_but_not_formed_branch_alpha"},
+    {"debt_id": "D8B-CI-DEBT-C-FORMED-BRANCH-ALPHA", "status": "carried", "reason": "D9_supplies_charge_tangent_but_not_formed_branch_alpha"},
+    {"debt_id": "D8B-CI-DEBT-A-TEMPORAL-STABILITY", "status": "carried", "reason": "lifecycle_validity_is_not_temporal_stability"},
+    {"debt_id": "D8B-CI-DEBT-C-TEMPORAL-STABILITY", "status": "carried", "reason": "lifecycle_validity_is_not_temporal_stability"},
+    {"debt_id": "D8B-CI-DEBT-CHARGE-CONSTRAINT-PROJECTOR", "status": "resolved", "reason": "the_actual_complete_write_path_derives_Q=sum_C_DQ_V_Q_and_the_C_sector_H0_orthogonal_projector_with_a_canonical_nonorthogonality_claiming_identity_retraction_on_nonresource_coordinates"},
+    {"debt_id": "D8B-CI-DEBT-A-ANALYSIS-METRIC", "status": "carried", "reason": "the_C_sector_projector_and_full_tangent_do_not_select_a_product_metric_or_full_state_orthogonal_projector_for_A"},
+    {"debt_id": "GTRS-CI-DEBT-A-NONZERO-CHAIN-WITNESS", "status": "carried", "reason": "D9_does_not_execute_a_nonzero_committed_endpoint_witness"},
+    {"debt_id": "GTRS-CI-DEBT-C-NONZERO-CHAIN-WITNESS", "status": "carried", "reason": "D9_does_not_execute_a_nonzero_committed_endpoint_witness"},
+    {"debt_id": "GTRS-CI-DEBT-A-QUANTITATIVE-IFT-RADIUS", "status": "resolved", "reason": "D9_replaces_pointwise_IFT_only_scope_with_a_bounded_domain_contraction_theorem;_numerical_constant_instantiation_is_verification", "successor_verification_obligation_id": "D9-VERIFY-QUANTITATIVE-PARAMETER-ENVELOPES"},
+    {"debt_id": "GTRS-CI-DEBT-C-QUANTITATIVE-IFT-AND-Q-CONDITIONING", "status": "resolved", "reason": "D9_combines_stratum_local_bounded_domain_contraction_with_regular_target_H_M_I_4M_and_stratified_root_admission;_numerical_conditioning_is_verification", "successor_verification_obligation_id": "D9-VERIFY-QUANTITATIVE-PARAMETER-ENVELOPES"},
+    {"debt_id": "GTRS-CI-DEBT-A-GLOBAL-ROOT-AND-TOPOLOGY", "status": "resolved", "reason": "D9_supplies_bounded_domain_contraction_uniqueness_and_typed_resource_plus_history_preserving_or_lossy_A_event_continuation"},
+    {"debt_id": "GTRS-CI-DEBT-C-GLOBAL-ROOT-AND-TOPOLOGY", "status": "resolved", "reason": "D9_supplies_bounded_domain_contraction_uniqueness_stratified_C_root_admission_and_typed_resource_event_continuation"},
+    {"debt_id": "D8A-DEBT-C-DYNAMIC-SELECTOR-AND-STRATA", "status": "resolved", "reason": "D9_freezes_basis_independent_selector_strata_and_accepts_exactly_one_regular_self_consistent_root_without_previous_rank_root_or_eigenbasis_authority"},
+    {"debt_id": "D8A-DEBT-C-NONIDENTITY-FLAT-SHARP-WITNESS", "status": "carried", "reason": "lifecycle_closure_does_not_supply_the_witness"},
+    {"debt_id": "D7GV2-DEBT-DISABLED-TRANSITION-REDUCTION", "status": "resolved", "reason": "all_ten_profiles_have_explicit_candidate_specific_exact_V3_disabled_transition_and_state_projection_witnesses_with_observable_and_lifecycle_surfaces_separately_scoped"},
+    {"debt_id": "D7GV2-DEBT-H4-CAPACITY-AND-PROFILE-COMPARABILITY", "status": "carried", "reason": "D9_preserves_profile_identity_without_ranking_capacity_profiles"},
+    {"debt_id": "D7GV2-DEBT-METRIC-INVERSE-SOLVER-AND-COVARIANCE-VERIFICATION", "status": "carried", "reason": "D9_freezes_solver_and_covariance_contracts_but_not_numeric_implementation_verification"},
+    {"debt_id": "D7G-DEBT-TOPOLOGY-AND-BOUNDARY-TRANSPORT", "status": "resolved", "reason": "D9_freezes_typed_T_C_evt_resource_transport_candidate_specific_history_transport_or_reset_whole_lifecycle_tuple_migration_target_reconstruction_readmission_and_atomic_event_commit"},
+    {"debt_id": "D7G-DEBT-STAR-PAIR-NORMALIZATION-ALTERNATIVES", "status": "carried", "reason": "D9_does_not_select_a_normative_normalization"},
+    {"debt_id": "D7V2-DEBT-B-FUTURE-SOURCE-BACKED-WRITER", "status": "carried", "reason": "B_remains_routed_not_rejected_without_a_lifecycle_profile"},
+    {"debt_id": "D6V2-DEBT-C-MATHEMATICAL-ABSORBABILITY", "status": "carried", "reason": "lifecycle_closure_does_not_resolve_absorbability"},
+    {"debt_id": "D7-DEBT-A-CORE-STATUS", "status": "carried", "reason": "D9_does_not_classify_A_as_core_or_extension"},
+    {"debt_id": "D7-DEBT-A-DISABLED-PROFILE-STAGING", "status": "resolved", "reason": "A_disabled_mode_now_has_exact_V3_branch_stage_and_state_schema_parity"},
+    {"debt_id": "D7-DEBT-A-TOPOLOGY-LIFECYCLE", "status": "resolved", "reason": "D9_admits_typed_T_C_evt_plus_either_history_preserving_W_transport_or_exact_V3_history_free_W_reconstruction_with_a_loss_receipt_and_maps_the_reset_baseline_and_Q_target"},
+    {"debt_id": "D7-DEBT-A-ABSORBABILITY", "status": "carried", "reason": "D9_does_not_resolve_A_absorbability"},
+    {"debt_id": "D7-DEBT-A-UNITS-AND-GAUGE", "status": "carried", "reason": "D9_preserves_but_does_not_close_the_units_and_gauge_audit"},
+    {"debt_id": "D7V2-DEBT-D9-SURVIVOR-LIFECYCLE", "status": "resolved", "reason": "the_ten_profile_registry_260_cell_matrix_and_16_multi_authority_subcases_close_bounded_survivor_lifecycle_and_typed_event_continuation_for_all_ten_rows"},
+    {"debt_id": "D7-DEBT-FORMED-BRANCH-RUNTIME", "status": "carried", "reason": "D9_is_design_level_not_formed_branch_runtime_evidence"},
+    {"debt_id": "D7-DEBT-PHYSICAL-CHANNEL-ATTRIBUTION", "status": "carried", "reason": "lifecycle_contracts_do_not_supply_physical_attribution"},
+    {"debt_id": "D7-DEBT-COVARIANCE-VERIFICATION", "status": "carried", "reason": "representation_rules_are_frozen_but_executable_covariance_verification_remains"},
+    {"debt_id": "D5V2-DEBT-CURRENT-SINGULAR-SUCCESSOR", "status": "carried", "reason": "singular_disposition_fails_closed_without_constructing_a_singular_successor"},
+    {"debt_id": "D8A-DEBT-HODGE-CORRECTION-NORMATIVE-ENCODING", "status": "carried", "reason": "D9_consumes_the_correction_but_normative_encoding_waits_for_D10"},
+    {"debt_id": "GTRS-PC-DEBT-TOPOLOGY-EVENT-INTERSPACE", "status": "resolved", "reason": "D9_admits_a_typed_bounded_symmetry_PSD_and_covariance_preserving_L_K4_evt_with_L_1_Z_L_1_star_only_as_an_explicit_adjoint_typed_factorization_and_explicit_archive_plus_Z_zero_history_reset_when_no_map_exists"},
+    {"debt_id": "GTRS-PC-DEBT-A-COMPLETE-CHAIN-WITNESS", "status": "carried", "reason": "lifecycle_closure_is_not_a_nonzero_endpoint_witness"},
+    {"debt_id": "GTRS-PC-DEBT-C-COMPLETE-CHAIN-WITNESS", "status": "carried", "reason": "lifecycle_closure_is_not_a_nonzero_endpoint_witness"},
+    {"debt_id": "GTRS-COMP-DEBT-PC-PARAMETRIC-ENVELOPE-AND-WRITER", "status": "resolved", "reason": "PC_writer_and_constructive_parametric_bounds_are_design_complete;_numerical_instantiation_is_routed_to_post_spec_verification", "successor_verification_obligation_id": "D9-VERIFY-QUANTITATIVE-PARAMETER-ENVELOPES"},
+    {"debt_id": "GTRS-COMP-DEBT-MATCHED-RUNTIME-DISCRIMINATION", "status": "carried", "reason": "D9_does_not_rank_profiles_or_execute_matched_runtime_rows"},
+    {"debt_id": "GTRS-CI-PC-DEBT-A-QUANTITATIVE-COMPOSITE-ENVELOPE", "status": "resolved", "reason": "the_CI_PC_self_map_source_closure_and_contraction_inequalities_are_design_complete;_numeric_A_instantiation_is_verification", "successor_verification_obligation_id": "D9-VERIFY-QUANTITATIVE-PARAMETER-ENVELOPES"},
+    {"debt_id": "GTRS-CI-PC-DEBT-C-QUANTITATIVE-COMPOSITE-ENVELOPE", "status": "resolved", "reason": "the_CI_PC_stratum_local_self_map_source_closure_stratified_root_and_contraction_inequalities_are_design_complete;_numeric_C_instantiation_is_verification", "successor_verification_obligation_id": "D9-VERIFY-QUANTITATIVE-PARAMETER-ENVELOPES"},
+    {"debt_id": "GTRS-CI-PC-DEBT-COMPLETE-CHAIN-AND-ANALYSIS", "status": "carried", "reason": "D9_preserves_root_level_nonannihilation_without_committed_endpoint_analysis"},
+    {"debt_id": "GTRS-CI-PC-DEBT-D9-HYBRID-LIFECYCLE-INTEGRATION", "status": "resolved", "reason": "CI_PC_is_integrated_into_the_population_registry_coverage_migrations_charge_and_identity_contract"},
+    {"debt_id": "GTRS-CI-PC-DEBT-COMPOSITION-PROFILE-STATUS", "status": "carried", "reason": "unit_plus_unit_gain_two_profile_requires_D10_entry_classification_before_spec_authorization"}
+  ],
+  "predecessor_disposition_summary": {
+    "carried": 29,
+    "resolved": 18,
+    "superseded": 0,
+    "total": 47,
+    "silent_drop_count": 0
+  },
+  "current_debts": [],
+  "D9_resolved_results": [
+    {
+      "result_id": "D9-RESULT-HISTORY-PRESERVING-TOPOLOGY-WITHOUT-LINEAGE",
+      "status": "resolved_negative",
+      "result": "generic_lossless_history_preservation_is_not_canonically_definable_without_sufficient_event_lineage;_dimension_reduction_precludes_injectivity_and_absent_correspondence_leaves_symmetry_related_target_embeddings_unprivileged",
+      "lawful_generic_fallback": "archive_or_drop_source_history_canonically_initialize_or_zero_target_history_reconstruct_target_derived_state_and_emit_an_explicit_loss_receipt",
+      "stronger_preservation": "admitted_only_when_the_typed_event_supplies_a_sufficient_bounded_covariant_history_map_and_target_profile_bounds_pass",
+      "claim_boundary": "typed_substrate_lifecycle_continuation_does_not_establish_continuation_spectrum_identity_preservation_across_the_event"
+    }
+  ],
+  "post_spec_verification_obligations": [
+    {
+      "obligation_id": "D9-VERIFY-QUANTITATIVE-PARAMETER-ENVELOPES",
+      "scope": "instantiate_and_pressure_OS_RG_CI_PC_and_CI_PC_bounds_conditioning_release_and_source_closure_constants",
+      "claim_blocked_until_verified": "numerical_operating_envelope_or_quantitative_profile_ranking",
+      "not_scientific_design_debt": true
+    },
+    {
+      "obligation_id": "D9-VERIFY-LIFECYCLE-RUNTIME-CONFORMANCE",
+      "scope": "execute_snapshot_reset_duplicate_failure_atomicity_replay_whole_lifecycle_tuple_event_and_profile_migration_and_coverage_contracts",
+      "claim_blocked_until_verified": "implemented_or_runtime_verified_lifecycle",
+      "not_scientific_design_debt": true
+    },
+    {
+      "obligation_id": "D9-VERIFY-MIGRATION-AND-EVENT-CONFORMANCE",
+      "scope": "execute_A_C_profile_and_topology_migrations_over_current_state_reset_baseline_and_Q_target_including_typed_L_K4_evt_history_transport_or_reset_receipts_target_reconstruction_and_atomic_commit",
+      "claim_blocked_until_verified": "implemented_migration_or_topology_event_capability",
+      "not_scientific_design_debt": true
+    },
+    {
+      "obligation_id": "D9-VERIFY-CHARGE-AND-EVENT-RECEIPTS",
+      "scope": "verify_varpi_covector_T_C_evt_conservation_positivity_Q_target_updates_integrated_sources_impulses_and_Delta_Q_event_receipts",
+      "claim_blocked_until_verified": "implemented_nonunit_external_or_impulsive_accounting_profile",
+      "not_scientific_design_debt": true
+    }
+  ],
+  "live_debt_union": {
+    "carried_predecessor_count": 29,
+    "current_debt_count": 0,
+    "D9_resolved_negative_result_count": 1,
+    "total": 29,
+    "post_spec_verification_obligation_count": 4,
+    "D10_consumption_rule": "consume_the_29_carried_predecessor_scientific_debts_by_exact_identity;_consume_the_D9_no_lineage_history_preservation_result_as_a_resolved_negative_claim_boundary;_do_not_relabel_the_four_post_spec_verification_obligations_as_missing_D9_mathematics",
+    "silent_drop_allowed": false
+  },
+  "artifact_digest": "8c37c23c0c28915f9ac15ce867ea0e1532a1e5c233c93d37af932975b4225da8"
+}

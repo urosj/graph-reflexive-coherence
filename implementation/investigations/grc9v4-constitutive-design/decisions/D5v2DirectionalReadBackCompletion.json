@@ -1,0 +1,882 @@
+{
+  "schema_version": "grc9v4_constitutive_decision_v1",
+  "record_type": "grc9v4_constitutive_design_gate_decision",
+  "record_id": "GRC9V4-CD-D5V2-v1",
+  "gate_id": "D5-v2",
+  "status": "accepted_bounded",
+  "predecessor_decision_digest": "5862cbab0d36e1137dc647d7d21d48f77666a77bf9e7b178c830d323e4ed6309",
+  "supersedes": {
+    "record_id": "GRC9V4-CD-D5-v1",
+    "decision_digest": "453416f42beefa1c9e725b675a0af7d4fd49c3e83691ee16e3e3bcfb6d37f213",
+    "scope": "candidate_B_and_C_directional_Read_Back_completion_plus_the_common_candidate_operator_comparison_contract",
+    "unchanged_A_contract_remains_in_force": true
+  },
+  "source_identities": [
+    {
+      "repository": "graph-reflexive-coherence",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D4v2CandidateGeometryAndCarrierCompletion.json",
+      "role": "accepted_chronological_predecessor_typed_B_carrier_C_retained_geometry_and_complete_live_debt_union",
+      "semantic_decision_digest": "5862cbab0d36e1137dc647d7d21d48f77666a77bf9e7b178c830d323e4ed6309",
+      "sha256": "042769ba96e543bd0805c245918d2e33e6453e68dea98e503094393e25708b7c"
+    },
+    {
+      "repository": "graph-reflexive-coherence",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D5DirectionalReadBack.json",
+      "role": "superseded_gate_A_operator_C_Hodge_family_and_B_missing_operator_boundary",
+      "semantic_decision_digest": "453416f42beefa1c9e725b675a0af7d4fd49c3e83691ee16e3e3bcfb6d37f213",
+      "sha256": "1f561fb8feaefacf0e331333d2f7153057e5667f5a450f5f6644766774c340f3"
+    },
+    {
+      "repository": "graph-reflexive-coherence",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D6TotalCurrentClosure.json",
+      "role": "accepted_v1_total_current_contract_reopened_for_B_and_for_C_nonisometric_identification",
+      "semantic_decision_digest": "0c78ede1551ece13c4b4fc916f60531bdc30219791bf90be574e5b0f80aa3f16",
+      "sha256": "5ae4e998a79537a7cb00deca8a033548532e8f04c2e80a484060b16c3c480c19"
+    },
+    {
+      "repository": "graph-reflexive-coherence",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D7ClosedWriteReadLoop.json",
+      "role": "accepted_A_transition_and_transitive_debt_source_carried_unchanged",
+      "semantic_decision_digest": "7ffaf92b1672aa4fb116539ca5da36aef8bc7f3caf088827fd71f3ec7b483fea",
+      "sha256": "be5bbda2ec17aff844d7da02515149238e78da0eba3c76eb5c32ace51fc8e27c"
+    },
+    {
+      "repository": "graph-reflexive-coherence",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D1RetainedRepresentationOntologyAndCandidateAdmission.json",
+      "role": "accepted_B_independent_nonresource_and_C_derived_nonresource_ontology_boundary",
+      "semantic_decision_digest": "f8ae101beb9fa6e9827555eba64452087c1d19b6933325966f10c4c4ec64c507",
+      "sha256": "66d8cba043604c5ffd95c4e1b66af0f1c22abb335641583ebecc491ace62e6b6"
+    },
+    {
+      "repository": "graph-reflexive-coherence",
+      "path": "implementation/investigations/grc9v4-constitutive-design/GRC9V4ConstitutiveDesignBasis.md",
+      "role": "controlling_target_candidate_neutrality_and_no_invention_boundary",
+      "sha256": "07683d7d04d28a8a63952491d2f6e5c0c264657af54c69645092fda030610531"
+    },
+    {
+      "repository": "geometric-reflexive-coherence",
+      "path": "core/2026-08-ReadBack.md",
+      "role": "controlling_Read_Back_contract_Hodge_candidate_metric_identification_and_open_nonlinear_closure",
+      "sha256": "04c0bb8398febf58592297326e741271b46a52f504f6a0cea17a0bd6624efbb2"
+    },
+    {
+      "repository": "geometric-reflexive-coherence",
+      "path": "core/2026-08-TheContinuationSpectrum.md",
+      "role": "controlling_reduced_structural_domain_and_nonidentification_of_kinetic_structural_and_temporal_spectra",
+      "sha256": "14ee948d04c8803ae2c05e0d602d94c40d67bbed5399a8ef539bd024e77d95c5"
+    }
+  ],
+  "assumptions": [
+    {
+      "assumption_id": "D5V2-ASSUMPTION-FIXED-STRATUM",
+      "statement": "Operator derivations are local to a fixed-topology fixed-boundary positive-Hodge fixed-selector-rank smooth stratum; this is an analysis profile, not a fixed-topology V4 target."
+    },
+    {
+      "assumption_id": "D5V2-ASSUMPTION-PRE-READ-STAGE",
+      "statement": "T_B, T_C, H_1_pre, H_M, I_4M_pre, topology, boundary state, and the unsolved pre-write J_trial are frozen at the D4-v2 pre-read stage during each operator evaluation."
+    },
+    {
+      "assumption_id": "D5V2-ASSUMPTION-D4V2-OBJECTS",
+      "statement": "The accepted D4-v2 B carrier and C retained-geometry package are consumed exactly and are not replaced by new hidden state or a second adapter."
+    },
+    {
+      "assumption_id": "D5V2-ASSUMPTION-CONSTITUTIVE-NONSELECTION",
+      "statement": "Core theory constrains a Read-Back class but does not uniquely select the B Riesz completion or the C resolvent specialization; both remain bounded revision-level constitutive candidates."
+    },
+    {
+      "assumption_id": "D5V2-ASSUMPTION-DESIGN-WITNESS",
+      "statement": "Finite-dimensional matrix witnesses establish algebraic existence, typing, and control separation only; they are not runtime reachability, persistence, stability, or empirical mediation evidence."
+    },
+    {
+      "assumption_id": "D5V2-ASSUMPTION-C-SELECTOR",
+      "statement": "C selected-content counterfactuals remain in the preregistered smooth projector stratum and preserve the H_0_pre resource total; complement controls hold P_M_Delta C exactly fixed."
+    },
+    {
+      "assumption_id": "D5V2-ASSUMPTION-D6-OPEN",
+      "statement": "J_trial is not an already solved J_C; gain, regularity, same-beat recurrence, support, and conservation remain D6-v2 work."
+    },
+    {
+      "assumption_id": "D5V2-ASSUMPTION-D7-D7G-OPEN",
+      "statement": "No D5-v2 operator supplies a writer, a complete transition, common H_4, h_4, or a global structural-cultivation result."
+    },
+    {
+      "assumption_id": "D5V2-ASSUMPTION-CANDIDATE-NEUTRALITY",
+      "statement": "A is carried unchanged and B and C are completed independently; implementation proximity, formula simplicity, and present completeness do not rank the candidates."
+    },
+    {
+      "assumption_id": "D5V2-ASSUMPTION-ONTOLOGY",
+      "statement": "B remains an explicitly admitted independent nonresource V4 extension candidate, while C remains a deterministic nonserialized sector of C; neither status is silently promoted to core theory."
+    }
+  ],
+  "decision": {
+    "gate_role": "candidate_specific_directional_Read_Back_completion",
+    "scope": "derive_or_close_B_and_C_typed_directional_response_operators_after_D4v2_while_preserving_A_and_blocking_total_current_writeback_global_H4_runtime_and_selection_claims",
+    "changed_decision_scope": "D5v1_B_missing_operator_and_C_parameterized_operator_mediation_only",
+    "constitutive_nonuniqueness_rule": "a_canonical_metric_or_Hodge_construction_may_be_selected_as_a_bounded_V4_candidate_after_family_pressure_without_becoming_a_unique_core_theorem",
+    "candidate_set_before_D5v2": [
+      "V4-A-temporalized-W",
+      "V4-B-independent-derived-carrier",
+      "V4-C-constitutive-C-sector"
+    ],
+    "candidate_set_after_D5v2": [
+      "V4-A-temporalized-W",
+      "V4-B-independent-derived-carrier",
+      "V4-C-constitutive-C-sector"
+    ],
+    "candidate_rejected_count": 0,
+    "candidate_ranking_performed": false,
+    "architecture_selected": false,
+    "operator_family_count": 3,
+    "operator_level_retained_mediation_count": 3,
+    "physically_identified_Read_Back_channel_count": 0,
+    "D6v2_eligible_candidate_set": [
+      "V4-A-temporalized-W",
+      "V4-B-independent-derived-carrier",
+      "V4-C-constitutive-C-sector"
+    ],
+    "inherited_debt_reference": {
+      "inherited_via_path": "implementation/investigations/grc9v4-constitutive-design/decisions/D4v2CandidateGeometryAndCarrierCompletion.json",
+      "inherited_via_record_id": "GRC9V4-CD-D4V2-v1",
+      "inherited_via_decision_digest": "5862cbab0d36e1137dc647d7d21d48f77666a77bf9e7b178c830d323e4ed6309",
+      "inherited_via_sha256": "042769ba96e543bd0805c245918d2e33e6453e68dea98e503094393e25708b7c",
+      "authoritative_row_source_path": "implementation/investigations/grc9v4-constitutive-design/decisions/D7ClosedWriteReadLoop.json",
+      "authoritative_row_source_record_id": "GRC9V4-CD-D7-v1",
+      "authoritative_row_source_decision_digest": "7ffaf92b1672aa4fb116539ca5da36aef8bc7f3caf088827fd71f3ec7b483fea",
+      "authoritative_row_source_sha256": "be5bbda2ec17aff844d7da02515149238e78da0eba3c76eb5c32ace51fc8e27c",
+      "reference_rule": "these_exact_rows_remain_live_by_identity_status_and_blocker_flag_through_the_accepted_D4v2_predecessor;_count_only_inheritance_or_a_digest_row_mismatch_blocks_D6v2_debt_adjudication",
+      "independently_carried_immediate_rows": [
+        {
+          "debt_id": "D5-DEBT-C-HODGE-NORMATIVE-ENCODING",
+          "status": "independently_carried_nonblocking",
+          "must_close_before_D10": false
+        },
+        {
+          "debt_id": "D5-DEBT-C-DYNAMIC-SECTOR",
+          "status": "independently_carried_nonblocking_outside_profile",
+          "must_close_before_D10": false
+        }
+      ],
+      "transitive_rows": [
+        {
+          "debt_id": "D4-DEBT-GLOBAL-METRIC-CLOSURE",
+          "status": "carried_open_and_localized",
+          "must_close_before_D10": true
+        },
+        {
+          "debt_id": "D4-DEBT-A-UPDATE-AND-TOPOLOGY",
+          "status": "A_update_resolved_fixed_stratum_topology_carried_open",
+          "must_close_before_D10": true
+        },
+        {
+          "debt_id": "D4-DEBT-TOPOLOGY-INTERSPACE",
+          "status": "carried_open",
+          "must_close_before_D10": true
+        },
+        {
+          "debt_id": "D4-DEBT-RUNTIME-ANALYTICAL-MOBILITY",
+          "status": "carried_open",
+          "must_close_before_D10": true
+        },
+        {
+          "debt_id": "D4-DEBT-GAUGE-UNITS-NORMALIZATION-AND-REGULARIZATION",
+          "status": "narrowed_not_closed",
+          "must_close_before_D10": true
+        },
+        {
+          "debt_id": "D4-DEBT-C-SELECTOR-GEOMETRY-FIXED-POINT",
+          "status": "carried_open",
+          "must_close_before_D10": true
+        },
+        {
+          "debt_id": "D1-DEBT-REDUCTION-CONSTRUCTION",
+          "status": "carried_open",
+          "must_close_before_D10": true
+        },
+        {
+          "debt_id": "D1-DEBT-INFORMATION-CAPACITY-AND-RELEASE",
+          "status": "resolved_for_A_fixed_stratum_carried_for_B_C_and_events",
+          "must_close_before_D10": true
+        },
+        {
+          "debt_id": "D1-DEBT-HIDDEN-HELPER-AND-ADMIN-STATE",
+          "status": "resolved_for_A_reduced_transition_carried_for_D9_and_routed_candidates",
+          "must_close_before_D10": true
+        },
+        {
+          "debt_id": "D1-DEBT-CANDIDATE-EQUIVALENCE",
+          "status": "carried_open",
+          "must_close_before_D10": true
+        },
+        {
+          "debt_id": "D1-DEBT-CANDIDATE-D-CLOSED-SLOT",
+          "status": "carried_nonblocking",
+          "must_close_before_D10": false
+        },
+        {
+          "debt_id": "D2-DEBT-EXACT-UPDATE-OPERATORS",
+          "status": "resolved_for_A_carried_for_B_C",
+          "must_close_before_D10": true
+        },
+        {
+          "debt_id": "D2-DEBT-MULTIWRITE-INFORMATION-COVARIANCE-AND-RNG",
+          "status": "resolved_for_A_carried_for_B_C",
+          "must_close_before_D10": true
+        },
+        {
+          "debt_id": "D3-DEBT-FORMED-BRANCH-CONSTRUCTION",
+          "status": "carried_open",
+          "must_close_before_D10": true
+        },
+        {
+          "debt_id": "D3-DEBT-A-JOINT-STRUCTURAL-THEORY",
+          "status": "carried_nonblocking",
+          "must_close_before_D10": false
+        },
+        {
+          "debt_id": "D3-DEBT-B-JOINT-STRUCTURAL-THEORY",
+          "status": "carried_nonblocking",
+          "must_close_before_D10": false
+        },
+        {
+          "debt_id": "D3-DEBT-ACTIVE-CURRENT-JOINT-STRUCTURE",
+          "status": "carried_nonblocking",
+          "must_close_before_D10": false
+        },
+        {
+          "debt_id": "D3-DEBT-OPERATOR-REPRESENTATION-AND-TRANSPORT",
+          "status": "carried_open",
+          "must_close_before_D10": true
+        },
+        {
+          "debt_id": "D3-DEBT-FUNCTIONAL-NORMALIZATION-METRIC-AND-NULLS",
+          "status": "carried_open",
+          "must_close_before_D10": true
+        },
+        {
+          "debt_id": "D3-DEBT-NONSMOOTH-SELECTOR-BOUNDARY-AND-TANGENT-CONE",
+          "status": "carried_open",
+          "must_close_before_D10": true
+        }
+      ],
+      "immediate_row_count": 2,
+      "transitive_row_count": 20,
+      "transitive_pre_D10_blocker_count": 16,
+      "complete_inherited_row_count": 22
+    },
+    "current_typed_debt_count": 19,
+    "inherited_live_debt_row_count": 22,
+    "complete_live_debt_union_row_count": 41,
+    "source_claim_register": [
+      {
+        "claim_id": "D5V2-SRC-READBACK-CLASS",
+        "status": "controlling",
+        "claim": "Read-Back is a directional current functional of retained organization and present current, must vanish at zero present current, and must distinguish activity-through-retention from ordinary transport."
+      },
+      {
+        "claim_id": "D5V2-SRC-HODGE-CANDIDATE",
+        "status": "controlling_candidate_class",
+        "claim": "A bounded Hodge-spectral one-form response is a canonical candidate rather than a unique core law."
+      },
+      {
+        "claim_id": "D5V2-SRC-METRIC-IDENTIFICATION",
+        "status": "controlling",
+        "claim": "A physical current entering h_M must be transported by I_4M_pre and the output must be back-mapped before common physical-space use."
+      },
+      {
+        "claim_id": "D5V2-SRC-C-COHERENCE-ONLY",
+        "status": "controlling",
+        "claim": "C retained mediation may use T_C and induced H_M but may not add independent C-sector state."
+      },
+      {
+        "claim_id": "D5V2-SRC-B-EXTENSION",
+        "status": "revision_level_boundary",
+        "claim": "B is an admitted V4 independent nonresource candidate; its operator may be completed revision-specifically but is not inherited coherence-only Read-Back."
+      },
+      {
+        "claim_id": "D5V2-SRC-SPECTRA-SEPARATE",
+        "status": "controlling",
+        "claim": "Signed B response and C Hodge gains do not by themselves determine continuation stiffness, temporal relaxation, stability, or global structural sign."
+      }
+    ],
+    "common_Read_Back_contract": {
+      "input": "unsolved_pre_write_present_trial_current_J_trial_in_the_declared_physical_oriented_edge_one_form_space",
+      "output": "candidate_specific_directional_one_cochain_j_a_in_the_same_physical_space_after_any_required_metric_identification",
+      "zero_present_current": "J_trial_zero_implies_j_a_zero",
+      "retention_conditioning": "a_lawful_change_in_the_admitted_retained_object_must_change_the_operator_or_output_on_at_least_one_compatible_probe",
+      "compatibility_selectivity": "a_retained_change_in_an_operator_null_direction_or_C_complement_direction_need_not_change_output",
+      "read_off": "chi_a_zero_disables_only_the_explicit_j_a_channel_and_preserves_other_admitted_retained_conditioned_paths",
+      "resource_status": "j_a_is_transport_not_a_second_C_budget",
+      "operator_stage": "pre_write_and_before_D6v2_total_current_solution",
+      "claim_boundary": "operator_level_constitutive_completion_not_runtime_channel_identification"
+    },
+    "present_current_convention": {
+      "surface": "J_trial_k_unsolved_total_present_current_argument",
+      "not_J0": true,
+      "not_already_solved_J_C": true,
+      "retained_state_temporal_side": "preexisting_k_state_before_D7v2_write",
+      "geometry_temporal_side": "D4v2_pre_read_geometry_held_fixed_during_each_operator_probe",
+      "same_beat_new_retained_state_read": false,
+      "runtime_reachability_claimed": false
+    },
+    "candidate_operator_rows": [
+      {
+        "candidate_id": "V4-A-temporalized-W",
+        "row_id": "D5V2-A-UNCHANGED-OPERATOR",
+        "D5v2_disposition": "carried_unchanged_accepted_D5_operator_family",
+        "operator_id": "GRC9V4-D5-A-EDGE-CONTRAST-READBACK-v1",
+        "source_decision_digest": "453416f42beefa1c9e725b675a0af7d4fd49c3e83691ee16e3e3bcfb6d37f213",
+        "operator": "R_A_equals_chi_A_Diag_q_A_with_q_A_equals_W_A_minus_W_hat_over_W_A_plus_W_hat",
+        "changed_causal_object": false,
+        "retained_mediation_status": "accepted_operator_level_only",
+        "D6v2_handoff": "reuse_requires_explicit_unchanged_causal_object_proof_against_the_accepted_D6_and_D7_A_chain",
+        "claim_ceiling": "unchanged_bounded_A_operator_family_not_core_inherited_or_physically_identified_Read_Back"
+      },
+      {
+        "candidate_id": "V4-B-independent-derived-carrier",
+        "row_id": "D5V2-B-RIESZ-READBACK-COMPLETION",
+        "D5v2_disposition": "admitted_bounded_candidate_directional_Read_Back_completion",
+        "operator_id": "GRC9V4-D5V2-B-RIESZ-READBACK-v1",
+        "operator_provenance": "canonical_Riesz_endomorphism_of_the_D4v2_admitted_bilinear_carrier_selected_as_a_revision_specific_V4_completion_not_a_unique_core_law",
+        "retained_input": "independent_serialized_nonresource_T_B",
+        "metric_input": "positive_diagonal_H_1_pre_on_Omega1_h4_pre",
+        "Riesz_definition": "for_all_u_v_inner_H1pre_u_A_B_v_equals_T_B_u_v",
+        "dimensionless_endomorphism": "A_B_equals_H_1_pre_inverse_T_B",
+        "orthonormal_representation": "A_B_equals_H_1_pre_inverse_half_Theta_B_H_1_pre_positive_half_with_Theta_B_equals_H_1_pre_inverse_half_T_B_H_1_pre_inverse_half",
+        "operator": "R_B_equals_chi_B_A_B",
+        "equation": "j_B_phys_flat_equals_chi_B_H_1_pre_inverse_T_B_J_trial_phys_flat",
+        "domain": "oriented_live_edge_one_cochains_Omega1_h4_pre_on_the_D4v2_fixed_dimension_profile",
+        "codomain": "the_same_physical_oriented_live_edge_one_cochain_space",
+        "units": "H_1_pre_inverse_T_B_is_dimensionless_so_j_B_has_J_trial_units",
+        "orientation_covariance": "under_signed_edge_permutation_U_H1_prime_equals_U_H1_U_transpose_T_B_prime_equals_U_T_B_U_transpose_and_j_B_prime_equals_U_j_B",
+        "graph_covariance": "the_radius_one_line_graph_mask_and_operator_transform_under_graph_isomorphism_independently_of_edge_array_order",
+        "self_adjointness": "A_B_is_self_adjoint_in_the_H_1_pre_inner_product_because_T_B_is_symmetric",
+        "boundedness": "operator_norm_H1_of_A_B_equals_operator_norm_2_of_Theta_B_and_is_at_most_t_B_max",
+        "positivity": "not_required_and_not_claimed;_signed_Theta_B_modes_may_support_or_inhibit_the_explicit_current_channel",
+        "passive_null": "J_trial_zero_implies_j_B_zero_for_any_T_B",
+        "retained_neutral_null": "T_B_zero_implies_A_B_and_j_B_zero",
+        "compatibility_selectivity": "Delta_T_B_J_trial_zero_may_preserve_j_B_even_when_T_B_changes",
+        "physical_current_reversal": "J_trial_to_minus_J_trial_at_fixed_T_B_implies_j_B_to_minus_j_B",
+        "read_off": "chi_B_zero_removes_j_B_but_preserves_T_B_and_the_direct_kappa_B_T_B_to_K_4_path",
+        "direct_structural_off": "kappa_B_zero_removes_the_direct_T_B_to_K_4_path_but_preserves_R_B_and_diagnostic_j_B",
+        "direct_structural_off_scope": "algebraic_path_ablation_control_only_not_an_admissible_positive_B_candidate_profile_because_D4v2_requires_finite_preregistered_nonzero_kappa_B",
+        "gain_off": "zeta_B_zero_preserves_diagnostic_j_B_and_direct_kappa_B_T_B_to_K_4_but_blocks_j_B_from_total_current_and_any_current_tensor_K_4_path_pending_D6v2_D7G",
+        "direct_structural_path": "T_B_to_kappa_B_T_B_to_K_4_B",
+        "current_mediated_structural_path": "T_B_to_R_B_to_j_B_then_after_D6v2_graph_local_j_B_tensor_j_B_to_K_4",
+        "path_separation": "the_direct_path_is_linear_in_T_B_and_survives_read_off_while_the_current_mediated_path_requires_chi_B_present_current_D6v2_gain_and_D7G_local_tensor_assembly",
+        "double_count_rule": "neither_path_is_evidence_for_the_other_and_a_future_shared_structural_sum_must_preserve_separate_switches_units_and_attribution",
+        "family_pressure": [
+          {
+            "family": "raw_T_B_times_J_trial",
+            "disposition": "rejected_as_untyped",
+            "reason": "a_bilinear_form_requires_metric_raising_before_it_is_an_endomorphism"
+          },
+          {
+            "family": "Theta_B_applied_directly_to_physical_coordinates",
+            "disposition": "rejected_as_representation_mismatch",
+            "reason": "Theta_B_acts_in_H_1_pre_orthonormal_coordinates_and_requires_the_declared_half_metric_maps"
+          },
+          {
+            "family": "identity_plus_A_B",
+            "disposition": "not_selected",
+            "reason": "it_leaves_an_ordinary_identity_current_at_T_B_zero_and_obscures_the_retention_specific_B_channel"
+          },
+          {
+            "family": "scalar_trace_or_norm_weighted_identity",
+            "disposition": "not_selected",
+            "reason": "it_erases_the_admitted_route_relations_and_directional_compatibility"
+          },
+          {
+            "family": "bounded_nonlinear_spectral_function_of_Theta_B",
+            "disposition": "admissible_successor_not_selected",
+            "reason": "it_adds_an_unneeded_response_shape_parameter_when_D4v2_already_bounds_Theta_B"
+          },
+          {
+            "family": "H_1_pre_inverse_T_B_Riesz_endomorphism",
+            "disposition": "selected_bounded_revision_specific_completion",
+            "reason": "it_is_the_canonical_metric_raised_operator_of_the_admitted_bilinear_carrier_and_preserves_its_full_bounded_graph_local_directional_content"
+          }
+        ],
+        "lawful_retained_counterfactual": "compare_two_admissible_independent_T_B_states_at_fixed_H_1_pre_J_trial_C_topology_boundary_chi_B_and_all_rivals_with_D7v2_writer_disabled;_a_nonzero_Delta_T_B_J_trial_changes_j_B",
+        "counterfactual_status": "lawful_state_level_design_intervention_but_not_runtime_reachability_or_formation_evidence",
+        "algebraic_witness": {
+          "graph": "three_node_two_incident_edge_path",
+          "H_1_pre_diagonal": [2.0, 3.0],
+          "T_B": [[0.5, 0.2], [0.2, -0.3]],
+          "J_trial": [1.0, -0.5],
+          "chi_B": 1.0,
+          "t_B_max": 0.3,
+          "Theta_B_eigenvalues": [-0.11811050377094118, 0.26811050377094103],
+          "j_B": [0.2, 0.11666666666666667],
+          "single_edge_reorientation_j_B": [0.2, -0.11666666666666667],
+          "covariance_error_l2": 0.0,
+          "witness_role": "finite_dimensional_typing_covariance_and_nonzero_response_witness_not_runtime_evidence"
+        },
+        "retained_mediation_status": "closed_at_operator_level_on_the_declared_B_profile",
+        "physical_channel_identification": false,
+        "D6v2_eligible": true,
+        "claim_ceiling": "bounded_revision_specific_B_directional_operator_and_operator_level_retained_mediation_without_total_current_writer_global_H4_runtime_or_core_theory_claim"
+      },
+      {
+        "candidate_id": "V4-C-constitutive-C-sector",
+        "row_id": "D5V2-C-RETAINED-HODGE-READBACK-COMPLETION",
+        "D5v2_disposition": "admitted_bounded_candidate_retained_mediated_directional_Read_Back_completion",
+        "operator_id": "GRC9V4-D5-C-HODGE-RESOLVENT-READBACK-v1",
+        "operator_change_from_D5v1": "none_to_the_Hodge_resolvent_family;_D4v2_supplies_the_previously_missing_T_C_to_H_M_and_metric_identification_maps",
+        "operator_provenance": "accepted_D5_Hodge_candidate_now_composed_with_the_D4v2_retained_geometry_and_canonical_physical_backmap_not_a_unique_core_law",
+        "retained_input": "T_C_equals_P_M_Delta_C_as_a_derived_nonserialized_C_sector",
+        "retained_geometry": "H_0_M_equals_H_0_pre_and_H_1_M_equals_D_C_H_1_pre_D_C_with_D_C_equals_diag_exp_kappa_M_C_r_C_over_two",
+        "metric_identification": "I_4M_pre_equals_H_1_M_H_1_pre_inverse",
+        "Hodge_operator": "Delta_1_M_equals_B_transpose_H_0_M_inverse_B_H_1_M",
+        "retained_space_response": "R_C_M_equals_chi_C_times_I_plus_tau_C_Delta_1_M_inverse",
+        "physical_space_response": "Rbar_C_equals_I_4M_pre_inverse_R_C_M_I_4M_pre",
+        "equation": "j_C_phys_flat_equals_Rbar_C_of_T_C_H_M_I_4M_pre_applied_to_J_trial_phys_flat",
+        "domain": "physical_oriented_live_edge_one_cochains_Omega1_h4_pre_on_the_fixed_rank_regular_C_stratum",
+        "codomain": "the_same_physical_one_cochain_space_after_inverse_I_4M_pre_backmap",
+        "retained_space_properties": "R_C_M_is_positive_H_1_M_self_adjoint_and_a_contraction_for_tau_C_positive",
+        "physical_space_properties": "Rbar_C_is_similar_to_R_C_M_and_has_the_same_spectrum_but_is_not_assumed_H_1_pre_self_adjoint_or_contracting_because_I_4M_pre_is_not_assumed_isometric",
+        "passive_null": "J_trial_zero_implies_j_C_phys_zero_for_any_admissible_T_C_H_M",
+        "physical_current_reversal": "J_trial_to_minus_J_trial_at_fixed_T_C_H_M_implies_j_C_phys_to_minus_j_C_phys",
+        "read_off": "chi_C_zero_removes_R_C_M_and_j_C_phys_but_preserves_T_C_conditioned_H_M_to_J_0_C",
+        "retained_geometry_off": "kappa_M_C_zero_removes_T_C_conditioning_from_H_M_I_4M_pre_R_C_M_and_J_0_C_but_may_leave_the_reference_Hodge_response_nonzero",
+        "reference_response_boundary": "the_kappa_M_C_zero_residual_Hodge_response_is_not_T_C_mediation_evidence;_only_the_matched_difference_from_the_reference_response_is_attributable_to_retention",
+        "gain_off": "zeta_C_zero preserves_diagnostic_j_C_phys_and_H_M_conditioned_J_0_C_but_blocks_j_C_from_total_current_and_current_tensor_K_4_pending_D6v2_D7G",
+        "tau_zero_control": "tau_C_zero_makes_Rbar_C_equal_chi_C_identity_and_removes_retained_geometry_selectivity_even_when_H_M_changes",
+        "selected_content_tangent": "nonzero_delta_C_M_in_Ran_P_M_Delta_intersect_H_0_pre_resource_preserving_tangent_with_fixed_selector_and_nonzero_directional_derivative_of_r_C",
+        "selected_content_derivative": "delta_T_C_equals_P_M_Delta_delta_C_M_delta_r_C_e_equals_one_half_sum_over_endpoints_sech_squared_T_C_over_C_ref_times_delta_T_C_over_C_ref_and_delta_H_1_M_e_equals_kappa_M_C_delta_r_C_e_H_1_M_e",
+        "operator_derivative": "delta_R_C_M_equals_minus_tau_C_R_C_M_delta_Delta_1_M_R_C_M_for_chi_C_one_with_delta_Delta_1_M_equals_B_transpose_H_0_pre_inverse_B_delta_H_1_M",
+        "physical_composite_derivative": "delta_Rbar_C_includes_delta_I_inverse_R_I_plus_I_inverse_delta_R_I_plus_I_inverse_R_delta_I_and_must_not_drop_the_identification_terms",
+        "matched_complement_control": "delta_C_F_in_Ker_P_M_Delta_intersect_H_0_pre_resource_preserving_tangent_keeps_T_C_H_M_I_4M_pre_Rbar_C_and_j_C_phys_fixed_at_the_D5_operator_layer",
+        "on_manifold_counterfactual_status": "closed_at_constitutive_operator_level_on_a_fixed_selector_stratum_with_positive_C_states_and_equal_H_0_pre_resource_total",
+        "finite_dimensional_witness": {
+          "graph": "three_node_two_edge_path_with_closed_incidence",
+          "H_0_pre": "identity",
+          "H_1_pre": "identity",
+          "selector_range": "constant_mode_plus_first_nonconstant_path_mode",
+          "C_base": [1.0, 1.0, 1.0],
+          "C_selected": [1.2, 1.0, 0.8],
+          "C_complement": [1.1, 0.8, 1.1],
+          "projected_T_C_complement": [1.0, 1.0, 1.0],
+          "C_ref": 1.0,
+          "kappa_M_C": 0.5,
+          "tau_C": 0.25,
+          "chi_C": 1.0,
+          "J_trial_phys": [1.0, -0.4],
+          "j_C_phys_base": [0.5533580484879859, -0.1140752267340116],
+          "j_C_phys_selected": [0.551829966576439, -0.10823883523404387],
+          "selected_delta_j_l2": 0.00603311694477177,
+          "complement_delta_j_l2": 0.0,
+          "tau_zero_delta_j_l2": 5.551115123125783e-17,
+          "kappa_zero_delta_j_l2": 0.0,
+          "witness_role": "deterministic_constitutive_mediation_and_complement_rejection_witness_not_a_margin_threshold_or_runtime_probe"
+        },
+        "direct_T_C_to_K_4_route": "not_admitted",
+        "current_mediated_structural_path": "T_C_to_H_M_to_R_C_M_to_j_C_M_to_inverse_I_4M_pre_to_j_C_phys_then_after_D6v2_graph_local_j_C_phys_tensor_j_C_phys_to_K_4",
+        "retained_mediation_status": "closed_at_operator_level_on_the_declared_fixed_rank_smooth_C_stratum",
+        "physical_channel_identification": false,
+        "D6v2_eligible": true,
+        "claim_ceiling": "bounded_revision_specific_C_retained_mediated_Hodge_Read_Back_operator_on_a_fixed_selector_stratum_without_total_current_writer_global_H4_runtime_or_unique_core_law"
+      }
+    ],
+    "path_separation_matrix": [
+      {
+        "candidate_id": "V4-A-temporalized-W",
+        "direct_retained_path": "W_A_to_A_4_to_J_0",
+        "explicit_read_path": "W_A_W_hat_to_q_A_to_j_A",
+        "status": "carried_unchanged_open_for_physical_identification"
+      },
+      {
+        "candidate_id": "V4-B-independent-derived-carrier",
+        "direct_retained_path": "T_B_to_kappa_B_T_B_to_K_4_B",
+        "explicit_read_path": "T_B_to_H_1_pre_inverse_T_B_to_j_B",
+        "read_off_preserves_direct": true,
+        "direct_off_preserves_read": true,
+        "current_tensor_path_status": "typed_future_route_pending_D6v2_and_D7G",
+        "double_count_status": "blocked_by_independent_switch_and_attribution_contract"
+      },
+      {
+        "candidate_id": "V4-C-constitutive-C-sector",
+        "direct_retained_path": "T_C_to_H_M_to_h_M_to_J_0_C",
+        "explicit_read_path": "T_C_to_H_M_to_R_C_M_to_j_C_phys",
+        "read_off_preserves_direct": true,
+        "retained_geometry_off_removes_T_C_conditioning_from_both": true,
+        "current_tensor_path_status": "typed_future_route_pending_D6v2_and_D7G",
+        "double_count_status": "open_for_D6v2_full_current_factorization_and_D7G_structural_sum"
+      }
+    ],
+    "counterfactual_contract": {
+      "B_retained_swap": "lawful_independent_state_level_design_intervention_inside_the_D4v2_capacity_domain_with_writer_disabled_and_all_rivals_matched",
+      "B_compatibility_null": "choose_nonzero_Delta_T_B_with_Delta_T_B_J_trial_zero_and_require_no_j_B_change",
+      "C_selected_content": "use_positive_equal_resource_C_states_differing_inside_Ran_P_M_Delta_on_the_same_fixed_selector_stratum_and_propagate_through_H_M_R_C_M_I_4M_pre",
+      "C_matched_complement": "use_equal_resource_delta_C_in_Ker_P_M_Delta_and_require_no_T_C_H_M_or_Rbar_C_change",
+      "C_off_manifold_H_M_swap": "diagnostic_only_and_not_primary_mediation_evidence",
+      "reachability_label": "all_rows_are_constitutive_design_or_algebraic_witnesses_until_post_spec_runtime_realization"
+    },
+    "D6v2_handoff_obligations": {
+      "B_exact_regularity": "classify_I_minus_zeta_B_A_B_by_the_generalized_eigenvalues_of_the_H_1_pre_self_adjoint_A_B;_a_sufficient_uniform_region_is_absolute_zeta_B_times_t_B_max_less_than_one",
+      "B_carrier_sign_parity": "under_T_B_to_minus_T_B_the_direct_linear_kappa_B_T_B_contribution_changes_sign_while_j_B_changes_sign_and_j_B_tensor_j_B_is_even;_use_this_as_a_direct_versus_current_mediated_double_count_discriminator",
+      "C_similarity_invertibility": "I_minus_zeta_C_Rbar_C_equals_inverse_I_4M_pre_times_I_minus_zeta_C_R_C_M_times_I_4M_pre_so_exact_invertibility_is_similarity_invariant_on_the_regular_identification_domain",
+      "C_physical_conditioning": "separate_exact_branch_regularity_from_physical_norm_conditioning_because_the_inverse_bound_may_be_amplified_by_the_condition_number_of_I_4M_pre",
+      "common_factorization": "keep_retained_conditioned_J_0_explicit_j_and_future_j_tensor_geometry_stage_separate_without_same_beat_geometry_reentry"
+    },
+    "control_semantics": {
+      "failed_closed": "the_forbidden_condition_was_triggered_and_the_claim_was_rejected",
+      "failed_open": "the_forbidden_condition_was_triggered_but_the_claim_was_allowed",
+      "required_failed_open_count": 0
+    },
+    "control_contract_row_count": 60,
+    "all_controls_fail_closed": true,
+    "control_contract": [
+      {"control_id":"D5V2-CTRL-SUMMARY-AS-SOURCE","status":"failed_closed","blocked_condition":"roadmap_report_or_prior_summary_substituted_for_load_bearing_source","rung_effect":"blocks_gate_admission"},
+      {"control_id":"D5V2-CTRL-INTERFACE-AS-DERIVATION","status":"failed_closed","blocked_condition":"required_signature_or_interface_counted_as_an_operator_derivation","rung_effect":"blocks_affected_operator"},
+      {"control_id":"D5V2-CTRL-UNIQUE-CORE-LAW","status":"failed_closed","blocked_condition":"selected_B_or_C_formula_promoted_to_unique_core_theorem","rung_effect":"blocks_claim_promotion"},
+      {"control_id":"D5V2-CTRL-JTRIAL-AS-J0","status":"failed_closed","blocked_condition":"J_trial_relabelled_as_baseline_J0","rung_effect":"blocks_operator_typing"},
+      {"control_id":"D5V2-CTRL-JTRIAL-AS-SOLVED-JC","status":"failed_closed","blocked_condition":"pre_read_J_trial_relabelled_as_already_solved_total_current","rung_effect":"blocks_D6_handoff"},
+      {"control_id":"D5V2-CTRL-ZERO-CURRENT-NONZERO-J","status":"failed_closed","blocked_condition":"operator_emits_nonzero_j_at_zero_present_current","rung_effect":"blocks_Read_Back"},
+      {"control_id":"D5V2-CTRL-SCALAR-AS-CURRENT","status":"failed_closed","blocked_condition":"scalar_retained_amount_relabelled_as_directional_current","rung_effect":"blocks_Read_Back"},
+      {"control_id":"D5V2-CTRL-READ-OFF-ERASES-CARRIER","status":"failed_closed","blocked_condition":"read_off_deletes_or_rebases_retained_state","rung_effect":"blocks_path_separation"},
+      {"control_id":"D5V2-CTRL-OFFMANIFOLD-AS-RUNTIME","status":"failed_closed","blocked_condition":"algebraic_or_off_manifold_swap_relabelled_as_runtime_reachability","rung_effect":"blocks_runtime_claim"},
+      {"control_id":"D5V2-CTRL-PHYSICAL-IDENTIFICATION","status":"failed_closed","blocked_condition":"operator_factorization_relabelled_as_empirically_identified_channel","rung_effect":"blocks_physical_channel_claim"},
+      {"control_id":"D5V2-CTRL-RUNTIME-EVIDENCE","status":"failed_closed","blocked_condition":"matrix_witness_relabelled_as_runtime_evidence","rung_effect":"blocks_runtime_claim"},
+      {"control_id":"D5V2-CTRL-GLOBAL-H4","status":"failed_closed","blocked_condition":"directional_operator_relabelled_as_global_H4_or_h4_closure","rung_effect":"blocks_structural_claim"},
+      {"control_id":"D5V2-CTRL-CANDIDATE-RANKING","status":"failed_closed","blocked_condition":"A_B_or_C_ranked_by_present_completeness_or_formula_simplicity","rung_effect":"blocks_selection"},
+      {"control_id":"D5V2-CTRL-CURRENT-TENSOR-CREDIT","status":"failed_closed","blocked_condition":"future_j_tensor_route_credited_before_D6v2_and_D7G","rung_effect":"blocks_structural_crossing_claim"},
+      {"control_id":"D5V2-CTRL-B-RAW-TB","status":"failed_closed","blocked_condition":"raw_bilinear_T_B_applied_as_dimensionless_endomorphism","rung_effect":"blocks_B_operator"},
+      {"control_id":"D5V2-CTRL-B-RAW-THETA","status":"failed_closed","blocked_condition":"Theta_B_applied_to_physical_coordinates_without_half_metric_maps","rung_effect":"blocks_B_operator"},
+      {"control_id":"D5V2-CTRL-B-IDENTITY-BASELINE","status":"failed_closed","blocked_condition":"identity_plus_A_B_selected_as_retention_specific_B_channel","rung_effect":"blocks_B_retention_attribution"},
+      {"control_id":"D5V2-CTRL-B-SCALARIZATION","status":"failed_closed","blocked_condition":"trace_norm_or_scalar_label_erases_T_B_directional_relations","rung_effect":"blocks_B_directional_claim"},
+      {"control_id":"D5V2-CTRL-B-BORROW-A-C","status":"failed_closed","blocked_condition":"A_or_C_operator_reused_as_B_without_derivation","rung_effect":"blocks_B_operator"},
+      {"control_id":"D5V2-CTRL-B-SKEW-INSERTION","status":"failed_closed","blocked_condition":"skew_or_chiral_response_inserted_into_the_selected_symmetric_B_profile","rung_effect":"requires_D4v2_successor"},
+      {"control_id":"D5V2-CTRL-B-ORNAMENTAL-NONLINEARITY","status":"failed_closed","blocked_condition":"unneeded_saturation_or_response_shape_parameter_added_to_fit_a_desired_result","rung_effect":"blocks_selected_profile"},
+      {"control_id":"D5V2-CTRL-B-UNBOUNDED-CAPACITY","status":"failed_closed","blocked_condition":"T_B_or_Theta_B_capacity_bound_omitted_or_widened_posthoc","rung_effect":"blocks_B_admission"},
+      {"control_id":"D5V2-CTRL-B-NEUTRAL-NONZERO","status":"failed_closed","blocked_condition":"T_B_zero_produces_nonzero_j_B","rung_effect":"blocks_B_Read_Back"},
+      {"control_id":"D5V2-CTRL-B-PASSIVE-NONZERO","status":"failed_closed","blocked_condition":"J_trial_zero_produces_nonzero_j_B","rung_effect":"blocks_B_Read_Back"},
+      {"control_id":"D5V2-CTRL-B-READ-OFF-FAILS","status":"failed_closed","blocked_condition":"chi_B_zero_leaves_nonzero_j_B","rung_effect":"blocks_B_path_control"},
+      {"control_id":"D5V2-CTRL-B-KAPPA-OFF-ERASES-READ","status":"failed_closed","blocked_condition":"kappa_B_zero_removes_R_B_or_diagnostic_j_B","rung_effect":"blocks_B_path_separation"},
+      {"control_id":"D5V2-CTRL-B-CHI-OFF-ERASES-DIRECT","status":"failed_closed","blocked_condition":"chi_B_zero_removes_direct_T_B_to_K_4_path","rung_effect":"blocks_B_path_separation"},
+      {"control_id":"D5V2-CTRL-B-KAPPA-OFF-PRESERVES-DIRECT","status":"failed_closed","blocked_condition":"kappa_B_zero_still_claims_direct_T_B_to_K_4_effect","rung_effect":"blocks_B_direct_path"},
+      {"control_id":"D5V2-CTRL-B-PATH-DOUBLECOUNT","status":"failed_closed","blocked_condition":"direct_T_B_and_future_j_B_tensor_paths_counted_as_the_same_evidence_or_twice_without_switches","rung_effect":"blocks_B_structural_sum"},
+      {"control_id":"D5V2-CTRL-B-TENSOR-AS-D5-EVIDENCE","status":"failed_closed","blocked_condition":"j_B_tensor_route_called_load_bearing_at_D5v2","rung_effect":"blocks_B_structural_claim"},
+      {"control_id":"D5V2-CTRL-B-ZETA-OFF-ERASES-DIAGNOSTIC","status":"failed_closed","blocked_condition":"zeta_B_zero_erases_diagnostic_j_B_instead_of_only_causal_gain","rung_effect":"blocks_B_gain_semantics"},
+      {"control_id":"D5V2-CTRL-B-SPECTRUM-AS-DIRECTION","status":"failed_closed","blocked_condition":"same_T_B_eigenvalues_assumed_to_imply_same_response_for_a_fixed_physical_probe","rung_effect":"blocks_B_directional_claim"},
+      {"control_id":"D5V2-CTRL-B-ARRAY-ORDER","status":"failed_closed","blocked_condition":"B_operator_depends_on_edge_array_order_instead_of_graph_covariance","rung_effect":"blocks_B_operator"},
+      {"control_id":"D5V2-CTRL-B-ORIENTATION","status":"failed_closed","blocked_condition":"edge_reorientation_changes_physical_B_response_instead_of_transforming_covariantly","rung_effect":"blocks_B_operator"},
+      {"control_id":"D5V2-CTRL-B-RESOURCE-WRITE","status":"failed_closed","blocked_condition":"T_B_or_j_B_counted_as_a_second_C_budget","rung_effect":"blocks_B_ontology"},
+      {"control_id":"D5V2-CTRL-B-HIDDEN-HISTORY","status":"failed_closed","blocked_condition":"B_response_requires_unserialized_history_beyond_T_B","rung_effect":"blocks_B_Markov_closure"},
+      {"control_id":"D5V2-CTRL-B-WRITER-CREDIT","status":"failed_closed","blocked_condition":"operator_completion_relabelled_as_T_B_writer_or_release_lifecycle","rung_effect":"blocks_B_transition_claim"},
+      {"control_id":"D5V2-CTRL-C-DIRECT-TC","status":"failed_closed","blocked_condition":"T_C_consumed_directly_by_R_C_without_H_M","rung_effect":"blocks_C_mediation"},
+      {"control_id":"D5V2-CTRL-C-RAW-HM-ARRAY","status":"failed_closed","blocked_condition":"h_M_coordinate_current_enters_physical_K4_or_J_C_without_inverse_I_4M_pre","rung_effect":"blocks_C_typing"},
+      {"control_id":"D5V2-CTRL-C-ISOMETRY","status":"failed_closed","blocked_condition":"I_4M_pre_assumed_isometric_without_proof","rung_effect":"blocks_C_norm_claim"},
+      {"control_id":"D5V2-CTRL-C-NO-BACKMAP","status":"failed_closed","blocked_condition":"R_C_M_output_relabelled_as_physical_current_without_backmap","rung_effect":"blocks_C_operator"},
+      {"control_id":"D5V2-CTRL-C-OFFMANIFOLD-PRIMARY","status":"failed_closed","blocked_condition":"independent_h_M_swap_used_as_primary_T_C_mediation_evidence","rung_effect":"blocks_C_mediation"},
+      {"control_id":"D5V2-CTRL-C-SELECTED-OUTSIDE-RANGE","status":"failed_closed","blocked_condition":"selected_content_probe_has_delta_C_outside_Ran_P_M_Delta","rung_effect":"blocks_C_selected_attribution"},
+      {"control_id":"D5V2-CTRL-C-RESOURCE-CHANGE","status":"failed_closed","blocked_condition":"selected_content_probe_changes_H_0_pre_resource_total","rung_effect":"blocks_C_attribution"},
+      {"control_id":"D5V2-CTRL-C-COMPLEMENT-CHANGES-TC","status":"failed_closed","blocked_condition":"matched_complement_probe_does_not_keep_P_M_Delta_C_fixed","rung_effect":"blocks_C_complement_control"},
+      {"control_id":"D5V2-CTRL-C-COMPLEMENT-AS-MEDIATION","status":"failed_closed","blocked_condition":"full_C_complement_change_credited_as_T_C_mediation","rung_effect":"blocks_C_mediation"},
+      {"control_id":"D5V2-CTRL-C-KAPPA-OFF-AS-J-OFF","status":"failed_closed","blocked_condition":"kappa_M_C_zero_claimed_to_force_the_reference_Hodge_response_to_zero","rung_effect":"blocks_C_switch_semantics"},
+      {"control_id":"D5V2-CTRL-C-TAU-ZERO-MEDIATION","status":"failed_closed","blocked_condition":"tau_C_zero_identity_response_claimed_as_retained_geometry_selectivity","rung_effect":"blocks_C_mediation"},
+      {"control_id":"D5V2-CTRL-C-UNIVERSAL-MODE-CHANGE","status":"failed_closed","blocked_condition":"every_probe_or_harmonic_mode_claimed_to_change_under_T_C_variation","rung_effect":"blocks_C_compatibility_claim"},
+      {"control_id":"D5V2-CTRL-C-UNIQUE-HODGE-LAW","status":"failed_closed","blocked_condition":"selected_resolvent_promoted_to_unique_core_Read_Back_law","rung_effect":"blocks_C_claim_promotion"},
+      {"control_id":"D5V2-CTRL-C-PHYSICAL-CONTRACTION","status":"failed_closed","blocked_condition":"retained_space_contraction_promoted_to_H_1_pre_physical_contraction_through_nonisometric_I_4M_pre","rung_effect":"blocks_C_norm_claim"},
+      {"control_id":"D5V2-CTRL-C-ADAPTIVE-SELECTOR","status":"failed_closed","blocked_condition":"selector_cutoff_or_rank_retuned_after_observing_the_desired_mediation","rung_effect":"blocks_C_operator"},
+      {"control_id":"D5V2-CTRL-C-DYNAMIC-RUNTIME","status":"failed_closed","blocked_condition":"analysis_only_dynamic_sector_consumed_as_runtime_retained_state","rung_effect":"requires_D1_successor"},
+      {"control_id":"D5V2-CTRL-C-RANK-GAP-CROSSING","status":"failed_closed","blocked_condition":"rank_or_spectral_gap_loss_treated_as_a_smooth_D5v2_operator_row","rung_effect":"routes_to_D8_D9"},
+      {"control_id":"D5V2-CTRL-C-CHI-OFF-ERASES-J0","status":"failed_closed","blocked_condition":"chi_C_zero_removes_H_M_conditioned_J_0_C","rung_effect":"blocks_C_path_separation"},
+      {"control_id":"D5V2-CTRL-C-ZETA-OFF-ERASES-J0","status":"failed_closed","blocked_condition":"zeta_C_zero_removes_H_M_conditioned_J_0_C","rung_effect":"blocks_C_gain_semantics"},
+      {"control_id":"D5V2-CTRL-C-DIRECT-K4","status":"failed_closed","blocked_condition":"direct_T_C_to_K_4_adapter_inserted_at_D5v2","rung_effect":"blocks_C_structural_path"},
+      {"control_id":"D5V2-CTRL-C-METRIC-ONLY","status":"failed_closed","blocked_condition":"no_preregistered_compatible_probe_exhibits_a_nonzero_Rbar_C_J_trial_change_under_any_lawful_selected_content_variation_but_C_mediation_is_still_claimed","rung_effect":"blocks_C_mediation_while_preserving_valid_operator_null_direction_controls"},
+      {"control_id":"D5V2-CTRL-WITNESS-AS-MARGIN","status":"failed_closed","blocked_condition":"finite_matrix_difference_relabelled_as_an_empirical_margin_or_threshold","rung_effect":"blocks_evidence_promotion"},
+      {"control_id":"D5V2-CTRL-D6-CLOSURE","status":"failed_closed","blocked_condition":"typed_operator_relabelled_as_regular_total_current_closure","rung_effect":"blocks_D6_claim"}
+    ],
+    "predecessor_debt_disposition": [
+      {"debt_id":"D4V2-DEBT-GLOBAL-H4-STRUCTURAL-CROSSING","disposition":"superseded_by_D5V2-DEBT-GLOBAL-H4-STRUCTURAL-CROSSING"},
+      {"debt_id":"D4V2-DEBT-B-READBACK-WRITER-AND-LIFECYCLE","disposition":"Read_Back_operator_resolved_remainder_split_into_D5V2_B_current_path_and_B_writer_lifecycle_debts"},
+      {"debt_id":"D4V2-DEBT-C-READBACK-CURRENT-AND-TRANSITION","disposition":"operator_level_mediation_and_backmap_resolved_remainder_split_into_D5V2_C_current_and_transition_debts"},
+      {"debt_id":"D4V2-DEBT-C-SELECTOR-EVENT-AND-HODGE-LIFECYCLE","disposition":"superseded_by_D5V2-DEBT-C-SELECTOR-EVENT-AND-HODGE-LIFECYCLE"},
+      {"debt_id":"D7-DEBT-A-CORE-STATUS","disposition":"carried_unchanged"},
+      {"debt_id":"D7-DEBT-A-DISABLED-PROFILE-STAGING","disposition":"carried_unchanged"},
+      {"debt_id":"D7-DEBT-A-TOPOLOGY-LIFECYCLE","disposition":"carried_unchanged"},
+      {"debt_id":"D7-DEBT-A-ABSORBABILITY","disposition":"carried_unchanged"},
+      {"debt_id":"D7-DEBT-A-UNITS-AND-GAUGE","disposition":"carried_unchanged"},
+      {"debt_id":"D7-DEBT-A-REDUCED-TEMPORAL-STABILITY","disposition":"carried_unchanged"},
+      {"debt_id":"D7-DEBT-D8-ANALYSIS-CONTRACT","disposition":"superseded_by_D5V2-DEBT-D8-ANALYSIS_with_A_B_C_scope"},
+      {"debt_id":"D7-DEBT-D9-COMPLETE-LIFECYCLE","disposition":"carried_unchanged"},
+      {"debt_id":"D7-DEBT-FORMED-BRANCH-RUNTIME","disposition":"carried_unchanged"},
+      {"debt_id":"D7-DEBT-PHYSICAL-CHANNEL-ATTRIBUTION","disposition":"carried_unchanged"},
+      {"debt_id":"D7-DEBT-COVARIANCE-VERIFICATION","disposition":"carried_unchanged"},
+      {"debt_id":"D7-DEBT-CURRENT-SINGULAR-SUCCESSOR","disposition":"superseded_by_D5V2-DEBT-CURRENT-SINGULAR-SUCCESSOR_with_explicit_A_B_C_scope"}
+    ],
+    "superseded_D5_debt_disposition": [
+      {"debt_id":"D5-DEBT-A-CORE-STATUS","disposition":"represented_by_chronological_D7_DEBT_A_CORE_STATUS"},
+      {"debt_id":"D5-DEBT-A-J0-J-OVERLAP","disposition":"resolved_for_v1_A_by_accepted_D6_D7_and_reopened_only_if_D6v2_finds_changed_common_factorization"},
+      {"debt_id":"D5-DEBT-A-ZERO-MOBILITY-SUPPORT","disposition":"resolved_for_v1_A_by_accepted_D6"},
+      {"debt_id":"D5-DEBT-A-W-HAT-STAGING","disposition":"resolved_for_v1_A_by_accepted_D6_D7"},
+      {"debt_id":"D5-DEBT-A-TOPOLOGY","disposition":"represented_by_chronological_D7_DEBT_A_TOPOLOGY_LIFECYCLE"},
+      {"debt_id":"D5-DEBT-B-GEOMETRY","disposition":"resolved_by_accepted_D4v2"},
+      {"debt_id":"D5-DEBT-B-OPERATOR","disposition":"resolved_at_operator_level_by_D5v2"},
+      {"debt_id":"D5-DEBT-C-H-M","disposition":"resolved_by_accepted_D4v2"},
+      {"debt_id":"D5-DEBT-C-HODGE-STARS","disposition":"initial_fixed_stratum_construction_resolved_by_D4v2_lifecycle_remainder_in_D5V2_C_selector_debt"},
+      {"debt_id":"D5-DEBT-C-HODGE-NORMATIVE-ENCODING","disposition":"independently_carried_nonblocking_via_inherited_debt_reference_and_remains_post_D10_only_if_C_survives"},
+      {"debt_id":"D5-DEBT-C-METRIC-IDENTIFICATION","disposition":"resolved_at_candidate_local_typing_level_by_D4v2_reopened_for_D6v2_norm_and_regular_closure"},
+      {"debt_id":"D5-DEBT-C-DYNAMIC-SECTOR","disposition":"independently_carried_nonblocking_outside_profile_via_inherited_debt_reference"},
+      {"debt_id":"D5-DEBT-C-SECTOR-MEDIATION","disposition":"resolved_at_operator_level_by_D5v2_runtime_attribution_remains_chronological_D7_debt"},
+      {"debt_id":"D5-DEBT-C-EVENT-SPACE","disposition":"represented_by_D5V2_C_selector_event_and_Hodge_lifecycle_debt"},
+      {"debt_id":"D5-DEBT-D6-TOTAL-CURRENT","disposition":"replaced_by_candidate_specific_D5V2_current_closure_debts"},
+      {"debt_id":"D5-DEBT-D6-GAIN","disposition":"replaced_by_D5V2_units_gain_and_capacity_debt"},
+      {"debt_id":"D5-DEBT-D7-WRITEBACK","disposition":"replaced_by_D5V2_transition_and_candidate_writer_debts"},
+      {"debt_id":"D5-DEBT-D8-ANALYSIS","disposition":"replaced_by_D5V2_D8_analysis_debt"},
+      {"debt_id":"D5-DEBT-D9-LIFECYCLE","disposition":"represented_by_chronological_D7_DEBT_D9_COMPLETE_LIFECYCLE"},
+      {"debt_id":"D5-DEBT-RUNTIME-EVIDENCE","disposition":"represented_by_chronological_D7_DEBT_FORMED_BRANCH_RUNTIME"},
+      {"debt_id":"D5-DEBT-RIVAL-CARRIER-FACTORISATION-AND-CONTROL-AVAILABILITY","disposition":"replaced_by_D5V2_path_separation_and_D7v2_transition_debts"},
+      {"debt_id":"D5-DEBT-RIVAL-CARRIER-EMPIRICAL-ATTRIBUTION","disposition":"represented_by_chronological_D7_DEBT_PHYSICAL_CHANNEL_ATTRIBUTION"},
+      {"debt_id":"D5-DEBT-DECOMPOSITION-FACTORISATION","disposition":"replaced_by_D5V2_B_and_C_current_path_separation_debts"},
+      {"debt_id":"D5-DEBT-DECOMPOSITION-PHYSICAL-IDENTIFICATION","disposition":"represented_by_chronological_D7_DEBT_PHYSICAL_CHANNEL_ATTRIBUTION"},
+      {"debt_id":"D5-DEBT-GRAPH-COVARIANCE-VERIFICATION","disposition":"represented_by_chronological_D7_DEBT_COVARIANCE_VERIFICATION"},
+      {"debt_id":"D5-DEBT-C-LAWFUL-COUNTERFACTUAL","disposition":"resolved_at_constitutive_operator_level_by_D5v2_selected_and_complement_witnesses"},
+      {"debt_id":"D5-DEBT-SUPPORT-AND-BOUNDARY","disposition":"replaced_by_candidate_specific_D5V2_current_closure_and_D9_lifecycle_debts"}
+    ],
+    "claim_ceiling": "bounded_candidate_specific_directional_Read_Back_operator_completions_for_A_B_C_with_B_and_C_operator_level_retained_mediation_but_without_total_current_writeback_global_H4_runtime_physical_channel_core_uniqueness_or_candidate_selection"
+  },
+  "evidence_or_argument": [
+    "The accepted D4-v2 T_B is a bounded symmetric bilinear form with H_1_pre units; Riesz representation therefore gives the canonical dimensionless H_1_pre-self-adjoint endomorphism A_B = H_1_pre^-1 T_B without adding state or a response-shape parameter.",
+    "The B finite-dimensional witness confirms nonzero directional response and exact signed-edge reorientation covariance while remaining a constitutive matrix witness rather than runtime evidence.",
+    "The accepted C H_M map makes H_1_M and I_4M_pre deterministic functions of the selected retained sector T_C; composing the accepted Hodge resolvent with I_4M_pre and its inverse closes a typed physical-space operator.",
+    "A resource-preserving selected-sector perturbation changes H_1_M, the Hodge response, and the physical output on a compatible probe, while a matched complement perturbation leaves T_C and the complete operator unchanged.",
+    "The C tau-zero and kappa-zero controls show that mere metric notation or a baseline identity response is not retained mediation; the attributable object is the matched T_C-conditioned response difference.",
+    "Independent read-off, direct-structural-off, and gain-off semantics keep B's and C's direct retained paths distinct from their explicit current and future current-tensor paths.",
+    "A remains exactly the accepted D5 operator object, so D5-v2 adds no ornamental A-v2 mechanism and performs no candidate ranking."
+  ],
+  "open_debt": [
+    {
+      "debt_id": "D5V2-DEBT-GLOBAL-H4-STRUCTURAL-CROSSING",
+      "blocking_scope": "common_K_4_partition_normalization_candidate_payload_sum_H_4_h_4_map_structural_sign_and_metric_relative_capacity_readmission",
+      "candidate_scope": "all_candidates",
+      "assumption_forbidden_downstream": "Typed_directional_operators_and_future_current_tensors_may_not_be_called_global_structural_cultivation_or_continuation_hardening_softening.",
+      "resolution_gate": "D7G_or_named_theory_successor",
+      "must_close_before_D10": true
+    },
+    {
+      "debt_id": "D5V2-DEBT-B-CURRENT-CLOSURE-AND-PATH-SEPARATION",
+      "blocking_scope": "zeta_B_units_gain_regular_total_current_support_conservation_direct_T_B_K4_versus_j_B_tensor_K4_factorization_and_double_count_control",
+      "candidate_scope": "V4-B-independent-derived-carrier",
+      "assumption_forbidden_downstream": "The_Riesz_operator_does_not_supply_a_regular_total_current_or_authorize_combining_Bs_two_structural_paths.",
+      "resolution_gate": "D6v2_and_D7G",
+      "must_close_before_D10": true
+    },
+    {
+      "debt_id": "D5V2-DEBT-B-WRITER-AND-LIFECYCLE",
+      "blocking_scope": "exact_U_B_formation_retention_release_multiwrite_serialization_reset_and_topology_event_transport",
+      "candidate_scope": "V4-B-independent-derived-carrier",
+      "assumption_forbidden_downstream": "Operator_level_T_B_mediation_is_not_a_closed_B_transition_or_runtime_lifecycle.",
+      "resolution_gate": "D7v2_and_D9",
+      "must_close_before_D10": true
+    },
+    {
+      "debt_id": "D5V2-DEBT-C-CURRENT-CLOSURE-AND-METRIC-NORM",
+      "blocking_scope": "nonisometric_I_4M_pre_effective_operator_norm_zeta_C_gain_regular_total_current_support_conservation_and_H_M_conditioned_J0_overlap",
+      "candidate_scope": "V4-C-constitutive-C-sector",
+      "assumption_forbidden_downstream": "Retained_space_contraction_and_operator_level_mediation_do_not_supply_physical_space_regular_total_current_closure.",
+      "resolution_gate": "D6v2",
+      "must_close_before_D10": true
+    },
+    {
+      "debt_id": "D5V2-DEBT-C-TRANSITION-WRITER-AND-SELECTOR-LIFECYCLE",
+      "blocking_scope": "T_C_write_identity_selector_motion_rank_gap_basis_boundary_topology_event_transport_and_complete_atomic_transition",
+      "candidate_scope": "V4-C-constitutive-C-sector",
+      "assumption_forbidden_downstream": "A_fixed_selector_operator_witness_is_not_a_complete_C_write_read_transition_or_event_lifecycle.",
+      "resolution_gate": "D7v2_D8_and_D9",
+      "must_close_before_D10": true
+    },
+    {
+      "debt_id": "D5V2-DEBT-UNITS-GAINS-AND-CAPACITY",
+      "blocking_scope": "candidate_zeta_units_sign_shared_current_tensor_scale_B_Theta_capacity_after_h4_change_C_metric_gauge_and_physical_operator_bound",
+      "candidate_scope": "all_candidates",
+      "assumption_forbidden_downstream": "Dimensionless_candidate_operators_do_not_by_themselves_close_physical_gain_metric_gauge_or_post_H4_capacity.",
+      "resolution_gate": "D6v2_D7G_and_D8",
+      "must_close_before_D10": true
+    },
+    {
+      "debt_id": "D5V2-DEBT-D7V2-COMPLETE-TRANSITIONS",
+      "blocking_scope": "candidate_local_Markov_closed_stage_ordered_atomic_resource_accounted_write_read_transitions_for_A_B_C",
+      "candidate_scope": "all_candidates",
+      "assumption_forbidden_downstream": "D5v2_operator_completion_is_not_a_complete_candidate_transition_or_D7G_eligibility.",
+      "resolution_gate": "D7v2",
+      "must_close_before_D10": true
+    },
+    {
+      "debt_id": "D5V2-DEBT-D8-ANALYSIS",
+      "blocking_scope": "candidate_specific_kinetic_gain_continuation_temporal_stability_absorbability_and_comparative_analysis_contract",
+      "candidate_scope": "all_candidates_surviving_D7G",
+      "assumption_forbidden_downstream": "Signed_or_positive_operator_modes_may_not_be_relabelled_as_continuation_or_temporal_spectra.",
+      "resolution_gate": "D8",
+      "must_close_before_D10": true
+    },
+    {
+      "debt_id": "D7-DEBT-A-CORE-STATUS",
+      "blocking_scope": "pre_D10_provenance_and_claim_classification_of_the_revision_specific_A_write_and_Read_Back_subloop_relative_to_inherited_core_law",
+      "candidate_scope": "V4-A-temporalized-W",
+      "assumption_forbidden_downstream": "The_A_completion_may_not_be_called_inherited_core_Read_Back_or_core_derived_merely_because_it_uses_core_and_GRC9V3_surfaces.",
+      "resolution_gate": "D8_then_GRC9V4-D7-A-CORE-STATUS-CLASSIFICATION-before_D10",
+      "must_close_before_D10": true
+    },
+    {
+      "debt_id": "D7-DEBT-A-DISABLED-PROFILE-STAGING",
+      "blocking_scope": "exact_enabled_to_disabled_A_stage_and_reduction_commutation",
+      "candidate_scope": "V4-A-temporalized-W",
+      "assumption_forbidden_downstream": "The_revision_distinct_enabled_W_hat_stage_does_not_prove_exact_GRC9V3_disabled_behavior.",
+      "resolution_gate": "D9",
+      "must_close_before_D10": true
+    },
+    {
+      "debt_id": "D7-DEBT-A-TOPOLOGY-LIFECYCLE",
+      "blocking_scope": "W_A_birth_death_split_merge_relabel_reset_and_event_transport",
+      "candidate_scope": "V4-A-temporalized-W",
+      "assumption_forbidden_downstream": "The_fixed_edge_log_update_does_not_define_topology_event_semantics.",
+      "resolution_gate": "D9",
+      "must_close_before_D10": true
+    },
+    {
+      "debt_id": "D7-DEBT-A-ABSORBABILITY",
+      "blocking_scope": "exact_A_explicit_Read_Back_nonredundancy_on_the_selected_normative_model_class",
+      "candidate_scope": "V4-A-temporalized-W",
+      "assumption_forbidden_downstream": "General_graph_nonlocality_does_not_exclude_every_special_or_state_dependent_effective_mobility_reparameterization.",
+      "resolution_gate": "D8_then_GRC9V4-D7-A-ABSORBABILITY-CLASSIFICATION-before_D10",
+      "must_close_before_D10": true
+    },
+    {
+      "debt_id": "D7-DEBT-A-UNITS-AND-GAUGE",
+      "blocking_scope": "shared_zeta_current_tensor_units_metric_scale_mobility_clock_and_floor_semantics",
+      "candidate_scope": "V4-A-temporalized-W",
+      "assumption_forbidden_downstream": "The_normalized_reduced_equations_do_not_close_physical_units_or_metric_gauge.",
+      "resolution_gate": "D8_or_GRC9V4-D7-A-UNITS-AND-GAUGE-AUDIT-before_D10",
+      "must_close_before_D10": true
+    },
+    {
+      "debt_id": "D7-DEBT-A-REDUCED-TEMPORAL-STABILITY",
+      "blocking_scope": "temporal_multiplier_and_nonsmooth_floor_boundary_analysis_of_the_fixed_geometry_A_reduced_transition",
+      "candidate_scope": "V4-A-temporalized-W_reduced_profile",
+      "assumption_forbidden_downstream": "A_bounded_one_step_map_is_not_a_reduced_temporal_stability_result_and_does_not_close_normative_H4_structural_stability.",
+      "resolution_gate": "D8",
+      "must_close_before_D10": true
+    },
+    {
+      "debt_id": "D7-DEBT-D9-COMPLETE-LIFECYCLE",
+      "blocking_scope": "serialization_restoration_reset_RNG_capability_migration_and_event_lifecycle",
+      "candidate_scope": "all_candidates",
+      "assumption_forbidden_downstream": "Candidate_local_fixed_stratum_typing_is_not_a_complete_lifecycle_or_reduction_witness.",
+      "resolution_gate": "D9",
+      "must_close_before_D10": true
+    },
+    {
+      "debt_id": "D7-DEBT-FORMED-BRANCH-RUNTIME",
+      "blocking_scope": "runtime_reachability_formation_retention_release_and_replay_evidence",
+      "candidate_scope": "any_implemented_V4_profile",
+      "assumption_forbidden_downstream": "A_constitutive_design_equation_is_not_an_observed_formed_branch.",
+      "resolution_gate": "post_spec_implementation_and_verification_tranche",
+      "must_close_before_D10": false
+    },
+    {
+      "debt_id": "D7-DEBT-PHYSICAL-CHANNEL-ATTRIBUTION",
+      "blocking_scope": "empirical_nonabsorbability_and_rival_carrier_attribution",
+      "candidate_scope": "any_implemented_V4_profile",
+      "assumption_forbidden_downstream": "Design_switches_and_factorization_do_not_physically_identify_a_distinct_Read_Back_channel.",
+      "resolution_gate": "post_spec_causal_verification",
+      "must_close_before_D10": false
+    },
+    {
+      "debt_id": "D7-DEBT-COVARIANCE-VERIFICATION",
+      "blocking_scope": "executable_graph_orientation_component_cycle_boundary_and_candidate_adapter_covariance",
+      "candidate_scope": "any_implemented_V4_profile",
+      "assumption_forbidden_downstream": "Analytical_covariance_contracts_are_not_runtime_verification.",
+      "resolution_gate": "D8_and_post_spec_verification",
+      "must_close_before_D10": false
+    },
+    {
+      "debt_id": "D5V2-DEBT-CURRENT-SINGULAR-SUCCESSOR",
+      "blocking_scope": "passage_through_loss_of_D6_current_regularness_if_later_required",
+      "candidate_scope": "A_B_and_C_regular_profiles",
+      "status": "outside_initial_profile",
+      "activation_condition": "reopen_only_if_target_requires_singular_boundary_passage",
+      "assumption_forbidden_downstream": "D5v2_does_not_turn_singularity_into_temporal_current_or_structural_event_semantics.",
+      "resolution_gate": "named_D6v2_successor_if_activated",
+      "must_close_before_D10": false
+    }
+  ],
+  "rejected_alternatives": [
+    {
+      "alternative_id": "D5V2-ALT-B-RAW-TB",
+      "disposition": "rejected_untyped",
+      "reason": "a_bilinear_form_is_not_a_dimensionless_current_endomorphism_without_metric_raising"
+    },
+    {
+      "alternative_id": "D5V2-ALT-B-SCALARIZED",
+      "disposition": "not_selected",
+      "reason": "scalarization_erases_the_directional_route_relations_D4v2_admitted"
+    },
+    {
+      "alternative_id": "D5V2-ALT-B-NONLINEAR-SPECTRAL",
+      "disposition": "admissible_successor_not_selected",
+      "reason": "an_extra_response_shape_is_not_required_for_the_bounded_initial_profile"
+    },
+    {
+      "alternative_id": "D5V2-ALT-C-DIRECT-TC",
+      "disposition": "rejected_second_mechanism",
+      "reason": "C_mediation_must_pass_through_the_accepted_H_M_and_Hodge_response"
+    },
+    {
+      "alternative_id": "D5V2-ALT-C-HM-SWAP",
+      "disposition": "diagnostic_only",
+      "reason": "an_independent_h_M_swap_is_off_manifold_and_cannot_replace_selected_content_attribution"
+    },
+    {
+      "alternative_id": "D5V2-ALT-C-SUBTRACTED-REFERENCE-OPERATOR",
+      "disposition": "not_selected",
+      "reason": "the_accepted_core_candidate_is_R_C_of_H_M;_retention_specific_attribution_is_the_matched_difference_not_a_new_subtracted_operator"
+    }
+  ],
+  "authorization_effect": {
+    "D6v2_authorized": true,
+    "D6v2_authorized_after_human_acceptance": true,
+    "D6v2_authorized_scope": "rebuild_B_and_C_total_current_closures_with_B_direct_and_current_mediated_path_separation_C_nonisometric_physical_operator_bounds_and_explicit_A_unchanged_causal_object_proof",
+    "D7v2_authorized": false,
+    "D7G_authorized": false,
+    "D8_authorized": false,
+    "existing_runtime_test_change_authorized": false,
+    "normative_specification_authorized": false,
+    "runtime_implementation_authorized": false,
+    "src_change_authorized": false
+  },
+  "blocked_relabels": [
+    "canonical_Riesz_representation_as_unique_core_Read_Back",
+    "independent_B_carrier_as_coherence_only_core_state",
+    "C_Hodge_candidate_as_unique_core_law",
+    "operator_level_mediation_as_runtime_reachability",
+    "operator_factorization_as_physical_channel_identification",
+    "finite_matrix_witness_as_empirical_margin_or_stability",
+    "signed_B_response_as_continuation_hardening_or_softening",
+    "positive_C_Hodge_spectrum_as_temporal_retention_or_self_sustenance",
+    "retained_space_C_contraction_as_physical_space_contraction",
+    "raw_h_M_coordinates_as_physical_current",
+    "direct_T_C_to_K_4_as_source_backed_C_path",
+    "B_direct_T_B_path_as_evidence_for_B_current_tensor_path",
+    "B_current_tensor_path_as_evidence_for_B_direct_T_B_path",
+    "chi_off_as_retained_state_or_direct_path_removal",
+    "zeta_off_as_diagnostic_j_removal",
+    "kappa_M_C_zero_as_zero_total_C_Hodge_response",
+    "tau_C_zero_identity_as_retained_selectivity",
+    "complement_C_change_as_selected_sector_mediation",
+    "off_manifold_h_M_swap_as_runtime_C_evidence",
+    "typed_operator_as_regular_total_current_closure",
+    "typed_operator_as_writeback_or_complete_transition",
+    "typed_current_as_global_H_4_or_h_4",
+    "candidate_completeness_as_ranking_or_selection",
+    "fixed_topology_analysis_stratum_as_fixed_topology_V4_target",
+    "D5v2_design_record_as_normative_specification_or_runtime_implementation"
+  ],
+  "human_acceptance": {
+    "accepted": true,
+    "accepted_by": "experiment_owner",
+    "accepted_date": "2026-08-24",
+    "status": "accepted_bounded"
+  },
+  "decision_record_digest": "212c7db173fbe286816965070a4beebd1e5ba8e39ccc3ffb73bbecde8410cf1c"
+}

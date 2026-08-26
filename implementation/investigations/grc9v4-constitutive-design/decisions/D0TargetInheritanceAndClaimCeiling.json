@@ -1,0 +1,815 @@
+{
+  "assumptions": [
+    {
+      "assumption_id": "D0-AUTHORITY-01",
+      "statement": "The two frozen 2026-08 core papers govern theory claims; repository specifications govern legacy GRC9V3 semantics; accepted experiment artifacts govern only their declared evidence envelopes."
+    },
+    {
+      "assumption_id": "D0-SUCCESSOR-01",
+      "statement": "GRC9V4 is a revision-distinct successor profile and does not reinterpret legacy GRC9V3."
+    },
+    {
+      "assumption_id": "D0-TOPOLOGY-01",
+      "statement": "Early smooth-stratum analysis may be fixed-topology while the normative successor retains the inherited topology-changing capability surface."
+    }
+  ],
+  "blocked_relabels": [
+    "B1_verification_construct_as_GRC9V4_runtime_semantics",
+    "B2_empty_candidate_set_as_global_impossibility",
+    "serialized_field_as_independent_causal_coordinate",
+    "analysis_projector_as_retained_runtime_state",
+    "ordinary_C_persistence_as_retained_historical_sector",
+    "stage_local_J_squared_to_W_as_Read_Back",
+    "spatial_scale_as_continuation_stiffness",
+    "continuation_stiffness_as_temporal_rate",
+    "read_back_gain_as_structural_stiffness",
+    "lineage_as_topology_interspace_transport",
+    "D0_candidate_admission_as_final_architecture_selection",
+    "D0_contract_freeze_as_specification_or_implementation_authority"
+  ],
+  "candidates_considered": [
+    "V4-A-temporalized-W",
+    "V4-B-independent-derived-carrier",
+    "V4-C-constitutive-C-sector",
+    "V4-D-source-admitted-structural"
+  ],
+  "decision": {
+    "architecture_neutral_vocabulary": {
+      "F": "complete runtime transition",
+      "F_struct": "declared structural functional, never inferred from F by notation alone",
+      "J0": "baseline or direct retained-conditioned current before explicit Read-Back contribution",
+      "J_C": "total physical coherence current",
+      "P_M_or_P_slow": "declared analytical or constitutive projector whose status must be stated",
+      "T_M": "retained causal representation without a preassigned state authority",
+      "alpha": "structural continuation stiffness",
+      "beta": "Read-Back response or gain",
+      "gamma_or_mu": "temporal rate or discrete multiplier",
+      "i_a": "candidate-specific disabled-profile embedding from GRC9V3 into candidate state space",
+      "j": "present-current-conditioned directional Read-Back contribution",
+      "lambda": "spatial operator scale",
+      "pi_a": "candidate-specific projection from candidate state space to GRC9V3"
+    },
+    "candidate_admission_contract": {
+      "admission_deadline": "before_first_D1_candidate_evaluation_result",
+      "additional_candidate_rule": [
+        "A candidate must be source-backed under the frozen source-basis rule or a named accepted successor derivation.",
+        "A candidate must define a materially distinct causal representation rather than rename an admitted family.",
+        "Admission requires an accepted D0 successor record before any D1 result is observed.",
+        "After D1 starts, new candidates require a reopened D0/D1 route and cannot enter the current comparison retrospectively."
+      ],
+      "candidate_family_semantics": {
+        "family_labels_are_mutually_exclusive_ontological_truths": false,
+        "family_role": "investigation_classification",
+        "material_change_requires_new_or_hybrid_candidate_admission": [
+          "new_independent_causal_state",
+          "changed_resource_accounting",
+          "changed_transport_role",
+          "changed_formation_or_write_law",
+          "changed_Read_Back_path",
+          "changed_topology_or_lifecycle_ownership",
+          "changed_disabled_profile_reduction"
+        ],
+        "reclassification_rule": "reclassification_is_not_new_candidate_invention_when_the_declared_causal_architecture_is_unchanged",
+        "recognized_overlap_examples": [
+          "V4-C_with_historical_selector_state_may_reclassify_toward_V4-B",
+          "V4-A_may_split_structural_and_mobility_roles",
+          "source_admitted_V4-D_may_combine_A_B_or_C_aspects"
+        ]
+      },
+      "candidate_set_frozen": true,
+      "candidate_universe_status": "exhaustive_over_named_pre_D1_families_not_exhaustive_over_all_possible_V4_architectures",
+      "current_candidate_set": [
+        "V4-A-temporalized-W",
+        "V4-B-independent-derived-carrier",
+        "V4-C-constitutive-C-sector",
+        "V4-D-source-admitted-structural"
+      ],
+      "current_candidate_set_exhaustion_meaning": "route_to_named_theory_constitutive_or_candidate_admission_work_not_rejection_of_GRC9V4_target",
+      "exhaustion_reopening_payload_required": [
+        "missing_role",
+        "why_existing_candidates_fail",
+        "new_candidate_shape_that_could_address_the_gap",
+        "new_theory_required",
+        "next_candidate_admission_rule",
+        "resume_gate"
+      ],
+      "source_backed_rule": {
+        "admissible_bases": [
+          "literal_relation_or_constraint_in_frozen_core",
+          "transparent_constitutive_derivation_from_frozen_core_requirements",
+          "named_post_D0_theory_derivation_admitted_by_successor_record"
+        ],
+        "candidate_must_be_literally_named_by_a_paper": false,
+        "design_argument_requirements": [
+          "derivation_steps_visible",
+          "assumptions_typed",
+          "no_contradiction_with_core_vetoes",
+          "candidate_completion_not_relabelled_as_core_inherited"
+        ],
+        "legacy_evidence_alone_can_establish_theory_source": false
+      },
+      "source_cutoff": {
+        "existing_source_discovered_after_D0": "reopen_D0_before_candidate_evaluation_or_supersede_affected_gate",
+        "graph_repository_head": "660ba4e9563130c73930fc00f14023f4d1725c2d",
+        "new_post_D0_theory_result": "enter_named_theory_derivation_route_then_append_successor_record_and_supersede_affected_gate",
+        "silent_addition_to_D1_allowed": false,
+        "theory_repository_head": "5a8b01ae60165054da617db649c5a039755a18ec"
+      },
+      "D1_role": "ontology_admission_or_rejection_not_final_selection"
+    },
+    "claim_ceiling": {
+      "allowed": [
+        "D0_authority_and_historical_lineage_frozen",
+        "D0_target_non_targets_and_vocabulary_frozen",
+        "D1_candidate_admission_surface_frozen",
+        "candidate_neutral_GRC9V3_reduction_contract_frozen",
+        "topology_scope_and_debt_frozen",
+        "hard_veto_and_preference_separation_frozen"
+      ],
+      "ceiling_id": "GRC9V4-CD-D0-contract-only",
+      "forbidden": [
+        "candidate_ontology_admitted",
+        "GRC9V4_architecture_selected",
+        "retained_representation_implemented",
+        "directional_Read_Back_implemented",
+        "closed_write_read_loop_established",
+        "GRC9V4_specification_authorized",
+        "runtime_implementation_authorized",
+        "GRC9V3_reinterpreted"
+      ],
+      "D0_does_not_establish": [
+        "candidate_completeness_beyond_the_frozen_universe",
+        "architecture_viability",
+        "architecture_uniqueness",
+        "necessity_of_new_independent_state",
+        "necessity_of_temporalized_W",
+        "necessity_of_current_deslavement",
+        "existence_of_a_joint_continuation_functional",
+        "topology_safe_retention",
+        "GRC9V4_minimality",
+        "GRC9V4_implementability"
+      ]
+    },
+    "hard_veto_requirements": [
+      "preserve_theory_substrate_evidence_authority_separation",
+      "preserve_retention_Read_Back_write_back_role_separation",
+      "preserve_state_level_retained_field_vs_branch_relative_analytical_perturbation_distinction",
+      "preserve_structural_temporal_readback_spatial_spectrum_distinctions",
+      "require_present_current_passive_null_for_Read_Back",
+      "require_directional_Read_Back_output_to_be_an_oriented_edge_cochain",
+      "separate_J0_j_and_total_J_C",
+      "declare_complete_runtime_causal_state_and_serialize_all_independent_added_state",
+      "block_observer_projectors_and_future_information_from_constitutive_state",
+      "close_candidate_specific_disabled_profile_reduction_before_specification",
+      "preserve_budget_and_resource_accounting_without_hidden_reservoirs",
+      "close_or_explicitly_disable_topology_event_transport_before_D10",
+      "preserve_legacy_GRC9V3_semantics_when_the_V4_profile_is_disabled"
+    ],
+    "hard_veto_scope_contract": {
+      "default_for_missing_analysis_construction": "claim_scope_veto_not_candidate_rejection",
+      "registry": [
+        {"effect":"gate_fatal","requirement":"preserve_theory_substrate_evidence_authority_separation","scope":"all_decisions"},
+        {"effect":"candidate_fatal_for_target","requirement":"preserve_retention_Read_Back_write_back_role_separation","scope":"candidate_target_contract"},
+        {"effect":"claim_scope_only","requirement":"preserve_state_level_retained_field_vs_branch_relative_analytical_perturbation_distinction","scope":"retained_representation_and_analysis_claims"},
+        {"effect":"claim_scope_only","requirement":"preserve_structural_temporal_readback_spatial_spectrum_distinctions","scope":"spectral_and_stability_claims"},
+        {"effect":"candidate_fatal_for_target","requirement":"require_present_current_passive_null_for_Read_Back","scope":"Read_Back_role"},
+        {"effect":"candidate_fatal_for_target","requirement":"require_directional_Read_Back_output_to_be_an_oriented_edge_cochain","scope":"Read_Back_role"},
+        {"effect":"candidate_fatal_for_target","requirement":"separate_J0_j_and_total_J_C","scope":"current_closure"},
+        {"effect":"candidate_fatal","requirement":"declare_complete_runtime_causal_state_and_serialize_all_independent_added_state","scope":"runtime_causal_state"},
+        {"effect":"candidate_fatal","requirement":"block_observer_projectors_and_future_information_from_constitutive_state","scope":"runtime_causal_state"},
+        {"effect":"blocks_specification_authorization","requirement":"close_candidate_specific_disabled_profile_reduction_before_specification","scope":"legacy_reduction"},
+        {"effect":"candidate_fatal","requirement":"preserve_budget_and_resource_accounting_without_hidden_reservoirs","scope":"resource_accounting"},
+        {"effect":"blocks_full_topology_claim_and_D10_authorization","requirement":"close_or_explicitly_disable_topology_event_transport_before_D10","scope":"topology_changing_profile"},
+        {"effect":"candidate_fatal_for_disabled_profile","requirement":"preserve_legacy_GRC9V3_semantics_when_the_V4_profile_is_disabled","scope":"legacy_subspace"}
+      ],
+      "scope_types": [
+        "claim_scope_veto",
+        "candidate_fatal_for_target",
+        "candidate_fatal",
+        "gate_fatal",
+        "blocks_specification_authorization"
+      ]
+    },
+    "historical_consumption_matrix": [
+      {
+        "exact_or_bounded_claims_consumed": "theory_to_graph_claim_types_assumptions_controls_and_verification_distinctions",
+        "historical_role": "pre_execution_theory_to_graph_contract",
+        "may_consume_as": [
+          "historical_decision_lineage",
+          "verification_vocabulary",
+          "false_positive_controls",
+          "measurement_contract"
+        ],
+        "must_not_consume_as": [
+          "normative_GRC9V4_semantics",
+          "literal_V4_state_layout",
+          "selected_constitutive_architecture"
+        ],
+        "open_debt_carried_forward": [
+          "no_unique_retained_representation",
+          "no_unified_structural_temporal_readback_generator",
+          "active_joint_continuation_open"
+        ],
+        "source_envelope": "B1_Draft_3_4_1_fixed_topology_verification_contract",
+        "source_group": "B1_pre_execution_specification"
+      },
+      {
+        "exact_or_bounded_claims_consumed": "accepted_GRC9V3_stage_local_recurrence_causal_coordinate_and_bounded_GRR2_results",
+        "historical_role": "accepted_unchanged_runtime_verification",
+        "may_consume_as": [
+          "bounded_runtime_evidence",
+          "failed_mapping_registry",
+          "claim_ceiling",
+          "extension_trigger_history"
+        ],
+        "must_not_consume_as": [
+          "native_GRC9V3_Read_Back",
+          "proof_of_unique_retained_carrier",
+          "automatic_extension_selection",
+          "V4_architecture_ranking",
+          "permanent_veto_on_a_materially_revised_V4_candidate"
+        ],
+        "open_debt_carried_forward": [
+          "retained_carrier_formation",
+          "directional_Read_Back",
+          "write_back",
+          "closed_loop",
+          "topology_interspace_transport"
+        ],
+        "source_envelope": "accepted_B1_fixed_topology_event_free_and_declared_synthetic_valid_rows",
+        "source_group": "B1_accepted_evidence_and_closeout"
+      },
+      {
+        "exact_or_bounded_claims_consumed": "no_confirmed_runtime_reached_carrier_in_preregistered_resolved_clean_lane",
+        "historical_role": "bounded_unchanged_runtime_constructibility_search",
+        "may_consume_as": [
+          "bounded_negative_evidence",
+          "accessibility_debt",
+          "false_positive_controls",
+          "motivation_for_revision_distinct_design"
+        ],
+        "must_not_consume_as": [
+          "global_nonconstructibility",
+          "independent_state_necessity",
+          "temporalized_W_necessity",
+          "architecture_selection",
+          "permanent_veto_on_a_materially_revised_V4_candidate"
+        ],
+        "open_debt_carried_forward": [
+          "unsearched_or_inaccessible_GRC9V3_strata",
+          "no_localization_of_one_missing_causal_role"
+        ],
+        "source_envelope": "accepted_B2_preregistered_fixed_topology_event_free_clean_lane",
+        "source_group": "B2_protocol_evidence_and_closeout"
+      },
+      {
+        "exact_or_bounded_claims_consumed": "legacy_GRC9V3_normative_state_step_topology_event_and_lifecycle_semantics",
+        "historical_role": "legacy_substrate_authority",
+        "may_consume_as": [
+          "legacy_substrate_exact",
+          "disabled_profile_reference_transition",
+          "capability_and_lifecycle_contract"
+        ],
+        "must_not_consume_as": [
+          "retained_state_contract",
+          "Read_Back_contract",
+          "proof_that_W_or_J_is_independent_slow_state"
+        ],
+        "open_debt_carried_forward": [
+          "candidate_specific_V3_reduction_witness"
+        ],
+        "source_envelope": "current_reconciled_GRC9V3_specification_and_Phase_7_contracts",
+        "source_group": "GRC9V3_normative_and_implementation_records"
+      }
+    ],
+    "inheritance_classification_enum": [
+      "core_inherited",
+      "core_derived",
+      "candidate_constitutive_completion",
+      "substrate_requirement",
+      "legacy_substrate_exact",
+      "bounded_evidence",
+      "open"
+    ],
+    "authority_conflict_contract": {
+      "B1_B2": "bounded_historical_measurement_authority",
+      "conflict_disposition": "preserve_domain_specific_authorities_and_open_typed_design_debt_no_global_winner",
+      "current_core": "theory_meaning_authority",
+      "current_runtime_source": "current_executed_code_authority",
+      "normative_GRC9V3_specification": "intended_legacy_semantics_authority"
+    },
+    "current_v3_reference_audit": {
+      "audit_method": "exact_SHA256_match_of_all_five_GRC9V3_runtime_modules_plus_zero_git_diff_from_reconciliation_basis",
+      "behavioral_retest_performed_by_D0": false,
+      "current_runtime_matches_normative_V3": "true_at_reconciled_source_identity_and_contract_level",
+      "reference_transition_resolution": "current_GRC9V3_runtime_at_graph_HEAD_660ba4e_with_exact_module_hashes_and_reconciled_spec_7b1f0c0",
+      "reconciliation_basis_revision": "40a0b2cb55a62aed3bf29450c6cae8b56ae3880b",
+      "runtime_drift": false,
+      "runtime_modules_exactly_match_evidence_profile_basis": true,
+      "spec_runtime_mismatch": false,
+      "warning": "Historical B1_B2 evidence certifies only its frozen execution revisions and envelopes; source identity parity does not retroactively widen those measurements."
+    },
+    "design_argument_provenance_contract": {
+      "allowed_labels": [
+        "current_core_theory",
+        "B1_core_derived_argument",
+        "candidate_constitutive_completion",
+        "legacy_runtime_exact",
+        "bounded_legacy_evidence",
+        "constitutive_design_argument",
+        "analysis_only",
+        "open"
+      ],
+      "combining_provenance_into_one_impossibility_claim_allowed": false,
+      "later_rejection_requires_separate_entries_for_each_supporting_provenance": true
+    },
+    "missing_relation_classification": {
+      "classification_enum": [
+        "contradicted_by_core",
+        "not_defined_by_core",
+        "underdetermined_constitutive_completion",
+        "requires_new_theory"
+      ],
+      "default_absence_rule": "absence_from_current_core_is_not_a_prohibition",
+      "relations": [
+        {"classification":["not_defined_by_core","underdetermined_constitutive_completion"],"design_effect":"route_remains_open_if_core_vetoes_and_accounting_close","relation":"independent_retained_T"},
+        {"classification":["requires_new_theory"],"design_effect":"blocks_joint_structural_alpha_not_architectures_using_conditional_C_structure_plus_temporal_T","relation":"joint_F_struct_C_T"},
+        {"classification":["underdetermined_constitutive_completion"],"design_effect":"graph_candidate_may_be_derived_but_not_promoted_to_unique_core_law","relation":"graph_native_directional_Read_Back_operator"},
+        {"classification":["not_defined_by_core","underdetermined_constitutive_completion"],"design_effect":"deferred_to_D6_without_native_or_forbidden_presumption","relation":"independently_temporalized_current"},
+        {"classification":["not_defined_by_core"],"design_effect":"must_close_as_graph_substrate_requirement_for_full_topology_scope","relation":"retained_state_transport_across_graph_topology_events"},
+        {"classification":["underdetermined_constitutive_completion"],"design_effect":"D4_must_derive_or_block_mapping_without_symbol_identity","relation":"exact_graph_K_h_W_mobility_mapping"}
+      ]
+    },
+    "non_targets": [
+      "select_a_final_retained_representation_in_D0",
+      "write_a_normative_GRC9V4_specification",
+      "modify_runtime_source_or_existing_tests",
+      "retroactively_upgrade_B1_or_B2_claims",
+      "reinterpret_legacy_GRC9V3_state_semantics",
+      "prove_memory_learning_choice_agency_or_sentience",
+      "assume_LGRC_inheritance",
+      "collapse_structural_temporal_spatial_and_readback_spectra",
+      "establish_a_unique_Read_Back_formula"
+    ],
+    "selection_preferences": [
+      "minimal_new_independent_causal_state",
+      "source_derived_representation_when_constitutively_complete",
+      "explicit_causal_ownership_and_resource_accounting",
+      "smallest_lawful_extension_surface",
+      "analytical_identifiability",
+      "clear_default_off_or_disabled_profile",
+      "reuse_of_legacy_mechanics_without_semantic_relabeling",
+      "simple_serialization_and_lifecycle_behavior"
+    ],
+    "selection_preference_policy": {
+      "may_override_hard_veto": false,
+      "may_reject_the_only_candidate_that_satisfies_all_target_requirements": false,
+      "role": "rank_candidates_only_after_target_requirements_and_vetoes_are_satisfied"
+    },
+    "symbol_typing_ledger": [
+      {
+        "forbidden_identification": ["ordinary_C_persistence_as_retained_historical_sector"],
+        "graph_role": "node_coherence_and_admitted_legacy_complete_step_coordinate_on_verified_smooth_strata",
+        "permitted_identification": ["legacy_C_under_disabled_profile_projection"],
+        "source_role": "primitive_coherence_field",
+        "source_symbol": "C",
+        "unresolved_mapping": "whether_a_constitutive_retained_sector_of_C_is_runtime_addressable_and_historically_load_bearing"
+      },
+      {
+        "forbidden_identification": ["fresh_potential_flow_as_proof_of_Read_Back","equal_divergence_as_equal_oriented_current"],
+        "graph_role": "total_port_edge_flux_surface_reconstructed_within_the_legacy_beat",
+        "permitted_identification": ["candidate_total_physical_current_under_declared_orientation_and_projection"],
+        "source_role": "total_physical_coherence_current",
+        "source_symbol": "J_C",
+        "unresolved_mapping": "full_one_form_and_current_closure_correspondence"
+      },
+      {
+        "forbidden_identification": ["J0_as_independent_of_retained_geometry_without_audit"],
+        "graph_role": "candidate_baseline_or_direct_retained_conditioned_current_before_explicit_read_contribution",
+        "permitted_identification": ["fresh_potential_flow_component_if_D4_D6_attribution_closes"],
+        "source_role": "baseline_or_direct_current_part",
+        "source_symbol": "J0",
+        "unresolved_mapping": "direct_retained_to_J0_path"
+      },
+      {
+        "forbidden_identification": ["j_equals_J_C_by_symbol_or_convenience","scalar_or_projector_as_oriented_read_current"],
+        "graph_role": "absent_in_legacy_GRC9V3_and_required_as_candidate_or_derived_directional_contribution_in_V4",
+        "permitted_identification": ["typed_present_current_conditioned_edge_cochain_after_D5"],
+        "source_role": "derived_directional_Read_Back_current",
+        "source_symbol": "j",
+        "unresolved_mapping": "exact_graph_Read_Back_operator"
+      },
+      {
+        "forbidden_identification": ["theory_local_density_W_as_graph_base_conductance_by_shared_symbol","stage_local_graph_W_as_durable_memory"],
+        "graph_role": "legacy_scalar_base_conductance_reconstructed_each_beat",
+        "permitted_identification": ["candidate_structural_or_mobility_role_only_after_D1_D4_derivation"],
+        "source_role": "local_reduced_functional_density_symbol_in_Continuation_Spectrum_not_the_graph_conductance",
+        "source_symbol": "W",
+        "unresolved_mapping": "whether_temporalized_graph_W_can_lawfully_own_retained_structure_mobility_or_both"
+      },
+      {
+        "forbidden_identification": ["graph_hybrid_node_tensor_as_exact_core_K_by_name","K_as_mobility_without_derivation"],
+        "graph_role": "Phase_7_hybrid_node_tensor_surface",
+        "permitted_identification": ["analogical_or_constitutive_mapping_after_D4"],
+        "source_role": "coherence_or_geometry_inducing_tensor",
+        "source_symbol": "K",
+        "unresolved_mapping": "exact_constitutive_relation_to_graph_geometry_and_transport"
+      },
+      {
+        "forbidden_identification": ["fixed_port_chart_or_geometric_length_as_complete_induced_metric"],
+        "graph_role": "no_exact_legacy_induced_spatial_metric_object",
+        "permitted_identification": ["declared_metric_realization_or_bundle_identification_after_D4"],
+        "source_role": "induced_positive_definite_spatial_metric",
+        "source_symbol": "h",
+        "unresolved_mapping": "graph_metric_domain_and_induction_from_K_or_C"
+      },
+      {
+        "forbidden_identification": ["conductance_as_structural_geometry_and_mobility_simultaneously_without_role_audit"],
+        "graph_role": "candidate_transport_operator_derived_from_scalar_conductance_and_topology",
+        "permitted_identification": ["declared_positive_transport_mobility_after_D4"],
+        "source_role": "mobility_or_positive_transport_operator",
+        "source_symbol": "M_or_A",
+        "unresolved_mapping": "separation_or_relation_between_geometry_and_mobility"
+      },
+      {
+        "forbidden_identification": ["T_M_as_independent_state_by_notation","analysis_only_projector_output_as_runtime_state"],
+        "graph_role": "architecture_neutral_retained_representation_placeholder",
+        "permitted_identification": ["D1_admitted_independent_derived_or_constitutive_representation"],
+        "source_role": "bookkeeping_for_declared_retained_inputs_not_a_unique_primitive",
+        "source_symbol": "T_M",
+        "unresolved_mapping": "state_authority_resource_accounting_and_transport_role"
+      },
+      {
+        "forbidden_identification": ["branch_relative_dynamic_projector_as_intrinsic_runtime_state","low_spatial_projector_as_automatic_slow_retention"],
+        "graph_role": "analysis_projector_unless_D1_admits_constitutive_runtime_consumption",
+        "permitted_identification": ["declared_state_level_or_branch_relative_projector_with_typed_status"],
+        "source_role": "spatial_or_dynamic_retained_sector_selection",
+        "source_symbol": "P_M_or_P_slow",
+        "unresolved_mapping": "selector_authority_transport_and_gap_stability"
+      }
+    ],
+    "target": {
+      "claim": "Determine whether a coherent minimal revision-distinct GRC9V4 architecture can support retained causal formation, distinguishable post-input continuation, present-current-conditioned directional Read-Back, a total-current or state consequence, and write-back into future retained representation while reducing to legacy GRC9V3 when disabled.",
+      "target_id": "continuation_capable_retained_representation_with_directional_readback",
+      "target_order": [
+        "past_activity",
+        "formation_of_admitted_retained_causal_representation",
+        "distinguishable_post_input_continuation",
+        "present_current_conditioned_directional_Read_Back",
+        "total_current_or_state_consequence",
+        "write_back_into_future_retained_representation"
+      ]
+    },
+    "theory_drift_audit": {
+      "audit_conclusion": "no_source_text_drift_detected_all_B1_statement_provenance_and_limits_remain_unchanged",
+      "b1_frozen_theory_hashes_equal_current_core_hashes": true,
+      "classification_enum": [
+        "unchanged",
+        "narrowed_by_current_core",
+        "broadened_by_current_core",
+        "superseded",
+        "historical_only",
+        "conflict_requires_rederivation"
+      ],
+      "claim_level_anchor_contract": {
+        "B1_claim_table_path": "experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/implementation/GRC9V3ContinuationReadBackVerificationSpecification.md",
+        "B1_claim_table_sha256": "7ad99fb4acc6a7691d184a514f4836ffa3927600fc7cf504eb059134f3948e44",
+        "B1_claim_table_source_lines": "356-388_at_frozen_hash",
+        "anchor_semantics": "Each row is bound by claim ID and frozen source line; this D0 decision digest freezes its drift result. Core-inherited meaning remains governed by the two separately frozen core papers.",
+        "current_core_anchor_sets": [
+          "TheContinuationSpectrum:80-186_formal_status_and_scope",
+          "TheContinuationSpectrum:302-557_continuation_and_spectrum_distinctions",
+          "TheContinuationSpectrum:807-1171_measure_and_relaxation",
+          "ReadBack:116-242_formal_status_and_retained_objects",
+          "ReadBack:480-579_Read_Back_contract",
+          "ReadBack:580-1080_retained_representation_and_current_closure",
+          "ReadBack:1081-1522_write_back_and_structural_cultivation",
+          "ReadBack:1958-2211_appendix_contracts_and_claim_concordance"
+        ]
+      },
+      "rows": [
+        {"b1_provenance":"core_inherited","claim_id":"T-S01","drift":"unchanged","source_anchor":"B1-spec:356"},
+        {"b1_provenance":"core_derived","claim_id":"T-S02","drift":"unchanged","source_anchor":"B1-spec:357"},
+        {"b1_provenance":"core_inherited","claim_id":"T-RW01","drift":"unchanged","source_anchor":"B1-spec:358"},
+        {"b1_provenance":"core_inherited","claim_id":"T-RW02","drift":"unchanged","source_anchor":"B1-spec:359"},
+        {"b1_provenance":"core_inherited","claim_id":"T-RW03","drift":"unchanged","source_anchor":"B1-spec:360"},
+        {"b1_provenance":"core_inherited","claim_id":"T-RW04","drift":"unchanged","source_anchor":"B1-spec:361"},
+        {"b1_provenance":"core_derived","claim_id":"T-RW05","drift":"unchanged","source_anchor":"B1-spec:362"},
+        {"b1_provenance":"core_derived","claim_id":"T-RW06","drift":"unchanged","source_anchor":"B1-spec:363"},
+        {"b1_provenance":"core_inherited_plus_core_derived","claim_id":"T-RW07","drift":"unchanged","source_anchor":"B1-spec:364"},
+        {"b1_provenance":"core_derived","claim_id":"T-RW08","drift":"unchanged","source_anchor":"B1-spec:365"},
+        {"b1_provenance":"core_inherited_plus_core_derived","claim_id":"T-RW09","drift":"unchanged","source_anchor":"B1-spec:366"},
+        {"b1_provenance":"core_derived","claim_id":"T-RW10","drift":"unchanged","source_anchor":"B1-spec:367"},
+        {"b1_provenance":"core_derived","claim_id":"T-RW11","drift":"unchanged","source_anchor":"B1-spec:368"},
+        {"b1_provenance":"core_inherited","claim_id":"T-M01","drift":"unchanged","source_anchor":"B1-spec:369"},
+        {"b1_provenance":"core_inherited_plus_core_derived","claim_id":"T-M02","drift":"unchanged","source_anchor":"B1-spec:370"},
+        {"b1_provenance":"core_derived","claim_id":"T-M03","drift":"unchanged","source_anchor":"B1-spec:371"},
+        {"b1_provenance":"core_derived","claim_id":"T-M04","drift":"unchanged","source_anchor":"B1-spec:372"},
+        {"b1_provenance":"core_inherited","claim_id":"T-C01","drift":"unchanged","source_anchor":"B1-spec:373"},
+        {"b1_provenance":"core_inherited","claim_id":"T-C02","drift":"unchanged","source_anchor":"B1-spec:374"},
+        {"b1_provenance":"core_derived","claim_id":"T-C03","drift":"unchanged","source_anchor":"B1-spec:375"},
+        {"b1_provenance":"core_inherited_plus_core_derived","claim_id":"T-B01","drift":"unchanged","source_anchor":"B1-spec:376"},
+        {"b1_provenance":"core_derived","claim_id":"T-B02","drift":"unchanged","source_anchor":"B1-spec:377"},
+        {"b1_provenance":"core_inherited_plus_core_derived","claim_id":"T-B03","drift":"unchanged","source_anchor":"B1-spec:378"},
+        {"b1_provenance":"core_derived","claim_id":"T-B04","drift":"unchanged","source_anchor":"B1-spec:379"},
+        {"b1_provenance":"candidate_constitutive_completion","claim_id":"T-A01","drift":"unchanged","source_anchor":"B1-spec:380"},
+        {"b1_provenance":"core_derived","claim_id":"T-A02","drift":"unchanged","source_anchor":"B1-spec:381"},
+        {"b1_provenance":"core_derived","claim_id":"T-A03","drift":"unchanged","source_anchor":"B1-spec:382"},
+        {"b1_provenance":"core_inherited_plus_core_derived","claim_id":"T-A04","drift":"unchanged","source_anchor":"B1-spec:383"},
+        {"b1_provenance":"core_derived","claim_id":"T-A05","drift":"unchanged","source_anchor":"B1-spec:384"},
+        {"b1_provenance":"core_derived","claim_id":"T-A06","drift":"unchanged","source_anchor":"B1-spec:385"},
+        {"b1_provenance":"open","claim_id":"T-O01","drift":"unchanged","source_anchor":"B1-spec:386"},
+        {"b1_provenance":"core_inherited","claim_id":"T-O02","drift":"unchanged","source_anchor":"B1-spec:387"},
+        {"b1_provenance":"core_inherited","claim_id":"T-O03","drift":"unchanged","source_anchor":"B1-spec:388"}
+      ],
+      "source_identity_reason": "B1 theory_source_manifest hashes exactly equal the current frozen core paper hashes.",
+      "statement_count": 33
+    },
+    "topology_scope": {
+      "required_later_result_scope_label": [
+        "fixed_verification_envelope",
+        "fixed_topology_normative_subprofile",
+        "full_topology_capable_V4"
+      ],
+      "scope_claim_rule": "A result inherits exactly one declared topology scope; fixed-envelope success cannot support event or topology semantics.",
+      "design_verification_envelope": {
+        "default": "fixed_topology_event_free_smooth_strata",
+        "event_boundary_behavior": "stop_smooth_analysis_and_classify_event_boundary_no_cross_event_derivative_by_lineage_alone",
+        "purpose": "candidate ontology reduction operator and local loop analysis before topology transport is derived"
+      },
+      "normative_runtime_capability_scope": {
+        "capability_disablement_allowed_as_final_V4_scope": false,
+        "inherited_capabilities": [
+          "spark_candidate_detection",
+          "mechanical_expansion",
+          "child_basin_stabilization",
+          "hierarchy_update",
+          "choice_collapse_learning_event_surface",
+          "growth",
+          "boundary_behavior"
+        ],
+        "scope": "full_GRC9V3_capability_successor"
+      },
+      "topology_transport_requirement": {
+        "accounting_required": [
+          "retained_representation_transport_or_reconfiguration",
+          "resource_and_budget_accounting",
+          "parent_child_or_interspace_identity",
+          "event_order_and_lifecycle_serialization",
+          "declared_reset_release_or_termination_semantics"
+        ],
+        "lineage_alone_sufficient": false,
+        "must_close_before_D10": true
+      }
+    },
+    "v3_reduction_contract": {
+      "added_state_disabled_initialization": [
+        "deterministic",
+        "candidate_declared",
+        "causally_neutral_under_disabled_profile",
+        "serializable_if_present",
+        "no_hidden_budget_or_RNG_effect"
+      ],
+      "candidate_D1_requirements": [
+        "construct_i_a",
+        "construct_pi_a",
+        "declare_disabled_added_state_initialization",
+        "declare_state_and_lifecycle_domains",
+        "record_reduction_obligations_and_blockers",
+        "do_not_claim_completed_transition_commutation_before_D7_and_D9"
+      ],
+      "disabled_profile_equation": "pi_a(F_V4_a_disabled(i_a(x))) = F_V3(x)",
+      "disabled_profile_invariant_subspace": {
+        "history_accumulated_while_disabled_may_affect_later_reenabled_behavior": false,
+        "invariance_equation": "F_V4_a_disabled(i_a(X_V3)) is contained in i_a(X_V3)",
+        "invariance_required": true,
+        "neutral_added_state_policy": "candidate_must_choose_canonical_frozen_neutral_reset_to_neutral_or_erased_reconstruction_so_the_result_remains_in_the_embedding_image",
+        "reenable_default": "start_from_canonical_neutral_added_state_unless_a_separate_non_parity_migration_profile_is_later_specified",
+        "one_step_coincidence_sufficient": false
+      },
+      "equivalence_semantics": {
+        "event_lifecycle": "projected_exact_required_for_event_identity_order_payload_topology_registries_step_time_RNG_and_reset_baseline",
+        "external_clock": "same_complete_step_index_and_synchronous_time_semantics_required",
+        "internal_solver_staging": "not_part_of_legacy_equivalence_extra_no_op_stages_or_internal_iterations_allowed",
+        "numerical_tolerance": "allowed_only_for_declared_floating_surfaces_with_threshold_frozen_before_D9_never_for_categorical_or_lifecycle_state",
+        "observables": "projected_exact_for_names_types_and_categorical_values_numeric_exact_by_default",
+        "projection_noninterference": "projection_may_hide_only_declared_neutral_added_state_or_representation_caches_never_a_field_that_affects_V3_observables_events_budget_topology_or_future_evolution",
+        "snapshot": "projected_semantic_equality_required_raw_byte_equality_not_required_disabled_added_fields_must_be_canonical_and_neutral",
+        "transition": "projected_external_complete_step_exact_required_by_default_with_any_numeric_tolerance_exception_predeclared_and_justified",
+        "internal_stage_identity_required": false
+      },
+      "reference_profile": "legacy_GRC9V3_current_reconciled_spec_and_Phase_7_complete_step",
+      "reference_surfaces": [
+        "transition",
+        "snapshot",
+        "observables",
+        "event_lifecycle"
+      ],
+      "serialization_rules": [
+        "legacy_GRC9V3_snapshots_remain_loadable_under_the_eventual_disabled_profile",
+        "independent_added_state_must_be_serialized",
+        "derived_or_cache_state_must_be_reconstructible_and_classified",
+        "disabled_added_state_round_trips_to_its_canonical_neutral_value",
+        "representation_only_cache_normalization_does_not_define_scientific_identity"
+      ],
+      "transition_identity": "GRC9V3_legacy_complete_step_at_D0_frozen_source_set"
+    }
+  },
+  "decision_record_digest": "b38b07311afc24bfe1016d75e985f886718e5a9d104c69c59e29318801f457c0",
+  "evidence_or_argument": [
+    "Both current core theory hashes exactly match the theory identities consumed by B1, so no source-text drift is present.",
+    "The current core preserves the coherence-only primitive state while distinguishing state-level retained coherence from branch-relative analytical slow perturbations.",
+    "The core explicitly keeps structural continuation stiffness, temporal relaxation, Read-Back gain, and spatial scale distinct and leaves a unified active-current closure open.",
+    "B1 establishes bounded exact legacy recurrence and verification distinctions without selecting a V4 constitutive completion.",
+    "B2 establishes a bounded empty candidate set in its preregistered clean lane without a global impossibility result or extension selection.",
+    "The reconciled GRC9V3 specification and Phase 7 records define the disabled-profile reference transition and inherited topology/lifecycle capabilities.",
+    "All five current GRC9V3 runtime modules exactly match the source hashes frozen by the reconciliation evidence profile, and no source diff exists from its basis revision; this establishes source-identity parity rather than a new behavioral evidence claim.",
+    "Missing core relations are classified as contradicted, undefined, underdetermined completion, or requiring new theory so absence cannot become prohibition.",
+    "Candidate families are investigation classifications that may be reclassified when causal architecture is unchanged; material hybridization requires a D0 successor.",
+    "The disabled profile must preserve an invariant legacy subspace over repeated steps, not merely one projected transition."
+  ],
+  "gate_id": "D0",
+  "human_acceptance": {
+    "accepted": true,
+    "accepted_by": "experiment_owner",
+    "accepted_date": "2026-08-24",
+    "status": "accepted"
+  },
+  "open_debt": [
+    {
+      "assumption_forbidden_downstream": "A joint structural continuation Hessian may not be inferred from the runtime transition Jacobian.",
+      "blocking_scope": "joint_structural_continuation_claim",
+      "candidate_scope": "all_candidates_with_joint_C_T_or_active_current_structural_coordinates",
+      "debt_id": "D0-DEBT-JOINT-STRUCTURE",
+      "must_close_before_D10": true,
+      "open_alternatives": [
+        "C_only_structural_functional",
+        "conditional_C_structure_at_frozen_or_parameter_T",
+        "new_source_backed_joint_F_struct_C_T",
+        "block_joint_structural_alpha_while_retaining_temporal_T_architecture"
+      ],
+      "resolution_gate": "D3_or_named_theory_derivation"
+    },
+    {
+      "assumption_forbidden_downstream": "Independent active current may not inherit the reduced self-adjoint continuation Hessian.",
+      "blocking_scope": "active_current_structural_alpha",
+      "candidate_scope": "candidates_requiring_independent_active_current",
+      "debt_id": "D0-DEBT-ACTIVE-CURRENT-STRUCTURE",
+      "must_close_before_D10": true,
+      "open_alternatives": [
+        "no_current_or_frozen_current_structural_reference",
+        "smoothly_slaved_current_reduction",
+        "justified_Schur_complement",
+        "new_joint_active_current_structural_theory",
+        "block_active_current_alpha_claim"
+      ],
+      "resolution_gate": "D3_D6_D8_or_named_theory_derivation"
+    },
+    {
+      "assumption_forbidden_downstream": "Lineage or node IDs may not substitute for retained-state interspace transport.",
+      "blocking_scope": "topology_changing_retention_and_reduction",
+      "candidate_scope": "all_candidates_under_full_runtime_capability_scope",
+      "debt_id": "D0-DEBT-TOPOLOGY-INTERSPACE",
+      "must_close_before_D10": true,
+      "open_alternatives": [
+        "explicit_retained_state_interspace_transport",
+        "event_local_reconfiguration_with_budget_accounting",
+        "declared_reset_release_or_termination_at_event_boundary"
+      ],
+      "resolution_gate": "D4_and_D9"
+    },
+    {
+      "assumption_forbidden_downstream": "K, h, W, and transport mobility may not be treated as one field by convenience.",
+      "blocking_scope": "geometry_mobility_ownership",
+      "candidate_scope": "all_candidates",
+      "debt_id": "D0-DEBT-GEOMETRY-MOBILITY",
+      "must_close_before_D10": true,
+      "open_alternatives": [
+        "separate_structural_geometry_and_mobility",
+        "derive_mobility_from_geometry_with_explicit_map",
+        "retain_candidate_as_separate_structural_carrier",
+        "block_unresolved_identification"
+      ],
+      "resolution_gate": "D4"
+    },
+    {
+      "assumption_forbidden_downstream": "A Read-Back formula may not be treated as a solved total-current closure.",
+      "blocking_scope": "directional_readback_and_total_current_closure",
+      "candidate_scope": "all_surviving_candidates",
+      "debt_id": "D0-DEBT-READBACK-CURRENT-CLOSURE",
+      "must_close_before_D10": true,
+      "open_alternatives": [
+        "bounded_algebraic_slaved_current_closure",
+        "explicit_dynamic_current_closure",
+        "higher_order_or_nonlinear_resolution",
+        "block_Read_Back_target_for_candidate"
+      ],
+      "resolution_gate": "D5_and_D6"
+    },
+    {
+      "assumption_forbidden_downstream": "A derived retained sector may not rely on retrospective trajectory labels or hidden selector history.",
+      "blocking_scope": "derived_representation_constitutive_addressability",
+      "candidate_scope": "V4-C-constitutive-C-sector_and_any_derived_V4-D",
+      "debt_id": "D0-DEBT-SELECTOR-ADDRESSABILITY",
+      "must_close_before_D10": true,
+      "open_alternatives": [
+        "deterministic_selector_from_current_declared_causal_state",
+        "explicit_serialized_selector_state_and_reclassification_toward_independent_carrier",
+        "fixed_constitutive_sector_identity",
+        "reject_retrospective_or_future_informed_selector"
+      ],
+      "resolution_gate": "D1_and_D2"
+    },
+    {
+      "assumption_forbidden_downstream": "Disabled-profile parity may not be claimed from state-layout compatibility alone.",
+      "blocking_scope": "legacy_GRC9V3_reduction_witness",
+      "candidate_scope": "all_candidates",
+      "debt_id": "D0-DEBT-V3-REDUCTION-WITNESS",
+      "must_close_before_D10": true,
+      "open_alternatives": [
+        "exact_invariant_legacy_subspace",
+        "projected_exact_legacy_subspace_with_canonical_neutral_added_state",
+        "declared_numeric_tolerance_only_for_pre_frozen_floating_surfaces",
+        "reject_candidate_if_future_noninterference_or_lifecycle_parity_fails"
+      ],
+      "resolution_gate": "D1_construction_D7_transition_D9_witness"
+    }
+  ],
+  "predecessor_decision_digest": "7daf0693e2603b8e0c7062c77789a4ae71b6372b5605e31024be304a282e2654",
+  "record_id": "GRC9V4-CD-D0-v1",
+  "record_type": "design_gate_decision",
+  "rejected_alternatives": [
+    {
+      "alternative": "treat_B1_Draft_3_4_1_as_the_V4_implementation_specification",
+      "reason": "It is a verification contract containing candidate completions and analysis machinery, not a selected constitutive architecture."
+    },
+    {
+      "alternative": "select_a_retained_carrier_from_B2_empty_search",
+      "reason": "B2 neither localizes one missing role nor establishes global unchanged-runtime impossibility."
+    },
+    {
+      "alternative": "freeze_V4_as_fixed_topology_only_to_avoid_transport_debt",
+      "reason": "That would silently remove inherited GRC9V3 capabilities instead of solving or explicitly specifying their retained-state semantics."
+    },
+    {
+      "alternative": "instantiate_candidate_reduction_maps_in_D0",
+      "reason": "Candidate state spaces and ownership are not admitted until D1."
+    },
+    {
+      "alternative": "allow_post_result_candidate_additions_inside_D1",
+      "reason": "That would make the comparison responsive to observed outcomes rather than the frozen source basis."
+    }
+  ],
+  "schema_version": "grc9v4_constitutive_design_decision_v1",
+  "source_identities": {
+    "files": [
+      {"path":"core/2026-08-TheContinuationSpectrum.md","repository":"geometric-reflexive-coherence","role":"controlling_theory","sha256":"14ee948d04c8803ae2c05e0d602d94c40d67bbed5399a8ef539bd024e77d95c5"},
+      {"path":"core/2026-08-ReadBack.md","repository":"geometric-reflexive-coherence","role":"controlling_theory","sha256":"04c0bb8398febf58592297326e741271b46a52f504f6a0cea17a0bd6624efbb2"},
+      {"path":"experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/implementation/GRC9V3ContinuationReadBackVerificationSpecification.md","repository":"graph-reflexive-coherence","role":"historical_verification_contract","sha256":"7ad99fb4acc6a7691d184a514f4836ffa3927600fc7cf504eb059134f3948e44"},
+      {"path":"experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/implementation/GRC9V3ContinuationReadBackVerificationSpecification_EvidenceGrounded_v1.md","repository":"graph-reflexive-coherence","role":"evidence_grounded_historical_successor","sha256":"120da823f5e6b3bc5e91092891ef392cc73b8f1d992ad420347802babd228fed"},
+      {"path":"experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/outputs/theory_source_manifest.json","repository":"graph-reflexive-coherence","role":"B1_frozen_theory_identity_manifest","sha256":"9f63667aca76185e58637dfe15302fb1cb9615e513e7f5ad75e17f688f6381d3"},
+      {"path":"experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/implementation/GRC9V3ContinuationReadBackVerificationImplementationPlan.md","repository":"graph-reflexive-coherence","role":"B1_execution_plan","sha256":"9ac28c35bf48445697ea89b8d6a7a5f57a7837dd76aeefbc222b2447e20c79f9"},
+      {"path":"experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/implementation/GRC9V3ContinuationReadBackVerificationImplementationChecklist.md","repository":"graph-reflexive-coherence","role":"B1_execution_record","sha256":"cdd113242ebb5d0250881bbc94383fc1e36edcfb0e6e09281f5656ec7c0f54f5"},
+      {"path":"experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/reports/b1_grc9v3_verification_report.md","repository":"graph-reflexive-coherence","role":"B1_accepted_report","sha256":"186d692cd54585c77b5511f92304fb693e99eb5fe6e22e830ff8806cc86085d9"},
+      {"path":"experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/reports/b1_grv8_closeout.md","repository":"graph-reflexive-coherence","role":"B1_closeout","sha256":"7ba45d8e58e2c708e70b29d87987a4094ce7de1d15ca7b5d2b8c55140d4e27cc"},
+      {"path":"experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/outputs/final_claim_classification.json","repository":"graph-reflexive-coherence","role":"B1_machine_claim_classification","sha256":"f85d474daef7db7597f99d0d4afea2e242b4ca66b08a95b830496ae802f57d38"},
+      {"path":"experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/outputs/gates/grv8_closeout_acceptance_anchor.json","repository":"graph-reflexive-coherence","role":"B1_acceptance_anchor","sha256":"239417d959f92bb3b32f2506b35fc279d8193722e46b8517001d3d29fa272da3"},
+      {"path":"experiments/2026-08-B1-GR-grc9v3-continuation-readback-verification/outputs/continuation_readback_next_route_handoff.json","repository":"graph-reflexive-coherence","role":"B1_next_route_handoff","sha256":"ed3b3ec5ce6a5aba04df70ec14c257ce0ab3256cc28fb08b5890ba954f7bd615"},
+      {"path":"experiments/2026-08-B2-GR-grc9v3-retention-mediation-constructibility/implementation/GRC9V3RetentionMediationConstructibilityPlan.md","repository":"graph-reflexive-coherence","role":"B2_execution_plan","sha256":"479aa7de260deca66d18a1b99891c45abf4c96e20e06a661dfea81d097d627cb"},
+      {"path":"experiments/2026-08-B2-GR-grc9v3-retention-mediation-constructibility/implementation/GRC9V3RetentionMediationConstructibilityChecklist.md","repository":"graph-reflexive-coherence","role":"B2_execution_record","sha256":"b691905a64f4860f09c20451beab0357a8d2b5f823c8e8520f4e66b42fdab276"},
+      {"path":"experiments/2026-08-B2-GR-grc9v3-retention-mediation-constructibility/reports/b2_i8_classification_and_handoff.md","repository":"graph-reflexive-coherence","role":"B2_accepted_report","sha256":"4ff8bd26e88c49940c71d3fa08c0bc036bce3892f6a288a832b21bdd28feb146"},
+      {"path":"experiments/2026-08-B2-GR-grc9v3-retention-mediation-constructibility/outputs/b2_i8_classification_and_handoff.json","repository":"graph-reflexive-coherence","role":"B2_machine_closeout","sha256":"138ee93667181f0a73012636ad90ee2919f0999d1c47a75d0e800079035af370"},
+      {"path":"experiments/2026-08-B2-GR-grc9v3-retention-mediation-constructibility/outputs/gates/b2_closeout_acceptance_anchor.json","repository":"graph-reflexive-coherence","role":"B2_acceptance_anchor","sha256":"2a4b6b3220eae0fe0b3e3e4a698d47ab893841a3be15bafea0bf3755cac1143c"},
+      {"path":"experiments/2026-08-B2-GR-grc9v3-retention-mediation-constructibility/reports/b2_grc9v3_specification_reconciliation_handoff.md","repository":"graph-reflexive-coherence","role":"B2_spec_reconciliation_handoff","sha256":"9f9524001e431bc49a8ad338ea68e6dd787d634d8a9edef76e05e017ff618a1b"},
+      {"path":"experiments/2026-08-B2-GR-grc9v3-retention-mediation-constructibility/outputs/b2_grc9v3_specification_reconciliation_handoff.json","repository":"graph-reflexive-coherence","role":"B2_machine_spec_reconciliation_handoff","sha256":"7087698bb419b7a2f10ed8fea271baa826005971536423373febb0457ab2425f"},
+      {"path":"specs/grc-9-v3-spec.md","repository":"graph-reflexive-coherence","role":"legacy_normative_substrate","sha256":"7b1f0c03988be7dbe3feb8ba926d43d891d70daa0dbbae9804fc70f2a4950f2f"},
+      {"path":"specs/grc-9-v3-evidence-profile.md","repository":"graph-reflexive-coherence","role":"legacy_evidence_profile","sha256":"89a445dca1e4e9797a2e89ca8aad22b8678d2db3af888510890d8e786d8987d8"},
+      {"path":"src/pygrc/models/grc_9_v3.py","repository":"graph-reflexive-coherence","role":"current_GRC9V3_orchestration_reference","sha256":"d297def1eddfaf79a7ad3d6b676caaeebb29e6d7235f4fac5c6729bd7e26ca9e"},
+      {"path":"src/pygrc/models/grc_9_v3_runtime.py","repository":"graph-reflexive-coherence","role":"current_GRC9V3_operator_reference","sha256":"f6f12de4e9bf66cd97b4063854ea225ae00874fed7073d4e72775891db54f502"},
+      {"path":"src/pygrc/models/grc_9_v3_state.py","repository":"graph-reflexive-coherence","role":"current_GRC9V3_state_reference","sha256":"4ab5ffcb95d69a0767b24d6c95277ba3619a5d477c4865cc0d31735a2377918e"},
+      {"path":"src/pygrc/models/grc_9_v3_sparks.py","repository":"graph-reflexive-coherence","role":"current_GRC9V3_spark_topology_reference","sha256":"fa1db78355e1dba41245da44c9c515ac09820035ca451723873da779420ee820"},
+      {"path":"src/pygrc/models/grc_9_v3_choice.py","repository":"graph-reflexive-coherence","role":"current_GRC9V3_choice_collapse_reference","sha256":"ab8be0391a37e71d4610022afe3f64dac6102b929ade4448a59e7f4e02167933"},
+      {"path":"implementation/Phase-7-ImplementationPlan.md","repository":"graph-reflexive-coherence","role":"legacy_implementation_scope_and_ownership","sha256":"6d9d215757405e4be19f67cde844af3ac9297389ce730e8a44f9c7b6844067b3"},
+      {"path":"implementation/Phase-7-StepLoop.md","repository":"graph-reflexive-coherence","role":"legacy_complete_step_contract","sha256":"a5d52562e771317b9d669ef62cd337ac98bba8dfd21f7cd521e9ae7c04ad17fb"},
+      {"path":"implementation/Phase-7-EquationMap.md","repository":"graph-reflexive-coherence","role":"legacy_ownership_contract","sha256":"94461cdf43f9fb4bc7bb0996822ea4e6130f7256ac1a041594eea99656c3555c"},
+      {"path":"implementation/Phase-7-ImplementationChecklist.md","repository":"graph-reflexive-coherence","role":"legacy_implementation_and_correction_lifecycle","sha256":"a01305300a785e08feb32b33846454dcbd5709ab655d5fd5332dd409adc8d30a"},
+      {"path":"implementation/Phase-7-MidGate-Review.md","repository":"graph-reflexive-coherence","role":"legacy_truthful_hybrid_and_capability_boundary","sha256":"99e69b09c1538ff2c96a236460bf8e42faf238dcbd69dda7fbdbdd9dc33cf6b0"},
+      {"path":"implementation/Phase-7-RepresentativeRuntime.md","repository":"graph-reflexive-coherence","role":"legacy_representative_runtime_and_replay_evidence","sha256":"51aec1f3b3b512f47634b49f9608ee3a044a21d8c0996ad44dbe0103a915a9f0"},
+      {"path":"implementation/Phase-7-Closeout.md","repository":"graph-reflexive-coherence","role":"legacy_accepted_core_boundary","sha256":"677f4b4689fed54c6c0842481e3d4d61142a23db0148b2c5b3fe11d99cc59d5c"},
+      {"path":"implementation/investigations/grc9v4-constitutive-design/GRC9V4ConstitutiveDesignInitialization.json","repository":"graph-reflexive-coherence","role":"decision_predecessor","semantic_decision_digest":"7daf0693e2603b8e0c7062c77789a4ae71b6372b5605e31024be304a282e2654","sha256":"210ea93816943c57312248829713ea53e8c9c4a3acb7509e19377a01ee33d794"}
+    ],
+    "repositories": [
+      {"branch":"investigation-GRC9V4-constitutive-design","clean_before_D0":true,"head":"660ba4e9563130c73930fc00f14023f4d1725c2d","repository":"graph-reflexive-coherence"},
+      {"branch":"main","clean_before_D0":true,"head":"5a8b01ae60165054da617db649c5a039755a18ec","repository":"geometric-reflexive-coherence"}
+    ]
+  },
+  "status": "accepted",
+  "supersedes": null,
+  "authorization_effect": {
+    "D1_authorized": true,
+    "existing_runtime_test_change_authorized": false,
+    "normative_specification_authorized": false,
+    "runtime_implementation_authorized": false,
+    "src_change_authorized": false
+  }
+}
