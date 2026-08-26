@@ -16,10 +16,12 @@ An investigation belongs here when it:
 Current investigations:
 
 - [GRC9V4 constitutive design](./grc9v4-constitutive-design/README.md):
-  active pre-specification investigation resolving the retained-representation,
-  continuation, directional Read-Back, current-closure, and write-back
-  architecture required before any normative GRC9V4 specification or runtime
-  implementation may begin.
+  accepted bounded through D10.2. It closes the bounded current-population
+  investigation of retained representation, continuation, directional
+  Read-Back, current closure, write-back, realization, lifecycle, and
+  substrate provenance. It earns the GRCv4-to-GRC9v4-to-disabled-GRC9v3
+  factorization and authorizes GRCv4-first specification writing while leaving
+  all runtime implementation unauthorized.
 - [Causal-pathway consolidation](./causal-pathway-consolidation/README.md):
   accepted source-audit and I106-I111 supporting evidence for the completed
   documentation/conformance tranche. The essential plan, checklist, baseline

@@ -482,6 +482,47 @@ analysis/identifiability debt third, and LGRC-specific investigation fourth.
 Closing B1-GR selects none of those routes automatically. B1-L is a deferred
 LGRC-specific scaffold, not the umbrella handoff.
 
+## GRCv4/GRC9v4 Constitutive Design
+
+Bounded claim: B2-GR closes its preregistered unchanged-`GRC9V3`
+constructibility search at `B2-C6` without a confirmed retained-carrier
+candidate, a new GRR rung, or an extension selection. The subsequent D0-D10.2
+constitutive investigation accepts a profile-explicit design population and
+earns, for that current population, the factorization:
+
+```text
+GRCv4 ->[nine-port specialization] GRC9v4 ->[disabled V4 profile] GRC9v3
+```
+
+The accepted D10 topology contains 39 claims across normative, optional,
+conditional, open, and negative classes. D10.2 binds those claims to 67
+normatively load-bearing parent objects and 152 normative equation/contract
+rows, with no promotion-pending row. General GRC content is separated from
+deliberate GRC9 compatibility and intrinsically nine-port mechanics.
+
+Evidence pointers:
+
+- [B2-GR accepted boundary](../../experiments/2026-08-B2-GR-grc9v3-retention-mediation-constructibility/README.md): Bounded unchanged-runtime search result and its non-global negative boundary.
+- [Constitutive design investigation](../../implementation/investigations/grc9v4-constitutive-design/README.md): D0-D10.2 lineage, current disposition, candidate/realization history, and continuation route.
+- [D10 design synthesis](../../implementation/investigations/grc9v4-constitutive-design/decisions/D10DesignSynthesisAndSpecWritingDecision.md): Claim topology, profile grammar, architecture population, and specification authorization decision.
+- [D10.2 full substrate-provenance audit](../../implementation/investigations/grc9v4-constitutive-design/decisions/D10_2FullSubstrateProvenanceAndPromotionAudit.md): Equation/contract-level GRC promotion, GRC9 specialization, disabled reduction, and final factorization evidence.
+- [D10.2 machine record](../../implementation/investigations/grc9v4-constitutive-design/decisions/D10_2FullSubstrateProvenanceAndPromotionAudit.json): Accepted structured disposition, exact counts, controls, identities, and digest.
+- [Constitutive design plan](../../implementation/investigations/grc9v4-constitutive-design/GRC9V4ConstitutiveDesignPlan.md): Gate sequence, accepted current-population route, and successor reopening rules for the still-unwritten V4 specifications.
+
+Claim ceiling: accepted design, claim-topology, lifecycle, and substrate-
+provenance closure for the current D10 initial specification population. It
+does not establish a V4 runtime, implementation conformance, formed-branch
+reachability, numerical spectra or stability, unique candidate/realization
+preference, core-theory uniqueness, or a future-exhaustive V4 taxonomy. It
+does not establish that nine-port mechanics are unnecessary; those mechanics
+remain GRC9 specialization content.
+
+Continuation boundary: write the GRCv4 normative specification first, then the
+substantive GRC9v4 nine-port specialization with exact disabled-profile
+compatibility to GRC9v3. Any future profile outside the accepted D10 population
+must reopen provenance and the earliest affected accepted contract.
+Implementation planning and `src/` changes remain unauthorized.
+
 ## Forward Catalog Orientation
 
 The N30+ roadmap package is a planning and ontology layer for future
