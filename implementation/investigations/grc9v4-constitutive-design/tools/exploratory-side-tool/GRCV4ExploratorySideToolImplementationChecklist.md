@@ -1,7 +1,7 @@
 # GRCv4 Exploratory Side Tool Implementation Checklist
 
 **Date:** 2026-08-28
-**Status:** Initialized; no implementation started
+**Status:** Iteration 0 accepted; Iteration 1 authorized
 **Plan:** [GRCV4ExploratorySideToolImplementationPlan.md](./GRCV4ExploratorySideToolImplementationPlan.md)
 **Source investigation:** [GRC9V4 constitutive design](../../README.md)
 
@@ -27,73 +27,198 @@
       outside the tool's write envelope.
 - [x] Require source-bundle and scenario identities on every derived artifact.
 - [x] Use `dependency_reach`, not an unsupported importance score.
-- [ ] Do not begin Iteration 1 until Iteration 0 is reviewed and accepted.
+- [x] Run every tool command under repository `.venv`; permit host Python only
+      to create and immediately re-enter `.venv` during clean bootstrap.
+- [x] Never invoke global Node or npm; use only the checksum-pinned tool-local
+      runtime and its bundled package manager.
+- [x] Do not begin Iteration 1 until Iteration 0 is reviewed and accepted.
 
 ## Current Status
 
 ```text
 branch = investigation-GRCV4-exploratory-side-tool
-plan = initialized
-checklist = initialized
-tool_code = absent
+plan = frozen
+checklist = iteration_0_recorded
+tool_code = iteration_0_setup_and_audit_only
 accepted_source_records_changed = false
 src_pygrc_changed = false
 specifications_changed = false
 scientific_claims_added = false
-implementation_gate = Iteration_0_pending
+implementation_gate = ET-C0_accepted_I1_authorized
 ```
 
 ## Iteration 0. Baseline, Layout, And Source Contract Freeze
 
-**Status:** pending
+**Status:** accepted
 
 ### Goal
 
-Freeze the implementation envelope before introducing dependencies or code.
+Freeze the portable compatibility, reproducible-build, source, and write
+envelopes before introducing dependencies or code.
 
 ### Checks
 
-- [ ] Record branch, HEAD, and `git status --short`.
-- [ ] Record the exact accepted source-record list and expected statuses.
-- [ ] Record each source record's canonical digest field and file SHA policy.
-- [ ] Verify the accepted D10 topology audit passes unchanged.
-- [ ] Verify the accepted D10.1 audit passes unchanged.
-- [ ] Verify the accepted D10.2 audit passes unchanged.
-- [ ] Freeze current source-bundle counts: 39 current claims, 29 historical
-      claims, 29 transformed debts, 11 verification obligations, 67 parent
-      objects, and 152 equation/contracts.
-- [ ] Preserve the four D9 post-spec verification-obligation occurrences as
+- [x] Record branch, HEAD, and `git status --short`.
+- [x] Record the exact accepted source-record list and expected statuses.
+- [x] Record each source record's canonical digest field and file SHA policy.
+- [x] Verify the accepted D10 topology audit passes unchanged.
+- [x] Verify the accepted D10.1 audit passes unchanged.
+- [x] Verify the accepted D10.2 audit passes unchanged.
+- [x] Derive current source-bundle counts from authoritative arrays and match
+      them against separate admission assertions: 39 current claims, 29
+      historical claims, 29 transformed debts, 11 verification obligations,
+      67 parent objects, and 152 equation/contracts.
+- [x] Preserve the four D9 post-spec verification-obligation occurrences as
       predecessor lineage into the current 11-obligation D10 population rather
       than duplicating them as accepted evidence.
-- [ ] Freeze the lineage records required from D0 through D10.2, including all
+- [x] Freeze the lineage records required from D0 through D10.2, including all
       v2, correction, realization-family, comparison, hybrid, and provenance
       successors.
-- [ ] Inspect existing Python, notebook, Node, browser-test, and documentation
+- [x] Inspect existing Python, notebook, Node, browser-test, and documentation
       dependencies before selecting new ones.
-- [ ] Freeze the investigation-local tool layout.
-- [ ] Freeze generated scratch and selected committed artifact policies.
-- [ ] Freeze the 35-scenario UX acceptance record and assign each scenario to
+- [x] Declare the minimum supported Python version and a tested compatibility
+      range; add an upper bound only for a known incompatibility.
+- [x] Declare minimum Node and package-manager requirements only for rebuilding
+      the static web bundle; keep prebuilt-bundle consumption independent of
+      Node.
+- [x] Select the package-manager family and lockfile format, and pin direct and
+      transitive dependencies for reproducible builds without binding support
+      to one host OS or patch version.
+- [x] Add and verify the investigation-local `.gitignore` before any dependency
+      or runtime installation; include it in the accepted Iteration 0 commit.
+- [x] Use the ignored repository-root `.venv` for Python; do not create a second
+      tool-specific environment or install global/user-site Python packages.
+- [x] Resolve the committed tool dependency set against the repository
+      environment; fail on conflicts rather than silently upgrading,
+      downgrading, or replacing repository packages.
+- [x] Freeze `tool/.tooling/` roots for managed Node, Corepack state, and future
+      Playwright browsers; place the currently admitted Node runtime there and
+      forbid global Node/npm installation.
+- [x] Place frontend dependencies under `tool/web/node_modules/` and all package
+      manager, notebook, and test caches under `tool/.cache/` or another
+      explicitly ignored tool-local path.
+- [x] Configure setup wrappers so pip, npm/package-manager, Corepack, and
+      Playwright cannot write installation/cache state into the user's home
+      directory.
+- [x] Make every non-bootstrap Python entry point fail closed outside the
+      repository `.venv`.
+- [x] Verify bootstrap re-enters `.venv` before dependency, audit, doctor, or
+      managed-runtime work begins.
+- [x] Verify no command resolves global Node/npm even when incompatible global
+      installations are present on the host.
+- [x] Keep manifests, lockfiles, source, configuration, and setup scripts
+      tracked while ignoring installed and generated state.
+- [x] Verify representative local install paths with `git check-ignore`.
+- [x] Run the setup procedure and verify `git status --short` exposes no
+      installed runtime, dependency, browser, cache, or generated-build file.
+- [x] Record the current builder environment as diagnostic metadata only, not
+      source-bundle, scenario, or scientific identity.
+- [x] Require repository-root discovery, structured path APIs, and
+      repository-relative artifact paths; reject machine-local absolute paths.
+- [x] Plan conformance on the minimum supported version and at least one later
+      supported version where CI capacity permits.
+- [x] Freeze one documented clean-checkout command:
+      `python tool/scripts/bootstrap.py`.
+- [x] Require bootstrap to discover roots from its own file location rather
+      than the caller's working directory or an absolute path.
+- [x] Add committed `toolchain.toml` metadata for Python compatibility floors,
+      the canonical managed Node release/checksums, lockfile identities, and
+      supported platform/architecture rows.
+- [x] Require checksum verification for every downloaded runtime or installer.
+- [x] Make bootstrap idempotent and prohibit implicit lockfile, dependency, or
+      managed-runtime upgrades.
+- [x] Make an incomplete pre-existing `.venv` fail closed and create a missing
+      `.venv` through a verified temporary environment plus atomic rename.
+- [x] Add `doctor.py` checks for local paths, versions, locks, runtime identity,
+      source readability, derived-directory writes, and global/user-site
+      contamination.
+- [x] Make wrapper commands set cache, runtime, and browser paths so setup
+      requires no manual environment-variable exports.
+- [x] Print exact post-bootstrap commands for admitted setup/audit surfaces and
+      explicit owning-iteration blockers for notebooks, web build, and static
+      serving that do not exist yet.
+- [x] Test setup from a clean checkout at a different temporary repository path.
+- [x] Rerun bootstrap and prove it is a no-op when the admitted environment is
+      already present.
+- [x] Document an optional checksum-verified offline-cache path if supported;
+      otherwise state the first-run network requirement clearly.
+- [x] Freeze the investigation-local tool layout.
+- [x] Freeze generated scratch and selected committed artifact policies.
+- [x] Freeze the 35-scenario UX acceptance record and assign each scenario to
       one owning iteration.
-- [ ] Freeze one canonical serializer for every derived artifact: UTF-8,
+- [x] Freeze one canonical serializer for every derived artifact: UTF-8,
       sorted keys and unordered collections, fixed separators, no NaN, and a
       finite-number formatting policy.
-- [ ] Freeze the read-only source rule and before/after hash check.
-- [ ] Freeze `forensic_evidence_trace` and
+- [x] Freeze the read-only source rule and before/after hash check.
+- [x] Freeze `forensic_evidence_trace` and
       `speculative_structural_counterfactual` output classes.
-- [ ] Freeze the non-claims for runtime, specification, evidence, and reopened
+- [x] Freeze the non-claims for runtime, specification, evidence, and reopened
       gate prediction.
-- [ ] Define the Iteration 0 baseline record and deterministic digest.
-- [ ] Run `git diff --check`.
+- [x] Define the Iteration 0 baseline record and deterministic digest.
+- [x] Run Ruff formatting/lint and strict mypy over every Iteration 0 script.
+- [x] Run `git diff --check`.
 
 ### Gate
 
-- [ ] Accept `ET-C0_source_and_layout_contract_frozen`.
-- [ ] Keep Iteration 1 closed if any source identity or write boundary is
+- [x] Accept `ET-C0_source_and_layout_contract_frozen`.
+- [x] Keep Iteration 1 closed if any source identity or write boundary is
       ambiguous.
+- [x] Keep Iteration 1 closed if the setup requires the author's exact Python,
+      Node, OS, username, virtual-environment path, or repository location.
+- [x] Keep Iteration 1 closed if Python is installed outside the repository
+      `.venv`, non-Python installed state escapes the tool directory, or setup
+      requires a global/user-site package installation.
+- [x] Keep Iteration 1 closed if any tool action other than clean-checkout venv
+      creation executes under host Python, or if global Node/npm is invoked.
+
+### Result
+
+```text
+branch = investigation-GRCV4-exploratory-side-tool
+start_HEAD = a0de777c28c3d5c1a56238e6ebfbac53eafc8a3f
+record = records/ETC0SourceAndLayoutContract.json
+record_status = accepted
+record_digest = 2cd1b8c313ee86dba807d4f57e7db7eae3c8596fed457fabfa1bdc0ec4ab1028
+source_record_count = 33
+source_bundle_candidate_digest = 878aa1a0ebe2f6d00ecb263b0878bd9d0717818ff9a622249a99abc5cb95f065
+accepted_source_bytes_unchanged = true
+source_population_counts_derived_independently = true
+accepted_D10_topology_audit = 1606_of_1606_passed
+accepted_D10_1_audit = 113_of_113_passed
+accepted_D10_2_audit = 289_of_289_passed
+ET_C0_audit = 204_of_204_passed
+ruff = passed
+strict_mypy = passed
+python_environment = repository_root_.venv
+python_iteration_0_tested = 3.12.3
+non_bootstrap_global_python_rejected = true
+managed_node = 22.23.2_tool_local_checksum_verified
+managed_npm = 10.9.8_tool_local
+global_node_12_and_npm_6_consumed = false
+bootstrap_idempotence = passed
+partial_venv_fail_closed = passed
+record_byte_identity_on_rebuild = passed
+managed_node_binary_identity_on_rerun = passed
+installed_state_hidden_from_git_status = passed
+relocated_clean_bootstrap = passed_twice
+scenario_ownership = 35_unique_scenarios
+iteration_1_authorized = true
+```
+
+Interpretation:
+
+Iteration 0 freezes a portable setup and exact source contract without adding
+source adapters or scientific interpretation. All 33 accepted machine records
+retain exact canonical digests and file hashes. Population counts are derived
+from the authoritative arrays by the builder and independently re-derived by
+the auditor; expected counts remain separate admission assertions. The
+repository `.venv` is the only Python execution environment after the
+bootstrap-only host entry, and the obsolete host Node/npm pair is bypassed by
+explicit managed-runtime paths.
 
 ## Iteration 1. Source Adapters And Bundle Identity
 
-**Status:** blocked on Iteration 0
+**Status:** authorized; not started
 
 ### Goal
 
@@ -108,6 +233,12 @@ one deterministic source-bundle identity.
 - [ ] Implement adapters for D10.2 parent objects and equation/contracts.
 - [ ] Implement adapters for D9 debt, profile, lifecycle, and event records.
 - [ ] Implement adapters for D0-D10.2 decision records and predecessor digests.
+- [ ] Derive all admitted population counts directly from authoritative source
+      arrays; keep expected counts as separate admission assertions rather than
+      observed values.
+- [ ] Resolve every source-recorded claim, parent-object, profile, equation, and
+      contract reference needed for graph coverage; reject dangling or
+      ambiguous references before graph construction.
 - [ ] Select digest fields per schema rather than assuming one common field.
 - [ ] Validate canonical payload digests exactly.
 - [ ] Validate declared file SHAs and source identities where present.
@@ -170,6 +301,12 @@ second scientific authority.
 - [ ] Validate reciprocal claim/debt relations.
 - [ ] Validate no silent debt loss.
 - [ ] Validate all references and unique IDs.
+- [ ] Run an independent source-conformance audit that does not call kernel APIs
+      and re-derives populations, IDs, reference coverage, reciprocal
+      relations, and claim-to-contract coverage from accepted source records.
+- [ ] Fail if the 152-row equation/contract count is correct but any required
+      claim-to-contract relationship is missing, unresolved, or only asserted
+      by a literal.
 - [ ] Validate DAG acyclicity and predecessor digest consistency.
 - [ ] Validate annotations cannot affect propagation.
 - [ ] Emit deterministic canonical graph serialization.
@@ -518,6 +655,10 @@ the accepted investigation.
 - [ ] Run the complete investigation-local web test suite.
 - [ ] Rebuild graph, reports, scenarios, and ripple tables twice.
 - [ ] Confirm byte-identical derived artifacts.
+- [ ] Rebuild canonical fixtures on the admitted minimum and later supported
+      Python versions (3.11 and 3.13 where available) and compare bytes; if that
+      conformance cannot be established, narrow the tested compatibility range
+      before acceptance.
 - [ ] Confirm accepted source bytes are unchanged.
 - [ ] Confirm no writes occurred under `src/`, `specs/`, repository tests, or
       accepted decision records.

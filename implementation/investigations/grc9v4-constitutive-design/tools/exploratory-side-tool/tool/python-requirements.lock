@@ -1,0 +1,6 @@
+# Iteration 0 intentionally admits no side-tool Python dependency.
+#
+# Python runs from the repository-root .venv. Future requirements must be
+# exact, hash-pinned, compatible with the repository lock, and admitted by the
+# iteration that first consumes them. Bootstrap uses --require-hashes whenever
+# this file contains a requirement row.

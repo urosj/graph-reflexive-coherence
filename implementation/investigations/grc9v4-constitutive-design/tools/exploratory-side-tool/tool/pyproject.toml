@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "grcv4-explorer"
+version = "0.0.0"
+description = "Read-only exploratory surfaces over accepted GRCv4 design records."
+requires-python = ">=3.11"
+dependencies = []
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.grcv4-explorer.iteration0]
+dependency_policy = "stdlib_only_until_an_owning_iteration_admits_more"
+scientific_authority = false

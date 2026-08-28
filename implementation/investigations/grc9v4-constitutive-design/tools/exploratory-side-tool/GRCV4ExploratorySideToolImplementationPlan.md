@@ -1,9 +1,11 @@
 # GRCv4 Exploratory Side Tool Implementation Plan
 
 **Date:** 2026-08-28
-**Status:** Initialized; implementation not started
+**Status:** Iteration 0 accepted; Iteration 1 authorized
 **Companion checklist:** [GRCV4ExploratorySideToolImplementationChecklist.md](./GRCV4ExploratorySideToolImplementationChecklist.md)
 **Source investigation:** [GRC9V4 constitutive design](../../README.md)
+
+**Iteration 0 record:** [ETC0SourceAndLayoutContract.md](./records/ETC0SourceAndLayoutContract.md)
 
 ## Purpose
 
@@ -732,6 +734,8 @@ implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-
   GRCV4ExploratorySideToolImplementationChecklist.md
   tool/
     pyproject.toml
+    toolchain.toml
+    <committed Python lockfile>
     src/grcv4_explorer/
       adapters/
       kernel/
@@ -741,22 +745,196 @@ implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-
     tests/
     notebooks/
     web/
+      package.json
+      <committed frontend lockfile>
     scripts/
+      bootstrap.py
+      doctor.py
+      run.py
     generated/
 ```
 
-The exact package manager and frontend scaffold are frozen in Iteration 0 after
-checking repository dependencies. Generated scratch output should be ignored;
+Iteration 0 selected npm/package-lock for the future frontend scaffold and a
+hash-pinned, repository-compatible Python lock for future additions. Both locks
+are empty at this gate because no third-party side-tool dependency is needed by
+the setup/source-contract surface. An owning later iteration must explicitly
+admit and lock a package before using it. Generated scratch output is ignored;
 selected committed examples require explicit provenance and reconstruction
 commands.
+
+### Portability and reproducibility
+
+The tool distinguishes three contracts:
+
+```text
+portable compatibility
+  minimum Python/browser versions
+  minimum Node/package-manager versions only for rebuilding the web bundle
+  tested version ranges
+  platform-neutral repository-root discovery and relative paths
+  no global or user-site package installation
+
+reproducible build
+  committed dependency lockfiles
+  frozen lockfile format and canonical builder metadata
+  deterministic serializer and generated-artifact digests
+  repository-root Python environment
+  tool-local Node runtime, dependency trees, caches, and browser binaries
+
+scientific/source identity
+  accepted source IDs, record digests, file SHAs, schema versions,
+  and canonical derived payloads
+```
+
+The current host OS, username, repository location, virtual-environment path,
+Python patch version, and Node patch version are diagnostic metadata, not source
+or scenario identity. A supported environment must not fail because it differs
+from the machine that generated the committed example.
+
+Python packaging uses `requires-python` with a minimum version and adds an upper
+bound only for a known incompatibility. Node and its package manager are build
+dependencies for the static browser bundle, not requirements for consuming a
+prebuilt bundle. Lockfiles may pin direct and transitive package versions for a
+reproducible build without narrowing the supported interpreter or OS to one
+machine.
+
+### Repository-local installation boundary
+
+Python uses the repository's existing environment boundary; all other installed
+or downloaded state stays below the `tool/` package:
+
+```text
+<repository>/.venv/          shared repository Python environment and packages
+tool/.tooling/node/          downloaded Node runtime
+tool/.tooling/corepack/      package-manager bootstrap state
+tool/.tooling/playwright/    browser binaries
+tool/web/node_modules/       frontend dependencies
+tool/.cache/                 pip/npm/package-manager/notebook caches
+tool/generated/              derived graph, ripple, and report output
+tool/web/dist/               generated static browser bundle
+```
+
+The host may supply a compatible shell and bootstrap Python executable, but
+setup may not install or modify global packages, user-site packages, global
+Node/npm state, or home-directory caches. Bootstrap creates the repository-root
+`.venv` when absent or validates it when present; it does not download a second
+Python runtime or create a tool-specific Python environment. Tool Python
+dependencies are resolved against the repository environment and may not
+silently upgrade, downgrade, or replace incompatible repository packages. A
+dependency conflict fails with an actionable diagnostic. Downloaded Node stays
+under `tool/.tooling/`. Wrapper scripts set cache and runtime environment
+variables (`PIP_CACHE_DIR`, npm/package-manager cache, `COREPACK_HOME`, and
+`PLAYWRIGHT_BROWSERS_PATH`) to tool-local paths.
+
+Global runtimes are not valid tool executors. A compatible host Python may only
+enter the bootstrap script when `.venv` does not yet exist; its sole permitted
+actions are creating `.venv` and re-executing the same bootstrap under that
+environment. All setup work after that point, plus every build, audit, test,
+notebook, report, and serving command, runs under repository `.venv`. Global
+Node/npm have no exception: bootstrap and wrappers invoke only the
+checksum-pinned Node and bundled npm below `tool/.tooling/`.
+
+The repository `.gitignore` already covers `/.venv/`. The investigation-local
+`.gitignore` is committed before setup runs and covers the Node runtime,
+dependency trees, caches, browser binaries, test reports, and generated build
+directories. Manifests, lockfiles, source, configuration, and bootstrap scripts
+remain tracked. Iteration 0 verifies representative paths with
+`git check-ignore` and verifies setup leaves no install artifact visible in
+`git status --short`.
+
+### Reproducible setup interface
+
+A clean checkout uses one documented bootstrap command:
+
+```text
+python tool/scripts/bootstrap.py
+```
+
+This is the only command allowed to begin under compatible host Python when the
+repository `.venv` is absent. It immediately creates and re-enters `.venv` before
+performing setup. When `.venv` already exists, the preferred invocation is
+`.venv/bin/python tool/scripts/bootstrap.py` (or the platform-equivalent
+environment executable). The script is idempotent and performs these steps
+without global installation:
+
+1. discover repository and tool roots from its own location;
+2. validate the bootstrap compatibility floor;
+3. create or validate the repository-root `.venv`;
+4. verify that the committed tool dependency set is compatible with the
+   repository environment, then install missing locked dependencies without
+   implicit package replacement or upgrades;
+5. download and checksum the selected portable Node runtime into
+   `tool/.tooling/node/` when web rebuilding is requested;
+6. provision package-manager state, frontend dependencies, and Playwright
+   browsers into ignored tool-local paths;
+7. write an ignored diagnostic environment receipt;
+8. run a fast doctor check and print exact commands for tests, notebook launch,
+   web build, and static serving.
+
+Committed `toolchain.toml` records Python compatibility floors, the canonical
+managed Node release and checksums used by the reproducible builder, lockfile
+identities, and supported platform/architecture rows. The canonical Node
+version is a reproducible setup choice, not the only compatible host version.
+Every downloaded runtime or installer is checksum-verified before use.
+
+`tool/scripts/doctor.py` verifies that Python resolves from the repository
+`.venv`, that no package resolves from the global or user site, and that local
+paths, supported versions, lockfile/runtime identities, source-bundle
+readability, and writable derived directories are valid. Wrapper commands set
+all required environment variables; users do not manually export cache or
+runtime paths.
+
+Bootstrap must be safe to rerun, must not silently upgrade locks or managed
+runtimes, and must fail with an actionable message when a supported artifact is
+unavailable. A missing `.venv` is first built and verified under a temporary
+repository-local name, then atomically renamed; a pre-existing incomplete
+environment fails closed rather than being repaired implicitly. A clean-checkout
+test runs setup from a different temporary repository path and confirms the same
+admitted dependency/runtime identities and deterministic smoke-test output. An
+optional offline path may consume a prepopulated checksum-verified local cache;
+otherwise the first-run network requirement must be stated clearly.
+
+All path handling uses repository-root discovery and structured path APIs. No
+generated artifact may contain a machine-local absolute path. Where CI capacity
+permits, conformance runs on the minimum supported version and at least one
+later supported version; exact host-version equality is never an admission
+gate.
+
+## Architectural Tradeoffs Carried Forward
+
+Iteration 0 chooses one validated semantic kernel for both front ends. This
+trades implementation redundancy for cross-surface consistency: a kernel error
+could affect notebook and web output identically. Iteration 2 therefore requires
+an independent source-conformance auditor that derives populations, identifiers,
+reference coverage, and reciprocal relations directly from accepted source
+records without calling kernel APIs.
+
+The D10.2 equation/contract registry is accepted source material, but its 152
+rows are human-authored. Its row count alone is not a coverage proof. Iterations
+1 and 2 must verify that referenced claims, parent objects, profiles, contracts,
+and propagation relations resolve and that no source-recorded claim-to-contract
+relationship required by the tool is silently omitted.
+
+Generated graph and ripple tables are source-bundle products, not adaptive
+runtime knowledge. Any newly accepted or changed source record requires adapter
+readmission, a new source-bundle identity, a complete deterministic rebuild, and
+re-audit before either front end may consume it.
+
+Iteration 0 proves deterministic behavior on Python 3.12.3 only. The declared
+3.11-3.13 support range remains a closeout obligation: canonical fixtures must
+be rebuilt on admitted supported versions and compared byte-for-byte, or the
+tested compatibility range must be narrowed honestly before acceptance.
 
 ## Iteration Sequence
 
 ### Iteration 0. Baseline, Layout, And Source Contract Freeze
 
-Freeze dependencies, local layout, source files, accepted digests, output
-policy, supported Python/Node versions, and exact non-authority language. No
-kernel logic or UI is written before this gate closes.
+Freeze minimum compatibility requirements, tested ranges, lockfile/reproducible
+builder policy, investigation-local layout, source files, accepted digests,
+output policy, repository-local installation/gitignore boundary, portability rules,
+and exact non-authority language. Do not bind the tool to the current host's
+Python, Node, OS, username, or repository path. No kernel logic or UI is written
+before this gate closes.
 
 ### Iteration 1. Source Adapters And Bundle Identity
 

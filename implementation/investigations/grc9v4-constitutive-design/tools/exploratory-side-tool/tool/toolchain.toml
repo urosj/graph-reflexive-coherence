@@ -1,0 +1,61 @@
+schema = "grcv4_explorer_toolchain_v1"
+
+[python]
+minimum = "3.11.0"
+upper_bound = ""
+environment = "<repository>/.venv"
+dependency_lock = "tool/python-requirements.lock"
+dependency_policy = "shared_repository_venv_fail_on_conflict_no_implicit_upgrade"
+execution_policy = "repository_venv_only"
+host_python_exception = "create_and_immediately_reexec_bootstrap_only"
+iteration0_tested_versions = ["3.12.3"]
+planned_conformance_versions = ["3.11", "3.13"]
+
+[node]
+minimum = "22.12.0"
+managed_version = "22.23.2"
+install_root = "tool/.tooling/node"
+package_manager = "npm"
+package_manager_version = "10.9.8"
+frontend_lock = "tool/web/package-lock.json"
+global_install_allowed = false
+global_execution_allowed = false
+
+[browser]
+prebuilt_bundle_requires_node = false
+browser_binary_status = "not_admitted_until_iteration_8"
+
+[[node.platforms]]
+platform = "linux"
+architecture = "x86_64"
+archive = "node-v22.23.2-linux-x64.tar.xz"
+sha256 = "d60acfe00a2932254bb0ad20e01b0d74397a0875595de719654b214f4b03f307"
+url = "https://nodejs.org/dist/v22.23.2/node-v22.23.2-linux-x64.tar.xz"
+
+[[node.platforms]]
+platform = "linux"
+architecture = "aarch64"
+archive = "node-v22.23.2-linux-arm64.tar.xz"
+sha256 = "fff4078c5def658577f92c88db7db3bc0072924bfb93fe52c1e744a54e94abb8"
+url = "https://nodejs.org/dist/v22.23.2/node-v22.23.2-linux-arm64.tar.xz"
+
+[[node.platforms]]
+platform = "darwin"
+architecture = "x86_64"
+archive = "node-v22.23.2-darwin-x64.tar.gz"
+sha256 = "58e99022c2ff89395576cc7fd4d98cea24bb68081475d5f88b801ee8729fb026"
+url = "https://nodejs.org/dist/v22.23.2/node-v22.23.2-darwin-x64.tar.gz"
+
+[[node.platforms]]
+platform = "darwin"
+architecture = "arm64"
+archive = "node-v22.23.2-darwin-arm64.tar.gz"
+sha256 = "61130f394c1630d211dd50aecc4353d379480f36d3ac913cd85dbba1aed585c6"
+url = "https://nodejs.org/dist/v22.23.2/node-v22.23.2-darwin-arm64.tar.gz"
+
+[[node.platforms]]
+platform = "windows"
+architecture = "amd64"
+archive = "node-v22.23.2-win-x64.zip"
+sha256 = "1177b4137ba5adaa56354ae40f1080c7450e8ae09cecb47da459d1c52ac99f97"
+url = "https://nodejs.org/dist/v22.23.2/node-v22.23.2-win-x64.zip"

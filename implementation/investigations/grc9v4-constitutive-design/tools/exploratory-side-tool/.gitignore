@@ -1,0 +1,28 @@
+# Tool-local managed runtimes (Python uses the repository-root .venv)
+tool/.tooling/
+
+# Tool-local dependency trees and package-manager caches
+tool/**/node_modules/
+tool/.cache/
+tool/**/.npm/
+tool/**/.pnpm-store/
+tool/**/.yarn/
+
+# Python, notebook, type-checker, and test caches
+tool/**/__pycache__/
+tool/**/*.py[cod]
+tool/**/.pytest_cache/
+tool/**/.mypy_cache/
+tool/**/.ruff_cache/
+tool/**/.ipynb_checkpoints/
+tool/**/.coverage
+tool/**/htmlcov/
+
+# Browser and test output
+tool/**/playwright-report/
+tool/**/test-results/
+tool/web/.vite/
+tool/web/dist/
+
+# Derived investigation output
+tool/generated/
