@@ -491,11 +491,15 @@ realizations_affected
 known_through_evidence_frontier
 unknown_beyond_evidence_frontier
 blocked_overreads_at_risk
+verification_obligations_at_risk
 source_edge_refs
 ```
 
 Rows must be deterministic kernel output. The web client receives no rule
 tables and no graph algorithm that can calculate new scientific effects.
+`verification_obligations_at_risk` is a forward-work impact list. It does not
+support a claim, reopen a scientific debt, or turn an unexecuted obligation into
+accepted evidence.
 
 ### Profile-scoped propagation
 
@@ -534,8 +538,9 @@ count, payload digest, and source-bundle identity.
 
 The UI may report direct and transitive dependent counts for debts, objects,
 and contracts. It must call these `dependency_reach`, not load, importance,
-severity, or scientific priority. Counts must distinguish required, one-of,
-conditional, negative, and display-only relationships.
+severity, or scientific priority. Propagation counts must distinguish required,
+one-of, conditional, and negative-boundary relationships. Annotation/display
+reach is reported separately and never added to propagation reach.
 
 Historical `must_close_before_D10` status may be displayed as predecessor
 metadata. Current D10 debt transformations and verification obligations must
@@ -701,6 +706,20 @@ presentation introduces a divergent scientific projection.
 - Speculative state must remain visibly distinct without relying on color alone.
 - Long IDs and claims must wrap or use expandable detail panels without
   overlapping graph controls.
+
+## User Scenario Acceptance Contract
+
+The implementation-facing UX contract is
+[GRCV4ExploratorySideToolUserScenarios.md](./GRCV4ExploratorySideToolUserScenarios.md).
+It records 35 normalized scenarios across forensic reconstruction, static
+navigation, structural counterfactuals, fail-closed pressure, and onboarding.
+The scenario record is derived design guidance, not scientific authority.
+
+Every scenario has one owning iteration and may name supporting iterations. A
+gate cannot close until its owned scenarios have executable acceptance evidence
+or an explicit fail-closed disposition. Iteration 9 reruns the complete suite
+and reconciles its coverage matrix. Scenario text cannot widen the mutation
+algebra, source authority, or maximum claim defined by this plan.
 
 ## Proposed Investigation-Local Layout
 

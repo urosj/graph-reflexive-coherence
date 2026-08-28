@@ -72,6 +72,8 @@ Freeze the implementation envelope before introducing dependencies or code.
       dependencies before selecting new ones.
 - [ ] Freeze the investigation-local tool layout.
 - [ ] Freeze generated scratch and selected committed artifact policies.
+- [ ] Freeze the 35-scenario UX acceptance record and assign each scenario to
+      one owning iteration.
 - [ ] Freeze one canonical serializer for every derived artifact: UTF-8,
       sorted keys and unordered collections, fixed separators, no NaN, and a
       finite-number formatting policy.
@@ -116,6 +118,7 @@ one deterministic source-bundle identity.
 - [ ] Rebuild twice and prove byte identity.
 - [ ] Add negative fixtures for wrong digest, wrong SHA, missing reference,
       changed status, and unknown schema.
+- [ ] Execute owned scenario D1.
 - [ ] Run focused adapter tests.
 - [ ] Run `git diff --check`.
 
@@ -173,6 +176,7 @@ second scientific authority.
 - [ ] Serialize with sorted keys/collections, fixed separators, no NaN, and the
       Iteration 0 finite-number policy.
 - [ ] Rebuild twice and prove byte identity.
+- [ ] Execute owned scenario F9.
 - [ ] Run focused kernel and invariant tests.
 - [ ] Run `git diff --check`.
 
@@ -210,6 +214,7 @@ or counterfactual work.
       logic.
 - [ ] Verify notebook execution writes only to the derived output envelope.
 - [ ] Verify forensic output contains no speculative claims.
+- [ ] Execute owned scenarios F1-F8 and E3-E4.
 - [ ] Rebuild representative reports twice and prove byte identity.
 - [ ] Run focused forensic and notebook tests.
 - [ ] Run `git diff --check`.
@@ -286,6 +291,8 @@ the investigation.
 - [ ] Verify no numeric prediction appears in structural output.
 - [ ] Add adversarial tests for false support, false closure, false ranking,
       and fabricated downstream claims.
+- [ ] Execute owned scenarios C1, C4-C6, and D2-D6; execute the semantic
+      classification portions of supporting scenarios C2-C3 and C7.
 - [ ] Run deterministic replay tests.
 - [ ] Run `git diff --check`.
 
@@ -325,6 +332,10 @@ format.
       evidence frontier.
 - [ ] Include `unknown_beyond_evidence_frontier` status explicitly.
 - [ ] Include blocked-overread risks without inventing new negative claims.
+- [ ] Include forward `verification_obligations_at_risk` separately from claim,
+      debt, and evidence consequences.
+- [ ] Verify an obligation-at-risk is never traversed backward as evidence or
+      relabeled as a reopened scientific debt.
 - [ ] Emit all-profile aggregates only as projections over the complete
       profile-local row set.
 - [ ] Precompute existing-surface mutations only with propagation-bearing reach,
@@ -346,6 +357,8 @@ format.
 - [ ] Apply the canonical serializer to scenarios, ripple rows, shard indexes,
       and aggregate projections.
 - [ ] Verify source records remain byte-identical.
+- [ ] Execute owned scenarios C2-C3, C7, and C9; rerun C4-C6 through the
+      serialized ripple surface.
 - [ ] Run focused compiler and scenario tests.
 - [ ] Run `git diff --check`.
 
@@ -391,6 +404,8 @@ Build the static navigation client over validated, precomputed data.
       reduced-motion behavior.
 - [ ] Verify long IDs and claims remain readable on desktop and mobile.
 - [ ] Add component and bundle-contract tests.
+- [ ] Execute owned scenarios N1-N3 and the browser projections of F1, F4-F5,
+      and F8.
 - [ ] Assert browser payload and forensic API output are byte-identical for the
       same source bundle and selection, including nodes, edges, support types,
       scopes, and ripple row.
@@ -440,6 +455,8 @@ statuses.
       scenario serialization.
 - [ ] Verify no hidden score ranks candidates, claims, gates, or alternatives.
 - [ ] Add source-mode and speculative-mode visual tests.
+- [ ] Execute owned scenarios N5-N6, D7, and E2 plus the browser projections of
+      F6-F7 and E3.
 - [ ] Run Playwright screenshots and interaction tests.
 - [ ] Run `git diff --check`.
 
@@ -476,6 +493,8 @@ collapsing history into a false linear timeline.
 - [ ] Prevent ripple playback from altering accepted source mode.
 - [ ] Verify the same scenario produces identical notebook and web reports.
 - [ ] Add route, correction, branch, and stale-scenario tests.
+- [ ] Execute owned scenarios N4, C8, and E1 plus playback integration for C1-C2
+      and C9.
 - [ ] Run Playwright desktop/mobile screenshots and overlap checks.
 - [ ] Run `git diff --check`.
 
@@ -516,6 +535,10 @@ the accepted investigation.
       long identifiers.
 - [ ] Perform a forensic-task usability pass.
 - [ ] Perform a navigational-task usability pass.
+- [ ] Execute and reconcile all 35 normalized user scenarios against the
+      scenario coverage matrix.
+- [ ] Verify the nine forensic API functions and all eight required web views
+      are exercised by at least one scenario.
 - [ ] Write final reconstruction commands and artifact policy.
 - [ ] Write closeout report and machine disposition.
 - [ ] Run `git diff --check`.

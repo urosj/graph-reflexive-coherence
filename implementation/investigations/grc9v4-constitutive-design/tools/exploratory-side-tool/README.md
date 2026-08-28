@@ -28,6 +28,7 @@ Start with:
 
 - [implementation plan](./GRCV4ExploratorySideToolImplementationPlan.md)
 - [implementation checklist](./GRCV4ExploratorySideToolImplementationChecklist.md)
+- [user scenarios and plan-coverage validation](./GRCV4ExploratorySideToolUserScenarios.md)
 - [accepted constitutive-design investigation](../../README.md)
 - [accepted D10 claim topology](../../decisions/D10NormativeClaimTopology.json)
 - [accepted D10 debt transformations](../../decisions/D10DebtClaimTransformationLedger.json)
