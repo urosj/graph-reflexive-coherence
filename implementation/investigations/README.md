@@ -21,7 +21,10 @@ Current investigations:
   Read-Back, current closure, write-back, realization, lifecycle, and
   substrate provenance. It earns the GRCv4-to-GRC9v4-to-disabled-GRC9v3
   factorization and authorizes GRCv4-first specification writing while leaving
-  all runtime implementation unauthorized.
+  all runtime implementation unauthorized. Its subordinate
+  [exploratory side-tool package](./grc9v4-constitutive-design/tools/exploratory-side-tool/README.md)
+  plans read-only forensic and counterfactual navigation over the accepted
+  records without changing their claims.
 - [Causal-pathway consolidation](./causal-pathway-consolidation/README.md):
   accepted source-audit and I106-I111 supporting evidence for the completed
   documentation/conformance tranche. The essential plan, checklist, baseline

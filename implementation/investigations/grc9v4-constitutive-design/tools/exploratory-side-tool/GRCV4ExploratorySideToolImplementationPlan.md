@@ -1,0 +1,869 @@
+# GRCv4 Exploratory Side Tool Implementation Plan
+
+**Date:** 2026-08-28
+**Status:** Initialized; implementation not started
+**Companion checklist:** [GRCV4ExploratorySideToolImplementationChecklist.md](./GRCV4ExploratorySideToolImplementationChecklist.md)
+**Source investigation:** [GRC9V4 constitutive design](../../README.md)
+
+## Purpose
+
+Build a bounded exploratory side tool over the accepted D0-D10.2
+constitutive-design investigation. The tool should make the investigation
+easier to consume in two complementary ways:
+
+1. a forensic Python/notebook surface for exact source tracing and report
+   generation;
+2. a navigational web surface for focused graph inspection and precomputed
+   structural ripple visualization.
+
+The tool does not alter the accepted investigation. It reconstructs and
+validates existing relationships, then exposes derived views whose authority
+never exceeds their source records.
+
+## Product Boundary
+
+The completed tool may support:
+
+- source-bound claim, debt, gate, candidate, profile, object, and contract
+  navigation;
+- deterministic reconstruction of accepted lineage;
+- exact identification of invalidated claims and reactivated debts when the
+  accepted records already define that dependency;
+- identification of the earliest accepted gate that must be reopened;
+- explicit declaration that downstream results become unknown when the
+  accepted records do not define the counterfactual continuation;
+- deterministic scenario exchange between Python and the browser;
+- static, focused visualizations over generated tables.
+
+It may not support or claim:
+
+- mutation of any accepted decision record;
+- a new GRCv4 equation, edge, candidate, profile, or scientific result;
+- prediction of what a reopened gate would conclude;
+- numeric physical effects from structural counterfactuals;
+- proof from a speculative scenario;
+- browser-side scientific propagation;
+- V4 runtime implementation, specification conformance, or model execution;
+- replacement of the accepted build/audit scripts.
+
+## Source Authority
+
+### Primary machine authorities
+
+| Source | Tool role |
+| --- | --- |
+| `D10NormativeClaimTopology.json` | 39 current claims, 29 historical claim nodes, claim categories, and reciprocal claim/debt edges. |
+| `D10DebtClaimTransformationLedger.json` | 29 D9-to-D10 debt transformations, activation conditions, successor claims, and 11 verification obligations. |
+| `D10_2FullSubstrateProvenanceAndPromotionAudit.json` | 67 normatively load-bearing parent objects, 152 normative equation/contract rows, profile links, claim links, and substrate provenance. |
+| `D9ResidualDebtLedger.json` | Predecessor debt status and D9 residual lineage. |
+| D0-D10.2 decision records | Gate identity, accepted predecessor digest, candidate disposition, realization lineage, controls, and claim ceilings. |
+| D9 profile/lifecycle records | Ten current profiles, lifecycle surfaces, event semantics, profile-qualified state authority, and four predecessor post-spec verification-obligation occurrences carried into D10 lineage. |
+
+### Authority rules
+
+- Every scientific node and propagation-bearing edge must be extracted from a
+  committed accepted machine record.
+- The 67 D10.2 parent objects are not relabeled as 67 equations.
+- The 152 D10.2 equation/contract rows remain a distinct graph layer; the 85
+  expanded rows remain distinguishable from parent-atomic contracts.
+- Human-friendly labels may live in a derived annotation sidecar only when the
+  sidecar records its source object, source digest, annotation type, and
+  non-authoritative status.
+- Annotation-only edges may affect display but may never affect propagation.
+- Per-schema canonical digest handling must reuse or exactly match the accepted
+  builders/auditors. There is no single assumed digest field for all records.
+- A source bundle is admitted only when every required file, digest, SHA where
+  declared, reference, and expected accepted status validates.
+
+## Immutable Source Contract
+
+The kernel loads source records read-only and computes a source-bundle identity
+before graph construction. It records source file hashes before and after every
+build and fails if any source byte changes.
+
+Generated files must remain inside this investigation package, under a derived
+or scratch path selected during Iteration 0. They must never be written into:
+
+```text
+implementation/investigations/grc9v4-constitutive-design/decisions/
+src/
+specs/
+tests/
+```
+
+Committed generated artifacts, if any are later selected, must include the
+kernel schema version, source-bundle digest, builder version, deterministic
+payload digest, and a statement that they are derived navigation surfaces.
+
+### Deterministic serialization
+
+Every emitted artifact, including graph projections, forensic reports, ripple
+tables, scenario files, and browser bundles, must use one canonical serializer:
+
+```text
+UTF-8
+sorted mapping keys
+fixed JSON separators ("," and ":")
+allow_nan = false
+all unordered collections sorted before emission
+one frozen finite-number formatting policy
+```
+
+The policy applies to payload bytes, not only digest computation. A semantic
+match with different bytes is insufficient for a deterministic rebuild.
+
+## One Kernel, Two Front Ends
+
+```text
+accepted records
+  -> source adapters
+  -> validated graph kernel
+       -> forensic API and notebook recipes
+       -> scenario validator
+       -> ripple compiler
+            -> static JSON bundle
+                 -> Cytoscape.js renderer
+```
+
+All relationship interpretation and counterfactual classification lives in the
+Python kernel. JavaScript may search, filter, select, animate, and render only.
+It may not infer a missing edge, activate a claim, select a reopening gate, or
+calculate a ripple.
+
+## Kernel Data Model
+
+### Node families
+
+```text
+current_claim             39 accepted D10 claim nodes
+historical_claim          29 predecessor claim nodes retained by D10
+debt_transformation       29 D9-to-D10 transformation rows
+verification_obligation   11 current D10 obligations, preserving the four D9 source occurrences as lineage rather than duplicate evidence
+gate_record               accepted D0-D10.2 records and named successors
+candidate                 A, B, C, and the closed uninstantiated D slot
+realization               CI, OS, RG-1/RG-2b, PC, CI+PC, comparison rows
+profile                   ten current D9/D10 profiles
+normative_object          67 D10.2 parent objects
+equation_contract         152 D10.2 equation/contract rows
+source_record             accepted file/digest identities
+annotation                optional non-authoritative display metadata
+```
+
+Candidate D must be represented as a source-bounded admission slot rejected on
+ontology because it remained uninstantiated and not materially distinct. It is
+not shown as a fully formed fourth architecture that lost a later comparison.
+
+### Verification-obligation node model
+
+D9 post-spec obligations and D10 verification obligations share one
+`obligation_id` namespace. The kernel creates one node per unique obligation ID,
+not one node per source occurrence. Every forward-only
+`requires_verification_from` edge carries:
+
+```text
+originating_gate_id
+originating_record_id
+originating_record_digest
+source_json_pointer
+```
+
+This preserves each D9 and D10 occurrence without double-counting a shared
+obligation. Verification obligations remain future work surfaces, not accepted
+evidence. Backward provenance reconstruction stops before an obligation and
+never traverses it as support for a claim, regardless of how many accepted
+records reference the same obligation ID.
+
+### Edge families
+
+The kernel uses two physically disjoint edge tables that share node IDs but no
+rows:
+
+```text
+propagation_edges
+annotation_edges
+```
+
+`propagation_edges` contains only source-recorded relations that may affect
+reachability, support, invalidation, routing, or lineage. Its relation families
+include, where present in accepted sources:
+
+```text
+supported_by
+blocked_by
+conditioned_by
+routed_through
+negative_successor_of
+successor_of
+predecessor_claim
+transformed_from
+resolved_negative_by
+accepted_at
+supersedes
+predecessor_record
+parent_object
+accepted_claim
+active_in_profile
+candidate_scope
+realization_scope
+source_identity
+requires_verification_from
+```
+
+`annotation_edges` contains only display metadata and uses separate annotation
+relation types. It cannot carry `required`, `one_of`, `conditional`, or
+`negative_boundary` support semantics. No authority flag can convert an
+annotation row into a propagation row; doing so requires rebuilding it from an
+accepted source through a propagation adapter.
+
+Gate effects must use transformation verbs from the accepted records, such as
+admit, confirm, narrow, split, replace, route, supersede, resolve-negative, and
+condition. A generic `gate produces claim` edge is insufficient when a gate
+only narrows or routes an inherited claim.
+
+### Support semantics
+
+Reachability alone is not enough to classify a claim as supported or lost.
+Every propagation-bearing support relation must state whether it is:
+
+```text
+required
+one_of
+conditional
+negative_boundary
+```
+
+Display-only relations exist only in `annotation_edges` and are excluded from
+all support evaluation.
+
+If the source does not determine conjunction/disjunction semantics, the kernel
+must return `indeterminate_requires_review` rather than guess.
+
+## Lineage Model
+
+The accepted investigation is a directed acyclic lineage, not a flat
+`D0 -> D10.2` list. The kernel must represent:
+
+- the D0-D7 primary chain;
+- D4-v2 through D7-v2 candidate-completion successors;
+- D7G-v1, D7G-v2, and the post-v2 Hodge correction;
+- D8-A, coupled/implicit pressure, and architecture-local D8-B;
+- operator-split, reconstructed-geometry, and persistent-carrier branches;
+- comparative synthesis and the CI+PC hybrid;
+- D9 lifecycle closure;
+- D10 claim synthesis and D10.1/D10.2 provenance successors.
+
+The web gate pipeline may project that DAG onto a readable spine, but the
+kernel and scenario records must preserve branches, corrections, predecessor
+digests, and supersession.
+
+## Kernel Invariants
+
+The initial accepted source bundle should fail closed unless all of these hold:
+
+1. Current claims, historical claims, debt transformations, parent objects,
+   and equation/contracts have the accepted counts and unique IDs.
+2. Current and historical claim IDs are disjoint.
+3. Every claim/debt relation has the accepted reciprocal typed counterpart.
+4. Every debt disposition has a claim-ledger disposition.
+5. Every predecessor debt is transformed, carried, routed, or resolved without
+   silent disappearance.
+6. All claim, debt, object, contract, profile, gate, candidate, realization,
+   and source references resolve.
+7. Gate predecessor relationships are acyclic and digest-consistent.
+8. Every propagation-bearing equation/contract row names its parent object,
+   accepted claim IDs, profile IDs, and source lineage as available.
+9. Propagation and annotation edge tables are disjoint; annotation-only input
+   cannot contribute to reachability, invalidation, routing, or ripple output.
+10. Browser bundles contain no rule absent from the kernel-produced table.
+11. Source bytes are unchanged by load, build, report, and precompute steps.
+12. Stable ordering makes graph and ripple outputs byte-identical on rebuild.
+13. Verification obligations are reachable only in the forward work direction
+    and never appear in backward accepted-evidence reconstruction.
+14. Every emitted JSON artifact uses the canonical deterministic serializer;
+    NaN, unsorted sets, and implementation-dependent ordering fail closed.
+
+Accepted counts are source-bundle identity checks, not permanent assumptions
+for future revisions. A source change requires explicit adapter re-admission
+and a new source-bundle identity.
+
+## Forensic API
+
+Implement pure functions before notebook presentation:
+
+| Function | Result |
+| --- | --- |
+| `gate_act(record_id)` | Accepted gate restriction, obligation, question, authority, claim transformations, and predecessor identity. |
+| `debt_lifecycle(debt_id)` | Predecessor state, transformation, current claims, activation condition, and verification routing. |
+| `reconstruction_path(claim_id)` | Backward trace through claims, debts, gates, objects, contracts, and source records. |
+| `candidate_career(candidate_id)` | Candidate disposition across the lineage DAG without flattening routed and rejected states. |
+| `pruned_choices_at(record_id)` | Source-recorded exclusions, alternatives, and blocked relabels. |
+| `negative_claims()` | Accepted negative claims and the exact stronger relabel they prevent. |
+| `object_dependents(object_id)` | Claims, profiles, contracts, candidates, and gates that depend on a parent object. |
+| `contract_provenance(contract_id)` | Parent objects, accepted claims, profiles, source lineage, and blocked overreads. |
+| `gate_contribution(record_id)` | Added, inherited, narrowed, routed, superseded, and resolved-negative content. |
+
+Outputs are classified as either:
+
+```text
+forensic_evidence_trace
+speculative_structural_counterfactual
+```
+
+Only the first is an accepted-source reconstruction. Neither class creates new
+scientific evidence.
+
+## Counterfactual Mutation Algebra
+
+Use typed mutations rather than generic `weaken` and `strengthen` labels:
+
+```text
+remove_term
+replace_operator
+change_authority
+change_stage
+change_normalization
+change_profile_parameterization
+add_derivation
+remove_derivation
+change_candidate_disposition
+```
+
+Every mutation includes:
+
+```text
+target_id
+target_kind
+mutation_type
+baseline_record_id
+baseline_record_digest
+profile_scope
+candidate_scope
+realization_scope
+declared_payload
+```
+
+The kernel may return only:
+
+```text
+exact_invalidation
+exact_debt_reactivation
+exact_negative_activation
+exact_route_change
+no_propagation_bearing_effect
+requires_reexecution_from_gate
+unknown_beyond_evidence_frontier
+indeterminate_requires_review
+invalid_mutation
+```
+
+The critical rule is:
+
+> Reopening a gate invalidates downstream accepted authority; it does not
+> predict what the rerun will conclude.
+
+For example, admitting Candidate B as complete at D7-v2 can identify the
+earliest invalidated successor and missing B-specific work. It cannot synthesize
+B-specific D7G-D10 claims because those accepted results do not exist.
+
+### Existing-surface and reopening-boundary mutations
+
+The mutation algebra admits these target kinds at minimum:
+
+```text
+equation_contract
+normative_object
+gate_record
+candidate
+```
+
+Equation/contract and parent-object mutations operate on existing
+propagation-bearing paths. The ripple sparsity rule applies directly: an
+annotation-only or otherwise non-load-bearing target returns
+`no_propagation_bearing_effect`.
+
+Gate and candidate-disposition mutations are different. They need not have an
+existing accepted claim path from the proposed disposition, because the source
+may have routed or rejected that disposition. Instead, the mutation must name a
+source-recorded gate/disposition and open its **reopening boundary**. Frontier
+propagation then starts at that accepted gate and follows its accepted
+successor, condition, transformation, and support edges. Missing work may be
+reported only when the accepted route/debt records name it.
+
+Thus `change_candidate_disposition` for Candidate B at D7-v2 must reopen D7-v2
+and produce a non-empty bounded frontier even though no accepted B
+equation/contract exists. It must not be rejected by equation-level sparsity,
+and it still cannot invent the absent B writer, lifecycle, or D7G-D10 results.
+
+### Evidence-frontier computation
+
+A mutation invalidates a DAG region, not a fixed suffix of a linear gate list.
+The kernel computes the boundary from `propagation_edges` only:
+
+1. Evaluate the mutated target's source-recorded support predicates and collect
+   every node whose required support is unsatisfied or whose recorded
+   activation condition is falsified.
+2. Reduce that set to the minimal invalidation-root antichain: remove any root
+   already downstream of another invalid root. A mutation may therefore have
+   more than one earliest invalidated node or reopening gate.
+3. Form the tentative frontier from all propagation-bearing descendants of the
+   minimal roots through accepted successor, condition, transformation, and
+   support relations.
+4. Subtract a descendant only when its complete support predicate remains
+   satisfied by accepted support outside every mutated subtree. Merely finding
+   another incoming edge is insufficient; `required`, `one_of`, `conditional`,
+   and negative-boundary semantics must still pass.
+5. Classify the minimal roots as exact invalidations when the accepted graph
+   determines the result, or as `requires_reexecution_from_gate` when it does
+   not. Remaining unsupported descendants are
+   `unknown_beyond_evidence_frontier`.
+
+The output records `earliest_gates_to_reopen` as a deterministically ordered
+set. A singular convenience field may be emitted only when that set has one
+member. Independently established candidate/profile branches remain known.
+
+#### Claim support predicate
+
+A claim's support is evaluated from its source fields, not graph reachability:
+
+- every `evidence_refs` entry must resolve to its accepted gate or source
+  record with the admitted identity;
+- every `bearing_debt_ids` and `debt_edges` entry must retain the accepted
+  transformed disposition that supports, narrows, conditions, routes, or
+  negatively bounds the claim, with no exact reactivation that invalidates that
+  disposition;
+- the claim's `activation_condition` must hold. `always` adds no further
+  condition, while every other condition must be evaluated only from its
+  source-recorded semantics.
+
+A descendant is subtracted from the frontier only when this complete predicate
+still passes through accepted support outside every mutated subtree. An
+alternative incoming edge alone is insufficient.
+
+### Debt-reactivation classification
+
+A reopening is `exact_debt_reactivation` only when an accepted transformation
+records a conditional closing with an explicit precondition and the mutation
+falsifies that precondition. The reactivation is then a deterministic
+consequence of accepted source semantics.
+
+If a transformation is recorded as confirmed, narrowed, split, routed, or
+resolved-negative without such a conditional reopening rule, a mutation may
+only return `requires_reexecution_from_gate`. Historical
+`must_close_before_D10` metadata is not current D10 authority and cannot make a
+reactivation exact.
+
+### Blocked-overread risk
+
+A mutation may remove or make inapplicable the exact premise used to guard a
+blocked overread. The kernel reports the affected overread ID and its
+source-recorded hardening statement in `blocked_overreads_at_risk`. This is a
+warning about a speculative scenario, never activation of the stronger claim;
+the overread remains blocked until a source-authorized successor establishes
+otherwise.
+
+## Ripple Table Contract
+
+Ripple rows are keyed by more than an object and a generic change label:
+
+```text
+source_bundle_digest
+baseline_record_id
+baseline_record_digest
+target_id
+target_kind
+mutation_type
+profile_id or all_profiles_aggregate
+candidate_scope
+realization_scope
+```
+
+Each row records direct and transitive consequences separately:
+
+```text
+claims_invalidated
+debts_reactivated
+negative_claims_activated
+routes_changed
+earliest_gates_to_reopen
+profiles_affected
+candidates_affected
+realizations_affected
+known_through_evidence_frontier
+unknown_beyond_evidence_frontier
+blocked_overreads_at_risk
+source_edge_refs
+```
+
+Rows must be deterministic kernel output. The web client receives no rule
+tables and no graph algorithm that can calculate new scientific effects.
+
+### Profile-scoped propagation
+
+A mutation propagates only through profiles named by the target's accepted
+`profile_ids`, disabled-reduction profile rows, candidate scope, realization
+scope, and other source-recorded activation conditions. D10.2 family counts are
+coverage counts, not profile counts, and must not be used as propagation
+shortcuts. An empty profile list is not silently interpreted as all profiles;
+the adapter must resolve a source-backed common scope or classify the scope as
+indeterminate.
+
+The compiler emits one profile-local row for every affected profile.
+`all_profiles_aggregate` is a deterministic projection over the complete local
+row set and is never an independent input. Candidate A-only contracts cannot
+produce Candidate C rows, and the converse applies, unless an accepted common
+contract explicitly connects them.
+
+### Ripple sparsity and partitioning
+
+For equation/contract and parent-object mutations, the compiler precomputes
+only admitted typed mutations whose targets have a propagation-bearing path to
+an accepted or historical claim, negative boundary, blocked overread, route, or
+transformed debt. An annotation-only or otherwise non-load-bearing existing
+surface returns `no_propagation_bearing_effect` and does not create a ripple
+row. Gate/candidate-disposition mutations use the separate source-recorded
+reopening-boundary rule and remain eligible when the reopened gate has accepted
+descendants, even if the proposed disposition has no existing claim path.
+
+Authoritative profile-local rows are never truncated. If the bundle becomes
+large, rows are partitioned into deterministically named shards with a
+canonical index and aggregate projection. Sharding may change delivery, not
+scientific coverage. Each shard records target range, profile coverage, row
+count, payload digest, and source-bundle identity.
+
+## Dependency Reach, Not Importance Score
+
+The UI may report direct and transitive dependent counts for debts, objects,
+and contracts. It must call these `dependency_reach`, not load, importance,
+severity, or scientific priority. Counts must distinguish required, one-of,
+conditional, negative, and display-only relationships.
+
+Historical `must_close_before_D10` status may be displayed as predecessor
+metadata. Current D10 debt transformations and verification obligations must
+remain separate. A transformed debt does not glow as an unresolved pre-D10
+blocker merely because it once carried that role.
+
+## Scenario Contract
+
+The shared scenario format should contain:
+
+```json
+{
+  "schema_version": "grcv4_exploratory_scenario_v1",
+  "kernel_schema_version": "...",
+  "source_bundle_digest": "...",
+  "baseline_record_id": "...",
+  "baseline_record_digest": "...",
+  "profile_id": "...",
+  "mutations": [],
+  "result_class": "speculative_structural_counterfactual"
+}
+```
+
+Scenarios are immutable mutation descriptions, not arbitrary graph-state
+patches. Unknown fields, stale source identities, missing scopes, or mutations
+outside the admitted algebra fail closed. Notebook-to-web and web-to-notebook
+round trips must be canonical and lossless.
+
+The browser cannot author a mutation or recompute a ripple. The round trip is:
+
+```text
+load canonical scenario
+  -> select its precomputed ripple row
+  -> play back that row
+  -> serialize the selected row as the same canonical scenario
+```
+
+Web-to-notebook export is read-back of a selected precomputed row, not an
+edit-and-reserialize workflow. The resulting scenario bytes must equal the
+original canonical scenario bytes.
+
+## Web Surface
+
+Use Cytoscape.js for focused graph rendering. Build the actual exploration
+surface, not a landing page.
+
+### Required views
+
+1. **Focused navigator:** search or select one object and render a bounded
+   neighborhood, never the unfiltered full graph.
+2. **Family navigation:** enter through D10.2's nine
+   `coverage_contract.required_families` and filter to that family's claims,
+   objects, contracts, and source-recorded edges.
+3. **Triangulation:** show node-family-specific lenses rather than one generic
+   panel for every selection.
+4. **Dependency reach:** direct/transitive dependent counts by relation class.
+5. **Claim ceiling:** locked negative/blocked relabel surfaces with exact source
+   reason and reopening boundary.
+6. **Alternative layer:** display routed, rejected, conditional, and historical
+   nodes without presenting them as accepted peers.
+7. **Lineage scrubber:** traverse accepted record identities along the DAG
+   projection and preserve corrections/branches.
+8. **Ripple view:** animate only a precomputed row and mark the evidence
+   frontier explicitly.
+
+### Family navigation
+
+The primary coarse-grained entry points come directly from D10.2:
+
+```text
+core_resource = 7
+legacy_transport = 9
+candidate_A = 7
+candidate_C = 5
+geometry = 8
+realization = 5
+complete_step_lifecycle = 12
+GRC9_specialization = 7
+specification_grammar = 7
+```
+
+These values validate object-family coverage only. They do not rank families
+and do not define profile propagation. Triangulation refines a selected family
+into source-exact node relationships.
+
+### Family-specific triangulation
+
+The visible lenses depend on the selected node family:
+
+- **Claim:** supporting objects, instantiating contracts, accepting or
+  transforming gates, and debts transformed by the claim.
+- **Debt transformation:** claims blocked historically, accepted
+  transformation, closing/routing gate, and forward verification obligations.
+- **Gate:** added, inherited, narrowed, routed, superseded, and
+  resolved-negative content; predecessor identity; successor branches.
+- **Profile:** active charge, lifecycle, event, candidate, realization, and
+  disabled-reduction contracts.
+- **Object/equation contract:** accepted claims, profile/candidate/realization
+  scopes, blocked overreads, and parent/child relation.
+- **Source record:** digest, acceptance status, predecessor identity, and
+  supersession edges.
+
+Unsupported lenses are omitted rather than filled with inferred relations.
+
+### Claim ceiling and lock reasons
+
+Blocked overreads use exact source fields as their lock reasons. In particular,
+the claim-ceiling view admits the complete D10.2
+`targeted_type_and_provenance_hardening` map:
+
+```text
+core_K_vs_graph_K4
+M4_ontology
+Candidate_A_profile_scope
+Candidate_A_future_curvature_rule
+migration_split
+reference_Hodge_embedding
+differential_backend_scope
+destination_semantics
+```
+
+The machine value and source record are always shown. A human-readable
+paraphrase may accompany them only as a non-authoritative annotation. Generic
+reasons such as `needs_evidence` or `contradicts_record` are permitted only when
+no more specific source statement exists; the UI may not invent a lock reason.
+Each compiled lock surface therefore carries `blocked_overread_id`,
+`lock_reason_source_key`, `lock_reason_machine_value`, `source_record_id`, and
+`source_record_digest`; missing required provenance fails the lock compilation.
+
+### Progressive ghost layer
+
+The alternatives slider controls visibility and opacity only. At zero, only
+accepted nodes render. Increasing it progressively materializes rejected
+candidates, blocked relabels, conditional alternatives, and historical claims.
+Ghost nodes retain dashed/non-color-only distinction at every level and can
+never become accepted through selection, dragging, filtering, or playback.
+The slider cannot alter propagation, classification, or scenario output.
+
+### Fork-in-time playback
+
+The lineage scrubber can freeze at an accepted record and play a precomputed
+mutation from that point. The accepted unaffected subtree remains solid; the
+minimal invalidation roots and evidence frontier are labeled; descendants
+beyond the frontier fade to an unresolved dashed state. The animation shows a
+structural fork without predicting the rerun branch and contains no browser-side
+propagation logic.
+
+### Cross-surface identity
+
+For an identical source bundle and selection, the forensic API projection and
+the browser bundle payload must be byte-identical for node IDs, edge rows,
+support classifications, scopes, and selected ripple row. This integration
+assertion enforces one kernel/two front ends and fails if JavaScript or notebook
+presentation introduces a divergent scientific projection.
+
+### Interaction and accessibility
+
+- Stable dimensions must prevent graph and control layout shifts.
+- Use icons and tooltips for graph operations, tabs for views, and segmented
+  controls for source versus speculative mode.
+- Keyboard selection, focus visibility, text alternatives, reduced-motion
+  behavior, and responsive desktop/mobile layouts are required.
+- Speculative state must remain visibly distinct without relying on color alone.
+- Long IDs and claims must wrap or use expandable detail panels without
+  overlapping graph controls.
+
+## Proposed Investigation-Local Layout
+
+All implementation remains under this investigation:
+
+```text
+implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/
+  README.md
+  GRCV4ExploratorySideToolImplementationPlan.md
+  GRCV4ExploratorySideToolImplementationChecklist.md
+  tool/
+    pyproject.toml
+    src/grcv4_explorer/
+      adapters/
+      kernel/
+      forensic/
+      scenarios/
+      ripple/
+    tests/
+    notebooks/
+    web/
+    scripts/
+    generated/
+```
+
+The exact package manager and frontend scaffold are frozen in Iteration 0 after
+checking repository dependencies. Generated scratch output should be ignored;
+selected committed examples require explicit provenance and reconstruction
+commands.
+
+## Iteration Sequence
+
+### Iteration 0. Baseline, Layout, And Source Contract Freeze
+
+Freeze dependencies, local layout, source files, accepted digests, output
+policy, supported Python/Node versions, and exact non-authority language. No
+kernel logic or UI is written before this gate closes.
+
+### Iteration 1. Source Adapters And Bundle Identity
+
+Implement schema-specific read-only adapters, canonical digest validation,
+reference checks, source-bundle identity, stale-source failure, and before/after
+immutability verification.
+
+### Iteration 2. Validated Graph Kernel
+
+Build typed nodes/edges, lineage DAG, support semantics, invariant checks, and
+deterministic serialization. Keep propagation and annotation edges physically
+disjoint, and route verification obligations forward only. Reproduce accepted
+counts and reciprocal-edge rules without creating a new authority.
+
+### Iteration 3. Forensic API And Notebook Recipes
+
+Implement pure forensic functions, stable reports, negative-claim tracing,
+candidate careers, object/contract provenance, and a minimal notebook that
+only orchestrates those APIs.
+
+### Iteration 4. Counterfactual Mutation And Evidence Frontier
+
+Freeze typed mutations and implement conservative invalidation, debt
+reactivation, negative activation, route changes, earliest-gate reopening, and
+unknown-frontier behavior. Compute the frontier from minimal invalidation roots,
+complete support predicates, and independent-support subtraction. Detect
+blocked-overread risk without activating the blocked claim. Distinguish
+existing-surface sparsity from gate/candidate-disposition reopening so routed
+alternatives remain testable without fabricated equations. No new positive
+downstream claims are generated.
+
+### Iteration 5. Ripple Compiler And Scenario Round Trip
+
+Emit deterministic profile-qualified ripple tables, validate canonical
+scenarios, compile only propagation-bearing targets, shard without truncating
+scientific coverage where needed, and prove load/serialize/select/playback
+scenario round-trip identity.
+
+### Iteration 6. Web Foundation, Triangulation, And Dependency Reach
+
+Create the Cytoscape.js shell, focused navigation, source details,
+family navigation, node-specific triangulation, dependency reach, responsive
+layout, and accessibility baseline. The client loads generated tables only and
+must match the forensic projection byte-for-byte for identical selections.
+
+### Iteration 7. Claim Ceilings And Alternative Layer
+
+Add locked-claim navigation, blocked overreads, routed/rejected/historical
+alternatives, source-exact hardening reasons, progressive ghost
+materialization, and precise V4-D representation.
+
+### Iteration 8. Lineage Scrubbing And Precomputed Ripple Playback
+
+Add DAG-aware time navigation, source/speculative mode separation, scenario
+loading, and precomputed ripple animation with explicit evidence-frontier
+markers. Include a fork-in-time view that leaves accepted unaffected history
+solid and fades only the unresolved counterfactual descendants.
+
+### Iteration 9. Independent Validation And Closeout
+
+Run deterministic rebuilds, source-immutability checks, negative/adversarial
+scenario tests, browser tests, Playwright desktop/mobile screenshots, usability
+pressure, documentation review, and final claim classification.
+
+## Verification Strategy
+
+### Kernel and adapter tests
+
+- accepted source count and digest fixtures;
+- schema-specific digest-field selection;
+- 39/29/29/11/67/152 accepted-bundle counts;
+- reciprocal claim/debt edges;
+- no silent debt loss;
+- unresolved reference and duplicate-ID failures;
+- lineage acyclicity and predecessor digest checks;
+- physically disjoint propagation and annotation tables;
+- one node per unique verification-obligation ID with source-occurrence tags;
+- forward-only verification-obligation edges;
+- annotation non-authority;
+- source before/after byte identity;
+- deterministic graph serialization.
+
+### Counterfactual tests
+
+- required-support removal invalidates the expected claim;
+- one-of support does not fail from one removal when alternatives are explicit;
+- unclear support returns `indeterminate_requires_review`;
+- frontier roots form the minimal invalidation antichain;
+- independently supported descendants remain outside the frontier;
+- claim predicates use accepted evidence references, transformed debt
+  dispositions, and source-recorded activation conditions;
+- exact debt reactivation requires a recorded conditional closing;
+- reopened gates yield `unknown_beyond_evidence_frontier` downstream;
+- routed gate/candidate-disposition mutations open a source-recorded reopening
+  boundary rather than failing existing-path sparsity;
+- profile-local propagation does not cross candidate/profile scope;
+- a neutralized lock reason flags overread risk without activating the overread;
+- Candidate B and V4-D controls do not fabricate successor claims;
+- profile-local mutations do not leak into unrelated profiles;
+- stale or malformed scenarios fail closed;
+- no numeric effect appears in structural output.
+
+### Web tests
+
+- browser bundle contains no propagation rules;
+- focused subgraph limits prevent full-graph sprawl;
+- family counts and family filters reproduce D10.2 source coverage;
+- node-family-specific triangulation omits unsupported lenses;
+- source/speculative modes remain visually and semantically distinct;
+- progressive ghost visibility never changes source classification;
+- long labels and IDs remain readable;
+- keyboard and reduced-motion behavior works;
+- scenario playback reproduces the selected precomputed row exactly;
+- fork playback preserves unaffected accepted branches and fades only the
+  precomputed unresolved frontier;
+- browser payload equals the forensic projection for identical selections;
+- Playwright screenshots pass on desktop and mobile viewports.
+
+## Completion Boundary
+
+Successful closeout may claim:
+
+> A deterministic read-only exploratory tool reconstructs the accepted
+> GRCv4/GRC9v4 constitutive-design claim topology and supports bounded,
+> source-traceable structural counterfactual navigation up to the explicit
+> evidence frontier.
+
+It may not claim that the tool proves a new V4 result, predicts reopened-gate
+outcomes, implements GRCv4, or authorizes specification/runtime changes.

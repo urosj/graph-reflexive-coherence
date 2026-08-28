@@ -95,7 +95,8 @@ Start with:
 - [D10.1 preliminary substrate provenance decision](./decisions/D10_1PreliminarySubstrateProvenance.json);
 - [D10.1 preliminary substrate provenance interpretation](./decisions/D10_1PreliminarySubstrateProvenance.md).
 - [D10.2 full substrate provenance and promotion audit](./decisions/D10_2FullSubstrateProvenanceAndPromotionAudit.json);
-- [D10.2 scientific interpretation](./decisions/D10_2FullSubstrateProvenanceAndPromotionAudit.md).
+- [D10.2 scientific interpretation](./decisions/D10_2FullSubstrateProvenanceAndPromotionAudit.md);
+- [exploratory side-tool package](./tools/exploratory-side-tool/README.md), including its implementation plan and checklist.
 
 Current gate status:
 
