@@ -1,6 +1,6 @@
 # GRCv4 Exploratory Side Tool
 
-**Status:** Iterations 0-4 accepted; Iteration 5 authorized
+**Status:** Iterations 0-5 accepted; Iteration 6 authorized
 
 This investigation defines a read-only exploratory tool over the accepted
 GRCv4/GRC9v4 constitutive-design records. It is a side tool for understanding
@@ -62,8 +62,11 @@ Start with:
 - [accepted Iteration 2 validated graph](./records/ETC2ValidatedGraphKernel.md)
 - [accepted Iteration 3 forensic reconstruction](./records/ETC3ForensicReconstructionSurface.md)
 - [Iteration 3 forensic scenario report](./records/ETC3ForensicScenarioReport.md)
-- [Iteration 4 bounded counterfactual candidate](./records/ETC4BoundedCounterfactualKernel.md)
+- [accepted Iteration 4 bounded counterfactual kernel](./records/ETC4BoundedCounterfactualKernel.md)
 - [Iteration 4 counterfactual scenario report](./records/ETC4CounterfactualScenarioReport.md)
+- [accepted Iteration 5 ripple and scenario contract](./records/ETC5RippleAndScenarioContract.md)
+- [Iteration 5 canonical scenario bundle](./records/ETC5ScenarioBundle.json)
+- [Iteration 5 deterministic ripple index](./records/ETC5RippleShardIndex.json)
 - [accepted constitutive-design investigation](../../README.md)
 - [accepted D10 claim topology](../../decisions/D10NormativeClaimTopology.json)
 - [accepted D10 debt transformations](../../decisions/D10DebtClaimTransformationLedger.json)
@@ -97,7 +100,15 @@ ET_C4_record_digest = 4eea388fd9ee610a19d17efe48ed3512b2afb81f0f6fefcae89d5494da
 ET_C4_independent_audit = 1775_checks_169_edge_references
 ET_C4_focused_tests = 38_of_38_passed
 iteration_4 = accepted
-iteration_5 = authorized_not_implemented
+ET_C5_scenario_bundle_digest = 52630207a8e2d2510c799d81de313a2515088ba5790d0f383fadd7eb827dfee3
+ET_C5_aggregate_digest = e8f067860bb62c6263fd213ca10e605f5ea088557f3d6ca98a0bd2d6fc542c2b
+ET_C5_shard_index_digest = 882d4e3e2e254083fcef8b249b640e60f4561cad4b0ca7acffa440cbd9a8ba4e
+ET_C5_record_digest = 1da09db7cea385d8e7818e38c0c8f2c7a6b2c77ee8fa4518415cdd7d02ba33fa
+ET_C5_population = 25_scenarios_24_rows_3_shards
+ET_C5_independent_audit = 4133_checks_836_edge_references
+ET_C5_focused_tests = 89_of_89_passed
+iteration_5 = accepted
+iteration_6 = authorized_not_implemented
 src_pygrc_changes = forbidden
 specification_changes = forbidden
 new_scientific_claims = forbidden

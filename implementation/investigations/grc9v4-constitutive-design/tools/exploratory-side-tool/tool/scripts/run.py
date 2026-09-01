@@ -42,6 +42,10 @@ COMMANDS = {
     "audit-iteration4": TOOL_ROOT / "scripts/audit_iteration4_counterfactuals.py",
     "test-iteration4": TOOL_ROOT / "scripts/test_iteration4_counterfactuals.py",
     "verify-iteration4": TOOL_ROOT / "scripts/verify_iteration4.py",
+    "build-iteration5": TOOL_ROOT / "scripts/build_iteration5_ripples.py",
+    "audit-iteration5": TOOL_ROOT / "scripts/audit_iteration5_ripples.py",
+    "test-iteration5": TOOL_ROOT / "scripts/test_iteration5_ripples.py",
+    "verify-iteration5": TOOL_ROOT / "scripts/verify_iteration5.py",
 }
 
 

@@ -1,7 +1,7 @@
 # GRCv4 Exploratory Side Tool Implementation Checklist
 
 **Date:** 2026-08-28
-**Status:** Iterations 0-4 accepted; Iteration 5 authorized
+**Status:** Iterations 0-5 accepted; Iteration 6 authorized
 **Plan:** [GRCV4ExploratorySideToolImplementationPlan.md](./GRCV4ExploratorySideToolImplementationPlan.md)
 **Source investigation:** [GRC9V4 constitutive design](../../README.md)
 
@@ -588,7 +588,7 @@ the investigation.
 
 ## Iteration 5. Ripple Compiler And Scenario Round Trip
 
-**Status:** authorized
+**Status:** accepted
 
 ### Goal
 
@@ -597,64 +597,85 @@ format.
 
 ### Checks
 
-- [ ] Freeze scenario schema and kernel schema versions.
-- [ ] Bind every scenario to source-bundle and baseline-record digests.
-- [ ] Store typed immutable mutations rather than graph-state patches.
-- [ ] Freeze ripple keys with profile, candidate, realization, and baseline
+- [x] Freeze scenario schema and kernel schema versions.
+- [x] Bind every scenario to source-bundle and baseline-record digests.
+- [x] Store typed immutable mutations rather than graph-state patches.
+- [x] Freeze ripple keys with profile, candidate, realization, and baseline
       scope.
-- [ ] Derive propagation scope from accepted `profile_ids`, disabled-reduction
+- [x] Derive propagation scope from accepted `profile_ids`, disabled-reduction
       rows, candidate scope, realization scope, and activation conditions.
-- [ ] Never substitute D10.2 object-family counts for profile scope.
-- [ ] Fail closed when an empty profile list cannot be resolved to an explicit
+- [x] Never substitute D10.2 object-family counts for profile scope.
+- [x] Fail closed when an empty profile list cannot be resolved to an explicit
       common or profile-independent scope.
-- [ ] Emit one row per affected profile and zero rows for unrelated profiles.
-- [ ] Verify a Candidate A-only mutation emits no Candidate C ripple row unless
+- [x] Emit one row per affected profile and zero rows for unrelated profiles.
+- [x] Verify a Candidate A-only mutation emits no Candidate C ripple row unless
       an accepted common contract explicitly connects them.
-- [ ] Separate direct from transitive consequences.
-- [ ] Include exact source-edge references in every consequence.
-- [ ] Include the deterministically ordered earliest reopening-gate set and
+- [x] Separate direct from transitive consequences.
+- [x] Include exact source-edge references in every consequence.
+- [x] Include the deterministically ordered earliest reopening-gate set and
       evidence frontier.
-- [ ] Include `unknown_beyond_evidence_frontier` status explicitly.
-- [ ] Include blocked-overread risks without inventing new negative claims.
-- [ ] Include forward `verification_obligations_at_risk` separately from claim,
+- [x] Include `unknown_beyond_evidence_frontier` status explicitly.
+- [x] Include blocked-overread risks without inventing new negative claims.
+- [x] Include forward `verification_obligations_at_risk` separately from claim,
       debt, and evidence consequences.
-- [ ] Verify an obligation-at-risk is never traversed backward as evidence or
+- [x] Verify an obligation-at-risk is never traversed backward as evidence or
       relabeled as a reopened scientific debt.
-- [ ] Emit all-profile aggregates only as projections over the complete
+- [x] Emit all-profile aggregates only as projections over the complete
       profile-local row set.
-- [ ] Precompute existing-surface mutations only with propagation-bearing reach,
+- [x] Precompute existing-surface mutations only with propagation-bearing reach,
       and gate/candidate-disposition mutations only with a source-recorded
       reopening boundary and accepted descendants.
-- [ ] Return `no_propagation_bearing_effect` and emit no ripple row for
+- [x] Return `no_propagation_bearing_effect` and emit no ripple row for
       annotation-only or otherwise non-load-bearing equation/contract or
       parent-object targets.
-- [ ] Partition large ripple output into deterministic shards with a canonical
+- [x] Partition large ripple output into deterministic shards with a canonical
       index; never truncate profile-local scientific coverage.
-- [ ] Record target range, profile coverage, row count, digest, and source-bundle
+- [x] Record target range, profile coverage, row count, digest, and source-bundle
       identity for every shard.
-- [ ] Validate stale, malformed, missing-scope, and unknown-field scenarios fail.
-- [ ] Prove notebook-to-web load/serialize/select/playback identity.
-- [ ] Prove web-to-notebook serialization of a selected precomputed row
+- [x] Validate stale, malformed, missing-scope, and unknown-field scenarios fail.
+- [x] Prove notebook-to-web load/serialize/select/playback identity.
+- [x] Prove web-to-notebook serialization of a selected precomputed row
       reproduces the canonical scenario byte-for-byte.
-- [ ] Verify the browser round trip cannot author or alter a mutation.
-- [ ] Prove ripple-table rebuild byte identity.
-- [ ] Apply the canonical serializer to scenarios, ripple rows, shard indexes,
+- [x] Verify the browser round trip cannot author or alter a mutation.
+- [x] Prove ripple-table rebuild byte identity.
+- [x] Apply the canonical serializer to scenarios, ripple rows, shard indexes,
       and aggregate projections.
-- [ ] Verify source records remain byte-identical.
-- [ ] Execute owned scenarios C2-C3, C7, and C9; rerun C4-C6 through the
+- [x] Verify source records remain byte-identical.
+- [x] Execute owned scenarios C2-C3, C7, and C9; rerun C4-C6 through the
       serialized ripple surface.
-- [ ] Run focused compiler and scenario tests.
-- [ ] Run `git diff --check`.
+- [x] Run focused compiler and scenario tests.
+- [x] Run `git diff --check`.
+
+### Result
+
+- scenario bundle: `records/ETC5ScenarioBundle.json`
+- all-profile projection: `records/ETC5AllProfilesAggregate.json`
+- shard index: `records/ETC5RippleShardIndex.json`
+- accepted record: `records/ETC5RippleAndScenarioContract.json`
+- scenario bundle digest: `52630207a8e2d2510c799d81de313a2515088ba5790d0f383fadd7eb827dfee3`
+- all-profile aggregate digest: `e8f067860bb62c6263fd213ca10e605f5ea088557f3d6ca98a0bd2d6fc542c2b`
+- shard index digest: `882d4e3e2e254083fcef8b249b640e60f4561cad4b0ca7acffa440cbd9a8ba4e`
+- accepted record digest: `1da09db7cea385d8e7818e38c0c8f2c7a6b2c77ee8fa4518415cdd7d02ba33fa`
+- canonical scenarios: `25` across C1-C7
+- profile-local rows: `24`; C6 serializes but emits no ripple
+- deterministic delivery: `3 shards x 8 rows`; no truncation
+- independent audit: `4,133 checks / 836 consequence-edge witnesses`
+- focused/adversarial matrix: `89/89 passed`
+- round trip: `24/24 selected rows reproduce canonical scenario bytes`
+- predecessor regression: `ET-C4 full verification passed`
+- claim boundary: `browser absent / no embedded propagation rule / no new
+  scientific evidence / no result past the evidence frontier`
+- Iteration 6: `authorized; not implemented`
 
 ### Gate
 
-- [ ] Accept `ET-C5_ripple_and_scenario_contract`.
-- [ ] Keep the browser closed until the static bundle has no embedded
+- [x] Accept `ET-C5_ripple_and_scenario_contract`.
+- [x] Keep the browser closed until the static bundle has no embedded
       propagation rule.
 
 ## Iteration 6. Web Foundation, Triangulation, And Dependency Reach
 
-**Status:** blocked on Iteration 5
+**Status:** authorized; not implemented
 
 ### Goal
 

@@ -21,11 +21,20 @@ from .forensic import (
     pruned_choices_at,
     reconstruction_path,
 )
+from .ripple import (
+    compile_ripple_row,
+    load_ripple_context,
+    load_scenario_bytes,
+    make_scenario,
+    serialize_selected_row,
+    validate_scenario,
+)
 
 __all__ = [
     "build_source_bundle",
     "candidate_career",
     "contract_provenance",
+    "compile_ripple_row",
     "debt_lifecycle",
     "discover_sources",
     "evaluate_mutation",
@@ -33,11 +42,16 @@ __all__ = [
     "gate_act",
     "gate_contribution",
     "load_forensic_context",
+    "load_ripple_context",
+    "load_scenario_bytes",
     "load_counterfactual_context",
     "make_mutation",
+    "make_scenario",
     "negative_claims",
     "object_dependents",
     "pruned_choices_at",
     "reconstruction_path",
+    "serialize_selected_row",
     "validate_mutation",
+    "validate_scenario",
 ]

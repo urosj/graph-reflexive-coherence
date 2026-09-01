@@ -1,7 +1,7 @@
 # GRCv4 Exploratory Side Tool User Scenarios
 
 **Date:** 2026-08-28
-**Status:** Design coverage validated; implementation evidence absent
+**Status:** Design coverage validated; Iterations 1-5 accepted; Iteration 6 authorized
 **Plan:** [GRCV4ExploratorySideToolImplementationPlan.md](./GRCV4ExploratorySideToolImplementationPlan.md)
 **Checklist:** [GRCV4ExploratorySideToolImplementationChecklist.md](./GRCV4ExploratorySideToolImplementationChecklist.md)
 
@@ -277,6 +277,11 @@ serialize it for notebook read-back, and require byte equality with the input.
 No edit or browser-side recomputation is permitted.
 
 **Output:** `speculative_structural_counterfactual`
+
+**Iteration 5 accepted evidence:** 25 canonical C1-C7 scenarios compile to 24
+profile-local rows; C6 remains a canonical no-ripple result. All 24 selected
+rows reproduce their input scenario bytes exactly, while stale, malformed,
+scope-leaking, and browser-authored scenarios fail closed.
 
 ## D. Adversarial And Fail-Closed Validation
 

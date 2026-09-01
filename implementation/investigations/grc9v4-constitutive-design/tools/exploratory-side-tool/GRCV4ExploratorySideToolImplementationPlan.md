@@ -1,7 +1,7 @@
 # GRCv4 Exploratory Side Tool Implementation Plan
 
 **Date:** 2026-08-28
-**Status:** Iterations 0-4 accepted; Iteration 5 authorized
+**Status:** Iterations 0-5 accepted; Iteration 6 authorized
 **Companion checklist:** [GRCV4ExploratorySideToolImplementationChecklist.md](./GRCV4ExploratorySideToolImplementationChecklist.md)
 **Source investigation:** [GRC9V4 constitutive design](../../README.md)
 
@@ -1117,6 +1117,31 @@ Emit deterministic profile-qualified ripple tables, validate canonical
 scenarios, compile only propagation-bearing targets, shard without truncating
 scientific coverage where needed, and prove load/serialize/select/playback
 scenario round-trip identity.
+
+The accepted implementation freezes one scenario schema, one ET-C4 kernel
+schema binding, a profile-local ripple schema, deterministic shard/index
+schemas, and a projection-only aggregate schema. C1-C7 expand into 25 canonical
+scenarios and 24 ripple rows: C3 and C4 each cover all ten admitted profiles;
+C2, C5, and C7 remain isolated to Candidate A and `A_CI`; C1 is explicitly
+profile-independent; and the non-load-bearing C6 fixture serializes but emits
+no ripple.
+
+Every row carries a scope receipt derived from accepted profile IDs, the
+profile's disabled-reduction identity, localized candidate/realization scope,
+and the ET-C4 claim activation conditions consulted. D10.2 family-coverage
+counts are explicitly excluded from propagation scope. Direct and transitive
+consequences remain separate, every consequence has an exact ET-C2 source-edge
+witness, blocked overreads remain risk-only, and verification obligations stay
+in a forward-work-only channel outside claim/debt consequences.
+
+The compiler writes three deterministic eight-row shards plus a canonical
+index; sharding changes delivery only and preserves all 24 rows. A selected row
+contains its immutable canonical scenario, and read-back reproduces the input
+bytes exactly. Browser mutation authoring and browser-side propagation remain
+absent. Two complete rebuilds are byte-identical; 4,133 independent checks, 89
+focused/adversarial checks, and the complete accepted ET-C4 regression pass.
+ET-C5 is accepted at the bounded static ripple/scenario compiler ceiling.
+Iteration 6 is authorized but is not implemented by this gate.
 
 ### Iteration 6. Web Foundation, Triangulation, And Dependency Reach
 

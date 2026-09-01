@@ -15,3 +15,11 @@ class GraphInvariantError(RuntimeError):
 
 class MutationValidationError(RuntimeError):
     """A structural counterfactual is outside the admitted mutation algebra."""
+
+
+class ScenarioValidationError(RuntimeError):
+    """A serialized scenario is stale, malformed, or not precomputed."""
+
+
+class RippleCompilationError(RuntimeError):
+    """A counterfactual result cannot be compiled into a bounded ripple row."""
