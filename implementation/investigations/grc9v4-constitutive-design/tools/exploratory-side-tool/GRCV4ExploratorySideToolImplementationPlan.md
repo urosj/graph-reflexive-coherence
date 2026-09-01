@@ -1,7 +1,7 @@
 # GRCv4 Exploratory Side Tool Implementation Plan
 
 **Date:** 2026-08-28
-**Status:** Iterations 0-6 accepted; Iteration 7 authorized
+**Status:** Iterations 0-7 accepted; Iteration 8 authorized
 **Companion checklist:** [GRCV4ExploratorySideToolImplementationChecklist.md](./GRCV4ExploratorySideToolImplementationChecklist.md)
 **Source investigation:** [GRC9V4 constitutive design](../../README.md)
 
@@ -1180,11 +1180,36 @@ Iteration 7 is authorized but is not implemented by this gate.
 
 ### Iteration 7. Claim Ceilings And Alternative Layer
 
-**Status:** authorized; not implemented
+**Status:** accepted
 
 Add locked-claim navigation, blocked overreads, routed/rejected/historical
 alternatives, source-exact hardening reasons, progressive ghost
 materialization, and precise V4-D representation.
+
+**Implementation result (accepted).** A source-compiled ET-C7 layer now adds
+90 locked surfaces and 144 immutable alternatives over the accepted ET-C6
+navigation bundle. The locks comprise accepted negative claims, blocked
+overreads, and all eight D10.2 targeted hardenings. Exact source JSON pointers
+and machine values remain authoritative; readable explanations are visibly
+non-authoritative annotations. Candidate A/B/C careers preserve conditional and
+routed states, Candidate B exposes its exact readmission boundary without
+promising success, and V4-D remains a resolved-negative uninstantiated slot.
+
+The alternatives slider controls staged disclosure and opacity only. Dashed
+non-color styling remains present, and selection, filtering, dragging, mode
+changes, or slider movement cannot promote, reclassify, propagate, serialize,
+or rank an alternative. Current debt transformations, verification
+obligations, and historical claims remain separate populations.
+
+Two builds are byte-identical. The independent raw-source audit passes 2,173
+checks; focused Python checks pass 477; all 12 Node tests and four Playwright
+flows pass across desktop and mobile; six screenshots were inspected without
+overlap or authority conflation; and the accepted ET-C6 focused regression
+passes 47 checks. The candidate layer digest is
+`6d694de0e7ffbdea653543668472534ac6fde4be0ea1e1aedc6e1cf561cecc9f`.
+Human review accepted this bounded presentation layer without promoting any
+ghost or adding scientific authority. Iteration 8 is authorized but not
+implemented.
 
 ### Iteration 8. Lineage Scrubbing And Precomputed Ripple Playback
 

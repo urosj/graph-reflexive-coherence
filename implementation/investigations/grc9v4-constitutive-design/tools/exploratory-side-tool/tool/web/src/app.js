@@ -4,12 +4,25 @@ import {
   Database,
   Focus,
   GitBranch,
+  Layers3,
   LocateFixed,
+  LockKeyhole,
   Network,
   Search,
 } from "lucide";
 import "./styles.css";
 import { familyById, filterCatalog, projectionFor, sourceState, verifyBundle } from "./bundle.js";
+import {
+  alternativeById,
+  candidateCareer,
+  filterLocks,
+  ghostForNode,
+  ghostOpacity,
+  lockById,
+  locksForNode,
+  verifyClaimCeilingLayer,
+  visibleAlternatives,
+} from "./ceilings.js";
 
 const KIND_COLORS = {
   current_claim: "#1f766d",
@@ -28,11 +41,16 @@ const KIND_COLORS = {
 
 const state = {
   bundle: null,
+  layer: null,
   selectedNodeId: null,
+  selectedLockId: null,
+  selectedAlternativeId: null,
   familyId: "candidate_A",
+  view: "catalog",
   query: "",
   tab: "details",
   mode: "source",
+  alternativeVisibility: 0,
   cy: null,
 };
 
@@ -62,7 +80,7 @@ function renderShell(source) {
         <div class="brand-mark" aria-hidden="true">G4</div>
         <div>
           <h1>GRCv4 Constitutive Explorer</h1>
-          <div class="subline">Accepted design topology / ${escapeHtml(state.bundle.status.replaceAll("_", " "))}</div>
+          <div class="subline">Accepted design topology / ET-C7 alternative layer</div>
         </div>
       </div>
       <div class="topbar-actions">
@@ -84,6 +102,23 @@ function renderShell(source) {
         <section class="family-section" aria-labelledby="family-heading">
           <div class="section-heading" id="family-heading">Object families</div>
           <div id="family-list" class="family-list"></div>
+        </section>
+        <section class="boundary-section" aria-labelledby="boundary-heading">
+          <div class="section-heading" id="boundary-heading">Claim boundary</div>
+          <div class="boundary-actions">
+            <button class="boundary-view" data-view="locks"><i data-lucide="lock-keyhole" aria-hidden="true"></i><span>Locked claims</span><span class="count">${state.layer.population_counts.locks}</span></button>
+            <button class="boundary-view" data-view="alternatives"><i data-lucide="layers-3" aria-hidden="true"></i><span>Alternatives</span><span class="count">${state.layer.population_counts.alternatives}</span></button>
+          </div>
+          <label class="visibility-control" for="alternative-visibility">
+            <span>Alternative visibility</span><output id="visibility-value">0%</output>
+            <input id="alternative-visibility" type="range" min="0" max="100" step="1" value="0" />
+          </label>
+          <div class="authority-populations" aria-label="Authority populations">
+            <span><strong>${state.layer.authority_populations.current_debt_transformations}</strong> current transformations</span>
+            <span><strong>${state.layer.authority_populations.verification_obligations}</strong> verification obligations</span>
+            <span class="historical-count"><strong>${state.layer.authority_populations.historical_claims}</strong> historical claims</span>
+          </div>
+          <div class="ghost-legend"><span class="ghost-swatch"></span>Dashed = non-authoritative alternative</div>
         </section>
         <section class="result-section" aria-labelledby="result-heading">
           <div class="section-heading" id="result-heading">Selection</div>
@@ -109,12 +144,13 @@ function renderShell(source) {
           <button class="tab is-active" data-tab="details" role="tab">Details</button>
           <button class="tab" data-tab="lenses" role="tab">Lenses</button>
           <button class="tab" data-tab="reach" role="tab">Reach</button>
+          <button class="tab" data-tab="ceilings" role="tab">Locks</button>
         </div>
         <div id="inspector-content" class="inspector-content"></div>
       </aside>
     </main>
   `;
-  createIcons({ icons: { Search, LocateFixed, Database, Focus, GitBranch, Network } });
+  createIcons({ icons: { Search, LocateFixed, Database, Focus, GitBranch, Network, LockKeyhole, Layers3 } });
 }
 
 function renderFamilies() {
@@ -130,22 +166,46 @@ function renderFamilies() {
     .join("");
   container.querySelectorAll("[data-family]").forEach((button) => {
     button.addEventListener("click", () => {
+      state.view = "catalog";
       state.familyId = button.dataset.family;
       const family = familyById(state.bundle, state.familyId);
       if (family?.node_ids.length) selectNode(family.node_ids[0]);
       renderFamilies();
+      renderBoundaryControls();
       renderSearchResults();
     });
   });
 }
 
 function renderSearchResults() {
-  const rows = filterCatalog(state.bundle, state.query, state.familyId).slice(0, 80);
+  const catalogRows = filterCatalog(state.bundle, state.query, state.familyId).filter((row) => {
+    const ghost = ghostForNode(state.layer, row.node_id);
+    return !ghost || ghostOpacity(ghost, state.alternativeVisibility) > 0;
+  });
+  const rows = state.view === "locks"
+    ? filterLocks(state.layer, state.query).slice(0, 80)
+    : state.view === "alternatives"
+      ? visibleAlternatives(state.layer, state.alternativeVisibility, state.query).slice(0, 80)
+      : catalogRows.slice(0, 80);
   const container = document.querySelector("#search-results");
   container.innerHTML = rows.length
     ? rows
         .map(
-          (row) => `
+          (row) => state.view === "locks" ? `
+            <button role="option" class="result-row lock-result ${row.lock_id === state.selectedLockId ? "is-active" : ""}" data-lock-id="${escapeHtml(row.lock_id)}" aria-selected="${row.lock_id === state.selectedLockId}">
+              <span class="lock-marker" aria-hidden="true"></span>
+              <span class="result-copy">
+                <span class="result-label">${escapeHtml(row.readable_annotation.text)}</span>
+                <span class="result-meta">${escapeHtml(row.lock_class.replaceAll("_", " "))}</span>
+              </span>
+            </button>` : state.view === "alternatives" ? `
+            <button role="option" class="result-row ghost-result ${row.alternative_id === state.selectedAlternativeId ? "is-active" : ""}" style="--ghost-opacity:${ghostOpacity(row, state.alternativeVisibility)}" data-alternative-id="${escapeHtml(row.alternative_id)}" aria-selected="${row.alternative_id === state.selectedAlternativeId}">
+              <span class="ghost-marker" aria-hidden="true"></span>
+              <span class="result-copy">
+                <span class="result-label">${escapeHtml(row.label.replaceAll("_", " "))}</span>
+                <span class="result-meta">${escapeHtml(row.alternative_class.replaceAll("_", " "))} / ${escapeHtml(row.immutable_status.replaceAll("_", " "))}</span>
+              </span>
+            </button>` : `
             <button role="option" class="result-row ${row.node_id === state.selectedNodeId ? "is-active" : ""}" data-node-id="${escapeHtml(row.node_id)}" aria-selected="${row.node_id === state.selectedNodeId}">
               <span class="kind-dot" style="--kind-color:${KIND_COLORS[row.kind] ?? "#687078"}"></span>
               <span class="result-copy">
@@ -159,19 +219,57 @@ function renderSearchResults() {
   container.querySelectorAll("[data-node-id]").forEach((button) => {
     button.addEventListener("click", () => selectNode(button.dataset.nodeId));
   });
+  container.querySelectorAll("[data-lock-id]").forEach((button) => {
+    button.addEventListener("click", () => selectLock(button.dataset.lockId));
+  });
+  container.querySelectorAll("[data-alternative-id]").forEach((button) => {
+    button.addEventListener("click", () => selectAlternative(button.dataset.alternativeId));
+  });
+}
+
+function renderBoundaryControls() {
+  document.querySelectorAll("[data-view]").forEach((button) => {
+    button.classList.toggle("is-active", button.dataset.view === state.view);
+  });
+  const slider = document.querySelector("#alternative-visibility");
+  slider.value = String(state.alternativeVisibility);
+  document.querySelector("#visibility-value").textContent = `${state.alternativeVisibility}%`;
+}
+
+function setActiveTab(tab) {
+  state.tab = tab;
+  document.querySelectorAll("[data-tab]").forEach((row) => {
+    row.classList.toggle("is-active", row.dataset.tab === tab);
+  });
 }
 
 function graphElements(projection) {
-  const nodes = projection.focus.nodes.map((node) => ({
+  const visibleNodes = projection.focus.nodes.filter((node) => {
+    const ghost = ghostForNode(state.layer, node.node_id);
+    return !ghost || ghostOpacity(ghost, state.alternativeVisibility) > 0;
+  });
+  const visibleNodeIds = new Set(visibleNodes.map((node) => node.node_id));
+  const nodes = visibleNodes.map((node) => {
+    const ghost = ghostForNode(state.layer, node.node_id);
+    const opacity = ghostOpacity(ghost, state.alternativeVisibility);
+    const classes = [node.node_id === projection.focus.root_node_id ? "root" : "", ghost ? "ghost" : ""]
+      .filter(Boolean)
+      .join(" ");
+    return {
     data: {
       id: node.node_id,
       label: node.label,
       kind: node.kind,
       isRoot: node.node_id === projection.focus.root_node_id,
+      ghostOpacity: ghost ? opacity : 1,
+      immutableStatus: ghost?.immutable_status ?? "current_source_node",
     },
-    classes: node.node_id === projection.focus.root_node_id ? "root" : "",
-  }));
-  const edges = projection.focus.edges.map((edge) => ({
+    classes,
+  };
+  });
+  const edges = projection.focus.edges.filter(
+    (edge) => visibleNodeIds.has(edge.source) && visibleNodeIds.has(edge.target),
+  ).map((edge) => ({
     data: {
       id: edge.edge_id,
       source: edge.source,
@@ -215,6 +313,15 @@ function renderGraph(projection) {
         style: { width: 48, height: 48, "border-width": 4, "border-color": "#17242a", "font-weight": 700 },
       },
       {
+        selector: "node.ghost",
+        style: {
+          "border-style": "dashed",
+          "border-width": 4,
+          shape: "round-rectangle",
+          opacity: (node) => node.data("ghostOpacity"),
+        },
+      },
+      {
         selector: "edge",
         style: {
           width: 1.3,
@@ -239,9 +346,10 @@ function renderGraph(projection) {
       levelWidth: () => 1,
     },
   });
+  state.cy.nodes(".ghost").ungrabify();
   state.cy.on("tap", "node", (event) => selectNode(event.target.id()));
   const focus = projection.focus;
-  document.querySelector("#graph-summary").textContent = `${focus.nodes.length} nodes / ${focus.edges.length} relationships`;
+  document.querySelector("#graph-summary").textContent = `${state.cy.nodes().length} nodes / ${state.cy.edges().length} relationships`;
   document.querySelector("#graph-boundary").textContent =
     focus.omitted_direct_neighbor_count || focus.omitted_incident_edge_count
       ? `${focus.omitted_direct_neighbor_count} neighbors and ${focus.omitted_incident_edge_count} relationships outside this bounded view`
@@ -255,6 +363,30 @@ function attributeRows(attributes) {
       ([key, value]) => `<div class="detail-row"><dt>${escapeHtml(key.replaceAll("_", " "))}</dt><dd>${escapeHtml(compact(value))}</dd></div>`,
     )
     .join("");
+}
+
+function sourceReceipt(source) {
+  return `
+    <dl class="detail-list source-receipt">
+      <div class="detail-row"><dt>Record</dt><dd>${escapeHtml(source.record_id)}</dd></div>
+      <div class="detail-row"><dt>Pointer</dt><dd>${escapeHtml(source.source_json_pointer)}</dd></div>
+      <div class="detail-row"><dt>Digest</dt><dd class="mono-copy">${escapeHtml(source.record_digest)}</dd></div>
+    </dl>`;
+}
+
+function renderCandidateCareer(node) {
+  if (node.kind !== "candidate") return "";
+  const career = candidateCareer(state.layer, node.identifier);
+  if (!career) return "";
+  return `
+    <section class="career-block">
+      <div class="section-heading">Source-exact candidate career</div>
+      ${career.rows.slice(-14).map((row) => `
+        <div class="career-row">
+          <span class="career-status">${escapeHtml(row.classification.replaceAll("_", " "))}</span>
+          <span>${escapeHtml(row.row_id)}</span>
+        </div>`).join("")}
+    </section>`;
 }
 
 function renderDetails(projection) {
@@ -276,7 +408,63 @@ function renderDetails(projection) {
           <div class="mono-line">${escapeHtml(ripple.ripple_digest)}</div>
         ` : `<div class="empty-state">No ET-C5 ripple row is compiled for this selection</div>`}
       </section>` : ""}
+    ${renderCandidateCareer(node)}
   `;
+}
+
+function renderLock(lock) {
+  return `
+    <section class="lock-surface" data-lock-status="accepted-source-lock">
+      <div class="lock-banner"><span class="lock-marker" aria-hidden="true"></span>Accepted claim boundary / cannot promote</div>
+      <div class="annotation-note"><strong>Readable annotation / non-authoritative</strong>${escapeHtml(lock.readable_annotation.text)}</div>
+      <div class="section-heading">Stronger blocked claim</div>
+      <ul class="machine-list">${lock.stronger_blocked_claims.map((value) => `<li>${escapeHtml(value)}</li>`).join("")}</ul>
+      <div class="section-heading">Exact source reason</div>
+      <div class="machine-value">${escapeHtml(lock.source_reason)}</div>
+      <div class="source-pointer-line">${escapeHtml(lock.source_reason_ref.record_id)} ${escapeHtml(lock.source_reason_ref.source_json_pointer)}</div>
+      ${lock.hardening ? `
+        <div class="hardening-block">
+          <div class="detail-row"><dt>Hardening key</dt><dd>${escapeHtml(lock.hardening.key)}</dd></div>
+          <div class="detail-row"><dt>Machine value</dt><dd>${escapeHtml(lock.hardening.machine_value)}</dd></div>
+        </div>` : ""}
+      <div class="section-heading">Bearing debt</div>
+      ${lock.bearing_debt_ids.length ? `<ul class="machine-list">${lock.bearing_debt_ids.map((value) => `<li>${escapeHtml(value)}</li>`).join("")}</ul>` : `<div class="empty-inline">No source-linked bearing debt</div>`}
+      <div class="section-heading">Reopening boundary set</div>
+      ${lock.reopening_boundary_set.length ? `<ul class="machine-list">${lock.reopening_boundary_set.map((row) => `<li><strong>${escapeHtml(row.boundary_kind)}</strong> ${escapeHtml(row.boundary_id)}</li>`).join("")}</ul>` : `<div class="empty-inline">Not named in the accepted source row</div>`}
+      ${sourceReceipt(lock.source)}
+    </section>`;
+}
+
+function renderAlternative(alternative) {
+  const readmission = alternative.alternative_id === "routed:V4-B-independent-derived-carrier"
+    ? state.layer.candidate_B_readmission
+    : null;
+  return `
+    <section class="alternative-surface" data-promotion-allowed="false">
+      <div class="ghost-banner"><span class="ghost-marker" aria-hidden="true"></span>Non-authoritative alternative / immutable</div>
+      <dl class="detail-list">
+        <div class="detail-row"><dt>Class</dt><dd>${escapeHtml(alternative.alternative_class.replaceAll("_", " "))}</dd></div>
+        <div class="detail-row"><dt>Status</dt><dd>${escapeHtml(alternative.immutable_status.replaceAll("_", " "))}</dd></div>
+        <div class="detail-row"><dt>Visibility</dt><dd>${alternative.visibility_threshold}% / staged disclosure only</dd></div>
+        <div class="detail-row"><dt>Promotion</dt><dd>Forbidden by ET-C7 authority</dd></div>
+      </dl>
+      ${readmission ? `
+        <section class="readmission-block">
+          <div class="section-heading">Candidate B readmission boundary</div>
+          <div class="machine-value">${escapeHtml(readmission.accepted_route_boundary)}</div>
+          <div class="detail-row"><dt>Earliest counterfactual rerun</dt><dd>${escapeHtml(readmission.earliest_counterfactual_reexecution_gate_ids.join(", "))}</dd></div>
+          <div class="detail-row"><dt>Outcome</dt><dd>${escapeHtml(readmission.outcome_status.replaceAll("_", " "))}</dd></div>
+        </section>` : ""}
+      <div class="section-heading">Source payload</div>
+      <div class="machine-value">${escapeHtml(compact(alternative.payload))}</div>
+      ${sourceReceipt(alternative.source)}
+    </section>`;
+}
+
+function renderCeilings(projection) {
+  const rows = locksForNode(state.layer, projection.selection.node_id);
+  if (!rows.length) return `<div class="empty-state">No source-linked lock is compiled for this node</div>`;
+  return rows.map(renderLock).join("");
 }
 
 function renderLenses(projection) {
@@ -325,14 +513,26 @@ function renderReach(projection) {
 }
 
 function renderInspector(projection) {
+  const selectedLock = state.selectedLockId ? lockById(state.layer, state.selectedLockId) : null;
+  const selectedAlternative = state.selectedAlternativeId ? alternativeById(state.layer, state.selectedAlternativeId) : null;
   const node = projection.selection;
   document.querySelector("#selection-header").innerHTML = `
-    <div class="selection-kind"><span class="kind-dot" style="--kind-color:${KIND_COLORS[node.kind] ?? "#687078"}"></span>${escapeHtml(kindLabel(node.kind))}</div>
-    <h2>${escapeHtml(node.label)}</h2>
-    <div class="selection-id">${escapeHtml(node.identifier)}</div>
+    <div class="selection-kind"><span class="kind-dot" style="--kind-color:${KIND_COLORS[node.kind] ?? "#687078"}"></span>${escapeHtml(selectedLock ? "locked boundary" : selectedAlternative ? "ghost alternative" : kindLabel(node.kind))}</div>
+    <h2>${escapeHtml(selectedLock?.readable_annotation.text ?? selectedAlternative?.label.replaceAll("_", " ") ?? node.label)}</h2>
+    <div class="selection-id">${escapeHtml(selectedLock?.lock_id ?? selectedAlternative?.alternative_id ?? node.identifier)}</div>
   `;
   const content = document.querySelector("#inspector-content");
-  content.innerHTML = state.tab === "details" ? renderDetails(projection) : state.tab === "lenses" ? renderLenses(projection) : renderReach(projection);
+  content.innerHTML = selectedLock
+    ? renderLock(selectedLock)
+    : selectedAlternative
+      ? renderAlternative(selectedAlternative)
+      : state.tab === "details"
+        ? renderDetails(projection)
+        : state.tab === "lenses"
+          ? renderLenses(projection)
+          : state.tab === "reach"
+            ? renderReach(projection)
+            : renderCeilings(projection);
   content.querySelectorAll("[data-related-node]").forEach((button) => {
     button.addEventListener("click", () => selectNode(button.dataset.relatedNode));
   });
@@ -340,10 +540,42 @@ function renderInspector(projection) {
 
 function selectNode(nodeId) {
   const projection = projectionFor(state.bundle, nodeId);
+  const returningFromVirtualSurface = Boolean(state.selectedLockId || state.selectedAlternativeId);
   state.selectedNodeId = nodeId;
+  state.selectedLockId = null;
+  state.selectedAlternativeId = null;
+  if (returningFromVirtualSurface) setActiveTab("details");
   renderSearchResults();
   renderGraph(projection);
   renderInspector(projection);
+}
+
+function selectLock(lockId) {
+  const lock = lockById(state.layer, lockId);
+  if (!lock) throw new Error(`unknown lock: ${lockId}`);
+  state.selectedLockId = lockId;
+  state.selectedAlternativeId = null;
+  setActiveTab("ceilings");
+  const target = lock.target_node_ids.find((nodeId) => state.bundle.selection_projections[nodeId]);
+  if (target) state.selectedNodeId = target;
+  renderSearchResults();
+  renderGraph(projectionFor(state.bundle, state.selectedNodeId));
+  renderInspector(projectionFor(state.bundle, state.selectedNodeId));
+}
+
+function selectAlternative(alternativeId) {
+  const alternative = alternativeById(state.layer, alternativeId);
+  if (!alternative || ghostOpacity(alternative, state.alternativeVisibility) === 0) {
+    throw new Error(`alternative is outside current visibility: ${alternativeId}`);
+  }
+  state.selectedAlternativeId = alternativeId;
+  state.selectedLockId = null;
+  setActiveTab("details");
+  const target = alternative.target_node_id;
+  if (target && state.bundle.selection_projections[target]) state.selectedNodeId = target;
+  renderSearchResults();
+  renderGraph(projectionFor(state.bundle, state.selectedNodeId));
+  renderInspector(projectionFor(state.bundle, state.selectedNodeId));
 }
 
 function wireShell() {
@@ -355,7 +587,7 @@ function wireShell() {
     renderSearchResults();
   });
   search.addEventListener("keydown", (event) => {
-    const results = [...document.querySelectorAll("[data-node-id]")];
+    const results = [...document.querySelectorAll("[data-node-id], [data-lock-id], [data-alternative-id]")];
     if (event.key === "Enter" && results[0]) results[0].click();
     if (event.key === "ArrowDown" && results[0]) {
       event.preventDefault();
@@ -365,9 +597,34 @@ function wireShell() {
   document.querySelectorAll("[data-tab]").forEach((button) => {
     button.addEventListener("click", () => {
       state.tab = button.dataset.tab;
-      document.querySelectorAll("[data-tab]").forEach((row) => row.classList.toggle("is-active", row === button));
+      setActiveTab(button.dataset.tab);
       renderInspector(projectionFor(state.bundle, state.selectedNodeId));
     });
+  });
+  document.querySelectorAll("[data-view]").forEach((button) => {
+    button.addEventListener("click", () => {
+      state.view = button.dataset.view;
+      state.selectedLockId = null;
+      state.selectedAlternativeId = null;
+      state.query = "";
+      search.value = "";
+      renderBoundaryControls();
+      renderSearchResults();
+    });
+  });
+  document.querySelector("#alternative-visibility").addEventListener("input", (event) => {
+    state.alternativeVisibility = Number(event.target.value);
+    const selected = state.selectedAlternativeId
+      ? alternativeById(state.layer, state.selectedAlternativeId)
+      : null;
+    if (selected && ghostOpacity(selected, state.alternativeVisibility) === 0) {
+      state.selectedAlternativeId = null;
+    }
+    renderBoundaryControls();
+    renderSearchResults();
+    const projection = projectionFor(state.bundle, state.selectedNodeId);
+    renderGraph(projection);
+    renderInspector(projection);
   });
   document.querySelectorAll("[data-mode]").forEach((button) => {
     button.addEventListener("click", () => {
@@ -382,9 +639,14 @@ function wireShell() {
 
 async function boot() {
   try {
-    const response = await fetch("/data/ETC6StaticNavigationBundle.json", { cache: "no-store" });
-    if (!response.ok) throw new Error(`bundle request failed: ${response.status}`);
-    state.bundle = await verifyBundle(await response.json());
+    const [bundleResponse, layerResponse] = await Promise.all([
+      fetch("/data/ETC6StaticNavigationBundle.json", { cache: "no-store" }),
+      fetch("/data/ETC7ClaimCeilingAlternativeLayer.json", { cache: "no-store" }),
+    ]);
+    if (!bundleResponse.ok) throw new Error(`bundle request failed: ${bundleResponse.status}`);
+    if (!layerResponse.ok) throw new Error(`claim-ceiling request failed: ${layerResponse.status}`);
+    state.bundle = await verifyBundle(await bundleResponse.json());
+    state.layer = await verifyClaimCeilingLayer(await layerResponse.json(), state.bundle);
     const source = sourceState(state.bundle);
     renderShell(source);
     if (!source.renderAllowed) {
@@ -393,6 +655,7 @@ async function boot() {
     }
     wireShell();
     renderFamilies();
+    renderBoundaryControls();
     const family = familyById(state.bundle, state.familyId);
     selectNode(family.node_ids[0]);
   } catch (error) {

@@ -1,7 +1,7 @@
 # GRCv4 Exploratory Side Tool User Scenarios
 
 **Date:** 2026-08-28
-**Status:** Design coverage validated; Iterations 1-6 accepted; Iteration 7 authorized
+**Status:** Design coverage validated; Iterations 1-7 accepted; Iteration 8 authorized
 **Plan:** [GRCV4ExploratorySideToolImplementationPlan.md](./GRCV4ExploratorySideToolImplementationPlan.md)
 **Checklist:** [GRCV4ExploratorySideToolImplementationChecklist.md](./GRCV4ExploratorySideToolImplementationChecklist.md)
 
@@ -391,6 +391,12 @@ source-bundle admission and the 14 kernel invariants.
 | I7 | N5-N6, D7, E2 | F6-F7, E3 browser projections | Claim ceilings and alternatives | covered |
 | I8 | N4, C8, E1 | C1-C2 and C9 playback | Lineage and precomputed playback | covered |
 | I9 | full suite | all prior scenarios | Acceptance and usability closeout | covered |
+
+Iteration 7 executes its owned scenarios and browser projections in the
+accepted surface: progressive ghosts remain non-promotable, locked overreads
+retain exact source reasons, Candidate B exposes a routed readmission boundary,
+and current, verification, and historical populations remain separate. This is
+tool-behavior coverage and does not add scientific evidence.
 
 Each scenario has exactly one owning iteration. Supporting rows may exercise it
 again after another surface becomes available, and I9 reruns all 35.

@@ -6,7 +6,8 @@ const app = new URL("../src/app.js", import.meta.url);
 const bundle = new URL("../src/bundle.js", import.meta.url);
 
 test("client source contains no scientific propagation or ripple compiler", async () => {
-  const source = `${await readFile(app, "utf8")}\n${await readFile(bundle, "utf8")}`;
+  const ceilings = new URL("../src/ceilings.js", import.meta.url);
+  const source = `${await readFile(app, "utf8")}\n${await readFile(bundle, "utf8")}\n${await readFile(ceilings, "utf8")}`;
   for (const forbidden of [
     "compileRipple",
     "compile_ripple",
@@ -14,11 +15,15 @@ test("client source contains no scientific propagation or ripple compiler", asyn
     "evaluate_mutation",
     "breadthFirstSearch",
     "unknown_beyond_evidence_frontier =",
+    "promotion_allowed = true",
+    "immutable_status =",
   ]) {
     assert.equal(source.includes(forbidden), false, forbidden);
   }
   assert.ok(source.includes("selection_projections"));
   assert.ok(source.includes("embedded_payload_receipts"));
+  assert.ok(source.includes("slider_changes_presentation_only"));
+  assert.ok(source.includes("non_authoritative_readability_annotation"));
 });
 
 test("interface has bounded focus, modes, tabs, keyboard search, and no landing page", async () => {
@@ -30,6 +35,10 @@ test("interface has bounded focus, modes, tabs, keyboard search, and no landing 
     "data-tab=\"details\"",
     "data-tab=\"lenses\"",
     "data-tab=\"reach\"",
+    "data-tab=\"ceilings\"",
+    "alternative-visibility",
+    "data-view=\"locks\"",
+    "data-view=\"alternatives\"",
     "ArrowDown",
     "omitted_direct_neighbor_count",
   ]) {

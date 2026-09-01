@@ -1,7 +1,7 @@
 # GRCv4 Exploratory Side Tool Implementation Checklist
 
 **Date:** 2026-08-28
-**Status:** Iterations 0-6 accepted; Iteration 7 authorized
+**Status:** Iterations 0-7 accepted; Iteration 8 authorized
 **Plan:** [GRCV4ExploratorySideToolImplementationPlan.md](./GRCV4ExploratorySideToolImplementationPlan.md)
 **Source investigation:** [GRC9V4 constitutive design](../../README.md)
 
@@ -38,13 +38,13 @@
 ```text
 branch = investigation-GRCV4-exploratory-side-tool
 plan = frozen
-checklist = iteration_1_accepted_iteration_2_authorized
-tool_code = iteration_1_source_adapters_discovery_and_bundle_only
+checklist = iteration_7_accepted_iteration_8_authorized
+tool_code = iteration_7_claim_ceiling_and_alternative_navigation_accepted
 accepted_source_records_changed = false
 src_pygrc_changed = false
 specifications_changed = false
 scientific_claims_added = false
-implementation_gate = ET-C1_accepted_I2_authorized
+implementation_gate = ET-C7_accepted_I8_authorized
 ```
 
 ## Iteration 0. Baseline, Layout, And Source Contract Freeze
@@ -749,7 +749,7 @@ Build the static navigation client over validated, precomputed data.
 - authority boundary: `Python-compiled scientific projections only; browser
   verifies and presents; no browser mutation, propagation, ripple compilation,
   ranking, or new scientific claim`
-- Iteration 7: `authorized; not implemented`
+- Iteration 7: `accepted; Iteration 8 authorized`
 
 ### Gate
 
@@ -759,7 +759,7 @@ Build the static navigation client over validated, precomputed data.
 
 ## Iteration 7. Claim Ceilings And Alternative Layer
 
-**Status:** authorized; not implemented
+**Status:** accepted
 
 ### Goal
 
@@ -768,45 +768,75 @@ statuses.
 
 ### Checks
 
-- [ ] Render accepted negative claims and blocked overreads as locked surfaces.
-- [ ] Show the stronger blocked claim, bearing debt, source reason, and earliest
+- [x] Render accepted negative claims and blocked overreads as locked surfaces.
+- [x] Show the stronger blocked claim, bearing debt, source reason, and earliest
       reopening boundary set.
-- [ ] Distinguish evidence, derivation, contradiction, routing, and
+- [x] Distinguish evidence, derivation, contradiction, routing, and
       out-of-scope lock reasons only where sourced.
-- [ ] Map lock reasons to the exact D10.2
+- [x] Map lock reasons to the exact D10.2
       `targeted_type_and_provenance_hardening` key and machine value where one
       exists.
-- [ ] Cover all eight accepted hardening keys, including the separate Candidate
+- [x] Cover all eight accepted hardening keys, including the separate Candidate
       A future-curvature rule.
-- [ ] Mark readable lock paraphrases as non-authoritative annotations and reject
+- [x] Mark readable lock paraphrases as non-authoritative annotations and reject
       any lock reason absent from source.
-- [ ] Render A/B/C candidate careers with routed and conditional states intact.
-- [ ] Render V4-D as a closed uninstantiated admission slot.
-- [ ] Render historical claims and predecessor debt state as history, not
+- [x] Render A/B/C candidate careers with routed and conditional states intact.
+- [x] Render V4-D as a closed uninstantiated admission slot.
+- [x] Render historical claims and predecessor debt state as history, not
       current authority.
-- [ ] Keep current debt transformations and verification obligations separate.
-- [ ] Implement the alternatives slider as progressive visibility/opacity over
+- [x] Keep current debt transformations and verification obligations separate.
+- [x] Implement the alternatives slider as progressive visibility/opacity over
       rejected candidates, blocked relabels, conditional alternatives, and
       historical claims.
-- [ ] Preserve dashed/non-color-only ghost distinction at every slider value.
-- [ ] Verify ghost nodes cannot become accepted through selection, dragging,
+- [x] Preserve dashed/non-color-only ghost distinction at every slider value.
+- [x] Verify ghost nodes cannot become accepted through selection, dragging,
       filtering, playback, or any other UI action.
-- [ ] Verify slider position never changes propagation, classification, or
+- [x] Verify slider position never changes propagation, classification, or
       scenario serialization.
-- [ ] Verify no hidden score ranks candidates, claims, gates, or alternatives.
-- [ ] Add source-mode and speculative-mode visual tests.
-- [ ] Execute owned scenarios N5-N6, D7, and E2 plus the browser projections of
+- [x] Verify no hidden score ranks candidates, claims, gates, or alternatives.
+- [x] Add source-mode and speculative-mode visual tests.
+- [x] Execute owned scenarios N5-N6, D7, and E2 plus the browser projections of
       F6-F7 and E3.
-- [ ] Run Playwright screenshots and interaction tests.
-- [ ] Run `git diff --check`.
+- [x] Run Playwright screenshots and interaction tests.
+- [x] Run `git diff --check`.
+
+### Result
+
+- status: `accepted`
+- locked surfaces: `90` (`6` accepted negatives, `8` targeted hardenings,
+  `76` other source-exact blocked surfaces)
+- alternatives: `144` (`96` blocked relabels, `29` historical claims, `12`
+  conditional claims, `5` rejected alternatives, `1` routed candidate, `1`
+  rejected candidate)
+- candidate careers: `3` (`A`, `B`, `C`)
+- authority populations: `29 current transformations / 11 verification
+  obligations / 29 historical claims`
+- independent audit: `2,173 checks passed`
+- focused tests: `477 Python checks / 12 Node tests passed`
+- browser pressure: `4 Playwright tests / desktop + mobile / 6 screenshots`
+- visual inspection: `passed; no overlap or accepted/ghost conflation`
+- deterministic rebuild: `2/2 byte-identical`
+- predecessor regression: `ET-C6 focused 47-check suite passed`
+- layer digest:
+  `6d694de0e7ffbdea653543668472534ac6fde4be0ea1e1aedc6e1cf561cecc9f`
+- web build manifest digest:
+  `d63a69d4c65fcc5a159df3f74f030c23100c692cad9a4824fad3f0e043864db6`
+- accepted record digest:
+  `504e8474166c9f71018304f81251d1a65c9777b9e8eb70e71a7b5edb360ba688`
+- verification receipt digest:
+  `1eefce7345bc315022f15061ebeffd8f5c51d8d5fb8df47b1f6c53116dbe14be`
+- authority boundary: `Python compiles source-exact lock, career, and
+  alternative projections; the browser verifies and presents them; no browser
+  promotion, propagation, serialization, ranking, or new scientific claim`
+- Iteration 8: `authorized; not implemented`
 
 ### Gate
 
-- [ ] Accept `ET-C7_claim_ceiling_and_alternative_navigation`.
+- [x] Accept `ET-C7_claim_ceiling_and_alternative_navigation`.
 
 ## Iteration 8. Lineage Scrubbing And Ripple Playback
 
-**Status:** blocked on Iteration 7
+**Status:** authorized; not implemented
 
 ### Goal
 

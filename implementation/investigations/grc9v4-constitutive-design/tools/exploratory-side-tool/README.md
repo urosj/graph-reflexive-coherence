@@ -1,6 +1,6 @@
 # GRCv4 Exploratory Side Tool
 
-**Status:** Iterations 0-6 accepted; Iteration 7 authorized
+**Status:** Iterations 0-7 accepted; Iteration 8 authorized
 
 This investigation defines a read-only exploratory tool over the accepted
 GRCv4/GRC9v4 constitutive-design records. It is a side tool for understanding
@@ -57,8 +57,8 @@ From the repository root:
 ```bash
 TOOL=implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool
 python3 "$TOOL/scripts/bootstrap.py"
-.venv/bin/python "$TOOL/scripts/run.py" verify-iteration6
-.venv/bin/python "$TOOL/scripts/run.py" serve-iteration6
+.venv/bin/python "$TOOL/scripts/run.py" verify-iteration7
+.venv/bin/python "$TOOL/scripts/run.py" serve-iteration7
 ```
 
 The first command is the only permitted host-Python entry point; it immediately
@@ -84,6 +84,8 @@ Start with:
 - [accepted Iteration 6 static navigation surface](./records/ETC6StaticNavigationSurface.md)
 - [Iteration 6 canonical browser bundle](./records/ETC6StaticNavigationBundle.json)
 - [Iteration 6 cross-surface parity record](./records/ETC6CrossSurfaceParity.json)
+- [accepted Iteration 7 claim-ceiling and alternative layer](./records/ETC7ClaimCeilingAlternativeNavigation.md)
+- [Iteration 7 verification receipt](./records/ETC7VerificationReceipt.json)
 - [accepted constitutive-design investigation](../../README.md)
 - [accepted D10 claim topology](../../decisions/D10NormativeClaimTopology.json)
 - [accepted D10 debt transformations](../../decisions/D10DebtClaimTransformationLedger.json)
@@ -132,7 +134,17 @@ ET_C6_focused_tests = 47_python_8_node
 ET_C6_browser_pressure = desktop_mobile_passed
 ET_C6_accepted_record_digest = 6353caaf1cb67b4228bfd9d74a4898a72a8ba886dcb84b55757d019b0d1c3629
 iteration_6 = accepted
-iteration_7 = authorized_not_implemented
+ET_C7_locked_surfaces = 90
+ET_C7_alternatives = 144
+ET_C7_candidate_careers = 3
+ET_C7_layer_digest = 6d694de0e7ffbdea653543668472534ac6fde4be0ea1e1aedc6e1cf561cecc9f
+ET_C7_independent_audit = 2173_checks
+ET_C7_focused_tests = 477_python_12_node
+ET_C7_browser_pressure = 4_tests_desktop_mobile_6_screenshots
+ET_C7_accepted_record_digest = 504e8474166c9f71018304f81251d1a65c9777b9e8eb70e71a7b5edb360ba688
+ET_C7_verification_receipt_digest = 1eefce7345bc315022f15061ebeffd8f5c51d8d5fb8df47b1f6c53116dbe14be
+iteration_7 = accepted
+iteration_8 = authorized_not_implemented
 src_pygrc_changes = forbidden
 specification_changes = forbidden
 new_scientific_claims = forbidden
