@@ -1,6 +1,6 @@
 # GRCv4 Exploratory Side Tool
 
-**Status:** Iterations 0-3 accepted; Iteration 4 authorized
+**Status:** Iterations 0-4 accepted; Iteration 5 authorized
 
 This investigation defines a read-only exploratory tool over the accepted
 GRCv4/GRC9v4 constitutive-design records. It is a side tool for understanding
@@ -60,8 +60,10 @@ Start with:
 - [Iteration 0 source and layout contract](./records/ETC0SourceAndLayoutContract.md)
 - [accepted Iteration 1 source-adapter admission](./records/ETC1SourceAdapterAdmission.md)
 - [accepted Iteration 2 validated graph](./records/ETC2ValidatedGraphKernel.md)
-- [Iteration 3 forensic reconstruction candidate](./records/ETC3ForensicReconstructionSurface.md)
+- [accepted Iteration 3 forensic reconstruction](./records/ETC3ForensicReconstructionSurface.md)
 - [Iteration 3 forensic scenario report](./records/ETC3ForensicScenarioReport.md)
+- [Iteration 4 bounded counterfactual candidate](./records/ETC4BoundedCounterfactualKernel.md)
+- [Iteration 4 counterfactual scenario report](./records/ETC4CounterfactualScenarioReport.md)
 - [accepted constitutive-design investigation](../../README.md)
 - [accepted D10 claim topology](../../decisions/D10NormativeClaimTopology.json)
 - [accepted D10 debt transformations](../../decisions/D10DebtClaimTransformationLedger.json)
@@ -90,7 +92,12 @@ ET_C3_independent_audit = 10018_checks_101_rows_1205_edge_refs
 ET_C3_focused_tests = 15_of_15_passed
 ET_C3_notebook_recipes = 2_passed_output_envelope_closed
 iteration_3 = accepted
-iteration_4 = authorized_not_implemented
+ET_C4_scenario_report_digest = fbcb0471725157f42daae0954889082b03e164659df14cb6bdc5c5205f8ea15c
+ET_C4_record_digest = 4eea388fd9ee610a19d17efe48ed3512b2afb81f0f6fefcae89d5494dad46f89
+ET_C4_independent_audit = 1775_checks_169_edge_references
+ET_C4_focused_tests = 38_of_38_passed
+iteration_4 = accepted
+iteration_5 = authorized_not_implemented
 src_pygrc_changes = forbidden
 specification_changes = forbidden
 new_scientific_claims = forbidden

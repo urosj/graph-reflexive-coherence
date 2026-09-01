@@ -1,7 +1,7 @@
 # GRCv4 Exploratory Side Tool Implementation Checklist
 
 **Date:** 2026-08-28
-**Status:** Iterations 0-3 accepted; Iteration 4 authorized
+**Status:** Iterations 0-4 accepted; Iteration 5 authorized
 **Plan:** [GRCV4ExploratorySideToolImplementationPlan.md](./GRCV4ExploratorySideToolImplementationPlan.md)
 **Source investigation:** [GRC9V4 constitutive design](../../README.md)
 
@@ -483,7 +483,7 @@ or counterfactual work.
 - residual reopening triggers: `forensic authority mutation or uncovered
   payload`, `ET-C2 identity/authority change`, or `another candidate-specific
   hardening projection`
-- Iteration 4: `authorized; not implemented`
+- Iteration 4: `accepted`
 
 ### Gate
 
@@ -492,7 +492,7 @@ or counterfactual work.
 
 ## Iteration 4. Counterfactual Mutation And Evidence Frontier
 
-**Status:** authorized; not implemented
+**Status:** accepted
 
 ### Goal
 
@@ -501,76 +501,94 @@ the investigation.
 
 ### Checks
 
-- [ ] Freeze typed mutation IDs and schemas.
-- [ ] Require target kind, baseline record/digest, profile, candidate,
+- [x] Freeze typed mutation IDs and schemas.
+- [x] Require target kind, baseline record/digest, profile, candidate,
       realization, and declared payload scopes.
-- [ ] Admit `equation_contract`, `normative_object`, `gate_record`, and
+- [x] Admit `equation_contract`, `normative_object`, `gate_record`, and
       `candidate` target kinds with type-specific validation.
-- [ ] Apply existing-path sparsity to equation/contract and parent-object
+- [x] Apply existing-path sparsity to equation/contract and parent-object
       mutations; return `no_propagation_bearing_effect` when no
       propagation-bearing path exists.
-- [ ] For gate/candidate-disposition mutations, open a source-recorded reopening
+- [x] For gate/candidate-disposition mutations, open a source-recorded reopening
       boundary and propagate over accepted descendants of the reopened gate
       without requiring an existing path from the proposed disposition.
-- [ ] Implement required-support invalidation.
-- [ ] Implement explicit one-of support behavior.
-- [ ] Implement conditional activation only from source-recorded conditions.
-- [ ] Implement exact debt reactivation only when a recorded conditional
+- [x] Implement required-support invalidation.
+- [x] Implement explicit one-of support behavior.
+- [x] Implement conditional activation only from source-recorded conditions.
+- [x] Implement exact debt reactivation only when a recorded conditional
       closing names a precondition that the mutation falsifies.
-- [ ] Return `requires_reexecution_from_gate` when a mutation only suggests
+- [x] Return `requires_reexecution_from_gate` when a mutation only suggests
       reopening an unconditional transformation.
-- [ ] Verify historical `must_close_before_D10` metadata is never read back as
+- [x] Verify historical `must_close_before_D10` metadata is never read back as
       current unresolved authority.
-- [ ] Implement exact negative-claim activation where accepted edges permit.
-- [ ] Implement exact route changes where accepted edges permit.
-- [ ] Compute minimal invalidation roots as a DAG antichain rather than a linear
+- [x] Implement exact negative-claim activation where accepted edges permit.
+- [x] Implement exact route changes where accepted edges permit.
+- [x] Compute minimal invalidation roots as a DAG antichain rather than a linear
       suffix boundary.
-- [ ] Form the tentative frontier from propagation-bearing descendants only.
-- [ ] Subtract descendants whose complete support predicate remains satisfied
+- [x] Form the tentative frontier from propagation-bearing descendants only.
+- [x] Subtract descendants whose complete support predicate remains satisfied
       by accepted support outside every mutated subtree.
-- [ ] Compute each claim predicate from accepted `evidence_refs`, the accepted
+- [x] Compute each claim predicate from accepted `evidence_refs`, the accepted
       transformed dispositions of `bearing_debt_ids`/`debt_edges`, and its
       source-recorded `activation_condition`.
-- [ ] Verify a conditional claim remains outside the frontier when its full
+- [x] Verify a conditional claim remains outside the frontier when its full
       predicate still passes through independent accepted support.
-- [ ] Verify a multiply supported claim remains known when one support is
+- [x] Verify a multiply supported claim remains known when one support is
       removed and its complete support predicate still passes.
-- [ ] Identify the deterministically ordered earliest accepted gate set affected
+- [x] Identify the deterministically ordered earliest accepted gate set affected
       by a mutation.
-- [ ] Mark all unevaluated downstream results
+- [x] Mark all unevaluated downstream results
       `unknown_beyond_evidence_frontier`.
-- [ ] Return `requires_reexecution_from_gate` instead of generating a new result.
-- [ ] Return `indeterminate_requires_review` for incomplete support semantics.
-- [ ] Reject arbitrary field patches and unknown mutation types.
-- [ ] Verify Candidate B completion scenarios do not synthesize B-specific
+- [x] Return `requires_reexecution_from_gate` instead of generating a new result.
+- [x] Return `indeterminate_requires_review` for incomplete support semantics.
+- [x] Reject arbitrary field patches and unknown mutation types.
+- [x] Verify Candidate B completion scenarios do not synthesize B-specific
       D7G-D10 claims.
-- [ ] Verify `change_candidate_disposition` for Candidate B at D7-v2 produces a
+- [x] Verify `change_candidate_disposition` for Candidate B at D7-v2 produces a
       non-empty reopening frontier and named missing B work rather than
       `no_propagation_bearing_effect`.
-- [ ] Verify a Candidate B mutation at D7-v2 leaves source-confirmed,
+- [x] Verify a Candidate B mutation at D7-v2 leaves source-confirmed,
       Candidate C-only claims outside the frontier when no accepted dependency
       connects them.
-- [ ] Verify V4-D scenarios preserve its uninstantiated-slot identity.
-- [ ] Verify profile-local changes do not leak into unrelated profiles.
-- [ ] Detect when a mutation neutralizes a D10.2 provenance-hardening reason and
+- [x] Verify V4-D scenarios preserve its uninstantiated-slot identity.
+- [x] Verify profile-local changes do not leak into unrelated profiles.
+- [x] Detect when a mutation neutralizes a D10.2 provenance-hardening reason and
       list the blocked overread at risk without activating it.
-- [ ] Verify no numeric prediction appears in structural output.
-- [ ] Add adversarial tests for false support, false closure, false ranking,
+- [x] Verify no numeric prediction appears in structural output.
+- [x] Add adversarial tests for false support, false closure, false ranking,
       and fabricated downstream claims.
-- [ ] Execute owned scenarios C1, C4-C6, and D2-D6; execute the semantic
+- [x] Execute owned scenarios C1, C4-C6, and D2-D6; execute the semantic
       classification portions of supporting scenarios C2-C3 and C7.
-- [ ] Run deterministic replay tests.
-- [ ] Run `git diff --check`.
+- [x] Run deterministic replay tests.
+- [x] Run `git diff --check`.
+
+### Result
+
+- scenario report: `records/ETC4CounterfactualScenarioReport.json`
+- accepted record: `records/ETC4BoundedCounterfactualKernel.json`
+- scenario report digest: `fbcb0471725157f42daae0954889082b03e164659df14cb6bdc5c5205f8ea15c`
+- accepted record digest: `4eea388fd9ee610a19d17efe48ed3512b2afb81f0f6fefcae89d5494dad46f89`
+- mutation algebra: `9 mutation types / 4 target kinds / 9 result statuses`
+- scenario matrix: `13/13 passed candidate execution`
+- source-bound exact results: `1 routed Candidate B debt / 0 exact debt
+  reactivations / 0 exact negative activations`
+- independent audit: `1,775 checks / 169 exact edge references`
+- focused/adversarial matrix: `38/38 passed`
+- deterministic rebuild: `2/2 byte-identical`
+- predecessor regression: `ET-C3 full verification passed`
+- claim boundary: `0 numeric predictions / 0 positive claims beyond frontier /
+  0 fabricated successor claims`
+- Iteration 5: `authorized; not implemented`
 
 ### Gate
 
-- [ ] Accept `ET-C4_bounded_counterfactual_kernel`.
-- [ ] Reject the iteration if any scenario crosses the evidence frontier as a
+- [x] Accept `ET-C4_bounded_counterfactual_kernel`.
+- [x] Reject the iteration if any scenario crosses the evidence frontier as a
       positive claim.
 
 ## Iteration 5. Ripple Compiler And Scenario Round Trip
 
-**Status:** blocked on Iteration 4
+**Status:** authorized
 
 ### Goal
 

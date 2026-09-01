@@ -1,7 +1,7 @@
 # GRCv4 Exploratory Side Tool Implementation Plan
 
 **Date:** 2026-08-28
-**Status:** Iterations 0-3 accepted; Iteration 4 authorized
+**Status:** Iterations 0-4 accepted; Iteration 5 authorized
 **Companion checklist:** [GRCV4ExploratorySideToolImplementationChecklist.md](./GRCV4ExploratorySideToolImplementationChecklist.md)
 **Source investigation:** [GRC9V4 constitutive design](../../README.md)
 
@@ -1075,6 +1075,41 @@ blocked-overread risk without activating the blocked claim. Distinguish
 existing-surface sparsity from gate/candidate-disposition reopening so routed
 alternatives remain testable without fabricated equations. No new positive
 downstream claims are generated.
+
+The candidate implementation freezes nine typed mutations over four target
+kinds. Every mutation binds an accepted baseline record and digest plus exact
+profile, candidate, realization, and structural payload scopes. Invalid or
+stale inputs fail closed before graph evaluation. Profile ownership is derived
+through accepted profile-to-candidate edges, and realization ownership must
+agree with the declared candidate scope.
+
+The kernel keeps two operations distinct. Existing equation/contract and
+parent-object mutations follow only accepted propagation-bearing paths. A
+gate/candidate disposition mutation instead opens a source-recorded gate
+boundary and marks accepted descendants unknown without inventing the rerun's
+result. Candidate B therefore reopens at D7-v2, names the missing `U_B` writer
+and reopening condition, preserves independently grounded Candidate-C-only
+claims, and produces no B-specific D7G-D10 claim. V4-D remains an
+uninstantiated slot and can reopen only through the source-recorded D0-successor
+route.
+
+Current accepted edges provide no exact one-of support row, exact conditional
+debt-closing precondition, or exact negative-activation path. The candidate
+therefore emits zero such source results and pressure-tests their fail-closed
+support behavior with synthetic fixtures. It does not infer them from multiple
+incoming edges, historical `must_close_before_D10` metadata, or blocked
+overreads. A neutralized provenance lock reports only the blocked overread at
+risk. Numerical effects, positive reopened-gate outcomes, and fabricated
+successor claims remain prohibited.
+
+The accepted 13-scenario matrix covers C1-C7 and D2-D6, including separate Candidate B
+and V4-D D5 cases. Its independent auditor does not import the counterfactual
+implementation and verifies result/mutation digests, raw source pointers,
+source digests, and 169 exact ET-C2 edge references. Two builds are
+byte-identical; 1,775 independent audit checks and 38 focused/adversarial checks
+pass; the accepted ET-C3 verification suite also passes unchanged. ET-C4 is
+accepted at the bounded structural-counterfactual ceiling, and Iteration 5 is
+authorized without being implemented by this gate.
 
 ### Iteration 5. Ripple Compiler And Scenario Round Trip
 
