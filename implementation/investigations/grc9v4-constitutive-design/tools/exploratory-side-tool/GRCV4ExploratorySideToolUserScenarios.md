@@ -144,6 +144,11 @@ Fail before rendering if any invariant fails.
 
 **Output:** `forensic_evidence_trace`
 
+**Iteration 2 accepted evidence:** 14/14 kernel invariants pass over 436 typed
+nodes and 2,670 total relationships. The independent raw-source audit matches
+every node and relationship exactly, and two rebuilds are byte-identical. This
+records accepted F9 execution at the validated-graph ceiling.
+
 ## B. Navigational Exploration
 
 ### N1. Enter through an accepted family

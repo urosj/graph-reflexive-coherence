@@ -1,6 +1,6 @@
 # GRCv4 Exploratory Side Tool
 
-**Status:** Iterations 0-1 accepted; Iteration 2 authorized
+**Status:** Iterations 0-2 accepted; Iteration 3 authorized
 
 This investigation defines a read-only exploratory tool over the accepted
 GRCv4/GRC9v4 constitutive-design records. It is a side tool for understanding
@@ -59,6 +59,7 @@ Start with:
 - [user scenarios and plan-coverage validation](./GRCV4ExploratorySideToolUserScenarios.md)
 - [Iteration 0 source and layout contract](./records/ETC0SourceAndLayoutContract.md)
 - [accepted Iteration 1 source-adapter admission](./records/ETC1SourceAdapterAdmission.md)
+- [accepted Iteration 2 validated graph](./records/ETC2ValidatedGraphKernel.md)
 - [accepted constitutive-design investigation](../../README.md)
 - [accepted D10 claim topology](../../decisions/D10NormativeClaimTopology.json)
 - [accepted D10 debt transformations](../../decisions/D10DebtClaimTransformationLedger.json)
@@ -76,7 +77,11 @@ source_adapter_implementation = accepted
 source_observation = current_bundle_exact
 ET_C1_source_bundle_digest = 79e84f7839e1b65f3e55eeadb980e6d8d9b57d240aced93a8bf3a7e82851dffc
 ET_C1_relationship_witness_digest = 1793217d1f0726e8735a1c8d18c1b8c70148d30559037e293a33fc799b47997f
-graph_kernel_implementation = authorized_not_implemented
+graph_kernel_implementation = accepted
+ET_C2_graph_digest = 2776d2aa1aca51f7759c94ed0e9677a04934429b070bb8ea47683cbcd8f218ae
+ET_C2_invariants = 14_of_14_passed
+ET_C2_independent_relationship_audit = 2670_of_2670_exact
+iteration_3 = authorized_not_implemented
 src_pygrc_changes = forbidden
 specification_changes = forbidden
 new_scientific_claims = forbidden

@@ -7,3 +7,7 @@ class SourceAdmissionError(RuntimeError):
 
 class SourceEvolutionError(SourceAdmissionError):
     """The observed repository inventory differs from the admitted snapshot."""
+
+
+class GraphInvariantError(RuntimeError):
+    """The derived graph violates its source or authority contract."""

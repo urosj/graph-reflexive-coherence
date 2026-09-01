@@ -1,7 +1,7 @@
 # GRCv4 Exploratory Side Tool Implementation Checklist
 
 **Date:** 2026-08-28
-**Status:** Iterations 0-1 accepted; Iteration 2 authorized
+**Status:** Iterations 0-2 accepted; Iteration 3 authorized
 **Plan:** [GRCV4ExploratorySideToolImplementationPlan.md](./GRCV4ExploratorySideToolImplementationPlan.md)
 **Source investigation:** [GRC9V4 constitutive design](../../README.md)
 
@@ -349,7 +349,7 @@ therefore includes a fail-closed mutation for every witness family.
 
 ## Iteration 2. Validated Graph Kernel
 
-**Status:** authorized; not implemented
+**Status:** accepted
 
 ### Goal
 
@@ -358,63 +358,80 @@ second scientific authority.
 
 ### Checks
 
-- [ ] Add distinct node classes for current claims and historical claims.
-- [ ] Add debt transformation and verification obligation nodes.
-- [ ] Model each unique `obligation_id` as one forward-only node without
+- [x] Add distinct node classes for current claims and historical claims.
+- [x] Add debt transformation and verification obligation nodes.
+- [x] Model each unique `obligation_id` as one forward-only node without
       double-counting shared D9/D10 IDs.
-- [ ] Tag every `requires_verification_from` edge with originating gate ID,
+- [x] Tag every `requires_verification_from` edge with originating gate ID,
       record ID/digest, and source JSON pointer; verify every shared ID's source
       occurrences remain recoverable.
-- [ ] Add gate records and accepted predecessor/supersession edges.
-- [ ] Add A/B/C candidate nodes and the precisely scoped V4-D slot.
-- [ ] Add realization and ten-profile nodes.
-- [ ] Add separate 67 parent-object and 152 equation/contract node layers.
-- [ ] Add source-record nodes and provenance edges.
-- [ ] Add annotation nodes with display-only authority.
-- [ ] Store `propagation_edges` and `annotation_edges` in physically disjoint
+- [x] Add gate records and accepted predecessor/supersession edges.
+- [x] Add A/B/C candidate nodes and the precisely scoped V4-D slot.
+- [x] Add realization and ten-profile nodes.
+- [x] Add separate 67 parent-object and 152 equation/contract node layers.
+- [x] Add source-record nodes and provenance edges.
+- [x] Add annotation nodes with display-only authority.
+- [x] Store `propagation_edges` and `annotation_edges` in physically disjoint
       tables with no shared rows or convertible authority flag.
-- [ ] Assert annotation-only input cannot contribute to reachability,
+- [x] Assert annotation-only input cannot contribute to reachability,
       invalidation, routing, or ripple output.
-- [ ] Add verification-obligation edges only in the forward
+- [x] Add verification-obligation edges only in the forward
       `requires_verification_from` direction.
-- [ ] Verify backward reconstruction never treats a verification obligation as
+- [x] Verify backward reconstruction never treats a verification obligation as
       accepted support.
-- [ ] Preserve accepted claim/debt relation types.
-- [ ] Preserve transformation verbs rather than using generic production.
-- [ ] Type propagation support relations as required, one-of, conditional, or
+- [x] Preserve accepted claim/debt relation types.
+- [x] Preserve transformation verbs rather than using generic production.
+- [x] Type propagation support relations as required, one-of, conditional, or
       negative where the source supports that distinction; keep display-only
       relations exclusively in `annotation_edges`.
-- [ ] Return `indeterminate_requires_review` when support logic is not stated.
-- [ ] Build the full gate lineage DAG, including corrections and branches.
-- [ ] Validate current/historical claim disjointness.
-- [ ] Validate reciprocal claim/debt relations.
-- [ ] Validate no silent debt loss.
-- [ ] Validate all references and unique IDs.
-- [ ] Run an independent source-conformance audit that does not call kernel APIs
+- [x] Return `indeterminate_requires_review` when support logic is not stated.
+- [x] Build the full gate lineage DAG, including corrections and branches.
+- [x] Validate current/historical claim disjointness.
+- [x] Validate reciprocal claim/debt relations.
+- [x] Validate no silent debt loss.
+- [x] Validate all references and unique IDs.
+- [x] Run an independent source-conformance audit that does not call kernel APIs
       and re-derives populations, IDs, reference coverage, reciprocal
       relations, and claim-to-contract coverage from accepted source records.
-- [ ] Fail if the 152-row equation/contract count is correct but any required
+- [x] Fail if the 152-row equation/contract count is correct but any required
       claim-to-contract relationship is missing, unresolved, or only asserted
       by a literal.
-- [ ] Validate DAG acyclicity and predecessor digest consistency.
-- [ ] Validate annotations cannot affect propagation.
-- [ ] Emit deterministic canonical graph serialization.
-- [ ] Serialize with sorted keys/collections, fixed separators, no NaN, and the
+- [x] Validate DAG acyclicity and predecessor digest consistency.
+- [x] Validate annotations cannot affect propagation.
+- [x] Emit deterministic canonical graph serialization.
+- [x] Serialize with sorted keys/collections, fixed separators, no NaN, and the
       Iteration 0 finite-number policy.
-- [ ] Rebuild twice and prove byte identity.
-- [ ] Execute owned scenario F9.
-- [ ] Run focused kernel and invariant tests.
-- [ ] Run `git diff --check`.
+- [x] Rebuild twice and prove byte identity.
+- [x] Execute owned scenario F9.
+- [x] Run focused kernel and invariant tests.
+- [x] Run `git diff --check`.
+
+### Result
+
+- graph snapshot: `records/ETC2GraphSnapshot.json`
+- accepted record: `records/ETC2ValidatedGraphKernel.json`
+- accepted report: `records/ETC2ValidatedGraphKernel.md`
+- graph digest: `2776d2aa1aca51f7759c94ed0e9677a04934429b070bb8ea47683cbcd8f218ae`
+- accepted record digest: `10dc5cef2bffc764296cb9e38908cd1f992b9ce7c4c60d04a8ef6efda5d1453b`
+- graph population: `436 nodes / 2,666 propagation edges / 4 annotation edges`
+- independent audit: `117 checks / 436 exact nodes / 2,670 exact relationships`
+- kernel invariants: `14/14 passed`
+- focused fixture matrix: `14/14 fail-closed mutations passed`
+- support semantics: `38 required / 31 conditional / 14 negative-boundary /`
+  `1,147 indeterminate / 1,436 non-support-not-applicable / 0 inferred one-of`
+- scenario F9: `passed_accepted_execution`
+- source bundle: `unchanged; ET-C1 digest 79e84f7839e1b65f3e55eeadb980e6d8d9b57d240aced93a8bf3a7e82851dffc`
+- Iteration 3: `authorized; not implemented`
 
 ### Gate
 
-- [ ] Accept `ET-C2_validated_graph_kernel`.
-- [ ] Block Iteration 3 if any propagation-bearing edge requires an
+- [x] Accept `ET-C2_validated_graph_kernel`.
+- [x] Block Iteration 3 if any propagation-bearing edge requires an
       unclassified hand-authored relation.
 
 ## Iteration 3. Forensic API And Notebook Recipes
 
-**Status:** blocked on Iteration 2
+**Status:** authorized; not implemented
 
 ### Goal
 

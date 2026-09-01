@@ -1,7 +1,7 @@
 # GRCv4 Exploratory Side Tool Implementation Plan
 
 **Date:** 2026-08-28
-**Status:** Iterations 0-1 accepted; Iteration 2 authorized
+**Status:** Iterations 0-2 accepted; Iteration 3 authorized
 **Companion checklist:** [GRCV4ExploratorySideToolImplementationChecklist.md](./GRCV4ExploratorySideToolImplementationChecklist.md)
 **Source investigation:** [GRC9V4 constitutive design](../../README.md)
 
@@ -1021,6 +1021,31 @@ Build typed nodes/edges, lineage DAG, support semantics, invariant checks, and
 deterministic serialization. Keep propagation and annotation edges physically
 disjoint, and route verification obligations forward only. Reproduce accepted
 counts and reciprocal-edge rules without creating a new authority.
+
+The accepted implementation reconstructs 436 typed nodes, 2,666 propagation
+edges, and four physically separate annotation edges from the exact ET-C1
+bundle. The source-owned populations are 39 current claims, 29 historical
+claims, 29 debt transformations, 11 shared verification obligations, 67 parent
+objects, and 152 equation-contracts. It preserves 33 accepted gate records,
+four candidate rows, ten profiles, 20 realization/comparison rows, and 38
+physical source identities.
+
+Support classification is conservative. Explicit conditions and negative
+transformations retain `conditional` and `negative_boundary`; verification
+obligations are `required` forward work. Contract/object and other support
+relations whose conjunction/disjunction logic is not stated remain
+`indeterminate_requires_review`. No `one_of` relation is inferred merely from
+multiple incoming edges. Lineage, scope, identity, and non-support
+transformation relations are typed `not_applicable` for support evaluation
+rather than being promoted into evidence.
+
+The independent ET-C2 auditor does not import the kernel. It rebuilds the full
+node and relationship witness from raw admitted JSON and compares every one of
+the 436 nodes and 2,670 total relationships, including annotations, exactly.
+The focused fixture matrix contains 14 fail-closed mutations, including a
+count-preserving claim/debt relation substitution and a missing
+contract-to-claim edge. ET-C2 is accepted at this validated-graph ceiling, and
+Iteration 3 is authorized without extending ET-C2's scientific authority.
 
 ### Iteration 3. Forensic API And Notebook Recipes
 

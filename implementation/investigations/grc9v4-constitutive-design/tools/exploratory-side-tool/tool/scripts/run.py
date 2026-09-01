@@ -30,6 +30,9 @@ COMMANDS = {
     "build-iteration1": TOOL_ROOT / "scripts/build_iteration1_bundle.py",
     "audit-iteration1": TOOL_ROOT / "scripts/audit_iteration1_bundle.py",
     "test-iteration1": TOOL_ROOT / "scripts/test_iteration1_adapters.py",
+    "build-iteration2": TOOL_ROOT / "scripts/build_iteration2_graph.py",
+    "audit-iteration2": TOOL_ROOT / "scripts/audit_iteration2_graph.py",
+    "test-iteration2": TOOL_ROOT / "scripts/test_iteration2_kernel.py",
 }
 
 
