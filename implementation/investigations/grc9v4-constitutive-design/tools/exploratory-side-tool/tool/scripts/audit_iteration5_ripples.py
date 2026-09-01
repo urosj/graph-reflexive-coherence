@@ -241,14 +241,21 @@ def main() -> int:
     manifest = load_json_object(records / "ETC1SourceBundleManifest.json")
     for source in manifest["records"]:
         require(file_sha256(repo_root / source["path"]) == source["file_sha256"], f"source_unchanged:{source['record_identifier']}", checks)
-    web_files = {
-        path.relative_to(TOOL_ROOT / "web").as_posix()
-        for path in (TOOL_ROOT / "web").rglob("*")
-        if path.is_file()
-    }
+    browser_source = "\n".join(
+        path.read_text(encoding="utf-8")
+        for path in sorted((TOOL_ROOT / "web/src").glob("*.js"))
+    )
     require(
-        web_files == {"package-lock.json", "package.json"},
-        "browser_not_implemented",
+        not any(
+            token in browser_source
+            for token in (
+                "compileRipple",
+                "compileScenario",
+                "propagateMutation",
+                "deriveConsequences",
+            )
+        ),
+        "successor_browser_preserves_no_propagation_boundary",
         checks,
     )
     print(

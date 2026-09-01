@@ -46,6 +46,13 @@ COMMANDS = {
     "audit-iteration5": TOOL_ROOT / "scripts/audit_iteration5_ripples.py",
     "test-iteration5": TOOL_ROOT / "scripts/test_iteration5_ripples.py",
     "verify-iteration5": TOOL_ROOT / "scripts/verify_iteration5.py",
+    "build-iteration6": TOOL_ROOT / "scripts/build_iteration6_navigation.py",
+    "audit-iteration6": TOOL_ROOT / "scripts/audit_iteration6_navigation.py",
+    "test-iteration6": TOOL_ROOT / "scripts/test_iteration6_navigation.py",
+    "install-browser-iteration6": TOOL_ROOT / "scripts/install_iteration6_browser.py",
+    "browser-iteration6": TOOL_ROOT / "scripts/test_iteration6_browser.py",
+    "verify-iteration6": TOOL_ROOT / "scripts/verify_iteration6.py",
+    "serve-iteration6": TOOL_ROOT / "scripts/serve_iteration6.py",
 }
 
 

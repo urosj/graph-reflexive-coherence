@@ -1,7 +1,7 @@
 # GRCv4 Exploratory Side Tool Implementation Plan
 
 **Date:** 2026-08-28
-**Status:** Iterations 0-5 accepted; Iteration 6 authorized
+**Status:** Iterations 0-6 accepted; Iteration 7 authorized
 **Companion checklist:** [GRCV4ExploratorySideToolImplementationChecklist.md](./GRCV4ExploratorySideToolImplementationChecklist.md)
 **Source investigation:** [GRC9V4 constitutive design](../../README.md)
 
@@ -1150,7 +1150,37 @@ family navigation, node-specific triangulation, dependency reach, responsive
 layout, and accessibility baseline. The client loads generated tables only and
 must match the forensic projection byte-for-byte for identical selections.
 
+**Implementation result (accepted).** Python now compiles
+one canonical static bundle containing the admitted ET-C1 source manifest,
+ET-C2 graph projection, ET-C5 scenarios/ripples, 436 bounded selection
+projections, and the exact nine-family D10.2 coverage surface. The client only
+verifies, dereferences, searches, filters, lays out, and presents these compiled
+rows. It contains no mutation evaluator, propagation traversal, or ripple
+compiler.
+
+Each selection is capped at 32 nodes and 72 relationships. Family coverage is
+explicitly not profile scope or scientific ranking. Dependency reach is split
+by source support semantics and labeled as dependency count rather than
+importance. Claim, debt, gate, profile, object/contract, and source records use
+family-specific lenses; unsupported lenses are absent. Current, historical
+with new unprocessed source, stale, and observation-blocked states are distinct,
+while the standalone browser is labeled as a build-time snapshot.
+
+The responsive Cytoscape workbench passes desktop and mobile Playwright flows,
+including long-identifier containment and source/speculative mode separation.
+The Python/JavaScript projection parity set is byte-identical for seven
+representative node families. Two rebuilds are byte-identical; the independent
+audit passes 44,895 checks, focused Python tests pass 47 checks, all eight Node
+component tests pass, and the complete ET-C5 verification remains green. The
+accepted bundle digest is
+`45a96e782a1ecdd5fb693e171052a020bfdbffa76d21ca07e0a307b9cc96684c`;
+the accepted gate digest is
+`6353caaf1cb67b4228bfd9d74a4898a72a8ba886dcb84b55757d019b0d1c3629`.
+Iteration 7 is authorized but is not implemented by this gate.
+
 ### Iteration 7. Claim Ceilings And Alternative Layer
+
+**Status:** authorized; not implemented
 
 Add locked-claim navigation, blocked overreads, routed/rejected/historical
 alternatives, source-exact hardening reasons, progressive ghost

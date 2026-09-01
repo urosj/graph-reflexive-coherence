@@ -29,9 +29,18 @@ from .ripple import (
     serialize_selected_row,
     validate_scenario,
 )
+from .web import (
+    BUNDLE_SCHEMA,
+    build_static_navigation_bundle,
+    hydrate_selection_projection,
+    selection_payload,
+)
 
 __all__ = [
     "build_source_bundle",
+    "BUNDLE_SCHEMA",
+    "build_static_navigation_bundle",
+    "hydrate_selection_projection",
     "candidate_career",
     "contract_provenance",
     "compile_ripple_row",
@@ -52,6 +61,7 @@ __all__ = [
     "pruned_choices_at",
     "reconstruction_path",
     "serialize_selected_row",
+    "selection_payload",
     "validate_mutation",
     "validate_scenario",
 ]

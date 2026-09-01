@@ -23,7 +23,8 @@ global_execution_allowed = false
 
 [browser]
 prebuilt_bundle_requires_node = false
-browser_binary_status = "not_admitted_until_iteration_8"
+browser_binary_status = "admitted_iteration_6_local_playwright_only"
+browser_install_root = "tool/.tooling/playwright"
 
 [[node.platforms]]
 platform = "linux"

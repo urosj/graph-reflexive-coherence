@@ -292,6 +292,18 @@ def install_frontend_lock(node_root: Path) -> None:
     )
 
 
+def install_frontend_browser(node_root: Path) -> None:
+    cli = TOOL_ROOT / "web/node_modules/@playwright/test/cli.js"
+    if not cli.is_file():
+        raise RuntimeError("Playwright CLI is unavailable after locked frontend install")
+    subprocess.run(
+        [str(node_executable(node_root)), str(cli), "install", "chromium"],
+        cwd=TOOL_ROOT / "web",
+        env=local_environment(node_root),
+        check=True,
+    )
+
+
 def write_environment_receipt(node_root: Path | None) -> None:
     generated = TOOL_ROOT / "generated"
     generated.mkdir(parents=True, exist_ok=True)
@@ -346,6 +358,7 @@ def main() -> int:
     if not args.python_only:
         node_root = ensure_node(toolchain, args.offline_cache)
         install_frontend_lock(node_root)
+        install_frontend_browser(node_root)
     write_environment_receipt(node_root)
     subprocess.run(
         [str(python_executable(venv_root)), str(TOOL_ROOT / "scripts/doctor.py")],
@@ -383,9 +396,10 @@ def main() -> int:
         "iteration1_audit=.venv/bin/python "
         + str((TOOL_ROOT / "scripts/audit_iteration1_bundle.py").relative_to(REPO_ROOT))
     )
-    print("notebooks=blocked_until_ET_C3_iteration_3")
-    print("web_build=blocked_until_iteration_6")
-    print("static_serving=blocked_until_iteration_6")
+    print("notebooks=.venv/bin/python tool/scripts/run.py notebook-iteration3")
+    print("web_build=.venv/bin/python tool/scripts/run.py build-iteration6")
+    print("web_verify=.venv/bin/python tool/scripts/run.py verify-iteration6")
+    print("static_serving=.venv/bin/python tool/scripts/run.py serve-iteration6")
     return 0
 
 

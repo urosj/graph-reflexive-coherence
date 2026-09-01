@@ -23,6 +23,7 @@ tool/**/playwright-report/
 tool/**/test-results/
 tool/web/.vite/
 tool/web/dist/
+tool/web/public/data/
 
 # Derived investigation output
 tool/generated/

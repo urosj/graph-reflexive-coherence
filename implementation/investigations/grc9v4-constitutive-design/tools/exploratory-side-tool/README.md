@@ -1,6 +1,6 @@
 # GRCv4 Exploratory Side Tool
 
-**Status:** Iterations 0-5 accepted; Iteration 6 authorized
+**Status:** Iterations 0-6 accepted; Iteration 7 authorized
 
 This investigation defines a read-only exploratory tool over the accepted
 GRCv4/GRC9v4 constitutive-design records. It is a side tool for understanding
@@ -52,6 +52,20 @@ installs compatible locked dependencies, runs a doctor check, and prints the
 commands for normal use. It must work from a different repository path without
 manual Node installation or manual environment-variable configuration.
 
+From the repository root:
+
+```bash
+TOOL=implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool
+python3 "$TOOL/scripts/bootstrap.py"
+.venv/bin/python "$TOOL/scripts/run.py" verify-iteration6
+.venv/bin/python "$TOOL/scripts/run.py" serve-iteration6
+```
+
+The first command is the only permitted host-Python entry point; it immediately
+re-executes under `.venv`. The dispatcher rejects every later global-Python
+invocation and resolves Node, npm, Playwright, and Chromium exclusively from
+the tool-local managed installation.
+
 Start with:
 
 - [implementation plan](./GRCV4ExploratorySideToolImplementationPlan.md)
@@ -67,6 +81,9 @@ Start with:
 - [accepted Iteration 5 ripple and scenario contract](./records/ETC5RippleAndScenarioContract.md)
 - [Iteration 5 canonical scenario bundle](./records/ETC5ScenarioBundle.json)
 - [Iteration 5 deterministic ripple index](./records/ETC5RippleShardIndex.json)
+- [accepted Iteration 6 static navigation surface](./records/ETC6StaticNavigationSurface.md)
+- [Iteration 6 canonical browser bundle](./records/ETC6StaticNavigationBundle.json)
+- [Iteration 6 cross-surface parity record](./records/ETC6CrossSurfaceParity.json)
 - [accepted constitutive-design investigation](../../README.md)
 - [accepted D10 claim topology](../../decisions/D10NormativeClaimTopology.json)
 - [accepted D10 debt transformations](../../decisions/D10DebtClaimTransformationLedger.json)
@@ -108,7 +125,14 @@ ET_C5_population = 25_scenarios_24_rows_3_shards
 ET_C5_independent_audit = 4133_checks_836_edge_references
 ET_C5_focused_tests = 89_of_89_passed
 iteration_5 = accepted
-iteration_6 = authorized_not_implemented
+ET_C6_static_bundle_digest = 45a96e782a1ecdd5fb693e171052a020bfdbffa76d21ca07e0a307b9cc96684c
+ET_C6_parity = 7_of_7_byte_identical
+ET_C6_independent_audit = 44895_checks
+ET_C6_focused_tests = 47_python_8_node
+ET_C6_browser_pressure = desktop_mobile_passed
+ET_C6_accepted_record_digest = 6353caaf1cb67b4228bfd9d74a4898a72a8ba886dcb84b55757d019b0d1c3629
+iteration_6 = accepted
+iteration_7 = authorized_not_implemented
 src_pygrc_changes = forbidden
 specification_changes = forbidden
 new_scientific_claims = forbidden

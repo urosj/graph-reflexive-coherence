@@ -1,7 +1,7 @@
 # GRCv4 Exploratory Side Tool Implementation Checklist
 
 **Date:** 2026-08-28
-**Status:** Iterations 0-5 accepted; Iteration 6 authorized
+**Status:** Iterations 0-6 accepted; Iteration 7 authorized
 **Plan:** [GRCV4ExploratorySideToolImplementationPlan.md](./GRCV4ExploratorySideToolImplementationPlan.md)
 **Source investigation:** [GRC9V4 constitutive design](../../README.md)
 
@@ -675,7 +675,7 @@ format.
 
 ## Iteration 6. Web Foundation, Triangulation, And Dependency Reach
 
-**Status:** authorized; not implemented
+**Status:** accepted
 
 ### Goal
 
@@ -683,56 +683,83 @@ Build the static navigation client over validated, precomputed data.
 
 ### Checks
 
-- [ ] Freeze frontend framework, build tooling, Cytoscape.js version, and local
+- [x] Freeze frontend framework, build tooling, Cytoscape.js version, and local
       dependency policy.
-- [ ] Build the actual exploration surface as the first page.
-- [ ] Load only source manifests, validated graph projections, scenarios, and
+- [x] Build the actual exploration surface as the first page.
+- [x] Load only source manifests, validated graph projections, scenarios, and
       ripple tables produced by Python.
-- [ ] Verify manifest, projection, scenario, and ripple payload digests before
+- [x] Verify manifest, projection, scenario, and ripple payload digests before
       rendering; reject missing or mismatched bindings rather than relying on a
       prior audit having been run.
-- [ ] Verify no propagation or scientific rule exists in JavaScript.
-- [ ] Add focused search and selection.
-- [ ] Enforce bounded-neighborhood rendering rather than full-graph sprawl.
-- [ ] Add a family filter sourced from D10.2
+- [x] Verify no propagation or scientific rule exists in JavaScript.
+- [x] Add focused search and selection.
+- [x] Enforce bounded-neighborhood rendering rather than full-graph sprawl.
+- [x] Add a family filter sourced from D10.2
       `coverage_contract.required_families`.
-- [ ] Verify all nine family names and object counts match the accepted source.
-- [ ] Keep family coverage separate from profile propagation and scientific
+- [x] Verify all nine family names and object counts match the accepted source.
+- [x] Keep family coverage separate from profile propagation and scientific
       ranking.
-- [ ] Add node-family-specific triangulation for claims, debts, gates, profiles,
+- [x] Add node-family-specific triangulation for claims, debts, gates, profiles,
       objects/contracts, and source records.
-- [ ] Verify debt views do not show claim-only lenses and claim views do not
+- [x] Verify debt views do not show claim-only lenses and claim views do not
       show debt-only or forward-work lenses.
-- [ ] Add direct/transitive dependency reach by relation type.
-- [ ] Avoid labeling dependency counts as importance or scientific priority.
-- [ ] Add source record and digest details.
-- [ ] Show whether the loaded bundle is current, historical-with-new-unprocessed
+- [x] Add direct/transitive dependency reach by relation type.
+- [x] Avoid labeling dependency counts as importance or scientific priority.
+- [x] Add source record and digest details.
+- [x] Show whether the loaded bundle is current, historical-with-new-unprocessed
       source, stale from changed/missing admitted source, or observation-blocked.
-- [ ] Require notebook/build/serve launchers to refresh discovery state; label a
+- [x] Require notebook/build/serve launchers to refresh discovery state; label a
       standalone static bundle as a build-time snapshot when live rescan is
       unavailable.
-- [ ] Add source versus speculative segmented mode control.
-- [ ] Add stable responsive layout and non-overlapping controls.
-- [ ] Add keyboard navigation, focus states, text alternatives, tooltips, and
+- [x] Add source versus speculative segmented mode control.
+- [x] Add stable responsive layout and non-overlapping controls.
+- [x] Add keyboard navigation, focus states, text alternatives, tooltips, and
       reduced-motion behavior.
-- [ ] Verify long IDs and claims remain readable on desktop and mobile.
-- [ ] Add component and bundle-contract tests.
-- [ ] Execute owned scenarios N1-N3 and the browser projections of F1, F4-F5,
+- [x] Verify long IDs and claims remain readable on desktop and mobile.
+- [x] Add component and bundle-contract tests.
+- [x] Execute owned scenarios N1-N3 and the browser projections of F1, F4-F5,
       and F8.
-- [ ] Assert browser payload and forensic API output are byte-identical for the
+- [x] Assert browser payload and forensic API output are byte-identical for the
       same source bundle and selection, including nodes, edges, support types,
       scopes, and ripple row.
-- [ ] Run initial Playwright desktop/mobile screenshots.
-- [ ] Run `git diff --check`.
+- [x] Run initial Playwright desktop/mobile screenshots.
+- [x] Run `git diff --check`.
+
+### Result
+
+- status: `accepted`
+- static bundle: `436 nodes / 436 bounded selection projections`
+- focus ceiling: `32 nodes / 72 relationships`
+- D10.2 family coverage: `9 families / 67 objects`, exact counts
+- ripple/scenario payload: `25 scenarios / 24 precompiled rows / 3 shards`
+- cross-surface parity: `7/7 representative projections byte-identical`
+- independent audit: `44,895 checks passed`
+- focused tests: `47 Python checks / 8 Node tests passed`
+- browser pressure: `desktop + mobile Playwright passed; screenshots inspected`
+- deterministic rebuild: `2/2 byte-identical`
+- predecessor regression: `ET-C5 full verification passed`
+- static bundle digest:
+  `45a96e782a1ecdd5fb693e171052a020bfdbffa76d21ca07e0a307b9cc96684c`
+- parity digest:
+  `341efa17d6c03c6235aca45141736302d418c162dd88ac6bd7a4cb7d50170b20`
+- web build manifest digest:
+  `20f1dca4094c3ff3c8743694455d545ca0c56c7f5bd1fc7c786a6ce9047a03c2`
+- accepted record digest:
+  `6353caaf1cb67b4228bfd9d74a4898a72a8ba886dcb84b55757d019b0d1c3629`
+- authority boundary: `Python-compiled scientific projections only; browser
+  verifies and presents; no browser mutation, propagation, ripple compilation,
+  ranking, or new scientific claim`
+- Iteration 7: `authorized; not implemented`
 
 ### Gate
 
-- [ ] Accept `ET-C6_static_navigation_surface`.
-- [ ] Reject the iteration if client code can derive an uncompiled ripple.
+- [x] Accept `ET-C6_static_navigation_surface`.
+- [x] Reject the iteration if client code can derive an uncompiled ripple; no
+      such derivation exists in the candidate.
 
 ## Iteration 7. Claim Ceilings And Alternative Layer
 
-**Status:** blocked on Iteration 6
+**Status:** authorized; not implemented
 
 ### Goal
 

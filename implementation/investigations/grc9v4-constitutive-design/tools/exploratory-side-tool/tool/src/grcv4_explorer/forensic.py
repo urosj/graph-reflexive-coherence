@@ -64,8 +64,11 @@ def load_forensic_context(repo_root: Path, side_tool_root: Path) -> ForensicCont
     accepted_manifest = load_json_object(records / "ETC1SourceBundleManifest.json")
     if canonical_bytes(rebuilt_manifest) != canonical_bytes(accepted_manifest):
         raise SourceAdmissionError("accepted ET-C1 source bundle no longer rebuilds")
-    if observation.get("state") != "current_bundle_exact":
-        raise SourceAdmissionError("accepted source bundle is not current")
+    if observation.get("state") not in {
+        "current_bundle_exact",
+        "new_unprocessed_source_available",
+    }:
+        raise SourceAdmissionError("accepted source bundle is stale or unreadable")
     source_bundle_digest = cast(str, rebuilt_manifest["source_bundle_digest"])
     if graph.get("source_bundle_digest") != source_bundle_digest:
         raise GraphInvariantError("ET-C2 graph is not bound to accepted ET-C1")

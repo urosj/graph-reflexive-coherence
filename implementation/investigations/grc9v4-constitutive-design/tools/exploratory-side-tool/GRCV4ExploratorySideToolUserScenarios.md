@@ -1,7 +1,7 @@
 # GRCv4 Exploratory Side Tool User Scenarios
 
 **Date:** 2026-08-28
-**Status:** Design coverage validated; Iterations 1-5 accepted; Iteration 6 authorized
+**Status:** Design coverage validated; Iterations 1-6 accepted; Iteration 7 authorized
 **Plan:** [GRCV4ExploratorySideToolImplementationPlan.md](./GRCV4ExploratorySideToolImplementationPlan.md)
 **Checklist:** [GRCV4ExploratorySideToolImplementationChecklist.md](./GRCV4ExploratorySideToolImplementationChecklist.md)
 
@@ -170,6 +170,15 @@ Select an object or contract. Show direct and transitive propagation reach by
 `required`, `one_of`, `conditional`, and negative-boundary relation. Report
 annotation/display reach separately. Never label either count importance,
 severity, or priority.
+
+**Iteration 6 candidate evidence:** N1 reproduces all nine D10.2 families and
+their 67 objects exactly. N2 uses node-family-specific lenses and excludes
+claim-only lenses from debts and debt/forward-work lenses from claims. N3
+separates direct and transitive reach for all six admitted support semantics,
+keeps annotation/display-only reach non-transitive, and labels every count as
+dependency reach rather than importance or priority. Browser projections for
+F1, F4, F5, and F8 are included in the seven-row byte-parity set. ET-C6 accepts
+these as bounded static-navigation evidence without adding scientific claims.
 
 ### N4. Scrub the lineage DAG
 
