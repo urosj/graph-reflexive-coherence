@@ -371,6 +371,18 @@ def main() -> int:
             (TOOL_ROOT / "scripts/audit_iteration0_contract.py").relative_to(REPO_ROOT)
         )
     )
+    print(
+        "source_discovery=.venv/bin/python "
+        + str((TOOL_ROOT / "scripts/discover_sources.py").relative_to(REPO_ROOT))
+    )
+    print(
+        "iteration1_build=.venv/bin/python "
+        + str((TOOL_ROOT / "scripts/build_iteration1_bundle.py").relative_to(REPO_ROOT))
+    )
+    print(
+        "iteration1_audit=.venv/bin/python "
+        + str((TOOL_ROOT / "scripts/audit_iteration1_bundle.py").relative_to(REPO_ROOT))
+    )
     print("notebooks=blocked_until_ET_C3_iteration_3")
     print("web_build=blocked_until_iteration_6")
     print("static_serving=blocked_until_iteration_6")

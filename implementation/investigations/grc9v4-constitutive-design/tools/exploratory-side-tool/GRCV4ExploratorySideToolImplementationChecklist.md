@@ -1,7 +1,7 @@
 # GRCv4 Exploratory Side Tool Implementation Checklist
 
 **Date:** 2026-08-28
-**Status:** Iteration 0 accepted; Iteration 1 authorized
+**Status:** Iterations 0-1 accepted; Iteration 2 authorized
 **Plan:** [GRCV4ExploratorySideToolImplementationPlan.md](./GRCV4ExploratorySideToolImplementationPlan.md)
 **Source investigation:** [GRC9V4 constitutive design](../../README.md)
 
@@ -38,13 +38,13 @@
 ```text
 branch = investigation-GRCV4-exploratory-side-tool
 plan = frozen
-checklist = iteration_0_recorded
-tool_code = iteration_0_setup_and_audit_only
+checklist = iteration_1_accepted_iteration_2_authorized
+tool_code = iteration_1_source_adapters_discovery_and_bundle_only
 accepted_source_records_changed = false
 src_pygrc_changed = false
 specifications_changed = false
 scientific_claims_added = false
-implementation_gate = ET-C0_accepted_I1_authorized
+implementation_gate = ET-C1_accepted_I2_authorized
 ```
 
 ## Iteration 0. Baseline, Layout, And Source Contract Freeze
@@ -218,49 +218,138 @@ explicit managed-runtime paths.
 
 ## Iteration 1. Source Adapters And Bundle Identity
 
-**Status:** authorized; not started
+**Status:** accepted
 
 ### Goal
 
-Load every accepted source through schema-specific read-only adapters and emit
-one deterministic source-bundle identity.
+Load every currently admitted source through schema-specific read-only adapters,
+emit one deterministic source-bundle identity, and detect repository source
+evolution without interpreting or auto-admitting it.
 
 ### Checks
 
-- [ ] Implement adapters for D10 claim topology and historical claim nodes.
-- [ ] Implement adapters for D10 debt transformations and verification
+- [x] Implement adapters for D10 claim topology and historical claim nodes.
+- [x] Implement adapters for D10 debt transformations and verification
       obligations.
-- [ ] Implement adapters for D10.2 parent objects and equation/contracts.
-- [ ] Implement adapters for D9 debt, profile, lifecycle, and event records.
-- [ ] Implement adapters for D0-D10.2 decision records and predecessor digests.
-- [ ] Derive all admitted population counts directly from authoritative source
+- [x] Implement adapters for D10.2 parent objects and equation/contracts.
+- [x] Implement adapters for D9 debt, profile, lifecycle, and event records.
+- [x] Implement adapters for D0-D10.2 decision records and predecessor digests.
+- [x] Implement a read-only discovery scan that compares the admitted inventory
+      against all observed decision-record files before load, build, report, or
+      serve operations.
+- [x] Keep the discovery observation receipt separate from scientific
+      source-bundle identity.
+- [x] Classify `current_bundle_exact`, `new_unprocessed_source_available`,
+      `admitted_source_identity_changed`, `admitted_source_missing`, and
+      `source_observation_unreadable` without interpreting unadmitted content.
+- [x] For unadmitted files, record only repository-relative path, file SHA, and
+      safely readable top-level schema/status/record-ID discovery metadata.
+- [x] Preserve an older exact bundle as a historical snapshot while preventing
+      it from being labeled the complete current repository state.
+- [x] Block live rebuild on changed or missing admitted sources and prohibit
+      automatic parsing, schema guessing, status promotion, or partial graph
+      insertion for newly observed files.
+- [x] Emit a named refresh requirement that identifies adapter admission, new
+      bundle identity, graph-conformance audit, complete derived-artifact
+      rebuild, and successor processing acceptance as separate required steps.
+- [x] Derive all admitted population counts directly from authoritative source
       arrays; keep expected counts as separate admission assertions rather than
       observed values.
-- [ ] Resolve every source-recorded claim, parent-object, profile, equation, and
+- [x] Resolve every source-recorded claim, parent-object, profile, equation, and
       contract reference needed for graph coverage; reject dangling or
       ambiguous references before graph construction.
-- [ ] Select digest fields per schema rather than assuming one common field.
-- [ ] Validate canonical payload digests exactly.
-- [ ] Validate declared file SHAs and source identities where present.
-- [ ] Reject missing, duplicate, stale, malformed, or non-accepted records.
-- [ ] Record source hashes before and after load.
-- [ ] Prove adapters do not write source files.
-- [ ] Emit deterministic source-bundle manifest and digest.
-- [ ] Rebuild twice and prove byte identity.
-- [ ] Add negative fixtures for wrong digest, wrong SHA, missing reference,
-      changed status, and unknown schema.
-- [ ] Execute owned scenario D1.
-- [ ] Run focused adapter tests.
-- [ ] Run `git diff --check`.
+- [x] Select digest fields per schema rather than assuming one common field.
+- [x] Validate canonical payload digests exactly.
+- [x] Validate declared file SHAs and source identities where present.
+- [x] Reject missing, duplicate, stale, malformed, or non-accepted records.
+- [x] Record source hashes before and after load.
+- [x] Prove adapters do not write source files.
+- [x] Emit deterministic source-bundle manifest and digest.
+- [x] Rebuild twice and prove byte identity.
+- [x] Derive canonical, duplicate-preserving relationship witnesses in the
+      builder for every admitted cross-source relationship family.
+- [x] Independently rederive the same relationship witnesses from raw accepted
+      JSON without calling the builder validator or importing its witness code.
+- [x] Require exact per-family count/digest and whole-population digest
+      equivalence; do not treat equal aggregate populations as equivalence.
+- [x] Add fixtures for an exact inventory, extra draft record, extra accepted
+      record, changed admitted identity, missing admitted source, unreadable
+      observation, wrong digest/SHA/reference, changed status, and unknown
+      schema.
+- [x] Add adversarial failure fixtures for every relationship-witness family,
+      including reciprocal edges, lineage, lifecycle, carry-forward, contract
+      references, coverage, and authorization partitioning.
+- [x] Execute owned scenario D1.
+- [x] Run focused adapter tests.
+- [x] Run `git diff --check`.
 
 ### Gate
 
-- [ ] Accept `ET-C1_source_bundle_admitted`.
-- [ ] Do not build the graph from partially admitted inputs.
+- [x] Accept `ET-C1_source_bundle_admitted`.
+- [x] Do not build the graph from partially admitted inputs.
+
+### Accepted Result
+
+```text
+status = accepted
+admitted_source_records = 33
+source_observation = current_bundle_exact
+source_bundle_digest = 79e84f7839e1b65f3e55eeadb980e6d8d9b57d240aced93a8bf3a7e82851dffc
+reference_checks = 3753_passed
+accepted_populations = 39_current_claims_29_historical_claims_29_debts_11_obligations
+provenance_populations = 67_parent_objects_152_equation_contracts
+lifecycle_coverage = 10_profiles_26_operations_260_cells
+embedded_identities = 70_local_byte_verified_4_external_attested
+adapter_fixture_matrix = 29_passed
+independent_ET_C1_audit = 2014_passed
+independent_relationship_assertions = 3936_passed
+independent_relationship_digest = 219b3413db9c7142653ddbf51539b78b5a0e2df24db7407a5e3d71ae2d85c661
+relationship_witness_families = 14
+relationship_witness_occurrences = 2073
+relationship_witness_digest = 1793217d1f0726e8735a1c8d18c1b8c70148d30559037e293a33fc799b47997f
+builder_auditor_relationship_witness_equivalence = exact_per_family_and_global
+claim_authority_classification = 39_of_39_exact_agreement
+embedded_identity_independent_recount = 70_local_4_external_1_external_predecessor_root
+deterministic_artifact_rebuild = byte_identical_twice
+accepted_source_byte_identity = unchanged
+ET_C1_record_digest = 85a1dfd45d5c68f84aa63f06bc792d1b09075c1ad9fcaeeda953278dae3b0c35
+graph_kernel_implemented = false
+iteration_2_authorized = true
+```
+
+Artifacts:
+
+- [ETC1SourceAdapterAdmission.md](./records/ETC1SourceAdapterAdmission.md)
+- [ETC1SourceAdapterAdmission.json](./records/ETC1SourceAdapterAdmission.json)
+- [ETC1SourceBundleManifest.json](./records/ETC1SourceBundleManifest.json)
+
+The external theory rows are checked as frozen source attestations rather than
+resolved through a machine-local adjacent checkout. Repository-local identities
+are verified against current bytes. A changed or newly observed decision record
+therefore causes an explicit refresh requirement without weakening portability
+or silently expanding the admitted source bundle.
+
+`D10_1PreliminarySubstrateProvenance.json` is the sole filename-admitted legacy
+schema record because the accepted source has no schema field. This absence is
+explicit in the adapter contract: adding or changing its schema triggers source
+identity change and requires readmission rather than changing adapters silently.
+
+ET-C0 human acceptance is the explicit root of trust. ET-C1 independently
+revalidates ET-C0 status, digest, source bytes, and relationships, but it does
+not rederive the human acceptance decision. The browser is not implemented in
+Iteration 1; Iteration 6 requires digest verification before rendering any
+precomputed payload.
+
+The builder and auditor now agree on every canonical relationship witness, not
+only on population totals. A relationship substitution that preserves counts
+changes its family digest and the global witness digest. This closes the known
+pairwise-equivalence gap. It does not prove that two independently written
+checkers cannot share the same conceptual mistake; the 29-case fixture matrix
+therefore includes a fail-closed mutation for every witness family.
 
 ## Iteration 2. Validated Graph Kernel
 
-**Status:** blocked on Iteration 1
+**Status:** authorized; not implemented
 
 ### Goal
 
@@ -520,6 +609,9 @@ Build the static navigation client over validated, precomputed data.
 - [ ] Build the actual exploration surface as the first page.
 - [ ] Load only source manifests, validated graph projections, scenarios, and
       ripple tables produced by Python.
+- [ ] Verify manifest, projection, scenario, and ripple payload digests before
+      rendering; reject missing or mismatched bindings rather than relying on a
+      prior audit having been run.
 - [ ] Verify no propagation or scientific rule exists in JavaScript.
 - [ ] Add focused search and selection.
 - [ ] Enforce bounded-neighborhood rendering rather than full-graph sprawl.
@@ -535,6 +627,11 @@ Build the static navigation client over validated, precomputed data.
 - [ ] Add direct/transitive dependency reach by relation type.
 - [ ] Avoid labeling dependency counts as importance or scientific priority.
 - [ ] Add source record and digest details.
+- [ ] Show whether the loaded bundle is current, historical-with-new-unprocessed
+      source, stale from changed/missing admitted source, or observation-blocked.
+- [ ] Require notebook/build/serve launchers to refresh discovery state; label a
+      standalone static bundle as a build-time snapshot when live rescan is
+      unavailable.
 - [ ] Add source versus speculative segmented mode control.
 - [ ] Add stable responsive layout and non-overlapping controls.
 - [ ] Add keyboard navigation, focus states, text alternatives, tooltips, and
@@ -669,6 +766,10 @@ the accepted investigation.
 - [ ] Audit every counterfactual for evidence-frontier enforcement.
 - [ ] Audit every source and speculative label.
 - [ ] Pressure malformed, stale, contradictory, and out-of-scope scenarios.
+- [ ] Pressure added, changed, missing, and unreadable source inventories and
+      prove none can silently alter the admitted graph.
+- [ ] Prove a newly accepted source requires adapter/readmission, a successor
+      bundle identity, full rebuild, and re-audit before current-state labeling.
 - [ ] Pressure candidate, profile, realization, topology-event, and correction
       lineage views.
 - [ ] Run Playwright screenshots on desktop and mobile.

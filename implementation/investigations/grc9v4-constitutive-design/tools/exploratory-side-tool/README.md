@@ -1,6 +1,6 @@
 # GRCv4 Exploratory Side Tool
 
-**Status:** Iteration 0 accepted; Iteration 1 authorized
+**Status:** Iterations 0-1 accepted; Iteration 2 authorized
 
 This investigation defines a read-only exploratory tool over the accepted
 GRCv4/GRC9v4 constitutive-design records. It is a side tool for understanding
@@ -19,10 +19,17 @@ accepted decisions/*.json
   -> static Cytoscape.js navigation client
 ```
 
-The accepted investigation remains immutable. The browser renders generated
-tables and never computes scientific consequences. Counterfactual propagation
-may invalidate known claims, reactivate recorded debts, or identify a gate that
-must be rerun. It may not fabricate the result of that rerun.
+The admitted D0-D10.2 source bundle is an immutable, reproducible snapshot; the
+constitutive investigation itself is not assumed final. Before loading or
+serving a bundle, the tool will compare its admitted source inventory with the
+repository and flag new unprocessed records, changed identities, missing
+sources, or unreadable observations. New material cannot enter the graph until
+a named adapter/readmission and complete processing/rebuild cycle succeeds.
+
+The browser renders generated tables and never computes scientific
+consequences. Counterfactual propagation may invalidate known claims, reactivate
+recorded debts, or identify a gate that must be rerun. It may not fabricate the
+result of that rerun.
 
 The tool is intended to be portable. Its implementation contract uses minimum
 supported tool versions and tested ranges; lockfiles provide reproducible
@@ -51,6 +58,7 @@ Start with:
 - [implementation checklist](./GRCV4ExploratorySideToolImplementationChecklist.md)
 - [user scenarios and plan-coverage validation](./GRCV4ExploratorySideToolUserScenarios.md)
 - [Iteration 0 source and layout contract](./records/ETC0SourceAndLayoutContract.md)
+- [accepted Iteration 1 source-adapter admission](./records/ETC1SourceAdapterAdmission.md)
 - [accepted constitutive-design investigation](../../README.md)
 - [accepted D10 claim topology](../../decisions/D10NormativeClaimTopology.json)
 - [accepted D10 debt transformations](../../decisions/D10DebtClaimTransformationLedger.json)
@@ -64,8 +72,11 @@ iteration_0 = accepted
 ET_C0_record_digest = 2cd1b8c313ee86dba807d4f57e7db7eae3c8596fed457fabfa1bdc0ec4ab1028
 source_records_may_be_read = true
 source_records_may_be_modified = false
-source_adapter_implementation = authorized_under_iteration_1
-graph_kernel_implementation = blocked_until_ET_C1_acceptance
+source_adapter_implementation = accepted
+source_observation = current_bundle_exact
+ET_C1_source_bundle_digest = 79e84f7839e1b65f3e55eeadb980e6d8d9b57d240aced93a8bf3a7e82851dffc
+ET_C1_relationship_witness_digest = 1793217d1f0726e8735a1c8d18c1b8c70148d30559037e293a33fc799b47997f
+graph_kernel_implementation = authorized_not_implemented
 src_pygrc_changes = forbidden
 specification_changes = forbidden
 new_scientific_claims = forbidden

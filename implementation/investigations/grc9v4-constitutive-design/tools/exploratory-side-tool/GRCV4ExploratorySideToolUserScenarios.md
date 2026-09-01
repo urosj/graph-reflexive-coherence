@@ -42,6 +42,9 @@ total                         35
   current unresolved debt.
 - Dependency reach is not importance, severity, or candidate ranking.
 - Source and speculative modes remain distinct without relying on color alone.
+- The accepted bundle is presented as a versioned snapshot, not the final state
+  of the constitutive investigation; newly observed source is flagged without
+  being interpreted or inserted into the graph.
 
 ## A. Forensic Reconstruction
 
@@ -272,9 +275,15 @@ No edit or browser-side recomputation is permitted.
 
 ## D. Adversarial And Fail-Closed Validation
 
-### D1. Reject a stale source bundle
+### D1. Detect source evolution and reject stale admission
 
-A scenario with the wrong `source_bundle_digest` fails before rendering.
+An exact admitted inventory reports `current_bundle_exact`. An additional
+unadmitted record reports `new_unprocessed_source_available` with discovery
+metadata only. A changed or missing admitted source blocks live reconstruction,
+and a scenario with the wrong `source_bundle_digest` fails before rendering.
+No case auto-selects an adapter, parses new scientific content, or mixes the new
+record into the accepted graph. The receipt names the required successor
+adapter/readmission, processing, rebuild, and audit cycle.
 
 ### D2. Reject a missing required scope
 

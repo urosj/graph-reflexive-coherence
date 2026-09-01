@@ -1,11 +1,12 @@
 # GRCv4 Exploratory Side Tool Implementation Plan
 
 **Date:** 2026-08-28
-**Status:** Iteration 0 accepted; Iteration 1 authorized
+**Status:** Iterations 0-1 accepted; Iteration 2 authorized
 **Companion checklist:** [GRCV4ExploratorySideToolImplementationChecklist.md](./GRCV4ExploratorySideToolImplementationChecklist.md)
 **Source investigation:** [GRC9V4 constitutive design](../../README.md)
 
 **Iteration 0 record:** [ETC0SourceAndLayoutContract.md](./records/ETC0SourceAndLayoutContract.md)
+**Iteration 1 record:** [ETC1SourceAdapterAdmission.md](./records/ETC1SourceAdapterAdmission.md)
 
 ## Purpose
 
@@ -76,12 +77,71 @@ It may not support or claim:
   builders/auditors. There is no single assumed digest field for all records.
 - A source bundle is admitted only when every required file, digest, SHA where
   declared, reference, and expected accepted status validates.
+- Human acceptance of ET-C0 is the explicit root of trust. Successor gates
+  verify its accepted status and exact record digest, but do not claim to
+  derive or replace the human acceptance decision.
 
-## Immutable Source Contract
+## Versioned Immutable Source Contract
 
 The kernel loads source records read-only and computes a source-bundle identity
 before graph construction. It records source file hashes before and after every
 build and fails if any source byte changes.
+
+The admitted D0-D10.2 bundle is the current accepted snapshot, not a declaration
+that the constitutive investigation is final. Bundle immutability and repository
+evolution are separate contracts:
+
+```text
+admitted source bundle
+  versioned, exact, immutable, reproducible
+
+observed repository source inventory
+  may acquire new records or new accepted successors
+  may differ from the inventory admitted by the current bundle
+```
+
+Every tool entry point that can load, build, report, or serve a bundle first
+performs a read-only discovery scan. Discovery compares the admitted source IDs,
+paths, statuses, schemas, canonical digests, and file SHAs with the observed
+decision-record inventory. It emits a separate deterministic observation
+receipt with one of these source states:
+
+```text
+current_bundle_exact
+new_unprocessed_source_available
+admitted_source_identity_changed
+admitted_source_missing
+source_observation_unreadable
+```
+
+The observation receipt is not part of the accepted scientific source-bundle
+identity and cannot add nodes or edges. For an unadmitted file it may record
+only repository-relative path, file SHA, and safely readable top-level schema,
+status, and record ID fields. These are discovery metadata, not an
+interpretation or acceptance decision.
+
+A newly observed record does not retroactively invalidate an older bundle as a
+historical snapshot. It does prevent that bundle from being presented as the
+complete current repository state. A changed or missing admitted source also
+blocks a live rebuild against that bundle. No case permits automatic parsing,
+schema guessing, status promotion, or partial graph insertion.
+
+The refresh path is explicit:
+
+```text
+discover unprocessed source
+  -> classify schema and authority without consuming scientific content
+  -> implement or update the schema-specific adapter
+  -> admit a successor source-bundle identity
+  -> rerun reference and graph-conformance checks
+  -> rebuild every derived graph/report/ripple/browser artifact
+  -> accept the successor processing cycle
+```
+
+Notebook, report, build, and local-serving commands must surface the discovery
+state before presenting results. A prebuilt static bundle records the source
+bundle and observation receipt used at build time; when it cannot rescan the
+repository, it must call itself a snapshot and must not claim to be current.
 
 Generated files must remain inside this investigation package, under a derived
 or scratch path selected during Iteration 0. They must never be written into:
@@ -909,6 +969,18 @@ an independent source-conformance auditor that derives populations, identifiers,
 reference coverage, and reciprocal relations directly from accepted source
 records without calling kernel APIs.
 
+Iteration 1 applies the same discipline before graph construction. The builder
+and independent auditor separately derive canonical relationship-witness sets
+for claim/debt edges, claim and debt evidence, debt claim and verification
+targets, predecessor lineage, lifecycle cells, D9 obligation carry-forward,
+equation-contract references, coverage, and authorization classes. Acceptance
+requires exact per-family counts and digests plus one exact population digest;
+aggregate population agreement is insufficient. Adversarial fixtures must also
+prove that every relationship family fails closed when its target, reciprocal
+edge, carry-forward, coverage, or partition is damaged. Exact agreement does not
+turn the two implementations into independent scientific authorities or rule
+out a shared conceptual mistake in the admitted source contract.
+
 The D10.2 equation/contract registry is accepted source material, but its 152
 rows are human-authored. Its row count alone is not a coverage proof. Iterations
 1 and 2 must verify that referenced claims, parent objects, profiles, contracts,
@@ -939,8 +1011,9 @@ before this gate closes.
 ### Iteration 1. Source Adapters And Bundle Identity
 
 Implement schema-specific read-only adapters, canonical digest validation,
-reference checks, source-bundle identity, stale-source failure, and before/after
-immutability verification.
+reference checks, source-bundle identity, source-evolution discovery,
+stale-source failure, before/after immutability verification, and independently
+derived exact relationship-witness equivalence.
 
 ### Iteration 2. Validated Graph Kernel
 

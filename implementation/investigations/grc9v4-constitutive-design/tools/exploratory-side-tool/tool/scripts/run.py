@@ -26,6 +26,10 @@ COMMANDS = {
     "doctor": TOOL_ROOT / "scripts/doctor.py",
     "build-iteration0": TOOL_ROOT / "scripts/build_iteration0_contract.py",
     "audit-iteration0": TOOL_ROOT / "scripts/audit_iteration0_contract.py",
+    "discover-sources": TOOL_ROOT / "scripts/discover_sources.py",
+    "build-iteration1": TOOL_ROOT / "scripts/build_iteration1_bundle.py",
+    "audit-iteration1": TOOL_ROOT / "scripts/audit_iteration1_bundle.py",
+    "test-iteration1": TOOL_ROOT / "scripts/test_iteration1_adapters.py",
 }
 
 

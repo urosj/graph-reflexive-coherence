@@ -3,7 +3,6 @@
 
 from __future__ import annotations
 
-import json
 import os
 import platform
 import site
@@ -17,6 +16,13 @@ from typing import Any
 SCRIPT = Path(__file__).resolve()
 TOOL_ROOT = SCRIPT.parents[1]
 SIDE_TOOL_ROOT = SCRIPT.parents[2]
+sys.path.insert(0, str(TOOL_ROOT / "src"))
+
+from grcv4_explorer.discovery import discover_sources  # noqa: E402
+from grcv4_explorer.source_contract import (  # noqa: E402
+    admitted_rows,
+    load_et_c0_contract,
+)
 
 
 def repository_root() -> Path:
@@ -29,9 +35,6 @@ def repository_root() -> Path:
 
 
 REPO_ROOT = repository_root()
-DECISIONS = (
-    REPO_ROOT / "implementation/investigations/grc9v4-constitutive-design/decisions"
-)
 
 
 def inside(path: Path, parent: Path) -> bool:
@@ -99,15 +102,22 @@ def main() -> int:
         not foreign_site_packages,
         repr(foreign_site_packages),
     )
-    decisions = sorted(DECISIONS.glob("*.json"))
-    check("accepted_source_count_33", len(decisions) == 33, str(len(decisions)))
-    for path in decisions:
-        data = json.loads(path.read_text(encoding="utf-8"))
-        check(f"source_status_present:{path.name}", "status" in data)
-        check(
-            f"source_digest_present:{path.name}",
-            "decision_record_digest" in data or "artifact_digest" in data,
-        )
+    source_contract = load_et_c0_contract(
+        SIDE_TOOL_ROOT / "records/ETC0SourceAndLayoutContract.json"
+    )
+    source_observation = discover_sources(REPO_ROOT, admitted_rows(source_contract))
+    check(
+        "source_observation_classified",
+        source_observation["state"]
+        in {
+            "current_bundle_exact",
+            "new_unprocessed_source_available",
+            "admitted_source_identity_changed",
+            "admitted_source_missing",
+            "source_observation_unreadable",
+        },
+        str(source_observation["state"]),
+    )
     generated = TOOL_ROOT / "generated"
     generated.mkdir(parents=True, exist_ok=True)
     probe = generated / ".doctor-write-probe"
@@ -151,6 +161,13 @@ def main() -> int:
     )
     if failures:
         return 1
+    if source_observation["state"] != "current_bundle_exact":
+        print(
+            "SOURCE_REFRESH_REQUIRED "
+            f"state={source_observation['state']} "
+            f"observation={source_observation['observation_digest']}"
+        )
+        return 2
     print("GRCV4_EXPLORER_DOCTOR_PASS")
     return 0
 
