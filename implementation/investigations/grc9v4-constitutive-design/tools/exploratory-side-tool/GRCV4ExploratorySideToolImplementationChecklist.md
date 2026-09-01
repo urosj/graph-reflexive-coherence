@@ -1,7 +1,7 @@
 # GRCv4 Exploratory Side Tool Implementation Checklist
 
 **Date:** 2026-08-28
-**Status:** Iterations 0-2 accepted; Iteration 3 authorized
+**Status:** Iterations 0-3 accepted; Iteration 4 authorized
 **Plan:** [GRCV4ExploratorySideToolImplementationPlan.md](./GRCV4ExploratorySideToolImplementationPlan.md)
 **Source investigation:** [GRC9V4 constitutive design](../../README.md)
 
@@ -431,7 +431,7 @@ second scientific authority.
 
 ## Iteration 3. Forensic API And Notebook Recipes
 
-**Status:** authorized; not implemented
+**Status:** accepted
 
 ### Goal
 
@@ -440,36 +440,59 @@ or counterfactual work.
 
 ### Checks
 
-- [ ] Implement `gate_act(record_id)`.
-- [ ] Implement `debt_lifecycle(debt_id)`.
-- [ ] Implement `reconstruction_path(claim_id)`.
-- [ ] Implement `candidate_career(candidate_id)`.
-- [ ] Implement `pruned_choices_at(record_id)`.
-- [ ] Implement `negative_claims()`.
-- [ ] Implement `object_dependents(object_id)`.
-- [ ] Implement `contract_provenance(contract_id)`.
-- [ ] Implement `gate_contribution(record_id)`.
-- [ ] Ensure each row includes source record, digest, and exact edge references.
-- [ ] Distinguish added, inherited, narrowed, routed, superseded, conditioned,
+- [x] Implement `gate_act(record_id)`.
+- [x] Implement `debt_lifecycle(debt_id)`.
+- [x] Implement `reconstruction_path(claim_id)`.
+- [x] Implement `candidate_career(candidate_id)`.
+- [x] Implement `pruned_choices_at(record_id)`.
+- [x] Implement `negative_claims()`.
+- [x] Implement `object_dependents(object_id)`.
+- [x] Implement `contract_provenance(contract_id)`.
+- [x] Implement `gate_contribution(record_id)`.
+- [x] Ensure each row includes source record, digest, and exact edge references.
+- [x] Distinguish added, inherited, narrowed, routed, superseded, conditioned,
       and resolved-negative content.
-- [ ] Add stable Markdown and JSON forensic reports.
-- [ ] Add a minimal notebook that calls the pure functions without duplicating
+- [x] Add stable Markdown and JSON forensic reports.
+- [x] Add a minimal notebook that calls the pure functions without duplicating
       logic.
-- [ ] Verify notebook execution writes only to the derived output envelope.
-- [ ] Verify forensic output contains no speculative claims.
-- [ ] Execute owned scenarios F1-F8 and E3-E4.
-- [ ] Rebuild representative reports twice and prove byte identity.
-- [ ] Run focused forensic and notebook tests.
-- [ ] Run `git diff --check`.
+- [x] Verify notebook execution writes only to the derived output envelope.
+- [x] Verify forensic output contains no speculative claims.
+- [x] Execute owned scenarios F1-F8 and E3-E4.
+- [x] Rebuild representative reports twice and prove byte identity.
+- [x] Run focused forensic and notebook tests.
+- [x] Run `git diff --check`.
+
+### Result
+
+- scenario report: `records/ETC3ForensicScenarioReport.json`
+- candidate record: `records/ETC3ForensicReconstructionSurface.json`
+- scenario report digest: `ddd91b4ec63894f955b9423caf71f4fc27df559ac74d54a822d4f32042055f14`
+- candidate record digest: `250723350ac838abcdb83ec96a48b4eaa734dfb3c287c9e19183bbc2b4b4eef9`
+- forensic APIs: `9 implemented`
+- owned scenarios: `12/12 passed candidate execution`
+- independent audit: `10,018 checks / 101 rows / 1,205 exact edge references`
+- focused API/notebook matrix: `15/15 passed`
+- notebook recipes: `2 passed; non-generated file hashes unchanged`
+- deterministic rebuild: `2/2 byte-identical`
+- output class: `forensic_evidence_trace only`
+- source bundle and graph: `unchanged ET-C1 / accepted ET-C2`
+- accepted residual boundaries:
+  `lighter_I3_matrix_with_ET_C2_invariant_ownership`,
+  `ET_C2_chained_trust_with_revalidation`, and
+  `source_bounded_Candidate_A_D10_2_hardening_projection`
+- residual reopening triggers: `forensic authority mutation or uncovered
+  payload`, `ET-C2 identity/authority change`, or `another candidate-specific
+  hardening projection`
+- Iteration 4: `authorized; not implemented`
 
 ### Gate
 
-- [ ] Accept `ET-C3_forensic_reconstruction_surface`.
-- [ ] Keep counterfactual and browser claims closed.
+- [x] Accept `ET-C3_forensic_reconstruction_surface`.
+- [x] Keep counterfactual and browser claims closed.
 
 ## Iteration 4. Counterfactual Mutation And Evidence Frontier
 
-**Status:** blocked on Iteration 3
+**Status:** authorized; not implemented
 
 ### Goal
 

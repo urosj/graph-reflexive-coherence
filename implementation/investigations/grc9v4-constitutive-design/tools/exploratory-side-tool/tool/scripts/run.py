@@ -33,6 +33,11 @@ COMMANDS = {
     "build-iteration2": TOOL_ROOT / "scripts/build_iteration2_graph.py",
     "audit-iteration2": TOOL_ROOT / "scripts/audit_iteration2_graph.py",
     "test-iteration2": TOOL_ROOT / "scripts/test_iteration2_kernel.py",
+    "build-iteration3": TOOL_ROOT / "scripts/build_iteration3_forensics.py",
+    "audit-iteration3": TOOL_ROOT / "scripts/audit_iteration3_forensics.py",
+    "test-iteration3": TOOL_ROOT / "scripts/test_iteration3_forensics.py",
+    "notebook-iteration3": TOOL_ROOT / "scripts/run_iteration3_notebook.py",
+    "verify-iteration3": TOOL_ROOT / "scripts/verify_iteration3.py",
 }
 
 

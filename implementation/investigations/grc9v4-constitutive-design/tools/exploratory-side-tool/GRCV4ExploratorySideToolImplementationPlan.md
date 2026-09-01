@@ -1,7 +1,7 @@
 # GRCv4 Exploratory Side Tool Implementation Plan
 
 **Date:** 2026-08-28
-**Status:** Iterations 0-2 accepted; Iteration 3 authorized
+**Status:** Iterations 0-3 accepted; Iteration 4 authorized
 **Companion checklist:** [GRCV4ExploratorySideToolImplementationChecklist.md](./GRCV4ExploratorySideToolImplementationChecklist.md)
 **Source investigation:** [GRC9V4 constitutive design](../../README.md)
 
@@ -1052,6 +1052,18 @@ Iteration 3 is authorized without extending ET-C2's scientific authority.
 Implement pure forensic functions, stable reports, negative-claim tracing,
 candidate careers, object/contract provenance, and a minimal notebook that
 only orchestrates those APIs.
+
+The accepted implementation uses a two-part accepted context: ET-C2 owns typed
+relationship semantics, while the ET-C1-admitted source documents own exact
+gate, candidate, debt, object, and contract payloads. Every emitted row binds
+both surfaces through a source record/digest/JSON pointer and exact graph-edge
+references. The independent auditor checks 101 rows and 1,205 edge references
+without importing the forensic implementation. The notebook executes two
+orchestration-only recipes and hashes all non-generated tool files before and
+after execution. Its three accepted residual boundaries record the intentionally
+lighter I3 fixture matrix, the accepted ET-C2 chained-trust root, and the one
+source-bounded Candidate A hardening projection. Counterfactual and browser
+work remain closed; Iteration 4 is authorized but not implemented.
 
 ### Iteration 4. Counterfactual Mutation And Evidence Frontier
 
