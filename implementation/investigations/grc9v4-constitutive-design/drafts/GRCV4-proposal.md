@@ -167,6 +167,74 @@ The table below is a drafting-control surface. It does not replace the D10.2 reg
 
 **Current disposition:** Sections 2–4 are fillable from the accepted investigation. They expose no new scientific contradiction and require no successor investigation.
 
+### Sections 5–7 tranche status
+
+**Status:** Working synthesis from the accepted GRC-v4/GRC9V4 constitutive-design investigation.
+
+**Scientific authority:** None independent of the accepted investigation.
+
+**Current controlling closure:** Accepted D10.2, decision digest `28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c`.
+
+The tranche reorganizes accepted results for exposition; it does not derive a second GRC-v4, alter an accepted equation, promote an unresolved claim, or authorize implementation. All 22 queried equation/contract associations retain the explorer disposition `indeterminate_requires_review`; the crosswalk records source relationships rather than reconstructed support proof.
+
+### Coverage and status controls applied in this tranche
+
+This tranche preserves several distinctions that are easy to lose when the chronological investigation is reorganized as a substrate account.
+
+| Pressure point | Treatment in Sections 5–7 |
+|---|---|
+| A role-level retained object could be mistaken for one universal serialized state | §5.1 treats $T_M$ as a causal role only; profile authority is left to A, C, and realization-specific history contracts |
+| Baseline potential flow, explicit Read-Back current, structural one-form current, and authoritative resource current could collapse into one symbol | §§5.3–5.4 and §§6.2–6.4 keep $J_0$, $j$, $j_{\mathrm{struct}}^\flat$, and $J_C$ separately typed |
+| The historical D7G lagged-explicit geometry gap could be carried forward as if it remained the common V4 architecture | §6 states the accepted geometry map independently of temporal realization; CI, OS, RG2b, PC, and CI+PC own the causal-consumption timing developed in Section 10 |
+| $H_{1,\mathrm{form}}$, $G_J$, $M_4$, $K_4$, and $h_4$ could be merged by equal dimensions or coincident reference arrays | §6 gives each object a distinct type, domain, authority, and causal role |
+| The ten admitted profiles could be presented as a universal taxonomy | §7.1 calls them the complete current initial population and preserves `D10-CL-C-012` as the future-exhaustiveness boundary |
+| Claim governance could be treated as runtime state or as a mandatory linear research backlog | §§7.3 and 7.5 keep claim topology, successor admission, and verification obligations as specification-meta contracts |
+| Candidate B could be silently filled by PC or by an invented carrier equation | §7.4 preserves B as routed, unrejected, nonexecutable, and without a source-backed writer |
+
+`D10-CL-C-011` is no longer an outstanding generic-substrate preclosure condition for the current population. The accepted D10.2 audit records the bounded status update in `/claim_topology_effect` under the non-node provenance label `D10_2_CL_N_001`. That record-level promotion does not alter the historical graph node or the status of open runtime, stability, attribution, ranking, dimensionalization, or future-profile claims.
+
+
+### Sections 5–7 provenance crosswalk
+
+The table below is a drafting-control surface. It does not replace the D10.2 registry or the accepted predecessor records.
+
+| Proposal location | Parent object(s) | Equation/contract row(s) | Current claim relation |
+|---|---|---|---|
+| §5.1, §5.3, §5.4 | `L-AUTHORITATIVE-CURRENT`, `A-READ-CLOSURE`, `C-READ-BACK` | `D10.2-EC-PARENT-L-AUTHORITATIVE-CURRENT`, `D10.2-EC-PARENT-A-READ-CLOSURE`, `D10.2-EC-C-RESOLVENT`, `D10.2-EC-C-READBACK` | `D10-CL-N-003`; A/C optional profiles; physical nonabsorbability remains conditional |
+| §5.2, §5.5 | `A-RETAINED-WRITER`, `A-WRITER-TARGET`, `C-AUTHORITY`, `REAL-PC`, `L-POSTCONTINUITY-REFRESH` | parent rows plus `D10.2-EC-PC-WRITER-COEFFICIENT`, `D10.2-EC-PC-ZOH-WRITER`, `D10.2-EC-PC-RELEASE` | A/C/PC optional claims; runtime formation/retention remains open |
+| §5.6 | candidate read/write parents, `L-SINGULAR-FAIL-CLOSED`, disabled-surface parents | D5/D7 control contracts and D10.2 parent/disabled rows | null and control surfaces remain noninterchangeable; exact disabled reductions belong to GRC9V4 specialization |
+| §6.1 | `CORE-K-STRUCTURAL-ROLE`, `GEOM-K4`, `GEOM-ASSEMBLY` | corresponding parent rows plus `D10.2-EC-GEOM-K4-ASSEMBLY` | `D10-CL-N-006`; normalization uniqueness remains open |
+| §6.2 | `GEOM-H1-FORM`, `GEOM-GJ` | `D10.2-EC-PARENT-GEOM-H1-FORM`, `D10.2-EC-PARENT-GEOM-GJ`, `D10.2-EC-GEOM-FLAT` | accepted Hodge correction; general-SPD runtime conformance remains conditional |
+| §6.3 | `GEOM-H1-FORM`, `GEOM-GJ`, `GEOM-K4-TO-H4-TO-h4` | `D10.2-EC-GEOM-HODGE-UPDATE`, `D10.2-EC-GEOM-FLAT`, `D10.2-EC-GEOM-PROFILE` | `D10-CL-N-006`; current affine profile is admitted, not unique |
+| §6.4 | `GEOM-M4` | `D10.2-EC-PARENT-GEOM-M4`, `D10.2-EC-GEOM-MOBILITY-BOUNDARY` | geometry/mobility authority separation is normative for current population |
+| §6.5 | `GEOM-COVARIANCE` | `D10.2-EC-PARENT-GEOM-COVARIANCE` | form-level covariance accepted; executable and event transport obligations remain separately gated |
+| §7.1 | `L-PROFILE-GRAMMAR`, `SPEC-PROFILE-GRAMMAR` | corresponding parent rows | `D10-CL-N-009`; lifecycle binding `D10-CL-N-005`; `D10-CL-C-012` blocks a future-exhaustive roster claim |
+| §7.2 | `SPEC-NORMALIZATION-UNITS-GAUGE-DOMAIN-SOLVER`, `SPEC-COMPOSITION-PROFILE-IDENTITY` | corresponding parent rows | `D10-CL-N-008`; changed gain or mathematical contract requires new identity |
+| §7.3 | `SPEC-FUTURE-ADMISSION` | `D10.2-EC-PARENT-SPEC-FUTURE-ADMISSION` | current promotion is bounded; successors reopen provenance and earliest affected contract |
+| §7.4 | `SPEC-B-SLOT` | `D10.2-EC-PARENT-SPEC-B-SLOT` | B is open/routed, not rejected; `D10-CL-X-005` blocks PC-as-B |
+| §7.5 | `SPEC-CLAIM-CEILINGS`, `SPEC-VERIFICATION-REGISTRY` | corresponding parent rows | claim governance and verification obligations remain distinct from runtime state and design mathematics |
+
+
+### Paper-pressure register after Sections 5–7
+
+| Boundary | Current disposition | Does it block this tranche? | Successor trigger condition |
+|---|---|---|---|
+| One universal serialized $T_M$ state | Rejected by profile-specific authority; $T_M$ is a role label | No | Only if the final proposal requires one state coordinate common to A, C, and all realizations |
+| One universal solved equation for $J_C=J_0+\zeta j$ | Outer composition is common; root, domain, and staging are profile-specific | No | Only if later prose needs a global uniqueness or common inverse theorem |
+| Runtime formation, post-input retention, and release | Design transitions accepted; runtime branch evidence unexecuted | No | Only if the proposal claims demonstrated memory rather than a lawful substrate mechanism |
+| Physical nonabsorbability of the explicit read channel | Open for A and C | No | Only if the proposal must state that no baseline reparameterization can reproduce the admitted effect |
+| Nonzero committed endpoint effect | Complete-chain consumption does not imply endpoint effect | No | Only if a central paper proposition requires measured or proved endpoint hysteresis |
+| Universal or unique $K_4$ assembly normalization | Diagonal overlap multiplicity closed; off-diagonal cover dependence remains | No | Only if the proposal claims canonical or continuum-unique normalization |
+| Physical flux used directly as structural one-form | Blocked by accepted Hodge correction | No | Any section that cannot preserve the $G_J$ flat/sharp boundary would require correction, not a new optional profile |
+| Geometry automatically determines mobility | Explicitly blocked; no current $h_4\to M_4$ authority map | No | A proposed geometry-conditioned transport law would require a named successor and earliest-contract reopening |
+| Current affine Hodge profile as unique $g[K]$ | Explicitly bounded reference profile | No | Only if the proposal claims uniqueness, universality, or continuum identity |
+| General-SPD runtime conditioning and covariance | Verification obligation, not unresolved design mathematics | No | Only if the proposal asserts implementation or numerical guarantees |
+| Ten-profile roster as exhaustive V4 taxonomy | Blocked by `D10-CL-C-012` | No | Only if the intended paper cannot remain bounded to the current initial population |
+| Candidate B as executable or equivalent to PC | B routed but lacks source-backed writer; PC-as-B blocked | No | Only if the paper requires B in the current executable population |
+| Fixed successor schedule | Rejected; successors activate at exact attempted claims | No | A successor investigation is required only at a concrete unsupported paper proposition |
+
+**Current disposition:** Sections 5–7 are fillable from the accepted investigation. They expose no new scientific contradiction and require no successor investigation. Candidate-specific equations and realization-specific roots remain intentionally deferred to Sections 8–10 rather than being duplicated in the common causal and profile layers.
+
 ---
 
 # Paper Skeleton
@@ -1304,9 +1372,25 @@ These are existing claim boundaries, not newly discovered contradictions. No suc
 
 ## 5. The GRC-v4 Causal Loop
 
+GRC-v4 makes the historical part of the graph dynamics explicit without turning every historical influence into a new resource or one universal memory variable. The common substrate contract identifies causal roles and stage boundaries. A complete profile then supplies the particular retained representation, Read-Back map, current closure, write law, and temporal realization.
+
+The central distinction is:
+
+$$
+\text{retention}
+\neq
+\text{Read-Back}
+\neq
+\text{write-back}.
+$$
+
+Retention says what remains causally available across beats. Read-Back says how that retained structure conditions present activity into an oriented current contribution. Write-back says how the consequences of the current beat change what will be available later. None of these terms is established merely by observing persistence, a slow coefficient, a diagnostic dependence, or an update performed outside the declared transition.
+
+> **Provenance note:** Claim and parent-object associations below retain the explorer disposition `indeterminate_requires_review`. They are crosswalk references, not reconstructed proof or independent changes in claim status.
+
 ### 5.1 Role-level loop
 
-Present the architecture-neutral causal relation:
+At the architecture level, the accepted loop can be displayed as
 
 $$
 T_{M,k}
@@ -1320,197 +1404,511 @@ J_{C,k}
 T_{M,k+1}.
 $$
 
-Explain that $T_M$ names the retained causal **role**. It does not assert that every profile serializes an independent coordinate named $T_M$.
+Here $T_{M,k}$ names the **retained causal role** at beat $k$. It is not a claim that all profiles serialize an independent coordinate with that name. The role is realized differently by the admitted families:
 
-Candidate A realizes this role through retained $W_A$. Candidate C realizes it through an admitted sector and response derived from authoritative $C$. PC introduces its own declared persistent structural history.
+| Profile contribution | Retained causal role | Authority status |
+|---|---|---|
+| Candidate A | positive retained edge mobility $W_{A,k}$ and its relation to the current instantaneous reference | $W_A$ is authoritative nonresource state |
+| Candidate C | the selected $C$-sector and its induced Hodge response | only $C$ is authoritative; sector and Hodge surfaces are derived |
+| PC and CI+PC | persistent structural carrier $Z_{4,a,k}$ in addition to the selected candidate state | $Z_{4,a}$ is realization-specific authoritative history |
+| CI, OS, and RG2b without PC | no independent persistent $K_4$ carrier merely by realization name | geometry is solved, staged, or reconstructed according to the realization contract |
 
-### Controlling sources
+The direct current path and explicit Read-Back path must also remain distinct. Let $J_{0,a,k}$ denote the candidate/profile-specific baseline current evaluated with the explicit Read-Back gate disabled but with all direct retained-conditioned mobility or geometry effects preserved. Let $j_{a,k}$ denote the explicit Read-Back contribution. The common composition interface is
 
-* D2
-* D5/D5-v2
-* D6/D6-v2
-* D7/D7-v2
-* D10
+$$
+J_{C,a,k}
+=
+J_{0,a,k}
++
+\zeta_a j_{a,k}.
+$$
 
-The D7 investigation explicitly required closure of the retained-object to read-current to total-current to downstream consequence to future-retention chain.
+This is a role equation, not a universal solved formula. Candidate A and Candidate C provide different Read-Back operators, different regular domains, and different current closures. CI and CI+PC may place the current inside a joint root; OS uses its frozen predictor–geometry–corrector sequence; RG2b reconstructs geometry; PC consumes persistent structural history. Section 10 supplies those realization-specific equations.
 
----
+The decomposition has a fixed gauge. $J_0$ is defined independently of the explicit binary read gate $\chi_a$ and the physical coupling $\zeta_a$. Terms may not be moved between $J_0$ and $j$ after an outcome is observed. Otherwise “Read-Back on/off” would change the baseline class rather than isolate the explicit read channel.
+
+Once solved, one $J_C$ is authoritative for continuity and every declared downstream consequence of that beat. A diagnostic read current, an intermediate trial current, a structural one-form, or a prior solver iterate cannot become a second resource current.
+
+> **Primary source objects:** `L-AUTHORITATIVE-CURRENT`, `A-READ-CLOSURE`, `C-READ-BACK`.
+
+> **Equation/contract rows:** `D10.2-EC-PARENT-L-AUTHORITATIVE-CURRENT`, `D10.2-EC-PARENT-A-READ-CLOSURE`, `D10.2-EC-C-RESOLVENT`, `D10.2-EC-C-READBACK`.
+
+> **Associated accepted claims:** `D10-CL-N-003`, optional A/C claims `D10-CL-O-001` and `D10-CL-O-002`; physical nonabsorbability remains conditional under `D10-CL-C-007`.
 
 ### 5.2 Retention
 
-Define retention by the accepted profile’s authoritative state and writer:
+Retention is defined through the complete causal state and its lawful transition, not by elapsed time alone. The accepted D2 terminology distinguishes:
 
-* what persists across beats;
-* which input forms it;
-* how it is retained;
-* how it is released, reset, archived, or reconfigured;
-* what capacity/domain restrictions apply.
+- a **forming or write driver**, meaning a declared source current, input, or downstream state consequence admitted by the candidate writer;
+- a **formed representation**, meaning a candidate representation that has left its neutral or instantaneously reconstructed baseline through a qualifying attributable write;
+- **post-input retention**, meaning that formed content remains causally available after the forming or write driver is absent;
+- **release**, meaning a declared return to neutral or declared removal of retained content with accounting and lifecycle provenance;
+- **reconfiguration**, meaning a lawful change of retained content or address without automatically claiming new formation;
+- **write**, meaning the declared transition from the beat-$k$ representation and admitted inputs to the beat-$(k+1)$ representation.
 
-Do not define retention merely by a slow coefficient.
+This gives retention an operational boundary. Initialization can construct or load a starting state, but does not establish native formation. Continuing external drive is not post-input retention. Administrative reset is not native release. A relation to a moving instantaneous reference may approach neutrality because the reference moved even when the authoritative retained state did not; that movement alone is not release evidence.
 
----
+The common permitted mechanism classes include passive persistence, bounded decay, activity-maintained persistence after the external forming driver is absent, regeneration from another declared retained coordinate, transfer between declared retained representations, and metastable persistence. Each is lawful only when its maintaining inputs and state are inside the complete declared causal state.
+
+A slow rate alone is not retention evidence. In particular, the following cannot secretly maintain a retained state:
+
+- a lingering boundary input;
+- a parameter schedule not returned to baseline;
+- a scheduler flag or producer queue;
+- a stale current or geometry cache;
+- a mutable registry;
+- repeated undeclared driver events;
+- undeclared RNG-driven injection.
+
+Every candidate has exactly one authoritative write per beat or an explicit no-write disposition. The write must state its inputs, temporal side, bounds, release semantics, state owner, and serializer/lifecycle consequences. Hidden pre-step or post-step writers are forbidden.
+
+Candidate A realizes this requirement through one positive $W_A$ writer. Candidate C does not write an independent sector; its future retained-conditioned response changes because authoritative continuity changes $C$ and the sector/Hodge package is rederived. PC and CI+PC add one declared $Z_{4,a}$ writer. These are different retention mechanisms and must not be redescribed as one generic cache.
+
+> **Primary source objects:** `A-RETAINED-WRITER`, `C-AUTHORITY`, `REAL-PC`.
+
+> **Equation/contract rows:** `D10.2-EC-PARENT-A-RETAINED-WRITER`, `D10.2-EC-C-AUTHORITY`, `D10.2-EC-PC-WRITER-COEFFICIENT`, `D10.2-EC-PC-ZOH-WRITER`, `D10.2-EC-PC-RELEASE`.
+
+> **Boundary:** formed-branch runtime preparation, post-input persistence, release, and replay remain unexecuted. The substrate defines lawful mechanisms and state transitions; it does not claim that a formed branch has been reached in runtime.
 
 ### 5.3 Read-Back
 
-Define Read-Back as the profile-declared map by which retained causal structure conditions present activity into an oriented current contribution.
+Read-Back is the profile-declared map by which retained causal structure conditions present activity into an oriented current contribution. Its input and output live on the current graph’s oriented edge space, or on explicitly identified one-form spaces with lawful flat/sharp maps. Its output is a derived current-like contribution, not an independently conserved stream and not a second resource reservoir.
 
-Read-Back must be distinguished from:
+The common operator contract requires:
 
-* observing retained state;
-* reconstructing retained state from current $C$;
-* multiplying current by a diagnostic;
-* an analysis-only projector;
-* ordinary immediate current generation.
+- a declared domain and codomain;
+- the current stage at which the operator is evaluated;
+- the retained and geometric conditioning inputs;
+- any nonretained read context;
+- a passive zero-current null;
+- covariance under graph relabeling and coordinate reorientation;
+- candidate-specific parity under physical current reversal;
+- fail-closed behavior outside the admitted domain.
 
----
+Present activity is load-bearing. At fixed retained package, geometry, and read context, zero trial current produces zero Read-Back output. This operator-level null is not the same as zero baseline current, a full-loop equilibrium, energetic passivity, or absence of retained structure.
+
+D5 evaluates the operator on an unsolved trial current. D6, or a later admitted realization, may substitute the unknown total current and solve the resulting closure. During that solve, all noncurrent read context declared at the pre-read stage remains frozen unless the complete profile explicitly admits a different recurrence. Recomputing the read context from the unknown current inside the same solve would change the realization and therefore the complete profile identity.
+
+The explicit read-off control sets only the binary read gate $\chi_a$ to zero. It must preserve:
+
+- the candidate’s retained state or derived retained package;
+- the current geometry and topology;
+- the baseline $J_0$ evaluation;
+- the writer unless a separate write-off control is also applied.
+
+This is what allows the explicit $j$ channel to be distinguished from direct retained-conditioned mobility or geometry effects already present in $J_0$.
+
+Read-Back is directional because its output is an oriented edge quantity. That does not mean every retained representation stores historical chirality. Candidate A’s current retained content is scalar edge magnitude or unoriented-axis information; present current supplies the output orientation. Candidate C’s current selected scalar sector likewise does not by itself store chirality. Physical current reversal and coordinate reorientation therefore remain separate operations:
+
+- **physical reversal** negates present flux at fixed coordinate orientation and fixed retained package;
+- **coordinate reorientation** changes the stored edge basis and covariantly transforms incidence, metric, current, and output without changing physical state;
+- **reversed forming history** requires rerunning or lawfully transforming the history and may not assume that a scalar carrier retains sign.
+
+> **Primary source objects:** `A-READ-CLOSURE`, `C-READ-BACK`, `GEOM-COVARIANCE`.
+
+> **Equation/contract rows:** `D10.2-EC-PARENT-A-READ-CLOSURE`, `D10.2-EC-C-RESOLVENT`, `D10.2-EC-C-READBACK`, `D10.2-EC-PARENT-GEOM-COVARIANCE`.
+
+> **Boundary:** a typed operator family and a nonzero algebraic read response do not by themselves establish runtime reachability, physical-channel attribution, or nonabsorbability from a reparameterized baseline.
 
 ### 5.4 Authoritative total current
 
-Use the generic role equation:
+For every admitted profile, one solved current $J_C$ is authoritative. It is the current that enters the single continuity write and any other consequence explicitly assigned to current authority. The common interface is
 
 $$
-J_C =
-J_0+\zeta\,j,
+J_C
+=
+J_0+
+\zeta j,
 $$
 
-only as the common current-composition interface.
+but the solve is candidate- and realization-specific. The equation may reduce to an exact inverse on one regular profile, become a joint current/geometry root in CI, or be staged through predictor and corrector currents in OS. No common global uniqueness theorem is created by writing the same outer composition.
 
-Candidate-specific equations, domains, and root conditions belong to their profile sections.
+The current solve preserves three accounting rules.
 
-Explain that explicit notation $J_0+\zeta j$ does not by itself prove that the Read-Back contribution is physically nonredundant.
+First, $j$ is not an additional resource transfer. On a closed graph it enters the same internal current space and therefore the same incidence divergence as the rest of $J_C$. On an open graph, net transport must be represented by an explicit boundary ledger rather than attributed to an uncounted read stream.
 
----
+Second, only the postsolve $J_C$ has current authority. A candidate writer may consume $J_C$ or a declared downstream consequence, but may not write directly from a diagnostic $j$ while bypassing the total-current closure. A structural source may consume the correctly lowered one-form associated with the read current, but that source is not the current used by continuity unless sharpened and admitted by the profile.
+
+Third, branch and domain failure is fail-closed. Singular, multiple, nonfinite, or otherwise unadmitted roots do not authorize a fallback current, hidden regularization, or partial commit. A singular-current successor would be a new profile with its own derivation and failure semantics.
+
+The separation among current surfaces is therefore:
+
+| Surface | Role | Authority |
+|---|---|---|
+| $J_0$ | direct baseline current with explicit read gate off | derived profile surface |
+| $J_{\mathrm{trial}}$ | input to the Read-Back operator before closure | transient solver surface |
+| $j$ | explicit retained-conditioned read contribution | derived current-like surface |
+| $j_{\mathrm{struct}}^\flat$ | lowered one-form used by structural $K_4$ construction | derived structural surface |
+| $J_C$ | solved physical current for continuity and declared consequences | authoritative same-beat current |
+
+> **Primary source object:** `L-AUTHORITATIVE-CURRENT`.
+
+> **Associated accepted claim:** `D10-CL-N-003`.
+
+> **Bounded overread:** complete-chain consumption does not by itself establish a nonzero committed endpoint effect; that stronger proposition remains under `D10-CL-C-004` and `D10-CL-U-002`.
 
 ### 5.5 Write-back
 
-Define write-back as the accepted profile-specific state transition by which the consequences of the current beat alter the retained causal representation available to later beats.
+Write-back is the accepted profile-specific transition by which the present beat changes the causal structure available to a later beat. Its meaning depends on the authority class of the profile.
 
-The paper should distinguish:
+The common write-input contract distinguishes three temporal classes:
 
-* direct retained-state writer;
-* resource-mediated future sector change;
-* realization-history writer;
-* lifecycle reset or loss;
-* topology-event transport or reinitialization.
+```text
+pre-solve:
+    retained state at k
+    C_k
+    declared incoming or preclosure current surfaces
+    geometry, topology, lifecycle, and clock at k
 
----
+post-solve:
+    J_C,k only after the total-current closure has been solved
+
+post-state-update:
+    C_{k+1}
+    another declared downstream consequence at k+1
+```
+
+A writer may use only the temporal classes explicitly admitted by its profile. If $J_C$ depends on the new candidate state at $k+1$, the transition contains an implicit cycle and must be represented by a realization that actually solves that cycle. A nominally explicit writer cannot read its own new output in the same beat.
+
+The admitted write-back classes are distinct:
+
+1. **Direct retained-state write.** Candidate A writes the authoritative positive edge state $W_A^{k+1}$ once, after evaluating its accepted post-continuity target from $C_{k+1}$, solved $J_C$, and refreshed differentials.
+2. **Resource-mediated future rederivation.** Candidate C commits only $C_{k+1}$. Its selected sector, Hodge package, resolvent, and later Read-Back are rederived from that authoritative state. No independent $T_C$ write exists.
+3. **Realization-history write.** PC and CI+PC update the independently authoritative structural carrier $Z_{4,a,k+1}$ according to their declared ZOH law.
+4. **Lifecycle write.** Reset, migration, release, archive, or topology transport may transform or discard retained content only through the typed lifecycle contract and its receipts.
+
+If several forming contributions arrive in one beat, they enter one declared write batch. Their composition must be a declared commutative bounded sum, a deterministically ordered composition with serialized order, a declared competition/normalization rule, or a deterministic priority rule. Undefined iteration order and external producer sequence memory are forbidden.
+
+Formation, retention, reconfiguration, and release may be causal attributions of one writer rather than separate additive writers. In particular, release need not be the algebraic inverse of formation, but it must be native, bounded, attributable, and lifecycle-recorded. Administrative reset cannot be relabeled as release.
+
+> **Primary source objects:** `A-WRITER-TARGET`, `A-RETAINED-WRITER`, `C-AUTHORITY`, `REAL-PC`, `L-POSTCONTINUITY-REFRESH`.
+
+> **Equation/contract rows:** corresponding D10.2 parent rows plus `D10.2-EC-PC-ZOH-WRITER` and `D10.2-EC-PC-RELEASE`.
 
 ### 5.6 Passive and null surfaces
 
-Extract the accepted distinctions among:
+The investigation deliberately separated controls that are often conflated under “turn memory off.” The following table is part of the substrate content because each intervention preserves a different causal remainder.
 
-* no formation/write input;
-* zero present current;
-* read disabled;
-* writer disabled;
-* frozen retained state;
-* passive baseline;
-* failed solve;
-* disabled V4 compatibility profile.
+| Surface or control | Operation | What remains active | What it does not establish |
+|---|---|---|---|
+| Initialization | construct or load a declared start state | ordinary profile dynamics | native formation |
+| No forming or write input | remove only the external/activity forming driver | ordinary writer and runtime evolution | write-off or frozen state |
+| Zero present current | set trial/current input to zero at fixed retained package | retained state and geometry | no retained content or full equilibrium |
+| Read off | set only $\chi_a=0$ | direct $J_0$ path, retained state, writer | carrier neutralization or write-off |
+| Gain off | set the physical coupling $\zeta_a=0$ | diagnostic read surface may remain | read operator absence |
+| Write off | disable the constitutive retained/history write | current read may remain active | frozen complete dynamics |
+| Frozen carrier | hold the lawful retained package fixed for a read probe | current and read enactment | a lawful independent runtime intervention for a derived Candidate C sector |
+| Carrier neutral | replace the retained relation/package by its preregistered neutral reference | read gate and present current | read-off |
+| Administrative reset | restore the declared reset baseline | post-reset profile dynamics | native release |
+| Failed solve | reject the beat and commit nothing | prestate only | a passive valid transition |
+| Disabled V4 profile | apply the exact profile-scoped transition, state, observable, and lifecycle reduction | GRC9V3 target behavior in the specialization | generic read-off, write-off, or proof of future profile equivalence |
 
-#### Boundary
+For Candidate C, an independent runtime switch of $T_C$ at fixed $C$ is unlawful because $T_C$ is derived. A fixed-$T_C$ comparison may be used only as an explicitly labelled algebraic operator probe, or replaced by a reachable matched-$C$ comparison. The distinction between literal runtime interventions, on-manifold matched counterfactuals, and off-manifold algebraic probes must remain visible.
 
-A passive null must be defined per profile. One null condition must not be used as a substitute for another.
+The passive zero-current null is operator-level only. It does not require $J_0=0$, does not claim energetic passivity, and does not say that retained structure has no direct effect through mobility or geometry.
+
+### 5.7 Causal-loop claim ceiling
+
+The accepted investigation establishes a closed **design-level causal architecture** for the current admitted profiles:
+
+```text
+declared retained role and authority
+-> typed Read-Back contribution
+-> candidate/realization-specific total-current closure
+-> one authoritative continuity write
+-> declared candidate and/or history writer
+-> later retained role
+```
+
+This closure is Markovian on each complete declared state, stage-ordered, resource-accounted, and fail-closed. It is strong enough to define the substrate and its admissible profiles.
+
+It does not establish:
+
+- runtime-reached native formation;
+- post-input persistence over a measured horizon;
+- native release or replay in an implementation;
+- a nonzero committed endpoint effect;
+- endpoint hysteresis;
+- physical nonabsorbability of A or C;
+- physical-channel attribution;
+- temporal or structural stability;
+- a continuation spectrum;
+- one universal retained object or one universal current solver.
+
+These are accepted boundaries rather than contradictions in the common causal architecture. Section 5 therefore requires no successor investigation. A successor would be required only if the final substrate account attempted to make one of the stronger claims rather than preserving it as outside the current result.
 
 ---
 
 ## 6. Structural Geometry, Hodge Typing, and Mobility
 
-### 6.1 Core structural role and graph realization
+GRC-v4 separates the structural object generated by activity from the geometry that realizes it and from the mobility that transports resource. This separation is essential: the same edge dimension and even the same diagonal reference numbers can represent different mathematical types and different causal authority.
 
-Explain:
-
-$$
-K\longrightarrow g[K]
-$$
-
-as the substrate-independent core-theory role.
-
-Then define graph $K_4$ as the accepted GRC realization:
-
-* graph-local;
-* symmetric bilinear form;
-* acting on the oriented one-form space;
-* assembled from overlapping graph restrictions;
-* not identical to core $K$;
-* not the legacy GRC9 cached row tensor.
-
-#### Required source objects
-
-* `CORE-K-STRUCTURAL-ROLE`
-* `GEOM-K4`
-* `GEOM-ASSEMBLY`
-
----
-
-### 6.2 Reference Hodge embedding
-
-Include the accepted reference construction:
+The accepted chain is
 
 $$
-H_{0,\mathrm{ref}} =
+K_4
+\longrightarrow
+H_4
+\longrightarrow
+h_4,
+$$
+
+with an explicit profile map, positive-domain contract, and realization-specific causal consumer. It is not a relabeling of the GRC9V3 cached node tensor, and it does not authorize geometry to take over candidate mobility.
+
+### 6.1 Core structural role and graph $K_4$
+
+Core Reflexive Coherence supplies the substrate-independent constitutive role
+
+$$
+K
+\longrightarrow
+g[K].
+$$
+
+It does not uniquely determine a graph matrix, an overlap normalization, a Hodge star, or a temporal realization. GRC-v4 realizes that role on the finite oriented graph through a graph-local symmetric bilinear object $K_4$ acting on the oriented one-form space $\Omega^1(\mathcal G)$.
+
+The complete structural input is separated into a declared baseline and an activity-dependent increment:
+
+$$
+K_4
+=
+K_{4,\mathrm{base}}
++
+\Delta K_4.
+$$
+
+A profile must say explicitly whether it consumes the total $K_4$ or the increment $\Delta K_4$. The current common assembly constructs the increment from stable vertex-star restrictions of the correctly lowered structural current.
+
+For each live vertex $v$, let $R_v$ restrict a global oriented edge one-form to the edges in the declared vertex star. Let $m_e$ be the number of declared stars containing edge $e$, and define the local diagonal partition weight by
+
+$$
+(D_v)_{ee}
+=
+m_e^{-1/2}.
+$$
+
+For a structural one-form $j^\flat$, define
+
+$$
+j_v
+=
+D_vR_vj^\flat.
+$$
+
+The accepted partition identity is
+
+$$
+\sum_v
+R_v^\top D_v^2R_v
+=
+I
+$$
+
+on the live oriented edge space. The common star assembly is
+
+$$
+\mathcal A_\star(j^\flat)
+=
+\sum_v
+R_v^\top
+\bigl(j_vj_v^\top\bigr)
+R_v.
+$$
+
+The candidate-specific typed adapter and gain then produce
+
+$$
+\Delta K_{4,a}
+=
+\iota_a\!\left(
+\mathcal A_\star(j_{a,\mathrm{struct}}^\flat)
+\right).
+$$
+
+The adapter $\iota_a$ preserves the already accepted candidate-specific payload type, units, and scaling. The common assembly does not introduce a new universal $K_4$ gain or borrow one candidate’s structural source for another candidate.
+
+The assembled increment is symmetric positive semidefinite for the accepted rank-one subprofile, finite-radius graph-local, covariant under graph relabeling and signed edge reorientation, and zero at zero structural current. The partition identity removes unrecorded diagonal edge multiplicity. It does not make every off-diagonal pair weight unique: the factor determined by how often an edge pair co-occurs in the selected cover remains a bounded cover-dependent choice.
+
+Graph-local assembly is also not the same as local causal support. A candidate Read-Back operator may be nonlocal on a connected component, and a sparse Hodge matrix need not have a sparse inverse. Locality of the assembly therefore cannot be used to claim a local total response.
+
+> **Primary source objects:** `CORE-K-STRUCTURAL-ROLE`, `GEOM-K4`, `GEOM-ASSEMBLY`.
+
+> **Equation/contract rows:** `D10.2-EC-PARENT-CORE-K-STRUCTURAL-ROLE`, `D10.2-EC-PARENT-GEOM-K4`, `D10.2-EC-PARENT-GEOM-ASSEMBLY`, `D10.2-EC-GEOM-K4-ASSEMBLY`.
+
+> **Associated accepted claim:** `D10-CL-N-006`; classical structural-Hessian and alpha claims remain conditional under `D10-CL-C-001`, while alternative normalization remains open under `D10-CL-U-005`.
+
+### 6.2 Reference Hodge embedding and typed current spaces
+
+The current accepted reference profile embeds graph measure and positive GRC baseline conductance into distinct Hodge and current-metric objects. On a fixed graph stratum,
+
+$$
+H_{0,\mathrm{ref}}
+=
 \operatorname{diag}(\mu),
 $$
 
 $$
-H_{1,\mathrm{form,ref}} =
+H_{1,\mathrm{form,ref}}
+=
 \operatorname{diag}(W_{\mathrm{ref}}),
 $$
 
+and
+
 $$
-G_{J,\mathrm{ref}} =
+G_{J,\mathrm{ref}}
+=
 \operatorname{diag}(W_{\mathrm{ref}}^{-1}).
 $$
 
-Explain that this is a V4 reference embedding built from GRC surfaces. It is not a claim that GRC-v3 already possessed the full V4 physical geometry.
+These expressions do not give the three objects the same type.
 
-#### Required source objects
+- $H_0$ is the zero-form measure/Gram operator on vertex fields.
+- $H_{1,\mathrm{form}}$ is the structural one-form Hodge or Gram operator used for one-form inner products, graph-Hodge operators, and structural geometry.
+- $G_J$ is the resistance/current metric and the flat map from physical oriented edge flux coordinates to structural one-form coordinates.
 
-* `GEOM-H1-FORM`
-* `GEOM-GJ`
-
----
-
-### 6.3 Structural crossing
-
-Include the accepted crossing:
+The reference relation
 
 $$
-H_{1,\mathrm{form}}^+  =
-H_{1,\mathrm{form,ref}}  +
-\kappa_H\,\Delta K_4,
-$$
-
-on the declared positive admitted domain, followed by:
-
-$$
-G_J(h)
+G_{J,\mathrm{ref}}
 =
-H_{1,\mathrm{form}}(h)^{-1},
+H_{1,\mathrm{form,ref}}^{-1}
 $$
 
-and:
+belongs to the selected paired graph-Hodge realization. It is not a license to use the same symbol for both objects.
+
+For a physical flux $j_{\mathrm{flux}}$, the structural one-form is
 
 $$
-j_{\mathrm{struct}}^\flat =
-G_J\,j_{\mathrm{flux}}.
+j_{\mathrm{struct}}^\flat
+=
+G_J(h)
+\,j_{\mathrm{flux}}.
 $$
 
-State that the declared geometry profile constructs $h_4$ from the accepted Hodge/structural package.
+Conversely, the physical flux associated with an admitted structural one-form is obtained by the corresponding sharp map,
 
-#### Required source objects
+$$
+j_{\mathrm{flux}}
+=
+G_J(h)^{-1}
+\,j_{\mathrm{struct}}^\flat.
+$$
 
-* `GEOM-K4-TO-H4-TO-h4`
-* `GEOM-H1-FORM`
-* `GEOM-GJ`
+Continuity and current accounting consume physical flux. The rank-one $K_4$ structural source consumes $j_{\mathrm{struct}}^\flat$. Equal vector lengths do not allow the physical flux array to be used directly as a lowered one-form.
 
----
+The current reference package may be written as
 
-### 6.4 Transport mobility
+$$
+h_{4,\mathrm{ref}}
+=
+\bigl(
+H_{0,\mathrm{ref}},
+H_{1,\mathrm{form,ref}},
+B_{\mathrm{ref}},
+\partial_{\mathrm{ref}}
+\bigr),
+$$
 
-Define $M_4$ as the candidate-specific transport mobility operator on physical current space.
+where graph incidence, boundary convention, and the live node/edge order are fixed on the current stratum. This is a V4 reference embedding constructed from admitted GRC surfaces. It is not a claim that GRC-v3 already possessed the full V4 generated geometry or anisotropic transport.
 
-State explicitly:
+> **Primary source objects:** `GEOM-H1-FORM`, `GEOM-GJ`.
+
+> **Equation/contract rows:** `D10.2-EC-PARENT-GEOM-H1-FORM`, `D10.2-EC-PARENT-GEOM-GJ`, `D10.2-EC-GEOM-FLAT`.
+
+> **Type-control source:** accepted `D7GPostv2GraphHodgeTypeCorrection`.
+
+### 6.3 Structural crossing and geometry profile
+
+A named geometry profile maps the graph-local structural increment, the reference geometry, and explicit profile context into the admitted positive graph-Hodge class. The profile law is not itself a geometry state, and the geometry state is not itself a transport mobility operator.
+
+For the accepted affine reference-relative profile, define the dimensionless increment
+
+$$
+\Theta_4
+=
+\kappa_H
+H_{1,\mathrm{form,ref}}^{-1/2}
+\Delta K_4
+H_{1,\mathrm{form,ref}}^{-1/2}.
+$$
+
+The admitted domain requires
+
+$$
+I+\Theta_4
+\succ
+0.
+$$
+
+On that domain, the one-form Hodge update is
+
+$$
+H_{1,\mathrm{form}}^+
+=
+H_{1,\mathrm{form,ref}}^{1/2}
+(I+\Theta_4)
+H_{1,\mathrm{form,ref}}^{1/2}
+=
+H_{1,\mathrm{form,ref}}
++
+\kappa_H\Delta K_4,
+$$
+
+while the current initial profile keeps the zero-form measure fixed:
+
+$$
+H_0^+
+=
+H_{0,\mathrm{ref}}.
+$$
+
+The resulting geometry package is
+
+$$
+h_4^+
+=
+\bigl(
+H_0^+,
+H_{1,\mathrm{form}}^+,
+B_{\mathrm{ref}},
+\partial_{\mathrm{ref}}
+\bigr).
+$$
+
+For the selected paired realization,
+
+$$
+G_J(h_4^+)
+=
+\bigl(H_{1,\mathrm{form}}^+\bigr)^{-1}.
+$$
+
+The neutral reduction is exact: $\Delta K_4=0$ or $\kappa_H=0$ returns the supplied reference package. For nonzero $\kappa_H$, a nonzero admitted $\Delta K_4$ produces a nonzero one-form Hodge change; the crossing does not erase off-diagonal structure through scalar projection.
+
+The common substrate fixes this typed map and its domain. The selected geometry-temporal realization fixes when the geometry is constructed, whether it participates in a simultaneous root, whether it is consumed in an operator-split correction, whether it is reconstructed, and whether persistent structural history contributes. Thus
+
+$$
+K_4
+\longrightarrow
+H_4
+\longrightarrow
+h_4
+$$
+
+is load-bearing only through a declared current/transition consumer. Producing $h_4$ as an unconsumed diagnostic or cache is not structural Read-Back and does not close a causal loop.
+
+> **Direct parent objects:** `GEOM-H1-FORM`, `GEOM-GJ`, `GEOM-K4-TO-H4-TO-h4`.
+
+> **Equation/contract rows:** `D10.2-EC-GEOM-HODGE-UPDATE`, `D10.2-EC-GEOM-PROFILE`, `D10.2-EC-GEOM-FLAT`.
+
+> **Boundary:** the affine graph-Hodge law is the accepted current reference profile, not the unique core-theory $g[K]$, not a canonical continuum metric theorem, and not a future-exhaustive geometry family.
+
+### 6.4 Transport mobility remains separate
+
+The transport mobility operator $M_4$ acts on the physical current transport space and is owned by the selected candidate factorization. It is distinct from the structural Hodge package even where a legacy reference produces the same diagonal numbers.
+
+The type boundary is
 
 $$
 M_4
@@ -1521,147 +1919,359 @@ G_J
 \neq
 h_4
 \neq
-\text{overlap-normalized }K_4\text{ assembly}.
+\mathcal A_\star(j^\flat).
 $$
 
-For Candidate A, include the accepted factorization:
+These inequalities express different mathematical and causal roles, not merely unequal numerical arrays.
+
+- $M_4$ determines transport response in the current solve.
+- $H_{1,\mathrm{form}}$ supplies the structural one-form geometry.
+- $G_J$ lowers physical flux to a one-form and measures current/flux resistance.
+- $h_4$ is the graph-Hodge geometry package.
+- $\mathcal A_\star$ assembles a structural bilinear increment.
+
+For Candidate A, the accepted transport factorization is
 
 $$
 M_{4,A}
 =
-\eta\,\operatorname{diag}(W_A).
+\eta\,
+\operatorname{diag}(W_A).
 $$
 
-Candidate C’s transport factorization must be copied exactly from its accepted source rather than inferred from a matrix resemblance.
+This preserves $W_A$ as mobility authority. Candidate C retains its accepted candidate-specific baseline and identification factorization; its mobility must be copied from the accepted Candidate C source rather than inferred from $H_{1,\mathrm{form}}$, $G_J$, or a coincident matrix shape.
 
-#### Required source objects
+No map
 
-* `GEOM-M4`
+```text
+H1_form -> M4
+G_J     -> M4
+h4      -> M4
+```
 
----
+exists in the current common contract. A future profile may relate geometry and mobility only by introducing an explicit constitutive map, new profile identity, provenance, units, staging, and the required contract reopening.
 
-### 6.5 Covariance
+The positive scalar baseline mobility $W$ introduced in §4.1 is likewise not automatically the full V4 transport operator of every profile. It supplies the inherited scalar potential-flow reference. Candidate A promotes a positive retained edge field into its declared mobility authority; other candidates own their transport factorization separately.
 
-State the accepted graph-relabeling and signed-edge-coordinate covariance contract for:
+> **Primary source object:** `GEOM-M4`.
 
-* $K_4$ assembly;
-* Hodge maps;
-* flat/sharp maps;
-* structural current;
-* current consumers;
-* topology transport.
+> **Equation/contract rows:** `D10.2-EC-PARENT-GEOM-M4`, `D10.2-EC-GEOM-MOBILITY-BOUNDARY`.
+>
+> **Derivation source:** `D10.2-DER-MOBILITY`.
 
-#### Boundary
+> **Associated accepted claim:** `D10-CL-N-006`.
 
-The paper defines the covariance contract. It does not claim that all general SPD conditioning, inverse solvers, component/cycle boundaries, or runtime adapters have been executably verified.
+### 6.5 Covariance and support
 
----
+The common geometry construction is covariant under graph relabeling and signed edge-coordinate reorientation. Let $U$ be the signed edge permutation induced by a stable graph isomorphism and orientation change. Then the structural and Hodge objects transform by congruence:
+
+$$
+\Delta K_4'
+=
+U\Delta K_4U^\top,
+$$
+
+$$
+H_{1,\mathrm{form}}'
+=
+UH_{1,\mathrm{form}}U^\top,
+$$
+
+and physical and structural currents transform in their corresponding edge coordinates:
+
+$$
+j_{\mathrm{flux}}'
+=
+Uj_{\mathrm{flux}},
+\qquad
+j_{\mathrm{struct}}^{\flat\prime}
+=
+Uj_{\mathrm{struct}}^\flat.
+$$
+
+The profile map, flat/sharp identification, and current consumer must commute with the same typed transport. A coordinate sign change therefore does not create a physical history reversal. It changes the representation of the same oriented object.
+
+The fixed-stratum covariance contract does not define topology-event transport. When the node or edge space changes dimension, $H_0$, $H_{1,\mathrm{form}}$, $G_J$, $K_4$, candidate state, current, and history require typed interspace maps, reconstruction, or explicit loss. Those event contracts belong to Section 12.
+
+The common construction also separates three support notions:
+
+1. **assembly support:** which graph restrictions enter the local star sum;
+2. **operator support:** which entries of a Hodge, response, or inverse operator may be nonzero;
+3. **causal support:** which parts of the graph can affect an output after the full candidate and realization chain.
+
+A graph-local $K_4$ assembly does not make a nonlocal resolvent local, and a sparse one-form Hodge does not imply a sparse inverse or solver influence.
+
+> **Primary source object:** `GEOM-COVARIANCE`.
+
+> **Equation/contract row:** `D10.2-EC-PARENT-GEOM-COVARIANCE`.
+
+> **Boundary:** form-level covariance is accepted; executable general-SPD conditioning, inverse-solver behavior, and runtime covariance remain verification obligations under `D10-CL-C-006`.
 
 ### 6.6 Geometry claim ceiling
 
-This section must preserve:
+Section 6 establishes the current bounded graph-generic geometry content:
 
-* the reference normalization is admitted, not proved unique;
-* alternative star-pair and richer DEC edge-volume profiles remain possible successors;
-* physical units and cross-profile magnitude comparison remain open;
-* structural geometry does not acquire mobility authority by numerical coincidence.
+- the distinction between core $K\mapsto g[K]$ and graph $K_4$;
+- a common graph-local symmetric bilinear $K_4$ domain;
+- overlap-normalized vertex-star assembly;
+- correct lowering from physical flux to structural one-form;
+- the explicit reference embedding $H_{0,\mathrm{ref}}$, $H_{1,\mathrm{form,ref}}$, and $G_{J,\mathrm{ref}}$;
+- the accepted affine positive Hodge update;
+- the load-bearing $K_4\to H_4\to h_4$ profile interface;
+- candidate-specific transport-mobility authority;
+- graph-relabeling and signed-edge covariance.
+
+It does not establish:
+
+- that the accepted star-pair normalization is unique;
+- that the simple reference star pair is the only lawful DEC realization;
+- a continuum-limit uniqueness theorem;
+- one universal relation between geometry and transport;
+- common physical units or equal structural capacity across A and C;
+- executable general-SPD conditioning and inverse-solver guarantees;
+- topology transport from fixed-stratum congruence alone;
+- structural marginality, temporal stability, or a continuation spectrum;
+- a unique geometry-temporal realization.
+
+These limits are already represented by the accepted claim topology. No successor investigation is required to state the common geometry. A successor becomes necessary only if the intended proposal attempts to cross one of these boundaries—for example by asserting a unique Hodge normalization, universal geometry-to-mobility map, or cross-profile quantitative comparison.
 
 ---
 
 ## 7. Complete Profile Grammar
 
-### 7.1 Two independent profile axes
+The common GRC-v4 substrate is executable only through a **complete profile identity**. The profile grammar prevents a candidate equation, geometry law, temporal realization, solver, or lifecycle convention from being changed while the state continues to carry the same scientific label.
 
-Define the current profile population as:
+The selected architecture is therefore:
 
 $$
-\{\mathrm A,\mathrm C\}
-\times
+\boxed{
+\text{common GRC-v4 contract}
++
+\text{one constitutive family}
++
+\text{one geometry-temporal realization}
++
+\text{complete profile-local contract}
+}.
+$$
+
+This is a specification-meta structure grounded in the investigation. It does not add causal state and does not rank the admitted profiles.
+
+### 7.1 Two independent profile axes
+
+The current admitted constitutive families are
+
+$$
+\mathcal A_{\mathrm{constitutive}}
+=
+\{\mathrm A,\mathrm C\},
+$$
+
+and the current admitted geometry-temporal realizations are
+
+$$
+\mathcal R_{\mathrm{temporal}}
+=
 \{\mathrm{CI},\mathrm{OS},\mathrm{RG2b},\mathrm{PC},\mathrm{CI+PC}\}.
 $$
 
-Explain:
+Their current initial product is
 
-* A/C choose the constitutive family;
-* CI/OS/RG2b/PC/CI+PC choose the geometry-temporal realization;
-* one executable state binds exactly one member of each axis;
-* the product gives ten current complete profile identities.
+$$
+\mathcal P_{\mathrm{initial}}
+=
+\mathcal A_{\mathrm{constitutive}}
+\times
+\mathcal R_{\mathrm{temporal}}.
+$$
 
-### Required source objects
+It contains ten complete profile identities:
 
-* `L-PROFILE-GRAMMAR`
-* `SPEC-PROFILE-GRAMMAR`
-* `SPEC-COMPOSITION-PROFILE-IDENTITY`
+| Constitutive family | CI | OS | RG2b | PC | CI+PC |
+|---|---|---|---|---|---|
+| A | `A_CI` | `A_OS` | `A_RG2b` | `A_PC` | `A_CI_PC` |
+| C | `C_CI` | `C_OS` | `C_RG2b` | `C_PC` | `C_CI_PC` |
 
----
+Every executable runtime state binds exactly one constitutive family and exactly one realization. Zero candidates, zero realizations, ambiguous unions, and same-state mixtures are not admissible executable identities.
 
-### 7.2 Profile-local contracts
+The current state, reset state, and each scientific snapshot bind one complete profile identity. Profile-migration receipts bind the ordered pair
 
-Every profile must declare:
+$$
+(p_{\mathrm{source}},p_{\mathrm{target}}),
+$$
 
-* authoritative state;
-* derived and transient surfaces;
-* parameters;
-* units;
-* gauge;
-* normalization;
-* domain;
-* solver;
-* root-selection rule;
-* structural source;
-* geometry profile;
-* history law;
-* composition gains;
-* failure disposition;
-* lifecycle maps;
-* disabled reduction.
+and topology-event receipts bind the corresponding ordered source and target profiles, with equality only when the complete profile is unchanged.
 
-### Required source objects
+An implementation may support any nonempty subset of the ten admitted profiles. It may not claim conformance to a profile whose complete equations, state, solver, lifecycle, and reductions it does not implement.
 
-* `SPEC-NORMALIZATION-UNITS-GAUGE-DOMAIN-SOLVER`
-* `SPEC-CLAIM-CEILINGS`
+The current population is complete for the **initial lineage-local specification population**. It is not a theorem that every lawful future GRC-v4 profile belongs to this product.
 
----
+> **Primary source objects:** `L-PROFILE-GRAMMAR`, `SPEC-PROFILE-GRAMMAR`.
 
-### 7.3 Successor admission
+> **Equation/contract rows:** `D10.2-EC-PARENT-L-PROFILE-GRAMMAR`, `D10.2-EC-PARENT-SPEC-PROFILE-GRAMMAR`.
 
-State that a materially distinct:
+> **Associated accepted claims:** `D10-CL-N-009`; lifecycle binding `D10-CL-N-005`; future-exhaustiveness boundary `D10-CL-C-012`.
 
-* constitutive law;
-* retained writer;
-* current closure;
-* persistent-carrier law;
-* geometry map;
-* temporal realization;
-* composition gain;
-* normalization;
-* lifecycle or event law
+### 7.2 Profile-local contract
 
-requires a new complete-profile identity and reopens the earliest accepted contract it changes.
+A shorthand such as
 
-### Required source objects
+$$
+p
+=
+(a,r,\Theta_p)
+$$
 
-* `SPEC-FUTURE-ADMISSION`
+may be used only if $\Theta_p$ denotes the entire identity-bearing contract rather than an editable bag of numerical parameters. A complete profile must declare the following surfaces.
 
----
+| Contract group | Required contents |
+|---|---|
+| Identity | constitutive family, realization family, profile ID, predecessor/provenance |
+| State authority | resource state, authoritative nonresource state, realization history, reset state |
+| Derived surfaces | differential backend, selectors, Hodge objects, Read-Back surfaces, geometry |
+| Current | $J_0$ definition, Read-Back map, coupling gains, authoritative closure, current space |
+| Structural geometry | $K_4$ source, assembly, adapter, geometry profile, mobility factorization, consumer |
+| Timing | exact stage order, pre-read context, solver substages, post-continuity refresh, writer order |
+| Numerical/type contract | units, gauge, normalization, parameter domain, positivity/coercivity bounds |
+| Solver | equation/root problem, branch rule, tolerances if normative, singular and multiple-root disposition |
+| History | formation, retention, release, reconfiguration, capacity, ZOH or other writer where present |
+| Lifecycle | snapshot, reset, migration, event transport/reconstruction, receipts, serializer identity |
+| Compatibility | disabled transition, state, observable, and lifecycle reductions |
+| Evidence ceiling | supported claims, conditional claims, open questions, negative relabels, verification obligations |
 
-### 7.4 Candidate B
+Normalization, units, gauge, domain, solver, and composition law are not implementation decoration. They are part of profile identity whenever they change the mathematical map, admitted state, branch, or comparison class.
 
-Candidate B appears only as a reserved, nonexecutable successor slot.
+Likewise, the composition coefficients of CI+PC are identity-bearing. The current accepted gain-two profile cannot be changed to another immediate/retained weighting while retaining the same profile ID. A materially different composition requires a successor.
 
-State:
+The profile contract also preserves candidate neutrality. A and C satisfy the same common evidentiary burden, but do not need identical state or equations. CI, OS, RG2b, PC, and CI+PC likewise satisfy common completeness requirements while retaining distinct timing and history semantics.
 
-* B is not rejected;
-* B currently lacks a source-backed formation, retention, release, capacity, and lifecycle writer;
-* PC is not B and cannot be relabeled as B.
+> **Primary source objects:** `SPEC-NORMALIZATION-UNITS-GAUGE-DOMAIN-SOLVER`, `SPEC-COMPOSITION-PROFILE-IDENTITY`.
 
-### Required source objects
+> **Equation/contract rows:** corresponding D10.2 parent rows.
 
-* `SPEC-B-SLOT`
+> **Associated accepted claim:** `D10-CL-N-008`.
 
-### Boundary
+### 7.3 Successor admission and earliest-contract reopening
 
-The paper must not provide a speculative B equation or fill the missing writer.
+A materially distinct successor may not enter by silently modifying an admitted profile. The accepted admission rule requires:
+
+1. explicit provenance or a new derivation;
+2. a new complete profile identity;
+3. identification of the earliest accepted contract whose semantics change;
+4. reopening of every downstream claim or artifact reached through that contract;
+5. preservation or explicit transformation of negative and conditional boundaries;
+6. renewed substrate-provenance classification where the new profile could alter the GRC-v4/GRC9V4 factorization.
+
+The earliest contract is determined by the substance of the change, not by where it is easiest to patch a document. A successor must reopen the earliest affected axis among:
+
+```text
+authority
+staging
+state
+geometry
+accounting
+lifecycle
+```
+
+Examples include:
+
+- a curvature-conditioned Candidate A law reopening the Candidate A constitutive functional and profile identity;
+- an independent Candidate C sector state reopening state authority rather than merely the selector formula;
+- a new persistent carrier law reopening realization-history authority and lifecycle;
+- a different CI+PC gain reopening composition identity;
+- an $h_4\to M_4$ constitutive map reopening geometry/mobility authority;
+- a new topology-history transport reopening lifecycle and event accounting;
+- a singular-current continuation reopening domain, solver, branch, and failure semantics.
+
+The claim topology does not prescribe a fixed D11, D12, or later schedule. Conditional and open claims activate only when their stronger proposition or successor direction is attempted. Verification obligations gate only the claims they name; they are not a mandatory linear backlog.
+
+For the proposal process, this means that a new investigation item should arise from an exact paper-exposed boundary, not from the mere existence of another mathematically possible profile. The content draft may reorganize accepted results, but may not fill the boundary itself.
+
+> **Primary source object:** `SPEC-FUTURE-ADMISSION`.
+
+> **Equation/contract row:** `D10.2-EC-PARENT-SPEC-FUTURE-ADMISSION`.
+
+> **Current promotion status:** The accepted D10.2 audit records the bounded promotion for the current D10 initial population under the non-node provenance label `D10_2_CL_N_001`. Every materially distinct future profile reopens provenance and the earliest affected contract.
+
+### 7.4 Candidate B remains a reserved extension slot
+
+Candidate B is routed, not rejected. It remains a named successor possibility for an independent derived carrier, but no executable B profile is currently admitted.
+
+B lacks a source-backed complete writer that fixes:
+
+- the authoritative carrier type and state;
+- formation inputs and attribution;
+- post-input retention;
+- native release and reconfiguration;
+- bounded capacity and normalization;
+- Read-Back typing;
+- geometry and mobility relations;
+- complete-step staging;
+- reset, migration, event, and serialization behavior.
+
+Without that package, B cannot be made executable by assigning it a placeholder array or borrowing another profile’s writer.
+
+The persistent carrier realization PC is not Candidate B. PC supplies a particular scalar-ZOH, one-$\tau_{\mathrm{PC}}$ structural-history law that composes with Candidate A or Candidate C. Relabeling PC as B would collapse the constitutive axis into the realization axis and erase the exact state and writer question that keeps B open.
+
+Similarly, neither A nor C may be renamed B because one of their derived surfaces resembles a carrier. A has authoritative retained mobility; C has a sector derived from authoritative $C$. B would require its own source-backed ontology and transition.
+
+> **Primary source object:** `SPEC-B-SLOT`.
+
+> **Equation/contract row:** `D10.2-EC-PARENT-SPEC-B-SLOT`.
+
+> **Claim relations:** open `D10-CL-U-001`; negative boundary `D10-CL-X-005` blocks PC-as-B relabeling.
+
+### 7.5 Claim ceilings and verification remain meta-contracts
+
+Every complete profile carries a claim ceiling, but the claim registry is not part of the physical causal state. It records what the investigation supports, what stronger statements remain conditional, what questions remain open, and which relabels are currently false.
+
+The profile-local claim contract prevents several common shifts:
+
+- an optional admitted profile becoming a preferred profile without matched evidence;
+- a conditional result becoming normative because the equation is present;
+- an unexecuted verification obligation becoming unresolved constitutive mathematics;
+- a negative boundary disappearing when a successor is discussed;
+- a bounded reference profile becoming a universal theorem;
+- a design-level transition becoming an implementation claim;
+- a current-population roster becoming a future-exhaustive taxonomy.
+
+`SPEC-VERIFICATION-REGISTRY`, already extracted in §2.5, remains active here. Runtime, numerical, and implementation obligations are separate from the scientific claim topology. Their separation works in both directions:
+
+- lack of runtime verification does not automatically reopen an accepted design equation;
+- acceptance of a design equation does not satisfy runtime, stability, attribution, or serializer conformance.
+
+The claim topology is therefore an evolving scientific dependency graph rather than a checklist attached to the runtime. A new claim transforms named edges and debts through evidence; it does not silently alter the substrate state or schedule every open possibility for execution.
+
+> **Primary source objects:** `SPEC-CLAIM-CEILINGS`, `SPEC-VERIFICATION-REGISTRY`.
+
+> **Equation/contract rows:** corresponding D10.2 parent rows.
+
+> **Control boundary:** claim governance is not runtime causal state, and verification obligations gate named claims rather than a mandatory successor sequence.
+
+### 7.6 Complete-profile grammar claim ceiling
+
+Section 7 establishes:
+
+- exactly one admitted constitutive family and one admitted realization per executable state;
+- ten complete current profile identities;
+- identity binding for current state, reset state, snapshots, migration receipts, and topology-event receipts;
+- profile-local declaration of authority, equations, stages, units, gauge, normalization, domain, solver, history, lifecycle, and compatibility;
+- successor admission through new identity, provenance, and earliest-contract reopening;
+- Candidate B as routed, unrejected, and nonexecutable;
+- claim ceilings and verification registries as specification-meta contracts.
+
+It does not establish:
+
+- that the ten profiles exhaust GRC-v4;
+- that every implementation must support all ten profiles;
+- that one candidate or realization is preferred;
+- that the current constants or normalizations are universal;
+- that PC is the universal persistent-carrier law;
+- that Candidate B is impossible or already supplied;
+- a fixed successor schedule;
+- implementation conformance.
+
+No successor investigation is required by the profile grammar itself. The grammar instead defines how a later paper-exposed boundary becomes a lawful successor investigation rather than an untracked amendment.
 
 ---
 
