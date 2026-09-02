@@ -99,7 +99,7 @@ No successor investigation is predeclared. D11 exists only if this process expos
 
 **Current controlling closure:** Accepted D10.2, decision digest `28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c`.
 
-The tranche reorganizes accepted results for exposition; it does not derive a second GRC-v4, modify an accepted equation, promote an unresolved claim, or authorize implementation. Claim associations in the crosswalk preserve the explorer disposition `indeterminate_requires_review`; they are provenance references rather than reconstructed support proof.
+The tranche reorganizes accepted results for exposition; it does not derive a second GRC-v4, modify an accepted equation, promote an unresolved claim, or authorize implementation. Claim associations in the crosswalk preserve the explorer disposition `indeterminate_requires_review`; they are provenance references rather than reconstructed support proof. A source-local provenance identifier is not assumed to be a queryable claim node or graph edge merely because an accepted audit record names it.
 
 ### Coverage and status corrections applied in this tranche
 
@@ -114,7 +114,7 @@ A literal parent-object coverage pass over the extraction skeleton found four D1
 
 When these insertions are merged into the controlling skeleton, all 67 D10.2 parent normative objects are present by identifier.
 
-One claim-status correction is also made explicit. The D10 preclosure condition `D10-CL-C-011` is not carried forward as an unresolved generic-substrate question. Accepted D10.2 records that it is succeeded by `D10_2_CL_N_001`, which earns, for the current D10 initial population, the bounded factorization
+One claim-status correction is also made explicit. The D10 preclosure condition `D10-CL-C-011` is not carried forward as an unresolved generic-substrate question. The accepted D10.2 audit records, at `/claim_topology_effect/D10_conditional_claim_D10_CL_C_011`, that it is `succeeded_by_accepted_D10_2_CL_N_001`; the adjacent `/claim_topology_effect/D10_2_CL_N_001` value records the bounded factorization earned for the current D10 initial population. `D10_2_CL_N_001` is a source-local provenance label in that audit record, not a queryable `current_claim`, `normative_object`, or `equation_contract` node and not a graph-resolved successor edge. The accepted record-level status update earns the bounded factorization
 
 $$
 \mathrm{GRCV4}
@@ -132,9 +132,9 @@ The table below is a drafting-control surface. It does not replace the D10.2 reg
 
 | Proposal location | Parent object(s) | Equation/contract row(s) | Current claim relation |
 |---|---|---|---|
-| §2.1.1, §3.1, §3.3 | `CORE-C-AUTHORITY` | `D10.2-EC-PARENT-CORE-C-AUTHORITY` | `D10-CL-N-001`, `D10-CL-N-002`; bounded generic promotion by `D10_2_CL_N_001` |
+| §2.1.1, §3.1, §3.3 | `CORE-C-AUTHORITY` | `D10.2-EC-PARENT-CORE-C-AUTHORITY` | `D10-CL-N-001`, `D10-CL-N-002`; bounded generic promotion recorded by the non-node D10.2 provenance label `D10_2_CL_N_001` |
 | §2.1.2, §3.4 | `BASE-GRC-DIFFERENTIAL` | `D10.2-EC-PARENT-BASE-GRC-DIFFERENTIAL` | `D10-CL-N-001`; graph-generic promotion accepted |
-| §4.1.1 | `BASE-SCALAR-MOBILITY` | `D10.2-EC-PARENT-BASE-SCALAR-MOBILITY` | `D10-CL-N-001`; predecessor `D10-CL-C-011` succeeded by `D10_2_CL_N_001` |
+| §4.1.1 | `BASE-SCALAR-MOBILITY` | `D10.2-EC-PARENT-BASE-SCALAR-MOBILITY` | `D10-CL-N-001`; D10.2 `/claim_topology_effect` records the predecessor `D10-CL-C-011` status update under non-node provenance label `D10_2_CL_N_001` |
 | §4.1.2 | `BASE-POTENTIAL` | `D10.2-EC-PARENT-BASE-POTENTIAL` | same |
 | §4.1.3 | `BASE-POTENTIAL-FLOW` | `D10.2-EC-PARENT-BASE-POTENTIAL-FLOW` | same |
 | §3.1 (graph-generic geometry typing) | `CORE-K-STRUCTURAL-ROLE`, `GEOM-K4`, `GEOM-H1-FORM`, `GEOM-GJ`, `GEOM-M4`, `GEOM-COVARIANCE` | corresponding parent rows; detailed equations deferred to the structural-geometry section | `D10-CL-N-006`; reference-Hodge uniqueness remains bounded by `D10-CL-U-005` |
@@ -162,7 +162,7 @@ The table below is a drafting-control surface. It does not replace the D10.2 reg
 | General nonidentity Hodge conditioning and executable covariance | Routed to implementation-level verification under `D10-CL-C-006` | No | Only if proposal prose attempts an executed numerical/runtime claim |
 | Nontrivial ordinary-step budget projection | Not part of current bounded profiles | No | Only if a new profile requires such a projection as part of its accepted transition |
 | Generic lossless event-history preservation | Negatively bounded without sufficient lineage | No | Only if a later lifecycle section requires lossless continuation for an event lacking the required typed lineage |
-| Generic-substrate promotion | Closed bounded by accepted D10.2 successor `D10_2_CL_N_001` | No | Reopen only for a materially distinct future profile outside the audited population |
+| Generic-substrate promotion | Closed bounded by the accepted D10.2 audit's `claim_topology_effect`; `D10_2_CL_N_001` is its non-node provenance label | No | Reopen only for a materially distinct future profile outside the audited population |
 | Future-exhaustive profile taxonomy | Not established; `D10-CL-C-012` remains the ceiling | No | Only if the proposal attempts to claim that the ten current profiles exhaust all lawful GRC-v4 constructions |
 
 **Current disposition:** Sections 2–4 are fillable from the accepted investigation. They expose no new scientific contradiction and require no successor investigation.
@@ -439,7 +439,7 @@ $$
 
 The common contract fixes the resource ledger, type boundaries, lifecycle grammar, and conditions under which a profile is admissible. A complete profile supplies the constitutive and realization-specific maps. The common layer is therefore neither an empty interface nor a universal candidate equation.
 
-> **Control lineage:** `D10-CL-N-001` through `D10-CL-N-009`; accepted successor `D10_2_CL_N_001`; D10.2 parent and equation/contract registry.
+> **Control lineage:** `D10-CL-N-001` through `D10-CL-N-009`; accepted D10.2 `claim_topology_effect` status update recorded under the non-node provenance label `D10_2_CL_N_001`; D10.2 parent and equation/contract registry.
 >
 > **Provenance note:** Claim and parent-object associations below retain the explorer disposition `indeterminate_requires_review`. They are crosswalk references, not reconstructed proof or an independent change in claim status.
 
@@ -610,7 +610,7 @@ $$
 \mathrm{GRC9V3}.
 $$
 
-This is the current status after D10.2. The earlier conditional substrate-provenance question in `D10-CL-C-011` has been succeeded by accepted `D10_2_CL_N_001` and must not be presented as still unresolved.
+This is the current status after D10.2. The accepted D10.2 audit's `claim_topology_effect` records the earlier conditional substrate-provenance question in `D10-CL-C-011` as succeeded under the provenance label `D10_2_CL_N_001`; the generic-substrate question must therefore not be presented as still unresolved for the current population. The label is not itself a queryable claim node, and the explorer correctly continues to expose the original D10 node with its historical `conditional` classification.
 
 ### 2.5 Scientific claims and verification obligations
 
@@ -635,9 +635,9 @@ Second, design-level acceptance cannot be used as evidence that the routed runti
 
 D10 organizes current propositions into normative, optional, conditional, open, and negative claims. Conditional and open claims are not an automatic sequence of future gates. A successor investigation is justified only when the content needed for the intended GRC-v4 account reaches one of those boundaries and cannot continue without asserting the stronger proposition.
 
-The accepted D10.2 promotion result is a specific exception to the older conditional status of the substrate-identity question: `D10-CL-C-011` has a named accepted successor. The current-population ceiling in `D10-CL-C-012` is not similarly removed and must remain visible.
+The accepted D10.2 promotion result is a specific record-level successor disposition for the older conditional substrate-identity question: the D10.2 audit names `D10_2_CL_N_001` in `claim_topology_effect`. It does not remove or relabel the historical `D10-CL-C-011` graph node. The current-population ceiling in `D10-CL-C-012` is not similarly changed and must remain visible.
 
-The exploratory side tool may verify that these status relations and lineage edges have been preserved. It may not decide that an unexecuted verification obligation has passed, fabricate a rerun result, or generate a new claim.
+The exploratory side tool can verify the `D10-CL-C-011` node, the accepted D10.2 audit-record identity, and their surrounding reconstructed provenance. It cannot query `D10_2_CL_N_001` as a claim or prove a graph successor edge, because neither was admitted as a graph node or edge. Verifying this particular status update therefore requires reading the two exact D10.2 `/claim_topology_effect` fields above. This bounded raw-record lookup is source-directed verification, not permission to infer missing graph structure. The tool may not decide that an unexecuted verification obligation has passed, fabricate a rerun result, or generate a new claim.
 
 #### Section 2 boundary disposition
 
@@ -986,7 +986,7 @@ The three promoted baseline objects have the following exact boundaries:
 
 > **Equation/contract rows:** `D10.2-EC-PARENT-BASE-SCALAR-MOBILITY`, `D10.2-EC-PARENT-BASE-POTENTIAL`, `D10.2-EC-PARENT-BASE-POTENTIAL-FLOW`.
 
-> **Associated accepted claims:** `D10-CL-N-001`; substrate-promotion predecessor `D10-CL-C-011`, succeeded by `D10_2_CL_N_001`.
+> **Associated accepted claims:** `D10-CL-N-001`; substrate-promotion predecessor `D10-CL-C-011`, whose accepted D10.2 record-level status update is carried by the non-node provenance label `D10_2_CL_N_001`.
 
 ### 4.2 Authoritative current and continuity
 
@@ -2973,6 +2973,7 @@ This table identifies known places where ordinary scholarly phrasing could accid
 | “The reference Hodge normalization is uniquely determined.”                | `D10-CL-U-005`, `C-010`                   | Present it as the accepted reference profile.                                       |
 | “General covariance and SPD solvers are implemented.”                      | `D10-CL-C-006`                            | Define the contract; state implementation verification is pending.                  |
 | “GRC9V4 proves nine ports are necessary.”                                  | GRC9 specialization claim ceiling         | State nine-port mechanics as a substantive specialization, not a necessity theorem. |
+| “`D10_2_CL_N_001` is a queryable accepted claim or graph successor node.”   | D10.2 provenance/explorer boundary         | Treat it only as a source-local label under `/claim_topology_effect`; retain `D10-CL-C-011` as the historical conditional node and verify the status update from the exact audit-record fields. |
 
 ## Initial disposition
 
