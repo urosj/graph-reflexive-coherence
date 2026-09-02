@@ -237,6 +237,114 @@ The table below is a drafting-control surface. It does not replace the D10.2 reg
 
 ---
 
+### Sections 8–10 tranche status
+
+**Status:** Working synthesis from the accepted GRC-v4/GRC9V4 constitutive-design investigation
+
+**Intended use:** Integrated controlled content in `drafts/GRCV4-proposal.md`
+
+**Scientific authority:** None independent of the accepted investigation
+
+**Current controlling closure:** accepted D10.2, decision digest `28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c`
+
+This tranche fills the third drafting tranche identified in the extraction skeleton: Sections 8–10. It begins from the common causal loop, structural geometry, and complete-profile grammar assembled in Sections 5–7. It then gives the accepted candidate-local mathematics for A and C and the accepted realization-local mathematics for CI, OS, RG2b, PC, and CI+PC.
+
+The purpose is not to derive a second GRC-v4. Every equation below is an exposition of an accepted investigation result. Candidate equations remain candidate-specific; realization equations remain realization-specific; accepted local regularity is not enlarged into global existence or stability; and unresolved runtime, attribution, dimensionalization, or preference claims remain outside the content.
+
+The immediate controlling records are:
+
+- `../decisions/D4v2CandidateGeometryAndCarrierCompletion.md` and `.json`;
+- `../decisions/D5DirectionalReadBack.md` and `.json`;
+- `../decisions/D5v2DirectionalReadBackCompletion.md` and `.json`;
+- `../decisions/D6TotalCurrentClosure.md` and `.json`;
+- `../decisions/D6v2UpdatedTotalCurrentClosure.md` and `.json`;
+- `../decisions/D7ClosedWriteReadLoop.md` and `.json`;
+- `../decisions/D7v2CandidateTransitionComparativeAdmission.md` and `.json`;
+- `../decisions/D7GGlobalMetricAndStructuralCultivationClosure.md` and `.json`;
+- `../decisions/D7Gv2GeometryParametricClosureAndFinalization.md` and `.json`;
+- `../decisions/D7GPostv2GraphHodgeTypeCorrection.md` and `.json`;
+- `../decisions/GeometryTemporalRealizationSuccessorCoupledImplicit.md` and `.json`;
+- `../decisions/D8BCoupledArchitectureLocalContinuationAnalysis.md` and `.json`;
+- `../decisions/GeometryTemporalRealizationSuccessorOperatorSplit.md` and `.json`;
+- `../decisions/GeometryTemporalRealizationSuccessorReconstructedGeometry.md` and `.json`;
+- `../decisions/GeometryTemporalRealizationSuccessorPersistentCarrier.md` and `.json`;
+- `../decisions/GeometryTemporalRealizationHybridCoupledPersistentCarrier.md` and `.json`;
+- `../decisions/GeometryTemporalRealizationComparativeSynthesis.md` and `.json`;
+- `../decisions/D9CompleteStepAndLifecycleContract.md` and the D9 profile/state/lifecycle registry;
+- `../decisions/D10DesignSynthesisAndSpecWritingDecision.md` and claim topology;
+- `../decisions/D10_2FullSubstrateProvenanceAndPromotionAudit.md` and `.json`.
+
+Earlier theory, substrate, specification, and runtime sources enter only through the lineage accepted by these records. The forensic API audit reconstructed 16 cited or load-bearing claims, queried 21 parent objects, and traced 51 equation/contract rows against the exact admitted source and graph digests. Every contract association retains `indeterminate_requires_review`; the tool cannot provide a missing equation, alter an accepted profile, or resolve a paper boundary.
+
+### Coverage and status controls applied in this tranche
+
+Sections 8–10 are the first tranche in which a prose reorganization can easily create a second mathematical line. The following controls are therefore explicit.
+
+| Pressure point | Treatment in Sections 8–10 |
+|---|---|
+| Candidate A’s fixed-geometry recurrence and its geometry-consuming realizations could be merged into an invented universal transition | §8 states the accepted A constitutive core; §10 states the realization-specific geometry consumption and root or stage order |
+| Candidate A’s retained mobility could be relabeled as structural geometry | $W_A$ remains the sole A mobility authority; $K_4$, $H_{1,\mathrm{form}}$, $G_J$, and $h_4$ remain separately typed |
+| Candidate C’s selected sector could be made into an independent hidden state | §9 keeps $C$ as the sole independently written candidate coordinate and rederives all selector, Hodge, resolvent, and read surfaces |
+| Historical D5-v2 notation could apply $\chi_C$ twice | §9 uses the final accepted ungated $\widehat R_{C,M}$ and applies $\chi_C$ exactly once to the causal read |
+| Exact invertibility in retained coordinates could be misstated as an unchanged physical singular-value margin | §9 transfers exact invertibility by similarity and keeps physical conditioning dependent on the identification condition number |
+| CI local branch uniqueness could be restated as global uniqueness or stability | §10.2 admits only the local branch connected to the accepted $\kappa_H=0$ reference |
+| OS could be silently iterated until it becomes CI | §10.3 freezes exactly one predictor, one geometry update, one corrector, and one atomic commit |
+| RG2b could be treated as an arbitrary reconstruction or a differentiable continuation manifold | §10.4 binds it to the frozen family-local extension and claims only the accepted bounded $C^0$ Lipschitz section |
+| PC could be relabeled as Candidate B or as a universal memory law | §10.5 keeps PC as one realization-specific scalar-ZOH $K_4$ carrier crossed with A or C |
+| CI+PC could double-count gates or use different structural sources in the immediate and retained paths | §10.6 audits $\chi$, $\zeta$, $\rho_{\mathrm{inst}}$, $\kappa_H$, and $a_{\mathrm{PC}}$ once each and uses one root source for both paths |
+| Admitted alternatives could become ranked alternatives | §10.7 compares causal architecture only and preserves the accepted no-ranking disposition |
+
+The profile labels used below are those accepted by D9 and D10. No section claims that the two candidate families or five realization families are future-exhaustive. No equation in this tranche changes the complete-profile identity rules established in §7.
+
+### Sections 8–10 provenance crosswalk
+
+The crosswalk below is a drafting-control surface. The accepted D10.2 registry and predecessor records remain authoritative.
+
+| Proposal location | Parent object(s) | Equation/contract row(s) | Current claim relation |
+|---|---|---|---|
+| §8.1 | `A-STATE-REDUCTION` | `D10.2-EC-PARENT-A-STATE-REDUCTION` | A is an optional admitted family under `D10-CL-O-001`; not inherited core |
+| §8.2 | `BASE-SCALAR-MOBILITY`, `GEOM-M4`, `REAL-CI`, `REAL-OS` | corresponding parent rows plus `D10.2-EC-CI-A-ROOT`, `D10.2-EC-OS-A-CORRECTOR` | inherited scalar transport and candidate-owned mobility remain distinct from realization-specific geometry consumption under `D10-CL-N-001`, `D10-CL-N-006` |
+| §8.3 | `A-GW-FUNCTIONAL` | `D10.2-EC-PARENT-A-GW-FUNCTIONAL` | current curvature-disabled profile only; curvature successor reopens provenance |
+| §8.4 | `A-WHAT` | `D10.2-EC-PARENT-A-WHAT` | pre-read stage is load-bearing and realization-specific |
+| §8.5 | `A-DIRECTIONAL-CONTRAST` | `D10.2-EC-PARENT-A-DIRECTIONAL-CONTRAST` | derived relation, not state or writer |
+| §8.6 | `A-READ-CLOSURE` | `D10.2-EC-PARENT-A-READ-CLOSURE` | design-level read sensitivity accepted; physical nonabsorbability remains `D10-CL-C-007` |
+| §§8.7, 9.7 | `GEOM-ASSEMBLY`, `REAL-CI` | `D10.2-EC-PARENT-GEOM-ASSEMBLY`, `D10.2-EC-GEOM-K4-ASSEMBLY`, candidate CI root rows | typed candidate structural sources specialize the common assembly; they do not merge current, geometry, and mobility authority |
+| §§8.8–8.9 | `A-WRITER-TARGET`, `A-RETAINED-WRITER` | corresponding D10.2 parent rows | complete A writer admitted; runtime formation/retention evidence remains open |
+| §9.1, §9.8 | `C-AUTHORITY` | `D10.2-EC-PARENT-C-AUTHORITY`, `D10.2-EC-C-AUTHORITY` | $C$-only authority is normative under `D10-CL-N-002` |
+| §9.2 | `C-SECTOR`, `C-SELECTOR` | parent rows and `D10.2-EC-C-SECTOR` | Candidate C admitted under `D10-CL-O-002`; rank/boundary contract remains explicit |
+| §§9.3–9.4 | `C-HODGE-MAPS` | `D10.2-EC-PARENT-C-HODGE-MAPS`, `D10.2-EC-C-HODGE-LAPLACIAN` | positive typed Hodge package; matrix shape is not typing |
+| §§9.5–9.6 | `C-READ-BACK` | `D10.2-EC-PARENT-C-READ-BACK`, `D10.2-EC-C-RESOLVENT`, `D10.2-EC-C-READBACK` | ungated intrinsic response; $\chi_C$ exactly once; general physical conditioning remains conditional under `D10-CL-C-006` |
+| §10.2 | `REAL-CI` | parent row plus `D10.2-EC-CI-A-ROOT`, `D10.2-EC-CI-A-CONTRACTION`, `D10.2-EC-CI-C-ROOT`, `D10.2-EC-CI-C-CONTRACTION`, `D10.2-EC-CI-C-ROOT-SELECTION` | optional realization `D10-CL-O-003`; local branch, not stability |
+| §10.3 | `REAL-OS` | parent row plus `D10.2-EC-OS-STAGE-ORDER`, `D10.2-EC-OS-A-CORRECTOR`, `D10.2-EC-OS-C-CORRECTOR`, `D10.2-EC-OS-SPLIT-RESIDUAL`, `D10.2-EC-OS-NO-SECOND-ITERATION` | optional realization `D10-CL-O-004`; one-pass identity is frozen |
+| §10.4 | `REAL-RG2B` | parent row plus `D10.2-EC-RG-INVARIANCE`, `D10.2-EC-RG-LIPSCHITZ-CONTRACTION`, `D10.2-EC-RG-DETERMINISM`, `D10.2-EC-RG-CLAIM-CEILING` | optional realization `D10-CL-O-005`; $C^1$ analysis remains conditional under `D10-CL-C-009` |
+| §10.5 | `REAL-PC` | parent row plus `D10.2-EC-PC-WRITER-COEFFICIENT`, `D10.2-EC-PC-ZOH-WRITER`, `D10.2-EC-PC-RELEASE`, `D10.2-EC-PC-MATCHED-FORCING` | optional realization `D10-CL-O-006`; `D10-CL-X-005` blocks PC-as-B |
+| §10.6 | `REAL-CI-PC`, `SPEC-COMPOSITION-PROFILE-IDENTITY` | corresponding parent rows plus `D10.2-EC-CI-PC-A-COMPOSITION`, `D10.2-EC-CI-PC-A-ROOT`, `D10.2-EC-CI-PC-C-COMPOSITION`, `D10.2-EC-CI-PC-C-CONTRACTION`, `D10.2-EC-CI-PC-C-ROOT-SELECTION`, `D10.2-EC-CI-PC-ABLATIONS` | optional realization `D10-CL-O-007`; gain-two composition is profile identity under `D10-CL-N-008` |
+| §§10.7–10.8 | all five realization parents | comparative synthesis and D10 profile grammar | no ranking; `D10-CL-C-012` blocks a future-exhaustive roster claim |
+
+
+### Paper-pressure register after Sections 8–10
+
+| Boundary | Current disposition | Does it block this tranche? | Successor trigger condition |
+|---|---|---|---|
+| Candidate A as a universal or inherited RC law | Explicitly blocked; A is one revision-specific admitted family | No | Only if the proposal must claim A is core, unique, or necessary |
+| Candidate A physical units and cross-profile magnitude | Current law is normalized and nondimensional | No | If a central comparison requires physical dimensionalization or matched capacity |
+| A explicit-read nonabsorbability | Constitutive sensitivity shown; physical nonabsorbability open | No | If the proposal must prove no admissible baseline reparameterization can reproduce the effect |
+| Candidate C as independent retained state | Rejected; $T_C$ and Hodge surfaces remain derived from $C$ | No | If later content requires independently serializing or writing $T_C$ |
+| C selected-sector recurrence as demonstrated memory | Formal resource-mediated recurrence accepted; runtime post-input evidence absent | No | If the proposal must claim demonstrated retained memory rather than an admitted constitutive mechanism |
+| $\chi_C$ placement | Closed by final ungated-resolvent convention | No | Any double-gated formula is a correction to the draft, not a new scientific option |
+| C physical inverse margin | Exact invertibility transfers by similarity; norm margin depends on identification conditioning | No | If the proposal requires an unconditional physical norm theorem |
+| CI global root or stability | Only local regular branch accepted | No | If the paper’s central result requires global existence, basin size, or stability |
+| OS as an approximation converging to CI | One-pass residual and local conditional bounds accepted; no iteration theorem | No | If OS must be justified by global or $\Delta t$ convergence |
+| RG2b differentiability and continuation spectrum | Only deterministic bounded Lipschitz section accepted | No | If Section 13 requires a classical derivative of $\Gamma_a$ or an RG spectrum |
+| PC endpoint hysteresis | Carrier persistence and matched-forcing contraction accepted; endpoint effect open | No | If the proposal must establish nonzero committed resource or observable hysteresis |
+| PC as Candidate B or universal memory | Explicitly blocked | No | If B is required in the current executable population |
+| CI+PC amplitude neutrality | False for the accepted unit-plus-unit profile; steady gain is two | No | If a matched-amplitude preference comparison is required |
+| CI+PC source identity | Same root source required for immediate and retained paths | No | A need for distinct sources would define a new hybrid profile |
+| Candidate or realization preference | No ranking accepted | No | If the proposal cannot remain symmetric and requires a design recommendation |
+| Future-exhaustive A/C or five-realization roster | Blocked by the accepted successor rule | No | If the proposal claims completeness over all future GRC-v4 profiles |
+
+**Current disposition:** Sections 8–10 are fillable from the accepted investigation without adding a candidate law, realization, root, writer, or theorem. They expose no scientific contradiction and no mandatory successor investigation. The strongest visible boundaries—A/C physical nonabsorbability, runtime endpoint effects, CI globality, RG2b differentiability, PC endpoint hysteresis, and profile ranking—remain exact claim ceilings rather than omissions in the substrate account.
+
 # Paper Skeleton
 
 ## Abstract
@@ -2277,33 +2385,132 @@ No successor investigation is required by the profile grammar itself. The gramma
 
 ## 8. Constitutive Family A: Retained Edge Mobility
 
-### 8.1 Scientific role
+Candidate A is the admitted revision-specific family in which positive edge mobility is an authoritative nonresource state, is read relative to a current instantaneous reference, modifies the authoritative physical current, and is written across beats by a positive multiplicative law. The family supplies a complete candidate-local recurrence. Geometry-temporal realizations determine when and how the accepted structural geometry is consumed.
 
-Present Candidate A as the admitted normalized, nondimensional, revision-specific temporalized-mobility and Read-Back family.
+A is not inherited core, is not the unique GRC-v4 completion, and is not selected over Candidate C. The accepted current profile is normalized and nondimensional. Its physical dimensionalization, explicit-channel nonabsorbability, runtime formation and release, and committed endpoint effects remain outside the present claim.
 
-It is not inherited core and is not the unique V4 completion.
+> **Provenance note:** The typed forensic audit reconstructed every cited claim, queried every cited parent through `object_dependents`, and queried every cited equation/contract row through `contract_provenance`. The contract associations retain `indeterminate_requires_review`; they are source crosswalks, not independently reconstructed proof.
 
----
+### 8.1 Authoritative state and derived surfaces
 
-### 8.2 Authoritative state
-
-Define the profile-authoritative state as:
+For an A profile without a realization-specific persistent carrier, the independent candidate coordinates are
 
 $$
-X_A=(C,W_A,\ldots),
+X_{A,k}
+=
+\bigl(C_k,W_{A,k}\bigr),
 $$
 
-where $C$ is the resource coordinate and $W_A>0$ is the authoritative retained edge-mobility state. Any realization-specific history is added only by the chosen complete profile.
+together with graph, context, complete-profile identity, reset state, charge target, and declared lifecycle parameters. The edge field satisfies
 
-### Required source objects
+$$
+W_{A,k,e}>0.
+$$
 
-* `A-STATE-REDUCTION`
+Here $C_k$ is the sole resource coordinate and $W_{A,k}$ is authoritative retained mobility. The following are derived or same-beat surfaces rather than additional candidate state:
 
----
+- graph differential summaries;
+- the A potential $\Phi_A$;
+- baseline current $J_{0,A}$;
+- instantaneous reference $\widehat W_A$;
+- directional contrast $q_A$;
+- explicit read current $j_A$;
+- authoritative total current $J_{C,A}$;
+- structural one-form $j_A^\flat$;
+- structural source $\Delta K_{4,A}$;
+- post-continuity writer target $W_{\mathrm{drv},A}$.
+
+A realization with persistent carrier state adds its own $Z_{4,A}$ coordinate through the complete-profile contract; it does not change the authority of $W_A$.
+
+A cached potential, reference mobility, current, contrast, geometry, or writer target may be serialized for exact restoration only under the declared lifecycle format. Serialization does not give it independent causal authority. Rebuilding the accepted surface from authoritative state and context must reproduce the same transition.
+
+> **Primary source object:** `A-STATE-REDUCTION`.
+
+> **Equation/contract row:** `D10.2-EC-PARENT-A-STATE-REDUCTION`.
+
+> **Associated accepted claim:** Candidate A is an optional admitted profile under `D10-CL-O-001`; it is not inherited core and cannot be relabeled as such.
+
+### 8.2 Baseline transport with A mobility authority
+
+At the accepted reference geometry, Candidate A reuses the inherited graph potential and potential-flow forms with $W_A$ as the positive scalar mobility authority:
+
+$$
+\Phi_{A,i}^{D7}
+=
+\kappa_c
+\sum_{e\sim i}
+W_{A,e}
+\bigl(C_i-C_{\operatorname{nbr}(e,i)}\bigr)
+-
+V_{\mathrm{site}}'(C_i),
+$$
+
+and, for the chosen edge orientation $e=(u,v)$,
+
+$$
+J_{0,A,e}^{D7}
+=
+-\eta W_{A,e}
+\bigl(\Phi_{A,u}^{D7}-\Phi_{A,v}^{D7}\bigr).
+$$
+
+Equivalently, on the accepted typed spaces,
+
+$$
+M_{4,A}(W_A)
+=
+\eta\,\operatorname{Diag}(W_A),
+$$
+
+$$
+J_{0,A}^{D7}
+=
+-M_{4,A}(W_A)\,d_0\Phi_A^{D7}.
+$$
+
+This baseline already depends on retained $W_A$. Disabling the explicit Read-Back gate therefore does not remove every historical effect. It removes the explicit relation-conditioned read channel while preserving the direct retained-mobility path. That separation is required for every A control and attribution claim.
+
+When a realization supplies an admitted nonreference geometry $h$, the accepted geometry consumer is reference-relative:
+
+$$
+\Delta_0(h)
+=
+H_{0,\mathrm{ref}}^{-1}
+B
+H_{1,\mathrm{form}}(h)
+B^\top,
+$$
+
+$$
+\Phi_A(C,W_A,h)
+=
+\Phi_A^{D7}(C,W_A)
++
+\kappa_{Ah}
+\bigl[
+\Delta_0(h)-\Delta_0(h_{\mathrm{ref}})
+\bigr]C,
+$$
+
+$$
+J_{0,A}(C,W_A,h)
+=
+-M_{4,A}(W_A)\,d_0\Phi_A(C,W_A,h).
+$$
+
+At $h=h_{\mathrm{ref}}$, the additional term vanishes exactly and the accepted D7 baseline is recovered. The coefficient $\kappa_{Ah}$ is profile-local, typed, and revision-specific. Its accepted enabled value and sign are profile choices, not theory-fixed constants or optimized stability parameters.
+
+This geometry consumer does not define a generic $h\mapsto W_A$ writer. $W_A$ remains the mobility owner; geometry changes the potential used by the current solve. Any direct geometry-to-mobility authority transfer would be a materially distinct successor profile.
+
+> **Primary source objects:** `BASE-SCALAR-MOBILITY`, `GEOM-M4`, `REAL-CI`, `REAL-OS`.
+
+> **Equation/contract rows:** corresponding parent rows, `D10.2-EC-CI-A-ROOT`, `D10.2-EC-OS-A-CORRECTOR`.
+
+> **Associated accepted claims:** `D10-CL-N-001`, `D10-CL-N-006`, `D10-CL-O-003`, `D10-CL-O-004`.
 
 ### 8.3 Accepted conductance functional
 
-Include the accepted curvature-disabled D7 functional exactly:
+The accepted current A profile uses the curvature-disabled conductance functional
 
 $$
 G_{W,e}(C,J)
@@ -2312,479 +2519,2199 @@ G_{W,e}(C,J)
 W_{\mathrm{floor}},
 \exp\!\left[
 -\alpha\frac{C_u+C_v}{2}
--\beta\frac{\lVert D_u-D_v\rVert^2}{2}
--\gamma\frac{J_e^2}{2}
+-\frac{\beta}{2}
+\lVert D_u(C)-D_v(C)\rVert^2
+-\frac{\gamma}{2}J_e^2
 \right]
 \right).
 $$
 
-Explain:
+$D_i(C)$ denotes the admitted deterministic graph differential summary. The GRC-v3 induced-frame backend is the present graph-generic reference; the GRC9 fixed row-basis backend remains specialization content. The functional itself contains no ordered-port or $3\times3$-chart premise.
 
-* $D_i(C)$ is supplied by the admitted graph differential backend;
-* curvature is disabled in the accepted current profile;
-* the functional is graph-generic;
-* the GRC9 row-basis backend is only one specialization.
+The current promoted profile is exactly the accepted curvature-disabled D7 law. A future curvature-conditioned law is not an editorial elaboration of this equation. It requires a new complete-profile identity, new provenance, and reopening of the earliest affected constitutive and staging contracts.
 
-### Required source objects
+$W_{\mathrm{floor}}>0$ is load-bearing. It preserves the declared positive domain and introduces a nonsmooth floor boundary. Classical derivatives used by local CI, OS, or analysis results apply only on the stated floor-inactive chart unless the accepted source gives a one-sided or tangent-cone treatment.
 
-* `A-GW-FUNCTIONAL`
+> **Primary source object:** `A-GW-FUNCTIONAL`.
 
-### Boundary
+> **Equation/contract row:** `D10.2-EC-PARENT-A-GW-FUNCTIONAL`.
 
-Any curvature-conditioned successor requires a new profile identity and reopened provenance.
+### 8.4 Pre-read instantaneous reference
 
----
-
-### 8.4 Pre-read reference
-
-Include:
+The accepted pre-read reference is
 
 $$
-\widehat W_A =
-G_W(C,J_{0,A})
+\widehat W_{A,k}
+=
+G_W\!\left(C_k,J_{0,A,k}\right).
 $$
 
-at the accepted fresh pre-read stage.
+Its stage is load-bearing. $\widehat W_{A,k}$ is constructed after the current profile has produced the fresh baseline $J_{0,A,k}$ and before $q_{A,k}$ is evaluated. It is not:
 
-### Required source objects
+- an independently retained state;
+- the incoming value of $W_A$;
+- the post-continuity write target;
+- a next-beat prediction;
+- a stale prior-current cache.
 
-* `A-WHAT`
+For fixed-reference or PC profiles, this equation is evaluated at the geometry supplied by the complete profile. In CI, $\widehat W_A(h)$ is recomputed inside every joint-root residual evaluation after $J_{0,A}(h)$. In OS, it is recomputed from the corrected geometry and corrected baseline rather than reused from the predictor. These realization-specific stages are stated in §10.
 
----
+> **Primary source object:** `A-WHAT`.
+
+> **Equation/contract row:** `D10.2-EC-PARENT-A-WHAT`.
 
 ### 8.5 Directional contrast
 
-Include:
+The retained relation is
 
 $$
-q_A =
-\frac{W_A-\widehat W_A}
-{W_A+\widehat W_A}.
+q_{A,e}
+=
+\frac{
+W_{A,e}-\widehat W_{A,e}
+}{
+W_{A,e}+\widehat W_{A,e}
+}.
 $$
 
-Explain why positivity supplies a regular denominator on the admitted domain.
+Positivity of $W_A$ and $\widehat W_A$ gives a nonzero denominator on the accepted domain. $q_A$ is a signed relation between an authoritative retained mobility and a derived instantaneous reference. It is not itself a retained coordinate, a current, or a writer.
 
-### Required source objects
+A change in $q_A$ has two possible causes:
 
-* `A-DIRECTIONAL-CONTRAST`
+```text
+authoritative-state motion:
+  W_A changes under its accepted writer while the comparison is controlled
 
----
+reference-surface motion:
+  W_hat_A changes because C, geometry, or baseline current changes
+```
 
-### 8.6 Read-Back and current closure
+Only the first route directly supports an A carrier-write or release attribution. Relation neutralization by a moving reference is not automatically a retained-state write.
 
-Include the accepted equations:
+> **Primary source object:** `A-DIRECTIONAL-CONTRAST`.
+
+> **Equation/contract row:** `D10.2-EC-PARENT-A-DIRECTIONAL-CONTRAST`.
+
+### 8.6 Read-Back and total-current closure
+
+In physical flux coordinates, the accepted A read is elementwise:
 
 $$
-j_A =
-\chi_A q_A J_{C,A},
+j_{A,\mathrm{flux}}
+=
+\chi_A\operatorname{Diag}(q_A)J_{C,A},
 $$
+
+or, edge by edge,
+
+$$
+j_{A,e}
+=
+\chi_A q_{A,e}J_{C,A,e}.
+$$
+
+The authoritative current satisfies
 
 $$
 J_{C,A}
 =
-J_{0,A}+\zeta_A j_A.
+J_{0,A}
++
+\zeta_A j_{A,\mathrm{flux}}.
 $$
 
-On the regular algebraic domain, include:
+On the fixed-geometry algebraic A profile this gives
 
 $$
-J_{C,A} =
-\frac{J_{0,A}}
-{1-\zeta_A\chi_A q_A}.
+J_{C,A,e}
+=
+\frac{
+J_{0,A,e}
+}{
+1-\zeta_A\chi_A q_{A,e}
+}.
 $$
 
-Preserve the exact candidate- and realization-specific root/domain conditions from D6, D7, CI, and CI+PC.
-
-### Required source objects
-
-* `A-READ-CLOSURE`
-
-### Boundary
-
-Do not infer physical nonabsorbability or committed endpoint effect from the existence of this algebraic closure.
-
----
-
-### 8.7 Post-continuity writer target
-
-After accepted continuity and fresh post-state differential reconstruction, include:
+The accepted sufficient uniform region is
 
 $$
-W_{\mathrm{drv},A} =
-G_W(C_{\mathrm{next}},J_{C,A}).
+0\leq \zeta_A\leq \overline\zeta_A<1,
 $$
 
-Pre-continuity differential caches are inadmissible writer inputs.
+which yields the corresponding diagonal inverse margin on the admitted positive A domain. Exact realization-local regularity may impose additional geometry, floor, and joint-root conditions.
 
-### Required source objects
-
-* `A-WRITER-TARGET`
-* `L-POSTCONTINUITY-REFRESH`
-
----
-
-### 8.8 Retained writer
-
-Include:
+The binary-gate on/off difference at a matched admissible state is
 
 $$
-\log W_A^{\mathrm{next}} =
-a_A\log W_A +
-(1-a_A)\log W_{\mathrm{drv},A}.
+J_{C,A}(\chi_A=1)
+-
+J_{C,A}(\chi_A=0)
+=
+\frac{
+\zeta_A q_A J_{0,A}
+}{
+1-\zeta_A q_A
+},
 $$
 
-Explain:
+understood edgewise on the fixed-geometry profile. This proves constitutive sensitivity of the explicit read arrow when the baseline, contrast, gate, gain, and downstream sensitivity are nonzero. It does not prove empirical physical nonabsorbability or a nonzero committed endpoint effect on every fixture.
 
-* one authoritative writer;
-* positivity preservation through log coordinates;
-* one-beat causal retention;
-* profile-declared release/reconfiguration;
-* atomic commit with the complete state.
+The decomposition gauge is fixed. $J_{0,A}$ includes the direct $W_A$ mobility and admitted geometry-conditioned baseline; $j_A$ is the explicit relation-conditioned read. Terms may not be reassigned between them after observing the result.
 
-### Required source objects
+> **Primary source object:** `A-READ-CLOSURE`.
 
-* `A-RETAINED-WRITER`
+> **Equation/contract row:** `D10.2-EC-PARENT-A-READ-CLOSURE`.
 
----
+> **Claim boundary:** the A profile is admitted by `D10-CL-O-001`; physical nonabsorbability remains conditional under `D10-CL-C-007`.
 
-### 8.9 Candidate A initialization and migration
+### 8.7 Structural source from the A read
 
-Explain the graph-generic history-free initializer:
+The structural branch first lowers the physical read current with the accepted flux flat map:
+
+$$
+j_A^\flat
+=
+G_J(h)\,j_{A,\mathrm{flux}}.
+$$
+
+The accepted A structural source is
+
+$$
+S_A(J,h)
+\equiv
+\Delta K_{4,A}(J,h)
+=
+\zeta_A\,
+\iota_A\!\left(
+\mathcal A_\star(j_A^\flat)
+\right).
+$$
+
+$\mathcal A_\star$ and $\iota_A$ are the accepted typed structural-source and embedding interfaces. $\zeta_A$ is external to $\iota_A$; the equation therefore assumes no unstated homogeneity of the adapter. The source is $K_4$-valued. It is not itself $H_{1,\mathrm{form}}$, $h_4$, transport mobility, or a committed persistent carrier.
+
+The realization decides how this source is consumed:
+
+- CI places it inside the simultaneous current/geometry root;
+- OS builds one predictor geometry from it and performs one fixed-geometry corrector;
+- RG2b evaluates the accepted reconstructed section;
+- PC writes it into the persistent carrier for future geometry;
+- CI+PC consumes it immediately and writes the same root source into the persistent carrier.
+
+A same-beat source record without an admitted geometry consumer is not structural cultivation. Conversely, a geometry consumer does not make the source a second current or resource transfer.
+
+> **Primary source objects:** `GEOM-ASSEMBLY`, `REAL-CI`.
+
+> **Equation/contract rows:** `D10.2-EC-PARENT-GEOM-ASSEMBLY`, `D10.2-EC-GEOM-K4-ASSEMBLY`, `D10.2-EC-CI-A-ROOT`.
+
+> **Associated accepted claims:** `D10-CL-N-006`, `D10-CL-O-003`.
+
+### 8.8 Continuity and post-continuity writer target
+
+After the complete profile has produced one authoritative $J_{C,A,k}$, continuity writes the resource state exactly once:
+
+$$
+C_{k+1}
+=
+C_k
+-
+\Delta t_k\,B J_{C,A,k}
++
+B_{\mathrm{ext},k}
++
+S_{\mathrm{ext},k}.
+$$
+
+The ordinary resource domain and charge budget are validated before a final-$C$-dependent writer consumes the post-continuity state. Every graph differential summary required by $G_W$ is then refreshed from $C_{k+1}$. The write target is
+
+$$
+W_{\mathrm{drv},A,k}
+=
+G_W\!\left(
+C_{k+1},
+J_{C,A,k}
+\right).
+$$
+
+The accepted downstream mediator is therefore the staged pair
+
+$$
+\mathcal D_{A,k}
+=
+\bigl(
+C_{k+1},
+J_{C,A,k}
+\bigr),
+$$
+
+together with the freshly reconstructed differential backend context. The writer may not use:
+
+- pre-continuity $C_k$ differential caches;
+- diagnostic $j_A$ in place of $J_{C,A}$;
+- a stale or incoming current;
+- a future next-beat current;
+- an uncommitted geometry from a different realization;
+- a direct second write to $C$.
+
+> **Primary source object:** `A-WRITER-TARGET`.
+
+> **Equation/contract row:** `D10.2-EC-PARENT-A-WRITER-TARGET`.
+
+### 8.9 Retained mobility writer
+
+Let
+
+$$
+a_{A,k}
+=
+\exp\!\left(
+-\frac{\Delta t_k}{\tau_A}
+\right),
+\qquad
+0<a_{A,k}<1.
+$$
+
+The accepted retained write is
+
+$$
+\log W_{A,k+1}
+=
+a_{A,k}\log W_{A,k}
++
+\bigl(1-a_{A,k}\bigr)
+\log W_{\mathrm{drv},A,k},
+$$
+
+or equivalently,
+
+$$
+W_{A,k+1}
+=
+W_{A,k}^{\,a_{A,k}}
+W_{\mathrm{drv},A,k}^{\,1-a_{A,k}},
+$$
+
+with powers understood componentwise on the positive edge field.
+
+This is one writer, not three ordered update operators. Its logarithmic increment is
+
+$$
+\Delta\log W_A
+=
+\bigl(1-a_A\bigr)
+\bigl(
+\log W_{\mathrm{drv},A}
+-
+\log W_A
+\bigr).
+$$
+
+The geometric interpolation preserves the accepted positive multiplicative domain when both inputs lie in that domain. It introduces no hidden optimizer, queue, prior target, clipping history, or post-update global normalization.
+
+New $W_{A,k+1}$ cannot re-enter the beat-$k$ current solve. A profile that allows same-beat new-$W$ feedback would change the Markov state, derivative, root, and branch contract and therefore requires a new identity.
+
+> **Primary source object:** `A-RETAINED-WRITER`.
+
+> **Equation/contract row:** `D10.2-EC-PARENT-A-RETAINED-WRITER`.
+
+### 8.10 Formation, retention, and release in A
+
+The accepted writer gives formation, retention, and release precise candidate-local meanings.
+
+**Formation** is an attributable writer difference under a matched zero-forming-current control. The current-sensitive term in $G_W(C_{k+1},J_{C,A,k})$ changes $W_{\mathrm{drv},A,k}$ and therefore changes the authoritative $W_{A,k+1}$. Initialization of a nonneutral $W_A$ is not native formation.
+
+**Retention** is the future causal availability of the nonneutral $W_A$ after the forming driver is absent. For a stationary no-forming target, the logarithmic residual is carried by $a_A$ per beat and continues to affect mobility, baseline current, relation, total current, and later writes while nonzero.
+
+**Release** is the accepted convergence of that residual toward the stationary no-forming target under repeated no-forming-current beats. It is not administrative reset, clipping, silent overwrite, or an external cleanup producer.
+
+A large $\tau_A$ or $a_A$ close to one is not evidence of formation or causal retention by itself. The design equation establishes a lawful retained transition. Runtime-reached formation, persistence, release, replay, and channel attribution remain verification obligations.
+
+The complete direct retained-mobility recurrence is
+
+```text
+W_A,k
+  -> Phi_A,k and J0_A,k
+  -> J_C,A,k
+  -> C_k+1 and W_drv,A,k
+  -> W_A,k+1.
+```
+
+The explicit Read-Back-participating subloop is
+
+```text
+W_A,k and W_hat_A,k
+  -> q_A,k
+  -> j_A,k
+  -> J_C,A,k
+  -> C_k+1 and W_drv,A,k
+  -> W_A,k+1.
+```
+
+Setting $\chi_A=0$ opens the explicit subloop while leaving the direct retained-mobility recurrence potentially active. This is why “read off” and “history off” are not interchangeable controls.
+
+### 8.11 Initialization, migration, and lifecycle binding
+
+The graph-generic history-free A initializer is a typed target-profile operation:
 
 ```text
 target graph and context
-    -> rebuild admitted target differential surfaces
-    -> evaluate accepted curvature-disabled G_W reference stage
-    -> target-profile readmission
-    -> emit direction-specific history-loss receipt
+  -> rebuild the declared deterministic target differential surfaces
+  -> evaluate the accepted curvature-disabled G_W reference stage
+  -> construct target W_A without source-profile A history
+  -> perform target-profile readmission
+  -> emit the direction-specific history-loss receipt
 ```
 
-The exact GRC9V3 base-conductance reconstruction belongs to Appendix A.
+This initializer role is GRC-derived. The exact GRC9V3 base-conductance reconstruction used by the GRC9V4 specialization is a separate specialization binding and belongs in Appendix A.
 
-### Required source objects
+An A profile migration must transform or reconstruct:
 
-* `L-A-INITIALIZER-GRC`
-* `L-PROFILE-MIGRATION`
+- current $C$;
+- reset $C$;
+- current and reset $W_A$ where the target retains A history;
+- realization-specific $Z_{4,A}$ where applicable;
+- graph, context, profile identity, and $Q_{\mathrm{target}}$;
+- information-loss and charge receipts.
 
----
+Generic migration grammar does not select an initializer, preserve history automatically, or permit in-place reinterpretation of bytes under a new profile identity.
 
-### 8.10 Candidate A boundary
+### 8.12 Candidate A controls and claim ceiling
 
-State explicitly:
+The A family requires separate controls for:
 
-* A is admitted, not preferred;
-* the current law is normalized and nondimensional;
-* physical dimensionalization remains open;
-* A’s physical nonabsorbability remains open;
-* formed runtime formation/retention/release remains unexecuted;
-* no committed endpoint witness is claimed;
-* A is not inherited core;
-* A is not unique.
+- passive zero current;
+- no forming input;
+- read off, $\chi_A=0$;
+- causal gain off, $\zeta_A=0$;
+- writer off after an otherwise valid beat;
+- retained-state frozen;
+- carrier-neutral matched prepared state;
+- direct retained-mobility path versus explicit read path;
+- graph reorientation versus physical current-history reversal;
+- post-continuity writer refresh;
+- floor-active versus floor-inactive charts;
+- initialization versus native formation;
+- administrative reset versus native release;
+- explicit-channel absorbability;
+- realization-specific geometry consumption;
+- topology, boundary, and cache rivals.
+
+The accepted A content establishes:
+
+- positive authoritative $W_A$;
+- an accepted graph-generic curvature-disabled $G_W$;
+- a staged instantaneous reference;
+- a signed retained relation;
+- regular total-current closure on its declared domain;
+- one continuity write;
+- one positive retained writer;
+- a typed structural source;
+- compatibility with each admitted realization under that realization’s own contract.
+
+It does not establish:
+
+- that A is inherited core;
+- that A is preferred or unique;
+- a universal physical unit interpretation;
+- physical nonabsorbability of the explicit read channel;
+- formed-branch reachability;
+- runtime formation, post-input retention, or release;
+- nonzero committed endpoint hysteresis;
+- structural or temporal stability;
+- validity through the floor boundary or a current singularity;
+- a direct $h_4\mapsto W_A$ constitutive map.
+
+No new successor investigation is required merely because these stronger statements remain open. A successor is activated only if the intended proposal must make one of them as a central positive claim.
+
 
 ---
 
 ## 9. Constitutive Family C: Derived $C$-Sector Hodge Response
 
-### 9.1 Scientific role
+Candidate C is the admitted revision-specific family in which an accepted sector selected from authoritative $C$ conditions a typed graph-Hodge response and hence the present physical current. The sector, selector, Hodge objects, identifications, resolvent, and read surfaces are derived. Candidate C does not add an independent retained coordinate merely to duplicate the information already carried by $C$.
 
-Present Candidate C as the admitted revision-specific family in which an historically formed sector derived from authoritative $C$ receives constitutive Read-Back authority without becoming an independent resource or hidden state coordinate.
-
----
-
-### 9.2 Authoritative state
-
-State:
-
-* $C$ remains the only independently written candidate coordinate;
-* $T_C$, selectors, Hodge surfaces, resolvents, and read surfaces are derived;
-* any independent realization-history state belongs to the chosen realization, not to Candidate C by default.
-
-### Required source objects
-
-* `C-AUTHORITY`
-
----
-
-### 9.3 Derived sector
-
-Present $T_C$ as the accepted sector derived from authoritative $C$ through the declared selector.
-
-The paper must copy exactly:
-
-* selector input;
-* selected operator;
-* rank rule;
-* strict-gap or boundary semantics;
-* stratum identity;
-* post-state rederivation rule.
-
-### Required source objects
-
-* `C-SECTOR`
-* `C-SELECTOR`
-
-### Boundary
-
-Do not turn the analysis projector into runtime authority. Do not claim smooth passage through selector-rank boundaries.
-
----
-
-### 9.4 Hodge package
-
-Insert the exact accepted Candidate C equations for:
-
-* $H_0$;
-* $H_1$;
-* flat/sharp identifications;
-* selected and physical one-form spaces;
-* $\Delta_1$;
-* pre/post identification maps.
-
-Do not reconstruct these formulas from matrix shape or from earlier uncorrected records.
-
-### Required source objects
-
-* `C-HODGE-MAPS`
-
----
-
-### 9.5 Resolvent Read-Back
-
-Insert the exact accepted chain from D5-v2/D6-v2/D7-v2 and the D10.2 equation registry:
+This distinction is central:
 
 ```text
-selected sector
-    -> typed Hodge Laplacian
-    -> regular resolvent
-    -> lawful selected/physical identification
-    -> one external chi gate
-    -> physical read-current contribution
+formal recurrence of a selected sector
+  is not automatically
+independent dynamical retention in a new state coordinate.
 ```
 
-State the accepted resolvent role:
+C nevertheless supplies a complete candidate-local transition because continuity writes $C$, the selected sector and Hodge package are rederived from the new $C$, and the resulting response can alter later current. The paper may describe this accepted resource-mediated write/read closure. It must not turn $T_C$ into hidden state or claim that the selected sector has demonstrated runtime post-input memory.
+
+### 9.1 Authoritative state and derived chain
+
+For a C profile without a realization-specific persistent carrier, the independent candidate state is
 
 $$
-R_C
+X_{C,k}
 =
-(I+\tau_C\Delta_1)^{-1},
+C_k,
 $$
 
-with the precise selected/physical mappings and gain placement copied from the controlling record.
+together with graph, context, complete-profile identity, reset state, charge target, and lifecycle metadata. A PC or CI+PC realization adds its declared $Z_{4,C}$ state through the realization axis. Candidate C itself writes no independent $T_C$, selector, Hodge, response, geometry, or current coordinate.
 
-### Required source objects
-
-* `C-READ-BACK`
-
-### Boundary
-
-The $\chi_C$ gate must appear exactly once. Positivity or contraction in retained coordinates must not be promoted into a physical norm claim unless the accepted identification supports it.
-
----
-
-### 9.6 Candidate C write-back
-
-Explain the accepted C-only authority:
+The accepted derived chain is
 
 ```text
-authoritative current
-    -> single continuity update of C
-    -> accepted post-state
-    -> sector and Hodge surfaces rederived from that C
-    -> future Read-Back changes accordingly
+authoritative C
+  -> selector P_M
+  -> selected sector T_C
+  -> retained Hodge package H_M
+  -> selected/physical identification I_4M
+  -> Hodge Laplacian Delta_1,M
+  -> ungated intrinsic resolvent Rhat_C,M
+  -> once-gated physical Read-Back
+  -> authoritative current
+  -> continuity writes C
+  -> all C-derived surfaces are rederived.
 ```
 
-This is the Candidate C write/read closure. It is not an independent writer to a hidden $T_C$ coordinate.
+The selector and Hodge package may be same-step functions of the realization geometry $h$. In CI they are evaluated inside the joint residual. In OS they are recomputed at the corrected geometry. In RG2b they are evaluated on the reconstructed section. In PC they are evaluated on the geometry generated by the committed carrier. These timing differences do not alter the C authority rule.
 
----
+> **Primary source object:** `C-AUTHORITY`.
 
-### 9.7 Candidate C boundary
+> **Equation/contract rows:** `D10.2-EC-PARENT-C-AUTHORITY`, `D10.2-EC-C-AUTHORITY`.
 
-State explicitly:
+> **Associated accepted claims:** normative authority claim `D10-CL-N-002`; Candidate C is admitted under `D10-CL-O-002`.
 
-* Candidate C is admitted, not preferred;
-* constitutive operator-level mediation is accepted on the declared regular selector strata;
-* physical nonabsorbability remains open;
-* general nonidentity complete-chain endpoint effect remains open;
-* runtime mediation remains unexecuted;
-* singular or rank-changing passage requires a named successor profile.
+### 9.2 Basis-independent selector and selected sector
+
+On the accepted reference graph-Hodge package, form the symmetric vertex operator
+
+$$
+L_{0,\mathrm{sym,pre}}
+=
+H_{0,\mathrm{pre}}^{-1/2}
+B_{\mathrm{pre}}
+H_{1,\mathrm{form,pre}}
+B_{\mathrm{pre}}^\top
+H_{0,\mathrm{pre}}^{-1/2}.
+$$
+
+For the declared threshold $\Lambda_C$, define the basis-independent spectral selector
+
+$$
+Q_M
+=
+\mathbf 1_{[0,\Lambda_C]}
+\!\left(
+L_{0,\mathrm{sym,pre}}
+\right),
+$$
+
+and transfer it to the physical vertex coordinates as
+
+$$
+P_M^\Delta
+=
+H_{0,\mathrm{pre}}^{-1/2}
+Q_M
+H_{0,\mathrm{pre}}^{1/2}.
+$$
+
+The selected content is
+
+$$
+T_{C,k}
+=
+P_M^\Delta C_k.
+$$
+
+The current accepted smooth stratum requires fixed topology and boundary semantics together with either:
+
+- a fixed-rank selector under a strict spectral gap, or
+- an explicitly declared boundary rule that determines what happens at the cutoff.
+
+For a rank-$m$ fixed selector, the smooth chart requires
+
+$$
+\lambda_m
+<
+\Lambda_C
+<
+\lambda_{m+1}.
+$$
+
+The normalized cutoff may be written in the accepted profile form
+
+$$
+\Lambda_C
+=
+\overline\Lambda_C\,
+\sigma_{L,\mathrm{pre}},
+$$
+
+where the scale and cutoff are profile-local and serialized. The selection is not chosen from an eigenvector basis after the fact; it is the functional-calculus projector of the declared symmetric operator.
+
+When the complete profile makes the selector geometry-dependent, the notation $P_M(h)$ and
+
+$$
+T_C(h)
+=
+P_M(h)C_k
+$$
+
+must retain the full causal path
+
+```text
+h -> P_M(h) -> T_C(h).
+```
+
+Omitting that path from a derivative or residual would remove a load-bearing dependence.
+
+Selector-rank change, loss of gap, topology change, boundary change, or an undeclared cutoff tie is not an ordinary smooth C beat. It activates fail-closed or typed event/successor semantics.
+
+> **Primary source objects:** `C-SECTOR`, `C-SELECTOR`.
+
+> **Equation/contract rows:** `D10.2-EC-PARENT-C-SECTOR`, `D10.2-EC-PARENT-C-SELECTOR`, `D10.2-EC-C-SECTOR`.
+
+### 9.3 Selected content to retained Hodge package
+
+The accepted C construction first normalizes the selected vertex content:
+
+$$
+\rho_{C,v}
+=
+\tanh\!\left(
+\frac{T_{C,v}}{C_{\mathrm{ref}}}
+\right).
+$$
+
+For an oriented edge $e=(u,v)$, define the sign-even edge content
+
+$$
+r_{C,e}
+=
+\frac{
+\rho_{C,u}+\rho_{C,v}
+}{2}.
+$$
+
+The positive diagonal modulation is
+
+$$
+D_C
+=
+\operatorname{Diag}\!\left(
+\exp\!\left[
+\frac{\kappa_{M,C}}{2}r_C
+\right]
+\right).
+$$
+
+The retained Hodge package is then
+
+$$
+H_{0,M}
+=
+H_{0,\mathrm{pre}},
+$$
+
+$$
+H_{1,\mathrm{form},M}
+=
+D_C
+H_{1,\mathrm{form,pre}}
+D_C.
+$$
+
+Equivalently, its logarithmic edge modulation satisfies
+
+$$
+\log(D_C^2)
+=
+\kappa_{M,C}\operatorname{Diag}(r_C).
+$$
+
+The map is positive on the accepted finite selected-content domain. It assigns the selected C content constitutive authority over the one-form Hodge package without making $T_C$ or $H_{1,\mathrm{form},M}$ an independently written coordinate.
+
+$\kappa_{M,C}=0$ removes the retained-content modulation and returns the reference Hodge package. This is a geometry-condition ablation. It is not automatically the same as $\chi_C=0$, which removes explicit causal Read-Back while leaving the conditioned baseline geometry available where the profile declares it.
+
+The C modulation is sign-even with respect to arbitrary stored-edge coordinate reversal. That coordinate covariance does not imply invariance under a physical reversal of the activity history, because such a reversal may change $C$ and hence the selected content.
+
+> **Primary source object:** `C-HODGE-MAPS`.
+
+> **Equation/contract row:** `D10.2-EC-PARENT-C-HODGE-MAPS`.
+
+### 9.4 Selected/physical identification and Hodge Laplacian
+
+The accepted selected-to-physical one-form identification is
+
+$$
+I_{4M}
+=
+H_{1,\mathrm{form},M}
+H_{1,\mathrm{form,pre}}^{-1},
+$$
+
+with inverse
+
+$$
+I_{4M}^{-1}
+=
+H_{1,\mathrm{form,pre}}
+H_{1,\mathrm{form},M}^{-1}.
+$$
+
+When geometry is active, the full notation is
+
+$$
+I_{4M}
+=
+I_{4M}(T_C,h),
+$$
+
+because both the selected content and the current geometry can affect the Hodge package. This explicit dependence is load-bearing in CI and OS.
+
+The accepted one-form Hodge Laplacian on the admitted selected one-form space is
+
+$$
+\Delta_{1,M}
+=
+B^\top
+H_{0,M}^{-1}
+B
+H_{1,\mathrm{form},M}.
+$$
+
+Its domain, codomain, and metric are part of the profile. Equal matrix dimensions do not permit the selected, physical-flux, and structural-flat spaces to be identified without the accepted maps.
+
+> **Primary source object:** `C-HODGE-MAPS`.
+
+> **Equation/contract row:** `D10.2-EC-C-HODGE-LAPLACIAN`.
+
+### 9.5 Ungated resolvent and once-gated Read-Back
+
+The final accepted intrinsic C response is the **ungated** resolvent
+
+$$
+\widehat R_{C,M}
+=
+\left(
+I+\tau_C\Delta_{1,M}
+\right)^{-1}.
+$$
+
+The hat is used here to keep the final convention visible. Historical D5-v2 notation placed $\chi_C$ inside a symbol called $R_{C,M}$. D6-v2, D7-v2, the accepted realization records, and D10.2 use an ungated intrinsic response and apply $\chi_C$ exactly once to the causal read. The proposal follows the final accepted convention and does not combine the two notations.
+
+For physical flux current $J$, first lower it with the accepted structural flat map and transfer it to the selected retained coordinates. The intrinsic response is
+
+$$
+r_C^\flat(J,h)
+=
+I_{4M}(T_C,h)^{-1}
+\widehat R_{C,M}(T_C,h)
+I_{4M}(T_C,h)
+G_J(h)J.
+$$
+
+The causal read is
+
+$$
+j_C^\flat(J,h)
+=
+\chi_C\,r_C^\flat(J,h),
+$$
+
+and its physical-flux representation is
+
+$$
+j_{C,\mathrm{flux}}(J,h)
+=
+G_J(h)^{-1}
+j_C^\flat(J,h).
+$$
+
+This chain preserves four distinct operations:
+
+```text
+physical flux J
+  -> structural flat current G_J(h)J
+  -> selected-coordinate identification I_4M
+  -> intrinsic resolvent Rhat_C,M
+  -> inverse identification
+  -> one causal gate chi_C
+  -> physical-flux sharp map.
+```
+
+$\widehat R_{C,M}$ may remain a diagnostic intrinsic response when $\chi_C=0$, but it has no explicit causal read consumer. A second multiplication by $\chi_C$ anywhere in the resolvent, structural source, or total-current equation would change the accepted profile.
+
+> **Primary source object:** `C-READ-BACK`.
+
+> **Equation/contract rows:** `D10.2-EC-PARENT-C-READ-BACK`, `D10.2-EC-C-RESOLVENT`, `D10.2-EC-C-READBACK`.
+
+### 9.6 Fixed-geometry total-current closure and regularity
+
+At fixed admitted geometry, the C physical current satisfies
+
+$$
+J_{C,C}
+=
+J_{0,C}
++
+\zeta_C
+j_{C,\mathrm{flux}}(J_{C,C},h).
+$$
+
+In the selected one-form coordinates, let
+
+$$
+R_{C,M}
+\equiv
+\widehat R_{C,M}
+=
+\left(
+I+\tau_C\Delta_{1,M}
+\right)^{-1}.
+$$
+
+The accepted post-v2 Hodge correction requires the full physical-flux to selected-form identification
+
+$$
+Q_C(T_C,h)
+=
+I_{4M}(T_C,h)
+G_J(h).
+$$
+
+The corresponding ungated physical-flux response is
+
+$$
+\widehat R_{C,\mathrm{flux}}(T_C,h)
+=
+Q_C(T_C,h)^{-1}
+\widehat R_{C,M}(T_C,h)
+Q_C(T_C,h).
+$$
+
+Thus the physical algebraic closure is
+
+$$
+J_{C,C}
+=
+J_{0,C}
++
+\zeta_C\chi_C
+\widehat R_{C,\mathrm{flux}}J_{C,C},
+$$
+
+hence
+
+$$
+L_{C,\mathrm{flux}}
+=
+I-\zeta_C\chi_C\widehat R_{C,\mathrm{flux}},
+$$
+
+$$
+J_{C,C}
+=
+L_{C,\mathrm{flux}}^{-1}J_{0,C},
+$$
+
+on the exact regular domain.
+
+If $\nu_i$ are the nonnegative eigenvalues of the accepted retained-coordinate Hodge Laplacian, then the intrinsic response eigenvalues are
+
+$$
+r_i
+=
+\frac{1}{1+\tau_C\nu_i}.
+$$
+
+The exact retained-coordinate regularity condition is
+
+$$
+1-\zeta_C\chi_C r_i
+\neq 0
+\qquad
+\text{for every admitted mode }i.
+$$
+
+For the accepted nonnegative-gain profile,
+
+$$
+\tau_C>0,
+\qquad
+0\leq\zeta_C\leq\overline\zeta_C<1,
+$$
+
+provides the retained-coordinate inverse margin. Harmonic modes have $r_i=1$, so $\zeta_C\chi_C=1$ is singular and remains outside the admitted profile.
+
+Exact physical-flux invertibility transfers by similarity, not by equality of singular values:
+
+$$
+L_{C,\mathrm{flux}}
+=
+Q_C^{-1}
+\left(
+I-\zeta_C\chi_C\widehat R_{C,M}
+\right)
+Q_C.
+$$
+
+At the reference geometry, define
+
+$$
+Q_{C,\mathrm{ref}}
+=
+I_{4M}(T_{C,\mathrm{ref}},h_{\mathrm{ref}})
+G_J(h_{\mathrm{ref}}),
+$$
+
+$$
+\widehat R_{C,\mathrm{flux,ref}}
+=
+Q_{C,\mathrm{ref}}^{-1}
+\widehat R_{C,M,\mathrm{ref}}
+Q_{C,\mathrm{ref}},
+$$
+
+and
+
+$$
+L_{C,\mathrm{flux,ref}}
+=
+I-\zeta_C\chi_C
+\widehat R_{C,\mathrm{flux,ref}}.
+$$
+
+Then
+
+$$
+L_{C,\mathrm{flux,ref}}
+=
+Q_{C,\mathrm{ref}}^{-1}
+\left(
+I-\zeta_C\chi_C
+\widehat R_{C,M,\mathrm{ref}}
+\right)
+Q_{C,\mathrm{ref}}.
+$$
+
+Exact invertibility therefore transfers. The retained singular-value margin does not transfer unchanged. A physical inverse estimate additionally depends on the identification condition number:
+
+$$
+\left\|
+L_{C,\mathrm{flux,ref}}^{-1}
+\right\|
+\leq
+\frac{
+\operatorname{cond}(Q_{C,\mathrm{ref}})
+}{
+1-\overline\zeta_C
+},
+$$
+
+under the accepted retained contraction bound and finite identification condition number.
+
+This distinction prevents a retained-space positivity or contraction result from being mislabeled as a physical Euclidean norm theorem.
+
+> **Type-correction source:** accepted `D7GPostv2GraphHodgeTypeCorrection` and its downstream CI realization.
+
+> **Associated conditional boundary:** general physical conditioning and executable solver behavior remain conditional under `D10-CL-C-006`.
+
+### 9.7 Structural source from the C read
+
+The accepted C structural source is
+
+$$
+S_C(J,h)
+\equiv
+\Delta K_{4,C}(J,h)
+=
+\zeta_C\,
+\iota_C\!\left(
+\mathcal A_\star(j_C^\flat(J,h))
+\right).
+$$
+
+As in A, $\zeta_C$ is external to $\iota_C$ and is applied once. $\chi_C$ has already been applied once in $j_C^\flat$ and is not repeated inside the source.
+
+The exact switch contracts are:
+
+```text
+chi_C = 0
+  -> j_C^flat = 0
+  -> j_C,flux = 0
+  -> no read-derived structural source
+
+zeta_C = 0
+  -> authoritative current reduces to J0_C
+  -> no read-derived structural source
+```
+
+An ungated intrinsic response $r_C^\flat$ may remain diagnostically defined under $\zeta_C=0$, but it has no causal consumer. The $K_4$ source is consumed according to the realization in §10 and is not itself a committed C state coordinate.
+
+> **Primary source objects:** `GEOM-ASSEMBLY`, `REAL-CI`.
+
+> **Equation/contract rows:** `D10.2-EC-PARENT-GEOM-ASSEMBLY`, `D10.2-EC-GEOM-K4-ASSEMBLY`, `D10.2-EC-CI-C-ROOT`.
+
+> **Associated accepted claims:** `D10-CL-N-006`, `D10-CL-O-003`.
+
+### 9.8 Write-back through authoritative $C$
+
+After the complete profile has produced one authoritative $J_{C,C,k}$, continuity writes
+
+$$
+C_{k+1}
+=
+C_k
+-
+\Delta t_k\,B J_{C,C,k}
++
+B_{\mathrm{ext},k}
++
+S_{\mathrm{ext},k}.
+$$
+
+Candidate C has no second independent writer. Its future selected content is rederived:
+
+$$
+T_{C,k+1}
+=
+P_{M,k+1}^\Delta C_{k+1}.
+$$
+
+The exact bookkeeping identity is
+
+$$
+T_{C,k+1}-T_{C,k}
+=
+P_{M,k}^\Delta
+\bigl(
+C_{k+1}-C_k
+\bigr)
++
+\bigl(
+P_{M,k+1}^\Delta-P_{M,k}^\Delta
+\bigr)
+C_{k+1}.
+$$
+
+The first term is selected content change under the old selector. The second is selector or basis motion. These two mechanisms must be reported separately. On a fixed-selector stratum the second term vanishes, giving
+
+$$
+T_{C,k+1}-T_{C,k}
+=
+P_M^\Delta
+\bigl(
+C_{k+1}-C_k
+\bigr).
+$$
+
+All future C surfaces are then rederived in the accepted order:
+
+```text
+C_k+1
+  -> P_M,k+1
+  -> T_C,k+1
+  -> H_M,k+1
+  -> I_4M,k+1 and Delta_1,M,k+1
+  -> Rhat_C,M,k+1
+  -> future Read-Back.
+```
+
+This is a complete resource-mediated write/read recurrence. It does not authorize a hidden $T_C$ writer, holding $T_C$ fixed while $C$ and its selector evolve off-manifold, or calling generic projector motion “retained formation.”
+
+### 9.9 Candidate C controls
+
+Candidate C requires controls that respect its derived-state ontology:
+
+- $\kappa_{M,C}=0$ removes selected-content Hodge modulation;
+- $\chi_C=0$ removes the explicit causal read while preserving any declared conditioned baseline;
+- $\zeta_C=0$ removes the read contribution from authoritative current and structural source;
+- matched selected-content versus matched-complement interventions test whether selected content is load-bearing;
+- fixed-rank and strict-gap controls isolate smooth selector strata;
+- selector-motion and selected-content-change terms are reported separately;
+- physical current-history reversal is distinct from edge-coordinate reversal;
+- a derived response cache cannot be altered independently;
+- a frozen $T_C$ counterfactual is admissible only if it corresponds to a lawful matched authoritative $C$ state;
+- topology, boundary, graph measure, and context rivals remain explicit;
+- retained-coordinate conditioning and physical-flux conditioning remain separately reported.
+
+There is no generic C `write_off` switch analogous to disabling A’s independent mobility writer. Turning off continuity would alter the resource dynamics, not isolate a separate C writer. A lawful write attribution must therefore use matched current or matched authoritative-$C$ interventions within the declared profile.
+
+### 9.10 Candidate C claim ceiling
+
+The accepted C content establishes:
+
+- $C$-only candidate authority;
+- a basis-independent selected-sector contract;
+- a positive retained Hodge package on the admitted domain;
+- typed selected/physical identifications;
+- an ungated regular resolvent;
+- a once-gated physical Read-Back;
+- exact fixed-geometry current regularity under the accepted bounds;
+- a typed $K_4$ structural source;
+- resource-mediated future rederivation;
+- compatibility with each admitted realization under its own domain and stage contract.
+
+It does not establish:
+
+- an independent $T_C$ or Hodge history state;
+- smooth passage through selector-rank or topology boundaries;
+- physical nonabsorbability of the C read;
+- an unchanged physical singular-value margin under non-isometric identification;
+- runtime selected-sector formation, retention, release, or mediation;
+- a general nonidentity committed endpoint effect;
+- global coupled-root uniqueness;
+- structural or temporal stability;
+- that C is preferred, unique, or inherited core.
+
+The phrase “retained sector” in the proposal must therefore refer to the accepted constitutive role and cross-beat resource-mediated recurrence, not to an additional serialized carrier or an already demonstrated post-input memory regime. This boundary is presently expressible without a new successor investigation.
+
 
 ---
 
 ## 10. Geometry-Temporal Realization Families
 
-### 10.1 Why realization is a separate axis
+The constitutive family and the geometry-temporal realization answer different questions.
 
-Explain that a constitutive family answers:
+A constitutive family specifies:
 
-> What is retained, how is it read, and what writes it?
+```text
+what representation conditions the present beat;
+how it is read into current;
+what candidate state is authoritative;
+what transition makes the representation available later.
+```
 
-A realization answers:
+A realization specifies:
 
-> At what stage is generated geometry consumed, and what geometry/history state persists across beats?
+```text
+when generated geometry is consumed;
+whether current and geometry are solved simultaneously or in stages;
+whether geometry is reconstructed from candidate state;
+whether an independent K_4 history carrier persists;
+how realization-local failure, reset, and migration behave.
+```
 
-The realization changes timing and history semantics without silently changing A into C or C into A.
+The accepted initial population contains five realizations:
 
----
+$$
+\mathrm{CI},\qquad
+\mathrm{OS},\qquad
+\mathrm{RG2b},\qquad
+\mathrm{PC},\qquad
+\mathrm{CI+PC}.
+$$
+
+Each is crossed with A and C. The resulting ten complete profiles are distinct because their state, stage order, root or reconstruction law, history authority, and lifecycle consequences differ. They are not ranked, and they are not a theorem that every possible GRC-v4 realization belongs to this list.
+
+### 10.1 Common realization interfaces
+
+For candidate $a\in\{A,C\}$, let:
+
+- $X_{a,k}$ be the authoritative candidate state at beat $k$;
+- $U_k$ be the declared same-step input and fixed profile context;
+- $J_{0,a}$ be the candidate-specific baseline current;
+- $j_{a,\mathrm{flux}}$ be the accepted explicit Read-Back current in physical flux coordinates;
+- $S_a(J,h)=\Delta K_{4,a}(J,h)$ be the accepted $K_4$-valued structural source;
+- $H_{\mathrm{profile}}$ be the accepted geometry profile;
+- $\Phi_a$ be the complete candidate transition and commit map.
+
+These symbols name accepted interfaces. They do not erase the different A and C equations. In particular:
+
+- A retains authoritative $W_A$ and writes it after continuity;
+- C writes only $C$ and rederives its selected sector and Hodge package;
+- the selected realization may add $Z_{4,a}$ to the state;
+- only final authoritative physical current enters continuity;
+- current, geometry, selectors, and response objects are same-step derived unless a complete profile explicitly makes a structural carrier authoritative.
+
+Every realization is fail-closed. A domain loss, singular or underconditioned required block, missing or multiple inadmissible root, nonfinite result, failed residual or reconstruction condition, failed charge or state validation, or departure from the declared chart commits nothing.
 
 ### 10.2 Coupled Implicit — CI
 
-#### Content to extract
+CI closes current and generated geometry simultaneously. Its joint same-step unknown is
 
-Present CI as the simultaneous current/geometry root.
+$$
+Y_a
+=
+(J_a,h_a),
+$$
 
-For Candidate A include:
+or the equivalent typed tuple used by the profile. The root contract is
 
-* the exact accepted self-map;
-* bounded invariant domain;
-* contraction condition;
-* unique root.
+$$
+F_a(Y_a;X_{a,k},U_k)
+=
+0.
+$$
 
-For Candidate C include:
+$J_a$ and $h_a$ are algebraic variables of the current beat. They are not persistent state. Only the unique regular local branch connected to the accepted $\kappa_H=0$ reference branch is admitted.
 
-* stratum-local root problem;
-* strict regularity conditions;
-* exactly one required self-consistent regular root across admissible strata;
-* fail-closed disposition for zero, multiple, singular, or nonfinite roots.
+> **Primary source object:** `REAL-CI`.
 
-### Required source objects
+> **Equation/contract parent row:** `D10.2-EC-PARENT-REAL-CI`.
 
-* `REAL-CI`
+> **Associated accepted profile claim:** `D10-CL-O-003`.
 
-### Controlling sources
+#### 10.2.1 Candidate A CI root
 
-* `GeometryTemporalRealizationSuccessorCoupledImplicit`
-* `D8BCoupledArchitectureLocalContinuationAnalysis`
+Candidate A uses the reference-relative geometry consumer from §8.2:
 
-### Boundary
+$$
+\Delta_0(h)
+=
+H_{0,\mathrm{ref}}^{-1}
+B
+H_{1,\mathrm{form}}(h)
+B^\top,
+$$
 
-Local bounded root uniqueness is not global stability, formed-branch reachability, or continuation-spectrum evidence.
+$$
+\Phi_A^{CI}(C,W_A,h)
+=
+\Phi_A^{D7}(C,W_A)
++
+\kappa_{Ah}
+\bigl[
+\Delta_0(h)-\Delta_0(h_{\mathrm{ref}})
+\bigr]C,
+$$
 
----
+$$
+J_{0,A}^{CI}(C,W_A,h)
+=
+-M_{4,A}(W_A)d_0\Phi_A^{CI}(C,W_A,h).
+$$
+
+Inside every residual evaluation, in this order, it reconstructs
+
+$$
+\widehat W_A(h)
+=
+G_W\!\left(
+C_k,
+J_{0,A}^{CI}(C_k,W_{A,k},h)
+\right),
+$$
+
+$$
+q_A(h)
+=
+\frac{
+W_{A,k}-\widehat W_A(h)
+}{
+W_{A,k}+\widehat W_A(h)
+},
+$$
+
+$$
+j_{A,\mathrm{flux}}(J,h)
+=
+\chi_A
+\operatorname{Diag}\!\bigl(q_A(h)\bigr)J,
+$$
+
+$$
+j_A^\flat(J,h)
+=
+G_J(h)j_{A,\mathrm{flux}}(J,h),
+$$
+
+$$
+S_A(J,h)
+=
+\Delta K_{4,A}(J,h)
+=
+\zeta_A
+\iota_A\!\left(
+\mathcal A_\star(j_A^\flat(J,h))
+\right).
+$$
+
+The joint root is
+
+$$
+F_{J,A}
+=
+J
+-
+J_{0,A}^{CI}(C_k,W_{A,k},h)
+-
+\zeta_A j_{A,\mathrm{flux}}(J,h)
+=
+0,
+$$
+
+$$
+F_{h,A}
+=
+h
+-
+H_{\mathrm{profile}}\!\left(
+K_{4,\mathrm{base}}
++
+S_A(J,h),
+h_{4,\mathrm{ref}},
+U_k
+\right)
+=
+0.
+$$
+
+$\widehat W_A(h)$ is not frozen outside the root. Reusing a value from a prior residual evaluation would alter the derivative and root map. After a regular root, only $J_A^\star$ enters continuity; the unchanged post-continuity A writer then produces $W_{A,k+1}$.
+
+The admitted A-CI branch is the unique local branch selected by the preregistered bounded self-map and contraction conditions and connected to the $\kappa_H=0$ reference solution. The contraction result is local and profile-specific. It does not imply global uniqueness, global convergence from arbitrary solver seeds, or stability of the complete transition.
+
+> **Equation/contract rows:** `D10.2-EC-CI-A-ROOT`, `D10.2-EC-CI-A-CONTRACTION`.
+
+#### 10.2.2 Candidate C CI root
+
+For Candidate C, every trial geometry carries the full accepted chain
+
+```text
+h
+  -> P_M(h)
+  -> T_C(h)=P_M(h)C_k
+  -> H_M(T_C,h)
+  -> I_4M(T_C,h)
+  -> Delta_1,M(T_C,h)
+  -> Rhat_C,M(T_C,h).
+```
+
+The read and source are
+
+$$
+r_C^\flat(J,h)
+=
+I_{4M}(T_C,h)^{-1}
+\widehat R_{C,M}(T_C,h)
+I_{4M}(T_C,h)
+G_J(h)J,
+$$
+
+$$
+j_C^\flat(J,h)
+=
+\chi_C r_C^\flat(J,h),
+$$
+
+$$
+j_{C,\mathrm{flux}}(J,h)
+=
+G_J(h)^{-1}j_C^\flat(J,h),
+$$
+
+$$
+S_C(J,h)
+=
+\Delta K_{4,C}(J,h)
+=
+\zeta_C
+\iota_C\!\left(
+\mathcal A_\star(j_C^\flat(J,h))
+\right).
+$$
+
+The C joint root is
+
+$$
+F_{J,C}
+=
+J
+-
+J_{0,C}(C_k,T_C(h),h,U_k)
+-
+\zeta_Cj_{C,\mathrm{flux}}(J,h)
+=
+0,
+$$
+
+$$
+F_{h,C}
+=
+h
+-
+H_{\mathrm{profile}}\!\left(
+K_{4,\mathrm{base}}
++
+S_C(J,h),
+h_{4,\mathrm{ref}},
+U_k
+\right)
+=
+0.
+$$
+
+The accepted local theorem applies on a fixed-topology, smooth SPD, fixed-selector-rank stratum with strict gap and regular current block. At $\kappa_H=0$ the reference joint Jacobian is block triangular with the regular physical-flux current block and identity geometry block. The implicit-function argument then supplies an existential neighborhood and a unique smooth local branch connected to that reference.
+
+Exactly one self-consistent regular root on the preregistered branch is admitted. Zero roots, multiple regular roots without the accepted branch identity, disconnected roots, singular roots, and nonfinite roots fail closed. After a valid root, physical $J_C^\star$ enters continuity and only $C_{k+1}$ commits as candidate state. All C selector and Hodge surfaces are rederived.
+
+> **Equation/contract rows:** `D10.2-EC-CI-C-ROOT`, `D10.2-EC-CI-C-CONTRACTION`, `D10.2-EC-CI-C-ROOT-SELECTION`.
+
+#### 10.2.3 CI claim ceiling
+
+CI establishes a bounded simultaneous realization for A and C. It does not establish:
+
+- a global current/geometry branch;
+- numeric branch radius;
+- global root uniqueness;
+- arbitrary-seed solver convergence;
+- complete-step stability;
+- continuation-spectrum identity;
+- persistence of geometry beyond the current beat;
+- an independent geometry state.
 
 ### 10.3 Operator Split — OS
 
-#### Content to extract
-
-Present the frozen one-pass order:
+OS replaces the simultaneous root with one frozen ordered pass:
 
 ```text
-predict current
-    -> construct generated geometry
-    -> correct current
-    -> evaluate declared split residual
+X_k
+  -> J^(0)
+  -> j_flat^(0)
+  -> Delta K4^(0)
+  -> h^(1)
+  -> J^(1)
+  -> X_(k+1).
 ```
 
-Include the exact A and C predictor, geometry, corrector, and residual equations from the accepted OS record.
+There is exactly one predictor, one geometry update, one fixed-geometry corrector, and one atomic commit. $J^{(1)}$ cannot retroactively alter $h^{(1)}$. A second predictor–geometry–corrector cycle or a different order is a new complete-profile identity, not a numerical improvement to the accepted OS row.
 
-### Required source objects
+> **Primary source object:** `REAL-OS`.
 
-* `REAL-OS`
+> **Equation/contract rows:** `D10.2-EC-PARENT-REAL-OS`, `D10.2-EC-OS-STAGE-ORDER`, `D10.2-EC-OS-NO-SECOND-ITERATION`.
 
-### Boundary
+> **Associated accepted profile claim:** `D10-CL-O-004`.
 
-The split residual is not automatically a $\Delta t$-truncation theorem. A same-beat geometry consumer does not by itself prove nonzero committed endpoint effect.
+#### 10.3.1 Candidate A OS
 
----
+At $h_{\mathrm{ref}}$, solve the accepted fixed-geometry A current to obtain $J_A^{(0)}$. Use the accepted once-gated read to form
+
+$$
+j_A^{\flat,(0)}
+=
+G_J(h_{\mathrm{ref}})
+\chi_A\operatorname{Diag}(q_A^{(0)})J_A^{(0)},
+$$
+
+$$
+S_A^{(0)}
+=
+\zeta_A
+\iota_A\!\left(
+\mathcal A_\star(j_A^{\flat,(0)})
+\right),
+$$
+
+and
+
+$$
+h_A^{(1)}
+=
+H_{\mathrm{profile}}\!\left(
+K_{4,\mathrm{base}}+S_A^{(0)}
+\right).
+$$
+
+At fixed $h_A^{(1)}$, use
+
+$$
+\Phi_A^{OS}
+=
+\Phi_A^{D7}
++
+\kappa_{Ah}
+\bigl[
+\Delta_0(h_A^{(1)})
+-
+\Delta_0(h_{\mathrm{ref}})
+\bigr]C_k.
+$$
+
+Recompute, without predictor-cache authority,
+
+```text
+Phi_A^OS
+  -> J0_A^OS
+  -> W_hat_A
+  -> q_A
+  -> full fixed-h A current solve J_A^(1).
+```
+
+Only $J_A^{(1)}$ enters continuity. All writer differential summaries are refreshed from $C_{k+1}$, and the unchanged A writer produces $W_{A,k+1}$. $W_A$ remains the sole mobility authority; $h_A^{(1)}$ has no direct writer authority.
+
+> **Equation/contract row:** `D10.2-EC-OS-A-CORRECTOR`.
+
+#### 10.3.2 Candidate C OS
+
+At $h_{\mathrm{ref}}$, solve
+
+$$
+J_C^{(0)}
+=
+J_{0,C}\!\left(
+C_k,T_C(h_{\mathrm{ref}}),h_{\mathrm{ref}}
+\right)
++
+\zeta_C
+j_{C,\mathrm{flux}}\!\left(
+J_C^{(0)},h_{\mathrm{ref}}
+\right).
+$$
+
+Form
+
+$$
+j_C^{\flat,(0)}
+=
+\chi_C
+I_{4M}^{-1}
+\widehat R_{C,M}
+I_{4M}
+G_J
+J_C^{(0)},
+$$
+
+with every operator evaluated at the accepted predictor stage, then
+
+$$
+S_C^{(0)}
+=
+\zeta_C
+\iota_C\!\left(
+\mathcal A_\star(j_C^{\flat,(0)})
+\right),
+$$
+
+$$
+h_C^{(1)}
+=
+H_{\mathrm{profile}}\!\left(
+K_{4,\mathrm{base}}+S_C^{(0)}
+\right).
+$$
+
+At fixed $h_C^{(1)}$, recompute the complete chain
+
+```text
+P_M
+  -> T_C
+  -> H_M
+  -> I_4M
+  -> Rhat_C,M
+  -> G_J
+  -> J0_C
+```
+
+and solve
+
+$$
+J_C^{(1)}
+=
+J_{0,C}\!\left(
+C_k,T_C(h_C^{(1)}),h_C^{(1)}
+\right)
++
+\zeta_C
+j_{C,\mathrm{flux}}\!\left(
+J_C^{(1)},h_C^{(1)}
+\right).
+$$
+
+Only $J_C^{(1)}$ enters continuity. Only $C_{k+1}$ commits as Candidate C state. Predictor selectors, Hodge objects, resolvents, currents, and geometry have no corrector or next-beat authority.
+
+> **Equation/contract row:** `D10.2-EC-OS-C-CORRECTOR`.
+
+#### 10.3.3 Split-consistency residual
+
+The final current generally generates a different geometry from the predictor current. Define
+
+$$
+\widehat h^{(1)}
+=
+H_{\mathrm{profile}}\!\left(
+K_{4,\mathrm{base}}
++
+S_a(J^{(1)},h^{(1)})
+\right),
+$$
+
+$$
+r_{h,a}^{OS}
+=
+h_a^{(1)}
+-
+\widehat h_a^{(1)}.
+$$
+
+Let $F_a^{CI}=(F_{J,a},F_{h,a})$ be the accepted coupled root. Because the corrector solves the current equation exactly at fixed $h_a^{(1)}$,
+
+$$
+F_a^{CI}
+\bigl(
+J_a^{(1)},h_a^{(1)}
+\bigr)
+=
+\bigl(
+0,r_{h,a}^{OS}
+\bigr).
+$$
+
+The split is therefore exactly current-consistent with the coupled constitutive equations. Its deliberate defect is the unreclosed geometry fixed point. A nonzero $r_h^{OS}$ is not automatically a failed OS step; it is reported as part of the profile’s evidence and domain contract.
+
+On the named floor-inactive A and fixed-rank strict-gap C smooth charts, the accepted local bounds make the geometry defect quadratic in the structural coupling under the declared Lipschitz and bounded-source hypotheses. Those are conditional local bounds, not an assumption that $r_h^{OS}=O(\Delta t)$ or a uniform numerical guarantee.
+
+> **Equation/contract row:** `D10.2-EC-OS-SPLIT-RESIDUAL`.
+
+#### 10.3.4 OS claim ceiling
+
+OS establishes a bounded one-pass same-beat geometry feedback realization. It does not establish:
+
+- equality with CI;
+- an iterative convergence theorem;
+- zero split residual;
+- an automatic $\Delta t$ truncation order;
+- global regularity;
+- persistent geometry history;
+- nonzero committed endpoint effect merely because $h^{(1)}$ is consumed by the corrector.
 
 ### 10.4 Reconstructed Geometry — RG2b
 
-#### Content to extract
+The reconstructed-geometry investigation separated three questions.
 
-Present RG2b as:
+1. An exact same-beat evaluator of the CI fixed point is CI-equivalent, not a new temporal family.
+2. Local reconstruction of geometry from the poststate of an already complete CI or OS step is a property of that family, not a new realization.
+3. A lagged invariant-section architecture with no persistent geometry is a genuinely distinct bounded realization. This accepted family is RG2b.
 
-* a bounded reconstructed-geometry realization;
-* defined relative to a frozen, family-local equivariant extension;
-* possessing the accepted unique bounded Lipschitz invariant section.
+The RG2b order is
 
-Insert the exact reconstruction map and domain contract from the accepted RG record.
+```text
+X_a,k
+  -> h_a,k = Gamma_a(X_a,k)
+  -> accepted fixed-h current and candidate transition
+  -> generated h_a,k+
+  -> X_a,k+1,
+```
 
-### Required source objects
+with the invariance requirement
 
-* `REAL-RG2B`
+$$
+h_{a,k+}
+=
+\Gamma_a(X_{a,k+1}).
+$$
 
-### Boundary
+Let
 
-Do not claim:
+$$
+\Psi_{a,\Gamma}(X)
+=
+\Phi_{a,\mathrm{lag}}\!\left(
+X,\Gamma(X)
+\right),
+$$
 
-* a unique reconstruction beyond the frozen completion;
-* $C^1$ differentiability;
-* a classical derivative graph;
-* structural spectrum;
-* stability.
+and
 
----
+$$
+G_{a,\kappa}(X,h)
+=
+H_{\mathrm{profile}}\!\left(
+K_{4,\mathrm{base}}
++
+S_a(C_a(h;X,U),h)
+\right).
+$$
+
+The exact invariant-section equation is
+
+$$
+\Gamma_a\!\left(
+\Psi_{a,\Gamma_a}(X)
+\right)
+=
+G_{a,\kappa}\!\left(
+X,\Gamma_a(X)
+\right).
+$$
+
+Equivalently, the accepted graph transform fixes $\Gamma_a$:
+
+$$
+\Gamma_a
+=
+\mathcal T_a\Gamma_a.
+$$
+
+At $\kappa_H=0$,
+
+$$
+G_{a,0}(X,h)
+=
+h_{\mathrm{ref}},
+$$
+
+so
+
+$$
+\Gamma_{a,0}(X)
+=
+h_{\mathrm{ref}}
+$$
+
+is the exact neutral invariant section.
+
+The positive result is relative to a frozen family-local extension profile in finite-dimensional coordinates. Choose nested compact charts
+
+$$
+K_-\Subset K\Subset U
+$$
+
+inside the admitted smooth domain. The extension agrees exactly with the candidate maps on $K$, returns to the identity state map and $h_{\mathrm{ref}}$ outside a compact neighborhood, preserves the required bounds, and is graph-relabeling and orientation equivariant. It is profile configuration, not runtime state or tuning.
+
+On the admitted section class, the graph transform is a value-radius and Lipschitz self-map with $C^0$ contraction factor
+
+$$
+q_0<1,
+$$
+
+and the base maps satisfy the fixed-domain containment
+
+$$
+\Psi_{a,\Gamma}(K_-)
+\subseteq
+K.
+$$
+
+The result supplies one deterministic family-local Lipschitz section $\Gamma_a$. It serializes no $h$, previous root, branch token, solver history, or hidden continuation label. For A, $\Gamma_A$ is a deterministic function of $(C,W_A)$ and context. For C, $\Gamma_C$ is a deterministic function of $C$ and context.
+
+> **Primary source object:** `REAL-RG2B`.
+
+> **Equation/contract rows:** `D10.2-EC-PARENT-REAL-RG2B`, `D10.2-EC-RG-INVARIANCE`, `D10.2-EC-RG-LIPSCHITZ-CONTRACTION`, `D10.2-EC-RG-DETERMINISM`.
+
+> **Associated accepted profile claim:** `D10-CL-O-005`.
+
+The uniqueness is relative to the frozen extension and admitted section class. The accepted result is $C^0$/Lipschitz. A classical derivative of $\Gamma_a$, a $C^1$ invariant graph, or a continuation-spectrum claim requires a separately named successor.
+
+> **Claim-ceiling row:** `D10.2-EC-RG-CLAIM-CEILING`.
+
+> **Associated conditional boundary:** `D10-CL-C-009`.
 
 ### 10.5 Persistent Carrier — PC
 
-#### Content to extract
+PC adds one authoritative nonresource structural carrier to the selected candidate state. For candidate $a\in\{A,C\}$,
 
-Present PC as the specific admitted:
+$$
+Z_{4,a,k}
+\in
+\mathcal B_{R,a}
+\subset
+\mathcal K_{4,a}.
+$$
 
-* scalar-ZOH;
-* one-$\tau_{\mathrm{PC}}$;
-* independently authoritative;
-* persistent $K_4$-history realization.
+$Z_{4,a}$ has the same candidate-specific structural type as the accepted source $S_a=\Delta K_{4,a}$. It is not full geometry, resource $C$, A mobility $W_A$, C sector $T_C$, current, solver state, or cache.
 
-Insert the exact accepted:
+The PC read path is
 
-* history state;
-* retention law;
-* release law;
-* source consumption;
-* reset and lifecycle behavior.
+$$
+K_{4,a,k}
+=
+K_{4,\mathrm{base}}
++
+Z_{4,a,k},
+$$
 
-### Required source objects
+$$
+h_{a,k}
+=
+H_{\mathrm{profile}}\!\left(
+K_{4,a,k}
+\right).
+$$
 
-* `REAL-PC`
+At fixed $h_{a,k}$, execute the accepted candidate-local current construction and form
 
-### Boundary
+$$
+S_{a,k}
+=
+\Delta K_{4,a}\!\left(
+J_{C,a,k},h_{a,k}
+\right).
+$$
 
-PC is not a universal history law and is not Candidate B.
+Define
 
----
+$$
+a_{\mathrm{PC},a,k}
+=
+\exp\!\left(
+-\frac{\Delta t_k}{\tau_{\mathrm{PC},a}}
+\right),
+\qquad
+\tau_{\mathrm{PC},a}>0.
+$$
+
+The scalar-ZOH writer is
+
+$$
+Z_{4,a,k+1}
+=
+a_{\mathrm{PC},a,k}Z_{4,a,k}
++
+\bigl(
+1-a_{\mathrm{PC},a,k}
+\bigr)S_{a,k},
+$$
+
+with $S_{a,k}$ held over the beat. It is the exact zero-order-hold step of
+
+$$
+\tau_{\mathrm{PC},a}
+\frac{dZ_{4,a}}{dt}
+=
+-Z_{4,a}+S_a
+$$
+
+for that held source. This is the accepted family-local completion, not a unique RC temporalization.
+
+> **Primary source object:** `REAL-PC`.
+
+> **Equation/contract rows:** `D10.2-EC-PARENT-REAL-PC`, `D10.2-EC-PC-WRITER-COEFFICIENT`, `D10.2-EC-PC-ZOH-WRITER`.
+
+> **Associated accepted profile claim:** `D10-CL-O-006`.
+
+#### 10.5.1 Bounded carrier domain
+
+Declare
+
+$$
+\mathcal B_{R,a}
+=
+\left\{
+Z:
+\lVert Z\rVert_K\leq R_a
+\right\},
+$$
+
+and
+
+$$
+m_a(R_a)
+=
+\sup_{
+X\in K_{X,a},
+\,Z\in\mathcal B_{R,a}
+}
+\left\|
+S_a(X,Z)
+\right\|_K.
+$$
+
+The exact carrier-domain admission criterion is
+
+$$
+m_a(R_a)
+\leq
+R_a,
+$$
+
+together with
+
+$$
+H_{\mathrm{profile}}
+\left(
+K_{4,\mathrm{base}}
++
+\mathcal B_{R,a}
+\right)
+\subseteq
+\mathcal H_{\mathrm{adm}},
+$$
+
+and regularity of the candidate current solve throughout the declared state/carrier chart.
+
+For nonnegative step duration,
+
+$$
+0\leq a_{\mathrm{PC}}\leq 1.
+$$
+
+On the primary positive-duration profile,
+
+$$
+0<a_{\mathrm{PC}}<1.
+$$
+
+When the source and carrier remain in the convex carrier ball, the writer stays in the ball without clipping, projection, post-hoc normalization, or append-only history. The accepted theorem is local and parametric; it does not instantiate universal numerical radii or margins.
+
+#### 10.5.2 Formation, persistence, release, and matched forcing
+
+From neutral state,
+
+$$
+Z_{4,a,k}=0,
+\qquad
+S_{a,k}\neq 0
+\quad\Longrightarrow\quad
+Z_{4,a,k+1}
+=
+\bigl(
+1-a_{\mathrm{PC},a,k}
+\bigr)S_{a,k}
+\neq 0.
+$$
+
+With zero source,
+
+$$
+S_{a,k}=0
+\quad\Longrightarrow\quad
+Z_{4,a,k+1}
+=
+a_{\mathrm{PC},a,k}Z_{4,a,k}.
+$$
+
+For variable positive step durations and zero source,
+
+$$
+Z_{4,a,n}
+=
+\exp\!\left(
+-\sum_{k<n}
+\frac{\Delta t_k}{\tau_{\mathrm{PC},a}}
+\right)
+Z_{4,a,0}.
+$$
+
+This gives finite-time persistence and asymptotic native release. It is not a finite threshold event or administrative reset.
+
+Under matched future forcing, the accepted carrier-difference bound contracts by the declared coefficient plus source Lipschitz contribution when the preregistered total is strictly below one. This is a carrier-state contraction result. It does not by itself establish nonzero endpoint hysteresis in $C$, current, geometry, or any downstream observable.
+
+> **Equation/contract rows:** `D10.2-EC-PC-RELEASE`, `D10.2-EC-PC-MATCHED-FORCING`.
+
+#### 10.5.3 Candidate states and lifecycle
+
+The PC complete candidate states are:
+
+$$
+X_{A,\mathrm{PC},k}
+=
+\bigl(
+C_k,W_{A,k},Z_{4,A,k}
+\bigr),
+$$
+
+$$
+X_{C,\mathrm{PC},k}
+=
+\bigl(
+C_k,Z_{4,C,k}
+\bigr),
+$$
+
+with $T_C$ still derived in the C profile.
+
+Snapshot, reset, migration, topology-event, and loss semantics must bind $Z_4$ explicitly. A same-carrier-space context change may transport the carrier only through its declared map. A carrier-space or topology event must use a typed structural map, reinitialize or archive with an information-loss receipt, or fail closed. Generic array resizing is not a history map.
+
+PC is not Candidate B. It is one admitted realization-local independent structural state, crossed with A or C. Its existence does not prove that coherence-only Markov closure universally fails or that every GRC-v4 profile requires explicit history state.
+
+> **Associated negative boundary:** `D10-CL-X-005`.
 
 ### 10.6 Coupled Implicit plus Persistent Carrier — CI+PC
 
-#### Content to extract
-
-Present the exact accepted composition:
+CI+PC combines:
 
 ```text
-unit immediate CI contribution
+same-beat coupled current/geometry closure
 +
-unit retained PC contribution
+prior committed K_4 history.
 ```
 
-with steady structural-source gain two.
+It does not reopen a general combinatorial search over all realization pairs. The accepted hybrid pressures only CI+PC for A and C.
 
-For A include the accepted bounded-domain composite contraction and root uniqueness.
+The complete states are
 
-For C include the accepted stratum-local composite contraction and exactly one self-consistent regular root.
+$$
+X_{A,\mathrm{CI+PC},k}
+=
+\bigl(
+C_k,W_{A,k},Z_{4,A,k}
+\bigr),
+$$
 
-### Required source objects
+$$
+X_{C,\mathrm{CI+PC},k}
+=
+\bigl(
+C_k,Z_{4,C,k}
+\bigr),
+$$
 
-* `REAL-CI-PC`
-* `SPEC-COMPOSITION-PROFILE-IDENTITY`
+with $T_C$ derived. The joint unknown remains
 
-### Boundary
+$$
+Y_a
+=
+(J_a,h_a).
+$$
 
-The gain-two profile is one revision-specific composition, not a unique or generally optimal composition law.
+The current primary profile freezes
 
----
+$$
+\rho_{\mathrm{inst},a}=1,
+$$
+
+while
+
+$$
+\rho_{\mathrm{inst},a}=0
+$$
+
+is the PC ablation. $\rho_{\mathrm{inst}}$ is profile metadata, not runtime tuning state.
+
+> **Primary source objects:** `REAL-CI-PC`, `SPEC-COMPOSITION-PROFILE-IDENTITY`.
+
+> **Equation/contract parent rows:** `D10.2-EC-PARENT-REAL-CI-PC`, `D10.2-EC-PARENT-SPEC-COMPOSITION-PROFILE-IDENTITY`.
+
+> **Associated accepted profile claims:** `D10-CL-O-007`, `D10-CL-N-008`.
+
+#### 10.6.1 Composition law
+
+For A,
+
+$$
+K_{\mathrm{eff},A}
+=
+K_{4,\mathrm{base}}
++
+Z_{4,A,k}
++
+\rho_{\mathrm{inst},A}
+S_A(J_A,h_A).
+$$
+
+For C,
+
+$$
+K_{\mathrm{eff},C}
+=
+K_{4,\mathrm{base}}
++
+Z_{4,C,k}
++
+\rho_{\mathrm{inst},C}
+S_C(J_C,h_C).
+$$
+
+The geometry equation is
+
+$$
+F_{h,a}
+=
+h_a
+-
+H_{\mathrm{profile}}\!\left(
+K_{\mathrm{eff},a},
+h_{4,\mathrm{ref}},
+U_k
+\right)
+=
+0.
+$$
+
+$F_{J,a}=0$ is the accepted candidate-specific CI current equation evaluated at the same trial geometry. $Z_{4,a,k}$ is a committed input to the root, not a root unknown.
+
+> **Equation/contract rows:** `D10.2-EC-CI-PC-A-COMPOSITION`, `D10.2-EC-CI-PC-C-COMPOSITION`.
+
+#### 10.6.2 A and C joint roots
+
+For A, the root contains the full A-CI residual from §10.2.1 together with
+
+$$
+F_{h,A}
+=
+h_A
+-
+H_{\mathrm{profile}}\!\left(
+K_{4,\mathrm{base}}
++
+Z_{4,A,k}
++
+\rho_{\mathrm{inst},A}
+S_A(J_A,h_A),
+h_{4,\mathrm{ref}},
+U_k
+\right)
+=
+0.
+$$
+
+It uses the accepted bounded composite self-map and contraction conditions. $\widehat W_A(h)$ is recomputed within each root evaluation.
+
+For C, the root contains the full once-gated C-CI residual from §10.2.2 together with
+
+$$
+F_{h,C}
+=
+h_C
+-
+H_{\mathrm{profile}}\!\left(
+K_{4,\mathrm{base}}
++
+Z_{4,C,k}
++
+\rho_{\mathrm{inst},C}
+S_C(J_C,h_C),
+h_{4,\mathrm{ref}},
+U_k
+\right)
+=
+0.
+$$
+
+The accepted result is a contraction on the declared fixed-selector stratum and closed carrier ball. Exactly one self-consistent regular root on the preregistered local branch is admitted; multiple, disconnected, singular, or nonfinite roots fail closed.
+
+> **Equation/contract rows:** `D10.2-EC-CI-PC-A-ROOT`, `D10.2-EC-CI-PC-C-CONTRACTION`, `D10.2-EC-CI-PC-C-ROOT-SELECTION`.
+
+#### 10.6.3 One source, two temporal consequences
+
+After a valid root $(J_a^\star,h_a^\star)$, the carrier writer is
+
+$$
+Z_{4,a,k+1}
+=
+a_{\mathrm{PC},a,k}Z_{4,a,k}
++
+\bigl(
+1-a_{\mathrm{PC},a,k}
+\bigr)
+S_a(J_a^\star,h_a^\star).
+$$
+
+The same root source $S_a(J_a^\star,h_a^\star)$ must be used:
+
+1. immediately in $K_{\mathrm{eff},a}$ through $\rho_{\mathrm{inst},a}$; and
+2. prospectively in the carrier writer.
+
+Using one source to close the root and another to write history would create an unregistered split profile.
+
+The exact gain audit is:
+
+```text
+chi_a:
+  once in the accepted causal read path
+
+zeta_a:
+  once in S_a = Delta K4_a
+
+rho_inst,a:
+  once on the immediate source in K_eff
+
+kappa_H:
+  once when H_profile consumes K_eff
+
+a_PC,a:
+  once in the post-root carrier writer
+```
+
+The writer does not reapply $\rho_{\mathrm{inst}}$, $\zeta$, or $\chi$. New $Z_{4,a,k+1}$ is never read in the same beat.
+
+For a constant source $S$ with $0<a_{\mathrm{PC}}<1$, the carrier tends to $S$, so
+
+$$
+K_{\mathrm{eff}}
+\longrightarrow
+K_{4,\mathrm{base}}
++
+\bigl(
+1+\rho_{\mathrm{inst}}
+\bigr)S.
+$$
+
+For the accepted primary $\rho_{\mathrm{inst}}=1$ profile,
+
+$$
+K_{\mathrm{eff}}
+\longrightarrow
+K_{4,\mathrm{base}}+2S.
+$$
+
+This gain-two result is a declared profile property, not an error and not amplitude equivalence with CI or PC. A normalized or differently weighted hybrid would be a new complete profile.
+
+#### 10.6.4 Exact ablations
+
+The accepted ablations are:
+
+```text
+rho_inst = 0 with PC enabled
+  -> PC
+
+Z_4,k = 0 with PC disabled and rho_inst = 1
+  -> CI
+
+rho_inst = 0 with PC disabled and Z_4,k = 0
+  -> fixed-reference transition
+```
+
+These are profile reductions, not evidence that the enabled hybrid is equivalent in amplitude, timing, or state authority to its ablations.
+
+> **Equation/contract row:** `D10.2-EC-CI-PC-ABLATIONS`.
+
+#### 10.6.5 CI+PC claim ceiling
+
+CI+PC establishes a bounded local hybrid for A and C with one immediate and one retained structural path. It does not establish:
+
+- that all realization pairs compose;
+- OS+PC or RG+PC profiles;
+- a unique or preferred immediate/history weighting;
+- amplitude-neutral comparison with CI or PC;
+- global root uniqueness;
+- structural or temporal stability;
+- nonzero endpoint hysteresis;
+- a universal persistent-carrier ontology.
 
 ### 10.7 Comparative disposition
 
-End the section with a compact table:
+The accepted realization synthesis does not rank the five families. It identifies distinct causal and state commitments.
 
-| Realization | Accepted role                       | What is not claimed                      |
-| ----------- | ----------------------------------- | ---------------------------------------- |
-| CI          | simultaneous current/geometry root  | global stability                         |
-| OS          | one-pass staged geometry feedback   | equivalence to CI beyond accepted bounds |
-| RG2b        | bounded reconstructed geometry      | unique universal reconstruction          |
-| PC          | persistent $K_4$ history          | universal memory law                     |
-| CI+PC       | immediate plus retained composition | preferred or unique hybrid               |
+| Realization | Accepted defining feature | Authoritative realization history | Accepted local defect or boundary | What is not claimed |
+|---|---|---|---|---|
+| CI | simultaneous current/geometry root | none merely by CI | local regular branch only | global uniqueness or stability |
+| OS | one predictor, one geometry update, one corrector | none | explicit geometry fixed-point residual | equivalence to CI or iterative convergence |
+| RG2b | lagged deterministic invariant section | no serialized geometry | uniqueness relative to frozen Lipschitz extension | universal reconstruction, $C^1$ section, spectrum |
+| PC | scalar-ZOH persistent $K_4$ carrier | $Z_{4,a}$ | local bounded carrier domain | universal memory law or endpoint hysteresis |
+| CI+PC | simultaneous root plus prior committed $K_4$ history | $Z_{4,a}$ | local hybrid branch and gain-two profile | preferred weighting or exhaustive composition |
 
-No ranking language belongs in this section.
+The families answer different questions. A result about current/geometry timing cannot be used as evidence for independent history authority; a persistent carrier cannot be used as evidence that a simultaneous root is necessary; local reconstructibility cannot be used as a distinct temporal family unless it changes the accepted state or timing semantics.
+
+No “best realization” follows from the accepted equations. A preference claim requires a named comparison objective, matched units and capacities, matched steady amplitudes where relevant, and evidence suited to that objective.
+
+### 10.8 Sections 8–10 claim ceiling
+
+Sections 8–10 establish, for the current initial population:
+
+- the complete accepted A candidate-local recurrence;
+- the complete accepted C candidate-local selected-sector/Hodge recurrence;
+- exact candidate authority and derived-state boundaries;
+- exact once-gated A and C Read-Back placement;
+- typed A and C structural sources;
+- the CI joint-root profiles for A and C;
+- the one-pass OS profiles for A and C;
+- the bounded RG2b invariant-section profiles for A and C;
+- the scalar-ZOH PC profiles for A and C;
+- the gain-two CI+PC profiles for A and C;
+- profile-local regularity, failure, state, and history boundaries;
+- the no-ranking comparative disposition.
+
+They do not establish:
+
+- runtime implementation or conformance;
+- runtime-reached formation, retention, release, replay, or migration;
+- physical nonabsorbability of A or C;
+- nonzero committed endpoint effects;
+- structural or temporal stability;
+- numeric continuation spectra;
+- universal physical units or cross-profile magnitude equivalence;
+- global roots or branches;
+- a preferred candidate or realization;
+- future-exhaustive constitutive or realization taxonomies.
+
+> **Associated future-exhaustiveness boundary:** `D10-CL-C-012`.
 
 ---
 
