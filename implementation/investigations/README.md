@@ -23,8 +23,11 @@ Current investigations:
   factorization and authorizes GRCv4-first specification writing while leaving
   all runtime implementation unauthorized. Its subordinate
   [exploratory side-tool package](./grc9v4-constitutive-design/tools/exploratory-side-tool/README.md)
-  plans read-only forensic and counterfactual navigation over the accepted
-  records without changing their claims.
+  is accepted through ET-C9 as a bounded read-only forensic, lineage, and
+  structural-counterfactual surface over the accepted records. It detects new
+  or changed investigation material but fails closed until a successor
+  adapter/readmission cycle; it does not change claims, predict rerun outcomes,
+  establish specification conformance, or implement V4.
 - [Causal-pathway consolidation](./causal-pathway-consolidation/README.md):
   accepted source-audit and I106-I111 supporting evidence for the completed
   documentation/conformance tranche. The essential plan, checklist, baseline

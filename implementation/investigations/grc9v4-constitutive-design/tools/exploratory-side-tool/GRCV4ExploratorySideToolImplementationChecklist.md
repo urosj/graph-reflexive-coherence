@@ -1019,4 +1019,4 @@ the accepted investigation.
 
 ### Gate
 
-- [ ] Human review accepts one closeout disposition.
+- [x] Human review accepts one closeout disposition.
