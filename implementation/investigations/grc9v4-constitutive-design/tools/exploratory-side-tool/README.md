@@ -1,6 +1,6 @@
 # GRCv4 Exploratory Side Tool
 
-**Status:** Iterations 0-8 accepted; Iteration 9 authorized
+**Status:** Iterations 0-9 accepted
 
 This investigation defines a read-only exploratory tool over the accepted
 GRCv4/GRC9v4 constitutive-design records. It is a side tool for understanding
@@ -57,7 +57,8 @@ From the repository root:
 ```bash
 TOOL=implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool
 python3 "$TOOL/scripts/bootstrap.py"
-.venv/bin/python "$TOOL/scripts/run.py" verify-iteration8
+.venv/bin/python "$TOOL/scripts/run.py" verify-iteration9
+.venv/bin/python "$TOOL/scripts/run.py" notebook-iteration3
 .venv/bin/python "$TOOL/scripts/run.py" serve-iteration8
 ```
 
@@ -78,6 +79,9 @@ the tool-local managed installation.
 
 Start with:
 
+- [user guide](./docs/UserGuide.md)
+- [agentic query guide](./docs/AgenticQueryGuide.md)
+- [forensic recipes notebook](./tool/notebooks/forensic_recipes.ipynb)
 - [implementation plan](./GRCV4ExploratorySideToolImplementationPlan.md)
 - [implementation checklist](./GRCV4ExploratorySideToolImplementationChecklist.md)
 - [user scenarios and plan-coverage validation](./GRCV4ExploratorySideToolUserScenarios.md)
@@ -99,6 +103,10 @@ Start with:
 - [accepted Iteration 8 lineage and ripple layer](./records/ETC8LineageAndRippleNavigation.md)
 - [Iteration 8 compiled lineage/playback layer](./records/ETC8LineagePlaybackLayer.json)
 - [Iteration 8 verification receipt](./records/ETC8VerificationReceipt.json)
+- [accepted Iteration 9 closeout](./records/ETC9CloseoutReport.md)
+- [Iteration 9 scenario coverage](./records/ETC9ScenarioCoverageAndUsability.json)
+- [Iteration 9 environment conformance](./records/ETC9EnvironmentConformance.json)
+- [Iteration 9 verification receipt](./records/ETC9VerificationReceipt.json)
 - [accepted constitutive-design investigation](../../README.md)
 - [accepted D10 claim topology](../../decisions/D10NormativeClaimTopology.json)
 - [accepted D10 debt transformations](../../decisions/D10DebtClaimTransformationLedger.json)
@@ -170,7 +178,16 @@ ET_C8_web_manifest_digest = dc1456e975c0851d1ecc817422f2cedb9c25e0b182c3cbca2147
 ET_C8_accepted_record_digest = a11d390de18469210c82e85fe7c8d2e41eddb20ae811541923db0325fb3a2c20
 ET_C8_verification_receipt_digest = 7fcd3f3df3a8f2a0c14c1ffcb2aa05d98db85f310c3b73772326556e8430e608
 iteration_8 = accepted
-iteration_9 = authorized_not_implemented
+iteration_9 = accepted
+ET_C9_scenario_coverage = 35_of_35_reconciled
+ET_C9_forensic_API_coverage = 9_of_9
+ET_C9_web_view_coverage = 8_of_8
+ET_C9_user_guide = 13_complete_workflows_including_notebook_with_6_verified_screenshots
+ET_C9_agentic_guide = 12_complete_workflows_including_notebook_with_9_query_executable_walkthrough
+ET_C9_scenario_documentation = canonical_35_scenario_contract_linked_without_duplication
+ET_C9_coverage_digest = a4608d728c9b9e356421adb2d6b98390794c0916e90c299ad88467720f3c7404
+ET_C9_accepted_record_digest = 7e9fb5a8dada805b1cd1b86e877bf1d23cfc16c4a6c0a1ef97d8f518e6ee0288
+ET_C9_verification_receipt_digest = c0ae8b45a0d501d988845ce9565a3c89752a815a9a77676551c503870953266a
 src_pygrc_changes = forbidden
 specification_changes = forbidden
 new_scientific_claims = forbidden

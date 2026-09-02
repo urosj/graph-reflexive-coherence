@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Run ET-C8 browser pressure with the tool-local Playwright runtime."""
+"""Run the complete ET-C9 browser suite with the tool-local runtime."""
 
 from __future__ import annotations
 
@@ -57,20 +57,13 @@ def main() -> int:
         wait_for_server("http://127.0.0.1:4173")
         cli = TOOL_ROOT / "web/node_modules/@playwright/test/cli.js"
         result = subprocess.run(
-            [
-                str(managed_node()),
-                str(cli),
-                "test",
-                "e2e/navigation.spec.mjs",
-                "e2e/ceilings.spec.mjs",
-                "e2e/lineage.spec.mjs",
-            ],
+            [str(managed_node()), str(cli), "test"],
             cwd=TOOL_ROOT / "web",
             env=environment,
             check=False,
         )
         if result.returncode:
-            raise RuntimeError("ET-C8 Playwright tests failed")
+            raise RuntimeError("ET-C9 Playwright tests failed")
     finally:
         server.terminate()
         try:
@@ -78,7 +71,7 @@ def main() -> int:
         except subprocess.TimeoutExpired:
             server.kill()
             server.wait(timeout=5)
-    print("ET_C8_BROWSER_TEST_PASS projects=desktop,mobile tests=8 screenshots=10")
+    print("ET_C9_BROWSER_TEST_PASS projects=desktop,mobile tests=12 screenshots=14")
     return 0
 
 

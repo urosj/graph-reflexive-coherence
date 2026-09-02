@@ -145,10 +145,43 @@ def main() -> int:
         == record["source_contract"]["source_bundle_candidate_digest"],
     )
     setup = record["setup_contract"]["setup_identity"]
+    environment_path = SIDE_TOOL_ROOT / "records/ETC9EnvironmentConformance.json"
+    environment = (
+        json.loads(environment_path.read_text(encoding="utf-8"))
+        if environment_path.is_file()
+        else None
+    )
+    environment_rows = {
+        row["path"]: row
+        for row in environment.get("current_dependency_rows", [])
+    } if isinstance(environment, dict) else {}
+    if environment is not None:
+        check(
+            "ET_C9_environment_digest",
+            environment["environment_digest"]
+            == digest(
+                {
+                    key: value
+                    for key, value in environment.items()
+                    if key != "environment_digest"
+                }
+            ),
+        )
     for row in setup["dependency_files"]:
+        current_sha = file_sha256(REPO_ROOT / row["path"])
+        successor = environment_rows.get(row["path"])
+        successor_accounts_for_change = (
+            successor is not None
+            and successor["ET_C0_file_sha256"] == row["file_sha256"]
+            and successor["current_file_sha256"] == current_sha
+            and successor["classification"]
+            == "ET_C6_admitted_toolchain_successor"
+            and environment["ET_C0_record_digest"] == record["record_digest"]
+            and environment["scientific_source_identity_changed"] is False
+        )
         check(
             f"dependency_SHA:{row['path']}",
-            file_sha256(REPO_ROOT / row["path"]) == row["file_sha256"],
+            current_sha == row["file_sha256"] or successor_accounts_for_change,
         )
     check(
         "setup_identity_digest",

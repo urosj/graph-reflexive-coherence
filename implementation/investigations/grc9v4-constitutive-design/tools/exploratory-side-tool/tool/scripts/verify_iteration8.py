@@ -80,7 +80,7 @@ def finalize_accepted_record() -> dict[str, object]:
     records = SIDE_TOOL_ROOT / "records"
     gate_path = records / "ETC8LineageAndRippleNavigation.json"
     gate = load_json_object(gate_path)
-    gate["acceptance_requirements"] = {
+    expected_requirements = {
         "independent_source_projection_audit": "passed_34241_checks",
         "python_and_node_component_tests": "passed_185_python_and_17_node_checks",
         "deterministic_double_rebuild": "passed_byte_identical",
@@ -88,28 +88,10 @@ def finalize_accepted_record() -> dict[str, object]:
         "ET_C7_predecessor_regression": "passed_477_checks",
         "human_review": "accepted",
     }
-    gate["record_digest"] = None
-    gate["record_digest"] = record_digest(gate, "record_digest")
-    write_json(gate_path, gate)
-
-    report_path = records / "ETC8LineageAndRippleNavigation.md"
-    report = report_path.read_text(encoding="utf-8").rstrip()
-    report += (
-        "\n\n## Verification\n\n"
-        "- deterministic rebuilds: `2`, byte-identical\n"
-        "- independent source audit: `34,241` checks (`1,049` structural + "
-        "`33,192` per-edge-reference assertions over `11,064` links)\n"
-        "- focused Python pressure: `185` checks\n"
-        "- Node component tests: `17` across `4` files\n"
-        "- Playwright: `8` tests across desktop and mobile, `10` screenshots\n"
-        "- ET-C7 predecessor regression: `477` checks\n"
-        "- shared-dist boundary: ET-C7 full-dist hashes are historical after "
-        "the ET-C8 build; focused source/layer regression passed\n"
-        "- visual inspection: passed without overlap, clipping, or authority conflation\n"
-        "- human acceptance: accepted\n"
-        "- Iteration 9 authorization: authorized; not implemented\n"
-    )
-    report_path.write_text(report, encoding="utf-8")
+    if gate.get("acceptance_requirements") != expected_requirements:
+        raise RuntimeError("ET-C8 accepted requirements are not reproducible")
+    if gate.get("record_digest") != record_digest(gate, "record_digest"):
+        raise RuntimeError("ET-C8 accepted record digest is invalid")
     return gate
 
 

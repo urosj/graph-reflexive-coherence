@@ -1,7 +1,7 @@
 # GRCv4 Exploratory Side Tool Implementation Checklist
 
 **Date:** 2026-08-28
-**Status:** Iterations 0-8 accepted; Iteration 9 authorized
+**Status:** Iterations 0-9 accepted
 **Plan:** [GRCV4ExploratorySideToolImplementationPlan.md](./GRCV4ExploratorySideToolImplementationPlan.md)
 **Source investigation:** [GRC9V4 constitutive design](../../README.md)
 
@@ -38,13 +38,13 @@
 ```text
 branch = investigation-GRCV4-exploratory-side-tool
 plan = frozen
-checklist = iteration_8_accepted_iteration_9_authorized
-tool_code = iteration_8_lineage_and_precomputed_ripple_accepted
+checklist = iterations_0_through_9_accepted
+tool_code = iteration_9_closeout_accepted
 accepted_source_records_changed = false
 src_pygrc_changed = false
 specifications_changed = false
 scientific_claims_added = false
-implementation_gate = ET-C8_accepted_I9_authorized
+implementation_gate = ET-C9_accepted_bounded_read_only_exploratory_tool
 ```
 
 ## Iteration 0. Baseline, Layout, And Source Contract Freeze
@@ -905,7 +905,7 @@ collapsing history into a false linear timeline.
 
 ## Iteration 9. Independent Validation And Closeout
 
-**Status:** authorized; not implemented
+**Status:** accepted
 
 ### Goal
 
@@ -914,47 +914,58 @@ the accepted investigation.
 
 ### Checks
 
-- [ ] Re-run D10 topology, D10.1, and D10.2 accepted audits unchanged.
-- [ ] Run the complete investigation-local Python test suite.
-- [ ] Run the complete investigation-local web test suite.
-- [ ] Rebuild graph, reports, scenarios, and ripple tables twice.
-- [ ] Confirm byte-identical derived artifacts.
-- [ ] Rebuild canonical fixtures on the admitted minimum and later supported
+- [x] Re-run D10 topology, D10.1, and D10.2 accepted audits unchanged.
+- [x] Run the complete investigation-local Python test suite.
+- [x] Run the complete investigation-local web test suite.
+- [x] Rebuild graph, reports, scenarios, and ripple tables twice.
+- [x] Confirm byte-identical derived artifacts.
+- [x] Rebuild canonical fixtures on the admitted minimum and later supported
       Python versions (3.11 and 3.13 where available) and compare bytes; if that
       conformance cannot be established, narrow the tested compatibility range
       before acceptance.
-- [ ] Confirm accepted source bytes are unchanged.
-- [ ] Confirm no writes occurred under `src/`, `specs/`, repository tests, or
+- [x] Confirm accepted source bytes are unchanged.
+- [x] Confirm no writes occurred under `src/`, `specs/`, repository tests, or
       accepted decision records.
-- [ ] Audit JavaScript for propagation logic or duplicated scientific rules.
-- [ ] Re-run cross-surface identity assertions for representative claim, debt,
+- [x] Audit JavaScript for propagation logic or duplicated scientific rules.
+- [x] Re-run cross-surface identity assertions for representative claim, debt,
       gate, profile, object/contract, source, and ripple selections.
-- [ ] Audit annotations for accidental propagation authority.
-- [ ] Audit every counterfactual for evidence-frontier enforcement.
-- [ ] Audit every source and speculative label.
-- [ ] Pressure malformed, stale, contradictory, and out-of-scope scenarios.
-- [ ] Pressure added, changed, missing, and unreadable source inventories and
+- [x] Audit annotations for accidental propagation authority.
+- [x] Audit every counterfactual for evidence-frontier enforcement.
+- [x] Audit every source and speculative label.
+- [x] Pressure malformed, stale, contradictory, and out-of-scope scenarios.
+- [x] Pressure added, changed, missing, and unreadable source inventories and
       prove none can silently alter the admitted graph.
-- [ ] Prove a newly accepted source requires adapter/readmission, a successor
+- [x] Prove a newly accepted source requires adapter/readmission, a successor
       bundle identity, full rebuild, and re-audit before current-state labeling.
-- [ ] Pressure candidate, profile, realization, topology-event, and correction
+- [x] Pressure candidate, profile, realization, topology-event, and correction
       lineage views.
-- [ ] Run Playwright screenshots on desktop and mobile.
-- [ ] Verify no blank graph, clipped controls, overlapping text, or unreadable
+- [x] Run Playwright screenshots on desktop and mobile.
+- [x] Verify no blank graph, clipped controls, overlapping text, or unreadable
       long identifiers.
-- [ ] Perform a forensic-task usability pass.
-- [ ] Perform a navigational-task usability pass.
-- [ ] Execute and reconcile all 35 normalized user scenarios against the
+- [x] Perform a forensic-task usability pass.
+- [x] Perform a navigational-task usability pass.
+- [x] Execute and reconcile all 35 normalized user scenarios against the
       scenario coverage matrix.
-- [ ] Verify the nine forensic API functions and all eight required web views
+- [x] Verify the nine forensic API functions and all eight required web views
       are exercised by at least one scenario.
-- [ ] Write final reconstruction commands and artifact policy.
-- [ ] Write closeout report and machine disposition.
-- [ ] Run `git diff --check`.
+- [x] Write a user guide with 13 complete start/action/endpoint/stop workflows,
+      including the governed notebook-to-browser path, verified screenshots,
+      and a link to the canonical 35-scenario contract without duplicating its
+      catalog.
+- [x] Write an agentic guide with complete forensic, counterfactual, and source
+      evolution workflows.
+- [x] Document the accepted two-recipe notebook runner, output envelope,
+      browser cross-check, non-Jupyter execution boundary, and absence of a
+      second admitted counterfactual-authoring notebook.
+- [x] Execute a tracked nine-query walkthrough under repository `.venv` and
+      keep its canonical outputs under the ignored generated-output tree.
+- [x] Write final reconstruction commands and artifact policy.
+- [x] Write closeout report and machine disposition.
+- [x] Run `git diff --check`.
 
 ### Closeout dispositions
 
-- [ ] `accepted_bounded_read_only_exploratory_tool`
+- [x] `accepted_bounded_read_only_exploratory_tool`
 - [ ] `accepted_forensic_only_web_not_authorized`
 - [ ] `accepted_navigation_only_counterfactual_not_authorized`
 - [ ] `blocked_source_schema_insufficient`
@@ -963,7 +974,49 @@ the accepted investigation.
 
 ### Maximum claim
 
-- [ ] Freeze that successful closeout supports a deterministic read-only
+- [x] Freeze that successful closeout supports a deterministic read-only
       exploration and bounded structural-counterfactual surface only.
-- [ ] Block new V4 evidence, reopened-gate prediction, runtime implementation,
+- [x] Block new V4 evidence, reopened-gate prediction, runtime implementation,
       specification conformance, and scientific claim promotion.
+
+### Result
+
+- status: `accepted`
+- selected disposition: `accepted_bounded_read_only_exploratory_tool`
+- scenario reconciliation: `35/35; one accepted owning gate per row`
+- forensic API coverage: `9/9`
+- required web-view coverage: `8/8`
+- independent closeout audit: `374 checks passed`
+- focused/adversarial closeout matrix: `15 checks passed`
+- documentation: `canonical 35-scenario contract; 13 complete user workflows;
+  12 complete agentic workflows; governed two-recipe notebook path; 9/9
+  executable forensic queries; 6 tracked verified screenshots; shared glossary
+  and ET-C8/ET-C9 boundary`
+- Python suite: `24 commands including the agentic walkthrough`
+- Node suite: `17 tests`
+- accepted reconstruction: `2/2 byte-identical cycles`
+- closeout reconstruction: `2/2 byte-identical cycles`
+- historical web stages: `ET-C6/ET-C7 source/layer and canonical manifest
+  metadata audited; superseded shared-dist bytes excluded; ET-C8 latest dist
+  audited exactly`
+- browser pressure: `12 Playwright tests / desktop + mobile / 14 screenshots`
+- visual inspection: `passed; no blank graph, clipping, overlap, unreadable long
+  identifier, or authority conflation`
+- portability: `relocated clean bootstrap passed with network-permitted locked
+  dependency restoration`
+- Python conformance: `3.12.3 tested; 3.11 and 3.13 unavailable and unclaimed`
+- source/protected paths: `byte-identical`
+- scenario coverage digest:
+  `a4608d728c9b9e356421adb2d6b98390794c0916e90c299ad88467720f3c7404`
+- environment conformance digest:
+  `6e97213f1dd5f471a97a1e502d851d48de11903ad952c9a8b7698014b30c49ca`
+- accepted closeout digest:
+  `7e9fb5a8dada805b1cd1b86e877bf1d23cfc16c4a6c0a1ef97d8f518e6ee0288`
+- verification receipt digest:
+  `c0ae8b45a0d501d988845ce9565a3c89752a815a9a77676551c503870953266a`
+- authority boundary: `no source admission, scientific promotion, rerun
+  prediction, runtime implementation, or specification conformance`
+
+### Gate
+
+- [ ] Human review accepts one closeout disposition.

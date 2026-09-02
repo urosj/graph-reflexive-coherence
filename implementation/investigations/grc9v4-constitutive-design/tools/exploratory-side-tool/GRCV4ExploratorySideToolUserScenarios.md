@@ -1,7 +1,7 @@
 # GRCv4 Exploratory Side Tool User Scenarios
 
 **Date:** 2026-08-28
-**Status:** Design coverage validated; Iterations 1-8 accepted; Iteration 9 authorized
+**Status:** Design coverage validated; Iterations 1-9 accepted
 **Plan:** [GRCV4ExploratorySideToolImplementationPlan.md](./GRCV4ExploratorySideToolImplementationPlan.md)
 **Checklist:** [GRCV4ExploratorySideToolImplementationChecklist.md](./GRCV4ExploratorySideToolImplementationChecklist.md)
 
@@ -405,6 +405,13 @@ the accepted surface. The browser scrubs 33 accepted gate records through a
 four-frame precomputed forks. These are navigation and presentation results:
 the browser neither recomputes ripple consequences nor changes accepted source
 state, and the evidence frontier remains unresolved.
+
+Iteration 9 reconciles all 35 rows against their single accepted owning gate,
+then cross-checks that every one of the nine forensic API functions and all
+eight required web views is exercised by at least one scenario. Two end-to-end
+usability routes pressure forensic reconstruction and cross-family navigation
+on desktop and mobile. This is coverage and usability evidence for the side
+tool only; it does not add evidence to the constitutive investigation.
 
 Each scenario has exactly one owning iteration. Supporting rows may exercise it
 again after another surface becomes available, and I9 reruns all 35.

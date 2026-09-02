@@ -38,6 +38,10 @@ def main() -> int:
     repo_root = repository_root()
     if Path(sys.prefix).resolve() != (repo_root / ".venv").resolve():
         raise RuntimeError("run this command with the repository .venv Python")
+    arguments = set(sys.argv[1:])
+    if arguments - {"--skip-dist-identity"}:
+        raise RuntimeError(f"unsupported ET-C6 audit arguments: {sorted(arguments)}")
+    skip_dist_identity = "--skip-dist-identity" in arguments
     checks = 0
 
     def require(condition: bool, label: str) -> None:
@@ -235,11 +239,12 @@ def main() -> int:
     require(manifest["static_bundle_digest"] == bundle["bundle_digest"], "manifest_bundle_binding")
     require(manifest["cross_surface_parity_digest"] == parity["parity_digest"], "manifest_parity_binding")
     require(manifest["file_count"] == len(manifest["files"]), "manifest_file_count")
-    for row in manifest["files"]:
-        path = dist / row["path"]
-        require(path.is_file(), f"dist_file:{row['path']}")
-        require(path.stat().st_size == row["size_bytes"], f"dist_size:{row['path']}")
-        require(file_sha256(path) == row["sha256"], f"dist_digest:{row['path']}")
+    if not skip_dist_identity:
+        for row in manifest["files"]:
+            path = dist / row["path"]
+            require(path.is_file(), f"dist_file:{row['path']}")
+            require(path.stat().st_size == row["size_bytes"], f"dist_size:{row['path']}")
+            require(file_sha256(path) == row["sha256"], f"dist_digest:{row['path']}")
     package = load_json_object(TOOL_ROOT / "web/package.json")
     require(package["devDependencies"]["cytoscape"] == "3.33.1", "cytoscape_pin")
     require(package["devDependencies"]["vite"] == "7.1.3", "vite_pin")
@@ -262,7 +267,8 @@ def main() -> int:
     print(
         "ET_C6_AUDIT_PASS "
         f"checks={checks} nodes={len(nodes)} projections={len(bundle['selection_projections'])} "
-        f"families={len(bundle['family_coverage'])} parity={len(parity['selection_payloads'])}"
+        f"families={len(bundle['family_coverage'])} parity={len(parity['selection_payloads'])} "
+        f"dist={'historical_skipped' if skip_dist_identity else 'exact'}"
     )
     return 0
 

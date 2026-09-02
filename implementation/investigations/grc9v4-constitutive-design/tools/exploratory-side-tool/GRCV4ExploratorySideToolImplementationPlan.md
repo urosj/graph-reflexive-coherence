@@ -1,7 +1,7 @@
 # GRCv4 Exploratory Side Tool Implementation Plan
 
 **Date:** 2026-08-28
-**Status:** Iterations 0-8 accepted; Iteration 9 authorized
+**Status:** Iterations 0-9 accepted
 **Companion checklist:** [GRCV4ExploratorySideToolImplementationChecklist.md](./GRCV4ExploratorySideToolImplementationChecklist.md)
 **Source investigation:** [GRC9V4 constitutive design](../../README.md)
 
@@ -1259,9 +1259,60 @@ is not expected to validate the newer ET-C8 distribution.
 
 ### Iteration 9. Independent Validation And Closeout
 
+**Status:** accepted
+
 Run deterministic rebuilds, source-immutability checks, negative/adversarial
 scenario tests, browser tests, Playwright desktop/mobile screenshots, usability
 pressure, documentation review, and final claim classification.
+
+**Accepted implementation result.** The closeout compiler reconciles all 35
+normalized scenarios to one accepted owning gate, all nine forensic API
+functions, and all eight required web views. An independently written audit
+passes 369 assertions and the focused malformed-coverage matrix passes 15
+checks. The complete verification reruns the three accepted D10 audits, two
+byte-identical reconstruction cycles over ET-C1-C5 and the latest ET-C8 shared
+web surface, two byte-identical closeout builds, the complete
+investigation-local 24-command Python suite, 17 Node tests, and 12 Playwright
+tests across desktop and mobile. The 14 verification screenshots include two
+complete usability routes;
+direct inspection found no blank graph, clipping, overlap, unreadable long ID,
+or source/speculative authority conflation.
+
+The closeout documentation is executable rather than index-only. The canonical
+35-scenario definitions remain solely in the governed user-scenario contract.
+The user guide groups them into 13 complete start/action/endpoint/stop
+workflows, including the governed notebook-to-browser path, and embeds six
+verified screenshots. The agentic guide gives 12 complete workflows covering
+all nine forensic APIs, bounded counterfactual evaluation, source-evolution
+handling, and canonical notebook output consumption, plus a tracked nine-query
+walkthrough that is executed by the verifier and writes canonical traces only
+under the ignored generated-output tree. Both guides define the core
+vocabulary, distinguish the accepted ET-C8 browser build from the ET-C9
+closeout verification layer, and state that the current notebook surface is
+one two-recipe forensic orchestration notebook rather than an admitted
+counterfactual-authoring notebook or independent evidence engine.
+
+ET-C0 remains the accepted historical setup snapshot. ET-C9 records the three
+dependency files changed by the accepted ET-C6 browser-toolchain successor
+instead of rewriting ET-C0 or cascading new scientific identities through
+ET-C1-ET-C8. The repository minimum remains Python 3.11, while closeout byte
+conformance is claimed only for the available Python 3.12.3 environment;
+Python 3.11 and 3.13 were unavailable and are not represented as tested.
+
+The accepted coverage digest is
+`a4608d728c9b9e356421adb2d6b98390794c0916e90c299ad88467720f3c7404`;
+the accepted closeout digest is
+`7e9fb5a8dada805b1cd1b86e877bf1d23cfc16c4a6c0a1ef97d8f518e6ee0288`.
+The verification receipt digest is
+`c0ae8b45a0d501d988845ce9565a3c89752a815a9a77676551c503870953266a`.
+Human review selected
+`accepted_bounded_read_only_exploratory_tool`. This acceptance adds no
+scientific authority and does not admit changed or new source records.
+
+ET-C6 and ET-C7 are audited through their accepted source/layer payloads and
+canonical historical manifest metadata. Their stage-local distribution hashes
+are intentionally excluded because `web/dist` is a shared latest-build surface
+now owned by ET-C8; ET-C8 receives the full current-distribution identity audit.
 
 ## Verification Strategy
 

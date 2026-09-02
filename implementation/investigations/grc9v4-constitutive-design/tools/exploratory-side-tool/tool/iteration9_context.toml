@@ -1,0 +1,12 @@
+schema = "grcv4_explorer_iteration9_context_v1"
+start_date = "2026-09-02"
+start_head = "18c912600edf22edd659fbdfef207d0213ad2493"
+branch = "investigation-GRCV4-exploratory-side-tool"
+context_role = "execution_provenance_not_source_bundle_or_scientific_identity"
+start_status = [
+  " M implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/records/ETC8LineageAndRippleNavigation.md",
+  " M implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/build_iteration8_lineage.py",
+  " M implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/verify_iteration8.py",
+]
+repository_python = "3.12.3"
+unavailable_planned_conformance_versions = ["3.11", "3.13"]

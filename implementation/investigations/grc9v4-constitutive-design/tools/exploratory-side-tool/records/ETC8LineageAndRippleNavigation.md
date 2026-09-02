@@ -18,7 +18,7 @@ and four precomputed playback frames.
 - precomputed playback rows: `24`
 - layer digest: `5c5c29a9c636c5a91e2cf37921c323f97ef42ddb9d21442b4e44e17426b50faa`
 - web manifest digest: `dc1456e975c0851d1ecc817422f2cedb9c25e0b182c3cbca2147b4d634f7bee7`
-- accepted record digest: `003fa28d39e32babb60a673cbc5a119326afdec3072f5274663911f4f20088a2`
+- accepted record digest: `a11d390de18469210c82e85fe7c8d2e41eddb20ae811541923db0325fb3a2c20`
 
 The scrubber follows accepted record identity, not a false linear
 scientific timeline. D7G post-v2 remains an accepted companion

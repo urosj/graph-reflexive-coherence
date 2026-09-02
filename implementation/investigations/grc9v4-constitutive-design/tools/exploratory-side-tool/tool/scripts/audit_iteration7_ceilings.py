@@ -32,6 +32,10 @@ def main() -> int:
     repo_root = repository_root()
     if Path(sys.prefix).resolve() != (repo_root / ".venv").resolve():
         raise RuntimeError("run this command with the repository .venv Python")
+    arguments = set(sys.argv[1:])
+    if arguments - {"--skip-dist-identity"}:
+        raise RuntimeError(f"unsupported ET-C7 audit arguments: {sorted(arguments)}")
+    skip_dist_identity = "--skip-dist-identity" in arguments
     checks = 0
 
     def require(condition: bool, label: str) -> None:
@@ -206,16 +210,18 @@ def main() -> int:
     require(manifest["claim_ceiling_layer_digest"] == layer["layer_digest"], "manifest_layer")
     require(manifest["base_static_bundle_digest"] == et_c6["compiled_surface"]["static_bundle_digest"], "manifest_base")
     require(manifest["file_count"] == len(manifest["files"]), "manifest_count")
-    for row in manifest["files"]:
-        path = dist / row["path"]
-        require(path.is_file(), f"dist_file:{row['path']}")
-        require(path.stat().st_size == row["size_bytes"], f"dist_size:{row['path']}")
-        require(file_sha256(path) == row["sha256"], f"dist_sha:{row['path']}")
+    if not skip_dist_identity:
+        for row in manifest["files"]:
+            path = dist / row["path"]
+            require(path.is_file(), f"dist_file:{row['path']}")
+            require(path.stat().st_size == row["size_bytes"], f"dist_size:{row['path']}")
+            require(file_sha256(path) == row["sha256"], f"dist_sha:{row['path']}")
 
     print(
         "ET_C7_AUDIT_PASS "
         f"checks={checks} locks={len(locks)} alternatives={len(alternatives)} "
-        f"careers={len(careers)}"
+        f"careers={len(careers)} "
+        f"dist={'historical_skipped' if skip_dist_identity else 'exact'}"
     )
     return 0
 
