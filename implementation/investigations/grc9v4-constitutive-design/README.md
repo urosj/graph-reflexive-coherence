@@ -1,6 +1,7 @@
 # GRC9V4 Constitutive Design Investigation
 
 **Disposition:** D10.2 accepted bounded; GRCv4/GRC9v4 specification writing authorized; implementation remains unauthorized
+**Exploration surface:** ET-C9 accepted as a bounded read-only exploratory tool
 
 This directory records the accepted bounded decision work authorizing a
 normative GRCv4 specification followed by a substantive GRC9v4 nine-port
@@ -32,6 +33,32 @@ state space, or operator. Every gate must add a candidate-specific constitutive
 fact, reject a candidate for a named incompatibility, or route a named missing
 derivation.
 
+## Exploratory Side Tool
+
+The accepted
+[GRCv4 Exploratory Side Tool](./tools/exploratory-side-tool/README.md)
+makes the D0-D10.2 result consumable without becoming a new authority. It
+reconstructs the admitted claim, debt, gate, candidate, profile, object, and
+contract lineage; exposes nine source-traceable forensic queries; presents
+eight browser views; and reconciles all 35 governed user scenarios. Its
+notebook surface contains two accepted forensic recipes, while its browser
+plays only precomputed structural counterfactuals up to the explicit evidence
+frontier.
+
+The tool treats the accepted D0-D10.2 bundle as a versioned current snapshot,
+not a final theory state. It reports new, changed, missing, or unreadable source
+records as unprocessed and requires a named adapter/readmission and complete
+rebuild cycle before they can enter the graph. It cannot create scientific
+evidence, predict a reopened gate, establish specification or runtime
+conformance, or authorize implementation.
+
+Use the [user guide](./tools/exploratory-side-tool/docs/UserGuide.md) for complete
+browser and notebook workflows, the
+[agentic query guide](./tools/exploratory-side-tool/docs/AgenticQueryGuide.md)
+for the local Python API, and the
+[ET-C9 closeout](./tools/exploratory-side-tool/records/ETC9CloseoutReport.md)
+for the accepted scope and identities.
+
 Start with:
 
 - [constitutive design basis](./GRC9V4ConstitutiveDesignBasis.md);
@@ -41,6 +68,7 @@ Start with:
 - [frozen initialization predecessor](./GRC9V4ConstitutiveDesignInitialization.json);
 - [D0 structured decision](./decisions/D0TargetInheritanceAndClaimCeiling.json);
 - [D0 interpretation](./decisions/D0TargetInheritanceAndClaimCeiling.md).
+- [accepted exploratory side tool](./tools/exploratory-side-tool/README.md).
 - [D1 structured decision](./decisions/D1RetainedRepresentationOntologyAndCandidateAdmission.json);
 - [D1 interpretation](./decisions/D1RetainedRepresentationOntologyAndCandidateAdmission.md).
 - [D2 structured decision](./decisions/D2FormationRetentionReleaseAndWriteInterface.json);
@@ -95,7 +123,8 @@ Start with:
 - [D10.1 preliminary substrate provenance decision](./decisions/D10_1PreliminarySubstrateProvenance.json);
 - [D10.1 preliminary substrate provenance interpretation](./decisions/D10_1PreliminarySubstrateProvenance.md).
 - [D10.2 full substrate provenance and promotion audit](./decisions/D10_2FullSubstrateProvenanceAndPromotionAudit.json);
-- [D10.2 scientific interpretation](./decisions/D10_2FullSubstrateProvenanceAndPromotionAudit.md).
+- [D10.2 scientific interpretation](./decisions/D10_2FullSubstrateProvenanceAndPromotionAudit.md);
+- [exploratory side-tool package](./tools/exploratory-side-tool/README.md), including its implementation plan and checklist.
 
 Current gate status:
 

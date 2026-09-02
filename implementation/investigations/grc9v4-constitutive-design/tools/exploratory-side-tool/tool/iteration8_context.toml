@@ -1,0 +1,5 @@
+schema = "grcv4_explorer_iteration8_context_v1"
+branch = "investigation-GRCV4-exploratory-side-tool"
+start_date = "2026-09-02"
+start_head = "99d3f7a"
+start_status = []

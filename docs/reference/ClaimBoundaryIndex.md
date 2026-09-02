@@ -508,6 +508,7 @@ Evidence pointers:
 - [D10.2 full substrate-provenance audit](../../implementation/investigations/grc9v4-constitutive-design/decisions/D10_2FullSubstrateProvenanceAndPromotionAudit.md): Equation/contract-level GRC promotion, GRC9 specialization, disabled reduction, and final factorization evidence.
 - [D10.2 machine record](../../implementation/investigations/grc9v4-constitutive-design/decisions/D10_2FullSubstrateProvenanceAndPromotionAudit.json): Accepted structured disposition, exact counts, controls, identities, and digest.
 - [Constitutive design plan](../../implementation/investigations/grc9v4-constitutive-design/GRC9V4ConstitutiveDesignPlan.md): Gate sequence, accepted current-population route, and successor reopening rules for the still-unwritten V4 specifications.
+- [Accepted exploratory side tool](../../implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/README.md): Read-only forensic reconstruction, lineage navigation, and precomputed structural-counterfactual playback over the accepted D0-D10.2 snapshot. It is a consumption surface, not additional scientific evidence or specification/runtime conformance.
 
 Claim ceiling: accepted design, claim-topology, lifecycle, and substrate-
 provenance closure for the current D10 initial specification population. It

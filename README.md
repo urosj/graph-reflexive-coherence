@@ -120,6 +120,13 @@ related mechanics remain GRC9 specialization content. This authorizes a
 GRCv4 normative specification followed by a substantive GRC9v4 specialization;
 it does not authorize a V4 runtime or any `src/` change.
 
+The accepted
+[GRCv4 Exploratory Side Tool](implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/README.md)
+provides read-only forensic queries, notebook recipes, lineage navigation, and
+precomputed structural-counterfactual playback over that D0-D10.2 snapshot. It
+flags new or changed investigation records for a successor processing cycle
+and cannot add evidence, predict reopened gates, or establish conformance.
+
 Some experiments use declared producer or policy scaffolding on top of field
 dynamics. That hybrid path is intentional: it lowers the gap between current
 theory and fully native RC mechanisms while keeping the distinction between
@@ -195,7 +202,7 @@ record rather than the paper list alone:
 | --- | --- |
 | [implementation/ImplementationPhases.md](implementation/ImplementationPhases.md) | Top-level phase map from core substrate through runtimes, telemetry, visualization, landscapes, and LGRC. |
 | [implementation/corrections/README.md](implementation/corrections/README.md) | Bounded corrections to existing runtime or persistence contracts that do not constitute new dynamics phases. |
-| [GRCv4/GRC9v4 constitutive design investigation](implementation/investigations/grc9v4-constitutive-design/README.md) | Accepted D0-D10.2 design lineage, current profile grammar, substrate-provenance audit, and the authorized GRCv4-first specification route. |
+| [GRCv4/GRC9v4 constitutive design investigation](implementation/investigations/grc9v4-constitutive-design/README.md) | Accepted D0-D10.2 design lineage, current profile grammar, substrate-provenance audit, authorized GRCv4-first specification route, and bounded read-only exploration surface. |
 | [specs/README.md](specs/README.md) | Implementation contracts and family capability matrix for `GRCV2`, `GRCV3`, `GRC9`, `GRC9V3`, and `LGRC9V3`. |
 | [Phase T implementation plan: telemetry and evidence discipline](implementation/Phase-T-ImplementationPlan.md) | Artifact layout, reports, replay, and evidence discipline. |
 | [implementation/Phase-V-ImplementationPlan.md](implementation/Phase-V-ImplementationPlan.md) | Visualization as a downstream consumer of saved telemetry and graph checkpoints. |

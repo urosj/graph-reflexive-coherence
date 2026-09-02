@@ -1,0 +1,11 @@
+schema = "grcv4_explorer_iteration1_context_v1"
+branch = "investigation-GRCV4-exploratory-side-tool"
+start_head = "f4699a384b50fdb324a4387f91e90b301235a76a"
+start_date = "2026-09-01"
+start_status = [
+  " M implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/GRCV4ExploratorySideToolImplementationChecklist.md",
+  " M implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/GRCV4ExploratorySideToolImplementationPlan.md",
+  " M implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/GRCV4ExploratorySideToolUserScenarios.md",
+  " M implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/README.md",
+]
+context_role = "execution_provenance_not_source_bundle_or_scientific_identity"
