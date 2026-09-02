@@ -345,6 +345,111 @@ The crosswalk below is a drafting-control surface. The accepted D10.2 registry a
 
 **Current disposition:** Sections 8–10 are fillable from the accepted investigation without adding a candidate law, realization, root, writer, or theorem. They expose no scientific contradiction and no mandatory successor investigation. The strongest visible boundaries—A/C physical nonabsorbability, runtime endpoint effects, CI globality, RG2b differentiability, PC endpoint hysteresis, and profile ranking—remain exact claim ceilings rather than omissions in the substrate account.
 
+---
+
+### Sections 11–12 tranche status
+
+**Status:** Working synthesis from the accepted GRC-v4/GRC9V4 constitutive-design investigation
+**Intended use:** Integrated controlled content in `drafts/GRCV4-proposal.md`
+**Scientific authority:** None independent of the accepted investigation
+**Current controlling closure:** accepted D10.2, decision digest `28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c`
+
+This tranche fills the fourth drafting tranche identified in the extraction skeleton: Sections 11–12. It begins from the candidate and realization equations assembled in Sections 8–10 and extracts the population-wide transaction, time, failure, snapshot, reset, migration, representation, topology-event, history-loss, and readmission contracts accepted in D9 and promoted to graph-generic GRC-v4 by D10.2.
+
+The purpose is not to create a second lifecycle formalism. The common outer step does not replace any profile-local root, split, reconstruction, or carrier equation. It states the accepted transaction around those equations. Likewise, the lifecycle maps below do not infer history preservation from matching array shapes or endpoint support. Every migration and event remains typed, direction-specific, receipted, target-readmitted, and atomic.
+
+The immediate controlling records are:
+
+- `../decisions/D9CompleteStepAndLifecycleContract.md` and `.json`;
+- `../decisions/D9ProfileStateLifecycleRegistry.json`;
+- `../decisions/D9LifecycleCoverageMatrix.json`;
+- `../decisions/D9ResidualDebtLedger.json`;
+- the accepted candidate and realization records consumed by D9;
+- `../decisions/D10DesignSynthesisAndSpecWritingDecision.md` and claim topology;
+- `../decisions/D10_2FullSubstrateProvenanceAndPromotionAudit.md` and `.json`.
+
+Earlier theory, substrate, specification, and runtime sources enter only through the lineage accepted by those records. The forensic API audit reconstructed 9 cited claims, queried 27 parent objects, and traced the 21 unique equation/contract IDs now explicitly cited by this tranche, while separately confirming the accepted D9 and D10.2 gate authority. Every contract association retains `indeterminate_requires_review`; the crosswalk records source relationships rather than reconstructed support proof. The tool cannot provide a missing lifecycle map, upgrade a design contract into runtime conformance, infer a history transport from stable IDs, or resolve a paper boundary.
+
+This tranche does not treat the source-local D10.2 provenance label `D10_2_CL_N_001` as a queryable claim node. Its direct current claim relations are the accepted D10 claims named below, especially `D10-CL-N-003`, `D10-CL-N-004`, `D10-CL-N-005`, `D10-CL-N-006`, `D10-CL-N-007`, and their exact conditional or negative boundaries.
+
+### Coverage and status controls applied in this tranche
+
+Sections 11–12 bring all profile-local equations into one operational and lifecycle account. That compression creates several specific risks, so the following controls are explicit.
+
+| Pressure point | Treatment in Sections 11–12 |
+|---|---|
+| A common outer transaction could be mistaken for one universal profile equation | §11 wraps the accepted profile-local CI, OS, RG2b, PC, and CI+PC stages without replacing them |
+| A valid solver return could be treated as sufficient for commit | §11 requires the exact accepted disposition, domain, residual, conditioning, self-consistency, and finiteness checks |
+| A partial profile substage could mutate authoritative state | Every root, predictor, geometry, corrector, resource, candidate, and carrier result remains provisional until one atomic commit |
+| A budget correction could be applied after a writer has consumed another $C$ | The current unit-measure budget projection must be an identity/no-op before every final-$C$ consumer |
+| New persistent history could feed back in the beat that writes it | PC and CI+PC read $Z_{4,a,k}$ and write $Z_{4,a,k+1}$ only after a valid realization result; the new carrier is never read same-beat |
+| Zero duration could be used to bypass invalid state or encode an impulse | $\Delta t=0$ is an identity only for an already admitted state/profile/context with valid preconditions and no impulse; an impulse is a typed event |
+| Previous roots, retry history, caches, or hidden RNG could select the next state | They have no scientific authority; deterministic selection follows from authoritative state, complete profile, current input, and admitted domain |
+| A snapshot could serialize derived surfaces as causal state | Snapshots bind authoritative state and semantic identity; currents, geometry, selectors, roots, OS substages, and reconstructed section values remain derived or transient |
+| `set_state()` or save/load could silently change the construction baseline | Current state may change only under the admitted operation; reset baseline and $Q_{\mathrm{target}}$ do not silently rebase |
+| Reset could resurrect an obsolete graph or profile after migration or topology change | Reset returns to the construction baseline transformed through all admitted lifecycle morphisms |
+| A current context value change could be conflated with a context-contract change | Same-contract values are declared inputs followed by refresh/readmission; schema, units, representation, semantics, or admissibility changes require migration |
+| Profile parameters could be edited in place while preserving old state semantics | Identity-bearing changes use an ordered migration and target readmission, not reinterpretation of existing bytes |
+| Event transport could map current state but leave reset state or charge behind | The event maps $(X_{\mathrm{current}},X_{\mathrm{reset}},Q_{\mathrm{target}})$ as one lifecycle tuple |
+| Candidate C’s derived $T_C$ could be confused with the event resource map | The event map is always written $T_{C,\mathrm{evt}}$; Candidate C’s $T_C$ remains a derived nonresource sector |
+| Candidate A or persistent history could be fabricated on a target graph | A uses admitted history transport or the graph-generic history-free target initializer with a loss receipt; $Z_4$ uses a typed $L_{K4,\mathrm{evt}}$ or canonical reset with loss |
+| The GRC9V3 initializer binding could be promoted into graph-generic GRC-v4 | §12.6 uses $I_A^{\mathrm{GRC}}$ in the main text; the exact GRC9V3 reconstruction remains Appendix A specialization content |
+| Fail-closed rejection could be counted as topology support | Typed topology continuation requires the complete event map and target readmission; unsupported or failed events commit nothing and are not support |
+| Lifecycle validity could be presented as continuation-spectrum identity or stability | §12 preserves those as separate conditional analysis claims |
+| Causal switch-off, state disablement, history drop, and native release could be merged | §12.9 keeps the four operations distinct and routes exact GRC9V3 reduction to Appendix A |
+
+D9 closes the population-wide design semantics for ten profiles. It does not execute a runtime implementation or numerical branch. D10.2 promotes the accepted lifecycle objects and equations to graph-generic GRC-v4 while retaining the exact GRC9V3 initializer and disabled reduction as GRC9 specialization content.
+
+### Sections 11–12 provenance crosswalk
+
+The table below is a drafting-control surface. It records the source relationships used by this tranche; it does not replace the accepted D9 records or D10.2 registry. Contract associations remain `indeterminate_requires_review` unless and until the admitted claim graph supplies a more specific reviewed relation.
+
+| Proposal location | Parent object(s) | Equation/contract row(s) | Current claim relation |
+|---|---|---|---|
+| §§11.1–11.4 | `L-PROFILE-GRAMMAR`, `L-SINGULAR-FAIL-CLOSED`, `SPEC-NORMALIZATION-UNITS-GAUGE-DOMAIN-SOLVER` | corresponding parent rows | complete-profile admission and fail-closed solver semantics under `D10-CL-N-003`; singular successor boundary `D10-CL-C-003`; implementation conditioning boundary `D10-CL-C-006` |
+| §§11.3–11.5 | `L-AUTHORITATIVE-CURRENT` | `D10.2-EC-PARENT-L-AUTHORITATIVE-CURRENT` | one solved current authority under `D10-CL-N-003` |
+| §§11.5–11.6 | `CORE-INCIDENCE-CONTINUITY`, `CORE-GENERAL-CHARGE`, `CORE-UNIT-MEASURE`, `L-CONTINUITY-WRITE` | corresponding parent rows and `D10.2-EC-CHARGE-BUDGET-STAGE` | actual resource path and charge stage under `D10-CL-N-004` |
+| §11.7 | `L-POSTCONTINUITY-REFRESH`, `A-WRITER-TARGET`, `A-RETAINED-WRITER`, `C-AUTHORITY`, `REAL-PC` | corresponding parent rows plus `D10.2-EC-C-AUTHORITY`, `D10.2-EC-PC-ZOH-WRITER` | profile-specific poststate writers; runtime formation/retention remains open |
+| §§11.8–11.9 | `L-ATOMICITY`, `L-SINGULAR-FAIL-CLOSED` | corresponding parent rows | all-or-nothing transaction under `D10-CL-N-003`; runtime conformance remains separately gated |
+| §§12.1–12.3 | `L-SNAPSHOT-RESET` | `D10.2-EC-PARENT-L-SNAPSHOT-RESET` | lifecycle identity under `D10-CL-N-005` |
+| §12.4 | `GEOM-COVARIANCE`, `L-PROFILE-MIGRATION`, `L-SINGULAR-FAIL-CLOSED` | corresponding parent rows | representation covariance and typed semantic change; smooth analysis boundaries remain separate |
+| §12.5 | `L-PROFILE-MIGRATION`, `L-ORDERED-RECEIPTS` | `D10.2-EC-PARENT-L-PROFILE-MIGRATION`, `D10.2-EC-PARENT-L-ORDERED-RECEIPTS` | ordered crossing and direction-specific loss under `D10-CL-N-005` |
+| §12.6 | `L-A-INITIALIZER-GRC` | `D10.2-EC-PARENT-L-A-INITIALIZER-GRC` | graph-generic history-free A target construction under `D10-CL-N-005` |
+| §12.6 and Appendix A boundary | `L-A-INITIALIZER-GRC9V3` | `D10.2-EC-PARENT-L-A-INITIALIZER-GRC9V3` | specialization-only exact GRC9V3 initializer binding |
+| §§12.7.1, 4.7 | `L-TOPOLOGY-EVENT`, `CORE-EXTERNAL-EVENT-CHARGE` | `D10.2-EC-EVENT-RESOURCE`, corresponding parent rows | resource/charge event semantics under `D10-CL-N-004`, `D10-CL-N-005` |
+| §12.7.2 | `L-TOPOLOGY-EVENT` | `D10.2-EC-EVENT-A-HISTORY` | typed A history transport or history-free initialization; no fabrication |
+| §12.7.3 | `L-TOPOLOGY-EVENT`, `C-AUTHORITY` | `D10.2-EC-EVENT-C-DERIVED`, `D10.2-EC-C-AUTHORITY` | Candidate C target surfaces rederived, not transported as history |
+| §12.7.4 | `L-TOPOLOGY-EVENT`; related carrier object `REAL-PC` | `D10.2-EC-EVENT-K4-HISTORY`; `REAL-PC` binds separately through `D10.2-EC-PARENT-REAL-PC` | typed $K_4$ history map or canonical reset with explicit loss; generic lossless claim blocked by `D10-CL-X-001` |
+| §12.7.5 | `L-TOPOLOGY-EVENT`, `L-ORDERED-RECEIPTS` | `D10.2-EC-EVENT-LIFECYCLE-TUPLE`, `D10.2-EC-EVENT-READMISSION-RECEIPT` | whole-lifecycle event and target readmission under `D10-CL-N-005` |
+| §12.8 | `L-TOPOLOGY-EVENT`, `L-ORDERED-RECEIPTS`, `SPEC-CLAIM-CEILINGS` | event rows and corresponding parent rows | `D10-CL-X-001` blocks generic lossless history; lifecycle continuation does not promote continuation-spectrum claims |
+| §12.9 | four disabled-surface parent objects | four parent rows and the 40 profile-scoped disabled rows | exact surface-independent compatibility under `D10-CL-N-007`; GRC9 specialization only |
+
+---
+
+### Paper-pressure register after Sections 11–12
+
+| Boundary | Current disposition | Does it block this tranche? | Successor trigger condition |
+|---|---|---|---|
+| One universal internal solver order | Rejected; only the outer transaction is common | No | Only if the final proposal attempts to replace realization-specific substages by one equation |
+| Valid numerical return as sufficient commit evidence | Rejected; exact profile/domain/disposition/postcondition checks remain mandatory | No | An executable solver-conformance claim would require implementation evidence, not a new design equation |
+| Zero duration as impulse or recovery path | Rejected; zero duration is identity only on an already admitted state with no impulse | No | A zero-duration physical jump requires a typed event profile |
+| Previous root, retry history, cache, or RNG as branch authority | Explicitly blocked | No | Any intended profile that gives such history causal authority requires new state, lifecycle, and provenance |
+| Snapshotting all derived surfaces as scientific state | Rejected; only declared authorities and semantic identity are serialized | No | A future profile may promote a surface only through explicit state and writer admission |
+| Reset to original pre-event bytes | Rejected; reset baseline follows lifecycle morphisms | No | Only a separately defined archival restoration operation could target an obsolete graph/profile |
+| In-place identity-bearing parameter edit | Rejected; use ordered migration and target readmission | No | Any desire to preserve the old profile ID across a changed map is a contradiction requiring correction |
+| Universal A history preservation across graph change | Not admitted | No | A concrete event requiring preservation must supply a typed positive target history map and lineage |
+| Universal persistent-$K_4$ history map | Negatively bounded without typed lineage | No | A concrete event may open a successor only for its specific $L_{K4,\mathrm{evt}}$ contract |
+| Candidate C derived surfaces as event history | Rejected | No | An independent C history coordinate would be a new candidate ontology, not an event convenience |
+| Fail-closed rejection as topology support | Explicitly rejected | No | A support claim requires a complete typed event map and successful target readmission |
+| Lifecycle continuation as continuation-spectrum identity | Not established | No | Only if Section 13 requires a formed branch and operator-level spectral transport across the event |
+| Migration history drop as native release | Explicitly separated | No | A native-release claim requires ordinary profile dynamics and the corresponding evidence |
+| Exact GRC9V3 reduction as graph-generic V4 content | Blocked by provenance classification | No | It remains Appendix A specialization content |
+| Runtime snapshot/event/migration/serializer conformance | Unexecuted verification obligation | No | Required only if the proposal attempts an implementation result rather than a substrate contract |
+
+**Current disposition:** Sections 11–12 are fillable from the accepted D9 lifecycle closure and D10.2 graph-generic promotion. They expose no new scientific contradiction and no mandatory successor investigation. Their live boundaries—runtime conformance, generic lossless history, singular crossings, and spectral continuation through lifecycle events—remain exact claim ceilings rather than missing substrate content.
+
+---
+
 # Paper Skeleton
 
 ## Abstract
@@ -4717,244 +4822,1114 @@ They do not establish:
 
 ## 11. Full Closed GRC-v4 Step
 
-This section should play the role that the algorithmic loop plays in the GRC-v3 paper, but it must preserve profile-dependent substages.
+The candidate and realization sections define the equations used within a beat. This section defines the accepted transaction around them. Its purpose is to ensure that current authority, continuity, charge, post-continuity reconstruction, candidate state, realization history, failure, and commit all refer to one complete profile and one coherent state transition.
 
-### 11.1 Inputs
-
-List:
+The common outer step is therefore not a new constitutive law. It is an invariant execution contract:
 
 ```text
-current complete profile identity
-current authoritative state X_current
-reset baseline X_reset
-graph and orientation
-context and differential-backend identity
-Q_target
-external inputs
-event/migration status
-solver and domain contract
+one admitted prestate and complete profile
+  -> profile-local provisional solve or reconstruction
+  -> one authoritative current
+  -> one resource write
+  -> resource and charge validation
+  -> declared post-continuity and history writers
+  -> complete postcondition validation
+  -> one atomic commit, or no commit.
 ```
 
----
+> **Primary source objects:** `L-AUTHORITATIVE-CURRENT`, `L-CONTINUITY-WRITE`, `L-POSTCONTINUITY-REFRESH`, `L-ATOMICITY`, `L-SINGULAR-FAIL-CLOSED`.
+>
+> **Accepted claim relations:** `D10-CL-N-003` and `D10-CL-N-004`; current-singularity boundary `D10-CL-C-003`; implementation-level solver boundary `D10-CL-C-006`.
 
-### 11.2 Common outer order
+### 11.1 Admitted inputs and prestate identity
 
-Use the following as a structural skeleton. Replace each line with the exact accepted D9/D10.2 stage language during drafting.
+A normal GRC-v4 beat begins only from an already admitted scientific prestate. The input record binds:
 
 ```text
-1. Validate complete profile, graph, context, state, Q_target,
-   parameter identity, solver, and domain.
-
-2. Reconstruct all required pre-read derived surfaces from
-   authoritative current state.
-
-3. Execute the selected realization's candidate-specific
-   current/geometry/history substages.
-
-4. Produce exactly one authoritative J_C.
-
-5. Execute continuity exactly once.
-
-6. Validate resource domain and ordinary-step charge budget.
-
-7. Rebuild every post-continuity surface required by the
-   candidate or history writer.
-
-8. Execute the candidate-specific retained/write-back law.
-
-9. Execute the realization-specific history writer or release.
-
-10. Rebuild declared final derived surfaces.
-
-11. Validate complete-state domain, profile invariants,
-    lifecycle tuple, receipts, and serializer contract.
-
-12. Commit all authoritative coordinates atomically.
+complete profile identity p
+current authoritative state X_p,k
+lifecycle reset baseline X_p,reset
+serialized Q_target
+graph, node/edge identity, orientation, and boundary contract
+context-contract identity and current context value
+differential-backend and geometry-profile identity
+current time and Delta_t
+ordinary transition input or explicit event declaration
+solver, domain, capability, and failure contract
 ```
 
-### Required source objects
+The complete profile identity determines which authoritative coordinates exist. For the current initial population:
 
-* `L-AUTHORITATIVE-CURRENT`
-* `L-CONTINUITY-WRITE`
-* `L-POSTCONTINUITY-REFRESH`
-* `L-ATOMICITY`
+| Profile class | Authoritative current state before the beat |
+|---|---|
+| A-CI, A-OS, A-RG2b | $(C_k,W_{A,k})$ |
+| C-CI, C-OS, C-RG2b | $(C_k)$ |
+| A-PC, A-CI+PC | $(C_k,W_{A,k},Z_{4,A,k})$ |
+| C-PC, C-CI+PC | $(C_k,Z_{4,C,k})$ |
 
----
+This table does not serialize derived current, geometry, selector, Hodge, or solver surfaces. It also does not make $Z_4$ part of a nonpersistent profile merely because the same realization family exists elsewhere.
 
-### 11.3 Realization-specific internal order
+Pre-admission checks include, as applicable:
 
-The paper must not imply that CI, OS, RG2b, PC, and CI+PC share one internal solver order.
+- complete-profile and capability identity;
+- graph and context-contract compatibility;
+- finite and correctly typed authoritative coordinates;
+- resource nonnegativity and agreement with serialized $Q_{\mathrm{target}}$;
+- positive $W_A$ and its declared floor/domain;
+- carrier membership in the declared $K_4$ ball;
+- selector, Hodge, geometry, and solver-domain prerequisites;
+- exact parameter, unit, gauge, normalization, stage-order, writer, and root-selection identity;
+- absence of an untyped event or semantic profile edit.
 
-The full-loop algorithm should call a named profile-local subroutine:
+A missing or invalid precondition is not repaired by entering the profile-local solver. The beat has no admitted starting state and fails before any authoritative mutation.
+
+The context contract and current context value remain distinct. Schema, units, representation, semantics, and admissibility rules belong to profile identity. A same-contract value is ordinary transition input. A change of the contract is a lifecycle migration and cannot be hidden in the normal beat.
+
+### 11.2 Time and ordinary-beat boundary
+
+The accepted temporal boundary has three cases.
+
+For positive duration,
+
+$$
+\Delta t_k>0,
+$$
+
+the beat is admitted only inside the selected profile’s state, solver, geometry, and carrier domain.
+
+For zero duration,
+
+$$
+\Delta t_k=0,
+$$
+
+the transition is an identity on authoritative state only when:
+
+- the state, profile, graph, and context are already admitted;
+- every ordinary precondition remains valid;
+- no external or topology impulse is present;
+- no temporal writer advances;
+- the result remains on the same lifecycle target.
+
+The zero-duration rule is not a fallback around an invalid root, domain exit, profile mismatch, or context mismatch. In the primary persistent profile,
+
+$$
+a_{\mathrm{PC},a,k}
+=
+\exp\!\left(
+-\frac{\Delta t_k}{\tau_{\mathrm{PC},a}}
+\right)
+=
+1
+$$
+
+at zero duration, so the carrier writer is an identity. The same identity requirement applies to every other authoritative temporal writer.
+
+For negative duration,
+
+$$
+\Delta t_k<0,
+$$
+
+the ordinary transition is invalid and fails closed.
+
+An instantaneous external exchange is not represented by an ordinary zero-duration beat. It is a typed event jump with an event resource map, resource increment, charge receipt, lifecycle morphism, target reconstruction, and readmission.
+
+Absence of external input also does not imply an identity step. Internal direct, Read-Back, geometry, candidate, or carrier dynamics may continue under the admitted profile.
+
+If a beat fails and an external controller later retries with a smaller positive duration, that retry is a new attempt from the unchanged authoritative prestate. Internal retry history, rejected roots, and attempted durations have no authority over the new transition.
+
+
+### 11.3 Profile-local provisional realization
+
+After pre-admission, the selected complete profile executes its candidate and realization equations without committing authoritative state. The common outer transaction does not prescribe one internal solver order. It dispatches to the exact accepted profile-local construction.
+
+The ten current normal-step orders are:
+
+| Complete profile | Accepted provisional and write order |
+|---|---|
+| `A_CI` | solve the admitted joint $(J,h)$ root; apply continuity; rebuild final-$C$ differential surfaces; write $W_A$; commit atomically |
+| `C_CI` | solve the admitted stratum-local joint $(J,h)$ root and accept exactly one self-consistent regular root; apply continuity; rederive Candidate C surfaces; commit $C$ atomically |
+| `A_OS` | predictor current; one geometry update; one full fixed-$h$ corrector; preserve split residual; apply continuity; rebuild final-$C$ surfaces; write $W_A$; commit atomically |
+| `C_OS` | predictor current; one geometry update; one full Candidate C fixed-$h$ corrector with selector/Hodge reconstruction; preserve split residual; apply continuity; rederive Candidate C surfaces; commit $C$ atomically |
+| `A_RG2b` | reconstruct $h$ from the frozen extension-relative section; solve the fixed-$h$ A current; apply continuity; rebuild final-$C$ surfaces; write $W_A$; commit atomically |
+| `C_RG2b` | reconstruct $h$ from the frozen extension-relative section; solve the full fixed-$h$ C current; apply continuity; rederive Candidate C surfaces; commit $C$ atomically |
+| `A_PC` | derive $h$ from old $Z_{4,A,k}$; solve the fixed-$h$ A current; apply continuity; rebuild final-$C$ surfaces; write $W_A$; write $Z_{4,A,k+1}$; commit atomically |
+| `C_PC` | derive $h$ from old $Z_{4,C,k}$; solve the full fixed-$h$ C current; apply continuity; rederive Candidate C surfaces; write $Z_{4,C,k+1}$; commit atomically |
+| `A_CI_PC` | solve the admitted joint root using old $Z_{4,A,k}$ and the same root source for the immediate path; apply continuity; rebuild final-$C$ surfaces; write $W_A$; write $Z_{4,A,k+1}$ from that same source; commit atomically |
+| `C_CI_PC` | solve the stratum-local joint root using old $Z_{4,C,k}$ and the same root source for the immediate path; accept exactly one self-consistent regular root; apply continuity; rederive Candidate C surfaces; write $Z_{4,C,k+1}$; commit atomically |
+
+The table names the accepted causal order. It does not replace the exact equations in Sections 8–10 or create a common realization map.
+
+Every provisional stage remains read-only with respect to authoritative state. In particular:
+
+- CI and CI+PC roots may evaluate many trial currents and geometries, but none is committed;
+- OS predictor and corrector arrays remain transient, and the split residual is preserved rather than repaired by an unregistered second pass;
+- RG2b reconstructs the section value from the frozen profile completion and current authoritative candidate state; previous section values have no authority;
+- PC and CI+PC read only the old committed carrier $Z_{4,a,k}$ during current and geometry construction;
+- Candidate C’s selector, sector, Hodge, resolvent, and current surfaces are rederived rather than read as hidden state;
+- Candidate A’s pre-read reference and post-continuity writer target are evaluated at their accepted distinct stages.
+
+A profile-local solver return is only provisional evidence. It must be classified by the accepted disposition vocabulary.
+
+### 11.4 Solver dispositions and deterministic root authority
+
+The authoritative solver dispositions are:
 
 ```text
-(J_C, geometry_state, history_candidate, solver_receipt)
-    = realize_profile_p(prestate, context)
+valid_root
+domain_failure
+singular
+conditioning_failure
+nonfinite
+no_admitted_root
+multiple_admitted_roots
 ```
 
-That notation is expositional only. Its implementation must be expanded through the exact accepted realization equations.
+Only `valid_root` permits the transaction to continue. A valid root is not merely a numerical return. It must be:
 
----
+- finite;
+- residual-checked;
+- inside the declared local or bounded profile domain;
+- compatible with the current selector, Hodge, geometry, mobility, and carrier chart;
+- conditioned according to the accepted profile contract;
+- selected deterministically from authoritative state, complete-profile identity, and current input;
+- self-consistent with every profile-local branch or stratum rule.
 
-### 11.4 Failure atomicity
+For Candidate A CI and CI+PC, the accepted bounded-domain result requires the declared geometry self-map to map its closed convex domain into itself and satisfy its contraction inequality. A local implicit-function branch remains a narrower admitted fallback where the accepted source permits it.
 
-State that any:
+For Candidate C CI and CI+PC, the solver proceeds stratum by stratum. Each regular selector stratum owns its own domain and contraction contract. The admissible result set is the union of regular roots that satisfy their own selector-consistency condition. The disposition is:
 
-* singular root;
-* missing root;
-* multiple inadmissible roots;
-* nonfinite result;
-* invalid domain;
-* charge failure;
-* positivity failure;
-* failed target readmission;
-* untyped event;
-* serializer mismatch
+```text
+exactly one self-consistent regular root
+    -> valid_root
 
-commits nothing.
+no self-consistent regular root
+    -> no_admitted_root
 
-### Required source objects
+more than one self-consistent regular root
+    -> multiple_admitted_roots
+```
 
-* `L-SINGULAR-FAIL-CLOSED`
-* `L-ATOMICITY`
+A root lying exactly on a selector threshold or another nonregular boundary is not selected by continuity from a previous root. It fails closed until a separately admitted boundary-root contract exists.
 
----
+The following objects have no root-selection authority:
 
-### 11.5 No hidden same-beat authority
+- a previous root;
+- a previous selector rank;
+- eigenbasis ordering;
+- a solver cache or workspace;
+- a continuation token;
+- retry history;
+- hidden random state;
+- an implementation-dependent iteration order.
 
-State that:
+For OS, predictor failure, geometry failure, corrector failure, and failure of a required domain or residual check are independent fail-closed substages. The accepted one-pass residual is reported; it is not silently iterated away.
 
-* diagnostics do not become writers;
-* analysis projectors do not become state;
-* stale pre-continuity caches do not feed post-continuity writers;
-* candidate writers do not perform a second resource update;
-* telemetry current is not automatically the structural current;
-* scheduler or RNG state has no unregistered scientific authority.
+For RG2b, failure of the frozen extension identity, section-domain contract, target containment, or fixed-$h$ current solve commits nothing.
+
+For PC, failure of the fixed-$h$ current, carrier source, carrier-domain, or carrier writer contract is atomic with the candidate state.
+
+For CI+PC, the joint root and the later carrier write are one transaction. A valid root followed by an invalid carrier write is not a partially valid beat.
+
+> **Primary source object:** `L-SINGULAR-FAIL-CLOSED`.
+>
+> **Equation/contract row:** `D10.2-EC-PARENT-L-SINGULAR-FAIL-CLOSED`.
+>
+> **Accepted boundary:** passage through a current singularity requires a separately admitted profile under `D10-CL-C-003`; implementation-level conditioning and solver conformance remain under `D10-CL-C-006`.
+
+### 11.5 One authoritative current and one resource write
+
+After the profile-local realization has produced a valid result, exactly one physical current is authoritative:
+
+$$
+J_{C,p,k}.
+$$
+
+That current is the one consumed by continuity and any other consequence explicitly assigned to current authority. Trial roots, baseline currents, explicit read currents, OS predictor currents, structural one-forms, and diagnostic currents do not create parallel resource ledgers.
+
+The resource transition is
+
+$$
+C_{k+1}^{\mathrm{cont}}
+=
+C_k
+-
+\Delta t_k\,B J_{C,p,k}
++
+B_{\mathrm{ext},k}
++
+S_{\mathrm{ext},k}.
+$$
+
+For the current ordinary profile population,
+
+$$
+B_{\mathrm{ext},k}
+=
+S_{\mathrm{ext},k}
+=
+0.
+$$
+
+An admitted external exchange is either an explicitly integrated ordinary source with its declared receipt or a typed event jump. It is not hidden inside the Read-Back current.
+
+Continuity executes exactly once. Candidate A’s mobility writer, Candidate C’s rederivation, and the PC/CI+PC carrier writer may consume the resulting state or the solved current according to their accepted stage contract, but none may write $C$ again.
+
+> **Primary source objects:** `L-AUTHORITATIVE-CURRENT`, `L-CONTINUITY-WRITE`.
+>
+> **Equation/contract rows:** `D10.2-EC-PARENT-L-AUTHORITATIVE-CURRENT`, `D10.2-EC-PARENT-L-CONTINUITY-WRITE`.
+
+### 11.6 Resource and charge gate before poststate writers
+
+The provisional continuity result is not yet an admitted poststate. Before any writer consumes final $C$, the transaction requires:
+
+- finite resource values;
+- nonnegative resource values;
+- agreement with the serialized charge target;
+- satisfaction of the current resource-profile domain;
+- an identity/no-op result from the current unit-measure budget projection.
+
+For the current bounded population,
+
+$$
+Q(C_{k+1}^{\mathrm{cont}})
+=
+Q_{\mathrm{target},k+1},
+$$
+
+and the budget projection must leave $C_{k+1}^{\mathrm{cont}}$ unchanged.
+
+A nontrivial correction is a failed precommit disposition. The implementation may not:
+
+1. allow a candidate or carrier writer to consume the uncorrected value;
+2. project $C$ afterward;
+3. commit the projected resource beside a writer produced from another state.
+
+A future profile may admit a nontrivial projection only by making it an explicit, receipted part of the complete transition before every final-$C$ consumer and including it in the complete derivative. That possibility is not part of the current population.
+
+This gate is what makes the resource and charge claim derive from the actual write path rather than from a model label or a post-hoc repair.
+
+> **Equation/contract row:** `D10.2-EC-CHARGE-BUDGET-STAGE`.
+>
+> **Accepted claim relation:** `D10-CL-N-004`.
+
+### 11.7 Post-continuity reconstruction and writers
+
+Once the resource gate passes, the transaction executes only the writers declared by the complete profile.
+
+#### 11.7.1 Candidate A post-continuity writer
+
+For every A profile, every differential, gradient, and other final-$C$ surface consumed by
+
+$$
+G_W(C_{k+1},J_{C,A,k})
+$$
+
+is rebuilt from the validated $C_{k+1}$. A pre-continuity cache from $C_k$ is not an admissible writer input.
+
+The accepted target and writer are those given in Section 8:
+
+$$
+W_{\mathrm{drv},A,k}
+=
+G_W(C_{k+1},J_{C,A,k}),
+$$
+
+followed by the single positive logarithmic write to $W_{A,k+1}$.
+
+The writer remains provisional until the complete postcondition check. Failure of the target, positivity, floor/domain, or writer equation invalidates the whole beat.
+
+#### 11.7.2 Candidate C poststate rederivation
+
+Candidate C has no independent candidate writer beyond continuity. From validated $C_{k+1}$, the profile rederives:
+
+```text
+selector
+-> selected sector T_C
+-> Hodge package
+-> selected/physical identification
+-> resolvent and Read-Back surfaces
+-> any final derived geometry or diagnostics required by the profile.
+```
+
+The rederived objects remain nonauthoritative. Failure to construct or re-admit any required target surface invalidates the complete beat.
+
+#### 11.7.3 Persistent carrier writer
+
+For PC and CI+PC profiles, the same-beat structural source accepted by the realization produces the next carrier:
+
+$$
+Z_{4,a,k+1}
+=
+a_{\mathrm{PC},a,k}Z_{4,a,k}
++
+\bigl(1-a_{\mathrm{PC},a,k}\bigr)
+S_{a,k}.
+$$
+
+The writer executes once after a valid realization result and after the resource gate. It reads the old carrier $Z_{4,a,k}$ and the already accepted same-beat source $S_{a,k}$. It never reads $Z_{4,a,k+1}$ in the same beat.
+
+For CI+PC, the source written into history is the same root source used by the immediate geometry path. Recomputing another source after continuity would create an unregistered split profile.
+
+For an A persistent profile, the $W_A$ writer and $Z_4$ writer are both provisional parts of one transaction. For a C persistent profile, the new $C$ and new $Z_4$ are one transaction. No writer receives independent commit authority.
+
+> **Primary source objects:** `L-POSTCONTINUITY-REFRESH`, `L-ATOMICITY`, `A-WRITER-TARGET`, `A-RETAINED-WRITER`, `C-AUTHORITY`, `REAL-PC`.
+>
+> **Equation/contract rows:** `D10.2-EC-PARENT-L-POSTCONTINUITY-REFRESH`, `D10.2-EC-C-AUTHORITY`, `D10.2-EC-PC-ZOH-WRITER`.
+
+### 11.8 Final postconditions and atomic commit
+
+After all declared writers have produced provisional outputs, the complete profile reconstructs any final derived surfaces needed to validate the poststate. The final checks include, as applicable:
+
+- finite authoritative coordinates;
+- nonnegative $C$ on the serialized charge target;
+- positive $W_A$ in its admitted domain;
+- $Z_4$ inside the accepted carrier domain;
+- candidate and realization profile identity;
+- geometry, selector, Hodge, current, and root postconditions;
+- preservation of the exact OS split-residual semantics;
+- reconstruction of the RG2b section under the frozen profile completion;
+- correct writer count and absence of same-beat new-history read;
+- valid lifecycle, serializer, receipt, and capability identity.
+
+Only after every check passes are the authoritative coordinates committed. The common rule is:
+
+```text
+all authoritative coordinates commit together,
+or no authoritative coordinate changes.
+```
+
+For a normal beat, the lifecycle reset baseline and $Q_{\mathrm{target}}$ normally remain unchanged, but their continuing identity is part of the committed scientific state. A normal beat may not silently rebase reset or rewrite the target.
+
+A partial valid substage is not a state. In particular:
+
+- a valid root without valid continuity is not committed;
+- valid continuity without a valid charge gate is not committed;
+- a valid A writer with an invalid carrier writer is not committed;
+- a valid current state with an invalid reset or receipt update in a lifecycle operation is not committed;
+- a valid array update with a serializer identity mismatch is not committed.
+
+> **Primary source object:** `L-ATOMICITY`.
+>
+> **Equation/contract row:** `D10.2-EC-PARENT-L-ATOMICITY`.
+
+### 11.9 Failure, replay, and hidden-authority boundary
+
+Any failure before final commit leaves the complete authoritative prestate unchanged. This includes:
+
+- invalid or missing profile identity;
+- invalid time;
+- domain failure;
+- singular or underconditioned required block;
+- nonfinite state or derived surface;
+- no admitted root;
+- multiple admitted roots;
+- target selector, Hodge, geometry, or section failure;
+- resource or charge failure;
+- candidate writer failure;
+- carrier writer failure;
+- failed target readmission;
+- untyped event;
+- invalid receipt or serializer identity.
+
+Fail-closed behavior is scientific because it prevents hidden partial transitions. It is not evidence that the unsupported operation has been implemented as a lawful transition.
+
+Scientific replay requires that the same authoritative state, complete profile, current input, and deterministic contract reproduce an equivalent disposition and next scientific state. Cross-platform bitwise identity is not claimed as a universal scientific requirement.
+
+The following remain representation or work state rather than scientific authority:
+
+- previous roots and root workspaces;
+- OS predictor/corrector caches;
+- split-residual work arrays;
+- RG2b section values and previous sections;
+- eigensolver ordering where the accepted selector is basis-independent;
+- continuation tokens;
+- retry traces;
+- scheduler queues;
+- hidden random state;
+- representation-only caches.
+
+The solver algorithm, root-selection rule, OS stage order, RG extension completion, carrier writer, and profile identities are semantic configuration and must be reproducible. Their transient work products are not additional state.
+
+### 11.10 Complete-step claim ceiling
+
+Section 11 establishes, for all ten current profiles:
+
+- one already admitted prestate and complete profile per beat;
+- explicit time, context, capability, solver, and domain entry conditions;
+- a profile-local provisional realization without commit;
+- deterministic finite solver dispositions;
+- one authoritative current;
+- one continuity write;
+- resource and charge validation before every final-$C$ consumer;
+- profile-correct post-continuity rederivation and writers;
+- no same-beat read of newly written history;
+- complete postcondition validation;
+- atomic commit or zero mutation;
+- scientific replay without hidden root, cache, retry, or RNG authority.
+
+It does not establish:
+
+- runtime implementation conformance;
+- numerical operating envelopes;
+- arbitrary-coupling global roots;
+- a singular-current continuation;
+- a formed branch;
+- nonzero committed endpoint effect;
+- endpoint hysteresis;
+- structural or temporal stability;
+- bitwise equality across all backends;
+- preference among profiles.
+
+Those are preserved claim boundaries, not omissions in the population-wide transaction. The complete-step content is supportable from the accepted investigation without a new scientific proposition.
+
 
 ---
 
 ## 12. Lifecycle, Reset, Migration, and Events
 
+A GRC-v4 state is not scientifically identified by its current dynamic arrays alone. The accepted lifecycle contract binds the current authoritative state to the construction baseline to which reset returns, the current charge target, the graph and context in which those states are meaningful, the complete profile that selects the equations, and the receipts that record typed changes of identity.
+
+Lifecycle operations are therefore state transitions in their own right. Save/load, reset, profile migration, representation change, topology events, target initialization, history transport, and history loss cannot be delegated to an untyped outer driver without changing the scientific substrate.
+
+> **Primary source objects:** `L-SNAPSHOT-RESET`, `L-PROFILE-MIGRATION`, `L-A-INITIALIZER-GRC`, `L-TOPOLOGY-EVENT`, `L-ORDERED-RECEIPTS`.
+>
+> **Accepted claim relations:** `D10-CL-N-005` and `D10-CL-N-006`; lossless-history condition `D10-CL-C-002`; negative boundary `D10-CL-X-001`.
+
 ### 12.1 Lifecycle identity
 
-Define lifecycle identity as containing, at minimum:
+The accepted dynamic lifecycle tuple is
+
+$$
+\mathfrak X
+=
+\bigl(
+X_{\mathrm{current}},
+X_{\mathrm{reset}},
+Q_{\mathrm{target}}
+\bigr).
+$$
+
+This tuple is interpreted only together with:
 
 ```text
-X_current
-X_reset
-Q_target
-graph identity
-context identity
-complete profile identity
-declared serialized scientific state
+graph and stable node/edge identity
+orientation and boundary identity
+complete-profile identity
+context-contract identity
+declared scientific parameters and capability set
+ordered lifecycle receipts
 ```
 
-### Required source objects
+$X_{\mathrm{current}}$ is the authoritative state from which the next ordinary beat begins. $X_{\mathrm{reset}}$ is the construction baseline after every admitted lifecycle transformation that has occurred so far. $Q_{\mathrm{target}}$ is serialized lifecycle identity, not a value recomputed freely by `set_state()`.
 
-* `L-SNAPSHOT-RESET`
+The tuple intentionally excludes derived and transient surfaces. Candidate C’s $T_C$, selectors, Hodge objects, geometry, current, OS substages, RG section values, roots, workspaces, and analysis projectors do not become lifecycle coordinates merely because restoration must reconstruct them.
 
----
+For an admitted event or profile migration, current state, reset baseline, and charge target are transformed together. The graph, complete profile, and receipts commit in the same atomic lifecycle transaction. Mapping only $X_{\mathrm{current}}$ would permit a later reset to resurrect an obsolete graph, profile, history interpretation, or charge target.
 
-### 12.2 Snapshot and restoration
+> **Primary source object:** `L-SNAPSHOT-RESET`.
+>
+> **Equation/contract row:** `D10.2-EC-PARENT-L-SNAPSHOT-RESET`.
 
-Explain that a scientific snapshot binds the complete lifecycle identity, not merely current arrays.
+### 12.2 Scientific snapshot and restoration
 
-Representation caches may be rebuilt and need not be scientific identity unless the profile explicitly declares otherwise.
+A scientific snapshot contains the information needed to reconstruct the same transition semantics, not every in-memory object. At minimum it binds:
 
----
+- current authoritative state;
+- reset authoritative state;
+- serialized $Q_{\mathrm{target}}$;
+- graph, orientation, boundary, and stable identity;
+- complete candidate-plus-realization profile;
+- context-contract identity;
+- profile-local units, gauge, normalization, domain, writer, and solver identity;
+- every authoritative persistent carrier where present;
+- the lifecycle receipts needed to interpret prior migration or event loss.
 
-### 12.3 Reset
+The current profile classes serialize the following authoritative dynamic coordinates:
 
-Reset returns to the transformed current reset baseline associated with the current graph and profile.
+| Profile class | Current and reset dynamic coordinates |
+|---|---|
+| A-CI, A-OS, A-RG2b | $C$ and $W_A$ |
+| C-CI, C-OS, C-RG2b | $C$ |
+| A-PC, A-CI+PC | $C$, $W_A$, and $Z_{4,A}$ |
+| C-PC, C-CI+PC | $C$ and $Z_{4,C}$ |
 
-A topology event or profile migration must transform the reset baseline together with current state and $Q_{\mathrm{target}}$. Reset may not resurrect an obsolete graph or obsolete profile semantics.
+Persistent profiles additionally bind the identity-bearing carrier contract. PC snapshots include the current and reset $Z_{4,a}$, $\tau_{\mathrm{PC},a}$, carrier norm/domain, writer identity, and $K_4$ profile identity. CI+PC snapshots also bind $\rho_{\mathrm{inst},a}$ and the accepted composite root/domain identity.
 
----
+Realization-specific semantic configuration remains part of restoration identity even when its current value is derived:
 
-### 12.4 Profile migration
+- CI and CI+PC bind their solver algorithm, root-selection rule, and admitted branch/domain, but not previous roots or root workspaces;
+- OS binds predictor–geometry–corrector order and residual definition, but not predictor, corrector, geometry, or residual arrays;
+- RG2b binds the frozen extension completion and target section contract, but not cached $\Gamma_a$ values or a previous section;
+- Candidate C binds selector rank/gap and Hodge-identification semantics, but not a cached $T_C$, projector, Hodge package, or eigenbasis;
+- Candidate A binds $W_A$ type, units, floor, writer, and reset semantics, but not cached $\widehat W_A$, $q_A$, current, or writer target.
 
-Present migration as an ordered map:
+Restoration proceeds by:
+
+```text
+load authoritative lifecycle identity
+-> validate graph, profile, context contract, Q_target, and authoritative domains
+-> reconstruct every derived surface deterministically
+-> re-admit the complete profile
+-> expose the restored state only if every check passes.
+```
+
+A restored state whose resource sum disagrees with serialized $Q_{\mathrm{target}}$ is not silently corrected or rebased. It fails admission unless an explicit charge-target migration or event is being applied.
+
+Scientific replay equivalence is required: the same restored scientific identity and subsequent input must reproduce an equivalent disposition and next scientific state. Cross-backend or cross-platform byte identity is an optional implementation verification, not the general scientific claim.
+
+A legacy GRC9V3 snapshot does not acquire nonzero V4 history merely because it is loaded by a V4-capable system. Any added V4-only history coordinate is canonical zero, explicitly reconstructed under a target initializer where lawful, or represented as absent under the disabled specialization contract.
+
+### 12.3 Reset, `set_state()`, duplication, and replay
+
+#### 12.3.1 Reset
+
+Reset returns to $X_{\mathrm{reset}}$, the construction baseline transformed through every admitted lifecycle event and profile migration. It does not return to:
+
+- the most recent save checkpoint;
+- the originally constructed bytes before a topology change;
+- a source graph that no longer exists;
+- a profile whose semantics have been migrated away;
+- an archived or dropped carrier;
+- an obsolete charge target.
+
+If an event splits, merges, adds, or removes graph structure, the reset resource and history state undergo the same declared event policy as current state. If a profile migration initializes, preserves, archives, or drops history, the reset baseline undergoes the same policy. Reset therefore preserves lifecycle coherence rather than chronological nostalgia.
+
+#### 12.3.2 `set_state()`
+
+An admitted `set_state()` operation updates only the current authoritative coordinates permitted by the active profile and then reconstructs derived surfaces. It does not silently:
+
+- rebase $X_{\mathrm{reset}}$;
+- change $Q_{\mathrm{target}}$;
+- change graph or profile identity;
+- reinterpret bytes under another context contract;
+- fabricate Candidate A or persistent history;
+- preserve a stale current, root, selector, geometry, or section.
+
+For the current unit-measure profiles, a proposed $C$ whose sum disagrees with $Q_{\mathrm{target}}$ is rejected unless an explicit target migration or rebase operation is invoked. Such an operation is a lifecycle transition and requires its own receipt.
+
+#### 12.3.3 Duplication
+
+Duplication creates an independent scientific state with the same admitted identity. Every authoritative mutable coordinate, reset baseline, and receipt set is deep-copied. No candidate state, persistent carrier, cache, solver workspace, producer queue, or registry may remain shared in a way that allows one duplicate to affect the other.
+
+Derived surfaces may be reconstructed independently. Equal reconstruction does not require shared mutable objects.
+
+#### 12.3.4 Replay
+
+Replay is scientific rather than universally bitwise. It requires equivalent:
+
+- authoritative prestate;
+- reset and target identity;
+- complete profile;
+- graph and context contract;
+- input and event sequence;
+- deterministic solver, root-selection, and writer contract;
+- disposition and next scientific state.
+
+A different floating-point backend may produce different representation bytes while satisfying the same admitted scientific result. Conversely, byte equality does not rescue a replay whose profile, context, receipt, or history semantics differ.
+
+### 12.4 Representation, context, boundary, and nonsmooth regime changes
+
+Not every change in the environment or coordinates is a profile migration, and not every runtime-valid change preserves a classical analysis chart. The lifecycle contract separates four cases.
+
+#### 12.4.1 Covariant representation change
+
+A graph relabeling or edge-coordinate reorientation preserves scientific state when every typed object transforms under the declared permutation, signed-cochain, and $K_4$ representations. This includes:
+
+- $C$ and graph identity;
+- physical and structural current coordinates;
+- incidence and boundary operators;
+- $W_A$ and any edge-indexed state;
+- $Z_4$ and its bilinear representation;
+- Hodge and geometry objects;
+- candidate and realization derived surfaces.
+
+The operation is a covariant representation change, not a new physical history, topology event, or profile migration.
+
+#### 12.4.2 Same-contract context value change
+
+The context contract owns schema, units, representation, semantics, and admissibility rules. The current context value is a declared transition input under that contract.
+
+When only the value changes:
+
+- authoritative state may be retained;
+- every affected derived surface is refreshed;
+- the target state is re-admitted against the new value;
+- no profile migration occurs solely because the value changed.
+
+RG2b is stricter operationally: a new context value may require construction of a new extension-relative invariant section under the same frozen completion rule. That is target reconstruction and readmission, not continuation from a cached previous section.
+
+#### 12.4.3 Boundary value and contract change
+
+A boundary value change under an unchanged boundary/context contract may be runtime-valid after the profile rebuilds and re-admits every affected current, selector, Hodge, geometry, and section surface.
+
+A change of boundary schema, units, representation, semantics, $K_4$ space, or admissibility rule changes profile identity and requires migration. It cannot be hidden as a value update.
+
+#### 12.4.4 Same-space nonsmooth regime change
+
+Some changes remain on the same graph and profile but leave the current smooth analysis chart.
+
+Candidate A floor activation is runtime-valid under the accepted total floor policy when all target checks pass, but classical derivatives that assumed the floor-inactive chart stop at the boundary.
+
+Candidate C fixed-$h$ and OS-stage selector-rank changes are runtime-valid nonsmooth transitions only when the basis-independent projector, selected Hodge package, identification, and current stage are rebuilt and re-admitted.
+
+For C-CI and C-CI+PC, every regular selector stratum is solved under its own domain and contraction contract. The union is accepted only when exactly one regular root satisfies its own selector consistency. Zero roots, multiple roots, or a root exactly on the nonregular threshold fail closed.
+
+Runtime-valid nonsmooth continuation is not a claim of differentiability, structural stability, temporal stability, or continuation-spectrum identity.
+
+### 12.5 Profile migration and ordered receipts
+
+A profile change is an ordered typed map
 
 $$
-p_{\mathrm{source}}
+\mathcal M_{p\rightarrow q}:
+X_p
 \longrightarrow
-p_{\mathrm{target}}.
+X_q
 $$
 
-Require:
+with explicit preconditions, target initialization, information-loss semantics, and receipt.
 
-* typed source state;
-* typed target state;
-* target initializer where needed;
-* history transport, archive, reset, or loss;
-* target readmission;
-* direction-specific receipt;
-* atomic commit.
+The lifecycle extension applies the same declared state policy to current and reset state:
 
-### Required source objects
+$$
+\widetilde{\mathcal M}_{p\rightarrow q}
+\bigl(
+X_{\mathrm{current}},
+X_{\mathrm{reset}}
+\bigr)
+=
+\left(
+\mathcal M_{p\rightarrow q}(X_{\mathrm{current}}),
+\mathcal M_{p\rightarrow q}(X_{\mathrm{reset}})
+\right),
+$$
 
-* `L-PROFILE-MIGRATION`
-* `L-ORDERED-RECEIPTS`
+while $Q_{\mathrm{target}}$, graph, context, and complete-profile identity are migrated explicitly and committed in the same lifecycle transaction.
 
-### Boundary
+Every receipt binds the ordered pair
 
-Endpoint profile coverage is not evidence that the crossing itself is lawful.
+$$
+(p_{\mathrm{source}},p_{\mathrm{target}}).
+$$
 
----
+Endpoint support is not crossing evidence. A source and target profile may each be lawful while the requested map between them remains unsupported.
 
-### 12.5 Topology events
+The accepted migration classes are:
 
-Present topology change as a typed source-graph to target-graph continuation.
+| Migration class | Authoritative map | Required readmission and receipt |
+|---|---|---|
+| Same candidate, nonhistory $\rightarrow$ nonhistory | preserve candidate-authoritative state; change realization identity | rebuild target derived surfaces; re-admit target profile; archive source diagnostics or completion identity where relevant |
+| Same candidate, nonhistory $\rightarrow$ history | preserve candidate state; initialize target $Z_{4,a}=0$ for current and reset state | re-admit target carrier, geometry, and root/fixed-$h$ contract; record that no prior history was reconstructed |
+| Same candidate, history $\rightarrow$ nonhistory | preserve candidate state; archive or drop $Z_{4,a}$ for current and reset state | re-admit target profile; receipt persistent-history removal and do not call it native release |
+| PC $\rightarrow$ CI+PC | preserve candidate state and $Z_{4,a}$ only under exact shared carrier, $K_4$, geometry-profile, writer, $\tau_{\mathrm{PC}}$, norm, and domain identity | add immediate timing, re-admit the accepted composite carrier/root domain, and receipt the timing change |
+| CI+PC $\rightarrow$ PC | preserve candidate state and $Z_{4,a}$; remove the immediate path, equivalently entering the $\rho_{\mathrm{inst}}=0$ timing identity | re-admit the fixed-$h$ PC profile and receipt removal of same-beat immediate timing |
+| A $\rightarrow$ C | preserve $C$; archive or drop $W_A$ and A-specific $Z_{4,A}$; initialize target $Z_{4,C}=0$ if a persistent C target is requested; rederive Candidate C surfaces | explicit direction-specific loss receipt; target selector, Hodge, current, and optional carrier readmission |
+| C $\rightarrow$ A | preserve $C$; initialize $W_A$ through the declared graph-generic history-free A initializer; initialize target $Z_{4,A}=0$ if a persistent A target is requested | target positive-$W_A$, current, geometry, and optional carrier readmission; receipt that no A history was fabricated |
 
-Separately map:
+A migration need not be an isomorphism. A-to-C is admitted as explicitly lossy. C-to-A is admitted as history-free. In both directions, current and reset baselines follow the same target initialization and loss policy.
 
-* resource state;
-* current/reset baseline;
-* charge target;
-* Candidate A history;
-* Candidate C derived-sector reconstruction;
-* realization-history state;
-* profile/context identity;
-* receipts.
+Changing any of the following requires migration rather than in-place edit:
 
-### Required source objects
+```text
+H_profile
+K4_base
+tau_PC
+rho_inst
+carrier norm or domain
+writer identity
+RG extension completion
+Candidate C selector policy
+Candidate A W policy
+solver or root-selection identity
+context-contract schema, units, representation, or semantics
+Q_target lifecycle rule
+```
 
-* `L-TOPOLOGY-EVENT`
-* `CORE-EXTERNAL-EVENT-CHARGE`
+The current value of an unchanged context contract is not on this list. It remains declared input followed by refresh and readmission.
 
----
+> **Primary source objects:** `L-PROFILE-MIGRATION`, `L-ORDERED-RECEIPTS`, `SPEC-NORMALIZATION-UNITS-GAUGE-DOMAIN-SOLVER`.
+>
+> **Equation/contract rows:** `D10.2-EC-PARENT-L-PROFILE-MIGRATION`, `D10.2-EC-PARENT-L-ORDERED-RECEIPTS`.
 
-### 12.6 History transport and loss
 
-State the accepted negative boundary:
+### 12.6 Graph-generic Candidate A history-free initializer
+
+Candidate A requires positive edge mobility on the target graph. When a migration or topology event enters an A profile without an admitted map that preserves source A history, the target may not copy unmatched edge values, reinterpret source arrays under target indexing, or infer missing history from stable identifiers alone.
+
+The accepted graph-generic target initializer is denoted
+
+$$
+I_A^{\mathrm{GRC}}.
+$$
+
+It is a **history-free target construction**, not a history transport. For the target graph, target context, and authoritative target resource state, it performs the following admitted sequence:
+
+```text
+target graph, profile, context, and authoritative C
+  -> reconstruct the target's declared deterministic differential surfaces
+  -> evaluate the promoted curvature-disabled Candidate A G_W law
+     at the target reference-current stage
+  -> construct positive target W_A
+  -> validate the target floor, units, domain, current, geometry,
+     lifecycle, and serializer contract
+  -> emit the direction-specific receipt that no source A history
+     was preserved or fabricated.
+```
+
+The initializer is applied under the same declared policy to current and reset state. Thus a C-to-A migration or a topology event that reconstructs A history-free state must initialize both the target current $W_A$ and the target reset $W_A$ against their corresponding target $C$ values and lifecycle contexts. Reset cannot later recover source A history that the migration or event explicitly discarded.
+
+The generic initializer preserves three boundaries.
+
+First, it constructs a lawful target A state but does not establish native A formation. The resulting $W_A$ was initialized by a lifecycle operation rather than produced by the ordinary A writer under an attributable forming current.
+
+Second, it does not claim to preserve source-profile A history. A target value may be mathematically similar to one that ordinary dynamics could produce, but the receipt continues to identify the crossing as history-free.
+
+Third, it does not import the GRC9 row/column chart, fixed row-basis differential backend, or exact GRC9V3 base-conductance reconstruction into graph-generic GRC-v4. The exact specialization binding
+
+```text
+I_A^GRC9V3
+  = exact GRC9V3 base-conductance reconstruction
+```
+
+belongs to Appendix A. It is used only when the target profile deliberately requires exact GRC9V3-compatible initialization.
+
+> **Primary source object:** `L-A-INITIALIZER-GRC`.
+>
+> **Equation/contract row:** `D10.2-EC-PARENT-L-A-INITIALIZER-GRC`.
+>
+> **Specialization boundary:** `L-A-INITIALIZER-GRC9V3` and `D10.2-EC-PARENT-L-A-INITIALIZER-GRC9V3` remain GRC9 specialization-specific.
+>
+> **Associated accepted claim:** lifecycle claim `D10-CL-N-005`.
+
+### 12.7 Typed topology events and whole-lifecycle continuation
+
+A topology event changes the graph or another load-bearing graph-space contract. It is not an ordinary beat, a profile-local solver retry, or an array resize. It is a typed source-to-target lifecycle morphism followed by target reconstruction and readmission.
+
+Write the event schematically as
+
+$$
+\mathcal E_{-\rightarrow +}:
+\bigl(
+\mathfrak X^-,
+\mathcal G^-,
+p^-,
+U^-
+\bigr)
+\longrightarrow
+\bigl(
+\mathfrak X^+,
+\mathcal G^+,
+p^+,
+U^+
+\bigr).
+$$
+
+The event maps the lifecycle tuple as one atomic object:
+
+$$
+\mathfrak X^-
+=
+\bigl(
+X_{\mathrm{current}}^-,
+X_{\mathrm{reset}}^-,
+Q_{\mathrm{target}}^-
+\bigr)
+\longrightarrow
+\mathfrak X^+
+=
+\bigl(
+X_{\mathrm{current}}^+,
+X_{\mathrm{reset}}^+,
+Q_{\mathrm{target}}^+
+\bigr).
+$$
+
+Mapping only the visible current state is inadmissible because reset could later resurrect an obsolete graph, profile, resource distribution, or history state.
+
+#### 12.7.1 Resource and charge part
+
+The resource part is the accepted typed event equation already established in §4.7:
+
+$$
+C^+
+=
+T_{C,\mathrm{evt}}C^-
++
+\Delta C_{\mathrm{event}},
+$$
+
+with conservative transport condition
+
+$$
+\varpi_+^\top T_{C,\mathrm{evt}}
+=
+\varpi_-^\top,
+$$
+
+receipt
+
+$$
+\Delta Q_{\mathrm{event}}
+=
+\varpi_+^\top C^+
+-
+\varpi_-^\top C^-,
+$$
+
+and target update
+
+$$
+Q_{\mathrm{target}}^+
+=
+Q_{\mathrm{target}}^-
++
+\Delta Q_{\mathrm{event}}
+=
+\varpi_+^\top C^+.
+$$
+
+The same resource-map and target-update policy is applied to the current and reset resource states. The event receipt records the actual resource increment. A scalar charge receipt cannot replace the target resource-coordinate map.
+
+> **Equation/contract row:** `D10.2-EC-EVENT-RESOURCE`.
+
+#### 12.7.2 Candidate A edge history
+
+For an A target, $W_A^+$ is supplied only by one of two accepted routes:
+
+1. an admitted typed A-history transport from the source edge state to the target edge state; or
+2. the graph-generic history-free target initializer $I_A^{\mathrm{GRC}}$, with an explicit loss receipt.
+
+A history map must declare source and target edge identities, units, positivity, floor, covariance, multiplicity or split/merge semantics, bounds, target profile compatibility, and the corresponding reset-state map. Stable names or equal array lengths do not supply these semantics.
+
+When no such map is admitted, the event does not guess. It initializes the target history-free and records that source A history was not preserved.
+
+> **Equation/contract row:** `D10.2-EC-EVENT-A-HISTORY`.
+
+#### 12.7.3 Candidate C derived surfaces
+
+Candidate C has no independent selector, sector, Hodge, or Read-Back history payload to transport. After $C^+$ is admitted on the target graph, the target profile rederives:
+
+```text
+target graph and C_plus
+  -> target selector
+  -> target selected sector T_C
+  -> target Hodge package
+  -> target selected/physical identification
+  -> target resolvent and Read-Back surfaces
+  -> target current and geometry admission surfaces.
+```
+
+Source eigenvectors, projector arrays, $T_C$, Hodge matrices, resolvent caches, and solver roots are not copied as causal history. If the target selector or Hodge construction is not admitted, the event fails closed rather than preserving a source-derived object under an incompatible target graph.
+
+> **Equation/contract row:** `D10.2-EC-EVENT-C-DERIVED`.
+
+#### 12.7.4 Persistent $K_4$ history
+
+For PC and CI+PC profiles, the event must separately map the authoritative persistent carrier:
+
+$$
+L_{K4,\mathrm{evt}}:
+\mathcal K_4(\mathcal G^-)
+\longrightarrow
+\mathcal K_4(\mathcal G^+).
+$$
+
+When an admitted map exists,
+
+$$
+Z_{4,a}^+
+=
+L_{K4,\mathrm{evt}}
+\bigl(Z_{4,a}^-\bigr).
+$$
+
+The map must be deterministic, bounded on the declared carrier domains, covariant under source and target graph representations, compatible with the target symmetry/positivity and $K_4$ type, and applied consistently to current and reset carrier state.
+
+A factorization such as
+
+$$
+Z_{4,a}^+
+=
+L_1 Z_{4,a}^- L_1^*,
+$$
+
+is lawful only when the source/target one-form pairing, the adjoint $L_1^*$, dimensions, orientation action, and target carrier domain are explicitly declared. Matrix multiplication that happens to type-check numerically is not sufficient lineage.
+
+When no lawful $L_{K4,\mathrm{evt}}$ exists, the source carrier is archived or dropped, the target carrier is initialized to canonical zero,
+
+$$
+Z_{4,a}^+=0,
+$$
+
+and the receipt records `structural_history_lost_at_event`. This is an admitted lossy continuation, not native release and not evidence that source history was irrelevant.
+
+> **Equation/contract row:** `D10.2-EC-EVENT-K4-HISTORY`.
+
+#### 12.7.5 Realization reconstruction and target readmission
+
+After authoritative target coordinates have been mapped or initialized, the target realization reconstructs its required derived surfaces:
+
+- CI and CI+PC reconstruct the target joint-root problem and branch/domain contract;
+- OS reconstructs the target predictor, geometry, corrector, and split-residual surfaces;
+- RG2b reconstructs the target extension-relative invariant section under the frozen target completion;
+- PC reconstructs target geometry from the mapped or reset carrier;
+- Candidate A reconstructs target differential and writer surfaces;
+- Candidate C rederives its complete selected-sector/Hodge chain.
+
+The event is then target-readmitted. Readmission precedes atomic commit and verifies target resource, charge, state, carrier, profile, context, geometry, current, solver, and lifecycle conditions.
+
+The ordered event receipt binds at least:
+
+```text
+source graph and profile identity
+target graph and profile identity
+resource map and Delta_C_event
+Delta_Q_event and Q_target update
+current/reset transformation policy
+Candidate A history preservation or history-free initialization
+persistent K4 history transport, archive, or reset
+Candidate C target rederivation
+RG2b or other realization reconstruction
+information-loss classification
+target readmission result
+```
+
+Only an admitted target state and complete receipt commit. A failed or unsupported event commits nothing.
+
+> **Primary source objects:** `L-TOPOLOGY-EVENT`, `L-ORDERED-RECEIPTS`, `CORE-EXTERNAL-EVENT-CHARGE`.
+>
+> **Equation/contract rows:** `D10.2-EC-PARENT-L-TOPOLOGY-EVENT`, `D10.2-EC-EVENT-LIFECYCLE-TUPLE`, `D10.2-EC-EVENT-READMISSION-RECEIPT`.
+>
+> **Associated accepted claims:** `D10-CL-N-004`, `D10-CL-N-005`, `D10-CL-N-006`; negative generic-history boundary `D10-CL-X-001`.
+
+### 12.8 History preservation, history loss, and the continuation boundary
+
+The lifecycle contract permits history to survive a crossing only when the crossing supplies the semantics of that survival. “The target contains some corresponding bytes” is not enough.
+
+A history-preservation claim requires, at minimum:
+
+- a typed source history object and target history object;
+- an admitted source-to-target map;
+- source/target graph and profile lineage;
+- deterministic and covariant transport;
+- preservation of the relevant positivity, symmetry, units, normalization, and domain;
+- consistent transformation of current and reset history;
+- target causal use under the target profile;
+- a receipt stating what was preserved, transformed, coarsened, split, merged, or lost;
+- successful target readmission.
+
+These requirements apply separately to Candidate A mobility history and persistent $K_4$ history. Candidate C’s selector and Hodge surfaces are rederived and therefore are not evidence of transported history merely because a target surface resembles a source surface.
+
+The accepted negative boundary is:
 
 > Generic lossless history preservation across topology change is not canonically definable without sufficient typed lineage.
 
-Therefore each profile/event pair must provide one of:
+This is not an unresolved request to invent a universal interpolation. It is a prohibition on claiming losslessness where the substrate does not provide a canonical causal map. The lawful alternatives are:
 
-* lawful history transport;
-* partial transport with explicit information-loss receipt;
-* archive;
-* reset;
-* target reconstruction;
-* rejection.
+- exact typed transport;
+- bounded partial transport with explicit information-loss receipt;
+- archive;
+- target reconstruction;
+- canonical reset;
+- rejection.
+
+Loss may be direction-specific. A coarsening may retain an aggregate while destroying distinctions required for a later split. An A-to-C migration may preserve $C$ while discarding $W_A$. A C-to-A migration may construct lawful target mobility without recovering A history. PC-to-nonhistory may preserve candidate state while dropping $Z_4$. The receipt must describe the actual ordered crossing rather than infer reversibility from endpoint support.
+
+A valid lifecycle continuation also does not establish analytical continuation in the sense of the continuation spectrum. Lifecycle continuation says that the target scientific identity follows from an admitted typed map and readmission. It does not provide:
+
+- a formed smooth branch;
+- a classical complete-step derivative across the event;
+- a structural Hessian;
+- temporal multipliers;
+- Read-Back derivative modes;
+- a spectral identification across changing graph spaces;
+- stability or adiabaticity.
+
+Those stronger analysis claims require the exact operator, metric, regularity, and branch assumptions identified in Section 13. They cannot be inferred from successful serialization, migration, or event transport.
+
+### 12.9 Disablement, history drop, reset, native release, and GRC9V3 reduction
+
+Several operations can remove or suppress a historical effect, but they are not interchangeable.
+
+| Operation | What changes | Scientific interpretation |
+|---|---|---|
+| Read off | set the accepted explicit read gate to zero while preserving the declared state and direct baseline | ablates explicit Read-Back only |
+| Causal gain off | remove the accepted coupling of the read contribution to authoritative current/structure | preserves any diagnostic read surface unless separately disabled |
+| Writer off | prevent the declared retained/history writer from advancing after an otherwise matched valid beat | intervention on write-back, not carrier neutralization |
+| Carrier neutralization | replace the retained package by its preregistered neutral reference under a lawful matched-state intervention | removes retained relation/history under the declared control |
+| History drop in migration/event | archive or discard source history because the target lacks an admitted preserving map | explicit information loss, not native release |
+| Canonical target reset | initialize a target history coordinate to its declared zero or history-free state | target construction, not evidence about source decay |
+| Administrative reset | restore the transformed lifecycle reset baseline | restoration operation, not native release |
+| Native release | ordinary admitted dynamics reduce retained content under the profile’s own release law after the forming driver is absent | dynamical release claim, requiring its own evidence |
+| Disabled V4 compatibility profile | apply the exact GRC9V4-to-GRC9V3 transition, state, observable, and lifecycle reduction | specialization-level legacy compatibility |
+
+This separation prevents a successful history drop or reset from being reported as a release mechanism. It also prevents read-off from being treated as state reduction and prevents a writer-off probe from being treated as an exact legacy profile.
+
+The exact disabled reduction is owned by the GRC9V4 specialization. For each of the ten current complete profiles, it has four independent surfaces:
+
+1. transition reduction;
+2. authoritative-state reduction;
+3. observable reduction;
+4. lifecycle reduction.
+
+Thus the specialization contains
+
+$$
+10\ \text{profiles}
+\times
+4\ \text{surfaces}
+=
+40\ \text{independent contracts}.
+$$
+
+Passing one surface does not imply another. In particular, exact transition equality does not prove state equality, observable equality, snapshot compatibility, reset compatibility, event compatibility, or serializer compatibility.
+
+The graph-generic main text therefore states only the lifecycle requirement that disablement is profile-scoped and surface-complete. Appendix A supplies the GRC9-specific equations, target identities, exact GRC9V3 Candidate A initializer binding, and the full 40-row matrix.
+
+> **Primary source objects:** `BASE-DISABLED-TRANSITION`, `BASE-DISABLED-STATE`, `BASE-DISABLED-OBSERVABLE`, `BASE-DISABLED-LIFECYCLE`.
+>
+> **Associated accepted claim:** `D10-CL-N-007`.
+
+### 12.10 Lifecycle claim ceiling
+
+Sections 12.1–12.9 establish the accepted graph-generic lifecycle design for the current profile population:
+
+- lifecycle identity as current state, reset state, charge target, graph, context contract, complete profile, and declared authoritative history;
+- snapshots that serialize semantic authority rather than transient solver or cache state;
+- reset to the construction baseline transformed through all admitted lifecycle morphisms;
+- `set_state()` without silent target or reset rebasing;
+- deep duplication and scientific replay;
+- covariant representation changes distinct from physical changes;
+- same-contract context values distinct from context-contract migration;
+- runtime-valid nonsmooth regime changes distinct from classical smooth continuation;
+- ordered typed profile migrations with direction-specific loss receipts;
+- a graph-generic history-free Candidate A initializer;
+- whole-tuple topology events with resource and charge accounting;
+- typed Candidate A and persistent-$K_4$ history transport or explicit loss;
+- Candidate C target rederivation rather than hidden history copying;
+- target-profile readmission before one atomic commit;
+- exact separation of disablement, history loss, reset, and native release;
+- GRC9V3 exact disabled compatibility retained as specialization content.
+
+They do not establish:
+
+- runtime implementation or serializer conformance;
+- cross-platform bitwise replay;
+- runtime-reached native formation, retention, release, or replay;
+- generic lossless history transport without typed lineage;
+- canonical inversion of lossy migration or coarsening;
+- successful support for every topology event merely because unsupported events fail closed;
+- smooth differentiability across selector, floor, profile, context-contract, or topology boundaries;
+- continuation-spectrum identity across lifecycle events;
+- structural or temporal stability;
+- endpoint hysteresis or physical-channel attribution;
+- exact GRC9V3 compatibility in the graph-generic layer.
+
+These limits are accepted claim boundaries rather than missing lifecycle equations. Sections 11–12 expose no contradiction that requires a successor investigation. A successor becomes necessary only if the intended proposal later requires one of the stronger propositions—for example a concrete lossless history map without current lineage, a singular crossing, an executable serializer theorem, or a spectral continuation law across topology change.
 
 ---
-
-### 12.7 Candidate A history-free initializer
-
-Describe the graph-generic initializer in the main text.
-
-Move the exact GRC9V3 initializer binding to Appendix A.
-
----
-
-### 12.8 Lifecycle claim ceiling
-
-This section defines lifecycle contracts. It does not claim that runtime snapshot, replay, event, migration, and failure atomicity have already passed implementation-level conformance.
-
----
-
 ## 13. Continuation and Analysis Interfaces
 
 ### 13.1 Purpose
