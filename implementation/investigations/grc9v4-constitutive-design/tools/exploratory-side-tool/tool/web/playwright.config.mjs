@@ -1,7 +1,7 @@
 import { defineConfig } from "@playwright/test";
 import { fileURLToPath } from "node:url";
 
-const outputDir = fileURLToPath(new URL("../generated/iteration7-playwright", import.meta.url));
+const outputDir = fileURLToPath(new URL("../generated/iteration8-playwright", import.meta.url));
 
 export default defineConfig({
   testDir: "./e2e",

@@ -8,7 +8,7 @@ test("verified static navigation workbench remains bounded and usable", async ({
   await expect(page.locator(".source-state")).toContainText("Current");
   await expect(page.locator(".family-row")).toHaveCount(9);
   await expect(page.locator("#graph canvas").first()).toBeVisible();
-  await expect(page.locator(".graph-summary")).toContainText("nodes");
+  await expect(page.locator("#graph-summary")).toContainText("nodes");
 
   await page.locator('[data-family="complete_step_lifecycle"]').click();
   await expect(page.locator('[data-family="complete_step_lifecycle"]')).toHaveClass(/is-active/);

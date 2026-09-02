@@ -1,7 +1,7 @@
 # GRCv4 Exploratory Side Tool Implementation Plan
 
 **Date:** 2026-08-28
-**Status:** Iterations 0-7 accepted; Iteration 8 authorized
+**Status:** Iterations 0-8 accepted; Iteration 9 authorized
 **Companion checklist:** [GRCV4ExploratorySideToolImplementationChecklist.md](./GRCV4ExploratorySideToolImplementationChecklist.md)
 **Source investigation:** [GRC9V4 constitutive design](../../README.md)
 
@@ -1205,18 +1205,57 @@ Two builds are byte-identical. The independent raw-source audit passes 2,173
 checks; focused Python checks pass 477; all 12 Node tests and four Playwright
 flows pass across desktop and mobile; six screenshots were inspected without
 overlap or authority conflation; and the accepted ET-C6 focused regression
-passes 47 checks. The candidate layer digest is
+passes 47 checks. The accepted layer digest is
 `6d694de0e7ffbdea653543668472534ac6fde4be0ea1e1aedc6e1cf561cecc9f`.
 Human review accepted this bounded presentation layer without promoting any
-ghost or adding scientific authority. Iteration 8 is authorized but not
-implemented.
+ghost or adding scientific authority. Iteration 8 was authorized from this
+accepted boundary.
 
 ### Iteration 8. Lineage Scrubbing And Precomputed Ripple Playback
+
+**Status:** accepted
 
 Add DAG-aware time navigation, source/speculative mode separation, scenario
 loading, and precomputed ripple animation with explicit evidence-frontier
 markers. Include a fork-in-time view that leaves accepted unaffected history
 solid and fades only the unresolved counterfactual descendants.
+
+**Implementation result (accepted).** A Python-owned ET-C8 compiler now
+projects all 33 accepted gate records into a 26-position readable spine plus
+seven explicit companion branches. Four v2 supersession markers and the D7G
+post-v2 Hodge correction remain typed overlays; the correction is not
+misrepresented as a predecessor transition. Every scrub position binds an
+accepted record ID and digest. Sixty-eight visible claims have compact
+backward reconstructions terminating at source-bound support links.
+
+All 24 accepted ET-C5 ripple rows are available as exact canonical scenarios
+with four precomputed frames: accepted baseline, direct effects, transitive
+effects, and reopening/evidence-frontier closure. Playback never runs a
+scientific rule in JavaScript. Source mode remains immutable, speculative mode
+freezes the scrubber to the selected row's accepted baseline, and unknown
+descendants remain dashed or faded rather than becoming predicted results.
+The orientation panel preserves the accepted D10.2 relation
+`GRCv4 -> GRC9v4 -> GRC9v3` as generic architecture, nine-port
+specialization, and disabled-profile compatibility target.
+
+Two builds are byte-identical. An independent raw-source audit passes 34,241
+checks: 1,049 structural assertions plus 33,192 repeated per-edge-reference
+assertions over 11,064 reconstruction links. Focused Python pressure passes
+185; all 17 Node tests pass; eight
+Playwright tests pass across desktop and mobile with ten screenshots; and the
+ET-C7 477-check regression remains green. Visual inspection found no overlap,
+clipping, or source/speculative authority conflation. The accepted layer
+digest is `5c5c29a9c636c5a91e2cf37921c323f97ef42ddb9d21442b4e44e17426b50faa`;
+the accepted gate digest is
+`a11d390de18469210c82e85fe7c8d2e41eddb20ae811541923db0325fb3a2c20`.
+Human review accepted the bounded presentation layer without adding scientific
+authority. Iteration 9 is authorized but is not implemented by this gate.
+
+The frontend build directory is a shared latest-iteration surface. An ET-C8
+build legitimately changes its asset and Vite-manifest hashes relative to the
+accepted ET-C7 web build. ET-C8 therefore reruns ET-C7's source/layer-focused
+477-check regression; the old ET-C7 full-dist manifest remains historical and
+is not expected to validate the newer ET-C8 distribution.
 
 ### Iteration 9. Independent Validation And Closeout
 

@@ -1,7 +1,7 @@
 # GRCv4 Exploratory Side Tool User Scenarios
 
 **Date:** 2026-08-28
-**Status:** Design coverage validated; Iterations 1-7 accepted; Iteration 8 authorized
+**Status:** Design coverage validated; Iterations 1-8 accepted; Iteration 9 authorized
 **Plan:** [GRCV4ExploratorySideToolImplementationPlan.md](./GRCV4ExploratorySideToolImplementationPlan.md)
 **Checklist:** [GRCV4ExploratorySideToolImplementationChecklist.md](./GRCV4ExploratorySideToolImplementationChecklist.md)
 
@@ -397,6 +397,14 @@ accepted surface: progressive ghosts remain non-promotable, locked overreads
 retain exact source reasons, Candidate B exposes a routed readmission boundary,
 and current, verification, and historical populations remain separate. This is
 tool-behavior coverage and does not add scientific evidence.
+
+Iteration 8 executes N4, C8, and E1 plus the C1-C2/C9 playback integration over
+the accepted surface. The browser scrubs 33 accepted gate records through a
+26-position readable spine with seven visible companion branches, reconstructs
+68 claims backward to source-bound support, and presents all 24 ET-C5 rows as
+four-frame precomputed forks. These are navigation and presentation results:
+the browser neither recomputes ripple consequences nor changes accepted source
+state, and the evidence frontier remains unresolved.
 
 Each scenario has exactly one owning iteration. Supporting rows may exercise it
 again after another surface becomes available, and I9 reruns all 35.

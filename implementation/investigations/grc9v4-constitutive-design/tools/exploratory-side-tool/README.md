@@ -1,6 +1,6 @@
 # GRCv4 Exploratory Side Tool
 
-**Status:** Iterations 0-7 accepted; Iteration 8 authorized
+**Status:** Iterations 0-8 accepted; Iteration 9 authorized
 
 This investigation defines a read-only exploratory tool over the accepted
 GRCv4/GRC9v4 constitutive-design records. It is a side tool for understanding
@@ -57,9 +57,19 @@ From the repository root:
 ```bash
 TOOL=implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool
 python3 "$TOOL/scripts/bootstrap.py"
-.venv/bin/python "$TOOL/scripts/run.py" verify-iteration7
-.venv/bin/python "$TOOL/scripts/run.py" serve-iteration7
+.venv/bin/python "$TOOL/scripts/run.py" verify-iteration8
+.venv/bin/python "$TOOL/scripts/run.py" serve-iteration8
 ```
+
+`serve-iteration8` serves the existing verified static build. Directly invoking
+`serve_iteration8.py --refresh` rebuilds the accepted layer and therefore requires a
+new `verify-iteration8` run before its receipt is authoritative again.
+
+`tool/web/dist` is the static distribution for the latest built iteration. A
+later browser build necessarily changes asset and Vite-manifest hashes, so an
+older iteration's full-dist manifest is historical rather than a validator for
+the current distribution. Current verification uses the latest build manifest
+and reruns predecessor source/layer-focused regressions separately.
 
 The first command is the only permitted host-Python entry point; it immediately
 re-executes under `.venv`. The dispatcher rejects every later global-Python
@@ -86,6 +96,9 @@ Start with:
 - [Iteration 6 cross-surface parity record](./records/ETC6CrossSurfaceParity.json)
 - [accepted Iteration 7 claim-ceiling and alternative layer](./records/ETC7ClaimCeilingAlternativeNavigation.md)
 - [Iteration 7 verification receipt](./records/ETC7VerificationReceipt.json)
+- [accepted Iteration 8 lineage and ripple layer](./records/ETC8LineageAndRippleNavigation.md)
+- [Iteration 8 compiled lineage/playback layer](./records/ETC8LineagePlaybackLayer.json)
+- [Iteration 8 verification receipt](./records/ETC8VerificationReceipt.json)
 - [accepted constitutive-design investigation](../../README.md)
 - [accepted D10 claim topology](../../decisions/D10NormativeClaimTopology.json)
 - [accepted D10 debt transformations](../../decisions/D10DebtClaimTransformationLedger.json)
@@ -144,7 +157,20 @@ ET_C7_browser_pressure = 4_tests_desktop_mobile_6_screenshots
 ET_C7_accepted_record_digest = 504e8474166c9f71018304f81251d1a65c9777b9e8eb70e71a7b5edb360ba688
 ET_C7_verification_receipt_digest = 1eefce7345bc315022f15061ebeffd8f5c51d8d5fb8df47b1f6c53116dbe14be
 iteration_7 = accepted
-iteration_8 = authorized_not_implemented
+ET_C8_accepted_gate_records = 33
+ET_C8_spine_positions = 26
+ET_C8_companion_branches = 7
+ET_C8_claim_reconstructions = 68
+ET_C8_precomputed_playbacks = 24
+ET_C8_layer_digest = 5c5c29a9c636c5a91e2cf37921c323f97ef42ddb9d21442b4e44e17426b50faa
+ET_C8_independent_audit = 1049_structural_plus_33192_per_edge_checks
+ET_C8_focused_tests = 185_python_17_node
+ET_C8_browser_pressure = 8_tests_desktop_mobile_10_screenshots
+ET_C8_web_manifest_digest = dc1456e975c0851d1ecc817422f2cedb9c25e0b182c3cbca2147b4d634f7bee7
+ET_C8_accepted_record_digest = a11d390de18469210c82e85fe7c8d2e41eddb20ae811541923db0325fb3a2c20
+ET_C8_verification_receipt_digest = 7fcd3f3df3a8f2a0c14c1ffcb2aa05d98db85f310c3b73772326556e8430e608
+iteration_8 = accepted
+iteration_9 = authorized_not_implemented
 src_pygrc_changes = forbidden
 specification_changes = forbidden
 new_scientific_claims = forbidden

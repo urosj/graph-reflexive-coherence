@@ -1,7 +1,7 @@
 # GRCv4 Exploratory Side Tool Implementation Checklist
 
 **Date:** 2026-08-28
-**Status:** Iterations 0-7 accepted; Iteration 8 authorized
+**Status:** Iterations 0-8 accepted; Iteration 9 authorized
 **Plan:** [GRCV4ExploratorySideToolImplementationPlan.md](./GRCV4ExploratorySideToolImplementationPlan.md)
 **Source investigation:** [GRC9V4 constitutive design](../../README.md)
 
@@ -38,13 +38,13 @@
 ```text
 branch = investigation-GRCV4-exploratory-side-tool
 plan = frozen
-checklist = iteration_7_accepted_iteration_8_authorized
-tool_code = iteration_7_claim_ceiling_and_alternative_navigation_accepted
+checklist = iteration_8_accepted_iteration_9_authorized
+tool_code = iteration_8_lineage_and_precomputed_ripple_accepted
 accepted_source_records_changed = false
 src_pygrc_changed = false
 specifications_changed = false
 scientific_claims_added = false
-implementation_gate = ET-C7_accepted_I8_authorized
+implementation_gate = ET-C8_accepted_I9_authorized
 ```
 
 ## Iteration 0. Baseline, Layout, And Source Contract Freeze
@@ -836,7 +836,7 @@ statuses.
 
 ## Iteration 8. Lineage Scrubbing And Ripple Playback
 
-**Status:** authorized; not implemented
+**Status:** accepted
 
 ### Goal
 
@@ -845,36 +845,67 @@ collapsing history into a false linear timeline.
 
 ### Checks
 
-- [ ] Build a readable spine projection over the lineage DAG.
-- [ ] Preserve visible branches, corrections, and supersession markers.
-- [ ] Bind every scrub position to an accepted record ID and digest.
-- [ ] Support backward reconstruction from any visible claim.
-- [ ] Load canonical scenarios without editing source graph state.
-- [ ] Animate only a selected precomputed ripple row.
-- [ ] Mark direct effects, transitive effects, reopening gate, and evidence
+- [x] Build a readable spine projection over the lineage DAG.
+- [x] Preserve visible branches, corrections, and supersession markers.
+- [x] Bind every scrub position to an accepted record ID and digest.
+- [x] Support backward reconstruction from any visible claim.
+- [x] Load canonical scenarios without editing source graph state.
+- [x] Animate only a selected precomputed ripple row.
+- [x] Mark direct effects, transitive effects, reopening gate, and evidence
       frontier separately.
-- [ ] Keep unknown downstream regions visibly unresolved.
-- [ ] Freeze the scrubber at an accepted gate and animate a precomputed
+- [x] Keep unknown downstream regions visibly unresolved.
+- [x] Freeze the scrubber at an accepted gate and animate a precomputed
       counterfactual fork from that point.
-- [ ] Keep unaffected accepted branches solid while minimal invalidation roots
+- [x] Keep unaffected accepted branches solid while minimal invalidation roots
       and frontier are labeled and unresolved descendants fade/dash.
-- [ ] Verify fork playback contains no browser-side propagation or rerun
+- [x] Verify fork playback contains no browser-side propagation or rerun
       prediction.
-- [ ] Prevent ripple playback from altering accepted source mode.
-- [ ] Verify the same scenario produces identical notebook and web reports.
-- [ ] Add route, correction, branch, and stale-scenario tests.
-- [ ] Execute owned scenarios N4, C8, and E1 plus playback integration for C1-C2
+- [x] Prevent ripple playback from altering accepted source mode.
+- [x] Verify the same scenario produces identical notebook and web reports.
+- [x] Add route, correction, branch, and stale-scenario tests.
+- [x] Execute owned scenarios N4, C8, and E1 plus playback integration for C1-C2
       and C9.
-- [ ] Run Playwright desktop/mobile screenshots and overlap checks.
-- [ ] Run `git diff --check`.
+- [x] Run Playwright desktop/mobile screenshots and overlap checks.
+- [x] Run `git diff --check`.
+
+### Result
+
+- status: `accepted`
+- accepted lineage: `33 gate records / 27 predecessor links`
+- readable projection: `26 scrub positions / 7 companion branches`
+- typed overlays: `4 v2 supersessions / 1 post-v2 correction`
+- backward reconstruction: `68 visible claims`
+- playback: `24 ET-C5 rows / 4 precomputed frames per row`
+- source authority: `immutable; 0 browser propagation rules / 0 rerun predictions`
+- deterministic rebuild: `2/2 byte-identical`
+- independent audit: `34,241 checks passed` (`1,049` structural + `33,192`
+  per-edge-reference assertions over `11,064` reconstruction links)
+- focused tests: `185 Python checks / 17 Node tests passed`
+- browser pressure: `8 Playwright tests / desktop + mobile / 10 screenshots`
+- visual inspection: `passed; no overlap, clipping, or authority conflation`
+- predecessor regression: `ET-C7 focused 477-check suite passed`
+- shared-dist boundary: `web/dist is the latest ET-C8 build; the historical
+  ET-C7 full-dist manifest is not a validator for newer asset hashes`
+- layer digest:
+  `5c5c29a9c636c5a91e2cf37921c323f97ef42ddb9d21442b4e44e17426b50faa`
+- web build manifest digest:
+  `dc1456e975c0851d1ecc817422f2cedb9c25e0b182c3cbca2147b4d634f7bee7`
+- accepted record digest:
+  `a11d390de18469210c82e85fe7c8d2e41eddb20ae811541923db0325fb3a2c20`
+- verification receipt digest:
+  `7fcd3f3df3a8f2a0c14c1ffcb2aa05d98db85f310c3b73772326556e8430e608`
+- authority boundary: `Python compiles accepted lineage and exact ET-C5
+  frames; the browser verifies and presents them; source mode cannot change and
+  speculative descendants beyond the recorded frontier remain unresolved`
+- Iteration 9: `authorized; not implemented`
 
 ### Gate
 
-- [ ] Accept `ET-C8_lineage_and_ripple_navigation`.
+- [x] Accept `ET-C8_lineage_and_ripple_navigation`.
 
 ## Iteration 9. Independent Validation And Closeout
 
-**Status:** blocked on Iteration 8
+**Status:** authorized; not implemented
 
 ### Goal
 

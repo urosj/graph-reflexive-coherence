@@ -7,7 +7,8 @@ const bundle = new URL("../src/bundle.js", import.meta.url);
 
 test("client source contains no scientific propagation or ripple compiler", async () => {
   const ceilings = new URL("../src/ceilings.js", import.meta.url);
-  const source = `${await readFile(app, "utf8")}\n${await readFile(bundle, "utf8")}\n${await readFile(ceilings, "utf8")}`;
+  const lineage = new URL("../src/lineage.js", import.meta.url);
+  const source = `${await readFile(app, "utf8")}\n${await readFile(bundle, "utf8")}\n${await readFile(ceilings, "utf8")}\n${await readFile(lineage, "utf8")}`;
   for (const forbidden of [
     "compileRipple",
     "compile_ripple",
@@ -17,6 +18,9 @@ test("client source contains no scientific propagation or ripple compiler", asyn
     "unknown_beyond_evidence_frontier =",
     "promotion_allowed = true",
     "immutable_status =",
+    "computeFrontier",
+    "compute_frontier",
+    "reopenGate(",
   ]) {
     assert.equal(source.includes(forbidden), false, forbidden);
   }
@@ -24,6 +28,9 @@ test("client source contains no scientific propagation or ripple compiler", asyn
   assert.ok(source.includes("embedded_payload_receipts"));
   assert.ok(source.includes("slider_changes_presentation_only"));
   assert.ok(source.includes("non_authoritative_readability_annotation"));
+  assert.ok(source.includes("playback_rows_precomputed"));
+  assert.ok(source.includes("scenario_canonical_json"));
+  assert.ok(source.includes("browser_rerun_prediction"));
 });
 
 test("interface has bounded focus, modes, tabs, keyboard search, and no landing page", async () => {
@@ -41,6 +48,11 @@ test("interface has bounded focus, modes, tabs, keyboard search, and no landing 
     "data-view=\"alternatives\"",
     "ArrowDown",
     "omitted_direct_neighbor_count",
+    "data-surface=\"lineage\"",
+    "lineage-scrubber",
+    "scenario-select",
+    "reconstruction-select",
+    "Precomputed ET-C5 rows only",
   ]) {
     assert.ok(source.includes(required), required);
   }

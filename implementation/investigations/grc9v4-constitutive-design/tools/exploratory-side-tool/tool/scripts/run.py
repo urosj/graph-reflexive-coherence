@@ -59,6 +59,12 @@ COMMANDS = {
     "browser-iteration7": TOOL_ROOT / "scripts/test_iteration7_browser.py",
     "verify-iteration7": TOOL_ROOT / "scripts/verify_iteration7.py",
     "serve-iteration7": TOOL_ROOT / "scripts/serve_iteration7.py",
+    "build-iteration8": TOOL_ROOT / "scripts/build_iteration8_lineage.py",
+    "audit-iteration8": TOOL_ROOT / "scripts/audit_iteration8_lineage.py",
+    "test-iteration8": TOOL_ROOT / "scripts/test_iteration8_lineage.py",
+    "browser-iteration8": TOOL_ROOT / "scripts/test_iteration8_browser.py",
+    "verify-iteration8": TOOL_ROOT / "scripts/verify_iteration8.py",
+    "serve-iteration8": TOOL_ROOT / "scripts/serve_iteration8.py",
 }
 
 
