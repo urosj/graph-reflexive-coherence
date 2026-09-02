@@ -450,6 +450,119 @@ The table below is a drafting-control surface. It records the source relationshi
 
 ---
 
+### Sections 13–15 tranche status
+
+**Status:** Working synthesis from the accepted GRC-v4/GRC9V4 constitutive-design investigation
+**Intended use:** Integrated controlled content in `drafts/GRCV4-proposal.md`
+**Scientific authority:** None independent of the accepted investigation
+**Current controlling closure:** accepted D10.2, decision digest `28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c`
+
+This tranche fills the fifth drafting tranche identified in the extraction skeleton: Sections 13–15. It begins from the complete profile transitions and lifecycle contract assembled in Sections 11–12. It then states the accepted continuation and analysis interfaces, the bounded GRC-v4/GRC9V4/GRC9V3 factorization, and the exact positive, optional, conditional, open, and negative claim ceiling inherited from D10 and updated at record level by accepted D10.2.
+
+The purpose is not to calculate a spectrum, derive another structural functional, or create a new substrate identity. Section 13 exposes the operator families and reference-transport rules already accepted by D3, D8-A, and the architecture-local D8-B result. Section 14 records the substrate provenance partition already earned by D10.2. Section 15 states exactly what the accepted investigation permits the proposal to claim and what it requires the proposal to leave open.
+
+The immediate controlling records are:
+
+- `../decisions/D3ContinuationRequirementsAndStructuralDomain.md` and `.json`;
+- `../decisions/D8ABranchAppropriateStructuralTargetExtraction.md` and `.json`;
+- `../decisions/D8BCoupledArchitectureLocalContinuationAnalysis.md` and `.json`;
+- the accepted realization records and D9 lifecycle records consumed by D10;
+- `../decisions/D10DesignSynthesisAndSpecWritingDecision.md` and claim topology;
+- `../decisions/D10_1PreliminarySubstrateProvenance.md` and `.json`;
+- `../decisions/D10_2FullSubstrateProvenanceAndPromotionAudit.md` and `.json`.
+
+Earlier core theory, GRC-v3, GRC-9, specification, runtime, B1, and B2 sources enter only through the lineage admitted by these records. The forensic API audit reconstructed all 39 accepted D10 claims, queried all 67 D10.2 parent objects, and confirmed the accepted D3, D8-A, D8-B, and D10.2 gate authority against the current exact source bundle. Section 13 formulas were compared with the exact accepted D3/D8-A/D8-B records because D10.2 intentionally does not enumerate every algebraic intermediate. The tool cannot instantiate a formed branch, select an analysis metric, compute a spectrum, convert one operator family into another, promote a GRC9-specific object, or infer a successor claim absent from the accepted claim topology.
+
+Association-level results retain the tool disposition `indeterminate_requires_review`; the proposal crosswalk does not upgrade that status into reconstructed support proof.
+
+### Analysis-equation lineage rule
+
+D10.2 audits every accepted D10 claim through parent normative objects and subordinate normative equations or contracts, while explicitly excluding enumeration of every algebraic intermediate. Its 152-row registry is therefore not a complete index of the accepted D8-B analysis formulas. The structural second-variation, complete-step derivative, direct Read-Back derivative, spatial-operator, projector-transport, nonnormality, and regularity equations in Section 13 remain directly controlled by D3, D8-A, and D8-B and are bounded by the corresponding D10 conditional, open, negative, and verification surfaces.
+
+The proposal must not fabricate D10.2 equation/contract identifiers for these formulas or promote them into normative runtime equations merely to satisfy a blanket crosswalk shape. For Section 13 the lawful lineage is:
+
+```text
+paper analysis equation
+    -> exact accepted D3 / D8-A / D8-B equation or contract
+    -> accepted D10 claim and verification boundary
+    -> D10.2 parent-object and substrate-provenance context where applicable
+```
+
+This is a drafting-control scope correction, not a new mathematical result or a change to D10.2.
+
+This tranche preserves the correction already applied to Sections 2–12: `D10_2_CL_N_001` is a source-local provenance label in D10.2’s `claim_topology_effect`, not a queryable claim node. The historical/current D10 node `D10-CL-C-011` therefore remains visible with its accepted `conditional` classification, while the accepted D10.2 record separately establishes that its bounded substrate-provenance obligation has been satisfied for the current D10 initial population.
+
+### Coverage and status controls applied in this tranche
+
+Sections 13–15 are where a descriptive substrate paper can most easily overstate the investigation. The following controls are therefore explicit.
+
+| Pressure point | Treatment in Sections 13–15 |
+|---|---|
+| Structural stiffness, temporal persistence, Read-Back gain, and spatial scale could be presented as one spectrum | §13 keeps `alpha`, `mu`/`gamma`, `beta`, and `lambda` attached to four different operators, spaces, clocks, and metrics |
+| Retained formation could be conflated with structural formation | §13.1 keeps `retained_formed`, `structurally_formed`, structural reference state, and retained structural state distinct |
+| A runtime trajectory or initialized snapshot could be called a formed branch | §13.1 requires a declared constrained critical branch, gauge, tangent/domain, and reference transport before branch analysis |
+| Candidate A’s runtime state $(C,W_A)$ could be turned into a joint structural coordinate | §13.3 keeps A’s accepted structural problem on $\delta C$ at fixed $W_A^*$; no independent $\alpha(W_A)$ is introduced |
+| Candidate C’s derived sector could receive a second structural spectrum | §13.3 keeps $\delta T_C$ derived from $\delta C$ and all selector/geometry derivatives |
+| The D8-B coupled/implicit analysis result could be generalized silently to OS, RG2b, PC, or CI+PC | §13.7 states exactly which formulas are closed for CI and which other realization analyses remain profile-specific or uninstantiated |
+| A complete-step multiplier could be relabeled as a structural eigenvalue or direct Read-Back gain | §§13.3–13.5 preserve the distinct definitions and block cross-labeling |
+| A continuous rate could be manufactured as $(I-M)/\Delta t$ | §13.4 permits $\gamma=-\log(\mu)/\Delta t$ only with a declared clock and logarithm branch, or a separately derived generator |
+| Similarity-equivalent Candidate C response operators could be assigned equal Euclidean singular values | §13.5 preserves eigenvalue equivalence while keeping singular values, metrics, and apparent nonnormality representation-dependent |
+| Sorted eigenvalue numbers could be treated as persistent mode identities | §13.6 uses isolated spectral clusters, projectors, and explicit reference transport rather than index matching |
+| Fixed-topology derivative formulas could be used across rank or topology events | §13.6 blocks classical cross-event continuation without a typed interspace map and target readmission |
+| Algebraic root regularity could be presented as temporal stability | §13.7 separates implicit-function well-posedness from $\rho(M)<1$, transient growth, and cocycle stability |
+| D10’s conditional and open claims could become a mandatory extension backlog | §15 records them as exact claim ceilings activated only by an attempted stronger proposition |
+| Accepted D10.2 promotion could be restated as universal substrate independence | §14 limits the factorization to the current D10 initial specification population and requires future-profile provenance reopening |
+| GRC9V4 could be reduced to a naming shim | §14 preserves the substantive nine-port mechanics and exact GRC9V3 compatibility as specialization content |
+| GRC9V3 compatibility could be summarized by transition equivalence alone | §14 preserves four independent disabled surfaces for every one of the ten complete profiles |
+| Positive design results could be presented as implementation, endpoint, stability, attribution, or ranking results | §15 separates bounded design claims from routed verification obligations and negative boundaries |
+
+No analysis equation in this tranche receives runtime authority. No claim class is rewritten. No profile is ranked. No numerical spectrum is generated.
+
+### Sections 13–15 provenance crosswalk
+
+The table below is a drafting-control surface. It does not replace the accepted decision records or prove graph associations that the exploratory side tool reports as `indeterminate_requires_review`.
+
+| Proposal location | Controlling source(s) | Current claim relation | Boundary preserved |
+|---|---|---|---|
+| §13.1 | D3 formed-state/branch and reference-clock contracts | `D10-CL-C-001`, `D10-CL-C-005`, `D10-CL-U-002`, `D10-CL-U-004` | initialized/retained/runtime states are not automatically formed structural branches |
+| §§13.2–13.3 | D3 structural vocabulary; D8-A structural target; D8-B structural second variation | `D10-CL-C-001`, `D10-CL-C-005`, `D10-CL-X-003` | no numeric $\alpha$, no joint A $W$ coordinate, no independent C-sector mode |
+| §13.4 | D8-B complete temporal transition | `D10-CL-C-005`, `D10-CL-U-004`, `D10-CL-X-003` | root regularity is not stability; $\gamma$ requires a clock/log branch |
+| §13.5 | D8-B direct Read-Back operators; accepted C Hodge correction | `D10-CL-C-005`, `D10-CL-C-006`, `D10-CL-C-007` | $\beta$ is not $\alpha$ or $\mu$; similarity does not preserve Euclidean singular values |
+| §13.6 | D3/D8-B spatial and projector transport contracts; D9 event boundary | `D10-CL-C-002`, `D10-CL-C-005`, `D10-CL-C-006` | no index-based mode identity or classical cross-event continuation |
+| §13.7 | D8-B nonnormality, regularity, and complete-chain witness contracts | `D10-CL-C-004`, `D10-CL-C-005`, `D10-CL-C-008`, `D10-CL-U-002`, `D10-CL-U-004` | no numerical stability, endpoint, or ranking claim |
+| §§14.1–14.2 | D10.2 independent GRC derivations and parent-object classification | record-level D10.2 promotion; historical `D10-CL-C-011` | graph-generic promotion bounded to current population |
+| §§14.3–14.5 | D10.2 GRC9-intrinsic/specialization-specific classification and disabled matrix | `D10-CL-N-006`, `D10-CL-N-007`, `D10-CL-C-012` | GRC9V4 remains substantive; four compatibility surfaces remain independent |
+| §§14.6–14.7 | D10.2 disposition and `SPEC-FUTURE-ADMISSION` | `D10-CL-C-011`, `D10-CL-C-012` | source-local successor label is not a queryable claim; future profiles reopen provenance |
+| §§15.1–15.5 | D10 claim roster | all 39 accepted D10 claims | claim classes and negative boundaries preserved exactly |
+| §15.6 | D10 verification registry and `SPEC-VERIFICATION-REGISTRY` | routed verification edges | unexecuted verification is neither design failure nor completed evidence |
+| §15.7 | D10 claim ceiling plus accepted D10.2 factorization | current positive bounded result | no runtime, stability, attribution, ranking, or future-exhaustiveness overread |
+
+---
+
+### Paper-pressure register after Sections 13–15
+
+| Boundary | Current disposition | Does it block this tranche? | Successor trigger condition |
+|---|---|---|---|
+| One universal continuation spectrum | Explicitly rejected by four-operator separation | No | Only if the paper attempts to identify $\alpha$, $\mu/\gamma$, $\beta$, and $\lambda$ as one spectrum |
+| Formed structural branch | Required for numeric structural/temporal claims; not instantiated | No | If the intended paper needs numerical modes or stability rather than design interfaces |
+| Candidate A joint $(C,W_A)$ structural Hessian | No source-backed joint functional | No | If $\delta W_A$ must become a structural coordinate |
+| Candidate C independent sector mode | Blocked by C-only ontology | No | If the paper needs an independent $T_C$ continuation coordinate |
+| Independently active-current structural theory | Theory-open | No | If current must be an independent structural coordinate rather than smoothly slaved |
+| General classical analysis for all five realizations | Not established uniformly; CI is the exact D8-B analysis case, RG2b is only Lipschitz | No | If the substrate paper must claim a completed operator/spectrum package for every profile |
+| Candidate A complete-state analysis metric | Relative $C$/$\log W_A$ weight unfrozen | No | If absolute A nonnormality or cross-profile temporal magnitudes are claimed |
+| Nonzero complete-chain endpoint effect | Routed to witness obligation | No | If the paper claims committed endpoint hysteresis or nonannihilation |
+| Cross-rank/topology mode continuation | Blocked without differentiable interspace transport | No | If one mode is claimed to persist through an event |
+| Generic graph promotion | Closed bounded for current population by D10.2 | No | Reopen for a materially distinct successor or broader substrate claim |
+| GRC9V4 as only a compatibility shim | False under D10.2 specialization partition | No | Any draft language erasing substantive nine-port mechanics must be corrected |
+| Transition-only backward compatibility | Insufficient | No | If compatibility is claimed without state, observable, and lifecycle surfaces |
+| Future-exhaustive ten-profile roster | Blocked by `D10-CL-C-012` | No | If the paper claims completeness over all lawful future V4 profiles |
+| Candidate/realization ranking | Negatively bounded | No | If a preference statement is needed, matched formed-branch evidence must be generated first |
+| Automatic successor schedule | Rejected by claim-topology rule | No | A successor opens only at an exact unsupported proposition required by the final paper |
+
+**Current disposition:** Sections 13–15 are fillable from the accepted investigation. They expose no new scientific contradiction and no mandatory successor investigation. Their main function is to preserve the exact boundary between a design-complete substrate architecture and uninstantiated formed-branch, numerical, stability, endpoint, attribution, comparison, and future-profile claims.
+
+---
+
 # Paper Skeleton
 
 ## Abstract
@@ -5932,212 +6045,1204 @@ These limits are accepted claim boundaries rather than missing lifecycle equatio
 ---
 ## 13. Continuation and Analysis Interfaces
 
-### 13.1 Purpose
+GRC-v4 exposes the typed state, current, structural geometry, complete-step, and lifecycle surfaces needed for continuation analysis. It does not make the analysis part of the runtime state and does not identify every slow, soft, amplifying, or spatially large-scale direction with one universal mode.
 
-Explain how GRC-v4 exposes the correctly separated objects needed for later continuation analysis without serializing the analysis as runtime state.
-
-### 13.2 Four distinct operator families
-
-Preserve the accepted distinction:
+The controlling separation is:
 
 ```text
-structural functional/Hessian
-    -> alpha_n
-
-temporal generator or complete-step derivative
-    -> gamma_n or multipliers mu_n
-
-Read-Back derivative
-    -> beta_n
-
-spatial graph operator -Delta_h
-    -> lambda_n
+structural second variation  -> alpha
+complete temporal map        -> mu, and gamma only under a declared clock map
+frozen-state Read-Back       -> beta
+spatial graph operator       -> lambda
 ```
 
-Explain that these may be compared only under declared mappings, branch assumptions, metrics, domains, and regularity.
+These objects can interact within one complete profile. They still have different mathematical meanings, domains, codomains, metrics, clocks, projectors, and evidence conditions.
 
-### Controlling sources
+The current accepted analysis result is also architecture-local. D8-B closes the exact design-level derivative and operator surfaces for the coupled/implicit A and C profiles on their declared regular subcharts. It does not numerically instantiate a formed branch or automatically supply an identical classical analysis package for OS, RG2b, PC, or CI+PC.
 
-* D3
-* D8-A
-* D8-B
-* D10 conditional claims C-001 and C-005
+> **Primary source records:** D3, D8-A, D8-B, D9, and D10.
+> **Primary claim boundaries:** `D10-CL-C-001`, `D10-CL-C-004`, `D10-CL-C-005`, `D10-CL-C-006`, `D10-CL-C-008`, `D10-CL-C-009`, `D10-CL-U-002`, `D10-CL-U-004`, `D10-CL-X-002`, and `D10-CL-X-003`.
 
-The design basis explicitly rejects treating these as one universal spectrum.
+### 13.1 Formed state, retained state, and branch identity
 
----
+The analysis vocabulary begins by separating two meanings of formation.
 
-### 13.3 Structural target
+A representation is **retained-formed** when attributable runtime activity has moved the admitted retained representation away from its neutral or instantaneous baseline under the profile’s formation and writer contract.
 
-Describe the accepted branch-sensitive distinction:
+A state is **structurally formed** when it is a constrained critical point of the declared structural functional on its valid tangent or tangent-cone domain.
+
+Neither condition implies the other. A retained carrier may be dynamically nonneutral away from any declared structural branch. A constrained structural reference state may exist without a native writer, post-input retention, or a demonstrated Read-Back regime.
+
+The corresponding state terms are:
 
 ```text
-smoothly slaved branch
-    -> reduced self-adjoint structural object may be admissible
+structural reference state:
+  a constrained critical state of the declared structural functional
+  on the declared structural domain
 
-active or joint branch
-    -> joint, nonselfadjoint, or DAE object may be required
+retained structural state:
+  a structural reference state whose relevant candidate state also satisfies
+  the accepted retained-formation or retaining contract
 ```
 
-Do not present a universal self-adjoint continuation Hessian for all realizations.
+A complete structural reference state contains, at minimum:
 
----
+```text
+C_star and the declared conserved charge
+candidate parameter, retained representation, or derived sector at star
+geometry, measure, support, and boundary state
+selected reference-current regime
+complete profile and lifecycle identity
+topology and selector stratum
+constraint, gauge, null, and accounting state
+```
 
-### 13.4 Current analysis status
+Nonneutral initialization is not by itself a formed state. A single snapshot is not a branch. A runtime trajectory that passes near a constrained state is not automatically the structural branch. A future basin label cannot be fitted retrospectively to supply missing stationarity or branch identity.
 
-State only:
+A formed structural branch is a smooth family
 
-* the required operator surfaces and derivative contracts have been identified for the admitted profiles;
-* bounded regularity and constructibility results exist for the declared local domains;
-* no formed branch, numerical operator, analysis metric, or stability spectrum is instantiated by the paper.
+$$
+X_\star(\theta)
+$$
 
-### Boundary
+of declared constrained structural reference states. Each point must remain critical for the same transported structural contract, preserve the candidate and identity-basin semantics, and carry an explicit transport of operator domain, tangent, constraints, metric, boundary conditions, and isolated spectral subspaces. The branch parameter $\theta$ is not runtime time by default.
 
-Any claim about:
+The three clocks remain distinct:
 
-* $\alpha_n$;
-* $\gamma_n$;
-* $\mu_n$;
-* stability;
-* slow modes;
-* nonnormal growth;
-* continuation-spectrum identity
+```text
+theta    = structural branch parameter
+k or t   = runtime clock
+analysis = temporal linearization clock used for mu or gamma
+```
 
-must stop at `PAPER-BOUNDARY` unless supported by a later accepted investigation.
+An adiabatic identification among them requires a declared map and a branch-tracking error. Slow runtime motion along a path does not by itself establish low structural stiffness, and finite displacement along a branch is not one continuation eigenmode.
+
+A topology event, selector-rank change, active-set change, current singularity, or unresolved mode crossing is not an ordinary smooth branch point. It is a stratum or lifecycle boundary governed by the event and successor rules from Section 12.
+
+### 13.2 The four operator families
+
+The substrate exposes four operator families. The paper may describe their construction and mutual boundaries. It may not merge their spectra.
+
+| Operator family | Native object | Native space | Spectral label | Immediate interpretation |
+|---|---|---|---|---|
+| Structural | constrained second variation of $F_{\mathrm{struct}}$ | admitted structural tangent or tangent cone | $\alpha_n$ | restoring, marginal, or unstable structural direction under declared normalization |
+| Temporal | derivative of the complete committed-state map | complete committed-state tangent | $\mu_n$; $\gamma_n$ only with a clock/log branch | step multiplier or declared temporal rate |
+| Read-Back | frozen-state derivative of the explicit read current | physical-current or identified one-form response space | $\beta_n$ | enacted direct response gain |
+| Spatial | positive graph field operator at the formed geometry | node-field space with declared boundary/constant-mode handling | $\lambda_n$ | graph spatial scale |
+
+#### 13.2.1 Coupled/implicit root derivative surface
+
+For the coupled/implicit profiles analyzed by D8-B, write the accepted same-step system as
+
+$$
+F_a(Y_a;X_a)=0,
+\qquad
+Y_a=(J_a,h_a),
+$$
+
+and define the root Jacobian
+
+$$
+B_a=D_YF_a.
+$$
+
+Here $B_a$ is the coupled root block, not the graph incidence operator $B_{\mathrm{ref}}$. On the declared regular chart, its invertibility gives the exact first derivative
+
+$$
+D_XY_a[u]
+=
+-B_a^{-1}D_XF_a[u].
+$$
+
+A classical second derivative requires the accepted $C^2$ subchart: fixed topology and boundary, floor-inactive smooth $G_W$ for A, and additionally fixed selector rank with strict selector gap for C. On that subchart,
+
+$$
+\begin{aligned}
+D_X^2Y_a[u,v]
+={}&-B_a^{-1}\Bigl(
+D_{XX}^2F_a[u,v]
++D_{XY}^2F_a\bigl[u,D_XY_a[v]\bigr]\\
+&\qquad
++D_{YX}^2F_a\bigl[D_XY_a[u],v\bigr]
++D_{YY}^2F_a\bigl[D_XY_a[u],D_XY_a[v]\bigr]
+\Bigr).
+\end{aligned}
+$$
+
+These derivatives are calculated from the complete current/geometry root, not from a cached or lagged geometry. At a singular root block, selector-rank crossing, topology boundary, or nonsmooth active-set crossing, the classical derivative is blocked rather than reported as zero or merely unconverged.
+
+> **Primary source:** accepted D8-B coupled/implicit root-derivative surface.
+> **Claim boundary:** `D10-CL-C-001`, `D10-CL-C-005`, and `D10-CL-C-006`.
+
+The following relabels are blocked:
+
+```text
+slow temporal mode        != low structural stiffness
+large Read-Back gain      != low structural stiffness
+low graph spatial scale   != low structural stiffness
+runtime Jacobian          != structural Hessian
+constitutive selector     != analysis slow projector
+persistent carrier mode   != structural mode by persistence alone
+```
+
+The same physical profile may have all four operator families. Their coexistence does not create a single operator whose eigenvalues simultaneously carry all four meanings.
+
+### 13.3 Structural continuation and the $\alpha$ interface
+
+#### 13.3.1 Reduced constrained structural functional
+
+On a declared smooth branch and structural chart, the architecture-local reduced structural functional has the accepted form
+
+$$
+F_{\mathrm{struct},a}^{\mathrm{red}}(C) = P_{\mathrm{struct}} \bigl(C,h_a(C);\text{fixed candidate context}\bigr) - \eta_a \bigl[ Q\bigl(C,h_a(C)\bigr)-Q_0 \bigr].
+$$
+
+Here $h_a(C)$ is supplied by the admitted regular slaving or root relation. The coefficient $\eta_a$ in this section is the structural constraint multiplier, not the transport-mobility coefficient used in the baseline flow law. The unslaved constrained integrand is
+
+$$
+L_a(C,h) = P_{\mathrm{struct}}(C,h) - \eta_a\bigl[Q(C,h)-Q_0\bigr].
+$$
+
+The complete second variation of $L_a(C,h_a(C))$ contains the full chain through the first and second derivatives of the slaved geometry:
+
+$$
+\begin{aligned} D^2 F_{\mathrm{struct},a}^{\mathrm{red}}[u,v] ={}&D_{CC}^2L_a[u,v] +D_{Ch}^2L_a\bigl[u,Dh_a[v]\bigr] +D_{hC}^2L_a\bigl[Dh_a[u],v\bigr] \\ &+D_{hh}^2L_a\bigl[Dh_a[u],Dh_a[v]\bigr] +D_hL_a\bigl[D^2h_a[u,v]\bigr]. \end{aligned}
+$$
+
+Constraint curvature is already contained in the $-\eta_aD^2Q$ part of this expression. Measure dependence enters through the $h$- and $H_0$-dependence of both $P_{\mathrm{struct}}$ and $Q$. Boundary terms remain inside the functional while boundary and support conditions restrict the domain. None of these terms is appended again as a generic correction.
+
+For the graph-field functional used by the accepted design basis,
+
+$$
+P_G(C,H) = \frac{\kappa_C}{2} (d_0C)^\top H(d_0C) + \sum_i(H_0)_{ii}W_{\mathrm{pot}}(C_i),
+$$
+
+the graph-field contribution to the complete second variation is
+
+$$
+\begin{aligned} Q_a[u,v] ={}&\kappa_C(d_0u)^\top H_a(d_0v) +u^\top H_0\operatorname{Diag}\bigl(W_{\mathrm{pot}}''(C^\star)\bigr)v \\ &+\kappa_C(d_0u)^\top H_a'[v]e^\star +\kappa_C(d_0v)^\top H_a'[u]e^\star +\frac{\kappa_C}{2}(e^\star)^\top H_a''[u,v]e^\star, \end{aligned}
+$$
+
+with
+
+$$
+e^\star=d_0C^\star.
+$$
+
+This is one source-backed field contribution. The remaining terms come from differentiating the declared complete $L_a$; they are not invented as universal add-ons.
+
+#### 13.3.2 Structural operator and generalized eigenproblem
+
+On the declared admissible tangent $V_a$, the complete bilinear form is represented by an operator $\mathcal C_{\mathrm{struct},a}$ through
+
+$$
+Q_{\mathrm{struct},a}[u,v] = \langle u,\mathcal C_{\mathrm{struct},a}v\rangle_a.
+$$
+
+Only after the complete functional, tangent, metric, constraints, boundary conditions, gauge, protected nulls, and branch have been instantiated is
+
+$$
+\mathcal C_{\mathrm{struct},a}u_n = \alpha_n u_n
+$$
+
+an $\alpha$ statement.
+
+Equivalently, after selecting a tangent basis $Z_a$ and removing protected null directions, the accepted generalized eigenproblem has the form
+
+$$
+Z_a^\top K_a Z_a\xi_n = \alpha_n Z_a^\top H_0 Z_a\xi_n.
+$$
+
+Here $K_a$ denotes the matrix representation of the complete structural bilinear form on the chosen chart; it is not the runtime structural carrier $K_4$. The tangent is derived from the actual complete-step charge and structural contract, not from $H_0$ alone. The charge covector, boundary conditions, support, nonnegativity state, profile authority, and current regime all constrain the admissible perturbation.
+
+At active nonnegativity, clipping, saturation, floor, or inequality boundaries, the correct object may be a tangent cone, critical cone, or variational inequality rather than a linear tangent space. “Hessian undefined” at a kink is not $\alpha=0$.
+
+#### 13.3.3 Candidate A structural domain
+
+Candidate A remains a conditional $C$-structure problem:
+
+```text
+structural coordinate = delta_C
+fixed parameter       = W_A_star
+delta_W_A             = 0 during structural variation
+```
+
+$W_A$ remains an independent runtime causal coordinate. The accepted sources do not provide a joint structural functional $F_{\mathrm{struct}}(C,W_A)$. D8-B therefore does not create an independent $\alpha(W_A)$ spectrum.
+
+The full slaved derivative of current and geometry still enters. The chain includes the reference-relative $\Delta_0(h)$ correction, $J_{0,A}$, in-root reconstruction of $\widehat W_A$, $q_A$, the explicit read current, $\Delta K_{4,A}$, and the geometry profile. Fixing $\delta W_A=0$ does not mean that the retained relation
+
+$$
+R_W=W_A-\widehat W_A(C,J,h,\ldots)
+$$
+
+has zero variation; its variation includes every admitted $C$, current, and geometry dependence of $\widehat W_A$.
+
+A future claim that places $\delta W_A$ inside the structural spectrum requires a source-backed joint structural theory and a new profile or theory successor. Persistence or slow $W_A$ dynamics cannot substitute for such a functional.
+
+#### 13.3.4 Candidate C structural domain
+
+Candidate C remains $C$-only. Its selected-sector perturbation is derived:
+
+$$
+\delta T_C = P_M\delta C + \bigl( D_CP_M[\delta C] +D_hP_M[\delta h_C] \bigr)C^\star.
+$$
+
+The complete second variation also contains all accepted second selector derivatives and the second implicit geometry derivative. The chain remains
+
+```text
+h -> P_M -> T_C -> H_M -> I_4M -> Rhat_C,M -> G_J,
+```
+
+including the load-bearing $(\delta G_J)J$ term. $T_C$ cannot be varied independently and receives no second $\alpha$ spectrum.
+
+A composite functional written as $F(C,P_M(C)C)$ remains $C$-only. Its Hessian must include all chain-rule terms through the selector. Treating $T_C$ as an independent coordinate would create a different candidate.
+
+#### 13.3.5 Current-regime boundary
+
+The structural object also depends on the current regime. In the table below, $\Phi_{\mathrm{slave}}$ denotes the regular current/root slaving map from structural state to current; it is not the graph potential $\Phi$ from the baseline transport equation.
+
+| Current regime | Perturbation treatment | Current structural status |
+|---|---|---|
+| No current | $J^\star=0$, $\delta J=0$ | A conditional; C supported |
+| Frozen current | $J^\star$ may be nonzero, $\delta J=0$, current-mediated geometry fixed | A conditional; C supported |
+| Smoothly slaved current | unique regular current/root solve and $\delta J=D\Phi_{\mathrm{slave}}[\delta\text{ structural state}]$ | A and C admitted on declared regular charts |
+| Independently active current | $\delta J$ independent | joint structural theory remains open |
+
+The currently accepted D8-B operator formulas use the coupled/implicit smoothly slaved branch. A formal Schur complement without a solved regular current equation is blocked. An independently active-current structural theory would require its own functional, metric, domain, and constraints.
+
+#### 13.3.6 Structural interpretation boundary
+
+Under a fully instantiated normalized structural operator:
+
+```text
+alpha > 0  = restoring under the declared constraints and metric
+alpha = 0  = marginal after protected, gauge, and symmetry nulls are removed or classified
+alpha < 0  = structurally unstable direction on that reference branch
+```
+
+Structural marginality does not by itself establish a spark, collapse, basin birth, current deslavement, topology event, or a particular nonlinear destination. An infinitesimal mode is not a finite basin, and $\alpha$ does not determine memory lifetime.
+
+The accepted investigation closes the architecture-local formula and domain. It does not instantiate numerical $\alpha_n$ values because no complete formed constrained branch, coefficient set, functional normalization, and perturbation metric has been frozen and evaluated.
+
+### 13.4 Complete temporal transition: $\mu$ and $\gamma$
+
+The primary temporal analysis object for the discrete GRC-v4 profiles is the derivative of the complete committed-state map. D8-B denotes that map by $\Phi_a$; to avoid collision with the graph potential $\Phi$ used in the transport equations, this proposal writes it as $\Phi_a^{\mathrm{step}}$:
+
+$$
+M_a = D_X\Phi_a^{\mathrm{step}}.
+$$
+
+Its eigenvalues are step multipliers:
+
+$$
+M_a v_n = \mu_n v_n.
+$$
+
+A continuous rate may be written as
+
+$$
+\gamma_n = -\frac{\log\mu_n}{\Delta t}
+$$
+
+only with a declared temporal clock, units, and logarithm branch, or when a separate continuous generator has been derived. The finite-difference expression $(I-M_a)/\Delta t$ is not automatically a normative generator.
+
+#### 13.4.1 Candidate A committed-state tangent
+
+For a nonpersistent A-CI profile, the committed state is $(C,W_A)$. After the coupled root,
+
+$$
+\delta C^+ = \delta C - \Delta t\, B_{\mathrm{ref}}\delta J_A + D\,\mathrm{boundary}_A[\delta X],
+$$
+
+where $D\,\mathrm{boundary}_A$ denotes the declared boundary/external contribution.
+
+The writer derivative is
+
+$$
+\begin{aligned} \delta W_A^+ ={}& a_A\operatorname{Diag}\left(\frac{W_A^+}{W_A}\right)\delta W_A \\ &+ (1-a_A) \operatorname{Diag}\left(\frac{W_A^+}{W_{\mathrm{drv},A}}\right) DG_W[\delta C^+,\delta J_A]. \end{aligned}
+$$
+
+All differential inputs to $G_W$ are reconstructed from post-continuity $C^+$ and the authoritative root current. Pre-continuity caches remain inadmissible.
+
+To avoid collision with the authoritative-current symbol $J_C$, write the D8-B current-derivative blocks as
+
+$$
+\mathsf J_{A,C}:=D_CJ_A,
+\qquad
+\mathsf J_{A,W}:=D_{W_A}J_A.
+$$
+
+The current-to-resource blocks are
+
+$$
+P_C = I-\Delta t\,B_{\mathrm{ref}}\mathsf J_{A,C} +D_C\,\mathrm{boundary}_A,
+$$
+
+$$
+P_W = -\Delta t\,B_{\mathrm{ref}}\mathsf J_{A,W} +D_{W_A}\,\mathrm{boundary}_A.
+$$
+
+Using the D8-B shorthand $G_{C,W}=D_CG_W$ and $G_{J,W}=D_JG_W$ at the accepted post-continuity writer stage,
+
+$$
+D_CW_{\mathrm{drv},A}
+=
+G_{C,W}P_C+G_{J,W}\mathsf J_{A,C},
+$$
+
+$$
+D_{W_A}W_{\mathrm{drv},A}
+=
+G_{C,W}P_W+G_{J,W}\mathsf J_{A,W}.
+$$
+
+Combining these blocks with the writer derivative above gives
+
+$$
+M_A =
+\begin{bmatrix}
+P_C & P_W\\
+D_CW_A^+ & D_{W_A}W_A^+
+\end{bmatrix}.
+$$
+
+The positive-coordinate chart
+
+$$
+\omega_A = \log(W_A/W_{\mathrm{ref}})
+$$
+
+is useful and similarity-equivalent at a fixed point. On a moving branch, pre- and post-step coordinate transports remain distinct. The relative metric weight between $C$ and $\omega_A$ is not fixed by the accepted sources; absolute A nonnormality and cross-architecture temporal comparison therefore remain open.
+
+Persistent A profiles enlarge the committed-state tangent by the admitted $\delta Z_{4,A}$ block. Their classical complete-step operator must include the exact carrier writer and profile-specific current/geometry dependencies. The current proposal does not infer those additional blocks from the CI matrix above.
+
+#### 13.4.2 Candidate C committed-state tangent
+
+Candidate C commits only $C^+$ unless the selected realization adds $Z_{4,C}$. For the nonpersistent coupled/implicit profile, the accepted formal map is
+
+$$
+M_C = I - \Delta t\,B_{\mathrm{ref}}P_J \bigl(-B_C^{-1}D_CF_C\bigr) + D\,\mathrm{boundary}_C.
+$$
+
+$T_C$, $J_C$, $h_C$, selectors, Hodge objects, and resolvents remain derived same-step variables. Giving any of them an independent temporal coordinate would change Candidate C’s ontology.
+
+Persistent C profiles add only the declared $\delta Z_{4,C}$ history coordinate. A classical derivative of RG2b remains blocked until the accepted Lipschitz section is strengthened by the condition in `D10-CL-C-009`.
+
+#### 13.4.3 Stability and moving-branch boundary
+
+For an instantiated fixed branch, asymptotic linear step stability requires
+
+$$
+\rho(M_a)<1
+$$
+
+on the unprotected admissible modes. This condition alone does not control transient growth when $M_a$ is nonnormal.
+
+The local implicit-function theorem used to admit a same-step root proves local algebraic well-posedness. It does not prove temporal stability of the committed-state map.
+
+On a moving branch, the tangent spaces differ from beat to beat. If
+
+$$
+M_k:T_{X_k}\mathcal X\longrightarrow T_{X_{k+1}}\mathcal X,
+$$
+
+and $U_{k\to 0}$ transports the beat-$k$ tangent to a fixed reference space, then the correctly transported one-step representative is
+
+$$
+\widetilde M_k = U_{k+1\to 0} M_k U_{0\to k}.
+$$
+
+The fixed-reference cocycle is
+
+$$
+\widetilde M_{n:0} = \widetilde M_{n-1}\cdots\widetilde M_1\widetilde M_0.
+$$
+
+Using $U_{k\to 0}$ on the output is type-incorrect because the output belongs to the tangent at $X_{k+1}$. A single fixed-point multiplier spectrum cannot substitute for the transported cocycle along a moving branch.
+
+### 13.5 Direct Read-Back: $\beta$
+
+The direct frozen-state Read-Back operator is
+
+$$
+B_{\mathrm{rb},a} = \zeta_a D_J j_a.
+$$
+
+It is useful to separate the intrinsic direct response
+
+$$
+R_{\mathrm{dir},a} = D_J j_a, \qquad R_{\mathrm{dir},a} w_n=r_n w_n,
+$$
+
+from the enacted gain
+
+$$
+B_{\mathrm{rb},a} = \zeta_a R_{\mathrm{dir},a}, \qquad \beta_n=\zeta_a r_n.
+$$
+
+The ungained eigenvalues are $r_n$, not $\beta_n$. $B_{\mathrm{rb},a}$ is one current subloop inside the complete root and transition. It is not the complete-step Jacobian and not structural stiffness.
+
+If the direct operator is nonnormal or defective, $\beta_n$ remains an eigenvalue of its spectrum, but isolated clusters and Riesz projectors replace fragile individual eigenvectors. Singular values
+
+$$
+\sigma_{\mathrm{rb},n} = \sigma_n(B_{\mathrm{rb},a})
+$$
+
+measure direct-response amplification and are reported separately; they are not renamed $\beta_n$.
+
+#### 13.5.1 Candidate A direct Read-Back operator
+
+At fixed committed state and fixed same-step geometry reference,
+
+$$
+B_{\mathrm{rb},A} = \zeta_A\chi_A\operatorname{Diag}(q_A^\star).
+$$
+
+Thus
+
+$$
+r_{A,e}=\chi_Aq_{A,e}^\star, \qquad \beta_{A,e}=\zeta_A\chi_Aq_{A,e}^\star.
+$$
+
+The total dependence of $q_A$ on geometry, baseline current, and the joint root remains in the full root derivative and complete-step map. It is not double-counted inside the frozen direct operator.
+
+#### 13.5.2 Candidate C direct Read-Back operator
+
+For Candidate C, define the full physical-flux to retained-one-form identification
+
+$$
+Q_C = I_{4M}G_J.
+$$
+
+Then
+
+$$
+B_{\mathrm{rb},C} = \zeta_C\chi_C Q_C^{-1} \widehat R_{C,M} Q_C,
+$$
+
+while the retained-coordinate representative is
+
+$$
+B_{\mathrm{rb},C,M} = \zeta_C\chi_C\widehat R_{C,M}.
+$$
+
+The two operators are similar and therefore have the same eigenvalues. Their Euclidean singular values and apparent nonnormality need not agree.
+
+Response norms use the retained one-form metric $H_{1,\mathrm{form},M}$ or its physical pullback
+
+$$
+W_{\mathrm{rb},C}^{\mathrm{phys}} = Q_C^\top H_{1,\mathrm{form},M}Q_C.
+$$
+
+If $\widehat R_{C,M}$ is $H_{1,\mathrm{form},M}$-self-adjoint, the physical operator is self-adjoint in this pulled-back metric. That is not an unweighted Euclidean self-adjointness claim.
+
+If $\lambda_{M,m}$ is an eigenvalue of Candidate C’s internal retained one-form Hodge Laplacian $\Delta_{1,M}$, then
+
+$$
+r_{C,m} = \frac{\chi_C}{1+\tau_C\lambda_{M,m}},
+$$
+
+$$
+\beta_{C,m} = \frac{\zeta_C\chi_C}{1+\tau_C\lambda_{M,m}}.
+$$
+
+The kinetic threshold
+
+$$
+1\in\operatorname{Spec}(B_{\mathrm{rb},a})
+$$
+
+blocks the frozen direct current inverse. It does not imply $\alpha=0$, $|\mu|=1$, basin birth, current singular continuation, or topology change.
+
+### 13.6 Spatial scale, projectors, and reference transport
+
+#### 13.6.1 Field-level spatial operator
+
+At a formed geometry $h_a^\star$, the positive graph field operator is
+
+$$
+L_{\mathrm{sp},a} = \Delta_0(h_a^\star) = H_{0,\mathrm{ref}}^{-1} B_{\mathrm{ref}} H_{1,\mathrm{form}}(h_a^\star) B_{\mathrm{ref}}^\top.
+$$
+
+The weighted generalized eigenproblem is
+
+$$
+B_{\mathrm{ref}} H_{1,\mathrm{form}}(h_a^\star) B_{\mathrm{ref}}^\top\phi_n = \lambda_nH_{0,\mathrm{ref}}\phi_n.
+$$
+
+This operator lives on the node-field domain with declared boundary and constant/conservation-mode handling. $\lambda_n$ describes spatial scale under that geometry and metric.
+
+Candidate C’s internal one-form operator $\Delta_{1,M}$ has its own retained-coordinate eigenvalues $\lambda_{M,m}$. Those eigenvalues enter its resolvent. They are not the field-level $\lambda_n$ merely because both arise from graph-Hodge operators.
+
+Spatial scale cannot be relabeled as $\alpha$, $\beta$, $\gamma$, or $\mu$.
+
+#### 13.6.2 Four projector families
+
+The corresponding invariant-subspace projectors live in different spaces:
+
+```text
+structural projector -> constrained C tangent with structural metric
+temporal projector   -> complete committed-state tangent
+Read-Back projector  -> current/form response space
+spatial projector    -> node-field spatial space
+```
+
+Sorted eigenvalue indices are not cross-operator mode identities. A comparison requires an explicit map between spaces and a declared comparison question.
+
+Candidate A makes the mismatch visible: its structural domain is $\delta C$ at fixed $W_A^\star$, while its complete temporal tangent contains $(\delta C,\delta W_A)$ and, for persistent profiles, $\delta Z_{4,A}$. A structural-to-temporal comparison requires a declared injection or projection. There is no identity map by notation.
+
+Candidate C may use $C$ coordinates for both structural and nonpersistent temporal objects, but the metrics, operator meanings, and projectors remain distinct. Shared coordinates do not make the projectors equal.
+
+#### 13.6.3 Reference transport on a smooth branch
+
+Across a tracked smooth branch, reference transport must carry at least:
+
+```text
+measure weight
+cochain or fiber metric
+conservation tangent and constraint projector
+boundary conditions and operator domain
+candidate representation or selector basis
+isolated cluster projector
+```
+
+Node relabeling acts by similarity on operators and congruence on forms. Edge reorientation uses the declared signed cochain transformation. Neither operation turns an analysis projector into runtime state.
+
+Individual eigenvectors are not transported through degeneracy or cluster crossings. The transport object is the isolated cluster or subspace projector. A hard selector requires an isolated cluster, a smooth filter, or a declared event boundary.
+
+Cross-rank and cross-topology continuation remain blocked without a typed interspace map. Section 12 supplies lifecycle transport, reconstruction, loss, and readmission rules, but those rules do not automatically establish differentiable continuation of an analysis mode across the event.
+
+The local classical derivative envelope remains:
+
+```text
+fixed topology
+fixed selector rank
+fixed operator domain
+no unresolved active-set, symmetry, or mode crossing
+```
+
+This is an analysis envelope, not a claim that the normative substrate is fixed-topology.
+
+### 13.7 Conditioning, nonnormality, complete-chain sensitivity, and current analysis status
+
+#### 13.7.1 Declared analysis metric
+
+After an architecture and formed branch are instantiated, nonnormality is measured in a declared positive analysis metric $W_{\mathrm{analysis}}$:
+
+$$
+M^\dagger = W_{\mathrm{analysis}}^{-1} M^\top W_{\mathrm{analysis}},
+$$
+
+$$
+\mathcal N(M) = \left\| M^\dagger M-MM^\dagger \right\|_{W_{\mathrm{analysis}}},
+$$
+
+and the finite-horizon gain is
+
+$$
+G_H(M) = \max_{0\le k\le H} \left\|M^k\right\|_{W_{\mathrm{analysis}}}.
+$$
+
+A moving branch uses the corresponding transported cocycle norm.
+
+Candidate C has a natural committed-state $H_0$ metric on its nonpersistent $C$ tangent. Candidate A has the natural positive coordinate $\omega_A=\log(W_A/W_{\mathrm{ref}})$, but the accepted sources do not fix the relative metric weight between $C$ and $\omega_A$. Absolute A nonnormality magnitudes, cross-block angles, and cross-architecture temporal comparisons therefore remain blocked until that metric is declared and pressured.
+
+Nonnormal stability analysis also requires singular values, conditioned invariant subspaces, Schur or equivalent stable-subspace representations, resolvent or pseudospectral checks near the boundary, and finite-horizon cocycle norms. The spectral-radius condition alone is insufficient.
+
+#### 13.7.2 Local regularity certificate
+
+Solver success is not a regularity certificate. To avoid collision with the structural Lagrange multiplier $\eta_a$ used in §13.3, write the D8-B regularity perturbation quantity as $\eta_{\mathrm{reg},a}$. For a reference root block $B_{0,a}$ and current block $B_a$, the accepted perturbative certificate is
+
+$$
+\eta_{\mathrm{reg},a} = \left\| B_{0,a}^{-1}(B_a-B_{0,a}) \right\| <1,
+$$
+
+which implies
+
+$$
+\left\|B_a^{-1}\right\| \le \frac{\left\|B_{0,a}^{-1}\right\|} {1-\eta_{\mathrm{reg},a}}.
+$$
+
+A Lipschitz bound on $B_a-B_{0,a}$ can turn this into a conservative local radius. No numerical radius is instantiated by the current investigation.
+
+#### 13.7.3 Complete-chain sensitivity
+
+A nonzero direct field term or nonzero generated geometry does not prove that the complete committed transition consumes the channel nontrivially. For a coupling parameter $\kappa$ and same-step root $Y$, the exact local sensitivity is
+
+$$
+Y_{\kappa} = -B_a^{-1}F_{\kappa},
+$$
+
+$$
+D_{\kappa}\Phi_a^{\mathrm{step}}
+=
+D_Y\Phi_a^{\mathrm{step}}\,Y_{\kappa}
++
+\partial_{\kappa}\Phi_a^{\mathrm{step}}.
+$$
+
+This is the proposal’s notation-preserving rewrite of D8-B’s $\partial_{\kappa}\Phi_a=\Phi_Y Y_{\kappa}+\Phi_{\kappa}$, with total and explicit parameter dependence distinguished and the step-map superscript preventing collision with the graph potential.
+
+A positive complete-chain claim requires a preregistered nonzero transition sensitivity or a matched enabled-versus-consumer-off difference. The direction cannot be selected after observing the result.
+
+Equation-level consumption, root-level nonannihilation, distinct retained state, and persistent carrier state do not by themselves establish a nonzero committed endpoint effect. That stronger claim remains under `D10-CL-C-004` and `D10-CL-U-002`.
+
+#### 13.7.4 Realization-local analysis coverage
+
+The current analysis coverage is intentionally uneven because the accepted realizations have different regularity and state contracts.
+
+| Realization | Current accepted analysis surface | Current boundary |
+|---|---|---|
+| CI | D8-B closes exact architecture-local first/second root derivatives, constrained structural second variation, complete-step Jacobian, direct Read-Back operator, spatial operator, projector transport, and test contracts for A and C | no formed branch, numeric operators, spectra, stability, global root, or endpoint witness |
+| OS | explicit one-pass transition and split-consistency residual are accepted | no D8-B-style formed-branch operator instantiation or theorem equating OS with CI |
+| RG2b | bounded deterministic Lipschitz invariant section is accepted | classical derivative and spectrum require `D10-CL-C-009` |
+| PC | authoritative carrier state, exact ZOH writer, bounded domain, release, and matched-forcing contraction are accepted | no instantiated complete-step spectral operator or endpoint hysteresis |
+| CI+PC | local hybrid root, carrier writer, gain audit, and complete transition are accepted | no hybrid-specific formed-branch structural/temporal operator instantiation or stability classification |
+
+The common substrate therefore exposes the interfaces needed to construct profile-local analysis. It does not claim that one classical operator package has already been instantiated for all ten profiles.
+
+#### 13.7.5 Section 13 claim ceiling
+
+Section 13 establishes only:
+
+- the distinction among structural, temporal, Read-Back, and spatial operator families;
+- the formed-state, retained-state, branch, clock, and reference-transport requirements;
+- the accepted coupled/implicit A and C design-level derivative surfaces;
+- the exact structural-domain restrictions for A and C;
+- the definitions and type boundaries of $\alpha$, $\mu$, $\gamma$, $\beta$, and $\lambda$;
+- the projector, covariance, moving-space, local-regularity, nonnormality, and complete-chain witness contracts;
+- the exact current lack of numerical formed-branch instantiation.
+
+It does not establish:
+
+- numeric $\alpha$, $\beta$, $\gamma$, $\mu$, or $\lambda$ values;
+- a formed V4 branch;
+- structural or temporal stability;
+- continuation-spectrum identity;
+- slow-mode classification;
+- nonzero committed endpoint effect;
+- global root uniqueness;
+- classical RG2b derivatives;
+- cross-rank or cross-topology continuation;
+- cross-profile comparison or ranking;
+- one common analysis metric for A and C;
+- runtime implementation.
+
+These are accepted paper boundaries rather than defects in the substrate definition. No successor investigation is required by Section 13 unless the intended paper chooses to make one of those stronger claims.
 
 ---
 
 ## 14. Inheritance, Specialization, and Reduction
 
+The constitutive investigation began in the GRC9V3 lineage, but the final provenance audit separates the graph-generic V4 architecture from the nine-port specialization. The resulting relation is
+
+$$
+\boxed{ \mathrm{GRCV4} \xrightarrow{\text{nine-port specialization}} \mathrm{GRC9V4} \xrightarrow{\text{disabled V4 profile}} \mathrm{GRC9V3} }.
+$$
+
+This factorization is an accepted bounded result for the current D10 initial specification population. It is not a universal theorem about every future V4 profile, and it does not by itself implement any of the three substrates.
+
 ### 14.1 Graph-generic inheritance from GRC-v3
 
-State that GRC-v4 inherits or reuses:
+GRC-v4 inherits the graph substrate and baseline transport lineage already available in GRC-v3:
 
-* scalar vertex resource;
-* finite oriented graph;
-* graph differential contract;
-* positive scalar transport reference;
-* potential and potential-flow equations;
-* incidence continuity;
-* graph measure and charge;
-* identity/topology lineage.
+- finite oriented graph and stable graph identity;
+- scalar vertex resource $C$;
+- graph incidence and antisymmetric edge current;
+- explicit deterministic graph differential contract;
+- positive scalar edge-mobility reference;
+- graph potential and potential-flow equations;
+- one incidence-based continuity write;
+- graph measure, charge, and conservation tangent;
+- topology-aware identity and lifecycle semantics.
 
-State that V4 adds a new causal and structural contract around those inherited elements.
+The independently promoted parent objects include:
 
----
+```text
+CORE-C-AUTHORITY
+CORE-INCIDENCE-CONTINUITY
+CORE-GENERAL-CHARGE
+CORE-CHARGE-TANGENT
+CORE-STRUCTURAL-CHARGE-PROJECTOR
+CORE-UNIT-MEASURE
+CORE-EXTERNAL-EVENT-CHARGE
 
-### 14.2 GRC-v4 to GRC9V4
+BASE-SCALAR-MOBILITY
+BASE-POTENTIAL
+BASE-POTENTIAL-FLOW
+BASE-GRC-DIFFERENTIAL
+```
 
-State:
+No ordered-port, row/column-chart, or nine-port capacity premise is required to derive these objects.
+
+GRC-v4 does not simply rename GRC-v3. It adds the profile-explicit causal and structural architecture around the inherited graph dynamics:
+
+- explicit retention, Read-Back, and write-back roles;
+- declared candidate and realization authority;
+- graph $K_4$ and the corrected Hodge/flat/sharp type split;
+- generated structural geometry and profile-local temporal realization;
+- one complete-step transaction and atomic failure;
+- complete lifecycle, migration, event, history-loss, and target-readmission contracts;
+- profile-scoped compatibility and successor grammar.
+
+The inherited baseline equations remain graph-generic even where a complete profile uses retained mobility or generated geometry as their inputs.
+
+### 14.2 Graph-generic V4 constitutive and realization content
+
+D10.2’s deletion test is:
+
+> Delete the premise “this came from GRC9V3.” Can the object still be derived from GRC-v3 or general-GRC contracts?
+
+For the current population, the following V4 families survive that test.
+
+#### 14.2.1 Candidate A
+
+The graph-generic Candidate A content includes:
+
+```text
+A-GW-FUNCTIONAL
+A-WHAT
+A-DIRECTIONAL-CONTRAST
+A-READ-CLOSURE
+A-WRITER-TARGET
+A-RETAINED-WRITER
+A-STATE-REDUCTION
+L-A-INITIALIZER-GRC
+```
+
+The promoted functional is exactly the accepted curvature-disabled D7 profile over an admitted deterministic graph differential backend. Promotion does not include the fixed GRC9 row-basis backend or any future curvature-conditioned successor.
+
+#### 14.2.2 Candidate C
+
+The graph-generic Candidate C content includes:
+
+```text
+C-SECTOR
+C-SELECTOR
+C-HODGE-MAPS
+C-READ-BACK
+C-AUTHORITY
+```
+
+Its derived sector, Hodge package, retained response, and $C$-only authority require general graph-Hodge contracts, not nine-port mechanics.
+
+#### 14.2.3 Structural geometry and mobility
+
+The graph-generic geometry content includes:
+
+```text
+CORE-K-STRUCTURAL-ROLE
+GEOM-K4
+GEOM-H1-FORM
+GEOM-GJ
+GEOM-M4
+GEOM-K4-TO-H4-TO-h4
+GEOM-ASSEMBLY
+GEOM-COVARIANCE
+```
+
+Core $K\mapsto g[K]$ remains substrate-independent theory. Graph $K_4$ is its GRC realization on oriented one-forms. $M_4$ remains candidate-specific transport mobility and does not inherit authority from $H_{1,\mathrm{form}}$, $G_J$, $h_4$, or overlap assembly.
+
+#### 14.2.4 Realization and lifecycle grammar
+
+All five current realization families survive the graph-generic derivation:
+
+```text
+REAL-CI
+REAL-OS
+REAL-RG2B
+REAL-PC
+REAL-CI-PC
+```
+
+The remaining common complete-step and lifecycle objects also survive; the Candidate A initializer is already listed with Candidate A above:
+
+```text
+L-AUTHORITATIVE-CURRENT
+L-CONTINUITY-WRITE
+L-POSTCONTINUITY-REFRESH
+L-ATOMICITY
+L-SNAPSHOT-RESET
+L-PROFILE-MIGRATION
+L-TOPOLOGY-EVENT
+L-ORDERED-RECEIPTS
+L-SINGULAR-FAIL-CLOSED
+L-PROFILE-GRAMMAR
+```
+
+The specification-meta grammar is also substrate-independent:
+
+```text
+SPEC-PROFILE-GRAMMAR
+SPEC-FUTURE-ADMISSION
+SPEC-B-SLOT
+SPEC-CLAIM-CEILINGS
+SPEC-NORMALIZATION-UNITS-GAUGE-DOMAIN-SOLVER
+SPEC-COMPOSITION-PROFILE-IDENTITY
+SPEC-VERIFICATION-REGISTRY
+```
+
+These objects govern profile identity and claims. They are not physical evidence for a candidate or realization.
+
+Across unique D10.2 parent identifiers, the graph-generic/core/meta side contains 54 `promotion_proved` objects. The GRC9 side contains 13 `specialization_only` objects: eight GRC9-intrinsic objects and five deliberate GRC9V3-target compatibility objects. Together they exhaust the 67-parent current population without overlap.
+
+### 14.3 GRC9V4 as a substantive nine-port specialization
+
+GRC9V4 specializes the common GRC-v4 contract by adding mechanics that require the nine-port substrate or deliberately target GRC9V3 compatibility.
+
+The intrinsic nine-port objects are:
+
+```text
+GRC9-ORDERED-PORTS
+GRC9-ROW-COLUMN-CHART
+GRC9-SATURATION
+GRC9-MECHANICAL-EXPANSION
+GRC9-HYBRID-SPARK
+GRC9-CHILD-BASIN-STABILIZATION
+GRC9-COLUMN-COARSE-GRAINING
+BASE-GRC9-ROW-BASIS-DIFFERENTIAL
+```
+
+They provide:
+
+- nine ordered ports per module;
+- the fixed $3\times 3$ row/column chart;
+- the row-basis differential and flux-summary backend;
+- finite local port-capacity saturation;
+- column-preserving mechanical expansion;
+- the hybrid saturation-plus-degeneracy spark candidate;
+- post-expansion child-basin completion;
+- chart-specific column coarse-graining and reconstruction.
+
+These mechanics make GRC9V4 substantive. It is not only an adapter around generic GRC-v4.
+
+At the same time, D10.2 does not prove that nine ports are uniquely necessary, that every V4 profile needs a port chart, or that generic graph degree pressure is equivalent to GRC9 saturation.
+
+### 14.4 GRC9-specialization-specific compatibility objects
+
+Some objects are specialization-specific not because their mathematics intrinsically requires nine ports, but because their normative target is exact GRC9V3 behavior.
+
+These include:
+
+```text
+BASE-DISABLED-TRANSITION
+BASE-DISABLED-STATE
+BASE-DISABLED-OBSERVABLE
+BASE-DISABLED-LIFECYCLE
+L-A-INITIALIZER-GRC9V3
+```
+
+The graph-generic Candidate A initializer reconstructs a lawful target $W_A$ from target graph, context, authoritative $C$, and the promoted differential/functional contract. The exact GRC9V3 initializer binding selects the historical GRC9V3 base-conductance reconstruction. Only the latter remains specialization-specific.
+
+Likewise, exact compatibility with GRC9V3 is not a generic GRC-v4 property. It is an obligation of the GRC9V4 specialization.
+
+### 14.5 Four independent disabled-reduction surfaces
+
+For every one of the ten complete current profiles, exact disabled compatibility is split into four independent surfaces:
+
+1. **transition reduction** — the disabled V4 transition equals the declared GRC9V3 target transition;
+2. **state reduction** — authoritative V4 state projects to the profile-scoped GRC9V3 state surface;
+3. **observable reduction** — the declared V4 observable/derived surface reduces to its GRC9V3 target;
+4. **lifecycle reduction** — snapshot, reset, event, migration, and history semantics reduce to the declared GRC9V3 lifecycle.
+
+The complete matrix is
 
 $$
-\mathrm{GRCV4}
-\longrightarrow
-\mathrm{GRC9V4}
+10\ \text{ profiles} \times 4\ \text{ surfaces} = 40\ \text{ compatibility contracts}.
 $$
 
-by addition of the exact objects classified as GRC9-intrinsic or GRC9-specialization-specific.
+The current profiles are:
 
-GRC9V4 is not merely a compatibility shim. It retains substantive nine-port mechanics.
+| Candidate | CI | OS | RG2b | PC | CI+PC |
+|---|---|---|---|---|---|
+| A | `A_CI` | `A_OS` | `A_RG2b` | `A_PC` | `A_CI_PC` |
+| C | `C_CI` | `C_OS` | `C_RG2b` | `C_PC` | `C_CI_PC` |
 
----
+Each cell has its own transition, state, observable, and lifecycle obligation. Passing one surface never implies another. “Backward compatible” is therefore too coarse unless the four surfaces and complete-profile scope are named.
 
-### 14.3 GRC9V4 to GRC9V3
+The reduction also does not erase the enabled V4 ontology. It specifies the lawful disabled limit inside the GRC9 specialization. Read-off, writer-off, neutral carrier, migration loss, administrative reset, and disabled V4 compatibility remain distinct interventions.
 
-State:
+### 14.6 Meaning and limit of the factorization
 
-$$
-\mathrm{GRC9V4}
-\longrightarrow
-\mathrm{GRC9V3}
-$$
+The accepted factorization changes the ownership and presentation of the substrate:
 
-through the profile-scoped disabled reduction.
+```text
+GRC-v4 substrate account:
+  owns the graph-generic common architecture, A/C profiles,
+  realization grammar, complete step, lifecycle, and provenance-bounded claims
 
-The reduction must be independently stated for:
+GRC9V4 appendix to the substrate account:
+  imports GRC-v4 and adds the substantive nine-port mechanics,
+  row-basis backend, exact GRC9V3 initializer, and disabled reductions
 
-1. transition;
-2. authoritative state;
-3. observable surface;
-4. lifecycle.
+later normative specifications:
+  encode the accepted GRC-v4 and GRC9V4 scientific sources without
+  changing their mathematical ownership or introducing a second derivation
 
-Passing one does not imply the others.
+GRC9V3:
+  remains the exact target of the disabled GRC9V4 profiles
+```
 
-### Required source objects
+This does not change runtime state by itself. D10.2 wrote no normative specification and changed no `src/` code. It authorizes the graph-generic/substrate-specialization decomposition after human acceptance; it does not claim implementation conformance.
 
-* `BASE-DISABLED-TRANSITION`
-* `BASE-DISABLED-STATE`
-* `BASE-DISABLED-OBSERVABLE`
-* `BASE-DISABLED-LIFECYCLE`
+The factorization is bounded to the **current D10 initial specification population**. The destination label `current_promoted_common` means common to that population, not permanently universal GRC-v4 content.
 
-### Boundary
+The historical D10 claim `D10-CL-C-011` states the equation-by-equation provenance obligation that had to be met before graph-generic promotion. Accepted D10.2 records that bounded result under the source-local label `D10_2_CL_N_001` in `claim_topology_effect`. The label is not a new queryable claim node and does not silently rewrite the D10 claim graph.
 
-The exact reduction is GRC9 specialization content. It is not a graph-generic GRC-v4 theorem.
+The bounded-completeness condition `D10-CL-C-012` remains fully active. The ten current profiles are the complete currently admitted initial population, not a completeness theorem over all future constitutive, temporal, history, hybrid, or geometry profiles.
+
+### 14.7 Future-profile provenance reopening
+
+Every materially distinct successor must reopen provenance and the earliest accepted contract it changes. This includes a successor that changes:
+
+- state or resource authority;
+- retention, Read-Back, or writer law;
+- current closure or singular-domain treatment;
+- geometry/Hodge/mobility ownership;
+- realization timing or persistent history;
+- composition gain;
+- normalization, units, or gauge;
+- event, migration, or lifecycle semantics;
+- exact GRC9V3 compatibility.
+
+A successor may remain graph-generic, become GRC9-specific, or require another substrate specialization. Its classification cannot be inherited from the current population merely because it reuses some symbols.
+
+#### Section 14 claim ceiling
+
+Section 14 establishes:
+
+- the graph-generic GRC-v4 common architecture for the current population;
+- GRC9V4 as its substantive nine-port specialization;
+- exact disabled GRC9V3 compatibility as specialization content;
+- the separation of graph-generic, core-theory, GRC9-intrinsic, and GRC9-specialization-specific objects;
+- the four-surface compatibility matrix;
+- the future-profile provenance reopening rule.
+
+It does not establish:
+
+- that every future V4 object is graph-generic;
+- that nine ports are unnecessary or uniquely necessary;
+- that GRC9V4 is only a compatibility shim;
+- that exact GRC9V3 reduction is a generic GRC-v4 theorem;
+- runtime implementation or conformance;
+- future-exhaustive profile taxonomy.
+
+No new substrate-provenance investigation is required for the current D10 population. A new provenance item is activated only by a materially distinct successor or an attempted broader substrate claim.
 
 ---
 
 ## 15. Claims Established by the Substrate Definition
 
-### 15.1 Positive bounded claims
+The GRC-v4 proposal inherits the accepted D10 claim topology rather than replacing it with prose confidence. The topology contains normative common contracts, optional admitted profiles, conditional stronger claims, open research questions, and negative boundaries. Accepted D10.2 adds the bounded record-level substrate factorization without converting the remaining conditional and open claims into a mandatory successor schedule.
 
-The paper may state that the accepted investigation establishes, for the current initial population:
+The governing rule remains:
 
-* a graph-generic profile-explicit V4 architecture;
-* $C$-only resource authority;
-* declared nonresource authority per profile;
-* one authoritative current and one continuity write;
-* general charge, tangent, and structural projection contracts;
-* typed $K_4$, Hodge, geometry, and mobility separation;
-* two admitted constitutive families;
-* five admitted realization families;
-* ten complete current profile identities;
-* complete-step ordering and atomic failure;
-* typed lifecycle, reset, event, and migration grammar;
-* exact profile-scoped disabled compatibility after GRC9 specialization;
-* the bounded factorization:
+> Debt is not a checklist item; it is a stressed edge in an evolving claim topology.
 
-  $$
-  \mathrm{GRCV4}
-  \rightarrow
-  \mathrm{GRC9V4}
-  \rightarrow
-  \mathrm{GRC9V3}.
-  $$
+The proposal may state the positive bounded claims below. It must state the conditional, open, and negative boundaries wherever ordinary exposition could otherwise imply the stronger result.
 
-### Controlling sources
+### 15.1 Normative common-architecture claims
 
-* D10
-* D10.2
+The following common claims are accepted for the current initial population.
+
+#### 15.1.1 Profile-explicit common architecture — `D10-CL-N-001`
+
+GRC-v4 has one common resource, state-authority, current/geometry, lifecycle, and invariant interface. Constitutive current and geometry laws are supplied by the selected complete profile rather than flattened into one universal A/C equation.
+
+D10 states this originally in the lineage-local GRC9V4 architecture. D10.2 independently promotes the graph-generic content for the current population.
+
+#### 15.1.2 Resource and nonresource authority — `D10-CL-N-002`
+
+$C$ is the only resource coordinate. Every enabled profile declares any authoritative nonresource state. Candidate/realization surfaces such as $T_C$, $h$, $J$, selectors, solver roots, and analysis operators remain derived or transient unless the complete profile explicitly assigns authority.
+
+#### 15.1.3 Complete-step transaction — `D10-CL-N-003`
+
+Every profile has one declared complete step with one authoritative current, one continuity write, post-continuity refresh, atomic failure, and no hidden same-beat authority.
+
+#### 15.1.4 Charge and tangent — `D10-CL-N-004`
+
+The complete-step charge budget and tangent come from the actual resource path. Typed external and event terms are receipted. The structural $C$-sector projector and complete-tangent retraction preserve the accepted metric boundary.
+
+#### 15.1.5 Lifecycle identity and typed crossings — `D10-CL-N-005`
+
+Lifecycle identity contains current state, reset baseline, and $Q_{\mathrm{target}}$. Typed migration and event receipts bind ordered source and target complete-profile identities and transform the whole lifecycle tuple before atomic commit.
+
+#### 15.1.6 Corrected structural/Hodge typing — `D10-CL-N-006`
+
+$K_4$ and graph-Hodge objects use the corrected one-form typing, reference pairing, covariance, and typed event-transport contract. $H_{1,\mathrm{form}}$, $G_J$, $M_4$, $h_4$, and $K_4$ assembly retain distinct authority.
+
+#### 15.1.7 Scoped GRC9V3 reductions — `D10-CL-N-007`
+
+Every current complete profile has separately scoped disabled transition, state, observable, and lifecycle reduction surfaces to GRC9V3 inside the GRC9V4 specialization.
+
+#### 15.1.8 Complete-profile numeric and semantic identity — `D10-CL-N-008`
+
+Parameters, units, gauge, normalization, domain, solver, and composition choices are declared profile identity. They are not hidden universal constants or mutable implementation details.
+
+#### 15.1.9 One candidate and one realization — `D10-CL-N-009`
+
+Every executable instance binds exactly one admitted constitutive family and exactly one admitted realization as one unambiguous complete profile identity.
+
+### 15.2 Optional admitted profile claims
+
+“Optional” means admitted without implying preference, universality, or mandatory implementation support.
+
+| Claim | Accepted bounded content | Explicit ceiling |
+|---|---|---|
+| `D10-CL-O-001` | Candidate A is an admitted normalized, nondimensional, revision-specific temporalized-mobility and Read-Back family | not inherited core, unique, physically dimensionalized, nonabsorbable, or runtime demonstrated |
+| `D10-CL-O-002` | Candidate C is an admitted revision-specific derived-$C$-sector Hodge-response family | no independent $T_C$ state, universal nonabsorbability, or demonstrated retained branch |
+| `D10-CL-O-003` | CI admits A under its bounded self-map/contraction contract and C under stratum-local uniqueness with exactly one self-consistent regular root | no global root, formed branch, spectrum, or stability |
+| `D10-CL-O-004` | OS is an admitted one-pass predictor–geometry–corrector realization with explicit split residual | no equivalence to CI, second pass, or convergence theorem |
+| `D10-CL-O-005` | RG2b is an admitted bounded reconstructed-geometry realization relative to a frozen equivariant extension | no universal reconstruction, classical derivative, or spectrum |
+| `D10-CL-O-006` | PC is the admitted scalar-ZOH, one-$\tau_{\mathrm{PC}}$, independently authoritative persistent-$K_4$ history realization | not Candidate B, not a universal memory law, no endpoint hysteresis claim |
+| `D10-CL-O-007` | CI+PC is the admitted unit-immediate plus unit-retained composition, with the accepted A/C local root contracts and steady source gain two | not unique, amplitude-neutral, preferred, or a general closure over all realization pairs |
+
+An implementation may support any nonempty subset of these optional profiles. It may claim conformance only to the complete identities it actually implements.
+
+### 15.3 Conditional claims
+
+Conditional claims name stronger propositions and the evidence or successor contract required to activate them. They are not defects in the accepted design and not an automatic linear work plan.
+
+| Claim | Stronger proposition | Required activation | Current proposal treatment |
+|---|---|---|---|
+| `D10-CL-C-001` | classical structural Hessian and $\alpha$ classification | declared $C^2$ subchart, formed branch, coefficients, normalization, complete operator | §13 defines the formula/domain and states no numeric $\alpha$ |
+| `D10-CL-C-002` | lossless history-preserving topology continuation | sufficient typed event lineage and target-profile readmission | §12 permits typed transport or explicit loss; no generic lossless claim |
+| `D10-CL-C-003` | passage through a current singularity | separately admitted named singular successor profile | current A/C profiles fail closed; Candidate B reopening does not supply it |
+| `D10-CL-C-004` | nonzero committed endpoint effect | complete-chain witness | equation-level consumption, root nonannihilation, and distinct history remain insufficient |
+| `D10-CL-C-005` | temporal/structural stability, continuation spectrum, or slow modes | formed branch, numeric operators, and declared analysis metrics | §13 exposes interfaces and preserves the no-spectrum boundary |
+| `D10-CL-C-006` | general SPD conditioning, executable covariance, and runtime solver guarantees | implementation-level verification | structural type/covariance contracts are stated without claiming executable conformance |
+| `D10-CL-C-007` | A or C physical nonabsorbability | declared baseline model class and exact or causal nonredundancy result | A/C remain admitted mechanisms without universal channel attribution |
+| `D10-CL-C-008` | exclusive profile preference or numeric ranking | matched formed branch, charge/analysis metric, and runtime discrimination matrix | profiles remain unranked |
+| `D10-CL-C-009` | classical RG2b derivative analysis | $C^1$ section or equivalent bunching regularization | RG2b remains bounded Lipschitz only |
+| `D10-CL-C-010` | physical A dimensionalization or cross-candidate capacity/gain comparison | explicit units, gauge, normalization, and profile bridge | current A remains normalized/nondimensional; cross-profile magnitudes are not compared |
+| `D10-CL-C-011` | graph-generic substrate promotion | equation-by-equation provenance audit and independent graph derivation | accepted D10.2 closes this bounded obligation at record level for the current population; the D10 node remains historically conditional |
+| `D10-CL-C-012` | future-exhaustive profile taxonomy | a separate completeness theorem over future candidates, realizations, hybrids, and geometry profiles | the ten current profiles are only the complete initial admitted population |
+
+The proposal must not silently use a conditional claim’s desired conclusion as explanatory shorthand. For example, “slow mode” cannot be used as a synonym for persistent carrier, and “causally distinct” cannot be used as a synonym for physical nonabsorbability.
+
+### 15.4 Open claims
+
+The open claims name legitimate research directions whose resolution is not required merely to state the current substrate.
+
+#### 15.4.1 Candidate B — `D10-CL-U-001`
+
+Candidate B requires a source-backed $U_B$ formation, retention, release, capacity, Read-Back, and lifecycle writer before readmission. PC does not fill this slot.
+
+#### 15.4.2 Runtime formation and endpoint behavior — `D10-CL-U-002`
+
+Formed-branch runtime reachability, native formation, post-input retention, release, replay, and nonzero endpoint effect remain unexecuted.
+
+#### 15.4.3 Physical attribution — `D10-CL-U-003`
+
+Physical channel attribution and A/C nonabsorbability remain questions about a declared baseline model class and evidence design.
+
+#### 15.4.4 Numeric structural, temporal, and comparative evidence — `D10-CL-U-004`
+
+Numeric formed branches, Hessians, complete-step Jacobians, spectra, nonnormal growth, stability, and matched profile evidence remain to be instantiated.
+
+#### 15.4.5 Alternative Hodge/DEC profiles — `D10-CL-U-005`
+
+Alternative star-pair normalizations and richer DEC edge-volume profiles remain available only as named successors with renewed identity and provenance.
+
+These claims become new investigation items only when the intended substrate account or a chosen successor proposition must cross them.
+
+### 15.5 Negative claims and blocked relabels
+
+Negative claims are current scientific boundaries. They remain active unless new evidence explicitly transforms them.
+
+#### 15.5.1 No generic lossless event history — `D10-CL-X-001`
+
+Generic lossless history preservation without sufficient typed event lineage is not canonically definable. Lawful loss, archive, reset, reconstruction, or rejection are not failures of the lifecycle contract.
+
+#### 15.5.2 No unique or stability-based preference — `D10-CL-X-002`
+
+The accepted design evidence does not support a unique candidate, realization, composition, or stability-based architecture preference.
+
+#### 15.5.3 Constructibility is not stability — `D10-CL-X-003`
+
+Bounded constructibility, regularity, lifecycle validity, and persistence do not establish temporal or structural stability.
+
+#### 15.5.4 Candidate A is not inherited core — `D10-CL-X-004`
+
+The present A completion is an explicit revision-specific constitutive profile, not inherited core by provenance. This does not prove that no future A-like law could ever be derived from core.
+
+#### 15.5.5 PC is not Candidate B — `D10-CL-X-005`
+
+The persistent-carrier realization does not supply or substitute for Candidate B’s missing source-backed writer.
+
+#### 15.5.6 Candidate A is not the unique completion — `D10-CL-X-006`
+
+Candidate A is not a unique constitutive completion because Candidate C also survives bounded admission.
+
+The proposal must preserve these boundaries in the conclusion and any abstract summary. They are not optional caveats.
+
+### 15.6 Routed verification obligations
+
+The accepted verification registry keeps implementation, runtime, numerical, analysis, and provenance obligations separate from design mathematics. The main obligations relevant to the proposal boundary are:
+
+| Obligation | Kind | What it gates |
+|---|---|---|
+| `D9-VERIFY-QUANTITATIVE-PARAMETER-ENVELOPES` | numeric conformance | instantiated OS/RG/CI/PC/CI+PC bounds, conditioning, release, and source constants |
+| `D9-VERIFY-LIFECYCLE-RUNTIME-CONFORMANCE` | runtime conformance | snapshot, reset, duplicate, replay, failure atomicity, and whole-lifecycle behavior |
+| `D9-VERIFY-MIGRATION-AND-EVENT-CONFORMANCE` | runtime conformance | profile/topology migrations of current, reset, charge, and history with receipts |
+| `D9-VERIFY-CHARGE-AND-EVENT-RECEIPTS` | runtime conformance | general charge, positivity, target updates, sources, impulses, and event receipts |
+| `D10-VERIFY-COMPLETE-CHAIN-WITNESSES` | runtime and numeric evidence | A/C CI/OS/PC/CI+PC nonannihilation and committed endpoint witnesses |
+| `D10-VERIFY-FORMED-BRANCH-STRUCTURAL-TEMPORAL` | numeric evidence | formed branches, Hessians, complete-step Jacobians, $\alpha$, $\mu$, $\gamma$, nonnormal growth, and stability |
+| `D10-VERIFY-A-ANALYSIS-METRIC` | analysis conformance | dimensionally consistent A complete-state metric before absolute nonnormality or cross-architecture comparison |
+| `D10-VERIFY-EXECUTABLE-COVARIANCE-HODGE` | implementation conformance | general SPD flat/sharp, inverse solver, graph relabeling, orientation, boundary, and adapter covariance |
+| `D10-VERIFY-MATCHED-PROFILE-DISCRIMINATION` | numeric evidence | preregistered matched comparisons before preference or ranking |
+| `D10-VERIFY-RUNTIME-FORMATION-RETENTION-RELEASE` | runtime evidence | reachable formation, retention, release, replay, and failure atomicity |
+| `D10-PRECLOSE-SUBSTRATE-PROVENANCE-AUDIT` | preclosure scientific provenance | completed by accepted D10.2 for the current population; reopens for materially distinct future profiles or broader substrate claims |
+
+The preclosure substrate-provenance obligation has been completed by accepted D10.2 for the current population. The remaining obligations do not silently become unresolved constitutive mathematics, and the accepted constitutive mathematics does not satisfy them merely by being stated in the proposal.
+
+### 15.7 Positive bounded substrate statement
+
+Taken together, the accepted investigation permits the proposal to state:
+
+> GRC-v4 is a graph-generic, profile-explicit Reflexive Coherence substrate for the current initial A/C by CI/OS/RG2b/PC/CI+PC population. It preserves one scalar resource ledger and one authoritative current, separates retention, Read-Back, write-back, structural geometry, and transport mobility, provides typed profile-local state and realization contracts, and closes complete-step and lifecycle semantics at design level. GRC9V4 is its substantive nine-port specialization, and each current GRC9V4 profile has independently scoped disabled transition, state, observable, and lifecycle reduction to GRC9V3.
+
+This statement is bounded by all conditional, open, and negative claims above.
+
+The proposal does **not** establish:
+
+- runtime implementation or conformance;
+- a runtime-reached formed branch;
+- native formation, retention, release, or replay evidence;
+- nonzero committed endpoint effect or endpoint hysteresis;
+- numerical structural or temporal operators;
+- structural or temporal stability;
+- continuation-spectrum identity or slow modes;
+- universal physical nonabsorbability or channel attribution;
+- physical dimensionalization of A;
+- cross-profile capacity, magnitude, or gain comparability;
+- candidate, realization, composition, or architecture preference;
+- unique Hodge normalization;
+- lossless generic topology-history continuation;
+- singular-current continuation;
+- future-exhaustive V4 taxonomy.
+
+#### Section 15 boundary disposition
+
+The accepted claim topology is sufficient to state the current design-level substrate and its exact ceiling. Sections 13–15 expose no new mandatory successor investigation.
+
+A successor becomes necessary only if the final paper attempts one of the stronger propositions, including:
+
+- a numerical $\alpha$, $\mu$, $\gamma$, $\beta$, or $\lambda$ result;
+- structural or temporal stability;
+- a complete-chain endpoint witness;
+- physical A/C nonabsorbability;
+- classical RG2b differentiation;
+- matched profile ranking;
+- physical cross-profile normalization;
+- singular-current passage;
+- lossless topology-history transport without typed lineage;
+- a new candidate, realization, composition, geometry profile, or substrate identity;
+- a completeness theorem beyond the current ten-profile population.
+
+Until such a proposition is required, these boundaries remain correctly stated limitations rather than reasons for possibility-driven successor expansion.
 
 ---
-
-### 15.2 Negative and limiting claims
-
-The paper must state that it does **not** establish:
-
-* implementation completion;
-* runtime formation, retention, release, or replay;
-* formed-branch reachability;
-* nonzero committed endpoint effect;
-* endpoint hysteresis;
-* structural stability;
-* temporal stability;
-* continuation-spectrum identity;
-* physical nonabsorbability of A or C;
-* physical-channel attribution;
-* physical dimensionalization of A;
-* cross-profile capacity or magnitude comparison;
-* candidate or realization ranking;
-* unique composition;
-* unique Hodge normalization;
-* lossless generic topology-history transport;
-* singular continuation;
-* future-exhaustive V4 taxonomy.
-
-D10 records these as conditional, open, or negative claims rather than as a mandatory successor checklist.
-
----
-
 ## 16. Conclusion
 
 ### Paper function
