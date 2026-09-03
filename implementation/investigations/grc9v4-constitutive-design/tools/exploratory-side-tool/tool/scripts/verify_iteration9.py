@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import json
 import shutil
 import subprocess
 import sys
@@ -61,6 +62,20 @@ PYTHON_SUITE = (
     "test_iteration5_ripples.py",
     "test_iteration6_navigation.py",
     "test_iteration7_ceilings.py",
+    "audit_iteration8_lineage.py",
+    "test_iteration8_lineage.py",
+    "audit_iteration9_closeout.py",
+    "test_iteration9_closeout.py",
+)
+
+# These validators consume only the frozen accepted artifacts. Source-rebuilding
+# tests are intentionally excluded while the successor records remain outside
+# the accepted ET-C0 source contract and discovery is correctly fail-closed.
+SUCCESSOR_PHASE_PYTHON_SUITE = (
+    "audit_iteration2_graph.py",
+    "audit_iteration3_forensics.py",
+    "audit_iteration4_counterfactuals.py",
+    "test_iteration6_navigation.py",
     "audit_iteration8_lineage.py",
     "test_iteration8_lineage.py",
     "audit_iteration9_closeout.py",
@@ -220,6 +235,52 @@ def main() -> int:
     )
     if post_d10_boundary.is_file():
         run_python(investigation_scripts / POST_D10_SPECIFICATION_AUDIT)
+        active_post_d10_phase = json.loads(
+            post_d10_boundary.read_text(encoding="utf-8")
+        ).get("active_phase")
+    else:
+        active_post_d10_phase = None
+
+    if active_post_d10_phase == "successor_investigation":
+        python_results = [
+            run_python(scripts / name, *arguments)
+            for name, *arguments in HISTORICAL_LAYER_AUDITS
+        ]
+        python_results.extend(
+            run_python(scripts / name) for name in SUCCESSOR_PHASE_PYTHON_SUITE
+        )
+        node_files, node_tests, node_terminal = run_node_tests()
+
+        source_after = source_snapshot(repo_root, records)
+        protected_after = protected_snapshot(repo_root)
+        accepted_after = accepted_artifact_snapshot()
+        if source_after != source_before:
+            raise RuntimeError("successor-phase verification changed accepted source bytes")
+        if accepted_after != accepted_before:
+            raise RuntimeError("successor-phase verification changed accepted tool artifacts")
+        if protected_after != protected_before:
+            changed = sorted(set(protected_after) | set(protected_before))
+            changed = [
+                key
+                for key in changed
+                if protected_after.get(key) != protected_before.get(key)
+            ]
+            raise RuntimeError(
+                f"successor-phase verification changed protected paths: {changed}"
+            )
+        diff = subprocess.run(["git", "diff", "--check"], cwd=repo_root, check=False)
+        if diff.returncode:
+            raise RuntimeError("git diff --check failed")
+        print(
+            "ET_C9_VERIFY_PASS status=accepted_successor_investigation "
+            "rebuilds=skipped_fail_closed_unprocessed_successor_sources "
+            f"python_commands={len(python_results)} node_files={node_files} "
+            f"node_tests={node_tests} node={node_terminal} "
+            "browser=not_rerun_accepted_dist_identity_audited "
+            "accepted_source_immutable=true accepted_tool_artifacts_immutable=true "
+            "protected_paths_immutable=true"
+        )
+        return 0
 
     run_build_sequence(scripts)
     accepted_first = accepted_artifact_snapshot()

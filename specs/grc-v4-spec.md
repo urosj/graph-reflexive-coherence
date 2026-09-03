@@ -2,8 +2,11 @@
 
 ## Status and authority
 
-This file is the normative implementation contract for the graph-generic
-`GRCV4` substrate and the current admitted profile population.
+This file is the normative implementation contract for the D10-backed,
+graph-generic `GRCV4` substrate and the current admitted profile population,
+subject to the D11 holds below. Candidate C implementation conformance is on
+bounded hold until D11-C accepts a baseline-transport law. The displayed
+D11-C candidate is retained for evaluation but is not yet normative.
 
 Primary sources:
 
@@ -11,6 +14,8 @@ Primary sources:
 - [GRC-v4 proposal and provenance crosswalk][proposal]
 - [D10 design synthesis and specification-writing decision][d10]
 - [D10.2 substrate provenance and promotion audit][d10-2]
+- [D11 bounded successor opening][d11-open]
+- [D11-C Candidate C transport preregistration][d11-c]
 - [V4 source identity manifest](grc-v4-source-manifest.json)
 - [V4 conformance fixture contract](grc-v4-conformance-fixtures.json)
 - [Common GRC interface](grc-common-interface.md)
@@ -50,24 +55,24 @@ The typed contract destinations map into the specs as follows:
 | `GRCV4_current_population_specification_grammar` | 8 | Profile identity, claims, and successor admission. |
 | `GRC9V4_specialization` | 53 | [`grc-9-v4-spec.md`](grc-9-v4-spec.md). |
 
-### Post-audit V4-only closure boundary
+### D11 successor hold and preregistration boundary
 
 The September 2026 specification-stack audit identified two places where the
 accepted source graph names a required object without fixing an executable
 map: Candidate C's baseline transport and the collision-free GRC9 expansion
-port allocation. This revision closes those two surfaces **for V4 only**:
+port allocation. These are genuine gaps in accepted authority, not extraction
+omissions. Two separate investigations are therefore open in sequence:
 
-- the Candidate C section below defines the V4 baseline-mobility adapter,
-  potential, and baseline-current equation; and
-- [`GRC9V4`](grc-9-v4-spec.md) defines a collision-free V4 port allocation
-  and deterministic expansion policy.
+- D11-C is active for the graph-generic Candidate C direct-transport law; and
+- D11-G9 is queued behind D11-C for the GRC9V4-only port allocation.
 
-These are post-D10 normative specification closures. They do not rewrite the
-accepted D10 graph, count as backward evidence for a D10 claim, alter an older
-model family, or establish implementation conformance. In particular,
-`GRCV3`, `GRC9`, and `GRC9V3` remain unchanged. Where V4 reduces to an older
-family, the older artifact is a read-only target and all adaptation is owned
-by the V4 wrapper, projection, or migration operation.
+The existing formulas remain in place as preregistered candidates so the D11
+investigations can pressure them directly. They are not post-D10 normative
+closures, backward evidence, or implementation authority. An accepted D11
+result must first be propagated into the GRC-v4 paper and only then extracted
+back into the affected spec clauses. `GRCV3`, `GRC9`, and `GRC9V3` remain
+unchanged read-only sources or reduction targets; all adaptation remains
+V4-owned.
 
 ## Conformance language
 
@@ -87,7 +92,9 @@ An implementation conforms to `GRCV4` only if it implements the common
 contract and at least one complete profile identity from the current
 population. It may support any nonempty subset of that population, but it must
 name the exact subset. Supporting one profile does not imply support for any
-other profile.
+other profile. While D11-C is open, the five Candidate C identities remain
+admitted design profiles but are unavailable for implementation-conformance
+claims; a presently conforming subset may contain Candidate A profiles only.
 
 ## Class
 
@@ -690,12 +697,16 @@ H_{1,\mathrm{form},M}
 I_{4M}=H_{1,\mathrm{form},M}H_{1,\mathrm{form,pre}}^{-1},
 $$
 
-### Candidate C V4 baseline transport closure
+### Candidate C V4 baseline transport candidate D11-C-T1
 
-Candidate C uses the inherited scalar-mobility potential-flow channel through
-an explicit V4-only typed adapter. It does not infer transport mobility from
-$H_{1,\mathrm{form},M}$, $G_J$, or $h_4$ by equal dimensions or matrix
-coincidence.
+> **Preregistered, non-normative candidate.** The following C-T1 law is kept
+> for D11-C pressure and does not authorize Candidate C implementation or
+> conformance. See the [D11-C preregistration][d11-c].
+
+C-T1 proposes using the inherited scalar-mobility potential-flow channel
+through an explicit V4-only typed adapter. It does not infer transport
+mobility from $H_{1,\mathrm{form},M}$, $G_J$, or $h_4$ by equal dimensions or
+matrix coincidence.
 
 At the exact stage selected by the realization, define the derived positive
 edge mobility
@@ -743,7 +754,7 @@ gauge is immaterial because only $d_0\Phi_C$ enters the current. The map is
 finite, positive, graph-relabel covariant, and sign-even under stored-edge
 reorientation on its declared fixed-topology selector stratum.
 
-The current V4 Candidate C profile binds
+If C-T1 is accepted, the resulting V4 Candidate C profile would bind
 `candidate_c_transport_id = "candidate_c_log_sector_potential_flow_v1"` and
 the canonical parameters and site-potential definition in
 `params_resolved`. A different evaluator or coefficient has a different
@@ -1056,10 +1067,11 @@ construction. At minimum it must bind:
 
 Candidate A parameters include $\eta$, $\kappa_c$, site potential,
 $W_{\mathrm{floor}}$, $\alpha$, $\beta$, $\gamma$, $\kappa_{Ah}$,
-$\chi_A$, $\zeta_A$, $\tau_A$, and the admitted $D/G_W$ backend. Candidate C
-parameters include $\Lambda_C$, selector boundary policy, $C_{\mathrm{ref}}$,
-$\kappa_{M,C}$, $\kappa_{J,C}$, $\eta_C$, $\kappa_C$,
-$W_{\mathrm{ref}}$, the exact $V_C'$ evaluator,
+$\chi_A$, $\zeta_A$, $\tau_A$, and the admitted $D/G_W$ backend. The
+accepted D11-C result must freeze Candidate C's transport parameters. Under
+the provisional C-T1 candidate these would include $\Lambda_C$, selector
+boundary policy, $C_{\mathrm{ref}}$, $\kappa_{M,C}$, $\kappa_{J,C}$,
+$\eta_C$, $\kappa_C$, $W_{\mathrm{ref}}$, the exact $V_C'$ evaluator,
 `candidate_c_log_sector_potential_flow_v1`, $\tau_C$, $\chi_C$, $\zeta_C$,
 and the current-block conditioning policy. PC and CI+PC additionally bind
 $\tau_{\mathrm{PC},a}$, $R_a$, $K_{X,a}$, carrier norm/source envelope, and,
@@ -1313,10 +1325,12 @@ Every such failure leaves the complete authoritative prestate unchanged.
 
 The machine-readable
 [V4 conformance fixture contract](grc-v4-conformance-fixtures.json) is
-normative for case identifiers, inputs, expected dispositions, digest checks,
-V4-only expansion allocation, and the independent $10\times4$ disabled
-matrix. It is a preimplementation fixture contract: passing its schema audit
-does not claim that a runtime implementation has executed the cases.
+normative for D10-backed case identifiers, inputs, expected dispositions,
+digest checks, and the independent $10\times4$ disabled matrix. Its exact
+Candidate C baseline and GRC9V4 expansion rows are preregistered D11 fixtures,
+not conformance authority, until the corresponding results are accepted and
+propagated. It is a preimplementation fixture contract: passing its schema
+audit does not claim that a runtime implementation has executed the cases.
 
 ## Claim conformance matrix
 
@@ -1379,6 +1393,8 @@ or future-exhaustive profile coverage.
 [proposal]: ../implementation/investigations/grc9v4-constitutive-design/drafts/GRCV4-proposal.md
 [d10]: ../implementation/investigations/grc9v4-constitutive-design/decisions/D10DesignSynthesisAndSpecWritingDecision.md
 [d10-2]: ../implementation/investigations/grc9v4-constitutive-design/decisions/D10_2FullSubstrateProvenanceAndPromotionAudit.md
+[d11-open]: ../implementation/investigations/grc9v4-constitutive-design/decisions/D11SuccessorInvestigationOpening.md
+[d11-c]: ../implementation/investigations/grc9v4-constitutive-design/decisions/D11CCandidateCBaselineTransportAndMobilityClosure.md
 [paper-n]: ../implementation/investigations/grc9v4-constitutive-design/drafts/2026-09-GRC-V4.md#151-normative-common-architecture-claims
 [proposal-n]: ../implementation/investigations/grc9v4-constitutive-design/drafts/GRCV4-proposal.md#151-normative-common-architecture-claims
 [paper-o]: ../implementation/investigations/grc9v4-constitutive-design/drafts/2026-09-GRC-V4.md#152-optional-admitted-profile-claims

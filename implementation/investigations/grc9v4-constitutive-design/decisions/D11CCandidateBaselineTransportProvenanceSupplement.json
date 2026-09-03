@@ -1,0 +1,237 @@
+{
+  "schema_version": "grc9v4_d11_c_provenance_supplement_v1",
+  "artifact_id": "GRC9V4-D11-C-PROVENANCE-SUPPLEMENT-v1",
+  "gate_id": "D11-C",
+  "title": "Candidate C Baseline Transport Append-Only Provenance Supplement",
+  "status": "accepted_bounded_companion_registry",
+  "date": "2026-09-03",
+  "predecessor_record_id": "GRC9V4-CD-D10.2-v1",
+  "predecessor_decision_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+  "D11_C_preregistration_record_id": "GRC9V4-CD-D11-C-v1",
+  "D11_C_preregistration_digest": "c1c22c88fa676705370d01256a34801a364e310c93e4ef85cc5a3208e6e06a78",
+  "resolution_record_id": "GRC9V4-CD-D11-C-RESOLUTION-v1",
+  "source_identities": [
+    {
+      "record_id": "GRC9V4-CD-D10.2-v1",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D10_2FullSubstrateProvenanceAndPromotionAudit.json",
+      "file_sha256": "59c2b956cec7d258b1db09d43d6df44deb8c0be0453a5d741f7e2733d6881a33",
+      "decision_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+      "consumed_as": "immutable_predecessor_registry"
+    },
+    {
+      "record_id": "GRC9V4-CD-D4V2-v1",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D4v2CandidateGeometryAndCarrierCompletion.json",
+      "file_sha256": "042769ba96e543bd0805c245918d2e33e6453e68dea98e503094393e25708b7c",
+      "decision_digest": "5862cbab0d36e1137dc647d7d21d48f77666a77bf9e7b178c830d323e4ed6309",
+      "consumed_as": "accepted_Candidate_C_Hodge_and_direct_path_authority"
+    },
+    {
+      "record_id": "GRC9V4-CD-D7G-post-v2-HODGE-TYPE-CORRECTION-v1",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D7GPostv2GraphHodgeTypeCorrection.json",
+      "file_sha256": "bbef6c37449ab7d58b3388f5d030bffbbd750ba470216d0660573d7af27f895f",
+      "decision_digest": "2e2f4d53e0abf3134f586cc60467bf5881cc60414af82df35bf6ac7772400984",
+      "consumed_as": "accepted_H1_form_G_J_M4_type_and_authority_separation"
+    },
+    {
+      "source_id": "D11-C-INDEPENDENT-PROPOSAL-2026-09-03",
+      "source_name": "D11-C-Candidate-C-Baseline-Transport-And-Mobility-Closure.md",
+      "file_sha256": "513ef4f092a08a3127deb53f6a00e0304e178b5ec1adcfbbab72a53528f11929",
+      "consumed_as": "external_scientific_proposal_corrected_and_bounded_by_this_append_only_registry"
+    }
+  ],
+  "predecessor_registry_preservation": {
+    "D10_2_files_modified": false,
+    "D10_2_object_count": 67,
+    "D10_2_equation_contract_count": 152,
+    "D10_2_explicit_equation_contract_count": 85,
+    "D10_2_disabled_reduction_contract_count": 40,
+    "D10_2_counts_or_digests_rewritten": false,
+    "supplement_semantics": "append_only_D11_C_population_not_a_rebuild_or_mutation_of_D10_2"
+  },
+  "accepted_successor_claim": {
+    "claim_id": "D11-C-CL-O-001",
+    "claim_class": "optional_profile_normative",
+    "status": "accepted_bounded",
+    "statement": "when_Candidate_C_is_enabled_the_C_HM_STIFFNESS_BASELINE_v1_profile_supplies_a_positive_reference_mobility_a_retained_Hodge_conditioned_stiffness_potential_and_the_exact_J0_C_baseline_to_each_of_the_five_admitted_C_realizations",
+    "claim_ceiling": "revision_specific_graph_generic_design_level_equation_and_profile_identity_closure_not_implementation_runtime_formation_numeric_envelope_nonabsorbability_stability_preference_or_uniqueness"
+  },
+  "claim_edges": [
+    {
+      "predecessor_claim_id": "D10-CL-O-002",
+      "successor_claim_id": "D11-C-CL-O-001",
+      "relation": "strengthened_by_accepted_optional_profile_completion",
+      "predecessor_status_changed": false
+    },
+    {
+      "predecessor_claim_id": "D10-CL-N-003",
+      "successor_claim_id": "D11-C-CL-O-001",
+      "relation": "instantiated_for_Candidate_C_without_reclassifying_common_claim",
+      "predecessor_status_changed": false
+    },
+    {
+      "predecessor_claim_id": "D10-CL-N-006",
+      "successor_claim_id": "D11-C-CL-O-001",
+      "relation": "instantiated_with_separate_Hodge_and_mobility_authority",
+      "predecessor_status_changed": false
+    },
+    {
+      "predecessor_claim_id": "D10-CL-N-008",
+      "successor_claim_id": "D11-C-CL-O-001",
+      "relation": "instantiated_with_exact_profile_identity_units_gauge_domain_and_lifecycle_fields",
+      "predecessor_status_changed": false
+    },
+    {
+      "predecessor_claim_id": "D10-CL-C-011",
+      "successor_claim_id": "D11-C-CL-O-001",
+      "relation": "successor_population_provenance_reopened_and_satisfied_by_this_GRC_generic_supplement",
+      "predecessor_status_changed": false
+    }
+  ],
+  "normative_object_count": 3,
+  "normative_objects": [
+    {
+      "object_id": "C-BASELINE-TRANSPORT-REFERENCE",
+      "family": "candidate_C_baseline_transport",
+      "object_kind": "positive_profile_context_field_and_separate_typed_constructors",
+      "normative_object": "W_C_tr_is_a_positive_stable_edge_identity_map_feeding_sibling_E_H_and_E_M_constructors_with_no_H1_form_to_M4_authority_arrow",
+      "conclusion": "graph_generic_revision_specific_Candidate_C_reference_transport_authority",
+      "substrate_disposition": "GRC_derived_revision_specific_Candidate_C",
+      "accepted_claim_ids": [
+        "D11-C-CL-O-001",
+        "D10-CL-N-006",
+        "D10-CL-N-008"
+      ],
+      "blocked_overread": "shared_reference_values_do_not_make_H1_form_and_M4_the_same_typed_object_or_authorize_dynamic_sector_conditioned_mobility"
+    },
+    {
+      "object_id": "C-BASELINE-POTENTIAL",
+      "family": "candidate_C_baseline_transport",
+      "object_kind": "derived_vertex_potential",
+      "normative_object": "Phi_0_C_equals_kappa_Phi_C_times_B_times_H1_form_M_times_d0_C_minus_Vprime_C_U_of_C",
+      "conclusion": "retained_Hodge_geometry_is_load_bearing_in_the_direct_Candidate_C_baseline",
+      "substrate_disposition": "GRC_derived_revision_specific_Candidate_C",
+      "accepted_claim_ids": [
+        "D11-C-CL-O-001",
+        "D10-CL-N-003",
+        "D10-CL-N-006"
+      ],
+      "blocked_overread": "this_frozen_constitutive_potential_is_not_a_total_variational_derivative_through_selector_and_Hodge_dependence"
+    },
+    {
+      "object_id": "C-BASELINE-CURRENT",
+      "family": "candidate_C_baseline_transport",
+      "object_kind": "derived_physical_edge_flux",
+      "normative_object": "J0_C_equals_minus_M4_C_times_d0_Phi_0_C_before_the_fixed_geometry_total_current_solve",
+      "conclusion": "exact_direct_Candidate_C_baseline_current_for_all_five_admitted_C_realizations",
+      "substrate_disposition": "GRC_derived_revision_specific_Candidate_C",
+      "accepted_claim_ids": [
+        "D11-C-CL-O-001",
+        "D10-CL-N-003",
+        "D10-CL-O-003",
+        "D10-CL-O-004",
+        "D10-CL-O-005",
+        "D10-CL-O-006",
+        "D10-CL-O-007"
+      ],
+      "blocked_overread": "design_level_equation_completion_is_not_runtime_reachability_nonzero_endpoint_effect_stability_or_physical_nonabsorbability"
+    }
+  ],
+  "equation_contract_count": 11,
+  "equation_contracts": [
+    {
+      "equation_contract_id": "D11-C-EC-C-TR-REFERENCE-FIELD",
+      "parent_object_ids": ["C-BASELINE-TRANSPORT-REFERENCE"],
+      "normative_equation_or_contract": "complete_profile_binds_exact_map_W_C_tr_from_target_live_stable_unoriented_edge_IDs_to_positive_finite_scalars_with_no_ordinary_beat_writer",
+      "support_semantics": "accepted_bounded_D11_C_successor",
+      "accepted_claim_ids": ["D11-C-CL-O-001"]
+    },
+    {
+      "equation_contract_id": "D11-C-EC-C-M4-FACTORIZATION",
+      "parent_object_ids": ["C-BASELINE-TRANSPORT-REFERENCE"],
+      "normative_equation_or_contract": "E_M_of_W_C_tr_equals_M4_C_equals_eta_C_times_Diag_W_C_tr_with_eta_C_positive_and_D_T_C_M4_C_equals_D_h_M4_C_equals_zero_inside_the_profile",
+      "support_semantics": "accepted_bounded_D11_C_successor",
+      "accepted_claim_ids": ["D11-C-CL-O-001", "D10-CL-N-006"]
+    },
+    {
+      "equation_contract_id": "D11-C-EC-C-HM-STIFFNESS",
+      "parent_object_ids": ["C-BASELINE-POTENTIAL"],
+      "normative_equation_or_contract": "L0_M_equals_B_times_H1_form_M_of_T_C_h_times_d0_and_uses_the_accepted_D4v2_positive_Hodge_congruence",
+      "support_semantics": "accepted_bounded_D11_C_successor",
+      "accepted_claim_ids": ["D11-C-CL-O-001", "D10-CL-N-006"]
+    },
+    {
+      "equation_contract_id": "D11-C-EC-C-DIRECT-POTENTIAL-DECOMPOSITION",
+      "parent_object_ids": ["C-BASELINE-POTENTIAL"],
+      "normative_equation_or_contract": "Phi_0_C_equals_Phi_G_C_plus_Delta_Phi_M_C_equals_kappa_Phi_C_times_B_times_H1_form_M_times_d0_C_minus_Vprime_C_U_of_C",
+      "support_semantics": "accepted_bounded_D11_C_successor",
+      "accepted_claim_ids": ["D11-C-CL-O-001"]
+    },
+    {
+      "equation_contract_id": "D11-C-EC-C-J0-CURRENT",
+      "parent_object_ids": ["C-BASELINE-CURRENT"],
+      "normative_equation_or_contract": "J0_C_equals_minus_M4_C_times_d0_Phi_0_C_and_D_J_J0_C_equals_zero_inside_the_fixed_h_current_solve",
+      "support_semantics": "accepted_bounded_D11_C_successor",
+      "accepted_claim_ids": ["D11-C-CL-O-001", "D10-CL-N-003"]
+    },
+    {
+      "equation_contract_id": "D11-C-EC-C-J0-REFERENCE-REDUCTION",
+      "parent_object_ids": ["C-BASELINE-POTENTIAL", "C-BASELINE-CURRENT"],
+      "normative_equation_or_contract": "at_kappa_M_C_zero_and_the_declared_reference_geometry_H1_form_M_equals_Diag_W_C_tr_and_the_law_reduces_to_the_inherited_scalar_mobility_potential_flow",
+      "support_semantics": "accepted_bounded_D11_C_successor",
+      "accepted_claim_ids": ["D11-C-CL-O-001"]
+    },
+    {
+      "equation_contract_id": "D11-C-EC-C-J0-SWITCH-SEPARATION",
+      "parent_object_ids": ["C-BASELINE-CURRENT"],
+      "normative_equation_or_contract": "kappa_M_C_zero_removes_retained_Hodge_conditioning_chi_C_zero_removes_explicit_read_zeta_C_zero_removes_read_gain_and_tau_C_zero_removes_only_resolvent_filtering",
+      "support_semantics": "accepted_bounded_D11_C_successor",
+      "accepted_claim_ids": ["D11-C-CL-O-001"]
+    },
+    {
+      "equation_contract_id": "D11-C-EC-C-J0-COVARIANCE",
+      "parent_object_ids": ["C-BASELINE-TRANSPORT-REFERENCE", "C-BASELINE-POTENTIAL", "C-BASELINE-CURRENT"],
+      "normative_equation_or_contract": "under_vertex_permutation_P_and_signed_edge_permutation_U_Phi_0_C_prime_equals_P_Phi_0_C_and_J0_C_prime_equals_U_J0_C",
+      "support_semantics": "accepted_design_level_algebra_with_implementation_verification_still_pending",
+      "accepted_claim_ids": ["D11-C-CL-O-001", "D10-CL-C-006"]
+    },
+    {
+      "equation_contract_id": "D11-C-EC-C-J0-DERIVATIVE",
+      "parent_object_ids": ["C-BASELINE-POTENTIAL", "C-BASELINE-CURRENT"],
+      "normative_equation_or_contract": "delta_J0_C_equals_minus_delta_M4_C_d0_Phi_0_C_minus_M4_C_delta_d0_Phi_0_C_minus_M4_C_d0_delta_Phi_0_C_with_same_profile_fixed_graph_delta_M4_C_equals_delta_d0_equals_zero",
+      "support_semantics": "accepted_on_the_existing_smooth_fixed_rank_SPD_selector_stratum",
+      "accepted_claim_ids": ["D11-C-CL-O-001"]
+    },
+    {
+      "equation_contract_id": "D11-C-EC-C-J0-REALIZATION-COVERAGE",
+      "parent_object_ids": ["C-BASELINE-CURRENT"],
+      "normative_equation_or_contract": "C_CI_C_OS_C_RG2b_C_PC_and_C_CI_PC_rebuild_the_same_baseline_at_each_declared_pre_read_or_trial_geometry_stage_with_no_predictor_cache_authority_in_the_OS_corrector",
+      "support_semantics": "accepted_bounded_D11_C_successor",
+      "accepted_claim_ids": ["D11-C-CL-O-001", "D10-CL-O-003", "D10-CL-O-004", "D10-CL-O-005", "D10-CL-O-006", "D10-CL-O-007"]
+    },
+    {
+      "equation_contract_id": "D11-C-EC-C-J0-LIFECYCLE",
+      "parent_object_ids": ["C-BASELINE-TRANSPORT-REFERENCE", "C-BASELINE-CURRENT"],
+      "normative_equation_or_contract": "snapshot_and_target_complete_profile_bind_the_exact_stable_edge_ID_to_W_C_tr_map_and_missing_duplicate_nonpositive_nonfinite_or_unmatched_target_entries_fail_before_atomic_commit",
+      "support_semantics": "accepted_design_level_lifecycle_contract_with_runtime_conformance_still_pending",
+      "accepted_claim_ids": ["D11-C-CL-O-001", "D10-CL-N-005", "D10-CL-N-008"]
+    }
+  ],
+  "successor_population_counts": {
+    "D10_2_objects_retained": 67,
+    "D11_C_objects_added": 3,
+    "combined_current_objects": 70,
+    "D10_2_equation_contracts_retained": 152,
+    "D11_C_equation_contracts_added": 11,
+    "combined_current_equation_contracts": 163,
+    "D10_2_claim_nodes_rewritten": 0,
+    "D11_C_successor_claims_added": 1
+  },
+  "preclose_provenance_disposition": {
+    "D10_historical_disposition": "D10_PRECLOSE_SUBSTRATE_PROVENANCE_AUDIT_remains_satisfied_for_the_D10_initial_specification_population",
+    "D11_C_reopening": "required_for_the_material_D11_C_successor_population",
+    "D11_C_result": "satisfied_bounded_for_the_three_new_objects_and_eleven_new_contracts",
+    "future_profile_rule": "every_materially_distinct_baseline_mobility_potential_boundary_or_lifecycle_profile_reopens_provenance_and_the_earliest_affected_contract"
+  },
+  "claim_ceiling": "append_only_D11_C_object_contract_and_claim_provenance_for_C_HM_STIFFNESS_BASELINE_v1_not_a_rewrite_of_D10_2_or_runtime_implementation_conformance",
+  "artifact_digest": "57d711d80e648c8ee73401f3a7e76a0076374fc43bd4d2d0f3dbe4bb4ee3acb1"
+}

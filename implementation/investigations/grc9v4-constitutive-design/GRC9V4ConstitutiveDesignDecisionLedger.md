@@ -2277,3 +2277,111 @@ reopen_named_design_gate
 route_to_named_theory_or_constitutive_derivation
 close_current_design_tranche_unresolved
 ```
+
+## D11. Specification-Audit Successor Opening and Preregistration
+
+The accepted D10.2 record remains immutable. The bounded procedural opening
+created two exact successor investigations after the specification audit found
+missing accepted authority. The opening itself accepted no proposed solution;
+the later D11-C resolution below is an append-only scientific successor.
+
+The companion routing record carries all accumulated authority rather than
+only the terminal D10.2 digest:
+
+```text
+routing_record_id = GRC9V4-CD-D11-CLAIM-DEBT-ROUTING-v1
+routing_record_digest = 63cc407bffefef85602c28ead6c3da6b846778d3be9f78952db11cb10275c78d
+current_D10_claims_carried = 39
+historical_D10_claim_nodes_carried = 29
+D10_debt_transformations_carried = 29
+D10_verification_obligations_carried = 11
+pending_forward_verification_obligations = 10
+D10_preclose_provenance_disposition = satisfied_for_current_population_only
+D10.2_objects_carried = 67
+D10.2_equation_contracts_carried = 152
+new_D11_successor_debts = 2
+claim_reclassifications_at_opening = 0
+prior_debt_disposition_changes_at_opening = 0
+```
+
+```text
+record_id = GRC9V4-CD-D11-OPEN-v1
+status = accepted_bounded_successor_opening
+predecessor_decision_digest = 28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c
+decision_record_digest = 51ba66d5404dee29f7b2a7dcd9501b43711fce0d47d466118945b5a0f71ac23a
+scientific_result_accepted = false
+
+D11-C_opening_state = open_preregistered
+D11-C_preregistration_digest = c1c22c88fa676705370d01256a34801a364e310c93e4ef85cc5a3208e6e06a78
+D11-G9_opening_state = queued_preregistered_requires_accepted_D11-C
+D11-G9_preregistration_digest = 856e3db9ffa6a09080f7af0b9753be222ab986599855168a4fe9d218490c1635
+
+paper_correction_authorized = false
+D11_dependent_specification_authority = false
+implementation_authorized = false
+runtime_or_src_tests_change_authorized = false
+GRC9_or_GRC9V3_change_authorized = false
+```
+
+D11-C reopened Candidate C direct transport at the D4/D4-v2 boundary and its
+bounded D6-v2/D7-v2 consumers. Its resolution is recorded below. The current
+spec law remains the unselected D11-C-T1 candidate until ordered propagation.
+
+D11-G9 was queued at opening. After D11-C acceptance it may reopen only
+`D10.2-EC-PARENT-GRC9-MECHANICAL-EXPANSION` and bounded GRC9V4 consequences.
+The current collision-free mapping is the unselected D11-G9-P1 candidate. No
+older GRC9 or GRC9V3 artifact is changed.
+
+### D11-C Accepted-Bounded Successor
+
+```text
+record_id = GRC9V4-CD-D11-C-RESOLUTION-v1
+status = accepted_bounded
+decision_record_digest = 82e8008e8edade39db7b5327a31a807031b712dcc86b3fe3e8c0977bda51e797
+selected_candidate = D11-C-T3a
+selected_profile = C-HM-STIFFNESS-BASELINE-v1
+D11-C = closed_accepted_bounded
+D11-G9 = active_preregistered_after_accepted_D11-C
+```
+
+The accepted law gives mobility and retained Hodge geometry separate typed
+authority:
+
+$$
+M_{4,C}=\eta_C\operatorname{Diag}(W_{C,\mathrm{tr}}),
+\qquad
+H_{1,\mathrm{form},M}=\mathsf D_C H_{1,\mathrm{form}}\mathsf D_C,
+$$
+
+$$
+\Phi_{0,C}=\kappa_{\Phi,C}BH_{1,\mathrm{form},M}d_0C-V'_{C,U}(C),
+\qquad
+J_{0,C}=-M_{4,C}d_0\Phi_{0,C}.
+$$
+
+`W_C,tr` is an exact positive stable-edge reference map in the complete
+profile, has no ordinary-beat writer, and must be supplied in full by the
+target profile before topology-event readmission. D11-C-T1 is not selected;
+D11-C-T2 remains an admissible successor family; D11-C-T3 is refined into the
+selected T3a; and D11-C-T0 remains a future bounded fallback.
+
+The append-only provenance supplement adds `D11-C-CL-O-001`, three objects,
+and eleven equation contracts. No D10 claim, historical node, debt
+transformation, object, contract, or digest changes. The local D11-C debt is
+resolved boundedly; all ten inherited forward verification obligations remain
+pending. GRC9V4 must delegate the disabled branch exactly to unchanged GRC9V3
+rather than substitute T3a.
+
+Authoritative opening and preregistration records:
+
+- [`D11SuccessorInvestigationOpening.json`](./decisions/D11SuccessorInvestigationOpening.json)
+- [`D11SuccessorInvestigationOpening.md`](./decisions/D11SuccessorInvestigationOpening.md)
+- [`D11ClaimDebtAndAuthorityRouting.json`](./decisions/D11ClaimDebtAndAuthorityRouting.json)
+- [`D11ClaimDebtAndAuthorityRouting.md`](./decisions/D11ClaimDebtAndAuthorityRouting.md)
+- [`D11CCandidateCBaselineTransportAndMobilityClosure.json`](./decisions/D11CCandidateCBaselineTransportAndMobilityClosure.json)
+- [`D11CCandidateCBaselineTransportAndMobilityClosure.md`](./decisions/D11CCandidateCBaselineTransportAndMobilityClosure.md)
+- [`D11CCandidateBaselineTransportAndMobilityResolution.json`](./decisions/D11CCandidateBaselineTransportAndMobilityResolution.json)
+- [`D11CCandidateBaselineTransportAndMobilityResolution.md`](./decisions/D11CCandidateBaselineTransportAndMobilityResolution.md)
+- [`D11CCandidateBaselineTransportProvenanceSupplement.json`](./decisions/D11CCandidateBaselineTransportProvenanceSupplement.json)
+- [`D11G9CanonicalExpansionPortAllocationClosure.json`](./decisions/D11G9CanonicalExpansionPortAllocationClosure.json)
+- [`D11G9CanonicalExpansionPortAllocationClosure.md`](./decisions/D11G9CanonicalExpansionPortAllocationClosure.md)

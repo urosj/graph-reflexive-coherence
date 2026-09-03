@@ -1,8 +1,23 @@
 {
   "schema": "grcv4_conformance_fixture_contract_v1",
-  "status": "normative_preimplementation_fixture_contract",
+  "status": "mixed_normative_and_D11_preregistered_preimplementation_fixture_contract",
   "implementation_evidence": false,
   "audit_input_sha256": "61fb7c51efd82f80f1eaf492e8d6d3c77c7778aa8ce775a58ed4355dd12272e4",
+  "authority_boundary": {
+    "normative_scope": "D10_backed_cases_and_the_40_independent_disabled_compatibility_rows",
+    "D11_C_preregistered_case_ids": [
+      "C-BASELINE-EXACT",
+      "C-KAPPA-M-ZERO"
+    ],
+    "D11_G9_preregistered_fixture_ids": [
+      "GRC9V4-SATURATED-NINE-PORT-COLLISION-FREE",
+      "GRC9V4-ROUND-ROBIN-COLUMN-TREE"
+    ],
+    "candidate_c_runtime_execution_blocked_pending_D11_C": true,
+    "GRC9V4_full_conformance_blocked_pending_D11_G9": true,
+    "D11_dependent_rows_are_conformance_authority": false,
+    "implementation_evidence": false
+  },
   "profile_families": [
     "A_CI",
     "C_CI",
@@ -53,14 +68,14 @@
     "A-MIGRATION-HISTORY-RECEIPT"
   ],
   "candidate_c_cases": [
-    {"id": "C-BASELINE-EXACT", "transport_id": "candidate_c_log_sector_potential_flow_v1", "expected": "J0_C_equals_minus_M4_C_d0_Phi_C"},
+    {"id": "C-BASELINE-EXACT", "transport_id": "candidate_c_log_sector_potential_flow_v1", "authority_status": "preregistered_D11-C-T1_not_normative", "expected": "J0_C_equals_minus_M4_C_d0_Phi_C"},
     {"id": "C-SELECTOR-STRICT-GAP", "expected": "admit"},
     {"id": "C-SELECTOR-BOUNDARY", "expected": "fail_closed_without_declared_rule"},
     {"id": "C-QC-TYPING", "expected": "Q_C_equals_I_4M_G_J"},
     {"id": "C-ONE-CHI-GATE", "expected": "exactly_one_external_chi_C"},
     {"id": "C-C-ONLY-AUTHORITY", "expected": "no_T_C_or_mobility_state"},
     {"id": "C-POST-CONTINUITY-REDERIVATION", "expected": "fresh_target_surfaces"},
-    {"id": "C-KAPPA-M-ZERO", "expected": "W0_C_equals_W_ref"},
+    {"id": "C-KAPPA-M-ZERO", "authority_status": "preregistered_D11-C-T1_not_normative", "expected": "W0_C_equals_W_ref"},
     {"id": "C-CHI-ZERO", "expected": "J_C_equals_J0_C_with_explicit_read_off"},
     {"id": "C-ZETA-ZERO", "expected": "J_C_equals_J0_C"}
   ],
@@ -86,6 +101,7 @@
   "grc9_expansion_fixture": {
     "id": "GRC9V4-SATURATED-NINE-PORT-COLLISION-FREE",
     "policy_id": "grc9v4_collision_free_v1",
+    "authority_status": "preregistered_D11-G9-P1_not_normative",
     "source_ports": [1, 2, 3, 4, 5, 6, 7, 8, 9],
     "internal_edges": [
       [["c", 2], ["s1", 5]],
@@ -107,6 +123,7 @@
   },
   "grc9_additional_node_fixture": {
     "id": "GRC9V4-ROUND-ROBIN-COLUMN-TREE",
+    "authority_status": "preregistered_D11-G9-P1_dependent_not_normative",
     "desired_external_capacity": 45,
     "expected_canonical_node_count": 7,
     "event_id": "fixture-expansion",

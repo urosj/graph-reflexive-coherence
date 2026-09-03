@@ -3491,6 +3491,51 @@ The authoritative records are the
 and its
 [`scientific interpretation`](./decisions/D10_2FullSubstrateProvenanceAndPromotionAudit.md).
 
+## D11. Specification-Audit Successor Closures
+
+Status: D11-C accepted bounded as `C-HM-STIFFNESS-BASELINE-v1`; D11-G9 active
+under its existing preregistration.
+
+The September 2026 specification-stack audit established that two executable
+maps required by the extracted V4 specifications have no accepted source
+authority. D10.2 remains immutable. `GRC9V4-CD-D11-OPEN-v1` is the bounded
+successor-opening record and supplies no scientific result.
+
+`GRC9V4-CD-D11-CLAIM-DEBT-ROUTING-v1` binds the opening to the complete D10.2
+entry state by exact set equality: 39 current claims, 29 historical claim
+nodes, 29 transformed debts, and 11 verification obligations, together with
+67 load-bearing objects and 152 equation contracts. The two D11 findings are
+additive successor debts. They do not replace prior debt, discharge pending
+verification, or reclassify an accepted claim.
+
+### D11-C. Candidate C Baseline Transport and Mobility
+
+D11-C accepted corrected candidate D11-C-T3a. The selected profile binds
+$M_{4,C}=\eta_C\operatorname{Diag}(W_{C,\mathrm{tr}})$ as a positive fixed
+reference mobility, conditions the direct potential through
+$H_{1,\mathrm{form},M}$, and defines
+$J_{0,C}=-M_{4,C}d_0\Phi_{0,C}$ for all five C realizations. It also freezes
+units, stage, regular domain, covariance, controls, exact reference-field
+lifecycle, and GRC9V4-owned delegation to the unchanged disabled GRC9V3
+branch. The provisional D11-C-T1 spec text remains unpropagated pending the
+ordered D11-G9, paper, and specification sequence.
+
+### D11-G9. Canonical GRC9V4 Expansion Port Allocation
+
+D11-G9 is now active after D11-C acceptance. It reopens
+`D10.2-EC-PARENT-GRC9-MECHANICAL-EXPANSION` for GRC9V4 only and must select or
+boundedly decline an exact collision-free port/event map. It must not modify
+GRC9 or GRC9V3. The current spec map is candidate D11-G9-P1; it is not the
+default answer.
+
+### D11 Propagation Gate
+
+No D11-dependent result is authoritative in the paper or specs until its gate
+has a separately accepted successor record. Accepted results propagate to the
+GRC-v4 paper first, then to affected V4 spec clauses and fixtures, followed by
+a final specification audit. Implementation and `src/`/`tests/` changes remain
+unauthorized during this investigation phase.
+
 ## Expected Records
 
 Each gate should add a separate decision record or a clearly delimited ledger

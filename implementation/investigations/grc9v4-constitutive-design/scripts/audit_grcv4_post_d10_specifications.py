@@ -51,6 +51,9 @@ EXPECTED_CLAIM_COUNTS = Counter(
 )
 PHASE_AUTHORIZATIONS = {
     "specification_writing": "GRCV4_GRC9V4_specification_writing",
+    "successor_investigation": (
+        "GRCV4_GRC9V4_D11_G9_ACTIVE_AFTER_D11_C_ACCEPTANCE"
+    ),
     "implementation": "GRCV4_GRC9V4_implementation",
 }
 
@@ -112,7 +115,7 @@ def json_pointer(document: Any, pointer: str) -> Any:
 
 def validate_phase_boundary() -> tuple[str, int]:
     boundary = json.loads(BOUNDARY_PATH.read_text(encoding="utf-8"))
-    if boundary.get("schema") != "grcv4_grc9v4_post_d10_specification_boundary_v1":
+    if boundary.get("schema") != "grcv4_grc9v4_post_d10_specification_boundary_v2":
         raise RuntimeError("unexpected post-D10 boundary schema")
 
     base = boundary["authorization_base_commit"]
@@ -149,6 +152,12 @@ def validate_phase_boundary() -> tuple[str, int]:
         raise RuntimeError(f"unsupported active phase: {phase}")
     expected_policy = {
         "specification_writing": {"src_and_tests": "frozen_to_authorization_base"},
+        "successor_investigation": {
+            "activation": (
+                "requires_a_hash_bound_current_successor_authority_in_phase_authority"
+            ),
+            "src_and_tests": "frozen_to_authorization_base",
+        },
         "implementation": {
             "activation": (
                 "requires_a_hash_bound_successor_authority_in_phase_authority"
@@ -172,6 +181,14 @@ def validate_phase_boundary() -> tuple[str, int]:
             "/authorization_effect/implementation_authorized": False,
             "/authorization_effect/runtime_or_src_change_authorized": False,
         },
+        "successor_investigation": {
+            "/status": "accepted_bounded",
+            "/decision/selected_candidate_id": "D11-C-T3a",
+            "/authorization_effect/D11_G9_investigation_active": True,
+            "/authorization_effect/implementation_authorized": False,
+            "/authorization_effect/runtime_or_src_tests_change_authorized": False,
+            "/authorization_effect/GRC9_or_GRC9V3_change_authorized": False,
+        },
         "implementation": {
             "/authorization_effect/specification_authorized": True,
             "/authorization_effect/implementation_authorized": True,
@@ -186,7 +203,7 @@ def validate_phase_boundary() -> tuple[str, int]:
             raise RuntimeError(
                 f"phase authority does not satisfy {pointer}={expected!r}"
             )
-    if phase == "implementation":
+    if phase in {"successor_investigation", "implementation"}:
         authority_was_already_present = (
             subprocess.run(
                 ["git", "cat-file", "-e", f"{base}:{authority['path']}"],
@@ -197,7 +214,7 @@ def validate_phase_boundary() -> tuple[str, int]:
         )
         if authority_was_already_present:
             raise RuntimeError(
-                "implementation requires a hash-bound successor authority "
+                f"{phase} requires a hash-bound successor authority "
                 "created after the specification-writing base"
             )
 
@@ -250,6 +267,10 @@ def validate_phase_boundary() -> tuple[str, int]:
         "audit_grc9v4_d10_claim_topology.py",
         "implementation/investigations/grc9v4-constitutive-design/scripts/"
         "audit_grcv4_post_d10_specifications.py",
+        "implementation/investigations/grc9v4-constitutive-design/scripts/"
+        "audit_grc9v4_d11_successor_opening.py",
+        "implementation/investigations/grc9v4-constitutive-design/scripts/"
+        "audit_grc9v4_d11_c_resolution.py",
         "implementation/investigations/grc9v4-constitutive-design/"
         "specification/PostD10SpecificationBoundary.json",
         "implementation/investigations/grc9v4-constitutive-design/tools/"
@@ -265,9 +286,50 @@ def validate_phase_boundary() -> tuple[str, int]:
     for path_text in maintenance:
         validate_repository_path(path_text)
 
+    expected_successor_paths = {
+        "implementation/investigations/grc9v4-constitutive-design/README.md",
+        "implementation/investigations/grc9v4-constitutive-design/"
+        "GRC9V4ConstitutiveDesignPlan.md",
+        "implementation/investigations/grc9v4-constitutive-design/"
+        "GRC9V4ConstitutiveDesignChecklist.md",
+        "implementation/investigations/grc9v4-constitutive-design/"
+        "GRC9V4ConstitutiveDesignDecisionLedger.md",
+        "implementation/investigations/grc9v4-constitutive-design/decisions/"
+        "D11SuccessorInvestigationOpening.json",
+        "implementation/investigations/grc9v4-constitutive-design/decisions/"
+        "D11SuccessorInvestigationOpening.md",
+        "implementation/investigations/grc9v4-constitutive-design/decisions/"
+        "D11ClaimDebtAndAuthorityRouting.json",
+        "implementation/investigations/grc9v4-constitutive-design/decisions/"
+        "D11ClaimDebtAndAuthorityRouting.md",
+        "implementation/investigations/grc9v4-constitutive-design/decisions/"
+        "D11CCandidateCBaselineTransportAndMobilityClosure.json",
+        "implementation/investigations/grc9v4-constitutive-design/decisions/"
+        "D11CCandidateCBaselineTransportAndMobilityClosure.md",
+        "implementation/investigations/grc9v4-constitutive-design/decisions/"
+        "D11G9CanonicalExpansionPortAllocationClosure.json",
+        "implementation/investigations/grc9v4-constitutive-design/decisions/"
+        "D11G9CanonicalExpansionPortAllocationClosure.md",
+        "implementation/investigations/grc9v4-constitutive-design/decisions/"
+        "D11CCandidateBaselineTransportAndMobilityResolution.json",
+        "implementation/investigations/grc9v4-constitutive-design/decisions/"
+        "D11CCandidateBaselineTransportAndMobilityResolution.md",
+        "implementation/investigations/grc9v4-constitutive-design/decisions/"
+        "D11CCandidateBaselineTransportProvenanceSupplement.json",
+        "implementation/investigations/grc9v4-constitutive-design/scripts/"
+        "witness_d11_c_hm_stiffness_baseline.py",
+    }
+    successor_paths = set(boundary["authorized_successor_investigation_paths"])
+    if successor_paths != expected_successor_paths:
+        raise RuntimeError("unexpected successor-investigation path roster")
+    for path_text in successor_paths:
+        validate_repository_path(path_text)
+
     changed_paths = set(git_lines("diff", "--name-only", base))
     changed_paths.update(git_lines("ls-files", "--others", "--exclude-standard"))
     allowed_paths = set(outputs) | mutable | maintenance
+    if phase == "successor_investigation":
+        allowed_paths.update(successor_paths)
     if phase == "implementation":
         allowed_paths.add(authority["path"])
     unexpected_changes = {
@@ -282,7 +344,7 @@ def validate_phase_boundary() -> tuple[str, int]:
             f"{sorted(unexpected_changes)}"
         )
 
-    if phase == "specification_writing":
+    if phase in {"specification_writing", "successor_investigation"}:
         changed_runtime_paths = set(
             git_lines("diff", "--name-only", base, "--", "src", "tests")
         )
@@ -298,7 +360,7 @@ def validate_phase_boundary() -> tuple[str, int]:
         )
         if changed_runtime_paths:
             raise RuntimeError(
-                "src/tests changed during specification writing: "
+                f"src/tests changed during {phase}: "
                 f"{sorted(changed_runtime_paths)}"
             )
 
@@ -777,6 +839,22 @@ def main() -> int:
             f"phase={phase} frozen_preexisting_specs={frozen_count} "
             "entry_state=D10.2_accepted_bounded"
         )
+        return 0
+    if phase == "successor_investigation":
+        successor_audit = INVESTIGATION / "scripts/audit_grc9v4_d11_c_resolution.py"
+        result = subprocess.run(
+            [sys.executable, str(successor_audit)],
+            cwd=ROOT,
+            capture_output=True,
+            text=True,
+            check=False,
+        )
+        if result.returncode:
+            raise RuntimeError(
+                "D11-C resolution audit failed:\n"
+                f"{result.stdout}\n{result.stderr}"
+            )
+        print(result.stdout.strip())
         return 0
     claims, objects, contracts, profiles, disabled = (
         validate_forensic_specification_content()

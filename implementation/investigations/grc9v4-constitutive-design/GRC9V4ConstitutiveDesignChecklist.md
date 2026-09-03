@@ -2789,10 +2789,108 @@ The authoritative records are the
 and its
 [`scientific interpretation`](./decisions/D10_2FullSubstrateProvenanceAndPromotionAudit.md).
 
+## D11 Specification-Audit Successor Opening
+
+- [x] Preserve accepted D10.2 JSON and Markdown bytes unchanged.
+- [x] Carry all 39 current D10 claims by exact ID and class: 9 normative, 7
+      optional, 12 conditional, 5 open, and 6 negative.
+- [x] Carry all 29 historical claim nodes without rewriting them.
+- [x] Carry all 29 D10 debt transformations, their transformation classes, and
+      reciprocal claim-edge dispositions unchanged.
+- [x] Carry all 11 verification obligations: ten remain pending, while
+      `D10-PRECLOSE-SUBSTRATE-PROVENANCE-AUDIT` is satisfied only for the
+      current D10 initial specification population.
+- [x] Carry the D10.2 current-population registry of 67 load-bearing objects,
+      152 equation contracts, 85 explicit contracts, 40 disabled-reduction
+      rows, and 12 independent GRC derivations.
+- [x] Preserve `D10.2-CL-N-001` as an accepted D10.2-local successor reference
+      without silently adding it as a fortieth D10 claim node.
+- [x] Record the exact carry-forward and set-equality rules in
+      `GRC9V4-CD-D11-CLAIM-DEBT-ROUTING-v1`.
+- [x] Bind the external specification audit by SHA as a finding/routing input,
+  not backward scientific evidence.
+- [x] Record `GRC9V4-CD-D11-OPEN-v1` as a bounded procedural opening with no
+  scientific result.
+- [x] Add `D11-C-DEBT-BASELINE-TRANSPORT-AUTHORITY` and
+      `D11-G9-DEBT-CANONICAL-PORT-ALLOCATION` as successor debts rather than
+      replacements for any D10 debt.
+- [x] Open D11-C as the active graph-generic Candidate C transport closure.
+- [x] Preregister the existing spec solution as D11-C-T1 without accepting it.
+- [x] Preregister alternative typed transport routes and bounded unresolved
+  disposition.
+- [x] Queue D11-G9 behind an accepted D11-C result.
+- [x] Restrict D11-G9 to GRC9V4 and preserve GRC9/GRC9V3 unchanged.
+- [x] Preregister the existing spec solution as D11-G9-P1 without accepting it.
+- [x] Mark D11-dependent spec clauses and fixtures provisional without removing
+  the candidate text.
+
+### D11-C Inherited Boundary and Preregistration
+
+- [x] Bind D11-C to the exact claim/debt/verification carry-forward record.
+- [x] Mark every D11-C claim bearing as a consistency constraint, not a claim
+      status change.
+- [x] Preserve $C$ as Candidate C's only authoritative candidate state.
+- [x] Preserve $T_C$, $M_{4,C}$, the driving potential, Hodge surfaces, and
+      $J_{0,C}$ as derived or transient rather than hidden retained state.
+- [x] Preserve $J_{C,C}=J_{0,C}+\zeta_Cj_{C,\mathrm{flux}}$ and one
+      authoritative current entering one continuity write.
+- [x] Keep transport mobility distinct from $H_{1,\mathrm{form}}$, $G_J$,
+      $G_J^{-1}$, and $h_4$ unless an exact constitutive map is earned.
+- [x] Bind all five Candidate C consumers: CI, OS, RG2b, PC, and CI+PC.
+- [x] Preserve Candidate A, common resource/charge authority, and unrelated D10
+      claims outside the reopened boundary.
+- [x] Preserve all ten pending inherited verification obligations; D11-C design
+      acceptance alone cannot discharge runtime, numeric, or implementation
+      evidence debt.
+- [x] Preregister D11-C-T1, D11-C-T2, D11-C-T3, and bounded-unresolved D11-C-T0
+      with no default or ranking.
+
+### D11-C Scientific Closure
+
+- [x] Freeze the exact type, domain, codomain, positivity, and authority of
+      $M_{4,C}$.
+- [x] Freeze the direct driving potential or other driving functional.
+- [x] Freeze the exact equation producing $J_{0,C}$.
+- [x] Freeze dependence on $C$, $T_C$, $h$, $U$, and every resolved parameter.
+- [x] Freeze units, gauge, normalization, regular domain, and singular boundary.
+- [x] Freeze the pre-read stage and freshness rule for all five C realizations,
+      including both OS evaluations.
+- [x] Prove graph-relabel and signed-edge-orientation covariance on the declared
+      graph domain.
+- [x] Freeze separate $\kappa_{M,C}=0$, $\chi_C=0$, and $\zeta_C=0$ controls.
+- [x] Freeze topology-event reconstruction, migration, history handling, and
+      target-profile readmission.
+- [x] Prove no collision between transport, Hodge, and structural geometry
+      authorities.
+- [x] Freeze the GRC9V4-owned disabled-GRC9V3 reduction relation without
+      changing GRC9V3.
+- [x] Pressure D11-C-T1, D11-C-T2, D11-C-T3, and D11-C-T0 against the complete
+      closure surface.
+- [x] Record an explicit disposition for every preregistered candidate.
+- [x] Record a separately accepted or boundedly unresolved D11-C successor with
+      exact claim/debt transformations and reciprocal edges, if any.
+
+### D11-G9 Active Gate
+
+- [x] Activate D11-G9 only after D11-C acceptance.
+- [ ] Execute D11-G9 under its preregistered acceptance surface.
+- [ ] Pressure its canonical-port candidates against unique endpoint occupancy,
+      capacity, deterministic identity, resource/history transport, receipts,
+      and target readmission.
+- [ ] Record a separately accepted or boundedly unresolved GRC9V4-only result
+      without modifying GRC9 or GRC9V3.
+
+### D11 Propagation and Final Audit
+
+- [ ] Propagate accepted results to the GRC-v4 paper.
+- [ ] Re-extract affected V4 clauses and run the final specification audit.
+- [ ] Open implementation only under a later hash-bound implementation
+  authority.
+
 ## Current State
 
 ```text
-branch = investigation-GRC9V4-constitutive-design
+branch = spec/grcv4-grc9v4
 D0 = accepted
 D1 = accepted_bounded
 D2 = accepted_bounded
@@ -2868,6 +2966,21 @@ D9 = accepted_bounded_lifecycle_and_typed_event_closure
 D10 = accepted_bounded
 D10.1 = accepted_preliminary_bounded_substrate_provenance_separation
 D10.2 = accepted_bounded
+D11-OPEN = accepted_bounded_successor_opening_without_scientific_result
+D11-ROUTE = accepted_bounded_exact_claim_debt_authority_carry_forward
+D11_inherited_current_claims = 39
+D11_inherited_historical_claim_nodes = 29
+D11_inherited_debt_transformations = 29
+D11_inherited_verification_obligations = 11
+D11_new_additive_debts = 2
+D11-C = accepted_bounded_C_HM_STIFFNESS_BASELINE_v1
+D11-C_resolution_digest = 82e8008e8edade39db7b5327a31a807031b712dcc86b3fe3e8c0977bda51e797
+D11-C_successor_claims_added = 1
+D11-C_successor_objects_added = 3
+D11-C_successor_equation_contracts_added = 11
+D11_current_combined_objects = 70
+D11_current_combined_equation_contracts = 163
+D11-G9 = active_preregistered_after_accepted_D11-C
 architecture_selected = profile_explicit_lineage_local_GRC9V4_common_substrate_interface
 unique_candidate_selected = false
 unique_realization_selected = false
@@ -2882,8 +2995,9 @@ D10.2_human_acceptance = accepted_bounded_2026-08-26
 D10.2_final_substrate_identity_closed = true
 preclosure_substrate_provenance_audit_required = false
 specification_authorized = true
+D11_dependent_specification_authority = false
 runtime_implementation_authorized = false
 src_changed = false
-normative_GRCV4_spec_exists = false
-normative_GRC9V4_spec_exists = false
+normative_GRCV4_spec_exists = true_with_D11-C_bounded_hold
+normative_GRC9V4_spec_exists = true_with_D11-G9_bounded_hold
 ```

@@ -74,6 +74,12 @@ COMMANDS = {
     "verify-post-d10-specifications": (
         INVESTIGATION_ROOT / "scripts/audit_grcv4_post_d10_specifications.py"
     ),
+    "audit-d11-successor-opening": (
+        INVESTIGATION_ROOT / "scripts/audit_grc9v4_d11_successor_opening.py"
+    ),
+    "audit-d11-c-resolution": (
+        INVESTIGATION_ROOT / "scripts/audit_grc9v4_d11_c_resolution.py"
+    ),
 }
 
 

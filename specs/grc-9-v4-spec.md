@@ -2,8 +2,11 @@
 
 ## Status and authority
 
-This file is the normative implementation contract for `GRC9V4`, the
-substantive nine-port specialization of [`GRCV4`](grc-v4-spec.md).
+This file is the normative implementation contract for the D10-backed parts of
+`GRC9V4`, the substantive nine-port specialization of
+[`GRCV4`](grc-v4-spec.md). Mechanical-expansion conformance is on bounded hold
+until D11-G9 accepts a collision-free canonical port allocation. The displayed
+G9-P1 allocation is retained for evaluation but is not yet normative.
 
 Primary sources:
 
@@ -12,6 +15,8 @@ Primary sources:
 - [G-RC-9 paper](../papers/2026-04-GRC-9.md)
 - [GRC9V3 legacy target specification](grc-9-v3-spec.md)
 - [D10.2 substrate provenance and promotion audit][d10-2]
+- [D11 bounded successor opening][d11-open]
+- [D11-G9 expansion-port preregistration][d11-g9]
 - [Common GRC interface: V4 extension](grc-common-interface-v4-ext.md)
 
 The complete [`GRCV4` specification](grc-v4-spec.md) is imported unchanged.
@@ -26,11 +31,13 @@ profile/surface compatibility contracts. Their support semantics remain
 `indeterminate_requires_review`; the specification preserves their source
 classification and does not treat dependency reach as scientific ranking.
 
-The September 2026 stack-audit corrections in this document are V4-owned
-overrides. They do not edit or reinterpret the G-RC-9 paper or the `GRC9V3`
-specification. In particular, the collision-free expansion allocation and the
-disabled-state wrapper are requirements of `GRC9V4`; the older artifacts
-remain read-only provenance and reduction targets.
+The September 2026 stack-audit corrections in this document are V4-owned.
+They do not edit or reinterpret the G-RC-9 paper or the `GRC9V3`
+specification. The disabled-state wrapper is a GRC9V4 requirement. The
+collision-free expansion allocation is a preregistered D11-G9 candidate and
+does not become a GRC9V4 requirement until accepted and propagated through the
+GRC-v4 paper. The older artifacts remain read-only provenance and reduction
+targets.
 
 ## Conformance language
 
@@ -47,6 +54,9 @@ An implementation conforms to `GRC9V4` only if it:
    claims to support.
 
 Transition compatibility alone is not full compatibility.
+Until D11-G9 accepts and the paper propagates a canonical expansion map, no
+implementation may claim full `GRC9V4` conformance. This hold does not suspend
+the authority of unaffected D10-backed specialization clauses.
 
 ## Class
 
@@ -119,6 +129,7 @@ class GRC9V4Specialization:
         "current_hybrid_signed_hessian",
         "grc9v3_column_h_assisted",
     ]
+    # Provisional D11-G9 candidate identity until that gate is accepted.
     expansion_policy_id: Literal["grc9v4_collision_free_v1"]
     expansion_distribution_mode: Literal["equal", "custom"]
     coarse_policy: GRC9CoarsePolicy
@@ -386,9 +397,16 @@ $$
 The four-node floor is mandatory: one core and three primary satellites. This
 corrected equation, not $\lceil D_{\mathrm{eff}}/7\rceil$, governs GRC9V4.
 
+### Preregistered D11-G9 candidate G9-P1
+
+> **Preregistered, non-normative candidate.** The following port allocation
+> and the `grc9v4_collision_free_v1` policy details that depend on it are kept
+> for D11-G9 pressure. They do not authorize mechanical-expansion
+> implementation or conformance. See the [D11-G9 preregistration][d11-g9].
+
 The older center-port construction would redirect saturated source port 5 to
 `(s_2, 5)` while also using `(s_2, 5)` for the internal spine. `GRC9V4`
-therefore adopts the collision-free V4 allocation
+candidate G9-P1 proposes the collision-free V4 allocation
 
 $$
 (c,2)\leftrightarrow(s_1,5),\qquad
@@ -692,8 +710,10 @@ small coefficients.
 - row-basis differential and Hessian sign configuration;
 - basin and spark thresholds;
 - explicit spark lane;
-- `grc9v4_collision_free_v1`, desired capacity, additional-node allocation,
-  stable-ID, orientation, parent-port, and internal-mobility policy;
+- after D11-G9 acceptance, the selected expansion-policy identity, desired
+  capacity, additional-node allocation, stable-ID, orientation, parent-port,
+  and internal-mobility policy; provisionally this is
+  `grc9v4_collision_free_v1`;
 - equal or custom resource-distribution policy with exact `(p_1,p_2,p_3)`;
 - hierarchy and child-stabilization policy;
 - nonnegative and signed column coarse-graining modes;
@@ -787,3 +807,5 @@ design-level contract.
 [paper-a]: ../implementation/investigations/grc9v4-constitutive-design/drafts/2026-09-GRC-V4.md#appendix-a-grc9v4-nine-port-specialization-of-grc-v4
 [proposal-a]: ../implementation/investigations/grc9v4-constitutive-design/drafts/GRCV4-proposal.md#appendix-a-grc9v4-nine-port-specialization-of-grc-v4
 [d10-2]: ../implementation/investigations/grc9v4-constitutive-design/decisions/D10_2FullSubstrateProvenanceAndPromotionAudit.md
+[d11-open]: ../implementation/investigations/grc9v4-constitutive-design/decisions/D11SuccessorInvestigationOpening.md
+[d11-g9]: ../implementation/investigations/grc9v4-constitutive-design/decisions/D11G9CanonicalExpansionPortAllocationClosure.md

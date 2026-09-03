@@ -1,0 +1,161 @@
+{
+  "schema_version": "grc9v4_d11_g9_expansion_port_allocation_preregistration_v1",
+  "record_type": "queued_mechanical_specialization_successor_investigation",
+  "record_id": "GRC9V4-CD-D11-G9-v1",
+  "gate_id": "D11-G9",
+  "title": "Canonical GRC9 Expansion Port-Allocation Closure",
+  "status": "queued_preregistered",
+  "date_preregistered": "2026-09-03",
+  "predecessor_record_id": "GRC9V4-CD-D11-OPEN-v1",
+  "predecessor_decision_digest": "51ba66d5404dee29f7b2a7dcd9501b43711fce0d47d466118945b5a0f71ac23a",
+  "authority_routing_record": {
+    "record_id": "GRC9V4-CD-D11-CLAIM-DEBT-ROUTING-v1",
+    "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D11ClaimDebtAndAuthorityRouting.json",
+    "file_sha256": "f34bff656cc4e231bb8db81a9d69498c2b9a1e57accc4ecaec6642cd3e4422df",
+    "decision_digest": "63cc407bffefef85602c28ead6c3da6b846778d3be9f78952db11cb10275c78d",
+    "local_debt_id": "D11-G9-DEBT-CANONICAL-PORT-ALLOCATION"
+  },
+  "scientific_activation_precondition": {
+    "record": "accepted_D11-C_successor_result",
+    "satisfied": false,
+    "reason": "generic_substrate_closes_before_its_GRC9V4_specialization"
+  },
+  "supersedes": null,
+  "reopens": [
+    {
+      "contract_id": "D10.2-EC-PARENT-GRC9-MECHANICAL-EXPANSION",
+      "scope": "GRC9V4_only_collision_free_endpoint_allocation_and_bounded_event_consequences"
+    }
+  ],
+  "source_identities": [
+    {
+      "source_id": "GRC9-MECHANICAL-SOURCE",
+      "path": "papers/2026-04-GRC-9.md",
+      "file_sha256": "cefc33e91e496c236660dad5c1e009a720ca908488db460d47322118dd7c3e08",
+      "consumed_as": "read_only_historical_column_preserving_mechanical_provenance_with_known_port_collision"
+    },
+    {
+      "source_id": "GRCV4-SUBSTRATE-PAPER-AT-OPENING",
+      "path": "implementation/investigations/grc9v4-constitutive-design/drafts/2026-09-GRC-V4.md",
+      "file_sha256": "e009c5651842dea6636057a9639a79e42eb5c03b20c4812fb9ee5173705258e5",
+      "consumed_as": "read_only_current_GRC9V4_appendix_pending_post_acceptance_propagation"
+    },
+    {
+      "record_id": "GRC9V4-CD-D10.2-v1",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D10_2FullSubstrateProvenanceAndPromotionAudit.json",
+      "file_sha256": "59c2b956cec7d258b1db09d43d6df44deb8c0be0453a5d741f7e2733d6881a33",
+      "decision_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c"
+    }
+  ],
+  "forensic_evidence_boundary": {
+    "queried_before_successor_source_creation": true,
+    "accepted_bundle_remains_historical_snapshot_after_opening": true,
+    "object_trace": {
+      "identifier": "GRC9-MECHANICAL-EXPANSION",
+      "trace_digest": "8ffa09b524b4b880a010a8878af07c260f33b6211e8e0f05c8aaf51fc2a6e4e9"
+    },
+    "contract_trace": {
+      "identifier": "D10.2-EC-PARENT-GRC9-MECHANICAL-EXPANSION",
+      "support_disposition": "indeterminate_requires_review",
+      "trace_digest": "4c8c2010503d76c0c6d927b7932e334aeb2887f8d06e3cd46bf02b2e482e22b8"
+    }
+  },
+  "gate_question": "which_exact_collision_free_GRC9V4_expansion_map_preserves_column_family_semantics_while_allocating_internal_redirected_and_additional_node_ports",
+  "scope": "GRC9V4_specialization_only",
+  "out_of_scope": [
+    "graph_generic_GRCV4_topology_event_law",
+    "modification_or_repair_of_GRC9",
+    "modification_or_repair_of_GRC9V3",
+    "Candidate_C_transport_selection",
+    "unrelated_D10_claims"
+  ],
+  "required_closure": [
+    "three_core_satellite_internal_endpoint_pairs",
+    "all_nine_old_boundary_redirected_endpoints",
+    "additional_node_column_parent_parent_port_child_port_stable_ID_edge_ID_and_orientation",
+    "one_edge_per_live_endpoint_occupancy",
+    "base_and_arbitrary_admitted_target_capacity_accounting",
+    "old_boundary_column_family_preservation",
+    "internal_edge_mobility_initialization",
+    "resource_Candidate_A_Candidate_C_and_persistent_K4_history_dispositions",
+    "deterministic_replay_and_hierarchy_receipts",
+    "target_reconstruction_and_readmission_before_atomic_commit"
+  ],
+  "preregistered_candidates": [
+    {
+      "candidate_id": "D11-G9-P1",
+      "policy_id": "grc9v4_collision_free_v1",
+      "status": "preregistered_unselected",
+      "internal_edges": [
+        [["c", 2], ["s1", 5]],
+        [["c", 5], ["s2", 6]],
+        [["c", 8], ["s3", 4]]
+      ],
+      "description": "center_row_cyclic_successor_satellite_derangement",
+      "current_spec_location": "specs/grc-9-v4-spec.md#preregistered-d11-g9-candidate-g9-p1",
+      "accepted_authority": false
+    },
+    {
+      "candidate_id": "D11-G9-P2",
+      "status": "preregistered_unselected",
+      "internal_edges": [
+        [["c", 2], ["s1", 6]],
+        [["c", 5], ["s2", 4]],
+        [["c", 8], ["s3", 5]]
+      ],
+      "description": "center_row_cyclic_predecessor_satellite_derangement",
+      "accepted_authority": false
+    },
+    {
+      "candidate_id": "D11-G9-P3",
+      "status": "preregistered_unselected",
+      "internal_edges": [
+        [["c", 2], ["s1", 5]],
+        [["c", 5], ["s2", 4]],
+        [["c", 8], ["s3", 5]]
+      ],
+      "description": "minimal_historical_center_port_repair_with_only_the_s2_endpoint_changed",
+      "accepted_authority": false
+    },
+    {
+      "candidate_id": "D11-G9-P0",
+      "status": "preregistered_unselected",
+      "description": "bounded_unresolved_with_GRC9V4_mechanical_expansion_remaining_non_implementation_ready",
+      "accepted_authority": false
+    }
+  ],
+  "required_invariants": [
+    "every_live_target_node_port_endpoint_occurs_in_at_most_one_edge",
+    "all_nine_old_boundary_edges_are_preserved_and_redirected_by_column_family",
+    "capacity_equations_match_the_realized_internal_edge_count",
+    "event_output_is_stable_under_replay_and_input_edge_order",
+    "resource_charge_reset_and_history_dispositions_are_receipted",
+    "accepted_D11-C_target_surfaces_are_reconstructed_before_readmission",
+    "failure_commits_no_partial_graph_or_lifecycle_state"
+  ],
+  "selection_obligation": "the_accepted_result_must_justify_canonical_policy_identity_beyond_collision_freedom_alone",
+  "propagation_order_after_acceptance": [
+    "accepted_D11-G9_successor_record",
+    "implementation/investigations/grc9v4-constitutive-design/drafts/2026-09-GRC-V4.md_Appendix_A",
+    "specs/grc-9-v4-spec.md",
+    "specs/grc-v4-source-manifest.json_and_specs/grc-v4-conformance-fixtures.json",
+    "final_specification_audit"
+  ],
+  "decision": null,
+  "human_acceptance": {
+    "accepted": false,
+    "status": "not_active_and_not_submitted_for_mechanical_acceptance"
+  },
+  "authorization_effect": {
+    "investigation_active": false,
+    "activation_requires_accepted_D11_C": true,
+    "paper_change_authorized": false,
+    "D11_dependent_specification_authority": false,
+    "implementation_plan_authorized": false,
+    "implementation_authorized": false,
+    "runtime_or_src_change_authorized": false,
+    "GRC9_or_GRC9V3_change_authorized": false
+  },
+  "claim_ceiling": "queued_preregistered_GRC9V4_only_mechanical_specialization_investigation_without_selected_port_map_paper_promotion_specification_authority_implementation_or_legacy_repair",
+  "decision_record_digest": "856e3db9ffa6a09080f7af0b9753be222ab986599855168a4fe9d218490c1635"
+}

@@ -732,3 +732,33 @@ The accepted route is specification work, not a claim that GRCv4 or GRC9v4 is
 already runnable. Candidate A and C profiles and the admitted realization
 families remain claim-qualified current-population choices; Candidate B remains
 a routed successor slot rather than a rejected ontology.
+
+## D11 Successor Investigations
+
+The September 2026 specification-stack audit exposed two genuinely missing
+accepted contracts. The append-only
+[`D11-OPEN` record](./decisions/D11SuccessorInvestigationOpening.md) preserves
+D10.2 unchanged and authorizes this sequence:
+
+```text
+D11-C -> D11-G9 -> paper propagation -> affected spec extraction -> final audit
+```
+
+The
+[`D11 claim/debt/authority routing record`](./decisions/D11ClaimDebtAndAuthorityRouting.md)
+makes the full inherited state explicit and machine-checkable: 39 current
+claims, 29 historical claim nodes, 29 debt transformations, 11 verification
+obligations, and the D10.2 population of 67 objects / 152 contracts. The two
+D11 findings are new successor debts and do not replace that accumulated
+topology.
+
+[`D11-C`](./decisions/D11CCandidateBaselineTransportAndMobilityResolution.md)
+is accepted bounded as corrected candidate D11-C-T3a,
+`C-HM-STIFFNESS-BASELINE-v1`. Its append-only
+[provenance supplement](./decisions/D11CCandidateBaselineTransportProvenanceSupplement.json)
+adds one optional-profile successor claim, three objects, and eleven equation
+contracts without rewriting D10.2. [`D11-G9`](./decisions/D11G9CanonicalExpansionPortAllocationClosure.md)
+is therefore active and concerns only the GRC9V4 expansion map. The formulas
+currently displayed in the specs remain unselected preregistered candidates
+until D11-G9 closes and the result is propagated paper-first. Implementation
+and changes to GRC9/GRC9V3 remain unauthorized.

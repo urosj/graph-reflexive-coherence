@@ -1,0 +1,202 @@
+{
+  "schema_version": "grc9v4_d11_candidate_c_baseline_transport_preregistration_v1",
+  "record_type": "open_scientific_successor_investigation",
+  "record_id": "GRC9V4-CD-D11-C-v1",
+  "gate_id": "D11-C",
+  "title": "Candidate C Baseline Transport And Mobility Closure",
+  "status": "open_preregistered",
+  "date_opened": "2026-09-03",
+  "predecessor_record_id": "GRC9V4-CD-D11-OPEN-v1",
+  "predecessor_decision_digest": "51ba66d5404dee29f7b2a7dcd9501b43711fce0d47d466118945b5a0f71ac23a",
+  "authority_routing_record": {
+    "record_id": "GRC9V4-CD-D11-CLAIM-DEBT-ROUTING-v1",
+    "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D11ClaimDebtAndAuthorityRouting.json",
+    "file_sha256": "f34bff656cc4e231bb8db81a9d69498c2b9a1e57accc4ecaec6642cd3e4422df",
+    "decision_digest": "63cc407bffefef85602c28ead6c3da6b846778d3be9f78952db11cb10275c78d",
+    "local_debt_id": "D11-C-DEBT-BASELINE-TRANSPORT-AUTHORITY"
+  },
+  "supersedes": null,
+  "reopens": [
+    {
+      "record_id": "GRC9V4-CD-D4-v1",
+      "decision_digest": "c3c4507d4623ee526e636c4434bc13b4af23bdd3f6051cf1db99a2ce5736215c",
+      "scope": "Candidate_C_direct_transport_mobility_authority_only"
+    },
+    {
+      "record_id": "GRC9V4-CD-D4V2-v1",
+      "decision_digest": "5862cbab0d36e1137dc647d7d21d48f77666a77bf9e7b178c830d323e4ed6309",
+      "scope": "Candidate_C_retained_sector_to_direct_baseline_transport_map_only"
+    },
+    {
+      "record_id": "GRC9V4-CD-D6V2-v1",
+      "decision_digest": "ad02150010c4759d1c0ac4ba079c81cff99bad1f35b715f52b980aaf404eac0a",
+      "scope": "undefined_J0_C_input_to_the_accepted_total_current_closure"
+    },
+    {
+      "record_id": "GRC9V4-CD-D7V2-v1",
+      "decision_digest": "f0d355c3e769b43fe48f0eb8ab6e986ce80838dd55e884ad33c66e988b65106e",
+      "scope": "baseline_construction_stage_for_the_five_C_realizations"
+    }
+  ],
+  "source_identities": [
+    {
+      "record_id": "GRC9V4-CD-D4-v1",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D4GeometryMobilityAndTopologyOwnership.json",
+      "file_sha256": "080c4ce5c040d6f2c9c7a63c5981512cd64ddc2a5fbaf9a02b581ae945ad78c9",
+      "decision_digest": "c3c4507d4623ee526e636c4434bc13b4af23bdd3f6051cf1db99a2ce5736215c"
+    },
+    {
+      "record_id": "GRC9V4-CD-D4V2-v1",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D4v2CandidateGeometryAndCarrierCompletion.json",
+      "file_sha256": "042769ba96e543bd0805c245918d2e33e6453e68dea98e503094393e25708b7c",
+      "decision_digest": "5862cbab0d36e1137dc647d7d21d48f77666a77bf9e7b178c830d323e4ed6309"
+    },
+    {
+      "record_id": "GRC9V4-CD-D6V2-v1",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D6v2UpdatedTotalCurrentClosure.json",
+      "file_sha256": "c0b634cd084d76a2ab8993dec4bde0075a3e893aa420f506493eb98b7b63ded0",
+      "decision_digest": "ad02150010c4759d1c0ac4ba079c81cff99bad1f35b715f52b980aaf404eac0a"
+    },
+    {
+      "record_id": "GRC9V4-CD-D7V2-v1",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D7v2CandidateTransitionComparativeAdmission.json",
+      "file_sha256": "b1796dd90c0be50036812454eb84223ccd40549b13c61be9caaa41f09f38828b",
+      "decision_digest": "f0d355c3e769b43fe48f0eb8ab6e986ce80838dd55e884ad33c66e988b65106e"
+    },
+    {
+      "record_id": "GRC9V4-CD-D10.2-v1",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D10_2FullSubstrateProvenanceAndPromotionAudit.json",
+      "file_sha256": "59c2b956cec7d258b1db09d43d6df44deb8c0be0453a5d741f7e2733d6881a33",
+      "decision_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c"
+    }
+  ],
+  "forensic_evidence_boundary": {
+    "queried_before_successor_source_creation": true,
+    "accepted_bundle_remains_historical_snapshot_after_opening": true,
+    "contract_support_disposition": "indeterminate_requires_review",
+    "trace_digests": {
+      "CORE-C-AUTHORITY": "cf4797fccbf473a0db3d249e99a370d8512c83ccc74ae66fd6f59b2b1c9009dc",
+      "GEOM-M4": "4d96f6fd1c0cd04d33c5ec73f2bec7fd10e818ab6bb32ce02d30c70fdbd524cc",
+      "D10.2-EC-GEOM-MOBILITY-BOUNDARY": "2eea6a5480364b6969b2cd4b12eb2e0a5f1f8eea33685adf90a7d760230a9f2f",
+      "D10.2-EC-CI-C-ROOT": "63204ba5213ef33cb15bed7c5fea8f5779e512758b9b1b300a8bc426b15f24aa",
+      "D10.2-EC-OS-C-CORRECTOR": "e9e313a8d6de209d4747d1df8a0e442f7be90ab0a4a259215c785e16bdb7f896"
+    }
+  },
+  "gate_question": "which_exact_graph_generic_Candidate_C_law_produces_J0_C_from_C_T_C_h_U_while_preserving_separate_transport_Hodge_and_structural_authority",
+  "affected_profiles": [
+    "C_CI",
+    "C_OS",
+    "C_RG2b",
+    "C_PC",
+    "C_CI_PC"
+  ],
+  "unchanged_contracts": [
+    "C_is_the_only_Candidate_C_authoritative_candidate_state",
+    "T_C_selector_Hodge_and_Read_Back_surfaces_are_derived",
+    "J_C_C_equals_J0_C_plus_zeta_C_times_j_C_flux",
+    "one_authoritative_current_enters_one_continuity_write",
+    "Candidate_A_is_out_of_scope",
+    "realization_family_identity_is_unchanged_except_for_the_C_baseline_consumer",
+    "GRC9_and_GRC9V3_are_read_only_targets"
+  ],
+  "required_closure": [
+    "M4_C_type_domain_codomain_positivity_and_authority",
+    "potential_or_direct_driving_functional",
+    "exact_J0_C_equation",
+    "C_T_C_h_U_and_parameter_dependence",
+    "units_gauge_normalization_domain_and_singular_boundary",
+    "pre_read_stage_and_freshness_for_all_five_C_realizations",
+    "graph_relabel_and_signed_edge_orientation_covariance",
+    "kappa_M_C_chi_C_and_zeta_C_controls",
+    "topology_event_migration_and_target_reconstruction",
+    "GRC9V4_owned_disabled_GRC9V3_reduction_relation"
+  ],
+  "preregistered_candidates": [
+    {
+      "candidate_id": "D11-C-T1",
+      "profile_id": "candidate_c_log_sector_potential_flow_v1",
+      "status": "preregistered_unselected",
+      "description": "derive_positive_scalar_mobility_from_the_accepted_sector_statistic_and_use_the_GRC_scalar_potential_flow",
+      "equations": [
+        "W0_C_e = W_ref_e * exp(kappa_J_C * kappa_M_C * r_C_e)",
+        "M4_C = eta_C * Diag(W0_C)",
+        "Phi_C_i = kappa_C * sum_e_incident_i W0_C_e * (C_i - C_neighbor_e_i) - V_C_prime(C_i;U)",
+        "J0_C = -M4_C * d0(Phi_C)"
+      ],
+      "current_spec_location": "specs/grc-v4-spec.md#candidate-c-v4-baseline-transport-candidate-d11-c-t1",
+      "accepted_authority": false
+    },
+    {
+      "candidate_id": "D11-C-T2",
+      "status": "preregistered_unselected",
+      "description": "general_separately_typed_derived_SPD_physical_current_adapter_from_a_finite_range_equivariant_Candidate_C_feature_map",
+      "retained_state_added": false,
+      "accepted_authority": false
+    },
+    {
+      "candidate_id": "D11-C-T3",
+      "status": "preregistered_unselected",
+      "description": "reference_scalar_mobility_with_T_C_and_h_conditioning_in_a_separately_declared_driving_potential",
+      "equations": [
+        "M4_C = eta_C * Diag(W_ref)",
+        "J0_C = -M4_C * d0(Phi_C(C,T_C,h,U;theta_C))"
+      ],
+      "accepted_authority": false
+    },
+    {
+      "candidate_id": "D11-C-T0",
+      "status": "preregistered_unselected",
+      "description": "bounded_unresolved_with_all_five_C_profiles_remaining_non_implementation_ready",
+      "accepted_authority": false
+    }
+  ],
+  "forbidden_authority_transfers": [
+    "M4_C_equals_H1_form_without_an_explicit_earned_constitutive_map",
+    "M4_C_equals_G_J_without_an_explicit_earned_constitutive_map",
+    "M4_C_equals_inverse_G_J_without_an_explicit_earned_constitutive_map",
+    "M4_C_equals_h4_without_an_explicit_earned_constitutive_map",
+    "T_C_becomes_authoritative_or_serialized_state",
+    "a_GRC9_only_premise_enters_the_graph_generic_Candidate_C_law"
+  ],
+  "required_controls": [
+    "kappa_M_C_zero_removes_selected_sector_conditioning_from_the_direct_baseline",
+    "chi_C_zero_removes_explicit_Read_Back_but_preserves_conditioned_J0_C",
+    "zeta_C_zero_sets_J_C_C_equal_to_J0_C",
+    "topology_event_rebuilds_derived_transport_without_array_resize_or_hidden_history",
+    "OS_recomputes_the_baseline_at_predictor_and_corrector_stages_with_declared_freshness",
+    "disabled_compatibility_is_owned_by_the_GRC9V4_wrapper"
+  ],
+  "acceptance_evidence": [
+    "complete_type_and_unit_derivation",
+    "neutral_control_table",
+    "relabel_and_orientation_covariance_proof",
+    "five_realization_stage_table",
+    "topology_and_migration_reconstruction_rule",
+    "Hodge_geometry_and_transport_noncollision_audit",
+    "disabled_reduction_relation_without_legacy_mutation",
+    "explicit_disposition_for_every_preregistered_candidate"
+  ],
+  "propagation_order_after_acceptance": [
+    "accepted_D11-C_successor_record",
+    "implementation/investigations/grc9v4-constitutive-design/drafts/2026-09-GRC-V4.md",
+    "specs/grc-v4-spec.md_and_inheriting_GRC9V4_clauses",
+    "specs/grc-v4-source-manifest.json_and_specs/grc-v4-conformance-fixtures.json",
+    "final_specification_audit"
+  ],
+  "decision": null,
+  "human_acceptance": {
+    "accepted": false,
+    "status": "not_yet_submitted_for_scientific_acceptance"
+  },
+  "authorization_effect": {
+    "investigation_active": true,
+    "D11_G9_activation": "requires_accepted_D11-C_result",
+    "paper_change_authorized": false,
+    "D11_dependent_specification_authority": false,
+    "implementation_plan_authorized": false,
+    "implementation_authorized": false,
+    "runtime_or_src_change_authorized": false
+  },
+  "claim_ceiling": "preregistered_graph_generic_Candidate_C_transport_investigation_without_selected_law_paper_promotion_specification_authority_runtime_evidence_stability_nonabsorbability_physical_attribution_or_candidate_preference",
+  "decision_record_digest": "c1c22c88fa676705370d01256a34801a364e310c93e4ef85cc5a3208e6e06a78"
+}

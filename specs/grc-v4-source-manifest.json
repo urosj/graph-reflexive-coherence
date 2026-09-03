@@ -1,6 +1,6 @@
 {
   "schema": "grcv4_specification_source_manifest_v1",
-  "status": "normative_source_identity",
+  "status": "normative_source_identity_with_pending_d11_candidates",
   "repository": "https://github.com/urosj/graph-reflexive-coherence.git",
   "audit_input": {
     "name": "GRCV4-specification-stack-audit.md",
@@ -59,17 +59,52 @@
       "semantic_status": "read_only_historical_source_with_v4_owned_port_override"
     }
   ],
+  "pending_successor_sources": [
+    {
+      "role": "accepted_bounded_D11_successor_opening",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D11SuccessorInvestigationOpening.json",
+      "file_sha256": "e2ce990a48fed01fb9fd4c90c1388a333a1143de1dd75e1b9f2ab38c21902410",
+      "record_digest": "51ba66d5404dee29f7b2a7dcd9501b43711fce0d47d466118945b5a0f71ac23a",
+      "semantic_status": "procedural_opening_only_no_scientific_result"
+    },
+    {
+      "role": "accepted_bounded_D11_claim_debt_authority_routing",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D11ClaimDebtAndAuthorityRouting.json",
+      "file_sha256": "f34bff656cc4e231bb8db81a9d69498c2b9a1e57accc4ecaec6642cd3e4422df",
+      "record_digest": "63cc407bffefef85602c28ead6c3da6b846778d3be9f78952db11cb10275c78d",
+      "semantic_status": "procedural_exact_carry_forward_and_additive_debt_routing_no_scientific_result"
+    },
+    {
+      "role": "D11_C_open_preregistration",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D11CCandidateCBaselineTransportAndMobilityClosure.json",
+      "file_sha256": "fc8346c02590bd5d43f0f93a74a0a9e770ebef8f02a00c2eeb6551e9697529a0",
+      "record_digest": "c1c22c88fa676705370d01256a34801a364e310c93e4ef85cc5a3208e6e06a78",
+      "semantic_status": "active_unselected_scientific_candidates_not_specification_authority"
+    },
+    {
+      "role": "D11_G9_queued_preregistration",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D11G9CanonicalExpansionPortAllocationClosure.json",
+      "file_sha256": "efd341b65ab0408300896f841a0695e043bc5e85afb5c6e701fcad3a4cdc75f1",
+      "record_digest": "856e3db9ffa6a09080f7af0b9753be222ab986599855168a4fe9d218490c1635",
+      "semantic_status": "queued_unselected_mechanical_candidates_not_specification_authority"
+    }
+  ],
+  "post_d10_collection_semantics": "legacy_closure_key_retained_for_schema_compatibility_but_entries_are_unaccepted_candidates_while_D11_is_open",
   "post_d10_v4_closures": [
     {
       "closure_id": "V4-AUDIT-C-BASELINE-TRANSPORT",
       "owner": "specs/grc-v4-spec.md",
       "scope": "grcv4_and_inheriting_grc9v4_only",
+      "authority_status": "provisional_preregistered_candidate_pending_D11-C",
+      "accepted_by_D11": false,
       "backward_evidence": false
     },
     {
       "closure_id": "V4-AUDIT-G9-PORT-ALLOCATION",
       "owner": "specs/grc-9-v4-spec.md",
       "scope": "grc9v4_only",
+      "authority_status": "provisional_preregistered_candidate_pending_D11-G9",
+      "accepted_by_D11": false,
       "backward_evidence": false
     }
   ]
