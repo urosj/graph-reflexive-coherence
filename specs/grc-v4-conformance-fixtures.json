@@ -1,0 +1,140 @@
+{
+  "schema": "grcv4_conformance_fixture_contract_v1",
+  "status": "normative_preimplementation_fixture_contract",
+  "implementation_evidence": false,
+  "audit_input_sha256": "61fb7c51efd82f80f1eaf492e8d6d3c77c7778aa8ce775a58ed4355dd12272e4",
+  "profile_families": [
+    "A_CI",
+    "C_CI",
+    "A_OS",
+    "C_OS",
+    "A_RG2b",
+    "C_RG2b",
+    "A_PC",
+    "C_PC",
+    "A_CI_PC",
+    "C_CI_PC"
+  ],
+  "execution_contract": {
+    "common_case_application": "cartesian_product_with_every_supported_complete_profile",
+    "candidate_case_application": "cartesian_product_with_every_supported_profile_of_that_candidate",
+    "failure_atomicity_field": "prestate_sha256_equals_poststate_sha256",
+    "required_result_fields": [
+      "fixture_id",
+      "complete_profile_id",
+      "resolved_params_sha256",
+      "prestate_sha256",
+      "poststate_sha256",
+      "disposition",
+      "committed",
+      "receipt_ids"
+    ],
+    "runtime_report_status_before_implementation": "not_executed"
+  },
+  "common_cases": [
+    {"id": "COMMON-VALID-ORDINARY-STEP", "expected": "committed_valid_root"},
+    {"id": "COMMON-INVALID-DOMAIN", "expected": "not_committed_domain_failure"},
+    {"id": "COMMON-NONFINITE", "expected": "not_committed_nonfinite"},
+    {"id": "COMMON-CHARGE-MISMATCH", "expected": "not_committed_charge_failure"},
+    {"id": "COMMON-STALE-CACHE", "expected": "reject_or_rebuild_before_consumer"},
+    {"id": "COMMON-ZERO-DURATION", "expected": "identity_no_writer_advance"},
+    {"id": "COMMON-NEGATIVE-DURATION", "expected": "not_committed_duration_failure"},
+    {"id": "COMMON-ATOMIC-FAILURE", "expected": "prestate_sha256_equals_poststate_sha256"}
+  ],
+  "candidate_a_cases": [
+    "A-POSITIVE-W-ADMISSION",
+    "A-EXACT-PRE-READ-W-HAT",
+    "A-CHI-ZERO",
+    "A-ZETA-ZERO",
+    "A-POST-CONTINUITY-REFRESH",
+    "A-LOG-WRITER",
+    "A-NO-SAME-BEAT-NEW-W-READ",
+    "A-INITIALIZATION-VS-FORMATION",
+    "A-MIGRATION-HISTORY-RECEIPT"
+  ],
+  "candidate_c_cases": [
+    {"id": "C-BASELINE-EXACT", "transport_id": "candidate_c_log_sector_potential_flow_v1", "expected": "J0_C_equals_minus_M4_C_d0_Phi_C"},
+    {"id": "C-SELECTOR-STRICT-GAP", "expected": "admit"},
+    {"id": "C-SELECTOR-BOUNDARY", "expected": "fail_closed_without_declared_rule"},
+    {"id": "C-QC-TYPING", "expected": "Q_C_equals_I_4M_G_J"},
+    {"id": "C-ONE-CHI-GATE", "expected": "exactly_one_external_chi_C"},
+    {"id": "C-C-ONLY-AUTHORITY", "expected": "no_T_C_or_mobility_state"},
+    {"id": "C-POST-CONTINUITY-REDERIVATION", "expected": "fresh_target_surfaces"},
+    {"id": "C-KAPPA-M-ZERO", "expected": "W0_C_equals_W_ref"},
+    {"id": "C-CHI-ZERO", "expected": "J_C_equals_J0_C_with_explicit_read_off"},
+    {"id": "C-ZETA-ZERO", "expected": "J_C_equals_J0_C"}
+  ],
+  "realization_cases": [
+    {"id": "CI-BRANCH", "expected": "one_unique_admitted_local_branch"},
+    {"id": "OS-ONE-PASS", "expected": "one_predictor_geometry_corrector_and_split_residual"},
+    {"id": "RG2B-SECTION", "expected": "deterministic_lipschitz_invariant_section"},
+    {"id": "PC-ZOH", "expected": "old_history_read_and_one_zoh_write"},
+    {"id": "CI-PC-SAME-SOURCE", "expected": "same_root_source_and_gain_two"}
+  ],
+  "lifecycle_cases": [
+    "SNAPSHOT-LOAD-REPLAY",
+    "RESET-AFTER-ORDINARY",
+    "RESET-AFTER-MIGRATION",
+    "RESET-AFTER-EVENT",
+    "WHOLE-LIFECYCLE-TUPLE-MAP",
+    "ALL-MIGRATION-CLASSES",
+    "HISTORY-DISPOSITION",
+    "TARGET-READMISSION-FAILURE",
+    "RECEIPT-OWNERSHIP",
+    "DUPLICATION-INDEPENDENCE"
+  ],
+  "grc9_expansion_fixture": {
+    "id": "GRC9V4-SATURATED-NINE-PORT-COLLISION-FREE",
+    "policy_id": "grc9v4_collision_free_v1",
+    "source_ports": [1, 2, 3, 4, 5, 6, 7, 8, 9],
+    "internal_edges": [
+      [["c", 2], ["s1", 5]],
+      [["c", 5], ["s2", 6]],
+      [["c", 8], ["s3", 4]]
+    ],
+    "redirected_source_endpoints": [
+      ["s1", 1], ["s2", 2], ["s3", 3],
+      ["s1", 4], ["s2", 5], ["s3", 6],
+      ["s1", 7], ["s2", 8], ["s3", 9]
+    ],
+    "assertions": {
+      "unique_live_endpoint_occupancy": true,
+      "column_family_preserved_for_old_boundary": true,
+      "core_resource": 0,
+      "additional_node_resource": 0,
+      "primary_resource_sum_equals_source": true
+    }
+  },
+  "grc9_additional_node_fixture": {
+    "id": "GRC9V4-ROUND-ROBIN-COLUMN-TREE",
+    "desired_external_capacity": 45,
+    "expected_canonical_node_count": 7,
+    "event_id": "fixture-expansion",
+    "additional_edges": [
+      [["fixture-expansion/satellite/1", 2], ["fixture-expansion/extra/001", 5]],
+      [["fixture-expansion/satellite/2", 1], ["fixture-expansion/extra/002", 5]],
+      [["fixture-expansion/satellite/3", 1], ["fixture-expansion/extra/003", 5]]
+    ],
+    "orientation": "parent_to_child",
+    "additional_node_resource": 0
+  },
+  "disabled_compatibility": {
+    "target": "exact_embedded_grc9v3_delegate",
+    "surfaces": ["transition", "state", "observable", "lifecycle"],
+    "matrix": [
+      {"profile": "A_CI", "transition": "D10.2-EC-DISABLED-A_CI-TRANSITION", "state": "D10.2-EC-DISABLED-A_CI-STATE", "observable": "D10.2-EC-DISABLED-A_CI-OBSERVABLE", "lifecycle": "D10.2-EC-DISABLED-A_CI-LIFECYCLE"},
+      {"profile": "C_CI", "transition": "D10.2-EC-DISABLED-C_CI-TRANSITION", "state": "D10.2-EC-DISABLED-C_CI-STATE", "observable": "D10.2-EC-DISABLED-C_CI-OBSERVABLE", "lifecycle": "D10.2-EC-DISABLED-C_CI-LIFECYCLE"},
+      {"profile": "A_OS", "transition": "D10.2-EC-DISABLED-A_OS-TRANSITION", "state": "D10.2-EC-DISABLED-A_OS-STATE", "observable": "D10.2-EC-DISABLED-A_OS-OBSERVABLE", "lifecycle": "D10.2-EC-DISABLED-A_OS-LIFECYCLE"},
+      {"profile": "C_OS", "transition": "D10.2-EC-DISABLED-C_OS-TRANSITION", "state": "D10.2-EC-DISABLED-C_OS-STATE", "observable": "D10.2-EC-DISABLED-C_OS-OBSERVABLE", "lifecycle": "D10.2-EC-DISABLED-C_OS-LIFECYCLE"},
+      {"profile": "A_RG2b", "transition": "D10.2-EC-DISABLED-A_RG2b-TRANSITION", "state": "D10.2-EC-DISABLED-A_RG2b-STATE", "observable": "D10.2-EC-DISABLED-A_RG2b-OBSERVABLE", "lifecycle": "D10.2-EC-DISABLED-A_RG2b-LIFECYCLE"},
+      {"profile": "C_RG2b", "transition": "D10.2-EC-DISABLED-C_RG2b-TRANSITION", "state": "D10.2-EC-DISABLED-C_RG2b-STATE", "observable": "D10.2-EC-DISABLED-C_RG2b-OBSERVABLE", "lifecycle": "D10.2-EC-DISABLED-C_RG2b-LIFECYCLE"},
+      {"profile": "A_PC", "transition": "D10.2-EC-DISABLED-A_PC-TRANSITION", "state": "D10.2-EC-DISABLED-A_PC-STATE", "observable": "D10.2-EC-DISABLED-A_PC-OBSERVABLE", "lifecycle": "D10.2-EC-DISABLED-A_PC-LIFECYCLE"},
+      {"profile": "C_PC", "transition": "D10.2-EC-DISABLED-C_PC-TRANSITION", "state": "D10.2-EC-DISABLED-C_PC-STATE", "observable": "D10.2-EC-DISABLED-C_PC-OBSERVABLE", "lifecycle": "D10.2-EC-DISABLED-C_PC-LIFECYCLE"},
+      {"profile": "A_CI_PC", "transition": "D10.2-EC-DISABLED-A_CI_PC-TRANSITION", "state": "D10.2-EC-DISABLED-A_CI_PC-STATE", "observable": "D10.2-EC-DISABLED-A_CI_PC-OBSERVABLE", "lifecycle": "D10.2-EC-DISABLED-A_CI_PC-LIFECYCLE"},
+      {"profile": "C_CI_PC", "transition": "D10.2-EC-DISABLED-C_CI_PC-TRANSITION", "state": "D10.2-EC-DISABLED-C_CI_PC-STATE", "observable": "D10.2-EC-DISABLED-C_CI_PC-OBSERVABLE", "lifecycle": "D10.2-EC-DISABLED-C_CI_PC-LIFECYCLE"}
+    ],
+    "independent_case_count": 40,
+    "v4_wrapper_owns_crossing": true,
+    "legacy_target_modified": false
+  }
+}

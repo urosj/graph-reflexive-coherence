@@ -24,6 +24,8 @@ OUTPUT_DIR = TOOL_ROOT / "generated/agent-queries/post-d10-specification-audit/t
 GRCV4_SPEC = ROOT / "specs/grc-v4-spec.md"
 GRC9V4_SPEC = ROOT / "specs/grc-9-v4-spec.md"
 V4_INTERFACE_EXTENSION = ROOT / "specs/grc-common-interface-v4-ext.md"
+SOURCE_MANIFEST = ROOT / "specs/grc-v4-source-manifest.json"
+CONFORMANCE_FIXTURES = ROOT / "specs/grc-v4-conformance-fixtures.json"
 SPECS_README = ROOT / "specs/README.md"
 
 EXPECTED_SOURCE_BUNDLE_DIGEST = (
@@ -221,6 +223,8 @@ def validate_phase_boundary() -> tuple[str, int]:
     outputs = boundary["authorized_specification_outputs"]
     if set(outputs) != {
         "specs/grc-common-interface-v4-ext.md",
+        "specs/grc-v4-conformance-fixtures.json",
+        "specs/grc-v4-source-manifest.json",
         "specs/grc-v4-spec.md",
         "specs/grc-9-v4-spec.md",
     }:
@@ -412,6 +416,156 @@ def validate_pandoc_render(path: Path) -> None:
         raise RuntimeError(f"pandoc failed for {path}: {result.stderr.strip()}")
 
 
+def validate_v4_source_manifest() -> None:
+    manifest = json.loads(SOURCE_MANIFEST.read_text(encoding="utf-8"))
+    if manifest.get("schema") != "grcv4_specification_source_manifest_v1":
+        raise RuntimeError("unexpected V4 source-manifest schema")
+    if manifest.get("status") != "normative_source_identity":
+        raise RuntimeError("V4 source manifest is not normative")
+    audit_sha = manifest.get("audit_input", {}).get("sha256", "")
+    if not re.fullmatch(r"[0-9a-f]{64}", audit_sha):
+        raise RuntimeError("V4 audit input is not digest-bound")
+
+    expected_roles = {
+        "canonical_grcv4_substrate_paper",
+        "proposal_and_provenance_companion",
+        "d10_specification_authority",
+        "d10_2_provenance_and_promotion_authority",
+        "unchanged_common_interface",
+        "grc9v3_disabled_reduction_target",
+        "grc9_mechanical_provenance_source",
+    }
+    sources = manifest.get("sources", [])
+    if {source.get("role") for source in sources} != expected_roles:
+        raise RuntimeError("V4 source-manifest role roster mismatch")
+    for source in sources:
+        path_text = source.get("path", "")
+        path = validate_repository_path(path_text)
+        commit = source.get("commit_sha", "")
+        expected_sha = source.get("file_sha256", "")
+        if not re.fullmatch(r"[0-9a-f]{40}", commit):
+            raise RuntimeError(f"invalid source commit binding: {path_text}")
+        if not re.fullmatch(r"[0-9a-f]{64}", expected_sha):
+            raise RuntimeError(f"invalid source file digest: {path_text}")
+        committed = git_bytes("show", f"{commit}:{path_text}")
+        if sha256_bytes(committed) != expected_sha:
+            raise RuntimeError(f"source commit/file binding mismatch: {path_text}")
+        if not path.is_file() or sha256_file(path) != expected_sha:
+            raise RuntimeError(f"source worktree drift: {path_text}")
+
+    closures = manifest.get("post_d10_v4_closures", [])
+    if {closure.get("closure_id") for closure in closures} != {
+        "V4-AUDIT-C-BASELINE-TRANSPORT",
+        "V4-AUDIT-G9-PORT-ALLOCATION",
+    }:
+        raise RuntimeError("V4 post-D10 closure roster mismatch")
+    if any(closure.get("backward_evidence") is not False for closure in closures):
+        raise RuntimeError("V4 audit closure was promoted to backward evidence")
+
+
+def validate_v4_conformance_fixtures(profiles: set[str]) -> None:
+    fixtures = json.loads(CONFORMANCE_FIXTURES.read_text(encoding="utf-8"))
+    if fixtures.get("schema") != "grcv4_conformance_fixture_contract_v1":
+        raise RuntimeError("unexpected V4 conformance-fixture schema")
+    if fixtures.get("status") != "normative_preimplementation_fixture_contract":
+        raise RuntimeError("V4 conformance fixtures have unexpected status")
+    if fixtures.get("implementation_evidence") is not False:
+        raise RuntimeError("preimplementation fixtures claim runtime evidence")
+    if set(fixtures.get("profile_families", [])) != profiles:
+        raise RuntimeError("V4 fixture profile roster mismatch")
+
+    required_group_sizes = {
+        "common_cases": 8,
+        "candidate_a_cases": 9,
+        "candidate_c_cases": 10,
+        "realization_cases": 5,
+        "lifecycle_cases": 10,
+    }
+    for key, count in required_group_sizes.items():
+        if len(fixtures.get(key, [])) != count:
+            raise RuntimeError(f"V4 fixture group {key} must contain {count} cases")
+
+    expansion = fixtures.get("grc9_expansion_fixture", {})
+    if expansion.get("policy_id") != "grc9v4_collision_free_v1":
+        raise RuntimeError("V4 expansion fixture has wrong policy")
+    endpoint_rows = expansion.get("internal_edges", [])
+    expected_internal_edges = [
+        [["c", 2], ["s1", 5]],
+        [["c", 5], ["s2", 6]],
+        [["c", 8], ["s3", 4]],
+    ]
+    if endpoint_rows != expected_internal_edges:
+        raise RuntimeError("V4 expansion fixture port allocation drift")
+    endpoints = [tuple(endpoint) for edge in endpoint_rows for endpoint in edge]
+    redirected = expansion.get("redirected_source_endpoints", [])
+    expected_redirected = [
+        [f"s{1 + ((port - 1) % 3)}", port] for port in range(1, 10)
+    ]
+    if redirected != expected_redirected:
+        raise RuntimeError("V4 expansion fixture column redirection drift")
+    endpoints.extend(tuple(endpoint) for endpoint in redirected)
+    if len(endpoints) != len(set(endpoints)):
+        raise RuntimeError("V4 expansion fixture contains a port collision")
+    if len(redirected) != 9:
+        raise RuntimeError("V4 expansion fixture does not redirect nine ports")
+    assertions = expansion.get("assertions", {})
+    required_true_assertions = {
+        "unique_live_endpoint_occupancy",
+        "column_family_preserved_for_old_boundary",
+        "primary_resource_sum_equals_source",
+    }
+    if any(assertions.get(key) is not True for key in required_true_assertions):
+        raise RuntimeError("V4 expansion fixture assertion drift")
+    if assertions.get("core_resource") != 0:
+        raise RuntimeError("V4 expansion fixture core resource drift")
+    if assertions.get("additional_node_resource") != 0:
+        raise RuntimeError("V4 expansion fixture additional-node resource drift")
+
+    additional = fixtures.get("grc9_additional_node_fixture", {})
+    expected_additional_edges = [
+        [
+            [f"fixture-expansion/satellite/{column}", parent_port],
+            [f"fixture-expansion/extra/00{column}", 5],
+        ]
+        for column, parent_port in ((1, 2), (2, 1), (3, 1))
+    ]
+    if additional.get("desired_external_capacity") != 45:
+        raise RuntimeError("V4 additional-node fixture capacity drift")
+    if additional.get("expected_canonical_node_count") != 7:
+        raise RuntimeError("V4 additional-node fixture node-count drift")
+    if additional.get("additional_edges") != expected_additional_edges:
+        raise RuntimeError("V4 additional-node allocation fixture drift")
+    if additional.get("orientation") != "parent_to_child":
+        raise RuntimeError("V4 additional-node orientation fixture drift")
+    if additional.get("additional_node_resource") != 0:
+        raise RuntimeError("V4 additional-node resource fixture drift")
+
+    disabled = fixtures.get("disabled_compatibility", {})
+    matrix = disabled.get("matrix", [])
+    if {row.get("profile") for row in matrix} != profiles:
+        raise RuntimeError("disabled fixture profile roster mismatch")
+    if set(disabled.get("surfaces", [])) != {
+        "transition", "state", "observable", "lifecycle"
+    }:
+        raise RuntimeError("disabled fixture surface roster mismatch")
+    if disabled.get("independent_case_count") != 40:
+        raise RuntimeError("disabled fixture matrix is not 10x4")
+    expected_disabled_ids = {
+        f"D10.2-EC-DISABLED-{row['profile']}-{surface.upper()}"
+        for row in matrix
+        for surface in disabled["surfaces"]
+    }
+    actual_disabled_ids = {
+        row[surface]
+        for row in matrix
+        for surface in disabled["surfaces"]
+    }
+    if actual_disabled_ids != expected_disabled_ids:
+        raise RuntimeError("disabled fixture contract IDs do not match the matrix")
+    if disabled.get("legacy_target_modified") is not False:
+        raise RuntimeError("V4 fixture contract modifies the legacy target")
+
+
 def validate_forensic_specification_content() -> tuple[int, int, int, int, int]:
     if repository_root() != ROOT:
         raise RuntimeError("repository root discovery disagrees with audit location")
@@ -516,6 +670,26 @@ def validate_forensic_specification_content() -> tuple[int, int, int, int, int]:
         marker not in interface_extension_text for marker in required_extension_markers
     ):
         raise RuntimeError("V4 interface extension is incomplete")
+    required_audit_closure_markers = (
+        "Candidate C V4 baseline transport closure",
+        "candidate_c_log_sector_potential_flow_v1",
+        r"J_{0,C}(C,T_C(h),h,U)",
+        "def step_v4(self, request: GRCV4StepRequest)",
+        "def list_supported_profiles(self) -> frozenset[str]",
+        "EnabledGRC9V4State | DisabledGRC9V3State",
+        "grc9v4_collision_free_v1",
+        r"(c,2)\leftrightarrow(s_1,5)",
+        r"(c,5)\leftrightarrow(s_2,6)",
+        r"(c,8)\leftrightarrow(s_3,4)",
+    )
+    all_v4_text = "\n".join((grcv4_text, grc9v4_text, interface_extension_text))
+    missing_closure_markers = [
+        marker for marker in required_audit_closure_markers if marker not in all_v4_text
+    ]
+    if missing_closure_markers:
+        raise RuntimeError(
+            f"V4 audit closures are incomplete: {missing_closure_markers}"
+        )
 
     spec_claims = set(re.findall(r"D10-CL-[A-Z]+-[0-9]{3}", grcv4_text))
     if spec_claims != set(identifiers["current_claim"]):
@@ -526,6 +700,8 @@ def validate_forensic_specification_content() -> tuple[int, int, int, int, int]:
         )
 
     profiles = set(identifiers["profile"])
+    validate_v4_source_manifest()
+    validate_v4_conformance_fixtures(profiles)
     for name, text in (("GRCV4", grcv4_text), ("GRC9V4", grc9v4_text)):
         mentioned = {
             profile
@@ -573,6 +749,8 @@ def validate_forensic_specification_content() -> tuple[int, int, int, int, int]:
         name in readme
         for name in (
             "grc-common-interface-v4-ext.md",
+            "grc-v4-conformance-fixtures.json",
+            "grc-v4-source-manifest.json",
             "grc-v4-spec.md",
             "grc-9-v4-spec.md",
         )

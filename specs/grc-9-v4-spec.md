@@ -26,6 +26,12 @@ profile/surface compatibility contracts. Their support semantics remain
 `indeterminate_requires_review`; the specification preserves their source
 classification and does not treat dependency reach as scientific ranking.
 
+The September 2026 stack-audit corrections in this document are V4-owned
+overrides. They do not edit or reinterpret the G-RC-9 paper or the `GRC9V3`
+specification. In particular, the collision-free expansion allocation and the
+disabled-state wrapper are requirements of `GRC9V4`; the older artifacts
+remain read-only provenance and reduction targets.
+
 ## Conformance language
 
 The words **must**, **must not**, **required**, **shall**, and **shall not** are
@@ -80,6 +86,29 @@ bind:
 
 ```python
 @dataclass(frozen=True)
+class GRC9CoarsePolicy:
+    nonnegative_field_mode: Literal["simplex_profile"]
+    signed_flux_mode: Literal["positive_negative_split"]
+
+@dataclass(frozen=True)
+class GRC9V4ExpansionPolicy:
+    schema_version: Literal["grc9v4-expansion-v1"]
+    internal_port_allocation: Literal["core_258_satellite_564"]
+    additional_node_policy: Literal["round_robin_column_tree_v1"]
+    internal_mobility_mode: Literal["fixed_bond", "column_geometric_mean"]
+    fixed_bond_value: float | None
+    resource_distribution: tuple[float, float, float]
+
+@dataclass(frozen=True)
+class GRC9V4ResolvedSpecialization:
+    schema_version: Literal["grc9v4-resolved-specialization-v1"]
+    port_chart: Mapping[str, JSONValue]
+    spark: Mapping[str, JSONValue]
+    expansion: GRC9V4ExpansionPolicy
+    coarse_graining: GRC9CoarsePolicy
+    compatibility: Mapping[str, JSONValue]
+
+@dataclass(frozen=True)
 class GRC9V4Specialization:
     port_count: Literal[9]
     port_chart_id: Literal["fixed_3x3_row_column"]
@@ -90,11 +119,13 @@ class GRC9V4Specialization:
         "current_hybrid_signed_hessian",
         "grc9v3_column_h_assisted",
     ]
-    expansion_policy_id: str
+    expansion_policy_id: Literal["grc9v4_collision_free_v1"]
     expansion_distribution_mode: Literal["equal", "custom"]
-    coarse_graining_mode: Literal["nonnegative", "signed_split"]
+    coarse_policy: GRC9CoarsePolicy
     grc9v3_target_spec_version: str
     compatibility_branch: Literal["enabled_v4", "disabled_grc9v3"]
+    params_resolved: GRC9V4ResolvedSpecialization
+    params_hash: str
 ```
 
 Any change to the port count, chart, default row backend, Hessian sign,
@@ -142,7 +173,10 @@ $$
 \deg_{\mathrm{act}}(i)\le9.
 $$
 
-Each occupied endpoint pair must be unique. For the selected edge orientation,
+Each live `(node_id, port)` endpoint occurs in at most one live edge. This
+port-capacity invariant is stronger than uniqueness of the two-ended endpoint
+pair and applies even when parallel graph edges have distinct edge IDs. For
+the selected edge orientation,
 $w_{ij}=w_{ji}$ and $J_{ji}=-J_{ij}$. Multiple edges require stable edge
 identity and explicit aggregation; a single port lookup must not hide them.
 
@@ -160,19 +194,29 @@ class GRC9V4PortEdge:
     edge_id: EdgeId
     source: GRC9V4PortEndpoint
     target: GRC9V4PortEndpoint
-    orientation: int
+    orientation: Literal[-1, 1]
 
-@dataclass
-class GRC9V4State(GRCV4State):
+@dataclass(frozen=True)
+class EnabledGRC9V4State(GRCV4State):
     port_edges: dict[EdgeId, GRC9V4PortEdge]
     hierarchy: Mapping[str | int, list[str | int]]
     basin_identity: Mapping[NodeId, str | int]
-    coarse_cache: Mapping[str, Any]
+
+@dataclass(frozen=True)
+class DisabledGRC9V3State:
+    delegate: ExactGRC9V3State
+    target_spec_version: str
+    entry_receipt: LifecycleReceipt
+
+GRC9V4ScientificState = EnabledGRC9V4State | DisabledGRC9V3State
 ```
 
 The inherited `GRCV4State` authority rules remain controlling. Basin,
-hierarchy, event, and graph identity are lifecycle surfaces; row summaries and
-coarse caches are derived.
+hierarchy, event, and graph identity are lifecycle surfaces. Row summaries and
+coarse caches are derived, representation-only, and excluded from scientific
+state equality. The disabled branch delegates its scientific state and
+transition to the exact legacy target; the V4 wrapper owns only the branch
+tag, ordered crossing receipt, and target-version binding.
 
 ## Fixed $3\times3$ chart
 
@@ -342,18 +386,50 @@ $$
 The four-node floor is mandatory: one core and three primary satellites. This
 corrected equation, not $\lceil D_{\mathrm{eff}}/7\rceil$, governs GRC9V4.
 
-The baseline internal edges are
+The older center-port construction would redirect saturated source port 5 to
+`(s_2, 5)` while also using `(s_2, 5)` for the internal spine. `GRC9V4`
+therefore adopts the collision-free V4 allocation
 
 $$
 (c,2)\leftrightarrow(s_1,5),\qquad
-(c,5)\leftrightarrow(s_2,5),\qquad
-(c,8)\leftrightarrow(s_3,5).
+(c,5)\leftrightarrow(s_2,6),\qquad
+(c,8)\leftrightarrow(s_3,4).
 $$
 
-Additional nodes attach deterministically under the three satellites when
-$n_{\mathrm{canonical}}>4$. An old boundary endpoint in column
-$\mathcal C_b$ is redirected to satellite $s_b$ while preserving the port
-label.
+The core uses the center column. The satellites use the center row with the
+cyclic successor column $1\mapsto2\mapsto3\mapsto1$. This is a deterministic
+derangement, so every satellite-side internal port is outside its own
+old-boundary column family:
+
+$$
+5\notin\mathcal C_1,\qquad
+6\notin\mathcal C_2,\qquad
+4\notin\mathcal C_3.
+$$
+
+Every old endpoint `(s, r)` is redirected to `(s_b, r)` for the unique
+$r\in\mathcal C_b$. Consequently all nine redirected endpoints and all three
+satellite-side internal endpoints are distinct. Core ports 2, 5, and 8 are
+also pairwise distinct, so the four-node construction satisfies the one-edge-
+per-port invariant.
+
+The base node IDs are the UTF-8 strings
+`<event-id>/core` and `<event-id>/satellite/{1,2,3}`. Base internal edge IDs
+are `<event-id>/internal/{1,2,3}`, oriented from core to satellite. A redirected
+old edge preserves its edge ID and coordinate orientation; only the source or
+target endpoint formerly naming `s` is replaced.
+
+When $n_{\mathrm{canonical}}>4$, create additional nodes in order
+$q=1,\ldots,n_{\mathrm{canonical}}-4$. Node $q$ is assigned to
+$b=1+((q-1)\bmod3)$. Within column tree $b$, select the lowest stable node ID
+having a free port, use its lowest-numbered free port as the parent endpoint,
+and use port 5 on the new node as the child endpoint. Candidate target node IDs
+are `<event-id>/extra/<zero-padded-q>` and internal edge IDs are
+`<event-id>/internal/extra/<zero-padded-q>`. Stable ID comparison is unsigned
+UTF-8 byte order, and every added tree edge is oriented parent to child.
+Collision with any live ID is a typed failure. Selection is performed against
+actual occupancy after the base spine and all nine old-boundary redirects, so
+a reserved or occupied endpoint can never be selected.
 
 For the unit-measure equal-split baseline,
 
@@ -363,13 +439,45 @@ C_{s_b}=\frac13C_s,
 $$
 
 A custom $p_b$ must satisfy $p_b\ge0$ and $\sum_bp_b=1$ and is
-identity-bearing event configuration.
+identity-bearing event configuration. The exact tuple `(p_1, p_2, p_3)` is
+stored in `GRC9V4ExpansionPolicy.resource_distribution`; the label `custom`
+without that tuple is invalid. The core and every additional node receive
+zero source resource at the event, so
+
+$$
+C_c=0,\qquad C_{x_q}=0,
+$$
+
+and the three primary allocations are the complete source-resource split.
+
+Every new internal edge uses one identity-bearing mobility mode. Under
+`fixed_bond`, its Candidate A/reference scalar mobility is the resolved
+$w_{\mathrm{bond}}>0$. Under `column_geometric_mean`, every new edge in tree
+$b$ receives
+
+$$
+w_b
+=\left(\prod_{r\in\mathcal C_b}W^-_{(s,r)}\right)^{1/3},
+$$
+
+evaluated from the saturated source prestate. Candidate A initializes new-edge
+$W_A$ with that value and receipts the history-free construction. Candidate C
+does not transport a mobility state; it rebuilds its V4 baseline mobility from
+the target state. New-node/new-edge $Z_4$ components are canonically zero
+unless a separately declared typed history map supplies them; either outcome
+is recorded in the event receipt.
 
 Expansion is a typed `GRCV4` topology event. Before atomic commit it must map
 both current and reset resource state, update $Q_{\mathrm{target}}$, transport
 or explicitly lose A and PC history, rederive Candidate C surfaces, rebuild
 RG2b completion, bind graph/profile/hierarchy identity, emit receipts, and pass
 target readmission. A graph rewrite alone is not an admitted expansion.
+
+The expansion output is a pure function of the admitted source lifecycle
+state, event ID, desired capacity, and resolved `grc9v4-expansion-v1` policy.
+Tie-breaking, orientation, stable IDs, endpoint pairs, internal mobilities,
+resource allocation, history disposition, and hierarchy receipt are therefore
+replayable and must match the canonical expansion fixture.
 
 ## Child-basin completion
 
@@ -392,6 +500,18 @@ Expansion without stabilization remains mechanical refinement. A transient
 child-like feature is not completion.
 
 ## Column coarse-graining and Split
+
+Coarse encoding is field-typed rather than selected by one global mode:
+
+```python
+@dataclass(frozen=True)
+class GRC9CoarsePolicy:
+    nonnegative_field_mode: Literal["simplex_profile"]
+    signed_flux_mode: Literal["positive_negative_split"]
+```
+
+Every enabled specialization uses both fields. A capability request names the
+field family, and dispatch to the other encoding is a typed error.
 
 For a nonnegative port-attached field $X_{i,a,b}$,
 
@@ -492,6 +612,22 @@ The complete 40-contract matrix is:
 
 No row or column is implied by another.
 
+The executable representation is discriminated by `compatibility_branch`:
+
+```python
+GRC9V4ScientificState = EnabledGRC9V4State | DisabledGRC9V3State
+```
+
+`enabled_v4 -> disabled_grc9v3` performs an explicit V4 migration: map current
+and reset resource state, reconstruct the target base conductance at the exact
+legacy stage, archive/drop V4-only $W_A$ and $Z_4$ authority with receipts,
+project V4-only observables, instantiate the exact target snapshot family, and
+pass target readmission before commit. `disabled_grc9v3 -> enabled_v4`
+performs the inverse-direction V4 migration: preserve admitted resource and
+graph coordinates, initialize candidate/realization state using the selected
+V4 target rules, bind a new V4 reset baseline, and receipt every noninvertible
+history choice. Neither direction mutates or extends `GRC9V3`.
+
 ### Transition projection
 
 | Profile class | Required disabled transition |
@@ -535,10 +671,14 @@ An enabled V4 ordinary beat follows the exact transaction in
 [`grc-v4-spec.md`](grc-v4-spec.md#complete-step-transaction), with the fixed
 port graph and row backend supplying its specialization context.
 
-Spark processing is lifecycle/event work. Candidate detection may occur at a
-declared stage, but an expansion must execute as a typed topology event between
-admitted lifecycle states. The post-event state then resumes ordinary V4
-stepping; completion is registered only after child-basin stabilization.
+Spark processing is lifecycle/event work. Candidate detection occurs from the
+fresh final-$C$, fixed-row differential, and basin surfaces after a successful
+ordinary beat has committed and before the next ordinary beat. An expansion
+then executes as a separate typed topology transaction between admitted
+lifecycle states. The post-event state resumes ordinary V4 stepping;
+completion is registered only after child-basin stabilization under the
+resolved policy. Predictor, stale-cache, or partially committed values cannot
+trigger expansion.
 
 The disabled branch executes the legacy `GRC9V3` step as a target transition.
 It must not approximate that transition by running enabled V4 equations with
@@ -552,8 +692,9 @@ small coefficients.
 - row-basis differential and Hessian sign configuration;
 - basin and spark thresholds;
 - explicit spark lane;
-- expansion capacity and deterministic attachment policy;
-- equal or custom resource-distribution policy;
+- `grc9v4_collision_free_v1`, desired capacity, additional-node allocation,
+  stable-ID, orientation, parent-port, and internal-mobility policy;
+- equal or custom resource-distribution policy with exact `(p_1,p_2,p_3)`;
 - hierarchy and child-stabilization policy;
 - nonnegative and signed column coarse-graining modes;
 - exact GRC9V3 target version and projection rules; and
@@ -561,6 +702,9 @@ small coefficients.
 
 Defaults must resolve at construction. No environment variable, cache state,
 or solver history may alter these semantics after profile resolution.
+`GRC9V4ResolvedSpecialization` is canonicalized and hashed under the same
+finite-JSON rules as `GRCV4ResolvedParams`; its payload and digest are both
+serialized. A policy label without the resolved payload is invalid.
 
 ## Observables
 
@@ -624,8 +768,8 @@ complete prestate authoritative.
 ## Claim bindings and boundaries
 
 The complete [GRCV4 claim matrix](grc-v4-spec.md#claim-conformance-matrix) is
-inherited. `D10-CL-N-007` is discharged here through the 40 independent
-compatibility rows. `D10-CL-N-001`, `D10-CL-N-005`, `D10-CL-N-006`, and
+inherited. `D10-CL-N-007` is normatively represented here by 40 independent
+compatibility requirements. `D10-CL-N-001`, `D10-CL-N-005`, `D10-CL-N-006`, and
 `D10-CL-N-008` remain load-bearing in the specialization. The optional,
 conditional, open, and negative claims retain their original status.
 

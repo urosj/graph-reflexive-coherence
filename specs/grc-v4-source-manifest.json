@@ -1,0 +1,76 @@
+{
+  "schema": "grcv4_specification_source_manifest_v1",
+  "status": "normative_source_identity",
+  "repository": "https://github.com/urosj/graph-reflexive-coherence.git",
+  "audit_input": {
+    "name": "GRCV4-specification-stack-audit.md",
+    "sha256": "61fb7c51efd82f80f1eaf492e8d6d3c77c7778aa8ce775a58ed4355dd12272e4",
+    "role": "external_specification_audit",
+    "authority": "finding_and_correction_input_not_backward_scientific_evidence"
+  },
+  "sources": [
+    {
+      "role": "canonical_grcv4_substrate_paper",
+      "path": "implementation/investigations/grc9v4-constitutive-design/drafts/2026-09-GRC-V4.md",
+      "commit_sha": "c9283b8425f976e9f13d06bf5ded391014420689",
+      "file_sha256": "e009c5651842dea6636057a9639a79e42eb5c03b20c4812fb9ee5173705258e5",
+      "semantic_status": "canonical_mathematical_authority_at_specification_extraction"
+    },
+    {
+      "role": "proposal_and_provenance_companion",
+      "path": "implementation/investigations/grc9v4-constitutive-design/drafts/GRCV4-proposal.md",
+      "commit_sha": "0b3d50d24a8b737be25db62fd6155e96cbcfe3e9",
+      "file_sha256": "379a5668065a5bd4ffe9bc8375629b53ec210adf716a7a081dbf8f21b38fc920",
+      "semantic_status": "provenance_companion_not_coequal_mathematical_authority"
+    },
+    {
+      "role": "d10_specification_authority",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D10DesignSynthesisAndSpecWritingDecision.json",
+      "commit_sha": "4798b7a1d76d3563ce02682e351d87f7707d1212",
+      "file_sha256": "519a6ef56c52750b6d3da673b0dc9988e43a8676e209dd205d5d6c988d7c81b6",
+      "semantic_status": "accepted_bounded_specification_writing_authority"
+    },
+    {
+      "role": "d10_2_provenance_and_promotion_authority",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D10_2FullSubstrateProvenanceAndPromotionAudit.json",
+      "commit_sha": "4798b7a1d76d3563ce02682e351d87f7707d1212",
+      "file_sha256": "59c2b956cec7d258b1db09d43d6df44deb8c0be0453a5d741f7e2733d6881a33",
+      "semantic_status": "accepted_bounded_forensic_authority"
+    },
+    {
+      "role": "unchanged_common_interface",
+      "path": "specs/grc-common-interface.md",
+      "commit_sha": "7f156bf22291a6c5f317d6853dc4122aeb44f4de",
+      "file_sha256": "3ccc27250a3ddb2ecccdf27984436e3dee2b10b3f71de610bfbbbcd084ae7be6",
+      "semantic_status": "read_only_import_extended_only_by_v4_extension"
+    },
+    {
+      "role": "grc9v3_disabled_reduction_target",
+      "path": "specs/grc-9-v3-spec.md",
+      "commit_sha": "96d898c05b10a256a85f3df03daee0815ed50c12",
+      "file_sha256": "7b1f0c03988be7dbe3feb8ba926d43d891d70daa0dbbae9804fc70f2a4950f2f",
+      "semantic_status": "read_only_legacy_target_not_modified_by_v4"
+    },
+    {
+      "role": "grc9_mechanical_provenance_source",
+      "path": "papers/2026-04-GRC-9.md",
+      "commit_sha": "a1db3d6ce3f35b43ac10583fe02872e689f5f796",
+      "file_sha256": "cefc33e91e496c236660dad5c1e009a720ca908488db460d47322118dd7c3e08",
+      "semantic_status": "read_only_historical_source_with_v4_owned_port_override"
+    }
+  ],
+  "post_d10_v4_closures": [
+    {
+      "closure_id": "V4-AUDIT-C-BASELINE-TRANSPORT",
+      "owner": "specs/grc-v4-spec.md",
+      "scope": "grcv4_and_inheriting_grc9v4_only",
+      "backward_evidence": false
+    },
+    {
+      "closure_id": "V4-AUDIT-G9-PORT-ALLOCATION",
+      "owner": "specs/grc-9-v4-spec.md",
+      "scope": "grc9v4_only",
+      "backward_evidence": false
+    }
+  ]
+}

@@ -30,15 +30,15 @@ This document does not alter the interface or behavior of `GRCV2`, `GRCV3`,
 | State | Adds complete-profile, graph/orientation, context, typed nonresource state, lifecycle receipt, and cache-provenance requirements. |
 | Parameters | Makes every trajectory-changing candidate, realization, geometry, differential, charge, solver, and lifecycle choice part of canonical profile identity. |
 | Graph backend | Requires deterministic vertex and oriented-edge order, typed differential and pairing surfaces, signed reorientation, and reconstruction from serialized identity. |
-| Lifecycle | Strengthens `step()` to the V4 atomic complete-step transaction and makes profile migration and topology change typed, receipted operations. |
+| Lifecycle | Adds input-bearing V4 step/run, migration, and topology-event operations while preserving the inherited zero-argument methods. |
 | Capabilities | Adds V4 common, candidate, realization, and nine-port specialization capabilities without treating planned support as implemented support. |
 | Observables | Adds profile, charge, current, geometry, solver, lifecycle, and specialization diagnostics while preserving authority labels. |
 | Serialization | Preserves complete profile and lifecycle identity and enough provenance to reject or rebuild derived caches. |
 | Errors | Requires fail-closed typed rejection before atomic commit for identity, domain, solver, charge, migration, event, or restoration failure. |
 
-No V4 extension changes the signatures of the required common public methods.
-It strengthens their accepted inputs, outputs, identity, atomicity, and
-serialization semantics.
+No inherited common method changes signature. V4 adds typed methods beside
+them and defines when an inherited zero-argument method may delegate to the
+new surface.
 
 ## Concrete class relationships
 
@@ -49,12 +49,16 @@ class GRCV4(GRCModel): ...
 class GRC9V4(GRCV4): ...
 ```
 
-The state hierarchy is correspondingly:
+The enabled-state hierarchy is correspondingly:
 
 ```python
 class GRCV4State(GRCState): ...
-class GRC9V4State(GRCV4State): ...
+class EnabledGRC9V4State(GRCV4State): ...
 ```
+
+The GRC9V4 disabled branch is a discriminated exact legacy delegate, not a
+V4-shaped subclass with legacy fields projected out. Its union is defined in
+the GRC9V4 family specification.
 
 `GRCV4` is executable only with exactly one admitted complete profile.
 `GRC9V4` inherits that profile requirement and adds one complete nine-port
@@ -85,22 +89,31 @@ family contract explicitly promotes one into trajectory semantics.
 state. It must not silently select another profile, create or discard retained
 history, rebase charge, repair topology, or substitute a solver policy.
 
+Resolved parameters use `grcv4-resolved-params-v1`: canonical UTF-8 JSON,
+lexicographically ordered object keys, preserved array order, no insignificant
+whitespace, and finite JSON numbers only. A snapshot carries the resolved
+payload, its `sha256:` digest, and the complete-profile digest. A bare hash,
+runtime callable name, environment lookup, or mutable configuration object is
+not sufficient reconstruction authority.
+
 ## State and authority extension
 
-The base `GRCState` fields remain required. For V4, `budget_target` is the
-serialized `Q_target` scalar and the two names must agree exactly.
+The base `GRCState` surface remains available. For V4, `budget_target` is a
+read-only compatibility property backed by the one serialized `Q_target`
+field; two stored copies are forbidden.
 
-Every `GRCV4State` additionally binds:
+Every `GRCV4State` binds one `GRCV4LifecycleState`, which is the single owner
+of:
 
-- graph and orientation identity;
+- canonical graph payload and orientation identity;
 - one exact `GRCV4Profile` and its canonical parameter identity;
 - context identity;
 - authoritative resource state $C$;
 - only the candidate- and realization-specific nonresource coordinates
   admitted by that profile;
-- ordered lifecycle, migration, event, and information-loss receipts;
-- RNG state where applicable; and
-- provenance for every retained derived cache.
+- a reduced reset baseline rather than a second live runtime;
+- one `Q_target`; and
+- ordered lifecycle, migration, event, and information-loss receipts.
 
 The profile rules determine whether $W_A$ or $Z_4$ is authoritative.
 Potential, current, selector, $T_C$, Hodge operators, structural geometry,
@@ -108,10 +121,15 @@ solver roots, row summaries, and coarse summaries remain derived or transient
 unless a family contract explicitly says otherwise. Caching or serializing a
 derived surface does not promote it to authoritative state.
 
-`get_state()` may expose live state under the base contract, but callers must
-not mutate profile identity or partially update V4 authority. `set_state()`
-must validate the entire target state atomically and must not alter the reset
-baseline, charge target, graph, profile, or history by implication.
+The current deterministic population has no scientific RNG state. Derived
+caches live outside scientific state. Snapshot-carried inspection caches are
+representation-only, provenance-bound, and excluded from scientific equality.
+
+`get_state()` must return immutable/read-only authority or a deep copy; it may
+not expose live mutable arrays, mappings, receipts, graph data, or reset data.
+`set_state()` must validate the entire target state atomically and must not
+alter the reset baseline, charge target, graph, profile, or history by
+implication.
 
 ## Graph and differential backend extension
 
@@ -158,6 +176,56 @@ domain, it must fail that capability request or expose the family-specified
 typed alternative. It must not silently substitute a quantity of another
 type.
 
+## V4 input-bearing operations
+
+The additive public request surface is:
+
+```python
+@dataclass(frozen=True)
+class GRCV4StepRequest:
+    dt: float
+    context_value: Mapping[str, JSONValue]
+    boundary_input: Mapping[str, JSONValue] | None = None
+    external_source: Mapping[str, JSONValue] | None = None
+    event: "GRCV4EventRequest | None" = None
+
+@dataclass(frozen=True)
+class GRCV4MigrationRequest:
+    target_profile: GRCV4Profile
+    history_policy_id: str
+    target_context_value: Mapping[str, JSONValue]
+
+@dataclass(frozen=True)
+class GRCV4TopologyEventRequest:
+    event_id: str
+    source_graph_id: str
+    target_graph: SerializedGraphState
+    resource_map_id: str
+    history_policy_id: str
+    payload: Mapping[str, JSONValue]
+
+def step_v4(self, request: GRCV4StepRequest) -> "GRCV4StepResult": ...
+def run_v4(
+    self,
+    requests: Iterable[GRCV4StepRequest],
+) -> list["GRCV4StepResult"]: ...
+def migrate_profile(
+    self,
+    request: GRCV4MigrationRequest,
+) -> "GRCV4LifecycleResult": ...
+def apply_topology_event(
+    self,
+    request: GRCV4TopologyEventRequest,
+) -> "GRCV4LifecycleResult": ...
+```
+
+The current context value and ordinary boundary/external inputs must enter
+through the request. Hidden mutable model fields, private queues, process
+globals, telemetry, or environment variables may not supply scientific beat
+input. An event present in `GRCV4StepRequest` is detected or requested at the
+declared beat stage, but its topology transaction is still executed through
+the typed event semantics before a target state commits.
+
 ## Lifecycle and event extension
 
 The inherited public methods remain:
@@ -169,13 +237,18 @@ def reset(self) -> None: ...
 def rebase_reset_baseline(self) -> None: ...
 ```
 
-For V4, `step()` is the exact atomic complete-step transaction defined in the
-`GRCV4` specification. All candidate and realization work is provisional
-until the complete authoritative state and its postconditions commit together.
-Any failure preserves the complete prestate.
+`step_v4()` is the exact atomic complete-step transaction defined in the
+`GRCV4` specification. All candidate and realization work is provisional until
+the complete authoritative state and its postconditions commit together. Any
+failure preserves the complete prestate.
 
-`run()` is only repeated application of that transaction. It must not reuse a
-cache, solver root, or history value beyond its declared identity or stage.
+The inherited `step()` may delegate only when construction bound an immutable,
+serialized `default_step_request`; otherwise it raises a typed
+`MissingV4StepRequest`. Inherited `run(num_steps)` is exactly repeated
+zero-argument `step()` under that same fixed default. `run_v4(requests)` is
+the input-sequence operation and returns one result per consumed request. No
+run method may reuse a cache, solver root, or history value beyond its declared
+identity or stage.
 
 `reset()` restores the admitted V4 reset state and its compatible graph,
 profile, parameters, charge target, retained history, and receipts.
@@ -183,10 +256,12 @@ profile, parameters, charge target, retained history, and receipts.
 baseline. Neither method may manufacture missing lineage.
 
 Profile migration and topology change are not ordinary `set_state()` calls.
-They are typed, ordered transformations of current and reset state followed by
-target reconstruction, readmission, and atomic commit. Their receipts must
-record source and target identities, charge effects, history disposition,
-information loss, and admission outcome.
+They execute only through `migrate_profile()` and `apply_topology_event()` as
+typed, ordered transformations of current and reset state followed by target
+reconstruction, readmission, and atomic commit. Their receipts must record
+source and target identities, charge effects, history disposition, information
+loss, and admission outcome. A target profile not present in
+`list_supported_profiles()` is rejected before provisional mutation.
 
 `GRC9V4` mechanical expansion is such a topology event. Its candidate
 detection, expansion, and child-basin completion remain distinct lifecycle
@@ -194,14 +269,48 @@ facts.
 
 ## Step results, events, and observables
 
-The base `StepResult` and `GRCEvent` shapes remain sufficient, but V4 payloads
-must preserve their stronger semantics.
+The additive result surface is:
+
+```python
+@dataclass(frozen=True)
+class GRCV4Failure:
+    stage: str
+    disposition: SolverDisposition | str
+    code: str
+    message: str
+    prestate_digest: str
+    poststate_digest: str
+
+@dataclass(frozen=True)
+class GRCV4StepResult(StepResult):
+    active_profile_id: str
+    disposition: SolverDisposition | str
+    committed: bool
+    commit_id: str | None
+    failure: GRCV4Failure | None
+    lifecycle_receipts: tuple[LifecycleReceipt, ...]
+
+@dataclass(frozen=True)
+class GRCV4LifecycleResult:
+    committed: bool
+    commit_id: str | None
+    failure: GRCV4Failure | None
+    lifecycle_receipts: tuple[LifecycleReceipt, ...]
+```
+
+Domain, solver, charge, migration, event, readmission, and compatibility
+failures return a noncommitted typed result. Programmer errors involving an
+invalid Python type or malformed object construction raise. A returned
+failure must have equal pre/post scientific-state digests. An exception raised
+after admission begins must provide the same atomicity guarantee.
 
 Every successful step result must identify the complete profile and committed
-step. Events must bind their graph/profile source and target, atomic commit,
-and relevant lifecycle receipt. A rejected transaction may return a typed
-failure result or raise a typed exception, but it must not report an event as
-committed.
+step. `StepResult.events` contains events from that attempted operation only.
+Persistent scientific crossing, charge, and information-loss receipts live in
+the lifecycle state. A telemetry log is nonauthoritative. Events must bind
+their graph/profile source and target, atomic commit, and relevant lifecycle
+receipt. A rejected transaction must not report an event as committed or
+append a persistent commit receipt.
 
 In addition to the common observables, `GRCV4` exposes the profile, candidate,
 realization, charge target/current/error, solver disposition, authoritative
@@ -213,12 +322,26 @@ Derived observables must name their producing stage. Capability and observable
 presence establishes implementation support only; it is not scientific
 evidence for stability, persistence, preference, or physical attribution.
 
-## Capability discovery
+## Capability and profile discovery
 
 Every `GRCV4` instance must advertise the common V4 capabilities declared in
 its family specification and only the candidate and realization capabilities
 it actually implements. Every `GRC9V4` instance must additionally advertise
 the required nine-port specialization capabilities.
+
+```python
+@property
+def active_profile_id(self) -> str: ...
+
+def list_supported_profiles(self) -> frozenset[str]: ...
+```
+
+`active_profile_id` is the exact complete-profile digest bound to the live
+instance. `list_supported_profiles()` is the lossless set of exact complete
+profile identities that this implementation can construct and migrate to.
+Candidate and realization capability flags are only marginals; they must not
+be used to infer unlisted cross-products. For example, support for `A_CI` and
+`C_OS` does not imply `A_OS` or `C_CI`.
 
 `list_capabilities()` describes executable support for the instance's exact
 profile. It must not:
@@ -241,7 +364,6 @@ stable reconstructible identity:
 - current and reset authoritative coordinates;
 - `Q_target` and the active charge profile;
 - candidate and persistent-carrier history only where admitted;
-- RNG state where applicable;
 - ordered migration, event, compatibility, and information-loss receipts; and
 - cache provenance sufficient to reject or deterministically rebuild every
   derived surface.

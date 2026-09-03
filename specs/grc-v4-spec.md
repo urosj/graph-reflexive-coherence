@@ -11,6 +11,8 @@ Primary sources:
 - [GRC-v4 proposal and provenance crosswalk][proposal]
 - [D10 design synthesis and specification-writing decision][d10]
 - [D10.2 substrate provenance and promotion audit][d10-2]
+- [V4 source identity manifest](grc-v4-source-manifest.json)
+- [V4 conformance fixture contract](grc-v4-conformance-fixtures.json)
 - [Common GRC interface](grc-common-interface.md)
 - [Common GRC interface: V4 extension](grc-common-interface-v4-ext.md)
 
@@ -47,6 +49,25 @@ The typed contract destinations map into the specs as follows:
 | `GRCV4_current_promoted_common_lifecycle` | 15 | Step, migration, event, snapshot, and atomicity contracts. |
 | `GRCV4_current_population_specification_grammar` | 8 | Profile identity, claims, and successor admission. |
 | `GRC9V4_specialization` | 53 | [`grc-9-v4-spec.md`](grc-9-v4-spec.md). |
+
+### Post-audit V4-only closure boundary
+
+The September 2026 specification-stack audit identified two places where the
+accepted source graph names a required object without fixing an executable
+map: Candidate C's baseline transport and the collision-free GRC9 expansion
+port allocation. This revision closes those two surfaces **for V4 only**:
+
+- the Candidate C section below defines the V4 baseline-mobility adapter,
+  potential, and baseline-current equation; and
+- [`GRC9V4`](grc-9-v4-spec.md) defines a collision-free V4 port allocation
+  and deterministic expansion policy.
+
+These are post-D10 normative specification closures. They do not rewrite the
+accepted D10 graph, count as backward evidence for a D10 claim, alter an older
+model family, or establish implementation conformance. In particular,
+`GRCV3`, `GRC9`, and `GRC9V3` remain unchanged. Where V4 reduces to an older
+family, the older artifact is a read-only target and all adaptation is owned
+by the V4 wrapper, projection, or migration operation.
 
 ## Conformance language
 
@@ -138,14 +159,25 @@ complete identity.
 ```python
 CandidateId = Literal["A", "C"]
 RealizationId = Literal["CI", "OS", "RG2b", "PC", "CI+PC"]
-ProfileId = Literal[
+ProfileFamilyId = Literal[
     "A_CI", "C_CI", "A_OS", "C_OS", "A_RG2b", "C_RG2b",
     "A_PC", "C_PC", "A_CI_PC", "C_CI_PC",
 ]
 
 @dataclass(frozen=True)
+class GRCV4ResolvedParams:
+    schema_version: Literal["grcv4-resolved-params-v1"]
+    common: Mapping[str, JSONValue]
+    candidate: Mapping[str, JSONValue]
+    realization: Mapping[str, JSONValue]
+    geometry: Mapping[str, JSONValue]
+    solver: Mapping[str, JSONValue]
+    lifecycle: Mapping[str, JSONValue]
+
+@dataclass(frozen=True)
 class GRCV4Profile:
-    profile_id: ProfileId
+    profile_family_id: ProfileFamilyId
+    complete_profile_id: str
     candidate: CandidateId
     realization: RealizationId
     differential_backend_id: str
@@ -158,13 +190,28 @@ class GRCV4Profile:
     domain_id: str
     solver_id: str
     lifecycle_policy_id: str
+    candidate_c_transport_id: str | None
     composition_gain: float | None
+    params_resolved: GRCV4ResolvedParams
     params_hash: str
 ```
 
-The `profile_id`, `candidate`, and `realization` fields must agree exactly. A
-different composition gain, writer, geometry map, selector policy, solver,
-units, normalization, or lifecycle rule requires a different identity.
+`profile_family_id`, `candidate`, and `realization` must agree exactly. The
+family identifier is not by itself a complete identity. `params_resolved` is
+serialized as UTF-8 JSON with lexicographically ordered object keys, preserved
+array order, no insignificant whitespace, and finite JSON numbers only. NaN,
+infinity, negative zero, duplicate keys, and implementation-native object
+encodings are forbidden. `params_hash` is
+`"sha256:" + SHA256(canonical_params_bytes)`, and `complete_profile_id` is the
+same construction over the family identifier, every identity field above,
+and `params_hash`.
+
+A different composition gain, writer, geometry map, Candidate C transport
+law, selector policy, solver, units, normalization, or lifecycle rule
+therefore produces a different `complete_profile_id`. A snapshot must carry
+both the resolved payload and its digest; a digest without the payload is not
+reconstructible authority. Schema evolution requires a new schema version and
+an explicit typed migration, never in-place reinterpretation.
 
 Candidate B is reserved and nonexecutable. It may be admitted only after a
 source-backed $U_B$ formation, retention, release, capacity, and lifecycle
@@ -187,30 +234,49 @@ nonresource coordinates only in the rows that declare them. Candidate C has
 no independent $T_C$ state.
 
 ```python
-@dataclass
-class GRCV4State(GRCState):
-    # Inherited budget_target is the serialized Q_target scalar.
-    graph_identity: str
-    orientation_identity: str
-    profile: GRCV4Profile
-    context_identity: str
+@dataclass(frozen=True)
+class GRCV4AuthoritativeState:
     C: ArrayLike
     W_A: ArrayLike | None
     Z_4: ArrayLike | None
-    lifecycle_receipts: list[Mapping[str, Any]]
-    rng_state: Any | None
-    derived_cache: Mapping[str, Any]
 
-@dataclass
+@dataclass(frozen=True)
+class GRCV4ResetBaseline:
+    authoritative: GRCV4AuthoritativeState
+    graph_identity: str
+    orientation_identity: str
+    complete_profile_id: str
+    context_contract_id: str
+
+@dataclass(frozen=True)
 class GRCV4LifecycleState:
-    current: GRCV4State
-    reset: GRCV4State
+    step_index: int
+    time: float
+    graph: SerializedGraphState
+    orientation_identity: str
+    profile: GRCV4Profile
+    context_identity: str
+    current: GRCV4AuthoritativeState
+    reset: GRCV4ResetBaseline
     Q_target: float
+    lifecycle_receipts: tuple[LifecycleReceipt, ...]
+
+@dataclass(frozen=True)
+class GRCV4State(GRCState):
+    lifecycle: GRCV4LifecycleState
 ```
 
-The inherited `budget_target` field and lifecycle `Q_target` denote the same
-serialized scalar and must agree exactly; an implementation may expose
-`Q_target` as the V4-facing property name.
+`GRCV4State.budget_target` is a compatibility property backed by
+`lifecycle.Q_target`; it is not separately stored. The lifecycle object is the
+single owner of graph, profile, reset, target, clock, and persistent receipt
+authority. The reset baseline contains only reset-authoritative scientific
+coordinates and the identities needed to readmit them; it is not a second
+live runtime with independent caches, receipts, RNG, or clock.
+
+The current V4 population is deterministic. It has no scientific `rng_state`.
+A stochastic successor must add an identity-bearing RNG algorithm, seed/state,
+sampling stage, distribution, serialization, and replay contract under a new
+profile identity.
 
 The implementation must validate the tagged state shape:
 
@@ -220,6 +286,15 @@ The implementation must validate the tagged state shape:
   space; CI, OS, and RG2b require `Z_4 is None`.
 - `current` and `reset` states must bind compatible graph, context, profile,
   parameter, charge, and lifecycle identities.
+- `graph` must contain the canonical serialized graph payload or an exact
+  reconstructible graph identity; a family state with neither is invalid.
+
+Authoritative arrays and mappings exposed through `get_state()` must be
+immutable/read-only or deep copies. Mutation outside `set_state()` or a typed
+V4 transaction must be impossible. Derived caches live outside scientific
+state; if a snapshot carries a cache for inspection, it is representation-only,
+provenance-bound, excluded from scientific equality, and rejected or rebuilt
+when stale.
 
 ### Derived and transient surfaces
 
@@ -415,6 +490,25 @@ $$
 K_4\longrightarrow(H_0,H_{1,\mathrm{form}},G_J)\longrightarrow h_4.
 $$
 
+The geometry profile has one canonical signature:
+
+```python
+def H_profile(
+    K_4: K4Tensor,
+    *,
+    reference: GRCV4ReferenceGeometry,
+    context: GRCV4Context,
+    profile: GRCV4Profile,
+) -> GRCV4Geometry:
+    ...
+```
+
+Every shorter mathematical occurrence such as
+$H_{\mathrm{profile}}(K_4)$ suppresses arguments already bound by the active
+complete profile; it is not a different overload or permission to choose new
+defaults. Reference, context, or profile changes that can change the result
+change the complete identity or require a typed migration.
+
 The implementation must preserve the distinct types
 
 $$
@@ -595,6 +689,80 @@ H_{1,\mathrm{form},M}
 \qquad
 I_{4M}=H_{1,\mathrm{form},M}H_{1,\mathrm{form,pre}}^{-1},
 $$
+
+### Candidate C V4 baseline transport closure
+
+Candidate C uses the inherited scalar-mobility potential-flow channel through
+an explicit V4-only typed adapter. It does not infer transport mobility from
+$H_{1,\mathrm{form},M}$, $G_J$, or $h_4$ by equal dimensions or matrix
+coincidence.
+
+At the exact stage selected by the realization, define the derived positive
+edge mobility
+
+$$
+W_{0,C,e}(C,T_C(h),h,U)
+=W_{\mathrm{ref},e}
+\exp\!\left(
+\kappa_{J,C}\kappa_{M,C}r_{C,e}(T_C(h),h)
+\right),
+$$
+
+where $W_{\mathrm{ref},e}>0$, $C_{\mathrm{ref}}>0$, and
+$\kappa_{J,C}$ are resolved Candidate C parameters. The typed transport map is
+
+$$
+\mathcal M_C^{\mathrm{V4}}:
+(C,T_C,h,U;\theta_C)\longmapsto
+M_{4,C}=\eta_C\operatorname{Diag}(W_{0,C}),
+$$
+
+on physical current space. This displayed map is the authority transfer; no
+Hodge matrix is silently retyped as mobility. The Candidate C potential and
+baseline current are
+
+$$
+\Phi_{C,i}
+=\kappa_C\sum_{e\sim i}W_{0,C,e}
+\bigl(C_i-C_{\operatorname{nbr}(e,i)}\bigr)
+-V_C'(C_i;U),
+$$
+
+$$
+\boxed{
+J_{0,C}(C,T_C(h),h,U)
+=-M_{4,C}(C,T_C(h),h,U)\,d_0\Phi_C
+}.
+$$
+
+$r_C$, $\kappa_{J,C}$, and $\kappa_{M,C}$ are dimensionless;
+$W_{\mathrm{ref}}$ carries scalar-mobility units; $\eta_C$ converts the
+potential differential to physical flux. $V_C'$ and $\kappa_C$ must be
+resolved so both terms of $\Phi_C$ have the same units. The scalar potential
+gauge is immaterial because only $d_0\Phi_C$ enters the current. The map is
+finite, positive, graph-relabel covariant, and sign-even under stored-edge
+reorientation on its declared fixed-topology selector stratum.
+
+The current V4 Candidate C profile binds
+`candidate_c_transport_id = "candidate_c_log_sector_potential_flow_v1"` and
+the canonical parameters and site-potential definition in
+`params_resolved`. A different evaluator or coefficient has a different
+complete profile identity. $W_{0,C}$ and $M_{4,C}$ are derived same-beat
+surfaces, never retained state.
+
+The controls are exact:
+
+- $\kappa_{M,C}=0$ returns $W_{0,C}=W_{\mathrm{ref}}$ and removes the
+  selected-content baseline conditioning;
+- $\chi_C=0$ removes the explicit causal Read-Back but leaves the conditioned
+  $J_{0,C}$ active; and
+- $\zeta_C=0$ makes the authoritative current equal to $J_{0,C}$ while any
+  read remains diagnostic only.
+
+After a topology event, profile migration, or target reconstruction,
+$W_{0,C}$ is rebuilt from the target $C$, selector, graph, reference mobility,
+geometry, context, and resolved parameters before readmission. It is never
+resized or transported as history.
 
 $$
 \Delta_{1,M}=B^\top H_{0,M}^{-1}BH_{1,\mathrm{form},M},
@@ -795,6 +963,12 @@ must not be labeled native release. PC is not Candidate B.
 
 Specifically,
 
+$K_{X,a}$ is the compact admitted base-state chart for candidate $a$.
+$\mathcal H_{\mathrm{adm}}$ is the admitted geometry class on which the
+canonical $H_{\mathrm{profile}}$ call and selected current solve are lawful.
+Both are resolved, identity-bearing profile domains rather than inferred
+solver neighborhoods.
+
 $$
 \mathcal B_{R,a}=\{Z:\lVert Z\rVert_K\le R_a\},
 $$
@@ -884,8 +1058,10 @@ Candidate A parameters include $\eta$, $\kappa_c$, site potential,
 $W_{\mathrm{floor}}$, $\alpha$, $\beta$, $\gamma$, $\kappa_{Ah}$,
 $\chi_A$, $\zeta_A$, $\tau_A$, and the admitted $D/G_W$ backend. Candidate C
 parameters include $\Lambda_C$, selector boundary policy, $C_{\mathrm{ref}}$,
-$\kappa_{M,C}$, $\tau_C$, $\chi_C$, $\zeta_C$, its baseline-current
-factorization, and conditioning policy. PC and CI+PC additionally bind
+$\kappa_{M,C}$, $\kappa_{J,C}$, $\eta_C$, $\kappa_C$,
+$W_{\mathrm{ref}}$, the exact $V_C'$ evaluator,
+`candidate_c_log_sector_potential_flow_v1`, $\tau_C$, $\chi_C$, $\zeta_C$,
+and the current-block conditioning policy. PC and CI+PC additionally bind
 $\tau_{\mathrm{PC},a}$, $R_a$, $K_{X,a}$, carrier norm/source envelope, and,
 for CI+PC, $\rho_{\mathrm{inst},a}=1$.
 
@@ -895,7 +1071,10 @@ telemetry, storage cadence, and device placement remain runtime configuration.
 
 ## Complete-step transaction
 
-`step()` must be an atomic transaction in this order:
+`step_v4(request)` is the normative input-bearing operation and must be an
+atomic transaction in this order. The inherited zero-argument `step()` may
+delegate only through the immutable, serialized default request defined by the
+[V4 interface extension](grc-common-interface-v4-ext.md#v4-input-bearing-operations).
 
 1. Admit the complete profile, graph, context, current/reset state,
    $Q_{\mathrm{target}}$, time, solver, and domain identities.
@@ -1017,20 +1196,47 @@ preserved/initialized/archived/dropped status; target reconstruction and
 readmission disposition; information-loss classification; and atomic commit
 identity.
 
+Receipt ownership is separated from ordinary event reporting:
+
+```text
+StepResult.events
+    events emitted by this attempted or committed operation only
+
+lifecycle_receipts
+    persistent scientific migration, topology, charge, and information-loss
+    receipts owned by GRCV4LifecycleState
+
+telemetry log
+    nonauthoritative runtime observations excluded from scientific equality
+```
+
+A rejected operation may expose a failure event in its returned result, but it
+must not append that event or a commit receipt to persistent lifecycle state.
+Reset restores the reset baseline and appends a reset receipt to the existing
+lifecycle lineage; it does not resurrect a stale receipt list from the reset
+payload. Rebase replaces the reset baseline and appends a rebase receipt.
+Save/load preserves persistent receipts, while duplicate deep-copies them.
+Telemetry is neither restored as authority nor compared for scientific state
+equality. A migration into the GRC9V4 disabled branch transfers receipt
+authority to the explicit V4 wrapper while the embedded legacy delegate
+retains exactly its native lifecycle representation.
+
 ## Analysis interfaces
 
 Structural Hessians, complete-step Jacobians, direct Read-Back derivatives,
 spatial operators, projectors, spectra, and sensitivity chains are analysis
 objects. They must never write runtime state.
 
-An implementation may expose:
+An implementation may expose signatures equivalent to:
 
 ```python
-def structural_operator(...): ...
-def transition_jacobian(...): ...
-def readback_derivative(...): ...
-def spatial_operator(...): ...
-def local_regularity_certificate(...): ...
+def structural_operator(request: StructuralOperatorRequest) -> LinearOperator: ...
+def transition_jacobian(request: JacobianRequest) -> LinearOperator: ...
+def readback_derivative(request: ReadBackDerivativeRequest) -> LinearOperator: ...
+def spatial_operator(request: SpatialOperatorRequest) -> LinearOperator: ...
+def local_regularity_certificate(
+    request: RegularityRequest,
+) -> RegularityCertificate: ...
 ```
 
 Such an interface must bind the exact formed branch, complete profile,
@@ -1077,7 +1283,6 @@ A snapshot must preserve, directly or by stable reconstructible identity:
 - context, units, gauge, normalization, geometry, solver, and domain identity;
 - authoritative current and reset coordinates for the selected profile;
 - $Q_{\mathrm{target}}$ and charge profile;
-- RNG state when applicable;
 - ordered migration/event/loss receipts; and
 - cache provenance sufficient to reject or rebuild derived surfaces.
 
@@ -1105,6 +1310,13 @@ The implementation must raise or return an explicit typed failure for:
 - incompatible or unreconstructible snapshot identity.
 
 Every such failure leaves the complete authoritative prestate unchanged.
+
+The machine-readable
+[V4 conformance fixture contract](grc-v4-conformance-fixtures.json) is
+normative for case identifiers, inputs, expected dispositions, digest checks,
+V4-only expansion allocation, and the independent $10\times4$ disabled
+matrix. It is a preimplementation fixture contract: passing its schema audit
+does not claim that a runtime implementation has executed the cases.
 
 ## Claim conformance matrix
 

@@ -33,6 +33,8 @@
   },
   "authorized_specification_outputs": [
     "specs/grc-common-interface-v4-ext.md",
+    "specs/grc-v4-conformance-fixtures.json",
+    "specs/grc-v4-source-manifest.json",
     "specs/grc-v4-spec.md",
     "specs/grc-9-v4-spec.md"
   ],

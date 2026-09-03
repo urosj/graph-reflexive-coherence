@@ -64,6 +64,15 @@ state automatically and includes this successor audit when it is active.
   common resource, authority, structural-Hodge, complete-step, lifecycle, and
   claim-ceiling contracts plus the current optional A/C by
   CI/OS/RG2b/PC/CI+PC profile population.
+- `grc-v4-source-manifest.json`
+  Machine-readable, path/commit/hash-bound identity of the paper, proposal,
+  D10/D10.2 records, unchanged common interface, read-only GRC9V3 reduction
+  target, and historical G-RC-9 mechanics source used by the V4 stack.
+- `grc-v4-conformance-fixtures.json`
+  Normative preimplementation fixture contract for generic, candidate,
+  realization, lifecycle, collision-free GRC9 expansion, and independent
+  $10\times4$ disabled-compatibility cases. It defines required evidence but
+  does not claim that a runtime has executed it.
 - `grc-9-spec.md`
   Nine-slot mechanical substrate implementation from `papers/2026-04-GRC-9.md`, with single dynamical conductance and shared analytic edge labels.
 - `grc-9-v3-spec.md`
@@ -74,10 +83,11 @@ state automatically and includes this successor audit when it is active.
   `grc9v3_column_h_assisted` spark lane.
 - `grc-9-v4-spec.md`
   Normative nine-port specialization of `GRCV4`. It adds the fixed port chart
-  and row backend, corrected canonical mechanical expansion, hybrid spark,
+  and row backend, V4-owned collision-free canonical mechanical expansion,
+  hybrid spark,
   child-basin completion, column coarse-graining, the exact Candidate-A
   initializer binding, and four independently scoped disabled reductions to
-  `GRC9V3` for every supported profile.
+  an embedded read-only `GRC9V3` target for every supported profile.
 - `grc-9-v3-evidence-profile.md`
   Bounded Phase 7, B1-GR, and B2-GR verification basis for the GRC9V3
   causal-state, persistence, retention, and Read-Back boundaries. Experimental
