@@ -563,6 +563,93 @@ The table below is a drafting-control surface. It does not replace the accepted 
 
 ---
 
+### Appendices A–C tranche status
+
+**Status:** Working synthesis from the accepted GRC-v4/GRC9V4 constitutive-design investigation.
+
+**Intended use:** Integrated controlled content in `drafts/GRCV4-proposal.md`.
+
+**Scientific authority:** None independent of the accepted investigation.
+
+**Current controlling closure:** Accepted D10.2, decision digest `28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c`.
+
+This tranche implements three controlled extraction surfaces:
+
+1. **Appendix A** imports the graph-generic GRC-v4 contract and adds only the thirteen objects that accepted D10.2 classifies as GRC9V4 specialization content.
+2. **Appendix B** consolidates notation, type, authority, writer, reader, and lifecycle status already fixed in the accepted investigation.
+3. **Appendix C** restates the ten accepted complete profiles directly from the D9 profile/state/lifecycle registry and accepted realization records.
+
+Appendices B and C therefore pass into this tranche. They do not choose new types, complete an absent profile, or derive an implementation schema. All side-tool association results remain `indeterminate_requires_review`; the tables below are source-directed crosswalks, not reconstructed support proof.
+
+No `D11++` item is named in advance. A successor investigation would arise only if one of these appendices required a proposition not present in the accepted source graph.
+
+The forensic API audit reconstructed all eight claims cited by these appendices, queried all 53 referenced D10.2 parent objects and all 53 explicit contract rows, and confirmed the D9, D10, and D10.2 gate authority against the current exact source bundle. The cited claim classes remain seven `optional` and one `conditional`; the thirteen specialization objects remain eight `GRC9_intrinsic` and five `GRC9_specialization_specific`; and the disabled matrix resolves to exactly forty independent rows. Every association-level result retains `indeterminate_requires_review`.
+
+### Source-control rules
+
+- The main paper owns graph-generic GRC-v4 equations. Appendix A imports them and does not duplicate a second core loop.
+- GRC9V4 specialization content is limited to the thirteen accepted specialization-only parent objects.
+- The baseline GRC9V3 spark lane is the current-hybrid signed-Hessian lane. The direct column-$H$ lane remains a named opt-in lane and cannot silently replace the baseline.
+- The historical row-basis node tensor is not graph $K_4$ and is not the V4 $K_4\to H_4\to h_4$ crossing.
+- Exact GRC9V3 compatibility is stated independently for transition, state, observable, and lifecycle surfaces for each of the ten profiles.
+- `D10_2_CL_N_001` remains a source-local provenance label, not a queryable claim node.
+- No statement below authorizes implementation or claims runtime conformance.
+
+### Appendix A source crosswalk
+
+| Appendix location | Specialization parent object(s) | D10.2 parent contract row(s) | Primary accepted source surface |
+|---|---|---|---|
+| A.2 | `GRC9-ORDERED-PORTS` | `D10.2-EC-PARENT-GRC9-ORDERED-PORTS` | GRC-9 port-graph substrate; GRC9V3 state/spec |
+| A.3 | `GRC9-ROW-COLUMN-CHART` | `D10.2-EC-PARENT-GRC9-ROW-COLUMN-CHART` | GRC-9 fixed chart and interface semantics |
+| A.4 | `BASE-GRC9-ROW-BASIS-DIFFERENTIAL` | `D10.2-EC-PARENT-BASE-GRC9-ROW-BASIS-DIFFERENTIAL` | GRC9V3 fixed-port-chart differential backend and Phase-7 equation map |
+| A.5 | `GRC9-SATURATION`, `GRC9-HYBRID-SPARK` | `D10.2-EC-PARENT-GRC9-SATURATION`, `D10.2-EC-PARENT-GRC9-HYBRID-SPARK` | GRC9V3 baseline signed-Hessian spark lane |
+| A.6 | `GRC9-MECHANICAL-EXPANSION` | `D10.2-EC-PARENT-GRC9-MECHANICAL-EXPANSION` | GRC-9 mechanical module construction plus D9 typed-event lifecycle |
+| A.7 | `GRC9-CHILD-BASIN-STABILIZATION` | `D10.2-EC-PARENT-GRC9-CHILD-BASIN-STABILIZATION` | GRC9V3 completion criterion and hierarchy update |
+| A.8 | `GRC9-COLUMN-COARSE-GRAINING` | `D10.2-EC-PARENT-GRC9-COLUMN-COARSE-GRAINING` | GRC-9 $\mathcal G$/Split and Phase-7 operator rule |
+| A.9 | `L-A-INITIALIZER-GRC9V3` | `D10.2-EC-PARENT-L-A-INITIALIZER-GRC9V3` | GRC9V3 runtime base-conductance reconstruction and D9 migration/event contract |
+| A.10 | `BASE-DISABLED-TRANSITION`, `BASE-DISABLED-STATE`, `BASE-DISABLED-OBSERVABLE`, `BASE-DISABLED-LIFECYCLE` | `D10.2-EC-PARENT-BASE-DISABLED-TRANSITION`, `D10.2-EC-PARENT-BASE-DISABLED-STATE`, `D10.2-EC-PARENT-BASE-DISABLED-OBSERVABLE`, `D10.2-EC-PARENT-BASE-DISABLED-LIFECYCLE`, plus the forty profile-scoped rows | D9 V3 reduction surface contract and D10.2 forty-row matrix |
+
+**Appendix A disposition:** complete from accepted specialization sources. No new scientific contradiction and no mandatory successor investigation are exposed.
+
+**Appendix B disposition:** complete as a controlled type consolidation. It introduces no new symbol with independent scientific authority and exposes no paper-blocking boundary.
+
+### Appendix C source crosswalk
+
+| Registry content | Controlling accepted source |
+|---|---|
+| profile IDs, state authority, normal-step order, regularity, snapshot and topology boundaries | `D9ProfileStateLifecycleRegistry.json` |
+| A/C candidate equations and writers | D4v2–D7/D7v2 accepted candidate records |
+| CI root and contraction rules | `GeometryTemporalRealizationSuccessorCoupledImplicit` and D8-B |
+| OS stage order and split residual | `GeometryTemporalRealizationSuccessorOperatorSplit` |
+| RG2b invariant-section identity and ceiling | `GeometryTemporalRealizationSuccessorReconstructedGeometry` |
+| PC carrier state, ZOH writer, release, and carrier ball | `GeometryTemporalRealizationSuccessorPersistentCarrier` |
+| CI+PC same-source composition and gain-two identity | `GeometryTemporalRealizationHybridCoupledPersistentCarrier` |
+| complete-step, lifecycle, migration, event, and disabled-branch semantics | D9 and its lifecycle/coverage registries |
+| current-population status and no-ranking/no-exhaustiveness ceiling | D10 and accepted D10.2 |
+
+**Appendix C disposition:** all ten accepted profiles are represented without inventing a state, writer, root, event map, or compatibility surface. No mandatory successor investigation is exposed.
+
+### Appendices A–C pressure result
+
+```text
+specialization-only parent objects represented = 13 / 13
+GRC9-intrinsic objects represented              = 8 / 8
+GRC9V3-target-specific objects represented       = 5 / 5
+disabled profile/surface contracts represented   = 40 / 40
+complete profiles represented                    = 10 / 10
+profile authority classes preserved              = true
+Candidate C G_J / I_4M typing preserved          = true
+persistent-carrier notation Z_4,a preserved      = true
+D10_2_CL_N_001 treated as a source-local label   = true
+new scientific equation introduced               = false
+new claim promoted                                = false
+premature D11++ item                              = none
+```
+
+The three appendices are therefore integrated as a single controlled tranche. Any later correction should be traced to the accepted source record and applied here as an extraction correction, not developed as an appendix-side alternative theory.
+
+---
+
 # Paper Skeleton
 
 ## Abstract
@@ -7272,241 +7359,953 @@ Do not end with “future work will prove” any open claim. State only the acce
 
 ## Appendix A. GRC9V4: Nine-Port Specialization of GRC-v4
 
-This appendix is the substantive GRC9V4 extension. It must import the common V4 equations rather than duplicate a second core dynamics.
+### A.1 Specialization statement and ownership
 
-### A.1 Specialization statement
-
-State:
+GRC9V4 is the substantive nine-port specialization of the graph-generic GRC-v4 substrate:
 
 ```text
 GRC9V4
     = GRCV4 common contract
     + nine-port graph mechanics
-    + GRC9 differential specialization
-    + GRC9 topology/refinement mechanics
-    + exact GRC9V3 disabled compatibility
+    + fixed-chart GRC9 differential specialization
+    + GRC9 mechanical refinement and coarse-graining
+    + exact profile-scoped GRC9V3 disabled compatibility.
 ```
+
+Equivalently, the accepted bounded factorization is
+
+$$
+\mathrm{GRCV4}
+\longrightarrow
+\mathrm{GRC9V4}
+\longrightarrow
+\mathrm{GRC9V3}.
+$$
+
+The first arrow adds substrate mechanics. The second selects an exact compatibility branch. Neither arrow says that GRC9V4 is merely a wrapper, that nine ports are universally necessary, or that every future V4 profile has already passed the same promotion audit.
+
+Accepted D10.2 partitions the specialization into eight GRC9-intrinsic objects and five GRC9V3-target-specific compatibility objects:
+
+| Parent object | D10.2 disposition | Specialization role |
+|---|---|---|
+| `BASE-GRC9-ROW-BASIS-DIFFERENTIAL` | `GRC9_intrinsic` | Fixed-port-chart row gradient, signed Hessian, net-flux summary, and baseline row-basis backend. |
+| `GRC9-ORDERED-PORTS` | `GRC9_intrinsic` | Nine ordered interface slots on every GRC9 node. |
+| `GRC9-ROW-COLUMN-CHART` | `GRC9_intrinsic` | Fixed $3\times3$ row/column factorization of the nine ports. |
+| `GRC9-SATURATION` | `GRC9_intrinsic` | Local representational-capacity gate at nine active ports. |
+| `GRC9-MECHANICAL-EXPANSION` | `GRC9_intrinsic` | Column-preserving local module replacement and boundary reassignment. |
+| `GRC9-HYBRID-SPARK` | `GRC9_intrinsic` | Hybrid candidate combining GRC9 saturation with GRC-v3 basin-interior signed-Hessian degeneracy. |
+| `GRC9-CHILD-BASIN-STABILIZATION` | `GRC9_intrinsic` | Completion only after post-expansion gain of a stable child basin or attractor. |
+| `GRC9-COLUMN-COARSE-GRAINING` | `GRC9_intrinsic` | Chart-specific $\mathcal G$/Split operator, including exact signed-flux mode. |
+| `BASE-DISABLED-TRANSITION` | `GRC9_specialization_specific` | Exact profile-scoped transition reduction to GRC9V3. |
+| `BASE-DISABLED-STATE` | `GRC9_specialization_specific` | Exact profile-scoped authoritative-state projection to GRC9V3. |
+| `BASE-DISABLED-OBSERVABLE` | `GRC9_specialization_specific` | Exact equality on the GRC9V3 observable set with V4-only surfaces projected out. |
+| `BASE-DISABLED-LIFECYCLE` | `GRC9_specialization_specific` | Exact use of GRC9V3 lifecycle/event semantics only on the disabled branch. |
+| `L-A-INITIALIZER-GRC9V3` | `GRC9_specialization_specific` | Exact GRC9V3 base-conductance reconstruction bound to Candidate-A target initialization. |
+
+The remaining fifty-four parent objects in the current D10 population belong to graph-generic GRC-v4, core-theory basis, or substrate-independent profile/claim grammar. Appendix A consumes those objects through the main paper rather than restating them as GRC9 discoveries.
+
+> **Promotion boundary:** `GRC9_specialization_specific` does not mean mathematically intrinsic to nine ports. It means that the object deliberately targets exact GRC9V3 compatibility and therefore belongs to the GRC9V4 specialization rather than the generic GRC-v4 contract.
 
 ### A.2 Port-labeled graph
 
-Extract from the existing GRC-9 lineage:
+A GRC9V4 state lives on a port graph
 
-* nine ordered ports;
-* endpoint port pairs;
-* active/inactive ports;
-* active degree;
-* edge orientation and antisymmetric flux;
-* per-edge versus per-port storage interpretation.
+$$
+\Gamma=(V,E,\sigma),
+$$
 
-### Required source objects
+where every undirected edge is attached to one ordered port at each endpoint:
 
-* `GRC9-ORDERED-PORTS`
+$$
+\sigma(e)=\bigl((i,r),(j,s)\bigr),
+\qquad
+r,s\in\{1,\ldots,9\}.
+$$
 
----
+An inactive port is an unused interface slot. The active degree is
+
+$$
+\deg_{\mathrm{act}}(i)
+=
+\#\left\{
+ r\in\{1,\ldots,9\}:
+ \exists e\text{ incident to }(i,r)
+\right\}
+\leq 9.
+$$
+
+The underlying adjacency remains undirected. Flux is oriented by a declared coordinate convention on each undirected edge. For a unique occupied endpoint pair,
+
+$$
+w_{ij}=w_{ji},
+\qquad
+J_{ji}=-J_{ij}.
+$$
+
+An implementation may store edge-attached quantities either once per undirected edge or at the two occupied endpoint ports, provided that the endpoint pairing is unique and the symmetry/antisymmetry relations are exact. With port coordinates $(a,b)$ at node $i$,
+
+$$
+w_{ij}\equiv w_{i,a,b},
+\qquad
+J_{ij}\equiv J_{i,a,b}.
+$$
+
+Multiple edges, when admitted, require explicit edge identity and aggregation; they cannot be hidden behind a single port lookup.
+
+The nine ports are mechanical interface data. They do not add a second resource coordinate, do not replace complete-profile identity, and do not make port-attached caches independent state. Candidate and realization authority remains exactly as defined in the graph-generic main paper.
+
+> **Source object:** `GRC9-ORDERED-PORTS`.
 
 ### A.3 Fixed $3\times3$ chart
 
-Define:
+Each ordered port index is identified with one mode row and one polarity column:
 
-* three mode rows;
-* three polarity columns;
-* fixed port-to-$(a,b)$ map;
-* row role in the local directional backend;
-* column role in interface routing, refinement, and coarse-graining.
+$$
+a,b\in\{1,2,3\},
+\qquad
+r=b+3(a-1).
+$$
 
-### Required source objects
+The row and column partitions are
 
-* `GRC9-ROW-COLUMN-CHART`
+$$
+\mathcal R_1=\{1,2,3\},
+\quad
+\mathcal R_2=\{4,5,6\},
+\quad
+\mathcal R_3=\{7,8,9\},
+$$
 
-The existing GRC-9 paper treats rows as local directional structure and columns as stable boundary/interface families.
+and
 
-### Boundary
+$$
+\mathcal C_1=\{1,4,7\},
+\quad
+\mathcal C_2=\{2,5,8\},
+\quad
+\mathcal C_3=\{3,6,9\}.
+$$
 
-Do not claim that continuum RC contains nine primitive directions. The chart is a discrete specialization.
+For an active port $(a,b)$ at node $i$, let $n(i,a,b)$ be the neighbor reached through that port.
 
----
+The two chart axes have different roles:
 
-### A.4 GRC9 row-basis differential backend
+- **Mode rows** supply the three fixed local directional classes used by the GRC9 row-basis differential and node-tensor backend.
+- **Polarity columns** supply stable interface families used for deterministic boundary reassignment, column-preserving refinement, and the $\mathcal G$/Split coarse-graining operator.
 
-Present the exact fixed row-basis gradient, Hessian, and flux-summary backend used by the GRC9 specialization.
+The chart is a fixed discrete convention. It is not an additional dynamical field, not a host-space embedding frame, and not evidence that continuum RC contains nine primitive directions. A different local chart would be a different specialization contract.
 
-### Required source objects
+> **Source object:** `GRC9-ROW-COLUMN-CHART`.
 
-* `BASE-GRC9-ROW-BASIS-DIFFERENTIAL`
+### A.4 Fixed row-basis differential backend
 
-### Boundary
+Let $\mathcal T_i^{(a)}$ be the occupied edges incident to node $i$ through mode row $a$. Define
 
-Do not promote this backend into the graph-generic main text.
+$$
+Z_i^{(a)}
+=
+\sum_{j:\,(i,j)\in\mathcal T_i^{(a)}}w_{ij},
+$$
 
----
+with zero row contribution when $Z_i^{(a)}=0$. The accepted row-basis gradient summary is
 
-### A.5 Saturation and mechanical expansion
+$$
+\mathbf g_i
+=
+\sum_{a=1}^{3}
+\left(
+\frac{1}{Z_i^{(a)}}
+\sum_{j:\,(i,j)\in\mathcal T_i^{(a)}}
+ w_{ij}(C_j-C_i)
+\right)\mathbf e_a.
+$$
 
-Extract:
+The baseline diagonal row-basis Hessian summary is
 
-* nine-port saturation;
-* mechanical refinement trigger;
-* column-preserving boundary reassignment;
-* resource transfer;
-* internal module construction;
-* typed topology-event lifecycle.
+$$
+H_i
+=
+\sum_{a=1}^{3}
+\left(
+\frac{1}{Z_i^{(a)}}
+\sum_{j:\,(i,j)\in\mathcal T_i^{(a)}}
+ w_{ij}(C_j-C_i)
+\right)
+\mathbf e_a\otimes\mathbf e_a,
+$$
 
-### Required source objects
+and the accepted sign convention is
 
-* `GRC9-SATURATION`
-* `GRC9-MECHANICAL-EXPANSION`
+$$
+\widetilde H_i=s_HH_i,
+\qquad
+s_H\in\{+1,-1\},
+$$
 
-### Boundary
+with $s_H$ chosen so that stable basin interiors are positive-definite under the declared convention.
 
-Generic graph topology change is not identical to GRC9 mechanical expansion.
+The row net-flux summary is
 
----
+$$
+\mathbf J_i^{\mathrm{net}}
+=
+\sum_{a=1}^{3}
+\left(
+\sum_{e\in\mathcal T_i^{(a)}}J_{i,e}
+\right)\mathbf e_a.
+$$
 
-### A.6 Hybrid spark completion and child basins
+The accepted GRC9V3 hybrid node tensor remains diagonal in this row basis. In its historical notation,
 
-Present the accepted GRC9 hybrid sequence:
+$$
+K_i[a,a]
+=
+\lambda_c C_i
++
+\xi_c
+\sum_{j\in\text{row }a}
+ w_{ij}(C_j-C_i)^2
++
+\zeta_c
+\left(\sum_jJ_{ij}\right)^2.
+$$
+
+The $\xi_c$ contribution is row-local and diagonal; it is not an outer product of $\mathbf g_i$. The $\zeta_c$ contribution is an isotropic scalar added to each diagonal entry; it is not $\mathbf J_i^{\mathrm{net}}(\mathbf J_i^{\mathrm{net}})^\top$.
+
+This historical row tensor must not be relabeled as graph $K_4$. It is a GRC9/GRC9V3 chart-based analytic surface, whereas V4 $K_4$ is the typed graph-local bilinear structural object developed in the main paper.
+
+The specialization fixes
+
+```text
+frame_mode = fixed_port_chart
+hessian_backend = row_basis_diagonal
+```
+
+for its baseline. A weighted-least-squares Hessian may be exposed as a named comparison backend, but it cannot silently become the default. Backend identity, sign convention, regularization, stage, and comparison status are part of the complete specialization profile.
+
+> **Source object:** `BASE-GRC9-ROW-BASIS-DIFFERENTIAL`.
+
+### A.5 Saturation and the hybrid spark candidate
+
+The mechanical saturation gate is exact full occupancy:
+
+$$
+\deg_{\mathrm{act}}(s)=9.
+$$
+
+Near-saturation rules, virtual stubs, or an eight-port trigger are successor/extension choices and are not the baseline GRC9V4 specialization.
+
+A geometric basin seed in the GRC-v3 reading satisfies
+
+$$
+\lVert\mathbf g_i\rVert<\varepsilon_\nabla,
+\qquad
+\lambda_{\min}(\widetilde H_i)>\varepsilon_H>0.
+$$
+
+The baseline GRC9V3/GRC9V4 hybrid candidate condition is
+
+$$
+\deg_{\mathrm{act}}(s)=9
+\quad\wedge\quad
+\lVert\mathbf g_s\rVert<\varepsilon_\nabla
+\quad\wedge\quad
+\lambda_{\min}(\widetilde H_s)<\varepsilon_{\mathrm{spark}}.
+$$
+
+This is the `current_hybrid_signed_hessian` lane. It combines a GRC9 capacity condition with GRC-v3 basin-interior and signed-Hessian degeneracy evidence.
+
+The per-column mechanical diagnostic
+
+$$
+H_s^{(b)}
+=
+\sum_{a=1}^{3}
+ w_{s,a,b}
+ \bigl(C_{n(s,a,b)}-C_s\bigr),
+\qquad b=1,2,3,
+$$
+
+is retained as a distinct GRC9 diagnostic. It enters direct spark gating only under the named opt-in `grc9v3_column_h_assisted` lane, with explicit configuration and evidence. A column-cancellation proxy may not be reported as direct column-$H$ evidence, and changing the default lane is a semantic profile change.
+
+Three states remain distinct:
+
+1. **candidate source condition:** saturation plus basin-interior signed-Hessian degeneracy;
+2. **mechanical expansion:** the local graph replacement and column-preserving boundary reassignment occurred;
+3. **completed hybrid spark:** the post-expansion dynamics established an additional stable child basin or attractor.
+
+> **Source objects:** `GRC9-SATURATION`, `GRC9-HYBRID-SPARK`.
+
+### A.6 Mechanical expansion as a typed V4 topology event
+
+Let $D_{\mathrm{eff}}(s)$ be the desired external capacity of the refined identity. A tree-connected module with $n$ nine-port nodes has maximum external capacity
+
+$$
+D_{\mathrm{ext,max}}(n)
+=9n-2(n-1)
+=7n+2.
+$$
+
+The minimal module size is
+
+$$
+n
+=
+\left\lceil
+\frac{D_{\mathrm{eff}}(s)-2}{7}
+\right\rceil.
+$$
+
+The canonical baseline module contains one core $c$ and three primary satellites $s_1,s_2,s_3$, connected by
+
+$$
+(c,2)\leftrightarrow(s_1,5),
+\qquad
+(c,5)\leftrightarrow(s_2,5),
+\qquad
+(c,8)\leftrightarrow(s_3,5).
+$$
+
+Within the canonical construction, the core and three primary satellites are always present. If the declared target capacity requires more than four nodes, additional nodes are attached as a deterministic tree under the three satellites according to the declared column and port-selection convention.
+
+Each old boundary edge is redirected by its column family. If the old endpoint was $(s,r)$ and $r\in\mathcal C_b$, then
+
+$$
+((s,r),(j,t))
+\longmapsto
+((s_b,r),(j,t)).
+$$
+
+For the current unit-measure specialization, the parent resource may be distributed as
+
+$$
+C_{s_1}=p_1C_s,
+\qquad
+C_{s_2}=p_2C_s,
+\qquad
+C_{s_3}=p_3C_s,
+\qquad
+C_c=0,
+$$
+
+with
+
+$$
+p_1+p_2+p_3=1.
+$$
+
+The equal split $p_b=1/3$ is a baseline convention; an admitted custom distribution is identity-bearing event configuration. For non-unit future measures, conservation is governed by the common $\varpi$-charge event law rather than raw coherence alone.
+
+In GRC9V4, mechanical expansion is one concrete typed topology-event class under the common lifecycle contract. It must map, reconstruct, reset, or explicitly lose:
+
+- current and reset resource states;
+- $Q_{\mathrm{target}}$ and charge receipts;
+- Candidate A edge history, through an admitted $W_A$ map or the exact GRC9V3 target initializer;
+- Candidate C selector and Hodge surfaces, by target rederivation;
+- persistent $Z_{4,a}$ history, through a typed $L_{K4,\mathrm{evt}}$ or explicit archive/reset receipt;
+- RG2b completion and invariant section, by target reconstruction;
+- graph, context, profile, hierarchy, and ordered event identity.
+
+Target reconstruction and readmission occur before atomic commit. A mechanical graph rewrite without these lifecycle maps is not an admitted GRC9V4 event. Conversely, generic GRC-v4 topology change is not identical to this column-preserving GRC9 module replacement.
+
+> **Source object:** `GRC9-MECHANICAL-EXPANSION`; common lifecycle owner `L-TOPOLOGY-EVENT`.
+
+### A.7 Child-basin stabilization and spark completion
+
+Mechanical expansion supplies representational room; it does not impose child identities. After the event, ordinary reflexive dynamics proceeds on the expanded module. A completed spark is registered only when the post-event local attractor organization gains at least one stable child basin or attractor relative to the parent organization.
+
+The accepted sequence is therefore
 
 ```text
 nine-port saturation
-    + basin-interior degeneracy
-    -> mechanical expansion
+    + basin-interior signed-Hessian degeneracy
+    -> hybrid spark candidate
+    -> typed mechanical expansion
     -> post-event reflexive evolution
-    -> completed spark only if child-basin/attractor gain is established
+    -> additional stable child basin or attractor
+    -> completed spark and hierarchy update.
 ```
 
-### Required source objects
+If expansion occurs but no child basin stabilizes, the event remains a mechanical refinement without a completed spark. If degeneracy is detected without an admitted expansion, it remains a candidate condition. If a child-like transient appears without the accepted post-event stability criterion, it is not registered as completion.
 
-* `GRC9-HYBRID-SPARK`
-* `GRC9-CHILD-BASIN-STABILIZATION`
+The expanded module is interpreted as a local chart atlas for the former parent basin. Stable internal sinks can become child identities in the explicit hierarchy. This semantic reading preserves the mechanical GRC9 event while adding the GRC-v3 requirement that identity change be earned by post-event attractor organization.
 
-The existing GRC-9 paper already separates the refinement event from the later emergence of child identities.
+> **Source object:** `GRC9-CHILD-BASIN-STABILIZATION`.
 
----
+### A.8 Invertible column coarse-graining and Split
 
-### A.7 Column coarse-graining
-
-Present the exact GRC9 column coarse-graining and split/reconstruction contract.
-
-### Required source objects
-
-* `GRC9-COLUMN-COARSE-GRAINING`
-
-Do not generalize ordinary graph coarsening into this chart-specific operation.
-
----
-
-### A.8 Exact GRC9V3 Candidate A initializer binding
-
-Present the exact GRC9V3 base-conductance reconstruction as the specialization binding of the graph-generic Candidate A initializer role.
-
-### Required source objects
-
-* `L-A-INITIALIZER-GRC9V3`
-
----
-
-### A.9 Disabled-profile matrix
-
-Include the full:
+Let $X_{i,a,b}\geq0$ be a nonnegative port-attached scalar field. Define the column total
 
 $$
-10\ \text{profiles}
-\times
-4\ \text{reduction surfaces} =
-40\ \text{contracts}.
+\bar{X}_{i,b}
+=
+\sum_{a=1}^{3}X_{i,a,b},
 $$
 
-For every current profile list:
+and the intra-column profile
 
-* transition reduction;
-* state reduction;
-* observable reduction;
-* lifecycle reduction.
+$$
+\pi^X_{i,a\mid b}
+=
+\begin{cases}
+\dfrac{X_{i,a,b}}{\bar{X}_{i,b}},
+& \bar{X}_{i,b}>0,\\[6pt]
+\dfrac13,
+& \bar{X}_{i,b}=0,
+\end{cases}
+\qquad
+\sum_{a=1}^{3}\pi^X_{i,a\mid b}=1.
+$$
 
-Do not summarize this as one generic “backward compatible” claim.
+The lossless column representation is
 
----
+$$
+\mathcal G(X)
+=
+(\bar{X},\pi^X),
+$$
 
-### A.10 GRC9V4 claim boundary
+with exact refinement
 
-State:
+$$
+\operatorname{Split}(\bar{X},\pi^X)_{i,a,b}
+=
+\pi^X_{i,a\mid b}\,\bar{X}_{i,b}.
+$$
 
-* GRC9V4 is substantive;
-* nine ports are not promoted into generic GRC-v4;
-* the paper does not prove that nine is uniquely necessary;
-* exact GRC9V3 compatibility is deliberate specialization content;
-* future GRC9 profiles reopen both generic and specialization provenance where affected.
+An admissible coarse pair requires $\pi^X_{i,\cdot\mid b}\in\Delta^2$ and, when $\bar{X}_{i,b}=0$, the same canonical uniform profile $\pi^X_{i,a\mid b}=1/3$ used by $\mathcal G$. On those admitted nonnegative domains,
+
+$$
+\operatorname{Split}\circ\mathcal G
+=
+\operatorname{Id},
+\qquad
+\mathcal G\circ\operatorname{Split}
+=
+\operatorname{Id}.
+$$
+
+Signed flux requires a separate exact mode. Decompose
+
+$$
+J=J^+-J^-,
+\qquad
+J^+=\max(J,0),
+\qquad
+J^-=\max(-J,0),
+$$
+
+and apply $\mathcal G$/Split independently to $J^+$ and $J^-$. A signed column total plus an absolute profile is a compressed diagnostic and is not lossless.
+
+The public capability means the actual $\mathcal G$/Split operator surface. Coarse-cache invalidation, refresh, or storage alone does not satisfy it. Cached coarse states must be invalidated after relevant value or topology changes, but cache hygiene is not the mathematical operator.
+
+This coarse-graining is chart-specific. It must not be promoted into generic graph coarsening, and its column families retain their GRC9 interface meaning.
+
+> **Source object:** `GRC9-COLUMN-COARSE-GRAINING`.
+
+### A.9 Exact GRC9V3 Candidate A initializer binding
+
+The graph-generic main paper defines the role of a history-free Candidate A target initializer. GRC9V4 binds that role to the exact GRC9V3 base-conductance reconstruction.
+
+On the target GRC9 port graph, rebuild the fixed-row gradient summaries $\mathbf g_u(C)$ and $\mathbf g_v(C)$ from the target resource state and target profile context. With the incoming/reference edge flux supplied by the declared target GRC9V3 stage, define
+
+$$
+I_A^{\mathrm{GRC9V3}}(C,U,G)_e
+=
+\max\!\left(
+10^{-12},
+\exp\!\left[
+-\alpha\frac{C_u+C_v}{2}
+-\frac{\beta}{2}
+\lVert\mathbf g_u(C)-\mathbf g_v(C)\rVert^2
+-\frac{\gamma}{2}J_{e,\mathrm{in}}^2
+\right]
+\right).
+$$
+
+The baseline target profile binds
+
+```text
+frame_mode = fixed_port_chart
+hessian_backend = row_basis_diagonal
+curvature_backend = none
+```
+
+as specialization identity. The initializer directly consumes the fixed-row gradient surface and the curvature-disabled conductance law; the Hessian backend remains load-bearing for target-profile readmission, basin, and spark semantics rather than entering the conductance exponent. The reconstructed scalar conductance is then used by the exact GRC9V3 potential and potential-flow stages.
+
+This initializer is history-free:
+
+- it consumes target $C$, target graph/chart identity, target context, and the declared incoming/reference current stage;
+- it does not preserve source Candidate A temporal history;
+- it emits the direction-specific temporal-$W$ history-loss receipt when used as a fallback event or migration initializer;
+- it must pass target-profile readmission before commit.
+
+The exact formula and fixed-row backend are specialization content. They are not promoted with the graph-generic migration grammar and do not redefine the generic Candidate A functional.
+
+> **Source object:** `L-A-INITIALIZER-GRC9V3`.
+
+### A.10 Exact disabled-profile compatibility matrix
+
+Exact reduction to GRC9V3 is not one undifferentiated “backward compatibility” claim. Every current profile has four independent obligations:
+
+1. **transition:** the disabled V4 step executes the exact declared GRC9V3 transition;
+2. **state:** the authoritative state projects to the GRC9V3 state surface, with V4-only history set to canonical zero or explicitly archived;
+3. **observable:** equality is required only on the GRC9V3 observable set, with V4-only diagnostics, profile metadata, and receipts projected out;
+4. **lifecycle:** only the disabled branch uses GRC9V3 lifecycle and event semantics; enabled V4 typed events are not relabeled as GRC9V3 events.
+
+The four parent contracts are `BASE-DISABLED-TRANSITION`, `BASE-DISABLED-STATE`, `BASE-DISABLED-OBSERVABLE`, and `BASE-DISABLED-LIFECYCLE`.
+
+#### A.10.1 Forty independent contract rows
+
+| Complete profile | Transition contract | State contract | Observable contract | Lifecycle contract |
+|---|---|---|---|---|
+| `A_CI` | `D10.2-EC-DISABLED-A_CI-TRANSITION` | `D10.2-EC-DISABLED-A_CI-STATE` | `D10.2-EC-DISABLED-A_CI-OBSERVABLE` | `D10.2-EC-DISABLED-A_CI-LIFECYCLE` |
+| `C_CI` | `D10.2-EC-DISABLED-C_CI-TRANSITION` | `D10.2-EC-DISABLED-C_CI-STATE` | `D10.2-EC-DISABLED-C_CI-OBSERVABLE` | `D10.2-EC-DISABLED-C_CI-LIFECYCLE` |
+| `A_OS` | `D10.2-EC-DISABLED-A_OS-TRANSITION` | `D10.2-EC-DISABLED-A_OS-STATE` | `D10.2-EC-DISABLED-A_OS-OBSERVABLE` | `D10.2-EC-DISABLED-A_OS-LIFECYCLE` |
+| `C_OS` | `D10.2-EC-DISABLED-C_OS-TRANSITION` | `D10.2-EC-DISABLED-C_OS-STATE` | `D10.2-EC-DISABLED-C_OS-OBSERVABLE` | `D10.2-EC-DISABLED-C_OS-LIFECYCLE` |
+| `A_RG2b` | `D10.2-EC-DISABLED-A_RG2b-TRANSITION` | `D10.2-EC-DISABLED-A_RG2b-STATE` | `D10.2-EC-DISABLED-A_RG2b-OBSERVABLE` | `D10.2-EC-DISABLED-A_RG2b-LIFECYCLE` |
+| `C_RG2b` | `D10.2-EC-DISABLED-C_RG2b-TRANSITION` | `D10.2-EC-DISABLED-C_RG2b-STATE` | `D10.2-EC-DISABLED-C_RG2b-OBSERVABLE` | `D10.2-EC-DISABLED-C_RG2b-LIFECYCLE` |
+| `A_PC` | `D10.2-EC-DISABLED-A_PC-TRANSITION` | `D10.2-EC-DISABLED-A_PC-STATE` | `D10.2-EC-DISABLED-A_PC-OBSERVABLE` | `D10.2-EC-DISABLED-A_PC-LIFECYCLE` |
+| `C_PC` | `D10.2-EC-DISABLED-C_PC-TRANSITION` | `D10.2-EC-DISABLED-C_PC-STATE` | `D10.2-EC-DISABLED-C_PC-OBSERVABLE` | `D10.2-EC-DISABLED-C_PC-LIFECYCLE` |
+| `A_CI_PC` | `D10.2-EC-DISABLED-A_CI_PC-TRANSITION` | `D10.2-EC-DISABLED-A_CI_PC-STATE` | `D10.2-EC-DISABLED-A_CI_PC-OBSERVABLE` | `D10.2-EC-DISABLED-A_CI_PC-LIFECYCLE` |
+| `C_CI_PC` | `D10.2-EC-DISABLED-C_CI_PC-TRANSITION` | `D10.2-EC-DISABLED-C_CI_PC-STATE` | `D10.2-EC-DISABLED-C_CI_PC-OBSERVABLE` | `D10.2-EC-DISABLED-C_CI_PC-LIFECYCLE` |
+
+No row is implied by another. In particular, transition equality does not establish state, observable, or lifecycle equality.
+
+#### A.10.2 Profile-specific transition reduction
+
+| Profile | Exact disabled transition disposition | V4-only authority removed or neutralized |
+|---|---|---|
+| `A_CI` | Disable temporal $W_A$ and CI; reconstruct exact legacy GRC9V3 base conductance; execute the exact GRC9V3 step. | `W_A` temporal authority; exact GRC9V3 surfaces are reconstructed under the target branch. |
+| `C_CI` | Disable constitutive sector Read-Back and CI; execute the exact GRC9V3 step; any $T_C$ surface is diagnostic only. | constitutive `T_C`/Hodge Read-Back; exact GRC9V3 surfaces are reconstructed under the target branch. |
+| `A_OS` | Disable temporal $W_A$ and the OS geometry channel; execute the exact GRC9V3 step. | `W_A` temporal authority; exact GRC9V3 surfaces are reconstructed under the target branch. |
+| `C_OS` | Disable sector Read-Back and the OS geometry channel; execute the exact GRC9V3 step. | constitutive `T_C`/Hodge Read-Back; exact GRC9V3 surfaces are reconstructed under the target branch. |
+| `A_RG2b` | Disable temporal $W_A$ and RG2b; execute the exact GRC9V3 step. | `W_A` temporal authority; exact GRC9V3 surfaces are reconstructed under the target branch. |
+| `C_RG2b` | Disable sector Read-Back and RG2b; execute the exact GRC9V3 step. | constitutive `T_C`/Hodge Read-Back; exact GRC9V3 surfaces are reconstructed under the target branch. |
+| `A_PC` | Disable PC with canonical $Z_{4,A}=0$, disable temporal $W_A$, and execute the exact GRC9V3 step. | `W_A` temporal authority and canonical `Z_4=0`; exact GRC9V3 surfaces are reconstructed under the target branch. |
+| `C_PC` | Disable PC with canonical $Z_{4,C}=0$, disable sector Read-Back, and execute the exact GRC9V3 step. | constitutive `T_C`/Hodge Read-Back and canonical `Z_4=0`; exact GRC9V3 surfaces are reconstructed under the target branch. |
+| `A_CI_PC` | Disable CI and PC, set canonical $Z_{4,A}=0$, disable temporal $W_A$, and execute the exact GRC9V3 step. | `W_A` temporal authority and canonical `Z_4=0`; exact GRC9V3 surfaces are reconstructed under the target branch. |
+| `C_CI_PC` | Disable CI and PC, set canonical $Z_{4,C}=0$, disable sector Read-Back, and execute the exact GRC9V3 step. | constitutive `T_C`/Hodge Read-Back and canonical `Z_4=0`; exact GRC9V3 surfaces are reconstructed under the target branch. |
+
+The state projection is candidate-specific. For A profiles, temporal $W_A$ authority is removed and the exact GRC9V3 base conductance is reconstructed at its native stage. For C profiles, $T_C$, $P_M$, $H_M$, the resolvent, and related V4 causal surfaces are projected out or left diagnostic-only. Persistent profiles additionally set $Z_{4,a}$ to canonical zero or archive it through an explicit loss receipt.
+
+Observable equivalence is intentionally narrower than byte equality. V4-only solver receipts, profile metadata, split residuals, carrier diagnostics, selector diagnostics, and event receipts are not part of the GRC9V3 observable set merely because an implementation stores them.
+
+Lifecycle equivalence is branch-scoped. The enabled V4 lifecycle retains typed profile migration, history transport/loss, and whole-tuple event semantics. Only after explicit migration into the disabled target branch may GRC9V3 snapshot, reset, event, and step semantics govern the state.
+
+### A.11 GRC9V4 claim boundary
+
+GRC9V4 is substantive because the nine-port graph, fixed chart, row backend, capacity gate, mechanical expansion, child-basin completion, and column coarse-graining continue to constrain the dynamics and lifecycle. Exact GRC9V3 reduction does not erase those mechanics; it selects their accepted V3 transition and state interpretation when V4 additions are disabled.
+
+The appendix establishes only the current bounded specialization:
+
+- nine ordered ports are not promoted into graph-generic GRC-v4;
+- the paper does not prove that nine is the unique or necessary port count;
+- the fixed $3\times3$ chart is a discrete convention, not a continuum primitive;
+- the row-basis backend is not the generic GRC-v4 differential backend;
+- the historical GRC9 row tensor is not graph $K_4$;
+- the baseline hybrid spark lane remains signed-Hessian-based, while column-$H$ assistance is explicit opt-in;
+- mechanical expansion is one typed GRC9 topology event, not generic graph topology change;
+- $\mathcal G$/Split is a chart-specific operator, not cache hygiene and not generic graph coarsening;
+- exact GRC9V3 compatibility is limited to the ten current profiles and four named surfaces;
+- future GRC9 constitutive, realization, chart, geometry, event, or compatibility profiles reopen both generic and specialization provenance at the earliest affected contract;
+- runtime implementation and conformance remain unauthorized by this appendix.
 
 ---
 
 ## Appendix B. Normative Notation and Type Table
 
-Include one table covering:
+Appendix B consolidates notation already used in the main proposal and Appendix A. It does not create a new universal state tuple. “Serialized” means included directly or by an identity/digest sufficient for deterministic reconstruction under the accepted lifecycle contract; it does not confer causal authority by itself.
 
-* graph spaces;
-* resource coordinates;
-* current coordinates;
-* retained coordinates;
-* selected/physical one-form spaces;
-* $K_4$;
-* $H_0$;
-* $H_{1,\mathrm{form}}$;
-* $G_J$;
-* $h_4$;
-* $M_4$;
-* profile history state;
-* lifecycle tuple;
-* analysis-only operators.
+| Symbol | Space or type | Authority class | Writer | Reader | Serialization status | Profile scope | Source object |
+|---|---|---|---|---|---|---|---|
+| $\mathcal G=(V,E)$ | Finite oriented graph | Substrate/lifecycle identity | Typed graph event or construction | All profiles | Serialized graph identity | GRC-v4 common | `CORE-INCIDENCE-CONTINUITY`, `L-TOPOLOGY-EVENT` |
+| $\Gamma=(V,E,\sigma)$ | Nine-port graph | GRC9 substrate/lifecycle identity | GRC9 construction or mechanical event | All GRC9V4 profiles | Serialized with endpoint ports | GRC9V4 only | `GRC9-ORDERED-PORTS` |
+| $\sigma(e)=((i,r),(j,s))$ | Endpoint-port incidence label | Derived from/part of port-graph identity | Port-graph construction/event | GRC9 adjacency, row/column backend | Serialized | GRC9V4 only | `GRC9-ORDERED-PORTS` |
+| $r\leftrightarrow(a,b)$ | Port-to-row/column chart coordinate | Fixed specialization convention | None during ordinary beat | Differential, expansion, coarse-graining | Serialized by chart identity | GRC9V4 only | `GRC9-ROW-COLUMN-CHART` |
+| $B$ | Oriented incidence $\mathbb R^E\to\mathbb R^V$ | Derived from graph identity; load-bearing | Graph construction/event | Potential differences, continuity, Hodge operators | Reconstructible from graph/orientation | GRC-v4 common | `CORE-INCIDENCE-CONTINUITY` |
+| $C$ | Vertex scalar resource | Authoritative resource state | One continuity write or typed event map | Potential, selectors, writers, charge | Serialized in current/reset state | All profiles | `CORE-C-AUTHORITY` |
+| $\mu$ | Positive graph measure | Profile/context identity | Construction or typed event | Reference $H_0$, quadrature/charge | Serialized or reproducibly bound | All profiles | `CORE-UNIT-MEASURE`, `GEOM-H1-FORM` |
+| $\varpi$ | Charge covector in $(\mathbb R^V)^*$ | Profile/lifecycle identity | Construction or target event | Charge, tangent, event accounting | Serialized/bound by charge profile | All profiles | `CORE-GENERAL-CHARGE` |
+| $Q_\varpi(C)$ | Scalar charge functional | Derived invariant value | None; changed only through actual resource path | Admission and budget validation | May be stored as receipt; reconstructible | All profiles | `CORE-GENERAL-CHARGE` |
+| $Q_{\mathrm{target}}$ | Serialized lifecycle charge target | Authoritative lifecycle state | Initialization, admitted external/event update, typed migration | Admission, reset, commit validation | Serialized | All profiles | `L-SNAPSHOT-RESET`, `CORE-EXTERNAL-EVENT-CHARGE` |
+| $V_{Q,\varpi}$ | Complete-state charge tangent | Analysis/structural domain | None | Structural and continuation analysis | Reconstructed | All profiles | `CORE-CHARGE-TANGENT` |
+| $\Pi_{Q,C,H_0}$ | Structural $C$-sector charge projector | Analysis-only operator | None | Constrained structural variation | Reconstructed | All profiles | `CORE-STRUCTURAL-CHARGE-PROJECTOR` |
+| $p=(a,r,\Theta_p)$ | Complete profile identity | Authoritative specification/lifecycle identity | Typed profile migration | State decoding, step selection, receipts | Serialized | All profiles | `L-PROFILE-GRAMMAR`, `SPEC-PROFILE-GRAMMAR` |
+| $\Theta_p$ | Full identity-bearing profile contract | Specification/lifecycle identity | Typed successor or migration | All profile-local equations/domains | Serialized or digest-bound | All profiles | `SPEC-NORMALIZATION-UNITS-GAUGE-DOMAIN-SOLVER` |
+| $\mathfrak X=(X_{\mathrm{current}},X_{\mathrm{reset}},Q_{\mathrm{target}})$ | Lifecycle tuple plus graph/context/profile identity | Authoritative lifecycle state | Ordinary atomic commit, reset, migration, event | Snapshot, restore, reset, event/migration | Serialized | All profiles | `L-SNAPSHOT-RESET`, D9 lifecycle registry |
+| $W$ | Positive scalar edge mobility | Stage/profile dependent | Inherited reconstruction or candidate writer | Baseline potential-flow channel | May be stored; authority profile-dependent | GRC-v4 common interface | `BASE-SCALAR-MOBILITY` |
+| $W_A$ | Positive edge mobility | Authoritative nonresource state | Candidate A logarithmic writer/event map | A baseline mobility, relation, current, writer | Serialized in A current/reset state | Candidate A | `A-STATE-REDUCTION`, `A-RETAINED-WRITER` |
+| $\widehat W_A$ | Instantaneous A reference mobility | Derived pre-read surface | Reconstructed from current $C,J_{0,A}$ | A contrast $q_A$ | Not independent; reconstructible | Candidate A | `A-WHAT` |
+| $q_A$ | A retained/reference contrast | Derived Read-Back surface | Reconstructed | A read-current closure | Not independent; reconstructible | Candidate A | `A-DIRECTIONAL-CONTRAST` |
+| $W_{\mathrm{drv},A}$ | Post-continuity A writer target | Derived write target | Reconstructed after resource validation | A retained writer | Not independent; reconstructible | Candidate A | `A-WRITER-TARGET` |
+| $\Phi$ | Vertex potential | Derived stage surface | Reconstructed from $C$ and mobility | Potential-flow current | May be stored for exact restoration; no independent authority | All profiles | `BASE-POTENTIAL` |
+| $J_0$ | Profile baseline physical current with explicit read gate off | Derived stage surface | Profile-local current construction | Total-current closure | Not independent; stage-reconstructible | All profiles | `BASE-POTENTIAL-FLOW`, candidate/realization contracts |
+| $j_{a,\mathrm{flux}}$ | Explicit Read-Back contribution in physical flux coordinates | Derived same-beat surface | Candidate Read-Back operator | Total-current closure; structural lowering | Not independent | A/C profiles | `A-READ-CLOSURE`, `C-READ-BACK` |
+| $j_a^\flat$ | Structural one-form read current | Derived same-beat structural surface | Lowering through $G_J$ and candidate identification | Structural source $S_a$ | Not independent | A/C profiles | `GEOM-GJ`, `C-HODGE-MAPS` |
+| $J_C$ | Authoritative same-beat physical current | Same-beat current authority, not persistent state | Candidate/realization solve | Single continuity write and declared consequences | May be stored as output/receipt; no cross-beat authority | All profiles | `L-AUTHORITATIVE-CURRENT` |
+| $M_4$ | Transport mobility on physical current space | Candidate-specific derived/authority map | Candidate profile | Current solve | Reconstructible from candidate state/profile | All profiles, candidate-specific | `GEOM-M4` |
+| $K$ | Substrate-independent structural role | Core-theory role | Not a graph writer | Abstract $K\mapsto g[K]$ relation | Not a graph state | Core theory | `CORE-K-STRUCTURAL-ROLE` |
+| $K_4$ | Graph-local symmetric bilinear structural object | Derived same-beat structural surface | Candidate structural source/realization composition | Geometry profile | Not authoritative in any current profile; PC serializes $Z_{4,a}$ separately | GRC-v4 common type | `GEOM-K4` |
+| $\Delta K_{4,a}=S_a$ | Candidate-specific structural increment/source | Derived same-beat source | Candidate Read-Back and star assembly | CI/OS/RG/PC/CI+PC geometry/history | Not independent; reconstructible from declared state, stage, and profile | A/C profiles | `GEOM-ASSEMBLY` |
+| $H_0$ | Positive vertex Hodge/Gram operator | Derived geometry/profile surface | Reference/profile geometry map | Charge projector, graph Hodge operators | Reconstructible from graph/profile | All profiles | `GEOM-H1-FORM` |
+| $H_{1,\mathrm{form}}$ | Positive structural one-form Hodge/Gram operator | Derived geometry surface | Geometry profile | Flat/sharp and Hodge operators | Reconstructible; not transport state | All profiles | `GEOM-H1-FORM` |
+| $G_J$ | Flux-to-form resistance/flat map | Derived geometry surface | Paired geometry profile | Lower/raise physical and structural currents | Reconstructible | All profiles | `GEOM-GJ` |
+| $h_4$ | Typed graph-Hodge geometry package | Derived same-beat or reconstructed surface | Geometry profile/realization | Current and selector/Hodge consumers | Not independent in current ten profiles | All profiles | `GEOM-K4-TO-H4-TO-h4` |
+| $P_M$ | Basis-independent Candidate C selector | Derived operator | Functional calculus from authoritative $C$/geometry context | Selected sector and C chain | Not independently serialized | Candidate C | `C-SELECTOR` |
+| $T_C=P_M^\Delta C$ | Selected Candidate C sector | Derived causal surface | Reconstructed after $C$ or geometry/context change | C Hodge modulation | Not independent | Candidate C | `C-SECTOR`, `C-AUTHORITY` |
+| $D_C$ | Positive diagonal C Hodge modulation | Derived operator | Reconstructed from $T_C$ | Candidate C $H_{1,\mathrm{form},M}$ | Not independent | Candidate C | `C-HODGE-MAPS` |
+| $I_{4M}$ | Selected/physical one-form identification | Derived typed operator | Reconstructed from Hodge package | C resolvent transport | Not independent | Candidate C | `C-HODGE-MAPS` |
+| $\Delta_{1,M}$ | Candidate C one-form Hodge Laplacian | Derived operator | Reconstructed from $B,H_{0,M},H_{1,\mathrm{form},M}$ | Intrinsic C resolvent | Not independent | Candidate C | `C-HODGE-MAPS` |
+| $\widehat R_{C,M}$ | Ungated intrinsic C resolvent | Derived operator | Reconstructed | Once-gated C Read-Back | Not independent | Candidate C | `C-READ-BACK` |
+| $Q_C=I_{4M}G_J$ | Physical-flux to selected-form identification | Derived typed operator | Reconstructed | Physical C closure and conditioning | Not independent | Candidate C | `C-HODGE-MAPS`, post-v2 correction |
+| $Z_{4,a}$ | Persistent $K_4$ history carrier | Authoritative nonresource realization state | PC or CI+PC scalar-ZOH writer/event map | Current/future geometry profile | Serialized in current/reset state | PC and CI+PC only | `REAL-PC`, `REAL-CI-PC` |
+| $\Gamma_a$ | RG2b invariant section | Derived deterministic completion map | Frozen profile construction, not runtime writer | Reconstructed geometry | Identity/digest serialized; values not causal state | RG2b only | `REAL-RG2B` |
+| $T_{C,\mathrm{evt}}$ | Source-to-target resource transport map | Typed event contract | Event declaration | Current/reset resource map | Receipt/identity bound | Topology events | `L-TOPOLOGY-EVENT` |
+| $\Delta C_{\mathrm{event}}$ | Event resource increment in target vertex space | Typed event input | Event declaration | Actual resource-state event map and charge receipt | Serialized in event receipt | Topology events | `CORE-EXTERNAL-EVENT-CHARGE` |
+| $\Delta Q_{\mathrm{event}}$ | Scalar event charge consequence | Derived/receipted lifecycle value | Computed from actual pre/post resource state | $Q_{\mathrm{target}}$ update | Serialized in event receipt | Topology events | `CORE-EXTERNAL-EVENT-CHARGE` |
+| $L_{K4,\mathrm{evt}}$ | Typed source-to-target structural-history map | Event capability contract | Event declaration | Persistent carrier transport | Serialized/digest-bound when used | PC/CI+PC topology events | D9 topology-event contract |
+| $\mathbf g_i$ | Three-row GRC9 gradient summary | Derived specialization surface | Fixed row-basis backend | GRC9V3 conductance, basin, spark diagnostics | May be stored; reconstructible | GRC9V4 only | `BASE-GRC9-ROW-BASIS-DIFFERENTIAL` |
+| $\widetilde H_i$ | Signed diagonal row-basis Hessian summary | Derived specialization surface | Fixed row-basis backend and sign convention | Basin seed and baseline spark lane | May be stored; reconstructible | GRC9V4 only | `BASE-GRC9-ROW-BASIS-DIFFERENTIAL` |
+| $\mathbf J_i^{\mathrm{net}}$ | Three-row net-flux summary | Derived specialization surface | Row aggregation of oriented edge flux | GRC9V3 diagnostics/tensor | May be stored; reconstructible | GRC9V4 only | `BASE-GRC9-ROW-BASIS-DIFFERENTIAL` |
+| $H_s^{(b)}$ | Per-column GRC9 mechanical diagnostic | Derived specialization diagnostic | Column aggregation | Named column-H-assisted lane only | May be stored as diagnostic | GRC9V4 optional lane | `GRC9-ROW-COLUMN-CHART` |
+| $\mathcal G(X),\operatorname{Split}$ | Column coarse/fine operator pair | Derived chart-specific representation map | On-demand operator | Multiscale view and exact reconstruction | Coarse state may be cached; cache is not operator | GRC9V4 only | `GRC9-COLUMN-COARSE-GRAINING` |
+| $\mathscr H_*,D\Phi^{\mathrm{step}},\alpha_n,\mu_n,\gamma_n,\beta_n,\lambda_n$ | Structural, temporal, Read-Back, and spatial analysis objects | Analysis-only | Analysis pipeline | Continuation/stability diagnostics | Never runtime authority merely by derivability | Analysis interfaces | `SPEC-VERIFICATION-REGISTRY`, accepted D3/D8 analysis surfaces |
 
-Every row should include:
+### B.1 Type and authority rules carried by the table
 
-```text
-symbol
-space/type
-authority class
-writer
-reader
-serialization status
-profile scope
-source object
-```
+1. **Resource uniqueness.** $C$ is the only resource coordinate. $W_A$ and $Z_{4,a}$ are authoritative nonresource states only in the profiles that declare them.
+2. **Derived is not irrelevant.** Potentials, currents, selectors, Hodge surfaces, geometry, and structural sources can be load-bearing in a transition while remaining derived or same-beat surfaces.
+3. **Serialization is not authority.** A stored $W$, $J$, potential, row summary, or cache remains reconstructed/stage-dependent under the target profile unless its complete profile grants independent authority.
+4. **Flux and form spaces are distinct.** $G_J$ and, for Candidate C, $Q_C=I_{4M}G_J$ mediate between physical flux and structural/selected one-form coordinates.
+5. **Geometry and mobility are distinct.** $K_4$, $H_{1,\mathrm{form}}$, $G_J$, $h_4$, and $M_4$ cannot exchange authority through numerical coincidence.
+6. **Candidate C has no hidden state.** $P_M$, $T_C$, $H_M$, $I_{4M}$, $\Delta_{1,M}$, and $\widehat R_{C,M}$ are rederived from authoritative inputs.
+7. **Persistent history is explicit.** Only PC and CI+PC add authoritative $Z_{4,a}$ in the current population.
+8. **Analysis never writes runtime state.** Structural Hessians, complete-step Jacobians, response derivatives, spatial modes, and their spectra remain analysis-only.
+9. **GRC9 chart objects stay specialized.** Port labels, row/column coordinates, row summaries, and $\mathcal G$/Split do not appear in the generic GRC-v4 state contract.
 
 ---
 
 ## Appendix C. Complete Profile Registry
 
-Provide one row for each of:
+### C.1 Registry rules
 
-* A-CI
-* C-CI
-* A-OS
-* C-OS
-* A-RG2b
-* C-RG2b
-* A-PC
-* C-PC
-* A-CI+PC
-* C-CI+PC
+The current initial population is
 
-Each row should record:
+$$
+\{\mathrm A,\mathrm C\}
+\times
+\{\mathrm{CI},\mathrm{OS},\mathrm{RG2b},\mathrm{PC},\mathrm{CI+PC}\}.
+$$
 
-```text
-authoritative state
-constitutive Read-Back
-current closure
-geometry source
-realization order
-history state
-writer
-release
-domain
-solver/root rule
-failure rule
-disabled surfaces
-claim ceiling
-```
+Every executable state binds exactly one candidate and one realization. The registry below is an exposition of the accepted D9 profile/state/lifecycle registry and realization records. It is not a menu from which fields may be mixed independently.
 
-This appendix should be generated by extraction from the D9 registry and accepted realization records, not manually reconstructed.
+For every profile:
+
+- $C$ remains the sole resource coordinate;
+- exactly one physical current is authoritative for continuity;
+- continuity writes $C$ exactly once;
+- all authoritative coordinates commit atomically or none do;
+- profile, graph, context, reset state, and $Q_{\mathrm{target}}$ remain part of lifecycle identity;
+- topology events and migrations map the whole lifecycle tuple;
+- disabled compatibility has four independent contract rows;
+- runtime, stability, endpoint, physical nonabsorbability, ranking, and future-exhaustiveness claims remain outside the registry.
+
+### C.2 Population overview
+
+| Profile | Candidate | Realization | Authoritative dynamic state | Independent realization history | Realization claim |
+|---|---|---|---|---|---|
+| `A_CI` | A | CI | $C$, $W_A$ | None | `D10-CL-O-003` |
+| `C_CI` | C | CI | $C$ only | None | `D10-CL-O-003` |
+| `A_OS` | A | OS | $C$, $W_A$ | None | `D10-CL-O-004` |
+| `C_OS` | C | OS | $C$ only | None | `D10-CL-O-004` |
+| `A_RG2b` | A | RG2b | $C$, $W_A$ | None | `D10-CL-O-005` |
+| `C_RG2b` | C | RG2b | $C$ only | None | `D10-CL-O-005` |
+| `A_PC` | A | PC | $C$, $W_A$, $Z_{4,A}$ | $Z_{4,A}$ | `D10-CL-O-006` |
+| `C_PC` | C | PC | $C$, $Z_{4,C}$ | $Z_{4,C}$ | `D10-CL-O-006` |
+| `A_CI_PC` | A | CI+PC | $C$, $W_A$, $Z_{4,A}$ | $Z_{4,A}$ | `D10-CL-O-007` |
+| `C_CI_PC` | C | CI+PC | $C$, $Z_{4,C}$ | $Z_{4,C}$ | `D10-CL-O-007` |
+
+### C.3 `A_CI` — A-CI
+
+| Registry field | Accepted profile content |
+|---|---|
+| Candidate / realization | A / CI (`D10-CL-O-001`, `D10-CL-O-003`) |
+| Authoritative state | $C$, $W_A$ |
+| Constitutive Read-Back | $j_{A,\mathrm{flux}}=\chi_A\operatorname{Diag}(q_A)J_{C,A}$, with $q_A=(W_A-\widehat W_A)/(W_A+\widehat W_A)$. |
+| Current closure | The simultaneous root solves $F_{J,A}=0$ and $F_{h,A}=0$, with $J_{C,A}=J_{0,A}(h)+\zeta_Aj_{A,\mathrm{flux}}$. |
+| $K_4$/geometry source | $S_A(J,h)=\zeta_A\,\iota_A(\mathcal A_\star(G_J(h)j_{A,\mathrm{flux}}))$ enters the same-beat geometry root. |
+| Realization order | Joint current/geometry root; one continuity write; resource/charge validation; refreshed final-$C$ A target; one $W_A$ writer; atomic commit. |
+| History state | No realization history beyond authoritative candidate state $W_A$. Current, geometry, root work, and $K_4$ are derived or transient. |
+| Writer | $\log W_A^+=a_A\log W_A+(1-a_A)\log W_{\mathrm{drv},A}$ after continuity and refreshed differentials. |
+| Release | Native A relaxation toward the no-forming target under the accepted writer; administrative reset is separate. |
+| Admitted domain | Positive $W_A$; admitted floor chart; declared closed convex geometry domain satisfying the A-CI self-map and contraction conditions. |
+| Solver/root rule | Unique root on the declared contraction domain; local implicit-function branch is a narrower fallback. No prior root or hidden continuation token has authority. |
+| Failure rule | No admitted root, multiple unselected roots, singularity, nonfinite result, domain loss, charge failure, or postcondition failure commits nothing. |
+| Snapshot boundary | Includes $C$, $W_A$, lifecycle identity, and receipts; excludes $J$, $h$, previous root, and solver cache as causal state. |
+| Topology continuation | Typed resource event, then an admitted history-preserving $W_A$ map or exact GRC9V3 history-free reconstruction, followed by target CI readmission. |
+| Disabled GRC9V3 transition | Disable temporal $W_A$ and CI; reconstruct exact legacy GRC9V3 base conductance; execute the exact GRC9V3 step. |
+| Disabled surfaces | `D10.2-EC-DISABLED-A_CI-TRANSITION`, `D10.2-EC-DISABLED-A_CI-STATE`, `D10.2-EC-DISABLED-A_CI-OBSERVABLE`, `D10.2-EC-DISABLED-A_CI-LIFECYCLE` |
+| Claim ceiling | Admitted local CI profile; no global root, stability, formed-branch, endpoint, nonabsorbability, or preference claim. `D10-CL-C-012` continues to block future-exhaustive interpretation. |
+
+### C.4 `C_CI` — C-CI
+
+| Registry field | Accepted profile content |
+|---|---|
+| Candidate / realization | C / CI (`D10-CL-O-002`, `D10-CL-O-003`) |
+| Authoritative state | $C$ only |
+| Constitutive Read-Back | $j_C^\flat=\chi_C I_{4M}^{-1}\widehat R_{C,M}I_{4M}G_JJ$, with physical current obtained through $G_J^{-1}$; $\chi_C$ appears exactly once. |
+| Current closure | The simultaneous root solves the full selector/Hodge/current chain and $F_{J,C}=0$, $F_{h,C}=0$ on an admitted selector stratum. |
+| $K_4$/geometry source | $S_C(J,h)=\zeta_C\,\iota_C(\mathcal A_\star(j_C^\flat(J,h)))$ enters the same-beat geometry root. |
+| Realization order | Joint current/geometry root; one continuity write; rederive selector, $T_C$, Hodge, and response surfaces from $C^+$; atomic $C$ commit. |
+| History state | No independent candidate or realization history. $T_C$, $P_M$, $H_M$, $J$, $h$, and $K_4$ are derived or transient. |
+| Writer | No independent C writer. Continuity writes $C$ once; future C-sector mediation is rederived from the committed $C^+$. |
+| Release | No independent C carrier to release. Sector change or loss follows authoritative $C$, selector/lifecycle change, or explicit reset/migration. |
+| Admitted domain | Fixed topology and boundary semantics; positive Hodge package; strict-gap/fixed-rank selector stratum; regular current block; declared local contraction domain. |
+| Solver/root rule | At most one root per regular selector stratum under its own contraction, then exactly one regular self-consistent root across the admitted stratum union. |
+| Failure rule | Zero roots, multiple self-consistent roots, selector inconsistency, singularity, nonfinite result, domain loss, charge failure, or postcondition failure commits nothing. |
+| Snapshot boundary | Includes $C$ and lifecycle identity; excludes $T_C$, $J$, $h$, previous root, and solver cache as independent state. |
+| Topology continuation | Typed resource event; recompute target selector/Hodge/identification; require exactly one target regular stratified CI root; re-admit before commit. |
+| Disabled GRC9V3 transition | Disable constitutive sector Read-Back and CI; execute the exact GRC9V3 step; any $T_C$ surface is diagnostic only. |
+| Disabled surfaces | `D10.2-EC-DISABLED-C_CI-TRANSITION`, `D10.2-EC-DISABLED-C_CI-STATE`, `D10.2-EC-DISABLED-C_CI-OBSERVABLE`, `D10.2-EC-DISABLED-C_CI-LIFECYCLE` |
+| Claim ceiling | Admitted local stratified CI profile; no independent sector state, global branch, physical norm margin, stability, endpoint, or preference claim. `D10-CL-C-012` continues to block future-exhaustive interpretation. |
+
+### C.5 `A_OS` — A-OS
+
+| Registry field | Accepted profile content |
+|---|---|
+| Candidate / realization | A / OS (`D10-CL-O-001`, `D10-CL-O-004`) |
+| Authoritative state | $C$, $W_A$ |
+| Constitutive Read-Back | The A relation-conditioned read is evaluated in both the predictor and the corrected fixed-geometry current solve with fresh stage-local $\widehat W_A$ and $q_A$. |
+| Current closure | Exactly one predictor current, one geometry construction, and one fixed-$h$ A corrector current. Only the corrector current is authoritative. |
+| $K_4$/geometry source | The predictor read forms $S_A^{(0)}$, which produces $h_A^{(1)}$; $h_A^{(1)}$ is held fixed during the corrector. |
+| Realization order | Predictor current; geometry update; full fixed-$h$ corrector; record split residual; continuity; refreshed A writer; atomic commit. No second OS iteration. |
+| History state | No realization history beyond $W_A$. Predictor geometry, corrector current, split residual cache, and substage caches are not authoritative state. |
+| Writer | The ordinary post-continuity logarithmic $W_A$ writer uses the authoritative corrected current and refreshed final-$C$ surfaces. |
+| Release | Native A relaxation under the accepted writer; OS geometry has no independent release state. |
+| Admitted domain | Positive A state; every predictor, geometry, corrector, resource, and postcondition domain check must pass; split residual remains part of evidence. |
+| Solver/root rule | Deterministic fixed-stage subsolves. The corrector solves the current equation at fixed $h_A^{(1)}$; OS does not iterate toward CI. |
+| Failure rule | Any failed subsolve, singularity, nonfinite result, domain loss, charge failure, or postcondition failure commits nothing. |
+| Snapshot boundary | Includes $C$, $W_A$, profile/lifecycle identity; excludes predictor geometry, corrector current, split-residual cache, and substage caches. |
+| Topology continuation | Typed resource event, then admitted $W_A$ transport or exact GRC9V3 history-free reconstruction, then rebuild and re-admit every target OS substage. |
+| Disabled GRC9V3 transition | Disable temporal $W_A$ and the OS geometry channel; execute the exact GRC9V3 step. |
+| Disabled surfaces | `D10.2-EC-DISABLED-A_OS-TRANSITION`, `D10.2-EC-DISABLED-A_OS-STATE`, `D10.2-EC-DISABLED-A_OS-OBSERVABLE`, `D10.2-EC-DISABLED-A_OS-LIFECYCLE` |
+| Claim ceiling | Admitted one-pass OS profile; no CI equivalence, iteration theorem, universal $\Delta t$ order, endpoint, stability, or preference claim. `D10-CL-C-012` continues to block future-exhaustive interpretation. |
+
+### C.6 `C_OS` — C-OS
+
+| Registry field | Accepted profile content |
+|---|---|
+| Candidate / realization | C / OS (`D10-CL-O-002`, `D10-CL-O-004`) |
+| Authoritative state | $C$ only |
+| Constitutive Read-Back | The full once-gated C read chain is rebuilt at the predictor and corrected geometry stages; no predictor selector or response cache has corrector authority. |
+| Current closure | Exactly one C predictor, one generated geometry, and one full fixed-$h$ C corrector. Only the corrector physical current is authoritative. |
+| $K_4$/geometry source | The predictor C read forms $S_C^{(0)}$, which produces $h_C^{(1)}$; the entire selector/Hodge/current chain is recomputed at fixed $h_C^{(1)}$. |
+| Realization order | Predictor; geometry update; full corrected C chain; split residual; continuity; rederive final C surfaces; atomic $C$ commit. No second iteration. |
+| History state | No independent history. $T_C$, predictor/corrector surfaces, $h$, and split caches are derived or transient. |
+| Writer | No independent C writer. Continuity writes $C$ once; final selector and Hodge surfaces are reconstructed from $C^+$. |
+| Release | No independent C carrier. Any change in selected mediation is resource-mediated or lifecycle-mediated. |
+| Admitted domain | Basis-independent selector recomputation and every predictor, geometry, corrector, current, charge, and target-domain check must pass. |
+| Solver/root rule | Deterministic one-pass subsolves, with corrected current regularity on the selected stratum and the split residual preserved as an explicit defect. |
+| Failure rule | Any selector inconsistency, failed subsolve, singularity, nonfinite result, domain loss, charge failure, or postcondition failure commits nothing. |
+| Snapshot boundary | Includes $C$ and lifecycle identity; excludes $T_C$, predictor geometry, corrector current, split-residual cache, and substage caches. |
+| Topology continuation | Typed resource event, then target selector/Hodge/identification reconstruction and readmission of every OS substage. |
+| Disabled GRC9V3 transition | Disable sector Read-Back and the OS geometry channel; execute the exact GRC9V3 step. |
+| Disabled surfaces | `D10.2-EC-DISABLED-C_OS-TRANSITION`, `D10.2-EC-DISABLED-C_OS-STATE`, `D10.2-EC-DISABLED-C_OS-OBSERVABLE`, `D10.2-EC-DISABLED-C_OS-LIFECYCLE` |
+| Claim ceiling | Admitted one-pass C-OS profile; no independent sector state, CI equivalence, smooth cross-rank passage, endpoint, stability, or preference claim. `D10-CL-C-012` continues to block future-exhaustive interpretation. |
+
+### C.7 `A_RG2b` — A-RG2b
+
+| Registry field | Accepted profile content |
+|---|---|
+| Candidate / realization | A / RG2b (`D10-CL-O-001`, `D10-CL-O-005`) |
+| Authoritative state | $C$, $W_A$ |
+| Constitutive Read-Back | The ordinary A read/current closure is evaluated at geometry reconstructed by the accepted invariant section. |
+| Current closure | $h=\Gamma_A(C,W_A;U)$ is derived from the frozen extension-relative section, then the accepted fixed-$h$ A current is solved. |
+| $K_4$/geometry source | Geometry is reconstructed by the unique bounded Lipschitz invariant section relative to the frozen family-local completion; no $h$ is serialized as state. |
+| Realization order | Derive $h$ from $\Gamma_A$; solve fixed-$h$ A current; continuity; refreshed A writer; atomic commit. |
+| History state | No realization history beyond $W_A$. $\Gamma_A$ values, $h$, $J$, prior sections, and extension work are not authoritative state. |
+| Writer | The ordinary post-continuity A writer updates $W_A$; RG2b has no independent geometry writer. |
+| Release | Native A relaxation under its writer; reconstructed geometry changes with authoritative state and has no separate release coordinate. |
+| Admitted domain | Bounded local fixed-context Lipschitz section on the frozen extension completion and admitted target graph/domain. |
+| Solver/root rule | Deterministic evaluation of the accepted section and fixed-$h$ current solve. Classical section derivatives are not part of the accepted result. |
+| Failure rule | Missing/invalid section, target-domain failure, current singularity, nonfinite result, charge failure, or postcondition failure commits nothing. |
+| Snapshot boundary | Includes $C$, $W_A$, profile/lifecycle and frozen-completion identity; excludes $\Gamma_A$ values, $h$, $J$, previous section, and extension work. |
+| Topology continuation | Typed resource event, then admitted $W_A$ transport or exact GRC9V3 initializer, rebuild the target completion/section, and re-admit the target current. |
+| Disabled GRC9V3 transition | Disable temporal $W_A$ and RG2b; execute the exact GRC9V3 step. |
+| Disabled surfaces | `D10.2-EC-DISABLED-A_RG2b-TRANSITION`, `D10.2-EC-DISABLED-A_RG2b-STATE`, `D10.2-EC-DISABLED-A_RG2b-OBSERVABLE`, `D10.2-EC-DISABLED-A_RG2b-LIFECYCLE` |
+| Claim ceiling | Admitted bounded Lipschitz RG2b profile; no universal reconstruction, $C^1$ section, classical derivative graph, spectrum, stability, endpoint, or preference claim. `D10-CL-C-012` continues to block future-exhaustive interpretation. |
+
+### C.8 `C_RG2b` — C-RG2b
+
+| Registry field | Accepted profile content |
+|---|---|
+| Candidate / realization | C / RG2b (`D10-CL-O-002`, `D10-CL-O-005`) |
+| Authoritative state | $C$ only |
+| Constitutive Read-Back | The full C read/current chain is evaluated at the geometry reconstructed by the accepted C invariant section. |
+| Current closure | $h=\Gamma_C(C;U)$ is derived from the frozen extension-relative section, then the accepted full fixed-$h$ C current is solved. |
+| $K_4$/geometry source | Geometry is reconstructed by the unique bounded target-graph Lipschitz section with the basis-independent selector and declared target bounds. |
+| Realization order | Derive $h$ from $\Gamma_C$; rebuild selector/Hodge surfaces; solve fixed-$h$ C current; continuity; rederive final C surfaces; atomic $C$ commit. |
+| History state | No independent history. $T_C$, $\Gamma_C$ values, $h$, $J$, previous sections, and extension work are derived or transient. |
+| Writer | No independent C or geometry writer. Continuity writes $C$; C and RG surfaces are rederived. |
+| Release | No independent C/RG carrier. Selected mediation changes through $C$, selector/lifecycle change, or reset/migration. |
+| Admitted domain | Bounded target-graph Lipschitz section, frozen completion, basis-independent selector, and target current/domain bounds. |
+| Solver/root rule | Deterministic section evaluation plus fixed-$h$ C current solve. Classical $D\Gamma_C$ is unclaimed. |
+| Failure rule | Invalid completion/section, selector failure, current singularity, nonfinite result, charge failure, or postcondition failure commits nothing. |
+| Snapshot boundary | Includes $C$, lifecycle identity, and frozen-completion identity; excludes $T_C$, $\Gamma_C$ values, $h$, $J$, previous section, and extension work. |
+| Topology continuation | Typed resource event, rebuild target graph completion, basis-independent selector and invariant section, then target current readmission. |
+| Disabled GRC9V3 transition | Disable sector Read-Back and RG2b; execute the exact GRC9V3 step. |
+| Disabled surfaces | `D10.2-EC-DISABLED-C_RG2b-TRANSITION`, `D10.2-EC-DISABLED-C_RG2b-STATE`, `D10.2-EC-DISABLED-C_RG2b-OBSERVABLE`, `D10.2-EC-DISABLED-C_RG2b-LIFECYCLE` |
+| Claim ceiling | Admitted bounded C-RG2b profile; no independent sector state, $C^1$ section, classical derivative graph, spectrum, stability, endpoint, or preference claim. `D10-CL-C-012` continues to block future-exhaustive interpretation. |
+
+### C.9 `A_PC` — A-PC
+
+| Registry field | Accepted profile content |
+|---|---|
+| Candidate / realization | A / PC (`D10-CL-O-001`, `D10-CL-O-006`) |
+| Authoritative state | $C$, $W_A$, $Z_{4,A}$ |
+| Constitutive Read-Back | The accepted A read/current closure is evaluated at geometry derived from the prior committed carrier. |
+| Current closure | $h_k=H_{\mathrm{profile}}(K_{4,\mathrm{base}}+Z_{4,A,k})$ is fixed for the beat; solve the accepted fixed-$h$ A current. |
+| $K_4$/geometry source | The old carrier determines current geometry; the accepted same-beat source $S_A$ is written only into $Z_{4,A,k+1}$. |
+| Realization order | Derive $h$ from old $Z$; solve current; continuity; refreshed $W_A$ writer; carrier writer; validate and atomically commit $C$, $W_A$, and $Z$. |
+| History state | Authoritative persistent $K_4$ carrier $Z_{4,A}$ in addition to $W_A$. |
+| Writer | A writer updates $W_A$; PC writer updates $Z_{4,A}^+=a_{\mathrm{PC}}Z_{4,A}+(1-a_{\mathrm{PC}})S_A$. |
+| Release | A has its native mobility relaxation; $Z_{4,A}$ has finite-time persistence and asymptotic zero-source release under the scalar-ZOH law. |
+| Admitted domain | Fixed-$h$ A current domain and the declared bounded carrier/source ball $\mathcal B_{R,A}$. |
+| Solver/root rule | Deterministic fixed-$h$ current solve plus bounded ZOH writer; new $Z^+$ never re-enters the same beat. |
+| Failure rule | Current/domain failure, carrier-ball failure, nonfinite result, charge failure, or postcondition failure commits neither candidate nor carrier state. |
+| Snapshot boundary | Includes current/reset $Z_{4,A}$, $\tau_{\mathrm{PC}}$, writer and $K_4$ profile identity, as well as $C$, $W_A$, and lifecycle identity. |
+| Topology continuation | Typed resource event; admitted $W_A$ transport or exact GRC9V3 initializer; typed $L_{K4,\mathrm{evt}}$ transport or explicit $Z$ reset/loss; target PC readmission. |
+| Disabled GRC9V3 transition | Disable PC with canonical $Z_{4,A}=0$, disable temporal $W_A$, and execute the exact GRC9V3 step. |
+| Disabled surfaces | `D10.2-EC-DISABLED-A_PC-TRANSITION`, `D10.2-EC-DISABLED-A_PC-STATE`, `D10.2-EC-DISABLED-A_PC-OBSERVABLE`, `D10.2-EC-DISABLED-A_PC-LIFECYCLE` |
+| Claim ceiling | Admitted bounded PC profile; no universal memory law, Candidate-B identity, endpoint hysteresis, stability, or preference claim. `D10-CL-C-012` continues to block future-exhaustive interpretation. |
+
+### C.10 `C_PC` — C-PC
+
+| Registry field | Accepted profile content |
+|---|---|
+| Candidate / realization | C / PC (`D10-CL-O-002`, `D10-CL-O-006`) |
+| Authoritative state | $C$, $Z_{4,C}$ |
+| Constitutive Read-Back | The full C read/current chain is evaluated at geometry derived from the prior committed carrier. |
+| Current closure | $h_k=H_{\mathrm{profile}}(K_{4,\mathrm{base}}+Z_{4,C,k})$ is fixed for the beat; rebuild selector/Hodge surfaces and solve the fixed-$h$ C current. |
+| $K_4$/geometry source | The old carrier determines current geometry; same-beat $S_C$ is written only into $Z_{4,C,k+1}$. |
+| Realization order | Derive $h$ from old $Z$; rebuild full C chain; solve current; continuity; carrier writer; rederive final C surfaces; atomic $C,Z$ commit. |
+| History state | Authoritative persistent $K_4$ carrier $Z_{4,C}$; no independent Candidate C sector state. |
+| Writer | Continuity writes $C$; PC writer updates $Z_{4,C}^+=a_{\mathrm{PC}}Z_{4,C}+(1-a_{\mathrm{PC}})S_C$. |
+| Release | No independent C-sector release; $Z_{4,C}$ has finite-time persistence and asymptotic zero-source release. |
+| Admitted domain | Fixed-$h$ current domain, basis-independent selector contract, and declared bounded carrier/source ball $\mathcal B_{R,C}$. |
+| Solver/root rule | Deterministic selector/Hodge reconstruction, fixed-$h$ C current solve, and bounded ZOH writer. |
+| Failure rule | Selector/current/domain/carrier failure, nonfinite result, charge failure, or postcondition failure commits neither $C$ nor $Z$. |
+| Snapshot boundary | Includes current/reset $Z_{4,C}$, $\tau_{\mathrm{PC}}$, writer/$K_4$ identity, $C$, and lifecycle identity; $T_C$ remains derived. |
+| Topology continuation | Typed resource event; typed $L_{K4,\mathrm{evt}}$ or explicit $Z$ reset/loss; rebuild target selector/fixed-$h$ current; target PC readmission. |
+| Disabled GRC9V3 transition | Disable PC with canonical $Z_{4,C}=0$, disable sector Read-Back, and execute the exact GRC9V3 step. |
+| Disabled surfaces | `D10.2-EC-DISABLED-C_PC-TRANSITION`, `D10.2-EC-DISABLED-C_PC-STATE`, `D10.2-EC-DISABLED-C_PC-OBSERVABLE`, `D10.2-EC-DISABLED-C_PC-LIFECYCLE` |
+| Claim ceiling | Admitted bounded C-PC profile; no independent sector state, universal memory law, Candidate-B identity, endpoint hysteresis, stability, or preference claim. `D10-CL-C-012` continues to block future-exhaustive interpretation. |
+
+### C.11 `A_CI_PC` — A-CI+PC
+
+| Registry field | Accepted profile content |
+|---|---|
+| Candidate / realization | A / CI+PC (`D10-CL-O-001`, `D10-CL-O-007`) |
+| Authoritative state | $C$, $W_A$, $Z_{4,A}$ |
+| Constitutive Read-Back | The ordinary once-gated A read participates in the joint root; the old carrier contributes separately to effective structure. |
+| Current closure | The joint root uses $K_{\mathrm{eff},A}=K_{4,\mathrm{base}}+Z_{4,A,k}+\rho_{\mathrm{inst},A}S_A(J,h)$ and solves the A current and geometry equations simultaneously. |
+| $K_4$/geometry source | Immediate same-root source and prior committed carrier are combined by the identity-bearing unit-plus-unit profile; the same root source is later written to the carrier. |
+| Realization order | Joint root reads old $Z$ and same-root $S_A$; continuity; refreshed $W_A$ writer; carrier writer from the same root source; atomic $C,W_A,Z$ commit. |
+| History state | Authoritative $W_A$ and persistent $Z_{4,A}$; $J$, $h$, and same-root $S_A$ are derived/transient. |
+| Writer | Ordinary A writer plus $Z_{4,A}^+=a_{\mathrm{PC}}Z_{4,A}+(1-a_{\mathrm{PC}})S_A(J^\star,h^\star)$. |
+| Release | A mobility relaxation plus asymptotic zero-source carrier release; the gain-two steady profile is not amplitude-neutral. |
+| Admitted domain | Declared closed convex A composite geometry domain satisfying CI+PC self-map/contraction inequalities and the closed carrier/source ball. |
+| Solver/root rule | Unique root on the admitted bounded composite domain; old $Z$ is an input, not a root unknown; the same source closes the root and writes history. |
+| Failure rule | Root, current, geometry, carrier, charge, or postcondition failure commits no candidate or history coordinate. |
+| Snapshot boundary | Includes current/reset $Z_{4,A}$, $\tau_{\mathrm{PC}}$, $\rho_{\mathrm{inst}}$, CI+PC writer/$K_4$ identity, $C$, $W_A$, and lifecycle identity. |
+| Topology continuation | Typed resource event; $W_A$ transport or exact GRC9V3 initializer; typed $L_{K4,\mathrm{evt}}$ or explicit $Z$ reset/loss; target composite readmission. |
+| Disabled GRC9V3 transition | Disable CI and PC, set canonical $Z_{4,A}=0$, disable temporal $W_A$, and execute the exact GRC9V3 step. |
+| Disabled surfaces | `D10.2-EC-DISABLED-A_CI_PC-TRANSITION`, `D10.2-EC-DISABLED-A_CI_PC-STATE`, `D10.2-EC-DISABLED-A_CI_PC-OBSERVABLE`, `D10.2-EC-DISABLED-A_CI_PC-LIFECYCLE` |
+| Claim ceiling | Admitted bounded gain-two CI+PC profile; no global root, amplitude equivalence, preferred weighting, endpoint, stability, or exhaustive-composition claim. `D10-CL-C-012` continues to block future-exhaustive interpretation. |
+
+### C.12 `C_CI_PC` — C-CI+PC
+
+| Registry field | Accepted profile content |
+|---|---|
+| Candidate / realization | C / CI+PC (`D10-CL-O-002`, `D10-CL-O-007`) |
+| Authoritative state | $C$, $Z_{4,C}$ |
+| Constitutive Read-Back | The full once-gated C read participates in the joint root; the old carrier contributes separately to effective structure. |
+| Current closure | The joint root uses $K_{\mathrm{eff},C}=K_{4,\mathrm{base}}+Z_{4,C,k}+\rho_{\mathrm{inst},C}S_C(J,h)$ and solves the stratified C current/geometry equations. |
+| $K_4$/geometry source | Immediate same-root C source and prior committed carrier are combined by the identity-bearing unit-plus-unit profile; the same root source is written to the carrier. |
+| Realization order | Joint root reads old $Z$ and same-root $S_C$; continuity; carrier writer; rederive final C surfaces; atomic $C,Z$ commit. |
+| History state | Persistent authoritative $Z_{4,C}$; Candidate C sector and Hodge surfaces remain derived. |
+| Writer | Continuity writes $C$; $Z_{4,C}^+=a_{\mathrm{PC}}Z_{4,C}+(1-a_{\mathrm{PC}})S_C(J^\star,h^\star)$. |
+| Release | No independent C-sector release; asymptotic zero-source carrier release. The gain-two steady profile is not amplitude-neutral. |
+| Admitted domain | Fixed-selector composite stratum, regular current/root block, declared contraction domain, and closed carrier/source ball. |
+| Solver/root rule | At most one root per admitted regular selector stratum under its composite contraction, then exactly one self-consistent root across the stratum union. |
+| Failure rule | Missing/multiple self-consistent roots, selector inconsistency, singularity, carrier/domain failure, nonfinite result, charge failure, or postcondition failure commits nothing. |
+| Snapshot boundary | Includes current/reset $Z_{4,C}$, $\tau_{\mathrm{PC}}$, $\rho_{\mathrm{inst}}$, CI+PC writer/$K_4$ identity, $C$, and lifecycle identity. |
+| Topology continuation | Typed resource event; typed $L_{K4,\mathrm{evt}}$ or explicit $Z$ reset/loss; target selector, unique stratified CI+PC root, and carrier readmission. |
+| Disabled GRC9V3 transition | Disable CI and PC, set canonical $Z_{4,C}=0$, disable sector Read-Back, and execute the exact GRC9V3 step. |
+| Disabled surfaces | `D10.2-EC-DISABLED-C_CI_PC-TRANSITION`, `D10.2-EC-DISABLED-C_CI_PC-STATE`, `D10.2-EC-DISABLED-C_CI_PC-OBSERVABLE`, `D10.2-EC-DISABLED-C_CI_PC-LIFECYCLE` |
+| Claim ceiling | Admitted bounded stratified gain-two CI+PC profile; no independent sector state, global root, amplitude equivalence, preference, endpoint, stability, or exhaustive-composition claim. `D10-CL-C-012` continues to block future-exhaustive interpretation. |
+
+### C.13 Cross-profile controls and boundaries
+
+#### C.13.1 Authority comparison
+
+| Profile class | Candidate authority | Realization history authority | Geometry authority |
+|---|---|---|---|
+| A-CI / A-OS / A-RG2b | $C,W_A$ | none | derived same-beat or reconstructed |
+| C-CI / C-OS / C-RG2b | $C$ | none | derived same-beat or reconstructed |
+| A-PC / A-CI+PC | $C,W_A$ | $Z_{4,A}$ | derived from old carrier and/or same-root source |
+| C-PC / C-CI+PC | $C$ | $Z_{4,C}$ | derived from old carrier and/or same-root source |
+
+A complete implementation may support a nonempty subset of these profiles, but its conformance claim must name exactly which complete identities it supports. There is no lawful generic `GRCV4` transition with candidate or realization left unspecified.
+
+#### C.13.2 Realization comparison
+
+| Realization | Defining timing/history contract | Explicit defect or boundary |
+|---|---|---|
+| CI | simultaneous current/geometry root | bounded local regular branch; no global stability theorem |
+| OS | one predictor, one geometry update, one fixed-$h$ corrector | nonzero split residual is preserved; no silent second iteration |
+| RG2b | geometry reconstructed from frozen extension-relative invariant section | bounded Lipschitz result only; no $C^1$ section or spectrum |
+| PC | geometry read from prior committed $Z_4$ and source written by scalar ZOH | local carrier ball; no universal memory or endpoint theorem |
+| CI+PC | prior carrier plus same-root immediate source | identity-bearing gain-two profile; no amplitude equivalence or preferred weighting |
+
+#### C.13.3 Candidate comparison
+
+| Candidate | Independent candidate history | Write-back route | Prohibited relabel |
+|---|---|---|---|
+| A | authoritative $W_A$ | post-continuity logarithmic $W_A$ writer | not inherited core, not graph $K_4$, not Candidate B |
+| C | none beyond $C$ | continuity changes $C$; sector/Hodge surfaces are rederived | $T_C$ is not hidden state and not a stored independent carrier |
+
+Candidate neutrality means equal completeness and evidentiary burden, not equal equations or equal state dimension. No candidate or realization is ranked by this registry.
+
+#### C.13.4 Lifecycle and reduction controls
+
+- Migration receipts bind the ordered source/target profile pair.
+- Endpoint support does not prove a lawful crossing; each migration/event map requires target readmission.
+- Candidate A target initialization is graph-generic in role, while the exact GRC9V3 base-conductance binding is Appendix A specialization content.
+- Candidate C target surfaces are rederived; they are not transported as hidden independent state.
+- Persistent history is transported only through an admitted $L_{K4,\mathrm{evt}}$; otherwise it is archived/dropped and target $Z_4$ is canonically zeroed with a receipt.
+- RG2b topology continuation rebuilds the frozen completion and solves/re-admits the target invariant section.
+- The exact GRC9V3 disabled branch independently reduces transition, state, observable, and lifecycle surfaces.
+
+#### C.13.5 Claim ceiling
+
+The registry establishes ten complete current profile identities and their design-level state, timing, writer, domain, failure, lifecycle, and reduction contracts. It does not establish:
+
+- implementation completion or interoperability;
+- numerical tolerance, iteration, or codec choices;
+- runtime-reached formation, retention, release, or replay;
+- nonzero committed endpoint effect or hysteresis;
+- physical nonabsorbability or channel attribution;
+- structural or temporal stability;
+- instantiated continuation spectra;
+- matched physical dimensionalization or profile ranking;
+- singular continuation;
+- generic lossless history transport without typed lineage;
+- Candidate B as executable;
+- future-exhaustive candidate, realization, or composition taxonomies.
+
+A successor investigation becomes necessary only if the intended substrate account or later specification cannot preserve one of these boundaries without adding or changing scientific content.
 
 ---
 
