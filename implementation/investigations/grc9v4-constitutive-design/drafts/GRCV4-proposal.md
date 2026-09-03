@@ -650,6 +650,74 @@ The three appendices are therefore integrated as a single controlled tranche. An
 
 ---
 
+### Appendices D–G tranche status
+
+**Status:** Working synthesis from the accepted GRC-v4/GRC9V4 constitutive-design investigation.
+
+**Scientific authority:** None independent of the accepted investigation.
+
+**Current controlling closure:** Accepted D10.2, decision digest `28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c`.
+
+**Intended use:** Integrated controlled content in `drafts/GRCV4-proposal.md` after Appendices A–C.
+
+This tranche completes the technical-reference layer requested by the extraction skeleton:
+
+- Appendix D collects the exact candidate and realization equations already stated in Sections 8–10;
+- Appendix E converts the accepted complete-step, lifecycle, migration, and topology-event contracts into reference tables;
+- Appendix F collects the continuation and analysis interfaces while preserving their uninstantiated evidence boundary;
+- Appendix G records the paper-to-investigation provenance crosswalk and complete D10.2 object/contract coverage.
+
+Nothing below supplies a replacement equation, profile, state coordinate, solver, metric, event map, or scientific claim. The appendices reorganize accepted content for lookup and audit. When a formula is already printed in the main proposal, its appearance here is a controlled duplicate of that same source-backed equation.
+
+The crosswalks preserve the exploratory side tool’s association status `indeterminate_requires_review`. They identify the sources consumed by the proposal; they are not newly inferred graph edges or reconstructed proof. `D10_2_CL_N_001` remains a source-local label under D10.2 `/claim_topology_effect`, not a queryable D10 claim node.
+
+### Source-control rules
+
+1. Candidate A equations remain Candidate A equations; Candidate C equations remain Candidate C equations.
+2. CI, OS, RG2b, PC, and CI+PC retain distinct temporal and history semantics.
+3. Candidate C physical-current transport uses the accepted post-v2 identification
+
+   $$
+   Q_C=I_{4M}G_J,
+   $$
+
+   and never omits the $G_J$ flat/sharp factors.
+4. Structural Hodge objects retain the accepted `H1_form` typing. $H_{1,\mathrm{form}}$, $G_J$, $M_4$, $h_4$, and $K_4$ are not merged by coordinate dimension or numerical coincidence.
+5. Persistent-carrier state is written as $Z_{4,a,k}$ or $Z_{4,a}$.
+6. Analysis equations not enumerated as D10.2 subordinate rows retain direct lineage to D3, D8-A, and D8-B. No fabricated D10.2 contract identifier is assigned to them.
+7. No successor gate is named merely because a claim remains conditional or open. The appendices record boundaries without prescribing a successor schedule.
+
+The forensic API audit reconstructed all 39 cited D10 claims, queried all 67 D10.2 parent objects and all 152 D10.2 contract rows, and confirmed their current exact-source authority and association boundary. The claim partition remains 12 `conditional`, 9 `normative`, 7 `optional`, 5 `open`, and 6 `negative`; the object partition remains 54 `promotion_proved` and 13 `specialization_only`; every relevant association remains `indeterminate_requires_review`; and `D10_2_CL_N_001` correctly fails closed as a non-node provenance label.
+
+The comparison found two extraction-only omissions, corrected in both the Appendix E contract register and the Appendix G crosswalk: `D10.2-EC-CHARGE-BUDGET-STAGE` now includes `GRC9V4-D9-LIFECYCLE-COVERAGE-MATRIX-v1` in its source lineage, and `D10.2-EC-EVENT-RESOURCE` now includes accepted claim `D10-CL-N-004`. Neither correction changes an equation, contract, claim class, promotion state, or scientific conclusion.
+
+### Appendices D–G pressure result
+
+```text
+Appendix D equation extraction               = complete
+Appendix E lifecycle/event tables            = complete
+Appendix F analysis/nonclaim interfaces      = complete
+Appendix G provenance companion              = complete
+
+D10 parent objects represented               = 67 / 67
+D10.2 equation/contract rows represented     = 152 / 152
+accepted D10 claims represented              = 39 / 39
+source-local D10_2_CL_N_001 misclassified    = false
+Candidate C Q_C flat/sharp factors preserved = true
+persistent carrier notation preserved        = true
+premature successor labels                   = none
+
+new mathematical line introduced             = false
+new profile or state authority introduced    = false
+new claim promoted                           = false
+new scientific contradiction                 = none
+mandatory successor investigation            = none
+```
+
+The appendices expose no paper-blocking scientific boundary beyond those already recorded by the accepted claim topology. They make those boundaries auditable without scheduling them as automatic research extensions.
+
+---
+
 # Paper Skeleton
 
 ## Abstract
@@ -8311,63 +8379,2229 @@ A successor investigation becomes necessary only if the intended substrate accou
 
 ## Appendix D. Exact Candidate and Realization Equations
 
-Move long root, contraction, selector, Hodge, OS residual, RG section, PC writer, and CI+PC composition equations here if including all of them in the main text would obscure the substrate architecture.
+### D.1 Purpose and equation identity
 
-The main text must still state every causal role and authority relation.
+This appendix is a compact equation register for the current admitted population
+
+$$
+\{\mathrm A,\mathrm C\}
+\times
+\{\mathrm{CI},\mathrm{OS},\mathrm{RG2b},\mathrm{PC},\mathrm{CI+PC}\}.
+$$
+
+It does not replace the causal, authority, and lifecycle explanations in Sections 5–12. In particular, an equation printed here does not by itself establish runtime reachability, persistence, endpoint effect, stability, nonabsorbability, or preference.
+
+The common role notation is:
+
+| Symbol | Role |
+|---|---|
+| $C_k$ | authoritative scalar resource at beat $k$ |
+| $W_{A,k}$ | authoritative Candidate A retained edge mobility |
+| $Z_{4,a,k}$ | authoritative PC/CI+PC structural carrier for candidate $a$ |
+| $J_{0,a}$ | candidate/profile baseline current with the explicit read gate disabled |
+| $j_{a,\mathrm{flux}}$ | explicit Read-Back current in physical-flux coordinates |
+| $j_a^\flat$ | lowered structural one-form used by the $K_4$ source |
+| $J_{C,a}$ | one authoritative physical current for continuity |
+| $S_a=\Delta K_{4,a}$ | candidate-specific structural source |
+| $H_{\mathrm{profile}}$ | admitted $K_4\mapsto h_4$ geometry profile |
+
+The common current-composition interface is
+
+$$
+J_{C,a}=J_{0,a}+\zeta_a j_{a,\mathrm{flux}},
+$$
+
+but its actual solve remains candidate- and realization-specific.
+
+### D.2 Candidate A equation package
+
+#### D.2.1 State and mobility authority
+
+For a nonpersistent A profile,
+
+$$
+X_{A,k}=(C_k,W_{A,k}),
+\qquad
+W_{A,k,e}>0.
+$$
+
+For persistent A profiles,
+
+$$
+X_{A,k}^{\mathrm{persistent}}
+=
+(C_k,W_{A,k},Z_{4,A,k}).
+$$
+
+Candidate A owns transport mobility through
+
+$$
+M_{4,A}(W_A)=\eta\,\operatorname{Diag}(W_A).
+$$
+
+At reference geometry, the inherited potential and baseline flow are
+
+$$
+\Phi_{A,i}^{D7}
+=
+\kappa_c\sum_{e\sim i}W_{A,e}
+\bigl(C_i-C_{\operatorname{nbr}(e,i)}\bigr)
+-
+V_{\mathrm{site}}'(C_i),
+$$
+
+$$
+J_{0,A,e}^{D7}
+=
+-\eta W_{A,e}
+\bigl(\Phi_{A,u}^{D7}-\Phi_{A,v}^{D7}\bigr),
+$$
+
+or equivalently
+
+$$
+J_{0,A}^{D7}
+=
+-M_{4,A}(W_A)d_0\Phi_A^{D7}.
+$$
+
+When a realization supplies nonreference geometry,
+
+$$
+\Delta_0(h)
+=
+H_{0,\mathrm{ref}}^{-1}
+B
+H_{1,\mathrm{form}}(h)
+B^\top,
+$$
+
+$$
+\Phi_A(C,W_A,h)
+=
+\Phi_A^{D7}(C,W_A)
++
+\kappa_{Ah}
+\bigl[\Delta_0(h)-\Delta_0(h_{\mathrm{ref}})\bigr]C,
+$$
+
+$$
+J_{0,A}(C,W_A,h)
+=
+-M_{4,A}(W_A)d_0\Phi_A(C,W_A,h).
+$$
+
+The geometry term changes the potential/current consumer. It does not transfer mobility authority from $W_A$ to $h_4$.
+
+#### D.2.2 Conductance functional, reference, and contrast
+
+The accepted current Candidate A profile uses the curvature-disabled functional
+
+$$
+G_{W,e}(C,J)
+=
+\max\!\left(
+W_{\mathrm{floor}},
+\exp\!\left[
+-\alpha\frac{C_u+C_v}{2}
+-\frac{\beta}{2}\lVert D_u(C)-D_v(C)\rVert^2
+-\frac{\gamma}{2}J_e^2
+\right]
+\right).
+$$
+
+The fresh pre-read reference is
+
+$$
+\widehat W_{A,k}
+=
+G_W(C_k,J_{0,A,k}),
+$$
+
+and the retained directional contrast is
+
+$$
+q_{A,e}
+=
+\frac{W_{A,e}-\widehat W_{A,e}}
+{W_{A,e}+\widehat W_{A,e}}.
+$$
+
+$\widehat W_A$ and $q_A$ are derived surfaces. Neither is an independently written state coordinate.
+
+#### D.2.3 Read-Back and fixed-geometry current closure
+
+The explicit A read is
+
+$$
+j_{A,\mathrm{flux}}
+=
+\chi_A\operatorname{Diag}(q_A)J_{C,A},
+$$
+
+and the authoritative current obeys
+
+$$
+J_{C,A}
+=
+J_{0,A}+\zeta_Aj_{A,\mathrm{flux}}.
+$$
+
+On the regular fixed-geometry algebraic profile, edgewise,
+
+$$
+J_{C,A,e}
+=
+\frac{J_{0,A,e}}
+{1-\zeta_A\chi_Aq_{A,e}}.
+$$
+
+The matched binary-gate difference is
+
+$$
+J_{C,A}(\chi_A=1)-J_{C,A}(\chi_A=0)
+=
+\frac{\zeta_Aq_AJ_{0,A}}
+{1-\zeta_Aq_A},
+$$
+
+understood elementwise on the admitted fixed-geometry domain. This is constitutive sensitivity, not a completed physical nonabsorbability or endpoint claim.
+
+#### D.2.4 Structural source
+
+The physical read current is lowered by
+
+$$
+j_A^\flat=G_J(h)j_{A,\mathrm{flux}},
+$$
+
+and the structural source is
+
+$$
+S_A(J,h)
+\equiv
+\Delta K_{4,A}(J,h)
+=
+\zeta_A\,
+\iota_A\!\left(
+\mathcal A_\star(j_A^\flat)
+\right).
+$$
+
+$S_A$ is $K_4$-valued. It is not a second physical current, a committed carrier, $H_{1,\mathrm{form}}$, $h_4$, or $M_4$.
+
+#### D.2.5 Continuity target and retained writer
+
+After the one authoritative current has been accepted,
+
+$$
+C_{k+1}
+=
+C_k-\Delta t_kBJ_{C,A,k}
++B_{\mathrm{ext},k}+S_{\mathrm{ext},k}.
+$$
+
+After resource and charge admission, every final-$C$ differential input is rebuilt and
+
+$$
+W_{\mathrm{drv},A,k}
+=
+G_W(C_{k+1},J_{C,A,k}).
+$$
+
+With
+
+$$
+a_{A,k}=\exp\!\left(-\frac{\Delta t_k}{\tau_A}\right),
+\qquad 0<a_{A,k}<1,
+$$
+
+the accepted single writer is
+
+$$
+\log W_{A,k+1}
+=
+a_{A,k}\log W_{A,k}
++
+(1-a_{A,k})\log W_{\mathrm{drv},A,k},
+$$
+
+or equivalently
+
+$$
+W_{A,k+1}
+=
+W_{A,k}^{a_{A,k}}
+W_{\mathrm{drv},A,k}^{1-a_{A,k}}.
+$$
+
+The new $W_{A,k+1}$ never re-enters the beat-$k$ current solve.
+
+### D.3 Candidate C equation package
+
+#### D.3.1 State authority and selector
+
+For a nonpersistent C profile,
+
+$$
+X_{C,k}=C_k.
+$$
+
+Persistent C profiles add only their realization carrier:
+
+$$
+X_{C,k}^{\mathrm{persistent}}=(C_k,Z_{4,C,k}).
+$$
+
+At the accepted prestate geometry, form
+
+$$
+L_{0,\mathrm{sym,pre}}
+=
+H_{0,\mathrm{pre}}^{-1/2}
+B_{\mathrm{pre}}
+H_{1,\mathrm{form,pre}}
+B_{\mathrm{pre}}^\top
+H_{0,\mathrm{pre}}^{-1/2}.
+$$
+
+The basis-independent selector is
+
+$$
+Q_M
+=
+\mathbf 1_{[0,\Lambda_C]}
+\!\left(L_{0,\mathrm{sym,pre}}\right),
+$$
+
+with physical-coordinate projector
+
+$$
+P_M^\Delta
+=
+H_{0,\mathrm{pre}}^{-1/2}
+Q_M
+H_{0,\mathrm{pre}}^{1/2},
+$$
+
+and selected content
+
+$$
+T_{C,k}=P_M^\Delta C_k.
+$$
+
+On a fixed-rank smooth chart,
+
+$$
+\lambda_m<\Lambda_C<\lambda_{m+1}.
+$$
+
+When geometry is active, the full dependence is written $P_M(h)$ and $T_C(h)=P_M(h)C_k$.
+
+#### D.3.2 Selected-content Hodge modulation
+
+The normalized selected content is
+
+$$
+\rho_{C,v}
+=
+\tanh\!\left(\frac{T_{C,v}}{C_{\mathrm{ref}}}\right),
+$$
+
+with edge content
+
+$$
+r_{C,e}
+=
+\frac{\rho_{C,u}+\rho_{C,v}}{2}.
+$$
+
+Define
+
+$$
+D_C
+=
+\operatorname{Diag}\!\left(
+\exp\!\left[\frac{\kappa_{M,C}}{2}r_C\right]
+\right).
+$$
+
+The accepted Hodge package is
+
+$$
+H_{0,M}=H_{0,\mathrm{pre}},
+$$
+
+$$
+H_{1,\mathrm{form},M}
+=
+D_CH_{1,\mathrm{form,pre}}D_C.
+$$
+
+The selected/physical one-form identification is
+
+$$
+I_{4M}
+=
+H_{1,\mathrm{form},M}
+H_{1,\mathrm{form,pre}}^{-1},
+$$
+
+$$
+I_{4M}^{-1}
+=
+H_{1,\mathrm{form,pre}}
+H_{1,\mathrm{form},M}^{-1}.
+$$
+
+The one-form Hodge Laplacian is
+
+$$
+\Delta_{1,M}
+=
+B^\top H_{0,M}^{-1}B H_{1,\mathrm{form},M}.
+$$
+
+#### D.3.3 Ungated resolvent and corrected physical-current identification
+
+The intrinsic response is ungated:
+
+$$
+\widehat R_{C,M}
+=
+(I+\tau_C\Delta_{1,M})^{-1}.
+$$
+
+The full physical-flux to retained-one-form identification is
+
+$$
+\boxed{Q_C=I_{4M}G_J}.
+$$
+
+The ungated physical-flux response is
+
+$$
+\widehat R_{C,\mathrm{flux}}
+=
+Q_C^{-1}\widehat R_{C,M}Q_C.
+$$
+
+Equivalently, the intrinsic one-form response to physical current $J$ is
+
+$$
+r_C^\flat(J,h)
+=
+I_{4M}^{-1}
+\widehat R_{C,M}
+I_{4M}
+G_J(h)J.
+$$
+
+The causal gate is applied exactly once:
+
+$$
+j_C^\flat(J,h)=\chi_Cr_C^\flat(J,h),
+$$
+
+$$
+j_{C,\mathrm{flux}}(J,h)
+=
+G_J(h)^{-1}j_C^\flat(J,h).
+$$
+
+#### D.3.4 Fixed-geometry current closure and regularity
+
+The physical current satisfies
+
+$$
+J_{C,C}
+=
+J_{0,C}
++
+\zeta_Cj_{C,\mathrm{flux}}(J_{C,C},h),
+$$
+
+or
+
+$$
+J_{C,C}
+=
+J_{0,C}
++
+\zeta_C\chi_C
+\widehat R_{C,\mathrm{flux}}J_{C,C}.
+$$
+
+Thus
+
+$$
+L_{C,\mathrm{flux}}
+=
+I-\zeta_C\chi_C\widehat R_{C,\mathrm{flux}},
+$$
+
+$$
+J_{C,C}=L_{C,\mathrm{flux}}^{-1}J_{0,C}
+$$
+
+on the exact regular domain.
+
+If $\nu_i\ge0$ are the retained-coordinate eigenvalues of $\Delta_{1,M}$, then
+
+$$
+r_i=\frac{1}{1+\tau_C\nu_i},
+$$
+
+and regularity requires
+
+$$
+1-\zeta_C\chi_Cr_i\ne0
+\qquad\text{for every admitted mode }i.
+$$
+
+The physical block is similar to the retained-coordinate block:
+
+$$
+L_{C,\mathrm{flux}}
+=
+Q_C^{-1}
+\bigl(I-\zeta_C\chi_C\widehat R_{C,M}\bigr)
+Q_C.
+$$
+
+Exact invertibility transfers by similarity. Euclidean singular-value margins do not transfer unchanged.
+
+#### D.3.5 Structural source and resource-mediated write-back
+
+The structural source is
+
+$$
+S_C(J,h)
+\equiv
+\Delta K_{4,C}(J,h)
+=
+\zeta_C\,
+\iota_C\!\left(
+\mathcal A_\star(j_C^\flat(J,h))
+\right).
+$$
+
+After continuity writes $C_{k+1}$, Candidate C rederives
+
+$$
+T_{C,k+1}=P_{M,k+1}^\Delta C_{k+1}.
+$$
+
+The selected-content change decomposes as
+
+$$
+T_{C,k+1}-T_{C,k}
+=
+P_{M,k}^\Delta(C_{k+1}-C_k)
++
+(P_{M,k+1}^\Delta-P_{M,k}^\Delta)C_{k+1}.
+$$
+
+On a fixed-selector stratum,
+
+$$
+T_{C,k+1}-T_{C,k}
+=
+P_M^\Delta(C_{k+1}-C_k).
+$$
+
+No independent $T_C$ or Hodge writer exists.
+
+### D.4 Coupled Implicit realization
+
+#### D.4.1 Common root surface
+
+For candidate $a\in\{A,C\}$, CI solves
+
+$$
+F_a(Y_a;X_{a,k},U_k)=0,
+\qquad
+Y_a=(J_a,h_a).
+$$
+
+The variables $(J_a,h_a)$ are same-beat algebraic unknowns, not persistent state.
+
+#### D.4.2 Candidate A CI root
+
+Within every residual evaluation,
+
+$$
+\widehat W_A(h)
+=
+G_W\!\left(C_k,J_{0,A}(C_k,W_{A,k},h)\right),
+$$
+
+$$
+q_A(h)
+=
+\frac{W_{A,k}-\widehat W_A(h)}
+{W_{A,k}+\widehat W_A(h)},
+$$
+
+$$
+j_{A,\mathrm{flux}}(J,h)
+=
+\chi_A\operatorname{Diag}(q_A(h))J,
+$$
+
+$$
+j_A^\flat(J,h)=G_J(h)j_{A,\mathrm{flux}}(J,h),
+$$
+
+$$
+S_A(J,h)
+=
+\zeta_A\iota_A\!\left(\mathcal A_\star(j_A^\flat(J,h))\right).
+$$
+
+The joint residual is
+
+$$
+F_{J,A}
+=
+J-J_{0,A}(C_k,W_{A,k},h)
+-\zeta_Aj_{A,\mathrm{flux}}(J,h)=0,
+$$
+
+$$
+F_{h,A}
+=
+h-H_{\mathrm{profile}}\!\left(
+K_{4,\mathrm{base}}+S_A(J,h),
+ h_{4,\mathrm{ref}},U_k
+\right)=0.
+$$
+
+The admitted result is the unique regular local root on the preregistered bounded branch connected to the $\kappa_H=0$ reference profile.
+
+#### D.4.3 Candidate C CI root
+
+For each trial $h$ reconstruct
+
+```text
+h -> P_M(h) -> T_C(h) -> H_M(T_C,h)
+  -> I_4M(T_C,h) -> Delta_1,M(T_C,h)
+  -> Rhat_C,M(T_C,h).
+```
+
+Then
+
+$$
+r_C^\flat(J,h)
+=
+I_{4M}(T_C,h)^{-1}
+\widehat R_{C,M}(T_C,h)
+I_{4M}(T_C,h)
+G_J(h)J,
+$$
+
+$$
+j_C^\flat(J,h)=\chi_Cr_C^\flat(J,h),
+$$
+
+$$
+j_{C,\mathrm{flux}}(J,h)=G_J(h)^{-1}j_C^\flat(J,h),
+$$
+
+$$
+S_C(J,h)
+=
+\zeta_C\iota_C\!\left(\mathcal A_\star(j_C^\flat(J,h))\right).
+$$
+
+The joint residual is
+
+$$
+F_{J,C}
+=
+J-J_{0,C}(C_k,T_C(h),h,U_k)
+-\zeta_Cj_{C,\mathrm{flux}}(J,h)=0,
+$$
+
+$$
+F_{h,C}
+=
+h-H_{\mathrm{profile}}\!\left(
+K_{4,\mathrm{base}}+S_C(J,h),
+ h_{4,\mathrm{ref}},U_k
+\right)=0.
+$$
+
+Exactly one self-consistent regular root on the admitted fixed-rank selector stratum is required. Zero, multiple, singular, disconnected, or nonfinite roots fail closed.
+
+### D.5 Operator Split realization
+
+#### D.5.1 Frozen stage order
+
+OS executes exactly
+
+```text
+X_k -> J^(0) -> j_flat^(0) -> Delta K4^(0)
+    -> h^(1) -> J^(1) -> X_(k+1).
+```
+
+There is one predictor, one geometry update, one full fixed-geometry corrector, and no silent second iteration.
+
+#### D.5.2 Candidate A OS equations
+
+At reference geometry, solve the fixed-geometry A current for $J_A^{(0)}$. Then
+
+$$
+j_A^{\flat,(0)}
+=
+G_J(h_{\mathrm{ref}})
+\chi_A\operatorname{Diag}(q_A^{(0)})J_A^{(0)},
+$$
+
+$$
+S_A^{(0)}
+=
+\zeta_A\iota_A\!\left(\mathcal A_\star(j_A^{\flat,(0)})\right),
+$$
+
+$$
+h_A^{(1)}
+=
+H_{\mathrm{profile}}\!\left(K_{4,\mathrm{base}}+S_A^{(0)}\right).
+$$
+
+At fixed $h_A^{(1)}$ recompute the corrected potential, baseline current, $\widehat W_A$, $q_A$, and full A current. Only $J_A^{(1)}$ enters continuity.
+
+#### D.5.3 Candidate C OS equations
+
+At reference geometry, solve
+
+$$
+J_C^{(0)}
+=
+J_{0,C}(C_k,T_C(h_{\mathrm{ref}}),h_{\mathrm{ref}})
++
+\zeta_Cj_{C,\mathrm{flux}}(J_C^{(0)},h_{\mathrm{ref}}).
+$$
+
+Then
+
+$$
+j_C^{\flat,(0)}
+=
+\chi_C I_{4M}^{-1}
+\widehat R_{C,M}
+I_{4M}G_JJ_C^{(0)},
+$$
+
+$$
+S_C^{(0)}
+=
+\zeta_C\iota_C\!\left(\mathcal A_\star(j_C^{\flat,(0)})\right),
+$$
+
+$$
+h_C^{(1)}
+=
+H_{\mathrm{profile}}\!\left(K_{4,\mathrm{base}}+S_C^{(0)}\right).
+$$
+
+At fixed $h_C^{(1)}$ rebuild the selector, sector, Hodge package, $I_{4M}$, $\widehat R_{C,M}$, $G_J$, and $J_{0,C}$, then solve
+
+$$
+J_C^{(1)}
+=
+J_{0,C}(C_k,T_C(h_C^{(1)}),h_C^{(1)})
++
+\zeta_Cj_{C,\mathrm{flux}}(J_C^{(1)},h_C^{(1)}).
+$$
+
+Only $J_C^{(1)}$ enters continuity.
+
+#### D.5.4 Split-consistency residual
+
+Define
+
+$$
+\widehat h_a^{(1)}
+=
+H_{\mathrm{profile}}\!\left(
+K_{4,\mathrm{base}}+S_a(J_a^{(1)},h_a^{(1)})
+\right),
+$$
+
+$$
+r_{h,a}^{OS}=h_a^{(1)}-\widehat h_a^{(1)}.
+$$
+
+For the accepted coupled residual,
+
+$$
+F_a^{CI}(J_a^{(1)},h_a^{(1)})
+=
+(0,r_{h,a}^{OS}).
+$$
+
+The current equation is closed at the corrected geometry; the geometry fixed point is deliberately not reclosed.
+
+### D.6 Reconstructed Geometry realization
+
+RG2b uses a deterministic invariant section rather than persistent geometry state. Define
+
+$$
+\Psi_{a,\Gamma}(X)
+=
+\Phi_{a,\mathrm{lag}}(X,\Gamma(X)),
+$$
+
+$$
+G_{a,\kappa}(X,h)
+=
+H_{\mathrm{profile}}\!\left(
+K_{4,\mathrm{base}}
++S_a(C_a(h;X,U),h)
+\right).
+$$
+
+The invariant-section equation is
+
+$$
+\Gamma_a(\Psi_{a,\Gamma_a}(X))
+=
+G_{a,\kappa}(X,\Gamma_a(X)),
+$$
+
+or equivalently
+
+$$
+\Gamma_a=\mathcal T_a\Gamma_a.
+$$
+
+At neutral structural coupling,
+
+$$
+G_{a,0}(X,h)=h_{\mathrm{ref}},
+\qquad
+\Gamma_{a,0}(X)=h_{\mathrm{ref}}.
+$$
+
+The admitted fixed-domain construction uses
+
+$$
+K_-\Subset K\Subset U,
+$$
+
+with a $C^0$ graph-transform contraction factor
+
+$$
+q_0<1,
+$$
+
+and containment
+
+$$
+\Psi_{a,\Gamma}(K_-)\subseteq K.
+$$
+
+The accepted result is a unique bounded Lipschitz section relative to the frozen family-local completion. No classical $C^1$ derivative or RG spectrum is inferred.
+
+### D.7 Persistent Carrier realization
+
+For $a\in\{A,C\}$,
+
+$$
+Z_{4,a,k}\in\mathcal B_{R,a}\subset\mathcal K_{4,a},
+$$
+
+$$
+K_{4,a,k}=K_{4,\mathrm{base}}+Z_{4,a,k},
+$$
+
+$$
+h_{a,k}=H_{\mathrm{profile}}(K_{4,a,k}),
+$$
+
+$$
+S_{a,k}=\Delta K_{4,a}(J_{C,a,k},h_{a,k}).
+$$
+
+With
+
+$$
+a_{\mathrm{PC},a,k}
+=
+\exp\!\left(-\frac{\Delta t_k}{\tau_{\mathrm{PC},a}}\right),
+\qquad
+\tau_{\mathrm{PC},a}>0,
+$$
+
+the exact scalar-ZOH writer is
+
+$$
+Z_{4,a,k+1}
+=
+a_{\mathrm{PC},a,k}Z_{4,a,k}
++
+(1-a_{\mathrm{PC},a,k})S_{a,k}.
+$$
+
+It is the exact held-source step of
+
+$$
+\tau_{\mathrm{PC},a}\frac{dZ_{4,a}}{dt}
+=-Z_{4,a}+S_a.
+$$
+
+The declared carrier ball and source envelope are
+
+$$
+\mathcal B_{R,a}
+=
+\{Z:\lVert Z\rVert_K\le R_a\},
+$$
+
+$$
+m_a(R_a)
+=
+\sup_{X\in K_{X,a},\,Z\in\mathcal B_{R,a}}
+\lVert S_a(X,Z)\rVert_K,
+$$
+
+with admission conditions
+
+$$
+m_a(R_a)\le R_a,
+$$
+
+$$
+H_{\mathrm{profile}}(K_{4,\mathrm{base}}+\mathcal B_{R,a})
+\subseteq\mathcal H_{\mathrm{adm}}.
+$$
+
+From neutral state,
+
+$$
+Z_{4,a,k}=0,\quad S_{a,k}\ne0
+\Longrightarrow
+Z_{4,a,k+1}=(1-a_{\mathrm{PC},a,k})S_{a,k}\ne0.
+$$
+
+With zero source,
+
+$$
+Z_{4,a,k+1}=a_{\mathrm{PC},a,k}Z_{4,a,k},
+$$
+
+and for variable positive durations,
+
+$$
+Z_{4,a,n}
+=
+\exp\!\left(
+-\sum_{k<n}\frac{\Delta t_k}{\tau_{\mathrm{PC},a}}
+\right)Z_{4,a,0}.
+$$
+
+These equations establish the accepted carrier formation, finite-time persistence, and asymptotic release laws. They do not establish a nonzero downstream endpoint hysteresis.
+
+### D.8 Coupled Implicit plus Persistent Carrier realization
+
+CI+PC uses old committed history inside the joint root and writes the same root source prospectively. For candidate $a$,
+
+$$
+K_{\mathrm{eff},a}
+=
+K_{4,\mathrm{base}}
++Z_{4,a,k}
++\rho_{\mathrm{inst},a}S_a(J_a,h_a).
+$$
+
+The geometry residual is
+
+$$
+F_{h,a}
+=
+h_a-H_{\mathrm{profile}}(K_{\mathrm{eff},a},h_{4,\mathrm{ref}},U_k)=0,
+$$
+
+paired with the accepted candidate-specific CI current residual.
+
+For A,
+
+$$
+F_{h,A}
+=
+h_A-H_{\mathrm{profile}}\!\left(
+K_{4,\mathrm{base}}+Z_{4,A,k}
++\rho_{\mathrm{inst},A}S_A(J_A,h_A),
+ h_{4,\mathrm{ref}},U_k
+\right)=0.
+$$
+
+For C,
+
+$$
+F_{h,C}
+=
+h_C-H_{\mathrm{profile}}\!\left(
+K_{4,\mathrm{base}}+Z_{4,C,k}
++\rho_{\mathrm{inst},C}S_C(J_C,h_C),
+ h_{4,\mathrm{ref}},U_k
+\right)=0.
+$$
+
+After a valid root $(J_a^\star,h_a^\star)$,
+
+$$
+Z_{4,a,k+1}
+=
+a_{\mathrm{PC},a,k}Z_{4,a,k}
++
+(1-a_{\mathrm{PC},a,k})S_a(J_a^\star,h_a^\star).
+$$
+
+The same source $S_a(J_a^\star,h_a^\star)$ appears in the immediate geometry path and the history writer. A second post-continuity source would define another profile.
+
+For constant source $S$,
+
+$$
+K_{\mathrm{eff}}
+\longrightarrow
+K_{4,\mathrm{base}}+(1+\rho_{\mathrm{inst}})S.
+$$
+
+The accepted primary value $\rho_{\mathrm{inst}}=1$ gives
+
+$$
+K_{\mathrm{eff}}
+\longrightarrow
+K_{4,\mathrm{base}}+2S.
+$$
+
+This gain-two limit is an explicit profile property, not an error or amplitude equivalence with CI or PC.
+
+### D.9 Exact realization ablations
+
+| Enabled profile | Controlled change | Exact accepted reduction |
+|---|---|---|
+| CI+PC | $\rho_{\mathrm{inst}}=0$ with PC retained | PC |
+| CI+PC | $Z_{4,a,k}=0$, PC disabled, $\rho_{\mathrm{inst}}=1$ | CI |
+| CI+PC | $\rho_{\mathrm{inst}}=0$, PC disabled, $Z_{4,a,k}=0$ | fixed-reference transition |
+| Candidate A | $\chi_A=0$ | explicit A read off; direct $W_A$ mobility remains |
+| Candidate C | $\chi_C=0$ | explicit C read off; intrinsic response may remain diagnostic |
+| Candidate A or C | $\zeta_a=0$ | read has no causal current/structural consumer |
+| PC | $S_{a,k}=0$ | native exponential carrier release |
+| OS | add a second geometry correction | **not** a reduction; defines a new realization/profile |
+
+### D.10 Equation-to-contract register
+
+The following table enumerates the D10.2 subordinate equation/contract rows consumed by Appendix D. Parent-atomic rows are included where they carry a candidate equation not repeated by a more specific expanded row.
+
+| Equation/contract ID | Scope | Parent object(s) | Profile(s) | Claim(s) | Accepted source lineage | Blocked overread |
+| --- | --- | --- | --- | --- | --- | --- |
+| D10.2-EC-PARENT-A-GW-FUNCTIONAL | parent_atomic_contract | `A-GW-FUNCTIONAL` | — | `D10-CL-C-011`<br>`D10-CL-O-001`<br>`D10-CL-X-004`<br>`D10-CL-X-006` | `GRCV3-RUNTIME-SOURCE`<br>`GRC9V3-TRANSPORT-RUNTIME`<br>`GRC9V4-CD-D7-v1` | promotion_excludes_both_the_GRC9_row_basis_backend_and_any_future_curvature_conditioned_successor |
+| D10.2-EC-PARENT-A-WHAT | parent_atomic_contract | `A-WHAT` | — | `D10-CL-C-011`<br>`D10-CL-O-001`<br>`D10-CL-X-004`<br>`D10-CL-X-006` | `GRC9V4-CD-D7-v1` | W_hat_is_not_independent_history |
+| D10.2-EC-PARENT-A-DIRECTIONAL-CONTRAST | parent_atomic_contract | `A-DIRECTIONAL-CONTRAST` | — | `D10-CL-C-011`<br>`D10-CL-O-001`<br>`D10-CL-X-004`<br>`D10-CL-X-006` | `GRC9V4-CD-D5-v1`<br>`GRC9V4-CD-D7-v1` | contrast_is_not_itself_retention_or_release |
+| D10.2-EC-PARENT-A-READ-CLOSURE | parent_atomic_contract | `A-READ-CLOSURE` | — | `D10-CL-C-007`<br>`D10-CL-C-011`<br>`D10-CL-O-001`<br>`D10-CL-X-004`<br>`D10-CL-X-006` | `GRC9V4-CD-D5-v1`<br>`GRC9V4-CD-D6-v1`<br>`GRC9V4-CD-D7-v1` | closure_does_not_prove_physical_nonabsorbability |
+| D10.2-EC-PARENT-A-WRITER-TARGET | parent_atomic_contract | `A-WRITER-TARGET` | — | `D10-CL-C-011`<br>`D10-CL-O-001`<br>`D10-CL-X-004`<br>`D10-CL-X-006` | `GRC9V4-CD-D7-v1` | precontinuity_cache_reuse_is_forbidden |
+| D10.2-EC-PARENT-A-RETAINED-WRITER | parent_atomic_contract | `A-RETAINED-WRITER` | — | `D10-CL-C-011`<br>`D10-CL-O-001`<br>`D10-CL-X-004`<br>`D10-CL-X-006` | `GRC9V4-CD-D2-v1`<br>`GRC9V4-CD-D7-v1` | slow_parameter_alone_is_not_retention_evidence |
+| D10.2-EC-PARENT-A-STATE-REDUCTION | parent_atomic_contract | `A-STATE-REDUCTION` | — | `D10-CL-C-011`<br>`D10-CL-N-001`<br>`D10-CL-N-002`<br>`D10-CL-O-001`<br>`D10-CL-X-004`<br>`D10-CL-X-006` | `GRC9V4-CD-D1-v1`<br>`GRC9V4-CD-D7-v1`<br>`GRC9V4-CD-D9-v1` | exact_disabled_projection_to_GRC9V3_is_owned_only_by_the_specialization_compatibility_rows |
+| D10.2-EC-PARENT-C-SECTOR | parent_atomic_contract | `C-SECTOR` | — | `D10-CL-C-011`<br>`D10-CL-N-002`<br>`D10-CL-O-002`<br>`D10-CL-X-006` | `GRC9V4-CD-D4V2-v1`<br>`GRC9V4-CD-D7V2-v1` | T_C_is_not_independent_resource_or_state |
+| D10.2-EC-PARENT-C-SELECTOR | parent_atomic_contract | `C-SELECTOR` | — | `D10-CL-C-011`<br>`D10-CL-N-002`<br>`D10-CL-O-002`<br>`D10-CL-X-006` | `GRC9V4-CD-D4V2-v1`<br>`GRC9V4-CD-D7V2-v1`<br>`GRC9V4-CD-D9-v1` | analysis_projector_cannot_become_runtime_authority |
+| D10.2-EC-PARENT-C-HODGE-MAPS | parent_atomic_contract | `C-HODGE-MAPS` | — | `D10-CL-C-006`<br>`D10-CL-C-011`<br>`D10-CL-N-002`<br>`D10-CL-O-002`<br>`D10-CL-X-006` | `GRC9V4-CD-D5V2-v1`<br>`GRC9V4-CD-D6V2-v1`<br>`GRC9V4-CD-D7G-post-v2-HODGE-TYPE-CORRECTION-v1` | matrix_shape_alone_does_not_establish_correct_Hodge_typing |
+| D10.2-EC-PARENT-C-READ-BACK | parent_atomic_contract | `C-READ-BACK` | — | `D10-CL-C-007`<br>`D10-CL-C-011`<br>`D10-CL-O-002`<br>`D10-CL-X-006` | `GRC9V4-CD-D5V2-v1`<br>`GRC9V4-CD-D6V2-v1`<br>`GRC9V4-CD-D7V2-v1` | chi_must_not_be_applied_twice |
+| D10.2-EC-PARENT-C-AUTHORITY | parent_atomic_contract | `C-AUTHORITY` | — | `D10-CL-C-011`<br>`D10-CL-N-001`<br>`D10-CL-N-002`<br>`D10-CL-O-002`<br>`D10-CL-X-006` | `GRC9V4-CD-D7V2-v1`<br>`GRC9V4-CD-D9-v1` | derived_C_surfaces_are_not_hidden_state |
+| D10.2-EC-PARENT-REAL-CI | parent_atomic_contract | `REAL-CI` | — | `D10-CL-C-001`<br>`D10-CL-C-011`<br>`D10-CL-O-003` | `GRC9V4-GTRS-CI-v1`<br>`GRC9V4-CD-D8B-CI-v1` | local_root_evidence_is_not_global_stability |
+| D10.2-EC-PARENT-REAL-OS | parent_atomic_contract | `REAL-OS` | — | `D10-CL-C-011`<br>`D10-CL-O-004` | `GRC9V4-GTRS-OS-v1` | split_residual_is_not_Delta_t_truncation_without_proof |
+| D10.2-EC-PARENT-REAL-RG2B | parent_atomic_contract | `REAL-RG2B` | — | `D10-CL-C-009`<br>`D10-CL-C-011`<br>`D10-CL-O-005` | `GRC9V4-GTRS-RG-v1` | uniqueness_is_relative_to_the_frozen_completion |
+| D10.2-EC-PARENT-REAL-PC | parent_atomic_contract | `REAL-PC` | — | `D10-CL-C-011`<br>`D10-CL-O-006`<br>`D10-CL-X-005` | `GRC9V4-GTRS-PC-v1` | current_PC_profile_is_not_the_universal_persistent_carrier_law |
+| D10.2-EC-PARENT-REAL-CI-PC | parent_atomic_contract | `REAL-CI-PC` | — | `D10-CL-C-011`<br>`D10-CL-O-007` | `GRC9V4-GTRS-CI-PC-v1` | gain_two_profile_is_not_amplitude_equivalent_to_CI_or_PC |
+| D10.2-EC-CI-A-ROOT | candidate_specific_CI | `REAL-CI` | `A_CI` | `D10-CL-O-003` | `GRC9V4-CD-D8B-CI-v1`<br>`GRC9V4-GTRS-CI-v1` | the_A_root_cannot_freeze_W_hat_outside_the_joint_root |
+| D10.2-EC-CI-A-CONTRACTION | candidate_specific_CI | `REAL-CI` | `A_CI` | `D10-CL-O-003` | `GRC9V4-CD-D8B-CI-v1`<br>`GRC9V4-GTRS-CI-v1` | bounded_contraction_uniqueness_is_not_global_root_uniqueness_or_temporal_stability |
+| D10.2-EC-CI-C-ROOT | candidate_specific_CI | `REAL-CI` | `C_CI` | `D10-CL-O-003` | `GRC9V4-CD-D8B-CI-v1`<br>`GRC9V4-GTRS-CI-v1` | the_C_root_is_defined_only_on_the_admitted_selector_and_topology_stratum |
+| D10.2-EC-CI-C-CONTRACTION | candidate_specific_CI | `REAL-CI` | `C_CI` | `D10-CL-O-003` | `GRC9V4-CD-D8B-CI-v1`<br>`GRC9V4-GTRS-CI-v1` | stratum_local_contraction_is_not_a_cross_rank_or_topology_continuation_theorem |
+| D10.2-EC-CI-C-ROOT-SELECTION | candidate_specific_CI | `REAL-CI` | `C_CI` | `D10-CL-O-003` | `GRC9V4-CD-D8B-CI-v1`<br>`GRC9V4-GTRS-CI-v1` | an_arbitrary_numerical_root_cannot_be_selected_post_hoc |
+| D10.2-EC-CI-PC-A-COMPOSITION | candidate_specific_CI_PC | `REAL-CI-PC` | `A_CI_PC` | `D10-CL-O-007` | `GRC9V4-GTRS-CI-PC-v1` | the_unit_plus_unit_profile_is_not_amplitude_equivalent_to_CI_or_PC |
+| D10.2-EC-CI-PC-A-ROOT | candidate_specific_CI_PC | `REAL-CI-PC` | `A_CI_PC` | `D10-CL-O-007` | `GRC9V4-GTRS-CI-PC-v1` | hybrid_root_admission_does_not_establish_numeric_or_global_envelopes |
+| D10.2-EC-CI-PC-C-COMPOSITION | candidate_specific_CI_PC | `REAL-CI-PC` | `C_CI_PC` | `D10-CL-O-007` | `GRC9V4-GTRS-CI-PC-v1` | the_C_hybrid_must_not_apply_chi_or_zeta_twice |
+| D10.2-EC-CI-PC-C-CONTRACTION | candidate_specific_CI_PC | `REAL-CI-PC` | `C_CI_PC` | `D10-CL-O-007` | `GRC9V4-GTRS-CI-PC-v1` | composite_contraction_is_not_cross_stratum_or_global_stability |
+| D10.2-EC-CI-PC-C-ROOT-SELECTION | candidate_specific_CI_PC | `REAL-CI-PC` | `C_CI_PC` | `D10-CL-O-007` | `GRC9V4-GTRS-CI-PC-v1` | one_admitted_local_root_is_not_a_global_uniqueness_theorem |
+| D10.2-EC-CI-PC-ABLATIONS | candidate_specific_CI_PC | `REAL-CI-PC` | `A_CI_PC`<br>`C_CI_PC` | `D10-CL-O-007` | `GRC9V4-GTRS-CI-PC-v1` | ablation_identity_does_not_make_the_enabled_hybrid_equivalent_to_its_components |
+| D10.2-EC-PC-WRITER-COEFFICIENT | persistent_carrier | `REAL-PC` | `A_PC`<br>`C_PC`<br>`A_CI_PC`<br>`C_CI_PC` | `D10-CL-O-006` | `GRC9V4-GTRS-PC-v1` | one_tau_PC_is_the_current_profile_not_a_universal_history_law |
+| D10.2-EC-PC-ZOH-WRITER | persistent_carrier | `REAL-PC` | `A_PC`<br>`C_PC`<br>`A_CI_PC`<br>`C_CI_PC` | `D10-CL-O-006` | `GRC9V4-GTRS-PC-v1` | the_ZOH_writer_is_an_authoritative_history_write_not_a_solver_cache |
+| D10.2-EC-PC-RELEASE | persistent_carrier | `REAL-PC` | `A_PC`<br>`C_PC`<br>`A_CI_PC`<br>`C_CI_PC` | `D10-CL-O-006` | `GRC9V4-GTRS-PC-v1` | native_release_is_not_administrative_reset |
+| D10.2-EC-PC-MATCHED-FORCING | persistent_carrier | `REAL-PC` | `A_PC`<br>`C_PC`<br>`A_CI_PC`<br>`C_CI_PC` | `D10-CL-O-006` | `GRC9V4-GTRS-PC-v1` | carrier_contraction_is_not_committed_endpoint_hysteresis_evidence |
+| D10.2-EC-OS-STAGE-ORDER | operator_split | `REAL-OS` | `A_OS`<br>`C_OS` | `D10-CL-O-004` | `GRC9V4-GTRS-OS-v1` | no_second_geometry_or_corrector_iteration_is_part_of_this_profile |
+| D10.2-EC-OS-A-CORRECTOR | operator_split | `REAL-OS` | `A_OS` | `D10-CL-O-004` | `GRC9V4-GTRS-OS-v1` | produced_geometry_must_be_an_equation_level_consumer_not_telemetry |
+| D10.2-EC-OS-C-CORRECTOR | operator_split | `REAL-OS` | `C_OS` | `D10-CL-O-004` | `GRC9V4-GTRS-OS-v1` | selector_or_Hodge_predictor_caches_cannot_enter_the_C_corrector |
+| D10.2-EC-OS-SPLIT-RESIDUAL | operator_split | `REAL-OS` | `A_OS`<br>`C_OS` | `D10-CL-O-004` | `GRC9V4-GTRS-OS-v1` | a_nonzero_bounded_split_residual_is_not_automatic_failure_or_Delta_t_truncation_error |
+| D10.2-EC-OS-NO-SECOND-ITERATION | operator_split | `REAL-OS` | `A_OS`<br>`C_OS` | `D10-CL-O-004` | `GRC9V4-GTRS-OS-v1` | posthoc_iteration_cannot_improve_the_preregistered_one_pass_result |
+| D10.2-EC-RG-INVARIANCE | reconstructed_geometry | `REAL-RG2B` | `A_RG2b`<br>`C_RG2b` | `D10-CL-O-005` | `GRC9V4-GTRS-RG-v1` | uniqueness_is_relative_to_the_frozen_equivariant_extension_profile |
+| D10.2-EC-RG-LIPSCHITZ-CONTRACTION | reconstructed_geometry | `REAL-RG2B` | `A_RG2b`<br>`C_RG2b` | `D10-CL-O-005` | `GRC9V4-GTRS-RG-v1` | Lipschitz_section_existence_is_not_C1_regularness |
+| D10.2-EC-RG-DETERMINISM | reconstructed_geometry | `REAL-RG2B` | `A_RG2b`<br>`C_RG2b` | `D10-CL-O-005` | `GRC9V4-GTRS-RG-v1` | reconstructed_geometry_cannot_hide_a_persistent_carrier |
+| D10.2-EC-RG-CLAIM-CEILING | reconstructed_geometry | `REAL-RG2B` | `A_RG2b`<br>`C_RG2b` | `D10-CL-O-005` | `GRC9V4-GTRS-RG-v1` | the_current_Lipschitz_profile_cannot_be_differentiated_by_assumption |
+| D10.2-EC-C-SECTOR | candidate_C_chain | `C-SECTOR` | `C_CI`<br>`C_OS`<br>`C_RG2b`<br>`C_PC`<br>`C_CI_PC` | `D10-CL-O-002` | `GRC9V4-CD-D4V2-v1`<br>`GRC9V4-CD-D7V2-v1` | T_C_is_not_independent_state_or_resource |
+| D10.2-EC-C-HODGE-LAPLACIAN | candidate_C_chain | `C-HODGE-MAPS` | `C_CI`<br>`C_OS`<br>`C_RG2b`<br>`C_PC`<br>`C_CI_PC` | `D10-CL-O-002` | `GRC9V4-CD-D5V2-v1`<br>`GRC9V4-CD-D6V2-v1`<br>`GRC9V4-CD-D7G-post-v2-HODGE-TYPE-CORRECTION-v1` | matrix_shape_without_positive_typed_Hodge_maps_is_insufficient |
+| D10.2-EC-C-RESOLVENT | candidate_C_chain | `C-READ-BACK` | `C_CI`<br>`C_OS`<br>`C_RG2b`<br>`C_PC`<br>`C_CI_PC` | `D10-CL-O-002` | `GRC9V4-CD-D5V2-v1`<br>`GRC9V4-CD-D6V2-v1`<br>`GRC9V4-CD-D7V2-v1` | chi_C_must_not_be_applied_inside_and_outside_the_resolvent |
+| D10.2-EC-C-READBACK | candidate_C_chain | `C-READ-BACK` | `C_CI`<br>`C_OS`<br>`C_RG2b`<br>`C_PC`<br>`C_CI_PC` | `D10-CL-O-002` | `GRC9V4-CD-D5V2-v1`<br>`GRC9V4-CD-D6V2-v1`<br>`GRC9V4-CD-D7V2-v1` | the_read_surface_is_not_an_independent_resource_transfer |
+| D10.2-EC-C-AUTHORITY | candidate_C_chain | `C-AUTHORITY` | `C_CI`<br>`C_OS`<br>`C_RG2b`<br>`C_PC`<br>`C_CI_PC` | `D10-CL-N-002`<br>`D10-CL-O-002` | `GRC9V4-CD-D7V2-v1`<br>`GRC9V4-CD-D9-v1` | derived_C_surfaces_cannot_be_serialized_as_hidden_causal_state |
+| D10.2-EC-GEOM-K4-ASSEMBLY | structural_geometry | `GEOM-K4` | — | `D10-CL-N-006` | `GRC9V4-CD-D4V2-v1`<br>`GRC9V4-CD-D7G-v1`<br>`GRC9V4-CD-D8A-v1` | graph_K4_is_not_core_K_or_transport_mobility_M4 |
+| D10.2-EC-GEOM-HODGE-UPDATE | structural_geometry | `GEOM-H1-FORM` | — | `D10-CL-N-006` | `GRC9V4-CD-D7G-post-v2-HODGE-TYPE-CORRECTION-v1`<br>`GRC9V4-CD-D7G-v2`<br>`GRCV3-NORMATIVE-SPEC`<br>`GRCV3-RUNTIME-SOURCE` | K4_and_H1_units_require_the_declared_typed_pushforward |
+| D10.2-EC-GEOM-FLAT | structural_geometry | `GEOM-GJ` | — | `D10-CL-N-006` | `GRC9V4-CD-D7G-post-v2-HODGE-TYPE-CORRECTION-v1`<br>`GRC9V4-CD-D7G-v2`<br>`GRC9V4-CD-D8A-v1` | G_J_is_flux_resistance_not_M4_transport_mobility |
+| D10.2-EC-GEOM-PROFILE | structural_geometry | `GEOM-K4-TO-H4-TO-h4` | — | `D10-CL-N-006` | `GRC9V4-CD-D7G-v1`<br>`GRC9V4-CD-D7G-v2`<br>`GRC9V4-CD-D8A-v1` | producing_h4_without_a_declared_consumer_is_not_structural_Read_Back |
+| D10.2-EC-GEOM-MOBILITY-BOUNDARY | structural_geometry | `GEOM-M4` | — | `D10-CL-N-006` | `GRC9V4-CD-D4V2-v1`<br>`GRC9V4-CD-D7G-post-v2-HODGE-TYPE-CORRECTION-v1`<br>`GRC9V4-CD-D7G-v1`<br>`GRC9V4-CD-D7G-v2` | numerical_matrix_coincidence_cannot_transfer_authority |
+
+### D.11 Appendix D claim ceiling
+
+Appendix D establishes a lookup-complete equation surface for the accepted current A/C-by-realization population. It does not add:
+
+- a universal candidate equation;
+- a common root theorem across all realizations;
+- a persistent geometry state for nonpersistent profiles;
+- a Candidate C hidden-sector writer;
+- a $C^1$ RG2b section;
+- global CI or CI+PC roots;
+- an iterative OS convergence theorem;
+- endpoint hysteresis, stability, nonabsorbability, or ranking;
+- a future-exhaustive profile roster.
 
 ---
 
-## Appendix E. Lifecycle and Event Contract Tables
+## Appendix E. Complete-Step, Lifecycle, Migration, and Event Contracts
 
-Include:
+### E.1 Purpose and lifecycle authority
 
-* snapshot identity;
-* reset identity;
-* profile migration maps;
-* topology-event maps;
-* resource transport;
-* event resource increments;
-* charge receipts;
-* history transport/reset/archive;
-* target initializer;
-* target readmission;
-* failure atomicity;
-* ordered source/target receipt schema.
+This appendix collects the accepted transaction and lifecycle contracts. It does not turn serializer fields, receipts, roots, caches, or analysis objects into runtime causal state.
+
+The lifecycle tuple is
+
+$$
+\mathfrak X
+=
+(X_{\mathrm{current}},X_{\mathrm{reset}},Q_{\mathrm{target}}),
+$$
+
+interpreted together with graph, orientation, boundary, context-contract, complete-profile, capability, parameter, and receipt identity.
+
+A normal beat has the invariant outer form
+
+```text
+one admitted prestate and complete profile
+  -> profile-local provisional realization
+  -> one authoritative current
+  -> one resource write
+  -> resource and charge validation
+  -> declared candidate/history writers
+  -> complete postcondition validation
+  -> one atomic commit, or no commit.
+```
+
+### E.2 Authoritative lifecycle coordinates by profile class
+
+| Profile class | Current/reset dynamic coordinates | Derived but nonauthoritative surfaces |
+|---|---|---|
+| A-CI, A-OS, A-RG2b | $C$, $W_A$ | potential, $J_0$, $\widehat W_A$, $q_A$, $J_C$, $K_4$, $h_4$, solver work |
+| C-CI, C-OS, C-RG2b | $C$ | selector, $T_C$, Hodge package, $I_{4M}$, resolvent, $J_C$, $K_4$, $h_4$, solver work |
+| A-PC, A-CI+PC | $C$, $W_A$, $Z_{4,A}$ | current/geometry and all transient root or fixed-$h$ surfaces |
+| C-PC, C-CI+PC | $C$, $Z_{4,C}$ | Candidate C derived chain plus current/geometry and transient root surfaces |
+
+The scientific snapshot additionally binds the graph and stable identities, complete profile, context contract, $Q_{\mathrm{target}}$, current and reset states, profile-local semantic configuration, and ordered lifecycle receipts.
+
+### E.3 Complete ordinary-step transaction
+
+| Stage | Required input | Provisional output | Required gate | Failure effect |
+|---|---|---|---|---|
+| 1. Pre-admission | complete profile, graph, context, authoritative current/reset state, $Q_{\mathrm{target}}$, time, solver/domain identity | admitted prestate identity | type, domain, charge, capability, semantic identity | no mutation |
+| 2. Pre-read reconstruction | authoritative prestate and current context | fresh differential, selector, Hodge, baseline, carrier-derived, or section surfaces | deterministic reconstruction under active profile | no mutation |
+| 3. Profile-local realization | accepted candidate and realization equations | provisional current, geometry, source, solver receipt | exact profile stage order and domain | no mutation |
+| 4. Solver disposition | provisional root/corrector/reconstruction | one classified disposition | only `valid_root` may continue | no mutation |
+| 5. Current authority | valid profile-local result | one $J_{C,p,k}$ | finite, typed, branch/stratum-consistent | no mutation |
+| 6. Continuity | $C_k$, $J_{C,p,k}$, typed ordinary external terms | $C_{k+1}^{\mathrm{cont}}$ | continuity executes once | no mutation until final commit |
+| 7. Resource/charge gate | provisional $C_{k+1}^{\mathrm{cont}}$ | admitted $C_{k+1}$ | finite, nonnegative, $Q_\varpi(C_{k+1})=Q_{\mathrm{target},k+1}$; current projection is identity/no-op | discard provisional beat |
+| 8. Post-$C$ refresh | admitted $C_{k+1}$ and solved current | fresh final-$C$ surfaces | no stale pre-continuity cache | discard provisional beat |
+| 9. Candidate writer | A: $W_{\mathrm{drv},A}$; C: rederivation only | provisional $W_{A,k+1}$ or C-derived surfaces | candidate-specific positivity/domain/readmission | discard provisional beat |
+| 10. History writer | old $Z_{4,a,k}$ and accepted same-beat source | provisional $Z_{4,a,k+1}$ where enabled | one writer, no same-beat read of new history | discard provisional beat |
+| 11. Final postconditions | complete provisional target state | admitted target state and receipts | state, geometry, current, carrier, serializer, lifecycle, capability | discard provisional beat |
+| 12. Atomic commit | fully admitted target | new authoritative state | all coordinates commit together | otherwise original prestate remains authoritative |
+
+For positive duration, the profile’s regular domain applies. For zero duration, the ordinary transition is identity only on an already admitted state with no impulse and no temporal writer advancement. Negative duration fails closed. An instantaneous exchange is a typed event, not an ordinary zero-duration beat.
+
+### E.4 Solver dispositions
+
+| Disposition | Meaning | May continue? | Authority boundary |
+|---|---|---|---|
+| `valid_root` | finite, residual-checked, admitted, deterministic, branch/stratum-consistent result | yes | still provisional until resource, writer, and final postcondition gates pass |
+| `domain_failure` | state, geometry, carrier, selector, floor, or profile domain violated | no | no fallback current |
+| `singular` | required current/root block singular | no | singular continuation requires a distinct accepted profile |
+| `conditioning_failure` | required conditioning margin or solver certificate fails | no | numerical return alone has no authority |
+| `nonfinite` | nonfinite root, current, geometry, writer, or state | no | no partial commit |
+| `no_admitted_root` | no root satisfies the accepted branch/stratum contract | no | no cached-root fallback |
+| `multiple_admitted_roots` | more than one admissible root remains without a deterministic accepted selector | no | prior root, iteration order, and hidden RNG cannot choose |
+
+### E.5 Snapshot, restoration, reset, and replay matrix
+
+| Operation | Authoritative input | Lawful result | Explicitly forbidden overread |
+|---|---|---|---|
+| Snapshot | complete lifecycle identity | serialized scientific state and semantic configuration sufficient for deterministic reconstruction | serializing all caches as if they were causal state |
+| Restoration | accepted snapshot | reconstructed, re-admitted state exposed only after all checks pass | silent charge rebasing or hidden history creation |
+| Reset | current transformed reset baseline | return to $X_{\mathrm{reset}}$ under the current graph/profile/lifecycle identity | return to obsolete pre-event bytes or archived history |
+| `set_state()` | active profile plus proposed authoritative current coordinates | update current state only, then reconstruct and re-admit | silently rebasing reset, charge target, graph, profile, or history |
+| Duplication | one admitted lifecycle state | deep-independent copy of every authoritative mutable coordinate and receipt | shared mutable candidate/carrier/cache authority |
+| Replay | same scientific identity and same subsequent inputs/events | equivalent disposition and next scientific state | treating byte equality as sufficient when profile/context/history semantics differ |
+
+### E.6 Representation, context, and regime-change matrix
+
+| Change class | Scientific treatment | State policy | Analysis consequence |
+|---|---|---|---|
+| Graph relabeling or edge-coordinate reorientation | covariant representation change | transform every typed object under declared permutations/congruences | not a new physical history or topology event |
+| Same-contract context value change | ordinary declared input plus refresh/readmission | retain authoritative state unless profile says otherwise | may require new derived surfaces or RG2b section reconstruction |
+| Context schema, units, representation, or semantics change | profile/context migration | typed source-target map and receipt | old and new analysis objects are not identified automatically |
+| Boundary-contract change | lifecycle migration or topology event | transform current/reset/target and re-admit | operator domain changes; classical branch continuation may stop |
+| Floor/selector/active-set change within normative runtime rules | admitted nonsmooth regime change or fail-closed boundary | follow profile’s declared one-sided/tangent/event semantics | classical derivative need not exist |
+| Topology or graph-space dimension change | typed topology event | whole-lifecycle continuation | requires explicit interspace map for any mode continuation claim |
+
+### E.7 Ordered profile migration
+
+A profile migration is
+
+$$
+\mathcal M_{p\to q}:X_p\longrightarrow X_q,
+$$
+
+extended to current and reset state by
+
+$$
+\widetilde{\mathcal M}_{p\to q}
+(X_{\mathrm{current}},X_{\mathrm{reset}})
+=
+(\mathcal M_{p\to q}(X_{\mathrm{current}}),
+ \mathcal M_{p\to q}(X_{\mathrm{reset}})).
+$$
+
+Every receipt binds the ordered pair $(p_{\mathrm{source}},p_{\mathrm{target}})$.
+
+| Migration class | Authoritative map | Required target work and receipt |
+|---|---|---|
+| Same candidate, nonhistory $\to$ nonhistory | preserve candidate-authoritative state; change realization identity | rebuild target derived surfaces; target readmission; archive source completion identity where relevant |
+| Same candidate, nonhistory $\to$ history | preserve candidate state; initialize current/reset $Z_{4,a}=0$ | admit target carrier/geometry/root or fixed-$h$ contract; record that no prior history was reconstructed |
+| Same candidate, history $\to$ nonhistory | preserve candidate state; archive/drop current/reset $Z_{4,a}$ | target readmission; receipt persistent-history removal; do not call it native release |
+| PC $\to$ CI+PC | preserve candidate state and $Z_{4,a}$ only under exact shared carrier, $K_4$, geometry-profile, writer, $\tau_{\mathrm{PC}}$, norm, and domain identity | add immediate timing; admit composite root domain; receipt timing change |
+| CI+PC $\to$ PC | preserve candidate state and $Z_{4,a}$; remove immediate path | admit fixed-$h$ PC profile; receipt same-beat timing removal |
+| A $\to$ C | preserve $C$; archive/drop $W_A$ and A-specific $Z_{4,A}$; initialize target $Z_{4,C}=0$ if needed | explicit directional loss; rebuild selector/Hodge/current and optional carrier |
+| C $\to$ A | preserve $C$; initialize $W_A$ with $I_A^{\mathrm{GRC}}$; initialize target $Z_{4,A}=0$ if needed | positive-$W_A$, current, geometry, carrier readmission; receipt that no A history was fabricated |
+
+Any change to $H_{\mathrm{profile}}$, $K_{4,\mathrm{base}}$, $\tau_{\mathrm{PC}}$, $\rho_{\mathrm{inst}}$, carrier norm/domain, writer identity, RG completion, selector policy, $W_A$ policy, solver/root selector, context-contract semantics, or $Q_{\mathrm{target}}$ rule is an identity-bearing migration rather than an in-place edit.
+
+### E.8 Graph-generic Candidate A history-free initializer
+
+The accepted target initializer is denoted
+
+$$
+I_A^{\mathrm{GRC}}.
+$$
+
+It performs
+
+```text
+target graph/profile/context and authoritative C
+  -> rebuild target deterministic differential surfaces
+  -> evaluate the accepted curvature-disabled G_W at the target reference-current stage
+  -> construct positive target W_A for current and reset state
+  -> validate target domain, current, geometry, lifecycle, and serializer identity
+  -> record that source A history was not preserved or fabricated.
+```
+
+This is lawful target construction, not native A formation and not history transport. The exact GRC9V3 base-conductance initializer remains Appendix A specialization content.
+
+### E.9 Typed topology-event equations
+
+A topology event is
+
+$$
+\mathcal E_{-\to+}:
+(\mathfrak X^-,\mathcal G^-,p^-,U^-)
+\longrightarrow
+(\mathfrak X^+,\mathcal G^+,p^+,U^+),
+$$
+
+with whole-lifecycle map
+
+$$
+(X_{\mathrm{current}}^-,X_{\mathrm{reset}}^-,Q_{\mathrm{target}}^-)
+\longrightarrow
+(X_{\mathrm{current}}^+,X_{\mathrm{reset}}^+,Q_{\mathrm{target}}^+).
+$$
+
+The resource and charge equations are
+
+$$
+C^+=T_{C,\mathrm{evt}}C^-+\Delta C_{\mathrm{event}},
+$$
+
+$$
+\varpi_+^\top T_{C,\mathrm{evt}}=\varpi_-^\top,
+$$
+
+$$
+\Delta Q_{\mathrm{event}}
+=\varpi_+^\top C^+-\varpi_-^\top C^-,
+$$
+
+$$
+Q_{\mathrm{target}}^+
+=Q_{\mathrm{target}}^-+\Delta Q_{\mathrm{event}}
+=\varpi_+^\top C^+.
+$$
+
+$\Delta Q_{\mathrm{event}}$ receipts the actual resource map; it does not replace $\Delta C_{\mathrm{event}}$.
+
+### E.10 Candidate and realization event policies
+
+| State/surface | Lawful target treatment | Loss boundary |
+|---|---|---|
+| Resource $C$ | typed $T_{C,\mathrm{evt}}$ plus explicit $\Delta C_{\mathrm{event}}$ | untyped resize or unreceipted change is not an event |
+| Candidate A $W_A$ | admitted positive edge-history transport, or $I_A^{\mathrm{GRC}}$ history-free initialization | missing edge history cannot be fabricated |
+| Candidate C selector/sector/Hodge/read surfaces | rederive from admitted target $C^+$ and target graph/profile | derived surfaces are not transported history payload |
+| Persistent $Z_{4,a}$ | typed bounded covariant $L_{K4,\mathrm{evt}}$, or archive/drop and canonical zero target | no generic lossless map without typed lineage |
+| CI/CI+PC | reconstruct target root, branch, and domain | source root/cache has no target authority |
+| OS | reconstruct target predictor, geometry, corrector, and residual | no predictor/corrector cache transport |
+| RG2b | reconstruct target extension-relative section under frozen target completion | previous section values are not history authority |
+| Reset baseline | apply the same event/history policy as current state | reset may not resurrect an obsolete graph/profile |
+
+When typed $K_4$ history transport is admitted,
+
+$$
+L_{K4,\mathrm{evt}}:
+\mathcal K_4(\mathcal G^-)
+\longrightarrow
+\mathcal K_4(\mathcal G^+),
+$$
+
+$$
+Z_{4,a}^+=L_{K4,\mathrm{evt}}(Z_{4,a}^-).
+$$
+
+A congruence-like map
+
+$$
+Z_{4,a}^+=L_1Z_{4,a}^-L_1^*
+$$
+
+is lawful only when the source/target one-form pairing, adjoint, dimensions, orientation action, and target domain are declared. Otherwise
+
+$$
+Z_{4,a}^+=0
+$$
+
+with an explicit structural-history-loss receipt.
+
+### E.11 Ordered receipt schemas
+
+#### E.11.1 Profile-migration receipt
+
+```text
+operation = profile_migration
+source graph/context/profile identity
+target graph/context/profile identity
+current-state map
+reset-state map
+Q_target policy
+candidate history preserved / initialized / archived / dropped
+persistent history preserved / initialized / archived / dropped
+target reconstruction performed
+target readmission disposition
+information-loss classification
+atomic commit identity
+```
+
+#### E.11.2 Topology-event receipt
+
+```text
+operation = topology_event
+source graph and profile identity
+target graph and profile identity
+resource map T_C_evt
+Delta_C_event
+Delta_Q_event
+Q_target_minus and Q_target_plus
+current/reset transformation policy
+Candidate A history map or I_A^GRC initialization
+Candidate C target rederivation
+persistent K4 history map / archive / reset
+realization reconstruction
+information-loss classification
+target readmission result
+atomic commit identity
+```
+
+Receipt fields describe the ordered crossing. Endpoint support alone is not crossing evidence.
+
+### E.12 Failure and atomicity matrix
+
+| Failure point | Examples | Required disposition |
+|---|---|---|
+| Pre-admission | invalid profile, context, time, charge, state, capability | original state remains authoritative |
+| Profile-local realization | singular, underconditioned, nonfinite, no root, multiple roots, invalid RG section | discard every provisional surface |
+| Continuity/resource | nonfinite/negative $C$, charge mismatch, nonidentity current projection | no candidate/history writer may commit |
+| Candidate writer | invalid $W_{\mathrm{drv},A}$, positivity/floor failure, C target reconstruction failure | discard continuity and all writers |
+| Carrier writer | carrier-domain, source, coefficient, or same-source identity failure | discard the entire beat |
+| Lifecycle crossing | missing map, unsupported event, invalid receipt, failed target readmission | source lifecycle tuple remains authoritative |
+| Serialization/replay | incompatible schema/profile/context or unreconstructible scientific state | restored target is not exposed |
+
+### E.13 Lifecycle equation/contract register
+
+| Equation/contract ID | Scope | Parent object(s) | Profile(s) | Claim(s) | Accepted source lineage | Blocked overread |
+| --- | --- | --- | --- | --- | --- | --- |
+| D10.2-EC-PARENT-CORE-INCIDENCE-CONTINUITY | parent_atomic_contract | `CORE-INCIDENCE-CONTINUITY` | — | `D10-CL-C-011`<br>`D10-CL-N-004` | `GRCV3-NORMATIVE-SPEC`<br>`GRC9V4-CD-D9-v1` | continuity_does_not_authorize_multiple_resource_writes |
+| D10.2-EC-PARENT-CORE-GENERAL-CHARGE | parent_atomic_contract | `CORE-GENERAL-CHARGE` | — | `D10-CL-C-011`<br>`D10-CL-N-004` | `GRC9V4-CD-D9-v1` | general_charge_does_not_force_unit_measure |
+| D10.2-EC-PARENT-CORE-UNIT-MEASURE | parent_atomic_contract | `CORE-UNIT-MEASURE` | — | `D10-CL-C-011`<br>`D10-CL-N-004` | `GRCV3-NORMATIVE-SPEC`<br>`GRC9V4-CD-D9-v1` | unit_measure_is_not_the_only_GRCV4_charge |
+| D10.2-EC-PARENT-CORE-EXTERNAL-EVENT-CHARGE | parent_atomic_contract | `CORE-EXTERNAL-EVENT-CHARGE` | — | `D10-CL-C-011`<br>`D10-CL-N-004` | `GRC9V4-CD-D9-v1` | external_exchange_is_not_hidden_nonconservation |
+| D10.2-EC-PARENT-L-AUTHORITATIVE-CURRENT | parent_atomic_contract | `L-AUTHORITATIVE-CURRENT` | — | `D10-CL-C-011`<br>`D10-CL-N-003` | `GRC9V4-CD-D6-v1`<br>`GRC9V4-CD-D6V2-v1`<br>`GRC9V4-CD-D9-v1` | read_current_is_not_an_extra_resource_transfer |
+| D10.2-EC-PARENT-L-CONTINUITY-WRITE | parent_atomic_contract | `L-CONTINUITY-WRITE` | — | `D10-CL-C-011`<br>`D10-CL-N-003`<br>`D10-CL-N-004` | `GRC9V4-CD-D9-v1` | candidate_writers_cannot_write_C_again |
+| D10.2-EC-PARENT-L-POSTCONTINUITY-REFRESH | parent_atomic_contract | `L-POSTCONTINUITY-REFRESH` | — | `D10-CL-C-011`<br>`D10-CL-N-003` | `GRC9V4-CD-D7-v1`<br>`GRC9V4-CD-D9-v1` | stale_precontinuity_surfaces_cannot_feed_the_writer |
+| D10.2-EC-PARENT-L-ATOMICITY | parent_atomic_contract | `L-ATOMICITY` | — | `D10-CL-C-011`<br>`D10-CL-N-003` | `GRC9V4-CD-D7-v1`<br>`GRC9V4-CD-D7V2-v1`<br>`GRC9V4-CD-D9-v1` | partial_valid_substage_is_not_a_committed_state |
+| D10.2-EC-PARENT-L-SNAPSHOT-RESET | parent_atomic_contract | `L-SNAPSHOT-RESET` | — | `D10-CL-C-011`<br>`D10-CL-N-005` | `GRC9V4-CD-D9-v1`<br>`GRC9V4-D9-PROFILE-STATE-LIFECYCLE-REGISTRY-v1` | representation_cache_bytes_are_not_scientific_identity |
+| D10.2-EC-PARENT-L-PROFILE-MIGRATION | parent_atomic_contract | `L-PROFILE-MIGRATION` | — | `D10-CL-C-011`<br>`D10-CL-N-005` | `GRC9V4-CD-D9-v1`<br>`GRC9V4-D9-PROFILE-STATE-LIFECYCLE-REGISTRY-v1` | generic_migration_does_not_select_a_target_initializer_or_allow_in_place_semantic_reinterpretation |
+| D10.2-EC-PARENT-L-A-INITIALIZER-GRC | parent_atomic_contract | `L-A-INITIALIZER-GRC` | — | `D10-CL-C-011`<br>`D10-CL-N-005` | `GRCV3-NORMATIVE-SPEC`<br>`GRCV3-RUNTIME-SOURCE`<br>`GRC9V4-CD-D7-v1`<br>`GRC9V4-CD-D9-v1` | history_free_initialization_is_not_A_history_preservation_or_the_exact_GRC9v3_initializer |
+| D10.2-EC-PARENT-L-A-INITIALIZER-GRC9V3 | parent_atomic_contract | `L-A-INITIALIZER-GRC9V3` | — | `D10-CL-C-011`<br>`D10-CL-N-005` | `GRC9V3-TRANSPORT-RUNTIME`<br>`GRC9V4-CD-D9-v1`<br>`GRC9V4-D9-PROFILE-STATE-LIFECYCLE-REGISTRY-v1` | the_exact_GRC9v3_initializer_is_not_wholesale_promoted_with_generic_migration_grammar |
+| D10.2-EC-PARENT-L-TOPOLOGY-EVENT | parent_atomic_contract | `L-TOPOLOGY-EVENT` | — | `D10-CL-C-002`<br>`D10-CL-C-011`<br>`D10-CL-N-005`<br>`D10-CL-N-006`<br>`D10-CL-X-001` | `GRC9V4-CD-D9-v1`<br>`GRC9V4-D9-LIFECYCLE-COVERAGE-MATRIX-v1` | array_resize_is_not_a_typed_event |
+| D10.2-EC-PARENT-L-ORDERED-RECEIPTS | parent_atomic_contract | `L-ORDERED-RECEIPTS` | — | `D10-CL-C-002`<br>`D10-CL-C-011`<br>`D10-CL-N-005`<br>`D10-CL-X-001` | `GRC9V4-CD-D9-v1`<br>`GRC9V4-CD-D10-v1` | endpoint_profile_coverage_is_not_crossing_evidence |
+| D10.2-EC-PARENT-L-SINGULAR-FAIL-CLOSED | parent_atomic_contract | `L-SINGULAR-FAIL-CLOSED` | — | `D10-CL-C-003`<br>`D10-CL-C-006`<br>`D10-CL-C-011`<br>`D10-CL-N-003` | `GRC9V4-CD-D6-v1`<br>`GRC9V4-CD-D6V2-v1`<br>`GRC9V4-CD-D9-v1` | regularization_or_root_selection_cannot_be_hidden |
+| D10.2-EC-CHARGE-DQ | charge_tangent | `CORE-CHARGE-TANGENT` | — | `D10-CL-N-004` | `GRC9V4-CD-D9-v1`<br>`GRC9V4-D9-PROFILE-STATE-LIFECYCLE-REGISTRY-v1` | the_charge_differential_acts_on_the_resource_sector_and_does_not_constrain_nonresource_variations |
+| D10.2-EC-CHARGE-TANGENT | charge_tangent | `CORE-CHARGE-TANGENT` | — | `D10-CL-N-004` | `GRC9V4-CD-D9-v1`<br>`GRC9V4-D9-PROFILE-STATE-LIFECYCLE-REGISTRY-v1` | V_Q_varpi_is_the_authoritative_complete_state_tangent_not_only_a_C_sector_subspace |
+| D10.2-EC-CHARGE-C-SECTOR-PROJECTOR | charge_projector | `CORE-STRUCTURAL-CHARGE-PROJECTOR` | — | `D10-CL-N-004` | `GRC9V4-CD-D9-v1`<br>`GRC9V4-D9-PROFILE-STATE-LIFECYCLE-REGISTRY-v1` | Pi_Q_C_H0_is_orthogonal_only_on_the_structural_C_sector |
+| D10.2-EC-CHARGE-FULL-TANGENT-RETRACTION | charge_projector | `CORE-STRUCTURAL-CHARGE-PROJECTOR` | — | `D10-CL-N-004` | `GRC9V4-CD-D9-v1`<br>`GRC9V4-D9-PROFILE-STATE-LIFECYCLE-REGISTRY-v1` | the_identity_extension_is_a_canonical_retraction_not_a_full_state_orthogonal_projector_until_a_product_metric_is_frozen |
+| D10.2-EC-CHARGE-BUDGET-STAGE | charge_budget_stage | `CORE-GENERAL-CHARGE`<br>`L-CONTINUITY-WRITE`<br>`L-TOPOLOGY-EVENT` | — | `D10-CL-N-004` | `GRC9V4-CD-D9-v1`<br>`GRC9V4-D9-LIFECYCLE-COVERAGE-MATRIX-v1` | bare_Q_target_must_not_conflate_pre_update_and_post_update_targets_or_double_count_event_Delta_Q_and_a_charge_check_before_the_actual_resource_write_does_not_certify_the_complete_step |
+| D10.2-EC-EVENT-RESOURCE | typed_topology_event | `L-TOPOLOGY-EVENT` | `A_CI`<br>`C_CI`<br>`A_OS`<br>`C_OS`<br>`A_RG2b`<br>`C_RG2b`<br>`A_PC`<br>`C_PC`<br>`A_CI_PC`<br>`C_CI_PC` | `D10-CL-N-004`<br>`D10-CL-N-005`<br>`D10-CL-X-001` | `GRC9V4-CD-D9-v1`<br>`GRC9V4-D9-LIFECYCLE-COVERAGE-MATRIX-v1` | Delta_Q_event_is_a_receipt_for_the_actual_resource_state_map_and_cannot_replace_Delta_C_event; untyped_resize_or_unreceipted_resource_change_is_not_an_admitted_event |
+| D10.2-EC-EVENT-A-HISTORY | typed_topology_event | `L-TOPOLOGY-EVENT` | `A_CI`<br>`A_OS`<br>`A_RG2b`<br>`A_PC`<br>`A_CI_PC` | `D10-CL-N-005`<br>`D10-CL-X-001` | `GRC9V4-CD-D9-v1`<br>`GRC9V4-D9-LIFECYCLE-COVERAGE-MATRIX-v1` | missing_edge_history_cannot_be_fabricated |
+| D10.2-EC-EVENT-C-DERIVED | typed_topology_event | `L-TOPOLOGY-EVENT` | `C_CI`<br>`C_OS`<br>`C_RG2b`<br>`C_PC`<br>`C_CI_PC` | `D10-CL-N-005`<br>`D10-CL-X-001` | `GRC9V4-CD-D9-v1`<br>`GRC9V4-D9-LIFECYCLE-COVERAGE-MATRIX-v1` | derived_C_surfaces_are_not_history_payload |
+| D10.2-EC-EVENT-K4-HISTORY | typed_topology_event | `L-TOPOLOGY-EVENT` | `A_PC`<br>`C_PC`<br>`A_CI_PC`<br>`C_CI_PC` | `D10-CL-N-005`<br>`D10-CL-X-001` | `GRC9V4-CD-D9-v1`<br>`GRC9V4-D9-LIFECYCLE-COVERAGE-MATRIX-v1` | generic_lossless_K4_history_transport_without_lineage_is_not_claimed |
+| D10.2-EC-EVENT-LIFECYCLE-TUPLE | typed_topology_event | `L-TOPOLOGY-EVENT` | `A_CI`<br>`C_CI`<br>`A_OS`<br>`C_OS`<br>`A_RG2b`<br>`C_RG2b`<br>`A_PC`<br>`C_PC`<br>`A_CI_PC`<br>`C_CI_PC` | `D10-CL-N-005`<br>`D10-CL-X-001` | `GRC9V4-CD-D9-v1`<br>`GRC9V4-D9-LIFECYCLE-COVERAGE-MATRIX-v1` | mapping_only_current_state_would_allow_reset_to_resurrect_an_obsolete_graph_or_profile |
+| D10.2-EC-EVENT-READMISSION-RECEIPT | typed_topology_event | `L-ORDERED-RECEIPTS` | `A_CI`<br>`C_CI`<br>`A_OS`<br>`C_OS`<br>`A_RG2b`<br>`C_RG2b`<br>`A_PC`<br>`C_PC`<br>`A_CI_PC`<br>`C_CI_PC` | `D10-CL-N-005`<br>`D10-CL-X-001` | `GRC9V4-CD-D10-v1`<br>`GRC9V4-CD-D9-v1` | endpoint_coverage_does_not_replace_crossing_evidence |
+
+### E.14 Appendix E claim ceiling
+
+Appendix E establishes the accepted design-level transaction and lifecycle grammar. It does not establish runtime serializer conformance, bitwise portability, successful support for every topology change, generic lossless history transport, smooth operator continuation across events, native runtime release, endpoint hysteresis, or implementation authorization.
 
 ---
 
-## Appendix F. Analysis Interfaces and Nonclaims
+## Appendix F. Continuation and Analysis Interfaces and Nonclaims
 
-Collect:
+### F.1 Purpose and lineage rule
 
-* structural operator surfaces;
-* temporal derivative/Jacobian surfaces;
-* Read-Back derivative surfaces;
-* spatial graph operator surfaces;
-* required metrics;
-* required regularity;
-* branch assumptions;
-* current uninstantiated evidence obligations.
+This appendix collects the analysis interfaces already exposed by Section 13. It does not instantiate a formed branch, numerical operator, spectrum, metric, stability result, endpoint witness, or profile comparison.
 
-This appendix must not print numerical spectra that the investigation has not instantiated.
+The D10.2 registry audits parent normative objects and subordinate specification equations/contracts. It does not enumerate every algebraic derivative used by D3, D8-A, and D8-B. Therefore the analysis equations below retain direct lineage to those accepted records, followed by the relevant D10 claim and verification boundaries. They do not receive invented D10.2 identifiers.
+
+### F.2 Formed-state and branch prerequisites
+
+| Analysis prerequisite | Required content | Blocked substitute |
+|---|---|---|
+| Structural reference state | constrained critical state on declared structural domain | initialized or merely nonneutral state |
+| Retained structural state | structural reference state plus accepted retained-formation/retaining contract | slow coefficient or persistent bytes alone |
+| Smooth branch $X_\star(\theta)$ | same transported functional, identity/basin semantics, tangent, metric, constraints, boundary, and isolated subspace | sequence of unrelated snapshots |
+| Branch clock | declared relation among branch parameter $\theta$, runtime clock, and temporal analysis clock | assuming all clocks coincide |
+| Smooth chart | fixed topology, operator domain, selector rank, and unresolved active-set/mode crossings absent | treating event or rank crossing as an ordinary derivative point |
+| Reference transport | measure, metric, tangent/projector, boundary/domain, candidate basis, and isolated cluster projector | index-matching eigenvectors across states |
+
+Retained formation and structural stationarity remain distinct. A lifecycle continuation is not automatically a differentiable analytical continuation.
+
+### F.3 Four noninterchangeable operator families
+
+| Family | Native object | Native space | Spectral label | Meaning | Not interchangeable with |
+|---|---|---|---|---|---|
+| Structural | constrained second variation of $F_{\mathrm{struct}}$ | admitted structural tangent/tangent cone | $\alpha_n$ | restoring, marginal, or unstable structural direction | temporal multiplier, read gain, spatial scale |
+| Temporal | derivative of complete committed-state map | complete committed-state tangent | $\mu_n$; $\gamma_n$ only with clock/log branch | step multiplier or declared rate | structural Hessian or solver Jacobian |
+| Read-Back | frozen-state derivative of explicit read current | physical-current or identified one-form space | $\beta_n$ | direct enacted response gain | full step Jacobian or structural stiffness |
+| Spatial | positive graph field operator at formed geometry | node-field space | $\lambda_n$ | graph spatial scale | any of $\alpha$, $\beta$, $\mu$, $\gamma$ |
+
+### F.4 Coupled-root derivatives
+
+For CI profiles,
+
+$$
+F_a(Y_a;X_a)=0,
+\qquad
+Y_a=(J_a,h_a),
+$$
+
+with root block
+
+$$
+B_a=D_YF_a.
+$$
+
+Here $B_a$ is the coupled root Jacobian, not graph incidence. On the declared regular chart,
+
+$$
+D_XY_a[u]
+=-B_a^{-1}D_XF_a[u].
+$$
+
+On the accepted $C^2$ subchart,
+
+$$
+\begin{aligned}
+D_X^2Y_a[u,v]
+={}&-B_a^{-1}\Bigl(
+D_{XX}^2F_a[u,v]
++D_{XY}^2F_a[u,D_XY_a[v]]\\
+&\qquad
++D_{YX}^2F_a[D_XY_a[u],v]
++D_{YY}^2F_a[D_XY_a[u],D_XY_a[v]]
+\Bigr).
+\end{aligned}
+$$
+
+Classical derivatives stop at singular root blocks, topology changes, selector-rank changes, or undeclared nonsmooth active-set crossings.
+
+### F.5 Structural continuation and $\alpha$
+
+On a smooth slaved branch,
+
+$$
+F_{\mathrm{struct},a}^{\mathrm{red}}(C)
+=
+P_{\mathrm{struct}}(C,h_a(C);\text{fixed candidate context})
+-
+\eta_a[Q(C,h_a(C))-Q_0].
+$$
+
+With
+
+$$
+L_a(C,h)=P_{\mathrm{struct}}(C,h)-\eta_a[Q(C,h)-Q_0],
+$$
+
+the complete reduced second variation is
+
+$$
+\begin{aligned}
+D^2F_{\mathrm{struct},a}^{\mathrm{red}}[u,v]
+={}&D_{CC}^2L_a[u,v]
++D_{Ch}^2L_a[u,Dh_a[v]]
++D_{hC}^2L_a[Dh_a[u],v]\\
+&+D_{hh}^2L_a[Dh_a[u],Dh_a[v]]
++D_hL_a[D^2h_a[u,v]].
+\end{aligned}
+$$
+
+For the accepted graph-field contribution,
+
+$$
+P_G(C,H)
+=
+\frac{\kappa_C}{2}(d_0C)^\top H(d_0C)
++
+\sum_i(H_0)_{ii}W_{\mathrm{pot}}(C_i),
+$$
+
+and with $e^\star=d_0C^\star$,
+
+$$
+\begin{aligned}
+Q_a[u,v]
+={}&\kappa_C(d_0u)^\top H_a(d_0v)
++u^\top H_0\operatorname{Diag}(W_{\mathrm{pot}}''(C^\star))v\\
+&+\kappa_C(d_0u)^\top H_a'[v]e^\star
++\kappa_C(d_0v)^\top H_a'[u]e^\star
++\frac{\kappa_C}{2}(e^\star)^\top H_a''[u,v]e^\star.
+\end{aligned}
+$$
+
+On the declared structural tangent $V_a$ and metric,
+
+$$
+Q_{\mathrm{struct},a}[u,v]
+=\langle u,\mathcal C_{\mathrm{struct},a}v\rangle_a,
+$$
+
+$$
+\mathcal C_{\mathrm{struct},a}u_n=\alpha_nu_n.
+$$
+
+Only after the complete functional, tangent, metric, constraints, nulls, boundary conditions, and branch are instantiated does $\alpha_n$ carry a structural interpretation.
+
+Candidate A’s current structural domain is $\delta C$ at fixed $W_A^\star$ unless a new joint structural functional is supplied. Candidate C’s sector remains derived from $\delta C$ and selector differentiation; it is not an independent structural coordinate.
+
+### F.6 Complete temporal map, $\mu$, and $\gamma$
+
+The committed-state map is written $\Phi_a^{\mathrm{step}}$ to avoid collision with graph potential. Its derivative is
+
+$$
+M_a=D_X\Phi_a^{\mathrm{step}},
+$$
+
+with multipliers
+
+$$
+M_av_n=\mu_nv_n.
+$$
+
+A rate
+
+$$
+\gamma_n=-\frac{\log\mu_n}{\Delta t}
+$$
+
+requires a declared clock, units, and logarithm branch or a separately derived continuous generator.
+
+For nonpersistent Candidate A,
+
+$$
+\delta C^+
+=
+\delta C-\Delta t\,B_{\mathrm{ref}}\delta J_A
++D\,\mathrm{boundary}_A[\delta X],
+$$
+
+$$
+\begin{aligned}
+\delta W_A^+
+={}&a_A\operatorname{Diag}\!\left(\frac{W_A^+}{W_A}\right)\delta W_A\\
+&+(1-a_A)\operatorname{Diag}\!\left(\frac{W_A^+}{W_{\mathrm{drv},A}}\right)
+DG_W[\delta C^+,\delta J_A].
+\end{aligned}
+$$
+
+Writing
+
+$$
+\mathsf J_{A,C}=D_CJ_A,
+\qquad
+\mathsf J_{A,W}=D_{W_A}J_A,
+$$
+
+$$
+P_C=I-\Delta t\,B_{\mathrm{ref}}\mathsf J_{A,C}
++D_C\,\mathrm{boundary}_A,
+$$
+
+$$
+P_W=-\Delta t\,B_{\mathrm{ref}}\mathsf J_{A,W}
++D_{W_A}\,\mathrm{boundary}_A,
+$$
+
+$$
+D_CW_{\mathrm{drv},A}=G_{C,W}P_C+G_{J,W}\mathsf J_{A,C},
+$$
+
+$$
+D_{W_A}W_{\mathrm{drv},A}=G_{C,W}P_W+G_{J,W}\mathsf J_{A,W},
+$$
+
+gives the block map
+
+$$
+M_A=
+\begin{bmatrix}
+P_C&P_W\\
+D_CW_A^+&D_{W_A}W_A^+
+\end{bmatrix}.
+$$
+
+For nonpersistent Candidate C,
+
+$$
+M_C
+=
+I-\Delta t\,B_{\mathrm{ref}}P_J(-B_C^{-1}D_CF_C)
++D\,\mathrm{boundary}_C.
+$$
+
+Persistent profiles require the exact additional $\delta Z_{4,a}$ writer blocks. They are not inferred from the nonpersistent matrices.
+
+At a fixed instantiated branch, asymptotic step stability would require
+
+$$
+\rho(M_a)<1
+$$
+
+on unprotected modes, but the proposal does not instantiate or claim that condition.
+
+For a moving branch,
+
+$$
+M_k:T_{X_k}\mathcal X\longrightarrow T_{X_{k+1}}\mathcal X,
+$$
+
+$$
+\widetilde M_k
+=
+U_{k+1\to0}M_kU_{0\to k},
+$$
+
+$$
+\widetilde M_{n:0}
+=
+\widetilde M_{n-1}\cdots\widetilde M_0.
+$$
+
+The output transport is indexed by $k+1$, not $k$.
+
+### F.7 Direct Read-Back and $\beta$
+
+The frozen-state direct operator is
+
+$$
+R_{\mathrm{dir},a}=D_Jj_a,
+\qquad
+R_{\mathrm{dir},a}w_n=r_nw_n,
+$$
+
+with enacted operator
+
+$$
+B_{\mathrm{rb},a}=\zeta_aR_{\mathrm{dir},a},
+\qquad
+\beta_n=\zeta_ar_n.
+$$
+
+For Candidate A,
+
+$$
+B_{\mathrm{rb},A}
+=
+\zeta_A\chi_A\operatorname{Diag}(q_A^\star),
+$$
+
+$$
+r_{A,e}=\chi_Aq_{A,e}^\star,
+\qquad
+\beta_{A,e}=\zeta_A\chi_Aq_{A,e}^\star.
+$$
+
+For Candidate C, with
+
+$$
+Q_C=I_{4M}G_J,
+$$
+
+$$
+B_{\mathrm{rb},C}
+=
+\zeta_C\chi_CQ_C^{-1}\widehat R_{C,M}Q_C,
+$$
+
+$$
+B_{\mathrm{rb},C,M}
+=
+\zeta_C\chi_C\widehat R_{C,M}.
+$$
+
+The pulled-back physical response metric is
+
+$$
+W_{\mathrm{rb},C}^{\mathrm{phys}}
+=
+Q_C^\top H_{1,\mathrm{form},M}Q_C.
+$$
+
+If $\lambda_{M,m}$ is an eigenvalue of $\Delta_{1,M}$,
+
+$$
+r_{C,m}=\frac{\chi_C}{1+\tau_C\lambda_{M,m}},
+$$
+
+$$
+\beta_{C,m}=\frac{\zeta_C\chi_C}{1+\tau_C\lambda_{M,m}}.
+$$
+
+The kinetic threshold
+
+$$
+1\in\operatorname{Spec}(B_{\mathrm{rb},a})
+$$
+
+blocks the frozen direct current inverse; it does not imply structural marginality, temporal neutrality, spark, basin birth, or topology change.
+
+### F.8 Spatial operator and $\lambda$
+
+At formed geometry,
+
+$$
+L_{\mathrm{sp},a}
+=
+\Delta_0(h_a^\star)
+=
+H_{0,\mathrm{ref}}^{-1}
+B_{\mathrm{ref}}
+H_{1,\mathrm{form}}(h_a^\star)
+B_{\mathrm{ref}}^\top.
+$$
+
+The weighted eigenproblem is
+
+$$
+B_{\mathrm{ref}}H_{1,\mathrm{form}}(h_a^\star)B_{\mathrm{ref}}^\top\phi_n
+=
+\lambda_nH_{0,\mathrm{ref}}\phi_n.
+$$
+
+Candidate C’s internal retained-coordinate $\lambda_{M,m}$ values are not automatically the field-level $\lambda_n$ values.
+
+### F.9 Projectors and reference transport
+
+| Projector | Native space | Required metric/domain | Forbidden identification |
+|---|---|---|---|
+| Structural | constrained $C$ tangent or declared tangent cone | structural metric, constraints, null handling | temporal or selector projector |
+| Temporal | complete committed-state tangent | complete-state analysis metric | structural Hessian projector |
+| Read-Back | physical-current or retained one-form response space | current/response metric | spatial projector |
+| Spatial | node-field space | graph measure, boundary, constant-mode handling | sorted-index identity with any other family |
+
+Across a smooth branch, transport must carry measure, metric, tangent, constraints, boundary/operator domain, candidate/selector basis, and isolated cluster projector. Individual eigenvectors are not transported through degeneracy or cluster crossings; isolated subspaces are.
+
+Cross-rank and cross-topology spectral continuation remains blocked without a typed differentiable interspace map. Lifecycle readmission alone does not supply one.
+
+### F.10 Nonnormality, regularity, and complete-chain sensitivity
+
+For declared positive analysis metric $W_{\mathrm{analysis}}$,
+
+$$
+M^\dagger=W_{\mathrm{analysis}}^{-1}M^\top W_{\mathrm{analysis}},
+$$
+
+$$
+\mathcal N(M)=\lVert M^\dagger M-MM^\dagger\rVert_{W_{\mathrm{analysis}}},
+$$
+
+$$
+G_H(M)=\max_{0\le k\le H}\lVert M^k\rVert_{W_{\mathrm{analysis}}}.
+$$
+
+Candidate A’s relative metric weight between $C$ and $\omega_A=\log(W_A/W_{\mathrm{ref}})$ remains unfrozen, so absolute A nonnormality and cross-profile temporal magnitudes remain unavailable.
+
+For reference root block $B_{0,a}$,
+
+$$
+\eta_{\mathrm{reg},a}
+=
+\lVert B_{0,a}^{-1}(B_a-B_{0,a})\rVert<1,
+$$
+
+which implies
+
+$$
+\lVert B_a^{-1}\rVert
+\le
+\frac{\lVert B_{0,a}^{-1}\rVert}
+{1-\eta_{\mathrm{reg},a}}.
+$$
+
+For coupling parameter $\kappa$,
+
+$$
+Y_\kappa=-B_a^{-1}F_\kappa,
+$$
+
+$$
+D_\kappa\Phi_a^{\mathrm{step}}
+=
+D_Y\Phi_a^{\mathrm{step}}Y_\kappa
++
+\partial_\kappa\Phi_a^{\mathrm{step}}.
+$$
+
+A positive complete-chain effect requires a preregistered nonzero transition sensitivity or matched enabled-versus-consumer-off difference. Equation-level consumption and distinct carrier state alone do not prove a committed endpoint effect.
+
+### F.11 Realization-local analysis coverage
+
+| Realization | Accepted current analysis surface | Current boundary |
+|---|---|---|
+| CI | exact design-level first/second root derivatives, constrained structural second variation, complete-step Jacobian, direct read operator, spatial operator, projector transport, and test contracts for A/C | no formed branch, numerical operators, spectra, stability, global roots, or endpoint witness |
+| OS | exact one-pass transition and split-consistency residual | no theorem equating OS with CI and no instantiated formed-branch operator package |
+| RG2b | bounded deterministic Lipschitz invariant section | no classical derivative or spectrum without the accepted differentiability condition |
+| PC | authoritative carrier, exact ZOH writer, bounded domain, release, matched-forcing contraction | no instantiated complete-step spectrum or endpoint hysteresis |
+| CI+PC | local hybrid root, carrier writer, gain audit, complete transition | no hybrid-specific formed-branch operator instantiation or stability classification |
+
+### F.12 Uninstantiated evidence obligations and nonclaims
+
+| Desired stronger statement | Missing evidence or declaration | Current treatment |
+|---|---|---|
+| Numerical $\alpha$, $\beta$, $\mu$, $\gamma$, or $\lambda$ | formed branch, coefficients, domains, metrics, operators, numerical evaluation | not claimed |
+| Structural or temporal stability | instantiated structural and committed-state operators plus appropriate spectral/nonnormal analysis | not claimed |
+| Candidate A absolute nonnormality | complete-state analysis metric fixing relative $C$/$\log W_A$ weight | not claimed |
+| Classical RG2b spectrum | accepted $C^1$ invariant-section result | not claimed |
+| Cross-event mode continuation | differentiable typed interspace transport and isolated cluster tracking | not claimed |
+| Endpoint hysteresis | complete-chain committed-state or observable witness | not claimed |
+| Physical A/C nonabsorbability | matched baseline-reparameterization discriminator | not claimed |
+| Profile preference/ranking | matched formed-branch units, capacities, amplitudes, and objective | explicitly blocked without evidence |
+| One universal continuation spectrum | identification theorem among four operator families | explicitly rejected |
+
+### F.13 Direct analysis-source crosswalk
+
+| Proposal/appendix surface | Direct accepted source | D10 claim boundary | D10.2 context, where applicable |
+|---|---|---|---|
+| Formed state, structural reference state, clocks, branch transport | D3 continuation requirements and structural-domain decision | `D10-CL-C-001`, `D10-CL-C-005`, `D10-CL-U-002`, `D10-CL-U-004` | profile/state/geometry parent objects only; no fabricated analysis row |
+| Branch-appropriate structural target | D8-A | `D10-CL-C-001`, `D10-CL-C-005`, `D10-CL-X-003` | `GEOM-K4`, `GEOM-H1-FORM`, `GEOM-GJ`, `GEOM-ASSEMBLY` provide substrate typing |
+| CI root first/second derivatives | D8-B | `D10-CL-C-001`, `D10-CL-C-005`, `D10-CL-C-006` | CI parent and candidate-specific CI rows establish the underlying root, not these derivative intermediates |
+| Reduced structural second variation and $\alpha$ interface | D8-B | `D10-CL-C-001`, `D10-CL-C-005`, `D10-CL-X-003` | charge tangent/projector and geometry parents provide domain context |
+| Complete-step Jacobian, $\mu$, and $\gamma$ boundary | D8-B plus D9 complete step | `D10-CL-C-005`, `D10-CL-U-004`, `D10-CL-X-003` | lifecycle parent rows establish committed-state semantics |
+| Direct Read-Back $\beta$ operators | D8-B plus post-v2 Hodge correction | `D10-CL-C-005`, `D10-CL-C-006`, `D10-CL-C-007` | A/C read parents and Candidate C chain rows provide constitutive typing |
+| Spatial operator and projector families | D3 and D8-B | `D10-CL-C-002`, `D10-CL-C-005`, `D10-CL-C-006` | geometry/covariance/event parents provide fixed-stratum and event boundary |
+| Nonnormality, regularity, and complete-chain sensitivity | D8-B | `D10-CL-C-004`, `D10-CL-C-005`, `D10-CL-C-008`, `D10-CL-U-002`, `D10-CL-U-004` | no numerical evidence or endpoint claim is promoted |
+
+### F.14 Appendix F claim ceiling
+
+Appendix F defines analysis interfaces and their exact prerequisites. It does not instantiate a formed branch, classical package for all ten profiles, numerical modes, stability, cross-event mode identity, endpoint effect, candidate discrimination, analysis metric for A, or profile ranking.
 
 ---
 
 ## Appendix G. Paper-to-Investigation Provenance Crosswalk
 
-For every main-text proposition and equation record:
+### G.1 Purpose, authority, and association status
+
+Appendix G is a repository-side traceability companion. It may remain outside a publication-formatted substrate paper, but it should be preserved before the proposal is frozen or converted into a normative specification.
+
+The crosswalk has four layers:
 
 ```text
-paper section
-paper statement/equation
-D10 claim IDs
-D10.2 parent object IDs
-D10.2 equation/contract IDs
-accepted predecessor decisions
-paper claim ceiling
+paper section or appendix surface
+  -> accepted D10 claim boundary
+  -> D10.2 parent normative object
+  -> D10.2 subordinate equation/contract row
+  -> accepted predecessor source lineage.
 ```
 
-This appendix may remain a repository-side companion rather than part of the published prose, but it should be generated and preserved before the paper is frozen.
+The tables record controlled consumption, not newly proved graph associations. All exploratory associations remain `indeterminate_requires_review` unless a separately accepted source states otherwise. The accepted record-level promotion label `D10_2_CL_N_001` is reported only as a source-local D10.2 status label; it is absent from the 39 accepted D10 claim IDs.
+
+### G.2 Section-level crosswalk
+
+| Paper location | Surface | Accepted D10 claim boundary | Primary D10.2 parent objects | Independent derivation context | Boundary preserved |
+| --- | --- | --- | --- | --- | --- |
+| §2.1–2.4 | Inheritance and specialization boundary | `D10-CL-N-001`<br>`D10-CL-N-006`<br>`D10-CL-C-011`<br>`D10-CL-C-012` | `CORE-C-AUTHORITY`<br>`BASE-GRC-DIFFERENTIAL`<br>`BASE-SCALAR-MOBILITY`<br>`BASE-POTENTIAL`<br>`BASE-POTENTIAL-FLOW`<br>`GRC9-ORDERED-PORTS`<br>`SPEC-FUTURE-ADMISSION` | `D10.2-DER-TRANSPORT`<br>`D10.2-DER-DIFFERENTIAL`<br>`D10.2-DER-SPEC-GRAMMAR` | Generic promotion is bounded to the current population; GRC9 mechanics remain substantive. |
+| §2.5 | Scientific claims versus verification | `D10-CL-C-004`<br>`D10-CL-C-005`<br>`D10-CL-C-006`<br>`D10-CL-C-008`<br>`D10-CL-U-002`<br>`D10-CL-U-004` | `SPEC-VERIFICATION-REGISTRY`<br>`SPEC-CLAIM-CEILINGS` | `D10.2-DER-SPEC-GRAMMAR` | Unexecuted verification is neither missing constitutive mathematics nor completed evidence. |
+| §3.1 | Graph and typed edge spaces | `D10-CL-N-001`<br>`D10-CL-N-006` | `CORE-C-AUTHORITY`<br>`CORE-INCIDENCE-CONTINUITY`<br>`GEOM-H1-FORM`<br>`GEOM-GJ`<br>`GEOM-M4`<br>`GEOM-COVARIANCE` | `D10.2-DER-RESOURCE`<br>`D10.2-DER-GEOMETRY`<br>`D10.2-DER-MOBILITY` | Coordinate equality does not merge physical flux, structural form, Hodge, or mobility types. |
+| §3.2 | Complete profile identity | `D10-CL-N-008`<br>`D10-CL-N-009`<br>`D10-CL-C-012` | `L-PROFILE-GRAMMAR`<br>`SPEC-PROFILE-GRAMMAR`<br>`SPEC-NORMALIZATION-UNITS-GAUGE-DOMAIN-SOLVER`<br>`SPEC-COMPOSITION-PROFILE-IDENTITY` | `D10.2-DER-SPEC-GRAMMAR` | The ten profiles are the current initial population, not a future-exhaustive taxonomy. |
+| §3.3 | State authority classes | `D10-CL-N-002`<br>`D10-CL-N-005` | `CORE-C-AUTHORITY`<br>`A-STATE-REDUCTION`<br>`C-AUTHORITY`<br>`REAL-PC`<br>`L-SNAPSHOT-RESET` | `D10.2-DER-RESOURCE`<br>`D10.2-DER-A-READWRITE`<br>`D10.2-DER-C-HODGE`<br>`D10.2-DER-REALIZATION`<br>`D10.2-DER-LIFECYCLE` | Derived and transient surfaces do not become hidden state. |
+| §3.4 | Differential backend | `D10-CL-N-001`<br>`D10-CL-C-006` | `BASE-GRC-DIFFERENTIAL`<br>`BASE-GRC9-ROW-BASIS-DIFFERENTIAL` | `D10.2-DER-DIFFERENTIAL` | GRC-v3 is the current reference backend; GRC9 row basis remains specialization-only. |
+| §4.1 | Inherited scalar transport | `D10-CL-N-001` | `BASE-SCALAR-MOBILITY`<br>`BASE-POTENTIAL`<br>`BASE-POTENTIAL-FLOW` | `D10.2-DER-TRANSPORT` | Potential flow is not automatically retained or authoritative total current. |
+| §4.2–4.7 | Continuity, charge, tangent, projector, event resource | `D10-CL-N-003`<br>`D10-CL-N-004`<br>`D10-CL-N-005`<br>`D10-CL-X-001` | `CORE-INCIDENCE-CONTINUITY`<br>`CORE-GENERAL-CHARGE`<br>`CORE-CHARGE-TANGENT`<br>`CORE-STRUCTURAL-CHARGE-PROJECTOR`<br>`CORE-UNIT-MEASURE`<br>`CORE-EXTERNAL-EVENT-CHARGE`<br>`L-CONTINUITY-WRITE`<br>`L-TOPOLOGY-EVENT` | `D10.2-DER-RESOURCE`<br>`D10.2-DER-LIFECYCLE` | Event resource increment and charge receipt remain separate; full-state orthogonality is not claimed. |
+| §5 | Retention, Read-Back, current, write-back | `D10-CL-N-002`<br>`D10-CL-N-003`<br>`D10-CL-C-004`<br>`D10-CL-C-007`<br>`D10-CL-U-002` | `A-READ-CLOSURE`<br>`A-RETAINED-WRITER`<br>`C-READ-BACK`<br>`C-AUTHORITY`<br>`REAL-PC`<br>`L-AUTHORITATIVE-CURRENT` | `D10.2-DER-A-READWRITE`<br>`D10.2-DER-C-HODGE`<br>`D10.2-DER-REALIZATION`<br>`D10.2-DER-LIFECYCLE` | Design-level causal closure is not runtime formation, physical nonabsorbability, or endpoint effect. |
+| §6 | Structural geometry and mobility | `D10-CL-N-006`<br>`D10-CL-C-001`<br>`D10-CL-C-006`<br>`D10-CL-U-005` | `CORE-K-STRUCTURAL-ROLE`<br>`GEOM-K4`<br>`GEOM-H1-FORM`<br>`GEOM-GJ`<br>`GEOM-M4`<br>`GEOM-K4-TO-H4-TO-h4`<br>`GEOM-ASSEMBLY`<br>`GEOM-COVARIANCE` | `D10.2-DER-GEOMETRY`<br>`D10.2-DER-MOBILITY` | Reference Hodge profile is admitted, not unique; geometry does not acquire mobility authority. |
+| §7 | Complete profile grammar | `D10-CL-N-008`<br>`D10-CL-N-009`<br>`D10-CL-C-012`<br>`D10-CL-U-001`<br>`D10-CL-X-005` | `L-PROFILE-GRAMMAR`<br>`SPEC-PROFILE-GRAMMAR`<br>`SPEC-FUTURE-ADMISSION`<br>`SPEC-B-SLOT`<br>`SPEC-CLAIM-CEILINGS`<br>`SPEC-NORMALIZATION-UNITS-GAUGE-DOMAIN-SOLVER`<br>`SPEC-COMPOSITION-PROFILE-IDENTITY`<br>`SPEC-VERIFICATION-REGISTRY` | `D10.2-DER-SPEC-GRAMMAR` | Candidate B remains routed and nonexecutable; no automatic successor schedule. |
+| §8 / App. D.2 | Candidate A | `D10-CL-O-001`<br>`D10-CL-C-004`<br>`D10-CL-C-007`<br>`D10-CL-C-010`<br>`D10-CL-U-002`<br>`D10-CL-U-003`<br>`D10-CL-X-004`<br>`D10-CL-X-006` | `A-GW-FUNCTIONAL`<br>`A-WHAT`<br>`A-DIRECTIONAL-CONTRAST`<br>`A-READ-CLOSURE`<br>`A-WRITER-TARGET`<br>`A-RETAINED-WRITER`<br>`A-STATE-REDUCTION`<br>`GEOM-M4` | `D10.2-DER-A-GW`<br>`D10.2-DER-A-READWRITE`<br>`D10.2-DER-MOBILITY` | A is admitted, normalized, and revision-specific; no physical nonabsorbability or preference claim. |
+| §9 / App. D.3 | Candidate C | `D10-CL-O-002`<br>`D10-CL-C-004`<br>`D10-CL-C-006`<br>`D10-CL-C-007`<br>`D10-CL-U-002`<br>`D10-CL-U-003`<br>`D10-CL-X-006` | `C-SECTOR`<br>`C-SELECTOR`<br>`C-HODGE-MAPS`<br>`C-READ-BACK`<br>`C-AUTHORITY` | `D10.2-DER-C-HODGE` | C derived surfaces are not hidden state; physical conditioning uses Q_C=I_4M G_J. |
+| §10.2 / App. D.4 | CI | `D10-CL-O-003`<br>`D10-CL-C-003`<br>`D10-CL-C-005`<br>`D10-CL-C-006` | `REAL-CI` | `D10.2-DER-REALIZATION` | Local regular branch only; no global root or stability claim. |
+| §10.3 / App. D.5 | OS | `D10-CL-O-004`<br>`D10-CL-C-004`<br>`D10-CL-C-005` | `REAL-OS` | `D10.2-DER-REALIZATION` | One pass and explicit split residual; no silent iteration or CI-equivalence theorem. |
+| §10.4 / App. D.6 | RG2b | `D10-CL-O-005`<br>`D10-CL-C-009` | `REAL-RG2B` | `D10.2-DER-REALIZATION` | Bounded Lipschitz section relative to frozen completion; no C1 or spectrum claim. |
+| §10.5 / App. D.7 | PC | `D10-CL-O-006`<br>`D10-CL-U-002`<br>`D10-CL-X-005` | `REAL-PC` | `D10.2-DER-REALIZATION` | Carrier persistence/release is not endpoint hysteresis or Candidate B. |
+| §10.6 / App. D.8 | CI+PC | `D10-CL-O-007`<br>`D10-CL-N-008`<br>`D10-CL-C-008` | `REAL-CI-PC`<br>`SPEC-COMPOSITION-PROFILE-IDENTITY` | `D10.2-DER-REALIZATION`<br>`D10.2-DER-SPEC-GRAMMAR` | Unit-plus-unit gain-two profile is identity-bearing, not preferred or amplitude-neutral. |
+| §11 / App. E.3–E.4 | Complete step and atomicity | `D10-CL-N-003`<br>`D10-CL-N-004`<br>`D10-CL-C-003`<br>`D10-CL-C-006` | `L-AUTHORITATIVE-CURRENT`<br>`L-CONTINUITY-WRITE`<br>`L-POSTCONTINUITY-REFRESH`<br>`L-ATOMICITY`<br>`L-SINGULAR-FAIL-CLOSED` | `D10.2-DER-LIFECYCLE`<br>`D10.2-DER-RESOURCE` | One outer transaction, profile-local internal order, no hidden partial commit. |
+| §12 / App. E.5–E.12 | Lifecycle, migration, and events | `D10-CL-N-004`<br>`D10-CL-N-005`<br>`D10-CL-C-002`<br>`D10-CL-X-001` | `L-SNAPSHOT-RESET`<br>`L-PROFILE-MIGRATION`<br>`L-A-INITIALIZER-GRC`<br>`L-TOPOLOGY-EVENT`<br>`L-ORDERED-RECEIPTS`<br>`CORE-EXTERNAL-EVENT-CHARGE` | `D10.2-DER-LIFECYCLE`<br>`D10.2-DER-A-INITIALIZER` | Typed preservation or explicit loss; lifecycle continuation is not spectral continuation. |
+| §13 / App. F | Continuation and analysis interfaces | `D10-CL-C-001`<br>`D10-CL-C-004`<br>`D10-CL-C-005`<br>`D10-CL-C-006`<br>`D10-CL-C-008`<br>`D10-CL-C-009`<br>`D10-CL-U-002`<br>`D10-CL-U-004`<br>`D10-CL-X-002`<br>`D10-CL-X-003` | `CORE-CHARGE-TANGENT`<br>`CORE-STRUCTURAL-CHARGE-PROJECTOR`<br>`GEOM-K4`<br>`GEOM-H1-FORM`<br>`GEOM-GJ`<br>`GEOM-COVARIANCE`<br>`REAL-CI`<br>`REAL-RG2B` | `D10.2-DER-RESOURCE`<br>`D10.2-DER-GEOMETRY`<br>`D10.2-DER-REALIZATION` | Direct D3/D8-A/D8-B lineage; no numerical modes or stability. |
+| §14 / App. A | Factorization and specialization | `D10-CL-N-006`<br>`D10-CL-N-007`<br>`D10-CL-C-011`<br>`D10-CL-C-012` | `SPEC-FUTURE-ADMISSION`<br>`GRC9-ORDERED-PORTS`<br>`GRC9-ROW-COLUMN-CHART`<br>`GRC9-SATURATION`<br>`GRC9-MECHANICAL-EXPANSION`<br>`GRC9-HYBRID-SPARK`<br>`GRC9-CHILD-BASIN-STABILIZATION`<br>`GRC9-COLUMN-COARSE-GRAINING`<br>`BASE-DISABLED-TRANSITION`<br>`BASE-DISABLED-STATE`<br>`BASE-DISABLED-OBSERVABLE`<br>`BASE-DISABLED-LIFECYCLE` | `D10.2-DER-SPEC-GRAMMAR` | GRC9V4 remains substantive; four disabled surfaces are independent. |
+| §15 | Claim topology and evidence ceiling | `D10-CL-C-001`<br>`D10-CL-C-002`<br>`D10-CL-C-003`<br>`D10-CL-C-004`<br>`D10-CL-C-005`<br>`D10-CL-C-006`<br>`D10-CL-C-007`<br>`D10-CL-C-008`<br>`D10-CL-C-009`<br>`D10-CL-C-010`<br>`D10-CL-C-011`<br>`D10-CL-C-012`<br>`D10-CL-N-001`<br>`D10-CL-N-002`<br>`D10-CL-N-003`<br>`D10-CL-N-004`<br>`D10-CL-N-005`<br>`D10-CL-N-006`<br>`D10-CL-N-007`<br>`D10-CL-N-008`<br>`D10-CL-N-009`<br>`D10-CL-O-001`<br>`D10-CL-O-002`<br>`D10-CL-O-003`<br>`D10-CL-O-004`<br>`D10-CL-O-005`<br>`D10-CL-O-006`<br>`D10-CL-O-007`<br>`D10-CL-U-001`<br>`D10-CL-U-002`<br>`D10-CL-U-003`<br>`D10-CL-U-004`<br>`D10-CL-U-005`<br>`D10-CL-X-001`<br>`D10-CL-X-002`<br>`D10-CL-X-003`<br>`D10-CL-X-004`<br>`D10-CL-X-005`<br>`D10-CL-X-006` | `SPEC-CLAIM-CEILINGS`<br>`SPEC-VERIFICATION-REGISTRY` | `D10.2-DER-SPEC-GRAMMAR` | All 39 D10 claim classes remain visible; no claim is promoted by exposition. |
+| Appendices B–C | Type table and complete profile registry | `D10-CL-N-002`<br>`D10-CL-N-005`<br>`D10-CL-N-008`<br>`D10-CL-N-009`<br>`D10-CL-C-012` | `CORE-C-AUTHORITY`<br>`A-STATE-REDUCTION`<br>`C-AUTHORITY`<br>`REAL-PC`<br>`L-SNAPSHOT-RESET`<br>`L-PROFILE-GRAMMAR`<br>`SPEC-PROFILE-GRAMMAR` | `D10.2-DER-RESOURCE`<br>`D10.2-DER-A-READWRITE`<br>`D10.2-DER-C-HODGE`<br>`D10.2-DER-REALIZATION`<br>`D10.2-DER-LIFECYCLE`<br>`D10.2-DER-SPEC-GRAMMAR` | Registry restates accepted identity; it does not create implementation manifests. |
+
+### G.3 Complete parent-object coverage register
+
+The following table is generated from the 67-object D10.2 parent registry. “Paper location” is an editorial consumption map, not a newly admitted claim graph edge.
+
+| Parent object | Family | Kind | Disposition | Promotion | Paper location | Independent derivation(s) | Accepted source lineage | Blocked overread |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| CORE-C-AUTHORITY | core_resource | state_authority | GRC_derived | promotion_proved | §§2.1, 3.1, 3.3, 4; App. E | `D10.2-DER-RESOURCE` | `GRCV3-NORMATIVE-SPEC`<br>`GRC9V4-CD-D9-v1` | C_authority_does_not_make_every_derived_surface_independent_state |
+| CORE-INCIDENCE-CONTINUITY | core_resource | equation | GRC_derived | promotion_proved | §§3.1, 4.2, 11.5; App. E | `D10.2-DER-RESOURCE` | `GRCV3-NORMATIVE-SPEC`<br>`GRC9V4-CD-D9-v1` | continuity_does_not_authorize_multiple_resource_writes |
+| CORE-GENERAL-CHARGE | core_resource | invariant_contract | GRC_derived | promotion_proved | §§4.3–4.6, 11.6; App. E | `D10.2-DER-RESOURCE` | `GRC9V4-CD-D9-v1` | general_charge_does_not_force_unit_measure |
+| CORE-CHARGE-TANGENT | core_resource | tangent_contract | GRC_derived | promotion_proved | §4.4; Apps. E, F | `D10.2-DER-RESOURCE` | `GRC9V4-CD-D9-v1`<br>`GRC9V4-D9-PROFILE-STATE-LIFECYCLE-REGISTRY-v1` | nonresource_variations_remain_unrestricted_by_the_charge_tangent |
+| CORE-STRUCTURAL-CHARGE-PROJECTOR | core_resource | projector_contract | GRC_derived | promotion_proved | §4.5; Apps. E, F | `D10.2-DER-RESOURCE` | `GRC9V4-CD-D9-v1`<br>`GRC9V4-D9-PROFILE-STATE-LIFECYCLE-REGISTRY-v1` | the_identity_extension_is_not_a_full_state_orthogonal_projector_without_a_product_metric |
+| CORE-UNIT-MEASURE | core_resource | reference_profile | GRC_derived | promotion_proved | §§4.3, 11.6; App. E | `D10.2-DER-RESOURCE` | `GRCV3-NORMATIVE-SPEC`<br>`GRC9V4-CD-D9-v1` | unit_measure_is_not_the_only_GRCV4_charge |
+| CORE-EXTERNAL-EVENT-CHARGE | core_resource | event_accounting | GRC_derived | promotion_proved | §§4.7, 12.7; App. E | `D10.2-DER-RESOURCE` | `GRC9V4-CD-D9-v1` | external_exchange_is_not_hidden_nonconservation |
+| BASE-SCALAR-MOBILITY | legacy_transport | state_or_stage_object | GRC_derived | promotion_proved | §4.1; App. D | `D10.2-DER-TRANSPORT` | `GRCV3-NORMATIVE-SPEC`<br>`GRCV3-RUNTIME-SOURCE` | scalar_mobility_is_not_full_tensor_anisotropy |
+| BASE-POTENTIAL | legacy_transport | equation | GRC_derived | promotion_proved | §4.1; App. D | `D10.2-DER-TRANSPORT` | `GRCV3-RUNTIME-SOURCE`<br>`GRC9V3-TRANSPORT-RUNTIME`<br>`GRC9V4-CD-D7-v1` | shared_formula_does_not_promote_port_storage |
+| BASE-POTENTIAL-FLOW | legacy_transport | equation | GRC_derived | promotion_proved | §4.1; App. D | `D10.2-DER-TRANSPORT` | `GRCV3-RUNTIME-SOURCE`<br>`GRC9V3-TRANSPORT-RUNTIME`<br>`GRC9V4-CD-D7-v1` | potential_flow_does_not_imply_retained_current |
+| BASE-GRC-DIFFERENTIAL | legacy_transport | backend_contract | GRC_derived | promotion_proved | §3.4; App. D | `D10.2-DER-DIFFERENTIAL` | `GRCV3-NORMATIVE-SPEC`<br>`GRCV3-RUNTIME-SOURCE` | the_current_GRCV3_backend_menu_is_not_the_only_future_GRCV4_realization |
+| BASE-GRC9-ROW-BASIS-DIFFERENTIAL | legacy_transport | specialization_backend | GRC9_intrinsic | specialization_only | App. A | — | `GRC9V3-TRANSPORT-RUNTIME`<br>`PHASE7-GRC9V3-EQUATION-MAP` | row_basis_backend_is_not_the_GRCV4_general_contract |
+| BASE-DISABLED-TRANSITION | legacy_transport | compatibility_contract | GRC9_specialization_specific | specialization_only | §14.5; App. A | — | `GRC9V4-CD-D0-v1`<br>`GRC9V4-CD-D9-v1` | compatibility_target_is_not_nine_port_intrinsic_mathematics |
+| BASE-DISABLED-STATE | legacy_transport | compatibility_contract | GRC9_specialization_specific | specialization_only | §14.5; App. A | — | `GRC9V4-CD-D0-v1`<br>`GRC9V4-CD-D9-v1` | transition_equivalence_does_not_imply_state_equivalence |
+| BASE-DISABLED-OBSERVABLE | legacy_transport | compatibility_contract | GRC9_specialization_specific | specialization_only | §14.5; App. A | — | `GRC9V4-CD-D0-v1`<br>`GRC9V4-CD-D9-v1` | transition_or_state_equivalence_does_not_imply_observable_equivalence |
+| BASE-DISABLED-LIFECYCLE | legacy_transport | compatibility_contract | GRC9_specialization_specific | specialization_only | §14.5; App. A | — | `GRC9V4-CD-D0-v1`<br>`GRC9V4-CD-D9-v1` | legacy_compatibility_does_not_define_GRCV4_generic_lifecycle |
+| A-GW-FUNCTIONAL | candidate_A | constitutive_functional | GRC_derived | promotion_proved | §8.3; App. D.2 | `D10.2-DER-A-GW` | `GRCV3-RUNTIME-SOURCE`<br>`GRC9V3-TRANSPORT-RUNTIME`<br>`GRC9V4-CD-D7-v1` | promotion_excludes_both_the_GRC9_row_basis_backend_and_any_future_curvature_conditioned_successor |
+| A-WHAT | candidate_A | derived_reference | GRC_derived | promotion_proved | §8.4; App. D.2 | `D10.2-DER-A-GW`<br>`D10.2-DER-A-READWRITE` | `GRC9V4-CD-D7-v1` | W_hat_is_not_independent_history |
+| A-DIRECTIONAL-CONTRAST | candidate_A | read_surface | GRC_derived | promotion_proved | §8.5; App. D.2 | `D10.2-DER-A-READWRITE` | `GRC9V4-CD-D5-v1`<br>`GRC9V4-CD-D7-v1` | contrast_is_not_itself_retention_or_release |
+| A-READ-CLOSURE | candidate_A | equation_family | GRC_derived | promotion_proved | §8.6; App. D.2 | `D10.2-DER-A-READWRITE` | `GRC9V4-CD-D5-v1`<br>`GRC9V4-CD-D6-v1`<br>`GRC9V4-CD-D7-v1` | closure_does_not_prove_physical_nonabsorbability |
+| A-WRITER-TARGET | candidate_A | derived_write_target | GRC_derived | promotion_proved | §8.8; App. D.2 | `D10.2-DER-A-GW`<br>`D10.2-DER-A-READWRITE` | `GRC9V4-CD-D7-v1` | precontinuity_cache_reuse_is_forbidden |
+| A-RETAINED-WRITER | candidate_A | state_writer | GRC_derived | promotion_proved | §8.9; App. D.2 | `D10.2-DER-A-READWRITE` | `GRC9V4-CD-D2-v1`<br>`GRC9V4-CD-D7-v1` | slow_parameter_alone_is_not_retention_evidence |
+| A-STATE-REDUCTION | candidate_A | authority_contract | GRC_derived | promotion_proved | §8.1; Apps. B, C, D | `D10.2-DER-A-READWRITE` | `GRC9V4-CD-D1-v1`<br>`GRC9V4-CD-D7-v1`<br>`GRC9V4-CD-D9-v1` | exact_disabled_projection_to_GRC9V3_is_owned_only_by_the_specialization_compatibility_rows |
+| C-SECTOR | candidate_C | derived_sector | GRC_derived | promotion_proved | §9.2; App. D.3 | `D10.2-DER-C-HODGE` | `GRC9V4-CD-D4V2-v1`<br>`GRC9V4-CD-D7V2-v1` | T_C_is_not_independent_resource_or_state |
+| C-SELECTOR | candidate_C | derived_operator | GRC_derived | promotion_proved | §9.2; App. D.3 | `D10.2-DER-C-HODGE` | `GRC9V4-CD-D4V2-v1`<br>`GRC9V4-CD-D7V2-v1`<br>`GRC9V4-CD-D9-v1` | analysis_projector_cannot_become_runtime_authority |
+| C-HODGE-MAPS | candidate_C | operator_family | GRC_derived | promotion_proved | §§9.3–9.4; App. D.3 | `D10.2-DER-C-HODGE` | `GRC9V4-CD-D5V2-v1`<br>`GRC9V4-CD-D6V2-v1`<br>`GRC9V4-CD-D7G-post-v2-HODGE-TYPE-CORRECTION-v1` | matrix_shape_alone_does_not_establish_correct_Hodge_typing |
+| C-READ-BACK | candidate_C | operator_family | GRC_derived | promotion_proved | §§9.5–9.6; App. D.3 | `D10.2-DER-C-HODGE` | `GRC9V4-CD-D5V2-v1`<br>`GRC9V4-CD-D6V2-v1`<br>`GRC9V4-CD-D7V2-v1` | chi_must_not_be_applied_twice |
+| C-AUTHORITY | candidate_C | state_authority | GRC_derived | promotion_proved | §§9.1, 9.8; Apps. B, C, D | `D10.2-DER-C-HODGE` | `GRC9V4-CD-D7V2-v1`<br>`GRC9V4-CD-D9-v1` | derived_C_surfaces_are_not_hidden_state |
+| CORE-K-STRUCTURAL-ROLE | geometry | core_theory_role | core_theory_substrate_independent | promotion_proved | §6.1; Apps. D, F | `D10.2-DER-GEOMETRY` | `GRC9V4-CD-D0-v1`<br>`GRC9V4-CD-D7G-v1` | core_K_is_not_the_graph_bilinear_form_K4 |
+| GEOM-K4 | geometry | graph_structural_object | GRC_derived | promotion_proved | §6.1; Apps. D, F | `D10.2-DER-GEOMETRY` | `GRC9V4-CD-D4V2-v1`<br>`GRC9V4-CD-D7G-v1`<br>`GRC9V4-CD-D8A-v1` | graph_K4_must_not_be_relabelled_as_core_K_or_as_legacy_cached_GRC9_tensor |
+| GEOM-H1-FORM | geometry | geometry_object | GRC_derived | promotion_proved | §§6.2–6.3; Apps. B, D, F | `D10.2-DER-GEOMETRY` | `GRCV3-NORMATIVE-SPEC`<br>`GRCV3-RUNTIME-SOURCE`<br>`GRC9V4-CD-D7G-v2`<br>`GRC9V4-CD-D7G-post-v2-HODGE-TYPE-CORRECTION-v1` | the_reference_Hodge_is_a_V4_embedding_not_preexisting_GRCv3_physical_geometry |
+| GEOM-GJ | geometry | flux_flat_operator | GRC_derived | promotion_proved | §§6.2–6.3; Apps. B, D, F | `D10.2-DER-GEOMETRY` | `GRC9V4-CD-D7G-v2`<br>`GRC9V4-CD-D7G-post-v2-HODGE-TYPE-CORRECTION-v1`<br>`GRC9V4-CD-D8A-v1` | G_J_is_not_transport_mobility_M4_and_telemetry_current_is_not_a_structural_source |
+| GEOM-M4 | geometry | transport_mobility_operator | GRC_derived | promotion_proved | §6.4; Apps. B, D | `D10.2-DER-MOBILITY` | `GRC9V4-CD-D4V2-v1`<br>`GRC9V4-CD-D7G-v1`<br>`GRC9V4-CD-D7G-v2`<br>`GRC9V4-CD-D7G-post-v2-HODGE-TYPE-CORRECTION-v1` | M4_is_not_overlap_assembly_H1_form_G_J_or_h4_without_an_explicit_future_map |
+| GEOM-K4-TO-H4-TO-h4 | geometry | constitutive_crossing | GRC_derived | promotion_proved | §6.3; App. D | `D10.2-DER-GEOMETRY` | `GRC9V4-CD-D7G-v1`<br>`GRC9V4-CD-D7G-v2`<br>`GRC9V4-CD-D8A-v1` | the_legacy_cached_tensor_is_not_this_crossing |
+| GEOM-ASSEMBLY | geometry | normalization_contract | GRC_derived | promotion_proved | §6.1; App. D | `D10.2-DER-GEOMETRY` | `GRC9V4-CD-D7G-v1`<br>`GRC9V4-CD-D7G-v2`<br>`GRC9V4-CD-D8A-v1`<br>`GRC9V4-CD-D8B-CI-v1` | overlap_assembly_belongs_to_K4_and_is_not_M4_or_posthoc_stability_tuning |
+| GEOM-COVARIANCE | geometry | covariance_contract | GRC_derived | promotion_proved | §6.5; Apps. E, F | `D10.2-DER-GEOMETRY` | `GRC9V4-CD-D7G-v2`<br>`GRC9V4-CD-D8A-v1` | coordinate_sign_change_is_not_physical_history_reversal |
+| REAL-CI | realization | realization_family | GRC_derived | promotion_proved | §10.2; Apps. C, D, F | `D10.2-DER-REALIZATION` | `GRC9V4-GTRS-CI-v1`<br>`GRC9V4-CD-D8B-CI-v1` | local_root_evidence_is_not_global_stability |
+| REAL-OS | realization | realization_family | GRC_derived | promotion_proved | §10.3; Apps. C, D, F | `D10.2-DER-REALIZATION` | `GRC9V4-GTRS-OS-v1` | split_residual_is_not_Delta_t_truncation_without_proof |
+| REAL-RG2B | realization | realization_family | GRC_derived | promotion_proved | §10.4; Apps. C, D, F | `D10.2-DER-REALIZATION` | `GRC9V4-GTRS-RG-v1` | uniqueness_is_relative_to_the_frozen_completion |
+| REAL-PC | realization | realization_family | GRC_derived | promotion_proved | §10.5; Apps. B, C, D, E, F | `D10.2-DER-REALIZATION` | `GRC9V4-GTRS-PC-v1` | current_PC_profile_is_not_the_universal_persistent_carrier_law |
+| REAL-CI-PC | realization | realization_family | GRC_derived | promotion_proved | §10.6; Apps. C, D, F | `D10.2-DER-REALIZATION` | `GRC9V4-GTRS-CI-PC-v1` | gain_two_profile_is_not_amplitude_equivalent_to_CI_or_PC |
+| L-AUTHORITATIVE-CURRENT | complete_step_lifecycle | stage_authority | GRC_derived | promotion_proved | §§5.4, 11.5; App. E | `D10.2-DER-RESOURCE`<br>`D10.2-DER-LIFECYCLE` | `GRC9V4-CD-D6-v1`<br>`GRC9V4-CD-D6V2-v1`<br>`GRC9V4-CD-D9-v1` | read_current_is_not_an_extra_resource_transfer |
+| L-CONTINUITY-WRITE | complete_step_lifecycle | state_write | GRC_derived | promotion_proved | §§4.2, 11.5; App. E | `D10.2-DER-RESOURCE`<br>`D10.2-DER-LIFECYCLE` | `GRC9V4-CD-D9-v1` | candidate_writers_cannot_write_C_again |
+| L-POSTCONTINUITY-REFRESH | complete_step_lifecycle | stage_contract | GRC_derived | promotion_proved | §§8.8, 11.7; App. E | `D10.2-DER-LIFECYCLE` | `GRC9V4-CD-D7-v1`<br>`GRC9V4-CD-D9-v1` | stale_precontinuity_surfaces_cannot_feed_the_writer |
+| L-ATOMICITY | complete_step_lifecycle | transaction_contract | GRC_derived | promotion_proved | §§11.8–11.9; App. E | `D10.2-DER-LIFECYCLE` | `GRC9V4-CD-D7-v1`<br>`GRC9V4-CD-D7V2-v1`<br>`GRC9V4-CD-D9-v1` | partial_valid_substage_is_not_a_committed_state |
+| L-SNAPSHOT-RESET | complete_step_lifecycle | identity_contract | GRC_derived | promotion_proved | §§12.1–12.3; Apps. B, C, E | `D10.2-DER-LIFECYCLE` | `GRC9V4-CD-D9-v1`<br>`GRC9V4-D9-PROFILE-STATE-LIFECYCLE-REGISTRY-v1` | representation_cache_bytes_are_not_scientific_identity |
+| L-PROFILE-MIGRATION | complete_step_lifecycle | migration_grammar | GRC_derived | promotion_proved | §12.5; App. E | `D10.2-DER-LIFECYCLE` | `GRC9V4-CD-D9-v1`<br>`GRC9V4-D9-PROFILE-STATE-LIFECYCLE-REGISTRY-v1` | generic_migration_does_not_select_a_target_initializer_or_allow_in_place_semantic_reinterpretation |
+| L-A-INITIALIZER-GRC | complete_step_lifecycle | target_initializer | GRC_derived | promotion_proved | §§8.11, 12.6; App. E | `D10.2-DER-A-INITIALIZER` | `GRCV3-NORMATIVE-SPEC`<br>`GRCV3-RUNTIME-SOURCE`<br>`GRC9V4-CD-D7-v1`<br>`GRC9V4-CD-D9-v1` | history_free_initialization_is_not_A_history_preservation_or_the_exact_GRC9v3_initializer |
+| L-A-INITIALIZER-GRC9V3 | complete_step_lifecycle | specialization_initializer | GRC9_specialization_specific | specialization_only | App. A | — | `GRC9V3-TRANSPORT-RUNTIME`<br>`GRC9V4-CD-D9-v1`<br>`GRC9V4-D9-PROFILE-STATE-LIFECYCLE-REGISTRY-v1` | the_exact_GRC9v3_initializer_is_not_wholesale_promoted_with_generic_migration_grammar |
+| L-TOPOLOGY-EVENT | complete_step_lifecycle | event_contract | GRC_derived | promotion_proved | §§4.7, 12.7–12.8; App. E | `D10.2-DER-LIFECYCLE` | `GRC9V4-CD-D9-v1`<br>`GRC9V4-D9-LIFECYCLE-COVERAGE-MATRIX-v1` | array_resize_is_not_a_typed_event |
+| L-ORDERED-RECEIPTS | complete_step_lifecycle | receipt_contract | GRC_derived | promotion_proved | §§12.5, 12.7; App. E | `D10.2-DER-LIFECYCLE` | `GRC9V4-CD-D9-v1`<br>`GRC9V4-CD-D10-v1` | endpoint_profile_coverage_is_not_crossing_evidence |
+| L-SINGULAR-FAIL-CLOSED | complete_step_lifecycle | failure_contract | GRC_derived | promotion_proved | §§11.4, 11.9; App. E | `D10.2-DER-LIFECYCLE` | `GRC9V4-CD-D6-v1`<br>`GRC9V4-CD-D6V2-v1`<br>`GRC9V4-CD-D9-v1` | regularization_or_root_selection_cannot_be_hidden |
+| L-PROFILE-GRAMMAR | complete_step_lifecycle | identity_grammar | substrate_independent_specification_meta | promotion_proved | §§3.2, 7.1; Apps. B, C | `D10.2-DER-SPEC-GRAMMAR` | `GRC9V4-CD-D10-v1`<br>`GRC9V4-D10-SPECIFICATION-AUTHORIZATION-v1` | grammar_does_not_prove_candidate_physics_or_permanent_universality |
+| GRC9-ORDERED-PORTS | GRC9_specialization | substrate_mechanic | GRC9_intrinsic | specialization_only | App. A | — | `GRC9V3-NORMATIVE-SPEC`<br>`PHASE7-GRC9V3-EQUATION-MAP` | ordered_ports_are_not_general_GRCV4 |
+| GRC9-ROW-COLUMN-CHART | GRC9_specialization | substrate_mechanic | GRC9_intrinsic | specialization_only | App. A | — | `GRC9V3-NORMATIVE-SPEC`<br>`PHASE7-GRC9V3-EQUATION-MAP` | chart_is_not_a_generic_local_frame |
+| GRC9-SATURATION | GRC9_specialization | substrate_mechanic | GRC9_intrinsic | specialization_only | App. A | — | `GRC9V3-NORMATIVE-SPEC`<br>`PHASE7-GRC9V3-EQUATION-MAP` | generic_graph_degree_pressure_is_not_this_saturation_gate |
+| GRC9-MECHANICAL-EXPANSION | GRC9_specialization | substrate_mechanic | GRC9_intrinsic | specialization_only | App. A | — | `GRC9V3-NORMATIVE-SPEC`<br>`PHASE7-GRC9V3-EQUATION-MAP` | generic_topology_change_is_not_GRC9_mechanical_expansion |
+| GRC9-HYBRID-SPARK | GRC9_specialization | hybrid_capability | GRC9_intrinsic | specialization_only | App. A | — | `GRC9V3-NORMATIVE-SPEC`<br>`PHASE7-GRC9V3-EQUATION-MAP` | the_GRC_semantic_part_does_not_remove_the_load_bearing_GRC9_gate |
+| GRC9-CHILD-BASIN-STABILIZATION | GRC9_specialization | hybrid_capability | GRC9_intrinsic | specialization_only | App. A | — | `GRC9V3-NORMATIVE-SPEC`<br>`PHASE7-GRC9V3-EQUATION-MAP` | candidate_or_expansion_alone_is_not_completed_spark |
+| GRC9-COLUMN-COARSE-GRAINING | GRC9_specialization | substrate_mechanic | GRC9_intrinsic | specialization_only | App. A | — | `GRC9V3-NORMATIVE-SPEC`<br>`PHASE7-GRC9V3-EQUATION-MAP` | ordinary_graph_coarsening_is_not_this_column_contract |
+| SPEC-PROFILE-GRAMMAR | specification_grammar | normative_grammar | substrate_independent_specification_meta | promotion_proved | §§3.2, 7.1; Apps. B, C, G | `D10.2-DER-SPEC-GRAMMAR` | `GRC9V4-CD-D10-v1`<br>`GRC9V4-D10-SPECIFICATION-AUTHORIZATION-v1` | current_population_is_not_future_exhaustive_or_permanently_universal |
+| SPEC-FUTURE-ADMISSION | specification_grammar | successor_contract | substrate_independent_specification_meta | promotion_proved | §§7.3, 14.7; App. G | `D10.2-DER-SPEC-GRAMMAR` | `GRC9V4-CD-D10-v1` | successor_novelty_cannot_bypass_existing_contracts |
+| SPEC-B-SLOT | specification_grammar | reserved_extension_slot | substrate_independent_specification_meta | promotion_proved | §7.4; App. G | `D10.2-DER-SPEC-GRAMMAR` | `GRC9V4-CD-D7V2-v1`<br>`GRC9V4-CD-D10-v1` | A_or_C_cannot_be_relabelled_as_B |
+| SPEC-CLAIM-CEILINGS | specification_grammar | claim_contract | substrate_independent_specification_meta | promotion_proved | §§2.5, 7.5, 15; App. G | `D10.2-DER-SPEC-GRAMMAR` | `GRC9V4-CD-D10-v1` | claim_governance_is_not_runtime_causal_state |
+| SPEC-NORMALIZATION-UNITS-GAUGE-DOMAIN-SOLVER | specification_grammar | profile_contract | substrate_independent_specification_meta | promotion_proved | §§3.2, 7.2, 11.1; Apps. C, E | `D10.2-DER-SPEC-GRAMMAR` | `GRC9V4-CD-D8B-CI-v1`<br>`GRC9V4-CD-D9-v1`<br>`GRC9V4-CD-D10-v1` | profile_constants_are_not_hidden_universal_constants |
+| SPEC-COMPOSITION-PROFILE-IDENTITY | specification_grammar | profile_contract | substrate_independent_specification_meta | promotion_proved | §§7.2, 10.6; Apps. C, D | `D10.2-DER-SPEC-GRAMMAR` | `GRC9V4-GTRS-COMP-v1`<br>`GRC9V4-GTRS-CI-PC-v1`<br>`GRC9V4-CD-D10-v1` | different_composition_gain_cannot_reuse_the_same_profile_identity |
+| SPEC-VERIFICATION-REGISTRY | specification_grammar | evidence_contract | substrate_independent_specification_meta | promotion_proved | §§2.5, 7.5, 15.6; Apps. F, G | `D10.2-DER-SPEC-GRAMMAR` | `GRC9V4-CD-D10-v1`<br>`GRC9V4-D10-NORMATIVE-CLAIM-TOPOLOGY-v1` | unexecuted_runtime_verification_is_not_unresolved_constitutive_mathematics |
+
+### G.4 Complete D10.2 equation/contract registry
+
+This table is generated from all 152 D10.2 rows: 67 parent-atomic contracts plus 85 expanded equation/contract rows. The current 40 disabled-reduction rows are one scope category within that total.
+
+| Equation/contract ID | Scope | Parent object(s) | Profile(s) | Claim(s) | Paper location | Accepted source lineage | Disposition | Promotion | Blocked overread |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| D10.2-EC-PARENT-CORE-C-AUTHORITY | parent_atomic_contract | `CORE-C-AUTHORITY` | — | `D10-CL-C-011`<br>`D10-CL-N-001`<br>`D10-CL-N-002` | §§2.1, 3.1, 3.3, 4; App. E | `GRCV3-NORMATIVE-SPEC`<br>`GRC9V4-CD-D9-v1` | GRC_derived | promotion_proved | C_authority_does_not_make_every_derived_surface_independent_state |
+| D10.2-EC-PARENT-CORE-INCIDENCE-CONTINUITY | parent_atomic_contract | `CORE-INCIDENCE-CONTINUITY` | — | `D10-CL-C-011`<br>`D10-CL-N-004` | §§3.1, 4.2, 11.5; App. E | `GRCV3-NORMATIVE-SPEC`<br>`GRC9V4-CD-D9-v1` | GRC_derived | promotion_proved | continuity_does_not_authorize_multiple_resource_writes |
+| D10.2-EC-PARENT-CORE-GENERAL-CHARGE | parent_atomic_contract | `CORE-GENERAL-CHARGE` | — | `D10-CL-C-011`<br>`D10-CL-N-004` | §§4.3–4.6, 11.6; App. E | `GRC9V4-CD-D9-v1` | GRC_derived | promotion_proved | general_charge_does_not_force_unit_measure |
+| D10.2-EC-PARENT-CORE-CHARGE-TANGENT | parent_atomic_contract | `CORE-CHARGE-TANGENT` | — | `D10-CL-C-011`<br>`D10-CL-N-004` | §4.4; Apps. E, F | `GRC9V4-CD-D9-v1`<br>`GRC9V4-D9-PROFILE-STATE-LIFECYCLE-REGISTRY-v1` | GRC_derived | promotion_proved | nonresource_variations_remain_unrestricted_by_the_charge_tangent |
+| D10.2-EC-PARENT-CORE-STRUCTURAL-CHARGE-PROJECTOR | parent_atomic_contract | `CORE-STRUCTURAL-CHARGE-PROJECTOR` | — | `D10-CL-C-011`<br>`D10-CL-N-004` | §4.5; Apps. E, F | `GRC9V4-CD-D9-v1`<br>`GRC9V4-D9-PROFILE-STATE-LIFECYCLE-REGISTRY-v1` | GRC_derived | promotion_proved | the_identity_extension_is_not_a_full_state_orthogonal_projector_without_a_product_metric |
+| D10.2-EC-PARENT-CORE-UNIT-MEASURE | parent_atomic_contract | `CORE-UNIT-MEASURE` | — | `D10-CL-C-011`<br>`D10-CL-N-004` | §§4.3, 11.6; App. E | `GRCV3-NORMATIVE-SPEC`<br>`GRC9V4-CD-D9-v1` | GRC_derived | promotion_proved | unit_measure_is_not_the_only_GRCV4_charge |
+| D10.2-EC-PARENT-CORE-EXTERNAL-EVENT-CHARGE | parent_atomic_contract | `CORE-EXTERNAL-EVENT-CHARGE` | — | `D10-CL-C-011`<br>`D10-CL-N-004` | §§4.7, 12.7; App. E | `GRC9V4-CD-D9-v1` | GRC_derived | promotion_proved | external_exchange_is_not_hidden_nonconservation |
+| D10.2-EC-PARENT-BASE-SCALAR-MOBILITY | parent_atomic_contract | `BASE-SCALAR-MOBILITY` | — | `D10-CL-C-011`<br>`D10-CL-N-001` | §4.1; App. D | `GRCV3-NORMATIVE-SPEC`<br>`GRCV3-RUNTIME-SOURCE` | GRC_derived | promotion_proved | scalar_mobility_is_not_full_tensor_anisotropy |
+| D10.2-EC-PARENT-BASE-POTENTIAL | parent_atomic_contract | `BASE-POTENTIAL` | — | `D10-CL-C-011`<br>`D10-CL-N-001` | §4.1; App. D | `GRCV3-RUNTIME-SOURCE`<br>`GRC9V3-TRANSPORT-RUNTIME`<br>`GRC9V4-CD-D7-v1` | GRC_derived | promotion_proved | shared_formula_does_not_promote_port_storage |
+| D10.2-EC-PARENT-BASE-POTENTIAL-FLOW | parent_atomic_contract | `BASE-POTENTIAL-FLOW` | — | `D10-CL-C-011`<br>`D10-CL-N-001` | §4.1; App. D | `GRCV3-RUNTIME-SOURCE`<br>`GRC9V3-TRANSPORT-RUNTIME`<br>`GRC9V4-CD-D7-v1` | GRC_derived | promotion_proved | potential_flow_does_not_imply_retained_current |
+| D10.2-EC-PARENT-BASE-GRC-DIFFERENTIAL | parent_atomic_contract | `BASE-GRC-DIFFERENTIAL` | — | `D10-CL-C-011`<br>`D10-CL-N-001` | §3.4; App. D | `GRCV3-NORMATIVE-SPEC`<br>`GRCV3-RUNTIME-SOURCE` | GRC_derived | promotion_proved | the_current_GRCV3_backend_menu_is_not_the_only_future_GRCV4_realization |
+| D10.2-EC-PARENT-BASE-GRC9-ROW-BASIS-DIFFERENTIAL | parent_atomic_contract | `BASE-GRC9-ROW-BASIS-DIFFERENTIAL` | — | `D10-CL-C-011`<br>`D10-CL-N-001` | App. A | `GRC9V3-TRANSPORT-RUNTIME`<br>`PHASE7-GRC9V3-EQUATION-MAP` | GRC9_intrinsic | specialization_only | row_basis_backend_is_not_the_GRCV4_general_contract |
+| D10.2-EC-PARENT-BASE-DISABLED-TRANSITION | parent_atomic_contract | `BASE-DISABLED-TRANSITION` | — | `D10-CL-C-011`<br>`D10-CL-N-007` | §14.5; App. A | `GRC9V4-CD-D0-v1`<br>`GRC9V4-CD-D9-v1` | GRC9_specialization_specific | specialization_only | compatibility_target_is_not_nine_port_intrinsic_mathematics |
+| D10.2-EC-PARENT-BASE-DISABLED-STATE | parent_atomic_contract | `BASE-DISABLED-STATE` | — | `D10-CL-C-011`<br>`D10-CL-N-007` | §14.5; App. A | `GRC9V4-CD-D0-v1`<br>`GRC9V4-CD-D9-v1` | GRC9_specialization_specific | specialization_only | transition_equivalence_does_not_imply_state_equivalence |
+| D10.2-EC-PARENT-BASE-DISABLED-OBSERVABLE | parent_atomic_contract | `BASE-DISABLED-OBSERVABLE` | — | `D10-CL-C-011`<br>`D10-CL-N-007` | §14.5; App. A | `GRC9V4-CD-D0-v1`<br>`GRC9V4-CD-D9-v1` | GRC9_specialization_specific | specialization_only | transition_or_state_equivalence_does_not_imply_observable_equivalence |
+| D10.2-EC-PARENT-BASE-DISABLED-LIFECYCLE | parent_atomic_contract | `BASE-DISABLED-LIFECYCLE` | — | `D10-CL-C-011`<br>`D10-CL-N-007` | §14.5; App. A | `GRC9V4-CD-D0-v1`<br>`GRC9V4-CD-D9-v1` | GRC9_specialization_specific | specialization_only | legacy_compatibility_does_not_define_GRCV4_generic_lifecycle |
+| D10.2-EC-PARENT-A-GW-FUNCTIONAL | parent_atomic_contract | `A-GW-FUNCTIONAL` | — | `D10-CL-C-011`<br>`D10-CL-O-001`<br>`D10-CL-X-004`<br>`D10-CL-X-006` | §8.3; App. D.2 | `GRCV3-RUNTIME-SOURCE`<br>`GRC9V3-TRANSPORT-RUNTIME`<br>`GRC9V4-CD-D7-v1` | GRC_derived | promotion_proved | promotion_excludes_both_the_GRC9_row_basis_backend_and_any_future_curvature_conditioned_successor |
+| D10.2-EC-PARENT-A-WHAT | parent_atomic_contract | `A-WHAT` | — | `D10-CL-C-011`<br>`D10-CL-O-001`<br>`D10-CL-X-004`<br>`D10-CL-X-006` | §8.4; App. D.2 | `GRC9V4-CD-D7-v1` | GRC_derived | promotion_proved | W_hat_is_not_independent_history |
+| D10.2-EC-PARENT-A-DIRECTIONAL-CONTRAST | parent_atomic_contract | `A-DIRECTIONAL-CONTRAST` | — | `D10-CL-C-011`<br>`D10-CL-O-001`<br>`D10-CL-X-004`<br>`D10-CL-X-006` | §8.5; App. D.2 | `GRC9V4-CD-D5-v1`<br>`GRC9V4-CD-D7-v1` | GRC_derived | promotion_proved | contrast_is_not_itself_retention_or_release |
+| D10.2-EC-PARENT-A-READ-CLOSURE | parent_atomic_contract | `A-READ-CLOSURE` | — | `D10-CL-C-007`<br>`D10-CL-C-011`<br>`D10-CL-O-001`<br>`D10-CL-X-004`<br>`D10-CL-X-006` | §8.6; App. D.2 | `GRC9V4-CD-D5-v1`<br>`GRC9V4-CD-D6-v1`<br>`GRC9V4-CD-D7-v1` | GRC_derived | promotion_proved | closure_does_not_prove_physical_nonabsorbability |
+| D10.2-EC-PARENT-A-WRITER-TARGET | parent_atomic_contract | `A-WRITER-TARGET` | — | `D10-CL-C-011`<br>`D10-CL-O-001`<br>`D10-CL-X-004`<br>`D10-CL-X-006` | §8.8; App. D.2 | `GRC9V4-CD-D7-v1` | GRC_derived | promotion_proved | precontinuity_cache_reuse_is_forbidden |
+| D10.2-EC-PARENT-A-RETAINED-WRITER | parent_atomic_contract | `A-RETAINED-WRITER` | — | `D10-CL-C-011`<br>`D10-CL-O-001`<br>`D10-CL-X-004`<br>`D10-CL-X-006` | §8.9; App. D.2 | `GRC9V4-CD-D2-v1`<br>`GRC9V4-CD-D7-v1` | GRC_derived | promotion_proved | slow_parameter_alone_is_not_retention_evidence |
+| D10.2-EC-PARENT-A-STATE-REDUCTION | parent_atomic_contract | `A-STATE-REDUCTION` | — | `D10-CL-C-011`<br>`D10-CL-N-001`<br>`D10-CL-N-002`<br>`D10-CL-O-001`<br>`D10-CL-X-004`<br>`D10-CL-X-006` | §8.1; Apps. B, C, D | `GRC9V4-CD-D1-v1`<br>`GRC9V4-CD-D7-v1`<br>`GRC9V4-CD-D9-v1` | GRC_derived | promotion_proved | exact_disabled_projection_to_GRC9V3_is_owned_only_by_the_specialization_compatibility_rows |
+| D10.2-EC-PARENT-C-SECTOR | parent_atomic_contract | `C-SECTOR` | — | `D10-CL-C-011`<br>`D10-CL-N-002`<br>`D10-CL-O-002`<br>`D10-CL-X-006` | §9.2; App. D.3 | `GRC9V4-CD-D4V2-v1`<br>`GRC9V4-CD-D7V2-v1` | GRC_derived | promotion_proved | T_C_is_not_independent_resource_or_state |
+| D10.2-EC-PARENT-C-SELECTOR | parent_atomic_contract | `C-SELECTOR` | — | `D10-CL-C-011`<br>`D10-CL-N-002`<br>`D10-CL-O-002`<br>`D10-CL-X-006` | §9.2; App. D.3 | `GRC9V4-CD-D4V2-v1`<br>`GRC9V4-CD-D7V2-v1`<br>`GRC9V4-CD-D9-v1` | GRC_derived | promotion_proved | analysis_projector_cannot_become_runtime_authority |
+| D10.2-EC-PARENT-C-HODGE-MAPS | parent_atomic_contract | `C-HODGE-MAPS` | — | `D10-CL-C-006`<br>`D10-CL-C-011`<br>`D10-CL-N-002`<br>`D10-CL-O-002`<br>`D10-CL-X-006` | §§9.3–9.4; App. D.3 | `GRC9V4-CD-D5V2-v1`<br>`GRC9V4-CD-D6V2-v1`<br>`GRC9V4-CD-D7G-post-v2-HODGE-TYPE-CORRECTION-v1` | GRC_derived | promotion_proved | matrix_shape_alone_does_not_establish_correct_Hodge_typing |
+| D10.2-EC-PARENT-C-READ-BACK | parent_atomic_contract | `C-READ-BACK` | — | `D10-CL-C-007`<br>`D10-CL-C-011`<br>`D10-CL-O-002`<br>`D10-CL-X-006` | §§9.5–9.6; App. D.3 | `GRC9V4-CD-D5V2-v1`<br>`GRC9V4-CD-D6V2-v1`<br>`GRC9V4-CD-D7V2-v1` | GRC_derived | promotion_proved | chi_must_not_be_applied_twice |
+| D10.2-EC-PARENT-C-AUTHORITY | parent_atomic_contract | `C-AUTHORITY` | — | `D10-CL-C-011`<br>`D10-CL-N-001`<br>`D10-CL-N-002`<br>`D10-CL-O-002`<br>`D10-CL-X-006` | §§9.1, 9.8; Apps. B, C, D | `GRC9V4-CD-D7V2-v1`<br>`GRC9V4-CD-D9-v1` | GRC_derived | promotion_proved | derived_C_surfaces_are_not_hidden_state |
+| D10.2-EC-PARENT-CORE-K-STRUCTURAL-ROLE | parent_atomic_contract | `CORE-K-STRUCTURAL-ROLE` | — | `D10-CL-C-011`<br>`D10-CL-N-006` | §6.1; Apps. D, F | `GRC9V4-CD-D0-v1`<br>`GRC9V4-CD-D7G-v1` | core_theory_substrate_independent | promotion_proved | core_K_is_not_the_graph_bilinear_form_K4 |
+| D10.2-EC-PARENT-GEOM-K4 | parent_atomic_contract | `GEOM-K4` | — | `D10-CL-C-011`<br>`D10-CL-N-006` | §6.1; Apps. D, F | `GRC9V4-CD-D4V2-v1`<br>`GRC9V4-CD-D7G-v1`<br>`GRC9V4-CD-D8A-v1` | GRC_derived | promotion_proved | graph_K4_must_not_be_relabelled_as_core_K_or_as_legacy_cached_GRC9_tensor |
+| D10.2-EC-PARENT-GEOM-H1-FORM | parent_atomic_contract | `GEOM-H1-FORM` | — | `D10-CL-C-011`<br>`D10-CL-N-006`<br>`D10-CL-U-005` | §§6.2–6.3; Apps. B, D, F | `GRCV3-NORMATIVE-SPEC`<br>`GRCV3-RUNTIME-SOURCE`<br>`GRC9V4-CD-D7G-v2`<br>`GRC9V4-CD-D7G-post-v2-HODGE-TYPE-CORRECTION-v1` | GRC_derived | promotion_proved | the_reference_Hodge_is_a_V4_embedding_not_preexisting_GRCv3_physical_geometry |
+| D10.2-EC-PARENT-GEOM-GJ | parent_atomic_contract | `GEOM-GJ` | — | `D10-CL-C-011`<br>`D10-CL-N-006` | §§6.2–6.3; Apps. B, D, F | `GRC9V4-CD-D7G-v2`<br>`GRC9V4-CD-D7G-post-v2-HODGE-TYPE-CORRECTION-v1`<br>`GRC9V4-CD-D8A-v1` | GRC_derived | promotion_proved | G_J_is_not_transport_mobility_M4_and_telemetry_current_is_not_a_structural_source |
+| D10.2-EC-PARENT-GEOM-M4 | parent_atomic_contract | `GEOM-M4` | — | `D10-CL-C-011`<br>`D10-CL-N-006` | §6.4; Apps. B, D | `GRC9V4-CD-D4V2-v1`<br>`GRC9V4-CD-D7G-v1`<br>`GRC9V4-CD-D7G-v2`<br>`GRC9V4-CD-D7G-post-v2-HODGE-TYPE-CORRECTION-v1` | GRC_derived | promotion_proved | M4_is_not_overlap_assembly_H1_form_G_J_or_h4_without_an_explicit_future_map |
+| D10.2-EC-PARENT-GEOM-K4-TO-H4-TO-h4 | parent_atomic_contract | `GEOM-K4-TO-H4-TO-h4` | — | `D10-CL-C-011`<br>`D10-CL-N-001`<br>`D10-CL-N-006` | §6.3; App. D | `GRC9V4-CD-D7G-v1`<br>`GRC9V4-CD-D7G-v2`<br>`GRC9V4-CD-D8A-v1` | GRC_derived | promotion_proved | the_legacy_cached_tensor_is_not_this_crossing |
+| D10.2-EC-PARENT-GEOM-ASSEMBLY | parent_atomic_contract | `GEOM-ASSEMBLY` | — | `D10-CL-C-001`<br>`D10-CL-C-011`<br>`D10-CL-N-006`<br>`D10-CL-U-005` | §6.1; App. D | `GRC9V4-CD-D7G-v1`<br>`GRC9V4-CD-D7G-v2`<br>`GRC9V4-CD-D8A-v1`<br>`GRC9V4-CD-D8B-CI-v1` | GRC_derived | promotion_proved | overlap_assembly_belongs_to_K4_and_is_not_M4_or_posthoc_stability_tuning |
+| D10.2-EC-PARENT-GEOM-COVARIANCE | parent_atomic_contract | `GEOM-COVARIANCE` | — | `D10-CL-C-011`<br>`D10-CL-N-006` | §6.5; Apps. E, F | `GRC9V4-CD-D7G-v2`<br>`GRC9V4-CD-D8A-v1` | GRC_derived | promotion_proved | coordinate_sign_change_is_not_physical_history_reversal |
+| D10.2-EC-PARENT-REAL-CI | parent_atomic_contract | `REAL-CI` | — | `D10-CL-C-001`<br>`D10-CL-C-011`<br>`D10-CL-O-003` | §10.2; Apps. C, D, F | `GRC9V4-GTRS-CI-v1`<br>`GRC9V4-CD-D8B-CI-v1` | GRC_derived | promotion_proved | local_root_evidence_is_not_global_stability |
+| D10.2-EC-PARENT-REAL-OS | parent_atomic_contract | `REAL-OS` | — | `D10-CL-C-011`<br>`D10-CL-O-004` | §10.3; Apps. C, D, F | `GRC9V4-GTRS-OS-v1` | GRC_derived | promotion_proved | split_residual_is_not_Delta_t_truncation_without_proof |
+| D10.2-EC-PARENT-REAL-RG2B | parent_atomic_contract | `REAL-RG2B` | — | `D10-CL-C-009`<br>`D10-CL-C-011`<br>`D10-CL-O-005` | §10.4; Apps. C, D, F | `GRC9V4-GTRS-RG-v1` | GRC_derived | promotion_proved | uniqueness_is_relative_to_the_frozen_completion |
+| D10.2-EC-PARENT-REAL-PC | parent_atomic_contract | `REAL-PC` | — | `D10-CL-C-011`<br>`D10-CL-O-006`<br>`D10-CL-X-005` | §10.5; Apps. B, C, D, E, F | `GRC9V4-GTRS-PC-v1` | GRC_derived | promotion_proved | current_PC_profile_is_not_the_universal_persistent_carrier_law |
+| D10.2-EC-PARENT-REAL-CI-PC | parent_atomic_contract | `REAL-CI-PC` | — | `D10-CL-C-011`<br>`D10-CL-O-007` | §10.6; Apps. C, D, F | `GRC9V4-GTRS-CI-PC-v1` | GRC_derived | promotion_proved | gain_two_profile_is_not_amplitude_equivalent_to_CI_or_PC |
+| D10.2-EC-PARENT-L-AUTHORITATIVE-CURRENT | parent_atomic_contract | `L-AUTHORITATIVE-CURRENT` | — | `D10-CL-C-011`<br>`D10-CL-N-003` | §§5.4, 11.5; App. E | `GRC9V4-CD-D6-v1`<br>`GRC9V4-CD-D6V2-v1`<br>`GRC9V4-CD-D9-v1` | GRC_derived | promotion_proved | read_current_is_not_an_extra_resource_transfer |
+| D10.2-EC-PARENT-L-CONTINUITY-WRITE | parent_atomic_contract | `L-CONTINUITY-WRITE` | — | `D10-CL-C-011`<br>`D10-CL-N-003`<br>`D10-CL-N-004` | §§4.2, 11.5; App. E | `GRC9V4-CD-D9-v1` | GRC_derived | promotion_proved | candidate_writers_cannot_write_C_again |
+| D10.2-EC-PARENT-L-POSTCONTINUITY-REFRESH | parent_atomic_contract | `L-POSTCONTINUITY-REFRESH` | — | `D10-CL-C-011`<br>`D10-CL-N-003` | §§8.8, 11.7; App. E | `GRC9V4-CD-D7-v1`<br>`GRC9V4-CD-D9-v1` | GRC_derived | promotion_proved | stale_precontinuity_surfaces_cannot_feed_the_writer |
+| D10.2-EC-PARENT-L-ATOMICITY | parent_atomic_contract | `L-ATOMICITY` | — | `D10-CL-C-011`<br>`D10-CL-N-003` | §§11.8–11.9; App. E | `GRC9V4-CD-D7-v1`<br>`GRC9V4-CD-D7V2-v1`<br>`GRC9V4-CD-D9-v1` | GRC_derived | promotion_proved | partial_valid_substage_is_not_a_committed_state |
+| D10.2-EC-PARENT-L-SNAPSHOT-RESET | parent_atomic_contract | `L-SNAPSHOT-RESET` | — | `D10-CL-C-011`<br>`D10-CL-N-005` | §§12.1–12.3; Apps. B, C, E | `GRC9V4-CD-D9-v1`<br>`GRC9V4-D9-PROFILE-STATE-LIFECYCLE-REGISTRY-v1` | GRC_derived | promotion_proved | representation_cache_bytes_are_not_scientific_identity |
+| D10.2-EC-PARENT-L-PROFILE-MIGRATION | parent_atomic_contract | `L-PROFILE-MIGRATION` | — | `D10-CL-C-011`<br>`D10-CL-N-005` | §12.5; App. E | `GRC9V4-CD-D9-v1`<br>`GRC9V4-D9-PROFILE-STATE-LIFECYCLE-REGISTRY-v1` | GRC_derived | promotion_proved | generic_migration_does_not_select_a_target_initializer_or_allow_in_place_semantic_reinterpretation |
+| D10.2-EC-PARENT-L-A-INITIALIZER-GRC | parent_atomic_contract | `L-A-INITIALIZER-GRC` | — | `D10-CL-C-011`<br>`D10-CL-N-005` | §§8.11, 12.6; App. E | `GRCV3-NORMATIVE-SPEC`<br>`GRCV3-RUNTIME-SOURCE`<br>`GRC9V4-CD-D7-v1`<br>`GRC9V4-CD-D9-v1` | GRC_derived | promotion_proved | history_free_initialization_is_not_A_history_preservation_or_the_exact_GRC9v3_initializer |
+| D10.2-EC-PARENT-L-A-INITIALIZER-GRC9V3 | parent_atomic_contract | `L-A-INITIALIZER-GRC9V3` | — | `D10-CL-C-011`<br>`D10-CL-N-005` | App. A | `GRC9V3-TRANSPORT-RUNTIME`<br>`GRC9V4-CD-D9-v1`<br>`GRC9V4-D9-PROFILE-STATE-LIFECYCLE-REGISTRY-v1` | GRC9_specialization_specific | specialization_only | the_exact_GRC9v3_initializer_is_not_wholesale_promoted_with_generic_migration_grammar |
+| D10.2-EC-PARENT-L-TOPOLOGY-EVENT | parent_atomic_contract | `L-TOPOLOGY-EVENT` | — | `D10-CL-C-002`<br>`D10-CL-C-011`<br>`D10-CL-N-005`<br>`D10-CL-N-006`<br>`D10-CL-X-001` | §§4.7, 12.7–12.8; App. E | `GRC9V4-CD-D9-v1`<br>`GRC9V4-D9-LIFECYCLE-COVERAGE-MATRIX-v1` | GRC_derived | promotion_proved | array_resize_is_not_a_typed_event |
+| D10.2-EC-PARENT-L-ORDERED-RECEIPTS | parent_atomic_contract | `L-ORDERED-RECEIPTS` | — | `D10-CL-C-002`<br>`D10-CL-C-011`<br>`D10-CL-N-005`<br>`D10-CL-X-001` | §§12.5, 12.7; App. E | `GRC9V4-CD-D9-v1`<br>`GRC9V4-CD-D10-v1` | GRC_derived | promotion_proved | endpoint_profile_coverage_is_not_crossing_evidence |
+| D10.2-EC-PARENT-L-SINGULAR-FAIL-CLOSED | parent_atomic_contract | `L-SINGULAR-FAIL-CLOSED` | — | `D10-CL-C-003`<br>`D10-CL-C-006`<br>`D10-CL-C-011`<br>`D10-CL-N-003` | §§11.4, 11.9; App. E | `GRC9V4-CD-D6-v1`<br>`GRC9V4-CD-D6V2-v1`<br>`GRC9V4-CD-D9-v1` | GRC_derived | promotion_proved | regularization_or_root_selection_cannot_be_hidden |
+| D10.2-EC-PARENT-L-PROFILE-GRAMMAR | parent_atomic_contract | `L-PROFILE-GRAMMAR` | — | `D10-CL-C-011`<br>`D10-CL-N-001`<br>`D10-CL-N-005`<br>`D10-CL-N-009` | §§3.2, 7.1; Apps. B, C | `GRC9V4-CD-D10-v1`<br>`GRC9V4-D10-SPECIFICATION-AUTHORIZATION-v1` | substrate_independent_specification_meta | promotion_proved | grammar_does_not_prove_candidate_physics_or_permanent_universality |
+| D10.2-EC-PARENT-GRC9-ORDERED-PORTS | parent_atomic_contract | `GRC9-ORDERED-PORTS` | — | `D10-CL-C-011`<br>`D10-CL-N-001` | App. A | `GRC9V3-NORMATIVE-SPEC`<br>`PHASE7-GRC9V3-EQUATION-MAP` | GRC9_intrinsic | specialization_only | ordered_ports_are_not_general_GRCV4 |
+| D10.2-EC-PARENT-GRC9-ROW-COLUMN-CHART | parent_atomic_contract | `GRC9-ROW-COLUMN-CHART` | — | `D10-CL-C-011`<br>`D10-CL-N-001` | App. A | `GRC9V3-NORMATIVE-SPEC`<br>`PHASE7-GRC9V3-EQUATION-MAP` | GRC9_intrinsic | specialization_only | chart_is_not_a_generic_local_frame |
+| D10.2-EC-PARENT-GRC9-SATURATION | parent_atomic_contract | `GRC9-SATURATION` | — | `D10-CL-C-011`<br>`D10-CL-N-001` | App. A | `GRC9V3-NORMATIVE-SPEC`<br>`PHASE7-GRC9V3-EQUATION-MAP` | GRC9_intrinsic | specialization_only | generic_graph_degree_pressure_is_not_this_saturation_gate |
+| D10.2-EC-PARENT-GRC9-MECHANICAL-EXPANSION | parent_atomic_contract | `GRC9-MECHANICAL-EXPANSION` | — | `D10-CL-C-011`<br>`D10-CL-N-001` | App. A | `GRC9V3-NORMATIVE-SPEC`<br>`PHASE7-GRC9V3-EQUATION-MAP` | GRC9_intrinsic | specialization_only | generic_topology_change_is_not_GRC9_mechanical_expansion |
+| D10.2-EC-PARENT-GRC9-HYBRID-SPARK | parent_atomic_contract | `GRC9-HYBRID-SPARK` | — | `D10-CL-C-011`<br>`D10-CL-N-001` | App. A | `GRC9V3-NORMATIVE-SPEC`<br>`PHASE7-GRC9V3-EQUATION-MAP` | GRC9_intrinsic | specialization_only | the_GRC_semantic_part_does_not_remove_the_load_bearing_GRC9_gate |
+| D10.2-EC-PARENT-GRC9-CHILD-BASIN-STABILIZATION | parent_atomic_contract | `GRC9-CHILD-BASIN-STABILIZATION` | — | `D10-CL-C-011`<br>`D10-CL-N-001` | App. A | `GRC9V3-NORMATIVE-SPEC`<br>`PHASE7-GRC9V3-EQUATION-MAP` | GRC9_intrinsic | specialization_only | candidate_or_expansion_alone_is_not_completed_spark |
+| D10.2-EC-PARENT-GRC9-COLUMN-COARSE-GRAINING | parent_atomic_contract | `GRC9-COLUMN-COARSE-GRAINING` | — | `D10-CL-C-011`<br>`D10-CL-N-001` | App. A | `GRC9V3-NORMATIVE-SPEC`<br>`PHASE7-GRC9V3-EQUATION-MAP` | GRC9_intrinsic | specialization_only | ordinary_graph_coarsening_is_not_this_column_contract |
+| D10.2-EC-PARENT-SPEC-PROFILE-GRAMMAR | parent_atomic_contract | `SPEC-PROFILE-GRAMMAR` | — | `D10-CL-C-011`<br>`D10-CL-C-012`<br>`D10-CL-N-001`<br>`D10-CL-N-009` | §§3.2, 7.1; Apps. B, C, G | `GRC9V4-CD-D10-v1`<br>`GRC9V4-D10-SPECIFICATION-AUTHORIZATION-v1` | substrate_independent_specification_meta | promotion_proved | current_population_is_not_future_exhaustive_or_permanently_universal |
+| D10.2-EC-PARENT-SPEC-FUTURE-ADMISSION | parent_atomic_contract | `SPEC-FUTURE-ADMISSION` | — | `D10-CL-C-011`<br>`D10-CL-C-012`<br>`D10-CL-U-001`<br>`D10-CL-U-005` | §§7.3, 14.7; App. G | `GRC9V4-CD-D10-v1` | substrate_independent_specification_meta | promotion_proved | successor_novelty_cannot_bypass_existing_contracts |
+| D10.2-EC-PARENT-SPEC-B-SLOT | parent_atomic_contract | `SPEC-B-SLOT` | — | `D10-CL-C-003`<br>`D10-CL-C-011`<br>`D10-CL-U-001`<br>`D10-CL-X-005` | §7.4; App. G | `GRC9V4-CD-D7V2-v1`<br>`GRC9V4-CD-D10-v1` | substrate_independent_specification_meta | promotion_proved | A_or_C_cannot_be_relabelled_as_B |
+| D10.2-EC-PARENT-SPEC-CLAIM-CEILINGS | parent_atomic_contract | `SPEC-CLAIM-CEILINGS` | — | `D10-CL-C-001`<br>`D10-CL-C-002`<br>`D10-CL-C-003`<br>`D10-CL-C-004`<br>`D10-CL-C-005`<br>`D10-CL-C-007`<br>`D10-CL-C-010`<br>`D10-CL-C-011`<br>`D10-CL-U-002`<br>`D10-CL-U-003`<br>`D10-CL-X-002`<br>`D10-CL-X-003` | §§2.5, 7.5, 15; App. G | `GRC9V4-CD-D10-v1` | substrate_independent_specification_meta | promotion_proved | claim_governance_is_not_runtime_causal_state |
+| D10.2-EC-PARENT-SPEC-NORMALIZATION-UNITS-GAUGE-DOMAIN-SOLVER | parent_atomic_contract | `SPEC-NORMALIZATION-UNITS-GAUGE-DOMAIN-SOLVER` | — | `D10-CL-C-001`<br>`D10-CL-C-008`<br>`D10-CL-C-009`<br>`D10-CL-C-010`<br>`D10-CL-C-011`<br>`D10-CL-N-008` | §§3.2, 7.2, 11.1; Apps. C, E | `GRC9V4-CD-D8B-CI-v1`<br>`GRC9V4-CD-D9-v1`<br>`GRC9V4-CD-D10-v1` | substrate_independent_specification_meta | promotion_proved | profile_constants_are_not_hidden_universal_constants |
+| D10.2-EC-PARENT-SPEC-COMPOSITION-PROFILE-IDENTITY | parent_atomic_contract | `SPEC-COMPOSITION-PROFILE-IDENTITY` | — | `D10-CL-C-011`<br>`D10-CL-N-008` | §§7.2, 10.6; Apps. C, D | `GRC9V4-GTRS-COMP-v1`<br>`GRC9V4-GTRS-CI-PC-v1`<br>`GRC9V4-CD-D10-v1` | substrate_independent_specification_meta | promotion_proved | different_composition_gain_cannot_reuse_the_same_profile_identity |
+| D10.2-EC-PARENT-SPEC-VERIFICATION-REGISTRY | parent_atomic_contract | `SPEC-VERIFICATION-REGISTRY` | — | `D10-CL-C-004`<br>`D10-CL-C-005`<br>`D10-CL-C-006`<br>`D10-CL-C-008`<br>`D10-CL-C-011`<br>`D10-CL-U-002`<br>`D10-CL-U-003`<br>`D10-CL-U-004`<br>`D10-CL-X-002`<br>`D10-CL-X-003` | §§2.5, 7.5, 15.6; Apps. F, G | `GRC9V4-CD-D10-v1`<br>`GRC9V4-D10-NORMATIVE-CLAIM-TOPOLOGY-v1` | substrate_independent_specification_meta | promotion_proved | unexecuted_runtime_verification_is_not_unresolved_constitutive_mathematics |
+| D10.2-EC-CHARGE-DQ | charge_tangent | `CORE-CHARGE-TANGENT` | — | `D10-CL-N-004` | §4.4; Apps. E, F | `GRC9V4-CD-D9-v1`<br>`GRC9V4-D9-PROFILE-STATE-LIFECYCLE-REGISTRY-v1` | GRC_derived | promotion_proved | the_charge_differential_acts_on_the_resource_sector_and_does_not_constrain_nonresource_variations |
+| D10.2-EC-CHARGE-TANGENT | charge_tangent | `CORE-CHARGE-TANGENT` | — | `D10-CL-N-004` | §4.4; Apps. E, F | `GRC9V4-CD-D9-v1`<br>`GRC9V4-D9-PROFILE-STATE-LIFECYCLE-REGISTRY-v1` | GRC_derived | promotion_proved | V_Q_varpi_is_the_authoritative_complete_state_tangent_not_only_a_C_sector_subspace |
+| D10.2-EC-CHARGE-C-SECTOR-PROJECTOR | charge_projector | `CORE-STRUCTURAL-CHARGE-PROJECTOR` | — | `D10-CL-N-004` | §4.5; Apps. E, F | `GRC9V4-CD-D9-v1`<br>`GRC9V4-D9-PROFILE-STATE-LIFECYCLE-REGISTRY-v1` | GRC_derived | promotion_proved | Pi_Q_C_H0_is_orthogonal_only_on_the_structural_C_sector |
+| D10.2-EC-CHARGE-FULL-TANGENT-RETRACTION | charge_projector | `CORE-STRUCTURAL-CHARGE-PROJECTOR` | — | `D10-CL-N-004` | §4.5; Apps. E, F | `GRC9V4-CD-D9-v1`<br>`GRC9V4-D9-PROFILE-STATE-LIFECYCLE-REGISTRY-v1` | GRC_derived | promotion_proved | the_identity_extension_is_a_canonical_retraction_not_a_full_state_orthogonal_projector_until_a_product_metric_is_frozen |
+| D10.2-EC-CHARGE-BUDGET-STAGE | charge_budget_stage | `CORE-GENERAL-CHARGE`<br>`L-CONTINUITY-WRITE`<br>`L-TOPOLOGY-EVENT` | — | `D10-CL-N-004` | §§4.6, 11.6; App. E | `GRC9V4-CD-D9-v1`<br>`GRC9V4-D9-LIFECYCLE-COVERAGE-MATRIX-v1` | GRC_derived | promotion_proved | bare_Q_target_must_not_conflate_pre_update_and_post_update_targets_or_double_count_event_Delta_Q_and_a_charge_check_before_the_actual_resource_write_does_not_certify_the_complete_step |
+| D10.2-EC-DISABLED-A_CI-TRANSITION | profile_scoped_disabled_reduction | `BASE-DISABLED-TRANSITION` | `A_CI` | `D10-CL-N-007` | §14.5; App. A | `GRC9V4-CD-D0-v1`<br>`GRC9V4-CD-D9-v1` | GRC9_specialization_specific | specialization_only | transition_reduction_for_A_CI_does_not_imply_any_other_disabled_reduction_surface |
+| D10.2-EC-DISABLED-A_CI-STATE | profile_scoped_disabled_reduction | `BASE-DISABLED-STATE` | `A_CI` | `D10-CL-N-007` | §14.5; App. A | `GRC9V4-CD-D0-v1`<br>`GRC9V4-CD-D9-v1` | GRC9_specialization_specific | specialization_only | state_reduction_for_A_CI_does_not_imply_any_other_disabled_reduction_surface |
+| D10.2-EC-DISABLED-A_CI-OBSERVABLE | profile_scoped_disabled_reduction | `BASE-DISABLED-OBSERVABLE` | `A_CI` | `D10-CL-N-007` | §14.5; App. A | `GRC9V4-CD-D0-v1`<br>`GRC9V4-CD-D9-v1` | GRC9_specialization_specific | specialization_only | observable_reduction_for_A_CI_does_not_imply_any_other_disabled_reduction_surface |
+| D10.2-EC-DISABLED-A_CI-LIFECYCLE | profile_scoped_disabled_reduction | `BASE-DISABLED-LIFECYCLE` | `A_CI` | `D10-CL-N-007` | §14.5; App. A | `GRC9V4-CD-D0-v1`<br>`GRC9V4-CD-D9-v1` | GRC9_specialization_specific | specialization_only | lifecycle_reduction_for_A_CI_does_not_imply_any_other_disabled_reduction_surface |
+| D10.2-EC-DISABLED-C_CI-TRANSITION | profile_scoped_disabled_reduction | `BASE-DISABLED-TRANSITION` | `C_CI` | `D10-CL-N-007` | §14.5; App. A | `GRC9V4-CD-D0-v1`<br>`GRC9V4-CD-D9-v1` | GRC9_specialization_specific | specialization_only | transition_reduction_for_C_CI_does_not_imply_any_other_disabled_reduction_surface |
+| D10.2-EC-DISABLED-C_CI-STATE | profile_scoped_disabled_reduction | `BASE-DISABLED-STATE` | `C_CI` | `D10-CL-N-007` | §14.5; App. A | `GRC9V4-CD-D0-v1`<br>`GRC9V4-CD-D9-v1` | GRC9_specialization_specific | specialization_only | state_reduction_for_C_CI_does_not_imply_any_other_disabled_reduction_surface |
+| D10.2-EC-DISABLED-C_CI-OBSERVABLE | profile_scoped_disabled_reduction | `BASE-DISABLED-OBSERVABLE` | `C_CI` | `D10-CL-N-007` | §14.5; App. A | `GRC9V4-CD-D0-v1`<br>`GRC9V4-CD-D9-v1` | GRC9_specialization_specific | specialization_only | observable_reduction_for_C_CI_does_not_imply_any_other_disabled_reduction_surface |
+| D10.2-EC-DISABLED-C_CI-LIFECYCLE | profile_scoped_disabled_reduction | `BASE-DISABLED-LIFECYCLE` | `C_CI` | `D10-CL-N-007` | §14.5; App. A | `GRC9V4-CD-D0-v1`<br>`GRC9V4-CD-D9-v1` | GRC9_specialization_specific | specialization_only | lifecycle_reduction_for_C_CI_does_not_imply_any_other_disabled_reduction_surface |
+| D10.2-EC-DISABLED-A_OS-TRANSITION | profile_scoped_disabled_reduction | `BASE-DISABLED-TRANSITION` | `A_OS` | `D10-CL-N-007` | §14.5; App. A | `GRC9V4-CD-D0-v1`<br>`GRC9V4-CD-D9-v1` | GRC9_specialization_specific | specialization_only | transition_reduction_for_A_OS_does_not_imply_any_other_disabled_reduction_surface |
+| D10.2-EC-DISABLED-A_OS-STATE | profile_scoped_disabled_reduction | `BASE-DISABLED-STATE` | `A_OS` | `D10-CL-N-007` | §14.5; App. A | `GRC9V4-CD-D0-v1`<br>`GRC9V4-CD-D9-v1` | GRC9_specialization_specific | specialization_only | state_reduction_for_A_OS_does_not_imply_any_other_disabled_reduction_surface |
+| D10.2-EC-DISABLED-A_OS-OBSERVABLE | profile_scoped_disabled_reduction | `BASE-DISABLED-OBSERVABLE` | `A_OS` | `D10-CL-N-007` | §14.5; App. A | `GRC9V4-CD-D0-v1`<br>`GRC9V4-CD-D9-v1` | GRC9_specialization_specific | specialization_only | observable_reduction_for_A_OS_does_not_imply_any_other_disabled_reduction_surface |
+| D10.2-EC-DISABLED-A_OS-LIFECYCLE | profile_scoped_disabled_reduction | `BASE-DISABLED-LIFECYCLE` | `A_OS` | `D10-CL-N-007` | §14.5; App. A | `GRC9V4-CD-D0-v1`<br>`GRC9V4-CD-D9-v1` | GRC9_specialization_specific | specialization_only | lifecycle_reduction_for_A_OS_does_not_imply_any_other_disabled_reduction_surface |
+| D10.2-EC-DISABLED-C_OS-TRANSITION | profile_scoped_disabled_reduction | `BASE-DISABLED-TRANSITION` | `C_OS` | `D10-CL-N-007` | §14.5; App. A | `GRC9V4-CD-D0-v1`<br>`GRC9V4-CD-D9-v1` | GRC9_specialization_specific | specialization_only | transition_reduction_for_C_OS_does_not_imply_any_other_disabled_reduction_surface |
+| D10.2-EC-DISABLED-C_OS-STATE | profile_scoped_disabled_reduction | `BASE-DISABLED-STATE` | `C_OS` | `D10-CL-N-007` | §14.5; App. A | `GRC9V4-CD-D0-v1`<br>`GRC9V4-CD-D9-v1` | GRC9_specialization_specific | specialization_only | state_reduction_for_C_OS_does_not_imply_any_other_disabled_reduction_surface |
+| D10.2-EC-DISABLED-C_OS-OBSERVABLE | profile_scoped_disabled_reduction | `BASE-DISABLED-OBSERVABLE` | `C_OS` | `D10-CL-N-007` | §14.5; App. A | `GRC9V4-CD-D0-v1`<br>`GRC9V4-CD-D9-v1` | GRC9_specialization_specific | specialization_only | observable_reduction_for_C_OS_does_not_imply_any_other_disabled_reduction_surface |
+| D10.2-EC-DISABLED-C_OS-LIFECYCLE | profile_scoped_disabled_reduction | `BASE-DISABLED-LIFECYCLE` | `C_OS` | `D10-CL-N-007` | §14.5; App. A | `GRC9V4-CD-D0-v1`<br>`GRC9V4-CD-D9-v1` | GRC9_specialization_specific | specialization_only | lifecycle_reduction_for_C_OS_does_not_imply_any_other_disabled_reduction_surface |
+| D10.2-EC-DISABLED-A_RG2b-TRANSITION | profile_scoped_disabled_reduction | `BASE-DISABLED-TRANSITION` | `A_RG2b` | `D10-CL-N-007` | §14.5; App. A | `GRC9V4-CD-D0-v1`<br>`GRC9V4-CD-D9-v1` | GRC9_specialization_specific | specialization_only | transition_reduction_for_A_RG2b_does_not_imply_any_other_disabled_reduction_surface |
+| D10.2-EC-DISABLED-A_RG2b-STATE | profile_scoped_disabled_reduction | `BASE-DISABLED-STATE` | `A_RG2b` | `D10-CL-N-007` | §14.5; App. A | `GRC9V4-CD-D0-v1`<br>`GRC9V4-CD-D9-v1` | GRC9_specialization_specific | specialization_only | state_reduction_for_A_RG2b_does_not_imply_any_other_disabled_reduction_surface |
+| D10.2-EC-DISABLED-A_RG2b-OBSERVABLE | profile_scoped_disabled_reduction | `BASE-DISABLED-OBSERVABLE` | `A_RG2b` | `D10-CL-N-007` | §14.5; App. A | `GRC9V4-CD-D0-v1`<br>`GRC9V4-CD-D9-v1` | GRC9_specialization_specific | specialization_only | observable_reduction_for_A_RG2b_does_not_imply_any_other_disabled_reduction_surface |
+| D10.2-EC-DISABLED-A_RG2b-LIFECYCLE | profile_scoped_disabled_reduction | `BASE-DISABLED-LIFECYCLE` | `A_RG2b` | `D10-CL-N-007` | §14.5; App. A | `GRC9V4-CD-D0-v1`<br>`GRC9V4-CD-D9-v1` | GRC9_specialization_specific | specialization_only | lifecycle_reduction_for_A_RG2b_does_not_imply_any_other_disabled_reduction_surface |
+| D10.2-EC-DISABLED-C_RG2b-TRANSITION | profile_scoped_disabled_reduction | `BASE-DISABLED-TRANSITION` | `C_RG2b` | `D10-CL-N-007` | §14.5; App. A | `GRC9V4-CD-D0-v1`<br>`GRC9V4-CD-D9-v1` | GRC9_specialization_specific | specialization_only | transition_reduction_for_C_RG2b_does_not_imply_any_other_disabled_reduction_surface |
+| D10.2-EC-DISABLED-C_RG2b-STATE | profile_scoped_disabled_reduction | `BASE-DISABLED-STATE` | `C_RG2b` | `D10-CL-N-007` | §14.5; App. A | `GRC9V4-CD-D0-v1`<br>`GRC9V4-CD-D9-v1` | GRC9_specialization_specific | specialization_only | state_reduction_for_C_RG2b_does_not_imply_any_other_disabled_reduction_surface |
+| D10.2-EC-DISABLED-C_RG2b-OBSERVABLE | profile_scoped_disabled_reduction | `BASE-DISABLED-OBSERVABLE` | `C_RG2b` | `D10-CL-N-007` | §14.5; App. A | `GRC9V4-CD-D0-v1`<br>`GRC9V4-CD-D9-v1` | GRC9_specialization_specific | specialization_only | observable_reduction_for_C_RG2b_does_not_imply_any_other_disabled_reduction_surface |
+| D10.2-EC-DISABLED-C_RG2b-LIFECYCLE | profile_scoped_disabled_reduction | `BASE-DISABLED-LIFECYCLE` | `C_RG2b` | `D10-CL-N-007` | §14.5; App. A | `GRC9V4-CD-D0-v1`<br>`GRC9V4-CD-D9-v1` | GRC9_specialization_specific | specialization_only | lifecycle_reduction_for_C_RG2b_does_not_imply_any_other_disabled_reduction_surface |
+| D10.2-EC-DISABLED-A_PC-TRANSITION | profile_scoped_disabled_reduction | `BASE-DISABLED-TRANSITION` | `A_PC` | `D10-CL-N-007` | §14.5; App. A | `GRC9V4-CD-D0-v1`<br>`GRC9V4-CD-D9-v1` | GRC9_specialization_specific | specialization_only | transition_reduction_for_A_PC_does_not_imply_any_other_disabled_reduction_surface |
+| D10.2-EC-DISABLED-A_PC-STATE | profile_scoped_disabled_reduction | `BASE-DISABLED-STATE` | `A_PC` | `D10-CL-N-007` | §14.5; App. A | `GRC9V4-CD-D0-v1`<br>`GRC9V4-CD-D9-v1` | GRC9_specialization_specific | specialization_only | state_reduction_for_A_PC_does_not_imply_any_other_disabled_reduction_surface |
+| D10.2-EC-DISABLED-A_PC-OBSERVABLE | profile_scoped_disabled_reduction | `BASE-DISABLED-OBSERVABLE` | `A_PC` | `D10-CL-N-007` | §14.5; App. A | `GRC9V4-CD-D0-v1`<br>`GRC9V4-CD-D9-v1` | GRC9_specialization_specific | specialization_only | observable_reduction_for_A_PC_does_not_imply_any_other_disabled_reduction_surface |
+| D10.2-EC-DISABLED-A_PC-LIFECYCLE | profile_scoped_disabled_reduction | `BASE-DISABLED-LIFECYCLE` | `A_PC` | `D10-CL-N-007` | §14.5; App. A | `GRC9V4-CD-D0-v1`<br>`GRC9V4-CD-D9-v1` | GRC9_specialization_specific | specialization_only | lifecycle_reduction_for_A_PC_does_not_imply_any_other_disabled_reduction_surface |
+| D10.2-EC-DISABLED-C_PC-TRANSITION | profile_scoped_disabled_reduction | `BASE-DISABLED-TRANSITION` | `C_PC` | `D10-CL-N-007` | §14.5; App. A | `GRC9V4-CD-D0-v1`<br>`GRC9V4-CD-D9-v1` | GRC9_specialization_specific | specialization_only | transition_reduction_for_C_PC_does_not_imply_any_other_disabled_reduction_surface |
+| D10.2-EC-DISABLED-C_PC-STATE | profile_scoped_disabled_reduction | `BASE-DISABLED-STATE` | `C_PC` | `D10-CL-N-007` | §14.5; App. A | `GRC9V4-CD-D0-v1`<br>`GRC9V4-CD-D9-v1` | GRC9_specialization_specific | specialization_only | state_reduction_for_C_PC_does_not_imply_any_other_disabled_reduction_surface |
+| D10.2-EC-DISABLED-C_PC-OBSERVABLE | profile_scoped_disabled_reduction | `BASE-DISABLED-OBSERVABLE` | `C_PC` | `D10-CL-N-007` | §14.5; App. A | `GRC9V4-CD-D0-v1`<br>`GRC9V4-CD-D9-v1` | GRC9_specialization_specific | specialization_only | observable_reduction_for_C_PC_does_not_imply_any_other_disabled_reduction_surface |
+| D10.2-EC-DISABLED-C_PC-LIFECYCLE | profile_scoped_disabled_reduction | `BASE-DISABLED-LIFECYCLE` | `C_PC` | `D10-CL-N-007` | §14.5; App. A | `GRC9V4-CD-D0-v1`<br>`GRC9V4-CD-D9-v1` | GRC9_specialization_specific | specialization_only | lifecycle_reduction_for_C_PC_does_not_imply_any_other_disabled_reduction_surface |
+| D10.2-EC-DISABLED-A_CI_PC-TRANSITION | profile_scoped_disabled_reduction | `BASE-DISABLED-TRANSITION` | `A_CI_PC` | `D10-CL-N-007` | §14.5; App. A | `GRC9V4-CD-D0-v1`<br>`GRC9V4-CD-D9-v1` | GRC9_specialization_specific | specialization_only | transition_reduction_for_A_CI_PC_does_not_imply_any_other_disabled_reduction_surface |
+| D10.2-EC-DISABLED-A_CI_PC-STATE | profile_scoped_disabled_reduction | `BASE-DISABLED-STATE` | `A_CI_PC` | `D10-CL-N-007` | §14.5; App. A | `GRC9V4-CD-D0-v1`<br>`GRC9V4-CD-D9-v1` | GRC9_specialization_specific | specialization_only | state_reduction_for_A_CI_PC_does_not_imply_any_other_disabled_reduction_surface |
+| D10.2-EC-DISABLED-A_CI_PC-OBSERVABLE | profile_scoped_disabled_reduction | `BASE-DISABLED-OBSERVABLE` | `A_CI_PC` | `D10-CL-N-007` | §14.5; App. A | `GRC9V4-CD-D0-v1`<br>`GRC9V4-CD-D9-v1` | GRC9_specialization_specific | specialization_only | observable_reduction_for_A_CI_PC_does_not_imply_any_other_disabled_reduction_surface |
+| D10.2-EC-DISABLED-A_CI_PC-LIFECYCLE | profile_scoped_disabled_reduction | `BASE-DISABLED-LIFECYCLE` | `A_CI_PC` | `D10-CL-N-007` | §14.5; App. A | `GRC9V4-CD-D0-v1`<br>`GRC9V4-CD-D9-v1` | GRC9_specialization_specific | specialization_only | lifecycle_reduction_for_A_CI_PC_does_not_imply_any_other_disabled_reduction_surface |
+| D10.2-EC-DISABLED-C_CI_PC-TRANSITION | profile_scoped_disabled_reduction | `BASE-DISABLED-TRANSITION` | `C_CI_PC` | `D10-CL-N-007` | §14.5; App. A | `GRC9V4-CD-D0-v1`<br>`GRC9V4-CD-D9-v1` | GRC9_specialization_specific | specialization_only | transition_reduction_for_C_CI_PC_does_not_imply_any_other_disabled_reduction_surface |
+| D10.2-EC-DISABLED-C_CI_PC-STATE | profile_scoped_disabled_reduction | `BASE-DISABLED-STATE` | `C_CI_PC` | `D10-CL-N-007` | §14.5; App. A | `GRC9V4-CD-D0-v1`<br>`GRC9V4-CD-D9-v1` | GRC9_specialization_specific | specialization_only | state_reduction_for_C_CI_PC_does_not_imply_any_other_disabled_reduction_surface |
+| D10.2-EC-DISABLED-C_CI_PC-OBSERVABLE | profile_scoped_disabled_reduction | `BASE-DISABLED-OBSERVABLE` | `C_CI_PC` | `D10-CL-N-007` | §14.5; App. A | `GRC9V4-CD-D0-v1`<br>`GRC9V4-CD-D9-v1` | GRC9_specialization_specific | specialization_only | observable_reduction_for_C_CI_PC_does_not_imply_any_other_disabled_reduction_surface |
+| D10.2-EC-DISABLED-C_CI_PC-LIFECYCLE | profile_scoped_disabled_reduction | `BASE-DISABLED-LIFECYCLE` | `C_CI_PC` | `D10-CL-N-007` | §14.5; App. A | `GRC9V4-CD-D0-v1`<br>`GRC9V4-CD-D9-v1` | GRC9_specialization_specific | specialization_only | lifecycle_reduction_for_C_CI_PC_does_not_imply_any_other_disabled_reduction_surface |
+| D10.2-EC-CI-A-ROOT | candidate_specific_CI | `REAL-CI` | `A_CI` | `D10-CL-O-003` | §10.2; App. D.4 | `GRC9V4-CD-D8B-CI-v1`<br>`GRC9V4-GTRS-CI-v1` | GRC_derived | promotion_proved | the_A_root_cannot_freeze_W_hat_outside_the_joint_root |
+| D10.2-EC-CI-A-CONTRACTION | candidate_specific_CI | `REAL-CI` | `A_CI` | `D10-CL-O-003` | §10.2; App. D.4 | `GRC9V4-CD-D8B-CI-v1`<br>`GRC9V4-GTRS-CI-v1` | GRC_derived | promotion_proved | bounded_contraction_uniqueness_is_not_global_root_uniqueness_or_temporal_stability |
+| D10.2-EC-CI-C-ROOT | candidate_specific_CI | `REAL-CI` | `C_CI` | `D10-CL-O-003` | §10.2; App. D.4 | `GRC9V4-CD-D8B-CI-v1`<br>`GRC9V4-GTRS-CI-v1` | GRC_derived | promotion_proved | the_C_root_is_defined_only_on_the_admitted_selector_and_topology_stratum |
+| D10.2-EC-CI-C-CONTRACTION | candidate_specific_CI | `REAL-CI` | `C_CI` | `D10-CL-O-003` | §10.2; App. D.4 | `GRC9V4-CD-D8B-CI-v1`<br>`GRC9V4-GTRS-CI-v1` | GRC_derived | promotion_proved | stratum_local_contraction_is_not_a_cross_rank_or_topology_continuation_theorem |
+| D10.2-EC-CI-C-ROOT-SELECTION | candidate_specific_CI | `REAL-CI` | `C_CI` | `D10-CL-O-003` | §10.2; App. D.4 | `GRC9V4-CD-D8B-CI-v1`<br>`GRC9V4-GTRS-CI-v1` | GRC_derived | promotion_proved | an_arbitrary_numerical_root_cannot_be_selected_post_hoc |
+| D10.2-EC-CI-PC-A-COMPOSITION | candidate_specific_CI_PC | `REAL-CI-PC` | `A_CI_PC` | `D10-CL-O-007` | §10.6; App. D.8 | `GRC9V4-GTRS-CI-PC-v1` | GRC_derived | promotion_proved | the_unit_plus_unit_profile_is_not_amplitude_equivalent_to_CI_or_PC |
+| D10.2-EC-CI-PC-A-ROOT | candidate_specific_CI_PC | `REAL-CI-PC` | `A_CI_PC` | `D10-CL-O-007` | §10.6; App. D.8 | `GRC9V4-GTRS-CI-PC-v1` | GRC_derived | promotion_proved | hybrid_root_admission_does_not_establish_numeric_or_global_envelopes |
+| D10.2-EC-CI-PC-C-COMPOSITION | candidate_specific_CI_PC | `REAL-CI-PC` | `C_CI_PC` | `D10-CL-O-007` | §10.6; App. D.8 | `GRC9V4-GTRS-CI-PC-v1` | GRC_derived | promotion_proved | the_C_hybrid_must_not_apply_chi_or_zeta_twice |
+| D10.2-EC-CI-PC-C-CONTRACTION | candidate_specific_CI_PC | `REAL-CI-PC` | `C_CI_PC` | `D10-CL-O-007` | §10.6; App. D.8 | `GRC9V4-GTRS-CI-PC-v1` | GRC_derived | promotion_proved | composite_contraction_is_not_cross_stratum_or_global_stability |
+| D10.2-EC-CI-PC-C-ROOT-SELECTION | candidate_specific_CI_PC | `REAL-CI-PC` | `C_CI_PC` | `D10-CL-O-007` | §10.6; App. D.8 | `GRC9V4-GTRS-CI-PC-v1` | GRC_derived | promotion_proved | one_admitted_local_root_is_not_a_global_uniqueness_theorem |
+| D10.2-EC-CI-PC-ABLATIONS | candidate_specific_CI_PC | `REAL-CI-PC` | `A_CI_PC`<br>`C_CI_PC` | `D10-CL-O-007` | §10.6; App. D.8 | `GRC9V4-GTRS-CI-PC-v1` | GRC_derived | promotion_proved | ablation_identity_does_not_make_the_enabled_hybrid_equivalent_to_its_components |
+| D10.2-EC-PC-WRITER-COEFFICIENT | persistent_carrier | `REAL-PC` | `A_PC`<br>`C_PC`<br>`A_CI_PC`<br>`C_CI_PC` | `D10-CL-O-006` | §10.5; App. D.7 | `GRC9V4-GTRS-PC-v1` | GRC_derived | promotion_proved | one_tau_PC_is_the_current_profile_not_a_universal_history_law |
+| D10.2-EC-PC-ZOH-WRITER | persistent_carrier | `REAL-PC` | `A_PC`<br>`C_PC`<br>`A_CI_PC`<br>`C_CI_PC` | `D10-CL-O-006` | §10.5; App. D.7 | `GRC9V4-GTRS-PC-v1` | GRC_derived | promotion_proved | the_ZOH_writer_is_an_authoritative_history_write_not_a_solver_cache |
+| D10.2-EC-PC-RELEASE | persistent_carrier | `REAL-PC` | `A_PC`<br>`C_PC`<br>`A_CI_PC`<br>`C_CI_PC` | `D10-CL-O-006` | §10.5; App. D.7 | `GRC9V4-GTRS-PC-v1` | GRC_derived | promotion_proved | native_release_is_not_administrative_reset |
+| D10.2-EC-PC-MATCHED-FORCING | persistent_carrier | `REAL-PC` | `A_PC`<br>`C_PC`<br>`A_CI_PC`<br>`C_CI_PC` | `D10-CL-O-006` | §10.5; App. D.7 | `GRC9V4-GTRS-PC-v1` | GRC_derived | promotion_proved | carrier_contraction_is_not_committed_endpoint_hysteresis_evidence |
+| D10.2-EC-OS-STAGE-ORDER | operator_split | `REAL-OS` | `A_OS`<br>`C_OS` | `D10-CL-O-004` | §10.3; App. D.5 | `GRC9V4-GTRS-OS-v1` | GRC_derived | promotion_proved | no_second_geometry_or_corrector_iteration_is_part_of_this_profile |
+| D10.2-EC-OS-A-CORRECTOR | operator_split | `REAL-OS` | `A_OS` | `D10-CL-O-004` | §10.3; App. D.5 | `GRC9V4-GTRS-OS-v1` | GRC_derived | promotion_proved | produced_geometry_must_be_an_equation_level_consumer_not_telemetry |
+| D10.2-EC-OS-C-CORRECTOR | operator_split | `REAL-OS` | `C_OS` | `D10-CL-O-004` | §10.3; App. D.5 | `GRC9V4-GTRS-OS-v1` | GRC_derived | promotion_proved | selector_or_Hodge_predictor_caches_cannot_enter_the_C_corrector |
+| D10.2-EC-OS-SPLIT-RESIDUAL | operator_split | `REAL-OS` | `A_OS`<br>`C_OS` | `D10-CL-O-004` | §10.3; App. D.5 | `GRC9V4-GTRS-OS-v1` | GRC_derived | promotion_proved | a_nonzero_bounded_split_residual_is_not_automatic_failure_or_Delta_t_truncation_error |
+| D10.2-EC-OS-NO-SECOND-ITERATION | operator_split | `REAL-OS` | `A_OS`<br>`C_OS` | `D10-CL-O-004` | §10.3; App. D.5 | `GRC9V4-GTRS-OS-v1` | GRC_derived | promotion_proved | posthoc_iteration_cannot_improve_the_preregistered_one_pass_result |
+| D10.2-EC-RG-INVARIANCE | reconstructed_geometry | `REAL-RG2B` | `A_RG2b`<br>`C_RG2b` | `D10-CL-O-005` | §10.4; App. D.6 | `GRC9V4-GTRS-RG-v1` | GRC_derived | promotion_proved | uniqueness_is_relative_to_the_frozen_equivariant_extension_profile |
+| D10.2-EC-RG-LIPSCHITZ-CONTRACTION | reconstructed_geometry | `REAL-RG2B` | `A_RG2b`<br>`C_RG2b` | `D10-CL-O-005` | §10.4; App. D.6 | `GRC9V4-GTRS-RG-v1` | GRC_derived | promotion_proved | Lipschitz_section_existence_is_not_C1_regularness |
+| D10.2-EC-RG-DETERMINISM | reconstructed_geometry | `REAL-RG2B` | `A_RG2b`<br>`C_RG2b` | `D10-CL-O-005` | §10.4; App. D.6 | `GRC9V4-GTRS-RG-v1` | GRC_derived | promotion_proved | reconstructed_geometry_cannot_hide_a_persistent_carrier |
+| D10.2-EC-RG-CLAIM-CEILING | reconstructed_geometry | `REAL-RG2B` | `A_RG2b`<br>`C_RG2b` | `D10-CL-O-005` | §10.4; App. D.6 | `GRC9V4-GTRS-RG-v1` | GRC_derived | promotion_proved | the_current_Lipschitz_profile_cannot_be_differentiated_by_assumption |
+| D10.2-EC-C-SECTOR | candidate_C_chain | `C-SECTOR` | `C_CI`<br>`C_OS`<br>`C_RG2b`<br>`C_PC`<br>`C_CI_PC` | `D10-CL-O-002` | §9; App. D.3 | `GRC9V4-CD-D4V2-v1`<br>`GRC9V4-CD-D7V2-v1` | GRC_derived | promotion_proved | T_C_is_not_independent_state_or_resource |
+| D10.2-EC-C-HODGE-LAPLACIAN | candidate_C_chain | `C-HODGE-MAPS` | `C_CI`<br>`C_OS`<br>`C_RG2b`<br>`C_PC`<br>`C_CI_PC` | `D10-CL-O-002` | §9; App. D.3 | `GRC9V4-CD-D5V2-v1`<br>`GRC9V4-CD-D6V2-v1`<br>`GRC9V4-CD-D7G-post-v2-HODGE-TYPE-CORRECTION-v1` | GRC_derived | promotion_proved | matrix_shape_without_positive_typed_Hodge_maps_is_insufficient |
+| D10.2-EC-C-RESOLVENT | candidate_C_chain | `C-READ-BACK` | `C_CI`<br>`C_OS`<br>`C_RG2b`<br>`C_PC`<br>`C_CI_PC` | `D10-CL-O-002` | §9; App. D.3 | `GRC9V4-CD-D5V2-v1`<br>`GRC9V4-CD-D6V2-v1`<br>`GRC9V4-CD-D7V2-v1` | GRC_derived | promotion_proved | chi_C_must_not_be_applied_inside_and_outside_the_resolvent |
+| D10.2-EC-C-READBACK | candidate_C_chain | `C-READ-BACK` | `C_CI`<br>`C_OS`<br>`C_RG2b`<br>`C_PC`<br>`C_CI_PC` | `D10-CL-O-002` | §9; App. D.3 | `GRC9V4-CD-D5V2-v1`<br>`GRC9V4-CD-D6V2-v1`<br>`GRC9V4-CD-D7V2-v1` | GRC_derived | promotion_proved | the_read_surface_is_not_an_independent_resource_transfer |
+| D10.2-EC-C-AUTHORITY | candidate_C_chain | `C-AUTHORITY` | `C_CI`<br>`C_OS`<br>`C_RG2b`<br>`C_PC`<br>`C_CI_PC` | `D10-CL-N-002`<br>`D10-CL-O-002` | §9; App. D.3 | `GRC9V4-CD-D7V2-v1`<br>`GRC9V4-CD-D9-v1` | GRC_derived | promotion_proved | derived_C_surfaces_cannot_be_serialized_as_hidden_causal_state |
+| D10.2-EC-GEOM-K4-ASSEMBLY | structural_geometry | `GEOM-K4` | — | `D10-CL-N-006` | §6; Apps. D, F | `GRC9V4-CD-D4V2-v1`<br>`GRC9V4-CD-D7G-v1`<br>`GRC9V4-CD-D8A-v1` | GRC_derived | promotion_proved | graph_K4_is_not_core_K_or_transport_mobility_M4 |
+| D10.2-EC-GEOM-HODGE-UPDATE | structural_geometry | `GEOM-H1-FORM` | — | `D10-CL-N-006` | §6; Apps. D, F | `GRC9V4-CD-D7G-post-v2-HODGE-TYPE-CORRECTION-v1`<br>`GRC9V4-CD-D7G-v2`<br>`GRCV3-NORMATIVE-SPEC`<br>`GRCV3-RUNTIME-SOURCE` | GRC_derived | promotion_proved | K4_and_H1_units_require_the_declared_typed_pushforward |
+| D10.2-EC-GEOM-FLAT | structural_geometry | `GEOM-GJ` | — | `D10-CL-N-006` | §6; Apps. D, F | `GRC9V4-CD-D7G-post-v2-HODGE-TYPE-CORRECTION-v1`<br>`GRC9V4-CD-D7G-v2`<br>`GRC9V4-CD-D8A-v1` | GRC_derived | promotion_proved | G_J_is_flux_resistance_not_M4_transport_mobility |
+| D10.2-EC-GEOM-PROFILE | structural_geometry | `GEOM-K4-TO-H4-TO-h4` | — | `D10-CL-N-006` | §6; Apps. D, F | `GRC9V4-CD-D7G-v1`<br>`GRC9V4-CD-D7G-v2`<br>`GRC9V4-CD-D8A-v1` | GRC_derived | promotion_proved | producing_h4_without_a_declared_consumer_is_not_structural_Read_Back |
+| D10.2-EC-GEOM-MOBILITY-BOUNDARY | structural_geometry | `GEOM-M4` | — | `D10-CL-N-006` | §6; Apps. D, F | `GRC9V4-CD-D4V2-v1`<br>`GRC9V4-CD-D7G-post-v2-HODGE-TYPE-CORRECTION-v1`<br>`GRC9V4-CD-D7G-v1`<br>`GRC9V4-CD-D7G-v2` | GRC_derived | promotion_proved | numerical_matrix_coincidence_cannot_transfer_authority |
+| D10.2-EC-EVENT-RESOURCE | typed_topology_event | `L-TOPOLOGY-EVENT` | `A_CI`<br>`C_CI`<br>`A_OS`<br>`C_OS`<br>`A_RG2b`<br>`C_RG2b`<br>`A_PC`<br>`C_PC`<br>`A_CI_PC`<br>`C_CI_PC` | `D10-CL-N-004`<br>`D10-CL-N-005`<br>`D10-CL-X-001` | §12.7; App. E | `GRC9V4-CD-D9-v1`<br>`GRC9V4-D9-LIFECYCLE-COVERAGE-MATRIX-v1` | GRC_derived | promotion_proved | Delta_Q_event_is_a_receipt_for_the_actual_resource_state_map_and_cannot_replace_Delta_C_event; untyped_resize_or_unreceipted_resource_change_is_not_an_admitted_event |
+| D10.2-EC-EVENT-A-HISTORY | typed_topology_event | `L-TOPOLOGY-EVENT` | `A_CI`<br>`A_OS`<br>`A_RG2b`<br>`A_PC`<br>`A_CI_PC` | `D10-CL-N-005`<br>`D10-CL-X-001` | §12.7; App. E | `GRC9V4-CD-D9-v1`<br>`GRC9V4-D9-LIFECYCLE-COVERAGE-MATRIX-v1` | GRC_derived | promotion_proved | missing_edge_history_cannot_be_fabricated |
+| D10.2-EC-EVENT-C-DERIVED | typed_topology_event | `L-TOPOLOGY-EVENT` | `C_CI`<br>`C_OS`<br>`C_RG2b`<br>`C_PC`<br>`C_CI_PC` | `D10-CL-N-005`<br>`D10-CL-X-001` | §12.7; App. E | `GRC9V4-CD-D9-v1`<br>`GRC9V4-D9-LIFECYCLE-COVERAGE-MATRIX-v1` | GRC_derived | promotion_proved | derived_C_surfaces_are_not_history_payload |
+| D10.2-EC-EVENT-K4-HISTORY | typed_topology_event | `L-TOPOLOGY-EVENT` | `A_PC`<br>`C_PC`<br>`A_CI_PC`<br>`C_CI_PC` | `D10-CL-N-005`<br>`D10-CL-X-001` | §12.7; App. E | `GRC9V4-CD-D9-v1`<br>`GRC9V4-D9-LIFECYCLE-COVERAGE-MATRIX-v1` | GRC_derived | promotion_proved | generic_lossless_K4_history_transport_without_lineage_is_not_claimed |
+| D10.2-EC-EVENT-LIFECYCLE-TUPLE | typed_topology_event | `L-TOPOLOGY-EVENT` | `A_CI`<br>`C_CI`<br>`A_OS`<br>`C_OS`<br>`A_RG2b`<br>`C_RG2b`<br>`A_PC`<br>`C_PC`<br>`A_CI_PC`<br>`C_CI_PC` | `D10-CL-N-005`<br>`D10-CL-X-001` | §12.7; App. E | `GRC9V4-CD-D9-v1`<br>`GRC9V4-D9-LIFECYCLE-COVERAGE-MATRIX-v1` | GRC_derived | promotion_proved | mapping_only_current_state_would_allow_reset_to_resurrect_an_obsolete_graph_or_profile |
+| D10.2-EC-EVENT-READMISSION-RECEIPT | typed_topology_event | `L-ORDERED-RECEIPTS` | `A_CI`<br>`C_CI`<br>`A_OS`<br>`C_OS`<br>`A_RG2b`<br>`C_RG2b`<br>`A_PC`<br>`C_PC`<br>`A_CI_PC`<br>`C_CI_PC` | `D10-CL-N-005`<br>`D10-CL-X-001` | §12.7; App. E | `GRC9V4-CD-D10-v1`<br>`GRC9V4-CD-D9-v1` | GRC_derived | promotion_proved | endpoint_coverage_does_not_replace_crossing_evidence |
+
+### G.5 Complete accepted D10 claim-to-paper map
+
+The 39 rows below preserve the accepted class of each D10 claim. `D10_2_CL_N_001` is intentionally absent because it is not one of these claim nodes.
+
+| Claim ID | Class | Proposal treatment | Paper location | Covered parent object(s) |
+| --- | --- | --- | --- | --- |
+| D10-CL-C-001 | conditional | Structural operator/eigenproblem claims require a complete instantiated branch and domain. | §§6.1, 13.3, 15.3; App. F | `GEOM-ASSEMBLY`<br>`REAL-CI`<br>`SPEC-NORMALIZATION-UNITS-GAUGE-DOMAIN-SOLVER`<br>`SPEC-CLAIM-CEILINGS` |
+| D10-CL-C-002 | conditional | Lossless history across events requires typed lineage and maps. | §§12.8, 13.6, 15.3; Apps. E, F | `L-TOPOLOGY-EVENT`<br>`L-ORDERED-RECEIPTS`<br>`SPEC-CLAIM-CEILINGS` |
+| D10-CL-C-003 | conditional | Singular-current passage requires a named successor domain/solver profile. | §§11.4, 12.4, 15.3; App. E | `L-SINGULAR-FAIL-CLOSED`<br>`SPEC-B-SLOT`<br>`SPEC-CLAIM-CEILINGS` |
+| D10-CL-C-004 | conditional | Committed endpoint effect requires a complete-chain witness. | §§5.7, 13.7, 15.3; Apps. D, F | `SPEC-CLAIM-CEILINGS`<br>`SPEC-VERIFICATION-REGISTRY` |
+| D10-CL-C-005 | conditional | Temporal/continuation analysis requires a formed branch, metrics, clocks, and operators. | §13, 15.3; App. F | `SPEC-CLAIM-CEILINGS`<br>`SPEC-VERIFICATION-REGISTRY` |
+| D10-CL-C-006 | conditional | General SPD/Hodge conditioning and executable covariance require implementation evidence. | §§3.1, 9.6, 11.4, 13, 15.3; Apps. E, F | `C-HODGE-MAPS`<br>`L-SINGULAR-FAIL-CLOSED`<br>`SPEC-VERIFICATION-REGISTRY` |
+| D10-CL-C-007 | conditional | Physical nonabsorbability requires matched baseline-reparameterization evidence. | §§8.6, 9.5, 13.5, 15.3; Apps. D, F | `A-READ-CLOSURE`<br>`C-READ-BACK`<br>`SPEC-CLAIM-CEILINGS` |
+| D10-CL-C-008 | conditional | Preference/ranking requires matched profile evidence and objective. | §§10.7, 13.7, 15.3; App. F | `SPEC-NORMALIZATION-UNITS-GAUGE-DOMAIN-SOLVER`<br>`SPEC-VERIFICATION-REGISTRY` |
+| D10-CL-C-009 | conditional | Classical RG2b differentiation requires a C1 invariant-section result. | §§10.4, 13.7, 15.3; Apps. D, F | `REAL-RG2B`<br>`SPEC-NORMALIZATION-UNITS-GAUGE-DOMAIN-SOLVER` |
+| D10-CL-C-010 | conditional | Physical dimensionalization and cross-profile comparison require declared units/capacities. | §§6.6, 8.12, 15.3 | `SPEC-NORMALIZATION-UNITS-GAUGE-DOMAIN-SOLVER`<br>`SPEC-CLAIM-CEILINGS` |
+| D10-CL-C-011 | conditional | Historical conditional substrate-provenance node; accepted D10.2 records bounded promotion at record level. | §§2.4, 14.6–14.7, 15.3; App. G | `CORE-C-AUTHORITY`<br>`CORE-INCIDENCE-CONTINUITY`<br>`CORE-GENERAL-CHARGE`<br>`CORE-CHARGE-TANGENT`<br>`CORE-STRUCTURAL-CHARGE-PROJECTOR`<br>`CORE-UNIT-MEASURE`<br>`CORE-EXTERNAL-EVENT-CHARGE`<br>`BASE-SCALAR-MOBILITY`<br>`BASE-POTENTIAL`<br>`BASE-POTENTIAL-FLOW`<br>`BASE-GRC-DIFFERENTIAL`<br>`BASE-GRC9-ROW-BASIS-DIFFERENTIAL`<br>`BASE-DISABLED-TRANSITION`<br>`BASE-DISABLED-STATE`<br>`BASE-DISABLED-OBSERVABLE`<br>`BASE-DISABLED-LIFECYCLE`<br>`A-GW-FUNCTIONAL`<br>`A-WHAT`<br>`A-DIRECTIONAL-CONTRAST`<br>`A-READ-CLOSURE`<br>`A-WRITER-TARGET`<br>`A-RETAINED-WRITER`<br>`A-STATE-REDUCTION`<br>`C-SECTOR`<br>`C-SELECTOR`<br>`C-HODGE-MAPS`<br>`C-READ-BACK`<br>`C-AUTHORITY`<br>`CORE-K-STRUCTURAL-ROLE`<br>`GEOM-K4`<br>`GEOM-H1-FORM`<br>`GEOM-GJ`<br>`GEOM-M4`<br>`GEOM-K4-TO-H4-TO-h4`<br>`GEOM-ASSEMBLY`<br>`GEOM-COVARIANCE`<br>`REAL-CI`<br>`REAL-OS`<br>`REAL-RG2B`<br>`REAL-PC`<br>`REAL-CI-PC`<br>`L-AUTHORITATIVE-CURRENT`<br>`L-CONTINUITY-WRITE`<br>`L-POSTCONTINUITY-REFRESH`<br>`L-ATOMICITY`<br>`L-SNAPSHOT-RESET`<br>`L-PROFILE-MIGRATION`<br>`L-A-INITIALIZER-GRC`<br>`L-A-INITIALIZER-GRC9V3`<br>`L-TOPOLOGY-EVENT`<br>`L-ORDERED-RECEIPTS`<br>`L-SINGULAR-FAIL-CLOSED`<br>`L-PROFILE-GRAMMAR`<br>`GRC9-ORDERED-PORTS`<br>`GRC9-ROW-COLUMN-CHART`<br>`GRC9-SATURATION`<br>`GRC9-MECHANICAL-EXPANSION`<br>`GRC9-HYBRID-SPARK`<br>`GRC9-CHILD-BASIN-STABILIZATION`<br>`GRC9-COLUMN-COARSE-GRAINING`<br>`SPEC-PROFILE-GRAMMAR`<br>`SPEC-FUTURE-ADMISSION`<br>`SPEC-B-SLOT`<br>`SPEC-CLAIM-CEILINGS`<br>`SPEC-NORMALIZATION-UNITS-GAUGE-DOMAIN-SOLVER`<br>`SPEC-COMPOSITION-PROFILE-IDENTITY`<br>`SPEC-VERIFICATION-REGISTRY` |
+| D10-CL-C-012 | conditional | Current ten-profile population is complete only for the initial admitted population. | §§2.4, 7.1, 14.7, 15.3; Apps. C, G | `SPEC-PROFILE-GRAMMAR`<br>`SPEC-FUTURE-ADMISSION` |
+| D10-CL-N-001 | normative | Profile-explicit common architecture and inherited/general/specialization partition. | §§2, 4.1, 14, 15.1.1 | `CORE-C-AUTHORITY`<br>`BASE-SCALAR-MOBILITY`<br>`BASE-POTENTIAL`<br>`BASE-POTENTIAL-FLOW`<br>`BASE-GRC-DIFFERENTIAL`<br>`BASE-GRC9-ROW-BASIS-DIFFERENTIAL`<br>`A-STATE-REDUCTION`<br>`C-AUTHORITY`<br>`GEOM-K4-TO-H4-TO-h4`<br>`L-PROFILE-GRAMMAR`<br>`SPEC-PROFILE-GRAMMAR`<br>`GRC9-ORDERED-PORTS`<br>`GRC9-ROW-COLUMN-CHART`<br>`GRC9-SATURATION`<br>`GRC9-MECHANICAL-EXPANSION`<br>`GRC9-HYBRID-SPARK`<br>`GRC9-CHILD-BASIN-STABILIZATION`<br>`GRC9-COLUMN-COARSE-GRAINING` |
+| D10-CL-N-002 | normative | C-only resource authority with profile-declared nonresource state. | §§3.3, 8, 9, 15.1.2 | `CORE-C-AUTHORITY`<br>`A-STATE-REDUCTION`<br>`C-SECTOR`<br>`C-SELECTOR`<br>`C-HODGE-MAPS`<br>`C-AUTHORITY` |
+| D10-CL-N-003 | normative | One complete-step transaction, one current, one continuity write, atomic commit. | §§5.4, 11, 15.1.3; App. E | `L-AUTHORITATIVE-CURRENT`<br>`L-CONTINUITY-WRITE`<br>`L-POSTCONTINUITY-REFRESH`<br>`L-ATOMICITY`<br>`L-SINGULAR-FAIL-CLOSED` |
+| D10-CL-N-004 | normative | Charge, complete-state tangent, structural projector/retraction, and actual-write accounting. | §§4, 11.6, 12.7, 15.1.4; App. E | `CORE-INCIDENCE-CONTINUITY`<br>`CORE-GENERAL-CHARGE`<br>`CORE-CHARGE-TANGENT`<br>`CORE-STRUCTURAL-CHARGE-PROJECTOR`<br>`CORE-UNIT-MEASURE`<br>`CORE-EXTERNAL-EVENT-CHARGE`<br>`L-CONTINUITY-WRITE` |
+| D10-CL-N-005 | normative | Lifecycle identity, typed migration/event crossings, reset and receipts. | §§12, 15.1.5; App. E | `L-SNAPSHOT-RESET`<br>`L-PROFILE-MIGRATION`<br>`L-A-INITIALIZER-GRC`<br>`L-A-INITIALIZER-GRC9V3`<br>`L-TOPOLOGY-EVENT`<br>`L-ORDERED-RECEIPTS`<br>`L-PROFILE-GRAMMAR` |
+| D10-CL-N-006 | normative | Corrected K4/Hodge/current/mobility typing and geometry crossing. | §§6, 14, 15.1.6; Apps. A, D, F | `CORE-K-STRUCTURAL-ROLE`<br>`GEOM-K4`<br>`GEOM-H1-FORM`<br>`GEOM-GJ`<br>`GEOM-M4`<br>`GEOM-K4-TO-H4-TO-h4`<br>`GEOM-ASSEMBLY`<br>`GEOM-COVARIANCE`<br>`L-TOPOLOGY-EVENT` |
+| D10-CL-N-007 | normative | Independent transition/state/observable/lifecycle disabled reductions. | §§12.9, 14.5, 15.1.7; App. A | `BASE-DISABLED-TRANSITION`<br>`BASE-DISABLED-STATE`<br>`BASE-DISABLED-OBSERVABLE`<br>`BASE-DISABLED-LIFECYCLE` |
+| D10-CL-N-008 | normative | Profile-local units, gauge, normalization, domain, solver, and composition identity. | §§7.2, 10.6, 15.1.8; Apps. C, D | `SPEC-NORMALIZATION-UNITS-GAUGE-DOMAIN-SOLVER`<br>`SPEC-COMPOSITION-PROFILE-IDENTITY` |
+| D10-CL-N-009 | normative | Exactly one candidate and one realization per executable profile. | §§7.1, 15.1.9; Apps. B, C | `L-PROFILE-GRAMMAR`<br>`SPEC-PROFILE-GRAMMAR` |
+| D10-CL-O-001 | optional | Candidate A admitted. | §8; Apps. C, D | `A-GW-FUNCTIONAL`<br>`A-WHAT`<br>`A-DIRECTIONAL-CONTRAST`<br>`A-READ-CLOSURE`<br>`A-WRITER-TARGET`<br>`A-RETAINED-WRITER`<br>`A-STATE-REDUCTION` |
+| D10-CL-O-002 | optional | Candidate C admitted. | §9; Apps. C, D | `C-SECTOR`<br>`C-SELECTOR`<br>`C-HODGE-MAPS`<br>`C-READ-BACK`<br>`C-AUTHORITY` |
+| D10-CL-O-003 | optional | CI realization admitted. | §10.2; Apps. C, D, F | `REAL-CI` |
+| D10-CL-O-004 | optional | OS realization admitted. | §10.3; Apps. C, D, F | `REAL-OS` |
+| D10-CL-O-005 | optional | RG2b realization admitted. | §10.4; Apps. C, D, F | `REAL-RG2B` |
+| D10-CL-O-006 | optional | PC realization admitted. | §10.5; Apps. C, D, F | `REAL-PC` |
+| D10-CL-O-007 | optional | CI+PC realization admitted. | §10.6; Apps. C, D, F | `REAL-CI-PC` |
+| D10-CL-U-001 | open | Candidate B remains open and nonexecutable. | §§7.4, 15.4.1; App. G | `SPEC-B-SLOT`<br>`SPEC-FUTURE-ADMISSION` |
+| D10-CL-U-002 | open | Runtime formation, retention, release, replay, and endpoint effects remain open. | §§5.7, 8.12, 9.10, 13.7, 15.4.2; Apps. D, F | `SPEC-VERIFICATION-REGISTRY`<br>`SPEC-CLAIM-CEILINGS` |
+| D10-CL-U-003 | open | Physical channel attribution remains open. | §§8.12, 9.10, 15.4.3 | `SPEC-CLAIM-CEILINGS`<br>`SPEC-VERIFICATION-REGISTRY` |
+| D10-CL-U-004 | open | Numerical structural/temporal/comparative evidence and metrics remain open. | §§13, 15.4.4; App. F | `SPEC-VERIFICATION-REGISTRY` |
+| D10-CL-U-005 | open | Alternative Hodge/DEC profiles and normalization remain open. | §§6.6, 15.4.5 | `GEOM-H1-FORM`<br>`GEOM-ASSEMBLY`<br>`SPEC-FUTURE-ADMISSION` |
+| D10-CL-X-001 | negative | No generic lossless event-history preservation without typed lineage. | §§12.8, 15.5.1; App. E | `L-TOPOLOGY-EVENT`<br>`L-ORDERED-RECEIPTS` |
+| D10-CL-X-002 | negative | No unique/stability-based profile preference from current evidence. | §§10.7, 13.7, 15.5.2; App. F | `SPEC-CLAIM-CEILINGS`<br>`SPEC-VERIFICATION-REGISTRY` |
+| D10-CL-X-003 | negative | Constructibility and local root regularity are not stability. | §§13, 15.5.3; App. F | `SPEC-CLAIM-CEILINGS`<br>`SPEC-VERIFICATION-REGISTRY` |
+| D10-CL-X-004 | negative | Candidate A is not inherited core. | §§8.12, 15.5.4; App. D | `A-GW-FUNCTIONAL`<br>`A-WHAT`<br>`A-DIRECTIONAL-CONTRAST`<br>`A-READ-CLOSURE`<br>`A-WRITER-TARGET`<br>`A-RETAINED-WRITER`<br>`A-STATE-REDUCTION` |
+| D10-CL-X-005 | negative | PC is not Candidate B. | §§7.4, 10.5, 15.5.5; Apps. C, D | `REAL-PC`<br>`SPEC-B-SLOT` |
+| D10-CL-X-006 | negative | Candidate A is not the unique V4 completion. | §§8.12, 9.10, 15.5.6; App. D | `A-GW-FUNCTIONAL`<br>`A-WHAT`<br>`A-DIRECTIONAL-CONTRAST`<br>`A-READ-CLOSURE`<br>`A-WRITER-TARGET`<br>`A-RETAINED-WRITER`<br>`A-STATE-REDUCTION`<br>`C-SECTOR`<br>`C-SELECTOR`<br>`C-HODGE-MAPS`<br>`C-READ-BACK`<br>`C-AUTHORITY` |
+
+### G.6 Direct analysis equations outside the D10.2 subordinate registry
+
+The following source-backed equation families appear in Section 13 and Appendix F but are not assigned fabricated D10.2 row identifiers:
+
+| Equation family | Direct accepted source | Proposal location | Boundary |
+|---|---|---|---|
+| Formed-state, branch, clock, and reference-transport definitions | D3 | §13.1; App. F.2 | no formed branch instantiated |
+| Branch-appropriate structural target and current-regime split | D8-A | §13.3; App. F.5 | no universal self-adjoint target for active current |
+| CI root first and second derivatives | D8-B | §13.2.1; App. F.4 | regular fixed-stratum chart only |
+| Reduced constrained structural second variation | D8-B | §13.3; App. F.5 | no numerical $\alpha$ or joint A-$W_A$ structural coordinate |
+| Complete committed-state Jacobian and multiplier/rate interface | D8-B plus D9 | §13.4; App. F.6 | no stability; $\gamma$ needs clock/log branch |
+| Frozen direct Read-Back operators | D8-B plus post-v2 Hodge correction | §13.5; App. F.7 | $\beta$ is not structural or temporal spectrum |
+| Spatial graph operator and projector separation | D3/D8-B | §13.6; Apps. F.8–F.9 | no index-based cross-operator identity |
+| Nonnormality, local regularity, and complete-chain sensitivity | D8-B | §13.7; App. F.10 | no numerical metric, endpoint, or ranking claim |
+
+### G.7 Crosswalk freeze and use rules
+
+Before the proposal is converted into a publication draft or normative specification:
+
+1. every displayed equation must either resolve to a D10.2 row or appear in the direct D3/D8-A/D8-B analysis register above;
+2. every authority statement must resolve to one of the 67 parent objects;
+3. every positive statement must preserve the class and ceiling of the relevant D10 claim;
+4. every GRC9-intrinsic or GRC9V3-target-specific object must remain in Appendix A or an explicit specialization discussion;
+5. every persistent state reference must use the complete profile’s actual $Z_{4,a}$ authority;
+6. every Candidate C physical-current equation must retain $Q_C=I_{4M}G_J$ or its explicitly equivalent expanded flat/sharp chain;
+7. every lifecycle equation must preserve the distinction among $\Delta C_{\mathrm{event}}$, $\Delta Q_{\mathrm{event}}$, and the already-updated $Q_{\mathrm{target}}^+$;
+8. every association imported from the exploratory side tool remains `indeterminate_requires_review` unless a separately accepted record upgrades it;
+9. unsupported scientific content is recorded as a boundary rather than completed inside the paper;
+10. materially distinct successor profiles reopen provenance and the earliest affected authority, staging, state, geometry, accounting, or lifecycle contract.
 
 ---
 
