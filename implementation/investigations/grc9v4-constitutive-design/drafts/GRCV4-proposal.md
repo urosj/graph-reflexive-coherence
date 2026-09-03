@@ -718,150 +718,147 @@ The appendices expose no paper-blocking scientific boundary beyond those already
 
 ---
 
+### Sections 1 and 16 tranche status
+
+**Status:** Working synthesis from the accepted GRC-v4/GRC9V4 constitutive-design investigation.
+
+**Intended use:** Integrated controlled content for Sections 1 and 16 in `drafts/GRCV4-proposal.md`.
+
+**Scientific authority:** None independent of the accepted investigation.
+
+**Current controlling closure:** Accepted D10.2, decision digest `28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c`.
+
+These sections are written last because they summarize the completed body rather than setting a claim level in advance. They introduce no new equation, candidate, realization, state authority, profile identity, or successor obligation. They preserve the accepted distinction between a design-complete substrate architecture and unexecuted runtime, numerical, attribution, stability, endpoint, and comparison claims.
+
+All claim, parent-object, and equation/contract associations remain source-directed drafting crosswalks. Where the exploratory side tool reports `indeterminate_requires_review`, these sections do not promote that association into reconstructed proof. The source-local D10.2 provenance label `D10_2_CL_N_001` is not treated as a queryable claim node.
+
+The forensic API audit reconstructed all 39 accepted D10 claims, queried all 67 D10.2 parent objects, followed both admitted candidate careers across the exact ten-profile population, checked the nine direct contracts named by the section crosswalk, and verified ten controlling gate acts and contributions from D0 through D10.2. The claim partition remains 12 `conditional`, 9 `normative`, 7 `optional`, 5 `open`, and 6 `negative`; the object partition remains 54 `promotion_proved` and 13 `specialization_only`; relevant contract support remains `indeterminate_requires_review`; and `D10_2_CL_N_001` fails closed as a non-node provenance label. No extraction or scientific correction was required.
+
+### Sections 1 and 16 provenance crosswalk
+
+The following table is a drafting-control surface. It does not replace the accepted records or promote exploratory associations beyond `indeterminate_requires_review`.
+
+| Proposal location | Controlling accepted source(s) | Primary claim/object relation | Boundary preserved |
+|---|---|---|---|
+| §1 opening and §1.1 | GRC-v3 substrate/spec lineage; D10.2 graph-generic transport and differential derivations | `CORE-C-AUTHORITY`, `CORE-INCIDENCE-CONTINUITY`, `BASE-GRC-DIFFERENTIAL`, `BASE-SCALAR-MOBILITY`, `BASE-POTENTIAL`, `BASE-POTENTIAL-FLOW`; `D10-CL-N-001` | V4 extends rather than invalidates GRC-v3; GRC9 storage is not promoted with graph-generic equations |
+| §1.2 | `GRC9V4ConstitutiveDesignBasis`; accepted D0–D3 and inherited B1/B2 boundaries | retention/Read-Back/write-back and runtime/analysis non-equivalences; conditional attribution and evidence claims | no failed mapping becomes a V4 equation; no persistence or diagnostic is relabeled as demonstrated causal retention |
+| §1.3 common architecture | D10 architecture synthesis and accepted D10.2 promotion | `D10-CL-N-001` through `D10-CL-N-009`; complete-profile and lifecycle objects | A/C and five realizations remain distinct; one universal formula or timing law is not invented |
+| §1.3 current population | D10 profile registry and claim topology | `D10-CL-O-001` through `D10-CL-O-007`; `D10-CL-C-012` | admitted does not mean preferred; current population is not future-exhaustive |
+| §1.3 factorization | accepted D10.2 provenance audit | record-level bounded factorization; historical `D10-CL-C-011`; specialization object partition | `D10_2_CL_N_001` remains a source-local label; future profiles reopen provenance |
+| §1.4 | D10/D10.2 synthesis, claim topology, verification registry | normative, optional, conditional, open, and negative claim classes | contributions are exposition of accepted results, not paper-side proofs or implementation claims |
+| §16 causal closure | Sections 4–12 and their accepted predecessor records | one resource, one current, retention/Read-Back/write-back, structural geometry, complete-step and lifecycle objects | design-level closure is not runtime demonstration or stability |
+| §16 profile plurality | accepted A/C and realization decisions; D9/D10 profile grammar | optional claims `O-001`–`O-007`; normative `N-008` and `N-009` | no candidate/realization ranking, universality, or same-state mixture |
+| §16 specialization | D10.2 classification and Appendix A sources | 54 promoted/common versus 13 specialization-only parent objects; four disabled surfaces per profile | GRC9V4 remains substantive; exact GRC9V3 compatibility remains specialization content |
+| §16 claim ceiling | D10 conditional/open/negative claims and routed verification obligations | `D10-CL-C-001`–`C-012`, `U-001`–`U-005`, `X-001`–`X-006` | no runtime, endpoint, stability, attribution, ranking, singular, or future-exhaustiveness overread |
+| §16 final successor rule | `SPEC-FUTURE-ADMISSION`, `SPEC-CLAIM-CEILINGS`, `SPEC-VERIFICATION-REGISTRY` | new identity and earliest-contract reopening | no automatic successor schedule; successors arise only from a concrete attempted proposition |
+
+### Paper-pressure register after Sections 1 and 16
+
+| Pressure point | Treatment | Blocking boundary exposed? |
+|---|---|---|
+| Introduction could portray GRC-v4 as correction or replacement of GRC-v3 | §1.1 states inheritance and refinement explicitly | No |
+| Historical $K[C]$ schematic could be confused with graph $K_4$ | §1.1 separates the inherited schematic from the typed V4 structural object | No |
+| Motivation could relabel persistence or diagnostics as causal retention | §1.2 restates the exact retained/read/write and runtime/analysis distinctions | No |
+| Architecture summary could flatten A/C or the five realizations | §1.3 preserves the two independent axes and their distinct authority/timing semantics | No |
+| Ten profiles could be presented as the complete future taxonomy | §1.3 and §16 preserve `D10-CL-C-012` | No |
+| GRC9V4 could be reduced to a compatibility wrapper | §1.3 and §16 preserve the substantive specialization partition | No |
+| Conclusion could turn unexecuted evidence obligations into promises or implied results | §16 states the exact ceiling without a future-proof rhetoric | No |
+| Open claims could become an automatic successor backlog | §16 closes with the exact successor-admission and earliest-contract rule | No |
+| Proposal contributions could be described as paper-side derivations | §1.4 states that all scientific authority remains in the accepted investigation | No |
+
+**Current disposition:** Sections 1 and 16 are integrated from the accepted content. They introduce no second mathematical line, expose no new scientific contradiction, and require no successor investigation.
+
+---
+
+### Abstract tranche status
+
+**Status:** Working synthesis from the accepted GRC-v4/GRC9V4 constitutive-design investigation.
+
+**Scientific authority:** None independent of the accepted investigation.
+
+**Current controlling closure:** Accepted D10.2, decision digest `28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c`.
+
+**Intended use:** Integrated controlled Abstract content in `drafts/GRCV4-proposal.md`.
+
+The forensic API audit reconstructed all 39 accepted D10 claims, queried 24 load-bearing parent objects, followed both admitted candidate careers across the exact ten-profile population, checked 77 relevant contract rows including all 40 independently scoped disabled-surface contracts, and verified the controlling D10, claim-topology, and D10.2 gate acts and contributions. The abstract preserves the accepted architecture, population, provenance factorization, claim classes, and design-level ceiling.
+
+One boundary wording correction was required. The source phrase “does not establish cross-profile comparison” was broader than `D10-CL-C-008`, `D10-CL-C-010`, and `D10-CL-U-004`, because design-level comparison is present while matched quantitative or physical comparison and preference remain uninstantiated. The integrated abstract therefore says “does not establish matched quantitative or physical cross-profile comparison.” No equation, profile, authority, lifecycle rule, or scientific conclusion changed.
+
+---
+
 # Paper Skeleton
 
 ## Abstract
 
-### Paper function
+Graph Reflexive Coherence V4 (GRC-v4) extends the finite-graph substrate of GRC-v3 by making historically conditioned dynamics explicit. It retains the authoritative scalar vertex resource $C$, graph-generated potential flow, one oriented authoritative current, incidence-based continuity, charge accounting, identity, and topology-aware lifecycle, while separating **retention**, **Read-Back**, and **write-back** as distinct profile-scoped contracts. The common architecture keeps $C$ as the sole resource coordinate; requires every complete profile to declare any authoritative nonresource state; distinguishes derived, transient, serialized, and analysis-only surfaces; and keeps $K_4$, $H_{1,\mathrm{form}}$, $G_J$, $h_4$, and $M_4$ separately typed as structural, geometric, and transport objects. Each complete step validates one profile, executes its candidate- and realization-specific current/geometry construction, writes $C$ exactly once, refreshes post-continuity surfaces, applies the declared candidate and history writers, and commits atomically or not at all. Snapshot, reset, migration, topology events, charge-target transformation, history transport or loss, and target readmission belong to the same lifecycle contract.
 
-Give the shortest complete statement of what GRC-v4 is, why it exists, what it adds to GRC-v3, how its profile architecture is organized, and what remains outside its claim.
+Rather than selecting one universal constitutive or temporal completion, GRC-v4 admits two constitutive families—Candidate A, with authoritative retained edge mobility $W_A$, and Candidate C, with a selected $C$-sector and Hodge response derived from authoritative $C$—crossed with five geometry-temporal realizations: coupled implicit (CI), operator split (OS), reconstructed geometry (RG2b), persistent carrier (PC), and coupled implicit plus persistent carrier (CI+PC). Their product gives ten complete profiles for the current initial admitted population. These profiles are neither ranked nor claimed to exhaust all lawful future GRC-v4 constructions.
 
-### Content to extract
+The accepted substrate-provenance result is the bounded factorization
 
-The abstract should make five moves.
+$$
+\mathrm{GRCV4}
+\xrightarrow{\text{nine-port specialization}}
+\mathrm{GRC9V4}
+\xrightarrow{\text{disabled V4 profile}}
+\mathrm{GRC9V3}.
+$$
 
-1. **Inherited substrate.**
-   Begin from graph Reflexive Coherence with scalar resource $C$, graph-generated transport, oriented current, continuity, identities, and topology-aware lifecycle.
-
-2. **V4 distinction.**
-   State that GRC-v4 separates:
-
-   $$
-   \text{retention}
-   \neq
-   \text{Read-Back}
-   \neq
-   \text{write-back},
-   $$
-
-   and places them inside a complete, profile-explicit causal step.
-
-3. **Common architecture.**
-   State that $C$ remains the only resource coordinate; every enabled profile declares any authoritative nonresource state; one current is authoritative for the resource write; structural geometry, mobility, current, lifecycle, charge, and event semantics are explicitly typed.
-
-4. **Admitted profiles.**
-   State that the current bounded population contains two admitted constitutive families, A and C, crossed with five admitted geometry-temporal realizations:
-
-   $$
-   \mathrm{CI},\quad
-   \mathrm{OS},\quad
-   \mathrm{RG2b},\quad
-   \mathrm{PC},\quad
-   \mathrm{CI+PC}.
-   $$
-
-   These are admitted profiles, not ranked alternatives or an exhaustive theorem.
-
-5. **Substrate factorization and claim ceiling.**
-   State the earned bounded relation:
-
-   $$
-   \mathrm{GRCV4}
-   \xrightarrow{\text{nine-port specialization}}
-   \mathrm{GRC9V4}
-   \xrightarrow{\text{disabled V4 profile}}
-   \mathrm{GRC9V3}.
-   $$
-
-   End by saying that the paper defines a design-level substrate architecture. It does not establish runtime implementation, formed-branch reachability, committed endpoint hysteresis, structural or temporal stability, physical nonabsorbability, or profile preference.
-
-### Controlling sources
-
-* `D10DesignSynthesisAndSpecWritingDecision`
-* `D10NormativeClaimTopology`
-* `D10_2FullSubstrateProvenanceAndPromotionAudit`
-
-D10 selects a profile-explicit common architecture rather than a unique candidate or realization, and D10.2 promotes the accepted common population from the GRC9 lineage to graph-generic GRC-v4.
-
-### Boundary
-
-The abstract must not use:
-
-* “implemented”;
-* “observed”;
-* “stable”;
-* “demonstrated memory”;
-* “causally nonredundant”;
-* “preferred realization”;
-* “complete taxonomy”;
-* “lossless across arbitrary topology change.”
+GRC9V4 remains a substantive nine-port specialization, and exact GRC9V3 compatibility is independently scoped across transition, authoritative state, observable, and lifecycle surfaces. The result is design-level: it does not establish runtime implementation or conformance, formed-branch reachability, native formation/retention/release evidence, committed endpoint hysteresis, structural or temporal stability, continuation-spectrum identity, physical nonabsorbability, matched quantitative or physical cross-profile comparison, or profile preference. Any materially distinct successor must receive a new complete-profile identity and reopen the earliest affected authority, staging, state, geometry, accounting, or lifecycle contract.
 
 ---
 
 ## 1. Introduction
 
+Graph Reflexive Coherence was introduced to make the central loop of Reflexive Coherence constructive on a finite graph. GRC-v3 supplied a scalar resource field on vertices, graph-local differential summaries, positive edge transport, a potential and oriented current, incidence-based continuity, budget preservation, identities, basins, sparks, hierarchy, and topology-aware evolution. It therefore provided more than a discretization of a pre-existing continuum equation: it gave a graph substrate on which coherence, transport, local structure, and graph change could participate in one explicit dynamical system.
+
+GRC-v4 retains that substrate. It does not replace the scalar resource by a new conserved quantity, discard the inherited potential-flow channel, or reinterpret GRC-v3 as mathematically invalid. Its purpose is narrower and deeper. Later work on continuation, retention, and Read-Back exposed causal distinctions that the inherited graph loop could express only in compressed form. A persistent coefficient, a derived structural surface, a directional response, a post-step update, and an analysis-only perturbation may all carry information about history, but they do not thereby have the same authority or play the same causal role. GRC-v4 reorganizes the inherited graph dynamics so that those roles are explicit, separately typed, and bound to complete profile and lifecycle contracts.
+
 ### 1.1 GRC-v3 as the inherited graph substrate
 
-#### Paper function
-
-Establish what GRC-v4 inherits rather than reconstructing GRC from first principles.
-
-#### Content to extract
-
-Explain that GRC-v3 already supplies:
-
-* a finite graph substrate;
-* scalar coherence/resource at vertices;
-* graph-local differential summaries;
-* positive edge conductance;
-* potential and oriented flux;
-* continuity and budget preservation;
-* basin and spark semantics;
-* hierarchy and topology change;
-* a distinction between dynamical conductance and analytical labels.
-
-Retain the GRC-v3 closed-loop lineage as historical context, but do not copy its immediate conductance update as the definition of V4:
+The inherited GRC-v3 loop may be summarized schematically as
 
 $$
 C
-\rightarrow
+\longrightarrow
 K[C]
-\rightarrow
+\longrightarrow
 w
-\rightarrow
+\longrightarrow
 \Phi
-\rightarrow
+\longrightarrow
 J
-\rightarrow
+\longrightarrow
 C.
 $$
 
-The V4 paper must say that this loop remains part of the inheritance, but its causal roles are now refined.
+Here the graph state generates local structural information; that information conditions positive transport; transport generates a potential and oriented current; and current updates the resource through continuity. The schematic remains part of the GRC-v4 lineage. It identifies the resource-and-current backbone that V4 preserves.
 
-#### Controlling sources
+The V4 account makes two qualifications explicit.
 
-* `2026-02-GRC-V3.md`
-* `GRCV3-NORMATIVE-SPEC`
-* `D10.2-DER-TRANSPORT`
-* `D10.2-DER-DIFFERENTIAL`
+First, the schematic does not by itself determine which historical or structural surfaces are authoritative state, which are reconstructed from current state, which are same-beat solver variables, and which exist only for analysis. GRC-v3 already distinguished dynamic conductance from analytical labels and already included topology, identity, and lifecycle concerns, but it did not yet bind every retained, read, structural, and temporal role through one profile-explicit contract.
 
-GRC-v3 explicitly presents itself as an enriched state on which the inherited loop closes, not as a replacement of that loop.
+Second, the historical symbol $K[C]$ in the inherited loop must not be identified automatically with the V4 graph structural object $K_4$. In GRC-v4, $K_4$ is a separately typed graph-local symmetric bilinear object on the oriented one-form space, with an accepted assembly rule, Hodge crossing, geometry profile, and realization-specific consumer. The inherited loop provides the graph-dynamical ancestry; Sections 6 and 10 state the V4 structural object and its timing precisely.
 
-#### Boundary
+The graph-generic inheritance used by GRC-v4 includes:
 
-Do not say that GRC-v3 was mathematically wrong. The V4 claim is that the accepted continuation and Read-Back distinctions require a more explicit causal architecture than the inherited loop alone provides.
+- a finite oriented graph and stable graph identity;
+- the authoritative scalar vertex resource $C$;
+- graph incidence and antisymmetric edge current;
+- an explicit deterministic graph differential backend contract;
+- positive scalar edge mobility as the inherited transport reference;
+- the graph potential and potential-flow equations;
+- one incidence-based continuity write;
+- graph measure, charge, and the charge-preserving tangent;
+- identity, reset, migration, event, and topology lineage.
 
----
+These inherited elements remain graph-generic because their accepted equations and contracts require no ordered-port or fixed-chart premise. GRC9 storage, the fixed $3\times3$ chart, nine-port saturation, mechanical expansion, and exact GRC9V3 compatibility remain specialization content.
+
+The revision is therefore not a replacement of GRC-v3 but a controlled extension of its causal architecture. V4 asks what must be declared when graph dynamics do more than respond immediately: when they form a representation, retain it, read it back into present activity, generate structural geometry from that activity, and write consequences into what later activity will encounter.
 
 ### 1.2 The continuation and Read-Back gap
 
-#### Paper function
-
-State the exact scientific pressure that led to V4.
-
-#### Content to extract
-
-Present the investigation target:
+The constitutive investigation began from a specific causal target:
 
 ```text
 past activity
@@ -869,10 +866,20 @@ past activity
     -> distinguishable post-input continuation
     -> present-current-conditioned directional Read-Back
     -> total-current/state consequence
-    -> write-back into the future retained representation
+    -> write-back into the future retained representation.
 ```
 
-Explain the inherited distinctions:
+Each arrow in this chain carries a different burden.
+
+A **retained representation** must have a declared state or derivation, a writer or lawful resource-mediated recurrence, a domain, a release or loss semantics, and a lifecycle identity. Persistence of a number or a slow coefficient does not by itself establish retention.
+
+**Read-Back** must be a typed map from present activity conditioned by retained structure into an oriented current contribution. Observing a retained quantity, multiplying current by a diagnostic, or constructing an analysis projector does not by itself establish causal Read-Back.
+
+The **authoritative current** must be the one current used by continuity and every consequence assigned to current authority. A diagnostic read current, trial current, structural one-form, or solver iterate cannot become a second resource stream.
+
+**Write-back** must identify how the consequences of the current beat change the representation available to a later beat. Candidate A realizes this through one authoritative retained-mobility writer. Candidate C writes only $C$ and rederives its selected sector and Hodge response from the new resource state. Persistent-carrier realizations add their own declared $Z_{4,a}$ history writer. These mechanisms are not interchangeable merely because each allows history to influence the future.
+
+The investigation therefore preserved several non-equivalences:
 
 ```text
 core primitive state
@@ -886,34 +893,16 @@ retained causal representation
 
 retention
     != Read-Back
-    != write-back
+    != write-back.
 ```
 
-Also state that coordinate covariance, physical current reversal, causal retention, and analytical continuation are separate questions.
+It also separated coordinate and causal questions that can otherwise be collapsed. Reorienting an edge coordinate is not a physical reversal of current history. A physical reversal is not automatically a reversal of a scalar retained carrier. Graph-local assembly support is not the same as operator support or full causal support. Root regularity is not temporal stability. Persistence of an authoritative carrier is not a structural slow mode. A profile may be mathematically constructible without having reached a formed branch in runtime.
 
-#### Controlling sources
-
-* `GRC9V4ConstitutiveDesignBasis`
-* D0–D3
-* accepted B1/B2 boundaries as consumed by D0–D3
-
-The design basis records both the target chain and these non-equivalences as controlling distinctions.
-
-#### Boundary
-
-This section may explain why V4 was investigated. It must not import failed B1/B2 mappings as V4 equations or treat bounded unchanged-GRC9V3 evidence as a V4 implementation result.
-
----
+These distinctions do not assert that GRC-v3 was defective. They identify the limit of what could safely be claimed from the earlier compressed loop. The V4 investigation asks for a substrate on which the distinctions themselves are part of the scientific contract rather than interpretive conventions supplied after the transition has been written.
 
 ### 1.3 Result of the constitutive investigation
 
-#### Paper function
-
-Give the reader the final architecture before entering the details.
-
-#### Content to extract
-
-State that the investigation did not choose one universal retained object or one timing law. It established:
+The investigation did not select one universal retained object, one universal current equation, or one universal timing law. It established the architecture
 
 $$
 \boxed{
@@ -922,49 +911,93 @@ $$
 \text{constitutive family}
 +
 \text{geometry-temporal realization}
-}
+}.
 $$
 
-The common contract owns:
+The common contract fixes what must remain invariant across the current admitted population:
 
-* resource authority;
-* current authority;
-* structural geometry typing;
-* mobility/geometry separation;
-* charge and tangent;
-* complete-step ordering;
-* lifecycle identity;
-* events and migrations;
-* profile identity;
-* disabled-reduction surfaces.
+- $C$ is the sole resource coordinate;
+- every profile declares any authoritative nonresource state;
+- derived, transient, serialized, and analysis-only surfaces are distinguished;
+- one solved physical current is authoritative for one continuity write;
+- charge and its tangent follow the actual resource path;
+- $K_4$, $H_{1,\mathrm{form}}$, $G_J$, $h_4$, and $M_4$ remain separately typed;
+- structural geometry is generated through an admitted $K_4\to H_4\to h_4$ profile and consumed only through a declared realization;
+- every executable state binds a complete profile identity;
+- the complete step is stage-ordered, validated, fail-closed, and atomic;
+- snapshot, reset, migration, topology event, information loss, charge target, and target readmission belong to the lifecycle contract;
+- materially distinct successors receive new identities and reopen the earliest affected authority, staging, state, geometry, accounting, or lifecycle contract.
 
-The complete profile supplies the candidate-specific current, retained representation, geometry source, writer, and realization-specific timing/history law.
+The complete profile supplies the constitutive and temporal content that cannot be flattened without changing the substrate.
 
-#### Controlling sources
+The current admitted constitutive families are:
 
-* D10
-* D10.2
+- **Candidate A**, in which positive edge mobility $W_A$ is authoritative retained nonresource state, is read relative to an instantaneous reference, participates in the current closure, and is written by a positive logarithmic update after continuity;
+- **Candidate C**, in which authoritative $C$ determines a selected sector and Hodge response that condition current, while the sector, selectors, Hodge objects, resolvent, and read surfaces remain derived rather than hidden state.
 
-#### Boundary
+The current admitted geometry-temporal realizations are:
 
-Do not flatten A and C into a generic formula. Do not flatten the five realization families into one timing parameter.
+- **CI**, a simultaneous current/geometry root on a declared local regular branch;
+- **OS**, one predictor, one geometry update, one fixed-geometry corrector, and one explicit split residual;
+- **RG2b**, a bounded reconstructed-geometry realization defined by a deterministic Lipschitz invariant section relative to a frozen family-local completion;
+- **PC**, a scalar-ZOH persistent $K_4$ carrier $Z_{4,a}$;
+- **CI+PC**, the admitted unit immediate plus unit retained structural composition, with its gain-two steady structural identity.
 
----
+Their product gives ten complete profile identities for the current initial population:
 
-### 1.4 Contributions of the paper
+$$
+\{\mathrm A,\mathrm C\}
+\times
+\{\mathrm{CI},\mathrm{OS},\mathrm{RG2b},\mathrm{PC},\mathrm{CI+PC}\}.
+$$
 
-The introduction should identify the paper’s contributions as exposition of accepted results:
+This population is complete for the current lineage-local specification population. It is not a theorem that A and C exhaust every possible constitutive family or that the five realizations exhaust every lawful geometry-temporal architecture. The investigation admits them symmetrically and does not rank them.
 
-1. a graph-generic V4 state and authority contract;
-2. a typed retention–Read-Back–write-back loop;
-3. a separation of $K_4$, Hodge geometry, structural current, and transport mobility;
-4. two admitted constitutive families;
-5. five admitted geometry-temporal realizations;
-6. a complete-step and lifecycle contract;
-7. a substantive GRC9V4 specialization;
-8. an explicit claim ceiling and successor rule.
+The substrate-provenance audit also establishes the bounded relation
 
-No contribution should be described as newly proved by the paper.
+$$
+\boxed{
+\mathrm{GRCV4}
+\xrightarrow{\text{nine-port specialization}}
+\mathrm{GRC9V4}
+\xrightarrow{\text{disabled V4 profile}}
+\mathrm{GRC9V3}
+}.
+$$
+
+GRC-v4 owns the graph-generic common, candidate, realization, geometry, complete-step, lifecycle, and profile-governance contracts established for the current population. GRC9V4 adds the ordered nine-port graph, fixed row/column chart, row-basis differential specialization, saturation, mechanical expansion, hybrid spark completion, child-basin stabilization, column coarse-graining, and exact GRC9V3 target bindings. The disabled reduction is independently scoped for transition, authoritative state, observable surface, and lifecycle for each of the ten current profiles.
+
+This factorization is substantive in both directions. GRC9V4 is not merely a compatibility shim, because its nine-port mechanics remain load-bearing. GRC-v4 is not merely GRC9V4 with the word “nine” removed, because the promoted common architecture has independent graph-generic derivations. The result is bounded to the audited population; a materially different future profile reopens provenance.
+
+### 1.4 Contributions and scope of this proposal
+
+This proposal reorganizes the accepted investigation into a coherent substrate account. Its scientific content is inherited from the accepted records rather than derived again here. Within that constraint, it makes eight contributions.
+
+1. **A graph-generic state and authority contract.**
+   The proposal identifies the sole resource coordinate, profile-scoped nonresource authority, derived and transient surfaces, lifecycle metadata, and analysis-only objects.
+
+2. **A typed retention–Read-Back–write-back loop.**
+   It distinguishes what persists, how retained structure conditions present current, which current is authoritative, and how the beat changes what later activity can read.
+
+3. **A structural-geometry and transport type separation.**
+   It distinguishes graph $K_4$, the structural one-form Hodge object, the flux flat/sharp map, generated geometry, and candidate-specific mobility, including their domains and causal owners.
+
+4. **Two admitted constitutive families.**
+   It states the complete accepted A and C candidate-local recurrences without merging them into one generic constitutive equation or preferring one over the other.
+
+5. **Five admitted geometry-temporal realizations.**
+   It states CI, OS, RG2b, PC, and CI+PC as distinct complete-profile realizations with different root, staging, reconstruction, history, and failure semantics.
+
+6. **A full complete-step and lifecycle contract.**
+   It binds validation, one authoritative current, one continuity write, post-continuity refresh, candidate and carrier writers, atomic failure, snapshot, reset, migration, topology events, history loss, charge receipts, and target readmission.
+
+7. **A substantive GRC9V4 specialization.**
+   It isolates nine-port-intrinsic mechanics and the exact GRC9V3 disabled target in Appendix A rather than allowing specialization content to leak into the graph-generic main contract.
+
+8. **An explicit claim and successor boundary.**
+   It states what the accepted design establishes, what remains optional, conditional, open, or negatively bounded, and how a materially distinct successor must reopen the earliest affected contract rather than entering as an untracked amendment.
+
+The proposal is consequently a design-level substrate account. It does not claim a completed runtime implementation, runtime-reached native formation or release, committed endpoint hysteresis, structural or temporal stability, numerical continuation spectra, physical nonabsorbability, cross-profile dimensional comparison, or candidate and realization preference. Those boundaries are part of the result rather than defects to be hidden in the introduction.
 
 ---
 
@@ -7400,26 +7433,43 @@ Until such a proposition is required, these boundaries remain correctly stated l
 ---
 ## 16. Conclusion
 
-### Paper function
+GRC-v4 preserves the graph Reflexive Coherence lineage in which a finite oriented graph carries an authoritative scalar resource, graph-local structure conditions transport, an oriented current updates the resource through continuity, and identity and topology remain part of the substrate rather than external bookkeeping. The V4 revision does not replace that backbone. It makes explicit the causal and type structure required when graph dynamics retain consequences of earlier activity and allow those consequences to participate in later activity.
 
-Close the substrate definition without turning limitations into a promise of future results.
+The central result is the separation and design-level closure of five roles that cannot safely be treated as one historical effect:
 
-### Content to extract
+```text
+retention
+    -> Read-Back
+    -> authoritative total current
+    -> resource and structural consequence
+    -> write-back into later retained structure.
+```
 
-The conclusion should state:
+Retention is attached to declared state or a declared resource-mediated recurrence. Read-Back is a typed present-current-conditioned map. One solved physical current is authoritative for the single resource write. Structural geometry is generated through a separately typed $K_4\to H_4\to h_4$ crossing and consumed only through an admitted realization. Write-back is candidate- and realization-specific, stage-ordered, and part of an atomic complete step. Snapshot, reset, profile migration, topology change, charge-target transformation, history transport or loss, and target readmission extend that closure across the full lifecycle.
 
-1. GRC-v4 retains the graph RC resource-and-current lineage.
-2. Its revision-distinct contribution is the explicit causal separation and closure of retention, Read-Back, total current, write-back, structural geometry, and lifecycle.
-3. The common architecture is profile-explicit rather than built around one universal constitutive law.
-4. A and C are both admitted.
-5. Five realization families are admitted without ranking.
-6. GRC9V4 is a substantive specialization.
-7. GRC9V3 remains the exact disabled target.
-8. Strong runtime, stability, attribution, and preference claims remain outside the paper.
+This closure is profile-explicit. The common substrate does not pretend that every lawful constitutive family must retain the same object or that every generated geometry must be consumed at the same time. Candidate A and Candidate C therefore remain distinct admitted families. A gives positive edge mobility $W_A$ independent nonresource authority and one retained writer. C keeps $C$ as its only candidate authority and rederives its selected sector and Hodge response from the committed resource state. Neither is promoted to inherited core, neither is declared unique, and neither is preferred by the accepted evidence.
 
-### Boundary
+The realization axis remains equally plural. CI closes current and geometry simultaneously on a bounded regular branch. OS freezes one predictor–geometry–corrector pass and retains its geometry fixed-point residual. RG2b reconstructs geometry through one deterministic bounded Lipschitz invariant section relative to its frozen completion. PC introduces one authoritative scalar-ZOH $K_4$ carrier. CI+PC combines the immediate and retained structural paths under its declared unit-plus-unit composition. These are five different temporal and history contracts, not numerical variants of one hidden universal update. Their current product with A and C gives ten complete profiles, complete for the present initial population but not exhaustive over all future GRC-v4 possibilities.
 
-Do not end with “future work will prove” any open claim. State only the accepted boundary and the rule that materially distinct successors reopen the earliest affected contract.
+The investigation also closes the substrate ownership question for that population. The accepted relation is
+
+$$
+\boxed{
+\mathrm{GRCV4}
+\xrightarrow{\text{nine-port specialization}}
+\mathrm{GRC9V4}
+\xrightarrow{\text{disabled V4 profile}}
+\mathrm{GRC9V3}
+}.
+$$
+
+Graph-generic resource, transport, differential, candidate, geometry, realization, complete-step, lifecycle, and profile-governance contracts belong to GRC-v4. GRC9V4 remains a substantive specialization through its ordered ports, fixed chart, row-basis differential backend, capacity and mechanical refinement rules, spark completion, child-basin stabilization, coarse-graining, and exact GRC9V3 target bindings. The disabled target is not summarized by transition equivalence alone: transition, authoritative state, observables, and lifecycle are separately scoped for each current profile.
+
+The accepted result is strong enough to define the substrate at design level, but its strength is bounded. This proposal does not establish runtime implementation or conformance. It does not report a runtime-reached formed branch, native formation, post-input retention, release, replay, or committed endpoint hysteresis. It does not instantiate structural Hessians, complete-step spectra, temporal stability, nonnormal growth, or a continuation spectrum. It does not prove that the A and C read channels are physically nonabsorbable from every declared baseline class, provide physical dimensionalization for matched cross-profile comparison, identify a preferred candidate or realization, establish a unique Hodge normalization, or supply generic lossless history transport through arbitrary topology change. Constructibility, regularity, persistence, and lifecycle completeness are not relabeled as those stronger results.
+
+These limits do not prescribe a sequence of automatic extensions. The current substrate remains the accepted bounded object until a concrete scientific proposition requires more. A materially distinct constitutive law, realization, composition, geometry map, mobility relation, event-history map, solver domain, or lifecycle semantics must receive a new complete-profile identity, renewed provenance, and reopening of the earliest affected authority, staging, state, geometry, accounting, or lifecycle contract. An unexecuted evidence obligation remains attached to the claim it gates; it does not become missing constitutive mathematics merely because the substrate account has reached its conclusion.
+
+GRC-v4 can therefore be stated without collapsing plurality into ambiguity. It provides one graph-generic resource and lifecycle discipline, one explicit authority structure, and one controlled grammar through which different retained and temporal organizations can be admitted. Within that grammar, the current A/C and CI/OS/RG2b/PC/CI+PC population forms a coherent, typed, and provenance-bounded substrate family, while GRC9V4 preserves the substantive mechanical specialization from which the investigation began.
 
 ---
 
