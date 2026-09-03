@@ -64,13 +64,18 @@
     "implementation/investigations/grc9v4-constitutive-design/decisions/D11CCandidateBaselineTransportAndMobilityResolution.json",
     "implementation/investigations/grc9v4-constitutive-design/decisions/D11CCandidateBaselineTransportAndMobilityResolution.md",
     "implementation/investigations/grc9v4-constitutive-design/decisions/D11CCandidateBaselineTransportProvenanceSupplement.json",
-    "implementation/investigations/grc9v4-constitutive-design/scripts/witness_d11_c_hm_stiffness_baseline.py"
+    "implementation/investigations/grc9v4-constitutive-design/scripts/witness_d11_c_hm_stiffness_baseline.py",
+    "implementation/investigations/grc9v4-constitutive-design/decisions/D11G9CanonicalExpansionPortAllocationResolution.json",
+    "implementation/investigations/grc9v4-constitutive-design/decisions/D11G9CanonicalExpansionPortAllocationResolution.md",
+    "implementation/investigations/grc9v4-constitutive-design/decisions/D11G9AxisPreservingExpansionProvenanceSupplement.json",
+    "implementation/investigations/grc9v4-constitutive-design/scripts/witness_d11_g9_canonical_expansion.py"
   ],
   "authorized_verification_maintenance_paths": [
     "implementation/investigations/grc9v4-constitutive-design/scripts/audit_grc9v4_d10_claim_topology.py",
     "implementation/investigations/grc9v4-constitutive-design/scripts/audit_grcv4_post_d10_specifications.py",
     "implementation/investigations/grc9v4-constitutive-design/scripts/audit_grc9v4_d11_successor_opening.py",
     "implementation/investigations/grc9v4-constitutive-design/scripts/audit_grc9v4_d11_c_resolution.py",
+    "implementation/investigations/grc9v4-constitutive-design/scripts/audit_grc9v4_d11_g9_resolution.py",
     "implementation/investigations/grc9v4-constitutive-design/specification/PostD10SpecificationBoundary.json",
     "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/audit_iteration0_contract.py",
     "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/run.py",

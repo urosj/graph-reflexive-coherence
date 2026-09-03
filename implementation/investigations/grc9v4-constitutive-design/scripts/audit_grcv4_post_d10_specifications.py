@@ -271,6 +271,8 @@ def validate_phase_boundary() -> tuple[str, int]:
         "audit_grc9v4_d11_successor_opening.py",
         "implementation/investigations/grc9v4-constitutive-design/scripts/"
         "audit_grc9v4_d11_c_resolution.py",
+        "implementation/investigations/grc9v4-constitutive-design/scripts/"
+        "audit_grc9v4_d11_g9_resolution.py",
         "implementation/investigations/grc9v4-constitutive-design/"
         "specification/PostD10SpecificationBoundary.json",
         "implementation/investigations/grc9v4-constitutive-design/tools/"
@@ -318,6 +320,14 @@ def validate_phase_boundary() -> tuple[str, int]:
         "D11CCandidateBaselineTransportProvenanceSupplement.json",
         "implementation/investigations/grc9v4-constitutive-design/scripts/"
         "witness_d11_c_hm_stiffness_baseline.py",
+        "implementation/investigations/grc9v4-constitutive-design/decisions/"
+        "D11G9CanonicalExpansionPortAllocationResolution.json",
+        "implementation/investigations/grc9v4-constitutive-design/decisions/"
+        "D11G9CanonicalExpansionPortAllocationResolution.md",
+        "implementation/investigations/grc9v4-constitutive-design/decisions/"
+        "D11G9AxisPreservingExpansionProvenanceSupplement.json",
+        "implementation/investigations/grc9v4-constitutive-design/scripts/"
+        "witness_d11_g9_canonical_expansion.py",
     }
     successor_paths = set(boundary["authorized_successor_investigation_paths"])
     if successor_paths != expected_successor_paths:
@@ -841,7 +851,7 @@ def main() -> int:
         )
         return 0
     if phase == "successor_investigation":
-        successor_audit = INVESTIGATION / "scripts/audit_grc9v4_d11_c_resolution.py"
+        successor_audit = INVESTIGATION / "scripts/audit_grc9v4_d11_g9_resolution.py"
         result = subprocess.run(
             [sys.executable, str(successor_audit)],
             cwd=ROOT,
@@ -851,7 +861,7 @@ def main() -> int:
         )
         if result.returncode:
             raise RuntimeError(
-                "D11-C resolution audit failed:\n"
+                "D11-G9 resolution audit failed:\n"
                 f"{result.stdout}\n{result.stderr}"
             )
         print(result.stdout.strip())

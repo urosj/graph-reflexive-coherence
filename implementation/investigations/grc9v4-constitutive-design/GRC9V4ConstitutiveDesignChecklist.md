@@ -2870,14 +2870,53 @@ and its
 - [x] Record a separately accepted or boundedly unresolved D11-C successor with
       exact claim/debt transformations and reciprocal edges, if any.
 
-### D11-G9 Active Gate
+### D11-G9 Accepted-Bounded Gate
 
 - [x] Activate D11-G9 only after D11-C acceptance.
-- [ ] Execute D11-G9 under its preregistered acceptance surface.
-- [ ] Pressure its canonical-port candidates against unique endpoint occupancy,
+- [x] Execute candidate pressure under the preregistered acceptance surface.
+- [x] Pressure its canonical-port candidates against unique endpoint occupancy,
       capacity, deterministic identity, resource/history transport, receipts,
       and target readmission.
-- [ ] Record a separately accepted or boundedly unresolved GRC9V4-only result
+- [x] Extract provisional D11-G9-P1 from the spec as a backward proposal rather
+      than scientific authority.
+- [x] Preserve D11-G9-P1a as a collision-free comparison result rather than
+      accepted authority.
+- [x] Compare the submitted axis-preserving same-port construction with P1a and
+      the inherited center-axis alternatives.
+- [x] Refine the submitted construction as D11-G9-P4a with fail-closed phase
+      canonicalization, exact ID grammar, and accepted lifecycle boundaries.
+- [x] Freeze both mirror primary spines: $(2,6,7)$ for $\epsilon=+1$ and
+      $(3,4,8)$ for $\epsilon=-1$.
+- [x] Freeze all nine exact column-preserving old-edge redirects before internal
+      endpoint allocation.
+- [x] Require identical port types at both ends of every primary and recursive
+      internal edge.
+- [x] Freeze the arbitrary-size branch-row, chirality-ordered column rotor,
+      creation-order BFS parent, local ordinal, ID, orientation, and occupancy
+      rules.
+- [x] Require `growth_phase = none` exactly when no extra-node remainder exists
+      and one explicit phase in $\{1,2,3\}$ otherwise.
+- [x] Prove the $7n+2$ capacity identity and capacity-minimal size above the
+      four-node policy floor.
+- [x] Prove primary row/column balance, global imbalance at most one, recursive
+      nonstalling, and dihedral covariance.
+- [x] Preserve an exact stable event/node/edge ID grammar and bind chirality,
+      canonical phase, policies, and lifecycle choices into event identity.
+- [x] Correct Candidate C event handling to require the complete target
+      $W_{C,\mathrm{tr}}$ profile map before derived-surface reconstruction.
+- [x] Correct persistent $K_4$ history to whole-carrier typed transport or
+      whole-carrier archive/zero reset, never untyped partial zero fill.
+- [x] Preserve enabled-V4 ownership, leave GRC9/GRC9V3 unchanged, and define the
+      fail-closed boundary where the legacy target is internally undefined.
+- [x] Run the bounded witness for $D_{\mathrm{eff}}=9,\ldots,5000$, both
+      chiralities, every active phase, 1,000 input shuffles, and dihedral
+      covariance.
+- [x] Record human acceptance of corrected D11-G9-P4a.
+- [x] Add one successor claim, nine reciprocal claim edges, ten specialization
+      objects, and twenty contracts in an append-only provenance supplement.
+- [x] Resolve `D11-G9-DEBT-CANONICAL-PORT-ALLOCATION` boundedly without
+      discharging runtime, stability, endpoint, or physical-selection debt.
+- [x] Record a separately accepted bounded GRC9V4-only result
       without modifying GRC9 or GRC9V3.
 
 ### D11 Propagation and Final Audit
@@ -2978,9 +3017,16 @@ D11-C_resolution_digest = 82e8008e8edade39db7b5327a31a807031b712dcc86b3fe3e8c097
 D11-C_successor_claims_added = 1
 D11-C_successor_objects_added = 3
 D11-C_successor_equation_contracts_added = 11
-D11_current_combined_objects = 70
-D11_current_combined_equation_contracts = 163
-D11-G9 = active_preregistered_after_accepted_D11-C
+D11-G9_selected = D11-G9-P4a
+D11-G9_profile = grc9v4_axis_preserving_chiral_same_port_expansion_v1
+D11-G9_successor_objects_added = 10
+D11-G9_successor_equation_contracts_added = 20
+D11_current_combined_objects = 80
+D11_current_combined_equation_contracts = 183
+D11_current_successor_claims = 2
+D11_total_pending_forward_verification_obligations = 17
+D11-G9 = accepted_bounded_D11-G9-P4a
+D11-G9_resolution_digest = a0813ceead2c992ec197790abd8a0ceea167ae2d952f853cf48f1db4d8001615
 architecture_selected = profile_explicit_lineage_local_GRC9V4_common_substrate_interface
 unique_candidate_selected = false
 unique_realization_selected = false

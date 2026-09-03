@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Audit accepted-bounded D11-C and the resulting active D11-G9 phase."""
+"""Audit accepted-bounded D11-C within the advancing D11 successor phase."""
 
 from __future__ import annotations
 
@@ -257,13 +257,16 @@ def validate_live_state() -> None:
         "- [x] Prove graph-relabel and signed-edge-orientation covariance",
         "- [x] Record a separately accepted or boundedly unresolved D11-C successor",
         "D11-C = accepted_bounded_C_HM_STIFFNESS_BASELINE_v1",
-        "D11-G9 = active_preregistered_after_accepted_D11-C",
     ):
         require(marker in checklist, f"D11-C checklist transition missing: {marker}")
-    require("- [ ] Execute D11-G9 under its preregistered acceptance surface." in checklist, "D11-G9 execution is not visibly pending")
+    require(
+        "D11-G9 = accepted_bounded_D11-G9-P4a" in checklist
+        or "D11-G9 = active_preregistered_after_accepted_D11-C" in checklist,
+        "D11-G9 successor state is not visible",
+    )
     for path, markers in (
         (LEDGER, ("### D11-C Accepted-Bounded Successor", EXPECTED_RESOLUTION_DIGEST)),
-        (README, ("is accepted bounded as corrected candidate D11-C-T3a", "is therefore active")),
+        (README, ("is accepted bounded as corrected candidate D11-C-T3a",)),
     ):
         text = path.read_text(encoding="utf-8")
         for marker in markers:
@@ -284,7 +287,10 @@ def validate_source_observation() -> tuple[str, int, str]:
         "implementation/investigations/grc9v4-constitutive-design/decisions/D11CCandidateBaselineTransportAndMobilityResolution.json",
         "implementation/investigations/grc9v4-constitutive-design/decisions/D11CCandidateBaselineTransportProvenanceSupplement.json",
     }
-    require(added_paths == expected_paths, f"D11 source observation roster drift: {sorted(added_paths ^ expected_paths)}")
+    require(
+        expected_paths <= added_paths,
+        f"D11-C source observation is incomplete: {sorted(expected_paths - added_paths)}",
+    )
     return observation["state"], len(added), observation["observation_digest"]
 
 
@@ -304,7 +310,7 @@ def main() -> int:
         f"resolution_digest={EXPECTED_RESOLUTION_DIGEST} "
         "selected=D11-C-T3a profile=C-HM-STIFFNESS-BASELINE-v1 "
         "claims=39+29+1 inherited_debt=29 pending_obligations=10 "
-        "objects=67+3 contracts=152+11 D11-G9=active "
+        "objects=67+3 contracts=152+11 D11-G9=successor_state_valid "
         "paper_spec_propagation=false implementation=false legacy_changes=false "
         f"source_observation_state={source_state} "
         f"unprocessed_source_count={added_count} "

@@ -2372,6 +2372,55 @@ resolved boundedly; all ten inherited forward verification obligations remain
 pending. GRC9V4 must delegate the disabled branch exactly to unchanged GRC9V3
 rather than substitute T3a.
 
+### D11-G9 Accepted-Bounded Axis-Preserving Expansion
+
+```text
+record_id = GRC9V4-CD-D11-G9-RESOLUTION-v1
+status = accepted_bounded
+decision_record_digest = a0813ceead2c992ec197790abd8a0ceea167ae2d952f853cf48f1db4d8001615
+selected_candidate = D11-G9-P4a
+selected_policy = grc9v4_axis_preserving_chiral_same_port_expansion_v1
+scientific_result_accepted = true
+```
+
+The accepted primary law is
+
+$$
+\beta_\epsilon(b)=b\oplus_3\epsilon,
+\qquad
+r_b^\epsilon=\beta_\epsilon(b)+3(b-1),
+$$
+
+$$
+(c,r_b^\epsilon)\leftrightarrow(s_b,r_b^\epsilon),
+\qquad
+\epsilon\in\{-1,+1\}.
+$$
+
+The two mirror spines are $(2,6,7)$ and $(3,4,8)$. Every internal edge uses the
+same port type at both endpoints, all old boundaries retain their exact ports,
+and creation-order branch-row BFS trees extend the construction to arbitrary
+capacity-selected size. Chirality is always explicit; growth phase is `none`
+exactly when the extra-node remainder is zero and otherwise is an explicit
+member of $\{1,2,3\}$. The witness passes 23,256 admitted plans over
+$D_{\mathrm{eff}}=9,\ldots,5000$, 1,000 input shuffles, unique local endpoint
+occupancy, nonstalling, $7n+2$ capacity, row/column imbalance at most one, and
+dihedral covariance.
+
+D11-G9-P4a supersedes the provisional P1/P1a center-row repair while retaining
+P1a's exact stable-ID grammar and its corrected Candidate C and whole-carrier
+$K_4$ lifecycle boundaries. GRC9 and GRC9V3 remain unchanged. Exact disabled
+compatibility is limited to the legacy target-defined domain; the saturated
+port-5 conflict fails closed as `legacy_expansion_target_undefined`.
+
+The append-only supplement adds `D11-G9-CL-N-001`, nine reciprocal claim
+edges, ten specialization objects, and twenty contracts. The accumulated
+population is 80 objects and 183 contracts, with 39 D10 current claims, 29
+historical nodes, two D11 successor claims, and all 29 D10 debt transformations
+preserved. Seventeen forward verification obligations remain pending. Paper
+propagation is now the next gate; specification and implementation authority
+remain closed until their ordered gates.
+
 Authoritative opening and preregistration records:
 
 - [`D11SuccessorInvestigationOpening.json`](./decisions/D11SuccessorInvestigationOpening.json)
@@ -2385,3 +2434,6 @@ Authoritative opening and preregistration records:
 - [`D11CCandidateBaselineTransportProvenanceSupplement.json`](./decisions/D11CCandidateBaselineTransportProvenanceSupplement.json)
 - [`D11G9CanonicalExpansionPortAllocationClosure.json`](./decisions/D11G9CanonicalExpansionPortAllocationClosure.json)
 - [`D11G9CanonicalExpansionPortAllocationClosure.md`](./decisions/D11G9CanonicalExpansionPortAllocationClosure.md)
+- [`D11G9CanonicalExpansionPortAllocationResolution.json`](./decisions/D11G9CanonicalExpansionPortAllocationResolution.json)
+- [`D11G9CanonicalExpansionPortAllocationResolution.md`](./decisions/D11G9CanonicalExpansionPortAllocationResolution.md)
+- [`D11G9AxisPreservingExpansionProvenanceSupplement.json`](./decisions/D11G9AxisPreservingExpansionProvenanceSupplement.json)

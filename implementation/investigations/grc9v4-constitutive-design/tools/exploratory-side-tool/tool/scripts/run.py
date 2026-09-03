@@ -80,6 +80,9 @@ COMMANDS = {
     "audit-d11-c-resolution": (
         INVESTIGATION_ROOT / "scripts/audit_grc9v4_d11_c_resolution.py"
     ),
+    "audit-d11-g9-resolution": (
+        INVESTIGATION_ROOT / "scripts/audit_grc9v4_d11_g9_resolution.py"
+    ),
 }
 
 

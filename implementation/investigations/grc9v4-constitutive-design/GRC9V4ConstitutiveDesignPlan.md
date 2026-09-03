@@ -3493,8 +3493,9 @@ and its
 
 ## D11. Specification-Audit Successor Closures
 
-Status: D11-C accepted bounded as `C-HM-STIFFNESS-BASELINE-v1`; D11-G9 active
-under its existing preregistration.
+Status: D11-C accepted bounded as `C-HM-STIFFNESS-BASELINE-v1`; D11-G9 accepted
+bounded as `grc9v4_axis_preserving_chiral_same_port_expansion_v1`. Paper
+propagation is next.
 
 The September 2026 specification-stack audit established that two executable
 maps required by the extracted V4 specifications have no accepted source
@@ -3522,19 +3523,24 @@ ordered D11-G9, paper, and specification sequence.
 
 ### D11-G9. Canonical GRC9V4 Expansion Port Allocation
 
-D11-G9 is now active after D11-C acceptance. It reopens
-`D10.2-EC-PARENT-GRC9-MECHANICAL-EXPANSION` for GRC9V4 only and must select or
-boundedly decline an exact collision-free port/event map. It must not modify
-GRC9 or GRC9V3. The current spec map is candidate D11-G9-P1; it is not the
-default answer.
+D11-G9 is closed accepted bounded as corrected candidate D11-G9-P4a. It uses
+one of two explicit mirror-chiral primary same-port transversals, $(2,6,7)$ or
+$(3,4,8)$, preserves all old boundary ports, and grows arbitrary-size
+branch-row same-port trees through a chirality-ordered column rotor and
+creation-order BFS. Growth phase is absent exactly when inactive and required
+otherwise. The accepted result retains exact stable IDs, Candidate C target
+profile reconstruction, whole-carrier persistent-history handling, resource
+and receipt closure, and atomic target readmission. GRC9 and GRC9V3 remain
+unchanged; the internally undefined saturated legacy event is marked only at
+the V4 compatibility boundary.
 
 ### D11 Propagation Gate
 
-No D11-dependent result is authoritative in the paper or specs until its gate
-has a separately accepted successor record. Accepted results propagate to the
-GRC-v4 paper first, then to affected V4 spec clauses and fixtures, followed by
-a final specification audit. Implementation and `src/`/`tests/` changes remain
-unauthorized during this investigation phase.
+D11-C and D11-G9 now have separately accepted successor records. Paper
+propagation is the active gate. The accepted results then propagate to affected
+V4 spec clauses and fixtures, followed by a final specification audit.
+Implementation and `src/`/`tests/` changes remain unauthorized during this
+investigation phase.
 
 ## Expected Records
 

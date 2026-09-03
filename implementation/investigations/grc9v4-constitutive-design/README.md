@@ -757,8 +757,13 @@ is accepted bounded as corrected candidate D11-C-T3a,
 `C-HM-STIFFNESS-BASELINE-v1`. Its append-only
 [provenance supplement](./decisions/D11CCandidateBaselineTransportProvenanceSupplement.json)
 adds one optional-profile successor claim, three objects, and eleven equation
-contracts without rewriting D10.2. [`D11-G9`](./decisions/D11G9CanonicalExpansionPortAllocationClosure.md)
-is therefore active and concerns only the GRC9V4 expansion map. The formulas
-currently displayed in the specs remain unselected preregistered candidates
-until D11-G9 closes and the result is propagated paper-first. Implementation
-and changes to GRC9/GRC9V3 remain unauthorized.
+contracts without rewriting D10.2.
+[`D11-G9`](./decisions/D11G9CanonicalExpansionPortAllocationResolution.md) is
+accepted bounded as corrected candidate D11-G9-P4a. It preserves every old
+boundary port, uses one of two explicit mirror-chiral same-port primary
+transversals, and extends through deterministic branch-row same-port trees.
+Its [append-only provenance supplement](./decisions/D11G9AxisPreservingExpansionProvenanceSupplement.json)
+adds one GRC9V4-only successor claim, ten specialization objects, and twenty
+contracts without rewriting D10.2, D11-C, GRC9, or GRC9V3. The paper is now the
+active propagation surface; current spec formulas remain provisional until
+paper-first propagation completes. Implementation remains unauthorized.
