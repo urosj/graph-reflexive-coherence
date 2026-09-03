@@ -11,6 +11,7 @@ from pathlib import Path
 
 TOOL_ROOT = Path(__file__).resolve().parents[1]
 SIDE_TOOL_ROOT = Path(__file__).resolve().parents[2]
+INVESTIGATION_ROOT = SIDE_TOOL_ROOT.parents[1]
 
 
 def repository_root() -> Path:
@@ -70,6 +71,9 @@ COMMANDS = {
     "test-iteration9": TOOL_ROOT / "scripts/test_iteration9_closeout.py",
     "browser-iteration9": TOOL_ROOT / "scripts/test_iteration9_browser.py",
     "verify-iteration9": TOOL_ROOT / "scripts/verify_iteration9.py",
+    "verify-post-d10-specifications": (
+        INVESTIGATION_ROOT / "scripts/audit_grcv4_post_d10_specifications.py"
+    ),
 }
 
 

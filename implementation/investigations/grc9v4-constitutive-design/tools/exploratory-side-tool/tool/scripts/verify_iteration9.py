@@ -3,7 +3,6 @@
 
 from __future__ import annotations
 
-import json
 import shutil
 import subprocess
 import sys
@@ -42,6 +41,7 @@ D10_AUDITS = (
     "audit_grc9v4_d10_1_preliminary_provenance.py",
     "audit_grc9v4_d10_2_full_provenance.py",
 )
+POST_D10_SPECIFICATION_AUDIT = "audit_grcv4_post_d10_specifications.py"
 
 PYTHON_SUITE = (
     "audit_iteration0_contract.py",
@@ -167,7 +167,9 @@ def run_build_sequence(scripts: Path) -> None:
 
 def run_node_tests() -> tuple[int, int, str]:
     tests = tuple(sorted((TOOL_ROOT / "web/tests").glob("*.test.mjs")))
-    test_count = sum(path.read_text(encoding="utf-8").count("\ntest(") for path in tests)
+    test_count = sum(
+        path.read_text(encoding="utf-8").count("\ntest(") for path in tests
+    )
     result = subprocess.run(
         [
             str(managed_node()),
@@ -183,7 +185,11 @@ def run_node_tests() -> tuple[int, int, str]:
     if result.returncode:
         raise RuntimeError(f"ET-C9 Node suite failed\n{result.stdout}\n{result.stderr}")
     terminal = next(
-        (line.strip() for line in reversed(result.stdout.splitlines()) if "pass" in line),
+        (
+            line.strip()
+            for line in reversed(result.stdout.splitlines())
+            if "pass" in line
+        ),
         "Node tests passed",
     )
     print(f"ET_C9_NODE_TEST_PASS files={len(tests)} tests={test_count}")
@@ -208,15 +214,22 @@ def main() -> int:
     protected_before = protected_snapshot(repo_root)
     accepted_before = accepted_artifact_snapshot()
 
-    d10_results = [
-        run_python(investigation_scripts / name) for name in D10_AUDITS
-    ]
+    d10_results = [run_python(investigation_scripts / name) for name in D10_AUDITS]
+    post_d10_boundary = (
+        investigation_scripts.parent / "specification/PostD10SpecificationBoundary.json"
+    )
+    if post_d10_boundary.is_file():
+        run_python(investigation_scripts / POST_D10_SPECIFICATION_AUDIT)
 
     run_build_sequence(scripts)
     accepted_first = accepted_artifact_snapshot()
     if accepted_first != accepted_before:
         changed = sorted(set(accepted_first) | set(accepted_before))
-        changed = [key for key in changed if accepted_first.get(key) != accepted_before.get(key)]
+        changed = [
+            key
+            for key in changed
+            if accepted_first.get(key) != accepted_before.get(key)
+        ]
         raise RuntimeError(f"reconstructible accepted artifacts changed: {changed}")
     run_build_sequence(scripts)
     accepted_second = accepted_artifact_snapshot()
@@ -250,7 +263,11 @@ def main() -> int:
         raise RuntimeError("ET-C9 changed accepted source bytes")
     if protected_after != protected_before:
         changed = sorted(set(protected_after) | set(protected_before))
-        changed = [key for key in changed if protected_after.get(key) != protected_before.get(key)]
+        changed = [
+            key
+            for key in changed
+            if protected_after.get(key) != protected_before.get(key)
+        ]
         raise RuntimeError(f"ET-C9 changed protected paths: {changed}")
 
     diff = subprocess.run(["git", "diff", "--check"], cwd=repo_root, check=False)
@@ -330,12 +347,19 @@ def main() -> int:
         "receipt_digest": None,
     }
     receipt["receipt_digest"] = record_digest(receipt, "receipt_digest")
-    write_json(records / "ETC9VerificationReceipt.json", receipt)
+    receipt_path = (
+        TOOL_ROOT / "generated/post-d10-specification/ETC9VerificationReceipt.json"
+        if post_d10_boundary.is_file()
+        else records / "ETC9VerificationReceipt.json"
+    )
+    receipt_path.parent.mkdir(parents=True, exist_ok=True)
+    write_json(receipt_path, receipt)
     print(
         "ET_C9_VERIFY_PASS status=accepted rebuilds=2+2 "
         f"python_commands={len(python_results)} node_tests={node_tests} "
         "browser_tests=12 screenshots=14 source_immutable=true "
-        f"receipt={receipt['receipt_digest']}"
+        f"receipt={receipt['receipt_digest']} "
+        f"receipt_path={receipt_path.relative_to(repo_root)}"
     )
     return 0
 

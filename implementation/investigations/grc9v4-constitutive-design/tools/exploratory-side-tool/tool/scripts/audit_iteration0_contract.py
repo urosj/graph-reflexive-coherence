@@ -27,6 +27,7 @@ def repository_root() -> Path:
 
 
 REPO_ROOT = repository_root()
+INVESTIGATION_ROOT = SIDE_TOOL_ROOT.parents[1]
 RECORD_PATH = SIDE_TOOL_ROOT / "records/ETC0SourceAndLayoutContract.json"
 REPORT_PATH = SIDE_TOOL_ROOT / "records/ETC0SourceAndLayoutContract.md"
 SCENARIOS_PATH = SIDE_TOOL_ROOT / "GRCV4ExploratorySideToolUserScenarios.md"
@@ -151,10 +152,11 @@ def main() -> int:
         if environment_path.is_file()
         else None
     )
-    environment_rows = {
-        row["path"]: row
-        for row in environment.get("current_dependency_rows", [])
-    } if isinstance(environment, dict) else {}
+    environment_rows = (
+        {row["path"]: row for row in environment.get("current_dependency_rows", [])}
+        if isinstance(environment, dict)
+        else {}
+    )
     if environment is not None:
         check(
             "ET_C9_environment_digest",
@@ -174,8 +176,7 @@ def main() -> int:
             successor is not None
             and successor["ET_C0_file_sha256"] == row["file_sha256"]
             and successor["current_file_sha256"] == current_sha
-            and successor["classification"]
-            == "ET_C6_admitted_toolchain_successor"
+            and successor["classification"] == "ET_C6_admitted_toolchain_successor"
             and environment["ET_C0_record_digest"] == record["record_digest"]
             and environment["scientific_source_identity_changed"] is False
         )
@@ -262,23 +263,43 @@ def main() -> int:
             check=False,
         )
         check(f"ignored:{path}", ignore_result.returncode == 0)
-    status = subprocess.run(
-        ["git", "status", "--short"],
-        cwd=REPO_ROOT,
-        capture_output=True,
-        text=True,
-        check=True,
-    ).stdout.splitlines()
-    changed_paths = [line[3:] for line in status if len(line) >= 4]
-    allowed_prefix = (
-        "implementation/investigations/grc9v4-constitutive-design/tools/"
-        "exploratory-side-tool/"
+    post_d10_boundary = (
+        INVESTIGATION_ROOT / "specification/PostD10SpecificationBoundary.json"
     )
-    check(
-        "write_envelope_tool_only",
-        all(path.startswith(allowed_prefix) for path in changed_paths),
-        repr(changed_paths),
-    )
+    if post_d10_boundary.is_file():
+        post_d10_audit = (
+            INVESTIGATION_ROOT / "scripts/audit_grcv4_post_d10_specifications.py"
+        )
+        phase_result = subprocess.run(
+            [sys.executable, str(post_d10_audit), "--boundary-only"],
+            cwd=REPO_ROOT,
+            capture_output=True,
+            text=True,
+            check=False,
+        )
+        check(
+            "write_envelope_post_D10_phase",
+            phase_result.returncode == 0,
+            phase_result.stdout + phase_result.stderr,
+        )
+    else:
+        status = subprocess.run(
+            ["git", "status", "--short"],
+            cwd=REPO_ROOT,
+            capture_output=True,
+            text=True,
+            check=True,
+        ).stdout.splitlines()
+        changed_paths = [line[3:] for line in status if len(line) >= 4]
+        allowed_prefix = (
+            "implementation/investigations/grc9v4-constitutive-design/tools/"
+            "exploratory-side-tool/"
+        )
+        check(
+            "write_envelope_tool_only",
+            all(path.startswith(allowed_prefix) for path in changed_paths),
+            repr(changed_paths),
+        )
     doctor = subprocess.run(
         [sys.executable, str(TOOL_ROOT / "scripts/doctor.py")],
         cwd=SIDE_TOOL_ROOT,

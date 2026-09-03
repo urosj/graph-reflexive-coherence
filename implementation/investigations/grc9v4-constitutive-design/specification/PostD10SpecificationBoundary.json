@@ -1,0 +1,74 @@
+{
+  "schema": "grcv4_grc9v4_post_d10_specification_boundary_v1",
+  "authorization_base_commit": "5d80fa9f02010167f652a32127f19c53fa12fc6d",
+  "post_d10_entry_state": {
+    "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D10_2FullSubstrateProvenanceAndPromotionAudit.json",
+    "sha256": "59c2b956cec7d258b1db09d43d6df44deb8c0be0453a5d741f7e2733d6881a33",
+    "assertions": {
+      "/status": "accepted_bounded",
+      "/human_acceptance": "accepted_bounded_2026-08-26",
+      "/decision_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+      "/accepted_D10_decision_digest": "3e673b335ad428d01006f231765d060a9bdd5f134332b143048f774de94bad00"
+    }
+  },
+  "active_phase": "specification_writing",
+  "phase_authority": {
+    "authorization": "GRCV4_GRC9V4_specification_writing",
+    "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D10DesignSynthesisAndSpecWritingDecision.json",
+    "sha256": "519a6ef56c52750b6d3da673b0dc9988e43a8676e209dd205d5d6c988d7c81b6",
+    "assertions": {
+      "/authorization_effect/specification_authorized": true,
+      "/authorization_effect/implementation_authorized": false,
+      "/authorization_effect/runtime_or_src_change_authorized": false
+    }
+  },
+  "phase_policy": {
+    "specification_writing": {
+      "src_and_tests": "frozen_to_authorization_base"
+    },
+    "implementation": {
+      "activation": "requires_a_hash_bound_successor_authority_in_phase_authority",
+      "src_and_tests": "allowed"
+    }
+  },
+  "authorized_specification_outputs": [
+    "specs/grc-common-interface-v4-ext.md",
+    "specs/grc-v4-spec.md",
+    "specs/grc-9-v4-spec.md"
+  ],
+  "mutable_registry_paths": [
+    "specs/README.md"
+  ],
+  "authorized_verification_maintenance_paths": [
+    "implementation/investigations/grc9v4-constitutive-design/scripts/audit_grc9v4_d10_claim_topology.py",
+    "implementation/investigations/grc9v4-constitutive-design/scripts/audit_grcv4_post_d10_specifications.py",
+    "implementation/investigations/grc9v4-constitutive-design/specification/PostD10SpecificationBoundary.json",
+    "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/audit_iteration0_contract.py",
+    "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/run.py",
+    "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/verify_iteration9.py"
+  ],
+  "frozen_preexisting_spec_sha256": {
+    "specs/grc-9-spec.md": "abb32d9481146036da33df730e6d2ae07d72ec9bc49ef6c47926cafe0865accc",
+    "specs/grc-9-v3-evidence-profile.md": "89a445dca1e4e9797a2e89ca8aad22b8678d2db3af888510890d8e786d8987d8",
+    "specs/grc-9-v3-spec.md": "7b1f0c03988be7dbe3feb8ba926d43d891d70daa0dbbae9804fc70f2a4950f2f",
+    "specs/grc-common-interface.md": "3ccc27250a3ddb2ecccdf27984436e3dee2b10b3f71de610bfbbbcd084ae7be6",
+    "specs/grc-embedding-profile.md": "9e895770f4eed26a6dd57e011a8a386e449698de30c4382827d7d90e0709ff61",
+    "specs/grc-integration-layer.md": "2c35af0373a8a2468d9c9ea301945de32bd90291160ac2a9850cab7aa585e494",
+    "specs/grc-lgrc-causal-pathway-binding-conformance.json": "346f54d1bfffd0dc69d0ad0dfed811e3755f2b620d935dc4d896a2c2e511dc20",
+    "specs/grc-lgrc-causal-pathway-bindings.json": "c2ddf2b41fe556f446c10e3b54b762e112d595e6f2b9520384228767d0441137",
+    "specs/grc-lgrc-causal-pathway-bindings.md": "f42c56686d07214fcce728fddce7430774e9b5fc67231847bce3200831a188c5",
+    "specs/grc-lgrc-causal-pathway-composition-matrix.json": "6220a7be74c90f85892fd0f61a4f2126218e9ac104cb6451e9c1667d73c942c1",
+    "specs/grc-lgrc-causal-pathway-conformance.json": "5500ae9dfa9d26ad05f11286bf72fce983d1241fe3ffa9f21aea1c5a0eb02a1f",
+    "specs/grc-lgrc-causal-pathway-contracts.json": "0aab2d6e1e515b58b057effde5bd0a013256615d3cf3fee548b49a1d2edd9141",
+    "specs/grc-lgrc-causal-pathway-contracts.md": "9a2b7487d1c93581d83a033a474bfc1f5cc1534f7f60e9e62e8f720337548468",
+    "specs/grc-lgrc-causal-pathway-evidence-crosswalk.json": "01b72cd8ddb9be58ee3db6684218829219601c88c85ac91617e76907eb1e0f05",
+    "specs/grc-lgrc-causal-pathway-selection-guide.json": "6cb4c1b320df9725e2c7347216ad00fbb19c3231ce03b8fc7a10fc5228c770cc",
+    "specs/grc-machine-driver.md": "dece2dab6bfd5318d55907d6c1f4e2021101697383c651a82781ceae8c79d639",
+    "specs/grc-reset-baseline-persistence.md": "20a75f525b1a46e97afaa3aa9e16f63adddc754ded088fa38cd666272ddc8891",
+    "specs/grc-v2-spec.md": "5a2c0b37422b86f175796ccb6535f5d55a347e7f8cbf04fb7d9bb90b63408f25",
+    "specs/grc-v3-spec.md": "aeb88b4842b00d3ee0f12f3d7ec337d8ce7f61373100d3674ace8b6c8df4e8d8",
+    "specs/lgrc-9-v3-event-local-geometry-integration.md": "a424e894588776469287c69ab4c70eb81be28adaf950b92a3afabea2840d8961",
+    "specs/lgrc-9-v3-restoration-identity.md": "08c3ee95a9b76016648e14d028120bdebc88d2a109387874c32e4a462b037458",
+    "specs/lgrc-9-v3-spec.md": "f65b1324961dd28253cd7ff60d45b58ca051ad44a0cb09dae9e376e84ae8da4c"
+  }
+}

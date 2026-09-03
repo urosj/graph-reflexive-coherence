@@ -6,6 +6,7 @@ from __future__ import annotations
 import hashlib
 import json
 import subprocess
+import sys
 from pathlib import Path
 from typing import Any
 
@@ -766,19 +767,37 @@ check(
     "D10_acceptance_status_propagated",
     all("accepted_bounded" in path.read_text() for path in status_documents),
 )
-status_lines = subprocess.run(
-    ["git", "status", "--short"],
-    cwd=ROOT,
-    check=True,
-    text=True,
-    capture_output=True,
-).stdout.splitlines()
-changed_paths = [line[3:] for line in status_lines if line]
-check(
-    "no_src_tests_or_specs_changes",
-    all(not path.startswith(("src/", "tests/", "specs/")) for path in changed_paths),
-    str(changed_paths),
-)
+post_d10_boundary = DECISIONS.parent / "specification/PostD10SpecificationBoundary.json"
+if post_d10_boundary.is_file():
+    post_d10_audit = DECISIONS.parent / "scripts/audit_grcv4_post_d10_specifications.py"
+    result = subprocess.run(
+        [sys.executable, str(post_d10_audit), "--boundary-only"],
+        cwd=ROOT,
+        check=False,
+        text=True,
+        capture_output=True,
+    )
+    check(
+        "post_D10_phase_boundary",
+        result.returncode == 0,
+        (result.stdout + result.stderr).strip(),
+    )
+else:
+    status_lines = subprocess.run(
+        ["git", "status", "--short"],
+        cwd=ROOT,
+        check=True,
+        text=True,
+        capture_output=True,
+    ).stdout.splitlines()
+    changed_paths = [line[3:] for line in status_lines if line]
+    check(
+        "no_src_tests_or_specs_changes",
+        all(
+            not path.startswith(("src/", "tests/", "specs/")) for path in changed_paths
+        ),
+        str(changed_paths),
+    )
 
 failed = [(name, detail) for name, passed, detail in checks if not passed]
 print(f"checks={len(checks)} passed={len(checks) - len(failed)} failed={len(failed)}")
