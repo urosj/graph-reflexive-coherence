@@ -20,6 +20,9 @@ READINESS_AUDIT_SHA256 = (
 PRESSURE_AUDIT_SHA256 = (
     "bb0621b3abe793486711acdd62e718c4415e8c5cbb6bea271580d4abc806e7ae"
 )
+FINAL_ACCEPTANCE_AUDIT_SHA256 = (
+    "c0d7d01331868e45e92dbcdb54e5479fdc48cd4f478125ea4e452f81ea527c20"
+)
 
 SPECIFICATION_MEMBERS = (
     ("generic_v4_specification", "specs/grc-v4-spec.md"),
@@ -165,6 +168,10 @@ def build() -> dict[str, Any]:
                 "name": "GRCV4-specification-correction-release-pressure-audit.md",
                 "sha256": PRESSURE_AUDIT_SHA256,
             },
+            {
+                "name": "GRCV4-final-specification-release-acceptance-audit.md",
+                "sha256": FINAL_ACCEPTANCE_AUDIT_SHA256,
+            },
         ],
     }
     canonical = jcs_subset(identity_payload).encode("utf-8")
@@ -199,6 +206,14 @@ def build() -> dict[str, Any]:
             "sha256": PRESSURE_AUDIT_SHA256,
             "role": "external_pressure_correction_input_not_scientific_authority",
             "bounded_defect_count": 7,
+        },
+        "final_acceptance_audit": {
+            "name": "GRCV4-final-specification-release-acceptance-audit.md",
+            "sha256": FINAL_ACCEPTANCE_AUDIT_SHA256,
+            "role": "external_final_acceptance_correction_input_not_scientific_authority",
+            "required_vector_defect_count": 1,
+            "recommended_release_hardening_count": 3,
+            "scientific_successor_required": False,
         },
         "creation_tools": creation_tools,
         "rebuild_command": (

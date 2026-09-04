@@ -108,9 +108,7 @@ def wrapped_payload(schema_version: str, field: str, payload: Any) -> dict[str, 
     return {"schema_version": schema_version, field: payload}
 
 
-def wrapped_digest(
-    prefix: str, schema_version: str, field: str, payload: Any
-) -> str:
+def wrapped_digest(prefix: str, schema_version: str, field: str, payload: Any) -> str:
     return identity(prefix, wrapped_payload(schema_version, field, payload))
 
 
@@ -258,9 +256,20 @@ def resolved_a_os_params() -> dict[str, Any]:
     return payload
 
 
-def profile_payload(
-    params_id: str, profile_family: str = "C_OS"
-) -> dict[str, Any]:
+def resolved_a_pc_params() -> dict[str, Any]:
+    payload = resolved_a_os_params()
+    payload["realization"] = {
+        "schema_version": "grcv4-pc-params-v1",
+        "tau_PC": 2,
+        "radius": 1,
+        "carrier_norm_id": "edge_l2_v1",
+        "source_envelope_id": "authoritative_current_magnitude_v1",
+        "writer_id": "zero_order_hold_exponential_v1",
+    }
+    return payload
+
+
+def profile_payload(params_id: str, profile_family: str = "C_OS") -> dict[str, Any]:
     realization = {"C_OS": "OS", "C_PC": "PC"}[profile_family]
     return {
         "schema_version": "grcv4-profile-identity-v1",
@@ -283,12 +292,16 @@ def profile_payload(
     }
 
 
-def candidate_a_profile_payload(params_id: str) -> dict[str, Any]:
+def candidate_a_profile_payload(
+    params_id: str, profile_family: str = "A_OS"
+) -> dict[str, Any]:
     payload = profile_payload(params_id)
+    realization = {"A_OS": "OS", "A_PC": "PC"}[profile_family]
     payload.update(
         {
-            "profile_family_id": "A_OS",
+            "profile_family_id": profile_family,
             "candidate": "A",
+            "realization": realization,
             "candidate_c_transport_id": None,
         }
     )
@@ -518,6 +531,75 @@ def build_target_plan(
     }
 
 
+def transport_covariant_plan(
+    base: dict[str, Any],
+    target: dict[str, Any],
+    port_permutation: dict[str, int],
+    branch_permutation: dict[str, int],
+) -> dict[str, Any]:
+    """Transport a D11-G9 plan into the target event/role namespace."""
+
+    base_event_id = base["expected"]["event_id"]
+    target_event_id = target["expected"]["event_id"]
+
+    def map_port(port: int) -> int:
+        return port_permutation[str(port)]
+
+    def map_branch(branch: str) -> str:
+        return str(branch_permutation[branch])
+
+    def map_node(node_id: str) -> str:
+        if node_id == f"{base_event_id}/core":
+            return f"{target_event_id}/core"
+        if node_id.startswith(f"{base_event_id}/satellite/"):
+            branch = node_id.rsplit("/", 1)[1]
+            return f"{target_event_id}/satellite/{map_branch(branch)}"
+        if node_id.startswith(f"{base_event_id}/extra/"):
+            branch, ordinal = node_id.removeprefix(f"{base_event_id}/extra/").split(
+                "/", 1
+            )
+            return f"{target_event_id}/extra/{map_branch(branch)}/{ordinal}"
+        if node_id.startswith("outside-"):
+            return f"outside-{map_port(int(node_id.removeprefix('outside-')))}"
+        raise ValueError(f"unrecognized covariant node role: {node_id}")
+
+    def map_edge_id(edge_id: str) -> str:
+        if edge_id.startswith("old-"):
+            return f"old-{map_port(int(edge_id.removeprefix('old-')))}"
+        if edge_id.startswith(f"{base_event_id}/internal/extra/"):
+            branch, ordinal = edge_id.removeprefix(
+                f"{base_event_id}/internal/extra/"
+            ).split("/", 1)
+            return f"{target_event_id}/internal/extra/{map_branch(branch)}/{ordinal}"
+        if edge_id.startswith(f"{base_event_id}/internal/"):
+            branch = edge_id.removeprefix(f"{base_event_id}/internal/")
+            return f"{target_event_id}/internal/{map_branch(branch)}"
+        raise ValueError(f"unrecognized covariant edge role: {edge_id}")
+
+    transported_edges = []
+    for edge in base["expected"]["target_edges"]:
+        transported_edges.append(
+            {
+                "edge_id": map_edge_id(edge["edge_id"]),
+                "kind": edge["kind"],
+                "tail": {
+                    "node_id": map_node(edge["tail"]["node_id"]),
+                    "port": map_port(edge["tail"]["port"]),
+                },
+                "head": {
+                    "node_id": map_node(edge["head"]["node_id"]),
+                    "port": map_port(edge["head"]["port"]),
+                },
+            }
+        )
+    return {
+        "live_node_ids": sorted(
+            map_node(node_id) for node_id in base["expected"]["target_live_node_ids"]
+        ),
+        "edges": sorted(transported_edges, key=lambda row: row["edge_id"]),
+    }
+
+
 def history_channel(
     subject: str,
     policy_id: str,
@@ -560,10 +642,7 @@ def resource_transform(
             if target == source and source != "source-s":
                 coefficient = 1.0
             for branch, share in zip((1, 2, 3), shares, strict=True):
-                if (
-                    target == f"{event_id}/satellite/{branch}"
-                    and source == "source-s"
-                ):
+                if target == f"{event_id}/satellite/{branch}" and source == "source-s":
                     coefficient = share
             coefficients.append(coefficient)
     return {
@@ -821,9 +900,7 @@ def persistent_expansion_vector(
         "scientific_state_digest": target_state_id,
         "receipt_ids": [receipt_id],
     }
-    target_lifecycle_id = identity(
-        "grcv4-lifecycle-sha256", target_lifecycle_payload
-    )
+    target_lifecycle_id = identity("grcv4-lifecycle-sha256", target_lifecycle_payload)
     return {
         "fixture_id": vector_id,
         "profile_family_id": "C_PC",
@@ -870,12 +947,14 @@ def persistent_expansion_vector(
             "target_reset_digest": target_reset_id,
             "target_state_digest": target_state_id,
             "emitted_receipt_ids": [receipt_id],
-            "emitted_receipts": [{
-                "schema_version": "grcv4-successful-receipt-envelope-v1",
-                "receipt_id": receipt_id,
-                "commit_id": commit_id,
-                "identity_payload": receipt_payload,
-            }],
+            "emitted_receipts": [
+                {
+                    "schema_version": "grcv4-successful-receipt-envelope-v1",
+                    "receipt_id": receipt_id,
+                    "commit_id": commit_id,
+                    "identity_payload": receipt_payload,
+                }
+            ],
             "commit_id": commit_id,
             "target_lifecycle_digest": target_lifecycle_id,
             "source_node_live_after_commit": False,
@@ -933,6 +1012,10 @@ def build() -> dict[str, Any]:
     a_profile_payload = candidate_a_profile_payload(a_params_id)
     a_profile_id = identity("grcv4-profile-sha256", a_profile_payload)
     a_template = candidate_a_profile_template(a_profile_id)
+    a_pc_params = resolved_a_pc_params()
+    a_pc_params_id = identity("grcv4-params-sha256", a_pc_params)
+    a_pc_profile_payload = candidate_a_profile_payload(a_pc_params_id, "A_PC")
+    a_pc_profile_id = identity("grcv4-profile-sha256", a_pc_profile_payload)
 
     g9_params = specialization_params()
     g9_params_id = identity("grc9v4-params-sha256", g9_params)
@@ -944,9 +1027,30 @@ def build() -> dict[str, Any]:
         "specialization_id": g9_id,
     }
     source_model_id = identity("grc9v4-model-sha256", source_model_payload)
+    a_pc_model_payload = {
+        "schema_version": "grc9v4-complete-identity-v1",
+        "grcv4_complete_profile_id": a_pc_profile_id,
+        "specialization_id": g9_id,
+    }
+    a_pc_model_id = identity("grc9v4-model-sha256", a_pc_model_payload)
 
     graph_payload = source_graph()
     source_graph_id = identity("grc-graph-sha256", graph_payload)
+    source_graph_envelope = {**graph_payload, "graph_digest": source_graph_id}
+    port_graph_envelope_vectors = [
+        {
+            "vector_id": "GRC9V4-PORT-GRAPH-PAYLOAD-DIGEST-ENVELOPE",
+            "payload_schema_ref": "port_graph_payload",
+            "envelope_schema_ref": "serialized_port_graph",
+            "payload": graph_payload,
+            "serialized_port_graph": source_graph_envelope,
+            "expected": {
+                "graph_digest": source_graph_id,
+                "graph_digest_omitted_from_preimage": True,
+                "envelope_payload_projection_equal": True,
+            },
+        }
+    ]
     source_nodes = graph_payload["live_node_ids"]
     source_resource = [3 if node == "source-s" else 0 for node in source_nodes]
     source_reset_payload = {
@@ -973,6 +1077,35 @@ def build() -> dict[str, Any]:
         "context_value_digest": None,
     }
     source_state_id = identity("grcv4-state-sha256", source_state_payload)
+    a_pc_authoritative = {
+        "C": source_resource,
+        "W_A": [1 for _ in graph_payload["edges"]],
+        "Z_4": [0.5],
+    }
+    a_pc_reset_payload = {
+        "schema_version": "grc9v4-reset-baseline-v1",
+        "active_model_identity": a_pc_model_id,
+        "graph_digest": source_graph_id,
+        "orientation_identity": "tail_to_head_edge_id_order_v1",
+        "authoritative": a_pc_authoritative,
+        "Q_target": 3,
+        "context_contract_id": "constant_zero_context_v1",
+    }
+    a_pc_reset_id = identity("grcv4-reset-sha256", a_pc_reset_payload)
+    a_pc_state_payload = {
+        "schema_version": "grcv4-scientific-state-v1",
+        "active_model_identity": a_pc_model_id,
+        "graph_digest": source_graph_id,
+        "orientation_identity": "tail_to_head_edge_id_order_v1",
+        "step_index": 1,
+        "time": 1,
+        "authoritative": a_pc_authoritative,
+        "reset_digest": a_pc_reset_id,
+        "Q_target": 3,
+        "context_contract_id": "constant_zero_context_v1",
+        "context_value_digest": None,
+    }
+    a_pc_state_id = identity("grcv4-state-sha256", a_pc_state_payload)
     source_lifecycle_payload = {
         "schema_version": "grcv4-lifecycle-envelope-v1",
         "scientific_state_digest": source_state_id,
@@ -1005,6 +1138,115 @@ def build() -> dict[str, Any]:
         "carrier": carrier_history_policy,
         "candidate_history_policy_digest": candidate_history_id,
         "carrier_history_policy_digest": carrier_history_id,
+    }
+    candidate_loss_source_id = identity(
+        "grcv4-history-content-sha256",
+        {
+            "schema_version": "grcv4-history-content-identity-v1",
+            "subject": "candidate",
+            "content": [1],
+        },
+    )
+    carrier_loss_source_id = identity(
+        "grcv4-history-content-sha256",
+        {
+            "schema_version": "grcv4-history-content-identity-v1",
+            "subject": "carrier",
+            "content": [1],
+        },
+    )
+    candidate_loss_policy = history_channel(
+        "candidate",
+        "candidate_history_explicit_loss_v1",
+        "explicit_loss",
+        source_history_digest=candidate_loss_source_id,
+        information_loss="candidate_history_loss",
+    )
+    carrier_loss_policy = history_channel(
+        "carrier",
+        "carrier_history_explicit_loss_v1",
+        "explicit_loss",
+        source_history_digest=carrier_loss_source_id,
+        information_loss="carrier_history_loss",
+    )
+    multi_loss_history_policy = {
+        "schema_version": "grcv4-history-bundle-policy-v1",
+        "candidate": candidate_loss_policy,
+        "carrier": carrier_loss_policy,
+    }
+    multi_loss_history_digest = wrapped_digest(
+        "grcv4-history-map-sha256",
+        "grcv4-history-bundle-identity-v1",
+        "history_bundle",
+        multi_loss_history_policy,
+    )
+    identity_resource_transform = {
+        "schema_version": "grcv4-resource-event-transform-v1",
+        "policy_id": "identity_resource_transport_v1",
+        "source_vertex_ids": ["source-s"],
+        "target_vertex_ids": ["source-s"],
+        "row_major_coefficients": [1],
+        "target_increment": [0],
+    }
+    identity_resource_transform_id = wrapped_digest(
+        "grcv4-resource-transform-sha256",
+        "grcv4-resource-transform-identity-v1",
+        "transform",
+        identity_resource_transform,
+    )
+    a_pc_authoritative_id = wrapped_digest(
+        "grcv4-authoritative-sha256",
+        "grcv4-authoritative-state-identity-v1",
+        "authoritative",
+        a_pc_authoritative,
+    )
+    target_authoritative_id = wrapped_digest(
+        "grcv4-authoritative-sha256",
+        "grcv4-authoritative-state-identity-v1",
+        "authoritative",
+        source_state_payload["authoritative"],
+    )
+    multi_loss_receipt_payload = {
+        "schema_version": "grcv4-profile-migration-receipt-v1",
+        "core": {
+            "operation_id": "operation:IDENTITY-GRCV4-MULTI-LOSS-RECEIPT",
+            "source_state_digest": a_pc_state_id,
+            "target_state_digest": source_state_id,
+            "source_graph_digest": source_graph_id,
+            "target_graph_digest": source_graph_id,
+            "source_model_identity": a_pc_model_id,
+            "target_model_identity": source_model_id,
+            "source_authoritative_digest": a_pc_authoritative_id,
+            "target_authoritative_digest": target_authoritative_id,
+            "source_reset_digest": a_pc_reset_id,
+            "target_reset_digest": source_reset_id,
+            "resource_transform_digest": identity_resource_transform_id,
+            "history_bundle_digest": multi_loss_history_digest,
+            "actual_charge_delta": 0,
+            "information_losses": [
+                "candidate_history_loss",
+                "carrier_history_loss",
+            ],
+            "disposition": "committed",
+            "parent_receipt_ids": [],
+        },
+        "history": {
+            "schema_version": "grcv4-history-bundle-receipt-v1",
+            "candidate": {
+                "subject": "candidate",
+                "disposition": "explicit_loss",
+                "source_history_digest": candidate_loss_source_id,
+                "target_history_digest": None,
+                "information_loss": "candidate_history_loss",
+            },
+            "carrier": {
+                "subject": "carrier",
+                "disposition": "explicit_loss",
+                "source_history_digest": carrier_loss_source_id,
+                "target_history_digest": None,
+                "information_loss": "carrier_history_loss",
+            },
+        },
     }
 
     identity_vectors = [
@@ -1073,6 +1315,12 @@ def build() -> dict[str, Any]:
             "#/$defs/lifecycle_envelope_payload",
             "grcv4-lifecycle-sha256",
             source_lifecycle_payload,
+        ),
+        identity_vector(
+            "IDENTITY-GRCV4-MULTI-LOSS-RECEIPT",
+            "#/$defs/profile_migration_receipt_identity_payload",
+            "grc-receipt-sha256",
+            multi_loss_receipt_payload,
         ),
     ]
 
@@ -1373,9 +1621,7 @@ def build() -> dict[str, Any]:
     }
     generic_source_graph_id = identity("grc-graph-sha256", generic_source_graph)
     generic_source_params = resolved_params({"e-uv": 1})
-    generic_source_params_id = identity(
-        "grcv4-params-sha256", generic_source_params
-    )
+    generic_source_params_id = identity("grcv4-params-sha256", generic_source_params)
     generic_source_profile_payload = profile_payload(generic_source_params_id)
     generic_source_profile_id = identity(
         "grcv4-profile-sha256", generic_source_profile_payload
@@ -1419,9 +1665,7 @@ def build() -> dict[str, Any]:
     }
     generic_target_graph_id = identity("grc-graph-sha256", generic_target_graph)
     generic_target_params = resolved_params({"e-uv": 1, "e-vw": 2})
-    generic_target_params_id = identity(
-        "grcv4-params-sha256", generic_target_params
-    )
+    generic_target_params_id = identity("grcv4-params-sha256", generic_target_params)
     generic_target_profile_payload = profile_payload(generic_target_params_id)
     generic_target_profile_id = identity(
         "grcv4-profile-sha256", generic_target_profile_payload
@@ -1616,9 +1860,7 @@ def build() -> dict[str, Any]:
     base_request = dict(expansion_vectors[0]["request"])
     base_request["schema_version"] = "grc9v4-expansion-event-request-input-v1"
 
-    def invalid_expansion_input(
-        fixture_id: str, **overrides: Any
-    ) -> dict[str, Any]:
+    def invalid_expansion_input(fixture_id: str, **overrides: Any) -> dict[str, Any]:
         request = dict(base_request)
         request["operation_id"] = f"operation:{fixture_id}"
         request.update(overrides)
@@ -1626,7 +1868,9 @@ def build() -> dict[str, Any]:
 
     self_loop_graph = source_graph()
     self_loop_graph["edges"] = [
-        edge for edge in self_loop_graph["edges"] if edge["edge_id"] not in {"old-1", "old-2"}
+        edge
+        for edge in self_loop_graph["edges"]
+        if edge["edge_id"] not in {"old-1", "old-2"}
     ]
     self_loop_graph["edges"].append(
         {
@@ -1760,9 +2004,7 @@ def build() -> dict[str, Any]:
         {
             "fixture_id": "G9-FAIL-TARGET-READMISSION",
             "base_vector_id": "G9-EXPAND-D30-CHIRALITY-POSITIVE",
-            "request_input": invalid_expansion_input(
-                "G9-FAIL-TARGET-READMISSION"
-            ),
+            "request_input": invalid_expansion_input("G9-FAIL-TARGET-READMISSION"),
             "harness_fault": {
                 "schema_version": "grcv4-conformance-harness-fault-v1",
                 "stage": "target_readmission",
@@ -1943,14 +2185,36 @@ def build() -> dict[str, Any]:
         },
     ]
 
-    semantic_admission_vectors = [
+    schema_negative_vectors = [
         {
-            "vector_id": "SEMANTIC-REJECT-PROFILE-FIELD-MISMATCH",
-            "validator_id": "grcv4-contract-semantic-admission-v1",
+            "vector_id": "SCHEMA-REJECT-PROFILE-FIELD-MISMATCH",
+            "schema_ref": "profile_identity_payload",
             "invariant": "profile_fields_agree",
             "input": {**source_profile_payload, "candidate": "A"},
-            "expected": {"admitted": False, "code": "profile_fields_mismatch"},
+            "expected": {
+                "schema_valid": False,
+                "rejection_layer": "json_schema",
+                "semantic_validator_invoked": False,
+            },
         },
+        {
+            "vector_id": "SCHEMA-REJECT-HISTORY-SUBJECT-MISMATCH",
+            "schema_ref": "history_bundle_policy",
+            "invariant": "history_channel_subjects_agree",
+            "input": {
+                "schema_version": "grcv4-history-bundle-policy-v1",
+                "candidate": {**candidate_history_policy, "subject": "carrier"},
+                "carrier": {**carrier_history_policy, "subject": "candidate"},
+            },
+            "expected": {
+                "schema_valid": False,
+                "rejection_layer": "json_schema",
+                "semantic_validator_invoked": False,
+            },
+        },
+    ]
+
+    semantic_admission_vectors = [
         {
             "vector_id": "SEMANTIC-REJECT-RESOURCE-DISTRIBUTION-SUM",
             "validator_id": "grcv4-contract-semantic-admission-v1",
@@ -2026,22 +2290,46 @@ def build() -> dict[str, Any]:
                 "code": "resolved_parameters_identity_mismatch",
             },
         },
-        {
-            "vector_id": "SEMANTIC-REJECT-HISTORY-SUBJECT-MISMATCH",
-            "validator_id": "grcv4-contract-semantic-admission-v1",
-            "invariant": "history_channel_subjects_agree",
-            "input": {
-                "schema_version": "grcv4-history-bundle-policy-v1",
-                "candidate": {**candidate_history_policy, "subject": "carrier"},
-                "carrier": {**carrier_history_policy, "subject": "candidate"},
-            },
-            "expected": {
-                "admitted": False,
-                "code": "history_channel_subject_mismatch",
-            },
-        },
     ]
 
+    covariance_normalization_policy_id = (
+        "grc9v4-event-namespace-and-role-covariance-normalization-v1"
+    )
+    metamorphic_normalization_policies = {
+        covariance_normalization_policy_id: {
+            "schema_version": "grc9v4-metamorphic-normalization-policy-v1",
+            "policy_id": covariance_normalization_policy_id,
+            "event_id_namespaces": (
+                "replace the base expected event-ID namespace with the target "
+                "expected event-ID namespace"
+            ),
+            "branch_indexed_node_role_ids": (
+                "transport satellite/<b> and extra/<b>/<ordinal> with the "
+                "declared branch permutation; core remains core"
+            ),
+            "branch_indexed_edge_role_ids": (
+                "transport internal/<b> and internal/extra/<b>/<ordinal> with "
+                "the declared branch permutation"
+            ),
+            "old_boundary_edge_ids": ("transport old-<p> to old-<port_permutation[p]>"),
+            "external_node_labels": (
+                "transport outside-<p> to outside-<port_permutation[p]>"
+            ),
+            "endpoint_ports": "transport every endpoint port p by port_permutation[p]",
+            "module_chirality": (
+                "cyclic_chart_rotation preserves input chirality; "
+                "reflection_chirality_conjugacy negates it"
+            ),
+            "growth_phase": (
+                "transport an active input phase by branch_permutation; "
+                "an inactive null phase remains null"
+            ),
+            "comparison": (
+                "sort transported live node IDs and transported edges by edge_id, "
+                "then require exact equality with the referenced target plan"
+            ),
+        }
+    }
     metamorphic_vectors = [
         {
             "vector_id": "G9-METAMORPHIC-SOURCE-EDGE-ORDER-PERMUTATION",
@@ -2062,13 +2350,22 @@ def build() -> dict[str, Any]:
         {
             "vector_id": "G9-METAMORPHIC-CYCLIC-CHART-ROTATION",
             "kind": "cyclic_chart_rotation",
+            "base_vector_id": "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-1",
+            "expected_target_vector_id": ("G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-2"),
+            "normalization_policy_id": covariance_normalization_policy_id,
             "input": {
                 "module_chirality": 1,
                 "growth_phase": 1,
                 "port_permutation": {
-                    "1": 2, "2": 3, "3": 1,
-                    "4": 5, "5": 6, "6": 4,
-                    "7": 8, "8": 9, "9": 7,
+                    "1": 5,
+                    "2": 6,
+                    "3": 4,
+                    "4": 8,
+                    "5": 9,
+                    "6": 7,
+                    "7": 2,
+                    "8": 3,
+                    "9": 1,
                 },
                 "branch_permutation": {"1": 2, "2": 3, "3": 1},
             },
@@ -2081,13 +2378,22 @@ def build() -> dict[str, Any]:
         {
             "vector_id": "G9-METAMORPHIC-REFLECTION-CHIRALITY-CONJUGACY",
             "kind": "reflection_chirality_conjugacy",
+            "base_vector_id": "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-1",
+            "expected_target_vector_id": ("G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-3"),
+            "normalization_policy_id": covariance_normalization_policy_id,
             "input": {
                 "module_chirality": 1,
                 "growth_phase": 1,
                 "port_permutation": {
-                    "1": 3, "2": 2, "3": 1,
-                    "4": 6, "5": 5, "6": 4,
-                    "7": 9, "8": 8, "9": 7,
+                    "1": 9,
+                    "2": 8,
+                    "3": 7,
+                    "4": 6,
+                    "5": 5,
+                    "6": 4,
+                    "7": 3,
+                    "8": 2,
+                    "9": 1,
                 },
                 "branch_permutation": {"1": 3, "2": 2, "3": 1},
             },
@@ -2098,6 +2404,39 @@ def build() -> dict[str, Any]:
             },
         },
     ]
+    expansion_by_id = {
+        row["fixture_id"]: row
+        for row in expansion_vectors
+        if row["fixture_id"].startswith("G9-EXPAND-D52-")
+    }
+    for row in metamorphic_vectors:
+        if row["kind"] == "source_edge_input_order_permutation":
+            continue
+        base = expansion_by_id[row["base_vector_id"]]
+        target = expansion_by_id[row["expected_target_vector_id"]]
+        transported = transport_covariant_plan(
+            base,
+            target,
+            row["input"]["port_permutation"],
+            row["input"]["branch_permutation"],
+        )
+        target_plan = {
+            "live_node_ids": target["expected"]["target_live_node_ids"],
+            "edges": target["expected"]["target_edges"],
+        }
+        if transported != target_plan:
+            raise RuntimeError(
+                f"{row['vector_id']}: transported D52 plan does not equal target"
+            )
+        if (
+            target["event_identity_payload"]["module_chirality"]
+            != row["expected"]["module_chirality"]
+            or target["event_identity_payload"]["growth_phase"]
+            != row["expected"]["growth_phase"]
+        ):
+            raise RuntimeError(
+                f"{row['vector_id']}: target chirality or growth phase drift"
+            )
 
     return {
         "schema": "grcv4_conformance_vectors_v2",
@@ -2139,6 +2478,7 @@ def build() -> dict[str, Any]:
             ),
         ],
         "identity_vectors": identity_vectors,
+        "port_graph_envelope_vectors": port_graph_envelope_vectors,
         "subdigest_identity_vectors": subdigest_vectors,
         "candidate_c_algebra_vectors": [c_witness],
         "grc9_expansion_vectors": expansion_vectors,
@@ -2149,8 +2489,10 @@ def build() -> dict[str, Any]:
         "semantic_admission": {
             "validator_id": "grcv4-contract-semantic-admission-v1",
             "json_schema_validity_is_necessary_not_sufficient": True,
+            "schema_negative_vectors": schema_negative_vectors,
             "negative_vectors": semantic_admission_vectors,
         },
+        "grc9_metamorphic_normalization_policies": metamorphic_normalization_policies,
         "grc9_metamorphic_vectors": metamorphic_vectors,
         "coverage_holds": {
             "candidate_a_numeric_vectors": "required_before_candidate_A_runtime_conformance",

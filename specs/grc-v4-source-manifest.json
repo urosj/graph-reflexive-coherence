@@ -20,6 +20,12 @@
     "role": "external_specification_pressure_correction_input",
     "authority": "implementation_contract_findings_not_scientific_evidence"
   },
+  "final_release_acceptance_audit": {
+    "name": "GRCV4-final-specification-release-acceptance-audit.md",
+    "sha256": "c0d7d01331868e45e92dbcdb54e5479fdc48cd4f478125ea4e452f81ea527c20",
+    "role": "external_final_release_acceptance_correction_input",
+    "authority": "mechanical_vector_and_contract_findings_not_scientific_evidence"
+  },
   "release_manifest": "specs/grc-v4-specification-release.json",
   "source_byte_portability": "the release manifest binds every controlling source path and current byte hash; historical commit reachability is provenance-only",
   "sources": [

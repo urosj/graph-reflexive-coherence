@@ -11,11 +11,11 @@
   },
   "bindings": {
     "builder_path": "implementation/investigations/grc9v4-constitutive-design/scripts/build_grcv4_specification_vectors.py",
-    "builder_sha256": "a3ad89764021b9da4254cb04bfdd33fd2fc21766a98148df58091d1a1ab4ee9f",
+    "builder_sha256": "4a09ea851bf24e8dec748f033f9b4e97e7eefd74458b4351cabb835afc302c7f",
     "contract_schema_path": "specs/grc-v4-contract-schema.json",
-    "contract_schema_sha256": "de90ace0be6ea39cc55306e369a8044402306843509f0d85c9dd249fcd4418c9",
+    "contract_schema_sha256": "3fd072fc8c2b315f1b5dc32a4e4821a5082b5f3fc9d9a4794c007419a7aa0bea",
     "fixture_catalog_path": "specs/grc-v4-conformance-fixtures.json",
-    "fixture_catalog_sha256": "db4b93d40c114dad30592f6819a9402f80ddad9a85a9e285aa7415a63f52ea90"
+    "fixture_catalog_sha256": "90b4f4fd5b259f94363a29e23715af0450bef944002f8e611f23efabc9c7043a"
   },
   "canonicalization_vectors": [
     {
@@ -510,6 +510,318 @@
       "canonical_jcs_utf8": "{\"receipt_ids\":[],\"schema_version\":\"grcv4-lifecycle-envelope-v1\",\"scientific_state_digest\":\"grcv4-state-sha256:d5c81f16cb00defdee0713ce9ec0faa625a3194b1f33344b07fd9e84c215ca2a\"}",
       "canonical_jcs_utf8_hex": "7b22726563656970745f696473223a5b5d2c22736368656d615f76657273696f6e223a2267726376342d6c6966656379636c652d656e76656c6f70652d7631222c22736369656e74696669635f73746174655f646967657374223a2267726376342d73746174652d7368613235363a64356338316631366362303064656664656530373133636539656330666161363235613331393462316633333334346230376664396538346332313563613261227d",
       "expected_identifier": "grcv4-lifecycle-sha256:95186fdad27387dd2f0c08e96c65818f364c6e96db0a99caf4deb9bc8b677b0b"
+    },
+    {
+      "vector_id": "IDENTITY-GRCV4-MULTI-LOSS-RECEIPT",
+      "schema_ref": "#/$defs/profile_migration_receipt_identity_payload",
+      "payload": {
+        "schema_version": "grcv4-profile-migration-receipt-v1",
+        "core": {
+          "operation_id": "operation:IDENTITY-GRCV4-MULTI-LOSS-RECEIPT",
+          "source_state_digest": "grcv4-state-sha256:f385507f982e3d6096bdb949e7a1d5c8b2d9204161a3ace8888bb7451ad451bc",
+          "target_state_digest": "grcv4-state-sha256:d5c81f16cb00defdee0713ce9ec0faa625a3194b1f33344b07fd9e84c215ca2a",
+          "source_graph_digest": "grc-graph-sha256:b389bb974bf746ab75a4128620d272c7f06981bd16854c12493160ebdd403e36",
+          "target_graph_digest": "grc-graph-sha256:b389bb974bf746ab75a4128620d272c7f06981bd16854c12493160ebdd403e36",
+          "source_model_identity": "grc9v4-model-sha256:616b3db6c6dd6ee760fa4ee9ed394667053bbc66ca10b1fa6c698d53791185ee",
+          "target_model_identity": "grc9v4-model-sha256:90ca577d1ca5fecff352b87d6df3e0a42ca4b7a659cf9a84b806da5cc8f57d82",
+          "source_authoritative_digest": "grcv4-authoritative-sha256:183995d531e196cf9cd6ff555043d665770dca08c18d0ed9dde859638d3ae9aa",
+          "target_authoritative_digest": "grcv4-authoritative-sha256:ca222dade63f839ff394e90c817d0f9e4567e2dd9bd121de48d76f534e7721c5",
+          "source_reset_digest": "grcv4-reset-sha256:4ee5222536f3da12fea1f7b749336175830d0681b8c603ce84f8c03e6f990f8e",
+          "target_reset_digest": "grcv4-reset-sha256:71fe41f8629bb7e4989df439ad4b0ba06e5a7a2ab274ca726610048dda10146e",
+          "resource_transform_digest": "grcv4-resource-transform-sha256:7ae9a99804993311a179e6eeaa379fe8005414024699527f6a56446574ff905d",
+          "history_bundle_digest": "grcv4-history-map-sha256:c98b656d332cdbb943a67df48debe810137f03a3a8d47c0199ff5796e59ff3fc",
+          "actual_charge_delta": 0,
+          "information_losses": [
+            "candidate_history_loss",
+            "carrier_history_loss"
+          ],
+          "disposition": "committed",
+          "parent_receipt_ids": []
+        },
+        "history": {
+          "schema_version": "grcv4-history-bundle-receipt-v1",
+          "candidate": {
+            "subject": "candidate",
+            "disposition": "explicit_loss",
+            "source_history_digest": "grcv4-history-content-sha256:59f02ab2f18267bf819c17a709025dc7786c455df2d2f6bb16fbbb9e78da3c20",
+            "target_history_digest": null,
+            "information_loss": "candidate_history_loss"
+          },
+          "carrier": {
+            "subject": "carrier",
+            "disposition": "explicit_loss",
+            "source_history_digest": "grcv4-history-content-sha256:a3daa450c83381531f007f8ca9e25e132eeeeee9d53d96d38caa68633008789d",
+            "target_history_digest": null,
+            "information_loss": "carrier_history_loss"
+          }
+        }
+      },
+      "canonical_jcs_utf8": "{\"core\":{\"actual_charge_delta\":0,\"disposition\":\"committed\",\"history_bundle_digest\":\"grcv4-history-map-sha256:c98b656d332cdbb943a67df48debe810137f03a3a8d47c0199ff5796e59ff3fc\",\"information_losses\":[\"candidate_history_loss\",\"carrier_history_loss\"],\"operation_id\":\"operation:IDENTITY-GRCV4-MULTI-LOSS-RECEIPT\",\"parent_receipt_ids\":[],\"resource_transform_digest\":\"grcv4-resource-transform-sha256:7ae9a99804993311a179e6eeaa379fe8005414024699527f6a56446574ff905d\",\"source_authoritative_digest\":\"grcv4-authoritative-sha256:183995d531e196cf9cd6ff555043d665770dca08c18d0ed9dde859638d3ae9aa\",\"source_graph_digest\":\"grc-graph-sha256:b389bb974bf746ab75a4128620d272c7f06981bd16854c12493160ebdd403e36\",\"source_model_identity\":\"grc9v4-model-sha256:616b3db6c6dd6ee760fa4ee9ed394667053bbc66ca10b1fa6c698d53791185ee\",\"source_reset_digest\":\"grcv4-reset-sha256:4ee5222536f3da12fea1f7b749336175830d0681b8c603ce84f8c03e6f990f8e\",\"source_state_digest\":\"grcv4-state-sha256:f385507f982e3d6096bdb949e7a1d5c8b2d9204161a3ace8888bb7451ad451bc\",\"target_authoritative_digest\":\"grcv4-authoritative-sha256:ca222dade63f839ff394e90c817d0f9e4567e2dd9bd121de48d76f534e7721c5\",\"target_graph_digest\":\"grc-graph-sha256:b389bb974bf746ab75a4128620d272c7f06981bd16854c12493160ebdd403e36\",\"target_model_identity\":\"grc9v4-model-sha256:90ca577d1ca5fecff352b87d6df3e0a42ca4b7a659cf9a84b806da5cc8f57d82\",\"target_reset_digest\":\"grcv4-reset-sha256:71fe41f8629bb7e4989df439ad4b0ba06e5a7a2ab274ca726610048dda10146e\",\"target_state_digest\":\"grcv4-state-sha256:d5c81f16cb00defdee0713ce9ec0faa625a3194b1f33344b07fd9e84c215ca2a\"},\"history\":{\"candidate\":{\"disposition\":\"explicit_loss\",\"information_loss\":\"candidate_history_loss\",\"source_history_digest\":\"grcv4-history-content-sha256:59f02ab2f18267bf819c17a709025dc7786c455df2d2f6bb16fbbb9e78da3c20\",\"subject\":\"candidate\",\"target_history_digest\":null},\"carrier\":{\"disposition\":\"explicit_loss\",\"information_loss\":\"carrier_history_loss\",\"source_history_digest\":\"grcv4-history-content-sha256:a3daa450c83381531f007f8ca9e25e132eeeeee9d53d96d38caa68633008789d\",\"subject\":\"carrier\",\"target_history_digest\":null},\"schema_version\":\"grcv4-history-bundle-receipt-v1\"},\"schema_version\":\"grcv4-profile-migration-receipt-v1\"}",
+      "canonical_jcs_utf8_hex": "7b22636f7265223a7b2261637475616c5f6368617267655f64656c7461223a302c22646973706f736974696f6e223a22636f6d6d6974746564222c22686973746f72795f62756e646c655f646967657374223a2267726376342d686973746f72792d6d61702d7368613235363a63393862363536643333326364626239343361363764663438646562653831303133376630336133613864343763303139396666353739366535396666336663222c22696e666f726d6174696f6e5f6c6f73736573223a5b2263616e6469646174655f686973746f72795f6c6f7373222c22636172726965725f686973746f72795f6c6f7373225d2c226f7065726174696f6e5f6964223a226f7065726174696f6e3a4944454e544954592d47524356342d4d554c54492d4c4f53532d52454345495054222c22706172656e745f726563656970745f696473223a5b5d2c227265736f757263655f7472616e73666f726d5f646967657374223a2267726376342d7265736f757263652d7472616e73666f726d2d7368613235363a37616539613939383034393933333131613137396536656561613337396665383030353431343032343639393532376636613536343436353734666639303564222c22736f757263655f617574686f72697461746976655f646967657374223a2267726376342d617574686f72697461746976652d7368613235363a31383339393564353331653139366366396364366666353535303433643636353737306463613038633138643065643964646538353936333864336165396161222c22736f757263655f67726170685f646967657374223a226772632d67726170682d7368613235363a62333839626239373462663734366162373561343132383632306432373263376630363938316264313638353463313234393331363065626464343033653336222c22736f757263655f6d6f64656c5f6964656e74697479223a226772633976342d6d6f64656c2d7368613235363a36313662336462366336646436656537363066613465653965643339343636373035336262633636636131306231666136633639386435333739313138356565222c22736f757263655f72657365745f646967657374223a2267726376342d72657365742d7368613235363a34656535323232353336663364613132666561316637623734393333363137353833306430363831623863363033636538346638633033653666393930663865222c22736f757263655f73746174655f646967657374223a2267726376342d73746174652d7368613235363a66333835353037663938326533643630393662646239343965376131643563386232643932303431363161336163653838383862623734353161643435316263222c227461726765745f617574686f72697461746976655f646967657374223a2267726376342d617574686f72697461746976652d7368613235363a63613232326461646536336638333966663339346539306338313764306639653435363765326464396264313231646534386437366635333465373732316335222c227461726765745f67726170685f646967657374223a226772632d67726170682d7368613235363a62333839626239373462663734366162373561343132383632306432373263376630363938316264313638353463313234393331363065626464343033653336222c227461726765745f6d6f64656c5f6964656e74697479223a226772633976342d6d6f64656c2d7368613235363a39306361353737643163613566656366663335326238376436646633653061343263613462376136353963663961383462383036646135636338663537643832222c227461726765745f72657365745f646967657374223a2267726376342d72657365742d7368613235363a37316665343166383632396262376534393839646634333961643462306261303665356137613261623237346361373236363130303438646461313031343665222c227461726765745f73746174655f646967657374223a2267726376342d73746174652d7368613235363a64356338316631366362303064656664656530373133636539656330666161363235613331393462316633333334346230376664396538346332313563613261227d2c22686973746f7279223a7b2263616e646964617465223a7b22646973706f736974696f6e223a226578706c696369745f6c6f7373222c22696e666f726d6174696f6e5f6c6f7373223a2263616e6469646174655f686973746f72795f6c6f7373222c22736f757263655f686973746f72795f646967657374223a2267726376342d686973746f72792d636f6e74656e742d7368613235363a35396630326162326631383236376266383139633137613730393032356463373738366334353564663264326636626231366662626239653738646133633230222c227375626a656374223a2263616e646964617465222c227461726765745f686973746f72795f646967657374223a6e756c6c7d2c2263617272696572223a7b22646973706f736974696f6e223a226578706c696369745f6c6f7373222c22696e666f726d6174696f6e5f6c6f7373223a22636172726965725f686973746f72795f6c6f7373222c22736f757263655f686973746f72795f646967657374223a2267726376342d686973746f72792d636f6e74656e742d7368613235363a61336461613435306338333338313533316630303766386361396532356531333265656565656539643533643936643338636161363836333330303837383964222c227375626a656374223a2263617272696572222c227461726765745f686973746f72795f646967657374223a6e756c6c7d2c22736368656d615f76657273696f6e223a2267726376342d686973746f72792d62756e646c652d726563656970742d7631227d2c22736368656d615f76657273696f6e223a2267726376342d70726f66696c652d6d6967726174696f6e2d726563656970742d7631227d",
+      "expected_identifier": "grc-receipt-sha256:c968a71de00b275db446ab20f0ebde0de6d1159bee9694aeeeb8620a8f503e9d"
+    }
+  ],
+  "port_graph_envelope_vectors": [
+    {
+      "vector_id": "GRC9V4-PORT-GRAPH-PAYLOAD-DIGEST-ENVELOPE",
+      "payload_schema_ref": "port_graph_payload",
+      "envelope_schema_ref": "serialized_port_graph",
+      "payload": {
+        "schema_version": "grc9v4-port-graph-v1",
+        "live_node_ids": [
+          "outside-1",
+          "outside-2",
+          "outside-3",
+          "outside-4",
+          "outside-5",
+          "outside-6",
+          "outside-7",
+          "outside-8",
+          "outside-9",
+          "source-s"
+        ],
+        "edges": [
+          {
+            "edge_id": "old-1",
+            "kind": "boundary",
+            "tail": {
+              "node_id": "source-s",
+              "port": 1
+            },
+            "head": {
+              "node_id": "outside-1",
+              "port": 1
+            }
+          },
+          {
+            "edge_id": "old-2",
+            "kind": "boundary",
+            "tail": {
+              "node_id": "source-s",
+              "port": 2
+            },
+            "head": {
+              "node_id": "outside-2",
+              "port": 2
+            }
+          },
+          {
+            "edge_id": "old-3",
+            "kind": "boundary",
+            "tail": {
+              "node_id": "source-s",
+              "port": 3
+            },
+            "head": {
+              "node_id": "outside-3",
+              "port": 3
+            }
+          },
+          {
+            "edge_id": "old-4",
+            "kind": "boundary",
+            "tail": {
+              "node_id": "source-s",
+              "port": 4
+            },
+            "head": {
+              "node_id": "outside-4",
+              "port": 4
+            }
+          },
+          {
+            "edge_id": "old-5",
+            "kind": "boundary",
+            "tail": {
+              "node_id": "source-s",
+              "port": 5
+            },
+            "head": {
+              "node_id": "outside-5",
+              "port": 5
+            }
+          },
+          {
+            "edge_id": "old-6",
+            "kind": "boundary",
+            "tail": {
+              "node_id": "source-s",
+              "port": 6
+            },
+            "head": {
+              "node_id": "outside-6",
+              "port": 6
+            }
+          },
+          {
+            "edge_id": "old-7",
+            "kind": "boundary",
+            "tail": {
+              "node_id": "source-s",
+              "port": 7
+            },
+            "head": {
+              "node_id": "outside-7",
+              "port": 7
+            }
+          },
+          {
+            "edge_id": "old-8",
+            "kind": "boundary",
+            "tail": {
+              "node_id": "source-s",
+              "port": 8
+            },
+            "head": {
+              "node_id": "outside-8",
+              "port": 8
+            }
+          },
+          {
+            "edge_id": "old-9",
+            "kind": "boundary",
+            "tail": {
+              "node_id": "source-s",
+              "port": 9
+            },
+            "head": {
+              "node_id": "outside-9",
+              "port": 9
+            }
+          }
+        ]
+      },
+      "serialized_port_graph": {
+        "schema_version": "grc9v4-port-graph-v1",
+        "live_node_ids": [
+          "outside-1",
+          "outside-2",
+          "outside-3",
+          "outside-4",
+          "outside-5",
+          "outside-6",
+          "outside-7",
+          "outside-8",
+          "outside-9",
+          "source-s"
+        ],
+        "edges": [
+          {
+            "edge_id": "old-1",
+            "kind": "boundary",
+            "tail": {
+              "node_id": "source-s",
+              "port": 1
+            },
+            "head": {
+              "node_id": "outside-1",
+              "port": 1
+            }
+          },
+          {
+            "edge_id": "old-2",
+            "kind": "boundary",
+            "tail": {
+              "node_id": "source-s",
+              "port": 2
+            },
+            "head": {
+              "node_id": "outside-2",
+              "port": 2
+            }
+          },
+          {
+            "edge_id": "old-3",
+            "kind": "boundary",
+            "tail": {
+              "node_id": "source-s",
+              "port": 3
+            },
+            "head": {
+              "node_id": "outside-3",
+              "port": 3
+            }
+          },
+          {
+            "edge_id": "old-4",
+            "kind": "boundary",
+            "tail": {
+              "node_id": "source-s",
+              "port": 4
+            },
+            "head": {
+              "node_id": "outside-4",
+              "port": 4
+            }
+          },
+          {
+            "edge_id": "old-5",
+            "kind": "boundary",
+            "tail": {
+              "node_id": "source-s",
+              "port": 5
+            },
+            "head": {
+              "node_id": "outside-5",
+              "port": 5
+            }
+          },
+          {
+            "edge_id": "old-6",
+            "kind": "boundary",
+            "tail": {
+              "node_id": "source-s",
+              "port": 6
+            },
+            "head": {
+              "node_id": "outside-6",
+              "port": 6
+            }
+          },
+          {
+            "edge_id": "old-7",
+            "kind": "boundary",
+            "tail": {
+              "node_id": "source-s",
+              "port": 7
+            },
+            "head": {
+              "node_id": "outside-7",
+              "port": 7
+            }
+          },
+          {
+            "edge_id": "old-8",
+            "kind": "boundary",
+            "tail": {
+              "node_id": "source-s",
+              "port": 8
+            },
+            "head": {
+              "node_id": "outside-8",
+              "port": 8
+            }
+          },
+          {
+            "edge_id": "old-9",
+            "kind": "boundary",
+            "tail": {
+              "node_id": "source-s",
+              "port": 9
+            },
+            "head": {
+              "node_id": "outside-9",
+              "port": 9
+            }
+          }
+        ],
+        "graph_digest": "grc-graph-sha256:b389bb974bf746ab75a4128620d272c7f06981bd16854c12493160ebdd403e36"
+      },
+      "expected": {
+        "graph_digest": "grc-graph-sha256:b389bb974bf746ab75a4128620d272c7f06981bd16854c12493160ebdd403e36",
+        "graph_digest_omitted_from_preimage": true,
+        "envelope_payload_projection_equal": true
+      }
     }
   ],
   "subdigest_identity_vectors": [
@@ -23436,10 +23748,10 @@
   "semantic_admission": {
     "validator_id": "grcv4-contract-semantic-admission-v1",
     "json_schema_validity_is_necessary_not_sufficient": true,
-    "negative_vectors": [
+    "schema_negative_vectors": [
       {
-        "vector_id": "SEMANTIC-REJECT-PROFILE-FIELD-MISMATCH",
-        "validator_id": "grcv4-contract-semantic-admission-v1",
+        "vector_id": "SCHEMA-REJECT-PROFILE-FIELD-MISMATCH",
+        "schema_ref": "profile_identity_payload",
         "invariant": "profile_fields_agree",
         "input": {
           "schema_version": "grcv4-profile-identity-v1",
@@ -23461,10 +23773,44 @@
           "params_hash": "grcv4-params-sha256:4a0cc2a876136c4af721c3dccd6112c1e9fa5735bcbbed42e831276a14c6f301"
         },
         "expected": {
-          "admitted": false,
-          "code": "profile_fields_mismatch"
+          "schema_valid": false,
+          "rejection_layer": "json_schema",
+          "semantic_validator_invoked": false
         }
       },
+      {
+        "vector_id": "SCHEMA-REJECT-HISTORY-SUBJECT-MISMATCH",
+        "schema_ref": "history_bundle_policy",
+        "invariant": "history_channel_subjects_agree",
+        "input": {
+          "schema_version": "grcv4-history-bundle-policy-v1",
+          "candidate": {
+            "schema_version": "grcv4-history-channel-policy-v1",
+            "subject": "carrier",
+            "policy_id": "candidate_c_rederive_no_history_v1",
+            "disposition": "rederived",
+            "source_history_digest": null,
+            "target_initializer_id": null,
+            "information_loss": "none"
+          },
+          "carrier": {
+            "schema_version": "grcv4-history-channel-policy-v1",
+            "subject": "candidate",
+            "policy_id": "carrier_not_applicable_v1",
+            "disposition": "not_applicable",
+            "source_history_digest": null,
+            "target_initializer_id": null,
+            "information_loss": "none"
+          }
+        },
+        "expected": {
+          "schema_valid": false,
+          "rejection_layer": "json_schema",
+          "semantic_validator_invoked": false
+        }
+      }
+    ],
+    "negative_vectors": [
       {
         "vector_id": "SEMANTIC-REJECT-RESOURCE-DISTRIBUTION-SUM",
         "validator_id": "grcv4-contract-semantic-admission-v1",
@@ -23913,38 +24259,23 @@
           "admitted": false,
           "code": "resolved_parameters_identity_mismatch"
         }
-      },
-      {
-        "vector_id": "SEMANTIC-REJECT-HISTORY-SUBJECT-MISMATCH",
-        "validator_id": "grcv4-contract-semantic-admission-v1",
-        "invariant": "history_channel_subjects_agree",
-        "input": {
-          "schema_version": "grcv4-history-bundle-policy-v1",
-          "candidate": {
-            "schema_version": "grcv4-history-channel-policy-v1",
-            "subject": "carrier",
-            "policy_id": "candidate_c_rederive_no_history_v1",
-            "disposition": "rederived",
-            "source_history_digest": null,
-            "target_initializer_id": null,
-            "information_loss": "none"
-          },
-          "carrier": {
-            "schema_version": "grcv4-history-channel-policy-v1",
-            "subject": "candidate",
-            "policy_id": "carrier_not_applicable_v1",
-            "disposition": "not_applicable",
-            "source_history_digest": null,
-            "target_initializer_id": null,
-            "information_loss": "none"
-          }
-        },
-        "expected": {
-          "admitted": false,
-          "code": "history_channel_subject_mismatch"
-        }
       }
     ]
+  },
+  "grc9_metamorphic_normalization_policies": {
+    "grc9v4-event-namespace-and-role-covariance-normalization-v1": {
+      "schema_version": "grc9v4-metamorphic-normalization-policy-v1",
+      "policy_id": "grc9v4-event-namespace-and-role-covariance-normalization-v1",
+      "event_id_namespaces": "replace the base expected event-ID namespace with the target expected event-ID namespace",
+      "branch_indexed_node_role_ids": "transport satellite/<b> and extra/<b>/<ordinal> with the declared branch permutation; core remains core",
+      "branch_indexed_edge_role_ids": "transport internal/<b> and internal/extra/<b>/<ordinal> with the declared branch permutation",
+      "old_boundary_edge_ids": "transport old-<p> to old-<port_permutation[p]>",
+      "external_node_labels": "transport outside-<p> to outside-<port_permutation[p]>",
+      "endpoint_ports": "transport every endpoint port p by port_permutation[p]",
+      "module_chirality": "cyclic_chart_rotation preserves input chirality; reflection_chirality_conjugacy negates it",
+      "growth_phase": "transport an active input phase by branch_permutation; an inactive null phase remains null",
+      "comparison": "sort transported live node IDs and transported edges by edge_id, then require exact equality with the referenced target plan"
+    }
   },
   "grc9_metamorphic_vectors": [
     {
@@ -24211,19 +24542,22 @@
     {
       "vector_id": "G9-METAMORPHIC-CYCLIC-CHART-ROTATION",
       "kind": "cyclic_chart_rotation",
+      "base_vector_id": "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-1",
+      "expected_target_vector_id": "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-2",
+      "normalization_policy_id": "grc9v4-event-namespace-and-role-covariance-normalization-v1",
       "input": {
         "module_chirality": 1,
         "growth_phase": 1,
         "port_permutation": {
-          "1": 2,
-          "2": 3,
-          "3": 1,
-          "4": 5,
-          "5": 6,
-          "6": 4,
-          "7": 8,
-          "8": 9,
-          "9": 7
+          "1": 5,
+          "2": 6,
+          "3": 4,
+          "4": 8,
+          "5": 9,
+          "6": 7,
+          "7": 2,
+          "8": 3,
+          "9": 1
         },
         "branch_permutation": {
           "1": 2,
@@ -24240,19 +24574,22 @@
     {
       "vector_id": "G9-METAMORPHIC-REFLECTION-CHIRALITY-CONJUGACY",
       "kind": "reflection_chirality_conjugacy",
+      "base_vector_id": "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-1",
+      "expected_target_vector_id": "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-3",
+      "normalization_policy_id": "grc9v4-event-namespace-and-role-covariance-normalization-v1",
       "input": {
         "module_chirality": 1,
         "growth_phase": 1,
         "port_permutation": {
-          "1": 3,
-          "2": 2,
-          "3": 1,
+          "1": 9,
+          "2": 8,
+          "3": 7,
           "4": 6,
           "5": 5,
           "6": 4,
-          "7": 9,
-          "8": 8,
-          "9": 7
+          "7": 3,
+          "8": 2,
+          "9": 1
         },
         "branch_permutation": {
           "1": 3,

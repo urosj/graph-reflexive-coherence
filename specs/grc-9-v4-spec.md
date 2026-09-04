@@ -369,6 +369,21 @@ coercion. The specialization is owned exactly once by the enabled
 lifecycle state. Its payload contains no compatibility-branch flag: the
 scientific-state union's exact `branch` discriminant is the sole branch owner.
 
+`GRC9V4SerializedPortGraph` is a digest envelope. Its content payload is the
+exact projection `(schema_version, live_node_ids, edges)` defined by
+`port_graph_payload`; `graph_digest` is deliberately omitted from that
+preimage and satisfies
+
+```text
+graph_digest = "grc-graph-sha256:" + SHA256(JCS(port_graph_payload)).
+```
+
+The machine schema `serialized_port_graph` adds the computed `graph_digest`
+to those three payload fields. Admission must reconstruct the payload
+projection, recompute the digest, and reject a mismatch. It must never hash
+the envelope recursively or treat a caller-supplied digest as content
+authority.
+
 The inherited `GRCV4State` authority rules remain controlling through its
 structural protocol. Basin, hierarchy, event, and graph identity are lifecycle
 surfaces. Row summaries and coarse caches are derived, representation-only,
@@ -716,14 +731,41 @@ and preserves chirality; reflection flips chirality and reflects the active
 phase. A port number, node-ID parity, iteration order, thread schedule, global
 counter, or hidden RNG must not select chirality or phase.
 
+For the numbered chart $r=b+3(a-1)$, the positive cyclic generator is the
+simultaneous map
+
+$$
+(a,b)\longmapsto(a\oplus_3 1,b\oplus_3 1),
+$$
+
+with port permutation
+`1->5, 2->6, 3->4, 4->8, 5->9, 6->7, 7->2, 8->3, 9->1` and branch
+permutation `1->2, 2->3, 3->1`. The full reflection is
+
+$$
+(a,b)\longmapsto(4-a,4-b),
+$$
+
+with port permutation `1->9, 2->8, 3->7, 4->6, 5->5, 6->4, 7->3,
+8->2, 9->1` and branch permutation `1->3, 2->2, 3->1`. A column-only
+permutation is not an admitted covariance test because it fails to transport
+the branch row.
+
 The preimplementation vector bundle exercises the first genuinely recursive
 case at $D_{\mathrm{eff}}=52$, $n=8$, $m=4$ for both chiralities and all three
 active phases. In every case one branch must attach through a first extra node
 rather than only through a primary satellite. Separate metamorphic vectors
 cover source-edge input-order permutation, cyclic chart rotation, and
-reflection/chirality conjugacy. These exact vectors close the prior design
-coverage gap; runtime arbitrary-size mechanical-refinement conformance remains
-held until an implementation executes them.
+reflection/chirality conjugacy. Each chart-symmetry vector names its exact
+base plan, expected target plan, and
+`grc9v4-event-namespace-and-role-covariance-normalization-v1`. That policy
+transports the event namespace, branch-indexed node and edge roles, old
+boundary edge IDs, external labels, endpoint ports, chirality, and growth
+phase before exact normalized plan comparison. A boolean equality assertion
+without those references and reproduced transport is not a conformance
+vector. These exact vectors close the prior design coverage gap; runtime
+arbitrary-size mechanical-refinement conformance remains held until an
+implementation executes them.
 
 #### Stable identity and initialization
 

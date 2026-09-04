@@ -741,9 +741,16 @@ failure after a valid solve, including charge rejection
 ```
 
 No admission, lifecycle, or receipt failure invents a solver disposition.
-`ReceiptCore.information_losses` is a canonical-order tuple with no duplicate;
-no loss is the empty tuple, never a synthetic `"none"` loss. Candidate and
-carrier outcomes are independently mandatory in every migration/topology
+`ReceiptCore.information_losses` is a canonical-order tuple with no duplicate.
+Its sole order is
+`candidate_history_loss`, `carrier_history_loss`, `v4_surface_projection`,
+then `whole_state_delegate_crossing`, with absent classes omitted without
+changing the relative order. No loss is the empty tuple, never a synthetic
+`"none"` loss. The machine `information_loss_tuple` schema enumerates every
+admitted ordered subset, and the concrete receipt-identity vector includes
+both Candidate and carrier losses so that the ordering affects a checked
+receipt ID. Candidate and carrier outcomes are independently mandatory in
+every migration/topology
 history bundle. A missing channel is represented by that channel's explicit
 `not_applicable` disposition and null source/target history digests.
 

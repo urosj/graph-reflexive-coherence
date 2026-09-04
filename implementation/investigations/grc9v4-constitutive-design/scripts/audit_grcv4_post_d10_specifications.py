@@ -878,6 +878,11 @@ def validate_v4_source_manifest() -> None:
         "bb0621b3abe793486711acdd62e718c4415e8c5cbb6bea271580d4abc806e7ae"
     ):
         raise RuntimeError("V4 pressure audit is not digest-bound")
+    acceptance = manifest.get("final_release_acceptance_audit", {})
+    if acceptance.get("sha256") != (
+        "c0d7d01331868e45e92dbcdb54e5479fdc48cd4f478125ea4e452f81ea527c20"
+    ):
+        raise RuntimeError("V4 final acceptance audit is not digest-bound")
     if manifest.get("release_manifest") != str(RELEASE_MANIFEST.relative_to(ROOT)):
         raise RuntimeError("V4 source manifest does not name the release manifest")
 
@@ -1195,6 +1200,10 @@ def validate_v4_conformance_contracts(profiles: set[str]) -> None:
         "bb0621b3abe793486711acdd62e718c4415e8c5cbb6bea271580d4abc806e7ae"
     ):
         raise RuntimeError("V4 catalog pressure-audit binding drift")
+    if fixtures.get("final_release_acceptance_audit_sha256") != (
+        "c0d7d01331868e45e92dbcdb54e5479fdc48cd4f478125ea4e452f81ea527c20"
+    ):
+        raise RuntimeError("V4 catalog final-acceptance-audit binding drift")
     if set(fixtures.get("profile_families", [])) != profiles:
         raise RuntimeError("V4 fixture profile roster mismatch")
     execution = fixtures.get("execution_contract", {})
@@ -1226,6 +1235,11 @@ def validate_v4_conformance_contracts(profiles: set[str]) -> None:
             "cyclic_chart_rotation",
             "reflection_chirality_conjugacy",
         }
+        or deep_fixture.get("covariance_normalization_policy_id")
+        != "grc9v4-event-namespace-and-role-covariance-normalization-v1"
+        or deep_fixture.get("base_and_expected_target_vector_references_required")
+        is not True
+        or deep_fixture.get("normalized_plan_equality_must_be_reproduced") is not True
     ):
         raise RuntimeError("deep-recursive fixture contract drift")
     persistent_fixture = fixtures.get("grc9_persistent_carrier_fixture", {})
@@ -1233,8 +1247,7 @@ def validate_v4_conformance_contracts(profiles: set[str]) -> None:
         persistent_fixture.get("source_profile_family") != "C_PC"
         or persistent_fixture.get("source_Z_4_nonnull") is not True
         or persistent_fixture.get("target_Z_4_zero") is not True
-        or persistent_fixture.get("carrier_information_loss")
-        != "carrier_history_loss"
+        or persistent_fixture.get("carrier_information_loss") != "carrier_history_loss"
     ):
         raise RuntimeError("persistent-carrier fixture contract drift")
     mapped_fixture = fixtures.get("generic_mapped_event_fixture", {})
@@ -1247,20 +1260,19 @@ def validate_v4_conformance_contracts(profiles: set[str]) -> None:
         raise RuntimeError("generic mapped-event fixture contract drift")
     semantic_fixture = fixtures.get("semantic_admission_fixture", {})
     if (
-        semantic_fixture.get("validator_id")
-        != "grcv4-contract-semantic-admission-v1"
+        semantic_fixture.get("validator_id") != "grcv4-contract-semantic-admission-v1"
         or semantic_fixture.get("json_schema_validity_is_necessary_not_sufficient")
         is not True
         or set(semantic_fixture.get("required_negative_invariants", []))
         != {
-            "profile_fields_agree",
             "resource_distribution_unit_sum",
             "resource_transform_dimensions",
             "growth_phase_matches_remainder",
             "target_W_C_tr_matches_live_edges",
             "identity_payload_matches_resolved_parameters",
-            "history_channel_subjects_agree",
         }
+        or set(semantic_fixture.get("schema_negative_invariants", []))
+        != {"profile_fields_agree", "history_channel_subjects_agree"}
     ):
         raise RuntimeError("semantic-admission fixture contract drift")
 
@@ -1288,6 +1300,7 @@ def validate_v4_conformance_contracts(profiles: set[str]) -> None:
         "specialization_identity_payload",
         "complete_model_identity_payload",
         "port_graph_payload",
+        "serialized_port_graph",
         "reset_payload",
         "scientific_state_payload",
         "lifecycle_envelope_payload",
@@ -1316,8 +1329,10 @@ def validate_v4_conformance_contracts(profiles: set[str]) -> None:
         "k4_identity_payload",
         "reference_hodge_identity_payload",
         "semantic_admission_test_case",
+        "schema_negative_test_case",
         "commit_payload",
         "receipt_core",
+        "information_loss_tuple",
         "step_commit_receipt_identity_payload",
         "reset_receipt_identity_payload",
         "rebase_receipt_identity_payload",
@@ -1374,6 +1389,34 @@ def validate_v4_conformance_contracts(profiles: set[str]) -> None:
                     f"{definition} schema validation failed: "
                     f"{result.stdout.strip()} {result.stderr.strip()}"
                 )
+
+    def require_schema_rejection(definition: str, payload: Any) -> None:
+        focused_schema = {
+            "$schema": "https://json-schema.org/draft/2020-12/schema",
+            "$ref": f"#/$defs/{definition}",
+            "$defs": schema["$defs"],
+        }
+        with tempfile.NamedTemporaryFile(
+            mode="w", encoding="utf-8", suffix=".json"
+        ) as schema_file:
+            json.dump(focused_schema, schema_file, allow_nan=False)
+            schema_file.flush()
+            result = subprocess.run(
+                [
+                    jsonschema_cli,
+                    "--validator",
+                    "Draft202012Validator",
+                    schema_file.name,
+                ],
+                input=json.dumps(payload, ensure_ascii=False, allow_nan=False),
+                capture_output=True,
+                text=True,
+                check=False,
+            )
+        if result.returncode == 0:
+            raise RuntimeError(
+                f"{definition} unexpectedly admitted a schema-negative vector"
+            )
 
     vectors = json.loads(CONFORMANCE_VECTORS.read_text(encoding="utf-8"))
     if vectors.get("schema") != "grcv4_conformance_vectors_v2":
@@ -1444,6 +1487,10 @@ def validate_v4_conformance_contracts(profiles: set[str]) -> None:
             "lifecycle_envelope_payload",
             "grcv4-lifecycle-sha256",
         ),
+        "IDENTITY-GRCV4-MULTI-LOSS-RECEIPT": (
+            "profile_migration_receipt_identity_payload",
+            "grc-receipt-sha256",
+        ),
     }
     identity_rows = vectors.get("identity_vectors", [])
     if {row.get("vector_id") for row in identity_rows} != set(identity_definitions):
@@ -1457,6 +1504,46 @@ def validate_v4_conformance_contracts(profiles: set[str]) -> None:
         expected = f"{prefix}:{sha256_bytes(canonical)}"
         if row["expected_identifier"] != expected:
             raise RuntimeError(f"{row['vector_id']}: computed identity drift")
+    multi_loss_row = next(
+        row
+        for row in identity_rows
+        if row["vector_id"] == "IDENTITY-GRCV4-MULTI-LOSS-RECEIPT"
+    )
+    if multi_loss_row["payload"]["core"]["information_losses"] != [
+        "candidate_history_loss",
+        "carrier_history_loss",
+    ] or (
+        multi_loss_row["payload"]["core"]["source_state_digest"]
+        == multi_loss_row["payload"]["core"]["target_state_digest"]
+    ):
+        raise RuntimeError("multi-loss receipt canonical order drift")
+
+    port_graph_envelopes = vectors.get("port_graph_envelope_vectors", [])
+    if len(port_graph_envelopes) != 1:
+        raise RuntimeError("port-graph payload/envelope vector roster drift")
+    port_graph_envelope = port_graph_envelopes[0]
+    validate_schema("port_graph_payload", port_graph_envelope["payload"])
+    validate_schema(
+        "serialized_port_graph", port_graph_envelope["serialized_port_graph"]
+    )
+    serialized_graph = port_graph_envelope["serialized_port_graph"]
+    payload_projection = {
+        key: serialized_graph[key]
+        for key in ("schema_version", "live_node_ids", "edges")
+    }
+    expected_graph_digest = "grc-graph-sha256:" + sha256_bytes(
+        jcs_common_subset_bytes(port_graph_envelope["payload"])
+    )
+    if (
+        payload_projection != port_graph_envelope["payload"]
+        or serialized_graph["graph_digest"] != expected_graph_digest
+        or port_graph_envelope["expected"]["graph_digest"] != expected_graph_digest
+        or port_graph_envelope["expected"]["graph_digest_omitted_from_preimage"]
+        is not True
+        or port_graph_envelope["expected"]["envelope_payload_projection_equal"]
+        is not True
+    ):
+        raise RuntimeError("port-graph payload/digest envelope contract drift")
 
     subdigest_definitions = {
         "SUBDIGEST-AUTHORITATIVE-STATE": (
@@ -1495,9 +1582,7 @@ def validate_v4_conformance_contracts(profiles: set[str]) -> None:
         ),
     }
     subdigest_rows = vectors.get("subdigest_identity_vectors", [])
-    if {row.get("vector_id") for row in subdigest_rows} != set(
-        subdigest_definitions
-    ):
+    if {row.get("vector_id") for row in subdigest_rows} != set(subdigest_definitions):
         raise RuntimeError("subdigest identity-vector roster drift")
     for row in subdigest_rows:
         definition, prefix = subdigest_definitions[row["vector_id"]]
@@ -1505,9 +1590,7 @@ def validate_v4_conformance_contracts(profiles: set[str]) -> None:
         canonical = row["canonical_jcs_utf8"].encode("utf-8")
         if canonical.hex() != row["canonical_jcs_utf8_hex"]:
             raise RuntimeError(f"{row['vector_id']}: subdigest byte/hex mismatch")
-        if row["expected_identifier"] != (
-            f"{prefix}:{sha256_bytes(canonical)}"
-        ):
+        if row["expected_identifier"] != (f"{prefix}:{sha256_bytes(canonical)}"):
             raise RuntimeError(f"{row['vector_id']}: subdigest identity drift")
 
     expansion_rows = vectors.get("grc9_expansion_vectors", [])
@@ -1561,8 +1644,7 @@ def validate_v4_conformance_contracts(profiles: set[str]) -> None:
         transform = expected["resource_transform"]
         validate_schema("resource_event_transform", transform)
         source_resource = [
-            3 if node == "source-s" else 0
-            for node in transform["source_vertex_ids"]
+            3 if node == "source-s" else 0 for node in transform["source_vertex_ids"]
         ]
         source_width = len(source_resource)
         computed_resource = []
@@ -1570,8 +1652,7 @@ def validate_v4_conformance_contracts(profiles: set[str]) -> None:
             offset = target_index * source_width
             computed_resource.append(
                 sum(
-                    transform["row_major_coefficients"][offset + source_index]
-                    * value
+                    transform["row_major_coefficients"][offset + source_index] * value
                     for source_index, value in enumerate(source_resource)
                 )
                 + increment
@@ -1664,9 +1745,8 @@ def validate_v4_conformance_contracts(profiles: set[str]) -> None:
         ):
             payload = payloads[channel_name]
             validate_schema("history_channel_policy_identity_payload", payload)
-            computed = (
-                "grcv4-history-policy-sha256:"
-                + sha256_bytes(jcs_common_subset_bytes(payload))
+            computed = "grcv4-history-policy-sha256:" + sha256_bytes(
+                jcs_common_subset_bytes(payload)
             )
             if computed != event[digest_field]:
                 raise RuntimeError(
@@ -1703,13 +1783,14 @@ def validate_v4_conformance_contracts(profiles: set[str]) -> None:
                 )
         elif profile_family == "C_PC":
             for payload_name in ("source_carrier", "target_carrier"):
-                validate_schema("history_content_identity_payload", payloads[payload_name])
+                validate_schema(
+                    "history_content_identity_payload", payloads[payload_name]
+                )
             if (
                 expected["source_carrier"] == expected["target_carrier"]
                 or any(expected["target_carrier"])
                 or history["carrier"]["disposition"] != "whole_carrier_reset"
-                or history["carrier"]["information_loss"]
-                != "carrier_history_loss"
+                or history["carrier"]["information_loss"] != "carrier_history_loss"
                 or losses != ["carrier_history_loss"]
             ):
                 raise RuntimeError("persistent C_PC carrier-loss vector drift")
@@ -1728,9 +1809,7 @@ def validate_v4_conformance_contracts(profiles: set[str]) -> None:
             continue
         event_id = row["expected"]["event_id"]
         tree_edges = [
-            edge
-            for edge in row["expected"]["target_edges"]
-            if edge["kind"] == "tree"
+            edge for edge in row["expected"]["target_edges"] if edge["kind"] == "tree"
         ]
         if not any(
             edge["tail"]["node_id"].startswith(f"{event_id}/extra/")
@@ -1770,8 +1849,7 @@ def validate_v4_conformance_contracts(profiles: set[str]) -> None:
         mapped_expected["target_charge"] - mapped_expected["source_charge"]
         != mapped_expected["actual_charge_delta"]
         or mapped_expected["target_Q_target"]
-        != mapped_expected["source_charge"]
-        + mapped_expected["actual_charge_delta"]
+        != mapped_expected["source_charge"] + mapped_expected["actual_charge_delta"]
         or mapped_expected["actual_charge_delta"] == 0
     ):
         raise RuntimeError("mapped affine charge accounting drift")
@@ -1787,6 +1865,139 @@ def validate_v4_conformance_contracts(profiles: set[str]) -> None:
         "reflection_chirality_conjugacy",
     }:
         raise RuntimeError("GRC9 metamorphic vector roster drift")
+    normalization_policy_id = (
+        "grc9v4-event-namespace-and-role-covariance-normalization-v1"
+    )
+    normalization_policies = vectors.get("grc9_metamorphic_normalization_policies", {})
+    if set(normalization_policies) != {normalization_policy_id}:
+        raise RuntimeError("GRC9 covariance normalization-policy roster drift")
+    policy = normalization_policies[normalization_policy_id]
+    required_policy_fields = {
+        "schema_version",
+        "policy_id",
+        "event_id_namespaces",
+        "branch_indexed_node_role_ids",
+        "branch_indexed_edge_role_ids",
+        "old_boundary_edge_ids",
+        "external_node_labels",
+        "endpoint_ports",
+        "module_chirality",
+        "growth_phase",
+        "comparison",
+    }
+    if set(policy) != required_policy_fields or policy["policy_id"] != (
+        normalization_policy_id
+    ):
+        raise RuntimeError("GRC9 covariance normalization policy incomplete")
+
+    expansion_by_id = {row["fixture_id"]: row for row in expansion_rows}
+
+    def transported_covariant_plan(
+        base: dict[str, Any],
+        target: dict[str, Any],
+        port_permutation: dict[str, int],
+        branch_permutation: dict[str, int],
+    ) -> dict[str, Any]:
+        base_event_id = base["expected"]["event_id"]
+        target_event_id = target["expected"]["event_id"]
+
+        def map_port(port: int) -> int:
+            return port_permutation[str(port)]
+
+        def map_branch(branch: str) -> str:
+            return str(branch_permutation[branch])
+
+        def map_node(node_id: str) -> str:
+            if node_id == f"{base_event_id}/core":
+                return f"{target_event_id}/core"
+            if node_id.startswith(f"{base_event_id}/satellite/"):
+                branch = node_id.rsplit("/", 1)[1]
+                return f"{target_event_id}/satellite/{map_branch(branch)}"
+            if node_id.startswith(f"{base_event_id}/extra/"):
+                branch, ordinal = node_id.removeprefix(f"{base_event_id}/extra/").split(
+                    "/", 1
+                )
+                return f"{target_event_id}/extra/{map_branch(branch)}/{ordinal}"
+            if node_id.startswith("outside-"):
+                port = int(node_id.removeprefix("outside-"))
+                return f"outside-{map_port(port)}"
+            raise RuntimeError(f"unknown covariant node role: {node_id}")
+
+        def map_edge_id(edge_id: str) -> str:
+            if edge_id.startswith("old-"):
+                return f"old-{map_port(int(edge_id.removeprefix('old-')))}"
+            if edge_id.startswith(f"{base_event_id}/internal/extra/"):
+                branch, ordinal = edge_id.removeprefix(
+                    f"{base_event_id}/internal/extra/"
+                ).split("/", 1)
+                return (
+                    f"{target_event_id}/internal/extra/{map_branch(branch)}/{ordinal}"
+                )
+            if edge_id.startswith(f"{base_event_id}/internal/"):
+                branch = edge_id.removeprefix(f"{base_event_id}/internal/")
+                return f"{target_event_id}/internal/{map_branch(branch)}"
+            raise RuntimeError(f"unknown covariant edge role: {edge_id}")
+
+        edges = []
+        for edge in base["expected"]["target_edges"]:
+            edges.append(
+                {
+                    "edge_id": map_edge_id(edge["edge_id"]),
+                    "kind": edge["kind"],
+                    "tail": {
+                        "node_id": map_node(edge["tail"]["node_id"]),
+                        "port": map_port(edge["tail"]["port"]),
+                    },
+                    "head": {
+                        "node_id": map_node(edge["head"]["node_id"]),
+                        "port": map_port(edge["head"]["port"]),
+                    },
+                }
+            )
+        return {
+            "live_node_ids": sorted(
+                map_node(node_id)
+                for node_id in base["expected"]["target_live_node_ids"]
+            ),
+            "edges": sorted(edges, key=lambda edge: edge["edge_id"]),
+        }
+
+    expected_covariance = {
+        "cyclic_chart_rotation": {
+            "target": "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-2",
+            "ports": {
+                "1": 5,
+                "2": 6,
+                "3": 4,
+                "4": 8,
+                "5": 9,
+                "6": 7,
+                "7": 2,
+                "8": 3,
+                "9": 1,
+            },
+            "branches": {"1": 2, "2": 3, "3": 1},
+            "chirality": 1,
+            "phase": 2,
+        },
+        "reflection_chirality_conjugacy": {
+            "target": "G9-EXPAND-D52-CHIRALITY-NEGATIVE-PHASE-3",
+            "ports": {
+                "1": 9,
+                "2": 8,
+                "3": 7,
+                "4": 6,
+                "5": 5,
+                "6": 4,
+                "7": 3,
+                "8": 2,
+                "9": 1,
+            },
+            "branches": {"1": 3, "2": 2, "3": 1},
+            "chirality": -1,
+            "phase": 3,
+        },
+    }
     for row in metamorphic:
         if row["expected"].get("normalized_port_plan_equal") is not True:
             raise RuntimeError(f"{row['vector_id']}: covariance assertion absent")
@@ -1797,23 +2008,34 @@ def validate_v4_conformance_contracts(profiles: set[str]) -> None:
                 left["edges"], key=lambda edge: edge["edge_id"]
             ) != sorted(right["edges"], key=lambda edge: edge["edge_id"]):
                 raise RuntimeError("source permutation changes graph content")
-        elif row["kind"] == "cyclic_chart_rotation":
+        else:
+            expected = expected_covariance[row["kind"]]
             if (
-                row["expected"]["module_chirality"]
-                != row["input"]["module_chirality"]
-                or row["expected"]["growth_phase"] != 2
-                or set(row["input"]["port_permutation"].values())
-                != set(range(1, 10))
+                row.get("base_vector_id") != "G9-EXPAND-D52-CHIRALITY-POSITIVE-PHASE-1"
+                or row.get("expected_target_vector_id") != expected["target"]
+                or row.get("normalization_policy_id") != normalization_policy_id
+                or row["input"]["port_permutation"] != expected["ports"]
+                or row["input"]["branch_permutation"] != expected["branches"]
+                or row["expected"]["module_chirality"] != expected["chirality"]
+                or row["expected"]["growth_phase"] != expected["phase"]
             ):
-                raise RuntimeError("cyclic covariance vector drift")
-        elif (
-            row["expected"]["module_chirality"]
-            != -row["input"]["module_chirality"]
-            or row["expected"]["growth_phase"] != 3
-            or set(row["input"]["port_permutation"].values())
-            != set(range(1, 10))
-        ):
-            raise RuntimeError("reflection covariance vector drift")
+                raise RuntimeError(f"{row['vector_id']}: covariance map drift")
+            base = expansion_by_id[row["base_vector_id"]]
+            target = expansion_by_id[row["expected_target_vector_id"]]
+            normalized = transported_covariant_plan(
+                base,
+                target,
+                row["input"]["port_permutation"],
+                row["input"]["branch_permutation"],
+            )
+            target_plan = {
+                "live_node_ids": target["expected"]["target_live_node_ids"],
+                "edges": target["expected"]["target_edges"],
+            }
+            if normalized != target_plan:
+                raise RuntimeError(
+                    f"{row['vector_id']}: normalized plan equality not reproduced"
+                )
 
     failures = vectors.get("atomic_failure_vectors", [])
     if len(failures) != 7 or any(
@@ -1829,7 +2051,9 @@ def validate_v4_conformance_contracts(profiles: set[str]) -> None:
     for row in failures:
         request_input = row.get("request_input")
         if request_input is None or "request_override" in row:
-            raise RuntimeError(f"{row['fixture_id']}: failure input is not self-contained")
+            raise RuntimeError(
+                f"{row['fixture_id']}: failure input is not self-contained"
+            )
         request_definition = (
             "step_request_input"
             if request_input["schema_version"] == "grcv4-step-request-input-v1"
@@ -1858,13 +2082,11 @@ def validate_v4_conformance_contracts(profiles: set[str]) -> None:
                 + sha256_bytes(jcs_common_subset_bytes(source_fixture))
             ):
                 raise RuntimeError("self-loop source graph digest drift")
-            if (
-                state_fixture["graph_digest"] != request_input["source_graph_digest"]
-                or request_input["source_state_digest"]
-                != (
-                    "grcv4-state-sha256:"
-                    + sha256_bytes(jcs_common_subset_bytes(state_fixture))
-                )
+            if state_fixture["graph_digest"] != request_input[
+                "source_graph_digest"
+            ] or request_input["source_state_digest"] != (
+                "grcv4-state-sha256:"
+                + sha256_bytes(jcs_common_subset_bytes(state_fixture))
             ):
                 raise RuntimeError("self-loop source state/graph identity drift")
         receipt = row["expected"]["failure_receipt"]
@@ -1903,18 +2125,31 @@ def validate_v4_conformance_contracts(profiles: set[str]) -> None:
     semantic = vectors.get("semantic_admission", {})
     if (
         semantic.get("validator_id") != "grcv4-contract-semantic-admission-v1"
-        or semantic.get("json_schema_validity_is_necessary_not_sufficient")
-        is not True
+        or semantic.get("json_schema_validity_is_necessary_not_sufficient") is not True
     ):
         raise RuntimeError("semantic-admission contract missing")
+    schema_negative_rows = semantic.get("schema_negative_vectors", [])
+    if {row.get("invariant") for row in schema_negative_rows} != {
+        "profile_fields_agree",
+        "history_channel_subjects_agree",
+    }:
+        raise RuntimeError("schema-negative vector roster drift")
+    for row in schema_negative_rows:
+        validate_schema("schema_negative_test_case", row)
+        expected = row["expected"]
+        if (
+            expected.get("schema_valid") is not False
+            or expected.get("rejection_layer") != "json_schema"
+            or expected.get("semantic_validator_invoked") is not False
+        ):
+            raise RuntimeError(f"{row['vector_id']}: schema rejection boundary drift")
+        require_schema_rejection(row["schema_ref"], row["input"])
     semantic_rows = semantic.get("negative_vectors", [])
     expected_invariants = {
-        "profile_fields_agree",
         "resource_distribution_unit_sum",
         "growth_phase_matches_remainder",
         "target_W_C_tr_matches_live_edges",
         "identity_payload_matches_resolved_parameters",
-        "history_channel_subjects_agree",
         "resource_transform_dimensions",
     }
     if {row.get("invariant") for row in semantic_rows} != expected_invariants:
@@ -1924,21 +2159,13 @@ def validate_v4_conformance_contracts(profiles: set[str]) -> None:
         invariant = row["invariant"]
         payload = row["input"]
         rejected = False
-        if invariant == "profile_fields_agree":
-            family = payload["profile_family_id"]
-            candidate, realization = family.split("_", 1)
-            realization = realization.replace("CI_PC", "CI+PC")
-            rejected = payload["candidate"] != candidate or (
-                payload["realization"] != realization
-            )
-        elif invariant == "resource_distribution_unit_sum":
+        if invariant == "resource_distribution_unit_sum":
             rejected = not math.isclose(
                 sum(payload["resource_distribution"]), 1.0, abs_tol=0.0
             )
         elif invariant == "resource_transform_dimensions":
             rejected = len(payload["row_major_coefficients"]) != (
-                len(payload["source_vertex_ids"])
-                * len(payload["target_vertex_ids"])
+                len(payload["source_vertex_ids"]) * len(payload["target_vertex_ids"])
             ) or len(payload["target_increment"]) != len(payload["target_vertex_ids"])
         elif invariant == "growth_phase_matches_remainder":
             node_count = max(4, math.ceil((payload["target_effective_degree"] - 2) / 7))
@@ -1950,15 +2177,10 @@ def validate_v4_conformance_contracts(profiles: set[str]) -> None:
             graph_edges = {edge["edge_id"] for edge in payload["target_graph"]["edges"]}
             rejected = graph_edges != set(payload["target_W_C_tr"])
         elif invariant == "identity_payload_matches_resolved_parameters":
-            params_id = (
-                "grcv4-params-sha256:"
-                + sha256_bytes(jcs_common_subset_bytes(payload["resolved_params"]))
+            params_id = "grcv4-params-sha256:" + sha256_bytes(
+                jcs_common_subset_bytes(payload["resolved_params"])
             )
             rejected = payload["profile_identity"]["params_hash"] != params_id
-        elif invariant == "history_channel_subjects_agree":
-            rejected = payload["candidate"]["subject"] != "candidate" or (
-                payload["carrier"]["subject"] != "carrier"
-            )
         if not rejected or row["expected"]["admitted"] is not False:
             raise RuntimeError(f"{row['vector_id']}: semantic rejection not reproduced")
 
@@ -1990,6 +2212,15 @@ def validate_v4_conformance_contracts(profiles: set[str]) -> None:
         "bb0621b3abe793486711acdd62e718c4415e8c5cbb6bea271580d4abc806e7ae"
     ):
         raise RuntimeError("specification release pressure-audit binding drift")
+    final_acceptance = release.get("final_acceptance_audit", {})
+    if (
+        final_acceptance.get("sha256")
+        != "c0d7d01331868e45e92dbcdb54e5479fdc48cd4f478125ea4e452f81ea527c20"
+        or final_acceptance.get("required_vector_defect_count") != 1
+        or final_acceptance.get("recommended_release_hardening_count") != 3
+        or final_acceptance.get("scientific_successor_required") is not False
+    ):
+        raise RuntimeError("specification release final-acceptance binding drift")
     expected_audit_bindings = {
         (
             "GRCV4-updated-specification-stack-implementation-readiness-audit.md",
@@ -1998,6 +2229,10 @@ def validate_v4_conformance_contracts(profiles: set[str]) -> None:
         (
             "GRCV4-specification-correction-release-pressure-audit.md",
             "bb0621b3abe793486711acdd62e718c4415e8c5cbb6bea271580d4abc806e7ae",
+        ),
+        (
+            "GRCV4-final-specification-release-acceptance-audit.md",
+            "c0d7d01331868e45e92dbcdb54e5479fdc48cd4f478125ea4e452f81ea527c20",
         ),
     }
     if {

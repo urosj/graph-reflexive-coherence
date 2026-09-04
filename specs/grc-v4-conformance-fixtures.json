@@ -5,6 +5,7 @@
   "audit_input_sha256": "61fb7c51efd82f80f1eaf492e8d6d3c77c7778aa8ce775a58ed4355dd12272e4",
   "implementation_readiness_audit_sha256": "32cea1b2752361864b02651cb7d38df85929210adc213aa76ee1307babcb5196",
   "specification_pressure_audit_sha256": "bb0621b3abe793486711acdd62e718c4415e8c5cbb6bea271580d4abc806e7ae",
+  "final_release_acceptance_audit_sha256": "c0d7d01331868e45e92dbcdb54e5479fdc48cd4f478125ea4e452f81ea527c20",
   "authority_boundary": {
     "normative_scope": "D10_plus_append_only_D11_C_and_D11_G9_specification_cases_and_40_independent_disabled_compatibility_rows",
     "accepted_D11_claim_ids": [
@@ -208,6 +209,9 @@
       "cyclic_chart_rotation",
       "reflection_chirality_conjugacy"
     ],
+    "covariance_normalization_policy_id": "grc9v4-event-namespace-and-role-covariance-normalization-v1",
+    "base_and_expected_target_vector_references_required": true,
+    "normalized_plan_equality_must_be_reproduced": true,
     "runtime_hold": "required_before_arbitrary_size_mechanical_refinement_conformance"
   },
   "grc9_persistent_carrier_fixture": {
@@ -232,14 +236,16 @@
   "semantic_admission_fixture": {
     "validator_id": "grcv4-contract-semantic-admission-v1",
     "json_schema_validity_is_necessary_not_sufficient": true,
-    "required_negative_invariants": [
+    "schema_negative_invariants": [
       "profile_fields_agree",
+      "history_channel_subjects_agree"
+    ],
+    "required_negative_invariants": [
       "resource_distribution_unit_sum",
       "resource_transform_dimensions",
       "growth_phase_matches_remainder",
       "target_W_C_tr_matches_live_edges",
-      "identity_payload_matches_resolved_parameters",
-      "history_channel_subjects_agree"
+      "identity_payload_matches_resolved_parameters"
     ]
   },
   "disabled_compatibility": {

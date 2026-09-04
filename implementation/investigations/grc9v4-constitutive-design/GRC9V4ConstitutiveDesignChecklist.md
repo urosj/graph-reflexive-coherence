@@ -2969,6 +2969,22 @@ and its
 - [x] Clarify enabled-only partial versus full GRC9V4 conformance.
 - [x] Regenerate and verify the corrected schema, vectors, release identity,
       detached checksum, rendering, and normal phase-aware tool path.
+- [x] Bind the final targeted release-acceptance audit by exact SHA as
+      mechanical correction input, not scientific evidence.
+- [x] Replace the D52 column-only rotation and reflection maps with the exact
+      simultaneous row/column/branch permutations.
+- [x] Bind both chart-symmetry vectors to base and expected target plans plus
+      the event-namespace/role normalization policy, and reproduce exact
+      normalized plan equality in the verifier.
+- [x] Reclassify profile-field and history-subject mismatches as schema-layer
+      negatives while retaining five genuine post-schema semantic negatives.
+- [x] Freeze the four-class information-loss order and add a checked
+      two-loss receipt identity vector.
+- [x] Define and check the port-graph payload/digest envelope with
+      `graph_digest` omitted from its own preimage.
+- [x] Regenerate and mechanically reverify all vector, schema, artifact,
+      release-ID, detached-checksum, and rendering bindings after final
+      acceptance hardening.
 - [ ] Supply per-profile step vectors, Candidate A numeric vectors, RG2b
       evaluator/certificate vectors, child-stabilization vectors, 40 exact
       disabled-delegate vectors, lifecycle/migration runtime vectors, generic

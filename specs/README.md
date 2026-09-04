@@ -81,7 +81,9 @@ state automatically and includes this successor audit when it is active.
   Closed JSON Schema 2020-12 definitions for identity-bearing parameters,
   candidate-discriminated profiles, pre-admission and admitted requests,
   affine mapped events, two-channel history, operation/solver results,
-  subdigest preimages, state, reset, event, commit, and receipt payloads.
+  subdigest preimages, the port-graph payload/digest envelope, canonically
+  ordered information-loss tuples, state, reset, event, commit, and receipt
+  payloads.
 - `grc-v4-conformance-fixtures.json`
   Normative preimplementation coverage catalog for D10-plus-D11 generic,
   Candidate C, realization, lifecycle, exact chiral same-port expansion, and
@@ -90,8 +92,9 @@ state automatically and includes this successor audit when it is active.
 - `grc-v4-conformance-vectors.json`
   Deterministically generated concrete canonicalization, identity, D11-C
   algebra, generic affine event, GRC9V4 expansion, persistent-carrier,
-  second-depth/covariance, rollback, result-status, subdigest, and semantic
-  admission vectors plus the two-channel migration-policy coverage matrix. Its explicit
+  executable second-depth/covariance, rollback, result-status, subdigest,
+  schema-negative, and post-schema semantic-admission vectors plus the
+  port-graph envelope and two-channel migration-policy coverage matrices. Its explicit
   `coverage_holds` prevent absent per-profile, RG2b, child-stabilization, and
   legacy-delegate vectors—and absent lifecycle, generic-event, charge-edge,
   and deep-immutability runtime tests—from being misreported as conformance.

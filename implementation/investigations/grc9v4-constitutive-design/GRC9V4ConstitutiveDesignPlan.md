@@ -3585,6 +3585,29 @@ affine-accounting oracle, not runtime evidence. D52 and metamorphic vectors
 likewise close design coverage but retain a runtime execution hold. The other
 previous implementation and evidence holds remain in force.
 
+The final targeted release-acceptance audit is bound by SHA-256
+`c0d7d01331868e45e92dbcdb54e5479fdc48cd4f478125ea4e452f81ea527c20`
+as mechanical correction input, not scientific evidence. It finds no D11-G9
+allocator or D11-C scientific defect. Under the same bounded
+`specification_correction` authority, final release hardening must:
+
+1. replace the column-only D52 rotation and reflection maps with simultaneous
+   row/column/branch maps;
+2. make both covariance cases executable by binding base plan, target plan,
+   and exact namespace/role normalization, and make the verifier reproduce
+   normalized plan equality;
+3. move the profile-field and history-subject cases to schema-negative
+   coverage while retaining five post-schema semantic negatives;
+4. freeze the sole canonical order of multiple receipt information losses and
+   bind that order through a multi-loss receipt identity vector; and
+5. distinguish the port-graph content payload from its digest envelope and
+   verify that `graph_digest` is excluded from its own preimage.
+
+After those corrections, the vector builder, schema audit, release builder,
+artifact hashes, release identity, detached checksum, rendering checks, and
+normal phase-aware verification path must all pass. Runtime conformance and
+the previously enumerated implementation holds remain unchanged.
+
 ## Expected Records
 
 Each gate should add a separate decision record or a clearly delimited ledger

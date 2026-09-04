@@ -107,6 +107,27 @@
     "information_loss_class": {
       "enum": ["candidate_history_loss", "carrier_history_loss", "v4_surface_projection", "whole_state_delegate_crossing"]
     },
+    "information_loss_tuple": {
+      "description": "A duplicate-free subset in the sole canonical order: candidate history, carrier history, V4 surface projection, whole-state delegate crossing.",
+      "oneOf": [
+        {"const": []},
+        {"const": ["candidate_history_loss"]},
+        {"const": ["carrier_history_loss"]},
+        {"const": ["v4_surface_projection"]},
+        {"const": ["whole_state_delegate_crossing"]},
+        {"const": ["candidate_history_loss", "carrier_history_loss"]},
+        {"const": ["candidate_history_loss", "v4_surface_projection"]},
+        {"const": ["candidate_history_loss", "whole_state_delegate_crossing"]},
+        {"const": ["carrier_history_loss", "v4_surface_projection"]},
+        {"const": ["carrier_history_loss", "whole_state_delegate_crossing"]},
+        {"const": ["v4_surface_projection", "whole_state_delegate_crossing"]},
+        {"const": ["candidate_history_loss", "carrier_history_loss", "v4_surface_projection"]},
+        {"const": ["candidate_history_loss", "carrier_history_loss", "whole_state_delegate_crossing"]},
+        {"const": ["candidate_history_loss", "v4_surface_projection", "whole_state_delegate_crossing"]},
+        {"const": ["carrier_history_loss", "v4_surface_projection", "whole_state_delegate_crossing"]},
+        {"const": ["candidate_history_loss", "carrier_history_loss", "v4_surface_projection", "whole_state_delegate_crossing"]}
+      ]
+    },
     "solver_disposition": {
       "enum": ["valid_root", "domain_failure", "singular", "conditioning_failure", "nonfinite", "no_admitted_root", "multiple_admitted_roots"]
     },
@@ -777,6 +798,25 @@
         }
       }
     },
+    "serialized_port_graph": {
+      "description": "Digest envelope. graph_digest is computed from the port_graph_payload projection and is not part of its own preimage.",
+      "type": "object",
+      "required": ["schema_version", "live_node_ids", "edges", "graph_digest"],
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {"const": "grc9v4-port-graph-v1"},
+        "live_node_ids": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {"type": ["string", "integer"]}
+        },
+        "edges": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/port_edge"}
+        },
+        "graph_digest": {"$ref": "#/$defs/graph_id"}
+      }
+    },
     "authoritative_state": {
       "type": "object",
       "required": ["C", "W_A", "Z_4"],
@@ -1073,7 +1113,7 @@
         "resource_transform_digest": {"$ref": "#/$defs/resource_transform_id"},
         "history_bundle_digest": {"$ref": "#/$defs/history_bundle_id"},
         "actual_charge_delta": {"$ref": "#/$defs/finite_number"},
-        "information_losses": {"type": "array", "uniqueItems": true, "items": {"$ref": "#/$defs/information_loss_class"}},
+        "information_losses": {"$ref": "#/$defs/information_loss_tuple"},
         "disposition": {"const": "committed"},
         "parent_receipt_ids": {"type": "array", "items": {"$ref": "#/$defs/receipt_id"}}
       }
@@ -1322,7 +1362,7 @@
       "properties": {
         "vector_id": {"type": "string", "minLength": 1},
         "validator_id": {"const": "grcv4-contract-semantic-admission-v1"},
-        "invariant": {"enum": ["profile_fields_agree", "resource_distribution_unit_sum", "growth_phase_matches_remainder", "target_W_C_tr_matches_live_edges", "identity_payload_matches_resolved_parameters", "history_channel_subjects_agree", "resource_transform_dimensions"]},
+        "invariant": {"enum": ["resource_distribution_unit_sum", "growth_phase_matches_remainder", "target_W_C_tr_matches_live_edges", "identity_payload_matches_resolved_parameters", "resource_transform_dimensions"]},
         "input": {"type": "object"},
         "expected": {
           "type": "object",
@@ -1331,6 +1371,27 @@
           "properties": {
             "admitted": {"const": false},
             "code": {"type": "string", "minLength": 1}
+          }
+        }
+      }
+    },
+    "schema_negative_test_case": {
+      "type": "object",
+      "required": ["vector_id", "schema_ref", "invariant", "input", "expected"],
+      "additionalProperties": false,
+      "properties": {
+        "vector_id": {"type": "string", "minLength": 1},
+        "schema_ref": {"enum": ["profile_identity_payload", "history_bundle_policy"]},
+        "invariant": {"enum": ["profile_fields_agree", "history_channel_subjects_agree"]},
+        "input": {"type": "object"},
+        "expected": {
+          "type": "object",
+          "required": ["schema_valid", "rejection_layer", "semantic_validator_invoked"],
+          "additionalProperties": false,
+          "properties": {
+            "schema_valid": {"const": false},
+            "rejection_layer": {"const": "json_schema"},
+            "semantic_validator_invoked": {"const": false}
           }
         }
       }

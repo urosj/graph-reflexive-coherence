@@ -1712,12 +1712,15 @@ injection has its own schema, is excluded from production APIs and identities,
 and names the injection stage.
 
 JSON Schema validity is necessary, not sufficient, for scientific admission.
-The semantic validator checks at least exact profile/candidate/realization
-agreement, unit-sum GRC9 resource distribution, affine-transform dimensions,
-phase/remainder agreement,
-target stable-edge-map equality, resolved-parameter identity agreement, and
-candidate/carrier history-channel subjects. The concrete bundle contains a
-negative vector for each invariant.
+Exact profile/candidate/realization agreement and Candidate/carrier
+history-channel subjects are already enforced by the strict JSON Schemas;
+their negative vectors are therefore schema-layer rejections and never invoke
+the semantic validator. For inputs that pass schema validation, the semantic
+validator checks at least unit-sum GRC9 resource distribution,
+affine-transform dimensions, phase/remainder agreement, target
+stable-edge-map equality, and resolved-parameter identity agreement. The
+concrete bundle classifies the two schema negatives separately from the five
+post-schema semantic negatives and checks the stated rejection layer.
 
 Operation and solver status are orthogonal. `GRCV4StepResult` reports
 `operation_disposition` as `committed | rejected` and
