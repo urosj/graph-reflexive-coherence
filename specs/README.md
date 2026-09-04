@@ -29,12 +29,13 @@ The implementation strategy assumed by these specs is:
 
 The [post-D10 boundary manifest](../implementation/investigations/grc9v4-constitutive-design/specification/PostD10SpecificationBoundary.json)
 hash-freezes every pre-existing normative file in this directory except this
-registry. The active `specification_propagation` phase is hash-bound to the
-committed D11-integrated paper and the accepted D11-C/D11-G9 authority. It
-permits changes only to the V4 specification outputs and this registry while
-freezing the accepted proposal, paper, older specifications, `src/`, and
-`tests/`. A later implementation phase may change `src/` and `tests/`, but
-only after a successor authority explicitly activates
+registry. The active `specification_correction` phase is hash-bound to the
+committed D11-integrated paper, the accepted D11-C/D11-G9 authority, and the
+implementation-readiness audit. It permits changes only to the V4
+specification outputs, their schemas/builders, governance records, and this
+registry while freezing the accepted proposal, paper, older specifications,
+`src/`, and `tests/`. A later implementation phase may change `src/` and
+`tests/`, but only after a successor authority explicitly activates
 `GRCV4_GRC9V4_implementation`. The pre-existing-spec hashes remain enforced in
 every phase.
 
@@ -76,11 +77,27 @@ state automatically and includes this successor audit when it is active.
   D10/D10.2 records, accepted D11 resolutions and provenance supplements,
   unchanged common interface, read-only GRC9V3 reduction target, and
   historical G-RC-9 mechanics source used by the V4 stack.
+- `grc-v4-contract-schema.json`
+  Closed JSON Schema 2020-12 definitions for identity-bearing parameters,
+  profiles, specialization, state, reset, event, commit, and receipt payloads.
 - `grc-v4-conformance-fixtures.json`
-  Normative preimplementation fixture contract for D10-plus-D11 generic,
+  Normative preimplementation coverage catalog for D10-plus-D11 generic,
   Candidate C, realization, lifecycle, exact chiral same-port expansion, and
-  independent $10\times4$ disabled-compatibility cases. The file defines
-  required evidence but does not claim that a runtime executed it.
+  independent $10\times4$ disabled-compatibility cases. It is not an execution
+  oracle and does not claim that a runtime executed it.
+- `grc-v4-conformance-vectors.json`
+  Deterministically generated concrete canonicalization, identity, D11-C
+  algebra, GRC9V4 expansion, and rollback vectors plus the migration-policy
+  coverage matrix. Its explicit
+  `coverage_holds` prevent absent per-profile, RG2b, child-stabilization, and
+  legacy-delegate vectors—and absent lifecycle, generic-event, charge-edge,
+  and deep-immutability runtime tests—from being misreported as conformance.
+- `grc-v4-specification-release.json` and
+  `grc-v4-specification-release.sha256`
+  Content-addressed release manifest and detached checksum binding the exact
+  specifications, schema, catalog, concrete vectors, registry, and controlling
+  source bytes. The release is a preimplementation contract, not execution
+  evidence.
 - `grc-9-spec.md`
   Nine-slot mechanical substrate implementation from `papers/2026-04-GRC-9.md`, with single dynamical conductance and shared analytic edge labels.
 - `grc-9-v3-spec.md`
@@ -93,7 +110,7 @@ state automatically and includes this successor audit when it is active.
   Normative nine-port specialization of `GRCV4`. It adds the fixed port chart
   and row backend, the accepted V4-owned
   `grc9v4_axis_preserving_chiral_same_port_expansion_v1` event, hybrid spark,
-  child-basin completion, column coarse-graining, the exact Candidate-A
+  optional gated child-basin completion, column coarse-graining, the exact Candidate-A
   initializer binding, and four independently scoped disabled reductions to
   an embedded read-only `GRC9V3` target for every supported profile, bounded
   by the exact legacy-defined domain.

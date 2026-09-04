@@ -1,0 +1,995 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/urosj/graph-reflexive-coherence/specs/grc-v4-contract-schema.json",
+  "title": "GRCV4 and GRC9V4 implementation-contract schemas",
+  "schema_version": "grcv4-implementation-contract-schema-v1",
+  "canonicalization": "RFC8785_JCS_over_I_JSON",
+  "authority": "implementation_contract_not_scientific_evidence",
+  "$defs": {
+    "safe_integer": {
+      "type": "integer",
+      "minimum": -9007199254740991,
+      "maximum": 9007199254740991
+    },
+    "nonnegative_integer": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 9007199254740991
+    },
+    "positive_integer": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 9007199254740991
+    },
+    "finite_number": {
+      "type": "number"
+    },
+    "nonnegative_number": {
+      "type": "number",
+      "minimum": 0
+    },
+    "positive_number": {
+      "type": "number",
+      "exclusiveMinimum": 0
+    },
+    "sha256_hex": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "grcv4_params_id": {
+      "type": "string",
+      "pattern": "^grcv4-params-sha256:[0-9a-f]{64}$"
+    },
+    "grcv4_profile_id": {
+      "type": "string",
+      "pattern": "^grcv4-profile-sha256:[0-9a-f]{64}$"
+    },
+    "grcv4_profile_template_id": {
+      "type": "string",
+      "pattern": "^grcv4-profile-template-sha256:[0-9a-f]{64}$"
+    },
+    "grc9v4_params_id": {
+      "type": "string",
+      "pattern": "^grc9v4-params-sha256:[0-9a-f]{64}$"
+    },
+    "grc9v4_specialization_id": {
+      "type": "string",
+      "pattern": "^grc9v4-specialization-sha256:[0-9a-f]{64}$"
+    },
+    "grc9v4_model_id": {
+      "type": "string",
+      "pattern": "^grc9v4-model-sha256:[0-9a-f]{64}$"
+    },
+    "graph_id": {
+      "type": "string",
+      "pattern": "^grc-graph-sha256:[0-9a-f]{64}$"
+    },
+    "state_id": {
+      "type": "string",
+      "pattern": "^grcv4-state-sha256:[0-9a-f]{64}$"
+    },
+    "lifecycle_id": {
+      "type": "string",
+      "pattern": "^grcv4-lifecycle-sha256:[0-9a-f]{64}$"
+    },
+    "reset_id": {
+      "type": "string",
+      "pattern": "^grcv4-reset-sha256:[0-9a-f]{64}$"
+    },
+    "event_id": {
+      "type": "string",
+      "pattern": "^grc-event-sha256:[0-9a-f]{64}$"
+    },
+    "commit_id": {
+      "type": "string",
+      "pattern": "^grc-commit-sha256:[0-9a-f]{64}$"
+    },
+    "receipt_id": {
+      "type": "string",
+      "pattern": "^grc-receipt-sha256:[0-9a-f]{64}$"
+    },
+    "digest_reference": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]*-sha256:[0-9a-f]{64}$"
+    },
+    "model_id": {
+      "oneOf": [
+        {"$ref": "#/$defs/grcv4_profile_id"},
+        {"$ref": "#/$defs/grc9v4_model_id"}
+      ]
+    },
+    "step_request": {
+      "type": "object",
+      "required": ["schema_version", "dt", "context_value", "boundary_input", "external_source"],
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {"const": "grcv4-step-request-v1"},
+        "dt": {"$ref": "#/$defs/nonnegative_number"},
+        "context_value": {"type": "object"},
+        "boundary_input": {"type": ["object", "null"]},
+        "external_source": {"type": ["object", "null"]}
+      }
+    },
+    "migration_policy": {
+      "type": "object",
+      "required": ["schema_version", "policy_id", "resource_policy_id", "target_readmission_policy_id"],
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {"const": "grcv4-migration-policy-v1"},
+        "policy_id": {"const": "typed_bidirectional_profile_migration_v1"},
+        "resource_policy_id": {"const": "identity_resource_transport_v1"},
+        "target_readmission_policy_id": {"const": "full_target_fail_closed_v1"}
+      }
+    },
+    "history_event_policy": {
+      "type": "object",
+      "required": ["schema_version", "disposition", "source_history_digest", "target_initializer_id", "information_loss"],
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {"const": "grcv4-history-event-policy-v1"},
+        "disposition": {"enum": ["not_applicable", "exact_transport", "target_initializer", "whole_carrier_map", "whole_carrier_reset", "explicit_loss"]},
+        "source_history_digest": {"oneOf": [{"$ref": "#/$defs/digest_reference"}, {"type": "null"}]},
+        "target_initializer_id": {"type": ["string", "null"]},
+        "information_loss": {"enum": ["none", "candidate_history_loss", "carrier_history_loss", "v4_surface_projection", "whole_state_delegate_crossing"]}
+      }
+    },
+    "resource_event_map": {
+      "type": "object",
+      "required": ["schema_version", "policy_id", "source_vertex_ids", "target_vertex_ids", "row_major_coefficients"],
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {"const": "grcv4-resource-event-map-v1"},
+        "policy_id": {"type": "string", "minLength": 1},
+        "source_vertex_ids": {"type": "array", "items": {"type": ["string", "integer"]}},
+        "target_vertex_ids": {"type": "array", "items": {"type": ["string", "integer"]}},
+        "row_major_coefficients": {"type": "array", "items": {"$ref": "#/$defs/nonnegative_number"}}
+      }
+    },
+    "serialized_graph_payload": {
+      "type": "object",
+      "required": ["schema_version", "live_node_ids", "oriented_edges"],
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {"const": "grcv4-serialized-graph-v1"},
+        "live_node_ids": {"type": "array", "uniqueItems": true, "items": {"type": ["string", "integer"]}},
+        "oriented_edges": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["edge_id", "tail_node_id", "head_node_id"],
+            "additionalProperties": false,
+            "properties": {
+              "edge_id": {"type": "string", "minLength": 1},
+              "tail_node_id": {"type": ["string", "integer"]},
+              "head_node_id": {"type": ["string", "integer"]}
+            }
+          }
+        }
+      }
+    },
+    "migration_request": {
+      "type": "object",
+      "required": ["schema_version", "operation_id", "source_state_digest", "target_profile_id", "migration_policy", "history_policy", "target_context_value"],
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {"const": "grcv4-migration-request-v1"},
+        "operation_id": {"type": "string", "minLength": 1},
+        "source_state_digest": {"$ref": "#/$defs/state_id"},
+        "target_profile_id": {"$ref": "#/$defs/grcv4_profile_id"},
+        "migration_policy": {"$ref": "#/$defs/migration_policy"},
+        "history_policy": {"$ref": "#/$defs/history_event_policy"},
+        "target_context_value": {"type": "object"}
+      }
+    },
+    "mapped_topology_event_request": {
+      "type": "object",
+      "required": ["schema_version", "operation_id", "source_state_digest", "source_graph_digest", "target_graph", "target_profile_id", "resource_map", "history_policy", "metadata"],
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {"const": "grcv4-mapped-topology-event-request-v1"},
+        "operation_id": {"type": "string", "minLength": 1},
+        "source_state_digest": {"$ref": "#/$defs/state_id"},
+        "source_graph_digest": {"$ref": "#/$defs/graph_id"},
+        "target_graph": {"$ref": "#/$defs/serialized_graph_payload"},
+        "target_profile_id": {"$ref": "#/$defs/grcv4_profile_id"},
+        "resource_map": {"$ref": "#/$defs/resource_event_map"},
+        "history_policy": {"$ref": "#/$defs/history_event_policy"},
+        "metadata": {"type": "object"}
+      }
+    },
+    "common_params": {
+      "type": "object",
+      "required": [
+        "schema_version", "differential_backend_id", "boundary_policy_id",
+        "measure_profile_id", "context_contract_id", "units_id", "gauge_id",
+        "normalization_id", "domain_id", "default_step_request"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {"const": "grcv4-common-params-v1"},
+        "differential_backend_id": {"type": "string", "minLength": 1},
+        "boundary_policy_id": {"type": "string", "minLength": 1},
+        "measure_profile_id": {"type": "string", "minLength": 1},
+        "context_contract_id": {"type": "string", "minLength": 1},
+        "units_id": {"type": "string", "minLength": 1},
+        "gauge_id": {"type": "string", "minLength": 1},
+        "normalization_id": {"type": "string", "minLength": 1},
+        "domain_id": {"type": "string", "minLength": 1},
+        "default_step_request": {
+          "oneOf": [
+            {"$ref": "#/$defs/step_request"},
+            {"type": "null"}
+          ]
+        }
+      }
+    },
+    "candidate_a_params": {
+      "type": "object",
+      "required": [
+        "schema_version", "eta", "kappa_c", "site_potential_id", "W_floor",
+        "alpha", "beta", "gamma", "kappa_Ah", "chi_A", "zeta_A", "tau_A",
+        "descriptor_backend_id", "conductance_evaluator_id"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {"const": "grcv4-candidate-a-params-v1"},
+        "eta": {"$ref": "#/$defs/positive_number"},
+        "kappa_c": {"$ref": "#/$defs/finite_number"},
+        "site_potential_id": {"type": "string", "minLength": 1},
+        "W_floor": {"$ref": "#/$defs/positive_number"},
+        "alpha": {"$ref": "#/$defs/finite_number"},
+        "beta": {"$ref": "#/$defs/finite_number"},
+        "gamma": {"$ref": "#/$defs/finite_number"},
+        "kappa_Ah": {"$ref": "#/$defs/finite_number"},
+        "chi_A": {"$ref": "#/$defs/finite_number"},
+        "zeta_A": {"$ref": "#/$defs/finite_number"},
+        "tau_A": {"$ref": "#/$defs/positive_number"},
+        "descriptor_backend_id": {"type": "string", "minLength": 1},
+        "conductance_evaluator_id": {"const": "curvature_disabled_G_W_v1"}
+      }
+    },
+    "candidate_c_params": {
+      "type": "object",
+      "required": [
+        "schema_version", "transport_id", "Lambda_C", "selector_boundary_policy_id",
+        "C_ref", "kappa_M_C", "kappa_Phi_C", "eta_C", "W_C_tr",
+        "W_C_tr_content_digest", "potential_evaluator_id", "tau_C", "chi_C",
+        "zeta_C", "current_conditioning_policy_id", "E_H_policy_id", "E_M_policy_id"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {"const": "grcv4-candidate-c-params-v1"},
+        "transport_id": {"const": "C-HM-STIFFNESS-BASELINE-v1"},
+        "Lambda_C": {"$ref": "#/$defs/finite_number"},
+        "selector_boundary_policy_id": {"const": "strict_rank_gap_fail_closed_v1"},
+        "C_ref": {"$ref": "#/$defs/positive_number"},
+        "kappa_M_C": {"$ref": "#/$defs/finite_number"},
+        "kappa_Phi_C": {"$ref": "#/$defs/finite_number"},
+        "eta_C": {"$ref": "#/$defs/positive_number"},
+        "W_C_tr": {
+          "type": "object",
+          "minProperties": 1,
+          "propertyNames": {"minLength": 1},
+          "additionalProperties": {"$ref": "#/$defs/positive_number"}
+        },
+        "W_C_tr_content_digest": {"$ref": "#/$defs/digest_reference"},
+        "potential_evaluator_id": {"type": "string", "minLength": 1},
+        "tau_C": {"$ref": "#/$defs/nonnegative_number"},
+        "chi_C": {"$ref": "#/$defs/finite_number"},
+        "zeta_C": {"$ref": "#/$defs/finite_number"},
+        "current_conditioning_policy_id": {"type": "string", "minLength": 1},
+        "E_H_policy_id": {"const": "diag_W_C_tr_structural_hodge_v1"},
+        "E_M_policy_id": {"const": "eta_C_diag_W_C_tr_mobility_v1"}
+      }
+    },
+    "geometry_params": {
+      "type": "object",
+      "required": [
+        "schema_version", "K4_base_digest", "reference_hodge_digest",
+        "star_cover_id", "overlap_normalization_id", "candidate_adapter_id",
+        "flat_sharp_solver_id", "geometry_domain_id", "kappa_H"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {"const": "grcv4-geometry-profile-params-v1"},
+        "K4_base_digest": {"$ref": "#/$defs/digest_reference"},
+        "reference_hodge_digest": {"$ref": "#/$defs/digest_reference"},
+        "star_cover_id": {"type": "string", "minLength": 1},
+        "overlap_normalization_id": {"type": "string", "minLength": 1},
+        "candidate_adapter_id": {"type": "string", "minLength": 1},
+        "flat_sharp_solver_id": {"type": "string", "minLength": 1},
+        "geometry_domain_id": {"type": "string", "minLength": 1},
+        "kappa_H": {"$ref": "#/$defs/finite_number"}
+      }
+    },
+    "ci_params": {
+      "type": "object",
+      "required": ["schema_version", "contraction_domain_id", "root_selector_id", "iteration_limit", "residual_norm_id", "tolerance"],
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {"const": "grcv4-ci-params-v1"},
+        "contraction_domain_id": {"type": "string", "minLength": 1},
+        "root_selector_id": {"const": "unique_admitted_root_v1"},
+        "iteration_limit": {"$ref": "#/$defs/positive_integer"},
+        "residual_norm_id": {"type": "string", "minLength": 1},
+        "tolerance": {"$ref": "#/$defs/nonnegative_number"}
+      }
+    },
+    "os_params": {
+      "type": "object",
+      "required": ["schema_version", "predictor_policy_id", "corrector_policy_id", "split_residual_norm_id", "tolerance"],
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {"const": "grcv4-os-params-v1"},
+        "predictor_policy_id": {"const": "reference_geometry_predictor_v1"},
+        "corrector_policy_id": {"const": "one_fresh_geometry_corrector_v1"},
+        "split_residual_norm_id": {"type": "string", "minLength": 1},
+        "tolerance": {"$ref": "#/$defs/nonnegative_number"}
+      }
+    },
+    "rg2b_params": {
+      "type": "object",
+      "required": [
+        "schema_version", "extension_evaluator_id", "approximation_policy_id",
+        "error_norm_id", "error_tolerance", "containment_certificate_id",
+        "iteration_limit", "failure_policy_id"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {"const": "grcv4-rg2b-params-v1"},
+        "extension_evaluator_id": {"type": "string", "minLength": 1},
+        "approximation_policy_id": {"type": "string", "minLength": 1},
+        "error_norm_id": {"type": "string", "minLength": 1},
+        "error_tolerance": {"$ref": "#/$defs/nonnegative_number"},
+        "containment_certificate_id": {"type": "string", "minLength": 1},
+        "iteration_limit": {"$ref": "#/$defs/positive_integer"},
+        "failure_policy_id": {"const": "fail_closed_on_uncertified_section_v1"}
+      }
+    },
+    "pc_params": {
+      "type": "object",
+      "required": ["schema_version", "tau_PC", "radius", "carrier_norm_id", "source_envelope_id", "writer_id"],
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {"const": "grcv4-pc-params-v1"},
+        "tau_PC": {"$ref": "#/$defs/positive_number"},
+        "radius": {"$ref": "#/$defs/positive_number"},
+        "carrier_norm_id": {"type": "string", "minLength": 1},
+        "source_envelope_id": {"type": "string", "minLength": 1},
+        "writer_id": {"const": "zero_order_hold_exponential_v1"}
+      }
+    },
+    "cipc_params": {
+      "type": "object",
+      "required": [
+        "schema_version", "contraction_domain_id", "root_selector_id",
+        "iteration_limit", "residual_norm_id", "tolerance", "tau_PC", "radius",
+        "carrier_norm_id", "source_envelope_id", "writer_id", "rho_inst"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {"const": "grcv4-cipc-params-v1"},
+        "contraction_domain_id": {"type": "string", "minLength": 1},
+        "root_selector_id": {"const": "unique_admitted_root_v1"},
+        "iteration_limit": {"$ref": "#/$defs/positive_integer"},
+        "residual_norm_id": {"type": "string", "minLength": 1},
+        "tolerance": {"$ref": "#/$defs/nonnegative_number"},
+        "tau_PC": {"$ref": "#/$defs/positive_number"},
+        "radius": {"$ref": "#/$defs/positive_number"},
+        "carrier_norm_id": {"type": "string", "minLength": 1},
+        "source_envelope_id": {"type": "string", "minLength": 1},
+        "writer_id": {"const": "zero_order_hold_exponential_v1"},
+        "rho_inst": {"const": 1}
+      }
+    },
+    "solver_policy": {
+      "type": "object",
+      "required": [
+        "schema_version", "solver_kind", "root_selector_id", "iteration_limit",
+        "conditioning_limit", "residual_norm_id", "absolute_tolerance",
+        "relative_tolerance", "failure_policy_id"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {"const": "grcv4-solver-policy-v1"},
+        "solver_kind": {"enum": ["direct", "fixed_point", "newton"]},
+        "root_selector_id": {"const": "unique_admitted_root_v1"},
+        "iteration_limit": {"$ref": "#/$defs/positive_integer"},
+        "conditioning_limit": {"$ref": "#/$defs/positive_number"},
+        "residual_norm_id": {"type": "string", "minLength": 1},
+        "absolute_tolerance": {"$ref": "#/$defs/nonnegative_number"},
+        "relative_tolerance": {"$ref": "#/$defs/nonnegative_number"},
+        "failure_policy_id": {"const": "fail_closed_no_fallback_v1"}
+      }
+    },
+    "charge_policy": {
+      "type": "object",
+      "required": ["schema_version", "policy_id", "accumulation_order", "rounding_mode", "absolute_tolerance", "relative_tolerance", "repair_policy", "remainder_policy"],
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {"const": "grcv4-charge-policy-v1"},
+        "policy_id": {"const": "stable_pairwise_binary64_charge_v1"},
+        "accumulation_order": {"const": "canonical_live_vertex_balanced_binary_tree"},
+        "rounding_mode": {"const": "IEEE754_binary64_roundTiesToEven"},
+        "absolute_tolerance": {"$ref": "#/$defs/nonnegative_number"},
+        "relative_tolerance": {"$ref": "#/$defs/nonnegative_number"},
+        "repair_policy": {"const": "never_mutate_resource"},
+        "remainder_policy": {"const": "compatibility_projection_is_none"}
+      }
+    },
+    "lifecycle_policy": {
+      "type": "object",
+      "required": [
+        "schema_version", "migration_policy_id", "mapped_event_policy_id",
+        "reset_policy_id", "rebase_policy_id", "history_policy_id",
+        "receipt_policy_id", "target_readmission_policy_id"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {"const": "grcv4-lifecycle-policy-v1"},
+        "migration_policy_id": {"const": "typed_bidirectional_profile_migration_v1"},
+        "mapped_event_policy_id": {"const": "caller_mapped_atomic_topology_event_v1"},
+        "reset_policy_id": {"const": "restore_current_baseline_append_receipt_v1"},
+        "rebase_policy_id": {"const": "replace_baseline_append_receipt_v1"},
+        "history_policy_id": {"type": "string", "minLength": 1},
+        "receipt_policy_id": {"const": "operation_delta_plus_persistent_ledger_v1"},
+        "target_readmission_policy_id": {"const": "full_target_fail_closed_v1"}
+      }
+    },
+    "resolved_params": {
+      "type": "object",
+      "required": ["schema_version", "common", "candidate", "realization", "geometry", "solver", "charge", "lifecycle"],
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {"const": "grcv4-resolved-params-v1"},
+        "common": {"$ref": "#/$defs/common_params"},
+        "candidate": {"oneOf": [{"$ref": "#/$defs/candidate_a_params"}, {"$ref": "#/$defs/candidate_c_params"}]},
+        "realization": {"oneOf": [{"$ref": "#/$defs/ci_params"}, {"$ref": "#/$defs/os_params"}, {"$ref": "#/$defs/rg2b_params"}, {"$ref": "#/$defs/pc_params"}, {"$ref": "#/$defs/cipc_params"}]},
+        "geometry": {"$ref": "#/$defs/geometry_params"},
+        "solver": {"$ref": "#/$defs/solver_policy"},
+        "charge": {"$ref": "#/$defs/charge_policy"},
+        "lifecycle": {"$ref": "#/$defs/lifecycle_policy"}
+      }
+    },
+    "profile_identity_payload": {
+      "type": "object",
+      "required": [
+        "schema_version", "profile_family_id", "candidate", "realization",
+        "differential_backend_id", "charge_profile_id", "geometry_profile_id",
+        "context_contract_id", "units_id", "gauge_id", "normalization_id",
+        "domain_id", "solver_id", "lifecycle_policy_id",
+        "candidate_c_transport_id", "composition_gain", "params_hash"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {"const": "grcv4-profile-identity-v1"},
+        "profile_family_id": {"enum": ["A_CI", "C_CI", "A_OS", "C_OS", "A_RG2b", "C_RG2b", "A_PC", "C_PC", "A_CI_PC", "C_CI_PC"]},
+        "candidate": {"enum": ["A", "C"]},
+        "realization": {"enum": ["CI", "OS", "RG2b", "PC", "CI+PC"]},
+        "differential_backend_id": {"type": "string", "minLength": 1},
+        "charge_profile_id": {"type": "string", "minLength": 1},
+        "geometry_profile_id": {"type": "string", "minLength": 1},
+        "context_contract_id": {"type": "string", "minLength": 1},
+        "units_id": {"type": "string", "minLength": 1},
+        "gauge_id": {"type": "string", "minLength": 1},
+        "normalization_id": {"type": "string", "minLength": 1},
+        "domain_id": {"type": "string", "minLength": 1},
+        "solver_id": {"type": "string", "minLength": 1},
+        "lifecycle_policy_id": {"type": "string", "minLength": 1},
+        "candidate_c_transport_id": {"enum": [null, "C-HM-STIFFNESS-BASELINE-v1"]},
+        "composition_gain": {"type": ["number", "null"]},
+        "params_hash": {"$ref": "#/$defs/grcv4_params_id"}
+      }
+    },
+    "profile_template_payload": {
+      "type": "object",
+      "required": ["schema_version", "source_complete_profile_id", "profile_family_id", "topology_dependent_map_policy_id", "geometry_reference_policy_id"],
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {"const": "grcv4-profile-template-v1"},
+        "source_complete_profile_id": {"$ref": "#/$defs/grcv4_profile_id"},
+        "profile_family_id": {"enum": ["A_CI", "C_CI", "A_OS", "C_OS", "A_RG2b", "C_RG2b", "A_PC", "C_PC", "A_CI_PC", "C_CI_PC"]},
+        "topology_dependent_map_policy_id": {"const": "preserve_old_stable_edges_seed_new_internal_edges_v1"},
+        "geometry_reference_policy_id": {"const": "rebuild_reference_hodge_from_target_W_C_tr_v1"}
+      }
+    },
+    "row_weight_policy": {
+      "type": "object",
+      "required": ["schema_version", "candidate_a_source", "candidate_c_source", "disabled_source", "evaluation_stage"],
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {"const": "grc9v4-row-weight-policy-v1"},
+        "candidate_a_source": {"const": "committed_postbeat_W_A"},
+        "candidate_c_source": {"const": "stable_edge_W_C_tr"},
+        "disabled_source": {"const": "exact_delegate_native_base_conductance"},
+        "evaluation_stage": {"const": "fresh_postbeat_candidate_detection"}
+      }
+    },
+    "child_stabilization_policy": {
+      "type": "object",
+      "required": [
+        "schema_version", "policy_id", "basin_classifier_id", "sample_stage",
+        "reference_parent_organization_digest", "required_consecutive_beats",
+        "residual_norm_id", "residual_tolerance", "minimum_child_separation",
+        "transient_disposition", "reset_behavior", "hierarchy_update"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {"const": "grc9v4-child-stabilization-policy-v1"},
+        "policy_id": {"type": "string", "minLength": 1},
+        "basin_classifier_id": {"type": "string", "minLength": 1},
+        "sample_stage": {"const": "post_ordinary_step_commit"},
+        "reference_parent_organization_digest": {"$ref": "#/$defs/digest_reference"},
+        "required_consecutive_beats": {"$ref": "#/$defs/positive_integer"},
+        "residual_norm_id": {"type": "string", "minLength": 1},
+        "residual_tolerance": {"$ref": "#/$defs/nonnegative_number"},
+        "minimum_child_separation": {"$ref": "#/$defs/positive_number"},
+        "transient_disposition": {"const": "mechanical_refinement_only"},
+        "reset_behavior": {"const": "clear_candidate_window"},
+        "hierarchy_update": {"const": "append_stable_child_ids_in_canonical_order"}
+      }
+    },
+    "spark_policy": {
+      "type": "object",
+      "required": ["schema_version", "lane", "gradient_tolerance", "basin_hessian_tolerance", "spark_hessian_tolerance", "child_stabilization"],
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {"const": "grc9v4-spark-policy-v1"},
+        "lane": {"enum": ["current_hybrid_signed_hessian", "grc9v3_column_h_assisted"]},
+        "gradient_tolerance": {"$ref": "#/$defs/nonnegative_number"},
+        "basin_hessian_tolerance": {"$ref": "#/$defs/positive_number"},
+        "spark_hessian_tolerance": {"$ref": "#/$defs/finite_number"},
+        "child_stabilization": {"oneOf": [{"$ref": "#/$defs/child_stabilization_policy"}, {"type": "null"}]}
+      }
+    },
+    "expansion_policy": {
+      "type": "object",
+      "required": [
+        "schema_version", "policy_id", "boundary_policy", "primary_spine_policy",
+        "recursive_tree_policy", "stable_id_policy", "bond_seed",
+        "resource_distribution_schema", "source_self_loop_policy"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {"const": "grc9v4-expansion-policy-v1"},
+        "policy_id": {"const": "grc9v4_axis_preserving_chiral_same_port_expansion_v1"},
+        "boundary_policy": {"const": "reserve_exact_old_port_map_first"},
+        "primary_spine_policy": {"const": "chiral_latin_same_port_transversal"},
+        "recursive_tree_policy": {"const": "creation_order_bfs_same_port_rotor"},
+        "stable_id_policy": {"const": "grc_event_sha256_role_grammar_v1"},
+        "bond_seed": {"$ref": "#/$defs/positive_number"},
+        "resource_distribution_schema": {"const": "event_supplied_simplex3"},
+        "source_self_loop_policy": {"const": "reject_before_target_construction"}
+      }
+    },
+    "coarse_policy": {
+      "type": "object",
+      "required": ["schema_version", "nonnegative_field_mode", "signed_flux_mode"],
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {"const": "grc9v4-coarse-policy-v1"},
+        "nonnegative_field_mode": {"const": "simplex_profile"},
+        "signed_flux_mode": {"const": "positive_negative_split"}
+      }
+    },
+    "legacy_compatibility_policy": {
+      "type": "object",
+      "required": ["schema_version", "target_spec_version", "transition_policy_id", "state_policy_id", "observable_policy_id", "lifecycle_policy_id", "undefined_expansion_disposition"],
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {"const": "grc9v4-legacy-compatibility-policy-v1"},
+        "target_spec_version": {"type": "string", "minLength": 1},
+        "transition_policy_id": {"type": "string", "minLength": 1},
+        "state_policy_id": {"type": "string", "minLength": 1},
+        "observable_policy_id": {"type": "string", "minLength": 1},
+        "lifecycle_policy_id": {"type": "string", "minLength": 1},
+        "undefined_expansion_disposition": {"const": "legacy_expansion_target_undefined"}
+      }
+    },
+    "resolved_specialization": {
+      "type": "object",
+      "required": ["schema_version", "row_weight", "spark", "expansion", "coarse_graining", "compatibility"],
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {"const": "grc9v4-resolved-specialization-v1"},
+        "row_weight": {"$ref": "#/$defs/row_weight_policy"},
+        "spark": {"$ref": "#/$defs/spark_policy"},
+        "expansion": {"$ref": "#/$defs/expansion_policy"},
+        "coarse_graining": {"$ref": "#/$defs/coarse_policy"},
+        "compatibility": {"$ref": "#/$defs/legacy_compatibility_policy"}
+      }
+    },
+    "specialization_identity_payload": {
+      "type": "object",
+      "required": ["schema_version", "port_count", "port_chart_id", "frame_mode", "hessian_backend", "hessian_sign", "spark_lane", "expansion_policy_id", "row_weight_policy_id", "coarse_policy_id", "grc9v3_target_spec_version", "specialization_params_hash"],
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {"const": "grc9v4-specialization-identity-v1"},
+        "port_count": {"const": 9},
+        "port_chart_id": {"const": "fixed_3x3_row_column"},
+        "frame_mode": {"const": "fixed_port_chart"},
+        "hessian_backend": {"const": "row_basis_diagonal"},
+        "hessian_sign": {"enum": [-1, 1]},
+        "spark_lane": {"enum": ["current_hybrid_signed_hessian", "grc9v3_column_h_assisted"]},
+        "expansion_policy_id": {"const": "grc9v4_axis_preserving_chiral_same_port_expansion_v1"},
+        "row_weight_policy_id": {"const": "grc9v4-row-weight-policy-v1"},
+        "coarse_policy_id": {"const": "grc9v4-coarse-policy-v1"},
+        "grc9v3_target_spec_version": {"type": "string", "minLength": 1},
+        "specialization_params_hash": {"$ref": "#/$defs/grc9v4_params_id"}
+      }
+    },
+    "complete_model_identity_payload": {
+      "type": "object",
+      "required": ["schema_version", "grcv4_complete_profile_id", "specialization_id"],
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {"const": "grc9v4-complete-identity-v1"},
+        "grcv4_complete_profile_id": {"$ref": "#/$defs/grcv4_profile_id"},
+        "specialization_id": {"$ref": "#/$defs/grc9v4_specialization_id"}
+      }
+    },
+    "port_endpoint": {
+      "type": "object",
+      "required": ["node_id", "port"],
+      "additionalProperties": false,
+      "properties": {
+        "node_id": {"type": ["string", "integer"]},
+        "port": {"type": "integer", "minimum": 1, "maximum": 9}
+      }
+    },
+    "port_edge": {
+      "type": "object",
+      "required": ["edge_id", "kind", "tail", "head"],
+      "additionalProperties": false,
+      "properties": {
+        "edge_id": {"type": "string", "minLength": 1},
+        "kind": {"enum": ["boundary", "spine", "tree"]},
+        "tail": {"$ref": "#/$defs/port_endpoint"},
+        "head": {"$ref": "#/$defs/port_endpoint"}
+      }
+    },
+    "port_graph_payload": {
+      "type": "object",
+      "required": ["schema_version", "live_node_ids", "edges"],
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {"const": "grc9v4-port-graph-v1"},
+        "live_node_ids": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {"type": ["string", "integer"]}
+        },
+        "edges": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/port_edge"}
+        }
+      }
+    },
+    "authoritative_state": {
+      "type": "object",
+      "required": ["C", "W_A", "Z_4"],
+      "additionalProperties": false,
+      "properties": {
+        "C": {"type": "array", "items": {"$ref": "#/$defs/nonnegative_number"}},
+        "W_A": {"oneOf": [{"type": "array", "items": {"$ref": "#/$defs/positive_number"}}, {"type": "null"}]},
+        "Z_4": {"oneOf": [{"type": "array", "items": {"$ref": "#/$defs/finite_number"}}, {"type": "null"}]}
+      }
+    },
+    "grcv4_reset_payload": {
+      "type": "object",
+      "required": ["schema_version", "active_model_identity", "graph_digest", "orientation_identity", "authoritative", "Q_target", "context_contract_id"],
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {"const": "grcv4-reset-baseline-v1"},
+        "active_model_identity": {"$ref": "#/$defs/grcv4_profile_id"},
+        "graph_digest": {"$ref": "#/$defs/graph_id"},
+        "orientation_identity": {"type": "string", "minLength": 1},
+        "authoritative": {"$ref": "#/$defs/authoritative_state"},
+        "Q_target": {"$ref": "#/$defs/finite_number"},
+        "context_contract_id": {"type": "string", "minLength": 1}
+      }
+    },
+    "grc9v4_reset_payload": {
+      "type": "object",
+      "required": ["schema_version", "active_model_identity", "graph_digest", "orientation_identity", "authoritative", "Q_target", "context_contract_id"],
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {"const": "grc9v4-reset-baseline-v1"},
+        "active_model_identity": {"$ref": "#/$defs/grc9v4_model_id"},
+        "graph_digest": {"$ref": "#/$defs/graph_id"},
+        "orientation_identity": {"type": "string", "minLength": 1},
+        "authoritative": {"$ref": "#/$defs/authoritative_state"},
+        "Q_target": {"$ref": "#/$defs/finite_number"},
+        "context_contract_id": {"type": "string", "minLength": 1}
+      }
+    },
+    "reset_payload": {
+      "oneOf": [
+        {"$ref": "#/$defs/grcv4_reset_payload"},
+        {"$ref": "#/$defs/grc9v4_reset_payload"}
+      ]
+    },
+    "expansion_event_identity_payload": {
+      "type": "object",
+      "required": [
+        "schema_version", "source_state_digest", "source_graph_digest",
+        "source_node_id", "target_profile_template_id", "target_specialization_id",
+        "target_effective_degree", "canonical_module_node_count",
+        "module_chirality", "growth_phase", "expansion_policy_id",
+        "expansion_policy_digest", "bond_seed", "resource_distribution",
+        "candidate_history_policy_digest", "carrier_history_policy_digest"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {"const": "grc9v4-expansion-event-identity-v1"},
+        "source_state_digest": {"$ref": "#/$defs/state_id"},
+        "source_graph_digest": {"$ref": "#/$defs/graph_id"},
+        "source_node_id": {"type": ["string", "integer"]},
+        "target_profile_template_id": {"$ref": "#/$defs/grcv4_profile_template_id"},
+        "target_specialization_id": {"$ref": "#/$defs/grc9v4_specialization_id"},
+        "target_effective_degree": {"type": "integer", "minimum": 9, "maximum": 9007199254740991},
+        "canonical_module_node_count": {"type": "integer", "minimum": 4, "maximum": 9007199254740991},
+        "module_chirality": {"enum": [-1, 1]},
+        "growth_phase": {"enum": [null, 1, 2, 3]},
+        "expansion_policy_id": {"const": "grc9v4_axis_preserving_chiral_same_port_expansion_v1"},
+        "expansion_policy_digest": {"$ref": "#/$defs/digest_reference"},
+        "bond_seed": {"$ref": "#/$defs/positive_number"},
+        "resource_distribution": {
+          "type": "array",
+          "prefixItems": [{"$ref": "#/$defs/nonnegative_number"}, {"$ref": "#/$defs/nonnegative_number"}, {"$ref": "#/$defs/nonnegative_number"}],
+          "items": false,
+          "minItems": 3,
+          "maxItems": 3
+        },
+        "candidate_history_policy_digest": {"$ref": "#/$defs/digest_reference"},
+        "carrier_history_policy_digest": {"$ref": "#/$defs/digest_reference"}
+      }
+    },
+    "expansion_event_request": {
+      "type": "object",
+      "required": [
+        "schema_version", "operation_id", "source_state_digest",
+        "source_graph_digest", "source_node_id", "target_profile_template_id",
+        "target_specialization_id", "expansion_policy_id", "target_effective_degree",
+        "module_chirality", "growth_phase", "resource_distribution",
+        "history_policy", "expected_event_id", "expected_target_graph_digest"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {"const": "grc9v4-expansion-event-request-v1"},
+        "operation_id": {"type": "string", "minLength": 1},
+        "source_state_digest": {"$ref": "#/$defs/state_id"},
+        "source_graph_digest": {"$ref": "#/$defs/graph_id"},
+        "source_node_id": {"type": ["string", "integer"]},
+        "target_profile_template_id": {"$ref": "#/$defs/grcv4_profile_template_id"},
+        "target_specialization_id": {"$ref": "#/$defs/grc9v4_specialization_id"},
+        "expansion_policy_id": {"const": "grc9v4_axis_preserving_chiral_same_port_expansion_v1"},
+        "target_effective_degree": {"type": "integer", "minimum": 9, "maximum": 9007199254740991},
+        "module_chirality": {"enum": [-1, 1]},
+        "growth_phase": {"enum": [null, 1, 2, 3]},
+        "resource_distribution": {
+          "type": "array",
+          "prefixItems": [{"$ref": "#/$defs/nonnegative_number"}, {"$ref": "#/$defs/nonnegative_number"}, {"$ref": "#/$defs/nonnegative_number"}],
+          "items": false,
+          "minItems": 3,
+          "maxItems": 3
+        },
+        "history_policy": {"$ref": "#/$defs/expansion_history_policy"},
+        "expected_event_id": {"oneOf": [{"$ref": "#/$defs/event_id"}, {"type": "null"}]},
+        "expected_target_graph_digest": {"oneOf": [{"$ref": "#/$defs/graph_id"}, {"type": "null"}]}
+      }
+    },
+    "expansion_history_policy": {
+      "type": "object",
+      "required": ["schema_version", "candidate_history_policy_id", "carrier_history_policy_id", "candidate_history_policy_digest", "carrier_history_policy_digest"],
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {"const": "grc9v4-expansion-history-policy-v1"},
+        "candidate_history_policy_id": {"type": "string", "minLength": 1},
+        "carrier_history_policy_id": {"type": "string", "minLength": 1},
+        "candidate_history_policy_digest": {"$ref": "#/$defs/digest_reference"},
+        "carrier_history_policy_digest": {"$ref": "#/$defs/digest_reference"}
+      }
+    },
+    "receipt_core": {
+      "type": "object",
+      "required": ["operation_id", "source_state_digest", "target_state_digest", "source_graph_digest", "target_graph_digest", "source_model_identity", "target_model_identity", "source_authoritative_digest", "target_authoritative_digest", "source_reset_digest", "target_reset_digest", "resource_map_digest", "history_map_digest", "actual_charge_delta", "information_loss", "disposition", "parent_receipt_ids"],
+      "additionalProperties": false,
+      "properties": {
+        "operation_id": {"type": "string", "minLength": 1},
+        "source_state_digest": {"$ref": "#/$defs/state_id"},
+        "target_state_digest": {"$ref": "#/$defs/state_id"},
+        "source_graph_digest": {"$ref": "#/$defs/graph_id"},
+        "target_graph_digest": {"$ref": "#/$defs/graph_id"},
+        "source_model_identity": {"$ref": "#/$defs/model_id"},
+        "target_model_identity": {"$ref": "#/$defs/model_id"},
+        "source_authoritative_digest": {"$ref": "#/$defs/digest_reference"},
+        "target_authoritative_digest": {"$ref": "#/$defs/digest_reference"},
+        "source_reset_digest": {"$ref": "#/$defs/reset_id"},
+        "target_reset_digest": {"$ref": "#/$defs/reset_id"},
+        "resource_map_digest": {"$ref": "#/$defs/digest_reference"},
+        "history_map_digest": {"oneOf": [{"$ref": "#/$defs/digest_reference"}, {"type": "null"}]},
+        "actual_charge_delta": {"$ref": "#/$defs/finite_number"},
+        "information_loss": {"enum": ["none", "candidate_history_loss", "carrier_history_loss", "v4_surface_projection", "whole_state_delegate_crossing"]},
+        "disposition": {"const": "committed"},
+        "parent_receipt_ids": {"type": "array", "items": {"$ref": "#/$defs/receipt_id"}}
+      }
+    },
+    "topology_event_receipt_identity_payload": {
+      "type": "object",
+      "required": ["schema_version", "core", "event_id", "history_disposition"],
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {"const": "grcv4-topology-event-receipt-v1"},
+        "core": {"$ref": "#/$defs/receipt_core"},
+        "event_id": {"$ref": "#/$defs/event_id"},
+        "history_disposition": {"enum": ["not_applicable", "exact_transport", "target_initializer", "whole_carrier_map", "whole_carrier_reset", "explicit_loss"]}
+      }
+    },
+    "step_commit_receipt_identity_payload": {
+      "type": "object",
+      "required": ["schema_version", "core"],
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {"const": "grcv4-step-commit-receipt-v1"},
+        "core": {"$ref": "#/$defs/receipt_core"}
+      }
+    },
+    "reset_receipt_identity_payload": {
+      "type": "object",
+      "required": ["schema_version", "core", "reset_baseline_digest"],
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {"const": "grcv4-reset-receipt-v1"},
+        "core": {"$ref": "#/$defs/receipt_core"},
+        "reset_baseline_digest": {"$ref": "#/$defs/reset_id"}
+      }
+    },
+    "rebase_receipt_identity_payload": {
+      "type": "object",
+      "required": ["schema_version", "core", "old_reset_digest", "new_reset_digest"],
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {"const": "grcv4-rebase-receipt-v1"},
+        "core": {"$ref": "#/$defs/receipt_core"},
+        "old_reset_digest": {"$ref": "#/$defs/reset_id"},
+        "new_reset_digest": {"$ref": "#/$defs/reset_id"}
+      }
+    },
+    "profile_migration_receipt_identity_payload": {
+      "type": "object",
+      "required": ["schema_version", "core", "history_disposition"],
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {"const": "grcv4-profile-migration-receipt-v1"},
+        "core": {"$ref": "#/$defs/receipt_core"},
+        "history_disposition": {"enum": ["not_applicable", "exact_transport", "target_initializer", "whole_carrier_map", "whole_carrier_reset", "explicit_loss"]}
+      }
+    },
+    "charge_receipt_identity_payload": {
+      "type": "object",
+      "required": ["schema_version", "core", "target_charge", "admitted_charge", "residual"],
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {"const": "grcv4-charge-receipt-v1"},
+        "core": {"$ref": "#/$defs/receipt_core"},
+        "target_charge": {"$ref": "#/$defs/finite_number"},
+        "admitted_charge": {"$ref": "#/$defs/finite_number"},
+        "residual": {"$ref": "#/$defs/finite_number"}
+      }
+    },
+    "history_disposition_receipt_identity_payload": {
+      "type": "object",
+      "required": ["schema_version", "core", "history_disposition"],
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {"const": "grcv4-history-disposition-receipt-v1"},
+        "core": {"$ref": "#/$defs/receipt_core"},
+        "history_disposition": {"enum": ["not_applicable", "exact_transport", "target_initializer", "whole_carrier_map", "whole_carrier_reset", "explicit_loss"]}
+      }
+    },
+    "legacy_compatibility_receipt_identity_payload": {
+      "type": "object",
+      "required": ["schema_version", "core", "target_spec_version", "compatibility_surfaces"],
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {"const": "grc9v4-legacy-compatibility-receipt-v1"},
+        "core": {"$ref": "#/$defs/receipt_core"},
+        "target_spec_version": {"type": "string", "minLength": 1},
+        "compatibility_surfaces": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {"enum": ["transition", "state", "observable", "lifecycle"]}
+        }
+      }
+    },
+    "successful_receipt_identity_payload": {
+      "oneOf": [
+        {"$ref": "#/$defs/step_commit_receipt_identity_payload"},
+        {"$ref": "#/$defs/reset_receipt_identity_payload"},
+        {"$ref": "#/$defs/rebase_receipt_identity_payload"},
+        {"$ref": "#/$defs/profile_migration_receipt_identity_payload"},
+        {"$ref": "#/$defs/topology_event_receipt_identity_payload"},
+        {"$ref": "#/$defs/charge_receipt_identity_payload"},
+        {"$ref": "#/$defs/history_disposition_receipt_identity_payload"},
+        {"$ref": "#/$defs/legacy_compatibility_receipt_identity_payload"}
+      ]
+    },
+    "successful_receipt_envelope": {
+      "type": "object",
+      "required": ["schema_version", "receipt_id", "commit_id", "identity_payload"],
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {"const": "grcv4-successful-receipt-envelope-v1"},
+        "receipt_id": {"$ref": "#/$defs/receipt_id"},
+        "commit_id": {"$ref": "#/$defs/commit_id"},
+        "identity_payload": {"$ref": "#/$defs/successful_receipt_identity_payload"}
+      }
+    },
+    "failure_receipt_identity_payload": {
+      "type": "object",
+      "required": ["schema_version", "operation_id", "stage", "code", "source_state_digest", "observed_poststate_digest"],
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {"const": "grcv4-failure-receipt-v1"},
+        "operation_id": {"type": "string", "minLength": 1},
+        "stage": {"enum": ["admission", "pre_read_reconstruction", "candidate_solve", "continuity", "charge_admission", "final_reconstruction", "history_write", "target_construction", "target_readmission", "restoration", "commit"]},
+        "code": {"enum": ["invalid_identity", "invalid_duration", "domain_failure", "singular_solver", "conditioning_failure", "nonfinite_value", "no_admitted_root", "multiple_admitted_roots", "charge_failure", "stale_cache", "unsupported_profile", "invalid_migration", "invalid_topology_event", "source_node_not_saturated", "source_self_loop_unsupported", "module_chirality_required", "module_growth_phase_required", "reject_noncanonical_inactive_growth_phase", "target_readmission_failure", "legacy_expansion_target_undefined", "restoration_failure"]},
+        "source_state_digest": {"$ref": "#/$defs/state_id"},
+        "observed_poststate_digest": {"$ref": "#/$defs/state_id"}
+      }
+    },
+    "failure_receipt": {
+      "type": "object",
+      "required": ["schema_version", "receipt_id", "identity_payload"],
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {"const": "grcv4-failure-receipt-envelope-v1"},
+        "receipt_id": {"$ref": "#/$defs/receipt_id"},
+        "identity_payload": {"$ref": "#/$defs/failure_receipt_identity_payload"}
+      }
+    },
+    "commit_payload": {
+      "type": "object",
+      "required": ["schema_version", "operation_id", "source_state_digest", "target_state_digest", "emitted_receipt_ids", "target_step_index", "target_time"],
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {"const": "grcv4-commit-payload-v1"},
+        "operation_id": {"type": "string", "minLength": 1},
+        "source_state_digest": {"$ref": "#/$defs/state_id"},
+        "target_state_digest": {"$ref": "#/$defs/state_id"},
+        "emitted_receipt_ids": {"type": "array", "items": {"$ref": "#/$defs/receipt_id"}},
+        "target_step_index": {"$ref": "#/$defs/nonnegative_integer"},
+        "target_time": {"$ref": "#/$defs/nonnegative_number"}
+      }
+    },
+    "scientific_state_payload": {
+      "type": "object",
+      "required": ["schema_version", "active_model_identity", "graph_digest", "orientation_identity", "step_index", "time", "authoritative", "reset_digest", "Q_target", "context_contract_id", "context_value_digest"],
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {"const": "grcv4-scientific-state-v1"},
+        "active_model_identity": {"$ref": "#/$defs/model_id"},
+        "graph_digest": {"$ref": "#/$defs/graph_id"},
+        "orientation_identity": {"type": "string", "minLength": 1},
+        "step_index": {"$ref": "#/$defs/nonnegative_integer"},
+        "time": {"$ref": "#/$defs/nonnegative_number"},
+        "authoritative": {"$ref": "#/$defs/authoritative_state"},
+        "reset_digest": {"$ref": "#/$defs/reset_id"},
+        "Q_target": {"$ref": "#/$defs/finite_number"},
+        "context_contract_id": {"type": "string", "minLength": 1},
+        "context_value_digest": {"oneOf": [{"$ref": "#/$defs/digest_reference"}, {"type": "null"}]}
+      }
+    },
+    "lifecycle_envelope_payload": {
+      "type": "object",
+      "required": ["schema_version", "scientific_state_digest", "receipt_ids"],
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {"const": "grcv4-lifecycle-envelope-v1"},
+        "scientific_state_digest": {"$ref": "#/$defs/state_id"},
+        "receipt_ids": {"type": "array", "items": {"$ref": "#/$defs/receipt_id"}}
+      }
+    }
+  }
+}

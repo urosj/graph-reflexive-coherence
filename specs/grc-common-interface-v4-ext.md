@@ -27,14 +27,14 @@ This document does not alter the interface or behavior of `GRCV2`, `GRCV3`,
 | Common-interface area | V4 extension |
 |---|---|
 | Concrete classes | Registers `GRCV4(GRCModel)` and `GRC9V4(GRCV4)`. |
-| State | Adds complete-profile, graph/orientation, context, typed nonresource state, lifecycle receipt, and cache-provenance requirements. |
-| Parameters | Makes every trajectory-changing candidate, realization, geometry, differential, charge, solver, and lifecycle choice part of canonical profile identity. |
+| State | Adds immutable lifecycle-owned payloads and read-only base-field projections without inheriting storage from the mutable base dataclass. |
+| Parameters | Makes every trajectory-changing candidate, realization, geometry, differential, charge, solver, and lifecycle choice part of a noncircular canonical profile identity. |
 | Graph backend | Requires deterministic vertex and oriented-edge order, typed differential and pairing surfaces, signed reorientation, and reconstruction from serialized identity. |
-| Lifecycle | Adds input-bearing V4 step/run, migration, and topology-event operations while preserving the inherited zero-argument methods. |
+| Lifecycle | Separates ordinary beats, caller-mapped generic topology events, and canonically constructed GRC9V4 expansion transactions. |
 | Capabilities | Adds V4 common, candidate, realization, and nine-port specialization capabilities without treating planned support as implemented support. |
 | Observables | Adds profile, charge, current, geometry, solver, lifecycle, and specialization diagnostics while preserving authority labels. |
-| Serialization | Preserves complete profile and lifecycle identity and enough provenance to reject or rebuild derived caches. |
-| Errors | Requires fail-closed typed rejection before atomic commit for identity, domain, solver, charge, migration, event, or restoration failure. |
+| Serialization | Preserves exact versioned parameter, profile, model, state, event, commit, and receipt payload identities. |
+| Errors | Closes stage, disposition, failure-code, receipt-delta, and atomic rollback schemas. |
 | D11-C transport | Requires Candidate C profiles to bind the exact `C-HM-STIFFNESS-BASELINE-v1` stable-edge reference map and separate Hodge/mobility constructors. |
 | D11-G9 expansion | Adds explicit chirality, conditional growth phase, canonical event identity, and legacy-defined-domain failure surfaces for GRC9V4 events. |
 
@@ -51,12 +51,35 @@ class GRCV4(GRCModel): ...
 class GRC9V4(GRCV4): ...
 ```
 
-The enabled-state hierarchy is correspondingly:
+The base `GRCState` and `StepResult` dataclasses are compatibility surfaces,
+not storage superclasses for V4. Their required fields are exposed by
+structural read-only projections:
 
 ```python
-class GRCV4State(GRCState): ...
-class EnabledGRC9V4State(GRCV4State): ...
+@runtime_checkable
+class GRCStateSurface(Protocol):
+    @property
+    def step_index(self) -> int: ...
+    @property
+    def time(self) -> float: ...
+    @property
+    def budget_target(self) -> float: ...
+    @property
+    def remainder(self) -> float | None: ...
+
+@runtime_checkable
+class StepResultSurface(Protocol):
+    step_index: int
+    time: float
+    events: Sequence[GRCEvent]
+    observables: Mapping[str, JSONValue]
 ```
+
+`GRCV4State` and `GRCV4StepResult` are standalone immutable records satisfying
+these protocols. They do not inherit the nonfrozen base dataclasses and do not
+carry duplicate base storage. For every currently admitted V4 profile,
+`remainder` is the read-only constant `None`; the measured charge residual is
+an observable and receipt field, never a repair coordinate.
 
 The GRC9V4 disabled branch is a discriminated exact legacy delegate, not a
 V4-shaped subclass with legacy fields projected out. Its union is defined in
@@ -95,16 +118,61 @@ Defaults must resolve at construction. Environment, observer, device,
 telemetry, and storage choices remain outside model parameters unless the
 family contract explicitly promotes one into trajectory semantics.
 
+`context_contract_id` identifies the schema, units, and semantic meaning of a
+context input. `context_value` is the per-beat value. Its optional
+`context_value_digest` identifies the exact admitted value and belongs to a
+state or receipt only when the selected profile makes context persistence
+trajectory-bearing; it never replaces the contract ID. A serialized
+`default_step_request`, when present, is part of resolved parameters, profile
+identity, snapshots, and reset identity. It cannot contain a one-shot
+topology event because ordinary step requests have no event field.
+
 `from_state()` must validate the complete snapshot before exposing any live
 state. It must not silently select another profile, create or discard retained
 history, rebase charge, repair topology, or substitute a solver policy.
 
-Resolved parameters use `grcv4-resolved-params-v1`: canonical UTF-8 JSON,
-lexicographically ordered object keys, preserved array order, no insignificant
-whitespace, and finite JSON numbers only. A snapshot carries the resolved
-payload, its `sha256:` digest, and the complete-profile digest. A bare hash,
-runtime callable name, environment lookup, or mutable configuration object is
-not sufficient reconstruction authority.
+Resolved parameters use the typed records in
+[`grc-v4-contract-schema.json`](grc-v4-contract-schema.json). Identity-bearing
+payloads are serialized with RFC 8785 JSON Canonicalization Scheme (JCS) over
+I-JSON data: UTF-8, Unicode preserved without normalization, UTF-16 code-unit
+property ordering, ECMAScript finite binary64 number serialization, and no
+duplicate keys, NaN, infinities, negative zero, or integers outside the I-JSON
+safe range. Arrays retain declared order. A snapshot carries each resolved
+payload and its typed digest; a bare hash, runtime callable name, environment
+lookup, or mutable configuration object is not reconstruction authority.
+
+## Canonical identity and deep immutability
+
+Every derived identity is the lowercase SHA-256 hex digest of the JCS bytes of
+the named payload, prefixed exactly as follows:
+
+| Payload | Identifier grammar |
+|---|---|
+| resolved parameters | `grcv4-params-sha256:<64-hex>` |
+| generic complete profile | `grcv4-profile-sha256:<64-hex>` |
+| topology-independent profile template | `grcv4-profile-template-sha256:<64-hex>` |
+| GRC9V4 specialization parameters | `grc9v4-params-sha256:<64-hex>` |
+| GRC9V4 specialization | `grc9v4-specialization-sha256:<64-hex>` |
+| combined GRC9V4 model | `grc9v4-model-sha256:<64-hex>` |
+| graph | `grc-graph-sha256:<64-hex>` |
+| scientific state | `grcv4-state-sha256:<64-hex>` |
+| lifecycle envelope | `grcv4-lifecycle-sha256:<64-hex>` |
+| reset baseline | `grcv4-reset-sha256:<64-hex>` |
+| topology event | `grc-event-sha256:<64-hex>` |
+| committed transaction | `grc-commit-sha256:<64-hex>` |
+| lifecycle receipt | `grc-receipt-sha256:<64-hex>` |
+
+The payload records never contain the identifier derived from themselves.
+References to already-derived child identities are allowed and are explicitly
+listed in the schema. `params_hash`, `complete_profile_id`, full GRC9V4 model
+identity, event ID, state digest, commit ID, and receipt ID are recomputed and
+compared on admission; mismatches fail before mutation.
+
+Deep immutability is normative. Constructors defensively copy and freeze every
+array, mapping, nested payload, graph record, and receipt before validation.
+Public access returns immutable views or defensive copies. Python `dict`,
+`list`, and writable array objects may be accepted as configuration input but
+must not survive inside admitted scientific state.
 
 ## State and authority extension
 
@@ -192,31 +260,75 @@ The additive public request surface is:
 
 ```python
 @dataclass(frozen=True)
+class GRCV4MigrationPolicy:
+    schema_version: Literal["grcv4-migration-policy-v1"]
+    policy_id: Literal["typed_bidirectional_profile_migration_v1"]
+    resource_policy_id: Literal["identity_resource_transport_v1"]
+    target_readmission_policy_id: Literal["full_target_fail_closed_v1"]
+
+@dataclass(frozen=True)
+class ResolvedHistoryEventPolicy:
+    schema_version: Literal["grcv4-history-event-policy-v1"]
+    disposition: HistoryDisposition
+    source_history_digest: str | None
+    target_initializer_id: str | None
+    information_loss: InformationLossClass
+
+@dataclass(frozen=True)
+class ResolvedExpansionHistoryPolicy:
+    schema_version: Literal["grc9v4-expansion-history-policy-v1"]
+    candidate_history_policy_id: str
+    carrier_history_policy_id: str
+    candidate_history_policy_digest: str
+    carrier_history_policy_digest: str
+
+@dataclass(frozen=True)
+class ResolvedResourceEventMap:
+    schema_version: Literal["grcv4-resource-event-map-v1"]
+    policy_id: str
+    source_vertex_ids: tuple[NodeId, ...]
+    target_vertex_ids: tuple[NodeId, ...]
+    row_major_coefficients: tuple[float, ...]
+
+@dataclass(frozen=True)
 class GRCV4StepRequest:
+    schema_version: Literal["grcv4-step-request-v1"]
     dt: float
-    context_value: Mapping[str, JSONValue]
-    boundary_input: Mapping[str, JSONValue] | None = None
-    external_source: Mapping[str, JSONValue] | None = None
-    event: "GRCV4EventRequest | None" = None
+    context_value: FrozenJSONMap
+    boundary_input: FrozenJSONMap | None = None
+    external_source: FrozenJSONMap | None = None
 
 @dataclass(frozen=True)
 class GRCV4MigrationRequest:
-    target_profile: "GRCV4Profile"
-    history_policy_id: str
-    target_context_value: Mapping[str, JSONValue]
+    schema_version: Literal["grcv4-migration-request-v1"]
+    operation_id: str
+    source_state_digest: str
+    target_profile_id: str
+    migration_policy: "GRCV4MigrationPolicy"
+    history_policy: "ResolvedHistoryEventPolicy"
+    target_context_value: FrozenJSONMap
 
 @dataclass(frozen=True)
-class GRCV4TopologyEventRequest:
-    event_id: str
-    source_graph_id: str
+class GRCV4MappedTopologyEventRequest:
+    schema_version: Literal["grcv4-mapped-topology-event-request-v1"]
+    operation_id: str
+    source_state_digest: str
+    source_graph_digest: str
     target_graph: SerializedGraphState
-    target_profile: GRCV4Profile
-    resource_map_id: str
-    history_policy_id: str
-    payload: Mapping[str, JSONValue]
+    target_profile_id: str
+    resource_map: "ResolvedResourceEventMap"
+    history_policy: "ResolvedHistoryEventPolicy"
+    metadata: FrozenJSONMap
 
 @dataclass(frozen=True)
-class GRC9V4ExpansionEventRequest(GRCV4TopologyEventRequest):
+class GRC9V4ExpansionEventRequest:
+    schema_version: Literal["grc9v4-expansion-event-request-v1"]
+    operation_id: str
+    source_state_digest: str
+    source_graph_digest: str
+    source_node_id: NodeId
+    target_profile_template_id: str
+    target_specialization_id: str
     expansion_policy_id: Literal[
         "grc9v4_axis_preserving_chiral_same_port_expansion_v1"
     ]
@@ -224,6 +336,13 @@ class GRC9V4ExpansionEventRequest(GRCV4TopologyEventRequest):
     module_chirality: Literal[-1, 1]
     growth_phase: Literal[1, 2, 3] | None
     resource_distribution: tuple[float, float, float]
+    history_policy: "ResolvedExpansionHistoryPolicy"
+    expected_event_id: str | None = None
+    expected_target_graph_digest: str | None = None
+
+TopologyEventRequest = (
+    GRCV4MappedTopologyEventRequest | GRC9V4ExpansionEventRequest
+)
 
 def step_v4(self, request: GRCV4StepRequest) -> "GRCV4StepResult": ...
 def run_v4(
@@ -236,16 +355,34 @@ def migrate_profile(
 ) -> "GRCV4LifecycleResult": ...
 def apply_topology_event(
     self,
-    request: GRCV4TopologyEventRequest,
+    request: TopologyEventRequest,
 ) -> "GRCV4LifecycleResult": ...
 ```
+
+`ResolvedResourceEventMap.row_major_coefficients` is the target-by-source
+matrix in the exact listed vertex orders, has length
+`len(target_vertex_ids) * len(source_vertex_ids)`, contains only nonnegative
+finite binary64 values, and must satisfy the active source/target charge-form
+conservation equation before use. Duplicate vertex IDs, a dimension mismatch,
+or a failed conservation check rejects admission. The mapped graph payload,
+resource map, history policy, and target profile are all identity-bearing even
+when a Python API passes their immutable record objects rather than serialized
+JSON.
 
 The current context value and ordinary boundary/external inputs must enter
 through the request. Hidden mutable model fields, private queues, process
 globals, telemetry, or environment variables may not supply scientific beat
-input. An event present in `GRCV4StepRequest` is detected or requested at the
-declared beat stage, but its topology transaction is still executed through
-the typed event semantics before a target state commits.
+input. `GRCV4StepRequest` never contains a topology event. A generic mapped
+event accepts one caller-supplied target graph as explicit authority. Generic
+target-profile IDs and GRC9V4 target references resolve through the same
+admitted immutable identity registry to complete digest-matching payloads. A
+GRC9V4 expansion accepts no target graph: the model constructs it canonically
+from the admitted post-beat source state and the resolved policy. The source
+node is explicit. Snapshots and conformance bundles carry referenced payloads,
+not only identifier strings. `metadata` is nonauthoritative annotation,
+excluded from event and state identity, and may not change construction.
+`expected_event_id` and `expected_target_graph_digest` are
+optional conformance assertions only; they never become target authority.
 
 ## Lifecycle and event extension
 
@@ -284,45 +421,202 @@ source and target identities, charge effects, history disposition, information
 loss, and admission outcome. A target profile not present in
 `list_supported_profiles()` is rejected before provisional mutation.
 
-`GRC9V4` mechanical expansion is such a topology event. Its candidate
-detection, expansion, and child-basin completion remain distinct lifecycle
-facts. Its `event_id` must use the
+`GRC9V4` mechanical expansion is such a topology event. The ordinary beat
+commits first; fresh candidate detection reads that committed state; a caller
+then submits a separate expansion request; expansion succeeds or fails as its
+own atomic commit; and only then may ordinary stepping resume. No combined
+beat-plus-expansion commit exists. Candidate detection, expansion, and
+child-basin completion remain distinct lifecycle facts. The computed
+`event_id` must use the
 `grc-event-sha256:<64-lowercase-hex-digits>` grammar and bind the source,
-desired capacity, module size, chirality, canonical phase, port and bond
-policies, resource map, and candidate/history policies. `growth_phase` is
-`None` exactly when $(n_{\mathrm{canonical}}-4)\bmod3=0$; otherwise it is one
-of `1`, `2`, or `3`.
+source node, desired capacity, module size, chirality, canonical phase, port
+and bond policies, exact resource tuple, and candidate/history policies via
+the versioned event payload. `growth_phase` is `None` exactly when
+$(n_{\mathrm{canonical}}-4)\bmod3=0$; otherwise it is one of `1`, `2`, or
+`3`.
 
-## Step results, events, and observables
+## Step results, receipts, and observables
 
-The additive result surface is:
+The closed result vocabulary is:
 
 ```python
-@dataclass(frozen=True)
+OperationStage = Literal[
+    "admission", "pre_read_reconstruction", "candidate_solve",
+    "continuity", "charge_admission", "final_reconstruction",
+    "history_write", "target_construction", "target_readmission",
+    "restoration", "commit",
+]
+SolverDisposition = Literal[
+    "valid_root", "domain_failure", "singular", "conditioning_failure",
+    "nonfinite", "no_admitted_root", "multiple_admitted_roots",
+]
+LifecycleDisposition = Literal["committed", "rejected"]
+HistoryDisposition = Literal[
+    "not_applicable", "exact_transport", "target_initializer",
+    "whole_carrier_map", "whole_carrier_reset", "explicit_loss",
+]
+InformationLossClass = Literal[
+    "none", "candidate_history_loss", "carrier_history_loss",
+    "v4_surface_projection", "whole_state_delegate_crossing",
+]
+FailureCode = Literal[
+    "invalid_identity", "invalid_duration", "domain_failure",
+    "singular_solver", "conditioning_failure", "nonfinite_value",
+    "no_admitted_root", "multiple_admitted_roots", "charge_failure",
+    "stale_cache", "unsupported_profile", "invalid_migration",
+    "invalid_topology_event", "source_node_not_saturated",
+    "source_self_loop_unsupported", "module_chirality_required",
+    "module_growth_phase_required",
+    "reject_noncanonical_inactive_growth_phase", "target_readmission_failure",
+    "legacy_expansion_target_undefined", "restoration_failure",
+]
+
+@dataclass(frozen=True, slots=True)
+class ReceiptCore:
+    operation_id: str
+    source_state_digest: str
+    target_state_digest: str
+    source_graph_digest: str
+    target_graph_digest: str
+    source_model_identity: str
+    target_model_identity: str
+    source_authoritative_digest: str
+    target_authoritative_digest: str
+    source_reset_digest: str
+    target_reset_digest: str
+    resource_map_digest: str
+    history_map_digest: str | None
+    actual_charge_delta: float
+    information_loss: InformationLossClass
+    disposition: Literal["committed"]
+    parent_receipt_ids: tuple[str, ...]
+
+@dataclass(frozen=True, slots=True)
+class StepCommitReceipt:
+    schema_version: Literal["grcv4-step-commit-receipt-v1"]
+    core: ReceiptCore
+
+@dataclass(frozen=True, slots=True)
+class ResetReceipt:
+    schema_version: Literal["grcv4-reset-receipt-v1"]
+    core: ReceiptCore
+    reset_baseline_digest: str
+
+@dataclass(frozen=True, slots=True)
+class RebaseReceipt:
+    schema_version: Literal["grcv4-rebase-receipt-v1"]
+    core: ReceiptCore
+    old_reset_digest: str
+    new_reset_digest: str
+
+@dataclass(frozen=True, slots=True)
+class ProfileMigrationReceipt:
+    schema_version: Literal["grcv4-profile-migration-receipt-v1"]
+    core: ReceiptCore
+    history_disposition: HistoryDisposition
+
+@dataclass(frozen=True, slots=True)
+class TopologyEventReceipt:
+    schema_version: Literal["grcv4-topology-event-receipt-v1"]
+    core: ReceiptCore
+    event_id: str
+    history_disposition: HistoryDisposition
+
+@dataclass(frozen=True, slots=True)
+class ChargeReceipt:
+    schema_version: Literal["grcv4-charge-receipt-v1"]
+    core: ReceiptCore
+    target_charge: float
+    admitted_charge: float
+    residual: float
+
+@dataclass(frozen=True, slots=True)
+class HistoryDispositionReceipt:
+    schema_version: Literal["grcv4-history-disposition-receipt-v1"]
+    core: ReceiptCore
+    history_disposition: HistoryDisposition
+
+@dataclass(frozen=True, slots=True)
+class LegacyCompatibilityReceipt:
+    schema_version: Literal["grc9v4-legacy-compatibility-receipt-v1"]
+    core: ReceiptCore
+    target_spec_version: str
+    compatibility_surfaces: tuple[str, ...]
+
+@dataclass(frozen=True, slots=True)
+class FailureReceiptIdentityPayload:
+    schema_version: Literal["grcv4-failure-receipt-v1"]
+    operation_id: str
+    stage: OperationStage
+    code: FailureCode
+    source_state_digest: str
+    observed_poststate_digest: str
+
+@dataclass(frozen=True, slots=True)
+class FailureReceipt:
+    schema_version: Literal["grcv4-failure-receipt-envelope-v1"]
+    receipt_id: str
+    identity_payload: FailureReceiptIdentityPayload
+
+LifecycleReceipt = (
+    StepCommitReceipt | ResetReceipt | RebaseReceipt |
+    ProfileMigrationReceipt | TopologyEventReceipt | ChargeReceipt |
+    HistoryDispositionReceipt | LegacyCompatibilityReceipt
+)
+
+@dataclass(frozen=True, slots=True)
+class SuccessfulReceiptEnvelope:
+    schema_version: Literal["grcv4-successful-receipt-envelope-v1"]
+    receipt_id: str
+    commit_id: str
+    identity_payload: LifecycleReceipt
+
+@dataclass(frozen=True, slots=True)
 class GRCV4Failure:
-    stage: str
-    disposition: SolverDisposition | str
-    code: str
+    stage: OperationStage
+    disposition: SolverDisposition | LifecycleDisposition
+    code: FailureCode
     message: str
     prestate_digest: str
     poststate_digest: str
+    pre_lifecycle_digest: str
+    post_lifecycle_digest: str
+    failure_receipt: FailureReceipt
 
-@dataclass(frozen=True)
-class GRCV4StepResult(StepResult):
+@dataclass(frozen=True, slots=True)
+class GRCV4StepResult:
+    step_index: int
+    time: float
+    events: tuple[GRCEvent, ...]
+    observables: FrozenJSONMap
     active_profile_id: str
-    disposition: SolverDisposition | str
+    active_model_identity: str
+    disposition: SolverDisposition
     committed: bool
     commit_id: str | None
     failure: GRCV4Failure | None
-    lifecycle_receipts: tuple[LifecycleReceipt, ...]
+    emitted_receipts: tuple[SuccessfulReceiptEnvelope, ...]
 
-@dataclass(frozen=True)
+@dataclass(frozen=True, slots=True)
 class GRCV4LifecycleResult:
     committed: bool
     commit_id: str | None
     failure: GRCV4Failure | None
-    lifecycle_receipts: tuple[LifecycleReceipt, ...]
+    emitted_receipts: tuple[SuccessfulReceiptEnvelope | FailureReceipt, ...]
 ```
+
+Each `LifecycleReceipt` above is the versioned **receipt identity payload**:
+its `schema_version`, `core`, and type-specific fields contain neither
+`receipt_id` nor `commit_id`. Its `receipt_id` is the digest of that payload.
+A commit payload then binds the operation ID, source and target state
+digests, ordered emitted receipt IDs, and committed step/time; it never
+contains `commit_id`. Finally, `SuccessfulReceiptEnvelope` carries the identity
+payload, its computed ID, and the computed commit ID. Admission verifies both
+directions: the commit names the receipt ID and the envelope names that commit.
+This three-step order is normative and removes a receipt/commit hash cycle.
+`FailureReceipt.identity_payload` is hashed without the enclosing
+`receipt_id`. It is returned as operation evidence but is never appended to
+the persistent scientific receipt ledger.
 
 Domain, solver, charge, migration, event, readmission, and compatibility
 failures return a noncommitted typed result. Programmer errors involving an
@@ -330,10 +624,10 @@ invalid Python type or malformed object construction raise. A returned
 failure must have equal pre/post scientific-state digests. An exception raised
 after admission begins must provide the same atomicity guarantee.
 
-Every successful step result must identify the complete profile and committed
-step. `StepResult.events` contains events from that attempted operation only.
-Persistent scientific crossing, charge, and information-loss receipts live in
-the lifecycle state. A telemetry log is nonauthoritative. Events must bind
+Every successful step result must identify the complete model and committed
+step. `events` and `emitted_receipts` contain only the delta from the attempted
+operation. The complete ordered persistent receipt ledger lives in lifecycle
+state. A telemetry log is nonauthoritative. Events must bind
 their graph/profile source and target, atomic commit, and relevant lifecycle
 receipt. A rejected transaction must not report an event as committed or
 append a persistent commit receipt.
@@ -359,12 +653,28 @@ the required nine-port specialization capabilities.
 @property
 def active_profile_id(self) -> str: ...
 
+@property
+def active_model_identity(self) -> str: ...
+
 def list_supported_profiles(self) -> frozenset[str]: ...
+
+def get_supported_profile(
+    self,
+    complete_profile_id: str,
+) -> "GRCV4Profile": ...
+
+def list_supported_model_identities(self) -> frozenset[str]: ...
 ```
 
 `active_profile_id` is the exact complete-profile digest bound to the live
-instance. `list_supported_profiles()` is the lossless set of exact complete
-profile identities that this implementation can construct and migrate to.
+instance. For graph-generic `GRCV4`, `active_model_identity` equals
+`active_profile_id`. For `GRC9V4`, it is the combined generic-profile plus
+specialization identity; the generic profile ID remains separately visible.
+`list_supported_profiles()` and `get_supported_profile()` form the lossless
+generic profile registry that the implementation can construct and migrate
+to. GRC9V4 additionally exposes the exact supported combined identities
+through `list_supported_model_identities()`; no generic ID may stand in for a
+specialization identity.
 Candidate and realization capability flags are only marginals; they must not
 be used to infer unlisted cross-products. For example, support for `A_CI` and
 `C_OS` does not imply `A_OS` or `C_CI`.
@@ -393,6 +703,20 @@ stable reconstructible identity:
 - ordered migration, event, compatibility, and information-loss receipts; and
 - cache provenance sufficient to reject or deterministically rebuild every
   derived surface.
+
+The scientific-state digest is computed from the versioned authoritative
+state payload only: complete model identity, canonical graph payload or its
+single owning representation, orientation, clock, authoritative coordinates,
+reset-baseline digest, charge target, context identity when trajectory-bearing,
+and no receipt fields. It excludes the digest itself, derived caches,
+observables, telemetry, solver workspaces, and object-layout details. The
+separate lifecycle-envelope digest binds that scientific-state digest plus the
+ordered persistent receipt IDs. Receipts bind source/target scientific-state
+digests; commits bind those digests plus emitted receipt IDs; the lifecycle
+envelope is computed last. This acyclic order prevents state/receipt hash
+recursion. The reset digest likewise excludes itself and live clock/receipt
+state. Exact payload definitions are in the contract schema and canonical
+cross-language vectors.
 
 Candidate C snapshots and target profiles preserve the exact identity and
 content of $W_{C,\mathrm{tr}}$ without promoting it into ordinary-beat state.

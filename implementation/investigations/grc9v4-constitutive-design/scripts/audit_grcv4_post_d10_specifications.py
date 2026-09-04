@@ -10,6 +10,7 @@ import re
 import shutil
 import subprocess
 import sys
+import tempfile
 from collections import Counter
 from pathlib import Path
 from typing import Any, Callable
@@ -26,6 +27,10 @@ GRC9V4_SPEC = ROOT / "specs/grc-9-v4-spec.md"
 V4_INTERFACE_EXTENSION = ROOT / "specs/grc-common-interface-v4-ext.md"
 SOURCE_MANIFEST = ROOT / "specs/grc-v4-source-manifest.json"
 CONFORMANCE_FIXTURES = ROOT / "specs/grc-v4-conformance-fixtures.json"
+CONFORMANCE_VECTORS = ROOT / "specs/grc-v4-conformance-vectors.json"
+CONTRACT_SCHEMA = ROOT / "specs/grc-v4-contract-schema.json"
+RELEASE_MANIFEST = ROOT / "specs/grc-v4-specification-release.json"
+RELEASE_CHECKSUM = ROOT / "specs/grc-v4-specification-release.sha256"
 SPECS_README = ROOT / "specs/README.md"
 
 EXPECTED_SOURCE_BUNDLE_DIGEST = (
@@ -83,6 +88,7 @@ PHASE_AUTHORIZATIONS = {
     "specification_propagation": (
         "GRCV4_GRC9V4_D11_SPECIFICATION_PROPAGATION_AFTER_ACCEPTED_PAPER"
     ),
+    "specification_correction": ("GRCV4_GRC9V4_SPECIFICATION_ENGINEERING_CORRECTION"),
     "implementation": "GRCV4_GRC9V4_implementation",
 }
 
@@ -144,7 +150,7 @@ def json_pointer(document: Any, pointer: str) -> Any:
 
 def validate_phase_boundary() -> tuple[str, int]:
     boundary = json.loads(BOUNDARY_PATH.read_text(encoding="utf-8"))
-    if boundary.get("schema") != "grcv4_grc9v4_post_d10_specification_boundary_v6":
+    if boundary.get("schema") != "grcv4_grc9v4_post_d10_specification_boundary_v7":
         raise RuntimeError("unexpected post-D10 boundary schema")
 
     base = boundary["authorization_base_commit"]
@@ -221,6 +227,18 @@ def validate_phase_boundary() -> tuple[str, int]:
             "paper": "frozen_to_accepted_D11_integrated_paper",
             "exploratory_tool_UX": "frozen_to_accepted_D11_successor_UX",
         },
+        "specification_correction": {
+            "activation": (
+                "requires_hash_bound_implementation_readiness_audit_and_accepted_D11_specification_release"
+            ),
+            "src_and_tests": "frozen_to_authorization_base",
+            "specifications": (
+                "mutable_only_at_authorized_V4_contract_schema_vector_and_release_outputs"
+            ),
+            "proposal": "frozen_to_accepted_proposal_review",
+            "paper": "frozen_to_accepted_D11_integrated_paper",
+            "exploratory_tool_UX": "frozen_to_accepted_D11_successor_UX",
+        },
         "implementation": {
             "activation": (
                 "requires_a_hash_bound_successor_authority_in_phase_authority"
@@ -238,6 +256,12 @@ def validate_phase_boundary() -> tuple[str, int]:
         raise RuntimeError(f"missing phase authority: {authority['path']}")
     if sha256_file(authority_path) != authority["sha256"]:
         raise RuntimeError(f"phase authority hash drift: {authority['path']}")
+    prior_authority = boundary.get("prior_phase_authority", {})
+    prior_authority_path = validate_repository_path(prior_authority.get("path", ""))
+    if not prior_authority_path.is_file() or sha256_file(
+        prior_authority_path
+    ) != prior_authority.get("sha256"):
+        raise RuntimeError("prior phase authority hash drift")
     required_assertions = {
         "specification_writing": {
             "/authorization_effect/specification_authorized": True,
@@ -277,6 +301,16 @@ def validate_phase_boundary() -> tuple[str, int]:
             "/authorization_effect/runtime_or_src_tests_change_authorized": False,
             "/authorization_effect/GRC9_or_GRC9V3_change_authorized": False,
         },
+        "specification_correction": {
+            "/status": "accepted_bounded",
+            "/audit_input/sha256": (
+                "32cea1b2752361864b02651cb7d38df85929210adc213aa76ee1307babcb5196"
+            ),
+            "/authorization_effect/specification_correction_authorized": True,
+            "/authorization_effect/implementation_authorized": False,
+            "/authorization_effect/runtime_or_src_tests_change_authorized": False,
+            "/authorization_effect/GRC9_or_GRC9V3_change_authorized": False,
+        },
         "implementation": {
             "/authorization_effect/specification_authorized": True,
             "/authorization_effect/implementation_authorized": True,
@@ -296,6 +330,7 @@ def validate_phase_boundary() -> tuple[str, int]:
         "proposal_propagation",
         "paper_propagation",
         "specification_propagation",
+        "specification_correction",
         "implementation",
     }:
         authority_was_already_present = (
@@ -335,7 +370,11 @@ def validate_phase_boundary() -> tuple[str, int]:
     if set(outputs) != {
         "specs/grc-common-interface-v4-ext.md",
         "specs/grc-v4-conformance-fixtures.json",
+        "specs/grc-v4-conformance-vectors.json",
+        "specs/grc-v4-contract-schema.json",
         "specs/grc-v4-source-manifest.json",
+        "specs/grc-v4-specification-release.json",
+        "specs/grc-v4-specification-release.sha256",
         "specs/grc-v4-spec.md",
         "specs/grc-9-v4-spec.md",
     }:
@@ -369,6 +408,10 @@ def validate_phase_boundary() -> tuple[str, int]:
         "audit_grc9v4_d11_g9_resolution.py",
         "implementation/investigations/grc9v4-constitutive-design/scripts/"
         "audit_grcv4_d11_paper_propagation.py",
+        "implementation/investigations/grc9v4-constitutive-design/scripts/"
+        "build_grcv4_specification_vectors.py",
+        "implementation/investigations/grc9v4-constitutive-design/scripts/"
+        "build_grcv4_specification_release.py",
         "implementation/investigations/grc9v4-constitutive-design/"
         "specification/PostD10SpecificationBoundary.json",
         "implementation/investigations/grc9v4-constitutive-design/tools/"
@@ -538,7 +581,13 @@ def validate_phase_boundary() -> tuple[str, int]:
             raise RuntimeError(f"missing authorized proposal: {path_text}")
 
     paper_frozen_specs = boundary["paper_phase_frozen_spec_sha256"]
-    expected_paper_frozen = set(outputs) | mutable
+    correction_only_outputs = {
+        "specs/grc-v4-conformance-vectors.json",
+        "specs/grc-v4-contract-schema.json",
+        "specs/grc-v4-specification-release.json",
+        "specs/grc-v4-specification-release.sha256",
+    }
+    expected_paper_frozen = (set(outputs) - correction_only_outputs) | mutable
     if set(paper_frozen_specs) != expected_paper_frozen:
         raise RuntimeError("paper-phase frozen specification roster mismatch")
     if phase in {"proposal_propagation", "paper_propagation"}:
@@ -566,6 +615,7 @@ def validate_phase_boundary() -> tuple[str, int]:
     if phase in {
         "paper_propagation",
         "specification_propagation",
+        "specification_correction",
         "implementation",
     }:
         for path_text, expected_sha in paper_frozen_proposals.items():
@@ -578,7 +628,11 @@ def validate_phase_boundary() -> tuple[str, int]:
     specification_frozen_papers = boundary["specification_phase_frozen_paper_sha256"]
     if set(specification_frozen_papers) != paper_paths:
         raise RuntimeError("specification-phase frozen paper roster mismatch")
-    if phase in {"specification_propagation", "implementation"}:
+    if phase in {
+        "specification_propagation",
+        "specification_correction",
+        "implementation",
+    }:
         for path_text, expected_sha in specification_frozen_papers.items():
             path = validate_repository_path(path_text)
             if not path.is_file() or sha256_file(path) != expected_sha:
@@ -594,6 +648,7 @@ def validate_phase_boundary() -> tuple[str, int]:
         "proposal_propagation",
         "paper_propagation",
         "specification_propagation",
+        "specification_correction",
         "implementation",
     }:
         allowed_paths.update(successor_paths)
@@ -601,6 +656,7 @@ def validate_phase_boundary() -> tuple[str, int]:
         "proposal_propagation",
         "paper_propagation",
         "specification_propagation",
+        "specification_correction",
         "implementation",
     }:
         allowed_paths.update(paper_paths)
@@ -609,11 +665,18 @@ def validate_phase_boundary() -> tuple[str, int]:
         "proposal_propagation",
         "paper_propagation",
         "specification_propagation",
+        "specification_correction",
         "implementation",
     }:
         allowed_paths.update(proposal_paths)
-    if phase in {"specification_propagation", "implementation"}:
+    if phase in {
+        "specification_propagation",
+        "specification_correction",
+        "implementation",
+    }:
         allowed_paths.add(authority["path"])
+    if phase in {"specification_correction", "implementation"}:
+        allowed_paths.add(prior_authority["path"])
     unexpected_changes = {
         path
         for path in changed_paths
@@ -632,6 +695,7 @@ def validate_phase_boundary() -> tuple[str, int]:
         "proposal_propagation",
         "paper_propagation",
         "specification_propagation",
+        "specification_correction",
     }:
         changed_runtime_paths = set(
             git_lines("diff", "--name-only", base, "--", "src", "tests")
@@ -767,13 +831,20 @@ def validate_pandoc_render(path: Path) -> None:
 
 def validate_v4_source_manifest() -> None:
     manifest = json.loads(SOURCE_MANIFEST.read_text(encoding="utf-8"))
-    if manifest.get("schema") != "grcv4_specification_source_manifest_v1":
+    if manifest.get("schema") != "grcv4_specification_source_manifest_v2":
         raise RuntimeError("unexpected V4 source-manifest schema")
     if manifest.get("status") != "normative_source_identity":
         raise RuntimeError("V4 source manifest is not normative")
     audit_sha = manifest.get("audit_input", {}).get("sha256", "")
     if not re.fullmatch(r"[0-9a-f]{64}", audit_sha):
         raise RuntimeError("V4 audit input is not digest-bound")
+    readiness = manifest.get("implementation_readiness_audit", {})
+    if readiness.get("sha256") != (
+        "32cea1b2752361864b02651cb7d38df85929210adc213aa76ee1307babcb5196"
+    ):
+        raise RuntimeError("V4 readiness audit is not digest-bound")
+    if manifest.get("release_manifest") != str(RELEASE_MANIFEST.relative_to(ROOT)):
+        raise RuntimeError("V4 source manifest does not name the release manifest")
 
     expected_roles = {
         "canonical_grcv4_substrate_paper",
@@ -1072,6 +1143,453 @@ def validate_v4_conformance_fixtures(profiles: set[str]) -> None:
         raise RuntimeError("V4 legacy-defined-domain fixture drift")
 
 
+def validate_v4_conformance_contracts(profiles: set[str]) -> None:
+    """Validate the corrected catalog, schemas, vectors, and release bundle."""
+    fixtures = json.loads(CONFORMANCE_FIXTURES.read_text(encoding="utf-8"))
+    if fixtures.get("schema") != "grcv4_conformance_fixture_catalog_v2":
+        raise RuntimeError("unexpected V4 conformance catalog schema")
+    if fixtures.get("status") != "normative_coverage_catalog_not_executable_vectors":
+        raise RuntimeError("V4 conformance catalog claims the wrong authority")
+    if fixtures.get("implementation_evidence") is not False:
+        raise RuntimeError("preimplementation catalog claims runtime evidence")
+    if fixtures.get("implementation_readiness_audit_sha256") != (
+        "32cea1b2752361864b02651cb7d38df85929210adc213aa76ee1307babcb5196"
+    ):
+        raise RuntimeError("V4 catalog readiness-audit binding drift")
+    if set(fixtures.get("profile_families", [])) != profiles:
+        raise RuntimeError("V4 fixture profile roster mismatch")
+    execution = fixtures.get("execution_contract", {})
+    if execution.get("catalog_is_not_an_execution_oracle") is not True:
+        raise RuntimeError("V4 coverage catalog is presented as an oracle")
+    if execution.get("concrete_vector_file") != str(
+        CONFORMANCE_VECTORS.relative_to(ROOT)
+    ):
+        raise RuntimeError("V4 catalog does not bind the concrete vector file")
+    if execution.get("machine_schema_file") != str(CONTRACT_SCHEMA.relative_to(ROOT)):
+        raise RuntimeError("V4 catalog does not bind the machine schema")
+
+    disabled = fixtures.get("disabled_compatibility", {})
+    if disabled.get("independent_case_count") != 40:
+        raise RuntimeError("disabled fixture matrix is not 10x4")
+    if disabled.get("concrete_vector_status") != (
+        "required_before_disabled_compatibility_capability_may_be_advertised"
+    ):
+        raise RuntimeError("absent disabled vectors are not capability-gated")
+    matrix = disabled.get("matrix", [])
+    if {row.get("profile") for row in matrix} != profiles:
+        raise RuntimeError("disabled fixture profile roster mismatch")
+    if disabled.get("legacy_target_modified") is not False:
+        raise RuntimeError("V4 fixture catalog modifies the legacy target")
+
+    schema = json.loads(CONTRACT_SCHEMA.read_text(encoding="utf-8"))
+    if schema.get("schema_version") != "grcv4-implementation-contract-schema-v1":
+        raise RuntimeError("unexpected V4 implementation-contract schema")
+    required_schema_definitions = {
+        "resolved_params",
+        "profile_identity_payload",
+        "profile_template_payload",
+        "resolved_specialization",
+        "specialization_identity_payload",
+        "complete_model_identity_payload",
+        "port_graph_payload",
+        "reset_payload",
+        "scientific_state_payload",
+        "lifecycle_envelope_payload",
+        "expansion_event_request",
+        "migration_request",
+        "mapped_topology_event_request",
+        "migration_policy",
+        "history_event_policy",
+        "resource_event_map",
+        "expansion_event_identity_payload",
+        "commit_payload",
+        "receipt_core",
+        "step_commit_receipt_identity_payload",
+        "reset_receipt_identity_payload",
+        "rebase_receipt_identity_payload",
+        "profile_migration_receipt_identity_payload",
+        "topology_event_receipt_identity_payload",
+        "charge_receipt_identity_payload",
+        "history_disposition_receipt_identity_payload",
+        "legacy_compatibility_receipt_identity_payload",
+        "successful_receipt_identity_payload",
+        "successful_receipt_envelope",
+        "failure_receipt_identity_payload",
+        "failure_receipt",
+    }
+    if not required_schema_definitions <= set(schema.get("$defs", {})):
+        raise RuntimeError(
+            "implementation-contract schema definition roster incomplete"
+        )
+
+    jsonschema_cli = shutil.which("jsonschema")
+    if jsonschema_cli is None:
+        raise RuntimeError("jsonschema CLI is required for contract validation")
+    schema_instances: dict[str, list[Any]] = {}
+
+    def validate_schema(definition: str, payload: Any) -> None:
+        schema_instances.setdefault(definition, []).append(payload)
+
+    def validate_schema_batches() -> None:
+        for definition, payloads in schema_instances.items():
+            focused_schema = {
+                "$schema": "https://json-schema.org/draft/2020-12/schema",
+                "type": "array",
+                "items": {"$ref": f"#/$defs/{definition}"},
+                "$defs": schema["$defs"],
+            }
+            with tempfile.NamedTemporaryFile(
+                mode="w", encoding="utf-8", suffix=".json"
+            ) as schema_file:
+                json.dump(focused_schema, schema_file, allow_nan=False)
+                schema_file.flush()
+                result = subprocess.run(
+                    [
+                        jsonschema_cli,
+                        "--validator",
+                        "Draft202012Validator",
+                        schema_file.name,
+                    ],
+                    input=json.dumps(payloads, ensure_ascii=False, allow_nan=False),
+                    capture_output=True,
+                    text=True,
+                    check=False,
+                )
+            if result.returncode:
+                raise RuntimeError(
+                    f"{definition} schema validation failed: "
+                    f"{result.stdout.strip()} {result.stderr.strip()}"
+                )
+
+    vectors = json.loads(CONFORMANCE_VECTORS.read_text(encoding="utf-8"))
+    if vectors.get("schema") != "grcv4_conformance_vectors_v1":
+        raise RuntimeError("unexpected concrete-vector schema")
+    if vectors.get("implementation_evidence") is not False:
+        raise RuntimeError("preimplementation vectors claim runtime execution")
+    bindings = vectors.get("bindings", {})
+    vector_builder = INVESTIGATION / "scripts/build_grcv4_specification_vectors.py"
+    if bindings.get("builder_path") != str(vector_builder.relative_to(ROOT)):
+        raise RuntimeError("vector builder path binding drift")
+    if bindings.get("builder_sha256") != sha256_file(vector_builder):
+        raise RuntimeError("vector builder hash binding drift")
+    if bindings.get("contract_schema_sha256") != sha256_file(CONTRACT_SCHEMA):
+        raise RuntimeError("vector/schema binding drift")
+    if bindings.get("fixture_catalog_sha256") != sha256_file(CONFORMANCE_FIXTURES):
+        raise RuntimeError("vector/catalog binding drift")
+
+    expected_canonicalization = {
+        "JCS-ASCII-ORDER-AND-FINITE-NUMBERS": (
+            '{"a":"é","m":{"a":null,"b":true},"z":[0,0.5,1,-1]}'
+        ),
+        "JCS-UTF16-PROPERTY-ORDER": '{"😀":2,"":1}',
+        "JCS-ECMASCRIPT-SMALL-NUMBER-THRESHOLD": ('{"numbers":[1e-7,0.000001]}'),
+    }
+    canonicalization_rows = vectors.get("canonicalization_vectors", [])
+    if {row["vector_id"] for row in canonicalization_rows} != set(
+        expected_canonicalization
+    ):
+        raise RuntimeError("cross-language canonicalization-vector roster drift")
+    for row in canonicalization_rows:
+        canonical = row["canonical_jcs_utf8"]
+        if canonical != expected_canonicalization[row["vector_id"]]:
+            raise RuntimeError(f"{row['vector_id']}: RFC 8785 spelling drift")
+        if canonical.encode("utf-8").hex() != row["canonical_jcs_utf8_hex"]:
+            raise RuntimeError(f"{row['vector_id']}: canonical byte/hex mismatch")
+        if row["expected_identifier"] != (
+            f"jcs-example-sha256:{sha256_bytes(canonical.encode('utf-8'))}"
+        ):
+            raise RuntimeError(f"{row['vector_id']}: canonical identity drift")
+
+    identity_definitions = {
+        "IDENTITY-GRCV4-PARAMS-C-OS": ("resolved_params", "grcv4-params-sha256"),
+        "IDENTITY-GRCV4-PROFILE-C-OS": (
+            "profile_identity_payload",
+            "grcv4-profile-sha256",
+        ),
+        "IDENTITY-GRCV4-PROFILE-TEMPLATE-C-OS": (
+            "profile_template_payload",
+            "grcv4-profile-template-sha256",
+        ),
+        "IDENTITY-GRC9V4-PARAMS": ("resolved_specialization", "grc9v4-params-sha256"),
+        "IDENTITY-GRC9V4-SPECIALIZATION": (
+            "specialization_identity_payload",
+            "grc9v4-specialization-sha256",
+        ),
+        "IDENTITY-GRC9V4-COMPLETE-MODEL": (
+            "complete_model_identity_payload",
+            "grc9v4-model-sha256",
+        ),
+        "IDENTITY-GRC9V4-SOURCE-GRAPH": ("port_graph_payload", "grc-graph-sha256"),
+        "IDENTITY-GRC9V4-RESET": ("reset_payload", "grcv4-reset-sha256"),
+        "IDENTITY-GRCV4-STATE": ("scientific_state_payload", "grcv4-state-sha256"),
+        "IDENTITY-GRCV4-LIFECYCLE": (
+            "lifecycle_envelope_payload",
+            "grcv4-lifecycle-sha256",
+        ),
+    }
+    identity_rows = vectors.get("identity_vectors", [])
+    if {row.get("vector_id") for row in identity_rows} != set(identity_definitions):
+        raise RuntimeError("identity-vector roster drift")
+    for row in identity_rows:
+        definition, prefix = identity_definitions[row["vector_id"]]
+        validate_schema(definition, row["payload"])
+        canonical = row["canonical_jcs_utf8"].encode("utf-8")
+        if canonical.hex() != row["canonical_jcs_utf8_hex"]:
+            raise RuntimeError(f"{row['vector_id']}: canonical byte/hex mismatch")
+        expected = f"{prefix}:{sha256_bytes(canonical)}"
+        if row["expected_identifier"] != expected:
+            raise RuntimeError(f"{row['vector_id']}: computed identity drift")
+
+    expansion_rows = vectors.get("grc9_expansion_vectors", [])
+    if len(expansion_rows) != 10:
+        raise RuntimeError("expected ten concrete GRC9 expansion vectors")
+    event_ids: set[str] = set()
+    covered = set()
+    for row in expansion_rows:
+        validate_schema("expansion_event_request", row["request"])
+        validate_schema(
+            "expansion_event_identity_payload", row["event_identity_payload"]
+        )
+        canonical = row["event_identity_canonical_jcs_utf8"].encode("utf-8")
+        event_id = f"grc-event-sha256:{sha256_bytes(canonical)}"
+        expected = row["expected"]
+        if expected.get("event_id") != event_id:
+            raise RuntimeError(f"{row['fixture_id']}: computed event ID drift")
+        if event_id in event_ids:
+            raise RuntimeError("distinct expansion requests share an event ID")
+        event_ids.add(event_id)
+        event = row["event_identity_payload"]
+        covered.add(
+            (
+                event["target_effective_degree"],
+                event["module_chirality"],
+                event["growth_phase"],
+            )
+        )
+        live_nodes = expected["target_live_node_ids"]
+        if "source-s" in live_nodes or expected.get("source_node_live_after_commit"):
+            raise RuntimeError(f"{row['fixture_id']}: source node survived expansion")
+        endpoints = []
+        edge_ids = []
+        for edge in expected["target_edges"]:
+            edge_ids.append(edge["edge_id"])
+            endpoints.extend(
+                (endpoint["node_id"], endpoint["port"])
+                for endpoint in (edge["tail"], edge["head"])
+            )
+            if (
+                edge["kind"] != "boundary"
+                and edge["tail"]["port"] != edge["head"]["port"]
+            ):
+                raise RuntimeError(f"{row['fixture_id']}: non-same-port internal edge")
+        if len(endpoints) != len(set(endpoints)):
+            raise RuntimeError(f"{row['fixture_id']}: endpoint-port collision")
+        if len(edge_ids) != len(set(edge_ids)):
+            raise RuntimeError(f"{row['fixture_id']}: duplicate edge identity")
+        if sum(expected["target_resource_by_node"].values()) != 3:
+            raise RuntimeError(f"{row['fixture_id']}: resource map is not conservative")
+        payloads = expected["identity_payloads"]
+        if payloads["target_graph"] != {
+            "schema_version": "grc9v4-port-graph-v1",
+            "live_node_ids": live_nodes,
+            "edges": expected["target_edges"],
+        }:
+            raise RuntimeError(f"{row['fixture_id']}: target graph payload drift")
+        payload_contracts = {
+            "target_graph": (
+                "port_graph_payload",
+                "grc-graph-sha256",
+                "target_graph_digest",
+            ),
+            "target_params": (
+                "resolved_params",
+                "grcv4-params-sha256",
+                "target_params_id",
+            ),
+            "target_profile": (
+                "profile_identity_payload",
+                "grcv4-profile-sha256",
+                "target_complete_profile_id",
+            ),
+            "target_model": (
+                "complete_model_identity_payload",
+                "grc9v4-model-sha256",
+                "target_model_identity",
+            ),
+            "target_reset": (
+                "reset_payload",
+                "grcv4-reset-sha256",
+                "target_reset_digest",
+            ),
+            "target_state": (
+                "scientific_state_payload",
+                "grcv4-state-sha256",
+                "target_state_digest",
+            ),
+            "receipt": (
+                "topology_event_receipt_identity_payload",
+                "grc-receipt-sha256",
+                "emitted_receipt_ids",
+            ),
+            "commit": ("commit_payload", "grc-commit-sha256", "commit_id"),
+            "target_lifecycle": (
+                "lifecycle_envelope_payload",
+                "grcv4-lifecycle-sha256",
+                "target_lifecycle_digest",
+            ),
+        }
+        for payload_name, (
+            definition,
+            prefix,
+            expected_field,
+        ) in payload_contracts.items():
+            payload = payloads[payload_name]
+            validate_schema(definition, payload)
+            canonical_payload = json.dumps(
+                payload,
+                sort_keys=True,
+                separators=(",", ":"),
+                ensure_ascii=False,
+                allow_nan=False,
+            ).encode("utf-8")
+            computed = f"{prefix}:{sha256_bytes(canonical_payload)}"
+            recorded = expected[expected_field]
+            if isinstance(recorded, list):
+                recorded = recorded[0]
+            if computed != recorded:
+                raise RuntimeError(
+                    f"{row['fixture_id']}: {payload_name} identity drift"
+                )
+        for receipt in expected["emitted_receipts"]:
+            validate_schema("successful_receipt_envelope", receipt)
+            identity_payload = receipt["identity_payload"]
+            canonical_receipt = json.dumps(
+                identity_payload,
+                sort_keys=True,
+                separators=(",", ":"),
+                ensure_ascii=False,
+                allow_nan=False,
+            ).encode("utf-8")
+            # All current receipt identity values use the JSON/JCS common subset.
+            if receipt["receipt_id"] != (
+                f"grc-receipt-sha256:{sha256_bytes(canonical_receipt)}"
+            ):
+                raise RuntimeError(f"{row['fixture_id']}: receipt identity drift")
+            if receipt["commit_id"] != expected["commit_id"]:
+                raise RuntimeError(f"{row['fixture_id']}: receipt/commit mismatch")
+
+    required_coverage = (
+        {(30, chirality, None) for chirality in (-1, 1)}
+        | {(31, chirality, phase) for chirality in (-1, 1) for phase in (1, 2, 3)}
+        | {(45, chirality, None) for chirality in (-1, 1)}
+    )
+    if covered != required_coverage:
+        raise RuntimeError("chirality/phase/deeper-tree vector coverage drift")
+
+    failures = vectors.get("atomic_failure_vectors", [])
+    if len(failures) != 5 or any(
+        row.get("expected", {}).get("prestate_digest")
+        != row.get("expected", {}).get("poststate_digest")
+        or row.get("expected", {}).get("pre_lifecycle_digest")
+        != row.get("expected", {}).get("post_lifecycle_digest")
+        or row.get("expected", {}).get("persistent_receipt_append_count") != 0
+        for row in failures
+    ):
+        raise RuntimeError("atomic-failure vector contract drift")
+    for row in failures:
+        receipt = row["expected"]["failure_receipt"]
+        validate_schema("failure_receipt", receipt)
+        failure_payload = receipt["identity_payload"]
+        canonical_failure = json.dumps(
+            failure_payload,
+            sort_keys=True,
+            separators=(",", ":"),
+            ensure_ascii=False,
+            allow_nan=False,
+        ).encode("utf-8")
+        if receipt["receipt_id"] != (
+            f"grc-receipt-sha256:{sha256_bytes(canonical_failure)}"
+        ):
+            raise RuntimeError(f"{row['fixture_id']}: failure receipt identity drift")
+    if len(vectors.get("migration_policy_matrix", [])) != 7:
+        raise RuntimeError("migration policy matrix is incomplete")
+    required_holds = {
+        "candidate_a_numeric_vectors",
+        "per_realization_step_vectors",
+        "RG2b_vectors",
+        "child_stabilization_vectors",
+        "disabled_GRC9V3_delegate_vectors",
+        "lifecycle_snapshot_reset_migration_vectors",
+        "generic_mapped_topology_vectors",
+        "charge_precision_edge_vectors",
+        "deep_immutability_runtime_tests",
+        "runtime_execution_receipts",
+    }
+    if set(vectors.get("coverage_holds", {})) != required_holds:
+        raise RuntimeError("preimplementation vector capability holds drift")
+
+    validate_schema_batches()
+
+    release = json.loads(RELEASE_MANIFEST.read_text(encoding="utf-8"))
+    if release.get("schema") != "grcv4_specification_release_manifest_v1":
+        raise RuntimeError("unexpected specification release schema")
+    if release.get("status") != "normative_preimplementation_release":
+        raise RuntimeError("specification release overstates implementation status")
+    expected_release_artifacts = {
+        str(path.relative_to(ROOT))
+        for path in (
+            GRCV4_SPEC,
+            GRC9V4_SPEC,
+            V4_INTERFACE_EXTENSION,
+            CONFORMANCE_FIXTURES,
+            CONFORMANCE_VECTORS,
+            CONTRACT_SCHEMA,
+            SOURCE_MANIFEST,
+            SPECS_README,
+            BOUNDARY_PATH,
+            INVESTIGATION
+            / "specification/D11PaperPropagationAndSpecificationExtractionGate.json",
+            INVESTIGATION
+            / "specification/GRCV4SpecificationEngineeringCorrectionGate.json",
+            INVESTIGATION / "scripts/audit_grcv4_post_d10_specifications.py",
+        )
+    }
+    if {
+        row["path"] for row in release["artifact_members"]
+    } != expected_release_artifacts:
+        raise RuntimeError("specification release artifact roster drift")
+    release_members = [
+        *release["artifact_members"],
+        *release["packaged_source_bytes"],
+        *release["creation_tools"],
+    ]
+    for row in release_members:
+        path = validate_repository_path(row["path"])
+        if sha256_file(path) != row["sha256"]:
+            raise RuntimeError(f"release member drift: {row['path']}")
+    canonical_release = release["release_identity_canonical_jcs_utf8"].encode("utf-8")
+    reconstructed_release = json.dumps(
+        release["release_identity_payload"],
+        sort_keys=True,
+        separators=(",", ":"),
+        ensure_ascii=False,
+        allow_nan=False,
+    ).encode("utf-8")
+    if canonical_release != reconstructed_release:
+        raise RuntimeError("specification release canonical payload drift")
+    expected_release_id = f"grcv4-spec-release-sha256:{sha256_bytes(canonical_release)}"
+    if release["release_id"] != expected_release_id:
+        raise RuntimeError("specification release identity drift")
+    if release.get("bundle_digest") != f"sha256:{sha256_bytes(canonical_release)}":
+        raise RuntimeError("specification release bundle digest drift")
+    checksum_line = RELEASE_CHECKSUM.read_text(encoding="utf-8")
+    expected_line = (
+        f"{sha256_file(RELEASE_MANIFEST)}  {RELEASE_MANIFEST.relative_to(ROOT)}\n"
+    )
+    if checksum_line != expected_line:
+        raise RuntimeError("specification release detached checksum drift")
+
+
 def validate_forensic_specification_content() -> tuple[int, int, int, int, int]:
     if repository_root() != ROOT:
         raise RuntimeError("repository root discovery disagrees with audit location")
@@ -1253,7 +1771,7 @@ def validate_forensic_specification_content() -> tuple[int, int, int, int, int]:
     if "grc9v4_axis_preserving_chiral_same_port_expansion_v1" not in grc9v4_text:
         raise RuntimeError("GRC9V4 spec is missing the accepted D11-G9 profile")
     validate_v4_source_manifest()
-    validate_v4_conformance_fixtures(profiles)
+    validate_v4_conformance_contracts(profiles)
     for name, text in (("GRCV4", grcv4_text), ("GRC9V4", grc9v4_text)):
         mentioned = {
             profile
@@ -1327,7 +1845,10 @@ def validate_forensic_specification_content() -> tuple[int, int, int, int, int]:
         for name in (
             "grc-common-interface-v4-ext.md",
             "grc-v4-conformance-fixtures.json",
+            "grc-v4-conformance-vectors.json",
+            "grc-v4-contract-schema.json",
             "grc-v4-source-manifest.json",
+            "grc-v4-specification-release.json",
             "grc-v4-spec.md",
             "grc-9-v4-spec.md",
         )

@@ -278,6 +278,7 @@ def main() -> int:
         "proposal_propagation",
         "paper_propagation",
         "specification_propagation",
+        "specification_correction",
         "implementation",
     }:
         python_results = [

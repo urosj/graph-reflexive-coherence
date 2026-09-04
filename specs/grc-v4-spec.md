@@ -21,7 +21,10 @@ Primary sources:
 - [Accepted D11-G9 expansion resolution][d11-g9-resolution]
 - [D11-G9 append-only provenance supplement][d11-g9-provenance]
 - [V4 source identity manifest](grc-v4-source-manifest.json)
-- [V4 conformance fixture contract](grc-v4-conformance-fixtures.json)
+- [V4 conformance fixture catalog](grc-v4-conformance-fixtures.json)
+- [V4 executable conformance vectors](grc-v4-conformance-vectors.json)
+- [V4 machine contract schema](grc-v4-contract-schema.json)
+- [V4 specification release manifest](grc-v4-specification-release.json)
 - [Common GRC interface](grc-common-interface.md)
 - [Common GRC interface: V4 extension](grc-common-interface-v4-ext.md)
 
@@ -175,20 +178,21 @@ ProfileFamilyId = Literal[
     "A_PC", "C_PC", "A_CI_PC", "C_CI_PC",
 ]
 
-@dataclass(frozen=True)
+@dataclass(frozen=True, slots=True)
 class GRCV4ResolvedParams:
     schema_version: Literal["grcv4-resolved-params-v1"]
-    common: Mapping[str, JSONValue]
-    candidate: Mapping[str, JSONValue]
-    realization: Mapping[str, JSONValue]
-    geometry: Mapping[str, JSONValue]
-    solver: Mapping[str, JSONValue]
-    lifecycle: Mapping[str, JSONValue]
+    common: GRCV4CommonParams
+    candidate: CandidateAParams | CandidateCParams
+    realization: CISolverParams | OSParams | RG2bParams | PCParams | CIPCParams
+    geometry: GeometryProfileParams
+    solver: SolverPolicy
+    charge: ChargePolicy
+    lifecycle: LifecyclePolicy
 
-@dataclass(frozen=True)
-class GRCV4Profile:
+@dataclass(frozen=True, slots=True)
+class GRCV4ProfileIdentityPayload:
+    schema_version: Literal["grcv4-profile-identity-v1"]
     profile_family_id: ProfileFamilyId
-    complete_profile_id: str
     candidate: CandidateId
     realization: RealizationId
     differential_backend_id: str
@@ -203,19 +207,47 @@ class GRCV4Profile:
     lifecycle_policy_id: str
     candidate_c_transport_id: str | None
     composition_gain: float | None
-    params_resolved: GRCV4ResolvedParams
     params_hash: str
+
+@dataclass(frozen=True, slots=True)
+class GRCV4Profile:
+    identity_payload: GRCV4ProfileIdentityPayload
+    params_resolved: GRCV4ResolvedParams
+    complete_profile_id: str
+
+@dataclass(frozen=True, slots=True)
+class GRCV4ProfileTemplate:
+    schema_version: Literal["grcv4-profile-template-v1"]
+    source_complete_profile_id: str
+    profile_family_id: ProfileFamilyId
+    topology_dependent_map_policy_id: str
+    geometry_reference_policy_id: str
+    profile_template_id: str
 ```
 
 `profile_family_id`, `candidate`, and `realization` must agree exactly. The
-family identifier is not by itself a complete identity. `params_resolved` is
-serialized as UTF-8 JSON with lexicographically ordered object keys, preserved
-array order, no insignificant whitespace, and finite JSON numbers only. NaN,
-infinity, negative zero, duplicate keys, and implementation-native object
-encodings are forbidden. `params_hash` is
-`"sha256:" + SHA256(canonical_params_bytes)`, and `complete_profile_id` is the
-same construction over the family identifier, every identity field above,
-and `params_hash`.
+family identifier is not by itself a complete identity. Both payloads conform
+to [`grc-v4-contract-schema.json`](grc-v4-contract-schema.json), which rejects
+unknown load-bearing keys. `params_hash` is
+`"grcv4-params-sha256:" + SHA256(JCS(params_resolved))`.
+`complete_profile_id` is
+`"grcv4-profile-sha256:" + SHA256(JCS(identity_payload))`. Neither derived
+identifier appears inside the payload from which it is computed. JCS and
+I-JSON requirements are inherited from the
+[V4 interface extension](grc-common-interface-v4-ext.md#canonical-identity-and-deep-immutability).
+
+A topology-dependent target such as Candidate C expansion uses a
+`GRCV4ProfileTemplate`, not a prematurely hashed complete profile. The
+template ID excludes itself and binds the admitted source complete profile,
+target family, exact map-construction policy, and exact reference-geometry
+rebuild policy. All topology-independent values are copied from the identified
+source payload. After the event ID creates stable target edge IDs, the map
+policy constructs the complete target $W_{C,\mathrm{tr}}$ map and the geometry
+policy rebuilds the reference Hodge digest from that map; only then are
+`params_hash` and `complete_profile_id` computed. No other source parameter may
+change. The event ID binds the template, while the commit and topology receipt
+bind the resulting complete target profile. This ordering removes any
+event-ID/profile-ID cycle.
 
 A different composition gain, writer, geometry map, Candidate C transport
 law, selector policy, solver, units, normalization, or lifecycle rule
@@ -253,44 +285,76 @@ nonresource coordinates only in the rows that declare them. Candidate C has
 no independent $T_C$ state.
 
 ```python
-@dataclass(frozen=True)
+@dataclass(frozen=True, slots=True)
 class GRCV4AuthoritativeState:
-    C: ArrayLike
-    W_A: ArrayLike | None
-    Z_4: ArrayLike | None
+    C: ImmutableFloatArray
+    W_A: ImmutableFloatArray | None
+    Z_4: ImmutableFloatArray | None
 
-@dataclass(frozen=True)
+@dataclass(frozen=True, slots=True)
 class GRCV4ResetBaseline:
+    schema_version: Literal["grcv4-reset-baseline-v1"]
     authoritative: GRCV4AuthoritativeState
-    graph_identity: str
+    graph_digest: str
     orientation_identity: str
-    complete_profile_id: str
+    active_model_identity: str
     context_contract_id: str
+    Q_target: float
+    reset_digest: str
 
-@dataclass(frozen=True)
+@dataclass(frozen=True, slots=True)
 class GRCV4LifecycleState:
     step_index: int
     time: float
     graph: SerializedGraphState
+    graph_digest: str
     orientation_identity: str
     profile: GRCV4Profile
-    context_identity: str
+    context_contract_id: str
+    context_value_digest: str | None
     current: GRCV4AuthoritativeState
     reset: GRCV4ResetBaseline
     Q_target: float
-    lifecycle_receipts: tuple[LifecycleReceipt, ...]
+    receipt_ledger: tuple[SuccessfulReceiptEnvelope, ...]
+    scientific_state_digest: str
+    lifecycle_digest: str
 
-@dataclass(frozen=True)
-class GRCV4State(GRCState):
+@dataclass(frozen=True, slots=True)
+class GRCV4State:
     lifecycle: GRCV4LifecycleState
+
+    @property
+    def step_index(self) -> int: ...
+    @property
+    def time(self) -> float: ...
+    @property
+    def budget_target(self) -> float: ...
+    @property
+    def remainder(self) -> None: ...
 ```
 
-`GRCV4State.budget_target` is a compatibility property backed by
-`lifecycle.Q_target`; it is not separately stored. The lifecycle object is the
-single owner of graph, profile, reset, target, clock, and persistent receipt
-authority. The reset baseline contains only reset-authoritative scientific
-coordinates and the identities needed to readmit them; it is not a second
-live runtime with independent caches, receipts, RNG, or clock.
+`GRCV4State` is not a dataclass subclass of the mutable base `GRCState`; it
+satisfies the read-only base-state protocol defined by the V4 interface
+extension. Its four compatibility properties project `lifecycle.step_index`,
+`lifecycle.time`, `lifecycle.Q_target`, and the constant `None`. No inherited
+field storage exists. The lifecycle object is the single owner of graph,
+profile, reset, target, clock, and the persistent receipt ledger. The reset
+baseline contains only reset-authoritative scientific coordinates and the
+identities needed to readmit them; it is not a second live runtime with
+independent caches, receipts, RNG, or clock.
+
+`active_model_identity` is a generic complete-profile ID for `GRCV4` and the
+combined model identity for a specialization such as `GRC9V4`.
+`reset_digest` is computed over the reset payload with `reset_digest` omitted.
+`scientific_state_digest` is computed over
+`grcv4-scientific-state-v1`: graph and orientation identity, complete profile
+ID, step/time, current authoritative coordinates, reset digest, $Q_{\rm target}$,
+trajectory-bearing context identity. Receipt IDs are excluded. The separate
+`grcv4-lifecycle-envelope-v1` payload binds the scientific-state digest and
+ordered persistent receipt IDs, producing `lifecycle_digest`. The digest
+fields themselves, receipt payload duplication, derived surfaces, caches,
+observables, and telemetry are excluded. Snapshot serialization carries the
+receipt payloads separately and verifies their IDs before lifecycle admission.
 
 The current V4 population is deterministic. It has no scientific `rng_state`.
 A stochastic successor must add an identity-bearing RNG algorithm, seed/state,
@@ -434,6 +498,25 @@ $$
 
 For current unit-measure profiles, a budget projection must be an identity/no-op;
 a nontrivial repair fails the beat.
+
+The current population uses the identity-bearing
+`stable_pairwise_binary64_charge_v1` policy. Vertices are read in canonical
+live-vertex order and summed by a fixed balanced binary tree with IEEE-754
+binary64 round-to-nearest, ties-to-even at every node. Admission requires
+
+$$
+|Q_{\mathrm{actual}}-Q_{\mathrm{target}}|
+\le
+\epsilon_{\mathrm{abs}}
++\epsilon_{\mathrm{rel}}\max(|Q_{\mathrm{target}}|,1),
+$$
+
+where both nonnegative finite tolerances are resolved profile parameters in
+resource units. Acceptance never changes $C$. The signed residual is emitted
+in the charge receipt and observable; an inadmissible residual returns
+`charge_failure` with no mutation. The inherited `remainder` projection is
+always `None` for these profiles, including when a nonzero residual lies
+inside tolerance.
 
 ## Structural geometry and current typing
 
@@ -1233,7 +1316,32 @@ Exact realization ablations are:
 ## Parameters
 
 `GRCV4` must resolve an immutable complete-profile parameter record at
-construction. At minimum it must bind:
+construction. The normative record families and their load-bearing fields are:
+
+| Record | Exact content |
+|---|---|
+| `GRCV4CommonParams` | schema version; differential, boundary, measure, context, units, gauge, normalization, and domain IDs; optional serialized default ordinary-step request. |
+| `CandidateAParams` | positive `eta` and `W_floor`; finite `kappa_c`, `alpha`, `beta`, `gamma`, `kappa_Ah`, `chi_A`, `zeta_A`; positive `tau_A`; site-potential and descriptor/conductance evaluator IDs. |
+| `CandidateCParams` | selector cutoff and boundary rule; positive `C_ref` and `eta_C`; finite `kappa_M_C`, `kappa_Phi_C`, `chi_C`, `zeta_C`; nonnegative `tau_C`; exact stable-edge `W_C_tr`; potential, current-conditioning, $E_H$, and $E_M$ policy IDs; exact transport ID. |
+| `GeometryProfileParams` | canonical $K_{4,\mathrm{base}}$ and reference-Hodge payload digests; star-cover, overlap, adapter, flat/sharp solver, domain, and `kappa_H` fields. |
+| `CISolverParams` | contraction domain, deterministic root selector, iteration limit, residual norm, and tolerance. |
+| `OSParams` | predictor, one-corrector, split-residual norm, and tolerance policies. |
+| `RG2bParams` | extension evaluator, deterministic approximation, error norm/tolerance, containment-certificate, iteration limit, and failure-policy IDs. |
+| `PCParams` | positive carrier time, radius, carrier norm, source-envelope, and zero-order-hold writer fields. |
+| `CIPCParams` | all CI and PC fields plus exact `rho_inst = 1`. |
+| `SolverPolicy` | admitted solver kind, root/branch selector, iteration and conditioning limits, residual norm, absolute/relative tolerances, and failure policy. |
+| `ChargePolicy` | exact `stable_pairwise_binary64_charge_v1` accumulation and comparison rule with finite nonnegative absolute/relative tolerances. |
+| `LifecyclePolicy` | migration, mapped-event, reset, rebase, history, receipt, target-readmission, and optional default-step-request policies. |
+
+The machine constraints, required fields, numeric ranges, discriminants, and
+`additionalProperties: false` boundary are frozen in
+[`grc-v4-contract-schema.json`](grc-v4-contract-schema.json). Policy and
+evaluator IDs name versioned algorithms defined by that schema or a referenced
+specification; arbitrary callables and opaque trajectory-bearing extension
+maps are forbidden. Non-load-bearing metadata may appear only in an explicitly
+named metadata field excluded from scientific identity.
+
+Together these records bind:
 
 - graph orientation, boundary, differential, and measure identities;
 - charge covector/profile and ordinary external-exchange policy;
@@ -1263,6 +1371,14 @@ for CI+PC, $\rho_{\mathrm{inst},a}=1$.
 Numeric tolerances that change root selection, domain admission, event
 classification, or the state trajectory are model parameters. Performance,
 telemetry, storage cadence, and device placement remain runtime configuration.
+
+The ten profile families remain mathematically admitted. An implementation
+may advertise only profiles whose exact typed parameter payload and executable
+vectors it ships. In particular, `A_RG2b` and `C_RG2b` remain unavailable as
+implementation capabilities until their `RG2bParams` bind a finite evaluator,
+certified approximation/error norm, containment certificate, deterministic
+failure rule, and concrete vectors. This is a numerical implementation hold,
+not a new substrate claim or removal of the RG2b mathematics.
 
 ## Complete-step transaction
 
@@ -1324,6 +1440,9 @@ profile, capability, parameter, and ordered-receipt identity.
 Snapshot and restoration must preserve enough information to reconstruct and
 re-admit that identity. `set_state()` changes current authoritative state only;
 it must not silently rebase reset, charge target, graph, profile, or history.
+The supplied state's graph, profile, reset digest, charge target, and receipt
+ledger must therefore equal the live instance or the call is rejected;
+`from_state()` is the full restoration operation.
 Reset returns to the transformed current reset baseline, not obsolete
 pre-event bytes. Duplication must deep-copy all mutable authority.
 
@@ -1397,9 +1516,12 @@ Receipt ownership is separated from ordinary event reporting:
 StepResult.events
     events emitted by this attempted or committed operation only
 
-lifecycle_receipts
+GRCV4StepResult.emitted_receipts
+    receipt delta emitted by this attempted operation only
+
+GRCV4LifecycleState.receipt_ledger
     persistent scientific migration, topology, charge, and information-loss
-    receipts owned by GRCV4LifecycleState
+    receipt history owned by GRCV4LifecycleState
 
 telemetry log
     nonauthoritative runtime observations excluded from scientific equality
@@ -1461,7 +1583,7 @@ In addition to common observables, every instance must expose:
 - `solver_disposition`
 - `authoritative_current`
 - `geometry_profile_id`
-- `lifecycle_receipts`
+- `receipt_ledger`
 
 Candidate/realization observables are exposed only when implemented. Derived
 surfaces must be labeled by stage and must not be presented as authoritative
@@ -1480,6 +1602,18 @@ A snapshot must preserve, directly or by stable reconstructible identity:
 - $Q_{\mathrm{target}}$ and charge profile;
 - ordered migration/event/loss receipts; and
 - cache provenance sufficient to reject or rebuild derived surfaces.
+
+Snapshot format `grcv4-snapshot-v1` embeds the resolved-parameter and profile
+payloads, the authoritative scientific-state payload, the reset payload, and
+the ordered receipt payloads. It recomputes and verifies every
+`grcv4-params-sha256`, `grcv4-profile-sha256`, `grcv4-reset-sha256`,
+`grcv4-state-sha256`, and `grc-receipt-sha256` value. A commit record uses
+`grcv4-commit-payload-v1` and binds operation ID, source/target state digests,
+ordered emitted receipt IDs, and target step/time; `commit_id` is excluded
+from its own payload. It then verifies the final
+`grcv4-lifecycle-sha256` envelope over state plus persistent receipt IDs. The
+exact schemas and cross-language canonical bytes are
+normative release artifacts.
 
 Restoration must validate the entire payload before exposing target state. It
 must not silently rebase charge, create history, promote caches, or substitute
@@ -1507,12 +1641,15 @@ The implementation must raise or return an explicit typed failure for:
 Every such failure leaves the complete authoritative prestate unchanged.
 
 The machine-readable
-[V4 conformance fixture contract](grc-v4-conformance-fixtures.json) is
-normative for D10-backed case identifiers, inputs, expected dispositions,
-digest checks, the independent $10\times4$ disabled matrix, and the accepted
-D11-C Candidate C baseline and D11-G9 GRC9V4 expansion cases. It is a
-preimplementation fixture contract: passing its schema audit does not claim
-that a runtime implementation has executed the cases.
+[V4 conformance fixture catalog](grc-v4-conformance-fixtures.json) is normative
+for required case coverage, including the independent $10\times4$ disabled
+matrix. Concrete inputs, canonical identity bytes, computed IDs, numerical
+comparison rules, and exact expected result records live in the separate
+[executable vector set](grc-v4-conformance-vectors.json). A profile or
+specialization capability may be advertised only when every catalog case in
+its declared support set resolves to a concrete vector or an exact delegated
+legacy vector. Passing either file's schema audit does not claim that a runtime
+implementation executed the cases.
 
 ## Claim conformance matrix
 

@@ -3493,9 +3493,10 @@ and its
 
 ## D11. Specification-Audit Successor Closures
 
-Status: D11-C accepted bounded as `C-HM-STIFFNESS-BASELINE-v1`; D11-G9 accepted
-bounded as `grc9v4_axis_preserving_chiral_same_port_expansion_v1`. Paper
-propagation is next.
+Status: D11-C and D11-G9 are accepted bounded; proposal, paper, and initial
+specification propagation are complete. The active bounded successor is the
+implementation-contract correction authorized by
+`GRCV4SpecificationEngineeringCorrectionGate.json`.
 
 The September 2026 specification-stack audit established that two executable
 maps required by the extracted V4 specifications have no accepted source
@@ -3518,8 +3519,8 @@ $H_{1,\mathrm{form},M}$, and defines
 $J_{0,C}=-M_{4,C}d_0\Phi_{0,C}$ for all five C realizations. It also freezes
 units, stage, regular domain, covariance, controls, exact reference-field
 lifecycle, and GRC9V4-owned delegation to the unchanged disabled GRC9V3
-branch. The provisional D11-C-T1 spec text remains unpropagated pending the
-ordered D11-G9, paper, and specification sequence.
+branch. The accepted D11-C-T3a result is propagated through the proposal,
+paper, and V4 specification stack.
 
 ### D11-G9. Canonical GRC9V4 Expansion Port Allocation
 
@@ -3534,13 +3535,22 @@ and receipt closure, and atomic target readmission. GRC9 and GRC9V3 remain
 unchanged; the internally undefined saturated legacy event is marked only at
 the V4 compatibility boundary.
 
-### D11 Propagation Gate
+### D11 Propagation and Specification-Engineering Gate
 
-D11-C and D11-G9 now have separately accepted successor records. Paper
-propagation is the active gate. The accepted results then propagate to affected
-V4 spec clauses and fixtures, followed by a final specification audit.
-Implementation and `src/`/`tests/` changes remain unauthorized during this
-investigation phase.
+D11-C and D11-G9 have separately accepted successor records and have been
+propagated through the proposal and paper. The initial V4 specifications were
+then audited for implementation readiness. That audit introduced no new
+science; it opened one bounded engineering correction covering constructible
+state/result types, noncircular identities, event authority, state ownership,
+typed parameters and receipts, exact row-weight staging, charge precision,
+concrete preimplementation vectors, and a content-addressed release manifest.
+
+Missing RG2b evaluator/certificate vectors, child-stabilization vectors, the
+40 disabled-delegate execution vectors, lifecycle/migration and generic mapped
+event vectors, charge-edge and deep-immutability tests, and runtime receipts
+remain explicit capability holds. They are not filled by editorial inference.
+Implementation and `src/`/`tests/` changes remain unauthorized until a later
+hash-bound gate.
 
 ## Expected Records
 

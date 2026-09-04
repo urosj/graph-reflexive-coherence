@@ -1213,4 +1213,10 @@ authority or satisfying downstream scientific obligations.
       `implementation` phases.
 - [x] Pass the phase-aware specification audit and the complete API, notebook,
       Node, and browser verification path.
+- [x] Add `specification_correction` dispatch to the same normal verifier,
+      bound to the implementation-readiness audit rather than a new forensic
+      or scientific source.
+- [x] Validate the contract schema, computed canonical/event/receipt vectors,
+      content-addressed release, and capability holds through the normal
+      phase-aware audit before the unchanged API/notebook/browser suites run.
 - [ ] Authorize runtime implementation.

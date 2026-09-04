@@ -2921,8 +2921,34 @@ and its
 
 ### D11 Propagation and Final Audit
 
-- [ ] Propagate accepted results to the GRC-v4 paper.
-- [ ] Re-extract affected V4 clauses and run the final specification audit.
+- [x] Propagate accepted results to the GRC-v4 paper.
+- [x] Re-extract affected V4 clauses and run the D11 specification audit.
+- [x] Bind the implementation-readiness audit by exact SHA as engineering
+      correction input, not new or backward scientific evidence.
+- [x] Replace frozen-dataclass inheritance with standalone immutable V4 state
+      and result records that satisfy the shared structural protocol.
+- [x] Freeze noncircular RFC 8785 identities for resolved parameters, generic
+      profiles, GRC9V4 specialization/full model, graph, reset, state,
+      lifecycle envelope, event, receipt, and commit.
+- [x] Separate ordinary steps from constructive topology transactions; make
+      the source node explicit and remove caller target-graph authority from
+      canonical GRC9V4 expansion.
+- [x] Freeze one enabled owner for the port graph, specialization, compatibility
+      branch, resource tuple, emitted receipt delta, and persistent ledger.
+- [x] Add closed machine schemas for load-bearing parameters, requests,
+      identity payloads, state, reset, commit, and topology receipts.
+- [x] Bind GRC9 row weights to the active candidate and fresh committed
+      post-beat stage; gate child completion when no exact policy is selected.
+- [x] Freeze binary64 charge accumulation/comparison and `remainder is None`.
+- [x] Replace handwritten placeholder event IDs with generated distinct
+      chirality/phase/deeper-tree vectors and exact rollback cases.
+- [x] Add a content-addressed release manifest that packages exact controlling
+      source bytes independently of historical commit reachability.
+- [ ] Supply per-profile step vectors, Candidate A numeric vectors, RG2b
+      evaluator/certificate vectors, child-stabilization vectors, 40 exact
+      disabled-delegate vectors, lifecycle/migration and generic mapped-event
+      vectors, charge-edge vectors, deep-immutability tests, and runtime
+      receipts before advertising those capabilities as conformant.
 - [ ] Open implementation only under a later hash-bound implementation
   authority.
 

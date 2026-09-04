@@ -54,9 +54,9 @@ An implementation conforms to `GRC9V4` only if it:
    claims to support.
 
 Transition compatibility alone is not full compatibility.
-Until D11-G9 accepts and the paper propagates a canonical expansion map, no
-implementation may claim full `GRC9V4` conformance. This hold does not suspend
-the authority of unaffected D10-backed specialization clauses.
+The D11-G9 scientific hold is closed. Runtime `GRC9V4` conformance remains
+unclaimed until an implementation passes the exact specialization,
+constructive-event, and disabled-compatibility vectors.
 
 ## Class
 
@@ -80,10 +80,17 @@ selected `GRCV4` profile plus:
 - `mechanical_refinement`
 - `column_coarse_graining`
 - `basin_attributes`
-- `hierarchy_tracking`
 - `quadrature_budget`
 - `intrinsic_frame`
-- `grc9v3_disabled_compatibility`
+
+`completed_spark` and `hierarchy_tracking` are separately advertised optional
+capabilities. No current implementation profile may advertise them until it
+binds an exact `GRC9ChildStabilizationPolicy` and its executable completion
+vectors. Mechanical expansion alone does not imply either capability.
+`grc9v3_disabled_compatibility` is likewise optional per exact combined model
+identity and may be advertised only after all 40 profile-by-surface delegate
+vectors pass. The existence of the compatibility contract does not establish
+an implementation's conformance to it.
 
 It must not advertise `host_embedding_frame`. The opt-in
 `grc9v3_column_h_assisted` spark lane must have a separate capability or
@@ -95,12 +102,48 @@ In addition to the complete `GRCV4` identity, the specialization identity must
 bind:
 
 ```python
-@dataclass(frozen=True)
+@dataclass(frozen=True, slots=True)
 class GRC9CoarsePolicy:
+    schema_version: Literal["grc9v4-coarse-policy-v1"]
     nonnegative_field_mode: Literal["simplex_profile"]
     signed_flux_mode: Literal["positive_negative_split"]
 
-@dataclass(frozen=True)
+@dataclass(frozen=True, slots=True)
+class GRC9RowWeightPolicy:
+    schema_version: Literal["grc9v4-row-weight-policy-v1"]
+    candidate_a_source: Literal["committed_postbeat_W_A"]
+    candidate_c_source: Literal["stable_edge_W_C_tr"]
+    disabled_source: Literal["exact_delegate_native_base_conductance"]
+    evaluation_stage: Literal["fresh_postbeat_candidate_detection"]
+
+@dataclass(frozen=True, slots=True)
+class GRC9ChildStabilizationPolicy:
+    schema_version: Literal["grc9v4-child-stabilization-policy-v1"]
+    policy_id: str
+    basin_classifier_id: str
+    sample_stage: Literal["post_ordinary_step_commit"]
+    reference_parent_organization_digest: str
+    required_consecutive_beats: int
+    residual_norm_id: str
+    residual_tolerance: float
+    minimum_child_separation: float
+    transient_disposition: Literal["mechanical_refinement_only"]
+    reset_behavior: Literal["clear_candidate_window"]
+    hierarchy_update: Literal["append_stable_child_ids_in_canonical_order"]
+
+@dataclass(frozen=True, slots=True)
+class GRC9SparkPolicy:
+    schema_version: Literal["grc9v4-spark-policy-v1"]
+    lane: Literal[
+        "current_hybrid_signed_hessian",
+        "grc9v3_column_h_assisted",
+    ]
+    gradient_tolerance: float
+    basin_hessian_tolerance: float
+    spark_hessian_tolerance: float
+    child_stabilization: GRC9ChildStabilizationPolicy | None
+
+@dataclass(frozen=True, slots=True)
 class GRC9V4ExpansionPolicy:
     schema_version: Literal["grc9v4-expansion-policy-v1"]
     policy_id: Literal[
@@ -111,26 +154,33 @@ class GRC9V4ExpansionPolicy:
     recursive_tree_policy: Literal["creation_order_bfs_same_port_rotor"]
     stable_id_policy: Literal["grc_event_sha256_role_grammar_v1"]
     bond_seed: float
-    resource_distribution: tuple[float, float, float]
+    resource_distribution_schema: Literal["event_supplied_simplex3"]
+    source_self_loop_policy: Literal["reject_before_target_construction"]
 
-@dataclass(frozen=True)
-class GRC9V4ExpansionEventIdentity:
-    event_id: str
-    target_effective_degree: int
-    module_chirality: Literal[-1, 1]
-    growth_phase: Literal[1, 2, 3] | None
+@dataclass(frozen=True, slots=True)
+class LegacyCompatibilityPolicy:
+    schema_version: Literal["grc9v4-legacy-compatibility-policy-v1"]
+    target_spec_version: str
+    transition_policy_id: str
+    state_policy_id: str
+    observable_policy_id: str
+    lifecycle_policy_id: str
+    undefined_expansion_disposition: Literal[
+        "legacy_expansion_target_undefined"
+    ]
 
-@dataclass(frozen=True)
+@dataclass(frozen=True, slots=True)
 class GRC9V4ResolvedSpecialization:
     schema_version: Literal["grc9v4-resolved-specialization-v1"]
-    port_chart: Mapping[str, JSONValue]
-    spark: Mapping[str, JSONValue]
+    row_weight: GRC9RowWeightPolicy
+    spark: GRC9SparkPolicy
     expansion: GRC9V4ExpansionPolicy
     coarse_graining: GRC9CoarsePolicy
-    compatibility: Mapping[str, JSONValue]
+    compatibility: LegacyCompatibilityPolicy
 
-@dataclass(frozen=True)
-class GRC9V4Specialization:
+@dataclass(frozen=True, slots=True)
+class GRC9V4SpecializationIdentityPayload:
+    schema_version: Literal["grc9v4-specialization-identity-v1"]
     port_count: Literal[9]
     port_chart_id: Literal["fixed_3x3_row_column"]
     frame_mode: Literal["fixed_port_chart"]
@@ -143,17 +193,38 @@ class GRC9V4Specialization:
     expansion_policy_id: Literal[
         "grc9v4_axis_preserving_chiral_same_port_expansion_v1"
     ]
-    expansion_distribution_mode: Literal["equal", "custom"]
-    coarse_policy: GRC9CoarsePolicy
+    row_weight_policy_id: Literal["grc9v4-row-weight-policy-v1"]
+    coarse_policy_id: Literal["grc9v4-coarse-policy-v1"]
     grc9v3_target_spec_version: str
-    compatibility_branch: Literal["enabled_v4", "disabled_grc9v3"]
+    specialization_params_hash: str
+
+@dataclass(frozen=True, slots=True)
+class GRC9V4Specialization:
+    identity_payload: GRC9V4SpecializationIdentityPayload
     params_resolved: GRC9V4ResolvedSpecialization
-    params_hash: str
+    specialization_id: str
+
+@dataclass(frozen=True, slots=True)
+class GRC9V4CompleteIdentityPayload:
+    schema_version: Literal["grc9v4-complete-identity-v1"]
+    grcv4_complete_profile_id: str
+    specialization_id: str
 ```
 
 Any change to the port count, chart, default row backend, Hessian sign,
-spark lane, expansion policy, resource split, coarse representation, or legacy
-target version is identity-bearing.
+spark lane or child-completion policy, row-weight bridge, expansion policy,
+coarse representation, or legacy target version is identity-bearing. The
+resource tuple is event-bearing and is not duplicated in policy or
+specialization state.
+
+`specialization_params_hash` is computed over `params_resolved` with the
+`grc9v4-params-sha256:` grammar. `specialization_id` is computed over the
+specialization identity payload with the
+`grc9v4-specialization-sha256:` grammar. The complete enabled model identity
+is `"grc9v4-model-sha256:" + SHA256(JCS(GRC9V4CompleteIdentityPayload))`.
+Each payload excludes its own derived ID. The public `active_model_identity`
+is this combined identity, while `active_profile_id` remains the imported
+generic profile identity.
 
 ## Specialization contract register
 
@@ -207,39 +278,91 @@ Port labels are mechanical interface data and lifecycle identity. They do not
 add a resource coordinate or make port caches authoritative state.
 
 ```python
-@dataclass(frozen=True)
+@dataclass(frozen=True, slots=True)
 class GRC9V4PortEndpoint:
     node_id: NodeId
     port: int  # 1..9
 
-@dataclass(frozen=True)
+@dataclass(frozen=True, slots=True)
 class GRC9V4PortEdge:
     edge_id: EdgeId
-    source: GRC9V4PortEndpoint
-    target: GRC9V4PortEndpoint
-    orientation: Literal[-1, 1]
+    kind: Literal["boundary", "spine", "tree"]
+    tail: GRC9V4PortEndpoint
+    head: GRC9V4PortEndpoint
 
-@dataclass(frozen=True)
-class EnabledGRC9V4State(GRCV4State):
-    port_edges: dict[EdgeId, GRC9V4PortEdge]
-    hierarchy: Mapping[str | int, list[str | int]]
-    basin_identity: Mapping[NodeId, str | int]
+@dataclass(frozen=True, slots=True)
+class GRC9V4SerializedPortGraph:
+    schema_version: Literal["grc9v4-port-graph-v1"]
+    live_node_ids: tuple[NodeId, ...]
+    edges: tuple[GRC9V4PortEdge, ...]
+    graph_digest: str
 
-@dataclass(frozen=True)
+@dataclass(frozen=True, slots=True)
+class GRC9V4ResetBaseline:
+    schema_version: Literal["grc9v4-reset-baseline-v1"]
+    authoritative: GRCV4AuthoritativeState
+    graph_digest: str
+    orientation_identity: str
+    active_model_identity: str
+    context_contract_id: str
+    Q_target: float
+    reset_digest: str
+
+@dataclass(frozen=True, slots=True)
+class GRC9V4LifecycleState:
+    branch: Literal["enabled_v4"]
+    step_index: int
+    time: float
+    port_graph: GRC9V4SerializedPortGraph
+    orientation_identity: str
+    profile: GRCV4Profile
+    specialization: GRC9V4Specialization
+    active_model_identity: str
+    context_contract_id: str
+    context_value_digest: str | None
+    current: GRCV4AuthoritativeState
+    reset: GRC9V4ResetBaseline
+    Q_target: float
+    receipt_ledger: tuple[SuccessfulReceiptEnvelope, ...]
+    hierarchy: FrozenMapping[IdentityId, tuple[IdentityId, ...]]
+    basin_identity: FrozenMapping[NodeId, IdentityId]
+    scientific_state_digest: str
+    lifecycle_digest: str
+
+@dataclass(frozen=True, slots=True)
+class EnabledGRC9V4State:
+    lifecycle: GRC9V4LifecycleState
+
+@dataclass(frozen=True, slots=True)
 class DisabledGRC9V3State:
+    branch: Literal["disabled_grc9v3"]
     delegate: ExactGRC9V3State
     target_spec_version: str
-    entry_receipt: LifecycleReceipt
+    entry_receipt: LegacyCompatibilityReceipt
 
 GRC9V4ScientificState = EnabledGRC9V4State | DisabledGRC9V3State
 ```
 
-The inherited `GRCV4State` authority rules remain controlling. Basin,
-hierarchy, event, and graph identity are lifecycle surfaces. Row summaries and
-coarse caches are derived, representation-only, and excluded from scientific
-state equality. The disabled branch delegates its scientific state and
-transition to the exact legacy target; the V4 wrapper owns only the branch
-tag, ordered crossing receipt, and target-version binding.
+`port_graph` is the sole enabled graph owner. `GRC9V4ResetBaseline` names that
+same graph by digest and binds the combined `active_model_identity`; it does
+not duplicate the profile or specialization payload. The generic graph returned
+through the `GRCV4` surface is a deterministic read-only projection of this
+port graph and is never separately serialized or hashed. Swapping `tail` and
+`head` is the only orientation reversal representation; there is no redundant
+orientation sign. Enabled V4 edge IDs are nonempty JSON strings; this makes
+stable-ID keyed parameter maps lossless without integer-to-property-name
+coercion. The specialization is owned exactly once by the enabled
+lifecycle state. Its payload contains no compatibility-branch flag: the
+scientific-state union's exact `branch` discriminant is the sole branch owner.
+
+The inherited `GRCV4State` authority rules remain controlling through its
+structural protocol. Basin, hierarchy, event, and graph identity are lifecycle
+surfaces. Row summaries and coarse caches are derived, representation-only,
+and excluded from scientific state equality. The disabled branch delegates
+its scientific state and transition to the exact legacy target; the V4 wrapper
+owns only the branch tag, ordered crossing receipt, and target-version binding.
+All nested maps, arrays, edges, hierarchy values, and delegate envelopes obey
+the deep-immutability admission rule.
 
 ## Fixed $3\times3$ chart
 
@@ -326,6 +449,27 @@ The $\xi_c$ term is row-local, not an outer product of $\mathbf g_i$. The
 $\zeta_c$ term is an isotropic scalar added to each diagonal entry, not
 $\mathbf J_i^{\mathrm{net}}(\mathbf J_i^{\mathrm{net}})^\top$. This legacy
 node tensor must never be labeled graph $K_4$.
+
+### V4 row-weight bridge and stage
+
+The older row-backend contract fixes the operator but does not itself select a
+V4 candidate weight surface. The following is therefore an explicit,
+identity-bearing GRC9V4 implementation binding, not a new scientific claim:
+
+| Active branch | Exact $w_{ij}$ source |
+|---|---|
+| enabled Candidate A | the live edge's committed $W_{A,k+1}$ after the ordinary beat commit |
+| enabled Candidate C | the live stable-edge value $W_{C,\mathrm{tr}}$ from the complete target profile |
+| disabled GRC9V3 | the exact delegate-native base conductance at its native stage |
+
+For both enabled candidates, row summaries used for spark detection are built
+fresh at `fresh_postbeat_candidate_detection`; predictor, trial-root,
+pre-continuity, retained-Hodge, geometry, $G_J$, inferred mobility, or cached
+weights are invalid substitutes. New Candidate A internal edges receive the
+event policy's exact positive `bond_seed` before target readmission. Candidate
+C target construction must already have a complete stable-ID
+$W_{C,\mathrm{tr}}$ map. This bridge is serialized as
+`grc9v4-row-weight-policy-v1` and changes the specialization identity.
 
 The baseline fixes:
 
@@ -414,7 +558,11 @@ corrected equation, not $\lceil D_{\mathrm{eff}}/7\rceil$, governs GRC9V4.
 The normative enabled policy is
 `grc9v4_axis_preserving_chiral_same_port_expansion_v1`, selected by
 `D11-G9-P4a`. It applies only to an exactly saturated source $s$ with each
-source port $1,\ldots,9$ occupied once. The inherited all-center spine is not
+source port $1,\ldots,9$ occupied once. `target_effective_degree` must be a
+JSON integer, not a Boolean, and at least 9. A source self-loop is outside the
+current event domain because it has two local source endpoints; it returns
+`source_self_loop_unsupported` before target construction. The inherited
+all-center spine is not
 admissible at saturation: both the old boundary edge at source port 5 and its
 second internal edge claim $(s_2,5)$. Parallel-edge support or operation order
 does not repair duplicate endpoint-port occupancy.
@@ -436,6 +584,22 @@ $$
 
 It preserves the old edge identity, external endpoint, local port, row,
 column, and declared coordinate orientation.
+
+The target live-node and edge sets are exact:
+
+$$
+V^+=(V^-\setminus\{s\})\cup V_{\mathrm{module}},
+$$
+
+$$
+E^+=(E^-\setminus E_s^-)\cup T_{\mathrm{boundary}}(E_s^-)
+\cup E_{\mathrm{internal}}.
+$$
+
+The source node is removed from the live graph and may remain only as a
+storage tombstone. Every unaffected node and edge is byte-identical; each old
+incident edge ID is preserved with only its source endpoint replaced; and
+every internal edge is inserted exactly once.
 
 Define
 
@@ -516,7 +680,8 @@ $$
 $$
 
 The parent is the first creation-order node in the branch with an unused
-rotor port. The child uses that same port at its own endpoint. This
+rotor port; within that parent, the allocator selects the first unused entry
+of the ordered rotor. The child uses that same port at its own endpoint. This
 creation-order breadth-first rule starts each primary branch with one free
 recursive valence and changes available valence by $+1$ per child, so it does
 not stall for any finite admitted module size. The result is connected and
@@ -530,10 +695,37 @@ counter, or hidden RNG must not select chirality or phase.
 
 #### Stable identity and initialization
 
-`event_id` must match `grc-event-sha256:<64-lowercase-hex-digits>`. Its digest
-payload binds the source graph and source node, $D_{\mathrm{eff}}$, module
-size, chirality, canonical phase, port policies, $w_{\mathrm{bond}}$, resource
-map, and candidate/history policies. Base role IDs are
+`event_id` must match `grc-event-sha256:<64-lowercase-hex-digits>` and is
+computed, not chosen. Its exact noncircular payload is:
+
+```python
+@dataclass(frozen=True, slots=True)
+class GRC9V4ExpansionEventIdentityPayload:
+    schema_version: Literal["grc9v4-expansion-event-identity-v1"]
+    source_state_digest: str
+    source_graph_digest: str
+    source_node_id: NodeId
+    target_profile_template_id: str
+    target_specialization_id: str
+    target_effective_degree: int
+    canonical_module_node_count: int
+    module_chirality: Literal[-1, 1]
+    growth_phase: Literal[1, 2, 3] | None
+    expansion_policy_id: Literal[
+        "grc9v4_axis_preserving_chiral_same_port_expansion_v1"
+    ]
+    expansion_policy_digest: str
+    bond_seed: float
+    resource_distribution: tuple[float, float, float]
+    candidate_history_policy_digest: str
+    carrier_history_policy_digest: str
+```
+
+The payload omits `event_id` and the not-yet-constructed target graph. The
+target plan is then built using the computed event ID as its role-ID namespace.
+Different effective degree, source node, chirality, active phase, resource
+tuple, target profile template, bond seed, or history policy necessarily gives a
+different event ID. Base role IDs are
 
 ```text
 <event-id>/core
@@ -571,7 +763,9 @@ C_{x_{b,\ell}}^+=0,
 $$
 
 where $p_b\geq0$, $\sum_bp_b=1$, and the canonical baseline is
-$p_1=p_2=p_3=1/3$. The exact tuple is identity-bearing; a bare `custom` label
+$p_1=p_2=p_3=1/3$. The exact tuple is carried only by the event request and
+identity; the expansion policy declares only the `event_supplied_simplex3`
+schema, and no independent distribution mode is stored. A bare `custom` label
 is invalid. This unit-measure map has $\Delta Q_{\mathrm{event}}=0$.
 
 #### Whole-lifecycle completion and legacy boundary
@@ -588,9 +782,11 @@ with zero-filled new components is forbidden.
 
 Current state, reset state, resource, history, profile, event receipt, target
 surface reconstruction, and target readmission commit atomically or not at
-all. The complete plan is a pure function of admitted source lifecycle state,
-event identity, and the resolved expansion policy and must match the canonical
-fixtures.
+all. The complete plan is a pure function of admitted post-beat source
+lifecycle state, the separately submitted expansion request, and the resolved
+expansion policy and must match the canonical executable vectors. A
+caller-supplied target graph is forbidden; an expected target digest is only
+an assertion.
 
 GRC9 and GRC9V3 remain unchanged. Exact disabled compatibility applies only
 on
@@ -651,13 +847,33 @@ nine-port saturation
 Expansion without stabilization remains mechanical refinement. A transient
 child-like feature is not completion.
 
+The accepted paper does not select a numerical child-stability evaluator.
+Accordingly, the current specification freezes the typed
+`GRC9ChildStabilizationPolicy` envelope but admits no default policy ID and no
+`completed_spark` capability by implication. An implementation may advertise
+completion only when its specialization binds all of the following and its
+release supplies concrete vectors:
+
+- a versioned basin classifier and the pre-event parent-organization digest;
+- committed post-step sample stage and canonical sampled-node order;
+- positive consecutive-beat horizon;
+- residual norm/tolerance and positive child-distinctness threshold with units;
+- transient/failure and reset-window behavior;
+- a completed-spark receipt; and
+- canonical hierarchy insertion order.
+
+Different values or evaluators produce different specialization identities.
+Until such a profile is listed, expansion can conform as mechanical
+refinement, but completed-spark and hierarchy conformance remain withheld.
+
 ## Column coarse-graining and Split
 
 Coarse encoding is field-typed rather than selected by one global mode:
 
 ```python
-@dataclass(frozen=True)
+@dataclass(frozen=True, slots=True)
 class GRC9CoarsePolicy:
+    schema_version: Literal["grc9v4-coarse-policy-v1"]
     nonnegative_field_mode: Literal["simplex_profile"]
     signed_flux_mode: Literal["positive_negative_split"]
 ```
@@ -859,7 +1075,8 @@ small coefficients.
   orientation, and fixed-bond policies;
 - event-bound desired capacity, explicit module chirality, conditional
   canonical growth phase, and digest payload;
-- equal or custom resource-distribution policy with exact `(p_1,p_2,p_3)`;
+- event-supplied exact simplex resource tuple `(p_1,p_2,p_3)` under the one
+  policy-declared distribution schema;
 - Candidate A full-target history policy, Candidate C target
   $W_{C,\mathrm{tr}}$ authority, and persistent whole-carrier disposition;
 - hierarchy and child-stabilization policy;
@@ -869,9 +1086,12 @@ small coefficients.
 
 Defaults must resolve at construction. No environment variable, cache state,
 or solver history may alter these semantics after profile resolution.
-`GRC9V4ResolvedSpecialization` is canonicalized and hashed under the same
-finite-JSON rules as `GRCV4ResolvedParams`; its payload and digest are both
-serialized. A policy label without the resolved payload is invalid.
+`GRC9V4ResolvedSpecialization` contains only the typed row-weight, spark,
+expansion, coarse, and compatibility records shown above. Unknown
+trajectory-bearing keys are rejected by the machine schema. It is canonicalized
+under JCS, and the resolved payload, parameter digest, identity payload,
+specialization ID, and combined model ID are all serialized. A policy label
+without its resolved payload is invalid.
 
 ## Observables
 
@@ -884,8 +1104,8 @@ In addition to enabled `GRCV4` observables, expose:
 - `row_net_flux`
 - `hybrid_spark_candidates`
 - `mechanical_expansions`
-- `completed_sparks`
-- `hierarchy`
+- `completed_sparks` when the capability is active
+- `hierarchy` when the capability is active
 - `coarse_columns`
 - `coarse_profiles`
 - `compatibility_branch`
@@ -900,9 +1120,11 @@ completion counts must remain distinct.
 A snapshot must satisfy the full `GRCV4` contract and preserve:
 
 - unique edge and occupied endpoint-port identities;
+- the sole canonical `GRC9V4SerializedPortGraph`, with no separately stored
+  generic graph copy;
 - fixed chart, row backend, sign, and spark-lane identity;
 - basin and hierarchy lifecycle identity;
-- expansion policy and distribution configuration;
+- expansion policy and each event-owned resource tuple;
 - every expansion event's canonical digest payload, module chirality,
   conditional growth phase, role-ID allocation, port plan, bond seed,
   resource/history disposition, and target-readmission receipt;
@@ -924,6 +1146,7 @@ In addition to `GRCV4` failures, the implementation must fail closed for:
 - a nonbaseline backend presented as baseline;
 - saturation or spark-lane ambiguity;
 - capacity, attachment, or redirection failure during expansion;
+- `source_self_loop_unsupported` before expansion target construction;
 - `module_chirality_required`, `module_growth_phase_required`, or
   `reject_noncanonical_inactive_growth_phase`;
 - missing, duplicate, or colliding expansion role identities;

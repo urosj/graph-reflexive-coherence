@@ -1,5 +1,5 @@
 {
-  "schema": "grcv4_grc9v4_post_d10_specification_boundary_v6",
+  "schema": "grcv4_grc9v4_post_d10_specification_boundary_v7",
   "authorization_base_commit": "5d80fa9f02010167f652a32127f19c53fa12fc6d",
   "post_d10_entry_state": {
     "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D10_2FullSubstrateProvenanceAndPromotionAudit.json",
@@ -11,20 +11,24 @@
       "/accepted_D10_decision_digest": "3e673b335ad428d01006f231765d060a9bdd5f134332b143048f774de94bad00"
     }
   },
-  "active_phase": "specification_propagation",
+  "active_phase": "specification_correction",
   "phase_authority": {
-    "authorization": "GRCV4_GRC9V4_D11_SPECIFICATION_PROPAGATION_AFTER_ACCEPTED_PAPER",
-    "path": "implementation/investigations/grc9v4-constitutive-design/specification/D11PaperPropagationAndSpecificationExtractionGate.json",
-    "sha256": "410f489a9bf82367932eaaec8765c08b6ede56ee86b93da1b68606eec9d3dd33",
+    "authorization": "GRCV4_GRC9V4_SPECIFICATION_ENGINEERING_CORRECTION",
+    "path": "implementation/investigations/grc9v4-constitutive-design/specification/GRCV4SpecificationEngineeringCorrectionGate.json",
+    "sha256": "713be98963866bc726e4b33b37b1f726a069637d0d52ef381708f96f573cd152",
     "assertions": {
       "/status": "accepted_bounded",
-      "/paper_source/commit_sha": "073a8014c745426d164be5e7d81223cea0d5d370",
-      "/paper_source/paper_propagation_status": "propagated",
-      "/authorization_effect/specification_propagation_authorized": true,
+      "/audit_input/sha256": "32cea1b2752361864b02651cb7d38df85929210adc213aa76ee1307babcb5196",
+      "/authorization_effect/specification_correction_authorized": true,
       "/authorization_effect/implementation_authorized": false,
       "/authorization_effect/runtime_or_src_tests_change_authorized": false,
       "/authorization_effect/GRC9_or_GRC9V3_change_authorized": false
     }
+  },
+  "prior_phase_authority": {
+    "path": "implementation/investigations/grc9v4-constitutive-design/specification/D11PaperPropagationAndSpecificationExtractionGate.json",
+    "sha256": "410f489a9bf82367932eaaec8765c08b6ede56ee86b93da1b68606eec9d3dd33",
+    "status": "accepted_bounded_specification_propagation_predecessor"
   },
   "phase_policy": {
     "specification_writing": {
@@ -58,6 +62,14 @@
       "paper": "frozen_to_accepted_D11_integrated_paper",
       "exploratory_tool_UX": "frozen_to_accepted_D11_successor_UX"
     },
+    "specification_correction": {
+      "activation": "requires_hash_bound_implementation_readiness_audit_and_accepted_D11_specification_release",
+      "src_and_tests": "frozen_to_authorization_base",
+      "specifications": "mutable_only_at_authorized_V4_contract_schema_vector_and_release_outputs",
+      "proposal": "frozen_to_accepted_proposal_review",
+      "paper": "frozen_to_accepted_D11_integrated_paper",
+      "exploratory_tool_UX": "frozen_to_accepted_D11_successor_UX"
+    },
     "implementation": {
       "activation": "requires_a_hash_bound_successor_authority_in_phase_authority",
       "src_and_tests": "allowed"
@@ -66,7 +78,11 @@
   "authorized_specification_outputs": [
     "specs/grc-common-interface-v4-ext.md",
     "specs/grc-v4-conformance-fixtures.json",
+    "specs/grc-v4-conformance-vectors.json",
+    "specs/grc-v4-contract-schema.json",
     "specs/grc-v4-source-manifest.json",
+    "specs/grc-v4-specification-release.json",
+    "specs/grc-v4-specification-release.sha256",
     "specs/grc-v4-spec.md",
     "specs/grc-9-v4-spec.md"
   ],
@@ -125,6 +141,8 @@
     "implementation/investigations/grc9v4-constitutive-design/scripts/audit_grc9v4_d11_c_resolution.py",
     "implementation/investigations/grc9v4-constitutive-design/scripts/audit_grc9v4_d11_g9_resolution.py",
     "implementation/investigations/grc9v4-constitutive-design/scripts/audit_grcv4_d11_paper_propagation.py",
+    "implementation/investigations/grc9v4-constitutive-design/scripts/build_grcv4_specification_vectors.py",
+    "implementation/investigations/grc9v4-constitutive-design/scripts/build_grcv4_specification_release.py",
     "implementation/investigations/grc9v4-constitutive-design/specification/PostD10SpecificationBoundary.json",
     "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/docs/AgenticQueryGuide.md",
     "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/GRCV4ExploratorySideToolImplementationPlan.md",
