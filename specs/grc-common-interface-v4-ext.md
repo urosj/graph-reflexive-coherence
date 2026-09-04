@@ -35,6 +35,8 @@ This document does not alter the interface or behavior of `GRCV2`, `GRCV3`,
 | Observables | Adds profile, charge, current, geometry, solver, lifecycle, and specialization diagnostics while preserving authority labels. |
 | Serialization | Preserves complete profile and lifecycle identity and enough provenance to reject or rebuild derived caches. |
 | Errors | Requires fail-closed typed rejection before atomic commit for identity, domain, solver, charge, migration, event, or restoration failure. |
+| D11-C transport | Requires Candidate C profiles to bind the exact `C-HM-STIFFNESS-BASELINE-v1` stable-edge reference map and separate Hodge/mobility constructors. |
+| D11-G9 expansion | Adds explicit chirality, conditional growth phase, canonical event identity, and legacy-defined-domain failure surfaces for GRC9V4 events. |
 
 No inherited common method changes signature. V4 adds typed methods beside
 them and defines when an inherited zero-argument method may delegate to the
@@ -80,6 +82,14 @@ identity includes, as applicable:
 - canonical resolved-parameter identity; and
 - for `GRC9V4`, port chart, row backend, Hessian sign, spark lane, expansion,
   coarse-graining, compatibility branch, and GRC9V3 target identity.
+
+Every Candidate C profile additionally binds
+`candidate_c_transport_id = "C-HM-STIFFNESS-BASELINE-v1"`, the exact positive
+map from stable unoriented live-edge identities to $W_{C,\mathrm{tr}}$, its
+content identity, $\eta_C$, and the separate $E_H$ and $E_M$ constructor
+identities. This map is profile/reference context: it is not mutable state,
+must not be reconstructed from Hodge or geometry arrays, and must be complete
+for the target live-edge set before restoration or event readmission.
 
 Defaults must resolve at construction. Environment, observer, device,
 telemetry, and storage choices remain outside model parameters unless the
@@ -191,7 +201,7 @@ class GRCV4StepRequest:
 
 @dataclass(frozen=True)
 class GRCV4MigrationRequest:
-    target_profile: GRCV4Profile
+    target_profile: "GRCV4Profile"
     history_policy_id: str
     target_context_value: Mapping[str, JSONValue]
 
@@ -200,9 +210,20 @@ class GRCV4TopologyEventRequest:
     event_id: str
     source_graph_id: str
     target_graph: SerializedGraphState
+    target_profile: GRCV4Profile
     resource_map_id: str
     history_policy_id: str
     payload: Mapping[str, JSONValue]
+
+@dataclass(frozen=True)
+class GRC9V4ExpansionEventRequest(GRCV4TopologyEventRequest):
+    expansion_policy_id: Literal[
+        "grc9v4_axis_preserving_chiral_same_port_expansion_v1"
+    ]
+    target_effective_degree: int
+    module_chirality: Literal[-1, 1]
+    growth_phase: Literal[1, 2, 3] | None
+    resource_distribution: tuple[float, float, float]
 
 def step_v4(self, request: GRCV4StepRequest) -> "GRCV4StepResult": ...
 def run_v4(
@@ -265,7 +286,12 @@ loss, and admission outcome. A target profile not present in
 
 `GRC9V4` mechanical expansion is such a topology event. Its candidate
 detection, expansion, and child-basin completion remain distinct lifecycle
-facts.
+facts. Its `event_id` must use the
+`grc-event-sha256:<64-lowercase-hex-digits>` grammar and bind the source,
+desired capacity, module size, chirality, canonical phase, port and bond
+policies, resource map, and candidate/history policies. `growth_phase` is
+`None` exactly when $(n_{\mathrm{canonical}}-4)\bmod3=0$; otherwise it is one
+of `1`, `2`, or `3`.
 
 ## Step results, events, and observables
 
@@ -368,6 +394,12 @@ stable reconstructible identity:
 - cache provenance sufficient to reject or deterministically rebuild every
   derived surface.
 
+Candidate C snapshots and target profiles preserve the exact identity and
+content of $W_{C,\mathrm{tr}}$ without promoting it into ordinary-beat state.
+GRC9V4 expansion receipts additionally preserve chirality, canonical growth
+phase, stable role IDs, the complete port plan, fixed bond seed, resource and
+history disposition, and target-readmission outcome.
+
 `GRC9V4` snapshots additionally preserve its complete port-graph and
 specialization identity. Restoration must readmit the complete target before
 state is observable. Canonical serialization still does not imply byte
@@ -388,7 +420,12 @@ The inherited explicit-error requirement includes V4 failures involving:
 - incompatible or unreconstructible restoration identity.
 
 For `GRC9V4`, invalid ports, chart, spark, expansion, coarse-graining, or any
-independent disabled-reduction surface are additional typed failures.
+independent disabled-reduction surface are additional typed failures. The
+expansion admission surface includes `module_chirality_required`,
+`module_growth_phase_required`,
+`reject_noncanonical_inactive_growth_phase`, and stable-role collision
+failures. A disabled legacy expansion for which unchanged authority has no
+unique target returns `legacy_expansion_target_undefined`.
 
 Every failure occurs before public state changes or rolls back the entire
 transaction. Partial resource, nonresource, topology, reset, history, cache,
@@ -416,8 +453,9 @@ graph backend, lifecycle, serialization, or error behavior.
 ## Claim boundary
 
 This extension encodes the interface effects of the accepted V4 common
-architecture, lifecycle, Hodge typing, profile-identity, and independently
-scoped GRC9V3 compatibility requirements. The complete claim classes and
+architecture, lifecycle, Hodge typing, profile-identity, D11-C transport,
+D11-G9 expansion, and independently scoped GRC9V3 compatibility requirements.
+The complete claim classes and
 ceilings remain in the [GRCV4 claim matrix](grc-v4-spec.md#claim-conformance-matrix)
 and its [paper source][paper-claims] and [proposal crosswalk][proposal-claims].
 

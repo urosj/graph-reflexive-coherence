@@ -1,0 +1,53 @@
+{
+  "schema_version": "grc9v4_cd_d11_specification_extraction_gate_v1",
+  "artifact_id": "GRC9V4-CD-D11-SPECIFICATION-EXTRACTION-GATE-v1",
+  "date": "2026-09-04",
+  "status": "accepted_bounded",
+  "human_acceptance": "accepted_by_user_after_D11_integrated_paper_commit",
+  "paper_source": {
+    "path": "implementation/investigations/grc9v4-constitutive-design/drafts/2026-09-GRC-V4.md",
+    "commit_sha": "073a8014c745426d164be5e7d81223cea0d5d370",
+    "file_sha256": "2da39c3bb0d102804f9135384317771f3fe1b3e48df3b4ab1813a3575642a739",
+    "paper_propagation_status": "propagated",
+    "claims": 2,
+    "normative_objects": 13,
+    "equation_contracts": 31,
+    "GRC9_or_GRC9V3_rewritten": false
+  },
+  "proposal_source": {
+    "path": "implementation/investigations/grc9v4-constitutive-design/drafts/GRCV4-proposal.md",
+    "commit_sha": "a96efea38a74d71d391c1217dbb202008575c2be",
+    "file_sha256": "8543463a5b3aa15bb60f078a980f1812be4b68b6db8904026b21d3ccdb2362c9",
+    "semantic_status": "accepted_provenance_companion_not_coequal_mathematical_authority"
+  },
+  "accepted_successors": [
+    {
+      "gate_id": "D11-C",
+      "selected_candidate_id": "D11-C-T3a",
+      "claim_id": "D11-C-CL-O-001",
+      "decision_digest": "82e8008e8edade39db7b5327a31a807031b712dcc86b3fe3e8c0977bda51e797"
+    },
+    {
+      "gate_id": "D11-G9",
+      "selected_candidate_id": "D11-G9-P4a",
+      "claim_id": "D11-G9-CL-N-001",
+      "decision_digest": "a0813ceead2c992ec197790abd8a0ceea167ae2d952f853cf48f1db4d8001615"
+    }
+  ],
+  "authorization_effect": {
+    "specification_propagation_authorized": true,
+    "authorized_outputs": [
+      "specs/grc-common-interface-v4-ext.md",
+      "specs/grc-v4-conformance-fixtures.json",
+      "specs/grc-v4-source-manifest.json",
+      "specs/grc-v4-spec.md",
+      "specs/grc-9-v4-spec.md",
+      "specs/README.md"
+    ],
+    "implementation_authorized": false,
+    "runtime_or_src_tests_change_authorized": false,
+    "GRC9_or_GRC9V3_change_authorized": false
+  },
+  "next_gate": "D11-specification-review",
+  "claim_ceiling": "specification_extraction_only_not_runtime_implementation_or_conformance_evidence"
+}

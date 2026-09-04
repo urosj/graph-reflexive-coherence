@@ -1,7 +1,8 @@
 # GRCv4 Exploratory Side Tool Implementation Plan
 
 **Date:** 2026-08-28; successor update 2026-09-04
-**Status:** Iterations 0-10 accepted; Iteration 11 UX candidate implemented
+**Status:** Iterations 0-10 accepted; Iteration 11 UX candidate implemented;
+downstream D11 specification propagation verified
 **Companion checklist:** [GRCV4ExploratorySideToolImplementationChecklist.md](./GRCV4ExploratorySideToolImplementationChecklist.md)
 **Source investigation:** [GRC9V4 constitutive design](../../README.md)
 
@@ -1446,6 +1447,19 @@ and mobile alongside all 12 historical browser regressions. The latest shared
 `web/dist` is therefore the ET-C11 candidate; ET-C8 remains the accepted
 historical browser identity.
 
+### Downstream D11 specification-propagation integration
+
+The external, hash-bound specification gate now records that both accepted D11
+results were propagated first into the committed paper and then into the V4
+specification outputs. This does not modify ET-C10 or promote ET-C11: it changes
+only which verification branch the normal entry point selects. The
+`specification_propagation` and future authorized `implementation` phases use
+the append-only D11 context and skip historical bundle rebuilds, because the
+D11 decision files are intentionally absent from the frozen ET-C0 source set.
+The phase-aware specification audit independently verifies paper identity,
+claim classes, support dispositions, all 31 D11 contracts, links, rendering,
+fixtures, and the V4-only mutation boundary.
+
 ## Verification Strategy
 
 ### Kernel and adapter tests
@@ -1523,5 +1537,6 @@ the source-exact forensic API while the ET-C2 historical snapshot remains
 unchanged.
 
 It may not claim that the tool proves a new V4 result, predicts reopened-gate
-outcomes, proves paper propagation before the paper audit changes state,
-implements GRCv4, or authorizes specification/runtime changes.
+outcomes, implements GRCv4, or independently authorizes specification/runtime
+changes. Paper and specification propagation are reported only when the
+external hash-bound phase authority and their dedicated audits agree.

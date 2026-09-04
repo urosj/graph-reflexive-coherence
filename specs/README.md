@@ -29,12 +29,14 @@ The implementation strategy assumed by these specs is:
 
 The [post-D10 boundary manifest](../implementation/investigations/grc9v4-constitutive-design/specification/PostD10SpecificationBoundary.json)
 hash-freezes every pre-existing normative file in this directory except this
-registry. The active `successor_investigation` phase is hash-bound to the D11
-opening record. It freezes `src/` and `tests/` while D11-C is open and D11-G9
-is queued. A later implementation phase may change `src/` and `tests/`, but
-only after the manifest names and hash-binds a successor authority that
-explicitly activates `GRCV4_GRC9V4_implementation`. The pre-existing-spec
-hashes remain enforced in every phase.
+registry. The active `specification_propagation` phase is hash-bound to the
+committed D11-integrated paper and the accepted D11-C/D11-G9 authority. It
+permits changes only to the V4 specification outputs and this registry while
+freezing the accepted proposal, paper, older specifications, `src/`, and
+`tests/`. A later implementation phase may change `src/` and `tests/`, but
+only after a successor authority explicitly activates
+`GRCV4_GRC9V4_implementation`. The pre-existing-spec hashes remain enforced in
+every phase.
 
 Run the separate claim, contract, phase-boundary, link, and rendering audit
 with the repository virtual environment:
@@ -54,28 +56,31 @@ state automatically and includes this successor audit when it is active.
   Additive, non-retroactive V4 interface extension. It registers the V4 class
   hierarchy and strengthens state authority, complete-profile identity,
   graph/differential backends, lifecycle, capabilities, serialization, and
-  atomic failure semantics for `GRCV4` and `GRC9V4` only.
+  atomic failure semantics for `GRCV4` and `GRC9V4` only. It also exposes the
+  accepted D11-C reference-map identity and D11-G9 chirality/phase event
+  request and failure surfaces.
 - `grc-v2-spec.md`
   Baseline graph Reflexive Coherence implementation from `papers/2025-12-GRC-V2.md`, with single dynamical conductance and shared analytic edge labels.
 - `grc-v3-spec.md`
   Basin-attribute and multi-metric implementation from `papers/2026-02-GRC-V3.md`.
 - `grc-v4-spec.md`
-  Normative graph-generic, profile-explicit V4 substrate for D10-backed
+  Normative graph-generic, profile-explicit V4 substrate for D10-plus-D11
   surfaces. It defines the common resource, authority, structural-Hodge,
   complete-step, lifecycle, and claim-ceiling contracts plus the current
-  optional A/C by CI/OS/RG2b/PC/CI+PC profile population. Candidate C
-  implementation conformance is on bounded hold; its displayed baseline law
-  is D11-C candidate C-T1, not accepted authority.
+  optional A/C by CI/OS/RG2b/PC/CI+PC profile population. Candidate C binds
+  the accepted `C-HM-STIFFNESS-BASELINE-v1` reference field, mobility,
+  retained-Hodge potential, baseline current, control, derivative,
+  realization-stage, and lifecycle contracts.
 - `grc-v4-source-manifest.json`
   Machine-readable, path/commit/hash-bound identity of the paper, proposal,
-  D10/D10.2 records, unchanged common interface, read-only GRC9V3 reduction
-  target, and historical G-RC-9 mechanics source used by the V4 stack.
+  D10/D10.2 records, accepted D11 resolutions and provenance supplements,
+  unchanged common interface, read-only GRC9V3 reduction target, and
+  historical G-RC-9 mechanics source used by the V4 stack.
 - `grc-v4-conformance-fixtures.json`
-  Mixed normative/preregistered preimplementation fixture contract. D10-backed
-  generic, realization, lifecycle, and independent $10\times4$
-  disabled-compatibility cases are normative. Exact Candidate C baseline and
-  GRC9V4 expansion fixtures remain provisional under D11-C and D11-G9. The
-  file defines required evidence but does not claim that a runtime executed it.
+  Normative preimplementation fixture contract for D10-plus-D11 generic,
+  Candidate C, realization, lifecycle, exact chiral same-port expansion, and
+  independent $10\times4$ disabled-compatibility cases. The file defines
+  required evidence but does not claim that a runtime executed it.
 - `grc-9-spec.md`
   Nine-slot mechanical substrate implementation from `papers/2026-04-GRC-9.md`, with single dynamical conductance and shared analytic edge labels.
 - `grc-9-v3-spec.md`
@@ -85,12 +90,13 @@ state automatically and includes this successor audit when it is active.
   boundaries, and explicit separation between default Lane A and the opt-in
   `grc9v3_column_h_assisted` spark lane.
 - `grc-9-v4-spec.md`
-  Normative nine-port specialization of `GRCV4` for D10-backed surfaces. It
-  adds the fixed port chart and row backend, a provisional V4-owned D11-G9
-  candidate for collision-free canonical mechanical expansion, hybrid spark,
+  Normative nine-port specialization of `GRCV4`. It adds the fixed port chart
+  and row backend, the accepted V4-owned
+  `grc9v4_axis_preserving_chiral_same_port_expansion_v1` event, hybrid spark,
   child-basin completion, column coarse-graining, the exact Candidate-A
   initializer binding, and four independently scoped disabled reductions to
-  an embedded read-only `GRC9V3` target for every supported profile.
+  an embedded read-only `GRC9V3` target for every supported profile, bounded
+  by the exact legacy-defined domain.
 - `grc-9-v3-evidence-profile.md`
   Bounded Phase 7, B1-GR, and B2-GR verification basis for the GRC9V3
   causal-state, persistence, retention, and Read-Back boundaries. Experimental

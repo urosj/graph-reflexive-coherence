@@ -29,16 +29,16 @@ CONFORMANCE_FIXTURES = ROOT / "specs/grc-v4-conformance-fixtures.json"
 SPECS_README = ROOT / "specs/README.md"
 
 EXPECTED_SOURCE_BUNDLE_DIGEST = (
-    "79e84f7839e1b65f3e55eeadb980e6d8d9b57d240aced93a8bf3a7e82851dffc"
+    "98c273b3cc097f0d95adfba98ed7dfac0ac494dce9e779bb4b04fe79fef4f6aa"
 )
 EXPECTED_GRAPH_DIGEST = (
-    "2776d2aa1aca51f7759c94ed0e9677a04934429b070bb8ea47683cbcd8f218ae"
+    "44d8c7d33950af5e5f7c61caa4fe6fbd14fc9aedf14218d0a11de7c705542e09"
 )
 EXPECTED_COUNTS = {
-    "current_claim": 39,
-    "normative_object": 67,
-    "equation_contract": 152,
-    "profile": 10,
+    "current_claim": 41,
+    "normative_object": 80,
+    "equation_contract": 183,
+    "profile": 12,
 }
 EXPECTED_CLAIM_COUNTS = Counter(
     {
@@ -47,8 +47,30 @@ EXPECTED_CLAIM_COUNTS = Counter(
         "conditional": 12,
         "open": 5,
         "negative": 6,
+        "optional_profile_normative": 1,
+        "GRC9V4_specialization_normative": 1,
     }
 )
+EXPECTED_D11_SUPPORT_DISPOSITION_OVERRIDES = {
+    "D11-C-EC-C-J0-COVARIANCE": (
+        "accepted_design_level_algebra_with_implementation_verification_still_pending"
+    ),
+    "D11-C-EC-C-J0-DERIVATIVE": (
+        "accepted_on_the_existing_smooth_fixed_rank_SPD_selector_stratum"
+    ),
+    "D11-C-EC-C-J0-LIFECYCLE": (
+        "accepted_design_level_lifecycle_contract_with_runtime_conformance_still_pending"
+    ),
+    "D11-G9-EC-DIHEDRAL-COVARIANCE": (
+        "accepted_design_level_combinatorial_covariance_with_runtime_verification_pending"
+    ),
+    "D11-G9-EC-LEGACY-DEFINED-DOMAIN": (
+        "accepted_bounded_GRC9V4_compatibility_boundary_not_a_GRC9_or_GRC9V3_rewrite"
+    ),
+    "D11-G9-EC-LIFECYCLE-READMISSION": (
+        "accepted_bounded_design_level_lifecycle_contract_with_runtime_conformance_pending"
+    ),
+}
 PHASE_AUTHORIZATIONS = {
     "specification_writing": "GRCV4_GRC9V4_specification_writing",
     "successor_investigation": ("GRCV4_GRC9V4_D11_G9_ACTIVE_AFTER_D11_C_ACCEPTANCE"),
@@ -58,6 +80,9 @@ PHASE_AUTHORIZATIONS = {
     "paper_propagation": (
         "GRCV4_GRC9V4_D11_PAPER_PROPAGATION_AFTER_D11_C_AND_D11_G9_ACCEPTANCE"
     ),
+    "specification_propagation": (
+        "GRCV4_GRC9V4_D11_SPECIFICATION_PROPAGATION_AFTER_ACCEPTED_PAPER"
+    ),
     "implementation": "GRCV4_GRC9V4_implementation",
 }
 
@@ -65,13 +90,13 @@ sys.path.insert(0, str(TOOL_ROOT / "src"))
 
 from grcv4_explorer.forensic import (  # noqa: E402
     contract_provenance,
-    load_forensic_context,
     negative_claims,
     object_dependents,
     reconstruction_path,
     write_trace,
 )
 from grcv4_explorer.paths import repository_root  # noqa: E402
+from grcv4_explorer.successor import load_successor_forensic_context  # noqa: E402
 
 
 def sha256_bytes(data: bytes) -> str:
@@ -119,7 +144,7 @@ def json_pointer(document: Any, pointer: str) -> Any:
 
 def validate_phase_boundary() -> tuple[str, int]:
     boundary = json.loads(BOUNDARY_PATH.read_text(encoding="utf-8"))
-    if boundary.get("schema") != "grcv4_grc9v4_post_d10_specification_boundary_v5":
+    if boundary.get("schema") != "grcv4_grc9v4_post_d10_specification_boundary_v6":
         raise RuntimeError("unexpected post-D10 boundary schema")
 
     base = boundary["authorization_base_commit"]
@@ -184,6 +209,18 @@ def validate_phase_boundary() -> tuple[str, int]:
             "paper": "mutable_only_at_authorized_paper_paths",
             "exploratory_tool_UX": ("mutable_only_at_authorized_successor_UX_paths"),
         },
+        "specification_propagation": {
+            "activation": (
+                "requires_hash_bound_committed_D11_integrated_paper_and_accepted_D11_C_and_D11_G9_authority"
+            ),
+            "src_and_tests": "frozen_to_authorization_base",
+            "specifications": (
+                "mutable_only_at_authorized_specification_outputs_and_registry"
+            ),
+            "proposal": "frozen_to_accepted_proposal_review",
+            "paper": "frozen_to_accepted_D11_integrated_paper",
+            "exploratory_tool_UX": "frozen_to_accepted_D11_successor_UX",
+        },
         "implementation": {
             "activation": (
                 "requires_a_hash_bound_successor_authority_in_phase_authority"
@@ -231,6 +268,15 @@ def validate_phase_boundary() -> tuple[str, int]:
             "/authorization_effect/runtime_or_src_tests_change_authorized": False,
             "/authorization_effect/GRC9_or_GRC9V3_change_authorized": False,
         },
+        "specification_propagation": {
+            "/status": "accepted_bounded",
+            "/paper_source/commit_sha": ("073a8014c745426d164be5e7d81223cea0d5d370"),
+            "/paper_source/paper_propagation_status": "propagated",
+            "/authorization_effect/specification_propagation_authorized": True,
+            "/authorization_effect/implementation_authorized": False,
+            "/authorization_effect/runtime_or_src_tests_change_authorized": False,
+            "/authorization_effect/GRC9_or_GRC9V3_change_authorized": False,
+        },
         "implementation": {
             "/authorization_effect/specification_authorized": True,
             "/authorization_effect/implementation_authorized": True,
@@ -249,6 +295,7 @@ def validate_phase_boundary() -> tuple[str, int]:
         "successor_investigation",
         "proposal_propagation",
         "paper_propagation",
+        "specification_propagation",
         "implementation",
     }:
         authority_was_already_present = (
@@ -516,12 +563,27 @@ def validate_phase_boundary() -> tuple[str, int]:
     paper_frozen_proposals = boundary["paper_phase_frozen_proposal_sha256"]
     if set(paper_frozen_proposals) != proposal_paths:
         raise RuntimeError("paper-phase frozen proposal roster mismatch")
-    if phase in {"paper_propagation", "implementation"}:
+    if phase in {
+        "paper_propagation",
+        "specification_propagation",
+        "implementation",
+    }:
         for path_text, expected_sha in paper_frozen_proposals.items():
             path = validate_repository_path(path_text)
             if not path.is_file() or sha256_file(path) != expected_sha:
                 raise RuntimeError(
                     f"proposal changed after review acceptance: {path_text}"
+                )
+
+    specification_frozen_papers = boundary["specification_phase_frozen_paper_sha256"]
+    if set(specification_frozen_papers) != paper_paths:
+        raise RuntimeError("specification-phase frozen paper roster mismatch")
+    if phase in {"specification_propagation", "implementation"}:
+        for path_text, expected_sha in specification_frozen_papers.items():
+            path = validate_repository_path(path_text)
+            if not path.is_file() or sha256_file(path) != expected_sha:
+                raise RuntimeError(
+                    f"paper changed after D11 integration acceptance: {path_text}"
                 )
 
     changed_paths = set(git_lines("diff", "--name-only", base))
@@ -531,15 +593,26 @@ def validate_phase_boundary() -> tuple[str, int]:
         "successor_investigation",
         "proposal_propagation",
         "paper_propagation",
+        "specification_propagation",
         "implementation",
     }:
         allowed_paths.update(successor_paths)
-    if phase in {"proposal_propagation", "paper_propagation", "implementation"}:
+    if phase in {
+        "proposal_propagation",
+        "paper_propagation",
+        "specification_propagation",
+        "implementation",
+    }:
         allowed_paths.update(paper_paths)
         allowed_paths.update(successor_ux_paths)
-    if phase in {"proposal_propagation", "paper_propagation", "implementation"}:
+    if phase in {
+        "proposal_propagation",
+        "paper_propagation",
+        "specification_propagation",
+        "implementation",
+    }:
         allowed_paths.update(proposal_paths)
-    if phase == "implementation":
+    if phase in {"specification_propagation", "implementation"}:
         allowed_paths.add(authority["path"])
     unexpected_changes = {
         path
@@ -558,6 +631,7 @@ def validate_phase_boundary() -> tuple[str, int]:
         "successor_investigation",
         "proposal_propagation",
         "paper_propagation",
+        "specification_propagation",
     }:
         changed_runtime_paths = set(
             git_lines("diff", "--name-only", base, "--", "src", "tests")
@@ -728,6 +802,41 @@ def validate_v4_source_manifest() -> None:
         if not path.is_file() or sha256_file(path) != expected_sha:
             raise RuntimeError(f"source worktree drift: {path_text}")
 
+    accepted_successors = manifest.get("accepted_successor_sources", [])
+    expected_successor_roles = {
+        "D11_C_accepted_resolution",
+        "D11_C_append_only_provenance",
+        "D11_G9_accepted_resolution",
+        "D11_G9_append_only_provenance",
+    }
+    if {
+        source.get("role") for source in accepted_successors
+    } != expected_successor_roles:
+        raise RuntimeError("V4 accepted-successor source roster mismatch")
+    for source in accepted_successors:
+        path_text = source.get("path", "")
+        path = validate_repository_path(path_text)
+        commit = source.get("commit_sha", "")
+        expected_sha = source.get("file_sha256", "")
+        if not re.fullmatch(r"[0-9a-f]{40}", commit):
+            raise RuntimeError(f"invalid successor commit binding: {path_text}")
+        if not re.fullmatch(r"[0-9a-f]{64}", expected_sha):
+            raise RuntimeError(f"invalid successor file digest: {path_text}")
+        committed = git_bytes("show", f"{commit}:{path_text}")
+        if sha256_bytes(committed) != expected_sha:
+            raise RuntimeError(
+                f"successor source commit/file binding mismatch: {path_text}"
+            )
+        if not path.is_file() or sha256_file(path) != expected_sha:
+            raise RuntimeError(f"successor source worktree drift: {path_text}")
+
+    history = manifest.get("successor_investigation_history", [])
+    if len(history) != 4 or any(
+        row.get("semantic_status", "").startswith(("active_", "queued_"))
+        for row in history
+    ):
+        raise RuntimeError("V4 successor history still presents D11 as open")
+
     closures = manifest.get("post_d10_v4_closures", [])
     if {closure.get("closure_id") for closure in closures} != {
         "V4-AUDIT-C-BASELINE-TRANSPORT",
@@ -736,6 +845,19 @@ def validate_v4_source_manifest() -> None:
         raise RuntimeError("V4 post-D10 closure roster mismatch")
     if any(closure.get("backward_evidence") is not False for closure in closures):
         raise RuntimeError("V4 audit closure was promoted to backward evidence")
+    if any(closure.get("accepted_by_D11") is not True for closure in closures):
+        raise RuntimeError("V4 accepted D11 closure remains provisional")
+    expected_profiles = {
+        "V4-AUDIT-C-BASELINE-TRANSPORT": "C-HM-STIFFNESS-BASELINE-v1",
+        "V4-AUDIT-G9-PORT-ALLOCATION": (
+            "grc9v4_axis_preserving_chiral_same_port_expansion_v1"
+        ),
+    }
+    if any(
+        closure.get("selected_profile_id") != expected_profiles[closure["closure_id"]]
+        for closure in closures
+    ):
+        raise RuntimeError("V4 accepted D11 closure profile drift")
 
 
 def validate_v4_conformance_fixtures(profiles: set[str]) -> None:
@@ -746,13 +868,28 @@ def validate_v4_conformance_fixtures(profiles: set[str]) -> None:
         raise RuntimeError("V4 conformance fixtures have unexpected status")
     if fixtures.get("implementation_evidence") is not False:
         raise RuntimeError("preimplementation fixtures claim runtime evidence")
+    authority = fixtures.get("authority_boundary", {})
+    if set(authority.get("accepted_D11_claim_ids", [])) != {
+        "D11-C-CL-O-001",
+        "D11-G9-CL-N-001",
+    }:
+        raise RuntimeError("V4 fixture D11 claim authority mismatch")
+    if any(
+        authority.get(key) is not True
+        for key in (
+            "candidate_c_specification_authority_complete",
+            "GRC9V4_expansion_specification_authority_complete",
+            "D11_dependent_rows_are_conformance_authority",
+        )
+    ):
+        raise RuntimeError("V4 fixture D11 authority remains provisional")
     if set(fixtures.get("profile_families", [])) != profiles:
         raise RuntimeError("V4 fixture profile roster mismatch")
 
     required_group_sizes = {
         "common_cases": 8,
         "candidate_a_cases": 9,
-        "candidate_c_cases": 10,
+        "candidate_c_cases": 14,
         "realization_cases": 5,
         "lifecycle_cases": 10,
     }
@@ -760,31 +897,92 @@ def validate_v4_conformance_fixtures(profiles: set[str]) -> None:
         if len(fixtures.get(key, [])) != count:
             raise RuntimeError(f"V4 fixture group {key} must contain {count} cases")
 
+    candidate_c_cases = fixtures.get("candidate_c_cases", [])
+    candidate_c_ids = {
+        row.get("id") if isinstance(row, dict) else row for row in candidate_c_cases
+    }
+    required_candidate_c_ids = {
+        "C-TR-REFERENCE-MAP",
+        "C-BASELINE-EXACT",
+        "C-BASELINE-DERIVATIVE-COVARIANCE",
+        "C-RETAINED-VS-PHYSICAL-CONDITIONING",
+        "C-KAPPA-M-ZERO",
+        "C-CHI-ZERO",
+        "C-ZETA-ZERO",
+        "C-LIFECYCLE-REFERENCE-MAP",
+    }
+    if not required_candidate_c_ids <= candidate_c_ids:
+        raise RuntimeError("V4 Candidate C D11 fixture coverage is incomplete")
+    if any(
+        isinstance(row, dict)
+        and row.get("authority_status", "").startswith("preregistered_")
+        for row in candidate_c_cases
+    ):
+        raise RuntimeError("V4 Candidate C fixture remains preregistered")
+
     expansion = fixtures.get("grc9_expansion_fixture", {})
-    if expansion.get("policy_id") != "grc9v4_collision_free_v1":
+    if expansion.get("policy_id") != (
+        "grc9v4_axis_preserving_chiral_same_port_expansion_v1"
+    ):
         raise RuntimeError("V4 expansion fixture has wrong policy")
-    endpoint_rows = expansion.get("internal_edges", [])
-    expected_internal_edges = [
-        [["c", 2], ["s1", 5]],
-        [["c", 5], ["s2", 6]],
-        [["c", 8], ["s3", 4]],
-    ]
-    if endpoint_rows != expected_internal_edges:
-        raise RuntimeError("V4 expansion fixture port allocation drift")
-    endpoints = [tuple(endpoint) for edge in endpoint_rows for endpoint in edge]
+    event_id = expansion.get("event_id", "")
+    if not re.fullmatch(r"grc-event-sha256:[0-9a-f]{64}", event_id):
+        raise RuntimeError("V4 expansion fixture event ID grammar drift")
     redirected = expansion.get("redirected_source_endpoints", [])
     expected_redirected = [[f"s{1 + ((port - 1) % 3)}", port] for port in range(1, 10)]
     if redirected != expected_redirected:
         raise RuntimeError("V4 expansion fixture column redirection drift")
-    endpoints.extend(tuple(endpoint) for endpoint in redirected)
-    if len(endpoints) != len(set(endpoints)):
-        raise RuntimeError("V4 expansion fixture contains a port collision")
     if len(redirected) != 9:
         raise RuntimeError("V4 expansion fixture does not redirect nine ports")
+    spines = expansion.get("primary_spines", {})
+    expected_spines = {
+        "positive": {
+            "module_chirality": 1,
+            "growth_phase": None,
+            "internal_edges": [
+                [["c", 2], ["s1", 2]],
+                [["c", 6], ["s2", 6]],
+                [["c", 7], ["s3", 7]],
+            ],
+        },
+        "negative": {
+            "module_chirality": -1,
+            "growth_phase": None,
+            "internal_edges": [
+                [["c", 3], ["s1", 3]],
+                [["c", 4], ["s2", 4]],
+                [["c", 8], ["s3", 8]],
+            ],
+        },
+    }
+    if spines != expected_spines:
+        raise RuntimeError("V4 expansion fixture chiral primary spine drift")
+    for spine in spines.values():
+        endpoints = [
+            tuple(endpoint) for edge in spine["internal_edges"] for endpoint in edge
+        ]
+        endpoints.extend(tuple(endpoint) for endpoint in redirected)
+        if len(endpoints) != len(set(endpoints)):
+            raise RuntimeError("V4 expansion fixture contains a port collision")
+        if any(edge[0][1] != edge[1][1] for edge in spine["internal_edges"]):
+            raise RuntimeError("V4 expansion fixture violates same-port authority")
+    if set(expansion.get("required_failure_dispositions", [])) != {
+        "module_chirality_required",
+        "module_growth_phase_required",
+        "reject_noncanonical_inactive_growth_phase",
+    }:
+        raise RuntimeError("V4 expansion phase failure roster drift")
     assertions = expansion.get("assertions", {})
     required_true_assertions = {
         "unique_live_endpoint_occupancy",
         "column_family_preserved_for_old_boundary",
+        "same_port_internal_edges",
+        "primary_row_and_column_counts_equal_one",
+        "rotation_preserves_chirality",
+        "reflection_flips_chirality",
+        "whole_lifecycle_target_readmission_required",
+        "partial_K4_zero_fill_forbidden",
+        "candidate_C_target_W_C_tr_complete_before_rederivation",
         "primary_resource_sum_equals_source",
     }
     if any(assertions.get(key) is not True for key in required_true_assertions):
@@ -796,20 +994,45 @@ def validate_v4_conformance_fixtures(profiles: set[str]) -> None:
 
     additional = fixtures.get("grc9_additional_node_fixture", {})
     expected_additional_edges = [
-        [
-            [f"fixture-expansion/satellite/{column}", parent_port],
-            [f"fixture-expansion/extra/00{column}", 5],
-        ]
-        for column, parent_port in ((1, 2), (2, 1), (3, 1))
+        {
+            "edge_id": f"{event_id}/internal/extra/{branch}/1",
+            "endpoints": [
+                [f"{event_id}/satellite/{branch}", port],
+                [f"{event_id}/extra/{branch}/1", port],
+            ],
+        }
+        for branch, port in ((1, 3), (2, 4), (3, 8))
     ]
     if additional.get("desired_external_capacity") != 45:
         raise RuntimeError("V4 additional-node fixture capacity drift")
     if additional.get("expected_canonical_node_count") != 7:
         raise RuntimeError("V4 additional-node fixture node-count drift")
+    if additional.get("event_id") != event_id:
+        raise RuntimeError("V4 additional-node fixture event identity drift")
+    if additional.get("module_chirality") != 1:
+        raise RuntimeError("V4 additional-node chirality fixture drift")
+    if additional.get("growth_phase") is not None:
+        raise RuntimeError("V4 inactive growth phase is not canonical")
+    if additional.get("branch_extra_counts") != {"1": 1, "2": 1, "3": 1}:
+        raise RuntimeError("V4 branch extra-count fixture drift")
     if additional.get("additional_edges") != expected_additional_edges:
         raise RuntimeError("V4 additional-node allocation fixture drift")
     if additional.get("orientation") != "parent_to_child":
         raise RuntimeError("V4 additional-node orientation fixture drift")
+    if additional.get("fixed_bond_seed_positive") is not True:
+        raise RuntimeError("V4 fixed-bond fixture drift")
+    if additional.get("expected_tree_edges") != 6:
+        raise RuntimeError("V4 tree edge-count fixture drift")
+    if additional.get("expected_external_capacity") != 51:
+        raise RuntimeError("V4 external-capacity fixture drift")
+    if any(
+        additional.get(key) is not True
+        for key in (
+            "row_count_imbalance_at_most_one",
+            "column_count_imbalance_at_most_one",
+        )
+    ):
+        raise RuntimeError("V4 axis-balance fixture drift")
     if additional.get("additional_node_resource") != 0:
         raise RuntimeError("V4 additional-node resource fixture drift")
 
@@ -838,6 +1061,15 @@ def validate_v4_conformance_fixtures(profiles: set[str]) -> None:
         raise RuntimeError("disabled fixture contract IDs do not match the matrix")
     if disabled.get("legacy_target_modified") is not False:
         raise RuntimeError("V4 fixture contract modifies the legacy target")
+    legacy_failure = disabled.get("legacy_undefined_expansion_case", {})
+    if (
+        legacy_failure.get("expected_disposition")
+        != "legacy_expansion_target_undefined"
+        or legacy_failure.get("committed") is not False
+        or legacy_failure.get("prestate_sha256_equals_poststate_sha256") is not True
+        or legacy_failure.get("enabled_v4_rule_substituted") is not False
+    ):
+        raise RuntimeError("V4 legacy-defined-domain fixture drift")
 
 
 def validate_forensic_specification_content() -> tuple[int, int, int, int, int]:
@@ -846,7 +1078,7 @@ def validate_forensic_specification_content() -> tuple[int, int, int, int, int]:
     if Path(sys.prefix).resolve() != (ROOT / ".venv").resolve():
         raise RuntimeError("run with the repository .venv Python")
 
-    context = load_forensic_context(ROOT, SIDE_TOOL_ROOT)
+    context = load_successor_forensic_context(ROOT, SIDE_TOOL_ROOT)
     if context.source_bundle_digest != EXPECTED_SOURCE_BUNDLE_DIGEST:
         raise RuntimeError("accepted source bundle digest changed")
     if context.graph_digest != EXPECTED_GRAPH_DIGEST:
@@ -888,18 +1120,46 @@ def validate_forensic_specification_content() -> tuple[int, int, int, int, int]:
     contracts: list[dict[str, Any]] = []
     for identifier, trace in contract_traces.items():
         row = trace["rows"][0]
-        semantics = {
-            edge["support_semantic"]
-            for trace_row in trace["rows"]
-            for edge in trace_row["edge_refs"]
-            if edge["relation"] in {"accepted_claim", "parent_object"}
-        }
-        if semantics != {"indeterminate_requires_review"}:
-            raise RuntimeError(
-                f"{identifier}: unexpected support semantics {semantics}"
+        if identifier.startswith("D11-C-"):
+            expected_successor_semantic = (
+                EXPECTED_D11_SUPPORT_DISPOSITION_OVERRIDES.get(
+                    identifier, "accepted_bounded_D11_C_successor"
+                )
             )
-        if row["payload"]["support_disposition"] != "indeterminate_requires_review":
-            raise RuntimeError(f"{identifier}: support disposition was flattened")
+        elif identifier.startswith("D11-G9-"):
+            expected_successor_semantic = (
+                EXPECTED_D11_SUPPORT_DISPOSITION_OVERRIDES.get(
+                    identifier, "accepted_bounded_GRC9V4_successor"
+                )
+            )
+        else:
+            expected_successor_semantic = None
+        if expected_successor_semantic is None:
+            semantics = {
+                edge["support_semantic"]
+                for trace_row in trace["rows"]
+                for edge in trace_row["edge_refs"]
+                if edge["relation"] in {"accepted_claim", "parent_object"}
+            }
+            if semantics != {"indeterminate_requires_review"}:
+                raise RuntimeError(
+                    f"{identifier}: unexpected support semantics {semantics}"
+                )
+            if row["payload"]["support_disposition"] != "indeterminate_requires_review":
+                raise RuntimeError(f"{identifier}: support disposition was flattened")
+        else:
+            if row["payload"].get("support_disposition") != [
+                expected_successor_semantic
+            ]:
+                raise RuntimeError(
+                    f"{identifier}: accepted successor disposition drift"
+                )
+            if row["payload"].get("accepted_claim_support_semantics") != [
+                expected_successor_semantic
+            ]:
+                raise RuntimeError(
+                    f"{identifier}: accepted successor edge semantics drift"
+                )
         contracts.append(row["payload"]["contract"])
 
     try:
@@ -945,16 +1205,24 @@ def validate_forensic_specification_content() -> tuple[int, int, int, int, int]:
     ):
         raise RuntimeError("V4 interface extension is incomplete")
     required_audit_closure_markers = (
-        "Candidate C V4 baseline transport closure",
-        "candidate_c_log_sector_potential_flow_v1",
+        "Accepted Candidate C baseline transport",
+        "C-HM-STIFFNESS-BASELINE-v1",
+        "D11-C-CL-O-001",
+        "D11-C-EC-C-J0-CURRENT",
         r"J_{0,C}(C,T_C(h),h,U)",
         "def step_v4(self, request: GRCV4StepRequest)",
         "def list_supported_profiles(self) -> frozenset[str]",
         "EnabledGRC9V4State | DisabledGRC9V3State",
-        "grc9v4_collision_free_v1",
-        r"(c,2)\leftrightarrow(s_1,5)",
-        r"(c,5)\leftrightarrow(s_2,6)",
-        r"(c,8)\leftrightarrow(s_3,4)",
+        "grc9v4_axis_preserving_chiral_same_port_expansion_v1",
+        "D11-G9-CL-N-001",
+        "D11-G9-EC-PRIMARY-LATIN-TRANSVERSAL",
+        r"(c,2)\leftrightarrow(s_1,2)",
+        r"(c,6)\leftrightarrow(s_2,6)",
+        r"(c,7)\leftrightarrow(s_3,7)",
+        r"(c,3)\leftrightarrow(s_1,3)",
+        r"(c,4)\leftrightarrow(s_2,4)",
+        r"(c,8)\leftrightarrow(s_3,8)",
+        "legacy_expansion_target_undefined",
     )
     all_v4_text = "\n".join((grcv4_text, grc9v4_text, interface_extension_text))
     missing_closure_markers = [
@@ -965,7 +1233,7 @@ def validate_forensic_specification_content() -> tuple[int, int, int, int, int]:
             f"V4 audit closures are incomplete: {missing_closure_markers}"
         )
 
-    spec_claims = set(re.findall(r"D10-CL-[A-Z]+-[0-9]{3}", grcv4_text))
+    spec_claims = set(re.findall(r"D(?:10|11-C|11-G9)-CL-[A-Z]+-[0-9]{3}", grcv4_text))
     if spec_claims != set(identifiers["current_claim"]):
         raise RuntimeError(
             "GRCV4 claim roster mismatch: "
@@ -973,7 +1241,17 @@ def validate_forensic_specification_content() -> tuple[int, int, int, int, int]:
             f"extra={sorted(spec_claims - set(identifiers['current_claim']))}"
         )
 
-    profiles = set(identifiers["profile"])
+    successor_profiles = {
+        "C-HM-STIFFNESS-BASELINE-v1",
+        "grc9v4_axis_preserving_chiral_same_port_expansion_v1",
+    }
+    profiles = set(identifiers["profile"]) - successor_profiles
+    if len(profiles) != 10 or not successor_profiles <= set(identifiers["profile"]):
+        raise RuntimeError("V4 complete/successor profile partition drift")
+    if "C-HM-STIFFNESS-BASELINE-v1" not in grcv4_text:
+        raise RuntimeError("GRCV4 spec is missing the accepted D11-C profile")
+    if "grc9v4_axis_preserving_chiral_same_port_expansion_v1" not in grc9v4_text:
+        raise RuntimeError("GRC9V4 spec is missing the accepted D11-G9 profile")
     validate_v4_source_manifest()
     validate_v4_conformance_fixtures(profiles)
     for name, text in (("GRCV4", grcv4_text), ("GRC9V4", grc9v4_text)):
@@ -991,7 +1269,7 @@ def validate_forensic_specification_content() -> tuple[int, int, int, int, int]:
     specialization_contracts = {
         row["identifier"]
         for row in contracts
-        if row["attributes"]["specification_destination"] == "GRC9V4_specialization"
+        if row["attributes"].get("specification_destination") == "GRC9V4_specialization"
     }
     mentioned_contracts = set(re.findall(r"D10\.2-EC-[A-Za-z0-9._-]+", grc9v4_text))
     if mentioned_contracts != specialization_contracts:
@@ -1007,6 +1285,31 @@ def validate_forensic_specification_content() -> tuple[int, int, int, int, int]:
     }
     if len(disabled) != 40 or not disabled <= mentioned_contracts:
         raise RuntimeError("GRC9V4 disabled reduction roster mismatch")
+
+    d11_c_contracts = {
+        identifier
+        for identifier in identifiers["equation_contract"]
+        if identifier.startswith("D11-C-")
+    }
+    d11_g9_contracts = {
+        identifier
+        for identifier in identifiers["equation_contract"]
+        if identifier.startswith("D11-G9-")
+    }
+    mentioned_d11_c = set(re.findall(r"D11-C-EC-[A-Za-z0-9._-]+", grcv4_text))
+    mentioned_d11_g9 = set(re.findall(r"D11-G9-EC-[A-Za-z0-9._-]+", grc9v4_text))
+    if mentioned_d11_c != d11_c_contracts:
+        raise RuntimeError(
+            "GRCV4 D11-C contract roster mismatch: "
+            f"missing={sorted(d11_c_contracts - mentioned_d11_c)} "
+            f"extra={sorted(mentioned_d11_c - d11_c_contracts)}"
+        )
+    if mentioned_d11_g9 != d11_g9_contracts:
+        raise RuntimeError(
+            "GRC9V4 D11-G9 contract roster mismatch: "
+            f"missing={sorted(d11_g9_contracts - mentioned_d11_g9)} "
+            f"extra={sorted(mentioned_d11_g9 - d11_g9_contracts)}"
+        )
 
     expansion_markers = (
         r"D_{\mathrm{ext,max}}(n)=9n-2(n-1)=7n+2",

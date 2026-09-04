@@ -277,6 +277,8 @@ def main() -> int:
         "successor_investigation",
         "proposal_propagation",
         "paper_propagation",
+        "specification_propagation",
+        "implementation",
     }:
         python_results = [
             run_python(scripts / name, *arguments)

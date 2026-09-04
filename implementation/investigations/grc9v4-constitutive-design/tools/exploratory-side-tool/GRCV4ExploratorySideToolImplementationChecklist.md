@@ -1,7 +1,8 @@
 # GRCv4 Exploratory Side Tool Implementation Checklist
 
 **Date:** 2026-08-28; successor update 2026-09-04
-**Status:** Iterations 0-10 accepted; Iteration 11 UX candidate implemented
+**Status:** Iterations 0-10 accepted; Iteration 11 UX candidate implemented;
+downstream D11 specification propagation verified
 **Plan:** [GRCV4ExploratorySideToolImplementationPlan.md](./GRCV4ExploratorySideToolImplementationPlan.md)
 **Source investigation:** [GRC9V4 constitutive design](../../README.md)
 
@@ -1117,8 +1118,10 @@ ET-C9 artifacts, and make the D11 results queryable before paper propagation.
 
 - [x] Accept `ET-C10_D11_append_only_forensic_admission`.
 - [x] Authorize paper propagation only through the D11-aware paper audit.
-- [ ] Mark paper propagation verified.
-- [ ] Authorize D11 specification propagation.
+- [x] Mark paper propagation verified against the committed D11-integrated
+      paper.
+- [x] Authorize D11 specification propagation through the hash-bound
+      specification-extraction gate.
 - [ ] Authorize runtime implementation.
 
 ## Iteration 11. D11 API, Notebook, And Browser UX
@@ -1189,4 +1192,25 @@ authority or satisfying downstream scientific obligations.
 
 - [x] Implement and verify the `ET-C11-D11-UX` candidate.
 - [ ] Record human acceptance of the ET-C11 UX candidate.
-- [ ] Propagate D11 authority into the paper through the existing paper audit.
+- [x] Record downstream D11 paper propagation through the existing paper
+      audit without changing ET-C11 authority.
+
+## Downstream D11 Specification Propagation
+
+**Status:** verified; no runtime implementation authorized
+
+- [x] Bind the phase authority to the committed D11-integrated paper and both
+      accepted D11 decision digests.
+- [x] Advance the boundary to `specification_propagation` while leaving `src/`,
+      tests, GRC9, GRC9V3, the proposal, and the paper frozen.
+- [x] Replace the provisional Candidate C and GRC9V4 expansion contracts only
+      in the authorized V4 specifications, fixtures, manifest, extension, and
+      registry.
+- [x] Preserve the exact D11 claim subclasses and contract-specific support
+      dispositions instead of flattening them into generic acceptance.
+- [x] Make the normal verifier select the append-only D11 verification branch
+      during `specification_propagation` and future authorized
+      `implementation` phases.
+- [x] Pass the phase-aware specification audit and the complete API, notebook,
+      Node, and browser verification path.
+- [ ] Authorize runtime implementation.

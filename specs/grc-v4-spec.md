@@ -2,11 +2,12 @@
 
 ## Status and authority
 
-This file is the normative implementation contract for the D10-backed,
-graph-generic `GRCV4` substrate and the current admitted profile population,
-subject to the D11 holds below. Candidate C implementation conformance is on
-bounded hold until D11-C accepts a baseline-transport law. The displayed
-D11-C candidate is retained for evaluation but is not yet normative.
+This file is the normative implementation contract for the D10-plus-D11,
+graph-generic `GRCV4` substrate and the current admitted profile population.
+The accepted D11-C closure supplies Candidate C's exact baseline transport;
+the former scientific hold on Candidate C specification is closed. Runtime
+conformance remains unclaimed until an implementation passes the required
+fixtures.
 
 Primary sources:
 
@@ -15,7 +16,10 @@ Primary sources:
 - [D10 design synthesis and specification-writing decision][d10]
 - [D10.2 substrate provenance and promotion audit][d10-2]
 - [D11 bounded successor opening][d11-open]
-- [D11-C Candidate C transport preregistration][d11-c]
+- [Accepted D11-C Candidate C transport resolution][d11-c-resolution]
+- [D11-C append-only provenance supplement][d11-c-provenance]
+- [Accepted D11-G9 expansion resolution][d11-g9-resolution]
+- [D11-G9 append-only provenance supplement][d11-g9-provenance]
 - [V4 source identity manifest](grc-v4-source-manifest.json)
 - [V4 conformance fixture contract](grc-v4-conformance-fixtures.json)
 - [Common GRC interface](grc-common-interface.md)
@@ -28,13 +32,13 @@ into implementation requirements; it does not create scientific evidence.
 
 The accepted forensic reconstruction used for this translation has source
 bundle digest
-`79e84f7839e1b65f3e55eeadb980e6d8d9b57d240aced93a8bf3a7e82851dffc`
+`98c273b3cc097f0d95adfba98ed7dfac0ac494dce9e779bb4b04fe79fef4f6aa`
 and graph digest
-`2776d2aa1aca51f7759c94ed0e9677a04934429b070bb8ea47683cbcd8f218ae`.
-It contains 39 current claims, 67 normative objects, 152 equation contracts,
-and 10 current complete profiles. The forensic contract edges retain
-`indeterminate_requires_review` support semantics; this spec does not promote
-those edges into stronger evidence. The source-local label
+`44d8c7d33950af5e5f7c61caa4fe6fbd14fc9aedf14218d0a11de7c705542e09`.
+It contains 41 current claims, 80 normative objects, 183 equation contracts,
+and 10 current complete profiles. Every forensic result retains its own
+source-bound support semantics; this spec does not flatten dependency reach
+or bounded successor acceptance into stronger evidence. The source-local label
 `D10_2_CL_N_001` is a provenance reference, not a queryable claim node.
 
 The typed contract destinations map into the specs as follows:
@@ -50,29 +54,29 @@ The typed contract destinations map into the specs as follows:
 | `GRCV4_candidate_A` | 7 | Candidate A contract. |
 | `GRCV4_candidate_A_lifecycle` | 1 | Candidate A history-free initializer. |
 | `GRCV4_candidate_C` | 10 | Candidate C contract. |
+| `GRCV4_D11_C_successor` | 11 | Accepted Candidate C reference, potential, baseline-current, control, derivative, realization, and lifecycle closure. |
 | `GRCV4_optional_realization` | 29 | Five realization contracts. |
 | `GRCV4_current_promoted_common_lifecycle` | 15 | Step, migration, event, snapshot, and atomicity contracts. |
 | `GRCV4_current_population_specification_grammar` | 8 | Profile identity, claims, and successor admission. |
-| `GRC9V4_specialization` | 53 | [`grc-9-v4-spec.md`](grc-9-v4-spec.md). |
+| `GRC9V4_specialization` | 53 | D10-backed [`grc-9-v4-spec.md`](grc-9-v4-spec.md) specialization. |
+| `GRC9V4_D11_G9_successor` | 20 | Accepted chiral same-port expansion and legacy-defined-domain closure in [`grc-9-v4-spec.md`](grc-9-v4-spec.md). |
 
-### D11 successor hold and preregistration boundary
+### Accepted D11 successor boundary
 
 The September 2026 specification-stack audit identified two places where the
 accepted source graph names a required object without fixing an executable
 map: Candidate C's baseline transport and the collision-free GRC9 expansion
-port allocation. These are genuine gaps in accepted authority, not extraction
-omissions. Two separate investigations are therefore open in sequence:
+port allocation. D11-C and D11-G9 confirmed that these were genuine authority
+gaps and accepted two bounded, append-only successors. The paper now carries
+both results, so this specification binds `D11-C-T3a` as
+`C-HM-STIFFNESS-BASELINE-v1`; the GRC9V4 specification binds `D11-G9-P4a` as
+`grc9v4_axis_preserving_chiral_same_port_expansion_v1`.
 
-- D11-C is active for the graph-generic Candidate C direct-transport law; and
-- D11-G9 is queued behind D11-C for the GRC9V4-only port allocation.
-
-The existing formulas remain in place as preregistered candidates so the D11
-investigations can pressure them directly. They are not post-D10 normative
-closures, backward evidence, or implementation authority. An accepted D11
-result must first be propagated into the GRC-v4 paper and only then extracted
-back into the affected spec clauses. `GRCV3`, `GRC9`, and `GRC9V3` remain
-unchanged read-only sources or reduction targets; all adaptation remains
-V4-owned.
+These successors add two claims, thirteen objects, and thirty-one contracts
+without rewriting any D10/D10.2 claim, object, contract, or disabled row.
+They are specification authority, not backward evidence or runtime evidence.
+`GRCV3`, `GRC9`, and `GRC9V3` remain unchanged read-only sources or reduction
+targets; all adaptation remains V4-owned.
 
 ## Conformance language
 
@@ -92,9 +96,9 @@ An implementation conforms to `GRCV4` only if it implements the common
 contract and at least one complete profile identity from the current
 population. It may support any nonempty subset of that population, but it must
 name the exact subset. Supporting one profile does not imply support for any
-other profile. While D11-C is open, the five Candidate C identities remain
-admitted design profiles but are unavailable for implementation-conformance
-claims; a presently conforming subset may contain Candidate A profiles only.
+other profile. A Candidate C profile is eligible for implementation
+conformance only when it implements the exact accepted D11-C baseline and its
+profile, stage, lifecycle, and fixture contracts below.
 
 ## Class
 
@@ -219,6 +223,14 @@ therefore produces a different `complete_profile_id`. A snapshot must carry
 both the resolved payload and its digest; a digest without the payload is not
 reconstructible authority. Schema evolution requires a new schema version and
 an explicit typed migration, never in-place reinterpretation.
+
+For every A profile, `candidate_c_transport_id` is `None`. For every C
+profile it is exactly `"C-HM-STIFFNESS-BASELINE-v1"`, and the canonical
+candidate parameter payload includes the complete stable-edge
+$W_{C,\mathrm{tr}}$ map or a lossless content-addressed representation that
+reconstructs the same map before admission. An ambient array reference, an
+edge-order-only list without stable IDs, or a Hodge/mobility matrix used as an
+implicit substitute is invalid.
 
 Candidate B is reserved and nonexecutable. It may be admitted only after a
 source-backed $U_B$ formation, retention, release, capacity, and lifecycle
@@ -651,14 +663,61 @@ The new $W_{A,k+1}$ must not re-enter the beat-$k$ current solve.
 
 Candidate C is optional and revision-specific. $C$ remains its only candidate
 state; its selector, selected sector, Hodge response, and Read-Back surfaces
-must be rederived.
+must be rederived. Every Candidate C complete profile binds the accepted
+transport identity `C-HM-STIFFNESS-BASELINE-v1` and an exact positive map
 
-At prestate geometry,
+$$
+W_{C,\mathrm{tr}}:
+E_{\mathrm{stable}}\longrightarrow\mathbb R_{>0},
+$$
+
+where $E_{\mathrm{stable}}$ is the set of stable unoriented live-edge
+identities bound by that complete profile. The map is immutable ordinary-beat
+profile/reference context, not candidate state or a derived geometry cache.
+It supplies two separately typed sibling constructors:
+
+$$
+E_H(W_{C,\mathrm{tr}})
+=H_{1,\mathrm{form,ref}}
+=\operatorname{Diag}(W_{C,\mathrm{tr}}),
+$$
+
+$$
+E_M(W_{C,\mathrm{tr}})
+=M_{4,C}
+=\eta_C\operatorname{Diag}(W_{C,\mathrm{tr}}),
+\qquad \eta_C>0.
+$$
+
+The shared values do not merge structural Hodge geometry and physical
+transport mobility. Inside one admitted Candidate C profile,
+
+$$
+D_{T_C}M_{4,C}=0,
+\qquad
+D_hM_{4,C}=0,
+$$
+
+and there is no authority map
+$H_{1,\mathrm{form},M}\rightarrow M_{4,C}$, $G_J\rightarrow M_{4,C}$, or
+$h_4\rightarrow M_{4,C}$.
+
+At the current pre-read or trial geometry, bind
+
+$$
+H_{0,\mathrm{pre}}:=H_0(h),
+\qquad
+H_{1,\mathrm{form,pre}}:=H_{1,\mathrm{form}}(h),
+\qquad
+B_{\mathrm{pre}}:=B.
+$$
+
+On that fixed-graph stratum,
 
 $$
 L_{0,\mathrm{sym,pre}}
-=H_{0,\mathrm{pre}}^{-1/2}B
-H_{1,\mathrm{form,pre}}B^\top
+=H_{0,\mathrm{pre}}^{-1/2}B_{\mathrm{pre}}
+H_{1,\mathrm{form,pre}}B_{\mathrm{pre}}^\top
 H_{0,\mathrm{pre}}^{-1/2},
 $$
 
@@ -697,83 +756,115 @@ H_{1,\mathrm{form},M}
 I_{4M}=H_{1,\mathrm{form},M}H_{1,\mathrm{form,pre}}^{-1},
 $$
 
-### Candidate C V4 baseline transport candidate D11-C-T1
+### Accepted Candidate C baseline transport — D11-C-T3a
 
-> **Preregistered, non-normative candidate.** The following C-T1 law is kept
-> for D11-C pressure and does not authorize Candidate C implementation or
-> conformance. See the [D11-C preregistration][d11-c].
-
-C-T1 proposes using the inherited scalar-mobility potential-flow channel
-through an explicit V4-only typed adapter. It does not infer transport
-mobility from $H_{1,\mathrm{form},M}$, $G_J$, or $h_4$ by equal dimensions or
-matrix coincidence.
-
-At the exact stage selected by the realization, define the derived positive
-edge mobility
+The accepted direct potential uses the retained Hodge package through the
+unnormalized vertex stiffness
 
 $$
-W_{0,C,e}(C,T_C(h),h,U)
-=W_{\mathrm{ref},e}
-\exp\!\left(
-\kappa_{J,C}\kappa_{M,C}r_{C,e}(T_C(h),h)
-\right),
+\mathcal L_{0,M}(T_C,h)
+=B H_{1,\mathrm{form},M}(T_C,h)d_0.
 $$
 
-where $W_{\mathrm{ref},e}>0$, $C_{\mathrm{ref}}>0$, and
-$\kappa_{J,C}$ are resolved Candidate C parameters. The typed transport map is
+At the exact stage selected by the realization, define
 
 $$
-\mathcal M_C^{\mathrm{V4}}:
-(C,T_C,h,U;\theta_C)\longmapsto
-M_{4,C}=\eta_C\operatorname{Diag}(W_{0,C}),
+\boxed{
+\Phi_{0,C}(C,T_C,h,U)
+=\kappa_{\Phi,C}
+B H_{1,\mathrm{form},M}(T_C,h)d_0C
+-V'_{C,U}(C).
+}
 $$
 
-on physical current space. This displayed map is the authority transfer; no
-Hodge matrix is silently retyped as mobility. The Candidate C potential and
-baseline current are
+Equivalently,
 
 $$
-\Phi_{C,i}
-=\kappa_C\sum_{e\sim i}W_{0,C,e}
-\bigl(C_i-C_{\operatorname{nbr}(e,i)}\bigr)
--V_C'(C_i;U),
+\Phi_{0,C}=\Phi_{G,C}+\Delta\Phi_{M,C},
 $$
+
+$$
+\Phi_{G,C}
+=\kappa_{\Phi,C}B H_{1,\mathrm{form}}(h)d_0C
+-V'_{C,U}(C),
+$$
+
+$$
+\Delta\Phi_{M,C}
+=\kappa_{\Phi,C}
+B\left(H_{1,\mathrm{form},M}-H_{1,\mathrm{form}}(h)\right)d_0C.
+$$
+
+The exact direct baseline physical edge flux is
 
 $$
 \boxed{
 J_{0,C}(C,T_C(h),h,U)
-=-M_{4,C}(C,T_C(h),h,U)\,d_0\Phi_C
-}.
+=-M_{4,C}\,d_0\Phi_{0,C}(C,T_C(h),h,U).
+}
 $$
 
-$r_C$, $\kappa_{J,C}$, and $\kappa_{M,C}$ are dimensionless;
-$W_{\mathrm{ref}}$ carries scalar-mobility units; $\eta_C$ converts the
-potential differential to physical flux. $V_C'$ and $\kappa_C$ must be
-resolved so both terms of $\Phi_C$ have the same units. The scalar potential
-gauge is immaterial because only $d_0\Phi_C$ enters the current. The map is
-finite, positive, graph-relabel covariant, and sign-even under stored-edge
-reorientation on its declared fixed-topology selector stratum.
+It is prepared before the fixed-geometry total-current solve, so
+$D_JJ_{0,C}=0$ inside that solve. At
+$\kappa_{M,C}=0$ and $h=h_{\mathrm{ref}}$,
 
-If C-T1 is accepted, the resulting V4 Candidate C profile would bind
-`candidate_c_transport_id = "candidate_c_log_sector_potential_flow_v1"` and
-the canonical parameters and site-potential definition in
-`params_resolved`. A different evaluator or coefficient has a different
-complete profile identity. $W_{0,C}$ and $M_{4,C}$ are derived same-beat
-surfaces, never retained state.
+$$
+H_{1,\mathrm{form},M}=\operatorname{Diag}(W_{C,\mathrm{tr}}),
+$$
+
+$$
+\Phi_{0,C,i}
+=\kappa_{\Phi,C}\sum_j
+W_{C,\mathrm{tr},ij}(C_i-C_j)-V'_{C,U,i}(C_i),
+$$
+
+$$
+J_{0,C,e}
+=-\eta_CW_{C,\mathrm{tr},e}(B^\top\Phi_{0,C})_e.
+$$
+
+This reference reduction has the inherited scalar-mobility potential-flow
+form without identifying $M_{4,C}$, $H_{1,\mathrm{form},M}$, or $G_J$.
+
+The unit contract is
+
+| Quantity | Unit |
+|---|---|
+| $C$, $C_{\mathrm{ref}}$ | $[C]$ |
+| clock | $[t]$ |
+| $J_{0,C}$, $J_{C,C}$ | $[J]=[C]/[t]$ |
+| $H_{1,\mathrm{form}}$, $W_{C,\mathrm{tr}}$ | $[H_1]$ |
+| $\Phi_{0,C}$, $V'_{C,U}$ | $[\Phi]$ |
+| $\kappa_{\Phi,C}$ | $[\Phi]/([H_1]\,[C])$ |
+| $M_{4,C}$ | $[J]/[\Phi]$ |
+| $\eta_C$ | $[J]/([\Phi]\,[H_1])$ |
+| $r_C$, $\mathsf D_C$, $\kappa_{M,C}$ | dimensionless |
+
+Only $d_0\Phi_{0,C}$ enters current, so the potential is defined modulo one
+constant per connected component. The selected profile uses the unnormalized
+stiffness $BH_{1,\mathrm{form},M}d_0$ on a finite live graph with
+closed/no-flux boundary, positive bounded Hodge and $W_{C,\mathrm{tr}}$ data,
+a fixed-rank strict-gap selector stratum, and the existing regular
+total-current block. A normalized stiffness is a different profile.
 
 The controls are exact:
 
-- $\kappa_{M,C}=0$ returns $W_{0,C}=W_{\mathrm{ref}}$ and removes the
-  selected-content baseline conditioning;
+- $\kappa_{M,C}=0$ sets $\mathsf D_C=I$ and returns
+  $H_{1,\mathrm{form},M}$ to the supplied pre/generated Hodge package; it does
+  not alter $M_{4,C}$;
 - $\chi_C=0$ removes the explicit causal Read-Back but leaves the conditioned
   $J_{0,C}$ active; and
 - $\zeta_C=0$ makes the authoritative current equal to $J_{0,C}$ while any
-  read remains diagnostic only.
+  read remains diagnostic only;
+- $\tau_C=0$ removes only resolvent filtering, not the direct baseline.
 
 After a topology event, profile migration, or target reconstruction,
-$W_{0,C}$ is rebuilt from the target $C$, selector, graph, reference mobility,
-geometry, context, and resolved parameters before readmission. It is never
-resized or transported as history.
+the target complete profile must supply the entire exact
+$W_{C,\mathrm{tr}}$ map before selector, Hodge, potential, baseline-current,
+response, geometry, or analysis surfaces are rederived. The map is never
+implicitly copied, resized, interpolated, or transported as retained history.
+This profile is enabled-V4-only and is not evaluated on the disabled GRC9V3
+branch.
 
 $$
 \Delta_{1,M}=B^\top H_{0,M}^{-1}BH_{1,\mathrm{form},M},
@@ -827,7 +918,55 @@ $$
 
 for every admitted mode. Physical invertibility transfers by similarity
 through $Q_C$; retained-space singular-value margins do not transfer
-unchanged. The structural source is
+unchanged. The accepted nonnegative-gain profile binds
+
+$$
+\tau_C>0,
+\qquad
+0\leq\zeta_C\leq\overline\zeta_C<1.
+$$
+
+Harmonic modes have response eigenvalue one, so
+$\zeta_C\chi_C=1$ is singular and outside the admitted profile. A physical
+inverse estimate additionally depends on the finite condition number of
+$Q_C$; a retained-coordinate margin must not be reported unchanged as a
+physical Euclidean singular-value margin.
+
+On an admitted smooth fixed-graph stratum, the baseline derivative is
+
+$$
+\begin{aligned}
+\delta H_{1,\mathrm{form},M}
+={}&(\delta\mathsf D_C)H_{1,\mathrm{form}}\mathsf D_C\\
+&+\mathsf D_C(\delta H_{1,\mathrm{form}})\mathsf D_C\\
+&+\mathsf D_CH_{1,\mathrm{form}}(\delta\mathsf D_C),
+\end{aligned}
+$$
+
+$$
+\begin{aligned}
+\delta\Phi_{0,C}
+={}&\kappa_{\Phi,C}B(\delta H_{1,\mathrm{form},M})d_0C
++\kappa_{\Phi,C}BH_{1,\mathrm{form},M}d_0\delta C\\
+&-D_CV'_{C,U}(C)[\delta C]
++D_U\Phi_{0,C}[\delta U],
+\end{aligned}
+$$
+
+$$
+\delta J_{0,C}
+=-(\delta M_{4,C})d_0\Phi_{0,C}
+-M_{4,C}(\delta d_0)\Phi_{0,C}
+-M_{4,C}d_0\delta\Phi_{0,C}.
+$$
+
+For an ordinary same-profile fixed-graph variation,
+$\delta M_{4,C}=\delta d_0=0$. Under vertex and signed-edge permutations,
+$\Phi_{0,C}$ and $J_{0,C}$ must transform in their declared vertex and
+physical-flux spaces. These are derivative and covariance conformance
+surfaces, not runtime evidence.
+
+The structural source is
 
 $$
 S_C(J,h)=\zeta_C\iota_C\!\left(
@@ -837,6 +976,23 @@ $$
 
 After continuity, Candidate C rederives all target selector and Hodge
 surfaces from $C_{k+1}$. No independent $T_C$ or Hodge writer exists.
+
+The accepted D11-C claim is `D11-C-CL-O-001`. Its exact specification
+surface is governed by these append-only contracts:
+
+| Contract | Required implementation surface |
+|---|---|
+| `D11-C-EC-C-TR-REFERENCE-FIELD` | Exact positive $W_{C,\mathrm{tr}}$ map over stable target-edge identities. |
+| `D11-C-EC-C-M4-FACTORIZATION` | Separate $E_H$ and $E_M$ constructors and fixed Candidate C mobility authority. |
+| `D11-C-EC-C-HM-STIFFNESS` | Unnormalized retained-Hodge stiffness. |
+| `D11-C-EC-C-DIRECT-POTENTIAL-DECOMPOSITION` | Exact generated-plus-retained $\Phi_{0,C}$ decomposition. |
+| `D11-C-EC-C-J0-CURRENT` | $J_{0,C}=-M_{4,C}d_0\Phi_{0,C}$ at the declared realization stage. |
+| `D11-C-EC-C-J0-REFERENCE-REDUCTION` | Exact inherited scalar-mobility reference reduction. |
+| `D11-C-EC-C-J0-SWITCH-SEPARATION` | Distinct $\kappa_{M,C}$, $\chi_C$, $\zeta_C$, and $\tau_C$ controls. |
+| `D11-C-EC-C-J0-COVARIANCE` | Vertex and signed-edge coordinate covariance. |
+| `D11-C-EC-C-J0-DERIVATIVE` | Complete smooth-stratum baseline derivative. |
+| `D11-C-EC-C-J0-REALIZATION-COVERAGE` | Fresh baseline reconstruction in all five C realizations. |
+| `D11-C-EC-C-J0-LIFECYCLE` | Reference-map serialization, target reconstruction, and readmission. |
 
 ## Realization contracts
 
@@ -849,7 +1005,9 @@ F_a(J_a,h_a;X_{a,k},U_k)=0.
 $$
 
 For A, $\widehat W_A(h)$ must be recomputed inside every residual evaluation.
-For C, every trial $h$ must rebuild the selector-to-resolvent chain. A
+For C, every trial $h$ must rebuild $P_M$, $T_C$, the retained Hodge package,
+$\Phi_{0,C}$, $J_{0,C}$, $I_{4M}$, $\Delta_{1,M}$,
+$\widehat R_{C,M}$, and $G_J$ before evaluating the current residual. A
 conforming solver must return the unique admitted regular local root on the
 declared bounded branch. C additionally requires exactly one self-consistent
 root across the admitted fixed-rank strata. No root, multiple roots, a
@@ -898,8 +1056,20 @@ X_k -> J^(0) -> j_flat^(0) -> Delta K4^(0)
 
 At fixed $h^{(1)}$, A must recompute its potential, baseline current,
 $\widehat W_A$, and $q_A$ before the corrector. C must rebuild its selector,
-Hodge package, identification, resolvent, $G_J$, and baseline current. Only
-$J^{(1)}$ enters continuity.
+Hodge package, $\Phi_{0,C}$, $J_{0,C}$, identification, resolvent, and $G_J$.
+The C predictor and corrector therefore use, respectively,
+
+$$
+J_{0,C}(C_k,T_C(h_{\mathrm{ref}}),h_{\mathrm{ref}},U_k)
+$$
+
+and
+
+$$
+J_{0,C}(C_k,T_C(h_C^{(1)}),h_C^{(1)},U_k).
+$$
+
+Only $J^{(1)}$ enters continuity.
 
 The split residual is
 
@@ -942,7 +1112,10 @@ completion. The implementation must not expose a classical RG2b Jacobian or
 spectrum without a separately admitted $C^1$ successor.
 
 $C_a(h;X,U)$ is the candidate-$a$ fixed-$h$ physical-current solution. It is
-derived solver output, not resource state.
+derived solver output, not resource state. For Candidate C it must reconstruct
+the complete `C-HM-STIFFNESS-BASELINE-v1` package, including
+$W_{C,\mathrm{tr}}$, $M_{4,C}$, $\Phi_{0,C}$, and $J_{0,C}$, at
+$h=\Gamma_C(X)$ before solving the fixed-$h$ current.
 
 ### Persistent Carrier (`PC`)
 
@@ -953,6 +1126,10 @@ K_{4,a,k}=K_{4,\mathrm{base}}+Z_{4,a,k},
 \qquad
 h_{a,k}=H_{\mathrm{profile}}(K_{4,a,k}).
 $$
+
+For Candidate C, $h_{C,k}$ is first reconstructed from old committed
+$Z_{4,C,k}$; the selector, retained Hodge package, $\Phi_{0,C}$, and
+$J_{0,C}$ are then rebuilt at that fixed geometry before the current solve.
 
 With $\tau_{\mathrm{PC},a}>0$,
 
@@ -1017,7 +1194,10 @@ property is identity-bearing and is not amplitude equivalence with CI or PC.
 
 After a valid root, the PC writer uses that same $S_a(J_a^\star,h_a^\star)$.
 A second post-continuity source is forbidden. A and C retain their respective
-bounded contraction and root-selection requirements.
+bounded contraction and root-selection requirements. Every Candidate C
+joint-root evaluation rebuilds the selector, retained Hodge package,
+$\Phi_{0,C}$, $J_{0,C}$, response, and $G_J$ at the trial $h_C$ before
+forming the current and geometry residuals.
 
 The geometry residual and history writer are
 
@@ -1044,7 +1224,9 @@ Exact realization ablations are:
 | CI+PC | $Z_{4,a,k}=0$, PC disabled, $\rho_{\mathrm{inst}}=1$ | CI |
 | CI+PC | $\rho_{\mathrm{inst}}=0$, PC disabled, $Z_{4,a,k}=0$ | fixed-reference transition |
 | A | $\chi_A=0$ | explicit A read off; direct $W_A$ mobility remains |
-| C | $\chi_C=0$ | explicit C read off; intrinsic response may remain diagnostic |
+| C | $\kappa_{M,C}=0$ | selected-content Hodge modulation off; supplied pre/generated Hodge and fixed $M_{4,C}$ remain |
+| C | $\chi_C=0$ | explicit C read off; retained-Hodge direct baseline remains active |
+| C | $\tau_C=0$ | resolvent filtering off; retained-Hodge direct baseline remains active |
 | A or C | $\zeta_a=0$ | read has no causal current or structural consumer |
 | PC | $S_{a,k}=0$ | native exponential carrier release |
 
@@ -1068,12 +1250,13 @@ construction. At minimum it must bind:
 Candidate A parameters include $\eta$, $\kappa_c$, site potential,
 $W_{\mathrm{floor}}$, $\alpha$, $\beta$, $\gamma$, $\kappa_{Ah}$,
 $\chi_A$, $\zeta_A$, $\tau_A$, and the admitted $D/G_W$ backend. The
-accepted D11-C result must freeze Candidate C's transport parameters. Under
-the provisional C-T1 candidate these would include $\Lambda_C$, selector
-boundary policy, $C_{\mathrm{ref}}$, $\kappa_{M,C}$, $\kappa_{J,C}$,
-$\eta_C$, $\kappa_C$, $W_{\mathrm{ref}}$, the exact $V_C'$ evaluator,
-`candidate_c_log_sector_potential_flow_v1`, $\tau_C$, $\chi_C$, $\zeta_C$,
-and the current-block conditioning policy. PC and CI+PC additionally bind
+accepted Candidate C record must include $\Lambda_C$, selector boundary
+policy, $C_{\mathrm{ref}}$, $\kappa_{M,C}$, $\kappa_{\Phi,C}$, $\eta_C$,
+the exact positive stable-edge map $W_{C,\mathrm{tr}}$ and its identity,
+the exact $V'_{C,U}$ evaluator, `C-HM-STIFFNESS-BASELINE-v1`, $\tau_C$,
+$\chi_C$, $\zeta_C$, and the current-block conditioning policy. It must bind
+the closed/no-flux domain, units, gauge, unnormalized-stiffness choice, and
+separate $E_H$/$E_M$ constructors. PC and CI+PC additionally bind
 $\tau_{\mathrm{PC},a}$, $R_a$, $K_{X,a}$, carrier norm/source envelope, and,
 for CI+PC, $\rho_{\mathrm{inst},a}=1$.
 
@@ -1326,11 +1509,10 @@ Every such failure leaves the complete authoritative prestate unchanged.
 The machine-readable
 [V4 conformance fixture contract](grc-v4-conformance-fixtures.json) is
 normative for D10-backed case identifiers, inputs, expected dispositions,
-digest checks, and the independent $10\times4$ disabled matrix. Its exact
-Candidate C baseline and GRC9V4 expansion rows are preregistered D11 fixtures,
-not conformance authority, until the corresponding results are accepted and
-propagated. It is a preimplementation fixture contract: passing its schema
-audit does not claim that a runtime implementation has executed the cases.
+digest checks, the independent $10\times4$ disabled matrix, and the accepted
+D11-C Candidate C baseline and D11-G9 GRC9V4 expansion cases. It is a
+preimplementation fixture contract: passing its schema audit does not claim
+that a runtime implementation has executed the cases.
 
 ## Claim conformance matrix
 
@@ -1349,6 +1531,7 @@ replace that source text.
 | `D10-CL-N-007` | normative | Four independent GRC9V3 reduction surfaces per profile; specialization-owned. | [paper][paper-n] · [proposal][proposal-n] |
 | `D10-CL-N-008` | normative | Numeric and semantic choices are complete-profile identity. | [paper][paper-n] · [proposal][proposal-n] |
 | `D10-CL-N-009` | normative | Bind exactly one candidate and one realization. | [paper][paper-n] · [proposal][proposal-n] |
+| `D11-G9-CL-N-001` | GRC9V4 specialization normative | Bind the exact chiral same-port expansion and legacy-defined-domain boundary in `GRC9V4`; do not promote it into graph-generic mechanics. | [paper][paper-n] · [proposal][proposal-n] · [resolution][d11-g9-resolution] |
 | `D10-CL-O-001` | optional | Admit revision-specific Candidate A without core/uniqueness claims. | [paper][paper-o] · [proposal][proposal-o] |
 | `D10-CL-O-002` | optional | Admit derived-sector Candidate C without hidden state. | [paper][paper-o] · [proposal][proposal-o] |
 | `D10-CL-O-003` | optional | Admit bounded CI roots under exact A/C rules. | [paper][paper-o] · [proposal][proposal-o] |
@@ -1356,6 +1539,7 @@ replace that source text.
 | `D10-CL-O-005` | optional | Admit extension-relative Lipschitz RG2b only. | [paper][paper-o] · [proposal][proposal-o] |
 | `D10-CL-O-006` | optional | Admit scalar-ZOH, one-$\tau_{\mathrm{PC}}$ persistent carrier. | [paper][paper-o] · [proposal][proposal-o] |
 | `D10-CL-O-007` | optional | Admit the exact gain-two CI+PC composition. | [paper][paper-o] · [proposal][proposal-o] |
+| `D11-C-CL-O-001` | optional profile normative | Admit `C-HM-STIFFNESS-BASELINE-v1` as Candidate C's exact direct baseline across all five C realizations. | [paper][paper-o] · [proposal][proposal-o] · [resolution][d11-c-resolution] |
 | `D10-CL-C-001` | conditional | Gate classical Hessian/$\alpha$ claims on a formed $C^2$ branch and complete operator. | [paper][paper-c] · [proposal][proposal-c] |
 | `D10-CL-C-002` | conditional | Default to archive/reset without typed event lineage. | [paper][paper-c] · [proposal][proposal-c] |
 | `D10-CL-C-003` | conditional | Fail closed at singular boundaries pending a named successor. | [paper][paper-c] · [proposal][proposal-c] |
@@ -1394,9 +1578,12 @@ or future-exhaustive profile coverage.
 [d10]: ../implementation/investigations/grc9v4-constitutive-design/decisions/D10DesignSynthesisAndSpecWritingDecision.md
 [d10-2]: ../implementation/investigations/grc9v4-constitutive-design/decisions/D10_2FullSubstrateProvenanceAndPromotionAudit.md
 [d11-open]: ../implementation/investigations/grc9v4-constitutive-design/decisions/D11SuccessorInvestigationOpening.md
-[d11-c]: ../implementation/investigations/grc9v4-constitutive-design/decisions/D11CCandidateCBaselineTransportAndMobilityClosure.md
-[paper-n]: ../implementation/investigations/grc9v4-constitutive-design/drafts/2026-09-GRC-V4.md#151-normative-common-architecture-claims
-[proposal-n]: ../implementation/investigations/grc9v4-constitutive-design/drafts/GRCV4-proposal.md#151-normative-common-architecture-claims
+[d11-c-resolution]: ../implementation/investigations/grc9v4-constitutive-design/decisions/D11CCandidateBaselineTransportAndMobilityResolution.md
+[d11-c-provenance]: ../implementation/investigations/grc9v4-constitutive-design/decisions/D11CCandidateBaselineTransportProvenanceSupplement.json
+[d11-g9-resolution]: ../implementation/investigations/grc9v4-constitutive-design/decisions/D11G9CanonicalExpansionPortAllocationResolution.md
+[d11-g9-provenance]: ../implementation/investigations/grc9v4-constitutive-design/decisions/D11G9AxisPreservingExpansionProvenanceSupplement.json
+[paper-n]: ../implementation/investigations/grc9v4-constitutive-design/drafts/2026-09-GRC-V4.md#151-normative-architecture-claims
+[proposal-n]: ../implementation/investigations/grc9v4-constitutive-design/drafts/GRCV4-proposal.md#151-normative-architecture-claims
 [paper-o]: ../implementation/investigations/grc9v4-constitutive-design/drafts/2026-09-GRC-V4.md#152-optional-admitted-profile-claims
 [proposal-o]: ../implementation/investigations/grc9v4-constitutive-design/drafts/GRCV4-proposal.md#152-optional-admitted-profile-claims
 [paper-c]: ../implementation/investigations/grc9v4-constitutive-design/drafts/2026-09-GRC-V4.md#153-conditional-claims
