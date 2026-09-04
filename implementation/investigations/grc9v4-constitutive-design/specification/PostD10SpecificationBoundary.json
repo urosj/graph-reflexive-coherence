@@ -11,9 +11,9 @@
       "/accepted_D10_decision_digest": "3e673b335ad428d01006f231765d060a9bdd5f134332b143048f774de94bad00"
     }
   },
-  "active_phase": "proposal_propagation",
+  "active_phase": "paper_propagation",
   "phase_authority": {
-    "authorization": "GRCV4_GRC9V4_D11_PROPOSAL_PROPAGATION_AFTER_D11_C_AND_D11_G9_ACCEPTANCE",
+    "authorization": "GRCV4_GRC9V4_D11_PAPER_PROPAGATION_AFTER_D11_C_AND_D11_G9_ACCEPTANCE",
     "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D11G9CanonicalExpansionPortAllocationResolution.json",
     "sha256": "2b894abe80fed23455b7c37edc889aad48a27a1f8ae02d8c61752416a3eefc52",
     "assertions": {
