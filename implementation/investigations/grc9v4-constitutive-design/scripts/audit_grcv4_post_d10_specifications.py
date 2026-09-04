@@ -52,6 +52,9 @@ EXPECTED_CLAIM_COUNTS = Counter(
 PHASE_AUTHORIZATIONS = {
     "specification_writing": "GRCV4_GRC9V4_specification_writing",
     "successor_investigation": ("GRCV4_GRC9V4_D11_G9_ACTIVE_AFTER_D11_C_ACCEPTANCE"),
+    "proposal_propagation": (
+        "GRCV4_GRC9V4_D11_PROPOSAL_PROPAGATION_AFTER_D11_C_AND_D11_G9_ACCEPTANCE"
+    ),
     "paper_propagation": (
         "GRCV4_GRC9V4_D11_PAPER_PROPAGATION_AFTER_D11_C_AND_D11_G9_ACCEPTANCE"
     ),
@@ -116,7 +119,7 @@ def json_pointer(document: Any, pointer: str) -> Any:
 
 def validate_phase_boundary() -> tuple[str, int]:
     boundary = json.loads(BOUNDARY_PATH.read_text(encoding="utf-8"))
-    if boundary.get("schema") != "grcv4_grc9v4_post_d10_specification_boundary_v4":
+    if boundary.get("schema") != "grcv4_grc9v4_post_d10_specification_boundary_v5":
         raise RuntimeError("unexpected post-D10 boundary schema")
 
     base = boundary["authorization_base_commit"]
@@ -159,12 +162,25 @@ def validate_phase_boundary() -> tuple[str, int]:
             ),
             "src_and_tests": "frozen_to_authorization_base",
         },
+        "proposal_propagation": {
+            "activation": (
+                "requires_hash_bound_accepted_D11_C_and_D11_G9_authority_plus_accepted_D11_forensic_overlay"
+            ),
+            "src_and_tests": "frozen_to_authorization_base",
+            "specifications": (
+                "frozen_pending_accepted_proposal_review_and_paper_propagation"
+            ),
+            "proposal": "mutable_only_at_authorized_proposal_paths",
+            "paper": "frozen_pending_accepted_proposal_review",
+            "exploratory_tool_UX": ("mutable_only_at_authorized_successor_UX_paths"),
+        },
         "paper_propagation": {
             "activation": (
                 "requires_hash_bound_accepted_D11_C_and_D11_G9_authority_plus_accepted_D11_forensic_overlay"
             ),
             "src_and_tests": "frozen_to_authorization_base",
             "specifications": "frozen_pending_paper_propagation",
+            "proposal": "frozen_to_accepted_proposal_review",
             "paper": "mutable_only_at_authorized_paper_paths",
             "exploratory_tool_UX": ("mutable_only_at_authorized_successor_UX_paths"),
         },
@@ -199,6 +215,14 @@ def validate_phase_boundary() -> tuple[str, int]:
             "/authorization_effect/runtime_or_src_tests_change_authorized": False,
             "/authorization_effect/GRC9_or_GRC9V3_change_authorized": False,
         },
+        "proposal_propagation": {
+            "/status": "accepted_bounded",
+            "/decision/selected_candidate_id": "D11-G9-P4a",
+            "/propagation_state/next_gate": "D11-paper-propagation",
+            "/authorization_effect/implementation_authorized": False,
+            "/authorization_effect/runtime_or_src_tests_change_authorized": False,
+            "/authorization_effect/GRC9_or_GRC9V3_change_authorized": False,
+        },
         "paper_propagation": {
             "/status": "accepted_bounded",
             "/decision/selected_candidate_id": "D11-G9-P4a",
@@ -221,7 +245,12 @@ def validate_phase_boundary() -> tuple[str, int]:
             raise RuntimeError(
                 f"phase authority does not satisfy {pointer}={expected!r}"
             )
-    if phase in {"successor_investigation", "paper_propagation", "implementation"}:
+    if phase in {
+        "successor_investigation",
+        "proposal_propagation",
+        "paper_propagation",
+        "implementation",
+    }:
         authority_was_already_present = (
             subprocess.run(
                 ["git", "cat-file", "-e", f"{base}:{authority['path']}"],
@@ -450,11 +479,22 @@ def validate_phase_boundary() -> tuple[str, int]:
         if not validate_repository_path(path_text).is_file():
             raise RuntimeError(f"missing authorized paper: {path_text}")
 
+    expected_proposal_paths = {
+        "implementation/investigations/grc9v4-constitutive-design/"
+        "drafts/GRCV4-proposal.md"
+    }
+    proposal_paths = set(boundary["authorized_proposal_propagation_paths"])
+    if proposal_paths != expected_proposal_paths:
+        raise RuntimeError("unexpected proposal-propagation path roster")
+    for path_text in proposal_paths:
+        if not validate_repository_path(path_text).is_file():
+            raise RuntimeError(f"missing authorized proposal: {path_text}")
+
     paper_frozen_specs = boundary["paper_phase_frozen_spec_sha256"]
     expected_paper_frozen = set(outputs) | mutable
     if set(paper_frozen_specs) != expected_paper_frozen:
         raise RuntimeError("paper-phase frozen specification roster mismatch")
-    if phase == "paper_propagation":
+    if phase in {"proposal_propagation", "paper_propagation"}:
         for path_text, expected_sha in paper_frozen_specs.items():
             path = validate_repository_path(path_text)
             if not path.is_file() or sha256_file(path) != expected_sha:
@@ -462,14 +502,43 @@ def validate_phase_boundary() -> tuple[str, int]:
                     f"specification changed during paper propagation: {path_text}"
                 )
 
+    proposal_frozen_papers = boundary["proposal_phase_frozen_paper_sha256"]
+    if set(proposal_frozen_papers) != paper_paths:
+        raise RuntimeError("proposal-phase frozen paper roster mismatch")
+    if phase == "proposal_propagation":
+        for path_text, expected_sha in proposal_frozen_papers.items():
+            path = validate_repository_path(path_text)
+            if not path.is_file() or sha256_file(path) != expected_sha:
+                raise RuntimeError(
+                    f"paper changed during proposal propagation: {path_text}"
+                )
+
+    paper_frozen_proposals = boundary["paper_phase_frozen_proposal_sha256"]
+    if set(paper_frozen_proposals) != proposal_paths:
+        raise RuntimeError("paper-phase frozen proposal roster mismatch")
+    if phase in {"paper_propagation", "implementation"}:
+        for path_text, expected_sha in paper_frozen_proposals.items():
+            path = validate_repository_path(path_text)
+            if not path.is_file() or sha256_file(path) != expected_sha:
+                raise RuntimeError(
+                    f"proposal changed after review acceptance: {path_text}"
+                )
+
     changed_paths = set(git_lines("diff", "--name-only", base))
     changed_paths.update(git_lines("ls-files", "--others", "--exclude-standard"))
     allowed_paths = set(outputs) | mutable | maintenance
-    if phase in {"successor_investigation", "paper_propagation", "implementation"}:
+    if phase in {
+        "successor_investigation",
+        "proposal_propagation",
+        "paper_propagation",
+        "implementation",
+    }:
         allowed_paths.update(successor_paths)
-    if phase in {"paper_propagation", "implementation"}:
+    if phase in {"proposal_propagation", "paper_propagation", "implementation"}:
         allowed_paths.update(paper_paths)
         allowed_paths.update(successor_ux_paths)
+    if phase in {"proposal_propagation", "paper_propagation", "implementation"}:
+        allowed_paths.update(proposal_paths)
     if phase == "implementation":
         allowed_paths.add(authority["path"])
     unexpected_changes = {
@@ -487,6 +556,7 @@ def validate_phase_boundary() -> tuple[str, int]:
     if phase in {
         "specification_writing",
         "successor_investigation",
+        "proposal_propagation",
         "paper_propagation",
     }:
         changed_runtime_paths = set(
@@ -997,7 +1067,7 @@ def main() -> int:
             )
         print(result.stdout.strip())
         return 0
-    if phase == "paper_propagation":
+    if phase in {"proposal_propagation", "paper_propagation"}:
         paper_audit = INVESTIGATION / "scripts/audit_grcv4_d11_paper_propagation.py"
         result = subprocess.run(
             [sys.executable, str(paper_audit)],

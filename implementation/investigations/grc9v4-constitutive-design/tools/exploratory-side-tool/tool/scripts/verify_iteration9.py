@@ -273,7 +273,11 @@ def main() -> int:
     else:
         active_post_d10_phase = None
 
-    if active_post_d10_phase in {"successor_investigation", "paper_propagation"}:
+    if active_post_d10_phase in {
+        "successor_investigation",
+        "proposal_propagation",
+        "paper_propagation",
+    }:
         python_results = [
             run_python(scripts / name, *arguments)
             for name, *arguments in HISTORICAL_LAYER_AUDITS

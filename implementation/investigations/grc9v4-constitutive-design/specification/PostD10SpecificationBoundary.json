@@ -1,5 +1,5 @@
 {
-  "schema": "grcv4_grc9v4_post_d10_specification_boundary_v4",
+  "schema": "grcv4_grc9v4_post_d10_specification_boundary_v5",
   "authorization_base_commit": "5d80fa9f02010167f652a32127f19c53fa12fc6d",
   "post_d10_entry_state": {
     "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D10_2FullSubstrateProvenanceAndPromotionAudit.json",
@@ -11,9 +11,9 @@
       "/accepted_D10_decision_digest": "3e673b335ad428d01006f231765d060a9bdd5f134332b143048f774de94bad00"
     }
   },
-  "active_phase": "paper_propagation",
+  "active_phase": "proposal_propagation",
   "phase_authority": {
-    "authorization": "GRCV4_GRC9V4_D11_PAPER_PROPAGATION_AFTER_D11_C_AND_D11_G9_ACCEPTANCE",
+    "authorization": "GRCV4_GRC9V4_D11_PROPOSAL_PROPAGATION_AFTER_D11_C_AND_D11_G9_ACCEPTANCE",
     "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D11G9CanonicalExpansionPortAllocationResolution.json",
     "sha256": "2b894abe80fed23455b7c37edc889aad48a27a1f8ae02d8c61752416a3eefc52",
     "assertions": {
@@ -33,10 +33,19 @@
       "activation": "requires_a_hash_bound_current_successor_authority_in_phase_authority",
       "src_and_tests": "frozen_to_authorization_base"
     },
+    "proposal_propagation": {
+      "activation": "requires_hash_bound_accepted_D11_C_and_D11_G9_authority_plus_accepted_D11_forensic_overlay",
+      "src_and_tests": "frozen_to_authorization_base",
+      "specifications": "frozen_pending_accepted_proposal_review_and_paper_propagation",
+      "proposal": "mutable_only_at_authorized_proposal_paths",
+      "paper": "frozen_pending_accepted_proposal_review",
+      "exploratory_tool_UX": "mutable_only_at_authorized_successor_UX_paths"
+    },
     "paper_propagation": {
       "activation": "requires_hash_bound_accepted_D11_C_and_D11_G9_authority_plus_accepted_D11_forensic_overlay",
       "src_and_tests": "frozen_to_authorization_base",
       "specifications": "frozen_pending_paper_propagation",
+      "proposal": "frozen_to_accepted_proposal_review",
       "paper": "mutable_only_at_authorized_paper_paths",
       "exploratory_tool_UX": "mutable_only_at_authorized_successor_UX_paths"
     },
@@ -55,6 +64,9 @@
   "mutable_registry_paths": [
     "specs/README.md"
   ],
+  "authorized_proposal_propagation_paths": [
+    "implementation/investigations/grc9v4-constitutive-design/drafts/GRCV4-proposal.md"
+  ],
   "authorized_paper_propagation_paths": [
     "implementation/investigations/grc9v4-constitutive-design/drafts/2026-09-GRC-V4.md"
   ],
@@ -65,6 +77,12 @@
     "specs/grc-v4-spec.md": "9a7309df7a582fe4c08bdaccfb4418ca5f5e034fed4037b40b6876ed2d8bb40d",
     "specs/grc-9-v4-spec.md": "cd5661c31473b2d8dc42f0fe1e241aea4cbb76f07ea8db2e500244d70b196342",
     "specs/README.md": "658f005bc991554176136e8a9007a704cee39abb99d6104daabd47d196bca34b"
+  },
+  "proposal_phase_frozen_paper_sha256": {
+    "implementation/investigations/grc9v4-constitutive-design/drafts/2026-09-GRC-V4.md": "e009c5651842dea6636057a9639a79e42eb5c03b20c4812fb9ee5173705258e5"
+  },
+  "paper_phase_frozen_proposal_sha256": {
+    "implementation/investigations/grc9v4-constitutive-design/drafts/GRCV4-proposal.md": "8543463a5b3aa15bb60f078a980f1812be4b68b6db8904026b21d3ccdb2362c9"
   },
   "authorized_successor_investigation_paths": [
     "implementation/investigations/grc9v4-constitutive-design/README.md",
