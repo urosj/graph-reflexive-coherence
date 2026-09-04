@@ -1219,4 +1219,16 @@ authority or satisfying downstream scientific obligations.
 - [x] Validate the contract schema, computed canonical/event/receipt vectors,
       content-addressed release, and capability holds through the normal
       phase-aware audit before the unchanged API/notebook/browser suites run.
+- [x] Bind and verify the release-pressure audit SHA without admitting it as a
+      forensic or scientific source.
+- [x] Extend the phase-aware specification audit across all seven residual
+      defects: request admission, result disposition, affine mapped events,
+      two-channel history, candidate templates, truthful carrier loss, and
+      published subdigest preimages.
+- [x] Verify D52 second-depth expansion, source-order/rotation/reflection
+      metamorphic vectors, and all semantic-admission negative invariants.
+- [x] Verify the Candidate A expansion, generic mapped-event execution,
+      arbitrary-size runtime, and other unexecuted capabilities remain held.
+- [x] Rebuild and verify the v2 content-addressed release and detached checksum
+      through the normal `verify-iteration9` entry point.
 - [ ] Authorize runtime implementation.

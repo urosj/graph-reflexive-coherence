@@ -17,6 +17,9 @@ SOURCE_MANIFEST = ROOT / "specs/grc-v4-source-manifest.json"
 READINESS_AUDIT_SHA256 = (
     "32cea1b2752361864b02651cb7d38df85929210adc213aa76ee1307babcb5196"
 )
+PRESSURE_AUDIT_SHA256 = (
+    "bb0621b3abe793486711acdd62e718c4415e8c5cbb6bea271580d4abc806e7ae"
+)
 
 SPECIFICATION_MEMBERS = (
     ("generic_v4_specification", "specs/grc-v4-spec.md"),
@@ -151,14 +154,23 @@ def build() -> dict[str, Any]:
         )
     ]
     identity_payload = {
-        "schema": "grcv4_specification_release_identity_v1",
+        "schema": "grcv4_specification_release_identity_v2",
         "artifact_bindings": ordered_bindings,
-        "readiness_audit_sha256": READINESS_AUDIT_SHA256,
+        "engineering_audit_bindings": [
+            {
+                "name": "GRCV4-updated-specification-stack-implementation-readiness-audit.md",
+                "sha256": READINESS_AUDIT_SHA256,
+            },
+            {
+                "name": "GRCV4-specification-correction-release-pressure-audit.md",
+                "sha256": PRESSURE_AUDIT_SHA256,
+            },
+        ],
     }
     canonical = jcs_subset(identity_payload).encode("utf-8")
     release_id = f"grcv4-spec-release-sha256:{sha256_bytes(canonical)}"
     return {
-        "schema": "grcv4_specification_release_manifest_v1",
+        "schema": "grcv4_specification_release_manifest_v2",
         "status": "normative_preimplementation_release",
         "release_id": release_id,
         "repository": source_manifest["repository"],
@@ -181,6 +193,12 @@ def build() -> dict[str, Any]:
             "name": "GRCV4-updated-specification-stack-implementation-readiness-audit.md",
             "sha256": READINESS_AUDIT_SHA256,
             "role": "external_correction_input_not_scientific_authority",
+        },
+        "pressure_audit": {
+            "name": "GRCV4-specification-correction-release-pressure-audit.md",
+            "sha256": PRESSURE_AUDIT_SHA256,
+            "role": "external_pressure_correction_input_not_scientific_authority",
+            "bounded_defect_count": 7,
         },
         "creation_tools": creation_tools,
         "rebuild_command": (

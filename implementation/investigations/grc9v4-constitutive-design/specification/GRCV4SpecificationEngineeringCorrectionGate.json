@@ -1,9 +1,9 @@
 {
-  "schema_version": "grcv4_specification_engineering_correction_gate_v1",
-  "artifact_id": "GRCV4-SPECIFICATION-ENGINEERING-CORRECTION-GATE-v1",
+  "schema_version": "grcv4_specification_engineering_correction_gate_v2",
+  "artifact_id": "GRCV4-SPECIFICATION-ENGINEERING-CORRECTION-GATE-v2",
   "date": "2026-09-04",
   "status": "accepted_bounded",
-  "human_acceptance": "user_requested_corrections_from_bound_readiness_audit_2026-09-04",
+  "human_acceptance": "user_requested_complete_corrections_from_bound_readiness_and_release_pressure_audits_2026-09-05",
   "predecessor": {
     "path": "implementation/investigations/grc9v4-constitutive-design/specification/D11PaperPropagationAndSpecificationExtractionGate.json",
     "sha256": "410f489a9bf82367932eaaec8765c08b6ede56ee86b93da1b68606eec9d3dd33"
@@ -12,6 +12,13 @@
     "name": "GRCV4-updated-specification-stack-implementation-readiness-audit.md",
     "sha256": "32cea1b2752361864b02651cb7d38df85929210adc213aa76ee1307babcb5196",
     "authority": "implementation_contract_correction_input_not_scientific_evidence"
+  },
+  "pressure_audit_input": {
+    "name": "GRCV4-specification-correction-release-pressure-audit.md",
+    "sha256": "bb0621b3abe793486711acdd62e718c4415e8c5cbb6bea271580d4abc806e7ae",
+    "authority": "implementation_contract_pressure_input_not_scientific_evidence",
+    "scientific_successor_required": false,
+    "bounded_defect_count": 7
   },
   "scientific_authority": {
     "D11_C_claim_id": "D11-C-CL-O-001",
@@ -28,7 +35,17 @@
     "candidate_and_stage_bound_GRC9_row_weights",
     "charge_precision_and_remainder_closure",
     "computed_concrete_preimplementation_vectors",
-    "portable_content_addressed_specification_release"
+    "portable_content_addressed_specification_release",
+    "pre_admission_and_strict_request_boundary",
+    "orthogonal_operation_and_solver_dispositions",
+    "generic_mapped_event_identity_and_affine_resource_transform",
+    "candidate_and_carrier_history_channel_separation",
+    "candidate_discriminated_profile_templates",
+    "profile_truthful_carrier_loss_receipts",
+    "published_versioned_subdigest_preimages",
+    "deep_recursive_and_metamorphic_expansion_vectors",
+    "cross_field_semantic_admission_vectors",
+    "partial_versus_full_GRC9V4_conformance_wording"
   ],
   "authorization_effect": {
     "specification_correction_authorized": true,
@@ -44,7 +61,9 @@
     "no_completed_spark_or_hierarchy_capability_before_child_stabilization_policy_and_vectors",
     "no_disabled_GRC9V3_compatibility_capability_before_40_exact_delegate_vectors",
     "no_snapshot_reset_migration_or_generic_mapped_event_conformance_before_exact_vectors",
-    "no_cross_implementation_charge_or_deep_immutability_conformance_before_runtime_tests"
+    "no_cross_implementation_charge_or_deep_immutability_conformance_before_runtime_tests",
+    "no_candidate_A_GRC9V4_expansion_capability_before_concrete_target_vector",
+    "no_arbitrary_size_mechanical_refinement_conformance_before_runtime_D52_and_covariance_execution"
   ],
   "next_gate": "GRCV4_GRC9V4_implementation_review",
   "claim_ceiling": "specification_engineering_only_not_new_science_runtime_implementation_or_execution_evidence"

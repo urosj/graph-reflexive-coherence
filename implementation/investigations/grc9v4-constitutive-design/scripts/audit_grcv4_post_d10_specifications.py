@@ -6,6 +6,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import math
 import re
 import shutil
 import subprocess
@@ -113,6 +114,32 @@ def sha256_file(path: Path) -> str:
     return sha256_bytes(path.read_bytes())
 
 
+def jcs_common_subset_bytes(value: Any) -> bytes:
+    """Canonical bytes for the release's finite JSON common subset.
+
+    The cross-language edge spellings are checked separately against explicit
+    RFC 8785 vectors. Identity payloads below use ordinary finite magnitudes;
+    normalize integral binary64 values to the ECMAScript integer spelling.
+    """
+
+    def normalize(item: Any) -> Any:
+        if isinstance(item, float) and item.is_integer():
+            return int(item)
+        if isinstance(item, list):
+            return [normalize(child) for child in item]
+        if isinstance(item, dict):
+            return {key: normalize(child) for key, child in item.items()}
+        return item
+
+    return json.dumps(
+        normalize(value),
+        sort_keys=True,
+        separators=(",", ":"),
+        ensure_ascii=False,
+        allow_nan=False,
+    ).encode("utf-8")
+
+
 def git_bytes(*args: str, check: bool = True) -> bytes:
     return subprocess.run(
         ["git", *args],
@@ -150,7 +177,7 @@ def json_pointer(document: Any, pointer: str) -> Any:
 
 def validate_phase_boundary() -> tuple[str, int]:
     boundary = json.loads(BOUNDARY_PATH.read_text(encoding="utf-8"))
-    if boundary.get("schema") != "grcv4_grc9v4_post_d10_specification_boundary_v7":
+    if boundary.get("schema") != "grcv4_grc9v4_post_d10_specification_boundary_v8":
         raise RuntimeError("unexpected post-D10 boundary schema")
 
     base = boundary["authorization_base_commit"]
@@ -229,7 +256,7 @@ def validate_phase_boundary() -> tuple[str, int]:
         },
         "specification_correction": {
             "activation": (
-                "requires_hash_bound_implementation_readiness_audit_and_accepted_D11_specification_release"
+                "requires_hash_bound_implementation_readiness_and_release_pressure_audits_and_accepted_D11_specification_release"
             ),
             "src_and_tests": "frozen_to_authorization_base",
             "specifications": (
@@ -305,6 +332,9 @@ def validate_phase_boundary() -> tuple[str, int]:
             "/status": "accepted_bounded",
             "/audit_input/sha256": (
                 "32cea1b2752361864b02651cb7d38df85929210adc213aa76ee1307babcb5196"
+            ),
+            "/pressure_audit_input/sha256": (
+                "bb0621b3abe793486711acdd62e718c4415e8c5cbb6bea271580d4abc806e7ae"
             ),
             "/authorization_effect/specification_correction_authorized": True,
             "/authorization_effect/implementation_authorized": False,
@@ -831,7 +861,7 @@ def validate_pandoc_render(path: Path) -> None:
 
 def validate_v4_source_manifest() -> None:
     manifest = json.loads(SOURCE_MANIFEST.read_text(encoding="utf-8"))
-    if manifest.get("schema") != "grcv4_specification_source_manifest_v2":
+    if manifest.get("schema") != "grcv4_specification_source_manifest_v3":
         raise RuntimeError("unexpected V4 source-manifest schema")
     if manifest.get("status") != "normative_source_identity":
         raise RuntimeError("V4 source manifest is not normative")
@@ -843,6 +873,11 @@ def validate_v4_source_manifest() -> None:
         "32cea1b2752361864b02651cb7d38df85929210adc213aa76ee1307babcb5196"
     ):
         raise RuntimeError("V4 readiness audit is not digest-bound")
+    pressure = manifest.get("specification_pressure_audit", {})
+    if pressure.get("sha256") != (
+        "bb0621b3abe793486711acdd62e718c4415e8c5cbb6bea271580d4abc806e7ae"
+    ):
+        raise RuntimeError("V4 pressure audit is not digest-bound")
     if manifest.get("release_manifest") != str(RELEASE_MANIFEST.relative_to(ROOT)):
         raise RuntimeError("V4 source manifest does not name the release manifest")
 
@@ -1146,7 +1181,7 @@ def validate_v4_conformance_fixtures(profiles: set[str]) -> None:
 def validate_v4_conformance_contracts(profiles: set[str]) -> None:
     """Validate the corrected catalog, schemas, vectors, and release bundle."""
     fixtures = json.loads(CONFORMANCE_FIXTURES.read_text(encoding="utf-8"))
-    if fixtures.get("schema") != "grcv4_conformance_fixture_catalog_v2":
+    if fixtures.get("schema") != "grcv4_conformance_fixture_catalog_v3":
         raise RuntimeError("unexpected V4 conformance catalog schema")
     if fixtures.get("status") != "normative_coverage_catalog_not_executable_vectors":
         raise RuntimeError("V4 conformance catalog claims the wrong authority")
@@ -1156,6 +1191,10 @@ def validate_v4_conformance_contracts(profiles: set[str]) -> None:
         "32cea1b2752361864b02651cb7d38df85929210adc213aa76ee1307babcb5196"
     ):
         raise RuntimeError("V4 catalog readiness-audit binding drift")
+    if fixtures.get("specification_pressure_audit_sha256") != (
+        "bb0621b3abe793486711acdd62e718c4415e8c5cbb6bea271580d4abc806e7ae"
+    ):
+        raise RuntimeError("V4 catalog pressure-audit binding drift")
     if set(fixtures.get("profile_families", [])) != profiles:
         raise RuntimeError("V4 fixture profile roster mismatch")
     execution = fixtures.get("execution_contract", {})
@@ -1167,6 +1206,63 @@ def validate_v4_conformance_contracts(profiles: set[str]) -> None:
         raise RuntimeError("V4 catalog does not bind the concrete vector file")
     if execution.get("machine_schema_file") != str(CONTRACT_SCHEMA.relative_to(ROOT)):
         raise RuntimeError("V4 catalog does not bind the machine schema")
+    if (
+        execution.get("semantic_admission_validator")
+        != "grcv4-contract-semantic-admission-v1"
+        or execution.get("schema_validity_is_necessary_not_sufficient") is not True
+        or execution.get("harness_faults_are_nonproduction_and_identity_excluded")
+        is not True
+    ):
+        raise RuntimeError("V4 catalog admission boundary drift")
+    deep_fixture = fixtures.get("grc9_deep_recursive_fixture", {})
+    if (
+        deep_fixture.get("target_effective_degree") != 52
+        or deep_fixture.get("expected_canonical_node_count") != 8
+        or deep_fixture.get("required_concrete_vector_count") != 6
+        or deep_fixture.get("second_depth_edge_required") is not True
+        or set(deep_fixture.get("metamorphic_cases", []))
+        != {
+            "source_edge_input_order_permutation",
+            "cyclic_chart_rotation",
+            "reflection_chirality_conjugacy",
+        }
+    ):
+        raise RuntimeError("deep-recursive fixture contract drift")
+    persistent_fixture = fixtures.get("grc9_persistent_carrier_fixture", {})
+    if (
+        persistent_fixture.get("source_profile_family") != "C_PC"
+        or persistent_fixture.get("source_Z_4_nonnull") is not True
+        or persistent_fixture.get("target_Z_4_zero") is not True
+        or persistent_fixture.get("carrier_information_loss")
+        != "carrier_history_loss"
+    ):
+        raise RuntimeError("persistent-carrier fixture contract drift")
+    mapped_fixture = fixtures.get("generic_mapped_event_fixture", {})
+    if (
+        mapped_fixture.get("canonical_event_identity_required") is not True
+        or mapped_fixture.get("nonzero_target_increment_required") is not True
+        or mapped_fixture.get("charge_target_delta_required") is not True
+        or mapped_fixture.get("metadata_identity_excluded") is not True
+    ):
+        raise RuntimeError("generic mapped-event fixture contract drift")
+    semantic_fixture = fixtures.get("semantic_admission_fixture", {})
+    if (
+        semantic_fixture.get("validator_id")
+        != "grcv4-contract-semantic-admission-v1"
+        or semantic_fixture.get("json_schema_validity_is_necessary_not_sufficient")
+        is not True
+        or set(semantic_fixture.get("required_negative_invariants", []))
+        != {
+            "profile_fields_agree",
+            "resource_distribution_unit_sum",
+            "resource_transform_dimensions",
+            "growth_phase_matches_remainder",
+            "target_W_C_tr_matches_live_edges",
+            "identity_payload_matches_resolved_parameters",
+            "history_channel_subjects_agree",
+        }
+    ):
+        raise RuntimeError("semantic-admission fixture contract drift")
 
     disabled = fixtures.get("disabled_compatibility", {})
     if disabled.get("independent_case_count") != 40:
@@ -1182,7 +1278,7 @@ def validate_v4_conformance_contracts(profiles: set[str]) -> None:
         raise RuntimeError("V4 fixture catalog modifies the legacy target")
 
     schema = json.loads(CONTRACT_SCHEMA.read_text(encoding="utf-8"))
-    if schema.get("schema_version") != "grcv4-implementation-contract-schema-v1":
+    if schema.get("schema_version") != "grcv4-implementation-contract-schema-v2":
         raise RuntimeError("unexpected V4 implementation-contract schema")
     required_schema_definitions = {
         "resolved_params",
@@ -1196,12 +1292,30 @@ def validate_v4_conformance_contracts(profiles: set[str]) -> None:
         "scientific_state_payload",
         "lifecycle_envelope_payload",
         "expansion_event_request",
+        "expansion_event_request_input",
+        "step_request_input",
+        "step_result",
         "migration_request",
         "mapped_topology_event_request",
+        "mapped_topology_event_identity_payload",
         "migration_policy",
-        "history_event_policy",
-        "resource_event_map",
+        "history_channel_policy",
+        "history_bundle_policy",
+        "history_bundle_receipt",
+        "resource_event_transform",
         "expansion_event_identity_payload",
+        "conformance_harness_fault",
+        "authoritative_state_identity_payload",
+        "wctr_identity_payload",
+        "resource_transform_identity_payload",
+        "history_channel_policy_identity_payload",
+        "history_bundle_identity_payload",
+        "history_content_identity_payload",
+        "expansion_history_identity_payload",
+        "expansion_policy_identity_payload",
+        "k4_identity_payload",
+        "reference_hodge_identity_payload",
+        "semantic_admission_test_case",
         "commit_payload",
         "receipt_core",
         "step_commit_receipt_identity_payload",
@@ -1262,7 +1376,7 @@ def validate_v4_conformance_contracts(profiles: set[str]) -> None:
                 )
 
     vectors = json.loads(CONFORMANCE_VECTORS.read_text(encoding="utf-8"))
-    if vectors.get("schema") != "grcv4_conformance_vectors_v1":
+    if vectors.get("schema") != "grcv4_conformance_vectors_v2":
         raise RuntimeError("unexpected concrete-vector schema")
     if vectors.get("implementation_evidence") is not False:
         raise RuntimeError("preimplementation vectors claim runtime execution")
@@ -1310,6 +1424,10 @@ def validate_v4_conformance_contracts(profiles: set[str]) -> None:
             "profile_template_payload",
             "grcv4-profile-template-sha256",
         ),
+        "IDENTITY-GRCV4-PROFILE-TEMPLATE-A-OS": (
+            "profile_template_payload",
+            "grcv4-profile-template-sha256",
+        ),
         "IDENTITY-GRC9V4-PARAMS": ("resolved_specialization", "grc9v4-params-sha256"),
         "IDENTITY-GRC9V4-SPECIALIZATION": (
             "specialization_identity_payload",
@@ -1340,9 +1458,61 @@ def validate_v4_conformance_contracts(profiles: set[str]) -> None:
         if row["expected_identifier"] != expected:
             raise RuntimeError(f"{row['vector_id']}: computed identity drift")
 
+    subdigest_definitions = {
+        "SUBDIGEST-AUTHORITATIVE-STATE": (
+            "authoritative_state_identity_payload",
+            "grcv4-authoritative-sha256",
+        ),
+        "SUBDIGEST-W-C-TR": ("wctr_identity_payload", "grcv4-wctr-sha256"),
+        "SUBDIGEST-RESOURCE-TRANSFORM": (
+            "resource_transform_identity_payload",
+            "grcv4-resource-transform-sha256",
+        ),
+        "SUBDIGEST-CANDIDATE-HISTORY-POLICY": (
+            "history_channel_policy_identity_payload",
+            "grcv4-history-policy-sha256",
+        ),
+        "SUBDIGEST-CARRIER-HISTORY-POLICY": (
+            "history_channel_policy_identity_payload",
+            "grcv4-history-policy-sha256",
+        ),
+        "SUBDIGEST-EXPANSION-HISTORY-BUNDLE": (
+            "expansion_history_identity_payload",
+            "grcv4-history-map-sha256",
+        ),
+        "SUBDIGEST-GENERIC-HISTORY-BUNDLE": (
+            "history_bundle_identity_payload",
+            "grcv4-history-map-sha256",
+        ),
+        "SUBDIGEST-GRC9-EXPANSION-POLICY": (
+            "expansion_policy_identity_payload",
+            "grc9v4-expansion-policy-sha256",
+        ),
+        "SUBDIGEST-K4-BASE": ("k4_identity_payload", "grcv4-k4-sha256"),
+        "SUBDIGEST-REFERENCE-HODGE": (
+            "reference_hodge_identity_payload",
+            "grcv4-hodge-sha256",
+        ),
+    }
+    subdigest_rows = vectors.get("subdigest_identity_vectors", [])
+    if {row.get("vector_id") for row in subdigest_rows} != set(
+        subdigest_definitions
+    ):
+        raise RuntimeError("subdigest identity-vector roster drift")
+    for row in subdigest_rows:
+        definition, prefix = subdigest_definitions[row["vector_id"]]
+        validate_schema(definition, row["payload"])
+        canonical = row["canonical_jcs_utf8"].encode("utf-8")
+        if canonical.hex() != row["canonical_jcs_utf8_hex"]:
+            raise RuntimeError(f"{row['vector_id']}: subdigest byte/hex mismatch")
+        if row["expected_identifier"] != (
+            f"{prefix}:{sha256_bytes(canonical)}"
+        ):
+            raise RuntimeError(f"{row['vector_id']}: subdigest identity drift")
+
     expansion_rows = vectors.get("grc9_expansion_vectors", [])
-    if len(expansion_rows) != 10:
-        raise RuntimeError("expected ten concrete GRC9 expansion vectors")
+    if len(expansion_rows) != 17:
+        raise RuntimeError("expected sixteen C_OS and one C_PC expansion vectors")
     event_ids: set[str] = set()
     covered = set()
     for row in expansion_rows:
@@ -1388,6 +1558,30 @@ def validate_v4_conformance_contracts(profiles: set[str]) -> None:
             raise RuntimeError(f"{row['fixture_id']}: duplicate edge identity")
         if sum(expected["target_resource_by_node"].values()) != 3:
             raise RuntimeError(f"{row['fixture_id']}: resource map is not conservative")
+        transform = expected["resource_transform"]
+        validate_schema("resource_event_transform", transform)
+        source_resource = [
+            3 if node == "source-s" else 0
+            for node in transform["source_vertex_ids"]
+        ]
+        source_width = len(source_resource)
+        computed_resource = []
+        for target_index, increment in enumerate(transform["target_increment"]):
+            offset = target_index * source_width
+            computed_resource.append(
+                sum(
+                    transform["row_major_coefficients"][offset + source_index]
+                    * value
+                    for source_index, value in enumerate(source_resource)
+                )
+                + increment
+            )
+        recorded_resource = [
+            expected["target_resource_by_node"][node]
+            for node in transform["target_vertex_ids"]
+        ]
+        if computed_resource != recorded_resource:
+            raise RuntimeError(f"{row['fixture_id']}: affine resource transform drift")
         payloads = expected["identity_payloads"]
         if payloads["target_graph"] != {
             "schema_version": "grc9v4-port-graph-v1",
@@ -1426,6 +1620,16 @@ def validate_v4_conformance_contracts(profiles: set[str]) -> None:
                 "grcv4-state-sha256",
                 "target_state_digest",
             ),
+            "resource_transform": (
+                "resource_transform_identity_payload",
+                "grcv4-resource-transform-sha256",
+                "resource_transform_digest",
+            ),
+            "history_bundle": (
+                "expansion_history_identity_payload",
+                "grcv4-history-map-sha256",
+                "history_bundle_digest",
+            ),
             "receipt": (
                 "topology_event_receipt_identity_payload",
                 "grc-receipt-sha256",
@@ -1445,13 +1649,7 @@ def validate_v4_conformance_contracts(profiles: set[str]) -> None:
         ) in payload_contracts.items():
             payload = payloads[payload_name]
             validate_schema(definition, payload)
-            canonical_payload = json.dumps(
-                payload,
-                sort_keys=True,
-                separators=(",", ":"),
-                ensure_ascii=False,
-                allow_nan=False,
-            ).encode("utf-8")
+            canonical_payload = jcs_common_subset_bytes(payload)
             computed = f"{prefix}:{sha256_bytes(canonical_payload)}"
             recorded = expected[expected_field]
             if isinstance(recorded, list):
@@ -1460,16 +1658,24 @@ def validate_v4_conformance_contracts(profiles: set[str]) -> None:
                 raise RuntimeError(
                     f"{row['fixture_id']}: {payload_name} identity drift"
                 )
+        for channel_name, digest_field in (
+            ("candidate_history_policy", "candidate_history_policy_digest"),
+            ("carrier_history_policy", "carrier_history_policy_digest"),
+        ):
+            payload = payloads[channel_name]
+            validate_schema("history_channel_policy_identity_payload", payload)
+            computed = (
+                "grcv4-history-policy-sha256:"
+                + sha256_bytes(jcs_common_subset_bytes(payload))
+            )
+            if computed != event[digest_field]:
+                raise RuntimeError(
+                    f"{row['fixture_id']}: {channel_name} identity drift"
+                )
         for receipt in expected["emitted_receipts"]:
             validate_schema("successful_receipt_envelope", receipt)
             identity_payload = receipt["identity_payload"]
-            canonical_receipt = json.dumps(
-                identity_payload,
-                sort_keys=True,
-                separators=(",", ":"),
-                ensure_ascii=False,
-                allow_nan=False,
-            ).encode("utf-8")
+            canonical_receipt = jcs_common_subset_bytes(identity_payload)
             # All current receipt identity values use the JSON/JCS common subset.
             if receipt["receipt_id"] != (
                 f"grc-receipt-sha256:{sha256_bytes(canonical_receipt)}"
@@ -1477,17 +1683,140 @@ def validate_v4_conformance_contracts(profiles: set[str]) -> None:
                 raise RuntimeError(f"{row['fixture_id']}: receipt identity drift")
             if receipt["commit_id"] != expected["commit_id"]:
                 raise RuntimeError(f"{row['fixture_id']}: receipt/commit mismatch")
+        history = payloads["receipt"]["history"]
+        if history["candidate"]["subject"] != "candidate" or (
+            history["carrier"]["subject"] != "carrier"
+        ):
+            raise RuntimeError(f"{row['fixture_id']}: history channel subject drift")
+        profile_family = row.get("profile_family_id", "C_OS")
+        authoritative = payloads["target_state"]["authoritative"]
+        losses = payloads["receipt"]["core"]["information_losses"]
+        if profile_family == "C_OS":
+            if (
+                authoritative["Z_4"] is not None
+                or history["carrier"]["disposition"] != "not_applicable"
+                or history["carrier"]["information_loss"] != "none"
+                or losses
+            ):
+                raise RuntimeError(
+                    f"{row['fixture_id']}: nonexistent carrier loss reported"
+                )
+        elif profile_family == "C_PC":
+            for payload_name in ("source_carrier", "target_carrier"):
+                validate_schema("history_content_identity_payload", payloads[payload_name])
+            if (
+                expected["source_carrier"] == expected["target_carrier"]
+                or any(expected["target_carrier"])
+                or history["carrier"]["disposition"] != "whole_carrier_reset"
+                or history["carrier"]["information_loss"]
+                != "carrier_history_loss"
+                or losses != ["carrier_history_loss"]
+            ):
+                raise RuntimeError("persistent C_PC carrier-loss vector drift")
 
     required_coverage = (
         {(30, chirality, None) for chirality in (-1, 1)}
         | {(31, chirality, phase) for chirality in (-1, 1) for phase in (1, 2, 3)}
         | {(45, chirality, None) for chirality in (-1, 1)}
+        | {(52, chirality, phase) for chirality in (-1, 1) for phase in (1, 2, 3)}
     )
     if covered != required_coverage:
         raise RuntimeError("chirality/phase/deeper-tree vector coverage drift")
 
+    for row in expansion_rows:
+        if row["event_identity_payload"]["target_effective_degree"] != 52:
+            continue
+        event_id = row["expected"]["event_id"]
+        tree_edges = [
+            edge
+            for edge in row["expected"]["target_edges"]
+            if edge["kind"] == "tree"
+        ]
+        if not any(
+            edge["tail"]["node_id"].startswith(f"{event_id}/extra/")
+            for edge in tree_edges
+        ):
+            raise RuntimeError(f"{row['fixture_id']}: no second-depth BFS edge")
+
+    mapped_rows = vectors.get("grcv4_mapped_topology_event_vectors", [])
+    if len(mapped_rows) != 1:
+        raise RuntimeError("expected one generic affine mapped-event vector")
+    mapped = mapped_rows[0]
+    validate_schema("mapped_topology_event_request", mapped["request"])
+    validate_schema(
+        "mapped_topology_event_identity_payload", mapped["event_identity_payload"]
+    )
+    mapped_canonical = mapped["event_identity_canonical_jcs_utf8"].encode("utf-8")
+    mapped_expected = mapped["expected"]
+    if mapped_expected["event_id"] != (
+        f"grc-event-sha256:{sha256_bytes(mapped_canonical)}"
+    ):
+        raise RuntimeError("mapped topology event identity drift")
+    mapped_transform = mapped["request"]["resource_transform"]
+    source_values = mapped_expected["source_resource"]
+    width = len(source_values)
+    target_values = [
+        sum(
+            mapped_transform["row_major_coefficients"][target_index * width + j]
+            * source_values[j]
+            for j in range(width)
+        )
+        + mapped_transform["target_increment"][target_index]
+        for target_index in range(len(mapped_transform["target_vertex_ids"]))
+    ]
+    if target_values != mapped_expected["target_resource"]:
+        raise RuntimeError("mapped affine resource output drift")
+    if (
+        mapped_expected["target_charge"] - mapped_expected["source_charge"]
+        != mapped_expected["actual_charge_delta"]
+        or mapped_expected["target_Q_target"]
+        != mapped_expected["source_charge"]
+        + mapped_expected["actual_charge_delta"]
+        or mapped_expected["actual_charge_delta"] == 0
+    ):
+        raise RuntimeError("mapped affine charge accounting drift")
+    if "metadata" in mapped["event_identity_payload"] or (
+        mapped_expected["metadata_affects_event_id"] is not False
+    ):
+        raise RuntimeError("mapped-event metadata entered event identity")
+
+    metamorphic = vectors.get("grc9_metamorphic_vectors", [])
+    if {row.get("kind") for row in metamorphic} != {
+        "source_edge_input_order_permutation",
+        "cyclic_chart_rotation",
+        "reflection_chirality_conjugacy",
+    }:
+        raise RuntimeError("GRC9 metamorphic vector roster drift")
+    for row in metamorphic:
+        if row["expected"].get("normalized_port_plan_equal") is not True:
+            raise RuntimeError(f"{row['vector_id']}: covariance assertion absent")
+        if row["kind"] == "source_edge_input_order_permutation":
+            left = row["input"]["source_graph"]
+            right = row["input"]["permuted_source_graph"]
+            if left["live_node_ids"] != right["live_node_ids"] or sorted(
+                left["edges"], key=lambda edge: edge["edge_id"]
+            ) != sorted(right["edges"], key=lambda edge: edge["edge_id"]):
+                raise RuntimeError("source permutation changes graph content")
+        elif row["kind"] == "cyclic_chart_rotation":
+            if (
+                row["expected"]["module_chirality"]
+                != row["input"]["module_chirality"]
+                or row["expected"]["growth_phase"] != 2
+                or set(row["input"]["port_permutation"].values())
+                != set(range(1, 10))
+            ):
+                raise RuntimeError("cyclic covariance vector drift")
+        elif (
+            row["expected"]["module_chirality"]
+            != -row["input"]["module_chirality"]
+            or row["expected"]["growth_phase"] != 3
+            or set(row["input"]["port_permutation"].values())
+            != set(range(1, 10))
+        ):
+            raise RuntimeError("reflection covariance vector drift")
+
     failures = vectors.get("atomic_failure_vectors", [])
-    if len(failures) != 5 or any(
+    if len(failures) != 7 or any(
         row.get("expected", {}).get("prestate_digest")
         != row.get("expected", {}).get("poststate_digest")
         or row.get("expected", {}).get("pre_lifecycle_digest")
@@ -1496,31 +1825,153 @@ def validate_v4_conformance_contracts(profiles: set[str]) -> None:
         for row in failures
     ):
         raise RuntimeError("atomic-failure vector contract drift")
+    expansion_fixture_ids = {row["fixture_id"] for row in expansion_rows}
     for row in failures:
+        request_input = row.get("request_input")
+        if request_input is None or "request_override" in row:
+            raise RuntimeError(f"{row['fixture_id']}: failure input is not self-contained")
+        request_definition = (
+            "step_request_input"
+            if request_input["schema_version"] == "grcv4-step-request-input-v1"
+            else "expansion_event_request_input"
+        )
+        validate_schema(request_definition, request_input)
+        base_vector_id = row.get("base_vector_id")
+        if base_vector_id is not None and base_vector_id not in expansion_fixture_ids:
+            raise RuntimeError(f"{row['fixture_id']}: unknown base vector")
+        if "harness_fault" in row:
+            validate_schema("conformance_harness_fault", row["harness_fault"])
+            if "harness_fault" in request_input:
+                raise RuntimeError("harness fault leaked into production request")
+        if row["fixture_id"] == "G9-FAIL-SOURCE-SELF-LOOP":
+            source_fixture = row.get("source_graph_fixture")
+            state_fixture = row.get("source_state_fixture")
+            validate_schema("port_graph_payload", source_fixture)
+            validate_schema("scientific_state_payload", state_fixture)
+            if not any(
+                edge["tail"]["node_id"] == edge["head"]["node_id"]
+                for edge in source_fixture["edges"]
+            ):
+                raise RuntimeError("self-loop failure has no self-loop fixture")
+            if request_input["source_graph_digest"] != (
+                "grc-graph-sha256:"
+                + sha256_bytes(jcs_common_subset_bytes(source_fixture))
+            ):
+                raise RuntimeError("self-loop source graph digest drift")
+            if (
+                state_fixture["graph_digest"] != request_input["source_graph_digest"]
+                or request_input["source_state_digest"]
+                != (
+                    "grcv4-state-sha256:"
+                    + sha256_bytes(jcs_common_subset_bytes(state_fixture))
+                )
+            ):
+                raise RuntimeError("self-loop source state/graph identity drift")
         receipt = row["expected"]["failure_receipt"]
         validate_schema("failure_receipt", receipt)
         failure_payload = receipt["identity_payload"]
-        canonical_failure = json.dumps(
-            failure_payload,
-            sort_keys=True,
-            separators=(",", ":"),
-            ensure_ascii=False,
-            allow_nan=False,
-        ).encode("utf-8")
+        canonical_failure = jcs_common_subset_bytes(failure_payload)
         if receipt["receipt_id"] != (
             f"grc-receipt-sha256:{sha256_bytes(canonical_failure)}"
         ):
             raise RuntimeError(f"{row['fixture_id']}: failure receipt identity drift")
-    if len(vectors.get("migration_policy_matrix", [])) != 7:
+    step_results = vectors.get("step_result_vectors", [])
+    if len(step_results) != 2:
+        raise RuntimeError("step-result disposition vectors incomplete")
+    for row in step_results:
+        result = row["result"]
+        validate_schema("step_result", result)
+        if (
+            result["operation_disposition"] != "rejected"
+            or result["committed"] is not False
+            or result["commit_id"] is not None
+            or result["failure"] is None
+        ):
+            raise RuntimeError(f"{row['fixture_id']}: rejected-result invariant drift")
+    pre_solver, post_solver = step_results
+    if pre_solver["result"]["solver_disposition"] is not None or (
+        post_solver["result"]["solver_disposition"] != "valid_root"
+    ):
+        raise RuntimeError("operation/solver disposition separation drift")
+
+    migration_matrix = vectors.get("migration_policy_matrix", [])
+    if len(migration_matrix) != 7 or any(
+        set(row) != {"class", "candidate", "carrier"} for row in migration_matrix
+    ):
         raise RuntimeError("migration policy matrix is incomplete")
+
+    semantic = vectors.get("semantic_admission", {})
+    if (
+        semantic.get("validator_id") != "grcv4-contract-semantic-admission-v1"
+        or semantic.get("json_schema_validity_is_necessary_not_sufficient")
+        is not True
+    ):
+        raise RuntimeError("semantic-admission contract missing")
+    semantic_rows = semantic.get("negative_vectors", [])
+    expected_invariants = {
+        "profile_fields_agree",
+        "resource_distribution_unit_sum",
+        "growth_phase_matches_remainder",
+        "target_W_C_tr_matches_live_edges",
+        "identity_payload_matches_resolved_parameters",
+        "history_channel_subjects_agree",
+        "resource_transform_dimensions",
+    }
+    if {row.get("invariant") for row in semantic_rows} != expected_invariants:
+        raise RuntimeError("semantic-admission negative-vector roster drift")
+    for row in semantic_rows:
+        validate_schema("semantic_admission_test_case", row)
+        invariant = row["invariant"]
+        payload = row["input"]
+        rejected = False
+        if invariant == "profile_fields_agree":
+            family = payload["profile_family_id"]
+            candidate, realization = family.split("_", 1)
+            realization = realization.replace("CI_PC", "CI+PC")
+            rejected = payload["candidate"] != candidate or (
+                payload["realization"] != realization
+            )
+        elif invariant == "resource_distribution_unit_sum":
+            rejected = not math.isclose(
+                sum(payload["resource_distribution"]), 1.0, abs_tol=0.0
+            )
+        elif invariant == "resource_transform_dimensions":
+            rejected = len(payload["row_major_coefficients"]) != (
+                len(payload["source_vertex_ids"])
+                * len(payload["target_vertex_ids"])
+            ) or len(payload["target_increment"]) != len(payload["target_vertex_ids"])
+        elif invariant == "growth_phase_matches_remainder":
+            node_count = max(4, math.ceil((payload["target_effective_degree"] - 2) / 7))
+            remainder = (node_count - 4) % 3
+            rejected = (remainder == 0 and payload["growth_phase"] is not None) or (
+                remainder != 0 and payload["growth_phase"] is None
+            )
+        elif invariant == "target_W_C_tr_matches_live_edges":
+            graph_edges = {edge["edge_id"] for edge in payload["target_graph"]["edges"]}
+            rejected = graph_edges != set(payload["target_W_C_tr"])
+        elif invariant == "identity_payload_matches_resolved_parameters":
+            params_id = (
+                "grcv4-params-sha256:"
+                + sha256_bytes(jcs_common_subset_bytes(payload["resolved_params"]))
+            )
+            rejected = payload["profile_identity"]["params_hash"] != params_id
+        elif invariant == "history_channel_subjects_agree":
+            rejected = payload["candidate"]["subject"] != "candidate" or (
+                payload["carrier"]["subject"] != "carrier"
+            )
+        if not rejected or row["expected"]["admitted"] is not False:
+            raise RuntimeError(f"{row['vector_id']}: semantic rejection not reproduced")
+
     required_holds = {
         "candidate_a_numeric_vectors",
+        "candidate_a_GRC9V4_expansion_vectors",
         "per_realization_step_vectors",
         "RG2b_vectors",
         "child_stabilization_vectors",
         "disabled_GRC9V3_delegate_vectors",
         "lifecycle_snapshot_reset_migration_vectors",
         "generic_mapped_topology_vectors",
+        "deep_recursive_expansion_and_covariance_runtime",
         "charge_precision_edge_vectors",
         "deep_immutability_runtime_tests",
         "runtime_execution_receipts",
@@ -1531,10 +1982,31 @@ def validate_v4_conformance_contracts(profiles: set[str]) -> None:
     validate_schema_batches()
 
     release = json.loads(RELEASE_MANIFEST.read_text(encoding="utf-8"))
-    if release.get("schema") != "grcv4_specification_release_manifest_v1":
+    if release.get("schema") != "grcv4_specification_release_manifest_v2":
         raise RuntimeError("unexpected specification release schema")
     if release.get("status") != "normative_preimplementation_release":
         raise RuntimeError("specification release overstates implementation status")
+    if release.get("pressure_audit", {}).get("sha256") != (
+        "bb0621b3abe793486711acdd62e718c4415e8c5cbb6bea271580d4abc806e7ae"
+    ):
+        raise RuntimeError("specification release pressure-audit binding drift")
+    expected_audit_bindings = {
+        (
+            "GRCV4-updated-specification-stack-implementation-readiness-audit.md",
+            "32cea1b2752361864b02651cb7d38df85929210adc213aa76ee1307babcb5196",
+        ),
+        (
+            "GRCV4-specification-correction-release-pressure-audit.md",
+            "bb0621b3abe793486711acdd62e718c4415e8c5cbb6bea271580d4abc806e7ae",
+        ),
+    }
+    if {
+        (row["name"], row["sha256"])
+        for row in release["release_identity_payload"].get(
+            "engineering_audit_bindings", []
+        )
+    } != expected_audit_bindings:
+        raise RuntimeError("release identity engineering-audit bindings drift")
     expected_release_artifacts = {
         str(path.relative_to(ROOT))
         for path in (

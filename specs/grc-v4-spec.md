@@ -216,13 +216,32 @@ class GRCV4Profile:
     complete_profile_id: str
 
 @dataclass(frozen=True, slots=True)
-class GRCV4ProfileTemplate:
+class CandidateAProfileTemplate:
     schema_version: Literal["grcv4-profile-template-v1"]
     source_complete_profile_id: str
-    profile_family_id: ProfileFamilyId
-    topology_dependent_map_policy_id: str
-    geometry_reference_policy_id: str
+    profile_family_id: Literal["A_CI", "A_OS", "A_RG2b", "A_PC", "A_CI_PC"]
+    topology_dependent_map_policy_id: Literal[
+        "initialize_target_W_A_over_complete_live_edge_set_v1"
+    ]
+    geometry_reference_policy_id: Literal[
+        "rebuild_reference_hodge_from_target_candidate_A_reference_v1"
+    ]
     profile_template_id: str
+
+@dataclass(frozen=True, slots=True)
+class CandidateCProfileTemplate:
+    schema_version: Literal["grcv4-profile-template-v1"]
+    source_complete_profile_id: str
+    profile_family_id: Literal["C_CI", "C_OS", "C_RG2b", "C_PC", "C_CI_PC"]
+    topology_dependent_map_policy_id: Literal[
+        "preserve_old_stable_edges_seed_new_internal_edges_v1"
+    ]
+    geometry_reference_policy_id: Literal[
+        "rebuild_reference_hodge_from_target_W_C_tr_v1"
+    ]
+    profile_template_id: str
+
+GRCV4ProfileTemplate = CandidateAProfileTemplate | CandidateCProfileTemplate
 ```
 
 `profile_family_id`, `candidate`, and `realization` must agree exactly. The
@@ -236,18 +255,27 @@ identifier appears inside the payload from which it is computed. JCS and
 I-JSON requirements are inherited from the
 [V4 interface extension](grc-common-interface-v4-ext.md#canonical-identity-and-deep-immutability).
 
-A topology-dependent target such as Candidate C expansion uses a
+A topology-dependent target uses a candidate-discriminated
 `GRCV4ProfileTemplate`, not a prematurely hashed complete profile. The
 template ID excludes itself and binds the admitted source complete profile,
 target family, exact map-construction policy, and exact reference-geometry
-rebuild policy. All topology-independent values are copied from the identified
-source payload. After the event ID creates stable target edge IDs, the map
-policy constructs the complete target $W_{C,\mathrm{tr}}$ map and the geometry
-policy rebuilds the reference Hodge digest from that map; only then are
-`params_hash` and `complete_profile_id` computed. No other source parameter may
-change. The event ID binds the template, while the commit and topology receipt
-bind the resulting complete target profile. This ordering removes any
+rebuild policy. A Candidate C template constructs the complete target
+$W_{C,\mathrm{tr}}$ and rebuilds its reference Hodge from that map. A Candidate
+A template instead constructs a complete positive target $W_A$ through its
+admitted initializer/history policy and rebuilds geometry from the target
+Candidate A reference; it never names $W_{C,\mathrm{tr}}$. All
+topology-independent values are copied from the identified source payload.
+Only after the event ID creates stable target edge IDs are `params_hash` and
+`complete_profile_id` computed. No other source parameter may change. The
+event ID binds the template, while the commit and topology receipt bind the
+resulting complete target profile. This ordering removes any
 event-ID/profile-ID cycle.
+
+The release contains canonical identities for both template candidates. Its
+current concrete GRC9V4 expansion oracle is deliberately C-family only;
+Candidate A expansion is not advertised until a complete A target vector is
+added. Template constructibility does not by itself establish runtime or
+profile-population conformance.
 
 A different composition gain, writer, geometry map, Candidate C transport
 law, selector policy, solver, units, normalization, or lifecycle rule
@@ -1496,12 +1524,38 @@ Q_{\mathrm{target}}^+
 =Q_{\mathrm{target}}^-+\Delta Q_{\mathrm{event}}.
 $$
 
+The public graph-generic event surface represents this as the affine
+`ResolvedResourceEventTransform` tuple $(T_{C,\mathrm{evt}},\Delta C)$; a
+linear-only map is not a representation of the general accepted equation. Its
+versioned resource-transform digest and the target graph/profile digests enter
+`GRCV4MappedTopologyEventIdentityPayload`, giving
+
+```text
+event_id = "grc-event-sha256:" + SHA256(JCS(mapped_event_identity_payload)).
+```
+
+`operation_id` and nonauthoritative metadata do not enter that identity. The
+release includes a canonical nonzero-increment mapped-event vector with exact
+$\Delta Q$ and target-`Q_target` accounting; runtime mapped-event conformance
+remains held until an implementation executes the lifecycle case.
+
 The same event policy must transform current and reset resource state,
 Candidate A edge history, persistent $K_4$ history, graph/context/profile
 identity, and receipts. Candidate C surfaces are rederived. Persistent history
 may cross only through a typed bounded covariant $L_{K4,\mathrm{evt}}$;
 otherwise it is archived/dropped and target $Z_4$ is canonically zeroed with a
 loss receipt. Untyped array resizing is not an event.
+
+Candidate and persistent-carrier histories are distinct channels in every
+migration and event request and receipt. Each channel independently records
+its subject, disposition, source digest, target initializer or target digest,
+and information loss. A profile without a channel records `not_applicable`;
+it never reports a reset or loss that did not occur. Thus an `A_PC` event may
+transport $W_A$ exactly while resetting $Z_{4,A}$ with carrier loss. Conversely,
+the concrete `C_OS` expansion vectors rederive Candidate C surfaces and record
+carrier `not_applicable`, while the separate `C_PC` vector starts with nonnull
+$Z_4$, resets the complete target carrier to zero, and records
+`carrier_history_loss`.
 
 Every migration or event receipt must bind the ordered source/target graph,
 context, and complete-profile identities; current/reset maps; charge-target
@@ -1615,6 +1669,14 @@ from its own payload. It then verifies the final
 exact schemas and cross-language canonical bytes are
 normative release artifacts.
 
+The same rule applies to every load-bearing subdigest. Authoritative-state,
+$W_{C,\mathrm{tr}}$, affine resource-transform, candidate-history policy,
+carrier-history policy, combined history bundle, history content, GRC9
+expansion policy, $K_4$, and reference-Hodge digests each have a versioned
+wrapper in the contract schema and a canonical preimage vector. No conforming
+implementation may infer a wrapper by reading the builder source or hash the
+unwrapped content by convention.
+
 Restoration must validate the entire payload before exposing target state. It
 must not silently rebase charge, create history, promote caches, or substitute
 a different profile. Canonical serialization does not imply byte identity
@@ -1639,6 +1701,31 @@ The implementation must raise or return an explicit typed failure for:
 - incompatible or unreconstructible snapshot identity.
 
 Every such failure leaves the complete authoritative prestate unchanged.
+
+Input decoding has two explicit layers. Malformed JSON or a payload that does
+not satisfy the permissive `grcv4-step-request-input-v1` or
+`grc9v4-expansion-event-request-input-v1` wire schema fails before operation
+construction. A shape-valid input with an invalid scientific value reaches
+`grcv4-contract-semantic-admission-v1` and returns the named atomic failure;
+only then may a strict admitted request be constructed. Harness-only fault
+injection has its own schema, is excluded from production APIs and identities,
+and names the injection stage.
+
+JSON Schema validity is necessary, not sufficient, for scientific admission.
+The semantic validator checks at least exact profile/candidate/realization
+agreement, unit-sum GRC9 resource distribution, affine-transform dimensions,
+phase/remainder agreement,
+target stable-edge-map equality, resolved-parameter identity agreement, and
+candidate/carrier history-channel subjects. The concrete bundle contains a
+negative vector for each invariant.
+
+Operation and solver status are orthogonal. `GRCV4StepResult` reports
+`operation_disposition` as `committed | rejected` and
+`solver_disposition` as a solver value or `None`. A pre-solver rejection has
+no solver disposition; a charge rejection after a valid solve reports
+`solver_disposition = valid_root` while the operation remains rejected. A
+successful commit is equivalent to committed operation disposition, absent
+failure, and a present commit ID.
 
 The machine-readable
 [V4 conformance fixture catalog](grc-v4-conformance-fixtures.json) is normative

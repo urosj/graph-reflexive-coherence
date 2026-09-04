@@ -2944,11 +2944,37 @@ and its
       chirality/phase/deeper-tree vectors and exact rollback cases.
 - [x] Add a content-addressed release manifest that packages exact controlling
       source bytes independently of historical commit reachability.
+- [x] Bind the release-pressure audit by exact SHA as a second engineering
+      correction input without changing scientific authority.
+- [x] Split versioned wire/test inputs from strict admitted step and expansion
+      requests; make harness faults typed, nonproduction, and identity-excluded.
+- [x] Replace the overloaded step-result disposition with operation disposition
+      and nullable solver disposition, including pre- and post-solver failures.
+- [x] Add canonical generic mapped-event identity and an affine resource-event
+      transform with explicit nonzero increment and charge-target accounting.
+- [x] Replace scalar history policy/receipt status with independent Candidate
+      and persistent-carrier channels throughout migration and event surfaces.
+- [x] Split Candidate A and Candidate C profile-template schemas and explicitly
+      withhold Candidate A GRC9V4 expansion pending a concrete A target vector.
+- [x] Correct all `C_OS` expansion receipts to report carrier
+      `not_applicable` and no carrier loss; add a nonnull-`Z_4` `C_PC`
+      whole-carrier reset/loss vector.
+- [x] Publish versioned schemas and canonical vectors for authoritative-state,
+      `W_C_tr`, affine-resource, history-policy/bundle/content, expansion-policy,
+      `K_4`, and reference-Hodge subdigests.
+- [x] Add six $D_{\mathrm{eff}}=52$ second-depth BFS vectors and explicit input
+      permutation, cyclic rotation, and reflection/chirality metamorphic cases.
+- [x] Add `grcv4-contract-semantic-admission-v1` and negative vectors for every
+      enumerated cross-field, arithmetic, set, identity, and channel invariant.
+- [x] Clarify enabled-only partial versus full GRC9V4 conformance.
+- [x] Regenerate and verify the corrected schema, vectors, release identity,
+      detached checksum, rendering, and normal phase-aware tool path.
 - [ ] Supply per-profile step vectors, Candidate A numeric vectors, RG2b
       evaluator/certificate vectors, child-stabilization vectors, 40 exact
-      disabled-delegate vectors, lifecycle/migration and generic mapped-event
-      vectors, charge-edge vectors, deep-immutability tests, and runtime
-      receipts before advertising those capabilities as conformant.
+      disabled-delegate vectors, lifecycle/migration runtime vectors, generic
+      mapped-event runtime execution, charge-edge vectors, deep-immutability
+      tests, Candidate A GRC9V4 target vectors, and runtime receipts before
+      advertising those capabilities as conformant.
 - [ ] Open implementation only under a later hash-bound implementation
   authority.
 

@@ -1,5 +1,5 @@
 {
-  "schema": "grcv4_grc9v4_post_d10_specification_boundary_v7",
+  "schema": "grcv4_grc9v4_post_d10_specification_boundary_v8",
   "authorization_base_commit": "5d80fa9f02010167f652a32127f19c53fa12fc6d",
   "post_d10_entry_state": {
     "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D10_2FullSubstrateProvenanceAndPromotionAudit.json",
@@ -15,10 +15,11 @@
   "phase_authority": {
     "authorization": "GRCV4_GRC9V4_SPECIFICATION_ENGINEERING_CORRECTION",
     "path": "implementation/investigations/grc9v4-constitutive-design/specification/GRCV4SpecificationEngineeringCorrectionGate.json",
-    "sha256": "713be98963866bc726e4b33b37b1f726a069637d0d52ef381708f96f573cd152",
+    "sha256": "57f2e8e634ae362933e94e72f634141e989dc357858940a4e5a4342dfc530f73",
     "assertions": {
       "/status": "accepted_bounded",
       "/audit_input/sha256": "32cea1b2752361864b02651cb7d38df85929210adc213aa76ee1307babcb5196",
+      "/pressure_audit_input/sha256": "bb0621b3abe793486711acdd62e718c4415e8c5cbb6bea271580d4abc806e7ae",
       "/authorization_effect/specification_correction_authorized": true,
       "/authorization_effect/implementation_authorized": false,
       "/authorization_effect/runtime_or_src_tests_change_authorized": false,
@@ -63,7 +64,7 @@
       "exploratory_tool_UX": "frozen_to_accepted_D11_successor_UX"
     },
     "specification_correction": {
-      "activation": "requires_hash_bound_implementation_readiness_audit_and_accepted_D11_specification_release",
+      "activation": "requires_hash_bound_implementation_readiness_and_release_pressure_audits_and_accepted_D11_specification_release",
       "src_and_tests": "frozen_to_authorization_base",
       "specifications": "mutable_only_at_authorized_V4_contract_schema_vector_and_release_outputs",
       "proposal": "frozen_to_accepted_proposal_review",

@@ -79,7 +79,9 @@ state automatically and includes this successor audit when it is active.
   historical G-RC-9 mechanics source used by the V4 stack.
 - `grc-v4-contract-schema.json`
   Closed JSON Schema 2020-12 definitions for identity-bearing parameters,
-  profiles, specialization, state, reset, event, commit, and receipt payloads.
+  candidate-discriminated profiles, pre-admission and admitted requests,
+  affine mapped events, two-channel history, operation/solver results,
+  subdigest preimages, state, reset, event, commit, and receipt payloads.
 - `grc-v4-conformance-fixtures.json`
   Normative preimplementation coverage catalog for D10-plus-D11 generic,
   Candidate C, realization, lifecycle, exact chiral same-port expansion, and
@@ -87,17 +89,20 @@ state automatically and includes this successor audit when it is active.
   oracle and does not claim that a runtime executed it.
 - `grc-v4-conformance-vectors.json`
   Deterministically generated concrete canonicalization, identity, D11-C
-  algebra, GRC9V4 expansion, and rollback vectors plus the migration-policy
-  coverage matrix. Its explicit
+  algebra, generic affine event, GRC9V4 expansion, persistent-carrier,
+  second-depth/covariance, rollback, result-status, subdigest, and semantic
+  admission vectors plus the two-channel migration-policy coverage matrix. Its explicit
   `coverage_holds` prevent absent per-profile, RG2b, child-stabilization, and
   legacy-delegate vectors—and absent lifecycle, generic-event, charge-edge,
   and deep-immutability runtime tests—from being misreported as conformance.
+  Candidate A target-template identity is defined, but Candidate A GRC9V4
+  expansion remains explicitly unadvertised pending its own concrete vector.
 - `grc-v4-specification-release.json` and
   `grc-v4-specification-release.sha256`
   Content-addressed release manifest and detached checksum binding the exact
   specifications, schema, catalog, concrete vectors, registry, and controlling
-  source bytes. The release is a preimplementation contract, not execution
-  evidence.
+  source bytes, plus the exact readiness- and pressure-audit digests. The
+  release is a preimplementation contract, not execution evidence.
 - `grc-9-spec.md`
   Nine-slot mechanical substrate implementation from `papers/2026-04-GRC-9.md`, with single dynamical conductance and shared analytic edge labels.
 - `grc-9-v3-spec.md`

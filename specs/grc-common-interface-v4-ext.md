@@ -150,7 +150,7 @@ the named payload, prefixed exactly as follows:
 |---|---|
 | resolved parameters | `grcv4-params-sha256:<64-hex>` |
 | generic complete profile | `grcv4-profile-sha256:<64-hex>` |
-| topology-independent profile template | `grcv4-profile-template-sha256:<64-hex>` |
+| candidate-discriminated target profile template | `grcv4-profile-template-sha256:<64-hex>` |
 | GRC9V4 specialization parameters | `grc9v4-params-sha256:<64-hex>` |
 | GRC9V4 specialization | `grc9v4-specialization-sha256:<64-hex>` |
 | combined GRC9V4 model | `grc9v4-model-sha256:<64-hex>` |
@@ -161,6 +161,26 @@ the named payload, prefixed exactly as follows:
 | topology event | `grc-event-sha256:<64-hex>` |
 | committed transaction | `grc-commit-sha256:<64-hex>` |
 | lifecycle receipt | `grc-receipt-sha256:<64-hex>` |
+
+Load-bearing referenced content uses the same rule with its own versioned
+preimage rather than an unpublished `{"value": ...}` convention:
+
+| Versioned preimage | Identifier grammar |
+|---|---|
+| `grcv4-authoritative-state-identity-v1` | `grcv4-authoritative-sha256:<64-hex>` |
+| `grcv4-wctr-identity-v1` | `grcv4-wctr-sha256:<64-hex>` |
+| `grcv4-resource-transform-identity-v1` | `grcv4-resource-transform-sha256:<64-hex>` |
+| `grcv4-history-channel-policy-identity-v1` | `grcv4-history-policy-sha256:<64-hex>` |
+| `grcv4-history-bundle-identity-v1` or `grc9v4-expansion-history-identity-v1` | `grcv4-history-map-sha256:<64-hex>` |
+| `grcv4-history-content-identity-v1` | `grcv4-history-content-sha256:<64-hex>` |
+| `grc9v4-expansion-policy-identity-v1` | `grc9v4-expansion-policy-sha256:<64-hex>` |
+| `grcv4-k4-identity-v1` | `grcv4-k4-sha256:<64-hex>` |
+| `grcv4-reference-hodge-identity-v1` | `grcv4-hodge-sha256:<64-hex>` |
+
+The machine schema defines every field in these wrappers, and the concrete
+vector bundle publishes at least one canonical UTF-8 preimage, byte string,
+and expected identifier for each family. Reading the creation script is never
+required to reproduce a normative digest.
 
 The payload records never contain the identifier derived from themselves.
 References to already-derived child identities are allowed and are explicitly
@@ -266,33 +286,52 @@ class GRCV4MigrationPolicy:
     resource_policy_id: Literal["identity_resource_transport_v1"]
     target_readmission_policy_id: Literal["full_target_fail_closed_v1"]
 
-@dataclass(frozen=True)
-class ResolvedHistoryEventPolicy:
-    schema_version: Literal["grcv4-history-event-policy-v1"]
+@dataclass(frozen=True, slots=True)
+class ResolvedHistoryChannelPolicy:
+    schema_version: Literal["grcv4-history-channel-policy-v1"]
+    subject: Literal["candidate", "carrier"]
+    policy_id: str
     disposition: HistoryDisposition
     source_history_digest: str | None
     target_initializer_id: str | None
     information_loss: InformationLossClass
 
-@dataclass(frozen=True)
+@dataclass(frozen=True, slots=True)
+class ResolvedHistoryBundlePolicy:
+    schema_version: Literal["grcv4-history-bundle-policy-v1"]
+    candidate: ResolvedHistoryChannelPolicy
+    carrier: ResolvedHistoryChannelPolicy
+
+@dataclass(frozen=True, slots=True)
 class ResolvedExpansionHistoryPolicy:
-    schema_version: Literal["grc9v4-expansion-history-policy-v1"]
-    candidate_history_policy_id: str
-    carrier_history_policy_id: str
+    schema_version: Literal["grc9v4-expansion-history-policy-v2"]
+    candidate: ResolvedHistoryChannelPolicy
+    carrier: ResolvedHistoryChannelPolicy
     candidate_history_policy_digest: str
     carrier_history_policy_digest: str
 
-@dataclass(frozen=True)
-class ResolvedResourceEventMap:
-    schema_version: Literal["grcv4-resource-event-map-v1"]
+@dataclass(frozen=True, slots=True)
+class ResolvedResourceEventTransform:
+    schema_version: Literal["grcv4-resource-event-transform-v1"]
     policy_id: str
     source_vertex_ids: tuple[NodeId, ...]
     target_vertex_ids: tuple[NodeId, ...]
     row_major_coefficients: tuple[float, ...]
+    target_increment: tuple[float, ...]
 
 @dataclass(frozen=True)
 class GRCV4StepRequest:
     schema_version: Literal["grcv4-step-request-v1"]
+    operation_id: str
+    dt: float
+    context_value: FrozenJSONMap
+    boundary_input: FrozenJSONMap | None = None
+    external_source: FrozenJSONMap | None = None
+
+@dataclass(frozen=True, slots=True)
+class GRCV4StepRequestInput:
+    schema_version: Literal["grcv4-step-request-input-v1"]
+    operation_id: str
     dt: float
     context_value: FrozenJSONMap
     boundary_input: FrozenJSONMap | None = None
@@ -305,7 +344,7 @@ class GRCV4MigrationRequest:
     source_state_digest: str
     target_profile_id: str
     migration_policy: "GRCV4MigrationPolicy"
-    history_policy: "ResolvedHistoryEventPolicy"
+    history_policy: "ResolvedHistoryBundlePolicy"
     target_context_value: FrozenJSONMap
 
 @dataclass(frozen=True)
@@ -316,8 +355,8 @@ class GRCV4MappedTopologyEventRequest:
     source_graph_digest: str
     target_graph: SerializedGraphState
     target_profile_id: str
-    resource_map: "ResolvedResourceEventMap"
-    history_policy: "ResolvedHistoryEventPolicy"
+    resource_transform: "ResolvedResourceEventTransform"
+    history_policy: "ResolvedHistoryBundlePolicy"
     metadata: FrozenJSONMap
 
 @dataclass(frozen=True)
@@ -334,6 +373,24 @@ class GRC9V4ExpansionEventRequest:
     ]
     target_effective_degree: int
     module_chirality: Literal[-1, 1]
+    growth_phase: Literal[1, 2, 3] | None
+    resource_distribution: tuple[float, float, float]
+    history_policy: "ResolvedExpansionHistoryPolicy"
+    expected_event_id: str | None = None
+    expected_target_graph_digest: str | None = None
+
+@dataclass(frozen=True, slots=True)
+class GRC9V4ExpansionEventRequestInput:
+    schema_version: Literal["grc9v4-expansion-event-request-input-v1"]
+    operation_id: str
+    source_state_digest: str
+    source_graph_digest: str
+    source_node_id: NodeId
+    target_profile_template_id: str
+    target_specialization_id: str
+    expansion_policy_id: str
+    target_effective_degree: int
+    module_chirality: Literal[-1, 1] | None
     growth_phase: Literal[1, 2, 3] | None
     resource_distribution: tuple[float, float, float]
     history_policy: "ResolvedExpansionHistoryPolicy"
@@ -359,15 +416,37 @@ def apply_topology_event(
 ) -> "GRCV4LifecycleResult": ...
 ```
 
-`ResolvedResourceEventMap.row_major_coefficients` is the target-by-source
-matrix in the exact listed vertex orders, has length
+`ResolvedResourceEventTransform.row_major_coefficients` is the
+target-by-source matrix in the exact listed vertex orders, has length
 `len(target_vertex_ids) * len(source_vertex_ids)`, contains only nonnegative
-finite binary64 values, and must satisfy the active source/target charge-form
-conservation equation before use. Duplicate vertex IDs, a dimension mismatch,
-or a failed conservation check rejects admission. The mapped graph payload,
-resource map, history policy, and target profile are all identity-bearing even
+finite binary64 values, and is followed by the finite
+`target_increment`, whose length is `len(target_vertex_ids)`. The event applies
+
+$$
+C^+=T_{C,\mathrm{evt}}C^-+\Delta C_{\mathrm{event}},
+$$
+
+then computes rather than assumes
+$\Delta Q=\varpi_+^\top C^+-\varpi_-^\top C^-$ and advances
+`Q_target` by exactly that amount. The linear part alone satisfies the declared
+source/target charge-form transport rule; the increment may be nonzero.
+Duplicate vertex IDs, a dimension mismatch, a nonfinite increment, or failed
+charge accounting rejects admission. The mapped graph payload, affine
+resource transform, two-channel history policy, and target profile are all
+identity-bearing even
 when a Python API passes their immutable record objects rather than serialized
 JSON.
+
+Wire/test input and admitted operation records are distinct. JSON syntax or a
+shape-invalid `*-request-input-v1` payload fails in the decoder or transport
+before a V4 operation exists. A shape-valid input containing a scientifically
+invalid value, such as negative `dt` or null expansion chirality, reaches
+semantic admission and returns a typed `FailureReceipt` without mutation. An
+admitted `GRCV4StepRequest` or `GRC9V4ExpansionEventRequest` always satisfies
+the stricter internal schema (`dt >= 0`, chirality exactly `-1 | +1`). Harness
+fault injection uses the separate
+`grcv4-conformance-harness-fault-v1` schema, is unavailable in production,
+and is excluded from every scientific and event identity.
 
 The current context value and ordinary boundary/external inputs must enter
 through the request. Hidden mutable model fields, private queues, process
@@ -383,6 +462,26 @@ not only identifier strings. `metadata` is nonauthoritative annotation,
 excluded from event and state identity, and may not change construction.
 `expected_event_id` and `expected_target_graph_digest` are
 optional conformance assertions only; they never become target authority.
+
+Generic mapped events have their own noncircular identity:
+
+```python
+@dataclass(frozen=True, slots=True)
+class GRCV4MappedTopologyEventIdentityPayload:
+    schema_version: Literal["grcv4-mapped-topology-event-identity-v1"]
+    source_state_digest: str
+    source_graph_digest: str
+    target_graph_digest: str
+    target_profile_id: str
+    resource_transform_digest: str
+    history_bundle_digest: str
+```
+
+Its event ID is `"grc-event-sha256:" + SHA256(JCS(payload))`. The arbitrary
+`operation_id` and nonauthoritative `metadata` are excluded. The exact affine
+resource-transform and history-bundle digest preimages remain separately
+content-addressed and must be supplied with the request or resolved losslessly
+from the admitted immutable registry.
 
 ## Lifecycle and event extension
 
@@ -450,10 +549,10 @@ SolverDisposition = Literal[
     "valid_root", "domain_failure", "singular", "conditioning_failure",
     "nonfinite", "no_admitted_root", "multiple_admitted_roots",
 ]
-LifecycleDisposition = Literal["committed", "rejected"]
+OperationDisposition = Literal["committed", "rejected"]
 HistoryDisposition = Literal[
     "not_applicable", "exact_transport", "target_initializer",
-    "whole_carrier_map", "whole_carrier_reset", "explicit_loss",
+    "whole_carrier_map", "whole_carrier_reset", "explicit_loss", "rederived",
 ]
 InformationLossClass = Literal[
     "none", "candidate_history_loss", "carrier_history_loss",
@@ -484,12 +583,26 @@ class ReceiptCore:
     target_authoritative_digest: str
     source_reset_digest: str
     target_reset_digest: str
-    resource_map_digest: str
-    history_map_digest: str | None
+    resource_transform_digest: str
+    history_bundle_digest: str
     actual_charge_delta: float
-    information_loss: InformationLossClass
+    information_losses: tuple[InformationLossClass, ...]
     disposition: Literal["committed"]
     parent_receipt_ids: tuple[str, ...]
+
+@dataclass(frozen=True, slots=True)
+class HistoryChannelReceipt:
+    subject: Literal["candidate", "carrier"]
+    disposition: HistoryDisposition
+    source_history_digest: str | None
+    target_history_digest: str | None
+    information_loss: InformationLossClass
+
+@dataclass(frozen=True, slots=True)
+class HistoryBundleReceipt:
+    schema_version: Literal["grcv4-history-bundle-receipt-v1"]
+    candidate: HistoryChannelReceipt
+    carrier: HistoryChannelReceipt
 
 @dataclass(frozen=True, slots=True)
 class StepCommitReceipt:
@@ -513,14 +626,14 @@ class RebaseReceipt:
 class ProfileMigrationReceipt:
     schema_version: Literal["grcv4-profile-migration-receipt-v1"]
     core: ReceiptCore
-    history_disposition: HistoryDisposition
+    history: HistoryBundleReceipt
 
 @dataclass(frozen=True, slots=True)
 class TopologyEventReceipt:
     schema_version: Literal["grcv4-topology-event-receipt-v1"]
     core: ReceiptCore
     event_id: str
-    history_disposition: HistoryDisposition
+    history: HistoryBundleReceipt
 
 @dataclass(frozen=True, slots=True)
 class ChargeReceipt:
@@ -534,7 +647,9 @@ class ChargeReceipt:
 class HistoryDispositionReceipt:
     schema_version: Literal["grcv4-history-disposition-receipt-v1"]
     core: ReceiptCore
+    subject: Literal["candidate", "carrier"]
     history_disposition: HistoryDisposition
+    information_loss: InformationLossClass
 
 @dataclass(frozen=True, slots=True)
 class LegacyCompatibilityReceipt:
@@ -574,7 +689,7 @@ class SuccessfulReceiptEnvelope:
 @dataclass(frozen=True, slots=True)
 class GRCV4Failure:
     stage: OperationStage
-    disposition: SolverDisposition | LifecycleDisposition
+    solver_disposition: SolverDisposition | None
     code: FailureCode
     message: str
     prestate_digest: str
@@ -585,25 +700,52 @@ class GRCV4Failure:
 
 @dataclass(frozen=True, slots=True)
 class GRCV4StepResult:
+    schema_version: Literal["grcv4-step-result-v1"]
     step_index: int
     time: float
     events: tuple[GRCEvent, ...]
     observables: FrozenJSONMap
     active_profile_id: str
     active_model_identity: str
-    disposition: SolverDisposition
+    operation_disposition: OperationDisposition
+    solver_disposition: SolverDisposition | None
     committed: bool
     commit_id: str | None
     failure: GRCV4Failure | None
-    emitted_receipts: tuple[SuccessfulReceiptEnvelope, ...]
+    emitted_receipts: tuple[SuccessfulReceiptEnvelope | FailureReceipt, ...]
 
 @dataclass(frozen=True, slots=True)
 class GRCV4LifecycleResult:
+    operation_disposition: OperationDisposition
     committed: bool
     commit_id: str | None
     failure: GRCV4Failure | None
     emitted_receipts: tuple[SuccessfulReceiptEnvelope | FailureReceipt, ...]
 ```
+
+The operation/solver split is normative:
+
+```text
+committed is true
+  iff operation_disposition is committed
+  and failure is None
+  and commit_id is present
+
+failure before candidate solve
+  -> operation_disposition = rejected
+  -> solver_disposition = None
+
+failure after a valid solve, including charge rejection
+  -> operation_disposition = rejected
+  -> solver_disposition = valid_root
+```
+
+No admission, lifecycle, or receipt failure invents a solver disposition.
+`ReceiptCore.information_losses` is a canonical-order tuple with no duplicate;
+no loss is the empty tuple, never a synthetic `"none"` loss. Candidate and
+carrier outcomes are independently mandatory in every migration/topology
+history bundle. A missing channel is represented by that channel's explicit
+`not_applicable` disposition and null source/target history digests.
 
 Each `LifecycleReceipt` above is the versioned **receipt identity payload**:
 its `schema_version`, `core`, and type-specific fields contain neither

@@ -1,5 +1,5 @@
 {
-  "schema": "grcv4_specification_source_manifest_v2",
+  "schema": "grcv4_specification_source_manifest_v3",
   "status": "normative_source_identity",
   "repository": "https://github.com/urosj/graph-reflexive-coherence.git",
   "audit_input": {
@@ -12,6 +12,12 @@
     "name": "GRCV4-updated-specification-stack-implementation-readiness-audit.md",
     "sha256": "32cea1b2752361864b02651cb7d38df85929210adc213aa76ee1307babcb5196",
     "role": "external_specification_engineering_correction_input",
+    "authority": "implementation_contract_findings_not_scientific_evidence"
+  },
+  "specification_pressure_audit": {
+    "name": "GRCV4-specification-correction-release-pressure-audit.md",
+    "sha256": "bb0621b3abe793486711acdd62e718c4415e8c5cbb6bea271580d4abc806e7ae",
+    "role": "external_specification_pressure_correction_input",
     "authority": "implementation_contract_findings_not_scientific_evidence"
   },
   "release_manifest": "specs/grc-v4-specification-release.json",

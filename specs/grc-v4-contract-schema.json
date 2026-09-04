@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/urosj/graph-reflexive-coherence/specs/grc-v4-contract-schema.json",
   "title": "GRCV4 and GRC9V4 implementation-contract schemas",
-  "schema_version": "grcv4-implementation-contract-schema-v1",
+  "schema_version": "grcv4-implementation-contract-schema-v2",
   "canonicalization": "RFC8785_JCS_over_I_JSON",
   "authority": "implementation_contract_not_scientific_evidence",
   "$defs": {
@@ -92,6 +92,27 @@
       "type": "string",
       "pattern": "^[a-z0-9][a-z0-9-]*-sha256:[0-9a-f]{64}$"
     },
+    "authoritative_content_id": {"type": "string", "pattern": "^grcv4-authoritative-sha256:[0-9a-f]{64}$"},
+    "wctr_content_id": {"type": "string", "pattern": "^grcv4-wctr-sha256:[0-9a-f]{64}$"},
+    "resource_transform_id": {"type": "string", "pattern": "^grcv4-resource-transform-sha256:[0-9a-f]{64}$"},
+    "history_policy_id": {"type": "string", "pattern": "^grcv4-history-policy-sha256:[0-9a-f]{64}$"},
+    "history_bundle_id": {"type": "string", "pattern": "^grcv4-history-map-sha256:[0-9a-f]{64}$"},
+    "history_content_id": {"type": "string", "pattern": "^grcv4-history-content-sha256:[0-9a-f]{64}$"},
+    "expansion_policy_id": {"type": "string", "pattern": "^grc9v4-expansion-policy-sha256:[0-9a-f]{64}$"},
+    "k4_content_id": {"type": "string", "pattern": "^grcv4-k4-sha256:[0-9a-f]{64}$"},
+    "hodge_content_id": {"type": "string", "pattern": "^grcv4-hodge-sha256:[0-9a-f]{64}$"},
+    "history_disposition": {
+      "enum": ["not_applicable", "exact_transport", "target_initializer", "whole_carrier_map", "whole_carrier_reset", "explicit_loss", "rederived"]
+    },
+    "information_loss_class": {
+      "enum": ["candidate_history_loss", "carrier_history_loss", "v4_surface_projection", "whole_state_delegate_crossing"]
+    },
+    "solver_disposition": {
+      "enum": ["valid_root", "domain_failure", "singular", "conditioning_failure", "nonfinite", "no_admitted_root", "multiple_admitted_roots"]
+    },
+    "operation_disposition": {
+      "enum": ["committed", "rejected"]
+    },
     "model_id": {
       "oneOf": [
         {"$ref": "#/$defs/grcv4_profile_id"},
@@ -100,11 +121,25 @@
     },
     "step_request": {
       "type": "object",
-      "required": ["schema_version", "dt", "context_value", "boundary_input", "external_source"],
+      "required": ["schema_version", "operation_id", "dt", "context_value", "boundary_input", "external_source"],
       "additionalProperties": false,
       "properties": {
         "schema_version": {"const": "grcv4-step-request-v1"},
+        "operation_id": {"type": "string", "minLength": 1},
         "dt": {"$ref": "#/$defs/nonnegative_number"},
+        "context_value": {"type": "object"},
+        "boundary_input": {"type": ["object", "null"]},
+        "external_source": {"type": ["object", "null"]}
+      }
+    },
+    "step_request_input": {
+      "type": "object",
+      "required": ["schema_version", "operation_id", "dt", "context_value", "boundary_input", "external_source"],
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {"const": "grcv4-step-request-input-v1"},
+        "operation_id": {"type": "string", "minLength": 1},
+        "dt": {"$ref": "#/$defs/finite_number"},
         "context_value": {"type": "object"},
         "boundary_input": {"type": ["object", "null"]},
         "external_source": {"type": ["object", "null"]}
@@ -121,28 +156,61 @@
         "target_readmission_policy_id": {"const": "full_target_fail_closed_v1"}
       }
     },
-    "history_event_policy": {
+    "history_channel_policy": {
       "type": "object",
-      "required": ["schema_version", "disposition", "source_history_digest", "target_initializer_id", "information_loss"],
+      "required": ["schema_version", "subject", "policy_id", "disposition", "source_history_digest", "target_initializer_id", "information_loss"],
       "additionalProperties": false,
       "properties": {
-        "schema_version": {"const": "grcv4-history-event-policy-v1"},
-        "disposition": {"enum": ["not_applicable", "exact_transport", "target_initializer", "whole_carrier_map", "whole_carrier_reset", "explicit_loss"]},
-        "source_history_digest": {"oneOf": [{"$ref": "#/$defs/digest_reference"}, {"type": "null"}]},
+        "schema_version": {"const": "grcv4-history-channel-policy-v1"},
+        "subject": {"enum": ["candidate", "carrier"]},
+        "policy_id": {"type": "string", "minLength": 1},
+        "disposition": {"$ref": "#/$defs/history_disposition"},
+        "source_history_digest": {"oneOf": [{"$ref": "#/$defs/history_content_id"}, {"type": "null"}]},
         "target_initializer_id": {"type": ["string", "null"]},
-        "information_loss": {"enum": ["none", "candidate_history_loss", "carrier_history_loss", "v4_surface_projection", "whole_state_delegate_crossing"]}
-      }
+        "information_loss": {"enum": ["none", "candidate_history_loss", "carrier_history_loss"]}
+      },
+      "allOf": [
+        {
+          "if": {"properties": {"subject": {"const": "candidate"}}},
+          "then": {"properties": {"information_loss": {"enum": ["none", "candidate_history_loss"]}}}
+        },
+        {
+          "if": {"properties": {"subject": {"const": "carrier"}}},
+          "then": {"properties": {"information_loss": {"enum": ["none", "carrier_history_loss"]}}}
+        },
+        {
+          "if": {"properties": {"disposition": {"const": "not_applicable"}}},
+          "then": {"properties": {"source_history_digest": {"type": "null"}, "target_initializer_id": {"type": "null"}, "information_loss": {"const": "none"}}}
+        }
+      ]
     },
-    "resource_event_map": {
+    "history_bundle_policy": {
       "type": "object",
-      "required": ["schema_version", "policy_id", "source_vertex_ids", "target_vertex_ids", "row_major_coefficients"],
+      "required": ["schema_version", "candidate", "carrier"],
       "additionalProperties": false,
       "properties": {
-        "schema_version": {"const": "grcv4-resource-event-map-v1"},
+        "schema_version": {"const": "grcv4-history-bundle-policy-v1"},
+        "candidate": {"$ref": "#/$defs/history_channel_policy"},
+        "carrier": {"$ref": "#/$defs/history_channel_policy"}
+      },
+      "allOf": [{
+        "properties": {
+          "candidate": {"properties": {"subject": {"const": "candidate"}}},
+          "carrier": {"properties": {"subject": {"const": "carrier"}}}
+        }
+      }]
+    },
+    "resource_event_transform": {
+      "type": "object",
+      "required": ["schema_version", "policy_id", "source_vertex_ids", "target_vertex_ids", "row_major_coefficients", "target_increment"],
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {"const": "grcv4-resource-event-transform-v1"},
         "policy_id": {"type": "string", "minLength": 1},
         "source_vertex_ids": {"type": "array", "items": {"type": ["string", "integer"]}},
         "target_vertex_ids": {"type": "array", "items": {"type": ["string", "integer"]}},
-        "row_major_coefficients": {"type": "array", "items": {"$ref": "#/$defs/nonnegative_number"}}
+        "row_major_coefficients": {"type": "array", "items": {"$ref": "#/$defs/nonnegative_number"}},
+        "target_increment": {"type": "array", "items": {"$ref": "#/$defs/finite_number"}}
       }
     },
     "serialized_graph_payload": {
@@ -177,13 +245,13 @@
         "source_state_digest": {"$ref": "#/$defs/state_id"},
         "target_profile_id": {"$ref": "#/$defs/grcv4_profile_id"},
         "migration_policy": {"$ref": "#/$defs/migration_policy"},
-        "history_policy": {"$ref": "#/$defs/history_event_policy"},
+        "history_policy": {"$ref": "#/$defs/history_bundle_policy"},
         "target_context_value": {"type": "object"}
       }
     },
     "mapped_topology_event_request": {
       "type": "object",
-      "required": ["schema_version", "operation_id", "source_state_digest", "source_graph_digest", "target_graph", "target_profile_id", "resource_map", "history_policy", "metadata"],
+      "required": ["schema_version", "operation_id", "source_state_digest", "source_graph_digest", "target_graph", "target_profile_id", "resource_transform", "history_policy", "metadata"],
       "additionalProperties": false,
       "properties": {
         "schema_version": {"const": "grcv4-mapped-topology-event-request-v1"},
@@ -192,9 +260,23 @@
         "source_graph_digest": {"$ref": "#/$defs/graph_id"},
         "target_graph": {"$ref": "#/$defs/serialized_graph_payload"},
         "target_profile_id": {"$ref": "#/$defs/grcv4_profile_id"},
-        "resource_map": {"$ref": "#/$defs/resource_event_map"},
-        "history_policy": {"$ref": "#/$defs/history_event_policy"},
+        "resource_transform": {"$ref": "#/$defs/resource_event_transform"},
+        "history_policy": {"$ref": "#/$defs/history_bundle_policy"},
         "metadata": {"type": "object"}
+      }
+    },
+    "mapped_topology_event_identity_payload": {
+      "type": "object",
+      "required": ["schema_version", "source_state_digest", "source_graph_digest", "target_graph_digest", "target_profile_id", "resource_transform_digest", "history_bundle_digest"],
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {"const": "grcv4-mapped-topology-event-identity-v1"},
+        "source_state_digest": {"$ref": "#/$defs/state_id"},
+        "source_graph_digest": {"$ref": "#/$defs/graph_id"},
+        "target_graph_digest": {"$ref": "#/$defs/graph_id"},
+        "target_profile_id": {"$ref": "#/$defs/grcv4_profile_id"},
+        "resource_transform_digest": {"$ref": "#/$defs/resource_transform_id"},
+        "history_bundle_digest": {"$ref": "#/$defs/history_bundle_id"}
       }
     },
     "common_params": {
@@ -272,7 +354,7 @@
           "propertyNames": {"minLength": 1},
           "additionalProperties": {"$ref": "#/$defs/positive_number"}
         },
-        "W_C_tr_content_digest": {"$ref": "#/$defs/digest_reference"},
+        "W_C_tr_content_digest": {"$ref": "#/$defs/wctr_content_id"},
         "potential_evaluator_id": {"type": "string", "minLength": 1},
         "tau_C": {"$ref": "#/$defs/nonnegative_number"},
         "chi_C": {"$ref": "#/$defs/finite_number"},
@@ -292,8 +374,8 @@
       "additionalProperties": false,
       "properties": {
         "schema_version": {"const": "grcv4-geometry-profile-params-v1"},
-        "K4_base_digest": {"$ref": "#/$defs/digest_reference"},
-        "reference_hodge_digest": {"$ref": "#/$defs/digest_reference"},
+        "K4_base_digest": {"$ref": "#/$defs/k4_content_id"},
+        "reference_hodge_digest": {"$ref": "#/$defs/hodge_content_id"},
         "star_cover_id": {"type": "string", "minLength": 1},
         "overlap_normalization_id": {"type": "string", "minLength": 1},
         "candidate_adapter_id": {"type": "string", "minLength": 1},
@@ -479,19 +561,49 @@
         "candidate_c_transport_id": {"enum": [null, "C-HM-STIFFNESS-BASELINE-v1"]},
         "composition_gain": {"type": ["number", "null"]},
         "params_hash": {"$ref": "#/$defs/grcv4_params_id"}
-      }
+      },
+      "oneOf": [
+        {"properties": {"profile_family_id": {"const": "A_CI"}, "candidate": {"const": "A"}, "realization": {"const": "CI"}, "candidate_c_transport_id": {"const": null}, "composition_gain": {"const": null}}},
+        {"properties": {"profile_family_id": {"const": "C_CI"}, "candidate": {"const": "C"}, "realization": {"const": "CI"}, "candidate_c_transport_id": {"const": "C-HM-STIFFNESS-BASELINE-v1"}, "composition_gain": {"const": null}}},
+        {"properties": {"profile_family_id": {"const": "A_OS"}, "candidate": {"const": "A"}, "realization": {"const": "OS"}, "candidate_c_transport_id": {"const": null}, "composition_gain": {"const": null}}},
+        {"properties": {"profile_family_id": {"const": "C_OS"}, "candidate": {"const": "C"}, "realization": {"const": "OS"}, "candidate_c_transport_id": {"const": "C-HM-STIFFNESS-BASELINE-v1"}, "composition_gain": {"const": null}}},
+        {"properties": {"profile_family_id": {"const": "A_RG2b"}, "candidate": {"const": "A"}, "realization": {"const": "RG2b"}, "candidate_c_transport_id": {"const": null}, "composition_gain": {"const": null}}},
+        {"properties": {"profile_family_id": {"const": "C_RG2b"}, "candidate": {"const": "C"}, "realization": {"const": "RG2b"}, "candidate_c_transport_id": {"const": "C-HM-STIFFNESS-BASELINE-v1"}, "composition_gain": {"const": null}}},
+        {"properties": {"profile_family_id": {"const": "A_PC"}, "candidate": {"const": "A"}, "realization": {"const": "PC"}, "candidate_c_transport_id": {"const": null}, "composition_gain": {"const": null}}},
+        {"properties": {"profile_family_id": {"const": "C_PC"}, "candidate": {"const": "C"}, "realization": {"const": "PC"}, "candidate_c_transport_id": {"const": "C-HM-STIFFNESS-BASELINE-v1"}, "composition_gain": {"const": null}}},
+        {"properties": {"profile_family_id": {"const": "A_CI_PC"}, "candidate": {"const": "A"}, "realization": {"const": "CI+PC"}, "candidate_c_transport_id": {"const": null}, "composition_gain": {"const": 2}}},
+        {"properties": {"profile_family_id": {"const": "C_CI_PC"}, "candidate": {"const": "C"}, "realization": {"const": "CI+PC"}, "candidate_c_transport_id": {"const": "C-HM-STIFFNESS-BASELINE-v1"}, "composition_gain": {"const": 2}}}
+      ]
     },
-    "profile_template_payload": {
+    "candidate_a_profile_template_payload": {
       "type": "object",
       "required": ["schema_version", "source_complete_profile_id", "profile_family_id", "topology_dependent_map_policy_id", "geometry_reference_policy_id"],
       "additionalProperties": false,
       "properties": {
         "schema_version": {"const": "grcv4-profile-template-v1"},
         "source_complete_profile_id": {"$ref": "#/$defs/grcv4_profile_id"},
-        "profile_family_id": {"enum": ["A_CI", "C_CI", "A_OS", "C_OS", "A_RG2b", "C_RG2b", "A_PC", "C_PC", "A_CI_PC", "C_CI_PC"]},
+        "profile_family_id": {"enum": ["A_CI", "A_OS", "A_RG2b", "A_PC", "A_CI_PC"]},
+        "topology_dependent_map_policy_id": {"const": "initialize_target_W_A_over_complete_live_edge_set_v1"},
+        "geometry_reference_policy_id": {"const": "rebuild_reference_hodge_from_target_candidate_A_reference_v1"}
+      }
+    },
+    "candidate_c_profile_template_payload": {
+      "type": "object",
+      "required": ["schema_version", "source_complete_profile_id", "profile_family_id", "topology_dependent_map_policy_id", "geometry_reference_policy_id"],
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {"const": "grcv4-profile-template-v1"},
+        "source_complete_profile_id": {"$ref": "#/$defs/grcv4_profile_id"},
+        "profile_family_id": {"enum": ["C_CI", "C_OS", "C_RG2b", "C_PC", "C_CI_PC"]},
         "topology_dependent_map_policy_id": {"const": "preserve_old_stable_edges_seed_new_internal_edges_v1"},
         "geometry_reference_policy_id": {"const": "rebuild_reference_hodge_from_target_W_C_tr_v1"}
       }
+    },
+    "profile_template_payload": {
+      "oneOf": [
+        {"$ref": "#/$defs/candidate_a_profile_template_payload"},
+        {"$ref": "#/$defs/candidate_c_profile_template_payload"}
+      ]
     },
     "row_weight_policy": {
       "type": "object",
@@ -675,6 +787,107 @@
         "Z_4": {"oneOf": [{"type": "array", "items": {"$ref": "#/$defs/finite_number"}}, {"type": "null"}]}
       }
     },
+    "authoritative_state_identity_payload": {
+      "type": "object",
+      "required": ["schema_version", "authoritative"],
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {"const": "grcv4-authoritative-state-identity-v1"},
+        "authoritative": {"$ref": "#/$defs/authoritative_state"}
+      }
+    },
+    "wctr_identity_payload": {
+      "type": "object",
+      "required": ["schema_version", "W_C_tr"],
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {"const": "grcv4-wctr-identity-v1"},
+        "W_C_tr": {
+          "type": "object",
+          "minProperties": 1,
+          "propertyNames": {"minLength": 1},
+          "additionalProperties": {"$ref": "#/$defs/positive_number"}
+        }
+      }
+    },
+    "resource_transform_identity_payload": {
+      "type": "object",
+      "required": ["schema_version", "transform"],
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {"const": "grcv4-resource-transform-identity-v1"},
+        "transform": {"$ref": "#/$defs/resource_event_transform"}
+      }
+    },
+    "history_channel_policy_identity_payload": {
+      "type": "object",
+      "required": ["schema_version", "policy"],
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {"const": "grcv4-history-channel-policy-identity-v1"},
+        "policy": {"$ref": "#/$defs/history_channel_policy"}
+      }
+    },
+    "history_bundle_identity_payload": {
+      "type": "object",
+      "required": ["schema_version", "history_bundle"],
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {"const": "grcv4-history-bundle-identity-v1"},
+        "history_bundle": {"$ref": "#/$defs/history_bundle_policy"}
+      }
+    },
+    "history_content_identity_payload": {
+      "type": "object",
+      "required": ["schema_version", "subject", "content"],
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {"const": "grcv4-history-content-identity-v1"},
+        "subject": {"enum": ["candidate", "carrier"]},
+        "content": {"type": "array", "items": {"$ref": "#/$defs/finite_number"}}
+      }
+    },
+    "expansion_history_identity_payload": {
+      "type": "object",
+      "required": ["schema_version", "history_policy"],
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {"const": "grc9v4-expansion-history-identity-v1"},
+        "history_policy": {"$ref": "#/$defs/expansion_history_policy"}
+      }
+    },
+    "expansion_policy_identity_payload": {
+      "type": "object",
+      "required": ["schema_version", "policy"],
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {"const": "grc9v4-expansion-policy-identity-v1"},
+        "policy": {"$ref": "#/$defs/expansion_policy"}
+      }
+    },
+    "k4_identity_payload": {
+      "type": "object",
+      "required": ["schema_version", "K4_base"],
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {"const": "grcv4-k4-identity-v1"},
+        "K4_base": {"type": "array", "items": {"type": "array", "items": {"$ref": "#/$defs/finite_number"}}}
+      }
+    },
+    "reference_hodge_identity_payload": {
+      "type": "object",
+      "required": ["schema_version", "edge_weights"],
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {"const": "grcv4-reference-hodge-identity-v1"},
+        "edge_weights": {
+          "type": "object",
+          "minProperties": 1,
+          "propertyNames": {"minLength": 1},
+          "additionalProperties": {"$ref": "#/$defs/positive_number"}
+        }
+      }
+    },
     "grcv4_reset_payload": {
       "type": "object",
       "required": ["schema_version", "active_model_identity", "graph_digest", "orientation_identity", "authoritative", "Q_target", "context_contract_id"],
@@ -732,7 +945,7 @@
         "module_chirality": {"enum": [-1, 1]},
         "growth_phase": {"enum": [null, 1, 2, 3]},
         "expansion_policy_id": {"const": "grc9v4_axis_preserving_chiral_same_port_expansion_v1"},
-        "expansion_policy_digest": {"$ref": "#/$defs/digest_reference"},
+        "expansion_policy_digest": {"$ref": "#/$defs/expansion_policy_id"},
         "bond_seed": {"$ref": "#/$defs/positive_number"},
         "resource_distribution": {
           "type": "array",
@@ -741,8 +954,8 @@
           "minItems": 3,
           "maxItems": 3
         },
-        "candidate_history_policy_digest": {"$ref": "#/$defs/digest_reference"},
-        "carrier_history_policy_digest": {"$ref": "#/$defs/digest_reference"}
+        "candidate_history_policy_digest": {"$ref": "#/$defs/history_policy_id"},
+        "carrier_history_policy_digest": {"$ref": "#/$defs/history_policy_id"}
       }
     },
     "expansion_event_request": {
@@ -779,21 +992,71 @@
         "expected_target_graph_digest": {"oneOf": [{"$ref": "#/$defs/graph_id"}, {"type": "null"}]}
       }
     },
-    "expansion_history_policy": {
+    "expansion_event_request_input": {
       "type": "object",
-      "required": ["schema_version", "candidate_history_policy_id", "carrier_history_policy_id", "candidate_history_policy_digest", "carrier_history_policy_digest"],
+      "required": [
+        "schema_version", "operation_id", "source_state_digest",
+        "source_graph_digest", "source_node_id", "target_profile_template_id",
+        "target_specialization_id", "expansion_policy_id", "target_effective_degree",
+        "module_chirality", "growth_phase", "resource_distribution",
+        "history_policy", "expected_event_id", "expected_target_graph_digest"
+      ],
       "additionalProperties": false,
       "properties": {
-        "schema_version": {"const": "grc9v4-expansion-history-policy-v1"},
-        "candidate_history_policy_id": {"type": "string", "minLength": 1},
-        "carrier_history_policy_id": {"type": "string", "minLength": 1},
-        "candidate_history_policy_digest": {"$ref": "#/$defs/digest_reference"},
-        "carrier_history_policy_digest": {"$ref": "#/$defs/digest_reference"}
+        "schema_version": {"const": "grc9v4-expansion-event-request-input-v1"},
+        "operation_id": {"type": "string", "minLength": 1},
+        "source_state_digest": {"$ref": "#/$defs/state_id"},
+        "source_graph_digest": {"$ref": "#/$defs/graph_id"},
+        "source_node_id": {"type": ["string", "integer"]},
+        "target_profile_template_id": {"$ref": "#/$defs/grcv4_profile_template_id"},
+        "target_specialization_id": {"$ref": "#/$defs/grc9v4_specialization_id"},
+        "expansion_policy_id": {"const": "grc9v4_axis_preserving_chiral_same_port_expansion_v1"},
+        "target_effective_degree": {"type": "integer", "minimum": 9, "maximum": 9007199254740991},
+        "module_chirality": {"enum": [null, -1, 1]},
+        "growth_phase": {"enum": [null, 1, 2, 3]},
+        "resource_distribution": {
+          "type": "array",
+          "prefixItems": [{"$ref": "#/$defs/nonnegative_number"}, {"$ref": "#/$defs/nonnegative_number"}, {"$ref": "#/$defs/nonnegative_number"}],
+          "items": false,
+          "minItems": 3,
+          "maxItems": 3
+        },
+        "history_policy": {"$ref": "#/$defs/expansion_history_policy"},
+        "expected_event_id": {"oneOf": [{"$ref": "#/$defs/event_id"}, {"type": "null"}]},
+        "expected_target_graph_digest": {"oneOf": [{"$ref": "#/$defs/graph_id"}, {"type": "null"}]}
       }
+    },
+    "conformance_harness_fault": {
+      "type": "object",
+      "required": ["schema_version", "stage", "kind"],
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {"const": "grcv4-conformance-harness-fault-v1"},
+        "stage": {"enum": ["charge_admission", "target_construction", "target_readmission"]},
+        "kind": {"enum": ["force_charge_mismatch", "remove_target_W_C_tr_entry", "remove_target_resource_entry", "corrupt_target_graph_digest"]}
+      }
+    },
+    "expansion_history_policy": {
+      "type": "object",
+      "required": ["schema_version", "candidate", "carrier", "candidate_history_policy_digest", "carrier_history_policy_digest"],
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {"const": "grc9v4-expansion-history-policy-v2"},
+        "candidate": {"$ref": "#/$defs/history_channel_policy"},
+        "carrier": {"$ref": "#/$defs/history_channel_policy"},
+        "candidate_history_policy_digest": {"$ref": "#/$defs/history_policy_id"},
+        "carrier_history_policy_digest": {"$ref": "#/$defs/history_policy_id"}
+      },
+      "allOf": [{
+        "properties": {
+          "candidate": {"properties": {"subject": {"const": "candidate"}}},
+          "carrier": {"properties": {"subject": {"const": "carrier"}}}
+        }
+      }]
     },
     "receipt_core": {
       "type": "object",
-      "required": ["operation_id", "source_state_digest", "target_state_digest", "source_graph_digest", "target_graph_digest", "source_model_identity", "target_model_identity", "source_authoritative_digest", "target_authoritative_digest", "source_reset_digest", "target_reset_digest", "resource_map_digest", "history_map_digest", "actual_charge_delta", "information_loss", "disposition", "parent_receipt_ids"],
+      "required": ["operation_id", "source_state_digest", "target_state_digest", "source_graph_digest", "target_graph_digest", "source_model_identity", "target_model_identity", "source_authoritative_digest", "target_authoritative_digest", "source_reset_digest", "target_reset_digest", "resource_transform_digest", "history_bundle_digest", "actual_charge_delta", "information_losses", "disposition", "parent_receipt_ids"],
       "additionalProperties": false,
       "properties": {
         "operation_id": {"type": "string", "minLength": 1},
@@ -803,27 +1066,69 @@
         "target_graph_digest": {"$ref": "#/$defs/graph_id"},
         "source_model_identity": {"$ref": "#/$defs/model_id"},
         "target_model_identity": {"$ref": "#/$defs/model_id"},
-        "source_authoritative_digest": {"$ref": "#/$defs/digest_reference"},
-        "target_authoritative_digest": {"$ref": "#/$defs/digest_reference"},
+        "source_authoritative_digest": {"$ref": "#/$defs/authoritative_content_id"},
+        "target_authoritative_digest": {"$ref": "#/$defs/authoritative_content_id"},
         "source_reset_digest": {"$ref": "#/$defs/reset_id"},
         "target_reset_digest": {"$ref": "#/$defs/reset_id"},
-        "resource_map_digest": {"$ref": "#/$defs/digest_reference"},
-        "history_map_digest": {"oneOf": [{"$ref": "#/$defs/digest_reference"}, {"type": "null"}]},
+        "resource_transform_digest": {"$ref": "#/$defs/resource_transform_id"},
+        "history_bundle_digest": {"$ref": "#/$defs/history_bundle_id"},
         "actual_charge_delta": {"$ref": "#/$defs/finite_number"},
-        "information_loss": {"enum": ["none", "candidate_history_loss", "carrier_history_loss", "v4_surface_projection", "whole_state_delegate_crossing"]},
+        "information_losses": {"type": "array", "uniqueItems": true, "items": {"$ref": "#/$defs/information_loss_class"}},
         "disposition": {"const": "committed"},
         "parent_receipt_ids": {"type": "array", "items": {"$ref": "#/$defs/receipt_id"}}
       }
     },
+    "history_channel_receipt": {
+      "type": "object",
+      "required": ["subject", "disposition", "source_history_digest", "target_history_digest", "information_loss"],
+      "additionalProperties": false,
+      "properties": {
+        "subject": {"enum": ["candidate", "carrier"]},
+        "disposition": {"$ref": "#/$defs/history_disposition"},
+        "source_history_digest": {"oneOf": [{"$ref": "#/$defs/history_content_id"}, {"type": "null"}]},
+        "target_history_digest": {"oneOf": [{"$ref": "#/$defs/history_content_id"}, {"type": "null"}]},
+        "information_loss": {"enum": ["none", "candidate_history_loss", "carrier_history_loss"]}
+      },
+      "allOf": [
+        {
+          "if": {"properties": {"subject": {"const": "candidate"}}},
+          "then": {"properties": {"information_loss": {"enum": ["none", "candidate_history_loss"]}}}
+        },
+        {
+          "if": {"properties": {"subject": {"const": "carrier"}}},
+          "then": {"properties": {"information_loss": {"enum": ["none", "carrier_history_loss"]}}}
+        },
+        {
+          "if": {"properties": {"disposition": {"const": "not_applicable"}}},
+          "then": {"properties": {"source_history_digest": {"type": "null"}, "target_history_digest": {"type": "null"}, "information_loss": {"const": "none"}}}
+        }
+      ]
+    },
+    "history_bundle_receipt": {
+      "type": "object",
+      "required": ["schema_version", "candidate", "carrier"],
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {"const": "grcv4-history-bundle-receipt-v1"},
+        "candidate": {"$ref": "#/$defs/history_channel_receipt"},
+        "carrier": {"$ref": "#/$defs/history_channel_receipt"}
+      },
+      "allOf": [{
+        "properties": {
+          "candidate": {"properties": {"subject": {"const": "candidate"}}},
+          "carrier": {"properties": {"subject": {"const": "carrier"}}}
+        }
+      }]
+    },
     "topology_event_receipt_identity_payload": {
       "type": "object",
-      "required": ["schema_version", "core", "event_id", "history_disposition"],
+      "required": ["schema_version", "core", "event_id", "history"],
       "additionalProperties": false,
       "properties": {
         "schema_version": {"const": "grcv4-topology-event-receipt-v1"},
         "core": {"$ref": "#/$defs/receipt_core"},
         "event_id": {"$ref": "#/$defs/event_id"},
-        "history_disposition": {"enum": ["not_applicable", "exact_transport", "target_initializer", "whole_carrier_map", "whole_carrier_reset", "explicit_loss"]}
+        "history": {"$ref": "#/$defs/history_bundle_receipt"}
       }
     },
     "step_commit_receipt_identity_payload": {
@@ -858,12 +1163,12 @@
     },
     "profile_migration_receipt_identity_payload": {
       "type": "object",
-      "required": ["schema_version", "core", "history_disposition"],
+      "required": ["schema_version", "core", "history"],
       "additionalProperties": false,
       "properties": {
         "schema_version": {"const": "grcv4-profile-migration-receipt-v1"},
         "core": {"$ref": "#/$defs/receipt_core"},
-        "history_disposition": {"enum": ["not_applicable", "exact_transport", "target_initializer", "whole_carrier_map", "whole_carrier_reset", "explicit_loss"]}
+        "history": {"$ref": "#/$defs/history_bundle_receipt"}
       }
     },
     "charge_receipt_identity_payload": {
@@ -880,12 +1185,14 @@
     },
     "history_disposition_receipt_identity_payload": {
       "type": "object",
-      "required": ["schema_version", "core", "history_disposition"],
+      "required": ["schema_version", "core", "subject", "history_disposition", "information_loss"],
       "additionalProperties": false,
       "properties": {
         "schema_version": {"const": "grcv4-history-disposition-receipt-v1"},
         "core": {"$ref": "#/$defs/receipt_core"},
-        "history_disposition": {"enum": ["not_applicable", "exact_transport", "target_initializer", "whole_carrier_map", "whole_carrier_reset", "explicit_loss"]}
+        "subject": {"enum": ["candidate", "carrier"]},
+        "history_disposition": {"$ref": "#/$defs/history_disposition"},
+        "information_loss": {"enum": ["none", "candidate_history_loss", "carrier_history_loss"]}
       }
     },
     "legacy_compatibility_receipt_identity_payload": {
@@ -947,6 +1254,85 @@
         "schema_version": {"const": "grcv4-failure-receipt-envelope-v1"},
         "receipt_id": {"$ref": "#/$defs/receipt_id"},
         "identity_payload": {"$ref": "#/$defs/failure_receipt_identity_payload"}
+      }
+    },
+    "failure_detail": {
+      "type": "object",
+      "required": ["stage", "solver_disposition", "code", "message", "prestate_digest", "poststate_digest", "pre_lifecycle_digest", "post_lifecycle_digest", "failure_receipt"],
+      "additionalProperties": false,
+      "properties": {
+        "stage": {"enum": ["admission", "pre_read_reconstruction", "candidate_solve", "continuity", "charge_admission", "final_reconstruction", "history_write", "target_construction", "target_readmission", "restoration", "commit"]},
+        "solver_disposition": {"oneOf": [{"$ref": "#/$defs/solver_disposition"}, {"type": "null"}]},
+        "code": {"enum": ["invalid_identity", "invalid_duration", "domain_failure", "singular_solver", "conditioning_failure", "nonfinite_value", "no_admitted_root", "multiple_admitted_roots", "charge_failure", "stale_cache", "unsupported_profile", "invalid_migration", "invalid_topology_event", "source_node_not_saturated", "source_self_loop_unsupported", "module_chirality_required", "module_growth_phase_required", "reject_noncanonical_inactive_growth_phase", "target_readmission_failure", "legacy_expansion_target_undefined", "restoration_failure"]},
+        "message": {"type": "string", "minLength": 1},
+        "prestate_digest": {"$ref": "#/$defs/state_id"},
+        "poststate_digest": {"$ref": "#/$defs/state_id"},
+        "pre_lifecycle_digest": {"$ref": "#/$defs/lifecycle_id"},
+        "post_lifecycle_digest": {"$ref": "#/$defs/lifecycle_id"},
+        "failure_receipt": {"$ref": "#/$defs/failure_receipt"}
+      }
+    },
+    "step_result": {
+      "type": "object",
+      "required": ["schema_version", "step_index", "time", "events", "observables", "active_profile_id", "active_model_identity", "operation_disposition", "solver_disposition", "committed", "commit_id", "failure", "emitted_receipts"],
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {"const": "grcv4-step-result-v1"},
+        "step_index": {"$ref": "#/$defs/nonnegative_integer"},
+        "time": {"$ref": "#/$defs/nonnegative_number"},
+        "events": {"type": "array", "items": {"type": "object"}},
+        "observables": {"type": "object"},
+        "active_profile_id": {"$ref": "#/$defs/grcv4_profile_id"},
+        "active_model_identity": {"$ref": "#/$defs/model_id"},
+        "operation_disposition": {"$ref": "#/$defs/operation_disposition"},
+        "solver_disposition": {"oneOf": [{"$ref": "#/$defs/solver_disposition"}, {"type": "null"}]},
+        "committed": {"type": "boolean"},
+        "commit_id": {"oneOf": [{"$ref": "#/$defs/commit_id"}, {"type": "null"}]},
+        "failure": {"oneOf": [{"$ref": "#/$defs/failure_detail"}, {"type": "null"}]},
+        "emitted_receipts": {"type": "array", "items": {"oneOf": [{"$ref": "#/$defs/successful_receipt_envelope"}, {"$ref": "#/$defs/failure_receipt"}]}}
+      },
+      "allOf": [
+        {
+          "if": {"properties": {"committed": {"const": true}}},
+          "then": {
+            "properties": {
+              "operation_disposition": {"const": "committed"},
+              "solver_disposition": {"const": "valid_root"},
+              "failure": {"type": "null"},
+              "commit_id": {"$ref": "#/$defs/commit_id"}
+            }
+          }
+        },
+        {
+          "if": {"properties": {"committed": {"const": false}}},
+          "then": {
+            "properties": {
+              "operation_disposition": {"const": "rejected"},
+              "failure": {"$ref": "#/$defs/failure_detail"},
+              "commit_id": {"type": "null"}
+            }
+          }
+        }
+      ]
+    },
+    "semantic_admission_test_case": {
+      "type": "object",
+      "required": ["vector_id", "validator_id", "invariant", "input", "expected"],
+      "additionalProperties": false,
+      "properties": {
+        "vector_id": {"type": "string", "minLength": 1},
+        "validator_id": {"const": "grcv4-contract-semantic-admission-v1"},
+        "invariant": {"enum": ["profile_fields_agree", "resource_distribution_unit_sum", "growth_phase_matches_remainder", "target_W_C_tr_matches_live_edges", "identity_payload_matches_resolved_parameters", "history_channel_subjects_agree", "resource_transform_dimensions"]},
+        "input": {"type": "object"},
+        "expected": {
+          "type": "object",
+          "required": ["admitted", "code"],
+          "additionalProperties": false,
+          "properties": {
+            "admitted": {"const": false},
+            "code": {"type": "string", "minLength": 1}
+          }
+        }
       }
     },
     "commit_payload": {

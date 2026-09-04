@@ -1,9 +1,10 @@
 {
-  "schema": "grcv4_conformance_fixture_catalog_v2",
+  "schema": "grcv4_conformance_fixture_catalog_v3",
   "status": "normative_coverage_catalog_not_executable_vectors",
   "implementation_evidence": false,
   "audit_input_sha256": "61fb7c51efd82f80f1eaf492e8d6d3c77c7778aa8ce775a58ed4355dd12272e4",
   "implementation_readiness_audit_sha256": "32cea1b2752361864b02651cb7d38df85929210adc213aa76ee1307babcb5196",
+  "specification_pressure_audit_sha256": "bb0621b3abe793486711acdd62e718c4415e8c5cbb6bea271580d4abc806e7ae",
   "authority_boundary": {
     "normative_scope": "D10_plus_append_only_D11_C_and_D11_G9_specification_cases_and_40_independent_disabled_compatibility_rows",
     "accepted_D11_claim_ids": [
@@ -32,6 +33,14 @@
     "catalog_is_not_an_execution_oracle": true,
     "concrete_vector_file": "specs/grc-v4-conformance-vectors.json",
     "machine_schema_file": "specs/grc-v4-contract-schema.json",
+    "semantic_admission_validator": "grcv4-contract-semantic-admission-v1",
+    "schema_validity_is_necessary_not_sufficient": true,
+    "wire_to_admitted_boundary": {
+      "malformed_wire_or_json_schema": "decoder_or_transport_error_before_operation",
+      "well_formed_input_with_invalid_scientific_value": "typed_failure_receipt_without_mutation",
+      "admitted_request": "strict_internal_request_schema"
+    },
+    "harness_faults_are_nonproduction_and_identity_excluded": true,
     "common_case_application": "cartesian_product_with_every_supported_complete_profile",
     "candidate_case_application": "cartesian_product_with_every_supported_profile_of_that_candidate",
     "failure_atomicity_field": "prestate_digest_equals_poststate_digest",
@@ -42,21 +51,22 @@
       "resolved_params_id",
       "prestate_digest",
       "poststate_digest",
-      "disposition",
+      "operation_disposition",
+      "solver_disposition",
       "committed",
       "emitted_receipt_ids"
     ],
     "runtime_report_status_before_implementation": "not_executed"
   },
   "common_cases": [
-    {"id": "COMMON-VALID-ORDINARY-STEP", "required_disposition": "valid_root", "required_committed": true},
-    {"id": "COMMON-INVALID-DOMAIN", "required_disposition": "domain_failure", "required_committed": false},
-    {"id": "COMMON-NONFINITE", "required_disposition": "nonfinite", "required_committed": false},
-    {"id": "COMMON-CHARGE-MISMATCH", "required_failure_code": "charge_failure", "required_committed": false},
-    {"id": "COMMON-STALE-CACHE", "allowed_typed_outcomes": [{"solver_disposition": "valid_root", "committed": true, "required_postcondition": "cache_rebuilt_before_consumer"}, {"failure_code": "stale_cache", "committed": false}], "common_postcondition": "stale_value_never_consumed"},
-    {"id": "COMMON-ZERO-DURATION", "required_disposition": "valid_root", "required_committed": true, "required_postcondition": "identity_no_writer_advance"},
-    {"id": "COMMON-NEGATIVE-DURATION", "required_failure_code": "invalid_duration", "required_committed": false},
-    {"id": "COMMON-ATOMIC-FAILURE", "required_committed": false, "required_postcondition": "prestate_digest_equals_poststate_digest"}
+    {"id": "COMMON-VALID-ORDINARY-STEP", "required_operation_disposition": "committed", "required_solver_disposition": "valid_root", "required_committed": true},
+    {"id": "COMMON-INVALID-DOMAIN", "required_operation_disposition": "rejected", "required_solver_disposition": "domain_failure", "required_committed": false},
+    {"id": "COMMON-NONFINITE", "required_operation_disposition": "rejected", "required_solver_disposition": "nonfinite", "required_committed": false},
+    {"id": "COMMON-CHARGE-MISMATCH", "required_operation_disposition": "rejected", "required_solver_disposition": "valid_root", "required_failure_code": "charge_failure", "required_committed": false},
+    {"id": "COMMON-STALE-CACHE", "allowed_typed_outcomes": [{"operation_disposition": "committed", "solver_disposition": "valid_root", "committed": true, "required_postcondition": "cache_rebuilt_before_consumer"}, {"operation_disposition": "rejected", "solver_disposition": null, "failure_code": "stale_cache", "committed": false}], "common_postcondition": "stale_value_never_consumed"},
+    {"id": "COMMON-ZERO-DURATION", "required_operation_disposition": "committed", "required_solver_disposition": "valid_root", "required_committed": true, "required_postcondition": "identity_no_writer_advance"},
+    {"id": "COMMON-NEGATIVE-DURATION", "required_operation_disposition": "rejected", "required_solver_disposition": null, "required_failure_code": "invalid_duration", "required_committed": false},
+    {"id": "COMMON-ATOMIC-FAILURE", "required_operation_disposition": "rejected", "required_committed": false, "required_postcondition": "prestate_digest_equals_poststate_digest"}
   ],
   "candidate_a_cases": [
     {"id": "A-POSITIVE-W-ADMISSION", "required_vector_class": "candidate_a_numeric"},
@@ -99,7 +109,7 @@
     {"id": "RESET-AFTER-EVENT", "required_vector_class": "reset"},
     {"id": "WHOLE-LIFECYCLE-TUPLE-MAP", "required_vector_class": "topology_event"},
     {"id": "ALL-MIGRATION-CLASSES", "required_vector_class": "migration_matrix"},
-    {"id": "HISTORY-DISPOSITION", "required_vector_class": "history_receipt"},
+    {"id": "HISTORY-DISPOSITION", "required_vector_class": "two_channel_history_receipt", "required_subjects": ["candidate", "carrier"]},
     {"id": "TARGET-READMISSION-FAILURE", "required_vector_class": "atomic_failure"},
     {"id": "RECEIPT-OWNERSHIP", "required_vector_class": "receipt_delta_and_ledger"},
     {"id": "DUPLICATION-INDEPENDENCE", "required_vector_class": "deep_immutability"}
@@ -146,6 +156,9 @@
       "whole_lifecycle_target_readmission_required": true,
       "partial_K4_zero_fill_forbidden": true,
       "candidate_C_target_W_C_tr_complete_before_rederivation": true,
+      "C_OS_candidate_history_disposition": "rederived",
+      "C_OS_carrier_history_disposition": "not_applicable",
+      "C_OS_information_losses": [],
       "core_resource": 0,
       "additional_node_resource": 0,
       "primary_resource_sum_equals_source": true
@@ -180,6 +193,54 @@
     "row_count_imbalance_at_most_one": true,
     "column_count_imbalance_at_most_one": true,
     "additional_node_resource": 0
+  },
+  "grc9_deep_recursive_fixture": {
+    "id": "GRC9V4-SECOND-DEPTH-BFS-AND-COVARIANCE",
+    "target_effective_degree": 52,
+    "expected_canonical_node_count": 8,
+    "extra_count": 4,
+    "required_chiralities": [-1, 1],
+    "required_growth_phases": [1, 2, 3],
+    "required_concrete_vector_count": 6,
+    "second_depth_edge_required": true,
+    "metamorphic_cases": [
+      "source_edge_input_order_permutation",
+      "cyclic_chart_rotation",
+      "reflection_chirality_conjugacy"
+    ],
+    "runtime_hold": "required_before_arbitrary_size_mechanical_refinement_conformance"
+  },
+  "grc9_persistent_carrier_fixture": {
+    "id": "GRC9V4-C-PC-WHOLE-CARRIER-RESET",
+    "concrete_vector_id": "G9-EXPAND-C-PC-CARRIER-RESET",
+    "source_profile_family": "C_PC",
+    "source_Z_4_nonnull": true,
+    "target_Z_4_zero": true,
+    "candidate_history_disposition": "rederived",
+    "carrier_history_disposition": "whole_carrier_reset",
+    "carrier_information_loss": "carrier_history_loss"
+  },
+  "generic_mapped_event_fixture": {
+    "id": "GRCV4-GENERIC-AFFINE-MAPPED-EVENT",
+    "concrete_vector_id": "GENERIC-MAPPED-EVENT-NONZERO-RESOURCE-INCREMENT",
+    "canonical_event_identity_required": true,
+    "nonzero_target_increment_required": true,
+    "charge_target_delta_required": true,
+    "metadata_identity_excluded": true,
+    "runtime_hold": "execution_required_before_generic_mapped_topology_conformance"
+  },
+  "semantic_admission_fixture": {
+    "validator_id": "grcv4-contract-semantic-admission-v1",
+    "json_schema_validity_is_necessary_not_sufficient": true,
+    "required_negative_invariants": [
+      "profile_fields_agree",
+      "resource_distribution_unit_sum",
+      "resource_transform_dimensions",
+      "growth_phase_matches_remainder",
+      "target_W_C_tr_matches_live_edges",
+      "identity_payload_matches_resolved_parameters",
+      "history_channel_subjects_agree"
+    ]
   },
   "disabled_compatibility": {
     "target": "exact_embedded_grc9v3_delegate",

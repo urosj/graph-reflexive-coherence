@@ -92,6 +92,20 @@ identity and may be advertised only after all 40 profile-by-surface delegate
 vectors pass. The existence of the compatibility contract does not establish
 an implementation's conformance to it.
 
+An enabled-only partial implementation may omit
+`grc9v3_disabled_compatibility`, but it must describe itself as partial and
+must not claim full `GRC9V4` conformance. Full `GRC9V4` conformance requires
+that capability for every advertised complete profile and requires all four
+disabled transition/state/observable/lifecycle surfaces for each such
+profile. Optional capability discovery and the full-conformance label are
+therefore distinct, not contradictory.
+
+The release defines both Candidate A and Candidate C target-template shapes,
+but its concrete GRC9V4 expansion vectors currently cover C profiles only. A
+partial C-family implementation may advertise `mechanical_refinement` only
+for its exact listed C model identities. Candidate A expansion remains held
+and may not be inferred from the A template identity.
+
 It must not advertise `host_embedding_frame`. The opt-in
 `grc9v3_column_h_assisted` spark lane must have a separate capability or
 profile flag and must not silently replace the baseline lane.
@@ -671,6 +685,15 @@ rho = 0 and growth_phase is not None
   -> reject_noncanonical_inactive_growth_phase
 ```
 
+The wire/test payload `grc9v4-expansion-event-request-input-v1` permits null
+chirality so this named semantic failure is representable. Only an admitted
+`grc9v4-expansion-event-request-v1` record is strict `-1 | +1`. Malformed wire
+shape is a decoder/transport error; well-formed but scientifically invalid
+input returns the typed failure receipt. Conformance-only faults use
+`grcv4-conformance-harness-fault-v1`, never a magic production-request field,
+and every rollback vector supplies its complete input plus an explicit base
+vector where applicable.
+
 Every internal edge in branch $b$ uses row $b$. At a branch node whose
 incoming edge uses column $c$, its ordered outward rotor is
 
@@ -692,6 +715,15 @@ Simultaneous cyclic row, column, and branch rotation rotates an active phase
 and preserves chirality; reflection flips chirality and reflects the active
 phase. A port number, node-ID parity, iteration order, thread schedule, global
 counter, or hidden RNG must not select chirality or phase.
+
+The preimplementation vector bundle exercises the first genuinely recursive
+case at $D_{\mathrm{eff}}=52$, $n=8$, $m=4$ for both chiralities and all three
+active phases. In every case one branch must attach through a first extra node
+rather than only through a primary satellite. Separate metamorphic vectors
+cover source-edge input-order permutation, cyclic chart rotation, and
+reflection/chirality conjugacy. These exact vectors close the prior design
+coverage gap; runtime arbitrary-size mechanical-refinement conformance remains
+held until an implementation executes them.
 
 #### Stable identity and initialization
 
@@ -725,7 +757,15 @@ The payload omits `event_id` and the not-yet-constructed target graph. The
 target plan is then built using the computed event ID as its role-ID namespace.
 Different effective degree, source node, chirality, active phase, resource
 tuple, target profile template, bond seed, or history policy necessarily gives a
-different event ID. Base role IDs are
+different event ID.
+
+The `expansion_policy_digest`, candidate-history-policy digest,
+carrier-history-policy digest, combined history-map digest, resource-transform
+digest, and carrier-content digests are independently reproducible from the
+versioned preimage schemas and canonical vectors. No digest convention is
+implicit in builder code.
+
+Base role IDs are
 
 ```text
 <event-id>/core
@@ -779,6 +819,15 @@ surfaces are rederived. Persistent $K_4$ history uses one typed whole-carrier
 $L_{K4,\mathrm{evt}}$, or the whole source carrier is archived and the whole
 target carrier reset to zero with a loss receipt. Partial $K_4$ preservation
 with zero-filled new components is forbidden.
+
+Candidate and carrier history are separate request and receipt channels. For
+the concrete `C_OS` vectors, Candidate C is `rederived`, the carrier channel is
+`not_applicable`, both carrier digests are null, and no information loss is
+reported because authoritative $Z_4$ is absent. The separate
+`G9-EXPAND-C-PC-CARRIER-RESET` vector supplies nonnull source $Z_4$, resets the
+whole target carrier to zero, publishes both carrier-content digest preimages,
+and reports exactly `carrier_history_loss`. A policy that would reset a carrier
+under another profile is not evidence that a reset occurred in `C_OS`.
 
 Current state, reset state, resource, history, profile, event receipt, target
 surface reconstruction, and target readmission commit atomically or not at
@@ -1127,7 +1176,8 @@ A snapshot must satisfy the full `GRCV4` contract and preserve:
 - expansion policy and each event-owned resource tuple;
 - every expansion event's canonical digest payload, module chirality,
   conditional growth phase, role-ID allocation, port plan, bond seed,
-  resource/history disposition, and target-readmission receipt;
+  resource-transform and candidate/carrier history dispositions, and
+  target-readmission receipt;
 - coarse-graining mode and enough provenance to rebuild or reject caches;
 - enabled/disabled branch identity;
 - exact GRC9V3 target specification identity; and

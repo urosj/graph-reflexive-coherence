@@ -1463,6 +1463,18 @@ receipt vectors, release hashes, explicit conformance holds, and the V4-only
 mutation boundary. The correction phase does not modify forensic graph
 authority or authorize runtime implementation.
 
+The release-pressure successor audit remains in this same branch and is bound
+as non-scientific engineering input. The phase-aware audit must additionally
+verify schema/catalog/vector version 2/3 surfaces for pre-admission versus
+admitted requests, harness-only faults, operation/solver result separation,
+generic mapped-event identities and affine increments, candidate/carrier
+history bundles, candidate-discriminated templates, truthful `C_OS` and
+persistent `C_PC` carrier receipts, all named subdigest preimages, D52
+second-depth and metamorphic vectors, semantic-admission negatives, and the
+partial/full GRC9V4 wording boundary. The normal verifier must fail if any of
+those regress, if the pressure-audit digest changes, or if regenerated release
+hashes are stale.
+
 ## Verification Strategy
 
 ### Kernel and adapter tests

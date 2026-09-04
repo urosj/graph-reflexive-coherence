@@ -3546,11 +3546,44 @@ typed parameters and receipts, exact row-weight staging, charge precision,
 concrete preimplementation vectors, and a content-addressed release manifest.
 
 Missing RG2b evaluator/certificate vectors, child-stabilization vectors, the
-40 disabled-delegate execution vectors, lifecycle/migration and generic mapped
-event vectors, charge-edge and deep-immutability tests, and runtime receipts
+40 disabled-delegate execution vectors, lifecycle/migration runtime vectors,
+generic mapped-event runtime execution, charge-edge and deep-immutability
+tests, and runtime receipts
 remain explicit capability holds. They are not filled by editorial inference.
 Implementation and `src/`/`tests/` changes remain unauthorized until a later
 hash-bound gate.
+
+The subsequent release-pressure audit is bound by SHA-256
+`bb0621b3abe793486711acdd62e718c4415e8c5cbb6bea271580d4abc806e7ae` as
+engineering correction input, not scientific evidence. It identifies seven
+bounded composition defects and no new D-series science. The same active
+`specification_correction` authority therefore requires one coordinated V4-only
+revision that:
+
+1. separates permissive pre-admission inputs, strict admitted requests, and
+   nonproduction fault injection;
+2. separates operation disposition from nullable solver disposition;
+3. gives generic mapped events a canonical identity and affine resource
+   transform with explicit event increment and charge delta;
+4. carries Candidate and persistent-carrier history in independent request and
+   receipt channels;
+5. discriminates Candidate A and Candidate C target templates and withholds A
+   expansion until a concrete A target vector exists;
+6. removes nonexistent carrier loss from `C_OS` and adds a real `C_PC`
+   whole-carrier-reset/loss vector;
+7. publishes versioned canonical preimages for every load-bearing subdigest;
+8. adds $D_{\mathrm{eff}}=52$ second-depth BFS vectors plus permutation,
+   rotation, and reflection metamorphic cases;
+9. freezes `grcv4-contract-semantic-admission-v1` with cross-field negative
+   vectors and states that JSON Schema validity is necessary but insufficient;
+10. distinguishes enabled-only partial support from full GRC9V4 conformance;
+11. regenerates the schema, catalog, vector and release identities; and
+12. reruns the complete claim/schema/identity/math/graph/render/tooling audit.
+
+The generic mapped-event vector added here is a preimplementation identity and
+affine-accounting oracle, not runtime evidence. D52 and metamorphic vectors
+likewise close design coverage but retain a runtime execution hold. The other
+previous implementation and evidence holds remain in force.
 
 ## Expected Records
 
