@@ -1,17 +1,20 @@
 # GRCv4 Exploratory Side Tool Implementation Plan
 
-**Date:** 2026-08-28
-**Status:** Iterations 0-9 accepted
+**Date:** 2026-08-28; successor update 2026-09-04
+**Status:** Iterations 0-10 accepted; Iteration 11 UX candidate implemented
 **Companion checklist:** [GRCV4ExploratorySideToolImplementationChecklist.md](./GRCV4ExploratorySideToolImplementationChecklist.md)
 **Source investigation:** [GRC9V4 constitutive design](../../README.md)
 
 **Iteration 0 record:** [ETC0SourceAndLayoutContract.md](./records/ETC0SourceAndLayoutContract.md)
 **Iteration 1 record:** [ETC1SourceAdapterAdmission.md](./records/ETC1SourceAdapterAdmission.md)
+**Iteration 10 record:** [ETC10D11ForensicAdmission.md](./records/ETC10D11ForensicAdmission.md)
+**Iteration 11 candidate:** [ETC11D11UXCandidate.md](./records/ETC11D11UXCandidate.md)
 
 ## Purpose
 
 Build a bounded exploratory side tool over the accepted D0-D10.2
-constitutive-design investigation. The tool should make the investigation
+constitutive-design investigation and its separately admitted D11 successor
+authority. The tool should make the investigation
 easier to consume in two complementary ways:
 
 1. a forensic Python/notebook surface for exact source tracing and report
@@ -61,6 +64,9 @@ It may not support or claim:
 | `D9ResidualDebtLedger.json` | Predecessor debt status and D9 residual lineage. |
 | D0-D10.2 decision records | Gate identity, accepted predecessor digest, candidate disposition, realization lineage, controls, and claim ceilings. |
 | D9 profile/lifecycle records | Ten current profiles, lifecycle surfaces, event semantics, profile-qualified state authority, and four predecessor post-spec verification-obligation occurrences carried into D10 lineage. |
+| `D11ClaimDebtAndAuthorityRouting.json` | Two newly exposed D11 debts while preserving all D10 claim, debt, and obligation populations. |
+| D11-C resolution and provenance supplement | One accepted optional-profile claim, three objects, 11 contracts, one resolved local debt, and three forward obligations. |
+| D11-G9 resolution and provenance supplement | One accepted GRC9V4-only claim, ten objects, 20 contracts, one resolved local debt, and four forward obligations. |
 
 ### Authority rules
 
@@ -80,6 +86,10 @@ It may not support or claim:
 - Human acceptance of ET-C0 is the explicit root of trust. Successor gates
   verify its accepted status and exact record digest, but do not claim to
   derive or replace the human acceptance decision.
+- ET-C10 admits D11 through a separate hash-bound source contract. Open and
+  queued preregistration records contribute lineage and candidate history, not
+  accepted scientific claim authority; only the accepted bounded resolutions
+  and provenance supplements supply the two new claims and their populations.
 
 ## Versioned Immutable Source Contract
 
@@ -87,13 +97,17 @@ The kernel loads source records read-only and computes a source-bundle identity
 before graph construction. It records source file hashes before and after every
 build and fails if any source byte changes.
 
-The admitted D0-D10.2 bundle is the current accepted snapshot, not a declaration
-that the constitutive investigation is final. Bundle immutability and repository
-evolution are separate contracts:
+The admitted D0-D10.2 bundle remains the accepted historical snapshot, not a
+declaration that the constitutive investigation ended there. ET-C10 overlays
+the eight hash-bound D11 records without rewriting ET-C0 through ET-C9. Bundle
+immutability and repository evolution are separate contracts:
 
 ```text
 admitted source bundle
   versioned, exact, immutable, reproducible
+
+accepted D11 successor overlay
+  separately versioned, append-only, bound to the historical ET-C2 graph
 
 observed repository source inventory
   may acquire new records or new accepted successors
@@ -122,9 +136,12 @@ interpretation or acceptance decision.
 
 A newly observed record does not retroactively invalidate an older bundle as a
 historical snapshot. It does prevent that bundle from being presented as the
-complete current repository state. A changed or missing admitted source also
-blocks a live rebuild against that bundle. No case permits automatic parsing,
-schema guessing, status promotion, or partial graph insertion.
+complete current repository state. ET-C0 discovery therefore continues to
+report the D11 files as unprocessed relative to ET-C0, while ET-C10 requires the
+combined 41-file inventory to be exact. A changed or missing source admitted by
+either contract blocks its corresponding live reconstruction. No case permits
+automatic parsing, schema guessing, status promotion, or partial graph
+insertion.
 
 The refresh path is explicit:
 
@@ -210,6 +227,25 @@ equation_contract         152 D10.2 equation/contract rows
 source_record             accepted file/digest identities
 annotation                optional non-authoritative display metadata
 ```
+
+Those numbers describe the immutable ET-C2 historical graph. The accepted
+ET-C10 overlay adds, rather than substitutes:
+
+```text
+current_claim              +2  -> 41 combined
+debt_transformation        +2  -> 31 combined
+verification_obligation    +7  -> 18 nodes, 17 pending combined
+normative_object          +13  -> 80 combined
+equation_contract         +31  -> 183 combined
+investigation_candidate   +12  -> 16 candidate nodes combined
+selected_profile           +2  -> 12 profile nodes combined
+gate_record/source_record  +8 each
+```
+
+The added candidate nodes are D11 solution candidates, and the two added
+profile nodes are the selected D11 profile identities. They do not rewrite the
+D10 assertion that the substrate candidate and complete-realization
+populations were unchanged.
 
 Candidate D must be represented as a source-bounded admission slot rejected on
 ontology because it remained uninstantiated and not materially distinct. It is
@@ -313,6 +349,11 @@ The accepted investigation is a directed acyclic lineage, not a flat
 - comparative synthesis and the CI+PC hybrid;
 - D9 lifecycle closure;
 - D10 claim synthesis and D10.1/D10.2 provenance successors.
+- the D11 opening and claim/debt routing branch;
+- the D11-C preregistration, accepted T3a resolution, and provenance
+  supplement; and
+- the D11-G9 preregistration, accepted P4a resolution, and provenance
+  supplement.
 
 The web gate pipeline may project that DAG onto a readable spine, but the
 kernel and scenario records must preserve branches, corrections, predecessor
@@ -773,15 +814,22 @@ presentation introduces a divergent scientific projection.
 
 The implementation-facing UX contract is
 [GRCV4ExploratorySideToolUserScenarios.md](./GRCV4ExploratorySideToolUserScenarios.md).
-It records 35 normalized scenarios across forensic reconstruction, static
-navigation, structural counterfactuals, fail-closed pressure, and onboarding.
-The scenario record is derived design guidance, not scientific authority.
+The append-only D11 contract is
+[GRCV4ExploratorySideToolD11SuccessorScenarios.md](./GRCV4ExploratorySideToolD11SuccessorScenarios.md).
+It preserves the 35 normalized ET-C0 through ET-C9 scenarios across forensic
+reconstruction, static navigation, structural counterfactuals, fail-closed
+pressure, and onboarding. ET-C10 adds six successor forensic scenarios for D11
+claim, debt, contract, loader-boundary, and paper-propagation checks. The
+current governed total is 41; the accepted ET-C9 `35/35` receipt remains a
+historical closeout fact and is not rewritten. The scenario record is derived
+design guidance, not scientific authority.
 
 Every scenario has one owning iteration and may name supporting iterations. A
 gate cannot close until its owned scenarios have executable acceptance evidence
-or an explicit fail-closed disposition. Iteration 9 reruns the complete suite
-and reconciles its coverage matrix. Scenario text cannot widen the mutation
-algebra, source authority, or maximum claim defined by this plan.
+or an explicit fail-closed disposition. Iteration 9 reruns its historical
+35-scenario suite; Iteration 10 executes the six successor scenarios against
+the D11 overlay. Scenario text cannot widen the mutation algebra, source
+authority, or maximum claim defined by this plan.
 
 ## Proposed Investigation-Local Layout
 
@@ -800,6 +848,7 @@ implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-
       adapters/
       kernel/
       forensic/
+      successor.py
       scenarios/
       ripple/
     tests/
@@ -811,6 +860,9 @@ implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-
       bootstrap.py
       doctor.py
       run.py
+      build_iteration10_d11.py
+      audit_iteration10_d11.py
+      test_iteration10_d11.py
     generated/
 ```
 
@@ -1314,6 +1366,86 @@ canonical historical manifest metadata. Their stage-local distribution hashes
 are intentionally excluded because `web/dist` is a shared latest-build surface
 now owned by ET-C8; ET-C8 receives the full current-distribution identity audit.
 
+### Iteration 10. D11 Append-Only Source And Forensic Admission
+
+**Status:** accepted
+
+Admit the eight D11 JSON records through a new root of trust bound to the
+historical ET-C0, ET-C1, and ET-C2 identities. Keep every ET-C0 through ET-C9
+artifact immutable, extend the typed forensic graph in a separate deterministic
+snapshot, and expose current D11 claims without promoting preregistered
+candidates or forward obligations.
+
+**Accepted implementation result.** The ET-C10 source contract records exact
+schemas, statuses, canonical digests, and file SHAs for the D11 opening,
+claim/debt routing, two preregistrations, two accepted resolutions, and two
+provenance supplements. Combined discovery is exact over 41 decision JSON
+records. The source adapter distinguishes open or queued lineage from accepted
+bounded scientific authority.
+
+The ET-C10 graph contains the immutable ET-C2 graph byte-for-byte and adds two
+current claims, two local debt transformations, seven forward obligations, 13
+normative objects, and 31 equation contracts. It also exposes 12 D11 solution
+candidates and the two selected profile identities without changing the D10
+substrate candidate or realization populations. The combined scientific
+populations are `41/29/31/18/80/183`; 17 obligations remain pending because
+the one D10 preclose provenance obligation is historically satisfied while ten
+D10 and seven D11 obligations remain forward work.
+
+`load_successor_forensic_context` rebuilds the D11 manifest and graph in memory
+and requires exact identity with the accepted artifacts. The historical
+`load_forensic_context` remains available for D10/ET-C2 questions and correctly
+rejects D11 IDs. D11 local-debt queries return opening, bounded resolution, and
+forward obligations as separate rows. A record-local D10.2 successor reference
+still fails closed as a non-node.
+
+The paper-propagation audit has two valid states. It currently passes as
+`pending_tooling_ready` only while the paper retains SHA-256
+`e009c5651842dea6636057a9639a79e42eb5c03b20c4812fb9ee5173705258e5` and
+contains none of the D11 authority IDs. Once the paper changes, the same audit
+requires both D11 claims, all 13 object IDs, all 31 contract IDs, the selected
+profile identities, and key equation markers. Specifications and runtime code
+remain frozen during this phase.
+
+The D11 source-contract digest is
+`afab36a86604fcea50332375781be3c82427e72e3e8c10d7f2cb9c7814f40f81`;
+the source-bundle digest is
+`98c273b3cc097f0d95adfba98ed7dfac0ac494dce9e779bb4b04fe79fef4f6aa`;
+and the graph digest is
+`44d8c7d33950af5e5f7c61caa4fe6fbd14fc9aedf14218d0a11de7c705542e09`.
+The six ET-C10 successor scenarios pass through the focused audit/test surface.
+ET-C10 itself claims no browser rebuild; ET-C11 separately projects this
+accepted authority into notebook and browser UX without changing ET-C10.
+
+### Iteration 11. D11 API, Notebook, And Browser UX
+
+**Status:** candidate implemented and verified; human acceptance pending
+
+Compile a presentation-only bundle from the ET-C10 successor context and make
+all 69 D11 authority entries accessible in the current browser distribution:
+two claims, two local debts, two selected profiles, 12 investigated candidates,
+13 normative objects, 31 equation contracts, and seven forward obligations.
+
+The browser adds a dedicated **D11** workspace with investigation and kind
+filters, identifier/label search, source-bound trace rows, exact record and
+JSON-pointer receipts, support relationships, and visible authority ceilings.
+Sixty entries display precomputed outputs from the existing pure forensic API;
+the two profiles and seven obligations use source-bound graph projections
+because no dedicated forensic operation exists for those kinds. The browser
+contains no inference, propagation, rerun-prediction, or promotion logic.
+
+Add a separate three-cell D11 notebook rather than changing the frozen ET-C3
+notebook. Its six recipes cover the D11-C and D11-G9 claim, debt, and key
+contract paths. The governed notebook runner requires canonical byte identity
+among direct API results, notebook output files, and the browser bundle.
+
+ET-C11 owns eight append-only UX scenarios. Component pressure fails closed on
+stale ET-C10 identity, missing views, count drift, modified trace payloads, and
+widened browser authority. Playwright executes the D11 workflows on desktop
+and mobile alongside all 12 historical browser regressions. The latest shared
+`web/dist` is therefore the ET-C11 candidate; ET-C8 remains the accepted
+historical browser identity.
+
 ## Verification Strategy
 
 ### Kernel and adapter tests
@@ -1331,6 +1463,14 @@ now owned by ET-C8; ET-C8 receives the full current-distribution identity audit.
 - annotation non-authority;
 - source before/after byte identity;
 - deterministic graph serialization.
+- byte-exact in-memory reconstruction of the ET-C10 D11 manifest and graph;
+- append-only equality for every historical ET-C2 node and edge;
+- exact D11 combined counts and 17-pending-obligation accounting;
+- D11 claim, debt, candidate, object, and contract forensic queries;
+- historical-loader rejection of D11 IDs and successor-loader rejection of
+  record-local non-node references; and
+- two-state pending/propagated paper verification without specification or
+  runtime writes.
 
 ### Counterfactual tests
 
@@ -1377,5 +1517,11 @@ Successful closeout may claim:
 > source-traceable structural counterfactual navigation up to the explicit
 > evidence frontier.
 
+The accepted ET-C10 successor may additionally claim that the two accepted D11
+claims and their append-only debt/object/contract populations are available to
+the source-exact forensic API while the ET-C2 historical snapshot remains
+unchanged.
+
 It may not claim that the tool proves a new V4 result, predicts reopened-gate
-outcomes, implements GRCv4, or authorizes specification/runtime changes.
+outcomes, proves paper propagation before the paper audit changes state,
+implements GRCv4, or authorizes specification/runtime changes.

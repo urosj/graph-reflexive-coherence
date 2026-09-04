@@ -1,7 +1,7 @@
 # GRCv4 Exploratory Side Tool Implementation Checklist
 
-**Date:** 2026-08-28
-**Status:** Iterations 0-9 accepted
+**Date:** 2026-08-28; successor update 2026-09-04
+**Status:** Iterations 0-10 accepted; Iteration 11 UX candidate implemented
 **Plan:** [GRCV4ExploratorySideToolImplementationPlan.md](./GRCV4ExploratorySideToolImplementationPlan.md)
 **Source investigation:** [GRC9V4 constitutive design](../../README.md)
 
@@ -12,6 +12,12 @@
 - [x] Keep the 67 parent objects distinct from the 152 equation/contract rows.
 - [x] Preserve 39 current claims, 29 historical claims, 29 transformed debts,
       and 11 verification obligations as distinct source-owned populations.
+- [x] Preserve those D10 populations as the immutable ET-C2 historical base;
+      admit the D11 `+2/+2/+7/+13/+31` claim/debt/obligation/object/contract
+      population only through the ET-C10 append-only overlay.
+- [x] Keep the 18 combined obligation nodes distinct from the 17 pending
+      obligations: the D10 preclose provenance obligation remains historically
+      satisfied, while ten D10 and seven D11 obligations remain forward work.
 - [x] Treat V4-D as a rejected uninstantiated admission slot, not a complete
       fourth architecture.
 - [x] Model gate history as a DAG with successor branches and corrections.
@@ -36,15 +42,18 @@
 ## Current Status
 
 ```text
-branch = investigation-GRCV4-exploratory-side-tool
-plan = frozen
-checklist = iterations_0_through_9_accepted
-tool_code = iteration_9_closeout_accepted
-accepted_source_records_changed = false
-src_pygrc_changed = false
-specifications_changed = false
-scientific_claims_added = false
-implementation_gate = ET-C9_accepted_bounded_read_only_exploratory_tool
+branch = spec/grcv4-grc9v4
+plan = extended_by_accepted_post_closeout_successor_cycle
+checklist = iterations_0_through_10_accepted_plus_iteration_11_UX_candidate
+tool_code = iteration_10_D11_forensic_overlay_accepted_with_iteration_11_UX
+historical_accepted_source_records_changed = false
+D11_successor_source_records_admitted = 8
+src_and_repository_tests_changed_by_ET_C10 = false
+specifications_changed_by_ET_C10 = false
+paper_propagation = pending_tooling_ready
+scientific_claims_created_by_tool = false
+accepted_D11_claims_exposed_by_tool = 2
+implementation_gate = ET-C11_D11_API_notebook_browser_UX_candidate
 ```
 
 ## Iteration 0. Baseline, Layout, And Source Contract Freeze
@@ -1020,3 +1029,164 @@ the accepted investigation.
 ### Gate
 
 - [x] Human review accepts one closeout disposition.
+
+## Iteration 10. D11 Append-Only Source And Forensic Admission
+
+**Status:** accepted
+
+### Goal
+
+Admit accepted D11 authority without rewriting the historical ET-C0 through
+ET-C9 artifacts, and make the D11 results queryable before paper propagation.
+
+### Checks
+
+- [x] Freeze a separate eight-record D11 source contract with exact schemas,
+      statuses, canonical digest fields, canonical digests, and file SHAs.
+- [x] Bind the successor contract to the accepted ET-C0 record, ET-C1 bundle,
+      ET-C2 admission, and ET-C2 graph digests.
+- [x] Keep open and queued preregistrations as lineage/candidate history rather
+      than accepted scientific claim authority.
+- [x] Require combined discovery to report `current_bundle_exact` for all 41
+      historical plus D11 decision JSON records.
+- [x] Rebuild the D11 source manifest and graph in memory and compare canonical
+      bytes with the accepted ET-C10 artifacts.
+- [x] Prove that every historical ET-C2 node, propagation edge, and annotation
+      edge survives unchanged.
+- [x] Admit exactly two D11 claims, two local debt transformations, seven
+      forward obligations, 13 normative objects, and 31 equation contracts.
+- [x] Preserve the combined counts `41/29/31/18/80/183` and record that 17 of
+      the 18 obligation nodes remain pending.
+- [x] Expose the 12 D11 investigation candidates and two selected profile
+      identities without changing the D10 substrate candidate or realization
+      populations.
+- [x] Make D11-C and D11-G9 claims available to `reconstruction_path` with
+      forward obligations excluded from backward evidence.
+- [x] Make both local D11 debts available to `debt_lifecycle` with opening,
+      bounded resolution, and forward obligations in separate classified rows.
+- [x] Make representative D11 objects and all D11 contracts available to
+      `object_dependents` and `contract_provenance` with exact source pointers
+      and support semantics.
+- [x] Preserve `load_forensic_context` as the historical D10/ET-C2 loader and
+      add `load_successor_forensic_context` for current D11 queries.
+- [x] Verify the historical loader rejects D11 IDs and the successor loader
+      still rejects `D10_2_CL_N_001` as a record-local provenance reference.
+- [x] Add the six S1-S6 successor scenarios without rewriting the accepted
+      ET-C9 `35/35` scenario receipt.
+- [x] Add a two-state paper-propagation audit: exact pre-propagation paper bytes
+      pass as pending; changed bytes must contain the complete D11 authority
+      population and key equation/profile markers.
+- [x] Advance the phase boundary to `paper_propagation` under the hash-bound
+      accepted D11-G9 resolution while freezing specifications, `src/`, tests,
+      GRC9, and GRC9V3.
+- [x] Add build, audit, test, paper-audit, and normal verification commands to
+      the admitted runner.
+- [x] Update the implementation plan, checklist, scenarios, and agentic guide.
+- [x] Run Ruff format/lint and `git diff --check`.
+- [x] Run the complete normal verifier with the historical audits and ET-C10
+      in-memory overlay audit/test.
+
+### Result
+
+- source contract: `records/ETC10D11SourceContract.json`
+- source contract digest:
+  `afab36a86604fcea50332375781be3c82427e72e3e8c10d7f2cb9c7814f40f81`
+- source manifest: `records/ETC10D11SourceBundleManifest.json`
+- source-bundle digest:
+  `98c273b3cc097f0d95adfba98ed7dfac0ac494dce9e779bb4b04fe79fef4f6aa`
+- graph snapshot: `records/ETC10D11GraphSnapshot.json`
+- graph digest:
+  `44d8c7d33950af5e5f7c61caa4fe6fbd14fc9aedf14218d0a11de7c705542e09`
+- forensic admission: `records/ETC10D11ForensicAdmission.json`
+- combined scientific populations: `41/29/31/18/80/183`
+- pending forward obligations: `17`
+- successor scenarios: `6/6 passed`
+- successor scenario contract:
+  `GRCV4ExploratorySideToolD11SuccessorScenarios.md`
+- focused audit: `passed`
+- focused fail-closed test: `12 checks passed`
+- normal verifier: `ET_C10_D11_VERIFY_PASS`
+- paper audit: `pending_tooling_ready`
+- historical graph rewritten: `false`
+- paper changed by ET-C10: `false`
+- specifications changed by ET-C10: `false`
+- runtime or repository tests changed by ET-C10: `false`
+- GRC9 or GRC9V3 changed: `false`
+
+### Gate
+
+- [x] Accept `ET-C10_D11_append_only_forensic_admission`.
+- [x] Authorize paper propagation only through the D11-aware paper audit.
+- [ ] Mark paper propagation verified.
+- [ ] Authorize D11 specification propagation.
+- [ ] Authorize runtime implementation.
+
+## Iteration 11. D11 API, Notebook, And Browser UX
+
+**Status:** candidate implemented and verified; human acceptance pending
+
+### Goal
+
+Make accepted D11 authority usable through the actual Python API, notebook,
+and browser surfaces without rewriting historical ET-C0 through ET-C10
+authority or satisfying downstream scientific obligations.
+
+### Checks
+
+- [x] Build a deterministic ET-C10-bound presentation bundle from
+      `load_successor_forensic_context`.
+- [x] Expose all 69 D11 authority entries: `2/2/2/12/13/31/7`
+      claims/debts/profiles/candidates/objects/contracts/obligations.
+- [x] Preserve 60 pure forensic API outputs byte-exactly in the browser bundle.
+- [x] Use nine source-bound node projections only where there is no dedicated
+      profile or verification-obligation forensic operation.
+- [x] Add a real browser **D11** workspace with scope and kind filters, search,
+      trace rows, source receipts, output digests, support relationships, and
+      an explicit authority ceiling.
+- [x] Keep inference, propagation, rerun prediction, and claim promotion out of
+      JavaScript.
+- [x] Add a separate runnable D11 notebook with six D11-C/D11-G9 recipes rather
+      than changing the historical two-recipe ET-C3 notebook.
+- [x] Require all six direct API, notebook, and browser results to be
+      canonically byte-identical.
+- [x] Add eight append-only ET-C11 UX scenarios without changing the accepted
+      ET-C9 35-scenario contract or ET-C10 six-scenario contract.
+- [x] Add Python and Node fail-closed tests for stale authority, missing views,
+      count drift, trace tampering, and authority widening.
+- [x] Run all 16 Playwright tests on desktop and mobile: four D11 executions
+      plus 12 historical regression executions.
+- [x] Visually inspect desktop provenance and mobile obligation views for
+      clipping, unreadable authority status, or source/projection conflation.
+- [x] Make the normal verification entry point rebuild, audit, run the
+      notebook, run component tests, and run browser pressure for ET-C11.
+- [x] Add build, audit, test, notebook, browser, and serve commands to the
+      admitted dispatcher.
+- [x] Update the plan, checklist, scenario contract, README, agentic guide, and
+      D11 UX usage guide.
+
+### Result
+
+- D11 UX bundle: `records/ETC11D11SuccessorUXBundle.json`
+- bundle digest:
+  `59e8f37cf9fb61afdd1b999124e7c1842300c618fc33cb3c91ed0af0bfcfe39e`
+- candidate record: `records/ETC11D11SuccessorUXCandidate.json`
+- candidate record digest:
+  `95b5f928c8b90eb9bdad6a788c72af871ce13c4f6daffe8c56db7dab5d2a3b5a`
+- latest web-build manifest digest:
+  `da11d3004b1448e614cf6f97c0d9bf66505709f867e1cc206538446303335e40`
+- browser catalog: `69/69`
+- direct forensic API outputs: `60`
+- source-bound node projections: `9`
+- notebook recipes: `6/6 API/notebook/browser byte-identical`
+- Node component files: `5/5 passed`
+- Playwright: `16/16 desktop/mobile executions passed`
+- historical browser regressions: `12/12 passed`
+- paper changed by ET-C11: `false`
+- specifications or runtime changed by ET-C11: `false`
+- GRC9 or GRC9V3 changed: `false`
+
+### Gate
+
+- [x] Implement and verify the `ET-C11-D11-UX` candidate.
+- [ ] Record human acceptance of the ET-C11 UX candidate.
+- [ ] Propagate D11 authority into the paper through the existing paper audit.

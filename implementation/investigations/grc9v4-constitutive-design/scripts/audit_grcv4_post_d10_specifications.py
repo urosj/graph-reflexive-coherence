@@ -51,8 +51,9 @@ EXPECTED_CLAIM_COUNTS = Counter(
 )
 PHASE_AUTHORIZATIONS = {
     "specification_writing": "GRCV4_GRC9V4_specification_writing",
-    "successor_investigation": (
-        "GRCV4_GRC9V4_D11_G9_ACTIVE_AFTER_D11_C_ACCEPTANCE"
+    "successor_investigation": ("GRCV4_GRC9V4_D11_G9_ACTIVE_AFTER_D11_C_ACCEPTANCE"),
+    "paper_propagation": (
+        "GRCV4_GRC9V4_D11_PAPER_PROPAGATION_AFTER_D11_C_AND_D11_G9_ACCEPTANCE"
     ),
     "implementation": "GRCV4_GRC9V4_implementation",
 }
@@ -115,7 +116,7 @@ def json_pointer(document: Any, pointer: str) -> Any:
 
 def validate_phase_boundary() -> tuple[str, int]:
     boundary = json.loads(BOUNDARY_PATH.read_text(encoding="utf-8"))
-    if boundary.get("schema") != "grcv4_grc9v4_post_d10_specification_boundary_v2":
+    if boundary.get("schema") != "grcv4_grc9v4_post_d10_specification_boundary_v4":
         raise RuntimeError("unexpected post-D10 boundary schema")
 
     base = boundary["authorization_base_commit"]
@@ -158,6 +159,15 @@ def validate_phase_boundary() -> tuple[str, int]:
             ),
             "src_and_tests": "frozen_to_authorization_base",
         },
+        "paper_propagation": {
+            "activation": (
+                "requires_hash_bound_accepted_D11_C_and_D11_G9_authority_plus_accepted_D11_forensic_overlay"
+            ),
+            "src_and_tests": "frozen_to_authorization_base",
+            "specifications": "frozen_pending_paper_propagation",
+            "paper": "mutable_only_at_authorized_paper_paths",
+            "exploratory_tool_UX": ("mutable_only_at_authorized_successor_UX_paths"),
+        },
         "implementation": {
             "activation": (
                 "requires_a_hash_bound_successor_authority_in_phase_authority"
@@ -189,6 +199,14 @@ def validate_phase_boundary() -> tuple[str, int]:
             "/authorization_effect/runtime_or_src_tests_change_authorized": False,
             "/authorization_effect/GRC9_or_GRC9V3_change_authorized": False,
         },
+        "paper_propagation": {
+            "/status": "accepted_bounded",
+            "/decision/selected_candidate_id": "D11-G9-P4a",
+            "/propagation_state/next_gate": "D11-paper-propagation",
+            "/authorization_effect/implementation_authorized": False,
+            "/authorization_effect/runtime_or_src_tests_change_authorized": False,
+            "/authorization_effect/GRC9_or_GRC9V3_change_authorized": False,
+        },
         "implementation": {
             "/authorization_effect/specification_authorized": True,
             "/authorization_effect/implementation_authorized": True,
@@ -203,7 +221,7 @@ def validate_phase_boundary() -> tuple[str, int]:
             raise RuntimeError(
                 f"phase authority does not satisfy {pointer}={expected!r}"
             )
-    if phase in {"successor_investigation", "implementation"}:
+    if phase in {"successor_investigation", "paper_propagation", "implementation"}:
         authority_was_already_present = (
             subprocess.run(
                 ["git", "cat-file", "-e", f"{base}:{authority['path']}"],
@@ -273,19 +291,105 @@ def validate_phase_boundary() -> tuple[str, int]:
         "audit_grc9v4_d11_c_resolution.py",
         "implementation/investigations/grc9v4-constitutive-design/scripts/"
         "audit_grc9v4_d11_g9_resolution.py",
+        "implementation/investigations/grc9v4-constitutive-design/scripts/"
+        "audit_grcv4_d11_paper_propagation.py",
         "implementation/investigations/grc9v4-constitutive-design/"
         "specification/PostD10SpecificationBoundary.json",
         "implementation/investigations/grc9v4-constitutive-design/tools/"
+        "exploratory-side-tool/docs/AgenticQueryGuide.md",
+        "implementation/investigations/grc9v4-constitutive-design/tools/"
+        "exploratory-side-tool/GRCV4ExploratorySideToolImplementationPlan.md",
+        "implementation/investigations/grc9v4-constitutive-design/tools/"
+        "exploratory-side-tool/GRCV4ExploratorySideToolImplementationChecklist.md",
+        "implementation/investigations/grc9v4-constitutive-design/tools/"
+        "exploratory-side-tool/GRCV4ExploratorySideToolD11SuccessorScenarios.md",
+        "implementation/investigations/grc9v4-constitutive-design/tools/"
+        "exploratory-side-tool/records/ETC10D11SourceContract.json",
+        "implementation/investigations/grc9v4-constitutive-design/tools/"
+        "exploratory-side-tool/records/ETC10D11SourceBundleManifest.json",
+        "implementation/investigations/grc9v4-constitutive-design/tools/"
+        "exploratory-side-tool/records/ETC10D11GraphSnapshot.json",
+        "implementation/investigations/grc9v4-constitutive-design/tools/"
+        "exploratory-side-tool/records/ETC10D11ForensicAdmission.json",
+        "implementation/investigations/grc9v4-constitutive-design/tools/"
+        "exploratory-side-tool/records/ETC10D11ForensicAdmission.md",
+        "implementation/investigations/grc9v4-constitutive-design/tools/"
         "exploratory-side-tool/tool/scripts/audit_iteration0_contract.py",
+        "implementation/investigations/grc9v4-constitutive-design/tools/"
+        "exploratory-side-tool/tool/scripts/build_iteration10_d11.py",
+        "implementation/investigations/grc9v4-constitutive-design/tools/"
+        "exploratory-side-tool/tool/scripts/audit_iteration10_d11.py",
+        "implementation/investigations/grc9v4-constitutive-design/tools/"
+        "exploratory-side-tool/tool/scripts/test_iteration10_d11.py",
         "implementation/investigations/grc9v4-constitutive-design/tools/"
         "exploratory-side-tool/tool/scripts/run.py",
         "implementation/investigations/grc9v4-constitutive-design/tools/"
         "exploratory-side-tool/tool/scripts/verify_iteration9.py",
+        "implementation/investigations/grc9v4-constitutive-design/tools/"
+        "exploratory-side-tool/tool/src/grcv4_explorer/__init__.py",
+        "implementation/investigations/grc9v4-constitutive-design/tools/"
+        "exploratory-side-tool/tool/src/grcv4_explorer/adapters.py",
+        "implementation/investigations/grc9v4-constitutive-design/tools/"
+        "exploratory-side-tool/tool/src/grcv4_explorer/forensic.py",
+        "implementation/investigations/grc9v4-constitutive-design/tools/"
+        "exploratory-side-tool/tool/src/grcv4_explorer/source_contract.py",
+        "implementation/investigations/grc9v4-constitutive-design/tools/"
+        "exploratory-side-tool/tool/src/grcv4_explorer/successor.py",
     }
     maintenance = set(boundary["authorized_verification_maintenance_paths"])
     if maintenance != expected_maintenance:
         raise RuntimeError("unexpected verification-maintenance path roster")
     for path_text in maintenance:
+        validate_repository_path(path_text)
+
+    expected_successor_ux_paths = {
+        "implementation/investigations/grc9v4-constitutive-design/tools/"
+        "exploratory-side-tool/GRCV4ExploratorySideToolD11UXScenarios.md",
+        "implementation/investigations/grc9v4-constitutive-design/tools/"
+        "exploratory-side-tool/README.md",
+        "implementation/investigations/grc9v4-constitutive-design/tools/"
+        "exploratory-side-tool/docs/D11UXGuide.md",
+        "implementation/investigations/grc9v4-constitutive-design/tools/"
+        "exploratory-side-tool/records/ETC11D11SuccessorUXBundle.json",
+        "implementation/investigations/grc9v4-constitutive-design/tools/"
+        "exploratory-side-tool/records/ETC11D11SuccessorUXCandidate.json",
+        "implementation/investigations/grc9v4-constitutive-design/tools/"
+        "exploratory-side-tool/records/ETC11D11UXCandidate.md",
+        "implementation/investigations/grc9v4-constitutive-design/tools/"
+        "exploratory-side-tool/records/ETC11D11UXWebBuildManifest.json",
+        "implementation/investigations/grc9v4-constitutive-design/tools/"
+        "exploratory-side-tool/tool/notebooks/d11_successor_recipes.ipynb",
+        "implementation/investigations/grc9v4-constitutive-design/tools/"
+        "exploratory-side-tool/tool/scripts/audit_iteration11_d11_ux.py",
+        "implementation/investigations/grc9v4-constitutive-design/tools/"
+        "exploratory-side-tool/tool/scripts/build_iteration11_d11_ux.py",
+        "implementation/investigations/grc9v4-constitutive-design/tools/"
+        "exploratory-side-tool/tool/scripts/run_iteration11_d11_notebook.py",
+        "implementation/investigations/grc9v4-constitutive-design/tools/"
+        "exploratory-side-tool/tool/scripts/serve_iteration11_d11.py",
+        "implementation/investigations/grc9v4-constitutive-design/tools/"
+        "exploratory-side-tool/tool/scripts/test_iteration11_d11_browser.py",
+        "implementation/investigations/grc9v4-constitutive-design/tools/"
+        "exploratory-side-tool/tool/scripts/test_iteration11_d11_ux.py",
+        "implementation/investigations/grc9v4-constitutive-design/tools/"
+        "exploratory-side-tool/tool/src/grcv4_explorer/successor_ux.py",
+        "implementation/investigations/grc9v4-constitutive-design/tools/"
+        "exploratory-side-tool/tool/web/e2e/successor.spec.mjs",
+        "implementation/investigations/grc9v4-constitutive-design/tools/"
+        "exploratory-side-tool/tool/web/src/app.js",
+        "implementation/investigations/grc9v4-constitutive-design/tools/"
+        "exploratory-side-tool/tool/web/src/styles.css",
+        "implementation/investigations/grc9v4-constitutive-design/tools/"
+        "exploratory-side-tool/tool/web/src/successor.js",
+        "implementation/investigations/grc9v4-constitutive-design/tools/"
+        "exploratory-side-tool/tool/web/tests/static-authority.test.mjs",
+        "implementation/investigations/grc9v4-constitutive-design/tools/"
+        "exploratory-side-tool/tool/web/tests/successor.test.mjs",
+    }
+    successor_ux_paths = set(boundary["authorized_successor_UX_paths"])
+    if successor_ux_paths != expected_successor_ux_paths:
+        raise RuntimeError("unexpected successor-UX path roster")
+    for path_text in successor_ux_paths:
         validate_repository_path(path_text)
 
     expected_successor_paths = {
@@ -335,11 +439,37 @@ def validate_phase_boundary() -> tuple[str, int]:
     for path_text in successor_paths:
         validate_repository_path(path_text)
 
+    expected_paper_paths = {
+        "implementation/investigations/grc9v4-constitutive-design/"
+        "drafts/2026-09-GRC-V4.md"
+    }
+    paper_paths = set(boundary["authorized_paper_propagation_paths"])
+    if paper_paths != expected_paper_paths:
+        raise RuntimeError("unexpected paper-propagation path roster")
+    for path_text in paper_paths:
+        if not validate_repository_path(path_text).is_file():
+            raise RuntimeError(f"missing authorized paper: {path_text}")
+
+    paper_frozen_specs = boundary["paper_phase_frozen_spec_sha256"]
+    expected_paper_frozen = set(outputs) | mutable
+    if set(paper_frozen_specs) != expected_paper_frozen:
+        raise RuntimeError("paper-phase frozen specification roster mismatch")
+    if phase == "paper_propagation":
+        for path_text, expected_sha in paper_frozen_specs.items():
+            path = validate_repository_path(path_text)
+            if not path.is_file() or sha256_file(path) != expected_sha:
+                raise RuntimeError(
+                    f"specification changed during paper propagation: {path_text}"
+                )
+
     changed_paths = set(git_lines("diff", "--name-only", base))
     changed_paths.update(git_lines("ls-files", "--others", "--exclude-standard"))
     allowed_paths = set(outputs) | mutable | maintenance
-    if phase == "successor_investigation":
+    if phase in {"successor_investigation", "paper_propagation", "implementation"}:
         allowed_paths.update(successor_paths)
+    if phase in {"paper_propagation", "implementation"}:
+        allowed_paths.update(paper_paths)
+        allowed_paths.update(successor_ux_paths)
     if phase == "implementation":
         allowed_paths.add(authority["path"])
     unexpected_changes = {
@@ -354,7 +484,11 @@ def validate_phase_boundary() -> tuple[str, int]:
             f"{sorted(unexpected_changes)}"
         )
 
-    if phase in {"specification_writing", "successor_investigation"}:
+    if phase in {
+        "specification_writing",
+        "successor_investigation",
+        "paper_propagation",
+    }:
         changed_runtime_paths = set(
             git_lines("diff", "--name-only", base, "--", "src", "tests")
         )
@@ -370,8 +504,7 @@ def validate_phase_boundary() -> tuple[str, int]:
         )
         if changed_runtime_paths:
             raise RuntimeError(
-                f"src/tests changed during {phase}: "
-                f"{sorted(changed_runtime_paths)}"
+                f"src/tests changed during {phase}: {sorted(changed_runtime_paths)}"
             )
 
     return phase, len(frozen)
@@ -570,9 +703,7 @@ def validate_v4_conformance_fixtures(profiles: set[str]) -> None:
         raise RuntimeError("V4 expansion fixture port allocation drift")
     endpoints = [tuple(endpoint) for edge in endpoint_rows for endpoint in edge]
     redirected = expansion.get("redirected_source_endpoints", [])
-    expected_redirected = [
-        [f"s{1 + ((port - 1) % 3)}", port] for port in range(1, 10)
-    ]
+    expected_redirected = [[f"s{1 + ((port - 1) % 3)}", port] for port in range(1, 10)]
     if redirected != expected_redirected:
         raise RuntimeError("V4 expansion fixture column redirection drift")
     endpoints.extend(tuple(endpoint) for endpoint in redirected)
@@ -617,7 +748,10 @@ def validate_v4_conformance_fixtures(profiles: set[str]) -> None:
     if {row.get("profile") for row in matrix} != profiles:
         raise RuntimeError("disabled fixture profile roster mismatch")
     if set(disabled.get("surfaces", [])) != {
-        "transition", "state", "observable", "lifecycle"
+        "transition",
+        "state",
+        "observable",
+        "lifecycle",
     }:
         raise RuntimeError("disabled fixture surface roster mismatch")
     if disabled.get("independent_case_count") != 40:
@@ -628,9 +762,7 @@ def validate_v4_conformance_fixtures(profiles: set[str]) -> None:
         for surface in disabled["surfaces"]
     }
     actual_disabled_ids = {
-        row[surface]
-        for row in matrix
-        for surface in disabled["surfaces"]
+        row[surface] for row in matrix for surface in disabled["surfaces"]
     }
     if actual_disabled_ids != expected_disabled_ids:
         raise RuntimeError("disabled fixture contract IDs do not match the matrix")
@@ -861,8 +993,22 @@ def main() -> int:
         )
         if result.returncode:
             raise RuntimeError(
-                "D11-G9 resolution audit failed:\n"
-                f"{result.stdout}\n{result.stderr}"
+                f"D11-G9 resolution audit failed:\n{result.stdout}\n{result.stderr}"
+            )
+        print(result.stdout.strip())
+        return 0
+    if phase == "paper_propagation":
+        paper_audit = INVESTIGATION / "scripts/audit_grcv4_d11_paper_propagation.py"
+        result = subprocess.run(
+            [sys.executable, str(paper_audit)],
+            cwd=ROOT,
+            capture_output=True,
+            text=True,
+            check=False,
+        )
+        if result.returncode:
+            raise RuntimeError(
+                f"D11 paper-propagation audit failed:\n{result.stdout}\n{result.stderr}"
             )
         print(result.stdout.strip())
         return 0

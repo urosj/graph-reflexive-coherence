@@ -1,6 +1,6 @@
 # GRCv4 Exploratory Side Tool
 
-**Status:** Iterations 0-9 accepted
+**Status:** Iterations 0-10 accepted; Iteration 11 UX candidate implemented
 
 This investigation defines a read-only exploratory tool over the accepted
 GRCv4/GRC9v4 constitutive-design records. It is a side tool for understanding
@@ -8,7 +8,8 @@ the investigation, tracing provenance, and exploring bounded structural
 counterfactuals. It is not a runtime model, a specification, or a new evidence
 source.
 
-The tool has two front ends over one validated Python graph kernel:
+The historical tool has two front ends over one validated Python graph kernel;
+the D11 successor cycle extends the same pattern without rewriting it:
 
 ```text
 accepted decisions/*.json
@@ -17,6 +18,9 @@ accepted decisions/*.json
   -> forensic Python and notebook reports
   -> deterministic ripple-table compiler
   -> static Cytoscape.js navigation client
+accepted ET-C10 D11 overlay
+  -> successor forensic API
+  -> ET-C11 D11 notebook and static browser workspace
 ```
 
 The admitted D0-D10.2 source bundle is an immutable, reproducible snapshot; the
@@ -59,12 +63,14 @@ TOOL=implementation/investigations/grc9v4-constitutive-design/tools/exploratory-
 python3 "$TOOL/scripts/bootstrap.py"
 .venv/bin/python "$TOOL/scripts/run.py" verify-iteration9
 .venv/bin/python "$TOOL/scripts/run.py" notebook-iteration3
-.venv/bin/python "$TOOL/scripts/run.py" serve-iteration8
+.venv/bin/python "$TOOL/scripts/run.py" notebook-iteration11-d11
+.venv/bin/python "$TOOL/scripts/run.py" serve-iteration11-d11
 ```
 
-`serve-iteration8` serves the existing verified static build. Directly invoking
-`serve_iteration8.py --refresh` rebuilds the accepted layer and therefore requires a
-new `verify-iteration8` run before its receipt is authoritative again.
+`serve-iteration11-d11` serves the latest ET-C11 candidate with the historical
+Explore/Lineage interfaces plus the new D11 workspace. `serve-iteration8`
+remains the historical entry point and should not refresh the shared
+distribution after ET-C11 has been built.
 
 `tool/web/dist` is the static distribution for the latest built iteration. A
 later browser build necessarily changes asset and Vite-manifest hashes, so an
@@ -81,10 +87,14 @@ Start with:
 
 - [user guide](./docs/UserGuide.md)
 - [agentic query guide](./docs/AgenticQueryGuide.md)
+- [D11 API, notebook, and browser UX guide](./docs/D11UXGuide.md)
 - [forensic recipes notebook](./tool/notebooks/forensic_recipes.ipynb)
+- [D11 successor notebook](./tool/notebooks/d11_successor_recipes.ipynb)
 - [implementation plan](./GRCV4ExploratorySideToolImplementationPlan.md)
 - [implementation checklist](./GRCV4ExploratorySideToolImplementationChecklist.md)
 - [user scenarios and plan-coverage validation](./GRCV4ExploratorySideToolUserScenarios.md)
+- [D11 successor forensic scenarios](./GRCV4ExploratorySideToolD11SuccessorScenarios.md)
+- [D11 API/notebook/browser UX scenarios](./GRCV4ExploratorySideToolD11UXScenarios.md)
 - [Iteration 0 source and layout contract](./records/ETC0SourceAndLayoutContract.md)
 - [accepted Iteration 1 source-adapter admission](./records/ETC1SourceAdapterAdmission.md)
 - [accepted Iteration 2 validated graph](./records/ETC2ValidatedGraphKernel.md)
@@ -107,6 +117,8 @@ Start with:
 - [Iteration 9 scenario coverage](./records/ETC9ScenarioCoverageAndUsability.json)
 - [Iteration 9 environment conformance](./records/ETC9EnvironmentConformance.json)
 - [Iteration 9 verification receipt](./records/ETC9VerificationReceipt.json)
+- [accepted Iteration 10 D11 forensic admission](./records/ETC10D11ForensicAdmission.md)
+- [Iteration 11 D11 UX candidate](./records/ETC11D11UXCandidate.md)
 - [accepted constitutive-design investigation](../../README.md)
 - [accepted D10 claim topology](../../decisions/D10NormativeClaimTopology.json)
 - [accepted D10 debt transformations](../../decisions/D10DebtClaimTransformationLedger.json)
@@ -188,6 +200,12 @@ ET_C9_scenario_documentation = canonical_35_scenario_contract_linked_without_dup
 ET_C9_coverage_digest = a4608d728c9b9e356421adb2d6b98390794c0916e90c299ad88467720f3c7404
 ET_C9_accepted_record_digest = 7e9fb5a8dada805b1cd1b86e877bf1d23cfc16c4a6c0a1ef97d8f518e6ee0288
 ET_C9_verification_receipt_digest = c0ae8b45a0d501d988845ce9565a3c89752a815a9a77676551c503870953266a
+iteration_10_D11_forensic_overlay = accepted
+ET_C10_D11_graph_digest = 44d8c7d33950af5e5f7c61caa4fe6fbd14fc9aedf14218d0a11de7c705542e09
+iteration_11_D11_UX = candidate_implemented_verified_human_acceptance_pending
+ET_C11_D11_UX_catalog = 69
+ET_C11_API_notebook_browser_identity = 6_of_6_byte_exact
+ET_C11_browser_pressure = 16_of_16_desktop_mobile_passed
 src_pygrc_changes = forbidden
 specification_changes = forbidden
 new_scientific_claims = forbidden

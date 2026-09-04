@@ -68,9 +68,9 @@ PYTHON_SUITE = (
     "test_iteration9_closeout.py",
 )
 
-# These validators consume only the frozen accepted artifacts. Source-rebuilding
-# tests are intentionally excluded while the successor records remain outside
-# the accepted ET-C0 source contract and discovery is correctly fail-closed.
+# These validators consume only the frozen ET-C0 through ET-C9 artifacts. Their
+# historical rebuild remains excluded after D11; ET-C10 independently rebuilds
+# and validates the append-only successor overlay in memory.
 SUCCESSOR_PHASE_PYTHON_SUITE = (
     "audit_iteration2_graph.py",
     "audit_iteration3_forensics.py",
@@ -80,6 +80,18 @@ SUCCESSOR_PHASE_PYTHON_SUITE = (
     "test_iteration8_lineage.py",
     "audit_iteration9_closeout.py",
     "test_iteration9_closeout.py",
+)
+
+D11_FORENSIC_SUITE = (
+    "audit_iteration10_d11.py",
+    "test_iteration10_d11.py",
+)
+
+D11_UX_SUITE = (
+    "build_iteration11_d11_ux.py",
+    "audit_iteration11_d11_ux.py",
+    "run_iteration11_d11_notebook.py",
+    "test_iteration11_d11_ux.py",
 )
 
 HISTORICAL_LAYER_AUDITS = (
@@ -124,7 +136,7 @@ def source_snapshot(repo_root: Path, records: Path) -> dict[str, bytes]:
     return snapshot_files(paths, repo_root)
 
 
-def accepted_artifact_snapshot() -> dict[str, bytes]:
+def accepted_artifact_snapshot(*, include_web: bool = True) -> dict[str, bytes]:
     records = SIDE_TOOL_ROOT / "records"
     excluded = {
         "ETC7VerificationReceipt.json",
@@ -136,6 +148,25 @@ def accepted_artifact_snapshot() -> dict[str, bytes]:
         if path.is_file()
         and not path.name.startswith("ETC9")
         and path.name not in excluded
+    ]
+    if include_web:
+        paths.extend(
+            path for path in (TOOL_ROOT / "web/dist").rglob("*") if path.is_file()
+        )
+        paths.extend(
+            path
+            for path in (TOOL_ROOT / "web/public/data").rglob("*")
+            if path.is_file()
+        )
+    return snapshot_files(paths, SIDE_TOOL_ROOT)
+
+
+def successor_ux_snapshot() -> dict[str, bytes]:
+    records = SIDE_TOOL_ROOT / "records"
+    paths = [
+        records / "ETC11D11SuccessorUXBundle.json",
+        records / "ETC11D11SuccessorUXCandidate.json",
+        records / "ETC11D11UXWebBuildManifest.json",
     ]
     paths.extend(path for path in (TOOL_ROOT / "web/dist").rglob("*") if path.is_file())
     paths.extend(
@@ -228,6 +259,7 @@ def main() -> int:
     source_before = source_snapshot(repo_root, records)
     protected_before = protected_snapshot(repo_root)
     accepted_before = accepted_artifact_snapshot()
+    accepted_records_before = accepted_artifact_snapshot(include_web=False)
 
     d10_results = [run_python(investigation_scripts / name) for name in D10_AUDITS]
     post_d10_boundary = (
@@ -241,7 +273,7 @@ def main() -> int:
     else:
         active_post_d10_phase = None
 
-    if active_post_d10_phase == "successor_investigation":
+    if active_post_d10_phase in {"successor_investigation", "paper_propagation"}:
         python_results = [
             run_python(scripts / name, *arguments)
             for name, *arguments in HISTORICAL_LAYER_AUDITS
@@ -249,15 +281,27 @@ def main() -> int:
         python_results.extend(
             run_python(scripts / name) for name in SUCCESSOR_PHASE_PYTHON_SUITE
         )
+        python_results.extend(run_python(scripts / name) for name in D11_FORENSIC_SUITE)
+        python_results.extend(run_python(scripts / name) for name in D11_UX_SUITE)
+        ux_first = successor_ux_snapshot()
+        python_results.append(run_python(scripts / "build_iteration11_d11_ux.py"))
+        ux_second = successor_ux_snapshot()
+        if ux_second != ux_first:
+            raise RuntimeError("ET-C11 second rebuild is not byte-identical")
         node_files, node_tests, node_terminal = run_node_tests()
+        browser_terminal = run_python(scripts / "test_iteration11_d11_browser.py")
 
         source_after = source_snapshot(repo_root, records)
         protected_after = protected_snapshot(repo_root)
-        accepted_after = accepted_artifact_snapshot()
+        accepted_after = accepted_artifact_snapshot(include_web=False)
         if source_after != source_before:
-            raise RuntimeError("successor-phase verification changed accepted source bytes")
-        if accepted_after != accepted_before:
-            raise RuntimeError("successor-phase verification changed accepted tool artifacts")
+            raise RuntimeError(
+                "successor-phase verification changed accepted source bytes"
+            )
+        if accepted_after != accepted_records_before:
+            raise RuntimeError(
+                "successor-phase verification changed accepted tool artifacts"
+            )
         if protected_after != protected_before:
             changed = sorted(set(protected_after) | set(protected_before))
             changed = [
@@ -272,11 +316,15 @@ def main() -> int:
         if diff.returncode:
             raise RuntimeError("git diff --check failed")
         print(
-            "ET_C9_VERIFY_PASS status=accepted_successor_investigation "
-            "rebuilds=skipped_fail_closed_unprocessed_successor_sources "
+            "ET_C11_D11_UX_VERIFY_PASS "
+            f"status=accepted_{active_post_d10_phase} "
+            "historical_rebuilds=skipped_immutable "
+            "D11_overlay_rebuild=in_memory_byte_exact "
+            "D11_UX_rebuilds=2_byte_exact "
             f"python_commands={len(python_results)} node_files={node_files} "
             f"node_tests={node_tests} node={node_terminal} "
-            "browser=not_rerun_accepted_dist_identity_audited "
+            f"browser={browser_terminal} "
+            "UX_status=candidate API_notebook_browser_identity=byte_exact "
             "accepted_source_immutable=true accepted_tool_artifacts_immutable=true "
             "protected_paths_immutable=true"
         )
