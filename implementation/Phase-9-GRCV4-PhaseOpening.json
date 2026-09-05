@@ -150,7 +150,7 @@
     "G3_is_full_specialization_conformance": false
   },
   "planning_review": {
-    "source": "/home/uros/.codex/attachments/f7ddb08b-163c-4b3a-a5af-99fe104d94af/pasted-text.txt",
+    "source": "implementation/phase-9-grcv4/verification/inputs/P9-PlanningReview.md",
     "sha256": "bf9aa0b4f5411f7e210e67c95a5f8273744b474d6e8a69fc0c237656585a9e74",
     "disposition": "execution_structure_feedback_integrated_P9_G1_acceptance_pending",
     "scientific_authority_added": false,
@@ -165,5 +165,10 @@
     "requirement": "validate_historical_release_and_successor_authority_without_rewriting_release_bound_auditor_or_boundary"
   },
   "next_gate": "P9-G1_implementation_review_and_successor_verification",
-  "claim_ceiling": "phase_planning_over_accepted_specification_no_runtime_implementation_or_conformance_evidence"
+  "claim_ceiling": "phase_planning_over_accepted_specification_no_runtime_implementation_or_conformance_evidence",
+  "path_normalization": {
+    "original_revision": "6e0a507c0fd7e0758392514acce5e79312a2069c",
+    "original_sha256": "86d25b88ba64bb7063a82817bc20f6612097237167a148079587909cb77e3694",
+    "change": "planning_review.source now locates the same SHA-256-bound bytes in the repository"
+  }
 }

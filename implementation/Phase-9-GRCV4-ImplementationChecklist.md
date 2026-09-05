@@ -21,7 +21,11 @@ Companions: [plan](./Phase-9-GRCV4-ImplementationPlan.md),
   adaptations and new runtime evidence.
 - Track all ten profile families independently. Unsupported profiles and
   unexecuted cases stay visible and unadvertised.
-- Record failures and gate holds before advancing to a dependent iteration.
+- Summarize relevant failures (cause, correction, remaining limit) and gate
+  holds before advancing dependent work. Do not register every debugging attempt.
+  Preserve retrievable evidence for accepted results; raw failures only when
+  material to the result or its limits. The [handoff addendum](./phase-9-grcv4/tranche-1/P9-1.9-EvidenceHandoff.md)
+  clarifies retention without adding a gate or rewriting historical records.
 
 ## Execution granularity
 

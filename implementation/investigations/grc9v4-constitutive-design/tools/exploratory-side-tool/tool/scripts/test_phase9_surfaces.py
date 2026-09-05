@@ -167,7 +167,7 @@ def browser_checks(root):
                 server.kill()
                 server.wait(timeout=5)
     print(
-        "PHASE9_BROWSER_PASS tests=14 projects=desktop,mobile screenshots=4 API_download_identity=byte_exact"
+        "PHASE9_BROWSER_PASS projects=desktop,mobile screenshots=4 API_download_identity=byte_exact"
     )
 
 

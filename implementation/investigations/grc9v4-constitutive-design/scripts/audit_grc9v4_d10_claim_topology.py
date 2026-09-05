@@ -745,7 +745,7 @@ all_text = "\n".join(
 )
 check(
     "no_machine_local_paths",
-    "/home/uros" not in all_text and "Documents/RC-github" not in all_text,
+    not any(prefix in all_text for prefix in ("/home/", "/Users/", "Documents/RC-github")),
 )
 check(
     "no_runtime_or_src_change_claim",

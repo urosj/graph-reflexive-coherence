@@ -44,6 +44,23 @@ def verification_status(repo_root: Path) -> dict:
         "next_gate": "P9-1.9 explicit user review; no runtime work yet",
         "claim_ceiling": "Current planning integrity and recorded tool execution are not scientific authority or runtime conformance.",
     }
+    recorded = None
+    if hasattr(module, "recorded_acceptance"):
+        payload["schema"] = "phase9_governance_status_v2"
+        try:
+            recorded = module.recorded_acceptance(root)
+            payload.update(
+                P9_G1_accepted=True, approval_digest=recorded["record_digest"]
+            )
+        except (
+            ValueError,
+            KeyError,
+            OSError,
+            TypeError,
+            subprocess.CalledProcessError,
+        ):
+            pass  # No authenticated decision is available; do not infer acceptance.
+        payload["handoff_evidence"] = module.handoff_status(root)
     try:
         policy, tree = module.current_boundary(root)
         payload["runtime_authority_state"] = "explicit_planning_authority_runtime_false"
@@ -53,13 +70,17 @@ def verification_status(repo_root: Path) -> dict:
             ready, owners = module.leaf_permissions(root)
             payload.update(
                 schema="phase9_governance_status_v2",
-                runtime_authorized=True, P9_G1_accepted=True,
+                runtime_authorized=True,
+                P9_G1_accepted=True,
                 runtime_authority_state="accepted_P9_G1_bounded_implementation_not_conformance",
                 approval_digest=approval["record_digest"],
                 implementation_scope=approval["runtime_targets"],
                 dependency_ready_leaves=ready,
-                permitted_runtime_paths=sorted(r["path"] for r in approval["runtime_targets"]
-                                               if r["requires_gate"] == "P9-G1" and set(ready) & owners[r["path"]]),
+                permitted_runtime_paths=sorted(
+                    r["path"]
+                    for r in approval["runtime_targets"]
+                    if r["requires_gate"] == "P9-G1" and set(ready) & owners[r["path"]]
+                ),
                 next_gate="P9-2.1 reviewed foundation; P9-G2 and P9-G3 remain pending",
                 claim_ceiling="Accepted permission to implement reviewed V4 scope is not executed or accepted runtime conformance.",
             )
@@ -113,19 +134,31 @@ def verification_status(repo_root: Path) -> dict:
         path = (
             root
             / module.SIDE
-            / ("tool/generated/phase9-verification/" + getattr(module, "RECEIPT_FILE", "verification-v2.json"))
+            / (
+                "tool/generated/phase9-verification/"
+                + getattr(module, "RECEIPT_FILE", "verification-v2.json")
+            )
         )
         if path.is_file() and not path.is_symlink():
-            receipt = module.read(path)
+            try:
+                receipt = module.read(path)
+            except (ValueError, OSError, TypeError):
+                receipt = {}  # A broken execution cache does not revoke approval.
+            if not isinstance(receipt, dict):
+                receipt = {}
             if (
-                receipt.get("schema") == getattr(module, "RECEIPT_SCHEMA", "phase9_verified_receipt_v2")
+                receipt.get("schema")
+                == getattr(module, "RECEIPT_SCHEMA", "phase9_verified_receipt_v2")
                 and receipt.get("status") == "passed"
                 and receipt.get("scope") == "historical_current_and_pressure"
                 and receipt.get("policy_digest") == policy["record_digest"]
                 and receipt.get("tree") == tree
                 and receipt.get("runtime_authorized") is implementation
                 and receipt.get("P9_G1_accepted") is implementation
-                and (not implementation or receipt.get("approval_digest") == module.APPROVAL_DIGEST)
+                and (
+                    not implementation
+                    or receipt.get("approval_digest") == module.APPROVAL_DIGEST
+                )
                 and receipt.get("receipt_digest")
                 == module.digest_record(receipt, "receipt_digest")
             ):
@@ -137,6 +170,11 @@ def verification_status(repo_root: Path) -> dict:
             module.current_boundary(root) == (policy, tree),
             "API inputs changed during verification",
         )
+        if recorded is not None:
+            module.require(
+                module.recorded_acceptance(root) == recorded,
+                "acceptance changed during read",
+            )
     except (
         ValueError,
         KeyError,
@@ -147,12 +185,39 @@ def verification_status(repo_root: Path) -> dict:
         payload["current_boundary"] = "failed_closed"
         payload["recorded_full_verification"] = "not_current"
         payload["runtime_authorized"] = False
-        payload["P9_G1_accepted"] = False
-        payload["runtime_authority_state"] = "unknown_or_unavailable_permission_withheld"
+        # Recheck the decision even when current work is held. Never equate a
+        # current-tree/evidence failure with the user withdrawing acceptance.
+        try:
+            recorded = (
+                module.recorded_acceptance(root)
+                if hasattr(module, "recorded_acceptance")
+                else None
+            )
+        except (
+            ValueError,
+            KeyError,
+            OSError,
+            TypeError,
+            subprocess.CalledProcessError,
+        ):
+            recorded = None
+        payload["P9_G1_accepted"] = recorded is not None
+        payload["runtime_authority_state"] = (
+            "accepted_P9_G1_current_work_held"
+            if recorded is not None
+            else "unknown_or_unavailable_permission_withheld"
+        )
         payload.pop("implementation_scope", None)
-        payload.pop("approval_digest", None)
+        if recorded is not None:
+            payload["approval_digest"] = recorded["record_digest"]
+        else:
+            payload.pop("approval_digest", None)
         payload.pop("dependency_ready_leaves", None)
         payload.pop("permitted_runtime_paths", None)
+        payload.pop("source_meaning", None)
+        payload.pop("tree", None)
+        payload.pop("recorded_receipt_digest", None)
+        payload.update(source_refs=[], iterations=[], policy_digest=None)
         payload["error"] = str(error)
     payload["status_digest"] = module.digest_record(payload, "status_digest")
     return payload
@@ -168,11 +233,17 @@ def pressure_projection(repo_root: Path, case_id: str) -> dict:
     module = _policy(root)
     policy, tree = module.current_boundary(root)
     path = (
-        root / module.SIDE / ("tool/generated/phase9-verification/" + getattr(module, "REPORT_FILE", "pressure-results.json"))
+        root
+        / module.SIDE
+        / (
+            "tool/generated/phase9-verification/"
+            + getattr(module, "REPORT_FILE", "pressure-results.json")
+        )
     )
     report = module.read(path)
     module.require(
-        report["schema"] == getattr(module, "REPORT_SCHEMA", "phase9_successor_pressure_results_v2")
+        report["schema"]
+        == getattr(module, "REPORT_SCHEMA", "phase9_successor_pressure_results_v2")
         and report["report_digest"] == module.digest_record(report, "report_digest"),
         "invalid pressure evidence digest or schema",
     )

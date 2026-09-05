@@ -1591,6 +1591,14 @@ API, real notebook cells and browser/export distinguish accepted permission
 from the still-empty runtime support sets. Earlier pending statements in the
 planning-successor sections describe historical preparation checkpoints.
 
+The [Phase 9 access guide](./docs/Phase9VerificationGuide.md#accepted-p9-g1-successor)
+also links normalized original-run evidence with separate original hash citations.
+The normal verifier reports archive integrity independently of recorded G1
+acceptance and current-work permission; the standalone archive check remains
+strict. API, notebook, browser and export expose those separate results.
+Relevant debugging failures are summarized, not mandatorily archived
+one attempt at a time; existing acceptance and runtime gates do not change.
+
 ### Scientific completion ceiling
 
 The P9-1.6–P9-1.8 pressure-guide correction adds three independently retained

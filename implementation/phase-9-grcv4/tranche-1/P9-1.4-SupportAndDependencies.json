@@ -7,19 +7,19 @@
   "source_review_bindings": [
     {
       "path": "implementation/phase-9-grcv4/tranche-1/P9-1.1-SourceCrosswalk.json",
-      "sha256": "5bca809b70366cd66ebb283e86cceb7ddbefb5000c49b8d16f58fa938cf548ed"
+      "sha256": "85fe7204f5a40e3ffa502fce33519000adb443ba6480cb85e0d6ee4155893ede"
     },
     {
       "path": "implementation/phase-9-grcv4/tranche-1/P9-1.2-DebtInventory.json",
-      "sha256": "2046d193df09eb17b7484d26e78758df53a6037aa84921c74e63213d2ae30d87"
+      "sha256": "9811da71ad7f5cbefcf84d85be3baa91e245c130c37f3d32a625cd0d33e246d8"
     },
     {
       "path": "implementation/phase-9-grcv4/tranche-1/P9-1.3-VerificationRouting.json",
-      "sha256": "04db3ac5385d9b16ac7bd02eda84b3bb00c84d92ced9d44ebad376d7632b9196"
+      "sha256": "8b926fda8edc7c0ed025b19721c5fb57c1d5aa448b082696eba9bef9459e3ddc"
     },
     {
       "path": "implementation/phase-9-grcv4/tranche-1/P9-1.1-1.3-ExecutionRecord.json",
-      "sha256": "1b7e04f0cf59531fd4217f5e32f72196c5e123c68f961a91ef6c13a707a1ce81"
+      "sha256": "d79eaadecd572a3566918744623bd6e3f4ce60b6974900690ff631b760a932ea"
     }
   ],
   "source_map": "P9-1.1-SourceCrosswalk.json /groups and /contracts; unchanged exact spec/paper/claim/contract references are reused",

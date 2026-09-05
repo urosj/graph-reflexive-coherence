@@ -12,6 +12,13 @@ import stat
 import tomllib
 
 _HERE = Path(__file__).resolve().parent
+_presentation_spec = importlib.util.spec_from_file_location(
+    "phase9_evidence_presentation", _HERE / "handoff_evidence.py"
+)
+_presentation = importlib.util.module_from_spec(_presentation_spec)
+_presentation_spec.loader.exec_module(_presentation)
+REVIEW_INPUT = _presentation.REVIEW_INPUT
+normalized_snapshot = _presentation.normalized_snapshot
 _old = _HERE / "phase9_policy.py"
 if (
     hashlib.sha256(_old.read_bytes()).hexdigest()
@@ -48,6 +55,28 @@ REPORT_SCHEMA = "phase9_G1_pressure_results_v1"
 REPORT_FILE = "g1-pressure-results.json"
 RECEIPT_SCHEMA = "phase9_verified_receipt_v3"
 RECEIPT_FILE = "verification-v3.json"
+PORTABLE_REVIEW_PATHS = {
+    PHASE + "tranche-1/P9-1.1-SourceCrosswalk.json",
+    PHASE + "tranche-1/P9-1.2-DebtInventory.json",
+    PHASE + "tranche-1/P9-1.3-VerificationRouting.json",
+    PHASE + "tranche-1/P9-1.1-1.3-Review.md",
+    PHASE + "tranche-1/P9-1.1-1.3-ExecutionRecord.json",
+    PHASE + "tranche-1/P9-1.4-SupportAndDependencies.json",
+    PHASE + "tranche-1/P9-1.5-OwnershipAndLegacyBaseline.json",
+    PHASE + "tranche-1/P9-1.4-1.5-ExecutionRecord.json",
+}
+PORTABLE_SOURCE_PATHS = {
+    prior.OPENING,
+    planning.SNAPSHOT,
+    PHASE + "tranche-1/P9-1.6-SuccessorVerification.md",
+    INV + "scripts/audit_grc9v4_d10_claim_topology.py",
+}
+# These publication files have their own integrity check. Their presence and
+# bytes are not part of implementation permission or the current runtime tree.
+HANDOFF_PATHS = {
+    HERE + "handoff/P9-G1-manifest.json",
+    HERE + "handoff/P9-G1-outputs.zip",
+}
 PATHS = {
     APPROVAL,
     POLICY,
@@ -56,8 +85,16 @@ PATHS = {
     HERE + "phase9_implementation_policy.py",
     HERE + "audit_phase9_implementation.py",
     HERE + "test_phase9_g1.py",
+    HERE + "handoff_evidence.py",
+    HERE + "test_handoff_evidence.py",
+    PHASE + "tranche-1/P9-1.9-EvidenceHandoff.md",
     HERE + "inputs/P9-1.9-G1-Acceptance-And-Scoped-Authorization-Pressure-Guide.md",
     PHASE + "tranche-1/P9-1.9-G1Review.md",
+    # Portable command presentations and their dependent package hashes only;
+    # acceptance() continues to validate the original reviews at BASELINE.
+    *PORTABLE_REVIEW_PATHS,
+    *PORTABLE_SOURCE_PATHS,
+    REVIEW_INPUT,
     "implementation/Phase-9-GRCV4-ImplementationPlan.md",
     "implementation/ImplementationPhases.md",
     "implementation/Phase-9-GRCV4-ImplementationChecklist.md",
@@ -79,7 +116,8 @@ PATHS = {
 }
 
 
-def acceptance(root):
+def recorded_acceptance(root):
+    """Authenticate the user decision against its original historical subjects."""
     prior.ancestor(root, BASELINE)
     value = read(safe_path(root, APPROVAL))
     require(
@@ -93,10 +131,25 @@ def acceptance(root):
     )
     for row in value["review_bindings"]:
         require(
-            prior.git_exact(root, BASELINE, row["path"]) == row["sha256"],
+            sha(git(root, "show", f"{BASELINE}:{row['path']}")) == row["sha256"],
             "accepted review binding changed",
         )
     return value
+
+
+def acceptance(root):
+    """Recorded acceptance plus current source fidelity; not archive retrieval."""
+    value = recorded_acceptance(root)
+    for row in value["review_bindings"]:
+        if row["path"] not in PORTABLE_REVIEW_PATHS | PORTABLE_SOURCE_PATHS:
+            prior.git_exact(root, BASELINE, row["path"])
+    check_portable_source_amendments(root)
+    check_portable_review_amendments(root)
+    return value
+
+
+def handoff_status(root):
+    return _presentation.status(root, root / HERE / "handoff/P9-G1-manifest.json")
 
 
 def baseline_files(root):
@@ -109,6 +162,71 @@ def baseline_files(root):
             require(kind == "blob", "unsupported protected object")
             result[name] = (mode, oid)
     return result
+
+
+def check_portable_review_amendments(root):
+    """Changing a command's input location cannot change reviewed source meaning."""
+    for name in sorted(n for n in PORTABLE_REVIEW_PATHS if n.endswith(".json")):
+        expected = json.loads(git(root, "show", f"{BASELINE}:{name}"))
+        actual = dict(read(safe_path(root, name)))
+        note = actual.pop("command_portability_note", None)
+        require(
+            note is None or isinstance(note, str), "invalid command portability note"
+        )
+        for section in ["validation", "correction_validation"]:
+            for row in expected.get(section, []):
+                if (
+                    "audit_grcv4_specification_release_acceptance.py --audit-file "
+                    in row.get("command", "")
+                ):
+                    row["command"] = (
+                        row["command"].split(" --audit-file ")[0]
+                        + " --audit-file "
+                        + prior.INPUT
+                    )
+        for field in ["artifact_bindings", "source_review_bindings", "source_bindings"]:
+            for row in expected.get(field, []):
+                if row["path"] in PORTABLE_REVIEW_PATHS | {prior.OPENING}:
+                    row["sha256"] = sha(safe_path(root, row["path"]).read_bytes())
+        require(
+            actual == expected,
+            "portability amendment changed reviewed content: " + name,
+        )
+
+
+def check_portable_source_amendments(root):
+    """Only the declared presentation changes; original Git subjects stay fixed."""
+    for name in sorted(PORTABLE_SOURCE_PATHS):
+        original = git(root, "show", f"{BASELINE}:{name}")
+        actual = safe_path(root, name).read_bytes()
+        if name == planning.SNAPSHOT:
+            valid = json.loads(actual) == normalized_snapshot(original)
+        elif name.endswith("P9-1.6-SuccessorVerification.md"):
+            valid = actual.decode() == _presentation.normalize_text(original.decode())
+        elif name == prior.OPENING:
+            expected = json.loads(original)
+            expected["planning_review"]["source"] = REVIEW_INPUT
+            expected["path_normalization"] = {
+                "original_revision": BASELINE,
+                "original_sha256": sha(original),
+                "change": "planning_review.source now locates the same SHA-256-bound bytes in the repository",
+            }
+            valid = json.loads(actual) == expected
+            require(
+                sha(safe_path(root, REVIEW_INPUT).read_bytes())
+                == expected["planning_review"]["sha256"],
+                "planning review input bytes changed",
+            )
+        else:
+            # Generalize the old username-specific prohibition, without changing
+            # any claim/topology check or updating a historical audit result.
+            expected = re.sub(
+                r'"/home/[^"/]+" not in all_text and "Documents/RC-github" not in all_text',
+                'not any(prefix in all_text for prefix in ("/home/", "/Users/", "Documents/RC-github"))',
+                original.decode(),
+            ).encode()
+            valid = actual == expected
+        require(valid, "path normalization changed historical meaning: " + name)
 
 
 def integration(name, before, after):
@@ -375,8 +493,10 @@ def current_boundary(root):
         )
     work = work_entries(root, approval)
     # G1 grants creation/update, not deletion/rename of published runtime work.
-    # Published evidence (including failed runs) is append-only, not replaceable
-    # by removing a manifest row or staging its deletion out of the index.
+    # Deliberately published supporting evidence is immutable. This does NOT
+    # require publishing routine failed attempts: relevant development failures
+    # may be summarized in the leaf record (see P9-1.9-EvidenceHandoff.md).
+    # Removing a manifest row or staging deletion cannot rewrite that evidence.
     runtime_names = {
         r["path"] for r in approval["runtime_targets"] if r["before_sha256"] is None
     }
@@ -418,9 +538,9 @@ def current_boundary(root):
         if prior.in_scope(n) and n not in baseline and not prior.generated(n)
     }
     require(
-        additions <= PATHS | set(work),
+        additions <= PATHS | HANDOFF_PATHS | set(work),
         "unauthorized source/test/planning addition: "
-        + str(sorted(additions - PATHS - set(work))),
+        + str(sorted(additions - PATHS - HANDOFF_PATHS - set(work))),
     )
     for name in PATHS:
         path = safe_path(root, name)

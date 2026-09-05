@@ -28,7 +28,7 @@
   ],
   "artifact_bindings": [
     {
-      "sha256": "3a2da3594adb496dd2056526f216271a5f302a4a2f0a24c5a78d1d45fac544f4",
+      "sha256": "e984ebcd61d294e1a87b149c48db11511e7eab62f2b0f7bedcd0123e27f5f66a",
       "path": "implementation/phase-9-grcv4/tranche-1/P9-1.4-SupportAndDependencies.json"
     },
     {
@@ -36,7 +36,7 @@
       "path": "implementation/phase-9-grcv4/tranche-1/P9-1.4-SupportReview.md"
     },
     {
-      "sha256": "8a6b251beb0d805e9a1cc95c04f03e26c48b3f8b515f7b2234a786fa47dac067",
+      "sha256": "01204c93512aa6aa12f1f9498bd96b4403f655899c0fd012a00f942bf847a301",
       "path": "implementation/phase-9-grcv4/tranche-1/P9-1.5-OwnershipAndLegacyBaseline.json"
     },
     {
@@ -159,7 +159,7 @@
       "result": "1 file already formatted"
     },
     {
-      "command": ".venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/audit_grcv4_specification_release_acceptance.py --audit-file /home/uros/Downloads/GRCV4-final-narrow-specification-acceptance-audit.md",
+      "command": ".venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/audit_grcv4_specification_release_acceptance.py --audit-file implementation/phase-9-grcv4/verification/inputs/GRCV4-final-narrow-specification-acceptance-audit.md",
       "result": "GRCV4_SPECIFICATION_RELEASE_ACCEPTANCE_AUDIT_PASS artifacts=12 state=accepted_frozen implementation_authorized=false"
     },
     {
@@ -221,7 +221,7 @@
       "evidence_kind": "local_post_correction_planning_validation_not_runtime_or_independent_attestation"
     },
     {
-      "command": ".venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/audit_grcv4_specification_release_acceptance.py --audit-file /home/uros/Downloads/GRCV4-final-narrow-specification-acceptance-audit.md",
+      "command": ".venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/audit_grcv4_specification_release_acceptance.py --audit-file implementation/phase-9-grcv4/verification/inputs/GRCV4-final-narrow-specification-acceptance-audit.md",
       "result": "GRCV4_SPECIFICATION_RELEASE_ACCEPTANCE_AUDIT_PASS artifacts=12 state=accepted_frozen branch_closure_ready=true implementation_authorized=false"
     },
     {
@@ -241,5 +241,6 @@
       "result": "PHASE9_CORRECTION_SCOPE_PASS paths=10 unchanged_predecessor_files=7 input_copies_exact=2 frozen_release_legacy_and_runtime_paths_unchanged=true"
     }
   ],
-  "commit_handling": "User requested amendment of checkpoint bae5e2b988756589c698bcd0eb7b2086020991d5 after correction validation; no new implementation iteration or separate commit requested."
+  "commit_handling": "User requested amendment of checkpoint bae5e2b988756589c698bcd0eb7b2086020991d5 after correction validation; no new implementation iteration or separate commit requested.",
+  "command_portability_note": "Release-audit command fields are portable replay equivalents using the gate-bound repository input. Recorded outcomes and acceptance states are unchanged, not claims of new executions. Exact original command spellings and package bindings remain at Git revision 23a8f7d1175714bac3ecb36373a6f83244e35aa4, path implementation/phase-9-grcv4/tranche-1/P9-1.4-1.5-ExecutionRecord.json. Current package hashes bind only the corrected presentation and its dependent references."
 }

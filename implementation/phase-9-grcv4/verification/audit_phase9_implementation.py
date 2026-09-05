@@ -127,6 +127,7 @@ def verify(root, boundary_only=False):
         "accepted_generic_runtime_support": [],
         "admitted_specialization_support_sets": [],
         "commands": commands,
+        "handoff_evidence": policy.handoff_status(root),
         "claim_ceiling": "accepted_implementation_permission_not_runtime_conformance",
     }
     result["receipt_digest"] = policy.digest_record(result, "receipt_digest")
@@ -146,8 +147,10 @@ def main():
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_bytes(policy.canonical(result) + b"\n")
     print(
-        f"PHASE9_IMPLEMENTATION_VERIFICATION_PASS version=3 runtime_authorized=true P9_G1=accepted runtime_support=empty scope={result['scope']}"
+        f"PHASE9_IMPLEMENTATION_VERIFICATION_PASS version=3 runtime_authorized=true P9_G1=accepted runtime_support=empty scope={result['scope']} handoff={result['handoff_evidence']['status']}"
     )
+    if result["handoff_evidence"]["status"] != "verified":
+        print("PHASE9_HANDOFF_WARNING " + result["handoff_evidence"]["detail"])
 
 
 if __name__ == "__main__":

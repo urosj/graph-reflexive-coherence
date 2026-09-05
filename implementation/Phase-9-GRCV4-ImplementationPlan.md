@@ -236,6 +236,16 @@ The dependency-ready foundation leaves are P9-2.1 and P9-2.2. Later generic
 paths cannot borrow those leaf IDs; their own accepted prerequisites remain
 required. P9-1.9 creates no runtime code.
 
+The [evidence handoff addendum](./phase-9-grcv4/tranche-1/P9-1.9-EvidenceHandoff.md)
+preserves path-normalized copies of selected supporting outputs in a repository
+bundle, with original hashes retained for citation and separate published hashes.
+For current work, relevant development failures need concise cause/correction/
+limitation summaries, not permanent raw archives of every attempt. Preserve raw
+failure evidence only when material to a result or its limits. Published
+supporting evidence remains immutable; no new gate or per-attempt process is
+introduced. Historical blanket retention wording remains as-recorded and is
+superseded by this clarification.
+
 P9-1.1–P9-1.3 are prepared as the first controlled
 [review package](./phase-9-grcv4/tranche-1/P9-1.1-1.3-Review.md), with separate
 iteration results, a reproducible source crosswalk, all 31 debt records, and
@@ -471,12 +481,12 @@ requires review of the evidence and support boundary.
 Run from the repository root:
 
 ```bash
-.venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/audit_grcv4_specification_release_acceptance.py --audit-file /home/uros/Downloads/GRCV4-final-narrow-specification-acceptance-audit.md
+.venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/audit_grcv4_specification_release_acceptance.py --audit-file implementation/phase-9-grcv4/verification/inputs/GRCV4-final-narrow-specification-acceptance-audit.md
 git diff --check
 ```
 
-The audit file is external acceptance evidence with a gate-bound SHA-256.
-On another checkout, supply the same bytes at an available path. That audit
+The audit input is the committed byte-identical acceptance evidence with its
+original gate-bound SHA-256; all required input bytes are in the repository. That audit
 verifies historical release acceptance; its printed implementation flag is
 the historical gate's flag. Phase 9's current state comes from its opening
 and subsequent accepted records. Until Tranche 1 closes, report the normal

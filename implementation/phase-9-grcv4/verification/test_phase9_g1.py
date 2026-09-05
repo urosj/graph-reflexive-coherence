@@ -178,6 +178,78 @@ def main():
                         inspect()
 
         case("accepted_G1_current_tree", inspect)
+        p.require(
+            p.HANDOFF_PATHS.isdisjoint(p.PATHS), "archive still gates implementation"
+        )
+        case(
+            "corrupt_handoff_does_not_revoke_implementation_permission",
+            lambda: edit(p.HERE + "handoff/P9-G1-outputs.zip", b"corrupt archive"),
+        )
+        case(
+            "missing_handoff_does_not_revoke_implementation_permission",
+            inspect,
+        )
+        for filename, case_id in [
+            (
+                "P9-1.4-SupportAndDependencies.json",
+                "portable_paths_cannot_change_dependencies",
+            ),
+            (
+                "P9-1.5-OwnershipAndLegacyBaseline.json",
+                "portable_paths_cannot_change_ownership",
+            ),
+        ]:
+
+            def change_reviewed_content(filename=filename):
+                name = p.PHASE + "tranche-1/" + filename
+                value = p.read(root / name)
+                if "dependency_edges" in value:
+                    value["dependency_edges"][0]["requires"].append("invented_gate")
+                else:
+                    value["modules"][0]["path"] = "src/pygrc/models/grc_9_v3.py"
+                edit(name, p.canonical(value))
+
+            case(
+                case_id,
+                change_reviewed_content,
+                "portability amendment changed reviewed content",
+            )
+
+        def changed_opening():
+            value = p.read(root / p.prior.OPENING)
+            value["planning_review"]["scientific_authority_added"] = True
+            edit(p.prior.OPENING, p.canonical(value))
+
+        case(
+            "portable_opening_cannot_change_authority",
+            changed_opening,
+            "path normalization changed historical meaning",
+        )
+
+        def changed_snapshot():
+            value = p.read(root / p.planning.SNAPSHOT)
+            value["files"][0]["utf8"] += "\nScientific meaning changed\n"
+            edit(p.planning.SNAPSHOT, p.canonical(value))
+
+        case(
+            "portable_snapshot_cannot_change_content",
+            changed_snapshot,
+            "path normalization changed historical meaning",
+        )
+        topology = p.INV + "scripts/audit_grc9v4_d10_claim_topology.py"
+        case(
+            "portable_checker_cannot_disable_claim_checks",
+            lambda: edit(
+                topology,
+                (root / topology).read_bytes().replace(b"bool(condition)", b"True"),
+            ),
+            "path normalization changed historical meaning",
+        )
+        case(
+            "portable_review_input_must_match_original_hash",
+            lambda: edit(p.REVIEW_INPUT, b"different review"),
+            "planning review input bytes changed",
+        )
         source = "src/pygrc/models/grc_v4_state.py"
         content = b'"""Isolated authority fixture; not a runtime implementation."""\n'
         case("accepted_G1_exact_targets", lambda: registered(source, content))

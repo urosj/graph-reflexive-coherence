@@ -1178,6 +1178,15 @@ human acceptance of ET-C11.
 This downstream user approval does not change ET-C10 scientific authority or
 ET-C11's separate UX human-acceptance state. No model implementation occurs here.
 
+The [handoff guidance](./docs/Phase9VerificationGuide.md#accepted-p9-g1-successor)
+now links retrievable normalized original-run evidence, original hash citations,
+and its independent integrity check. Archive loss/corruption does not revoke
+recorded G1 acceptance; current source/scope violations still hold work. API,
+notebook, browser and export exercise this distinction. Routine
+failed attempts need no archival checklist; summarize relevant causes,
+corrections and remaining limits in the existing work record. This retention
+clarification adds no acceptance or runtime gate.
+
 ## Iteration 11. D11 API, Notebook, And Browser UX
 
 **Status:** candidate implemented and verified; human acceptance pending

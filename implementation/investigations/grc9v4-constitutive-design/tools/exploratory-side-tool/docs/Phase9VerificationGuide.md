@@ -145,6 +145,38 @@ raw pressure, historical evidence and surface results are retained separately
 under `accepted-predecessor/`. Do not compare their input identities as if they
 were the same current tree.
 
+These generated locations are local working outputs, not the handoff archive.
+The [P9-G1 handoff addendum](../../../../../phase-9-grcv4/tranche-1/P9-1.9-EvidenceHandoff.md)
+links the repository ZIP and compact manifest preserving normalized copies of selected V2
+and V3 supporting runs, with the later predecessor replay labeled separately.
+`verification/handoff_evidence.py` under the Phase 9 directory checks retrieval,
+published member hashes and historical input identities without reexecuting those runs;
+the full verifier reports archive integrity separately from current-work verification.
+Retrieving this bundle requires no
+ignored generated files. Original hashes remain citable separately from normalized
+hashes; original raw ZIP retrieval is not claimed for a clone. A fresh rerun
+cannot substitute for the recorded execution.
+
+The API, notebook, browser, and downloaded status distinguish:
+
+| Condition | Recorded `P9_G1_accepted` | Current `runtime_authorized` | `handoff_evidence.status` |
+| --- | --- | --- | --- |
+| Accepted scope and valid archive | `true` | `true` | `verified` |
+| Accepted scope, archive missing or corrupt | `true` | `true` | `unavailable` or `invalid` |
+| Current source or scope violation | `true` if the original decision authenticates | `false` | Independently checked |
+| Acceptance record invalid or unavailable | `false` | `false` | Independently checked |
+
+The ZIP and manifest are not authority inputs. Their standalone integrity check
+still fails on missing/corrupt/replaced evidence; the normal implementation check
+reports that result without silently withdrawing the user's decision. A missing
+or malformed generated execution receipt remains `not_current`, not a new gate.
+
+For current work, concise summaries of relevant development failures suffice;
+raw failure outputs are retained only when material to a result or its limits.
+There is no requirement to publish or review every local pressure archive.
+Deliberately published supporting evidence remains immutable. Historical
+blanket failure-retention wording is superseded by the addendum, not rewritten.
+
 The runtime manifest binds exact current work paths, hashes and registered
 owning-leaf IDs. P9-2.1/P9-2.2 are currently dependency-ready, with eleven
 eligible runtime paths; later generic and specialization leaves retain their

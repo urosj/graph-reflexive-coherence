@@ -34,6 +34,7 @@ test('missing null and unrecognized permission cannot substitute for false', () 
 
 function accepted(extra={}) {
   return fixture({schema:'phase9_governance_status_v2',runtime_authorized:true,P9_G1_accepted:true,
+    handoff_evidence:{status:'verified'},
     runtime_authority_state:'accepted_P9_G1_bounded_implementation_not_conformance',
     approval_digest:'cd2c52f30477e1042bb903bd0553da237ddccc9cad373afecc1a84e4e0b37ea2',
     implementation_scope:Array.from({length:43},(_,i)=>({path:`synthetic/${i}`})),
@@ -48,4 +49,22 @@ test('failed G1 boundary cannot retain permission even with a recomputed digest'
   assert.throws(()=>checkedStatus(accepted({current_boundary:'failed_closed'})));
   const held=accepted({current_boundary:'failed_closed',runtime_authorized:false,P9_G1_accepted:false});
   assert.equal((await verifiedStatus(held)).runtime_authorized,false);
+});
+
+test('missing and invalid handoff evidence do not change accepted permission',async()=>{
+  for(const status of ['unavailable','invalid']) {
+    const value=await verifiedStatus(accepted({handoff_evidence:{status}}));
+    assert.equal(value.P9_G1_accepted,true);
+    assert.equal(value.runtime_authorized,true);
+  }
+  assert.throws(()=>checkedStatus(accepted({handoff_evidence:{status:'green'}})));
+});
+
+test('current work can be held while historical acceptance remains verified',async()=>{
+  const value=accepted({current_boundary:'failed_closed',runtime_authorized:false,runtime_authority_state:'accepted_P9_G1_current_work_held'});
+  for(const key of ['implementation_scope','dependency_ready_leaves','permitted_runtime_paths','status_digest']) delete value[key];
+  value.status_digest=createHash('sha256').update(canonical(value)).digest('hex');
+  assert.equal((await verifiedStatus(value)).P9_G1_accepted,true);
+  assert.equal(value.runtime_authorized,false);
+  assert.throws(()=>checkedStatus({...value,approval_digest:'0'.repeat(64)}));
 });

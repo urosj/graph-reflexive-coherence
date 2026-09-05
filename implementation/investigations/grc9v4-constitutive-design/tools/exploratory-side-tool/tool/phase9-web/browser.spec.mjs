@@ -1,5 +1,14 @@
 import { test, expect } from '../web/node_modules/@playwright/test/index.mjs';
 import { readFile } from 'node:fs/promises';
+import { createHash } from 'node:crypto';
+
+// Independent status-fixture serialization; do not import browser code through
+// Playwright's CommonJS loader or use the implementation as its own oracle.
+function canonical(value) {
+  if (Array.isArray(value)) return `[${value.map(canonical).join(',')}]`;
+  if (value !== null && typeof value === 'object') return `{${Object.keys(value).sort().map(k => `${JSON.stringify(k)}:${canonical(value[k])}`).join(',')}}`;
+  return JSON.stringify(value);
+}
 
 test('live API, source bindings, leaf states and downloadable JSON agree', async ({page, request}, info) => {
   const response = await request.get('/api/status');
@@ -18,6 +27,7 @@ test('live API, source bindings, leaf states and downloadable JSON agree', async
   await expect(page.locator('#iterations')).toContainText('P9-1.9');
   await expect(page.locator('#authority')).toContainText('Accepted / bounded implementation only');
   await expect(page.locator('#next-work')).toContainText('P9-2.1, P9-2.2');
+  await expect(page.locator('#handoff')).toContainText('Verified');
   await expect(page.locator('#policy')).toContainText(api.policy_digest);
   await expect(page.locator('#sources')).toContainText(api.source_refs[0].sha256);
   const downloading = page.waitForEvent('download');
@@ -26,6 +36,38 @@ test('live API, source bindings, leaf states and downloadable JSON agree', async
   expect(JSON.parse(await readFile(await download.path(), 'utf8'))).toEqual(api);
   await page.screenshot({path: info.outputPath('verification.png'), fullPage: true});
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+});
+
+test('archive availability is visible without revoking acceptance or blocking export', async ({page,request}) => {
+  const original=await (await request.get('/api/status')).json();
+  for(const [status,label] of [['unavailable','Unavailable'],['invalid','Invalid']]) {
+    const value={...original,handoff_evidence:{status}};
+    delete value.status_digest;
+    value.status_digest=createHash('sha256').update(canonical(value)).digest('hex');
+    await page.route('**/api/status', route=>route.fulfill({json:value}));
+    await page.goto('/');
+    await expect(page.locator('#handoff')).toContainText(label);
+    await expect(page.locator('#authority')).toContainText('Accepted / bounded implementation only');
+    await expect(page.locator('#boundary')).toContainText('Passed');
+    const pending=page.waitForEvent('download'); await page.locator('#download').click();
+    const file=await pending;
+    expect(JSON.parse(await readFile(await file.path(),'utf8'))).toEqual(value);
+    await page.unroute('**/api/status');
+  }
+});
+
+test('a current source failure holds work but preserves the recorded acceptance display', async ({page,request}) => {
+  const value=await (await request.get('/api/status')).json();
+  Object.assign(value,{current_boundary:'failed_closed',runtime_authorized:false,runtime_authority_state:'accepted_P9_G1_current_work_held',recorded_full_verification:'not_current',source_refs:[],iterations:[],policy_digest:null,error:'Current source binding failed'});
+  for(const key of ['implementation_scope','dependency_ready_leaves','permitted_runtime_paths','status_digest']) delete value[key];
+  value.status_digest=createHash('sha256').update(canonical(value)).digest('hex');
+  await page.route('**/api/status',route=>route.fulfill({json:value}));
+  await page.goto('/');
+  await expect(page.locator('#boundary')).toContainText('Failed');
+  await expect(page.locator('#authority')).toHaveText('Accepted / current work held');
+  await expect(page.locator('#status')).toContainText('acceptance remains intact');
+  await expect(page.locator('#next-work')).toContainText('Current work held');
+  await expect(page.locator('#download')).toBeEnabled();
 });
 
 test('refresh failure removes stale success and disables download', async ({page}) => {

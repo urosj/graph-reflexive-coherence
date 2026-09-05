@@ -6,6 +6,7 @@ from copy import deepcopy
 import json
 from pathlib import Path
 import subprocess
+import shutil
 import sys
 import tempfile
 from unittest.mock import patch
@@ -21,6 +22,27 @@ def checks(root):
     policy = api._policy(root)
     status = api.verification_status(root)
     require = policy.require
+    notebook = json.loads((TOOL / "notebooks/phase9_verification.ipynb").read_text())
+    query = next(c for c in notebook["cells"] if c["id"] == "query-status")
+
+    def notebook_query():
+        namespace = {
+            "Path": Path,
+            "PHASE9_REPO_ROOT": root,
+            "repo_root": root,
+            "verification_status": api.verification_status,
+            "pressure_projection": api.pressure_projection,
+        }
+        exec(
+            compile(
+                "".join(query["source"]),
+                "phase9_verification.ipynb:query-status",
+                "exec",
+            ),
+            namespace,
+        )
+        return namespace
+
     require(
         status["dependency_ready_leaves"] == ["P9-2.1", "P9-2.2"]
         and len(status["permitted_runtime_paths"]) == 11
@@ -70,9 +92,17 @@ def checks(root):
                 require(
                     held["current_boundary"] == "failed_closed"
                     and held["runtime_authorized"] is False
-                    and held["P9_G1_accepted"] is False,
-                    "failed API retained permission",
+                    and held["P9_G1_accepted"] is True,
+                    "current failure must hold work, not erase recorded acceptance",
                 )
+        with patch.object(
+            policy, "recorded_acceptance", side_effect=ValueError("invalid acceptance")
+        ):
+            held = api.verification_status(root)
+            require(
+                not held["P9_G1_accepted"] and not held["runtime_authorized"],
+                "invalid acceptance inferred",
+            )
         # A failure after the first successful current check must revoke the
         # partially assembled positive payload, not leave true flags behind.
         current = policy.current_boundary(root)
@@ -85,6 +115,7 @@ def checks(root):
             require(
                 held["current_boundary"] == "failed_closed"
                 and held["runtime_authorized"] is False
+                and held["P9_G1_accepted"] is True
                 and "implementation_scope" not in held,
                 "API TOCTOU retained authority",
             )
@@ -100,6 +131,14 @@ def checks(root):
                     missing["runtime_authorized"] is True
                     and missing["recorded_full_verification"] == "not_current",
                     "receipt confused with approval",
+                )
+                destination.write_bytes(b"not JSON")
+                malformed = api.verification_status(root)
+                require(
+                    malformed["P9_G1_accepted"]
+                    and malformed["runtime_authorized"]
+                    and malformed["recorded_full_verification"] == "not_current",
+                    "malformed cached execution revoked acceptance",
                 )
                 value = {
                     "schema": policy.RECEIPT_SCHEMA,
@@ -135,6 +174,58 @@ def checks(root):
                         == "not_current",
                         "stale receipt promoted: " + key,
                     )
+        with tempfile.TemporaryDirectory(prefix="grcv4-handoff-status-") as scratch:
+            manifest = Path(scratch) / "manifest.json"
+            bundle = Path(scratch) / "P9-G1-outputs.zip"
+            published = root / policy.HERE / "handoff"
+            shutil.copyfile(published / "P9-G1-manifest.json", manifest)
+            check = policy._presentation.status
+            with patch.object(
+                policy, "handoff_status", side_effect=lambda r: check(r, manifest)
+            ):
+                for content, expected in [
+                    (None, "unavailable"),
+                    (b"corrupt ZIP", "invalid"),
+                ]:
+                    if content is not None:
+                        bundle.write_bytes(content)
+                    result = api.verification_status(root)
+                    require(
+                        result["handoff_evidence"]["status"] == expected,
+                        "archive failure hidden",
+                    )
+                    require(
+                        result["P9_G1_accepted"]
+                        and result["runtime_authorized"]
+                        and result["current_boundary"] == "passed",
+                        "archive failure changed acceptance or permission",
+                    )
+                    require(
+                        notebook_query()["phase9_status"] == result,
+                        "notebook changed archive/acceptance meaning",
+                    )
+                shutil.copyfile(published / bundle.name, bundle)
+                require(
+                    api.verification_status(root)["handoff_evidence"]["status"]
+                    == "verified",
+                    "archive restoration not verified",
+                )
+                manifest.write_bytes(b"malformed manifest")
+                result = api.verification_status(root)
+                require(
+                    result["handoff_evidence"]["status"] == "invalid"
+                    and result["P9_G1_accepted"]
+                    and result["runtime_authorized"],
+                    "manifest failure changed acceptance",
+                )
+                manifest.unlink()
+                result = api.verification_status(root)
+                require(
+                    result["handoff_evidence"]["status"] == "unavailable"
+                    and result["P9_G1_accepted"]
+                    and result["runtime_authorized"],
+                    "missing manifest changed acceptance",
+                )
     subprocess.run(
         [sys.executable, str(TOOL / "scripts/run_phase9_notebook.py")],
         cwd=root,
