@@ -1,0 +1,231 @@
+{
+  "schema": "phase9_verification_successor_v2",
+  "active_phase": "implementation_planning",
+  "status": "verified_candidate_pending_P9_G1_review",
+  "baseline_commit": "e0bfc216540ebd70a2aedf1a939b1677e84fb787",
+  "release_id": "grcv4-spec-release-sha256:9f4c8fe5b57b1c477d834a3e4dae3f98a2b18c70e6e7f598e3c9652170c8645f",
+  "predecessor_snapshot_digest": "30e310a89dfb61e607ac5b576fa71de7f729a13ad9341073323da80fc45d7781",
+  "authorization_effect": {
+    "verification_maintenance_authorized": true,
+    "P9_G1_accepted": false,
+    "runtime_authorized": false,
+    "source_tests_dependency_changes_authorized": false,
+    "specification_mutation_authorized": false,
+    "scientific_claim_promotion": false
+  },
+  "trusted_runtime_approval": null,
+  "accepted_generic_runtime_support": [],
+  "admitted_specialization_support_sets": [],
+  "exact_mutation_paths": [
+    "implementation/Phase-9-GRCV4-ImplementationChecklist.md",
+    "implementation/Phase-9-GRCV4-ImplementationPlan.md",
+    "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/GRCV4ExploratorySideToolImplementationChecklist.md",
+    "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/GRCV4ExploratorySideToolImplementationPlan.md",
+    "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/docs/Phase9VerificationGuide.md",
+    "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/notebooks/phase9_verification.ipynb",
+    "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/browser.spec.mjs",
+    "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/index.html",
+    "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/playwright.config.mjs",
+    "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/verification.css",
+    "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/verification.js",
+    "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/verification.test.mjs",
+    "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/active_phase.py",
+    "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/run.py",
+    "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/run_phase9_notebook.py",
+    "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/serve_phase9.py",
+    "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/test_phase9_surfaces.py",
+    "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/verify_iteration9.py",
+    "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/phase9_verification.py",
+    "implementation/phase-9-grcv4/tranche-1/P9-1.6-1.8-AuditClosure.json",
+    "implementation/phase-9-grcv4/tranche-1/P9-1.6-ExecutionRecord.json",
+    "implementation/phase-9-grcv4/tranche-1/P9-1.6-SuccessorVerification.md",
+    "implementation/phase-9-grcv4/tranche-1/P9-1.7-1.8-ExecutionRecord.json",
+    "implementation/phase-9-grcv4/tranche-1/P9-1.7-1.8-Scenarios.json",
+    "implementation/phase-9-grcv4/tranche-1/P9-1.7-1.8-VerificationReview.md",
+    "implementation/phase-9-grcv4/tranche-1/P9-1.7-PressureResults.json",
+    "implementation/phase-9-grcv4/tranche-1/P9-1.8-SurfaceInventory.json",
+    "implementation/phase-9-grcv4/verification/Phase9VerificationBoundary.json",
+    "implementation/phase-9-grcv4/verification/Phase9VerificationSuccessor.json",
+    "implementation/phase-9-grcv4/verification/audit_phase9.py",
+    "implementation/phase-9-grcv4/verification/audit_phase9_successor.py",
+    "implementation/phase-9-grcv4/verification/history/P9-1.6-ArtifactSnapshot.json",
+    "implementation/phase-9-grcv4/verification/inputs/GRCV4-final-narrow-specification-acceptance-audit.md",
+    "implementation/phase-9-grcv4/verification/inputs/P9-1.6-1.8-QuickAudit.md",
+    "implementation/phase-9-grcv4/verification/inputs/P9-1.6-Successor-Verification-Pressure-Guide.md",
+    "implementation/phase-9-grcv4/verification/inputs/P9-1.7-Adversarial-Mutation-And-Authority-Pressure-Guide.md",
+    "implementation/phase-9-grcv4/verification/inputs/P9-1.8-Cross-Surface-Verification-Pressure-Guide.md",
+    "implementation/phase-9-grcv4/verification/phase9_policy.py",
+    "implementation/phase-9-grcv4/verification/phase9_semantics.py",
+    "implementation/phase-9-grcv4/verification/pressure_evidence.py",
+    "implementation/phase-9-grcv4/verification/test_phase9_dispatch.py",
+    "implementation/phase-9-grcv4/verification/test_phase9_gap_pressure.py",
+    "implementation/phase-9-grcv4/verification/test_phase9_pressure.py"
+  ],
+  "artifact_bindings": [
+    {
+      "path": "implementation/Phase-9-GRCV4-ImplementationChecklist.md",
+      "sha256": "432665c1d7183d6ca1246aaee469de7d14d7476dec28c450f246bc19ec969178"
+    },
+    {
+      "path": "implementation/Phase-9-GRCV4-ImplementationPlan.md",
+      "sha256": "2e09ec0a773968be5247858d5fb7d59815630d4bbb55f974d9dae8d9f5e0df4b"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/GRCV4ExploratorySideToolImplementationChecklist.md",
+      "sha256": "453ff0d406de28ec81856089d1589cdd6f8bddfcab2b33a59bc141a2a23b7b5e"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/GRCV4ExploratorySideToolImplementationPlan.md",
+      "sha256": "04cbfbd892eee8a1e255302ecd8141900d712ab59c47e047f11f5fbb0ee0b699"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/docs/Phase9VerificationGuide.md",
+      "sha256": "844af2c7431240cd427c1dc71afae4064f605bc1e662cb876c9b616005aee37a"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/notebooks/phase9_verification.ipynb",
+      "sha256": "1cc6d5d0727c3c3c699fbebe3e961fee923dc505eb61156cf6ddb4b31aaffbc4"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/browser.spec.mjs",
+      "sha256": "2c8c1da681b48ee3c21dd4325eff90e2a19ff37a7ae3f2b33b20f9e455154a90"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/index.html",
+      "sha256": "c324eb6a6afc2aa9ad34e80b2af1dbd065f206f4af16e00515e1e81f85d59caf"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/playwright.config.mjs",
+      "sha256": "a9d9b8fbf0a65836e75656d2e8f54608810bc0effc5f062b63bdb3300be98353"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/verification.css",
+      "sha256": "e0859637216a12c7d97de97fe4b2016f9a1c2ff82173472f06505cff01c86e48"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/verification.js",
+      "sha256": "ea752ca4d74b0f779c967235b4f26752671ef5f22d251ea43c2d34f70a21c176"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/verification.test.mjs",
+      "sha256": "6a4889d9ca748e24fc04ec4a3a0aef7e63019c262b07564da64eb30b66fe12de"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/active_phase.py",
+      "sha256": "294fca40f10ed6b85285bf8ea60e25320c50becf47e326ebf753e20d889dc4ee"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/run.py",
+      "sha256": "e5552ba59a7ee6137bf77013708064950e4162f6845d03ea827ccd43c392b2f3"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/run_phase9_notebook.py",
+      "sha256": "9d1539042a17e1aaf15d995c1811fe60c0e2e7e20db80c496ab78207aa8b783c"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/serve_phase9.py",
+      "sha256": "a50664193105f10fb1368b38ee7f921504dae966fb9ccdbe569f6419dd9cee15"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/test_phase9_surfaces.py",
+      "sha256": "5e25e01dfc2f7f344a1d31ead7dd08d70b331ac5e9e36245d9e31dab2bf6eb24"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/verify_iteration9.py",
+      "sha256": "7d98d55848e1369d7544cd5866dbb6d0f3b1412a743500a9ee6c223ca04bb6b8"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/phase9_verification.py",
+      "sha256": "999ead8081dd932318d7bb18d7ffc8f9aaa2d873651febbccf8b878f39fa6381"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-1/P9-1.6-1.8-AuditClosure.json",
+      "sha256": "bdddf53469f29514defd748a964995b1c75c7a6af51344e13b1074acf049a500"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-1/P9-1.6-ExecutionRecord.json",
+      "sha256": "b583357e358befa464069acea4a26054cab6a67462de4ca0568409d4676cf13d"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-1/P9-1.6-SuccessorVerification.md",
+      "sha256": "579ca71fdb8c3e96ae6b284829d9d751efe934e356fd927b1d66fd3e8136b710"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-1/P9-1.7-1.8-Scenarios.json",
+      "sha256": "2b3e47f2c4d08ad06ba8f7b9cfcefee6513df83c66d9943f8e503c4679d3267c"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-1/P9-1.7-1.8-VerificationReview.md",
+      "sha256": "bb8b641db2316013009425e16545a93a7af37d255d4094502a22ec1cc42e3eaa"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-1/P9-1.7-PressureResults.json",
+      "sha256": "8653e76e44553ffd32a184ead0fb6841e681ce74472a9120d4ee79a161fe2e3c"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-1/P9-1.8-SurfaceInventory.json",
+      "sha256": "c8c3488c65452cdc64c9adfc36f6a165e80d6610f8a7906848cde946b281f449"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/Phase9VerificationBoundary.json",
+      "sha256": "0ca97e3def22fa4a0b8f46a0a993734e2bda84ef56ccc5099bccb020e0a47eeb"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/audit_phase9.py",
+      "sha256": "baba1eb0aafa86033237992e796ecd3e65744c94937e02bc80506bc0adb35fad"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/audit_phase9_successor.py",
+      "sha256": "0c6243583e7b7eac0743fb28515ac974f37308d7a76406e6b9cdda9616021a57"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/history/P9-1.6-ArtifactSnapshot.json",
+      "sha256": "1ed1a3da23186613a5265cdba0cfd84cbcaf4b27a8c335e8f9d99e31eeb9d899"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/inputs/GRCV4-final-narrow-specification-acceptance-audit.md",
+      "sha256": "f136c8552e1c7ef59570c11b26d592430e42058a9d9994e75a09560fda84242e"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/inputs/P9-1.6-1.8-QuickAudit.md",
+      "sha256": "f9977d3d848a4ab242fecd73a5ed9d2f7bec5375a4d7f23838f2daa4dd19b9fd"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/inputs/P9-1.6-Successor-Verification-Pressure-Guide.md",
+      "sha256": "1f1c1de79b3939045b86c08bcb9d6f48c9c0b64ea60171d47be48f33f9609fe0"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/inputs/P9-1.7-Adversarial-Mutation-And-Authority-Pressure-Guide.md",
+      "sha256": "a486c57a67ae0dee8926de39073b1c9d9bd4565849818559361dc95fbdee9a7d"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/inputs/P9-1.8-Cross-Surface-Verification-Pressure-Guide.md",
+      "sha256": "58696411c376a335c2f6d8322dd5afe264d1a612c3977a417aa57594f26c65d4"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/phase9_policy.py",
+      "sha256": "c5a1ccb063b97a9a0b8525bf4a48b248aa783e2a3cac4a37403bbbd24596cf83"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/phase9_semantics.py",
+      "sha256": "1239bc562771dd23b8f44632c864c352f703c6a18735867300337ba58f5fd6ec"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/pressure_evidence.py",
+      "sha256": "5db5afdd60c4271a11bf866eb44fa1b00f95f3293dc307106ea46e086c6db045"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_phase9_dispatch.py",
+      "sha256": "ec83c137b833c671438891725e9b8071b19fce6ae3a34824cc2b9f6d9c600807"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_phase9_gap_pressure.py",
+      "sha256": "3ff822d5933baea08a5f09d3a7269652b163a555a0ba7b99ef4ad8efb5c7c15b"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_phase9_pressure.py",
+      "sha256": "31f984e58378b19f7f4549ab9626699fbc19ff4b3ba9ae906ecd84aaf4fb4ed9"
+    }
+  ],
+  "record_digest": "a53592432b553c9e2203050975c729e427bed59fe9d6902a519e2ae2716e1f25"
+}

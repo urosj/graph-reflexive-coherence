@@ -1124,6 +1124,44 @@ ET-C9 artifacts, and make the D11 results queryable before paper propagation.
       specification-extraction gate.
 - [ ] Authorize runtime implementation.
 
+## Phase 9 successor pressure and access (P9-1.7/P9-1.8)
+
+These are engineering-verification leaves, not ET-C11 human acceptance or
+P9-G1 runtime authority. See the [access guide](./docs/Phase9VerificationGuide.md).
+
+- [x] P9-1.7: Execute all six registered review pressures, including actual
+      frozen bytes, exact child/alias/dependency semantics, conditional
+      completion and separately pinned synthetic future-runtime controls.
+- [x] P9-1.8: Verify the real API, notebook code cells and desktop/mobile
+      browser refresh/download against the same authority boundary.
+- [x] P9-1.8: Reconcile executable scenarios and normal-entry verification;
+      retain the unchanged D11 API/notebook/browser checks and artifacts.
+- [ ] Record explicit user acceptance and P9-1.9/P9-G1 authority separately.
+
+- [x] Close the supplied pressure-guide gaps with attributable rejection,
+      combined faults, broken-checker controls and source-admitted semantics.
+- [x] Preserve candidate rejection separately from a passing assertion through
+      the actual API, notebook, desktop/mobile browser and JSON export.
+- [x] Retain the surface inventory, three batch results, exact mutation/state
+      evidence, raw run archives and source authority/support distinctions.
+
+## Phase 9 Planning Successor Verification — P9-1.6
+
+Candidate evidence: [P9-1.6 record](../../../../phase-9-grcv4/tranche-1/P9-1.6-ExecutionRecord.json).
+This is downstream verification maintenance, not a new scientific source or
+human acceptance of ET-C11.
+
+- [x] Reproduce `P9-TOOL-001` on the accepted planning checkpoint.
+- [x] Keep release-bound auditor/boundary bytes and prior review records unchanged.
+- [x] Run the four historical D10/specification audits in their accepted Git tree.
+- [x] Verify current release/acceptance/opening, no-ff merge, planning scope and hashes.
+- [x] Route both normal entry points through the shared state-detected dispatcher.
+- [x] Add a portable, byte-identical copy of the already hash-bound acceptance audit.
+- [x] Retain focused dispatch/authority checks and existing normal API/notebook/browser regressions.
+- [ ] Complete P9-1.7's adversarial authority/composition review.
+- [ ] Complete P9-1.8's API/notebook/browser/scenario reconciliation.
+- [ ] Record P9-G1 under separate user acceptance before runtime/source/test/dependency work.
+
 ## Iteration 11. D11 API, Notebook, And Browser UX
 
 **Status:** candidate implemented and verified; human acceptance pending

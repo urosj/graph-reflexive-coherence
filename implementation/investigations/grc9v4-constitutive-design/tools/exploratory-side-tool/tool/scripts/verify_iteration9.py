@@ -10,6 +10,8 @@ import sys
 from pathlib import Path
 from typing import Any
 
+from active_phase import phase9_present, verification_script
+
 
 SCRIPT = Path(__file__).resolve()
 TOOL_ROOT = SCRIPT.parents[1]
@@ -261,11 +263,21 @@ def main() -> int:
     accepted_before = accepted_artifact_snapshot()
     accepted_records_before = accepted_artifact_snapshot(include_web=False)
 
-    d10_results = [run_python(investigation_scripts / name) for name in D10_AUDITS]
+    phase9 = phase9_present(repo_root)
+    # The Phase 9 verifier runs these unchanged audits in the accepted release
+    # checkout. Their historical current-tree assertions do not govern Phase 9.
+    d10_results = (
+        []
+        if phase9
+        else [run_python(investigation_scripts / name) for name in D10_AUDITS]
+    )
     post_d10_boundary = (
         investigation_scripts.parent / "specification/PostD10SpecificationBoundary.json"
     )
-    if post_d10_boundary.is_file():
+    if phase9:
+        run_python(verification_script(repo_root))
+        active_post_d10_phase = "implementation_planning"
+    elif post_d10_boundary.is_file():
         run_python(investigation_scripts / POST_D10_SPECIFICATION_AUDIT)
         active_post_d10_phase = json.loads(
             post_d10_boundary.read_text(encoding="utf-8")
@@ -280,6 +292,7 @@ def main() -> int:
         "specification_propagation",
         "specification_correction",
         "implementation",
+        "implementation_planning",
     }:
         python_results = [
             run_python(scripts / name, *arguments)
@@ -297,6 +310,10 @@ def main() -> int:
             raise RuntimeError("ET-C11 second rebuild is not byte-identical")
         node_files, node_tests, node_terminal = run_node_tests()
         browser_terminal = run_python(scripts / "test_iteration11_d11_browser.py")
+        phase9_browser = (
+            run_python(scripts / "test_phase9_surfaces.py", "--browser")
+            if phase9 else "not_applicable"
+        )
 
         source_after = source_snapshot(repo_root, records)
         protected_after = protected_snapshot(repo_root)
@@ -324,13 +341,15 @@ def main() -> int:
             raise RuntimeError("git diff --check failed")
         print(
             "ET_C11_D11_UX_VERIFY_PASS "
-            f"status=accepted_{active_post_d10_phase} "
-            "historical_rebuilds=skipped_immutable "
+            f"status={'verified' if phase9 else 'accepted'}_{active_post_d10_phase} "
+            + ("runtime_authorized=false P9_G1=pending " if phase9 else "")
+            + "historical_rebuilds=skipped_immutable "
             "D11_overlay_rebuild=in_memory_byte_exact "
             "D11_UX_rebuilds=2_byte_exact "
             f"python_commands={len(python_results)} node_files={node_files} "
             f"node_tests={node_tests} node={node_terminal} "
             f"browser={browser_terminal} "
+            f"phase9_surfaces={phase9_browser} "
             "UX_status=candidate API_notebook_browser_identity=byte_exact "
             "accepted_source_immutable=true accepted_tool_artifacts_immutable=true "
             "protected_paths_immutable=true"

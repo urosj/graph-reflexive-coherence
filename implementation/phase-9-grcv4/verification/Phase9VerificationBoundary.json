@@ -1,0 +1,93 @@
+{
+  "schema": "phase9_verification_boundary_v1",
+  "artifact_id": "P9-1.6-VERIFICATION-BOUNDARY-v1",
+  "date": "2026-09-05",
+  "status": "implemented_candidate_pending_P9_1_7_and_P9_1_8",
+  "active_phase": "implementation_planning",
+  "baseline_commit": "e0bfc216540ebd70a2aedf1a939b1677e84fb787",
+  "historical_revision": "f1817b8cf41e439cbb18ad82dfab6b39a77ae43d",
+  "release_id": "grcv4-spec-release-sha256:9f4c8fe5b57b1c477d834a3e4dae3f98a2b18c70e6e7f598e3c9652170c8645f",
+  "opening_binding": {
+    "path": "implementation/Phase-9-GRCV4-PhaseOpening.json",
+    "sha256": "86d25b88ba64bb7063a82817bc20f6612097237167a148079587909cb77e3694"
+  },
+  "user_request": "you can now continue with P9-1.6",
+  "authorization_effect": {
+    "verification_maintenance_authorized": true,
+    "P9_G1_accepted": false,
+    "runtime_authorized": false,
+    "source_tests_dependency_changes_authorized": false,
+    "specification_mutation_authorized": false,
+    "scientific_claim_promotion": false
+  },
+  "accepted_generic_runtime_support": [],
+  "admitted_specialization_support_sets": [],
+  "exact_mutation_paths": [
+    "implementation/Phase-9-GRCV4-ImplementationChecklist.md",
+    "implementation/Phase-9-GRCV4-ImplementationPlan.md",
+    "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/GRCV4ExploratorySideToolImplementationChecklist.md",
+    "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/GRCV4ExploratorySideToolImplementationPlan.md",
+    "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/active_phase.py",
+    "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/run.py",
+    "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/verify_iteration9.py",
+    "implementation/phase-9-grcv4/tranche-1/P9-1.6-ExecutionRecord.json",
+    "implementation/phase-9-grcv4/tranche-1/P9-1.6-SuccessorVerification.md",
+    "implementation/phase-9-grcv4/verification/Phase9VerificationBoundary.json",
+    "implementation/phase-9-grcv4/verification/audit_phase9.py",
+    "implementation/phase-9-grcv4/verification/inputs/GRCV4-final-narrow-specification-acceptance-audit.md",
+    "implementation/phase-9-grcv4/verification/test_phase9_dispatch.py"
+  ],
+  "artifact_bindings": [
+    {
+      "path": "implementation/Phase-9-GRCV4-ImplementationChecklist.md",
+      "sha256": "2453b65a0819493b71c7696a47ff5a609b57ded08a94fe4d47e38c5b33c6805c"
+    },
+    {
+      "path": "implementation/Phase-9-GRCV4-ImplementationPlan.md",
+      "sha256": "9aaed6e3877435fab5d330443409f5667d37147c288f0b6d288687e8ff02f418"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/GRCV4ExploratorySideToolImplementationChecklist.md",
+      "sha256": "be57429b4e661b275f75d9a2f429d5448ddb65d873119fbc68884b354488b4ae"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/GRCV4ExploratorySideToolImplementationPlan.md",
+      "sha256": "c4225db4f32bbe51554d64e24b68849a541848b062a4c1d2b07ea48ab0f85f55"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/active_phase.py",
+      "sha256": "d127d985cd37cead0c470b9b35e6162469e620afa7a5629859f79b938966d238"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/run.py",
+      "sha256": "d264ad2571bcc2b497de6c13a4de4c99150207f1e45b765902bec8c4dbbba8b1"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/verify_iteration9.py",
+      "sha256": "c0381054427b60734f4affa5e4eb79469aee569762bcdea6a05d28644b044275"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-1/P9-1.6-SuccessorVerification.md",
+      "sha256": "579ca71fdb8c3e96ae6b284829d9d751efe934e356fd927b1d66fd3e8136b710"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/audit_phase9.py",
+      "sha256": "baba1eb0aafa86033237992e796ecd3e65744c94937e02bc80506bc0adb35fad"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/inputs/GRCV4-final-narrow-specification-acceptance-audit.md",
+      "sha256": "f136c8552e1c7ef59570c11b26d592430e42058a9d9994e75a09560fda84242e"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_phase9_dispatch.py",
+      "sha256": "ec83c137b833c671438891725e9b8071b19fce6ae3a34824cc2b9f6d9c600807"
+    }
+  ],
+  "execution_record": "implementation/phase-9-grcv4/tranche-1/P9-1.6-ExecutionRecord.json",
+  "execution_record_role": "binds_policy_digest_and_results_not_a_new_authority_or_self_hash",
+  "future_state_policy": "Reject runtime state until separately accepted P9-G1 successor and implementation mutation policy. P9-1.7/P9-1.8 extend only their explicitly requested maintenance scope; never rewrite frozen release authority.",
+  "historical_execution": "Unchanged D10/D10.1/D10.2 and full post-D10 specification audits in a disposable Git checkout of historical_revision.",
+  "current_tree_policy": "Check all protected scoped changes against baseline_commit, including untracked/ignored source additions; exact bound maintenance paths only. Unrelated paths outside this scope are not frozen.",
+  "claim_ceiling": "planning_verification_candidate_not_runtime_or_scientific_acceptance",
+  "record_digest": "8282d8e0bdaad9eedb7cdb4eb69a8fccf8700fbec46cce3a9418b1f6838b0aab"
+}

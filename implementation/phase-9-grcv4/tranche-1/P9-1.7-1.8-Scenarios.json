@@ -1,0 +1,104 @@
+{
+  "schema": "phase9_verification_scenarios_v1",
+  "authority_class": "implementation_governance_not_scientific_claims",
+  "runtime_authorized": false,
+  "P9_G1_accepted": false,
+  "predecessor_scenarios": "Existing ET-C9/ET-C10/ET-C11 scenarios and accepted artifacts remain unchanged.",
+  "review_pressures": [
+    {
+      "id": "P9-REVIEW-PRESSURE-8.1",
+      "executable": "implementation/phase-9-grcv4/verification/test_phase9_pressure.py",
+      "result": "implementation/phase-9-grcv4/tranche-1/P9-1.7-PressureResults.json",
+      "scope": "Planning integrity and synthetic dependency/evidence controls"
+    },
+    {
+      "id": "P9-REVIEW-PRESSURE-8.2",
+      "executable": "implementation/phase-9-grcv4/verification/test_phase9_pressure.py",
+      "result": "implementation/phase-9-grcv4/tranche-1/P9-1.7-PressureResults.json",
+      "scope": "Includes synthetic future runtime approval; never live acceptance"
+    },
+    {
+      "id": "P9-REVIEW-PRESSURE-8.3",
+      "executable": "implementation/phase-9-grcv4/verification/test_phase9_pressure.py",
+      "result": "implementation/phase-9-grcv4/tranche-1/P9-1.7-PressureResults.json",
+      "scope": "Planning integrity and synthetic dependency/evidence controls"
+    },
+    {
+      "id": "P9-REVIEW-PRESSURE-8.4",
+      "executable": "implementation/phase-9-grcv4/verification/test_phase9_pressure.py",
+      "result": "implementation/phase-9-grcv4/tranche-1/P9-1.7-PressureResults.json",
+      "scope": "Planning integrity and synthetic dependency/evidence controls"
+    },
+    {
+      "id": "P9-REVIEW-PRESSURE-8.5",
+      "executable": "implementation/phase-9-grcv4/verification/test_phase9_pressure.py",
+      "result": "implementation/phase-9-grcv4/tranche-1/P9-1.7-PressureResults.json",
+      "scope": "Planning integrity and synthetic dependency/evidence controls"
+    },
+    {
+      "id": "P9-REVIEW-PRESSURE-8.6",
+      "executable": "implementation/phase-9-grcv4/verification/test_phase9_pressure.py",
+      "result": "implementation/phase-9-grcv4/tranche-1/P9-1.7-PressureResults.json",
+      "scope": "Planning integrity and synthetic dependency/evidence controls"
+    }
+  ],
+  "access_scenarios": [
+    {
+      "id": "P9-UX-API",
+      "entry": "grcv4_explorer.phase9_verification.verification_status",
+      "executable": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/test_phase9_surfaces.py",
+      "expected": "Fresh current byte checks; explicit stale/missing/invalid recorded evidence; pending gates; no scientific trace fabrication."
+    },
+    {
+      "id": "P9-UX-NOTEBOOK",
+      "entry": "run.py notebook-phase9",
+      "executable": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/run_phase9_notebook.py",
+      "expected": "Actual saved code cells run, API status payload is byte-exact; runtime false."
+    },
+    {
+      "id": "P9-UX-BROWSER",
+      "entry": "run.py serve-phase9 -> http://127.0.0.1:4174",
+      "executable": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/browser.spec.mjs",
+      "expected": "Desktop/mobile refresh, source hashes, separate leaf results, JSON download and API identity, no stale success after failure."
+    },
+    {
+      "id": "P9-UX-REJECTION",
+      "entry": "browser refresh and read-only HTTP routes",
+      "executable": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/verification.test.mjs",
+      "expected": "Authority promotion, contradictory disposition and digest drift rejected; POST and arbitrary repository paths unavailable."
+    }
+  ],
+  "shared_probe_corpus": [
+    {
+      "case_id": "normal_entry_forbidden_source",
+      "API": "pressure_projection",
+      "notebook": "phase9_pressure",
+      "browser": "Isolated pressure evidence",
+      "export": "phase9-probe.json",
+      "runtime_authorized": false
+    },
+    {
+      "case_id": "future_explicit_approval_exact_targets",
+      "API": "pressure_projection",
+      "notebook": "phase9_pressure",
+      "browser": "Isolated pressure evidence",
+      "export": "phase9-probe.json",
+      "runtime_authorized": false
+    }
+  ],
+  "surface_inventory": "implementation/phase-9-grcv4/tranche-1/P9-1.8-SurfaceInventory.json",
+  "batch_results": [
+    {
+      "batch_id": "baseline_permission",
+      "artifact": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/generated/phase9-verification/batch-baseline_permission.json"
+    },
+    {
+      "batch_id": "integrity_authority_semantics",
+      "artifact": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/generated/phase9-verification/batch-integrity_authority_semantics.json"
+    },
+    {
+      "batch_id": "staleness_route_fault_sensitivity",
+      "artifact": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/generated/phase9-verification/batch-staleness_route_fault_sensitivity.json"
+    }
+  ]
+}

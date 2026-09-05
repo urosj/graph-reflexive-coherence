@@ -1,0 +1,2053 @@
+{
+  "P9_G1_accepted": false,
+  "batches": [
+    {
+      "batch_id": "baseline_permission",
+      "case_ids": [
+        "unchanged_p916_dispatch_suite_replayed",
+        "legitimate_current_planning",
+        "unchanged_p916_snapshot",
+        "legitimate_successor_dispatch",
+        "CLI_has_no_authorizing_flag",
+        "planning_rejects_src_pygrc_models_grc_v4.py",
+        "planning_rejects_tests_models_test_grc_v4.py",
+        "planning_rejects_pyproject.toml",
+        "staged_runtime_addition_rejected",
+        "ignored_runtime_addition_rejected",
+        "rehashed_policy_active_phase",
+        "runtime_flag_not_authority",
+        "future_explicit_approval_exact_targets",
+        "future_content_src_pygrc_models_grc_v4.py",
+        "future_content_tests_models_test_grc_9_v4.py",
+        "future_content_src_pygrc_models___init__.py",
+        "future_content_pyproject.toml",
+        "self_declared_runtime_no_external_anchor",
+        "source_exact_semantic_projection",
+        "original_checkout_still_planning"
+      ],
+      "passed": true
+    },
+    {
+      "batch_id": "integrity_authority_semantics",
+      "case_ids": [
+        "deleted_marker_cannot_downgrade_dispatch",
+        "execution_record_baseline_commit",
+        "execution_record_release_id",
+        "execution_record_accepted_generic_runtime_support",
+        "execution_record_P9_G1_accepted",
+        "changed_frozen_spec",
+        "deleted_frozen_spec",
+        "permitted_path_wrong_content",
+        "deleted_successor_record",
+        "deleted_phase_marker",
+        "modified_prior_review",
+        "assume_unchanged_cannot_hide_bytes",
+        "protected_symlink_rejected",
+        "protected_mode_rejected",
+        "rehashed_policy_status",
+        "rehashed_policy_baseline_commit",
+        "rehashed_policy_release_id",
+        "rehashed_policy_trusted_runtime_approval",
+        "rehashed_policy_accepted_generic_runtime_support",
+        "stale_digest_rejected",
+        "green_marker_not_policy",
+        "duplicate_json_key",
+        "self_rehashed_runtime_approval",
+        "runtime_wrong_target_src_pygrc_models_grc_9_v3.py",
+        "runtime_wrong_target_src_pygrc_models_grc_v40.py",
+        "runtime_wrong_target_tests_core_test_unknown.py",
+        "runtime_wrong_target_.._src_pygrc_models_grc_v4.py",
+        "approved_path_changed_runtime_bytes",
+        "legacy_dependency_not_additive",
+        "legacy_export_rebound",
+        "legitimate_exact_children_and_c_os_path",
+        "required_child_deleted",
+        "matching_count_child_substitution",
+        "forged_evidence_alias",
+        "unresolved_dependency",
+        "dependency_cycle",
+        "unrelated_c_os_barrier_P9-G2[A_OS]",
+        "unrelated_c_os_barrier_P9-G2[C_PC]",
+        "unrelated_c_os_barrier_P9-G2[C_RG2b]",
+        "unexecuted_exact_profile",
+        "unexecuted_support_set",
+        "universal_optional_completion",
+        "completion_off_all_mandatory_present",
+        "advertised_completed_spark_without_own_evidence_held",
+        "advertised_completed_spark_with_own_evidence",
+        "handoff_completed_spark_without_own_evidence_held",
+        "handoff_completed_spark_with_own_evidence",
+        "advertised_hierarchy_tracking_without_own_evidence_held",
+        "advertised_hierarchy_tracking_with_own_evidence",
+        "handoff_hierarchy_tracking_without_own_evidence_held",
+        "handoff_hierarchy_tracking_with_own_evidence",
+        "completion_off_missing_P9-8.1c",
+        "completion_off_missing_P9-8.1d",
+        "completion_off_missing_P9-8.3C-OS",
+        "completion_off_missing_P9-8.4",
+        "completion_off_missing_P9-9.1b",
+        "completion_off_missing_P9-9.2-C_OS-state",
+        "completion_off_missing_P9-9.2-C_OS-observable",
+        "completion_off_missing_P9-9.2-C_OS-lifecycle",
+        "completion_cannot_borrow_other_profile_evidence",
+        "conditional_to_normative",
+        "indeterminate_to_supported",
+        "candidate_C_optional_to_universal",
+        "GRC9_specialization_to_generic",
+        "forty_cell_duplicate_same_count",
+        "planned_C_OS_to_runtime_supported",
+        "alias_as_second_execution",
+        "pending_obligation_to_nonapplicable",
+        "deferred_RG2b_to_scientific_rejection",
+        "unknown_claim_not_fuzzy_resolved",
+        "self_referential_predecessor",
+        "cyclic_predecessor_chain",
+        "conflicting_candidate_successors",
+        "authorized_staged_bytes_do_not_hide_unstaged_helper",
+        "untracked_scope_src_pygrc_models_grc_v40.py",
+        "untracked_scope_implementation_phase-9-grcv4_verification_json.py",
+        "protected_rename_is_not_an_allowed_addition"
+      ],
+      "passed": true
+    },
+    {
+      "batch_id": "staleness_route_fault_sensitivity",
+      "case_ids": [
+        "normal_entry_forbidden_source",
+        "normal_entry_frozen_corruption",
+        "combined_allowed_review_and_legacy_corruption",
+        "combined_rehashed_runtime_grant_and_source",
+        "combined_green_history_stale_current_unchanged_counts",
+        "broken_frozen_guard_makes_its_negative_assertion_fail",
+        "mid_verification_subject_change",
+        "missing_historical_commit_is_unverifiable",
+        "unauthorized_committed_clean_tree"
+      ],
+      "passed": true
+    }
+  ],
+  "case_count": 106,
+  "cases": [
+    {
+      "assertion_result": "passed",
+      "batch": "baseline_permission",
+      "candidate_decision": "admitted",
+      "case_id": "unchanged_p916_dispatch_suite_replayed",
+      "decisive_rule": "positive/held scoped assertion",
+      "expected_decision": "admitted",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.2",
+      "scope": "reconstructed_p916_snapshot_13_tests"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "baseline_permission",
+      "candidate_decision": "admitted",
+      "case_id": "legitimate_current_planning",
+      "decisive_rule": "positive/held scoped assertion",
+      "expected_decision": "admitted",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.2",
+      "scope": "isolated_planning_boundary"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "baseline_permission",
+      "candidate_decision": "admitted",
+      "case_id": "unchanged_p916_snapshot",
+      "decisive_rule": "positive/held scoped assertion",
+      "expected_decision": "admitted",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.2",
+      "scope": "isolated_planning_boundary"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "baseline_permission",
+      "candidate_decision": "admitted",
+      "case_id": "legitimate_successor_dispatch",
+      "decisive_rule": "positive/held scoped assertion",
+      "expected_decision": "admitted",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.2",
+      "scope": "isolated_planning_boundary"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "integrity_authority_semantics",
+      "candidate_decision": "admitted",
+      "case_id": "deleted_marker_cannot_downgrade_dispatch",
+      "decisive_rule": "positive/held scoped assertion",
+      "expected_decision": "admitted",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.6",
+      "scope": "isolated_planning_boundary"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "baseline_permission",
+      "candidate_decision": "admitted",
+      "case_id": "CLI_has_no_authorizing_flag",
+      "decisive_rule": "positive/held scoped assertion",
+      "expected_decision": "admitted",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.1",
+      "scope": "isolated_planning_boundary"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "integrity_authority_semantics",
+      "candidate_decision": "rejected",
+      "case_id": "execution_record_baseline_commit",
+      "decisive_rule": "execution record predecessor/entry mismatch",
+      "expected_decision": "rejected",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.6",
+      "scope": "isolated_planning_boundary"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "integrity_authority_semantics",
+      "candidate_decision": "rejected",
+      "case_id": "execution_record_release_id",
+      "decisive_rule": "execution record predecessor/entry mismatch",
+      "expected_decision": "rejected",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.6",
+      "scope": "isolated_planning_boundary"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "integrity_authority_semantics",
+      "candidate_decision": "rejected",
+      "case_id": "execution_record_accepted_generic_runtime_support",
+      "decisive_rule": "execution record advertises unexecuted support",
+      "expected_decision": "rejected",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.6",
+      "scope": "isolated_planning_boundary"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "integrity_authority_semantics",
+      "candidate_decision": "rejected",
+      "case_id": "execution_record_P9_G1_accepted",
+      "decisive_rule": "execution record promotes authority",
+      "expected_decision": "rejected",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.6",
+      "scope": "isolated_planning_boundary"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "baseline_permission",
+      "candidate_decision": "rejected",
+      "case_id": "planning_rejects_src_pygrc_models_grc_v4.py",
+      "decisive_rule": "unauthorized source/test/planning addition",
+      "expected_decision": "rejected",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.1",
+      "scope": "isolated_planning_boundary"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "baseline_permission",
+      "candidate_decision": "rejected",
+      "case_id": "planning_rejects_tests_models_test_grc_v4.py",
+      "decisive_rule": "unauthorized source/test/planning addition",
+      "expected_decision": "rejected",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.1",
+      "scope": "isolated_planning_boundary"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "baseline_permission",
+      "candidate_decision": "rejected",
+      "case_id": "planning_rejects_pyproject.toml",
+      "decisive_rule": "frozen bytes changed",
+      "expected_decision": "rejected",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.1",
+      "scope": "isolated_planning_boundary"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "integrity_authority_semantics",
+      "candidate_decision": "rejected",
+      "case_id": "changed_frozen_spec",
+      "decisive_rule": "frozen bytes changed",
+      "expected_decision": "rejected",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.6",
+      "scope": "isolated_planning_boundary"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "integrity_authority_semantics",
+      "candidate_decision": "rejected",
+      "case_id": "deleted_frozen_spec",
+      "decisive_rule": "missing protected file",
+      "expected_decision": "rejected",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.6",
+      "scope": "isolated_planning_boundary"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "integrity_authority_semantics",
+      "candidate_decision": "rejected",
+      "case_id": "permitted_path_wrong_content",
+      "decisive_rule": "unauthorized content at permitted path",
+      "expected_decision": "rejected",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.6",
+      "scope": "isolated_planning_boundary"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "integrity_authority_semantics",
+      "candidate_decision": "rejected",
+      "case_id": "deleted_successor_record",
+      "decisive_rule": "missing protected file",
+      "expected_decision": "rejected",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.6",
+      "scope": "isolated_planning_boundary"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "integrity_authority_semantics",
+      "candidate_decision": "rejected",
+      "case_id": "deleted_phase_marker",
+      "decisive_rule": "missing protected file",
+      "expected_decision": "rejected",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.6",
+      "scope": "isolated_planning_boundary"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "integrity_authority_semantics",
+      "candidate_decision": "rejected",
+      "case_id": "modified_prior_review",
+      "decisive_rule": "frozen bytes changed",
+      "expected_decision": "rejected",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.6",
+      "scope": "isolated_planning_boundary"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "integrity_authority_semantics",
+      "candidate_decision": "rejected",
+      "case_id": "assume_unchanged_cannot_hide_bytes",
+      "decisive_rule": "frozen bytes changed",
+      "expected_decision": "rejected",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.6",
+      "scope": "isolated_planning_boundary"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "baseline_permission",
+      "candidate_decision": "rejected",
+      "case_id": "staged_runtime_addition_rejected",
+      "decisive_rule": "unauthorized source/test/planning addition",
+      "expected_decision": "rejected",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.1",
+      "scope": "isolated_planning_boundary"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "baseline_permission",
+      "candidate_decision": "rejected",
+      "case_id": "ignored_runtime_addition_rejected",
+      "decisive_rule": "unauthorized source/test/planning addition",
+      "expected_decision": "rejected",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.1",
+      "scope": "isolated_planning_boundary"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "integrity_authority_semantics",
+      "candidate_decision": "rejected",
+      "case_id": "protected_symlink_rejected",
+      "decisive_rule": "symlink at protected path",
+      "expected_decision": "rejected",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.6",
+      "scope": "isolated_planning_boundary"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "integrity_authority_semantics",
+      "candidate_decision": "rejected",
+      "case_id": "protected_mode_rejected",
+      "decisive_rule": "frozen mode changed",
+      "expected_decision": "rejected",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.6",
+      "scope": "isolated_planning_boundary"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "integrity_authority_semantics",
+      "candidate_decision": "rejected",
+      "case_id": "rehashed_policy_status",
+      "decisive_rule": "contradictory successor status",
+      "expected_decision": "rejected",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.6",
+      "scope": "isolated_planning_boundary"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "integrity_authority_semantics",
+      "candidate_decision": "rejected",
+      "case_id": "rehashed_policy_baseline_commit",
+      "decisive_rule": "stale successor predecessor",
+      "expected_decision": "rejected",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.6",
+      "scope": "isolated_planning_boundary"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "integrity_authority_semantics",
+      "candidate_decision": "rejected",
+      "case_id": "rehashed_policy_release_id",
+      "decisive_rule": "stale successor predecessor",
+      "expected_decision": "rejected",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.6",
+      "scope": "isolated_planning_boundary"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "integrity_authority_semantics",
+      "candidate_decision": "rejected",
+      "case_id": "rehashed_policy_trusted_runtime_approval",
+      "decisive_rule": "planning cannot grant runtime authority",
+      "expected_decision": "rejected",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.6",
+      "scope": "isolated_planning_boundary"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "integrity_authority_semantics",
+      "candidate_decision": "rejected",
+      "case_id": "rehashed_policy_accepted_generic_runtime_support",
+      "decisive_rule": "unexecuted support advertised",
+      "expected_decision": "rejected",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.6",
+      "scope": "isolated_planning_boundary"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "baseline_permission",
+      "candidate_decision": "rejected",
+      "case_id": "rehashed_policy_active_phase",
+      "decisive_rule": "unsupported live successor state",
+      "expected_decision": "rejected",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.1",
+      "scope": "isolated_planning_boundary"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "integrity_authority_semantics",
+      "candidate_decision": "rejected",
+      "case_id": "stale_digest_rejected",
+      "decisive_rule": "successor digest mismatch",
+      "expected_decision": "rejected",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.6",
+      "scope": "isolated_planning_boundary"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "integrity_authority_semantics",
+      "candidate_decision": "rejected",
+      "case_id": "green_marker_not_policy",
+      "decisive_rule": "unsupported successor fields",
+      "expected_decision": "rejected",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.6",
+      "scope": "isolated_planning_boundary"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "integrity_authority_semantics",
+      "candidate_decision": "rejected",
+      "case_id": "duplicate_json_key",
+      "decisive_rule": "duplicate JSON key",
+      "expected_decision": "rejected",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.6",
+      "scope": "isolated_planning_boundary"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "baseline_permission",
+      "candidate_decision": "rejected",
+      "case_id": "runtime_flag_not_authority",
+      "decisive_rule": "runtime authority absent",
+      "expected_decision": "rejected",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.1",
+      "scope": "isolated_planning_boundary"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "baseline_permission",
+      "candidate_decision": "admitted",
+      "case_id": "future_explicit_approval_exact_targets",
+      "decisive_rule": "positive/held scoped assertion",
+      "expected_decision": "admitted",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.2",
+      "scope": "synthetic_future_approval_not_live_authority"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "baseline_permission",
+      "candidate_decision": "admitted",
+      "case_id": "future_content_src_pygrc_models_grc_v4.py",
+      "decisive_rule": "positive/held scoped assertion",
+      "expected_decision": "admitted",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.2",
+      "scope": "synthetic_future_approval_not_live_authority"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "baseline_permission",
+      "candidate_decision": "admitted",
+      "case_id": "future_content_tests_models_test_grc_9_v4.py",
+      "decisive_rule": "positive/held scoped assertion",
+      "expected_decision": "admitted",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.2",
+      "scope": "synthetic_future_approval_not_live_authority"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "baseline_permission",
+      "candidate_decision": "admitted",
+      "case_id": "future_content_src_pygrc_models___init__.py",
+      "decisive_rule": "positive/held scoped assertion",
+      "expected_decision": "admitted",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.2",
+      "scope": "synthetic_future_approval_not_live_authority"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "baseline_permission",
+      "candidate_decision": "admitted",
+      "case_id": "future_content_pyproject.toml",
+      "decisive_rule": "positive/held scoped assertion",
+      "expected_decision": "admitted",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.2",
+      "scope": "synthetic_future_approval_not_live_authority"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "baseline_permission",
+      "candidate_decision": "rejected",
+      "case_id": "self_declared_runtime_no_external_anchor",
+      "decisive_rule": "runtime authority absent",
+      "expected_decision": "rejected",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.1",
+      "scope": "isolated_planning_boundary"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "integrity_authority_semantics",
+      "candidate_decision": "rejected",
+      "case_id": "self_rehashed_runtime_approval",
+      "decisive_rule": "untrusted runtime authority",
+      "expected_decision": "rejected",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.6",
+      "scope": "isolated_planning_boundary"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "integrity_authority_semantics",
+      "candidate_decision": "rejected",
+      "case_id": "runtime_wrong_target_src_pygrc_models_grc_9_v3.py",
+      "decisive_rule": "non-V4 or non-new runtime addition",
+      "expected_decision": "rejected",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.6",
+      "scope": "isolated_planning_boundary"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "integrity_authority_semantics",
+      "candidate_decision": "rejected",
+      "case_id": "runtime_wrong_target_src_pygrc_models_grc_v40.py",
+      "decisive_rule": "non-V4 or non-new runtime addition",
+      "expected_decision": "rejected",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.6",
+      "scope": "isolated_planning_boundary"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "integrity_authority_semantics",
+      "candidate_decision": "rejected",
+      "case_id": "runtime_wrong_target_tests_core_test_unknown.py",
+      "decisive_rule": "non-V4 or non-new runtime addition",
+      "expected_decision": "rejected",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.6",
+      "scope": "isolated_planning_boundary"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "integrity_authority_semantics",
+      "candidate_decision": "rejected",
+      "case_id": "runtime_wrong_target_.._src_pygrc_models_grc_v4.py",
+      "decisive_rule": "unsafe runtime target",
+      "expected_decision": "rejected",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.6",
+      "scope": "isolated_planning_boundary"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "integrity_authority_semantics",
+      "candidate_decision": "rejected",
+      "case_id": "approved_path_changed_runtime_bytes",
+      "decisive_rule": "runtime target content mismatch",
+      "expected_decision": "rejected",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.6",
+      "scope": "isolated_planning_boundary"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "integrity_authority_semantics",
+      "candidate_decision": "rejected",
+      "case_id": "legacy_dependency_not_additive",
+      "decisive_rule": "non-additive dependency integration",
+      "expected_decision": "rejected",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.6",
+      "scope": "isolated_planning_boundary"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "integrity_authority_semantics",
+      "candidate_decision": "rejected",
+      "case_id": "legacy_export_rebound",
+      "decisive_rule": "legacy export rebound",
+      "expected_decision": "rejected",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.6",
+      "scope": "isolated_planning_boundary"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "integrity_authority_semantics",
+      "candidate_decision": "admitted",
+      "case_id": "legitimate_exact_children_and_c_os_path",
+      "decisive_rule": "positive/held scoped assertion",
+      "expected_decision": "admitted",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.4",
+      "scope": "planning_dependency_graph"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "integrity_authority_semantics",
+      "candidate_decision": "rejected",
+      "case_id": "required_child_deleted",
+      "decisive_rule": "required child missing or substituted",
+      "expected_decision": "rejected",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.3",
+      "scope": "isolated_planning_boundary"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "integrity_authority_semantics",
+      "candidate_decision": "rejected",
+      "case_id": "matching_count_child_substitution",
+      "decisive_rule": "required child missing or substituted",
+      "expected_decision": "rejected",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.3",
+      "scope": "isolated_planning_boundary"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "integrity_authority_semantics",
+      "candidate_decision": "rejected",
+      "case_id": "forged_evidence_alias",
+      "decisive_rule": "forged child parent/evidence alias",
+      "expected_decision": "rejected",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.3",
+      "scope": "isolated_planning_boundary"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "integrity_authority_semantics",
+      "candidate_decision": "rejected",
+      "case_id": "unresolved_dependency",
+      "decisive_rule": "unresolved dependency",
+      "expected_decision": "rejected",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.3",
+      "scope": "isolated_planning_boundary"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "integrity_authority_semantics",
+      "candidate_decision": "rejected",
+      "case_id": "dependency_cycle",
+      "decisive_rule": "dependency cycle",
+      "expected_decision": "rejected",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.3",
+      "scope": "isolated_planning_boundary"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "integrity_authority_semantics",
+      "candidate_decision": "rejected",
+      "case_id": "unrelated_c_os_barrier_P9-G2[A_OS]",
+      "decisive_rule": "C_OS prerequisites omitted or unrelated profile barrier",
+      "expected_decision": "rejected",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.4",
+      "scope": "isolated_planning_boundary"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "integrity_authority_semantics",
+      "candidate_decision": "rejected",
+      "case_id": "unrelated_c_os_barrier_P9-G2[C_PC]",
+      "decisive_rule": "C_OS prerequisites omitted or unrelated profile barrier",
+      "expected_decision": "rejected",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.4",
+      "scope": "isolated_planning_boundary"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "integrity_authority_semantics",
+      "candidate_decision": "rejected",
+      "case_id": "unrelated_c_os_barrier_P9-G2[C_RG2b]",
+      "decisive_rule": "C_OS prerequisites omitted or unrelated profile barrier",
+      "expected_decision": "rejected",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.4",
+      "scope": "isolated_planning_boundary"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "integrity_authority_semantics",
+      "candidate_decision": "rejected",
+      "case_id": "unexecuted_exact_profile",
+      "decisive_rule": "unexecuted exact identity advertised",
+      "expected_decision": "rejected",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.4",
+      "scope": "isolated_planning_boundary"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "integrity_authority_semantics",
+      "candidate_decision": "rejected",
+      "case_id": "unexecuted_support_set",
+      "decisive_rule": "unexecuted support advertised",
+      "expected_decision": "rejected",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.4",
+      "scope": "isolated_planning_boundary"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "integrity_authority_semantics",
+      "candidate_decision": "rejected",
+      "case_id": "universal_optional_completion",
+      "decisive_rule": "mandatory lifecycle lost or optional completion universal",
+      "expected_decision": "rejected",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.5",
+      "scope": "isolated_planning_boundary"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "integrity_authority_semantics",
+      "candidate_decision": "admitted",
+      "case_id": "completion_off_all_mandatory_present",
+      "decisive_rule": "positive/held scoped assertion",
+      "expected_decision": "admitted",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.5",
+      "scope": "synthetic_scoped_evidence"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "integrity_authority_semantics",
+      "candidate_decision": "held",
+      "case_id": "advertised_completed_spark_without_own_evidence_held",
+      "decisive_rule": "positive/held scoped assertion",
+      "expected_decision": "held",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.5",
+      "scope": "synthetic_scoped_evidence"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "integrity_authority_semantics",
+      "candidate_decision": "admitted",
+      "case_id": "advertised_completed_spark_with_own_evidence",
+      "decisive_rule": "positive/held scoped assertion",
+      "expected_decision": "admitted",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.5",
+      "scope": "synthetic_scoped_evidence"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "integrity_authority_semantics",
+      "candidate_decision": "held",
+      "case_id": "handoff_completed_spark_without_own_evidence_held",
+      "decisive_rule": "positive/held scoped assertion",
+      "expected_decision": "held",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.5",
+      "scope": "synthetic_scoped_evidence"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "integrity_authority_semantics",
+      "candidate_decision": "admitted",
+      "case_id": "handoff_completed_spark_with_own_evidence",
+      "decisive_rule": "positive/held scoped assertion",
+      "expected_decision": "admitted",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.5",
+      "scope": "synthetic_scoped_evidence"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "integrity_authority_semantics",
+      "candidate_decision": "held",
+      "case_id": "advertised_hierarchy_tracking_without_own_evidence_held",
+      "decisive_rule": "positive/held scoped assertion",
+      "expected_decision": "held",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.5",
+      "scope": "synthetic_scoped_evidence"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "integrity_authority_semantics",
+      "candidate_decision": "admitted",
+      "case_id": "advertised_hierarchy_tracking_with_own_evidence",
+      "decisive_rule": "positive/held scoped assertion",
+      "expected_decision": "admitted",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.5",
+      "scope": "synthetic_scoped_evidence"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "integrity_authority_semantics",
+      "candidate_decision": "held",
+      "case_id": "handoff_hierarchy_tracking_without_own_evidence_held",
+      "decisive_rule": "positive/held scoped assertion",
+      "expected_decision": "held",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.5",
+      "scope": "synthetic_scoped_evidence"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "integrity_authority_semantics",
+      "candidate_decision": "admitted",
+      "case_id": "handoff_hierarchy_tracking_with_own_evidence",
+      "decisive_rule": "positive/held scoped assertion",
+      "expected_decision": "admitted",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.5",
+      "scope": "synthetic_scoped_evidence"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "integrity_authority_semantics",
+      "candidate_decision": "held",
+      "case_id": "completion_off_missing_P9-8.1c",
+      "decisive_rule": "positive/held scoped assertion",
+      "expected_decision": "held",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.5",
+      "scope": "synthetic_scoped_evidence"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "integrity_authority_semantics",
+      "candidate_decision": "held",
+      "case_id": "completion_off_missing_P9-8.1d",
+      "decisive_rule": "positive/held scoped assertion",
+      "expected_decision": "held",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.5",
+      "scope": "synthetic_scoped_evidence"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "integrity_authority_semantics",
+      "candidate_decision": "held",
+      "case_id": "completion_off_missing_P9-8.3C-OS",
+      "decisive_rule": "positive/held scoped assertion",
+      "expected_decision": "held",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.5",
+      "scope": "synthetic_scoped_evidence"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "integrity_authority_semantics",
+      "candidate_decision": "held",
+      "case_id": "completion_off_missing_P9-8.4",
+      "decisive_rule": "positive/held scoped assertion",
+      "expected_decision": "held",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.5",
+      "scope": "synthetic_scoped_evidence"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "integrity_authority_semantics",
+      "candidate_decision": "held",
+      "case_id": "completion_off_missing_P9-9.1b",
+      "decisive_rule": "positive/held scoped assertion",
+      "expected_decision": "held",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.5",
+      "scope": "synthetic_scoped_evidence"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "integrity_authority_semantics",
+      "candidate_decision": "held",
+      "case_id": "completion_off_missing_P9-9.2-C_OS-state",
+      "decisive_rule": "positive/held scoped assertion",
+      "expected_decision": "held",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.5",
+      "scope": "synthetic_scoped_evidence"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "integrity_authority_semantics",
+      "candidate_decision": "held",
+      "case_id": "completion_off_missing_P9-9.2-C_OS-observable",
+      "decisive_rule": "positive/held scoped assertion",
+      "expected_decision": "held",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.5",
+      "scope": "synthetic_scoped_evidence"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "integrity_authority_semantics",
+      "candidate_decision": "held",
+      "case_id": "completion_off_missing_P9-9.2-C_OS-lifecycle",
+      "decisive_rule": "positive/held scoped assertion",
+      "expected_decision": "held",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.5",
+      "scope": "synthetic_scoped_evidence"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "integrity_authority_semantics",
+      "candidate_decision": "rejected",
+      "case_id": "completion_cannot_borrow_other_profile_evidence",
+      "decisive_rule": "completion evidence belongs to a different exact profile scope",
+      "expected_decision": "rejected",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.5",
+      "scope": "isolated_planning_boundary"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "baseline_permission",
+      "candidate_decision": "admitted",
+      "case_id": "source_exact_semantic_projection",
+      "decisive_rule": "positive/held scoped assertion",
+      "expected_decision": "admitted",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.2",
+      "scope": "source_bound_projection_not_new_claim_authority"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "integrity_authority_semantics",
+      "candidate_decision": "rejected",
+      "case_id": "conditional_to_normative",
+      "decisive_rule": "semantic projection drift: claims",
+      "expected_decision": "rejected",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.6",
+      "scope": "controlled_projection_after_source_admission"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "integrity_authority_semantics",
+      "candidate_decision": "rejected",
+      "case_id": "indeterminate_to_supported",
+      "decisive_rule": "semantic projection drift: contracts",
+      "expected_decision": "rejected",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.6",
+      "scope": "controlled_projection_after_source_admission"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "integrity_authority_semantics",
+      "candidate_decision": "rejected",
+      "case_id": "candidate_C_optional_to_universal",
+      "decisive_rule": "semantic projection drift: contracts",
+      "expected_decision": "rejected",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.6",
+      "scope": "controlled_projection_after_source_admission"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "integrity_authority_semantics",
+      "candidate_decision": "rejected",
+      "case_id": "GRC9_specialization_to_generic",
+      "decisive_rule": "semantic projection drift: contracts",
+      "expected_decision": "rejected",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.6",
+      "scope": "controlled_projection_after_source_admission"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "integrity_authority_semantics",
+      "candidate_decision": "rejected",
+      "case_id": "forty_cell_duplicate_same_count",
+      "decisive_rule": "semantic projection drift: compatibility_cells",
+      "expected_decision": "rejected",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.6",
+      "scope": "controlled_projection_after_source_admission"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "integrity_authority_semantics",
+      "candidate_decision": "rejected",
+      "case_id": "planned_C_OS_to_runtime_supported",
+      "decisive_rule": "semantic projection drift: profiles",
+      "expected_decision": "rejected",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.6",
+      "scope": "controlled_projection_after_source_admission"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "integrity_authority_semantics",
+      "candidate_decision": "rejected",
+      "case_id": "alias_as_second_execution",
+      "decisive_rule": "semantic projection drift: evidence_aliases",
+      "expected_decision": "rejected",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.6",
+      "scope": "controlled_projection_after_source_admission"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "integrity_authority_semantics",
+      "candidate_decision": "rejected",
+      "case_id": "pending_obligation_to_nonapplicable",
+      "decisive_rule": "semantic projection drift: obligations",
+      "expected_decision": "rejected",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.6",
+      "scope": "controlled_projection_after_source_admission"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "integrity_authority_semantics",
+      "candidate_decision": "rejected",
+      "case_id": "deferred_RG2b_to_scientific_rejection",
+      "decisive_rule": "semantic projection drift: deferred",
+      "expected_decision": "rejected",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.6",
+      "scope": "controlled_projection_after_source_admission"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "integrity_authority_semantics",
+      "candidate_decision": "rejected",
+      "case_id": "unknown_claim_not_fuzzy_resolved",
+      "decisive_rule": "semantic projection drift: claims",
+      "expected_decision": "rejected",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.6",
+      "scope": "controlled_projection_after_source_admission"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "integrity_authority_semantics",
+      "candidate_decision": "rejected",
+      "case_id": "self_referential_predecessor",
+      "decisive_rule": "unsupported successor fields or candidate predecessor chain",
+      "expected_decision": "rejected",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.6",
+      "scope": "unsupported_candidate_chain_rejected_not_a_new_graph_protocol"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "integrity_authority_semantics",
+      "candidate_decision": "rejected",
+      "case_id": "cyclic_predecessor_chain",
+      "decisive_rule": "unsupported successor fields or candidate predecessor chain",
+      "expected_decision": "rejected",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.6",
+      "scope": "unsupported_candidate_chain_rejected_not_a_new_graph_protocol"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "integrity_authority_semantics",
+      "candidate_decision": "rejected",
+      "case_id": "conflicting_candidate_successors",
+      "decisive_rule": "unauthorized source/test/planning addition",
+      "expected_decision": "rejected",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.6",
+      "scope": "isolated_planning_boundary"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "staleness_route_fault_sensitivity",
+      "candidate_decision": "rejected",
+      "case_id": "normal_entry_forbidden_source",
+      "decisive_rule": "unauthorized source/test/planning addition",
+      "expected_decision": "rejected",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.1",
+      "scope": "isolated_planning_boundary"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "staleness_route_fault_sensitivity",
+      "candidate_decision": "rejected",
+      "case_id": "normal_entry_frozen_corruption",
+      "decisive_rule": "frozen bytes changed",
+      "expected_decision": "rejected",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.6",
+      "scope": "isolated_planning_boundary"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "staleness_route_fault_sensitivity",
+      "candidate_decision": "rejected",
+      "case_id": "combined_allowed_review_and_legacy_corruption",
+      "decisive_rule": "frozen bytes changed",
+      "expected_decision": "rejected",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.6",
+      "scope": "isolated_planning_boundary"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "staleness_route_fault_sensitivity",
+      "candidate_decision": "rejected",
+      "case_id": "combined_rehashed_runtime_grant_and_source",
+      "decisive_rule": "planning cannot grant runtime authority",
+      "expected_decision": "rejected",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.6",
+      "scope": "isolated_planning_boundary"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "staleness_route_fault_sensitivity",
+      "candidate_decision": "rejected",
+      "case_id": "combined_green_history_stale_current_unchanged_counts",
+      "decisive_rule": "frozen bytes changed",
+      "expected_decision": "rejected",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.6",
+      "scope": "isolated_planning_boundary"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "staleness_route_fault_sensitivity",
+      "candidate_decision": "admitted",
+      "case_id": "broken_frozen_guard_makes_its_negative_assertion_fail",
+      "decisive_rule": "positive/held scoped assertion",
+      "expected_decision": "admitted",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.6",
+      "scope": "isolated_broken_checker_control_not_admitted_live_authority"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "integrity_authority_semantics",
+      "candidate_decision": "rejected",
+      "case_id": "authorized_staged_bytes_do_not_hide_unstaged_helper",
+      "decisive_rule": "unauthorized content at permitted path",
+      "expected_decision": "rejected",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.6",
+      "scope": "isolated_planning_boundary"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "integrity_authority_semantics",
+      "candidate_decision": "rejected",
+      "case_id": "untracked_scope_src_pygrc_models_grc_v40.py",
+      "decisive_rule": "unauthorized source/test/planning addition",
+      "expected_decision": "rejected",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.6",
+      "scope": "isolated_planning_boundary"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "integrity_authority_semantics",
+      "candidate_decision": "rejected",
+      "case_id": "untracked_scope_implementation_phase-9-grcv4_verification_json.py",
+      "decisive_rule": "unauthorized source/test/planning addition",
+      "expected_decision": "rejected",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.6",
+      "scope": "isolated_planning_boundary"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "integrity_authority_semantics",
+      "candidate_decision": "rejected",
+      "case_id": "protected_rename_is_not_an_allowed_addition",
+      "decisive_rule": "missing protected file",
+      "expected_decision": "rejected",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.6",
+      "scope": "isolated_planning_boundary"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "staleness_route_fault_sensitivity",
+      "candidate_decision": "rejected",
+      "case_id": "mid_verification_subject_change",
+      "decisive_rule": "verification inputs changed during execution",
+      "expected_decision": "rejected",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.6",
+      "scope": "isolated_planning_boundary"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "staleness_route_fault_sensitivity",
+      "candidate_decision": "unverifiable",
+      "case_id": "missing_historical_commit_is_unverifiable",
+      "decisive_rule": "missing ancestor",
+      "expected_decision": "unverifiable",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.6",
+      "scope": "isolated_planning_boundary"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "staleness_route_fault_sensitivity",
+      "candidate_decision": "rejected",
+      "case_id": "unauthorized_committed_clean_tree",
+      "decisive_rule": "frozen bytes changed",
+      "expected_decision": "rejected",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.6",
+      "scope": "isolated_planning_boundary"
+    },
+    {
+      "assertion_result": "passed",
+      "batch": "baseline_permission",
+      "candidate_decision": "admitted",
+      "case_id": "original_checkout_still_planning",
+      "decisive_rule": "positive/held scoped assertion",
+      "expected_decision": "admitted",
+      "intended_check_reached": true,
+      "limitation": "Bounded Linux fixture and declared trust root; not a universal security or runtime conformance proof.",
+      "passed": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      },
+      "review_pressure": "P9-REVIEW-PRESSURE-8.1",
+      "scope": "live_read_only"
+    }
+  ],
+  "passed_count": 106,
+  "raw_evidence": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/generated/phase9-verification/pressure-results.json",
+  "review_pressures": [
+    "P9-REVIEW-PRESSURE-8.1",
+    "P9-REVIEW-PRESSURE-8.2",
+    "P9-REVIEW-PRESSURE-8.3",
+    "P9-REVIEW-PRESSURE-8.4",
+    "P9-REVIEW-PRESSURE-8.5",
+    "P9-REVIEW-PRESSURE-8.6"
+  ],
+  "runtime_authorized": false,
+  "schema": "phase9_pressure_coverage_index_v2",
+  "status": "passed"
+}

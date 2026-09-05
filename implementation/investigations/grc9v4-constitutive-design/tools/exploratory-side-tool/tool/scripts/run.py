@@ -8,6 +8,8 @@ import subprocess
 import sys
 from pathlib import Path
 
+from active_phase import verification_script
+
 
 TOOL_ROOT = Path(__file__).resolve().parents[1]
 SIDE_TOOL_ROOT = Path(__file__).resolve().parents[2]
@@ -83,6 +85,12 @@ COMMANDS = {
     "verify-post-d10-specifications": (
         INVESTIGATION_ROOT / "scripts/audit_grcv4_post_d10_specifications.py"
     ),
+    "verify-phase9": (
+        repository_root() / "implementation/phase-9-grcv4/verification/audit_phase9_successor.py"
+    ),
+    "notebook-phase9": TOOL_ROOT / "scripts/run_phase9_notebook.py",
+    "test-phase9-surfaces": TOOL_ROOT / "scripts/test_phase9_surfaces.py",
+    "serve-phase9": TOOL_ROOT / "scripts/serve_phase9.py",
     "audit-d11-successor-opening": (
         INVESTIGATION_ROOT / "scripts/audit_grc9v4_d11_successor_opening.py"
     ),
@@ -104,9 +112,12 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("command", choices=sorted(COMMANDS))
     args = parser.parse_args()
-    return subprocess.run(
-        [sys.executable, str(COMMANDS[args.command])], check=False
-    ).returncode
+    script = (
+        verification_script(repository_root())
+        if args.command == "verify-post-d10-specifications"
+        else COMMANDS[args.command]
+    )
+    return subprocess.run([sys.executable, str(script)], check=False).returncode
 
 
 if __name__ == "__main__":

@@ -244,15 +244,37 @@ ten support rows. Seventeen V4-owned modules refine the initial crosswalk;
 the starting regression boundary, not V4 conformance. Existing core contracts
 remain unchanged; only two existing files are proposed for later reviewed
 additive integration. No runtime or dependency edits are authorized by these
-reviews. P9-1.6–P9-1.9 and P9-G1 remain pending.
+reviews. At that checkpoint, P9-1.6–P9-1.9 and P9-G1 remained pending.
 
 The independent P9-1.4/P9-1.5 review corrections are now applied: canonical
 `CI+PC` realization values (unchanged composite family IDs) and the P9-9.1
 optional-completion/mandatory-lifecycle split below. All five implementation
 follow-ups and six successor-verification pressure checks are registered with
 existing leaf owners in the checklist and ownership review; none is runtime
-evidence or a completed P9-1.6–P9-1.8 result. The supplied independent review
+evidence. Registration itself did not complete P9-1.6–P9-1.8. The supplied independent review
 and raw static checks are retained separately from our corrected validation.
+
+P9-1.6 now supplies a [successor verification candidate](./phase-9-grcv4/tranche-1/P9-1.6-SuccessorVerification.md).
+The normal entry points dispatch to the validated planning boundary; the
+unchanged historical auditors run in the exact accepted release checkout.
+This resolves the implementation-planning routing defect without changing
+the release, predecessor reviews, or their as-recorded states. Its later
+[P9-1.7/P9-1.8 successor](./phase-9-grcv4/tranche-1/P9-1.7-1.8-VerificationReview.md)
+now verifies all six review pressures and supplies accessible, consistent
+API/notebook/browser/scenario surfaces. The separate leaf results and exact
+predecessor snapshot retain the distinction between engineering completion
+and user acceptance. The five runtime implementation follow-ups remain
+pending; no source obligation or scientific debt is discharged. P9-1.9/P9-G1
+and candidate user acceptance remain pending. Later runtime states require a separately accepted policy; no flag
+or planning pass authorizes source, tests, or dependencies.
+
+The supplied P9-1.6–P9-1.8 pressure guides are reconciled in the
+[bounded audit closure](./phase-9-grcv4/tranche-1/P9-1.6-1.8-AuditClosure.json).
+This includes attributable per-case evidence, combined and broken-checker
+controls, source-admitted semantic mutations and real negative-result
+projection through API/notebook/browser/export. Raw execution archives and
+three batch results supplement the stable tracked coverage index; they do not
+accept a leaf, expand runtime scope or rewrite historical authority.
 
 Produce an equation/contract-to-module-and-test map using the paper and
 specifications. Preserve source references, classifications, edge witnesses,

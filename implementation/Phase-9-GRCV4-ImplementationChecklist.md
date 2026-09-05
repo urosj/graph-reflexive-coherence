@@ -119,13 +119,13 @@ declared planning files.
   planned, and deliberately deferred profile rows.
 - [x] P9-1.5: Review module/API ownership, dependencies, independent oracles,
   artifact retention, and immutable old-family regression targets.
-- [ ] P9-1.6: Close `P9-TOOL-001` through successor verification of the current
+- [x] P9-1.6: Close `P9-TOOL-001` through successor verification of the current
   tree and routing from the normal tool entry point. Preserve release-bound
   historical auditor/boundary bytes and their historical checks.
-- [ ] P9-1.7: Verify rejection of unauthorized paths, modified frozen bytes,
+- [x] P9-1.7: Verify rejection of unauthorized paths, modified frozen bytes,
   and stale/forged authority. Verify legitimate planning and later explicitly
   authorized V4 source/test additions are admitted in their respective states.
-- [ ] P9-1.8: Update tool plan/checklist and any API/notebook/browser surfaces
+- [x] P9-1.8: Update tool plan/checklist and any API/notebook/browser surfaces
   affected by that verification change; retain consistent authority labels.
 - [ ] P9-1.9: Record accepted P9-G1 successor authority with exact mutation
   scope and release bindings before runtime work starts.
@@ -152,7 +152,9 @@ regressions pass: 105 core tests and 763 model tests. These checkmarks record
 completed engineering reviews; user acceptance and P9-G1 remain pending.
 The [separate execution results](./phase-9-grcv4/tranche-1/P9-1.4-1.5-ExecutionRecord.json)
 retain the scope, tests, observations and next step for each iteration.
-P9-1.6–P9-1.9 and all runtime gates remain pending.
+P9-1.6 implementation/verification evidence is recorded separately below;
+P9-1.7/P9-1.8 implementation/verification results follow below. Their user
+acceptance, P9-1.9 and all runtime gates remain pending.
 
 Independent-review planning corrections are applied: the composite families
 retain their IDs but use the schema's `realization: "CI+PC"`; P9-9.1 is split
@@ -162,11 +164,14 @@ in the execution record. These corrections do not accept P9-1.4/P9-1.5.
 
 ### Registered independent-review follow-through
 
-All rows below are **pending**, not implemented or executed. The
+The five `P9-REVIEW-FOLLOW-7.*` rows remain **pending**, not implemented or
+executed. The six `P9-REVIEW-PRESSURE-8.*` assignments are now verified by
+the [P9-1.7 pressure results](./phase-9-grcv4/tranche-1/P9-1.7-PressureResults.json)
+and P9-1.8 access checks, without granting runtime authority. The
 [ownership register](./phase-9-grcv4/tranche-1/P9-1.5-OwnershipAndLegacyBaseline.json)
 retains detailed requirements, concrete test pressures and exact child owners.
 
-| Pending item | Existing leaf owners | Required evidence |
+| Registered item | Existing leaf owners | Required evidence |
 | --- | --- | --- |
 | `P9-REVIEW-FOLLOW-7.1` | P9-2.2, P9-2.6 | Release-bound packaged assets; clean wheel/sdist outside checkout; legacy without extra, V4 with extra, typed missing dependency and asset failures. |
 | `P9-REVIEW-FOLLOW-7.2` | P9-2.1, P9-2.6, P9-3.1 | Explicit symbol/hash/contract/reason reuse ledger, including graph storage/lookup and utilities; no shared refactor by similarity. |
@@ -185,8 +190,38 @@ retains detailed requirements, concrete test pressures and exact child owners.
 `audit_grcv4_specification_release_acceptance.py`,
 `GRCV4SpecificationReleaseAcceptanceGate.json`, and
 `PostGRCV4SpecificationAcceptanceBoundary.json` as outside the historical
-phase envelope. The dedicated acceptance audit passes. The normal entry
-point remains a known gate hold until P9-1.6–P9-1.8 are verified.
+phase envelope. The dedicated acceptance audit passed. This opening-time
+failure was carried to P9-1.6–P9-1.8; the later disposition follows below.
+
+P9-1.6 successor update: the [verification candidate](./phase-9-grcv4/tranche-1/P9-1.6-SuccessorVerification.md)
+and [execution record](./phase-9-grcv4/tranche-1/P9-1.6-ExecutionRecord.json)
+record the normal-entry routing repair and unchanged historical checks on
+their accepted Git revision. `P9-TOOL-001` is resolved for the present planning
+tree; that result alone did not mark P9-1.7/P9-1.8 or the six registered successor pressure
+assignments complete. The opening's original failure observation and all
+earlier evidence remain unchanged. Candidate review and P9-G1 remain pending;
+runtime authority/support remain false/empty.
+
+P9-1.7/P9-1.8 successor update: the [verification review](./phase-9-grcv4/tranche-1/P9-1.7-1.8-VerificationReview.md)
+and [separate leaf results](./phase-9-grcv4/tranche-1/P9-1.7-1.8-ExecutionRecord.json)
+record 106 passing pressure cases, including replay of all 13 unchanged
+P9-1.6 tests in the exact retained snapshot. Current byte checks protect 712
+baseline files; runtime-positive controls use only synthetic, independently
+pinned test approval. Actual API checks, ten cross-surface checks, two notebook code cells, eight new
+Node tests and fourteen desktop/mobile browser tests pass. The normal verifier
+also passes the unchanged historical/D11 checks and byte-exact rebuilds.
+The [access guide](./investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/docs/Phase9VerificationGuide.md)
+provides runnable entry points; the scenario register links executable cases.
+These checkmarks record engineering completion only. All five implementation
+follow-ups, fifteen pending source obligations, user acceptance and
+P9-1.9/P9-G1 remain pending. No scientific or runtime evidence is fabricated.
+
+The [pressure-guide closure register](./phase-9-grcv4/tranche-1/P9-1.6-1.8-AuditClosure.json)
+and [surface inventory](./phase-9-grcv4/tranche-1/P9-1.8-SurfaceInventory.json)
+retain combined-fault, attributable-rejection, checker-sensitivity, semantic
+projection, freshness, actual normal-command and cross-surface evidence.
+Candidate decisions, harness assertions and project effect stay separate;
+three bounded batches retain their own results and raw per-run manifests.
 
 ## Tranche 2. Interface, identity, and evidence foundation
 
