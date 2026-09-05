@@ -1,0 +1,392 @@
+{
+  "schema": "phase9_G1_execution_record_v1",
+  "iteration_id": "P9-1.9",
+  "baseline_commit": "6e0a507c0fd7e0758392514acce5e79312a2069c",
+  "release_id": "grcv4-spec-release-sha256:9f4c8fe5b57b1c477d834a3e4dae3f98a2b18c70e6e7f598e3c9652170c8645f",
+  "entry_request": "P9-1.9 is next",
+  "approval_request": "yes, i accept",
+  "approval_digest": "cd2c52f30477e1042bb903bd0553da237ddccc9cad373afecc1a84e4e0b37ea2",
+  "status": "implemented_and_verified",
+  "P9_G1_accepted": true,
+  "runtime_authorized": true,
+  "accepted_generic_runtime_support": [],
+  "admitted_specialization_support_sets": [],
+  "iteration_results": [
+    {
+      "iteration_id": "P9-1.4",
+      "status": "implemented_and_verified",
+      "reviewer_decision": "accepted_by_user",
+      "acceptance_scope": "completed_review_and_verification_evidence_at_6e0a507"
+    },
+    {
+      "iteration_id": "P9-1.5",
+      "status": "implemented_and_verified",
+      "reviewer_decision": "accepted_by_user",
+      "acceptance_scope": "completed_review_and_verification_evidence_at_6e0a507"
+    },
+    {
+      "iteration_id": "P9-1.6",
+      "status": "implemented_and_verified",
+      "reviewer_decision": "accepted_by_user",
+      "acceptance_scope": "completed_review_and_verification_evidence_at_6e0a507"
+    },
+    {
+      "iteration_id": "P9-1.7",
+      "status": "implemented_and_verified",
+      "reviewer_decision": "accepted_by_user",
+      "acceptance_scope": "completed_review_and_verification_evidence_at_6e0a507"
+    },
+    {
+      "iteration_id": "P9-1.8",
+      "status": "implemented_and_verified",
+      "reviewer_decision": "accepted_by_user",
+      "acceptance_scope": "completed_review_and_verification_evidence_at_6e0a507"
+    },
+    {
+      "iteration_id": "P9-1.9",
+      "status": "implemented_and_verified",
+      "reviewer_decision": "accepted_by_user",
+      "acceptance_scope": "P9_G1_authority_recording_not_runtime_conformance"
+    }
+  ],
+  "source_policy": "Frozen specifications primary, with paper and accepted investigation claims through the unchanged P9-1.1 crosswalk.",
+  "runtime_files_created": [],
+  "legacy_files_changed": [],
+  "scientific_claim_changes": 0,
+  "debt_discharges": 0,
+  "pending_source_obligations": 15,
+  "pending_implementation_follow_ups": 5,
+  "verification": {
+    "targeted_checks": {
+      "G1_pressure_cases": 53,
+      "G1_pressure_result": "passed",
+      "actual_notebook_code_cells": 2,
+      "API_notebook_identity": "byte_exact",
+      "Node_tests": 10,
+      "Node_result": "passed",
+      "rendering_documents": 3,
+      "rendering_local_links": 58,
+      "ruff": "passed"
+    },
+    "development_findings": [
+      "Focused pressure exposed an overly narrow dependency-operator parser rejecting the reviewed numpy>=2.0 fixture; corrected to admit ordinary reviewed package version constraints. The failed and passing pressure runs are both retained in ignored run archives.",
+      "An API check started before the refreshed pressure run finished rejected the stale report as intended; rerunning against the completed bound report passed. No validator or expectation was weakened.",
+      "The full replay initially rejected cache-directory symlinks at the historical generated-root boundary. The disposable checkout now uses real cache directories with environment aliases only beneath the unchanged generated exemptions; no historical check was patched.",
+      "The supplied P9-1.9 guide exposed a path-only generic permission gap. The current checker now enforces both accepted owning-leaf mappings and dependency readiness; only P9-2.1/P9-2.2 are ready at this first G1 transition."
+    ],
+    "commands": [
+      ".venv/bin/python implementation/phase-9-grcv4/verification/test_phase9_g1.py",
+      ".venv/bin/python implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/test_phase9_g1_surfaces.py",
+      ".venv/bin/python implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/run.py verify-iteration9"
+    ],
+    "full_receipt": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/generated/phase9-verification/verification-v3.json",
+    "success_criterion": "Actual commands pass and receipt policy/tree/approval bindings match current inputs; this record is not a cached success token.",
+    "predecessor": "Unchanged V2 full verifier on exact commit 6e0a507, including 106 pressure cases and four earlier historical audits.",
+    "current_scenarios": "implementation/phase-9-grcv4/verification/test_phase9_g1.py",
+    "surface_scenarios": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/test_phase9_g1_surfaces.py",
+    "normal_vs_dedicated": "Both dispatch through verification_script to audit_phase9_implementation.py; normal adds D11/browser checks, not different G1 authority."
+  },
+  "new_debt": [],
+  "next_permitted_step": "P9-2.1, under the accepted foundation entry and source-contract mapping; not executed by this record.",
+  "remaining_gates": [
+    "P9-G2[each_exact_profile]",
+    "P9-G3[each_consumed_support_set]",
+    "P9-G4"
+  ],
+  "claim_ceiling": "Accepted implementation permission; no V4 model execution or conformance is claimed.",
+  "prerequisite_reconciliation": [
+    {
+      "iteration_id": "P9-1.1",
+      "artifact_revision": "6e0a507c0fd7e0758392514acce5e79312a2069c",
+      "artifact_bindings": [
+        {
+          "path": "implementation/phase-9-grcv4/tranche-1/P9-1.1-SourceCrosswalk.json",
+          "sha256": "5bca809b70366cd66ebb283e86cceb7ddbefb5000c49b8d16f58fa938cf548ed"
+        }
+      ],
+      "review_disposition": "accepted_by_user",
+      "acceptance_reference": "implementation/phase-9-grcv4/tranche-1/P9-1.1-1.3-AcceptanceRecord.json",
+      "G1_effect": "accepted_prerequisite_no_scientific_or_runtime_conformance_promotion",
+      "remaining_conditions": "Frozen source ceilings and applicable runtime follow-ups remain; P9-1.6\u20131.8 verifier/surface assurance is separately rerun for the new G1 implementation."
+    },
+    {
+      "iteration_id": "P9-1.2",
+      "artifact_revision": "6e0a507c0fd7e0758392514acce5e79312a2069c",
+      "artifact_bindings": [
+        {
+          "path": "implementation/phase-9-grcv4/tranche-1/P9-1.2-DebtInventory.json",
+          "sha256": "2046d193df09eb17b7484d26e78758df53a6037aa84921c74e63213d2ae30d87"
+        }
+      ],
+      "review_disposition": "accepted_by_user",
+      "acceptance_reference": "implementation/phase-9-grcv4/tranche-1/P9-1.1-1.3-AcceptanceRecord.json",
+      "G1_effect": "accepted_prerequisite_no_scientific_or_runtime_conformance_promotion",
+      "remaining_conditions": "Frozen source ceilings and applicable runtime follow-ups remain; P9-1.6\u20131.8 verifier/surface assurance is separately rerun for the new G1 implementation."
+    },
+    {
+      "iteration_id": "P9-1.3",
+      "artifact_revision": "6e0a507c0fd7e0758392514acce5e79312a2069c",
+      "artifact_bindings": [
+        {
+          "path": "implementation/phase-9-grcv4/tranche-1/P9-1.3-VerificationRouting.json",
+          "sha256": "04db3ac5385d9b16ac7bd02eda84b3bb00c84d92ced9d44ebad376d7632b9196"
+        }
+      ],
+      "review_disposition": "accepted_by_user",
+      "acceptance_reference": "implementation/phase-9-grcv4/tranche-1/P9-1.1-1.3-AcceptanceRecord.json",
+      "G1_effect": "accepted_prerequisite_no_scientific_or_runtime_conformance_promotion",
+      "remaining_conditions": "Frozen source ceilings and applicable runtime follow-ups remain; P9-1.6\u20131.8 verifier/surface assurance is separately rerun for the new G1 implementation."
+    },
+    {
+      "iteration_id": "P9-1.4",
+      "artifact_revision": "6e0a507c0fd7e0758392514acce5e79312a2069c",
+      "artifact_bindings": [
+        {
+          "path": "implementation/phase-9-grcv4/tranche-1/P9-1.4-SupportAndDependencies.json",
+          "sha256": "3a2da3594adb496dd2056526f216271a5f302a4a2f0a24c5a78d1d45fac544f4"
+        },
+        {
+          "path": "implementation/phase-9-grcv4/tranche-1/P9-1.4-1.5-ExecutionRecord.json",
+          "sha256": "75987c8755129202cf0f20ef02604af8ae591f811ee9e8f41838a216b0124296"
+        }
+      ],
+      "review_disposition": "accepted_by_user",
+      "acceptance_reference": "implementation/phase-9-grcv4/tranche-1/P9-1.9-G1Acceptance.json",
+      "G1_effect": "accepted_prerequisite_no_scientific_or_runtime_conformance_promotion",
+      "remaining_conditions": "Frozen source ceilings and applicable runtime follow-ups remain; P9-1.6\u20131.8 verifier/surface assurance is separately rerun for the new G1 implementation."
+    },
+    {
+      "iteration_id": "P9-1.5",
+      "artifact_revision": "6e0a507c0fd7e0758392514acce5e79312a2069c",
+      "artifact_bindings": [
+        {
+          "path": "implementation/phase-9-grcv4/tranche-1/P9-1.5-OwnershipAndLegacyBaseline.json",
+          "sha256": "8a6b251beb0d805e9a1cc95c04f03e26c48b3f8b515f7b2234a786fa47dac067"
+        },
+        {
+          "path": "implementation/phase-9-grcv4/tranche-1/P9-1.4-1.5-ExecutionRecord.json",
+          "sha256": "75987c8755129202cf0f20ef02604af8ae591f811ee9e8f41838a216b0124296"
+        }
+      ],
+      "review_disposition": "accepted_by_user",
+      "acceptance_reference": "implementation/phase-9-grcv4/tranche-1/P9-1.9-G1Acceptance.json",
+      "G1_effect": "accepted_prerequisite_no_scientific_or_runtime_conformance_promotion",
+      "remaining_conditions": "Frozen source ceilings and applicable runtime follow-ups remain; P9-1.6\u20131.8 verifier/surface assurance is separately rerun for the new G1 implementation."
+    },
+    {
+      "iteration_id": "P9-1.6",
+      "artifact_revision": "6e0a507c0fd7e0758392514acce5e79312a2069c",
+      "artifact_bindings": [
+        {
+          "path": "implementation/phase-9-grcv4/tranche-1/P9-1.6-ExecutionRecord.json",
+          "sha256": "b583357e358befa464069acea4a26054cab6a67462de4ca0568409d4676cf13d"
+        }
+      ],
+      "review_disposition": "accepted_by_user",
+      "acceptance_reference": "implementation/phase-9-grcv4/tranche-1/P9-1.9-G1Acceptance.json",
+      "G1_effect": "accepted_prerequisite_no_scientific_or_runtime_conformance_promotion",
+      "remaining_conditions": "Frozen source ceilings and applicable runtime follow-ups remain; P9-1.6\u20131.8 verifier/surface assurance is separately rerun for the new G1 implementation."
+    },
+    {
+      "iteration_id": "P9-1.7",
+      "artifact_revision": "6e0a507c0fd7e0758392514acce5e79312a2069c",
+      "artifact_bindings": [
+        {
+          "path": "implementation/phase-9-grcv4/tranche-1/P9-1.7-1.8-ExecutionRecord.json",
+          "sha256": "a21dfd6ee1d540c42c1c3f5cdf7e758f29b4d0e555a846e3d7a55e88ccee79db"
+        },
+        {
+          "path": "implementation/phase-9-grcv4/tranche-1/P9-1.7-PressureResults.json",
+          "sha256": "8653e76e44553ffd32a184ead0fb6841e681ce74472a9120d4ee79a161fe2e3c"
+        }
+      ],
+      "review_disposition": "accepted_by_user",
+      "acceptance_reference": "implementation/phase-9-grcv4/tranche-1/P9-1.9-G1Acceptance.json",
+      "G1_effect": "accepted_prerequisite_no_scientific_or_runtime_conformance_promotion",
+      "remaining_conditions": "Frozen source ceilings and applicable runtime follow-ups remain; P9-1.6\u20131.8 verifier/surface assurance is separately rerun for the new G1 implementation."
+    },
+    {
+      "iteration_id": "P9-1.8",
+      "artifact_revision": "6e0a507c0fd7e0758392514acce5e79312a2069c",
+      "artifact_bindings": [
+        {
+          "path": "implementation/phase-9-grcv4/tranche-1/P9-1.7-1.8-ExecutionRecord.json",
+          "sha256": "a21dfd6ee1d540c42c1c3f5cdf7e758f29b4d0e555a846e3d7a55e88ccee79db"
+        },
+        {
+          "path": "implementation/phase-9-grcv4/tranche-1/P9-1.6-1.8-AuditClosure.json",
+          "sha256": "bdddf53469f29514defd748a964995b1c75c7a6af51344e13b1074acf049a500"
+        },
+        {
+          "path": "implementation/phase-9-grcv4/tranche-1/P9-1.8-SurfaceInventory.json",
+          "sha256": "c8c3488c65452cdc64c9adfc36f6a165e80d6610f8a7906848cde946b281f449"
+        }
+      ],
+      "review_disposition": "accepted_by_user",
+      "acceptance_reference": "implementation/phase-9-grcv4/tranche-1/P9-1.9-G1Acceptance.json",
+      "G1_effect": "accepted_prerequisite_no_scientific_or_runtime_conformance_promotion",
+      "remaining_conditions": "Frozen source ceilings and applicable runtime follow-ups remain; P9-1.6\u20131.8 verifier/surface assurance is separately rerun for the new G1 implementation."
+    }
+  ],
+  "parent_reconciliation": {
+    "tranche": 1,
+    "status": "review_and_implementation_authorization_reconciled",
+    "phase_9_complete": false,
+    "runtime_implementation_started": false,
+    "P9_TOOL_001": "closed_by_normal_route_plus_adversarial_and_surface_evidence; original opening failure preserved"
+  },
+  "next_dependency_ready_leaves": [
+    "P9-2.1",
+    "P9-2.2"
+  ],
+  "currently_eligible_runtime_paths": 11,
+  "create_update_and_retention_pressure": [
+    "published_runtime_update",
+    "published_runtime_deletion",
+    "published_failure_evidence_overwrite",
+    "new_evidence_run_preserves_failure"
+  ],
+  "publication_scope": "The P9-1.9 request authorizes governance and verification maintenance. Runtime work entries cannot modify the approval, verifier, policy or historical review inputs. Actual user acceptance binds the existing 6e0a507 package and reviewed forward scope, not retroactive human inspection of newly written V3 code.",
+  "guidance_reconciliation": {
+    "input": "implementation/phase-9-grcv4/verification/inputs/P9-1.9-G1-Acceptance-And-Scoped-Authorization-Pressure-Guide.md",
+    "sha256": "d2ff0e903da022e08b62a233e51479664c8915d7a0fd78ed2d305df84b1043ac",
+    "authority_effect": "none; engineering recommendations assessed against accepted project contracts",
+    "case_status_policy": "Named executable cases must pass in the matching current raw report. Historical reuse is from the exact unchanged V2 replay, not counted again as independent G1 tests.",
+    "outliers": [
+      {
+        "guide_case": "A1",
+        "current_pressure_cases": [
+          "missing_acceptance",
+          "acceptance_user_authority"
+        ],
+        "interpretation_and_limits": "Old V2 self_declared_runtime_no_external_anchor and runtime_flag_not_authority additionally retain proposal-versus-permission distinction."
+      },
+      {
+        "guide_case": "A2",
+        "current_pressure_cases": [
+          "rehashed_expanded_acceptance"
+        ],
+        "interpretation_and_limits": "Changed approval payload cannot match the independently pinned decision digest."
+      },
+      {
+        "guide_case": "A3",
+        "current_pressure_cases": [
+          "missing_consumed_surface_evidence"
+        ],
+        "interpretation_and_limits": "Missing consumed P9-1.8 inventory holds validation; generated full-run evidence is rerun and separately bound."
+      },
+      {
+        "guide_case": "A4",
+        "current_pressure_cases": [
+          "acceptance_release_id",
+          "acceptance_baseline_commit"
+        ],
+        "interpretation_and_limits": "Same branch name does not replace exact release and baseline."
+      },
+      {
+        "guide_case": "A5",
+        "current_pressure_cases": [
+          "clean_committed_unauthorized_tree"
+        ],
+        "interpretation_and_limits": "Private clean Git commits remain subject to baseline/actual-byte checks."
+      },
+      {
+        "guide_case": "A6",
+        "current_pressure_cases": [
+          "accepted_G1_current_tree"
+        ],
+        "interpretation_and_limits": "Exact uncommitted publication is admitted by content, not worktree cleanliness."
+      },
+      {
+        "guide_case": "A7",
+        "current_pressure_cases": [
+          "acceptance_baseline_commit",
+          "preacceptance_same_runtime_addition"
+        ],
+        "interpretation_and_limits": "Actual 6e0a507 baseline and entry inspection contain no V4 runtime files; earlier unauthorized edits are not present or backdated. The hypothetical recovery/review protocol is not implemented or exercised."
+      },
+      {
+        "guide_case": "A8",
+        "current_pressure_cases": [
+          "conflicting_G1_record"
+        ],
+        "interpretation_and_limits": "Undeclared competing record rejected; no filename/timestamp winner."
+      },
+      {
+        "guide_case": "A9",
+        "current_pressure_cases": [
+          "changed_verifier_after_pressure"
+        ],
+        "interpretation_and_limits": "Current payload byte drift holds; API tests also reject stale receipt bindings. Governance amendment is not permitted by a runtime manifest."
+      },
+      {
+        "guide_case": "A10",
+        "current_pressure_cases": [
+          "rehashed_expanded_acceptance",
+          "manifest_new_runtime_authority"
+        ],
+        "interpretation_and_limits": "No arbitrary scope addition through approval rehash or manifest fields."
+      },
+      {
+        "guide_case": "A11",
+        "current_pressure_cases": [
+          "evidence_path_escape",
+          "runtime_manifest_cannot_change_governance"
+        ],
+        "interpretation_and_limits": "Evidence/run paths cannot escape into governance or protected sources."
+      },
+      {
+        "guide_case": "A12",
+        "current_pressure_cases": [
+          "partial_publication",
+          "stale_work_bytes"
+        ],
+        "interpretation_and_limits": "Missing publication member or changed bound bytes fails; API post-read drift clears effective permission."
+      },
+      {
+        "guide_case": "A13",
+        "current_pressure_cases": [
+          "identical_acceptance_is_idempotent"
+        ],
+        "interpretation_and_limits": "Same acceptance resolves identically without extra support or acceptance credit."
+      },
+      {
+        "guide_case": "A14",
+        "current_pressure_cases": [
+          "synthetic_acceptance_not_live_authority"
+        ],
+        "interpretation_and_limits": "Copied test decision cannot match actual pinned user approval."
+      },
+      {
+        "guide_case": "A15",
+        "current_pressure_cases": [
+          "missing_acceptance",
+          "missing_consumed_surface_evidence",
+          "conflicting_G1_record"
+        ],
+        "interpretation_and_limits": "No withdrawal/narrowing protocol is introduced. Missing prerequisites or unsupported competing authority withhold current permission; no cached fallback."
+      },
+      {
+        "guide_case": "A16",
+        "current_pressure_cases": [
+          "accepted_G1_current_tree",
+          "accepted_G1_exact_targets",
+          "ready_identity_leaf"
+        ],
+        "interpretation_and_limits": "Ready implementation proceeds while all runtime/profile support and future holds stay pending."
+      }
+    ],
+    "permission_transition": {
+      "before": "preacceptance_same_runtime_addition; actual normal route on exact 6e0a507",
+      "after": "normal_entry_accepted_runtime_target; same source bytes under actual accepted G1 scope in a disposable checkout",
+      "runtime_created_in_live_tree": false,
+      "owning_leaf_pressure": [
+        "later_generic_leaf_held",
+        "path_cannot_borrow_ready_leaf",
+        "additive_integration_waits_for_owner",
+        "GRC9V4_before_G3"
+      ],
+      "historical_false_flag": "Preserved in accepted-predecessor/verification-v2.json, separate from current verification-v3.json."
+    }
+  }
+}

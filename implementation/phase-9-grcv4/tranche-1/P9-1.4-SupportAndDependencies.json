@@ -1,0 +1,1226 @@
+{
+  "schema": "phase9_support_dependency_review_v1",
+  "iteration_id": "P9-1.4",
+  "status": "review_completed_recommendations_pending_user_acceptance",
+  "baseline_commit": "7c772d36bd4cf12b4a444b7b954b74612de2926f",
+  "release_id": "grcv4-spec-release-sha256:9f4c8fe5b57b1c477d834a3e4dae3f98a2b18c70e6e7f598e3c9652170c8645f",
+  "source_review_bindings": [
+    {
+      "path": "implementation/phase-9-grcv4/tranche-1/P9-1.1-SourceCrosswalk.json",
+      "sha256": "5bca809b70366cd66ebb283e86cceb7ddbefb5000c49b8d16f58fa938cf548ed"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-1/P9-1.2-DebtInventory.json",
+      "sha256": "2046d193df09eb17b7484d26e78758df53a6037aa84921c74e63213d2ae30d87"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-1/P9-1.3-VerificationRouting.json",
+      "sha256": "04db3ac5385d9b16ac7bd02eda84b3bb00c84d92ced9d44ebad376d7632b9196"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-1/P9-1.1-1.3-ExecutionRecord.json",
+      "sha256": "1b7e04f0cf59531fd4217f5e32f72196c5e123c68f961a91ef6c13a707a1ce81"
+    }
+  ],
+  "source_map": "P9-1.1-SourceCrosswalk.json /groups and /contracts; unchanged exact spec/paper/claim/contract references are reused",
+  "scientific_authority_added": false,
+  "runtime_authorized": false,
+  "accepted_generic_runtime_support": [],
+  "admitted_specialization_support_sets": [],
+  "profiles": [
+    {
+      "profile_family": "A_CI",
+      "candidate": "A",
+      "realization": "CI",
+      "current_support": "unsupported_not_implemented",
+      "scheduling": "planned_later_independent_profile",
+      "dynamics_iterations": [
+        "P9-6.1b"
+      ],
+      "lifecycle_requirement": "P9-7.1 through P9-7.6 exact-profile children; C_OS executes early through P9-4.6/P9-4.7a/P9-4.7b",
+      "gate": "P9-G2[A_CI]",
+      "gate_state": "pending",
+      "exact_accepted_profile_ids": [],
+      "required_catalog_case_ids": [
+        "COMMON-VALID-ORDINARY-STEP",
+        "COMMON-INVALID-DOMAIN",
+        "COMMON-NONFINITE",
+        "COMMON-CHARGE-MISMATCH",
+        "COMMON-STALE-CACHE",
+        "COMMON-ZERO-DURATION",
+        "COMMON-NEGATIVE-DURATION",
+        "COMMON-ATOMIC-FAILURE",
+        "A-POSITIVE-W-ADMISSION",
+        "A-EXACT-PRE-READ-W-HAT",
+        "A-CHI-ZERO",
+        "A-ZETA-ZERO",
+        "A-POST-CONTINUITY-REFRESH",
+        "A-LOG-WRITER",
+        "A-NO-SAME-BEAT-NEW-W-READ",
+        "A-INITIALIZATION-VS-FORMATION",
+        "A-MIGRATION-HISTORY-RECEIPT",
+        "CI-BRANCH",
+        "SNAPSHOT-LOAD-REPLAY",
+        "RESET-AFTER-ORDINARY",
+        "RESET-AFTER-MIGRATION",
+        "RESET-AFTER-EVENT",
+        "WHOLE-LIFECYCLE-TUPLE-MAP",
+        "ALL-MIGRATION-CLASSES",
+        "HISTORY-DISPOSITION",
+        "TARGET-READMISSION-FAILURE",
+        "RECEIPT-OWNERSHIP",
+        "DUPLICATION-INDEPENDENCE"
+      ],
+      "coverage_status": "not_executed_not_a_concrete_fixture_product",
+      "additional_hold": "Independent A numerical vectors; GRC9V4 expansion additionally held for a concrete A target/history vector."
+    },
+    {
+      "profile_family": "C_CI",
+      "candidate": "C",
+      "realization": "CI",
+      "current_support": "unsupported_not_implemented",
+      "scheduling": "planned_later_independent_profile",
+      "dynamics_iterations": [
+        "P9-6.1a"
+      ],
+      "lifecycle_requirement": "P9-7.1 through P9-7.6 exact-profile children; C_OS executes early through P9-4.6/P9-4.7a/P9-4.7b",
+      "gate": "P9-G2[C_CI]",
+      "gate_state": "pending",
+      "exact_accepted_profile_ids": [],
+      "required_catalog_case_ids": [
+        "COMMON-VALID-ORDINARY-STEP",
+        "COMMON-INVALID-DOMAIN",
+        "COMMON-NONFINITE",
+        "COMMON-CHARGE-MISMATCH",
+        "COMMON-STALE-CACHE",
+        "COMMON-ZERO-DURATION",
+        "COMMON-NEGATIVE-DURATION",
+        "COMMON-ATOMIC-FAILURE",
+        "C-TR-REFERENCE-MAP",
+        "C-BASELINE-EXACT",
+        "C-BASELINE-DERIVATIVE-COVARIANCE",
+        "C-SELECTOR-STRICT-GAP",
+        "C-SELECTOR-BOUNDARY",
+        "C-QC-TYPING",
+        "C-RETAINED-VS-PHYSICAL-CONDITIONING",
+        "C-ONE-CHI-GATE",
+        "C-C-ONLY-AUTHORITY",
+        "C-POST-CONTINUITY-REDERIVATION",
+        "C-KAPPA-M-ZERO",
+        "C-CHI-ZERO",
+        "C-ZETA-ZERO",
+        "C-LIFECYCLE-REFERENCE-MAP",
+        "CI-BRANCH",
+        "SNAPSHOT-LOAD-REPLAY",
+        "RESET-AFTER-ORDINARY",
+        "RESET-AFTER-MIGRATION",
+        "RESET-AFTER-EVENT",
+        "WHOLE-LIFECYCLE-TUPLE-MAP",
+        "ALL-MIGRATION-CLASSES",
+        "HISTORY-DISPOSITION",
+        "TARGET-READMISSION-FAILURE",
+        "RECEIPT-OWNERSHIP",
+        "DUPLICATION-INDEPENDENCE"
+      ],
+      "coverage_status": "not_executed_not_a_concrete_fixture_product",
+      "additional_hold": null
+    },
+    {
+      "profile_family": "A_OS",
+      "candidate": "A",
+      "realization": "OS",
+      "current_support": "unsupported_not_implemented",
+      "scheduling": "optional_next_generic_route",
+      "dynamics_iterations": [
+        "P9-5.1",
+        "P9-5.2",
+        "P9-5.3",
+        "P9-5.4"
+      ],
+      "lifecycle_requirement": "P9-7.1 through P9-7.6 exact-profile children; C_OS executes early through P9-4.6/P9-4.7a/P9-4.7b",
+      "gate": "P9-G2[A_OS]",
+      "gate_state": "pending",
+      "exact_accepted_profile_ids": [],
+      "required_catalog_case_ids": [
+        "COMMON-VALID-ORDINARY-STEP",
+        "COMMON-INVALID-DOMAIN",
+        "COMMON-NONFINITE",
+        "COMMON-CHARGE-MISMATCH",
+        "COMMON-STALE-CACHE",
+        "COMMON-ZERO-DURATION",
+        "COMMON-NEGATIVE-DURATION",
+        "COMMON-ATOMIC-FAILURE",
+        "A-POSITIVE-W-ADMISSION",
+        "A-EXACT-PRE-READ-W-HAT",
+        "A-CHI-ZERO",
+        "A-ZETA-ZERO",
+        "A-POST-CONTINUITY-REFRESH",
+        "A-LOG-WRITER",
+        "A-NO-SAME-BEAT-NEW-W-READ",
+        "A-INITIALIZATION-VS-FORMATION",
+        "A-MIGRATION-HISTORY-RECEIPT",
+        "OS-ONE-PASS",
+        "SNAPSHOT-LOAD-REPLAY",
+        "RESET-AFTER-ORDINARY",
+        "RESET-AFTER-MIGRATION",
+        "RESET-AFTER-EVENT",
+        "WHOLE-LIFECYCLE-TUPLE-MAP",
+        "ALL-MIGRATION-CLASSES",
+        "HISTORY-DISPOSITION",
+        "TARGET-READMISSION-FAILURE",
+        "RECEIPT-OWNERSHIP",
+        "DUPLICATION-INDEPENDENCE"
+      ],
+      "coverage_status": "not_executed_not_a_concrete_fixture_product",
+      "additional_hold": "Independent A numerical vectors; GRC9V4 expansion additionally held for a concrete A target/history vector."
+    },
+    {
+      "profile_family": "C_OS",
+      "candidate": "C",
+      "realization": "OS",
+      "current_support": "unsupported_not_implemented",
+      "scheduling": "first_generic_slice",
+      "dynamics_iterations": [
+        "P9-4.1",
+        "P9-4.2",
+        "P9-4.3",
+        "P9-4.4",
+        "P9-4.5"
+      ],
+      "lifecycle_requirement": "P9-7.1 through P9-7.6 exact-profile children; C_OS executes early through P9-4.6/P9-4.7a/P9-4.7b",
+      "gate": "P9-G2[C_OS]",
+      "gate_state": "pending",
+      "exact_accepted_profile_ids": [],
+      "required_catalog_case_ids": [
+        "COMMON-VALID-ORDINARY-STEP",
+        "COMMON-INVALID-DOMAIN",
+        "COMMON-NONFINITE",
+        "COMMON-CHARGE-MISMATCH",
+        "COMMON-STALE-CACHE",
+        "COMMON-ZERO-DURATION",
+        "COMMON-NEGATIVE-DURATION",
+        "COMMON-ATOMIC-FAILURE",
+        "C-TR-REFERENCE-MAP",
+        "C-BASELINE-EXACT",
+        "C-BASELINE-DERIVATIVE-COVARIANCE",
+        "C-SELECTOR-STRICT-GAP",
+        "C-SELECTOR-BOUNDARY",
+        "C-QC-TYPING",
+        "C-RETAINED-VS-PHYSICAL-CONDITIONING",
+        "C-ONE-CHI-GATE",
+        "C-C-ONLY-AUTHORITY",
+        "C-POST-CONTINUITY-REDERIVATION",
+        "C-KAPPA-M-ZERO",
+        "C-CHI-ZERO",
+        "C-ZETA-ZERO",
+        "C-LIFECYCLE-REFERENCE-MAP",
+        "OS-ONE-PASS",
+        "SNAPSHOT-LOAD-REPLAY",
+        "RESET-AFTER-ORDINARY",
+        "RESET-AFTER-MIGRATION",
+        "RESET-AFTER-EVENT",
+        "WHOLE-LIFECYCLE-TUPLE-MAP",
+        "ALL-MIGRATION-CLASSES",
+        "HISTORY-DISPOSITION",
+        "TARGET-READMISSION-FAILURE",
+        "RECEIPT-OWNERSHIP",
+        "DUPLICATION-INDEPENDENCE"
+      ],
+      "coverage_status": "not_executed_not_a_concrete_fixture_product",
+      "additional_hold": null
+    },
+    {
+      "profile_family": "A_RG2b",
+      "candidate": "A",
+      "realization": "RG2b",
+      "current_support": "unsupported_not_implemented",
+      "scheduling": "deliberately_deferred_from_initial_runtime_slice",
+      "dynamics_iterations": [
+        "P9-6.4b"
+      ],
+      "lifecycle_requirement": "P9-7.1 through P9-7.6 exact-profile children; C_OS executes early through P9-4.6/P9-4.7a/P9-4.7b",
+      "gate": "P9-G2[A_RG2b]",
+      "gate_state": "pending",
+      "exact_accepted_profile_ids": [],
+      "required_catalog_case_ids": [
+        "COMMON-VALID-ORDINARY-STEP",
+        "COMMON-INVALID-DOMAIN",
+        "COMMON-NONFINITE",
+        "COMMON-CHARGE-MISMATCH",
+        "COMMON-STALE-CACHE",
+        "COMMON-ZERO-DURATION",
+        "COMMON-NEGATIVE-DURATION",
+        "COMMON-ATOMIC-FAILURE",
+        "A-POSITIVE-W-ADMISSION",
+        "A-EXACT-PRE-READ-W-HAT",
+        "A-CHI-ZERO",
+        "A-ZETA-ZERO",
+        "A-POST-CONTINUITY-REFRESH",
+        "A-LOG-WRITER",
+        "A-NO-SAME-BEAT-NEW-W-READ",
+        "A-INITIALIZATION-VS-FORMATION",
+        "A-MIGRATION-HISTORY-RECEIPT",
+        "RG2B-SECTION",
+        "SNAPSHOT-LOAD-REPLAY",
+        "RESET-AFTER-ORDINARY",
+        "RESET-AFTER-MIGRATION",
+        "RESET-AFTER-EVENT",
+        "WHOLE-LIFECYCLE-TUPLE-MAP",
+        "ALL-MIGRATION-CLASSES",
+        "HISTORY-DISPOSITION",
+        "TARGET-READMISSION-FAILURE",
+        "RECEIPT-OWNERSHIP",
+        "DUPLICATION-INDEPENDENCE"
+      ],
+      "coverage_status": "not_executed_not_a_concrete_fixture_product",
+      "additional_hold": "Finite deterministic evaluator, independent error/containment certificates and concrete vectors required."
+    },
+    {
+      "profile_family": "C_RG2b",
+      "candidate": "C",
+      "realization": "RG2b",
+      "current_support": "unsupported_not_implemented",
+      "scheduling": "deliberately_deferred_from_initial_runtime_slice",
+      "dynamics_iterations": [
+        "P9-6.4a"
+      ],
+      "lifecycle_requirement": "P9-7.1 through P9-7.6 exact-profile children; C_OS executes early through P9-4.6/P9-4.7a/P9-4.7b",
+      "gate": "P9-G2[C_RG2b]",
+      "gate_state": "pending",
+      "exact_accepted_profile_ids": [],
+      "required_catalog_case_ids": [
+        "COMMON-VALID-ORDINARY-STEP",
+        "COMMON-INVALID-DOMAIN",
+        "COMMON-NONFINITE",
+        "COMMON-CHARGE-MISMATCH",
+        "COMMON-STALE-CACHE",
+        "COMMON-ZERO-DURATION",
+        "COMMON-NEGATIVE-DURATION",
+        "COMMON-ATOMIC-FAILURE",
+        "C-TR-REFERENCE-MAP",
+        "C-BASELINE-EXACT",
+        "C-BASELINE-DERIVATIVE-COVARIANCE",
+        "C-SELECTOR-STRICT-GAP",
+        "C-SELECTOR-BOUNDARY",
+        "C-QC-TYPING",
+        "C-RETAINED-VS-PHYSICAL-CONDITIONING",
+        "C-ONE-CHI-GATE",
+        "C-C-ONLY-AUTHORITY",
+        "C-POST-CONTINUITY-REDERIVATION",
+        "C-KAPPA-M-ZERO",
+        "C-CHI-ZERO",
+        "C-ZETA-ZERO",
+        "C-LIFECYCLE-REFERENCE-MAP",
+        "RG2B-SECTION",
+        "SNAPSHOT-LOAD-REPLAY",
+        "RESET-AFTER-ORDINARY",
+        "RESET-AFTER-MIGRATION",
+        "RESET-AFTER-EVENT",
+        "WHOLE-LIFECYCLE-TUPLE-MAP",
+        "ALL-MIGRATION-CLASSES",
+        "HISTORY-DISPOSITION",
+        "TARGET-READMISSION-FAILURE",
+        "RECEIPT-OWNERSHIP",
+        "DUPLICATION-INDEPENDENCE"
+      ],
+      "coverage_status": "not_executed_not_a_concrete_fixture_product",
+      "additional_hold": "Finite deterministic evaluator, independent error/containment certificates and concrete vectors required."
+    },
+    {
+      "profile_family": "A_PC",
+      "candidate": "A",
+      "realization": "PC",
+      "current_support": "unsupported_not_implemented",
+      "scheduling": "planned_later_independent_profile",
+      "dynamics_iterations": [
+        "P9-6.2b"
+      ],
+      "lifecycle_requirement": "P9-7.1 through P9-7.6 exact-profile children; C_OS executes early through P9-4.6/P9-4.7a/P9-4.7b",
+      "gate": "P9-G2[A_PC]",
+      "gate_state": "pending",
+      "exact_accepted_profile_ids": [],
+      "required_catalog_case_ids": [
+        "COMMON-VALID-ORDINARY-STEP",
+        "COMMON-INVALID-DOMAIN",
+        "COMMON-NONFINITE",
+        "COMMON-CHARGE-MISMATCH",
+        "COMMON-STALE-CACHE",
+        "COMMON-ZERO-DURATION",
+        "COMMON-NEGATIVE-DURATION",
+        "COMMON-ATOMIC-FAILURE",
+        "A-POSITIVE-W-ADMISSION",
+        "A-EXACT-PRE-READ-W-HAT",
+        "A-CHI-ZERO",
+        "A-ZETA-ZERO",
+        "A-POST-CONTINUITY-REFRESH",
+        "A-LOG-WRITER",
+        "A-NO-SAME-BEAT-NEW-W-READ",
+        "A-INITIALIZATION-VS-FORMATION",
+        "A-MIGRATION-HISTORY-RECEIPT",
+        "PC-ZOH",
+        "SNAPSHOT-LOAD-REPLAY",
+        "RESET-AFTER-ORDINARY",
+        "RESET-AFTER-MIGRATION",
+        "RESET-AFTER-EVENT",
+        "WHOLE-LIFECYCLE-TUPLE-MAP",
+        "ALL-MIGRATION-CLASSES",
+        "HISTORY-DISPOSITION",
+        "TARGET-READMISSION-FAILURE",
+        "RECEIPT-OWNERSHIP",
+        "DUPLICATION-INDEPENDENCE"
+      ],
+      "coverage_status": "not_executed_not_a_concrete_fixture_product",
+      "additional_hold": "Independent A numerical vectors; GRC9V4 expansion additionally held for a concrete A target/history vector."
+    },
+    {
+      "profile_family": "C_PC",
+      "candidate": "C",
+      "realization": "PC",
+      "current_support": "unsupported_not_implemented",
+      "scheduling": "planned_later_independent_profile",
+      "dynamics_iterations": [
+        "P9-6.2a"
+      ],
+      "lifecycle_requirement": "P9-7.1 through P9-7.6 exact-profile children; C_OS executes early through P9-4.6/P9-4.7a/P9-4.7b",
+      "gate": "P9-G2[C_PC]",
+      "gate_state": "pending",
+      "exact_accepted_profile_ids": [],
+      "required_catalog_case_ids": [
+        "COMMON-VALID-ORDINARY-STEP",
+        "COMMON-INVALID-DOMAIN",
+        "COMMON-NONFINITE",
+        "COMMON-CHARGE-MISMATCH",
+        "COMMON-STALE-CACHE",
+        "COMMON-ZERO-DURATION",
+        "COMMON-NEGATIVE-DURATION",
+        "COMMON-ATOMIC-FAILURE",
+        "C-TR-REFERENCE-MAP",
+        "C-BASELINE-EXACT",
+        "C-BASELINE-DERIVATIVE-COVARIANCE",
+        "C-SELECTOR-STRICT-GAP",
+        "C-SELECTOR-BOUNDARY",
+        "C-QC-TYPING",
+        "C-RETAINED-VS-PHYSICAL-CONDITIONING",
+        "C-ONE-CHI-GATE",
+        "C-C-ONLY-AUTHORITY",
+        "C-POST-CONTINUITY-REDERIVATION",
+        "C-KAPPA-M-ZERO",
+        "C-CHI-ZERO",
+        "C-ZETA-ZERO",
+        "C-LIFECYCLE-REFERENCE-MAP",
+        "PC-ZOH",
+        "SNAPSHOT-LOAD-REPLAY",
+        "RESET-AFTER-ORDINARY",
+        "RESET-AFTER-MIGRATION",
+        "RESET-AFTER-EVENT",
+        "WHOLE-LIFECYCLE-TUPLE-MAP",
+        "ALL-MIGRATION-CLASSES",
+        "HISTORY-DISPOSITION",
+        "TARGET-READMISSION-FAILURE",
+        "RECEIPT-OWNERSHIP",
+        "DUPLICATION-INDEPENDENCE"
+      ],
+      "coverage_status": "not_executed_not_a_concrete_fixture_product",
+      "additional_hold": null
+    },
+    {
+      "profile_family": "A_CI_PC",
+      "candidate": "A",
+      "realization": "CI+PC",
+      "current_support": "unsupported_not_implemented",
+      "scheduling": "planned_later_independent_profile",
+      "dynamics_iterations": [
+        "P9-6.3b"
+      ],
+      "lifecycle_requirement": "P9-7.1 through P9-7.6 exact-profile children; C_OS executes early through P9-4.6/P9-4.7a/P9-4.7b",
+      "gate": "P9-G2[A_CI_PC]",
+      "gate_state": "pending",
+      "exact_accepted_profile_ids": [],
+      "required_catalog_case_ids": [
+        "COMMON-VALID-ORDINARY-STEP",
+        "COMMON-INVALID-DOMAIN",
+        "COMMON-NONFINITE",
+        "COMMON-CHARGE-MISMATCH",
+        "COMMON-STALE-CACHE",
+        "COMMON-ZERO-DURATION",
+        "COMMON-NEGATIVE-DURATION",
+        "COMMON-ATOMIC-FAILURE",
+        "A-POSITIVE-W-ADMISSION",
+        "A-EXACT-PRE-READ-W-HAT",
+        "A-CHI-ZERO",
+        "A-ZETA-ZERO",
+        "A-POST-CONTINUITY-REFRESH",
+        "A-LOG-WRITER",
+        "A-NO-SAME-BEAT-NEW-W-READ",
+        "A-INITIALIZATION-VS-FORMATION",
+        "A-MIGRATION-HISTORY-RECEIPT",
+        "CI-PC-SAME-SOURCE",
+        "SNAPSHOT-LOAD-REPLAY",
+        "RESET-AFTER-ORDINARY",
+        "RESET-AFTER-MIGRATION",
+        "RESET-AFTER-EVENT",
+        "WHOLE-LIFECYCLE-TUPLE-MAP",
+        "ALL-MIGRATION-CLASSES",
+        "HISTORY-DISPOSITION",
+        "TARGET-READMISSION-FAILURE",
+        "RECEIPT-OWNERSHIP",
+        "DUPLICATION-INDEPENDENCE"
+      ],
+      "coverage_status": "not_executed_not_a_concrete_fixture_product",
+      "additional_hold": "Independent A numerical vectors; GRC9V4 expansion additionally held for a concrete A target/history vector."
+    },
+    {
+      "profile_family": "C_CI_PC",
+      "candidate": "C",
+      "realization": "CI+PC",
+      "current_support": "unsupported_not_implemented",
+      "scheduling": "planned_later_independent_profile",
+      "dynamics_iterations": [
+        "P9-6.3a"
+      ],
+      "lifecycle_requirement": "P9-7.1 through P9-7.6 exact-profile children; C_OS executes early through P9-4.6/P9-4.7a/P9-4.7b",
+      "gate": "P9-G2[C_CI_PC]",
+      "gate_state": "pending",
+      "exact_accepted_profile_ids": [],
+      "required_catalog_case_ids": [
+        "COMMON-VALID-ORDINARY-STEP",
+        "COMMON-INVALID-DOMAIN",
+        "COMMON-NONFINITE",
+        "COMMON-CHARGE-MISMATCH",
+        "COMMON-STALE-CACHE",
+        "COMMON-ZERO-DURATION",
+        "COMMON-NEGATIVE-DURATION",
+        "COMMON-ATOMIC-FAILURE",
+        "C-TR-REFERENCE-MAP",
+        "C-BASELINE-EXACT",
+        "C-BASELINE-DERIVATIVE-COVARIANCE",
+        "C-SELECTOR-STRICT-GAP",
+        "C-SELECTOR-BOUNDARY",
+        "C-QC-TYPING",
+        "C-RETAINED-VS-PHYSICAL-CONDITIONING",
+        "C-ONE-CHI-GATE",
+        "C-C-ONLY-AUTHORITY",
+        "C-POST-CONTINUITY-REDERIVATION",
+        "C-KAPPA-M-ZERO",
+        "C-CHI-ZERO",
+        "C-ZETA-ZERO",
+        "C-LIFECYCLE-REFERENCE-MAP",
+        "CI-PC-SAME-SOURCE",
+        "SNAPSHOT-LOAD-REPLAY",
+        "RESET-AFTER-ORDINARY",
+        "RESET-AFTER-MIGRATION",
+        "RESET-AFTER-EVENT",
+        "WHOLE-LIFECYCLE-TUPLE-MAP",
+        "ALL-MIGRATION-CLASSES",
+        "HISTORY-DISPOSITION",
+        "TARGET-READMISSION-FAILURE",
+        "RECEIPT-OWNERSHIP",
+        "DUPLICATION-INDEPENDENCE"
+      ],
+      "coverage_status": "not_executed_not_a_concrete_fixture_product",
+      "additional_hold": null
+    }
+  ],
+  "first_slice_identity_policy": {
+    "seed_reference_vector": "IDENTITY-GRCV4-PROFILE-C-OS",
+    "seed_reference_id": "grcv4-profile-sha256:618ef0aaecdbfbf89c26c5be163fdb197d349a15ab71c8aa64bb669a42f2195c",
+    "seed_status": "frozen_preimplementation_identity_example_not_runtime_admission",
+    "required_before_execution": "P9-2.5 binds exact source/target profile payloads, graph/context/domain, all reference arrays, numeric comparison rules and independent expected results for each fixture.",
+    "no_profile_id_reuse_across_different_graph_reference_maps": true,
+    "same_graph_positive_migration": "Construct a second exact C_OS identity using an explicitly varied admitted parameter (e.g. chi_C=0); independently validate both, current and reset states, before migration tests.",
+    "mapped_event": "Resolve both source and target profiles of GENERIC-MAPPED-EVENT-NONZERO-RESOURCE-INCREMENT independently; do not reuse the unrelated nine-edge identity example or three-node algebra inputs."
+  },
+  "dependency_edges": [
+    {
+      "iteration_id": "P9-2.1",
+      "requires": [
+        "P9-G1"
+      ]
+    },
+    {
+      "iteration_id": "P9-2.2",
+      "requires": [
+        "P9-G1"
+      ]
+    },
+    {
+      "iteration_id": "P9-2.3",
+      "requires": [
+        "P9-2.1",
+        "P9-2.2"
+      ]
+    },
+    {
+      "iteration_id": "P9-2.4",
+      "requires": [
+        "P9-2.3"
+      ]
+    },
+    {
+      "iteration_id": "P9-2.5",
+      "requires": [
+        "P9-2.4"
+      ]
+    },
+    {
+      "iteration_id": "P9-2.6",
+      "requires": [
+        "P9-2.5"
+      ]
+    },
+    {
+      "iteration_id": "P9-3.1",
+      "requires": [
+        "P9-2.6"
+      ]
+    },
+    {
+      "iteration_id": "P9-3.2",
+      "requires": [
+        "P9-3.1"
+      ]
+    },
+    {
+      "iteration_id": "P9-3.3",
+      "requires": [
+        "P9-3.2"
+      ]
+    },
+    {
+      "iteration_id": "P9-3.4",
+      "requires": [
+        "P9-3.3"
+      ]
+    },
+    {
+      "iteration_id": "P9-3.5",
+      "requires": [
+        "P9-3.4"
+      ]
+    },
+    {
+      "iteration_id": "P9-4.1",
+      "requires": [
+        "P9-3.5"
+      ]
+    },
+    {
+      "iteration_id": "P9-4.2",
+      "requires": [
+        "P9-4.1"
+      ]
+    },
+    {
+      "iteration_id": "P9-4.3",
+      "requires": [
+        "P9-4.2"
+      ]
+    },
+    {
+      "iteration_id": "P9-4.4",
+      "requires": [
+        "P9-4.3"
+      ]
+    },
+    {
+      "iteration_id": "P9-4.5",
+      "requires": [
+        "P9-4.4"
+      ]
+    },
+    {
+      "iteration_id": "P9-4.6",
+      "requires": [
+        "P9-4.5"
+      ]
+    },
+    {
+      "iteration_id": "P9-4.7a",
+      "requires": [
+        "P9-4.6"
+      ]
+    },
+    {
+      "iteration_id": "P9-7.2a-C_OS-NH-NH",
+      "requires": [
+        "P9-4.7a"
+      ]
+    },
+    {
+      "iteration_id": "P9-7.2a-C_OS-UNSUPPORTED",
+      "requires": [
+        "P9-4.7a"
+      ]
+    },
+    {
+      "iteration_id": "P9-7.2b-C_OS-MAPPED",
+      "requires": [
+        "P9-4.7a"
+      ]
+    },
+    {
+      "iteration_id": "P9-7.3-C_OS",
+      "requires": [
+        "P9-7.2a-C_OS-NH-NH",
+        "P9-7.2b-C_OS-MAPPED"
+      ]
+    },
+    {
+      "iteration_id": "P9-7.4-C_OS",
+      "requires": [
+        "P9-7.3-C_OS"
+      ]
+    },
+    {
+      "iteration_id": "P9-7.5-C_OS",
+      "requires": [
+        "P9-7.4-C_OS",
+        "P9-7.2a-C_OS-UNSUPPORTED"
+      ]
+    },
+    {
+      "iteration_id": "P9-7.6-C_OS",
+      "requires": [
+        "P9-7.5-C_OS"
+      ]
+    },
+    {
+      "iteration_id": "P9-4.7b",
+      "requires": [
+        "P9-7.6-C_OS"
+      ]
+    },
+    {
+      "iteration_id": "P9-4.8",
+      "requires": [
+        "P9-4.7b"
+      ]
+    },
+    {
+      "iteration_id": "P9-G2[C_OS]",
+      "requires": [
+        "P9-4.8"
+      ]
+    },
+    {
+      "iteration_id": "P9-5.1",
+      "requires": [
+        "P9-G2[C_OS]"
+      ]
+    },
+    {
+      "iteration_id": "P9-5.2",
+      "requires": [
+        "P9-5.1"
+      ]
+    },
+    {
+      "iteration_id": "P9-5.3",
+      "requires": [
+        "P9-5.2"
+      ]
+    },
+    {
+      "iteration_id": "P9-5.4",
+      "requires": [
+        "P9-5.3"
+      ]
+    },
+    {
+      "iteration_id": "P9-7.7-A_OS",
+      "requires": [
+        "P9-7.6-A_OS"
+      ]
+    },
+    {
+      "iteration_id": "P9-G2[A_OS]",
+      "requires": [
+        "P9-7.7-A_OS"
+      ]
+    },
+    {
+      "iteration_id": "P9-7.8-C_OS",
+      "requires": [
+        "P9-G2[C_OS]"
+      ]
+    },
+    {
+      "iteration_id": "P9-G3[C_OS]",
+      "requires": [
+        "P9-7.8-C_OS"
+      ]
+    },
+    {
+      "iteration_id": "P9-8.1a",
+      "requires": [
+        "P9-G3[C_OS]"
+      ]
+    },
+    {
+      "iteration_id": "P9-8.1b",
+      "requires": [
+        "P9-8.1a"
+      ]
+    },
+    {
+      "iteration_id": "P9-8.1c",
+      "requires": [
+        "P9-8.1b"
+      ]
+    },
+    {
+      "iteration_id": "P9-8.1d",
+      "requires": [
+        "P9-8.1b"
+      ]
+    },
+    {
+      "iteration_id": "P9-8.2",
+      "requires": [
+        "P9-8.1c"
+      ]
+    },
+    {
+      "iteration_id": "P9-8.3C-OS",
+      "requires": [
+        "P9-8.2"
+      ]
+    },
+    {
+      "iteration_id": "P9-8.4",
+      "requires": [
+        "P9-8.3C-OS"
+      ]
+    },
+    {
+      "iteration_id": "P9-8.5",
+      "requires": [
+        "P9-8.4"
+      ]
+    },
+    {
+      "iteration_id": "P9-8.6",
+      "requires": [
+        "P9-8.5"
+      ]
+    },
+    {
+      "iteration_id": "P9-9.1",
+      "requires": [
+        "P9-9.1a",
+        "P9-9.1b"
+      ]
+    },
+    {
+      "iteration_id": "P9-9.2-C_OS-transition",
+      "requires": [
+        "P9-G3[C_OS]"
+      ]
+    },
+    {
+      "iteration_id": "P9-9.2-C_OS-state",
+      "requires": [
+        "P9-G3[C_OS]"
+      ]
+    },
+    {
+      "iteration_id": "P9-9.2-C_OS-observable",
+      "requires": [
+        "P9-G3[C_OS]"
+      ]
+    },
+    {
+      "iteration_id": "P9-9.2-C_OS-lifecycle",
+      "requires": [
+        "P9-G3[C_OS]"
+      ]
+    },
+    {
+      "iteration_id": "P9-9.4",
+      "requires": [
+        "P9-9.1b",
+        "P9-9.2-C_OS-lifecycle"
+      ]
+    },
+    {
+      "iteration_id": "P9-9.5",
+      "requires": [
+        "P9-9.2-C_OS-transition"
+      ]
+    },
+    {
+      "iteration_id": "P9-9.6",
+      "requires": [
+        "P9-9.4",
+        "P9-9.5",
+        "P9-9.2-C_OS-state",
+        "P9-9.2-C_OS-observable",
+        "P9-8.1d"
+      ]
+    },
+    {
+      "iteration_id": "P9-7.1-A_OS",
+      "requires": [
+        "P9-5.4"
+      ]
+    },
+    {
+      "iteration_id": "P9-7.2a-A_OS-A_OS",
+      "requires": [
+        "P9-7.1-A_OS"
+      ]
+    },
+    {
+      "iteration_id": "P9-7.2a-A_OS-C_OS",
+      "requires": [
+        "P9-7.1-A_OS",
+        "P9-G2[C_OS]"
+      ]
+    },
+    {
+      "iteration_id": "P9-7.2a-C_OS-A_OS",
+      "requires": [
+        "P9-7.1-A_OS",
+        "P9-G2[C_OS]"
+      ]
+    },
+    {
+      "iteration_id": "P9-7.2a-A_OS-UNSUPPORTED",
+      "requires": [
+        "P9-7.1-A_OS"
+      ]
+    },
+    {
+      "iteration_id": "P9-7.2b-A_OS-MAPPED",
+      "requires": [
+        "P9-7.1-A_OS"
+      ]
+    },
+    {
+      "iteration_id": "P9-7.3-A_OS",
+      "requires": [
+        "P9-7.2a-A_OS-A_OS",
+        "P9-7.2a-A_OS-C_OS",
+        "P9-7.2a-C_OS-A_OS",
+        "P9-7.2b-A_OS-MAPPED"
+      ]
+    },
+    {
+      "iteration_id": "P9-7.4-A_OS",
+      "requires": [
+        "P9-7.3-A_OS"
+      ]
+    },
+    {
+      "iteration_id": "P9-7.5-A_OS",
+      "requires": [
+        "P9-7.4-A_OS",
+        "P9-7.2a-A_OS-UNSUPPORTED"
+      ]
+    },
+    {
+      "iteration_id": "P9-7.6-A_OS",
+      "requires": [
+        "P9-7.5-A_OS"
+      ]
+    },
+    {
+      "iteration_id": "P9-9.1a",
+      "requires": [
+        "P9-8.6"
+      ]
+    },
+    {
+      "iteration_id": "P9-9.1b",
+      "requires": [
+        "P9-8.6"
+      ]
+    }
+  ],
+  "external_dependencies": [
+    {
+      "id": "P9-G1",
+      "requirement": "Accepted successor runtime authority after P9-1.6 through P9-1.9; not supplied by this review."
+    }
+  ],
+  "child_iterations": [
+    {
+      "iteration_id": "P9-7.1-C_OS",
+      "parent_id": "P9-7.1",
+      "evidence_alias_of": "P9-4.6",
+      "scope": "Snapshot/load/replay, ordinary reset/rebase and duplication; evidence alias, not a second execution.",
+      "status": "planned_not_executed"
+    },
+    {
+      "iteration_id": "P9-7.2a-C_OS-NH-NH",
+      "parent_id": "P9-7.2a",
+      "evidence_alias_of": null,
+      "scope": "Positive same-candidate nonhistory migration between two admitted exact C_OS identities on the same graph; identity-changing parameter vector and reset transport.",
+      "status": "planned_not_executed"
+    },
+    {
+      "iteration_id": "P9-7.2a-C_OS-UNSUPPORTED",
+      "parent_id": "P9-7.2a",
+      "evidence_alias_of": null,
+      "scope": "Unlisted targets reject before mutation; unavailable source profiles cannot fabricate positive crossing evidence.",
+      "status": "planned_not_executed"
+    },
+    {
+      "iteration_id": "P9-7.2b-C_OS-MAPPED",
+      "parent_id": "P9-7.2b",
+      "evidence_alias_of": null,
+      "scope": "Caller-mapped topology, nonzero affine increment, exact graph/reference target admission and reset transport.",
+      "status": "planned_not_executed"
+    },
+    {
+      "iteration_id": "P9-7.3-C_OS",
+      "parent_id": "P9-7.3",
+      "evidence_alias_of": null,
+      "scope": "Candidate rederivation and carrier not_applicable remain distinct receipt subjects; no retained C state or invented carrier.",
+      "status": "planned_not_executed"
+    },
+    {
+      "iteration_id": "P9-7.4-C_OS",
+      "parent_id": "P9-7.4",
+      "evidence_alias_of": null,
+      "scope": "Complete target W_C_tr, separate constructor IDs, target reconstruction and readmission failures.",
+      "status": "planned_not_executed"
+    },
+    {
+      "iteration_id": "P9-7.5-C_OS",
+      "parent_id": "P9-7.5",
+      "evidence_alias_of": null,
+      "scope": "Missing lineage and invalid map cases; reset after migration/event; full scientific and lifecycle atomic rollback.",
+      "status": "planned_not_executed"
+    },
+    {
+      "iteration_id": "P9-7.6-C_OS",
+      "parent_id": "P9-7.6",
+      "evidence_alias_of": null,
+      "scope": "Receipt delta versus persistent ledger and deep duplicate independence after the complete operation sequence.",
+      "status": "planned_not_executed"
+    },
+    {
+      "iteration_id": "P9-7.7-C_OS",
+      "parent_id": "P9-7.7",
+      "evidence_alias_of": "P9-4.8",
+      "scope": "Full applicable fixture reconciliation; records accepted exact identities or a gate hold.",
+      "status": "planned_not_executed"
+    },
+    {
+      "iteration_id": "P9-7.8-C_OS",
+      "parent_id": "P9-7.8",
+      "evidence_alias_of": null,
+      "scope": "Review singleton consumed generic support and specialization scope; not GRC9V4 conformance.",
+      "status": "planned_not_executed"
+    },
+    {
+      "iteration_id": "P9-7.7-A_OS",
+      "parent_id": "P9-7.7",
+      "evidence_alias_of": null,
+      "scope": "After its own lifecycle child reconciliation; Candidate A initializer/history and all applicable tests, not inherited C-only evidence.",
+      "status": "planned_not_executed"
+    },
+    {
+      "iteration_id": "P9-7.1-A_OS",
+      "parent_id": "P9-7.1",
+      "evidence_alias_of": null,
+      "scope": "A_OS snapshot/reset/rebase/duplicate with its retained mobility and exact initializer.",
+      "status": "planned_not_executed"
+    },
+    {
+      "iteration_id": "P9-7.2a-A_OS-A_OS",
+      "parent_id": "P9-7.2a",
+      "evidence_alias_of": null,
+      "scope": "Same-graph exact A_OS identity pair; retain candidate history and no carrier.",
+      "status": "planned_not_executed"
+    },
+    {
+      "iteration_id": "P9-7.2a-A_OS-C_OS",
+      "parent_id": "P9-7.2a",
+      "evidence_alias_of": null,
+      "scope": "A_OS to C_OS crossing; explicit candidate history loss on both current and reset state.",
+      "status": "planned_not_executed"
+    },
+    {
+      "iteration_id": "P9-7.2a-C_OS-A_OS",
+      "parent_id": "P9-7.2a",
+      "evidence_alias_of": null,
+      "scope": "C_OS to A_OS crossing; target initializer and admission; not inferred from reverse direction.",
+      "status": "planned_not_executed"
+    },
+    {
+      "iteration_id": "P9-7.2a-A_OS-UNSUPPORTED",
+      "parent_id": "P9-7.2a",
+      "evidence_alias_of": null,
+      "scope": "Unlisted exact targets reject atomically; later PC/CI/RG2b positives remain distinct.",
+      "status": "planned_not_executed"
+    },
+    {
+      "iteration_id": "P9-7.2b-A_OS-MAPPED",
+      "parent_id": "P9-7.2b",
+      "evidence_alias_of": null,
+      "scope": "A_OS mapped event with exact admitted lineage or typed history-loss/initializer policy; no inferred lossless transport.",
+      "status": "planned_not_executed"
+    },
+    {
+      "iteration_id": "P9-7.3-A_OS",
+      "parent_id": "P9-7.3",
+      "evidence_alias_of": null,
+      "scope": "Reconcile candidate and carrier history subjects and declared information loss.",
+      "status": "planned_not_executed"
+    },
+    {
+      "iteration_id": "P9-7.4-A_OS",
+      "parent_id": "P9-7.4",
+      "evidence_alias_of": null,
+      "scope": "Readmission into each target; C target reference map required on A-to-C crossing.",
+      "status": "planned_not_executed"
+    },
+    {
+      "iteration_id": "P9-7.5-A_OS",
+      "parent_id": "P9-7.5",
+      "evidence_alias_of": null,
+      "scope": "Missing-lineage, invalid-map, failed readmission, reset after event/migration and full atomicity.",
+      "status": "planned_not_executed"
+    },
+    {
+      "iteration_id": "P9-7.6-A_OS",
+      "parent_id": "P9-7.6",
+      "evidence_alias_of": null,
+      "scope": "Full receipt lineage and deep duplication after A_OS lifecycle sequence.",
+      "status": "planned_not_executed"
+    },
+    {
+      "iteration_id": "P9-9.1a",
+      "parent_id": "P9-9.1",
+      "evidence_alias_of": null,
+      "scope": "Optional child stabilization, completed_spark and hierarchy_tracking. Evidence required only for each advertised capability or explicitly selected stronger project handoff target; per-capability/profile children before runtime execution.",
+      "status": "planned_not_executed"
+    },
+    {
+      "iteration_id": "P9-9.1b",
+      "parent_id": "P9-9.1",
+      "evidence_alias_of": null,
+      "scope": "Mandatory specialization lifecycle: current/reset target readmission, topology/charge, receipts and reset/replay regardless of optional completion advertisement.",
+      "status": "planned_not_executed"
+    }
+  ],
+  "migration_classes": [
+    {
+      "migration_class": "same_candidate_nonhistory_to_nonhistory",
+      "first_C_OS_slice_disposition": "positive_same_graph_C_OS_to_C_OS_identity_pair_required",
+      "required_negative_boundary": "Reject unlisted targets before provisional mutation; an unavailable source is construction rejection, not a migrated-source test.",
+      "acceptance_rule": "P9-4.8 records source/target applicability and positive/negative/pending evidence separately; no automatic nonapplicable waiver. Any mandatory unmet case holds G2."
+    },
+    {
+      "migration_class": "same_candidate_nonhistory_to_history",
+      "first_C_OS_slice_disposition": "positive_crossing_deferred_until_its_exact_endpoints_are_supported",
+      "required_negative_boundary": "Reject unlisted targets before provisional mutation; an unavailable source is construction rejection, not a migrated-source test.",
+      "acceptance_rule": "P9-4.8 records source/target applicability and positive/negative/pending evidence separately; no automatic nonapplicable waiver. Any mandatory unmet case holds G2."
+    },
+    {
+      "migration_class": "same_candidate_history_to_nonhistory",
+      "first_C_OS_slice_disposition": "positive_crossing_deferred_until_its_exact_endpoints_are_supported",
+      "required_negative_boundary": "Reject unlisted targets before provisional mutation; an unavailable source is construction rejection, not a migrated-source test.",
+      "acceptance_rule": "P9-4.8 records source/target applicability and positive/negative/pending evidence separately; no automatic nonapplicable waiver. Any mandatory unmet case holds G2."
+    },
+    {
+      "migration_class": "PC_to_CI_PC",
+      "first_C_OS_slice_disposition": "positive_crossing_deferred_until_its_exact_endpoints_are_supported",
+      "required_negative_boundary": "Reject unlisted targets before provisional mutation; an unavailable source is construction rejection, not a migrated-source test.",
+      "acceptance_rule": "P9-4.8 records source/target applicability and positive/negative/pending evidence separately; no automatic nonapplicable waiver. Any mandatory unmet case holds G2."
+    },
+    {
+      "migration_class": "CI_PC_to_PC",
+      "first_C_OS_slice_disposition": "positive_crossing_deferred_until_its_exact_endpoints_are_supported",
+      "required_negative_boundary": "Reject unlisted targets before provisional mutation; an unavailable source is construction rejection, not a migrated-source test.",
+      "acceptance_rule": "P9-4.8 records source/target applicability and positive/negative/pending evidence separately; no automatic nonapplicable waiver. Any mandatory unmet case holds G2."
+    },
+    {
+      "migration_class": "A_to_C",
+      "first_C_OS_slice_disposition": "positive_crossing_deferred_until_its_exact_endpoints_are_supported",
+      "required_negative_boundary": "Reject unlisted targets before provisional mutation; an unavailable source is construction rejection, not a migrated-source test.",
+      "acceptance_rule": "P9-4.8 records source/target applicability and positive/negative/pending evidence separately; no automatic nonapplicable waiver. Any mandatory unmet case holds G2."
+    },
+    {
+      "migration_class": "C_to_A",
+      "first_C_OS_slice_disposition": "positive_crossing_deferred_until_its_exact_endpoints_are_supported",
+      "required_negative_boundary": "Reject unlisted targets before provisional mutation; an unavailable source is construction rejection, not a migrated-source test.",
+      "acceptance_rule": "P9-4.8 records source/target applicability and positive/negative/pending evidence separately; no automatic nonapplicable waiver. Any mandatory unmet case holds G2."
+    }
+  ],
+  "specialization_policy": {
+    "C_OS": "May be reviewed at P9-7.8-C_OS after accepted G2[C_OS], independently of A/PC/RG2b.",
+    "C_PC": "P9-8.3C-PC additionally requires its own G2 and reviewed G3 extension; not inferred from C_OS.",
+    "A": "P9-8.3A additionally requires an accepted concrete A target/history vector, exact A G2 and G3 extension.",
+    "normative_degrees": [
+      30,
+      31,
+      45,
+      52
+    ],
+    "additional_probes": [
+      37,
+      44
+    ],
+    "full_conformance": "Applicable generic and specialization contracts, mandatory specialization lifecycle and all four disabled surfaces for each advertised profile. Child-stabilization/hierarchy evidence is additionally required only when the respective optional capabilities are advertised or explicitly required by a stronger project handoff target.",
+    "optional_completion_capabilities": [
+      "completed_spark",
+      "hierarchy_tracking"
+    ],
+    "explicit_project_handoff_capabilities": [],
+    "current_advertised_optional_capabilities": [],
+    "capability_scope_boundary": "No completion/hierarchy scope is selected or advertised now. P9-9.1a remains visible; omitting it cannot waive trigger, topology, charge, reset, receipts or legacy compatibility."
+  },
+  "deliberately_deferred": [
+    "RG2b initial-runtime implementation/certification",
+    "Candidate A expansion until a concrete target/history vector",
+    "Candidate B and singular-continuation successors",
+    "Classical RG2b derivatives",
+    "Formation, endpoint/hysteresis, physical attribution, stability and ranking campaigns",
+    "Lorentzian V4, landscape lowering and broad visualization"
+  ],
+  "gate_effect": "P9-G1_and_all_runtime_gates_pending",
+  "next_permitted_work": [
+    "P9-1.6",
+    "P9-1.7",
+    "P9-1.8"
+  ],
+  "reviewer_decision": "pending_user_review",
+  "aggregate_iterations": [
+    {
+      "iteration_id": "P9-9.1",
+      "children": [
+        "P9-9.1a",
+        "P9-9.1b"
+      ],
+      "role": "aggregate_register_not_executable_or_a_universal_crossing_prerequisite",
+      "reconciliation": "Retain both child dispositions; unselected completion remains planned/deferred, not fabricated as executed. Mandatory lifecycle may reconcile independently."
+    }
+  ],
+  "conditional_dependencies": [
+    {
+      "iteration_id": "P9-9.6",
+      "requires": [
+        "P9-9.1a"
+      ],
+      "when_any_capability_selected": [
+        "completed_spark",
+        "hierarchy_tracking"
+      ],
+      "selection_surfaces": [
+        "advertised_capabilities",
+        "explicit_project_handoff_capabilities"
+      ],
+      "application": "per_exact_consumed_profile_and_capability_scope",
+      "boundary": "No evidence or capability selection is supplied by this planning condition."
+    }
+  ],
+  "review_corrections": {
+    "optional_completion_dependency": "applied_aggregate_split_and_conditional_review_dependency",
+    "realization_field": "canonical_schema_values_CI_plus_PC_preserving_family_and_group_keys",
+    "source_review": "reviews/P9-1.4-1.5-Independent-Review.md sections 4 and 5",
+    "scientific_authority_added": false
+  }
+}

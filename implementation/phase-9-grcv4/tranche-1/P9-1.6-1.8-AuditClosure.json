@@ -1,0 +1,298 @@
+{
+  "schema": "phase9_audit_gap_closure_v1",
+  "status": "implemented_and_verified_pending_user_review",
+  "request": "no need to report, just close the gaps",
+  "runtime_authorized": false,
+  "P9_G1_accepted": false,
+  "reviewer_decision": "pending_user_review",
+  "inputs": [
+    {
+      "path": "implementation/phase-9-grcv4/verification/inputs/P9-1.6-1.8-QuickAudit.md",
+      "sha256": "f9977d3d848a4ab242fecd73a5ed9d2f7bec5375a4d7f23838f2daa4dd19b9fd",
+      "authority_class": "engineering_guidance_not_scientific_or_runtime_authority"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/inputs/P9-1.6-Successor-Verification-Pressure-Guide.md",
+      "sha256": "1f1c1de79b3939045b86c08bcb9d6f48c9c0b64ea60171d47be48f33f9609fe0",
+      "authority_class": "engineering_guidance_not_scientific_or_runtime_authority"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/inputs/P9-1.7-Adversarial-Mutation-And-Authority-Pressure-Guide.md",
+      "sha256": "a486c57a67ae0dee8926de39073b1c9d9bd4565849818559361dc95fbdee9a7d",
+      "authority_class": "engineering_guidance_not_scientific_or_runtime_authority"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/inputs/P9-1.8-Cross-Surface-Verification-Pressure-Guide.md",
+      "sha256": "58696411c376a335c2f6d8322dd5afe264d1a612c3977a417aa57594f26c65d4",
+      "authority_class": "engineering_guidance_not_scientific_or_runtime_authority"
+    }
+  ],
+  "scope_note": "The static quick audit describes an earlier 74-case preparation; the submitted candidate had 79. P9-1.7/P9-1.8 were explicitly requested, not inferred from P9-1.6. No earlier leaf acceptance is inferred.",
+  "items": [
+    {
+      "id": "combined_faults",
+      "guide_sections": "P9-1.6 §10; P9-1.7 §8",
+      "evidence_cases": [
+        "combined_allowed_review_and_legacy_corruption",
+        "combined_rehashed_runtime_grant_and_source",
+        "combined_green_history_stale_current_unchanged_counts"
+      ],
+      "status": "verified",
+      "evidence": "implementation/phase-9-grcv4/tranche-1/P9-1.7-PressureResults.json",
+      "additional_execution": null
+    },
+    {
+      "id": "attributable_per_case_evidence",
+      "guide_sections": "P9-1.6 §§8/12; P9-1.7 §§7/9",
+      "evidence_cases": [
+        "unchanged_p916_dispatch_suite_replayed",
+        "legitimate_current_planning",
+        "unchanged_p916_snapshot",
+        "legitimate_successor_dispatch",
+        "deleted_marker_cannot_downgrade_dispatch",
+        "CLI_has_no_authorizing_flag",
+        "execution_record_baseline_commit",
+        "execution_record_release_id",
+        "execution_record_accepted_generic_runtime_support",
+        "execution_record_P9_G1_accepted",
+        "planning_rejects_src_pygrc_models_grc_v4.py",
+        "planning_rejects_tests_models_test_grc_v4.py",
+        "planning_rejects_pyproject.toml",
+        "changed_frozen_spec",
+        "deleted_frozen_spec",
+        "permitted_path_wrong_content",
+        "deleted_successor_record",
+        "deleted_phase_marker",
+        "modified_prior_review",
+        "assume_unchanged_cannot_hide_bytes",
+        "staged_runtime_addition_rejected",
+        "ignored_runtime_addition_rejected",
+        "protected_symlink_rejected",
+        "protected_mode_rejected",
+        "rehashed_policy_status",
+        "rehashed_policy_baseline_commit",
+        "rehashed_policy_release_id",
+        "rehashed_policy_trusted_runtime_approval",
+        "rehashed_policy_accepted_generic_runtime_support",
+        "rehashed_policy_active_phase",
+        "stale_digest_rejected",
+        "green_marker_not_policy",
+        "duplicate_json_key",
+        "runtime_flag_not_authority",
+        "future_explicit_approval_exact_targets",
+        "future_content_src_pygrc_models_grc_v4.py",
+        "future_content_tests_models_test_grc_9_v4.py",
+        "future_content_src_pygrc_models___init__.py",
+        "future_content_pyproject.toml",
+        "self_declared_runtime_no_external_anchor",
+        "self_rehashed_runtime_approval",
+        "runtime_wrong_target_src_pygrc_models_grc_9_v3.py",
+        "runtime_wrong_target_src_pygrc_models_grc_v40.py",
+        "runtime_wrong_target_tests_core_test_unknown.py",
+        "runtime_wrong_target_.._src_pygrc_models_grc_v4.py",
+        "approved_path_changed_runtime_bytes",
+        "legacy_dependency_not_additive",
+        "legacy_export_rebound",
+        "legitimate_exact_children_and_c_os_path",
+        "required_child_deleted",
+        "matching_count_child_substitution",
+        "forged_evidence_alias",
+        "unresolved_dependency",
+        "dependency_cycle",
+        "unrelated_c_os_barrier_P9-G2[A_OS]",
+        "unrelated_c_os_barrier_P9-G2[C_PC]",
+        "unrelated_c_os_barrier_P9-G2[C_RG2b]",
+        "unexecuted_exact_profile",
+        "unexecuted_support_set",
+        "universal_optional_completion",
+        "completion_off_all_mandatory_present",
+        "advertised_completed_spark_without_own_evidence_held",
+        "advertised_completed_spark_with_own_evidence",
+        "handoff_completed_spark_without_own_evidence_held",
+        "handoff_completed_spark_with_own_evidence",
+        "advertised_hierarchy_tracking_without_own_evidence_held",
+        "advertised_hierarchy_tracking_with_own_evidence",
+        "handoff_hierarchy_tracking_without_own_evidence_held",
+        "handoff_hierarchy_tracking_with_own_evidence",
+        "completion_off_missing_P9-8.1c",
+        "completion_off_missing_P9-8.1d",
+        "completion_off_missing_P9-8.3C-OS",
+        "completion_off_missing_P9-8.4",
+        "completion_off_missing_P9-9.1b",
+        "completion_off_missing_P9-9.2-C_OS-state",
+        "completion_off_missing_P9-9.2-C_OS-observable",
+        "completion_off_missing_P9-9.2-C_OS-lifecycle",
+        "completion_cannot_borrow_other_profile_evidence",
+        "source_exact_semantic_projection",
+        "conditional_to_normative",
+        "indeterminate_to_supported",
+        "candidate_C_optional_to_universal",
+        "GRC9_specialization_to_generic",
+        "forty_cell_duplicate_same_count",
+        "planned_C_OS_to_runtime_supported",
+        "alias_as_second_execution",
+        "pending_obligation_to_nonapplicable",
+        "deferred_RG2b_to_scientific_rejection",
+        "unknown_claim_not_fuzzy_resolved",
+        "self_referential_predecessor",
+        "cyclic_predecessor_chain",
+        "conflicting_candidate_successors",
+        "normal_entry_forbidden_source",
+        "normal_entry_frozen_corruption",
+        "combined_allowed_review_and_legacy_corruption",
+        "combined_rehashed_runtime_grant_and_source",
+        "combined_green_history_stale_current_unchanged_counts",
+        "broken_frozen_guard_makes_its_negative_assertion_fail",
+        "authorized_staged_bytes_do_not_hide_unstaged_helper",
+        "untracked_scope_src_pygrc_models_grc_v40.py",
+        "untracked_scope_implementation_phase-9-grcv4_verification_json.py",
+        "protected_rename_is_not_an_allowed_addition",
+        "mid_verification_subject_change",
+        "missing_historical_commit_is_unverifiable",
+        "unauthorized_committed_clean_tree",
+        "original_checkout_still_planning"
+      ],
+      "status": "verified",
+      "evidence": "implementation/phase-9-grcv4/tranche-1/P9-1.7-PressureResults.json",
+      "additional_execution": null
+    },
+    {
+      "id": "broken_checker_control",
+      "guide_sections": "P9-1.7 §7.2",
+      "evidence_cases": [
+        "broken_frozen_guard_makes_its_negative_assertion_fail"
+      ],
+      "status": "verified",
+      "evidence": "implementation/phase-9-grcv4/tranche-1/P9-1.7-PressureResults.json",
+      "additional_execution": null
+    },
+    {
+      "id": "source_admitted_semantic_mutations",
+      "guide_sections": "P9-1.7 §6",
+      "evidence_cases": [
+        "conditional_to_normative",
+        "indeterminate_to_supported",
+        "candidate_C_optional_to_universal",
+        "GRC9_specialization_to_generic",
+        "forty_cell_duplicate_same_count",
+        "planned_C_OS_to_runtime_supported",
+        "alias_as_second_execution",
+        "pending_obligation_to_nonapplicable",
+        "deferred_RG2b_to_scientific_rejection",
+        "unknown_claim_not_fuzzy_resolved"
+      ],
+      "status": "verified",
+      "evidence": "implementation/phase-9-grcv4/tranche-1/P9-1.7-PressureResults.json",
+      "additional_execution": null
+    },
+    {
+      "id": "named_authority_probes",
+      "guide_sections": "P9-1.7 §5.1",
+      "evidence_cases": [
+        "self_referential_predecessor",
+        "cyclic_predecessor_chain",
+        "conflicting_candidate_successors"
+      ],
+      "status": "verified",
+      "evidence": "implementation/phase-9-grcv4/tranche-1/P9-1.7-PressureResults.json",
+      "additional_execution": null
+    },
+    {
+      "id": "normal_route_and_scope",
+      "guide_sections": "P9-1.6 §8; P9-1.7 §§3/7.4",
+      "evidence_cases": [
+        "normal_entry_forbidden_source",
+        "normal_entry_frozen_corruption",
+        "unauthorized_committed_clean_tree",
+        "mid_verification_subject_change",
+        "missing_historical_commit_is_unverifiable"
+      ],
+      "status": "verified",
+      "evidence": "implementation/phase-9-grcv4/tranche-1/P9-1.7-PressureResults.json",
+      "additional_execution": null
+    },
+    {
+      "id": "independent_batches",
+      "guide_sections": "P9-1.7 §10",
+      "evidence_cases": [
+        "baseline_permission",
+        "integrity_authority_semantics",
+        "staleness_route_fault_sensitivity"
+      ],
+      "status": "verified",
+      "evidence": "implementation/phase-9-grcv4/tranche-1/P9-1.7-PressureResults.json",
+      "additional_execution": null
+    },
+    {
+      "id": "surface_inventory",
+      "guide_sections": "P9-1.8 §2",
+      "evidence_cases": [],
+      "status": "verified",
+      "evidence": "implementation/phase-9-grcv4/tranche-1/P9-1.8-SurfaceInventory.json",
+      "additional_execution": null
+    },
+    {
+      "id": "negative_and_positive_projection",
+      "guide_sections": "P9-1.8 §5",
+      "evidence_cases": [
+        "normal_entry_forbidden_source",
+        "future_explicit_approval_exact_targets"
+      ],
+      "status": "verified",
+      "evidence": "implementation/phase-9-grcv4/tranche-1/P9-1.7-PressureResults.json",
+      "additional_execution": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/generated/phase9-verification/surface-evidence.json"
+    },
+    {
+      "id": "notebook_mutation_checkout_and_out_of_order_freshness",
+      "guide_sections": "P9-1.8 §7.1",
+      "evidence_cases": [],
+      "status": "verified",
+      "evidence": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/generated/phase9-verification/surface-evidence.json",
+      "additional_execution": null
+    },
+    {
+      "id": "browser_reversed_responses_stale_refresh_and_full_ID",
+      "guide_sections": "P9-1.8 §§7.2/7.3",
+      "evidence_cases": [],
+      "status": "verified",
+      "evidence": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/generated/phase9-verification/surface-evidence.json",
+      "additional_execution": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/generated/phase9-verification/browser/"
+    },
+    {
+      "id": "accepted_specification_and_indeterminate_support",
+      "guide_sections": "P9-1.8 §6.2",
+      "evidence_cases": [],
+      "status": "verified",
+      "evidence": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/generated/phase9-verification/surface-evidence.json",
+      "additional_execution": null
+    }
+  ],
+  "initial_stricter_run": {
+    "run_id": "p9-pressure-ba2bfa6e41a04f98920585425ca7d93b",
+    "cases": 105,
+    "passed": 102,
+    "failures": [
+      {
+        "case_id": "unrelated_c_os_barrier_P9-G2[A_OS]",
+        "actual_reason": "dependency cycle"
+      },
+      {
+        "case_id": "unrelated_c_os_barrier_P9-G2[C_PC]",
+        "actual_reason": "unresolved dependency: P9-G2[C_PC]"
+      },
+      {
+        "case_id": "unrelated_c_os_barrier_P9-G2[C_RG2b]",
+        "actual_reason": "unresolved dependency: P9-G2[C_RG2b]"
+      }
+    ],
+    "correction": "Independent synthetic providers now reach the intended scope comparison. Expected rejection rules were not weakened.",
+    "retention_limit": "The initial failed raw file was overwritten before per-run archival retention was added. These observed failures remain explicit; they are not relabeled as original passes."
+  },
+  "remaining_limits": [
+    "P9-G1 and user acceptance remain pending.",
+    "Synthetic future fixtures are not live authority.",
+    "Finite Linux/interpreter envelope, not a universal security or runtime-conformance proof.",
+    "In-process probes retain callable traces without fictitious subprocess exit status.",
+    "Unsupported cyclic/conflicting candidate representations reject under the existing closed policy; no new authority graph protocol was invented."
+  ]
+}

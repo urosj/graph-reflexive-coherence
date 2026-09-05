@@ -1,0 +1,1330 @@
+{
+  "schema": "phase9_module_oracle_legacy_review_v1",
+  "iteration_id": "P9-1.5",
+  "status": "review_completed_recommendations_pending_user_acceptance",
+  "baseline_commit": "7c772d36bd4cf12b4a444b7b954b74612de2926f",
+  "release_id": "grcv4-spec-release-sha256:9f4c8fe5b57b1c477d834a3e4dae3f98a2b18c70e6e7f598e3c9652170c8645f",
+  "source_review_bindings": [
+    {
+      "path": "implementation/phase-9-grcv4/tranche-1/P9-1.1-SourceCrosswalk.json",
+      "sha256": "5bca809b70366cd66ebb283e86cceb7ddbefb5000c49b8d16f58fa938cf548ed"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-1/P9-1.2-DebtInventory.json",
+      "sha256": "2046d193df09eb17b7484d26e78758df53a6037aa84921c74e63213d2ae30d87"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-1/P9-1.3-VerificationRouting.json",
+      "sha256": "04db3ac5385d9b16ac7bd02eda84b3bb00c84d92ced9d44ebad376d7632b9196"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-1/P9-1.1-1.3-ExecutionRecord.json",
+      "sha256": "1b7e04f0cf59531fd4217f5e32f72196c5e123c68f961a91ef6c13a707a1ce81"
+    }
+  ],
+  "modules": [
+    {
+      "module_id": "grc_v4",
+      "path": "src/pygrc/models/grc_v4.py",
+      "source_groups": [
+        "api"
+      ],
+      "dependencies": [
+        "grc_v4_lifecycle"
+      ],
+      "responsibility": "Public GRCV4(GRCModel) facade; same common call signatures and additive typed methods. No BaseFamilyStub inheritance.",
+      "test_path": "tests/models/test_grc_v4.py",
+      "status": "review_recommendation_not_created"
+    },
+    {
+      "module_id": "grc_v4_state",
+      "path": "src/pygrc/models/grc_v4_state.py",
+      "source_groups": [
+        "state"
+      ],
+      "dependencies": [
+        "grc_v4_profile"
+      ],
+      "responsibility": "Standalone recursively immutable records and read-only structural projections; no duplicate base storage.",
+      "test_path": "tests/models/test_grc_v4_state.py",
+      "status": "review_recommendation_not_created"
+    },
+    {
+      "module_id": "grc_v4_profile",
+      "path": "src/pygrc/models/grc_v4_profile.py",
+      "source_groups": [
+        "identity",
+        "claim_boundary"
+      ],
+      "dependencies": [
+        "grc_v4_codec"
+      ],
+      "responsibility": "Resolved parameters, exact-profile admission registry, V4-only capability vocabulary and claim ceilings.",
+      "test_path": "tests/models/test_grc_v4_profile.py",
+      "status": "review_recommendation_not_created"
+    },
+    {
+      "module_id": "grc_v4_codec",
+      "path": "src/pygrc/models/grc_v4_codec.py",
+      "source_groups": [],
+      "dependencies": [],
+      "responsibility": "Primitive wire/strict schema validation, JCS UTF-8 and identities. No import of models/state; decoder dictionaries are not admitted records.",
+      "test_path": "tests/models/test_grc_v4_codec.py",
+      "status": "review_recommendation_not_created"
+    },
+    {
+      "module_id": "grc_v4_geometry",
+      "path": "src/pygrc/models/grc_v4_geometry.py",
+      "source_groups": [
+        "differential",
+        "geometry"
+      ],
+      "dependencies": [
+        "grc_v4_state"
+      ],
+      "responsibility": "Generic deterministic incidence, pairings, SPD/selector domains, flat/sharp and stage/cache identities. No nine-port assumptions.",
+      "test_path": "tests/models/test_grc_v4_geometry.py",
+      "status": "review_recommendation_not_created"
+    },
+    {
+      "module_id": "grc_v4_transport",
+      "path": "src/pygrc/models/grc_v4_transport.py",
+      "source_groups": [
+        "transport",
+        "charge"
+      ],
+      "dependencies": [
+        "grc_v4_geometry"
+      ],
+      "responsibility": "Typed flux and exactly specified charge reduction/comparison. Never infer candidate mobility from Hodge; no repair state.",
+      "test_path": "tests/models/test_grc_v4_transport.py",
+      "status": "review_recommendation_not_created"
+    },
+    {
+      "module_id": "grc_v4_candidate_c",
+      "path": "src/pygrc/models/grc_v4_candidate_c.py",
+      "source_groups": [
+        "candidate_C",
+        "C_baseline"
+      ],
+      "dependencies": [
+        "grc_v4_transport"
+      ],
+      "responsibility": "D11-C reference mobility, retained-Hodge baseline, C-only authority, read/derivative/rederivation; pure provisional evaluations.",
+      "test_path": "tests/models/test_grc_v4_candidate_c.py",
+      "status": "review_recommendation_not_created"
+    },
+    {
+      "module_id": "grc_v4_candidate_a",
+      "path": "src/pygrc/models/grc_v4_candidate_a.py",
+      "source_groups": [
+        "candidate_A"
+      ],
+      "dependencies": [
+        "grc_v4_transport"
+      ],
+      "responsibility": "Separate initializer, positive retained mobility, log writer and read staging; no generic core claim.",
+      "test_path": "tests/models/test_grc_v4_candidate_a.py",
+      "status": "review_recommendation_not_created"
+    },
+    {
+      "module_id": "grc_v4_realizations",
+      "path": "src/pygrc/models/grc_v4_realizations.py",
+      "source_groups": [
+        "OS",
+        "CI",
+        "PC",
+        "CI_PC",
+        "RG2b"
+      ],
+      "dependencies": [
+        "grc_v4_state"
+      ],
+      "responsibility": "Realization policies consume injected typed candidate evaluators; only implemented exact profiles enabled; independent A/C tests.",
+      "test_path": "tests/models/test_grc_v4_realizations.py",
+      "status": "review_recommendation_not_created"
+    },
+    {
+      "module_id": "grc_v4_step",
+      "path": "src/pygrc/models/grc_v4_step.py",
+      "source_groups": [
+        "step"
+      ],
+      "dependencies": [
+        "grc_v4_realizations",
+        "grc_v4_transport"
+      ],
+      "responsibility": "Twelve-stage provisional complete-step pipeline through injected candidate-provider protocols, one provisional resource write; no authoritative model mutation or eager dependency on an unimplemented candidate.",
+      "test_path": "tests/models/test_grc_v4_step.py",
+      "status": "review_recommendation_not_created"
+    },
+    {
+      "module_id": "grc_v4_lifecycle",
+      "path": "src/pygrc/models/grc_v4_lifecycle.py",
+      "source_groups": [
+        "lifecycle",
+        "events"
+      ],
+      "dependencies": [
+        "grc_v4_step"
+      ],
+      "responsibility": "Sole authoritative commit/rollback and reset/receipt owner; snapshot/load/set_state validation, migrations, mapped events, target readmission. No candidate/realization can commit.",
+      "test_path": "tests/models/test_grc_v4_lifecycle.py",
+      "status": "review_recommendation_not_created"
+    },
+    {
+      "module_id": "grc_v4_analysis",
+      "path": "src/pygrc/models/grc_v4_analysis.py",
+      "source_groups": [
+        "analysis"
+      ],
+      "dependencies": [
+        "grc_v4_geometry"
+      ],
+      "responsibility": "Read-only typed analysis projections; no runtime stability/formation inference.",
+      "test_path": "tests/models/test_grc_v4_analysis.py",
+      "status": "review_recommendation_not_created"
+    },
+    {
+      "module_id": "grc_9_v4",
+      "path": "src/pygrc/models/grc_9_v4.py",
+      "source_groups": [],
+      "dependencies": [
+        "grc_v4",
+        "grc_9_v4_lifecycle"
+      ],
+      "responsibility": "GRC9V4(GRCV4) facade with explicit nine-port backend injection and combined model identity.",
+      "test_path": "tests/models/test_grc_9_v4.py",
+      "status": "review_recommendation_not_created"
+    },
+    {
+      "module_id": "grc_9_v4_topology",
+      "path": "src/pygrc/models/grc_9_v4_topology.py",
+      "source_groups": [
+        "G9_ports",
+        "G9_differential",
+        "G9_coarse"
+      ],
+      "dependencies": [
+        "grc_v4_geometry"
+      ],
+      "responsibility": "V4-owned ports/chart, fixed row basis/weight bridge, coarse/Split operations; no legacy rewrites.",
+      "test_path": "tests/models/test_grc_9_v4_topology.py",
+      "status": "review_recommendation_not_created"
+    },
+    {
+      "module_id": "grc_9_v4_expansion",
+      "path": "src/pygrc/models/grc_9_v4_expansion.py",
+      "source_groups": [
+        "G9_expansion"
+      ],
+      "dependencies": [
+        "grc_9_v4_topology"
+      ],
+      "responsibility": "Pure canonical D11-G9 allocator and identity-bearing resource/history plan; no caller target allocation override.",
+      "test_path": "tests/models/test_grc_9_v4_expansion.py",
+      "status": "review_recommendation_not_created"
+    },
+    {
+      "module_id": "grc_9_v4_compatibility",
+      "path": "src/pygrc/models/grc_9_v4_compatibility.py",
+      "source_groups": [
+        "G9_disabled"
+      ],
+      "dependencies": [
+        "grc_v4_state"
+      ],
+      "responsibility": "Discriminated exact unchanged GRC9V3 delegate; V4-defined-domain guard and explicit crossings, no field erasure.",
+      "test_path": "tests/models/test_grc_9_v4_compatibility.py",
+      "status": "review_recommendation_not_created"
+    },
+    {
+      "module_id": "grc_9_v4_lifecycle",
+      "path": "src/pygrc/models/grc_9_v4_lifecycle.py",
+      "source_groups": [
+        "G9_completion",
+        "G9_A_initializer"
+      ],
+      "dependencies": [
+        "grc_v4_lifecycle",
+        "grc_9_v4_expansion",
+        "grc_9_v4_compatibility"
+      ],
+      "responsibility": "Fresh candidate detection, separate expansion transaction, child completion and target/history initialization through generic admission. No combined beat/expansion commit.",
+      "test_path": "tests/models/test_grc_9_v4_lifecycle.py",
+      "status": "review_recommendation_not_created"
+    }
+  ],
+  "group_mapping_policy": "27 source groups retain all exact spec/paper/claim/contract/oracle references from P9-1.1; module ownership is a downstream planning refinement, not a rewrite of that record.",
+  "dependency_policy": "Module dependencies name interfaces, not mandatory eager imports of unimplemented siblings. Generic modules never depend on GRC9V4 modules. The step registry binds only available candidate evaluators; unavailable A/realizations must not block C_OS imports.",
+  "legacy_bindings": [
+    {
+      "path": "src/pygrc/core/__init__.py",
+      "sha256": "1de90ece2242642584f399b744240207a15f1d56b1ee62247bfb1389647ec7ae",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "src/pygrc/core/backends.py",
+      "sha256": "344f13dcf664ecbc1ec591cd1cc4c9be241d8c292ca736551201eee81a2c8c07",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "src/pygrc/core/capabilities.py",
+      "sha256": "40fb8fc51284c25d99b7bb9310ebff7055f170d46a0a978d190ccd9f2b97a41b",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "src/pygrc/core/digests.py",
+      "sha256": "c54fdedbea3dc9547ae9450bcc4d69385a7f0cba5b9e592dee8d785fbd3c5f07",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "src/pygrc/core/errors.py",
+      "sha256": "6cebc00fd55fb6f78f505510c71ff6e41fc76877621dbb8832c342b1ec728a31",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "src/pygrc/core/events.py",
+      "sha256": "a77be381e49e84745a687be432fd03ca0cbc394efe749db2538542d3cc80f9b2",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "src/pygrc/core/graph.py",
+      "sha256": "7a7383934a6c8fa78e05a4f7a6435b3293acfc59bcfdcdc8e3b73310f51867c6",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "src/pygrc/core/ids.py",
+      "sha256": "f57ae8530b5b943aad37b247b0716df583dafbf6ceffaa970cbf02cc6907d428",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "src/pygrc/core/interfaces.py",
+      "sha256": "551d68fc103285608cef1a7ea4a69b9455181de21d9f91ea61cdd80c6065bc8f",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "src/pygrc/core/mutations.py",
+      "sha256": "8072749b817b7a8e6f0b750b6e476e4355845f75ffe15315cec926d67369b207",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "src/pygrc/core/observables.py",
+      "sha256": "7e91df6d1ba0929e45f22f34e928551270a5c55828199876c4c8d463e2febf5e",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "src/pygrc/core/params.py",
+      "sha256": "ff1a1a12ba050fc8654c88b0d786e9a342b6fd1bab656a12b95cdc45a5976ca4",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "src/pygrc/core/serialization.py",
+      "sha256": "a1ce1489870962af1032b8e69acc09ba8b9dcbcefaf86ea97250fc9a47009cf4",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "src/pygrc/core/storage.py",
+      "sha256": "a73d30238bc81dc3c366f04f3e8d5e8a266d0a683e7db88560196930d279c397",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "src/pygrc/core/types.py",
+      "sha256": "63932777bcf619cf8719a69b16adce0dd61e4b9296308ab6f8e41f925048c6f8",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "src/pygrc/models/__init__.py",
+      "sha256": "23768e181455f4e7eb68908cdac532464c063fa5eb4250c4d05537eca0dcaa70",
+      "policy": "separately_reviewed_additive_integration"
+    },
+    {
+      "path": "src/pygrc/models/_base.py",
+      "sha256": "e5e2a310def994b0583ba0185e3243253095a5a919804da2fce860df1911eeff",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "src/pygrc/models/grc_9.py",
+      "sha256": "a857f41ea919bb311d283681a13609e4bac6c5295d975ab61e57559454131de1",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_checkpoints.py",
+      "sha256": "283b662b3ac232465504082ae68a874d5b00f7745ee39eeee2d03828bbfa85d7",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_coarse.py",
+      "sha256": "43a20c5ae379e488ce7abcdc8b1f2b68007ba27fd27b3561f361d180e5906b49",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_expansion.py",
+      "sha256": "f71b7370e56b59328692000831842435e6512dcc3539f8dd9e5ac059f1eb1569",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_grcl9_lowering.py",
+      "sha256": "40a855d6f56417cabf442c68cd32280b1c07dcc4075a8cad2570750c9cca6c7c",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_grcl9_provenance.py",
+      "sha256": "c21593818c52c905c19f865d9fbe22937d560478b2c0f65efd44ae635b9fb122",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_landscape.py",
+      "sha256": "6f3059b701e28413b0252442d4b8449cfb8ccb341338b14da71d810d5965f244",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_ports.py",
+      "sha256": "7f9142f96de1e1a2880db5b0d767df4a78866093a8b051a2615778d3fa8ac780",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_state.py",
+      "sha256": "b3d979fe4bffbc86fe256f71ff4894c3da03fd4af706457a281f650242ca26b7",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v3.py",
+      "sha256": "d297def1eddfaf79a7ad3d6b676caaeebb29e6d7235f4fac5c6729bd7e26ca9e",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v3_choice.py",
+      "sha256": "ab8be0391a37e71d4610022afe3f64dac6102b929ade4448a59e7f4e02167933",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v3_grcl9v3_lowering.py",
+      "sha256": "653d0963d4df55c278cf1f6fc475a764ef03a13eee7d2ada756f5605434a1f05",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v3_grcl9v3_provenance.py",
+      "sha256": "607c65b7dc28e45c5c73801e76144f112e122948d9b478b2722575788407e33b",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v3_runtime.py",
+      "sha256": "f6f12de4e9bf66cd97b4063854ea225ae00874fed7073d4e72775891db54f502",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v3_sparks.py",
+      "sha256": "fa1db78355e1dba41245da44c9c515ac09820035ca451723873da779420ee820",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v3_state.py",
+      "sha256": "4ab5ffcb95d69a0767b24d6c95277ba3619a5d477c4865cc0d31735a2377918e",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "src/pygrc/models/grc_v2.py",
+      "sha256": "949bbb90766193934c96e4c4cbb84d3838e175b92968d93f9650477cce9e925e",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "src/pygrc/models/grc_v2_checkpoints.py",
+      "sha256": "e51abbec14fd03d5a54ab022529a2fce1b55d2f5cfce574ffdceae388225e45e",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "src/pygrc/models/grc_v2_landscape.py",
+      "sha256": "a531e7c4c8dee941b353696ff47b6265ecc03ac0ded07ab0fe9756479842661e",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "src/pygrc/models/grc_v2_state.py",
+      "sha256": "d9edff07065309059d030531febec4dd63c9586745f26cb9dd8eb309b357a659",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "src/pygrc/models/grc_v3.py",
+      "sha256": "01081bc3f2b394a0797d93c38539a3d6139c6bb412323f6eda09a4fe7c66b473",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "src/pygrc/models/grc_v3_checkpoints.py",
+      "sha256": "ed27a01eb18decc506450d0a25cd5fc7861c1f1bcf3fce5af84373b42eb67b96",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "src/pygrc/models/grc_v3_differential.py",
+      "sha256": "3e88a76d7eea94b255c588300305e5119cebc1e2599dd9a43e0aaf80cc9af837",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "src/pygrc/models/grc_v3_landscape.py",
+      "sha256": "a6d81d828bcf6e8c67d3e2e40bdbffd311d7126cf0a4b3b5efb72559aef687ad",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "src/pygrc/models/grc_v3_landscape_native.py",
+      "sha256": "d4a93b18bfeb71eb5098309b9ed0c2ae42c41b387b964a1ebbf5a43fd9ddb019",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "src/pygrc/models/grc_v3_state.py",
+      "sha256": "d0399ce9a733b8aeb1662de72ad0088cceab239e9b0dcf51c52367e70eb65e1c",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "src/pygrc/models/lgrc_9_v3.py",
+      "sha256": "37f9f9a0452fba447c875f7e652d8632dc49bb159c0d1af5caecb4ce4acf48bb",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "src/pygrc/models/lgrc_9_v3_construction.py",
+      "sha256": "c59f8d0747a5a6f5c954927fd1e1b1d71464bdffbdbf0401e39b17219a364938",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "src/pygrc/models/lgrc_9_v3_contract.py",
+      "sha256": "b86fb41ab530a7aa01abdf01dbc048da10c2e312a18c8b874cbd1386c4794680",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "src/pygrc/models/lgrc_9_v3_identity.py",
+      "sha256": "02a7b9dddb16b925042e014725aa13f66883f16f05f04ca754883dd002fc4ac2",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "src/pygrc/models/lgrc_9_v3_packets.py",
+      "sha256": "14d99292e18e2fe34e0fd5c6a1f69051e82115a051d142f10792775e2321e58f",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "src/pygrc/models/lgrc_9_v3_restoration.py",
+      "sha256": "e7c6b143c08eb0bda210152aeb0f6b12e0efcb666268416404ed3b649dd46931",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "src/pygrc/models/lgrc_9_v3_runtime.py",
+      "sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "src/pygrc/models/lgrc_9_v3_runtime_state.py",
+      "sha256": "ef409403954749a45fbf444116a9a253b95b3e2d74a119006f1cbb364a83630c",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "src/pygrc/models/lgrc_9_v3_timing.py",
+      "sha256": "3a8528da792ee57ea6a229cdf952af38a52c3f2689525cf12adf63a27a63983c",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "src/pygrc/models/lgrc_9_v3_topology.py",
+      "sha256": "f3cf7e2281c4073531a5951a19f9ae9141a336f9f9b6398f76eda7e1493abde4",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "tests/core/__init__.py",
+      "sha256": "76f41a0df27e45fc87349b67be016b1fd1802633a11b13a7eb7ed4bbc0717c7a",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "tests/core/test_backends.py",
+      "sha256": "bc8edd6986a8851d503a75dd2239fff50d225c43cc34c04a9c120581949969b6",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "tests/core/test_canonical_serialization.py",
+      "sha256": "552193d59b10a3ef293fa7629a78f51e59fb947587428527721d1d0942407ffc",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "tests/core/test_capabilities.py",
+      "sha256": "f9d0f142c1d8ce89ffa28f7cc0ce71620571b23abf064d2f03489340ba42665a",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "tests/core/test_digests_and_persistence.py",
+      "sha256": "64f1931ea13456865343b156b779a8df1127568729d2b27495fa365605b94103",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "tests/core/test_events_observables_errors.py",
+      "sha256": "95f322b2d9782175831c47b8ff7b1043c7f066f3a403fc4414d7e5448a18bd0c",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "tests/core/test_graph_protocols.py",
+      "sha256": "99095399a15ba96dccfd8ebedd2661ea7366f50071fdfb91c9c2eba56878ff01",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "tests/core/test_ids.py",
+      "sha256": "1b20380ad8c41324b7f0cdf576fbb0c07e978b74a78933e27b7fc70e8534e932",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "tests/core/test_import_smoke.py",
+      "sha256": "27987b2cc5d8c6acf57b6df16201181cce4c0a8c9897496e24f3d72a2b2a8c65",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "tests/core/test_interfaces.py",
+      "sha256": "702c67b6cc8d98c8ae87e586f7270e5afab65d8c2178527b651a14effbc98e69",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "tests/core/test_module_imports.py",
+      "sha256": "aa2df40e620432997c167a2c19cdd9340f79c77dffffae2b6b13d5b1e8dc19c2",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "tests/core/test_mutations_and_invalidation.py",
+      "sha256": "306cc0912a0ad0d28797425b2829454e47f75a891fed0e4b2dfbcd4881e656a0",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "tests/core/test_params.py",
+      "sha256": "3e2ab26bb32cf9409c0dae4622380c608d5be5ab486ff0129eac6c52c67518fb",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "tests/core/test_port_graph_backend.py",
+      "sha256": "b04b1e2c94372b66d482357023c7264fa5b265aa3d662e88b62fd75212368113",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "tests/core/test_serialization_contract.py",
+      "sha256": "f19f762830853ed35d243ab7390dc3e7337ee1c7fb05922b0c2742f3062c7bcc",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "tests/core/test_types.py",
+      "sha256": "df71e51295540f25b4cc135193c6558986ba462633460bd29ab3684d9b8b1869",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "tests/core/test_weighted_graph_backend.py",
+      "sha256": "98dc7d67f64ed80db808900179ac5f90e257304cf8ab80fc2c98799979fb51e6",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "tests/models/__init__.py",
+      "sha256": "a75a97f69ccfe9043bca38dcb91a41a7393d299d8af2fe804cc034930fb6c440",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "tests/models/test_family_stubs.py",
+      "sha256": "68693ccd01da4760a6d099d9cd5e4e52a6d5084b03b684eee1847fe972fa9c9d",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "tests/models/test_grc9v3_spec_reconciliation.py",
+      "sha256": "6ee26588ebebab2b64bd89814bda4baf98dfe3430be7858f597b11769351f94a",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "tests/models/test_grc_9_coarse.py",
+      "sha256": "6d6552d1381ecc5bd41b77b479d619853f9e75306dec089f642fd2441eaaabc8",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "tests/models/test_grc_9_expansion.py",
+      "sha256": "de1e080fa26b841ab46089269b71394160a94c15730edb621dae643ef8c63eb3",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "tests/models/test_grc_9_grcl9_lowering.py",
+      "sha256": "3b4345e29661324acb48a2d7b99f8e3fa8603e3dce74e062a37984b6ab25845c",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "tests/models/test_grc_9_landscape.py",
+      "sha256": "1d5cbca650e6fcea4c7c106dff5bf24067445dadceb9eb5ece32e2f5076650a5",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "tests/models/test_grc_9_runtime.py",
+      "sha256": "3df5f4c98ac18e43266511246e21e3ba62926beb34570090ffdac87481ec3ae0",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "tests/models/test_grc_9_sparks.py",
+      "sha256": "b33b02efecfca729d72715de08c3a6248ccd690a9d3498bfdc0ff3cd0ed74447",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "tests/models/test_grc_9_state.py",
+      "sha256": "1dbdb68d8c9b78539c667e6a548c4673d7a27d86f02f24faa5dc216584919d9a",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "tests/models/test_grc_9_step.py",
+      "sha256": "962d266938a06c1894361e9f3d97cdea59ba048ba8a8c6e43cc5832c001a9e05",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "tests/models/test_grc_9_tensor.py",
+      "sha256": "cc8ce248febbec9d6ef24db28e3a2a40241ebe2d5aa1e6bd4cd987a23a13c191",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "tests/models/test_grc_9_v3_choice_budget.py",
+      "sha256": "a3e203069b470e62da185930abdf52d98848666d7ef627b23ea6ea7445e0fff9",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "tests/models/test_grc_9_v3_coarse.py",
+      "sha256": "36945571d4d9bdcee8fa24d07119a0f47f83b015524ec0f370e9da5a28187841",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "tests/models/test_grc_9_v3_column_h_assisted.py",
+      "sha256": "11216319f7bd26b38316d0fa0b1b0ad5dd482eafeabda0e97e10efb411228858",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "tests/models/test_grc_9_v3_differential.py",
+      "sha256": "6db9601146e851e686c96bafb1fa8bb972fe117ef9e02c2ccceade9b6049b906",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "tests/models/test_grc_9_v3_grcl9v3_lowering.py",
+      "sha256": "a94250d721c479475a39d014c43494b5fc5e204b2b32d076526deeb6f476ed29",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "tests/models/test_grc_9_v3_hessian_readiness.py",
+      "sha256": "c1ed11fe4fcab3d83ce29caf9457a0999e110857e486385dd7d157289a282936",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "tests/models/test_grc_9_v3_representative_runtime.py",
+      "sha256": "0c841de19954f98019dbedb90174bd53cac731862e8b503e3a161464e7347b00",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "tests/models/test_grc_9_v3_sparks.py",
+      "sha256": "53b6337b50ffa97bfa4cbe34676b5817837fd6864cbe5870c5ed0acf256b310b",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "tests/models/test_grc_9_v3_state.py",
+      "sha256": "fd1bf3f4fe3752c416fdc419f39d1a85bac608d194b5c434634a3602f7f74246",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "tests/models/test_grc_9_v3_step.py",
+      "sha256": "dab5f857f395188c09c70cf0f5d257578e107422268908ec869746eecde52c69",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "tests/models/test_grc_9_v3_transport.py",
+      "sha256": "e5fbd4c3012bbf4afbaceddb990afcceea0a6eec96f3d2f080351becc79fdadd",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "tests/models/test_grc_v2_budget_observables.py",
+      "sha256": "2510fc8efd36b2c927edbbb15fea27b5d6c97d16e124a10fa2019350faef43d6",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "tests/models/test_grc_v2_construction.py",
+      "sha256": "09d9ff8cd56dbd6cc646b19bfcaa2d038b315ed7b5f7635486f7c78f4b3dc5d3",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "tests/models/test_grc_v2_landscape_blueprint.py",
+      "sha256": "dc0bb21973a0571b8c4ccefc059e477498b2cc05ce8e9f85250ef834d84bc942",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "tests/models/test_grc_v2_landscape_import.py",
+      "sha256": "b4d4e3ee60db84769b0b9dc023bdff56a38164898fdc715b1cf139e755288ce7",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "tests/models/test_grc_v2_landscape_runtime.py",
+      "sha256": "0de21b5d85afecbcbd93ee040ab372f5c23feda6eac3af6e6948d8075705891f",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "tests/models/test_grc_v2_metric_labels.py",
+      "sha256": "072031927ba95ac478c1900ee4ec31bf540480fc6ff7f9778f23faa913d5b4d7",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "tests/models/test_grc_v2_runtime_persistence.py",
+      "sha256": "29d3016512f8bf75f9c318c382a6c9f11a689f17ffabd3e7788f9d238bbb319e",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "tests/models/test_grc_v2_sparks.py",
+      "sha256": "b41c5c7170fb41fa5fd675246aa0cd3d5b09878bc961820f27fed1ee775cab2c",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "tests/models/test_grc_v2_step_skeleton.py",
+      "sha256": "09b8144dcf540f4a5d1680834f58e26fb4fc464ce9150728a156f5df8ca88842",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "tests/models/test_grc_v2_topology_events.py",
+      "sha256": "d7181153112da5d56e82dec448c0171df9f7c2ca215b150ca89b8888fdf15966",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "tests/models/test_grc_v2_validation_matrix.py",
+      "sha256": "6814ad6aec6a4743a1666ba3c4ff4f47055a203f6afce33f2ddf161682f6ff45",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "tests/models/test_grc_v3_choice.py",
+      "sha256": "3fa092c6f4d9b65b35173a219537b82d1176d38f9772576c9e41e2f222d8a240",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "tests/models/test_grc_v3_differential.py",
+      "sha256": "148a9422b2a84040b4716a9a1ab4d508f35020a22ad4aac67aa296ab8ba88aea",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "tests/models/test_grc_v3_frontier_birth.py",
+      "sha256": "5078ff981c5cd0b07f08b16fe4c55263a07ab18ff84450322c5bf05381db10e7",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "tests/models/test_grc_v3_hierarchy.py",
+      "sha256": "c40c383d6504986e2353a296c873b137a03a65581454896fd0d7e62cdb4d94a2",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "tests/models/test_grc_v3_landscape_runtime.py",
+      "sha256": "5b09f3e05794480472c58b72016ff055c5957f9c1f0318d7f03fcdb43a1e22be",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "tests/models/test_grc_v3_metric_labels.py",
+      "sha256": "18705d2e29498e83181aea8d6d1b1e348e0e3404d12ed2585bdf17cd7beb2f1e",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "tests/models/test_grc_v3_runtime.py",
+      "sha256": "3dbc5bc167404d70f21a53ed582edd2b0f1371eaa92fd112d9a126790af3fb07",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "tests/models/test_grc_v3_serialization.py",
+      "sha256": "86701f465a94a0eacdde146f5294c61bc1f6db3aec2b4591c66d6e66ca0e356a",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "tests/models/test_grc_v3_sparks.py",
+      "sha256": "32d5fffe5174379f6cb8bf73e3791e403aad0d9979174e0887aac7ed9e944d83",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "tests/models/test_grc_v3_state.py",
+      "sha256": "f3c66862b1ff7c3f9aaf931a94e3abe17c990c18c065d42222d448d81e8d010c",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "tests/models/test_grc_v3_step.py",
+      "sha256": "cec289512df7f33a21c80ed6f46d23f0d34be6208524b4b2ee1a4dddcd2864e2",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "tests/models/test_lgrc_9_v3_autonomy_contract.py",
+      "sha256": "1172e6a8caf79fcf57848e8b1dd788251e4978e3f34ee3f595330a5133610e17",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "tests/models/test_lgrc_9_v3_construction.py",
+      "sha256": "ed397b97cb586eec30a882d5b4da92f395ade95f4cba6b3b1b6823fe2c944999",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "tests/models/test_lgrc_9_v3_contract.py",
+      "sha256": "38574deb0bf0790ea9d63800d800478da5ffbe65073dd0c570f361dc85d5ba2b",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "tests/models/test_lgrc_9_v3_module_split.py",
+      "sha256": "50e920647cb35aa824a1a2a15bdd6176e2b9bbcf0f8a4ac864be14caee6a54bb",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "tests/models/test_lgrc_9_v3_native_packet_loop_baseline.py",
+      "sha256": "e9f5fe5a644007b8246a548c687c51bd5b561d0364cd3a2ffc31c40f7c31b520",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "tests/models/test_lgrc_9_v3_native_packet_loop_control_parity.py",
+      "sha256": "8cc6dd9fbfca574b8370d46997a2d84e0b910eede52a0d3dee2c67200631cddd",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "tests/models/test_lgrc_9_v3_native_packet_loop_route_aspect.py",
+      "sha256": "9d0a55c702f8e77bd9204752f5f4f6993a493bdb9d1022ad907c9313a30401bd",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "tests/models/test_lgrc_9_v3_native_packet_loop_surplus_trigger.py",
+      "sha256": "ebd56dc1d25a10014dde069c0db2102f7c4a28a10edfa1c2d38b7b619449a193",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "tests/models/test_lgrc_9_v3_restoration.py",
+      "sha256": "881e1596ee39594bb21ce1ae9e3928c1a9eafe79255dbc69438d4de98c9d5b97",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "tests/models/test_lgrc_9_v3_restoration_matrix.py",
+      "sha256": "b5c740545022c3be11e256d95645b57954bce993a46e7cc26edcca33517eb154",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "tests/models/test_lgrc_9_v3_runtime.py",
+      "sha256": "19f310a120c5efaa4ee068fca7c6b7ffc9cedec745bc42e1f8156eb120b8736b",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "tests/models/test_reset_baseline_persistence.py",
+      "sha256": "6236748f6bc7995dda86f7a207ccce373b33d1b7ecd90849106839baa305f01a",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "specs/grc-common-interface.md",
+      "sha256": "3ccc27250a3ddb2ecccdf27984436e3dee2b10b3f71de610bfbbbcd084ae7be6",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "specs/grc-v2-spec.md",
+      "sha256": "5a2c0b37422b86f175796ccb6535f5d55a347e7f8cbf04fb7d9bb90b63408f25",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "specs/grc-v3-spec.md",
+      "sha256": "aeb88b4842b00d3ee0f12f3d7ec337d8ce7f61373100d3674ace8b6c8df4e8d8",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "specs/grc-9-spec.md",
+      "sha256": "abb32d9481146036da33df730e6d2ae07d72ec9bc49ef6c47926cafe0865accc",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "specs/grc-9-v3-spec.md",
+      "sha256": "7b1f0c03988be7dbe3feb8ba926d43d891d70daa0dbbae9804fc70f2a4950f2f",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "specs/lgrc-9-v3-spec.md",
+      "sha256": "f65b1324961dd28253cd7ff60d45b58ca051ad44a0cb09dae9e376e84ae8da4c",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "path": "pyproject.toml",
+      "sha256": "b96f7e82c3e398502d12037548701e88aaf82b5b7c47f7153306fcea747a6d8b",
+      "policy": "separately_reviewed_additive_integration"
+    },
+    {
+      "path": "src/pygrc/__init__.py",
+      "sha256": "87cbe85db2f0f16b428df7f76701b68db79ffe1908e76ee71b2134ef20453a40",
+      "policy": "frozen_legacy_reference"
+    }
+  ],
+  "legacy_binding_policy": "Explicit baseline-revision members, not a wildcard ban on future files or an implementation authorization. Two integration targets require later additive-diff review; other bound targets remain unchanged for V4 work.",
+  "external_legacy_delegate": "src/pygrc/models/grc_9_v3.py (unchanged; referenced only by the V4 disabled-compatibility adapter)",
+  "proposed_integration_paths": [
+    "src/pygrc/models/__init__.py",
+    "pyproject.toml"
+  ],
+  "core_edits_planned": [],
+  "dependency_review": [
+    {
+      "package": "numpy",
+      "local_version": "2.4.6",
+      "role": "Dense binary64 backend through V4-owned adapters; explicitly declare in an optional V4 extra before runtime, do not rely on matplotlib transitively.",
+      "decision": "candidate_backend_requires_numeric_oracle_validation_not_installed_or_changed_here"
+    },
+    {
+      "package": "rfc8785",
+      "local_version": null,
+      "role": "Proposed V4 JCS dependency, gated by frozen preimages plus independent Unicode/number edge vectors; never substitute legacy json.dumps or the fixture generator.",
+      "decision": "package_absent_exact_version_and_compatibility_to_be_verified_when_P9_G1_authorizes_dependency_install"
+    },
+    {
+      "package": "jsonschema",
+      "local_version": null,
+      "role": "Proposed Draft 2020-12 wire/strict validation adapter; semantic admission remains separate V4 logic.",
+      "decision": "package_absent_exact_version_and_compatibility_to_be_verified_when_P9_G1_authorizes_dependency_install"
+    },
+    {
+      "package": "scipy",
+      "local_version": null,
+      "role": "No initial dependency; later realization solver/evaluator needs require explicit review.",
+      "decision": "deferred_not_a_C_OS_prerequisite"
+    }
+  ],
+  "oracle_policy": {
+    "harness_path": "tests/models/grcv4_conformance_harness.py",
+    "reference_path": "tests/models/grcv4_reference_oracles.py",
+    "production_imports_tests": false,
+    "expected_values": "Frozen published bytes/results or separately reviewed hand-derived/rational/scalar reference computations; do not call production solvers/serializers/allocators to calculate their own expected values.",
+    "generator_imports_forbidden": [
+      "implementation/investigations/grc9v4-constitutive-design/scripts/build_grcv4_specification_vectors.py"
+    ],
+    "reuse_boundary": "Frozen vector data may be read, not imported as algorithms. Runtime results are separate evidence. A and C, each realization and each compatibility surface remain independent test scopes."
+  },
+  "retention_policy": {
+    "proposed_root": "implementation/phase-9-grcv4/evidence/<iteration-id>/<run-id>/",
+    "status": "future_path_requires_P9_G1_scope",
+    "required_fields": [
+      "fixture_id",
+      "complete_profile_id",
+      "active_model_identity",
+      "resolved_params_id",
+      "prestate_digest",
+      "poststate_digest",
+      "operation_disposition",
+      "solver_disposition",
+      "committed",
+      "emitted_receipt_ids",
+      "code_commit_and_dirty_diff_identity",
+      "release_id",
+      "fixture_and_vector_sha256",
+      "oracle_revision_and_sha256",
+      "graph_and_context_identity",
+      "resolved_parameter_payload_or_bound_reference",
+      "pre_lifecycle_digest",
+      "post_lifecycle_digest",
+      "request_or_operation_identity",
+      "comparison_policy_and_tolerances",
+      "backend_and_environment_versions",
+      "receipt_delta_and_persistent_ledger_bindings",
+      "command_exit_code_stdout_stderr",
+      "review_disposition"
+    ],
+    "files": [
+      "run.json",
+      "inputs.json",
+      "expected.json",
+      "actual.json",
+      "receipts.json",
+      "stdout.txt",
+      "stderr.txt"
+    ],
+    "large_artifacts": "External content-addressed blobs allowed only with hashes and reproducible retrieval; run manifest retained in repo. Never overwrite frozen fixture/vector bytes.",
+    "failed_runs": "Retain failures, rejected operations, seeds and gate holds; do not replace with passing reruns."
+  },
+  "observations": [
+    {
+      "id": "P9-REVIEW-001",
+      "disposition": "acknowledged_without_support_edge_promotion",
+      "meaning": "152 D10.2 contract API indeterminate support semantics preserved; accepted spec remains primary implementation source."
+    },
+    {
+      "id": "P9-INTEGRATION-001",
+      "disposition": "V4_owned_adapter_required",
+      "meaning": "Legacy nominal GRCState/StepResult annotations conflict statically with V4 standalone immutable records; local structural protocols and narrowly justified override typing boundaries only, never mutable inheritance or false runtime casts."
+    },
+    {
+      "id": "P9-INTEGRATION-002",
+      "disposition": "V4_owned_codec_and_registry_required",
+      "meaning": "Legacy canonical serialization is not V4 JCS; legacy capability registry/test remains exactly four families. V4 uses its own exact-profile registry, not a global legacy registry mutation."
+    }
+  ],
+  "baseline_test_results": [
+    {
+      "command": ".venv/bin/python -m unittest discover -s tests/core -q",
+      "tests": 105,
+      "result": "OK",
+      "evidence_kind": "legacy_baseline_not_V4_conformance"
+    },
+    {
+      "command": ".venv/bin/python -m unittest discover -s tests/models -q",
+      "tests": 763,
+      "result": "OK",
+      "evidence_kind": "legacy_baseline_not_V4_conformance"
+    }
+  ],
+  "runtime_authorized": false,
+  "reviewer_decision": "pending_user_review",
+  "implementation_follow_through": [
+    {
+      "id": "P9-REVIEW-FOLLOW-7.1",
+      "review_section": "7.1",
+      "owner": "grc_v4_codec",
+      "iterations": [
+        "P9-2.2",
+        "P9-2.6"
+      ],
+      "status": "registered_pending_implementation",
+      "requirement": "Load versioned release-bound schema/identity assets from the installed distribution without ambient checkout, mutable remote schemas or vector-builder imports.",
+      "packaging_plan": {
+        "resource_package": "pygrc.models.grc_v4_assets",
+        "proposed_new_path": "src/pygrc/models/grc_v4_assets/",
+        "loader": "importlib.resources.files with byte verification before parsing; no cwd or repository-root fallback",
+        "copies_unchanged_from_release": [
+          "specs/grc-v4-contract-schema.json",
+          "specs/grc-v4-specification-release.json",
+          "specs/grc-v4-specification-release.sha256"
+        ],
+        "index": "Package-local versioned asset-index.json binds copied filenames, accepted release ID and SHA-256 values; repository paths in the release manifest are provenance, not installed lookup paths.",
+        "integration": "pyproject.toml package-data declaration through the already proposed additive integration; new asset files require later P9-G1 mutation authority."
+      },
+      "required_tests": [
+        "Clean wheel and source-distribution install outside checkout without tests/ or implementation/ directories",
+        "Legacy imports without V4 extra",
+        "V4 imports and requests with extra",
+        "Typed missing-dependency failure for V4 request without extra",
+        "Missing, altered or wrong-release packaged asset fails closed without network/repository fallback"
+      ]
+    },
+    {
+      "id": "P9-REVIEW-FOLLOW-7.2",
+      "review_section": "7.2",
+      "owner": "grc_v4_state/grc_v4_geometry",
+      "iterations": [
+        "P9-2.1",
+        "P9-2.6",
+        "P9-3.1"
+      ],
+      "status": "registered_pending_implementation",
+      "requirement": "Before implementing each component, retain an explicit symbol-level use_unchanged/wrap_read_only/implement_V4_local_replacement/not_consumed disposition with source hash, contract, reason and validation evidence. Decide graph storage/lookup and utilities explicitly; no target reuse percentage or similarity-only shared refactor.",
+      "allowed_dispositions": [
+        "use_unchanged",
+        "wrap_read_only",
+        "implement_V4_local_replacement",
+        "not_consumed"
+      ],
+      "initial_decisions": [
+        {
+          "symbol": "pygrc.core.interfaces.GRCModel",
+          "disposition": "use_unchanged",
+          "contract_groups": [
+            "api",
+            "state"
+          ],
+          "reason": "Required class inheritance and common call surface; no change to legacy nominal storage."
+        },
+        {
+          "symbol": "pygrc.core.types.GRCState / StepResult",
+          "disposition": "implement_V4_local_replacement",
+          "contract_groups": [
+            "state"
+          ],
+          "reason": "Standalone immutable V4 records and structural projections; cannot inherit mutable legacy storage."
+        },
+        {
+          "symbol": "pygrc.core.serialization.canonical_json_dumps",
+          "disposition": "implement_V4_local_replacement",
+          "contract_groups": [
+            "identity",
+            "lifecycle"
+          ],
+          "reason": "V4 requires full JCS and exact versioned preimages; legacy JSON behavior remains unchanged."
+        },
+        {
+          "symbol": "pygrc.models.grc_9_v3.GRC9V3",
+          "disposition": "use_unchanged",
+          "contract_groups": [
+            "G9_disabled"
+          ],
+          "reason": "Exact legacy delegate only in V4-defined-domain compatibility branch; never substitute enabled V4 mechanics."
+        }
+      ],
+      "decisions_required_before_P9_3_1": [
+        "pygrc.core.storage.WeightedGraphBackend / PortGraphBackend: graph storage, lookup, identity order and mutation/alias semantics",
+        "pygrc.core.ids.MonotoneIdSource / TombstoneSlotTable and proposed shared utilities: consume unchanged only where the V4 identity/immutability contract permits"
+      ],
+      "evidence_requirement": "Resolve exact source symbol and baseline binding before choosing reuse; a read-only wrapper must not retain writable legacy aliases."
+    },
+    {
+      "id": "P9-REVIEW-FOLLOW-7.3",
+      "review_section": "7.3",
+      "owner": "grc_v4_candidate_c",
+      "iterations": [
+        "P9-4.3"
+      ],
+      "status": "registered_pending_implementation",
+      "requirement": "Supplemental tau_C=0 control on a nontrivial retained-Hodge case with kappa_M_C nonzero: explicit resolvent filtering becomes identity while H_M-conditioned direct baseline can remain active. Do not infer from simultaneous kappa-M zero or identity Hodge; do not modify frozen catalog.",
+      "forensic_evidence": {
+        "operation": "contract_provenance",
+        "query": {
+          "contract_id": "D11-C-EC-C-J0-SWITCH-SEPARATION"
+        },
+        "trace_digest": "36a0853f40e058a03db99039c673a42e33bc456d975c75eb6d410d680b75574e",
+        "classification": "source_exact_contract_provenance",
+        "source_ref": {
+          "record_id": "GRC9V4-D11-C-PROVENANCE-SUPPLEMENT-v1",
+          "record_digest": "57d711d80e648c8ee73401f3a7e76a0076374fc43bd4d2d0f3dbe4bb4ee3acb1",
+          "source_json_pointer": "/equation_contracts/6",
+          "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D11CCandidateBaselineTransportProvenanceSupplement.json"
+        },
+        "edge_refs": [
+          {
+            "edge_id": "propagation:39c5cde6da6a4884ecb0b27371c8c2ee56fab77eddb3e84ffc48f525975a806b",
+            "source": "equation_contract:D11-C-EC-C-J0-SWITCH-SEPARATION",
+            "target": "current_claim:D11-C-CL-O-001",
+            "relation": "accepted_claim",
+            "support_semantic": "accepted_bounded_D11_C_successor",
+            "source_record_id": "GRC9V4-D11-C-PROVENANCE-SUPPLEMENT-v1",
+            "source_record_digest": "57d711d80e648c8ee73401f3a7e76a0076374fc43bd4d2d0f3dbe4bb4ee3acb1",
+            "source_json_pointer": "/equation_contracts/6/accepted_claim_ids/0"
+          },
+          {
+            "edge_id": "propagation:7d063540fe0b9a80e14b4838f01dfb109015f8dcd142cb41143affb76543a4ba",
+            "source": "equation_contract:D11-C-EC-C-J0-SWITCH-SEPARATION",
+            "target": "source_record:1ba90e62a7f7907094aff26dd201ba232ec0f2a1ea26e79e473ecd8885ea3174",
+            "relation": "source_identity",
+            "support_semantic": "not_applicable",
+            "source_record_id": "GRC9V4-D11-C-PROVENANCE-SUPPLEMENT-v1",
+            "source_record_digest": "57d711d80e648c8ee73401f3a7e76a0076374fc43bd4d2d0f3dbe4bb4ee3acb1",
+            "source_json_pointer": "/equation_contracts/6"
+          },
+          {
+            "edge_id": "propagation:fb89e4a6fcaba2cce4ebdd040221cf73e92fc98bc1a6f0d8974c151ab5ae3c6b",
+            "source": "equation_contract:D11-C-EC-C-J0-SWITCH-SEPARATION",
+            "target": "normative_object:C-BASELINE-CURRENT",
+            "relation": "parent_object",
+            "support_semantic": "indeterminate_requires_review",
+            "source_record_id": "GRC9V4-D11-C-PROVENANCE-SUPPLEMENT-v1",
+            "source_record_digest": "57d711d80e648c8ee73401f3a7e76a0076374fc43bd4d2d0f3dbe4bb4ee3acb1",
+            "source_json_pointer": "/equation_contracts/6/parent_object_ids/0"
+          }
+        ],
+        "support_disposition": [
+          "accepted_bounded_D11_C_successor"
+        ],
+        "source_contract": {
+          "equation_contract_id": "D11-C-EC-C-J0-SWITCH-SEPARATION",
+          "parent_object_ids": [
+            "C-BASELINE-CURRENT"
+          ],
+          "normative_equation_or_contract": "kappa_M_C_zero_removes_retained_Hodge_conditioning_chi_C_zero_removes_explicit_read_zeta_C_zero_removes_read_gain_and_tau_C_zero_removes_only_resolvent_filtering",
+          "support_semantics": "accepted_bounded_D11_C_successor",
+          "accepted_claim_ids": [
+            "D11-C-CL-O-001"
+          ]
+        }
+      },
+      "required_tests": [
+        "Independently compare resolvent identity and retained-Hodge-dependent J0 at tau_C=0",
+        "Contrast nontrivial retained-Hodge baseline with its reference baseline while holding reference mobility fixed"
+      ]
+    },
+    {
+      "id": "P9-REVIEW-FOLLOW-7.4",
+      "review_section": "7.4",
+      "owner": "grc_v4_geometry and conformance harness",
+      "iterations": [
+        "P9-2.5",
+        "P9-3.4",
+        "P9-4.5"
+      ],
+      "status": "registered_pending_implementation",
+      "requirement": "Bind backend/environment and exact-byte versus tolerance policy to promised scope. Probe nonidentity SPD, near-but-admitted selector/current conditioning boundaries and repeated eigenvalues inside a selected cluster with a strict boundary gap.",
+      "required_tests": [
+        "Compare invariant projector, not eigenvector signs or ordering",
+        "Repeat promised replay/numerical comparisons with bound environment and tolerances",
+        "Reject rather than silently add damping, regularization, pseudoinverse, solver fallback or charge repair"
+      ]
+    },
+    {
+      "id": "P9-REVIEW-FOLLOW-7.5",
+      "review_section": "7.5",
+      "owner": "grc_v4_lifecycle",
+      "iterations": [
+        "P9-7.2a-C_OS-NH-NH",
+        "P9-7.2b-C_OS-MAPPED",
+        "P9-7.2a-A_OS-A_OS",
+        "P9-7.2a-A_OS-C_OS",
+        "P9-7.2a-C_OS-A_OS",
+        "P9-7.2b-A_OS-MAPPED",
+        "P9-7.3-C_OS",
+        "P9-7.4-C_OS",
+        "P9-7.5-C_OS",
+        "P9-7.6-C_OS",
+        "P9-7.3-A_OS",
+        "P9-7.4-A_OS",
+        "P9-7.5-A_OS",
+        "P9-7.6-A_OS"
+      ],
+      "status": "registered_pending_implementation",
+      "requirement": "Start with deliberately distinct live and reset states before migration or affine event. Independently check both mapped/reconstructed targets, persistent ledger, operation receipt delta and reset after the operation. Identical inputs cannot prove both were transformed.",
+      "required_tests": [
+        "Successful current/reset transport with independently computed different targets",
+        "Reset-only target failure holds the whole operation atomic even if current target admits",
+        "Full payload and both digest comparisons on rejection; ledger versus emitted delta kept separate"
+      ]
+    }
+  ],
+  "successor_verification_follow_through": [
+    {
+      "id": "P9-REVIEW-PRESSURE-8.1",
+      "review_section": "8.1",
+      "iterations": [
+        "P9-1.6",
+        "P9-1.7"
+      ],
+      "status": "registered_pending_successor_verification",
+      "requirement": "Green review with runtime_authorized=false never permits src/, tests/ or dependency edits."
+    },
+    {
+      "id": "P9-REVIEW-PRESSURE-8.2",
+      "review_section": "8.2",
+      "iterations": [
+        "P9-1.6",
+        "P9-1.7"
+      ],
+      "status": "registered_pending_successor_verification",
+      "requirement": "Legitimate planning additions use successor state while historical release audits retain their own unchanged assertions."
+    },
+    {
+      "id": "P9-REVIEW-PRESSURE-8.3",
+      "review_section": "8.3",
+      "iterations": [
+        "P9-1.7"
+      ],
+      "status": "registered_pending_successor_verification",
+      "requirement": "Missing required lifecycle child, forged evidence alias or unresolved dependency holds affected gate even if counts match."
+    },
+    {
+      "id": "P9-REVIEW-PRESSURE-8.4",
+      "review_section": "8.4",
+      "iterations": [
+        "P9-1.7",
+        "P9-1.8"
+      ],
+      "status": "registered_pending_successor_verification",
+      "requirement": "Unimplemented A/PC/RG2b does not block C_OS, but unexecuted exact identities cannot be advertised from the planned roster."
+    },
+    {
+      "id": "P9-REVIEW-PRESSURE-8.5",
+      "review_section": "8.5",
+      "iterations": [
+        "P9-1.7",
+        "P9-1.8"
+      ],
+      "status": "registered_pending_successor_verification",
+      "requirement": "Optional completion is neither a universal prerequisite nor advertisable without its own scoped evidence."
+    },
+    {
+      "id": "P9-REVIEW-PRESSURE-8.6",
+      "review_section": "8.6",
+      "iterations": [
+        "P9-1.6",
+        "P9-1.7"
+      ],
+      "status": "registered_pending_successor_verification",
+      "requirement": "Frozen byte drift, stale predecessors, contradictory states or unauthorized contents at permitted filenames cannot pass through names or checker markers alone."
+    }
+  ],
+  "review_corrections": {
+    "follow_through": "five_implementation_assignments_and_six_successor_checks_registered_not_executed",
+    "decomposition_changed": false,
+    "legacy_target_changes": false
+  }
+}

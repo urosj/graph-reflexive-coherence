@@ -1475,6 +1475,24 @@ partial/full GRC9V4 wording boundary. The normal verifier must fail if any of
 those regress, if the pressure-audit digest changes, or if regenerated release
 hashes are stale.
 
+### Phase 9 planning successor verification (P9-1.6)
+
+The [Phase 9 verification candidate](../../../../phase-9-grcv4/tranche-1/P9-1.6-SuccessorVerification.md)
+adds state-detected dispatch for `verify-post-d10-specifications` and
+`verify-iteration9`, with `verify-phase9` as a direct alias. Dispatch is not
+authority: the new verifier checks the immutable opening, exact accepted
+release, no-ff merge, review checkpoint, and bounded planning-maintenance
+paths/content. The four historical D10/specification audits run unchanged in
+a disposable checkout of the accepted release; their earlier mutation
+envelope is not imposed on later planning or rewritten to permit runtime.
+
+The normal summary distinguishes verified planning from accepted runtime.
+P9-G1 and runtime support remain pending/empty. This is P9-1.6 maintenance,
+not ET-C10 scientific extension or ET-C11 human acceptance. The existing
+API/notebook/browser suites remain on the normal verification path. P9-1.7
+owns adversarial successor-policy review; P9-1.8 owns the remaining surface
+and scenario reconciliation. Their completion is not inferred here.
+
 ## Verification Strategy
 
 ### Kernel and adapter tests
@@ -1538,6 +1556,51 @@ hashes are stale.
 - Playwright screenshots pass on desktop and mobile viewports.
 
 ## Completion Boundary
+
+### Phase 9 verification successor (P9-1.7/P9-1.8)
+
+The planning-only P9-1.6 route is extended by a content-bound V2 verifier;
+its original policy/auditor and prepared artifact snapshot remain immutable.
+All six independent-review pressures have explicit executable scenarios,
+including exact child/alias/dependency checks, conditional completion,
+frozen-content failures and isolated future-approval controls. Real runtime
+acceptance remains P9-1.9 work; neither a flag nor a planning pass grants it.
+
+The [Phase 9 access guide](./docs/Phase9VerificationGuide.md) opens the actual
+read-only API, executable notebook and separate local browser panel. These
+share the same current-boundary validator and distinguish fresh checks from
+matching recorded successor execution. Normal verification runs the new
+pressure/API/notebook/Node/browser checks alongside the unchanged D11 suites.
+The old scientific graph, accepted scenarios and ET-C11 candidate remain
+unchanged. Preparation/verification status is tracked in the checklist and
+separate Phase 9 leaf records, not inferred as scientific or runtime support.
+
+### P9-1.9 accepted implementation successor
+
+The user has separately accepted P9-1.4–P9-1.8 and P9-G1's reviewed V4-only
+implementation scope. The V3 verifier binds the accepted release and exact
+approval, admits registered generic source/test/assets and two additive-only
+integration points, and holds GRC9V4 behind its independent P9-G3 gate.
+Per-iteration content/evidence manifests do not grant conformance, enlarge
+scope or bypass owning-leaf dependencies. At this transition only P9-2.1 and
+P9-2.2 are ready. The P9-1.9 execution record reconciles every supplied outlier
+and prerequisite, retaining explicit reuse and nonapplicability limits.
+The accepted V2 checker and records remain exact on commit `6e0a507`;
+normal verification replays them there, not against the implementation tree.
+API, real notebook cells and browser/export distinguish accepted permission
+from the still-empty runtime support sets. Earlier pending statements in the
+planning-successor sections describe historical preparation checkpoints.
+
+### Scientific completion ceiling
+
+The P9-1.6–P9-1.8 pressure-guide correction adds three independently retained
+test batches, decisive rejection traces, combined/committed/stale/forgery and
+broken-checker controls, and source-admitted semantic-projection tests. The
+Phase 9 panel and notebook now project actual isolated probe results, keeping
+candidate decision distinct from harness assertion and live permission.
+Affected-surface inventory, per-run evidence and normalized API/notebook/browser
+exports are documented in the access guide. All acceptance/runtime ceilings
+above remain unchanged.
 
 Successful closeout may claim:
 

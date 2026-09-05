@@ -1,0 +1,88 @@
+{
+  "schema": "phase9_surface_applicability_v1",
+  "runtime_authorized": false,
+  "P9_G1_accepted": false,
+  "surfaces": [
+    {
+      "id": "normal_cli",
+      "entry": "run.py verify-iteration9",
+      "input_contract": "validated current policy, historical release, actual working bytes",
+      "executes_or_displays": "executes historical/current/surface checks",
+      "output_export": "exit status and bound verification receipt",
+      "review_owner": "P9-1.6 / P9-1.8",
+      "applicability": "applicable"
+    },
+    {
+      "id": "dedicated_cli",
+      "entry": "run.py verify-phase9",
+      "input_contract": "same policy and current input manifest",
+      "executes_or_displays": "executes historical/current/pressure/API checks",
+      "output_export": "bound successor receipt",
+      "review_owner": "P9-1.6",
+      "applicability": "applicable"
+    },
+    {
+      "id": "api",
+      "entry": "verification_status / pressure_projection",
+      "input_contract": "current bytes plus exact recorded run/case identity",
+      "executes_or_displays": "rechecks current scope; projects recorded isolated probes",
+      "output_export": "typed status/probe JSON with full digests",
+      "review_owner": "P9-1.8",
+      "applicability": "applicable"
+    },
+    {
+      "id": "notebook",
+      "entry": "phase9_verification.ipynb",
+      "input_contract": "fresh root discovery and same API inputs",
+      "executes_or_displays": "executes actual cells; distinguishes candidate and assertion",
+      "output_export": "status and probe JSON, no saved stale outputs",
+      "review_owner": "P9-1.8",
+      "applicability": "applicable"
+    },
+    {
+      "id": "browser",
+      "entry": "serve-phase9 / phase9-web",
+      "input_contract": "live status and exact probe endpoint",
+      "executes_or_displays": "renders current scope and separately labelled isolated candidate",
+      "output_export": "visible badges and exact JSON download",
+      "review_owner": "P9-1.8",
+      "applicability": "applicable"
+    },
+    {
+      "id": "exports",
+      "entry": "download JSON / notebook outputs",
+      "input_contract": "validated exact typed projection",
+      "executes_or_displays": "serializes without scope or status substitutions",
+      "output_export": "full identifiers, source meanings, ceilings, trace",
+      "review_owner": "P9-1.8",
+      "applicability": "applicable"
+    },
+    {
+      "id": "plans_checklists",
+      "entry": "Phase 9 and side-tool plan/checklist",
+      "input_contract": "separate bound leaf results",
+      "executes_or_displays": "engineering progress; no inferred gate acceptance",
+      "output_export": "Markdown and execution records",
+      "review_owner": "P9-1.7 / P9-1.8",
+      "applicability": "applicable"
+    },
+    {
+      "id": "docs",
+      "entry": "Phase9VerificationGuide.md",
+      "input_contract": "actual supported commands and evidence limits",
+      "executes_or_displays": "operational explanation, not authority creation",
+      "output_export": "runnable examples with no fabricated pass output",
+      "review_owner": "P9-1.8",
+      "applicability": "applicable"
+    },
+    {
+      "id": "historical_D11_explorer",
+      "entry": "unchanged ET-C11 API/notebook/browser",
+      "input_contract": "frozen scientific records and contracts",
+      "executes_or_displays": "existing forensic queries, no Phase 9 governance projection",
+      "output_export": "unchanged accepted graph and candidate UX payload",
+      "review_owner": "ET-C11 existing regression owner",
+      "applicability": "unaffected_checked_by_normal_regressions"
+    }
+  ]
+}
