@@ -9,6 +9,9 @@ import subprocess
 
 def _policy(root):
     path = root / "implementation/phase-9-grcv4/verification/phase9_policy.py"
+    successor = path.with_name("phase9_implementation_policy.py")
+    if successor.exists():
+        path = successor
     spec = importlib.util.spec_from_file_location(
         "phase9_governance_status_policy", path
     )
@@ -44,6 +47,22 @@ def verification_status(repo_root: Path) -> dict:
     try:
         policy, tree = module.current_boundary(root)
         payload["runtime_authority_state"] = "explicit_planning_authority_runtime_false"
+        implementation = policy["active_phase"] == "implementation"
+        if implementation:
+            approval = module.acceptance(root)
+            ready, owners = module.leaf_permissions(root)
+            payload.update(
+                schema="phase9_governance_status_v2",
+                runtime_authorized=True, P9_G1_accepted=True,
+                runtime_authority_state="accepted_P9_G1_bounded_implementation_not_conformance",
+                approval_digest=approval["record_digest"],
+                implementation_scope=approval["runtime_targets"],
+                dependency_ready_leaves=ready,
+                permitted_runtime_paths=sorted(r["path"] for r in approval["runtime_targets"]
+                                               if r["requires_gate"] == "P9-G1" and set(ready) & owners[r["path"]]),
+                next_gate="P9-2.1 reviewed foundation; P9-G2 and P9-G3 remain pending",
+                claim_ceiling="Accepted permission to implement reviewed V4 scope is not executed or accepted runtime conformance.",
+            )
         cross = module.read(
             root / module.PHASE / "tranche-1/P9-1.1-SourceCrosswalk.json"
         )
@@ -94,18 +113,19 @@ def verification_status(repo_root: Path) -> dict:
         path = (
             root
             / module.SIDE
-            / "tool/generated/phase9-verification/verification-v2.json"
+            / ("tool/generated/phase9-verification/" + getattr(module, "RECEIPT_FILE", "verification-v2.json"))
         )
         if path.is_file() and not path.is_symlink():
             receipt = module.read(path)
             if (
-                receipt.get("schema") == "phase9_verified_receipt_v2"
+                receipt.get("schema") == getattr(module, "RECEIPT_SCHEMA", "phase9_verified_receipt_v2")
                 and receipt.get("status") == "passed"
                 and receipt.get("scope") == "historical_current_and_pressure"
                 and receipt.get("policy_digest") == policy["record_digest"]
                 and receipt.get("tree") == tree
-                and receipt.get("runtime_authorized") is False
-                and receipt.get("P9_G1_accepted") is False
+                and receipt.get("runtime_authorized") is implementation
+                and receipt.get("P9_G1_accepted") is implementation
+                and (not implementation or receipt.get("approval_digest") == module.APPROVAL_DIGEST)
                 and receipt.get("receipt_digest")
                 == module.digest_record(receipt, "receipt_digest")
             ):
@@ -126,6 +146,13 @@ def verification_status(repo_root: Path) -> dict:
     ) as error:
         payload["current_boundary"] = "failed_closed"
         payload["recorded_full_verification"] = "not_current"
+        payload["runtime_authorized"] = False
+        payload["P9_G1_accepted"] = False
+        payload["runtime_authority_state"] = "unknown_or_unavailable_permission_withheld"
+        payload.pop("implementation_scope", None)
+        payload.pop("approval_digest", None)
+        payload.pop("dependency_ready_leaves", None)
+        payload.pop("permitted_runtime_paths", None)
         payload["error"] = str(error)
     payload["status_digest"] = module.digest_record(payload, "status_digest")
     return payload
@@ -141,11 +168,11 @@ def pressure_projection(repo_root: Path, case_id: str) -> dict:
     module = _policy(root)
     policy, tree = module.current_boundary(root)
     path = (
-        root / module.SIDE / "tool/generated/phase9-verification/pressure-results.json"
+        root / module.SIDE / ("tool/generated/phase9-verification/" + getattr(module, "REPORT_FILE", "pressure-results.json"))
     )
     report = module.read(path)
     module.require(
-        report["schema"] == "phase9_successor_pressure_results_v2"
+        report["schema"] == getattr(module, "REPORT_SCHEMA", "phase9_successor_pressure_results_v2")
         and report["report_digest"] == module.digest_record(report, "report_digest"),
         "invalid pressure evidence digest or schema",
     )

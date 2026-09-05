@@ -167,7 +167,7 @@ def browser_checks(root):
                 server.kill()
                 server.wait(timeout=5)
     print(
-        "PHASE9_BROWSER_PASS tests=14 projects=desktop,mobile screenshots=4 API_download_identity=byte_exact runtime_authorized=false"
+        "PHASE9_BROWSER_PASS tests=14 projects=desktop,mobile screenshots=4 API_download_identity=byte_exact"
     )
 
 
@@ -352,6 +352,10 @@ def cross_surface_checks(root):
 
 
 def main():
+    from active_phase import PHASE9_AUDITOR
+    if PHASE9_AUDITOR.endswith("audit_phase9_implementation.py"):
+        from test_phase9_g1_surfaces import main as g1_main
+        return g1_main()
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--browser", action="store_true")
     args = parser.parse_args()

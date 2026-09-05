@@ -1,11 +1,12 @@
 # Phase 9 GRCV4 Implementation Plan
 
-Date: 2026-09-05. Status: planning opened; implementation review pending.
+Date: 2026-09-05. Status: P9-G1 accepted; bounded implementation authorized.
 
 Phase 9 implements the accepted graph-generic `GRCV4` substrate, followed by
 a gated `GRC9V4` specialization. The accepted V4 specifications are the primary
 implementation source, read together with the paper and accepted investigation
-claims. The current work is implementation-review preparation. The companion
+claims. P9-1.9 records the user's accepted implementation review; runtime
+implementation has not started. The companion
 [checklist](./Phase-9-GRCV4-ImplementationChecklist.md) records execution;
 the [phase opening](./Phase-9-GRCV4-PhaseOpening.json) records authority,
 predecessor identities, and the completed specification merge.
@@ -171,7 +172,7 @@ runtime debt named by the acceptance gate. All execution remains pending.
 | Gate | Required decision/evidence | Initial state |
 | --- | --- | --- |
 | P9-G0: phase opening | Exact accepted release, completed no-ff merge, branch, plan, checklist, and predecessor bindings. | Recorded. |
-| P9-G1: implementation review | Support order, module ownership, source-to-test mapping, inherited debt routing, and an accepted successor verification policy. | Pending. |
+| P9-G1: implementation review | Support order, module ownership, source-to-test mapping, inherited debt routing, and an accepted successor verification policy. | Accepted; [P9-1.9 successor](./phase-9-grcv4/tranche-1/P9-1.9-G1Acceptance.json). |
 | `P9-G2[p]`: generic conformance | All applicable runtime/lifecycle cases for exact profile scope p, with independent evidence. | Pending for each profile; accepted support set empty. |
 | `P9-G3[S]`: specialization admission | Accepted `P9-G2[p]` for every p in consumed support set S, plus reviewed V4-only mechanics, legacy boundary, and test matrix. | Pending; no consumed set admitted. |
 | P9-G4: release and handoff | Exact advertised support, all applicable evidence, legacy regression results, residual-debt routing, and review acceptance. | Pending. |
@@ -223,6 +224,17 @@ specification merge, validate the accepted release, and inspect the current
 forensic authority. This bootstrap supplies planning evidence only.
 
 ### Tranche 1. Implementation review and successor verification
+
+Current disposition: the user accepted P9-1.4–P9-1.8 and the reviewed V4-only
+implementation scope through [P9-1.9](./phase-9-grcv4/tranche-1/P9-1.9-G1Review.md).
+P9-G1 is accepted. The implementation verifier checks that separate approval,
+exact target roster, additive integration and per-iteration content bindings.
+The earlier preparation states below remain historical descriptions, not the
+current gate state. All G2/G3/G4 gates, fifteen source obligations and five
+implementation follow-ups remain pending; no runtime profile is advertised.
+The dependency-ready foundation leaves are P9-2.1 and P9-2.2. Later generic
+paths cannot borrow those leaf IDs; their own accepted prerequisites remain
+required. P9-1.9 creates no runtime code.
 
 P9-1.1–P9-1.3 are prepared as the first controlled
 [review package](./phase-9-grcv4/tranche-1/P9-1.1-1.3-Review.md), with separate

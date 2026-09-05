@@ -276,7 +276,7 @@ def main() -> int:
     )
     if phase9:
         run_python(verification_script(repo_root))
-        active_post_d10_phase = "implementation_planning"
+        active_post_d10_phase = "implementation"
     elif post_d10_boundary.is_file():
         run_python(investigation_scripts / POST_D10_SPECIFICATION_AUDIT)
         active_post_d10_phase = json.loads(
@@ -342,7 +342,7 @@ def main() -> int:
         print(
             "ET_C11_D11_UX_VERIFY_PASS "
             f"status={'verified' if phase9 else 'accepted'}_{active_post_d10_phase} "
-            + ("runtime_authorized=false P9_G1=pending " if phase9 else "")
+            + ("runtime_authorized=true P9_G1=accepted runtime_support=empty " if phase9 else "")
             + "historical_rebuilds=skipped_immutable "
             "D11_overlay_rebuild=in_memory_byte_exact "
             "D11_UX_rebuilds=2_byte_exact "

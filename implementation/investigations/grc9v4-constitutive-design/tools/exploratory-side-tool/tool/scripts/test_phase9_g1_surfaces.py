@@ -1,0 +1,188 @@
+#!/usr/bin/env python3
+"""Accepted permission, empty conformance sets, and preserved negative subjects."""
+
+import argparse
+from copy import deepcopy
+import json
+from pathlib import Path
+import subprocess
+import sys
+import tempfile
+from unittest.mock import patch
+
+TOOL = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(TOOL / "src"))
+from grcv4_explorer import phase9_verification as api  # noqa: E402
+from grcv4_explorer.paths import repository_root  # noqa: E402
+from grcv4_explorer.tooling import managed_node, tool_environment  # noqa: E402
+
+
+def checks(root):
+    policy = api._policy(root)
+    status = api.verification_status(root)
+    require = policy.require
+    require(
+        status["dependency_ready_leaves"] == ["P9-2.1", "P9-2.2"]
+        and len(status["permitted_runtime_paths"]) == 11
+        and "src/pygrc/models/grc_v4_candidate_a.py"
+        not in status["permitted_runtime_paths"],
+        "G1 bypassed generic leaf dependencies",
+    )
+    require(status["current_boundary"] == "passed", str(status.get("error")))
+    require(
+        status["P9_G1_accepted"] is True
+        and status["runtime_authorized"] is True
+        and status["approval_digest"] == policy.APPROVAL_DIGEST,
+        "accepted G1 authority lost",
+    )
+    require(
+        status["accepted_generic_runtime_support"] == []
+        and status["admitted_specialization_support_sets"] == [],
+        "G1 promoted conformance",
+    )
+    require(
+        status["source_meaning"]["association_count"] == 152
+        and status["source_meaning"]["pending_source_obligations"] == 15,
+        "source meaning changed",
+    )
+    negative = api.pressure_projection(root, "normal_entry_forbidden_source")
+    positive = api.pressure_projection(root, "accepted_G1_exact_targets")
+    require(
+        negative["candidate_decision"] == "rejected"
+        and negative["assertion_result"] == "passed",
+        "negative promoted",
+    )
+    require(
+        positive["candidate_decision"] == "admitted"
+        and positive["project_effect"]["runtime_authorized"] is False,
+        "probe created authority",
+    )
+    try:
+        api.pressure_projection(root, "accepted_G1_exact_targets-unknown")
+    except KeyError:
+        pass
+    else:
+        raise ValueError("unknown full ID resolved")
+    with patch.object(api, "_policy", return_value=policy):
+        for error in [ValueError("stale approval"), KeyError("missing acceptance")]:
+            with patch.object(policy, "current_boundary", side_effect=error):
+                held = api.verification_status(root)
+                require(
+                    held["current_boundary"] == "failed_closed"
+                    and held["runtime_authorized"] is False
+                    and held["P9_G1_accepted"] is False,
+                    "failed API retained permission",
+                )
+        # A failure after the first successful current check must revoke the
+        # partially assembled positive payload, not leave true flags behind.
+        current = policy.current_boundary(root)
+        with patch.object(
+            policy,
+            "current_boundary",
+            side_effect=[current, ValueError("changed during read")],
+        ):
+            held = api.verification_status(root)
+            require(
+                held["current_boundary"] == "failed_closed"
+                and held["runtime_authorized"] is False
+                and "implementation_scope" not in held,
+                "API TOCTOU retained authority",
+            )
+        with tempfile.TemporaryDirectory(prefix="grcv4-g1-receipt-") as scratch:
+            with patch.object(policy, "SIDE", scratch):
+                destination = (
+                    Path(scratch)
+                    / "tool/generated/phase9-verification/verification-v3.json"
+                )
+                destination.parent.mkdir(parents=True)
+                missing = api.verification_status(root)
+                require(
+                    missing["runtime_authorized"] is True
+                    and missing["recorded_full_verification"] == "not_current",
+                    "receipt confused with approval",
+                )
+                value = {
+                    "schema": policy.RECEIPT_SCHEMA,
+                    "status": "passed",
+                    "scope": "historical_current_and_pressure",
+                    "policy_digest": current[0]["record_digest"],
+                    "tree": current[1],
+                    "runtime_authorized": True,
+                    "P9_G1_accepted": True,
+                    "approval_digest": policy.APPROVAL_DIGEST,
+                }
+                value["receipt_digest"] = policy.digest_record(value, "receipt_digest")
+                destination.write_bytes(policy.canonical(value))
+                require(
+                    api.verification_status(root)["recorded_full_verification"]
+                    == "recorded_pass_matching_current_inputs",
+                    "matching receipt lost",
+                )
+                for key, changed in [
+                    ("approval_digest", "0" * 64),
+                    ("tree", {}),
+                    ("runtime_authorized", False),
+                    ("schema", "phase9_verified_receipt_v2"),
+                ]:
+                    altered = deepcopy(value)
+                    altered[key] = changed
+                    altered["receipt_digest"] = policy.digest_record(
+                        altered, "receipt_digest"
+                    )
+                    destination.write_bytes(policy.canonical(altered))
+                    require(
+                        api.verification_status(root)["recorded_full_verification"]
+                        == "not_current",
+                        "stale receipt promoted: " + key,
+                    )
+    subprocess.run(
+        [sys.executable, str(TOOL / "scripts/run_phase9_notebook.py")],
+        cwd=root,
+        check=True,
+    )
+    result = subprocess.run(
+        [str(managed_node()), str(TOOL / "phase9-web/verification.test.mjs")],
+        cwd=TOOL / "phase9-web",
+        env=tool_environment(),
+        check=True,
+        capture_output=True,
+        text=True,
+    )
+    print(result.stdout, end="")
+    output = {
+        "schema": "phase9_G1_surface_evidence_v1",
+        "API": status,
+        "negative_probe": negative,
+        "accepted_scope_probe": positive,
+        "notebook": json.loads(
+            (TOOL / "generated/phase9-verification/notebook-status.json").read_text()
+        ),
+        "node_stdout": result.stdout,
+        "runtime_support": [],
+    }
+    require(output["notebook"] == status, "notebook/API identity differs")
+    (TOOL / "generated/phase9-verification/g1-surface-evidence.json").write_bytes(
+        policy.canonical(output) + b"\n"
+    )
+    print(
+        "PHASE9_G1_SURFACES_PASS API_notebook_identity=byte_exact negative_candidate=rejected P9_G1=accepted runtime_support=empty"
+    )
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--browser", action="store_true")
+    args = parser.parse_args()
+    root = repository_root()
+    if Path(sys.prefix).resolve() != (root / ".venv").resolve():
+        raise RuntimeError("use the existing .venv")
+    if args.browser:
+        from test_phase9_surfaces import browser_checks
+
+        browser_checks(root)
+    else:
+        checks(root)
+
+
+if __name__ == "__main__":
+    main()

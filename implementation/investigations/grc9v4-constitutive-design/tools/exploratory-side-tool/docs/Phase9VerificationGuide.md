@@ -2,8 +2,9 @@
 
 This is implementation-governance tooling, not a new scientific graph or a
 forensic claim API. The frozen specifications, paper, accepted D10/D11 claims,
-and existing explorer retain their authority and bytes. P9-G1 is pending;
-runtime authorization is false and accepted support sets are empty.
+and existing explorer retain their authority and bytes. P9-G1 is accepted;
+bounded implementation is authorized, but accepted runtime support sets remain
+empty. GRC9V4 still requires its separate P9-G3 admission.
 
 ## CLI and browser
 
@@ -15,16 +16,20 @@ From the repository root, use the existing `.venv`:
 .venv/bin/python implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/run.py serve-phase9
 ```
 
-`verify-phase9` executes the accepted-release audit, four unchanged historical
-audits in their exact historical checkout, source/architecture verification,
-the successor pressure matrix, and API/notebook/Node checks. It writes an
+`verify-phase9` checks current accepted implementation authority, then replays
+the unchanged accepted V2 verifier on commit `6e0a507`, including its four
+historical audits, source/architecture, pressure and API/notebook/Node checks.
+It then executes current G1 pressure and API/notebook/Node checks and writes an
 ignored execution receipt. The normal `verify-iteration9` additionally runs
 the unchanged D11 suites and both old and Phase 9 browser regressions.
-Neither command accepts P9-G1 or installs runtime permission.
+Neither command creates approval; both validate the separately recorded user
+acceptance. `--boundary-only` on `verify-phase9` or
+`verify-post-d10-specifications` checks current authority/release only and is
+never labeled a full verification pass.
 
 `serve-phase9` opens a read-only local server at `http://127.0.0.1:4174`.
 Visit that address to refresh current checks, inspect exact source hashes and
-separate P9-1.7/P9-1.8 results, and download the same status JSON returned by
+the accepted P9-1.4–P9-1.9 results, and download the same status JSON returned by
 the API. Stop the server with Ctrl-C. No network dependency installation is
 needed. The existing D11 explorer remains separately available through
 `run.py serve-iteration11-d11`; its accepted records and candidate labels do
@@ -51,7 +56,9 @@ sys.path.insert(0, str(tool / "src"))
 from grcv4_explorer.phase9_verification import verification_status
 
 status = verification_status(root)
-assert status["runtime_authorized"] is False
+assert status["P9_G1_accepted"] is True  # separately accepted implementation scope
+assert status["runtime_authorized"] is True
+assert status["accepted_generic_runtime_support"] == []  # not conformance
 ```
 
 The separate `phase9_verification` module does not alter historical exports.
@@ -80,8 +87,9 @@ and [separate leaf results](../../../../../phase-9-grcv4/tranche-1/P9-1.7-1.8-Ex
 record the precise claim ceiling and outstanding gates.
 
 The predecessor P9-1.6 policy, auditor, evidence and full prepared artifact
-snapshot are retained. V2's exact-path/content-bound successor is the normal
-active route; deleting the phase marker cannot restore the old verifier.
+snapshot are retained. The accepted V2 checker is replayed on its historical
+commit; the G1 implementation successor is the current active route. Deleting
+the acceptance or phase marker cannot restore the old verifier.
 No old scientific scenario or accepted tool artifact is relabeled as a Phase 9
 implementation result.
 
@@ -92,8 +100,10 @@ probe ID and downloads the same `pressure_projection(root, case_id)` API
 payload. For `normal_entry_forbidden_source`, the actual normal CLI rejected
 the temporary candidate; its negative-test assertion passed. Both facts stay
 visible, alongside the explicit statement that no live permission was created.
-`future_explicit_approval_exact_targets` shows the converse simulated admission,
-without erasing the old historical false flag or granting current authority.
+`accepted_G1_exact_targets` shows an isolated generic addition admitted under
+the actual accepted scope, without creating any new live permission or support.
+The older `future_explicit_approval_exact_targets` case remains in the exact
+historical V2 replay, where runtime authority was false.
 Unknown full IDs reject; similar displayed prefixes never select another case.
 
 The notebook's second cell clears old variables and binds the selected checkout
@@ -108,7 +118,7 @@ record applicability and named guide coverage. Per-run manifests, exact mutation
 preimages, decisive traces and actual command output are retained in
 `tool/generated/phase9-verification/runs/<run-id>/pressure-results.json`;
 the latest run and three batch results also have convenient top-level files.
-The tracked pressure file is a reproducible coverage index, not a substitute
+For the historical V2 subject, the tracked pressure file is a reproducible coverage index, not a substitute
 for those current-input-bound raw results. API/notebook normalized projections
 are retained in `surface-evidence.json`; browser output includes screenshots
 and the tested JSON downloads.
@@ -118,9 +128,28 @@ The source-meaning panel keeps `accepted_frozen` specification authority and
 denominator is a source population, not executed V4 tests; fifteen obligations
 remain pending under the already reviewed routing. This surface adds no claims.
 
-The future-runtime positive tests use disposable synthetic approval fixtures
+The historical V2 future-runtime positive tests use disposable synthetic approval fixtures
 with an externally supplied test trust anchor, release/predecessor bindings,
 and exact before/after hashes. They test new V4 files and the two proposed
-additive integration paths; they do not enact approval. A real runtime policy
-and its reviewed dispatch remain P9-1.9 work. Optional completion tests are
+additive integration paths; they do not enact approval. P9-1.9 now supplies the
+separately accepted real implementation policy and dispatch. Optional completion tests are
 likewise scoped synthetic evidence, not executed GRC9V4 conformance.
+
+## Accepted P9-G1 successor
+
+The [G1 review](../../../../../phase-9-grcv4/tranche-1/P9-1.9-G1Review.md)
+records the accepted scope and executable scenarios. Current V3 evidence is
+`verification-v3.json`, `g1-pressure-results.json` and `g1-surface-evidence.json`;
+raw G1 runs are archived under `runs/<run-id>/`. The exact V2 replay's receipt,
+raw pressure, historical evidence and surface results are retained separately
+under `accepted-predecessor/`. Do not compare their input identities as if they
+were the same current tree.
+
+The runtime manifest binds exact current work paths, hashes and registered
+owning-leaf IDs. P9-2.1/P9-2.2 are currently dependency-ready, with eleven
+eligible runtime paths; later generic and specialization leaves retain their
+own gates. API/export includes `dependency_ready_leaves` and
+`permitted_runtime_paths`, separately from the full conditional target roster.
+G1 approval permits reviewed work under those conditions; the manifest is integrity
+data, not an acceptance mechanism. No unexecuted profile may be advertised.
+New scope, G2 conformance or G3 admission needs a separately reviewed successor.

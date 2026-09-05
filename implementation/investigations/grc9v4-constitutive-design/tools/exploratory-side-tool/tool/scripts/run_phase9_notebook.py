@@ -53,7 +53,7 @@ def main():
         + "\n"
     )
     print(
-        f"PHASE9_NOTEBOOK_PASS cells={len(cells)} API_identity=byte_exact runtime_authorized=false P9_G1=pending"
+        f"PHASE9_NOTEBOOK_PASS cells={len(cells)} API_identity=byte_exact runtime_authorized={str(observed['runtime_authorized']).lower()} P9_G1={'accepted' if observed['P9_G1_accepted'] else 'pending'} runtime_support=empty"
     )
 
 

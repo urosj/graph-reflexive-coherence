@@ -5,7 +5,7 @@ import subprocess
 
 OPENING = "implementation/Phase-9-GRCV4-PhaseOpening.json"
 OPENING_COMMIT = "7c772d36bd4cf12b4a444b7b954b74612de2926f"
-PHASE9_AUDITOR = "implementation/phase-9-grcv4/verification/audit_phase9_successor.py"
+PHASE9_AUDITOR = "implementation/phase-9-grcv4/verification/audit_phase9_implementation.py"
 HISTORICAL_AUDITOR = (
     "implementation/investigations/grc9v4-constitutive-design/"
     "scripts/audit_grcv4_post_d10_specifications.py"

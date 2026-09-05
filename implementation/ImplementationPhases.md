@@ -448,7 +448,8 @@ release and its explicit no-fast-forward merge into `main`. Its
 [checklist](./Phase-9-GRCV4-ImplementationChecklist.md), and
 [opening record](./Phase-9-GRCV4-PhaseOpening.json) own the current phase
 state. Each generic support scope precedes its gated `GRC9V4` specialization.
-Implementation review is pending; no V4 runtime conformance is claimed.
+The later [P9-G1 acceptance](./phase-9-grcv4/tranche-1/P9-1.9-G1Acceptance.json)
+authorizes bounded V4 implementation. No V4 runtime conformance is claimed.
 
 The core phase numbers are now reserved for model/runtime foundations, while
 host, IDE, driver, verification, and packaging work lives in the separate
@@ -1198,7 +1199,8 @@ and accepted investigation claims for mathematical meaning and claim authority.
 
 Planning opened on 2026-09-05 from the accepted specification merge
 `e00a8844c045ac4338fa52afb6ab096420fb6161`, on `impl/phase-9-grcv4`.
-Implementation review is the next gate. The opening carries the accepted
+P9-G1 implementation review is accepted; the next work is the reviewed
+foundation starting at P9-2.1. The unchanged historical opening carries the accepted
 D10/D10.2 and D11 populations, their debt and claim boundaries, and the
 frozen release. Existing family behavior remains the regression baseline.
 

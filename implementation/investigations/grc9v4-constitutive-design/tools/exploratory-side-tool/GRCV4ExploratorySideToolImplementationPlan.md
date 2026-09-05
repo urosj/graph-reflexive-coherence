@@ -1575,6 +1575,22 @@ The old scientific graph, accepted scenarios and ET-C11 candidate remain
 unchanged. Preparation/verification status is tracked in the checklist and
 separate Phase 9 leaf records, not inferred as scientific or runtime support.
 
+### P9-1.9 accepted implementation successor
+
+The user has separately accepted P9-1.4–P9-1.8 and P9-G1's reviewed V4-only
+implementation scope. The V3 verifier binds the accepted release and exact
+approval, admits registered generic source/test/assets and two additive-only
+integration points, and holds GRC9V4 behind its independent P9-G3 gate.
+Per-iteration content/evidence manifests do not grant conformance, enlarge
+scope or bypass owning-leaf dependencies. At this transition only P9-2.1 and
+P9-2.2 are ready. The P9-1.9 execution record reconciles every supplied outlier
+and prerequisite, retaining explicit reuse and nonapplicability limits.
+The accepted V2 checker and records remain exact on commit `6e0a507`;
+normal verification replays them there, not against the implementation tree.
+API, real notebook cells and browser/export distinguish accepted permission
+from the still-empty runtime support sets. Earlier pending statements in the
+planning-successor sections describe historical preparation checkpoints.
+
 ### Scientific completion ceiling
 
 The P9-1.6–P9-1.8 pressure-guide correction adds three independently retained

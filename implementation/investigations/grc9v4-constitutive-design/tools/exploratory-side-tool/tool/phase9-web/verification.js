@@ -1,12 +1,16 @@
 export function checkedStatus(value) {
-  if (value?.schema !== "phase9_governance_status_v1" || value.output_class !== "implementation_verification_status_not_forensic_trace") throw new Error("Unrecognized verification status");
-  if (value.runtime_authorized !== false || value.P9_G1_accepted !== false || !Array.isArray(value.accepted_generic_runtime_support) || value.accepted_generic_runtime_support.length !== 0 || !Array.isArray(value.admitted_specialization_support_sets) || value.admitted_specialization_support_sets.length !== 0) throw new Error("Unverified runtime authority or support");
+  if (!['phase9_governance_status_v1','phase9_governance_status_v2'].includes(value?.schema) || value.output_class !== "implementation_verification_status_not_forensic_trace") throw new Error("Unrecognized verification status");
+  const implementation = value.schema === 'phase9_governance_status_v2' && value.current_boundary === 'passed';
+  if (value.runtime_authorized !== implementation || value.P9_G1_accepted !== implementation || !Array.isArray(value.accepted_generic_runtime_support) || value.accepted_generic_runtime_support.length !== 0 || !Array.isArray(value.admitted_specialization_support_sets) || value.admitted_specialization_support_sets.length !== 0) throw new Error("Unverified runtime authority or support");
+  if (implementation && (value.approval_digest !== 'cd2c52f30477e1042bb903bd0553da237ddccc9cad373afecc1a84e4e0b37ea2' || value.runtime_authority_state !== 'accepted_P9_G1_bounded_implementation_not_conformance' || !Array.isArray(value.implementation_scope) || value.implementation_scope.length !== 43)) throw new Error('Missing accepted P9-G1 scope');
+  if (implementation && (JSON.stringify(value.dependency_ready_leaves) !== JSON.stringify(['P9-2.1','P9-2.2']) || !Array.isArray(value.permitted_runtime_paths) || value.permitted_runtime_paths.length !== 11)) throw new Error('Invalid dependency-ready permission');
   if (!['passed', 'failed_closed'].includes(value.current_boundary)) throw new Error("Unknown boundary disposition");
   if (!['not_current', 'recorded_pass_matching_current_inputs'].includes(value.recorded_full_verification)) throw new Error("Unknown recorded evidence disposition");
   if (value.current_boundary !== 'passed' && value.recorded_full_verification !== 'not_current') throw new Error("Failed boundary cannot retain a passing receipt");
   if (value.current_boundary === 'passed') {
     if (!/^[0-9a-f]{64}$/.test(value.policy_digest) || !Array.isArray(value.source_refs) || !value.source_refs.length || !value.source_refs.every(r => typeof r.path === 'string' && /^[0-9a-f]{64}$/.test(r.sha256))) throw new Error('Missing verified source bindings');
-    if (!Array.isArray(value.iterations) || value.iterations.length !== 2 || !value.iterations.every((r, i) => r.iteration_id === ['P9-1.7', 'P9-1.8'][i] && ['in_progress', 'implemented_and_verified'].includes(r.status) && r.reviewer_decision === 'pending_user_review')) throw new Error('Invalid leaf authority');
+    const ids = implementation ? ['P9-1.4','P9-1.5','P9-1.6','P9-1.7','P9-1.8','P9-1.9'] : ['P9-1.7','P9-1.8'];
+    if (!Array.isArray(value.iterations) || value.iterations.length !== ids.length || !value.iterations.every((r, i) => r.iteration_id === ids[i] && ['in_progress', 'implemented_and_verified'].includes(r.status) && r.reviewer_decision === (implementation ? 'accepted_by_user' : 'pending_user_review'))) throw new Error('Invalid leaf authority');
   }
   return value;
 }
@@ -34,6 +38,8 @@ async function refresh() {
   const button = document.querySelector('#download');
   button.disabled = true;
   document.querySelector('#boundary').textContent = 'Not verified';
+  document.querySelector('#authority').textContent = 'Not verified / permission withheld';
+  document.querySelector('#next-work').textContent = 'Next work not verified.';
   document.querySelector('#recorded').textContent = 'Not current';
   document.querySelector('#sources').replaceChildren();
   document.querySelector('#iterations').textContent = 'No verified leaf results.';
@@ -47,7 +53,9 @@ async function refresh() {
     if (generation !== refreshGeneration) return;
     if (value.current_boundary !== 'passed') throw new Error(value.error || 'Current inputs failed verification');
     status.classList.remove('error');
-    status.textContent = 'Current planning checks passed. Runtime remains unauthorized.';
+    status.textContent = value.P9_G1_accepted ? 'P9-G1 accepted. Bounded implementation is authorized; runtime conformance remains pending.' : 'Current planning checks passed. Runtime remains unauthorized.';
+    document.querySelector('#authority').textContent = value.P9_G1_accepted ? 'Accepted / bounded implementation only' : 'Pending / not authorized';
+    document.querySelector('#next-work').textContent = value.P9_G1_accepted ? `Dependency-ready leaves: ${value.dependency_ready_leaves.join(', ')}. ${value.permitted_runtime_paths.length} runtime paths are currently eligible under their owners. Later leaves remain gated.` : 'P9-G1 review remains pending.';
     document.querySelector('#boundary').textContent = 'Passed · current bytes';
     document.querySelector('#recorded').textContent = value.recorded_full_verification === 'not_current' ? 'Not current · rerun CLI' : 'Recorded pass · matching inputs';
     document.querySelector('#policy').textContent = `Policy digest: ${value.policy_digest}`;

@@ -1136,7 +1136,7 @@ P9-G1 runtime authority. See the [access guide](./docs/Phase9VerificationGuide.m
       browser refresh/download against the same authority boundary.
 - [x] P9-1.8: Reconcile executable scenarios and normal-entry verification;
       retain the unchanged D11 API/notebook/browser checks and artifacts.
-- [ ] Record explicit user acceptance and P9-1.9/P9-G1 authority separately.
+- [x] Record explicit user acceptance and P9-1.9/P9-G1 authority separately.
 
 - [x] Close the supplied pressure-guide gaps with attributable rejection,
       combined faults, broken-checker controls and source-admitted semantics.
@@ -1158,9 +1158,25 @@ human acceptance of ET-C11.
 - [x] Route both normal entry points through the shared state-detected dispatcher.
 - [x] Add a portable, byte-identical copy of the already hash-bound acceptance audit.
 - [x] Retain focused dispatch/authority checks and existing normal API/notebook/browser regressions.
-- [ ] Complete P9-1.7's adversarial authority/composition review.
-- [ ] Complete P9-1.8's API/notebook/browser/scenario reconciliation.
-- [ ] Record P9-G1 under separate user acceptance before runtime/source/test/dependency work.
+- [x] Complete P9-1.7's adversarial authority/composition review.
+- [x] Complete P9-1.8's API/notebook/browser/scenario reconciliation.
+- [x] Record P9-G1 under separate user acceptance before runtime/source/test/dependency work.
+
+## Phase 9 accepted implementation authority — P9-1.9
+
+- [x] Bind the user's explicit acceptance to the immutable P9-1.4–P9-1.8 evidence.
+- [x] Dispatch normal and dedicated verification to the accepted G1 successor.
+- [x] Admit exact registered generic V4 work and additive integration; reject
+      unregistered paths, legacy changes, stale approval and premature GRC9V4 work.
+- [x] Preserve accepted planning checks on commit `6e0a507` and their historical audits.
+- [x] Show accepted implementation permission in API/notebook/browser/export,
+      while leaving runtime conformance and support empty.
+- [x] Reconcile the P9-1.9 guide's sixteen outlier rows and all eight prerequisite
+      leaves; enforce source-bound ownership and dependency readiness, not paths alone.
+- [ ] Accept any P9-G2/P9-G3 runtime scope (not granted by P9-G1).
+
+This downstream user approval does not change ET-C10 scientific authority or
+ET-C11's separate UX human-acceptance state. No model implementation occurs here.
 
 ## Iteration 11. D11 API, Notebook, And Browser UX
 

@@ -6,11 +6,18 @@ test('live API, source bindings, leaf states and downloadable JSON agree', async
   expect(response.headers()['cache-control']).toBe('no-store');
   const api = await response.json();
   expect(api.current_boundary).toBe('passed');
-  expect(api.runtime_authorized).toBe(false);
+  expect(api.runtime_authorized).toBe(true);
+  expect(api.P9_G1_accepted).toBe(true);
+  expect(api.accepted_generic_runtime_support).toEqual([]);
+  expect(api.admitted_specialization_support_sets).toEqual([]);
+  expect(api.dependency_ready_leaves).toEqual(['P9-2.1','P9-2.2']);
   await page.goto('/');
   await expect(page.locator('#boundary')).toContainText('Passed');
   await expect(page.locator('#iterations')).toContainText('P9-1.7');
   await expect(page.locator('#iterations')).toContainText('P9-1.8');
+  await expect(page.locator('#iterations')).toContainText('P9-1.9');
+  await expect(page.locator('#authority')).toContainText('Accepted / bounded implementation only');
+  await expect(page.locator('#next-work')).toContainText('P9-2.1, P9-2.2');
   await expect(page.locator('#policy')).toContainText(api.policy_digest);
   await expect(page.locator('#sources')).toContainText(api.source_refs[0].sha256);
   const downloading = page.waitForEvent('download');
@@ -30,11 +37,13 @@ test('refresh failure removes stale success and disables download', async ({page
   await expect(page.locator('#boundary')).toHaveText('Not verified');
   await expect(page.locator('#download')).toBeDisabled();
   await expect(page.locator('#sources')).toBeEmpty();
+  await expect(page.locator('#authority')).toHaveText('Not verified / permission withheld');
+  await expect(page.locator('#next-work')).toHaveText('Next work not verified.');
 });
 
 test('forged runtime payload and changed digest fail closed', async ({page, request}) => {
   const original = await (await request.get('/api/status')).json();
-  for (const patch of [{runtime_authorized: true}, {claim_ceiling: 'forged claim'}]) {
+  for (const patch of [{runtime_authorized: false}, {accepted_generic_runtime_support: ['C_OS']}, {claim_ceiling: 'forged claim'}]) {
     await page.route('**/api/status', route => route.fulfill({contentType: 'application/json', body: JSON.stringify({...original, ...patch})}));
     await page.goto('/');
     await expect(page.locator('#status')).toContainText('Held:');
@@ -53,7 +62,7 @@ test('actual negative assertion and future fixture keep their subjects through U
   await page.goto('/');
   await expect(page.locator('#source-meaning')).toContainText('indeterminate_requires_review');
   await expect(page.locator('#source-meaning')).toContainText('accepted_frozen');
-  for (const [id,decision] of [['normal_entry_forbidden_source','rejected'],['future_explicit_approval_exact_targets','admitted']]) {
+  for (const [id,decision] of [['normal_entry_forbidden_source','rejected'],['accepted_G1_exact_targets','admitted']]) {
     const api=await (await request.get(`/api/probe?case_id=${id}`)).json();
     await page.selectOption('#probe',id);
     await page.locator('#probe-refresh').click();
@@ -70,7 +79,7 @@ test('actual negative assertion and future fixture keep their subjects through U
 
 test('older subject A finishing after B cannot overwrite B', async ({page,request}) => {
   const a=await (await request.get('/api/probe?case_id=normal_entry_forbidden_source')).json();
-  const b=await (await request.get('/api/probe?case_id=future_explicit_approval_exact_targets')).json();
+  const b=await (await request.get('/api/probe?case_id=accepted_G1_exact_targets')).json();
   let releaseA, seenA;
   const started=new Promise(resolve=>{seenA=resolve;});
   const release=new Promise(resolve=>{releaseA=resolve;});
@@ -79,7 +88,7 @@ test('older subject A finishing after B cannot overwrite B', async ({page,reques
     else await route.fulfill({json:b});
   });
   await page.goto('/');await page.locator('#probe-refresh').click();await started;
-  await page.selectOption('#probe','future_explicit_approval_exact_targets');
+  await page.selectOption('#probe','accepted_G1_exact_targets');
   await expect(page.locator('#probe-candidate')).toHaveText('admitted');
   releaseA();
   await page.waitForResponse(r=>r.url().includes('normal_entry_forbidden_source'));

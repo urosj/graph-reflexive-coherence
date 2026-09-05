@@ -1,0 +1,10 @@
+{
+  "schema": "phase9_runtime_work_manifest_v1",
+  "approval_digest": "cd2c52f30477e1042bb903bd0553da237ddccc9cad373afecc1a84e4e0b37ea2",
+  "release_id": "grcv4-spec-release-sha256:9f4c8fe5b57b1c477d834a3e4dae3f98a2b18c70e6e7f598e3c9652170c8645f",
+  "entries": [],
+  "accepted_generic_runtime_support": [],
+  "admitted_specialization_support_sets": [],
+  "claim_ceiling": "Exact current implementation content bindings, not review acceptance or conformance.",
+  "record_digest": "3edd4b07b77b2ee04dc1ae3f672d3ecaf3d94941e939ccd9652c7a2371aeebe7"
+}

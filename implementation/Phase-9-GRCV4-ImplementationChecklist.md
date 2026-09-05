@@ -1,6 +1,6 @@
 # Phase 9 GRCV4 Implementation Checklist
 
-Date: 2026-09-05. Status: planning opened; implementation review pending.
+Date: 2026-09-05. Status: P9-G1 accepted; bounded implementation authorized.
 
 Companions: [plan](./Phase-9-GRCV4-ImplementationPlan.md),
 [phase opening](./Phase-9-GRCV4-PhaseOpening.json), and
@@ -50,7 +50,7 @@ pending while an accepted C_OS path advances to reviewed specialization work.
 | Gate | State | Evidence or remaining requirement |
 | --- | --- | --- |
 | P9-G0 | Recorded | Branch and planning documents; accepted release audit and no-ff merge identity. |
-| P9-G1 | Pending | Review acceptance, full obligation map, and successor verification routing. |
+| P9-G1 | Accepted | [P9-1.9 acceptance](./phase-9-grcv4/tranche-1/P9-1.9-G1Acceptance.json), exact implementation scope and successor dispatch. |
 | `P9-G2[p]` | Pending per profile | Full applicable generic runtime/lifecycle fixture product for exact profile scope p. |
 | `P9-G3[S]` | Pending per consumed set | Accepted G2 for every profile in S and reviewed GRC9V4 specialization scope. |
 | P9-G4 | Pending | Runtime conformance, regression evidence, reviewed support set, and handoff. |
@@ -127,8 +127,19 @@ declared planning files.
   authorized V4 source/test additions are admitted in their respective states.
 - [x] P9-1.8: Update tool plan/checklist and any API/notebook/browser surfaces
   affected by that verification change; retain consistent authority labels.
-- [ ] P9-1.9: Record accepted P9-G1 successor authority with exact mutation
+- [x] P9-1.9: Record accepted P9-G1 successor authority with exact mutation
   scope and release bindings before runtime work starts.
+
+P9-1.9 current disposition: the user explicitly accepted P9-1.4–P9-1.8 and
+the reviewed V4-only implementation scope. The [G1 review](./phase-9-grcv4/tranche-1/P9-1.9-G1Review.md)
+and [execution record](./phase-9-grcv4/tranche-1/P9-1.9-ExecutionRecord.json)
+record acceptance separately from the unchanged historical review evidence.
+The historical pending statements below describe those earlier checkpoints;
+they are superseded for P9-G1 only. G2/G3/G4, all runtime support, fifteen
+source obligations and five implementation follow-ups remain pending. No
+runtime code was added by this gate-recording step. Dependency-ready work:
+P9-2.1 and P9-2.2, with eleven currently eligible runtime paths. Tranche 1 is
+reconciled as the review/authorization tranche, not as Phase 9 completion.
 
 P9-1.1–P9-1.3 evidence: [review package](./phase-9-grcv4/tranche-1/P9-1.1-1.3-Review.md)
 and [separate execution results](./phase-9-grcv4/tranche-1/P9-1.1-1.3-ExecutionRecord.json).
