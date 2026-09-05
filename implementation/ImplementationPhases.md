@@ -423,6 +423,7 @@ The exact filenames may vary, but the phase plan assumes a similar separation.
 | 6 | `GRC9` Mechanical Substrate | nine-slot runtime plus telemetry, visuals, and GRCL-9 lowering |
 | 7 | `GRC9V3` Hybrid | combined mechanical + semantic model |
 | 8 | `LGRC-9` Causal-History Substrate | Lorentzian/event-driven nine-port planning and first runtime levels |
+| 9 | `GRCV4` Substrate and `GRC9V4` Specialization | accepted V4 contract implementation; planning opened, review pending |
 
 ## Applications / IDE Track Overview
 
@@ -440,6 +441,14 @@ core Phase 8 without renumbering host/IDE work.
 | A5 | Packaging + Examples | docs, examples, release-ready structure |
 
 ## Current Family Completion Read
+
+Phase 9 is opened for `GRCV4` planning after the accepted V4 specification
+release and its explicit no-fast-forward merge into `main`. Its
+[plan](./Phase-9-GRCV4-ImplementationPlan.md),
+[checklist](./Phase-9-GRCV4-ImplementationChecklist.md), and
+[opening record](./Phase-9-GRCV4-PhaseOpening.json) own the current phase
+state. Each generic support scope precedes its gated `GRC9V4` specialization.
+Implementation review is pending; no V4 runtime conformance is claimed.
 
 The core phase numbers are now reserved for model/runtime foundations, while
 host, IDE, driver, verification, and packaging work lives in the separate
@@ -1172,6 +1181,74 @@ movement, and unrestricted movement claims remain blocked.
 - The synchronous-limit reduction is testable
 - No existing `GRC9` or `GRC9V3` runtime semantics are silently changed
 
+## Phase 9. `GRCV4` Substrate and `GRC9V4` Specialization
+
+### Goal
+
+Implement the accepted profile-explicit graph-generic V4 substrate and then
+its nine-port specialization. The frozen
+[GRCV4 specification](../specs/grc-v4-spec.md),
+[V4 interface extension](../specs/grc-common-interface-v4-ext.md), and
+[GRC9V4 specification](../specs/grc-9-v4-spec.md) are the primary implementation
+sources, used together with the
+[GRC-v4 paper](./investigations/grc9v4-constitutive-design/drafts/2026-09-GRC-V4.md)
+and accepted investigation claims for mathematical meaning and claim authority.
+
+### Current state and scope
+
+Planning opened on 2026-09-05 from the accepted specification merge
+`e00a8844c045ac4338fa52afb6ab096420fb6161`, on `impl/phase-9-grcv4`.
+Implementation review is the next gate. The opening carries the accepted
+D10/D10.2 and D11 populations, their debt and claim boundaries, and the
+frozen release. Existing family behavior remains the regression baseline.
+
+The proposed first path closes generic `C_OS` dynamics and its applicable
+lifecycle/fixture product before `P9-G2[C_OS]`. The next reviewed route may
+be `A_OS` or C-only GRC9V4 pressure after `P9-G3[C_OS]`. Other realizations
+advance independently through profile-indexed G2 gates; RG2b or Candidate A
+expansion holds do not block an otherwise accepted C_OS path.
+
+Top-level tranches organize the work; each `P9-N.M` leaf is an independently
+executed and reviewed iteration. Candidate, lifecycle, and compatibility
+children retain their own evidence and review. Completing a leaf does not
+accept a tranche. A failure stops dependent work unless it invalidates a
+shared predecessor contract. Advertised support requires all applicable
+specification evidence for each exact profile and specialization scope.
+
+### Deliverables
+
+- [Phase 9 implementation plan](./Phase-9-GRCV4-ImplementationPlan.md)
+- [Phase 9 execution checklist](./Phase-9-GRCV4-ImplementationChecklist.md)
+- [Phase 9 opening and predecessor bindings](./Phase-9-GRCV4-PhaseOpening.json)
+- Reviewed source-to-code/test and inherited-obligation maps
+- Successor verification that handles planning and authorized V4 source/test
+  work while preserving historical release and legacy contract checks
+- V4 common interface, candidate/realization implementations, immutable
+  lifecycle, exact serialization, typed failures, and runtime receipts
+- GRC9V4 D11 expansion, hybrid completion, and independent disabled surfaces
+- Runtime conformance artifacts, declared support matrix, and reviewed handoff
+
+### Checklist
+
+- [x] Create the phase branch, plan, checklist, and opening record.
+- [x] Bind the accepted release and completed no-ff specification merge.
+- [ ] Accept the implementation review and successor verification policy.
+- [ ] Implement and verify each declared generic profile/lifecycle under
+  its own `P9-G2[p]` gate, starting with the early C_OS path.
+- [ ] Admit exact consumed sets through `P9-G3[S]` and verify their dependent
+  GRC9V4 specialization, including separately reviewed compatibility cells.
+- [ ] Review runtime conformance, legacy regressions, and residual debt.
+
+### Exit criteria
+
+Each advertised profile passes every applicable common, candidate,
+realization, lifecycle, and specialization case through actual runtime
+execution. Full GRC9V4 conformance includes its exact disabled surfaces.
+Accepted release bytes and older family contracts remain preserved.
+Remaining scientific claims and unimplemented profiles are explicitly routed
+in the handoff. A partial support release does not silently close the full
+ten-profile plan.
+
 ## Application Phase A1. Embedding Surface
 
 ### Goal
@@ -1311,7 +1388,7 @@ Make the implementation usable outside the development loop.
 
 ## Dependency Order
 
-The core model/runtime critical path is:
+The established core model/runtime sequence through Phase 8 is:
 
 1. Phase 0
 2. Phase 1
@@ -1322,6 +1399,12 @@ The core model/runtime critical path is:
 7. Phase 6
 8. Phase 7
 9. Phase 8
+
+Phase 9 follows the accepted V4 investigation, paper, specification release,
+and specification-branch merge. Its internal dependency is profile-indexed
+generic `GRCV4` conformance before admission of the exact consumed `GRC9V4`
+support set; unrelated profiles may remain pending. The phase number does not make
+ongoing Phase 8 Lorentzian work a prerequisite for synchronous V4.
 
 The Applications / IDE track should be read as a separate downstream path:
 
