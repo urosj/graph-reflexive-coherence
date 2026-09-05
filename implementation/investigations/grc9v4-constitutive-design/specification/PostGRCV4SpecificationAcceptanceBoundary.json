@@ -1,0 +1,75 @@
+{
+  "schema_version": "grcv4_post_specification_acceptance_boundary_v1",
+  "artifact_id": "GRCV4-POST-SPECIFICATION-ACCEPTANCE-BOUNDARY-v1",
+  "date": "2026-09-05",
+  "status": "accepted_specification_frozen_awaiting_branch_closure",
+  "active_phase": "specification_release_accepted",
+  "predecessor_phase_boundary": {
+    "path": "implementation/investigations/grc9v4-constitutive-design/specification/PostD10SpecificationBoundary.json",
+    "sha256": "f4fb7d5b5a4b5d9ad38105cec89f6e2b16eaad3afc02af4da8f51dffe6fa277e",
+    "relationship": "release_bound_immutable_predecessor"
+  },
+  "phase_authority": {
+    "authorization": "GRCV4_GRC9V4_SPECIFICATION_RELEASE_ACCEPTED_AND_FROZEN",
+    "path": "implementation/investigations/grc9v4-constitutive-design/specification/GRCV4SpecificationReleaseAcceptanceGate.json",
+    "sha256": "16baec7b700d6e7752abc020e0bb2d1efbd6b6aba16966a2d067c384160cdca3",
+    "decision_record_digest": "914761881649b34bd7d0e80ef006551696c30190308544587d267800634faa11"
+  },
+  "accepted_release": {
+    "path": "specs/grc-v4-specification-release.json",
+    "release_id": "grcv4-spec-release-sha256:9f4c8fe5b57b1c477d834a3e4dae3f98a2b18c70e6e7f598e3c9652170c8645f",
+    "file_sha256": "bba0bb649bc2e80c5bfa99f96bd5824bbdda3b3fbc87fb68c3e3a59da1cee46b",
+    "detached_checksum_path": "specs/grc-v4-specification-release.sha256",
+    "detached_checksum_file_sha256": "50b20509b84a6b21f3036ecb1d7e13861f662bc8319873c5321fc0317ada7e33",
+    "state": "frozen_normative_preimplementation_contract"
+  },
+  "phase_policy": {
+    "specification_files": "frozen_to_accepted_release_hashes",
+    "specification_release_manifest": "frozen_to_accepted_release_hash",
+    "proposal_and_paper": "frozen_to_accepted_D11_propagation",
+    "D10_D11_and_historical_records": "immutable",
+    "src_and_tests": "not_authorized_until_accepted_implementation_review",
+    "runtime_conformance_claims": "held_until_required_execution_evidence",
+    "GRC9_and_GRC9V3": "unchanged"
+  },
+  "state_transition": {
+    "from": "specification_correction",
+    "to": "specification_release_accepted",
+    "correction_gate_closed": true,
+    "specification_design_open": false,
+    "implementation_review_ready": true,
+    "implementation_review_activated": false,
+    "implementation_authorized": false
+  },
+  "acceptance_verification": {
+    "path": "implementation/investigations/grc9v4-constitutive-design/scripts/audit_grcv4_specification_release_acceptance.py",
+    "sha256": "c91ad9464de543f43258ef36e104c8933fb529def2cd8dc48c6a780626c5cd6b",
+    "required_audit_sha256": "f136c8552e1c7ef59570c11b26d592430e42058a9d9994e75a09560fda84242e",
+    "expected_result": "GRCV4_SPECIFICATION_RELEASE_ACCEPTANCE_AUDIT_PASS"
+  },
+  "branch_closure": {
+    "branch": "spec/grcv4-grc9v4",
+    "ready": true,
+    "completed": false,
+    "required_before_completion": [
+      "run_audit_grcv4_specification_release_acceptance_with_bound_audit_file",
+      "commit_acceptance_gate_and_boundary",
+      "verify_clean_worktree",
+      "merge_with_explicit_no_ff_history",
+      "verify_main_contains_acceptance_commit_and_merge_commit"
+    ]
+  },
+  "permitted_next_actions": [
+    "commit_specification_acceptance_governance_records",
+    "close_the_specification_branch_without_mutating_the_accepted_release",
+    "open_GRCV4_GRC9V4_implementation_review_only_under_separate_explicit_authority"
+  ],
+  "prohibited_actions": [
+    "mutate_the_accepted_release_during_branch_closure",
+    "start_implementation_before_implementation_review_acceptance",
+    "claim_runtime_conformance_from_preimplementation_vectors",
+    "reopen_D10_D11_or_the_paper_without_a_new_explicit_contradiction"
+  ],
+  "next_gate": "GRCV4_GRC9V4_implementation_review",
+  "claim_ceiling": "accepted_frozen_preimplementation_specification_not_runtime_implementation_or_conformance_evidence"
+}

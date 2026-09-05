@@ -2985,6 +2985,18 @@ and its
 - [x] Regenerate and mechanically reverify all vector, schema, artifact,
       release-ID, detached-checksum, and rendering bindings after final
       acceptance hardening.
+- [x] Bind the final narrow acceptance audit by exact SHA without embedding it
+      into or regenerating the release it accepts.
+- [x] Record append-only acceptance of the exact content-addressed release as
+      the frozen normative preimplementation contract.
+- [x] Add and run the post-release acceptance verifier against the exact
+      narrow-audit bytes, accepted release commit, gate, and successor boundary.
+- [x] Close the specification-correction gate and set the live successor state
+      to `specification_release_accepted`.
+- [x] Mark the specification branch ready, but not yet completed, for its
+      explicit no-fast-forward closure procedure.
+- [x] Mark implementation review ready but inactive; preserve
+      `implementation_authorized = false` and the complete runtime holds.
 - [ ] Supply per-profile step vectors, Candidate A numeric vectors, RG2b
       evaluator/certificate vectors, child-stabilization vectors, 40 exact
       disabled-delegate vectors, lifecycle/migration runtime vectors, generic
@@ -3109,9 +3121,18 @@ D10.2_human_acceptance = accepted_bounded_2026-08-26
 D10.2_final_substrate_identity_closed = true
 preclosure_substrate_provenance_audit_required = false
 specification_authorized = true
-D11_dependent_specification_authority = false
+D11_dependent_specification_authority = accepted_and_propagated
 runtime_implementation_authorized = false
 src_changed = false
-normative_GRCV4_spec_exists = true_with_D11-C_bounded_hold
-normative_GRC9V4_spec_exists = true_with_D11-G9_bounded_hold
+normative_GRCV4_spec_exists = true_accepted_frozen_preimplementation_release
+normative_GRC9V4_spec_exists = true_accepted_frozen_preimplementation_release
+specification_release_id = grcv4-spec-release-sha256:9f4c8fe5b57b1c477d834a3e4dae3f98a2b18c70e6e7f598e3c9652170c8645f
+specification_release_state = accepted_frozen
+specification_correction_gate = closed
+live_governance_phase = specification_release_accepted
+specification_branch_ready_for_closure = true
+specification_branch_closed = false
+implementation_review_ready = true
+implementation_review_activated = false
+implementation_authorized = false
 ```

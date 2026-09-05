@@ -3493,10 +3493,11 @@ and its
 
 ## D11. Specification-Audit Successor Closures
 
-Status: D11-C and D11-G9 are accepted bounded; proposal, paper, and initial
-specification propagation are complete. The active bounded successor is the
-implementation-contract correction authorized by
-`GRCV4SpecificationEngineeringCorrectionGate.json`.
+Status: D11-C and D11-G9 are accepted bounded; proposal, paper, specification
+propagation, engineering correction, and final narrow acceptance are complete.
+The exact V4 release is frozen as the normative preimplementation contract by
+`GRCV4SpecificationReleaseAcceptanceGate.json`. Implementation review is
+ready but not active, and implementation remains unauthorized.
 
 The September 2026 specification-stack audit established that two executable
 maps required by the extracted V4 specifications have no accepted source
@@ -3607,6 +3608,30 @@ After those corrections, the vector builder, schema audit, release builder,
 artifact hashes, release identity, detached checksum, rendering checks, and
 normal phase-aware verification path must all pass. Runtime conformance and
 the previously enumerated implementation holds remain unchanged.
+
+### Specification Release Acceptance and Freeze
+
+The final narrow acceptance audit, SHA-256
+`f136c8552e1c7ef59570c11b26d592430e42058a9d9994e75a09560fda84242e`,
+accepts release
+`grcv4-spec-release-sha256:9f4c8fe5b57b1c477d834a3e4dae3f98a2b18c70e6e7f598e3c9652170c8645f`
+unchanged. `GRCV4-SPECIFICATION-RELEASE-ACCEPTANCE-v1` records that decision
+append-only. The release manifest and every release member remain byte-frozen;
+the acceptance record is deliberately downstream of, and not embedded into,
+the release it accepts.
+
+The live governance state is now
+`specification_release_accepted`. The prior release-bound
+`PostD10SpecificationBoundary.json` remains immutable, while
+`PostGRCV4SpecificationAcceptanceBoundary.json` carries the successor state.
+Specification correction is closed, the specification branch is ready for
+its explicit closure procedure, and `GRCV4_GRC9V4_implementation_review` is
+the next eligible gate. It is not activated by this acceptance, and neither
+implementation nor `src/`/`tests/` changes are authorized.
+The separate `audit_grcv4_specification_release_acceptance.py` verifier checks
+the accepted commit and release bytes, every release-bound path, the external
+audit digest, the acceptance decision digest, and the successor boundary
+without modifying the frozen release.
 
 ## Expected Records
 

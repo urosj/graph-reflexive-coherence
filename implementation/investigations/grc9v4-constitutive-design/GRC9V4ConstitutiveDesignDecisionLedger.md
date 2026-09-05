@@ -2437,3 +2437,40 @@ Authoritative opening and preregistration records:
 - [`D11G9CanonicalExpansionPortAllocationResolution.json`](./decisions/D11G9CanonicalExpansionPortAllocationResolution.json)
 - [`D11G9CanonicalExpansionPortAllocationResolution.md`](./decisions/D11G9CanonicalExpansionPortAllocationResolution.md)
 - [`D11G9AxisPreservingExpansionProvenanceSupplement.json`](./decisions/D11G9AxisPreservingExpansionProvenanceSupplement.json)
+
+## GRCV4 Specification Release Acceptance and Freeze
+
+The final narrow audit accepts the exact release below as the normative
+preimplementation GRCV4/GRC9V4 specification contract:
+
+```text
+record_id = GRCV4-SPECIFICATION-RELEASE-ACCEPTANCE-v1
+status = accepted_frozen
+predecessor_decision_digest = 57f2e8e634ae362933e94e72f634141e989dc357858940a4e5a4342dfc530f73
+decision_record_digest = 914761881649b34bd7d0e80ef006551696c30190308544587d267800634faa11
+accepted_release_id = grcv4-spec-release-sha256:9f4c8fe5b57b1c477d834a3e4dae3f98a2b18c70e6e7f598e3c9652170c8645f
+accepted_release_sha256 = bba0bb649bc2e80c5bfa99f96bd5824bbdda3b3fbc87fb68c3e3a59da1cee46b
+final_narrow_acceptance_audit_sha256 = f136c8552e1c7ef59570c11b26d592430e42058a9d9994e75a09560fda84242e
+specification_release_state = frozen_normative_preimplementation_contract
+specification_correction_gate_closed = true
+specification_branch_ready_for_closure = true
+specification_branch_closed = false
+implementation_review_ready = true
+implementation_review_activated = false
+implementation_authorized = false
+runtime_conformance_established = false
+```
+
+This acceptance changes governance state, not scientific or specification
+content. The accepted release is not regenerated to contain its own downstream
+acceptance record. The release-bound `PostD10SpecificationBoundary.json`
+therefore remains unchanged, while
+`PostGRCV4SpecificationAcceptanceBoundary.json` records the live successor
+state and freezes every accepted release byte. The next eligible gate is
+`GRCV4_GRC9V4_implementation_review`; opening it requires separate explicit
+authorization.
+
+Authoritative acceptance records:
+
+- [`GRCV4SpecificationReleaseAcceptanceGate.json`](./specification/GRCV4SpecificationReleaseAcceptanceGate.json)
+- [`PostGRCV4SpecificationAcceptanceBoundary.json`](./specification/PostGRCV4SpecificationAcceptanceBoundary.json)

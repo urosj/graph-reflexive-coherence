@@ -764,6 +764,31 @@ boundary port, uses one of two explicit mirror-chiral same-port primary
 transversals, and extends through deterministic branch-row same-port trees.
 Its [append-only provenance supplement](./decisions/D11G9AxisPreservingExpansionProvenanceSupplement.json)
 adds one GRC9V4-only successor claim, ten specialization objects, and twenty
-contracts without rewriting D10.2, D11-C, GRC9, or GRC9V3. The paper is now the
-active propagation surface; current spec formulas remain provisional until
-paper-first propagation completes. Implementation remains unauthorized.
+contracts without rewriting D10.2, D11-C, GRC9, or GRC9V3. Paper-first
+propagation, specification extraction, and engineering correction are now
+complete. Implementation remains unauthorized.
+
+## Accepted GRCV4/GRC9V4 Specification Release
+
+The final narrow acceptance audit accepts release
+`grcv4-spec-release-sha256:9f4c8fe5b57b1c477d834a3e4dae3f98a2b18c70e6e7f598e3c9652170c8645f`
+as the frozen normative preimplementation contract. The append-only
+[`specification acceptance gate`](./specification/GRCV4SpecificationReleaseAcceptanceGate.json)
+binds the exact release, detached checksum, final audit SHA, and acceptance
+commit without altering the accepted release bytes. The
+[`post-acceptance boundary`](./specification/PostGRCV4SpecificationAcceptanceBoundary.json)
+closes specification correction and records the current state:
+
+```text
+specification_release_state = accepted_frozen
+specification_branch_ready_for_closure = true
+specification_branch_closed = false
+implementation_review_ready = true
+implementation_review_activated = false
+implementation_authorized = false
+runtime_conformance_established = false
+```
+
+The next eligible gate is `GRCV4_GRC9V4_implementation_review`. It is not
+opened by specification acceptance; runtime and `src/`/`tests/` work still
+requires separate explicit authority.
