@@ -1,0 +1,114 @@
+{
+  "schema_version": "grcv4_specification_release_acceptance_gate_v1",
+  "artifact_id": "GRCV4-SPECIFICATION-RELEASE-ACCEPTANCE-GATE-v1",
+  "gate_id": "GRCV4-SPECIFICATION-RELEASE-ACCEPTANCE-v1",
+  "date": "2026-09-05",
+  "status": "accepted_frozen",
+  "predecessor_decision_digest": "57f2e8e634ae362933e94e72f634141e989dc357858940a4e5a4342dfc530f73",
+  "decision_record_digest": "914761881649b34bd7d0e80ef006551696c30190308544587d267800634faa11",
+  "supersedes": null,
+  "source_identities": {
+    "predecessor_gate": {
+      "path": "implementation/investigations/grc9v4-constitutive-design/specification/GRCV4SpecificationEngineeringCorrectionGate.json",
+      "sha256": "57f2e8e634ae362933e94e72f634141e989dc357858940a4e5a4342dfc530f73"
+    },
+    "accepted_release": {
+      "path": "specs/grc-v4-specification-release.json",
+      "schema": "grcv4_specification_release_manifest_v2",
+      "release_id": "grcv4-spec-release-sha256:9f4c8fe5b57b1c477d834a3e4dae3f98a2b18c70e6e7f598e3c9652170c8645f",
+      "file_sha256": "bba0bb649bc2e80c5bfa99f96bd5824bbdda3b3fbc87fb68c3e3a59da1cee46b"
+    },
+    "detached_checksum": {
+      "path": "specs/grc-v4-specification-release.sha256",
+      "file_sha256": "50b20509b84a6b21f3036ecb1d7e13861f662bc8319873c5321fc0317ada7e33",
+      "target_sha256": "bba0bb649bc2e80c5bfa99f96bd5824bbdda3b3fbc87fb68c3e3a59da1cee46b"
+    },
+    "final_narrow_acceptance_audit": {
+      "name": "GRCV4-final-narrow-specification-acceptance-audit.md",
+      "sha256": "f136c8552e1c7ef59570c11b26d592430e42058a9d9994e75a09560fda84242e",
+      "authority": "external_acceptance_evidence_not_scientific_authority"
+    },
+    "accepted_release_commit": "f1817b8cf41e439cbb18ad82dfab6b39a77ae43d"
+  },
+  "assumptions": [
+    "the final narrow audit applies to the exact release ID and byte hashes bound above",
+    "accepting a preimplementation specification does not establish runtime conformance",
+    "governance closure must not mutate the accepted content-addressed release"
+  ],
+  "candidates_considered": [
+    "accept_and_freeze_exact_release",
+    "retain_specification_correction_hold",
+    "reopen_scientific_or_specification_design"
+  ],
+  "decision": {
+    "selected_candidate": "accept_and_freeze_exact_release",
+    "specification_release_accepted": true,
+    "specification_release_state": "frozen_normative_preimplementation_contract",
+    "further_specification_design_audit_required_before_implementation": false,
+    "scientific_equations_or_claim_boundaries_changed": false,
+    "runtime_conformance_established": false,
+    "implementation_phase_activated": false,
+    "specification_branch_ready_for_closure": true,
+    "specification_branch_closed": false
+  },
+  "rejected_alternatives": [
+    {
+      "candidate": "retain_specification_correction_hold",
+      "reason": "the final narrow audit passes every remaining acceptance surface"
+    },
+    {
+      "candidate": "reopen_scientific_or_specification_design",
+      "reason": "the audit identifies no scientific or remaining specification defect"
+    },
+    {
+      "candidate": "regenerate_release_to_embed_acceptance_record",
+      "reason": "that would create a different release ID not covered by the acceptance audit"
+    }
+  ],
+  "evidence_or_argument": {
+    "audit_verdict": "pass",
+    "artifact_hashes_match": true,
+    "detached_checksum_matches": true,
+    "release_identity_reproduced": true,
+    "vector_builder_byte_reproducible": true,
+    "release_builder_byte_reproducible": true,
+    "schema_semantic_partition_passes": true,
+    "exact_and_metamorphic_plan_vectors_pass": true,
+    "normal_phase_aware_verification_passed_before_acceptance": true
+  },
+  "open_debt": [
+    "candidate_A_numeric_and_GRC9V4_expansion_runtime_vectors",
+    "per_realization_executable_step_vectors",
+    "RG2b_evaluator_certification",
+    "child_stabilization_completed_spark_and_hierarchy_tracking",
+    "forty_exact_GRC9V3_disabled_delegate_executions",
+    "snapshot_reset_migration_runtime_execution",
+    "generic_mapped_event_runtime_execution",
+    "cross_implementation_charge_edge_cases",
+    "deep_immutability_runtime_tests",
+    "runtime_generated_receipt_evidence",
+    "runtime_D52_and_covariance_execution_before_arbitrary_size_conformance"
+  ],
+  "blocked_relabels": [
+    "preimplementation_vectors_as_runtime_execution_evidence",
+    "accepted_specification_as_implemented_runtime",
+    "partial_enabled_only_support_as_full_GRC9V4_conformance",
+    "future_profile_authority_as_inherited_from_current_population"
+  ],
+  "authorization_effect": {
+    "specification_correction_gate_closed": true,
+    "specification_release_accepted": true,
+    "specification_release_frozen": true,
+    "specification_mutation_authorized": false,
+    "specification_branch_closure_authorized": true,
+    "implementation_review_ready": true,
+    "implementation_review_activated": false,
+    "implementation_authorized": false,
+    "runtime_or_src_tests_change_authorized": false,
+    "paper_or_proposal_change_authorized": false,
+    "GRC9_or_GRC9V3_change_authorized": false
+  },
+  "next_gate": "GRCV4_GRC9V4_implementation_review",
+  "human_acceptance": "accepted_by_user_from_final_narrow_specification_acceptance_audit_2026-09-05",
+  "claim_ceiling": "accepted_frozen_preimplementation_specification_not_runtime_implementation_or_conformance_evidence"
+}

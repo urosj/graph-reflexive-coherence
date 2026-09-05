@@ -3491,6 +3491,148 @@ The authoritative records are the
 and its
 [`scientific interpretation`](./decisions/D10_2FullSubstrateProvenanceAndPromotionAudit.md).
 
+## D11. Specification-Audit Successor Closures
+
+Status: D11-C and D11-G9 are accepted bounded; proposal, paper, specification
+propagation, engineering correction, and final narrow acceptance are complete.
+The exact V4 release is frozen as the normative preimplementation contract by
+`GRCV4SpecificationReleaseAcceptanceGate.json`. Implementation review is
+ready but not active, and implementation remains unauthorized.
+
+The September 2026 specification-stack audit established that two executable
+maps required by the extracted V4 specifications have no accepted source
+authority. D10.2 remains immutable. `GRC9V4-CD-D11-OPEN-v1` is the bounded
+successor-opening record and supplies no scientific result.
+
+`GRC9V4-CD-D11-CLAIM-DEBT-ROUTING-v1` binds the opening to the complete D10.2
+entry state by exact set equality: 39 current claims, 29 historical claim
+nodes, 29 transformed debts, and 11 verification obligations, together with
+67 load-bearing objects and 152 equation contracts. The two D11 findings are
+additive successor debts. They do not replace prior debt, discharge pending
+verification, or reclassify an accepted claim.
+
+### D11-C. Candidate C Baseline Transport and Mobility
+
+D11-C accepted corrected candidate D11-C-T3a. The selected profile binds
+$M_{4,C}=\eta_C\operatorname{Diag}(W_{C,\mathrm{tr}})$ as a positive fixed
+reference mobility, conditions the direct potential through
+$H_{1,\mathrm{form},M}$, and defines
+$J_{0,C}=-M_{4,C}d_0\Phi_{0,C}$ for all five C realizations. It also freezes
+units, stage, regular domain, covariance, controls, exact reference-field
+lifecycle, and GRC9V4-owned delegation to the unchanged disabled GRC9V3
+branch. The accepted D11-C-T3a result is propagated through the proposal,
+paper, and V4 specification stack.
+
+### D11-G9. Canonical GRC9V4 Expansion Port Allocation
+
+D11-G9 is closed accepted bounded as corrected candidate D11-G9-P4a. It uses
+one of two explicit mirror-chiral primary same-port transversals, $(2,6,7)$ or
+$(3,4,8)$, preserves all old boundary ports, and grows arbitrary-size
+branch-row same-port trees through a chirality-ordered column rotor and
+creation-order BFS. Growth phase is absent exactly when inactive and required
+otherwise. The accepted result retains exact stable IDs, Candidate C target
+profile reconstruction, whole-carrier persistent-history handling, resource
+and receipt closure, and atomic target readmission. GRC9 and GRC9V3 remain
+unchanged; the internally undefined saturated legacy event is marked only at
+the V4 compatibility boundary.
+
+### D11 Propagation and Specification-Engineering Gate
+
+D11-C and D11-G9 have separately accepted successor records and have been
+propagated through the proposal and paper. The initial V4 specifications were
+then audited for implementation readiness. That audit introduced no new
+science; it opened one bounded engineering correction covering constructible
+state/result types, noncircular identities, event authority, state ownership,
+typed parameters and receipts, exact row-weight staging, charge precision,
+concrete preimplementation vectors, and a content-addressed release manifest.
+
+Missing RG2b evaluator/certificate vectors, child-stabilization vectors, the
+40 disabled-delegate execution vectors, lifecycle/migration runtime vectors,
+generic mapped-event runtime execution, charge-edge and deep-immutability
+tests, and runtime receipts
+remain explicit capability holds. They are not filled by editorial inference.
+Implementation and `src/`/`tests/` changes remain unauthorized until a later
+hash-bound gate.
+
+The subsequent release-pressure audit is bound by SHA-256
+`bb0621b3abe793486711acdd62e718c4415e8c5cbb6bea271580d4abc806e7ae` as
+engineering correction input, not scientific evidence. It identifies seven
+bounded composition defects and no new D-series science. The same active
+`specification_correction` authority therefore requires one coordinated V4-only
+revision that:
+
+1. separates permissive pre-admission inputs, strict admitted requests, and
+   nonproduction fault injection;
+2. separates operation disposition from nullable solver disposition;
+3. gives generic mapped events a canonical identity and affine resource
+   transform with explicit event increment and charge delta;
+4. carries Candidate and persistent-carrier history in independent request and
+   receipt channels;
+5. discriminates Candidate A and Candidate C target templates and withholds A
+   expansion until a concrete A target vector exists;
+6. removes nonexistent carrier loss from `C_OS` and adds a real `C_PC`
+   whole-carrier-reset/loss vector;
+7. publishes versioned canonical preimages for every load-bearing subdigest;
+8. adds $D_{\mathrm{eff}}=52$ second-depth BFS vectors plus permutation,
+   rotation, and reflection metamorphic cases;
+9. freezes `grcv4-contract-semantic-admission-v1` with cross-field negative
+   vectors and states that JSON Schema validity is necessary but insufficient;
+10. distinguishes enabled-only partial support from full GRC9V4 conformance;
+11. regenerates the schema, catalog, vector and release identities; and
+12. reruns the complete claim/schema/identity/math/graph/render/tooling audit.
+
+The generic mapped-event vector added here is a preimplementation identity and
+affine-accounting oracle, not runtime evidence. D52 and metamorphic vectors
+likewise close design coverage but retain a runtime execution hold. The other
+previous implementation and evidence holds remain in force.
+
+The final targeted release-acceptance audit is bound by SHA-256
+`c0d7d01331868e45e92dbcdb54e5479fdc48cd4f478125ea4e452f81ea527c20`
+as mechanical correction input, not scientific evidence. It finds no D11-G9
+allocator or D11-C scientific defect. Under the same bounded
+`specification_correction` authority, final release hardening must:
+
+1. replace the column-only D52 rotation and reflection maps with simultaneous
+   row/column/branch maps;
+2. make both covariance cases executable by binding base plan, target plan,
+   and exact namespace/role normalization, and make the verifier reproduce
+   normalized plan equality;
+3. move the profile-field and history-subject cases to schema-negative
+   coverage while retaining five post-schema semantic negatives;
+4. freeze the sole canonical order of multiple receipt information losses and
+   bind that order through a multi-loss receipt identity vector; and
+5. distinguish the port-graph content payload from its digest envelope and
+   verify that `graph_digest` is excluded from its own preimage.
+
+After those corrections, the vector builder, schema audit, release builder,
+artifact hashes, release identity, detached checksum, rendering checks, and
+normal phase-aware verification path must all pass. Runtime conformance and
+the previously enumerated implementation holds remain unchanged.
+
+### Specification Release Acceptance and Freeze
+
+The final narrow acceptance audit, SHA-256
+`f136c8552e1c7ef59570c11b26d592430e42058a9d9994e75a09560fda84242e`,
+accepts release
+`grcv4-spec-release-sha256:9f4c8fe5b57b1c477d834a3e4dae3f98a2b18c70e6e7f598e3c9652170c8645f`
+unchanged. `GRCV4-SPECIFICATION-RELEASE-ACCEPTANCE-v1` records that decision
+append-only. The release manifest and every release member remain byte-frozen;
+the acceptance record is deliberately downstream of, and not embedded into,
+the release it accepts.
+
+The live governance state is now
+`specification_release_accepted`. The prior release-bound
+`PostD10SpecificationBoundary.json` remains immutable, while
+`PostGRCV4SpecificationAcceptanceBoundary.json` carries the successor state.
+Specification correction is closed, the specification branch is ready for
+its explicit closure procedure, and `GRCV4_GRC9V4_implementation_review` is
+the next eligible gate. It is not activated by this acceptance, and neither
+implementation nor `src/`/`tests/` changes are authorized.
+The separate `audit_grcv4_specification_release_acceptance.py` verifier checks
+the accepted commit and release bytes, every release-bound path, the external
+audit digest, the acceptance decision digest, and the successor boundary
+without modifying the frozen release.
+
 ## Expected Records
 
 Each gate should add a separate decision record or a clearly delimited ledger

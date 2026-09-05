@@ -1,0 +1,391 @@
+{
+  "schema_version": "grc9v4_d11_c_baseline_transport_resolution_v1",
+  "record_type": "accepted_scientific_successor_resolution",
+  "record_id": "GRC9V4-CD-D11-C-RESOLUTION-v1",
+  "gate_id": "D11-C",
+  "title": "Candidate C Hodge-Conditioned Stiffness Baseline Transport Resolution",
+  "status": "accepted_bounded",
+  "date": "2026-09-03",
+  "predecessor_record_id": "GRC9V4-CD-D11-C-v1",
+  "predecessor_decision_digest": "c1c22c88fa676705370d01256a34801a364e310c93e4ef85cc5a3208e6e06a78",
+  "supersedes": "GRC9V4-CD-D11-C-v1",
+  "authority_routing_record": {
+    "record_id": "GRC9V4-CD-D11-CLAIM-DEBT-ROUTING-v1",
+    "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D11ClaimDebtAndAuthorityRouting.json",
+    "file_sha256": "f34bff656cc4e231bb8db81a9d69498c2b9a1e57accc4ecaec6642cd3e4422df",
+    "decision_digest": "63cc407bffefef85602c28ead6c3da6b846778d3be9f78952db11cb10275c78d"
+  },
+  "source_identities": [
+    {
+      "record_id": "GRC9V4-CD-D11-C-v1",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D11CCandidateCBaselineTransportAndMobilityClosure.json",
+      "file_sha256": "fc8346c02590bd5d43f0f93a74a0a9e770ebef8f02a00c2eeb6551e9697529a0",
+      "decision_digest": "c1c22c88fa676705370d01256a34801a364e310c93e4ef85cc5a3208e6e06a78",
+      "consumed_as": "D11_C_candidate_and_acceptance_surface_preregistration"
+    },
+    {
+      "record_id": "GRC9V4-CD-D4V2-v1",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D4v2CandidateGeometryAndCarrierCompletion.json",
+      "file_sha256": "042769ba96e543bd0805c245918d2e33e6453e68dea98e503094393e25708b7c",
+      "decision_digest": "5862cbab0d36e1137dc647d7d21d48f77666a77bf9e7b178c830d323e4ed6309",
+      "consumed_as": "accepted_Candidate_C_retained_Hodge_and_direct_baseline_path"
+    },
+    {
+      "record_id": "GRC9V4-CD-D6V2-v1",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D6v2UpdatedTotalCurrentClosure.json",
+      "file_sha256": "c0b634cd084d76a2ab8993dec4bde0075a3e893aa420f506493eb98b7b63ded0",
+      "decision_digest": "ad02150010c4759d1c0ac4ba079c81cff99bad1f35b715f52b980aaf404eac0a",
+      "consumed_as": "accepted_fixed_geometry_Candidate_C_total_current_closure"
+    },
+    {
+      "record_id": "GRC9V4-CD-D7V2-v1",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D7v2CandidateTransitionComparativeAdmission.json",
+      "file_sha256": "b1796dd90c0be50036812454eb84223ccd40549b13c61be9caaa41f09f38828b",
+      "decision_digest": "f0d355c3e769b43fe48f0eb8ab6e986ce80838dd55e884ad33c66e988b65106e",
+      "consumed_as": "accepted_five_realization_staging_and_complete_transition_boundary"
+    },
+    {
+      "record_id": "GRC9V4-CD-D7G-post-v2-HODGE-TYPE-CORRECTION-v1",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D7GPostv2GraphHodgeTypeCorrection.json",
+      "file_sha256": "bbef6c37449ab7d58b3388f5d030bffbbd750ba470216d0660573d7af27f895f",
+      "decision_digest": "2e2f4d53e0abf3134f586cc60467bf5881cc60414af82df35bf6ac7772400984",
+      "consumed_as": "accepted_H1_form_G_J_M4_type_and_authority_separation"
+    },
+    {
+      "record_id": "GRC9V4-CD-D10.2-v1",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D10_2FullSubstrateProvenanceAndPromotionAudit.json",
+      "file_sha256": "59c2b956cec7d258b1db09d43d6df44deb8c0be0453a5d741f7e2733d6881a33",
+      "decision_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+      "consumed_as": "immutable_predecessor_claim_object_contract_and_provenance_boundary"
+    },
+    {
+      "artifact_id": "GRC9V4-D11-C-PROVENANCE-SUPPLEMENT-v1",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D11CCandidateBaselineTransportProvenanceSupplement.json",
+      "file_sha256": "43bb028c6c7b09952a35dee280067470f2ff5cde4395d39c5b5e7aba6fae29fb",
+      "artifact_digest": "57d711d80e648c8ee73401f3a7e76a0076374fc43bd4d2d0f3dbe4bb4ee3acb1",
+      "consumed_as": "append_only_D11_C_successor_object_contract_claim_and_provenance_registry"
+    },
+    {
+      "source_id": "D11-C-INDEPENDENT-PROPOSAL-2026-09-03",
+      "source_name": "D11-C-Candidate-C-Baseline-Transport-And-Mobility-Closure.md",
+      "file_sha256": "513ef4f092a08a3127deb53f6a00e0304e178b5ec1adcfbbab72a53528f11929",
+      "consumed_as": "external_independent_resolution_proposal_after_bounded_corrections"
+    },
+    {
+      "source_id": "D11-C-T3A-ALGEBRA-WITNESS",
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/witness_d11_c_hm_stiffness_baseline.py",
+      "file_sha256": "5ec4db289eee2e4d0fdf82e27f3b656d4be35ad594309855a6c402370be6aaa4",
+      "consumed_as": "finite_algebra_typing_control_and_covariance_witness_not_runtime_evidence"
+    }
+  ],
+  "forensic_comparison_receipts": [
+    {
+      "operation": "contract_provenance",
+      "identifier": "D10.2-EC-PARENT-GEOM-M4",
+      "classification": "source_exact_contract_provenance",
+      "support_disposition": "indeterminate_requires_review",
+      "trace_digest": "13544e777040a50cd8156736d93fcf2d1d5f595db3f4033ed343fbbf6245717e"
+    },
+    {
+      "operation": "contract_provenance",
+      "identifier": "D10.2-EC-GEOM-MOBILITY-BOUNDARY",
+      "classification": "source_exact_contract_provenance",
+      "support_disposition": "indeterminate_requires_review",
+      "trace_digest": "2eea6a5480364b6969b2cd4b12eb2e0a5f1f8eea33685adf90a7d760230a9f2f"
+    },
+    {
+      "operation": "contract_provenance",
+      "identifier": "D10.2-EC-PARENT-C-HODGE-MAPS",
+      "classification": "source_exact_contract_provenance",
+      "support_disposition": "indeterminate_requires_review",
+      "trace_digest": "b9ef4da02ef5b6ba525e9bf6abb13edbe9a7effe9a0e612f38dc3a9d95baa0ca"
+    },
+    {
+      "operation": "contract_provenance",
+      "identifier": "D10.2-EC-PARENT-BASE-POTENTIAL",
+      "classification": "source_exact_contract_provenance",
+      "support_disposition": "indeterminate_requires_review",
+      "trace_digest": "056ff2de3782d8e638c826d588103a76ef7b312889b00227a0967e6dd9704e69"
+    },
+    {
+      "operation": "contract_provenance",
+      "identifier": "D10.2-EC-PARENT-BASE-SCALAR-MOBILITY",
+      "classification": "source_exact_contract_provenance",
+      "support_disposition": "indeterminate_requires_review",
+      "trace_digest": "28af2cccaeced2927fca500965d8a80f3281773535a001fdd31cd521941926c9"
+    },
+    {
+      "operation": "contract_provenance",
+      "identifier": "D10.2-EC-PARENT-C-AUTHORITY",
+      "classification": "source_exact_contract_provenance",
+      "support_disposition": "indeterminate_requires_review",
+      "trace_digest": "a811cd617108b472e899e53c0373c917604fdaba0cb21ce6794c4a9a1d1fda37"
+    },
+    {
+      "operation": "candidate_career",
+      "identifier": "V4-C-constitutive-C-sector",
+      "classification": "accepted_bounded_career_with_parallel_unranked_realizations",
+      "trace_digest": "0a973ff1ef2d4cdfba62b503ea104baa0d227b893c55cf30138547f364783b50"
+    }
+  ],
+  "forensic_boundary": {
+    "live_tree_query_disposition": "failed_closed_new_unprocessed_source_available",
+    "accepted_snapshot_query": "executed_against_clean_HEAD_snapshot_before_D11_source_admission",
+    "interpretation": "accepted_contracts_bound_the_question_and_forbidden_overreads_but_do_not_select_the_D11_C_answer",
+    "proposal_is_new_scientific_authority": true
+  },
+  "candidate_dispositions": [
+    {
+      "candidate_id": "D11-C-T1",
+      "profile_id": "candidate_c_log_sector_potential_flow_v1",
+      "disposition": "not_selected_preserved_for_comparison",
+      "reason": "conditions_mobility_and_duplicates_the_sector_modulation_outside_the_H_M_conditioned_potential_instead_of_using_the_accepted_direct_H_M_to_J0_C_path",
+      "future_route": "requires_an_explicit_D4_D4v2_transport_role_authority_expansion_but_not_necessarily_a_D1_reopening",
+      "current_spec_text_disposition": "remains_visible_as_provisional_until_ordered_post_D11_paper_then_spec_propagation"
+    },
+    {
+      "candidate_id": "D11-C-T2",
+      "disposition": "not_selected_admissible_successor_family",
+      "reason": "a_general_derived_SPD_or_anisotropic_transport_adapter_adds_unneeded_transport_ontology_and_requires_separate_support_positivity_units_covariance_and_event_authority"
+    },
+    {
+      "candidate_id": "D11-C-T3",
+      "disposition": "refined_and_selected_as_D11_C_T3a",
+      "reason": "reference_mobility_with_H_M_conditioned_driving_preserves_conditions_geometry_and_realizes_the_required_direct_H_M_to_J0_C_path"
+    },
+    {
+      "candidate_id": "D11-C-T3a",
+      "profile_id": "C-HM-STIFFNESS-BASELINE-v1",
+      "disposition": "selected_accepted_bounded",
+      "reason": "exact_typed_graph_generic_revision_specific_completion_with_no_added_state_or_mobility_authority_transfer"
+    },
+    {
+      "candidate_id": "D11-C-T0",
+      "disposition": "not_selected_bounded_fallback_retained_for_future_reopening",
+      "reason": "a_bounded_complete_design_level_law_was_accepted"
+    }
+  ],
+  "decision": {
+    "scientific_disposition": "accepted_bounded_revision_specific_Candidate_C_baseline_transport_closure",
+    "selected_candidate_id": "D11-C-T3a",
+    "selected_profile_id": "C-HM-STIFFNESS-BASELINE-v1",
+    "graph_scope": "finite_graph_fixed_topology_closed_no_flux_regular_selector_stratum",
+    "candidate_population_changed": false,
+    "realization_population_changed": false,
+    "authoritative_state_dimension_changed": false,
+    "GRC9_specific_premise_used": false,
+    "GRC9_or_GRC9V3_source_changed": false
+  },
+  "typed_spaces": {
+    "B": "physical_oriented_edge_flux_to_vertex_divergence",
+    "d0": "vertex_scalar_to_oriented_exact_one_form_with_d0_equals_B_transpose_in_the_selected_coordinate_profile",
+    "H1_form": "structural_one_form_Hodge_mapping_exact_one_forms_to_physical_edge_flux_coordinates",
+    "M4_C": "transport_mobility_mapping_vertex_potential_differentials_to_physical_edge_flux",
+    "Phi_0_C": "derived_vertex_potential",
+    "J0_C": "derived_physical_oriented_edge_flux"
+  },
+  "reference_transport_contract": {
+    "field": "W_C_tr",
+    "domain": "target_live_stable_unoriented_edge_ID_set",
+    "codomain": "strictly_positive_finite_scalars",
+    "authority": "complete_profile_reference_context_not_Candidate_C_state",
+    "canonical_storage": "one_exact_edge_ID_to_value_map_inside_the_complete_profile_identity",
+    "ordinary_beat_writer": "none",
+    "snapshot_rule": "snapshot_binds_the_complete_profile_digest_and_the_exact_W_C_tr_map",
+    "relabel_rule": "stable_edge_identity_transports_the_scalar_value_under_vertex_or_edge_relabeling_and_edge_orientation_reversal_does_not_change_it",
+    "migration_rule": "the_target_complete_profile_supplies_its_entire_exact_W_C_tr_map_before_readmission",
+    "topology_rule": "no_implicit_copy_resize_interpolation_or_history_transport_is_allowed_and_missing_duplicate_nonpositive_nonfinite_or_unmatched_target_entries_reject_the_event_before_atomic_commit",
+    "sibling_constructors": {
+      "E_H": "at_the_declared_reference_geometry_H1_form_ref_equals_Diag_W_C_tr",
+      "E_M": "M4_C_equals_eta_C_times_Diag_W_C_tr"
+    },
+    "forbidden_authority_arrow": "H1_form_to_M4_C",
+    "same_profile_derivatives": [
+      "D_T_C_M4_C_equals_zero",
+      "D_h_M4_C_equals_zero"
+    ]
+  },
+  "selected_equations": {
+    "selector": "T_C=P_M_Delta(C,h,Lambda_C)C",
+    "retained_node_profile": "rho_C_v=tanh(T_C_v/C_ref)",
+    "retained_edge_profile": "r_C_e=(rho_C_u+rho_C_v)/2",
+    "deformation": "D_C=Diag(exp(kappa_M_C*r_C/2))",
+    "retained_Hodge": "H1_form_M=D_C*H1_form(h)*D_C",
+    "transport_mobility": "M4_C=eta_C*Diag(W_C_tr)",
+    "generated_potential": "Phi_G_C=kappa_Phi_C*B*H1_form(h)*d0*C-Vprime_C_U(C)",
+    "retained_potential_increment": "Delta_Phi_M_C=kappa_Phi_C*B*(H1_form_M-H1_form(h))*d0*C",
+    "baseline_potential": "Phi_0_C=kappa_Phi_C*B*H1_form_M*d0*C-Vprime_C_U(C)",
+    "baseline_current": "J0_C=-M4_C*d0*Phi_0_C",
+    "total_current": "J_C_C=(I-zeta_C*chi_C*Rhat_C_flux)^-1*J0_C"
+  },
+  "unit_contract": {
+    "incidence_and_differential": "dimensionless_coordinate_maps",
+    "resource_unit": "[C]",
+    "clock_unit": "[t]",
+    "physical_current_unit": "[J]=[C]/[t]",
+    "H1_form_and_W_C_tr_unit": "[H1]",
+    "retained_profiles_and_kappa_M_C": "dimensionless",
+    "C_ref_unit": "[C]",
+    "vertex_potential_unit": "[Phi]",
+    "kappa_Phi_C_unit": "[Phi]/([H1][C])",
+    "Vprime_C_U_unit": "[Phi]",
+    "site_potential_unit": "[Phi][C]",
+    "M4_C_unit": "[J]/[Phi]=[C]/([t][Phi])",
+    "eta_C_unit": "[M4]/[H1]=[C]/([t][Phi][H1])",
+    "composition_checks": [
+      "[kappa_Phi_C*B*H1_form_M*d0*C]=[Phi]",
+      "[Vprime_C_U(C)]=[Phi]",
+      "[M4_C*d0*Phi_0_C]=[J]",
+      "[Delta_t*B*J]=[C]"
+    ],
+    "cross_profile_dimensionalization": "remains_conditional_under_D10_CL_C_010_and_is_not_needed_to_type_this_single_profile",
+    "hidden_unit_defaults_allowed": false
+  },
+  "domain_and_gauge_contract": {
+    "graph": "finite_declared_live_graph_with_fixed_orientation_and_closed_no_flux_boundary_for_this_profile",
+    "selector": "fixed_rank_strict_gap_regular_stratum",
+    "H0_and_H1": "positive_definite_with_declared_finite_bounds",
+    "W_C_tr": "strictly_positive_finite_on_every_live_edge",
+    "parameters": "C_ref_positive_eta_C_positive_and_kappa_M_C_kappa_Phi_C_finite",
+    "site_potential": "Vprime_C_U_finite_on_the_admitted_C_U_domain_and_differentiable_to_the_order_used_by_the_selected_analysis",
+    "current_root": "I-zeta_C*chi_C*Rhat_C_flux_invertible_under_the_accepted_D6v2_regular_domain",
+    "potential_gauge": "Phi_0_C_is_defined_modulo_a_vertex_constant_on_each_connected_component_because_only_d0_Phi_0_C_enters_J0_C",
+    "normalization": "uses_unnormalized_vertex_stiffness_B_H1_form_M_d0_and_does_not_substitute_H0_inverse_Delta0",
+    "singular_boundary": "rank_gap_SPD_finiteness_boundary_or_current_block_failure_exits_the_profile_and_fails_closed"
+  },
+  "control_contract": {
+    "kappa_M_C_zero": "D_C_equals_I_H1_form_M_equals_H1_form_and_T_C_conditioning_is_removed_from_the_direct_baseline_and_response_geometry",
+    "chi_C_zero": "explicit_read_current_is_zero_while_the_H_M_conditioned_J0_C_baseline_remains",
+    "zeta_C_zero": "authoritative_total_current_equals_J0_C_while_a_diagnostic_read_may_remain_defined",
+    "tau_C_zero": "Rhat_C_M_and_Rhat_C_flux_equal_identity_on_their_admitted_spaces_and_only_resolvent_filtering_is_removed_not_the_direct_H_M_conditioned_baseline",
+    "wording_correction": "any_prior_tau_C_zero_removes_retained_selectivity_text_is_scoped_to_the_explicit_resolvent_response_channel"
+  },
+  "disabled_compatibility_contract": {
+    "owner": "GRC9V4_specialization_dispatch",
+    "enabled_branch": "the_selected_C_HM_STIFFNESS_BASELINE_v1_law_applies_only_to_the_enabled_GRCV4_Candidate_C_branch",
+    "disabled_branch": "GRC9V4_delegates_exactly_to_the_unchanged_GRC9V3_state_observable_and_lifecycle_branch",
+    "substitution_or_approximation_with_T3a_forbidden": true,
+    "scope_boundary": "D11_C_freezes_nonapplication_and_exact_delegation_only_and_does_not_modify_GRC9V3_or_preempt_D11_G9_port_allocation"
+  },
+  "realization_stage_contract": [
+    {
+      "profile_id": "C_CI",
+      "stage": "recompute_selector_H_M_Phi_0_C_J0_C_and_response_for_every_trial_h_before_evaluating_the_joint_J_h_residual"
+    },
+    {
+      "profile_id": "C_OS",
+      "stage": "construct_the_full_baseline_at_reference_predictor_geometry_then_recompute_it_from_scratch_at_corrector_h_C_1_with_no_predictor_cache_authority"
+    },
+    {
+      "profile_id": "C_RG2b",
+      "stage": "construct_the_baseline_inside_the_fixed_h_current_evaluator_from_the_readmitted_target_selector_and_Hodge_package"
+    },
+    {
+      "profile_id": "C_PC",
+      "stage": "derive_h_from_old_committed_Z4_C_then_construct_the_baseline_before_total_current_and_continuity"
+    },
+    {
+      "profile_id": "C_CI_PC",
+      "stage": "recompute_the_baseline_for_every_trial_h_inside_the_joint_root_that_reads_old_Z4_C_and_same_root_S_C"
+    }
+  ],
+  "derivative_contract": {
+    "scope": "same_smooth_fixed_graph_fixed_rank_SPD_selector_stratum_as_accepted_Candidate_C_analysis",
+    "Hodge_variation": "delta_H1_form_M=delta_D_C*H1_form*D_C+D_C*delta_H1_form*D_C+D_C*H1_form*delta_D_C",
+    "potential_variation": "delta_Phi_0_C=kappa_Phi_C*B*delta_H1_form_M*d0*C+kappa_Phi_C*B*H1_form_M*d0*delta_C-D_C_Vprime_C_U_of_C_applied_delta_C+D_U_Phi_0_C_applied_delta_U",
+    "baseline_variation": "delta_J0_C=-delta_M4_C*d0*Phi_0_C-M4_C*delta_d0*Phi_0_C-M4_C*d0*delta_Phi_0_C",
+    "same_profile_fixed_graph_reduction": "delta_M4_C_equals_delta_d0_equals_zero",
+    "nonsmooth_boundaries": "selector_rank_floor_topology_boundary_or_domain_crossings_remain_event_or_failure_boundaries"
+  },
+  "algebra_witness": {
+    "script": "implementation/investigations/grc9v4-constitutive-design/scripts/witness_d11_c_hm_stiffness_baseline.py",
+    "status": "passed",
+    "closure_residual_l2": 6.206335383118183e-17,
+    "charge_residual_absolute": 0.0,
+    "baseline_dissipation": 1.952643684081568,
+    "retained_geometry_off_effect_l2": 0.4006081131911638,
+    "orientation_covariance_error_l2": 0.0,
+    "claim_ceiling": "finite_algebra_typing_control_and_covariance_witness_not_runtime_or_stability_evidence"
+  },
+  "debt_transformation": {
+    "predecessor_D10_debt_transformation_count": 29,
+    "predecessor_D10_debt_dispositions_changed": 0,
+    "local_debt_id": "D11-C-DEBT-BASELINE-TRANSPORT-AUTHORITY",
+    "local_debt_predecessor_status": "open_preregistered",
+    "local_debt_successor_status": "resolved_bounded_by_D11_C_T3a",
+    "local_debt_facets_closed": [
+      "exact_positive_reference_transport_mobility_authority",
+      "exact_H_M_conditioned_baseline_potential",
+      "exact_J0_C_equation",
+      "all_five_realization_stage_binding",
+      "internal_unit_gauge_domain_and_control_contract",
+      "design_level_derivative_access",
+      "append_only_successor_provenance"
+    ],
+    "not_closed": [
+      "runtime_reachability_formation_retention_release_and_replay",
+      "implementation_level_SPD_solver_and_covariance_verification",
+      "nonzero_committed_endpoint_effect",
+      "physical_channel_attribution_or_nonabsorbability",
+      "numeric_parameter_envelopes_or_stability",
+      "profile_preference_or_uniqueness",
+      "singular_current_continuation_or_RG2b_C1_regularization"
+    ]
+  },
+  "claim_topology_effect": {
+    "D10_current_claims_rewritten": 0,
+    "D10_historical_claims_rewritten": 0,
+    "D10_claims_reclassified": 0,
+    "successor_claim_ids_added": ["D11-C-CL-O-001"],
+    "successor_claim_class": "optional_profile_normative",
+    "reciprocal_claim_edges_registry": "GRC9V4-D11-C-PROVENANCE-SUPPLEMENT-v1",
+    "D10_open_and_negative_claims_preserved": true
+  },
+  "verification_obligation_effect": {
+    "D10_verification_obligation_count_carried": 11,
+    "D10_pending_forward_obligations_remaining": 10,
+    "D10_pending_obligations_discharged_by_this_design_result": 0,
+    "D10_preclose_provenance_historical_status": "satisfied_for_D10_initial_population_only",
+    "D11_C_successor_provenance_status": "reopened_and_satisfied_bounded_by_GRC9V4_D11_C_PROVENANCE_SUPPLEMENT_v1",
+    "new_forward_obligations": [
+      "D11-C-VERIFY-PAPER-AND-SPECIFICATION-PROPAGATION",
+      "D11-C-VERIFY-REFERENCE-FIELD-SERIALIZATION-AND-EVENT-READMISSION",
+      "D11-C-VERIFY-IMPLEMENTATION-COVARIANCE-AND-SOLVER-CONFORMANCE"
+    ]
+  },
+  "profile_identity_effect": {
+    "candidate_population": "unchanged",
+    "realization_family_labels": ["C_CI", "C_OS", "C_RG2b", "C_PC", "C_CI_PC"],
+    "realization_family_labels_changed": false,
+    "complete_profile_identity_payload_changed": true,
+    "required_component_id": "C-HM-STIFFNESS-BASELINE-v1",
+    "required_action": "recompute_each_affected_complete_profile_digest_during_ordered_specification_propagation"
+  },
+  "propagation_state": {
+    "paper_updated": false,
+    "specification_updated": false,
+    "source_manifest_updated_with_accepted_result": false,
+    "reason": "the_accepted_D11_sequence_requires_D11_G9_before_paper_then_specification_propagation",
+    "current_T1_spec_text": "remains_provisional_non_normative_until_ordered_propagation",
+    "next_gate": "D11-G9"
+  },
+  "human_acceptance": {
+    "accepted": true,
+    "accepted_by": "experiment_owner",
+    "accepted_date": "2026-09-03",
+    "status": "accepted_bounded_2026-09-03",
+    "acceptance_scope": "recommended_D11_C_T3a_resolution_after_units_lifecycle_claim_debt_and_append_only_provenance_corrections"
+  },
+  "authorization_effect": {
+    "D11_C_closed_accepted_bounded": true,
+    "D11_G9_investigation_active": true,
+    "paper_propagation_authorized_now": false,
+    "specification_propagation_authorized_now": false,
+    "implementation_plan_authorized": false,
+    "implementation_authorized": false,
+    "runtime_or_src_tests_change_authorized": false,
+    "GRC9_or_GRC9V3_change_authorized": false
+  },
+  "claim_ceiling": "accepted_bounded_revision_specific_graph_generic_Candidate_C_reference_mobility_Hodge_conditioned_stiffness_potential_exact_J0_C_five_realization_design_and_append_only_provenance_closure_not_runtime_implementation_formation_endpoint_effect_nonabsorbability_stability_profile_preference_uniqueness_or_V3_rewrite",
+  "decision_record_digest": "82e8008e8edade39db7b5327a31a807031b712dcc86b3fe3e8c0977bda51e797"
+}

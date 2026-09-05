@@ -1,0 +1,344 @@
+{
+  "schema_version": "grc9v4_d11_g9_axis_preserving_expansion_provenance_supplement_v1",
+  "artifact_id": "GRC9V4-D11-G9-PROVENANCE-SUPPLEMENT-v1",
+  "gate_id": "D11-G9",
+  "title": "Axis-Preserving Chiral Same-Port Expansion Append-Only Provenance Supplement",
+  "status": "accepted_bounded_companion_registry",
+  "date": "2026-09-03",
+  "predecessor_record_id": "GRC9V4-CD-D10.2-v1",
+  "predecessor_decision_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+  "D11_G9_preregistration_record_id": "GRC9V4-CD-D11-G9-v1",
+  "D11_G9_preregistration_digest": "856e3db9ffa6a09080f7af0b9753be222ab986599855168a4fe9d218490c1635",
+  "resolution_record_id": "GRC9V4-CD-D11-G9-RESOLUTION-v1",
+  "source_identities": [
+    {
+      "record_id": "GRC9V4-CD-D10.2-v1",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D10_2FullSubstrateProvenanceAndPromotionAudit.json",
+      "file_sha256": "59c2b956cec7d258b1db09d43d6df44deb8c0be0453a5d741f7e2733d6881a33",
+      "decision_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+      "consumed_as": "immutable_predecessor_registry"
+    },
+    {
+      "record_id": "GRC9V4-CD-D11-C-RESOLUTION-v1",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D11CCandidateBaselineTransportAndMobilityResolution.json",
+      "file_sha256": "31bd8d3e8163d100d0935870cf7082fb3e393aab4c70018c45354a3a5c54ebd7",
+      "decision_digest": "82e8008e8edade39db7b5327a31a807031b712dcc86b3fe3e8c0977bda51e797",
+      "consumed_as": "accepted_Candidate_C_target_profile_lifecycle_authority"
+    },
+    {
+      "source_id": "D11-G9-INDEPENDENT-CHIRAL-PROPOSAL-2026-09-03",
+      "source_name": "D11-G9-Axis-Preserving-Chiral-Same-Port-Expansion-Closure.md",
+      "file_sha256": "d96daacf4f1085e1dc2efd418933afa52cc28f805d99e64d1748809b9d74c79a",
+      "consumed_as": "external_scientific_proposal_after_phase_ID_and_lifecycle_corrections"
+    }
+  ],
+  "predecessor_registry_preservation": {
+    "D10_2_files_modified": false,
+    "D10_2_object_count": 67,
+    "D10_2_equation_contract_count": 152,
+    "D11_C_objects_carried": 3,
+    "D11_C_equation_contracts_carried": 11,
+    "D10_2_or_D11_C_counts_or_digests_rewritten": false,
+    "supplement_semantics": "append_only_D11_G9_specialization_population_not_a_rebuild_or_mutation_of_D10_2_or_D11_C"
+  },
+  "accepted_successor_claim": {
+    "claim_id": "D11-G9-CL-N-001",
+    "claim_class": "GRC9V4_specialization_normative",
+    "status": "accepted_bounded",
+    "statement": "the_enabled_GRC9V4_saturated_expansion_uses_an_explicit_chirality_and_when_needed_growth_phase_to_construct_an_exact_boundary_preserving_same_port_axis_balanced_tree_then_completes_one_typed_atomic_target_lifecycle_event",
+    "claim_ceiling": "GRC9V4_only_design_level_mechanical_and_lifecycle_closure_not_GRC9_or_GRC9V3_repair_runtime_conformance_completed_child_stability_endpoint_effect_physical_chirality_selection_or_uniqueness"
+  },
+  "claim_edges": [
+    {
+      "predecessor_claim_id": "D10-CL-N-001",
+      "successor_claim_id": "D11-G9-CL-N-001",
+      "relation": "specialized_by_exact_axis_preserving_GRC9V4_expansion_policy",
+      "predecessor_status_changed": false
+    },
+    {
+      "predecessor_claim_id": "D10-CL-N-004",
+      "successor_claim_id": "D11-G9-CL-N-001",
+      "relation": "instantiated_by_exact_expansion_resource_and_charge_map",
+      "predecessor_status_changed": false
+    },
+    {
+      "predecessor_claim_id": "D10-CL-N-005",
+      "successor_claim_id": "D11-G9-CL-N-001",
+      "relation": "instantiated_by_whole_lifecycle_atomic_event",
+      "predecessor_status_changed": false
+    },
+    {
+      "predecessor_claim_id": "D10-CL-N-006",
+      "successor_claim_id": "D11-G9-CL-N-001",
+      "relation": "instantiated_by_same_port_typing_and_typed_K4_event_handling",
+      "predecessor_status_changed": false
+    },
+    {
+      "predecessor_claim_id": "D10-CL-N-007",
+      "successor_claim_id": "D11-G9-CL-N-001",
+      "relation": "narrowed_to_exact_compatibility_on_the_defined_legacy_target_domain",
+      "predecessor_status_changed": false
+    },
+    {
+      "predecessor_claim_id": "D10-CL-N-008",
+      "successor_claim_id": "D11-G9-CL-N-001",
+      "relation": "instantiated_with_explicit_chirality_phase_policy_and_receipt_identity",
+      "predecessor_status_changed": false
+    },
+    {
+      "predecessor_claim_id": "D10-CL-C-002",
+      "successor_claim_id": "D11-G9-CL-N-001",
+      "relation": "bounded_by_typed_lineage_or_explicit_whole_carrier_history_loss",
+      "predecessor_status_changed": false
+    },
+    {
+      "predecessor_claim_id": "D10-CL-C-011",
+      "successor_claim_id": "D11-G9-CL-N-001",
+      "relation": "successor_population_provenance_reopened_for_GRC9V4_specialization",
+      "predecessor_status_changed": false
+    },
+    {
+      "predecessor_claim_id": "D10-CL-X-001",
+      "successor_claim_id": "D11-G9-CL-N-001",
+      "relation": "preserved_by_forbidding_untyped_resize_partial_history_embedding_and_nonatomic_commit",
+      "predecessor_status_changed": false
+    }
+  ],
+  "normative_object_count": 10,
+  "normative_objects": [
+    {
+      "object_id": "GRC9-EXPANSION-SOURCE-ADMISSION",
+      "family": "GRC9V4_expansion",
+      "object_kind": "specialization_event_gate",
+      "normative_object": "exactly_saturated_nine_port_source_and_identity_bearing_D_eff_chirality_and_conditional_growth_phase",
+      "accepted_claim_ids": ["D11-G9-CL-N-001", "D10-CL-N-001", "D10-CL-N-008"]
+    },
+    {
+      "object_id": "GRC9-EXPANSION-EXACT-BOUNDARY-MAP",
+      "family": "GRC9V4_expansion",
+      "object_kind": "old_edge_endpoint_map",
+      "normative_object": "old_source_endpoint_s_r_maps_to_satellite_column_r_at_the_same_port_r_with_edge_and_external_endpoint_identity_preserved",
+      "accepted_claim_ids": ["D11-G9-CL-N-001"]
+    },
+    {
+      "object_id": "GRC9-EXPANSION-CHIRAL-SAME-PORT-SPINE",
+      "family": "GRC9V4_expansion",
+      "object_kind": "primary_internal_tree",
+      "normative_object": "beta_epsilon_b_equals_b_plus_epsilon_modulo_three_and_core_r_b_epsilon_connects_to_satellite_b_r_b_epsilon",
+      "accepted_claim_ids": ["D11-G9-CL-N-001", "D10-CL-N-006"]
+    },
+    {
+      "object_id": "GRC9-EXPANSION-GROWTH-PHASE",
+      "family": "GRC9V4_expansion",
+      "object_kind": "conditional_symmetry_phase",
+      "normative_object": "growth_phase_is_none_exactly_when_extra_node_remainder_is_zero_and_otherwise_is_one_of_three_explicit_branch_phases",
+      "accepted_claim_ids": ["D11-G9-CL-N-001", "D10-CL-N-008"]
+    },
+    {
+      "object_id": "GRC9-EXPANSION-RECURSIVE-SAME-PORT-TREE",
+      "family": "GRC9V4_expansion",
+      "object_kind": "deterministic_arbitrary_size_tree",
+      "normative_object": "branch_row_creation_order_BFS_with_chirality_ordered_other_column_rotor_and_identical_parent_child_port_type",
+      "accepted_claim_ids": ["D11-G9-CL-N-001", "D10-CL-N-006"]
+    },
+    {
+      "object_id": "GRC9-EXPANSION-AXIS-BALANCE",
+      "family": "GRC9V4_expansion",
+      "object_kind": "row_column_invariant",
+      "normative_object": "primary_rows_and_columns_are_each_used_once_and_global_internal_row_and_column_counts_differ_by_at_most_one",
+      "accepted_claim_ids": ["D11-G9-CL-N-001"]
+    },
+    {
+      "object_id": "GRC9-EXPANSION-BOND-SEED",
+      "family": "GRC9V4_expansion",
+      "object_kind": "mechanical_reference_initializer",
+      "normative_object": "every_new_internal_edge_receives_one_fixed_positive_chart_neutral_w_bond_seed_and_zero_incoming_reference_current",
+      "accepted_claim_ids": ["D11-G9-CL-N-001", "D10-CL-N-008"]
+    },
+    {
+      "object_id": "GRC9-EXPANSION-RESOURCE-MAP",
+      "family": "GRC9V4_expansion",
+      "object_kind": "current_and_reset_resource_transport",
+      "normative_object": "source_resource_is_split_over_primary_satellites_with_nonnegative_weights_summing_to_one_and_core_and_extra_nodes_zero_for_the_unit_measure_profile",
+      "accepted_claim_ids": ["D11-G9-CL-N-001", "D10-CL-N-004", "D10-CL-N-005"]
+    },
+    {
+      "object_id": "GRC9-EXPANSION-TARGET-READMISSION",
+      "family": "GRC9V4_expansion",
+      "object_kind": "typed_atomic_lifecycle_completion",
+      "normative_object": "target_profile_reference_history_geometry_realization_and_receipt_surfaces_are_reconstructed_and_readmitted_before_one_atomic_commit",
+      "accepted_claim_ids": ["D11-G9-CL-N-001", "D10-CL-N-005", "D10-CL-N-006"]
+    },
+    {
+      "object_id": "GRC9-LEGACY-EXPANSION-DEFICIENCY",
+      "family": "GRC9V4_disabled_compatibility",
+      "object_kind": "defined_domain_boundary",
+      "normative_object": "exact_disabled_compatibility_applies_only_where_the_unchanged_legacy_source_defines_a_unique_target_and_the_saturated_port_five_conflict_fails_closed",
+      "accepted_claim_ids": ["D11-G9-CL-N-001", "D10-CL-N-007"]
+    }
+  ],
+  "equation_contract_count": 20,
+  "equation_contracts": [
+    {
+      "equation_contract_id": "D11-G9-EC-SATURATED-SOURCE-PORT-BIJECTION",
+      "parent_object_ids": ["GRC9-EXPANSION-SOURCE-ADMISSION"],
+      "normative_equation_or_contract": "degree_active_s_equals_nine_and_each_source_port_one_through_nine_has_exactly_one_old_edge",
+      "support_semantics": "accepted_bounded_GRC9V4_successor",
+      "accepted_claim_ids": ["D11-G9-CL-N-001"]
+    },
+    {
+      "equation_contract_id": "D11-G9-EC-N-CAPACITY-FLOOR",
+      "parent_object_ids": ["GRC9-EXPANSION-SOURCE-ADMISSION"],
+      "normative_equation_or_contract": "n_cap_equals_ceil_D_eff_minus_two_over_seven_and_n_canonical_equals_max_four_n_cap",
+      "support_semantics": "accepted_bounded_GRC9V4_successor",
+      "accepted_claim_ids": ["D11-G9-CL-N-001"]
+    },
+    {
+      "equation_contract_id": "D11-G9-EC-BOUNDARY-RESERVE-FIRST",
+      "parent_object_ids": ["GRC9-EXPANSION-EXACT-BOUNDARY-MAP"],
+      "normative_equation_or_contract": "reserve_every_old_boundary_target_endpoint_before_allocating_any_internal_endpoint",
+      "support_semantics": "accepted_bounded_GRC9V4_successor",
+      "accepted_claim_ids": ["D11-G9-CL-N-001"]
+    },
+    {
+      "equation_contract_id": "D11-G9-EC-EXACT-OLD-PORT-MAP",
+      "parent_object_ids": ["GRC9-EXPANSION-EXACT-BOUNDARY-MAP"],
+      "normative_equation_or_contract": "source_s_r_external_j_t_maps_to_satellite_column_r_r_external_j_t_with_old_edge_identity_and_orientation_preserved",
+      "support_semantics": "accepted_bounded_GRC9V4_successor",
+      "accepted_claim_ids": ["D11-G9-CL-N-001"]
+    },
+    {
+      "equation_contract_id": "D11-G9-EC-MODULE-CHIRALITY",
+      "parent_object_ids": ["GRC9-EXPANSION-CHIRAL-SAME-PORT-SPINE"],
+      "normative_equation_or_contract": "epsilon_is_explicit_minus_one_or_plus_one_event_identity_and_reflection_maps_epsilon_to_minus_epsilon",
+      "support_semantics": "accepted_bounded_GRC9V4_successor",
+      "accepted_claim_ids": ["D11-G9-CL-N-001", "D10-CL-N-008"]
+    },
+    {
+      "equation_contract_id": "D11-G9-EC-PRIMARY-LATIN-TRANSVERSAL",
+      "parent_object_ids": ["GRC9-EXPANSION-CHIRAL-SAME-PORT-SPINE"],
+      "normative_equation_or_contract": "r_b_epsilon_equals_b_plus_epsilon_modulo_three_plus_three_times_b_minus_one_and_connects_core_and_satellite_b_at_the_same_r_b_epsilon",
+      "support_semantics": "accepted_bounded_GRC9V4_successor",
+      "accepted_claim_ids": ["D11-G9-CL-N-001"]
+    },
+    {
+      "equation_contract_id": "D11-G9-EC-GROWTH-PHASE",
+      "parent_object_ids": ["GRC9-EXPANSION-GROWTH-PHASE"],
+      "normative_equation_or_contract": "for_m_equals_three_q_plus_rho_phase_is_none_iff_rho_zero_and_otherwise_explicit_one_two_or_three_and_remainder_branches_follow_epsilon_order",
+      "support_semantics": "accepted_bounded_GRC9V4_successor",
+      "accepted_claim_ids": ["D11-G9-CL-N-001", "D10-CL-N-008"]
+    },
+    {
+      "equation_contract_id": "D11-G9-EC-BRANCH-ROW-IDENTITY",
+      "parent_object_ids": ["GRC9-EXPANSION-RECURSIVE-SAME-PORT-TREE"],
+      "normative_equation_or_contract": "every_internal_edge_in_branch_b_uses_row_b",
+      "support_semantics": "accepted_bounded_GRC9V4_successor",
+      "accepted_claim_ids": ["D11-G9-CL-N-001"]
+    },
+    {
+      "equation_contract_id": "D11-G9-EC-LOCAL-COLUMN-ROTOR",
+      "parent_object_ids": ["GRC9-EXPANSION-RECURSIVE-SAME-PORT-TREE"],
+      "normative_equation_or_contract": "a_node_with_incoming_column_c_orders_its_two_other_columns_as_c_plus_epsilon_then_c_minus_epsilon_modulo_three",
+      "support_semantics": "accepted_bounded_GRC9V4_successor",
+      "accepted_claim_ids": ["D11-G9-CL-N-001"]
+    },
+    {
+      "equation_contract_id": "D11-G9-EC-BRANCH-BFS-PARENT",
+      "parent_object_ids": ["GRC9-EXPANSION-RECURSIVE-SAME-PORT-TREE"],
+      "normative_equation_or_contract": "select_the_first_creation_order_branch_node_with_an_unused_rotor_candidate_and_attach_the_next_local_ordinal_child",
+      "support_semantics": "accepted_bounded_GRC9V4_successor",
+      "accepted_claim_ids": ["D11-G9-CL-N-001"]
+    },
+    {
+      "equation_contract_id": "D11-G9-EC-SAME-PORT-INTERNAL-EDGE",
+      "parent_object_ids": ["GRC9-EXPANSION-RECURSIVE-SAME-PORT-TREE"],
+      "normative_equation_or_contract": "every_primary_and_recursive_internal_edge_uses_the_identical_port_number_at_parent_and_child_and_is_oriented_parent_to_child",
+      "support_semantics": "accepted_bounded_GRC9V4_successor",
+      "accepted_claim_ids": ["D11-G9-CL-N-001", "D10-CL-N-006"]
+    },
+    {
+      "equation_contract_id": "D11-G9-EC-RECURSIVE-NONSTALL",
+      "parent_object_ids": ["GRC9-EXPANSION-RECURSIVE-SAME-PORT-TREE"],
+      "normative_equation_or_contract": "each_branch_starts_with_one_growth_valence_and_each_added_child_changes_available_valence_by_plus_one_so_no_finite_plan_stalls",
+      "support_semantics": "accepted_bounded_GRC9V4_successor",
+      "accepted_claim_ids": ["D11-G9-CL-N-001"]
+    },
+    {
+      "equation_contract_id": "D11-G9-EC-ROW-COLUMN-BALANCE",
+      "parent_object_ids": ["GRC9-EXPANSION-AXIS-BALANCE"],
+      "normative_equation_or_contract": "maximum_minus_minimum_internal_edge_count_is_at_most_one_separately_for_rows_and_columns",
+      "support_semantics": "accepted_bounded_GRC9V4_successor",
+      "accepted_claim_ids": ["D11-G9-CL-N-001"]
+    },
+    {
+      "equation_contract_id": "D11-G9-EC-TREE-AND-CAPACITY",
+      "parent_object_ids": ["GRC9-EXPANSION-RECURSIVE-SAME-PORT-TREE", "GRC9-EXPANSION-AXIS-BALANCE"],
+      "normative_equation_or_contract": "connected_acyclic_n_node_module_has_n_minus_one_internal_edges_and_external_capacity_nine_n_minus_two_times_n_minus_one_equals_seven_n_plus_two",
+      "support_semantics": "accepted_bounded_GRC9V4_successor",
+      "accepted_claim_ids": ["D11-G9-CL-N-001"]
+    },
+    {
+      "equation_contract_id": "D11-G9-EC-FIXED-BOND-SEED",
+      "parent_object_ids": ["GRC9-EXPANSION-BOND-SEED"],
+      "normative_equation_or_contract": "one_resolved_positive_w_bond_is_applied_to_every_new_internal_reference_edge_and_J_in_is_zero_without_creating_candidate_history",
+      "support_semantics": "accepted_bounded_GRC9V4_successor",
+      "accepted_claim_ids": ["D11-G9-CL-N-001"]
+    },
+    {
+      "equation_contract_id": "D11-G9-EC-RESOURCE-DISTRIBUTION",
+      "parent_object_ids": ["GRC9-EXPANSION-RESOURCE-MAP"],
+      "normative_equation_or_contract": "C_core_and_C_extra_are_zero_C_satellite_b_equals_p_b_C_source_each_p_b_nonnegative_sum_p_b_one_and_the_same_map_applies_to_current_and_reset",
+      "support_semantics": "accepted_bounded_GRC9V4_successor",
+      "accepted_claim_ids": ["D11-G9-CL-N-001", "D10-CL-N-004", "D10-CL-N-005"]
+    },
+    {
+      "equation_contract_id": "D11-G9-EC-PORT-PLAN-DETERMINISM",
+      "parent_object_ids": ["GRC9-EXPANSION-SOURCE-ADMISSION", "GRC9-EXPANSION-RECURSIVE-SAME-PORT-TREE"],
+      "normative_equation_or_contract": "event_digest_payload_and_exact_role_ID_grammar_bind_source_sink_D_eff_canonical_phase_chirality_policies_and_history_modes_and_no_map_iteration_or_hidden_counter_is_scientific_identity",
+      "support_semantics": "accepted_bounded_GRC9V4_successor",
+      "accepted_claim_ids": ["D11-G9-CL-N-001", "D10-CL-N-008"]
+    },
+    {
+      "equation_contract_id": "D11-G9-EC-DIHEDRAL-COVARIANCE",
+      "parent_object_ids": ["GRC9-EXPANSION-CHIRAL-SAME-PORT-SPINE", "GRC9-EXPANSION-GROWTH-PHASE", "GRC9-EXPANSION-AXIS-BALANCE"],
+      "normative_equation_or_contract": "simultaneous_row_column_branch_rotation_transforms_phase_and_preserves_chirality_while_reflection_flips_chirality_and_reflects_phase",
+      "support_semantics": "accepted_design_level_combinatorial_covariance_with_runtime_verification_pending",
+      "accepted_claim_ids": ["D11-G9-CL-N-001"]
+    },
+    {
+      "equation_contract_id": "D11-G9-EC-LIFECYCLE-READMISSION",
+      "parent_object_ids": ["GRC9-EXPANSION-TARGET-READMISSION"],
+      "normative_equation_or_contract": "target_complete_profile_supplies_exact_W_C_tr_C_surfaces_are_rederived_A_history_is_typed_or_loss_receipted_K4_is_whole_carrier_mapped_or_whole_carrier_reset_and_all_targets_are_readmitted_before_atomic_commit",
+      "support_semantics": "accepted_bounded_design_level_lifecycle_contract_with_runtime_conformance_pending",
+      "accepted_claim_ids": ["D11-G9-CL-N-001", "D10-CL-N-005", "D10-CL-N-006", "D10-CL-C-002", "D10-CL-X-001"]
+    },
+    {
+      "equation_contract_id": "D11-G9-EC-LEGACY-DEFINED-DOMAIN",
+      "parent_object_ids": ["GRC9-LEGACY-EXPANSION-DEFICIENCY"],
+      "normative_equation_or_contract": "disabled_exactness_is_limited_to_the_domain_where_unchanged_legacy_authority_defines_a_unique_target_and_the_saturated_port_five_conflict_returns_legacy_expansion_target_undefined_without_mutation",
+      "support_semantics": "accepted_bounded_GRC9V4_compatibility_boundary_not_a_GRC9_or_GRC9V3_rewrite",
+      "accepted_claim_ids": ["D11-G9-CL-N-001", "D10-CL-N-007"]
+    }
+  ],
+  "successor_population_counts": {
+    "D10_2_objects_retained": 67,
+    "D11_C_objects_retained": 3,
+    "D11_G9_objects_added": 10,
+    "combined_current_objects": 80,
+    "D10_2_equation_contracts_retained": 152,
+    "D11_C_equation_contracts_retained": 11,
+    "D11_G9_equation_contracts_added": 20,
+    "combined_current_equation_contracts": 183,
+    "D10_2_or_D11_C_claim_nodes_rewritten": 0,
+    "D11_G9_successor_claims_added": 1
+  },
+  "preclose_provenance_disposition": {
+    "D10_historical_disposition": "D10_preclose_audit_remains_satisfied_for_the_D10_initial_population",
+    "D11_C_disposition": "accepted_append_only_population_remains_unchanged",
+    "D11_G9_reopening": "required_for_the_new_specialization_population",
+    "D11_G9_result": "satisfied_bounded_for_ten_new_objects_twenty_new_contracts_one_claim_and_nine_reciprocal_claim_edges",
+    "future_profile_rule": "every_materially_distinct_chirality_selection_growth_topology_bond_resource_history_or_legacy_emulation_profile_reopens_provenance_and_the_earliest_affected_contract"
+  },
+  "claim_ceiling": "append_only_D11_G9_GRC9V4_only_object_contract_claim_and_provenance_registry_not_a_rewrite_of_D10_2_D11_C_GRC9_GRC9V3_or_runtime_implementation_conformance",
+  "artifact_digest": "f39d82405a2a92b198289d71554ed907e18ac9183da4dfa07fc4f4944418ca4a"
+}

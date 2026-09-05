@@ -1,0 +1,102 @@
+{
+  "schema": "grcv4_explorer_ET_C10_D11_source_contract_v1",
+  "status": "accepted",
+  "gate_id": "ET-C10-D11",
+  "title": "D11 append-only forensic source admission",
+  "historical_base": {
+    "ET_C0_record_digest": "2cd1b8c313ee86dba807d4f57e7db7eae3c8596fed457fabfa1bdc0ec4ab1028",
+    "ET_C1_source_bundle_digest": "79e84f7839e1b65f3e55eeadb980e6d8d9b57d240aced93a8bf3a7e82851dffc",
+    "ET_C2_record_digest": "10dc5cef2bffc764296cb9e38908cd1f992b9ce7c4c60d04a8ef6efda5d1453b",
+    "ET_C2_graph_digest": "2776d2aa1aca51f7759c94ed0e9677a04934429b070bb8ea47683cbcd8f218ae"
+  },
+  "authority_boundary": {
+    "admission_semantics": "append_only_D11_successor_overlay",
+    "historical_ET_C0_through_ET_C9_artifacts_rewritten": false,
+    "scientific_authority_source": "accepted_bounded_D11_resolution_and_provenance_supplement_records_only",
+    "preregistered_source_semantics": "admitted_as_lineage_and_candidate_history_not_as_accepted_scientific_claim_authority",
+    "paper_propagation_is_evidence": false,
+    "specification_propagation_is_evidence": false,
+    "implementation_conformance_is_evidence": false,
+    "GRC9_or_GRC9V3_change_authorized": false
+  },
+  "source_contract": {
+    "record_count": 8,
+    "records": [
+      {
+        "source_id": "GRC9V4-CD-D11-OPEN-v1",
+        "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D11SuccessorInvestigationOpening.json",
+        "expected_status": "accepted_bounded_successor_opening",
+        "canonical_digest_field": "decision_record_digest",
+        "canonical_digest": "51ba66d5404dee29f7b2a7dcd9501b43711fce0d47d466118945b5a0f71ac23a",
+        "file_sha256": "e2ce990a48fed01fb9fd4c90c1388a333a1143de1dd75e1b9f2ab38c21902410"
+      },
+      {
+        "source_id": "GRC9V4-CD-D11-CLAIM-DEBT-ROUTING-v1",
+        "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D11ClaimDebtAndAuthorityRouting.json",
+        "expected_status": "accepted_bounded_routing_contract",
+        "canonical_digest_field": "decision_record_digest",
+        "canonical_digest": "63cc407bffefef85602c28ead6c3da6b846778d3be9f78952db11cb10275c78d",
+        "file_sha256": "f34bff656cc4e231bb8db81a9d69498c2b9a1e57accc4ecaec6642cd3e4422df"
+      },
+      {
+        "source_id": "GRC9V4-CD-D11-C-v1",
+        "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D11CCandidateCBaselineTransportAndMobilityClosure.json",
+        "expected_status": "open_preregistered",
+        "canonical_digest_field": "decision_record_digest",
+        "canonical_digest": "c1c22c88fa676705370d01256a34801a364e310c93e4ef85cc5a3208e6e06a78",
+        "file_sha256": "fc8346c02590bd5d43f0f93a74a0a9e770ebef8f02a00c2eeb6551e9697529a0"
+      },
+      {
+        "source_id": "GRC9V4-CD-D11-C-RESOLUTION-v1",
+        "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D11CCandidateBaselineTransportAndMobilityResolution.json",
+        "expected_status": "accepted_bounded",
+        "canonical_digest_field": "decision_record_digest",
+        "canonical_digest": "82e8008e8edade39db7b5327a31a807031b712dcc86b3fe3e8c0977bda51e797",
+        "file_sha256": "31bd8d3e8163d100d0935870cf7082fb3e393aab4c70018c45354a3a5c54ebd7"
+      },
+      {
+        "source_id": "GRC9V4-D11-C-PROVENANCE-SUPPLEMENT-v1",
+        "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D11CCandidateBaselineTransportProvenanceSupplement.json",
+        "expected_status": "accepted_bounded_companion_registry",
+        "canonical_digest_field": "artifact_digest",
+        "canonical_digest": "57d711d80e648c8ee73401f3a7e76a0076374fc43bd4d2d0f3dbe4bb4ee3acb1",
+        "file_sha256": "43bb028c6c7b09952a35dee280067470f2ff5cde4395d39c5b5e7aba6fae29fb"
+      },
+      {
+        "source_id": "GRC9V4-CD-D11-G9-v1",
+        "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D11G9CanonicalExpansionPortAllocationClosure.json",
+        "expected_status": "queued_preregistered",
+        "canonical_digest_field": "decision_record_digest",
+        "canonical_digest": "856e3db9ffa6a09080f7af0b9753be222ab986599855168a4fe9d218490c1635",
+        "file_sha256": "efd341b65ab0408300896f841a0695e043bc5e85afb5c6e701fcad3a4cdc75f1"
+      },
+      {
+        "source_id": "GRC9V4-CD-D11-G9-RESOLUTION-v1",
+        "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D11G9CanonicalExpansionPortAllocationResolution.json",
+        "expected_status": "accepted_bounded",
+        "canonical_digest_field": "decision_record_digest",
+        "canonical_digest": "a0813ceead2c992ec197790abd8a0ceea167ae2d952f853cf48f1db4d8001615",
+        "file_sha256": "2b894abe80fed23455b7c37edc889aad48a27a1f8ae02d8c61752416a3eefc52"
+      },
+      {
+        "source_id": "GRC9V4-D11-G9-PROVENANCE-SUPPLEMENT-v1",
+        "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D11G9AxisPreservingExpansionProvenanceSupplement.json",
+        "expected_status": "accepted_bounded_companion_registry",
+        "canonical_digest_field": "artifact_digest",
+        "canonical_digest": "f39d82405a2a92b198289d71554ed907e18ac9183da4dfa07fc4f4944418ca4a",
+        "file_sha256": "3a7f7c7bb11c291b7e5f082002a374dc95bfaab4917944f526da0ec58f15748f"
+      }
+    ],
+    "source_bundle_candidate_digest": "5a1df6fe4c45a39322171d0104318327f8ec5748245831a0f021ad9c4a8b893f"
+  },
+  "expected_successor_population": {
+    "current_claim": 41,
+    "historical_claim": 29,
+    "debt_transformation": 31,
+    "verification_obligation": 18,
+    "pending_forward_verification_obligation": 17,
+    "normative_object": 80,
+    "equation_contract": 183
+  },
+  "record_digest": "afab36a86604fcea50332375781be3c82427e72e3e8c10d7f2cb9c7814f40f81"
+}

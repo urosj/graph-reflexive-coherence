@@ -42,6 +42,7 @@ D10_AUDITS = (
     "audit_grc9v4_d10_1_preliminary_provenance.py",
     "audit_grc9v4_d10_2_full_provenance.py",
 )
+POST_D10_SPECIFICATION_AUDIT = "audit_grcv4_post_d10_specifications.py"
 
 PYTHON_SUITE = (
     "audit_iteration0_contract.py",
@@ -65,6 +66,32 @@ PYTHON_SUITE = (
     "test_iteration8_lineage.py",
     "audit_iteration9_closeout.py",
     "test_iteration9_closeout.py",
+)
+
+# These validators consume only the frozen ET-C0 through ET-C9 artifacts. Their
+# historical rebuild remains excluded after D11; ET-C10 independently rebuilds
+# and validates the append-only successor overlay in memory.
+SUCCESSOR_PHASE_PYTHON_SUITE = (
+    "audit_iteration2_graph.py",
+    "audit_iteration3_forensics.py",
+    "audit_iteration4_counterfactuals.py",
+    "test_iteration6_navigation.py",
+    "audit_iteration8_lineage.py",
+    "test_iteration8_lineage.py",
+    "audit_iteration9_closeout.py",
+    "test_iteration9_closeout.py",
+)
+
+D11_FORENSIC_SUITE = (
+    "audit_iteration10_d11.py",
+    "test_iteration10_d11.py",
+)
+
+D11_UX_SUITE = (
+    "build_iteration11_d11_ux.py",
+    "audit_iteration11_d11_ux.py",
+    "run_iteration11_d11_notebook.py",
+    "test_iteration11_d11_ux.py",
 )
 
 HISTORICAL_LAYER_AUDITS = (
@@ -109,7 +136,7 @@ def source_snapshot(repo_root: Path, records: Path) -> dict[str, bytes]:
     return snapshot_files(paths, repo_root)
 
 
-def accepted_artifact_snapshot() -> dict[str, bytes]:
+def accepted_artifact_snapshot(*, include_web: bool = True) -> dict[str, bytes]:
     records = SIDE_TOOL_ROOT / "records"
     excluded = {
         "ETC7VerificationReceipt.json",
@@ -121,6 +148,25 @@ def accepted_artifact_snapshot() -> dict[str, bytes]:
         if path.is_file()
         and not path.name.startswith("ETC9")
         and path.name not in excluded
+    ]
+    if include_web:
+        paths.extend(
+            path for path in (TOOL_ROOT / "web/dist").rglob("*") if path.is_file()
+        )
+        paths.extend(
+            path
+            for path in (TOOL_ROOT / "web/public/data").rglob("*")
+            if path.is_file()
+        )
+    return snapshot_files(paths, SIDE_TOOL_ROOT)
+
+
+def successor_ux_snapshot() -> dict[str, bytes]:
+    records = SIDE_TOOL_ROOT / "records"
+    paths = [
+        records / "ETC11D11SuccessorUXBundle.json",
+        records / "ETC11D11SuccessorUXCandidate.json",
+        records / "ETC11D11UXWebBuildManifest.json",
     ]
     paths.extend(path for path in (TOOL_ROOT / "web/dist").rglob("*") if path.is_file())
     paths.extend(
@@ -167,7 +213,9 @@ def run_build_sequence(scripts: Path) -> None:
 
 def run_node_tests() -> tuple[int, int, str]:
     tests = tuple(sorted((TOOL_ROOT / "web/tests").glob("*.test.mjs")))
-    test_count = sum(path.read_text(encoding="utf-8").count("\ntest(") for path in tests)
+    test_count = sum(
+        path.read_text(encoding="utf-8").count("\ntest(") for path in tests
+    )
     result = subprocess.run(
         [
             str(managed_node()),
@@ -183,7 +231,11 @@ def run_node_tests() -> tuple[int, int, str]:
     if result.returncode:
         raise RuntimeError(f"ET-C9 Node suite failed\n{result.stdout}\n{result.stderr}")
     terminal = next(
-        (line.strip() for line in reversed(result.stdout.splitlines()) if "pass" in line),
+        (
+            line.strip()
+            for line in reversed(result.stdout.splitlines())
+            if "pass" in line
+        ),
         "Node tests passed",
     )
     print(f"ET_C9_NODE_TEST_PASS files={len(tests)} tests={test_count}")
@@ -207,16 +259,93 @@ def main() -> int:
     source_before = source_snapshot(repo_root, records)
     protected_before = protected_snapshot(repo_root)
     accepted_before = accepted_artifact_snapshot()
+    accepted_records_before = accepted_artifact_snapshot(include_web=False)
 
-    d10_results = [
-        run_python(investigation_scripts / name) for name in D10_AUDITS
-    ]
+    d10_results = [run_python(investigation_scripts / name) for name in D10_AUDITS]
+    post_d10_boundary = (
+        investigation_scripts.parent / "specification/PostD10SpecificationBoundary.json"
+    )
+    if post_d10_boundary.is_file():
+        run_python(investigation_scripts / POST_D10_SPECIFICATION_AUDIT)
+        active_post_d10_phase = json.loads(
+            post_d10_boundary.read_text(encoding="utf-8")
+        ).get("active_phase")
+    else:
+        active_post_d10_phase = None
+
+    if active_post_d10_phase in {
+        "successor_investigation",
+        "proposal_propagation",
+        "paper_propagation",
+        "specification_propagation",
+        "specification_correction",
+        "implementation",
+    }:
+        python_results = [
+            run_python(scripts / name, *arguments)
+            for name, *arguments in HISTORICAL_LAYER_AUDITS
+        ]
+        python_results.extend(
+            run_python(scripts / name) for name in SUCCESSOR_PHASE_PYTHON_SUITE
+        )
+        python_results.extend(run_python(scripts / name) for name in D11_FORENSIC_SUITE)
+        python_results.extend(run_python(scripts / name) for name in D11_UX_SUITE)
+        ux_first = successor_ux_snapshot()
+        python_results.append(run_python(scripts / "build_iteration11_d11_ux.py"))
+        ux_second = successor_ux_snapshot()
+        if ux_second != ux_first:
+            raise RuntimeError("ET-C11 second rebuild is not byte-identical")
+        node_files, node_tests, node_terminal = run_node_tests()
+        browser_terminal = run_python(scripts / "test_iteration11_d11_browser.py")
+
+        source_after = source_snapshot(repo_root, records)
+        protected_after = protected_snapshot(repo_root)
+        accepted_after = accepted_artifact_snapshot(include_web=False)
+        if source_after != source_before:
+            raise RuntimeError(
+                "successor-phase verification changed accepted source bytes"
+            )
+        if accepted_after != accepted_records_before:
+            raise RuntimeError(
+                "successor-phase verification changed accepted tool artifacts"
+            )
+        if protected_after != protected_before:
+            changed = sorted(set(protected_after) | set(protected_before))
+            changed = [
+                key
+                for key in changed
+                if protected_after.get(key) != protected_before.get(key)
+            ]
+            raise RuntimeError(
+                f"successor-phase verification changed protected paths: {changed}"
+            )
+        diff = subprocess.run(["git", "diff", "--check"], cwd=repo_root, check=False)
+        if diff.returncode:
+            raise RuntimeError("git diff --check failed")
+        print(
+            "ET_C11_D11_UX_VERIFY_PASS "
+            f"status=accepted_{active_post_d10_phase} "
+            "historical_rebuilds=skipped_immutable "
+            "D11_overlay_rebuild=in_memory_byte_exact "
+            "D11_UX_rebuilds=2_byte_exact "
+            f"python_commands={len(python_results)} node_files={node_files} "
+            f"node_tests={node_tests} node={node_terminal} "
+            f"browser={browser_terminal} "
+            "UX_status=candidate API_notebook_browser_identity=byte_exact "
+            "accepted_source_immutable=true accepted_tool_artifacts_immutable=true "
+            "protected_paths_immutable=true"
+        )
+        return 0
 
     run_build_sequence(scripts)
     accepted_first = accepted_artifact_snapshot()
     if accepted_first != accepted_before:
         changed = sorted(set(accepted_first) | set(accepted_before))
-        changed = [key for key in changed if accepted_first.get(key) != accepted_before.get(key)]
+        changed = [
+            key
+            for key in changed
+            if accepted_first.get(key) != accepted_before.get(key)
+        ]
         raise RuntimeError(f"reconstructible accepted artifacts changed: {changed}")
     run_build_sequence(scripts)
     accepted_second = accepted_artifact_snapshot()
@@ -250,7 +379,11 @@ def main() -> int:
         raise RuntimeError("ET-C9 changed accepted source bytes")
     if protected_after != protected_before:
         changed = sorted(set(protected_after) | set(protected_before))
-        changed = [key for key in changed if protected_after.get(key) != protected_before.get(key)]
+        changed = [
+            key
+            for key in changed
+            if protected_after.get(key) != protected_before.get(key)
+        ]
         raise RuntimeError(f"ET-C9 changed protected paths: {changed}")
 
     diff = subprocess.run(["git", "diff", "--check"], cwd=repo_root, check=False)
@@ -330,12 +463,19 @@ def main() -> int:
         "receipt_digest": None,
     }
     receipt["receipt_digest"] = record_digest(receipt, "receipt_digest")
-    write_json(records / "ETC9VerificationReceipt.json", receipt)
+    receipt_path = (
+        TOOL_ROOT / "generated/post-d10-specification/ETC9VerificationReceipt.json"
+        if post_d10_boundary.is_file()
+        else records / "ETC9VerificationReceipt.json"
+    )
+    receipt_path.parent.mkdir(parents=True, exist_ok=True)
+    write_json(receipt_path, receipt)
     print(
         "ET_C9_VERIFY_PASS status=accepted rebuilds=2+2 "
         f"python_commands={len(python_results)} node_tests={node_tests} "
         "browser_tests=12 screenshots=14 source_immutable=true "
-        f"receipt={receipt['receipt_digest']}"
+        f"receipt={receipt['receipt_digest']} "
+        f"receipt_path={receipt_path.relative_to(repo_root)}"
     )
     return 0
 

@@ -1,0 +1,413 @@
+{
+  "schema_version": "grc9v4_d11_g9_axis_preserving_expansion_resolution_v1",
+  "record_type": "accepted_scientific_successor_resolution",
+  "record_id": "GRC9V4-CD-D11-G9-RESOLUTION-v1",
+  "gate_id": "D11-G9",
+  "title": "Axis-Preserving Chiral Same-Port Expansion Resolution",
+  "status": "accepted_bounded",
+  "date": "2026-09-03",
+  "predecessor_record_id": "GRC9V4-CD-D11-G9-v1",
+  "predecessor_decision_digest": "856e3db9ffa6a09080f7af0b9753be222ab986599855168a4fe9d218490c1635",
+  "supersedes": "GRC9V4-CD-D11-G9-v1",
+  "scientific_activation": {
+    "required_record_id": "GRC9V4-CD-D11-C-RESOLUTION-v1",
+    "required_status": "accepted_bounded",
+    "required_decision_digest": "82e8008e8edade39db7b5327a31a807031b712dcc86b3fe3e8c0977bda51e797",
+    "satisfied": true
+  },
+  "source_identities": [
+    {
+      "record_id": "GRC9V4-CD-D11-G9-v1",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D11G9CanonicalExpansionPortAllocationClosure.json",
+      "file_sha256": "efd341b65ab0408300896f841a0695e043bc5e85afb5c6e701fcad3a4cdc75f1",
+      "decision_digest": "856e3db9ffa6a09080f7af0b9753be222ab986599855168a4fe9d218490c1635",
+      "consumed_as": "preregistered_candidate_and_acceptance_surface"
+    },
+    {
+      "record_id": "GRC9V4-CD-D11-C-RESOLUTION-v1",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D11CCandidateBaselineTransportAndMobilityResolution.json",
+      "file_sha256": "31bd8d3e8163d100d0935870cf7082fb3e393aab4c70018c45354a3a5c54ebd7",
+      "decision_digest": "82e8008e8edade39db7b5327a31a807031b712dcc86b3fe3e8c0977bda51e797",
+      "consumed_as": "accepted_Candidate_C_target_profile_and_reference_field_lifecycle_authority"
+    },
+    {
+      "record_id": "GRC9V4-CD-D10.2-v1",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D10_2FullSubstrateProvenanceAndPromotionAudit.json",
+      "file_sha256": "59c2b956cec7d258b1db09d43d6df44deb8c0be0453a5d741f7e2733d6881a33",
+      "decision_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+      "consumed_as": "immutable_predecessor_claim_object_contract_and_provenance_boundary"
+    },
+    {
+      "artifact_id": "GRC9V4-D11-G9-PROVENANCE-SUPPLEMENT-v1",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D11G9AxisPreservingExpansionProvenanceSupplement.json",
+      "file_sha256": "3a7f7c7bb11c291b7e5f082002a374dc95bfaab4917944f526da0ec58f15748f",
+      "artifact_digest": "f39d82405a2a92b198289d71554ed907e18ac9183da4dfa07fc4f4944418ca4a",
+      "consumed_as": "append_only_D11_G9_successor_object_contract_claim_and_provenance_registry"
+    },
+    {
+      "source_id": "D11-G9-INDEPENDENT-CHIRAL-PROPOSAL-2026-09-03",
+      "source_name": "D11-G9-Axis-Preserving-Chiral-Same-Port-Expansion-Closure.md",
+      "file_sha256": "d96daacf4f1085e1dc2efd418933afa52cc28f805d99e64d1748809b9d74c79a",
+      "consumed_as": "external_independent_resolution_proposal_after_bounded_phase_ID_and_lifecycle_corrections"
+    },
+    {
+      "source_id": "D11-G9-P1A-WORKING-RECOMMENDATION",
+      "proposal_digest": "79b8b0b6f5ee49f8f113e88f4668dd151f345863fcbf53b860fd70c73d12911f",
+      "consumed_as": "unaccepted_collision_free_comparison_candidate_superseded_by_axis_preserving_solution"
+    },
+    {
+      "source_id": "GRC9-MECHANICAL-SOURCE",
+      "path": "papers/2026-04-GRC-9.md",
+      "file_sha256": "cefc33e91e496c236660dad5c1e009a720ca908488db460d47322118dd7c3e08",
+      "consumed_as": "read_only_historical_row_column_and_mechanical_expansion_source_with_saturated_port_five_conflict"
+    },
+    {
+      "source_id": "D11-G9-PROVISIONAL-SPEC-PROPOSAL",
+      "path": "specs/grc-9-v4-spec.md",
+      "file_sha256": "cd5661c31473b2d8dc42f0fe1e241aea4cbb76f07ea8db2e500244d70b196342",
+      "consumed_as": "provisional_backward_proposal_not_scientific_authority_and_not_modified_by_this_resolution"
+    },
+    {
+      "source_id": "D11-G9-P4A-COMBINATORIAL-WITNESS",
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/witness_d11_g9_canonical_expansion.py",
+      "file_sha256": "cf53cf31af8d0e71c92100d4a6751c9c0db8fa8e60cdfe11ce76e23a8f05e4a5",
+      "consumed_as": "finite_port_capacity_identity_phase_and_dihedral_covariance_witness_not_runtime_evidence"
+    }
+  ],
+  "forensic_boundary": {
+    "live_tree_query_disposition": "failed_closed_new_unprocessed_source_available",
+    "accepted_snapshot_query": "executed_against_clean_pre_D11_accepted_snapshot",
+    "interpretation": "accepted_contracts_bind_the_GRC9_chart_column_preservation_and_whole_lifecycle_event_but_do_not_select_a_collision_free_internal_port_plan",
+    "resolution_is_new_GRC9V4_specialization_authority": true,
+    "receipts": [
+      {
+        "operation": "contract_provenance",
+        "identifier": "D10.2-EC-PARENT-GRC9-MECHANICAL-EXPANSION",
+        "support_disposition": "indeterminate_requires_review",
+        "trace_digest": "4c8c2010503d76c0c6d927b7932e334aeb2887f8d06e3cd46bf02b2e482e22b8"
+      },
+      {
+        "operation": "object_dependents",
+        "identifier": "GRC9-MECHANICAL-EXPANSION",
+        "trace_digest": "8ffa09b524b4b880a010a8878af07c260f33b6211e8e0f05c8aaf51fc2a6e4e9"
+      },
+      {
+        "operation": "contract_provenance",
+        "identifier": "D10.2-EC-PARENT-L-TOPOLOGY-EVENT",
+        "support_disposition": "indeterminate_requires_review",
+        "trace_digest": "382b72723eb4f331c45a22bc7d4eccf9422a1f631d994b81a17997b4737dbc3b"
+      },
+      {
+        "operation": "negative_claims",
+        "row_count": 14,
+        "trace_digest": "f8887156d233772b858dd18980bbfd67782076fc5f424f7b5e50dbf318a51cc3"
+      }
+    ]
+  },
+  "candidate_dispositions": [
+    {
+      "candidate_id": "D11-G9-P0",
+      "disposition": "not_selected_bounded_fallback_retained_for_future_reopening",
+      "reason": "a_bounded_complete_GRC9V4_design_level_expansion_law_was_accepted"
+    },
+    {
+      "candidate_id": "D11-G9-P1",
+      "disposition": "not_selected_preserved_as_provisional_spec_history",
+      "reason": "collision_free_base_geometry_but_incomplete_identity_lifecycle_and_arbitrary_size_axis_semantics"
+    },
+    {
+      "candidate_id": "D11-G9-P1a",
+      "disposition": "superseded_preserved_for_comparison",
+      "reason": "collision_free_and_lifecycle_complete_but_mismatches_port_types_across_internal_bonds_and_selects_one_lexicographic_chirality_by_chart_number"
+    },
+    {
+      "candidate_id": "D11-G9-P2",
+      "disposition": "not_selected_preserved_for_comparison",
+      "reason": "inverse_cyclic_center_row_repair_has_the_same_axis_and_same_port_limit_as_P1a"
+    },
+    {
+      "candidate_id": "D11-G9-P3",
+      "disposition": "superseded_minimum_endpoint_change_repair",
+      "reason": "removes_the_port_five_collision_but_retains_center_axis_privilege_and_mismatched_internal_port_types"
+    },
+    {
+      "candidate_id": "D11-G9-P4",
+      "disposition": "refined_as_D11_G9_P4a",
+      "reason": "submitted_axis_preserving_chiral_same_port_solution_required_fail_closed_phase_canonicalization_exact_role_ID_grammar_and_binding_to_accepted_D11_C_and_whole_carrier_K4_lifecycle"
+    },
+    {
+      "candidate_id": "D11-G9-P4a",
+      "profile_id": "grc9v4_axis_preserving_chiral_same_port_expansion_v1",
+      "disposition": "selected_accepted_bounded",
+      "reason": "exact_boundary_preserving_type_matched_dihedrally_covariant_arbitrary_size_tree_with_explicit_event_phases_and_complete_design_level_lifecycle"
+    }
+  ],
+  "decision": {
+    "scientific_disposition": "accepted_bounded_GRC9V4_only_axis_preserving_chiral_same_port_expansion_closure",
+    "selected_candidate_id": "D11-G9-P4a",
+    "selected_profile_id": "grc9v4_axis_preserving_chiral_same_port_expansion_v1",
+    "primary_spine_policy_id": "grc9v4_row_balanced_column_deranged_type_matched_spine_v1",
+    "recursive_tree_policy_id": "grc9v4_chiral_branch_row_same_port_bfs_v1",
+    "graph_generic_GRCV4_changed": false,
+    "candidate_or_realization_population_changed": false,
+    "authoritative_state_dimension_changed": false,
+    "GRC9_or_GRC9V3_source_changed": false
+  },
+  "port_chart_contract": {
+    "port_set": [1, 2, 3, 4, 5, 6, 7, 8, 9],
+    "chart_equation": "r=b+3*(a-1)_for_row_a_and_column_b",
+    "row_families": {
+      "1": [1, 2, 3],
+      "2": [4, 5, 6],
+      "3": [7, 8, 9]
+    },
+    "column_families": {
+      "1": [1, 4, 7],
+      "2": [2, 5, 8],
+      "3": [3, 6, 9]
+    },
+    "old_boundary_redirect_rule": "old_endpoint_s_r_maps_to_s_column_r_r_with_old_edge_external_endpoint_port_row_column_and_coordinate_orientation_preserved",
+    "boundary_allocation_order": "reserve_all_nine_old_boundary_endpoints_before_any_internal_endpoint",
+    "local_endpoint_capacity": "each_live_target_node_port_occurs_in_at_most_one_live_edge"
+  },
+  "primary_spine_contract": {
+    "three_cycle": "x_plus3_k=1+((x-1+k)_mod_3)",
+    "chirality_domain": [-1, 1],
+    "beta": "beta_epsilon_b=b_plus3_epsilon",
+    "port": "r_b_epsilon=beta_epsilon_b+3*(b-1)",
+    "edge": "core_r_b_epsilon_connects_to_satellite_b_r_b_epsilon",
+    "positive_spine_ports": [2, 6, 7],
+    "negative_spine_ports": [3, 4, 8],
+    "same_port_typing": true,
+    "primary_row_counts": [1, 1, 1],
+    "primary_column_counts": [1, 1, 1],
+    "boundary_disjointness": "beta_epsilon_b_ne_b_so_satellite_internal_port_is_outside_its_reserved_old_boundary_column"
+  },
+  "capacity_and_growth_contract": {
+    "desired_capacity_domain": "integer_D_eff_greater_than_or_equal_to_9",
+    "capacity_lower_bound": "n_cap=ceil((D_eff-2)/7)",
+    "canonical_module_size": "n_canonical=max(4,n_cap)",
+    "extra_count": "m=n_canonical-4=3*q+rho",
+    "growth_phase_rule": "growth_phase_is_none_iff_rho_equals_zero_otherwise_it_is_explicitly_one_two_or_three",
+    "remainder_branch_order": "phase_then_phase_plus3_epsilon_when_rho_equals_two",
+    "branch_count_balance": "max_m_b_minus_min_m_b_is_at_most_one",
+    "tree_internal_edge_count": "n_canonical-1",
+    "tree_external_capacity": "D_ext_max(n)=9*n-2*(n-1)=7*n+2",
+    "minimality_boundary": "n_cap_is_capacity_minimal_above_the_four_node_policy_floor"
+  },
+  "recursive_tree_contract": {
+    "branch_row": "every_internal_edge_in_branch_b_uses_row_b",
+    "incoming_column": "the_column_of_the_unique_parent_edge_at_each_noncore_branch_node",
+    "outward_rotor": "incoming_column_plus3_epsilon_then_incoming_column_minus3_epsilon",
+    "parent_rule": "creation_order_breadth_first_first_node_with_an_unused_rotor_candidate",
+    "child_rule": "next_branch_local_ordinal",
+    "edge_port_rule": "parent_and_child_use_the_identical_branch_row_and_selected_column_port",
+    "orientation_rule": "core_to_primary_satellite_and_parent_to_additional_child",
+    "nonstall_proof": "each_branch_starts_with_one_available_growth_valence_and_each_new_child_changes_available_valence_by_plus_one",
+    "row_balance": "maximum_internal_row_count_minus_minimum_is_at_most_one",
+    "column_balance": "maximum_internal_column_count_minus_minimum_is_at_most_one"
+  },
+  "phase_and_covariance_contract": {
+    "chirality_is_explicit_event_identity": true,
+    "missing_chirality_disposition": "module_chirality_required",
+    "missing_active_growth_phase_disposition": "module_growth_phase_required",
+    "inactive_growth_phase_disposition": "reject_noncanonical_inactive_growth_phase",
+    "forbidden_tie_breaks": [
+      "lowest_port_number",
+      "node_ID_parity",
+      "edge_or_map_iteration_order",
+      "thread_schedule",
+      "global_event_count",
+      "hidden_random_state"
+    ],
+    "cyclic_rotation": "rotate_rows_columns_branches_and_active_growth_phase_together_and_preserve_chirality",
+    "reflection": "reflect_rows_columns_branches_and_active_growth_phase_and_map_chirality_to_its_negative"
+  },
+  "stable_identity_contract": {
+    "event_id_grammar": "grc-event-sha256_followed_by_colon_and_exactly_64_lowercase_hex_digits",
+    "event_digest_payload": [
+      "source_graph_identity",
+      "source_sink_identity",
+      "D_eff",
+      "n_cap_and_n_canonical",
+      "expansion_chirality",
+      "canonical_growth_phase",
+      "primary_and_recursive_policy_IDs",
+      "bond_seed_and_policy",
+      "current_and_reset_resource_policy",
+      "candidate_and_persistent_history_policies"
+    ],
+    "base_node_ids": [
+      "<event-id>/core",
+      "<event-id>/satellite/1",
+      "<event-id>/satellite/2",
+      "<event-id>/satellite/3"
+    ],
+    "base_internal_edge_ids": [
+      "<event-id>/internal/1",
+      "<event-id>/internal/2",
+      "<event-id>/internal/3"
+    ],
+    "extra_ordinal_width": "w=max(1,len(decimal(m)))",
+    "extra_node_id": "<event-id>/extra/<b>/<local_ordinal_zero_padded_to_w>",
+    "extra_internal_edge_id": "<event-id>/internal/extra/<b>/<local_ordinal_zero_padded_to_w>",
+    "old_edge_rule": "preserve_exact_old_edge_identity",
+    "collision_rule": "missing_duplicate_or_live_ID_collision_is_a_typed_precommit_failure"
+  },
+  "bond_and_resource_contract": {
+    "bond_seed_policy_id": "fixed_positive_chart_neutral_v1",
+    "bond_seed": "one_resolved_w_bond_strictly_greater_than_zero_for_every_new_internal_reference_edge",
+    "new_edge_incoming_reference_current": 0,
+    "bond_seed_not_candidate_history": true,
+    "unit_measure_equal_split": "C_satellite_1=C_satellite_2=C_satellite_3=C_source/3_and_C_core=C_extra=0",
+    "custom_split": "resolved_identity_bearing_nonnegative_tuple_p_1_p_2_p_3_summing_exactly_to_one",
+    "reset_rule": "apply_the_same_typed_resource_map_to_current_and_reset_state",
+    "charge_rule": "Delta_Q_event_is_zero_for_the_selected_unit_measure_profile_and_Q_target_plus_equals_varpi_plus_transpose_C_plus"
+  },
+  "lifecycle_contract": {
+    "Candidate_A": "preserve_old_boundary_W_A_by_exact_edge_lineage_and_use_an_admitted_positive_target_initializer_for_new_edges_or_apply_another_admitted_full_policy_or_archive_and_initialize_the_full_target_with_a_history_loss_receipt",
+    "Candidate_C": "target_complete_profile_supplies_the_entire_exact_W_C_tr_map_before_T_C_Hodge_Phi_0_C_J0_C_response_geometry_and_analysis_surfaces_are_rederived",
+    "Candidate_C_forbidden_relabel": "W_C_tr_is_not_mobility_state_and_is_not_rebuilt_from_C_plus",
+    "persistent_K4": "apply_one_typed_L_K4_evt_to_the_whole_target_carrier_or_archive_the_whole_source_set_the_whole_target_Z4_to_zero_and_emit_the_structural_history_loss_receipt",
+    "persistent_K4_forbidden_hybrid": "preserve_old_components_while_zero_filling_new_components_without_an_admitted_whole_carrier_map",
+    "RG2b": "rebuild_target_extension_completion_and_invariant_section",
+    "realizations": "rebuild_every_CI_OS_RG2b_PC_and_CI_PC_target_surface_then_re_admit",
+    "atomicity": "all_port_ID_resource_charge_history_profile_and_target_readmission_checks_pass_before_one_commit_or_the_complete_source_state_is_preserved"
+  },
+  "legacy_compatibility_contract": {
+    "GRC9_or_GRC9V3_modified": false,
+    "defined_domain": "D_V3_defined_contains_only_source_states_for_which_the_selected_legacy_authority_determines_one_unique_target",
+    "saturated_conflicting_event": "outside_D_V3_defined_because_old_port_five_and_the_second_inherited_spine_edge_both_require_satellite_2_port_5",
+    "disabled_disposition": "return_legacy_expansion_target_undefined_and_commit_no_graph_resource_state_history_reset_or_receipt_mutation",
+    "enabled_V4_not_exact_V3": true,
+    "runtime_emulation": "requires_a_separate_repository_commit_digest_bound_non_normative_profile"
+  },
+  "event_semantic_ceiling": {
+    "mechanical_expansion_is_completed_spark": false,
+    "branch_roles_are_child_identities": false,
+    "post_expansion_child_basin_or_attractor_gain_required_for_completion": true,
+    "runtime_implementation_conformance_claimed": false,
+    "endpoint_or_stability_claimed": false,
+    "unique_possible_GRC9_expansion_claimed": false,
+    "physical_chirality_selection_claimed": false
+  },
+  "combinatorial_witness": {
+    "script": "implementation/investigations/grc9v4-constitutive-design/scripts/witness_d11_g9_canonical_expansion.py",
+    "status": "passed",
+    "target_effective_degree_range": [9, 5000],
+    "target_effective_degree_case_count": 4992,
+    "admitted_plan_case_count": 23256,
+    "checked_chiralities": [-1, 1],
+    "checked_active_growth_phases": [1, 2, 3],
+    "input_order_shuffle_count": 1000,
+    "covariance_case_count": 24,
+    "positive_primary_spine": [2, 6, 7],
+    "negative_primary_spine": [3, 4, 8],
+    "unique_local_endpoint_occupancy": true,
+    "exact_old_boundary_ports": true,
+    "same_port_internal_edges": true,
+    "connected_acyclic_tree": true,
+    "row_and_column_imbalance_at_most_one": true,
+    "capacity_identity": "7*n+2",
+    "inactive_phase_rejected": true,
+    "missing_active_phase_rejected": true,
+    "large_plan_digest": "77651f98e8d28e7d1212e80b697427d903ef94eceb42a7803d37051969ea4678",
+    "claim_ceiling": "finite_combinatorial_identity_and_covariance_witness_not_runtime_atomicity_history_target_readmission_stability_or_endpoint_evidence"
+  },
+  "claim_topology_effect": {
+    "D10_current_claims_rewritten": 0,
+    "D10_historical_claims_rewritten": 0,
+    "D11_C_claims_rewritten": 0,
+    "D10_or_D11_C_claims_reclassified": 0,
+    "successor_claim_ids_added": ["D11-G9-CL-N-001"],
+    "successor_claim_class": "GRC9V4_specialization_normative",
+    "reciprocal_claim_edges_registry": "GRC9V4-D11-G9-PROVENANCE-SUPPLEMENT-v1",
+    "D10_open_and_negative_claims_preserved": true
+  },
+  "debt_transformation": {
+    "predecessor_D10_debt_transformation_count": 29,
+    "predecessor_D10_debt_dispositions_changed": 0,
+    "D11_C_local_debt_status_carried": "resolved_bounded_by_D11_C_T3a",
+    "local_debt_id": "D11-G9-DEBT-CANONICAL-PORT-ALLOCATION",
+    "local_debt_predecessor_status": "active_preregistered_after_accepted_D11_C",
+    "local_debt_successor_status": "resolved_bounded_by_D11_G9_P4a",
+    "local_debt_facets_closed": [
+      "saturated_port_five_conflict",
+      "exact_primary_and_recursive_internal_port_allocation",
+      "exact_old_boundary_port_identity",
+      "same_port_internal_typing",
+      "arbitrary_size_tree_and_capacity",
+      "explicit_chirality_and_conditional_growth_phase",
+      "row_and_column_balance",
+      "stable_role_identity_and_event_receipts",
+      "design_level_resource_candidate_history_and_target_readmission",
+      "append_only_successor_provenance",
+      "V4_only_legacy_defined_domain_boundary"
+    ],
+    "not_closed": [
+      "physical_or_affinity_based_chirality_selection",
+      "runtime_expansion_replay_and_atomicity_conformance",
+      "Candidate_A_history_preservation_evidence",
+      "persistent_K4_event_map_evidence",
+      "child_basin_stabilization",
+      "structural_or_temporal_stability",
+      "endpoint_effect_or_physical_channel_attribution",
+      "necessity_optimality_or_preference_for_nine_ports",
+      "generic_lossless_topology_history_transport"
+    ]
+  },
+  "verification_obligation_effect": {
+    "D10_verification_obligation_count_carried": 11,
+    "D10_pending_forward_obligations_remaining": 10,
+    "D10_pending_obligations_discharged_by_this_design_result": 0,
+    "D11_C_pending_forward_obligations_carried": 3,
+    "D11_G9_successor_provenance_status": "reopened_and_satisfied_bounded_by_GRC9V4_D11_G9_PROVENANCE_SUPPLEMENT_v1",
+    "new_forward_obligations": [
+      "D11-G9-VERIFY-PAPER-THEN-SPECIFICATION-PROPAGATION",
+      "D11-G9-VERIFY-PORT-PLAN-ID-PHASE-AND-REPLAY-CONFORMANCE",
+      "D11-G9-VERIFY-RESOURCE-HISTORY-TARGET-READMISSION-AND-ATOMICITY",
+      "D11-G9-VERIFY-DISABLED-LEGACY-DEFINED-DOMAIN-FAIL-CLOSED"
+    ],
+    "total_pending_forward_obligations": 17
+  },
+  "successor_population_effect": {
+    "D10_current_claims_carried": 39,
+    "D10_historical_claim_nodes_carried": 29,
+    "D11_C_successor_claims_carried": 1,
+    "D11_G9_successor_claims_added": 1,
+    "D10_objects_carried": 67,
+    "D11_C_objects_carried": 3,
+    "D11_G9_objects_added": 10,
+    "combined_current_objects": 80,
+    "D10_equation_contracts_carried": 152,
+    "D11_C_equation_contracts_carried": 11,
+    "D11_G9_equation_contracts_added": 20,
+    "combined_current_equation_contracts": 183
+  },
+  "human_acceptance": {
+    "accepted": true,
+    "accepted_by": "experiment_owner",
+    "accepted_date": "2026-09-03",
+    "status": "accepted_bounded_2026-09-03",
+    "acceptance_scope": "submitted_axis_preserving_chiral_same_port_solution_after_comparison_phase_canonicalization_exact_ID_and_lifecycle_corrections"
+  },
+  "authorization_effect": {
+    "D11_G9_closed_accepted_bounded": true,
+    "paper_propagation_authorized_now": true,
+    "specification_propagation_authorized_now": false,
+    "implementation_plan_authorized": false,
+    "implementation_authorized": false,
+    "runtime_or_src_tests_change_authorized": false,
+    "GRC9_or_GRC9V3_change_authorized": false
+  },
+  "propagation_state": {
+    "paper_updated": false,
+    "specification_updated": false,
+    "source_manifest_updated_with_accepted_result": false,
+    "reason": "this_record_closes_D11_G9_and_the_accepted_sequence_requires_paper_propagation_before_specification_propagation",
+    "current_P1_spec_text": "remains_provisional_non_normative_until_ordered_paper_then_specification_propagation",
+    "next_gate": "D11-paper-propagation"
+  },
+  "claim_ceiling": "accepted_bounded_GRC9V4_only_axis_preserving_port_capacity_phase_identity_resource_history_and_readmission_design_contract_not_GRC9_or_GRC9V3_repair_runtime_conformance_completed_child_stability_endpoint_effect_physical_chirality_selection_or_uniqueness",
+  "decision_record_digest": "a0813ceead2c992ec197790abd8a0ceea167ae2d952f853cf48f1db4d8001615"
+}

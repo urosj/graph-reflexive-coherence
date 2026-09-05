@@ -38,6 +38,12 @@ import {
   scrubPosition,
   verifyLineagePlaybackLayer,
 } from "./lineage.js";
+import {
+  filterSuccessorCatalog,
+  outputRows,
+  successorView,
+  verifySuccessorBundle,
+} from "./successor.js";
 
 const KIND_COLORS = {
   current_claim: "#1f766d",
@@ -58,6 +64,7 @@ const state = {
   bundle: null,
   layer: null,
   lineageLayer: null,
+  successorBundle: null,
   selectedNodeId: null,
   selectedLockId: null,
   selectedAlternativeId: null,
@@ -75,6 +82,10 @@ const state = {
   playbackFrameIndex: 0,
   playbackTimer: null,
   reconstructionClaimId: "D10-CL-N-001",
+  successorScope: "all",
+  successorKind: "all",
+  successorQuery: "",
+  successorNodeId: "current_claim:D11-C-CL-O-001",
 };
 
 function escapeHtml(value) {
@@ -110,6 +121,7 @@ function renderShell(source) {
         <div class="surface-control" role="tablist" aria-label="Explorer surface">
           <button class="surface-button is-active" data-surface="explorer" role="tab">Explore</button>
           <button class="surface-button" data-surface="lineage" role="tab">Lineage</button>
+          <button class="surface-button" data-surface="successor" role="tab">D11</button>
         </div>
         <div class="mode-control" role="group" aria-label="Evidence mode">
           <button class="mode-button is-active" data-mode="source">Source</button>
@@ -236,6 +248,47 @@ function renderShell(source) {
           <select id="reconstruction-select" class="scenario-select" aria-label="Claim to reconstruct"></select>
           <div id="reconstruction-result" class="reconstruction-result"></div>
         </section>
+      </aside>
+    </main>
+    <main id="successor-workspace" class="successor-workspace is-hidden">
+      <aside class="successor-navigation" aria-label="D11 authority navigation">
+        <div class="successor-status">
+          <strong>Accepted D11 authority</strong>
+          <span>ET-C10 source-bound / ET-C11 presentation candidate</span>
+        </div>
+        <div class="search-wrap">
+          <i data-lucide="search" aria-hidden="true"></i>
+          <input id="successor-search" type="search" placeholder="Search D11 claims, contracts, objects..." aria-label="Search D11 authority" autocomplete="off" />
+        </div>
+        <section class="successor-filter-section">
+          <div class="section-heading">Investigation</div>
+          <div class="successor-scope-buttons">
+            <button class="successor-scope is-active" data-successor-scope="all">All</button>
+            <button class="successor-scope" data-successor-scope="D11-C">D11-C</button>
+            <button class="successor-scope" data-successor-scope="D11-G9">D11-G9</button>
+          </div>
+          <label class="field-label" for="successor-kind">Authority kind</label>
+          <select id="successor-kind" class="scenario-select" aria-label="D11 authority kind"></select>
+        </section>
+        <section class="successor-result-section">
+          <div class="section-heading"><span id="successor-result-count"></span> source-bound entries</div>
+          <div id="successor-results" class="search-results" role="listbox"></div>
+        </section>
+      </aside>
+      <section class="successor-main" aria-label="D11 evidence trace">
+        <header id="successor-selection" class="successor-selection"></header>
+        <div class="successor-ceiling">
+          Presentation only: no browser inference, propagation, rerun prediction, or claim promotion
+        </div>
+        <div id="successor-trace-rows" class="successor-trace-rows"></div>
+      </section>
+      <aside class="successor-evidence" aria-label="D11 provenance evidence">
+        <div class="section-heading">Output identity</div>
+        <div id="successor-output-identity"></div>
+        <div class="section-heading">Source references</div>
+        <div id="successor-source-refs"></div>
+        <div class="section-heading">Support relationships</div>
+        <div id="successor-edge-refs"></div>
       </aside>
     </main>
   `;
@@ -953,12 +1006,123 @@ function renderLineage({ center = false } = {}) {
   renderReconstructionOptions();
 }
 
+function successorRows() {
+  return filterSuccessorCatalog(state.successorBundle, {
+    query: state.successorQuery,
+    scope: state.successorScope,
+    kind: state.successorKind,
+  });
+}
+
+function renderSuccessorFilters() {
+  const select = document.querySelector("#successor-kind");
+  select.innerHTML = ["all", ...state.successorBundle.kind_order]
+    .map((kind) => `<option value="${escapeHtml(kind)}">${escapeHtml(kind === "all" ? "All authority kinds" : kindLabel(kind))}</option>`)
+    .join("");
+  select.value = state.successorKind;
+  document.querySelectorAll("[data-successor-scope]").forEach((button) => {
+    button.classList.toggle("is-active", button.dataset.successorScope === state.successorScope);
+  });
+}
+
+function renderSuccessorCatalog() {
+  const rows = successorRows();
+  document.querySelector("#successor-result-count").textContent = String(rows.length);
+  const container = document.querySelector("#successor-results");
+  container.innerHTML = rows.length
+    ? rows.map((row) => `
+        <button role="option" class="result-row successor-result ${row.node_id === state.successorNodeId ? "is-active" : ""}" data-successor-node="${escapeHtml(row.node_id)}" aria-selected="${row.node_id === state.successorNodeId}">
+          <span class="kind-dot" style="--kind-color:${KIND_COLORS[row.kind] ?? "#687078"}"></span>
+          <span class="result-copy">
+            <span class="result-label">${escapeHtml(row.identifier)}</span>
+            <span class="result-meta">${escapeHtml(`${row.scope} / ${kindLabel(row.kind)} / ${row.operation}`)}</span>
+          </span>
+        </button>`).join("")
+    : `<div class="empty-state">No matching D11 authority entries</div>`;
+  container.querySelectorAll("[data-successor-node]").forEach((button) => {
+    button.addEventListener("click", () => selectSuccessorNode(button.dataset.successorNode));
+  });
+}
+
+function successorSourceRefs(rows) {
+  const refs = new Map();
+  for (const row of rows) {
+    const source = row.source_ref;
+    if (!source) continue;
+    refs.set(`${source.record_id}:${source.source_json_pointer}`, source);
+  }
+  return [...refs.values()];
+}
+
+function successorEdgeRefs(rows) {
+  const refs = new Map();
+  for (const row of rows) {
+    for (const edge of row.edge_refs ?? []) refs.set(edge.edge_id, edge);
+  }
+  return [...refs.values()];
+}
+
+function renderSuccessorView() {
+  const view = successorView(state.successorBundle, state.successorNodeId);
+  const catalog = state.successorBundle.catalog.find((row) => row.node_id === state.successorNodeId);
+  const output = view.output;
+  const rows = outputRows(view);
+  const digest = output.trace_digest ?? output.projection_digest;
+  document.querySelector("#successor-selection").innerHTML = `
+    <div class="selection-kind"><span class="kind-dot" style="--kind-color:${KIND_COLORS[catalog.kind] ?? "#687078"}"></span>${escapeHtml(`${catalog.scope} / ${kindLabel(catalog.kind)}`)}</div>
+    <h2>${escapeHtml(catalog.identifier)}</h2>
+    <p>${escapeHtml(catalog.label)}</p>`;
+  document.querySelector("#successor-trace-rows").innerHTML = rows.map((row) => `
+    <article class="successor-trace-row">
+      <header><span>${escapeHtml(row.classification.replaceAll("_", " "))}</span><code>${escapeHtml(row.row_id)}</code></header>
+      <dl class="detail-list">${attributeRows(row.payload && typeof row.payload === "object" ? row.payload : { value: row.payload })}</dl>
+    </article>`).join("");
+  document.querySelector("#successor-output-identity").innerHTML = `
+    <dl class="detail-list">
+      <div class="detail-row"><dt>Operation</dt><dd>${escapeHtml(output.operation.replaceAll("_", " "))}</dd></div>
+      <div class="detail-row"><dt>Output class</dt><dd>${escapeHtml(output.output_class.replaceAll("_", " "))}</dd></div>
+      <div class="detail-row"><dt>Rows</dt><dd>${rows.length}</dd></div>
+      <div class="detail-row"><dt>Digest</dt><dd class="mono-copy">${escapeHtml(digest)}</dd></div>
+      <div class="detail-row"><dt>ET-C10 authority</dt><dd class="mono-copy">${escapeHtml(state.successorBundle.source_identities.ET_C10_record_digest)}</dd></div>
+    </dl>`;
+  const sources = successorSourceRefs(rows);
+  document.querySelector("#successor-source-refs").innerHTML = sources.length
+    ? sources.map((source) => sourceReceipt(source)).join("")
+    : `<div class="empty-state">No source reference</div>`;
+  const edges = successorEdgeRefs(rows);
+  document.querySelector("#successor-edge-refs").innerHTML = edges.length
+    ? `<div class="successor-edge-list">${edges.map((edge) => `
+        <div class="successor-edge">
+          <strong>${escapeHtml(edge.relation.replaceAll("_", " "))}</strong>
+          <span>${escapeHtml(edge.source)}</span>
+          <span>→ ${escapeHtml(edge.target)}</span>
+          <small>${escapeHtml(edge.support_semantic.replaceAll("_", " "))}</small>
+        </div>`).join("")}</div>`
+    : `<div class="empty-state">No support relationships</div>`;
+}
+
+function selectSuccessorNode(nodeId) {
+  successorView(state.successorBundle, nodeId);
+  state.successorNodeId = nodeId;
+  renderSuccessorCatalog();
+  renderSuccessorView();
+}
+
+function renderSuccessor() {
+  renderSuccessorFilters();
+  renderSuccessorCatalog();
+  renderSuccessorView();
+}
+
 function setSurface(surface) {
   state.surface = surface;
   document.querySelector("#explorer-workspace").classList.toggle("is-hidden", surface !== "explorer");
   document.querySelector("#lineage-workspace").classList.toggle("is-hidden", surface !== "lineage");
+  document.querySelector("#successor-workspace").classList.toggle("is-hidden", surface !== "successor");
+  document.querySelector(".mode-control").classList.toggle("is-hidden", surface === "successor");
   document.querySelectorAll("[data-surface]").forEach((button) => button.classList.toggle("is-active", button.dataset.surface === surface));
   if (surface === "lineage") renderLineage({ center: true });
+  if (surface === "successor") renderSuccessor();
 }
 
 function setMode(mode) {
@@ -1031,6 +1195,30 @@ function wireShell() {
   document.querySelectorAll("[data-surface]").forEach((button) => {
     button.addEventListener("click", () => setSurface(button.dataset.surface));
   });
+  const successorSearch = document.querySelector("#successor-search");
+  successorSearch.addEventListener("input", () => {
+    state.successorQuery = successorSearch.value;
+    renderSuccessorCatalog();
+  });
+  successorSearch.addEventListener("keydown", (event) => {
+    const first = document.querySelector("[data-successor-node]");
+    if (event.key === "Enter" && first) first.click();
+    if (event.key === "ArrowDown" && first) {
+      event.preventDefault();
+      first.focus();
+    }
+  });
+  document.querySelectorAll("[data-successor-scope]").forEach((button) => {
+    button.addEventListener("click", () => {
+      state.successorScope = button.dataset.successorScope;
+      renderSuccessorFilters();
+      renderSuccessorCatalog();
+    });
+  });
+  document.querySelector("#successor-kind").addEventListener("change", (event) => {
+    state.successorKind = event.target.value;
+    renderSuccessorCatalog();
+  });
   document.querySelector("#fit-graph").addEventListener("click", () => state.cy?.fit(undefined, 48));
   document.querySelector("#fit-lineage").addEventListener("click", centerLineageSelection);
   document.querySelector("#lineage-scrubber").addEventListener("input", (event) => {
@@ -1055,17 +1243,20 @@ function wireShell() {
 
 async function boot() {
   try {
-    const [bundleResponse, layerResponse, lineageResponse] = await Promise.all([
+    const [bundleResponse, layerResponse, lineageResponse, successorResponse] = await Promise.all([
       fetch("/data/ETC6StaticNavigationBundle.json", { cache: "no-store" }),
       fetch("/data/ETC7ClaimCeilingAlternativeLayer.json", { cache: "no-store" }),
       fetch("/data/ETC8LineagePlaybackLayer.json", { cache: "no-store" }),
+      fetch("/data/ETC11D11SuccessorUXBundle.json", { cache: "no-store" }),
     ]);
     if (!bundleResponse.ok) throw new Error(`bundle request failed: ${bundleResponse.status}`);
     if (!layerResponse.ok) throw new Error(`claim-ceiling request failed: ${layerResponse.status}`);
     if (!lineageResponse.ok) throw new Error(`lineage playback request failed: ${lineageResponse.status}`);
+    if (!successorResponse.ok) throw new Error(`D11 successor request failed: ${successorResponse.status}`);
     state.bundle = await verifyBundle(await bundleResponse.json());
     state.layer = await verifyClaimCeilingLayer(await layerResponse.json(), state.bundle);
     state.lineageLayer = await verifyLineagePlaybackLayer(await lineageResponse.json(), state.bundle, state.layer);
+    state.successorBundle = await verifySuccessorBundle(await successorResponse.json());
     state.scrubIndex = state.lineageLayer.lineage.scrub_positions.length - 1;
     state.playbackId = playbackRows(state.lineageLayer, "C1")[0]?.playback_id ?? playbackRows(state.lineageLayer)[0].playback_id;
     const source = sourceState(state.bundle);
@@ -1095,6 +1286,19 @@ async function boot() {
         playbackId: state.playbackId,
         playbackFrameIndex: state.playbackFrameIndex,
         scrubIndex: state.scrubIndex,
+      }),
+    };
+    window.__ETC11__ = {
+      bundle: state.successorBundle,
+      setSurface,
+      selectNode: selectSuccessorNode,
+      getOutput: (nodeId) => successorView(state.successorBundle, nodeId).output,
+      getRuntimeState: () => ({
+        surface: state.surface,
+        scope: state.successorScope,
+        kind: state.successorKind,
+        query: state.successorQuery,
+        selectedNodeId: state.successorNodeId,
       }),
     };
   } catch (error) {

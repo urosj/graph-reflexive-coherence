@@ -1,0 +1,173 @@
+{
+  "schema": "grcv4_specification_source_manifest_v3",
+  "status": "normative_source_identity",
+  "repository": "https://github.com/urosj/graph-reflexive-coherence.git",
+  "audit_input": {
+    "name": "GRCV4-specification-stack-audit.md",
+    "sha256": "61fb7c51efd82f80f1eaf492e8d6d3c77c7778aa8ce775a58ed4355dd12272e4",
+    "role": "external_specification_audit",
+    "authority": "finding_and_correction_input_not_backward_scientific_evidence"
+  },
+  "implementation_readiness_audit": {
+    "name": "GRCV4-updated-specification-stack-implementation-readiness-audit.md",
+    "sha256": "32cea1b2752361864b02651cb7d38df85929210adc213aa76ee1307babcb5196",
+    "role": "external_specification_engineering_correction_input",
+    "authority": "implementation_contract_findings_not_scientific_evidence"
+  },
+  "specification_pressure_audit": {
+    "name": "GRCV4-specification-correction-release-pressure-audit.md",
+    "sha256": "bb0621b3abe793486711acdd62e718c4415e8c5cbb6bea271580d4abc806e7ae",
+    "role": "external_specification_pressure_correction_input",
+    "authority": "implementation_contract_findings_not_scientific_evidence"
+  },
+  "final_release_acceptance_audit": {
+    "name": "GRCV4-final-specification-release-acceptance-audit.md",
+    "sha256": "c0d7d01331868e45e92dbcdb54e5479fdc48cd4f478125ea4e452f81ea527c20",
+    "role": "external_final_release_acceptance_correction_input",
+    "authority": "mechanical_vector_and_contract_findings_not_scientific_evidence"
+  },
+  "release_manifest": "specs/grc-v4-specification-release.json",
+  "source_byte_portability": "the release manifest binds every controlling source path and current byte hash; historical commit reachability is provenance-only",
+  "sources": [
+    {
+      "role": "canonical_grcv4_substrate_paper",
+      "path": "implementation/investigations/grc9v4-constitutive-design/drafts/2026-09-GRC-V4.md",
+      "commit_sha": "073a8014c745426d164be5e7d81223cea0d5d370",
+      "file_sha256": "2da39c3bb0d102804f9135384317771f3fe1b3e48df3b4ab1813a3575642a739",
+      "semantic_status": "canonical_D11_integrated_mathematical_authority_at_specification_extraction"
+    },
+    {
+      "role": "proposal_and_provenance_companion",
+      "path": "implementation/investigations/grc9v4-constitutive-design/drafts/GRCV4-proposal.md",
+      "commit_sha": "a96efea38a74d71d391c1217dbb202008575c2be",
+      "file_sha256": "8543463a5b3aa15bb60f078a980f1812be4b68b6db8904026b21d3ccdb2362c9",
+      "semantic_status": "provenance_companion_not_coequal_mathematical_authority"
+    },
+    {
+      "role": "d10_specification_authority",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D10DesignSynthesisAndSpecWritingDecision.json",
+      "commit_sha": "4798b7a1d76d3563ce02682e351d87f7707d1212",
+      "file_sha256": "519a6ef56c52750b6d3da673b0dc9988e43a8676e209dd205d5d6c988d7c81b6",
+      "semantic_status": "accepted_bounded_specification_writing_authority"
+    },
+    {
+      "role": "d10_2_provenance_and_promotion_authority",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D10_2FullSubstrateProvenanceAndPromotionAudit.json",
+      "commit_sha": "4798b7a1d76d3563ce02682e351d87f7707d1212",
+      "file_sha256": "59c2b956cec7d258b1db09d43d6df44deb8c0be0453a5d741f7e2733d6881a33",
+      "semantic_status": "accepted_bounded_forensic_authority"
+    },
+    {
+      "role": "unchanged_common_interface",
+      "path": "specs/grc-common-interface.md",
+      "commit_sha": "7f156bf22291a6c5f317d6853dc4122aeb44f4de",
+      "file_sha256": "3ccc27250a3ddb2ecccdf27984436e3dee2b10b3f71de610bfbbbcd084ae7be6",
+      "semantic_status": "read_only_import_extended_only_by_v4_extension"
+    },
+    {
+      "role": "grc9v3_disabled_reduction_target",
+      "path": "specs/grc-9-v3-spec.md",
+      "commit_sha": "96d898c05b10a256a85f3df03daee0815ed50c12",
+      "file_sha256": "7b1f0c03988be7dbe3feb8ba926d43d891d70daa0dbbae9804fc70f2a4950f2f",
+      "semantic_status": "read_only_legacy_target_not_modified_by_v4"
+    },
+    {
+      "role": "grc9_mechanical_provenance_source",
+      "path": "papers/2026-04-GRC-9.md",
+      "commit_sha": "a1db3d6ce3f35b43ac10583fe02872e689f5f796",
+      "file_sha256": "cefc33e91e496c236660dad5c1e009a720ca908488db460d47322118dd7c3e08",
+      "semantic_status": "read_only_historical_source_with_v4_owned_port_override"
+    }
+  ],
+  "successor_investigation_history": [
+    {
+      "role": "accepted_bounded_D11_successor_opening",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D11SuccessorInvestigationOpening.json",
+      "file_sha256": "e2ce990a48fed01fb9fd4c90c1388a333a1143de1dd75e1b9f2ab38c21902410",
+      "record_digest": "51ba66d5404dee29f7b2a7dcd9501b43711fce0d47d466118945b5a0f71ac23a",
+      "semantic_status": "procedural_opening_only_no_scientific_result"
+    },
+    {
+      "role": "accepted_bounded_D11_claim_debt_authority_routing",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D11ClaimDebtAndAuthorityRouting.json",
+      "file_sha256": "f34bff656cc4e231bb8db81a9d69498c2b9a1e57accc4ecaec6642cd3e4422df",
+      "record_digest": "63cc407bffefef85602c28ead6c3da6b846778d3be9f78952db11cb10275c78d",
+      "semantic_status": "procedural_exact_carry_forward_and_additive_debt_routing_no_scientific_result"
+    },
+    {
+      "role": "D11_C_preregistration_history",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D11CCandidateCBaselineTransportAndMobilityClosure.json",
+      "file_sha256": "fc8346c02590bd5d43f0f93a74a0a9e770ebef8f02a00c2eeb6551e9697529a0",
+      "record_digest": "c1c22c88fa676705370d01256a34801a364e310c93e4ef85cc5a3208e6e06a78",
+      "semantic_status": "historical_candidate_set_not_selected_specification_authority"
+    },
+    {
+      "role": "D11_G9_preregistration_history",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D11G9CanonicalExpansionPortAllocationClosure.json",
+      "file_sha256": "efd341b65ab0408300896f841a0695e043bc5e85afb5c6e701fcad3a4cdc75f1",
+      "record_digest": "856e3db9ffa6a09080f7af0b9753be222ab986599855168a4fe9d218490c1635",
+      "semantic_status": "historical_candidate_set_not_selected_specification_authority"
+    }
+  ],
+  "accepted_successor_sources": [
+    {
+      "role": "D11_C_accepted_resolution",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D11CCandidateBaselineTransportAndMobilityResolution.json",
+      "commit_sha": "dc0e4a46c1628282dafdd4da72fe879342eb67b2",
+      "file_sha256": "31bd8d3e8163d100d0935870cf7082fb3e393aab4c70018c45354a3a5c54ebd7",
+      "record_digest": "82e8008e8edade39db7b5327a31a807031b712dcc86b3fe3e8c0977bda51e797",
+      "selected_candidate_id": "D11-C-T3a",
+      "claim_id": "D11-C-CL-O-001"
+    },
+    {
+      "role": "D11_C_append_only_provenance",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D11CCandidateBaselineTransportProvenanceSupplement.json",
+      "commit_sha": "dc0e4a46c1628282dafdd4da72fe879342eb67b2",
+      "file_sha256": "43bb028c6c7b09952a35dee280067470f2ff5cde4395d39c5b5e7aba6fae29fb",
+      "normative_objects": 3,
+      "equation_contracts": 11
+    },
+    {
+      "role": "D11_G9_accepted_resolution",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D11G9CanonicalExpansionPortAllocationResolution.json",
+      "commit_sha": "41504af9d3a9487ede621b5d2aaee570c5c5b194",
+      "file_sha256": "2b894abe80fed23455b7c37edc889aad48a27a1f8ae02d8c61752416a3eefc52",
+      "record_digest": "a0813ceead2c992ec197790abd8a0ceea167ae2d952f853cf48f1db4d8001615",
+      "selected_candidate_id": "D11-G9-P4a",
+      "claim_id": "D11-G9-CL-N-001"
+    },
+    {
+      "role": "D11_G9_append_only_provenance",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D11G9AxisPreservingExpansionProvenanceSupplement.json",
+      "commit_sha": "41504af9d3a9487ede621b5d2aaee570c5c5b194",
+      "file_sha256": "3a7f7c7bb11c291b7e5f082002a374dc95bfaab4917944f526da0ec58f15748f",
+      "normative_objects": 10,
+      "equation_contracts": 20
+    }
+  ],
+  "post_d10_collection_semantics": "D10_D10_2_population_is_immutable_and_D11_C_plus_D11_G9_are_append_only_accepted_successors",
+  "post_d10_v4_closures": [
+    {
+      "closure_id": "V4-AUDIT-C-BASELINE-TRANSPORT",
+      "owner": "specs/grc-v4-spec.md",
+      "scope": "grcv4_and_inheriting_grc9v4_only",
+      "authority_status": "accepted_bounded_D11_C_successor",
+      "selected_candidate_id": "D11-C-T3a",
+      "selected_profile_id": "C-HM-STIFFNESS-BASELINE-v1",
+      "claim_id": "D11-C-CL-O-001",
+      "accepted_by_D11": true,
+      "backward_evidence": false
+    },
+    {
+      "closure_id": "V4-AUDIT-G9-PORT-ALLOCATION",
+      "owner": "specs/grc-9-v4-spec.md",
+      "scope": "grc9v4_only",
+      "authority_status": "accepted_bounded_D11_G9_successor",
+      "selected_candidate_id": "D11-G9-P4a",
+      "selected_profile_id": "grc9v4_axis_preserving_chiral_same_port_expansion_v1",
+      "claim_id": "D11-G9-CL-N-001",
+      "accepted_by_D11": true,
+      "backward_evidence": false
+    }
+  ]
+}

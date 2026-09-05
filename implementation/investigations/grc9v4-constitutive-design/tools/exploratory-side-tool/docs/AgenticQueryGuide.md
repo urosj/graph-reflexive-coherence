@@ -19,12 +19,17 @@ gate that has not been rerun.
 
 ## Authority Boundary
 
-Every forensic result is bound to:
+Every historical forensic result is bound to:
 
 - the accepted ET-C1 source-bundle digest;
 - the validated ET-C2 graph digest;
 - an exact source record and JSON pointer for every row; and
 - exact graph-edge witnesses.
+
+Post-D11 queries add an `authority_extension_digest` bound to the accepted
+ET-C10 D11 source contract, source-bundle manifest, and append-only graph
+extension. The ET-C2 identity remains present as the immutable historical base;
+it is not relabeled as if D11 had existed at ET-C2.
 
 Treat `source_ref`, `edge_refs`, and the trace digest as part of the answer.
 Do not summarize a row as an accepted claim without retaining its
@@ -48,9 +53,17 @@ The first command may use host Python only to create and re-enter the
 repository `.venv`. Every subsequent command uses `.venv`; Node and npm remain
 tool-local.
 
-`discover-sources` is observational. A result other than
-`current_bundle_exact` does not admit new material. New or changed records need
-a successor adapter/readmission and complete rebuild cycle.
+`discover-sources` is the historical ET-C0 observation command. After accepted
+D11 it deliberately continues to report those records as unprocessed relative
+to ET-C0; ET-C0 is not rewritten. D11 admission is instead verified through:
+
+```bash
+.venv/bin/python "$TOOL/scripts/run.py" audit-iteration10-d11
+.venv/bin/python "$TOOL/scripts/run.py" test-iteration10-d11
+```
+
+Any record outside both the ET-C0 inventory and the ET-C10 D11 contract still
+requires a new successor adapter/readmission cycle.
 
 The interactive command remains `serve-iteration8` because ET-C8 owns the
 latest accepted browser distribution. `verify-iteration9` verifies that ET-C8
@@ -74,16 +87,22 @@ TOOL_ROOT = Path(
 SIDE_TOOL_ROOT = TOOL_ROOT.parent
 sys.path.insert(0, str(TOOL_ROOT / "src"))
 
-from grcv4_explorer.forensic import load_forensic_context
+from grcv4_explorer.successor import load_successor_forensic_context
 from grcv4_explorer.paths import repository_root
 
 repo_root = repository_root()
-context = load_forensic_context(repo_root, SIDE_TOOL_ROOT)
+context = load_successor_forensic_context(repo_root, SIDE_TOOL_ROOT)
 ```
 
-`load_forensic_context` revalidates the accepted ET-C1/ET-C2 identities on
-every load. It fails closed when admitted source is stale, missing, malformed,
-or no longer reconstructs the accepted graph.
+`load_successor_forensic_context` revalidates ET-C1/ET-C2, rebuilds the ET-C10
+D11 manifest and graph in memory, and requires byte identity with the accepted
+ET-C10 artifacts. Use it for the current claim surface, including
+`D11-C-CL-O-001` and `D11-G9-CL-N-001`.
+
+`grcv4_explorer.forensic.load_forensic_context` remains available when the
+question is explicitly historical: it exposes the accepted D10/ET-C2 snapshot
+and correctly raises `KeyError` for D11 IDs. Choosing the historical loader is
+an authority-boundary choice, not a package-version fallback.
 
 For disposable scripts and output, use the ignored `tool/generated/`
 directory. Do not write query output into `records/`, accepted decisions,
@@ -93,6 +112,11 @@ directory. Do not write query output into `records/`, accepted decisions,
 
 The nine admitted query functions all return a canonical
 `forensic_evidence_trace`.
+
+The same nine functions accept either context. The successor context adds the
+D11 claims, local debts, investigation candidates, selected profiles,
+normative objects, equation contracts, and forward obligations without changing
+the D10 classifications.
 
 | Function | Input | Question answered |
 | --- | --- | --- |
@@ -123,6 +147,29 @@ print(identifiers("candidate"))
 print(identifiers("normative_object"))
 print(identifiers("equation_contract"))
 ```
+
+For the paper-propagation audit, typical source-exact D11 queries are:
+
+```python
+from grcv4_explorer.forensic import (
+    contract_provenance,
+    debt_lifecycle,
+    reconstruction_path,
+)
+
+c_claim = reconstruction_path(context, "D11-C-CL-O-001")
+g9_claim = reconstruction_path(context, "D11-G9-CL-N-001")
+c_debt = debt_lifecycle(
+    context, "D11-C-DEBT-BASELINE-TRANSPORT-AUTHORITY"
+)
+g9_contract = contract_provenance(
+    context, "D11-G9-EC-EXACT-OLD-PORT-MAP"
+)
+```
+
+The D11 debt traces deliberately return the preregistered opening, bounded
+resolution, and still-forward verification rows separately. Do not compress
+those rows into a claim that implementation conformance has been completed.
 
 Use graph rows for ID discovery only. Prefer the typed functions for scientific
 interpretation; direct ad hoc traversal can flatten support semantics or treat
@@ -525,6 +572,34 @@ programmatic queries, use the tracked walkthrough or a disposable script under
 admitted; the governed Python API owns counterfactual authoring, and ET-C5 owns
 the canonical scenario round-trip used by notebook/Python and browser surfaces.
 
+### D11 API, notebook, and browser UX
+
+ET-C11 adds a separate D11 forensic notebook and a read-only browser projection
+without changing the historical ET-C3 notebook. Run the notebook with:
+
+```bash
+.venv/bin/python "$TOOL/scripts/run.py" notebook-iteration11-d11
+```
+
+It emits six D11-C/D11-G9 claim, debt, and contract traces under
+`tool/generated/iteration11-notebook/`. The runner compares every file
+canonically with the direct successor API output and browser payload.
+
+For interactive inspection, run:
+
+```bash
+.venv/bin/python "$TOOL/scripts/run.py" serve-iteration11-d11
+```
+
+Select **D11**, then filter by investigation and authority kind or search an
+identifier. The browser shows precomputed API rows, exact source references,
+support edges, and output digests. Profile and verification-obligation entries
+use source-bound graph projections because the forensic API has no dedicated
+operation for those two kinds. Do not describe those projections as new API
+claims or scientific inference.
+
+See [D11UXGuide.md](./D11UXGuide.md) for commands and surface behavior.
+
 
 ## Reading A Trace Safely
 
@@ -536,6 +611,7 @@ query
 source_bundle_digest
 graph_digest
 ET_C2_record_digest
+authority_extension_digest  # present for the ET-C10 successor context
 row_count
 rows[]
 trace_digest
@@ -564,8 +640,10 @@ graph position.
 - `MutationValidationError`: a mutation request is outside the closed algebra.
 - `invalid_mutation` result: evaluation rejected a supplied mutation without
   changing source state.
-- `new_unprocessed_source_available`: report that a successor processing cycle
-  is needed; do not query the new record as accepted authority.
+- `new_unprocessed_source_available` from the historical ET-C0 discovery:
+  consult the ET-C10 contract before concluding that the record is unadmitted.
+  The eight hash-bound D11 records are admitted only through ET-C10; any other
+  added record still requires a successor processing cycle.
 
 The safe fallback is to report the boundary and exact failed query. Do not
 repair source records, broaden scopes, or substitute a semantically similar ID.
@@ -578,6 +656,9 @@ Before relying on a batch of answers, run:
 .venv/bin/python "$TOOL/scripts/run.py" verify-iteration9
 ```
 
-ET-C9 is accepted as a bounded read-only exploratory tool. Re-running the
-verification command reproduces that accepted closeout; it does not promote a
-scientific claim or admit new source authority.
+The verification entry point preserves the accepted ET-C9 historical closeout,
+independently rebuilds the accepted ET-C10 D11 overlay, then rebuilds and tests
+the ET-C11 API/notebook/browser candidate. It runs desktop/mobile D11 browser
+pressure alongside historical regressions and checks the active post-D11
+paper-propagation boundary. It does not promote a scientific claim or treat
+pending paper/specification/runtime work as evidence.

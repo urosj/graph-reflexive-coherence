@@ -1,4 +1,4 @@
-"""Schema-specific, read-only adapters for the admitted D0-D10.2 bundle."""
+"""Schema-specific, read-only adapters for admitted historical and D11 sources."""
 
 from __future__ import annotations
 
@@ -19,6 +19,20 @@ SPECIALIZED_ADAPTERS = {
     "D9ProfileStateLifecycleRegistry.json": "d9_profile_registry_v1",
     "D9LifecycleCoverageMatrix.json": "d9_lifecycle_matrix_v1",
     "D9ResidualDebtLedger.json": "d9_residual_debt_v1",
+    "D11SuccessorInvestigationOpening.json": "d11_successor_opening_v1",
+    "D11ClaimDebtAndAuthorityRouting.json": "d11_claim_debt_routing_v1",
+    "D11CCandidateCBaselineTransportAndMobilityClosure.json": (
+        "d11_c_preregistration_v1"
+    ),
+    "D11CCandidateBaselineTransportAndMobilityResolution.json": ("d11_c_resolution_v1"),
+    "D11CCandidateBaselineTransportProvenanceSupplement.json": (
+        "d11_c_provenance_supplement_v1"
+    ),
+    "D11G9CanonicalExpansionPortAllocationClosure.json": ("d11_g9_preregistration_v1"),
+    "D11G9CanonicalExpansionPortAllocationResolution.json": ("d11_g9_resolution_v1"),
+    "D11G9AxisPreservingExpansionProvenanceSupplement.json": (
+        "d11_g9_provenance_supplement_v1"
+    ),
 }
 
 ADMITTED_SCHEMAS = {
@@ -55,6 +69,28 @@ ADMITTED_SCHEMAS = {
     "D10SpecificationAuthorizationProfile.json": "grc9v4_d10_specification_authorization_profile_v2",
     "D10_1PreliminarySubstrateProvenance.json": "filename_admitted_legacy_schema",
     "D10_2FullSubstrateProvenanceAndPromotionAudit.json": "grc9v4_d10_2_full_provenance_v1",
+    "D11SuccessorInvestigationOpening.json": "grc9v4_d11_successor_opening_v1",
+    "D11ClaimDebtAndAuthorityRouting.json": (
+        "grc9v4_d11_claim_debt_authority_routing_v1"
+    ),
+    "D11CCandidateCBaselineTransportAndMobilityClosure.json": (
+        "grc9v4_d11_candidate_c_baseline_transport_preregistration_v1"
+    ),
+    "D11CCandidateBaselineTransportAndMobilityResolution.json": (
+        "grc9v4_d11_c_baseline_transport_resolution_v1"
+    ),
+    "D11CCandidateBaselineTransportProvenanceSupplement.json": (
+        "grc9v4_d11_c_provenance_supplement_v1"
+    ),
+    "D11G9CanonicalExpansionPortAllocationClosure.json": (
+        "grc9v4_d11_g9_expansion_port_allocation_preregistration_v1"
+    ),
+    "D11G9CanonicalExpansionPortAllocationResolution.json": (
+        "grc9v4_d11_g9_axis_preserving_expansion_resolution_v1"
+    ),
+    "D11G9AxisPreservingExpansionProvenanceSupplement.json": (
+        "grc9v4_d11_g9_axis_preserving_expansion_provenance_supplement_v1"
+    ),
 }
 
 
@@ -212,6 +248,67 @@ def _semantic_index(filename: str, data: dict[str, Any]) -> dict[str, Any]:
                 raise SourceAdmissionError(f"authorization field malformed: {field}")
             result[field] = _index(cast(list[str], values))
         return result
+    if filename in {
+        "D11CCandidateBaselineTransportProvenanceSupplement.json",
+        "D11G9AxisPreservingExpansionProvenanceSupplement.json",
+    }:
+        objects = _string_ids(
+            data.get("normative_objects"), "object_id", "normative_objects"
+        )
+        contracts = _string_ids(
+            data.get("equation_contracts"),
+            "equation_contract_id",
+            "equation_contracts",
+        )
+        successor = data.get("accepted_successor_claim")
+        if not isinstance(successor, dict):
+            raise SourceAdmissionError("accepted_successor_claim is malformed")
+        return {
+            "successor_claims": _index(
+                [
+                    _require_string(
+                        successor.get("claim_id"), "accepted_successor_claim/claim_id"
+                    )
+                ]
+            ),
+            "normative_objects": _index(objects),
+            "equation_contracts": _index(contracts),
+            "claim_edge_count": len(
+                cast(list[dict[str, Any]], data.get("claim_edges", []))
+            ),
+        }
+    if filename in {
+        "D11CCandidateBaselineTransportAndMobilityResolution.json",
+        "D11G9CanonicalExpansionPortAllocationResolution.json",
+    }:
+        debt = data.get("debt_transformation")
+        obligations = data.get("verification_obligation_effect")
+        if not isinstance(debt, dict) or not isinstance(obligations, dict):
+            raise SourceAdmissionError(
+                "D11 resolution debt/obligation fields are malformed"
+            )
+        forward = obligations.get("new_forward_obligations")
+        if not isinstance(forward, list) or not all(
+            isinstance(item, str) for item in forward
+        ):
+            raise SourceAdmissionError("D11 forward obligations are malformed")
+        return {
+            "resolved_local_debt": _index(
+                [
+                    _require_string(
+                        debt.get("local_debt_id"), "debt_transformation/local_debt_id"
+                    )
+                ]
+            ),
+            "new_forward_obligations": _index(cast(list[str], forward)),
+        }
+    if filename == "D11ClaimDebtAndAuthorityRouting.json":
+        debts = _string_ids(
+            data.get("newly_exposed_D11_debts"),
+            "debt_id",
+            "newly_exposed_D11_debts",
+        )
+        return {"opened_local_debts": _index(debts)}
     return {
         "record_identifier": (
             data.get("record_id") or data.get("artifact_id") or data.get("gate_id")

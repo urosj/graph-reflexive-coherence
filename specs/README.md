@@ -6,9 +6,11 @@ Lorentzian/event-driven nine-port target.
 
 1. `GRCV2`
 2. `GRCV3`
-3. `GRC9`
-4. `GRC9V3`
-5. `LGRC9V3`
+3. `GRCV4`
+4. `GRC9`
+5. `GRC9V3`
+6. `GRC9V4`
+7. `LGRC9V3`
 
 The papers are the semantic source of truth. These specs translate that theory into a Python implementation contract.
 
@@ -23,14 +25,87 @@ The implementation strategy assumed by these specs is:
 - core models depend on backend protocols rather than third-party graph libraries,
 - and external tools such as `networkx` or `pyvis` may be added later only as adapters, interchange helpers, or visualization layers.
 
+## GRCV4 phase boundary
+
+The [post-D10 boundary manifest](../implementation/investigations/grc9v4-constitutive-design/specification/PostD10SpecificationBoundary.json)
+hash-freezes every pre-existing normative file in this directory except this
+registry. The active `specification_correction` phase is hash-bound to the
+committed D11-integrated paper, the accepted D11-C/D11-G9 authority, and the
+implementation-readiness audit. It permits changes only to the V4
+specification outputs, their schemas/builders, governance records, and this
+registry while freezing the accepted proposal, paper, older specifications,
+`src/`, and `tests/`. A later implementation phase may change `src/` and
+`tests/`, but only after a successor authority explicitly activates
+`GRCV4_GRC9V4_implementation`. The pre-existing-spec hashes remain enforced in
+every phase.
+
+Run the separate claim, contract, phase-boundary, link, and rendering audit
+with the repository virtual environment:
+
+```bash
+.venv/bin/python implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/run.py verify-post-d10-specifications
+```
+
+The full `verify-iteration9` command detects the same hash-bound D10.2 entry
+state automatically and includes this successor audit when it is active.
+
 ## Documents
 
 - `grc-common-interface.md`
   Common abstract model interface, shared datatypes, lifecycle, events, diagnostics, and capability model.
+- `grc-common-interface-v4-ext.md`
+  Additive, non-retroactive V4 interface extension. It registers the V4 class
+  hierarchy and strengthens state authority, complete-profile identity,
+  graph/differential backends, lifecycle, capabilities, serialization, and
+  atomic failure semantics for `GRCV4` and `GRC9V4` only. It also exposes the
+  accepted D11-C reference-map identity and D11-G9 chirality/phase event
+  request and failure surfaces.
 - `grc-v2-spec.md`
   Baseline graph Reflexive Coherence implementation from `papers/2025-12-GRC-V2.md`, with single dynamical conductance and shared analytic edge labels.
 - `grc-v3-spec.md`
   Basin-attribute and multi-metric implementation from `papers/2026-02-GRC-V3.md`.
+- `grc-v4-spec.md`
+  Normative graph-generic, profile-explicit V4 substrate for D10-plus-D11
+  surfaces. It defines the common resource, authority, structural-Hodge,
+  complete-step, lifecycle, and claim-ceiling contracts plus the current
+  optional A/C by CI/OS/RG2b/PC/CI+PC profile population. Candidate C binds
+  the accepted `C-HM-STIFFNESS-BASELINE-v1` reference field, mobility,
+  retained-Hodge potential, baseline current, control, derivative,
+  realization-stage, and lifecycle contracts.
+- `grc-v4-source-manifest.json`
+  Machine-readable, path/commit/hash-bound identity of the paper, proposal,
+  D10/D10.2 records, accepted D11 resolutions and provenance supplements,
+  unchanged common interface, read-only GRC9V3 reduction target, and
+  historical G-RC-9 mechanics source used by the V4 stack.
+- `grc-v4-contract-schema.json`
+  Closed JSON Schema 2020-12 definitions for identity-bearing parameters,
+  candidate-discriminated profiles, pre-admission and admitted requests,
+  affine mapped events, two-channel history, operation/solver results,
+  subdigest preimages, the port-graph payload/digest envelope, canonically
+  ordered information-loss tuples, state, reset, event, commit, and receipt
+  payloads.
+- `grc-v4-conformance-fixtures.json`
+  Normative preimplementation coverage catalog for D10-plus-D11 generic,
+  Candidate C, realization, lifecycle, exact chiral same-port expansion, and
+  independent $10\times4$ disabled-compatibility cases. It is not an execution
+  oracle and does not claim that a runtime executed it.
+- `grc-v4-conformance-vectors.json`
+  Deterministically generated concrete canonicalization, identity, D11-C
+  algebra, generic affine event, GRC9V4 expansion, persistent-carrier,
+  executable second-depth/covariance, rollback, result-status, subdigest,
+  schema-negative, and post-schema semantic-admission vectors plus the
+  port-graph envelope and two-channel migration-policy coverage matrices. Its explicit
+  `coverage_holds` prevent absent per-profile, RG2b, child-stabilization, and
+  legacy-delegate vectors—and absent lifecycle, generic-event, charge-edge,
+  and deep-immutability runtime tests—from being misreported as conformance.
+  Candidate A target-template identity is defined, but Candidate A GRC9V4
+  expansion remains explicitly unadvertised pending its own concrete vector.
+- `grc-v4-specification-release.json` and
+  `grc-v4-specification-release.sha256`
+  Content-addressed release manifest and detached checksum binding the exact
+  specifications, schema, catalog, concrete vectors, registry, and controlling
+  source bytes, plus the exact readiness- and pressure-audit digests. The
+  release is a preimplementation contract, not execution evidence.
 - `grc-9-spec.md`
   Nine-slot mechanical substrate implementation from `papers/2026-04-GRC-9.md`, with single dynamical conductance and shared analytic edge labels.
 - `grc-9-v3-spec.md`
@@ -39,6 +114,14 @@ The implementation strategy assumed by these specs is:
   semantics, immediate constitutive recurrence, complete-step causal-state
   boundaries, and explicit separation between default Lane A and the opt-in
   `grc9v3_column_h_assisted` spark lane.
+- `grc-9-v4-spec.md`
+  Normative nine-port specialization of `GRCV4`. It adds the fixed port chart
+  and row backend, the accepted V4-owned
+  `grc9v4_axis_preserving_chiral_same_port_expansion_v1` event, hybrid spark,
+  optional gated child-basin completion, column coarse-graining, the exact Candidate-A
+  initializer binding, and four independently scoped disabled reductions to
+  an embedded read-only `GRC9V3` target for every supported profile, bounded
+  by the exact legacy-defined domain.
 - `grc-9-v3-evidence-profile.md`
   Bounded Phase 7, B1-GR, and B2-GR verification basis for the GRC9V3
   causal-state, persistence, retention, and Read-Back boundaries. Experimental
@@ -129,8 +212,10 @@ The implementation strategy assumed by these specs is:
 | --- | --- | --- | --- | --- | --- |
 | `GRCV2` | single scalar conductance | shared three-label family, selectable | graph-derived or host-supplied, explicit by `frame_mode` | `prune` by default, richer modes optional | minimal graph realization |
 | `GRCV3` | single scalar base conductance | shared three-label family, selectable | graph-derived or host-supplied, explicit by `frame_mode` | explicit `boundary_mode` | basin-attribute / hierarchy semantics |
+| `GRCV4` | complete-profile-specific; retained A mobility or C-specific derived factorization | profile-selected; common names remain available when advertised | explicit graph differential and structural-Hodge profile | typed boundary/profile migration and topology-event contract | profile-explicit retention, Read-Back, structural geometry, and lifecycle semantics |
 | `GRC9` | single scalar conductance per occupied port-pair | shared three-label family, selectable | fixed intrinsic nine-slot chart | no dedicated pass required; optional `boundary_mode` | mechanical substrate semantics |
 | `GRC9V3` | single scalar base conductance per occupied port-pair | shared three-label family, selectable | fixed intrinsic nine-slot chart | explicit `boundary_mode` | combined mechanical + semantic lift |
+| `GRC9V4` | inherited complete-profile-specific `GRCV4` transport on a port graph | inherited profile labels plus GRC9 chart diagnostics | fixed intrinsic nine-slot chart and row-basis backend | typed V4 lifecycle plus GRC9 mechanical expansion | substantive nine-port V4 specialization with exact profile-scoped GRC9V3 disabled compatibility |
 | `LGRC9V3` | inherited `GRC9V3` transport in LGRC-0; future causal transport only with explicit accounting | inherited labels plus causal delay policy | fixed intrinsic nine-slot chart plus causal-history timing fields | inherited `GRC9V3` boundary in LGRC-0 | causal-history annotation / semi-causal fixed-topology eligibility |
 
 Across the whole family matrix, the broader extension capabilities are shared vocabulary rather than `v3`-only concepts:
@@ -162,8 +247,10 @@ pygrc/
   models/
     grc_v2.py
     grc_v3.py
+    grc_v4.py
     grc_9.py
     grc_9_v3.py
+    grc_9_v4.py
     lgrc_9_v3.py
   integrations/
     ril_v0/

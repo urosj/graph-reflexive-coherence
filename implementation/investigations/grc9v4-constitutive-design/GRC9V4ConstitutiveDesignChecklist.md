@@ -2789,10 +2789,227 @@ The authoritative records are the
 and its
 [`scientific interpretation`](./decisions/D10_2FullSubstrateProvenanceAndPromotionAudit.md).
 
+## D11 Specification-Audit Successor Opening
+
+- [x] Preserve accepted D10.2 JSON and Markdown bytes unchanged.
+- [x] Carry all 39 current D10 claims by exact ID and class: 9 normative, 7
+      optional, 12 conditional, 5 open, and 6 negative.
+- [x] Carry all 29 historical claim nodes without rewriting them.
+- [x] Carry all 29 D10 debt transformations, their transformation classes, and
+      reciprocal claim-edge dispositions unchanged.
+- [x] Carry all 11 verification obligations: ten remain pending, while
+      `D10-PRECLOSE-SUBSTRATE-PROVENANCE-AUDIT` is satisfied only for the
+      current D10 initial specification population.
+- [x] Carry the D10.2 current-population registry of 67 load-bearing objects,
+      152 equation contracts, 85 explicit contracts, 40 disabled-reduction
+      rows, and 12 independent GRC derivations.
+- [x] Preserve `D10.2-CL-N-001` as an accepted D10.2-local successor reference
+      without silently adding it as a fortieth D10 claim node.
+- [x] Record the exact carry-forward and set-equality rules in
+      `GRC9V4-CD-D11-CLAIM-DEBT-ROUTING-v1`.
+- [x] Bind the external specification audit by SHA as a finding/routing input,
+  not backward scientific evidence.
+- [x] Record `GRC9V4-CD-D11-OPEN-v1` as a bounded procedural opening with no
+  scientific result.
+- [x] Add `D11-C-DEBT-BASELINE-TRANSPORT-AUTHORITY` and
+      `D11-G9-DEBT-CANONICAL-PORT-ALLOCATION` as successor debts rather than
+      replacements for any D10 debt.
+- [x] Open D11-C as the active graph-generic Candidate C transport closure.
+- [x] Preregister the existing spec solution as D11-C-T1 without accepting it.
+- [x] Preregister alternative typed transport routes and bounded unresolved
+  disposition.
+- [x] Queue D11-G9 behind an accepted D11-C result.
+- [x] Restrict D11-G9 to GRC9V4 and preserve GRC9/GRC9V3 unchanged.
+- [x] Preregister the existing spec solution as D11-G9-P1 without accepting it.
+- [x] Mark D11-dependent spec clauses and fixtures provisional without removing
+  the candidate text.
+
+### D11-C Inherited Boundary and Preregistration
+
+- [x] Bind D11-C to the exact claim/debt/verification carry-forward record.
+- [x] Mark every D11-C claim bearing as a consistency constraint, not a claim
+      status change.
+- [x] Preserve $C$ as Candidate C's only authoritative candidate state.
+- [x] Preserve $T_C$, $M_{4,C}$, the driving potential, Hodge surfaces, and
+      $J_{0,C}$ as derived or transient rather than hidden retained state.
+- [x] Preserve $J_{C,C}=J_{0,C}+\zeta_Cj_{C,\mathrm{flux}}$ and one
+      authoritative current entering one continuity write.
+- [x] Keep transport mobility distinct from $H_{1,\mathrm{form}}$, $G_J$,
+      $G_J^{-1}$, and $h_4$ unless an exact constitutive map is earned.
+- [x] Bind all five Candidate C consumers: CI, OS, RG2b, PC, and CI+PC.
+- [x] Preserve Candidate A, common resource/charge authority, and unrelated D10
+      claims outside the reopened boundary.
+- [x] Preserve all ten pending inherited verification obligations; D11-C design
+      acceptance alone cannot discharge runtime, numeric, or implementation
+      evidence debt.
+- [x] Preregister D11-C-T1, D11-C-T2, D11-C-T3, and bounded-unresolved D11-C-T0
+      with no default or ranking.
+
+### D11-C Scientific Closure
+
+- [x] Freeze the exact type, domain, codomain, positivity, and authority of
+      $M_{4,C}$.
+- [x] Freeze the direct driving potential or other driving functional.
+- [x] Freeze the exact equation producing $J_{0,C}$.
+- [x] Freeze dependence on $C$, $T_C$, $h$, $U$, and every resolved parameter.
+- [x] Freeze units, gauge, normalization, regular domain, and singular boundary.
+- [x] Freeze the pre-read stage and freshness rule for all five C realizations,
+      including both OS evaluations.
+- [x] Prove graph-relabel and signed-edge-orientation covariance on the declared
+      graph domain.
+- [x] Freeze separate $\kappa_{M,C}=0$, $\chi_C=0$, and $\zeta_C=0$ controls.
+- [x] Freeze topology-event reconstruction, migration, history handling, and
+      target-profile readmission.
+- [x] Prove no collision between transport, Hodge, and structural geometry
+      authorities.
+- [x] Freeze the GRC9V4-owned disabled-GRC9V3 reduction relation without
+      changing GRC9V3.
+- [x] Pressure D11-C-T1, D11-C-T2, D11-C-T3, and D11-C-T0 against the complete
+      closure surface.
+- [x] Record an explicit disposition for every preregistered candidate.
+- [x] Record a separately accepted or boundedly unresolved D11-C successor with
+      exact claim/debt transformations and reciprocal edges, if any.
+
+### D11-G9 Accepted-Bounded Gate
+
+- [x] Activate D11-G9 only after D11-C acceptance.
+- [x] Execute candidate pressure under the preregistered acceptance surface.
+- [x] Pressure its canonical-port candidates against unique endpoint occupancy,
+      capacity, deterministic identity, resource/history transport, receipts,
+      and target readmission.
+- [x] Extract provisional D11-G9-P1 from the spec as a backward proposal rather
+      than scientific authority.
+- [x] Preserve D11-G9-P1a as a collision-free comparison result rather than
+      accepted authority.
+- [x] Compare the submitted axis-preserving same-port construction with P1a and
+      the inherited center-axis alternatives.
+- [x] Refine the submitted construction as D11-G9-P4a with fail-closed phase
+      canonicalization, exact ID grammar, and accepted lifecycle boundaries.
+- [x] Freeze both mirror primary spines: $(2,6,7)$ for $\epsilon=+1$ and
+      $(3,4,8)$ for $\epsilon=-1$.
+- [x] Freeze all nine exact column-preserving old-edge redirects before internal
+      endpoint allocation.
+- [x] Require identical port types at both ends of every primary and recursive
+      internal edge.
+- [x] Freeze the arbitrary-size branch-row, chirality-ordered column rotor,
+      creation-order BFS parent, local ordinal, ID, orientation, and occupancy
+      rules.
+- [x] Require `growth_phase = none` exactly when no extra-node remainder exists
+      and one explicit phase in $\{1,2,3\}$ otherwise.
+- [x] Prove the $7n+2$ capacity identity and capacity-minimal size above the
+      four-node policy floor.
+- [x] Prove primary row/column balance, global imbalance at most one, recursive
+      nonstalling, and dihedral covariance.
+- [x] Preserve an exact stable event/node/edge ID grammar and bind chirality,
+      canonical phase, policies, and lifecycle choices into event identity.
+- [x] Correct Candidate C event handling to require the complete target
+      $W_{C,\mathrm{tr}}$ profile map before derived-surface reconstruction.
+- [x] Correct persistent $K_4$ history to whole-carrier typed transport or
+      whole-carrier archive/zero reset, never untyped partial zero fill.
+- [x] Preserve enabled-V4 ownership, leave GRC9/GRC9V3 unchanged, and define the
+      fail-closed boundary where the legacy target is internally undefined.
+- [x] Run the bounded witness for $D_{\mathrm{eff}}=9,\ldots,5000$, both
+      chiralities, every active phase, 1,000 input shuffles, and dihedral
+      covariance.
+- [x] Record human acceptance of corrected D11-G9-P4a.
+- [x] Add one successor claim, nine reciprocal claim edges, ten specialization
+      objects, and twenty contracts in an append-only provenance supplement.
+- [x] Resolve `D11-G9-DEBT-CANONICAL-PORT-ALLOCATION` boundedly without
+      discharging runtime, stability, endpoint, or physical-selection debt.
+- [x] Record a separately accepted bounded GRC9V4-only result
+      without modifying GRC9 or GRC9V3.
+
+### D11 Propagation and Final Audit
+
+- [x] Propagate accepted results to the GRC-v4 paper.
+- [x] Re-extract affected V4 clauses and run the D11 specification audit.
+- [x] Bind the implementation-readiness audit by exact SHA as engineering
+      correction input, not new or backward scientific evidence.
+- [x] Replace frozen-dataclass inheritance with standalone immutable V4 state
+      and result records that satisfy the shared structural protocol.
+- [x] Freeze noncircular RFC 8785 identities for resolved parameters, generic
+      profiles, GRC9V4 specialization/full model, graph, reset, state,
+      lifecycle envelope, event, receipt, and commit.
+- [x] Separate ordinary steps from constructive topology transactions; make
+      the source node explicit and remove caller target-graph authority from
+      canonical GRC9V4 expansion.
+- [x] Freeze one enabled owner for the port graph, specialization, compatibility
+      branch, resource tuple, emitted receipt delta, and persistent ledger.
+- [x] Add closed machine schemas for load-bearing parameters, requests,
+      identity payloads, state, reset, commit, and topology receipts.
+- [x] Bind GRC9 row weights to the active candidate and fresh committed
+      post-beat stage; gate child completion when no exact policy is selected.
+- [x] Freeze binary64 charge accumulation/comparison and `remainder is None`.
+- [x] Replace handwritten placeholder event IDs with generated distinct
+      chirality/phase/deeper-tree vectors and exact rollback cases.
+- [x] Add a content-addressed release manifest that packages exact controlling
+      source bytes independently of historical commit reachability.
+- [x] Bind the release-pressure audit by exact SHA as a second engineering
+      correction input without changing scientific authority.
+- [x] Split versioned wire/test inputs from strict admitted step and expansion
+      requests; make harness faults typed, nonproduction, and identity-excluded.
+- [x] Replace the overloaded step-result disposition with operation disposition
+      and nullable solver disposition, including pre- and post-solver failures.
+- [x] Add canonical generic mapped-event identity and an affine resource-event
+      transform with explicit nonzero increment and charge-target accounting.
+- [x] Replace scalar history policy/receipt status with independent Candidate
+      and persistent-carrier channels throughout migration and event surfaces.
+- [x] Split Candidate A and Candidate C profile-template schemas and explicitly
+      withhold Candidate A GRC9V4 expansion pending a concrete A target vector.
+- [x] Correct all `C_OS` expansion receipts to report carrier
+      `not_applicable` and no carrier loss; add a nonnull-`Z_4` `C_PC`
+      whole-carrier reset/loss vector.
+- [x] Publish versioned schemas and canonical vectors for authoritative-state,
+      `W_C_tr`, affine-resource, history-policy/bundle/content, expansion-policy,
+      `K_4`, and reference-Hodge subdigests.
+- [x] Add six $D_{\mathrm{eff}}=52$ second-depth BFS vectors and explicit input
+      permutation, cyclic rotation, and reflection/chirality metamorphic cases.
+- [x] Add `grcv4-contract-semantic-admission-v1` and negative vectors for every
+      enumerated cross-field, arithmetic, set, identity, and channel invariant.
+- [x] Clarify enabled-only partial versus full GRC9V4 conformance.
+- [x] Regenerate and verify the corrected schema, vectors, release identity,
+      detached checksum, rendering, and normal phase-aware tool path.
+- [x] Bind the final targeted release-acceptance audit by exact SHA as
+      mechanical correction input, not scientific evidence.
+- [x] Replace the D52 column-only rotation and reflection maps with the exact
+      simultaneous row/column/branch permutations.
+- [x] Bind both chart-symmetry vectors to base and expected target plans plus
+      the event-namespace/role normalization policy, and reproduce exact
+      normalized plan equality in the verifier.
+- [x] Reclassify profile-field and history-subject mismatches as schema-layer
+      negatives while retaining five genuine post-schema semantic negatives.
+- [x] Freeze the four-class information-loss order and add a checked
+      two-loss receipt identity vector.
+- [x] Define and check the port-graph payload/digest envelope with
+      `graph_digest` omitted from its own preimage.
+- [x] Regenerate and mechanically reverify all vector, schema, artifact,
+      release-ID, detached-checksum, and rendering bindings after final
+      acceptance hardening.
+- [x] Bind the final narrow acceptance audit by exact SHA without embedding it
+      into or regenerating the release it accepts.
+- [x] Record append-only acceptance of the exact content-addressed release as
+      the frozen normative preimplementation contract.
+- [x] Add and run the post-release acceptance verifier against the exact
+      narrow-audit bytes, accepted release commit, gate, and successor boundary.
+- [x] Close the specification-correction gate and set the live successor state
+      to `specification_release_accepted`.
+- [x] Mark the specification branch ready, but not yet completed, for its
+      explicit no-fast-forward closure procedure.
+- [x] Mark implementation review ready but inactive; preserve
+      `implementation_authorized = false` and the complete runtime holds.
+- [ ] Supply per-profile step vectors, Candidate A numeric vectors, RG2b
+      evaluator/certificate vectors, child-stabilization vectors, 40 exact
+      disabled-delegate vectors, lifecycle/migration runtime vectors, generic
+      mapped-event runtime execution, charge-edge vectors, deep-immutability
+      tests, Candidate A GRC9V4 target vectors, and runtime receipts before
+      advertising those capabilities as conformant.
+- [ ] Open implementation only under a later hash-bound implementation
+  authority.
+
 ## Current State
 
 ```text
-branch = investigation-GRC9V4-constitutive-design
+branch = spec/grcv4-grc9v4
 D0 = accepted
 D1 = accepted_bounded
 D2 = accepted_bounded
@@ -2868,6 +3085,28 @@ D9 = accepted_bounded_lifecycle_and_typed_event_closure
 D10 = accepted_bounded
 D10.1 = accepted_preliminary_bounded_substrate_provenance_separation
 D10.2 = accepted_bounded
+D11-OPEN = accepted_bounded_successor_opening_without_scientific_result
+D11-ROUTE = accepted_bounded_exact_claim_debt_authority_carry_forward
+D11_inherited_current_claims = 39
+D11_inherited_historical_claim_nodes = 29
+D11_inherited_debt_transformations = 29
+D11_inherited_verification_obligations = 11
+D11_new_additive_debts = 2
+D11-C = accepted_bounded_C_HM_STIFFNESS_BASELINE_v1
+D11-C_resolution_digest = 82e8008e8edade39db7b5327a31a807031b712dcc86b3fe3e8c0977bda51e797
+D11-C_successor_claims_added = 1
+D11-C_successor_objects_added = 3
+D11-C_successor_equation_contracts_added = 11
+D11-G9_selected = D11-G9-P4a
+D11-G9_profile = grc9v4_axis_preserving_chiral_same_port_expansion_v1
+D11-G9_successor_objects_added = 10
+D11-G9_successor_equation_contracts_added = 20
+D11_current_combined_objects = 80
+D11_current_combined_equation_contracts = 183
+D11_current_successor_claims = 2
+D11_total_pending_forward_verification_obligations = 17
+D11-G9 = accepted_bounded_D11-G9-P4a
+D11-G9_resolution_digest = a0813ceead2c992ec197790abd8a0ceea167ae2d952f853cf48f1db4d8001615
 architecture_selected = profile_explicit_lineage_local_GRC9V4_common_substrate_interface
 unique_candidate_selected = false
 unique_realization_selected = false
@@ -2882,8 +3121,18 @@ D10.2_human_acceptance = accepted_bounded_2026-08-26
 D10.2_final_substrate_identity_closed = true
 preclosure_substrate_provenance_audit_required = false
 specification_authorized = true
+D11_dependent_specification_authority = accepted_and_propagated
 runtime_implementation_authorized = false
 src_changed = false
-normative_GRCV4_spec_exists = false
-normative_GRC9V4_spec_exists = false
+normative_GRCV4_spec_exists = true_accepted_frozen_preimplementation_release
+normative_GRC9V4_spec_exists = true_accepted_frozen_preimplementation_release
+specification_release_id = grcv4-spec-release-sha256:9f4c8fe5b57b1c477d834a3e4dae3f98a2b18c70e6e7f598e3c9652170c8645f
+specification_release_state = accepted_frozen
+specification_correction_gate = closed
+live_governance_phase = specification_release_accepted
+specification_branch_ready_for_closure = true
+specification_branch_closed = false
+implementation_review_ready = true
+implementation_review_activated = false
+implementation_authorized = false
 ```

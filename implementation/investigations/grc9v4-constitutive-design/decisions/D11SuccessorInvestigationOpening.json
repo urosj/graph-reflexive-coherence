@@ -1,0 +1,151 @@
+{
+  "schema_version": "grc9v4_d11_successor_opening_v1",
+  "record_type": "post_d10_2_successor_investigation_opening",
+  "record_id": "GRC9V4-CD-D11-OPEN-v1",
+  "gate_id": "D11-OPEN",
+  "title": "Bounded D11 Scientific And Mechanical Successor Opening",
+  "status": "accepted_bounded_successor_opening",
+  "date": "2026-09-03",
+  "predecessor_record_id": "GRC9V4-CD-D10.2-v1",
+  "predecessor_decision_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+  "supersedes": null,
+  "source_identities": [
+    {
+      "source_id": "GRC9V4-CD-D10.2-v1",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D10_2FullSubstrateProvenanceAndPromotionAudit.json",
+      "file_sha256": "59c2b956cec7d258b1db09d43d6df44deb8c0be0453a5d741f7e2733d6881a33",
+      "decision_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+      "consumed_as": "immutable_accepted_predecessor_and_D11_opening_boundary"
+    },
+    {
+      "source_id": "GRCV4-SPECIFICATION-STACK-AUDIT-2026-09",
+      "source_name": "GRCV4-specification-stack-audit.md",
+      "file_sha256": "61fb7c51efd82f80f1eaf492e8d6d3c77c7778aa8ce775a58ed4355dd12272e4",
+      "consumed_as": "external_finding_and_successor_routing_input_not_backward_scientific_evidence"
+    },
+    {
+      "source_id": "GRCV4-SPEC-CANDIDATE-AT-OPENING",
+      "path": "specs/grc-v4-spec.md",
+      "file_sha256": "3512bd0d89bd1aef67f2511e5b7eec1d3af17ff4485f000c63661da089a32e37",
+      "consumed_as": "preopening_candidate_text_to_relabel_provisional_not_scientific_authority"
+    },
+    {
+      "source_id": "GRC9V4-SPEC-CANDIDATE-AT-OPENING",
+      "path": "specs/grc-9-v4-spec.md",
+      "file_sha256": "2395e38bfd2cf94197bd5d0a0d8760c629e46fe62eb50c8d8d1a4c96b8b565b8",
+      "consumed_as": "preopening_candidate_text_to_relabel_provisional_not_scientific_authority"
+    }
+  ],
+  "forensic_preopening_receipts": [
+    {
+      "operation": "object_dependents",
+      "identifier": "CORE-C-AUTHORITY",
+      "trace_digest": "cf4797fccbf473a0db3d249e99a370d8512c83ccc74ae66fd6f59b2b1c9009dc"
+    },
+    {
+      "operation": "object_dependents",
+      "identifier": "GEOM-M4",
+      "trace_digest": "4d96f6fd1c0cd04d33c5ec73f2bec7fd10e818ab6bb32ce02d30c70fdbd524cc"
+    },
+    {
+      "operation": "object_dependents",
+      "identifier": "GRC9-MECHANICAL-EXPANSION",
+      "trace_digest": "8ffa09b524b4b880a010a8878af07c260f33b6211e8e0f05c8aaf51fc2a6e4e9"
+    },
+    {
+      "operation": "contract_provenance",
+      "identifier": "D10.2-EC-GEOM-MOBILITY-BOUNDARY",
+      "support_disposition": "indeterminate_requires_review",
+      "trace_digest": "2eea6a5480364b6969b2cd4b12eb2e0a5f1f8eea33685adf90a7d760230a9f2f"
+    },
+    {
+      "operation": "contract_provenance",
+      "identifier": "D10.2-EC-CI-C-ROOT",
+      "support_disposition": "indeterminate_requires_review",
+      "trace_digest": "63204ba5213ef33cb15bed7c5fea8f5779e512758b9b1b300a8bc426b15f24aa"
+    },
+    {
+      "operation": "contract_provenance",
+      "identifier": "D10.2-EC-OS-C-CORRECTOR",
+      "support_disposition": "indeterminate_requires_review",
+      "trace_digest": "e9e313a8d6de209d4747d1df8a0e442f7be90ab0a4a259215c785e16bdb7f896"
+    },
+    {
+      "operation": "contract_provenance",
+      "identifier": "D10.2-EC-PARENT-GRC9-MECHANICAL-EXPANSION",
+      "support_disposition": "indeterminate_requires_review",
+      "trace_digest": "4c8c2010503d76c0c6d927b7932e334aeb2887f8d06e3cd46bf02b2e482e22b8"
+    }
+  ],
+  "decision": {
+    "scientific_result_accepted": false,
+    "missing_authority_classification": "two_genuine_absent_accepted_contracts_not_specification_extraction_omissions",
+    "investigation_order": [
+      "D11-C",
+      "D11-G9",
+      "paper_correction_after_accepted_results",
+      "affected_V4_specification_reextraction",
+      "final_specification_audit"
+    ],
+    "active_investigation": "D11-C",
+    "queued_investigation": "D11-G9",
+    "separation_reason": {
+      "D11-C": "graph_generic_GRCV4_constitutive_and_transport_authority",
+      "D11-G9": "GRC9V4_only_nine_port_mechanical_specialization_authority"
+    },
+    "reopened_boundaries": {
+      "D11-C": [
+        "Candidate_C_direct_transport_mobility_authority",
+        "Candidate_C_potential_or_driving_law",
+        "Candidate_C_J0_C_stage_domain_covariance_and_controls"
+      ],
+      "D11-G9": [
+        "D10.2-EC-PARENT-GRC9-MECHANICAL-EXPANSION",
+        "GRC9V4_expansion_port_identity_capacity_event_transport_and_target_readmission"
+      ]
+    },
+    "unaffected_accepted_scope": [
+      "D10.2_accepted_bytes_and_historical_disposition",
+      "Candidate_A",
+      "common_resource_and_charge_contracts",
+      "unrelated_D10_claims",
+      "GRC9_and_GRC9V3_historical_artifacts"
+    ],
+    "existing_specification_solutions": {
+      "candidate_c_log_sector_potential_flow_v1": "preregistered_candidate_pending_D11-C",
+      "grc9v4_collision_free_v1": "preregistered_candidate_pending_D11-G9",
+      "removal_required_at_opening": false,
+      "accepted_authority": false
+    }
+  },
+  "authorization_effect": {
+    "D11_C_authorized": true,
+    "D11_G9_authorized_now": false,
+    "D11_G9_authorized_after_D11_C_acceptance": true,
+    "paper_correction_authorized_before_D11_acceptance": false,
+    "D11_dependent_specification_authority": "provisional_preregistered_candidates_only",
+    "implementation_plan_authorized": false,
+    "implementation_authorized": false,
+    "runtime_or_src_change_authorized": false,
+    "tests_change_authorized": false,
+    "older_version_change_authorized": false
+  },
+  "human_acceptance": {
+    "accepted": true,
+    "accepted_by": "experiment_owner",
+    "accepted_date": "2026-09-03",
+    "status": "accepted_bounded_successor_opening",
+    "scope": "open_D11-C_then_D11-G9_without_accepting_either_scientific_solution"
+  },
+  "claim_ceiling": "bounded_authorization_to_investigate_two_named_missing_contracts_without_constitutive_mechanical_paper_specification_implementation_runtime_or_legacy_result",
+  "blocked_relabels": [
+    "opening_is_not_D11-C_acceptance",
+    "opening_is_not_D11-G9_acceptance",
+    "external_audit_is_not_backward_scientific_evidence",
+    "existing_spec_text_is_not_accepted_D11_authority",
+    "D11-G9_is_not_generic_GRCV4",
+    "D11-G9_is_not_a_GRC9_or_GRC9V3_repair",
+    "implementation_or_runtime_authorized"
+  ],
+  "decision_record_digest": "51ba66d5404dee29f7b2a7dcd9501b43711fce0d47d466118945b5a0f71ac23a"
+}

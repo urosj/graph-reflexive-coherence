@@ -11,6 +11,7 @@ from pathlib import Path
 
 TOOL_ROOT = Path(__file__).resolve().parents[1]
 SIDE_TOOL_ROOT = Path(__file__).resolve().parents[2]
+INVESTIGATION_ROOT = SIDE_TOOL_ROOT.parents[1]
 
 
 def repository_root() -> Path:
@@ -70,6 +71,30 @@ COMMANDS = {
     "test-iteration9": TOOL_ROOT / "scripts/test_iteration9_closeout.py",
     "browser-iteration9": TOOL_ROOT / "scripts/test_iteration9_browser.py",
     "verify-iteration9": TOOL_ROOT / "scripts/verify_iteration9.py",
+    "build-iteration10-d11": TOOL_ROOT / "scripts/build_iteration10_d11.py",
+    "audit-iteration10-d11": TOOL_ROOT / "scripts/audit_iteration10_d11.py",
+    "test-iteration10-d11": TOOL_ROOT / "scripts/test_iteration10_d11.py",
+    "build-iteration11-d11-ux": TOOL_ROOT / "scripts/build_iteration11_d11_ux.py",
+    "audit-iteration11-d11-ux": TOOL_ROOT / "scripts/audit_iteration11_d11_ux.py",
+    "test-iteration11-d11-ux": TOOL_ROOT / "scripts/test_iteration11_d11_ux.py",
+    "notebook-iteration11-d11": (TOOL_ROOT / "scripts/run_iteration11_d11_notebook.py"),
+    "browser-iteration11-d11": (TOOL_ROOT / "scripts/test_iteration11_d11_browser.py"),
+    "serve-iteration11-d11": TOOL_ROOT / "scripts/serve_iteration11_d11.py",
+    "verify-post-d10-specifications": (
+        INVESTIGATION_ROOT / "scripts/audit_grcv4_post_d10_specifications.py"
+    ),
+    "audit-d11-successor-opening": (
+        INVESTIGATION_ROOT / "scripts/audit_grc9v4_d11_successor_opening.py"
+    ),
+    "audit-d11-c-resolution": (
+        INVESTIGATION_ROOT / "scripts/audit_grc9v4_d11_c_resolution.py"
+    ),
+    "audit-d11-g9-resolution": (
+        INVESTIGATION_ROOT / "scripts/audit_grc9v4_d11_g9_resolution.py"
+    ),
+    "audit-d11-paper-propagation": (
+        INVESTIGATION_ROOT / "scripts/audit_grcv4_d11_paper_propagation.py"
+    ),
 }
 
 

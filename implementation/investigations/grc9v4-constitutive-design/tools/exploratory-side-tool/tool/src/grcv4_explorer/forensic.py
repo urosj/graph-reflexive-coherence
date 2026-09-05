@@ -9,6 +9,7 @@ from typing import Any, Callable, Iterable, cast
 from .adapters import SourceDocument, adapt_source
 from .bundle import build_source_bundle
 from .canonical import canonical_bytes, digest, load_json_object, record_digest
+from .discovery import discover_sources
 from .errors import GraphInvariantError, SourceAdmissionError
 from .kernel import validate_graph_snapshot
 from .source_contract import admitted_rows, load_et_c0_contract
@@ -31,6 +32,7 @@ class ForensicContext:
     documents_by_record: dict[str, SourceDocument]
     nodes: dict[str, dict[str, Any]]
     propagation_edges: tuple[dict[str, Any], ...]
+    authority_extension_digest: str | None = None
 
 
 def _require_accepted_record(path: Path, schema: str) -> dict[str, Any]:
@@ -60,22 +62,42 @@ def load_forensic_context(repo_root: Path, side_tool_root: Path) -> ForensicCont
 
     et_c0_path = records / "ETC0SourceAndLayoutContract.json"
     et_c0 = load_et_c0_contract(et_c0_path)
-    rebuilt_manifest, observation = build_source_bundle(repo_root, et_c0_path)
     accepted_manifest = load_json_object(records / "ETC1SourceBundleManifest.json")
-    if canonical_bytes(rebuilt_manifest) != canonical_bytes(accepted_manifest):
-        raise SourceAdmissionError("accepted ET-C1 source bundle no longer rebuilds")
+    observation = discover_sources(repo_root, admitted_rows(et_c0))
     if observation.get("state") not in {
         "current_bundle_exact",
         "new_unprocessed_source_available",
     }:
         raise SourceAdmissionError("accepted source bundle is stale or unreadable")
-    source_bundle_digest = cast(str, rebuilt_manifest["source_bundle_digest"])
+    documents = tuple(adapt_source(repo_root, row) for row in admitted_rows(et_c0))
+    if observation["state"] == "current_bundle_exact":
+        rebuilt_manifest, _ = build_source_bundle(repo_root, et_c0_path)
+        if canonical_bytes(rebuilt_manifest) != canonical_bytes(accepted_manifest):
+            raise SourceAdmissionError(
+                "accepted ET-C1 source bundle no longer rebuilds"
+            )
+    else:
+        declared_bundle_digest = accepted_manifest.get("source_bundle_digest")
+        if not isinstance(
+            declared_bundle_digest, str
+        ) or declared_bundle_digest != digest(
+            {
+                key: value
+                for key, value in accepted_manifest.items()
+                if key != "source_bundle_digest"
+            }
+        ):
+            raise SourceAdmissionError("accepted ET-C1 source bundle digest mismatch")
+        if accepted_manifest.get("ET_C0_record_digest") != et_c0["record_digest"]:
+            raise SourceAdmissionError("accepted ET-C1 does not bind the current ET-C0")
+        if accepted_manifest.get("records") != [
+            document.manifest_row() for document in documents
+        ]:
+            raise SourceAdmissionError("accepted ET-C1 admitted-source rows changed")
+    source_bundle_digest = cast(str, accepted_manifest["source_bundle_digest"])
     if graph.get("source_bundle_digest") != source_bundle_digest:
         raise GraphInvariantError("ET-C2 graph is not bound to accepted ET-C1")
 
-    documents = tuple(
-        adapt_source(repo_root, row) for row in admitted_rows(et_c0)
-    )
     documents_by_record = {row.record_identifier: row for row in documents}
     if len(documents_by_record) != len(documents):
         raise SourceAdmissionError("forensic source record IDs are not unique")
@@ -91,9 +113,7 @@ def load_forensic_context(repo_root: Path, side_tool_root: Path) -> ForensicCont
         documents=documents,
         documents_by_record=documents_by_record,
         nodes=nodes,
-        propagation_edges=tuple(
-            cast(list[dict[str, Any]], graph["propagation_edges"])
-        ),
+        propagation_edges=tuple(cast(list[dict[str, Any]], graph["propagation_edges"])),
     )
 
 
@@ -131,7 +151,9 @@ def _source_ref(
 ) -> dict[str, Any]:
     document = context.documents_by_record.get(record_id)
     if document is None:
-        raise SourceAdmissionError(f"record is outside the admitted bundle: {record_id}")
+        raise SourceAdmissionError(
+            f"record is outside the admitted bundle: {record_id}"
+        )
     return {
         "record_id": record_id,
         "record_digest": document.declared_digest,
@@ -144,7 +166,9 @@ def _edge_ref(context: ForensicContext, edge: dict[str, Any]) -> dict[str, Any]:
     record_id = cast(str, edge["source_record_id"])
     document = context.documents_by_record.get(record_id)
     if document is None:
-        raise SourceAdmissionError(f"edge source is outside admitted bundle: {record_id}")
+        raise SourceAdmissionError(
+            f"edge source is outside admitted bundle: {record_id}"
+        )
     return {
         "edge_id": edge["edge_id"],
         "source": edge["source"],
@@ -225,6 +249,8 @@ def _trace(
         "rows": rows,
         "trace_digest": None,
     }
+    if context.authority_extension_digest is not None:
+        payload["authority_extension_digest"] = context.authority_extension_digest
     payload["trace_digest"] = digest(
         {key: value for key, value in payload.items() if key != "trace_digest"}
     )
@@ -308,6 +334,76 @@ def debt_lifecycle(context: ForensicContext, debt_id: str) -> dict[str, Any]:
         for pointer, row in _matching_rows(document, "debt_id", debt_id):
             if "transformation" in row and "successor_claim_ids" in row:
                 matches.append((document, pointer, row))
+    if not matches and debt_id.startswith("D11-"):
+        opened: list[tuple[SourceDocument, str, dict[str, Any]]] = []
+        resolved: list[tuple[SourceDocument, str, dict[str, Any]]] = []
+        for document in context.documents:
+            opened.extend(
+                (document, pointer, row)
+                for pointer, row in _matching_rows(document, "debt_id", debt_id)
+                if "directly_bearing_claim_ids" in row
+            )
+            resolved.extend(
+                (document, pointer, row)
+                for pointer, row in _walk(document.data)
+                if isinstance(row, dict)
+                and row.get("local_debt_id") == debt_id
+                and "local_debt_successor_status" in row
+            )
+        if len(opened) != 1 or len(resolved) != 1:
+            raise SourceAdmissionError(
+                f"D11 debt opening/resolution is not unique: {debt_id}"
+            )
+        open_document, open_pointer, open_payload = opened[0]
+        resolution_document, resolution_pointer, resolution_payload = resolved[0]
+        rows = [
+            _row(
+                context,
+                row_id=f"{debt_id}:opening",
+                classification=cast(str, open_payload["status"]),
+                payload=open_payload,
+                record_id=open_document.record_identifier,
+                pointer=open_pointer,
+                edge_refs=_node_edges(context, node_id),
+            ),
+            _row(
+                context,
+                row_id=f"{debt_id}:resolution",
+                classification=cast(
+                    str, resolution_payload["local_debt_successor_status"]
+                ),
+                payload=resolution_payload,
+                record_id=resolution_document.record_identifier,
+                pointer=resolution_pointer,
+                edge_refs=_node_edges(context, node_id),
+            ),
+        ]
+        obligation_ids = cast(
+            list[str],
+            resolution_document.data["verification_obligation_effect"][
+                "new_forward_obligations"
+            ],
+        )
+        for index, obligation_id in enumerate(obligation_ids):
+            obligation_node = f"verification_obligation:{obligation_id}"
+            rows.append(
+                _row(
+                    context,
+                    row_id=obligation_id,
+                    classification="forward_verification_routing",
+                    payload={
+                        "obligation_id": obligation_id,
+                        "status": "pending_forward",
+                    },
+                    record_id=resolution_document.record_identifier,
+                    pointer=(
+                        "/verification_obligation_effect/new_forward_obligations/"
+                        f"{index}"
+                    ),
+                    edge_refs=_node_edges(context, obligation_node),
+                )
+            )
+        return _trace(context, "debt_lifecycle", {"debt_id": debt_id}, rows)
     if len(matches) != 1:
         raise SourceAdmissionError(f"debt transformation is not unique: {debt_id}")
     document, pointer, payload = matches[0]
@@ -378,6 +474,7 @@ def _reconstruction_nodes(context: ForensicContext, claim_node: str) -> set[str]
                 reached.add(cast(str, edge["target"]))
             if edge["target"] == node_id and edge["relation"] in {
                 "transformed_from",
+                "directly_bearing_pressure",
                 "predecessor_claim",
                 "accepted_claim",
             }:
@@ -401,9 +498,11 @@ def reconstruction_path(context: ForensicContext, claim_id: str) -> dict[str, An
     reached = _reconstruction_nodes(context, claim_nodes[0])
     edges = _edges(
         context,
-        lambda edge: edge["relation"] != "requires_verification_from"
-        and edge["source"] in reached
-        and edge["target"] in reached,
+        lambda edge: (
+            edge["relation"] != "requires_verification_from"
+            and edge["source"] in reached
+            and edge["target"] in reached
+        ),
     )
     nodes = [context.nodes[node_id] for node_id in sorted(reached)]
     source = context.nodes[claim_nodes[0]]
@@ -462,8 +561,11 @@ def candidate_career(context: ForensicContext, candidate_id: str) -> dict[str, A
             continue
         pointer, item = max(semantic, key=lambda pair: len(pair[1]))
         excerpt = {key: item[key] for key in _CAREER_FIELDS if key in item}
+        if candidate_id.startswith("D11-") and "disposition" in item:
+            excerpt["disposition"] = item["disposition"]
         disposition = str(
-            item.get("terminal_disposition")
+            (item.get("disposition") if candidate_id.startswith("D11-") else None)
+            or item.get("terminal_disposition")
             or item.get("candidate_status")
             or item.get("status")
             or "source_recorded_candidate_state"
@@ -532,9 +634,7 @@ def candidate_career(context: ForensicContext, candidate_id: str) -> dict[str, A
                 edge_refs=_record_edges(context, provenance.record_identifier),
             )
         )
-    return _trace(
-        context, "candidate_career", {"candidate_id": candidate_id}, rows
-    )
+    return _trace(context, "candidate_career", {"candidate_id": candidate_id}, rows)
 
 
 def pruned_choices_at(context: ForensicContext, record_id: str) -> dict[str, Any]:
@@ -706,9 +806,7 @@ def contract_provenance(context: ForensicContext, contract_id: str) -> dict[str,
             edge_refs=edge_refs,
         )
     ]
-    return _trace(
-        context, "contract_provenance", {"contract_id": contract_id}, rows
-    )
+    return _trace(context, "contract_provenance", {"contract_id": contract_id}, rows)
 
 
 def gate_contribution(context: ForensicContext, record_id: str) -> dict[str, Any]:
