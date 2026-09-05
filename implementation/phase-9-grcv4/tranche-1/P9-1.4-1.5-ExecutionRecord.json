@@ -1,0 +1,245 @@
+{
+  "schema": "phase9_controlled_review_batch_v1",
+  "date": "2026-09-05",
+  "batch_id": "P9-1.4-1.5",
+  "status": "engineering_reviews_completed_pending_user_acceptance",
+  "baseline_commit": "7c772d36bd4cf12b4a444b7b954b74612de2926f",
+  "branch": "impl/phase-9-grcv4",
+  "release_id": "grcv4-spec-release-sha256:9f4c8fe5b57b1c477d834a3e4dae3f98a2b18c70e6e7f598e3c9652170c8645f",
+  "entry_request": "continue with P9 1.4 and 1.5",
+  "entry_authority": "User-authorized engineering review over the prior uncommitted, hash-bound P9-1.1-1.3 package; not retroactive scientific or runtime acceptance.",
+  "predecessor_review_bindings": [
+    {
+      "path": "implementation/phase-9-grcv4/tranche-1/P9-1.1-SourceCrosswalk.json",
+      "sha256": "5bca809b70366cd66ebb283e86cceb7ddbefb5000c49b8d16f58fa938cf548ed"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-1/P9-1.2-DebtInventory.json",
+      "sha256": "2046d193df09eb17b7484d26e78758df53a6037aa84921c74e63213d2ae30d87"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-1/P9-1.3-VerificationRouting.json",
+      "sha256": "04db3ac5385d9b16ac7bd02eda84b3bb00c84d92ced9d44ebad376d7632b9196"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-1/P9-1.1-1.3-ExecutionRecord.json",
+      "sha256": "1b7e04f0cf59531fd4217f5e32f72196c5e123c68f961a91ef6c13a707a1ce81"
+    }
+  ],
+  "artifact_bindings": [
+    {
+      "sha256": "3a2da3594adb496dd2056526f216271a5f302a4a2f0a24c5a78d1d45fac544f4",
+      "path": "implementation/phase-9-grcv4/tranche-1/P9-1.4-SupportAndDependencies.json"
+    },
+    {
+      "sha256": "c144dca647de5b62926d937de0d3299d07dbabe3e4c2b94ff39bdba0149e5d98",
+      "path": "implementation/phase-9-grcv4/tranche-1/P9-1.4-SupportReview.md"
+    },
+    {
+      "sha256": "8a6b251beb0d805e9a1cc95c04f03e26c48b3f8b515f7b2234a786fa47dac067",
+      "path": "implementation/phase-9-grcv4/tranche-1/P9-1.5-OwnershipAndLegacyBaseline.json"
+    },
+    {
+      "sha256": "38bf405cf6ff10b89f5deaf5d3dd2ea195d977da77793ec7bf5a619f82d031bf",
+      "path": "implementation/phase-9-grcv4/tranche-1/P9-1.5-OwnershipReview.md"
+    },
+    {
+      "sha256": "c315282e10f20264d4436d30987ca5011fb905eb22f0d5bfbecff3aef3ceb233",
+      "path": "implementation/phase-9-grcv4/tranche-1/audit_architecture_review.py"
+    }
+  ],
+  "runtime_authorized": false,
+  "gate_effect": "none_P9_G1_pending",
+  "accepted_generic_runtime_support": [],
+  "admitted_specialization_support_sets": [],
+  "changed_paths": [
+    "implementation/phase-9-grcv4/tranche-1/P9-1.4-SupportAndDependencies.json",
+    "implementation/phase-9-grcv4/tranche-1/P9-1.4-SupportReview.md",
+    "implementation/phase-9-grcv4/tranche-1/P9-1.5-OwnershipAndLegacyBaseline.json",
+    "implementation/phase-9-grcv4/tranche-1/P9-1.5-OwnershipReview.md",
+    "implementation/phase-9-grcv4/tranche-1/audit_architecture_review.py",
+    "implementation/phase-9-grcv4/tranche-1/P9-1.4-1.5-ExecutionRecord.json",
+    "implementation/Phase-9-GRCV4-ImplementationPlan.md",
+    "implementation/Phase-9-GRCV4-ImplementationChecklist.md",
+    "implementation/phase-9-grcv4/tranche-1/reviews/P9-1.4-1.5-Independent-Review.md",
+    "implementation/phase-9-grcv4/tranche-1/reviews/P9-1.4-1.5-independent-review-checks.json"
+  ],
+  "scope_boundary": "Current P9-1.4/P9-1.5 review records, auditor and plan/checklist links, plus byte-identical copies of the two supplied independent-review inputs. P9-1.1-1.3 preparation/acceptance, phase opening, specs/paper/proposal, investigations, exploratory-tool implementation, source, tests and dependencies remain unchanged. P9-1.6 remains unexecuted.",
+  "iteration_results": [
+    {
+      "iteration_id": "P9-1.4",
+      "entry_dependencies": "P9-1.1-1.3 prepared evidence as bound above; user continuation request",
+      "exact_scope": "Ten support rows, full base catalog IDs, exact C_OS and A_OS lifecycle children, early dependency DAG, two post-C_OS routes, migration applicability and G2/G3 holds. Independent-review corrections: canonical schema-derived CI+PC realization values and conditional specialization completion with mandatory lifecycle.",
+      "source_contract_map": "implementation/phase-9-grcv4/tranche-1/P9-1.4-SupportAndDependencies.json plus unchanged P9-1.1 source groups and contracts",
+      "changed_paths": [
+        "implementation/phase-9-grcv4/tranche-1/P9-1.4-SupportAndDependencies.json",
+        "implementation/phase-9-grcv4/tranche-1/P9-1.4-SupportReview.md",
+        "implementation/phase-9-grcv4/tranche-1/audit_architecture_review.py",
+        "implementation/phase-9-grcv4/tranche-1/P9-1.4-1.5-ExecutionRecord.json",
+        "implementation/Phase-9-GRCV4-ImplementationPlan.md",
+        "implementation/Phase-9-GRCV4-ImplementationChecklist.md",
+        "implementation/phase-9-grcv4/tranche-1/reviews/P9-1.4-1.5-Independent-Review.md",
+        "implementation/phase-9-grcv4/tranche-1/reviews/P9-1.4-1.5-independent-review-checks.json"
+      ],
+      "independent_oracles": "Source-owned roster/case/migration matrices and reference identities; dependency-cycle and omission controls. Planned runtime oracles are not executed evidence.",
+      "commands": [
+        ".venv/bin/python implementation/phase-9-grcv4/tranche-1/audit_architecture_review.py --check-current-baseline --check-rendering --self-test"
+      ],
+      "retained_evidence": [
+        "implementation/phase-9-grcv4/tranche-1/P9-1.4-SupportAndDependencies.json",
+        "implementation/phase-9-grcv4/tranche-1/P9-1.4-SupportReview.md",
+        "implementation/phase-9-grcv4/tranche-1/reviews/P9-1.4-1.5-Independent-Review.md",
+        "implementation/phase-9-grcv4/tranche-1/reviews/P9-1.4-1.5-independent-review-checks.json"
+      ],
+      "result": "engineering_review_completed_bounded_recommendation",
+      "new_debt_or_failure": "No new scientific debt or discharge. Missing concrete applicability/evidence remains a G2 hold; no migration waiver.",
+      "parent_reconciliation": "P9-1 remains incomplete; 21 generic lifecycle children and two specialization children are planned/unexecuted. P9-9.1 reconciles optional P9-9.1a separately from mandatory P9-9.1b.",
+      "reviewer_decision": "pending_user_acceptance",
+      "next_permitted_step": "P9-1.6 through P9-1.8 successor verification preparation/execution on explicit request; P9-1.9 acceptance still required before runtime."
+    },
+    {
+      "iteration_id": "P9-1.5",
+      "entry_dependencies": "Same source package and parallel P9-1.4 support review; user continuation request",
+      "exact_scope": "Seventeen V4-owned module/API owners, acyclic dependency direction, independent oracle/retention policy, explicit dependency needs, two proposed additive integration paths, 135 legacy baseline references. Register five implementation follow-ups and six successor-verification pressure checks at existing future leaves; none executed.",
+      "source_contract_map": "implementation/phase-9-grcv4/tranche-1/P9-1.5-OwnershipAndLegacyBaseline.json mapping every P9-1.1 group exactly once",
+      "changed_paths": [
+        "implementation/phase-9-grcv4/tranche-1/P9-1.5-OwnershipAndLegacyBaseline.json",
+        "implementation/phase-9-grcv4/tranche-1/P9-1.5-OwnershipReview.md",
+        "implementation/phase-9-grcv4/tranche-1/audit_architecture_review.py",
+        "implementation/phase-9-grcv4/tranche-1/P9-1.4-1.5-ExecutionRecord.json",
+        "implementation/Phase-9-GRCV4-ImplementationPlan.md",
+        "implementation/Phase-9-GRCV4-ImplementationChecklist.md",
+        "implementation/phase-9-grcv4/tranche-1/reviews/P9-1.4-1.5-Independent-Review.md",
+        "implementation/phase-9-grcv4/tranche-1/reviews/P9-1.4-1.5-independent-review-checks.json"
+      ],
+      "independent_oracles": "Frozen vectors/source specifications versus future independent numeric/reference calculations; current unchanged legacy core and model tests establish baseline only.",
+      "commands": [
+        ".venv/bin/python implementation/phase-9-grcv4/tranche-1/audit_architecture_review.py --check-current-baseline --check-rendering --self-test",
+        ".venv/bin/python -m unittest discover -s tests/core -q",
+        ".venv/bin/python -m unittest discover -s tests/models -q"
+      ],
+      "retained_evidence": [
+        "implementation/phase-9-grcv4/tranche-1/P9-1.5-OwnershipAndLegacyBaseline.json",
+        "implementation/phase-9-grcv4/tranche-1/P9-1.5-OwnershipReview.md",
+        "implementation/phase-9-grcv4/tranche-1/reviews/P9-1.4-1.5-Independent-Review.md",
+        "implementation/phase-9-grcv4/tranche-1/reviews/P9-1.4-1.5-independent-review-checks.json"
+      ],
+      "result": "engineering_review_completed_bounded_recommendation",
+      "new_debt_or_failure": "P9-REVIEW-001 acknowledged without stronger semantics; P9-INTEGRATION-001/002 route V4-only typing, codec and registry boundaries to P9-2.1/2.2/2.6. No source/spec fix here.",
+      "parent_reconciliation": "P9-1 remains incomplete; P9-TOOL-001 unchanged. Dependency packages absent locally remain an explicit pre-runtime implementation prerequisite, not a review blocker.",
+      "reviewer_decision": "pending_user_acceptance",
+      "next_permitted_step": "P9-1.6 through P9-1.8 successor verification; no runtime/source/test/dependency changes in this batch."
+    }
+  ],
+  "validation": [
+    {
+      "command": ".venv/bin/python implementation/phase-9-grcv4/tranche-1/audit_architecture_review.py --check-current-baseline --check-rendering --self-test",
+      "result": "PHASE9_SOURCE_REVIEW_AUDIT_PASS; PHASE9_ARCHITECTURE_NEGATIVE_PROBES_PASS cases=7; PHASE9_ARCHITECTURE_RENDERING_PASS documents=4 local_links=52; PHASE9_ARCHITECTURE_REVIEW_PASS profiles=10 lifecycle_children=21 modules=17 legacy_bindings=135 runtime_authorized=false"
+    },
+    {
+      "command": ".venv/bin/python -m unittest discover -s tests/core -q",
+      "result": "OK",
+      "tests": 105,
+      "duration_seconds": 0.02,
+      "evidence_kind": "existing_legacy_regression_baseline"
+    },
+    {
+      "command": ".venv/bin/python -m unittest discover -s tests/models -q",
+      "result": "OK",
+      "tests": 763,
+      "duration_seconds": 202.611,
+      "evidence_kind": "existing_legacy_regression_baseline"
+    },
+    {
+      "command": ".venv/bin/ruff check implementation/phase-9-grcv4/tranche-1/audit_architecture_review.py",
+      "result": "All checks passed!"
+    },
+    {
+      "command": ".venv/bin/ruff format --check implementation/phase-9-grcv4/tranche-1/audit_architecture_review.py",
+      "result": "1 file already formatted"
+    },
+    {
+      "command": ".venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/audit_grcv4_specification_release_acceptance.py --audit-file /home/uros/Downloads/GRCV4-final-narrow-specification-acceptance-audit.md",
+      "result": "GRCV4_SPECIFICATION_RELEASE_ACCEPTANCE_AUDIT_PASS artifacts=12 state=accepted_frozen implementation_authorized=false"
+    },
+    {
+      "command": "git diff --check",
+      "result": "passed"
+    },
+    {
+      "command": "Read-only Git changed-path reconciliation against both batch records and new-file whitespace check",
+      "result": "PHASE9_REVIEW_CHANGE_SCOPE_PASS current_batch_paths=8 cumulative_paths=14 legacy_src_tests_specs_paper_unchanged=true"
+    }
+  ],
+  "verification_limits": "Review-data, historical baseline and dedicated release checks only. No new normal-tool pass, mutation-policy validation, V4 runtime test, scientific acceptance or gate promotion is claimed.",
+  "no_commit_performed": false,
+  "planning_bindings": [
+    {
+      "sha256": "02c78da5149c78280e7c3943769af83cd601cd6d8955c6dddb82b9cde723f370",
+      "path": "implementation/Phase-9-GRCV4-ImplementationPlan.md"
+    },
+    {
+      "sha256": "11ca362abb543c0976a470bd9ffefc905c5d3cfa2d326532d8de68fa5c2a8caa",
+      "path": "implementation/Phase-9-GRCV4-ImplementationChecklist.md"
+    }
+  ],
+  "independent_review": {
+    "incorporation_request": "Apply the missed planning corrections and register follow-through checks, then amend the previous checkpoint commit.",
+    "input_bindings": [
+      {
+        "path": "implementation/phase-9-grcv4/tranche-1/reviews/P9-1.4-1.5-Independent-Review.md",
+        "sha256": "dde983b7124023dd0fe6d40a3fbdcdc15bc6aa967111bcdb411277e3a1e77725"
+      },
+      {
+        "path": "implementation/phase-9-grcv4/tranche-1/reviews/P9-1.4-1.5-independent-review-checks.json",
+        "sha256": "02d4a2e1e1929b601684f293b01a7e691edf982c671b44750c3bb643cdcc957e"
+      }
+    ],
+    "supplied_checks_scope": "Unchanged pre-correction attachment/static evidence. Original reviewed artifact hashes remain in the supplied checks; they are not current corrected artifact bindings or independently reproduced runtime results.",
+    "corrections": [
+      {
+        "review_section": "4",
+        "status": "applied",
+        "description": "Split P9-9.1a optional completion from P9-9.1b mandatory lifecycle; bind crossings to mandatory lifecycle and condition specialization completion on advertised or explicit project-handoff scope."
+      },
+      {
+        "review_section": "5",
+        "status": "applied",
+        "description": "A_CI_PC/C_CI_PC use realization CI+PC; verify family/candidate/realization against frozen schema discriminants; preserve IDs and internal CI_PC group."
+      }
+    ],
+    "implementation_follow_through": "All five section-7 items registered_pending_implementation in ownership register and checklist.",
+    "successor_pressure_checks": "All six section-8 items registered_pending_successor_verification at P9-1.6-P9-1.8; no normal-tool/successor mutation-policy implementation in this correction.",
+    "independent_attestation_limit": "The reviewer did not execute the author auditor, source-review audit, 868 legacy tests, Git baseline, current-tree scope or rendering checks. Do not relabel the original validation results as independent runs.",
+    "acceptance_effect": "None: P9-1.1-P9-1.3 remain accepted; P9-1.4/P9-1.5 acceptance and P9-G1 remain pending; runtime authority false and support sets empty."
+  },
+  "validation_scope": "The validation array retains the original preparation runs. Post-correction runs are recorded separately in correction_validation; the 868 legacy tests are not claimed as rerun.",
+  "correction_validation": [
+    {
+      "command": ".venv/bin/python implementation/phase-9-grcv4/tranche-1/audit_architecture_review.py --check-current-baseline --check-rendering --self-test",
+      "result": "PHASE9_SOURCE_REVIEW_AUDIT_PASS claims=41 contracts=183 debts=31 obligations=18 pending_evidence=15; PHASE9_ARCHITECTURE_NEGATIVE_PROBES_PASS cases=16; PHASE9_ARCHITECTURE_RENDERING_PASS documents=4 local_links=59; PHASE9_ARCHITECTURE_REVIEW_PASS profiles=10 registered_children=23 modules=17 legacy_bindings=135 implementation_follow_ups=5 successor_pressure_checks=6 runtime_authorized=false",
+      "evidence_kind": "local_post_correction_planning_validation_not_runtime_or_independent_attestation"
+    },
+    {
+      "command": ".venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/audit_grcv4_specification_release_acceptance.py --audit-file /home/uros/Downloads/GRCV4-final-narrow-specification-acceptance-audit.md",
+      "result": "GRCV4_SPECIFICATION_RELEASE_ACCEPTANCE_AUDIT_PASS artifacts=12 state=accepted_frozen branch_closure_ready=true implementation_authorized=false"
+    },
+    {
+      "command": ".venv/bin/ruff check implementation/phase-9-grcv4/tranche-1/audit_architecture_review.py",
+      "result": "All checks passed!"
+    },
+    {
+      "command": ".venv/bin/ruff format --check implementation/phase-9-grcv4/tranche-1/audit_architecture_review.py",
+      "result": "1 file already formatted"
+    },
+    {
+      "command": "git diff --check",
+      "result": "passed"
+    },
+    {
+      "command": "Read-only Git HEAD diff/accepted-predecessor byte comparison and supplied-input byte comparison",
+      "result": "PHASE9_CORRECTION_SCOPE_PASS paths=10 unchanged_predecessor_files=7 input_copies_exact=2 frozen_release_legacy_and_runtime_paths_unchanged=true"
+    }
+  ],
+  "commit_handling": "User requested amendment of checkpoint bae5e2b988756589c698bcd0eb7b2086020991d5 after correction validation; no new implementation iteration or separate commit requested."
+}

@@ -106,18 +106,18 @@ declared planning files.
 
 ## Tranche 1. Implementation review and successor verification
 
-- [ ] P9-1.1: Read the V4 specifications, corresponding paper passages, and
+- [x] P9-1.1: Read the V4 specifications, corresponding paper passages, and
   accepted investigation claims for the proposed support set; create the
   specification/paper/claim/contract-to-module-and-test crosswalk.
-- [ ] P9-1.2: Inventory all 29 inherited D10 debt transformations and both
+- [x] P9-1.2: Inventory all 29 inherited D10 debt transformations and both
   bounded D11 resolutions, with exact claim links and dispositions.
-- [ ] P9-1.3: Inventory all 18 source verification obligations. Link completed
+- [x] P9-1.3: Inventory all 18 source verification obligations. Link completed
   D11 propagation to downstream acceptance; route every remaining obligation
   to an implementation iteration or named deferred scientific gate.
-- [ ] P9-1.4: Review the early C_OS dynamics/lifecycle/G2 path and subsequent
+- [x] P9-1.4: Review the early C_OS dynamics/lifecycle/G2 path and subsequent
   A_OS or C-only GRC9V4 route; specify exact dependencies and supported,
   planned, and deliberately deferred profile rows.
-- [ ] P9-1.5: Review module/API ownership, dependencies, independent oracles,
+- [x] P9-1.5: Review module/API ownership, dependencies, independent oracles,
   artifact retention, and immutable old-family regression targets.
 - [ ] P9-1.6: Close `P9-TOOL-001` through successor verification of the current
   tree and routing from the normal tool entry point. Preserve release-bound
@@ -129,6 +129,56 @@ declared planning files.
   affected by that verification change; retain consistent authority labels.
 - [ ] P9-1.9: Record accepted P9-G1 successor authority with exact mutation
   scope and release bindings before runtime work starts.
+
+P9-1.1–P9-1.3 evidence: [review package](./phase-9-grcv4/tranche-1/P9-1.1-1.3-Review.md)
+and [separate execution results](./phase-9-grcv4/tranche-1/P9-1.1-1.3-ExecutionRecord.json).
+The user accepted these three iterations on 2026-09-05. The later
+[acceptance record](./phase-9-grcv4/tranche-1/P9-1.1-1.3-AcceptanceRecord.json)
+binds their exact evidence; original preparation records remain unchanged.
+This acceptance does not grant P9-G1 approval or accept P9-1.4/P9-1.5.
+The crosswalk covers 41 current claims and 183 contracts;
+the inventory retains all 31 debt records. Of 18 source obligations, one
+bounded preclose and two downstream propagation steps were already satisfied;
+fifteen still need runtime, numeric, or scientific evidence. No obligation
+was discharged by this batch. `P9-REVIEW-001` preserves the API's indeterminate
+support-edge semantics for the 152 D10.2 contracts, for P9-1.5 acknowledgement.
+P9-1.4/P9-1.5 subsequently acknowledge that boundary without promoting it.
+
+P9-1.4 evidence: [support/dependency review](./phase-9-grcv4/tranche-1/P9-1.4-SupportReview.md)
+and its exact ten-profile/child/dependency register. P9-1.5 evidence:
+[ownership/oracle/legacy review](./phase-9-grcv4/tranche-1/P9-1.5-OwnershipReview.md),
+seventeen proposed module owners and 135 explicit baseline paths. Existing
+regressions pass: 105 core tests and 763 model tests. These checkmarks record
+completed engineering reviews; user acceptance and P9-G1 remain pending.
+The [separate execution results](./phase-9-grcv4/tranche-1/P9-1.4-1.5-ExecutionRecord.json)
+retain the scope, tests, observations and next step for each iteration.
+P9-1.6–P9-1.9 and all runtime gates remain pending.
+
+Independent-review planning corrections are applied: the composite families
+retain their IDs but use the schema's `realization: "CI+PC"`; P9-9.1 is split
+into optional completion and mandatory lifecycle children. The original
+review/check attachments and post-correction validation are separately bound
+in the execution record. These corrections do not accept P9-1.4/P9-1.5.
+
+### Registered independent-review follow-through
+
+All rows below are **pending**, not implemented or executed. The
+[ownership register](./phase-9-grcv4/tranche-1/P9-1.5-OwnershipAndLegacyBaseline.json)
+retains detailed requirements, concrete test pressures and exact child owners.
+
+| Pending item | Existing leaf owners | Required evidence |
+| --- | --- | --- |
+| `P9-REVIEW-FOLLOW-7.1` | P9-2.2, P9-2.6 | Release-bound packaged assets; clean wheel/sdist outside checkout; legacy without extra, V4 with extra, typed missing dependency and asset failures. |
+| `P9-REVIEW-FOLLOW-7.2` | P9-2.1, P9-2.6, P9-3.1 | Explicit symbol/hash/contract/reason reuse ledger, including graph storage/lookup and utilities; no shared refactor by similarity. |
+| `P9-REVIEW-FOLLOW-7.3` | P9-4.3 | Supplemental tau-C-zero on nontrivial retained Hodge with nonzero kappa-M: identity resolvent but direct baseline conditioning survives. |
+| `P9-REVIEW-FOLLOW-7.4` | P9-2.5, P9-3.4, P9-4.5 | Exact-byte versus tolerance/environment scope; nonidentity SPD, near-admitted boundaries and repeated-eigenvalue cluster projectors; no silent numerical repairs. |
+| `P9-REVIEW-FOLLOW-7.5` | C_OS/A_OS children of P9-7.2a/b–P9-7.6 | Different live/reset inputs, independent target transport/readmission, reset-after-operation, ledger/delta and full-payload rollback. |
+| `P9-REVIEW-PRESSURE-8.1` | P9-1.6, P9-1.7 | Green planning review cannot unlock runtime/source/test/dependency writes. |
+| `P9-REVIEW-PRESSURE-8.2` | P9-1.6, P9-1.7 | Legitimate successor planning passes with unchanged historical checks. |
+| `P9-REVIEW-PRESSURE-8.3` | P9-1.7 | Deleted required child, forged alias, unresolved dependency reject even with matching counts. |
+| `P9-REVIEW-PRESSURE-8.4` | P9-1.7, P9-1.8 | No unrelated profile barrier; no advertisement of unexecuted exact identities. |
+| `P9-REVIEW-PRESSURE-8.5` | P9-1.7, P9-1.8 | Conditional completion and its own scoped evidence; no universal child prerequisite. |
+| `P9-REVIEW-PRESSURE-8.6` | P9-1.6, P9-1.7 | Fail closed on forged/stale/hash/status/path-content violations, not filename or green marker. |
 
 `P9-TOOL-001` was reproduced before Phase 9 file edits using
 `verify-post-d10-specifications`. It rejected
@@ -142,26 +192,34 @@ point remains a known gate hold until P9-1.6–P9-1.8 are verified.
 
 - [ ] P9-2.1: Implement V4-owned immutable state/result records with read-only
   common-interface projections and recursive mutation protection.
+  Record symbol-level reuse/replacement decisions before consumption (§7.2).
 - [ ] P9-2.2: Implement complete profile/parameter resolution and canonical
   identities against all applicable schema/preimage vectors.
+  Package and hash-bind schema/identity assets for installed use (§7.1).
 - [ ] P9-2.3: Separate wire failures, semantic admission failures, and strict
   admitted requests; keep harness injection outside production identity.
 - [ ] P9-2.4: Implement orthogonal operation/solver dispositions and receipt
   delta versus persistent ledger ownership.
 - [ ] P9-2.5: Create the runtime harness with independent oracles and exact
   source/profile/fixture/prestate/poststate/receipt evidence bindings.
+  Specify environment and exact-byte versus tolerance comparison scope (§7.4).
 - [ ] P9-2.6: Verify unsupported-profile rejection, deep immutability, and
   unchanged common-interface behavior for older families.
+  Verify clean wheel/sdist and optional-extra boundaries (§7.1) and each
+  consumed legacy symbol's exact reuse boundary (§7.2).
 
 ## Tranche 3. Typed graph, geometry, transport, and charge
 
 - [ ] P9-3.1: Implement deterministic graph/differential identities, typed
   Hodge/one-form/physical-flux maps, and candidate-local mobility ownership.
+  Resolve graph-backend storage/lookup and utility reuse before implementation (§7.2).
 - [ ] P9-3.2: Implement exact stage/cache provenance and domain admission.
 - [ ] P9-3.3: Implement the one-resource-write complete-step boundary and
   exact charge gate, without an extra remainder/repair coordinate.
 - [ ] P9-3.4: Execute nonidentity SPD, permutation, signed-edge covariance,
   nonfinite/domain, stale-cache, and charge-precision cases.
+  Include near-admitted conditioning boundaries and repeated eigenvalues
+  within a strictly separated cluster; compare invariant projectors (§7.4).
 - [ ] P9-3.5: Verify full prestate preservation after every rejected operation.
 
 ## Tranche 4. D11-C and the first C_OS runtime slice
@@ -172,10 +230,14 @@ point remains a known gate hold until P9-1.6–P9-1.8 are verified.
   gap, Read-Back typing, and regular current solve at their declared stages.
 - [ ] P9-4.3: Verify independent kappa-M, chi, and zeta zero controls and
   complete smooth-stratum baseline derivative/covariance cases.
+  Add the separate tau-C-zero control on nontrivial retained Hodge with
+  nonzero kappa-M; no frozen-catalog edit or simultaneous-zero shortcut (§7.3).
 - [ ] P9-4.4: Implement one OS pass, explicit split residual, one resource
   write, and post-continuity rederivation.
 - [ ] P9-4.5: Execute positive and atomic-negative `C_OS` vectors; keep full
   profile conformance pending lifecycle completion.
+  Exercise the declared numerical reproducibility scope without hidden
+  damping, regularization, pseudoinverse, fallback or charge repair (§7.4).
 - [ ] P9-4.6: Execute the C_OS snapshot/load/reset/rebase and deep-copy/
   immutability slice; record the corresponding P9-7.1-C_OS evidence.
 - [ ] P9-4.7a: Execute atomic failed-step, receipt identity/ownership, and
@@ -236,6 +298,18 @@ coverage. Record bounded shared-audit results for the available profile set.
 
 ## Tranche 7. Generic lifecycle generalization and P9-G2
 
+The [P9-1.4 child register](./phase-9-grcv4/tranche-1/P9-1.4-SupportAndDependencies.json)
+now declares exact C_OS and A_OS lifecycle children, source/target crossing
+scopes, evidence aliases and dependencies. All are planned/unexecuted;
+P9-7.1-C_OS aliases P9-4.6 and P9-7.7-C_OS aliases P9-4.8, with no duplicate
+execution credit. Parent completion remains scoped to reviewed child evidence.
+
+The registered C_OS/A_OS migration/event and P9-7.3–P9-7.6 children also own
+§7.5: deliberately distinct live/reset prestates, independently calculated
+transported/readmitted targets, reset after the operation, persistent ledger
+versus emitted delta, and complete scientific/lifecycle rollback. Include a
+reset-only target admission failure even when the live target would pass.
+
 Instantiate profile-specific children (for example `P9-7.1-C_OS`) and exact
 source/target migration or event children before execution. C_OS children
 run during Tranche 4; later work generalizes their machinery and reuses their
@@ -293,8 +367,15 @@ P9-8.3 are parent registers; their child scopes are independently reviewed.
 
 ## Tranche 9. Hybrid completion and disabled compatibility
 
-- [ ] P9-9.1: Execute child stabilization, completed-spark, hierarchy, and
-  specialization lifecycle cases.
+- [ ] P9-9.1: Reconcile the two child dispositions below as an aggregate,
+  not a universal execution/crossing prerequisite. Unselected optional scope
+  remains planned/deferred, not marked executed.
+- [ ] P9-9.1a: Execute optional child stabilization, completed-spark and
+  hierarchy evidence when advertised or explicitly required by a stronger
+  project handoff, after P9-8.6. Neither is selected by this planning review.
+- [ ] P9-9.1b: Execute mandatory specialization lifecycle after P9-8.6,
+  regardless of completion flags; preserve trigger/topology/charge/reset,
+  receipt/readmission and legacy compatibility obligations.
 - [ ] P9-9.2: Reconcile the forty-cell parent register below. Each child
   executes and reviews its exact unchanged GRC9V3 delegate/oracle separately;
   this parent is not a single execution iteration.
@@ -302,10 +383,15 @@ P9-8.3 are parent registers; their child scopes are independently reviewed.
   unexecuted slot explicitly and claim only the supported tested subset.
 - [ ] P9-9.4: Execute both enabled/disabled migration directions with exact
   authority, reset, history-loss, receipt, and readmission semantics.
+  Depend on P9-9.1b and the applicable disabled lifecycle delegate, not the
+  optional P9-9.1a child or aggregate P9-9.1.
 - [ ] P9-9.5: Verify V4's `legacy_expansion_target_undefined` rejection for
   the saturated port-5 conflict, without changing the legacy implementation.
 - [ ] P9-9.6: Review specialization support only after enabled and applicable
   disabled contracts pass; no enabled-only full-conformance label.
+  Additionally require P9-9.1a evidence per exact profile/capability when
+  completion/hierarchy is advertised or required for explicit project handoff.
+  Completion-off waives no mandatory lifecycle/compatibility evidence.
 
 ### P9-9.2 compatibility execution register
 

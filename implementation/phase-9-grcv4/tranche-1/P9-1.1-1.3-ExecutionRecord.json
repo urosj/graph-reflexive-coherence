@@ -1,0 +1,220 @@
+{
+  "schema": "phase9_controlled_review_batch_v1",
+  "date": "2026-09-05",
+  "batch_id": "P9-1.1-1.3",
+  "status": "prepared_for_review",
+  "branch": "impl/phase-9-grcv4",
+  "baseline_commit": "7c772d36bd4cf12b4a444b7b954b74612de2926f",
+  "entry_request": "let's do the first subset of iterations in tranche 1, the ones that fit together to be done together",
+  "grouping_reason": "P9-1.1 through P9-1.3 share source reconstruction and are inputs to the separately reviewable P9-1.4/P9-1.5 support and ownership decisions.",
+  "release_id": "grcv4-spec-release-sha256:9f4c8fe5b57b1c477d834a3e4dae3f98a2b18c70e6e7f598e3c9652170c8645f",
+  "artifact_bindings": [
+    {
+      "path": "implementation/phase-9-grcv4/tranche-1/audit_source_review.py",
+      "sha256": "1e1ef93d8a82bc885522e1b4f57e5277e0c23ef57d3bc3505aaafe5cf867c91b"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-1/P9-1.1-1.3-Review.md",
+      "sha256": "3e3802b7cdd885263ce9f0ce4811c3bfb0a0c5846d0608ba6112039e04539081"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-1/P9-1.1-SourceCrosswalk.json",
+      "sha256": "5bca809b70366cd66ebb283e86cceb7ddbefb5000c49b8d16f58fa938cf548ed"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-1/P9-1.2-DebtInventory.json",
+      "sha256": "2046d193df09eb17b7484d26e78758df53a6037aa84921c74e63213d2ae30d87"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-1/P9-1.3-VerificationRouting.json",
+      "sha256": "04db3ac5385d9b16ac7bd02eda84b3bb00c84d92ced9d44ebad376d7632b9196"
+    }
+  ],
+  "forensic_context": {
+    "authority_extension_digest": "833acc5988761f8ba68ca573ad270bf7c87cf2fe32061336a71e42647968630a",
+    "graph_digest": "44d8c7d33950af5e5f7c61caa4fe6fbd14fc9aedf14218d0a11de7c705542e09",
+    "source_bundle_digest": "98c273b3cc097f0d95adfba98ed7dfac0ac494dce9e779bb4b04fe79fef4f6aa"
+  },
+  "runtime_authorized": false,
+  "gate_effect": "none_P9_G1_and_all_runtime_gates_remain_pending",
+  "accepted_generic_runtime_support": [],
+  "admitted_specialization_support_sets": [],
+  "changed_paths": [
+    "implementation/phase-9-grcv4/tranche-1/P9-1.1-SourceCrosswalk.json",
+    "implementation/phase-9-grcv4/tranche-1/audit_source_review.py",
+    "implementation/phase-9-grcv4/tranche-1/P9-1.1-1.3-Review.md",
+    "implementation/phase-9-grcv4/tranche-1/P9-1.1-1.3-ExecutionRecord.json",
+    "implementation/Phase-9-GRCV4-ImplementationPlan.md",
+    "implementation/Phase-9-GRCV4-ImplementationChecklist.md",
+    "implementation/phase-9-grcv4/tranche-1/P9-1.2-DebtInventory.json",
+    "implementation/phase-9-grcv4/tranche-1/P9-1.3-VerificationRouting.json"
+  ],
+  "scope_boundary": "Only Phase 9 review data, an additive read-only planning auditor, and plan/checklist progress. No historical governance, exploratory tool implementation, old-family source/tests, V4 runtime, paper/proposal, or accepted specification edits.",
+  "authority_record_policy": "Phase opening and predecessor acceptance records remain unchanged; this batch records prepared artifacts, not scientific acceptance or a successor mutation policy.",
+  "observations": [
+    {
+      "id": "P9-REVIEW-001",
+      "status": "open_for_acknowledgement",
+      "finding": "152 D10.2 contract API support dispositions are indeterminate_requires_review; preserved literally, not reclassified or construed as missing accepted spec authority.",
+      "route": [
+        "P9-1.5",
+        "P9-1.6"
+      ],
+      "kind": "review_boundary_not_new_scientific_debt"
+    },
+    {
+      "id": "P9-TOOL-001",
+      "status": "retained_existing_gate_hold",
+      "finding": "No normal-entry verification fix is part of this batch.",
+      "route": [
+        "P9-1.6",
+        "P9-1.7",
+        "P9-1.8"
+      ]
+    }
+  ],
+  "iteration_results": [
+    {
+      "iteration_id": "P9-1.1",
+      "entry_authority": "user_first_related_Tranche_1_subset_request_and_committed_Phase9_planning",
+      "scope": "41 current claims and 183 exact contracts mapped to 27 proposed module/test groups; source specification/paper/schema references and independent oracle requirements retained.",
+      "source_contract_map": "implementation/phase-9-grcv4/tranche-1/P9-1.1-SourceCrosswalk.json",
+      "changed_paths": [
+        "implementation/phase-9-grcv4/tranche-1/P9-1.1-SourceCrosswalk.json",
+        "implementation/phase-9-grcv4/tranche-1/audit_source_review.py",
+        "implementation/phase-9-grcv4/tranche-1/P9-1.1-1.3-Review.md",
+        "implementation/phase-9-grcv4/tranche-1/P9-1.1-1.3-ExecutionRecord.json",
+        "implementation/Phase-9-GRCV4-ImplementationPlan.md",
+        "implementation/Phase-9-GRCV4-ImplementationChecklist.md"
+      ],
+      "tests_and_oracles": {
+        "executed": "Read-only forensic reconstruction, exact-row comparison, source/release and reference checks; no runtime or numerical conformance execution.",
+        "future_independent_oracles": "P9-1.1-SourceCrosswalk.json /groups/*/independent_oracle_requirement; proposals for P9-1.5 review only."
+      },
+      "commands": [
+        ".venv/bin/python implementation/phase-9-grcv4/tranche-1/audit_source_review.py"
+      ],
+      "command_result": "PHASE9_SOURCE_REVIEW_AUDIT_PASS",
+      "retained_evidence": [
+        "implementation/phase-9-grcv4/tranche-1/P9-1.1-SourceCrosswalk.json",
+        "implementation/phase-9-grcv4/tranche-1/P9-1.1-1.3-Review.md"
+      ],
+      "new_scientific_debt_discharged": 0,
+      "retained_observations": [
+        "P9-REVIEW-001",
+        "P9-TOOL-001"
+      ],
+      "result": "artifact_prepared_and_source_validation_passed",
+      "reviewer_decision": "pending_user_review",
+      "next_permitted_review_iterations": [
+        "P9-1.4",
+        "P9-1.5"
+      ]
+    },
+    {
+      "iteration_id": "P9-1.2",
+      "entry_authority": "user_first_related_Tranche_1_subset_request_and_committed_Phase9_planning",
+      "scope": "29 D10 debt transformations and 2 D11 local bounded resolutions; original claim links, dispositions, and full-lineage source references preserved.",
+      "source_contract_map": "implementation/phase-9-grcv4/tranche-1/P9-1.2-DebtInventory.json",
+      "changed_paths": [
+        "implementation/phase-9-grcv4/tranche-1/P9-1.2-DebtInventory.json",
+        "implementation/phase-9-grcv4/tranche-1/audit_source_review.py",
+        "implementation/phase-9-grcv4/tranche-1/P9-1.1-1.3-Review.md",
+        "implementation/phase-9-grcv4/tranche-1/P9-1.1-1.3-ExecutionRecord.json",
+        "implementation/Phase-9-GRCV4-ImplementationPlan.md",
+        "implementation/Phase-9-GRCV4-ImplementationChecklist.md"
+      ],
+      "tests_and_oracles": {
+        "executed": "Read-only forensic reconstruction, exact-row comparison, source/release and reference checks; no runtime or numerical conformance execution.",
+        "future_independent_oracles": "P9-1.1-SourceCrosswalk.json /groups/*/independent_oracle_requirement; proposals for P9-1.5 review only."
+      },
+      "commands": [
+        ".venv/bin/python implementation/phase-9-grcv4/tranche-1/audit_source_review.py"
+      ],
+      "command_result": "PHASE9_SOURCE_REVIEW_AUDIT_PASS",
+      "retained_evidence": [
+        "implementation/phase-9-grcv4/tranche-1/P9-1.2-DebtInventory.json",
+        "implementation/phase-9-grcv4/tranche-1/P9-1.1-1.3-Review.md"
+      ],
+      "new_scientific_debt_discharged": 0,
+      "retained_observations": [
+        "P9-TOOL-001"
+      ],
+      "result": "artifact_prepared_and_source_validation_passed",
+      "reviewer_decision": "pending_user_review",
+      "next_permitted_review_iterations": [
+        "P9-1.4",
+        "P9-1.5"
+      ]
+    },
+    {
+      "iteration_id": "P9-1.3",
+      "entry_authority": "user_first_related_Tranche_1_subset_request_and_committed_Phase9_planning",
+      "scope": "18 obligations: 1 bounded preclose and 2 propagation completions witnessed downstream; 15 pending evidence obligations routed, no new discharge.",
+      "source_contract_map": "implementation/phase-9-grcv4/tranche-1/P9-1.3-VerificationRouting.json",
+      "changed_paths": [
+        "implementation/phase-9-grcv4/tranche-1/P9-1.3-VerificationRouting.json",
+        "implementation/phase-9-grcv4/tranche-1/audit_source_review.py",
+        "implementation/phase-9-grcv4/tranche-1/P9-1.1-1.3-Review.md",
+        "implementation/phase-9-grcv4/tranche-1/P9-1.1-1.3-ExecutionRecord.json",
+        "implementation/Phase-9-GRCV4-ImplementationPlan.md",
+        "implementation/Phase-9-GRCV4-ImplementationChecklist.md"
+      ],
+      "tests_and_oracles": {
+        "executed": "Read-only forensic reconstruction, exact-row comparison, source/release and reference checks; no runtime or numerical conformance execution.",
+        "future_independent_oracles": "P9-1.1-SourceCrosswalk.json /groups/*/independent_oracle_requirement; proposals for P9-1.5 review only."
+      },
+      "commands": [
+        ".venv/bin/python implementation/phase-9-grcv4/tranche-1/audit_source_review.py"
+      ],
+      "command_result": "PHASE9_SOURCE_REVIEW_AUDIT_PASS",
+      "retained_evidence": [
+        "implementation/phase-9-grcv4/tranche-1/P9-1.3-VerificationRouting.json",
+        "implementation/phase-9-grcv4/tranche-1/P9-1.1-1.3-Review.md"
+      ],
+      "new_scientific_debt_discharged": 0,
+      "retained_observations": [
+        "P9-TOOL-001"
+      ],
+      "result": "artifact_prepared_and_source_validation_passed",
+      "reviewer_decision": "pending_user_review",
+      "next_permitted_review_iterations": [
+        "P9-1.4",
+        "P9-1.5",
+        "P9-1.6"
+      ]
+    }
+  ],
+  "validation": [
+    {
+      "command": ".venv/bin/python implementation/phase-9-grcv4/tranche-1/audit_source_review.py",
+      "result": "PHASE9_SOURCE_REVIEW_AUDIT_PASS",
+      "scope": "Three source artifacts, API boundaries, source hashes, baseline ancestry, and all five bound package artifacts validated after execution record assembly."
+    },
+    {
+      "command": ".venv/bin/ruff check implementation/phase-9-grcv4/tranche-1/audit_source_review.py",
+      "result": "All checks passed!"
+    },
+    {
+      "command": ".venv/bin/ruff format --check implementation/phase-9-grcv4/tranche-1/audit_source_review.py",
+      "result": "1 file already formatted"
+    },
+    {
+      "command": ".venv/bin/python implementation/investigations/grc9v4-constitutive-design/scripts/audit_grcv4_specification_release_acceptance.py --audit-file /home/uros/Downloads/GRCV4-final-narrow-specification-acceptance-audit.md",
+      "result": "GRCV4_SPECIFICATION_RELEASE_ACCEPTANCE_AUDIT_PASS artifacts=12 state=accepted_frozen implementation_authorized=false"
+    },
+    {
+      "command": "git diff --check",
+      "result": "passed"
+    },
+    {
+      "command": "pandoc --from=gfm --to=html --no-highlight (plan, checklist, review); read-only HTML link resolution and changed-path/whitespace checks",
+      "result": "PHASE9_REVIEW_PACKAGE_HYGIENE_PASS markdown_documents=3 local_links=39 changed_paths=8 legacy_runtime_specs_paper_unchanged=true"
+    }
+  ],
+  "no_commit_performed": true,
+  "next_batch_proposal": [
+    "P9-1.4",
+    "P9-1.5"
+  ]
+}

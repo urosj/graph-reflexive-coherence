@@ -1,0 +1,245 @@
+{
+  "schema": "independent_p9_14_15_review_checks_v1",
+  "scope": "Attachment-content and static planning audit; no execution of the authors checker, legacy tests, current Git tree, or P9-1.1-1.3 audit.",
+  "inputs": [
+    {
+      "name": "P9-1.4-1.5-ExecutionRecord.json",
+      "bytes": 10131,
+      "sha256": "6e23d533845df57d672e9e15db8413bc4cf201e7a78eebe5e5ff917d1569a924"
+    },
+    {
+      "name": "P9-1.4-SupportAndDependencies.json",
+      "bytes": 36943,
+      "sha256": "1c696e33df62d6df31f36a2eadd400f4b5f1230136ef00c1e829cecb52e27b45"
+    },
+    {
+      "name": "P9-1.4-SupportReview.md",
+      "bytes": 12118,
+      "sha256": "634604a344f93dc8e9ea931cfea26732633e4861ba2694f64003b26c7d80f1fd"
+    },
+    {
+      "name": "P9-1.5-OwnershipAndLegacyBaseline.json",
+      "bytes": 41580,
+      "sha256": "3474e1cae55fd8cfad233731abe9f6c6ac1c76e86cd8edfaf1958f9e0119766f"
+    },
+    {
+      "name": "P9-1.5-OwnershipReview.md",
+      "bytes": 15991,
+      "sha256": "07b833c7cc39633bddddfd6a01498379d896dbb7bab7e0ebd3253528f54c24b6"
+    }
+  ],
+  "reference_inputs": [
+    {
+      "logical_name": "grc-v4-conformance-fixtures.json",
+      "mounted_name": "grc-v4-conformance-fixtures(3).json",
+      "sha256": "90b4f4fd5b259f94363a29e23715af0450bef944002f8e611f23efabc9c7043a",
+      "matches_accepted_release": true
+    },
+    {
+      "logical_name": "grc-v4-conformance-vectors.json",
+      "mounted_name": "grc-v4-conformance-vectors(2).json",
+      "sha256": "ab12e2ffe02e9a9267eca9bdc3ca9361c0cf973cb87917d0eb090d3d68654ce4",
+      "matches_accepted_release": true
+    },
+    {
+      "logical_name": "grc-v4-contract-schema.json",
+      "mounted_name": "grc-v4-contract-schema(2).json",
+      "sha256": "3fd072fc8c2b315f1b5dc32a4e4821a5082b5f3fc9d9a4794c007419a7aa0bea",
+      "matches_accepted_release": true
+    },
+    {
+      "logical_name": "grc-9-v4-spec.md",
+      "mounted_name": "grc-9-v4-spec(4).md",
+      "sha256": "7552166d5dd60308ffe56934cf187a74d62296673c8c6b64320f7e57c7310262",
+      "matches_accepted_release": true
+    },
+    {
+      "logical_name": "grc-common-interface-v4-ext.md",
+      "mounted_name": "grc-common-interface-v4-ext(4).md",
+      "sha256": "7d5be95242619fcaaae7ea5d8e950b3f335efe9a81492e67e6baa91c4643bc26",
+      "matches_accepted_release": true
+    }
+  ],
+  "release_id": "grcv4-spec-release-sha256:9f4c8fe5b57b1c477d834a3e4dae3f98a2b18c70e6e7f598e3c9652170c8645f",
+  "artifact_bindings": [
+    {
+      "path": "implementation/phase-9-grcv4/tranche-1/P9-1.4-SupportAndDependencies.json",
+      "status": "match"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-1/P9-1.4-SupportReview.md",
+      "status": "match"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-1/P9-1.5-OwnershipAndLegacyBaseline.json",
+      "status": "match"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-1/P9-1.5-OwnershipReview.md",
+      "status": "match"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-1/audit_architecture_review.py",
+      "status": "unavailable"
+    }
+  ],
+  "predecessor_bindings_consistent": true,
+  "predecessor_bytes_reaudited": false,
+  "profile_roster_matches_catalog": true,
+  "catalog_products": [
+    {
+      "family": "A_CI",
+      "count": 28,
+      "unique": true,
+      "exact_catalog_product": true,
+      "missing": [],
+      "extra": []
+    },
+    {
+      "family": "C_CI",
+      "count": 33,
+      "unique": true,
+      "exact_catalog_product": true,
+      "missing": [],
+      "extra": []
+    },
+    {
+      "family": "A_OS",
+      "count": 28,
+      "unique": true,
+      "exact_catalog_product": true,
+      "missing": [],
+      "extra": []
+    },
+    {
+      "family": "C_OS",
+      "count": 33,
+      "unique": true,
+      "exact_catalog_product": true,
+      "missing": [],
+      "extra": []
+    },
+    {
+      "family": "A_RG2b",
+      "count": 28,
+      "unique": true,
+      "exact_catalog_product": true,
+      "missing": [],
+      "extra": []
+    },
+    {
+      "family": "C_RG2b",
+      "count": 33,
+      "unique": true,
+      "exact_catalog_product": true,
+      "missing": [],
+      "extra": []
+    },
+    {
+      "family": "A_PC",
+      "count": 28,
+      "unique": true,
+      "exact_catalog_product": true,
+      "missing": [],
+      "extra": []
+    },
+    {
+      "family": "C_PC",
+      "count": 33,
+      "unique": true,
+      "exact_catalog_product": true,
+      "missing": [],
+      "extra": []
+    },
+    {
+      "family": "A_CI_PC",
+      "count": 28,
+      "unique": true,
+      "exact_catalog_product": true,
+      "missing": [],
+      "extra": []
+    },
+    {
+      "family": "C_CI_PC",
+      "count": 33,
+      "unique": true,
+      "exact_catalog_product": true,
+      "missing": [],
+      "extra": []
+    }
+  ],
+  "migration_classes_match_frozen_vectors": true,
+  "seed_identity_matches_vector": true,
+  "execution_dag": {
+    "nodes": 63,
+    "edges": 77,
+    "acyclic": true,
+    "external_nodes": [
+      "P9-G1"
+    ],
+    "C_OS_G2_has_unrelated_A_PC_RG2b_barrier": false,
+    "C_OS_G3_has_unrelated_A_PC_RG2b_barrier": false,
+    "completion_parent_is_ancestor_of_enabled_disabled_crossings": true,
+    "completion_parent_is_ancestor_of_specialization_review": true
+  },
+  "children": {
+    "count": 21,
+    "unique_ids": 21,
+    "evidence_aliases": [
+      {
+        "id": "P9-7.1-C_OS",
+        "alias_of": "P9-4.6"
+      },
+      {
+        "id": "P9-7.7-C_OS",
+        "alias_of": "P9-4.8"
+      }
+    ],
+    "nonalias_children_missing_dag_node": []
+  },
+  "module_dag": {
+    "nodes": 17,
+    "edges": 20,
+    "acyclic": true,
+    "unknown_dependencies": [],
+    "generic_to_specialization_edges": [],
+    "declared_source_group_count": 27,
+    "unique_declared_source_group_count": 27,
+    "unique_proposed_test_paths": 17
+  },
+  "legacy_register": {
+    "paths": 135,
+    "unique_paths": 135,
+    "policy_counts": {
+      "frozen_legacy_reference": 133,
+      "separately_reviewed_additive_integration": 2
+    },
+    "legacy_bytes_independently_verified": false,
+    "legacy_tests_independently_executed": false
+  },
+  "naming_mismatches": [
+    {
+      "family": "A_CI_PC",
+      "review_value": "CI_PC",
+      "contract_value": "CI+PC"
+    },
+    {
+      "family": "C_CI_PC",
+      "review_value": "CI_PC",
+      "contract_value": "CI+PC"
+    }
+  ],
+  "authority": {
+    "runtime_authorized": false,
+    "accepted_generic_runtime_support": [],
+    "admitted_specialization_support_sets": [],
+    "gate_effect": "none_P9_G1_pending"
+  },
+  "not_reproduced": [
+    "audit_architecture_review.py and its seven negative probes",
+    "105 core and 763 model tests",
+    "135 legacy member byte hashes at the declared Git commit",
+    "latest progress/child edits to the plan and checklist",
+    "prior source crosswalk/debt/verification audit"
+  ]
+}

@@ -5,7 +5,7 @@ Date: 2026-09-05. Status: planning opened; implementation review pending.
 Phase 9 implements the accepted graph-generic `GRCV4` substrate, followed by
 a gated `GRC9V4` specialization. The accepted V4 specifications are the primary
 implementation source, read together with the paper and accepted investigation
-claims. The current work is the phase opening and implementation plan. The companion
+claims. The current work is implementation-review preparation. The companion
 [checklist](./Phase-9-GRCV4-ImplementationChecklist.md) records execution;
 the [phase opening](./Phase-9-GRCV4-PhaseOpening.json) records authority,
 predecessor identities, and the completed specification merge.
@@ -157,7 +157,7 @@ runtime debt named by the acceptance gate. All execution remains pending.
 | `candidate_a_GRC9V4_expansion_vectors` | `P9-8.3A`: held until a concrete A target vector is supplied; then A reference/history and reconstruction evidence. |
 | `per_realization_step_vectors` | Tranches 4–6: concrete complete-step vectors for each supported profile. |
 | `RG2b_vectors` | Tranche 6: admitted deterministic evaluator and Lipschitz section certification. |
-| `child_stabilization_vectors` | Tranche 9: completed spark, child stabilization, and hierarchy evidence. |
+| `child_stabilization_vectors` | P9-9.1a: child/completed-spark/hierarchy evidence when the optional capability is advertised or explicitly required for project handoff; unselected scope stays pending/deferred. |
 | `disabled_GRC9V3_delegate_vectors` | Tranche 9: forty independently tracked profile/surface contracts. |
 | `lifecycle_snapshot_reset_migration_vectors` | `P9-4.6`–`P9-4.8` for early C_OS, then profile-indexed Tranche 7 generalization. |
 | `generic_mapped_topology_vectors` | `P9-4.7b` / `P9-7.2b` for C_OS before acceptance; Tranche 7 for other supported profiles. |
@@ -185,8 +185,10 @@ one profile or bounded domain implies no other profile or broader domain.
 `P9-G3[C_OS]` is shorthand for singleton support set `{C_OS}` with those
 exact accepted identities. New profiles added to a consumed set require
 their own G2 acceptance and a reviewed G3 extension. G3 admits specialization
-work; full GRC9V4 conformance still requires applicable enabled, child/lifecycle,
-and all four disabled compatibility surfaces. Generic acceptance may therefore
+work; full GRC9V4 conformance still requires applicable enabled mechanics,
+mandatory specialization lifecycle, and all four disabled compatibility surfaces.
+Optional completion evidence is additionally required only for advertised
+capabilities or an explicitly stronger project handoff. Generic acceptance may therefore
 progress while Tranches 6–9 retain unrelated pending rows.
 
 P9-G1 records runtime authority in a new, hash-bound successor. It must
@@ -221,6 +223,36 @@ specification merge, validate the accepted release, and inspect the current
 forensic authority. This bootstrap supplies planning evidence only.
 
 ### Tranche 1. Implementation review and successor verification
+
+P9-1.1–P9-1.3 are prepared as the first controlled
+[review package](./phase-9-grcv4/tranche-1/P9-1.1-1.3-Review.md), with separate
+iteration results, a reproducible source crosswalk, all 31 debt records, and
+all 18 obligation routes. The user accepted P9-1.1–P9-1.3 on 2026-09-05;
+the later [acceptance record](./phase-9-grcv4/tranche-1/P9-1.1-1.3-AcceptanceRecord.json)
+binds the unchanged preparation evidence. Module names in that crosswalk
+remain proposals for P9-1.5, not separately accepted ownership. P9-G1 and
+runtime authority are unchanged; the original record retains its as-prepared
+state without invalidating downstream evidence bindings.
+
+P9-1.4's [support/dependency review](./phase-9-grcv4/tranche-1/P9-1.4-SupportReview.md)
+and P9-1.5's [ownership/oracle/legacy review](./phase-9-grcv4/tranche-1/P9-1.5-OwnershipReview.md)
+are now completed engineering recommendations, pending user acceptance.
+They retain C_OS's complete generic/lifecycle gate, independent A_OS or
+singleton GRC9V4 follow-on routes, exact planned lifecycle children, and all
+ten support rows. Seventeen V4-owned modules refine the initial crosswalk;
+135 explicit legacy baseline paths and 868 passing existing tests establish
+the starting regression boundary, not V4 conformance. Existing core contracts
+remain unchanged; only two existing files are proposed for later reviewed
+additive integration. No runtime or dependency edits are authorized by these
+reviews. P9-1.6–P9-1.9 and P9-G1 remain pending.
+
+The independent P9-1.4/P9-1.5 review corrections are now applied: canonical
+`CI+PC` realization values (unchanged composite family IDs) and the P9-9.1
+optional-completion/mandatory-lifecycle split below. All five implementation
+follow-ups and six successor-verification pressure checks are registered with
+existing leaf owners in the checklist and ownership review; none is runtime
+evidence or a completed P9-1.6–P9-1.8 result. The supplied independent review
+and raw static checks are retained separately from our corrected validation.
 
 Produce an equation/contract-to-module-and-test map using the paper and
 specifications. Preserve source references, classifications, edge witnesses,
@@ -359,8 +391,18 @@ covariance execution are required before arbitrary-size conformance claims.
 
 ### Tranche 9. Hybrid completion and disabled compatibility
 
-Complete child-basin stabilization, completed-spark registration, hierarchy,
-and specialization lifecycle semantics. Execute the four independent
+Keep P9-9.1 as an aggregate with two separately reviewed children:
+P9-9.1a covers optional child-basin stabilization, completed-spark registration,
+and hierarchy; P9-9.1b covers mandatory specialization lifecycle semantics.
+Both follow P9-8.6, but the aggregate is not a universal dependency.
+P9-9.4 depends on P9-9.1b and the applicable disabled lifecycle delegate;
+P9-9.6 conditionally requires P9-9.1a only where completion/hierarchy is
+advertised or explicitly required by a stronger project handoff. Neither
+optional capability nor a stronger handoff target is selected by this review.
+Completion-off never waives trigger, topology, charge, reset, receipts,
+target readmission, crossings, or compatibility. Completion-on without its
+scoped child evidence holds that review; unselected completion is not marked
+executed. Execute the four independent
 disabled transition/state/observable/lifecycle surfaces per supported profile;
 retain all forty slots for the ten-profile population.
 
