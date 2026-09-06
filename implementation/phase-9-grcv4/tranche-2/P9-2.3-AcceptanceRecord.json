@@ -1,0 +1,36 @@
+{
+  "schema": "phase9_request_foundation_acceptance_v1",
+  "status": "accepted_by_user",
+  "release_id": "grcv4-spec-release-sha256:9f4c8fe5b57b1c477d834a3e4dae3f98a2b18c70e6e7f598e3c9652170c8645f",
+  "baseline_commit": "1647d3f7e21b33db156ef95f51af02339462ab8f",
+  "user_authority": {
+    "request": "ok, commit changes",
+    "continuation": "let's continue with P9-2.4",
+    "scope": "Accept the reviewed P9-2.3 request/receipt foundation and its audit follow-up, as recorded in the commit message. No runtime profile conformance or future leaf acceptance."
+  },
+  "accepted_iterations": [
+    "P9-2.3"
+  ],
+  "predecessor_record_digest": "1e3f0ddb06b119fa46dc7609d05b7db0c3a4cbc07428c05b8a032da081ae9dd4",
+  "evidence_bindings": [
+    {
+      "path": "implementation/phase-9-grcv4/tranche-2/P9-2.3-Review.md",
+      "sha256": "ca2e6877bb09da08b80afa25e8622a283674ff8401a38968989d822914f80a3d"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-2/P9-2.3-ExecutionRecord.json",
+      "sha256": "ea5c8d00a64e3e75b1133fc671307f7f78ce2eccb38912938ed834589f0e3f46"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-2.3/audit-followup/run.json",
+      "sha256": "303ff20dc9490118eeabf0951bb6776895d0ce3fe89d37700ab39f83b884fa8d"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/runtime/RuntimeWorkManifest.json",
+      "sha256": "be4d3fed0b5ca7802213fe95c7dd05f52baae6e33903ab45c6e14a61c782fcd2"
+    }
+  ],
+  "accepted_generic_runtime_support": [],
+  "admitted_specialization_support_sets": [],
+  "record_digest": "ac07a2f7c93538454d9663aba78ca0eb5af385d7975582e4c21682f41ce4c17f"
+}

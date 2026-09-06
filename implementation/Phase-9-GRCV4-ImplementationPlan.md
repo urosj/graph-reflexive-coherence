@@ -8,8 +8,9 @@ implementation source, read together with the paper and accepted investigation
 claims. P9-1.9 records the user's accepted implementation review. The user's
 commit instructions accept P9-2.1's immutable value records and P9-2.2's
 profile/identity/installed-asset foundation, including audit corrections.
-P9-2.3 adds the generic request decoding/admission prefix and failure evidence,
-pending its own review/commit instruction;
+P9-2.3's generic request decoding/admission prefix and failure evidence were
+accepted by the user's commit instruction at `1647d3f`. P9-2.4 extends result,
+disposition and receipt comparison records, pending its own review/commit;
 no executable profile or runtime conformance is claimed. The companion
 [checklist](./Phase-9-GRCV4-ImplementationChecklist.md) records execution;
 the [phase opening](./Phase-9-GRCV4-PhaseOpening.json) records authority,
@@ -411,6 +412,37 @@ Keep test fault injection outside production inputs and scientific identity.
 Start the runtime conformance harness here. Compare independent expected
 values with actual operations; a vector builder, schema pass, or captured
 constant cannot serve as evidence that the model executed the equations.
+
+P9-2.4's [review](./phase-9-grcv4/tranche-2/P9-2.4-Review.md) and
+[execution](./phase-9-grcv4/tranche-2/P9-2.4-ExecutionRecord.json) extend the
+existing state-module result records with closed payload reconstruction, typed
+failure/envelope ownership and cross-field disposition checks. The step module
+owns pure receipt/commit construction and comparisons against exact captured
+request, scientific payloads, observed outcomes and ordered ledgers. It does
+not own a model commit, graph admission, numerical solver, rollback engine or
+replay authorization. A successful receipt is content-valid, not causal proof.
+The checked result boundary uses generic profile/model identity; specialization
+profile binding is fail-closed until its owner exists. Closed GRC9-labelled
+published result fixtures may still be reconstructed as records.
+
+The separate [P9-2.3 acceptance](./phase-9-grcv4/tranche-2/P9-2.3-AcceptanceRecord.json)
+binds that reviewed commit without changing historical runs. The current
+ownership adapter adds the checklist's P9-2.4 responsibility to the existing
+state and step module/test pairs, omitted from the coarse frozen source-group
+iteration lists. It grants no lifecycle-module, facade or harness ownership.
+P9-2.5 and all runtime conformance gates remain pending.
+
+P9-2.4's two-audit follow-up guards original index representations and ordered
+event containers before conversion, accepts revalidated typed or primitive
+commit preimages, and restricts evidence storage to immutable bytes without
+granting those bytes authority. Eleven added regression/characterization tests
+preserve numeric, ownership, observation and receipt-content boundaries.
+The frozen receipt core does not settle parent-reference scope/order. P9-7.6
+must resolve that contract and verify lineage; the current builder/comparator
+does not certify a parent DAG or impose an editorial intra-commit-only rule.
+P9-2.5/P9-4.7a carry the four retained invalid-transition characterizations into
+independent live-operation oracles, not content-matching fixtures. Neither
+later leaf is started by registering this follow-through.
 
 ### Tranche 3. Typed graph, geometry, transport, and charge
 

@@ -1493,6 +1493,80 @@ API/notebook/browser suites remain on the normal verification path. P9-1.7
 owns adversarial successor-policy review; P9-1.8 owns the remaining surface
 and scenario reconciliation. Their completion is not inferred here.
 
+### Phase 9 verification successor (P9-1.7/P9-1.8)
+
+The planning-only P9-1.6 route is extended by a content-bound V2 verifier;
+its original policy/auditor and prepared artifact snapshot remain immutable.
+All six independent-review pressures have explicit executable scenarios,
+including exact child/alias/dependency checks, conditional completion,
+frozen-content failures and isolated future-approval controls. Real runtime
+acceptance remains P9-1.9 work; neither a flag nor a planning pass grants it.
+
+The [Phase 9 access guide](./docs/Phase9VerificationGuide.md) opens the actual
+read-only API, executable notebook and separate local browser panel. These
+share the same current-boundary validator and distinguish fresh checks from
+matching recorded successor execution. Normal verification runs the new
+pressure/API/notebook/Node/browser checks alongside the unchanged D11 suites.
+The old scientific graph, accepted scenarios and ET-C11 candidate remain
+unchanged. Preparation/verification status is tracked in the checklist and
+separate Phase 9 leaf records, not inferred as scientific or runtime support.
+
+The P9-1.6–P9-1.8 pressure-guide correction adds three independently retained
+test batches, decisive rejection traces, combined/committed/stale/forgery and
+broken-checker controls, and source-admitted semantic-projection tests. The
+Phase 9 panel and notebook now project actual isolated probe results, keeping
+candidate decision distinct from harness assertion and live permission.
+Affected-surface inventory, per-run evidence and normalized API/notebook/browser
+exports are documented in the access guide. All acceptance/runtime ceilings
+above remain unchanged.
+
+### P9-1.9 accepted implementation successor
+
+The user has separately accepted P9-1.4–P9-1.8 and P9-G1's reviewed V4-only
+implementation scope. The V3 verifier binds the accepted release and exact
+approval, admits registered generic source/test/assets and two additive-only
+integration points, and holds GRC9V4 behind its independent P9-G3 gate.
+Per-iteration content/evidence manifests do not grant conformance, enlarge
+scope or bypass owning-leaf dependencies. At this transition only P9-2.1 and
+P9-2.2 are ready. The P9-1.9 execution record reconciles every supplied outlier
+and prerequisite, retaining explicit reuse and nonapplicability limits.
+The accepted V2 checker and records remain exact on commit `6e0a507`;
+normal verification replays them there, not against the implementation tree.
+API, real notebook cells and browser/export distinguish accepted permission
+from the still-empty runtime support sets. Earlier pending statements in the
+planning-successor sections describe historical preparation checkpoints.
+
+The [Phase 9 access guide](./docs/Phase9VerificationGuide.md#accepted-p9-g1-successor)
+also links normalized original-run evidence with separate original hash citations.
+The normal verifier reports archive integrity independently of recorded G1
+acceptance and current-work permission; the standalone archive check remains
+strict. API, notebook, browser and export expose those separate results.
+Relevant debugging failures are summarized, not mandatorily archived
+one attempt at a time; existing acceptance and runtime gates do not change.
+
+### Phase 9 Tranche 2 foundation routing and acceptance
+
+#### P9-2.2 integration routing
+
+P9-2.2 corrects the current implementation routing for the already-reviewed
+dependency/package-data additions in `pyproject.toml`: this identity leaf may
+perform them without borrowing P9-2.6. That transition had twelve eligible paths;
+API, notebook and browser projections retain the same accepted G1 and empty
+runtime-support boundaries. Model exports and later dependencies remain held.
+This is an implementation-owner correction, not new scientific authority.
+
+#### Current request/result foundation acceptance
+
+The user's commit-as-acceptance clarification records the corrected P9-2.1
+and P9-2.2 foundation against its committed subjects. Readiness now includes
+P9-2.4 after the separate P9-2.3 commit acceptance, with sixteen owned runtime
+paths. API, notebook, browser and export expose both decisions; P9-2.5 and
+runtime support remain held. The current owner adapter adds P9-2.4 only to
+the existing state/step module/test pairs assigned by the checklist. Pressure
+fixtures start from the accepted request commit, with the older G1 source
+baseline still frozen. A work manifest or rehashed acceptance cannot promote
+unfinished leaves or profiles.
+
 ## Verification Strategy
 
 ### Kernel and adapter tests
@@ -1557,73 +1631,7 @@ and scenario reconciliation. Their completion is not inferred here.
 
 ## Completion Boundary
 
-### Phase 9 verification successor (P9-1.7/P9-1.8)
-
-The planning-only P9-1.6 route is extended by a content-bound V2 verifier;
-its original policy/auditor and prepared artifact snapshot remain immutable.
-All six independent-review pressures have explicit executable scenarios,
-including exact child/alias/dependency checks, conditional completion,
-frozen-content failures and isolated future-approval controls. Real runtime
-acceptance remains P9-1.9 work; neither a flag nor a planning pass grants it.
-
-The [Phase 9 access guide](./docs/Phase9VerificationGuide.md) opens the actual
-read-only API, executable notebook and separate local browser panel. These
-share the same current-boundary validator and distinguish fresh checks from
-matching recorded successor execution. Normal verification runs the new
-pressure/API/notebook/Node/browser checks alongside the unchanged D11 suites.
-The old scientific graph, accepted scenarios and ET-C11 candidate remain
-unchanged. Preparation/verification status is tracked in the checklist and
-separate Phase 9 leaf records, not inferred as scientific or runtime support.
-
-### P9-1.9 accepted implementation successor
-
-The user has separately accepted P9-1.4–P9-1.8 and P9-G1's reviewed V4-only
-implementation scope. The V3 verifier binds the accepted release and exact
-approval, admits registered generic source/test/assets and two additive-only
-integration points, and holds GRC9V4 behind its independent P9-G3 gate.
-Per-iteration content/evidence manifests do not grant conformance, enlarge
-scope or bypass owning-leaf dependencies. At this transition only P9-2.1 and
-P9-2.2 are ready. The P9-1.9 execution record reconciles every supplied outlier
-and prerequisite, retaining explicit reuse and nonapplicability limits.
-The accepted V2 checker and records remain exact on commit `6e0a507`;
-normal verification replays them there, not against the implementation tree.
-API, real notebook cells and browser/export distinguish accepted permission
-from the still-empty runtime support sets. Earlier pending statements in the
-planning-successor sections describe historical preparation checkpoints.
-
-The [Phase 9 access guide](./docs/Phase9VerificationGuide.md#accepted-p9-g1-successor)
-also links normalized original-run evidence with separate original hash citations.
-The normal verifier reports archive integrity independently of recorded G1
-acceptance and current-work permission; the standalone archive check remains
-strict. API, notebook, browser and export expose those separate results.
-Relevant debugging failures are summarized, not mandatorily archived
-one attempt at a time; existing acceptance and runtime gates do not change.
-
 ### Scientific completion ceiling
-
-P9-2.2 corrects the current implementation routing for the already-reviewed
-dependency/package-data additions in `pyproject.toml`: this identity leaf may
-perform them without borrowing P9-2.6. That transition had twelve eligible paths;
-API, notebook and browser projections retain the same accepted G1 and empty
-runtime-support boundaries. Model exports and later dependencies remain held.
-This is an implementation-owner correction, not new scientific authority.
-
-The user's commit-as-acceptance clarification records the corrected P9-2.1
-and P9-2.2 foundation against its committed subjects. Readiness now includes
-P9-2.3 and sixteen owned runtime paths. API, notebook, browser and export expose
-that foundation decision; P9-2.4 and runtime support remain held. Pressure
-fixtures start from the accepted foundation commit, with the older G1 source
-baseline still frozen. A work manifest or rehashed acceptance cannot promote
-unfinished leaves or profiles.
-
-The P9-1.6–P9-1.8 pressure-guide correction adds three independently retained
-test batches, decisive rejection traces, combined/committed/stale/forgery and
-broken-checker controls, and source-admitted semantic-projection tests. The
-Phase 9 panel and notebook now project actual isolated probe results, keeping
-candidate decision distinct from harness assertion and live permission.
-Affected-surface inventory, per-run evidence and normalized API/notebook/browser
-exports are documented in the access guide. All acceptance/runtime ceilings
-above remain unchanged.
 
 Successful closeout may claim:
 

@@ -94,6 +94,51 @@
       "iteration_id": "P9-2.3"
     },
     {
+      "path": "implementation/phase-9-grcv4/evidence/P9-2.4/audit-before/actual.json",
+      "sha256": "92e968bee4f6b998a221216353e4b476e256cf4d3da3cda4c81d4777af588dc7",
+      "iteration_id": "P9-2.4"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-2.4/audit-before/run.json",
+      "sha256": "dcf111121144bdfbefd4f7e4c76a7dcb69fcc5fe495492add1b7c07dd9ff6c24",
+      "iteration_id": "P9-2.4"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-2.4/audit-followup/actual.json",
+      "sha256": "3fc0896afe09d905031e64e8e109c49eab9bc259f5a9f98b9b37e2733dce376c",
+      "iteration_id": "P9-2.4"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-2.4/audit-followup/run.json",
+      "sha256": "e48ab5882f50f3e0de954f7e0ff9fc4c3190a62ac7def48b52f2666abd565a82",
+      "iteration_id": "P9-2.4"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-2.4/independent-audit/actual.json",
+      "sha256": "86c89e01878e9e4797abf89b3251dc575d40c714e1001c718419a26e87b354e6",
+      "iteration_id": "P9-2.4"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-2.4/independent-audit/inputs.json",
+      "sha256": "0d991412489338bda60349e172866055c2013b43b4765ac4d10487c51051ca7a",
+      "iteration_id": "P9-2.4"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-2.4/p924-verification/actual.json",
+      "sha256": "8ff50559899a40ba31a97788065e3dc4c7da068c12efe723a23ed0edcbd7cac9",
+      "iteration_id": "P9-2.4"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-2.4/p924-verification/run.json",
+      "sha256": "e97dfcbcba096074004e3c75f49ff2c9e15df8c310af723f8865ba0eb5ead4ec",
+      "iteration_id": "P9-2.4"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-2.4/pre-audit-subject/inputs.json",
+      "sha256": "1aef028f02f83ea383d0e7d10f50576a9e789afb40fb8b6d81f95e0f34b3e3ed",
+      "iteration_id": "P9-2.4"
+    },
+    {
       "path": "implementation/phase-9-grcv4/tranche-2/P9-2.1-ExecutionRecord.json",
       "sha256": "561817390d50afbd1eaf2c8ee2bc12409de9458892ae944f947eaabed66a916c",
       "iteration_id": "P9-2.1"
@@ -122,6 +167,16 @@
       "path": "implementation/phase-9-grcv4/tranche-2/P9-2.3-Review.md",
       "sha256": "ca2e6877bb09da08b80afa25e8622a283674ff8401a38968989d822914f80a3d",
       "iteration_id": "P9-2.3"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-2/P9-2.4-ExecutionRecord.json",
+      "sha256": "33f7afb7e08af1b1c76d239717b0a2a87ebaa422827433ba55e7ba6a449a01b7",
+      "iteration_id": "P9-2.4"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-2/P9-2.4-Review.md",
+      "sha256": "f5d48b5f3d8f75ba12605db8092da8eea8a3fca1769827bd2cf68b5d92e0a11a",
+      "iteration_id": "P9-2.4"
     },
     {
       "path": "pyproject.toml",
@@ -170,13 +225,13 @@
     },
     {
       "path": "src/pygrc/models/grc_v4_state.py",
-      "sha256": "58f2c73ba9b936dbc144f95e4f2171277031ee6ac9fb39aa69d8941c87f8f8a5",
-      "iteration_id": "P9-2.1"
+      "sha256": "b0ccf06ef91b66feb8670fb67281465998f4bcb085c4d547fedd3ce6d85ad3cb",
+      "iteration_id": "P9-2.4"
     },
     {
       "path": "src/pygrc/models/grc_v4_step.py",
-      "sha256": "0f0a0c0715ad82acdc87e33b2d3ae1e691ce287fb77245ddf47f58d13d93556d",
-      "iteration_id": "P9-2.3"
+      "sha256": "773975e1131791f93d86f6dac38b27ebac9dca46c1b87ef2e0a31bc8c90a705b",
+      "iteration_id": "P9-2.4"
     },
     {
       "path": "tests/models/test_grc_v4.py",
@@ -195,17 +250,17 @@
     },
     {
       "path": "tests/models/test_grc_v4_state.py",
-      "sha256": "c5c0f1ab8cff6626eb11ae0078d873cdc5a420ca24ab090f68569dd5eca58cdb",
-      "iteration_id": "P9-2.1"
+      "sha256": "d7ce02acc2d663fd3f4513158193dd473a78c1f42bc985edfa2d2eff0943fb54",
+      "iteration_id": "P9-2.4"
     },
     {
       "path": "tests/models/test_grc_v4_step.py",
-      "sha256": "1319784d833dec66a3342ddc912fbcc8735fddcd3ab7010f04d3e5b4db8eeb80",
-      "iteration_id": "P9-2.3"
+      "sha256": "cd6470b181eec32abf4540b4ddb0bc28d5303fd40dca40febf22ba6bc71cf51f",
+      "iteration_id": "P9-2.4"
     }
   ],
   "accepted_generic_runtime_support": [],
   "admitted_specialization_support_sets": [],
   "claim_ceiling": "Exact current implementation content bindings, not review acceptance or conformance.",
-  "record_digest": "33c38cfdbf42039553f2b23c8d86956ced527a5dfa0a4654190630365c282cff"
+  "record_digest": "a05fd18f4be9a2423d4c814efb569e7094c310c4923054a2d1231e75b252c063"
 }

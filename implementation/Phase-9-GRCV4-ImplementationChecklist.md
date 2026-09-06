@@ -281,7 +281,9 @@ three bounded batches retain their own results and raw per-run manifests.
   direct/factory consistency, numeric reconstruction, nonzero underflow,
   identity suffixes and nested mutation. The combined 105 foundation tests,
   357 previous audit probes and installed wheel/sdist request checks pass.
-  Engineering completion only; this leaf awaits its own review/commit acceptance.
+  Accepted by the user's commit instruction at `1647d3f`; the separate
+  [acceptance record](./phase-9-grcv4/tranche-2/P9-2.3-AcceptanceRecord.json)
+  preserves the original preparation/execution bytes.
   Migration execution, full prestate admission and complete stepping remain
   later work, not implicitly certified by typed request construction.
   Two-audit follow-up: content-identity-only receipt wording and explicit
@@ -293,12 +295,31 @@ three bounded batches retain their own results and raw per-run manifests.
   imports as V4 additions. The baseline-aware correction retains the rejection
   assertion, with eight sensitivity controls. See the review's per-item
   dispositions and distinct checkout run.
-- [ ] P9-2.4: Implement orthogonal operation/solver dispositions and receipt
+- [x] P9-2.4: Implement orthogonal operation/solver dispositions and receipt
   delta versus persistent ledger ownership.
   Negative duration: rejected operation, `solver_disposition=None`, no commit
   ID or persistent append. Bind imported receipt operation/stage/code and
   source/poststate to actual execution, not just a recomputed digest. With the
   later solver consumer, preserve `valid_root` on subsequent charge rejection.
+  [Review](./phase-9-grcv4/tranche-2/P9-2.4-Review.md) and
+  [execution](./phase-9-grcv4/tranche-2/P9-2.4-ExecutionRecord.json): strengthened
+  existing immutable result records, content-checked typed failure/envelopes,
+  acyclic receipt-to-commit-to-envelope construction, pure operation/state/
+  ledger comparisons and a bound negative-duration result. Imported state or
+  receipt labels alone cannot substitute for captured payloads and observed
+  outcomes. Full numerical execution/rollback and live-state authentication
+  remain later owner tests. Engineering completion, not acceptance of P9-2.4
+  or any runtime profile; P9-2.5 is not started.
+  Verified 134 foundation tests (22 new result/receipt cases), 875 predecessor
+  stress scenarios, 105 legacy core tests, packaging and strict static checks.
+  Two-audit correction: original-number validation, ordered event-container
+  admission, typed/primitive commit composition, and exact-byte evidence
+  storage now have 11 added regression/characterization tests. The exact
+  checkout reproduces the submitted 11 exposures before correction. Separate
+  pre/post records preserve that failure evidence and the corrected run.
+  Parent-ID content validation is explicitly not lineage-DAG certification;
+  the unresolved parent scope/order contract belongs to P9-7.6, not an invented
+  intra-commit-only rule in this leaf. See the review's per-item dispositions.
 - [ ] P9-2.5: Create the runtime harness with independent oracles and exact
   source/profile/fixture/prestate/poststate/receipt evidence bindings.
   Specify environment and exact-byte versus tolerance comparison scope (§7.4).
@@ -306,6 +327,12 @@ three bounded batches retain their own results and raw per-run manifests.
   negative requests with equal receipts, foreign/rehashed evidence and a
   grammar-valid wrong source. Compare complete scientific/lifecycle payloads
   on failure and distinguish emitted receipt delta from persistent history.
+  Carry P9-2.4's four self-consistent but invalid transition characterizations
+  into independent live-step oracles (also P9-4.7a): wrong elapsed time,
+  unchanged index, backward clock and zero-duration state change. Capture
+  observed stage/code/solver independently of the result under test. Account
+  for binary64 clock rounding; matching records or a `StepResultEvidence`
+  instance certify neither execution nor parent lineage.
 - [ ] P9-2.6: Verify unsupported-profile rejection, deep immutability, and
   unchanged common-interface behavior for older families.
   Verify clean wheel/sdist and optional-extra boundaries (§7.1) and each
@@ -439,6 +466,11 @@ may reach G2 without waiting for all Tranche 6 realizations.
 - [ ] P9-7.5: Execute missing-lineage, invalid-map, and readmission failure
   cases, including reset after ordinary steps, migrations, and events.
 - [ ] P9-7.6: Verify receipt lineage ownership and deep duplicate independence.
+  Resolve P9-2.4's open parent-reference scope/order question from accepted
+  authority before claiming lineage conformance: historical versus intra-commit
+  parents, missing/forward/self/cyclic references and duplicate handling.
+  Do not infer parent-DAG validity from receipt hashes, commit construction,
+  ledger append equality or content-only comparison evidence.
 - [ ] P9-7.7: Review the full applicable fixture product and record `P9-G2[p]`
   separately for each generic profile; link P9-4.8 for the early C_OS result.
 - [ ] P9-7.8: Review `P9-G3[S]` for the exact accepted generic support set

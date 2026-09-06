@@ -7,6 +7,7 @@ from collections import UserDict, UserString
 from collections.abc import Callable, Set
 from copy import deepcopy
 from dataclasses import fields, replace
+from hashlib import sha256
 import json
 import importlib
 from numbers import Integral
@@ -81,20 +82,103 @@ def fixture(candidate: str = "C", realization: str = "OS") -> dict[str, Any]:
     }
 
 
+def fixture_id(prefix: str, payload: object) -> str:
+    """Independent ASCII fixture preimages (no integral-valued float tokens)."""
+    raw = json.dumps(
+        payload, sort_keys=True, separators=(",", ":"), ensure_ascii=True
+    ).encode()
+    return prefix + ":" + sha256(raw).hexdigest()
+
+
+def successful_fixture() -> dict[str, Any]:
+    core = {
+        "operation_id": "test:step",
+        "actual_charge_delta": 0,
+        "information_losses": [],
+        "disposition": "committed",
+        "parent_receipt_ids": [],
+    }
+    for prefix in ("source", "target"):
+        for key, grammar in {
+            "state_digest": "grcv4-state",
+            "graph_digest": "grc-graph",
+            "model_identity": "grcv4-profile",
+            "authoritative_digest": "grcv4-authoritative",
+            "reset_digest": "grcv4-reset",
+        }.items():
+            core[prefix + "_" + key] = grammar + "-sha256:" + "1" * 64
+    core.update(
+        resource_transform_digest="grcv4-resource-transform-sha256:" + "2" * 64,
+        history_bundle_digest="grcv4-history-map-sha256:" + "3" * 64,
+    )
+    payload = {"schema_version": "grcv4-step-commit-receipt-v1", "core": core}
+    return {
+        "schema_version": "grcv4-successful-receipt-envelope-v1",
+        "receipt_id": fixture_id("grc-receipt-sha256", payload),
+        "commit_id": "grc-commit-sha256:" + "4" * 64,
+        "identity_payload": payload,
+    }
+
+
+def rejected_fixture(*, charge: bool = False) -> dict[str, Any]:
+    data = result_fixture()
+    stage, code, solver = (
+        ("charge_admission", "charge_failure", "valid_root")
+        if charge
+        else ("admission", "invalid_duration", None)
+    )
+    state = "grcv4-state-sha256:" + "1" * 64
+    life = "grcv4-lifecycle-sha256:" + "2" * 64
+    identity = {
+        "schema_version": "grcv4-failure-receipt-v1",
+        "operation_id": "test:step",
+        "stage": stage,
+        "code": code,
+        "source_state_digest": state,
+        "observed_poststate_digest": state,
+    }
+    receipt = {
+        "schema_version": "grcv4-failure-receipt-envelope-v1",
+        "receipt_id": fixture_id("grc-receipt-sha256", identity),
+        "identity_payload": identity,
+    }
+    failure = {
+        "stage": stage,
+        "code": code,
+        "solver_disposition": solver,
+        "message": "fixture rejection",
+        "prestate_digest": state,
+        "poststate_digest": state,
+        "pre_lifecycle_digest": life,
+        "post_lifecycle_digest": life,
+        "failure_receipt": deepcopy(receipt),
+    }
+    data.update(
+        operation_disposition="rejected",
+        committed=False,
+        commit_id=None,
+        events=[],
+        solver_disposition=solver,
+        failure=failure,
+        emitted_receipts=[receipt],
+    )
+    return data
+
+
 def result_fixture() -> dict[str, Any]:
     return {
         "step_index": 3,
         "time": 0.75,
         "events": [GRCEvent("example", 3, {"nested": [1, {"x": 2}]}, "GRCV4")],
         "observables": {"current": [0.125, -0.125]},
-        "active_profile_id": "unverified-profile-label",
-        "active_model_identity": "unverified-model-label",
+        "active_profile_id": "grcv4-profile-sha256:" + "1" * 64,
+        "active_model_identity": "grcv4-profile-sha256:" + "1" * 64,
         "operation_disposition": "committed",
         "solver_disposition": "valid_root",
         "committed": True,
-        "commit_id": "unverified-commit-label",
+        "commit_id": "grc-commit-sha256:" + "4" * 64,
         "failure": None,
-        "emitted_receipts": [{"receipt_id": "new-test-label", "nested": [3, 4]}],
+        "emitted_receipts": [successful_fixture()],
     }
 
 
@@ -712,6 +796,7 @@ class ResultOwnershipTests(unittest.TestCase):
 
     def test_observables_and_operation_delta_not_ledger_aliases(self) -> None:
         data = fixture()
+        data["receipt_ledger"] = [successful_fixture()]
         ledger = data["receipt_ledger"]
         lifecycle = GRCV4LifecycleState(**data)
         step_data = result_fixture()
@@ -726,33 +811,23 @@ class ResultOwnershipTests(unittest.TestCase):
         self.assertIsNot(lifecycle.receipt_ledger, result.emitted_receipts)
 
     def test_failure_and_receipt_payloads_detached(self) -> None:
-        data = result_fixture()
-        data.update(
-            operation_disposition="rejected",
-            committed=False,
-            commit_id=None,
-            solver_disposition=None,
-            failure={"stage": "admission", "detail": [1, 2]},
-        )
+        data = rejected_fixture()
+        before = deepcopy(data)
         value = GRCV4StepResult(**data)
-        data["failure"]["detail"].append(99)
-        data["emitted_receipts"][0]["nested"].append(99)
+        data["failure"]["failure_receipt"]["identity_payload"]["operation_id"] = (
+            "changed"
+        )
+        data["emitted_receipts"][0]["identity_payload"]["operation_id"] = "changed"
         self.assertIsNone(value.solver_disposition)
         self.assertIsNotNone(value.failure)
         assert value.failure is not None
+        self.assertEqual(before["failure"], value.failure.to_payload())
         self.assertEqual(
-            {"stage": "admission", "detail": [1, 2]}, value.failure.to_dict()
+            before["emitted_receipts"][0], value.emitted_receipts[0].to_payload()
         )
-        self.assertEqual([3, 4], value.emitted_receipts[0].to_dict()["nested"])
 
     def test_charge_rejection_does_not_erase_valid_solver_disposition(self) -> None:
-        data = result_fixture()
-        data.update(
-            operation_disposition="rejected",
-            committed=False,
-            commit_id=None,
-            failure={"stage": "charge_admission", "code": "charge_failure"},
-        )
+        data = rejected_fixture(charge=True)
         value = GRCV4StepResult(**data)
         self.assertEqual("valid_root", value.solver_disposition)
         self.assertFalse(value.committed)
@@ -778,19 +853,26 @@ class ResultOwnershipTests(unittest.TestCase):
                 GRCV4StepResult(**data)
 
     def test_lifecycle_result_owns_detached_values(self) -> None:
+        step = rejected_fixture()
         data: dict[str, Any] = {
-            "operation_disposition": "rejected",
-            "committed": False,
-            "commit_id": None,
-            "failure": {"message": "test", "nested": [1]},
-            "emitted_receipts": [{"receipt_id": "test", "nested": [2]}],
+            k: step[k]
+            for k in [
+                "operation_disposition",
+                "committed",
+                "commit_id",
+                "failure",
+                "emitted_receipts",
+            ]
         }
+        before = deepcopy(data)
         result = GRCV4LifecycleResult(**data)
-        data["failure"]["nested"].append(99)
-        data["emitted_receipts"][0]["nested"].append(99)
-        self.assertEqual((2,), result.emitted_receipts[0]["nested"])
+        data["failure"]["message"] = "changed"
+        data["emitted_receipts"][0]["identity_payload"]["operation_id"] = "changed"
+        self.assertEqual(
+            before["emitted_receipts"][0], result.emitted_receipts[0].to_payload()
+        )
         assert result.failure is not None
-        self.assertEqual((1,), result.failure["nested"])
+        self.assertEqual(before["failure"], result.failure.to_payload())
         with self.assertRaises(ValueError):
             replace(result, committed=True)
 

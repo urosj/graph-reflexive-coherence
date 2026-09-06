@@ -52,7 +52,7 @@ def main():
             ],
             check=True,
         )
-        fixture_revision = p.accepted_foundation(p.ROOT)["baseline_commit"]
+        fixture_revision = p.accepted_requests(p.ROOT)["baseline_commit"]
         subprocess.run(
             ["git", "checkout", "--quiet", "--detach", fixture_revision],
             cwd=root, check=True,
@@ -514,11 +514,25 @@ def main():
             lambda: registered("src/pygrc/models/grc_v4.py", content, leaf="P9-2.3"),
         )
         case(
-            "request_work_does_not_accept_next_leaf",
-            lambda: registered(p.PHASE + "evidence/P9-2.4/probe/inputs.json",
-                               b"{}", leaf="P9-2.4"),
+            "result_work_does_not_accept_next_leaf",
+            lambda: registered(p.PHASE + "evidence/P9-2.5/probe/inputs.json",
+                               b"{}", leaf="P9-2.5"),
             "owning leaf entry dependencies are not accepted",
         )
+        for name in ["src/pygrc/models/grc_v4_state.py", "src/pygrc/models/grc_v4_step.py"]:
+            case("accepted_requests_enable_result_owner_" + Path(name).stem,
+                 lambda name=name: registered(name, content, leaf="P9-2.4"))
+        for key, replacement in [("status", "pending"), ("accepted_iterations", ["P9-2.3", "P9-2.4"]),
+                                 ("accepted_generic_runtime_support", ["C_OS"]),
+                                 ("baseline_commit", p.BASELINE), ("evidence_bindings", [])]:
+            def forged_requests(key=key, replacement=replacement):
+                value = p.read(root / p.REQUEST_ACCEPTANCE)
+                value[key] = replacement
+                value["record_digest"] = p.digest_record(value)
+                with mutate(p.REQUEST_ACCEPTANCE, p.canonical(value)):
+                    p.accepted_requests(root)
+            case("request_acceptance_cannot_self_authorize_" + key, forged_requests,
+                 "untrusted request acceptance", scope="isolated_request_acceptance_authentication")
         for key, replacement in [
             ("status", "pending"),
             ("accepted_iterations", ["P9-2.1", "P9-2.2", "P9-2.3"]),

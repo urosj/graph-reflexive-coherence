@@ -1,0 +1,268 @@
+{
+  "schema": "phase9_result_receipt_execution_v1",
+  "iteration_id": "P9-2.4",
+  "status": "implemented_and_focused_verification_passed_review_pending",
+  "base_commit": "1647d3f7e21b33db156ef95f51af02339462ab8f",
+  "release_id": "grcv4-spec-release-sha256:9f4c8fe5b57b1c477d834a3e4dae3f98a2b18c70e6e7f598e3c9652170c8645f",
+  "entry_authority": {
+    "acceptance_record": "implementation/phase-9-grcv4/tranche-2/P9-2.3-AcceptanceRecord.json",
+    "record_digest": "ac07a2f7c93538454d9663aba78ca0eb5af385d7975582e4c21682f41ce4c17f",
+    "accepted_prerequisites": [
+      "P9-2.3"
+    ]
+  },
+  "verification": {
+    "supporting_run": "implementation/phase-9-grcv4/evidence/P9-2.4/audit-followup/run.json",
+    "sha256": "e48ab5882f50f3e0de954f7e0ff9fc4c3190a62ac7def48b52f2666abd565a82",
+    "outcomes": {
+      "focused_tests": 145,
+      "added_audit_regression_and_characterization_tests": 11,
+      "independent_stress_scenarios": 495,
+      "passed_stress_scenarios": 495,
+      "qualified_provider_run": false,
+      "all_passed": true
+    },
+    "scope": "Corrected local constructor/record composition and supplied-observation comparison, not numerical execution, rollback or parent-lineage certification."
+  },
+  "artifact_bindings": [
+    {
+      "path": "implementation/Phase-9-GRCV4-ImplementationChecklist.md",
+      "sha256": "693b7cb74b38035e60b78102a5546a781b84dd37aaabfffbf1091f3402b89194"
+    },
+    {
+      "path": "implementation/Phase-9-GRCV4-ImplementationPlan.md",
+      "sha256": "5b104272a954e734a9b09c5f563e93adab1be64fb3512f96bfa7d92f066c18a1"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D10_2FullSubstrateProvenanceAndPromotionAudit.json",
+      "sha256": "59c2b956cec7d258b1db09d43d6df44deb8c0be0453a5d741f7e2733d6881a33"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D11CCandidateBaselineTransportAndMobilityResolution.md",
+      "sha256": "50704e45d249a2bbaa32faad6fbc0d3d1a999999d4721064407ac2d9af0c01c6"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D11CCandidateBaselineTransportProvenanceSupplement.json",
+      "sha256": "43bb028c6c7b09952a35dee280067470f2ff5cde4395d39c5b5e7aba6fae29fb"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/drafts/2026-09-GRC-V4.md",
+      "sha256": "2da39c3bb0d102804f9135384317771f3fe1b3e48df3b4ab1813a3575642a739"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-2.2/audit-correction/inputs.json",
+      "sha256": "445548bf243a84f30be8015da12f2b10eabb7bb1b98d0c0cee523a3a7e5f505f"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-2.2/independent-audit-inputs/inputs.json",
+      "sha256": "4eb4dc04caecf74b9ea689223f8a653cd240ef3026ddcedf928560245680db8a"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-2.3/audit-followup/inputs.json",
+      "sha256": "0780485004cdd8eab0ce0d665458dbec06bbd53c096a41f7a50bf6959f061392"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-2.3/audit-followup/run.json",
+      "sha256": "303ff20dc9490118eeabf0951bb6776895d0ce3fe89d37700ab39f83b884fa8d"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-2.3/independent-audit-inputs/inputs.json",
+      "sha256": "32dbb6e7653185fe37c6e564e8329230fcfa3e2cf8456140e7da65ff1218458f"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-2.4/audit-before/actual.json",
+      "sha256": "92e968bee4f6b998a221216353e4b476e256cf4d3da3cda4c81d4777af588dc7"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-2.4/audit-before/run.json",
+      "sha256": "dcf111121144bdfbefd4f7e4c76a7dcb69fcc5fe495492add1b7c07dd9ff6c24"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-2.4/audit-followup/actual.json",
+      "sha256": "3fc0896afe09d905031e64e8e109c49eab9bc259f5a9f98b9b37e2733dce376c"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-2.4/independent-audit/actual.json",
+      "sha256": "86c89e01878e9e4797abf89b3251dc575d40c714e1001c718419a26e87b354e6"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-2.4/independent-audit/inputs.json",
+      "sha256": "0d991412489338bda60349e172866055c2013b43b4765ac4d10487c51051ca7a"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-2.4/p924-verification/actual.json",
+      "sha256": "8ff50559899a40ba31a97788065e3dc4c7da068c12efe723a23ed0edcbd7cac9"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-2.4/p924-verification/run.json",
+      "sha256": "e97dfcbcba096074004e3c75f49ff2c9e15df8c310af723f8865ba0eb5ead4ec"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-2.4/pre-audit-subject/inputs.json",
+      "sha256": "1aef028f02f83ea383d0e7d10f50576a9e789afb40fb8b6d81f95e0f34b3e3ed"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-1/P9-1.1-SourceCrosswalk.json",
+      "sha256": "85fe7204f5a40e3ffa502fce33519000adb443ba6480cb85e0d6ee4155893ede"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-1/P9-1.9-G1Acceptance.json",
+      "sha256": "218b29ae251cc93e749ff46ad919268621eabafcfe85412aa549a688571a8cc9"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-2/P9-2.1-2.2-AcceptanceRecord.json",
+      "sha256": "0e0e35db0e23d5da0607d4132ce149947b26feeb4ac7e8b685a92d6eee30ae66"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-2/P9-2.3-AcceptanceRecord.json",
+      "sha256": "beb535785feeb302caa7889a100e48167c80fb46266d5fdfcf20b9a302b442c2"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-2/P9-2.4-Review.md",
+      "sha256": "f5d48b5f3d8f75ba12605db8092da8eea8a3fca1769827bd2cf68b5d92e0a11a"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/phase9_implementation_policy.py",
+      "sha256": "e427880b411f65072682db0abc6bf2c02ac0a5288adbd6814e813c75ce4936c6"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_phase9_g1.py",
+      "sha256": "e2969e123661771f726e48caf0ffad31993e49043a1b9170a069c0c21572a5da"
+    },
+    {
+      "path": "pyproject.toml",
+      "sha256": "343407a945a7bd41407f821ec81a3dee68cf5e8a0f2413b1e6938a722f9c393c"
+    },
+    {
+      "path": "specs/grc-common-interface-v4-ext.md",
+      "sha256": "7d5be95242619fcaaae7ea5d8e950b3f335efe9a81492e67e6baa91c4643bc26"
+    },
+    {
+      "path": "specs/grc-v4-conformance-vectors.json",
+      "sha256": "ab12e2ffe02e9a9267eca9bdc3ca9361c0cf973cb87917d0eb090d3d68654ce4"
+    },
+    {
+      "path": "specs/grc-v4-contract-schema.json",
+      "sha256": "3fd072fc8c2b315f1b5dc32a4e4821a5082b5f3fc9d9a4794c007419a7aa0bea"
+    },
+    {
+      "path": "specs/grc-v4-spec.md",
+      "sha256": "8681e14bf229959183f772c547a6ba17e0cc60c264dad9a1975be147d12168ea"
+    },
+    {
+      "path": "src/pygrc/core/events.py",
+      "sha256": "a77be381e49e84745a687be432fd03ca0cbc394efe749db2538542d3cc80f9b2"
+    },
+    {
+      "path": "src/pygrc/models/__init__.py",
+      "sha256": "23768e181455f4e7eb68908cdac532464c063fa5eb4250c4d05537eca0dcaa70"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4.py",
+      "sha256": "65efdf547d8e88e67c22d62a869bd61464ed3d2eb8b2709be6661796b37e824c"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_assets/__init__.py",
+      "sha256": "a1f3aba168a9f9331d1fc9580d5055404f8bc4c705936c7e388e7a47f80a0051"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_assets/asset-index.json",
+      "sha256": "c1ac9d8d3bb924f29b775bd9863a33a454da41e98c57ef0b8bb3c24171fafc9f"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_assets/grc-v4-contract-schema.json",
+      "sha256": "3fd072fc8c2b315f1b5dc32a4e4821a5082b5f3fc9d9a4794c007419a7aa0bea"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_assets/grc-v4-specification-release.json",
+      "sha256": "bba0bb649bc2e80c5bfa99f96bd5824bbdda3b3fbc87fb68c3e3a59da1cee46b"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_assets/grc-v4-specification-release.sha256",
+      "sha256": "50b20509b84a6b21f3036ecb1d7e13861f662bc8319873c5321fc0317ada7e33"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_codec.py",
+      "sha256": "bd6d9390c818c5a25b70da119cfbc3a3de3707ee84566f6bb06160bb4780e154"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_profile.py",
+      "sha256": "188e4ceb92b6a36fe81849911b88b233b8dd16bf3de07383e1508d76232fdbfb"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_state.py",
+      "sha256": "b0ccf06ef91b66feb8670fb67281465998f4bcb085c4d547fedd3ce6d85ad3cb"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_step.py",
+      "sha256": "773975e1131791f93d86f6dac38b27ebac9dca46c1b87ef2e0a31bc8c90a705b"
+    },
+    {
+      "path": "tests/models/test_grc_v4.py",
+      "sha256": "592c2ce73c37586266004af45d9066af6a1ec588ca61d031854f6fec434ff19c"
+    },
+    {
+      "path": "tests/models/test_grc_v4_codec.py",
+      "sha256": "e1baffd283366d5e84c633505c6e2917a00da4bba14c1df45613927ee1e98435"
+    },
+    {
+      "path": "tests/models/test_grc_v4_profile.py",
+      "sha256": "6dcd4a0abffca13bc8a0c0e7e697a54e421ba079eaef5d77e4609184d67a0dea"
+    },
+    {
+      "path": "tests/models/test_grc_v4_state.py",
+      "sha256": "d7ce02acc2d663fd3f4513158193dd473a78c1f42bc985edfa2d2eff0943fb54"
+    },
+    {
+      "path": "tests/models/test_grc_v4_step.py",
+      "sha256": "cd6470b181eec32abf4540b4ddb0bc28d5303fd40dca40febf22ba6bc71cf51f"
+    }
+  ],
+  "reviewer_decision": "pending_user_review_or_commit_instruction_for_this_leaf",
+  "accepted_generic_runtime_support": [],
+  "admitted_specialization_support_sets": [],
+  "new_scientific_debt": [],
+  "limitations": [
+    "The real owner must capture actual scientific/lifecycle inputs and observed outcomes, not relabel an imported receipt as observation.",
+    "Graph/profile/reset content admission, geometry/charge/history semantics, complete transaction rollback and real replay remain with P9-2.5 and full step/lifecycle owners.",
+    "GRC9-labelled records can reconstruct, but specialization model/profile binding is not available through the generic comparator.",
+    "Existing distribution checks cover baseline imports and installed identity/request behavior; result comparison behavior is source-checkout verification.",
+    "Parent-ID syntax/content identity is checked, but parent existence, historical/intra-commit scope, ordering and acyclicity remain unresolved for P9-7.6."
+  ],
+  "next_step": "P9-2.5 after this leaf's user acceptance; not started.",
+  "historical_pre_audit_verification": {
+    "supporting_run": "implementation/phase-9-grcv4/evidence/P9-2.4/p924-verification/run.json",
+    "sha256": "e97dfcbcba096074004e3c75f49ff2c9e15df8c310af723f8865ba0eb5ead4ec",
+    "outcomes": {
+      "focused_tests": 134,
+      "new_result_receipt_tests": 22,
+      "legacy_core_tests": 105,
+      "predecessor_stress_scenarios": 875,
+      "packaging_tests": 1,
+      "all_passed": true
+    },
+    "scope": "Typed result and receipt composition, exact content and supplied observation comparisons only. The negative-duration prefix executes; hand-computed positive and post-solver examples do not execute a numerical solver, full beat, migration, rollback or profile conformance."
+  },
+  "audit_dispositions": {
+    "F1": "fixed_original_index_validation_before_normalization",
+    "F2": "fixed_ordered_event_sequence_validation_before_consumption_iterators_rejected",
+    "typed_commit": "exact_typed_and_primitive_preimages_detached_and_revalidated",
+    "direct_evidence": "exact_immutable_bytes_required_not_an_authentication_token",
+    "parent_lineage": "explicit_scope_deferral_P9_7_6_contract_and_lineage_validation_still_open",
+    "invalid_transitions": "four_content_only_characterizations_retained_for_P9_2_5_and_P9_4_7a_independent_live_oracles"
+  },
+  "open_follow_through": [
+    {
+      "owner": "P9-7.6",
+      "subject": "parent_receipt_ids scope/order and lineage validity",
+      "status": "open_contract_question_no_lineage_conformance_claim",
+      "tests": "tests/models/test_grc_v4_step.py::AuditBoundaryTests.test_parent_references_are_content_not_lineage_certification"
+    },
+    {
+      "owner": "P9-2.5/P9-4.7a",
+      "subject": "Independent live-step oracles for invalid-transition characterizations and observation provenance",
+      "status": "registered_not_started",
+      "tests": "tests/models/test_grc_v4_step.py::AuditBoundaryTests.test_consistent_records_do_not_prove_a_numerical_transition"
+    }
+  ]
+}

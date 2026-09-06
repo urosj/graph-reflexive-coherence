@@ -1,10 +1,10 @@
 """V4-owned immutable value records, not profile or lifecycle admission.
 
-P9-2.1 implements the ownership boundary in the V4 state/interface specs.
-Constructors detach all mutable input before checking local shape. Identity
-strings are supplied, never generated or authenticated here. Profile/receipt
-payloads require the later codec, admission and lifecycle layers before use by
-an executable model. There are no caches, runtime capabilities or model exports.
+State constructors retain P9-2.1's local shape/ownership boundary; their identity
+labels are not live-state authentication. P9-2.4 result constructors additionally
+check closed content, dispositions and typed receipts via the step module.
+Neither value construction nor receipt hashing admits a model or establishes
+actual execution. There are no caches, runtime capabilities or model exports.
 """
 
 from __future__ import annotations
@@ -14,9 +14,20 @@ from collections.abc import ItemsView, Iterator, Mapping, Sequence, Set
 from dataclasses import dataclass, field
 import math
 from numbers import Integral, Real
-from typing import Any, Literal, Protocol, TypeAlias, runtime_checkable
+from typing import (
+    TYPE_CHECKING,
+    Any,
+    Literal,
+    Protocol,
+    Self,
+    TypeAlias,
+    runtime_checkable,
+)
 
 from pygrc.core.events import GRCEvent
+
+if TYPE_CHECKING:
+    from .grc_v4_step import GRCV4Failure, Receipt
 
 FrozenJSONValue: TypeAlias = (
     "None | bool | int | float | str | tuple[FrozenJSONValue, ...] | FrozenJSONMap"
@@ -402,8 +413,14 @@ class StepResultSurface(Protocol):
     def observables(self) -> Mapping[str, FrozenJSONValue]: ...
 
 
-@dataclass(frozen=True, slots=True, init=False)
+@dataclass(frozen=True, slots=True, init=False, eq=False)
 class GRCV4StepResult:
+    """Closed content record with an ordered event Sequence, never an iterator.
+
+    List, tuple and other ordered Sequence adapters are copied without sorting;
+    mappings, sets, text and raw buffers have no event-delta interpretation.
+    """
+
     step_index: int
     time: float
     _events: tuple[GRCV4Event, ...] = field(repr=False)
@@ -414,8 +431,8 @@ class GRCV4StepResult:
     solver_disposition: SolverDisposition | None
     committed: bool
     commit_id: str | None
-    failure: FrozenJSONMap | None
-    emitted_receipts: tuple[FrozenJSONMap, ...]
+    failure: GRCV4Failure | None
+    emitted_receipts: tuple[Receipt, ...]
     schema_version: Literal["grcv4-step-result-v1"] = field(
         default="grcv4-step-result-v1", init=False
     )
@@ -432,9 +449,19 @@ class GRCV4StepResult:
         solver_disposition: SolverDisposition | None,
         committed: bool,
         commit_id: str | None,
-        failure: Mapping[str, object] | None,
-        emitted_receipts: Sequence[Mapping[str, object]],
+        failure: Mapping[str, object] | GRCV4Failure | None,
+        emitted_receipts: Sequence[Mapping[str, object] | Receipt],
     ) -> None:
+        from .grc_v4_step import _result_parts, _validate_result
+
+        if not isinstance(events, Sequence) or isinstance(
+            events,
+            (Mapping, Set, str, UserString, bytes, bytearray, memoryview, Iterator),
+        ):
+            raise TypeError(
+                "events require an ordered non-text Sequence, not an iterator"
+            )
+        failure_value, receipt_values = _result_parts(failure, emitted_receipts)
         frozen_events = []
         for event in events:
             if type(event) not in (GRCV4Event, GRCEvent):
@@ -452,12 +479,19 @@ class GRCV4StepResult:
         object.__setattr__(
             self,
             "emitted_receipts",
-            tuple(FrozenJSONMap(item) for item in emitted_receipts),
+            receipt_values,
         )
-        object.__setattr__(
-            self, "failure", None if failure is None else FrozenJSONMap(failure)
-        )
+        object.__setattr__(self, "failure", failure_value)
         object.__setattr__(self, "time", _number(time))
+        # Validate the original representation: int(-0.0) would erase a
+        # forbidden number before the integer/schema guards could see it.
+        _number(step_index)
+        if (
+            type(step_index) is float
+            and step_index.is_integer()
+            and 0 <= step_index <= 2**53 - 1
+        ):
+            step_index = int(step_index)
         object.__setattr__(self, "step_index", step_index)
         object.__setattr__(self, "active_profile_id", active_profile_id)
         object.__setattr__(self, "active_model_identity", active_model_identity)
@@ -503,6 +537,62 @@ class GRCV4StepResult:
             or self.commit_id is not None
         ):
             raise ValueError("inconsistent rejected step result")
+        _validate_result(self)
+
+    def to_payload(self) -> dict[str, Any]:
+        return {
+            "schema_version": self.schema_version,
+            "step_index": self.step_index,
+            "time": self.time,
+            "events": [
+                {
+                    "kind": e.kind,
+                    "step_index": e.step_index,
+                    "payload": e.payload.to_dict(),
+                    "source_family": e.source_family,
+                }
+                for e in self._events
+            ],
+            "observables": self.observables.to_dict(),
+            "active_profile_id": self.active_profile_id,
+            "active_model_identity": self.active_model_identity,
+            "operation_disposition": self.operation_disposition,
+            "solver_disposition": self.solver_disposition,
+            "committed": self.committed,
+            "commit_id": self.commit_id,
+            "failure": None if self.failure is None else self.failure.to_payload(),
+            "emitted_receipts": [r.to_payload() for r in self.emitted_receipts],
+        }
+
+    def to_canonical_bytes(self) -> bytes:
+        from .grc_v4_codec import canonical_json_bytes
+
+        return canonical_json_bytes(self.to_payload())
+
+    @classmethod
+    def from_payload(cls, value: object) -> Self:
+        from .grc_v4_codec import validate_payload
+
+        data: Any = validate_payload("step_result", value)
+        del data["schema_version"]
+        data["events"] = [GRCEvent(**e) for e in data["events"]]
+        return cls(**data)
+
+    @classmethod
+    def from_canonical_bytes(cls, data: bytes | str) -> Self:
+        from .grc_v4_codec import decode_canonical_json
+
+        return cls.from_payload(decode_canonical_json(data))
+
+    def __eq__(self, other: object) -> bool:
+        return (
+            type(other) is type(self)
+            and isinstance(other, GRCV4StepResult)
+            and self.to_canonical_bytes() == other.to_canonical_bytes()
+        )
+
+    def __hash__(self) -> int:
+        return hash((type(self), self.to_canonical_bytes()))
 
     @property
     def events(self) -> tuple[GRCEvent, ...]:
@@ -510,22 +600,24 @@ class GRCV4StepResult:
         return tuple(event.to_common_event() for event in self._events)
 
 
-@dataclass(frozen=True, slots=True)
+@dataclass(frozen=True, slots=True, eq=False)
 class GRCV4LifecycleResult:
     operation_disposition: OperationDisposition
     committed: bool
     commit_id: str | None
-    failure: FrozenJSONMap | None
-    emitted_receipts: tuple[FrozenJSONMap, ...]
+    failure: GRCV4Failure | None
+    emitted_receipts: tuple[Receipt, ...]
 
     def __post_init__(self) -> None:
+        from .grc_v4_step import _result_parts, _validate_result
+
+        failure, receipts = _result_parts(self.failure, self.emitted_receipts)
         object.__setattr__(
             self,
             "emitted_receipts",
-            tuple(FrozenJSONMap(item) for item in self.emitted_receipts),
+            receipts,
         )
-        if self.failure is not None:
-            object.__setattr__(self, "failure", FrozenJSONMap(self.failure))
+        object.__setattr__(self, "failure", failure)
         _text(self.operation_disposition)
         if type(self.committed) is not bool:
             raise TypeError("committed must be boolean")
@@ -539,3 +631,43 @@ class GRCV4LifecycleResult:
             or self.commit_id is not None
         ):
             raise ValueError("inconsistent rejected lifecycle result")
+        _validate_result(self)
+
+    def to_payload(self) -> dict[str, Any]:
+        return {
+            "operation_disposition": self.operation_disposition,
+            "committed": self.committed,
+            "commit_id": self.commit_id,
+            "failure": None if self.failure is None else self.failure.to_payload(),
+            "emitted_receipts": [r.to_payload() for r in self.emitted_receipts],
+        }
+
+    @classmethod
+    def from_payload(cls, value: object) -> Self:
+        from .grc_v4_codec import V4SchemaError, json_value
+
+        data: Any = json_value(value)
+        if not isinstance(data, dict) or set(data) != {
+            "operation_disposition",
+            "committed",
+            "commit_id",
+            "failure",
+            "emitted_receipts",
+        }:
+            raise V4SchemaError("expected closed lifecycle result fields")
+        return cls(**data)
+
+    def __eq__(self, other: object) -> bool:
+        from .grc_v4_codec import canonical_json_bytes
+
+        return (
+            type(other) is type(self)
+            and isinstance(other, GRCV4LifecycleResult)
+            and canonical_json_bytes(self.to_payload())
+            == canonical_json_bytes(other.to_payload())
+        )
+
+    def __hash__(self) -> int:
+        from .grc_v4_codec import canonical_json_bytes
+
+        return hash((type(self), canonical_json_bytes(self.to_payload())))

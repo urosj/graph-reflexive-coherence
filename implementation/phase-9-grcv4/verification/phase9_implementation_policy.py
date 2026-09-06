@@ -52,6 +52,8 @@ RECORD = PHASE + "tranche-1/P9-1.9-ExecutionRecord.json"
 WORK = PHASE + "runtime/RuntimeWorkManifest.json"
 FOUNDATION = PHASE + "tranche-2/P9-2.1-2.2-AcceptanceRecord.json"
 FOUNDATION_DIGEST = "1e3f0ddb06b119fa46dc7609d05b7db0c3a4cbc07428c05b8a032da081ae9dd4"
+REQUEST_ACCEPTANCE = PHASE + "tranche-2/P9-2.3-AcceptanceRecord.json"
+REQUEST_ACCEPTANCE_DIGEST = "ac07a2f7c93538454d9663aba78ca0eb5af385d7975582e4c21682f41ce4c17f"
 GENERATED = SIDE + "tool/generated/phase9-verification/"
 REPORT_SCHEMA = "phase9_G1_pressure_results_v1"
 REPORT_FILE = "g1-pressure-results.json"
@@ -85,6 +87,7 @@ PATHS = {
     RECORD,
     WORK,
     FOUNDATION,
+    REQUEST_ACCEPTANCE,
     HERE + "phase9_implementation_policy.py",
     HERE + "audit_phase9_implementation.py",
     HERE + "test_phase9_g1.py",
@@ -311,9 +314,30 @@ def accepted_foundation(root):
     return value
 
 
+def accepted_requests(root):
+    """User-accepted request foundation; preserve its original committed run."""
+    value = read(safe_path(root, REQUEST_ACCEPTANCE))
+    require(value["record_digest"] == digest_record(value) == REQUEST_ACCEPTANCE_DIGEST,
+            "untrusted request acceptance")
+    require(value["schema"] == "phase9_request_foundation_acceptance_v1"
+            and value["status"] == "accepted_by_user"
+            and value["release_id"] == prior.RELEASE_ID
+            and value["predecessor_record_digest"] == FOUNDATION_DIGEST
+            and value["accepted_iterations"] == ["P9-2.3"]
+            and value["accepted_generic_runtime_support"] == []
+            and value["admitted_specialization_support_sets"] == [],
+            "invalid request acceptance scope")
+    prior.ancestor(root, value["baseline_commit"])
+    for row in value["evidence_bindings"]:
+        require(sha(git(root, "show", f"{value['baseline_commit']}:{row['path']}"))
+                == row["sha256"], "accepted request subject changed")
+    return value
+
+
 def leaf_permissions(root):
     """Readiness from accepted dependencies, never inferred from completion."""
-    accepted = {"P9-G1", *accepted_foundation(root)["accepted_iterations"]}
+    accepted = {"P9-G1", *accepted_foundation(root)["accepted_iterations"],
+                *accepted_requests(root)["accepted_iterations"]}
     support = read(
         safe_path(root, PHASE + "tranche-1/P9-1.4-SupportAndDependencies.json")
     )
@@ -335,6 +359,11 @@ def leaf_permissions(root):
         }
         if module["module_id"] == "grc_v4_codec":
             leaves = {"P9-2.2", "P9-2.3", "P9-2.6"}
+        if module["module_id"] in {"grc_v4_state", "grc_v4_step"}:
+            # The frozen checklist assigns result/disposition/receipt ownership
+            # to P9-2.4, omitted from the coarse source-group iteration lists.
+            # Refine only these existing record/composition owners, not lifecycle.
+            leaves.add("P9-2.4")
         for field in ["path", "test_path"]:
             owners[module[field]] = leaves
     for name in [

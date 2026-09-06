@@ -1,0 +1,4424 @@
+{
+  "schema": "p924_independent_stress_v1",
+  "qualified_provider_run": true,
+  "scenario_count": 495,
+  "passed": 484,
+  "failed": 11,
+  "summary": {
+    "capability_boundary": {
+      "total": 3,
+      "passed": 3,
+      "failed": 0
+    },
+    "commit_receipt_binding": {
+      "total": 29,
+      "passed": 29,
+      "failed": 0
+    },
+    "duration_prefix": {
+      "total": 19,
+      "passed": 19,
+      "failed": 0
+    },
+    "event_binding": {
+      "total": 38,
+      "passed": 38,
+      "failed": 0
+    },
+    "event_input_boundary": {
+      "total": 11,
+      "passed": 2,
+      "failed": 9
+    },
+    "failure_state_ledger_binding": {
+      "total": 20,
+      "passed": 20,
+      "failed": 0
+    },
+    "numeric_boundary": {
+      "total": 112,
+      "passed": 110,
+      "failed": 2
+    },
+    "operation_solver_split": {
+      "total": 176,
+      "passed": 176,
+      "failed": 0
+    },
+    "ownership": {
+      "total": 11,
+      "passed": 11,
+      "failed": 0
+    },
+    "positive_composition": {
+      "total": 4,
+      "passed": 4,
+      "failed": 0
+    },
+    "receipt_shape_only": {
+      "total": 24,
+      "passed": 24,
+      "failed": 0
+    },
+    "schema_and_identity": {
+      "total": 48,
+      "passed": 48,
+      "failed": 0
+    }
+  },
+  "scenarios": [
+    {
+      "case": "baseline:committed",
+      "category": "positive_composition",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true
+    },
+    {
+      "case": "canonical_roundtrip:committed",
+      "category": "positive_composition",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true
+    },
+    {
+      "case": "baseline:rejected",
+      "category": "positive_composition",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true
+    },
+    {
+      "case": "canonical_roundtrip:rejected",
+      "category": "positive_composition",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true
+    },
+    {
+      "case": "numeric:committed:step_index:0:direct=False",
+      "category": "numeric_boundary",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4WireError",
+      "message": "negative zero",
+      "passed": true
+    },
+    {
+      "case": "numeric:committed:step_index:0:direct=True",
+      "category": "numeric_boundary",
+      "expected": "reject",
+      "actual": "accepted",
+      "passed": false,
+      "detail": 0
+    },
+    {
+      "case": "numeric:committed:step_index:1:direct=False",
+      "category": "numeric_boundary",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "step_result/step_index: True is not of type 'integer'",
+      "passed": true
+    },
+    {
+      "case": "numeric:committed:step_index:1:direct=True",
+      "category": "numeric_boundary",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "ValueError",
+      "message": "step_index must be a nonnegative safe integer",
+      "passed": true
+    },
+    {
+      "case": "numeric:committed:step_index:2:direct=False",
+      "category": "numeric_boundary",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "step_result/step_index: False is not of type 'integer'",
+      "passed": true
+    },
+    {
+      "case": "numeric:committed:step_index:2:direct=True",
+      "category": "numeric_boundary",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "ValueError",
+      "message": "step_index must be a nonnegative safe integer",
+      "passed": true
+    },
+    {
+      "case": "numeric:committed:step_index:3:direct=False",
+      "category": "numeric_boundary",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "step_result/step_index: -1 is less than the minimum of 0",
+      "passed": true
+    },
+    {
+      "case": "numeric:committed:step_index:3:direct=True",
+      "category": "numeric_boundary",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "ValueError",
+      "message": "step_index must be a nonnegative safe integer",
+      "passed": true
+    },
+    {
+      "case": "numeric:committed:step_index:4:direct=False",
+      "category": "numeric_boundary",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "step_result/step_index: 1.5 is not of type 'integer'",
+      "passed": true
+    },
+    {
+      "case": "numeric:committed:step_index:4:direct=True",
+      "category": "numeric_boundary",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "ValueError",
+      "message": "step_index must be a nonnegative safe integer",
+      "passed": true
+    },
+    {
+      "case": "numeric:committed:step_index:5:direct=False",
+      "category": "numeric_boundary",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4WireError",
+      "message": "integer outside the I-JSON safe range",
+      "passed": true
+    },
+    {
+      "case": "numeric:committed:step_index:5:direct=True",
+      "category": "numeric_boundary",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "ValueError",
+      "message": "step_index must be a nonnegative safe integer",
+      "passed": true
+    },
+    {
+      "case": "numeric:committed:step_index:6:direct=False",
+      "category": "numeric_boundary",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true,
+      "detail": 9007199254740991
+    },
+    {
+      "case": "numeric:committed:step_index:6:direct=True",
+      "category": "numeric_boundary",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true,
+      "detail": 9007199254740991
+    },
+    {
+      "case": "numeric:committed:step_index:7:direct=False",
+      "category": "numeric_boundary",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "case": "numeric:committed:step_index:7:direct=True",
+      "category": "numeric_boundary",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "case": "numeric:committed:step_index:8:direct=False",
+      "category": "numeric_boundary",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "case": "numeric:committed:step_index:8:direct=True",
+      "category": "numeric_boundary",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "case": "numeric:committed:step_index:9:direct=False",
+      "category": "numeric_boundary",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true,
+      "detail": 3
+    },
+    {
+      "case": "numeric:committed:step_index:9:direct=True",
+      "category": "numeric_boundary",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true,
+      "detail": 3
+    },
+    {
+      "case": "numeric:committed:step_index:10:direct=False",
+      "category": "numeric_boundary",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4WireError",
+      "message": "nonfinite number",
+      "passed": true
+    },
+    {
+      "case": "numeric:committed:step_index:10:direct=True",
+      "category": "numeric_boundary",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "ValueError",
+      "message": "step_index must be a nonnegative safe integer",
+      "passed": true
+    },
+    {
+      "case": "numeric:committed:step_index:11:direct=False",
+      "category": "numeric_boundary",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4WireError",
+      "message": "nonfinite number",
+      "passed": true
+    },
+    {
+      "case": "numeric:committed:step_index:11:direct=True",
+      "category": "numeric_boundary",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "ValueError",
+      "message": "step_index must be a nonnegative safe integer",
+      "passed": true
+    },
+    {
+      "case": "numeric:committed:step_index:12:direct=False",
+      "category": "numeric_boundary",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "step_result/step_index: '3' is not of type 'integer'",
+      "passed": true
+    },
+    {
+      "case": "numeric:committed:step_index:12:direct=True",
+      "category": "numeric_boundary",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "ValueError",
+      "message": "step_index must be a nonnegative safe integer",
+      "passed": true
+    },
+    {
+      "case": "numeric:committed:step_index:13:direct=False",
+      "category": "numeric_boundary",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "step_result/step_index: None is not of type 'integer'",
+      "passed": true
+    },
+    {
+      "case": "numeric:committed:step_index:13:direct=True",
+      "category": "numeric_boundary",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "ValueError",
+      "message": "step_index must be a nonnegative safe integer",
+      "passed": true
+    },
+    {
+      "case": "numeric:committed:time:0:direct=False",
+      "category": "numeric_boundary",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4WireError",
+      "message": "negative zero",
+      "passed": true
+    },
+    {
+      "case": "numeric:committed:time:0:direct=True",
+      "category": "numeric_boundary",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "ValueError",
+      "message": "nonfinite numbers and negative zero are forbidden",
+      "passed": true
+    },
+    {
+      "case": "numeric:committed:time:1:direct=False",
+      "category": "numeric_boundary",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "step_result/time: True is not of type 'number'",
+      "passed": true
+    },
+    {
+      "case": "numeric:committed:time:1:direct=True",
+      "category": "numeric_boundary",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "TypeError",
+      "message": "expected a real number, not a boolean or coercible object",
+      "passed": true
+    },
+    {
+      "case": "numeric:committed:time:2:direct=False",
+      "category": "numeric_boundary",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "step_result/time: False is not of type 'number'",
+      "passed": true
+    },
+    {
+      "case": "numeric:committed:time:2:direct=True",
+      "category": "numeric_boundary",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "TypeError",
+      "message": "expected a real number, not a boolean or coercible object",
+      "passed": true
+    },
+    {
+      "case": "numeric:committed:time:3:direct=False",
+      "category": "numeric_boundary",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "step_result/time: -1 is less than the minimum of 0",
+      "passed": true
+    },
+    {
+      "case": "numeric:committed:time:3:direct=True",
+      "category": "numeric_boundary",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "ValueError",
+      "message": "time must be nonnegative",
+      "passed": true
+    },
+    {
+      "case": "numeric:committed:time:4:direct=False",
+      "category": "numeric_boundary",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true,
+      "detail": 4
+    },
+    {
+      "case": "numeric:committed:time:4:direct=True",
+      "category": "numeric_boundary",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true,
+      "detail": 4
+    },
+    {
+      "case": "numeric:committed:time:5:direct=False",
+      "category": "numeric_boundary",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4WireError",
+      "message": "integer outside the I-JSON safe range",
+      "passed": true
+    },
+    {
+      "case": "numeric:committed:time:5:direct=True",
+      "category": "numeric_boundary",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "ValueError",
+      "message": "integer outside the I-JSON safe range",
+      "passed": true
+    },
+    {
+      "case": "numeric:committed:time:6:direct=False",
+      "category": "numeric_boundary",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true,
+      "detail": 4
+    },
+    {
+      "case": "numeric:committed:time:6:direct=True",
+      "category": "numeric_boundary",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true,
+      "detail": 4
+    },
+    {
+      "case": "numeric:committed:time:7:direct=False",
+      "category": "numeric_boundary",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true,
+      "detail": 4
+    },
+    {
+      "case": "numeric:committed:time:7:direct=True",
+      "category": "numeric_boundary",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true,
+      "detail": 4
+    },
+    {
+      "case": "numeric:committed:time:8:direct=False",
+      "category": "numeric_boundary",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true,
+      "detail": 4
+    },
+    {
+      "case": "numeric:committed:time:8:direct=True",
+      "category": "numeric_boundary",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true,
+      "detail": 4
+    },
+    {
+      "case": "numeric:committed:time:9:direct=False",
+      "category": "numeric_boundary",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true,
+      "detail": 4
+    },
+    {
+      "case": "numeric:committed:time:9:direct=True",
+      "category": "numeric_boundary",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true,
+      "detail": 4
+    },
+    {
+      "case": "numeric:committed:time:10:direct=False",
+      "category": "numeric_boundary",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4WireError",
+      "message": "nonfinite number",
+      "passed": true
+    },
+    {
+      "case": "numeric:committed:time:10:direct=True",
+      "category": "numeric_boundary",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "ValueError",
+      "message": "nonfinite numbers and negative zero are forbidden",
+      "passed": true
+    },
+    {
+      "case": "numeric:committed:time:11:direct=False",
+      "category": "numeric_boundary",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4WireError",
+      "message": "nonfinite number",
+      "passed": true
+    },
+    {
+      "case": "numeric:committed:time:11:direct=True",
+      "category": "numeric_boundary",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "ValueError",
+      "message": "nonfinite numbers and negative zero are forbidden",
+      "passed": true
+    },
+    {
+      "case": "numeric:committed:time:12:direct=False",
+      "category": "numeric_boundary",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "step_result/time: '3' is not of type 'number'",
+      "passed": true
+    },
+    {
+      "case": "numeric:committed:time:12:direct=True",
+      "category": "numeric_boundary",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "TypeError",
+      "message": "expected a real number, not a boolean or coercible object",
+      "passed": true
+    },
+    {
+      "case": "numeric:committed:time:13:direct=False",
+      "category": "numeric_boundary",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "step_result/time: None is not of type 'number'",
+      "passed": true
+    },
+    {
+      "case": "numeric:committed:time:13:direct=True",
+      "category": "numeric_boundary",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "TypeError",
+      "message": "expected a real number, not a boolean or coercible object",
+      "passed": true
+    },
+    {
+      "case": "numeric:rejected:step_index:0:direct=False",
+      "category": "numeric_boundary",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4WireError",
+      "message": "negative zero",
+      "passed": true
+    },
+    {
+      "case": "numeric:rejected:step_index:0:direct=True",
+      "category": "numeric_boundary",
+      "expected": "reject",
+      "actual": "accepted",
+      "passed": false,
+      "detail": 0
+    },
+    {
+      "case": "numeric:rejected:step_index:1:direct=False",
+      "category": "numeric_boundary",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "step_result/step_index: True is not of type 'integer'",
+      "passed": true
+    },
+    {
+      "case": "numeric:rejected:step_index:1:direct=True",
+      "category": "numeric_boundary",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "ValueError",
+      "message": "step_index must be a nonnegative safe integer",
+      "passed": true
+    },
+    {
+      "case": "numeric:rejected:step_index:2:direct=False",
+      "category": "numeric_boundary",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "step_result/step_index: False is not of type 'integer'",
+      "passed": true
+    },
+    {
+      "case": "numeric:rejected:step_index:2:direct=True",
+      "category": "numeric_boundary",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "ValueError",
+      "message": "step_index must be a nonnegative safe integer",
+      "passed": true
+    },
+    {
+      "case": "numeric:rejected:step_index:3:direct=False",
+      "category": "numeric_boundary",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "step_result/step_index: -1 is less than the minimum of 0",
+      "passed": true
+    },
+    {
+      "case": "numeric:rejected:step_index:3:direct=True",
+      "category": "numeric_boundary",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "ValueError",
+      "message": "step_index must be a nonnegative safe integer",
+      "passed": true
+    },
+    {
+      "case": "numeric:rejected:step_index:4:direct=False",
+      "category": "numeric_boundary",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "step_result/step_index: 1.5 is not of type 'integer'",
+      "passed": true
+    },
+    {
+      "case": "numeric:rejected:step_index:4:direct=True",
+      "category": "numeric_boundary",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "ValueError",
+      "message": "step_index must be a nonnegative safe integer",
+      "passed": true
+    },
+    {
+      "case": "numeric:rejected:step_index:5:direct=False",
+      "category": "numeric_boundary",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4WireError",
+      "message": "integer outside the I-JSON safe range",
+      "passed": true
+    },
+    {
+      "case": "numeric:rejected:step_index:5:direct=True",
+      "category": "numeric_boundary",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "ValueError",
+      "message": "step_index must be a nonnegative safe integer",
+      "passed": true
+    },
+    {
+      "case": "numeric:rejected:step_index:6:direct=False",
+      "category": "numeric_boundary",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true,
+      "detail": 9007199254740991
+    },
+    {
+      "case": "numeric:rejected:step_index:6:direct=True",
+      "category": "numeric_boundary",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true,
+      "detail": 9007199254740991
+    },
+    {
+      "case": "numeric:rejected:step_index:7:direct=False",
+      "category": "numeric_boundary",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "case": "numeric:rejected:step_index:7:direct=True",
+      "category": "numeric_boundary",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "case": "numeric:rejected:step_index:8:direct=False",
+      "category": "numeric_boundary",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "case": "numeric:rejected:step_index:8:direct=True",
+      "category": "numeric_boundary",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true,
+      "detail": 0
+    },
+    {
+      "case": "numeric:rejected:step_index:9:direct=False",
+      "category": "numeric_boundary",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true,
+      "detail": 3
+    },
+    {
+      "case": "numeric:rejected:step_index:9:direct=True",
+      "category": "numeric_boundary",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true,
+      "detail": 3
+    },
+    {
+      "case": "numeric:rejected:step_index:10:direct=False",
+      "category": "numeric_boundary",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4WireError",
+      "message": "nonfinite number",
+      "passed": true
+    },
+    {
+      "case": "numeric:rejected:step_index:10:direct=True",
+      "category": "numeric_boundary",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "ValueError",
+      "message": "step_index must be a nonnegative safe integer",
+      "passed": true
+    },
+    {
+      "case": "numeric:rejected:step_index:11:direct=False",
+      "category": "numeric_boundary",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4WireError",
+      "message": "nonfinite number",
+      "passed": true
+    },
+    {
+      "case": "numeric:rejected:step_index:11:direct=True",
+      "category": "numeric_boundary",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "ValueError",
+      "message": "step_index must be a nonnegative safe integer",
+      "passed": true
+    },
+    {
+      "case": "numeric:rejected:step_index:12:direct=False",
+      "category": "numeric_boundary",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "step_result/step_index: '3' is not of type 'integer'",
+      "passed": true
+    },
+    {
+      "case": "numeric:rejected:step_index:12:direct=True",
+      "category": "numeric_boundary",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "ValueError",
+      "message": "step_index must be a nonnegative safe integer",
+      "passed": true
+    },
+    {
+      "case": "numeric:rejected:step_index:13:direct=False",
+      "category": "numeric_boundary",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "step_result/step_index: None is not of type 'integer'",
+      "passed": true
+    },
+    {
+      "case": "numeric:rejected:step_index:13:direct=True",
+      "category": "numeric_boundary",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "ValueError",
+      "message": "step_index must be a nonnegative safe integer",
+      "passed": true
+    },
+    {
+      "case": "numeric:rejected:time:0:direct=False",
+      "category": "numeric_boundary",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4WireError",
+      "message": "negative zero",
+      "passed": true
+    },
+    {
+      "case": "numeric:rejected:time:0:direct=True",
+      "category": "numeric_boundary",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "ValueError",
+      "message": "nonfinite numbers and negative zero are forbidden",
+      "passed": true
+    },
+    {
+      "case": "numeric:rejected:time:1:direct=False",
+      "category": "numeric_boundary",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "step_result/time: True is not of type 'number'",
+      "passed": true
+    },
+    {
+      "case": "numeric:rejected:time:1:direct=True",
+      "category": "numeric_boundary",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "TypeError",
+      "message": "expected a real number, not a boolean or coercible object",
+      "passed": true
+    },
+    {
+      "case": "numeric:rejected:time:2:direct=False",
+      "category": "numeric_boundary",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "step_result/time: False is not of type 'number'",
+      "passed": true
+    },
+    {
+      "case": "numeric:rejected:time:2:direct=True",
+      "category": "numeric_boundary",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "TypeError",
+      "message": "expected a real number, not a boolean or coercible object",
+      "passed": true
+    },
+    {
+      "case": "numeric:rejected:time:3:direct=False",
+      "category": "numeric_boundary",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "step_result/time: -1 is less than the minimum of 0",
+      "passed": true
+    },
+    {
+      "case": "numeric:rejected:time:3:direct=True",
+      "category": "numeric_boundary",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "ValueError",
+      "message": "time must be nonnegative",
+      "passed": true
+    },
+    {
+      "case": "numeric:rejected:time:4:direct=False",
+      "category": "numeric_boundary",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true,
+      "detail": 3
+    },
+    {
+      "case": "numeric:rejected:time:4:direct=True",
+      "category": "numeric_boundary",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true,
+      "detail": 3
+    },
+    {
+      "case": "numeric:rejected:time:5:direct=False",
+      "category": "numeric_boundary",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4WireError",
+      "message": "integer outside the I-JSON safe range",
+      "passed": true
+    },
+    {
+      "case": "numeric:rejected:time:5:direct=True",
+      "category": "numeric_boundary",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "ValueError",
+      "message": "integer outside the I-JSON safe range",
+      "passed": true
+    },
+    {
+      "case": "numeric:rejected:time:6:direct=False",
+      "category": "numeric_boundary",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true,
+      "detail": 3
+    },
+    {
+      "case": "numeric:rejected:time:6:direct=True",
+      "category": "numeric_boundary",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true,
+      "detail": 3
+    },
+    {
+      "case": "numeric:rejected:time:7:direct=False",
+      "category": "numeric_boundary",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true,
+      "detail": 3
+    },
+    {
+      "case": "numeric:rejected:time:7:direct=True",
+      "category": "numeric_boundary",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true,
+      "detail": 3
+    },
+    {
+      "case": "numeric:rejected:time:8:direct=False",
+      "category": "numeric_boundary",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true,
+      "detail": 3
+    },
+    {
+      "case": "numeric:rejected:time:8:direct=True",
+      "category": "numeric_boundary",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true,
+      "detail": 3
+    },
+    {
+      "case": "numeric:rejected:time:9:direct=False",
+      "category": "numeric_boundary",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true,
+      "detail": 3
+    },
+    {
+      "case": "numeric:rejected:time:9:direct=True",
+      "category": "numeric_boundary",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true,
+      "detail": 3
+    },
+    {
+      "case": "numeric:rejected:time:10:direct=False",
+      "category": "numeric_boundary",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4WireError",
+      "message": "nonfinite number",
+      "passed": true
+    },
+    {
+      "case": "numeric:rejected:time:10:direct=True",
+      "category": "numeric_boundary",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "ValueError",
+      "message": "nonfinite numbers and negative zero are forbidden",
+      "passed": true
+    },
+    {
+      "case": "numeric:rejected:time:11:direct=False",
+      "category": "numeric_boundary",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4WireError",
+      "message": "nonfinite number",
+      "passed": true
+    },
+    {
+      "case": "numeric:rejected:time:11:direct=True",
+      "category": "numeric_boundary",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "ValueError",
+      "message": "nonfinite numbers and negative zero are forbidden",
+      "passed": true
+    },
+    {
+      "case": "numeric:rejected:time:12:direct=False",
+      "category": "numeric_boundary",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "step_result/time: '3' is not of type 'number'",
+      "passed": true
+    },
+    {
+      "case": "numeric:rejected:time:12:direct=True",
+      "category": "numeric_boundary",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "TypeError",
+      "message": "expected a real number, not a boolean or coercible object",
+      "passed": true
+    },
+    {
+      "case": "numeric:rejected:time:13:direct=False",
+      "category": "numeric_boundary",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "step_result/time: None is not of type 'number'",
+      "passed": true
+    },
+    {
+      "case": "numeric:rejected:time:13:direct=True",
+      "category": "numeric_boundary",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "TypeError",
+      "message": "expected a real number, not a boolean or coercible object",
+      "passed": true
+    },
+    {
+      "case": "event_container:mapping_empty",
+      "category": "event_input_boundary",
+      "expected": "reject",
+      "actual": "accepted",
+      "passed": false,
+      "detail": []
+    },
+    {
+      "case": "event_container:set_empty",
+      "category": "event_input_boundary",
+      "expected": "reject",
+      "actual": "accepted",
+      "passed": false,
+      "detail": []
+    },
+    {
+      "case": "event_container:bytes_empty",
+      "category": "event_input_boundary",
+      "expected": "reject",
+      "actual": "accepted",
+      "passed": false,
+      "detail": []
+    },
+    {
+      "case": "event_container:text_empty",
+      "category": "event_input_boundary",
+      "expected": "reject",
+      "actual": "accepted",
+      "passed": false,
+      "detail": []
+    },
+    {
+      "case": "event_container:bytearray_empty",
+      "category": "event_input_boundary",
+      "expected": "reject",
+      "actual": "accepted",
+      "passed": false,
+      "detail": []
+    },
+    {
+      "case": "event_container:mapping_event_keys",
+      "category": "event_input_boundary",
+      "expected": "reject",
+      "actual": "accepted",
+      "passed": false,
+      "detail": [
+        {
+          "kind": "step",
+          "step_index": 4,
+          "payload": {
+            "n": 1
+          },
+          "source_family": "GRCV4"
+        }
+      ]
+    },
+    {
+      "case": "event_container:set_events",
+      "category": "event_input_boundary",
+      "expected": "reject",
+      "actual": "accepted",
+      "passed": false,
+      "detail": [
+        {
+          "kind": "other",
+          "step_index": 4,
+          "payload": {
+            "n": 2
+          },
+          "source_family": "GRCV4"
+        },
+        {
+          "kind": "step",
+          "step_index": 4,
+          "payload": {
+            "n": 1
+          },
+          "source_family": "GRCV4"
+        }
+      ]
+    },
+    {
+      "case": "event_container:frozenset_events",
+      "category": "event_input_boundary",
+      "expected": "reject",
+      "actual": "accepted",
+      "passed": false,
+      "detail": [
+        {
+          "kind": "other",
+          "step_index": 4,
+          "payload": {
+            "n": 2
+          },
+          "source_family": "GRCV4"
+        },
+        {
+          "kind": "step",
+          "step_index": 4,
+          "payload": {
+            "n": 1
+          },
+          "source_family": "GRCV4"
+        }
+      ]
+    },
+    {
+      "case": "event_container:iterator_events",
+      "category": "event_input_boundary",
+      "expected": "reject",
+      "actual": "accepted",
+      "passed": false,
+      "detail": [
+        {
+          "kind": "step",
+          "step_index": 4,
+          "payload": {
+            "n": 1
+          },
+          "source_family": "GRCV4"
+        },
+        {
+          "kind": "other",
+          "step_index": 4,
+          "payload": {
+            "n": 2
+          },
+          "source_family": "GRCV4"
+        }
+      ]
+    },
+    {
+      "case": "event_container:list",
+      "category": "event_input_boundary",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true
+    },
+    {
+      "case": "event_container:tuple",
+      "category": "event_input_boundary",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true
+    },
+    {
+      "case": "closed_result:committed:schema_version",
+      "category": "schema_and_identity",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "step_result/: 'schema_version' is a required property",
+      "passed": true
+    },
+    {
+      "case": "closed_result:committed:step_index",
+      "category": "schema_and_identity",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "step_result/: 'step_index' is a required property",
+      "passed": true
+    },
+    {
+      "case": "closed_result:committed:time",
+      "category": "schema_and_identity",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "step_result/: 'time' is a required property",
+      "passed": true
+    },
+    {
+      "case": "closed_result:committed:events",
+      "category": "schema_and_identity",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "step_result/: 'events' is a required property",
+      "passed": true
+    },
+    {
+      "case": "closed_result:committed:observables",
+      "category": "schema_and_identity",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "step_result/: 'observables' is a required property",
+      "passed": true
+    },
+    {
+      "case": "closed_result:committed:active_profile_id",
+      "category": "schema_and_identity",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "step_result/: 'active_profile_id' is a required property",
+      "passed": true
+    },
+    {
+      "case": "closed_result:committed:active_model_identity",
+      "category": "schema_and_identity",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "step_result/: 'active_model_identity' is a required property",
+      "passed": true
+    },
+    {
+      "case": "closed_result:committed:operation_disposition",
+      "category": "schema_and_identity",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "step_result/: 'operation_disposition' is a required property",
+      "passed": true
+    },
+    {
+      "case": "closed_result:committed:solver_disposition",
+      "category": "schema_and_identity",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "step_result/: 'solver_disposition' is a required property",
+      "passed": true
+    },
+    {
+      "case": "closed_result:committed:committed",
+      "category": "schema_and_identity",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "step_result/: 'committed' is a required property",
+      "passed": true
+    },
+    {
+      "case": "closed_result:committed:commit_id",
+      "category": "schema_and_identity",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "step_result/: 'commit_id' is a required property",
+      "passed": true
+    },
+    {
+      "case": "closed_result:committed:failure",
+      "category": "schema_and_identity",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "step_result/: 'failure' is a required property",
+      "passed": true
+    },
+    {
+      "case": "closed_result:committed:emitted_receipts",
+      "category": "schema_and_identity",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "step_result/: 'emitted_receipts' is a required property",
+      "passed": true
+    },
+    {
+      "case": "closed_result:committed:unknown",
+      "category": "schema_and_identity",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "step_result/: Additional properties are not allowed ('unknown' was unexpected)",
+      "passed": true
+    },
+    {
+      "case": "identity_suffix:committed:active_model_identity:'\\n'",
+      "category": "schema_and_identity",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "step_result/active_model_identity: 'grcv4-profile-sha256:1111111111111111111111111111111111111111111111111111111111111111\\n' is not valid under any of the given schemas",
+      "passed": true
+    },
+    {
+      "case": "identity_suffix:committed:active_model_identity:'\\r'",
+      "category": "schema_and_identity",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "step_result/active_model_identity: 'grcv4-profile-sha256:1111111111111111111111111111111111111111111111111111111111111111\\r' is not valid under any of the given schemas",
+      "passed": true
+    },
+    {
+      "case": "identity_suffix:committed:active_model_identity:' '",
+      "category": "schema_and_identity",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "step_result/active_model_identity: 'grcv4-profile-sha256:1111111111111111111111111111111111111111111111111111111111111111 ' is not valid under any of the given schemas",
+      "passed": true
+    },
+    {
+      "case": "identity_suffix:committed:active_model_identity:'x'",
+      "category": "schema_and_identity",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "step_result/active_model_identity: 'grcv4-profile-sha256:1111111111111111111111111111111111111111111111111111111111111111x' is not valid under any of the given schemas",
+      "passed": true
+    },
+    {
+      "case": "identity_suffix:committed:active_profile_id:'\\n'",
+      "category": "schema_and_identity",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "step_result/active_profile_id: identifier does not match the complete contract grammar",
+      "passed": true
+    },
+    {
+      "case": "identity_suffix:committed:active_profile_id:'\\r'",
+      "category": "schema_and_identity",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "step_result/active_profile_id: identifier does not match the complete contract grammar",
+      "passed": true
+    },
+    {
+      "case": "identity_suffix:committed:active_profile_id:' '",
+      "category": "schema_and_identity",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "step_result/active_profile_id: identifier does not match the complete contract grammar",
+      "passed": true
+    },
+    {
+      "case": "identity_suffix:committed:active_profile_id:'x'",
+      "category": "schema_and_identity",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "step_result/active_profile_id: identifier does not match the complete contract grammar",
+      "passed": true
+    },
+    {
+      "case": "identity_suffix:committed:commit_id:'\\n'",
+      "category": "schema_and_identity",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "step_result/commit_id: 'grc-commit-sha256:3ac7f60df40d5fa62300b9bad57c090df4432865bc08290f72af030aa5f25813\\n' is not valid under any of the given schemas",
+      "passed": true
+    },
+    {
+      "case": "identity_suffix:committed:commit_id:'\\r'",
+      "category": "schema_and_identity",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "step_result/commit_id: 'grc-commit-sha256:3ac7f60df40d5fa62300b9bad57c090df4432865bc08290f72af030aa5f25813\\r' is not valid under any of the given schemas",
+      "passed": true
+    },
+    {
+      "case": "identity_suffix:committed:commit_id:' '",
+      "category": "schema_and_identity",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "step_result/commit_id: 'grc-commit-sha256:3ac7f60df40d5fa62300b9bad57c090df4432865bc08290f72af030aa5f25813 ' is not valid under any of the given schemas",
+      "passed": true
+    },
+    {
+      "case": "identity_suffix:committed:commit_id:'x'",
+      "category": "schema_and_identity",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "step_result/commit_id: 'grc-commit-sha256:3ac7f60df40d5fa62300b9bad57c090df4432865bc08290f72af030aa5f25813x' is not valid under any of the given schemas",
+      "passed": true
+    },
+    {
+      "case": "closed_result:rejected:schema_version",
+      "category": "schema_and_identity",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "step_result/: 'schema_version' is a required property",
+      "passed": true
+    },
+    {
+      "case": "closed_result:rejected:step_index",
+      "category": "schema_and_identity",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "step_result/: 'step_index' is a required property",
+      "passed": true
+    },
+    {
+      "case": "closed_result:rejected:time",
+      "category": "schema_and_identity",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "step_result/: 'time' is a required property",
+      "passed": true
+    },
+    {
+      "case": "closed_result:rejected:events",
+      "category": "schema_and_identity",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "step_result/: 'events' is a required property",
+      "passed": true
+    },
+    {
+      "case": "closed_result:rejected:observables",
+      "category": "schema_and_identity",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "step_result/: 'observables' is a required property",
+      "passed": true
+    },
+    {
+      "case": "closed_result:rejected:active_profile_id",
+      "category": "schema_and_identity",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "step_result/: 'active_profile_id' is a required property",
+      "passed": true
+    },
+    {
+      "case": "closed_result:rejected:active_model_identity",
+      "category": "schema_and_identity",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "step_result/: 'active_model_identity' is a required property",
+      "passed": true
+    },
+    {
+      "case": "closed_result:rejected:operation_disposition",
+      "category": "schema_and_identity",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "step_result/: 'operation_disposition' is a required property",
+      "passed": true
+    },
+    {
+      "case": "closed_result:rejected:solver_disposition",
+      "category": "schema_and_identity",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "step_result/: 'solver_disposition' is a required property",
+      "passed": true
+    },
+    {
+      "case": "closed_result:rejected:committed",
+      "category": "schema_and_identity",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "step_result/: 'committed' is a required property",
+      "passed": true
+    },
+    {
+      "case": "closed_result:rejected:commit_id",
+      "category": "schema_and_identity",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "step_result/: 'commit_id' is a required property",
+      "passed": true
+    },
+    {
+      "case": "closed_result:rejected:failure",
+      "category": "schema_and_identity",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "step_result/: 'failure' is a required property",
+      "passed": true
+    },
+    {
+      "case": "closed_result:rejected:emitted_receipts",
+      "category": "schema_and_identity",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "step_result/: 'emitted_receipts' is a required property",
+      "passed": true
+    },
+    {
+      "case": "closed_result:rejected:unknown",
+      "category": "schema_and_identity",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "step_result/: Additional properties are not allowed ('unknown' was unexpected)",
+      "passed": true
+    },
+    {
+      "case": "identity_suffix:rejected:active_model_identity:'\\n'",
+      "category": "schema_and_identity",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "step_result/active_model_identity: 'grcv4-profile-sha256:1111111111111111111111111111111111111111111111111111111111111111\\n' is not valid under any of the given schemas",
+      "passed": true
+    },
+    {
+      "case": "identity_suffix:rejected:active_model_identity:'\\r'",
+      "category": "schema_and_identity",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "step_result/active_model_identity: 'grcv4-profile-sha256:1111111111111111111111111111111111111111111111111111111111111111\\r' is not valid under any of the given schemas",
+      "passed": true
+    },
+    {
+      "case": "identity_suffix:rejected:active_model_identity:' '",
+      "category": "schema_and_identity",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "step_result/active_model_identity: 'grcv4-profile-sha256:1111111111111111111111111111111111111111111111111111111111111111 ' is not valid under any of the given schemas",
+      "passed": true
+    },
+    {
+      "case": "identity_suffix:rejected:active_model_identity:'x'",
+      "category": "schema_and_identity",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "step_result/active_model_identity: 'grcv4-profile-sha256:1111111111111111111111111111111111111111111111111111111111111111x' is not valid under any of the given schemas",
+      "passed": true
+    },
+    {
+      "case": "identity_suffix:rejected:active_profile_id:'\\n'",
+      "category": "schema_and_identity",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "step_result/active_profile_id: identifier does not match the complete contract grammar",
+      "passed": true
+    },
+    {
+      "case": "identity_suffix:rejected:active_profile_id:'\\r'",
+      "category": "schema_and_identity",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "step_result/active_profile_id: identifier does not match the complete contract grammar",
+      "passed": true
+    },
+    {
+      "case": "identity_suffix:rejected:active_profile_id:' '",
+      "category": "schema_and_identity",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "step_result/active_profile_id: identifier does not match the complete contract grammar",
+      "passed": true
+    },
+    {
+      "case": "identity_suffix:rejected:active_profile_id:'x'",
+      "category": "schema_and_identity",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "step_result/active_profile_id: identifier does not match the complete contract grammar",
+      "passed": true
+    },
+    {
+      "case": "solver_split:admission:None",
+      "category": "operation_solver_split",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true
+    },
+    {
+      "case": "lifecycle_solver:admission:None",
+      "category": "operation_solver_split",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true,
+      "detail": false
+    },
+    {
+      "case": "solver_split:admission:valid_root",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "pre-solver failure cannot invent a solver disposition",
+      "passed": true
+    },
+    {
+      "case": "lifecycle_solver:admission:valid_root",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "pre-solver failure cannot invent a solver disposition",
+      "passed": true
+    },
+    {
+      "case": "solver_split:admission:domain_failure",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "pre-solver failure cannot invent a solver disposition",
+      "passed": true
+    },
+    {
+      "case": "lifecycle_solver:admission:domain_failure",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "pre-solver failure cannot invent a solver disposition",
+      "passed": true
+    },
+    {
+      "case": "solver_split:admission:singular",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "pre-solver failure cannot invent a solver disposition",
+      "passed": true
+    },
+    {
+      "case": "lifecycle_solver:admission:singular",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "pre-solver failure cannot invent a solver disposition",
+      "passed": true
+    },
+    {
+      "case": "solver_split:admission:conditioning_failure",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "pre-solver failure cannot invent a solver disposition",
+      "passed": true
+    },
+    {
+      "case": "lifecycle_solver:admission:conditioning_failure",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "pre-solver failure cannot invent a solver disposition",
+      "passed": true
+    },
+    {
+      "case": "solver_split:admission:nonfinite",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "pre-solver failure cannot invent a solver disposition",
+      "passed": true
+    },
+    {
+      "case": "lifecycle_solver:admission:nonfinite",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "pre-solver failure cannot invent a solver disposition",
+      "passed": true
+    },
+    {
+      "case": "solver_split:admission:no_admitted_root",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "pre-solver failure cannot invent a solver disposition",
+      "passed": true
+    },
+    {
+      "case": "lifecycle_solver:admission:no_admitted_root",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "pre-solver failure cannot invent a solver disposition",
+      "passed": true
+    },
+    {
+      "case": "solver_split:admission:multiple_admitted_roots",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "pre-solver failure cannot invent a solver disposition",
+      "passed": true
+    },
+    {
+      "case": "lifecycle_solver:admission:multiple_admitted_roots",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "pre-solver failure cannot invent a solver disposition",
+      "passed": true
+    },
+    {
+      "case": "solver_split:pre_read_reconstruction:None",
+      "category": "operation_solver_split",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true
+    },
+    {
+      "case": "lifecycle_solver:pre_read_reconstruction:None",
+      "category": "operation_solver_split",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true,
+      "detail": false
+    },
+    {
+      "case": "solver_split:pre_read_reconstruction:valid_root",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "pre-solver failure cannot invent a solver disposition",
+      "passed": true
+    },
+    {
+      "case": "lifecycle_solver:pre_read_reconstruction:valid_root",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "pre-solver failure cannot invent a solver disposition",
+      "passed": true
+    },
+    {
+      "case": "solver_split:pre_read_reconstruction:domain_failure",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "pre-solver failure cannot invent a solver disposition",
+      "passed": true
+    },
+    {
+      "case": "lifecycle_solver:pre_read_reconstruction:domain_failure",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "pre-solver failure cannot invent a solver disposition",
+      "passed": true
+    },
+    {
+      "case": "solver_split:pre_read_reconstruction:singular",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "pre-solver failure cannot invent a solver disposition",
+      "passed": true
+    },
+    {
+      "case": "lifecycle_solver:pre_read_reconstruction:singular",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "pre-solver failure cannot invent a solver disposition",
+      "passed": true
+    },
+    {
+      "case": "solver_split:pre_read_reconstruction:conditioning_failure",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "pre-solver failure cannot invent a solver disposition",
+      "passed": true
+    },
+    {
+      "case": "lifecycle_solver:pre_read_reconstruction:conditioning_failure",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "pre-solver failure cannot invent a solver disposition",
+      "passed": true
+    },
+    {
+      "case": "solver_split:pre_read_reconstruction:nonfinite",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "pre-solver failure cannot invent a solver disposition",
+      "passed": true
+    },
+    {
+      "case": "lifecycle_solver:pre_read_reconstruction:nonfinite",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "pre-solver failure cannot invent a solver disposition",
+      "passed": true
+    },
+    {
+      "case": "solver_split:pre_read_reconstruction:no_admitted_root",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "pre-solver failure cannot invent a solver disposition",
+      "passed": true
+    },
+    {
+      "case": "lifecycle_solver:pre_read_reconstruction:no_admitted_root",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "pre-solver failure cannot invent a solver disposition",
+      "passed": true
+    },
+    {
+      "case": "solver_split:pre_read_reconstruction:multiple_admitted_roots",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "pre-solver failure cannot invent a solver disposition",
+      "passed": true
+    },
+    {
+      "case": "lifecycle_solver:pre_read_reconstruction:multiple_admitted_roots",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "pre-solver failure cannot invent a solver disposition",
+      "passed": true
+    },
+    {
+      "case": "solver_split:candidate_solve:None",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "candidate-solve rejection requires its failed solver disposition",
+      "passed": true
+    },
+    {
+      "case": "lifecycle_solver:candidate_solve:None",
+      "category": "operation_solver_split",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true,
+      "detail": false
+    },
+    {
+      "case": "solver_split:candidate_solve:valid_root",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "candidate-solve rejection requires its failed solver disposition",
+      "passed": true
+    },
+    {
+      "case": "lifecycle_solver:candidate_solve:valid_root",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "lifecycle failure cannot invent a step solver disposition",
+      "passed": true
+    },
+    {
+      "case": "solver_split:candidate_solve:domain_failure",
+      "category": "operation_solver_split",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true
+    },
+    {
+      "case": "lifecycle_solver:candidate_solve:domain_failure",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "lifecycle failure cannot invent a step solver disposition",
+      "passed": true
+    },
+    {
+      "case": "solver_split:candidate_solve:singular",
+      "category": "operation_solver_split",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true
+    },
+    {
+      "case": "lifecycle_solver:candidate_solve:singular",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "lifecycle failure cannot invent a step solver disposition",
+      "passed": true
+    },
+    {
+      "case": "solver_split:candidate_solve:conditioning_failure",
+      "category": "operation_solver_split",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true
+    },
+    {
+      "case": "lifecycle_solver:candidate_solve:conditioning_failure",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "lifecycle failure cannot invent a step solver disposition",
+      "passed": true
+    },
+    {
+      "case": "solver_split:candidate_solve:nonfinite",
+      "category": "operation_solver_split",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true
+    },
+    {
+      "case": "lifecycle_solver:candidate_solve:nonfinite",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "lifecycle failure cannot invent a step solver disposition",
+      "passed": true
+    },
+    {
+      "case": "solver_split:candidate_solve:no_admitted_root",
+      "category": "operation_solver_split",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true
+    },
+    {
+      "case": "lifecycle_solver:candidate_solve:no_admitted_root",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "lifecycle failure cannot invent a step solver disposition",
+      "passed": true
+    },
+    {
+      "case": "solver_split:candidate_solve:multiple_admitted_roots",
+      "category": "operation_solver_split",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true
+    },
+    {
+      "case": "lifecycle_solver:candidate_solve:multiple_admitted_roots",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "lifecycle failure cannot invent a step solver disposition",
+      "passed": true
+    },
+    {
+      "case": "solver_split:continuity:None",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "post-solver step rejection must retain valid_root",
+      "passed": true
+    },
+    {
+      "case": "lifecycle_solver:continuity:None",
+      "category": "operation_solver_split",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true,
+      "detail": false
+    },
+    {
+      "case": "solver_split:continuity:valid_root",
+      "category": "operation_solver_split",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true
+    },
+    {
+      "case": "lifecycle_solver:continuity:valid_root",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "lifecycle failure cannot invent a step solver disposition",
+      "passed": true
+    },
+    {
+      "case": "solver_split:continuity:domain_failure",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "post-solver step rejection must retain valid_root",
+      "passed": true
+    },
+    {
+      "case": "lifecycle_solver:continuity:domain_failure",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "lifecycle failure cannot invent a step solver disposition",
+      "passed": true
+    },
+    {
+      "case": "solver_split:continuity:singular",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "post-solver step rejection must retain valid_root",
+      "passed": true
+    },
+    {
+      "case": "lifecycle_solver:continuity:singular",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "lifecycle failure cannot invent a step solver disposition",
+      "passed": true
+    },
+    {
+      "case": "solver_split:continuity:conditioning_failure",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "post-solver step rejection must retain valid_root",
+      "passed": true
+    },
+    {
+      "case": "lifecycle_solver:continuity:conditioning_failure",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "lifecycle failure cannot invent a step solver disposition",
+      "passed": true
+    },
+    {
+      "case": "solver_split:continuity:nonfinite",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "post-solver step rejection must retain valid_root",
+      "passed": true
+    },
+    {
+      "case": "lifecycle_solver:continuity:nonfinite",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "lifecycle failure cannot invent a step solver disposition",
+      "passed": true
+    },
+    {
+      "case": "solver_split:continuity:no_admitted_root",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "post-solver step rejection must retain valid_root",
+      "passed": true
+    },
+    {
+      "case": "lifecycle_solver:continuity:no_admitted_root",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "lifecycle failure cannot invent a step solver disposition",
+      "passed": true
+    },
+    {
+      "case": "solver_split:continuity:multiple_admitted_roots",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "post-solver step rejection must retain valid_root",
+      "passed": true
+    },
+    {
+      "case": "lifecycle_solver:continuity:multiple_admitted_roots",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "lifecycle failure cannot invent a step solver disposition",
+      "passed": true
+    },
+    {
+      "case": "solver_split:charge_admission:None",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "post-solver step rejection must retain valid_root",
+      "passed": true
+    },
+    {
+      "case": "lifecycle_solver:charge_admission:None",
+      "category": "operation_solver_split",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true,
+      "detail": false
+    },
+    {
+      "case": "solver_split:charge_admission:valid_root",
+      "category": "operation_solver_split",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true
+    },
+    {
+      "case": "lifecycle_solver:charge_admission:valid_root",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "lifecycle failure cannot invent a step solver disposition",
+      "passed": true
+    },
+    {
+      "case": "solver_split:charge_admission:domain_failure",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "post-solver step rejection must retain valid_root",
+      "passed": true
+    },
+    {
+      "case": "lifecycle_solver:charge_admission:domain_failure",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "lifecycle failure cannot invent a step solver disposition",
+      "passed": true
+    },
+    {
+      "case": "solver_split:charge_admission:singular",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "post-solver step rejection must retain valid_root",
+      "passed": true
+    },
+    {
+      "case": "lifecycle_solver:charge_admission:singular",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "lifecycle failure cannot invent a step solver disposition",
+      "passed": true
+    },
+    {
+      "case": "solver_split:charge_admission:conditioning_failure",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "post-solver step rejection must retain valid_root",
+      "passed": true
+    },
+    {
+      "case": "lifecycle_solver:charge_admission:conditioning_failure",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "lifecycle failure cannot invent a step solver disposition",
+      "passed": true
+    },
+    {
+      "case": "solver_split:charge_admission:nonfinite",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "post-solver step rejection must retain valid_root",
+      "passed": true
+    },
+    {
+      "case": "lifecycle_solver:charge_admission:nonfinite",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "lifecycle failure cannot invent a step solver disposition",
+      "passed": true
+    },
+    {
+      "case": "solver_split:charge_admission:no_admitted_root",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "post-solver step rejection must retain valid_root",
+      "passed": true
+    },
+    {
+      "case": "lifecycle_solver:charge_admission:no_admitted_root",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "lifecycle failure cannot invent a step solver disposition",
+      "passed": true
+    },
+    {
+      "case": "solver_split:charge_admission:multiple_admitted_roots",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "post-solver step rejection must retain valid_root",
+      "passed": true
+    },
+    {
+      "case": "lifecycle_solver:charge_admission:multiple_admitted_roots",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "lifecycle failure cannot invent a step solver disposition",
+      "passed": true
+    },
+    {
+      "case": "solver_split:final_reconstruction:None",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "post-solver step rejection must retain valid_root",
+      "passed": true
+    },
+    {
+      "case": "lifecycle_solver:final_reconstruction:None",
+      "category": "operation_solver_split",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true,
+      "detail": false
+    },
+    {
+      "case": "solver_split:final_reconstruction:valid_root",
+      "category": "operation_solver_split",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true
+    },
+    {
+      "case": "lifecycle_solver:final_reconstruction:valid_root",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "lifecycle failure cannot invent a step solver disposition",
+      "passed": true
+    },
+    {
+      "case": "solver_split:final_reconstruction:domain_failure",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "post-solver step rejection must retain valid_root",
+      "passed": true
+    },
+    {
+      "case": "lifecycle_solver:final_reconstruction:domain_failure",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "lifecycle failure cannot invent a step solver disposition",
+      "passed": true
+    },
+    {
+      "case": "solver_split:final_reconstruction:singular",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "post-solver step rejection must retain valid_root",
+      "passed": true
+    },
+    {
+      "case": "lifecycle_solver:final_reconstruction:singular",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "lifecycle failure cannot invent a step solver disposition",
+      "passed": true
+    },
+    {
+      "case": "solver_split:final_reconstruction:conditioning_failure",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "post-solver step rejection must retain valid_root",
+      "passed": true
+    },
+    {
+      "case": "lifecycle_solver:final_reconstruction:conditioning_failure",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "lifecycle failure cannot invent a step solver disposition",
+      "passed": true
+    },
+    {
+      "case": "solver_split:final_reconstruction:nonfinite",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "post-solver step rejection must retain valid_root",
+      "passed": true
+    },
+    {
+      "case": "lifecycle_solver:final_reconstruction:nonfinite",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "lifecycle failure cannot invent a step solver disposition",
+      "passed": true
+    },
+    {
+      "case": "solver_split:final_reconstruction:no_admitted_root",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "post-solver step rejection must retain valid_root",
+      "passed": true
+    },
+    {
+      "case": "lifecycle_solver:final_reconstruction:no_admitted_root",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "lifecycle failure cannot invent a step solver disposition",
+      "passed": true
+    },
+    {
+      "case": "solver_split:final_reconstruction:multiple_admitted_roots",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "post-solver step rejection must retain valid_root",
+      "passed": true
+    },
+    {
+      "case": "lifecycle_solver:final_reconstruction:multiple_admitted_roots",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "lifecycle failure cannot invent a step solver disposition",
+      "passed": true
+    },
+    {
+      "case": "solver_split:history_write:None",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "post-solver step rejection must retain valid_root",
+      "passed": true
+    },
+    {
+      "case": "lifecycle_solver:history_write:None",
+      "category": "operation_solver_split",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true,
+      "detail": false
+    },
+    {
+      "case": "solver_split:history_write:valid_root",
+      "category": "operation_solver_split",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true
+    },
+    {
+      "case": "lifecycle_solver:history_write:valid_root",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "lifecycle failure cannot invent a step solver disposition",
+      "passed": true
+    },
+    {
+      "case": "solver_split:history_write:domain_failure",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "post-solver step rejection must retain valid_root",
+      "passed": true
+    },
+    {
+      "case": "lifecycle_solver:history_write:domain_failure",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "lifecycle failure cannot invent a step solver disposition",
+      "passed": true
+    },
+    {
+      "case": "solver_split:history_write:singular",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "post-solver step rejection must retain valid_root",
+      "passed": true
+    },
+    {
+      "case": "lifecycle_solver:history_write:singular",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "lifecycle failure cannot invent a step solver disposition",
+      "passed": true
+    },
+    {
+      "case": "solver_split:history_write:conditioning_failure",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "post-solver step rejection must retain valid_root",
+      "passed": true
+    },
+    {
+      "case": "lifecycle_solver:history_write:conditioning_failure",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "lifecycle failure cannot invent a step solver disposition",
+      "passed": true
+    },
+    {
+      "case": "solver_split:history_write:nonfinite",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "post-solver step rejection must retain valid_root",
+      "passed": true
+    },
+    {
+      "case": "lifecycle_solver:history_write:nonfinite",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "lifecycle failure cannot invent a step solver disposition",
+      "passed": true
+    },
+    {
+      "case": "solver_split:history_write:no_admitted_root",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "post-solver step rejection must retain valid_root",
+      "passed": true
+    },
+    {
+      "case": "lifecycle_solver:history_write:no_admitted_root",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "lifecycle failure cannot invent a step solver disposition",
+      "passed": true
+    },
+    {
+      "case": "solver_split:history_write:multiple_admitted_roots",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "post-solver step rejection must retain valid_root",
+      "passed": true
+    },
+    {
+      "case": "lifecycle_solver:history_write:multiple_admitted_roots",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "lifecycle failure cannot invent a step solver disposition",
+      "passed": true
+    },
+    {
+      "case": "solver_split:commit:None",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "post-solver step rejection must retain valid_root",
+      "passed": true
+    },
+    {
+      "case": "lifecycle_solver:commit:None",
+      "category": "operation_solver_split",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true,
+      "detail": false
+    },
+    {
+      "case": "solver_split:commit:valid_root",
+      "category": "operation_solver_split",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true
+    },
+    {
+      "case": "lifecycle_solver:commit:valid_root",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "lifecycle failure cannot invent a step solver disposition",
+      "passed": true
+    },
+    {
+      "case": "solver_split:commit:domain_failure",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "post-solver step rejection must retain valid_root",
+      "passed": true
+    },
+    {
+      "case": "lifecycle_solver:commit:domain_failure",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "lifecycle failure cannot invent a step solver disposition",
+      "passed": true
+    },
+    {
+      "case": "solver_split:commit:singular",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "post-solver step rejection must retain valid_root",
+      "passed": true
+    },
+    {
+      "case": "lifecycle_solver:commit:singular",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "lifecycle failure cannot invent a step solver disposition",
+      "passed": true
+    },
+    {
+      "case": "solver_split:commit:conditioning_failure",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "post-solver step rejection must retain valid_root",
+      "passed": true
+    },
+    {
+      "case": "lifecycle_solver:commit:conditioning_failure",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "lifecycle failure cannot invent a step solver disposition",
+      "passed": true
+    },
+    {
+      "case": "solver_split:commit:nonfinite",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "post-solver step rejection must retain valid_root",
+      "passed": true
+    },
+    {
+      "case": "lifecycle_solver:commit:nonfinite",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "lifecycle failure cannot invent a step solver disposition",
+      "passed": true
+    },
+    {
+      "case": "solver_split:commit:no_admitted_root",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "post-solver step rejection must retain valid_root",
+      "passed": true
+    },
+    {
+      "case": "lifecycle_solver:commit:no_admitted_root",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "lifecycle failure cannot invent a step solver disposition",
+      "passed": true
+    },
+    {
+      "case": "solver_split:commit:multiple_admitted_roots",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "post-solver step rejection must retain valid_root",
+      "passed": true
+    },
+    {
+      "case": "lifecycle_solver:commit:multiple_admitted_roots",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "lifecycle failure cannot invent a step solver disposition",
+      "passed": true
+    },
+    {
+      "case": "solver_split:target_construction:None",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "lifecycle stage is not an ordinary-step failure",
+      "passed": true
+    },
+    {
+      "case": "lifecycle_solver:target_construction:None",
+      "category": "operation_solver_split",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true,
+      "detail": false
+    },
+    {
+      "case": "solver_split:target_construction:valid_root",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "lifecycle stage is not an ordinary-step failure",
+      "passed": true
+    },
+    {
+      "case": "lifecycle_solver:target_construction:valid_root",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "lifecycle failure cannot invent a step solver disposition",
+      "passed": true
+    },
+    {
+      "case": "solver_split:target_construction:domain_failure",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "lifecycle stage is not an ordinary-step failure",
+      "passed": true
+    },
+    {
+      "case": "lifecycle_solver:target_construction:domain_failure",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "lifecycle failure cannot invent a step solver disposition",
+      "passed": true
+    },
+    {
+      "case": "solver_split:target_construction:singular",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "lifecycle stage is not an ordinary-step failure",
+      "passed": true
+    },
+    {
+      "case": "lifecycle_solver:target_construction:singular",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "lifecycle failure cannot invent a step solver disposition",
+      "passed": true
+    },
+    {
+      "case": "solver_split:target_construction:conditioning_failure",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "lifecycle stage is not an ordinary-step failure",
+      "passed": true
+    },
+    {
+      "case": "lifecycle_solver:target_construction:conditioning_failure",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "lifecycle failure cannot invent a step solver disposition",
+      "passed": true
+    },
+    {
+      "case": "solver_split:target_construction:nonfinite",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "lifecycle stage is not an ordinary-step failure",
+      "passed": true
+    },
+    {
+      "case": "lifecycle_solver:target_construction:nonfinite",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "lifecycle failure cannot invent a step solver disposition",
+      "passed": true
+    },
+    {
+      "case": "solver_split:target_construction:no_admitted_root",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "lifecycle stage is not an ordinary-step failure",
+      "passed": true
+    },
+    {
+      "case": "lifecycle_solver:target_construction:no_admitted_root",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "lifecycle failure cannot invent a step solver disposition",
+      "passed": true
+    },
+    {
+      "case": "solver_split:target_construction:multiple_admitted_roots",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "lifecycle stage is not an ordinary-step failure",
+      "passed": true
+    },
+    {
+      "case": "lifecycle_solver:target_construction:multiple_admitted_roots",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "lifecycle failure cannot invent a step solver disposition",
+      "passed": true
+    },
+    {
+      "case": "solver_split:target_readmission:None",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "lifecycle stage is not an ordinary-step failure",
+      "passed": true
+    },
+    {
+      "case": "lifecycle_solver:target_readmission:None",
+      "category": "operation_solver_split",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true,
+      "detail": false
+    },
+    {
+      "case": "solver_split:target_readmission:valid_root",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "lifecycle stage is not an ordinary-step failure",
+      "passed": true
+    },
+    {
+      "case": "lifecycle_solver:target_readmission:valid_root",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "lifecycle failure cannot invent a step solver disposition",
+      "passed": true
+    },
+    {
+      "case": "solver_split:target_readmission:domain_failure",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "lifecycle stage is not an ordinary-step failure",
+      "passed": true
+    },
+    {
+      "case": "lifecycle_solver:target_readmission:domain_failure",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "lifecycle failure cannot invent a step solver disposition",
+      "passed": true
+    },
+    {
+      "case": "solver_split:target_readmission:singular",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "lifecycle stage is not an ordinary-step failure",
+      "passed": true
+    },
+    {
+      "case": "lifecycle_solver:target_readmission:singular",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "lifecycle failure cannot invent a step solver disposition",
+      "passed": true
+    },
+    {
+      "case": "solver_split:target_readmission:conditioning_failure",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "lifecycle stage is not an ordinary-step failure",
+      "passed": true
+    },
+    {
+      "case": "lifecycle_solver:target_readmission:conditioning_failure",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "lifecycle failure cannot invent a step solver disposition",
+      "passed": true
+    },
+    {
+      "case": "solver_split:target_readmission:nonfinite",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "lifecycle stage is not an ordinary-step failure",
+      "passed": true
+    },
+    {
+      "case": "lifecycle_solver:target_readmission:nonfinite",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "lifecycle failure cannot invent a step solver disposition",
+      "passed": true
+    },
+    {
+      "case": "solver_split:target_readmission:no_admitted_root",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "lifecycle stage is not an ordinary-step failure",
+      "passed": true
+    },
+    {
+      "case": "lifecycle_solver:target_readmission:no_admitted_root",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "lifecycle failure cannot invent a step solver disposition",
+      "passed": true
+    },
+    {
+      "case": "solver_split:target_readmission:multiple_admitted_roots",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "lifecycle stage is not an ordinary-step failure",
+      "passed": true
+    },
+    {
+      "case": "lifecycle_solver:target_readmission:multiple_admitted_roots",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "lifecycle failure cannot invent a step solver disposition",
+      "passed": true
+    },
+    {
+      "case": "solver_split:restoration:None",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "lifecycle stage is not an ordinary-step failure",
+      "passed": true
+    },
+    {
+      "case": "lifecycle_solver:restoration:None",
+      "category": "operation_solver_split",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true,
+      "detail": false
+    },
+    {
+      "case": "solver_split:restoration:valid_root",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "lifecycle stage is not an ordinary-step failure",
+      "passed": true
+    },
+    {
+      "case": "lifecycle_solver:restoration:valid_root",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "lifecycle failure cannot invent a step solver disposition",
+      "passed": true
+    },
+    {
+      "case": "solver_split:restoration:domain_failure",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "lifecycle stage is not an ordinary-step failure",
+      "passed": true
+    },
+    {
+      "case": "lifecycle_solver:restoration:domain_failure",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "lifecycle failure cannot invent a step solver disposition",
+      "passed": true
+    },
+    {
+      "case": "solver_split:restoration:singular",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "lifecycle stage is not an ordinary-step failure",
+      "passed": true
+    },
+    {
+      "case": "lifecycle_solver:restoration:singular",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "lifecycle failure cannot invent a step solver disposition",
+      "passed": true
+    },
+    {
+      "case": "solver_split:restoration:conditioning_failure",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "lifecycle stage is not an ordinary-step failure",
+      "passed": true
+    },
+    {
+      "case": "lifecycle_solver:restoration:conditioning_failure",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "lifecycle failure cannot invent a step solver disposition",
+      "passed": true
+    },
+    {
+      "case": "solver_split:restoration:nonfinite",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "lifecycle stage is not an ordinary-step failure",
+      "passed": true
+    },
+    {
+      "case": "lifecycle_solver:restoration:nonfinite",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "lifecycle failure cannot invent a step solver disposition",
+      "passed": true
+    },
+    {
+      "case": "solver_split:restoration:no_admitted_root",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "lifecycle stage is not an ordinary-step failure",
+      "passed": true
+    },
+    {
+      "case": "lifecycle_solver:restoration:no_admitted_root",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "lifecycle failure cannot invent a step solver disposition",
+      "passed": true
+    },
+    {
+      "case": "solver_split:restoration:multiple_admitted_roots",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "lifecycle stage is not an ordinary-step failure",
+      "passed": true
+    },
+    {
+      "case": "lifecycle_solver:restoration:multiple_admitted_roots",
+      "category": "operation_solver_split",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "lifecycle failure cannot invent a step solver disposition",
+      "passed": true
+    },
+    {
+      "case": "negative_state:prestate:step_index",
+      "category": "failure_state_ledger_binding",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4IdentityError",
+      "message": "failure is not bound to this operation and observed state",
+      "passed": true
+    },
+    {
+      "case": "negative_state:prestate:time",
+      "category": "failure_state_ledger_binding",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4IdentityError",
+      "message": "failure is not bound to this operation and observed state",
+      "passed": true
+    },
+    {
+      "case": "negative_state:prestate:Q_target",
+      "category": "failure_state_ledger_binding",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4IdentityError",
+      "message": "failure is not bound to this operation and observed state",
+      "passed": true
+    },
+    {
+      "case": "negative_state:prestate:context_value_digest",
+      "category": "failure_state_ledger_binding",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4IdentityError",
+      "message": "failure is not bound to this operation and observed state",
+      "passed": true
+    },
+    {
+      "case": "negative_state:prestate:authoritative",
+      "category": "failure_state_ledger_binding",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4IdentityError",
+      "message": "failure is not bound to this operation and observed state",
+      "passed": true
+    },
+    {
+      "case": "negative_state:poststate:step_index",
+      "category": "failure_state_ledger_binding",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4IdentityError",
+      "message": "result model or clock disagrees with observed state",
+      "passed": true
+    },
+    {
+      "case": "negative_state:poststate:time",
+      "category": "failure_state_ledger_binding",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4IdentityError",
+      "message": "result model or clock disagrees with observed state",
+      "passed": true
+    },
+    {
+      "case": "negative_state:poststate:Q_target",
+      "category": "failure_state_ledger_binding",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4IdentityError",
+      "message": "failure is not bound to this operation and observed state",
+      "passed": true
+    },
+    {
+      "case": "negative_state:poststate:context_value_digest",
+      "category": "failure_state_ledger_binding",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4IdentityError",
+      "message": "failure is not bound to this operation and observed state",
+      "passed": true
+    },
+    {
+      "case": "negative_state:poststate:authoritative",
+      "category": "failure_state_ledger_binding",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4IdentityError",
+      "message": "failure is not bound to this operation and observed state",
+      "passed": true
+    },
+    {
+      "case": "negative_observation:observed_stage",
+      "category": "failure_state_ledger_binding",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4IdentityError",
+      "message": "failure is not bound to this operation and observed state",
+      "passed": true
+    },
+    {
+      "case": "negative_observation:observed_code",
+      "category": "failure_state_ledger_binding",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4IdentityError",
+      "message": "failure is not bound to this operation and observed state",
+      "passed": true
+    },
+    {
+      "case": "negative_observation:observed_solver",
+      "category": "failure_state_ledger_binding",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4IdentityError",
+      "message": "result differs from observed solver disposition",
+      "passed": true
+    },
+    {
+      "case": "negative_observation:commit_payload",
+      "category": "failure_state_ledger_binding",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "rejected operation cannot have a commit payload",
+      "passed": true
+    },
+    {
+      "case": "negative_observation:request",
+      "category": "failure_state_ledger_binding",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4IdentityError",
+      "message": "failure is not bound to this operation and observed state",
+      "passed": true
+    },
+    {
+      "case": "negative_ledger:clear",
+      "category": "failure_state_ledger_binding",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4IdentityError",
+      "message": "failure is not bound to this operation and observed state",
+      "passed": true
+    },
+    {
+      "case": "negative_ledger:append_failure",
+      "category": "failure_state_ledger_binding",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "failure receipt is not a persistent ledger entry",
+      "passed": true
+    },
+    {
+      "case": "negative_ledger:duplicate",
+      "category": "failure_state_ledger_binding",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4IdentityError",
+      "message": "failure is not bound to this operation and observed state",
+      "passed": true
+    },
+    {
+      "case": "negative_ledger:commit_only",
+      "category": "failure_state_ledger_binding",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4IdentityError",
+      "message": "rejected operation changed scientific payload or persistent ledger",
+      "passed": true
+    },
+    {
+      "case": "negative_ledger:replace",
+      "category": "failure_state_ledger_binding",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4IdentityError",
+      "message": "step_commit_receipt_identity_payload: supplied identity does not match payload",
+      "passed": true
+    },
+    {
+      "case": "negative_prefix:0",
+      "category": "duration_prefix",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true
+    },
+    {
+      "case": "negative_prefix:1",
+      "category": "duration_prefix",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true
+    },
+    {
+      "case": "negative_prefix:2",
+      "category": "duration_prefix",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true
+    },
+    {
+      "case": "negative_prefix:3",
+      "category": "duration_prefix",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true
+    },
+    {
+      "case": "negative_prefix:4",
+      "category": "duration_prefix",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true
+    },
+    {
+      "case": "negative_prefix:5",
+      "category": "duration_prefix",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true
+    },
+    {
+      "case": "negative_prefix:6",
+      "category": "duration_prefix",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "nonnegative request still requires full step admission/execution",
+      "passed": true
+    },
+    {
+      "case": "negative_prefix:7",
+      "category": "duration_prefix",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "nonnegative request still requires full step admission/execution",
+      "passed": true
+    },
+    {
+      "case": "negative_prefix:8",
+      "category": "duration_prefix",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "nonnegative request still requires full step admission/execution",
+      "passed": true
+    },
+    {
+      "case": "negative_prefix:9",
+      "category": "duration_prefix",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "nonnegative request still requires full step admission/execution",
+      "passed": true
+    },
+    {
+      "case": "negative_prefix:10",
+      "category": "duration_prefix",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "nonnegative request still requires full step admission/execution",
+      "passed": true
+    },
+    {
+      "case": "failure_receipt_not_request_identity:0",
+      "category": "duration_prefix",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true
+    },
+    {
+      "case": "failure_receipt_not_request_identity:1",
+      "category": "duration_prefix",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true
+    },
+    {
+      "case": "failure_receipt_not_request_identity:2",
+      "category": "duration_prefix",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true
+    },
+    {
+      "case": "failure_receipt_not_request_identity:3",
+      "category": "duration_prefix",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true
+    },
+    {
+      "case": "failure_receipt_not_request_identity:4",
+      "category": "duration_prefix",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true
+    },
+    {
+      "case": "failure_receipt_not_request_identity:5",
+      "category": "duration_prefix",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true
+    },
+    {
+      "case": "failure_receipt_not_request_identity:6",
+      "category": "duration_prefix",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true
+    },
+    {
+      "case": "failure_receipt_not_request_identity:7",
+      "category": "duration_prefix",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true
+    },
+    {
+      "case": "rehashed_core_mismatch:operation_id",
+      "category": "commit_receipt_binding",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4IdentityError",
+      "message": "foreign operation receipt",
+      "passed": true
+    },
+    {
+      "case": "rehashed_core_mismatch:source_state_digest",
+      "category": "commit_receipt_binding",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4IdentityError",
+      "message": "receipt core differs from observed state",
+      "passed": true
+    },
+    {
+      "case": "rehashed_core_mismatch:source_graph_digest",
+      "category": "commit_receipt_binding",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4IdentityError",
+      "message": "receipt core differs from observed state",
+      "passed": true
+    },
+    {
+      "case": "rehashed_core_mismatch:source_model_identity",
+      "category": "commit_receipt_binding",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4IdentityError",
+      "message": "receipt core differs from observed state",
+      "passed": true
+    },
+    {
+      "case": "rehashed_core_mismatch:source_authoritative_digest",
+      "category": "commit_receipt_binding",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4IdentityError",
+      "message": "receipt core differs from observed state",
+      "passed": true
+    },
+    {
+      "case": "rehashed_core_mismatch:source_reset_digest",
+      "category": "commit_receipt_binding",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4IdentityError",
+      "message": "receipt core differs from observed state",
+      "passed": true
+    },
+    {
+      "case": "rehashed_core_mismatch:target_state_digest",
+      "category": "commit_receipt_binding",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4IdentityError",
+      "message": "receipt core differs from observed state",
+      "passed": true
+    },
+    {
+      "case": "rehashed_core_mismatch:target_graph_digest",
+      "category": "commit_receipt_binding",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4IdentityError",
+      "message": "receipt core differs from observed state",
+      "passed": true
+    },
+    {
+      "case": "rehashed_core_mismatch:target_model_identity",
+      "category": "commit_receipt_binding",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4IdentityError",
+      "message": "receipt core differs from observed state",
+      "passed": true
+    },
+    {
+      "case": "rehashed_core_mismatch:target_authoritative_digest",
+      "category": "commit_receipt_binding",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4IdentityError",
+      "message": "receipt core differs from observed state",
+      "passed": true
+    },
+    {
+      "case": "rehashed_core_mismatch:target_reset_digest",
+      "category": "commit_receipt_binding",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4IdentityError",
+      "message": "receipt core differs from observed state",
+      "passed": true
+    },
+    {
+      "case": "rehashed_commit_mismatch:operation_id",
+      "category": "commit_receipt_binding",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4IdentityError",
+      "message": "commit does not name this operation/state/ordered receipt delta",
+      "passed": true
+    },
+    {
+      "case": "rehashed_commit_mismatch:source_state_digest",
+      "category": "commit_receipt_binding",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4IdentityError",
+      "message": "commit does not name this operation/state/ordered receipt delta",
+      "passed": true
+    },
+    {
+      "case": "rehashed_commit_mismatch:target_state_digest",
+      "category": "commit_receipt_binding",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4IdentityError",
+      "message": "commit does not name this operation/state/ordered receipt delta",
+      "passed": true
+    },
+    {
+      "case": "rehashed_commit_mismatch:target_step_index",
+      "category": "commit_receipt_binding",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4IdentityError",
+      "message": "commit does not name this operation/state/ordered receipt delta",
+      "passed": true
+    },
+    {
+      "case": "rehashed_commit_mismatch:target_time",
+      "category": "commit_receipt_binding",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4IdentityError",
+      "message": "commit does not name this operation/state/ordered receipt delta",
+      "passed": true
+    },
+    {
+      "case": "rehashed_commit_mismatch:emitted_receipt_ids",
+      "category": "commit_receipt_binding",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4IdentityError",
+      "message": "commit does not name this operation/state/ordered receipt delta",
+      "passed": true
+    },
+    {
+      "case": "ordinary_lifecycle_change:active_model_identity",
+      "category": "commit_receipt_binding",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4IdentityError",
+      "message": "ordinary step cannot change lifecycle identity",
+      "passed": true
+    },
+    {
+      "case": "ordinary_lifecycle_change:graph_digest",
+      "category": "commit_receipt_binding",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4IdentityError",
+      "message": "ordinary step cannot change lifecycle identity",
+      "passed": true
+    },
+    {
+      "case": "ordinary_lifecycle_change:orientation_identity",
+      "category": "commit_receipt_binding",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4IdentityError",
+      "message": "ordinary step cannot change lifecycle identity",
+      "passed": true
+    },
+    {
+      "case": "ordinary_lifecycle_change:reset_digest",
+      "category": "commit_receipt_binding",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4IdentityError",
+      "message": "ordinary step cannot change lifecycle identity",
+      "passed": true
+    },
+    {
+      "case": "ordinary_lifecycle_change:context_contract_id",
+      "category": "commit_receipt_binding",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4IdentityError",
+      "message": "ordinary step cannot change lifecycle identity",
+      "passed": true
+    },
+    {
+      "case": "positive_ledger:missing",
+      "category": "commit_receipt_binding",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4IdentityError",
+      "message": "persistent ledger is not prior history plus this operation delta",
+      "passed": true
+    },
+    {
+      "case": "positive_ledger:reordered",
+      "category": "commit_receipt_binding",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4IdentityError",
+      "message": "persistent ledger is not prior history plus this operation delta",
+      "passed": true
+    },
+    {
+      "case": "positive_ledger:duplicated",
+      "category": "commit_receipt_binding",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4IdentityError",
+      "message": "persistent ledger is not prior history plus this operation delta",
+      "passed": true
+    },
+    {
+      "case": "positive_ledger:prior_commit_changed",
+      "category": "commit_receipt_binding",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4IdentityError",
+      "message": "persistent ledger is not prior history plus this operation delta",
+      "passed": true
+    },
+    {
+      "case": "positive_ledger:foreign_failure",
+      "category": "commit_receipt_binding",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "failure receipt is not a persistent ledger entry",
+      "passed": true
+    },
+    {
+      "case": "event_all_links_valid",
+      "category": "event_binding",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true
+    },
+    {
+      "case": "event_link:source_graph_digest:missing",
+      "category": "event_binding",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4IdentityError",
+      "message": "event lacks this operation's graph/profile/commit bindings",
+      "passed": true
+    },
+    {
+      "case": "event_link:source_graph_digest:wrong",
+      "category": "event_binding",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4IdentityError",
+      "message": "event lacks this operation's graph/profile/commit bindings",
+      "passed": true
+    },
+    {
+      "case": "event_link:source_graph_digest:bool",
+      "category": "event_binding",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4IdentityError",
+      "message": "event lacks this operation's graph/profile/commit bindings",
+      "passed": true
+    },
+    {
+      "case": "event_link:source_graph_digest:none",
+      "category": "event_binding",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4IdentityError",
+      "message": "event lacks this operation's graph/profile/commit bindings",
+      "passed": true
+    },
+    {
+      "case": "event_link:target_graph_digest:missing",
+      "category": "event_binding",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4IdentityError",
+      "message": "event lacks this operation's graph/profile/commit bindings",
+      "passed": true
+    },
+    {
+      "case": "event_link:target_graph_digest:wrong",
+      "category": "event_binding",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4IdentityError",
+      "message": "event lacks this operation's graph/profile/commit bindings",
+      "passed": true
+    },
+    {
+      "case": "event_link:target_graph_digest:bool",
+      "category": "event_binding",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4IdentityError",
+      "message": "event lacks this operation's graph/profile/commit bindings",
+      "passed": true
+    },
+    {
+      "case": "event_link:target_graph_digest:none",
+      "category": "event_binding",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4IdentityError",
+      "message": "event lacks this operation's graph/profile/commit bindings",
+      "passed": true
+    },
+    {
+      "case": "event_link:source_model_identity:missing",
+      "category": "event_binding",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4IdentityError",
+      "message": "event lacks this operation's graph/profile/commit bindings",
+      "passed": true
+    },
+    {
+      "case": "event_link:source_model_identity:wrong",
+      "category": "event_binding",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4IdentityError",
+      "message": "event lacks this operation's graph/profile/commit bindings",
+      "passed": true
+    },
+    {
+      "case": "event_link:source_model_identity:bool",
+      "category": "event_binding",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4IdentityError",
+      "message": "event lacks this operation's graph/profile/commit bindings",
+      "passed": true
+    },
+    {
+      "case": "event_link:source_model_identity:none",
+      "category": "event_binding",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4IdentityError",
+      "message": "event lacks this operation's graph/profile/commit bindings",
+      "passed": true
+    },
+    {
+      "case": "event_link:target_model_identity:missing",
+      "category": "event_binding",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4IdentityError",
+      "message": "event lacks this operation's graph/profile/commit bindings",
+      "passed": true
+    },
+    {
+      "case": "event_link:target_model_identity:wrong",
+      "category": "event_binding",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4IdentityError",
+      "message": "event lacks this operation's graph/profile/commit bindings",
+      "passed": true
+    },
+    {
+      "case": "event_link:target_model_identity:bool",
+      "category": "event_binding",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4IdentityError",
+      "message": "event lacks this operation's graph/profile/commit bindings",
+      "passed": true
+    },
+    {
+      "case": "event_link:target_model_identity:none",
+      "category": "event_binding",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4IdentityError",
+      "message": "event lacks this operation's graph/profile/commit bindings",
+      "passed": true
+    },
+    {
+      "case": "event_link:receipt_id:missing",
+      "category": "event_binding",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4IdentityError",
+      "message": "event must name an emitted successful receipt",
+      "passed": true
+    },
+    {
+      "case": "event_link:receipt_id:wrong",
+      "category": "event_binding",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4IdentityError",
+      "message": "event must name an emitted successful receipt",
+      "passed": true
+    },
+    {
+      "case": "event_link:receipt_id:bool",
+      "category": "event_binding",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4IdentityError",
+      "message": "event must name an emitted successful receipt",
+      "passed": true
+    },
+    {
+      "case": "event_link:receipt_id:none",
+      "category": "event_binding",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4IdentityError",
+      "message": "event must name an emitted successful receipt",
+      "passed": true
+    },
+    {
+      "case": "event_link:commit_id:missing",
+      "category": "event_binding",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4IdentityError",
+      "message": "event lacks this operation's graph/profile/commit bindings",
+      "passed": true
+    },
+    {
+      "case": "event_link:commit_id:wrong",
+      "category": "event_binding",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4IdentityError",
+      "message": "event lacks this operation's graph/profile/commit bindings",
+      "passed": true
+    },
+    {
+      "case": "event_link:commit_id:bool",
+      "category": "event_binding",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4IdentityError",
+      "message": "event lacks this operation's graph/profile/commit bindings",
+      "passed": true
+    },
+    {
+      "case": "event_link:commit_id:none",
+      "category": "event_binding",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4IdentityError",
+      "message": "event lacks this operation's graph/profile/commit bindings",
+      "passed": true
+    },
+    {
+      "case": "event_link:source_profile_id:missing",
+      "category": "event_binding",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4IdentityError",
+      "message": "event lacks this operation's graph/profile/commit bindings",
+      "passed": true
+    },
+    {
+      "case": "event_link:source_profile_id:wrong",
+      "category": "event_binding",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4IdentityError",
+      "message": "event lacks this operation's graph/profile/commit bindings",
+      "passed": true
+    },
+    {
+      "case": "event_link:source_profile_id:bool",
+      "category": "event_binding",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4IdentityError",
+      "message": "event lacks this operation's graph/profile/commit bindings",
+      "passed": true
+    },
+    {
+      "case": "event_link:source_profile_id:none",
+      "category": "event_binding",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4IdentityError",
+      "message": "event lacks this operation's graph/profile/commit bindings",
+      "passed": true
+    },
+    {
+      "case": "event_link:target_profile_id:missing",
+      "category": "event_binding",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4IdentityError",
+      "message": "event lacks this operation's graph/profile/commit bindings",
+      "passed": true
+    },
+    {
+      "case": "event_link:target_profile_id:wrong",
+      "category": "event_binding",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4IdentityError",
+      "message": "event lacks this operation's graph/profile/commit bindings",
+      "passed": true
+    },
+    {
+      "case": "event_link:target_profile_id:bool",
+      "category": "event_binding",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4IdentityError",
+      "message": "event lacks this operation's graph/profile/commit bindings",
+      "passed": true
+    },
+    {
+      "case": "event_link:target_profile_id:none",
+      "category": "event_binding",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4IdentityError",
+      "message": "event lacks this operation's graph/profile/commit bindings",
+      "passed": true
+    },
+    {
+      "case": "event_clock:0",
+      "category": "event_binding",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4IdentityError",
+      "message": "event lacks this operation's graph/profile/commit bindings",
+      "passed": true
+    },
+    {
+      "case": "event_clock:3",
+      "category": "event_binding",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4IdentityError",
+      "message": "event lacks this operation's graph/profile/commit bindings",
+      "passed": true
+    },
+    {
+      "case": "event_clock:5",
+      "category": "event_binding",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4IdentityError",
+      "message": "event lacks this operation's graph/profile/commit bindings",
+      "passed": true
+    },
+    {
+      "case": "event_clock:9007199254740991",
+      "category": "event_binding",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4IdentityError",
+      "message": "event lacks this operation's graph/profile/commit bindings",
+      "passed": true
+    },
+    {
+      "case": "event_points_to_old_receipt",
+      "category": "event_binding",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4IdentityError",
+      "message": "event must name an emitted successful receipt",
+      "passed": true
+    },
+    {
+      "case": "loss_order_valid:",
+      "category": "receipt_shape_only",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true
+    },
+    {
+      "case": "loss_order_valid:candidate_history_loss",
+      "category": "receipt_shape_only",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true
+    },
+    {
+      "case": "loss_order_valid:carrier_history_loss",
+      "category": "receipt_shape_only",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true
+    },
+    {
+      "case": "loss_order_valid:v4_surface_projection",
+      "category": "receipt_shape_only",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true
+    },
+    {
+      "case": "loss_order_valid:whole_state_delegate_crossing",
+      "category": "receipt_shape_only",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true
+    },
+    {
+      "case": "loss_order_valid:candidate_history_loss,carrier_history_loss",
+      "category": "receipt_shape_only",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true
+    },
+    {
+      "case": "loss_order_valid:candidate_history_loss,v4_surface_projection",
+      "category": "receipt_shape_only",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true
+    },
+    {
+      "case": "loss_order_valid:candidate_history_loss,whole_state_delegate_crossing",
+      "category": "receipt_shape_only",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true
+    },
+    {
+      "case": "loss_order_valid:carrier_history_loss,v4_surface_projection",
+      "category": "receipt_shape_only",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true
+    },
+    {
+      "case": "loss_order_valid:carrier_history_loss,whole_state_delegate_crossing",
+      "category": "receipt_shape_only",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true
+    },
+    {
+      "case": "loss_order_valid:v4_surface_projection,whole_state_delegate_crossing",
+      "category": "receipt_shape_only",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true
+    },
+    {
+      "case": "loss_order_valid:candidate_history_loss,carrier_history_loss,v4_surface_projection",
+      "category": "receipt_shape_only",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true
+    },
+    {
+      "case": "loss_order_valid:candidate_history_loss,carrier_history_loss,whole_state_delegate_crossing",
+      "category": "receipt_shape_only",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true
+    },
+    {
+      "case": "loss_order_valid:candidate_history_loss,v4_surface_projection,whole_state_delegate_crossing",
+      "category": "receipt_shape_only",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true
+    },
+    {
+      "case": "loss_order_valid:carrier_history_loss,v4_surface_projection,whole_state_delegate_crossing",
+      "category": "receipt_shape_only",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true
+    },
+    {
+      "case": "loss_order_valid:candidate_history_loss,carrier_history_loss,v4_surface_projection,whole_state_delegate_crossing",
+      "category": "receipt_shape_only",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true
+    },
+    {
+      "case": "loss_order_invalid:none",
+      "category": "receipt_shape_only",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "step_result/emitted_receipts/0: {'schema_version': 'grcv4-successful-receipt-envelope-v1', 'receipt_id': 'grc-receipt-sha256:eef3e0cf4a75f5f93f55ba8504e08a26a126e8f775c200b9e56e86596649d666', 'commit_id': 'grc-commit-sha256:cd55378af9e2b95502e872508f0ab30565e15846f438a70de4c22c82e93e457f', 'identity_payload': {'schema_version': 'grcv4-step-commit-receipt-v1', 'core': {'operation_id': 'audit:step', 'actual_charge_delta': 0, 'information_losses': ['none'], 'disposition': 'committed', 'parent_receipt_ids': [], 'resource_transform_digest': 'grcv4-resource-transform-sha256:4444444444444444444444444444444444444444444444444444444444444444', 'history_bundle_digest': 'grcv4-history-map-sha256:5555555555555555555555555555555555555555555555555555555555555555', 'source_state_digest': 'grcv4-state-sha256:30f180d7c4fe56cb477e5142c3f13cdef4810a9c73e8b4783176541a2a907f2f', 'source_graph_digest': 'grc-graph-sha256:2222222222222222222222222222222222222222222222222222222222222222', 'source_model_identity': 'grcv4-profile-sha256:1111111111111111111111111111111111111111111111111111111111111111', 'source_reset_digest': 'grcv4-reset-sha256:3333333333333333333333333333333333333333333333333333333333333333', 'source_authoritative_digest': 'grcv4-authoritative-sha256:b84e289e007d9a7b5611b75e47004ad9856b7fad9510df70ba0132886a38b376', 'target_state_digest': 'grcv4-state-sha256:11a9e62f54fc566f8d5e0bbfc75165d5f3652337368a65e1cfec660e0c535bc7', 'target_graph_digest': 'grc-graph-sha256:2222222222222222222222222222222222222222222222222222222222222222', 'target_model_identity': 'grcv4-profile-sha256:1111111111111111111111111111111111111111111111111111111111111111', 'target_reset_digest': 'grcv4-reset-sha256:3333333333333333333333333333333333333333333333333333333333333333', 'target_authoritative_digest': 'grcv4-authoritative-sha256:b8d98683f23c0edca443475f1cdb8bcedcb47fda46b4f9bf0ac303f499d6af69'}}} is not valid under any of the given schemas",
+      "passed": true
+    },
+    {
+      "case": "loss_order_invalid:candidate_history_loss,candidate_history_loss",
+      "category": "receipt_shape_only",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "step_result/emitted_receipts/0: {'schema_version': 'grcv4-successful-receipt-envelope-v1', 'receipt_id': 'grc-receipt-sha256:e4fa167d5bc3fb8387467f8f8c540353acd64d804a4347978d234347d2fffc42', 'commit_id': 'grc-commit-sha256:0c78fc8e3cfb28f5ad77035d4b15b1f054efe69cfb92d1c519a5209c400e6864', 'identity_payload': {'schema_version': 'grcv4-step-commit-receipt-v1', 'core': {'operation_id': 'audit:step', 'actual_charge_delta': 0, 'information_losses': ['candidate_history_loss', 'candidate_history_loss'], 'disposition': 'committed', 'parent_receipt_ids': [], 'resource_transform_digest': 'grcv4-resource-transform-sha256:4444444444444444444444444444444444444444444444444444444444444444', 'history_bundle_digest': 'grcv4-history-map-sha256:5555555555555555555555555555555555555555555555555555555555555555', 'source_state_digest': 'grcv4-state-sha256:30f180d7c4fe56cb477e5142c3f13cdef4810a9c73e8b4783176541a2a907f2f', 'source_graph_digest': 'grc-graph-sha256:2222222222222222222222222222222222222222222222222222222222222222', 'source_model_identity': 'grcv4-profile-sha256:1111111111111111111111111111111111111111111111111111111111111111', 'source_reset_digest': 'grcv4-reset-sha256:3333333333333333333333333333333333333333333333333333333333333333', 'source_authoritative_digest': 'grcv4-authoritative-sha256:b84e289e007d9a7b5611b75e47004ad9856b7fad9510df70ba0132886a38b376', 'target_state_digest': 'grcv4-state-sha256:11a9e62f54fc566f8d5e0bbfc75165d5f3652337368a65e1cfec660e0c535bc7', 'target_graph_digest': 'grc-graph-sha256:2222222222222222222222222222222222222222222222222222222222222222', 'target_model_identity': 'grcv4-profile-sha256:1111111111111111111111111111111111111111111111111111111111111111', 'target_reset_digest': 'grcv4-reset-sha256:3333333333333333333333333333333333333333333333333333333333333333', 'target_authoritative_digest': 'grcv4-authoritative-sha256:b8d98683f23c0edca443475f1cdb8bcedcb47fda46b4f9bf0ac303f499d6af69'}}} is not valid under any of the given schemas",
+      "passed": true
+    },
+    {
+      "case": "loss_order_invalid:carrier_history_loss,candidate_history_loss",
+      "category": "receipt_shape_only",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "step_result/emitted_receipts/0: {'schema_version': 'grcv4-successful-receipt-envelope-v1', 'receipt_id': 'grc-receipt-sha256:5840313be9415ea5a4d0467e30352f48ae1232545180c78fdac64a9fc318e02e', 'commit_id': 'grc-commit-sha256:35f8915df1be19d35698da70b2e3f2d48b6df89481f1f3624ebae4e8bf018dd6', 'identity_payload': {'schema_version': 'grcv4-step-commit-receipt-v1', 'core': {'operation_id': 'audit:step', 'actual_charge_delta': 0, 'information_losses': ['carrier_history_loss', 'candidate_history_loss'], 'disposition': 'committed', 'parent_receipt_ids': [], 'resource_transform_digest': 'grcv4-resource-transform-sha256:4444444444444444444444444444444444444444444444444444444444444444', 'history_bundle_digest': 'grcv4-history-map-sha256:5555555555555555555555555555555555555555555555555555555555555555', 'source_state_digest': 'grcv4-state-sha256:30f180d7c4fe56cb477e5142c3f13cdef4810a9c73e8b4783176541a2a907f2f', 'source_graph_digest': 'grc-graph-sha256:2222222222222222222222222222222222222222222222222222222222222222', 'source_model_identity': 'grcv4-profile-sha256:1111111111111111111111111111111111111111111111111111111111111111', 'source_reset_digest': 'grcv4-reset-sha256:3333333333333333333333333333333333333333333333333333333333333333', 'source_authoritative_digest': 'grcv4-authoritative-sha256:b84e289e007d9a7b5611b75e47004ad9856b7fad9510df70ba0132886a38b376', 'target_state_digest': 'grcv4-state-sha256:11a9e62f54fc566f8d5e0bbfc75165d5f3652337368a65e1cfec660e0c535bc7', 'target_graph_digest': 'grc-graph-sha256:2222222222222222222222222222222222222222222222222222222222222222', 'target_model_identity': 'grcv4-profile-sha256:1111111111111111111111111111111111111111111111111111111111111111', 'target_reset_digest': 'grcv4-reset-sha256:3333333333333333333333333333333333333333333333333333333333333333', 'target_authoritative_digest': 'grcv4-authoritative-sha256:b8d98683f23c0edca443475f1cdb8bcedcb47fda46b4f9bf0ac303f499d6af69'}}} is not valid under any of the given schemas",
+      "passed": true
+    },
+    {
+      "case": "loss_order_invalid:v4_surface_projection,candidate_history_loss",
+      "category": "receipt_shape_only",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "step_result/emitted_receipts/0: {'schema_version': 'grcv4-successful-receipt-envelope-v1', 'receipt_id': 'grc-receipt-sha256:82540dad888ffb22e640b1c127f0113644dfbf3c28cc215d5779987c3ca39e4f', 'commit_id': 'grc-commit-sha256:20018e8eb868fa2b64678da153e9fdbbcf94df4a5ae9102a39476d8d69d0e514', 'identity_payload': {'schema_version': 'grcv4-step-commit-receipt-v1', 'core': {'operation_id': 'audit:step', 'actual_charge_delta': 0, 'information_losses': ['v4_surface_projection', 'candidate_history_loss'], 'disposition': 'committed', 'parent_receipt_ids': [], 'resource_transform_digest': 'grcv4-resource-transform-sha256:4444444444444444444444444444444444444444444444444444444444444444', 'history_bundle_digest': 'grcv4-history-map-sha256:5555555555555555555555555555555555555555555555555555555555555555', 'source_state_digest': 'grcv4-state-sha256:30f180d7c4fe56cb477e5142c3f13cdef4810a9c73e8b4783176541a2a907f2f', 'source_graph_digest': 'grc-graph-sha256:2222222222222222222222222222222222222222222222222222222222222222', 'source_model_identity': 'grcv4-profile-sha256:1111111111111111111111111111111111111111111111111111111111111111', 'source_reset_digest': 'grcv4-reset-sha256:3333333333333333333333333333333333333333333333333333333333333333', 'source_authoritative_digest': 'grcv4-authoritative-sha256:b84e289e007d9a7b5611b75e47004ad9856b7fad9510df70ba0132886a38b376', 'target_state_digest': 'grcv4-state-sha256:11a9e62f54fc566f8d5e0bbfc75165d5f3652337368a65e1cfec660e0c535bc7', 'target_graph_digest': 'grc-graph-sha256:2222222222222222222222222222222222222222222222222222222222222222', 'target_model_identity': 'grcv4-profile-sha256:1111111111111111111111111111111111111111111111111111111111111111', 'target_reset_digest': 'grcv4-reset-sha256:3333333333333333333333333333333333333333333333333333333333333333', 'target_authoritative_digest': 'grcv4-authoritative-sha256:b8d98683f23c0edca443475f1cdb8bcedcb47fda46b4f9bf0ac303f499d6af69'}}} is not valid under any of the given schemas",
+      "passed": true
+    },
+    {
+      "case": "loss_order_invalid:whole_state_delegate_crossing,candidate_history_loss",
+      "category": "receipt_shape_only",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "step_result/emitted_receipts/0: {'schema_version': 'grcv4-successful-receipt-envelope-v1', 'receipt_id': 'grc-receipt-sha256:3ff64384af053da2ee4bb65aca28f629e515dbf458b4aeb591efb3973a7fa512', 'commit_id': 'grc-commit-sha256:8448761bf431ccfea3d3ac29970c2e8b14fde38006e1c669e1ed1f45004862ae', 'identity_payload': {'schema_version': 'grcv4-step-commit-receipt-v1', 'core': {'operation_id': 'audit:step', 'actual_charge_delta': 0, 'information_losses': ['whole_state_delegate_crossing', 'candidate_history_loss'], 'disposition': 'committed', 'parent_receipt_ids': [], 'resource_transform_digest': 'grcv4-resource-transform-sha256:4444444444444444444444444444444444444444444444444444444444444444', 'history_bundle_digest': 'grcv4-history-map-sha256:5555555555555555555555555555555555555555555555555555555555555555', 'source_state_digest': 'grcv4-state-sha256:30f180d7c4fe56cb477e5142c3f13cdef4810a9c73e8b4783176541a2a907f2f', 'source_graph_digest': 'grc-graph-sha256:2222222222222222222222222222222222222222222222222222222222222222', 'source_model_identity': 'grcv4-profile-sha256:1111111111111111111111111111111111111111111111111111111111111111', 'source_reset_digest': 'grcv4-reset-sha256:3333333333333333333333333333333333333333333333333333333333333333', 'source_authoritative_digest': 'grcv4-authoritative-sha256:b84e289e007d9a7b5611b75e47004ad9856b7fad9510df70ba0132886a38b376', 'target_state_digest': 'grcv4-state-sha256:11a9e62f54fc566f8d5e0bbfc75165d5f3652337368a65e1cfec660e0c535bc7', 'target_graph_digest': 'grc-graph-sha256:2222222222222222222222222222222222222222222222222222222222222222', 'target_model_identity': 'grcv4-profile-sha256:1111111111111111111111111111111111111111111111111111111111111111', 'target_reset_digest': 'grcv4-reset-sha256:3333333333333333333333333333333333333333333333333333333333333333', 'target_authoritative_digest': 'grcv4-authoritative-sha256:b8d98683f23c0edca443475f1cdb8bcedcb47fda46b4f9bf0ac303f499d6af69'}}} is not valid under any of the given schemas",
+      "passed": true
+    },
+    {
+      "case": "loss_order_invalid:v4_surface_projection,carrier_history_loss",
+      "category": "receipt_shape_only",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "step_result/emitted_receipts/0: {'schema_version': 'grcv4-successful-receipt-envelope-v1', 'receipt_id': 'grc-receipt-sha256:7a9459c0ecfe7130f808c8de5719a49ba3e93aebae59a5911715a73347443cd2', 'commit_id': 'grc-commit-sha256:9712c5fedbec198a347a626ffd6742539c2521df6d366e94609e4f941c83eb85', 'identity_payload': {'schema_version': 'grcv4-step-commit-receipt-v1', 'core': {'operation_id': 'audit:step', 'actual_charge_delta': 0, 'information_losses': ['v4_surface_projection', 'carrier_history_loss'], 'disposition': 'committed', 'parent_receipt_ids': [], 'resource_transform_digest': 'grcv4-resource-transform-sha256:4444444444444444444444444444444444444444444444444444444444444444', 'history_bundle_digest': 'grcv4-history-map-sha256:5555555555555555555555555555555555555555555555555555555555555555', 'source_state_digest': 'grcv4-state-sha256:30f180d7c4fe56cb477e5142c3f13cdef4810a9c73e8b4783176541a2a907f2f', 'source_graph_digest': 'grc-graph-sha256:2222222222222222222222222222222222222222222222222222222222222222', 'source_model_identity': 'grcv4-profile-sha256:1111111111111111111111111111111111111111111111111111111111111111', 'source_reset_digest': 'grcv4-reset-sha256:3333333333333333333333333333333333333333333333333333333333333333', 'source_authoritative_digest': 'grcv4-authoritative-sha256:b84e289e007d9a7b5611b75e47004ad9856b7fad9510df70ba0132886a38b376', 'target_state_digest': 'grcv4-state-sha256:11a9e62f54fc566f8d5e0bbfc75165d5f3652337368a65e1cfec660e0c535bc7', 'target_graph_digest': 'grc-graph-sha256:2222222222222222222222222222222222222222222222222222222222222222', 'target_model_identity': 'grcv4-profile-sha256:1111111111111111111111111111111111111111111111111111111111111111', 'target_reset_digest': 'grcv4-reset-sha256:3333333333333333333333333333333333333333333333333333333333333333', 'target_authoritative_digest': 'grcv4-authoritative-sha256:b8d98683f23c0edca443475f1cdb8bcedcb47fda46b4f9bf0ac303f499d6af69'}}} is not valid under any of the given schemas",
+      "passed": true
+    },
+    {
+      "case": "loss_order_invalid:whole_state_delegate_crossing,carrier_history_loss",
+      "category": "receipt_shape_only",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "step_result/emitted_receipts/0: {'schema_version': 'grcv4-successful-receipt-envelope-v1', 'receipt_id': 'grc-receipt-sha256:c9f10ab7cfe1dd3f756d750b952ab9677c2ea7b51e76d4c9baaec6172235b33a', 'commit_id': 'grc-commit-sha256:b6bee2c8759d8adc8dd86962332ed0e93f575ff0bed7004cd1f255d26a16e5d0', 'identity_payload': {'schema_version': 'grcv4-step-commit-receipt-v1', 'core': {'operation_id': 'audit:step', 'actual_charge_delta': 0, 'information_losses': ['whole_state_delegate_crossing', 'carrier_history_loss'], 'disposition': 'committed', 'parent_receipt_ids': [], 'resource_transform_digest': 'grcv4-resource-transform-sha256:4444444444444444444444444444444444444444444444444444444444444444', 'history_bundle_digest': 'grcv4-history-map-sha256:5555555555555555555555555555555555555555555555555555555555555555', 'source_state_digest': 'grcv4-state-sha256:30f180d7c4fe56cb477e5142c3f13cdef4810a9c73e8b4783176541a2a907f2f', 'source_graph_digest': 'grc-graph-sha256:2222222222222222222222222222222222222222222222222222222222222222', 'source_model_identity': 'grcv4-profile-sha256:1111111111111111111111111111111111111111111111111111111111111111', 'source_reset_digest': 'grcv4-reset-sha256:3333333333333333333333333333333333333333333333333333333333333333', 'source_authoritative_digest': 'grcv4-authoritative-sha256:b84e289e007d9a7b5611b75e47004ad9856b7fad9510df70ba0132886a38b376', 'target_state_digest': 'grcv4-state-sha256:11a9e62f54fc566f8d5e0bbfc75165d5f3652337368a65e1cfec660e0c535bc7', 'target_graph_digest': 'grc-graph-sha256:2222222222222222222222222222222222222222222222222222222222222222', 'target_model_identity': 'grcv4-profile-sha256:1111111111111111111111111111111111111111111111111111111111111111', 'target_reset_digest': 'grcv4-reset-sha256:3333333333333333333333333333333333333333333333333333333333333333', 'target_authoritative_digest': 'grcv4-authoritative-sha256:b8d98683f23c0edca443475f1cdb8bcedcb47fda46b4f9bf0ac303f499d6af69'}}} is not valid under any of the given schemas",
+      "passed": true
+    },
+    {
+      "case": "loss_order_invalid:whole_state_delegate_crossing,v4_surface_projection",
+      "category": "receipt_shape_only",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "step_result/emitted_receipts/0: {'schema_version': 'grcv4-successful-receipt-envelope-v1', 'receipt_id': 'grc-receipt-sha256:31cf8e7df3b7e3d022d52c3f79924fcb62924e8b29ff3063a0c02c1c2c3550b4', 'commit_id': 'grc-commit-sha256:0f2f7dc09cb489b5ed983bf5d7d5f62cf8502a0ed3ae61538079f445ef5801e7', 'identity_payload': {'schema_version': 'grcv4-step-commit-receipt-v1', 'core': {'operation_id': 'audit:step', 'actual_charge_delta': 0, 'information_losses': ['whole_state_delegate_crossing', 'v4_surface_projection'], 'disposition': 'committed', 'parent_receipt_ids': [], 'resource_transform_digest': 'grcv4-resource-transform-sha256:4444444444444444444444444444444444444444444444444444444444444444', 'history_bundle_digest': 'grcv4-history-map-sha256:5555555555555555555555555555555555555555555555555555555555555555', 'source_state_digest': 'grcv4-state-sha256:30f180d7c4fe56cb477e5142c3f13cdef4810a9c73e8b4783176541a2a907f2f', 'source_graph_digest': 'grc-graph-sha256:2222222222222222222222222222222222222222222222222222222222222222', 'source_model_identity': 'grcv4-profile-sha256:1111111111111111111111111111111111111111111111111111111111111111', 'source_reset_digest': 'grcv4-reset-sha256:3333333333333333333333333333333333333333333333333333333333333333', 'source_authoritative_digest': 'grcv4-authoritative-sha256:b84e289e007d9a7b5611b75e47004ad9856b7fad9510df70ba0132886a38b376', 'target_state_digest': 'grcv4-state-sha256:11a9e62f54fc566f8d5e0bbfc75165d5f3652337368a65e1cfec660e0c535bc7', 'target_graph_digest': 'grc-graph-sha256:2222222222222222222222222222222222222222222222222222222222222222', 'target_model_identity': 'grcv4-profile-sha256:1111111111111111111111111111111111111111111111111111111111111111', 'target_reset_digest': 'grcv4-reset-sha256:3333333333333333333333333333333333333333333333333333333333333333', 'target_authoritative_digest': 'grcv4-authoritative-sha256:b8d98683f23c0edca443475f1cdb8bcedcb47fda46b4f9bf0ac303f499d6af69'}}} is not valid under any of the given schemas",
+      "passed": true
+    },
+    {
+      "case": "multi_receipt_forward",
+      "category": "commit_receipt_binding",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true
+    },
+    {
+      "case": "multi_receipt_reorder_not_rehashed",
+      "category": "commit_receipt_binding",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4IdentityError",
+      "message": "commit does not name this operation/state/ordered receipt delta",
+      "passed": true
+    },
+    {
+      "case": "typed_equality:True",
+      "category": "ownership",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true
+    },
+    {
+      "case": "typed_equality:False",
+      "category": "ownership",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true
+    },
+    {
+      "case": "typed_equality:False",
+      "category": "ownership",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true
+    },
+    {
+      "case": "typed_equality:{'x': True}",
+      "category": "ownership",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true
+    },
+    {
+      "case": "typed_equality:[True]",
+      "category": "ownership",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true
+    },
+    {
+      "case": "ownership:observables",
+      "category": "ownership",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true
+    },
+    {
+      "case": "ownership:events",
+      "category": "ownership",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true
+    },
+    {
+      "case": "ownership:failure",
+      "category": "ownership",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true
+    },
+    {
+      "case": "ownership:receipts",
+      "category": "ownership",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true
+    },
+    {
+      "case": "ownership:all_inputs",
+      "category": "ownership",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true
+    },
+    {
+      "case": "ownership:evidence",
+      "category": "ownership",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true
+    },
+    {
+      "case": "specialization_content:committed",
+      "category": "capability_boundary",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true,
+      "detail": "grc9v4-model-sha256:ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+    },
+    {
+      "case": "specialization_content:rejected",
+      "category": "capability_boundary",
+      "expected": "pass",
+      "actual": "accepted",
+      "passed": true,
+      "detail": "grc9v4-model-sha256:ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+    },
+    {
+      "case": "specialization_prefix_binding",
+      "category": "capability_boundary",
+      "expected": "reject",
+      "actual": "rejected",
+      "exception": "V4SchemaError",
+      "message": "specialization model/profile binding requires its later owner",
+      "passed": true
+    }
+  ],
+  "characterizations": [
+    {
+      "case": "wrong_elapsed_time",
+      "accepted": true,
+      "classification": "actual transition relation not validated by this content comparator; later owner"
+    },
+    {
+      "case": "unchanged_index",
+      "accepted": true,
+      "classification": "actual transition relation not validated by this content comparator; later owner"
+    },
+    {
+      "case": "backward_clock",
+      "accepted": true,
+      "classification": "actual transition relation not validated by this content comparator; later owner"
+    },
+    {
+      "case": "zero_dt_changed_state",
+      "accepted": true,
+      "classification": "actual transition relation not validated by this content comparator; later owner"
+    }
+  ]
+}
