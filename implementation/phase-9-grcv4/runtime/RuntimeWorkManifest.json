@@ -2,9 +2,55 @@
   "schema": "phase9_runtime_work_manifest_v1",
   "approval_digest": "cd2c52f30477e1042bb903bd0553da237ddccc9cad373afecc1a84e4e0b37ea2",
   "release_id": "grcv4-spec-release-sha256:9f4c8fe5b57b1c477d834a3e4dae3f98a2b18c70e6e7f598e3c9652170c8645f",
-  "entries": [],
+  "entries": [
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-2.1/p921-359d167b2a3a4d7888b7385e55fef42d/run.json",
+      "sha256": "29d6a0cdc8b098cc880fb06295362bea0e4a011137bb705c30481d4e8323067b",
+      "iteration_id": "P9-2.1"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-2.1/stress-audit-inputs/inputs.json",
+      "iteration_id": "P9-2.1",
+      "sha256": "f7c6c75b3262ded9cd5378edb247cfe83ca9cd6b35b1309a285e124c1d02d8cc"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-2.1/stress-correction/actual.json",
+      "iteration_id": "P9-2.1",
+      "sha256": "7f3f78bb519dc2585c8178624ef4baf19c1c3e2516c6675494f3bb076821c2fb"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-2.1/stress-correction/inputs.json",
+      "iteration_id": "P9-2.1",
+      "sha256": "21df1caa76fd6f8f8b36371492f58ffb6b6c34ff386d047497e10a79024a1708"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-2.1/stress-correction/run.json",
+      "iteration_id": "P9-2.1",
+      "sha256": "420152d728bbb78473daa29d95c4b2402489cd07e042bfaf54594cdf5d0367b6"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-2/P9-2.1-ExecutionRecord.json",
+      "sha256": "561817390d50afbd1eaf2c8ee2bc12409de9458892ae944f947eaabed66a916c",
+      "iteration_id": "P9-2.1"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-2/P9-2.1-Review.md",
+      "sha256": "014e2d06da4fffb5cf85b0dbef167bca6b8e6982ac5ed08bb81385f069edf4cf",
+      "iteration_id": "P9-2.1"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_state.py",
+      "sha256": "3807293d908e1b092388ce7890763cf107151e90fbd66b0b16f0ecced0eced54",
+      "iteration_id": "P9-2.1"
+    },
+    {
+      "path": "tests/models/test_grc_v4_state.py",
+      "sha256": "c5c0f1ab8cff6626eb11ae0078d873cdc5a420ca24ab090f68569dd5eca58cdb",
+      "iteration_id": "P9-2.1"
+    }
+  ],
   "accepted_generic_runtime_support": [],
   "admitted_specialization_support_sets": [],
   "claim_ceiling": "Exact current implementation content bindings, not review acceptance or conformance.",
-  "record_digest": "3edd4b07b77b2ee04dc1ae3f672d3ecaf3d94941e939ccd9652c7a2371aeebe7"
+  "record_digest": "e27e9f52e59155630e0f35baa83d12d7a27704a21cc3e7c999350a60e103318a"
 }

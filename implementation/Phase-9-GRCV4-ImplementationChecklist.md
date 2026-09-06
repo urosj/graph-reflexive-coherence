@@ -240,14 +240,25 @@ three bounded batches retain their own results and raw per-run manifests.
 
 ## Tranche 2. Interface, identity, and evidence foundation
 
-- [ ] P9-2.1: Implement V4-owned immutable state/result records with read-only
+- [x] P9-2.1: Implement V4-owned immutable state/result records with read-only
   common-interface projections and recursive mutation protection.
   Record symbol-level reuse/replacement decisions before consumption (§7.2).
+  [Review](./phase-9-grcv4/tranche-2/P9-2.1-Review.md) and
+  [execution](./phase-9-grcv4/tranche-2/P9-2.1-ExecutionRecord.json): R1/R2 stress
+  corrections covered by 39 ownership tests and 511 required stress probes;
+  105 unchanged core tests, Ruff and strict mypy pass. This marks
+  engineering completion; user acceptance is pending. No model/profile is
+  admitted and the broader P9-2.6 immutability/lifecycle obligations remain.
 - [ ] P9-2.2: Implement complete profile/parameter resolution and canonical
   identities against all applicable schema/preimage vectors.
   Package and hash-bind schema/identity assets for installed use (§7.1).
+  Carry P9-2.1 stress H1/H2: typed/JCS identity rather than Python equality/hash,
+  explicit codec projections rather than dataclass helpers, and wide-map
+  refreezing/equality scale checks before profile/reference-map consumption.
 - [ ] P9-2.3: Separate wire failures, semantic admission failures, and strict
   admitted requests; keep harness injection outside production identity.
+  Enforce the P9-2.1 H1 boolean/number identity boundary and exclude unsupported
+  pickle/reinitialization routes from admitted state decoding.
 - [ ] P9-2.4: Implement orthogonal operation/solver dispositions and receipt
   delta versus persistent ledger ownership.
 - [ ] P9-2.5: Create the runtime harness with independent oracles and exact

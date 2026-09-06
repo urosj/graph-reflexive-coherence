@@ -5,8 +5,9 @@ Date: 2026-09-05. Status: P9-G1 accepted; bounded implementation authorized.
 Phase 9 implements the accepted graph-generic `GRCV4` substrate, followed by
 a gated `GRC9V4` specialization. The accepted V4 specifications are the primary
 implementation source, read together with the paper and accepted investigation
-claims. P9-1.9 records the user's accepted implementation review; runtime
-implementation has not started. The companion
+claims. P9-1.9 records the user's accepted implementation review. P9-2.1 now
+implements the immutable value-record foundation, with user review pending;
+no executable profile or runtime conformance is claimed. The companion
 [checklist](./Phase-9-GRCV4-ImplementationChecklist.md) records execution;
 the [phase opening](./Phase-9-GRCV4-PhaseOpening.json) records authority,
 predecessor identities, and the completed specification merge.
@@ -313,6 +314,19 @@ runtime changes. The detailed map and selected implementation set are review
 deliverables; this plan does not invent their acceptance.
 
 ### Tranche 2. Interface, identity, and evidence foundation
+
+P9-2.1's [review](./phase-9-grcv4/tranche-2/P9-2.1-Review.md) and
+[execution record](./phase-9-grcv4/tranche-2/P9-2.1-ExecutionRecord.json) document
+the first V4-owned records and common read-only projections. Focused ownership,
+legacy core and typing checks pass. Identity/semantic admission, actual lifecycle
+execution and installed-distribution verification remain with their existing
+leaf owners; all conformance gates remain pending.
+
+P9-2.1's independent stress audit exposed and now verifies corrections to
+integral-adapter range checking and ordered-coordinate input handling. Original
+audit/subject bytes and corrected execution are retained separately. Equality
+authority, wide-map scaling and explicit codec projections are recorded with
+P9-2.2/P9-2.3/P9-2.6; those advisories do not become new scientific debt or gates.
 
 Implement immutable lifecycle-owned records, read-only common projections,
 profile/parameter resolution, deep immutability, and canonical IDs against

@@ -1,0 +1,5073 @@
+{
+  "audit_kind": "independent_P9-2.1_value_record_stress_not_runtime_conformance",
+  "python": "3.12.3 (main, Jul 15 2026, 23:46:41) [GCC 13.3.0]",
+  "platform": "Linux-7.0.0-30-generic-x86_64-with-glibc2.39",
+  "numpy": "2.4.6",
+  "source_sha256": "3807293d908e1b092388ce7890763cf107151e90fbd66b0b16f0ecced0eced54",
+  "summary": {
+    "total": 514,
+    "required_passed": 511,
+    "required_failed": 0,
+    "advisory_passed": 0,
+    "advisory_failed": 3
+  },
+  "groups": {
+    "authority_shapes": {
+      "passed": 50,
+      "total": 50
+    },
+    "common_projection": {
+      "passed": 1,
+      "total": 1
+    },
+    "json_type_equality": {
+      "passed": 0,
+      "total": 3
+    },
+    "local_shape": {
+      "passed": 17,
+      "total": 17
+    },
+    "numeric_admission": {
+      "passed": 42,
+      "total": 42
+    },
+    "numeric_ownership": {
+      "passed": 21,
+      "total": 21
+    },
+    "recursive_value_ownership": {
+      "passed": 205,
+      "total": 205
+    },
+    "result_truth_table": {
+      "passed": 144,
+      "total": 144
+    },
+    "unsafe_integer_adapter": {
+      "passed": 13,
+      "total": 13
+    },
+    "vector_container_admission": {
+      "passed": 18,
+      "total": 18
+    }
+  },
+  "characterizations": {
+    "map_dataclasses_replace": "TypeError: FrozenJSONMap.__init__() got an unexpected keyword argument '_items'",
+    "map_asdict_keys": [
+      "_items"
+    ],
+    "result_dataclasses_replace": "TypeError: GRCV4StepResult.__init__() got an unexpected keyword argument '_events'",
+    "result_asdict_keys": [
+      "step_index",
+      "time",
+      "_events",
+      "observables",
+      "active_profile_id",
+      "active_model_identity",
+      "operation_disposition",
+      "solver_disposition",
+      "committed",
+      "commit_id",
+      "failure",
+      "emitted_receipts",
+      "schema_version"
+    ],
+    "explicit_reinitialization_is_mutating": true,
+    "explicit_setstate_bypasses_freezing": true,
+    "hook_scope": "Deliberate special-method bypass, not a normal ownership-regression claim."
+  },
+  "cases": [
+    {
+      "id": "JSON-OWNERSHIP-000",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 0,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-001",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 1,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-002",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 2,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-003",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 3,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-004",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 4,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-005",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 5,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-006",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 6,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-007",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 7,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-008",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 8,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-009",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 9,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-010",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 10,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-011",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 11,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-012",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 12,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-013",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 13,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-014",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 14,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-015",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 15,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-016",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 16,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-017",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 17,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-018",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 18,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-019",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 19,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-020",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 20,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-021",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 21,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-022",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 22,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-023",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 23,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-024",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 24,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-025",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 25,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-026",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 26,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-027",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 27,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-028",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 28,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-029",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 29,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-030",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 30,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-031",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 31,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-032",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 32,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-033",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 33,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-034",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 34,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-035",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 35,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-036",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 36,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-037",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 37,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-038",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 38,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-039",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 39,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-040",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 40,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-041",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 41,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-042",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 42,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-043",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 43,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-044",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 44,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-045",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 45,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-046",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 46,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-047",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 47,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-048",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 48,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-049",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 49,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-050",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 50,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-051",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 51,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-052",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 52,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-053",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 53,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-054",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 54,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-055",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 55,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-056",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 56,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-057",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 57,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-058",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 58,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-059",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 59,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-060",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 60,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-061",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 61,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-062",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 62,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-063",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 63,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-064",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 64,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-065",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 65,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-066",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 66,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-067",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 67,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-068",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 68,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-069",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 69,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-070",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 70,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-071",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 71,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-072",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 72,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-073",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 73,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-074",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 74,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-075",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 75,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-076",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 76,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-077",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 77,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-078",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 78,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-079",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 79,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-080",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 80,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-081",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 81,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-082",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 82,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-083",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 83,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-084",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 84,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-085",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 85,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-086",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 86,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-087",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 87,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-088",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 88,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-089",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 89,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-090",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 90,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-091",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 91,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-092",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 92,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-093",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 93,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-094",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 94,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-095",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 95,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-096",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 96,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-097",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 97,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-098",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 98,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-099",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 99,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-100",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 100,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-101",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 101,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-102",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 102,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-103",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 103,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-104",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 104,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-105",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 105,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-106",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 106,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-107",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 107,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-108",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 108,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-109",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 109,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-110",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 110,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-111",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 111,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-112",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 112,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-113",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 113,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-114",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 114,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-115",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 115,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-116",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 116,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-117",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 117,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-118",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 118,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-119",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 119,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-120",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 120,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-121",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 121,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-122",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 122,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-123",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 123,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-124",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 124,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-125",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 125,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-126",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 126,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-127",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 127,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-128",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 128,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-129",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 129,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-130",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 130,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-131",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 131,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-132",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 132,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-133",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 133,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-134",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 134,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-135",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 135,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-136",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 136,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-137",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 137,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-138",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 138,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-139",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 139,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-140",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 140,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-141",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 141,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-142",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 142,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-143",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 143,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-144",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 144,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-145",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 145,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-146",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 146,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-147",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 147,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-148",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 148,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-149",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 149,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-150",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 150,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-151",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 151,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-152",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 152,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-153",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 153,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-154",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 154,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-155",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 155,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-156",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 156,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-157",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 157,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-158",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 158,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-159",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 159,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-160",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 160,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-161",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 161,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-162",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 162,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-163",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 163,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-164",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 164,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-165",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 165,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-166",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 166,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-167",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 167,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-168",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 168,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-169",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 169,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-170",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 170,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-171",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 171,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-172",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 172,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-173",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 173,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-174",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 174,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-175",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 175,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-176",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 176,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-177",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 177,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-178",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 178,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-179",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 179,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-180",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 180,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-181",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 181,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-182",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 182,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-183",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 183,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-184",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 184,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-185",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 185,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-186",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 186,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-187",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 187,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-188",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 188,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-189",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 189,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-190",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 190,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-191",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 191,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-192",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 192,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-193",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 193,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-194",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 194,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-195",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 195,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-196",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 196,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-197",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 197,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-198",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 198,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "JSON-OWNERSHIP-199",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "seed": 199,
+        "input_output_and_copy_detached": true
+      }
+    },
+    {
+      "id": "SHARED-ACYCLIC-1",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": null
+    },
+    {
+      "id": "SHARED-ACYCLIC-3",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": null
+    },
+    {
+      "id": "SHARED-ACYCLIC-8",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": null
+    },
+    {
+      "id": "SHARED-ACYCLIC-20",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": null
+    },
+    {
+      "id": "SHARED-ACYCLIC-60",
+      "group": "recursive_value_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": null
+    },
+    {
+      "id": "JSON-DUPLICATE-KEY",
+      "group": "local_shape",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "duplicate mapping key"
+      }
+    },
+    {
+      "id": "dict-cycle",
+      "group": "local_shape",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "cyclic payload is not a JSON value"
+      }
+    },
+    {
+      "id": "list-cycle",
+      "group": "local_shape",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "cyclic payload is not a JSON value"
+      }
+    },
+    {
+      "id": "mixed-cycle",
+      "group": "local_shape",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "cyclic payload is not a JSON value"
+      }
+    },
+    {
+      "id": "JSON-REJECT-nan",
+      "group": "local_shape",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "nonfinite numbers and negative zero are forbidden"
+      }
+    },
+    {
+      "id": "JSON-REJECT-inf",
+      "group": "local_shape",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "nonfinite numbers and negative zero are forbidden"
+      }
+    },
+    {
+      "id": "JSON-REJECT--inf",
+      "group": "local_shape",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "nonfinite numbers and negative zero are forbidden"
+      }
+    },
+    {
+      "id": "JSON-REJECT--0.0",
+      "group": "local_shape",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "nonfinite numbers and negative zero are forbidden"
+      }
+    },
+    {
+      "id": "JSON-REJECT-9007199254740992",
+      "group": "local_shape",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "integer outside the I-JSON safe range"
+      }
+    },
+    {
+      "id": "JSON-REJECT--9007199254740992",
+      "group": "local_shape",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "integer outside the I-JSON safe range"
+      }
+    },
+    {
+      "id": "JSON-REJECT-b'x'",
+      "group": "local_shape",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "TypeError",
+        "message": "expected JSON values; arbitrary objects are not frozen"
+      }
+    },
+    {
+      "id": "JSON-REJECT-{1}",
+      "group": "local_shape",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "TypeError",
+        "message": "expected JSON values; arbitrary objects are not frozen"
+      }
+    },
+    {
+      "id": "JSON-REJECT-<object object at 0x7df800b93e30>",
+      "group": "local_shape",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "TypeError",
+        "message": "expected JSON values; arbitrary objects are not frozen"
+      }
+    },
+    {
+      "id": "UNICODE-high_surrogate-keyTrue",
+      "group": "local_shape",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "UnicodeEncodeError",
+        "message": "'utf-8' codec can't encode character '\\ud800' in position 0: surrogates not allowed"
+      }
+    },
+    {
+      "id": "UNICODE-high_surrogate-keyFalse",
+      "group": "local_shape",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "UnicodeEncodeError",
+        "message": "'utf-8' codec can't encode character '\\ud800' in position 0: surrogates not allowed"
+      }
+    },
+    {
+      "id": "UNICODE-low_surrogate-keyTrue",
+      "group": "local_shape",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "UnicodeEncodeError",
+        "message": "'utf-8' codec can't encode character '\\udfff' in position 0: surrogates not allowed"
+      }
+    },
+    {
+      "id": "UNICODE-low_surrogate-keyFalse",
+      "group": "local_shape",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "UnicodeEncodeError",
+        "message": "'utf-8' codec can't encode character '\\udfff' in position 0: surrogates not allowed"
+      }
+    },
+    {
+      "id": "SHAPE-A-CI",
+      "group": "authority_shapes",
+      "tier": "required",
+      "pass": true,
+      "observed": null
+    },
+    {
+      "id": "SHAPE-REJECT-A-CI-current-W_A",
+      "group": "authority_shapes",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "candidate/history authority mismatch"
+      }
+    },
+    {
+      "id": "SHAPE-REJECT-A-CI-current-Z_4",
+      "group": "authority_shapes",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "realization/carrier authority mismatch"
+      }
+    },
+    {
+      "id": "SHAPE-REJECT-A-CI-reset-W_A",
+      "group": "authority_shapes",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "candidate/history authority mismatch"
+      }
+    },
+    {
+      "id": "SHAPE-REJECT-A-CI-reset-Z_4",
+      "group": "authority_shapes",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "realization/carrier authority mismatch"
+      }
+    },
+    {
+      "id": "SHAPE-A-OS",
+      "group": "authority_shapes",
+      "tier": "required",
+      "pass": true,
+      "observed": null
+    },
+    {
+      "id": "SHAPE-REJECT-A-OS-current-W_A",
+      "group": "authority_shapes",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "candidate/history authority mismatch"
+      }
+    },
+    {
+      "id": "SHAPE-REJECT-A-OS-current-Z_4",
+      "group": "authority_shapes",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "realization/carrier authority mismatch"
+      }
+    },
+    {
+      "id": "SHAPE-REJECT-A-OS-reset-W_A",
+      "group": "authority_shapes",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "candidate/history authority mismatch"
+      }
+    },
+    {
+      "id": "SHAPE-REJECT-A-OS-reset-Z_4",
+      "group": "authority_shapes",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "realization/carrier authority mismatch"
+      }
+    },
+    {
+      "id": "SHAPE-A-RG2b",
+      "group": "authority_shapes",
+      "tier": "required",
+      "pass": true,
+      "observed": null
+    },
+    {
+      "id": "SHAPE-REJECT-A-RG2b-current-W_A",
+      "group": "authority_shapes",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "candidate/history authority mismatch"
+      }
+    },
+    {
+      "id": "SHAPE-REJECT-A-RG2b-current-Z_4",
+      "group": "authority_shapes",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "realization/carrier authority mismatch"
+      }
+    },
+    {
+      "id": "SHAPE-REJECT-A-RG2b-reset-W_A",
+      "group": "authority_shapes",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "candidate/history authority mismatch"
+      }
+    },
+    {
+      "id": "SHAPE-REJECT-A-RG2b-reset-Z_4",
+      "group": "authority_shapes",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "realization/carrier authority mismatch"
+      }
+    },
+    {
+      "id": "SHAPE-A-PC",
+      "group": "authority_shapes",
+      "tier": "required",
+      "pass": true,
+      "observed": null
+    },
+    {
+      "id": "SHAPE-REJECT-A-PC-current-W_A",
+      "group": "authority_shapes",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "candidate/history authority mismatch"
+      }
+    },
+    {
+      "id": "SHAPE-REJECT-A-PC-current-Z_4",
+      "group": "authority_shapes",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "realization/carrier authority mismatch"
+      }
+    },
+    {
+      "id": "SHAPE-REJECT-A-PC-reset-W_A",
+      "group": "authority_shapes",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "candidate/history authority mismatch"
+      }
+    },
+    {
+      "id": "SHAPE-REJECT-A-PC-reset-Z_4",
+      "group": "authority_shapes",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "realization/carrier authority mismatch"
+      }
+    },
+    {
+      "id": "SHAPE-A-CI+PC",
+      "group": "authority_shapes",
+      "tier": "required",
+      "pass": true,
+      "observed": null
+    },
+    {
+      "id": "SHAPE-REJECT-A-CI+PC-current-W_A",
+      "group": "authority_shapes",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "candidate/history authority mismatch"
+      }
+    },
+    {
+      "id": "SHAPE-REJECT-A-CI+PC-current-Z_4",
+      "group": "authority_shapes",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "realization/carrier authority mismatch"
+      }
+    },
+    {
+      "id": "SHAPE-REJECT-A-CI+PC-reset-W_A",
+      "group": "authority_shapes",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "candidate/history authority mismatch"
+      }
+    },
+    {
+      "id": "SHAPE-REJECT-A-CI+PC-reset-Z_4",
+      "group": "authority_shapes",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "realization/carrier authority mismatch"
+      }
+    },
+    {
+      "id": "SHAPE-C-CI",
+      "group": "authority_shapes",
+      "tier": "required",
+      "pass": true,
+      "observed": null
+    },
+    {
+      "id": "SHAPE-REJECT-C-CI-current-W_A",
+      "group": "authority_shapes",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "candidate/history authority mismatch"
+      }
+    },
+    {
+      "id": "SHAPE-REJECT-C-CI-current-Z_4",
+      "group": "authority_shapes",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "realization/carrier authority mismatch"
+      }
+    },
+    {
+      "id": "SHAPE-REJECT-C-CI-reset-W_A",
+      "group": "authority_shapes",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "candidate/history authority mismatch"
+      }
+    },
+    {
+      "id": "SHAPE-REJECT-C-CI-reset-Z_4",
+      "group": "authority_shapes",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "realization/carrier authority mismatch"
+      }
+    },
+    {
+      "id": "SHAPE-C-OS",
+      "group": "authority_shapes",
+      "tier": "required",
+      "pass": true,
+      "observed": null
+    },
+    {
+      "id": "SHAPE-REJECT-C-OS-current-W_A",
+      "group": "authority_shapes",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "candidate/history authority mismatch"
+      }
+    },
+    {
+      "id": "SHAPE-REJECT-C-OS-current-Z_4",
+      "group": "authority_shapes",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "realization/carrier authority mismatch"
+      }
+    },
+    {
+      "id": "SHAPE-REJECT-C-OS-reset-W_A",
+      "group": "authority_shapes",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "candidate/history authority mismatch"
+      }
+    },
+    {
+      "id": "SHAPE-REJECT-C-OS-reset-Z_4",
+      "group": "authority_shapes",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "realization/carrier authority mismatch"
+      }
+    },
+    {
+      "id": "SHAPE-C-RG2b",
+      "group": "authority_shapes",
+      "tier": "required",
+      "pass": true,
+      "observed": null
+    },
+    {
+      "id": "SHAPE-REJECT-C-RG2b-current-W_A",
+      "group": "authority_shapes",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "candidate/history authority mismatch"
+      }
+    },
+    {
+      "id": "SHAPE-REJECT-C-RG2b-current-Z_4",
+      "group": "authority_shapes",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "realization/carrier authority mismatch"
+      }
+    },
+    {
+      "id": "SHAPE-REJECT-C-RG2b-reset-W_A",
+      "group": "authority_shapes",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "candidate/history authority mismatch"
+      }
+    },
+    {
+      "id": "SHAPE-REJECT-C-RG2b-reset-Z_4",
+      "group": "authority_shapes",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "realization/carrier authority mismatch"
+      }
+    },
+    {
+      "id": "SHAPE-C-PC",
+      "group": "authority_shapes",
+      "tier": "required",
+      "pass": true,
+      "observed": null
+    },
+    {
+      "id": "SHAPE-REJECT-C-PC-current-W_A",
+      "group": "authority_shapes",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "candidate/history authority mismatch"
+      }
+    },
+    {
+      "id": "SHAPE-REJECT-C-PC-current-Z_4",
+      "group": "authority_shapes",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "realization/carrier authority mismatch"
+      }
+    },
+    {
+      "id": "SHAPE-REJECT-C-PC-reset-W_A",
+      "group": "authority_shapes",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "candidate/history authority mismatch"
+      }
+    },
+    {
+      "id": "SHAPE-REJECT-C-PC-reset-Z_4",
+      "group": "authority_shapes",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "realization/carrier authority mismatch"
+      }
+    },
+    {
+      "id": "SHAPE-C-CI+PC",
+      "group": "authority_shapes",
+      "tier": "required",
+      "pass": true,
+      "observed": null
+    },
+    {
+      "id": "SHAPE-REJECT-C-CI+PC-current-W_A",
+      "group": "authority_shapes",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "candidate/history authority mismatch"
+      }
+    },
+    {
+      "id": "SHAPE-REJECT-C-CI+PC-current-Z_4",
+      "group": "authority_shapes",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "realization/carrier authority mismatch"
+      }
+    },
+    {
+      "id": "SHAPE-REJECT-C-CI+PC-reset-W_A",
+      "group": "authority_shapes",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "candidate/history authority mismatch"
+      }
+    },
+    {
+      "id": "SHAPE-REJECT-C-CI+PC-reset-Z_4",
+      "group": "authority_shapes",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "realization/carrier authority mismatch"
+      }
+    },
+    {
+      "id": "ARRAY-DETACH-C-list",
+      "group": "numeric_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": null
+    },
+    {
+      "id": "ARRAY-DETACH-C-tuple",
+      "group": "numeric_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": null
+    },
+    {
+      "id": "ARRAY-DETACH-C-array",
+      "group": "numeric_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": null
+    },
+    {
+      "id": "ARRAY-DETACH-C-memoryview-double",
+      "group": "numeric_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": null
+    },
+    {
+      "id": "ARRAY-DETACH-C-numpy-contiguous",
+      "group": "numeric_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": null
+    },
+    {
+      "id": "ARRAY-DETACH-C-numpy-strided",
+      "group": "numeric_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": null
+    },
+    {
+      "id": "ARRAY-DETACH-C-numpy-reversed",
+      "group": "numeric_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": null
+    },
+    {
+      "id": "ARRAY-DETACH-W_A-list",
+      "group": "numeric_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": null
+    },
+    {
+      "id": "ARRAY-DETACH-W_A-tuple",
+      "group": "numeric_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": null
+    },
+    {
+      "id": "ARRAY-DETACH-W_A-array",
+      "group": "numeric_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": null
+    },
+    {
+      "id": "ARRAY-DETACH-W_A-memoryview-double",
+      "group": "numeric_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": null
+    },
+    {
+      "id": "ARRAY-DETACH-W_A-numpy-contiguous",
+      "group": "numeric_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": null
+    },
+    {
+      "id": "ARRAY-DETACH-W_A-numpy-strided",
+      "group": "numeric_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": null
+    },
+    {
+      "id": "ARRAY-DETACH-W_A-numpy-reversed",
+      "group": "numeric_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": null
+    },
+    {
+      "id": "ARRAY-DETACH-Z_4-list",
+      "group": "numeric_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": null
+    },
+    {
+      "id": "ARRAY-DETACH-Z_4-tuple",
+      "group": "numeric_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": null
+    },
+    {
+      "id": "ARRAY-DETACH-Z_4-array",
+      "group": "numeric_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": null
+    },
+    {
+      "id": "ARRAY-DETACH-Z_4-memoryview-double",
+      "group": "numeric_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": null
+    },
+    {
+      "id": "ARRAY-DETACH-Z_4-numpy-contiguous",
+      "group": "numeric_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": null
+    },
+    {
+      "id": "ARRAY-DETACH-Z_4-numpy-strided",
+      "group": "numeric_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": null
+    },
+    {
+      "id": "ARRAY-DETACH-Z_4-numpy-reversed",
+      "group": "numeric_ownership",
+      "tier": "required",
+      "pass": true,
+      "observed": null
+    },
+    {
+      "id": "SCALAR-REJECT-C-nan",
+      "group": "numeric_admission",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "nonfinite numbers and negative zero are forbidden"
+      }
+    },
+    {
+      "id": "SCALAR-REJECT-C-inf",
+      "group": "numeric_admission",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "nonfinite numbers and negative zero are forbidden"
+      }
+    },
+    {
+      "id": "SCALAR-REJECT-C--inf",
+      "group": "numeric_admission",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "nonfinite numbers and negative zero are forbidden"
+      }
+    },
+    {
+      "id": "SCALAR-REJECT-C--0.0",
+      "group": "numeric_admission",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "nonfinite numbers and negative zero are forbidden"
+      }
+    },
+    {
+      "id": "SCALAR-REJECT-C-True",
+      "group": "numeric_admission",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "TypeError",
+        "message": "expected a real number, not a boolean or coercible object"
+      }
+    },
+    {
+      "id": "SCALAR-REJECT-C-'1'",
+      "group": "numeric_admission",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "TypeError",
+        "message": "expected a real number, not a boolean or coercible object"
+      }
+    },
+    {
+      "id": "SCALAR-REJECT-C-<object object at 0x7df800b93e30>",
+      "group": "numeric_admission",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "TypeError",
+        "message": "expected a real number, not a boolean or coercible object"
+      }
+    },
+    {
+      "id": "SCALAR-REJECT-C-9007199254740992",
+      "group": "numeric_admission",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "integer outside the I-JSON safe range"
+      }
+    },
+    {
+      "id": "SCALAR-REJECT-C-9007199254740993",
+      "group": "numeric_admission",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "integer outside the I-JSON safe range"
+      }
+    },
+    {
+      "id": "SCALAR-ACCEPT-C-5e-324",
+      "group": "numeric_admission",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "actual": "(5e-324,)",
+        "expected": "(5e-324,)"
+      }
+    },
+    {
+      "id": "SCALAR-ACCEPT-C-2.2250738585072014e-308",
+      "group": "numeric_admission",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "actual": "(2.2250738585072014e-308,)",
+        "expected": "(2.2250738585072014e-308,)"
+      }
+    },
+    {
+      "id": "SCALAR-ACCEPT-C-1.7976931348623157e+308",
+      "group": "numeric_admission",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "actual": "(1.7976931348623157e+308,)",
+        "expected": "(1.7976931348623157e+308,)"
+      }
+    },
+    {
+      "id": "SCALAR-ACCEPT-C-9007199254740991",
+      "group": "numeric_admission",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "actual": "(9007199254740991.0,)",
+        "expected": "(9007199254740991.0,)"
+      }
+    },
+    {
+      "id": "ZERO-ARRAY-C",
+      "group": "numeric_admission",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "actual": "(0.0,)",
+        "expected": "(0.0,)"
+      }
+    },
+    {
+      "id": "SCALAR-REJECT-W_A-nan",
+      "group": "numeric_admission",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "nonfinite numbers and negative zero are forbidden"
+      }
+    },
+    {
+      "id": "SCALAR-REJECT-W_A-inf",
+      "group": "numeric_admission",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "nonfinite numbers and negative zero are forbidden"
+      }
+    },
+    {
+      "id": "SCALAR-REJECT-W_A--inf",
+      "group": "numeric_admission",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "nonfinite numbers and negative zero are forbidden"
+      }
+    },
+    {
+      "id": "SCALAR-REJECT-W_A--0.0",
+      "group": "numeric_admission",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "nonfinite numbers and negative zero are forbidden"
+      }
+    },
+    {
+      "id": "SCALAR-REJECT-W_A-True",
+      "group": "numeric_admission",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "TypeError",
+        "message": "expected a real number, not a boolean or coercible object"
+      }
+    },
+    {
+      "id": "SCALAR-REJECT-W_A-'1'",
+      "group": "numeric_admission",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "TypeError",
+        "message": "expected a real number, not a boolean or coercible object"
+      }
+    },
+    {
+      "id": "SCALAR-REJECT-W_A-<object object at 0x7df800b93e30>",
+      "group": "numeric_admission",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "TypeError",
+        "message": "expected a real number, not a boolean or coercible object"
+      }
+    },
+    {
+      "id": "SCALAR-REJECT-W_A-9007199254740992",
+      "group": "numeric_admission",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "integer outside the I-JSON safe range"
+      }
+    },
+    {
+      "id": "SCALAR-REJECT-W_A-9007199254740993",
+      "group": "numeric_admission",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "integer outside the I-JSON safe range"
+      }
+    },
+    {
+      "id": "SCALAR-ACCEPT-W_A-5e-324",
+      "group": "numeric_admission",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "actual": "(5e-324,)",
+        "expected": "(5e-324,)"
+      }
+    },
+    {
+      "id": "SCALAR-ACCEPT-W_A-2.2250738585072014e-308",
+      "group": "numeric_admission",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "actual": "(2.2250738585072014e-308,)",
+        "expected": "(2.2250738585072014e-308,)"
+      }
+    },
+    {
+      "id": "SCALAR-ACCEPT-W_A-1.7976931348623157e+308",
+      "group": "numeric_admission",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "actual": "(1.7976931348623157e+308,)",
+        "expected": "(1.7976931348623157e+308,)"
+      }
+    },
+    {
+      "id": "SCALAR-ACCEPT-W_A-9007199254740991",
+      "group": "numeric_admission",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "actual": "(9007199254740991.0,)",
+        "expected": "(9007199254740991.0,)"
+      }
+    },
+    {
+      "id": "ZERO-ARRAY-W_A",
+      "group": "numeric_admission",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "W_A must be strictly positive"
+      }
+    },
+    {
+      "id": "SCALAR-REJECT-Z_4-nan",
+      "group": "numeric_admission",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "nonfinite numbers and negative zero are forbidden"
+      }
+    },
+    {
+      "id": "SCALAR-REJECT-Z_4-inf",
+      "group": "numeric_admission",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "nonfinite numbers and negative zero are forbidden"
+      }
+    },
+    {
+      "id": "SCALAR-REJECT-Z_4--inf",
+      "group": "numeric_admission",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "nonfinite numbers and negative zero are forbidden"
+      }
+    },
+    {
+      "id": "SCALAR-REJECT-Z_4--0.0",
+      "group": "numeric_admission",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "nonfinite numbers and negative zero are forbidden"
+      }
+    },
+    {
+      "id": "SCALAR-REJECT-Z_4-True",
+      "group": "numeric_admission",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "TypeError",
+        "message": "expected a real number, not a boolean or coercible object"
+      }
+    },
+    {
+      "id": "SCALAR-REJECT-Z_4-'1'",
+      "group": "numeric_admission",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "TypeError",
+        "message": "expected a real number, not a boolean or coercible object"
+      }
+    },
+    {
+      "id": "SCALAR-REJECT-Z_4-<object object at 0x7df800b93e30>",
+      "group": "numeric_admission",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "TypeError",
+        "message": "expected a real number, not a boolean or coercible object"
+      }
+    },
+    {
+      "id": "SCALAR-REJECT-Z_4-9007199254740992",
+      "group": "numeric_admission",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "integer outside the I-JSON safe range"
+      }
+    },
+    {
+      "id": "SCALAR-REJECT-Z_4-9007199254740993",
+      "group": "numeric_admission",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "integer outside the I-JSON safe range"
+      }
+    },
+    {
+      "id": "SCALAR-ACCEPT-Z_4-5e-324",
+      "group": "numeric_admission",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "actual": "(5e-324,)",
+        "expected": "(5e-324,)"
+      }
+    },
+    {
+      "id": "SCALAR-ACCEPT-Z_4-2.2250738585072014e-308",
+      "group": "numeric_admission",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "actual": "(2.2250738585072014e-308,)",
+        "expected": "(2.2250738585072014e-308,)"
+      }
+    },
+    {
+      "id": "SCALAR-ACCEPT-Z_4-1.7976931348623157e+308",
+      "group": "numeric_admission",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "actual": "(1.7976931348623157e+308,)",
+        "expected": "(1.7976931348623157e+308,)"
+      }
+    },
+    {
+      "id": "SCALAR-ACCEPT-Z_4-9007199254740991",
+      "group": "numeric_admission",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "actual": "(9007199254740991.0,)",
+        "expected": "(9007199254740991.0,)"
+      }
+    },
+    {
+      "id": "ZERO-ARRAY-Z_4",
+      "group": "numeric_admission",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "actual": "(0.0,)",
+        "expected": "(0.0,)"
+      }
+    },
+    {
+      "id": "UNSAFE-NUMPY-INTEGER-C-9007199254740992",
+      "group": "unsafe_integer_adapter",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "integer outside the I-JSON safe range"
+      }
+    },
+    {
+      "id": "UNSAFE-NUMPY-INTEGER-C-9007199254740993",
+      "group": "unsafe_integer_adapter",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "integer outside the I-JSON safe range"
+      }
+    },
+    {
+      "id": "UNSAFE-NUMPY-INTEGER-C-18446744073709551615",
+      "group": "unsafe_integer_adapter",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "integer outside the I-JSON safe range"
+      }
+    },
+    {
+      "id": "UNSAFE-NUMPY-INTEGER-W_A-9007199254740992",
+      "group": "unsafe_integer_adapter",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "integer outside the I-JSON safe range"
+      }
+    },
+    {
+      "id": "UNSAFE-NUMPY-INTEGER-W_A-9007199254740993",
+      "group": "unsafe_integer_adapter",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "integer outside the I-JSON safe range"
+      }
+    },
+    {
+      "id": "UNSAFE-NUMPY-INTEGER-W_A-18446744073709551615",
+      "group": "unsafe_integer_adapter",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "integer outside the I-JSON safe range"
+      }
+    },
+    {
+      "id": "UNSAFE-NUMPY-INTEGER-Z_4-9007199254740992",
+      "group": "unsafe_integer_adapter",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "integer outside the I-JSON safe range"
+      }
+    },
+    {
+      "id": "UNSAFE-NUMPY-INTEGER-Z_4-9007199254740993",
+      "group": "unsafe_integer_adapter",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "integer outside the I-JSON safe range"
+      }
+    },
+    {
+      "id": "UNSAFE-NUMPY-INTEGER-Z_4-18446744073709551615",
+      "group": "unsafe_integer_adapter",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "integer outside the I-JSON safe range"
+      }
+    },
+    {
+      "id": "UNSAFE-NUMPY-INTEGER-Z_4--9007199254740993",
+      "group": "unsafe_integer_adapter",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "integer outside the I-JSON safe range"
+      }
+    },
+    {
+      "id": "UNSAFE-NUMPY-INTEGER-Z_4--9223372036854775808",
+      "group": "unsafe_integer_adapter",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "integer outside the I-JSON safe range"
+      }
+    },
+    {
+      "id": "UNSAFE-NUMPY-INTEGER-time",
+      "group": "unsafe_integer_adapter",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "integer outside the I-JSON safe range"
+      }
+    },
+    {
+      "id": "UNSAFE-NUMPY-INTEGER-Q_target",
+      "group": "unsafe_integer_adapter",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "integer outside the I-JSON safe range"
+      }
+    },
+    {
+      "id": "BAD-VECTOR-CONTAINER-C-mapping",
+      "group": "vector_container_admission",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "TypeError",
+        "message": "coordinates require an ordered numeric sequence or view"
+      }
+    },
+    {
+      "id": "BAD-VECTOR-CONTAINER-C-set",
+      "group": "vector_container_admission",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "TypeError",
+        "message": "coordinates require an ordered numeric sequence or view"
+      }
+    },
+    {
+      "id": "BAD-VECTOR-CONTAINER-C-frozenset",
+      "group": "vector_container_admission",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "TypeError",
+        "message": "coordinates require an ordered numeric sequence or view"
+      }
+    },
+    {
+      "id": "BAD-VECTOR-CONTAINER-C-bytes",
+      "group": "vector_container_admission",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "TypeError",
+        "message": "coordinates require an ordered numeric sequence or view"
+      }
+    },
+    {
+      "id": "BAD-VECTOR-CONTAINER-C-bytearray",
+      "group": "vector_container_admission",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "TypeError",
+        "message": "coordinates require an ordered numeric sequence or view"
+      }
+    },
+    {
+      "id": "BAD-VECTOR-CONTAINER-C-empty-text",
+      "group": "vector_container_admission",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "TypeError",
+        "message": "coordinates require an ordered numeric sequence or view"
+      }
+    },
+    {
+      "id": "BAD-VECTOR-CONTAINER-W_A-mapping",
+      "group": "vector_container_admission",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "TypeError",
+        "message": "coordinates require an ordered numeric sequence or view"
+      }
+    },
+    {
+      "id": "BAD-VECTOR-CONTAINER-W_A-set",
+      "group": "vector_container_admission",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "TypeError",
+        "message": "coordinates require an ordered numeric sequence or view"
+      }
+    },
+    {
+      "id": "BAD-VECTOR-CONTAINER-W_A-frozenset",
+      "group": "vector_container_admission",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "TypeError",
+        "message": "coordinates require an ordered numeric sequence or view"
+      }
+    },
+    {
+      "id": "BAD-VECTOR-CONTAINER-W_A-bytes",
+      "group": "vector_container_admission",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "TypeError",
+        "message": "coordinates require an ordered numeric sequence or view"
+      }
+    },
+    {
+      "id": "BAD-VECTOR-CONTAINER-W_A-bytearray",
+      "group": "vector_container_admission",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "TypeError",
+        "message": "coordinates require an ordered numeric sequence or view"
+      }
+    },
+    {
+      "id": "BAD-VECTOR-CONTAINER-W_A-empty-text",
+      "group": "vector_container_admission",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "TypeError",
+        "message": "coordinates require an ordered numeric sequence or view"
+      }
+    },
+    {
+      "id": "BAD-VECTOR-CONTAINER-Z_4-mapping",
+      "group": "vector_container_admission",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "TypeError",
+        "message": "coordinates require an ordered numeric sequence or view"
+      }
+    },
+    {
+      "id": "BAD-VECTOR-CONTAINER-Z_4-set",
+      "group": "vector_container_admission",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "TypeError",
+        "message": "coordinates require an ordered numeric sequence or view"
+      }
+    },
+    {
+      "id": "BAD-VECTOR-CONTAINER-Z_4-frozenset",
+      "group": "vector_container_admission",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "TypeError",
+        "message": "coordinates require an ordered numeric sequence or view"
+      }
+    },
+    {
+      "id": "BAD-VECTOR-CONTAINER-Z_4-bytes",
+      "group": "vector_container_admission",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "TypeError",
+        "message": "coordinates require an ordered numeric sequence or view"
+      }
+    },
+    {
+      "id": "BAD-VECTOR-CONTAINER-Z_4-bytearray",
+      "group": "vector_container_admission",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "TypeError",
+        "message": "coordinates require an ordered numeric sequence or view"
+      }
+    },
+    {
+      "id": "BAD-VECTOR-CONTAINER-Z_4-empty-text",
+      "group": "vector_container_admission",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "TypeError",
+        "message": "coordinates require an ordered numeric sequence or view"
+      }
+    },
+    {
+      "id": "STEP-RESULT-False-committed-None-False-False",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent rejected step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-False-committed-None-False-True",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent rejected step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-False-committed-None-True-False",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent rejected step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-False-committed-None-True-True",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent rejected step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-False-committed-valid_root-False-False",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent rejected step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-False-committed-valid_root-False-True",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent rejected step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-False-committed-valid_root-True-False",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent rejected step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-False-committed-valid_root-True-True",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent rejected step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-False-committed-domain_failure-False-False",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent rejected step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-False-committed-domain_failure-False-True",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent rejected step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-False-committed-domain_failure-True-False",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent rejected step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-False-committed-domain_failure-True-True",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent rejected step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-False-committed-singular-False-False",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent rejected step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-False-committed-singular-False-True",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent rejected step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-False-committed-singular-True-False",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent rejected step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-False-committed-singular-True-True",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent rejected step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-False-committed-conditioning_failure-False-False",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent rejected step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-False-committed-conditioning_failure-False-True",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent rejected step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-False-committed-conditioning_failure-True-False",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent rejected step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-False-committed-conditioning_failure-True-True",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent rejected step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-False-committed-nonfinite-False-False",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent rejected step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-False-committed-nonfinite-False-True",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent rejected step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-False-committed-nonfinite-True-False",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent rejected step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-False-committed-nonfinite-True-True",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent rejected step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-False-committed-no_admitted_root-False-False",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent rejected step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-False-committed-no_admitted_root-False-True",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent rejected step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-False-committed-no_admitted_root-True-False",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent rejected step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-False-committed-no_admitted_root-True-True",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent rejected step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-False-committed-multiple_admitted_roots-False-False",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent rejected step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-False-committed-multiple_admitted_roots-False-True",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent rejected step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-False-committed-multiple_admitted_roots-True-False",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent rejected step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-False-committed-multiple_admitted_roots-True-True",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent rejected step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-False-rejected-None-False-False",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent rejected step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-False-rejected-None-False-True",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent rejected step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-False-rejected-None-True-False",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": null
+    },
+    {
+      "id": "STEP-RESULT-False-rejected-None-True-True",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent rejected step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-False-rejected-valid_root-False-False",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent rejected step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-False-rejected-valid_root-False-True",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent rejected step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-False-rejected-valid_root-True-False",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": null
+    },
+    {
+      "id": "STEP-RESULT-False-rejected-valid_root-True-True",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent rejected step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-False-rejected-domain_failure-False-False",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent rejected step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-False-rejected-domain_failure-False-True",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent rejected step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-False-rejected-domain_failure-True-False",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": null
+    },
+    {
+      "id": "STEP-RESULT-False-rejected-domain_failure-True-True",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent rejected step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-False-rejected-singular-False-False",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent rejected step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-False-rejected-singular-False-True",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent rejected step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-False-rejected-singular-True-False",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": null
+    },
+    {
+      "id": "STEP-RESULT-False-rejected-singular-True-True",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent rejected step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-False-rejected-conditioning_failure-False-False",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent rejected step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-False-rejected-conditioning_failure-False-True",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent rejected step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-False-rejected-conditioning_failure-True-False",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": null
+    },
+    {
+      "id": "STEP-RESULT-False-rejected-conditioning_failure-True-True",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent rejected step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-False-rejected-nonfinite-False-False",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent rejected step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-False-rejected-nonfinite-False-True",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent rejected step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-False-rejected-nonfinite-True-False",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": null
+    },
+    {
+      "id": "STEP-RESULT-False-rejected-nonfinite-True-True",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent rejected step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-False-rejected-no_admitted_root-False-False",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent rejected step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-False-rejected-no_admitted_root-False-True",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent rejected step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-False-rejected-no_admitted_root-True-False",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": null
+    },
+    {
+      "id": "STEP-RESULT-False-rejected-no_admitted_root-True-True",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent rejected step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-False-rejected-multiple_admitted_roots-False-False",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent rejected step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-False-rejected-multiple_admitted_roots-False-True",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent rejected step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-False-rejected-multiple_admitted_roots-True-False",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": null
+    },
+    {
+      "id": "STEP-RESULT-False-rejected-multiple_admitted_roots-True-True",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent rejected step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-True-committed-None-False-False",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent committed step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-True-committed-None-False-True",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent committed step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-True-committed-None-True-False",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent committed step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-True-committed-None-True-True",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent committed step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-True-committed-valid_root-False-False",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "expected a nonempty identity or label"
+      }
+    },
+    {
+      "id": "STEP-RESULT-True-committed-valid_root-False-True",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": null
+    },
+    {
+      "id": "STEP-RESULT-True-committed-valid_root-True-False",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent committed step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-True-committed-valid_root-True-True",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent committed step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-True-committed-domain_failure-False-False",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent committed step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-True-committed-domain_failure-False-True",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent committed step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-True-committed-domain_failure-True-False",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent committed step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-True-committed-domain_failure-True-True",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent committed step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-True-committed-singular-False-False",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent committed step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-True-committed-singular-False-True",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent committed step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-True-committed-singular-True-False",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent committed step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-True-committed-singular-True-True",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent committed step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-True-committed-conditioning_failure-False-False",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent committed step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-True-committed-conditioning_failure-False-True",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent committed step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-True-committed-conditioning_failure-True-False",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent committed step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-True-committed-conditioning_failure-True-True",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent committed step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-True-committed-nonfinite-False-False",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent committed step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-True-committed-nonfinite-False-True",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent committed step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-True-committed-nonfinite-True-False",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent committed step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-True-committed-nonfinite-True-True",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent committed step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-True-committed-no_admitted_root-False-False",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent committed step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-True-committed-no_admitted_root-False-True",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent committed step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-True-committed-no_admitted_root-True-False",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent committed step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-True-committed-no_admitted_root-True-True",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent committed step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-True-committed-multiple_admitted_roots-False-False",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent committed step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-True-committed-multiple_admitted_roots-False-True",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent committed step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-True-committed-multiple_admitted_roots-True-False",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent committed step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-True-committed-multiple_admitted_roots-True-True",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent committed step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-True-rejected-None-False-False",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent committed step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-True-rejected-None-False-True",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent committed step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-True-rejected-None-True-False",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent committed step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-True-rejected-None-True-True",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent committed step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-True-rejected-valid_root-False-False",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent committed step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-True-rejected-valid_root-False-True",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent committed step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-True-rejected-valid_root-True-False",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent committed step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-True-rejected-valid_root-True-True",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent committed step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-True-rejected-domain_failure-False-False",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent committed step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-True-rejected-domain_failure-False-True",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent committed step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-True-rejected-domain_failure-True-False",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent committed step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-True-rejected-domain_failure-True-True",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent committed step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-True-rejected-singular-False-False",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent committed step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-True-rejected-singular-False-True",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent committed step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-True-rejected-singular-True-False",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent committed step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-True-rejected-singular-True-True",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent committed step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-True-rejected-conditioning_failure-False-False",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent committed step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-True-rejected-conditioning_failure-False-True",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent committed step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-True-rejected-conditioning_failure-True-False",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent committed step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-True-rejected-conditioning_failure-True-True",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent committed step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-True-rejected-nonfinite-False-False",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent committed step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-True-rejected-nonfinite-False-True",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent committed step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-True-rejected-nonfinite-True-False",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent committed step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-True-rejected-nonfinite-True-True",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent committed step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-True-rejected-no_admitted_root-False-False",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent committed step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-True-rejected-no_admitted_root-False-True",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent committed step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-True-rejected-no_admitted_root-True-False",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent committed step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-True-rejected-no_admitted_root-True-True",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent committed step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-True-rejected-multiple_admitted_roots-False-False",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent committed step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-True-rejected-multiple_admitted_roots-False-True",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent committed step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-True-rejected-multiple_admitted_roots-True-False",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent committed step result"
+      }
+    },
+    {
+      "id": "STEP-RESULT-True-rejected-multiple_admitted_roots-True-True",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent committed step result"
+      }
+    },
+    {
+      "id": "LIFECYCLE-RESULT-False-committed-False-False",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent rejected lifecycle result"
+      }
+    },
+    {
+      "id": "LIFECYCLE-RESULT-False-committed-False-True",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent rejected lifecycle result"
+      }
+    },
+    {
+      "id": "LIFECYCLE-RESULT-False-committed-True-False",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent rejected lifecycle result"
+      }
+    },
+    {
+      "id": "LIFECYCLE-RESULT-False-committed-True-True",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent rejected lifecycle result"
+      }
+    },
+    {
+      "id": "LIFECYCLE-RESULT-False-rejected-False-False",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent rejected lifecycle result"
+      }
+    },
+    {
+      "id": "LIFECYCLE-RESULT-False-rejected-False-True",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent rejected lifecycle result"
+      }
+    },
+    {
+      "id": "LIFECYCLE-RESULT-False-rejected-True-False",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": null
+    },
+    {
+      "id": "LIFECYCLE-RESULT-False-rejected-True-True",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent rejected lifecycle result"
+      }
+    },
+    {
+      "id": "LIFECYCLE-RESULT-True-committed-False-False",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "expected a nonempty identity or label"
+      }
+    },
+    {
+      "id": "LIFECYCLE-RESULT-True-committed-False-True",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": null
+    },
+    {
+      "id": "LIFECYCLE-RESULT-True-committed-True-False",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent committed lifecycle result"
+      }
+    },
+    {
+      "id": "LIFECYCLE-RESULT-True-committed-True-True",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent committed lifecycle result"
+      }
+    },
+    {
+      "id": "LIFECYCLE-RESULT-True-rejected-False-False",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent committed lifecycle result"
+      }
+    },
+    {
+      "id": "LIFECYCLE-RESULT-True-rejected-False-True",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent committed lifecycle result"
+      }
+    },
+    {
+      "id": "LIFECYCLE-RESULT-True-rejected-True-False",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent committed lifecycle result"
+      }
+    },
+    {
+      "id": "LIFECYCLE-RESULT-True-rejected-True-True",
+      "group": "result_truth_table",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "ValueError",
+        "message": "inconsistent committed lifecycle result"
+      }
+    },
+    {
+      "id": "EVENT-AND-OBSERVABLE-DETACH",
+      "group": "common_projection",
+      "tier": "required",
+      "pass": true,
+      "observed": null
+    },
+    {
+      "id": "JSON-EQUALITY-{'x': True}",
+      "group": "json_type_equality",
+      "tier": "advisory",
+      "pass": false,
+      "exception": "AssertionError",
+      "message": "Python equality collapses distinct JSON boolean/number values"
+    },
+    {
+      "id": "JSON-EQUALITY-{'x': False}",
+      "group": "json_type_equality",
+      "tier": "advisory",
+      "pass": false,
+      "exception": "AssertionError",
+      "message": "Python equality collapses distinct JSON boolean/number values"
+    },
+    {
+      "id": "JSON-EQUALITY-{'x': [{'flag': True}]}",
+      "group": "json_type_equality",
+      "tier": "advisory",
+      "pass": false,
+      "exception": "AssertionError",
+      "message": "Python equality collapses distinct JSON boolean/number values"
+    }
+  ]
+}

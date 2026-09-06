@@ -1,0 +1,606 @@
+{
+  "schema": "phase9_immutable_record_execution_v1",
+  "run_id": "p921-359d167b2a3a4d7888b7385e55fef42d",
+  "iteration_id": "P9-2.1",
+  "base_commit": "82c0dc1325b8688f0cf030e40984385c4f104cc9",
+  "environment": {
+    "python": "3.12.3 (main, Jul 15 2026, 23:46:41) [GCC 13.3.0]",
+    "implementation": "CPython",
+    "system": "Linux",
+    "machine": "x86_64"
+  },
+  "inputs": [
+    {
+      "path": "src/pygrc/models/grc_v4_state.py",
+      "sha256": "5f0915d1db3f24ac95529654f2624bd5c316943eff09172d13fd17dd67f49db2"
+    },
+    {
+      "path": "tests/models/test_grc_v4_state.py",
+      "sha256": "7544418e0570d6542251fedcd44b803df04f6f5906311fd00751bfaa20b938e7"
+    },
+    {
+      "path": "src/pygrc/core/events.py",
+      "sha256": "a77be381e49e84745a687be432fd03ca0cbc394efe749db2538542d3cc80f9b2"
+    },
+    {
+      "path": "src/pygrc/core/types.py",
+      "sha256": "63932777bcf619cf8719a69b16adce0dd61e4b9296308ab6f8e41f925048c6f8"
+    },
+    {
+      "path": "src/pygrc/core/interfaces.py",
+      "sha256": "551d68fc103285608cef1a7ea4a69b9455181de21d9f91ea61cdd80c6065bc8f"
+    },
+    {
+      "path": "specs/grc-v4-spec.md",
+      "sha256": "8681e14bf229959183f772c547a6ba17e0cc60c264dad9a1975be147d12168ea"
+    },
+    {
+      "path": "specs/grc-common-interface-v4-ext.md",
+      "sha256": "7d5be95242619fcaaae7ea5d8e950b3f335efe9a81492e67e6baa91c4643bc26"
+    },
+    {
+      "path": "specs/grc-v4-contract-schema.json",
+      "sha256": "3fd072fc8c2b315f1b5dc32a4e4821a5082b5f3fc9d9a4794c007419a7aa0bea"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/drafts/2026-09-GRC-V4.md",
+      "sha256": "2da39c3bb0d102804f9135384317771f3fe1b3e48df3b4ab1813a3575642a739"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-1/P9-1.1-SourceCrosswalk.json",
+      "sha256": "85fe7204f5a40e3ffa502fce33519000adb443ba6480cb85e0d6ee4155893ede"
+    }
+  ],
+  "fixture_authority": "Explicit synthetic ownership examples in the hash-bound test module; not admitted complete profiles or executed model steps. Expected fields independently checked against frozen schema.",
+  "comparison_scope": "Exact values, types, ownership, exceptions and field sets; no numerical-solver or cross-platform floating-point conformance claim.",
+  "commands": [
+    {
+      "argv": [
+        ".venv/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests/models",
+        "-p",
+        "test_grc_v4_state.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "test_all_ten_coordinate_shapes_without_advertising_profiles (test_grc_v4_state.AuthorityTests.test_all_ten_coordinate_shapes_without_advertising_profiles) ... ok\ntest_array_inputs_detached_in_all_channels (test_grc_v4_state.AuthorityTests.test_array_inputs_detached_in_all_channels) ... ok\ntest_authority_does_not_acquire_derived_state (test_grc_v4_state.AuthorityTests.test_authority_does_not_acquire_derived_state) ... ok\ntest_invalid_numeric_authority_rejected (test_grc_v4_state.AuthorityTests.test_invalid_numeric_authority_rejected) ... ok\ntest_schema_agrees_with_authoritative_and_reset_field_sets (test_grc_v4_state.AuthorityTests.test_schema_agrees_with_authoritative_and_reset_field_sets) ... ok\ntest_wrong_current_or_reset_coordinate_shapes_rejected (test_grc_v4_state.AuthorityTests.test_wrong_current_or_reset_coordinate_shapes_rejected) ... ok\ntest_cycles_rejected_but_shared_acyclic_values_copied (test_grc_v4_state.FrozenJSONTests.test_cycles_rejected_but_shared_acyclic_values_copied) ... ok\ntest_deep_input_and_output_independence (test_grc_v4_state.FrozenJSONTests.test_deep_input_and_output_independence) ... ok\ntest_nested_public_and_backing_mutation_rejected (test_grc_v4_state.FrozenJSONTests.test_nested_public_and_backing_mutation_rejected) ... ok\ntest_non_json_payloads_rejected (test_grc_v4_state.FrozenJSONTests.test_non_json_payloads_rejected) ... ok\ntest_numeric_and_unicode_boundaries (test_grc_v4_state.FrozenJSONTests.test_numeric_and_unicode_boundaries) ... ok\ntest_order_independent_mapping_equality_and_hash (test_grc_v4_state.FrozenJSONTests.test_order_independent_mapping_equality_and_hash) ... ok\ntest_proxy_cannot_retain_its_writable_backing (test_grc_v4_state.FrozenJSONTests.test_proxy_cannot_retain_its_writable_backing) ... ok\ntest_common_state_projection_has_no_duplicate_storage (test_grc_v4_state.LifecycleOwnershipTests.test_common_state_projection_has_no_duplicate_storage) ... ok\ntest_duplicate_values_do_not_reintroduce_writable_aliases (test_grc_v4_state.LifecycleOwnershipTests.test_duplicate_values_do_not_reintroduce_writable_aliases) ... ok\ntest_invalid_clock_and_context_mismatches_rejected (test_grc_v4_state.LifecycleOwnershipTests.test_invalid_clock_and_context_mismatches_rejected) ... ok\ntest_missing_profile_payloads_and_unknown_shapes_rejected (test_grc_v4_state.LifecycleOwnershipTests.test_missing_profile_payloads_and_unknown_shapes_rejected) ... ok\ntest_nested_graph_profile_and_receipt_inputs_detached (test_grc_v4_state.LifecycleOwnershipTests.test_nested_graph_profile_and_receipt_inputs_detached) ... ok\ntest_reset_is_reduced_and_distinct_from_live_state (test_grc_v4_state.LifecycleOwnershipTests.test_reset_is_reduced_and_distinct_from_live_state) ... ok\ntest_charge_rejection_does_not_erase_valid_solver_disposition (test_grc_v4_state.ResultOwnershipTests.test_charge_rejection_does_not_erase_valid_solver_disposition) ... ok\ntest_common_result_projection_and_schema_fields (test_grc_v4_state.ResultOwnershipTests.test_common_result_projection_and_schema_fields) ... ok\ntest_failure_and_receipt_payloads_detached (test_grc_v4_state.ResultOwnershipTests.test_failure_and_receipt_payloads_detached) ... ok\ntest_inconsistent_step_result_shapes_rejected (test_grc_v4_state.ResultOwnershipTests.test_inconsistent_step_result_shapes_rejected) ... ok\ntest_legacy_event_and_nested_payload_detached_in_both_directions (test_grc_v4_state.ResultOwnershipTests.test_legacy_event_and_nested_payload_detached_in_both_directions) ... ok\ntest_lifecycle_result_owns_detached_values (test_grc_v4_state.ResultOwnershipTests.test_lifecycle_result_owns_detached_values) ... ok\ntest_observables_and_operation_delta_not_ledger_aliases (test_grc_v4_state.ResultOwnershipTests.test_observables_and_operation_delta_not_ledger_aliases) ... ok\ntest_v4_event_input_is_refrozen_and_legacy_unchanged (test_grc_v4_state.ResultOwnershipTests.test_v4_event_input_is_refrozen_and_legacy_unchanged) ... ok\n\n----------------------------------------------------------------------\nRan 27 tests in 0.011s\n\nOK\n"
+    },
+    {
+      "argv": [
+        ".venv/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests/core",
+        "-v"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "test_backend_selection_builds_canonical_immutable_payload (test_backends.BackendSelectionContractTest.test_backend_selection_builds_canonical_immutable_payload) ... ok\ntest_backend_selection_payload_can_participate_in_params_identity (test_backends.BackendSelectionContractTest.test_backend_selection_payload_can_participate_in_params_identity) ... ok\ntest_backend_selection_payload_is_stable_independent_of_input_order (test_backends.BackendSelectionContractTest.test_backend_selection_payload_is_stable_independent_of_input_order) ... ok\ntest_backend_selection_payload_roundtrips_to_objects (test_backends.BackendSelectionContractTest.test_backend_selection_payload_roundtrips_to_objects) ... ok\ntest_backend_selection_rejects_invalid_category_or_name_tokens (test_backends.BackendSelectionContractTest.test_backend_selection_rejects_invalid_category_or_name_tokens) ... ok\ntest_common_backend_category_vocabulary_exposes_expected_names (test_backends.BackendSelectionContractTest.test_common_backend_category_vocabulary_exposes_expected_names) ... ok\ntest_supported_backend_selection_validation_rejects_unknown_names (test_backends.BackendSelectionContractTest.test_supported_backend_selection_validation_rejects_unknown_names) ... ok\ntest_canonical_json_dumps_is_stable_for_identical_semantic_input (test_canonical_serialization.CanonicalSerializationTest.test_canonical_json_dumps_is_stable_for_identical_semantic_input) ... ok\ntest_canonicalize_json_value_normalizes_supported_nested_values (test_canonical_serialization.CanonicalSerializationTest.test_canonicalize_json_value_normalizes_supported_nested_values) ... ok\ntest_canonicalize_json_value_rejects_non_finite_float (test_canonical_serialization.CanonicalSerializationTest.test_canonicalize_json_value_rejects_non_finite_float) ... ok\ntest_canonicalize_json_value_rejects_non_string_mapping_keys (test_canonical_serialization.CanonicalSerializationTest.test_canonicalize_json_value_rejects_non_string_mapping_keys) ... ok\ntest_canonicalize_json_value_rejects_unsupported_value_types (test_canonical_serialization.CanonicalSerializationTest.test_canonicalize_json_value_rejects_unsupported_value_types) ... ok\ntest_common_vocabulary_contains_required_spec_names (test_capabilities.CapabilityContractTest.test_common_vocabulary_contains_required_spec_names) ... ok\ntest_family_profiles_exist_for_all_four_families (test_capabilities.CapabilityContractTest.test_family_profiles_exist_for_all_four_families) ... ok\ntest_profiles_accept_valid_minimum_claims (test_capabilities.CapabilityContractTest.test_profiles_accept_valid_minimum_claims) ... ok\ntest_profiles_reject_forbidden_claims (test_capabilities.CapabilityContractTest.test_profiles_reject_forbidden_claims) ... ok\ntest_profiles_reject_missing_required_claims (test_capabilities.CapabilityContractTest.test_profiles_reject_missing_required_claims) ... ok\ntest_profiles_reject_unknown_capabilities (test_capabilities.CapabilityContractTest.test_profiles_reject_unknown_capabilities) ... ok\ntest_digest_helpers_use_sha256_and_ignore_mapping_order (test_digests_and_persistence.DigestAndPersistenceTest.test_digest_helpers_use_sha256_and_ignore_mapping_order) ... ok\ntest_rng_helpers_tag_python_random_state (test_digests_and_persistence.DigestAndPersistenceTest.test_rng_helpers_tag_python_random_state) ... ok\ntest_snapshot_and_topology_digests_are_stable_for_equivalent_content (test_digests_and_persistence.DigestAndPersistenceTest.test_snapshot_and_topology_digests_are_stable_for_equivalent_content) ... ok\ntest_snapshot_flow_preserves_raw_params_resolved_params_and_hash (test_digests_and_persistence.DigestAndPersistenceTest.test_snapshot_flow_preserves_raw_params_resolved_params_and_hash) ... ok\ntest_state_payload_roundtrip_preserves_remainder_and_python_rng_state (test_digests_and_persistence.DigestAndPersistenceTest.test_state_payload_roundtrip_preserves_remainder_and_python_rng_state) ... ok\ntest_error_types_are_explicit_and_stable (test_events_observables_errors.EventsObservablesErrorsContractTest.test_error_types_are_explicit_and_stable) ... ok\ntest_grc_event_exposes_required_shared_fields (test_events_observables_errors.EventsObservablesErrorsContractTest.test_grc_event_exposes_required_shared_fields) ... ok\ntest_observable_snapshot_wraps_mapping (test_events_observables_errors.EventsObservablesErrorsContractTest.test_observable_snapshot_wraps_mapping) ... ok\ntest_fixed_port_chart_constants_match_the_specs (test_graph_protocols.GraphProtocolContractTest.test_fixed_port_chart_constants_match_the_specs) ... ok\ntest_port_graph_protocol_is_runtime_checkable (test_graph_protocols.GraphProtocolContractTest.test_port_graph_protocol_is_runtime_checkable) ... ok\ntest_port_graph_retains_ordered_nine_slot_surface (test_graph_protocols.GraphProtocolContractTest.test_port_graph_retains_ordered_nine_slot_surface) ... ok\ntest_weighted_graph_protocol_is_runtime_checkable (test_graph_protocols.GraphProtocolContractTest.test_weighted_graph_protocol_is_runtime_checkable) ... ok\ntest_monotone_id_source_allocates_non_reused_ids (test_ids.IdSourceAndTombstoneTableTest.test_monotone_id_source_allocates_non_reused_ids) ... ok\ntest_monotone_id_source_allows_forward_restore (test_ids.IdSourceAndTombstoneTableTest.test_monotone_id_source_allows_forward_restore) ... ok\ntest_monotone_id_source_rejects_backward_restore (test_ids.IdSourceAndTombstoneTableTest.test_monotone_id_source_rejects_backward_restore) ... ok\ntest_monotone_id_source_rejects_negative_start (test_ids.IdSourceAndTombstoneTableTest.test_monotone_id_source_rejects_negative_start) ... ok\ntest_tombstone_slot_table_get_live_rejects_dead_or_missing_slots (test_ids.IdSourceAndTombstoneTableTest.test_tombstone_slot_table_get_live_rejects_dead_or_missing_slots) ... ok\ntest_tombstone_slot_table_iter_live_items_and_raw_slots_are_stable (test_ids.IdSourceAndTombstoneTableTest.test_tombstone_slot_table_iter_live_items_and_raw_slots_are_stable) ... ok\ntest_tombstone_slot_table_preserves_next_id_after_restore_gap (test_ids.IdSourceAndTombstoneTableTest.test_tombstone_slot_table_preserves_next_id_after_restore_gap) ... ok\ntest_tombstone_slot_table_rejects_invalid_restoration_shape (test_ids.IdSourceAndTombstoneTableTest.test_tombstone_slot_table_rejects_invalid_restoration_shape) ... ok\ntest_tombstone_slot_table_skips_deleted_ids_in_live_iteration (test_ids.IdSourceAndTombstoneTableTest.test_tombstone_slot_table_skips_deleted_ids_in_live_iteration) ... ok\ntest_package_imports (test_import_smoke.ImportSmokeTest.test_package_imports) ... ok\ntest_abstract_surface_matches_required_methods (test_interfaces.InterfaceContractTest.test_abstract_surface_matches_required_methods) ... ok\ntest_rebase_reset_baseline_is_additive_common_surface (test_interfaces.InterfaceContractTest.test_rebase_reset_baseline_is_additive_common_surface) ... ok\ntest_run_rejects_negative_step_counts (test_interfaces.InterfaceContractTest.test_run_rejects_negative_step_counts) ... ok\ntest_run_uses_step_exactly_num_steps_times (test_interfaces.InterfaceContractTest.test_run_uses_step_exactly_num_steps_times) ... ok\ntest_core_contract_modules_import (test_module_imports.ModuleImportContractTest.test_core_contract_modules_import) ... ok\ntest_apply_cache_invalidation_can_target_specific_cache_keys (test_mutations_and_invalidation.MutationAndInvalidationContractTest.test_apply_cache_invalidation_can_target_specific_cache_keys) ... ok\ntest_cache_invalidation_hook_can_clear_state_cached_quantities (test_mutations_and_invalidation.MutationAndInvalidationContractTest.test_cache_invalidation_hook_can_clear_state_cached_quantities) ... ok\ntest_clearing_cache_invalidation_hook_stops_state_cache_mutation (test_mutations_and_invalidation.MutationAndInvalidationContractTest.test_clearing_cache_invalidation_hook_stops_state_cache_mutation) ... ok\ntest_port_backend_logs_connect_rewire_and_remove_mutations (test_mutations_and_invalidation.MutationAndInvalidationContractTest.test_port_backend_logs_connect_rewire_and_remove_mutations) ... ok\ntest_port_remove_node_mutation_records_cascade (test_mutations_and_invalidation.MutationAndInvalidationContractTest.test_port_remove_node_mutation_records_cascade) ... ok\ntest_remove_node_records_cascade_edge_ids (test_mutations_and_invalidation.MutationAndInvalidationContractTest.test_remove_node_records_cascade_edge_ids) ... ok\ntest_weighted_backend_is_mutation_aware_and_logs_mutations (test_mutations_and_invalidation.MutationAndInvalidationContractTest.test_weighted_backend_is_mutation_aware_and_logs_mutations) ... ok\ntest_core_domains_are_exposed_centrally (test_params.ParamsContractTest.test_core_domains_are_exposed_centrally) ... ok\ntest_core_param_hash_is_stable_for_equivalent_mappings (test_params.ParamsContractTest.test_core_param_hash_is_stable_for_equivalent_mappings) ... ok\ntest_excluded_domains_are_rejected_from_core_params (test_params.ParamsContractTest.test_excluded_domains_are_rejected_from_core_params) ... ok\ntest_from_mapping_builds_immutable_core_params (test_params.ParamsContractTest.test_from_mapping_builds_immutable_core_params) ... ok\ntest_raw_config_and_resolved_config_are_distinct (test_params.ParamsContractTest.test_raw_config_and_resolved_config_are_distinct) ... ok\ntest_add_node_exposes_exactly_nine_ordered_ports (test_port_graph_backend.PortGraphBackendTest.test_add_node_exposes_exactly_nine_ordered_ports) ... ok\ntest_backend_satisfies_port_graph_protocol (test_port_graph_backend.PortGraphBackendTest.test_backend_satisfies_port_graph_protocol) ... ok\ntest_connect_ports_rejects_already_occupied_slot (test_port_graph_backend.PortGraphBackendTest.test_connect_ports_rejects_already_occupied_slot) ... ok\ntest_connect_ports_sets_deterministic_occupancy_and_lookup (test_port_graph_backend.PortGraphBackendTest.test_connect_ports_sets_deterministic_occupancy_and_lookup) ... ok\ntest_remove_edge_tombstones_edge_and_clears_ports (test_port_graph_backend.PortGraphBackendTest.test_remove_edge_tombstones_edge_and_clears_ports) ... ok\ntest_remove_node_cascades_edge_removal_and_clears_port_state (test_port_graph_backend.PortGraphBackendTest.test_remove_node_cascades_edge_removal_and_clears_port_state) ... ok\ntest_removed_edge_id_is_not_reused_on_later_connect (test_port_graph_backend.PortGraphBackendTest.test_removed_edge_id_is_not_reused_on_later_connect) ... ok\ntest_restored_backend_rebuilds_occupancy_and_counters (test_port_graph_backend.PortGraphBackendTest.test_restored_backend_rebuilds_occupancy_and_counters) ... ok\ntest_restored_backend_rejects_duplicate_port_occupancy (test_port_graph_backend.PortGraphBackendTest.test_restored_backend_rejects_duplicate_port_occupancy) ... ok\ntest_rewire_edge_moves_occupancy_without_changing_edge_id (test_port_graph_backend.PortGraphBackendTest.test_rewire_edge_moves_occupancy_without_changing_edge_id) ... ok\ntest_rewire_rejects_target_slot_occupied_by_different_edge (test_port_graph_backend.PortGraphBackendTest.test_rewire_rejects_target_slot_occupied_by_different_edge) ... ok\ntest_row_column_conversion_is_canonical (test_port_graph_backend.PortGraphBackendTest.test_row_column_conversion_is_canonical) ... ok\ntest_build_dynamics_group_canonicalizes_payload_sections (test_serialization_contract.SnapshotContractTest.test_build_dynamics_group_canonicalizes_payload_sections) ... ok\ntest_build_event_records_returns_canonical_event_list (test_serialization_contract.SnapshotContractTest.test_build_event_records_returns_canonical_event_list) ... ok\ntest_build_snapshot_metadata_produces_required_fields (test_serialization_contract.SnapshotContractTest.test_build_snapshot_metadata_produces_required_fields) ... ok\ntest_build_standard_snapshot_preserves_canonical_group_order (test_serialization_contract.SnapshotContractTest.test_build_standard_snapshot_preserves_canonical_group_order) ... ok\ntest_build_standard_snapshot_rejects_mutation_history_in_standard_mode (test_serialization_contract.SnapshotContractTest.test_build_standard_snapshot_rejects_mutation_history_in_standard_mode) ... ok\ntest_build_topology_snapshot_keeps_lists_and_omits_unsupported_groups (test_serialization_contract.SnapshotContractTest.test_build_topology_snapshot_keeps_lists_and_omits_unsupported_groups) ... ok\ntest_core_exports_include_canonical_serialization_helpers (test_serialization_contract.SnapshotContractTest.test_core_exports_include_canonical_serialization_helpers) ... ok\ntest_export_port_topology_is_deterministic_and_exposes_port_structure (test_serialization_contract.SnapshotContractTest.test_export_port_topology_is_deterministic_and_exposes_port_structure) ... ok\ntest_export_port_topology_sorts_multi_edge_incidence (test_serialization_contract.SnapshotContractTest.test_export_port_topology_sorts_multi_edge_incidence) ... ok\ntest_export_weighted_topology_is_deterministic_and_live_only (test_serialization_contract.SnapshotContractTest.test_export_weighted_topology_is_deterministic_and_live_only) ... ok\ntest_export_weighted_topology_sorts_multi_edge_incidence (test_serialization_contract.SnapshotContractTest.test_export_weighted_topology_sorts_multi_edge_incidence) ... ok\ntest_exported_topology_remains_compatible_with_snapshot_contract (test_serialization_contract.SnapshotContractTest.test_exported_topology_remains_compatible_with_snapshot_contract) ... ok\ntest_require_snapshot_family_rejects_family_mismatch (test_serialization_contract.SnapshotContractTest.test_require_snapshot_family_rejects_family_mismatch) ... ok\ntest_reset_baseline_group_is_versioned_and_non_recursive (test_serialization_contract.SnapshotContractTest.test_reset_baseline_group_is_versioned_and_non_recursive) ... ok\ntest_restore_port_graph_preserves_ids_counters_and_structure (test_serialization_contract.SnapshotContractTest.test_restore_port_graph_preserves_ids_counters_and_structure) ... ok\ntest_restore_weighted_graph_preserves_ids_counters_and_structure (test_serialization_contract.SnapshotContractTest.test_restore_weighted_graph_preserves_ids_counters_and_structure) ... ok\ntest_save_load_roundtrip_on_port_snapshot_preserves_metadata_and_topology (test_serialization_contract.SnapshotContractTest.test_save_load_roundtrip_on_port_snapshot_preserves_metadata_and_topology) ... ok\ntest_save_snapshot_writes_atomically_and_load_snapshot_is_strict (test_serialization_contract.SnapshotContractTest.test_save_snapshot_writes_atomically_and_load_snapshot_is_strict) ... ok\ntest_snapshot_from_json_rejects_malformed_or_invalid_payload (test_serialization_contract.SnapshotContractTest.test_snapshot_from_json_rejects_malformed_or_invalid_payload) ... ok\ntest_snapshot_to_json_and_from_json_roundtrip (test_serialization_contract.SnapshotContractTest.test_snapshot_to_json_and_from_json_roundtrip) ... ok\ntest_unavailable_reset_baseline_requires_explicit_reason (test_serialization_contract.SnapshotContractTest.test_unavailable_reset_baseline_requires_explicit_reason) ... ok\ntest_validate_snapshot_contract_accepts_minimal_shared_shape (test_serialization_contract.SnapshotContractTest.test_validate_snapshot_contract_accepts_minimal_shared_shape) ... ok\ntest_validate_snapshot_contract_rejects_missing_metadata (test_serialization_contract.SnapshotContractTest.test_validate_snapshot_contract_rejects_missing_metadata) ... ok\ntest_validate_snapshot_contract_rejects_wrong_schema (test_serialization_contract.SnapshotContractTest.test_validate_snapshot_contract_rejects_wrong_schema) ... ok\ntest_state_exposes_required_shared_fields (test_types.TypesContractTest.test_state_exposes_required_shared_fields) ... ok\ntest_state_keeps_generic_topology_payloads (test_types.TypesContractTest.test_state_keeps_generic_topology_payloads) ... ok\ntest_step_result_exposes_required_spec_fields (test_types.TypesContractTest.test_step_result_exposes_required_spec_fields) ... ok\ntest_add_node_and_edge_produce_deterministic_live_iteration (test_weighted_graph_backend.WeightedGraphBackendTest.test_add_node_and_edge_produce_deterministic_live_iteration) ... ok\ntest_backend_satisfies_weighted_graph_protocol (test_weighted_graph_backend.WeightedGraphBackendTest.test_backend_satisfies_weighted_graph_protocol) ... ok\ntest_neighbor_order_is_by_neighbor_id_then_edge_id (test_weighted_graph_backend.WeightedGraphBackendTest.test_neighbor_order_is_by_neighbor_id_then_edge_id) ... ok\ntest_payloads_are_stored_in_family_neutral_dict_slots (test_weighted_graph_backend.WeightedGraphBackendTest.test_payloads_are_stored_in_family_neutral_dict_slots) ... ok\ntest_remove_node_cascades_incident_edge_removal (test_weighted_graph_backend.WeightedGraphBackendTest.test_remove_node_cascades_incident_edge_removal) ... ok\ntest_removed_edges_are_tombstoned_and_not_reused (test_weighted_graph_backend.WeightedGraphBackendTest.test_removed_edges_are_tombstoned_and_not_reused) ... ok\ntest_removed_node_id_is_not_reused_on_later_insert (test_weighted_graph_backend.WeightedGraphBackendTest.test_removed_node_id_is_not_reused_on_later_insert) ... ok\ntest_restored_backend_rebuilds_adjacency_and_counters (test_weighted_graph_backend.WeightedGraphBackendTest.test_restored_backend_rebuilds_adjacency_and_counters) ... ok\ntest_restored_backend_rejects_live_edge_with_dead_endpoint (test_weighted_graph_backend.WeightedGraphBackendTest.test_restored_backend_rejects_live_edge_with_dead_endpoint) ... ok\n\n----------------------------------------------------------------------\nRan 105 tests in 0.022s\n\nOK\n"
+    },
+    {
+      "argv": [
+        ".venv/bin/ruff",
+        "check",
+        "src/pygrc/models/grc_v4_state.py",
+        "tests/models/test_grc_v4_state.py"
+      ],
+      "exit_code": 0,
+      "stdout": "All checks passed!\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        ".venv/bin/mypy",
+        "--follow-imports=silent",
+        "src/pygrc/models/grc_v4_state.py",
+        "tests/models/test_grc_v4_state.py"
+      ],
+      "exit_code": 0,
+      "stdout": "Success: no issues found in 2 source files\n",
+      "stderr": ""
+    }
+  ],
+  "forensic_queries": [
+    {
+      "contract_id": "D10.2-EC-PARENT-CORE-C-AUTHORITY",
+      "trace_digest": "90a975bf21e3a10a401bc79b2e1b01d079c9e1c955621c454deb7311cf6aa53a",
+      "rows": [
+        {
+          "classification": "source_exact_contract_provenance",
+          "source_ref": {
+            "record_id": "GRC9V4-CD-D10.2-v1",
+            "record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+            "source_json_pointer": "/normative_equation_contract_registry/0",
+            "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D10_2FullSubstrateProvenanceAndPromotionAudit.json"
+          },
+          "edge_refs": [
+            {
+              "edge_id": "propagation:02826c12d76b63d3d2dc207510830714b82e6a57c1f1ebc305028fc546e0386e",
+              "source": "equation_contract:D10.2-EC-PARENT-CORE-C-AUTHORITY",
+              "target": "source_record:8c40dc16442939e029c666b78ddb76307db5ee417e7c40f989a07ef3d8d53815",
+              "relation": "source_identity",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/0"
+            },
+            {
+              "edge_id": "propagation:640bfb3dab3bdf73aed11d95bb9feaba1327ed7a356c0f50d131c5ceb7070588",
+              "source": "equation_contract:D10.2-EC-PARENT-CORE-C-AUTHORITY",
+              "target": "normative_object:CORE-C-AUTHORITY",
+              "relation": "parent_object",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/0/parent_object_ids/0"
+            },
+            {
+              "edge_id": "propagation:865849e28ca58d16430c2bc346244df4a460226e5a50657b9f7c0697101600d7",
+              "source": "equation_contract:D10.2-EC-PARENT-CORE-C-AUTHORITY",
+              "target": "current_claim:D10-CL-C-011",
+              "relation": "accepted_claim",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/0/accepted_claim_ids/0"
+            },
+            {
+              "edge_id": "propagation:a5825714572a9a0a8bb32a64a4331dbdaacb698e9f45218ef8f01cd524d73000",
+              "source": "equation_contract:D10.2-EC-PARENT-CORE-C-AUTHORITY",
+              "target": "source_record:18ac2f841c2abbc9e722378b33be8bc34280fdc0e3a3e50f673d85a3d6bcb6f3",
+              "relation": "source_identity",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/0/source_lineage/1"
+            },
+            {
+              "edge_id": "propagation:c8f901bb88dbef7706680217aba27a8bc2d11066b3eb5ac79583606fbedcf071",
+              "source": "equation_contract:D10.2-EC-PARENT-CORE-C-AUTHORITY",
+              "target": "current_claim:D10-CL-N-002",
+              "relation": "accepted_claim",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/0/accepted_claim_ids/2"
+            },
+            {
+              "edge_id": "propagation:f2a50a0da20fbef7d2d5672441063df80dcbf089f87425234ce0ce321ecf1768",
+              "source": "equation_contract:D10.2-EC-PARENT-CORE-C-AUTHORITY",
+              "target": "source_record:8c0eacfef81153ed27af17920eb21a11b01cbe878ca07799d89823877f42f335",
+              "relation": "source_identity",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/0/source_lineage/0"
+            },
+            {
+              "edge_id": "propagation:f591679aecc67256a1f0854fec0112872d4beaa8e9800075dbec9e1e7646c3bc",
+              "source": "equation_contract:D10.2-EC-PARENT-CORE-C-AUTHORITY",
+              "target": "current_claim:D10-CL-N-001",
+              "relation": "accepted_claim",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/0/accepted_claim_ids/1"
+            }
+          ],
+          "support_disposition": "indeterminate_requires_review",
+          "accepted_claim_support_semantics": [
+            "indeterminate_requires_review"
+          ]
+        }
+      ]
+    },
+    {
+      "contract_id": "D10.2-EC-C-AUTHORITY",
+      "trace_digest": "5bf4aba6c3680caffd00291e6c95dd0af8b9996da9fb4bbdf3b95ca7f6818e1b",
+      "rows": [
+        {
+          "classification": "source_exact_contract_provenance",
+          "source_ref": {
+            "record_id": "GRC9V4-CD-D10.2-v1",
+            "record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+            "source_json_pointer": "/normative_equation_contract_registry/140",
+            "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D10_2FullSubstrateProvenanceAndPromotionAudit.json"
+          },
+          "edge_refs": [
+            {
+              "edge_id": "propagation:24fa3e60c13d71be009558e20ec0678fe1906c2741bb8effcdce60278e06b81f",
+              "source": "equation_contract:D10.2-EC-C-AUTHORITY",
+              "target": "current_claim:D10-CL-N-002",
+              "relation": "accepted_claim",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/140/accepted_claim_ids/0"
+            },
+            {
+              "edge_id": "propagation:2973d566712a5236b646d7127c00a45030ed31c125d68f9cfbc4951d331fed85",
+              "source": "equation_contract:D10.2-EC-C-AUTHORITY",
+              "target": "source_record:18ac2f841c2abbc9e722378b33be8bc34280fdc0e3a3e50f673d85a3d6bcb6f3",
+              "relation": "source_identity",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/140/source_lineage/1"
+            },
+            {
+              "edge_id": "propagation:923b215925a8c2bcd8a904f6eb86a06ae51182b68ee4760a12abdb81ced696e2",
+              "source": "equation_contract:D10.2-EC-C-AUTHORITY",
+              "target": "profile:C_RG2b",
+              "relation": "active_in_profile",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/140/profile_ids/2"
+            },
+            {
+              "edge_id": "propagation:9a9da7f1660c6f8fd4782cb9bdeb30a29b42cae34e26f8c35ebcf3d6e0bdc592",
+              "source": "equation_contract:D10.2-EC-C-AUTHORITY",
+              "target": "source_record:3c535da4e9935800544d88fcf7160b8f1dc257337382b1069889967c68f558f9",
+              "relation": "source_identity",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/140/source_lineage/0"
+            },
+            {
+              "edge_id": "propagation:9b57b30b43d9923694d101f5f3cb307c81eb28883c849a8847b0901bd139b35f",
+              "source": "equation_contract:D10.2-EC-C-AUTHORITY",
+              "target": "profile:C_CI_PC",
+              "relation": "active_in_profile",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/140/profile_ids/4"
+            },
+            {
+              "edge_id": "propagation:be28454dbc5b29a6e961b24e51580afbd59275094f3949162ba5260b6433f374",
+              "source": "equation_contract:D10.2-EC-C-AUTHORITY",
+              "target": "source_record:8c40dc16442939e029c666b78ddb76307db5ee417e7c40f989a07ef3d8d53815",
+              "relation": "source_identity",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/140"
+            },
+            {
+              "edge_id": "propagation:d48450d14e786f74c78d1eb24ed5b40ae931be17c9cb4247889ed03caaa66a62",
+              "source": "equation_contract:D10.2-EC-C-AUTHORITY",
+              "target": "current_claim:D10-CL-O-002",
+              "relation": "accepted_claim",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/140/accepted_claim_ids/1"
+            },
+            {
+              "edge_id": "propagation:db764be675269db74e01fc50c0e01abe2c9e6d0f7f6cbd0605344c217356e678",
+              "source": "equation_contract:D10.2-EC-C-AUTHORITY",
+              "target": "profile:C_CI",
+              "relation": "active_in_profile",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/140/profile_ids/0"
+            },
+            {
+              "edge_id": "propagation:e24d55037002f5e94f22eed3d199d69681c11fc893ee362f0d625557b59e33ff",
+              "source": "equation_contract:D10.2-EC-C-AUTHORITY",
+              "target": "profile:C_PC",
+              "relation": "active_in_profile",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/140/profile_ids/3"
+            },
+            {
+              "edge_id": "propagation:f0c0b25aff355d4bdaf7b1eac2b1e73ab2b73952695f73b07f6dda31389f4883",
+              "source": "equation_contract:D10.2-EC-C-AUTHORITY",
+              "target": "profile:C_OS",
+              "relation": "active_in_profile",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/140/profile_ids/1"
+            },
+            {
+              "edge_id": "propagation:f37c6c5e3eb8a23e6d63714efd077d4ee79bfa03601f0ad1737a1d2e9ca674cb",
+              "source": "equation_contract:D10.2-EC-C-AUTHORITY",
+              "target": "normative_object:C-AUTHORITY",
+              "relation": "parent_object",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/140/parent_object_ids/0"
+            }
+          ],
+          "support_disposition": "indeterminate_requires_review",
+          "accepted_claim_support_semantics": [
+            "indeterminate_requires_review"
+          ]
+        }
+      ]
+    },
+    {
+      "contract_id": "D10.2-EC-PARENT-L-SNAPSHOT-RESET",
+      "trace_digest": "724545426e8380628505c85d0e3b560eec4388d4cacc711c1b4047a5066bf7dc",
+      "rows": [
+        {
+          "classification": "source_exact_contract_provenance",
+          "source_ref": {
+            "record_id": "GRC9V4-CD-D10.2-v1",
+            "record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+            "source_json_pointer": "/normative_equation_contract_registry/45",
+            "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D10_2FullSubstrateProvenanceAndPromotionAudit.json"
+          },
+          "edge_refs": [
+            {
+              "edge_id": "propagation:198f376805c54ca3fb8d7a7fab0cf6c1867c32495e0af3370d3eb51ea42d798c",
+              "source": "equation_contract:D10.2-EC-PARENT-L-SNAPSHOT-RESET",
+              "target": "source_record:af13ffa0f91c70aec295640101ce3987d8f4d2735f56a12a6e64ce4eda333501",
+              "relation": "source_identity",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/45/source_lineage/1"
+            },
+            {
+              "edge_id": "propagation:2620564b6b338ba399238c7015ed151669c52e97d4d29822bb429ef3ac4a8487",
+              "source": "equation_contract:D10.2-EC-PARENT-L-SNAPSHOT-RESET",
+              "target": "current_claim:D10-CL-N-005",
+              "relation": "accepted_claim",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/45/accepted_claim_ids/1"
+            },
+            {
+              "edge_id": "propagation:420f9238ac3e592c4a95d2654c112aa0f975f7abf50bfc8ffa894001533b2214",
+              "source": "equation_contract:D10.2-EC-PARENT-L-SNAPSHOT-RESET",
+              "target": "source_record:18ac2f841c2abbc9e722378b33be8bc34280fdc0e3a3e50f673d85a3d6bcb6f3",
+              "relation": "source_identity",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/45/source_lineage/0"
+            },
+            {
+              "edge_id": "propagation:42754c455e7b41a5830a9601ec1eaeaeb7b25d0cb12821c34f6241ace9978562",
+              "source": "equation_contract:D10.2-EC-PARENT-L-SNAPSHOT-RESET",
+              "target": "source_record:8c40dc16442939e029c666b78ddb76307db5ee417e7c40f989a07ef3d8d53815",
+              "relation": "source_identity",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/45"
+            },
+            {
+              "edge_id": "propagation:43ac5a6bc12e7eb9eef2035ce58f859dea7f4cac094b10c2ee69e0fb8c6c664d",
+              "source": "equation_contract:D10.2-EC-PARENT-L-SNAPSHOT-RESET",
+              "target": "normative_object:L-SNAPSHOT-RESET",
+              "relation": "parent_object",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/45/parent_object_ids/0"
+            },
+            {
+              "edge_id": "propagation:8f839ee93c1dce414c508c596274443f3ca37f41c9744f0c2a617f28c47b27f7",
+              "source": "equation_contract:D10.2-EC-PARENT-L-SNAPSHOT-RESET",
+              "target": "current_claim:D10-CL-C-011",
+              "relation": "accepted_claim",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/45/accepted_claim_ids/0"
+            }
+          ],
+          "support_disposition": "indeterminate_requires_review",
+          "accepted_claim_support_semantics": [
+            "indeterminate_requires_review"
+          ]
+        }
+      ]
+    },
+    {
+      "contract_id": "D10.2-EC-PARENT-L-ORDERED-RECEIPTS",
+      "trace_digest": "77fee7e8c48800eaf09ff53d4ba53fe20cfb14a749b036f1d37cb2b857fe854a",
+      "rows": [
+        {
+          "classification": "source_exact_contract_provenance",
+          "source_ref": {
+            "record_id": "GRC9V4-CD-D10.2-v1",
+            "record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+            "source_json_pointer": "/normative_equation_contract_registry/50",
+            "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D10_2FullSubstrateProvenanceAndPromotionAudit.json"
+          },
+          "edge_refs": [
+            {
+              "edge_id": "propagation:3263543ad8eaf3b4b9678815cfcc75e74cdd9250fe4db855e0e4c8e4360b3dc0",
+              "source": "equation_contract:D10.2-EC-PARENT-L-ORDERED-RECEIPTS",
+              "target": "source_record:93afe04293b480712e378f264cb696a0ef20ffd4c3a1044c088fc9fe2cf784aa",
+              "relation": "source_identity",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/50/source_lineage/1"
+            },
+            {
+              "edge_id": "propagation:876e7b9b83df334d502563c4286d30fb2bdad32c753801a2578e481bbc5e306f",
+              "source": "equation_contract:D10.2-EC-PARENT-L-ORDERED-RECEIPTS",
+              "target": "normative_object:L-ORDERED-RECEIPTS",
+              "relation": "parent_object",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/50/parent_object_ids/0"
+            },
+            {
+              "edge_id": "propagation:b003aebed1b46da6b3f762d4fcdac4ada5f266678fc052496b4320613d476be5",
+              "source": "equation_contract:D10.2-EC-PARENT-L-ORDERED-RECEIPTS",
+              "target": "current_claim:D10-CL-C-011",
+              "relation": "accepted_claim",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/50/accepted_claim_ids/1"
+            },
+            {
+              "edge_id": "propagation:da568aefa7774227e2b90256ef0970d3464d90887aece1943a26b929b4b47f73",
+              "source": "equation_contract:D10.2-EC-PARENT-L-ORDERED-RECEIPTS",
+              "target": "current_claim:D10-CL-C-002",
+              "relation": "accepted_claim",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/50/accepted_claim_ids/0"
+            },
+            {
+              "edge_id": "propagation:e0f8a704f861c8b6506712435f5d107e6f38e9d3c68b5a0bc40b6ecf6f96cd9c",
+              "source": "equation_contract:D10.2-EC-PARENT-L-ORDERED-RECEIPTS",
+              "target": "source_record:8c40dc16442939e029c666b78ddb76307db5ee417e7c40f989a07ef3d8d53815",
+              "relation": "source_identity",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/50"
+            },
+            {
+              "edge_id": "propagation:efbba4d7456540579cad3245efd53044c6526029a4fa59c55c341f6a88b987f9",
+              "source": "equation_contract:D10.2-EC-PARENT-L-ORDERED-RECEIPTS",
+              "target": "current_claim:D10-CL-X-001",
+              "relation": "accepted_claim",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/50/accepted_claim_ids/3"
+            },
+            {
+              "edge_id": "propagation:f371d3bf9079fda9d7d31edda02efa0bf46acdbda6076c3f9e1dc7967d44a86b",
+              "source": "equation_contract:D10.2-EC-PARENT-L-ORDERED-RECEIPTS",
+              "target": "current_claim:D10-CL-N-005",
+              "relation": "accepted_claim",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/50/accepted_claim_ids/2"
+            },
+            {
+              "edge_id": "propagation:ffdf7d00986d952799103c59ec66c1db42b54cb29afad6a116f2d3f0e56a4c2d",
+              "source": "equation_contract:D10.2-EC-PARENT-L-ORDERED-RECEIPTS",
+              "target": "source_record:18ac2f841c2abbc9e722378b33be8bc34280fdc0e3a3e50f673d85a3d6bcb6f3",
+              "relation": "source_identity",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/50/source_lineage/0"
+            }
+          ],
+          "support_disposition": "indeterminate_requires_review",
+          "accepted_claim_support_semantics": [
+            "indeterminate_requires_review"
+          ]
+        }
+      ]
+    },
+    {
+      "contract_id": "D11-C-EC-C-J0-LIFECYCLE",
+      "trace_digest": "12c7d5adc9fd0d42d0501483d9b5a0a71a442cc18290e05ee9cc9c7b1a6bb2fe",
+      "rows": [
+        {
+          "classification": "source_exact_contract_provenance",
+          "source_ref": {
+            "record_id": "GRC9V4-D11-C-PROVENANCE-SUPPLEMENT-v1",
+            "record_digest": "57d711d80e648c8ee73401f3a7e76a0076374fc43bd4d2d0f3dbe4bb4ee3acb1",
+            "source_json_pointer": "/equation_contracts/10",
+            "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D11CCandidateBaselineTransportProvenanceSupplement.json"
+          },
+          "edge_refs": [
+            {
+              "edge_id": "propagation:02f6f4674fb71712818d07a2a1d5ae9cb467caea8f4e7b6525e2adf71af8c25e",
+              "source": "equation_contract:D11-C-EC-C-J0-LIFECYCLE",
+              "target": "current_claim:D10-CL-N-008",
+              "relation": "accepted_claim",
+              "support_semantic": "accepted_design_level_lifecycle_contract_with_runtime_conformance_still_pending",
+              "source_record_id": "GRC9V4-D11-C-PROVENANCE-SUPPLEMENT-v1",
+              "source_record_digest": "57d711d80e648c8ee73401f3a7e76a0076374fc43bd4d2d0f3dbe4bb4ee3acb1",
+              "source_json_pointer": "/equation_contracts/10/accepted_claim_ids/2"
+            },
+            {
+              "edge_id": "propagation:107dea726b299702c9cc46882365d77331c7332eefc2cc766f85a4d1c028e483",
+              "source": "equation_contract:D11-C-EC-C-J0-LIFECYCLE",
+              "target": "current_claim:D10-CL-N-005",
+              "relation": "accepted_claim",
+              "support_semantic": "accepted_design_level_lifecycle_contract_with_runtime_conformance_still_pending",
+              "source_record_id": "GRC9V4-D11-C-PROVENANCE-SUPPLEMENT-v1",
+              "source_record_digest": "57d711d80e648c8ee73401f3a7e76a0076374fc43bd4d2d0f3dbe4bb4ee3acb1",
+              "source_json_pointer": "/equation_contracts/10/accepted_claim_ids/1"
+            },
+            {
+              "edge_id": "propagation:2602d4f41875348b180e305d0e7c5e5c67a9160d3360482797cbca6878101d90",
+              "source": "equation_contract:D11-C-EC-C-J0-LIFECYCLE",
+              "target": "current_claim:D11-C-CL-O-001",
+              "relation": "accepted_claim",
+              "support_semantic": "accepted_design_level_lifecycle_contract_with_runtime_conformance_still_pending",
+              "source_record_id": "GRC9V4-D11-C-PROVENANCE-SUPPLEMENT-v1",
+              "source_record_digest": "57d711d80e648c8ee73401f3a7e76a0076374fc43bd4d2d0f3dbe4bb4ee3acb1",
+              "source_json_pointer": "/equation_contracts/10/accepted_claim_ids/0"
+            },
+            {
+              "edge_id": "propagation:4ef3e7ca97bc488e6382a3c7ef693f97c60651c3c93f3ed7102ff0e84279d224",
+              "source": "equation_contract:D11-C-EC-C-J0-LIFECYCLE",
+              "target": "normative_object:C-BASELINE-CURRENT",
+              "relation": "parent_object",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-D11-C-PROVENANCE-SUPPLEMENT-v1",
+              "source_record_digest": "57d711d80e648c8ee73401f3a7e76a0076374fc43bd4d2d0f3dbe4bb4ee3acb1",
+              "source_json_pointer": "/equation_contracts/10/parent_object_ids/1"
+            },
+            {
+              "edge_id": "propagation:e17b553f692a5833f7bb3edf53fa0bf2eeb888b984e153cd5af18faa4c52f68a",
+              "source": "equation_contract:D11-C-EC-C-J0-LIFECYCLE",
+              "target": "source_record:1ba90e62a7f7907094aff26dd201ba232ec0f2a1ea26e79e473ecd8885ea3174",
+              "relation": "source_identity",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-D11-C-PROVENANCE-SUPPLEMENT-v1",
+              "source_record_digest": "57d711d80e648c8ee73401f3a7e76a0076374fc43bd4d2d0f3dbe4bb4ee3acb1",
+              "source_json_pointer": "/equation_contracts/10"
+            },
+            {
+              "edge_id": "propagation:e46e269d9b9d69dba9fffad5a961ca48f3b5f2b4f85f832daaad7319f248196e",
+              "source": "equation_contract:D11-C-EC-C-J0-LIFECYCLE",
+              "target": "normative_object:C-BASELINE-TRANSPORT-REFERENCE",
+              "relation": "parent_object",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-D11-C-PROVENANCE-SUPPLEMENT-v1",
+              "source_record_digest": "57d711d80e648c8ee73401f3a7e76a0076374fc43bd4d2d0f3dbe4bb4ee3acb1",
+              "source_json_pointer": "/equation_contracts/10/parent_object_ids/0"
+            }
+          ],
+          "support_disposition": [
+            "accepted_design_level_lifecycle_contract_with_runtime_conformance_still_pending"
+          ],
+          "accepted_claim_support_semantics": [
+            "accepted_design_level_lifecycle_contract_with_runtime_conformance_still_pending"
+          ]
+        }
+      ]
+    }
+  ],
+  "status": "passed",
+  "tests": {
+    "immutable_records": 27,
+    "unchanged_core": 105
+  },
+  "accepted_generic_runtime_support": [],
+  "admitted_specialization_support_sets": []
+}
