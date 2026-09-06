@@ -319,6 +319,7 @@ class DistributionTests(unittest.TestCase):
 import sys
 from pygrc.models import GRCV2, GRCV3, GRC9, GRC9V3
 from pygrc.models.grc_v4_codec import canonical_json_bytes, V4DependencyError
+from pygrc.models import grc_v4, grc_v4_step
 assert 'rfc8785' not in sys.modules
 assert 'jsonschema' not in sys.modules
 try:
@@ -336,6 +337,8 @@ import operator
 import sys
 from pygrc.models import grc_v4_codec as c
 from pygrc.models.grc_v4_profile import GRCV4Profile, list_supported_profiles
+from pygrc.models.grc_v4 import decode_step_request_input
+from pygrc.models.grc_v4_step import admit_step_request, FailureReceipt
 assert not (Path.cwd() / 'specs').exists()
 assert not (Path.cwd() / 'implementation').exists()
 assert not (Path.cwd() / 'tests').exists()
@@ -348,6 +351,10 @@ profile = GRCV4Profile.from_canonical_bytes(raw)
 assert profile.to_canonical_bytes() == raw
 assert operator.index(profile.params_resolved.solver.iteration_limit) == 10
 assert c.canonical_json_bytes(c.decode_canonical_json(raw)) == raw
+request = decode_step_request_input(b'{"schema_version":"grcv4-step-request-input-v1","operation_id":"installed","dt":-1,"context_value":{},"boundary_input":null,"external_source":null}')
+failure = admit_step_request(request, source_state_digest='grcv4-state-sha256:' + '0' * 64)
+assert isinstance(failure, FailureReceipt)
+assert failure.identity_payload.code == 'invalid_duration'
 """, profile_bytes.hex()], outside)
                     run([str(python), "-m", "pip", "check"], outside)
 

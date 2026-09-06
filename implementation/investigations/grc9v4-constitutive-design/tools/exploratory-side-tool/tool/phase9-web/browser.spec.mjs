@@ -19,14 +19,16 @@ test('live API, source bindings, leaf states and downloadable JSON agree', async
   expect(api.P9_G1_accepted).toBe(true);
   expect(api.accepted_generic_runtime_support).toEqual([]);
   expect(api.admitted_specialization_support_sets).toEqual([]);
-  expect(api.dependency_ready_leaves).toEqual(['P9-2.1','P9-2.2']);
+  expect(api.dependency_ready_leaves).toEqual(['P9-2.1','P9-2.2','P9-2.3']);
+  expect(api.foundation_acceptance.accepted_iterations).toEqual(['P9-2.1','P9-2.2']);
   await page.goto('/');
   await expect(page.locator('#boundary')).toContainText('Passed');
   await expect(page.locator('#iterations')).toContainText('P9-1.7');
   await expect(page.locator('#iterations')).toContainText('P9-1.8');
   await expect(page.locator('#iterations')).toContainText('P9-1.9');
   await expect(page.locator('#authority')).toContainText('Accepted / bounded implementation only');
-  await expect(page.locator('#next-work')).toContainText('P9-2.1, P9-2.2');
+  await expect(page.locator('#next-work')).toContainText('P9-2.1, P9-2.2, P9-2.3');
+  await expect(page.locator('#next-work')).toContainText('Accepted foundation: P9-2.1, P9-2.2.');
   await expect(page.locator('#handoff')).toContainText('Verified');
   await expect(page.locator('#policy')).toContainText(api.policy_digest);
   await expect(page.locator('#sources')).toContainText(api.source_refs[0].sha256);
@@ -59,7 +61,7 @@ test('archive availability is visible without revoking acceptance or blocking ex
 test('a current source failure holds work but preserves the recorded acceptance display', async ({page,request}) => {
   const value=await (await request.get('/api/status')).json();
   Object.assign(value,{current_boundary:'failed_closed',runtime_authorized:false,runtime_authority_state:'accepted_P9_G1_current_work_held',recorded_full_verification:'not_current',source_refs:[],iterations:[],policy_digest:null,error:'Current source binding failed'});
-  for(const key of ['implementation_scope','dependency_ready_leaves','permitted_runtime_paths','status_digest']) delete value[key];
+  for(const key of ['implementation_scope','dependency_ready_leaves','permitted_runtime_paths','foundation_acceptance','status_digest']) delete value[key];
   value.status_digest=createHash('sha256').update(canonical(value)).digest('hex');
   await page.route('**/api/status',route=>route.fulfill({json:value}));
   await page.goto('/');

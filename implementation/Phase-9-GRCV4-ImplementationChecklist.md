@@ -142,7 +142,7 @@ The historical pending statements below describe those earlier checkpoints;
 they are superseded for P9-G1 only. G2/G3/G4, all runtime support, fifteen
 source obligations and five implementation follow-ups remain pending. No
 runtime code was added by this gate-recording step. Dependency-ready work:
-P9-2.1 and P9-2.2, with twelve currently eligible runtime paths after P9-2.2's
+P9-2.1 and P9-2.2 at that transition, with twelve eligible paths after P9-2.2's
 narrow package-integration routing correction. Tranche 1 is
 reconciled as the review/authorization tranche, not as Phase 9 completion.
 
@@ -248,7 +248,9 @@ three bounded batches retain their own results and raw per-run manifests.
   [execution](./phase-9-grcv4/tranche-2/P9-2.1-ExecutionRecord.json): R1/R2 stress
   corrections covered by 39 ownership tests and 511 required stress probes;
   105 unchanged core tests, Ruff and strict mypy pass. This marks
-  engineering completion; user acceptance is pending. No model/profile is
+  engineering completion. The user's commit instruction accepts this work;
+  see the [foundation decision](./phase-9-grcv4/tranche-2/P9-2.1-2.2-AcceptanceRecord.json).
+  No model/profile is
   admitted and the broader P9-2.6 immutability/lifecycle obligations remain.
 - [x] P9-2.2: Implement complete profile/parameter resolution and canonical
   identities against all applicable schema/preimage vectors.
@@ -265,22 +267,53 @@ three bounded batches retain their own results and raw per-run manifests.
   79 focused tests and 357 stress probes pass. Original audit/subject bytes,
   the two-callsite probe adaptation and corrected execution remain separate.
   Frozen identities and native safe-integer rejection are unchanged. Engineering
-  completion only; user review pending and executable support remains empty.
-- [ ] P9-2.3: Separate wire failures, semantic admission failures, and strict
+  completion was followed by the user's commit acceptance in the same
+  foundation decision. Executable support remains empty.
+- [x] P9-2.3: Separate wire failures, semantic admission failures, and strict
   admitted requests; keep harness injection outside production identity.
   Enforce the P9-2.1 H1 boolean/number identity boundary and exclude unsupported
   pickle/reinitialization routes from admitted state decoding.
   Compose P9-2.2's distinct strict-configuration/canonical-reconstruction
   decoders with operation-specific admission; neither decoder admits a state.
+  [Review](./phase-9-grcv4/tranche-2/P9-2.3-Review.md) and
+  [execution](./phase-9-grcv4/tranche-2/P9-2.3-ExecutionRecord.json): 26 new tests
+  cover duration admission, exact failure receipts, malformed/forged inputs,
+  direct/factory consistency, numeric reconstruction, nonzero underflow,
+  identity suffixes and nested mutation. The combined 105 foundation tests,
+  357 previous audit probes and installed wheel/sdist request checks pass.
+  Engineering completion only; this leaf awaits its own review/commit acceptance.
+  Migration execution, full prestate admission and complete stepping remain
+  later work, not implicitly certified by typed request construction.
+  Two-audit follow-up: content-identity-only receipt wording and explicit
+  decoder guidance; isolated numeric-route, exact-underflow, receipt/request
+  distinction, source/causal limits, enum parity and migration-declaration
+  regressions: 112 focused tests, 875 checkout stress scenarios and clean
+  wheel/sdist checks pass. The original 874/875 checkout result is retained;
+  its only failure was the audit harness counting existing package legacy
+  imports as V4 additions. The baseline-aware correction retains the rejection
+  assertion, with eight sensitivity controls. See the review's per-item
+  dispositions and distinct checkout run.
 - [ ] P9-2.4: Implement orthogonal operation/solver dispositions and receipt
   delta versus persistent ledger ownership.
+  Negative duration: rejected operation, `solver_disposition=None`, no commit
+  ID or persistent append. Bind imported receipt operation/stage/code and
+  source/poststate to actual execution, not just a recomputed digest. With the
+  later solver consumer, preserve `valid_root` on subsequent charge rejection.
 - [ ] P9-2.5: Create the runtime harness with independent oracles and exact
   source/profile/fixture/prestate/poststate/receipt evidence bindings.
   Specify environment and exact-byte versus tolerance comparison scope (§7.4).
+  Retain exact request independently of receipt identity; test different
+  negative requests with equal receipts, foreign/rehashed evidence and a
+  grammar-valid wrong source. Compare complete scientific/lifecycle payloads
+  on failure and distinguish emitted receipt delta from persistent history.
 - [ ] P9-2.6: Verify unsupported-profile rejection, deep immutability, and
   unchanged common-interface behavior for older families.
   Verify clean wheel/sdist and optional-extra boundaries (§7.1) and each
   consumed legacy symbol's exact reuse boundary (§7.2).
+  Carry strict-request non-admission tests into each authorized facade/full-step
+  consumer (P9-4.4/P9-4.5/P9-4.7a): zero, subnormal and extreme finite duration must not
+  bypass graph/profile/context/domain checks. Current no-facade assertions are
+  leaf-stage checks, not a permanent prohibition on authorized implementation.
 
 ## Tranche 3. Typed graph, geometry, transport, and charge
 
@@ -394,6 +427,9 @@ may reach G2 without waiting for all Tranche 6 realizations.
   duplication with canonical authority and receipt identities.
 - [ ] P9-7.2a: Execute required profile migration classes over current and
   reset state, independently by source/target identities and failure surface.
+  A decoded P9-2.3 declaration is not migration admission: test unresolved
+  history/initializers, unsupported targets and missing mappings at the real
+  consumer, including separate candidate/carrier channel decisions.
 - [ ] P9-7.2b: Execute caller-mapped generic topology events over current and
   reset state, with their own map/identity/admission failure evidence.
 - [ ] P9-7.3: Verify separate candidate/carrier history channels, explicit

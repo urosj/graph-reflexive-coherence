@@ -38,12 +38,13 @@ function accepted(extra={}) {
     runtime_authority_state:'accepted_P9_G1_bounded_implementation_not_conformance',
     approval_digest:'cd2c52f30477e1042bb903bd0553da237ddccc9cad373afecc1a84e4e0b37ea2',
     implementation_scope:Array.from({length:43},(_,i)=>({path:`synthetic/${i}`})),
-    dependency_ready_leaves:['P9-2.1','P9-2.2'],permitted_runtime_paths:[...Array.from({length:11},(_,i)=>`synthetic/${i}`),'pyproject.toml'],
+    foundation_acceptance:{record_digest:'1e3f0ddb06b119fa46dc7609d05b7db0c3a4cbc07428c05b8a032da081ae9dd4',accepted_iterations:['P9-2.1','P9-2.2']},
+    dependency_ready_leaves:['P9-2.1','P9-2.2','P9-2.3'],permitted_runtime_paths:[...Array.from({length:15},(_,i)=>`synthetic/${i}`),'pyproject.toml'],
     iterations:[4,5,6,7,8,9].map(i=>({iteration_id:`P9-1.${i}`,status:'implemented_and_verified',reviewer_decision:'accepted_by_user'})),...extra});
 }
 test('accepted G1 permission does not imply accepted profile support',async()=>{
   assert.equal((await verifiedStatus(accepted())).P9_G1_accepted,true);
-  const missingPackage=accepted({permitted_runtime_paths:Array.from({length:12},(_,i)=>`synthetic/${i}`)});
+  const missingPackage=accepted({permitted_runtime_paths:Array.from({length:16},(_,i)=>`synthetic/${i}`)});
   assert.throws(()=>checkedStatus(missingPackage),/dependency-ready/);
   const prematureExport=accepted();
   prematureExport.permitted_runtime_paths[0]='src/pygrc/models/__init__.py';
@@ -67,9 +68,17 @@ test('missing and invalid handoff evidence do not change accepted permission',as
 
 test('current work can be held while historical acceptance remains verified',async()=>{
   const value=accepted({current_boundary:'failed_closed',runtime_authorized:false,runtime_authority_state:'accepted_P9_G1_current_work_held'});
-  for(const key of ['implementation_scope','dependency_ready_leaves','permitted_runtime_paths','status_digest']) delete value[key];
+  for(const key of ['implementation_scope','dependency_ready_leaves','permitted_runtime_paths','foundation_acceptance','status_digest']) delete value[key];
   value.status_digest=createHash('sha256').update(canonical(value)).digest('hex');
   assert.equal((await verifiedStatus(value)).P9_G1_accepted,true);
   assert.equal(value.runtime_authorized,false);
   assert.throws(()=>checkedStatus({...value,approval_digest:'0'.repeat(64)}));
+});
+
+test('committed foundation acceptance does not accept request work or conformance',()=>{
+  for(const foundation_acceptance of [undefined,{},
+    {record_digest:'0'.repeat(64),accepted_iterations:['P9-2.1','P9-2.2']},
+    {record_digest:'1e3f0ddb06b119fa46dc7609d05b7db0c3a4cbc07428c05b8a032da081ae9dd4',accepted_iterations:['P9-2.1','P9-2.2','P9-2.3']}])
+    assert.throws(()=>checkedStatus(accepted({foundation_acceptance})),/foundation/);
+  assert.throws(()=>checkedStatus(accepted({dependency_ready_leaves:['P9-2.1','P9-2.2','P9-2.3','P9-2.4']})),/dependency-ready/);
 });

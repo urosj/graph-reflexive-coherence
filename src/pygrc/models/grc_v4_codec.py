@@ -8,14 +8,15 @@ validity, graph ordering, runtime support or receipt/lifecycle acceptance.
 
 from __future__ import annotations
 
-from collections.abc import Mapping
+from collections.abc import Iterator, Mapping
 from hashlib import sha256
 import importlib
 from importlib import resources
 import json
 import math
+import re
 from types import ModuleType
-from typing import TypeAlias, cast
+from typing import Literal, TypeAlias, cast
 
 JSONValue: TypeAlias = (
     "None | bool | int | float | str | list[JSONValue] | dict[str, JSONValue]"
@@ -43,6 +44,10 @@ class V4WireError(ValueError):
 
 class V4SchemaError(ValueError):
     """Data does not satisfy the selected closed contract schema."""
+
+
+class V4DecodeShapeError(V4WireError):
+    """JSON parsed, but the transport record shape is invalid; no admission."""
 
 
 class V4IdentityError(ValueError):
@@ -127,6 +132,17 @@ def _constant(token: str) -> None:
     raise V4WireError(f"non-JSON constant: {token}")
 
 
+def _floating(token: str) -> float:
+    result = float(token)
+    significand = token.lower().split("e", 1)[0]
+    if result == 0 and any(digit in significand for digit in "123456789"):
+        # A positive beat must not silently become the zero-duration branch.
+        # Ordinary binary64 rounding is retained, but nonzero-to-zero
+        # underflow is an out-of-range wire value, not a numeric default.
+        raise V4WireError("nonzero number underflows the binary64 range")
+    return result
+
+
 def decode_json(data: bytes | str) -> JSONValue:
     """Strict configuration JSON: integer-shaped tokens must be safe integers.
 
@@ -140,7 +156,7 @@ def decode_json(data: bytes | str) -> JSONValue:
         text = data.decode("utf-8") if isinstance(data, bytes) else data
         return json_value(json.loads(
             text, object_pairs_hook=_pairs, parse_int=_integer,
-            parse_constant=_constant,
+            parse_float=_floating, parse_constant=_constant,
         ))
     except (ValueError, UnicodeError, RecursionError) as exc:
         if isinstance(exc, V4WireError):
@@ -181,7 +197,7 @@ def decode_canonical_json(data: bytes | str) -> JSONValue:
         raw = text.encode("utf-8")
         value = json_value(json.loads(
             text, object_pairs_hook=_pairs, parse_int=_canonical_integer,
-            parse_constant=_constant,
+            parse_float=_floating, parse_constant=_constant,
         ))
         if canonical_json_bytes(value) != raw:
             raise V4WireError("not exact canonical binary64 JSON")
@@ -225,6 +241,17 @@ def load_contract_schema() -> dict[str, JSONValue]:
         raise V4AssetError("accepted packaged assets unavailable or invalid") from exc
 
 
+def _identity_pattern(
+    validator: object, pattern: str, instance: JSONValue, schema: object
+) -> Iterator[object]:
+    # All patterns in the pinned schema are whole identity grammars. Python's
+    # '$' also matches before a final newline; the normative IDs do not.
+    if isinstance(instance, str) and re.fullmatch(pattern, instance) is None:
+        yield _dependency("jsonschema").ValidationError(
+            "identifier does not match the complete contract grammar"
+        )
+
+
 def validate_payload(schema_ref: str, value: object) -> dict[str, JSONValue]:
     """Closed-schema data validation only; returns detached primitive fields."""
     data = json_value(value)
@@ -236,7 +263,11 @@ def validate_payload(schema_ref: str, value: object) -> dict[str, JSONValue]:
     # Only the pinned local definitions can be selected. All their references
     # are fragments, so no caller schema or remote resolution enters this path.
     schema["$ref"] = "#/$defs/" + name
-    validator = _dependency("jsonschema").Draft202012Validator(schema)
+    js = _dependency("jsonschema")
+    validator_class = js.validators.extend(
+        js.Draft202012Validator, {"pattern": _identity_pattern}
+    )
+    validator = validator_class(schema)
     error = next(validator.iter_errors(data), None)
     if error is not None:
         path = "/".join(str(part) for part in error.absolute_path)
@@ -244,6 +275,31 @@ def validate_payload(schema_ref: str, value: object) -> dict[str, JSONValue]:
     if not isinstance(data, dict):
         raise V4SchemaError("identity/record payload must be an object")
     return data
+
+
+def decode_record_payload(
+    schema_ref: str, data: bytes | str, *,
+    encoding: Literal["configuration", "canonical"] = "configuration",
+) -> dict[str, JSONValue]:
+    """Decode the generic request transport shapes owned by P9-2.3.
+
+    Malformed JSON and shape-invalid input raise before an operation exists.
+    Semantic constraints deliberately absent from an input schema must be
+    handled by that operation's admission owner, not translated here.
+    No automatic retry through the other numeric route is permitted.
+    This is not a harness, snapshot or GRC9 request decoding entry point.
+    """
+    if type(schema_ref) is not str:
+        raise TypeError("request schema selector must be a string")
+    if schema_ref not in ("step_request_input", "migration_request"):
+        raise V4SchemaError("unsupported generic request transport schema")
+    if type(encoding) is not str or encoding not in ("configuration", "canonical"):
+        raise TypeError("encoding must select configuration or canonical")
+    value = decode_json(data) if encoding == "configuration" else decode_canonical_json(data)
+    try:
+        return validate_payload(schema_ref, value)
+    except V4SchemaError as exc:
+        raise V4DecodeShapeError(str(exc)) from exc
 
 
 # Payload schema -> exact normative prefix. No arbitrary caller prefix or

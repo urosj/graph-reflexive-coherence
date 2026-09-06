@@ -52,8 +52,10 @@ def main():
             ],
             check=True,
         )
+        fixture_revision = p.accepted_foundation(p.ROOT)["baseline_commit"]
         subprocess.run(
-            ["git", "checkout", "--quiet", "--detach", p.BASELINE], cwd=root, check=True
+            ["git", "checkout", "--quiet", "--detach", fixture_revision],
+            cwd=root, check=True,
         )
         (root / ".venv").symlink_to(
             Path(sys.prefix).resolve(), target_is_directory=True
@@ -138,6 +140,7 @@ def main():
                     },
                     "base_fixture_identity": {
                         "baseline_commit": p.BASELINE,
+                        "fixture_revision": fixture_revision,
                         "policy_digest": boundary["record_digest"],
                         "tree": tree,
                     },
@@ -268,9 +271,9 @@ def main():
                 edit(source, content)
 
         case(
-            "unregistered_permitted_path",
+            "published_permitted_path_cannot_drop_registration",
             unregistered_path,
-            "unauthorized source/test/planning addition",
+            "published runtime/evidence deletion or rename forbidden",
         )
         case(
             "missing_acceptance",
@@ -506,6 +509,33 @@ def main():
                 "src/pygrc/models/grc_v4_codec.py", content, leaf="P9-2.2"
             ),
         )
+        case(
+            "accepted_foundation_enables_request_leaf",
+            lambda: registered("src/pygrc/models/grc_v4.py", content, leaf="P9-2.3"),
+        )
+        case(
+            "request_work_does_not_accept_next_leaf",
+            lambda: registered(p.PHASE + "evidence/P9-2.4/probe/inputs.json",
+                               b"{}", leaf="P9-2.4"),
+            "owning leaf entry dependencies are not accepted",
+        )
+        for key, replacement in [
+            ("status", "pending"),
+            ("accepted_iterations", ["P9-2.1", "P9-2.2", "P9-2.3"]),
+            ("accepted_generic_runtime_support", ["C_OS"]),
+            ("baseline_commit", p.BASELINE),
+            ("evidence_bindings", []),
+        ]:
+            def forged_foundation(key=key, replacement=replacement):
+                value = p.read(root / p.FOUNDATION)
+                value[key] = replacement
+                value["record_digest"] = p.digest_record(value)
+                with mutate(p.FOUNDATION, p.canonical(value)):
+                    p.accepted_foundation(root)
+
+            case("foundation_cannot_self_authorize_" + key, forged_foundation,
+                 "untrusted foundation acceptance",
+                 scope="isolated_foundation_acceptance_authentication")
         case(
             "later_generic_leaf_held",
             lambda: registered(

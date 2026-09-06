@@ -1603,10 +1603,18 @@ one attempt at a time; existing acceptance and runtime gates do not change.
 
 P9-2.2 corrects the current implementation routing for the already-reviewed
 dependency/package-data additions in `pyproject.toml`: this identity leaf may
-perform them without borrowing P9-2.6. The current eligible path count is twelve;
+perform them without borrowing P9-2.6. That transition had twelve eligible paths;
 API, notebook and browser projections retain the same accepted G1 and empty
 runtime-support boundaries. Model exports and later dependencies remain held.
 This is an implementation-owner correction, not new scientific authority.
+
+The user's commit-as-acceptance clarification records the corrected P9-2.1
+and P9-2.2 foundation against its committed subjects. Readiness now includes
+P9-2.3 and sixteen owned runtime paths. API, notebook, browser and export expose
+that foundation decision; P9-2.4 and runtime support remain held. Pressure
+fixtures start from the accepted foundation commit, with the older G1 source
+baseline still frozen. A work manifest or rehashed acceptance cannot promote
+unfinished leaves or profiles.
 
 The P9-1.6–P9-1.8 pressure-guide correction adds three independently retained
 test batches, decisive rejection traces, combined/committed/stale/forgery and

@@ -1124,12 +1124,21 @@ ET-C9 artifacts, and make the D11 results queryable before paper propagation.
       specification-extraction gate.
 - [ ] Authorize runtime implementation.
 
-### Current P9-2.2 integration routing (historical states above unchanged)
+### P9-2.2 integration routing (historical states above unchanged)
 
 - [x] Route the already-constrained `pyproject.toml` extra/package-data additions
       to the independently ready identity leaf; leave model exports held.
 - [x] Align API/notebook/browser checks with twelve eligible current paths,
       while retaining empty runtime support and unchanged scientific claims.
+
+### Current P9-2.3 foundation acceptance
+
+- [x] Record the user's commit instructions as acceptance of the corrected
+      P9-2.1/P9-2.2 subjects, without rewriting historical execution records.
+- [x] Derive P9-2.3 readiness from those accepted prerequisites; expose the
+      decision and sixteen eligible paths in API/notebook/browser/export.
+- [x] Add pressure for forged foundation decisions and premature P9-2.4
+      permission. Preserve the G1 scope, frozen release and empty support sets.
 
 ## Phase 9 successor pressure and access (P9-1.7/P9-1.8)
 

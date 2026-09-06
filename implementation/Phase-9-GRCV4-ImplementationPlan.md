@@ -5,10 +5,11 @@ Date: 2026-09-05. Status: P9-G1 accepted; bounded implementation authorized.
 Phase 9 implements the accepted graph-generic `GRCV4` substrate, followed by
 a gated `GRC9V4` specialization. The accepted V4 specifications are the primary
 implementation source, read together with the paper and accepted investigation
-claims. P9-1.9 records the user's accepted implementation review. P9-2.1 now
-implements the immutable value-record foundation, with user review pending;
-P9-2.2 adds typed profile resolution, canonical identities and installed assets,
-also pending review;
+claims. P9-1.9 records the user's accepted implementation review. The user's
+commit instructions accept P9-2.1's immutable value records and P9-2.2's
+profile/identity/installed-asset foundation, including audit corrections.
+P9-2.3 adds the generic request decoding/admission prefix and failure evidence,
+pending its own review/commit instruction;
 no executable profile or runtime conformance is claimed. The companion
 [checklist](./Phase-9-GRCV4-ImplementationChecklist.md) records execution;
 the [phase opening](./Phase-9-GRCV4-PhaseOpening.json) records authority,
@@ -235,7 +236,8 @@ exact target roster, additive integration and per-iteration content bindings.
 The earlier preparation states below remain historical descriptions, not the
 current gate state. All G2/G3/G4 gates, fifteen source obligations and five
 implementation follow-ups remain pending; no runtime profile is advertised.
-The dependency-ready foundation leaves are P9-2.1 and P9-2.2. Later generic
+The [foundation acceptance](./phase-9-grcv4/tranche-2/P9-2.1-2.2-AcceptanceRecord.json)
+makes P9-2.3 dependency-ready alongside P9-2.1/P9-2.2. Later generic
 paths cannot borrow those leaf IDs; their own accepted prerequisites remain
 required. P9-1.9 creates no runtime code.
 
@@ -353,7 +355,51 @@ audit/subject bytes and execution remain separate from the corrected run.
 Native safe-integer rejection, frozen vectors and empty support sets are
 unchanged. P9-2.3 still owns operation-specific decoding/admission composition;
 P9-3.1/P9-4.1 retain actual graph/SPD/domain admission. Engineering completion
-does not infer user acceptance of P9-2.1 or P9-2.2.
+did not itself infer user acceptance. The subsequent commit instructions,
+clarified by the user as acceptance, establish the separate foundation decision.
+Historical execution records keep their original bytes and preparation status.
+
+P9-2.3's [review](./phase-9-grcv4/tranche-2/P9-2.3-Review.md) and
+[execution](./phase-9-grcv4/tranche-2/P9-2.3-ExecutionRecord.json) cover distinct
+transport-shape errors, strict step requests, noncommitting negative-duration
+failure receipts and typed migration declarations. The latter do not execute
+or admit a crossing. New outlier regressions reject trailing-newline identity
+suffixes and nonzero wire values that would underflow to zero; native numeric
+limits, exact-canonical reconstruction and all frozen preimages remain intact.
+The generic request surface has no fault hooks, pickle restoration, model
+facade or executable profile. Later state/domain admission and full transaction
+atomicity remain assigned to their existing owners. A user instruction to
+commit accepts the reviewed work being committed, not unrelated future work
+or any stronger runtime-support claim.
+
+P9-2.3's two independent reviews retain the implementation and clarify its
+consumer boundary. Configuration decoding stays the default for external JSON:
+finite decimal/exponent tokens (including subnormals) are supported, while
+integer-shaped tokens must be safe integers. Exact JCS restoration is the
+explicit canonical route; neither route silently retries the other. A strict
+request certifies shape and duration sign only. Content-checked receipt identity
+is neither a signature nor proof of a live state, an executed failure, full
+request equality or replay authority. The frozen receipt preimage is unchanged.
+
+Carry the following tests into their existing owners; these are implementation
+follow-through, not additional gates or work performed by P9-2.3:
+
+- P9-2.4: negative duration composes a rejected operation with
+  `solver_disposition=None`, no commit ID and no persistent-ledger append.
+  Keep returned failure evidence separate from the persistent receipt ledger.
+  A later charge rejection after a successful solve retains `valid_root` while
+  rejecting the operation; enum membership alone is not an executed stage.
+- P9-2.4/P9-2.5 and full-step/lifecycle consumers: bind the actual prestate and
+  exact request separately; compare scientific and lifecycle payloads as well
+  as their digests on failure. Reject a grammar-valid wrong source or rehashed
+  foreign operation/stage/code receipt at the owner with the real execution.
+  Receipt equality must not authorize replay or substitute another request.
+- P9-2.6/P9-4.4/P9-4.5/P9-4.7a and Tranche 7 consumers: strict zero, smallest positive
+  subnormal and extreme finite durations still need full graph/profile/context/
+  domain admission. No state or admission may be inferred from a request type.
+  Migration declaration decoding proves neither history nor supported targets,
+  mappings or lawful crossings. Enforce these tests when the real consumer
+  exists; no placeholder model/admission capability is introduced in this leaf.
 
 Implement immutable lifecycle-owned records, read-only common projections,
 profile/parameter resolution, deep immutability, and canonical IDs against

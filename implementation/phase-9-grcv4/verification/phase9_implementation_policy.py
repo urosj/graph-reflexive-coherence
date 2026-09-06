@@ -50,6 +50,8 @@ APPROVAL_DIGEST = "cd2c52f30477e1042bb903bd0553da237ddccc9cad373afecc1a84e4e0b37
 POLICY = HERE + "Phase9ImplementationBoundary.json"
 RECORD = PHASE + "tranche-1/P9-1.9-ExecutionRecord.json"
 WORK = PHASE + "runtime/RuntimeWorkManifest.json"
+FOUNDATION = PHASE + "tranche-2/P9-2.1-2.2-AcceptanceRecord.json"
+FOUNDATION_DIGEST = "1e3f0ddb06b119fa46dc7609d05b7db0c3a4cbc07428c05b8a032da081ae9dd4"
 GENERATED = SIDE + "tool/generated/phase9-verification/"
 REPORT_SCHEMA = "phase9_G1_pressure_results_v1"
 REPORT_FILE = "g1-pressure-results.json"
@@ -82,6 +84,7 @@ PATHS = {
     POLICY,
     RECORD,
     WORK,
+    FOUNDATION,
     HERE + "phase9_implementation_policy.py",
     HERE + "audit_phase9_implementation.py",
     HERE + "test_phase9_g1.py",
@@ -285,12 +288,32 @@ def integration(name, before, after):
         )
 
 
-def leaf_permissions(root):
-    """Readiness from accepted dependencies, not a work record's green flag.
+def accepted_foundation(root):
+    """The user's commit decisions accept their exact reviewed foundation.
 
-    Only G1 has been accepted at this transition. Later leaf acceptances must
-    be consumed through the existing controlled successor/review process.
+    Current work and green tests cannot add an accepted leaf or runtime support.
+    Historical subject bindings stay valid while later leaves extend the code.
     """
+    value = read(safe_path(root, FOUNDATION))
+    require(value["record_digest"] == digest_record(value) == FOUNDATION_DIGEST,
+            "untrusted foundation acceptance")
+    require(value["schema"] == "phase9_foundation_acceptance_v1"
+            and value["status"] == "accepted_by_user"
+            and value["release_id"] == prior.RELEASE_ID
+            and value["accepted_iterations"] == ["P9-2.1", "P9-2.2"]
+            and value["accepted_generic_runtime_support"] == []
+            and value["admitted_specialization_support_sets"] == [],
+            "invalid foundation acceptance scope")
+    prior.ancestor(root, value["baseline_commit"])
+    for row in value["evidence_bindings"]:
+        require(sha(git(root, "show", f"{value['baseline_commit']}:{row['path']}"))
+                == row["sha256"], "accepted foundation subject changed")
+    return value
+
+
+def leaf_permissions(root):
+    """Readiness from accepted dependencies, never inferred from completion."""
+    accepted = {"P9-G1", *accepted_foundation(root)["accepted_iterations"]}
     support = read(
         safe_path(root, PHASE + "tranche-1/P9-1.4-SupportAndDependencies.json")
     )
@@ -301,7 +324,7 @@ def leaf_permissions(root):
     ready = sorted(
         r["iteration_id"]
         for r in support["dependency_edges"]
-        if r["requires"] and set(r["requires"]) <= {"P9-G1"}
+        if r["requires"] and set(r["requires"]) <= accepted
     )
     owners = {}
     for module in ownership["modules"]:

@@ -44,8 +44,10 @@ def checks(root):
         return namespace
 
     require(
-        status["dependency_ready_leaves"] == ["P9-2.1", "P9-2.2"]
-        and len(status["permitted_runtime_paths"]) == 12
+        status["dependency_ready_leaves"] == ["P9-2.1", "P9-2.2", "P9-2.3"]
+        and status["foundation_acceptance"]["record_digest"] == policy.FOUNDATION_DIGEST
+        and status["foundation_acceptance"]["accepted_iterations"] == ["P9-2.1", "P9-2.2"]
+        and len(status["permitted_runtime_paths"]) == 16
         and "pyproject.toml" in status["permitted_runtime_paths"]
         and "src/pygrc/models/__init__.py" not in status["permitted_runtime_paths"]
         and "src/pygrc/models/grc_v4_candidate_a.py"
