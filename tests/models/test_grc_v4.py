@@ -3,11 +3,15 @@
 from __future__ import annotations
 
 from collections.abc import Callable
+import ast
 from copy import copy, deepcopy
-from dataclasses import FrozenInstanceError, replace
+from dataclasses import FrozenInstanceError, fields, is_dataclass, replace
 from decimal import Decimal, localcontext
 import json
+from hashlib import sha256
+from importlib.util import resolve_name
 import math
+from pathlib import Path
 import pickle
 import random
 import struct
@@ -50,6 +54,283 @@ def migration() -> dict[str, Any]:
             "history_policy": {"schema_version": "grcv4-history-bundle-policy-v1",
                                "candidate": channel("candidate"), "carrier": channel("carrier")},
             "target_context_value": {"x": [True, {"n": 1}]}}
+
+
+class FoundationIntegrationTests(unittest.TestCase):
+    """P9-2.6 record integration, not an executable model acceptance test.
+
+    Stage-local registry/import assertions must be replaced by exact supported
+    profile/facade checks when those consumers are authorized (P9-4.4/4.5/4.7a).
+    """
+
+    def test_no_ambient_support_after_templates_prefix_controls_and_inspection(self) -> None:
+        from pygrc.models import grc_v4_profile as profiles
+        from pygrc.models.grc_v4_codec import load_contract_schema
+        from pygrc.models.grc_v4_state import GRCV4StepResult
+        from tests.models import grcv4_conformance_harness as harness
+        from tests.models.grcv4_reference_oracles import prefix_fixture
+        from tests.models.test_grc_v4_profile import bundle
+        from tests.models.test_grc_v4_state import result_fixture
+
+        self.assertEqual(profiles.list_supported_profiles(), frozenset())
+        for row in bundle()["identity_vectors"]:
+            if row["schema_ref"] == "#/$defs/profile_template_payload":
+                template = profiles.GRCV4ProfileTemplate.from_payload(row["payload"])
+                self.assertEqual(template.profile_template_id, row["expected_identifier"])
+                with self.assertRaisesRegex(ValueError, "unsupported executable"):
+                    profiles.get_supported_profile(template.profile_template_id)
+        load_contract_schema()
+        fixture = harness.Fixture.from_payload(prefix_fixture())
+        report = harness.run_negative(fixture)
+        self.assertTrue(report["passed"])
+        self.assertEqual(report["evidence_class"], "executed_negative_duration_prefix")
+        imported = GRCV4StepResult.from_payload(report["actual"]["result"])
+        control = harness.run_negative(fixture, operation=lambda request, subject: imported)
+        self.assertTrue(control["passed"])
+        self.assertEqual(control["evidence_class"], "harness_mutation_control")
+        successful = GRCV4StepResult(**result_fixture())
+        GRCV4StepResult.from_payload(successful.to_payload())
+        with patch.object(harness, "run_negative", side_effect=AssertionError("inspection executed")):
+            inspected = harness.inspect_run(
+                Path(__file__).resolve().parents[2],
+                "implementation/phase-9-grcv4/evidence/P9-2.5/audit-corrected-prefix")
+        self.assertEqual(inspected["evidence_class"], "executed_negative_duration_prefix")
+        self.assertFalse(inspected["runtime_profile_conformance"])
+        self.assertFalse(inspected["parent_lineage_validated"])
+        discovery = profiles.list_supported_profiles()
+        with self.assertRaises(AttributeError):
+            getattr(discovery, "add")("C_OS")
+        self.assertEqual(profiles.list_supported_profiles(), frozenset())
+
+    def test_shared_acyclic_wide_context_survives_projection_and_reconstruction(self) -> None:
+        shared: dict[str, Any] = {"nested": [True, {"weight": 0.125}]}
+        payload = step_input()
+        payload["context_value"] = {f"edge-{i}": shared for i in range(1024)}
+        request = api.GRCV4StepRequestInput.from_payload(payload)
+        before = request.to_canonical_bytes()
+        with patch.object(FrozenJSONMap, "__getitem__",
+                          side_effect=AssertionError("per-key traversal")):
+            self.assertEqual(request.to_canonical_bytes(), before)
+            self.assertEqual(canonical_json_bytes(request.to_payload()), before)
+        restored = api.GRCV4StepRequestInput.from_canonical_bytes(before)
+        shared["nested"].clear()
+        projected = restored.to_payload()
+        assert isinstance(projected["context_value"], dict)
+        projected["context_value"].clear()
+        self.assertEqual(restored.to_canonical_bytes(), before)
+        self.assertEqual(request.to_canonical_bytes(), before)
+        cyclic: dict[str, Any] = {}
+        cyclic["self"] = cyclic
+        payload["context_value"] = cyclic
+        with self.assertRaises(ValueError):
+            api.GRCV4StepRequestInput.from_payload(payload)
+
+    def test_distinct_current_reset_history_and_carrier_ownership(self) -> None:
+        from pygrc.models.grc_v4_state import GRCV4AuthoritativeState, GRCV4LifecycleState
+        from tests.models.test_grc_v4_state import fixture
+
+        for candidate, realization in (("C","OS"),("A","OS"),("C","PC"),("A","CI+PC")):
+            data = fixture(candidate, realization)
+            live: Any = {"C": [1.,2.], "W_A": [.5] if candidate=="A" else None,
+                         "Z_4": [-.25,.5] if realization in ("PC","CI+PC") else None}
+            reset: Any = {"C": [2.,1.], "W_A": [.75] if candidate=="A" else None,
+                          "Z_4": [.125,.25] if realization in ("PC","CI+PC") else None}
+            data["current"] = GRCV4AuthoritativeState(**live)
+            data["reset"] = replace(data["reset"],authoritative=GRCV4AuthoritativeState(**reset))
+            record = GRCV4LifecycleState(**data)
+            for key in live:
+                if live[key] is not None:
+                    self.assertNotEqual(getattr(record.current,key),getattr(record.reset.authoritative,key))
+                    live[key].clear()
+                    reset[key].clear()
+                    self.assertTrue(getattr(record.current,key))
+                    self.assertTrue(getattr(record.reset.authoritative,key))
+
+    def test_selected_guard_mutations_are_detected_at_the_intended_boundary(self) -> None:
+        from pygrc.models import grc_v4_profile as profiles
+        from pygrc.models.grc_v4_codec import V4IdentityError
+        from pygrc.models.grc_v4_state import GRCV4Event
+        from tests.models.test_grc_v4_profile import fixture
+
+        declared = profiles.resolve_profile(*fixture())
+        def unsupported_guard() -> None:
+            with self.assertRaises(V4IdentityError):
+                profiles.get_supported_profile(declared.complete_profile_id)
+        unsupported_guard()
+        # Isolated Python test doubles, not passing integration providers.
+        with patch.object(profiles,"get_supported_profile",return_value=declared):
+            with self.assertRaises(AssertionError):
+                unsupported_guard()
+        event = GRCV4Event("test",0,FrozenJSONMap({"nested":[1]}))
+        def detached_guard() -> None:
+            a,b = event.to_common_event(),event.to_common_event()
+            a.payload.clear()
+            self.assertEqual(b.payload,{"nested":[1]})
+        detached_guard()
+        cached = event.to_common_event()
+        with patch.object(GRCV4Event,"to_common_event",return_value=cached):
+            with self.assertRaises(AssertionError):
+                detached_guard()
+
+    def test_ten_declarations_and_parameter_variants_do_not_register_support(self) -> None:
+        from pygrc.models.grc_v4_codec import V4IdentityError
+        from pygrc.models.grc_v4_profile import (
+            GRCV4Profile, get_supported_profile, resolve_profile,
+        )
+        from tests.models.test_grc_v4_profile import family_fixture, reidentify
+
+        ids: set[str] = set()
+        for candidate in ("A", "C"):
+            for realization in ("CI", "OS", "RG2b", "PC", "CI+PC"):
+                for tolerance in (0, 0.125):
+                    params, identity = family_fixture(candidate, realization)
+                    params["solver"]["absolute_tolerance"] = tolerance
+                    reidentify(params, identity)
+                    declared = resolve_profile(params, identity)
+                    restored = GRCV4Profile.from_canonical_bytes(declared.to_canonical_bytes())
+                    ids.add(restored.complete_profile_id)
+                    for label in (restored.complete_profile_id, identity["profile_family_id"],
+                                  candidate, realization):
+                        with self.subTest(candidate=candidate, realization=realization,
+                                          tolerance=tolerance, label=label):
+                            with self.assertRaisesRegex(V4IdentityError, "unsupported executable"):
+                                get_supported_profile(label)
+                    self.assertEqual(list_supported_profiles(), frozenset())
+        self.assertEqual(len(ids), 20)
+
+    def test_duration_validation_still_does_not_admit_a_profile_or_context(self) -> None:
+        from pygrc.models.grc_v4_codec import V4IdentityError
+        from pygrc.models.grc_v4_profile import get_supported_profile
+        from tests.models.test_grc_v4_step import scientific_fixture
+
+        # These shape-valid declarations intentionally contain unresolved
+        # context/domain labels. There is no graph input on this prefix API.
+        for dt in (0.0, 5e-324, 1.7976931348623157e308):
+            payload = step_input(dt)
+            payload["context_value"] = {"domain": "unresolved", "profile": "C_OS"}
+            request = api.GRCV4StepRequestInput.from_payload(payload)
+            strict = admission.admit_step_request(
+                request, source_state_digest="grcv4-state-sha256:" + "f" * 64)
+            self.assertIs(type(strict), api.GRCV4StepRequest)
+            self.assertFalse(hasattr(strict, "committed"))
+            self.assertFalse(hasattr(strict, "admitted_profile"))
+            with self.assertRaises(V4IdentityError):
+                get_supported_profile("C_OS")
+            # No fake success/no-op result is supplied by the negative prefix.
+            fixture = scientific_fixture()
+            with self.assertRaisesRegex(V4SchemaError, "requires full step admission"):
+                admission.negative_duration_result(
+                    request, prestate=fixture, receipt_ledger=[],
+                    active_profile_id=fixture["active_model_identity"])
+        # These are current-stage assertions only, not a ban on later facades.
+        self.assertFalse(hasattr(api, "GRCV4"))
+
+    def test_recursive_ownership_across_records_and_common_projections(self) -> None:
+        from collections.abc import Mapping
+        from pygrc.core.types import GRCState, StepResult
+        from pygrc.models.grc_v4_profile import resolve_profile
+        from pygrc.models.grc_v4_state import (
+            GRCStateSurface, GRCV4LifecycleState, GRCV4State,
+            GRCV4StepResult, StepResultSurface,
+        )
+        from tests.models.test_grc_v4_profile import fixture as profile_fixture
+        from tests.models.test_grc_v4_state import (
+            fixture as state_fixture, mutate, result_fixture,
+        )
+
+        profile = resolve_profile(*profile_fixture())
+        raw = state_fixture()
+        raw["profile"] = profile.to_payload()
+        # Align the shape fixture's reset identity without claiming admission.
+        raw["reset"] = replace(raw["reset"], active_model_identity=profile.complete_profile_id)
+        lifecycle = GRCV4LifecycleState(**raw)
+        state = GRCV4State(lifecycle)
+        event_input = result_fixture()
+        result = GRCV4StepResult(**event_input)
+        request = api.GRCV4StepRequestInput.from_payload(step_input())
+        migration_record = api.GRCV4MigrationRequest.from_payload(migration())
+
+        def frozen_tree(value: Any) -> None:
+            if value is None or type(value) in (str, int, float, bool):
+                return
+            self.assertNotIsInstance(value, (dict, list, set, bytearray))
+            if is_dataclass(value):
+                self.assertTrue(getattr(value, "__dataclass_params__").frozen)
+                self.assertFalse(hasattr(value, "__dict__"))
+                for field in fields(value):
+                    with self.assertRaises((FrozenInstanceError, AttributeError, TypeError)):
+                        setattr(value, field.name, None)
+                    frozen_tree(getattr(value, field.name))
+            elif isinstance(value, Mapping):
+                self.assertIs(type(value), FrozenJSONMap)
+                for key, item in value.items():
+                    frozen_tree(item)
+                    with self.assertRaises(TypeError):
+                        mutate(value, key, None)
+            elif type(value) is tuple:
+                for item in value:
+                    frozen_tree(item)
+            else:
+                self.fail(f"unexpected retained storage type: {type(value).__name__}")
+
+        for record in (profile, lifecycle, state, result, request, migration_record):
+            frozen_tree(record)
+        self.assertIsInstance(state, GRCStateSurface)
+        self.assertIsInstance(result, StepResultSurface)
+        self.assertNotIsInstance(state, GRCState)
+        self.assertNotIsInstance(result, StepResult)
+        self.assertEqual([f.name for f in fields(state)], ["lifecycle"])
+        self.assertEqual(state.budget_target, lifecycle.Q_target)
+        self.assertIsNone(state.remainder)
+        before = canonical_json_bytes(result.to_payload())
+        event_input["events"][0].payload["nested"].clear()
+        result.events[0].payload.clear()
+        result.to_payload().clear()
+        raw["graph"]["live_node_ids"].clear()
+        raw["profile"].clear()
+        self.assertEqual(before, canonical_json_bytes(result.to_payload()))
+        self.assertEqual(lifecycle.graph["live_node_ids"], ("v0", "v1"))
+        self.assertEqual(lifecycle.profile["complete_profile_id"], profile.complete_profile_id)
+
+    def test_consumed_legacy_imports_and_replacement_boundary(self) -> None:
+        # Exact direct source consumption, not the already-imported legacy
+        # package initializer's transitive modules. New uses need review.
+        root = Path(__file__).resolve().parents[2]
+        for name in ("grc_v4", "grc_v4_codec", "grc_v4_profile", "grc_v4_state", "grc_v4_step"):
+            source = (root / f"src/pygrc/models/{name}.py").read_text()
+            tree = ast.parse(source)
+            legacy: list[str] = []
+            for node in ast.walk(tree):
+                if isinstance(node, ast.Import):
+                    legacy.extend(alias.name for alias in node.names
+                                  if alias.name.startswith("pygrc."))
+                if isinstance(node, ast.ImportFrom):
+                    module = resolve_name("." * node.level + (node.module or ""),
+                                          "pygrc.models")
+                    if module.startswith("pygrc.") and not module.startswith("pygrc.models.grc_v4"):
+                        legacy.extend(f"{module}.{alias.name}" for alias in node.names)
+            self.assertEqual(legacy, ["pygrc.core.events.GRCEvent"] if name == "grc_v4_state" else [])
+            self.assertNotIn("type: ignore[override]", source)
+            self.assertNotIn("mypy: ignore-errors", source)
+        from pygrc.core.serialization import canonical_json_dumps
+        self.assertEqual(canonical_json_dumps({"x": "é"}), '{"x":"\\u00e9"}')
+        self.assertEqual(canonical_json_bytes({"x": "é"}), '{"x":"é"}'.encode())
+
+    def test_explicit_legacy_baseline_and_package_exports_remain_unchanged(self) -> None:
+        root = Path(__file__).resolve().parents[2]
+        register = json.loads((root / "implementation/phase-9-grcv4/tranche-1/"
+                               "P9-1.5-OwnershipAndLegacyBaseline.json").read_text())
+        # pyproject's reviewed V4-only extra is checked by the successor audit.
+        # No facade exists at this stage, so exports require no edit either.
+        checked = 0
+        for row in register["legacy_bindings"]:
+            if row["path"] == "pyproject.toml":
+                continue
+            with self.subTest(path=row["path"]):
+                self.assertEqual(sha256((root / row["path"]).read_bytes()).hexdigest(),
+                                 row["sha256"])
+            checked += 1
+        self.assertEqual(checked, 134)
 
 
 class RequestTests(unittest.TestCase):

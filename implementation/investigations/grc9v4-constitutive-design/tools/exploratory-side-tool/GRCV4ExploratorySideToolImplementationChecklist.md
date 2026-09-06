@@ -1329,3 +1329,15 @@ clarification adds no acceptance or runtime gate.
       and premature P9-2.6; preserve empty runtime support and frozen authority.
 - [x] Keep bounded prefix execution, independent oracle controls and recorded
       integrity distinct from profile conformance and parent-lineage claims.
+
+### P9-2.6 foundation integration entry
+
+- [x] Authenticate P9-2.5's user-accepted commit without rewriting original runs.
+- [x] Project `harness_acceptance`, six ready leaves and nineteen eligible paths
+      in API/notebook/browser/export; eligibility alone exports no model.
+- [x] Pressure forged/missing acceptance, eligible integration owners and held
+      P9-3.1. Keep runtime support empty and older scientific authority frozen.
+- [ ] Accept P9-2.6 and enable P9-3.1 (awaiting the user's decision).
+- [x] Keep P9-2.6's self-check source/package/legacy/replay evidence scoped to
+      the existing foundation owners; update current bindings without changing
+      historical subjects, runtime-support sets or API/UX authority semantics.

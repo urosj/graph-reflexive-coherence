@@ -470,6 +470,32 @@ Harness/oracle origin and import-time source hashes are bound without claiming
 bytecode attestation. Original runs are preserved, with separate corrected
 evidence. Production binary64 rules and frozen scientific authority are unchanged.
 
+P9-2.6 follows the user's P9-2.5 commit acceptance (`2075f47`), recorded
+separately from the original execution. Its
+[review](./phase-9-grcv4/tranche-2/P9-2.6-Review.md) verifies current foundation
+integration without introducing a facade: declarations remain unsupported,
+record/common-field ownership stays immutable, installed distributions fail
+closed without dependencies or intact assets, and older behavior is unchanged.
+The symbol-level record binds exact baseline files and current consumption.
+The sole direct legacy symbol consumed is `GRCEvent`, defensively copied;
+mutable legacy state/storage and non-JCS serialization are not reused.
+Before P9-3.1, choose V4-local immutable canonical-ID lookup for its pure graph
+maps rather than wrapping mutation journals, integer allocators or mutable
+slot records as scientific authority. P9-3.1 must implement/test that decision;
+future topology allocation and exact legacy delegation keep their own owners.
+API/notebook/browser expose six ready leaves and nineteen eligible paths, not
+acceptance of P9-2.6 or runtime support. The optional export path is eligible
+but unchanged until an actual authorized facade exists. P9-3.1 remains held.
+
+P9-2.6's self-check hardening adds installed foundation/representation consumers,
+fresh import orders, actual module/archive bindings and mixed-use comparisons
+for the five older concrete families. A separate final-source combined run
+replaces no historical execution. The unchanged default-prefix CLI is replayed
+under its existing P9-2.5 vocabulary solely as P9-2.6 verification follow-through;
+matching deterministic contents do not grant new evidence credit or acceptance.
+The review reconciles every guide section with a current check or its precise
+later owner. Production, older families, accepted claims and release stay fixed.
+
 ### Tranche 3. Typed graph, geometry, transport, and charge
 
 Implement deterministic graph order/orientation, differential identity,

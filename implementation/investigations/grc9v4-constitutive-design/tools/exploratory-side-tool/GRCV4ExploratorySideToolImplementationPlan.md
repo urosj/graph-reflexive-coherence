@@ -1576,6 +1576,22 @@ fail-closed. Pressure fixtures start from the accepted result commit; the G1
 source baseline and prior execution records remain frozen. Harness passes are
 bounded engineering evidence, not profile support or accepted parent lineage.
 
+#### P9-2.6 foundation integration entry
+
+The separately authenticated P9-2.5 commit acceptance enables P9-2.6. API,
+notebook, browser and export carry `harness_acceptance`, six ready leaves and
+nineteen eligible paths. Export eligibility does not invent a model: the
+initializer remains unchanged. Missing/forged harness decisions and premature
+P9-3.1 stay fail-closed; fixtures start from the accepted harness commit.
+P9-2.6 tests package/immutability/legacy boundaries, not runtime conformance.
+Earlier entry states above are historical, not today's permission projection.
+
+P9-2.6 self-check hardening binds the actual assembled/installed foundation,
+legacy mixed-use comparisons and a fresh default-prefix replay. These are
+engineering evidence under the existing owners, not a new forensic authority,
+runtime support, acceptance or surface vocabulary. Current verification uses
+the refreshed work hashes; historical runs retain their original subjects.
+
 ## Verification Strategy
 
 ### Kernel and adapter tests

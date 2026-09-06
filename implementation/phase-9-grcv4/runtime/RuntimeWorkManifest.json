@@ -219,9 +219,64 @@
       "sha256": "bb1ae6af8022633c28ae90200176ece89381e53183b041aae2f5737b3867babc"
     },
     {
+      "path": "implementation/phase-9-grcv4/evidence/P9-2.5/p926-self-check-replay/actual.json",
+      "iteration_id": "P9-2.5",
+      "sha256": "9b2790dd0b7d0676481a02d0a97f386211149dcf3c272e8028cb5362406078a0"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-2.5/p926-self-check-replay/expected.json",
+      "iteration_id": "P9-2.5",
+      "sha256": "adf8ede32849ac12996db305ea79355e1c127a368be403d750e0a4aa4f4dea9d"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-2.5/p926-self-check-replay/inputs.json",
+      "iteration_id": "P9-2.5",
+      "sha256": "355e75560284d6d1f4abab8691c99266ddb8f8bafb028c79ef2680d3b8dfb301"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-2.5/p926-self-check-replay/receipts.json",
+      "iteration_id": "P9-2.5",
+      "sha256": "87ed885b1910d4b71670204fb51e3cc06c4d26e47e204ea1ff8e24152830b625"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-2.5/p926-self-check-replay/run.json",
+      "iteration_id": "P9-2.5",
+      "sha256": "3f375695f1c15a9841235754e66e81a624ae1ede04e281864f594ff6fcfbcd75"
+    },
+    {
       "path": "implementation/phase-9-grcv4/evidence/P9-2.5/pre-audit-subject/inputs.json",
       "iteration_id": "P9-2.5",
       "sha256": "647fd3c2ad10b3ded8cdf930b0238504fae5543db31aaedf60ef39501f0c4c4b"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-2.6/integration/actual.json",
+      "iteration_id": "P9-2.6",
+      "sha256": "be613eb492f4f17aa64db8d0afa8cd119c705b403c867c7ac199168db8ac7a22"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-2.6/integration/inputs.json",
+      "iteration_id": "P9-2.6",
+      "sha256": "f1ceabe2cb22598baeba8394adb4a36a08ac936f715392b14db750e0adf5e1bf"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-2.6/integration/run.json",
+      "iteration_id": "P9-2.6",
+      "sha256": "cf3c18d03b59112b739902a3d363522ec80562a84de27f39b141537e1af50ced"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-2.6/self-check/actual.json",
+      "iteration_id": "P9-2.6",
+      "sha256": "7cfe6bf0a6aaf63078baa45b744f66edac4185ed97785b90227498151e22737c"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-2.6/self-check/inputs.json",
+      "iteration_id": "P9-2.6",
+      "sha256": "36fbfc65f2ba710a4df1e0fdcd5af310b340f6e184bf5cb11c4427045014a553"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-2.6/self-check/run.json",
+      "iteration_id": "P9-2.6",
+      "sha256": "9594ecbf2a50a2cc11b81bcecfc88d6125416c3fc705cd5b2af3a8f514ef4a95"
     },
     {
       "path": "implementation/phase-9-grcv4/tranche-2/P9-2.1-ExecutionRecord.json",
@@ -272,6 +327,16 @@
       "path": "implementation/phase-9-grcv4/tranche-2/P9-2.5-Review.md",
       "iteration_id": "P9-2.5",
       "sha256": "72fc3c66b053906a1cfcde3c550981a624d93b29a78700925bbb73e39fb50bff"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-2/P9-2.6-ExecutionRecord.json",
+      "iteration_id": "P9-2.6",
+      "sha256": "257f55fedd3a6b981b3b71c0e26b82e47a14f5bd53a53d90d8be82b9f63101f7"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-2/P9-2.6-Review.md",
+      "iteration_id": "P9-2.6",
+      "sha256": "b8de86d7612bad33f932866e89626e783bd5a330824ce5cdbe871e070d1f9917"
     },
     {
       "path": "pyproject.toml",
@@ -340,13 +405,13 @@
     },
     {
       "path": "tests/models/test_grc_v4.py",
-      "sha256": "592c2ce73c37586266004af45d9066af6a1ec588ca61d031854f6fec434ff19c",
-      "iteration_id": "P9-2.3"
+      "iteration_id": "P9-2.6",
+      "sha256": "6fef68572fb17afdd48a679554d0cc6abaae8d34c95ca31f2e33b3ec8248c193"
     },
     {
       "path": "tests/models/test_grc_v4_codec.py",
-      "sha256": "e1baffd283366d5e84c633505c6e2917a00da4bba14c1df45613927ee1e98435",
-      "iteration_id": "P9-2.3"
+      "iteration_id": "P9-2.6",
+      "sha256": "465bc3448fcc196e01ab0003665e5eeebde581208a5628f0adeeeabebb770983"
     },
     {
       "path": "tests/models/test_grc_v4_profile.py",
@@ -367,5 +432,5 @@
   "accepted_generic_runtime_support": [],
   "admitted_specialization_support_sets": [],
   "claim_ceiling": "Exact current implementation content bindings, not review acceptance or conformance.",
-  "record_digest": "f747064a4686b3ddbfc9b91b348ec6cbdd62d7130a6c9b1dc5a61fe16b515d2c"
+  "record_digest": "c10507dd6545aba7527da27fe3fd8fbf5031396e33fa2010f17ab6374582943c"
 }

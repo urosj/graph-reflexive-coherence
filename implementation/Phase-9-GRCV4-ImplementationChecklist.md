@@ -337,7 +337,9 @@ three bounded batches retain their own results and raw per-run manifests.
   instance certify neither execution nor parent lineage.
   [Review](./phase-9-grcv4/tranche-2/P9-2.5-Review.md) and
   [execution](./phase-9-grcv4/tranche-2/P9-2.5-ExecutionRecord.json): engineering
-  harness implemented; user review/acceptance pending. The actual adapter
+  harness accepted by the user's commit instruction at `2075f47`; the
+  [separate acceptance](./phase-9-grcv4/tranche-2/P9-2.5-AcceptanceRecord.json)
+  preserves the original review/execution bytes. The actual adapter
   executes only the negative-duration prefix. Independent full-state/ledger/
   reset and receipt checks, exact-request retention, source/environment
   bindings, no-overwrite inspection and mutation controls are covered.
@@ -351,8 +353,8 @@ three bounded batches retain their own results and raw per-run manifests.
   capture diagnostics, validate failed reports, and bind checker origins.
   Inspection keeps evidence classification. Verified 177 foundation/harness
   tests and 3,337 independent numeric pressure cases; original run bytes and
-  default content identities are preserved. User acceptance remains pending.
-- [ ] P9-2.6: Verify unsupported-profile rejection, deep immutability, and
+  default content identities are preserved.
+- [x] P9-2.6: Verify unsupported-profile rejection, deep immutability, and
   unchanged common-interface behavior for older families.
   Verify clean wheel/sdist and optional-extra boundaries (§7.1) and each
   consumed legacy symbol's exact reuse boundary (§7.2).
@@ -360,6 +362,21 @@ three bounded batches retain their own results and raw per-run manifests.
   consumer (P9-4.4/P9-4.5/P9-4.7a): zero, subnormal and extreme finite duration must not
   bypass graph/profile/context/domain checks. Current no-facade assertions are
   leaf-stage checks, not a permanent prohibition on authorized implementation.
+  [Review](./phase-9-grcv4/tranche-2/P9-2.6-Review.md) and
+  [execution](./phase-9-grcv4/tranche-2/P9-2.6-ExecutionRecord.json): bounded
+  foundation integration implemented; user acceptance pending. Verify all ten
+  declarations remain unsupported, detached recursive storage/common fields,
+  unchanged explicit legacy baseline, clean installs with absent/partial/full
+  extras and installed-asset corruption. No production, legacy or frozen source
+  edits; no facade exported. Six leaves/nineteen paths are dependency-ready,
+  not accepted conformance. P9-3.1 remains held until this leaf is accepted.
+  Self-check hardening: nine integration methods, all implemented foundation
+  layers through four fresh installed cells and two distinct import orders, partial
+  extras, actual module/archive identities, cold/warm asset rejection and five
+  older-family mixed-use comparisons. Reconcile prior corrections by accepted
+  subject and preserve original evidence. A separate final combined suite and
+  exact default-prefix CLI replay supply current-source evidence; neither
+  accepts a profile nor starts Tranche 3.
 
 ## Tranche 3. Typed graph, geometry, transport, and charge
 
