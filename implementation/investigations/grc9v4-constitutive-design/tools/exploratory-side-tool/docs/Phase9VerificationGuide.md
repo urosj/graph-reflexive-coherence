@@ -178,10 +178,21 @@ Deliberately published supporting evidence remains immutable. Historical
 blanket failure-retention wording is superseded by the addendum, not rewritten.
 
 The runtime manifest binds exact current work paths, hashes and registered
-owning-leaf IDs. P9-2.1/P9-2.2 are currently dependency-ready, with eleven
+owning-leaf IDs. The user's commit instructions accept the corrected P9-2.1
+and P9-2.2 foundation; a separate committed-subject acceptance record preserves
+the historical review/command evidence. The separately accepted P9-2.3 and
+P9-2.4 commits enabled P9-2.5; its separately accepted commit now enables
+P9-2.6 alongside those five leaves, with nineteen
 eligible runtime paths; later generic and specialization leaves retain their
 own gates. API/export includes `dependency_ready_leaves` and
 `permitted_runtime_paths`, separately from the full conditional target roster.
+`foundation_acceptance` identifies the exact acceptance record and accepted
+foundation leaves. `request_acceptance` binds the user's P9-2.3 commit decision;
+`result_acceptance` binds the user's P9-2.4 commit decision;
+`harness_acceptance` binds the user's P9-2.5 commit decision. Current P9-2.6
+work cannot accept itself or unlock P9-3.1. The ownership adapter retains the
+checklist-assigned result leaf on the existing state/step pairs; P9-2.5 uses
+the two already-reviewed harness/oracle test paths.
 G1 approval permits reviewed work under those conditions; the manifest is integrity
 data, not an acceptance mechanism. No unexecuted profile may be advertised.
 New scope, G2 conformance or G3 admission needs a separately reviewed successor.

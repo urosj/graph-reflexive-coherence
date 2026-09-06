@@ -1124,69 +1124,6 @@ ET-C9 artifacts, and make the D11 results queryable before paper propagation.
       specification-extraction gate.
 - [ ] Authorize runtime implementation.
 
-## Phase 9 successor pressure and access (P9-1.7/P9-1.8)
-
-These are engineering-verification leaves, not ET-C11 human acceptance or
-P9-G1 runtime authority. See the [access guide](./docs/Phase9VerificationGuide.md).
-
-- [x] P9-1.7: Execute all six registered review pressures, including actual
-      frozen bytes, exact child/alias/dependency semantics, conditional
-      completion and separately pinned synthetic future-runtime controls.
-- [x] P9-1.8: Verify the real API, notebook code cells and desktop/mobile
-      browser refresh/download against the same authority boundary.
-- [x] P9-1.8: Reconcile executable scenarios and normal-entry verification;
-      retain the unchanged D11 API/notebook/browser checks and artifacts.
-- [x] Record explicit user acceptance and P9-1.9/P9-G1 authority separately.
-
-- [x] Close the supplied pressure-guide gaps with attributable rejection,
-      combined faults, broken-checker controls and source-admitted semantics.
-- [x] Preserve candidate rejection separately from a passing assertion through
-      the actual API, notebook, desktop/mobile browser and JSON export.
-- [x] Retain the surface inventory, three batch results, exact mutation/state
-      evidence, raw run archives and source authority/support distinctions.
-
-## Phase 9 Planning Successor Verification — P9-1.6
-
-Candidate evidence: [P9-1.6 record](../../../../phase-9-grcv4/tranche-1/P9-1.6-ExecutionRecord.json).
-This is downstream verification maintenance, not a new scientific source or
-human acceptance of ET-C11.
-
-- [x] Reproduce `P9-TOOL-001` on the accepted planning checkpoint.
-- [x] Keep release-bound auditor/boundary bytes and prior review records unchanged.
-- [x] Run the four historical D10/specification audits in their accepted Git tree.
-- [x] Verify current release/acceptance/opening, no-ff merge, planning scope and hashes.
-- [x] Route both normal entry points through the shared state-detected dispatcher.
-- [x] Add a portable, byte-identical copy of the already hash-bound acceptance audit.
-- [x] Retain focused dispatch/authority checks and existing normal API/notebook/browser regressions.
-- [x] Complete P9-1.7's adversarial authority/composition review.
-- [x] Complete P9-1.8's API/notebook/browser/scenario reconciliation.
-- [x] Record P9-G1 under separate user acceptance before runtime/source/test/dependency work.
-
-## Phase 9 accepted implementation authority — P9-1.9
-
-- [x] Bind the user's explicit acceptance to the immutable P9-1.4–P9-1.8 evidence.
-- [x] Dispatch normal and dedicated verification to the accepted G1 successor.
-- [x] Admit exact registered generic V4 work and additive integration; reject
-      unregistered paths, legacy changes, stale approval and premature GRC9V4 work.
-- [x] Preserve accepted planning checks on commit `6e0a507` and their historical audits.
-- [x] Show accepted implementation permission in API/notebook/browser/export,
-      while leaving runtime conformance and support empty.
-- [x] Reconcile the P9-1.9 guide's sixteen outlier rows and all eight prerequisite
-      leaves; enforce source-bound ownership and dependency readiness, not paths alone.
-- [ ] Accept any P9-G2/P9-G3 runtime scope (not granted by P9-G1).
-
-This downstream user approval does not change ET-C10 scientific authority or
-ET-C11's separate UX human-acceptance state. No model implementation occurs here.
-
-The [handoff guidance](./docs/Phase9VerificationGuide.md#accepted-p9-g1-successor)
-now links retrievable normalized original-run evidence, original hash citations,
-and its independent integrity check. Archive loss/corruption does not revoke
-recorded G1 acceptance; current source/scope violations still hold work. API,
-notebook, browser and export exercise this distinction. Routine
-failed attempts need no archival checklist; summarize relevant causes,
-corrections and remaining limits in the existing work record. This retention
-clarification adds no acceptance or runtime gate.
-
 ## Iteration 11. D11 API, Notebook, And Browser UX
 
 **Status:** candidate implemented and verified; human acceptance pending
@@ -1295,3 +1232,112 @@ authority or satisfying downstream scientific obligations.
 - [x] Rebuild and verify the v2 content-addressed release and detached checksum
       through the normal `verify-iteration9` entry point.
 - [ ] Authorize runtime implementation.
+
+## Phase 9 Planning Successor Verification — P9-1.6
+
+Candidate evidence: [P9-1.6 record](../../../../phase-9-grcv4/tranche-1/P9-1.6-ExecutionRecord.json).
+This is downstream verification maintenance, not a new scientific source or
+human acceptance of ET-C11.
+
+- [x] Reproduce `P9-TOOL-001` on the accepted planning checkpoint.
+- [x] Keep release-bound auditor/boundary bytes and prior review records unchanged.
+- [x] Run the four historical D10/specification audits in their accepted Git tree.
+- [x] Verify current release/acceptance/opening, no-ff merge, planning scope and hashes.
+- [x] Route both normal entry points through the shared state-detected dispatcher.
+- [x] Add a portable, byte-identical copy of the already hash-bound acceptance audit.
+- [x] Retain focused dispatch/authority checks and existing normal API/notebook/browser regressions.
+- [x] Complete P9-1.7's adversarial authority/composition review.
+- [x] Complete P9-1.8's API/notebook/browser/scenario reconciliation.
+- [x] Record P9-G1 under separate user acceptance before runtime/source/test/dependency work.
+
+## Phase 9 successor pressure and access (P9-1.7/P9-1.8)
+
+These are engineering-verification leaves, not ET-C11 human acceptance or
+P9-G1 runtime authority. See the [access guide](./docs/Phase9VerificationGuide.md).
+
+- [x] P9-1.7: Execute all six registered review pressures, including actual
+      frozen bytes, exact child/alias/dependency semantics, conditional
+      completion and separately pinned synthetic future-runtime controls.
+- [x] P9-1.8: Verify the real API, notebook code cells and desktop/mobile
+      browser refresh/download against the same authority boundary.
+- [x] P9-1.8: Reconcile executable scenarios and normal-entry verification;
+      retain the unchanged D11 API/notebook/browser checks and artifacts.
+- [x] Record explicit user acceptance and P9-1.9/P9-G1 authority separately.
+
+- [x] Close the supplied pressure-guide gaps with attributable rejection,
+      combined faults, broken-checker controls and source-admitted semantics.
+- [x] Preserve candidate rejection separately from a passing assertion through
+      the actual API, notebook, desktop/mobile browser and JSON export.
+- [x] Retain the surface inventory, three batch results, exact mutation/state
+      evidence, raw run archives and source authority/support distinctions.
+
+## Phase 9 accepted implementation authority — P9-1.9
+
+- [x] Bind the user's explicit acceptance to the immutable P9-1.4–P9-1.8 evidence.
+- [x] Dispatch normal and dedicated verification to the accepted G1 successor.
+- [x] Admit exact registered generic V4 work and additive integration; reject
+      unregistered paths, legacy changes, stale approval and premature GRC9V4 work.
+- [x] Preserve accepted planning checks on commit `6e0a507` and their historical audits.
+- [x] Show accepted implementation permission in API/notebook/browser/export,
+      while leaving runtime conformance and support empty.
+- [x] Reconcile the P9-1.9 guide's sixteen outlier rows and all eight prerequisite
+      leaves; enforce source-bound ownership and dependency readiness, not paths alone.
+- [ ] Accept any P9-G2/P9-G3 runtime scope (not granted by P9-G1).
+
+This downstream user approval does not change ET-C10 scientific authority or
+ET-C11's separate UX human-acceptance state. No model implementation occurs here.
+
+The [handoff guidance](./docs/Phase9VerificationGuide.md#accepted-p9-g1-successor)
+now links retrievable normalized original-run evidence, original hash citations,
+and its independent integrity check. Archive loss/corruption does not revoke
+recorded G1 acceptance; current source/scope violations still hold work. API,
+notebook, browser and export exercise this distinction. Routine
+failed attempts need no archival checklist; summarize relevant causes,
+corrections and remaining limits in the existing work record. This retention
+clarification adds no acceptance or runtime gate.
+
+## Phase 9 Tranche 2 foundation routing and acceptance
+
+### P9-2.2 integration routing (historical states above unchanged)
+
+- [x] Route the already-constrained `pyproject.toml` extra/package-data additions
+      to the independently ready identity leaf; leave model exports held.
+- [x] Align API/notebook/browser checks with twelve eligible current paths,
+      while retaining empty runtime support and unchanged scientific claims.
+
+### Current request/result foundation acceptance
+
+- [x] Record the user's commit instructions as acceptance of the corrected
+      P9-2.1/P9-2.2 subjects, without rewriting historical execution records.
+- [x] Derive P9-2.3 readiness from those accepted prerequisites; expose the
+      decision and sixteen eligible paths in API/notebook/browser/export.
+- [x] Add pressure for forged foundation decisions and premature P9-2.4
+      permission. Preserve the G1 scope, frozen release and empty support sets.
+- [x] Record the subsequent user-accepted P9-2.3 commit and derive P9-2.4
+      readiness, retaining P9-2.5 as held. Add result ownership only to the
+      existing state/step pairs; preserve historical acceptance/run records.
+- [x] Project the separate `request_acceptance` in API, notebook and browser;
+      reject forged/missing decisions and later-leaf promotion. Keep sixteen
+      eligible paths, no lifecycle/facade/harness shortcut and empty support.
+
+### P9-2.5 harness entry
+
+- [x] Bind the P9-2.4 user-accepted commit separately from historical records.
+- [x] Expose `result_acceptance`, five dependency-ready leaves and eighteen
+      eligible paths consistently in API/notebook/browser/export.
+- [x] Add pressure for both P9-2.5 test owners, forged/missing result acceptance,
+      and premature P9-2.6; preserve empty runtime support and frozen authority.
+- [x] Keep bounded prefix execution, independent oracle controls and recorded
+      integrity distinct from profile conformance and parent-lineage claims.
+
+### P9-2.6 foundation integration entry
+
+- [x] Authenticate P9-2.5's user-accepted commit without rewriting original runs.
+- [x] Project `harness_acceptance`, six ready leaves and nineteen eligible paths
+      in API/notebook/browser/export; eligibility alone exports no model.
+- [x] Pressure forged/missing acceptance, eligible integration owners and held
+      P9-3.1. Keep runtime support empty and older scientific authority frozen.
+- [ ] Accept P9-2.6 and enable P9-3.1 (awaiting the user's decision).
+- [x] Keep P9-2.6's self-check source/package/legacy/replay evidence scoped to
+      the existing foundation owners; update current bindings without changing
+      historical subjects, runtime-support sets or API/UX authority semantics.

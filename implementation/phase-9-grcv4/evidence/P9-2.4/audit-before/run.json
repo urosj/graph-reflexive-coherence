@@ -1,0 +1,57 @@
+{
+  "schema": "phase9_audit_before_run_v1",
+  "iteration_id": "P9-2.4",
+  "base_commit": "1647d3f7e21b33db156ef95f51af02339462ab8f",
+  "subject_run": {
+    "path": "implementation/phase-9-grcv4/evidence/P9-2.4/p924-verification/run.json",
+    "sha256": "e97dfcbcba096074004e3c75f49ff2c9e15df8c310af723f8865ba0eb5ead4ec"
+  },
+  "changed_subject_bytes": {
+    "path": "implementation/phase-9-grcv4/evidence/P9-2.4/pre-audit-subject/inputs.json",
+    "sha256": "1aef028f02f83ea383d0e7d10f50576a9e789afb40fb8b6d81f95e0f34b3e3ed"
+  },
+  "environment": {
+    "python": "3.12.3",
+    "platform": "Linux-7.0.0-30-generic-x86_64-with-glibc2.39",
+    "dependencies": {
+      "rfc8785": "0.1.4",
+      "jsonschema": "4.26.0",
+      "attrs": "26.1.0",
+      "referencing": "0.37.0",
+      "rpds-py": "2026.6.3",
+      "jsonschema-specifications": "2025.9.1",
+      "build": "1.6.0",
+      "setuptools": "84.0.0",
+      "wheel": "0.48.0",
+      "pip": "24.0",
+      "mypy": "2.1.0",
+      "ruff": "0.15.16",
+      "numpy": "2.4.6"
+    }
+  },
+  "runner": {
+    "bundle": {
+      "path": "implementation/phase-9-grcv4/evidence/P9-2.4/independent-audit/inputs.json",
+      "sha256": "0d991412489338bda60349e172866055c2013b43b4765ac4d10487c51051ca7a"
+    },
+    "runner_name": "P9-2.4-independent-stress-tests.py",
+    "runner_sha256": "eaf252c608a7fd69f9325eeeed7fdc80f22f28f965b567325d1b2dc972938aa7",
+    "documentation_replacement_to_reconstruct_executed_source": {
+      "before": "Run against a complete checkout using the hash-checked replay command in\nimplementation/phase-9-grcv4/tranche-2/P9-2.4-Review.md.",
+      "after": "Run against a complete checkout:\n  .venv/bin/python implementation/phase-9-grcv4/evidence/P9-2.4/independent-audit/stress.py --repo . --output result.json"
+    },
+    "reason": "Only invocation documentation changed when embedding the runner in the registered evidence vocabulary; executable scenario code is identical."
+  },
+  "result": {
+    "path": "implementation/phase-9-grcv4/evidence/P9-2.4/audit-before/actual.json",
+    "sha256": "92e968bee4f6b998a221216353e4b476e256cf4d3da3cda4c81d4777af588dc7"
+  },
+  "outcomes": {
+    "scenarios": 495,
+    "passed": 484,
+    "failed": 11,
+    "qualified_provider_run": false,
+    "process_exit_code": 1
+  },
+  "meaning": "Exact current dependency run confirms both source-local constructor defects before correction. Not an acceptance, numerical-step or provider-substituted run."
+}

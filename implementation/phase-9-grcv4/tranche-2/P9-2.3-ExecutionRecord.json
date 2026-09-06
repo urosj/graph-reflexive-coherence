@@ -1,0 +1,262 @@
+{
+  "schema": "phase9_request_admission_execution_v1",
+  "iteration_id": "P9-2.3",
+  "status": "audit_followup_verified_review_pending",
+  "base_commit": "d62b1cd",
+  "release_id": "grcv4-spec-release-sha256:9f4c8fe5b57b1c477d834a3e4dae3f98a2b18c70e6e7f598e3c9652170c8645f",
+  "entry_authority": {
+    "acceptance_record": "implementation/phase-9-grcv4/tranche-2/P9-2.1-2.2-AcceptanceRecord.json",
+    "record_digest": "1e3f0ddb06b119fa46dc7609d05b7db0c3a4cbc07428c05b8a032da081ae9dd4",
+    "accepted_prerequisites": [
+      "P9-2.1",
+      "P9-2.2"
+    ]
+  },
+  "verification": {
+    "supporting_run": "implementation/phase-9-grcv4/evidence/P9-2.3/audit-followup/run.json",
+    "sha256": "303ff20dc9490118eeabf0951bb6776895d0ce3fe89d37700ab39f83b884fa8d",
+    "outcomes": {
+      "focused_tests": 112,
+      "new_audit_tests": 7,
+      "checkout_stress_scenarios": 875,
+      "checkout_stress_passed": 875,
+      "scope_harness_controls": 8,
+      "packaging_tests": 1,
+      "ruff": "pass",
+      "strict_mypy": "pass"
+    },
+    "scope": "Exact checkout request/receipt boundary checks, not full operation execution, live state authentication, atomic rollback, migration or profile conformance."
+  },
+  "artifact_bindings": [
+    {
+      "path": "implementation/Phase-9-GRCV4-ImplementationChecklist.md",
+      "sha256": "ed13971b7f2c8adf0cef956e7ec45fdd66d42b523c51ea4eebfd1b391236e0b9"
+    },
+    {
+      "path": "implementation/Phase-9-GRCV4-ImplementationPlan.md",
+      "sha256": "36ec51b0c3818d75d0f2e8e5f611a9779dc350dbba2a0af4230e99ff6cdcd218"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D10_2FullSubstrateProvenanceAndPromotionAudit.json",
+      "sha256": "59c2b956cec7d258b1db09d43d6df44deb8c0be0453a5d741f7e2733d6881a33"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D11CCandidateBaselineTransportAndMobilityResolution.md",
+      "sha256": "50704e45d249a2bbaa32faad6fbc0d3d1a999999d4721064407ac2d9af0c01c6"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D11CCandidateBaselineTransportProvenanceSupplement.json",
+      "sha256": "43bb028c6c7b09952a35dee280067470f2ff5cde4395d39c5b5e7aba6fae29fb"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/drafts/2026-09-GRC-V4.md",
+      "sha256": "2da39c3bb0d102804f9135384317771f3fe1b3e48df3b4ab1813a3575642a739"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-2.2/audit-correction/inputs.json",
+      "sha256": "445548bf243a84f30be8015da12f2b10eabb7bb1b98d0c0cee523a3a7e5f505f"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-2.2/independent-audit-inputs/inputs.json",
+      "sha256": "4eb4dc04caecf74b9ea689223f8a653cd240ef3026ddcedf928560245680db8a"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-2.3/audit-followup/actual.json",
+      "sha256": "4f7ca95728383a847f3bc97f9efa2e52d28779b9887b2fb570c647d675213112"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-2.3/audit-followup/inputs.json",
+      "sha256": "0780485004cdd8eab0ce0d665458dbec06bbd53c096a41f7a50bf6959f061392"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-2.3/audit-unadapted/actual.json",
+      "sha256": "9c028c82a40a742166accfe0273c0e3db7955ab64dc104ffbfd4def699d5a038"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-2.3/independent-audit-inputs/inputs.json",
+      "sha256": "32dbb6e7653185fe37c6e564e8329230fcfa3e2cf8456140e7da65ff1218458f"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-2.3/p923-verification/actual.json",
+      "sha256": "c714f2253a48fa2a053f72ca78a50a1646a850ab0a90fc770b9cd091c92f33c8"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-2.3/p923-verification/run.json",
+      "sha256": "f0015f3a83fead275e4825748eb9495c16a0a8f60c37040783bf54f1cd94c338"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-2.3/pre-audit-subject/inputs.json",
+      "sha256": "b795055acbcf6e6da0a72d8b7004750797cb46dd7cf6a011dd993492bc1c572b"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-1/P9-1.1-SourceCrosswalk.json",
+      "sha256": "85fe7204f5a40e3ffa502fce33519000adb443ba6480cb85e0d6ee4155893ede"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-1/P9-1.9-G1Acceptance.json",
+      "sha256": "218b29ae251cc93e749ff46ad919268621eabafcfe85412aa549a688571a8cc9"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-2/P9-2.1-2.2-AcceptanceRecord.json",
+      "sha256": "0e0e35db0e23d5da0607d4132ce149947b26feeb4ac7e8b685a92d6eee30ae66"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-2/P9-2.3-Review.md",
+      "sha256": "ca2e6877bb09da08b80afa25e8622a283674ff8401a38968989d822914f80a3d"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/phase9_implementation_policy.py",
+      "sha256": "5b9f25fc9b45c0276d027d80497295ba505aac36690f5dd1486918d8048e40cd"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_phase9_g1.py",
+      "sha256": "9c1de3b1bc6d80c439e0c81faa23289a497921b1b81e2c9821d3c81e8602bdff"
+    },
+    {
+      "path": "pyproject.toml",
+      "sha256": "343407a945a7bd41407f821ec81a3dee68cf5e8a0f2413b1e6938a722f9c393c"
+    },
+    {
+      "path": "specs/grc-common-interface-v4-ext.md",
+      "sha256": "7d5be95242619fcaaae7ea5d8e950b3f335efe9a81492e67e6baa91c4643bc26"
+    },
+    {
+      "path": "specs/grc-v4-conformance-vectors.json",
+      "sha256": "ab12e2ffe02e9a9267eca9bdc3ca9361c0cf973cb87917d0eb090d3d68654ce4"
+    },
+    {
+      "path": "specs/grc-v4-contract-schema.json",
+      "sha256": "3fd072fc8c2b315f1b5dc32a4e4821a5082b5f3fc9d9a4794c007419a7aa0bea"
+    },
+    {
+      "path": "specs/grc-v4-spec.md",
+      "sha256": "8681e14bf229959183f772c547a6ba17e0cc60c264dad9a1975be147d12168ea"
+    },
+    {
+      "path": "src/pygrc/models/__init__.py",
+      "sha256": "23768e181455f4e7eb68908cdac532464c063fa5eb4250c4d05537eca0dcaa70"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4.py",
+      "sha256": "65efdf547d8e88e67c22d62a869bd61464ed3d2eb8b2709be6661796b37e824c"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_assets/__init__.py",
+      "sha256": "a1f3aba168a9f9331d1fc9580d5055404f8bc4c705936c7e388e7a47f80a0051"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_assets/asset-index.json",
+      "sha256": "c1ac9d8d3bb924f29b775bd9863a33a454da41e98c57ef0b8bb3c24171fafc9f"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_assets/grc-v4-contract-schema.json",
+      "sha256": "3fd072fc8c2b315f1b5dc32a4e4821a5082b5f3fc9d9a4794c007419a7aa0bea"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_assets/grc-v4-specification-release.json",
+      "sha256": "bba0bb649bc2e80c5bfa99f96bd5824bbdda3b3fbc87fb68c3e3a59da1cee46b"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_assets/grc-v4-specification-release.sha256",
+      "sha256": "50b20509b84a6b21f3036ecb1d7e13861f662bc8319873c5321fc0317ada7e33"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_codec.py",
+      "sha256": "bd6d9390c818c5a25b70da119cfbc3a3de3707ee84566f6bb06160bb4780e154"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_profile.py",
+      "sha256": "188e4ceb92b6a36fe81849911b88b233b8dd16bf3de07383e1508d76232fdbfb"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_state.py",
+      "sha256": "58f2c73ba9b936dbc144f95e4f2171277031ee6ac9fb39aa69d8941c87f8f8a5"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_step.py",
+      "sha256": "0f0a0c0715ad82acdc87e33b2d3ae1e691ce287fb77245ddf47f58d13d93556d"
+    },
+    {
+      "path": "tests/models/test_grc_v4.py",
+      "sha256": "592c2ce73c37586266004af45d9066af6a1ec588ca61d031854f6fec434ff19c"
+    },
+    {
+      "path": "tests/models/test_grc_v4_codec.py",
+      "sha256": "e1baffd283366d5e84c633505c6e2917a00da4bba14c1df45613927ee1e98435"
+    },
+    {
+      "path": "tests/models/test_grc_v4_profile.py",
+      "sha256": "6dcd4a0abffca13bc8a0c0e7e697a54e421ba079eaef5d77e4609184d67a0dea"
+    },
+    {
+      "path": "tests/models/test_grc_v4_state.py",
+      "sha256": "c5c0f1ab8cff6626eb11ae0078d873cdc5a420ca24ab090f68569dd5eca58cdb"
+    },
+    {
+      "path": "tests/models/test_grc_v4_step.py",
+      "sha256": "1319784d833dec66a3342ddc912fbcc8735fddcd3ab7010f04d3e5b4db8eeb80"
+    }
+  ],
+  "implemented_boundaries": [
+    "wire syntax/shape failures are exceptions before semantic admission",
+    "negative duration returns an exact noncommitting FailureReceipt",
+    "strict request constructors reject invalid duration and detach nested input",
+    "configuration and exact canonical reconstruction routes remain distinct",
+    "nonzero binary64 underflow and trailing-newline identity aliases reject",
+    "migration declarations are typed but not scientifically admitted",
+    "harness/snapshot/pickle and GRC9 request schemas are excluded from this production request transport"
+  ],
+  "reviewer_decision": "pending_user_review_or_commit_instruction_for_this_leaf",
+  "accepted_generic_runtime_support": [],
+  "admitted_specialization_support_sets": [],
+  "new_scientific_debt": [],
+  "limitations": [
+    "Local duration admission and exact failure receipt only, not a full atomic beat.",
+    "Migration requests are typed declarations, not crossing or target-profile admission.",
+    "Source-state digest is a supplied evidence identity; this leaf cannot authenticate a live scientific state.",
+    "No GRC9 expansion, harness injection, snapshot/pickle restoration, executable facade or runtime support.",
+    "Final maintenance/UX checks are separate tool executions after publication binding; no full historical/D11 replay is claimed.",
+    "Receipt content validity does not identify the full request, authenticate an observer or prove causal stage/code execution; downstream binding checks are assigned, not implemented here."
+  ],
+  "next_step": "P9-2.4 only after this leaf's acceptance; not started.",
+  "prior_verification": {
+    "supporting_run": "implementation/phase-9-grcv4/evidence/P9-2.3/p923-verification/run.json",
+    "sha256": "f0015f3a83fead275e4825748eb9495c16a0a8f60c37040783bf54f1cd94c338",
+    "outcomes": {
+      "focused_tests": 105,
+      "new_request_admission_tests": 26,
+      "seeded_binary64_probes": 128,
+      "legacy_core_tests": 105,
+      "previous_audit_regression_probes": 357,
+      "packaging_tests": 1,
+      "all_passed": true
+    },
+    "scope": "Runtime request/receipt foundation and predecessor regressions; final current-boundary and UX tool checks execute separately after publication binding."
+  },
+  "audit_dispositions": [
+    {
+      "item": "Strict request / migration declaration is not full admission",
+      "action": "Strengthened current-consumer/no-authority tests; actual state-bearing consumer invariants assigned to P9-2.4/2.5/2.6, P9-4.4/4.5/4.7a and Tranche 7; no premature consumer implementation."
+    },
+    {
+      "item": "Default encoding",
+      "action": "Documented explicit configuration and exact-JCS routes; isolated tests disprove subnormal exclusion. Default accepts exponent and decimal finite tokens; oversized integer-shaped tokens require exact-canonical interpretation when restoring JCS. No fallback or default change."
+    },
+    {
+      "item": "Receipt authentication / full request identity / causal binding",
+      "action": "Content-only docstring and tests for arbitrary grammar-valid source labels, distinct requests sharing receipts, and rehashed stage/code labels without an operation trace. Frozen preimage unchanged; real-state/operation/replay binding remains with lifecycle owners."
+    },
+    {
+      "item": "Failure taxonomy",
+      "action": "Exact enum-parity regression and test that only admission/invalid_duration is emitted by this prefix; later owner must distinguish rejected operation from valid_root solver and returned delta from persistent ledger."
+    },
+    {
+      "item": "Exact dependencies missing in external audit",
+      "action": "All original 32 bindings verified before edits; exact bound profile/state/assets used in the new checkout run with rfc8785 0.1.4 and production jsonschema. Clean wheel/sdist exercise actual installed assets. Prior qualified isolated result and current checkout result remain separate."
+    },
+    {
+      "item": "Numeric and ownership boundaries",
+      "action": "Exact underflow midpoint and int/float JCS regressions added; existing opaque-context, malformed-wire, immutable-ownership, environment-failure and pinned-identity grammar checks retained."
+    }
+  ]
+}

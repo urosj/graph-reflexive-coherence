@@ -44,8 +44,20 @@ def checks(root):
         return namespace
 
     require(
-        status["dependency_ready_leaves"] == ["P9-2.1", "P9-2.2"]
-        and len(status["permitted_runtime_paths"]) == 11
+        status["dependency_ready_leaves"] == ["P9-2.1", "P9-2.2", "P9-2.3", "P9-2.4", "P9-2.5", "P9-2.6"]
+        and status["harness_acceptance"]["record_digest"] == policy.HARNESS_ACCEPTANCE_DIGEST
+        and status["harness_acceptance"]["accepted_iterations"] == ["P9-2.5"]
+        and status["result_acceptance"]["record_digest"] == policy.RESULT_ACCEPTANCE_DIGEST
+        and status["result_acceptance"]["accepted_iterations"] == ["P9-2.4"]
+        and status["request_acceptance"]["record_digest"] == policy.REQUEST_ACCEPTANCE_DIGEST
+        and status["request_acceptance"]["accepted_iterations"] == ["P9-2.3"]
+        and status["foundation_acceptance"]["record_digest"] == policy.FOUNDATION_DIGEST
+        and status["foundation_acceptance"]["accepted_iterations"] == ["P9-2.1", "P9-2.2"]
+        and len(status["permitted_runtime_paths"]) == 19
+        and "tests/models/grcv4_conformance_harness.py" in status["permitted_runtime_paths"]
+        and "tests/models/grcv4_reference_oracles.py" in status["permitted_runtime_paths"]
+        and "pyproject.toml" in status["permitted_runtime_paths"]
+        and "src/pygrc/models/__init__.py" in status["permitted_runtime_paths"]
         and "src/pygrc/models/grc_v4_candidate_a.py"
         not in status["permitted_runtime_paths"],
         "G1 bypassed generic leaf dependencies",

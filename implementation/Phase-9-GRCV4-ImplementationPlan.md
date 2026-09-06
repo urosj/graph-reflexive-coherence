@@ -5,8 +5,13 @@ Date: 2026-09-05. Status: P9-G1 accepted; bounded implementation authorized.
 Phase 9 implements the accepted graph-generic `GRCV4` substrate, followed by
 a gated `GRC9V4` specialization. The accepted V4 specifications are the primary
 implementation source, read together with the paper and accepted investigation
-claims. P9-1.9 records the user's accepted implementation review; runtime
-implementation has not started. The companion
+claims. P9-1.9 records the user's accepted implementation review. The user's
+commit instructions accept P9-2.1's immutable value records and P9-2.2's
+profile/identity/installed-asset foundation, including audit corrections.
+P9-2.3's generic request decoding/admission prefix and failure evidence were
+accepted by the user's commit instruction at `1647d3f`. P9-2.4 extends result,
+disposition and receipt comparison records, pending its own review/commit;
+no executable profile or runtime conformance is claimed. The companion
 [checklist](./Phase-9-GRCV4-ImplementationChecklist.md) records execution;
 the [phase opening](./Phase-9-GRCV4-PhaseOpening.json) records authority,
 predecessor identities, and the completed specification merge.
@@ -232,7 +237,8 @@ exact target roster, additive integration and per-iteration content bindings.
 The earlier preparation states below remain historical descriptions, not the
 current gate state. All G2/G3/G4 gates, fifteen source obligations and five
 implementation follow-ups remain pending; no runtime profile is advertised.
-The dependency-ready foundation leaves are P9-2.1 and P9-2.2. Later generic
+The [foundation acceptance](./phase-9-grcv4/tranche-2/P9-2.1-2.2-AcceptanceRecord.json)
+makes P9-2.3 dependency-ready alongside P9-2.1/P9-2.2. Later generic
 paths cannot borrow those leaf IDs; their own accepted prerequisites remain
 required. P9-1.9 creates no runtime code.
 
@@ -314,6 +320,88 @@ deliverables; this plan does not invent their acceptance.
 
 ### Tranche 2. Interface, identity, and evidence foundation
 
+P9-2.1's [review](./phase-9-grcv4/tranche-2/P9-2.1-Review.md) and
+[execution record](./phase-9-grcv4/tranche-2/P9-2.1-ExecutionRecord.json) document
+the first V4-owned records and common read-only projections. Focused ownership,
+legacy core and typing checks pass. Identity/semantic admission, actual lifecycle
+execution and installed-distribution verification remain with their existing
+leaf owners; all conformance gates remain pending.
+
+P9-2.1's independent stress audit exposed and now verifies corrections to
+integral-adapter range checking and ordered-coordinate input handling. Original
+audit/subject bytes and corrected execution are retained separately. Equality
+authority, wide-map scaling and explicit codec projections are recorded with
+P9-2.2/P9-2.3/P9-2.6; those advisories do not become new scientific debt or gates.
+
+P9-2.2's [review](./phase-9-grcv4/tranche-2/P9-2.2-Review.md) and
+[execution record](./phase-9-grcv4/tranche-2/P9-2.2-ExecutionRecord.json) record
+typed complete declarations for all ten shapes, exact published JCS identities,
+Candidate C reference-map checks and installed release-bound schema assets.
+Declared profile resolution is not executable algorithm/domain admission:
+the runtime support set remains empty. H1 is enforced through typed/JCS
+comparison, and H2's immutable item traversal is corrected and scale-tested.
+Clean wheel/sdist baseline and optional-extra installs are verified without a
+checkout; later lifecycle/facade integration remains with P9-2.3/P9-2.6.
+The current checker routes only the already-constrained `pyproject.toml`
+dependency/package-data additions to P9-2.2 as well as P9-2.6; model exports
+and all other leaf prerequisites retain their existing gates.
+
+The P9-2.2 independent audit corrections normalize schema-admitted count fields
+on both constructor paths (R1), provide an explicit exact-canonical binary64
+reconstruction route distinct from strict configuration decoding (R2), and
+check C/reference-Hodge values by stable edge ID without mobility substitution
+(F1). These have 79 focused regressions and 357 passing stress probes, including
+the recorded two-callsite selection of the new reconstruction API. Original
+audit/subject bytes and execution remain separate from the corrected run.
+Native safe-integer rejection, frozen vectors and empty support sets are
+unchanged. P9-2.3 still owns operation-specific decoding/admission composition;
+P9-3.1/P9-4.1 retain actual graph/SPD/domain admission. Engineering completion
+did not itself infer user acceptance. The subsequent commit instructions,
+clarified by the user as acceptance, establish the separate foundation decision.
+Historical execution records keep their original bytes and preparation status.
+
+P9-2.3's [review](./phase-9-grcv4/tranche-2/P9-2.3-Review.md) and
+[execution](./phase-9-grcv4/tranche-2/P9-2.3-ExecutionRecord.json) cover distinct
+transport-shape errors, strict step requests, noncommitting negative-duration
+failure receipts and typed migration declarations. The latter do not execute
+or admit a crossing. New outlier regressions reject trailing-newline identity
+suffixes and nonzero wire values that would underflow to zero; native numeric
+limits, exact-canonical reconstruction and all frozen preimages remain intact.
+The generic request surface has no fault hooks, pickle restoration, model
+facade or executable profile. Later state/domain admission and full transaction
+atomicity remain assigned to their existing owners. A user instruction to
+commit accepts the reviewed work being committed, not unrelated future work
+or any stronger runtime-support claim.
+
+P9-2.3's two independent reviews retain the implementation and clarify its
+consumer boundary. Configuration decoding stays the default for external JSON:
+finite decimal/exponent tokens (including subnormals) are supported, while
+integer-shaped tokens must be safe integers. Exact JCS restoration is the
+explicit canonical route; neither route silently retries the other. A strict
+request certifies shape and duration sign only. Content-checked receipt identity
+is neither a signature nor proof of a live state, an executed failure, full
+request equality or replay authority. The frozen receipt preimage is unchanged.
+
+Carry the following tests into their existing owners; these are implementation
+follow-through, not additional gates or work performed by P9-2.3:
+
+- P9-2.4: negative duration composes a rejected operation with
+  `solver_disposition=None`, no commit ID and no persistent-ledger append.
+  Keep returned failure evidence separate from the persistent receipt ledger.
+  A later charge rejection after a successful solve retains `valid_root` while
+  rejecting the operation; enum membership alone is not an executed stage.
+- P9-2.4/P9-2.5 and full-step/lifecycle consumers: bind the actual prestate and
+  exact request separately; compare scientific and lifecycle payloads as well
+  as their digests on failure. Reject a grammar-valid wrong source or rehashed
+  foreign operation/stage/code receipt at the owner with the real execution.
+  Receipt equality must not authorize replay or substitute another request.
+- P9-2.6/P9-4.4/P9-4.5/P9-4.7a and Tranche 7 consumers: strict zero, smallest positive
+  subnormal and extreme finite durations still need full graph/profile/context/
+  domain admission. No state or admission may be inferred from a request type.
+  Migration declaration decoding proves neither history nor supported targets,
+  mappings or lawful crossings. Enforce these tests when the real consumer
+  exists; no placeholder model/admission capability is introduced in this leaf.
+
 Implement immutable lifecycle-owned records, read-only common projections,
 profile/parameter resolution, deep immutability, and canonical IDs against
 the versioned schema and preimage vectors. Separate wire decoding, semantic
@@ -324,6 +412,89 @@ Keep test fault injection outside production inputs and scientific identity.
 Start the runtime conformance harness here. Compare independent expected
 values with actual operations; a vector builder, schema pass, or captured
 constant cannot serve as evidence that the model executed the equations.
+
+P9-2.4's [review](./phase-9-grcv4/tranche-2/P9-2.4-Review.md) and
+[execution](./phase-9-grcv4/tranche-2/P9-2.4-ExecutionRecord.json) extend the
+existing state-module result records with closed payload reconstruction, typed
+failure/envelope ownership and cross-field disposition checks. The step module
+owns pure receipt/commit construction and comparisons against exact captured
+request, scientific payloads, observed outcomes and ordered ledgers. It does
+not own a model commit, graph admission, numerical solver, rollback engine or
+replay authorization. A successful receipt is content-valid, not causal proof.
+The checked result boundary uses generic profile/model identity; specialization
+profile binding is fail-closed until its owner exists. Closed GRC9-labelled
+published result fixtures may still be reconstructed as records.
+
+The separate [P9-2.3 acceptance](./phase-9-grcv4/tranche-2/P9-2.3-AcceptanceRecord.json)
+binds that reviewed commit without changing historical runs. The current
+ownership adapter adds the checklist's P9-2.4 responsibility to the existing
+state and step module/test pairs, omitted from the coarse frozen source-group
+iteration lists. It grants no lifecycle-module, facade or harness ownership.
+The subsequent [P9-2.4 acceptance](./phase-9-grcv4/tranche-2/P9-2.4-AcceptanceRecord.json)
+records the user's commit instruction at `3845c41`. It enables P9-2.5's two
+reviewed test paths; all runtime conformance gates remain pending.
+
+P9-2.4's two-audit follow-up guards original index representations and ordered
+event containers before conversion, accepts revalidated typed or primitive
+commit preimages, and restricts evidence storage to immutable bytes without
+granting those bytes authority. Eleven added regression/characterization tests
+preserve numeric, ownership, observation and receipt-content boundaries.
+The frozen receipt core does not settle parent-reference scope/order. P9-7.6
+must resolve that contract and verify lineage; the current builder/comparator
+does not certify a parent DAG or impose an editorial intra-commit-only rule.
+P9-2.5/P9-4.7a carry the four retained invalid-transition characterizations into
+independent live-operation oracles, not content-matching fixtures.
+
+P9-2.5's [review](./phase-9-grcv4/tranche-2/P9-2.5-Review.md) separates actual
+negative-duration prefix execution from supplied-observation and mutation
+controls. Independent restricted-ASCII identity calculations and rational
+binary64 charge/clock comparisons do not use production algorithms to choose
+expected results. Concrete graph, profile, parameter, K4/Hodge, context, reset,
+live state and ordered ledger payloads accompany exact requests and results.
+The run binds source bytes and environment and can be inspected without a
+rerun. A new run never overwrites an original record.
+
+The four invalid-transition cases now fail independent fixture-clock/zero-time
+controls; they are not yet live numerical-step negatives. P9-4.7a must apply
+them to the actual step. Positive clock progression is an explicitly declared
+fixture convention, not newly invented specification authority. Near-admitted
+conditioning and repeated-eigenvalue projector pressure stay with P9-3.4/
+P9-4.5. Full rollback, profile/domain admission and parent lineage remain open
+under their existing owners. P9-2.6 is not started or unlocked by this work.
+
+The P9-2.5 independent-audit correction narrows only the reference writer's
+fractional identity envelope and the default CLI retention recipe. Malformed
+captures now produce diagnostic-only evidence; failed comparison records are
+rechecked; inspection retains evidence class and non-conformance limits.
+Harness/oracle origin and import-time source hashes are bound without claiming
+bytecode attestation. Original runs are preserved, with separate corrected
+evidence. Production binary64 rules and frozen scientific authority are unchanged.
+
+P9-2.6 follows the user's P9-2.5 commit acceptance (`2075f47`), recorded
+separately from the original execution. Its
+[review](./phase-9-grcv4/tranche-2/P9-2.6-Review.md) verifies current foundation
+integration without introducing a facade: declarations remain unsupported,
+record/common-field ownership stays immutable, installed distributions fail
+closed without dependencies or intact assets, and older behavior is unchanged.
+The symbol-level record binds exact baseline files and current consumption.
+The sole direct legacy symbol consumed is `GRCEvent`, defensively copied;
+mutable legacy state/storage and non-JCS serialization are not reused.
+Before P9-3.1, choose V4-local immutable canonical-ID lookup for its pure graph
+maps rather than wrapping mutation journals, integer allocators or mutable
+slot records as scientific authority. P9-3.1 must implement/test that decision;
+future topology allocation and exact legacy delegation keep their own owners.
+API/notebook/browser expose six ready leaves and nineteen eligible paths, not
+acceptance of P9-2.6 or runtime support. The optional export path is eligible
+but unchanged until an actual authorized facade exists. P9-3.1 remains held.
+
+P9-2.6's self-check hardening adds installed foundation/representation consumers,
+fresh import orders, actual module/archive bindings and mixed-use comparisons
+for the five older concrete families. A separate final-source combined run
+replaces no historical execution. The unchanged default-prefix CLI is replayed
+under its existing P9-2.5 vocabulary solely as P9-2.6 verification follow-through;
+matching deterministic contents do not grant new evidence credit or acceptance.
+The review reconciles every guide section with a current check or its precise
+later owner. Production, older families, accepted claims and release stay fixed.
 
 ### Tranche 3. Typed graph, geometry, transport, and charge
 

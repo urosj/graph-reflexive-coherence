@@ -1,0 +1,20 @@
+{
+  "schema": "phase9_external_probe_route_adaptation_v1",
+  "iteration_id": "P9-2.2",
+  "original_bundle": "implementation/phase-9-grcv4/evidence/P9-2.2/independent-audit-inputs/inputs.json",
+  "original_runner": "P9-2.2-independent-stress-tests.py",
+  "original_runner_sha256": "2e9d3ed91aa33b3d1adaf8356208a5660b9d1ee4dc884b741a81607891796833",
+  "replacements": [
+    {
+      "before": "got=c.decode_json(b)",
+      "after": "got=c.decode_canonical_json(b)"
+    },
+    {
+      "before": "decoded=c.decode_json(raw)",
+      "after": "decoded=c.decode_canonical_json(raw)"
+    }
+  ],
+  "adapted_runner_sha256": "bc8110b6912fbca92f7470d597416ad7d7a5982d3414dd35905407323dddb9ca",
+  "reason": "R2 declares a separate exact canonical reconstruction route. Only the two reconstruction call sites select it; all expectations, strict configuration rejection/characterization probes, fixtures and oracle remain unchanged. Original supplied runner/results remain byte-exact in original_bundle.",
+  "isolated_audit_harness": false
+}

@@ -1,0 +1,18 @@
+{
+  "schema": "phase9_foundation_integration_run_v1",
+  "iteration_id": "P9-2.6",
+  "run_id": "p926-self-check-49b856aa003647dcb22f6699998be94a",
+  "output_class": "verification_summary_not_operation_receipt",
+  "base_commit": "2075f47825b9583d6a2ff4fbdc47a70df7e283f0",
+  "inputs": {
+    "path": "implementation/phase-9-grcv4/evidence/P9-2.6/self-check/inputs.json",
+    "sha256": "36fbfc65f2ba710a4df1e0fdcd5af310b340f6e184bf5cb11c4427045014a553"
+  },
+  "results": {
+    "path": "implementation/phase-9-grcv4/evidence/P9-2.6/self-check/actual.json",
+    "sha256": "7cfe6bf0a6aaf63078baa45b744f66edac4185ed97785b90227498151e22737c"
+  },
+  "reproduction": "Run final_combined_command from inputs using repository .venv; provision the wheelhouse identified in the unchanged original integration inputs. A rerun is a new execution; archive build hashes need not repeat. See actual.retention_note for structured-output deduplication.",
+  "runtime_support": [],
+  "notes": "1055 tests on final source: zero failures, errors or skips. No numerical profile acceptance, mutable model rollback or parent-lineage validation."
+}

@@ -38,11 +38,20 @@ function accepted(extra={}) {
     runtime_authority_state:'accepted_P9_G1_bounded_implementation_not_conformance',
     approval_digest:'cd2c52f30477e1042bb903bd0553da237ddccc9cad373afecc1a84e4e0b37ea2',
     implementation_scope:Array.from({length:43},(_,i)=>({path:`synthetic/${i}`})),
-    dependency_ready_leaves:['P9-2.1','P9-2.2'],permitted_runtime_paths:Array.from({length:11},(_,i)=>`synthetic/${i}`),
+    foundation_acceptance:{record_digest:'1e3f0ddb06b119fa46dc7609d05b7db0c3a4cbc07428c05b8a032da081ae9dd4',accepted_iterations:['P9-2.1','P9-2.2']},
+    request_acceptance:{record_digest:'ac07a2f7c93538454d9663aba78ca0eb5af385d7975582e4c21682f41ce4c17f',accepted_iterations:['P9-2.3']},
+    result_acceptance:{record_digest:'9d2fd4f0bb0445b9b3c46fd6f7e5b0ff710a8a85aceaeabacad44a477ff365a0',accepted_iterations:['P9-2.4']},
+    harness_acceptance:{record_digest:'e479a8e5935fc8740b59f96b31651070f842f73f92541bb84dbc1c9d63f59896',accepted_iterations:['P9-2.5']},
+    dependency_ready_leaves:['P9-2.1','P9-2.2','P9-2.3','P9-2.4','P9-2.5','P9-2.6'],permitted_runtime_paths:[...Array.from({length:15},(_,i)=>`synthetic/${i}`),'pyproject.toml','tests/models/grcv4_conformance_harness.py','tests/models/grcv4_reference_oracles.py','src/pygrc/models/__init__.py'],
     iterations:[4,5,6,7,8,9].map(i=>({iteration_id:`P9-1.${i}`,status:'implemented_and_verified',reviewer_decision:'accepted_by_user'})),...extra});
 }
 test('accepted G1 permission does not imply accepted profile support',async()=>{
   assert.equal((await verifiedStatus(accepted())).P9_G1_accepted,true);
+  const missingPackage=accepted({permitted_runtime_paths:Array.from({length:19},(_,i)=>`synthetic/${i}`)});
+  assert.throws(()=>checkedStatus(missingPackage),/dependency-ready/);
+  const missingExport=accepted();
+  missingExport.permitted_runtime_paths[18]='synthetic/no-export-owner';
+  assert.throws(()=>checkedStatus(missingExport),/dependency-ready/);
   for(const extra of [{approval_digest:'0'.repeat(64)},{runtime_authorized:false},{accepted_generic_runtime_support:['C_OS']},{admitted_specialization_support_sets:[['C_OS']]},{implementation_scope:[]},{dependency_ready_leaves:['P9-8.2']}]) assert.throws(()=>checkedStatus(accepted(extra)));
 });
 test('failed G1 boundary cannot retain permission even with a recomputed digest',async()=>{
@@ -62,9 +71,35 @@ test('missing and invalid handoff evidence do not change accepted permission',as
 
 test('current work can be held while historical acceptance remains verified',async()=>{
   const value=accepted({current_boundary:'failed_closed',runtime_authorized:false,runtime_authority_state:'accepted_P9_G1_current_work_held'});
-  for(const key of ['implementation_scope','dependency_ready_leaves','permitted_runtime_paths','status_digest']) delete value[key];
+  for(const key of ['implementation_scope','dependency_ready_leaves','permitted_runtime_paths','foundation_acceptance','request_acceptance','result_acceptance','harness_acceptance','status_digest']) delete value[key];
   value.status_digest=createHash('sha256').update(canonical(value)).digest('hex');
   assert.equal((await verifiedStatus(value)).P9_G1_accepted,true);
   assert.equal(value.runtime_authorized,false);
   assert.throws(()=>checkedStatus({...value,approval_digest:'0'.repeat(64)}));
+});
+
+test('committed foundation acceptance does not accept request work or conformance',()=>{
+  for(const foundation_acceptance of [undefined,{},
+    {record_digest:'0'.repeat(64),accepted_iterations:['P9-2.1','P9-2.2']},
+    {record_digest:'1e3f0ddb06b119fa46dc7609d05b7db0c3a4cbc07428c05b8a032da081ae9dd4',accepted_iterations:['P9-2.1','P9-2.2','P9-2.3']}])
+    assert.throws(()=>checkedStatus(accepted({foundation_acceptance})),/foundation/);
+  assert.throws(()=>checkedStatus(accepted({dependency_ready_leaves:['P9-2.1','P9-2.2','P9-2.3','P9-2.4','P9-2.5','P9-2.6','P9-3.1']})),/dependency-ready/);
+});
+
+ test('request acceptance cannot be missing or promote result work',()=>{
+   for (const request_acceptance of [undefined,{}, {record_digest:'ac07a2f7c93538454d9663aba78ca0eb5af385d7975582e4c21682f41ce4c17f',accepted_iterations:['P9-2.3','P9-2.4']}])
+     assert.throws(()=>checkedStatus(accepted({request_acceptance})),/accepted requests/);
+ });
+
+test('result acceptance cannot be missing or accept harness work',()=>{
+  for(const result_acceptance of [undefined,{}, {record_digest:'9d2fd4f0bb0445b9b3c46fd6f7e5b0ff710a8a85aceaeabacad44a477ff365a0',accepted_iterations:['P9-2.4','P9-2.5']}])
+    assert.throws(()=>checkedStatus(accepted({result_acceptance})),/accepted results/);
+  const missingHarness=accepted();
+  missingHarness.permitted_runtime_paths[16]='synthetic/no-harness';
+  assert.throws(()=>checkedStatus(missingHarness),/dependency-ready/);
+});
+
+test('harness acceptance cannot be missing or accept integration work',()=>{
+  for(const harness_acceptance of [undefined,{}, {record_digest:'e479a8e5935fc8740b59f96b31651070f842f73f92541bb84dbc1c9d63f59896',accepted_iterations:['P9-2.5','P9-2.6']}])
+    assert.throws(()=>checkedStatus(accepted({harness_acceptance})),/accepted harness/);
 });

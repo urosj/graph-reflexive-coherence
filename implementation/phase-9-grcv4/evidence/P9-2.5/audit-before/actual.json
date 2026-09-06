@@ -1,0 +1,56 @@
+{
+  "schema": "phase9_pre_correction_probe_summary_v1",
+  "iteration_id": "P9-2.5",
+  "command": ".venv/bin/python - <<'PY'\nfrom tests.models import grcv4_conformance_harness as h, grcv4_reference_oracles as o\nfrom pygrc.models.grc_v4_codec import canonical_json_bytes\nfrom copy import deepcopy\nimport json\nfixture=h.Fixture.from_payload(o.prefix_fixture());base=h.run_negative(fixture)\nrows=[]\nfor x in [2.0**36+1/64,1e15+0.25]:\n rows.append({'probe':'large_dyadic','binary64':x.hex(),'oracle':o.ascii_jcs(x).decode(),'current_codec':canonical_json_bytes(x).decode()})\n d=fixture.to_payload();d['prestate']['time']=x\n r=h.run_negative(h.Fixture.from_payload(d));rows.append({'probe':'large_time_prefix','passed':r['passed'],'checks':r['checks']})\nfor label,val in [('nan',float('nan')),('infinity',float('inf')),('negative_zero',-0.0),('object',object())]:\n def op(req,s):\n  s['state']['authoritative']['C'][0]=val\n  return h.GRCV4StepResult.from_payload(base['actual']['result'])\n try:r=h.run_negative(fixture,operation=op);rows.append({'probe':'malformed_'+label,'returned':True,'passed':r['passed']})\n except Exception as e:rows.append({'probe':'malformed_'+label,'returned':False,'exception':type(e).__name__})\nr=deepcopy(base);r.update(passed=False,checks=[{'passed':False}]);h.validate_report(r)\nrows.append({'probe':'false_label_without_failure','accepted':True})\nprint(json.dumps({'qualification':'Exact current repository providers and .venv; current codec is a discrepancy comparator, not the corrected independent oracle.','rows':rows},indent=2))\nPY",
+  "qualification": "Exact current repository providers and .venv before correction. The current codec was a discrepancy comparator, not the corrected independent oracle. Original helper source is retained in the pre-audit subject.",
+  "subject": "implementation/phase-9-grcv4/evidence/P9-2.5/pre-audit-subject/inputs.json",
+  "observations": [
+    {
+      "probe": "large_dyadic",
+      "binary64": "0x1.0000000000400p+36",
+      "oracle": "68719476736.015625",
+      "current_codec": "68719476736.01562"
+    },
+    {
+      "probe": "large_time_prefix",
+      "passed": false,
+      "reason": "HarnessError: independent result mismatch: emitted_receipts"
+    },
+    {
+      "probe": "large_dyadic",
+      "binary64": "0x1.c6bf526340002p+49",
+      "oracle": "1000000000000000.25",
+      "current_codec": "1000000000000000.2"
+    },
+    {
+      "probe": "large_time_prefix",
+      "passed": false,
+      "reason": "HarnessError: independent result mismatch: emitted_receipts"
+    },
+    {
+      "probe": "malformed_nan",
+      "returned": false,
+      "exception": "ValueError"
+    },
+    {
+      "probe": "malformed_infinity",
+      "returned": false,
+      "exception": "ValueError"
+    },
+    {
+      "probe": "malformed_negative_zero",
+      "returned": false,
+      "exception": "ValueError"
+    },
+    {
+      "probe": "malformed_object",
+      "returned": false,
+      "exception": "HarnessError"
+    },
+    {
+      "probe": "false_label_without_failure",
+      "accepted": true
+    }
+  ],
+  "runtime_profile_conformance": false
+}

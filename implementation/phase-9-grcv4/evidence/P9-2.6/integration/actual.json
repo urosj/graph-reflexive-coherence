@@ -1,0 +1,86 @@
+{
+  "schema": "phase9_foundation_integration_results_v1",
+  "iteration_id": "P9-2.6",
+  "verification_class": "engineering_record_package_and_legacy_checks_not_runtime_conformance",
+  "checks": [
+    {
+      "command": ".venv/bin/python -m unittest discover -s tests/core -q",
+      "tests_run": 105,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "elapsed_seconds": 0.028,
+      "exit_code": 0,
+      "scope": "Unchanged common interface and core regressions"
+    },
+    {
+      "command": ".venv/bin/python -m unittest discover -s tests/models -q",
+      "tests_run": 913,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 1,
+      "elapsed_seconds": 267.344,
+      "exit_code": 0,
+      "scope": "Supplementary full legacy/V4 model regression; opt-in distribution test skipped here and executed separately. See inputs.model_discovery_subject for the test-edit timing limitation."
+    },
+    {
+      "command": ".venv/bin/python -m unittest tests.models.test_grc_v4 -q",
+      "tests_run": 26,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "elapsed_seconds": 13.394,
+      "exit_code": 0,
+      "scope": "Final test-module bytes, including all five P9-2.6 integration methods"
+    },
+    {
+      "command": ".venv/bin/python -m unittest tests.models.grcv4_conformance_harness tests.models.grcv4_reference_oracles -q",
+      "tests_run": 32,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "elapsed_seconds": 42.565,
+      "exit_code": 0,
+      "scope": "Unchanged bounded prefix/oracle regression, not live positive-step execution"
+    },
+    {
+      "command": "GRCV4_PACKAGE_TESTS=1 GRCV4_WHEELHOUSE=implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/generated/p922-wheelhouse .venv/bin/python -m unittest tests.models.test_grc_v4_codec.DistributionTests -q",
+      "tests_run": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "elapsed_seconds": 63.875,
+      "exit_code": 0,
+      "scope": "Wheel and sdist; four extra states; nine installed-asset corruption controls per artifact; offline pip check with full extra"
+    },
+    {
+      "command": ".venv/bin/ruff check tests/models/test_grc_v4.py tests/models/test_grc_v4_codec.py",
+      "exit_code": 0,
+      "result": "All checks passed"
+    },
+    {
+      "command": ".venv/bin/mypy --strict tests/models/test_grc_v4.py tests/models/test_grc_v4_codec.py",
+      "exit_code": 0,
+      "result": "No issues found in 2 source files"
+    }
+  ],
+  "interpretation": {
+    "declared_profiles": 10,
+    "distinct_complete_declarations_rejected": 20,
+    "executed_profile_support": [],
+    "immutable_common_surface": true,
+    "frozen_legacy_file_matches": 133,
+    "unchanged_initializer": true,
+    "source_or_spec_changes": false,
+    "stage_local_no_facade_assertions": true,
+    "graph_domain_admission_tested": false,
+    "positive_step_execution_tested": false,
+    "parent_lineage_tested": false
+  },
+  "development_notes": [
+    "Initial test authoring/type-check errors were corrected before the retained final focused runs; no production gap was demonstrated.",
+    "The ambient Node executable does not support --test; the established managed-node runner passes all 16 web contract checks. API/notebook/browser verification uses that managed runtime.",
+    "No raw failed-attempt archive is required; these are concise causes, not scientific failure evidence.",
+    "Final review changed a typing-pragma assertion from AST-reconstructed text (which discards comments) to the actual source text. The retained 26-test final module run and static checks follow that correction."
+  ]
+}

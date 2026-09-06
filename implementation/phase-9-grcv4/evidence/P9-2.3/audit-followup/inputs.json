@@ -1,0 +1,23 @@
+{
+  "schema": "phase9_audit_harness_adaptation_v1",
+  "iteration_id": "P9-2.3",
+  "input_bundle": "implementation/phase-9-grcv4/evidence/P9-2.3/independent-audit-inputs/inputs.json",
+  "runner_name": "P9-2.3-independent-stress-tests.py",
+  "runner_sha256": "78a98d9c6f9a0dfbceb1273d75b90818c84e2328cbfcfb4ad0c0f20b45c739cc",
+  "replacements": [
+    {
+      "before": "from pygrc.models import grc_v4_codec as c,grc_v4 as api,grc_v4_step as st,grc_v4_state as state,grc_v4_profile as profile",
+      "after": "import pygrc.models\nbaseline_modules = set(sys.modules)\nfrom pygrc.models import grc_v4_codec as c,grc_v4 as api,grc_v4_step as st,grc_v4_state as state,grc_v4_profile as profile"
+    },
+    {
+      "before": " loaded=[n for n in sys.modules if n.startswith('pygrc.models.')]",
+      "after": " loaded=[n for n in sys.modules if n.startswith('pygrc.models.') and n not in baseline_modules]"
+    },
+    {
+      "before": "run('scope_ceiling','no_model_or_profile_promotion',scope_check)",
+      "after": " return {'package_baseline': sorted(n for n in baseline_modules if n.startswith('pygrc.models.')), 'new_v4_modules': sorted(loaded)}\nrun('scope_ceiling','no_model_or_profile_promotion',scope_check)"
+    }
+  ],
+  "reason": "The checkout's unchanged pygrc.models initializer eagerly imports older model families. Measure new modules introduced after that package baseline, still reject new solver/lifecycle/specialization imports and still require no V4 facade or supported profiles. No production dependency/provider substitution, numerical expectation or receipt assertion changes.",
+  "unadapted_result": "implementation/phase-9-grcv4/evidence/P9-2.3/audit-unadapted/actual.json"
+}

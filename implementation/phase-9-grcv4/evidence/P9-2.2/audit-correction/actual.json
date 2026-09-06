@@ -1,0 +1,3592 @@
+{
+  "audit": "P9-2.2 independent stress probes",
+  "environment": {
+    "python": "3.12.3 (main, Jul 15 2026, 23:46:41) [GCC 13.3.0]",
+    "platform": "Linux-7.0.0-30-generic-x86_64-with-glibc2.39",
+    "node": "v22.23.2"
+  },
+  "execution_mode": "project_imports_with_independent_Node_oracle",
+  "claim_ceiling": "No installed-package/G1/runtime-profile acceptance is implied. Reference mismatch tests are explicitly owner-follow-through probes.",
+  "summary": {
+    "candidate_reference_relation": {
+      "total": 5,
+      "pass": 5,
+      "fail": 0
+    },
+    "canonical_order_and_types": {
+      "total": 54,
+      "pass": 54,
+      "fail": 0
+    },
+    "claim_ceiling": {
+      "total": 1,
+      "pass": 1,
+      "fail": 0
+    },
+    "closed_record_schema": {
+      "total": 124,
+      "pass": 124,
+      "fail": 0
+    },
+    "integer_domain_rejection": {
+      "total": 24,
+      "pass": 24,
+      "fail": 0
+    },
+    "local_schema_selection": {
+      "total": 6,
+      "pass": 6,
+      "fail": 0
+    },
+    "native_numeric_rejection": {
+      "total": 5,
+      "pass": 5,
+      "fail": 0
+    },
+    "numeric_codec_composition": {
+      "total": 34,
+      "pass": 34,
+      "fail": 0
+    },
+    "numeric_lexical_characterization": {
+      "total": 3,
+      "pass": 3,
+      "fail": 0
+    },
+    "profile_cross_bindings": {
+      "total": 7,
+      "pass": 7,
+      "fail": 0
+    },
+    "profile_immutability": {
+      "total": 20,
+      "pass": 20,
+      "fail": 0
+    },
+    "published_preimages": {
+      "total": 25,
+      "pass": 25,
+      "fail": 0
+    },
+    "reference_content_and_order": {
+      "total": 5,
+      "pass": 5,
+      "fail": 0
+    },
+    "ten_declared_shapes": {
+      "total": 10,
+      "pass": 10,
+      "fail": 0
+    },
+    "typed_integer_records": {
+      "total": 25,
+      "pass": 25,
+      "fail": 0
+    },
+    "wire_rejection": {
+      "total": 9,
+      "pass": 9,
+      "fail": 0
+    }
+  },
+  "total": 357,
+  "passed": 357,
+  "failed": 0,
+  "rows": [
+    {
+      "id": "JCS-ASCII-ORDER-AND-FINITE-NUMBERS",
+      "group": "published_preimages",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "golden_id": "jcs-example-sha256:00dbcfb0189c27b68bcb172bf4f28c76114159a4529e8653ed8bf5cebcbe9f24"
+      }
+    },
+    {
+      "id": "JCS-UTF16-PROPERTY-ORDER",
+      "group": "published_preimages",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "golden_id": "jcs-example-sha256:28c95d1bbb2209223307e62f489020e8f9e0cfa16adf2daf6d88127a1e8dd22a"
+      }
+    },
+    {
+      "id": "JCS-ECMASCRIPT-SMALL-NUMBER-THRESHOLD",
+      "group": "published_preimages",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "golden_id": "jcs-example-sha256:d78616d06c6ec577a3ef9873babc88d1c65e95a97576c4d72edfac85113902bf"
+      }
+    },
+    {
+      "id": "IDENTITY-GRCV4-PARAMS-C-OS",
+      "group": "published_preimages",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "golden_id": "grcv4-params-sha256:4a0cc2a876136c4af721c3dccd6112c1e9fa5735bcbbed42e831276a14c6f301"
+      }
+    },
+    {
+      "id": "IDENTITY-GRCV4-PROFILE-C-OS",
+      "group": "published_preimages",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "golden_id": "grcv4-profile-sha256:618ef0aaecdbfbf89c26c5be163fdb197d349a15ab71c8aa64bb669a42f2195c"
+      }
+    },
+    {
+      "id": "IDENTITY-GRCV4-PROFILE-TEMPLATE-C-OS",
+      "group": "published_preimages",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "golden_id": "grcv4-profile-template-sha256:f9372b60c2641d3c6230497f367c4f0099c86162def8ef3e3c3bb23d32c4da19"
+      }
+    },
+    {
+      "id": "IDENTITY-GRCV4-PROFILE-TEMPLATE-A-OS",
+      "group": "published_preimages",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "golden_id": "grcv4-profile-template-sha256:b54022fc5543e55bda61fbc85c4b008ff11316ce249969f72826fd187ddb6601"
+      }
+    },
+    {
+      "id": "IDENTITY-GRC9V4-PARAMS",
+      "group": "published_preimages",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "golden_id": "grc9v4-params-sha256:80986c98a5d5b52e6a1d76ed6c7bd9fafe5906c1c50e64b2b8259a0ff2c4136f"
+      }
+    },
+    {
+      "id": "IDENTITY-GRC9V4-SPECIALIZATION",
+      "group": "published_preimages",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "golden_id": "grc9v4-specialization-sha256:352af33115f6afc574fe13512cc4bf2a1ff03b3f66627527521af82f09204f4e"
+      }
+    },
+    {
+      "id": "IDENTITY-GRC9V4-COMPLETE-MODEL",
+      "group": "published_preimages",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "golden_id": "grc9v4-model-sha256:90ca577d1ca5fecff352b87d6df3e0a42ca4b7a659cf9a84b806da5cc8f57d82"
+      }
+    },
+    {
+      "id": "IDENTITY-GRC9V4-SOURCE-GRAPH",
+      "group": "published_preimages",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "golden_id": "grc-graph-sha256:b389bb974bf746ab75a4128620d272c7f06981bd16854c12493160ebdd403e36"
+      }
+    },
+    {
+      "id": "IDENTITY-GRC9V4-RESET",
+      "group": "published_preimages",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "golden_id": "grcv4-reset-sha256:71fe41f8629bb7e4989df439ad4b0ba06e5a7a2ab274ca726610048dda10146e"
+      }
+    },
+    {
+      "id": "IDENTITY-GRCV4-STATE",
+      "group": "published_preimages",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "golden_id": "grcv4-state-sha256:d5c81f16cb00defdee0713ce9ec0faa625a3194b1f33344b07fd9e84c215ca2a"
+      }
+    },
+    {
+      "id": "IDENTITY-GRCV4-LIFECYCLE",
+      "group": "published_preimages",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "golden_id": "grcv4-lifecycle-sha256:95186fdad27387dd2f0c08e96c65818f364c6e96db0a99caf4deb9bc8b677b0b"
+      }
+    },
+    {
+      "id": "IDENTITY-GRCV4-MULTI-LOSS-RECEIPT",
+      "group": "published_preimages",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "golden_id": "grc-receipt-sha256:c968a71de00b275db446ab20f0ebde0de6d1159bee9694aeeeb8620a8f503e9d"
+      }
+    },
+    {
+      "id": "SUBDIGEST-AUTHORITATIVE-STATE",
+      "group": "published_preimages",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "golden_id": "grcv4-authoritative-sha256:ca222dade63f839ff394e90c817d0f9e4567e2dd9bd121de48d76f534e7721c5"
+      }
+    },
+    {
+      "id": "SUBDIGEST-W-C-TR",
+      "group": "published_preimages",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "golden_id": "grcv4-wctr-sha256:f945f53bcff40dfef2870715ce05c4662dc9d24da641973481f2f64594e2642d"
+      }
+    },
+    {
+      "id": "SUBDIGEST-RESOURCE-TRANSFORM",
+      "group": "published_preimages",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "golden_id": "grcv4-resource-transform-sha256:3f1587babdcf212cbf06685f1f58e64e5ba86950732329bc701c079aa5a665a7"
+      }
+    },
+    {
+      "id": "SUBDIGEST-CANDIDATE-HISTORY-POLICY",
+      "group": "published_preimages",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "golden_id": "grcv4-history-policy-sha256:8bdcbf5699444cfc346f4d69845b14225efffdd3f91eb7cd093528a7a83188df"
+      }
+    },
+    {
+      "id": "SUBDIGEST-CARRIER-HISTORY-POLICY",
+      "group": "published_preimages",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "golden_id": "grcv4-history-policy-sha256:f261adf42cb39380b2b0b30f1d0d3a00a56685ac0b293acb55de6629ebfa4142"
+      }
+    },
+    {
+      "id": "SUBDIGEST-EXPANSION-HISTORY-BUNDLE",
+      "group": "published_preimages",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "golden_id": "grcv4-history-map-sha256:c5108fa1844ccfdbd94fa71d5149b0fa4e732b5c1bf4e1deb481511b259ee36c"
+      }
+    },
+    {
+      "id": "SUBDIGEST-GENERIC-HISTORY-BUNDLE",
+      "group": "published_preimages",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "golden_id": "grcv4-history-map-sha256:c99b09acb8abacfedc7bff0da8f635acfaa72a4f3c71185b9afef0b7914e6879"
+      }
+    },
+    {
+      "id": "SUBDIGEST-GRC9-EXPANSION-POLICY",
+      "group": "published_preimages",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "golden_id": "grc9v4-expansion-policy-sha256:db2ddafc9de01a2890c6ffca85e81d611ed1719f64ddad667838f1dab66dddde"
+      }
+    },
+    {
+      "id": "SUBDIGEST-K4-BASE",
+      "group": "published_preimages",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "golden_id": "grcv4-k4-sha256:e3c3d6b1942e3cf0c573fda53556140ba4af7902e7b71dc904018486263bf0a3"
+      }
+    },
+    {
+      "id": "SUBDIGEST-REFERENCE-HODGE",
+      "group": "published_preimages",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "golden_id": "grcv4-hodge-sha256:479be896b06d8e40bd6b1faa4eb7398d2f0371669c54fe6fdbf477e0e3cc8030"
+      }
+    },
+    {
+      "id": "NUMERIC-ROUNDTRIP-0",
+      "group": "numeric_codec_composition",
+      "tier": "integration_contract",
+      "pass": true,
+      "observed": {
+        "input": "0.0",
+        "canonical": "{\"value\":0}"
+      }
+    },
+    {
+      "id": "NUMERIC-ROUNDTRIP-1",
+      "group": "numeric_codec_composition",
+      "tier": "integration_contract",
+      "pass": true,
+      "observed": {
+        "input": "1.0",
+        "canonical": "{\"value\":1}"
+      }
+    },
+    {
+      "id": "NUMERIC-ROUNDTRIP-2",
+      "group": "numeric_codec_composition",
+      "tier": "integration_contract",
+      "pass": true,
+      "observed": {
+        "input": "-1.0",
+        "canonical": "{\"value\":-1}"
+      }
+    },
+    {
+      "id": "NUMERIC-ROUNDTRIP-3",
+      "group": "numeric_codec_composition",
+      "tier": "integration_contract",
+      "pass": true,
+      "observed": {
+        "input": "0.125",
+        "canonical": "{\"value\":0.125}"
+      }
+    },
+    {
+      "id": "NUMERIC-ROUNDTRIP-4",
+      "group": "numeric_codec_composition",
+      "tier": "integration_contract",
+      "pass": true,
+      "observed": {
+        "input": "-0.125",
+        "canonical": "{\"value\":-0.125}"
+      }
+    },
+    {
+      "id": "NUMERIC-ROUNDTRIP-5",
+      "group": "numeric_codec_composition",
+      "tier": "integration_contract",
+      "pass": true,
+      "observed": {
+        "input": "9007199254740991.0",
+        "canonical": "{\"value\":9007199254740991}"
+      }
+    },
+    {
+      "id": "NUMERIC-ROUNDTRIP-6",
+      "group": "numeric_codec_composition",
+      "tier": "integration_contract",
+      "pass": true,
+      "observed": {
+        "input": "9007199254740992.0",
+        "canonical": "{\"value\":9007199254740992}"
+      }
+    },
+    {
+      "id": "NUMERIC-ROUNDTRIP-7",
+      "group": "numeric_codec_composition",
+      "tier": "integration_contract",
+      "pass": true,
+      "observed": {
+        "input": "9007199254740994.0",
+        "canonical": "{\"value\":9007199254740994}"
+      }
+    },
+    {
+      "id": "NUMERIC-ROUNDTRIP-8",
+      "group": "numeric_codec_composition",
+      "tier": "integration_contract",
+      "pass": true,
+      "observed": {
+        "input": "1e+16",
+        "canonical": "{\"value\":10000000000000000}"
+      }
+    },
+    {
+      "id": "NUMERIC-ROUNDTRIP-9",
+      "group": "numeric_codec_composition",
+      "tier": "integration_contract",
+      "pass": true,
+      "observed": {
+        "input": "1e+17",
+        "canonical": "{\"value\":100000000000000000}"
+      }
+    },
+    {
+      "id": "NUMERIC-ROUNDTRIP-10",
+      "group": "numeric_codec_composition",
+      "tier": "integration_contract",
+      "pass": true,
+      "observed": {
+        "input": "1e+18",
+        "canonical": "{\"value\":1000000000000000000}"
+      }
+    },
+    {
+      "id": "NUMERIC-ROUNDTRIP-11",
+      "group": "numeric_codec_composition",
+      "tier": "integration_contract",
+      "pass": true,
+      "observed": {
+        "input": "1e+19",
+        "canonical": "{\"value\":10000000000000000000}"
+      }
+    },
+    {
+      "id": "NUMERIC-ROUNDTRIP-12",
+      "group": "numeric_codec_composition",
+      "tier": "integration_contract",
+      "pass": true,
+      "observed": {
+        "input": "1e+20",
+        "canonical": "{\"value\":100000000000000000000}"
+      }
+    },
+    {
+      "id": "NUMERIC-ROUNDTRIP-13",
+      "group": "numeric_codec_composition",
+      "tier": "integration_contract",
+      "pass": true,
+      "observed": {
+        "input": "9.999999999999999e+20",
+        "canonical": "{\"value\":999999999999999900000}"
+      }
+    },
+    {
+      "id": "NUMERIC-ROUNDTRIP-14",
+      "group": "numeric_codec_composition",
+      "tier": "integration_contract",
+      "pass": true,
+      "observed": {
+        "input": "1e+21",
+        "canonical": "{\"value\":1e+21}"
+      }
+    },
+    {
+      "id": "NUMERIC-ROUNDTRIP-15",
+      "group": "numeric_codec_composition",
+      "tier": "integration_contract",
+      "pass": true,
+      "observed": {
+        "input": "1e+22",
+        "canonical": "{\"value\":1e+22}"
+      }
+    },
+    {
+      "id": "NUMERIC-ROUNDTRIP-16",
+      "group": "numeric_codec_composition",
+      "tier": "integration_contract",
+      "pass": true,
+      "observed": {
+        "input": "2.9514790517935283e+20",
+        "canonical": "{\"value\":295147905179352830000}"
+      }
+    },
+    {
+      "id": "NUMERIC-ROUNDTRIP-17",
+      "group": "numeric_codec_composition",
+      "tier": "integration_contract",
+      "pass": true,
+      "observed": {
+        "input": "5e-324",
+        "canonical": "{\"value\":5e-324}"
+      }
+    },
+    {
+      "id": "NUMERIC-ROUNDTRIP-18",
+      "group": "numeric_codec_composition",
+      "tier": "integration_contract",
+      "pass": true,
+      "observed": {
+        "input": "1e-06",
+        "canonical": "{\"value\":0.000001}"
+      }
+    },
+    {
+      "id": "NUMERIC-ROUNDTRIP-19",
+      "group": "numeric_codec_composition",
+      "tier": "integration_contract",
+      "pass": true,
+      "observed": {
+        "input": "1e-07",
+        "canonical": "{\"value\":1e-7}"
+      }
+    },
+    {
+      "id": "NUMERIC-ROUNDTRIP-20",
+      "group": "numeric_codec_composition",
+      "tier": "integration_contract",
+      "pass": true,
+      "observed": {
+        "input": "1.7976931348623157e+308",
+        "canonical": "{\"value\":1.7976931348623157e+308}"
+      }
+    },
+    {
+      "id": "NUMERIC-ROUNDTRIP-21",
+      "group": "numeric_codec_composition",
+      "tier": "integration_contract",
+      "pass": true,
+      "observed": {
+        "input": "-9007199254740992.0",
+        "canonical": "{\"value\":-9007199254740992}"
+      }
+    },
+    {
+      "id": "NUMERIC-ROUNDTRIP-22",
+      "group": "numeric_codec_composition",
+      "tier": "integration_contract",
+      "pass": true,
+      "observed": {
+        "input": "-9007199254740994.0",
+        "canonical": "{\"value\":-9007199254740994}"
+      }
+    },
+    {
+      "id": "NUMERIC-ROUNDTRIP-23",
+      "group": "numeric_codec_composition",
+      "tier": "integration_contract",
+      "pass": true,
+      "observed": {
+        "input": "-1e+16",
+        "canonical": "{\"value\":-10000000000000000}"
+      }
+    },
+    {
+      "id": "NUMERIC-ROUNDTRIP-24",
+      "group": "numeric_codec_composition",
+      "tier": "integration_contract",
+      "pass": true,
+      "observed": {
+        "input": "-1e+17",
+        "canonical": "{\"value\":-100000000000000000}"
+      }
+    },
+    {
+      "id": "NUMERIC-ROUNDTRIP-25",
+      "group": "numeric_codec_composition",
+      "tier": "integration_contract",
+      "pass": true,
+      "observed": {
+        "input": "-1e+18",
+        "canonical": "{\"value\":-1000000000000000000}"
+      }
+    },
+    {
+      "id": "NUMERIC-ROUNDTRIP-26",
+      "group": "numeric_codec_composition",
+      "tier": "integration_contract",
+      "pass": true,
+      "observed": {
+        "input": "-1e+19",
+        "canonical": "{\"value\":-10000000000000000000}"
+      }
+    },
+    {
+      "id": "NUMERIC-ROUNDTRIP-27",
+      "group": "numeric_codec_composition",
+      "tier": "integration_contract",
+      "pass": true,
+      "observed": {
+        "input": "-1e+20",
+        "canonical": "{\"value\":-100000000000000000000}"
+      }
+    },
+    {
+      "id": "NUMERIC-ROUNDTRIP-28",
+      "group": "numeric_codec_composition",
+      "tier": "integration_contract",
+      "pass": true,
+      "observed": {
+        "input": "-9.999999999999999e+20",
+        "canonical": "{\"value\":-999999999999999900000}"
+      }
+    },
+    {
+      "id": "NUMERIC-ROUNDTRIP-29",
+      "group": "numeric_codec_composition",
+      "tier": "integration_contract",
+      "pass": true,
+      "observed": {
+        "input": "-1e+21",
+        "canonical": "{\"value\":-1e+21}"
+      }
+    },
+    {
+      "id": "NUMERIC-ROUNDTRIP-30",
+      "group": "numeric_codec_composition",
+      "tier": "integration_contract",
+      "pass": true,
+      "observed": {
+        "input": "-1e+22",
+        "canonical": "{\"value\":-1e+22}"
+      }
+    },
+    {
+      "id": "NUMERIC-ROUNDTRIP-31",
+      "group": "numeric_codec_composition",
+      "tier": "integration_contract",
+      "pass": true,
+      "observed": {
+        "input": "-2.9514790517935283e+20",
+        "canonical": "{\"value\":-295147905179352830000}"
+      }
+    },
+    {
+      "id": "NUMERIC-ROUNDTRIP-32",
+      "group": "numeric_codec_composition",
+      "tier": "integration_contract",
+      "pass": true,
+      "observed": {
+        "input": "-1.7976931348623157e+308",
+        "canonical": "{\"value\":-1.7976931348623157e+308}"
+      }
+    },
+    {
+      "id": "NATIVE-REJECT--0.0",
+      "group": "native_numeric_rejection",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4WireError",
+        "message": "negative zero"
+      }
+    },
+    {
+      "id": "NATIVE-REJECT-nan",
+      "group": "native_numeric_rejection",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4WireError",
+        "message": "nonfinite number"
+      }
+    },
+    {
+      "id": "NATIVE-REJECT-inf",
+      "group": "native_numeric_rejection",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4WireError",
+        "message": "nonfinite number"
+      }
+    },
+    {
+      "id": "NATIVE-REJECT-9007199254740992",
+      "group": "native_numeric_rejection",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4WireError",
+        "message": "integer outside the I-JSON safe range"
+      }
+    },
+    {
+      "id": "NATIVE-REJECT--9007199254740992",
+      "group": "native_numeric_rejection",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4WireError",
+        "message": "integer outside the I-JSON safe range"
+      }
+    },
+    {
+      "id": "WIRE-REJECT-'{\"x\":1,\"x\":2}'",
+      "group": "wire_rejection",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4WireError",
+        "message": "duplicate JSON key"
+      }
+    },
+    {
+      "id": "WIRE-REJECT-'{\"x\":1,\"\\\\u0078\":2}'",
+      "group": "wire_rejection",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4WireError",
+        "message": "duplicate JSON key"
+      }
+    },
+    {
+      "id": "WIRE-REJECT-'\"\\\\ud800\"'",
+      "group": "wire_rejection",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4WireError",
+        "message": "lone surrogate is not I-JSON"
+      }
+    },
+    {
+      "id": "WIRE-REJECT-'-0'",
+      "group": "wire_rejection",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4WireError",
+        "message": "negative zero"
+      }
+    },
+    {
+      "id": "WIRE-REJECT-'-0.0'",
+      "group": "wire_rejection",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4WireError",
+        "message": "negative zero"
+      }
+    },
+    {
+      "id": "WIRE-REJECT-'-0e8'",
+      "group": "wire_rejection",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4WireError",
+        "message": "negative zero"
+      }
+    },
+    {
+      "id": "WIRE-REJECT-'NaN'",
+      "group": "wire_rejection",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4WireError",
+        "message": "non-JSON constant: NaN"
+      }
+    },
+    {
+      "id": "WIRE-REJECT-'1e999'",
+      "group": "wire_rejection",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4WireError",
+        "message": "nonfinite number"
+      }
+    },
+    {
+      "id": "WIRE-REJECT-'\\ufeff{}'",
+      "group": "wire_rejection",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4WireError",
+        "message": "malformed UTF-8 JSON"
+      }
+    },
+    {
+      "id": "ORDER-0",
+      "group": "canonical_order_and_types",
+      "tier": "required",
+      "pass": true,
+      "observed": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "ORDER-1",
+      "group": "canonical_order_and_types",
+      "tier": "required",
+      "pass": true,
+      "observed": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "ORDER-2",
+      "group": "canonical_order_and_types",
+      "tier": "required",
+      "pass": true,
+      "observed": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "ORDER-3",
+      "group": "canonical_order_and_types",
+      "tier": "required",
+      "pass": true,
+      "observed": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "ORDER-4",
+      "group": "canonical_order_and_types",
+      "tier": "required",
+      "pass": true,
+      "observed": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "ORDER-5",
+      "group": "canonical_order_and_types",
+      "tier": "required",
+      "pass": true,
+      "observed": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "ORDER-6",
+      "group": "canonical_order_and_types",
+      "tier": "required",
+      "pass": true,
+      "observed": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "ORDER-7",
+      "group": "canonical_order_and_types",
+      "tier": "required",
+      "pass": true,
+      "observed": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "ORDER-8",
+      "group": "canonical_order_and_types",
+      "tier": "required",
+      "pass": true,
+      "observed": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "ORDER-9",
+      "group": "canonical_order_and_types",
+      "tier": "required",
+      "pass": true,
+      "observed": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "ORDER-10",
+      "group": "canonical_order_and_types",
+      "tier": "required",
+      "pass": true,
+      "observed": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "ORDER-11",
+      "group": "canonical_order_and_types",
+      "tier": "required",
+      "pass": true,
+      "observed": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "ORDER-12",
+      "group": "canonical_order_and_types",
+      "tier": "required",
+      "pass": true,
+      "observed": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "ORDER-13",
+      "group": "canonical_order_and_types",
+      "tier": "required",
+      "pass": true,
+      "observed": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "ORDER-14",
+      "group": "canonical_order_and_types",
+      "tier": "required",
+      "pass": true,
+      "observed": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "ORDER-15",
+      "group": "canonical_order_and_types",
+      "tier": "required",
+      "pass": true,
+      "observed": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "ORDER-16",
+      "group": "canonical_order_and_types",
+      "tier": "required",
+      "pass": true,
+      "observed": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "ORDER-17",
+      "group": "canonical_order_and_types",
+      "tier": "required",
+      "pass": true,
+      "observed": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "ORDER-18",
+      "group": "canonical_order_and_types",
+      "tier": "required",
+      "pass": true,
+      "observed": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "ORDER-19",
+      "group": "canonical_order_and_types",
+      "tier": "required",
+      "pass": true,
+      "observed": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "ORDER-20",
+      "group": "canonical_order_and_types",
+      "tier": "required",
+      "pass": true,
+      "observed": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "ORDER-21",
+      "group": "canonical_order_and_types",
+      "tier": "required",
+      "pass": true,
+      "observed": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "ORDER-22",
+      "group": "canonical_order_and_types",
+      "tier": "required",
+      "pass": true,
+      "observed": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "ORDER-23",
+      "group": "canonical_order_and_types",
+      "tier": "required",
+      "pass": true,
+      "observed": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "ORDER-24",
+      "group": "canonical_order_and_types",
+      "tier": "required",
+      "pass": true,
+      "observed": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "ORDER-25",
+      "group": "canonical_order_and_types",
+      "tier": "required",
+      "pass": true,
+      "observed": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "ORDER-26",
+      "group": "canonical_order_and_types",
+      "tier": "required",
+      "pass": true,
+      "observed": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "ORDER-27",
+      "group": "canonical_order_and_types",
+      "tier": "required",
+      "pass": true,
+      "observed": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "ORDER-28",
+      "group": "canonical_order_and_types",
+      "tier": "required",
+      "pass": true,
+      "observed": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "ORDER-29",
+      "group": "canonical_order_and_types",
+      "tier": "required",
+      "pass": true,
+      "observed": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "ORDER-30",
+      "group": "canonical_order_and_types",
+      "tier": "required",
+      "pass": true,
+      "observed": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "ORDER-31",
+      "group": "canonical_order_and_types",
+      "tier": "required",
+      "pass": true,
+      "observed": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "ORDER-32",
+      "group": "canonical_order_and_types",
+      "tier": "required",
+      "pass": true,
+      "observed": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "ORDER-33",
+      "group": "canonical_order_and_types",
+      "tier": "required",
+      "pass": true,
+      "observed": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "ORDER-34",
+      "group": "canonical_order_and_types",
+      "tier": "required",
+      "pass": true,
+      "observed": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "ORDER-35",
+      "group": "canonical_order_and_types",
+      "tier": "required",
+      "pass": true,
+      "observed": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "ORDER-36",
+      "group": "canonical_order_and_types",
+      "tier": "required",
+      "pass": true,
+      "observed": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "ORDER-37",
+      "group": "canonical_order_and_types",
+      "tier": "required",
+      "pass": true,
+      "observed": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "ORDER-38",
+      "group": "canonical_order_and_types",
+      "tier": "required",
+      "pass": true,
+      "observed": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "ORDER-39",
+      "group": "canonical_order_and_types",
+      "tier": "required",
+      "pass": true,
+      "observed": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "ORDER-40",
+      "group": "canonical_order_and_types",
+      "tier": "required",
+      "pass": true,
+      "observed": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "ORDER-41",
+      "group": "canonical_order_and_types",
+      "tier": "required",
+      "pass": true,
+      "observed": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "ORDER-42",
+      "group": "canonical_order_and_types",
+      "tier": "required",
+      "pass": true,
+      "observed": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "ORDER-43",
+      "group": "canonical_order_and_types",
+      "tier": "required",
+      "pass": true,
+      "observed": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "ORDER-44",
+      "group": "canonical_order_and_types",
+      "tier": "required",
+      "pass": true,
+      "observed": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "ORDER-45",
+      "group": "canonical_order_and_types",
+      "tier": "required",
+      "pass": true,
+      "observed": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "ORDER-46",
+      "group": "canonical_order_and_types",
+      "tier": "required",
+      "pass": true,
+      "observed": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "ORDER-47",
+      "group": "canonical_order_and_types",
+      "tier": "required",
+      "pass": true,
+      "observed": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "ORDER-48",
+      "group": "canonical_order_and_types",
+      "tier": "required",
+      "pass": true,
+      "observed": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "ORDER-49",
+      "group": "canonical_order_and_types",
+      "tier": "required",
+      "pass": true,
+      "observed": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "DISTINCT-True",
+      "group": "canonical_order_and_types",
+      "tier": "required",
+      "pass": true,
+      "observed": null
+    },
+    {
+      "id": "DISTINCT-False",
+      "group": "canonical_order_and_types",
+      "tier": "required",
+      "pass": true,
+      "observed": null
+    },
+    {
+      "id": "DISTINCT-{'x': [True]}",
+      "group": "canonical_order_and_types",
+      "tier": "required",
+      "pass": true,
+      "observed": null
+    },
+    {
+      "id": "DISTINCT-'\u00e9'",
+      "group": "canonical_order_and_types",
+      "tier": "required",
+      "pass": true,
+      "observed": null
+    },
+    {
+      "id": "DECL-A-CI",
+      "group": "ten_declared_shapes",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "declared_only": true
+      }
+    },
+    {
+      "id": "DECL-A-OS",
+      "group": "ten_declared_shapes",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "declared_only": true
+      }
+    },
+    {
+      "id": "DECL-A-RG2b",
+      "group": "ten_declared_shapes",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "declared_only": true
+      }
+    },
+    {
+      "id": "DECL-A-PC",
+      "group": "ten_declared_shapes",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "declared_only": true
+      }
+    },
+    {
+      "id": "DECL-A-CI+PC",
+      "group": "ten_declared_shapes",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "declared_only": true
+      }
+    },
+    {
+      "id": "DECL-C-CI",
+      "group": "ten_declared_shapes",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "declared_only": true
+      }
+    },
+    {
+      "id": "DECL-C-OS",
+      "group": "ten_declared_shapes",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "declared_only": true
+      }
+    },
+    {
+      "id": "DECL-C-RG2b",
+      "group": "ten_declared_shapes",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "declared_only": true
+      }
+    },
+    {
+      "id": "DECL-C-PC",
+      "group": "ten_declared_shapes",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "declared_only": true
+      }
+    },
+    {
+      "id": "DECL-C-CI+PC",
+      "group": "ten_declared_shapes",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "declared_only": true
+      }
+    },
+    {
+      "id": "STALE-common",
+      "group": "profile_cross_bindings",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4IdentityError",
+        "message": "resolved_params: supplied identity does not match payload"
+      }
+    },
+    {
+      "id": "STALE-candidate",
+      "group": "profile_cross_bindings",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4IdentityError",
+        "message": "resolved_params: supplied identity does not match payload"
+      }
+    },
+    {
+      "id": "STALE-realization",
+      "group": "profile_cross_bindings",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4IdentityError",
+        "message": "resolved_params: supplied identity does not match payload"
+      }
+    },
+    {
+      "id": "STALE-geometry",
+      "group": "profile_cross_bindings",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4IdentityError",
+        "message": "resolved_params: supplied identity does not match payload"
+      }
+    },
+    {
+      "id": "STALE-solver",
+      "group": "profile_cross_bindings",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4IdentityError",
+        "message": "resolved_params: supplied identity does not match payload"
+      }
+    },
+    {
+      "id": "STALE-charge",
+      "group": "profile_cross_bindings",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4IdentityError",
+        "message": "resolved_params: supplied identity does not match payload"
+      }
+    },
+    {
+      "id": "STALE-lifecycle",
+      "group": "profile_cross_bindings",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4IdentityError",
+        "message": "resolved_params: supplied identity does not match payload"
+      }
+    },
+    {
+      "id": "grcv4-common-params-v1-MISSING-schema_version",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "common_params/: 'schema_version' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-common-params-v1-MISSING-differential_backend_id",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "common_params/: 'differential_backend_id' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-common-params-v1-MISSING-boundary_policy_id",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "common_params/: 'boundary_policy_id' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-common-params-v1-MISSING-measure_profile_id",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "common_params/: 'measure_profile_id' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-common-params-v1-MISSING-context_contract_id",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "common_params/: 'context_contract_id' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-common-params-v1-MISSING-units_id",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "common_params/: 'units_id' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-common-params-v1-MISSING-gauge_id",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "common_params/: 'gauge_id' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-common-params-v1-MISSING-normalization_id",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "common_params/: 'normalization_id' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-common-params-v1-MISSING-domain_id",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "common_params/: 'domain_id' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-common-params-v1-MISSING-default_step_request",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "common_params/: 'default_step_request' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-common-params-v1-EXTRA",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "common_params/: Additional properties are not allowed ('unregistered_field' was unexpected)"
+      }
+    },
+    {
+      "id": "grcv4-candidate-a-params-v1-MISSING-schema_version",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "candidate_a_params/: 'schema_version' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-candidate-a-params-v1-MISSING-eta",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "candidate_a_params/: 'eta' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-candidate-a-params-v1-MISSING-kappa_c",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "candidate_a_params/: 'kappa_c' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-candidate-a-params-v1-MISSING-site_potential_id",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "candidate_a_params/: 'site_potential_id' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-candidate-a-params-v1-MISSING-W_floor",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "candidate_a_params/: 'W_floor' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-candidate-a-params-v1-MISSING-alpha",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "candidate_a_params/: 'alpha' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-candidate-a-params-v1-MISSING-beta",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "candidate_a_params/: 'beta' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-candidate-a-params-v1-MISSING-gamma",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "candidate_a_params/: 'gamma' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-candidate-a-params-v1-MISSING-kappa_Ah",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "candidate_a_params/: 'kappa_Ah' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-candidate-a-params-v1-MISSING-chi_A",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "candidate_a_params/: 'chi_A' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-candidate-a-params-v1-MISSING-zeta_A",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "candidate_a_params/: 'zeta_A' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-candidate-a-params-v1-MISSING-tau_A",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "candidate_a_params/: 'tau_A' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-candidate-a-params-v1-MISSING-descriptor_backend_id",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "candidate_a_params/: 'descriptor_backend_id' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-candidate-a-params-v1-MISSING-conductance_evaluator_id",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "candidate_a_params/: 'conductance_evaluator_id' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-candidate-a-params-v1-EXTRA",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "candidate_a_params/: Additional properties are not allowed ('unregistered_field' was unexpected)"
+      }
+    },
+    {
+      "id": "grcv4-ci-params-v1-MISSING-schema_version",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "ci_params/: 'schema_version' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-ci-params-v1-MISSING-contraction_domain_id",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "ci_params/: 'contraction_domain_id' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-ci-params-v1-MISSING-root_selector_id",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "ci_params/: 'root_selector_id' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-ci-params-v1-MISSING-iteration_limit",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "ci_params/: 'iteration_limit' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-ci-params-v1-MISSING-residual_norm_id",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "ci_params/: 'residual_norm_id' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-ci-params-v1-MISSING-tolerance",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "ci_params/: 'tolerance' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-ci-params-v1-EXTRA",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "ci_params/: Additional properties are not allowed ('unregistered_field' was unexpected)"
+      }
+    },
+    {
+      "id": "grcv4-geometry-profile-params-v1-MISSING-schema_version",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "geometry_params/: 'schema_version' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-geometry-profile-params-v1-MISSING-K4_base_digest",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "geometry_params/: 'K4_base_digest' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-geometry-profile-params-v1-MISSING-reference_hodge_digest",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "geometry_params/: 'reference_hodge_digest' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-geometry-profile-params-v1-MISSING-star_cover_id",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "geometry_params/: 'star_cover_id' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-geometry-profile-params-v1-MISSING-overlap_normalization_id",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "geometry_params/: 'overlap_normalization_id' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-geometry-profile-params-v1-MISSING-candidate_adapter_id",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "geometry_params/: 'candidate_adapter_id' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-geometry-profile-params-v1-MISSING-flat_sharp_solver_id",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "geometry_params/: 'flat_sharp_solver_id' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-geometry-profile-params-v1-MISSING-geometry_domain_id",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "geometry_params/: 'geometry_domain_id' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-geometry-profile-params-v1-MISSING-kappa_H",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "geometry_params/: 'kappa_H' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-geometry-profile-params-v1-EXTRA",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "geometry_params/: Additional properties are not allowed ('unregistered_field' was unexpected)"
+      }
+    },
+    {
+      "id": "grcv4-solver-policy-v1-MISSING-schema_version",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "solver_policy/: 'schema_version' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-solver-policy-v1-MISSING-solver_kind",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "solver_policy/: 'solver_kind' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-solver-policy-v1-MISSING-root_selector_id",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "solver_policy/: 'root_selector_id' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-solver-policy-v1-MISSING-iteration_limit",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "solver_policy/: 'iteration_limit' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-solver-policy-v1-MISSING-conditioning_limit",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "solver_policy/: 'conditioning_limit' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-solver-policy-v1-MISSING-residual_norm_id",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "solver_policy/: 'residual_norm_id' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-solver-policy-v1-MISSING-absolute_tolerance",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "solver_policy/: 'absolute_tolerance' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-solver-policy-v1-MISSING-relative_tolerance",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "solver_policy/: 'relative_tolerance' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-solver-policy-v1-MISSING-failure_policy_id",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "solver_policy/: 'failure_policy_id' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-solver-policy-v1-EXTRA",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "solver_policy/: Additional properties are not allowed ('unregistered_field' was unexpected)"
+      }
+    },
+    {
+      "id": "grcv4-charge-policy-v1-MISSING-schema_version",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "charge_policy/: 'schema_version' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-charge-policy-v1-MISSING-policy_id",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "charge_policy/: 'policy_id' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-charge-policy-v1-MISSING-accumulation_order",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "charge_policy/: 'accumulation_order' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-charge-policy-v1-MISSING-rounding_mode",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "charge_policy/: 'rounding_mode' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-charge-policy-v1-MISSING-absolute_tolerance",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "charge_policy/: 'absolute_tolerance' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-charge-policy-v1-MISSING-relative_tolerance",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "charge_policy/: 'relative_tolerance' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-charge-policy-v1-MISSING-repair_policy",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "charge_policy/: 'repair_policy' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-charge-policy-v1-MISSING-remainder_policy",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "charge_policy/: 'remainder_policy' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-charge-policy-v1-EXTRA",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "charge_policy/: Additional properties are not allowed ('unregistered_field' was unexpected)"
+      }
+    },
+    {
+      "id": "grcv4-lifecycle-policy-v1-MISSING-schema_version",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "lifecycle_policy/: 'schema_version' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-lifecycle-policy-v1-MISSING-migration_policy_id",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "lifecycle_policy/: 'migration_policy_id' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-lifecycle-policy-v1-MISSING-mapped_event_policy_id",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "lifecycle_policy/: 'mapped_event_policy_id' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-lifecycle-policy-v1-MISSING-reset_policy_id",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "lifecycle_policy/: 'reset_policy_id' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-lifecycle-policy-v1-MISSING-rebase_policy_id",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "lifecycle_policy/: 'rebase_policy_id' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-lifecycle-policy-v1-MISSING-history_policy_id",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "lifecycle_policy/: 'history_policy_id' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-lifecycle-policy-v1-MISSING-receipt_policy_id",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "lifecycle_policy/: 'receipt_policy_id' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-lifecycle-policy-v1-MISSING-target_readmission_policy_id",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "lifecycle_policy/: 'target_readmission_policy_id' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-lifecycle-policy-v1-EXTRA",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "lifecycle_policy/: Additional properties are not allowed ('unregistered_field' was unexpected)"
+      }
+    },
+    {
+      "id": "grcv4-os-params-v1-MISSING-schema_version",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "os_params/: 'schema_version' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-os-params-v1-MISSING-predictor_policy_id",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "os_params/: 'predictor_policy_id' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-os-params-v1-MISSING-corrector_policy_id",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "os_params/: 'corrector_policy_id' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-os-params-v1-MISSING-split_residual_norm_id",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "os_params/: 'split_residual_norm_id' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-os-params-v1-MISSING-tolerance",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "os_params/: 'tolerance' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-os-params-v1-EXTRA",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "os_params/: Additional properties are not allowed ('unregistered_field' was unexpected)"
+      }
+    },
+    {
+      "id": "grcv4-rg2b-params-v1-MISSING-schema_version",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "rg2b_params/: 'schema_version' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-rg2b-params-v1-MISSING-extension_evaluator_id",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "rg2b_params/: 'extension_evaluator_id' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-rg2b-params-v1-MISSING-approximation_policy_id",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "rg2b_params/: 'approximation_policy_id' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-rg2b-params-v1-MISSING-error_norm_id",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "rg2b_params/: 'error_norm_id' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-rg2b-params-v1-MISSING-error_tolerance",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "rg2b_params/: 'error_tolerance' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-rg2b-params-v1-MISSING-containment_certificate_id",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "rg2b_params/: 'containment_certificate_id' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-rg2b-params-v1-MISSING-iteration_limit",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "rg2b_params/: 'iteration_limit' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-rg2b-params-v1-MISSING-failure_policy_id",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "rg2b_params/: 'failure_policy_id' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-rg2b-params-v1-EXTRA",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "rg2b_params/: Additional properties are not allowed ('unregistered_field' was unexpected)"
+      }
+    },
+    {
+      "id": "grcv4-pc-params-v1-MISSING-schema_version",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "pc_params/: 'schema_version' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-pc-params-v1-MISSING-tau_PC",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "pc_params/: 'tau_PC' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-pc-params-v1-MISSING-radius",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "pc_params/: 'radius' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-pc-params-v1-MISSING-carrier_norm_id",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "pc_params/: 'carrier_norm_id' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-pc-params-v1-MISSING-source_envelope_id",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "pc_params/: 'source_envelope_id' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-pc-params-v1-MISSING-writer_id",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "pc_params/: 'writer_id' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-pc-params-v1-EXTRA",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "pc_params/: Additional properties are not allowed ('unregistered_field' was unexpected)"
+      }
+    },
+    {
+      "id": "grcv4-cipc-params-v1-MISSING-schema_version",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "cipc_params/: 'schema_version' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-cipc-params-v1-MISSING-contraction_domain_id",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "cipc_params/: 'contraction_domain_id' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-cipc-params-v1-MISSING-root_selector_id",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "cipc_params/: 'root_selector_id' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-cipc-params-v1-MISSING-iteration_limit",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "cipc_params/: 'iteration_limit' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-cipc-params-v1-MISSING-residual_norm_id",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "cipc_params/: 'residual_norm_id' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-cipc-params-v1-MISSING-tolerance",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "cipc_params/: 'tolerance' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-cipc-params-v1-MISSING-tau_PC",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "cipc_params/: 'tau_PC' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-cipc-params-v1-MISSING-radius",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "cipc_params/: 'radius' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-cipc-params-v1-MISSING-carrier_norm_id",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "cipc_params/: 'carrier_norm_id' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-cipc-params-v1-MISSING-source_envelope_id",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "cipc_params/: 'source_envelope_id' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-cipc-params-v1-MISSING-writer_id",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "cipc_params/: 'writer_id' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-cipc-params-v1-MISSING-rho_inst",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "cipc_params/: 'rho_inst' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-cipc-params-v1-EXTRA",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "cipc_params/: Additional properties are not allowed ('unregistered_field' was unexpected)"
+      }
+    },
+    {
+      "id": "grcv4-candidate-c-params-v1-MISSING-schema_version",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "candidate_c_params/: 'schema_version' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-candidate-c-params-v1-MISSING-transport_id",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "candidate_c_params/: 'transport_id' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-candidate-c-params-v1-MISSING-Lambda_C",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "candidate_c_params/: 'Lambda_C' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-candidate-c-params-v1-MISSING-selector_boundary_policy_id",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "candidate_c_params/: 'selector_boundary_policy_id' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-candidate-c-params-v1-MISSING-C_ref",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "candidate_c_params/: 'C_ref' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-candidate-c-params-v1-MISSING-kappa_M_C",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "candidate_c_params/: 'kappa_M_C' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-candidate-c-params-v1-MISSING-kappa_Phi_C",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "candidate_c_params/: 'kappa_Phi_C' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-candidate-c-params-v1-MISSING-eta_C",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "candidate_c_params/: 'eta_C' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-candidate-c-params-v1-MISSING-W_C_tr",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "candidate_c_params/: 'W_C_tr' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-candidate-c-params-v1-MISSING-W_C_tr_content_digest",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "candidate_c_params/: 'W_C_tr_content_digest' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-candidate-c-params-v1-MISSING-potential_evaluator_id",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "candidate_c_params/: 'potential_evaluator_id' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-candidate-c-params-v1-MISSING-tau_C",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "candidate_c_params/: 'tau_C' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-candidate-c-params-v1-MISSING-chi_C",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "candidate_c_params/: 'chi_C' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-candidate-c-params-v1-MISSING-zeta_C",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "candidate_c_params/: 'zeta_C' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-candidate-c-params-v1-MISSING-current_conditioning_policy_id",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "candidate_c_params/: 'current_conditioning_policy_id' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-candidate-c-params-v1-MISSING-E_H_policy_id",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "candidate_c_params/: 'E_H_policy_id' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-candidate-c-params-v1-MISSING-E_M_policy_id",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "candidate_c_params/: 'E_M_policy_id' is a required property"
+      }
+    },
+    {
+      "id": "grcv4-candidate-c-params-v1-EXTRA",
+      "group": "closed_record_schema",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "candidate_c_params/: Additional properties are not allowed ('unregistered_field' was unexpected)"
+      }
+    },
+    {
+      "id": "INT-CI-1.0-from_payload",
+      "group": "typed_integer_records",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "value": 1
+      }
+    },
+    {
+      "id": "INT-CI-1.0-direct",
+      "group": "typed_integer_records",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "value": 1
+      }
+    },
+    {
+      "id": "INT-CI-10.0-from_payload",
+      "group": "typed_integer_records",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "value": 10
+      }
+    },
+    {
+      "id": "INT-CI-10.0-direct",
+      "group": "typed_integer_records",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "value": 10
+      }
+    },
+    {
+      "id": "INT-CI-9007199254740991.0-from_payload",
+      "group": "typed_integer_records",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "value": 9007199254740991
+      }
+    },
+    {
+      "id": "INT-CI-9007199254740991.0-direct",
+      "group": "typed_integer_records",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "value": 9007199254740991
+      }
+    },
+    {
+      "id": "INT-REJECT-CI-True",
+      "group": "integer_domain_rejection",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "resolved_params/realization: {'schema_version': 'grcv4-ci-params-v1', 'contraction_domain_id': 'audit_domain_v1', 'root_selector_id': 'unique_admitted_root_v1', 'iteration_limit': True, 'residual_norm_id': 'audit_norm_v1', 'tolerance': 0} is not valid under any of the given schemas"
+      }
+    },
+    {
+      "id": "INT-REJECT-CI-False",
+      "group": "integer_domain_rejection",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "resolved_params/realization: {'schema_version': 'grcv4-ci-params-v1', 'contraction_domain_id': 'audit_domain_v1', 'root_selector_id': 'unique_admitted_root_v1', 'iteration_limit': False, 'residual_norm_id': 'audit_norm_v1', 'tolerance': 0} is not valid under any of the given schemas"
+      }
+    },
+    {
+      "id": "INT-REJECT-CI-0",
+      "group": "integer_domain_rejection",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "resolved_params/realization: {'schema_version': 'grcv4-ci-params-v1', 'contraction_domain_id': 'audit_domain_v1', 'root_selector_id': 'unique_admitted_root_v1', 'iteration_limit': 0, 'residual_norm_id': 'audit_norm_v1', 'tolerance': 0} is not valid under any of the given schemas"
+      }
+    },
+    {
+      "id": "INT-REJECT-CI--1",
+      "group": "integer_domain_rejection",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "resolved_params/realization: {'schema_version': 'grcv4-ci-params-v1', 'contraction_domain_id': 'audit_domain_v1', 'root_selector_id': 'unique_admitted_root_v1', 'iteration_limit': -1, 'residual_norm_id': 'audit_norm_v1', 'tolerance': 0} is not valid under any of the given schemas"
+      }
+    },
+    {
+      "id": "INT-REJECT-CI-1.5",
+      "group": "integer_domain_rejection",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "resolved_params/realization: {'schema_version': 'grcv4-ci-params-v1', 'contraction_domain_id': 'audit_domain_v1', 'root_selector_id': 'unique_admitted_root_v1', 'iteration_limit': 1.5, 'residual_norm_id': 'audit_norm_v1', 'tolerance': 0} is not valid under any of the given schemas"
+      }
+    },
+    {
+      "id": "INT-REJECT-CI-9007199254740992.0",
+      "group": "integer_domain_rejection",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "resolved_params/realization: {'schema_version': 'grcv4-ci-params-v1', 'contraction_domain_id': 'audit_domain_v1', 'root_selector_id': 'unique_admitted_root_v1', 'iteration_limit': 9007199254740992.0, 'residual_norm_id': 'audit_norm_v1', 'tolerance': 0} is not valid under any of the given schemas"
+      }
+    },
+    {
+      "id": "INT-RG2b-1.0-from_payload",
+      "group": "typed_integer_records",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "value": 1
+      }
+    },
+    {
+      "id": "INT-RG2b-1.0-direct",
+      "group": "typed_integer_records",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "value": 1
+      }
+    },
+    {
+      "id": "INT-RG2b-10.0-from_payload",
+      "group": "typed_integer_records",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "value": 10
+      }
+    },
+    {
+      "id": "INT-RG2b-10.0-direct",
+      "group": "typed_integer_records",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "value": 10
+      }
+    },
+    {
+      "id": "INT-RG2b-9007199254740991.0-from_payload",
+      "group": "typed_integer_records",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "value": 9007199254740991
+      }
+    },
+    {
+      "id": "INT-RG2b-9007199254740991.0-direct",
+      "group": "typed_integer_records",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "value": 9007199254740991
+      }
+    },
+    {
+      "id": "INT-REJECT-RG2b-True",
+      "group": "integer_domain_rejection",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "resolved_params/realization: {'schema_version': 'grcv4-rg2b-params-v1', 'extension_evaluator_id': 'audit_evaluator_v1', 'approximation_policy_id': 'audit_approx_v1', 'error_norm_id': 'audit_norm_v1', 'error_tolerance': 0, 'containment_certificate_id': 'audit_certificate_v1', 'iteration_limit': True,"
+      }
+    },
+    {
+      "id": "INT-REJECT-RG2b-False",
+      "group": "integer_domain_rejection",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "resolved_params/realization: {'schema_version': 'grcv4-rg2b-params-v1', 'extension_evaluator_id': 'audit_evaluator_v1', 'approximation_policy_id': 'audit_approx_v1', 'error_norm_id': 'audit_norm_v1', 'error_tolerance': 0, 'containment_certificate_id': 'audit_certificate_v1', 'iteration_limit': False"
+      }
+    },
+    {
+      "id": "INT-REJECT-RG2b-0",
+      "group": "integer_domain_rejection",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "resolved_params/realization: {'schema_version': 'grcv4-rg2b-params-v1', 'extension_evaluator_id': 'audit_evaluator_v1', 'approximation_policy_id': 'audit_approx_v1', 'error_norm_id': 'audit_norm_v1', 'error_tolerance': 0, 'containment_certificate_id': 'audit_certificate_v1', 'iteration_limit': 0, 'f"
+      }
+    },
+    {
+      "id": "INT-REJECT-RG2b--1",
+      "group": "integer_domain_rejection",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "resolved_params/realization: {'schema_version': 'grcv4-rg2b-params-v1', 'extension_evaluator_id': 'audit_evaluator_v1', 'approximation_policy_id': 'audit_approx_v1', 'error_norm_id': 'audit_norm_v1', 'error_tolerance': 0, 'containment_certificate_id': 'audit_certificate_v1', 'iteration_limit': -1, '"
+      }
+    },
+    {
+      "id": "INT-REJECT-RG2b-1.5",
+      "group": "integer_domain_rejection",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "resolved_params/realization: {'schema_version': 'grcv4-rg2b-params-v1', 'extension_evaluator_id': 'audit_evaluator_v1', 'approximation_policy_id': 'audit_approx_v1', 'error_norm_id': 'audit_norm_v1', 'error_tolerance': 0, 'containment_certificate_id': 'audit_certificate_v1', 'iteration_limit': 1.5, "
+      }
+    },
+    {
+      "id": "INT-REJECT-RG2b-9007199254740992.0",
+      "group": "integer_domain_rejection",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "resolved_params/realization: {'schema_version': 'grcv4-rg2b-params-v1', 'extension_evaluator_id': 'audit_evaluator_v1', 'approximation_policy_id': 'audit_approx_v1', 'error_norm_id': 'audit_norm_v1', 'error_tolerance': 0, 'containment_certificate_id': 'audit_certificate_v1', 'iteration_limit': 90071"
+      }
+    },
+    {
+      "id": "INT-CI+PC-1.0-from_payload",
+      "group": "typed_integer_records",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "value": 1
+      }
+    },
+    {
+      "id": "INT-CI+PC-1.0-direct",
+      "group": "typed_integer_records",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "value": 1
+      }
+    },
+    {
+      "id": "INT-CI+PC-10.0-from_payload",
+      "group": "typed_integer_records",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "value": 10
+      }
+    },
+    {
+      "id": "INT-CI+PC-10.0-direct",
+      "group": "typed_integer_records",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "value": 10
+      }
+    },
+    {
+      "id": "INT-CI+PC-9007199254740991.0-from_payload",
+      "group": "typed_integer_records",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "value": 9007199254740991
+      }
+    },
+    {
+      "id": "INT-CI+PC-9007199254740991.0-direct",
+      "group": "typed_integer_records",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "value": 9007199254740991
+      }
+    },
+    {
+      "id": "INT-REJECT-CI+PC-True",
+      "group": "integer_domain_rejection",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "resolved_params/realization: {'schema_version': 'grcv4-cipc-params-v1', 'contraction_domain_id': 'audit_domain_v1', 'root_selector_id': 'unique_admitted_root_v1', 'iteration_limit': True, 'residual_norm_id': 'audit_norm_v1', 'tolerance': 0, 'tau_PC': 1, 'radius': 1, 'carrier_norm_id': 'audit_norm_v1"
+      }
+    },
+    {
+      "id": "INT-REJECT-CI+PC-False",
+      "group": "integer_domain_rejection",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "resolved_params/realization: {'schema_version': 'grcv4-cipc-params-v1', 'contraction_domain_id': 'audit_domain_v1', 'root_selector_id': 'unique_admitted_root_v1', 'iteration_limit': False, 'residual_norm_id': 'audit_norm_v1', 'tolerance': 0, 'tau_PC': 1, 'radius': 1, 'carrier_norm_id': 'audit_norm_v"
+      }
+    },
+    {
+      "id": "INT-REJECT-CI+PC-0",
+      "group": "integer_domain_rejection",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "resolved_params/realization: {'schema_version': 'grcv4-cipc-params-v1', 'contraction_domain_id': 'audit_domain_v1', 'root_selector_id': 'unique_admitted_root_v1', 'iteration_limit': 0, 'residual_norm_id': 'audit_norm_v1', 'tolerance': 0, 'tau_PC': 1, 'radius': 1, 'carrier_norm_id': 'audit_norm_v1', "
+      }
+    },
+    {
+      "id": "INT-REJECT-CI+PC--1",
+      "group": "integer_domain_rejection",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "resolved_params/realization: {'schema_version': 'grcv4-cipc-params-v1', 'contraction_domain_id': 'audit_domain_v1', 'root_selector_id': 'unique_admitted_root_v1', 'iteration_limit': -1, 'residual_norm_id': 'audit_norm_v1', 'tolerance': 0, 'tau_PC': 1, 'radius': 1, 'carrier_norm_id': 'audit_norm_v1',"
+      }
+    },
+    {
+      "id": "INT-REJECT-CI+PC-1.5",
+      "group": "integer_domain_rejection",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "resolved_params/realization: {'schema_version': 'grcv4-cipc-params-v1', 'contraction_domain_id': 'audit_domain_v1', 'root_selector_id': 'unique_admitted_root_v1', 'iteration_limit': 1.5, 'residual_norm_id': 'audit_norm_v1', 'tolerance': 0, 'tau_PC': 1, 'radius': 1, 'carrier_norm_id': 'audit_norm_v1'"
+      }
+    },
+    {
+      "id": "INT-REJECT-CI+PC-9007199254740992.0",
+      "group": "integer_domain_rejection",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "resolved_params/realization: {'schema_version': 'grcv4-cipc-params-v1', 'contraction_domain_id': 'audit_domain_v1', 'root_selector_id': 'unique_admitted_root_v1', 'iteration_limit': 9007199254740992.0, 'residual_norm_id': 'audit_norm_v1', 'tolerance': 0, 'tau_PC': 1, 'radius': 1, 'carrier_norm_id': "
+      }
+    },
+    {
+      "id": "INT-OS-1.0-from_payload",
+      "group": "typed_integer_records",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "value": 1
+      }
+    },
+    {
+      "id": "INT-OS-1.0-direct",
+      "group": "typed_integer_records",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "value": 1
+      }
+    },
+    {
+      "id": "INT-OS-10.0-from_payload",
+      "group": "typed_integer_records",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "value": 10
+      }
+    },
+    {
+      "id": "INT-OS-10.0-direct",
+      "group": "typed_integer_records",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "value": 10
+      }
+    },
+    {
+      "id": "INT-OS-9007199254740991.0-from_payload",
+      "group": "typed_integer_records",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "value": 9007199254740991
+      }
+    },
+    {
+      "id": "INT-OS-9007199254740991.0-direct",
+      "group": "typed_integer_records",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "value": 9007199254740991
+      }
+    },
+    {
+      "id": "INT-REJECT-OS-True",
+      "group": "integer_domain_rejection",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "resolved_params/solver/iteration_limit: True is not of type 'integer'"
+      }
+    },
+    {
+      "id": "INT-REJECT-OS-False",
+      "group": "integer_domain_rejection",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "resolved_params/solver/iteration_limit: False is not of type 'integer'"
+      }
+    },
+    {
+      "id": "INT-REJECT-OS-0",
+      "group": "integer_domain_rejection",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "resolved_params/solver/iteration_limit: 0 is less than the minimum of 1"
+      }
+    },
+    {
+      "id": "INT-REJECT-OS--1",
+      "group": "integer_domain_rejection",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "resolved_params/solver/iteration_limit: -1 is less than the minimum of 1"
+      }
+    },
+    {
+      "id": "INT-REJECT-OS-1.5",
+      "group": "integer_domain_rejection",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "resolved_params/solver/iteration_limit: 1.5 is not of type 'integer'"
+      }
+    },
+    {
+      "id": "INT-REJECT-OS-9007199254740992.0",
+      "group": "integer_domain_rejection",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "resolved_params/solver/iteration_limit: 9007199254740992.0 is greater than the maximum of 9007199254740991"
+      }
+    },
+    {
+      "id": "INT-EQUAL-PROFILE-DIFFERENT-TYPE",
+      "group": "typed_integer_records",
+      "tier": "required",
+      "pass": true,
+      "observed": null
+    },
+    {
+      "id": "PROFILE-CANONICAL-LARGE-FLOAT",
+      "group": "numeric_codec_composition",
+      "tier": "integration_contract",
+      "pass": true,
+      "observed": null
+    },
+    {
+      "id": "REFERENCE-MATCH-CI",
+      "group": "reference_content_and_order",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "reference_weights": {
+          "old-1": 0.25,
+          "old-2": 0.5,
+          "old-3": 0.75,
+          "old-4": 1.0,
+          "old-5": 1.25,
+          "old-6": 1.5,
+          "old-7": 1.75,
+          "old-8": 2.0,
+          "old-9": 2.25
+        },
+        "no_graph_or_SPD_admission": true
+      }
+    },
+    {
+      "id": "REFERENCE-CONFLICT-CI",
+      "group": "candidate_reference_relation",
+      "tier": "owner_follow_through",
+      "pass": true,
+      "observed": {
+        "exception": "V4IdentityError",
+        "message": "Candidate C reference Hodge weights must match W_C_tr"
+      }
+    },
+    {
+      "id": "REFERENCE-MATCH-OS",
+      "group": "reference_content_and_order",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "reference_weights": {
+          "old-1": 0.25,
+          "old-2": 0.5,
+          "old-3": 0.75,
+          "old-4": 1.0,
+          "old-5": 1.25,
+          "old-6": 1.5,
+          "old-7": 1.75,
+          "old-8": 2.0,
+          "old-9": 2.25
+        },
+        "no_graph_or_SPD_admission": true
+      }
+    },
+    {
+      "id": "REFERENCE-CONFLICT-OS",
+      "group": "candidate_reference_relation",
+      "tier": "owner_follow_through",
+      "pass": true,
+      "observed": {
+        "exception": "V4IdentityError",
+        "message": "Candidate C reference Hodge weights must match W_C_tr"
+      }
+    },
+    {
+      "id": "REFERENCE-MATCH-RG2b",
+      "group": "reference_content_and_order",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "reference_weights": {
+          "old-1": 0.25,
+          "old-2": 0.5,
+          "old-3": 0.75,
+          "old-4": 1.0,
+          "old-5": 1.25,
+          "old-6": 1.5,
+          "old-7": 1.75,
+          "old-8": 2.0,
+          "old-9": 2.25
+        },
+        "no_graph_or_SPD_admission": true
+      }
+    },
+    {
+      "id": "REFERENCE-CONFLICT-RG2b",
+      "group": "candidate_reference_relation",
+      "tier": "owner_follow_through",
+      "pass": true,
+      "observed": {
+        "exception": "V4IdentityError",
+        "message": "Candidate C reference Hodge weights must match W_C_tr"
+      }
+    },
+    {
+      "id": "REFERENCE-MATCH-PC",
+      "group": "reference_content_and_order",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "reference_weights": {
+          "old-1": 0.25,
+          "old-2": 0.5,
+          "old-3": 0.75,
+          "old-4": 1.0,
+          "old-5": 1.25,
+          "old-6": 1.5,
+          "old-7": 1.75,
+          "old-8": 2.0,
+          "old-9": 2.25
+        },
+        "no_graph_or_SPD_admission": true
+      }
+    },
+    {
+      "id": "REFERENCE-CONFLICT-PC",
+      "group": "candidate_reference_relation",
+      "tier": "owner_follow_through",
+      "pass": true,
+      "observed": {
+        "exception": "V4IdentityError",
+        "message": "Candidate C reference Hodge weights must match W_C_tr"
+      }
+    },
+    {
+      "id": "REFERENCE-MATCH-CI+PC",
+      "group": "reference_content_and_order",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "reference_weights": {
+          "old-1": 0.25,
+          "old-2": 0.5,
+          "old-3": 0.75,
+          "old-4": 1.0,
+          "old-5": 1.25,
+          "old-6": 1.5,
+          "old-7": 1.75,
+          "old-8": 2.0,
+          "old-9": 2.25
+        },
+        "no_graph_or_SPD_admission": true
+      }
+    },
+    {
+      "id": "REFERENCE-CONFLICT-CI+PC",
+      "group": "candidate_reference_relation",
+      "tier": "owner_follow_through",
+      "pass": true,
+      "observed": {
+        "exception": "V4IdentityError",
+        "message": "Candidate C reference Hodge weights must match W_C_tr"
+      }
+    },
+    {
+      "id": "PROFILE-DETACH-0",
+      "group": "profile_immutability",
+      "tier": "required",
+      "pass": true,
+      "observed": null
+    },
+    {
+      "id": "PROFILE-DETACH-1",
+      "group": "profile_immutability",
+      "tier": "required",
+      "pass": true,
+      "observed": null
+    },
+    {
+      "id": "PROFILE-DETACH-2",
+      "group": "profile_immutability",
+      "tier": "required",
+      "pass": true,
+      "observed": null
+    },
+    {
+      "id": "PROFILE-DETACH-3",
+      "group": "profile_immutability",
+      "tier": "required",
+      "pass": true,
+      "observed": null
+    },
+    {
+      "id": "PROFILE-DETACH-4",
+      "group": "profile_immutability",
+      "tier": "required",
+      "pass": true,
+      "observed": null
+    },
+    {
+      "id": "PROFILE-DETACH-5",
+      "group": "profile_immutability",
+      "tier": "required",
+      "pass": true,
+      "observed": null
+    },
+    {
+      "id": "PROFILE-DETACH-6",
+      "group": "profile_immutability",
+      "tier": "required",
+      "pass": true,
+      "observed": null
+    },
+    {
+      "id": "PROFILE-DETACH-7",
+      "group": "profile_immutability",
+      "tier": "required",
+      "pass": true,
+      "observed": null
+    },
+    {
+      "id": "PROFILE-DETACH-8",
+      "group": "profile_immutability",
+      "tier": "required",
+      "pass": true,
+      "observed": null
+    },
+    {
+      "id": "PROFILE-DETACH-9",
+      "group": "profile_immutability",
+      "tier": "required",
+      "pass": true,
+      "observed": null
+    },
+    {
+      "id": "PROFILE-DETACH-10",
+      "group": "profile_immutability",
+      "tier": "required",
+      "pass": true,
+      "observed": null
+    },
+    {
+      "id": "PROFILE-DETACH-11",
+      "group": "profile_immutability",
+      "tier": "required",
+      "pass": true,
+      "observed": null
+    },
+    {
+      "id": "PROFILE-DETACH-12",
+      "group": "profile_immutability",
+      "tier": "required",
+      "pass": true,
+      "observed": null
+    },
+    {
+      "id": "PROFILE-DETACH-13",
+      "group": "profile_immutability",
+      "tier": "required",
+      "pass": true,
+      "observed": null
+    },
+    {
+      "id": "PROFILE-DETACH-14",
+      "group": "profile_immutability",
+      "tier": "required",
+      "pass": true,
+      "observed": null
+    },
+    {
+      "id": "PROFILE-DETACH-15",
+      "group": "profile_immutability",
+      "tier": "required",
+      "pass": true,
+      "observed": null
+    },
+    {
+      "id": "PROFILE-DETACH-16",
+      "group": "profile_immutability",
+      "tier": "required",
+      "pass": true,
+      "observed": null
+    },
+    {
+      "id": "PROFILE-DETACH-17",
+      "group": "profile_immutability",
+      "tier": "required",
+      "pass": true,
+      "observed": null
+    },
+    {
+      "id": "PROFILE-DETACH-18",
+      "group": "profile_immutability",
+      "tier": "required",
+      "pass": true,
+      "observed": null
+    },
+    {
+      "id": "PROFILE-DETACH-19",
+      "group": "profile_immutability",
+      "tier": "required",
+      "pass": true,
+      "observed": null
+    },
+    {
+      "id": "LEXICAL-9007199254740992",
+      "group": "numeric_lexical_characterization",
+      "tier": "characterization",
+      "pass": true,
+      "observed": {
+        "integer_token": "9007199254740992",
+        "integer_result": {
+          "exception": "V4WireError",
+          "message": "integer outside the I-JSON safe range"
+        },
+        "float_token": "9007199254740992.0",
+        "float_result": "9007199254740992.0"
+      }
+    },
+    {
+      "id": "LEXICAL-100000000000000000000",
+      "group": "numeric_lexical_characterization",
+      "tier": "characterization",
+      "pass": true,
+      "observed": {
+        "integer_token": "100000000000000000000",
+        "integer_result": {
+          "exception": "V4WireError",
+          "message": "integer outside the I-JSON safe range"
+        },
+        "float_token": "1e20",
+        "float_result": "1e+20"
+      }
+    },
+    {
+      "id": "LEXICAL-9007199254740993",
+      "group": "numeric_lexical_characterization",
+      "tier": "characterization",
+      "pass": true,
+      "observed": {
+        "integer_token": "9007199254740993",
+        "integer_result": {
+          "exception": "V4WireError",
+          "message": "integer outside the I-JSON safe range"
+        },
+        "float_token": "9007199254740993.0",
+        "float_result": "9007199254740992.0"
+      }
+    },
+    {
+      "id": "SCHEMA-REF-https://example.invalid/a",
+      "group": "local_schema_selection",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "unknown local contract definition"
+      }
+    },
+    {
+      "id": "SCHEMA-REF-../schema",
+      "group": "local_schema_selection",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "unknown local contract definition"
+      }
+    },
+    {
+      "id": "SCHEMA-REF-#/$defs/../schema",
+      "group": "local_schema_selection",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "unknown local contract definition"
+      }
+    },
+    {
+      "id": "SCHEMA-REF-$defs",
+      "group": "local_schema_selection",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "unknown local contract definition"
+      }
+    },
+    {
+      "id": "SCHEMA-REF-",
+      "group": "local_schema_selection",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "unknown local contract definition"
+      }
+    },
+    {
+      "id": "SCHEMA-REF-#/$defs/not_a_definition",
+      "group": "local_schema_selection",
+      "tier": "required",
+      "pass": true,
+      "observed": {
+        "exception": "V4SchemaError",
+        "message": "unknown local contract definition"
+      }
+    },
+    {
+      "id": "SUPPORT-REMAINS-EMPTY",
+      "group": "claim_ceiling",
+      "tier": "required",
+      "pass": true,
+      "observed": null
+    }
+  ]
+}

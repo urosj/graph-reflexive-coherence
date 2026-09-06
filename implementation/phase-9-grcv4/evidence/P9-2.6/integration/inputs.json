@@ -1,0 +1,390 @@
+{
+  "schema": "phase9_foundation_integration_inputs_v1",
+  "iteration_id": "P9-2.6",
+  "baseline_commit": "2075f47825b9583d6a2ff4fbdc47a70df7e283f0",
+  "release_id": "grcv4-spec-release-sha256:9f4c8fe5b57b1c477d834a3e4dae3f98a2b18c70e6e7f598e3c9652170c8645f",
+  "environment": {
+    "python": "3.12.3 (main, Jul 15 2026, 23:46:41) [GCC 13.3.0]",
+    "implementation": "CPython",
+    "system": "Linux",
+    "machine": "x86_64",
+    "packages": {
+      "rfc8785": "0.1.4",
+      "jsonschema": "4.26.0",
+      "setuptools": "84.0.0",
+      "wheel": "0.48.0",
+      "build": "1.6.0",
+      "pip": "24.0",
+      "numpy": "2.4.6",
+      "mypy": "2.1.0",
+      "ruff": "0.15.16"
+    }
+  },
+  "source_bindings": [
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/drafts/2026-09-GRC-V4.md",
+      "sha256": "2da39c3bb0d102804f9135384317771f3fe1b3e48df3b4ab1813a3575642a739"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-1/P9-1.1-SourceCrosswalk.json",
+      "sha256": "85fe7204f5a40e3ffa502fce33519000adb443ba6480cb85e0d6ee4155893ede"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-1/P9-1.5-OwnershipAndLegacyBaseline.json",
+      "sha256": "01204c93512aa6aa12f1f9498bd96b4403f655899c0fd012a00f942bf847a301"
+    },
+    {
+      "path": "pyproject.toml",
+      "sha256": "343407a945a7bd41407f821ec81a3dee68cf5e8a0f2413b1e6938a722f9c393c"
+    },
+    {
+      "path": "specs/grc-common-interface-v4-ext.md",
+      "sha256": "7d5be95242619fcaaae7ea5d8e950b3f335efe9a81492e67e6baa91c4643bc26"
+    },
+    {
+      "path": "specs/grc-v4-conformance-vectors.json",
+      "sha256": "ab12e2ffe02e9a9267eca9bdc3ca9361c0cf973cb87917d0eb090d3d68654ce4"
+    },
+    {
+      "path": "specs/grc-v4-contract-schema.json",
+      "sha256": "3fd072fc8c2b315f1b5dc32a4e4821a5082b5f3fc9d9a4794c007419a7aa0bea"
+    },
+    {
+      "path": "specs/grc-v4-spec.md",
+      "sha256": "8681e14bf229959183f772c547a6ba17e0cc60c264dad9a1975be147d12168ea"
+    },
+    {
+      "path": "specs/grc-v4-specification-release.json",
+      "sha256": "bba0bb649bc2e80c5bfa99f96bd5824bbdda3b3fbc87fb68c3e3a59da1cee46b"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4.py",
+      "sha256": "65efdf547d8e88e67c22d62a869bd61464ed3d2eb8b2709be6661796b37e824c"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_assets/__init__.py",
+      "sha256": "a1f3aba168a9f9331d1fc9580d5055404f8bc4c705936c7e388e7a47f80a0051"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_assets/asset-index.json",
+      "sha256": "c1ac9d8d3bb924f29b775bd9863a33a454da41e98c57ef0b8bb3c24171fafc9f"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_assets/grc-v4-contract-schema.json",
+      "sha256": "3fd072fc8c2b315f1b5dc32a4e4821a5082b5f3fc9d9a4794c007419a7aa0bea"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_assets/grc-v4-specification-release.json",
+      "sha256": "bba0bb649bc2e80c5bfa99f96bd5824bbdda3b3fbc87fb68c3e3a59da1cee46b"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_assets/grc-v4-specification-release.sha256",
+      "sha256": "50b20509b84a6b21f3036ecb1d7e13861f662bc8319873c5321fc0317ada7e33"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_codec.py",
+      "sha256": "bd6d9390c818c5a25b70da119cfbc3a3de3707ee84566f6bb06160bb4780e154"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_profile.py",
+      "sha256": "188e4ceb92b6a36fe81849911b88b233b8dd16bf3de07383e1508d76232fdbfb"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_state.py",
+      "sha256": "b0ccf06ef91b66feb8670fb67281465998f4bcb085c4d547fedd3ce6d85ad3cb"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_step.py",
+      "sha256": "773975e1131791f93d86f6dac38b27ebac9dca46c1b87ef2e0a31bc8c90a705b"
+    },
+    {
+      "path": "tests/models/grcv4_conformance_harness.py",
+      "sha256": "15ee128da66dd25f6e028cf601f4de1047bee8812d51f83391a3f7adda3c7e89"
+    },
+    {
+      "path": "tests/models/grcv4_reference_oracles.py",
+      "sha256": "b973babbca55854f2b2a9f629b4b914cf767627533b26460013c8b9cfa611ea4"
+    },
+    {
+      "path": "tests/models/test_grc_v4.py",
+      "sha256": "245032427c35297a31e9fadd6806346874339fb2236cb7a04095e78ca4b989b5"
+    },
+    {
+      "path": "tests/models/test_grc_v4_codec.py",
+      "sha256": "151a3d1641584df17b81699320891c3940744eb4aeb6d81cfd0dd2b4824a2350"
+    },
+    {
+      "path": "tests/models/test_grc_v4_profile.py",
+      "sha256": "6dcd4a0abffca13bc8a0c0e7e697a54e421ba079eaef5d77e4609184d67a0dea"
+    },
+    {
+      "path": "tests/models/test_grc_v4_state.py",
+      "sha256": "d7ce02acc2d663fd3f4513158193dd473a78c1f42bc985edfa2d2eff0943fb54"
+    },
+    {
+      "path": "tests/models/test_grc_v4_step.py",
+      "sha256": "cd6470b181eec32abf4540b4ddb0bc28d5303fd40dca40febf22ba6bc71cf51f"
+    }
+  ],
+  "legacy_baseline_commit": "7c772d36bd4cf12b4a444b7b954b74612de2926f",
+  "legacy_symbols": [
+    {
+      "symbols": [
+        "GRCEvent"
+      ],
+      "path": "src/pygrc/core/events.py",
+      "sha256": "a77be381e49e84745a687be432fd03ca0cbc394efe749db2538542d3cc80f9b2",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "symbols": [
+        "GRCState",
+        "StepResult"
+      ],
+      "path": "src/pygrc/core/types.py",
+      "sha256": "63932777bcf619cf8719a69b16adce0dd61e4b9296308ab6f8e41f925048c6f8",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "symbols": [
+        "GRCModel"
+      ],
+      "path": "src/pygrc/core/interfaces.py",
+      "sha256": "551d68fc103285608cef1a7ea4a69b9455181de21d9f91ea61cdd80c6065bc8f",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "symbols": [
+        "canonical_json_dumps"
+      ],
+      "path": "src/pygrc/core/serialization.py",
+      "sha256": "a1ce1489870962af1032b8e69acc09ba8b9dcbcefaf86ea97250fc9a47009cf4",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "symbols": [
+        "legacy capability vocabulary"
+      ],
+      "path": "src/pygrc/core/capabilities.py",
+      "sha256": "40fb8fc51284c25d99b7bb9310ebff7055f170d46a0a978d190ccd9f2b97a41b",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "symbols": [
+        "WeightedGraphBackend",
+        "PortGraphBackend"
+      ],
+      "path": "src/pygrc/core/storage.py",
+      "sha256": "a73d30238bc81dc3c366f04f3e8d5e8a266d0a683e7db88560196930d279c397",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "symbols": [
+        "MonotoneIdSource",
+        "TombstoneSlotTable"
+      ],
+      "path": "src/pygrc/core/ids.py",
+      "sha256": "f57ae8530b5b943aad37b247b0716df583dafbf6ceffaa970cbf02cc6907d428",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "symbols": [
+        "GRC9V3"
+      ],
+      "path": "src/pygrc/models/grc_9_v3.py",
+      "sha256": "d297def1eddfaf79a7ad3d6b676caaeebb29e6d7235f4fac5c6729bd7e26ca9e",
+      "policy": "frozen_legacy_reference"
+    },
+    {
+      "symbols": [
+        "legacy exports"
+      ],
+      "path": "src/pygrc/models/__init__.py",
+      "sha256": "23768e181455f4e7eb68908cdac532464c063fa5eb4250c4d05537eca0dcaa70",
+      "policy": "separately_reviewed_additive_integration"
+    }
+  ],
+  "legacy_check": {
+    "frozen_references": 133,
+    "unchanged_initializer": 1,
+    "modified_integration": "pyproject.toml (prior accepted V4 extra/package-data only)"
+  },
+  "wheelhouse": {
+    "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/generated/p922-wheelhouse",
+    "artifacts": [
+      {
+        "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/generated/p922-wheelhouse/asttokens-3.0.2-py3-none-any.whl",
+        "sha256": "9da13157f5b28becde0bd374fc677dcd3c290614264eff096f167c469cd9f933"
+      },
+      {
+        "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/generated/p922-wheelhouse/attrs-26.1.0-py3-none-any.whl",
+        "sha256": "c647aa4a12dfbad9333ca4e71fe62ddc36f4e63b2d260a37a8b83d2f043ac309"
+      },
+      {
+        "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/generated/p922-wheelhouse/contourpy-1.3.3-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "sha256": "4d00e655fcef08aba35ec9610536bfe90267d7ab5ba944f7032549c55a146da1"
+      },
+      {
+        "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/generated/p922-wheelhouse/cycler-0.12.1-py3-none-any.whl",
+        "sha256": "85cef7cff222d8644161529808465972e51340599459b8ac3ccbac5a854e0d30"
+      },
+      {
+        "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/generated/p922-wheelhouse/executing-2.2.1-py2.py3-none-any.whl",
+        "sha256": "760643d3452b4d777d295bb167ccc74c64a81df23fb5e08eff250c425a4b2017"
+      },
+      {
+        "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/generated/p922-wheelhouse/fonttools-4.64.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+        "sha256": "66a83f93579fb3493e458c4449d1d566a7b2a1c7b19915cd0fa3c9b8b5a8540b"
+      },
+      {
+        "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/generated/p922-wheelhouse/ipython-9.17.1-py3-none-any.whl",
+        "sha256": "6d1645743cfd1a07eb695d85aa2b5fa66721f8cbae9431d4049f7084bbf06509"
+      },
+      {
+        "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/generated/p922-wheelhouse/ipython_pygments_lexers-1.1.1-py3-none-any.whl",
+        "sha256": "a9462224a505ade19a605f71f8fa63c2048833ce50abc86768a0d81d876dc81c"
+      },
+      {
+        "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/generated/p922-wheelhouse/jedi-0.20.0-py2.py3-none-any.whl",
+        "sha256": "7bdd9c2634f56713299976f4cbd59cb3fa92165cc5e05ea811fb253480728b67"
+      },
+      {
+        "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/generated/p922-wheelhouse/jinja2-3.1.6-py3-none-any.whl",
+        "sha256": "85ece4451f492d0c13c5dd7c13a64681a86afae63a5f347908daf103ce6d2f67"
+      },
+      {
+        "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/generated/p922-wheelhouse/jsonpickle-4.1.2-py3-none-any.whl",
+        "sha256": "7ffe34426bc797684dbf1dc84185558bd864cd25b1ff5fb01b7405e392d0a937"
+      },
+      {
+        "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/generated/p922-wheelhouse/jsonschema-4.26.0-py3-none-any.whl",
+        "sha256": "d489f15263b8d200f8387e64b4c3a75f06629559fb73deb8fdfb525f2dab50ce"
+      },
+      {
+        "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/generated/p922-wheelhouse/jsonschema_specifications-2025.9.1-py3-none-any.whl",
+        "sha256": "98802fee3a11ee76ecaca44429fda8a41bff98b00a0f2838151b113f210cc6fe"
+      },
+      {
+        "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/generated/p922-wheelhouse/kiwisolver-1.5.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+        "sha256": "34633ecf50d16187ab8e5528b7a2530f2feb4e23f300db4672538b51cfc5cd38"
+      },
+      {
+        "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/generated/p922-wheelhouse/markupsafe-3.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+        "sha256": "d6dd0be5b5b189d31db7cda48b91d7e0a9795f31430b7f271219ab30f1d3ac9d"
+      },
+      {
+        "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/generated/p922-wheelhouse/matplotlib-3.11.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+        "sha256": "ba8f811b8ddfac493734d6af0b2dff96919d0c28ca0d641858dab4262777c6ea"
+      },
+      {
+        "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/generated/p922-wheelhouse/matplotlib_inline-0.2.2-py3-none-any.whl",
+        "sha256": "3c821cf1c209f59fb2d2d64abbf5b23b67bcb2210d663f9918dd851c6da1fcf6"
+      },
+      {
+        "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/generated/p922-wheelhouse/networkx-3.6.1-py3-none-any.whl",
+        "sha256": "d47fbf302e7d9cbbb9e2555a0d267983d2aa476bac30e90dfbe5669bd57f3762"
+      },
+      {
+        "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/generated/p922-wheelhouse/numpy-2.5.2-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "sha256": "3cdec01fa790a186d430433fdd4d4ffb70eed6f0eeb4bf05c8dbe2dce0a9bcb8"
+      },
+      {
+        "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/generated/p922-wheelhouse/packaging-26.3-py3-none-any.whl",
+        "sha256": "d7193f7c8e4e93f444fde0262bf90af30e16fa0ad0ad44cb553c87339b23cd1c"
+      },
+      {
+        "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/generated/p922-wheelhouse/parso-0.8.7-py2.py3-none-any.whl",
+        "sha256": "a8926eb2a1b915486941fdbd31e86a4baf88fe8c210f25f2f35ecec5b574ca1c"
+      },
+      {
+        "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/generated/p922-wheelhouse/pexpect-4.9.0-py2.py3-none-any.whl",
+        "sha256": "7236d1e080e4936be2dc3e326cec0af72acf9212a7e1d060210e70a47e253523"
+      },
+      {
+        "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/generated/p922-wheelhouse/pillow-12.3.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "sha256": "78cb2c6865a35ab8ff8b75fd122f6033b92a62c82801110e48ddd6c936a45d91"
+      },
+      {
+        "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/generated/p922-wheelhouse/prompt_toolkit-3.0.53-py3-none-any.whl",
+        "sha256": "01c0891d7f9237d5e339f7d3e42cdae80b7534abb1c7c0e3352efba6231492f2"
+      },
+      {
+        "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/generated/p922-wheelhouse/psutil-7.2.2-cp36-abi3-manylinux2010_x86_64.manylinux_2_12_x86_64.manylinux_2_28_x86_64.whl",
+        "sha256": "076a2d2f923fd4821644f5ba89f059523da90dc9014e85f8e45a5774ca5bc6f9"
+      },
+      {
+        "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/generated/p922-wheelhouse/ptyprocess-0.7.0-py2.py3-none-any.whl",
+        "sha256": "4b41f3967fce3af57cc7e94b888626c18bf37a083e3651ca8feeb66d492fef35"
+      },
+      {
+        "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/generated/p922-wheelhouse/pure_eval-0.2.3-py3-none-any.whl",
+        "sha256": "1db8e35b67b3d218d818ae653e27f06c3aa420901fa7b081ca98cbedc874e0d0"
+      },
+      {
+        "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/generated/p922-wheelhouse/pygments-2.21.0-py3-none-any.whl",
+        "sha256": "2363c69b61c4a97c838da3b130dcd6468f4848992b21a82f2a63ec34377137d9"
+      },
+      {
+        "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/generated/p922-wheelhouse/pyparsing-3.3.2-py3-none-any.whl",
+        "sha256": "850ba148bd908d7e2411587e247a1e4f0327839c40e2e5e6d05a007ecc69911d"
+      },
+      {
+        "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/generated/p922-wheelhouse/python_dateutil-2.9.0.post0-py2.py3-none-any.whl",
+        "sha256": "a8b2bc7bffae282281c8140a97d3aa9c14da0b136dfe83f850eea9a5f7470427"
+      },
+      {
+        "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/generated/p922-wheelhouse/pyvis-0.3.2-py3-none-any.whl",
+        "sha256": "5720c4ca8161dc5d9ab352015723abb7a8bb8fb443edeb07f7a322db34a97555"
+      },
+      {
+        "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/generated/p922-wheelhouse/pyyaml-6.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+        "sha256": "ba1cc08a7ccde2d2ec775841541641e4548226580ab850948cbfda66a1befcdc"
+      },
+      {
+        "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/generated/p922-wheelhouse/referencing-0.37.0-py3-none-any.whl",
+        "sha256": "381329a9f99628c9069361716891d34ad94af76e461dcb0335825aecc7692231"
+      },
+      {
+        "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/generated/p922-wheelhouse/rfc8785-0.1.4-py3-none-any.whl",
+        "sha256": "520d690b448ecf0703691c76e1a34a24ddcd4fc5bc41d589cb7c58ec651bcd48"
+      },
+      {
+        "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/generated/p922-wheelhouse/rpds_py-2026.6.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "sha256": "ecabd69db66de867690f9797f2f8fa27ba501bbc24540cbdbdc649cd15888ba6"
+      },
+      {
+        "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/generated/p922-wheelhouse/setuptools-84.0.0-py3-none-any.whl",
+        "sha256": "51a52592b3b99e102b609654876bd65f19f999935166d1352678931132b0c670"
+      },
+      {
+        "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/generated/p922-wheelhouse/six-1.17.0-py2.py3-none-any.whl",
+        "sha256": "4721f391ed90541fddacab5acf947aa0d3dc7d27b2e1e8eda2be8970586c3274"
+      },
+      {
+        "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/generated/p922-wheelhouse/stack_data-0.6.3-py3-none-any.whl",
+        "sha256": "d5558e0c25a4cb0853cddad3d77da9891a08cb85dd9f9f91b9f8cd66e511e695"
+      },
+      {
+        "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/generated/p922-wheelhouse/traitlets-5.16.1-py3-none-any.whl",
+        "sha256": "f775618166caa0396c8e337099240f2bd3e5e917d203b2e6fbe21a58d3cb1f6b"
+      },
+      {
+        "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/generated/p922-wheelhouse/typing_extensions-4.16.0-py3-none-any.whl",
+        "sha256": "481caa481374e813c1b176ada14e97f1f67a4539ce9cfeb3f350d78d6370c2e8"
+      },
+      {
+        "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/generated/p922-wheelhouse/wcwidth-0.8.3-py3-none-any.whl",
+        "sha256": "d5b73dba6158a595ec9370350e7f2637bcac8d6c5e4fde34f30fcffb6103a5e4"
+      },
+      {
+        "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/generated/p922-wheelhouse/wheel-0.48.0-py3-none-any.whl",
+        "sha256": "3217dcc807155e45db462d7ef2431f5ddda0d7273b700d05a67b271ceb1287ab"
+      }
+    ],
+    "retention": "Ignored installation cache; filenames/versions and hashes identify dependency inputs, not tracked binary outputs. Replenish matching wheels before the offline install test."
+  },
+  "comparison_scope": "Exact immutable payload/identity, dependency/import and installed-asset failure boundaries; no numerical trajectory/tolerance or byte-identical build-output claim.",
+  "model_discovery_subject": {
+    "note": "The 913-test model-discovery run began before the final static import/hash assertions were added to tests/models/test_grc_v4.py. No production or other test source changed during it. The final full test_grc_v4 module is separately rerun and bound by source_bindings. The earlier run's exact test-file bytes were not captured at invocation; no original subject hash or exact replay claim is invented for that supplementary regression."
+  }
+}

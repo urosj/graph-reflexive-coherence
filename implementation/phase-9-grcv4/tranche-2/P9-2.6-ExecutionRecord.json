@@ -1,0 +1,117 @@
+{
+  "schema": "phase9_iteration_execution_record_v1",
+  "iteration_id": "P9-2.6",
+  "status": "implemented_and_verified_bounded_foundation_integration",
+  "reviewer_decision": "pending_user_review",
+  "release_id": "grcv4-spec-release-sha256:9f4c8fe5b57b1c477d834a3e4dae3f98a2b18c70e6e7f598e3c9652170c8645f",
+  "entry_authority": {
+    "acceptance_record": "implementation/phase-9-grcv4/tranche-2/P9-2.5-AcceptanceRecord.json",
+    "record_digest": "e479a8e5935fc8740b59f96b31651070f842f73f92541bb84dbc1c9d63f59896",
+    "accepted_prerequisites": [
+      "P9-2.5"
+    ],
+    "basis": "User commit instruction accepted P9-2.5; explicit continuation requested P9-2.6."
+  },
+  "verification": {
+    "run": "implementation/phase-9-grcv4/evidence/P9-2.6/self-check/run.json",
+    "original_run": "implementation/phase-9-grcv4/evidence/P9-2.6/integration/run.json",
+    "combined_tests": 1055,
+    "added_integration_methods": 9,
+    "core_tests": 105,
+    "model_tests": 918,
+    "harness_oracle_tests": 32,
+    "failures": 0,
+    "errors": 0,
+    "skips": [],
+    "distribution_tests": 1,
+    "distribution_fresh_environments": 4,
+    "distribution_consumer_processes": 16,
+    "static_checks": "ruff_and_strict_mypy_passed",
+    "negative_prefix_replay": "implementation/phase-9-grcv4/evidence/P9-2.5/p926-self-check-replay/run.json",
+    "scope": "Record, package and legacy foundation only; no numerical profile execution. Source identities and roster are in actual.json.",
+    "permission_surface_checks": "self-check/actual.json:permission_surface_verification separately records boundary, 90/90 authority cases, API/notebook identity, 16/16 Node and 18/18 browser results on their stated pre-retention subject. Final live boundary/pressure status is revalidated after the record-only binding refresh. This is not a full historical-predecessor replay."
+  },
+  "artifact_bindings": [
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-2.5/p926-self-check-replay/actual.json",
+      "sha256": "9b2790dd0b7d0676481a02d0a97f386211149dcf3c272e8028cb5362406078a0"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-2.5/p926-self-check-replay/expected.json",
+      "sha256": "adf8ede32849ac12996db305ea79355e1c127a368be403d750e0a4aa4f4dea9d"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-2.5/p926-self-check-replay/inputs.json",
+      "sha256": "355e75560284d6d1f4abab8691c99266ddb8f8bafb028c79ef2680d3b8dfb301"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-2.5/p926-self-check-replay/receipts.json",
+      "sha256": "87ed885b1910d4b71670204fb51e3cc06c4d26e47e204ea1ff8e24152830b625"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-2.5/p926-self-check-replay/run.json",
+      "sha256": "3f375695f1c15a9841235754e66e81a624ae1ede04e281864f594ff6fcfbcd75"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-2.6/integration/actual.json",
+      "sha256": "be613eb492f4f17aa64db8d0afa8cd119c705b403c867c7ac199168db8ac7a22"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-2.6/integration/inputs.json",
+      "sha256": "f1ceabe2cb22598baeba8394adb4a36a08ac936f715392b14db750e0adf5e1bf"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-2.6/integration/run.json",
+      "sha256": "cf3c18d03b59112b739902a3d363522ec80562a84de27f39b141537e1af50ced"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-2.6/self-check/actual.json",
+      "sha256": "7cfe6bf0a6aaf63078baa45b744f66edac4185ed97785b90227498151e22737c"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-2.6/self-check/inputs.json",
+      "sha256": "36fbfc65f2ba710a4df1e0fdcd5af310b340f6e184bf5cb11c4427045014a553"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-2.6/self-check/run.json",
+      "sha256": "9594ecbf2a50a2cc11b81bcecfc88d6125416c3fc705cd5b2af3a8f514ef4a95"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-2/P9-2.6-Review.md",
+      "sha256": "b8de86d7612bad33f932866e89626e783bd5a330824ce5cdbe871e070d1f9917"
+    },
+    {
+      "path": "tests/models/test_grc_v4.py",
+      "sha256": "6fef68572fb17afdd48a679554d0cc6abaae8d34c95ca31f2e33b3ec8248c193"
+    },
+    {
+      "path": "tests/models/test_grc_v4_codec.py",
+      "sha256": "465bc3448fcc196e01ab0003665e5eeebde581208a5628f0adeeeabebb770983"
+    }
+  ],
+  "accepted_generic_runtime_support": [],
+  "admitted_specialization_support_sets": [],
+  "remaining_obligations": [
+    {
+      "owner": "P9-3.1",
+      "obligation": "Implement and verify V4-local immutable stable-ID lookup for pure graph maps; no shallow mutable legacy backend wrapper."
+    },
+    {
+      "owner": "P9-3.4/P9-4.5",
+      "obligation": "Numerical conditioning and invariant-projector pressure against actual implementations."
+    },
+    {
+      "owner": "P9-4.4/P9-4.5/P9-4.7a",
+      "obligation": "Actual facade inheritance/signatures and strict-request graph/profile/context/domain admission at zero, subnormal and extreme finite duration; full-step independent outcomes and rollback."
+    },
+    {
+      "owner": "P9-7.6",
+      "obligation": "Accepted parent-reference scope/order and history/lineage checks."
+    },
+    {
+      "owner": "Tranches 8–9",
+      "obligation": "Exact specialization and legacy delegate boundaries; older test passes are not V4 parity."
+    }
+  ],
+  "next_step": "P9-3.1 after P9-2.6 user acceptance; not started."
+}

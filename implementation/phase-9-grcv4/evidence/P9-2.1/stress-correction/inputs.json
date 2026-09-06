@@ -1,0 +1,32 @@
+{
+  "schema": "phase9_review_runner_adjustment_v1",
+  "iteration_id": "P9-2.1",
+  "original_inputs": "implementation/phase-9-grcv4/evidence/P9-2.1/stress-audit-inputs/inputs.json",
+  "original_runner_name": "P9-2.1-independent-stress-tests.py",
+  "original_runner_sha256": "2f34c3cd0817dad2ae2e6bbc451b876dee7417055cade9979d7ee07ece88a91c",
+  "reason": "Reset-baseline construction now correctly rejects the unsafe integral Q_target before the original test's reject helper. Put all constructors under that helper; same input and same allowed TypeError/ValueError/UnicodeError expectations, no weakening of the implementation boundary.",
+  "replace_exact_once": {
+    "before": "            def bad_clock(field=field):\n                d=lifecycle_data();d[field]=np.int64(2**53+1)\n                if field=='Q_target':d['reset']=replace(d['reset'],Q_target=np.int64(2**53+1))\n                return reject(lambda:s.GRCV4LifecycleState(**d))",
+    "after": "            def bad_clock(field=field):\n                def construct():\n                    d=lifecycle_data();d[field]=np.int64(2**53+1)\n                    if field=='Q_target':d['reset']=replace(d['reset'],Q_target=np.int64(2**53+1))\n                    return s.GRCV4LifecycleState(**d)\n                return reject(construct)"
+  },
+  "unadjusted_runner_on_corrected_source": {
+    "summary": {
+      "total": 514,
+      "required_passed": 510,
+      "required_failed": 1,
+      "advisory_passed": 0,
+      "advisory_failed": 3
+    },
+    "required_failed_cases": [
+      {
+        "id": "UNSAFE-NUMPY-INTEGER-Q_target",
+        "group": "unsafe_integer_adapter",
+        "tier": "required",
+        "pass": false,
+        "exception": "ValueError",
+        "message": "integer outside the I-JSON safe range"
+      }
+    ],
+    "source_sha256": "3807293d908e1b092388ce7890763cf107151e90fbd66b0b16f0ecced0eced54"
+  }
+}

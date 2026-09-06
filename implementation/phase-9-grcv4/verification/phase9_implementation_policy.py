@@ -50,6 +50,14 @@ APPROVAL_DIGEST = "cd2c52f30477e1042bb903bd0553da237ddccc9cad373afecc1a84e4e0b37
 POLICY = HERE + "Phase9ImplementationBoundary.json"
 RECORD = PHASE + "tranche-1/P9-1.9-ExecutionRecord.json"
 WORK = PHASE + "runtime/RuntimeWorkManifest.json"
+FOUNDATION = PHASE + "tranche-2/P9-2.1-2.2-AcceptanceRecord.json"
+FOUNDATION_DIGEST = "1e3f0ddb06b119fa46dc7609d05b7db0c3a4cbc07428c05b8a032da081ae9dd4"
+REQUEST_ACCEPTANCE = PHASE + "tranche-2/P9-2.3-AcceptanceRecord.json"
+REQUEST_ACCEPTANCE_DIGEST = "ac07a2f7c93538454d9663aba78ca0eb5af385d7975582e4c21682f41ce4c17f"
+RESULT_ACCEPTANCE = PHASE + "tranche-2/P9-2.4-AcceptanceRecord.json"
+RESULT_ACCEPTANCE_DIGEST = "9d2fd4f0bb0445b9b3c46fd6f7e5b0ff710a8a85aceaeabacad44a477ff365a0"
+HARNESS_ACCEPTANCE = PHASE + "tranche-2/P9-2.5-AcceptanceRecord.json"
+HARNESS_ACCEPTANCE_DIGEST = "e479a8e5935fc8740b59f96b31651070f842f73f92541bb84dbc1c9d63f59896"
 GENERATED = SIDE + "tool/generated/phase9-verification/"
 REPORT_SCHEMA = "phase9_G1_pressure_results_v1"
 REPORT_FILE = "g1-pressure-results.json"
@@ -82,6 +90,10 @@ PATHS = {
     POLICY,
     RECORD,
     WORK,
+    FOUNDATION,
+    REQUEST_ACCEPTANCE,
+    RESULT_ACCEPTANCE,
+    HARNESS_ACCEPTANCE,
     HERE + "phase9_implementation_policy.py",
     HERE + "audit_phase9_implementation.py",
     HERE + "test_phase9_g1.py",
@@ -285,12 +297,95 @@ def integration(name, before, after):
         )
 
 
-def leaf_permissions(root):
-    """Readiness from accepted dependencies, not a work record's green flag.
+def accepted_foundation(root):
+    """The user's commit decisions accept their exact reviewed foundation.
 
-    Only G1 has been accepted at this transition. Later leaf acceptances must
-    be consumed through the existing controlled successor/review process.
+    Current work and green tests cannot add an accepted leaf or runtime support.
+    Historical subject bindings stay valid while later leaves extend the code.
     """
+    value = read(safe_path(root, FOUNDATION))
+    require(value["record_digest"] == digest_record(value) == FOUNDATION_DIGEST,
+            "untrusted foundation acceptance")
+    require(value["schema"] == "phase9_foundation_acceptance_v1"
+            and value["status"] == "accepted_by_user"
+            and value["release_id"] == prior.RELEASE_ID
+            and value["accepted_iterations"] == ["P9-2.1", "P9-2.2"]
+            and value["accepted_generic_runtime_support"] == []
+            and value["admitted_specialization_support_sets"] == [],
+            "invalid foundation acceptance scope")
+    prior.ancestor(root, value["baseline_commit"])
+    for row in value["evidence_bindings"]:
+        require(sha(git(root, "show", f"{value['baseline_commit']}:{row['path']}"))
+                == row["sha256"], "accepted foundation subject changed")
+    return value
+
+
+def accepted_requests(root):
+    """User-accepted request foundation; preserve its original committed run."""
+    value = read(safe_path(root, REQUEST_ACCEPTANCE))
+    require(value["record_digest"] == digest_record(value) == REQUEST_ACCEPTANCE_DIGEST,
+            "untrusted request acceptance")
+    require(value["schema"] == "phase9_request_foundation_acceptance_v1"
+            and value["status"] == "accepted_by_user"
+            and value["release_id"] == prior.RELEASE_ID
+            and value["predecessor_record_digest"] == FOUNDATION_DIGEST
+            and value["accepted_iterations"] == ["P9-2.3"]
+            and value["accepted_generic_runtime_support"] == []
+            and value["admitted_specialization_support_sets"] == [],
+            "invalid request acceptance scope")
+    prior.ancestor(root, value["baseline_commit"])
+    for row in value["evidence_bindings"]:
+        require(sha(git(root, "show", f"{value['baseline_commit']}:{row['path']}"))
+                == row["sha256"], "accepted request subject changed")
+    return value
+
+
+def accepted_results(root):
+    """Committed user acceptance, not an inferred passing-harness decision."""
+    value = read(safe_path(root, RESULT_ACCEPTANCE))
+    require(value["record_digest"] == digest_record(value) == RESULT_ACCEPTANCE_DIGEST,
+            "untrusted result acceptance")
+    require(value["schema"] == "phase9_result_foundation_acceptance_v1"
+            and value["status"] == "accepted_by_user"
+            and value["release_id"] == prior.RELEASE_ID
+            and value["predecessor_record_digest"] == REQUEST_ACCEPTANCE_DIGEST
+            and value["accepted_iterations"] == ["P9-2.4"]
+            and value["accepted_generic_runtime_support"] == []
+            and value["admitted_specialization_support_sets"] == [],
+            "invalid result acceptance scope")
+    prior.ancestor(root, value["baseline_commit"])
+    for row in value["evidence_bindings"]:
+        require(sha(git(root, "show", f"{value['baseline_commit']}:{row['path']}"))
+                == row["sha256"], "accepted result subject changed")
+    return value
+
+
+def accepted_harness(root):
+    """User acceptance of the bounded harness, not full-step conformance."""
+    value = read(safe_path(root, HARNESS_ACCEPTANCE))
+    require(value["record_digest"] == digest_record(value) == HARNESS_ACCEPTANCE_DIGEST,
+            "untrusted harness acceptance")
+    require(value["schema"] == "phase9_harness_foundation_acceptance_v1"
+            and value["status"] == "accepted_by_user"
+            and value["release_id"] == prior.RELEASE_ID
+            and value["predecessor_record_digest"] == RESULT_ACCEPTANCE_DIGEST
+            and value["accepted_iterations"] == ["P9-2.5"]
+            and value["accepted_generic_runtime_support"] == []
+            and value["admitted_specialization_support_sets"] == [],
+            "invalid harness acceptance scope")
+    prior.ancestor(root, value["baseline_commit"])
+    for row in value["evidence_bindings"]:
+        require(sha(git(root, "show", f"{value['baseline_commit']}:{row['path']}"))
+                == row["sha256"], "accepted harness subject changed")
+    return value
+
+
+def leaf_permissions(root):
+    """Readiness from accepted dependencies, never inferred from completion."""
+    accepted = {"P9-G1", *accepted_foundation(root)["accepted_iterations"],
+                *accepted_requests(root)["accepted_iterations"],
+                *accepted_results(root)["accepted_iterations"],
+                *accepted_harness(root)["accepted_iterations"]}
     support = read(
         safe_path(root, PHASE + "tranche-1/P9-1.4-SupportAndDependencies.json")
     )
@@ -301,7 +396,7 @@ def leaf_permissions(root):
     ready = sorted(
         r["iteration_id"]
         for r in support["dependency_edges"]
-        if r["requires"] and set(r["requires"]) <= {"P9-G1"}
+        if r["requires"] and set(r["requires"]) <= accepted
     )
     owners = {}
     for module in ownership["modules"]:
@@ -312,6 +407,11 @@ def leaf_permissions(root):
         }
         if module["module_id"] == "grc_v4_codec":
             leaves = {"P9-2.2", "P9-2.3", "P9-2.6"}
+        if module["module_id"] in {"grc_v4_state", "grc_v4_step"}:
+            # The frozen checklist assigns result/disposition/receipt ownership
+            # to P9-2.4, omitted from the coarse source-group iteration lists.
+            # Refine only these existing record/composition owners, not lifecycle.
+            leaves.add("P9-2.4")
         for field in ["path", "test_path"]:
             owners[module[field]] = leaves
     for name in [
@@ -323,7 +423,12 @@ def leaf_permissions(root):
         if row["path"].startswith("src/pygrc/models/grc_v4_assets/"):
             owners[row["path"]] = {"P9-2.2", "P9-2.6"}
         elif row["operation"] == "additive_integration":
-            owners[row["path"]] = {"P9-2.6"}
+            # P9-2.2 owns installed identity assets and their reviewed extras.
+            # Facade exports remain with the later common-interface leaf.
+            owners[row["path"]] = (
+                {"P9-2.2", "P9-2.6"}
+                if row["path"] == "pyproject.toml" else {"P9-2.6"}
+            )
     return ready, owners
 
 

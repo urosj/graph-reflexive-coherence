@@ -1,0 +1,42 @@
+{
+  "schema": "phase9_foundation_acceptance_v1",
+  "status": "accepted_by_user",
+  "release_id": "grcv4-spec-release-sha256:9f4c8fe5b57b1c477d834a3e4dae3f98a2b18c70e6e7f598e3c9652170c8645f",
+  "baseline_commit": "d62b1cd6aa4bd97504b19ace855a58455551f9b3",
+  "user_authority": {
+    "clarification": "when i state to commit, that's acceptance already ...",
+    "P9-2.1_request": "ok, now we can commit this",
+    "P9-2.2_request": "ok, commit changes",
+    "scope": "Commit instructions accept the reviewed work being committed. This records P9-2.1 and P9-2.2 foundation acceptance, including their audit corrections, not later leaves or runtime conformance."
+  },
+  "accepted_iterations": [
+    "P9-2.1",
+    "P9-2.2"
+  ],
+  "evidence_bindings": [
+    {
+      "path": "implementation/phase-9-grcv4/tranche-2/P9-2.1-Review.md",
+      "sha256": "014e2d06da4fffb5cf85b0dbef167bca6b8e6982ac5ed08bb81385f069edf4cf"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-2/P9-2.1-ExecutionRecord.json",
+      "sha256": "561817390d50afbd1eaf2c8ee2bc12409de9458892ae944f947eaabed66a916c"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-2/P9-2.2-Review.md",
+      "sha256": "53857aee5f147d8093d950b0947ffba3ba8a3365d4caf17caa947ddc1ff99fc8"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-2/P9-2.2-ExecutionRecord.json",
+      "sha256": "816afbb70f63732dbbf8c6c324af6dd6a8c96b8761b32be89fef96f5c743bcbe"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/runtime/RuntimeWorkManifest.json",
+      "sha256": "dc65ec996420c2c6701b07d9e1e72b4c7e0144a32b62716b7c10ed1308162b36"
+    }
+  ],
+  "predecessor_status_policy": "Prior review/execution records keep their as-recorded bytes. This successor decision supplies acceptance without rewriting prior runs.",
+  "accepted_generic_runtime_support": [],
+  "admitted_specialization_support_sets": [],
+  "record_digest": "1e3f0ddb06b119fa46dc7609d05b7db0c3a4cbc07428c05b8a032da081ae9dd4"
+}

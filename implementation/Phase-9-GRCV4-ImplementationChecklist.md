@@ -142,7 +142,8 @@ The historical pending statements below describe those earlier checkpoints;
 they are superseded for P9-G1 only. G2/G3/G4, all runtime support, fifteen
 source obligations and five implementation follow-ups remain pending. No
 runtime code was added by this gate-recording step. Dependency-ready work:
-P9-2.1 and P9-2.2, with eleven currently eligible runtime paths. Tranche 1 is
+P9-2.1 and P9-2.2 at that transition, with twelve eligible paths after P9-2.2's
+narrow package-integration routing correction. Tranche 1 is
 reconciled as the review/authorization tranche, not as Phase 9 completion.
 
 P9-1.1–P9-1.3 evidence: [review package](./phase-9-grcv4/tranche-1/P9-1.1-1.3-Review.md)
@@ -240,23 +241,142 @@ three bounded batches retain their own results and raw per-run manifests.
 
 ## Tranche 2. Interface, identity, and evidence foundation
 
-- [ ] P9-2.1: Implement V4-owned immutable state/result records with read-only
+- [x] P9-2.1: Implement V4-owned immutable state/result records with read-only
   common-interface projections and recursive mutation protection.
   Record symbol-level reuse/replacement decisions before consumption (§7.2).
-- [ ] P9-2.2: Implement complete profile/parameter resolution and canonical
+  [Review](./phase-9-grcv4/tranche-2/P9-2.1-Review.md) and
+  [execution](./phase-9-grcv4/tranche-2/P9-2.1-ExecutionRecord.json): R1/R2 stress
+  corrections covered by 39 ownership tests and 511 required stress probes;
+  105 unchanged core tests, Ruff and strict mypy pass. This marks
+  engineering completion. The user's commit instruction accepts this work;
+  see the [foundation decision](./phase-9-grcv4/tranche-2/P9-2.1-2.2-AcceptanceRecord.json).
+  No model/profile is
+  admitted and the broader P9-2.6 immutability/lifecycle obligations remain.
+- [x] P9-2.2: Implement complete profile/parameter resolution and canonical
   identities against all applicable schema/preimage vectors.
   Package and hash-bind schema/identity assets for installed use (§7.1).
-- [ ] P9-2.3: Separate wire failures, semantic admission failures, and strict
+  Carry P9-2.1 stress H1/H2: typed/JCS identity rather than Python equality/hash,
+  explicit codec projections rather than dataclass helpers, and wide-map
+  refreezing/equality scale checks before profile/reference-map consumption.
+  [Review](./phase-9-grcv4/tranche-2/P9-2.2-Review.md) and
+  [execution](./phase-9-grcv4/tranche-2/P9-2.2-ExecutionRecord.json): all 25
+  published preimages, typed ten-shape declarations, reference-content checks,
+  and clean wheel/sdist installs. H1/H2 have focused regressions. Independent
+  audit R1 (typed integer storage), R2 (explicit canonical reconstruction) and
+  F1 (C/reference-Hodge value agreement) are corrected and regression-tested:
+  79 focused tests and 357 stress probes pass. Original audit/subject bytes,
+  the two-callsite probe adaptation and corrected execution remain separate.
+  Frozen identities and native safe-integer rejection are unchanged. Engineering
+  completion was followed by the user's commit acceptance in the same
+  foundation decision. Executable support remains empty.
+- [x] P9-2.3: Separate wire failures, semantic admission failures, and strict
   admitted requests; keep harness injection outside production identity.
-- [ ] P9-2.4: Implement orthogonal operation/solver dispositions and receipt
+  Enforce the P9-2.1 H1 boolean/number identity boundary and exclude unsupported
+  pickle/reinitialization routes from admitted state decoding.
+  Compose P9-2.2's distinct strict-configuration/canonical-reconstruction
+  decoders with operation-specific admission; neither decoder admits a state.
+  [Review](./phase-9-grcv4/tranche-2/P9-2.3-Review.md) and
+  [execution](./phase-9-grcv4/tranche-2/P9-2.3-ExecutionRecord.json): 26 new tests
+  cover duration admission, exact failure receipts, malformed/forged inputs,
+  direct/factory consistency, numeric reconstruction, nonzero underflow,
+  identity suffixes and nested mutation. The combined 105 foundation tests,
+  357 previous audit probes and installed wheel/sdist request checks pass.
+  Accepted by the user's commit instruction at `1647d3f`; the separate
+  [acceptance record](./phase-9-grcv4/tranche-2/P9-2.3-AcceptanceRecord.json)
+  preserves the original preparation/execution bytes.
+  Migration execution, full prestate admission and complete stepping remain
+  later work, not implicitly certified by typed request construction.
+  Two-audit follow-up: content-identity-only receipt wording and explicit
+  decoder guidance; isolated numeric-route, exact-underflow, receipt/request
+  distinction, source/causal limits, enum parity and migration-declaration
+  regressions: 112 focused tests, 875 checkout stress scenarios and clean
+  wheel/sdist checks pass. The original 874/875 checkout result is retained;
+  its only failure was the audit harness counting existing package legacy
+  imports as V4 additions. The baseline-aware correction retains the rejection
+  assertion, with eight sensitivity controls. See the review's per-item
+  dispositions and distinct checkout run.
+- [x] P9-2.4: Implement orthogonal operation/solver dispositions and receipt
   delta versus persistent ledger ownership.
-- [ ] P9-2.5: Create the runtime harness with independent oracles and exact
+  Negative duration: rejected operation, `solver_disposition=None`, no commit
+  ID or persistent append. Bind imported receipt operation/stage/code and
+  source/poststate to actual execution, not just a recomputed digest. With the
+  later solver consumer, preserve `valid_root` on subsequent charge rejection.
+  [Review](./phase-9-grcv4/tranche-2/P9-2.4-Review.md) and
+  [execution](./phase-9-grcv4/tranche-2/P9-2.4-ExecutionRecord.json): strengthened
+  existing immutable result records, content-checked typed failure/envelopes,
+  acyclic receipt-to-commit-to-envelope construction, pure operation/state/
+  ledger comparisons and a bound negative-duration result. Imported state or
+  receipt labels alone cannot substitute for captured payloads and observed
+  outcomes. Full numerical execution/rollback and live-state authentication
+  remain later owner tests. The user's commit instruction accepted this leaf
+  at `3845c41`; see the separate
+  [acceptance](./phase-9-grcv4/tranche-2/P9-2.4-AcceptanceRecord.json).
+  This is not acceptance of any runtime profile.
+  Verified 134 foundation tests (22 new result/receipt cases), 875 predecessor
+  stress scenarios, 105 legacy core tests, packaging and strict static checks.
+  Two-audit correction: original-number validation, ordered event-container
+  admission, typed/primitive commit composition, and exact-byte evidence
+  storage now have 11 added regression/characterization tests. The exact
+  checkout reproduces the submitted 11 exposures before correction. Separate
+  pre/post records preserve that failure evidence and the corrected run.
+  Parent-ID content validation is explicitly not lineage-DAG certification;
+  the unresolved parent scope/order contract belongs to P9-7.6, not an invented
+  intra-commit-only rule in this leaf. See the review's per-item dispositions.
+- [x] P9-2.5: Create the runtime harness with independent oracles and exact
   source/profile/fixture/prestate/poststate/receipt evidence bindings.
   Specify environment and exact-byte versus tolerance comparison scope (§7.4).
-- [ ] P9-2.6: Verify unsupported-profile rejection, deep immutability, and
+  Retain exact request independently of receipt identity; test different
+  negative requests with equal receipts, foreign/rehashed evidence and a
+  grammar-valid wrong source. Compare complete scientific/lifecycle payloads
+  on failure and distinguish emitted receipt delta from persistent history.
+  Carry P9-2.4's four self-consistent but invalid transition characterizations
+  into independent live-step oracles (also P9-4.7a): wrong elapsed time,
+  unchanged index, backward clock and zero-duration state change. Capture
+  observed stage/code/solver independently of the result under test. Account
+  for binary64 clock rounding; matching records or a `StepResultEvidence`
+  instance certify neither execution nor parent lineage.
+  [Review](./phase-9-grcv4/tranche-2/P9-2.5-Review.md) and
+  [execution](./phase-9-grcv4/tranche-2/P9-2.5-ExecutionRecord.json): engineering
+  harness accepted by the user's commit instruction at `2075f47`; the
+  [separate acceptance](./phase-9-grcv4/tranche-2/P9-2.5-AcceptanceRecord.json)
+  preserves the original review/execution bytes. The actual adapter
+  executes only the negative-duration prefix. Independent full-state/ledger/
+  reset and receipt checks, exact-request retention, source/environment
+  bindings, no-overwrite inspection and mutation controls are covered.
+  The four positive/zero transition negatives currently exercise explicit
+  fixture-clock rules, not a live numerical step; P9-4.7a retains that consumer
+  obligation. Numerical conditioning/projectors remain P9-3.4/P9-4.5 work;
+  parent lineage remains P9-7.6 work. No runtime support is promoted.
+  Independent-audit correction: all two required and four advisory items have
+  explicit dispositions in the review. Added regressions narrow the identity
+  oracle (not science), reject mismatched default-CLI recipes, retain malformed
+  capture diagnostics, validate failed reports, and bind checker origins.
+  Inspection keeps evidence classification. Verified 177 foundation/harness
+  tests and 3,337 independent numeric pressure cases; original run bytes and
+  default content identities are preserved.
+- [x] P9-2.6: Verify unsupported-profile rejection, deep immutability, and
   unchanged common-interface behavior for older families.
   Verify clean wheel/sdist and optional-extra boundaries (§7.1) and each
   consumed legacy symbol's exact reuse boundary (§7.2).
+  Carry strict-request non-admission tests into each authorized facade/full-step
+  consumer (P9-4.4/P9-4.5/P9-4.7a): zero, subnormal and extreme finite duration must not
+  bypass graph/profile/context/domain checks. Current no-facade assertions are
+  leaf-stage checks, not a permanent prohibition on authorized implementation.
+  [Review](./phase-9-grcv4/tranche-2/P9-2.6-Review.md) and
+  [execution](./phase-9-grcv4/tranche-2/P9-2.6-ExecutionRecord.json): bounded
+  foundation integration implemented; user acceptance pending. Verify all ten
+  declarations remain unsupported, detached recursive storage/common fields,
+  unchanged explicit legacy baseline, clean installs with absent/partial/full
+  extras and installed-asset corruption. No production, legacy or frozen source
+  edits; no facade exported. Six leaves/nineteen paths are dependency-ready,
+  not accepted conformance. P9-3.1 remains held until this leaf is accepted.
+  Self-check hardening: nine integration methods, all implemented foundation
+  layers through four fresh installed cells and two distinct import orders, partial
+  extras, actual module/archive identities, cold/warm asset rejection and five
+  older-family mixed-use comparisons. Reconcile prior corrections by accepted
+  subject and preserve original evidence. A separate final combined suite and
+  exact default-prefix CLI replay supply current-source evidence; neither
+  accepts a profile nor starts Tranche 3.
 
 ## Tranche 3. Typed graph, geometry, transport, and charge
 
@@ -370,6 +490,9 @@ may reach G2 without waiting for all Tranche 6 realizations.
   duplication with canonical authority and receipt identities.
 - [ ] P9-7.2a: Execute required profile migration classes over current and
   reset state, independently by source/target identities and failure surface.
+  A decoded P9-2.3 declaration is not migration admission: test unresolved
+  history/initializers, unsupported targets and missing mappings at the real
+  consumer, including separate candidate/carrier channel decisions.
 - [ ] P9-7.2b: Execute caller-mapped generic topology events over current and
   reset state, with their own map/identity/admission failure evidence.
 - [ ] P9-7.3: Verify separate candidate/carrier history channels, explicit
@@ -379,6 +502,11 @@ may reach G2 without waiting for all Tranche 6 realizations.
 - [ ] P9-7.5: Execute missing-lineage, invalid-map, and readmission failure
   cases, including reset after ordinary steps, migrations, and events.
 - [ ] P9-7.6: Verify receipt lineage ownership and deep duplicate independence.
+  Resolve P9-2.4's open parent-reference scope/order question from accepted
+  authority before claiming lineage conformance: historical versus intra-commit
+  parents, missing/forward/self/cyclic references and duplicate handling.
+  Do not infer parent-DAG validity from receipt hashes, commit construction,
+  ledger append equality or content-only comparison evidence.
 - [ ] P9-7.7: Review the full applicable fixture product and record `P9-G2[p]`
   separately for each generic profile; link P9-4.8 for the early C_OS result.
 - [ ] P9-7.8: Review `P9-G3[S]` for the exact accepted generic support set

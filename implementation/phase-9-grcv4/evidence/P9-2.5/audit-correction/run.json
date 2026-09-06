@@ -1,0 +1,159 @@
+{
+  "schema": "phase9_audit_correction_run_v1",
+  "iteration_id": "P9-2.5",
+  "scope": "Corrections to the test/oracle/retention surface only; no numerical runtime profile conformance.",
+  "prefix_run": "implementation/phase-9-grcv4/evidence/P9-2.5/audit-corrected-prefix/run.json",
+  "base_commit": "3845c41a2b85903e691c3e88fc20fc4109e806ff",
+  "source_bindings": [
+    {
+      "path": "tests/models/grcv4_conformance_harness.py",
+      "sha256": "15ee128da66dd25f6e028cf601f4de1047bee8812d51f83391a3f7adda3c7e89"
+    },
+    {
+      "path": "tests/models/grcv4_reference_oracles.py",
+      "sha256": "b973babbca55854f2b2a9f629b4b914cf767627533b26460013c8b9cfa611ea4"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4.py",
+      "sha256": "65efdf547d8e88e67c22d62a869bd61464ed3d2eb8b2709be6661796b37e824c"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_step.py",
+      "sha256": "773975e1131791f93d86f6dac38b27ebac9dca46c1b87ef2e0a31bc8c90a705b"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_state.py",
+      "sha256": "b0ccf06ef91b66feb8670fb67281465998f4bcb085c4d547fedd3ce6d85ad3cb"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_profile.py",
+      "sha256": "188e4ceb92b6a36fe81849911b88b233b8dd16bf3de07383e1508d76232fdbfb"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_codec.py",
+      "sha256": "bd6d9390c818c5a25b70da119cfbc3a3de3707ee84566f6bb06160bb4780e154"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_assets/__init__.py",
+      "sha256": "a1f3aba168a9f9331d1fc9580d5055404f8bc4c705936c7e388e7a47f80a0051"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_assets/asset-index.json",
+      "sha256": "c1ac9d8d3bb924f29b775bd9863a33a454da41e98c57ef0b8bb3c24171fafc9f"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_assets/grc-v4-contract-schema.json",
+      "sha256": "3fd072fc8c2b315f1b5dc32a4e4821a5082b5f3fc9d9a4794c007419a7aa0bea"
+    },
+    {
+      "path": "pyproject.toml",
+      "sha256": "343407a945a7bd41407f821ec81a3dee68cf5e8a0f2413b1e6938a722f9c393c"
+    },
+    {
+      "path": "specs/grc-v4-spec.md",
+      "sha256": "8681e14bf229959183f772c547a6ba17e0cc60c264dad9a1975be147d12168ea"
+    },
+    {
+      "path": "specs/grc-common-interface-v4-ext.md",
+      "sha256": "7d5be95242619fcaaae7ea5d8e950b3f335efe9a81492e67e6baa91c4643bc26"
+    },
+    {
+      "path": "specs/grc-v4-contract-schema.json",
+      "sha256": "3fd072fc8c2b315f1b5dc32a4e4821a5082b5f3fc9d9a4794c007419a7aa0bea"
+    },
+    {
+      "path": "specs/grc-v4-conformance-fixtures.json",
+      "sha256": "90b4f4fd5b259f94363a29e23715af0450bef944002f8e611f23efabc9c7043a"
+    },
+    {
+      "path": "specs/grc-v4-conformance-vectors.json",
+      "sha256": "ab12e2ffe02e9a9267eca9bdc3ca9361c0cf973cb87917d0eb090d3d68654ce4"
+    },
+    {
+      "path": "specs/grc-v4-specification-release.json",
+      "sha256": "bba0bb649bc2e80c5bfa99f96bd5824bbdda3b3fbc87fb68c3e3a59da1cee46b"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/drafts/2026-09-GRC-V4.md",
+      "sha256": "2da39c3bb0d102804f9135384317771f3fe1b3e48df3b4ab1813a3575642a739"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D10_2FullSubstrateProvenanceAndPromotionAudit.json",
+      "sha256": "59c2b956cec7d258b1db09d43d6df44deb8c0be0453a5d741f7e2733d6881a33"
+    }
+  ],
+  "loaded_checker_bindings": [
+    {
+      "path": "tests/models/grcv4_conformance_harness.py",
+      "sha256": "15ee128da66dd25f6e028cf601f4de1047bee8812d51f83391a3f7adda3c7e89"
+    },
+    {
+      "path": "tests/models/grcv4_reference_oracles.py",
+      "sha256": "b973babbca55854f2b2a9f629b4b914cf767627533b26460013c8b9cfa611ea4"
+    }
+  ],
+  "environment": {
+    "dependencies": {
+      "jsonschema": "4.26.0",
+      "numpy": "2.4.6",
+      "rfc8785": "0.1.4"
+    },
+    "float_format": "IEEE, little-endian",
+    "implementation": "CPython",
+    "machine": "x86_64",
+    "mantissa_bits": 53,
+    "numeric_backend_used": "stdlib_fraction_and_binary64_no_numpy_solver",
+    "platform": "Linux",
+    "python": "3.12.3",
+    "rounds": 1
+  },
+  "release_id": "grcv4-spec-release-sha256:9f4c8fe5b57b1c477d834a3e4dae3f98a2b18c70e6e7f598e3c9652170c8645f",
+  "verification": {
+    "foundation_and_harness_tests": 177,
+    "harness_oracle_tests": 32,
+    "added_regression_methods": 8,
+    "numeric_pressure_cases": 3337,
+    "numeric_canonical_matches": 1339,
+    "explicit_oracle_domain_exclusions": 1998,
+    "default_content_hashes_preserved": true
+  },
+  "commands": [
+    {
+      "name": "foundation_and_harness_tests",
+      "command": ".venv/bin/python -m unittest tests.models.test_grc_v4_state tests.models.test_grc_v4_codec.CodecTests tests.models.test_grc_v4_profile tests.models.test_grc_v4 tests.models.test_grc_v4_step tests.models.grcv4_conformance_harness tests.models.grcv4_reference_oracles -q",
+      "exit_code": 0,
+      "output": "----------------------------------------------------------------------\nRan 177 tests in 98.726s\n\nOK\n"
+    },
+    {
+      "name": "static_checks",
+      "command": ".venv/bin/ruff check tests/models/grcv4_conformance_harness.py tests/models/grcv4_reference_oracles.py\n.venv/bin/mypy --strict tests/models/grcv4_conformance_harness.py tests/models/grcv4_reference_oracles.py",
+      "exit_code": 0,
+      "output": "All checks passed!\nSuccess: no issues found in 2 source files\n"
+    },
+    {
+      "name": "numeric_pressure",
+      "command": ".venv/bin/python - <<'PY'\nimport json\nfrom pathlib import Path\nrecord=json.loads(Path('implementation/phase-9-grcv4/evidence/P9-2.5/audit-correction/inputs.json').read_text())\nexec(compile(record['runner_source'], 'P9-2.5-retained-audit-pressure', 'exec'))\nPY",
+      "exit_code": 0,
+      "output": "{\n  \"scope\": \"Current .venv, actual repository providers and packaged schema; Node is not substituted for production rfc8785.\",\n  \"node_version\": \"v22.23.2\",\n  \"node_path\": \"implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/.tooling/node/v22.23.2/bin/node\",\n  \"node_script\": \"let s='';process.stdin.on('data',x=>s+=x);process.stdin.on('end',()=>process.stdout.write(JSON.stringify(JSON.parse(s).map(x=>JSON.stringify(x)))));\",\n  \"numeric_cases\": 3337,\n  \"passed\": 3337,\n  \"canonical_matches\": 1339,\n  \"explicit_oracle_domain_rejections\": 1998,\n  \"default_content_hashes_unchanged\": {\n    \"inputs.json\": \"355e75560284d6d1f4abab8691c99266ddb8f8bafb028c79ef2680d3b8dfb301\",\n    \"expected.json\": \"adf8ede32849ac12996db305ea79355e1c127a368be403d750e0a4aa4f4dea9d\",\n    \"actual.json\": \"9b2790dd0b7d0676481a02d0a97f386211149dcf3c272e8028cb5362406078a0\",\n    \"receipts.json\": \"87ed885b1910d4b71670204fb51e3cc06c4d26e47e204ea1ff8e24152830b625\"\n  },\n  \"malformed_capture_samples\": [\n    {\n      \"label\": \"nan\",\n      \"schema\": \"p925_harness_observation_failure_v1\",\n      \"evidence_class\": \"harness_mutation_control\",\n      \"valid_prestate_preserved\": true,\n      \"independent_expectation_preserved\": true,\n      \"diagnostic\": {\n        \"diagnostics\": [\n          {\n            \"code\": \"invalid_float\",\n            \"field_path\": \"$.poststate[\\\"authoritative\\\"][\\\"C\\\"][0]\",\n            \"representation\": \"nan\",\n            \"stage\": \"admission\",\n            \"type\": \"float\"\n          }\n        ],\n        \"kind\": \"capture\"\n      }\n    },\n    {\n      \"label\": \"cycle\",\n      \"schema\": \"p925_harness_observation_failure_v1\",\n      \"evidence_class\": \"harness_mutation_control\",\n      \"valid_prestate_preserved\": true,\n      \"independent_expectation_preserved\": true,\n      \"diagnostic\": {\n        \"diagnostics\": [\n          {\n            \"code\": \"cyclic_container\",\n            \"field_path\": \"$.poststate[\\\"authoritative\\\"][\\\"C\\\"][0][0]\",\n            \"representation\": \"<cycle>\",\n            \"stage\": \"admission\",\n            \"type\": \"list\"\n          }\n        ],\n        \"kind\": \"capture\"\n      }\n    }\n  ],\n  \"runtime_profile_conformance\": false,\n  \"parent_lineage_validated\": false\n}\n"
+    },
+    {
+      "name": "fresh_prefix_execution",
+      "command": ".venv/bin/python -m tests.models.grcv4_conformance_harness --output implementation/phase-9-grcv4/evidence/P9-2.5/audit-corrected-prefix",
+      "exit_code": 0,
+      "output": "{\"passed\": true, \"evidence_class\": \"executed_negative_duration_prefix\", \"run_id\": \"5a74a814-ca2c-424d-b2ff-d98d6643d523\", \"output\": \"implementation/phase-9-grcv4/evidence/P9-2.5/audit-corrected-prefix\", \"runtime_profile_conformance\": false}\n"
+    }
+  ],
+  "audit_dispositions": {
+    "required_A": "closed: conservative independent fractional domain; production binary64 unchanged",
+    "required_B": "closed: exact default fixture/adapter only for CLI-backed retention",
+    "advisory_6_1": "closed: inspection preserves classification and non-conformance flags",
+    "advisory_6_2": "closed: diagnostic-only malformed captures with valid prestate/expectation",
+    "advisory_6_3": "closed: closed error envelopes and independently rechecked comparison failures",
+    "advisory_6_4": "closed within bounded file-origin/import-time-hash policy; no bytecode attestation"
+  },
+  "accepted_generic_runtime_support": [],
+  "admitted_specialization_support_sets": [],
+  "parent_lineage_validated": false,
+  "reviewer_decision": "pending_user_review",
+  "next_step": "P9-2.6 remains held pending separate user acceptance."
+}

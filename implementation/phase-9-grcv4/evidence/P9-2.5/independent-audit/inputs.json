@@ -1,0 +1,278 @@
+{
+  "schema": "phase9_independent_audit_input_v1",
+  "iteration_id": "P9-2.5",
+  "audit_title": "P9-2.5 — Independent stress audit",
+  "audit_markdown": "# P9-2.5 — Independent stress audit\n\n**Audit date:** 2026-09-06\n**Subject:** the four P9-2.5 uploads, principally the execution harness and independent reference oracles\n**Disposition:** retain the architecture; bounded correction before accepting the helper/retention surface unchanged\n**Runtime profile support established:** none\n**Original execution authenticated or reproduced in its exact environment:** no\n\n## 1. Executive finding\n\nThe submitted implementation maintains the important distinction among an executed negative-duration prefix, a caller-supplied mutation control, a stored assessment, and a complete runtime conformance claim. The default case works in the qualified independent run. Its reconstructed `inputs.json`, `expected.json`, `actual.json`, and `receipts.json` reproduce all four corresponding hashes in the submitted execution record.\n\nTwo narrow corrections are warranted:\n\n1. **The restricted independent JCS writer admits some large dyadic values for which its fixed-decimal output is not canonical JCS.** This gives wrong expected content identities. A correct prefix can consequently fail the harness solely because the oracle is wrong.\n2. **The retention API accepts non-default fixtures and mutation controls while recording a reproduction command that always constructs the default fixture and invokes the default production prefix.** Exact artifacts are retained, but the declared command does not reproduce all the cases the API accepts.\n\nNeither finding establishes that the default recorded P9-2.5 case has an incorrect expected value. Neither requires changing scientific equations, the frozen release, production JCS rules, D11, or the ownership architecture.\n\nThree additional hardening items are advisory: preserve evidence classification in the inspection summary; retain structured diagnostics for unencodable captured output; and continue to distinguish source-file identity from the loaded execution/oracle environment.\n\n## 2. Source and execution scope\n\n### 2.1 Uploaded bindings\n\nAll three supplied artifacts listed in the execution record match:\n\n| Artifact | SHA-256 |\n|---|---|\n| `P9-2.5-Review.md` | `d3070569924790480ff45b04488ebe5abcebfb73f19dda2050b364cd8141c0fc` |\n| `grcv4_conformance_harness.py` | `2390c7f6fc4350f80960ea5114f1ce154f503981605222d51b3bfdae1d2ec32a` |\n| `grcv4_reference_oracles.py` | `29c72290e1eda3f735c211d3fab8310aef88ada3a8a1d56506229a5a075f672d` |\n\nThe two retained `run.json` files and the four original prefix-output files were not supplied. The acceptance record cited by the execution record was also not supplied. This audit does not independently grant or authenticate project acceptance.\n\nThe exact current dependency bundle is not available. The older uploaded profile provider is not the corrected profile digest recorded by predecessor executions. The current P9-2.5 dependency bindings reside in the missing run files, so this audit cannot certify them merely by borrowing predecessor identities.\n\n### 2.2 Independent execution qualification\n\nThe direct oracle tests execute the exact uploaded oracle. The integration harness executes the exact uploaded harness with explicitly qualified providers extracted from the preceding audit bundle:\n\n- earlier uploaded state, request, step, profile, and codec modules;\n- exact release-bound schema and vector bytes recovered from earlier uploads;\n- an independent Node/ECMAScript JCS bridge instead of unavailable Python `rfc8785==0.1.4`;\n- direct provision of the hash-matched schema instead of the unavailable packaged-asset index.\n\nThe production/provider files are not patched to repair behavior. Package initializers are isolated test scaffolding, not a reproduction of the complete project import environment.\n\nEnvironment: CPython 3.13.5, Node v22.16.0, JSON Schema package 4.26.0, NumPy 2.3.5. No NumPy/BLAS numerical solver is used. The attempted dependency installation failed; it did not install a substitute version.\n\nThree supplied tests requiring the real complete repository, its `.venv`, or its provenance capture were not run as original tests. Separately labelled synthetic retention tests exercise file bindings and inspection, with synthetic source/Git/environment metadata. Those tests are not the user's original run and cannot attest its provenance.\n\n### 2.3 Results\n\n| Group | Result |\n|---|---:|\n| Supplied reference-oracle tests | 6/6 pass |\n| Applicable supplied harness tests | 15/15 pass |\n| Supplied repository/provenance tests not independently executed | 3 |\n| Additional pressure scenarios | 3,083 |\n| Passing scenarios | 2,627 |\n| Large-dyadic canonicalization discrepancies | 448 |\n| Qualified prefix false rejections caused by the same oracle issue | 2 |\n| Reproduction-command mismatch | 1 |\n| Advisory inspection/output-retention exposures | 5 |\n\nThe 451 substantive exposures are repeated manifestations of **two issues**, not 451 independent defects. The five advisory exposures do not establish false runtime conformance.\n\nRepresentative passing groups include 1,025 small-dyadic canonicalization checks; 100 charge-tree comparisons; 100 clock comparisons; 24 exact numeric-comparison checks; 16 independently cross-multiplied tolerance comparisons; invalid-domain rejection; request/receipt identity distinctions; independent captured-state comparisons; and exact source/artifact/claim checks in the synthetic retention fixture.\n\n### 2.4 Reconstruction of the default retained content\n\nFreshly reconstructed bytes, including the terminal newline used by `retain_run`, match:\n\n| File | Reconstructed SHA-256 equals submitted binding |\n|---|---|\n| `inputs.json` | `355e75560284d6d1f4abab8691c99266ddb8f8bafb028c79ef2680d3b8dfb301` |\n| `expected.json` | `adf8ede32849ac12996db305ea79355e1c127a368be403d750e0a4aa4f4dea9d` |\n| `actual.json` | `9b2790dd0b7d0676481a02d0a97f386211149dcf3c272e8028cb5362406078a0` |\n| `receipts.json` | `87ed885b1910d4b71670204fb51e3cc06c4d26e47e204ea1ff8e24152830b625` |\n\nThese are reconstructed files, not fetched original outputs. This provides strong content-consistency evidence for the default case, but cannot prove its recorded command, source tree, environment, or historical invocation. The two original run manifests remain unverified.\n\n## 3. Required correction A — the independent JCS domain is too broad\n\n**Source:** `grcv4_reference_oracles.py`, `ascii_jcs`, lines 41–79; particularly the numeric branch at lines 54–63.\n\nThe writer admits finite values within the safe-integer magnitude bound whose exact binary fraction has denominator at most 64. For nonintegral numbers it emits:\n\n```python\nformat(x, \".6f\").rstrip(\"0\")\n```\n\nThat is an exact terminating decimal for this dyadic subset. However, **an exact decimal expansion need not be the shortest decimal selected by ECMAScript/JCS**.\n\n### 3.1 Minimal counterexample\n\n```python\nx = 2.0**36 + 1/64\n```\n\nThis value is exactly:\n\n```text\n4398046511105 / 64\nbinary64: 0x1.0000000000400p+36\n```\n\nIt satisfies both of the writer's domain guards.\n\n```text\nUploaded independent oracle:\n  68719476736.015625\n\nNode JSON.stringify / JCS numeric representation:\n  68719476736.01562\n```\n\nBoth decimal strings reconstruct the same binary64 value. Only the latter is the required canonical numeric spelling. Hashing the longer exact decimal gives the wrong expected identity.\n\nFurther examples:\n\n| Exact dyadic value | Uploaded oracle | ECMAScript/JCS |\n|---|---|---|\n| `4503599627370497 / 16` | `281474976710656.0625` | `281474976710656.06` |\n| `4000000000000001 / 4` | `1000000000000000.25` | `1000000000000000.2` |\n| `-4000000000000001 / 4` | `-1000000000000000.25` | `-1000000000000000.2` |\n\nThe decisive external technical reference is RFC 8785 §3.2.2.3, which requires ECMAScript numeric serialization. The Node reference used here is independent of both the uploaded restricted writer and the production Python codec implementation.\n\n### 3.2 Harness consequence\n\nReplace only `prestate.time` in the otherwise unchanged default fixture with the first counterexample. The fixture constructor accepts it. `run_negative` then computes its expected scientific-state digest using the incorrect restricted writer, whereas the JCS path computes a different digest. The qualified run reports failure at the emitted-receipt comparison even though the prefix's rejection is consistent with canonical JCS.\n\nNo graph, charge, or solver semantics are needed for this counterexample. The issue is already present in the identity oracle itself.\n\n### 3.3 Bounded remedy\n\nEither:\n\n- narrow the independent writer to a precisely stated and independently checked subset for which its spelling is demonstrably canonical, rejecting larger fractional cases before invoking the operation; or\n- implement/review independent shortest-round-trip conversion for the advertised subset.\n\nA smaller oracle domain is acceptable. P9-2.5 does not need another general production serializer.\n\nDo not:\n\n- fall back silently to production `canonical_json_bytes` for expected values;\n- relax expected hashes to accept multiple encodings;\n- change production JCS spelling;\n- restrict the scientific binary64 domain merely because the independent test writer is narrower.\n\nRegression tests should span both signs, denominator powers up to 64, small values, the onset of shortened large-fraction representations, safe integral endpoints, and explicitly rejected outside-domain inputs. Preserve the currently matching published preimages and default fixture outputs.\n\nThe large-dyadic audit assertions test the currently advertised domain. If a reviewed correction narrows that domain, the newly excluded cases should assert explicit oracle-domain rejection rather than successful serialization; they must not be recorded as production failures.\n\nThe existing small constants in the default prefix fixture are unaffected. A corrected domain guard may therefore leave its input/expected/result content unchanged while changing source hashes and execution metadata.\n\n## 4. Required correction B — retained commands are not always bound to retained inputs\n\n**Sources:** `retain_run`, lines 579–647; `main`, lines 1104–1135; and `run_negative`, lines 404–488.\n\n`run_negative` accepts a validated caller-supplied fixture. Its supplied tests deliberately exercise different negative durations and contexts.\n\n`retain_run` accepts such a report, but permits only this command form:\n\n```text\n.venv/bin/python -m tests.models.grcv4_conformance_harness --output <directory>\n```\n\n`main` unconditionally constructs:\n\n```python\nFixture.from_payload(oracle.prefix_fixture())\n```\n\nIt has no input selector for the retained fixture or a registered mutation-control operation.\n\n### 4.1 Reproduced example\n\nCreate and successfully assess a valid fixture with:\n\n```json\n{\n  \"dt\": -1,\n  \"context_value\": {\"custom\": true}\n}\n```\n\nRetain it with the accepted command string. Retention succeeds in the isolated retention fixture.\n\nThe recorded command, when used with a fresh output directory, instead selects:\n\n```json\n{\n  \"dt\": -0.25,\n  \"context_value\": {}\n}\n```\n\nThe different negative requests can legitimately have the same failure-receipt ID because that preimage omits duration and context. Therefore checking only the receipt ID would miss the replay mismatch. The full retained request bytes correctly preserve the distinction; the command does not select them.\n\nThere is a related control case: retention accepts a `harness_mutation_control` report, while its command invokes the default production prefix rather than the supplied control callback. That is a change of evidence class, not a faithful reproduction.\n\n### 4.2 Smallest acceptable correction\n\nChoose an explicit retention/reproduction boundary:\n\n1. Restrict this CLI-backed retention path to the exact default fixture and default adapter. Retain other cases only through their separately identified test/control evidence route.\n2. Or add a fixture-input selector that consumes the hash-bound recorded inputs and revalidates them. Registered controls additionally need an explicit test/adapter selector; a stored Python callable is not an acceptable production input.\n3. Or distinguish a generic entry-point hint from a complete reproduction recipe, marking non-default cases as inspection-only until their actual reproduction procedure is supplied.\n\nNo need to build a general replay service in this leaf. The essential requirement is that the manifest must not assert that its command reproduces inputs or an operation that the command cannot select.\n\nRegression: retain a non-default negative input whose receipt ID equals the default receipt ID; execute the recorded recipe into a fresh directory; compare exact request bytes, fixture preimages, evidence class, and expected/actual outputs. A correct deliberate unsupported-reproduction rejection is also acceptable for a narrowed interface.\n\nThe submitted default baseline uses the command's default fixture, so this finding does not establish a mismatch in that specific retained run.\n\n## 5. Passing design and pressure results\n\n### 5.1 Independence is substantive\n\nThe reference module imports no production implementation, solver, or vector-generation code. Frozen vectors supply input vocabulary and published anchors, not the algorithm under test.\n\n`run_negative` computes expectations before calling the operation. In a targeted spy check, it invokes the prefix once; subsequent report validation does not invoke it again.\n\nA caller-provided callback returning an exact previously imported result remains `harness_mutation_control`, even when every value comparison passes. This correctly prevents the callback route from becoming production execution evidence.\n\n### 5.2 Captured payloads and reset remain distinct\n\nThe fixture provides graph/profile/reference/reset preimages rather than reusing a unrelated nine-edge identity. The concrete K4 matrix is nonidentity, and the current resource differs from the reset resource.\n\nChanges to captured prestate, poststate, reset-before/reset-after, request, outcome, and expected receipts reject. Wrong output remains wrong even when it resembles a valid envelope.\n\nThe production comparator is not the only protection. With it deliberately bypassed, the independent poststate comparison still rejects a changed resource value. In a separate audit-only mutant with that independent comparison also disabled, the same false result is accepted. This demonstrates test sensitivity to that guard.\n\n### 5.3 Ledger and operation-delta checks are meaningful\n\nThe supplied full-ledger test covers a changed historical envelope commit ID while keeping its receipt ID unchanged. It detects the difference even though the lifecycle digest uses receipt IDs rather than the entire envelopes.\n\nCurrent operation failure receipts are not appended to persistent history. A supplied mutation that appends the failure receipt produces a failing control rather than accepted rollback evidence.\n\nParent-reference existence, scope, ordering, and acyclicity remain explicitly unvalidated and routed to P9-7.6. This audit does not invent an intra-commit-only parent rule.\n\n### 5.4 Numeric references behave correctly in the tested envelope\n\n`balanced_charge` matches independent adjacent balanced-tree binary64 additions, including odd-tail carry, empty input, and nonrepair behavior.\n\n`clock_target` matches the declared fixture convention for positive and zero duration, including a tiny positive duration whose represented time is unchanged. It does not assert that this convention is newly normative for the future complete-step implementation.\n\n`ComparisonPolicy` distinguishes exact binary64 and explicitly scoped tolerance. Its rational comparison avoids an overflow false positive. For example:\n\n```text\nactual   = -1.7e308\nexpected =  1e308\nrelative =  2\nabsolute =  0\n```\n\nThe exact relation rejects. A naive floating comparison can evaluate both difference and threshold as infinity and accept `inf <= inf`. The submitted implementation rejects correctly.\n\nBooleans, nonfinite values, negative zero, negative tolerances, and unsafe native integers retain their declared rejection boundaries. These numerical helpers are infrastructure checks, not CI/OS/PC/RG2b execution.\n\n### 5.5 Evidence integrity is distinct from current-source equality\n\nSynthetic retention tests preserve exact artifact hashes and reject changed outputs, unsupported support claims, lineage promotion, duplicate overwrite attempts, and path escapes including an external symlink.\n\nAfter changing a copied source file, inspection can still report that the stored assessment was passing while marking current source bytes as mismatched. That distinction is appropriate; it avoids rewriting history or presenting stale evidence as a current attestation.\n\n## 6. Advisory hardening, not additional scientific blockers\n\n### 6.1 Preserve evidence class in `inspect_run`'s returned summary\n\n`inspect_run` verifies that manifest and report agree on `evidence_class`, but omits that field from its return value. An executed-prefix report and a passing imported-result control therefore have identical returned decision fields apart from their arbitrary run IDs.\n\nThe `verified_not_execution_authority` label is good and prevents interpreting the result as authenticated execution. Still, consumers should not have to reopen the raw manifest to recover whether the recorded assessment was a prefix run or a mutation control.\n\nReturn at least the recorded `evidence_class`, `runtime_profile_conformance=false`, and `parent_lineage_validated=false`, with the existing warning that inspection does not execute or authenticate the operation. This is a projection improvement; the stored artifacts currently preserve the distinction.\n\n### 6.2 Preserve malformed-output diagnostics before numerical expansion\n\nA mutation control can change the captured resource to `NaN`, infinity, negative zero, an arbitrary object, or a cyclic container. The harness then fails closed, but its final `record_bytes(report)` raises instead of returning a retainable failed report. Removing a subject key similarly raises during post-capture outside the invocation handler.\n\nAn ordinary exception with unchanged serializable state is already retained as a failed check. Unencodable captured state is the separate gap.\n\nThis is not a false pass and does not disprove the default prefix result. Before numerical-failure campaigns consume the harness, retain a structured observation/encoding error with stage, field path, type, and safe diagnostic representation. Preserve the valid captured prestate and independent expectation. Do not sanitize the corrupted value into a valid scientific state, manufacture a V4 failure receipt, or silently replace it with zero/null.\n\nIt is acceptable to keep malformed-output evidence in a distinct harness-failure record rather than expanding the scientific state schema.\n\n### 6.3 Failed assessment validation is intentionally weaker\n\nChanging a valid report's `passed` to false and replacing its checks with only `[{\"passed\": false}]` passes `validate_report`. The failed branch checks the flag/count but not a closed failure diagnostic or whether an available comparator actually failed.\n\nThis cannot create a passing runtime claim. However, `recorded_assessment_passed=false` should be read as a recorded status, not an independently reconstructed failure reason. A closed check/error envelope and a distinction among invocation error, capture/encoding error, and comparison failure would improve the evidence record.\n\n### 6.4 Source binding remains a bounded trust model\n\nThe current `provenance` checks actually imported `pygrc` module paths, which is stronger than hashing same-named checkout files alone. It does not similarly resolve the actual imported harness and oracle modules, and file hashing is not a measurement of already loaded bytecode after an in-process edit.\n\nFor the fresh repository CLI route this is a bounded assumption rather than a demonstrated baseline defect. As notebook/long-lived or installed test consumers are added, bind the actual harness/oracle origins as well and require a fresh process or an explicit reload/captured-source policy. Do not turn ordinary hash binding into a claim of protection against arbitrary interpreter tampering.\n\nNo complete code-provenance or fresh-interpreter test was independently rerun here because the current environment and run files are missing.\n\n## 7. Scope that remains correctly deferred\n\nThe review and execution record properly leave these with their existing owners:\n\n- actual twelve-stage execution and mutable-model rollback;\n- independently observed outcome/stage information from the complete operation;\n- positive and zero-duration step conformance;\n- full graph, geometry, charge, context, and solver-domain admission;\n- near-boundary conditioning and repeated-eigenvalue projector pressure;\n- candidate/carrier writing and numerical transport;\n- receipt-parent existence, ordering, and acyclicity;\n- runtime-profile support and G2/G3/G4 acceptance.\n\nA negative prefix preserving supplied dictionaries does not prove rollback of a numerical model. A nonidentity reference fixture does not discharge nonidentity-SPD solver tests. A fixture clock convention does not amend the accepted step contract. The submitted review is careful about these points and should retain that wording.\n\nThe combined 168-test run predates the final CLI asset-ordering correction; the review explicitly records a final 24-test run afterward. This audit does not relabel the earlier 168 as a final-source run. The final original provenance/CLI test and maintenance/browser checks remain reported rather than independently attested.\n\n## 8. Recommended correction and acceptance rerun\n\n1. Correct or strictly narrow the independent JCS writer domain; add magnitude/denominator regressions and the large-time prefix counterexample.\n2. Bind retained reproduction recipes to their actual fixture and operation, or narrowly prohibit unsupported non-default/control retention through the default CLI recipe.\n3. Preserve evidence class in inspection summaries. Register malformed-output diagnostic retention before numerical campaigns; do not confuse it with scientific state repair.\n4. Rerun applicable supplied tests and targeted audit probes with the exact current dependency set and packaged assets. Fresh-process CLI/provenance verification should use the real repository `.venv`.\n5. Retain a new run and its input/source bindings. Preserve the submitted historical run and this audit's counterexamples; no old evidence or frozen specification needs rewriting.\n6. Make the ordinary separate user acceptance decision. P9-2.6 does not become authorized merely because this audit or a rerun passes.\n\n## 9. Final recommendation\n\n```text\nHarness/oracle architecture                         = retain\nDefault reconstructed fixture/expectation/results   = content hashes match 4/4\nIndependent comparison and ordinary control path    = pass in qualified envelope\nRestricted JCS large-dyadic domain                   = correct before acceptance\nNon-default/control reproduction recipe             = correct or explicitly narrow\nInspection and malformed-output hardening           = advisory / assigned follow-through\nExact original dependency-bound run                 = not independently attested\nRuntime profile conformance                         = not established\nScientific paper/specification/D11 changes           = not indicated\n```\n\nThe key result is not that the harness needs replacement. It is that an independent oracle must be correct throughout the domain it accepts, and a recorded reproduction command must identify the actual experiment rather than merely rerun a convenient default.\n\n## 10. Audit artifacts and reproduction\n\nThe bundle includes the exact submitted files, qualified staged providers, the independent Node numeric/JCS bridge, the stress runner, supplied-test results, counterexamples, reconstructed default outputs, source indices, and mutation-sensitivity checks.\n\nRun the recorded qualified audit after extracting the bundle:\n\n```bash\npython p925_audit/run_supplied.py\npython p925_audit/stress.py\npython p925_audit/characterize.py\npython p925_audit/mutation_controls.py\n```\n\nThese commands deliberately retain the documented audit substitutions. They are not the project's accepted `.venv` reproduction commands. To evaluate the final patched implementation, use its actual environment and the retained tests' assertions; do not count the staged compatibility run as exact-package conformance.\n\nLine references in this report refer to the two uploaded files whose hashes appear in §2.1. The raw stress results are `p925_audit/stress-results.json`; generated run IDs in synthetic retention tests may differ between reruns. Scientific input and expected-result comparisons remain exact within their declared envelope.\n",
+  "submitted_results": {
+    "audit_scope": "P9-2.5 exact uploaded oracle and harness; qualified older production providers, Node JCS, direct hash-matched schema; synthetic retention source/Git/environment fixture explicitly substituted. Not the original run.",
+    "total": 3083,
+    "pass": 2627,
+    "fail": 456,
+    "summary": {
+      "balanced_charge": {
+        "cases": 100,
+        "pass": 100,
+        "fail": 0
+      },
+      "charge_invalid": {
+        "cases": 6,
+        "pass": 6,
+        "fail": 0
+      },
+      "clock_binary64": {
+        "cases": 100,
+        "pass": 100,
+        "fail": 0
+      },
+      "clock_boundaries": {
+        "cases": 4,
+        "pass": 4,
+        "fail": 0
+      },
+      "clock_invalid": {
+        "cases": 4,
+        "pass": 4,
+        "fail": 0
+      },
+      "imported_result_control": {
+        "cases": 1,
+        "pass": 1,
+        "fail": 0
+      },
+      "independent_capture_relations": {
+        "cases": 12,
+        "pass": 12,
+        "fail": 0
+      },
+      "inspection_classification": {
+        "cases": 1,
+        "pass": 0,
+        "fail": 1
+      },
+      "jcs_advertised_large_dyadics": {
+        "cases": 1638,
+        "pass": 1190,
+        "fail": 448
+      },
+      "jcs_small_dyadics": {
+        "cases": 1025,
+        "pass": 1025,
+        "fail": 0
+      },
+      "mutating_controls": {
+        "cases": 3,
+        "pass": 3,
+        "fail": 0
+      },
+      "no_claim_promotion": {
+        "cases": 6,
+        "pass": 6,
+        "fail": 0
+      },
+      "nonnegative_no_invocation": {
+        "cases": 4,
+        "pass": 4,
+        "fail": 0
+      },
+      "nonserializable_actual_evidence": {
+        "cases": 4,
+        "pass": 0,
+        "fail": 4
+      },
+      "numeric_comparison": {
+        "cases": 24,
+        "pass": 24,
+        "fail": 0
+      },
+      "oracle_ascii_strings": {
+        "cases": 5,
+        "pass": 5,
+        "fail": 0
+      },
+      "oracle_fail_closed_domain": {
+        "cases": 10,
+        "pass": 10,
+        "fail": 0
+      },
+      "prefix_baseline": {
+        "cases": 1,
+        "pass": 1,
+        "fail": 0
+      },
+      "prefix_inputs": {
+        "cases": 8,
+        "pass": 8,
+        "fail": 0
+      },
+      "prefix_oracle_large_time": {
+        "cases": 2,
+        "pass": 0,
+        "fail": 2
+      },
+      "record_bad_wire": {
+        "cases": 11,
+        "pass": 11,
+        "fail": 0
+      },
+      "record_roundtrip": {
+        "cases": 60,
+        "pass": 60,
+        "fail": 0
+      },
+      "record_type": {
+        "cases": 4,
+        "pass": 4,
+        "fail": 0
+      },
+      "relative_paths": {
+        "cases": 8,
+        "pass": 8,
+        "fail": 0
+      },
+      "report_request_identity": {
+        "cases": 9,
+        "pass": 9,
+        "fail": 0
+      },
+      "reproduction_command": {
+        "cases": 1,
+        "pass": 0,
+        "fail": 1
+      },
+      "retention_artifact_tamper": {
+        "cases": 4,
+        "pass": 4,
+        "fail": 0
+      },
+      "retention_claim_tamper": {
+        "cases": 4,
+        "pass": 4,
+        "fail": 0
+      },
+      "retention_integrity": {
+        "cases": 1,
+        "pass": 1,
+        "fail": 0
+      },
+      "retention_overwrite": {
+        "cases": 1,
+        "pass": 1,
+        "fail": 0
+      },
+      "retention_source_change": {
+        "cases": 1,
+        "pass": 1,
+        "fail": 0
+      },
+      "tolerance_exact_crossproducts": {
+        "cases": 16,
+        "pass": 16,
+        "fail": 0
+      },
+      "tolerance_rejection": {
+        "cases": 5,
+        "pass": 5,
+        "fail": 0
+      }
+    },
+    "selected_counterexamples": [
+      {
+        "group": "jcs_advertised_large_dyadics",
+        "name": "0x1.0000000000400p+36",
+        "kind": "required",
+        "pass": false,
+        "exception": "AssertionError",
+        "detail": "b'68719476736.015625' != b'68719476736.01562'"
+      },
+      {
+        "group": "jcs_advertised_large_dyadics",
+        "name": "-0x1.0000000000400p+36",
+        "kind": "required",
+        "pass": false,
+        "exception": "AssertionError",
+        "detail": "b'-68719476736.015625' != b'-68719476736.01562'"
+      },
+      {
+        "group": "jcs_advertised_large_dyadics",
+        "name": "0x1.0000000000c00p+36",
+        "kind": "required",
+        "pass": false,
+        "exception": "AssertionError",
+        "detail": "b'68719476736.046875' != b'68719476736.04688'"
+      },
+      {
+        "group": "jcs_advertised_large_dyadics",
+        "name": "-0x1.0000000000c00p+36",
+        "kind": "required",
+        "pass": false,
+        "exception": "AssertionError",
+        "detail": "b'-68719476736.046875' != b'-68719476736.04688'"
+      },
+      {
+        "group": "prefix_oracle_large_time",
+        "name": "0x1.0000000000400p+36",
+        "kind": "required",
+        "pass": false,
+        "exception": "AssertionError",
+        "detail": "False != True"
+      },
+      {
+        "group": "prefix_oracle_large_time",
+        "name": "0x1.c6bf526340002p+49",
+        "kind": "required",
+        "pass": false,
+        "exception": "AssertionError",
+        "detail": "False != True"
+      },
+      {
+        "group": "inspection_classification",
+        "name": "preserve_evidence_class",
+        "kind": "advisory",
+        "pass": false,
+        "exception": "AssertionError",
+        "detail": "None != 'harness_mutation_control'"
+      },
+      {
+        "group": "reproduction_command",
+        "name": "replays_bound_input",
+        "kind": "required",
+        "pass": false,
+        "exception": "AssertionError",
+        "detail": "'7b22626f756e646172795f696e707574223a6e756c6c2c22636f6e746578745f76616c7565223a7b22637573746f6d223a747275657d2c226474223a2d312c2265787465726e616c5f736f75726365223a6e756c6c2c226f7065726174696f6e5f6964223a2250392d322e353a6e656761746976652d6475726174696f6e222c22736368656d615f76657273696f6e223a2267726376342d737465702d726571756573742d696e7075742d7631227d' != '7b22626f756e646172795f696e707574223a6e756c6c2c22636f6e746578745f76616c7565223a7b7d2c226474223a2d302e32352c2265787465726e616c5f736f75726365223a6e756c6c2c226f7065726174696f6e5f6964223a2250392d322e353a6e656761746976652d6475726174696f6e222c22736368656d615f76657273696f6e223a2267726376342d737465702d726571756573742d696e7075742d7631227d'"
+      },
+      {
+        "group": "nonserializable_actual_evidence",
+        "name": "nan",
+        "kind": "advisory",
+        "pass": false,
+        "exception": "ValueError",
+        "detail": "nonfinite or negative zero"
+      },
+      {
+        "group": "nonserializable_actual_evidence",
+        "name": "inf",
+        "kind": "advisory",
+        "pass": false,
+        "exception": "ValueError",
+        "detail": "nonfinite or negative zero"
+      },
+      {
+        "group": "nonserializable_actual_evidence",
+        "name": "negative-zero",
+        "kind": "advisory",
+        "pass": false,
+        "exception": "ValueError",
+        "detail": "nonfinite or negative zero"
+      },
+      {
+        "group": "nonserializable_actual_evidence",
+        "name": "object",
+        "kind": "advisory",
+        "pass": false,
+        "exception": "HarnessError",
+        "detail": "non-JSON or cyclic evidence"
+      }
+    ]
+  },
+  "retention_scope": "Audit text, scenario summary and representative counterexamples retained. The substituted older providers and schema/Node bootstrap are not used for repository validation. Current regression tests exercise the exact repository implementation; this input is neither user acceptance nor runtime conformance."
+}

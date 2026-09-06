@@ -1,0 +1,32 @@
+{
+  "schema": "phase9_result_foundation_acceptance_v1",
+  "status": "accepted_by_user",
+  "baseline_commit": "3845c41a2b85903e691c3e88fc20fc4109e806ff",
+  "release_id": "grcv4-spec-release-sha256:9f4c8fe5b57b1c477d834a3e4dae3f98a2b18c70e6e7f598e3c9652170c8645f",
+  "predecessor_record_digest": "ac07a2f7c93538454d9663aba78ca0eb5af385d7975582e4c21682f41ce4c17f",
+  "accepted_iterations": [
+    "P9-2.4"
+  ],
+  "acceptance_basis": "Explicit user instruction to commit the reviewed P9-2.4 work, followed by authorization to continue with P9-2.5. Historical execution records preserve their as-recorded review state.",
+  "evidence_bindings": [
+    {
+      "path": "implementation/phase-9-grcv4/tranche-2/P9-2.4-Review.md",
+      "sha256": "f5d48b5f3d8f75ba12605db8092da8eea8a3fca1769827bd2cf68b5d92e0a11a"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-2/P9-2.4-ExecutionRecord.json",
+      "sha256": "33f7afb7e08af1b1c76d239717b0a2a87ebaa422827433ba55e7ba6a449a01b7"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-2.4/audit-followup/run.json",
+      "sha256": "e48ab5882f50f3e0de954f7e0ff9fc4c3190a62ac7def48b52f2666abd565a82"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/runtime/RuntimeWorkManifest.json",
+      "sha256": "b5df7261ab54ba03ceb71e88a157e29be430c5c23cce1a6c0c9d59d6eba9c7b6"
+    }
+  ],
+  "accepted_generic_runtime_support": [],
+  "admitted_specialization_support_sets": [],
+  "record_digest": "9d2fd4f0bb0445b9b3c46fd6f7e5b0ff710a8a85aceaeabacad44a477ff365a0"
+}

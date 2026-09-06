@@ -52,15 +52,18 @@ def main():
             ],
             check=True,
         )
+        fixture_revision = p.accepted_harness(p.ROOT)["baseline_commit"]
         subprocess.run(
-            ["git", "checkout", "--quiet", "--detach", p.BASELINE], cwd=root, check=True
+            ["git", "checkout", "--quiet", "--detach", fixture_revision],
+            cwd=root, check=True,
         )
         (root / ".venv").symlink_to(
             Path(sys.prefix).resolve(), target_is_directory=True
         )
         with (root / ".git/info/exclude").open("a") as f:
             f.write("\n/.venv\n")
-        for name in p.PATHS | set(p.work_entries(p.ROOT, p.acceptance(p.ROOT))):
+        current_work_paths = set(p.work_entries(p.ROOT, p.acceptance(p.ROOT)))
+        for name in p.PATHS | current_work_paths:
             (root / name).parent.mkdir(parents=True, exist_ok=True)
             shutil.copyfile(p.ROOT / name, root / name)
         pristine = protected_manifest(root)
@@ -137,6 +140,7 @@ def main():
                     },
                     "base_fixture_identity": {
                         "baseline_commit": p.BASELINE,
+                        "fixture_revision": fixture_revision,
                         "policy_digest": boundary["record_digest"],
                         "tree": tree,
                     },
@@ -160,16 +164,19 @@ def main():
             value["record_digest"] = p.digest_record(value)
             return mutate(p.WORK, p.canonical(value) + b"\n")
 
+        def bind_entry(value, name, content, leaf="P9-2.1"):
+            # Runtime may already exist; pressure must reach the intended
+            # mutation check, not fail early on a duplicate manifest row.
+            value["entries"] = [r for r in value["entries"] if r["path"] != name]
+            value["entries"].append(
+                {"path": name, "sha256": p.sha(content), "iteration_id": leaf}
+            )
+
         def registered(name, content, *, extra=None, leaf="P9-2.1"):
             with mutate(name, content):
 
                 def bind(value):
-                    value["entries"] = [
-                        r for r in value["entries"] if r["path"] != name
-                    ]
-                    value["entries"].append(
-                        {"path": name, "sha256": p.sha(content), "iteration_id": leaf}
-                    )
+                    bind_entry(value, name, content, leaf)
 
                 with manifest_edit(bind):
                     if extra:
@@ -257,10 +264,16 @@ def main():
             "accepted_G1_test_target",
             lambda: registered("tests/models/test_grc_v4_state.py", content),
         )
+        def unregistered_path():
+            with manifest_edit(lambda v: v.update(
+                entries=[r for r in v["entries"] if r["path"] != source]
+            )):
+                edit(source, content)
+
         case(
-            "unregistered_permitted_path",
-            lambda: edit(source, content),
-            "unauthorized source/test/planning addition",
+            "published_permitted_path_cannot_drop_registration",
+            unregistered_path,
+            "published runtime/evidence deletion or rename forbidden",
         )
         case(
             "missing_acceptance",
@@ -390,7 +403,8 @@ def main():
             "legacy export prefix changed",
             scope="isolated_integration_contract_not_current_leaf_permission",
         )
-        project = (root / "pyproject.toml").read_bytes()
+        # Use the immutable integration baseline even after V4's extra exists.
+        project = p.git(root, "show", p.BASELINE + ":pyproject.toml")
         # Insert into the existing optional-dependencies table, not a duplicate table.
         extra = project.replace(
             b"[project.optional-dependencies]\n",
@@ -435,13 +449,7 @@ def main():
             with mutate(source, content):
                 (root / source).chmod(0o755)
                 with manifest_edit(
-                    lambda m: m["entries"].append(
-                        {
-                            "path": source,
-                            "sha256": p.sha(content),
-                            "iteration_id": "P9-2.1",
-                        }
-                    )
+                    lambda m: bind_entry(m, source, content)
                 ):
                     inspect()
 
@@ -452,13 +460,7 @@ def main():
                 (root / source).unlink()
                 (root / source).symlink_to(root / "specs/grc-v4-spec.md")
                 with manifest_edit(
-                    lambda m: m["entries"].append(
-                        {
-                            "path": source,
-                            "sha256": p.sha(content),
-                            "iteration_id": "P9-2.1",
-                        }
-                    )
+                    lambda m: bind_entry(m, source, content)
                 ):
                     inspect()
 
@@ -508,6 +510,74 @@ def main():
             ),
         )
         case(
+            "accepted_foundation_enables_request_leaf",
+            lambda: registered("src/pygrc/models/grc_v4.py", content, leaf="P9-2.3"),
+        )
+        case(
+            "integration_work_does_not_accept_next_leaf",
+            lambda: registered(p.PHASE + "evidence/P9-3.1/probe/inputs.json",
+                               b"{}", leaf="P9-3.1"),
+            "owning leaf entry dependencies are not accepted",
+        )
+        for name in ["src/pygrc/models/grc_v4_state.py", "src/pygrc/models/grc_v4_step.py"]:
+            case("accepted_requests_enable_result_owner_" + Path(name).stem,
+                 lambda name=name: registered(name, content, leaf="P9-2.4"))
+        for name in ["tests/models/grcv4_conformance_harness.py", "tests/models/grcv4_reference_oracles.py"]:
+            case("accepted_results_enable_harness_owner_" + Path(name).stem,
+                 lambda name=name: registered(name, content, leaf="P9-2.5"))
+        case("accepted_harness_enables_export_owner",
+             lambda: registered(init, before + lazy, leaf="P9-2.6"))
+        for key, replacement in [("status", "pending"), ("accepted_iterations", ["P9-2.5", "P9-2.6"]),
+                                 ("accepted_generic_runtime_support", ["C_OS"]),
+                                 ("baseline_commit", p.BASELINE), ("evidence_bindings", [])]:
+            def forged_harness(key=key, replacement=replacement):
+                value = p.read(root / p.HARNESS_ACCEPTANCE)
+                value[key] = replacement
+                value["record_digest"] = p.digest_record(value)
+                with mutate(p.HARNESS_ACCEPTANCE, p.canonical(value)):
+                    p.accepted_harness(root)
+            case("harness_acceptance_cannot_self_authorize_" + key, forged_harness,
+                 "untrusted harness acceptance", scope="isolated_harness_acceptance_authentication")
+        for key, replacement in [("status", "pending"), ("accepted_iterations", ["P9-2.4", "P9-2.5"]),
+                                 ("accepted_generic_runtime_support", ["C_OS"]),
+                                 ("baseline_commit", p.BASELINE), ("evidence_bindings", [])]:
+            def forged_results(key=key, replacement=replacement):
+                value = p.read(root / p.RESULT_ACCEPTANCE)
+                value[key] = replacement
+                value["record_digest"] = p.digest_record(value)
+                with mutate(p.RESULT_ACCEPTANCE, p.canonical(value)):
+                    p.accepted_results(root)
+            case("result_acceptance_cannot_self_authorize_" + key, forged_results,
+                 "untrusted result acceptance", scope="isolated_result_acceptance_authentication")
+        for key, replacement in [("status", "pending"), ("accepted_iterations", ["P9-2.3", "P9-2.4"]),
+                                 ("accepted_generic_runtime_support", ["C_OS"]),
+                                 ("baseline_commit", p.BASELINE), ("evidence_bindings", [])]:
+            def forged_requests(key=key, replacement=replacement):
+                value = p.read(root / p.REQUEST_ACCEPTANCE)
+                value[key] = replacement
+                value["record_digest"] = p.digest_record(value)
+                with mutate(p.REQUEST_ACCEPTANCE, p.canonical(value)):
+                    p.accepted_requests(root)
+            case("request_acceptance_cannot_self_authorize_" + key, forged_requests,
+                 "untrusted request acceptance", scope="isolated_request_acceptance_authentication")
+        for key, replacement in [
+            ("status", "pending"),
+            ("accepted_iterations", ["P9-2.1", "P9-2.2", "P9-2.3"]),
+            ("accepted_generic_runtime_support", ["C_OS"]),
+            ("baseline_commit", p.BASELINE),
+            ("evidence_bindings", []),
+        ]:
+            def forged_foundation(key=key, replacement=replacement):
+                value = p.read(root / p.FOUNDATION)
+                value[key] = replacement
+                value["record_digest"] = p.digest_record(value)
+                with mutate(p.FOUNDATION, p.canonical(value)):
+                    p.accepted_foundation(root)
+
+            case("foundation_cannot_self_authorize_" + key, forged_foundation,
+                 "untrusted foundation acceptance",
+                 scope="isolated_foundation_acceptance_authentication")
+        case(
             "later_generic_leaf_held",
             lambda: registered(
                 "src/pygrc/models/grc_v4_candidate_c.py", content, leaf="P9-4.1"
@@ -520,9 +590,17 @@ def main():
             "runtime target belongs to a different owning leaf",
         )
         case(
-            "additive_integration_waits_for_owner",
+            "accepted_harness_enables_integration_owner",
             lambda: registered("pyproject.toml", extra, leaf="P9-2.6"),
-            "owning leaf entry dependencies are not accepted",
+        )
+        case(
+            "identity_leaf_package_integration",
+            lambda: registered("pyproject.toml", extra, leaf="P9-2.2"),
+        )
+        case(
+            "identity_leaf_cannot_borrow_exports",
+            lambda: registered(init, before + lazy, leaf="P9-2.2"),
+            "runtime target belongs to a different owning leaf",
         )
         for key, replacement in [
             ("release_id", "different-release"),
@@ -627,7 +705,7 @@ def main():
                 return result.stdout
 
             try:
-                git("add", "--", *sorted(p.PATHS))
+                git("add", "--", *sorted(p.PATHS | current_work_paths))
                 git(
                     "-c",
                     "user.name=P9 test fixture",
@@ -692,16 +770,10 @@ def main():
 
             with mutate(name, bytes_):
                 with manifest_edit(
-                    lambda v: v["entries"].append(
-                        {
-                            "path": name,
-                            "sha256": p.sha(bytes_),
-                            "iteration_id": "P9-2.1",
-                        }
-                    )
+                    lambda v: bind_entry(v, name, bytes_)
                 ):
                     try:
-                        local_git("add", "--", *sorted(p.PATHS | {name}))
+                        local_git("add", "--", *sorted(p.PATHS | current_work_paths | {name}))
                         local_git(
                             "-c",
                             "user.name=P9 test fixture",

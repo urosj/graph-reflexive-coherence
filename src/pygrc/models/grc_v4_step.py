@@ -1,0 +1,723 @@
+"""Result/receipt composition and duration prefix; no numerical step or state writer.
+
+The lifecycle owner must supply a genuine prestate digest and still admit the
+complete graph/profile/context/state before running a strict request. This
+module neither discovers those inputs nor claims runtime-profile support.
+"""
+
+from __future__ import annotations
+
+from collections.abc import Mapping
+from dataclasses import dataclass, fields
+from typing import Any, ClassVar, Literal, TypeAlias, cast
+
+from .grc_v4 import GRCV4StepRequest, GRCV4StepRequestInput, _nested_record
+from .grc_v4_codec import (
+    V4IdentityError,
+    V4SchemaError,
+    canonical_json_bytes,
+    payload_identity,
+    validate_payload,
+)
+from .grc_v4_profile import _Record
+from .grc_v4_state import (
+    FrozenJSONMap,
+    GRCV4LifecycleResult,
+    GRCV4StepResult,
+    SolverDisposition,
+)
+
+OperationStage: TypeAlias = Literal[
+    "admission",
+    "pre_read_reconstruction",
+    "candidate_solve",
+    "continuity",
+    "charge_admission",
+    "final_reconstruction",
+    "history_write",
+    "target_construction",
+    "target_readmission",
+    "restoration",
+    "commit",
+]
+FailureCode: TypeAlias = Literal[
+    "invalid_identity",
+    "invalid_duration",
+    "domain_failure",
+    "singular_solver",
+    "conditioning_failure",
+    "nonfinite_value",
+    "no_admitted_root",
+    "multiple_admitted_roots",
+    "charge_failure",
+    "stale_cache",
+    "unsupported_profile",
+    "invalid_migration",
+    "invalid_topology_event",
+    "source_node_not_saturated",
+    "source_self_loop_unsupported",
+    "module_chirality_required",
+    "module_growth_phase_required",
+    "reject_noncanonical_inactive_growth_phase",
+    "target_readmission_failure",
+    "legacy_expansion_target_undefined",
+    "restoration_failure",
+]
+
+
+@dataclass(frozen=True, slots=True, eq=False)
+class FailureReceiptIdentityPayload(_Record):
+    SCHEMA: ClassVar[str] = "failure_receipt_identity_payload"
+    schema_version: Literal["grcv4-failure-receipt-v1"]
+    operation_id: str
+    stage: OperationStage
+    code: FailureCode
+    source_state_digest: str
+    observed_poststate_digest: str
+
+    def __post_init__(self) -> None:
+        _Record.__post_init__(self)
+        if self.source_state_digest != self.observed_poststate_digest:
+            raise V4IdentityError(
+                "failure evidence must preserve the scientific prestate"
+            )
+
+
+@dataclass(frozen=True, slots=True, eq=False)
+class FailureReceipt(_Record):
+    """Content-identity-checked noncommitting receipt, not authenticated provenance.
+
+    The digest and equal state labels prove neither an observed operation nor
+    live-state authenticity, rollback or a signature. The operation/lifecycle
+    owner must bind those facts and keep emitted evidence separate from the
+    persistent ledger. Receipt equality does not imply request equality: the
+    frozen preimage omits duration and context. Reconstruction checks the enum
+    vocabulary, not whether a stage/code pair occurred in an execution.
+    """
+
+    SCHEMA: ClassVar[str] = "failure_receipt"
+    schema_version: Literal["grcv4-failure-receipt-envelope-v1"]
+    receipt_id: str
+    identity_payload: FailureReceiptIdentityPayload
+
+    def __post_init__(self) -> None:
+        object.__setattr__(
+            self,
+            "identity_payload",
+            _nested_record(self.identity_payload, FailureReceiptIdentityPayload),
+        )
+        _Record.__post_init__(self)
+        payload_identity(
+            "failure_receipt_identity_payload",
+            self.identity_payload.to_payload(),
+            expected=self.receipt_id,
+        )
+
+
+@dataclass(frozen=True, slots=True, eq=False)
+class GRCV4Failure(_Record):
+    """Cross-checked failure declaration; operation binding is a separate check."""
+
+    SCHEMA: ClassVar[str] = "failure_detail"
+    stage: OperationStage
+    solver_disposition: SolverDisposition | None
+    code: FailureCode
+    message: str
+    prestate_digest: str
+    poststate_digest: str
+    pre_lifecycle_digest: str
+    post_lifecycle_digest: str
+    failure_receipt: FailureReceipt
+
+    def __post_init__(self) -> None:
+        object.__setattr__(
+            self,
+            "failure_receipt",
+            _nested_record(self.failure_receipt, FailureReceipt),
+        )
+        _Record.__post_init__(self)
+        identity = self.failure_receipt.identity_payload
+        if (
+            self.prestate_digest != self.poststate_digest
+            or self.pre_lifecycle_digest != self.post_lifecycle_digest
+            or (self.stage, self.code, self.prestate_digest, self.poststate_digest)
+            != (
+                identity.stage,
+                identity.code,
+                identity.source_state_digest,
+                identity.observed_poststate_digest,
+            )
+        ):
+            raise V4IdentityError(
+                "failure detail/receipt or pre/post identities disagree"
+            )
+        if (
+            self.stage in ("admission", "pre_read_reconstruction")
+            and self.solver_disposition is not None
+        ):
+            raise V4SchemaError("pre-solver failure cannot invent a solver disposition")
+
+
+_SUCCESS_SCHEMAS = {
+    "grcv4-" + kind.replace("_", "-") + "-receipt-v1": kind
+    + "_receipt_identity_payload"
+    for kind in (
+        "step_commit",
+        "reset",
+        "rebase",
+        "profile_migration",
+        "topology_event",
+        "charge",
+        "history_disposition",
+    )
+}
+_SUCCESS_SCHEMAS["grc9v4-legacy-compatibility-receipt-v1"] = (
+    "legacy_compatibility_receipt_identity_payload"
+)
+
+
+@dataclass(frozen=True, slots=True, eq=False)
+class SuccessfulReceiptEnvelope(_Record):
+    """Content-checked closed receipt payload, not proof of a successful operation.
+
+    Versioned payloads remain immutable primitive declarations here. Their
+    migration/history/compatibility effects belong to the lifecycle owners.
+    The commit preimage is checked separately by bind_step_result.
+    Parent receipt IDs are content only: this record does not resolve lineage.
+    """
+
+    SCHEMA: ClassVar[str] = "successful_receipt_envelope"
+    schema_version: Literal["grcv4-successful-receipt-envelope-v1"]
+    receipt_id: str
+    commit_id: str
+    identity_payload: FrozenJSONMap
+
+    def __post_init__(self) -> None:
+        _Record.__post_init__(self)
+        payload = self.identity_payload.to_dict()
+        schema = _SUCCESS_SCHEMAS[cast(str, payload["schema_version"])]
+        payload_identity(schema, payload, expected=self.receipt_id)
+
+
+Receipt: TypeAlias = SuccessfulReceiptEnvelope | FailureReceipt
+
+
+@dataclass(frozen=True, slots=True, eq=False)
+class CommitPayload(_Record):
+    """Acyclic commit preimage; constructing it does not commit a model."""
+
+    SCHEMA: ClassVar[str] = "commit_payload"
+    INTEGER_FIELDS: ClassVar[tuple[str, ...]] = ("target_step_index",)
+    schema_version: Literal["grcv4-commit-payload-v1"]
+    operation_id: str
+    source_state_digest: str
+    target_state_digest: str
+    emitted_receipt_ids: tuple[str, ...]
+    target_step_index: int
+    target_time: float
+
+    def __post_init__(self) -> None:
+        _Record.__post_init__(self)
+        object.__setattr__(self, "emitted_receipt_ids", tuple(self.emitted_receipt_ids))
+        object.__setattr__(self, "target_time", float(self.target_time))
+
+
+def make_commit_receipts(
+    receipt_payloads: object,
+    *,
+    operation_id: str,
+    source_state_digest: str,
+    target_state_digest: str,
+    target_step_index: int,
+    target_time: float,
+) -> tuple[CommitPayload, tuple[SuccessfulReceiptEnvelope, ...]]:
+    """Hash receipt payloads, then commit, then envelopes; no persistent write.
+
+    This acyclic hashing order is not parent-receipt DAG validation. Parent
+    scope/order remains the lifecycle owner's unresolved contract obligation.
+    """
+    if type(receipt_payloads) not in (list, tuple) or not receipt_payloads:
+        raise TypeError("expected a nonempty ordered receipt payload sequence")
+    payloads = [
+        cast(dict[str, Any], validate_payload("successful_receipt_identity_payload", p))
+        for p in cast(list[object], receipt_payloads)
+    ]
+    for p in payloads:
+        core = p["core"]
+        if (
+            core["operation_id"],
+            core["source_state_digest"],
+            core["target_state_digest"],
+        ) != (operation_id, source_state_digest, target_state_digest):
+            raise V4IdentityError("receipt payload does not belong to this commit")
+    identifiers = tuple(
+        payload_identity(_SUCCESS_SCHEMAS[p["schema_version"]], p) for p in payloads
+    )
+    commit = CommitPayload(
+        "grcv4-commit-payload-v1",
+        operation_id,
+        source_state_digest,
+        target_state_digest,
+        identifiers,
+        target_step_index,
+        target_time,
+    )
+    commit_id = payload_identity("commit_payload", commit.to_payload())
+    return commit, tuple(
+        SuccessfulReceiptEnvelope(
+            "grcv4-successful-receipt-envelope-v1",
+            identifier,
+            commit_id,
+            FrozenJSONMap(p),
+        )
+        for identifier, p in zip(identifiers, payloads, strict=True)
+    )
+
+
+def _result_parts(
+    failure: object, receipts: object
+) -> tuple[GRCV4Failure | None, tuple[Receipt, ...]]:
+    detail = None if failure is None else _nested_record(failure, GRCV4Failure)
+    if type(receipts) not in (tuple, list):
+        raise TypeError("receipt delta must be an ordered list or tuple")
+    result: list[Receipt] = []
+    for value in cast(list[object] | tuple[object, ...], receipts):
+        if type(value) in (FailureReceipt, SuccessfulReceiptEnvelope):
+            assert isinstance(value, (FailureReceipt, SuccessfulReceiptEnvelope))
+            result.append(type(value).from_payload(value.to_payload()))
+        elif isinstance(value, Mapping):
+            kind = (
+                FailureReceipt
+                if value.get("schema_version") == "grcv4-failure-receipt-envelope-v1"
+                else SuccessfulReceiptEnvelope
+            )
+            result.append(kind.from_payload(value))
+        else:
+            raise TypeError("expected a closed receipt envelope")
+    return detail, tuple(result)
+
+
+def _validate_result(value: GRCV4StepResult | GRCV4LifecycleResult) -> None:
+    """Local constructor invariants; no state, execution or replay authority."""
+    if isinstance(value, GRCV4StepResult):
+        validate_payload("step_result", value.to_payload())
+    if value.committed:
+        if not value.emitted_receipts:
+            raise V4SchemaError(
+                "a committed result must identify its emitted receipt delta"
+            )
+        for receipt in value.emitted_receipts:
+            if (
+                not isinstance(receipt, SuccessfulReceiptEnvelope)
+                or receipt.commit_id != value.commit_id
+            ):
+                raise V4IdentityError(
+                    "committed result requires receipts of this commit only"
+                )
+        if isinstance(value, GRCV4StepResult):
+            # Migration/event/reset cannot be smuggled into an ordinary beat.
+            allowed = {
+                "grcv4-step-commit-receipt-v1",
+                "grcv4-charge-receipt-v1",
+                "grcv4-history-disposition-receipt-v1",
+            }
+            receipts = cast(
+                tuple[SuccessfulReceiptEnvelope, ...], value.emitted_receipts
+            )
+            if any(
+                cast(str, r.identity_payload["schema_version"]) not in allowed
+                for r in receipts
+            ):
+                raise V4SchemaError("foreign lifecycle receipt in ordinary step")
+    else:
+        assert value.failure is not None
+        if value.emitted_receipts != (value.failure.failure_receipt,):
+            raise V4IdentityError(
+                "rejected result emits its failure receipt, not persistent history"
+            )
+        if isinstance(value, GRCV4StepResult):
+            if value.events:
+                raise V4SchemaError("rejected step cannot emit committed events")
+            failure = value.failure
+            if value.solver_disposition != failure.solver_disposition:
+                raise V4SchemaError(
+                    "operation and failure solver dispositions disagree"
+                )
+            if (
+                failure.stage
+                in (
+                    "continuity",
+                    "charge_admission",
+                    "final_reconstruction",
+                    "history_write",
+                    "commit",
+                )
+                and value.solver_disposition != "valid_root"
+            ):
+                raise V4SchemaError("post-solver step rejection must retain valid_root")
+            if failure.stage == "candidate_solve":
+                codes = {
+                    "domain_failure": "domain_failure",
+                    "singular": "singular_solver",
+                    "conditioning_failure": "conditioning_failure",
+                    "nonfinite": "nonfinite_value",
+                    "no_admitted_root": "no_admitted_root",
+                    "multiple_admitted_roots": "multiple_admitted_roots",
+                }
+                if codes.get(value.solver_disposition or "") != failure.code:
+                    raise V4SchemaError(
+                        "candidate-solve rejection requires its failed solver disposition"
+                    )
+            if failure.stage in (
+                "target_construction",
+                "target_readmission",
+                "restoration",
+            ):
+                raise V4SchemaError("lifecycle stage is not an ordinary-step failure")
+        elif value.failure.solver_disposition is not None:
+            raise V4SchemaError(
+                "lifecycle failure cannot invent a step solver disposition"
+            )
+
+
+def _ledger(value: object) -> tuple[SuccessfulReceiptEnvelope, ...]:
+    _, receipts = _result_parts(None, value)
+    if any(not isinstance(r, SuccessfulReceiptEnvelope) for r in receipts):
+        raise V4SchemaError("failure receipt is not a persistent ledger entry")
+    return cast(tuple[SuccessfulReceiptEnvelope, ...], receipts)
+
+
+def _state_evidence(
+    state: object, ledger: tuple[SuccessfulReceiptEnvelope, ...]
+) -> tuple[dict[str, Any], str, str]:
+    data = cast(dict[str, Any], validate_payload("scientific_state_payload", state))
+    state_id = payload_identity("scientific_state_payload", data)
+    lifecycle_id = payload_identity(
+        "lifecycle_envelope_payload",
+        {
+            "schema_version": "grcv4-lifecycle-envelope-v1",
+            "scientific_state_digest": state_id,
+            "receipt_ids": [r.receipt_id for r in ledger],
+        },
+    )
+    return data, state_id, lifecycle_id
+
+
+@dataclass(frozen=True, slots=True)
+class StepResultEvidence:
+    """Immutable byte values; never a solver certificate, lineage or replay permit.
+
+    Direct construction validates storage types only, not byte contents or
+    whether bind_step_result was called. No consumer may trust the class alone.
+    """
+
+    request_bytes: bytes
+    result_bytes: bytes
+    prestate_bytes: bytes
+    poststate_bytes: bytes
+    pre_ledger_bytes: bytes
+    post_ledger_bytes: bytes
+
+    def __post_init__(self) -> None:
+        for field in fields(self):
+            if type(getattr(self, field.name)) is not bytes:
+                raise TypeError(
+                    "comparison evidence fields require exact immutable bytes"
+                )
+
+
+def bind_step_result(
+    result: GRCV4StepResult,
+    *,
+    request: GRCV4StepRequestInput,
+    prestate: object,
+    poststate: object,
+    pre_ledger: object,
+    post_ledger: object,
+    observed_stage: OperationStage,
+    observed_code: FailureCode | None,
+    observed_solver: SolverDisposition | None,
+    commit_payload: object = None,
+) -> StepResultEvidence:
+    """Compare result, exact request, observed outcome, state payloads and ledgers.
+
+    The operation owner must capture the actual inputs/outputs and observed
+    stage, not obtain them from an imported receipt. This pure comparator does
+    not execute, admit a graph/domain, authenticate an observer or roll back a
+    mutable model. Content-matching observations are not scientific execution.
+    A committed result accepts a primitive commit preimage or an exact
+    CommitPayload; both are detached and revalidated before comparison.
+
+    Parent receipt references are syntax/content checked, not resolved as a DAG.
+    The frozen contract does not settle intra-commit versus historical parents
+    or ordering; P9-7.6 must resolve that before claiming lineage conformance.
+    Nor does this comparator validate clock progression, charge arithmetic or
+    history-map truth. The harness must use independent live-operation oracles.
+    """
+    if (
+        type(result) is not GRCV4StepResult
+        or type(request) is not GRCV4StepRequestInput
+    ):
+        raise TypeError("expected V4 result and external step input records")
+    if (
+        type(observed_stage) is not str
+        or (observed_code is not None and type(observed_code) is not str)
+        or (observed_solver is not None and type(observed_solver) is not str)
+    ):
+        raise TypeError("observed outcome requires literal stage/code/solver labels")
+    result = GRCV4StepResult.from_payload(result.to_payload())
+    request = GRCV4StepRequestInput.from_payload(request.to_payload())
+    before, after = _ledger(pre_ledger), _ledger(post_ledger)
+    source, source_id, source_lifecycle = _state_evidence(prestate, before)
+    target, target_id, target_lifecycle = _state_evidence(poststate, after)
+    if result.active_model_identity != target["active_model_identity"] or (
+        result.step_index,
+        result.time,
+    ) != (target["step_index"], target["time"]):
+        raise V4IdentityError("result model or clock disagrees with observed state")
+    if (
+        result.active_model_identity.startswith("grcv4-profile-sha256:")
+        and result.active_profile_id != result.active_model_identity
+    ):
+        raise V4IdentityError("generic active profile/model identities disagree")
+    if not result.active_model_identity.startswith("grcv4-profile-sha256:"):
+        raise V4SchemaError(
+            "specialization model/profile binding requires its later owner"
+        )
+    if result.solver_disposition != observed_solver:
+        raise V4IdentityError("result differs from observed solver disposition")
+    if not result.committed:
+        failure = result.failure
+        assert failure is not None
+        if commit_payload is not None:
+            raise V4SchemaError("rejected operation cannot have a commit payload")
+        if (
+            (failure.stage, failure.code) != (observed_stage, observed_code)
+            or failure.failure_receipt.identity_payload.operation_id
+            != request.operation_id
+            or (failure.prestate_digest, failure.poststate_digest)
+            != (source_id, target_id)
+            or (failure.pre_lifecycle_digest, failure.post_lifecycle_digest)
+            != (source_lifecycle, target_lifecycle)
+        ):
+            raise V4IdentityError(
+                "failure is not bound to this operation and observed state"
+            )
+        if (
+            canonical_json_bytes(source) != canonical_json_bytes(target)
+            or before != after
+        ):
+            raise V4IdentityError(
+                "rejected operation changed scientific payload or persistent ledger"
+            )
+        if request.dt < 0 and (observed_stage, observed_code, observed_solver) != (
+            "admission",
+            "invalid_duration",
+            None,
+        ):
+            raise V4IdentityError("negative duration must reject before solving")
+        if request.dt >= 0 and observed_code == "invalid_duration":
+            raise V4IdentityError(
+                "nonnegative request cannot claim negative-duration rejection"
+            )
+    else:
+        if request.dt < 0 or (observed_stage, observed_code, observed_solver) != (
+            "commit",
+            None,
+            "valid_root",
+        ):
+            raise V4SchemaError(
+                "commit requires nonnegative duration and an observed valid root"
+            )
+        commit = _nested_record(commit_payload, CommitPayload).to_payload()
+        payload_identity("commit_payload", commit, expected=result.commit_id)
+        expected = {
+            "schema_version": "grcv4-commit-payload-v1",
+            "operation_id": request.operation_id,
+            "source_state_digest": source_id,
+            "target_state_digest": target_id,
+            "emitted_receipt_ids": [r.receipt_id for r in result.emitted_receipts],
+            "target_step_index": result.step_index,
+            "target_time": result.time,
+        }
+        if canonical_json_bytes(commit) != canonical_json_bytes(expected):
+            raise V4IdentityError(
+                "commit does not name this operation/state/ordered receipt delta"
+            )
+        if after != before + result.emitted_receipts:
+            raise V4IdentityError(
+                "persistent ledger is not prior history plus this operation delta"
+            )
+        for key in (
+            "active_model_identity",
+            "graph_digest",
+            "orientation_identity",
+            "reset_digest",
+            "context_contract_id",
+        ):
+            if source[key] != target[key]:
+                raise V4IdentityError("ordinary step cannot change lifecycle identity")
+        for receipt in result.emitted_receipts:
+            assert isinstance(receipt, SuccessfulReceiptEnvelope)
+            core = cast(dict[str, Any], receipt.identity_payload.to_dict()["core"])
+            for prefix, state, digest in [
+                ("source", source, source_id),
+                ("target", target, target_id),
+            ]:
+                authority_id = payload_identity(
+                    "authoritative_state_identity_payload",
+                    {
+                        "schema_version": "grcv4-authoritative-state-identity-v1",
+                        "authoritative": state["authoritative"],
+                    },
+                )
+                for key, expected_value in {
+                    "state_digest": digest,
+                    "graph_digest": state["graph_digest"],
+                    "model_identity": state["active_model_identity"],
+                    "authoritative_digest": authority_id,
+                    "reset_digest": state["reset_digest"],
+                }.items():
+                    if core[prefix + "_" + key] != expected_value:
+                        raise V4IdentityError(
+                            "receipt core differs from observed state"
+                        )
+            if core["operation_id"] != request.operation_id:
+                raise V4IdentityError("foreign operation receipt")
+        receipts_by_id = {r.receipt_id: r for r in result.emitted_receipts}
+        for event in result.events:
+            payload = event.payload
+            receipt_key = payload.get("receipt_id")
+            event_receipt = (
+                receipts_by_id.get(receipt_key) if type(receipt_key) is str else None
+            )
+            if not isinstance(event_receipt, SuccessfulReceiptEnvelope):
+                raise V4IdentityError("event must name an emitted successful receipt")
+            core = cast(
+                dict[str, Any], event_receipt.identity_payload.to_dict()["core"]
+            )
+            expected_event = {
+                k: core[k]
+                for k in (
+                    "source_graph_digest",
+                    "target_graph_digest",
+                    "source_model_identity",
+                    "target_model_identity",
+                )
+            }
+            expected_event.update(
+                commit_id=result.commit_id,
+                source_profile_id=result.active_profile_id,
+                target_profile_id=result.active_profile_id,
+            )
+            if event.step_index != result.step_index or any(
+                payload.get(k) != v for k, v in expected_event.items()
+            ):
+                raise V4IdentityError(
+                    "event lacks this operation's graph/profile/commit bindings"
+                )
+    return StepResultEvidence(
+        request.to_canonical_bytes(),
+        result.to_canonical_bytes(),
+        canonical_json_bytes(source),
+        canonical_json_bytes(target),
+        canonical_json_bytes([r.to_payload() for r in before]),
+        canonical_json_bytes([r.to_payload() for r in after]),
+    )
+
+
+def negative_duration_result(
+    request: GRCV4StepRequestInput,
+    *,
+    prestate: object,
+    receipt_ledger: object,
+    active_profile_id: str,
+    message: str = "negative duration",
+) -> tuple[GRCV4StepResult, StepResultEvidence]:
+    """Compose the actually executed duration rejection, with no solver or writer.
+
+    Takes captured scientific payload/ledger values, not a live model. Positive
+    and zero requests cannot produce a completed result through this helper.
+    """
+    if type(request) is not GRCV4StepRequestInput:
+        raise TypeError("expected external step input")
+    request = GRCV4StepRequestInput.from_payload(request.to_payload())
+    ledger = _ledger(receipt_ledger)
+    state, state_id, lifecycle_id = _state_evidence(prestate, ledger)
+    receipt = admit_step_request(request, source_state_digest=state_id)
+    if not isinstance(receipt, FailureReceipt):
+        raise V4SchemaError(
+            "nonnegative request still requires full step admission/execution"
+        )
+    failure = GRCV4Failure(
+        "admission",
+        None,
+        "invalid_duration",
+        message,
+        state_id,
+        state_id,
+        lifecycle_id,
+        lifecycle_id,
+        receipt,
+    )
+    result = GRCV4StepResult(
+        state["step_index"],
+        state["time"],
+        (),
+        {},
+        active_profile_id,
+        state["active_model_identity"],
+        "rejected",
+        None,
+        False,
+        None,
+        failure,
+        (receipt,),
+    )
+    evidence = bind_step_result(
+        result,
+        request=request,
+        prestate=state,
+        poststate=state,
+        pre_ledger=ledger,
+        post_ledger=ledger,
+        observed_stage="admission",
+        observed_code="invalid_duration",
+        observed_solver=None,
+    )
+    return result, evidence
+
+
+def admit_step_request(
+    request: GRCV4StepRequestInput,
+    *,
+    source_state_digest: str,
+) -> GRCV4StepRequest | FailureReceipt:
+    """Admit duration only, after transport shape; never run a scientific beat.
+
+    Wrong Python types/forged records raise, not a semantic failure receipt.
+    Source identity is supplied by the lifecycle owner, not authenticated from
+    an unavailable state here. Even dt=0 must continue through later complete
+    state/domain admission. No mutable model or caller callback is consumed.
+    """
+    if type(request) is not GRCV4StepRequestInput:
+        raise TypeError("expected decoded GRCV4StepRequestInput")
+    detached = GRCV4StepRequestInput.from_payload(request.to_payload())
+    # Validate the supplied evidence context even on the positive-duration path.
+    identity = FailureReceiptIdentityPayload(
+        "grcv4-failure-receipt-v1",
+        detached.operation_id,
+        "admission",
+        "invalid_duration",
+        source_state_digest,
+        source_state_digest,
+    )
+    if detached.dt < 0:
+        return FailureReceipt(
+            "grcv4-failure-receipt-envelope-v1",
+            payload_identity("failure_receipt_identity_payload", identity.to_payload()),
+            identity,
+        )
+    payload = detached.to_payload()
+    payload["schema_version"] = "grcv4-step-request-v1"
+    return GRCV4StepRequest.from_payload(payload)

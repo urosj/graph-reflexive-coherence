@@ -1,0 +1,144 @@
+{
+  "schema": "phase9_leaf_execution_v1",
+  "iteration_id": "P9-2.1",
+  "date": "2026-09-06",
+  "branch": "impl/phase-9-grcv4-tranche-2",
+  "base_commit": "82c0dc1325b8688f0cf030e40984385c4f104cc9",
+  "release_id": "grcv4-spec-release-sha256:9f4c8fe5b57b1c477d834a3e4dae3f98a2b18c70e6e7f598e3c9652170c8645f",
+  "entry_authority": {
+    "approval": "implementation/phase-9-grcv4/tranche-1/P9-1.9-G1Acceptance.json",
+    "approval_digest": "cd2c52f30477e1042bb903bd0553da237ddccc9cad373afecc1a84e4e0b37ea2",
+    "required_dependencies": [
+      "P9-G1"
+    ],
+    "user_request": "Create a new branch and start with P9-2.1"
+  },
+  "status": "stress_audit_corrected_and_focused_verification_passed_review_pending",
+  "scope": [
+    "V4-owned recursively immutable value storage",
+    "Read-only common state and result protocols without nominal mutable storage inheritance",
+    "Single lifecycle owner and reduced reset baseline",
+    "Defensive common GRCEvent projections",
+    "Local numeric and authority-coordinate shape checks, not model admission"
+  ],
+  "changed_runtime_paths": [
+    {
+      "path": "src/pygrc/models/grc_v4_state.py",
+      "sha256": "3807293d908e1b092388ce7890763cf107151e90fbd66b0b16f0ecced0eced54"
+    },
+    {
+      "path": "tests/models/test_grc_v4_state.py",
+      "sha256": "c5c0f1ab8cff6626eb11ae0078d873cdc5a420ca24ab090f68569dd5eca58cdb"
+    }
+  ],
+  "source_map": {
+    "primary_specs": [
+      "specs/grc-v4-spec.md#state-and-authority",
+      "specs/grc-common-interface-v4-ext.md#concrete-class-relationships",
+      "specs/grc-common-interface-v4-ext.md#canonical-identity-and-deep-immutability",
+      "specs/grc-common-interface-v4-ext.md#state-and-authority-extension"
+    ],
+    "paper_sections": [
+      "3",
+      "11.1",
+      "12.1"
+    ],
+    "crosswalk_group": "state",
+    "schema_definitions": [
+      "authoritative_state",
+      "grcv4_reset_payload",
+      "scientific_state_payload",
+      "lifecycle_envelope_payload",
+      "step_result"
+    ],
+    "forensic_evidence": "implementation/phase-9-grcv4/evidence/P9-2.1/p921-359d167b2a3a4d7888b7385e55fef42d/run.json"
+  },
+  "verification": {
+    "run_id": "p921-correction-289810563abb4adbb89e6152fb6f0d03",
+    "retained_execution": "implementation/phase-9-grcv4/evidence/P9-2.1/stress-correction/run.json",
+    "focused_tests": 39,
+    "unchanged_core_tests": 105,
+    "ruff": "passed",
+    "strict_mypy": "passed",
+    "exact_value_oracle": "Explicit independent input/expected examples in the bound test source and schema field sets. No production-generated expected values.",
+    "portability": "Repository-relative commands and source refs; test schema lookup is relative to test location. No new dependency. Clean installed-distribution testing remains P9-2.2/P9-2.6.",
+    "normal_verifier": "Not part of this focused execution. Check current authority separately with audit_phase9_implementation.py --boundary-only; no full historical/browser verification is asserted by this record.",
+    "independent_stress": {
+      "required_passed": 511,
+      "required_failed": 0,
+      "advisory_counterexamples": 3,
+      "results": "implementation/phase-9-grcv4/evidence/P9-2.1/stress-correction/actual.json",
+      "local_runner_adjustment": "implementation/phase-9-grcv4/evidence/P9-2.1/stress-correction/inputs.json"
+    },
+    "optional_numpy_adapter_tests": "four methods executed with NumPy 2.4.6; optional with explicit skip if unavailable",
+    "original_run_preserved": {
+      "path": "implementation/phase-9-grcv4/evidence/P9-2.1/p921-359d167b2a3a4d7888b7385e55fef42d/run.json",
+      "sha256": "29d6a0cdc8b098cc880fb06295362bea0e4a011137bb705c30481d4e8323067b",
+      "meaning": "Original 27-test execution, preserved unchanged; not superseded by a new run under old identities."
+    }
+  },
+  "failure_summary": [
+    "Initial test-only mypy diagnostics involved deliberate invalid mutation probes and a reused loop-variable type; explicit typed test helpers corrected them. No production typing suppressions remain.",
+    "Pre-review inspection replaced a V4-only event projection with defensive copies of the unchanged common GRCEvent type. No legacy class was changed.",
+    "Independent audit confirmed two local conversion defects (13 unsafe integral-adapter and 18 wrong-container examples); fixed here without shifting responsibility to later admission. Original audited subjects and results are retained separately.",
+    "New regression tests rejected the original implementation before the fixes. The corrected implementation also exposed one false negative in the independent Q_target probe: reset construction was outside its expected-rejection block. The retained local adjustment moves construction inside that unchanged block."
+  ],
+  "follow_through": [
+    {
+      "id": "P9-REVIEW-FOLLOW-7.2",
+      "disposition": "P9-2.1 portion implemented; graph reuse P9-3.1 and integration verification P9-2.6 remain pending"
+    },
+    {
+      "id": "P9-INTEGRATION-001",
+      "disposition": "Standalone read-only records and common nominal event copies implemented; future facade override sites remain pending"
+    }
+  ],
+  "pending": [
+    "P9-2.2 complete profile/parameter resolution and JCS identities",
+    "P9-2.3 strict wire/semantic admission including full state/profile identity compatibility",
+    "P9-2.4 typed failure/receipt payload admission and operation/solver/ledger semantics",
+    "P9-2.5 runtime conformance harness and numerical reproducibility scope",
+    "P9-2.6 installed distributions and complete common-interface integration",
+    "Later graph/domain/charge/lifecycle reconstruction, model duplication, and complete profile runtime conformance"
+  ],
+  "new_scientific_debt": [],
+  "reviewer_decision": "pending_user_review_not_inferred_from_tests",
+  "accepted_generic_runtime_support": [],
+  "admitted_specialization_support_sets": [],
+  "next_permitted_step": "Review this P9-2.1 result; independent P9-2.2 is already dependency-ready under G1. No dependent P9-2.3 or conformance gate is accepted by this record.",
+  "claim_ceiling": "Immutable-record construction and mutation resistance only; synthetic profile/receipt labels are not authenticated identities or model execution.",
+  "review_inputs": "implementation/phase-9-grcv4/evidence/P9-2.1/stress-audit-inputs/inputs.json",
+  "audit_corrections": [
+    {
+      "id": "R1",
+      "status": "corrected_verified",
+      "change": "Convert Integral adapters exactly to Python int before range check and float conversion; preserve distinct finite-float domain.",
+      "tests": "all coordinate channels, clock/target owners, safe endpoints, unsafe neighbors, signed minimum, unsigned maximum, stdlib and optional NumPy adapters"
+    },
+    {
+      "id": "R2",
+      "status": "corrected_verified",
+      "change": "Require ordered Sequence or one-dimensional native numeric buffer before iteration; reject mapping/set/text/raw bytes and one-shot or untyped iterables.",
+      "tests": "all coordinate channels, custom/empty containers, generator non-consumption, ordered arrays, typed strided/reversed views, dimension and dtype rejection"
+    }
+  ],
+  "advisories": [
+    {
+      "id": "H1",
+      "disposition": "Python equality/hash explicitly nonauthoritative; detached boolean/number type retention tested. Typed/JCS identity remains P9-2.2/P9-2.3.",
+      "three_counterexamples_preserved": true
+    },
+    {
+      "id": "H2",
+      "disposition": "Quadratic wide-map refreezing/equality remains pending; address before wide profile/reference-map consumption in P9-2.2, verify in P9-2.6. No latency-budget claim."
+    },
+    {
+      "id": "dataclass_helpers",
+      "disposition": "asdict/replace are not codec or public update APIs; explicit projections belong to P9-2.2 and later lifecycle owners."
+    },
+    {
+      "id": "reconstruction_hooks",
+      "disposition": "Repeat __init__/__setstate__/pickle are outside ordinary read-only protection and cannot replace admitted decoding."
+    }
+  ]
+}

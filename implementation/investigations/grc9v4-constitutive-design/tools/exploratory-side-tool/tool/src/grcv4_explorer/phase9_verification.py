@@ -74,6 +74,26 @@ def verification_status(repo_root: Path) -> dict:
                 P9_G1_accepted=True,
                 runtime_authority_state="accepted_P9_G1_bounded_implementation_not_conformance",
                 approval_digest=approval["record_digest"],
+                foundation_acceptance={
+                    "record_digest": module.accepted_foundation(root)["record_digest"],
+                    "accepted_iterations": ["P9-2.1", "P9-2.2"],
+                    "path": module.FOUNDATION,
+                },
+                request_acceptance={
+                    "record_digest": module.accepted_requests(root)["record_digest"],
+                    "accepted_iterations": ["P9-2.3"],
+                    "path": module.REQUEST_ACCEPTANCE,
+                },
+                result_acceptance={
+                    "record_digest": module.accepted_results(root)["record_digest"],
+                    "accepted_iterations": ["P9-2.4"],
+                    "path": module.RESULT_ACCEPTANCE,
+                },
+                harness_acceptance={
+                    "record_digest": module.accepted_harness(root)["record_digest"],
+                    "accepted_iterations": ["P9-2.5"],
+                    "path": module.HARNESS_ACCEPTANCE,
+                },
                 implementation_scope=approval["runtime_targets"],
                 dependency_ready_leaves=ready,
                 permitted_runtime_paths=sorted(
@@ -81,7 +101,7 @@ def verification_status(repo_root: Path) -> dict:
                     for r in approval["runtime_targets"]
                     if r["requires_gate"] == "P9-G1" and set(ready) & owners[r["path"]]
                 ),
-                next_gate="P9-2.1 reviewed foundation; P9-G2 and P9-G3 remain pending",
+                next_gate="P9-2.6 foundation integration review; P9-3.1, P9-G2 and P9-G3 remain pending",
                 claim_ceiling="Accepted permission to implement reviewed V4 scope is not executed or accepted runtime conformance.",
             )
         cross = module.read(
@@ -213,6 +233,10 @@ def verification_status(repo_root: Path) -> dict:
         else:
             payload.pop("approval_digest", None)
         payload.pop("dependency_ready_leaves", None)
+        payload.pop("foundation_acceptance", None)
+        payload.pop("request_acceptance", None)
+        payload.pop("result_acceptance", None)
+        payload.pop("harness_acceptance", None)
         payload.pop("permitted_runtime_paths", None)
         payload.pop("source_meaning", None)
         payload.pop("tree", None)
