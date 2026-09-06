@@ -1319,3 +1319,13 @@ clarification adds no acceptance or runtime gate.
 - [x] Project the separate `request_acceptance` in API, notebook and browser;
       reject forged/missing decisions and later-leaf promotion. Keep sixteen
       eligible paths, no lifecycle/facade/harness shortcut and empty support.
+
+### P9-2.5 harness entry
+
+- [x] Bind the P9-2.4 user-accepted commit separately from historical records.
+- [x] Expose `result_acceptance`, five dependency-ready leaves and eighteen
+      eligible paths consistently in API/notebook/browser/export.
+- [x] Add pressure for both P9-2.5 test owners, forged/missing result acceptance,
+      and premature P9-2.6; preserve empty runtime support and frozen authority.
+- [x] Keep bounded prefix execution, independent oracle controls and recorded
+      integrity distinct from profile conformance and parent-lineage claims.

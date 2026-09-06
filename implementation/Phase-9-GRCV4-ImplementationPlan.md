@@ -430,7 +430,9 @@ binds that reviewed commit without changing historical runs. The current
 ownership adapter adds the checklist's P9-2.4 responsibility to the existing
 state and step module/test pairs, omitted from the coarse frozen source-group
 iteration lists. It grants no lifecycle-module, facade or harness ownership.
-P9-2.5 and all runtime conformance gates remain pending.
+The subsequent [P9-2.4 acceptance](./phase-9-grcv4/tranche-2/P9-2.4-AcceptanceRecord.json)
+records the user's commit instruction at `3845c41`. It enables P9-2.5's two
+reviewed test paths; all runtime conformance gates remain pending.
 
 P9-2.4's two-audit follow-up guards original index representations and ordered
 event containers before conversion, accepts revalidated typed or primitive
@@ -441,8 +443,32 @@ The frozen receipt core does not settle parent-reference scope/order. P9-7.6
 must resolve that contract and verify lineage; the current builder/comparator
 does not certify a parent DAG or impose an editorial intra-commit-only rule.
 P9-2.5/P9-4.7a carry the four retained invalid-transition characterizations into
-independent live-operation oracles, not content-matching fixtures. Neither
-later leaf is started by registering this follow-through.
+independent live-operation oracles, not content-matching fixtures.
+
+P9-2.5's [review](./phase-9-grcv4/tranche-2/P9-2.5-Review.md) separates actual
+negative-duration prefix execution from supplied-observation and mutation
+controls. Independent restricted-ASCII identity calculations and rational
+binary64 charge/clock comparisons do not use production algorithms to choose
+expected results. Concrete graph, profile, parameter, K4/Hodge, context, reset,
+live state and ordered ledger payloads accompany exact requests and results.
+The run binds source bytes and environment and can be inspected without a
+rerun. A new run never overwrites an original record.
+
+The four invalid-transition cases now fail independent fixture-clock/zero-time
+controls; they are not yet live numerical-step negatives. P9-4.7a must apply
+them to the actual step. Positive clock progression is an explicitly declared
+fixture convention, not newly invented specification authority. Near-admitted
+conditioning and repeated-eigenvalue projector pressure stay with P9-3.4/
+P9-4.5. Full rollback, profile/domain admission and parent lineage remain open
+under their existing owners. P9-2.6 is not started or unlocked by this work.
+
+The P9-2.5 independent-audit correction narrows only the reference writer's
+fractional identity envelope and the default CLI retention recipe. Malformed
+captures now produce diagnostic-only evidence; failed comparison records are
+rechecked; inspection retains evidence class and non-conformance limits.
+Harness/oracle origin and import-time source hashes are bound without claiming
+bytecode attestation. Original runs are preserved, with separate corrected
+evidence. Production binary64 rules and frozen scientific authority are unchanged.
 
 ### Tranche 3. Typed graph, geometry, transport, and charge
 

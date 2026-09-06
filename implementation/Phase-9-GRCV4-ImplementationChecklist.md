@@ -308,8 +308,10 @@ three bounded batches retain their own results and raw per-run manifests.
   ledger comparisons and a bound negative-duration result. Imported state or
   receipt labels alone cannot substitute for captured payloads and observed
   outcomes. Full numerical execution/rollback and live-state authentication
-  remain later owner tests. Engineering completion, not acceptance of P9-2.4
-  or any runtime profile; P9-2.5 is not started.
+  remain later owner tests. The user's commit instruction accepted this leaf
+  at `3845c41`; see the separate
+  [acceptance](./phase-9-grcv4/tranche-2/P9-2.4-AcceptanceRecord.json).
+  This is not acceptance of any runtime profile.
   Verified 134 foundation tests (22 new result/receipt cases), 875 predecessor
   stress scenarios, 105 legacy core tests, packaging and strict static checks.
   Two-audit correction: original-number validation, ordered event-container
@@ -320,7 +322,7 @@ three bounded batches retain their own results and raw per-run manifests.
   Parent-ID content validation is explicitly not lineage-DAG certification;
   the unresolved parent scope/order contract belongs to P9-7.6, not an invented
   intra-commit-only rule in this leaf. See the review's per-item dispositions.
-- [ ] P9-2.5: Create the runtime harness with independent oracles and exact
+- [x] P9-2.5: Create the runtime harness with independent oracles and exact
   source/profile/fixture/prestate/poststate/receipt evidence bindings.
   Specify environment and exact-byte versus tolerance comparison scope (§7.4).
   Retain exact request independently of receipt identity; test different
@@ -333,6 +335,23 @@ three bounded batches retain their own results and raw per-run manifests.
   observed stage/code/solver independently of the result under test. Account
   for binary64 clock rounding; matching records or a `StepResultEvidence`
   instance certify neither execution nor parent lineage.
+  [Review](./phase-9-grcv4/tranche-2/P9-2.5-Review.md) and
+  [execution](./phase-9-grcv4/tranche-2/P9-2.5-ExecutionRecord.json): engineering
+  harness implemented; user review/acceptance pending. The actual adapter
+  executes only the negative-duration prefix. Independent full-state/ledger/
+  reset and receipt checks, exact-request retention, source/environment
+  bindings, no-overwrite inspection and mutation controls are covered.
+  The four positive/zero transition negatives currently exercise explicit
+  fixture-clock rules, not a live numerical step; P9-4.7a retains that consumer
+  obligation. Numerical conditioning/projectors remain P9-3.4/P9-4.5 work;
+  parent lineage remains P9-7.6 work. No runtime support is promoted.
+  Independent-audit correction: all two required and four advisory items have
+  explicit dispositions in the review. Added regressions narrow the identity
+  oracle (not science), reject mismatched default-CLI recipes, retain malformed
+  capture diagnostics, validate failed reports, and bind checker origins.
+  Inspection keeps evidence classification. Verified 177 foundation/harness
+  tests and 3,337 independent numeric pressure cases; original run bytes and
+  default content identities are preserved. User acceptance remains pending.
 - [ ] P9-2.6: Verify unsupported-profile rejection, deep immutability, and
   unchanged common-interface behavior for older families.
   Verify clean wheel/sdist and optional-extra boundaries (§7.1) and each

@@ -1,0 +1,135 @@
+{
+  "schema": "phase9_iteration_execution_record_v1",
+  "iteration_id": "P9-2.5",
+  "status": "implemented_and_verified_bounded_prefix",
+  "reviewer_decision": "pending_user_review",
+  "release_id": "grcv4-spec-release-sha256:9f4c8fe5b57b1c477d834a3e4dae3f98a2b18c70e6e7f598e3c9652170c8645f",
+  "entry_authority": {
+    "acceptance_record": "implementation/phase-9-grcv4/tranche-2/P9-2.4-AcceptanceRecord.json",
+    "record_digest": "9d2fd4f0bb0445b9b3c46fd6f7e5b0ff710a8a85aceaeabacad44a477ff365a0",
+    "accepted_prerequisites": [
+      "P9-2.4"
+    ],
+    "basis": "User commit instruction accepted P9-2.4; explicit continuation requested P9-2.5."
+  },
+  "verification": {
+    "supporting_run": "implementation/phase-9-grcv4/evidence/P9-2.5/audit-correction/run.json",
+    "prefix_run": "implementation/phase-9-grcv4/evidence/P9-2.5/audit-corrected-prefix/run.json",
+    "foundation_and_harness_tests": 177,
+    "harness_oracle_tests": 32,
+    "added_regression_methods": 8,
+    "numeric_pressure_cases": 3337,
+    "explicit_oracle_domain_exclusions": 1998,
+    "static_checks": "ruff_and_strict_mypy_passed",
+    "scope": "Corrected helper/oracle/retention boundary; exact current providers; no runtime profile conformance."
+  },
+  "artifact_bindings": [
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-2.5/audit-before/actual.json",
+      "sha256": "1327b4c0fdfd8200aa288a44f78dedc08b5942fef10b1147eb7d800c35add63b"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-2.5/audit-corrected-prefix/actual.json",
+      "sha256": "9b2790dd0b7d0676481a02d0a97f386211149dcf3c272e8028cb5362406078a0"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-2.5/audit-corrected-prefix/expected.json",
+      "sha256": "adf8ede32849ac12996db305ea79355e1c127a368be403d750e0a4aa4f4dea9d"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-2.5/audit-corrected-prefix/inputs.json",
+      "sha256": "355e75560284d6d1f4abab8691c99266ddb8f8bafb028c79ef2680d3b8dfb301"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-2.5/audit-corrected-prefix/receipts.json",
+      "sha256": "87ed885b1910d4b71670204fb51e3cc06c4d26e47e204ea1ff8e24152830b625"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-2.5/audit-corrected-prefix/run.json",
+      "sha256": "65c7b8921363e8baff29eb4fe5e2fd5a238f159daeda4fdf4e747e7d6a17b124"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-2.5/audit-correction/actual.json",
+      "sha256": "57420cbfe614534440c4fe690ca359de512d195e921e548a62cd960cfd81b0ce"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-2.5/audit-correction/inputs.json",
+      "sha256": "dec440e98b185f38c19dfc24c6bff3d5189c59c164275a0126d3b529c25b5d58"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-2.5/audit-correction/run.json",
+      "sha256": "915ba9e0511b679533a33dd224b112161a6aa80fdc39ab905033f6948958576e"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-2.5/independent-audit/inputs.json",
+      "sha256": "59e33e7375e21cd344957969e07734abfde0693ca88ea27e0367d3f648a91063"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-2.5/p925-prefix-final/actual.json",
+      "sha256": "9b2790dd0b7d0676481a02d0a97f386211149dcf3c272e8028cb5362406078a0"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-2.5/p925-prefix-final/expected.json",
+      "sha256": "adf8ede32849ac12996db305ea79355e1c127a368be403d750e0a4aa4f4dea9d"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-2.5/p925-prefix-final/inputs.json",
+      "sha256": "355e75560284d6d1f4abab8691c99266ddb8f8bafb028c79ef2680d3b8dfb301"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-2.5/p925-prefix-final/receipts.json",
+      "sha256": "87ed885b1910d4b71670204fb51e3cc06c4d26e47e204ea1ff8e24152830b625"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-2.5/p925-prefix-final/run.json",
+      "sha256": "b5054e390f2e820b82eda783f3abc4d935b0716d3f2f6103ee62268224fc9216"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-2.5/p925-verification/run.json",
+      "sha256": "bb1ae6af8022633c28ae90200176ece89381e53183b041aae2f5737b3867babc"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-2.5/pre-audit-subject/inputs.json",
+      "sha256": "647fd3c2ad10b3ded8cdf930b0238504fae5543db31aaedf60ef39501f0c4c4b"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-2/P9-2.5-Review.md",
+      "sha256": "72fc3c66b053906a1cfcde3c550981a624d93b29a78700925bbb73e39fb50bff"
+    },
+    {
+      "path": "tests/models/grcv4_conformance_harness.py",
+      "sha256": "15ee128da66dd25f6e028cf601f4de1047bee8812d51f83391a3f7adda3c7e89"
+    },
+    {
+      "path": "tests/models/grcv4_reference_oracles.py",
+      "sha256": "b973babbca55854f2b2a9f629b4b914cf767627533b26460013c8b9cfa611ea4"
+    }
+  ],
+  "accepted_generic_runtime_support": [],
+  "admitted_specialization_support_sets": [],
+  "parent_lineage_validated": false,
+  "remaining_obligations": [
+    {
+      "owner": "P9-4.7a",
+      "obligation": "Bind independently observed complete-step outcomes and actual rollback; reject the four retained invalid transitions against a live operation and accepted clock convention."
+    },
+    {
+      "owner": "P9-3.4/P9-4.5",
+      "obligation": "Execute near-admitted conditioning and repeated-eigenvalue invariant-projector pressure against real numerical implementations; no hidden repair."
+    },
+    {
+      "owner": "P9-7.6",
+      "obligation": "Resolve accepted parent-reference scope/order and verify existence/ordering/acyclicity without inventing an intra-commit-only rule."
+    }
+  ],
+  "next_step": "P9-2.6 after P9-2.5 user acceptance; not started.",
+  "audit_followup": {
+    "input": "implementation/phase-9-grcv4/evidence/P9-2.5/independent-audit/inputs.json",
+    "pre_audit_subject": "implementation/phase-9-grcv4/evidence/P9-2.5/pre-audit-subject/inputs.json",
+    "before": "implementation/phase-9-grcv4/evidence/P9-2.5/audit-before/actual.json",
+    "corrected": "implementation/phase-9-grcv4/evidence/P9-2.5/audit-correction/actual.json",
+    "original_prefix": "implementation/phase-9-grcv4/evidence/P9-2.5/p925-prefix-final/run.json",
+    "original_verification": "implementation/phase-9-grcv4/evidence/P9-2.5/p925-verification/run.json",
+    "required_and_advisory_dispositions": "All six addressed in P9-2.5-Review.md; original run files preserved; helper provenance is not bytecode attestation."
+  }
+}

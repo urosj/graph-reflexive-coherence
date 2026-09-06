@@ -54,6 +54,8 @@ FOUNDATION = PHASE + "tranche-2/P9-2.1-2.2-AcceptanceRecord.json"
 FOUNDATION_DIGEST = "1e3f0ddb06b119fa46dc7609d05b7db0c3a4cbc07428c05b8a032da081ae9dd4"
 REQUEST_ACCEPTANCE = PHASE + "tranche-2/P9-2.3-AcceptanceRecord.json"
 REQUEST_ACCEPTANCE_DIGEST = "ac07a2f7c93538454d9663aba78ca0eb5af385d7975582e4c21682f41ce4c17f"
+RESULT_ACCEPTANCE = PHASE + "tranche-2/P9-2.4-AcceptanceRecord.json"
+RESULT_ACCEPTANCE_DIGEST = "9d2fd4f0bb0445b9b3c46fd6f7e5b0ff710a8a85aceaeabacad44a477ff365a0"
 GENERATED = SIDE + "tool/generated/phase9-verification/"
 REPORT_SCHEMA = "phase9_G1_pressure_results_v1"
 REPORT_FILE = "g1-pressure-results.json"
@@ -88,6 +90,7 @@ PATHS = {
     WORK,
     FOUNDATION,
     REQUEST_ACCEPTANCE,
+    RESULT_ACCEPTANCE,
     HERE + "phase9_implementation_policy.py",
     HERE + "audit_phase9_implementation.py",
     HERE + "test_phase9_g1.py",
@@ -334,10 +337,31 @@ def accepted_requests(root):
     return value
 
 
+def accepted_results(root):
+    """Committed user acceptance, not an inferred passing-harness decision."""
+    value = read(safe_path(root, RESULT_ACCEPTANCE))
+    require(value["record_digest"] == digest_record(value) == RESULT_ACCEPTANCE_DIGEST,
+            "untrusted result acceptance")
+    require(value["schema"] == "phase9_result_foundation_acceptance_v1"
+            and value["status"] == "accepted_by_user"
+            and value["release_id"] == prior.RELEASE_ID
+            and value["predecessor_record_digest"] == REQUEST_ACCEPTANCE_DIGEST
+            and value["accepted_iterations"] == ["P9-2.4"]
+            and value["accepted_generic_runtime_support"] == []
+            and value["admitted_specialization_support_sets"] == [],
+            "invalid result acceptance scope")
+    prior.ancestor(root, value["baseline_commit"])
+    for row in value["evidence_bindings"]:
+        require(sha(git(root, "show", f"{value['baseline_commit']}:{row['path']}"))
+                == row["sha256"], "accepted result subject changed")
+    return value
+
+
 def leaf_permissions(root):
     """Readiness from accepted dependencies, never inferred from completion."""
     accepted = {"P9-G1", *accepted_foundation(root)["accepted_iterations"],
-                *accepted_requests(root)["accepted_iterations"]}
+                *accepted_requests(root)["accepted_iterations"],
+                *accepted_results(root)["accepted_iterations"]}
     support = read(
         safe_path(root, PHASE + "tranche-1/P9-1.4-SupportAndDependencies.json")
     )

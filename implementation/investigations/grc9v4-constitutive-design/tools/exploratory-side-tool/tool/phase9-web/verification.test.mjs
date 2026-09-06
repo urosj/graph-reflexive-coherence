@@ -40,12 +40,13 @@ function accepted(extra={}) {
     implementation_scope:Array.from({length:43},(_,i)=>({path:`synthetic/${i}`})),
     foundation_acceptance:{record_digest:'1e3f0ddb06b119fa46dc7609d05b7db0c3a4cbc07428c05b8a032da081ae9dd4',accepted_iterations:['P9-2.1','P9-2.2']},
     request_acceptance:{record_digest:'ac07a2f7c93538454d9663aba78ca0eb5af385d7975582e4c21682f41ce4c17f',accepted_iterations:['P9-2.3']},
-    dependency_ready_leaves:['P9-2.1','P9-2.2','P9-2.3','P9-2.4'],permitted_runtime_paths:[...Array.from({length:15},(_,i)=>`synthetic/${i}`),'pyproject.toml'],
+    result_acceptance:{record_digest:'9d2fd4f0bb0445b9b3c46fd6f7e5b0ff710a8a85aceaeabacad44a477ff365a0',accepted_iterations:['P9-2.4']},
+    dependency_ready_leaves:['P9-2.1','P9-2.2','P9-2.3','P9-2.4','P9-2.5'],permitted_runtime_paths:[...Array.from({length:15},(_,i)=>`synthetic/${i}`),'pyproject.toml','tests/models/grcv4_conformance_harness.py','tests/models/grcv4_reference_oracles.py'],
     iterations:[4,5,6,7,8,9].map(i=>({iteration_id:`P9-1.${i}`,status:'implemented_and_verified',reviewer_decision:'accepted_by_user'})),...extra});
 }
 test('accepted G1 permission does not imply accepted profile support',async()=>{
   assert.equal((await verifiedStatus(accepted())).P9_G1_accepted,true);
-  const missingPackage=accepted({permitted_runtime_paths:Array.from({length:16},(_,i)=>`synthetic/${i}`)});
+  const missingPackage=accepted({permitted_runtime_paths:Array.from({length:18},(_,i)=>`synthetic/${i}`)});
   assert.throws(()=>checkedStatus(missingPackage),/dependency-ready/);
   const prematureExport=accepted();
   prematureExport.permitted_runtime_paths[0]='src/pygrc/models/__init__.py';
@@ -69,7 +70,7 @@ test('missing and invalid handoff evidence do not change accepted permission',as
 
 test('current work can be held while historical acceptance remains verified',async()=>{
   const value=accepted({current_boundary:'failed_closed',runtime_authorized:false,runtime_authority_state:'accepted_P9_G1_current_work_held'});
-  for(const key of ['implementation_scope','dependency_ready_leaves','permitted_runtime_paths','foundation_acceptance','request_acceptance','status_digest']) delete value[key];
+  for(const key of ['implementation_scope','dependency_ready_leaves','permitted_runtime_paths','foundation_acceptance','request_acceptance','result_acceptance','status_digest']) delete value[key];
   value.status_digest=createHash('sha256').update(canonical(value)).digest('hex');
   assert.equal((await verifiedStatus(value)).P9_G1_accepted,true);
   assert.equal(value.runtime_authorized,false);
@@ -81,10 +82,18 @@ test('committed foundation acceptance does not accept request work or conformanc
     {record_digest:'0'.repeat(64),accepted_iterations:['P9-2.1','P9-2.2']},
     {record_digest:'1e3f0ddb06b119fa46dc7609d05b7db0c3a4cbc07428c05b8a032da081ae9dd4',accepted_iterations:['P9-2.1','P9-2.2','P9-2.3']}])
     assert.throws(()=>checkedStatus(accepted({foundation_acceptance})),/foundation/);
-  assert.throws(()=>checkedStatus(accepted({dependency_ready_leaves:['P9-2.1','P9-2.2','P9-2.3','P9-2.4','P9-2.5']})),/dependency-ready/);
+  assert.throws(()=>checkedStatus(accepted({dependency_ready_leaves:['P9-2.1','P9-2.2','P9-2.3','P9-2.4','P9-2.5','P9-2.6']})),/dependency-ready/);
 });
 
  test('request acceptance cannot be missing or promote result work',()=>{
    for (const request_acceptance of [undefined,{}, {record_digest:'ac07a2f7c93538454d9663aba78ca0eb5af385d7975582e4c21682f41ce4c17f',accepted_iterations:['P9-2.3','P9-2.4']}])
      assert.throws(()=>checkedStatus(accepted({request_acceptance})),/accepted requests/);
  });
+
+test('result acceptance cannot be missing or accept harness work',()=>{
+  for(const result_acceptance of [undefined,{}, {record_digest:'9d2fd4f0bb0445b9b3c46fd6f7e5b0ff710a8a85aceaeabacad44a477ff365a0',accepted_iterations:['P9-2.4','P9-2.5']}])
+    assert.throws(()=>checkedStatus(accepted({result_acceptance})),/accepted results/);
+  const missingHarness=accepted();
+  missingHarness.permitted_runtime_paths[16]='synthetic/no-harness';
+  assert.throws(()=>checkedStatus(missingHarness),/dependency-ready/);
+});

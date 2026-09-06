@@ -1567,6 +1567,15 @@ fixtures start from the accepted request commit, with the older G1 source
 baseline still frozen. A work manifest or rehashed acceptance cannot promote
 unfinished leaves or profiles.
 
+#### P9-2.5 harness entry
+
+The separately recorded P9-2.4 commit acceptance enables P9-2.5, with eighteen
+owned runtime/test paths. API, notebook, browser and export expose
+`result_acceptance`; missing/forged acceptance and premature P9-2.6 remain
+fail-closed. Pressure fixtures start from the accepted result commit; the G1
+source baseline and prior execution records remain frozen. Harness passes are
+bounded engineering evidence, not profile support or accepted parent lineage.
+
 ## Verification Strategy
 
 ### Kernel and adapter tests

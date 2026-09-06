@@ -1,0 +1,58 @@
+{
+  "scope": "Current .venv, actual repository providers and packaged schema; Node is not substituted for production rfc8785.",
+  "node_version": "v22.23.2",
+  "node_path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/.tooling/node/v22.23.2/bin/node",
+  "node_script": "let s='';process.stdin.on('data',x=>s+=x);process.stdin.on('end',()=>process.stdout.write(JSON.stringify(JSON.parse(s).map(x=>JSON.stringify(x)))));",
+  "numeric_cases": 3337,
+  "passed": 3337,
+  "canonical_matches": 1339,
+  "explicit_oracle_domain_rejections": 1998,
+  "default_content_hashes_unchanged": {
+    "inputs.json": "355e75560284d6d1f4abab8691c99266ddb8f8bafb028c79ef2680d3b8dfb301",
+    "expected.json": "adf8ede32849ac12996db305ea79355e1c127a368be403d750e0a4aa4f4dea9d",
+    "actual.json": "9b2790dd0b7d0676481a02d0a97f386211149dcf3c272e8028cb5362406078a0",
+    "receipts.json": "87ed885b1910d4b71670204fb51e3cc06c4d26e47e204ea1ff8e24152830b625"
+  },
+  "malformed_capture_samples": [
+    {
+      "label": "nan",
+      "schema": "p925_harness_observation_failure_v1",
+      "evidence_class": "harness_mutation_control",
+      "valid_prestate_preserved": true,
+      "independent_expectation_preserved": true,
+      "diagnostic": {
+        "diagnostics": [
+          {
+            "code": "invalid_float",
+            "field_path": "$.poststate[\"authoritative\"][\"C\"][0]",
+            "representation": "nan",
+            "stage": "admission",
+            "type": "float"
+          }
+        ],
+        "kind": "capture"
+      }
+    },
+    {
+      "label": "cycle",
+      "schema": "p925_harness_observation_failure_v1",
+      "evidence_class": "harness_mutation_control",
+      "valid_prestate_preserved": true,
+      "independent_expectation_preserved": true,
+      "diagnostic": {
+        "diagnostics": [
+          {
+            "code": "cyclic_container",
+            "field_path": "$.poststate[\"authoritative\"][\"C\"][0][0]",
+            "representation": "<cycle>",
+            "stage": "admission",
+            "type": "list"
+          }
+        ],
+        "kind": "capture"
+      }
+    }
+  ],
+  "runtime_profile_conformance": false,
+  "parent_lineage_validated": false
+}
