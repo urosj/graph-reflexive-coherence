@@ -1,0 +1,1031 @@
+{
+  "schema": "phase9_profile_identity_run_v1",
+  "run_id": "p922-49c1ad11e2e2474abcb74d1cb851cbf8",
+  "inputs": [
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/drafts/2026-09-GRC-V4.md",
+      "sha256": "2da39c3bb0d102804f9135384317771f3fe1b3e48df3b4ab1813a3575642a739"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-1/P9-1.1-SourceCrosswalk.json",
+      "sha256": "85fe7204f5a40e3ffa502fce33519000adb443ba6480cb85e0d6ee4155893ede"
+    },
+    {
+      "path": "pyproject.toml",
+      "sha256": "343407a945a7bd41407f821ec81a3dee68cf5e8a0f2413b1e6938a722f9c393c"
+    },
+    {
+      "path": "specs/grc-common-interface-v4-ext.md",
+      "sha256": "7d5be95242619fcaaae7ea5d8e950b3f335efe9a81492e67e6baa91c4643bc26"
+    },
+    {
+      "path": "specs/grc-v4-conformance-vectors.json",
+      "sha256": "ab12e2ffe02e9a9267eca9bdc3ca9361c0cf973cb87917d0eb090d3d68654ce4"
+    },
+    {
+      "path": "specs/grc-v4-contract-schema.json",
+      "sha256": "3fd072fc8c2b315f1b5dc32a4e4821a5082b5f3fc9d9a4794c007419a7aa0bea"
+    },
+    {
+      "path": "specs/grc-v4-spec.md",
+      "sha256": "8681e14bf229959183f772c547a6ba17e0cc60c264dad9a1975be147d12168ea"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_assets/__init__.py",
+      "sha256": "a1f3aba168a9f9331d1fc9580d5055404f8bc4c705936c7e388e7a47f80a0051"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_assets/asset-index.json",
+      "sha256": "c1ac9d8d3bb924f29b775bd9863a33a454da41e98c57ef0b8bb3c24171fafc9f"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_assets/grc-v4-contract-schema.json",
+      "sha256": "3fd072fc8c2b315f1b5dc32a4e4821a5082b5f3fc9d9a4794c007419a7aa0bea"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_assets/grc-v4-specification-release.json",
+      "sha256": "bba0bb649bc2e80c5bfa99f96bd5824bbdda3b3fbc87fb68c3e3a59da1cee46b"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_assets/grc-v4-specification-release.sha256",
+      "sha256": "50b20509b84a6b21f3036ecb1d7e13861f662bc8319873c5321fc0317ada7e33"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_codec.py",
+      "sha256": "69ecfe7672b9ce89cd81e9e76b1e3bb5d71765bf2d7f0fda694313fcd8716a3e"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_profile.py",
+      "sha256": "95d60b56f4bdefd8b613d058c64f631b5530fb041d650dce97f3d2abdba82260"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_state.py",
+      "sha256": "58f2c73ba9b936dbc144f95e4f2171277031ee6ac9fb39aa69d8941c87f8f8a5"
+    },
+    {
+      "path": "tests/models/test_grc_v4_codec.py",
+      "sha256": "0bd1988d852e36a1276a332ea29a1deb1a6990a422227fc19304c5d12bc07043"
+    },
+    {
+      "path": "tests/models/test_grc_v4_profile.py",
+      "sha256": "126fc8c8c58e2407ce801a800dd9270b05bc3c55ca9c883d48024f0f4b9e6866"
+    },
+    {
+      "path": "tests/models/test_grc_v4_state.py",
+      "sha256": "c5c0f1ab8cff6626eb11ae0078d873cdc5a420ca24ab090f68569dd5eca58cdb"
+    }
+  ],
+  "environment": {
+    "python": "3.12.3",
+    "platform": "Linux-x86_64",
+    "dependencies": {
+      "rfc8785": "0.1.4",
+      "jsonschema": "4.26.0",
+      "attrs": "26.1.0",
+      "referencing": "0.37.0",
+      "rpds-py": "2026.6.3",
+      "jsonschema-specifications": "2025.9.1",
+      "build": "1.6.0",
+      "setuptools": "84.0.0",
+      "wheel": "0.48.0",
+      "pip": "24.0",
+      "mypy": "2.1.0",
+      "ruff": "0.15.16",
+      "numpy": "2.4.6"
+    }
+  },
+  "distribution_dependency_wheels": [
+    {
+      "name": "asttokens-3.0.2-py3-none-any.whl",
+      "sha256": "9da13157f5b28becde0bd374fc677dcd3c290614264eff096f167c469cd9f933"
+    },
+    {
+      "name": "attrs-26.1.0-py3-none-any.whl",
+      "sha256": "c647aa4a12dfbad9333ca4e71fe62ddc36f4e63b2d260a37a8b83d2f043ac309"
+    },
+    {
+      "name": "contourpy-1.3.3-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+      "sha256": "4d00e655fcef08aba35ec9610536bfe90267d7ab5ba944f7032549c55a146da1"
+    },
+    {
+      "name": "cycler-0.12.1-py3-none-any.whl",
+      "sha256": "85cef7cff222d8644161529808465972e51340599459b8ac3ccbac5a854e0d30"
+    },
+    {
+      "name": "executing-2.2.1-py2.py3-none-any.whl",
+      "sha256": "760643d3452b4d777d295bb167ccc74c64a81df23fb5e08eff250c425a4b2017"
+    },
+    {
+      "name": "fonttools-4.64.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+      "sha256": "66a83f93579fb3493e458c4449d1d566a7b2a1c7b19915cd0fa3c9b8b5a8540b"
+    },
+    {
+      "name": "ipython-9.17.1-py3-none-any.whl",
+      "sha256": "6d1645743cfd1a07eb695d85aa2b5fa66721f8cbae9431d4049f7084bbf06509"
+    },
+    {
+      "name": "ipython_pygments_lexers-1.1.1-py3-none-any.whl",
+      "sha256": "a9462224a505ade19a605f71f8fa63c2048833ce50abc86768a0d81d876dc81c"
+    },
+    {
+      "name": "jedi-0.20.0-py2.py3-none-any.whl",
+      "sha256": "7bdd9c2634f56713299976f4cbd59cb3fa92165cc5e05ea811fb253480728b67"
+    },
+    {
+      "name": "jinja2-3.1.6-py3-none-any.whl",
+      "sha256": "85ece4451f492d0c13c5dd7c13a64681a86afae63a5f347908daf103ce6d2f67"
+    },
+    {
+      "name": "jsonpickle-4.1.2-py3-none-any.whl",
+      "sha256": "7ffe34426bc797684dbf1dc84185558bd864cd25b1ff5fb01b7405e392d0a937"
+    },
+    {
+      "name": "jsonschema-4.26.0-py3-none-any.whl",
+      "sha256": "d489f15263b8d200f8387e64b4c3a75f06629559fb73deb8fdfb525f2dab50ce"
+    },
+    {
+      "name": "jsonschema_specifications-2025.9.1-py3-none-any.whl",
+      "sha256": "98802fee3a11ee76ecaca44429fda8a41bff98b00a0f2838151b113f210cc6fe"
+    },
+    {
+      "name": "kiwisolver-1.5.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+      "sha256": "34633ecf50d16187ab8e5528b7a2530f2feb4e23f300db4672538b51cfc5cd38"
+    },
+    {
+      "name": "markupsafe-3.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+      "sha256": "d6dd0be5b5b189d31db7cda48b91d7e0a9795f31430b7f271219ab30f1d3ac9d"
+    },
+    {
+      "name": "matplotlib-3.11.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+      "sha256": "ba8f811b8ddfac493734d6af0b2dff96919d0c28ca0d641858dab4262777c6ea"
+    },
+    {
+      "name": "matplotlib_inline-0.2.2-py3-none-any.whl",
+      "sha256": "3c821cf1c209f59fb2d2d64abbf5b23b67bcb2210d663f9918dd851c6da1fcf6"
+    },
+    {
+      "name": "networkx-3.6.1-py3-none-any.whl",
+      "sha256": "d47fbf302e7d9cbbb9e2555a0d267983d2aa476bac30e90dfbe5669bd57f3762"
+    },
+    {
+      "name": "numpy-2.5.2-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+      "sha256": "3cdec01fa790a186d430433fdd4d4ffb70eed6f0eeb4bf05c8dbe2dce0a9bcb8"
+    },
+    {
+      "name": "packaging-26.3-py3-none-any.whl",
+      "sha256": "d7193f7c8e4e93f444fde0262bf90af30e16fa0ad0ad44cb553c87339b23cd1c"
+    },
+    {
+      "name": "parso-0.8.7-py2.py3-none-any.whl",
+      "sha256": "a8926eb2a1b915486941fdbd31e86a4baf88fe8c210f25f2f35ecec5b574ca1c"
+    },
+    {
+      "name": "pexpect-4.9.0-py2.py3-none-any.whl",
+      "sha256": "7236d1e080e4936be2dc3e326cec0af72acf9212a7e1d060210e70a47e253523"
+    },
+    {
+      "name": "pillow-12.3.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+      "sha256": "78cb2c6865a35ab8ff8b75fd122f6033b92a62c82801110e48ddd6c936a45d91"
+    },
+    {
+      "name": "prompt_toolkit-3.0.53-py3-none-any.whl",
+      "sha256": "01c0891d7f9237d5e339f7d3e42cdae80b7534abb1c7c0e3352efba6231492f2"
+    },
+    {
+      "name": "psutil-7.2.2-cp36-abi3-manylinux2010_x86_64.manylinux_2_12_x86_64.manylinux_2_28_x86_64.whl",
+      "sha256": "076a2d2f923fd4821644f5ba89f059523da90dc9014e85f8e45a5774ca5bc6f9"
+    },
+    {
+      "name": "ptyprocess-0.7.0-py2.py3-none-any.whl",
+      "sha256": "4b41f3967fce3af57cc7e94b888626c18bf37a083e3651ca8feeb66d492fef35"
+    },
+    {
+      "name": "pure_eval-0.2.3-py3-none-any.whl",
+      "sha256": "1db8e35b67b3d218d818ae653e27f06c3aa420901fa7b081ca98cbedc874e0d0"
+    },
+    {
+      "name": "pygments-2.21.0-py3-none-any.whl",
+      "sha256": "2363c69b61c4a97c838da3b130dcd6468f4848992b21a82f2a63ec34377137d9"
+    },
+    {
+      "name": "pyparsing-3.3.2-py3-none-any.whl",
+      "sha256": "850ba148bd908d7e2411587e247a1e4f0327839c40e2e5e6d05a007ecc69911d"
+    },
+    {
+      "name": "python_dateutil-2.9.0.post0-py2.py3-none-any.whl",
+      "sha256": "a8b2bc7bffae282281c8140a97d3aa9c14da0b136dfe83f850eea9a5f7470427"
+    },
+    {
+      "name": "pyvis-0.3.2-py3-none-any.whl",
+      "sha256": "5720c4ca8161dc5d9ab352015723abb7a8bb8fb443edeb07f7a322db34a97555"
+    },
+    {
+      "name": "pyyaml-6.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+      "sha256": "ba1cc08a7ccde2d2ec775841541641e4548226580ab850948cbfda66a1befcdc"
+    },
+    {
+      "name": "referencing-0.37.0-py3-none-any.whl",
+      "sha256": "381329a9f99628c9069361716891d34ad94af76e461dcb0335825aecc7692231"
+    },
+    {
+      "name": "rfc8785-0.1.4-py3-none-any.whl",
+      "sha256": "520d690b448ecf0703691c76e1a34a24ddcd4fc5bc41d589cb7c58ec651bcd48"
+    },
+    {
+      "name": "rpds_py-2026.6.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+      "sha256": "ecabd69db66de867690f9797f2f8fa27ba501bbc24540cbdbdc649cd15888ba6"
+    },
+    {
+      "name": "setuptools-84.0.0-py3-none-any.whl",
+      "sha256": "51a52592b3b99e102b609654876bd65f19f999935166d1352678931132b0c670"
+    },
+    {
+      "name": "six-1.17.0-py2.py3-none-any.whl",
+      "sha256": "4721f391ed90541fddacab5acf947aa0d3dc7d27b2e1e8eda2be8970586c3274"
+    },
+    {
+      "name": "stack_data-0.6.3-py3-none-any.whl",
+      "sha256": "d5558e0c25a4cb0853cddad3d77da9891a08cb85dd9f9f91b9f8cd66e511e695"
+    },
+    {
+      "name": "traitlets-5.16.1-py3-none-any.whl",
+      "sha256": "f775618166caa0396c8e337099240f2bd3e5e917d203b2e6fbe21a58d3cb1f6b"
+    },
+    {
+      "name": "typing_extensions-4.16.0-py3-none-any.whl",
+      "sha256": "481caa481374e813c1b176ada14e97f1f67a4539ce9cfeb3f350d78d6370c2e8"
+    },
+    {
+      "name": "wcwidth-0.8.3-py3-none-any.whl",
+      "sha256": "d5b73dba6158a595ec9370350e7f2637bcac8d6c5e4fde34f30fcffb6103a5e4"
+    },
+    {
+      "name": "wheel-0.48.0-py3-none-any.whl",
+      "sha256": "3217dcc807155e45db462d7ef2431f5ddda0d7273b700d05a67b271ceb1287ab"
+    }
+  ],
+  "iteration_id": "P9-2.2",
+  "subject_scope": "Exact runtime/test/vector/asset inputs; focused verification, not acceptance or full-chain verification.",
+  "release_id": "grcv4-spec-release-sha256:9f4c8fe5b57b1c477d834a3e4dae3f98a2b18c70e6e7f598e3c9652170c8645f",
+  "commands": [
+    {
+      "command": ".venv/bin/python -m unittest tests.models.test_grc_v4_state tests.models.test_grc_v4_codec.CodecTests tests.models.test_grc_v4_profile -v",
+      "exit_code": 0,
+      "combined_output": "test_all_ten_coordinate_shapes_without_advertising_profiles (tests.models.test_grc_v4_state.AuthorityTests.test_all_ten_coordinate_shapes_without_advertising_profiles) ... ok\ntest_array_inputs_detached_in_all_channels (tests.models.test_grc_v4_state.AuthorityTests.test_array_inputs_detached_in_all_channels) ... ok\ntest_authority_does_not_acquire_derived_state (tests.models.test_grc_v4_state.AuthorityTests.test_authority_does_not_acquire_derived_state) ... ok\ntest_invalid_numeric_authority_rejected (tests.models.test_grc_v4_state.AuthorityTests.test_invalid_numeric_authority_rejected) ... ok\ntest_schema_agrees_with_authoritative_and_reset_field_sets (tests.models.test_grc_v4_state.AuthorityTests.test_schema_agrees_with_authoritative_and_reset_field_sets) ... ok\ntest_wrong_current_or_reset_coordinate_shapes_rejected (tests.models.test_grc_v4_state.AuthorityTests.test_wrong_current_or_reset_coordinate_shapes_rejected) ... ok\ntest_boolean_number_types_survive_for_later_identity_validation (tests.models.test_grc_v4_state.FrozenJSONTests.test_boolean_number_types_survive_for_later_identity_validation) ... ok\ntest_cycles_rejected_but_shared_acyclic_values_copied (tests.models.test_grc_v4_state.FrozenJSONTests.test_cycles_rejected_but_shared_acyclic_values_copied) ... ok\ntest_deep_input_and_output_independence (tests.models.test_grc_v4_state.FrozenJSONTests.test_deep_input_and_output_independence) ... ok\ntest_nested_public_and_backing_mutation_rejected (tests.models.test_grc_v4_state.FrozenJSONTests.test_nested_public_and_backing_mutation_rejected) ... ok\ntest_non_json_payloads_rejected (tests.models.test_grc_v4_state.FrozenJSONTests.test_non_json_payloads_rejected) ... ok\ntest_numeric_and_unicode_boundaries (tests.models.test_grc_v4_state.FrozenJSONTests.test_numeric_and_unicode_boundaries) ... ok\ntest_order_independent_mapping_equality_and_hash (tests.models.test_grc_v4_state.FrozenJSONTests.test_order_independent_mapping_equality_and_hash) ... ok\ntest_proxy_cannot_retain_its_writable_backing (tests.models.test_grc_v4_state.FrozenJSONTests.test_proxy_cannot_retain_its_writable_backing) ... ok\ntest_common_state_projection_has_no_duplicate_storage (tests.models.test_grc_v4_state.LifecycleOwnershipTests.test_common_state_projection_has_no_duplicate_storage) ... ok\ntest_duplicate_values_do_not_reintroduce_writable_aliases (tests.models.test_grc_v4_state.LifecycleOwnershipTests.test_duplicate_values_do_not_reintroduce_writable_aliases) ... ok\ntest_invalid_clock_and_context_mismatches_rejected (tests.models.test_grc_v4_state.LifecycleOwnershipTests.test_invalid_clock_and_context_mismatches_rejected) ... ok\ntest_missing_profile_payloads_and_unknown_shapes_rejected (tests.models.test_grc_v4_state.LifecycleOwnershipTests.test_missing_profile_payloads_and_unknown_shapes_rejected) ... ok\ntest_nested_graph_profile_and_receipt_inputs_detached (tests.models.test_grc_v4_state.LifecycleOwnershipTests.test_nested_graph_profile_and_receipt_inputs_detached) ... ok\ntest_reset_is_reduced_and_distinct_from_live_state (tests.models.test_grc_v4_state.LifecycleOwnershipTests.test_reset_is_reduced_and_distinct_from_live_state) ... ok\ntest_finite_float_domain_not_replaced_by_integer_domain (tests.models.test_grc_v4_state.NumericInputBoundaryTests.test_finite_float_domain_not_replaced_by_integer_domain) ... ok\ntest_integral_adapters_guard_before_abs_or_float (tests.models.test_grc_v4_state.NumericInputBoundaryTests.test_integral_adapters_guard_before_abs_or_float) ... ok\ntest_multidimensional_or_nonnumeric_buffers_reject (tests.models.test_grc_v4_state.NumericInputBoundaryTests.test_multidimensional_or_nonnumeric_buffers_reject) ... ok\ntest_one_shot_and_untyped_iterables_reject_without_consumption (tests.models.test_grc_v4_state.NumericInputBoundaryTests.test_one_shot_and_untyped_iterables_reject_without_consumption) ... ok\ntest_ordered_sequences_and_typed_views_remain_supported (tests.models.test_grc_v4_state.NumericInputBoundaryTests.test_ordered_sequences_and_typed_views_remain_supported) ... ok\ntest_safe_integral_adapters_preserve_exact_value (tests.models.test_grc_v4_state.NumericInputBoundaryTests.test_safe_integral_adapters_preserve_exact_value) ... ok\ntest_unordered_mapping_and_raw_byte_containers_reject (tests.models.test_grc_v4_state.NumericInputBoundaryTests.test_unordered_mapping_and_raw_byte_containers_reject) ... ok\ntest_integral_scalar_targets_and_clocks (tests.models.test_grc_v4_state.OptionalNumpyInputBoundaryTests.test_integral_scalar_targets_and_clocks) ... ok\ntest_numpy_views_detach_without_flattening_or_dtype_coercion (tests.models.test_grc_v4_state.OptionalNumpyInputBoundaryTests.test_numpy_views_detach_without_flattening_or_dtype_coercion) ... ok\ntest_signed_unsigned_safe_endpoints_and_bool_distinction (tests.models.test_grc_v4_state.OptionalNumpyInputBoundaryTests.test_signed_unsigned_safe_endpoints_and_bool_distinction) ... ok\ntest_signed_unsigned_unsafe_scalars_in_every_coordinate (tests.models.test_grc_v4_state.OptionalNumpyInputBoundaryTests.test_signed_unsigned_unsafe_scalars_in_every_coordinate) ... ok\ntest_charge_rejection_does_not_erase_valid_solver_disposition (tests.models.test_grc_v4_state.ResultOwnershipTests.test_charge_rejection_does_not_erase_valid_solver_disposition) ... ok\ntest_common_result_projection_and_schema_fields (tests.models.test_grc_v4_state.ResultOwnershipTests.test_common_result_projection_and_schema_fields) ... ok\ntest_failure_and_receipt_payloads_detached (tests.models.test_grc_v4_state.ResultOwnershipTests.test_failure_and_receipt_payloads_detached) ... ok\ntest_inconsistent_step_result_shapes_rejected (tests.models.test_grc_v4_state.ResultOwnershipTests.test_inconsistent_step_result_shapes_rejected) ... ok\ntest_legacy_event_and_nested_payload_detached_in_both_directions (tests.models.test_grc_v4_state.ResultOwnershipTests.test_legacy_event_and_nested_payload_detached_in_both_directions) ... ok\ntest_lifecycle_result_owns_detached_values (tests.models.test_grc_v4_state.ResultOwnershipTests.test_lifecycle_result_owns_detached_values) ... ok\ntest_observables_and_operation_delta_not_ledger_aliases (tests.models.test_grc_v4_state.ResultOwnershipTests.test_observables_and_operation_delta_not_ledger_aliases) ... ok\ntest_v4_event_input_is_refrozen_and_legacy_unchanged (tests.models.test_grc_v4_state.ResultOwnershipTests.test_v4_event_input_is_refrozen_and_legacy_unchanged) ... ok\ntest_all_published_canonical_preimages (tests.models.test_grc_v4_codec.CodecTests.test_all_published_canonical_preimages) ... ok\ntest_boolean_number_identity_is_distinct (tests.models.test_grc_v4_codec.CodecTests.test_boolean_number_identity_is_distinct) ... ok\ntest_configuration_rejects_coercions_cycles_and_unordered_data (tests.models.test_grc_v4_codec.CodecTests.test_configuration_rejects_coercions_cycles_and_unordered_data) ... ok\ntest_custom_mapping_duplicate_and_defensive_projection (tests.models.test_grc_v4_codec.CodecTests.test_custom_mapping_duplicate_and_defensive_projection) ... ok\ntest_identity_tampering_unknown_fields_and_non_preimages (tests.models.test_grc_v4_codec.CodecTests.test_identity_tampering_unknown_fields_and_non_preimages) ... ok\ntest_independent_ecmascript_binary64_edges (tests.models.test_grc_v4_codec.CodecTests.test_independent_ecmascript_binary64_edges) ... ok\ntest_installed_assets_are_exact_release_copies_and_unshared (tests.models.test_grc_v4_codec.CodecTests.test_installed_assets_are_exact_release_copies_and_unshared) ... ok\ntest_missing_altered_wrong_release_assets_fail_closed (tests.models.test_grc_v4_codec.CodecTests.test_missing_altered_wrong_release_assets_fail_closed) ... ok\ntest_missing_optional_dependencies_are_typed (tests.models.test_grc_v4_codec.CodecTests.test_missing_optional_dependencies_are_typed) ... ok\ntest_schema_negatives_and_no_remote_schema_selection (tests.models.test_grc_v4_codec.CodecTests.test_schema_negatives_and_no_remote_schema_selection) ... ok\ntest_strict_wire_numbers_duplicates_and_unicode (tests.models.test_grc_v4_codec.CodecTests.test_strict_wire_numbers_duplicates_and_unicode) ... ok\ntest_unicode_order_preservation_and_escapes (tests.models.test_grc_v4_codec.CodecTests.test_unicode_order_preservation_and_escapes) ... ok\ntest_wide_frozen_maps_do_not_use_per_key_linear_lookup (tests.models.test_grc_v4_codec.CodecTests.test_wide_frozen_maps_do_not_use_per_key_linear_lookup) ... ok\ntest_all_ten_declared_shapes_not_executable_support (tests.models.test_grc_v4_profile.ProfileTests.test_all_ten_declared_shapes_not_executable_support) ... ok\ntest_all_trajectory_sections_change_parameter_identity (tests.models.test_grc_v4_profile.ProfileTests.test_all_trajectory_sections_change_parameter_identity) ... ok\ntest_candidate_c_map_digest_and_transport_cannot_be_inferred (tests.models.test_grc_v4_profile.ProfileTests.test_candidate_c_map_digest_and_transport_cannot_be_inferred) ... ok\ntest_deep_immutability_explicit_projection_and_copy (tests.models.test_grc_v4_profile.ProfileTests.test_deep_immutability_explicit_projection_and_copy) ... ok\ntest_direct_profile_constructor_cannot_skip_identity_validation (tests.models.test_grc_v4_profile.ProfileTests.test_direct_profile_constructor_cannot_skip_identity_validation) ... ok\ntest_each_realization_rejects_noncanonical_policy (tests.models.test_grc_v4_profile.ProfileTests.test_each_realization_rejects_noncanonical_policy) ... ok\ntest_every_required_parameter_and_unknown_field (tests.models.test_grc_v4_profile.ProfileTests.test_every_required_parameter_and_unknown_field) ... ok\ntest_exact_discriminants_and_prohibited_successors (tests.models.test_grc_v4_profile.ProfileTests.test_exact_discriminants_and_prohibited_successors) ... ok\ntest_forbidden_numbers_and_adapter_scalars (tests.models.test_grc_v4_profile.ProfileTests.test_forbidden_numbers_and_adapter_scalars) ... ok\ntest_nested_boolean_identity_does_not_use_python_equality (tests.models.test_grc_v4_profile.ProfileTests.test_nested_boolean_identity_does_not_use_python_equality) ... ok\ntest_nested_default_is_identity_bearing_and_has_no_event (tests.models.test_grc_v4_profile.ProfileTests.test_nested_default_is_identity_bearing_and_has_no_event) ... ok\ntest_no_environment_or_implicit_numeric_defaults (tests.models.test_grc_v4_profile.ProfileTests.test_no_environment_or_implicit_numeric_defaults) ... ok\ntest_profile_digest_has_no_self_reference (tests.models.test_grc_v4_profile.ProfileTests.test_profile_digest_has_no_self_reference) ... ok\ntest_published_c_os_exact_resolution_and_roundtrip (tests.models.test_grc_v4_profile.ProfileTests.test_published_c_os_exact_resolution_and_roundtrip) ... ok\ntest_published_semantic_parameter_digest_negative (tests.models.test_grc_v4_profile.ProfileTests.test_published_semantic_parameter_digest_negative) ... ok\ntest_published_wctr_live_edge_negative (tests.models.test_grc_v4_profile.ProfileTests.test_published_wctr_live_edge_negative) ... ok\ntest_referenced_content_and_stable_edge_coverage (tests.models.test_grc_v4_profile.ProfileTests.test_referenced_content_and_stable_edge_coverage) ... ok\ntest_schema_valid_cross_record_disagreement (tests.models.test_grc_v4_profile.ProfileTests.test_schema_valid_cross_record_disagreement) ... ok\ntest_template_identity_discriminants_and_source (tests.models.test_grc_v4_profile.ProfileTests.test_template_identity_discriminants_and_source) ... ok\n\n----------------------------------------------------------------------\nRan 71 tests in 8.436s\n\nOK\n"
+    },
+    {
+      "command": ".venv/bin/python -m unittest discover -s tests/core -v",
+      "exit_code": 0,
+      "combined_output": "test_backend_selection_builds_canonical_immutable_payload (test_backends.BackendSelectionContractTest.test_backend_selection_builds_canonical_immutable_payload) ... ok\ntest_backend_selection_payload_can_participate_in_params_identity (test_backends.BackendSelectionContractTest.test_backend_selection_payload_can_participate_in_params_identity) ... ok\ntest_backend_selection_payload_is_stable_independent_of_input_order (test_backends.BackendSelectionContractTest.test_backend_selection_payload_is_stable_independent_of_input_order) ... ok\ntest_backend_selection_payload_roundtrips_to_objects (test_backends.BackendSelectionContractTest.test_backend_selection_payload_roundtrips_to_objects) ... ok\ntest_backend_selection_rejects_invalid_category_or_name_tokens (test_backends.BackendSelectionContractTest.test_backend_selection_rejects_invalid_category_or_name_tokens) ... ok\ntest_common_backend_category_vocabulary_exposes_expected_names (test_backends.BackendSelectionContractTest.test_common_backend_category_vocabulary_exposes_expected_names) ... ok\ntest_supported_backend_selection_validation_rejects_unknown_names (test_backends.BackendSelectionContractTest.test_supported_backend_selection_validation_rejects_unknown_names) ... ok\ntest_canonical_json_dumps_is_stable_for_identical_semantic_input (test_canonical_serialization.CanonicalSerializationTest.test_canonical_json_dumps_is_stable_for_identical_semantic_input) ... ok\ntest_canonicalize_json_value_normalizes_supported_nested_values (test_canonical_serialization.CanonicalSerializationTest.test_canonicalize_json_value_normalizes_supported_nested_values) ... ok\ntest_canonicalize_json_value_rejects_non_finite_float (test_canonical_serialization.CanonicalSerializationTest.test_canonicalize_json_value_rejects_non_finite_float) ... ok\ntest_canonicalize_json_value_rejects_non_string_mapping_keys (test_canonical_serialization.CanonicalSerializationTest.test_canonicalize_json_value_rejects_non_string_mapping_keys) ... ok\ntest_canonicalize_json_value_rejects_unsupported_value_types (test_canonical_serialization.CanonicalSerializationTest.test_canonicalize_json_value_rejects_unsupported_value_types) ... ok\ntest_common_vocabulary_contains_required_spec_names (test_capabilities.CapabilityContractTest.test_common_vocabulary_contains_required_spec_names) ... ok\ntest_family_profiles_exist_for_all_four_families (test_capabilities.CapabilityContractTest.test_family_profiles_exist_for_all_four_families) ... ok\ntest_profiles_accept_valid_minimum_claims (test_capabilities.CapabilityContractTest.test_profiles_accept_valid_minimum_claims) ... ok\ntest_profiles_reject_forbidden_claims (test_capabilities.CapabilityContractTest.test_profiles_reject_forbidden_claims) ... ok\ntest_profiles_reject_missing_required_claims (test_capabilities.CapabilityContractTest.test_profiles_reject_missing_required_claims) ... ok\ntest_profiles_reject_unknown_capabilities (test_capabilities.CapabilityContractTest.test_profiles_reject_unknown_capabilities) ... ok\ntest_digest_helpers_use_sha256_and_ignore_mapping_order (test_digests_and_persistence.DigestAndPersistenceTest.test_digest_helpers_use_sha256_and_ignore_mapping_order) ... ok\ntest_rng_helpers_tag_python_random_state (test_digests_and_persistence.DigestAndPersistenceTest.test_rng_helpers_tag_python_random_state) ... ok\ntest_snapshot_and_topology_digests_are_stable_for_equivalent_content (test_digests_and_persistence.DigestAndPersistenceTest.test_snapshot_and_topology_digests_are_stable_for_equivalent_content) ... ok\ntest_snapshot_flow_preserves_raw_params_resolved_params_and_hash (test_digests_and_persistence.DigestAndPersistenceTest.test_snapshot_flow_preserves_raw_params_resolved_params_and_hash) ... ok\ntest_state_payload_roundtrip_preserves_remainder_and_python_rng_state (test_digests_and_persistence.DigestAndPersistenceTest.test_state_payload_roundtrip_preserves_remainder_and_python_rng_state) ... ok\ntest_error_types_are_explicit_and_stable (test_events_observables_errors.EventsObservablesErrorsContractTest.test_error_types_are_explicit_and_stable) ... ok\ntest_grc_event_exposes_required_shared_fields (test_events_observables_errors.EventsObservablesErrorsContractTest.test_grc_event_exposes_required_shared_fields) ... ok\ntest_observable_snapshot_wraps_mapping (test_events_observables_errors.EventsObservablesErrorsContractTest.test_observable_snapshot_wraps_mapping) ... ok\ntest_fixed_port_chart_constants_match_the_specs (test_graph_protocols.GraphProtocolContractTest.test_fixed_port_chart_constants_match_the_specs) ... ok\ntest_port_graph_protocol_is_runtime_checkable (test_graph_protocols.GraphProtocolContractTest.test_port_graph_protocol_is_runtime_checkable) ... ok\ntest_port_graph_retains_ordered_nine_slot_surface (test_graph_protocols.GraphProtocolContractTest.test_port_graph_retains_ordered_nine_slot_surface) ... ok\ntest_weighted_graph_protocol_is_runtime_checkable (test_graph_protocols.GraphProtocolContractTest.test_weighted_graph_protocol_is_runtime_checkable) ... ok\ntest_monotone_id_source_allocates_non_reused_ids (test_ids.IdSourceAndTombstoneTableTest.test_monotone_id_source_allocates_non_reused_ids) ... ok\ntest_monotone_id_source_allows_forward_restore (test_ids.IdSourceAndTombstoneTableTest.test_monotone_id_source_allows_forward_restore) ... ok\ntest_monotone_id_source_rejects_backward_restore (test_ids.IdSourceAndTombstoneTableTest.test_monotone_id_source_rejects_backward_restore) ... ok\ntest_monotone_id_source_rejects_negative_start (test_ids.IdSourceAndTombstoneTableTest.test_monotone_id_source_rejects_negative_start) ... ok\ntest_tombstone_slot_table_get_live_rejects_dead_or_missing_slots (test_ids.IdSourceAndTombstoneTableTest.test_tombstone_slot_table_get_live_rejects_dead_or_missing_slots) ... ok\ntest_tombstone_slot_table_iter_live_items_and_raw_slots_are_stable (test_ids.IdSourceAndTombstoneTableTest.test_tombstone_slot_table_iter_live_items_and_raw_slots_are_stable) ... ok\ntest_tombstone_slot_table_preserves_next_id_after_restore_gap (test_ids.IdSourceAndTombstoneTableTest.test_tombstone_slot_table_preserves_next_id_after_restore_gap) ... ok\ntest_tombstone_slot_table_rejects_invalid_restoration_shape (test_ids.IdSourceAndTombstoneTableTest.test_tombstone_slot_table_rejects_invalid_restoration_shape) ... ok\ntest_tombstone_slot_table_skips_deleted_ids_in_live_iteration (test_ids.IdSourceAndTombstoneTableTest.test_tombstone_slot_table_skips_deleted_ids_in_live_iteration) ... ok\ntest_package_imports (test_import_smoke.ImportSmokeTest.test_package_imports) ... ok\ntest_abstract_surface_matches_required_methods (test_interfaces.InterfaceContractTest.test_abstract_surface_matches_required_methods) ... ok\ntest_rebase_reset_baseline_is_additive_common_surface (test_interfaces.InterfaceContractTest.test_rebase_reset_baseline_is_additive_common_surface) ... ok\ntest_run_rejects_negative_step_counts (test_interfaces.InterfaceContractTest.test_run_rejects_negative_step_counts) ... ok\ntest_run_uses_step_exactly_num_steps_times (test_interfaces.InterfaceContractTest.test_run_uses_step_exactly_num_steps_times) ... ok\ntest_core_contract_modules_import (test_module_imports.ModuleImportContractTest.test_core_contract_modules_import) ... ok\ntest_apply_cache_invalidation_can_target_specific_cache_keys (test_mutations_and_invalidation.MutationAndInvalidationContractTest.test_apply_cache_invalidation_can_target_specific_cache_keys) ... ok\ntest_cache_invalidation_hook_can_clear_state_cached_quantities (test_mutations_and_invalidation.MutationAndInvalidationContractTest.test_cache_invalidation_hook_can_clear_state_cached_quantities) ... ok\ntest_clearing_cache_invalidation_hook_stops_state_cache_mutation (test_mutations_and_invalidation.MutationAndInvalidationContractTest.test_clearing_cache_invalidation_hook_stops_state_cache_mutation) ... ok\ntest_port_backend_logs_connect_rewire_and_remove_mutations (test_mutations_and_invalidation.MutationAndInvalidationContractTest.test_port_backend_logs_connect_rewire_and_remove_mutations) ... ok\ntest_port_remove_node_mutation_records_cascade (test_mutations_and_invalidation.MutationAndInvalidationContractTest.test_port_remove_node_mutation_records_cascade) ... ok\ntest_remove_node_records_cascade_edge_ids (test_mutations_and_invalidation.MutationAndInvalidationContractTest.test_remove_node_records_cascade_edge_ids) ... ok\ntest_weighted_backend_is_mutation_aware_and_logs_mutations (test_mutations_and_invalidation.MutationAndInvalidationContractTest.test_weighted_backend_is_mutation_aware_and_logs_mutations) ... ok\ntest_core_domains_are_exposed_centrally (test_params.ParamsContractTest.test_core_domains_are_exposed_centrally) ... ok\ntest_core_param_hash_is_stable_for_equivalent_mappings (test_params.ParamsContractTest.test_core_param_hash_is_stable_for_equivalent_mappings) ... ok\ntest_excluded_domains_are_rejected_from_core_params (test_params.ParamsContractTest.test_excluded_domains_are_rejected_from_core_params) ... ok\ntest_from_mapping_builds_immutable_core_params (test_params.ParamsContractTest.test_from_mapping_builds_immutable_core_params) ... ok\ntest_raw_config_and_resolved_config_are_distinct (test_params.ParamsContractTest.test_raw_config_and_resolved_config_are_distinct) ... ok\ntest_add_node_exposes_exactly_nine_ordered_ports (test_port_graph_backend.PortGraphBackendTest.test_add_node_exposes_exactly_nine_ordered_ports) ... ok\ntest_backend_satisfies_port_graph_protocol (test_port_graph_backend.PortGraphBackendTest.test_backend_satisfies_port_graph_protocol) ... ok\ntest_connect_ports_rejects_already_occupied_slot (test_port_graph_backend.PortGraphBackendTest.test_connect_ports_rejects_already_occupied_slot) ... ok\ntest_connect_ports_sets_deterministic_occupancy_and_lookup (test_port_graph_backend.PortGraphBackendTest.test_connect_ports_sets_deterministic_occupancy_and_lookup) ... ok\ntest_remove_edge_tombstones_edge_and_clears_ports (test_port_graph_backend.PortGraphBackendTest.test_remove_edge_tombstones_edge_and_clears_ports) ... ok\ntest_remove_node_cascades_edge_removal_and_clears_port_state (test_port_graph_backend.PortGraphBackendTest.test_remove_node_cascades_edge_removal_and_clears_port_state) ... ok\ntest_removed_edge_id_is_not_reused_on_later_connect (test_port_graph_backend.PortGraphBackendTest.test_removed_edge_id_is_not_reused_on_later_connect) ... ok\ntest_restored_backend_rebuilds_occupancy_and_counters (test_port_graph_backend.PortGraphBackendTest.test_restored_backend_rebuilds_occupancy_and_counters) ... ok\ntest_restored_backend_rejects_duplicate_port_occupancy (test_port_graph_backend.PortGraphBackendTest.test_restored_backend_rejects_duplicate_port_occupancy) ... ok\ntest_rewire_edge_moves_occupancy_without_changing_edge_id (test_port_graph_backend.PortGraphBackendTest.test_rewire_edge_moves_occupancy_without_changing_edge_id) ... ok\ntest_rewire_rejects_target_slot_occupied_by_different_edge (test_port_graph_backend.PortGraphBackendTest.test_rewire_rejects_target_slot_occupied_by_different_edge) ... ok\ntest_row_column_conversion_is_canonical (test_port_graph_backend.PortGraphBackendTest.test_row_column_conversion_is_canonical) ... ok\ntest_build_dynamics_group_canonicalizes_payload_sections (test_serialization_contract.SnapshotContractTest.test_build_dynamics_group_canonicalizes_payload_sections) ... ok\ntest_build_event_records_returns_canonical_event_list (test_serialization_contract.SnapshotContractTest.test_build_event_records_returns_canonical_event_list) ... ok\ntest_build_snapshot_metadata_produces_required_fields (test_serialization_contract.SnapshotContractTest.test_build_snapshot_metadata_produces_required_fields) ... ok\ntest_build_standard_snapshot_preserves_canonical_group_order (test_serialization_contract.SnapshotContractTest.test_build_standard_snapshot_preserves_canonical_group_order) ... ok\ntest_build_standard_snapshot_rejects_mutation_history_in_standard_mode (test_serialization_contract.SnapshotContractTest.test_build_standard_snapshot_rejects_mutation_history_in_standard_mode) ... ok\ntest_build_topology_snapshot_keeps_lists_and_omits_unsupported_groups (test_serialization_contract.SnapshotContractTest.test_build_topology_snapshot_keeps_lists_and_omits_unsupported_groups) ... ok\ntest_core_exports_include_canonical_serialization_helpers (test_serialization_contract.SnapshotContractTest.test_core_exports_include_canonical_serialization_helpers) ... ok\ntest_export_port_topology_is_deterministic_and_exposes_port_structure (test_serialization_contract.SnapshotContractTest.test_export_port_topology_is_deterministic_and_exposes_port_structure) ... ok\ntest_export_port_topology_sorts_multi_edge_incidence (test_serialization_contract.SnapshotContractTest.test_export_port_topology_sorts_multi_edge_incidence) ... ok\ntest_export_weighted_topology_is_deterministic_and_live_only (test_serialization_contract.SnapshotContractTest.test_export_weighted_topology_is_deterministic_and_live_only) ... ok\ntest_export_weighted_topology_sorts_multi_edge_incidence (test_serialization_contract.SnapshotContractTest.test_export_weighted_topology_sorts_multi_edge_incidence) ... ok\ntest_exported_topology_remains_compatible_with_snapshot_contract (test_serialization_contract.SnapshotContractTest.test_exported_topology_remains_compatible_with_snapshot_contract) ... ok\ntest_require_snapshot_family_rejects_family_mismatch (test_serialization_contract.SnapshotContractTest.test_require_snapshot_family_rejects_family_mismatch) ... ok\ntest_reset_baseline_group_is_versioned_and_non_recursive (test_serialization_contract.SnapshotContractTest.test_reset_baseline_group_is_versioned_and_non_recursive) ... ok\ntest_restore_port_graph_preserves_ids_counters_and_structure (test_serialization_contract.SnapshotContractTest.test_restore_port_graph_preserves_ids_counters_and_structure) ... ok\ntest_restore_weighted_graph_preserves_ids_counters_and_structure (test_serialization_contract.SnapshotContractTest.test_restore_weighted_graph_preserves_ids_counters_and_structure) ... ok\ntest_save_load_roundtrip_on_port_snapshot_preserves_metadata_and_topology (test_serialization_contract.SnapshotContractTest.test_save_load_roundtrip_on_port_snapshot_preserves_metadata_and_topology) ... ok\ntest_save_snapshot_writes_atomically_and_load_snapshot_is_strict (test_serialization_contract.SnapshotContractTest.test_save_snapshot_writes_atomically_and_load_snapshot_is_strict) ... ok\ntest_snapshot_from_json_rejects_malformed_or_invalid_payload (test_serialization_contract.SnapshotContractTest.test_snapshot_from_json_rejects_malformed_or_invalid_payload) ... ok\ntest_snapshot_to_json_and_from_json_roundtrip (test_serialization_contract.SnapshotContractTest.test_snapshot_to_json_and_from_json_roundtrip) ... ok\ntest_unavailable_reset_baseline_requires_explicit_reason (test_serialization_contract.SnapshotContractTest.test_unavailable_reset_baseline_requires_explicit_reason) ... ok\ntest_validate_snapshot_contract_accepts_minimal_shared_shape (test_serialization_contract.SnapshotContractTest.test_validate_snapshot_contract_accepts_minimal_shared_shape) ... ok\ntest_validate_snapshot_contract_rejects_missing_metadata (test_serialization_contract.SnapshotContractTest.test_validate_snapshot_contract_rejects_missing_metadata) ... ok\ntest_validate_snapshot_contract_rejects_wrong_schema (test_serialization_contract.SnapshotContractTest.test_validate_snapshot_contract_rejects_wrong_schema) ... ok\ntest_state_exposes_required_shared_fields (test_types.TypesContractTest.test_state_exposes_required_shared_fields) ... ok\ntest_state_keeps_generic_topology_payloads (test_types.TypesContractTest.test_state_keeps_generic_topology_payloads) ... ok\ntest_step_result_exposes_required_spec_fields (test_types.TypesContractTest.test_step_result_exposes_required_spec_fields) ... ok\ntest_add_node_and_edge_produce_deterministic_live_iteration (test_weighted_graph_backend.WeightedGraphBackendTest.test_add_node_and_edge_produce_deterministic_live_iteration) ... ok\ntest_backend_satisfies_weighted_graph_protocol (test_weighted_graph_backend.WeightedGraphBackendTest.test_backend_satisfies_weighted_graph_protocol) ... ok\ntest_neighbor_order_is_by_neighbor_id_then_edge_id (test_weighted_graph_backend.WeightedGraphBackendTest.test_neighbor_order_is_by_neighbor_id_then_edge_id) ... ok\ntest_payloads_are_stored_in_family_neutral_dict_slots (test_weighted_graph_backend.WeightedGraphBackendTest.test_payloads_are_stored_in_family_neutral_dict_slots) ... ok\ntest_remove_node_cascades_incident_edge_removal (test_weighted_graph_backend.WeightedGraphBackendTest.test_remove_node_cascades_incident_edge_removal) ... ok\ntest_removed_edges_are_tombstoned_and_not_reused (test_weighted_graph_backend.WeightedGraphBackendTest.test_removed_edges_are_tombstoned_and_not_reused) ... ok\ntest_removed_node_id_is_not_reused_on_later_insert (test_weighted_graph_backend.WeightedGraphBackendTest.test_removed_node_id_is_not_reused_on_later_insert) ... ok\ntest_restored_backend_rebuilds_adjacency_and_counters (test_weighted_graph_backend.WeightedGraphBackendTest.test_restored_backend_rebuilds_adjacency_and_counters) ... ok\ntest_restored_backend_rejects_live_edge_with_dead_endpoint (test_weighted_graph_backend.WeightedGraphBackendTest.test_restored_backend_rejects_live_edge_with_dead_endpoint) ... ok\n\n----------------------------------------------------------------------\nRan 105 tests in 0.026s\n\nOK\n"
+    },
+    {
+      "command": ".venv/bin/python -m ruff check src/pygrc/models/grc_v4_state.py src/pygrc/models/grc_v4_codec.py src/pygrc/models/grc_v4_profile.py tests/models/test_grc_v4_state.py tests/models/test_grc_v4_codec.py tests/models/test_grc_v4_profile.py",
+      "exit_code": 0,
+      "combined_output": "All checks passed!\n"
+    },
+    {
+      "command": ".venv/bin/python -m mypy --follow-imports=silent src/pygrc/models/grc_v4_state.py src/pygrc/models/grc_v4_codec.py src/pygrc/models/grc_v4_profile.py tests/models/test_grc_v4_state.py tests/models/test_grc_v4_codec.py tests/models/test_grc_v4_profile.py",
+      "exit_code": 0,
+      "combined_output": "Success: no issues found in 6 source files\n"
+    },
+    {
+      "command": "GRCV4_PACKAGE_TESTS=1 GRCV4_WHEELHOUSE=implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/generated/p922-wheelhouse .venv/bin/python -m unittest tests.models.test_grc_v4_codec.DistributionTests -v",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_wheel_and_sdist_offline_clean_install (tests.models.test_grc_v4_codec.DistributionTests.test_wheel_and_sdist_offline_clean_install) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 53.483s\n\nOK\n",
+      "scope": "Two independent clean virtual environments; wheel and source-distribution installation; offline baseline and [v4] installs, actual legacy imports without optional V4 dependencies, typed missing-extra failure, installed schema/JCS with extra, pip check; no ambient tests/specs/investigations.",
+      "exit_code": 0
+    },
+    {
+      "command": ".venv/bin/python implementation/phase-9-grcv4/verification/test_phase9_g1.py",
+      "exit_code": 0,
+      "combined_output": "PHASE9_G1_PRESSURE_PASS cases=63 accepted_permission=true conformance_claimed=false live_runtime_unchanged=true\n"
+    },
+    {
+      "command": ".venv/bin/python implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/test_phase9_g1_surfaces.py",
+      "exit_code": 0,
+      "combined_output": "PHASE9_NOTEBOOK_PASS cells=2 API_identity=byte_exact runtime_authorized=true P9_G1=accepted runtime_support=empty\nTAP version 13\n# Subtest: planning is not runtime and lacks a recorded pass\nok 1 - planning is not runtime and lacks a recorded pass\n  ---\n  duration_ms: 6.475696\n  type: 'test'\n  ...\n# Subtest: runtime/support promotion rejected\nok 2 - runtime/support promotion rejected\n  ---\n  duration_ms: 1.952109\n  type: 'test'\n  ...\n# Subtest: unrecognized and contradictory status rejected\nok 3 - unrecognized and contradictory status rejected\n  ---\n  duration_ms: 0.44944\n  type: 'test'\n  ...\n# Subtest: modified payload with stale digest rejected\nok 4 - modified payload with stale digest rejected\n  ---\n  duration_ms: 2.457423\n  type: 'test'\n  ...\n# Subtest: explicit failed-closed result is valid but never a pass\nok 5 - explicit failed-closed result is valid but never a pass\n  ---\n  duration_ms: 0.657641\n  type: 'test'\n  ...\n# Subtest: canonical planning JSON is key-order independent\nok 6 - canonical planning JSON is key-order independent\n  ---\n  duration_ms: 0.174119\n  type: 'test'\n  ...\n# Subtest: full probe IDs sharing a prefix cannot collide and assertion never changes candidate\nok 7 - full probe IDs sharing a prefix cannot collide and assertion never changes candidate\n  ---\n  duration_ms: 1.330438\n  type: 'test'\n  ...\n# Subtest: missing null and unrecognized permission cannot substitute for false\nok 8 - missing null and unrecognized permission cannot substitute for false\n  ---\n  duration_ms: 0.349144\n  type: 'test'\n  ...\n# Subtest: accepted G1 permission does not imply accepted profile support\nok 9 - accepted G1 permission does not imply accepted profile support\n  ---\n  duration_ms: 3.779829\n  type: 'test'\n  ...\n# Subtest: failed G1 boundary cannot retain permission even with a recomputed digest\nok 10 - failed G1 boundary cannot retain permission even with a recomputed digest\n  ---\n  duration_ms: 1.479412\n  type: 'test'\n  ...\n# Subtest: missing and invalid handoff evidence do not change accepted permission\nok 11 - missing and invalid handoff evidence do not change accepted permission\n  ---\n  duration_ms: 1.752988\n  type: 'test'\n  ...\n# Subtest: current work can be held while historical acceptance remains verified\nok 12 - current work can be held while historical acceptance remains verified\n  ---\n  duration_ms: 1.010628\n  type: 'test'\n  ...\n1..12\n# tests 12\n# suites 0\n# pass 12\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 36.050543\nPHASE9_G1_SURFACES_PASS API_notebook_identity=byte_exact negative_candidate=rejected P9_G1=accepted runtime_support=empty\n"
+    },
+    {
+      "command": ".venv/bin/python implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/test_phase9_g1_surfaces.py --browser",
+      "exit_code": 0,
+      "output_excerpt": "  18 passed (1.8m)\nPHASE9_BROWSER_PASS projects=desktop,mobile screenshots=4 API_download_identity=byte_exact",
+      "excerpt_semantics": "Outcome lines only; terminal progress and process-local warnings omitted."
+    }
+  ],
+  "source_exact_query_excerpts": [
+    {
+      "operation": "contract_provenance",
+      "query": {
+        "contract_id": "D10.2-EC-PARENT-SPEC-PROFILE-GRAMMAR"
+      },
+      "source_bundle_digest": "98c273b3cc097f0d95adfba98ed7dfac0ac494dce9e779bb4b04fe79fef4f6aa",
+      "graph_digest": "44d8c7d33950af5e5f7c61caa4fe6fbd14fc9aedf14218d0a11de7c705542e09",
+      "authority_extension_digest": "833acc5988761f8ba68ca573ad270bf7c87cf2fe32061336a71e42647968630a",
+      "original_trace_digest": "e6dbd51b0d25a943394196899ab74c7a67f18dd71dc41afc2229b62fb0a53ffc",
+      "row_count": 1,
+      "excerpt_not_full_trace": true,
+      "rows": [
+        {
+          "classification": "source_exact_contract_provenance",
+          "source_ref": {
+            "record_id": "GRC9V4-CD-D10.2-v1",
+            "record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+            "source_json_pointer": "/normative_equation_contract_registry/60",
+            "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D10_2FullSubstrateProvenanceAndPromotionAudit.json"
+          },
+          "edge_refs_excerpt": [
+            {
+              "edge_id": "propagation:44ab60b3b2fa797d1c80f98b6392f376cd15ba4ab57f970940d5af1167790a16",
+              "source": "equation_contract:D10.2-EC-PARENT-SPEC-PROFILE-GRAMMAR",
+              "target": "current_claim:D10-CL-N-001",
+              "relation": "accepted_claim",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/60/accepted_claim_ids/2"
+            },
+            {
+              "edge_id": "propagation:7aaf216527a1612bc1bdd81edca9e5b9fae144f10cfdec84ac24540d997b3ba8",
+              "source": "equation_contract:D10.2-EC-PARENT-SPEC-PROFILE-GRAMMAR",
+              "target": "source_record:93afe04293b480712e378f264cb696a0ef20ffd4c3a1044c088fc9fe2cf784aa",
+              "relation": "source_identity",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/60/source_lineage/0"
+            }
+          ],
+          "edge_ref_count": 8,
+          "support_disposition": "indeterminate_requires_review",
+          "accepted_claim_support_semantics": [
+            "indeterminate_requires_review"
+          ]
+        }
+      ]
+    },
+    {
+      "operation": "contract_provenance",
+      "query": {
+        "contract_id": "D10.2-EC-PARENT-SPEC-COMPOSITION-PROFILE-IDENTITY"
+      },
+      "source_bundle_digest": "98c273b3cc097f0d95adfba98ed7dfac0ac494dce9e779bb4b04fe79fef4f6aa",
+      "graph_digest": "44d8c7d33950af5e5f7c61caa4fe6fbd14fc9aedf14218d0a11de7c705542e09",
+      "authority_extension_digest": "833acc5988761f8ba68ca573ad270bf7c87cf2fe32061336a71e42647968630a",
+      "original_trace_digest": "689f5694e1eb994b4b27a4a409e5c5aca0f708582ccff7ae71c550b954d1141a",
+      "row_count": 1,
+      "excerpt_not_full_trace": true,
+      "rows": [
+        {
+          "classification": "source_exact_contract_provenance",
+          "source_ref": {
+            "record_id": "GRC9V4-CD-D10.2-v1",
+            "record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+            "source_json_pointer": "/normative_equation_contract_registry/65",
+            "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D10_2FullSubstrateProvenanceAndPromotionAudit.json"
+          },
+          "edge_refs_excerpt": [
+            {
+              "edge_id": "propagation:1cc5ca4ca44a2331c0df8698647534edc6ae05dedc632a17705f57973ced4c3d",
+              "source": "equation_contract:D10.2-EC-PARENT-SPEC-COMPOSITION-PROFILE-IDENTITY",
+              "target": "current_claim:D10-CL-N-008",
+              "relation": "accepted_claim",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/65/accepted_claim_ids/1"
+            },
+            {
+              "edge_id": "propagation:2c5e7c5d9b67db7bd92986d6253ebc6c29c48f902e00db7dc461dfd306601c03",
+              "source": "equation_contract:D10.2-EC-PARENT-SPEC-COMPOSITION-PROFILE-IDENTITY",
+              "target": "source_record:5f1e30f251250468da5ad2abd64199149f728c43df99e48137058d63dea3affa",
+              "relation": "source_identity",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/65/source_lineage/1"
+            }
+          ],
+          "edge_ref_count": 7,
+          "support_disposition": "indeterminate_requires_review",
+          "accepted_claim_support_semantics": [
+            "indeterminate_requires_review"
+          ]
+        }
+      ]
+    },
+    {
+      "operation": "contract_provenance",
+      "query": {
+        "contract_id": "D10.2-EC-PARENT-L-PROFILE-GRAMMAR"
+      },
+      "source_bundle_digest": "98c273b3cc097f0d95adfba98ed7dfac0ac494dce9e779bb4b04fe79fef4f6aa",
+      "graph_digest": "44d8c7d33950af5e5f7c61caa4fe6fbd14fc9aedf14218d0a11de7c705542e09",
+      "authority_extension_digest": "833acc5988761f8ba68ca573ad270bf7c87cf2fe32061336a71e42647968630a",
+      "original_trace_digest": "0497d9c2fec2f2aab94423cf2e3d9840d03954cb10aafddf744a1965ed13398b",
+      "row_count": 1,
+      "excerpt_not_full_trace": true,
+      "rows": [
+        {
+          "classification": "source_exact_contract_provenance",
+          "source_ref": {
+            "record_id": "GRC9V4-CD-D10.2-v1",
+            "record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+            "source_json_pointer": "/normative_equation_contract_registry/52",
+            "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D10_2FullSubstrateProvenanceAndPromotionAudit.json"
+          },
+          "edge_refs_excerpt": [
+            {
+              "edge_id": "propagation:01f0f3480d01e70d417d46bbad1bb4fea30688ed9e4125d578edc6f6b17726b2",
+              "source": "equation_contract:D10.2-EC-PARENT-L-PROFILE-GRAMMAR",
+              "target": "normative_object:L-PROFILE-GRAMMAR",
+              "relation": "parent_object",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/52/parent_object_ids/0"
+            },
+            {
+              "edge_id": "propagation:04e75c7ec37f42576468e1ba9142b31f1b0fea554d9e446256c3007cbe92770b",
+              "source": "equation_contract:D10.2-EC-PARENT-L-PROFILE-GRAMMAR",
+              "target": "source_record:8c40dc16442939e029c666b78ddb76307db5ee417e7c40f989a07ef3d8d53815",
+              "relation": "source_identity",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/52"
+            }
+          ],
+          "edge_ref_count": 8,
+          "support_disposition": "indeterminate_requires_review",
+          "accepted_claim_support_semantics": [
+            "indeterminate_requires_review"
+          ]
+        }
+      ]
+    },
+    {
+      "operation": "reconstruction_path",
+      "query": {
+        "claim_id": "D11-C-CL-O-001"
+      },
+      "source_bundle_digest": "98c273b3cc097f0d95adfba98ed7dfac0ac494dce9e779bb4b04fe79fef4f6aa",
+      "graph_digest": "44d8c7d33950af5e5f7c61caa4fe6fbd14fc9aedf14218d0a11de7c705542e09",
+      "authority_extension_digest": "833acc5988761f8ba68ca573ad270bf7c87cf2fe32061336a71e42647968630a",
+      "original_trace_digest": "2c0f49b0c78f31eff1190edb62594de9ac20b9cf578348f48b38faba8b192cff",
+      "row_count": 1,
+      "excerpt_not_full_trace": true,
+      "rows": [
+        {
+          "classification": "accepted_backward_reconstruction",
+          "source_ref": {
+            "record_id": "GRC9V4-D11-C-PROVENANCE-SUPPLEMENT-v1",
+            "record_digest": "57d711d80e648c8ee73401f3a7e76a0076374fc43bd4d2d0f3dbe4bb4ee3acb1",
+            "source_json_pointer": "/accepted_successor_claim",
+            "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D11CCandidateBaselineTransportProvenanceSupplement.json"
+          },
+          "edge_refs_excerpt": [
+            {
+              "edge_id": "propagation:01b32fb8c72f5fc3db51c0cb92242da2db95f0bf3eff41f00e84c2f980c2f2dc",
+              "source": "normative_object:C-BASELINE-TRANSPORT-REFERENCE",
+              "target": "current_claim:D11-C-CL-O-001",
+              "relation": "accepted_claim",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-D11-C-PROVENANCE-SUPPLEMENT-v1",
+              "source_record_digest": "57d711d80e648c8ee73401f3a7e76a0076374fc43bd4d2d0f3dbe4bb4ee3acb1",
+              "source_json_pointer": "/normative_objects/0/accepted_claim_ids/0"
+            },
+            {
+              "edge_id": "propagation:02af562df8e04ac723aa735fd277e7bac13f7690102a8736354c7891e1455b10",
+              "source": "equation_contract:D11-C-EC-C-TR-REFERENCE-FIELD",
+              "target": "source_record:1ba90e62a7f7907094aff26dd201ba232ec0f2a1ea26e79e473ecd8885ea3174",
+              "relation": "source_identity",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-D11-C-PROVENANCE-SUPPLEMENT-v1",
+              "source_record_digest": "57d711d80e648c8ee73401f3a7e76a0076374fc43bd4d2d0f3dbe4bb4ee3acb1",
+              "source_json_pointer": "/equation_contracts/0"
+            }
+          ],
+          "edge_ref_count": 108,
+          "support_disposition": null,
+          "accepted_claim_support_semantics": null
+        }
+      ]
+    }
+  ],
+  "checker_inputs": [
+    {
+      "path": "implementation/phase-9-grcv4/verification/phase9_implementation_policy.py",
+      "sha256": "357925aa023d63cbd7650db7b04b1255b8f87dc56f638aefdaf4ff557f019dd8"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_phase9_g1.py",
+      "sha256": "6b59ed30bfc2f74aa4e68f63a01f65dec78a13586efe08f995437fbb2d668981"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/audit_phase9_implementation.py",
+      "sha256": "8a1dd7f2917912cafe413ee5916db10d148cd918130cab9aef8474f95dc3b9e4"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/test_phase9_g1_surfaces.py",
+      "sha256": "a38746bf0aa14247e9751012369e5412cf5d931ef6a702bd8f566614fd5ea29e"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/test_phase9_surfaces.py",
+      "sha256": "295bc2cf67526a2daedd160cc72fb65de3b38949ac5cbb5c59606be6639f6db9"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/verification.js",
+      "sha256": "d5774c9c8de06a3963b2dd5d6cdc5e481f4ba41bfc1a0a28fa6c75773a2fa400"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/verification.test.mjs",
+      "sha256": "66e6f59f841b01a73f6467ca3029e02466cb20f77497a73f421f8bfb03ad068f"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/browser.spec.mjs",
+      "sha256": "3ae07d1fc02d768d98f21cfde12801859a1413dd46dc9f9c39a9b2db6fff749e"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-1/P9-1.9-G1Acceptance.json",
+      "sha256": "218b29ae251cc93e749ff46ad919268621eabafcfe85412aa549a688571a8cc9"
+    }
+  ],
+  "G1_pressure_case_summary": {
+    "run_id": "p9-g1-fb37bb9feb5346718b7d48d40586804d",
+    "original_report_digest": "e0fc7973718181d3eca8b0b87d242a088a9da73e23a409cbe46b3c124c36beeb",
+    "passed": 63,
+    "failed": 0,
+    "cases": [
+      {
+        "case_id": "accepted_G1_current_tree",
+        "candidate_decision": "admitted",
+        "assertion_result": "passed",
+        "actual_reason": "exact accepted scope admitted",
+        "expected_reason": null
+      },
+      {
+        "case_id": "corrupt_handoff_does_not_revoke_implementation_permission",
+        "candidate_decision": "admitted",
+        "assertion_result": "passed",
+        "actual_reason": "exact accepted scope admitted",
+        "expected_reason": null
+      },
+      {
+        "case_id": "missing_handoff_does_not_revoke_implementation_permission",
+        "candidate_decision": "admitted",
+        "assertion_result": "passed",
+        "actual_reason": "exact accepted scope admitted",
+        "expected_reason": null
+      },
+      {
+        "case_id": "portable_paths_cannot_change_dependencies",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "actual_reason": "portability amendment changed reviewed content: implementation/phase-9-grcv4/tranche-1/P9-1.4-1.5-ExecutionRecord.json",
+        "expected_reason": "portability amendment changed reviewed content"
+      },
+      {
+        "case_id": "portable_paths_cannot_change_ownership",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "actual_reason": "portability amendment changed reviewed content: implementation/phase-9-grcv4/tranche-1/P9-1.4-1.5-ExecutionRecord.json",
+        "expected_reason": "portability amendment changed reviewed content"
+      },
+      {
+        "case_id": "portable_opening_cannot_change_authority",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "actual_reason": "path normalization changed historical meaning: implementation/Phase-9-GRCV4-PhaseOpening.json",
+        "expected_reason": "path normalization changed historical meaning"
+      },
+      {
+        "case_id": "portable_snapshot_cannot_change_content",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "actual_reason": "path normalization changed historical meaning: implementation/phase-9-grcv4/verification/history/P9-1.6-ArtifactSnapshot.json",
+        "expected_reason": "path normalization changed historical meaning"
+      },
+      {
+        "case_id": "portable_checker_cannot_disable_claim_checks",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "actual_reason": "path normalization changed historical meaning: implementation/investigations/grc9v4-constitutive-design/scripts/audit_grc9v4_d10_claim_topology.py",
+        "expected_reason": "path normalization changed historical meaning"
+      },
+      {
+        "case_id": "portable_review_input_must_match_original_hash",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "actual_reason": "planning review input bytes changed",
+        "expected_reason": "planning review input bytes changed"
+      },
+      {
+        "case_id": "accepted_G1_exact_targets",
+        "candidate_decision": "admitted",
+        "assertion_result": "passed",
+        "actual_reason": "exact accepted scope admitted",
+        "expected_reason": null
+      },
+      {
+        "case_id": "accepted_G1_test_target",
+        "candidate_decision": "admitted",
+        "assertion_result": "passed",
+        "actual_reason": "exact accepted scope admitted",
+        "expected_reason": null
+      },
+      {
+        "case_id": "unregistered_permitted_path",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "actual_reason": "unauthorized source/test/planning addition: ['src/pygrc/models/grc_v4_state.py']",
+        "expected_reason": "unauthorized source/test/planning addition"
+      },
+      {
+        "case_id": "missing_acceptance",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "actual_reason": "missing protected file: implementation/phase-9-grcv4/tranche-1/P9-1.9-G1Acceptance.json",
+        "expected_reason": "P9-1.9-G1Acceptance.json"
+      },
+      {
+        "case_id": "rehashed_expanded_acceptance",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "actual_reason": "untrusted P9-G1 acceptance",
+        "expected_reason": "untrusted P9-G1 acceptance"
+      },
+      {
+        "case_id": "manifest_accepted_generic_runtime_support",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "actual_reason": "work manifest cannot grant conformance",
+        "expected_reason": "cannot grant conformance"
+      },
+      {
+        "case_id": "manifest_admitted_specialization_support_sets",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "actual_reason": "work manifest cannot grant conformance",
+        "expected_reason": "cannot grant conformance"
+      },
+      {
+        "case_id": "manifest_approval_digest",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "actual_reason": "stale work manifest",
+        "expected_reason": "stale work manifest"
+      },
+      {
+        "case_id": "manifest_new_runtime_authority",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "actual_reason": "work manifest cannot add authority",
+        "expected_reason": "cannot add authority"
+      },
+      {
+        "case_id": "GRC9V4_before_G3",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "actual_reason": "specialization requires accepted P9-G3",
+        "expected_reason": "specialization requires accepted P9-G3"
+      },
+      {
+        "case_id": "GRC9V4_iteration_before_G3",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "actual_reason": "specialization requires accepted P9-G3",
+        "expected_reason": "specialization requires accepted P9-G3"
+      },
+      {
+        "case_id": "unregistered_leaf",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "actual_reason": "unregistered work iteration",
+        "expected_reason": "unregistered work iteration"
+      },
+      {
+        "case_id": "unreviewed_new_V4_module",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "actual_reason": "unapproved runtime or evidence target: src/pygrc/models/grc_v4_surprise.py",
+        "expected_reason": "unapproved runtime or evidence target"
+      },
+      {
+        "case_id": "stale_work_bytes",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "actual_reason": "work content binding mismatch",
+        "expected_reason": "work content binding mismatch"
+      },
+      {
+        "case_id": "combined_good_and_frozen_edit",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "actual_reason": "frozen bytes changed: specs/grc-v4-spec.md",
+        "expected_reason": "frozen bytes changed"
+      },
+      {
+        "case_id": "legacy_bytes",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "actual_reason": "frozen bytes changed: src/pygrc/models/grc_9_v3.py",
+        "expected_reason": "frozen bytes changed"
+      },
+      {
+        "case_id": "legacy_test_bytes",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "actual_reason": "frozen bytes changed: tests/core/test_capabilities.py",
+        "expected_reason": "frozen bytes changed"
+      },
+      {
+        "case_id": "old_planning_policy",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "actual_reason": "immutable predecessor changed: implementation/phase-9-grcv4/verification/Phase9VerificationSuccessor.json",
+        "expected_reason": "immutable predecessor changed"
+      },
+      {
+        "case_id": "additive_lazy_export",
+        "candidate_decision": "admitted",
+        "assertion_result": "passed",
+        "actual_reason": "exact accepted scope admitted",
+        "expected_reason": null
+      },
+      {
+        "case_id": "eager_export_rejected",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "actual_reason": "unreviewed or eager V4 export",
+        "expected_reason": "unreviewed or eager V4 export"
+      },
+      {
+        "case_id": "legacy_export_rebinding",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "actual_reason": "legacy export prefix changed",
+        "expected_reason": "legacy export prefix changed"
+      },
+      {
+        "case_id": "additive_V4_dependency_extra",
+        "candidate_decision": "admitted",
+        "assertion_result": "passed",
+        "actual_reason": "exact accepted scope admitted",
+        "expected_reason": null
+      },
+      {
+        "case_id": "unreviewed_dependency",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "actual_reason": "unreviewed V4 dependency",
+        "expected_reason": "unreviewed V4 dependency"
+      },
+      {
+        "case_id": "legacy_dependency_change",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "actual_reason": "non-additive dependency integration",
+        "expected_reason": "non-additive dependency integration"
+      },
+      {
+        "case_id": "exact_packaged_schema",
+        "candidate_decision": "admitted",
+        "assertion_result": "passed",
+        "actual_reason": "exact accepted scope admitted",
+        "expected_reason": null
+      },
+      {
+        "case_id": "changed_packaged_schema",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "actual_reason": "packaged accepted asset differs",
+        "expected_reason": "packaged accepted asset differs"
+      },
+      {
+        "case_id": "runtime_mode",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "actual_reason": "unapproved executable runtime mode",
+        "expected_reason": "unapproved executable runtime mode"
+      },
+      {
+        "case_id": "runtime_symlink",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "actual_reason": "symlink at protected path: src/pygrc/models/grc_v4_state.py",
+        "expected_reason": "symlink at protected path"
+      },
+      {
+        "case_id": "normal_entry_forbidden_source",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "actual_reason": "Traceback (most recent call last):\n  File \"implementation/phase-9-grcv4/verification/audit_phase9_implementation.py\", line 157, in <module>\n    main()\n  File \"implementation/phase-9-grcv4/verification/audit_phase9_implementation.py\", line 141, in main\n    result = verify(policy.ROOT, args.boundary_only)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"implementation/phase-9-grcv4/verification/audit_phase9_implementation.py\", line 75, in verify\n    boundary, tree = policy.current_boundary(root)\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"implementation/phase-9-grcv4/verification/phase9_implementation_policy.py\", line 545, in current_boundary\n    require(\n  File \"implementation/phase-9-grcv4/verification/audit_phase9.py\", line 72, in require\n    raise ValueError(message)\nValueError: unauthorized source/test/planning addition: ['src/pygrc/models/not_reviewed.py']\n",
+        "expected_reason": "unauthorized source/test/planning addition"
+      },
+      {
+        "case_id": "normal_entry_accepted_G1",
+        "candidate_decision": "admitted",
+        "assertion_result": "passed",
+        "actual_reason": "exact accepted scope admitted",
+        "expected_reason": null
+      },
+      {
+        "case_id": "normal_entry_accepted_runtime_target",
+        "candidate_decision": "admitted",
+        "assertion_result": "passed",
+        "actual_reason": "exact accepted scope admitted",
+        "expected_reason": null
+      },
+      {
+        "case_id": "ready_identity_leaf",
+        "candidate_decision": "admitted",
+        "assertion_result": "passed",
+        "actual_reason": "exact accepted scope admitted",
+        "expected_reason": null
+      },
+      {
+        "case_id": "later_generic_leaf_held",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "actual_reason": "owning leaf entry dependencies are not accepted",
+        "expected_reason": "owning leaf entry dependencies are not accepted"
+      },
+      {
+        "case_id": "path_cannot_borrow_ready_leaf",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "actual_reason": "runtime target belongs to a different owning leaf",
+        "expected_reason": "runtime target belongs to a different owning leaf"
+      },
+      {
+        "case_id": "additive_integration_waits_for_owner",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "actual_reason": "owning leaf entry dependencies are not accepted",
+        "expected_reason": "owning leaf entry dependencies are not accepted"
+      },
+      {
+        "case_id": "identity_leaf_package_integration",
+        "candidate_decision": "admitted",
+        "assertion_result": "passed",
+        "actual_reason": "exact accepted scope admitted",
+        "expected_reason": null
+      },
+      {
+        "case_id": "identity_leaf_cannot_borrow_exports",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "actual_reason": "runtime target belongs to a different owning leaf",
+        "expected_reason": "runtime target belongs to a different owning leaf"
+      },
+      {
+        "case_id": "acceptance_release_id",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "actual_reason": "untrusted P9-G1 acceptance",
+        "expected_reason": "untrusted P9-G1 acceptance"
+      },
+      {
+        "case_id": "acceptance_baseline_commit",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "actual_reason": "untrusted P9-G1 acceptance",
+        "expected_reason": "untrusted P9-G1 acceptance"
+      },
+      {
+        "case_id": "acceptance_user_authority",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "actual_reason": "untrusted P9-G1 acceptance",
+        "expected_reason": "untrusted P9-G1 acceptance"
+      },
+      {
+        "case_id": "missing_consumed_surface_evidence",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "actual_reason": "missing protected file: implementation/phase-9-grcv4/tranche-1/P9-1.8-SurfaceInventory.json",
+        "expected_reason": "P9-1.8-SurfaceInventory.json"
+      },
+      {
+        "case_id": "conflicting_G1_record",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "actual_reason": "unauthorized source/test/planning addition: ['implementation/phase-9-grcv4/tranche-1/P9-1.9-OtherAcceptance.json']",
+        "expected_reason": "unauthorized source/test/planning addition"
+      },
+      {
+        "case_id": "changed_verifier_after_pressure",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "actual_reason": "implementation maintenance binding drift: implementation/phase-9-grcv4/verification/phase9_implementation_policy.py",
+        "expected_reason": "implementation maintenance binding drift"
+      },
+      {
+        "case_id": "runtime_manifest_cannot_change_governance",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "actual_reason": "unapproved runtime or evidence target: implementation/phase-9-grcv4/verification/Phase9ImplementationBoundary.json",
+        "expected_reason": "unapproved runtime or evidence target"
+      },
+      {
+        "case_id": "evidence_path_escape",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "actual_reason": "unsafe path: ../escape.py",
+        "expected_reason": "unsafe path"
+      },
+      {
+        "case_id": "identical_acceptance_is_idempotent",
+        "candidate_decision": "admitted",
+        "assertion_result": "passed",
+        "actual_reason": "exact accepted scope admitted",
+        "expected_reason": null
+      },
+      {
+        "case_id": "partial_publication",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "actual_reason": "missing protected file: implementation/phase-9-grcv4/tranche-1/P9-1.9-ExecutionRecord.json",
+        "expected_reason": "P9-1.9-ExecutionRecord.json"
+      },
+      {
+        "case_id": "synthetic_acceptance_not_live_authority",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "actual_reason": "untrusted P9-G1 acceptance",
+        "expected_reason": "untrusted P9-G1 acceptance"
+      },
+      {
+        "case_id": "clean_committed_unauthorized_tree",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "actual_reason": "frozen bytes changed: src/pygrc/models/grc_9_v3.py",
+        "expected_reason": "frozen bytes changed"
+      },
+      {
+        "case_id": "published_runtime_update",
+        "candidate_decision": "admitted",
+        "assertion_result": "passed",
+        "actual_reason": "exact accepted scope admitted",
+        "expected_reason": null
+      },
+      {
+        "case_id": "published_runtime_deletion",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "actual_reason": "published runtime/evidence deletion or rename forbidden",
+        "expected_reason": "published runtime/evidence deletion or rename forbidden"
+      },
+      {
+        "case_id": "published_failure_evidence_overwrite",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "actual_reason": "published run evidence is immutable",
+        "expected_reason": "published run evidence is immutable"
+      },
+      {
+        "case_id": "new_evidence_run_preserves_failure",
+        "candidate_decision": "admitted",
+        "assertion_result": "passed",
+        "actual_reason": "exact accepted scope admitted",
+        "expected_reason": null
+      },
+      {
+        "case_id": "preacceptance_same_runtime_addition",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "actual_reason": "planning authority rejects the same runtime addition",
+        "expected_reason": "planning authority rejects the same runtime addition"
+      }
+    ]
+  },
+  "outcomes": {
+    "focused_tests": 71,
+    "packaging_tests": 1,
+    "legacy_core_tests": 105,
+    "published_preimages": 25,
+    "g1_pressure_cases": 63,
+    "node_tests": 12,
+    "desktop_mobile_browser_tests": 18,
+    "passed": true
+  },
+  "retention": {
+    "prior_P9_2_1_evidence": "unchanged; new run does not replace original evidence",
+    "dependency_wheels": "Names/hashes retained; disposable cache is not committed or required for runtime authority.",
+    "distribution_artifacts": "Build products are transient; exact accepted asset bytes and package sources are tracked.",
+    "forensic_traces": "Excerpts preserve classifications/source refs/edge witnesses and original trace digests; not represented as complete trace files.",
+    "verification_scope": "No full historical/D11 verification rerun. Current-boundary publication check is separate from the supporting execution.",
+    "development_failures": "Synthetic RG2b fixture used the wrong failure-policy ID; two test vector keys were incorrect. Four legacy pressure fixtures assumed no registered runtime files; corrected setup to reach unchanged expected rejection boundaries. A surface query before matching pressure completion failed closed as stale; later matching run passed. Browser localhost access required sandbox escalation."
+  },
+  "claim_ceiling": "Profile/identity foundation verified, not numerical runtime conformance",
+  "accepted_generic_runtime_support": [],
+  "admitted_specialization_support_sets": [],
+  "publication_normalization": {
+    "original_sha256": "d83bdb8a8eb6f5d272be915542aa0d966d881003398cfe4f3b440b948d31e56b",
+    "original_hash_role": "Citation identity of the original run encoding; not the checksum of this normalized file.",
+    "transformation": "Removed disposable checkout prefixes from traceback filenames, leaving repository-relative paths; no command outcome, reason, input identity or assertion changed.",
+    "filename_occurrences": 5,
+    "embedded_digest_role": "Any embedded original checker/report/trace digests remain provenance citations to their original encoding; normalized excerpts are not their raw byte representation."
+  }
+}

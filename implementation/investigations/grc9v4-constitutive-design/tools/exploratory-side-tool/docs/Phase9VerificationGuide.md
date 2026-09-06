@@ -178,7 +178,7 @@ Deliberately published supporting evidence remains immutable. Historical
 blanket failure-retention wording is superseded by the addendum, not rewritten.
 
 The runtime manifest binds exact current work paths, hashes and registered
-owning-leaf IDs. P9-2.1/P9-2.2 are currently dependency-ready, with eleven
+owning-leaf IDs. P9-2.1/P9-2.2 are currently dependency-ready, with twelve
 eligible runtime paths; later generic and specialization leaves retain their
 own gates. API/export includes `dependency_ready_leaves` and
 `permitted_runtime_paths`, separately from the full conditional target roster.

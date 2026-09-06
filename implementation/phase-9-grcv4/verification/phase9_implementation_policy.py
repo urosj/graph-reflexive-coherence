@@ -323,7 +323,12 @@ def leaf_permissions(root):
         if row["path"].startswith("src/pygrc/models/grc_v4_assets/"):
             owners[row["path"]] = {"P9-2.2", "P9-2.6"}
         elif row["operation"] == "additive_integration":
-            owners[row["path"]] = {"P9-2.6"}
+            # P9-2.2 owns installed identity assets and their reviewed extras.
+            # Facade exports remain with the later common-interface leaf.
+            owners[row["path"]] = (
+                {"P9-2.2", "P9-2.6"}
+                if row["path"] == "pyproject.toml" else {"P9-2.6"}
+            )
     return ready, owners
 
 

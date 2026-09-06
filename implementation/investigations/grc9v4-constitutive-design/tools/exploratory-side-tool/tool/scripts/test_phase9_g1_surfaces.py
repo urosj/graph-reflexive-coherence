@@ -45,7 +45,9 @@ def checks(root):
 
     require(
         status["dependency_ready_leaves"] == ["P9-2.1", "P9-2.2"]
-        and len(status["permitted_runtime_paths"]) == 11
+        and len(status["permitted_runtime_paths"]) == 12
+        and "pyproject.toml" in status["permitted_runtime_paths"]
+        and "src/pygrc/models/__init__.py" not in status["permitted_runtime_paths"]
         and "src/pygrc/models/grc_v4_candidate_a.py"
         not in status["permitted_runtime_paths"],
         "G1 bypassed generic leaf dependencies",

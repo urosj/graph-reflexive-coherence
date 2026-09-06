@@ -60,7 +60,8 @@ def main():
         )
         with (root / ".git/info/exclude").open("a") as f:
             f.write("\n/.venv\n")
-        for name in p.PATHS | set(p.work_entries(p.ROOT, p.acceptance(p.ROOT))):
+        current_work_paths = set(p.work_entries(p.ROOT, p.acceptance(p.ROOT)))
+        for name in p.PATHS | current_work_paths:
             (root / name).parent.mkdir(parents=True, exist_ok=True)
             shutil.copyfile(p.ROOT / name, root / name)
         pristine = protected_manifest(root)
@@ -160,16 +161,19 @@ def main():
             value["record_digest"] = p.digest_record(value)
             return mutate(p.WORK, p.canonical(value) + b"\n")
 
+        def bind_entry(value, name, content, leaf="P9-2.1"):
+            # Runtime may already exist; pressure must reach the intended
+            # mutation check, not fail early on a duplicate manifest row.
+            value["entries"] = [r for r in value["entries"] if r["path"] != name]
+            value["entries"].append(
+                {"path": name, "sha256": p.sha(content), "iteration_id": leaf}
+            )
+
         def registered(name, content, *, extra=None, leaf="P9-2.1"):
             with mutate(name, content):
 
                 def bind(value):
-                    value["entries"] = [
-                        r for r in value["entries"] if r["path"] != name
-                    ]
-                    value["entries"].append(
-                        {"path": name, "sha256": p.sha(content), "iteration_id": leaf}
-                    )
+                    bind_entry(value, name, content, leaf)
 
                 with manifest_edit(bind):
                     if extra:
@@ -257,9 +261,15 @@ def main():
             "accepted_G1_test_target",
             lambda: registered("tests/models/test_grc_v4_state.py", content),
         )
+        def unregistered_path():
+            with manifest_edit(lambda v: v.update(
+                entries=[r for r in v["entries"] if r["path"] != source]
+            )):
+                edit(source, content)
+
         case(
             "unregistered_permitted_path",
-            lambda: edit(source, content),
+            unregistered_path,
             "unauthorized source/test/planning addition",
         )
         case(
@@ -390,7 +400,8 @@ def main():
             "legacy export prefix changed",
             scope="isolated_integration_contract_not_current_leaf_permission",
         )
-        project = (root / "pyproject.toml").read_bytes()
+        # Use the immutable integration baseline even after V4's extra exists.
+        project = p.git(root, "show", p.BASELINE + ":pyproject.toml")
         # Insert into the existing optional-dependencies table, not a duplicate table.
         extra = project.replace(
             b"[project.optional-dependencies]\n",
@@ -435,13 +446,7 @@ def main():
             with mutate(source, content):
                 (root / source).chmod(0o755)
                 with manifest_edit(
-                    lambda m: m["entries"].append(
-                        {
-                            "path": source,
-                            "sha256": p.sha(content),
-                            "iteration_id": "P9-2.1",
-                        }
-                    )
+                    lambda m: bind_entry(m, source, content)
                 ):
                     inspect()
 
@@ -452,13 +457,7 @@ def main():
                 (root / source).unlink()
                 (root / source).symlink_to(root / "specs/grc-v4-spec.md")
                 with manifest_edit(
-                    lambda m: m["entries"].append(
-                        {
-                            "path": source,
-                            "sha256": p.sha(content),
-                            "iteration_id": "P9-2.1",
-                        }
-                    )
+                    lambda m: bind_entry(m, source, content)
                 ):
                     inspect()
 
@@ -523,6 +522,15 @@ def main():
             "additive_integration_waits_for_owner",
             lambda: registered("pyproject.toml", extra, leaf="P9-2.6"),
             "owning leaf entry dependencies are not accepted",
+        )
+        case(
+            "identity_leaf_package_integration",
+            lambda: registered("pyproject.toml", extra, leaf="P9-2.2"),
+        )
+        case(
+            "identity_leaf_cannot_borrow_exports",
+            lambda: registered(init, before + lazy, leaf="P9-2.2"),
+            "runtime target belongs to a different owning leaf",
         )
         for key, replacement in [
             ("release_id", "different-release"),
@@ -627,7 +635,7 @@ def main():
                 return result.stdout
 
             try:
-                git("add", "--", *sorted(p.PATHS))
+                git("add", "--", *sorted(p.PATHS | current_work_paths))
                 git(
                     "-c",
                     "user.name=P9 test fixture",
@@ -692,16 +700,10 @@ def main():
 
             with mutate(name, bytes_):
                 with manifest_edit(
-                    lambda v: v["entries"].append(
-                        {
-                            "path": name,
-                            "sha256": p.sha(bytes_),
-                            "iteration_id": "P9-2.1",
-                        }
-                    )
+                    lambda v: bind_entry(v, name, bytes_)
                 ):
                     try:
-                        local_git("add", "--", *sorted(p.PATHS | {name}))
+                        local_git("add", "--", *sorted(p.PATHS | current_work_paths | {name}))
                         local_git(
                             "-c",
                             "user.name=P9 test fixture",

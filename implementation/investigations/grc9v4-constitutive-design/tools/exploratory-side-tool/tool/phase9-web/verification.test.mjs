@@ -38,11 +38,16 @@ function accepted(extra={}) {
     runtime_authority_state:'accepted_P9_G1_bounded_implementation_not_conformance',
     approval_digest:'cd2c52f30477e1042bb903bd0553da237ddccc9cad373afecc1a84e4e0b37ea2',
     implementation_scope:Array.from({length:43},(_,i)=>({path:`synthetic/${i}`})),
-    dependency_ready_leaves:['P9-2.1','P9-2.2'],permitted_runtime_paths:Array.from({length:11},(_,i)=>`synthetic/${i}`),
+    dependency_ready_leaves:['P9-2.1','P9-2.2'],permitted_runtime_paths:[...Array.from({length:11},(_,i)=>`synthetic/${i}`),'pyproject.toml'],
     iterations:[4,5,6,7,8,9].map(i=>({iteration_id:`P9-1.${i}`,status:'implemented_and_verified',reviewer_decision:'accepted_by_user'})),...extra});
 }
 test('accepted G1 permission does not imply accepted profile support',async()=>{
   assert.equal((await verifiedStatus(accepted())).P9_G1_accepted,true);
+  const missingPackage=accepted({permitted_runtime_paths:Array.from({length:12},(_,i)=>`synthetic/${i}`)});
+  assert.throws(()=>checkedStatus(missingPackage),/dependency-ready/);
+  const prematureExport=accepted();
+  prematureExport.permitted_runtime_paths[0]='src/pygrc/models/__init__.py';
+  assert.throws(()=>checkedStatus(prematureExport),/dependency-ready/);
   for(const extra of [{approval_digest:'0'.repeat(64)},{runtime_authorized:false},{accepted_generic_runtime_support:['C_OS']},{admitted_specialization_support_sets:[['C_OS']]},{implementation_scope:[]},{dependency_ready_leaves:['P9-8.2']}]) assert.throws(()=>checkedStatus(accepted(extra)));
 });
 test('failed G1 boundary cannot retain permission even with a recomputed digest',async()=>{

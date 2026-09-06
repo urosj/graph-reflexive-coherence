@@ -1,0 +1,321 @@
+{
+  "schema": "grcv4_specification_release_manifest_v2",
+  "status": "normative_preimplementation_release",
+  "release_id": "grcv4-spec-release-sha256:9f4c8fe5b57b1c477d834a3e4dae3f98a2b18c70e6e7f598e3c9652170c8645f",
+  "repository": "https://github.com/urosj/graph-reflexive-coherence.git",
+  "repository_base_commit": "ef8b0675f51bea11634a57f20959ba2b700e379b",
+  "release_tree_commit": null,
+  "release_tree_commit_semantics": "optional_external_locator_assigned_after_commit; content release_id is authoritative",
+  "branch_at_build": "spec/grcv4-grc9v4",
+  "canonicalization": "RFC8785_JCS_over_I_JSON",
+  "release_identity_payload": {
+    "schema": "grcv4_specification_release_identity_v2",
+    "artifact_bindings": [
+      {
+        "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D10DesignSynthesisAndSpecWritingDecision.json",
+        "sha256": "519a6ef56c52750b6d3da673b0dc9988e43a8676e209dd205d5d6c988d7c81b6"
+      },
+      {
+        "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D10_2FullSubstrateProvenanceAndPromotionAudit.json",
+        "sha256": "59c2b956cec7d258b1db09d43d6df44deb8c0be0453a5d741f7e2733d6881a33"
+      },
+      {
+        "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D11CCandidateBaselineTransportAndMobilityResolution.json",
+        "sha256": "31bd8d3e8163d100d0935870cf7082fb3e393aab4c70018c45354a3a5c54ebd7"
+      },
+      {
+        "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D11CCandidateBaselineTransportProvenanceSupplement.json",
+        "sha256": "43bb028c6c7b09952a35dee280067470f2ff5cde4395d39c5b5e7aba6fae29fb"
+      },
+      {
+        "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D11CCandidateCBaselineTransportAndMobilityClosure.json",
+        "sha256": "fc8346c02590bd5d43f0f93a74a0a9e770ebef8f02a00c2eeb6551e9697529a0"
+      },
+      {
+        "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D11ClaimDebtAndAuthorityRouting.json",
+        "sha256": "f34bff656cc4e231bb8db81a9d69498c2b9a1e57accc4ecaec6642cd3e4422df"
+      },
+      {
+        "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D11G9AxisPreservingExpansionProvenanceSupplement.json",
+        "sha256": "3a7f7c7bb11c291b7e5f082002a374dc95bfaab4917944f526da0ec58f15748f"
+      },
+      {
+        "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D11G9CanonicalExpansionPortAllocationClosure.json",
+        "sha256": "efd341b65ab0408300896f841a0695e043bc5e85afb5c6e701fcad3a4cdc75f1"
+      },
+      {
+        "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D11G9CanonicalExpansionPortAllocationResolution.json",
+        "sha256": "2b894abe80fed23455b7c37edc889aad48a27a1f8ae02d8c61752416a3eefc52"
+      },
+      {
+        "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D11SuccessorInvestigationOpening.json",
+        "sha256": "e2ce990a48fed01fb9fd4c90c1388a333a1143de1dd75e1b9f2ab38c21902410"
+      },
+      {
+        "path": "implementation/investigations/grc9v4-constitutive-design/drafts/2026-09-GRC-V4.md",
+        "sha256": "2da39c3bb0d102804f9135384317771f3fe1b3e48df3b4ab1813a3575642a739"
+      },
+      {
+        "path": "implementation/investigations/grc9v4-constitutive-design/drafts/GRCV4-proposal.md",
+        "sha256": "8543463a5b3aa15bb60f078a980f1812be4b68b6db8904026b21d3ccdb2362c9"
+      },
+      {
+        "path": "implementation/investigations/grc9v4-constitutive-design/scripts/audit_grcv4_post_d10_specifications.py",
+        "sha256": "fccf5d7b6e1da64ab7c826d66928a4bba12687608bb6a0a128825e9e9010001b"
+      },
+      {
+        "path": "implementation/investigations/grc9v4-constitutive-design/scripts/build_grcv4_specification_release.py",
+        "sha256": "26d8a3c5aeec49fc5e0e2da465c80ee30dac1014cc1beedcf0232afcc5839bf9"
+      },
+      {
+        "path": "implementation/investigations/grc9v4-constitutive-design/scripts/build_grcv4_specification_vectors.py",
+        "sha256": "4a09ea851bf24e8dec748f033f9b4e97e7eefd74458b4351cabb835afc302c7f"
+      },
+      {
+        "path": "implementation/investigations/grc9v4-constitutive-design/specification/D11PaperPropagationAndSpecificationExtractionGate.json",
+        "sha256": "410f489a9bf82367932eaaec8765c08b6ede56ee86b93da1b68606eec9d3dd33"
+      },
+      {
+        "path": "implementation/investigations/grc9v4-constitutive-design/specification/GRCV4SpecificationEngineeringCorrectionGate.json",
+        "sha256": "57f2e8e634ae362933e94e72f634141e989dc357858940a4e5a4342dfc530f73"
+      },
+      {
+        "path": "implementation/investigations/grc9v4-constitutive-design/specification/PostD10SpecificationBoundary.json",
+        "sha256": "f4fb7d5b5a4b5d9ad38105cec89f6e2b16eaad3afc02af4da8f51dffe6fa277e"
+      },
+      {
+        "path": "papers/2026-04-GRC-9.md",
+        "sha256": "cefc33e91e496c236660dad5c1e009a720ca908488db460d47322118dd7c3e08"
+      },
+      {
+        "path": "specs/README.md",
+        "sha256": "4c896971399b797c588cbb267cda8ec71f3e6bf5bda680ddea253f7c92889b2d"
+      },
+      {
+        "path": "specs/grc-9-v3-spec.md",
+        "sha256": "7b1f0c03988be7dbe3feb8ba926d43d891d70daa0dbbae9804fc70f2a4950f2f"
+      },
+      {
+        "path": "specs/grc-9-v4-spec.md",
+        "sha256": "7552166d5dd60308ffe56934cf187a74d62296673c8c6b64320f7e57c7310262"
+      },
+      {
+        "path": "specs/grc-common-interface-v4-ext.md",
+        "sha256": "7d5be95242619fcaaae7ea5d8e950b3f335efe9a81492e67e6baa91c4643bc26"
+      },
+      {
+        "path": "specs/grc-common-interface.md",
+        "sha256": "3ccc27250a3ddb2ecccdf27984436e3dee2b10b3f71de610bfbbbcd084ae7be6"
+      },
+      {
+        "path": "specs/grc-v4-conformance-fixtures.json",
+        "sha256": "90b4f4fd5b259f94363a29e23715af0450bef944002f8e611f23efabc9c7043a"
+      },
+      {
+        "path": "specs/grc-v4-conformance-vectors.json",
+        "sha256": "ab12e2ffe02e9a9267eca9bdc3ca9361c0cf973cb87917d0eb090d3d68654ce4"
+      },
+      {
+        "path": "specs/grc-v4-contract-schema.json",
+        "sha256": "3fd072fc8c2b315f1b5dc32a4e4821a5082b5f3fc9d9a4794c007419a7aa0bea"
+      },
+      {
+        "path": "specs/grc-v4-source-manifest.json",
+        "sha256": "23a6182e5e469b7445ccc36871234ad0227d0b87b3718bc140afbcc65530e85b"
+      },
+      {
+        "path": "specs/grc-v4-spec.md",
+        "sha256": "8681e14bf229959183f772c547a6ba17e0cc60c264dad9a1975be147d12168ea"
+      }
+    ],
+    "engineering_audit_bindings": [
+      {
+        "name": "GRCV4-updated-specification-stack-implementation-readiness-audit.md",
+        "sha256": "32cea1b2752361864b02651cb7d38df85929210adc213aa76ee1307babcb5196"
+      },
+      {
+        "name": "GRCV4-specification-correction-release-pressure-audit.md",
+        "sha256": "bb0621b3abe793486711acdd62e718c4415e8c5cbb6bea271580d4abc806e7ae"
+      },
+      {
+        "name": "GRCV4-final-specification-release-acceptance-audit.md",
+        "sha256": "c0d7d01331868e45e92dbcdb54e5479fdc48cd4f478125ea4e452f81ea527c20"
+      }
+    ]
+  },
+  "release_identity_canonical_jcs_utf8": "{\"artifact_bindings\":[{\"path\":\"implementation/investigations/grc9v4-constitutive-design/decisions/D10DesignSynthesisAndSpecWritingDecision.json\",\"sha256\":\"519a6ef56c52750b6d3da673b0dc9988e43a8676e209dd205d5d6c988d7c81b6\"},{\"path\":\"implementation/investigations/grc9v4-constitutive-design/decisions/D10_2FullSubstrateProvenanceAndPromotionAudit.json\",\"sha256\":\"59c2b956cec7d258b1db09d43d6df44deb8c0be0453a5d741f7e2733d6881a33\"},{\"path\":\"implementation/investigations/grc9v4-constitutive-design/decisions/D11CCandidateBaselineTransportAndMobilityResolution.json\",\"sha256\":\"31bd8d3e8163d100d0935870cf7082fb3e393aab4c70018c45354a3a5c54ebd7\"},{\"path\":\"implementation/investigations/grc9v4-constitutive-design/decisions/D11CCandidateBaselineTransportProvenanceSupplement.json\",\"sha256\":\"43bb028c6c7b09952a35dee280067470f2ff5cde4395d39c5b5e7aba6fae29fb\"},{\"path\":\"implementation/investigations/grc9v4-constitutive-design/decisions/D11CCandidateCBaselineTransportAndMobilityClosure.json\",\"sha256\":\"fc8346c02590bd5d43f0f93a74a0a9e770ebef8f02a00c2eeb6551e9697529a0\"},{\"path\":\"implementation/investigations/grc9v4-constitutive-design/decisions/D11ClaimDebtAndAuthorityRouting.json\",\"sha256\":\"f34bff656cc4e231bb8db81a9d69498c2b9a1e57accc4ecaec6642cd3e4422df\"},{\"path\":\"implementation/investigations/grc9v4-constitutive-design/decisions/D11G9AxisPreservingExpansionProvenanceSupplement.json\",\"sha256\":\"3a7f7c7bb11c291b7e5f082002a374dc95bfaab4917944f526da0ec58f15748f\"},{\"path\":\"implementation/investigations/grc9v4-constitutive-design/decisions/D11G9CanonicalExpansionPortAllocationClosure.json\",\"sha256\":\"efd341b65ab0408300896f841a0695e043bc5e85afb5c6e701fcad3a4cdc75f1\"},{\"path\":\"implementation/investigations/grc9v4-constitutive-design/decisions/D11G9CanonicalExpansionPortAllocationResolution.json\",\"sha256\":\"2b894abe80fed23455b7c37edc889aad48a27a1f8ae02d8c61752416a3eefc52\"},{\"path\":\"implementation/investigations/grc9v4-constitutive-design/decisions/D11SuccessorInvestigationOpening.json\",\"sha256\":\"e2ce990a48fed01fb9fd4c90c1388a333a1143de1dd75e1b9f2ab38c21902410\"},{\"path\":\"implementation/investigations/grc9v4-constitutive-design/drafts/2026-09-GRC-V4.md\",\"sha256\":\"2da39c3bb0d102804f9135384317771f3fe1b3e48df3b4ab1813a3575642a739\"},{\"path\":\"implementation/investigations/grc9v4-constitutive-design/drafts/GRCV4-proposal.md\",\"sha256\":\"8543463a5b3aa15bb60f078a980f1812be4b68b6db8904026b21d3ccdb2362c9\"},{\"path\":\"implementation/investigations/grc9v4-constitutive-design/scripts/audit_grcv4_post_d10_specifications.py\",\"sha256\":\"fccf5d7b6e1da64ab7c826d66928a4bba12687608bb6a0a128825e9e9010001b\"},{\"path\":\"implementation/investigations/grc9v4-constitutive-design/scripts/build_grcv4_specification_release.py\",\"sha256\":\"26d8a3c5aeec49fc5e0e2da465c80ee30dac1014cc1beedcf0232afcc5839bf9\"},{\"path\":\"implementation/investigations/grc9v4-constitutive-design/scripts/build_grcv4_specification_vectors.py\",\"sha256\":\"4a09ea851bf24e8dec748f033f9b4e97e7eefd74458b4351cabb835afc302c7f\"},{\"path\":\"implementation/investigations/grc9v4-constitutive-design/specification/D11PaperPropagationAndSpecificationExtractionGate.json\",\"sha256\":\"410f489a9bf82367932eaaec8765c08b6ede56ee86b93da1b68606eec9d3dd33\"},{\"path\":\"implementation/investigations/grc9v4-constitutive-design/specification/GRCV4SpecificationEngineeringCorrectionGate.json\",\"sha256\":\"57f2e8e634ae362933e94e72f634141e989dc357858940a4e5a4342dfc530f73\"},{\"path\":\"implementation/investigations/grc9v4-constitutive-design/specification/PostD10SpecificationBoundary.json\",\"sha256\":\"f4fb7d5b5a4b5d9ad38105cec89f6e2b16eaad3afc02af4da8f51dffe6fa277e\"},{\"path\":\"papers/2026-04-GRC-9.md\",\"sha256\":\"cefc33e91e496c236660dad5c1e009a720ca908488db460d47322118dd7c3e08\"},{\"path\":\"specs/README.md\",\"sha256\":\"4c896971399b797c588cbb267cda8ec71f3e6bf5bda680ddea253f7c92889b2d\"},{\"path\":\"specs/grc-9-v3-spec.md\",\"sha256\":\"7b1f0c03988be7dbe3feb8ba926d43d891d70daa0dbbae9804fc70f2a4950f2f\"},{\"path\":\"specs/grc-9-v4-spec.md\",\"sha256\":\"7552166d5dd60308ffe56934cf187a74d62296673c8c6b64320f7e57c7310262\"},{\"path\":\"specs/grc-common-interface-v4-ext.md\",\"sha256\":\"7d5be95242619fcaaae7ea5d8e950b3f335efe9a81492e67e6baa91c4643bc26\"},{\"path\":\"specs/grc-common-interface.md\",\"sha256\":\"3ccc27250a3ddb2ecccdf27984436e3dee2b10b3f71de610bfbbbcd084ae7be6\"},{\"path\":\"specs/grc-v4-conformance-fixtures.json\",\"sha256\":\"90b4f4fd5b259f94363a29e23715af0450bef944002f8e611f23efabc9c7043a\"},{\"path\":\"specs/grc-v4-conformance-vectors.json\",\"sha256\":\"ab12e2ffe02e9a9267eca9bdc3ca9361c0cf973cb87917d0eb090d3d68654ce4\"},{\"path\":\"specs/grc-v4-contract-schema.json\",\"sha256\":\"3fd072fc8c2b315f1b5dc32a4e4821a5082b5f3fc9d9a4794c007419a7aa0bea\"},{\"path\":\"specs/grc-v4-source-manifest.json\",\"sha256\":\"23a6182e5e469b7445ccc36871234ad0227d0b87b3718bc140afbcc65530e85b\"},{\"path\":\"specs/grc-v4-spec.md\",\"sha256\":\"8681e14bf229959183f772c547a6ba17e0cc60c264dad9a1975be147d12168ea\"}],\"engineering_audit_bindings\":[{\"name\":\"GRCV4-updated-specification-stack-implementation-readiness-audit.md\",\"sha256\":\"32cea1b2752361864b02651cb7d38df85929210adc213aa76ee1307babcb5196\"},{\"name\":\"GRCV4-specification-correction-release-pressure-audit.md\",\"sha256\":\"bb0621b3abe793486711acdd62e718c4415e8c5cbb6bea271580d4abc806e7ae\"},{\"name\":\"GRCV4-final-specification-release-acceptance-audit.md\",\"sha256\":\"c0d7d01331868e45e92dbcdb54e5479fdc48cd4f478125ea4e452f81ea527c20\"}],\"schema\":\"grcv4_specification_release_identity_v2\"}",
+  "artifact_members": [
+    {
+      "role": "generic_v4_specification",
+      "path": "specs/grc-v4-spec.md",
+      "sha256": "8681e14bf229959183f772c547a6ba17e0cc60c264dad9a1975be147d12168ea"
+    },
+    {
+      "role": "grc9v4_specialization",
+      "path": "specs/grc-9-v4-spec.md",
+      "sha256": "7552166d5dd60308ffe56934cf187a74d62296673c8c6b64320f7e57c7310262"
+    },
+    {
+      "role": "v4_interface_extension",
+      "path": "specs/grc-common-interface-v4-ext.md",
+      "sha256": "7d5be95242619fcaaae7ea5d8e950b3f335efe9a81492e67e6baa91c4643bc26"
+    },
+    {
+      "role": "fixture_coverage_catalog",
+      "path": "specs/grc-v4-conformance-fixtures.json",
+      "sha256": "90b4f4fd5b259f94363a29e23715af0450bef944002f8e611f23efabc9c7043a"
+    },
+    {
+      "role": "concrete_conformance_vectors",
+      "path": "specs/grc-v4-conformance-vectors.json",
+      "sha256": "ab12e2ffe02e9a9267eca9bdc3ca9361c0cf973cb87917d0eb090d3d68654ce4"
+    },
+    {
+      "role": "implementation_contract_schema",
+      "path": "specs/grc-v4-contract-schema.json",
+      "sha256": "3fd072fc8c2b315f1b5dc32a4e4821a5082b5f3fc9d9a4794c007419a7aa0bea"
+    },
+    {
+      "role": "source_identity_manifest",
+      "path": "specs/grc-v4-source-manifest.json",
+      "sha256": "23a6182e5e469b7445ccc36871234ad0227d0b87b3718bc140afbcc65530e85b"
+    },
+    {
+      "role": "specification_registry",
+      "path": "specs/README.md",
+      "sha256": "4c896971399b797c588cbb267cda8ec71f3e6bf5bda680ddea253f7c92889b2d"
+    },
+    {
+      "role": "post_d10_phase_boundary",
+      "path": "implementation/investigations/grc9v4-constitutive-design/specification/PostD10SpecificationBoundary.json",
+      "sha256": "f4fb7d5b5a4b5d9ad38105cec89f6e2b16eaad3afc02af4da8f51dffe6fa277e"
+    },
+    {
+      "role": "d11_specification_extraction_gate",
+      "path": "implementation/investigations/grc9v4-constitutive-design/specification/D11PaperPropagationAndSpecificationExtractionGate.json",
+      "sha256": "410f489a9bf82367932eaaec8765c08b6ede56ee86b93da1b68606eec9d3dd33"
+    },
+    {
+      "role": "specification_engineering_correction_gate",
+      "path": "implementation/investigations/grc9v4-constitutive-design/specification/GRCV4SpecificationEngineeringCorrectionGate.json",
+      "sha256": "57f2e8e634ae362933e94e72f634141e989dc357858940a4e5a4342dfc530f73"
+    },
+    {
+      "role": "phase_aware_specification_audit",
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/audit_grcv4_post_d10_specifications.py",
+      "sha256": "fccf5d7b6e1da64ab7c826d66928a4bba12687608bb6a0a128825e9e9010001b"
+    }
+  ],
+  "packaged_source_bytes": [
+    {
+      "role": "d10_specification_authority",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D10DesignSynthesisAndSpecWritingDecision.json",
+      "sha256": "519a6ef56c52750b6d3da673b0dc9988e43a8676e209dd205d5d6c988d7c81b6"
+    },
+    {
+      "role": "d10_2_provenance_and_promotion_authority",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D10_2FullSubstrateProvenanceAndPromotionAudit.json",
+      "sha256": "59c2b956cec7d258b1db09d43d6df44deb8c0be0453a5d741f7e2733d6881a33"
+    },
+    {
+      "role": "D11_C_accepted_resolution",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D11CCandidateBaselineTransportAndMobilityResolution.json",
+      "sha256": "31bd8d3e8163d100d0935870cf7082fb3e393aab4c70018c45354a3a5c54ebd7"
+    },
+    {
+      "role": "D11_C_append_only_provenance",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D11CCandidateBaselineTransportProvenanceSupplement.json",
+      "sha256": "43bb028c6c7b09952a35dee280067470f2ff5cde4395d39c5b5e7aba6fae29fb"
+    },
+    {
+      "role": "D11_C_preregistration_history",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D11CCandidateCBaselineTransportAndMobilityClosure.json",
+      "sha256": "fc8346c02590bd5d43f0f93a74a0a9e770ebef8f02a00c2eeb6551e9697529a0"
+    },
+    {
+      "role": "accepted_bounded_D11_claim_debt_authority_routing",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D11ClaimDebtAndAuthorityRouting.json",
+      "sha256": "f34bff656cc4e231bb8db81a9d69498c2b9a1e57accc4ecaec6642cd3e4422df"
+    },
+    {
+      "role": "D11_G9_append_only_provenance",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D11G9AxisPreservingExpansionProvenanceSupplement.json",
+      "sha256": "3a7f7c7bb11c291b7e5f082002a374dc95bfaab4917944f526da0ec58f15748f"
+    },
+    {
+      "role": "D11_G9_preregistration_history",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D11G9CanonicalExpansionPortAllocationClosure.json",
+      "sha256": "efd341b65ab0408300896f841a0695e043bc5e85afb5c6e701fcad3a4cdc75f1"
+    },
+    {
+      "role": "D11_G9_accepted_resolution",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D11G9CanonicalExpansionPortAllocationResolution.json",
+      "sha256": "2b894abe80fed23455b7c37edc889aad48a27a1f8ae02d8c61752416a3eefc52"
+    },
+    {
+      "role": "accepted_bounded_D11_successor_opening",
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D11SuccessorInvestigationOpening.json",
+      "sha256": "e2ce990a48fed01fb9fd4c90c1388a333a1143de1dd75e1b9f2ab38c21902410"
+    },
+    {
+      "role": "canonical_grcv4_substrate_paper",
+      "path": "implementation/investigations/grc9v4-constitutive-design/drafts/2026-09-GRC-V4.md",
+      "sha256": "2da39c3bb0d102804f9135384317771f3fe1b3e48df3b4ab1813a3575642a739"
+    },
+    {
+      "role": "proposal_and_provenance_companion",
+      "path": "implementation/investigations/grc9v4-constitutive-design/drafts/GRCV4-proposal.md",
+      "sha256": "8543463a5b3aa15bb60f078a980f1812be4b68b6db8904026b21d3ccdb2362c9"
+    },
+    {
+      "role": "grc9_mechanical_provenance_source",
+      "path": "papers/2026-04-GRC-9.md",
+      "sha256": "cefc33e91e496c236660dad5c1e009a720ca908488db460d47322118dd7c3e08"
+    },
+    {
+      "role": "grc9v3_disabled_reduction_target",
+      "path": "specs/grc-9-v3-spec.md",
+      "sha256": "7b1f0c03988be7dbe3feb8ba926d43d891d70daa0dbbae9804fc70f2a4950f2f"
+    },
+    {
+      "role": "unchanged_common_interface",
+      "path": "specs/grc-common-interface.md",
+      "sha256": "3ccc27250a3ddb2ecccdf27984436e3dee2b10b3f71de610bfbbbcd084ae7be6"
+    }
+  ],
+  "source_packaging_semantics": "every controlling source is present at the listed repository path; commit reachability is provenance-only and is not required to reconstruct bytes",
+  "readiness_audit": {
+    "name": "GRCV4-updated-specification-stack-implementation-readiness-audit.md",
+    "sha256": "32cea1b2752361864b02651cb7d38df85929210adc213aa76ee1307babcb5196",
+    "role": "external_correction_input_not_scientific_authority"
+  },
+  "pressure_audit": {
+    "name": "GRCV4-specification-correction-release-pressure-audit.md",
+    "sha256": "bb0621b3abe793486711acdd62e718c4415e8c5cbb6bea271580d4abc806e7ae",
+    "role": "external_pressure_correction_input_not_scientific_authority",
+    "bounded_defect_count": 7
+  },
+  "final_acceptance_audit": {
+    "name": "GRCV4-final-specification-release-acceptance-audit.md",
+    "sha256": "c0d7d01331868e45e92dbcdb54e5479fdc48cd4f478125ea4e452f81ea527c20",
+    "role": "external_final_acceptance_correction_input_not_scientific_authority",
+    "required_vector_defect_count": 1,
+    "recommended_release_hardening_count": 3,
+    "scientific_successor_required": false
+  },
+  "creation_tools": [
+    {
+      "role": "deterministic_vector_builder",
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/build_grcv4_specification_vectors.py",
+      "sha256": "4a09ea851bf24e8dec748f033f9b4e97e7eefd74458b4351cabb835afc302c7f"
+    },
+    {
+      "role": "deterministic_release_builder",
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/build_grcv4_specification_release.py",
+      "sha256": "26d8a3c5aeec49fc5e0e2da465c80ee30dac1014cc1beedcf0232afcc5839bf9"
+    }
+  ],
+  "rebuild_command": "python implementation/investigations/grc9v4-constitutive-design/scripts/build_grcv4_specification_release.py",
+  "bundle_digest": "sha256:9f4c8fe5b57b1c477d834a3e4dae3f98a2b18c70e6e7f598e3c9652170c8645f",
+  "claim_ceiling": "specification_release_not_runtime_implementation_or_execution_evidence"
+}

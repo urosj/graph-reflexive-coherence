@@ -7,6 +7,8 @@ a gated `GRC9V4` specialization. The accepted V4 specifications are the primary
 implementation source, read together with the paper and accepted investigation
 claims. P9-1.9 records the user's accepted implementation review. P9-2.1 now
 implements the immutable value-record foundation, with user review pending;
+P9-2.2 adds typed profile resolution, canonical identities and installed assets,
+also pending review;
 no executable profile or runtime conformance is claimed. The companion
 [checklist](./Phase-9-GRCV4-ImplementationChecklist.md) records execution;
 the [phase opening](./Phase-9-GRCV4-PhaseOpening.json) records authority,
@@ -327,6 +329,31 @@ integral-adapter range checking and ordered-coordinate input handling. Original
 audit/subject bytes and corrected execution are retained separately. Equality
 authority, wide-map scaling and explicit codec projections are recorded with
 P9-2.2/P9-2.3/P9-2.6; those advisories do not become new scientific debt or gates.
+
+P9-2.2's [review](./phase-9-grcv4/tranche-2/P9-2.2-Review.md) and
+[execution record](./phase-9-grcv4/tranche-2/P9-2.2-ExecutionRecord.json) record
+typed complete declarations for all ten shapes, exact published JCS identities,
+Candidate C reference-map checks and installed release-bound schema assets.
+Declared profile resolution is not executable algorithm/domain admission:
+the runtime support set remains empty. H1 is enforced through typed/JCS
+comparison, and H2's immutable item traversal is corrected and scale-tested.
+Clean wheel/sdist baseline and optional-extra installs are verified without a
+checkout; later lifecycle/facade integration remains with P9-2.3/P9-2.6.
+The current checker routes only the already-constrained `pyproject.toml`
+dependency/package-data additions to P9-2.2 as well as P9-2.6; model exports
+and all other leaf prerequisites retain their existing gates.
+
+The P9-2.2 independent audit corrections normalize schema-admitted count fields
+on both constructor paths (R1), provide an explicit exact-canonical binary64
+reconstruction route distinct from strict configuration decoding (R2), and
+check C/reference-Hodge values by stable edge ID without mobility substitution
+(F1). These have 79 focused regressions and 357 passing stress probes, including
+the recorded two-callsite selection of the new reconstruction API. Original
+audit/subject bytes and execution remain separate from the corrected run.
+Native safe-integer rejection, frozen vectors and empty support sets are
+unchanged. P9-2.3 still owns operation-specific decoding/admission composition;
+P9-3.1/P9-4.1 retain actual graph/SPD/domain admission. Engineering completion
+does not infer user acceptance of P9-2.1 or P9-2.2.
 
 Implement immutable lifecycle-owned records, read-only common projections,
 profile/parameter resolution, deep immutability, and canonical IDs against

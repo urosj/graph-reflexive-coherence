@@ -142,7 +142,8 @@ The historical pending statements below describe those earlier checkpoints;
 they are superseded for P9-G1 only. G2/G3/G4, all runtime support, fifteen
 source obligations and five implementation follow-ups remain pending. No
 runtime code was added by this gate-recording step. Dependency-ready work:
-P9-2.1 and P9-2.2, with eleven currently eligible runtime paths. Tranche 1 is
+P9-2.1 and P9-2.2, with twelve currently eligible runtime paths after P9-2.2's
+narrow package-integration routing correction. Tranche 1 is
 reconciled as the review/authorization tranche, not as Phase 9 completion.
 
 P9-1.1–P9-1.3 evidence: [review package](./phase-9-grcv4/tranche-1/P9-1.1-1.3-Review.md)
@@ -249,16 +250,28 @@ three bounded batches retain their own results and raw per-run manifests.
   105 unchanged core tests, Ruff and strict mypy pass. This marks
   engineering completion; user acceptance is pending. No model/profile is
   admitted and the broader P9-2.6 immutability/lifecycle obligations remain.
-- [ ] P9-2.2: Implement complete profile/parameter resolution and canonical
+- [x] P9-2.2: Implement complete profile/parameter resolution and canonical
   identities against all applicable schema/preimage vectors.
   Package and hash-bind schema/identity assets for installed use (§7.1).
   Carry P9-2.1 stress H1/H2: typed/JCS identity rather than Python equality/hash,
   explicit codec projections rather than dataclass helpers, and wide-map
   refreezing/equality scale checks before profile/reference-map consumption.
+  [Review](./phase-9-grcv4/tranche-2/P9-2.2-Review.md) and
+  [execution](./phase-9-grcv4/tranche-2/P9-2.2-ExecutionRecord.json): all 25
+  published preimages, typed ten-shape declarations, reference-content checks,
+  and clean wheel/sdist installs. H1/H2 have focused regressions. Independent
+  audit R1 (typed integer storage), R2 (explicit canonical reconstruction) and
+  F1 (C/reference-Hodge value agreement) are corrected and regression-tested:
+  79 focused tests and 357 stress probes pass. Original audit/subject bytes,
+  the two-callsite probe adaptation and corrected execution remain separate.
+  Frozen identities and native safe-integer rejection are unchanged. Engineering
+  completion only; user review pending and executable support remains empty.
 - [ ] P9-2.3: Separate wire failures, semantic admission failures, and strict
   admitted requests; keep harness injection outside production identity.
   Enforce the P9-2.1 H1 boolean/number identity boundary and exclude unsupported
   pickle/reinitialization routes from admitted state decoding.
+  Compose P9-2.2's distinct strict-configuration/canonical-reconstruction
+  decoders with operation-specific admission; neither decoder admits a state.
 - [ ] P9-2.4: Implement orthogonal operation/solver dispositions and receipt
   delta versus persistent ledger ownership.
 - [ ] P9-2.5: Create the runtime harness with independent oracles and exact

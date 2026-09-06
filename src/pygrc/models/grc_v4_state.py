@@ -10,7 +10,7 @@ an executable model. There are no caches, runtime capabilities or model exports.
 from __future__ import annotations
 
 from collections import UserString
-from collections.abc import Iterator, Mapping, Sequence, Set
+from collections.abc import ItemsView, Iterator, Mapping, Sequence, Set
 from dataclasses import dataclass, field
 import math
 from numbers import Integral, Real
@@ -126,12 +126,27 @@ class FrozenJSONMap(Mapping[str, FrozenJSONValue]):
     def __len__(self) -> int:
         return len(self._items)
 
+    def items(self) -> ItemsView[str, FrozenJSONValue]:
+        # Mapping's default view performs one linear lookup per item. This
+        # immutable view walks the existing tuple directly, including during
+        # recursive freezing, equality and codec projection.
+        return _FrozenItemsView(self)
+
     def __hash__(self) -> int:
         return hash(frozenset(self._items))
 
     def to_dict(self) -> dict[str, object]:
         """Return detached JSON data, not canonical bytes or an admitted snapshot."""
         return {key: _thaw(value) for key, value in self._items}
+
+
+class _FrozenItemsView(ItemsView[str, FrozenJSONValue]):
+    _mapping: Mapping[str, FrozenJSONValue]
+
+    def __iter__(self) -> Iterator[tuple[str, FrozenJSONValue]]:
+        mapping = self._mapping
+        assert isinstance(mapping, FrozenJSONMap)
+        return iter(mapping._items)
 
 
 def _thaw(value: FrozenJSONValue) -> object:

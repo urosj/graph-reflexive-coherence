@@ -25,6 +25,10 @@ Repository = "https://github.com/urosj/graph-reflexive-coherence"
 Documentation = "https://github.com/urosj/graph-reflexive-coherence/tree/main/docs"
 
 [project.optional-dependencies]
+v4 = [
+  "rfc8785==0.1.4",
+  "jsonschema==4.26.0",
+]
 dev = [
   "mypy>=1.8",
   "ruff>=0.5",
@@ -35,6 +39,9 @@ package-dir = { "" = "src" }
 
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[tool.setuptools.package-data]
+"pygrc.models.grc_v4_assets" = ["*.json", "*.sha256"]
 
 [tool.ruff]
 target-version = "py311"
