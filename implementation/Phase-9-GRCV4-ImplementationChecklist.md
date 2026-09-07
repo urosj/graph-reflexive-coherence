@@ -422,7 +422,7 @@ three bounded batches retain their own results and raw per-run manifests.
   numerical logic is unchanged; the review links reconstructible audit inputs
   and a complete packet exporter. The retained numerical limitations remain
   assigned to P9-3.4 and the later experimental/transaction owners.
-- [ ] P9-3.4: Execute nonidentity SPD, permutation, signed-edge covariance,
+- [x] P9-3.4: Execute nonidentity SPD, permutation, signed-edge covariance,
   nonfinite/domain, stale-cache, and charge-precision cases.
   Include near-admitted conditioning boundaries and repeated eigenvalues
   within a strictly separated cluster; compare invariant projectors (§7.4).
@@ -443,7 +443,28 @@ three bounded batches retain their own results and raw per-run manifests.
   experimental conservation claims. Zero rounded residual is not exact
   stored-sum conservation; diagnostic exact sums must not become hidden state,
   resource repair or an alternate admission rule. Primitive compositions are
-  not executed full beats. The existing star witness remains open.
+  not executed full beats. The product correction and remaining precision
+  boundaries are recorded in the review below.
+  [Review](./phase-9-grcv4/tranche-3/P9-3.4-Review.md) and
+  [execution](./phase-9-grcv4/tranche-3/P9-3.4-ExecutionRecord.json): implemented
+  and verified; explicitly accepted by the user for commit after audit follow-up
+  and evidence consolidation. P9-3.5's separate permission transition will bind
+  the accepted commit. Corrected intermediate product underflow;
+  retained true-underflow/rounded-PSD and charge/aggregation limits. The
+  original full suite passes 1,653 tests, no skips; a separate added method passes
+  288 dense near-gap projector actions. Audit follow-up: 1,662 current native
+  tests, no failures/errors/skips, and 568 independent native scenarios pass.
+  Verified 137 authority, 20 JavaScript and 18 browser checks, exact source reconstruction and unchanged earlier evidence.
+  These primitive and analysis results do not execute the future C selector,
+  current block, complete beat or lifecycle transaction. The
+  [audit follow-up](./phase-9-grcv4/tranche-3/P9-3.4-Review.md#independent-audit-follow-up)
+  closes capture coverage and provenance/diagnostic integrity gaps. Exact-SPD
+  input can still evaluate negative/zero self-pairings: P9-4.2/P9-4.5 and later
+  norm/energy consumers own demonstrated numerical validity at that boundary,
+  with no clipping, floor or absolute-value repair. Actual selectors must cover
+  both sides of the declared cutoff, the exact boundary and strict-gap loss;
+  retained conditioning must not be relabeled as physical conditioning.
+  P9-3.5 remains held.
 - [ ] P9-3.5: Verify full prestate preservation after every rejected operation.
 
 ## Tranche 4. D11-C and the first C_OS runtime slice

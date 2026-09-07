@@ -665,6 +665,7 @@ from pygrc.models.grc_v4_profile import CandidateAParams, CandidateCParams, list
 from pygrc.models.grc_v4_transport import CandidateAMobility, CandidateCMobility
 from dataclasses import replace
 from pygrc.models.grc_v4_geometry import GeometryStageInputs, GeometryStageCache, K4Tensor, H_profile
+from pygrc.models.grc_v4_geometry import StarAssembly
 from pygrc.models.grc_v4_codec import canonical_json_bytes
 stage=None
 data=json.load(sys.stdin)
@@ -675,6 +676,15 @@ cache=GeometryStageCache(stage,'flat',operand)
 restored=GeometryStageCache.from_canonical_bytes(cache.to_canonical_bytes(),expected_inputs=stage,expected_kind='flat',expected_operand=operand)
 assert restored.consume(expected_inputs=stage,expected_kind='flat',expected_operand=operand).values==(2,2)
 assert H_profile(K4Tensor(ref.graph,ref.K4_base,((2,1),(1,4))),reference=ref,context=ref.context,profile=ref.profile).one_form_hodge.matrix==((3,.5),(.5,5))
+from fractions import Fraction
+tiny=OneForm(ref.graph,(5e-324,1e150))
+expected_coupling=float(Fraction(5e-324)*Fraction(1e150)/2)
+assert StarAssembly(tiny).matrix[0][1]==expected_coupling
+extreme=GeometryStageCache(stage,'star_assembly',tiny)
+assert GeometryStageCache.from_canonical_bytes(extreme.to_canonical_bytes(),expected_inputs=stage,expected_kind='star_assembly',expected_operand=tiny)==extreme
+near=PhysicalFluxFlatMap(OneFormHodge(ref.graph,((1.,1.-2.**-40),(1.-2.**-40,1.))))
+answer=near.flat(PhysicalFlux(ref.graph,(1.,-1.))).values
+assert max(abs(answer[0]/2.**40-1),abs(answer[1]/2.**40+1)) < 1e-8
 try: restored.consume(expected_inputs=replace(stage,stage='post_continuity'),expected_kind='flat',expected_operand=operand)
 except ValueError as exc: assert 'stale_cache' in str(exc)
 else: raise AssertionError('installed stale stage accepted')
@@ -2208,6 +2218,1611 @@ class StageCacheTests(unittest.TestCase):
                 self.assertEqual(json.loads(run.stdout), expected)
 
 
+def pressure_action(
+    graph: GRCV4Graph, order: tuple[int, ...], signs: tuple[int, ...]
+) -> GraphCoordinateAction:
+    """Reverse vertex order as well as the supplied signed edge permutation."""
+    target = GRCV4Graph(
+        graph.live_node_ids[::-1],
+        tuple(
+            OrientedEdge(
+                graph.oriented_edges[k].edge_id,
+                graph.oriented_edges[k].tail_node_id
+                if s == 1
+                else graph.oriented_edges[k].head_node_id,
+                graph.oriented_edges[k].head_node_id
+                if s == 1
+                else graph.oriented_edges[k].tail_node_id,
+            )
+            for k, s in zip(order, signs, strict=True)
+        ),
+    )
+    return GraphCoordinateAction(
+        graph, target, tuple(reversed(range(len(graph.live_node_ids)))), order, signs
+    )
+
+
+def rational_solve(
+    matrix: tuple[tuple[float, ...], ...], rhs: tuple[float, ...]
+) -> tuple[Fraction, ...]:
+    """Small independent exact Gauss-Jordan oracle, with row pivoting.
+
+    Does not call production positivity, factorization or a numerical solver.
+    The fixtures have nonsingular represented dyadic matrices.
+    """
+    n = len(rhs)
+    a = [
+        [Fraction(x) for x in row] + [Fraction(b)]
+        for row, b in zip(matrix, rhs, strict=True)
+    ]
+    for k in range(n):
+        pivot = next(i for i in range(k, n) if a[i][k])
+        a[k], a[pivot] = a[pivot], a[k]
+        scale = a[k][k]
+        a[k] = [x / scale for x in a[k]]
+        for i in range(n):
+            if i != k:
+                scale = a[i][k]
+                a[i] = [x - scale * y for x, y in zip(a[i], a[k], strict=True)]
+    return tuple(row[-1] for row in a)
+
+
+class NumericalEnvelopeTests(unittest.TestCase):
+    """P9-3.4: measured primitive envelope, not current/selector admission.
+
+    Analytic spectra/projectors and rational inverse actions are independent
+    expectations. Eigensolves below are analysis fixtures, not a C selector.
+    Observations are collected by the optional leaf evidence runner.
+    """
+
+    observations: list[dict[str, Any]] = []
+
+    @staticmethod
+    def graph(size: int) -> GRCV4Graph:
+        return GRCV4Graph(
+            ("a", "b", "isolated"),
+            tuple(OrientedEdge(str(i), "a", "b") for i in range(size)),
+        )
+
+    def test_star_mixed_scale_retains_representable_coupling(self) -> None:
+        graph = GRCV4Graph.from_payload(graph_payload())
+        form = OneForm(graph, (5e-324, 1e150))
+        actual = geometry_stage.StarAssembly(form).matrix
+        expected = float(Fraction(5e-324) * Fraction(1e150) / 2)
+        self.assertGreater(expected, 0)
+        self.assertEqual(actual[0][1], expected)
+        action = pressure_action(graph, (1, 0), (-1, 1))
+        other = geometry_stage.StarAssembly(action.one_form(form)).matrix
+        self.assertEqual(other[0][1], -expected)
+        # Retaining the coupling cannot recover an unrepresentable square:
+        # rounded assembly itself need not remain exactly PSD. H_profile must
+        # still validate the total geometry, without clipping an eigenvalue.
+        self.assertEqual(actual[0][0], 0)
+        determinant = (
+            Fraction(actual[0][0]) * Fraction(actual[1][1]) - Fraction(expected) ** 2
+        )
+        self.assertLess(determinant, 0)
+        self.observations.append(
+            dict(
+                case="mixed_scale_star",
+                form=list(form.values),
+                coupling=expected,
+                old_componentwise_relative_error=1.0,
+                old_normwise_error_exact=str(
+                    Fraction(expected) / Fraction(actual[1][1])
+                ),
+                stored_determinant_sign=-1,
+                true_underflow_diagonal=True,
+            )
+        )
+
+    def test_star_decimal_oracle_all_overlap_classes_scales_and_signs(self) -> None:
+        from decimal import Decimal, localcontext
+        import itertools
+
+        graphs = (
+            GRCV4Graph.from_payload(graph_payload()),  # one of two stars shared
+            self.graph(2),  # both endpoint stars shared
+            GRCV4Graph(
+                ("a", "b"), (OrientedEdge("l", "a", "a"), OrientedEdge("e", "a", "b"))
+            ),
+            GRCV4Graph(
+                ("a", "b", "c", "d"),
+                (OrientedEdge("e", "a", "b"), OrientedEdge("f", "c", "d")),
+            ),
+        )
+        values = (
+            0.0,
+            5e-324,
+            math.nextafter(5e-324, math.inf),
+            2.0**-537,
+            2.0**-511,
+            0.1,
+            1.0,
+            3.0,
+            2.0**500,
+        )
+        cases = 0
+        with localcontext() as ctx:
+            ctx.prec = 2500  # exact decimal product of these dyadic operands
+            for graph, a, b in itertools.product(graphs, values, values):
+                endpoints = [
+                    {e.tail_node_id, e.head_node_id} for e in graph.oriented_edges
+                ]
+                for sign in (-1, 1):
+                    form = OneForm(graph, (a, sign * b if b else 0.0))
+                    matrix = geometry_stage.StarAssembly(form).matrix
+                    for i in range(2):
+                        for j in range(2):
+                            count = len(endpoints[i] & endpoints[j])
+                            product = len(endpoints[i]) * len(endpoints[j])
+                            # Independently derived cover coefficient. Preserve
+                            # its specified binary64 sqrt/division, then use a
+                            # different arithmetic system for the full product.
+                            weight = count / math.sqrt(product)
+                            exact = (
+                                Decimal(weight)
+                                * Decimal(form.values[i])
+                                * Decimal(form.values[j])
+                            )
+                            self.assertEqual(matrix[i][j], float(exact))
+                    action = pressure_action(graph, (1, 0), (-1, 1))
+                    moved = geometry_stage.StarAssembly(action.one_form(form)).matrix
+                    self.assertEqual(
+                        moved,
+                        ((matrix[1][1], -matrix[1][0]), (-matrix[0][1], matrix[0][0])),
+                    )
+                    cases += 1
+        self.observations.append(
+            dict(
+                case="star_decimal_product",
+                cases=cases,
+                coefficient_scope="binary64_sqrt_then_division",
+            )
+        )
+
+    def test_star_true_underflow_ties_overflow_and_zero(self) -> None:
+        graph = self.graph(2)
+        # 2^-537 squared is the smallest subnormal; its two immediate
+        # neighbors test final rounding near that boundary.
+        for x in (
+            math.nextafter(2.0**-537, 0),
+            2.0**-537,
+            math.nextafter(2.0**-537, math.inf),
+        ):
+            expected = float(Fraction(x) ** 2)
+            self.assertEqual(
+                geometry_stage.StarAssembly(OneForm(graph, (x, x))).matrix,
+                ((expected, expected), (expected, expected)),
+            )
+        self.assertEqual(
+            geometry_stage.StarAssembly(OneForm(graph, (5e-324, 5e-324))).matrix,
+            ((0.0, 0.0), (0.0, 0.0)),
+        )
+        for values in ((1e308, 0.0), (1e155, -1e155)):
+            with self.assertRaisesRegex(ValueError, "nonfinite"):
+                geometry_stage.StarAssembly(OneForm(graph, values))
+        for value in (math.nan, math.inf, -math.inf, -0.0):
+            with self.assertRaises(ValueError):
+                geometry_stage.StarAssembly(OneForm(graph, (value, 1.0)))
+
+    def test_flat_exact_inverse_and_residual_across_dense_spd_scales(self) -> None:
+        import random
+
+        rng = random.Random(93401)
+        worst_forward = worst_backward = 0.0
+        for n in (2, 3, 5, 8):
+            graph = self.graph(n)
+            for exponent in (-400, 0, 400):
+                for _ in range(8):
+                    # L L^T + n I: explicit SPD proof independent of admission.
+                    factor = [
+                        [rng.randrange(-4, 5) for _ in range(n)] for _ in range(n)
+                    ]
+                    matrix = tuple(
+                        tuple(
+                            math.ldexp(
+                                float(
+                                    sum(factor[i][k] * factor[j][k] for k in range(n))
+                                    + (n if i == j else 0)
+                                ),
+                                exponent,
+                            )
+                            for j in range(n)
+                        )
+                        for i in range(n)
+                    )
+                    rhs = tuple(
+                        math.ldexp(float(rng.randrange(-8, 9)), exponent)
+                        for _ in range(n)
+                    )
+                    h = OneFormHodge(graph, matrix)
+                    x = PhysicalFluxFlatMap(h).flat(PhysicalFlux(graph, rhs)).values
+                    oracle = rational_solve(matrix, rhs)
+                    denominator = max(abs(v) for v in oracle)
+                    forward = (
+                        max(
+                            abs(Fraction(a) - e) for a, e in zip(x, oracle, strict=True)
+                        )
+                        / denominator
+                    )
+                    residual = max(
+                        abs(
+                            sum(
+                                Fraction(a) * Fraction(b)
+                                for a, b in zip(row, x, strict=True)
+                            )
+                            - Fraction(y)
+                        )
+                        for row, y in zip(matrix, rhs, strict=True)
+                    )
+                    scale = max(
+                        sum(abs(Fraction(v)) for v in row) for row in matrix
+                    ) * max(abs(Fraction(v)) for v in x) + max(
+                        abs(Fraction(v)) for v in rhs
+                    )
+                    backward = residual / scale
+                    self.assertLessEqual(forward, Fraction(1, 2**45))
+                    self.assertLessEqual(backward, Fraction(1, 2**49))
+                    worst_forward = max(worst_forward, float(forward))
+                    worst_backward = max(worst_backward, float(backward))
+                    action = pressure_action(
+                        graph,
+                        tuple(reversed(range(n))),
+                        tuple((-1) ** i for i in range(n)),
+                    )
+                    transformed = PhysicalFluxFlatMap(action.one_form_hodge(h)).flat(
+                        action.physical_flux(PhysicalFlux(graph, rhs))
+                    )
+                    expected = action.one_form(
+                        OneForm(graph, tuple(float(v) for v in oracle))
+                    )
+                    self.assertLessEqual(
+                        max(
+                            abs(a - b)
+                            for a, b in zip(
+                                transformed.values, expected.values, strict=True
+                            )
+                        ),
+                        float(denominator) * 2.0**-44,
+                    )
+        self.observations.append(
+            dict(
+                case="dense_spd_solve",
+                cases=96,
+                worst_relative_forward=worst_forward,
+                worst_scaled_residual=worst_backward,
+            )
+        )
+
+    def test_near_spd_boundary_conditioning_is_not_positivity(self) -> None:
+        graph = self.graph(2)
+        for exponent in (-400, 0, 400):
+            for k in (4, 16, 28, 40, 48, 52):
+                c = 1.0 - 2.0**-k
+                matrix = tuple(
+                    tuple(math.ldexp(v, exponent) for v in row)
+                    for row in ((1.0, c), (c, 1.0))
+                )
+                rhs = (math.ldexp(1.0, exponent), math.ldexp(-0.25, exponent))
+                exact = rational_solve(matrix, rhs)
+                h = OneFormHodge(graph, matrix)
+                result = PhysicalFluxFlatMap(h).flat(PhysicalFlux(graph, rhs)).values
+                cond = (Fraction(1) + Fraction(c)) / (Fraction(1) - Fraction(c))
+                error = max(
+                    abs(Fraction(a) - b) for a, b in zip(result, exact, strict=True)
+                ) / max(abs(x) for x in exact)
+                # Forward accuracy is conditioned; this is a measured primitive
+                # envelope, not an invented runtime condition-number cutoff.
+                bound = min(Fraction(1, 8), 16 * cond * Fraction(1, 2**53))
+                self.assertLessEqual(error, bound)
+                self.observations.append(
+                    dict(
+                        case="near_spd_boundary",
+                        exponent=exponent,
+                        separation_bits=k,
+                        condition=float(cond),
+                        relative_forward=float(error),
+                        bound=float(bound),
+                    )
+                )
+        for c in (1.0, math.nextafter(1.0, math.inf)):
+            with self.assertRaisesRegex(ValueError, "positive definite"):
+                OneFormHodge(graph, ((1.0, c), (c, 1.0)))
+
+    def test_positive_input_does_not_guarantee_finite_inverse_action(self) -> None:
+        graph = self.graph(2)
+        h = OneFormHodge(graph, ((5e-324, 0.0), (0.0, 1.0)))
+        with self.assertRaisesRegex(ValueError, "nonfinite"):
+            PhysicalFluxFlatMap(h).flat(PhysicalFlux(graph, (1.0, 0.0)))
+        with (
+            patch.object(
+                np.linalg, "solve", side_effect=np.linalg.LinAlgError("forced")
+            ),
+            patch.object(
+                np.linalg, "pinv", side_effect=AssertionError("forbidden fallback")
+            ),
+        ):
+            with self.assertRaisesRegex(ValueError, "no fallback"):
+                PhysicalFluxFlatMap(h).flat(PhysicalFlux(graph, (5e-324, 1.0)))
+
+    def test_exact_positive_matrix_can_have_nonpositive_computed_self_pairing(
+        self,
+    ) -> None:
+        # Independent audit witness: positivity concerns the represented
+        # matrix; the two rounded matvec/dot reductions have a separate limit.
+        graph = GRCV4Graph(
+            ("a", "b"), (OrientedEdge("e", "a", "b"), OrientedEdge("f", "a", "b"))
+        )
+        matrix = ((1.0, 0.1), (0.1, 0.010000000000000002))
+        determinant = Fraction(matrix[1][1]) - Fraction(matrix[0][1]) ** 2
+        self.assertGreater(determinant, 0)  # Sylvester, exact stored entries
+        cases = 0
+        nonpositive = 0
+        for exponent in (-400, 0, 400):
+            for order in ((0, 1), (1, 0)):
+                for signs in ((1, 1), (1, -1), (-1, 1), (-1, -1)):
+                    moved = tuple(
+                        tuple(
+                            math.ldexp(
+                                matrix[i][j] * signs[k] * signs[column], exponent
+                            )
+                            for column, j in enumerate(order)
+                        )
+                        for k, i in enumerate(order)
+                    )
+                    for values in ((-0.010000000000000004, 0.1), (-0.1, 1.0)):
+                        v = tuple(
+                            values[i] * s for i, s in zip(order, signs, strict=True)
+                        )
+                        exact = sum(
+                            Fraction(v[i]) * Fraction(moved[i][j]) * Fraction(v[j])
+                            for i in range(2)
+                            for j in range(2)
+                        )
+                        self.assertGreater(exact, 0)
+                        # A scalar Fraction oracle emulates each required
+                        # binary64 product/reduction, independently of _matvec.
+                        row_products = [
+                            [
+                                float(Fraction(a) * Fraction(b))
+                                for a, b in zip(row, v, strict=True)
+                            ]
+                            for row in moved
+                        ]
+                        mv = [float(sum(map(Fraction, row))) for row in row_products]
+                        products = [
+                            float(Fraction(a) * Fraction(b))
+                            for a, b in zip(v, mv, strict=True)
+                        ]
+                        expected = float(sum(map(Fraction, products)))
+                        # Matrix/vector types have the same arithmetic but
+                        # retain their separate typed pairing boundaries.
+                        form = OneForm(graph, v)
+                        scalar = VertexScalar(graph, v)
+                        for kind, computed in (
+                            (
+                                "OneFormHodge",
+                                OneFormHodge(graph, moved).pair(form, form),
+                            ),
+                            (
+                                "VertexHodge",
+                                VertexHodge(graph, moved).pair(scalar, scalar),
+                            ),
+                        ):
+                            self.assertEqual(computed, expected)
+                            nonpositive += computed <= 0
+                            cases += 1
+                            if exponent == 0 and order == (0, 1) and signs == (1, 1):
+                                self.assertLessEqual(computed, 0)
+                                self.observations.append(
+                                    dict(
+                                        case="positive_matrix_nonpositive_pairing",
+                                        hodge=kind,
+                                        matrix=matrix,
+                                        vector=v,
+                                        exact_determinant=str(determinant),
+                                        condition_lower_bound=float(1 / determinant),
+                                        exact_self_pairing=str(exact),
+                                        exact_rounded_once=float(exact),
+                                        computed_self_pairing=computed,
+                                        disposition="primitive_rounding_limit_not_candidate_admission",
+                                    )
+                                )
+        for values in ((0.5, 1.0), (-0.5, -1.0)):
+            form = OneForm(graph, values)
+            scalar = VertexScalar(graph, values)
+            control = ((2.0, 1.0), (1.0, 3.0))
+            self.assertEqual(OneFormHodge(graph, control).pair(form, form), 4.5)
+            self.assertEqual(VertexHodge(graph, control).pair(scalar, scalar), 4.5)
+        self.observations.append(
+            dict(
+                case="pairing_range_and_coordinates",
+                cases=cases,
+                nonpositive_computed=nonpositive,
+                well_conditioned_controls=4,
+            )
+        )
+
+    def test_repeated_cluster_projector_is_basis_invariant_with_strict_gap(
+        self,
+    ) -> None:
+        import itertools
+
+        graph = self.graph(4)
+        # A dyadic orthogonal Hadamard basis yields exactly represented SPD
+        # matrices. P = (upper*I-H)/gap is an independent polynomial projector.
+        q = (
+            np.array(
+                ((1, 1, 1, 1), (1, -1, 1, -1), (1, 1, -1, -1), (1, -1, -1, 1)),
+                dtype=float,
+            )
+            / 2
+        )
+        expected = q[:, :2] @ q[:, :2].T
+        for gap in (4.0, 2.0**-12, 2.0**-28, 2.0**-40):
+            upper = 1.0 + gap
+            matrix = np.eye(4) * upper - gap * expected
+            h = OneFormHodge(graph, matrix)  # type: ignore[arg-type]
+            np.testing.assert_array_equal(
+                (upper * np.eye(4) - np.array(h.matrix)) / gap, expected
+            )
+            for order in itertools.permutations(range(4)):
+                signs = tuple((-1) ** i for i in order)
+                action = pressure_action(graph, order, signs)
+                moved = np.array(action.one_form_hodge(h).matrix)
+                vals, vectors = np.linalg.eigh(moved)
+                self.assertLess(vals[1], 1.0 + gap / 2)
+                self.assertGreater(vals[2], 1.0 + gap / 2)
+                basis = vectors[:, :2]
+                projector = basis @ basis.T
+                oracle = expected[np.ix_(order, order)] * np.outer(signs, signs)
+                error = float(np.linalg.norm(projector - oracle, ord=2))
+                bound = 32 * np.finfo(float).eps * upper / gap
+                self.assertLessEqual(error, bound)
+                # Internal rotations/signs change columns but not the sector.
+                rotated = basis @ np.array(((0.6, -0.8), (0.8, 0.6)))
+                np.testing.assert_allclose(
+                    rotated @ rotated.T, projector, atol=2e-15, rtol=0
+                )
+                self.observations.append(
+                    dict(
+                        case="isolated_cluster_projector",
+                        gap=gap,
+                        order=list(order),
+                        error=error,
+                        bound=bound,
+                    )
+                )
+        # At zero gap the rank-two sector is not unique: two legitimate
+        # eigensolver bases select different projectors. Never certify it.
+        first = np.eye(4)[:, :2]
+        second = np.eye(4)[:, 2:]
+        self.assertEqual(
+            float(np.linalg.norm(first @ first.T - second @ second.T, ord=2)), 1
+        )
+
+    def test_near_affine_domain_and_stale_extreme_cache(self) -> None:
+        ref = stage_reference_fixture(weights={"z": 1.0, "a": 1.0}, gain=1.0)
+        for delta in (math.nextafter(-1.0, 0), -1.0, math.nextafter(-1.0, -math.inf)):
+            tensor = geometry_stage.K4Tensor(
+                ref.graph, ref.K4_base, ((delta, 0.0), (0.0, 0.0))
+            )
+            if delta > -1:
+                result = geometry_stage.H_profile(
+                    tensor, reference=ref, context=ref.context, profile=ref.profile
+                )
+                self.assertEqual(
+                    result.one_form_hodge.matrix[0][0], float(1 + Fraction(delta))
+                )
+            else:
+                with self.assertRaisesRegex(ValueError, "positive definite"):
+                    geometry_stage.H_profile(
+                        tensor, reference=ref, context=ref.context, profile=ref.profile
+                    )
+        inputs = stage_inputs_fixture(ref)
+        operand = OneForm(ref.graph, (5e-324, 1e150))
+        cache = geometry_stage.GeometryStageCache(inputs, "star_assembly", operand)
+        self.assertEqual(
+            geometry_stage.GeometryStageCache.from_canonical_bytes(
+                cache.to_canonical_bytes(),
+                expected_inputs=inputs,
+                expected_kind="star_assembly",
+                expected_operand=operand,
+            ),
+            cache,
+        )
+        changed = OneForm(ref.graph, (math.nextafter(5e-324, math.inf), 1e150))
+        with self.assertRaises(ValueError):
+            cache.consume(
+                expected_inputs=inputs,
+                expected_kind="star_assembly",
+                expected_operand=changed,
+            )
+        # Old product-policy identity is not reusable, even after rehashing
+        # the cache envelope. No old numerical evidence is silently relabeled.
+        envelope = json.loads(cache.to_canonical_bytes())
+        envelope["payload"]["output"]["identity"] = geometry_stage._identity(
+            "grcv4-star-assembly-sha256",
+            {
+                "descriptor_version": "grcv4-vertex-star-cooccurrence-v1",
+                "graph": ref.graph.to_payload(),
+                "form": operand.values,
+            },
+        )
+        envelope["cache_id"] = geometry_stage._identity(
+            "grcv4-derived-geometry-cache-sha256", envelope["payload"]
+        )
+        with self.assertRaisesRegex(ValueError, "reconstructed output or identity"):
+            geometry_stage.GeometryStageCache.from_canonical_bytes(
+                canonical_json_bytes(envelope),
+                expected_inputs=inputs,
+                expected_kind="star_assembly",
+                expected_operand=operand,
+            )
+
+    def test_nonidentity_vertex_metric_projector_is_metric_self_adjoint(self) -> None:
+        graph = GRCV4Graph(("a", "b", "c", "d"), ())
+        scales = np.array((0.25, 1.0, 4.0, 16.0))
+        metric = VertexHodge(graph, np.diag(scales**2))  # type: ignore[arg-type]
+        q = (
+            np.array(
+                ((1, 1, 1, 1), (1, -1, 1, -1), (1, 1, -1, -1), (1, -1, -1, 1)),
+                dtype=float,
+            )
+            / 2
+        )
+        symmetric = q @ np.diag((1, 1, 5, 5)) @ q.T
+        stiffness = scales[:, None] * symmetric * scales[None, :]
+        values, vectors = np.linalg.eigh(stiffness / scales[:, None] / scales[None, :])
+        self.assertLess(values[1], 3)
+        self.assertGreater(values[2], 3)
+        physical_basis = vectors[:, :2] / scales[:, None]
+        h0 = np.array(metric.matrix)
+        projector = physical_basis @ physical_basis.T @ h0
+        # Analytic physical-coordinate projector S^-1 P_orth S.
+        oracle = (q[:, :2] @ q[:, :2].T) / scales[:, None] * scales[None, :]
+        np.testing.assert_allclose(projector, oracle, atol=2e-13, rtol=0)
+        np.testing.assert_allclose(projector @ projector, projector, atol=2e-13, rtol=0)
+        np.testing.assert_allclose(projector.T @ h0, h0 @ projector, atol=2e-13, rtol=0)
+        self.assertGreater(float(np.linalg.norm(projector - projector.T)), 1)
+        self.observations.append(
+            dict(
+                case="metric_projector",
+                metric_diagonal=list(scales**2),
+                absolute_error=float(np.max(abs(projector - oracle))),
+                scope="analysis_fixture_not_C_selector",
+            )
+        )
+
+    def test_dense_rational_projector_with_input_rounding_near_gap(self) -> None:
+        """Challenge dense cross-sector mixing absent from the dyadic fixture.
+
+        Exact Householder reflectors give a rational rank-two projector with
+        repeated eigenvalues and a known gap before input rounding. Stored
+        matrices may split the internal degeneracy by roundoff. Compare the
+        whole isolated cluster, including input error, not its individual modes.
+        """
+        import itertools
+
+        graph = self.graph(4)
+        for direction in ((1, 2, 3, 5), (2, 3, 5, 7), (1, 4, 9, 16)):
+            norm2 = sum(x * x for x in direction)
+            reflector = tuple(
+                tuple(
+                    Fraction(int(i == j)) - Fraction(2 * x * y, norm2)
+                    for j, y in enumerate(direction)
+                )
+                for i, x in enumerate(direction)
+            )
+            sector = tuple(
+                tuple(
+                    sum(reflector[i][k] * reflector[j][k] for k in (0, 1))
+                    for j in range(4)
+                )
+                for i in range(4)
+            )
+            # Establish the exact projector independently of all eigensolvers.
+            self.assertEqual(sum(sector[i][i] for i in range(4)), 2)
+            self.assertEqual(
+                tuple(
+                    tuple(
+                        sum(sector[i][k] * sector[k][j] for k in range(4))
+                        for j in range(4)
+                    )
+                    for i in range(4)
+                ),
+                sector,
+            )
+            oracle = np.array([[float(x) for x in row] for row in sector])
+            for gap in (4.0, 2.0**-12, 2.0**-28, 2.0**-40):
+                upper = 1.0 + gap
+                exact_matrix = tuple(
+                    tuple(
+                        Fraction(upper) * int(i == j) - Fraction(gap) * sector[i][j]
+                        for j in range(4)
+                    )
+                    for i in range(4)
+                )
+                matrix = tuple(tuple(float(x) for x in row) for row in exact_matrix)
+                hodge = OneFormHodge(graph, matrix)
+                input_error = max(
+                    sum(abs(Fraction(a) - b) for a, b in zip(left, right, strict=True))
+                    for left, right in zip(matrix, exact_matrix, strict=True)
+                )
+                self.assertLessEqual(input_error, Fraction(4, 2**53) * Fraction(upper))
+                bound = 32 * np.finfo(float).eps * upper / gap
+                worst = 0.0
+                for order in itertools.permutations(range(4)):
+                    signs = tuple((-1) ** i for i in order)
+                    action = pressure_action(graph, order, signs)
+                    values, vectors = np.linalg.eigh(
+                        action.one_form_hodge(hodge).matrix
+                    )
+                    self.assertLess(values[1], 1 + gap / 2)
+                    self.assertGreater(values[2], 1 + gap / 2)
+                    projector = vectors[:, :2] @ vectors[:, :2].T
+                    expected = oracle[np.ix_(order, order)] * np.outer(signs, signs)
+                    error = float(np.linalg.norm(projector - expected, ord=2))
+                    self.assertLessEqual(error, bound)
+                    worst = max(worst, error)
+                self.observations.append(
+                    dict(
+                        case="dense_rational_projector",
+                        direction=list(direction),
+                        gap=gap,
+                        coordinate_actions=24,
+                        input_error_infinity=float(input_error),
+                        worst_projector_error=worst,
+                        projector_error_bound=bound,
+                        exact_pre_round_cluster_multiplicity=2,
+                    )
+                )
+
+    def test_pressure_detects_broken_product_inverse_and_sector_controls(self) -> None:
+        def old_product(value: geometry_stage.StarAssembly) -> None:
+            a, b = value.form.values
+            object.__setattr__(
+                value, "matrix", ((a * a, (0.5 * a) * b), ((0.5 * a) * b, b * b))
+            )
+
+        with patch.object(geometry_stage.StarAssembly, "__post_init__", old_product):
+            with self.assertRaises(AssertionError):
+                self.test_star_mixed_scale_retains_representable_coupling()
+        with patch.object(np.linalg, "solve", side_effect=lambda a, b: b):
+            with self.assertRaises(AssertionError):
+                self.test_flat_exact_inverse_and_residual_across_dense_spd_scales()
+        actual_eigh = np.linalg.eigh
+
+        def wrong_sector(matrix: Any) -> Any:
+            values, vectors = actual_eigh(matrix)
+            return values, vectors[:, ::-1]
+
+        with patch.object(np.linalg, "eigh", side_effect=wrong_sector):
+            with self.assertRaises(AssertionError):
+                self.test_repeated_cluster_projector_is_basis_invariant_with_strict_gap()
+        self.observations.append(
+            dict(
+                case="mutation_controls",
+                detected=[
+                    "left_associated_star_product",
+                    "identity_inverse",
+                    "wrong_isolated_sector",
+                ],
+            )
+        )
+
+
+# The immutable prior execution supplies the reviewed regression IDs, not a
+# discovered-at-runtime expectation. Reusing it avoids a second 1,653-ID list.
+_P934_BASELINE = "implementation/phase-9-grcv4/evidence/P9-3.4/validation/actual.json"
+_P934_BASELINE_SHA256 = (
+    "4b3f27b73f981a87d76864c72943b0393864d316d30a35c8f61695a3ec66fe9c"
+)
+_P934_ADDITIONS = (
+    "NumericalEnvelopeTests.test_dense_rational_projector_with_input_rounding_near_gap",
+    "NumericalEnvelopeTests.test_exact_positive_matrix_can_have_nonpositive_computed_self_pairing",
+    "CaptureIntegrityTests.test_capture_rejects_missing_and_duplicate_discovery",
+    "CaptureIntegrityTests.test_result_reconciles_execution_and_records_subtest_failures",
+    "CaptureIntegrityTests.test_capture_resets_observations_in_same_process",
+    "CaptureIntegrityTests.test_missing_or_stale_diagnostics_are_rejected",
+    "CaptureIntegrityTests.test_loaded_module_origin_and_bytes_are_checked",
+    "CaptureIntegrityTests.test_forensic_rows_must_match_reviewed_contracts",
+    "CaptureIntegrityTests.test_coverage_requires_every_reviewed_id_to_pass",
+)
+_P934_CONTRACTS = (
+    "D10.2-EC-GEOM-HODGE-UPDATE",
+    "D10.2-EC-PARENT-GEOM-COVARIANCE",
+    "D10.2-EC-PARENT-C-HODGE-MAPS",
+    "D10.2-EC-CHARGE-C-SECTOR-PROJECTOR",
+    "D10.2-EC-PARENT-CORE-GENERAL-CHARGE",
+    "D10.2-EC-CHARGE-BUDGET-STAGE",
+)
+_P934_DIAGNOSTICS = {
+    "geometry": {
+        "mixed_scale_star": 1,
+        "star_decimal_product": 1,
+        "dense_spd_solve": 1,
+        "near_spd_boundary": 18,
+        "isolated_cluster_projector": 96,
+        "metric_projector": 1,
+        "mutation_controls": 1,
+        "dense_rational_projector": 12,
+        "positive_matrix_nonpositive_pairing": 4,
+        "pairing_range_and_coordinates": 1,
+    },
+    "charge": {
+        "transfer_precision": 42,
+        "primitive_compositions": 1,
+        "conservative_coordinate_permutations": 1,
+        "high_degree_divergence": 24,
+        "cancellation_accuracy": 12,
+    },
+}
+
+
+def _p934_required(root: Path) -> set[str]:
+    data = (root / _P934_BASELINE).read_bytes()
+    if sha256(data).hexdigest() != _P934_BASELINE_SHA256:
+        raise RuntimeError("reviewed regression roster identity mismatch")
+    rows = json.loads(data)["tests"]
+    required = {r["test"] for r in rows if r["status"] == "passed"}
+    if len(required) != len(rows):
+        raise RuntimeError("invalid reviewed regression roster")
+    return required | {
+        "tests.models.test_grc_v4_geometry." + suffix for suffix in _P934_ADDITIONS
+    }
+
+
+def _p934_ids(suite: unittest.TestSuite) -> list[str]:
+    return [
+        name
+        for item in suite
+        for name in (
+            _p934_ids(item) if isinstance(item, unittest.TestSuite) else [item.id()]
+        )
+    ]
+
+
+def _p934_coverage(
+    required: set[str], discovered: list[str], rows: list[dict[str, Any]] | None = None
+) -> dict[str, Any]:
+    from collections import Counter
+
+    counts = Counter(discovered)
+    issues: dict[str, Any] = {
+        "missing_discovery": sorted(required - counts.keys()),
+        "unreviewed_discovery": sorted(counts.keys() - required),
+        "duplicate_discovery": sorted(k for k, n in counts.items() if n != 1),
+    }
+    if rows is not None:
+        executed = Counter(r["test"] for r in rows)
+        issues.update(
+            missing_execution=sorted(required - executed.keys()),
+            unexpected_execution=sorted(executed.keys() - required),
+            duplicate_execution=sorted(k for k, n in executed.items() if n != 1),
+            nonpassing_execution=[r["test"] for r in rows if r["status"] != "passed"],
+        )
+    return {
+        "required_count": len(required),
+        "discovered_count": len(discovered),
+        "passed": bool(required) and not any(issues.values()),
+        **issues,
+    }
+
+
+class _P934Result(unittest.TextTestResult):
+    """One structured method outcome, plus every failing/skipped subtest."""
+
+    def __init__(self, stream: Any, descriptions: bool, verbosity: int) -> None:
+        super().__init__(stream, descriptions, verbosity)
+        self.rows: list[dict[str, Any]] = []
+        self.diagnostics: dict[str, list[dict[str, Any]]] = {
+            "geometry": [],
+            "charge": [],
+        }
+        self._active: dict[int, dict[str, Any]] = {}
+        self._offsets: dict[int, int] = {}
+
+    def startTest(self, test: unittest.TestCase) -> None:
+        super().startTest(test)
+        row: dict[str, Any] = {"test": test.id(), "status": "started"}
+        self.rows.append(row)
+        self._active[id(test)] = row
+        self._offsets[id(test)] = len(getattr(test, "observations", []))
+
+    def _outcome(self, test: unittest.TestCase, status: str, **detail: Any) -> None:
+        row = self._active.get(id(test))
+        if row is None:  # setUpClass/module failure or class-level skip
+            row = {"test": test.id()}
+            self.rows.append(row)
+        row.update(status=status, **detail)
+
+    def addSuccess(self, test: unittest.TestCase) -> None:
+        super().addSuccess(test)
+        self._outcome(test, "passed")
+        if len(self.rows) % 100 == 0:
+            print(f"Validated {len(self.rows)} test methods", flush=True)
+
+    def addFailure(self, test: unittest.TestCase, err: Any) -> None:
+        super().addFailure(test, err)
+        self._outcome(
+            test, "failed", exception_type=err[0].__name__, reason=str(err[1])
+        )
+
+    def addError(self, test: unittest.TestCase, err: Any) -> None:
+        super().addError(test, err)
+        self._outcome(test, "error", exception_type=err[0].__name__, reason=str(err[1]))
+
+    def addSkip(self, test: unittest.TestCase, reason: str) -> None:
+        super().addSkip(test, reason)
+        parent = getattr(test, "test_case", test)
+        self._outcome(parent, "skipped", reason=reason)
+        if parent is not test:
+            self._active[id(parent)].setdefault("subtests", []).append(
+                {"test": test.id(), "status": "skipped", "reason": reason}
+            )
+
+    def addExpectedFailure(self, test: unittest.TestCase, err: Any) -> None:
+        super().addExpectedFailure(test, err)
+        self._outcome(test, "expected_failure", reason=str(err[1]))
+
+    def addUnexpectedSuccess(self, test: unittest.TestCase) -> None:
+        super().addUnexpectedSuccess(test)
+        self._outcome(test, "unexpected_success")
+
+    def addSubTest(
+        self, test: unittest.TestCase, subtest: unittest.TestCase, err: Any
+    ) -> None:
+        super().addSubTest(test, subtest, err)
+        if err is not None:
+            status = "failed" if issubclass(err[0], test.failureException) else "error"
+            row = self._active[id(test)]
+            row["status"] = status
+            row.setdefault("subtests", []).append(
+                {
+                    "test": subtest.id(),
+                    "status": status,
+                    "exception_type": err[0].__name__,
+                    "reason": str(err[1]),
+                }
+            )
+
+    def stopTest(self, test: unittest.TestCase) -> None:
+        row = self._active.pop(id(test))
+        offset = self._offsets.pop(id(test))
+        family = {
+            "NumericalEnvelopeTests": "geometry",
+            "ChargePrecisionEnvelopeTests": "charge",
+        }.get(type(test).__name__)
+        if family:
+            self.diagnostics[family].extend(
+                {**d, "test": test.id(), "test_status": row["status"]}
+                for d in test.observations[offset:]  # type: ignore[attr-defined]
+            )
+        super().stopTest(test)
+
+
+def _p934_check_diagnostics(diagnostics: dict[str, list[dict[str, Any]]]) -> None:
+    from collections import Counter
+
+    for kind, expected in _P934_DIAGNOSTICS.items():
+        rows = diagnostics.get(kind, [])
+        if Counter(r["case"] for r in rows) != expected or any(
+            r.get("test_status") != "passed" or not r.get("test") for r in rows
+        ):
+            raise RuntimeError("missing, stale or failed-test diagnostics: " + kind)
+
+
+def _p934_loaded_sources(root: Path, hashes: dict[str, str]) -> dict[str, Any]:
+    import inspect
+    from types import CodeType
+
+    loaded = {}
+    for name, module in list(sys.modules.items()):
+        if not (
+            name == "tests" or name.startswith(("tests.", "pygrc.", "grcv4_explorer."))
+        ):
+            continue
+        file = getattr(module, "__file__", None)
+        if file is None:
+            continue
+        path = Path(file).resolve()
+        if not path.is_relative_to(root):
+            raise RuntimeError("loaded source outside checkout: " + name)
+        relative = str(path.relative_to(root))
+        data = path.read_bytes()
+        digest = sha256(data).hexdigest()
+        if hashes.get(relative) != digest:
+            raise RuntimeError("loaded source bytes not in snapshot: " + name)
+        spec = getattr(module, "__spec__", None)
+        if spec is None or spec.origin is None or Path(spec.origin).resolve() != path:
+            raise RuntimeError("loaded source origin mismatch: " + name)
+        # Compare live function/method code to a fresh compile as well: a
+        # file hash alone could describe bytes changed after module import.
+        codes: dict[str, CodeType] = {}
+
+        def collect(code: CodeType) -> None:
+            codes[code.co_qualname] = code
+            for item in code.co_consts:
+                if isinstance(item, CodeType):
+                    collect(item)
+
+        collect(compile(data, str(path), "exec", dont_inherit=True))
+        checked = 0
+        objects = list(vars(module).values())
+        for obj in list(objects):
+            if inspect.isclass(obj) and obj.__module__ == name:
+                objects.extend(vars(obj).values())
+        for obj in objects:
+            if isinstance(obj, (classmethod, staticmethod)):
+                obj = obj.__func__
+            if isinstance(obj, property):
+                obj = obj.fget
+            obj = inspect.unwrap(obj)
+            if not inspect.isfunction(obj) or obj.__module__ != name:
+                continue
+            code = obj.__code__
+            if code.co_filename == "<string>":  # generated dataclass methods
+                continue
+            expected_code = codes.get(code.co_qualname)
+            if expected_code is None or code != expected_code:
+                raise RuntimeError(
+                    "loaded code differs from snapshot: "
+                    + name
+                    + "."
+                    + code.co_qualname
+                )
+            checked += 1
+        loaded[name] = {
+            "path": relative,
+            "sha256": digest,
+            "live_code_objects_checked": checked,
+        }
+    for name in (
+        "pygrc.models.grc_v4_geometry",
+        "pygrc.models.grc_v4_transport",
+        "tests.models.test_grc_v4_geometry",
+        "tests.models.test_grc_v4_transport",
+    ):
+        if name not in loaded:
+            raise RuntimeError("required module not loaded: " + name)
+    return loaded
+
+
+def _p934_check_provenance(traces: list[dict[str, Any]]) -> None:
+    import re
+
+    if len(traces) != len(_P934_CONTRACTS):
+        raise RuntimeError("incomplete forensic contract queries")
+    for name, trace in zip(_P934_CONTRACTS, traces, strict=True):
+        if trace.get("query") != {"contract_id": name}:
+            raise RuntimeError("forensic query identity mismatch")
+        for field in (
+            "trace_digest",
+            "source_bundle_digest",
+            "graph_digest",
+            "authority_extension_digest",
+        ):
+            if re.fullmatch(r"[0-9a-f]{64}", trace.get(field, "")) is None:
+                raise RuntimeError("invalid forensic identity: " + field)
+        rows = trace.get("rows", [])
+        if len(rows) != 1:
+            raise RuntimeError("missing or ambiguous forensic source rows")
+        row = rows[0]
+        source = row.get("source_ref", {})
+        payload = row.get("payload", {})
+        if (
+            row.get("classification") != "source_exact_contract_provenance"
+            or payload.get("contract", {}).get("identifier") != name
+            or payload.get("support_disposition") != "indeterminate_requires_review"
+            or not row.get("edge_refs")
+            or not source.get("record_digest")
+            or not source.get("source_json_pointer")
+            or source.get("path")
+            != "implementation/investigations/grc9v4-constitutive-design/decisions/D10_2FullSubstrateProvenanceAndPromotionAudit.json"
+        ):
+            raise RuntimeError("unexpected forensic classification or source witness")
+
+
+class CaptureIntegrityTests(unittest.TestCase):
+    def test_capture_rejects_missing_and_duplicate_discovery(self) -> None:
+        import contextlib
+        import io
+
+        root = Path(__file__).resolve().parents[2]
+        suite = unittest.defaultTestLoader.discover(
+            str(root / "tests"), top_level_dir=str(root)
+        )
+        ids = _p934_ids(suite)
+        required = _p934_required(root)
+        self.assertTrue(_p934_coverage(required, ids)["passed"])
+        installed = "tests.models.test_grc_v4_geometry.ReconstructionTests.test_clean_installed_wheel_and_sdist_primitives"
+        numerical = "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_star_mixed_scale_retains_representable_coupling"
+
+        class Named(unittest.TestCase):
+            def __init__(self, name: str) -> None:
+                super().__init__()
+                self.name = name
+
+            def id(self) -> str:
+                return self.name
+
+            def runTest(self) -> None:
+                raise AssertionError("incomplete discovery must fail before execution")
+
+        for label, names in (
+            ("empty", []),
+            ("unrelated", ["unrelated.smoke"]),
+            ("missing_numerical", [n for n in ids if n != numerical]),
+            ("missing_installed", [n for n in ids if n != installed]),
+            ("duplicate", ids + [numerical]),
+        ):
+            with (
+                self.subTest(control=label),
+                tempfile.TemporaryDirectory(dir=root) as temp,
+            ):
+                folder = Path(temp)
+                with (
+                    patch.dict(
+                        os.environ,
+                        {"GRCV4_PACKAGE_TESTS": "1", "GRCV4_WHEELHOUSE": str(folder)},
+                    ),
+                    patch.object(
+                        unittest.defaultTestLoader,
+                        "discover",
+                        return_value=unittest.TestSuite(Named(n) for n in names),
+                    ),
+                    contextlib.redirect_stdout(io.StringIO()),
+                ):
+                    with self.assertRaisesRegex(
+                        RuntimeError, "required test discovery"
+                    ):
+                        capture_p934(folder / "run")
+                record = json.loads((folder / "run/run.json").read_text())
+                self.assertEqual(record["status"], "failed")
+                self.assertFalse(record["coverage"]["passed"])
+                self.assertEqual(record["commands"], [])
+
+    def test_coverage_requires_every_reviewed_id_to_pass(self) -> None:
+        required = {"numerical", "installed", "regression"}
+        ids = sorted(required)
+        rows = [{"test": n, "status": "passed"} for n in ids]
+        self.assertTrue(_p934_coverage(required, ids, rows)["passed"])
+        for status in (
+            "skipped",
+            "failed",
+            "error",
+            "started",
+            "expected_failure",
+            "unexpected_success",
+        ):
+            with self.subTest(status=status):
+                changed = [
+                    {**r, "status": status} if r["test"] == "installed" else r
+                    for r in rows
+                ]
+                self.assertFalse(_p934_coverage(required, ids, changed)["passed"])
+        for changed in (
+            rows[:-1],
+            rows + rows[:1],
+            rows + [{"test": "extra", "status": "passed"}],
+        ):
+            self.assertFalse(_p934_coverage(required, ids, changed)["passed"])
+        self.assertFalse(_p934_coverage(set(), [], [])["passed"])
+
+    def test_result_reconciles_execution_and_records_subtest_failures(self) -> None:
+        import io
+
+        class Outcomes(unittest.TestCase):
+            def test_pass(self) -> None:
+                pass
+
+            def test_fail(self) -> None:
+                self.fail("assertion witness")
+
+            def test_error(self) -> None:
+                raise ValueError("error witness")
+
+            def test_skip(self) -> None:
+                self.skipTest("installed probe unavailable")
+
+            def test_subtests(self) -> None:
+                for x in (0, 1):
+                    with self.subTest(candidate=x):
+                        if x == 0:
+                            self.fail("subtest assertion")
+                        raise ValueError("subtest error")
+
+            def test_subskip(self) -> None:
+                with self.subTest(candidate="skipped"):
+                    self.skipTest("subtest skip")
+
+            @unittest.expectedFailure
+            def test_expected_failure(self) -> None:
+                self.fail("expected")
+
+            @unittest.expectedFailure
+            def test_unexpected_success(self) -> None:
+                pass
+
+        suite = unittest.defaultTestLoader.loadTestsFromTestCase(Outcomes)
+        ids = _p934_ids(suite)
+        result = unittest.TextTestRunner(
+            stream=io.StringIO(), resultclass=_P934Result
+        ).run(suite)
+        self.assertIsInstance(result, _P934Result)
+        result = cast(_P934Result, result)
+        rows = {r["test"].split(".")[-1]: r for r in result.rows}
+        self.assertEqual(len(rows), 8)
+        self.assertEqual(rows["test_pass"]["status"], "passed")
+        self.assertEqual(
+            [r["status"] for r in rows["test_subtests"]["subtests"]],
+            ["failed", "error"],
+        )
+        self.assertEqual(rows["test_subskip"]["subtests"][0]["status"], "skipped")
+        self.assertEqual(rows["test_error"]["exception_type"], "ValueError")
+        self.assertFalse(_p934_coverage(set(ids), ids, result.rows)["passed"])
+
+        class ClassFailure(unittest.TestCase):
+            @classmethod
+            def setUpClass(cls) -> None:
+                raise RuntimeError("class setup witness")
+
+            def test_never_executed(self) -> None:
+                self.fail()
+
+        result = cast(
+            _P934Result,
+            unittest.TextTestRunner(stream=io.StringIO(), resultclass=_P934Result).run(
+                unittest.defaultTestLoader.loadTestsFromTestCase(ClassFailure)
+            ),
+        )
+        self.assertEqual(result.rows[0]["status"], "error")
+        self.assertEqual(result.testsRun, 0)
+
+    def test_capture_resets_observations_in_same_process(self) -> None:
+        import contextlib
+        import io
+        from tests.models import test_grc_v4_transport as transport
+
+        root = Path(__file__).resolve().parents[2]
+        old_geo, old_charge = (
+            NumericalEnvelopeTests.observations,
+            transport.ChargePrecisionEnvelopeTests.observations,
+        )
+        for _ in range(2):
+            with tempfile.TemporaryDirectory(dir=root) as temp:
+                folder = Path(temp)
+
+                def empty(*args: Any, **kwargs: Any) -> unittest.TestSuite:
+                    self.assertEqual(NumericalEnvelopeTests.observations, [])
+                    self.assertEqual(
+                        transport.ChargePrecisionEnvelopeTests.observations, []
+                    )
+                    NumericalEnvelopeTests.observations.append({"case": "stale"})
+                    return unittest.TestSuite()
+
+                with (
+                    patch.dict(
+                        os.environ,
+                        {"GRCV4_PACKAGE_TESTS": "1", "GRCV4_WHEELHOUSE": str(folder)},
+                    ),
+                    patch.object(
+                        unittest.defaultTestLoader, "discover", side_effect=empty
+                    ),
+                    contextlib.redirect_stdout(io.StringIO()),
+                ):
+                    with self.assertRaisesRegex(
+                        RuntimeError, "required test discovery"
+                    ):
+                        capture_p934(folder / "run")
+                self.assertIs(NumericalEnvelopeTests.observations, old_geo)
+                self.assertIs(
+                    transport.ChargePrecisionEnvelopeTests.observations, old_charge
+                )
+                self.assertNotIn({"case": "stale"}, old_geo)
+
+    def test_missing_or_stale_diagnostics_are_rejected(self) -> None:
+        diagnostics = {
+            kind: [
+                {"case": case, "test": "fixture", "test_status": "passed"}
+                for case, count in counts.items()
+                for _ in range(count)
+            ]
+            for kind, counts in _P934_DIAGNOSTICS.items()
+        }
+        _p934_check_diagnostics(diagnostics)
+        for kind in diagnostics:
+            for changed in (
+                [],
+                diagnostics[kind][:-1],
+                diagnostics[kind] * 2,
+                [{**r, "test_status": "failed"} for r in diagnostics[kind]],
+            ):
+                with (
+                    self.subTest(kind=kind, size=len(changed)),
+                    self.assertRaisesRegex(RuntimeError, "diagnostics"),
+                ):
+                    _p934_check_diagnostics({**diagnostics, kind: changed})
+
+    def test_loaded_module_origin_and_bytes_are_checked(self) -> None:
+        from types import ModuleType
+        from importlib.machinery import ModuleSpec
+
+        root = Path(__file__).resolve().parents[2]
+        module = ModuleType("tests.shadowed")
+        module.__file__ = "/not-this-checkout/shadowed.py"
+        with (
+            patch.dict(sys.modules, {module.__name__: module}),
+            self.assertRaisesRegex(RuntimeError, "outside checkout"),
+        ):
+            _p934_loaded_sources(
+                root,
+                {
+                    str(
+                        Path(cast(str, m.__file__)).resolve().relative_to(root)
+                    ): sha256(Path(cast(str, m.__file__)).read_bytes()).hexdigest()
+                    for n, m in list(sys.modules.items())
+                    if (
+                        n == "tests"
+                        or n.startswith(("tests.", "pygrc.", "grcv4_explorer."))
+                    )
+                    and getattr(m, "__file__", None)
+                    and Path(cast(str, m.__file__)).resolve().is_relative_to(root)
+                },
+            )
+        # Isolate a real source module so malformed origin/bytes/code are each
+        # challenged without depending on other modules imported by the suite.
+        path = Path(geometry_stage.__file__).resolve()
+        hashes = {str(path.relative_to(root)): sha256(path.read_bytes()).hexdigest()}
+        with patch.dict(
+            sys.modules,
+            {
+                **{
+                    n: m
+                    for n, m in sys.modules.items()
+                    if not n.startswith(("tests", "pygrc", "grcv4_explorer"))
+                },
+                "pygrc.models.grc_v4_geometry": geometry_stage,
+            },
+            clear=True,
+        ):
+            with self.assertRaisesRegex(RuntimeError, "bytes not in snapshot"):
+                _p934_loaded_sources(root, {})
+            with patch.object(
+                geometry_stage,
+                "__spec__",
+                ModuleSpec(
+                    geometry_stage.__name__, None, origin=str(root / "wrong.py")
+                ),
+            ):
+                with self.assertRaisesRegex(RuntimeError, "origin mismatch"):
+                    _p934_loaded_sources(root, hashes)
+
+            def changed(value: float) -> float:
+                return value
+
+            changed.__module__ = geometry_stage.__name__
+            with (
+                patch.object(geometry_stage, "_computed", changed),
+                self.assertRaisesRegex(RuntimeError, "code differs"),
+            ):
+                _p934_loaded_sources(root, hashes)
+
+    def test_forensic_rows_must_match_reviewed_contracts(self) -> None:
+        import copy
+
+        root = Path(__file__).resolve().parents[2]
+        traces = json.loads(
+            (
+                root
+                / "implementation/phase-9-grcv4/evidence/P9-3.4/validation/run.json"
+            ).read_text()
+        )["forensic_queries"]
+        _p934_check_provenance(traces)
+        controls = []
+        for field, value in (
+            ("rows", []),
+            ("trace_digest", "STUB"),
+            ("query", {"contract_id": "wrong"}),
+        ):
+            changed = copy.deepcopy(traces)
+            changed[0][field] = value
+            controls.append(changed)
+        for field, value in (
+            ("classification", "analysis_only"),
+            ("source_ref", {}),
+            ("edge_refs", []),
+            ("payload", {}),
+        ):
+            changed = copy.deepcopy(traces)
+            changed[0]["rows"][0][field] = value
+            controls.append(changed)
+        controls.append(traces[:-1])
+        for changed in controls:
+            with self.assertRaises(RuntimeError):
+                _p934_check_provenance(changed)
+
+
+def capture_p934(output: Path) -> int:
+    """Run and capture the leaf once; repository-relative reconstruction only.
+
+    Requires the package-test wheelhouse. Source is Git plus one scoped patch;
+    the manifest binds this runner, the full test roster and numeric diagnostics.
+    Permission/surface checks have separate subjects and existing entry points.
+    """
+    from contextlib import ExitStack
+    from datetime import datetime, timezone
+    import importlib
+    import importlib.metadata
+    import io
+    import platform
+    import time
+
+    root = Path(__file__).resolve().parents[2]
+    output = output.resolve()
+    wheelhouse = Path(os.environ.get("GRCV4_WHEELHOUSE", "<missing>")).resolve()
+    if not output.is_relative_to(root) or not wheelhouse.is_relative_to(root):
+        raise ValueError("capture and dependency inputs must be repository-local")
+    if os.environ.get("GRCV4_PACKAGE_TESTS") != "1" or not wheelhouse.is_dir():
+        raise ValueError("capture requires clean package tests and their wheelhouse")
+    output.mkdir(parents=True, exist_ok=False)
+    tool = (
+        root
+        / "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool"
+    )
+    scopes = [
+        "src",
+        "tests",
+        "specs",
+        "pyproject.toml",
+        "README.md",
+        "LICENSE",
+        "implementation/investigations/grc9v4-constitutive-design/drafts/2026-09-GRC-V4.md",
+        str((tool / "src").relative_to(root)),
+    ]
+
+    def git(*args: str) -> str:
+        return subprocess.check_output(["git", *args], cwd=root, text=True)
+
+    def save(name: str, value: Any) -> None:
+        (output / name).write_text(json.dumps(value, indent=2, allow_nan=False) + "\n")
+
+    paths = git("ls-files", "--", *scopes).splitlines()
+    hashes = {p: sha256((root / p).read_bytes()).hexdigest() for p in paths}
+    if git("ls-files", "--others", "--exclude-standard", "--", *scopes).strip():
+        raise ValueError("new source needs a tracked Git reconstruction preimage")
+    save(
+        "inputs.json",
+        {
+            "base_commit": git("rev-parse", "HEAD").strip(),
+            "patch": git("diff", "--binary", "HEAD", "--", *scopes),
+            "source_sha256": hashes,
+            "reviewed_roster": {
+                "path": _P934_BASELINE,
+                "sha256": _P934_BASELINE_SHA256,
+            },
+            "reconstruction": "git checkout the base in a separate clone; apply patch from this JSON; verify source_sha256; install the declared extras and recorded wheelhouse packages; run the manifest command under a new output name",
+        },
+    )
+    record: dict[str, Any] = {
+        "schema": "phase9_leaf_run_v1",
+        "iteration_id": "P9-3.4",
+        "status": "running",
+        "started_utc": datetime.now(timezone.utc).isoformat(),
+        "source_inputs": "inputs.json",
+        "python": sys.version,
+        "platform": platform.platform(),
+        "dependencies": sorted(
+            f"{d.metadata['Name']}=={d.version}"
+            for d in importlib.metadata.distributions()
+        ),
+        "environment": {
+            "GRCV4_PACKAGE_TESTS": "1",
+            "GRCV4_WHEELHOUSE": str(wheelhouse.relative_to(root)),
+            "PYTHONHASHSEED": os.environ.get("PYTHONHASHSEED"),
+            "OMP_NUM_THREADS": os.environ.get("OMP_NUM_THREADS"),
+            "OPENBLAS_NUM_THREADS": os.environ.get("OPENBLAS_NUM_THREADS"),
+        },
+        "wheelhouse_sha256": {
+            p.name: sha256(p.read_bytes()).hexdigest()
+            for p in sorted(wheelhouse.iterdir())
+            if p.is_file()
+        },
+        "replay_command": [
+            ".venv/bin/python",
+            "-m",
+            "tests.models.test_grc_v4_geometry",
+            "--capture-p934",
+            "<new-repository-relative-output-directory>",
+        ],
+        "commands": [],
+        "claim_ceiling": "primitive numerical envelope and regression; projector fixtures are analysis; no C selector/current solve, complete beat or runtime support",
+    }
+    config = np.show_config(mode="dicts")
+    record["numerical_backend"] = {
+        "blas": {
+            k: v
+            for k, v in config.get("Build Dependencies", {}).get("blas", {}).items()
+            if k in {"name", "version", "openblas configuration"}
+        },
+        "float_info": {
+            k: getattr(sys.float_info, k)
+            for k in ("radix", "mant_dig", "max_exp", "min_exp", "rounds")
+        },
+        "smallest_subnormal_hex": (5e-324 * 1.0).hex(),
+        "aggregation": "CPython built-in sum in declared row order; products round before aggregation",
+    }
+
+    def retain() -> None:
+        save("run.json", record)
+
+    retain()
+    observations = ExitStack()
+    try:
+        geo = importlib.import_module("tests.models.test_grc_v4_geometry")
+        transport = importlib.import_module("tests.models.test_grc_v4_transport")
+        for cls in (geo.NumericalEnvelopeTests, transport.ChargePrecisionEnvelopeTests):
+            observations.enter_context(patch.object(cls, "observations", []))
+        required = _p934_required(root)
+        stream = io.StringIO()
+        start = time.monotonic()
+        suite = unittest.defaultTestLoader.discover(
+            str(root / "tests"), top_level_dir=str(root)
+        )
+        discovered = _p934_ids(suite)
+        record["coverage"] = _p934_coverage(required, discovered)
+        save(
+            "actual.json",
+            {
+                "required_ids": sorted(required),
+                "discovered_ids": discovered,
+                "tests": [],
+            },
+        )
+        if not record["coverage"]["passed"]:
+            raise RuntimeError("required test discovery does not match reviewed roster")
+        record["loaded_sources_before"] = _p934_loaded_sources(root, hashes)
+        result = cast(
+            _P934Result,
+            unittest.TextTestRunner(stream=stream, resultclass=_P934Result).run(suite),
+        )
+        record["coverage"] = _p934_coverage(required, discovered, result.rows)
+        record["commands"].append(
+            {
+                "operation": "unittest discovery tests with repository top level",
+                "tests_run": result.testsRun,
+                "failures": len(result.failures),
+                "errors": len(result.errors),
+                "skips": len(result.skipped),
+                "elapsed_seconds": round(time.monotonic() - start, 3),
+                "output": stream.getvalue().replace(str(root), "<checkout>"),
+            }
+        )
+        save(
+            "actual.json",
+            {
+                "tests": result.rows,
+                "required_roster": {
+                    "path": _P934_BASELINE,
+                    "sha256": _P934_BASELINE_SHA256,
+                    "additions": list(_P934_ADDITIONS),
+                },
+                "discovered_ids_sha256": sha256(
+                    json.dumps(sorted(discovered), separators=(",", ":")).encode()
+                ).hexdigest(),
+                "geometry_observations": result.diagnostics["geometry"],
+                "charge_observations": result.diagnostics["charge"],
+            },
+        )
+        retain()
+        if (
+            not result.wasSuccessful()
+            or result.skipped
+            or not record["coverage"]["passed"]
+            or result.testsRun != len(discovered)
+        ):
+            raise RuntimeError(
+                "required tests missing, failed or skipped; see run.json and actual.json"
+            )
+        _p934_check_diagnostics(result.diagnostics)
+        record["diagnostic_coverage"] = _P934_DIAGNOSTICS
+        changed = [
+            "src/pygrc/models/grc_v4_geometry.py",
+            "tests/models/test_grc_v4_geometry.py",
+            "tests/models/test_grc_v4_transport.py",
+        ]
+        for args in (
+            ["ruff", "check", *changed],
+            ["mypy", "--strict", *changed],
+            ["pip", "check"],
+        ):
+            command = [sys.executable, "-m", *args]
+            start = time.monotonic()
+            process = subprocess.run(
+                command, cwd=root, capture_output=True, text=True, timeout=600
+            )
+            record["commands"].append(
+                {
+                    "argv": [".venv/bin/python", "-m", *args],
+                    "exit_status": process.returncode,
+                    "elapsed_seconds": round(time.monotonic() - start, 3),
+                    "output": (process.stdout + process.stderr).replace(
+                        str(root), "<checkout>"
+                    ),
+                }
+            )
+            retain()
+            if process.returncode:
+                raise RuntimeError("static/environment validation failed")
+        sys.path.insert(0, str(tool / "src"))
+        successor = importlib.import_module("grcv4_explorer.successor")
+        forensic = importlib.import_module("grcv4_explorer.forensic")
+        context = successor.load_successor_forensic_context(root, tool.parent)
+        traces = [
+            forensic.contract_provenance(context, name) for name in _P934_CONTRACTS
+        ]
+        _p934_check_provenance(traces)
+        record["forensic_queries"] = [
+            {
+                **{
+                    k: t[k]
+                    for k in (
+                        "query",
+                        "trace_digest",
+                        "source_bundle_digest",
+                        "graph_digest",
+                        "authority_extension_digest",
+                    )
+                },
+                "rows": [
+                    {
+                        k: r[k]
+                        for k in (
+                            "classification",
+                            "source_ref",
+                            "edge_refs",
+                            "payload",
+                        )
+                    }
+                    for r in t["rows"]
+                ],
+            }
+            for t in traces
+        ]
+        if any(
+            sha256((root / p).read_bytes()).hexdigest() != h for p, h in hashes.items()
+        ):
+            raise RuntimeError("source changed during execution")
+        record["loaded_sources_after"] = _p934_loaded_sources(root, hashes)
+        if any(
+            record["loaded_sources_after"].get(name) != row
+            for name, row in record["loaded_sources_before"].items()
+        ):
+            raise RuntimeError("loaded sources changed during execution")
+        record["source_unchanged_during_run"] = True
+        record["status"] = "passed"
+    except BaseException as exc:
+        record["status"] = "failed"
+        record["failure"] = {
+            "exception_type": type(exc).__name__,
+            "reason": str(exc).replace(str(root), "<checkout>"),
+        }
+        raise
+    finally:
+        observations.close()
+        record["completed_utc"] = datetime.now(timezone.utc).isoformat()
+        record["artifacts"] = [
+            {"path": name, "sha256": sha256((output / name).read_bytes()).hexdigest()}
+            for name in ("inputs.json", "actual.json")
+            if (output / name).exists()
+        ]
+        retain()
+    print(f"P934_NUMERICAL_VALIDATION_PASS tests={result.testsRun} skips=0", flush=True)
+    return 0
+
+
 if __name__ == "__main__":
     if len(sys.argv) == 3 and sys.argv[1] == "--reconstruct":
         print(
@@ -2222,5 +3837,7 @@ if __name__ == "__main__":
                 sort_keys=True,
             )
         )
+    elif len(sys.argv) == 3 and sys.argv[1] == "--capture-p934":
+        raise SystemExit(capture_p934(Path(sys.argv[2])))
     else:
         unittest.main()

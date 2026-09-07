@@ -1,0 +1,1555 @@
+{
+  "schema": "phase9_leaf_run_v1",
+  "iteration_id": "P9-3.4",
+  "status": "passed",
+  "started_utc": "2026-09-07T14:22:19.324604+00:00",
+  "subject": {
+    "base_commit": "94092528aa1380aadac83fe2d243c187b4d69128",
+    "numerical_source_inputs": "implementation/phase-9-grcv4/evidence/P9-3.4/validation/inputs.json",
+    "additional_patch": "diff --git a/implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/browser.spec.mjs b/implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/browser.spec.mjs\nindex bce275f..edf6460 100644\n--- a/implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/browser.spec.mjs\n+++ b/implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/browser.spec.mjs\n@@ -30,12 +30,13 @@ test('live API, source bindings, leaf states and downloadable JSON agree', async\n   expect(api.P9_G1_accepted).toBe(true);\n   expect(api.accepted_generic_runtime_support).toEqual([]);\n   expect(api.admitted_specialization_support_sets).toEqual([]);\n-  expect(api.dependency_ready_leaves).toEqual(['P9-2.1','P9-2.2','P9-2.3','P9-2.4','P9-2.5','P9-2.6','P9-3.1','P9-3.2','P9-3.3']);\n+  expect(api.dependency_ready_leaves).toEqual(['P9-2.1','P9-2.2','P9-2.3','P9-2.4','P9-2.5','P9-2.6','P9-3.1','P9-3.2','P9-3.3','P9-3.4']);\n   expect(api.result_acceptance.accepted_iterations).toEqual(['P9-2.4']);\n   expect(api.harness_acceptance.accepted_iterations).toEqual(['P9-2.5']);\n   expect(api.integration_acceptance.accepted_iterations).toEqual(['P9-2.6']);\n   expect(api.geometry_acceptance.accepted_iterations).toEqual(['P9-3.1']);\n   expect(api.stage_acceptance.accepted_iterations).toEqual(['P9-3.2']);\n+  expect(api.resource_acceptance.accepted_iterations).toEqual(['P9-3.3']);\n   expect(api.permitted_runtime_paths).toHaveLength(23);\n   expect(api.request_acceptance.accepted_iterations).toEqual(['P9-2.3']);\n   expect(api.foundation_acceptance.accepted_iterations).toEqual(['P9-2.1','P9-2.2']);\n@@ -58,7 +59,7 @@ test('live API, source bindings, leaf states and downloadable JSON agree', async\n   await expect(page.locator('#next-work')).toContainText('Accepted results: P9-2.4');\n   await expect(page.locator('#next-work')).toContainText('Accepted harness: P9-2.5');\n   await expect(page.locator('#next-work')).toContainText('Accepted integration: P9-2.6');\n-  await expect(page.locator('#next-work')).toContainText('P9-2.1, P9-2.2, P9-2.3, P9-2.4, P9-2.5, P9-2.6, P9-3.1, P9-3.2, P9-3.3');\n+  await expect(page.locator('#next-work')).toContainText('P9-2.1, P9-2.2, P9-2.3, P9-2.4, P9-2.5, P9-2.6, P9-3.1, P9-3.2, P9-3.3, P9-3.4');\n   await expect(page.locator('#next-work')).toContainText('Accepted foundation: P9-2.1, P9-2.2.');\n   await expect(page.locator('#handoff')).toContainText('Verified');\n   await expect(page.locator('#policy')).toContainText(api.policy_digest);\n@@ -93,7 +94,7 @@ test('archive availability is visible without revoking acceptance or blocking ex\n test('a current source failure holds work but preserves the recorded acceptance display', async ({page,request}) => {\n   const value=await (await request.get('/api/status')).json();\n   Object.assign(value,{current_boundary:'failed_closed',runtime_authorized:false,runtime_authority_state:'accepted_P9_G1_current_work_held',recorded_full_verification:'not_current',source_refs:[],iterations:[],policy_digest:null,error:'Current source binding failed'});\n-  for(const key of ['implementation_scope','dependency_ready_leaves','permitted_runtime_paths','foundation_acceptance','request_acceptance','result_acceptance','harness_acceptance','integration_acceptance','geometry_acceptance','stage_acceptance','status_digest']) delete value[key];\n+  for(const key of ['implementation_scope','dependency_ready_leaves','permitted_runtime_paths','foundation_acceptance','request_acceptance','result_acceptance','harness_acceptance','integration_acceptance','geometry_acceptance','stage_acceptance','resource_acceptance','status_digest']) delete value[key];\n   value.status_digest=createHash('sha256').update(canonical(value)).digest('hex');\n   await page.route('**/api/status',route=>route.fulfill({json:value}));\n   await page.goto('/');\ndiff --git a/implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/verification.js b/implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/verification.js\nindex b3e14ea..3db8a07 100644\n--- a/implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/verification.js\n+++ b/implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/verification.js\n@@ -4,7 +4,7 @@ export function checkedStatus(value) {\n   if (typeof value.P9_G1_accepted !== 'boolean' || value.runtime_authorized !== implementation || (implementation && !value.P9_G1_accepted) || (value.schema === 'phase9_governance_status_v1' && value.P9_G1_accepted) || !Array.isArray(value.accepted_generic_runtime_support) || value.accepted_generic_runtime_support.length !== 0 || !Array.isArray(value.admitted_specialization_support_sets) || value.admitted_specialization_support_sets.length !== 0) throw new Error(\"Unverified runtime authority or support\");\n   if (value.P9_G1_accepted && value.approval_digest !== 'cd2c52f30477e1042bb903bd0553da237ddccc9cad373afecc1a84e4e0b37ea2') throw new Error('Missing recorded P9-G1 acceptance');\n   if (implementation && (value.runtime_authority_state !== 'accepted_P9_G1_bounded_implementation_not_conformance' || !Array.isArray(value.implementation_scope) || value.implementation_scope.length !== 43)) throw new Error('Missing accepted P9-G1 scope');\n-  if (!implementation && value.P9_G1_accepted && (value.current_boundary !== 'failed_closed' || value.runtime_authority_state !== 'accepted_P9_G1_current_work_held' || value.implementation_scope !== undefined || value.permitted_runtime_paths !== undefined || value.dependency_ready_leaves !== undefined || value.foundation_acceptance !== undefined || value.request_acceptance !== undefined || value.result_acceptance !== undefined || value.harness_acceptance !== undefined || value.integration_acceptance !== undefined || value.geometry_acceptance !== undefined || value.stage_acceptance !== undefined)) throw new Error('Held work cannot retain implementation permission');\n+  if (!implementation && value.P9_G1_accepted && (value.current_boundary !== 'failed_closed' || value.runtime_authority_state !== 'accepted_P9_G1_current_work_held' || value.implementation_scope !== undefined || value.permitted_runtime_paths !== undefined || value.dependency_ready_leaves !== undefined || value.foundation_acceptance !== undefined || value.request_acceptance !== undefined || value.result_acceptance !== undefined || value.harness_acceptance !== undefined || value.integration_acceptance !== undefined || value.geometry_acceptance !== undefined || value.stage_acceptance !== undefined || value.resource_acceptance !== undefined)) throw new Error('Held work cannot retain implementation permission');\n   if (value.schema === 'phase9_governance_status_v2' && !['verified','unavailable','invalid'].includes(value.handoff_evidence?.status)) throw new Error('Unknown handoff evidence disposition');\n   if (implementation && (value.foundation_acceptance?.record_digest !== '1e3f0ddb06b119fa46dc7609d05b7db0c3a4cbc07428c05b8a032da081ae9dd4' || JSON.stringify(value.foundation_acceptance?.accepted_iterations) !== JSON.stringify(['P9-2.1','P9-2.2']))) throw new Error('Missing accepted foundation');\n   if (implementation && (value.request_acceptance?.record_digest !== 'ac07a2f7c93538454d9663aba78ca0eb5af385d7975582e4c21682f41ce4c17f' || JSON.stringify(value.request_acceptance?.accepted_iterations) !== JSON.stringify(['P9-2.3']))) throw new Error('Missing accepted requests');\n@@ -13,7 +13,8 @@ export function checkedStatus(value) {\n   if (implementation && (value.integration_acceptance?.record_digest !== 'e5ba16731e03dc916b8755c5999ab2b59acf431255612e76e0dcebe108104bc2' || JSON.stringify(value.integration_acceptance?.accepted_iterations) !== JSON.stringify(['P9-2.6']))) throw new Error('Missing accepted integration');\n   if (implementation && (value.geometry_acceptance?.record_digest !== 'f119e1361500e72f58297bc8186f868954b4065c853fcdd089280a5d28f88618' || JSON.stringify(value.geometry_acceptance?.accepted_iterations) !== JSON.stringify(['P9-3.1']))) throw new Error('Missing accepted geometry');\n   if (implementation && (value.stage_acceptance?.record_digest !== '425cd05eb85213185a4b531a09c16cefec4be992ac4755d404b5f263e09ebd0a' || JSON.stringify(value.stage_acceptance?.accepted_iterations) !== JSON.stringify(['P9-3.2']))) throw new Error('Missing accepted stages');\n-  if (implementation && (JSON.stringify(value.dependency_ready_leaves) !== JSON.stringify(['P9-2.1','P9-2.2','P9-2.3','P9-2.4','P9-2.5','P9-2.6','P9-3.1','P9-3.2','P9-3.3']) || !Array.isArray(value.permitted_runtime_paths) || value.permitted_runtime_paths.length !== 23 || !['src/pygrc/models/__init__.py','pyproject.toml','tests/models/grcv4_conformance_harness.py','tests/models/grcv4_reference_oracles.py',\"src/pygrc/models/grc_v4_geometry.py\",\"src/pygrc/models/grc_v4_transport.py\",\"tests/models/test_grc_v4_geometry.py\",\"tests/models/test_grc_v4_transport.py\"].every(path => value.permitted_runtime_paths.includes(path)))) throw new Error('Invalid dependency-ready permission');\n+  if (implementation && (value.resource_acceptance?.record_digest !== '3e71b580090ba1712dbec4a1718653c2057e4062200f3367ba0c1ed7adeae6fa' || JSON.stringify(value.resource_acceptance?.accepted_iterations) !== JSON.stringify(['P9-3.3']))) throw new Error('Missing accepted resources');\n+  if (implementation && (JSON.stringify(value.dependency_ready_leaves) !== JSON.stringify(['P9-2.1','P9-2.2','P9-2.3','P9-2.4','P9-2.5','P9-2.6','P9-3.1','P9-3.2','P9-3.3','P9-3.4']) || !Array.isArray(value.permitted_runtime_paths) || value.permitted_runtime_paths.length !== 23 || !['src/pygrc/models/__init__.py','pyproject.toml','tests/models/grcv4_conformance_harness.py','tests/models/grcv4_reference_oracles.py',\"src/pygrc/models/grc_v4_geometry.py\",\"src/pygrc/models/grc_v4_transport.py\",\"tests/models/test_grc_v4_geometry.py\",\"tests/models/test_grc_v4_transport.py\"].every(path => value.permitted_runtime_paths.includes(path)))) throw new Error('Invalid dependency-ready permission');\n   if (!['passed', 'failed_closed'].includes(value.current_boundary)) throw new Error(\"Unknown boundary disposition\");\n   if (!['not_current', 'recorded_pass_matching_current_inputs'].includes(value.recorded_full_verification)) throw new Error(\"Unknown recorded evidence disposition\");\n   if (value.current_boundary !== 'passed' && value.recorded_full_verification !== 'not_current') throw new Error(\"Failed boundary cannot retain a passing receipt\");\n@@ -66,7 +67,7 @@ async function refresh() {\n     status.classList.toggle('error', held);\n     status.textContent = held ? `Held: ${value.error || 'Current inputs failed verification'}. ${value.P9_G1_accepted ? 'Recorded P9-G1 acceptance remains intact.' : 'P9-G1 acceptance is not verified.'}` : value.P9_G1_accepted ? 'P9-G1 accepted. Bounded implementation is authorized; runtime conformance remains pending.' : 'Current planning checks passed. Runtime remains unauthorized.';\n     document.querySelector('#authority').textContent = value.P9_G1_accepted ? (held ? 'Accepted / current work held' : 'Accepted / bounded implementation only') : 'Not accepted or not verified / not authorized';\n-    document.querySelector('#next-work').textContent = value.runtime_authorized ? `Accepted foundation: ${value.foundation_acceptance.accepted_iterations.join(', ')}. Accepted requests: ${value.request_acceptance.accepted_iterations.join(', ')}. Accepted results: ${value.result_acceptance.accepted_iterations.join(', ')}. Accepted harness: ${value.harness_acceptance.accepted_iterations.join(', ')}. Accepted integration: ${value.integration_acceptance.accepted_iterations.join(', ')}. Accepted geometry: ${value.geometry_acceptance.accepted_iterations.join(', ')}. Accepted stages: ${value.stage_acceptance.accepted_iterations.join(', ')}. Dependency-ready leaves: ${value.dependency_ready_leaves.join(', ')}. ${value.permitted_runtime_paths.length} runtime paths are currently eligible under their owners. Later leaves remain gated.` : held ? 'Current work held; resolve the reported current-boundary failure.' : 'P9-G1 review remains pending.';\n+    document.querySelector('#next-work').textContent = value.runtime_authorized ? `Accepted foundation: ${value.foundation_acceptance.accepted_iterations.join(', ')}. Accepted requests: ${value.request_acceptance.accepted_iterations.join(', ')}. Accepted results: ${value.result_acceptance.accepted_iterations.join(', ')}. Accepted harness: ${value.harness_acceptance.accepted_iterations.join(', ')}. Accepted integration: ${value.integration_acceptance.accepted_iterations.join(', ')}. Accepted geometry: ${value.geometry_acceptance.accepted_iterations.join(', ')}. Accepted stages: ${value.stage_acceptance.accepted_iterations.join(', ')}. Accepted resources: ${value.resource_acceptance.accepted_iterations.join(', ')}. Dependency-ready leaves: ${value.dependency_ready_leaves.join(', ')}. ${value.permitted_runtime_paths.length} runtime paths are currently eligible under their owners. Later leaves remain gated.` : held ? 'Current work held; resolve the reported current-boundary failure.' : 'P9-G1 review remains pending.';\n     document.querySelector('#boundary').textContent = held ? 'Failed \u00b7 current work held' : 'Passed \u00b7 current bytes';\n     document.querySelector('#recorded').textContent = value.recorded_full_verification === 'not_current' ? 'Not current \u00b7 rerun CLI' : 'Recorded pass \u00b7 matching inputs';\n     document.querySelector('#handoff').textContent = ({verified:'Verified \u00b7 normalized archive and historical inputs', unavailable:'Unavailable \u00b7 no archive integrity pass', invalid:'Invalid \u00b7 archive integrity check failed'})[value.handoff_evidence?.status] || 'Not applicable to this historical phase';\ndiff --git a/implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/verification.test.mjs b/implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/verification.test.mjs\nindex df81a76..7343b33 100644\n--- a/implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/verification.test.mjs\n+++ b/implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/verification.test.mjs\n@@ -37,6 +37,7 @@ function accepted(extra={}) {\n     handoff_evidence:{status:'verified'},\n     runtime_authority_state:'accepted_P9_G1_bounded_implementation_not_conformance',\n     approval_digest:'cd2c52f30477e1042bb903bd0553da237ddccc9cad373afecc1a84e4e0b37ea2',\n+    resource_acceptance:{record_digest:'3e71b580090ba1712dbec4a1718653c2057e4062200f3367ba0c1ed7adeae6fa',accepted_iterations:['P9-3.3']},\n     implementation_scope:Array.from({length:43},(_,i)=>({path:`synthetic/${i}`})),\n     foundation_acceptance:{record_digest:'1e3f0ddb06b119fa46dc7609d05b7db0c3a4cbc07428c05b8a032da081ae9dd4',accepted_iterations:['P9-2.1','P9-2.2']},\n     request_acceptance:{record_digest:'ac07a2f7c93538454d9663aba78ca0eb5af385d7975582e4c21682f41ce4c17f',accepted_iterations:['P9-2.3']},\n@@ -45,7 +46,7 @@ function accepted(extra={}) {\n     integration_acceptance:{record_digest:'e5ba16731e03dc916b8755c5999ab2b59acf431255612e76e0dcebe108104bc2',accepted_iterations:['P9-2.6']},\n     geometry_acceptance:{record_digest:'f119e1361500e72f58297bc8186f868954b4065c853fcdd089280a5d28f88618',accepted_iterations:['P9-3.1']},\n     stage_acceptance:{record_digest:'425cd05eb85213185a4b531a09c16cefec4be992ac4755d404b5f263e09ebd0a',accepted_iterations:['P9-3.2']},\n-    dependency_ready_leaves:['P9-2.1','P9-2.2','P9-2.3','P9-2.4','P9-2.5','P9-2.6','P9-3.1','P9-3.2','P9-3.3'],permitted_runtime_paths:[...Array.from({length:15},(_,i)=>`synthetic/${i}`),'pyproject.toml','tests/models/grcv4_conformance_harness.py','tests/models/grcv4_reference_oracles.py','src/pygrc/models/__init__.py',\"src/pygrc/models/grc_v4_geometry.py\",\"src/pygrc/models/grc_v4_transport.py\",\"tests/models/test_grc_v4_geometry.py\",\"tests/models/test_grc_v4_transport.py\"],\n+    dependency_ready_leaves:['P9-2.1','P9-2.2','P9-2.3','P9-2.4','P9-2.5','P9-2.6','P9-3.1','P9-3.2','P9-3.3','P9-3.4'],permitted_runtime_paths:[...Array.from({length:15},(_,i)=>`synthetic/${i}`),'pyproject.toml','tests/models/grcv4_conformance_harness.py','tests/models/grcv4_reference_oracles.py','src/pygrc/models/__init__.py',\"src/pygrc/models/grc_v4_geometry.py\",\"src/pygrc/models/grc_v4_transport.py\",\"tests/models/test_grc_v4_geometry.py\",\"tests/models/test_grc_v4_transport.py\"],\n     iterations:[4,5,6,7,8,9].map(i=>({iteration_id:`P9-1.${i}`,status:'implemented_and_verified',reviewer_decision:'accepted_by_user'})),...extra});\n }\n test('accepted G1 permission does not imply accepted profile support',async()=>{\n@@ -74,7 +75,7 @@ test('missing and invalid handoff evidence do not change accepted permission',as\n \n test('current work can be held while historical acceptance remains verified',async()=>{\n   const value=accepted({current_boundary:'failed_closed',runtime_authorized:false,runtime_authority_state:'accepted_P9_G1_current_work_held'});\n-  for(const key of ['implementation_scope','dependency_ready_leaves','permitted_runtime_paths','foundation_acceptance','request_acceptance','result_acceptance','harness_acceptance','integration_acceptance','geometry_acceptance','stage_acceptance','status_digest']) delete value[key];\n+  for(const key of ['implementation_scope','dependency_ready_leaves','permitted_runtime_paths','foundation_acceptance','request_acceptance','result_acceptance','harness_acceptance','integration_acceptance','geometry_acceptance','stage_acceptance','resource_acceptance','status_digest']) delete value[key];\n   value.status_digest=createHash('sha256').update(canonical(value)).digest('hex');\n   assert.equal((await verifiedStatus(value)).P9_G1_accepted,true);\n   assert.equal(value.runtime_authorized,false);\n@@ -86,7 +87,7 @@ test('committed foundation acceptance does not accept request work or conformanc\n     {record_digest:'0'.repeat(64),accepted_iterations:['P9-2.1','P9-2.2']},\n     {record_digest:'1e3f0ddb06b119fa46dc7609d05b7db0c3a4cbc07428c05b8a032da081ae9dd4',accepted_iterations:['P9-2.1','P9-2.2','P9-2.3']}])\n     assert.throws(()=>checkedStatus(accepted({foundation_acceptance})),/foundation/);\n-  assert.throws(()=>checkedStatus(accepted({dependency_ready_leaves:['P9-2.1','P9-2.2','P9-2.3','P9-2.4','P9-2.5','P9-2.6','P9-3.1','P9-3.2','P9-3.3','P9-3.4']})),/dependency-ready/);\n+  assert.throws(()=>checkedStatus(accepted({dependency_ready_leaves:['P9-2.1','P9-2.2','P9-2.3','P9-2.4','P9-2.5','P9-2.6','P9-3.1','P9-3.2','P9-3.3','P9-3.4','P9-3.5']})),/dependency-ready/);\n });\n \n  test('request acceptance cannot be missing or promote result work',()=>{\n@@ -133,3 +134,9 @@ test('stage acceptance cannot be missing, forged or accept stage work',()=>{\n     {record_digest:'425cd05eb85213185a4b531a09c16cefec4be992ac4755d404b5f263e09ebd0a',accepted_iterations:['P9-3.2','P9-3.3']}])\n     assert.throws(()=>checkedStatus(accepted({stage_acceptance})),/accepted stages/);\n });\n+\n+test('resource acceptance cannot be omitted or expanded', () => {\n+  for (const resource_acceptance of [undefined, {}, {record_digest:'0'.repeat(64),accepted_iterations:['P9-3.3']},\n+    {record_digest:'3e71b580090ba1712dbec4a1718653c2057e4062200f3367ba0c1ed7adeae6fa',accepted_iterations:['P9-3.3','P9-3.4']}])\n+    assert.throws(() => checkedStatus(accepted({resource_acceptance})), /accepted resources/);\n+});\ndiff --git a/implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/test_phase9_g1_surfaces.py b/implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/test_phase9_g1_surfaces.py\nindex 3587607..e92136a 100644\n--- a/implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/test_phase9_g1_surfaces.py\n+++ b/implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/test_phase9_g1_surfaces.py\n@@ -44,13 +44,15 @@ def checks(root):\n         return namespace\n \n     require(\n-        status[\"dependency_ready_leaves\"] == [\"P9-2.1\", \"P9-2.2\", \"P9-2.3\", \"P9-2.4\", \"P9-2.5\", \"P9-2.6\", \"P9-3.1\", \"P9-3.2\", \"P9-3.3\"]\n+        status[\"dependency_ready_leaves\"] == [\"P9-2.1\", \"P9-2.2\", \"P9-2.3\", \"P9-2.4\", \"P9-2.5\", \"P9-2.6\", \"P9-3.1\", \"P9-3.2\", \"P9-3.3\", \"P9-3.4\"]\n         and status[\"harness_acceptance\"][\"record_digest\"] == policy.HARNESS_ACCEPTANCE_DIGEST\n         and status[\"harness_acceptance\"][\"accepted_iterations\"] == [\"P9-2.5\"]\n         and status[\"geometry_acceptance\"][\"record_digest\"] == policy.GEOMETRY_ACCEPTANCE_DIGEST\n         and status[\"geometry_acceptance\"][\"accepted_iterations\"] == [\"P9-3.1\"]\n         and status[\"stage_acceptance\"][\"record_digest\"] == policy.STAGE_ACCEPTANCE_DIGEST\n         and status[\"stage_acceptance\"][\"accepted_iterations\"] == [\"P9-3.2\"]\n+        and status[\"resource_acceptance\"][\"record_digest\"] == policy.RESOURCE_ACCEPTANCE_DIGEST\n+        and status[\"resource_acceptance\"][\"accepted_iterations\"] == [\"P9-3.3\"]\n         and status[\"integration_acceptance\"][\"record_digest\"] == policy.INTEGRATION_ACCEPTANCE_DIGEST\n         and status[\"integration_acceptance\"][\"accepted_iterations\"] == [\"P9-2.6\"]\n         and set(['src/pygrc/models/grc_v4_geometry.py', 'src/pygrc/models/grc_v4_transport.py', 'tests/models/test_grc_v4_geometry.py', 'tests/models/test_grc_v4_transport.py']) <= set(status[\"permitted_runtime_paths\"])\ndiff --git a/implementation/phase-9-grcv4/runtime/RuntimeWorkManifest.json b/implementation/phase-9-grcv4/runtime/RuntimeWorkManifest.json\nindex 5f7dffd..4929945 100644\n--- a/implementation/phase-9-grcv4/runtime/RuntimeWorkManifest.json\n+++ b/implementation/phase-9-grcv4/runtime/RuntimeWorkManifest.json\n@@ -808,6 +808,16 @@\n       \"sha256\": \"398342e7a68dc7f41c543f7d58aefff62c26c47036445c03697853d28a7f3bb2\",\n       \"iteration_id\": \"P9-3.3\"\n     },\n+    {\n+      \"path\": \"implementation/phase-9-grcv4/tranche-3/P9-3.4-ExecutionRecord.json\",\n+      \"sha256\": \"49a7f2a0f1a8e70dced10554d030d6fdad2177023084a2ee77a4f16fc9c1d7dd\",\n+      \"iteration_id\": \"P9-3.4\"\n+    },\n+    {\n+      \"path\": \"implementation/phase-9-grcv4/tranche-3/P9-3.4-Review.md\",\n+      \"sha256\": \"fe8f0f93054df9099f90d81af636ccab603a3d64c3959f93f9552a33adf04329\",\n+      \"iteration_id\": \"P9-3.4\"\n+    },\n     {\n       \"path\": \"pyproject.toml\",\n       \"sha256\": \"018c364413f75ee49186975c05e9cdaba7a78e171d47833609fbebc223a64a66\",\n@@ -850,8 +860,8 @@\n     },\n     {\n       \"path\": \"src/pygrc/models/grc_v4_geometry.py\",\n-      \"sha256\": \"d715f67555d3c6e68a4e031ba132cb1854cc839de03dcd2c7101fbeb40c13dcd\",\n-      \"iteration_id\": \"P9-3.2\"\n+      \"sha256\": \"02711d13bc0075d961b8538dfb2e811014c0051e8c3dcefd03c1eb409f32004b\",\n+      \"iteration_id\": \"P9-3.4\"\n     },\n     {\n       \"path\": \"src/pygrc/models/grc_v4_profile.py\",\n@@ -895,8 +905,8 @@\n     },\n     {\n       \"path\": \"tests/models/test_grc_v4_geometry.py\",\n-      \"sha256\": \"de8957be72deeaf92cef84795d0356cbcba99b4563975f03413e627140908eea\",\n-      \"iteration_id\": \"P9-3.2\"\n+      \"sha256\": \"9b3c32b9e0472a585062fec8ff7a953c2772ab6571da9a7c794630d7e9bf60b9\",\n+      \"iteration_id\": \"P9-3.4\"\n     },\n     {\n       \"path\": \"tests/models/test_grc_v4_profile.py\",\n@@ -915,12 +925,12 @@\n     },\n     {\n       \"path\": \"tests/models/test_grc_v4_transport.py\",\n-      \"sha256\": \"651e9d27153632b89b412e11dde005df2db47806a336370e61c72c5f960c6f9b\",\n-      \"iteration_id\": \"P9-3.3\"\n+      \"sha256\": \"ad44a64357ad5cef25deaf2c778a4a4a0ea4ec016f461ce40e07f0724c09f2a9\",\n+      \"iteration_id\": \"P9-3.4\"\n     }\n   ],\n   \"accepted_generic_runtime_support\": [],\n   \"admitted_specialization_support_sets\": [],\n   \"claim_ceiling\": \"Exact current implementation content bindings, not review acceptance or conformance.\",\n-  \"record_digest\": \"0e5e337537e0ede46be10d40675412e15faacd80544c945d881d6616eeb1168f\"\n+  \"record_digest\": \"c5fe8f65268bb8acf8f9f303e3c683d34716ad09b9519bd360eaa04db8bc7805\"\n }\ndiff --git a/implementation/phase-9-grcv4/verification/Phase9ImplementationBoundary.json b/implementation/phase-9-grcv4/verification/Phase9ImplementationBoundary.json\nindex 4d0636f..e4ec8cc 100644\n--- a/implementation/phase-9-grcv4/verification/Phase9ImplementationBoundary.json\n+++ b/implementation/phase-9-grcv4/verification/Phase9ImplementationBoundary.json\n@@ -43,7 +43,7 @@\n     },\n     {\n       \"path\": \"implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/browser.spec.mjs\",\n-      \"sha256\": \"0a7dda698181b52973bd77069c6d2428192686cd24659f528c8288fe587943b9\"\n+      \"sha256\": \"496f04c4b4ba68c23c0d041b7fee5a99218b137f16542822edce8c6cc92b98bf\"\n     },\n     {\n       \"path\": \"implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/index.html\",\n@@ -51,11 +51,11 @@\n     },\n     {\n       \"path\": \"implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/verification.js\",\n-      \"sha256\": \"d6e30273b317a0d1c0065c70dc5d38ed449f22a9799ea0e0073b026c0fe9ae21\"\n+      \"sha256\": \"bc65f2fdf01f2baf782caee998653c6962e465f7468d7852b24a501c20a5a4e4\"\n     },\n     {\n       \"path\": \"implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/verification.test.mjs\",\n-      \"sha256\": \"98c6a2c7efe14b6273fdc6cd01f9d179dc22782cf67e7fc4e04800d2c9c62347\"\n+      \"sha256\": \"9e35f20e7e98b121e43e6ba916bd17b1e3fa8f82fa682ac0c51903b3206127c0\"\n     },\n     {\n       \"path\": \"implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/active_phase.py\",\n@@ -71,7 +71,7 @@\n     },\n     {\n       \"path\": \"implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/test_phase9_g1_surfaces.py\",\n-      \"sha256\": \"af77a218378feb6c70ff5d3f882b1f7253ed7fed24e891b335d4bb46ca3a496a\"\n+      \"sha256\": \"21b885ef1e5cdbcb62d90a802deaac650b8cb3057d57eb434c6efe88301515d9\"\n     },\n     {\n       \"path\": \"implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/test_phase9_surfaces.py\",\n@@ -83,7 +83,7 @@\n     },\n     {\n       \"path\": \"implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/phase9_verification.py\",\n-      \"sha256\": \"9699b6583acedf3d753d7d8586e0d518a731885d46c78a3528a9e59bd7d4b398\"\n+      \"sha256\": \"7958bbff145955e22e82d04144c89276d5c2c8be61f75da0571b743488cb39c1\"\n     },\n     {\n       \"path\": \"implementation/phase-9-grcv4/tranche-1/P9-1.1-1.3-ExecutionRecord.json\",\n@@ -165,6 +165,10 @@\n       \"path\": \"implementation/phase-9-grcv4/tranche-3/P9-3.2-AcceptanceRecord.json\",\n       \"sha256\": \"43086ccdeb67f8c73ccc95120ac1aa9d1069b12f49e785bd0ebef101866de460\"\n     },\n+    {\n+      \"path\": \"implementation/phase-9-grcv4/tranche-3/P9-3.3-AcceptanceRecord.json\",\n+      \"sha256\": \"67be65b9187cc444f8ead5260d5adb8b83d0c987fc001a233d35161bb9803167\"\n+    },\n     {\n       \"path\": \"implementation/phase-9-grcv4/verification/audit_phase9_implementation.py\",\n       \"sha256\": \"8a1dd7f2917912cafe413ee5916db10d148cd918130cab9aef8474f95dc3b9e4\"\n@@ -187,7 +191,7 @@\n     },\n     {\n       \"path\": \"implementation/phase-9-grcv4/verification/phase9_implementation_policy.py\",\n-      \"sha256\": \"d6bbac4e9c7edc6cf858af7561052b2ae1d27ae3493ca07d21937cbd44858fac\"\n+      \"sha256\": \"1fbb9f0cc27ebf1da1523e6a992e46b8bc0f20da62a4830811b4de34c938de97\"\n     },\n     {\n       \"path\": \"implementation/phase-9-grcv4/verification/test_handoff_evidence.py\",\n@@ -195,8 +199,8 @@\n     },\n     {\n       \"path\": \"implementation/phase-9-grcv4/verification/test_phase9_g1.py\",\n-      \"sha256\": \"26329a41ad3ba3667d7c52a75f91ee22eced3c8f4274bcfafbca0ed5067e106a\"\n+      \"sha256\": \"ea0d669814e9abe990ca4d038a11c6e781757288268ee3965e4afb078dbbee44\"\n     }\n   ],\n-  \"record_digest\": \"92eee5513bdd8fde896d2c5b269ff9a1a1def7e5c3e62fad7aadcb119a55e49f\"\n+  \"record_digest\": \"35c3e61c6ae613d928af5ddddc984770c4a1780bf467f740c099e9a8fa3a0c36\"\n }\ndiff --git a/implementation/phase-9-grcv4/verification/phase9_implementation_policy.py b/implementation/phase-9-grcv4/verification/phase9_implementation_policy.py\nindex 4934956..d360ef0 100644\n--- a/implementation/phase-9-grcv4/verification/phase9_implementation_policy.py\n+++ b/implementation/phase-9-grcv4/verification/phase9_implementation_policy.py\n@@ -64,6 +64,8 @@ GEOMETRY_ACCEPTANCE = PHASE + \"tranche-3/P9-3.1-AcceptanceRecord.json\"\n GEOMETRY_ACCEPTANCE_DIGEST = \"f119e1361500e72f58297bc8186f868954b4065c853fcdd089280a5d28f88618\"\n STAGE_ACCEPTANCE = PHASE + \"tranche-3/P9-3.2-AcceptanceRecord.json\"\n STAGE_ACCEPTANCE_DIGEST = \"425cd05eb85213185a4b531a09c16cefec4be992ac4755d404b5f263e09ebd0a\"\n+RESOURCE_ACCEPTANCE = PHASE + \"tranche-3/P9-3.3-AcceptanceRecord.json\"\n+RESOURCE_ACCEPTANCE_DIGEST = \"3e71b580090ba1712dbec4a1718653c2057e4062200f3367ba0c1ed7adeae6fa\"\n # Explicit user-authorized presentation maintenance after accepted P9-3.3\n # ce83d7a. Only these original -> presented Git blobs may differ from HEAD.\n # The run's /presentation binds the original repository revision and embedded\n@@ -117,6 +119,7 @@ PATHS = {\n     INTEGRATION_ACCEPTANCE,\n     GEOMETRY_ACCEPTANCE,\n     STAGE_ACCEPTANCE,\n+    RESOURCE_ACCEPTANCE,\n     HERE + \"phase9_implementation_policy.py\",\n     HERE + \"audit_phase9_implementation.py\",\n     HERE + \"test_phase9_g1.py\",\n@@ -463,6 +466,26 @@ def accepted_stages(root):\n     return value\n \n \n+def accepted_resources(root):\n+    \"\"\"Committed P9-3.3 acceptance opens only its dependency-ready successors.\"\"\"\n+    value = read(safe_path(root, RESOURCE_ACCEPTANCE))\n+    require(value[\"record_digest\"] == digest_record(value) == RESOURCE_ACCEPTANCE_DIGEST,\n+            \"untrusted resource acceptance\")\n+    require(value[\"schema\"] == \"phase9_resource_boundary_acceptance_v1\"\n+            and value[\"status\"] == \"accepted_by_user\"\n+            and value[\"release_id\"] == prior.RELEASE_ID\n+            and value[\"predecessor_record_digest\"] == STAGE_ACCEPTANCE_DIGEST\n+            and value[\"accepted_iterations\"] == [\"P9-3.3\"]\n+            and value[\"accepted_generic_runtime_support\"] == []\n+            and value[\"admitted_specialization_support_sets\"] == [],\n+            \"invalid resource acceptance scope\")\n+    prior.ancestor(root, value[\"baseline_commit\"])\n+    for row in value[\"evidence_bindings\"]:\n+        require(sha(git(root, \"show\", f\"{value['baseline_commit']}:{row['path']}\"))\n+                == row[\"sha256\"], \"accepted resource subject changed\")\n+    return value\n+\n+\n def leaf_permissions(root):\n     \"\"\"Readiness from accepted dependencies, never inferred from completion.\"\"\"\n     accepted = {\"P9-G1\", *accepted_foundation(root)[\"accepted_iterations\"],\n@@ -471,7 +494,8 @@ def leaf_permissions(root):\n                 *accepted_harness(root)[\"accepted_iterations\"],\n                 *accepted_integration(root)[\"accepted_iterations\"],\n                 *accepted_geometry(root)[\"accepted_iterations\"],\n-                *accepted_stages(root)[\"accepted_iterations\"]}\n+                *accepted_stages(root)[\"accepted_iterations\"],\n+                *accepted_resources(root)[\"accepted_iterations\"]}\n     support = read(\n         safe_path(root, PHASE + \"tranche-1/P9-1.4-SupportAndDependencies.json\")\n     )\ndiff --git a/implementation/phase-9-grcv4/verification/test_phase9_g1.py b/implementation/phase-9-grcv4/verification/test_phase9_g1.py\nindex 6611c7d..c8c230b 100644\n--- a/implementation/phase-9-grcv4/verification/test_phase9_g1.py\n+++ b/implementation/phase-9-grcv4/verification/test_phase9_g1.py\n@@ -52,7 +52,7 @@ def main():\n             ],\n             check=True,\n         )\n-        fixture_revision = p.accepted_stages(p.ROOT)[\"baseline_commit\"]\n+        fixture_revision = p.accepted_resources(p.ROOT)[\"baseline_commit\"]\n         subprocess.run(\n             [\"git\", \"checkout\", \"--quiet\", \"--detach\", fixture_revision],\n             cwd=root, check=True,\n@@ -514,9 +514,9 @@ def main():\n             lambda: registered(\"src/pygrc/models/grc_v4.py\", content, leaf=\"P9-2.3\"),\n         )\n         case(\n-            \"charge_work_does_not_accept_next_leaf\",\n-            lambda: registered(p.PHASE + \"evidence/P9-3.4/probe/inputs.json\",\n-                               b\"{}\", leaf=\"P9-3.4\"),\n+            \"numerical_work_does_not_accept_next_leaf\",\n+            lambda: registered(p.PHASE + \"evidence/P9-3.5/probe/inputs.json\",\n+                               b\"{}\", leaf=\"P9-3.5\"),\n             \"owning leaf entry dependencies are not accepted\",\n         )\n         for name in [\"src/pygrc/models/grc_v4_state.py\", \"src/pygrc/models/grc_v4_step.py\"]:\n@@ -534,6 +534,23 @@ def main():\n         for name in [\"src/pygrc/models/grc_v4_transport.py\", \"tests/models/test_grc_v4_transport.py\", \"src/pygrc/models/grc_v4_step.py\", \"tests/models/test_grc_v4_step.py\"]:\n             case(\"accepted_stage_enables_charge_owner_\" + Path(name).stem,\n                  lambda name=name: registered(name, content, leaf=\"P9-3.3\"))\n+        for name in [\"src/pygrc/models/grc_v4_geometry.py\", \"tests/models/test_grc_v4_geometry.py\", \"src/pygrc/models/grc_v4_transport.py\", \"tests/models/test_grc_v4_transport.py\"]:\n+            case(\"accepted_resources_enable_numerical_owner_\" + Path(name).stem,\n+                 lambda name=name: registered(name, content, leaf=\"P9-3.4\"))\n+        case(\"missing_resource_acceptance\", lambda: edit(p.RESOURCE_ACCEPTANCE, None),\n+             \"P9-3.3-AcceptanceRecord.json\")\n+        for key, replacement in [(\"status\", \"pending\"), (\"accepted_iterations\", [\"P9-3.3\", \"P9-3.4\"]),\n+                                 (\"accepted_generic_runtime_support\", [\"C_OS\"]),\n+                                 (\"admitted_specialization_support_sets\", [[\"C_OS\"]]),\n+                                 (\"baseline_commit\", p.BASELINE), (\"evidence_bindings\", [])]:\n+            def forged_resource(key=key, replacement=replacement):\n+                value = p.read(root / p.RESOURCE_ACCEPTANCE)\n+                value[key] = replacement\n+                value[\"record_digest\"] = p.digest_record(value)\n+                with mutate(p.RESOURCE_ACCEPTANCE, p.canonical(value)):\n+                    p.accepted_resources(root)\n+            case(\"resource_acceptance_cannot_self_authorize_\" + key, forged_resource,\n+                 \"untrusted resource acceptance\", scope=\"isolated_resource_acceptance_authentication\")\n         case(\"accepted_harness_enables_export_owner\",\n              lambda: registered(init, before + lazy, leaf=\"P9-2.6\"))\n         for key, replacement in [(\"status\", \"pending\"), (\"accepted_iterations\", [\"P9-2.5\", \"P9-2.6\"]),\n",
+    "untracked_inputs": {
+      "implementation/phase-9-grcv4/tranche-3/P9-3.3-AcceptanceRecord.json": "{\n  \"schema\": \"phase9_resource_boundary_acceptance_v1\",\n  \"status\": \"accepted_by_user\",\n  \"baseline_commit\": \"ce83d7a709d63b9445a0e81226425597ed37ced0\",\n  \"release_id\": \"grcv4-spec-release-sha256:9f4c8fe5b57b1c477d834a3e4dae3f98a2b18c70e6e7f598e3c9652170c8645f\",\n  \"predecessor_record_digest\": \"425cd05eb85213185a4b531a09c16cefec4be992ac4755d404b5f263e09ebd0a\",\n  \"accepted_iterations\": [\n    \"P9-3.3\"\n  ],\n  \"acceptance_basis\": \"Explicit user instruction: so, accept p9-3.3 and commit, both audits didn't find anything. Accepted at the named committed subject; subsequent explicit authorization starts P9-3.4. Historical executions and numerical limitations remain unchanged.\",\n  \"evidence_bindings\": [\n    {\n      \"path\": \"implementation/phase-9-grcv4/tranche-3/P9-3.3-Review.md\",\n      \"sha256\": \"398342e7a68dc7f41c543f7d58aefff62c26c47036445c03697853d28a7f3bb2\"\n    },\n    {\n      \"path\": \"implementation/phase-9-grcv4/tranche-3/P9-3.3-ExecutionRecord.json\",\n      \"sha256\": \"6d4dc0f68d9c17ba782a386f2a29720492e8daf63f81332e87621231c3136aae\"\n    },\n    {\n      \"path\": \"implementation/phase-9-grcv4/evidence/P9-3.3/validation/run.json\",\n      \"sha256\": \"d5067e59440bd937cba645cd232a19c7e6fe81525d31b4b2c16054b324743e6a\"\n    },\n    {\n      \"path\": \"implementation/phase-9-grcv4/evidence/P9-3.3/audit-1-native/run.json\",\n      \"sha256\": \"0a74d9aa5cc5a64cdd871f0b77ab5bf1131227867ae2fda0804c1883e803783e\"\n    },\n    {\n      \"path\": \"implementation/phase-9-grcv4/evidence/P9-3.3/audit-1-followup/run.json\",\n      \"sha256\": \"6b40764e8ee7dfc9d8f4fe67a769dfcbdd40f4190dff1aecba83d332c858d198\"\n    },\n    {\n      \"path\": \"implementation/phase-9-grcv4/runtime/RuntimeWorkManifest.json\",\n      \"sha256\": \"a3f98d431f4bb8c91774ea776ea933571e2d7bb06b8f6aa05f4bc3c6a416720f\"\n    }\n  ],\n  \"accepted_generic_runtime_support\": [],\n  \"admitted_specialization_support_sets\": [],\n  \"record_digest\": \"3e71b580090ba1712dbec4a1718653c2057e4062200f3367ba0c1ed7adeae6fa\"\n}\n",
+      "implementation/phase-9-grcv4/tranche-3/P9-3.4-ExecutionRecord.json": "{\n  \"schema\": \"phase9_leaf_execution_v1\",\n  \"iteration_id\": \"P9-3.4\",\n  \"status\": \"in_progress\",\n  \"reviewer_decision\": \"pending_user_review\",\n  \"release_id\": \"grcv4-spec-release-sha256:9f4c8fe5b57b1c477d834a3e4dae3f98a2b18c70e6e7f598e3c9652170c8645f\",\n  \"entry_authority\": {\n    \"path\": \"implementation/phase-9-grcv4/tranche-3/P9-3.3-AcceptanceRecord.json\",\n    \"record_digest\": \"3e71b580090ba1712dbec4a1718653c2057e4062200f3367ba0c1ed7adeae6fa\"\n  },\n  \"review\": {\n    \"path\": \"implementation/phase-9-grcv4/tranche-3/P9-3.4-Review.md\",\n    \"sha256\": \"fe8f0f93054df9099f90d81af636ccab603a3d64c3959f93f9552a33adf04329\"\n  },\n  \"verification\": [],\n  \"accepted_generic_runtime_support\": [],\n  \"admitted_specialization_support_sets\": [],\n  \"claim_ceiling\": \"Typed primitive numerical envelope and analysis fixtures; no executed C selector/current block, complete beat, profile conformance, or acceptance of this leaf.\"\n}\n",
+      "implementation/phase-9-grcv4/tranche-3/P9-3.4-Review.md": "# P9-3.4 \u2014 numerical pressure and reproducibility\n\nImplementation and verification in progress; pending user review.\n"
+    },
+    "bound_source_sha256": {
+      "implementation/ImplementationPhases.md": "129b5cbdc304c6993e999a6e73c4401d106ddf1c5a28f6982997215088f7c48f",
+      "implementation/Phase-9-GRCV4-ImplementationChecklist.md": "9cfc4f921b803ef7cb287b409373c96f60d205f258758c48cf735d69884f5b2a",
+      "implementation/Phase-9-GRCV4-ImplementationPlan.md": "66cd09a65ab39778abb330a444275d0082f580ca396b569d02d02d774062c030",
+      "implementation/Phase-9-GRCV4-PhaseOpening.json": "68c1df72fdd4980cda3c0c8071fff3cc055b30255cf1d60778c6f17c463fa888",
+      "implementation/investigations/grc9v4-constitutive-design/scripts/audit_grc9v4_d10_claim_topology.py": "996f885d2b3da426b08e29cc0bc1d2dca1c243a65c959504bde38cbc81f27606",
+      "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/GRCV4ExploratorySideToolImplementationChecklist.md": "90c330444fe9d5f7a2abad78d78c671d2dff2706c2d0840000b0d8965b0473f7",
+      "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/GRCV4ExploratorySideToolImplementationPlan.md": "c4b10bd21a7104c8fe22aa15bb2fc846b07d71fb755a4a70208c96e567473637",
+      "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/docs/Phase9VerificationGuide.md": "cfe69d64782ef0d7d6cafbb8589b12e384e953e99d1397e20e2fdea796a737d6",
+      "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/notebooks/phase9_verification.ipynb": "ad6bfd41bdbe66652809b3b6f74634946c52a0b37fe8c9c33ac174991d0ef5e3",
+      "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/browser.spec.mjs": "496f04c4b4ba68c23c0d041b7fee5a99218b137f16542822edce8c6cc92b98bf",
+      "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/index.html": "018a870415898a033eb962389c6e4e8884034ec791c52e1f43a94e49d8a52199",
+      "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/verification.js": "bc65f2fdf01f2baf782caee998653c6962e465f7468d7852b24a501c20a5a4e4",
+      "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/verification.test.mjs": "9e35f20e7e98b121e43e6ba916bd17b1e3fa8f82fa682ac0c51903b3206127c0",
+      "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/active_phase.py": "f85dd7dad8be8d616aeef0ab7aeab67cff667eeaef53a899d40ef603d57be148",
+      "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/run.py": "5cbdd41906294663e659392ca9420210d8bad833dceaecbc0c8e5533e0bee57f",
+      "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/run_phase9_notebook.py": "93d62b89d470859cd31caa1082d48ded66ae4ded985cc9797f4da7004ef700e6",
+      "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/test_phase9_g1_surfaces.py": "21b885ef1e5cdbcb62d90a802deaac650b8cb3057d57eb434c6efe88301515d9",
+      "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/test_phase9_surfaces.py": "295bc2cf67526a2daedd160cc72fb65de3b38949ac5cbb5c59606be6639f6db9",
+      "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/verify_iteration9.py": "26d58af207695919868e7eeadf6ff5324f67ee6d5e0542d7c5739c88257d9257",
+      "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/phase9_verification.py": "7958bbff145955e22e82d04144c89276d5c2c8be61f75da0571b743488cb39c1",
+      "implementation/phase-9-grcv4/evidence/P9-2.1/p921-359d167b2a3a4d7888b7385e55fef42d/run.json": "29d6a0cdc8b098cc880fb06295362bea0e4a011137bb705c30481d4e8323067b",
+      "implementation/phase-9-grcv4/evidence/P9-2.1/stress-audit-inputs/inputs.json": "f7c6c75b3262ded9cd5378edb247cfe83ca9cd6b35b1309a285e124c1d02d8cc",
+      "implementation/phase-9-grcv4/evidence/P9-2.1/stress-correction/actual.json": "7f3f78bb519dc2585c8178624ef4baf19c1c3e2516c6675494f3bb076821c2fb",
+      "implementation/phase-9-grcv4/evidence/P9-2.1/stress-correction/inputs.json": "21df1caa76fd6f8f8b36371492f58ffb6b6c34ff386d047497e10a79024a1708",
+      "implementation/phase-9-grcv4/evidence/P9-2.1/stress-correction/run.json": "420152d728bbb78473daa29d95c4b2402489cd07e042bfaf54594cdf5d0367b6",
+      "implementation/phase-9-grcv4/evidence/P9-2.2/audit-correction/actual.json": "c714f2253a48fa2a053f72ca78a50a1646a850ab0a90fc770b9cd091c92f33c8",
+      "implementation/phase-9-grcv4/evidence/P9-2.2/audit-correction/inputs.json": "445548bf243a84f30be8015da12f2b10eabb7bb1b98d0c0cee523a3a7e5f505f",
+      "implementation/phase-9-grcv4/evidence/P9-2.2/audit-correction/run.json": "17616fc3fe74b16e07ee9ea0c7225df7c69008e5b202db1032a007da0d667d63",
+      "implementation/phase-9-grcv4/evidence/P9-2.2/independent-audit-inputs/inputs.json": "4eb4dc04caecf74b9ea689223f8a653cd240ef3026ddcedf928560245680db8a",
+      "implementation/phase-9-grcv4/evidence/P9-2.2/p922-49c1ad11e2e2474abcb74d1cb851cbf8/run.json": "5f6b6d9eeed1731a06809e1d9f1ad0c80c676ca15b7857fceed8e7ec2b955b9a",
+      "implementation/phase-9-grcv4/evidence/P9-2.3/audit-followup/actual.json": "4f7ca95728383a847f3bc97f9efa2e52d28779b9887b2fb570c647d675213112",
+      "implementation/phase-9-grcv4/evidence/P9-2.3/audit-followup/inputs.json": "0780485004cdd8eab0ce0d665458dbec06bbd53c096a41f7a50bf6959f061392",
+      "implementation/phase-9-grcv4/evidence/P9-2.3/audit-followup/run.json": "303ff20dc9490118eeabf0951bb6776895d0ce3fe89d37700ab39f83b884fa8d",
+      "implementation/phase-9-grcv4/evidence/P9-2.3/audit-unadapted/actual.json": "9c028c82a40a742166accfe0273c0e3db7955ab64dc104ffbfd4def699d5a038",
+      "implementation/phase-9-grcv4/evidence/P9-2.3/independent-audit-inputs/inputs.json": "32dbb6e7653185fe37c6e564e8329230fcfa3e2cf8456140e7da65ff1218458f",
+      "implementation/phase-9-grcv4/evidence/P9-2.3/p923-verification/actual.json": "c714f2253a48fa2a053f72ca78a50a1646a850ab0a90fc770b9cd091c92f33c8",
+      "implementation/phase-9-grcv4/evidence/P9-2.3/p923-verification/run.json": "f0015f3a83fead275e4825748eb9495c16a0a8f60c37040783bf54f1cd94c338",
+      "implementation/phase-9-grcv4/evidence/P9-2.3/pre-audit-subject/inputs.json": "b795055acbcf6e6da0a72d8b7004750797cb46dd7cf6a011dd993492bc1c572b",
+      "implementation/phase-9-grcv4/evidence/P9-2.4/audit-before/actual.json": "92e968bee4f6b998a221216353e4b476e256cf4d3da3cda4c81d4777af588dc7",
+      "implementation/phase-9-grcv4/evidence/P9-2.4/audit-before/run.json": "dcf111121144bdfbefd4f7e4c76a7dcb69fcc5fe495492add1b7c07dd9ff6c24",
+      "implementation/phase-9-grcv4/evidence/P9-2.4/audit-followup/actual.json": "3fc0896afe09d905031e64e8e109c49eab9bc259f5a9f98b9b37e2733dce376c",
+      "implementation/phase-9-grcv4/evidence/P9-2.4/audit-followup/run.json": "e48ab5882f50f3e0de954f7e0ff9fc4c3190a62ac7def48b52f2666abd565a82",
+      "implementation/phase-9-grcv4/evidence/P9-2.4/independent-audit/actual.json": "86c89e01878e9e4797abf89b3251dc575d40c714e1001c718419a26e87b354e6",
+      "implementation/phase-9-grcv4/evidence/P9-2.4/independent-audit/inputs.json": "0d991412489338bda60349e172866055c2013b43b4765ac4d10487c51051ca7a",
+      "implementation/phase-9-grcv4/evidence/P9-2.4/p924-verification/actual.json": "8ff50559899a40ba31a97788065e3dc4c7da068c12efe723a23ed0edcbd7cac9",
+      "implementation/phase-9-grcv4/evidence/P9-2.4/p924-verification/run.json": "e97dfcbcba096074004e3c75f49ff2c9e15df8c310af723f8865ba0eb5ead4ec",
+      "implementation/phase-9-grcv4/evidence/P9-2.4/pre-audit-subject/inputs.json": "1aef028f02f83ea383d0e7d10f50576a9e789afb40fb8b6d81f95e0f34b3e3ed",
+      "implementation/phase-9-grcv4/evidence/P9-2.5/audit-before/actual.json": "1327b4c0fdfd8200aa288a44f78dedc08b5942fef10b1147eb7d800c35add63b",
+      "implementation/phase-9-grcv4/evidence/P9-2.5/audit-corrected-prefix/actual.json": "9b2790dd0b7d0676481a02d0a97f386211149dcf3c272e8028cb5362406078a0",
+      "implementation/phase-9-grcv4/evidence/P9-2.5/audit-corrected-prefix/expected.json": "adf8ede32849ac12996db305ea79355e1c127a368be403d750e0a4aa4f4dea9d",
+      "implementation/phase-9-grcv4/evidence/P9-2.5/audit-corrected-prefix/inputs.json": "355e75560284d6d1f4abab8691c99266ddb8f8bafb028c79ef2680d3b8dfb301",
+      "implementation/phase-9-grcv4/evidence/P9-2.5/audit-corrected-prefix/receipts.json": "87ed885b1910d4b71670204fb51e3cc06c4d26e47e204ea1ff8e24152830b625",
+      "implementation/phase-9-grcv4/evidence/P9-2.5/audit-corrected-prefix/run.json": "65c7b8921363e8baff29eb4fe5e2fd5a238f159daeda4fdf4e747e7d6a17b124",
+      "implementation/phase-9-grcv4/evidence/P9-2.5/audit-correction/actual.json": "57420cbfe614534440c4fe690ca359de512d195e921e548a62cd960cfd81b0ce",
+      "implementation/phase-9-grcv4/evidence/P9-2.5/audit-correction/inputs.json": "dec440e98b185f38c19dfc24c6bff3d5189c59c164275a0126d3b529c25b5d58",
+      "implementation/phase-9-grcv4/evidence/P9-2.5/audit-correction/run.json": "915ba9e0511b679533a33dd224b112161a6aa80fdc39ab905033f6948958576e",
+      "implementation/phase-9-grcv4/evidence/P9-2.5/independent-audit/inputs.json": "59e33e7375e21cd344957969e07734abfde0693ca88ea27e0367d3f648a91063",
+      "implementation/phase-9-grcv4/evidence/P9-2.5/p925-prefix-final/actual.json": "9b2790dd0b7d0676481a02d0a97f386211149dcf3c272e8028cb5362406078a0",
+      "implementation/phase-9-grcv4/evidence/P9-2.5/p925-prefix-final/expected.json": "adf8ede32849ac12996db305ea79355e1c127a368be403d750e0a4aa4f4dea9d",
+      "implementation/phase-9-grcv4/evidence/P9-2.5/p925-prefix-final/inputs.json": "355e75560284d6d1f4abab8691c99266ddb8f8bafb028c79ef2680d3b8dfb301",
+      "implementation/phase-9-grcv4/evidence/P9-2.5/p925-prefix-final/receipts.json": "87ed885b1910d4b71670204fb51e3cc06c4d26e47e204ea1ff8e24152830b625",
+      "implementation/phase-9-grcv4/evidence/P9-2.5/p925-prefix-final/run.json": "b5054e390f2e820b82eda783f3abc4d935b0716d3f2f6103ee62268224fc9216",
+      "implementation/phase-9-grcv4/evidence/P9-2.5/p925-verification/run.json": "bb1ae6af8022633c28ae90200176ece89381e53183b041aae2f5737b3867babc",
+      "implementation/phase-9-grcv4/evidence/P9-2.5/p926-self-check-replay/actual.json": "9b2790dd0b7d0676481a02d0a97f386211149dcf3c272e8028cb5362406078a0",
+      "implementation/phase-9-grcv4/evidence/P9-2.5/p926-self-check-replay/expected.json": "adf8ede32849ac12996db305ea79355e1c127a368be403d750e0a4aa4f4dea9d",
+      "implementation/phase-9-grcv4/evidence/P9-2.5/p926-self-check-replay/inputs.json": "355e75560284d6d1f4abab8691c99266ddb8f8bafb028c79ef2680d3b8dfb301",
+      "implementation/phase-9-grcv4/evidence/P9-2.5/p926-self-check-replay/receipts.json": "87ed885b1910d4b71670204fb51e3cc06c4d26e47e204ea1ff8e24152830b625",
+      "implementation/phase-9-grcv4/evidence/P9-2.5/p926-self-check-replay/run.json": "3f375695f1c15a9841235754e66e81a624ae1ede04e281864f594ff6fcfbcd75",
+      "implementation/phase-9-grcv4/evidence/P9-2.5/pre-audit-subject/inputs.json": "647fd3c2ad10b3ded8cdf930b0238504fae5543db31aaedf60ef39501f0c4c4b",
+      "implementation/phase-9-grcv4/evidence/P9-2.6/integration/actual.json": "be613eb492f4f17aa64db8d0afa8cd119c705b403c867c7ac199168db8ac7a22",
+      "implementation/phase-9-grcv4/evidence/P9-2.6/integration/inputs.json": "f1ceabe2cb22598baeba8394adb4a36a08ac936f715392b14db750e0adf5e1bf",
+      "implementation/phase-9-grcv4/evidence/P9-2.6/integration/run.json": "cf3c18d03b59112b739902a3d363522ec80562a84de27f39b141537e1af50ced",
+      "implementation/phase-9-grcv4/evidence/P9-2.6/self-check/actual.json": "7cfe6bf0a6aaf63078baa45b744f66edac4185ed97785b90227498151e22737c",
+      "implementation/phase-9-grcv4/evidence/P9-2.6/self-check/inputs.json": "36fbfc65f2ba710a4df1e0fdcd5af310b340f6e184bf5cb11c4427045014a553",
+      "implementation/phase-9-grcv4/evidence/P9-2.6/self-check/run.json": "9594ecbf2a50a2cc11b81bcecfc88d6125416c3fc705cd5b2af3a8f514ef4a95",
+      "implementation/phase-9-grcv4/evidence/P9-3.1/audit-1-inputs/inputs.json": "dd08e0f8821c53ac951343c9c54159b21e10da0ecd40e43ed963ab3e108bdef7",
+      "implementation/phase-9-grcv4/evidence/P9-3.1/audit-1-native-after/actual.json": "c64eb47c65e2692bca634575a0985f5b041c7c7bc0f1f0b4b4eb4face6891197",
+      "implementation/phase-9-grcv4/evidence/P9-3.1/audit-1-native-after/expected.json": "c835efcec2356ad32042306f8f018938fb4cba561697ac78c51e903562c75163",
+      "implementation/phase-9-grcv4/evidence/P9-3.1/audit-1-native-after/inputs.json": "451b7aa654f90c944659f344a682197a2e4758550c116e70ae9d58519377d14d",
+      "implementation/phase-9-grcv4/evidence/P9-3.1/audit-1-native-after/run.json": "21512a5dba3146062b73fba2cc04df5e00f1af3b7b05c28203da5ad5c7585ea5",
+      "implementation/phase-9-grcv4/evidence/P9-3.1/audit-1-native-before/actual.json": "85fc0a5aabedd4af9c6af3046f59d899a5d5adb5b2c93642483e7c9365fbc8d0",
+      "implementation/phase-9-grcv4/evidence/P9-3.1/audit-1-native-before/expected.json": "b548c0394a9f1401ea9e8f26388eff54545852c0f45a2c4c57596b2ed82a685e",
+      "implementation/phase-9-grcv4/evidence/P9-3.1/audit-1-native-before/inputs.json": "1cd59f4ca2f3c4d57e08638ebae143a02a2a35fbfdee17fdc3026a48d45136cf",
+      "implementation/phase-9-grcv4/evidence/P9-3.1/audit-1-native-before/run.json": "355aa271f1f87c00815ecddd0f63febae35b97f7110e6dd9109fe6f59e23a90a",
+      "implementation/phase-9-grcv4/evidence/P9-3.1/audit-1-permission/actual.json": "5405cf0aee3e1ba4b3aa5b26206b8542be8391854c534e7381981b19745b06db",
+      "implementation/phase-9-grcv4/evidence/P9-3.1/audit-1-permission/inputs.json": "518493f0916026a50b29e0d3d9d1c0cd216718cd3862cd96c437f0cc2be87270",
+      "implementation/phase-9-grcv4/evidence/P9-3.1/audit-1-permission/receipts.json": "8f4a7d531f97d263284f827f9fc5899d4df43ac99af4674f5c99cfd9235281f8",
+      "implementation/phase-9-grcv4/evidence/P9-3.1/audit-1-permission/run.json": "31d57d28edb3f6e4c389f817b921668da62a3d0d46515c6fd0f5d78647e43c77",
+      "implementation/phase-9-grcv4/evidence/P9-3.1/audit-1-pressure/actual.json": "ebd24dc2eae2b9d3ec2d1de4efc0b651690dab4d1b175e77df2fb97e8e1479f5",
+      "implementation/phase-9-grcv4/evidence/P9-3.1/audit-1-pressure/expected.json": "efefd6ed3d26310eb9d08aa3870231dbd527d767270ee7fe9b188677e99b726a",
+      "implementation/phase-9-grcv4/evidence/P9-3.1/audit-1-pressure/inputs.json": "0536895f14ffbf5fbf157b76f063f637cfccc8757cf4c434f2bb053149fc6680",
+      "implementation/phase-9-grcv4/evidence/P9-3.1/audit-1-pressure/run.json": "dfd8e2a8a594ab450f2ed3ecc9aad525739aaaefd95782d0b39062b89739d078",
+      "implementation/phase-9-grcv4/evidence/P9-3.1/audit-1-pressure/stdout.txt": "54d24892bc84b6e02509b4d057ddcfa6b492debb9d03562e67ce8def37fb32b9",
+      "implementation/phase-9-grcv4/evidence/P9-3.1/outlier-pressure/actual.json": "c9ba578eea1c06c4e7df830242dabf380046da5648ee8247278e87574a2a2e89",
+      "implementation/phase-9-grcv4/evidence/P9-3.1/outlier-pressure/inputs.json": "881f17edad40afaee0e8c49cebbe4c263a28e6dd78cd8ad6c476b644b4249a20",
+      "implementation/phase-9-grcv4/evidence/P9-3.1/outlier-pressure/run.json": "45dea117dcaf674d4bc46fecdd130950b5aa70e07109576f1d55efc2a8b3fd7a",
+      "implementation/phase-9-grcv4/evidence/P9-3.1/outlier-pressure/stdout.txt": "9423d6d91bf0add8ed16ba4063f08d5f65a187c97b3f391d0678967db2517fd3",
+      "implementation/phase-9-grcv4/evidence/P9-3.1/permission-surfaces/actual.json": "f09ceab2b78bc90fb4357863d83c0b022d0b339eb5a1becbd91bac114b187d8f",
+      "implementation/phase-9-grcv4/evidence/P9-3.1/permission-surfaces/inputs.json": "024c6012275a6a818be30e55de4335801de55c51d7cf2495d84b7c96b161f6c6",
+      "implementation/phase-9-grcv4/evidence/P9-3.1/permission-surfaces/receipts.json": "996f3e9ac12ec0cc59030f2a86df7e70fba19fc9de8de706558b14032af6bf14",
+      "implementation/phase-9-grcv4/evidence/P9-3.1/permission-surfaces/run.json": "fa6a4e7903cb5c42ffa9ab5327d4152b802550863ed24c0426fd75001d7630e7",
+      "implementation/phase-9-grcv4/evidence/P9-3.1/primitive-replay/actual.json": "2e4500e50f7372323d07eca4464265da9562e1c3653e40aa0ada7a706c21c0a8",
+      "implementation/phase-9-grcv4/evidence/P9-3.1/primitive-replay/expected.json": "acd92892126efa24b83635fec0ff44d6fba4353dfe37ec9fb361948a1b0f55d7",
+      "implementation/phase-9-grcv4/evidence/P9-3.1/primitive-replay/inputs.json": "cb52b3da21cca28049219e7fb78346999d23a4404c8c10d4cadfcb0437926a07",
+      "implementation/phase-9-grcv4/evidence/P9-3.1/primitive-replay/run.json": "5fd1340f5c0adb664009709313aadecc91716991c31412b25ba6c3b1bfb2f0ef",
+      "implementation/phase-9-grcv4/evidence/P9-3.1/self-check/actual.json": "94549221327337ab17a6c41f104fd9ef3f5f75bea4681bc5dc4b34553dba069d",
+      "implementation/phase-9-grcv4/evidence/P9-3.1/self-check/inputs.json": "f83478cff9bc447a8eb70197b911bfc307779f763e0d367fb9a895f8eb109ce8",
+      "implementation/phase-9-grcv4/evidence/P9-3.1/self-check/run.json": "886f9c6f75ced4b6a63108f26678a9c450a67cfe688a194415b8cb368dfcdf11",
+      "implementation/phase-9-grcv4/evidence/P9-3.1/self-check/stdout.txt": "eb9b74f2f46d45507278912f02e0088ec5b4febee6545ed19f1e01308559cd6b",
+      "implementation/phase-9-grcv4/evidence/P9-3.1/source-map/inputs.json": "271eaff4438be6e69c14dba9a5cb0ddcfdc70c3cc4b44ddb3e9bff5fecca1ce2",
+      "implementation/phase-9-grcv4/evidence/P9-3.2/audit-1-followup/actual.json": "4eb42c543ceb48ad16e1a0828f715bf5218007ab4f13b5400f671e063cfedcaf",
+      "implementation/phase-9-grcv4/evidence/P9-3.2/audit-1-followup/inputs.json": "8668ff5c740e0109ce52d368a38f947949da928b97890d70c352a7fbcb65c3f5",
+      "implementation/phase-9-grcv4/evidence/P9-3.2/audit-1-followup/run.json": "508b9f6d559ba0b179749f2ad755f7daf51a9b10d1016c6c6d4af0482235a0bb",
+      "implementation/phase-9-grcv4/evidence/P9-3.2/audit-1-inputs/inputs.json": "8d185c0934b7780f74508e459446832810398ad58da5af4c9ee973684e087639",
+      "implementation/phase-9-grcv4/evidence/P9-3.2/audit-1-local/actual.json": "3ccd63cb87bad8a5405b6cd7ae757fdc7103f3b79af54da18c54bb877f5404c1",
+      "implementation/phase-9-grcv4/evidence/P9-3.2/audit-1-local/inputs.json": "16bdf87846fe21315a9958d61942a74ddcb81ad3b243cc0263e6f80f139a218d",
+      "implementation/phase-9-grcv4/evidence/P9-3.2/audit-1-local/run.json": "18f8d81b3fb5029f3338a46554cddc40a8c5985c839761618aec8a6a9621fd6e",
+      "implementation/phase-9-grcv4/evidence/P9-3.2/audit-1-local/stdout.txt": "6380128b2d655735e8d58550ca20e647167a53e130d33c8222229ca7f162091d",
+      "implementation/phase-9-grcv4/evidence/P9-3.2/audit-1-native/actual.json": "d048063b637a7503c4e4b772c5c4491ff969dcdd40411e9570a88273b559e502",
+      "implementation/phase-9-grcv4/evidence/P9-3.2/audit-1-native/inputs.json": "1d6ee210e22b3bcfe0468f80048ab010ae81c482be9d3946ed67f4541b3a6f14",
+      "implementation/phase-9-grcv4/evidence/P9-3.2/audit-1-native/run.json": "5ac002244c68b16fd7078da3ee32f708c0ade076d2e673510db08774b7570b02",
+      "implementation/phase-9-grcv4/evidence/P9-3.2/audit-1-native/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "implementation/phase-9-grcv4/evidence/P9-3.2/audit-1-native/stdout.txt": "212d8177f80dd2062952cec3191d8a5ba3cd9ac908ebb5a7fa602880d5a161c7",
+      "implementation/phase-9-grcv4/evidence/P9-3.2/browser-font-environment/actual.json": "d0085bbc82576b7aa40707cda057aebb497fb78511372a7c44fbdbf190d8f41d",
+      "implementation/phase-9-grcv4/evidence/P9-3.2/browser-font-environment/inputs.json": "2a75f8fe76cd9cc0ea437b1b600ccf3fdcf6bf555238a1b1e862fbf1a53ad90d",
+      "implementation/phase-9-grcv4/evidence/P9-3.2/browser-font-environment/run.json": "4ff6c860548dfa687683cbd0a9f884b0f026136faa0b6a39b77a0e90d22d9e2c",
+      "implementation/phase-9-grcv4/evidence/P9-3.2/browser-font-environment/stdout.txt": "12fe7bf81ae3c37e37f1ce9a159ef869c4143c1e97252cae58f32e318f9d89fe",
+      "implementation/phase-9-grcv4/evidence/P9-3.2/independent-regression/actual.json": "481480b539743f327044fefcb1b07462e26737e3807e8c8afb92902c1f14de2c",
+      "implementation/phase-9-grcv4/evidence/P9-3.2/independent-regression/inputs.json": "831b09f88d3e617049f8c3926efac41a9d04720938cc5ca1a795c40d75bcf02e",
+      "implementation/phase-9-grcv4/evidence/P9-3.2/independent-regression/run.json": "85bd0acc05e981995597c0a59d0470f4caacf3d43e19e3649396b182dfcee788",
+      "implementation/phase-9-grcv4/evidence/P9-3.2/local-pressure/actual.json": "4da871b7a5abcfdeb285280fe9feb61179ad2339ef13c3e90ab05c4f956d6287",
+      "implementation/phase-9-grcv4/evidence/P9-3.2/local-pressure/inputs.json": "886a3fd5aeb6c223dcec714364b2f79e61dd0e49c18fa7569900e99c645ea6d8",
+      "implementation/phase-9-grcv4/evidence/P9-3.2/local-pressure/run.json": "824499d2ae6b21649d5a0010c47d19c6faf4028f18494e85220eba6fd7de0ee3",
+      "implementation/phase-9-grcv4/evidence/P9-3.2/local-pressure/stdout.txt": "30732e7a2d138e2c35c66028fed2abdd7cab0cc11d747cb8156cddab0001854b",
+      "implementation/phase-9-grcv4/evidence/P9-3.2/permission-surfaces/actual.json": "31fad647b3ef44c2f00da2e747e020e90caa7623c38a734db683eff1d62b1b1c",
+      "implementation/phase-9-grcv4/evidence/P9-3.2/permission-surfaces/inputs.json": "a1b202d6fc364a1c22e12fa1e49d501de9da36b191a48782bdf82ea3dd382025",
+      "implementation/phase-9-grcv4/evidence/P9-3.2/permission-surfaces/receipts.json": "cd42b4b52416dfce2b2f777f5a507f71b5bfe5c2ad7210237834f61ea6eae40b",
+      "implementation/phase-9-grcv4/evidence/P9-3.2/permission-surfaces/run.json": "6df946b39ae3246a56cdb204ba19f69f177caabf718c41e8596d31574631c7d5",
+      "implementation/phase-9-grcv4/evidence/P9-3.2/permission-surfaces/stdout.txt": "3612c4fe760608c821883c04c8e0d6e425350575b3d57a99fb744f3f39374dc7",
+      "implementation/phase-9-grcv4/evidence/P9-3.2/regression/actual.json": "1f16ab787407a579f26d7439f4176d4cb49317f40a338a4e505a05df4d5527ce",
+      "implementation/phase-9-grcv4/evidence/P9-3.2/regression/inputs.json": "66955324b062e29b75ce63024c3e3e0cdfa95339a19a967d2591a37498bb53fe",
+      "implementation/phase-9-grcv4/evidence/P9-3.2/regression/run.json": "9f6a2e3adc8ef41fc85b8353a2331923a21e44681881fd9cc327b25e5a633318",
+      "implementation/phase-9-grcv4/evidence/P9-3.2/regression/stdout.txt": "1ff1e4083579b22c811651b10ecae0b42eea59dde46be96fe484ccfe0126b8b5",
+      "implementation/phase-9-grcv4/evidence/P9-3.2/source-map/actual.json": "776376ee97a1ff86e7ef3f93624fbc9489db3342a16f1592a34788038043ca9e",
+      "implementation/phase-9-grcv4/evidence/P9-3.2/source-map/inputs.json": "4501ead7cdeb0f5e70d8ceef213b791be7bf9d97111c19de13625e9ae00c3959",
+      "implementation/phase-9-grcv4/evidence/P9-3.2/source-map/run.json": "102a8a2f88b441d6cc738f5e70978cc283b23fd62449aa92918930fcf3f29b5a",
+      "implementation/phase-9-grcv4/evidence/P9-3.2/stage-replay/actual.json": "2c166e3592bc55e799305bf8f8982b44d90395281c03c013ffb455f8e4dd08a2",
+      "implementation/phase-9-grcv4/evidence/P9-3.2/stage-replay/expected.json": "f6033fab72df42467a52b4efa165d52b5ef303ffc2a3018f8ec9ff385476f845",
+      "implementation/phase-9-grcv4/evidence/P9-3.2/stage-replay/inputs.json": "d9f78348e9d55b2e35a635c69bdb6ab7b0c4521d2197a0c9bd1f8f52384a6a5c",
+      "implementation/phase-9-grcv4/evidence/P9-3.2/stage-replay/run.json": "050d6905ee0a994338cd5e14db4aa0b41f8a3d1ddd4c6e7f9eb11be839231308",
+      "implementation/phase-9-grcv4/evidence/P9-3.3/audit-1-followup/inputs.json": "c30c21928bea8c639305d31b34b06bd611df02b13cd7a0981833c076410cecfa",
+      "implementation/phase-9-grcv4/evidence/P9-3.3/audit-1-followup/run.json": "6b40764e8ee7dfc9d8f4fe67a769dfcbdd40f4190dff1aecba83d332c858d198",
+      "implementation/phase-9-grcv4/evidence/P9-3.3/audit-1-native/actual.json": "33eefcdc610819f646251f5f95c30ff4d25779bc9ad420b1c80a3a5517392bbd",
+      "implementation/phase-9-grcv4/evidence/P9-3.3/audit-1-native/inputs.json": "03c33fb2064caf9253c3c1af81adc6f5d26d662b2c591b72a4fc876128ca2dbc",
+      "implementation/phase-9-grcv4/evidence/P9-3.3/audit-1-native/run.json": "0a74d9aa5cc5a64cdd871f0b77ab5bf1131227867ae2fda0804c1883e803783e",
+      "implementation/phase-9-grcv4/evidence/P9-3.3/audit-1-portability/run.json": "84c6f03ef07cc45d3ab2003e73339c7842d4b0d3055ff231f34921abcf81c3bb",
+      "implementation/phase-9-grcv4/evidence/P9-3.3/permission-surfaces/actual.json": "b88295484e42d35c0ef9e773ba4640084e1f4b8bd954234ea3790d0d71d7ddd5",
+      "implementation/phase-9-grcv4/evidence/P9-3.3/permission-surfaces/inputs.json": "414c8d38be7feaee866493308e35926783136c7f6c2525b63f7cdc77d4672081",
+      "implementation/phase-9-grcv4/evidence/P9-3.3/permission-surfaces/run.json": "50d09bd28c49df007f2670018ac51bf268550400e3b5124a8e32d8ed76152b1d",
+      "implementation/phase-9-grcv4/evidence/P9-3.3/permission-surfaces/stdout.txt": "4e76c6b9b815c792d423b010c552f67804312885b2259c042f9bf6c88d3d2847",
+      "implementation/phase-9-grcv4/evidence/P9-3.3/validation/actual.json": "f3ac7b2e16cf1112bc5b3e348e9b38aadfdddba576b92014b2a77e0fe2c7644d",
+      "implementation/phase-9-grcv4/evidence/P9-3.3/validation/inputs.json": "20cb16e35b282eb3459ca4e6934711e771df8a7897bf45c3946c8a6ae6dbcf87",
+      "implementation/phase-9-grcv4/evidence/P9-3.3/validation/run.json": "d5067e59440bd937cba645cd232a19c7e6fe81525d31b4b2c16054b324743e6a",
+      "implementation/phase-9-grcv4/runtime/RuntimeWorkManifest.json": "9fa426c16445d9d261da26f98e5687badc7525e72c1ad9adc01bc70fe90bb324",
+      "implementation/phase-9-grcv4/tranche-1/P9-1.1-1.3-ExecutionRecord.json": "d79eaadecd572a3566918744623bd6e3f4ce60b6974900690ff631b760a932ea",
+      "implementation/phase-9-grcv4/tranche-1/P9-1.1-1.3-Review.md": "3fc6b2fee918a242f9a8c6e68f279891133dad906f952fb2a82f63ff02fb71ce",
+      "implementation/phase-9-grcv4/tranche-1/P9-1.1-SourceCrosswalk.json": "85fe7204f5a40e3ffa502fce33519000adb443ba6480cb85e0d6ee4155893ede",
+      "implementation/phase-9-grcv4/tranche-1/P9-1.2-DebtInventory.json": "9811da71ad7f5cbefcf84d85be3baa91e245c130c37f3d32a625cd0d33e246d8",
+      "implementation/phase-9-grcv4/tranche-1/P9-1.3-VerificationRouting.json": "8b926fda8edc7c0ed025b19721c5fb57c1d5aa448b082696eba9bef9459e3ddc",
+      "implementation/phase-9-grcv4/tranche-1/P9-1.4-1.5-ExecutionRecord.json": "818785f1275cae0219340090c260383b141f23acdc0bd952602e90ca0c3f8532",
+      "implementation/phase-9-grcv4/tranche-1/P9-1.4-SupportAndDependencies.json": "e984ebcd61d294e1a87b149c48db11511e7eab62f2b0f7bedcd0123e27f5f66a",
+      "implementation/phase-9-grcv4/tranche-1/P9-1.5-OwnershipAndLegacyBaseline.json": "01204c93512aa6aa12f1f9498bd96b4403f655899c0fd012a00f942bf847a301",
+      "implementation/phase-9-grcv4/tranche-1/P9-1.6-SuccessorVerification.md": "cb97c8bf2a277c38fa672c4f1fe2cd65c4006bfe2396c9bd0bb8ee7837424de2",
+      "implementation/phase-9-grcv4/tranche-1/P9-1.9-EvidenceHandoff.md": "840fbef554d1a1ce9940bf657045f13cdd3839730e3bed61365972a3a686b71c",
+      "implementation/phase-9-grcv4/tranche-1/P9-1.9-ExecutionRecord.json": "3165fa1d259aaa446496b3311cd02a5893933fda529f944183508a15050094fc",
+      "implementation/phase-9-grcv4/tranche-1/P9-1.9-G1Acceptance.json": "218b29ae251cc93e749ff46ad919268621eabafcfe85412aa549a688571a8cc9",
+      "implementation/phase-9-grcv4/tranche-1/P9-1.9-G1Review.md": "bc608f1d9cc039d89bd25e6923454f34280c009145b3a1065b8669804e43f4ec",
+      "implementation/phase-9-grcv4/tranche-2/P9-2.1-2.2-AcceptanceRecord.json": "0e0e35db0e23d5da0607d4132ce149947b26feeb4ac7e8b685a92d6eee30ae66",
+      "implementation/phase-9-grcv4/tranche-2/P9-2.1-ExecutionRecord.json": "561817390d50afbd1eaf2c8ee2bc12409de9458892ae944f947eaabed66a916c",
+      "implementation/phase-9-grcv4/tranche-2/P9-2.1-Review.md": "014e2d06da4fffb5cf85b0dbef167bca6b8e6982ac5ed08bb81385f069edf4cf",
+      "implementation/phase-9-grcv4/tranche-2/P9-2.2-ExecutionRecord.json": "816afbb70f63732dbbf8c6c324af6dd6a8c96b8761b32be89fef96f5c743bcbe",
+      "implementation/phase-9-grcv4/tranche-2/P9-2.2-Review.md": "53857aee5f147d8093d950b0947ffba3ba8a3365d4caf17caa947ddc1ff99fc8",
+      "implementation/phase-9-grcv4/tranche-2/P9-2.3-AcceptanceRecord.json": "beb535785feeb302caa7889a100e48167c80fb46266d5fdfcf20b9a302b442c2",
+      "implementation/phase-9-grcv4/tranche-2/P9-2.3-ExecutionRecord.json": "ea5c8d00a64e3e75b1133fc671307f7f78ce2eccb38912938ed834589f0e3f46",
+      "implementation/phase-9-grcv4/tranche-2/P9-2.3-Review.md": "ca2e6877bb09da08b80afa25e8622a283674ff8401a38968989d822914f80a3d",
+      "implementation/phase-9-grcv4/tranche-2/P9-2.4-AcceptanceRecord.json": "e88c3c0af0665cf976bee229b4693dad6f0bba91fd6f5ff0d242b871d042ea40",
+      "implementation/phase-9-grcv4/tranche-2/P9-2.4-ExecutionRecord.json": "33f7afb7e08af1b1c76d239717b0a2a87ebaa422827433ba55e7ba6a449a01b7",
+      "implementation/phase-9-grcv4/tranche-2/P9-2.4-Review.md": "f5d48b5f3d8f75ba12605db8092da8eea8a3fca1769827bd2cf68b5d92e0a11a",
+      "implementation/phase-9-grcv4/tranche-2/P9-2.5-AcceptanceRecord.json": "8c20d17d0bede0fd08308014b3b67fdaa787075808048c6c92b54640156158f5",
+      "implementation/phase-9-grcv4/tranche-2/P9-2.5-ExecutionRecord.json": "71ae9c5d42bf7514f7e93ef1534edec9877b91a1cb7dfad769514617da50a60b",
+      "implementation/phase-9-grcv4/tranche-2/P9-2.5-Review.md": "72fc3c66b053906a1cfcde3c550981a624d93b29a78700925bbb73e39fb50bff",
+      "implementation/phase-9-grcv4/tranche-2/P9-2.6-AcceptanceRecord.json": "a0eed719fa359c00913480567e87c25be409c3a79b88f15a7168aa2b928ca8b5",
+      "implementation/phase-9-grcv4/tranche-2/P9-2.6-ExecutionRecord.json": "257f55fedd3a6b981b3b71c0e26b82e47a14f5bd53a53d90d8be82b9f63101f7",
+      "implementation/phase-9-grcv4/tranche-2/P9-2.6-Review.md": "b8de86d7612bad33f932866e89626e783bd5a330824ce5cdbe871e070d1f9917",
+      "implementation/phase-9-grcv4/tranche-3/P9-3.1-AcceptanceRecord.json": "8c4959e406175842e6ed2a00d43b58d7f50b13c43eabadc9c79f598c58923c39",
+      "implementation/phase-9-grcv4/tranche-3/P9-3.1-ExecutionRecord.json": "a51ebaf018e48d24d2a82a2f7b0a06e229561a53f0b8cc651946553d01ab7258",
+      "implementation/phase-9-grcv4/tranche-3/P9-3.1-Review.md": "258860fa7c05e34ae9c9c83bb06698f3bd26a6bec11960df359ac9a6456089b6",
+      "implementation/phase-9-grcv4/tranche-3/P9-3.2-AcceptanceRecord.json": "43086ccdeb67f8c73ccc95120ac1aa9d1069b12f49e785bd0ebef101866de460",
+      "implementation/phase-9-grcv4/tranche-3/P9-3.2-ExecutionRecord.json": "af949b383d6ea8545fe1276abb497dda3897669331c6986b1c1de7d97c6998e9",
+      "implementation/phase-9-grcv4/tranche-3/P9-3.2-Review.md": "b374912016152c1d600b8db02962c29ce73af9a4472642c05adcc0c1e0e67339",
+      "implementation/phase-9-grcv4/tranche-3/P9-3.3-AcceptanceRecord.json": "67be65b9187cc444f8ead5260d5adb8b83d0c987fc001a233d35161bb9803167",
+      "implementation/phase-9-grcv4/tranche-3/P9-3.3-ExecutionRecord.json": "6d4dc0f68d9c17ba782a386f2a29720492e8daf63f81332e87621231c3136aae",
+      "implementation/phase-9-grcv4/tranche-3/P9-3.3-Review.md": "398342e7a68dc7f41c543f7d58aefff62c26c47036445c03697853d28a7f3bb2",
+      "implementation/phase-9-grcv4/tranche-3/P9-3.4-ExecutionRecord.json": "49a7f2a0f1a8e70dced10554d030d6fdad2177023084a2ee77a4f16fc9c1d7dd",
+      "implementation/phase-9-grcv4/tranche-3/P9-3.4-Review.md": "fe8f0f93054df9099f90d81af636ccab603a3d64c3959f93f9552a33adf04329",
+      "implementation/phase-9-grcv4/verification/Phase9ImplementationBoundary.json": "f9345f61ac3451ddd89d44ded743ec278b7a86b177caa909ece99ebc07f2b293",
+      "implementation/phase-9-grcv4/verification/audit_phase9_implementation.py": "8a1dd7f2917912cafe413ee5916db10d148cd918130cab9aef8474f95dc3b9e4",
+      "implementation/phase-9-grcv4/verification/handoff_evidence.py": "e388f809e487f88a8a38fff94d1e3eb8f941da4dcc95d6c0d8dc46749d271f05",
+      "implementation/phase-9-grcv4/verification/history/P9-1.6-ArtifactSnapshot.json": "49a90196c17c3b1eb9ae720a22eb7b1a78b4ee9a8eb922bfd06c3481170fcbb7",
+      "implementation/phase-9-grcv4/verification/inputs/P9-1.9-G1-Acceptance-And-Scoped-Authorization-Pressure-Guide.md": "d2ff0e903da022e08b62a233e51479664c8915d7a0fd78ed2d305df84b1043ac",
+      "implementation/phase-9-grcv4/verification/inputs/P9-PlanningReview.md": "bf9aa0b4f5411f7e210e67c95a5f8273744b474d6e8a69fc0c237656585a9e74",
+      "implementation/phase-9-grcv4/verification/phase9_implementation_policy.py": "1fbb9f0cc27ebf1da1523e6a992e46b8bc0f20da62a4830811b4de34c938de97",
+      "implementation/phase-9-grcv4/verification/test_handoff_evidence.py": "1989bab65f12c4c5f1df925426ea8a80b9f735940808721294a6cb857fda0e23",
+      "implementation/phase-9-grcv4/verification/test_phase9_g1.py": "ea0d669814e9abe990ca4d038a11c6e781757288268ee3965e4afb078dbbee44",
+      "pyproject.toml": "018c364413f75ee49186975c05e9cdaba7a78e171d47833609fbebc223a64a66",
+      "src/pygrc/models/grc_v4.py": "65efdf547d8e88e67c22d62a869bd61464ed3d2eb8b2709be6661796b37e824c",
+      "src/pygrc/models/grc_v4_assets/__init__.py": "a1f3aba168a9f9331d1fc9580d5055404f8bc4c705936c7e388e7a47f80a0051",
+      "src/pygrc/models/grc_v4_assets/asset-index.json": "c1ac9d8d3bb924f29b775bd9863a33a454da41e98c57ef0b8bb3c24171fafc9f",
+      "src/pygrc/models/grc_v4_assets/grc-v4-contract-schema.json": "3fd072fc8c2b315f1b5dc32a4e4821a5082b5f3fc9d9a4794c007419a7aa0bea",
+      "src/pygrc/models/grc_v4_assets/grc-v4-specification-release.json": "bba0bb649bc2e80c5bfa99f96bd5824bbdda3b3fbc87fb68c3e3a59da1cee46b",
+      "src/pygrc/models/grc_v4_assets/grc-v4-specification-release.sha256": "50b20509b84a6b21f3036ecb1d7e13861f662bc8319873c5321fc0317ada7e33",
+      "src/pygrc/models/grc_v4_codec.py": "bd6d9390c818c5a25b70da119cfbc3a3de3707ee84566f6bb06160bb4780e154",
+      "src/pygrc/models/grc_v4_geometry.py": "02711d13bc0075d961b8538dfb2e811014c0051e8c3dcefd03c1eb409f32004b",
+      "src/pygrc/models/grc_v4_profile.py": "188e4ceb92b6a36fe81849911b88b233b8dd16bf3de07383e1508d76232fdbfb",
+      "src/pygrc/models/grc_v4_state.py": "b0ccf06ef91b66feb8670fb67281465998f4bcb085c4d547fedd3ce6d85ad3cb",
+      "src/pygrc/models/grc_v4_step.py": "7f9d1073dd4a0c0504bea65a9f2e2a335f038042a14345612e13c737f8f8bc6d",
+      "src/pygrc/models/grc_v4_transport.py": "f2a1c04f1ea458e95e07f9f5feb8f96914e20fedc399ae4385e94128d25be1e3",
+      "tests/models/grcv4_conformance_harness.py": "15ee128da66dd25f6e028cf601f4de1047bee8812d51f83391a3f7adda3c7e89",
+      "tests/models/grcv4_reference_oracles.py": "b973babbca55854f2b2a9f629b4b914cf767627533b26460013c8b9cfa611ea4",
+      "tests/models/test_grc_v4.py": "6fef68572fb17afdd48a679554d0cc6abaae8d34c95ca31f2e33b3ec8248c193",
+      "tests/models/test_grc_v4_codec.py": "465bc3448fcc196e01ab0003665e5eeebde581208a5628f0adeeeabebb770983",
+      "tests/models/test_grc_v4_geometry.py": "9b3c32b9e0472a585062fec8ff7a953c2772ab6571da9a7c794630d7e9bf60b9",
+      "tests/models/test_grc_v4_profile.py": "6dcd4a0abffca13bc8a0c0e7e697a54e421ba079eaef5d77e4609184d67a0dea",
+      "tests/models/test_grc_v4_state.py": "d7ce02acc2d663fd3f4513158193dd473a78c1f42bc985edfa2d2eff0943fb54",
+      "tests/models/test_grc_v4_step.py": "c125a8bdb94ea997c1467ab5b4812cf1456b3dbfc8fd2966d719e02a39785e20",
+      "tests/models/test_grc_v4_transport.py": "ad44a64357ad5cef25deaf2c778a4a4a0ea4ec016f461ce40e07f0724c09f2a9"
+    }
+  },
+  "authority": {
+    "run_id": "p9-g1-ac1f6f6d719f4dafa46c65c127d45019",
+    "policy_digest": "35c3e61c6ae613d928af5ddddc984770c4a1780bf467f740c099e9a8fa3a0c36",
+    "report_digest": "f6f1d30dbfc719d85a80d9620ffc681ca3cd8caabd2016d9656725b963e4710e",
+    "passed": 137,
+    "failed": 0,
+    "runtime_conformance_claimed": false
+  },
+  "authority_cases": [
+    {
+      "case_id": "accepted_G1_current_tree",
+      "candidate_decision": "admitted",
+      "assertion_result": "passed",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "expected_reason": null,
+      "actual_reason": "exact accepted scope admitted",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "corrupt_handoff_does_not_revoke_implementation_permission",
+      "candidate_decision": "admitted",
+      "assertion_result": "passed",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "expected_reason": null,
+      "actual_reason": "exact accepted scope admitted",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "missing_handoff_does_not_revoke_implementation_permission",
+      "candidate_decision": "admitted",
+      "assertion_result": "passed",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "expected_reason": null,
+      "actual_reason": "exact accepted scope admitted",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "portable_paths_cannot_change_dependencies",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "expected_reason": "portability amendment changed reviewed content",
+      "actual_reason": "portability amendment changed reviewed content: implementation/phase-9-grcv4/tranche-1/P9-1.4-1.5-ExecutionRecord.json",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "portable_paths_cannot_change_ownership",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "expected_reason": "portability amendment changed reviewed content",
+      "actual_reason": "portability amendment changed reviewed content: implementation/phase-9-grcv4/tranche-1/P9-1.4-1.5-ExecutionRecord.json",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "portable_opening_cannot_change_authority",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "expected_reason": "path normalization changed historical meaning",
+      "actual_reason": "path normalization changed historical meaning: implementation/Phase-9-GRCV4-PhaseOpening.json",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "portable_snapshot_cannot_change_content",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "expected_reason": "path normalization changed historical meaning",
+      "actual_reason": "path normalization changed historical meaning: implementation/phase-9-grcv4/verification/history/P9-1.6-ArtifactSnapshot.json",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "portable_checker_cannot_disable_claim_checks",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "expected_reason": "path normalization changed historical meaning",
+      "actual_reason": "path normalization changed historical meaning: implementation/investigations/grc9v4-constitutive-design/scripts/audit_grc9v4_d10_claim_topology.py",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "portable_review_input_must_match_original_hash",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "expected_reason": "planning review input bytes changed",
+      "actual_reason": "planning review input bytes changed",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "accepted_G1_exact_targets",
+      "candidate_decision": "admitted",
+      "assertion_result": "passed",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "expected_reason": null,
+      "actual_reason": "exact accepted scope admitted",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "accepted_G1_test_target",
+      "candidate_decision": "admitted",
+      "assertion_result": "passed",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "expected_reason": null,
+      "actual_reason": "exact accepted scope admitted",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "published_permitted_path_cannot_drop_registration",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "expected_reason": "published runtime/evidence deletion or rename forbidden",
+      "actual_reason": "published runtime/evidence deletion or rename forbidden",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "missing_acceptance",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "expected_reason": "P9-1.9-G1Acceptance.json",
+      "actual_reason": "missing protected file: implementation/phase-9-grcv4/tranche-1/P9-1.9-G1Acceptance.json",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "rehashed_expanded_acceptance",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "expected_reason": "untrusted P9-G1 acceptance",
+      "actual_reason": "untrusted P9-G1 acceptance",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "manifest_accepted_generic_runtime_support",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "expected_reason": "cannot grant conformance",
+      "actual_reason": "work manifest cannot grant conformance",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "manifest_admitted_specialization_support_sets",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "expected_reason": "cannot grant conformance",
+      "actual_reason": "work manifest cannot grant conformance",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "manifest_approval_digest",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "expected_reason": "stale work manifest",
+      "actual_reason": "stale work manifest",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "manifest_new_runtime_authority",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "expected_reason": "cannot add authority",
+      "actual_reason": "work manifest cannot add authority",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "GRC9V4_before_G3",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "expected_reason": "specialization requires accepted P9-G3",
+      "actual_reason": "specialization requires accepted P9-G3",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "GRC9V4_iteration_before_G3",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "expected_reason": "specialization requires accepted P9-G3",
+      "actual_reason": "specialization requires accepted P9-G3",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "unregistered_leaf",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "expected_reason": "unregistered work iteration",
+      "actual_reason": "unregistered work iteration",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "unreviewed_new_V4_module",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "expected_reason": "unapproved runtime or evidence target",
+      "actual_reason": "unapproved runtime or evidence target: src/pygrc/models/grc_v4_surprise.py",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "stale_work_bytes",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "expected_reason": "work content binding mismatch",
+      "actual_reason": "work content binding mismatch",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "combined_good_and_frozen_edit",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "expected_reason": "frozen bytes changed",
+      "actual_reason": "frozen bytes changed: specs/grc-v4-spec.md",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "legacy_bytes",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "expected_reason": "frozen bytes changed",
+      "actual_reason": "frozen bytes changed: src/pygrc/models/grc_9_v3.py",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "legacy_test_bytes",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "expected_reason": "frozen bytes changed",
+      "actual_reason": "frozen bytes changed: tests/core/test_capabilities.py",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "old_planning_policy",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "expected_reason": "immutable predecessor changed",
+      "actual_reason": "immutable predecessor changed: implementation/phase-9-grcv4/verification/Phase9VerificationSuccessor.json",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "additive_lazy_export",
+      "candidate_decision": "admitted",
+      "assertion_result": "passed",
+      "scope": "isolated_integration_contract_not_current_leaf_permission",
+      "expected_reason": null,
+      "actual_reason": "exact accepted scope admitted",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "eager_export_rejected",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "scope": "isolated_integration_contract_not_current_leaf_permission",
+      "expected_reason": "unreviewed or eager V4 export",
+      "actual_reason": "unreviewed or eager V4 export",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "legacy_export_rebinding",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "scope": "isolated_integration_contract_not_current_leaf_permission",
+      "expected_reason": "legacy export prefix changed",
+      "actual_reason": "legacy export prefix changed",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "additive_V4_dependency_extra",
+      "candidate_decision": "admitted",
+      "assertion_result": "passed",
+      "scope": "isolated_integration_contract_not_current_leaf_permission",
+      "expected_reason": null,
+      "actual_reason": "exact accepted scope admitted",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "unreviewed_dependency",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "scope": "isolated_integration_contract_not_current_leaf_permission",
+      "expected_reason": "unreviewed V4 dependency",
+      "actual_reason": "unreviewed V4 dependency",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "legacy_dependency_change",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "scope": "isolated_integration_contract_not_current_leaf_permission",
+      "expected_reason": "non-additive dependency integration",
+      "actual_reason": "non-additive dependency integration",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "exact_packaged_schema",
+      "candidate_decision": "admitted",
+      "assertion_result": "passed",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "expected_reason": null,
+      "actual_reason": "exact accepted scope admitted",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "changed_packaged_schema",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "expected_reason": "packaged accepted asset differs",
+      "actual_reason": "packaged accepted asset differs",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "runtime_mode",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "expected_reason": "unapproved executable runtime mode",
+      "actual_reason": "unapproved executable runtime mode",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "runtime_symlink",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "expected_reason": "symlink at protected path",
+      "actual_reason": "symlink at protected path: src/pygrc/models/grc_v4_state.py",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "normal_entry_forbidden_source",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "expected_reason": "unauthorized source/test/planning addition",
+      "actual_reason": "Traceback (most recent call last):\n  File \"implementation/phase-9-grcv4/verification/audit_phase9_implementation.py\", line 157, in <module>\n    main()\n  File \"implementation/phase-9-grcv4/verification/audit_phase9_implementation.py\", line 141, in main\n    result = verify(policy.ROOT, args.boundary_only)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"implementation/phase-9-grcv4/verification/audit_phase9_implementation.py\", line 75, in verify\n    boundary, tree = policy.current_boundary(root)\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"implementation/phase-9-grcv4/verification/phase9_implementation_policy.py\", line 762, in current_boundary\n    require(\n  File \"implementation/phase-9-grcv4/verification/audit_phase9.py\", line 72, in require\n    raise ValueError(message)\nValueError: unauthorized source/test/planning addition: ['src/pygrc/models/not_reviewed.py']\n",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "normal_entry_accepted_G1",
+      "candidate_decision": "admitted",
+      "assertion_result": "passed",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "expected_reason": null,
+      "actual_reason": "exact accepted scope admitted",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "normal_entry_accepted_runtime_target",
+      "candidate_decision": "admitted",
+      "assertion_result": "passed",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "expected_reason": null,
+      "actual_reason": "exact accepted scope admitted",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "ready_identity_leaf",
+      "candidate_decision": "admitted",
+      "assertion_result": "passed",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "expected_reason": null,
+      "actual_reason": "exact accepted scope admitted",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "accepted_foundation_enables_request_leaf",
+      "candidate_decision": "admitted",
+      "assertion_result": "passed",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "expected_reason": null,
+      "actual_reason": "exact accepted scope admitted",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "numerical_work_does_not_accept_next_leaf",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "expected_reason": "owning leaf entry dependencies are not accepted",
+      "actual_reason": "owning leaf entry dependencies are not accepted",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "accepted_requests_enable_result_owner_grc_v4_state",
+      "candidate_decision": "admitted",
+      "assertion_result": "passed",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "expected_reason": null,
+      "actual_reason": "exact accepted scope admitted",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "accepted_requests_enable_result_owner_grc_v4_step",
+      "candidate_decision": "admitted",
+      "assertion_result": "passed",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "expected_reason": null,
+      "actual_reason": "exact accepted scope admitted",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "accepted_results_enable_harness_owner_grcv4_conformance_harness",
+      "candidate_decision": "admitted",
+      "assertion_result": "passed",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "expected_reason": null,
+      "actual_reason": "exact accepted scope admitted",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "accepted_results_enable_harness_owner_grcv4_reference_oracles",
+      "candidate_decision": "admitted",
+      "assertion_result": "passed",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "expected_reason": null,
+      "actual_reason": "exact accepted scope admitted",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "accepted_integration_enables_grc_v4_geometry",
+      "candidate_decision": "admitted",
+      "assertion_result": "passed",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "expected_reason": null,
+      "actual_reason": "exact accepted scope admitted",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "accepted_integration_enables_grc_v4_transport",
+      "candidate_decision": "admitted",
+      "assertion_result": "passed",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "expected_reason": null,
+      "actual_reason": "exact accepted scope admitted",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "accepted_integration_enables_test_grc_v4_geometry",
+      "candidate_decision": "admitted",
+      "assertion_result": "passed",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "expected_reason": null,
+      "actual_reason": "exact accepted scope admitted",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "accepted_integration_enables_test_grc_v4_transport",
+      "candidate_decision": "admitted",
+      "assertion_result": "passed",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "expected_reason": null,
+      "actual_reason": "exact accepted scope admitted",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "accepted_geometry_enables_stage_owner_grc_v4_geometry",
+      "candidate_decision": "admitted",
+      "assertion_result": "passed",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "expected_reason": null,
+      "actual_reason": "exact accepted scope admitted",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "accepted_geometry_enables_stage_owner_test_grc_v4_geometry",
+      "candidate_decision": "admitted",
+      "assertion_result": "passed",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "expected_reason": null,
+      "actual_reason": "exact accepted scope admitted",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "accepted_stage_enables_charge_owner_grc_v4_transport",
+      "candidate_decision": "admitted",
+      "assertion_result": "passed",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "expected_reason": null,
+      "actual_reason": "exact accepted scope admitted",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "accepted_stage_enables_charge_owner_test_grc_v4_transport",
+      "candidate_decision": "admitted",
+      "assertion_result": "passed",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "expected_reason": null,
+      "actual_reason": "exact accepted scope admitted",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "accepted_stage_enables_charge_owner_grc_v4_step",
+      "candidate_decision": "admitted",
+      "assertion_result": "passed",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "expected_reason": null,
+      "actual_reason": "exact accepted scope admitted",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "accepted_stage_enables_charge_owner_test_grc_v4_step",
+      "candidate_decision": "admitted",
+      "assertion_result": "passed",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "expected_reason": null,
+      "actual_reason": "exact accepted scope admitted",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "accepted_resources_enable_numerical_owner_grc_v4_geometry",
+      "candidate_decision": "admitted",
+      "assertion_result": "passed",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "expected_reason": null,
+      "actual_reason": "exact accepted scope admitted",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "accepted_resources_enable_numerical_owner_test_grc_v4_geometry",
+      "candidate_decision": "admitted",
+      "assertion_result": "passed",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "expected_reason": null,
+      "actual_reason": "exact accepted scope admitted",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "accepted_resources_enable_numerical_owner_grc_v4_transport",
+      "candidate_decision": "admitted",
+      "assertion_result": "passed",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "expected_reason": null,
+      "actual_reason": "exact accepted scope admitted",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "accepted_resources_enable_numerical_owner_test_grc_v4_transport",
+      "candidate_decision": "admitted",
+      "assertion_result": "passed",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "expected_reason": null,
+      "actual_reason": "exact accepted scope admitted",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "missing_resource_acceptance",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "expected_reason": "P9-3.3-AcceptanceRecord.json",
+      "actual_reason": "missing protected file: implementation/phase-9-grcv4/tranche-3/P9-3.3-AcceptanceRecord.json",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "resource_acceptance_cannot_self_authorize_status",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "scope": "isolated_resource_acceptance_authentication",
+      "expected_reason": "untrusted resource acceptance",
+      "actual_reason": "untrusted resource acceptance",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "resource_acceptance_cannot_self_authorize_accepted_iterations",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "scope": "isolated_resource_acceptance_authentication",
+      "expected_reason": "untrusted resource acceptance",
+      "actual_reason": "untrusted resource acceptance",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "resource_acceptance_cannot_self_authorize_accepted_generic_runtime_support",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "scope": "isolated_resource_acceptance_authentication",
+      "expected_reason": "untrusted resource acceptance",
+      "actual_reason": "untrusted resource acceptance",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "resource_acceptance_cannot_self_authorize_admitted_specialization_support_sets",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "scope": "isolated_resource_acceptance_authentication",
+      "expected_reason": "untrusted resource acceptance",
+      "actual_reason": "untrusted resource acceptance",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "resource_acceptance_cannot_self_authorize_baseline_commit",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "scope": "isolated_resource_acceptance_authentication",
+      "expected_reason": "untrusted resource acceptance",
+      "actual_reason": "untrusted resource acceptance",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "resource_acceptance_cannot_self_authorize_evidence_bindings",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "scope": "isolated_resource_acceptance_authentication",
+      "expected_reason": "untrusted resource acceptance",
+      "actual_reason": "untrusted resource acceptance",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "accepted_harness_enables_export_owner",
+      "candidate_decision": "admitted",
+      "assertion_result": "passed",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "expected_reason": null,
+      "actual_reason": "exact accepted scope admitted",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "harness_acceptance_cannot_self_authorize_status",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "scope": "isolated_harness_acceptance_authentication",
+      "expected_reason": "untrusted harness acceptance",
+      "actual_reason": "untrusted harness acceptance",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "harness_acceptance_cannot_self_authorize_accepted_iterations",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "scope": "isolated_harness_acceptance_authentication",
+      "expected_reason": "untrusted harness acceptance",
+      "actual_reason": "untrusted harness acceptance",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "harness_acceptance_cannot_self_authorize_accepted_generic_runtime_support",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "scope": "isolated_harness_acceptance_authentication",
+      "expected_reason": "untrusted harness acceptance",
+      "actual_reason": "untrusted harness acceptance",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "harness_acceptance_cannot_self_authorize_baseline_commit",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "scope": "isolated_harness_acceptance_authentication",
+      "expected_reason": "untrusted harness acceptance",
+      "actual_reason": "untrusted harness acceptance",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "harness_acceptance_cannot_self_authorize_evidence_bindings",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "scope": "isolated_harness_acceptance_authentication",
+      "expected_reason": "untrusted harness acceptance",
+      "actual_reason": "untrusted harness acceptance",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "missing_integration_acceptance",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "expected_reason": "P9-2.6-AcceptanceRecord.json",
+      "actual_reason": "missing protected file: implementation/phase-9-grcv4/tranche-2/P9-2.6-AcceptanceRecord.json",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "integration_acceptance_cannot_self_authorize_status",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "scope": "isolated_integration_acceptance_authentication",
+      "expected_reason": "untrusted integration acceptance",
+      "actual_reason": "untrusted integration acceptance",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "integration_acceptance_cannot_self_authorize_accepted_iterations",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "scope": "isolated_integration_acceptance_authentication",
+      "expected_reason": "untrusted integration acceptance",
+      "actual_reason": "untrusted integration acceptance",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "integration_acceptance_cannot_self_authorize_accepted_generic_runtime_support",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "scope": "isolated_integration_acceptance_authentication",
+      "expected_reason": "untrusted integration acceptance",
+      "actual_reason": "untrusted integration acceptance",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "integration_acceptance_cannot_self_authorize_admitted_specialization_support_sets",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "scope": "isolated_integration_acceptance_authentication",
+      "expected_reason": "untrusted integration acceptance",
+      "actual_reason": "untrusted integration acceptance",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "integration_acceptance_cannot_self_authorize_baseline_commit",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "scope": "isolated_integration_acceptance_authentication",
+      "expected_reason": "untrusted integration acceptance",
+      "actual_reason": "untrusted integration acceptance",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "integration_acceptance_cannot_self_authorize_evidence_bindings",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "scope": "isolated_integration_acceptance_authentication",
+      "expected_reason": "untrusted integration acceptance",
+      "actual_reason": "untrusted integration acceptance",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "missing_geometry_acceptance",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "expected_reason": "P9-3.1-AcceptanceRecord.json",
+      "actual_reason": "missing protected file: implementation/phase-9-grcv4/tranche-3/P9-3.1-AcceptanceRecord.json",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "geometry_acceptance_cannot_self_authorize_status",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "scope": "isolated_geometry_acceptance_authentication",
+      "expected_reason": "untrusted geometry acceptance",
+      "actual_reason": "untrusted geometry acceptance",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "geometry_acceptance_cannot_self_authorize_accepted_iterations",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "scope": "isolated_geometry_acceptance_authentication",
+      "expected_reason": "untrusted geometry acceptance",
+      "actual_reason": "untrusted geometry acceptance",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "geometry_acceptance_cannot_self_authorize_accepted_generic_runtime_support",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "scope": "isolated_geometry_acceptance_authentication",
+      "expected_reason": "untrusted geometry acceptance",
+      "actual_reason": "untrusted geometry acceptance",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "geometry_acceptance_cannot_self_authorize_admitted_specialization_support_sets",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "scope": "isolated_geometry_acceptance_authentication",
+      "expected_reason": "untrusted geometry acceptance",
+      "actual_reason": "untrusted geometry acceptance",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "geometry_acceptance_cannot_self_authorize_baseline_commit",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "scope": "isolated_geometry_acceptance_authentication",
+      "expected_reason": "untrusted geometry acceptance",
+      "actual_reason": "untrusted geometry acceptance",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "geometry_acceptance_cannot_self_authorize_evidence_bindings",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "scope": "isolated_geometry_acceptance_authentication",
+      "expected_reason": "untrusted geometry acceptance",
+      "actual_reason": "untrusted geometry acceptance",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "missing_stage_acceptance",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "expected_reason": "P9-3.2-AcceptanceRecord.json",
+      "actual_reason": "missing protected file: implementation/phase-9-grcv4/tranche-3/P9-3.2-AcceptanceRecord.json",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "stage_acceptance_cannot_self_authorize_status",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "scope": "isolated_stage_acceptance_authentication",
+      "expected_reason": "untrusted stage acceptance",
+      "actual_reason": "untrusted stage acceptance",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "stage_acceptance_cannot_self_authorize_accepted_iterations",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "scope": "isolated_stage_acceptance_authentication",
+      "expected_reason": "untrusted stage acceptance",
+      "actual_reason": "untrusted stage acceptance",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "stage_acceptance_cannot_self_authorize_accepted_generic_runtime_support",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "scope": "isolated_stage_acceptance_authentication",
+      "expected_reason": "untrusted stage acceptance",
+      "actual_reason": "untrusted stage acceptance",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "stage_acceptance_cannot_self_authorize_admitted_specialization_support_sets",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "scope": "isolated_stage_acceptance_authentication",
+      "expected_reason": "untrusted stage acceptance",
+      "actual_reason": "untrusted stage acceptance",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "stage_acceptance_cannot_self_authorize_baseline_commit",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "scope": "isolated_stage_acceptance_authentication",
+      "expected_reason": "untrusted stage acceptance",
+      "actual_reason": "untrusted stage acceptance",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "stage_acceptance_cannot_self_authorize_evidence_bindings",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "scope": "isolated_stage_acceptance_authentication",
+      "expected_reason": "untrusted stage acceptance",
+      "actual_reason": "untrusted stage acceptance",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "result_acceptance_cannot_self_authorize_status",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "scope": "isolated_result_acceptance_authentication",
+      "expected_reason": "untrusted result acceptance",
+      "actual_reason": "untrusted result acceptance",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "result_acceptance_cannot_self_authorize_accepted_iterations",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "scope": "isolated_result_acceptance_authentication",
+      "expected_reason": "untrusted result acceptance",
+      "actual_reason": "untrusted result acceptance",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "result_acceptance_cannot_self_authorize_accepted_generic_runtime_support",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "scope": "isolated_result_acceptance_authentication",
+      "expected_reason": "untrusted result acceptance",
+      "actual_reason": "untrusted result acceptance",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "result_acceptance_cannot_self_authorize_baseline_commit",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "scope": "isolated_result_acceptance_authentication",
+      "expected_reason": "untrusted result acceptance",
+      "actual_reason": "untrusted result acceptance",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "result_acceptance_cannot_self_authorize_evidence_bindings",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "scope": "isolated_result_acceptance_authentication",
+      "expected_reason": "untrusted result acceptance",
+      "actual_reason": "untrusted result acceptance",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "request_acceptance_cannot_self_authorize_status",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "scope": "isolated_request_acceptance_authentication",
+      "expected_reason": "untrusted request acceptance",
+      "actual_reason": "untrusted request acceptance",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "request_acceptance_cannot_self_authorize_accepted_iterations",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "scope": "isolated_request_acceptance_authentication",
+      "expected_reason": "untrusted request acceptance",
+      "actual_reason": "untrusted request acceptance",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "request_acceptance_cannot_self_authorize_accepted_generic_runtime_support",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "scope": "isolated_request_acceptance_authentication",
+      "expected_reason": "untrusted request acceptance",
+      "actual_reason": "untrusted request acceptance",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "request_acceptance_cannot_self_authorize_baseline_commit",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "scope": "isolated_request_acceptance_authentication",
+      "expected_reason": "untrusted request acceptance",
+      "actual_reason": "untrusted request acceptance",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "request_acceptance_cannot_self_authorize_evidence_bindings",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "scope": "isolated_request_acceptance_authentication",
+      "expected_reason": "untrusted request acceptance",
+      "actual_reason": "untrusted request acceptance",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "foundation_cannot_self_authorize_status",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "scope": "isolated_foundation_acceptance_authentication",
+      "expected_reason": "untrusted foundation acceptance",
+      "actual_reason": "untrusted foundation acceptance",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "foundation_cannot_self_authorize_accepted_iterations",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "scope": "isolated_foundation_acceptance_authentication",
+      "expected_reason": "untrusted foundation acceptance",
+      "actual_reason": "untrusted foundation acceptance",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "foundation_cannot_self_authorize_accepted_generic_runtime_support",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "scope": "isolated_foundation_acceptance_authentication",
+      "expected_reason": "untrusted foundation acceptance",
+      "actual_reason": "untrusted foundation acceptance",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "foundation_cannot_self_authorize_baseline_commit",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "scope": "isolated_foundation_acceptance_authentication",
+      "expected_reason": "untrusted foundation acceptance",
+      "actual_reason": "untrusted foundation acceptance",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "foundation_cannot_self_authorize_evidence_bindings",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "scope": "isolated_foundation_acceptance_authentication",
+      "expected_reason": "untrusted foundation acceptance",
+      "actual_reason": "untrusted foundation acceptance",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "later_generic_leaf_held",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "expected_reason": "owning leaf entry dependencies are not accepted",
+      "actual_reason": "owning leaf entry dependencies are not accepted",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "path_cannot_borrow_ready_leaf",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "expected_reason": "runtime target belongs to a different owning leaf",
+      "actual_reason": "runtime target belongs to a different owning leaf",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "accepted_harness_enables_integration_owner",
+      "candidate_decision": "admitted",
+      "assertion_result": "passed",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "expected_reason": null,
+      "actual_reason": "exact accepted scope admitted",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "geometry_leaf_direct_numpy_dependency_owner",
+      "candidate_decision": "admitted",
+      "assertion_result": "passed",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "expected_reason": null,
+      "actual_reason": "exact accepted scope admitted",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "identity_leaf_package_integration",
+      "candidate_decision": "admitted",
+      "assertion_result": "passed",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "expected_reason": null,
+      "actual_reason": "exact accepted scope admitted",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "identity_leaf_cannot_borrow_exports",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "expected_reason": "runtime target belongs to a different owning leaf",
+      "actual_reason": "runtime target belongs to a different owning leaf",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "acceptance_release_id",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "expected_reason": "untrusted P9-G1 acceptance",
+      "actual_reason": "untrusted P9-G1 acceptance",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "acceptance_baseline_commit",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "expected_reason": "untrusted P9-G1 acceptance",
+      "actual_reason": "untrusted P9-G1 acceptance",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "acceptance_user_authority",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "expected_reason": "untrusted P9-G1 acceptance",
+      "actual_reason": "untrusted P9-G1 acceptance",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "missing_consumed_surface_evidence",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "expected_reason": "P9-1.8-SurfaceInventory.json",
+      "actual_reason": "missing protected file: implementation/phase-9-grcv4/tranche-1/P9-1.8-SurfaceInventory.json",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "conflicting_G1_record",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "expected_reason": "unauthorized source/test/planning addition",
+      "actual_reason": "unauthorized source/test/planning addition: ['implementation/phase-9-grcv4/tranche-1/P9-1.9-OtherAcceptance.json']",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "changed_verifier_after_pressure",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "expected_reason": "implementation maintenance binding drift",
+      "actual_reason": "implementation maintenance binding drift: implementation/phase-9-grcv4/verification/phase9_implementation_policy.py",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "runtime_manifest_cannot_change_governance",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "expected_reason": "unapproved runtime or evidence target",
+      "actual_reason": "unapproved runtime or evidence target: implementation/phase-9-grcv4/verification/Phase9ImplementationBoundary.json",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "evidence_path_escape",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "expected_reason": "unsafe path",
+      "actual_reason": "unsafe path: ../escape.py",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "identical_acceptance_is_idempotent",
+      "candidate_decision": "admitted",
+      "assertion_result": "passed",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "expected_reason": null,
+      "actual_reason": "exact accepted scope admitted",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "partial_publication",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "expected_reason": "P9-1.9-ExecutionRecord.json",
+      "actual_reason": "missing protected file: implementation/phase-9-grcv4/tranche-1/P9-1.9-ExecutionRecord.json",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "synthetic_acceptance_not_live_authority",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "expected_reason": "untrusted P9-G1 acceptance",
+      "actual_reason": "untrusted P9-G1 acceptance",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "clean_committed_unauthorized_tree",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "expected_reason": "frozen bytes changed",
+      "actual_reason": "frozen bytes changed: src/pygrc/models/grc_9_v3.py",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "published_runtime_update",
+      "candidate_decision": "admitted",
+      "assertion_result": "passed",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "expected_reason": null,
+      "actual_reason": "exact accepted scope admitted",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "published_runtime_deletion",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "expected_reason": "published runtime/evidence deletion or rename forbidden",
+      "actual_reason": "published runtime/evidence deletion or rename forbidden",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "published_failure_evidence_overwrite",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "expected_reason": "published run evidence is immutable",
+      "actual_reason": "published run evidence is immutable",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "new_evidence_run_preserves_failure",
+      "candidate_decision": "admitted",
+      "assertion_result": "passed",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "expected_reason": null,
+      "actual_reason": "exact accepted scope admitted",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "authorized_p931_repository_source_presentation",
+      "candidate_decision": "admitted",
+      "assertion_result": "passed",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "expected_reason": null,
+      "actual_reason": "exact accepted scope admitted",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "presentation_cannot_conceal_numerical_exposure",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "expected_reason": "published run evidence is immutable",
+      "actual_reason": "published run evidence is immutable",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "presentation_cannot_change_audit_source",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "expected_reason": "published run evidence is immutable",
+      "actual_reason": "published run evidence is immutable",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "presentation_cannot_relabel_failed_run",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "expected_reason": "published run evidence is immutable",
+      "actual_reason": "published run evidence is immutable",
+      "intended_check_reached": true
+    },
+    {
+      "case_id": "preacceptance_same_runtime_addition",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "scope": "exact_6e0a507_planning_subject_before_actual_G1_acceptance",
+      "expected_reason": "planning authority rejects the same runtime addition",
+      "actual_reason": "planning authority rejects the same runtime addition",
+      "intended_check_reached": true
+    }
+  ],
+  "commands": [
+    {
+      "argv": [
+        ".venv/bin/python",
+        "implementation/phase-9-grcv4/verification/test_phase9_g1.py"
+      ],
+      "exit_status": 0,
+      "output": "PHASE9_G1_PRESSURE_PASS cases=137 accepted_permission=true conformance_claimed=false live_runtime_unchanged=true",
+      "capture_note": "completed immediately before this manifest; all case outcomes retained above; bulky disposable mutation transcripts are not required replay inputs"
+    },
+    {
+      "argv": [
+        ".venv/bin/python",
+        "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/test_phase9_g1_surfaces.py"
+      ],
+      "exit_status": 0,
+      "elapsed_seconds": 119.306,
+      "output": "PHASE9_NOTEBOOK_PASS cells=2 API_identity=byte_exact runtime_authorized=true P9_G1=accepted runtime_support=empty\nTAP version 13\n# Subtest: planning is not runtime and lacks a recorded pass\nok 1 - planning is not runtime and lacks a recorded pass\n  ---\n  duration_ms: 13.654236\n  type: 'test'\n  ...\n# Subtest: runtime/support promotion rejected\nok 2 - runtime/support promotion rejected\n  ---\n  duration_ms: 0.970844\n  type: 'test'\n  ...\n# Subtest: unrecognized and contradictory status rejected\nok 3 - unrecognized and contradictory status rejected\n  ---\n  duration_ms: 0.768965\n  type: 'test'\n  ...\n# Subtest: modified payload with stale digest rejected\nok 4 - modified payload with stale digest rejected\n  ---\n  duration_ms: 5.387132\n  type: 'test'\n  ...\n# Subtest: explicit failed-closed result is valid but never a pass\nok 5 - explicit failed-closed result is valid but never a pass\n  ---\n  duration_ms: 1.271593\n  type: 'test'\n  ...\n# Subtest: canonical planning JSON is key-order independent\nok 6 - canonical planning JSON is key-order independent\n  ---\n  duration_ms: 0.305996\n  type: 'test'\n  ...\n# Subtest: full probe IDs sharing a prefix cannot collide and assertion never changes candidate\nok 7 - full probe IDs sharing a prefix cannot collide and assertion never changes candidate\n  ---\n  duration_ms: 5.118678\n  type: 'test'\n  ...\n# Subtest: missing null and unrecognized permission cannot substitute for false\nok 8 - missing null and unrecognized permission cannot substitute for false\n  ---\n  duration_ms: 0.581274\n  type: 'test'\n  ...\n# Subtest: accepted G1 permission does not imply accepted profile support\nok 9 - accepted G1 permission does not imply accepted profile support\n  ---\n  duration_ms: 5.255378\n  type: 'test'\n  ...\n# Subtest: failed G1 boundary cannot retain permission even with a recomputed digest\nok 10 - failed G1 boundary cannot retain permission even with a recomputed digest\n  ---\n  duration_ms: 4.07918\n  type: 'test'\n  ...\n# Subtest: missing and invalid handoff evidence do not change accepted permission\nok 11 - missing and invalid handoff evidence do not change accepted permission\n  ---\n  duration_ms: 5.071832\n  type: 'test'\n  ...\n# Subtest: current work can be held while historical acceptance remains verified\nok 12 - current work can be held while historical acceptance remains verified\n  ---\n  duration_ms: 2.066368\n  type: 'test'\n  ...\n# Subtest: committed foundation acceptance does not accept request work or conformance\nok 13 - committed foundation acceptance does not accept request work or conformance\n  ---\n  duration_ms: 1.343382\n  type: 'test'\n  ...\n# Subtest: request acceptance cannot be missing or promote result work\nok 14 - request acceptance cannot be missing or promote result work\n  ---\n  duration_ms: 1.502285\n  type: 'test'\n  ...\n# Subtest: result acceptance cannot be missing or accept harness work\nok 15 - result acceptance cannot be missing or accept harness work\n  ---\n  duration_ms: 2.304532\n  type: 'test'\n  ...\n# Subtest: harness acceptance cannot be missing or accept integration work\nok 16 - harness acceptance cannot be missing or accept integration work\n  ---\n  duration_ms: 1.146564\n  type: 'test'\n  ...\n# Subtest: integration acceptance cannot be missing, forged or accept geometry work\nok 17 - integration acceptance cannot be missing, forged or accept geometry work\n  ---\n  duration_ms: 4.090762\n  type: 'test'\n  ...\n# Subtest: geometry acceptance cannot be missing, forged or accept stage work\nok 18 - geometry acceptance cannot be missing, forged or accept stage work\n  ---\n  duration_ms: 1.211172\n  type: 'test'\n  ...\n# Subtest: stage acceptance cannot be missing, forged or accept stage work\nok 19 - stage acceptance cannot be missing, forged or accept stage work\n  ---\n  duration_ms: 1.763927\n  type: 'test'\n  ...\n# Subtest: resource acceptance cannot be omitted or expanded\nok 20 - resource acceptance cannot be omitted or expanded\n  ---\n  duration_ms: 1.119871\n  type: 'test'\n  ...\n1..20\n# tests 20\n# suites 0\n# pass 20\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 84.744054\nPHASE9_G1_SURFACES_PASS API_notebook_identity=byte_exact negative_candidate=rejected P9_G1=accepted runtime_support=empty\n"
+    },
+    {
+      "argv": [
+        ".venv/bin/python",
+        "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/test_phase9_g1_surfaces.py",
+        "--browser"
+      ],
+      "exit_status": 0,
+      "output": "Running 18 tests using 1 worker\n\n(node:419700) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n\n\n(node:419700) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n\n\n[1/18] [desktop] \u203a browser.spec.mjs:24:1 \u203a live API, source bindings, leaf states and downloadable JSON agree\n[2/18] [desktop] \u203a browser.spec.mjs:76:1 \u203a archive availability is visible without revoking acceptance or blocking export\n[3/18] [desktop] \u203a browser.spec.mjs:94:1 \u203a a current source failure holds work but preserves the recorded acceptance display\n[4/18] [desktop] \u203a browser.spec.mjs:108:1 \u203a refresh failure removes stale success and disables download\n[5/18] [desktop] \u203a browser.spec.mjs:121:1 \u203a forged runtime payload and changed digest fail closed\n[6/18] [desktop] \u203a browser.spec.mjs:132:1 \u203a server exposes no write or arbitrary repository read route\n[7/18] [desktop] \u203a browser.spec.mjs:138:1 \u203a actual negative assertion and future fixture keep their subjects through UI and export\n[8/18] [desktop] \u203a browser.spec.mjs:162:1 \u203a older subject A finishing after B cannot overwrite B\n[9/18] [desktop] \u203a browser.spec.mjs:181:1 \u203a failed probe refresh clears assertion and candidate; unknown full ID is not a neighbor\n(node:426912) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n\n\n\n\n(node:426912) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.\n(Use `node --trace-warnings ...` to show where the warning was created)\n[10/18] [mobile] \u203a browser.spec.mjs:24:1 \u203a live API, source bindings, leaf states and downloadable JSON agree\n[11/18] [mobile] \u203a browser.spec.mjs:76:1 \u203a archive availability is visible without revoking acceptance or blocking export\n[12/18] [mobile] \u203a browser.spec.mjs:94:1 \u203a a current source failure holds work but preserves the recorded acceptance display\n[13/18] [mobile] \u203a browser.spec.mjs:108:1 \u203a refresh failure removes stale success and disables download\n[14/18] [mobile] \u203a browser.spec.mjs:121:1 \u203a forged runtime payload and changed digest fail closed\n[15/18] [mobile] \u203a browser.spec.mjs:132:1 \u203a server exposes no write or arbitrary repository read route\n[16/18] [mobile] \u203a browser.spec.mjs:138:1 \u203a actual negative assertion and future fixture keep their subjects through UI and export\n[17/18] [mobile] \u203a browser.spec.mjs:162:1 \u203a older subject A finishing after B cannot overwrite B\n[18/18] [mobile] \u203a browser.spec.mjs:181:1 \u203a failed probe refresh clears assertion and candidate; unknown full ID is not a neighbor\n  18 passed (3.4m)\nPHASE9_BROWSER_PASS projects=desktop,mobile screenshots=4 API_download_identity=byte_exact\n",
+      "sandbox_attempt": {
+        "exit_status": 1,
+        "reason": "Sandbox blocked the local HTTP server socket before any browser test ran; retried with approved execution outside the sandbox."
+      },
+      "capture_note": "Actual approved browser rerun, captured from its tool session; ANSI cursor controls removed."
+    }
+  ],
+  "claim_ceiling": "permission and display checks, not numerical runtime conformance",
+  "completed_utc": "2026-09-07T14:30:23.333340+00:00",
+  "visual_inspection": {
+    "viewports": [
+      [
+        1440,
+        900
+      ],
+      [
+        390,
+        844
+      ]
+    ],
+    "result": "Both rendered correctly; historical acceptance and empty runtime support displayed consistently. Routine screenshots need not be retained."
+  },
+  "presentation": {
+    "normalization": "Disposable fixture traceback filenames are presented as repository-relative checker paths. Source and line numbers refer to the reconstructed pressure subject; all exception text and case outcomes are preserved. The full original report_digest remains the original execution identity.",
+    "changed_fields": [
+      {
+        "json_pointer": "/authority_cases/37/actual_reason",
+        "filename_occurrences": 5
+      }
+    ]
+  }
+}

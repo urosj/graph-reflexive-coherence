@@ -109,6 +109,11 @@ def verification_status(repo_root: Path) -> dict:
                     "accepted_iterations": ["P9-3.2"],
                     "path": module.STAGE_ACCEPTANCE,
                 },
+                resource_acceptance={
+                    "record_digest": module.accepted_resources(root)["record_digest"],
+                    "accepted_iterations": ["P9-3.3"],
+                    "path": module.RESOURCE_ACCEPTANCE,
+                },
                 implementation_scope=approval["runtime_targets"],
                 dependency_ready_leaves=ready,
                 permitted_runtime_paths=sorted(
@@ -116,7 +121,7 @@ def verification_status(repo_root: Path) -> dict:
                     for r in approval["runtime_targets"]
                     if r["requires_gate"] == "P9-G1" and set(ready) & owners[r["path"]]
                 ),
-                next_gate="P9-3.3 resource-write and charge review; P9-3.4, P9-G2 and P9-G3 remain pending",
+                next_gate="P9-3.4 numerical pressure review; P9-3.5, P9-G2 and P9-G3 remain pending",
                 claim_ceiling="Accepted permission to implement reviewed V4 scope is not executed or accepted runtime conformance.",
             )
         cross = module.read(
@@ -255,6 +260,7 @@ def verification_status(repo_root: Path) -> dict:
         payload.pop("integration_acceptance", None)
         payload.pop("geometry_acceptance", None)
         payload.pop("stage_acceptance", None)
+        payload.pop("resource_acceptance", None)
         payload.pop("permitted_runtime_paths", None)
         payload.pop("source_meaning", None)
         payload.pop("tree", None)

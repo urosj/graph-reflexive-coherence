@@ -719,6 +719,46 @@
       "iteration_id": "P9-3.3"
     },
     {
+      "path": "implementation/phase-9-grcv4/evidence/P9-3.4/audit-followup/actual.json",
+      "sha256": "59eb827d71c4830f8c579ba2bdb11d6ae1a5a3e4937a53013d9a470c126e957d",
+      "iteration_id": "P9-3.4"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-3.4/audit-followup/inputs.json",
+      "sha256": "643e74e4875689ba4acb5076541a09a3a6d798255774ddcc35e0bc405aa3158d",
+      "iteration_id": "P9-3.4"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-3.4/audit-followup/run.json",
+      "sha256": "40ed8093b2d9b6ac4da984fa472d57acd0147c02e7f8ade869f92429b8cc72fd",
+      "iteration_id": "P9-3.4"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-3.4/permission-surfaces/run.json",
+      "sha256": "08b39475e7fddd27c73ca5f6f2c70e97b8289e0dd1f25087338017c90a5d4198",
+      "iteration_id": "P9-3.4"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-3.4/projector-pressure/run.json",
+      "sha256": "e25af68b1cdd483250ad6b2f2d65f26f3104a64020b61093af1f578442100aa1",
+      "iteration_id": "P9-3.4"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-3.4/validation/actual.json",
+      "sha256": "4b3f27b73f981a87d76864c72943b0393864d316d30a35c8f61695a3ec66fe9c",
+      "iteration_id": "P9-3.4"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-3.4/validation/inputs.json",
+      "sha256": "cf5dcde233828f0bf3fc586a619082c01cb44fc002601698b5487e13628a9cfd",
+      "iteration_id": "P9-3.4"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-3.4/validation/run.json",
+      "sha256": "7ce5af41219406e8fea9cfab9af32c91128e8eb9b6290ce10f75ea9cfabdc962",
+      "iteration_id": "P9-3.4"
+    },
+    {
       "path": "implementation/phase-9-grcv4/tranche-2/P9-2.1-ExecutionRecord.json",
       "sha256": "561817390d50afbd1eaf2c8ee2bc12409de9458892ae944f947eaabed66a916c",
       "iteration_id": "P9-2.1"
@@ -809,6 +849,16 @@
       "iteration_id": "P9-3.3"
     },
     {
+      "path": "implementation/phase-9-grcv4/tranche-3/P9-3.4-ExecutionRecord.json",
+      "sha256": "6be319318aacf45cdfc829e466a5e2c6262d8afb899bd7b90ae8c4adab8def7f",
+      "iteration_id": "P9-3.4"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-3/P9-3.4-Review.md",
+      "sha256": "b373aaaec10816410cb65e8719b372cee6915416577d07f7de6ce555805f19a8",
+      "iteration_id": "P9-3.4"
+    },
+    {
       "path": "pyproject.toml",
       "sha256": "018c364413f75ee49186975c05e9cdaba7a78e171d47833609fbebc223a64a66",
       "iteration_id": "P9-3.1"
@@ -850,8 +900,8 @@
     },
     {
       "path": "src/pygrc/models/grc_v4_geometry.py",
-      "sha256": "d715f67555d3c6e68a4e031ba132cb1854cc839de03dcd2c7101fbeb40c13dcd",
-      "iteration_id": "P9-3.2"
+      "sha256": "02711d13bc0075d961b8538dfb2e811014c0051e8c3dcefd03c1eb409f32004b",
+      "iteration_id": "P9-3.4"
     },
     {
       "path": "src/pygrc/models/grc_v4_profile.py",
@@ -895,8 +945,8 @@
     },
     {
       "path": "tests/models/test_grc_v4_geometry.py",
-      "sha256": "de8957be72deeaf92cef84795d0356cbcba99b4563975f03413e627140908eea",
-      "iteration_id": "P9-3.2"
+      "sha256": "0a11043fcb3e6c948c3e468991d74465c918c2517964c78197bf7618e98160fe",
+      "iteration_id": "P9-3.4"
     },
     {
       "path": "tests/models/test_grc_v4_profile.py",
@@ -915,12 +965,12 @@
     },
     {
       "path": "tests/models/test_grc_v4_transport.py",
-      "sha256": "651e9d27153632b89b412e11dde005df2db47806a336370e61c72c5f960c6f9b",
-      "iteration_id": "P9-3.3"
+      "sha256": "ad44a64357ad5cef25deaf2c778a4a4a0ea4ec016f461ce40e07f0724c09f2a9",
+      "iteration_id": "P9-3.4"
     }
   ],
   "accepted_generic_runtime_support": [],
   "admitted_specialization_support_sets": [],
   "claim_ceiling": "Exact current implementation content bindings, not review acceptance or conformance.",
-  "record_digest": "0e5e337537e0ede46be10d40675412e15faacd80544c945d881d6616eeb1168f"
+  "record_digest": "14da02ff44ba14917c7c381c0b39122a8ceadaccc0bad6f69e9b4c0ed34a902b"
 }

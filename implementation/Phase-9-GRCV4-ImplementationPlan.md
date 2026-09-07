@@ -574,6 +574,34 @@ envelope; later experiments must distinguish rounded-policy compliance from
 exact conservation and primitive compositions from complete executed beats.
 No numerical repair or alternate charge rule is introduced by this audit.
 
+P9-3.4 follows the committed P9-3.3 acceptance at `ce83d7a`, preserved in
+[its separate record](./phase-9-grcv4/tranche-3/P9-3.3-AcceptanceRecord.json).
+The P9-3.1 repository-reference maintenance mentioned above was completed in
+`9409252`. The [P9-3.4 review](./phase-9-grcv4/tranche-3/P9-3.4-Review.md) maps
+nonidentity SPD solves, conditioning, repeated-cluster projectors, signed
+coordinates, domain/cache failures and charge precision to independent checks.
+The star witness is corrected by an exact represented product with one final
+binary64 rounding and a new derived-assembly identity; true final underflow,
+rounded PSD loss and aggregation overflow remain explicit numerical limits.
+The original full run passes 1,653 tests with no skips; a separate test-only
+follow-up adds 288 dense near-gap projector actions. The audit follow-up passes
+the full current 1,662-method roster with no failures, errors or skips and all
+568 native independent scenarios. Permission/surface checks pass
+137 authority, 20 JavaScript and 18 browser tests. Ten leaves and 23 runtime
+paths are dependency-ready; P9-3.5 and runtime support remain held. The leaf
+is implemented, verified and explicitly accepted by the user for commit after
+audit follow-up and evidence consolidation. This accepts the bounded P9-3.4
+implementation; runtime profile support remains empty. P9-3.5's separate
+permission transition can bind the accepted commit.
+The [independent audit follow-up](./phase-9-grcv4/tranche-3/P9-3.4-Review.md#independent-audit-follow-up)
+closes the capture-coverage gap with a reviewed exact test roster, structured
+outcomes, run-local diagnostics, loaded-source checks and validated provenance.
+It retains the exact-SPD/nonpositive-computed-pairing witness for both Hodge
+types. P9-4.2/P9-4.5 and later norm/energy consumers must execute their numerical
+validity policy against it; no clipping or positivity repair is authorized.
+Actual selector coverage must test both sides of the cutoff, its exact boundary,
+strict-gap loss and physical-versus-retained conditioning.
+
 Implement deterministic graph order/orientation, differential identity,
 one-form versus physical-flux maps, Hodge pairings, candidate-local mobility,
 geometry profiles, and stage-aware derived caches. Implement one authoritative

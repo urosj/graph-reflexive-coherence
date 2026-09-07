@@ -1,0 +1,40 @@
+{
+  "schema": "phase9_resource_boundary_acceptance_v1",
+  "status": "accepted_by_user",
+  "baseline_commit": "ce83d7a709d63b9445a0e81226425597ed37ced0",
+  "release_id": "grcv4-spec-release-sha256:9f4c8fe5b57b1c477d834a3e4dae3f98a2b18c70e6e7f598e3c9652170c8645f",
+  "predecessor_record_digest": "425cd05eb85213185a4b531a09c16cefec4be992ac4755d404b5f263e09ebd0a",
+  "accepted_iterations": [
+    "P9-3.3"
+  ],
+  "acceptance_basis": "Explicit user instruction: so, accept p9-3.3 and commit, both audits didn't find anything. Accepted at the named committed subject; subsequent explicit authorization starts P9-3.4. Historical executions and numerical limitations remain unchanged.",
+  "evidence_bindings": [
+    {
+      "path": "implementation/phase-9-grcv4/tranche-3/P9-3.3-Review.md",
+      "sha256": "398342e7a68dc7f41c543f7d58aefff62c26c47036445c03697853d28a7f3bb2"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-3/P9-3.3-ExecutionRecord.json",
+      "sha256": "6d4dc0f68d9c17ba782a386f2a29720492e8daf63f81332e87621231c3136aae"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-3.3/validation/run.json",
+      "sha256": "d5067e59440bd937cba645cd232a19c7e6fe81525d31b4b2c16054b324743e6a"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-3.3/audit-1-native/run.json",
+      "sha256": "0a74d9aa5cc5a64cdd871f0b77ab5bf1131227867ae2fda0804c1883e803783e"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-3.3/audit-1-followup/run.json",
+      "sha256": "6b40764e8ee7dfc9d8f4fe67a769dfcbdd40f4190dff1aecba83d332c858d198"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/runtime/RuntimeWorkManifest.json",
+      "sha256": "a3f98d431f4bb8c91774ea776ea933571e2d7bb06b8f6aa05f4bc3c6a416720f"
+    }
+  ],
+  "accepted_generic_runtime_support": [],
+  "admitted_specialization_support_sets": [],
+  "record_digest": "3e71b580090ba1712dbec4a1718653c2057e4062200f3367ba0c1ed7adeae6fa"
+}

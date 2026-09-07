@@ -734,5 +734,271 @@ class ContinuityTests(unittest.TestCase):
             )
 
 
+class ChargePrecisionEnvelopeTests(unittest.TestCase):
+    """Independent stored-coordinate diagnostics; no replacement charge rule."""
+
+    observations: list[dict[str, Any]] = []
+
+    def test_half_ulp_and_subnormal_transfer_grid(self) -> None:
+        from fractions import Fraction
+        import math
+        from pygrc.models.grc_v4_geometry import (
+            GRCV4Differential,
+            OrientedEdge,
+            VertexScalar,
+        )
+        from pygrc.models.grc_v4_transport import (
+            ChargeEvaluation,
+            provisional_continuity,
+            unit_charge,
+        )
+        from tests.models.test_grc_v4_geometry import common_payload
+        from pygrc.models.grc_v4_profile import GRCV4CommonParams
+
+        graph = GRCV4Graph(("rich", "small"), (OrientedEdge("e", "rich", "small"),))
+        differential = GRCV4Differential(
+            graph, GRCV4CommonParams.from_payload(common_payload())
+        )
+        profile = charge_profile(absolute_tolerance=0.0, relative_tolerance=0.0)
+        cases = 0
+        for magnitude in (5e-324, 2.0**-1022, 1.0, float(2**53), 1e20, 1e150):
+            ulp = math.ulp(magnitude)
+            for rate, dt in (
+                (0.5, 5e-324),
+                (1.0, 5e-324),
+                (1.0, 0.25 * ulp),
+                (1.0, 0.5 * ulp),
+                (1.0, ulp),
+                (1.0, 0.5),
+                (1.0, 1.0),
+            ):
+                initial = VertexScalar(graph, (magnitude, 0.0))
+                result = provisional_continuity(
+                    initial, PhysicalFlux(graph, (rate,)), dt, differential=differential
+                )
+                rounded_transfer = float(Fraction(rate) * Fraction(dt))
+                oracle = (
+                    float(Fraction(magnitude) - Fraction(rounded_transfer)),
+                    rounded_transfer,
+                )
+                self.assertEqual(result.values, oracle)
+                drift = sum(map(Fraction, result.values)) - Fraction(magnitude)
+                if min(result.values) < 0:
+                    with self.assertRaises(ValueError):
+                        unit_charge(result)
+                    admitted = False
+                else:
+                    gate = ChargeEvaluation(result, magnitude, profile)
+                    self.assertEqual(gate.actual, padded_charge_oracle(oracle))
+                    self.assertEqual(gate.admitted, gate.actual == magnitude)
+                    self.assertIsNone(gate.remainder)
+                    admitted = gate.admitted
+                self.observations.append(
+                    dict(
+                        case="transfer_precision",
+                        magnitude=magnitude,
+                        rate=rate,
+                        dt=dt,
+                        result=list(result.values),
+                        exact_stored_drift=str(drift),
+                        admitted=admitted,
+                    )
+                )
+                cases += 1
+        self.assertEqual(cases, 42)
+
+    def test_repeated_primitive_compositions_have_exact_diagnostic_drift(self) -> None:
+        from fractions import Fraction
+        from pygrc.models.grc_v4_geometry import (
+            GRCV4Differential,
+            OrientedEdge,
+            VertexScalar,
+        )
+        from pygrc.models.grc_v4_transport import (
+            ChargeEvaluation,
+            provisional_continuity,
+        )
+        from pygrc.models.grc_v4_profile import GRCV4CommonParams
+        from tests.models.test_grc_v4_geometry import common_payload
+
+        graph = GRCV4Graph(("a", "b"), (OrientedEdge("e", "a", "b"),))
+        differential = GRCV4Differential(
+            graph, GRCV4CommonParams.from_payload(common_payload())
+        )
+        profile = charge_profile(absolute_tolerance=0.0, relative_tolerance=0.0)
+        resource = VertexScalar(graph, (1e20, 0.0))
+        for k in range(1, 101):
+            resource = provisional_continuity(
+                resource, PhysicalFlux(graph, (1.0,)), 1.0, differential=differential
+            )
+            gate = ChargeEvaluation(resource, 1e20, profile)
+            self.assertTrue(gate.admitted)
+            self.assertEqual(gate.residual, 0)
+            self.assertEqual(resource.values, (1e20, float(k)))
+            self.assertEqual(sum(map(Fraction, resource.values)) - Fraction(1e20), k)
+        self.observations.append(
+            dict(
+                case="primitive_compositions",
+                compositions=100,
+                exact_stored_drift="100",
+                rounded_charge_residual=0.0,
+                complete_beats=False,
+            )
+        )
+
+    def test_exact_conservative_transfer_all_vertex_orders(self) -> None:
+        from fractions import Fraction
+        import itertools
+        from pygrc.models.grc_v4_geometry import (
+            GRCV4Differential,
+            OrientedEdge,
+            VertexScalar,
+        )
+        from pygrc.models.grc_v4_transport import (
+            ChargeEvaluation,
+            provisional_continuity,
+            unit_charge,
+        )
+        from pygrc.models.grc_v4_profile import GRCV4CommonParams
+        from tests.models.test_grc_v4_geometry import common_payload
+
+        profile = charge_profile(absolute_tolerance=0.0, relative_tolerance=0.0)
+        residuals: set[float] = set()
+        for order in itertools.permutations(("a", "b", "c", "d")):
+            for sign in (-1, 1):
+                graph = GRCV4Graph(
+                    order,
+                    (
+                        OrientedEdge(
+                            "e", "a" if sign == 1 else "d", "d" if sign == 1 else "a"
+                        ),
+                    ),
+                )
+                differential = GRCV4Differential(
+                    graph, GRCV4CommonParams.from_payload(common_payload())
+                )
+                values = {"a": float(2**53), "b": 1.0, "c": 1.0, "d": 1.0}
+                initial = VertexScalar(graph, tuple(values[x] for x in order))
+                result = provisional_continuity(
+                    initial,
+                    PhysicalFlux(graph, (float(sign),)),
+                    1.0,
+                    differential=differential,
+                )
+                self.assertEqual(
+                    sum(map(Fraction, result.values)),
+                    sum(map(Fraction, initial.values)),
+                )
+                gate = ChargeEvaluation(result, unit_charge(initial), profile)
+                expected = padded_charge_oracle(result.values) - padded_charge_oracle(
+                    initial.values
+                )
+                self.assertEqual(gate.residual, expected)
+                self.assertEqual(gate.admitted, expected == 0)
+                residuals.add(expected)
+        self.assertIn(2.0, residuals)
+        self.assertIn(0.0, residuals)
+        self.observations.append(
+            dict(
+                case="conservative_coordinate_permutations",
+                cases=48,
+                residuals=sorted(residuals),
+                exact_stored_drift="0",
+            )
+        )
+
+    def test_high_degree_cancellation_and_safe_order_controls(self) -> None:
+        from fractions import Fraction
+        from pygrc.models.grc_v4_geometry import GRCV4Differential, OrientedEdge
+        from pygrc.models.grc_v4_profile import GRCV4CommonParams
+        from tests.models.test_grc_v4_geometry import common_payload, pressure_action
+
+        for degree in (4, 16, 64, 256):
+            graph = GRCV4Graph(
+                ("a", "b", "isolated"),
+                tuple(OrientedEdge(str(i), "a", "b") for i in range(degree)),
+            )
+            differential = GRCV4Differential(
+                graph, GRCV4CommonParams.from_payload(common_payload())
+            )
+            for magnitude in (1.0, 1e100, 1e308):
+                grouped = (magnitude,) * (degree // 2) + (-magnitude,) * (degree // 2)
+                alternating = (magnitude, -magnitude) * (degree // 2)
+                for label, values in (
+                    ("grouped", grouped),
+                    ("alternating", alternating),
+                ):
+                    self.assertEqual(sum(map(Fraction, values)), 0)
+                    flux = PhysicalFlux(graph, values)
+                    overflows = magnitude == 1e308 and label == "grouped"
+                    if overflows:
+                        with self.assertRaisesRegex(ValueError, "nonfinite"):
+                            differential.divergence(flux)
+                    else:
+                        result = differential.divergence(flux)
+                        self.assertEqual(result.values, (0, 0, 0))
+                        action = pressure_action(
+                            graph,
+                            tuple(reversed(range(degree))),
+                            tuple((-1) ** i for i in range(degree)),
+                        )
+                        moved = GRCV4Differential(
+                            action.target, differential.common
+                        ).divergence(action.physical_flux(flux))
+                        self.assertEqual(moved, action.vertex_scalar(result))
+                    self.observations.append(
+                        dict(
+                            case="high_degree_divergence",
+                            degree=degree,
+                            magnitude=magnitude,
+                            order=label,
+                            rejected_nonfinite=overflows,
+                            exact_divergence="0",
+                        )
+                    )
+
+    def test_normwise_accuracy_does_not_promise_cancellation_relative_accuracy(
+        self,
+    ) -> None:
+        from fractions import Fraction
+        import random
+        from pygrc.models.grc_v4_geometry import GRCV4Differential, OrientedEdge
+        from pygrc.models.grc_v4_profile import GRCV4CommonParams
+        from tests.models.test_grc_v4_geometry import common_payload
+
+        rng = random.Random(93402)
+        for degree in (3, 17, 65, 257):
+            graph = GRCV4Graph(
+                ("a", "b"), tuple(OrientedEdge(str(i), "a", "b") for i in range(degree))
+            )
+            differential = GRCV4Differential(
+                graph, GRCV4CommonParams.from_payload(common_payload())
+            )
+            for scale in (2.0**-400, 1.0, 2.0**400):
+                values = [rng.uniform(-1, 1) * scale for _ in range(degree // 2)]
+                values += [-x for x in values]
+                values.append(scale * 2.0**-52)
+                rng.shuffle(values)
+                exact = sum(map(Fraction, values))
+                actual = differential.divergence(
+                    PhysicalFlux(graph, tuple(values))
+                ).values[0]
+                bound = Fraction(4 * degree, 2**53) * sum(
+                    abs(Fraction(x)) for x in values
+                )
+                error = abs(Fraction(actual) - exact)
+                self.assertLessEqual(error, bound)
+                self.observations.append(
+                    dict(
+                        case="cancellation_accuracy",
+                        degree=degree,
+                        scale=scale,
+                        exact_sum=str(exact),
+                        absolute_error=float(error),
+                        normwise_bound=float(bound),
+                    )
+                )
+
+
 if __name__ == "__main__":
     unittest.main()

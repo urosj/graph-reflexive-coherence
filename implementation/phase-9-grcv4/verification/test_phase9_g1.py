@@ -52,7 +52,7 @@ def main():
             ],
             check=True,
         )
-        fixture_revision = p.accepted_stages(p.ROOT)["baseline_commit"]
+        fixture_revision = p.accepted_resources(p.ROOT)["baseline_commit"]
         subprocess.run(
             ["git", "checkout", "--quiet", "--detach", fixture_revision],
             cwd=root, check=True,
@@ -514,9 +514,9 @@ def main():
             lambda: registered("src/pygrc/models/grc_v4.py", content, leaf="P9-2.3"),
         )
         case(
-            "charge_work_does_not_accept_next_leaf",
-            lambda: registered(p.PHASE + "evidence/P9-3.4/probe/inputs.json",
-                               b"{}", leaf="P9-3.4"),
+            "numerical_work_does_not_accept_next_leaf",
+            lambda: registered(p.PHASE + "evidence/P9-3.5/probe/inputs.json",
+                               b"{}", leaf="P9-3.5"),
             "owning leaf entry dependencies are not accepted",
         )
         for name in ["src/pygrc/models/grc_v4_state.py", "src/pygrc/models/grc_v4_step.py"]:
@@ -534,6 +534,23 @@ def main():
         for name in ["src/pygrc/models/grc_v4_transport.py", "tests/models/test_grc_v4_transport.py", "src/pygrc/models/grc_v4_step.py", "tests/models/test_grc_v4_step.py"]:
             case("accepted_stage_enables_charge_owner_" + Path(name).stem,
                  lambda name=name: registered(name, content, leaf="P9-3.3"))
+        for name in ["src/pygrc/models/grc_v4_geometry.py", "tests/models/test_grc_v4_geometry.py", "src/pygrc/models/grc_v4_transport.py", "tests/models/test_grc_v4_transport.py"]:
+            case("accepted_resources_enable_numerical_owner_" + Path(name).stem,
+                 lambda name=name: registered(name, content, leaf="P9-3.4"))
+        case("missing_resource_acceptance", lambda: edit(p.RESOURCE_ACCEPTANCE, None),
+             "P9-3.3-AcceptanceRecord.json")
+        for key, replacement in [("status", "pending"), ("accepted_iterations", ["P9-3.3", "P9-3.4"]),
+                                 ("accepted_generic_runtime_support", ["C_OS"]),
+                                 ("admitted_specialization_support_sets", [["C_OS"]]),
+                                 ("baseline_commit", p.BASELINE), ("evidence_bindings", [])]:
+            def forged_resource(key=key, replacement=replacement):
+                value = p.read(root / p.RESOURCE_ACCEPTANCE)
+                value[key] = replacement
+                value["record_digest"] = p.digest_record(value)
+                with mutate(p.RESOURCE_ACCEPTANCE, p.canonical(value)):
+                    p.accepted_resources(root)
+            case("resource_acceptance_cannot_self_authorize_" + key, forged_resource,
+                 "untrusted resource acceptance", scope="isolated_resource_acceptance_authentication")
         case("accepted_harness_enables_export_owner",
              lambda: registered(init, before + lazy, leaf="P9-2.6"))
         for key, replacement in [("status", "pending"), ("accepted_iterations", ["P9-2.5", "P9-2.6"]),

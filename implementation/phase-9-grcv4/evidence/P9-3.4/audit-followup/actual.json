@@ -1,0 +1,2887 @@
+{
+  "schema": "phase9_factored_test_actual_v1",
+  "representation": "Lossless factoring of the all-passed reviewed test roster; diagnostic rows remain literal.",
+  "captured_actual_sha256": "2a64e6667dfe0fde961735c7e688736d54d10d8b1873f1627b0599206780f320",
+  "test_count": 1662,
+  "all_required_methods_passed": true,
+  "required_roster": {
+    "path": "implementation/phase-9-grcv4/evidence/P9-3.4/validation/actual.json",
+    "sha256": "4b3f27b73f981a87d76864c72943b0393864d316d30a35c8f61695a3ec66fe9c",
+    "additions": [
+      "NumericalEnvelopeTests.test_dense_rational_projector_with_input_rounding_near_gap",
+      "NumericalEnvelopeTests.test_exact_positive_matrix_can_have_nonpositive_computed_self_pairing",
+      "CaptureIntegrityTests.test_capture_rejects_missing_and_duplicate_discovery",
+      "CaptureIntegrityTests.test_result_reconciles_execution_and_records_subtest_failures",
+      "CaptureIntegrityTests.test_capture_resets_observations_in_same_process",
+      "CaptureIntegrityTests.test_missing_or_stale_diagnostics_are_rejected",
+      "CaptureIntegrityTests.test_loaded_module_origin_and_bytes_are_checked",
+      "CaptureIntegrityTests.test_forensic_rows_must_match_reviewed_contracts",
+      "CaptureIntegrityTests.test_coverage_requires_every_reviewed_id_to_pass"
+    ]
+  },
+  "discovered_ids_sha256": "d4be38775628ea5db4c08316a2caa0dda6b5167da8567c151a1a44fae6342024",
+  "geometry_observations": [
+    {
+      "case": "dense_rational_projector",
+      "direction": [
+        1,
+        2,
+        3,
+        5
+      ],
+      "gap": 4.0,
+      "coordinate_actions": 24,
+      "input_error_infinity": 2.9584049433305454e-16,
+      "worst_projector_error": 1.0664679514886493e-15,
+      "projector_error_bound": 8.881784197001252e-15,
+      "exact_pre_round_cluster_multiplicity": 2,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_dense_rational_projector_with_input_rounding_near_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "dense_rational_projector",
+      "direction": [
+        1,
+        2,
+        3,
+        5
+      ],
+      "gap": 0.000244140625,
+      "coordinate_actions": 24,
+      "input_error_infinity": 9.591573882713956e-17,
+      "worst_projector_error": 2.7516185273153245e-12,
+      "projector_error_bound": 2.9110935884091305e-11,
+      "exact_pre_round_cluster_multiplicity": 2,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_dense_rational_projector_with_input_rounding_near_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "dense_rational_projector",
+      "direction": [
+        1,
+        2,
+        3,
+        5
+      ],
+      "gap": 3.725290298461914e-09,
+      "coordinate_actions": 24,
+      "input_error_infinity": 9.138719450689691e-17,
+      "worst_projector_error": 1.590808983916695e-07,
+      "projector_error_bound": 1.9073486399179274e-06,
+      "exact_pre_round_cluster_multiplicity": 2,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_dense_rational_projector_with_input_rounding_near_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "dense_rational_projector",
+      "direction": [
+        1,
+        2,
+        3,
+        5
+      ],
+      "gap": 9.094947017729282e-13,
+      "coordinate_actions": 24,
+      "input_error_infinity": 1.0715367522354577e-16,
+      "worst_projector_error": 0.0006469274939943463,
+      "projector_error_bound": 0.007812500000007105,
+      "exact_pre_round_cluster_multiplicity": 2,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_dense_rational_projector_with_input_rounding_near_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "dense_rational_projector",
+      "direction": [
+        2,
+        3,
+        5,
+        7
+      ],
+      "gap": 4.0,
+      "coordinate_actions": 24,
+      "input_error_infinity": 5.110340887559843e-16,
+      "worst_projector_error": 9.57161256430733e-16,
+      "projector_error_bound": 8.881784197001252e-15,
+      "exact_pre_round_cluster_multiplicity": 2,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_dense_rational_projector_with_input_rounding_near_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "dense_rational_projector",
+      "direction": [
+        2,
+        3,
+        5,
+        7
+      ],
+      "gap": 0.000244140625,
+      "coordinate_actions": 24,
+      "input_error_infinity": 1.0617458373178718e-16,
+      "worst_projector_error": 1.921729449084752e-12,
+      "projector_error_bound": 2.9110935884091305e-11,
+      "exact_pre_round_cluster_multiplicity": 2,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_dense_rational_projector_with_input_rounding_near_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "dense_rational_projector",
+      "direction": [
+        2,
+        3,
+        5,
+        7
+      ],
+      "gap": 3.725290298461914e-09,
+      "coordinate_actions": 24,
+      "input_error_infinity": 1.0757531603157831e-16,
+      "worst_projector_error": 1.6429957528499265e-07,
+      "projector_error_bound": 1.9073486399179274e-06,
+      "exact_pre_round_cluster_multiplicity": 2,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_dense_rational_projector_with_input_rounding_near_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "dense_rational_projector",
+      "direction": [
+        2,
+        3,
+        5,
+        7
+      ],
+      "gap": 9.094947017729282e-13,
+      "coordinate_actions": 24,
+      "input_error_infinity": 1.1077294598984368e-16,
+      "worst_projector_error": 0.0007258485891457125,
+      "projector_error_bound": 0.007812500000007105,
+      "exact_pre_round_cluster_multiplicity": 2,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_dense_rational_projector_with_input_rounding_near_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "dense_rational_projector",
+      "direction": [
+        1,
+        4,
+        9,
+        16
+      ],
+      "gap": 4.0,
+      "coordinate_actions": 24,
+      "input_error_infinity": 5.562171638931683e-16,
+      "worst_projector_error": 9.076594730829833e-16,
+      "projector_error_bound": 8.881784197001252e-15,
+      "exact_pre_round_cluster_multiplicity": 2,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_dense_rational_projector_with_input_rounding_near_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "dense_rational_projector",
+      "direction": [
+        1,
+        4,
+        9,
+        16
+      ],
+      "gap": 0.000244140625,
+      "coordinate_actions": 24,
+      "input_error_infinity": 7.182673782080472e-17,
+      "worst_projector_error": 2.8945096100323653e-12,
+      "projector_error_bound": 2.9110935884091305e-11,
+      "exact_pre_round_cluster_multiplicity": 2,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_dense_rational_projector_with_input_rounding_near_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "dense_rational_projector",
+      "direction": [
+        1,
+        4,
+        9,
+        16
+      ],
+      "gap": 3.725290298461914e-09,
+      "coordinate_actions": 24,
+      "input_error_infinity": 1.050865128553115e-16,
+      "worst_projector_error": 1.9853823665887181e-07,
+      "projector_error_bound": 1.9073486399179274e-06,
+      "exact_pre_round_cluster_multiplicity": 2,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_dense_rational_projector_with_input_rounding_near_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "dense_rational_projector",
+      "direction": [
+        1,
+        4,
+        9,
+        16
+      ],
+      "gap": 9.094947017729282e-13,
+      "coordinate_actions": 24,
+      "input_error_infinity": 1.3296169007616535e-17,
+      "worst_projector_error": 0.000661066232456476,
+      "projector_error_bound": 0.007812500000007105,
+      "exact_pre_round_cluster_multiplicity": 2,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_dense_rational_projector_with_input_rounding_near_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "positive_matrix_nonpositive_pairing",
+      "hodge": "OneFormHodge",
+      "matrix": [
+        [
+          1.0,
+          0.1
+        ],
+        [
+          0.1,
+          0.010000000000000002
+        ]
+      ],
+      "vector": [
+        -0.010000000000000004,
+        0.1
+      ],
+      "exact_determinant": "1080863910568919/1298074214633706907132624082305024",
+      "condition_lower_bound": 1.2009599006321324e+18,
+      "exact_self_pairing": "3115378115120899273873754666985/374144419156711147060143317175368453031918731001856",
+      "exact_rounded_once": 8.326672684688681e-21,
+      "computed_self_pairing": -4.3368086899420126e-21,
+      "disposition": "primitive_rounding_limit_not_candidate_admission",
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_exact_positive_matrix_can_have_nonpositive_computed_self_pairing",
+      "test_status": "passed"
+    },
+    {
+      "case": "positive_matrix_nonpositive_pairing",
+      "hodge": "VertexHodge",
+      "matrix": [
+        [
+          1.0,
+          0.1
+        ],
+        [
+          0.1,
+          0.010000000000000002
+        ]
+      ],
+      "vector": [
+        -0.010000000000000004,
+        0.1
+      ],
+      "exact_determinant": "1080863910568919/1298074214633706907132624082305024",
+      "condition_lower_bound": 1.2009599006321324e+18,
+      "exact_self_pairing": "3115378115120899273873754666985/374144419156711147060143317175368453031918731001856",
+      "exact_rounded_once": 8.326672684688681e-21,
+      "computed_self_pairing": -4.3368086899420126e-21,
+      "disposition": "primitive_rounding_limit_not_candidate_admission",
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_exact_positive_matrix_can_have_nonpositive_computed_self_pairing",
+      "test_status": "passed"
+    },
+    {
+      "case": "positive_matrix_nonpositive_pairing",
+      "hodge": "OneFormHodge",
+      "matrix": [
+        [
+          1.0,
+          0.1
+        ],
+        [
+          0.1,
+          0.010000000000000002
+        ]
+      ],
+      "vector": [
+        -0.1,
+        1.0
+      ],
+      "exact_determinant": "1080863910568919/1298074214633706907132624082305024",
+      "condition_lower_bound": 1.2009599006321324e+18,
+      "exact_self_pairing": "1080863910568919/1298074214633706907132624082305024",
+      "exact_rounded_once": 8.326672684688674e-19,
+      "computed_self_pairing": 0.0,
+      "disposition": "primitive_rounding_limit_not_candidate_admission",
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_exact_positive_matrix_can_have_nonpositive_computed_self_pairing",
+      "test_status": "passed"
+    },
+    {
+      "case": "positive_matrix_nonpositive_pairing",
+      "hodge": "VertexHodge",
+      "matrix": [
+        [
+          1.0,
+          0.1
+        ],
+        [
+          0.1,
+          0.010000000000000002
+        ]
+      ],
+      "vector": [
+        -0.1,
+        1.0
+      ],
+      "exact_determinant": "1080863910568919/1298074214633706907132624082305024",
+      "condition_lower_bound": 1.2009599006321324e+18,
+      "exact_self_pairing": "1080863910568919/1298074214633706907132624082305024",
+      "exact_rounded_once": 8.326672684688674e-19,
+      "computed_self_pairing": 0.0,
+      "disposition": "primitive_rounding_limit_not_candidate_admission",
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_exact_positive_matrix_can_have_nonpositive_computed_self_pairing",
+      "test_status": "passed"
+    },
+    {
+      "case": "pairing_range_and_coordinates",
+      "cases": 96,
+      "nonpositive_computed": 96,
+      "well_conditioned_controls": 4,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_exact_positive_matrix_can_have_nonpositive_computed_self_pairing",
+      "test_status": "passed"
+    },
+    {
+      "case": "dense_spd_solve",
+      "cases": 96,
+      "worst_relative_forward": 6.478994302840205e-16,
+      "worst_scaled_residual": 7.453408451245953e-17,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_flat_exact_inverse_and_residual_across_dense_spd_scales",
+      "test_status": "passed"
+    },
+    {
+      "case": "near_spd_boundary",
+      "exponent": -400,
+      "separation_bits": 4,
+      "condition": 31.0,
+      "relative_forward": 1.686414720949605e-17,
+      "bound": 5.5067062021407764e-14,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_near_spd_boundary_conditioning_is_not_positivity",
+      "test_status": "passed"
+    },
+    {
+      "case": "near_spd_boundary",
+      "exponent": -400,
+      "separation_bits": 16,
+      "condition": 131071.0,
+      "relative_forward": 8.881946827823435e-17,
+      "bound": 2.3282886729703023e-10,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_near_spd_boundary_conditioning_is_not_positivity",
+      "test_status": "passed"
+    },
+    {
+      "case": "near_spd_boundary",
+      "exponent": -400,
+      "separation_bits": 28,
+      "condition": 536870911.0,
+      "relative_forward": 1.862645149230957e-09,
+      "bound": 9.536743146298932e-07,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_near_spd_boundary_conditioning_is_not_positivity",
+      "test_status": "passed"
+    },
+    {
+      "case": "near_spd_boundary",
+      "exponent": -400,
+      "separation_bits": 40,
+      "condition": 2199023255551.0,
+      "relative_forward": 4.547473508864641e-13,
+      "bound": 0.0039062499999982236,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_near_spd_boundary_conditioning_is_not_positivity",
+      "test_status": "passed"
+    },
+    {
+      "case": "near_spd_boundary",
+      "exponent": -400,
+      "separation_bits": 48,
+      "condition": 562949953421311.0,
+      "relative_forward": 1.7763568394002505e-15,
+      "bound": 0.125,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_near_spd_boundary_conditioning_is_not_positivity",
+      "test_status": "passed"
+    },
+    {
+      "case": "near_spd_boundary",
+      "exponent": -400,
+      "separation_bits": 52,
+      "condition": 9007199254740991.0,
+      "relative_forward": 1.1102230246251564e-16,
+      "bound": 0.125,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_near_spd_boundary_conditioning_is_not_positivity",
+      "test_status": "passed"
+    },
+    {
+      "case": "near_spd_boundary",
+      "exponent": 0,
+      "separation_bits": 4,
+      "condition": 31.0,
+      "relative_forward": 1.686414720949605e-17,
+      "bound": 5.5067062021407764e-14,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_near_spd_boundary_conditioning_is_not_positivity",
+      "test_status": "passed"
+    },
+    {
+      "case": "near_spd_boundary",
+      "exponent": 0,
+      "separation_bits": 16,
+      "condition": 131071.0,
+      "relative_forward": 8.881946827823435e-17,
+      "bound": 2.3282886729703023e-10,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_near_spd_boundary_conditioning_is_not_positivity",
+      "test_status": "passed"
+    },
+    {
+      "case": "near_spd_boundary",
+      "exponent": 0,
+      "separation_bits": 28,
+      "condition": 536870911.0,
+      "relative_forward": 1.862645149230957e-09,
+      "bound": 9.536743146298932e-07,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_near_spd_boundary_conditioning_is_not_positivity",
+      "test_status": "passed"
+    },
+    {
+      "case": "near_spd_boundary",
+      "exponent": 0,
+      "separation_bits": 40,
+      "condition": 2199023255551.0,
+      "relative_forward": 4.547473508864641e-13,
+      "bound": 0.0039062499999982236,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_near_spd_boundary_conditioning_is_not_positivity",
+      "test_status": "passed"
+    },
+    {
+      "case": "near_spd_boundary",
+      "exponent": 0,
+      "separation_bits": 48,
+      "condition": 562949953421311.0,
+      "relative_forward": 1.7763568394002505e-15,
+      "bound": 0.125,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_near_spd_boundary_conditioning_is_not_positivity",
+      "test_status": "passed"
+    },
+    {
+      "case": "near_spd_boundary",
+      "exponent": 0,
+      "separation_bits": 52,
+      "condition": 9007199254740991.0,
+      "relative_forward": 1.1102230246251564e-16,
+      "bound": 0.125,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_near_spd_boundary_conditioning_is_not_positivity",
+      "test_status": "passed"
+    },
+    {
+      "case": "near_spd_boundary",
+      "exponent": 400,
+      "separation_bits": 4,
+      "condition": 31.0,
+      "relative_forward": 1.686414720949605e-17,
+      "bound": 5.5067062021407764e-14,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_near_spd_boundary_conditioning_is_not_positivity",
+      "test_status": "passed"
+    },
+    {
+      "case": "near_spd_boundary",
+      "exponent": 400,
+      "separation_bits": 16,
+      "condition": 131071.0,
+      "relative_forward": 8.881946827823435e-17,
+      "bound": 2.3282886729703023e-10,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_near_spd_boundary_conditioning_is_not_positivity",
+      "test_status": "passed"
+    },
+    {
+      "case": "near_spd_boundary",
+      "exponent": 400,
+      "separation_bits": 28,
+      "condition": 536870911.0,
+      "relative_forward": 1.862645149230957e-09,
+      "bound": 9.536743146298932e-07,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_near_spd_boundary_conditioning_is_not_positivity",
+      "test_status": "passed"
+    },
+    {
+      "case": "near_spd_boundary",
+      "exponent": 400,
+      "separation_bits": 40,
+      "condition": 2199023255551.0,
+      "relative_forward": 4.547473508864641e-13,
+      "bound": 0.0039062499999982236,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_near_spd_boundary_conditioning_is_not_positivity",
+      "test_status": "passed"
+    },
+    {
+      "case": "near_spd_boundary",
+      "exponent": 400,
+      "separation_bits": 48,
+      "condition": 562949953421311.0,
+      "relative_forward": 1.7763568394002505e-15,
+      "bound": 0.125,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_near_spd_boundary_conditioning_is_not_positivity",
+      "test_status": "passed"
+    },
+    {
+      "case": "near_spd_boundary",
+      "exponent": 400,
+      "separation_bits": 52,
+      "condition": 9007199254740991.0,
+      "relative_forward": 1.1102230246251564e-16,
+      "bound": 0.125,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_near_spd_boundary_conditioning_is_not_positivity",
+      "test_status": "passed"
+    },
+    {
+      "case": "metric_projector",
+      "metric_diagonal": [
+        0.0625,
+        1.0,
+        16.0,
+        256.0
+      ],
+      "absolute_error": 1.7763568394002505e-15,
+      "scope": "analysis_fixture_not_C_selector",
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_nonidentity_vertex_metric_projector_is_metric_self_adjoint",
+      "test_status": "passed"
+    },
+    {
+      "case": "mutation_controls",
+      "detected": [
+        "left_associated_star_product",
+        "identity_inverse",
+        "wrong_isolated_sector"
+      ],
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_pressure_detects_broken_product_inverse_and_sector_controls",
+      "test_status": "passed"
+    },
+    {
+      "case": "isolated_cluster_projector",
+      "gap": 4.0,
+      "order": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "error": 2.220446049250313e-16,
+      "bound": 8.881784197001252e-15,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_repeated_cluster_projector_is_basis_invariant_with_strict_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "isolated_cluster_projector",
+      "gap": 4.0,
+      "order": [
+        0,
+        1,
+        3,
+        2
+      ],
+      "error": 2.220446049250313e-16,
+      "bound": 8.881784197001252e-15,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_repeated_cluster_projector_is_basis_invariant_with_strict_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "isolated_cluster_projector",
+      "gap": 4.0,
+      "order": [
+        0,
+        2,
+        1,
+        3
+      ],
+      "error": 2.220446049250313e-16,
+      "bound": 8.881784197001252e-15,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_repeated_cluster_projector_is_basis_invariant_with_strict_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "isolated_cluster_projector",
+      "gap": 4.0,
+      "order": [
+        0,
+        2,
+        3,
+        1
+      ],
+      "error": 2.220446049250313e-16,
+      "bound": 8.881784197001252e-15,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_repeated_cluster_projector_is_basis_invariant_with_strict_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "isolated_cluster_projector",
+      "gap": 4.0,
+      "order": [
+        0,
+        3,
+        1,
+        2
+      ],
+      "error": 2.220446049250313e-16,
+      "bound": 8.881784197001252e-15,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_repeated_cluster_projector_is_basis_invariant_with_strict_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "isolated_cluster_projector",
+      "gap": 4.0,
+      "order": [
+        0,
+        3,
+        2,
+        1
+      ],
+      "error": 2.220446049250313e-16,
+      "bound": 8.881784197001252e-15,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_repeated_cluster_projector_is_basis_invariant_with_strict_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "isolated_cluster_projector",
+      "gap": 4.0,
+      "order": [
+        1,
+        0,
+        2,
+        3
+      ],
+      "error": 2.220446049250313e-16,
+      "bound": 8.881784197001252e-15,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_repeated_cluster_projector_is_basis_invariant_with_strict_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "isolated_cluster_projector",
+      "gap": 4.0,
+      "order": [
+        1,
+        0,
+        3,
+        2
+      ],
+      "error": 2.220446049250313e-16,
+      "bound": 8.881784197001252e-15,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_repeated_cluster_projector_is_basis_invariant_with_strict_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "isolated_cluster_projector",
+      "gap": 4.0,
+      "order": [
+        1,
+        2,
+        0,
+        3
+      ],
+      "error": 2.220446049250313e-16,
+      "bound": 8.881784197001252e-15,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_repeated_cluster_projector_is_basis_invariant_with_strict_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "isolated_cluster_projector",
+      "gap": 4.0,
+      "order": [
+        1,
+        2,
+        3,
+        0
+      ],
+      "error": 2.220446049250313e-16,
+      "bound": 8.881784197001252e-15,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_repeated_cluster_projector_is_basis_invariant_with_strict_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "isolated_cluster_projector",
+      "gap": 4.0,
+      "order": [
+        1,
+        3,
+        0,
+        2
+      ],
+      "error": 2.220446049250313e-16,
+      "bound": 8.881784197001252e-15,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_repeated_cluster_projector_is_basis_invariant_with_strict_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "isolated_cluster_projector",
+      "gap": 4.0,
+      "order": [
+        1,
+        3,
+        2,
+        0
+      ],
+      "error": 2.220446049250313e-16,
+      "bound": 8.881784197001252e-15,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_repeated_cluster_projector_is_basis_invariant_with_strict_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "isolated_cluster_projector",
+      "gap": 4.0,
+      "order": [
+        2,
+        0,
+        1,
+        3
+      ],
+      "error": 2.220446049250313e-16,
+      "bound": 8.881784197001252e-15,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_repeated_cluster_projector_is_basis_invariant_with_strict_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "isolated_cluster_projector",
+      "gap": 4.0,
+      "order": [
+        2,
+        0,
+        3,
+        1
+      ],
+      "error": 2.220446049250313e-16,
+      "bound": 8.881784197001252e-15,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_repeated_cluster_projector_is_basis_invariant_with_strict_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "isolated_cluster_projector",
+      "gap": 4.0,
+      "order": [
+        2,
+        1,
+        0,
+        3
+      ],
+      "error": 2.220446049250313e-16,
+      "bound": 8.881784197001252e-15,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_repeated_cluster_projector_is_basis_invariant_with_strict_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "isolated_cluster_projector",
+      "gap": 4.0,
+      "order": [
+        2,
+        1,
+        3,
+        0
+      ],
+      "error": 2.220446049250313e-16,
+      "bound": 8.881784197001252e-15,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_repeated_cluster_projector_is_basis_invariant_with_strict_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "isolated_cluster_projector",
+      "gap": 4.0,
+      "order": [
+        2,
+        3,
+        0,
+        1
+      ],
+      "error": 2.220446049250313e-16,
+      "bound": 8.881784197001252e-15,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_repeated_cluster_projector_is_basis_invariant_with_strict_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "isolated_cluster_projector",
+      "gap": 4.0,
+      "order": [
+        2,
+        3,
+        1,
+        0
+      ],
+      "error": 2.220446049250313e-16,
+      "bound": 8.881784197001252e-15,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_repeated_cluster_projector_is_basis_invariant_with_strict_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "isolated_cluster_projector",
+      "gap": 4.0,
+      "order": [
+        3,
+        0,
+        1,
+        2
+      ],
+      "error": 2.220446049250313e-16,
+      "bound": 8.881784197001252e-15,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_repeated_cluster_projector_is_basis_invariant_with_strict_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "isolated_cluster_projector",
+      "gap": 4.0,
+      "order": [
+        3,
+        0,
+        2,
+        1
+      ],
+      "error": 2.220446049250313e-16,
+      "bound": 8.881784197001252e-15,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_repeated_cluster_projector_is_basis_invariant_with_strict_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "isolated_cluster_projector",
+      "gap": 4.0,
+      "order": [
+        3,
+        1,
+        0,
+        2
+      ],
+      "error": 2.220446049250313e-16,
+      "bound": 8.881784197001252e-15,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_repeated_cluster_projector_is_basis_invariant_with_strict_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "isolated_cluster_projector",
+      "gap": 4.0,
+      "order": [
+        3,
+        1,
+        2,
+        0
+      ],
+      "error": 2.220446049250313e-16,
+      "bound": 8.881784197001252e-15,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_repeated_cluster_projector_is_basis_invariant_with_strict_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "isolated_cluster_projector",
+      "gap": 4.0,
+      "order": [
+        3,
+        2,
+        0,
+        1
+      ],
+      "error": 2.220446049250313e-16,
+      "bound": 8.881784197001252e-15,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_repeated_cluster_projector_is_basis_invariant_with_strict_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "isolated_cluster_projector",
+      "gap": 4.0,
+      "order": [
+        3,
+        2,
+        1,
+        0
+      ],
+      "error": 2.220446049250313e-16,
+      "bound": 8.881784197001252e-15,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_repeated_cluster_projector_is_basis_invariant_with_strict_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "isolated_cluster_projector",
+      "gap": 0.000244140625,
+      "order": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "error": 2.220446049250313e-16,
+      "bound": 2.9110935884091305e-11,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_repeated_cluster_projector_is_basis_invariant_with_strict_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "isolated_cluster_projector",
+      "gap": 0.000244140625,
+      "order": [
+        0,
+        1,
+        3,
+        2
+      ],
+      "error": 2.220446049250313e-16,
+      "bound": 2.9110935884091305e-11,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_repeated_cluster_projector_is_basis_invariant_with_strict_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "isolated_cluster_projector",
+      "gap": 0.000244140625,
+      "order": [
+        0,
+        2,
+        1,
+        3
+      ],
+      "error": 2.220446049250313e-16,
+      "bound": 2.9110935884091305e-11,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_repeated_cluster_projector_is_basis_invariant_with_strict_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "isolated_cluster_projector",
+      "gap": 0.000244140625,
+      "order": [
+        0,
+        2,
+        3,
+        1
+      ],
+      "error": 2.220446049250313e-16,
+      "bound": 2.9110935884091305e-11,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_repeated_cluster_projector_is_basis_invariant_with_strict_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "isolated_cluster_projector",
+      "gap": 0.000244140625,
+      "order": [
+        0,
+        3,
+        1,
+        2
+      ],
+      "error": 2.220446049250313e-16,
+      "bound": 2.9110935884091305e-11,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_repeated_cluster_projector_is_basis_invariant_with_strict_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "isolated_cluster_projector",
+      "gap": 0.000244140625,
+      "order": [
+        0,
+        3,
+        2,
+        1
+      ],
+      "error": 2.220446049250313e-16,
+      "bound": 2.9110935884091305e-11,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_repeated_cluster_projector_is_basis_invariant_with_strict_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "isolated_cluster_projector",
+      "gap": 0.000244140625,
+      "order": [
+        1,
+        0,
+        2,
+        3
+      ],
+      "error": 2.220446049250313e-16,
+      "bound": 2.9110935884091305e-11,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_repeated_cluster_projector_is_basis_invariant_with_strict_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "isolated_cluster_projector",
+      "gap": 0.000244140625,
+      "order": [
+        1,
+        0,
+        3,
+        2
+      ],
+      "error": 2.220446049250313e-16,
+      "bound": 2.9110935884091305e-11,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_repeated_cluster_projector_is_basis_invariant_with_strict_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "isolated_cluster_projector",
+      "gap": 0.000244140625,
+      "order": [
+        1,
+        2,
+        0,
+        3
+      ],
+      "error": 2.220446049250313e-16,
+      "bound": 2.9110935884091305e-11,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_repeated_cluster_projector_is_basis_invariant_with_strict_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "isolated_cluster_projector",
+      "gap": 0.000244140625,
+      "order": [
+        1,
+        2,
+        3,
+        0
+      ],
+      "error": 2.220446049250313e-16,
+      "bound": 2.9110935884091305e-11,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_repeated_cluster_projector_is_basis_invariant_with_strict_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "isolated_cluster_projector",
+      "gap": 0.000244140625,
+      "order": [
+        1,
+        3,
+        0,
+        2
+      ],
+      "error": 2.220446049250313e-16,
+      "bound": 2.9110935884091305e-11,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_repeated_cluster_projector_is_basis_invariant_with_strict_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "isolated_cluster_projector",
+      "gap": 0.000244140625,
+      "order": [
+        1,
+        3,
+        2,
+        0
+      ],
+      "error": 2.220446049250313e-16,
+      "bound": 2.9110935884091305e-11,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_repeated_cluster_projector_is_basis_invariant_with_strict_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "isolated_cluster_projector",
+      "gap": 0.000244140625,
+      "order": [
+        2,
+        0,
+        1,
+        3
+      ],
+      "error": 2.220446049250313e-16,
+      "bound": 2.9110935884091305e-11,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_repeated_cluster_projector_is_basis_invariant_with_strict_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "isolated_cluster_projector",
+      "gap": 0.000244140625,
+      "order": [
+        2,
+        0,
+        3,
+        1
+      ],
+      "error": 2.220446049250313e-16,
+      "bound": 2.9110935884091305e-11,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_repeated_cluster_projector_is_basis_invariant_with_strict_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "isolated_cluster_projector",
+      "gap": 0.000244140625,
+      "order": [
+        2,
+        1,
+        0,
+        3
+      ],
+      "error": 2.220446049250313e-16,
+      "bound": 2.9110935884091305e-11,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_repeated_cluster_projector_is_basis_invariant_with_strict_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "isolated_cluster_projector",
+      "gap": 0.000244140625,
+      "order": [
+        2,
+        1,
+        3,
+        0
+      ],
+      "error": 2.220446049250313e-16,
+      "bound": 2.9110935884091305e-11,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_repeated_cluster_projector_is_basis_invariant_with_strict_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "isolated_cluster_projector",
+      "gap": 0.000244140625,
+      "order": [
+        2,
+        3,
+        0,
+        1
+      ],
+      "error": 2.220446049250313e-16,
+      "bound": 2.9110935884091305e-11,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_repeated_cluster_projector_is_basis_invariant_with_strict_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "isolated_cluster_projector",
+      "gap": 0.000244140625,
+      "order": [
+        2,
+        3,
+        1,
+        0
+      ],
+      "error": 2.220446049250313e-16,
+      "bound": 2.9110935884091305e-11,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_repeated_cluster_projector_is_basis_invariant_with_strict_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "isolated_cluster_projector",
+      "gap": 0.000244140625,
+      "order": [
+        3,
+        0,
+        1,
+        2
+      ],
+      "error": 2.220446049250313e-16,
+      "bound": 2.9110935884091305e-11,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_repeated_cluster_projector_is_basis_invariant_with_strict_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "isolated_cluster_projector",
+      "gap": 0.000244140625,
+      "order": [
+        3,
+        0,
+        2,
+        1
+      ],
+      "error": 2.220446049250313e-16,
+      "bound": 2.9110935884091305e-11,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_repeated_cluster_projector_is_basis_invariant_with_strict_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "isolated_cluster_projector",
+      "gap": 0.000244140625,
+      "order": [
+        3,
+        1,
+        0,
+        2
+      ],
+      "error": 2.220446049250313e-16,
+      "bound": 2.9110935884091305e-11,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_repeated_cluster_projector_is_basis_invariant_with_strict_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "isolated_cluster_projector",
+      "gap": 0.000244140625,
+      "order": [
+        3,
+        1,
+        2,
+        0
+      ],
+      "error": 2.220446049250313e-16,
+      "bound": 2.9110935884091305e-11,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_repeated_cluster_projector_is_basis_invariant_with_strict_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "isolated_cluster_projector",
+      "gap": 0.000244140625,
+      "order": [
+        3,
+        2,
+        0,
+        1
+      ],
+      "error": 2.220446049250313e-16,
+      "bound": 2.9110935884091305e-11,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_repeated_cluster_projector_is_basis_invariant_with_strict_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "isolated_cluster_projector",
+      "gap": 0.000244140625,
+      "order": [
+        3,
+        2,
+        1,
+        0
+      ],
+      "error": 2.220446049250313e-16,
+      "bound": 2.9110935884091305e-11,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_repeated_cluster_projector_is_basis_invariant_with_strict_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "isolated_cluster_projector",
+      "gap": 3.725290298461914e-09,
+      "order": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "error": 2.220446049250313e-16,
+      "bound": 1.9073486399179274e-06,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_repeated_cluster_projector_is_basis_invariant_with_strict_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "isolated_cluster_projector",
+      "gap": 3.725290298461914e-09,
+      "order": [
+        0,
+        1,
+        3,
+        2
+      ],
+      "error": 2.220446049250313e-16,
+      "bound": 1.9073486399179274e-06,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_repeated_cluster_projector_is_basis_invariant_with_strict_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "isolated_cluster_projector",
+      "gap": 3.725290298461914e-09,
+      "order": [
+        0,
+        2,
+        1,
+        3
+      ],
+      "error": 2.220446049250313e-16,
+      "bound": 1.9073486399179274e-06,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_repeated_cluster_projector_is_basis_invariant_with_strict_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "isolated_cluster_projector",
+      "gap": 3.725290298461914e-09,
+      "order": [
+        0,
+        2,
+        3,
+        1
+      ],
+      "error": 2.220446049250313e-16,
+      "bound": 1.9073486399179274e-06,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_repeated_cluster_projector_is_basis_invariant_with_strict_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "isolated_cluster_projector",
+      "gap": 3.725290298461914e-09,
+      "order": [
+        0,
+        3,
+        1,
+        2
+      ],
+      "error": 2.220446049250313e-16,
+      "bound": 1.9073486399179274e-06,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_repeated_cluster_projector_is_basis_invariant_with_strict_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "isolated_cluster_projector",
+      "gap": 3.725290298461914e-09,
+      "order": [
+        0,
+        3,
+        2,
+        1
+      ],
+      "error": 2.220446049250313e-16,
+      "bound": 1.9073486399179274e-06,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_repeated_cluster_projector_is_basis_invariant_with_strict_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "isolated_cluster_projector",
+      "gap": 3.725290298461914e-09,
+      "order": [
+        1,
+        0,
+        2,
+        3
+      ],
+      "error": 2.220446049250313e-16,
+      "bound": 1.9073486399179274e-06,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_repeated_cluster_projector_is_basis_invariant_with_strict_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "isolated_cluster_projector",
+      "gap": 3.725290298461914e-09,
+      "order": [
+        1,
+        0,
+        3,
+        2
+      ],
+      "error": 2.220446049250313e-16,
+      "bound": 1.9073486399179274e-06,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_repeated_cluster_projector_is_basis_invariant_with_strict_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "isolated_cluster_projector",
+      "gap": 3.725290298461914e-09,
+      "order": [
+        1,
+        2,
+        0,
+        3
+      ],
+      "error": 2.220446049250313e-16,
+      "bound": 1.9073486399179274e-06,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_repeated_cluster_projector_is_basis_invariant_with_strict_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "isolated_cluster_projector",
+      "gap": 3.725290298461914e-09,
+      "order": [
+        1,
+        2,
+        3,
+        0
+      ],
+      "error": 2.220446049250313e-16,
+      "bound": 1.9073486399179274e-06,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_repeated_cluster_projector_is_basis_invariant_with_strict_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "isolated_cluster_projector",
+      "gap": 3.725290298461914e-09,
+      "order": [
+        1,
+        3,
+        0,
+        2
+      ],
+      "error": 2.220446049250313e-16,
+      "bound": 1.9073486399179274e-06,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_repeated_cluster_projector_is_basis_invariant_with_strict_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "isolated_cluster_projector",
+      "gap": 3.725290298461914e-09,
+      "order": [
+        1,
+        3,
+        2,
+        0
+      ],
+      "error": 2.220446049250313e-16,
+      "bound": 1.9073486399179274e-06,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_repeated_cluster_projector_is_basis_invariant_with_strict_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "isolated_cluster_projector",
+      "gap": 3.725290298461914e-09,
+      "order": [
+        2,
+        0,
+        1,
+        3
+      ],
+      "error": 2.220446049250313e-16,
+      "bound": 1.9073486399179274e-06,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_repeated_cluster_projector_is_basis_invariant_with_strict_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "isolated_cluster_projector",
+      "gap": 3.725290298461914e-09,
+      "order": [
+        2,
+        0,
+        3,
+        1
+      ],
+      "error": 2.220446049250313e-16,
+      "bound": 1.9073486399179274e-06,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_repeated_cluster_projector_is_basis_invariant_with_strict_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "isolated_cluster_projector",
+      "gap": 3.725290298461914e-09,
+      "order": [
+        2,
+        1,
+        0,
+        3
+      ],
+      "error": 2.220446049250313e-16,
+      "bound": 1.9073486399179274e-06,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_repeated_cluster_projector_is_basis_invariant_with_strict_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "isolated_cluster_projector",
+      "gap": 3.725290298461914e-09,
+      "order": [
+        2,
+        1,
+        3,
+        0
+      ],
+      "error": 2.220446049250313e-16,
+      "bound": 1.9073486399179274e-06,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_repeated_cluster_projector_is_basis_invariant_with_strict_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "isolated_cluster_projector",
+      "gap": 3.725290298461914e-09,
+      "order": [
+        2,
+        3,
+        0,
+        1
+      ],
+      "error": 2.220446049250313e-16,
+      "bound": 1.9073486399179274e-06,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_repeated_cluster_projector_is_basis_invariant_with_strict_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "isolated_cluster_projector",
+      "gap": 3.725290298461914e-09,
+      "order": [
+        2,
+        3,
+        1,
+        0
+      ],
+      "error": 2.220446049250313e-16,
+      "bound": 1.9073486399179274e-06,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_repeated_cluster_projector_is_basis_invariant_with_strict_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "isolated_cluster_projector",
+      "gap": 3.725290298461914e-09,
+      "order": [
+        3,
+        0,
+        1,
+        2
+      ],
+      "error": 2.220446049250313e-16,
+      "bound": 1.9073486399179274e-06,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_repeated_cluster_projector_is_basis_invariant_with_strict_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "isolated_cluster_projector",
+      "gap": 3.725290298461914e-09,
+      "order": [
+        3,
+        0,
+        2,
+        1
+      ],
+      "error": 2.220446049250313e-16,
+      "bound": 1.9073486399179274e-06,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_repeated_cluster_projector_is_basis_invariant_with_strict_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "isolated_cluster_projector",
+      "gap": 3.725290298461914e-09,
+      "order": [
+        3,
+        1,
+        0,
+        2
+      ],
+      "error": 2.220446049250313e-16,
+      "bound": 1.9073486399179274e-06,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_repeated_cluster_projector_is_basis_invariant_with_strict_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "isolated_cluster_projector",
+      "gap": 3.725290298461914e-09,
+      "order": [
+        3,
+        1,
+        2,
+        0
+      ],
+      "error": 2.220446049250313e-16,
+      "bound": 1.9073486399179274e-06,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_repeated_cluster_projector_is_basis_invariant_with_strict_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "isolated_cluster_projector",
+      "gap": 3.725290298461914e-09,
+      "order": [
+        3,
+        2,
+        0,
+        1
+      ],
+      "error": 2.220446049250313e-16,
+      "bound": 1.9073486399179274e-06,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_repeated_cluster_projector_is_basis_invariant_with_strict_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "isolated_cluster_projector",
+      "gap": 3.725290298461914e-09,
+      "order": [
+        3,
+        2,
+        1,
+        0
+      ],
+      "error": 2.220446049250313e-16,
+      "bound": 1.9073486399179274e-06,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_repeated_cluster_projector_is_basis_invariant_with_strict_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "isolated_cluster_projector",
+      "gap": 9.094947017729282e-13,
+      "order": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "error": 2.220446049250313e-16,
+      "bound": 0.007812500000007105,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_repeated_cluster_projector_is_basis_invariant_with_strict_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "isolated_cluster_projector",
+      "gap": 9.094947017729282e-13,
+      "order": [
+        0,
+        1,
+        3,
+        2
+      ],
+      "error": 2.220446049250313e-16,
+      "bound": 0.007812500000007105,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_repeated_cluster_projector_is_basis_invariant_with_strict_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "isolated_cluster_projector",
+      "gap": 9.094947017729282e-13,
+      "order": [
+        0,
+        2,
+        1,
+        3
+      ],
+      "error": 2.220446049250313e-16,
+      "bound": 0.007812500000007105,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_repeated_cluster_projector_is_basis_invariant_with_strict_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "isolated_cluster_projector",
+      "gap": 9.094947017729282e-13,
+      "order": [
+        0,
+        2,
+        3,
+        1
+      ],
+      "error": 2.220446049250313e-16,
+      "bound": 0.007812500000007105,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_repeated_cluster_projector_is_basis_invariant_with_strict_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "isolated_cluster_projector",
+      "gap": 9.094947017729282e-13,
+      "order": [
+        0,
+        3,
+        1,
+        2
+      ],
+      "error": 2.220446049250313e-16,
+      "bound": 0.007812500000007105,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_repeated_cluster_projector_is_basis_invariant_with_strict_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "isolated_cluster_projector",
+      "gap": 9.094947017729282e-13,
+      "order": [
+        0,
+        3,
+        2,
+        1
+      ],
+      "error": 2.220446049250313e-16,
+      "bound": 0.007812500000007105,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_repeated_cluster_projector_is_basis_invariant_with_strict_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "isolated_cluster_projector",
+      "gap": 9.094947017729282e-13,
+      "order": [
+        1,
+        0,
+        2,
+        3
+      ],
+      "error": 2.220446049250313e-16,
+      "bound": 0.007812500000007105,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_repeated_cluster_projector_is_basis_invariant_with_strict_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "isolated_cluster_projector",
+      "gap": 9.094947017729282e-13,
+      "order": [
+        1,
+        0,
+        3,
+        2
+      ],
+      "error": 2.220446049250313e-16,
+      "bound": 0.007812500000007105,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_repeated_cluster_projector_is_basis_invariant_with_strict_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "isolated_cluster_projector",
+      "gap": 9.094947017729282e-13,
+      "order": [
+        1,
+        2,
+        0,
+        3
+      ],
+      "error": 2.220446049250313e-16,
+      "bound": 0.007812500000007105,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_repeated_cluster_projector_is_basis_invariant_with_strict_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "isolated_cluster_projector",
+      "gap": 9.094947017729282e-13,
+      "order": [
+        1,
+        2,
+        3,
+        0
+      ],
+      "error": 2.220446049250313e-16,
+      "bound": 0.007812500000007105,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_repeated_cluster_projector_is_basis_invariant_with_strict_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "isolated_cluster_projector",
+      "gap": 9.094947017729282e-13,
+      "order": [
+        1,
+        3,
+        0,
+        2
+      ],
+      "error": 2.220446049250313e-16,
+      "bound": 0.007812500000007105,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_repeated_cluster_projector_is_basis_invariant_with_strict_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "isolated_cluster_projector",
+      "gap": 9.094947017729282e-13,
+      "order": [
+        1,
+        3,
+        2,
+        0
+      ],
+      "error": 2.220446049250313e-16,
+      "bound": 0.007812500000007105,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_repeated_cluster_projector_is_basis_invariant_with_strict_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "isolated_cluster_projector",
+      "gap": 9.094947017729282e-13,
+      "order": [
+        2,
+        0,
+        1,
+        3
+      ],
+      "error": 2.220446049250313e-16,
+      "bound": 0.007812500000007105,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_repeated_cluster_projector_is_basis_invariant_with_strict_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "isolated_cluster_projector",
+      "gap": 9.094947017729282e-13,
+      "order": [
+        2,
+        0,
+        3,
+        1
+      ],
+      "error": 2.220446049250313e-16,
+      "bound": 0.007812500000007105,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_repeated_cluster_projector_is_basis_invariant_with_strict_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "isolated_cluster_projector",
+      "gap": 9.094947017729282e-13,
+      "order": [
+        2,
+        1,
+        0,
+        3
+      ],
+      "error": 2.220446049250313e-16,
+      "bound": 0.007812500000007105,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_repeated_cluster_projector_is_basis_invariant_with_strict_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "isolated_cluster_projector",
+      "gap": 9.094947017729282e-13,
+      "order": [
+        2,
+        1,
+        3,
+        0
+      ],
+      "error": 2.220446049250313e-16,
+      "bound": 0.007812500000007105,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_repeated_cluster_projector_is_basis_invariant_with_strict_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "isolated_cluster_projector",
+      "gap": 9.094947017729282e-13,
+      "order": [
+        2,
+        3,
+        0,
+        1
+      ],
+      "error": 2.220446049250313e-16,
+      "bound": 0.007812500000007105,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_repeated_cluster_projector_is_basis_invariant_with_strict_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "isolated_cluster_projector",
+      "gap": 9.094947017729282e-13,
+      "order": [
+        2,
+        3,
+        1,
+        0
+      ],
+      "error": 2.220446049250313e-16,
+      "bound": 0.007812500000007105,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_repeated_cluster_projector_is_basis_invariant_with_strict_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "isolated_cluster_projector",
+      "gap": 9.094947017729282e-13,
+      "order": [
+        3,
+        0,
+        1,
+        2
+      ],
+      "error": 2.220446049250313e-16,
+      "bound": 0.007812500000007105,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_repeated_cluster_projector_is_basis_invariant_with_strict_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "isolated_cluster_projector",
+      "gap": 9.094947017729282e-13,
+      "order": [
+        3,
+        0,
+        2,
+        1
+      ],
+      "error": 2.220446049250313e-16,
+      "bound": 0.007812500000007105,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_repeated_cluster_projector_is_basis_invariant_with_strict_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "isolated_cluster_projector",
+      "gap": 9.094947017729282e-13,
+      "order": [
+        3,
+        1,
+        0,
+        2
+      ],
+      "error": 2.220446049250313e-16,
+      "bound": 0.007812500000007105,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_repeated_cluster_projector_is_basis_invariant_with_strict_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "isolated_cluster_projector",
+      "gap": 9.094947017729282e-13,
+      "order": [
+        3,
+        1,
+        2,
+        0
+      ],
+      "error": 2.220446049250313e-16,
+      "bound": 0.007812500000007105,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_repeated_cluster_projector_is_basis_invariant_with_strict_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "isolated_cluster_projector",
+      "gap": 9.094947017729282e-13,
+      "order": [
+        3,
+        2,
+        0,
+        1
+      ],
+      "error": 2.220446049250313e-16,
+      "bound": 0.007812500000007105,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_repeated_cluster_projector_is_basis_invariant_with_strict_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "isolated_cluster_projector",
+      "gap": 9.094947017729282e-13,
+      "order": [
+        3,
+        2,
+        1,
+        0
+      ],
+      "error": 2.220446049250313e-16,
+      "bound": 0.007812500000007105,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_repeated_cluster_projector_is_basis_invariant_with_strict_gap",
+      "test_status": "passed"
+    },
+    {
+      "case": "star_decimal_product",
+      "cases": 648,
+      "coefficient_scope": "binary64_sqrt_then_division",
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_star_decimal_oracle_all_overlap_classes_scales_and_signs",
+      "test_status": "passed"
+    },
+    {
+      "case": "mixed_scale_star",
+      "form": [
+        5e-324,
+        1e+150
+      ],
+      "coupling": 2.4703282292062327e-174,
+      "old_componentwise_relative_error": 1.0,
+      "old_normwise_error_exact": "5503284107318959/2227754207823337294799017665799826591996786080580475588715265762419788809545234007202504763561459283009218505613059670347702618773476904099891864902672109549678968216338871571001254575290937121320613126389433922826862852791611741916824271558858918217887453071786716477197401739002367448361357137064675846129596843973967400147175957783517161338689455088388939055602065400142778573097021455671622483835194050791412727704315895876657788610066897415121844184131186876079234413526714166466838528",
+      "stored_determinant_sign": -1,
+      "true_underflow_diagonal": true,
+      "test": "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_star_mixed_scale_retains_representable_coupling",
+      "test_status": "passed"
+    }
+  ],
+  "charge_observations": [
+    {
+      "case": "conservative_coordinate_permutations",
+      "cases": 48,
+      "residuals": [
+        0.0,
+        2.0
+      ],
+      "exact_stored_drift": "0",
+      "test": "tests.models.test_grc_v4_transport.ChargePrecisionEnvelopeTests.test_exact_conservative_transfer_all_vertex_orders",
+      "test_status": "passed"
+    },
+    {
+      "case": "transfer_precision",
+      "magnitude": 5e-324,
+      "rate": 0.5,
+      "dt": 5e-324,
+      "result": [
+        5e-324,
+        0.0
+      ],
+      "exact_stored_drift": "0",
+      "admitted": true,
+      "test": "tests.models.test_grc_v4_transport.ChargePrecisionEnvelopeTests.test_half_ulp_and_subnormal_transfer_grid",
+      "test_status": "passed"
+    },
+    {
+      "case": "transfer_precision",
+      "magnitude": 5e-324,
+      "rate": 1.0,
+      "dt": 5e-324,
+      "result": [
+        0.0,
+        5e-324
+      ],
+      "exact_stored_drift": "0",
+      "admitted": true,
+      "test": "tests.models.test_grc_v4_transport.ChargePrecisionEnvelopeTests.test_half_ulp_and_subnormal_transfer_grid",
+      "test_status": "passed"
+    },
+    {
+      "case": "transfer_precision",
+      "magnitude": 5e-324,
+      "rate": 1.0,
+      "dt": 0.0,
+      "result": [
+        5e-324,
+        0.0
+      ],
+      "exact_stored_drift": "0",
+      "admitted": true,
+      "test": "tests.models.test_grc_v4_transport.ChargePrecisionEnvelopeTests.test_half_ulp_and_subnormal_transfer_grid",
+      "test_status": "passed"
+    },
+    {
+      "case": "transfer_precision",
+      "magnitude": 5e-324,
+      "rate": 1.0,
+      "dt": 0.0,
+      "result": [
+        5e-324,
+        0.0
+      ],
+      "exact_stored_drift": "0",
+      "admitted": true,
+      "test": "tests.models.test_grc_v4_transport.ChargePrecisionEnvelopeTests.test_half_ulp_and_subnormal_transfer_grid",
+      "test_status": "passed"
+    },
+    {
+      "case": "transfer_precision",
+      "magnitude": 5e-324,
+      "rate": 1.0,
+      "dt": 5e-324,
+      "result": [
+        0.0,
+        5e-324
+      ],
+      "exact_stored_drift": "0",
+      "admitted": true,
+      "test": "tests.models.test_grc_v4_transport.ChargePrecisionEnvelopeTests.test_half_ulp_and_subnormal_transfer_grid",
+      "test_status": "passed"
+    },
+    {
+      "case": "transfer_precision",
+      "magnitude": 5e-324,
+      "rate": 1.0,
+      "dt": 0.5,
+      "result": [
+        -0.5,
+        0.5
+      ],
+      "exact_stored_drift": "-1/202402253307310618352495346718917307049556649764142118356901358027430339567995346891960383701437124495187077864316811911389808737385793476867013399940738509921517424276566361364466907742093216341239767678472745068562007483424692698618103355649159556340810056512358769552333414615230502532186327508646006263307707741093494784",
+      "admitted": false,
+      "test": "tests.models.test_grc_v4_transport.ChargePrecisionEnvelopeTests.test_half_ulp_and_subnormal_transfer_grid",
+      "test_status": "passed"
+    },
+    {
+      "case": "transfer_precision",
+      "magnitude": 5e-324,
+      "rate": 1.0,
+      "dt": 1.0,
+      "result": [
+        -1.0,
+        1.0
+      ],
+      "exact_stored_drift": "-1/202402253307310618352495346718917307049556649764142118356901358027430339567995346891960383701437124495187077864316811911389808737385793476867013399940738509921517424276566361364466907742093216341239767678472745068562007483424692698618103355649159556340810056512358769552333414615230502532186327508646006263307707741093494784",
+      "admitted": false,
+      "test": "tests.models.test_grc_v4_transport.ChargePrecisionEnvelopeTests.test_half_ulp_and_subnormal_transfer_grid",
+      "test_status": "passed"
+    },
+    {
+      "case": "transfer_precision",
+      "magnitude": 2.2250738585072014e-308,
+      "rate": 0.5,
+      "dt": 5e-324,
+      "result": [
+        2.2250738585072014e-308,
+        0.0
+      ],
+      "exact_stored_drift": "0",
+      "admitted": true,
+      "test": "tests.models.test_grc_v4_transport.ChargePrecisionEnvelopeTests.test_half_ulp_and_subnormal_transfer_grid",
+      "test_status": "passed"
+    },
+    {
+      "case": "transfer_precision",
+      "magnitude": 2.2250738585072014e-308,
+      "rate": 1.0,
+      "dt": 5e-324,
+      "result": [
+        2.225073858507201e-308,
+        5e-324
+      ],
+      "exact_stored_drift": "0",
+      "admitted": true,
+      "test": "tests.models.test_grc_v4_transport.ChargePrecisionEnvelopeTests.test_half_ulp_and_subnormal_transfer_grid",
+      "test_status": "passed"
+    },
+    {
+      "case": "transfer_precision",
+      "magnitude": 2.2250738585072014e-308,
+      "rate": 1.0,
+      "dt": 0.0,
+      "result": [
+        2.2250738585072014e-308,
+        0.0
+      ],
+      "exact_stored_drift": "0",
+      "admitted": true,
+      "test": "tests.models.test_grc_v4_transport.ChargePrecisionEnvelopeTests.test_half_ulp_and_subnormal_transfer_grid",
+      "test_status": "passed"
+    },
+    {
+      "case": "transfer_precision",
+      "magnitude": 2.2250738585072014e-308,
+      "rate": 1.0,
+      "dt": 0.0,
+      "result": [
+        2.2250738585072014e-308,
+        0.0
+      ],
+      "exact_stored_drift": "0",
+      "admitted": true,
+      "test": "tests.models.test_grc_v4_transport.ChargePrecisionEnvelopeTests.test_half_ulp_and_subnormal_transfer_grid",
+      "test_status": "passed"
+    },
+    {
+      "case": "transfer_precision",
+      "magnitude": 2.2250738585072014e-308,
+      "rate": 1.0,
+      "dt": 5e-324,
+      "result": [
+        2.225073858507201e-308,
+        5e-324
+      ],
+      "exact_stored_drift": "0",
+      "admitted": true,
+      "test": "tests.models.test_grc_v4_transport.ChargePrecisionEnvelopeTests.test_half_ulp_and_subnormal_transfer_grid",
+      "test_status": "passed"
+    },
+    {
+      "case": "transfer_precision",
+      "magnitude": 2.2250738585072014e-308,
+      "rate": 1.0,
+      "dt": 0.5,
+      "result": [
+        -0.5,
+        0.5
+      ],
+      "exact_stored_drift": "-1/44942328371557897693232629769725618340449424473557664318357520289433168951375240783177119330601884005280028469967848339414697442203604155623211857659868531094441973356216371319075554900311523529863270738021251442209537670585615720368478277635206809290837627671146574559986811484619929076208839082406056034304",
+      "admitted": false,
+      "test": "tests.models.test_grc_v4_transport.ChargePrecisionEnvelopeTests.test_half_ulp_and_subnormal_transfer_grid",
+      "test_status": "passed"
+    },
+    {
+      "case": "transfer_precision",
+      "magnitude": 2.2250738585072014e-308,
+      "rate": 1.0,
+      "dt": 1.0,
+      "result": [
+        -1.0,
+        1.0
+      ],
+      "exact_stored_drift": "-1/44942328371557897693232629769725618340449424473557664318357520289433168951375240783177119330601884005280028469967848339414697442203604155623211857659868531094441973356216371319075554900311523529863270738021251442209537670585615720368478277635206809290837627671146574559986811484619929076208839082406056034304",
+      "admitted": false,
+      "test": "tests.models.test_grc_v4_transport.ChargePrecisionEnvelopeTests.test_half_ulp_and_subnormal_transfer_grid",
+      "test_status": "passed"
+    },
+    {
+      "case": "transfer_precision",
+      "magnitude": 1.0,
+      "rate": 0.5,
+      "dt": 5e-324,
+      "result": [
+        1.0,
+        0.0
+      ],
+      "exact_stored_drift": "0",
+      "admitted": true,
+      "test": "tests.models.test_grc_v4_transport.ChargePrecisionEnvelopeTests.test_half_ulp_and_subnormal_transfer_grid",
+      "test_status": "passed"
+    },
+    {
+      "case": "transfer_precision",
+      "magnitude": 1.0,
+      "rate": 1.0,
+      "dt": 5e-324,
+      "result": [
+        1.0,
+        5e-324
+      ],
+      "exact_stored_drift": "1/202402253307310618352495346718917307049556649764142118356901358027430339567995346891960383701437124495187077864316811911389808737385793476867013399940738509921517424276566361364466907742093216341239767678472745068562007483424692698618103355649159556340810056512358769552333414615230502532186327508646006263307707741093494784",
+      "admitted": true,
+      "test": "tests.models.test_grc_v4_transport.ChargePrecisionEnvelopeTests.test_half_ulp_and_subnormal_transfer_grid",
+      "test_status": "passed"
+    },
+    {
+      "case": "transfer_precision",
+      "magnitude": 1.0,
+      "rate": 1.0,
+      "dt": 5.551115123125783e-17,
+      "result": [
+        1.0,
+        5.551115123125783e-17
+      ],
+      "exact_stored_drift": "1/18014398509481984",
+      "admitted": true,
+      "test": "tests.models.test_grc_v4_transport.ChargePrecisionEnvelopeTests.test_half_ulp_and_subnormal_transfer_grid",
+      "test_status": "passed"
+    },
+    {
+      "case": "transfer_precision",
+      "magnitude": 1.0,
+      "rate": 1.0,
+      "dt": 1.1102230246251565e-16,
+      "result": [
+        0.9999999999999999,
+        1.1102230246251565e-16
+      ],
+      "exact_stored_drift": "0",
+      "admitted": true,
+      "test": "tests.models.test_grc_v4_transport.ChargePrecisionEnvelopeTests.test_half_ulp_and_subnormal_transfer_grid",
+      "test_status": "passed"
+    },
+    {
+      "case": "transfer_precision",
+      "magnitude": 1.0,
+      "rate": 1.0,
+      "dt": 2.220446049250313e-16,
+      "result": [
+        0.9999999999999998,
+        2.220446049250313e-16
+      ],
+      "exact_stored_drift": "0",
+      "admitted": true,
+      "test": "tests.models.test_grc_v4_transport.ChargePrecisionEnvelopeTests.test_half_ulp_and_subnormal_transfer_grid",
+      "test_status": "passed"
+    },
+    {
+      "case": "transfer_precision",
+      "magnitude": 1.0,
+      "rate": 1.0,
+      "dt": 0.5,
+      "result": [
+        0.5,
+        0.5
+      ],
+      "exact_stored_drift": "0",
+      "admitted": true,
+      "test": "tests.models.test_grc_v4_transport.ChargePrecisionEnvelopeTests.test_half_ulp_and_subnormal_transfer_grid",
+      "test_status": "passed"
+    },
+    {
+      "case": "transfer_precision",
+      "magnitude": 1.0,
+      "rate": 1.0,
+      "dt": 1.0,
+      "result": [
+        0.0,
+        1.0
+      ],
+      "exact_stored_drift": "0",
+      "admitted": true,
+      "test": "tests.models.test_grc_v4_transport.ChargePrecisionEnvelopeTests.test_half_ulp_and_subnormal_transfer_grid",
+      "test_status": "passed"
+    },
+    {
+      "case": "transfer_precision",
+      "magnitude": 9007199254740992.0,
+      "rate": 0.5,
+      "dt": 5e-324,
+      "result": [
+        9007199254740992.0,
+        0.0
+      ],
+      "exact_stored_drift": "0",
+      "admitted": true,
+      "test": "tests.models.test_grc_v4_transport.ChargePrecisionEnvelopeTests.test_half_ulp_and_subnormal_transfer_grid",
+      "test_status": "passed"
+    },
+    {
+      "case": "transfer_precision",
+      "magnitude": 9007199254740992.0,
+      "rate": 1.0,
+      "dt": 5e-324,
+      "result": [
+        9007199254740992.0,
+        5e-324
+      ],
+      "exact_stored_drift": "1/202402253307310618352495346718917307049556649764142118356901358027430339567995346891960383701437124495187077864316811911389808737385793476867013399940738509921517424276566361364466907742093216341239767678472745068562007483424692698618103355649159556340810056512358769552333414615230502532186327508646006263307707741093494784",
+      "admitted": true,
+      "test": "tests.models.test_grc_v4_transport.ChargePrecisionEnvelopeTests.test_half_ulp_and_subnormal_transfer_grid",
+      "test_status": "passed"
+    },
+    {
+      "case": "transfer_precision",
+      "magnitude": 9007199254740992.0,
+      "rate": 1.0,
+      "dt": 0.5,
+      "result": [
+        9007199254740992.0,
+        0.5
+      ],
+      "exact_stored_drift": "1/2",
+      "admitted": true,
+      "test": "tests.models.test_grc_v4_transport.ChargePrecisionEnvelopeTests.test_half_ulp_and_subnormal_transfer_grid",
+      "test_status": "passed"
+    },
+    {
+      "case": "transfer_precision",
+      "magnitude": 9007199254740992.0,
+      "rate": 1.0,
+      "dt": 1.0,
+      "result": [
+        9007199254740991.0,
+        1.0
+      ],
+      "exact_stored_drift": "0",
+      "admitted": true,
+      "test": "tests.models.test_grc_v4_transport.ChargePrecisionEnvelopeTests.test_half_ulp_and_subnormal_transfer_grid",
+      "test_status": "passed"
+    },
+    {
+      "case": "transfer_precision",
+      "magnitude": 9007199254740992.0,
+      "rate": 1.0,
+      "dt": 2.0,
+      "result": [
+        9007199254740990.0,
+        2.0
+      ],
+      "exact_stored_drift": "0",
+      "admitted": true,
+      "test": "tests.models.test_grc_v4_transport.ChargePrecisionEnvelopeTests.test_half_ulp_and_subnormal_transfer_grid",
+      "test_status": "passed"
+    },
+    {
+      "case": "transfer_precision",
+      "magnitude": 9007199254740992.0,
+      "rate": 1.0,
+      "dt": 0.5,
+      "result": [
+        9007199254740992.0,
+        0.5
+      ],
+      "exact_stored_drift": "1/2",
+      "admitted": true,
+      "test": "tests.models.test_grc_v4_transport.ChargePrecisionEnvelopeTests.test_half_ulp_and_subnormal_transfer_grid",
+      "test_status": "passed"
+    },
+    {
+      "case": "transfer_precision",
+      "magnitude": 9007199254740992.0,
+      "rate": 1.0,
+      "dt": 1.0,
+      "result": [
+        9007199254740991.0,
+        1.0
+      ],
+      "exact_stored_drift": "0",
+      "admitted": true,
+      "test": "tests.models.test_grc_v4_transport.ChargePrecisionEnvelopeTests.test_half_ulp_and_subnormal_transfer_grid",
+      "test_status": "passed"
+    },
+    {
+      "case": "transfer_precision",
+      "magnitude": 1e+20,
+      "rate": 0.5,
+      "dt": 5e-324,
+      "result": [
+        1e+20,
+        0.0
+      ],
+      "exact_stored_drift": "0",
+      "admitted": true,
+      "test": "tests.models.test_grc_v4_transport.ChargePrecisionEnvelopeTests.test_half_ulp_and_subnormal_transfer_grid",
+      "test_status": "passed"
+    },
+    {
+      "case": "transfer_precision",
+      "magnitude": 1e+20,
+      "rate": 1.0,
+      "dt": 5e-324,
+      "result": [
+        1e+20,
+        5e-324
+      ],
+      "exact_stored_drift": "1/202402253307310618352495346718917307049556649764142118356901358027430339567995346891960383701437124495187077864316811911389808737385793476867013399940738509921517424276566361364466907742093216341239767678472745068562007483424692698618103355649159556340810056512358769552333414615230502532186327508646006263307707741093494784",
+      "admitted": true,
+      "test": "tests.models.test_grc_v4_transport.ChargePrecisionEnvelopeTests.test_half_ulp_and_subnormal_transfer_grid",
+      "test_status": "passed"
+    },
+    {
+      "case": "transfer_precision",
+      "magnitude": 1e+20,
+      "rate": 1.0,
+      "dt": 4096.0,
+      "result": [
+        1e+20,
+        4096.0
+      ],
+      "exact_stored_drift": "4096",
+      "admitted": true,
+      "test": "tests.models.test_grc_v4_transport.ChargePrecisionEnvelopeTests.test_half_ulp_and_subnormal_transfer_grid",
+      "test_status": "passed"
+    },
+    {
+      "case": "transfer_precision",
+      "magnitude": 1e+20,
+      "rate": 1.0,
+      "dt": 8192.0,
+      "result": [
+        1e+20,
+        8192.0
+      ],
+      "exact_stored_drift": "8192",
+      "admitted": true,
+      "test": "tests.models.test_grc_v4_transport.ChargePrecisionEnvelopeTests.test_half_ulp_and_subnormal_transfer_grid",
+      "test_status": "passed"
+    },
+    {
+      "case": "transfer_precision",
+      "magnitude": 1e+20,
+      "rate": 1.0,
+      "dt": 16384.0,
+      "result": [
+        9.999999999999998e+19,
+        16384.0
+      ],
+      "exact_stored_drift": "0",
+      "admitted": true,
+      "test": "tests.models.test_grc_v4_transport.ChargePrecisionEnvelopeTests.test_half_ulp_and_subnormal_transfer_grid",
+      "test_status": "passed"
+    },
+    {
+      "case": "transfer_precision",
+      "magnitude": 1e+20,
+      "rate": 1.0,
+      "dt": 0.5,
+      "result": [
+        1e+20,
+        0.5
+      ],
+      "exact_stored_drift": "1/2",
+      "admitted": true,
+      "test": "tests.models.test_grc_v4_transport.ChargePrecisionEnvelopeTests.test_half_ulp_and_subnormal_transfer_grid",
+      "test_status": "passed"
+    },
+    {
+      "case": "transfer_precision",
+      "magnitude": 1e+20,
+      "rate": 1.0,
+      "dt": 1.0,
+      "result": [
+        1e+20,
+        1.0
+      ],
+      "exact_stored_drift": "1",
+      "admitted": true,
+      "test": "tests.models.test_grc_v4_transport.ChargePrecisionEnvelopeTests.test_half_ulp_and_subnormal_transfer_grid",
+      "test_status": "passed"
+    },
+    {
+      "case": "transfer_precision",
+      "magnitude": 1e+150,
+      "rate": 0.5,
+      "dt": 5e-324,
+      "result": [
+        1e+150,
+        0.0
+      ],
+      "exact_stored_drift": "0",
+      "admitted": true,
+      "test": "tests.models.test_grc_v4_transport.ChargePrecisionEnvelopeTests.test_half_ulp_and_subnormal_transfer_grid",
+      "test_status": "passed"
+    },
+    {
+      "case": "transfer_precision",
+      "magnitude": 1e+150,
+      "rate": 1.0,
+      "dt": 5e-324,
+      "result": [
+        1e+150,
+        5e-324
+      ],
+      "exact_stored_drift": "1/202402253307310618352495346718917307049556649764142118356901358027430339567995346891960383701437124495187077864316811911389808737385793476867013399940738509921517424276566361364466907742093216341239767678472745068562007483424692698618103355649159556340810056512358769552333414615230502532186327508646006263307707741093494784",
+      "admitted": true,
+      "test": "tests.models.test_grc_v4_transport.ChargePrecisionEnvelopeTests.test_half_ulp_and_subnormal_transfer_grid",
+      "test_status": "passed"
+    },
+    {
+      "case": "transfer_precision",
+      "magnitude": 1e+150,
+      "rate": 1.0,
+      "dt": 4.542742026847543e+133,
+      "result": [
+        1e+150,
+        4.542742026847543e+133
+      ],
+      "exact_stored_drift": "45427420268475430659332737993000283397102585042957378767593137448789955507087370207886940669610222847547657600391636120845912601788416",
+      "admitted": true,
+      "test": "tests.models.test_grc_v4_transport.ChargePrecisionEnvelopeTests.test_half_ulp_and_subnormal_transfer_grid",
+      "test_status": "passed"
+    },
+    {
+      "case": "transfer_precision",
+      "magnitude": 1e+150,
+      "rate": 1.0,
+      "dt": 9.085484053695086e+133,
+      "result": [
+        9.999999999999998e+149,
+        9.085484053695086e+133
+      ],
+      "exact_stored_drift": "-90854840536950861318665475986000566794205170085914757535186274897579911014174740415773881339220445695095315200783272241691825203576832",
+      "admitted": false,
+      "test": "tests.models.test_grc_v4_transport.ChargePrecisionEnvelopeTests.test_half_ulp_and_subnormal_transfer_grid",
+      "test_status": "passed"
+    },
+    {
+      "case": "transfer_precision",
+      "magnitude": 1e+150,
+      "rate": 1.0,
+      "dt": 1.8170968107390172e+134,
+      "result": [
+        9.999999999999998e+149,
+        1.8170968107390172e+134
+      ],
+      "exact_stored_drift": "0",
+      "admitted": true,
+      "test": "tests.models.test_grc_v4_transport.ChargePrecisionEnvelopeTests.test_half_ulp_and_subnormal_transfer_grid",
+      "test_status": "passed"
+    },
+    {
+      "case": "transfer_precision",
+      "magnitude": 1e+150,
+      "rate": 1.0,
+      "dt": 0.5,
+      "result": [
+        1e+150,
+        0.5
+      ],
+      "exact_stored_drift": "1/2",
+      "admitted": true,
+      "test": "tests.models.test_grc_v4_transport.ChargePrecisionEnvelopeTests.test_half_ulp_and_subnormal_transfer_grid",
+      "test_status": "passed"
+    },
+    {
+      "case": "transfer_precision",
+      "magnitude": 1e+150,
+      "rate": 1.0,
+      "dt": 1.0,
+      "result": [
+        1e+150,
+        1.0
+      ],
+      "exact_stored_drift": "1",
+      "admitted": true,
+      "test": "tests.models.test_grc_v4_transport.ChargePrecisionEnvelopeTests.test_half_ulp_and_subnormal_transfer_grid",
+      "test_status": "passed"
+    },
+    {
+      "case": "high_degree_divergence",
+      "degree": 4,
+      "magnitude": 1.0,
+      "order": "grouped",
+      "rejected_nonfinite": false,
+      "exact_divergence": "0",
+      "test": "tests.models.test_grc_v4_transport.ChargePrecisionEnvelopeTests.test_high_degree_cancellation_and_safe_order_controls",
+      "test_status": "passed"
+    },
+    {
+      "case": "high_degree_divergence",
+      "degree": 4,
+      "magnitude": 1.0,
+      "order": "alternating",
+      "rejected_nonfinite": false,
+      "exact_divergence": "0",
+      "test": "tests.models.test_grc_v4_transport.ChargePrecisionEnvelopeTests.test_high_degree_cancellation_and_safe_order_controls",
+      "test_status": "passed"
+    },
+    {
+      "case": "high_degree_divergence",
+      "degree": 4,
+      "magnitude": 1e+100,
+      "order": "grouped",
+      "rejected_nonfinite": false,
+      "exact_divergence": "0",
+      "test": "tests.models.test_grc_v4_transport.ChargePrecisionEnvelopeTests.test_high_degree_cancellation_and_safe_order_controls",
+      "test_status": "passed"
+    },
+    {
+      "case": "high_degree_divergence",
+      "degree": 4,
+      "magnitude": 1e+100,
+      "order": "alternating",
+      "rejected_nonfinite": false,
+      "exact_divergence": "0",
+      "test": "tests.models.test_grc_v4_transport.ChargePrecisionEnvelopeTests.test_high_degree_cancellation_and_safe_order_controls",
+      "test_status": "passed"
+    },
+    {
+      "case": "high_degree_divergence",
+      "degree": 4,
+      "magnitude": 1e+308,
+      "order": "grouped",
+      "rejected_nonfinite": true,
+      "exact_divergence": "0",
+      "test": "tests.models.test_grc_v4_transport.ChargePrecisionEnvelopeTests.test_high_degree_cancellation_and_safe_order_controls",
+      "test_status": "passed"
+    },
+    {
+      "case": "high_degree_divergence",
+      "degree": 4,
+      "magnitude": 1e+308,
+      "order": "alternating",
+      "rejected_nonfinite": false,
+      "exact_divergence": "0",
+      "test": "tests.models.test_grc_v4_transport.ChargePrecisionEnvelopeTests.test_high_degree_cancellation_and_safe_order_controls",
+      "test_status": "passed"
+    },
+    {
+      "case": "high_degree_divergence",
+      "degree": 16,
+      "magnitude": 1.0,
+      "order": "grouped",
+      "rejected_nonfinite": false,
+      "exact_divergence": "0",
+      "test": "tests.models.test_grc_v4_transport.ChargePrecisionEnvelopeTests.test_high_degree_cancellation_and_safe_order_controls",
+      "test_status": "passed"
+    },
+    {
+      "case": "high_degree_divergence",
+      "degree": 16,
+      "magnitude": 1.0,
+      "order": "alternating",
+      "rejected_nonfinite": false,
+      "exact_divergence": "0",
+      "test": "tests.models.test_grc_v4_transport.ChargePrecisionEnvelopeTests.test_high_degree_cancellation_and_safe_order_controls",
+      "test_status": "passed"
+    },
+    {
+      "case": "high_degree_divergence",
+      "degree": 16,
+      "magnitude": 1e+100,
+      "order": "grouped",
+      "rejected_nonfinite": false,
+      "exact_divergence": "0",
+      "test": "tests.models.test_grc_v4_transport.ChargePrecisionEnvelopeTests.test_high_degree_cancellation_and_safe_order_controls",
+      "test_status": "passed"
+    },
+    {
+      "case": "high_degree_divergence",
+      "degree": 16,
+      "magnitude": 1e+100,
+      "order": "alternating",
+      "rejected_nonfinite": false,
+      "exact_divergence": "0",
+      "test": "tests.models.test_grc_v4_transport.ChargePrecisionEnvelopeTests.test_high_degree_cancellation_and_safe_order_controls",
+      "test_status": "passed"
+    },
+    {
+      "case": "high_degree_divergence",
+      "degree": 16,
+      "magnitude": 1e+308,
+      "order": "grouped",
+      "rejected_nonfinite": true,
+      "exact_divergence": "0",
+      "test": "tests.models.test_grc_v4_transport.ChargePrecisionEnvelopeTests.test_high_degree_cancellation_and_safe_order_controls",
+      "test_status": "passed"
+    },
+    {
+      "case": "high_degree_divergence",
+      "degree": 16,
+      "magnitude": 1e+308,
+      "order": "alternating",
+      "rejected_nonfinite": false,
+      "exact_divergence": "0",
+      "test": "tests.models.test_grc_v4_transport.ChargePrecisionEnvelopeTests.test_high_degree_cancellation_and_safe_order_controls",
+      "test_status": "passed"
+    },
+    {
+      "case": "high_degree_divergence",
+      "degree": 64,
+      "magnitude": 1.0,
+      "order": "grouped",
+      "rejected_nonfinite": false,
+      "exact_divergence": "0",
+      "test": "tests.models.test_grc_v4_transport.ChargePrecisionEnvelopeTests.test_high_degree_cancellation_and_safe_order_controls",
+      "test_status": "passed"
+    },
+    {
+      "case": "high_degree_divergence",
+      "degree": 64,
+      "magnitude": 1.0,
+      "order": "alternating",
+      "rejected_nonfinite": false,
+      "exact_divergence": "0",
+      "test": "tests.models.test_grc_v4_transport.ChargePrecisionEnvelopeTests.test_high_degree_cancellation_and_safe_order_controls",
+      "test_status": "passed"
+    },
+    {
+      "case": "high_degree_divergence",
+      "degree": 64,
+      "magnitude": 1e+100,
+      "order": "grouped",
+      "rejected_nonfinite": false,
+      "exact_divergence": "0",
+      "test": "tests.models.test_grc_v4_transport.ChargePrecisionEnvelopeTests.test_high_degree_cancellation_and_safe_order_controls",
+      "test_status": "passed"
+    },
+    {
+      "case": "high_degree_divergence",
+      "degree": 64,
+      "magnitude": 1e+100,
+      "order": "alternating",
+      "rejected_nonfinite": false,
+      "exact_divergence": "0",
+      "test": "tests.models.test_grc_v4_transport.ChargePrecisionEnvelopeTests.test_high_degree_cancellation_and_safe_order_controls",
+      "test_status": "passed"
+    },
+    {
+      "case": "high_degree_divergence",
+      "degree": 64,
+      "magnitude": 1e+308,
+      "order": "grouped",
+      "rejected_nonfinite": true,
+      "exact_divergence": "0",
+      "test": "tests.models.test_grc_v4_transport.ChargePrecisionEnvelopeTests.test_high_degree_cancellation_and_safe_order_controls",
+      "test_status": "passed"
+    },
+    {
+      "case": "high_degree_divergence",
+      "degree": 64,
+      "magnitude": 1e+308,
+      "order": "alternating",
+      "rejected_nonfinite": false,
+      "exact_divergence": "0",
+      "test": "tests.models.test_grc_v4_transport.ChargePrecisionEnvelopeTests.test_high_degree_cancellation_and_safe_order_controls",
+      "test_status": "passed"
+    },
+    {
+      "case": "high_degree_divergence",
+      "degree": 256,
+      "magnitude": 1.0,
+      "order": "grouped",
+      "rejected_nonfinite": false,
+      "exact_divergence": "0",
+      "test": "tests.models.test_grc_v4_transport.ChargePrecisionEnvelopeTests.test_high_degree_cancellation_and_safe_order_controls",
+      "test_status": "passed"
+    },
+    {
+      "case": "high_degree_divergence",
+      "degree": 256,
+      "magnitude": 1.0,
+      "order": "alternating",
+      "rejected_nonfinite": false,
+      "exact_divergence": "0",
+      "test": "tests.models.test_grc_v4_transport.ChargePrecisionEnvelopeTests.test_high_degree_cancellation_and_safe_order_controls",
+      "test_status": "passed"
+    },
+    {
+      "case": "high_degree_divergence",
+      "degree": 256,
+      "magnitude": 1e+100,
+      "order": "grouped",
+      "rejected_nonfinite": false,
+      "exact_divergence": "0",
+      "test": "tests.models.test_grc_v4_transport.ChargePrecisionEnvelopeTests.test_high_degree_cancellation_and_safe_order_controls",
+      "test_status": "passed"
+    },
+    {
+      "case": "high_degree_divergence",
+      "degree": 256,
+      "magnitude": 1e+100,
+      "order": "alternating",
+      "rejected_nonfinite": false,
+      "exact_divergence": "0",
+      "test": "tests.models.test_grc_v4_transport.ChargePrecisionEnvelopeTests.test_high_degree_cancellation_and_safe_order_controls",
+      "test_status": "passed"
+    },
+    {
+      "case": "high_degree_divergence",
+      "degree": 256,
+      "magnitude": 1e+308,
+      "order": "grouped",
+      "rejected_nonfinite": true,
+      "exact_divergence": "0",
+      "test": "tests.models.test_grc_v4_transport.ChargePrecisionEnvelopeTests.test_high_degree_cancellation_and_safe_order_controls",
+      "test_status": "passed"
+    },
+    {
+      "case": "high_degree_divergence",
+      "degree": 256,
+      "magnitude": 1e+308,
+      "order": "alternating",
+      "rejected_nonfinite": false,
+      "exact_divergence": "0",
+      "test": "tests.models.test_grc_v4_transport.ChargePrecisionEnvelopeTests.test_high_degree_cancellation_and_safe_order_controls",
+      "test_status": "passed"
+    },
+    {
+      "case": "cancellation_accuracy",
+      "degree": 3,
+      "scale": 3.8725919148493183e-121,
+      "exact_sum": "1/11629419588729710248789180926208072549658261770997088964503843186890228609814366773219056811420217048972200345700258846936553626057834496",
+      "absolute_error": 0.0,
+      "normwise_bound": 3.1440733575427767e-136,
+      "test": "tests.models.test_grc_v4_transport.ChargePrecisionEnvelopeTests.test_normwise_accuracy_does_not_promise_cancellation_relative_accuracy",
+      "test_status": "passed"
+    },
+    {
+      "case": "cancellation_accuracy",
+      "degree": 3,
+      "scale": 1.0,
+      "exact_sum": "1/4503599627370496",
+      "absolute_error": 0.0,
+      "normwise_bound": 1.8618642239485193e-15,
+      "test": "tests.models.test_grc_v4_transport.ChargePrecisionEnvelopeTests.test_normwise_accuracy_does_not_promise_cancellation_relative_accuracy",
+      "test_status": "passed"
+    },
+    {
+      "case": "cancellation_accuracy",
+      "degree": 3,
+      "scale": 2.5822498780869086e+120,
+      "exact_sum": "573374653997517877902705223825521735199141247292070280934397209846730719022121202017504638277531421638656",
+      "absolute_error": 0.0,
+      "normwise_bound": 4.929148761099332e+105,
+      "test": "tests.models.test_grc_v4_transport.ChargePrecisionEnvelopeTests.test_normwise_accuracy_does_not_promise_cancellation_relative_accuracy",
+      "test_status": "passed"
+    },
+    {
+      "case": "cancellation_accuracy",
+      "degree": 17,
+      "scale": 3.8725919148493183e-121,
+      "exact_sum": "1/11629419588729710248789180926208072549658261770997088964503843186890228609814366773219056811420217048972200345700258846936553626057834496",
+      "absolute_error": 0.0,
+      "normwise_bound": 1.687332171932713e-134,
+      "test": "tests.models.test_grc_v4_transport.ChargePrecisionEnvelopeTests.test_normwise_accuracy_does_not_promise_cancellation_relative_accuracy",
+      "test_status": "passed"
+    },
+    {
+      "case": "cancellation_accuracy",
+      "degree": 17,
+      "scale": 1.0,
+      "exact_sum": "1/4503599627370496",
+      "absolute_error": 0.0,
+      "normwise_bound": 2.7755034626553087e-14,
+      "test": "tests.models.test_grc_v4_transport.ChargePrecisionEnvelopeTests.test_normwise_accuracy_does_not_promise_cancellation_relative_accuracy",
+      "test_status": "passed"
+    },
+    {
+      "case": "cancellation_accuracy",
+      "degree": 17,
+      "scale": 2.5822498780869086e+120,
+      "exact_sum": "573374653997517877902705223825521735199141247292070280934397209846730719022121202017504638277531421638656",
+      "absolute_error": 0.0,
+      "normwise_bound": 1.3568379068157748e+107,
+      "test": "tests.models.test_grc_v4_transport.ChargePrecisionEnvelopeTests.test_normwise_accuracy_does_not_promise_cancellation_relative_accuracy",
+      "test_status": "passed"
+    },
+    {
+      "case": "cancellation_accuracy",
+      "degree": 65,
+      "scale": 3.8725919148493183e-121,
+      "exact_sum": "1/11629419588729710248789180926208072549658261770997088964503843186890228609814366773219056811420217048972200345700258846936553626057834496",
+      "absolute_error": 0.0,
+      "normwise_bound": 3.11641484757176e-133,
+      "test": "tests.models.test_grc_v4_transport.ChargePrecisionEnvelopeTests.test_normwise_accuracy_does_not_promise_cancellation_relative_accuracy",
+      "test_status": "passed"
+    },
+    {
+      "case": "cancellation_accuracy",
+      "degree": 65,
+      "scale": 1.0,
+      "exact_sum": "1/4503599627370496",
+      "absolute_error": 0.0,
+      "normwise_bound": 9.246642365049977e-13,
+      "test": "tests.models.test_grc_v4_transport.ChargePrecisionEnvelopeTests.test_normwise_accuracy_does_not_promise_cancellation_relative_accuracy",
+      "test_status": "passed"
+    },
+    {
+      "case": "cancellation_accuracy",
+      "degree": 65,
+      "scale": 2.5822498780869086e+120,
+      "exact_sum": "573374653997517877902705223825521735199141247292070280934397209846730719022121202017504638277531421638656",
+      "absolute_error": 0.0,
+      "normwise_bound": 2.5661091149650064e+108,
+      "test": "tests.models.test_grc_v4_transport.ChargePrecisionEnvelopeTests.test_normwise_accuracy_does_not_promise_cancellation_relative_accuracy",
+      "test_status": "passed"
+    },
+    {
+      "case": "cancellation_accuracy",
+      "degree": 257,
+      "scale": 3.8725919148493183e-121,
+      "exact_sum": "1/11629419588729710248789180926208072549658261770997088964503843186890228609814366773219056811420217048972200345700258846936553626057834496",
+      "absolute_error": 0.0,
+      "normwise_bound": 5.5428563112567124e-132,
+      "test": "tests.models.test_grc_v4_transport.ChargePrecisionEnvelopeTests.test_normwise_accuracy_does_not_promise_cancellation_relative_accuracy",
+      "test_status": "passed"
+    },
+    {
+      "case": "cancellation_accuracy",
+      "degree": 257,
+      "scale": 1.0,
+      "exact_sum": "1/4503599627370496",
+      "absolute_error": 0.0,
+      "normwise_bound": 1.5314384266998632e-11,
+      "test": "tests.models.test_grc_v4_transport.ChargePrecisionEnvelopeTests.test_normwise_accuracy_does_not_promise_cancellation_relative_accuracy",
+      "test_status": "passed"
+    },
+    {
+      "case": "cancellation_accuracy",
+      "degree": 257,
+      "scale": 2.5822498780869086e+120,
+      "exact_sum": "573374653997517877902705223825521735199141247292070280934397209846730719022121202017504638277531421638656",
+      "absolute_error": 0.0,
+      "normwise_bound": 3.776850826123955e+109,
+      "test": "tests.models.test_grc_v4_transport.ChargePrecisionEnvelopeTests.test_normwise_accuracy_does_not_promise_cancellation_relative_accuracy",
+      "test_status": "passed"
+    },
+    {
+      "case": "primitive_compositions",
+      "compositions": 100,
+      "exact_stored_drift": "100",
+      "rounded_charge_residual": 0.0,
+      "complete_beats": false,
+      "test": "tests.models.test_grc_v4_transport.ChargePrecisionEnvelopeTests.test_repeated_primitive_compositions_have_exact_diagnostic_drift",
+      "test_status": "passed"
+    }
+  ]
+}

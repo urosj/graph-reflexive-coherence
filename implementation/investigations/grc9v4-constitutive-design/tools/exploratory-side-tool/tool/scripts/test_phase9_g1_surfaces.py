@@ -44,13 +44,15 @@ def checks(root):
         return namespace
 
     require(
-        status["dependency_ready_leaves"] == ["P9-2.1", "P9-2.2", "P9-2.3", "P9-2.4", "P9-2.5", "P9-2.6", "P9-3.1", "P9-3.2", "P9-3.3"]
+        status["dependency_ready_leaves"] == ["P9-2.1", "P9-2.2", "P9-2.3", "P9-2.4", "P9-2.5", "P9-2.6", "P9-3.1", "P9-3.2", "P9-3.3", "P9-3.4"]
         and status["harness_acceptance"]["record_digest"] == policy.HARNESS_ACCEPTANCE_DIGEST
         and status["harness_acceptance"]["accepted_iterations"] == ["P9-2.5"]
         and status["geometry_acceptance"]["record_digest"] == policy.GEOMETRY_ACCEPTANCE_DIGEST
         and status["geometry_acceptance"]["accepted_iterations"] == ["P9-3.1"]
         and status["stage_acceptance"]["record_digest"] == policy.STAGE_ACCEPTANCE_DIGEST
         and status["stage_acceptance"]["accepted_iterations"] == ["P9-3.2"]
+        and status["resource_acceptance"]["record_digest"] == policy.RESOURCE_ACCEPTANCE_DIGEST
+        and status["resource_acceptance"]["accepted_iterations"] == ["P9-3.3"]
         and status["integration_acceptance"]["record_digest"] == policy.INTEGRATION_ACCEPTANCE_DIGEST
         and status["integration_acceptance"]["accepted_iterations"] == ["P9-2.6"]
         and set(['src/pygrc/models/grc_v4_geometry.py', 'src/pygrc/models/grc_v4_transport.py', 'tests/models/test_grc_v4_geometry.py', 'tests/models/test_grc_v4_transport.py']) <= set(status["permitted_runtime_paths"])

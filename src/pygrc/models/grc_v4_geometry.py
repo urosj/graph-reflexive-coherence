@@ -704,7 +704,15 @@ class K4Tensor:
 
 @dataclass(frozen=True, slots=True)
 class StarAssembly:
-    """Common overlap-normalized assembly, before a candidate's adapter/gain."""
+    """Common overlap-normalized assembly, before a candidate's adapter/gain.
+
+    The binary64 cover coefficient is multiplied by both represented form
+    values exactly, then rounded once. This avoids intermediate range loss
+    and makes each component invariant under swapping its two inputs. True
+    final underflow is retained; an unrepresentable result fails closed.
+    Component rounding need not preserve exact semidefiniteness. Admission
+    of the total Hodge remains H_profile's separate responsibility.
+    """
 
     form: OneForm
     matrix: Matrix = field(init=False)
@@ -727,9 +735,16 @@ class StarAssembly:
                 count = sum(i in star and j in star for star in stars)
                 if count:
                     weight = count / math.sqrt(multiplicities[i] * multiplicities[j])
-                    value = _computed(
-                        weight * self.form.values[i] * self.form.values[j]
-                    )
+                    try:
+                        value = _computed(
+                            float(
+                                Fraction(weight)
+                                * Fraction(self.form.values[i])
+                                * Fraction(self.form.values[j])
+                            )
+                        )
+                    except OverflowError as exc:
+                        raise ValueError("nonfinite numerical result") from exc
                     rows[i][j] = rows[j][i] = value
         object.__setattr__(self, "matrix", tuple(tuple(row) for row in rows))
 
@@ -742,7 +757,7 @@ class StarAssembly:
         return _identity(
             "grcv4-star-assembly-sha256",
             {
-                "descriptor_version": "grcv4-vertex-star-cooccurrence-v1",
+                "descriptor_version": "grcv4-vertex-star-cooccurrence-product-v2",
                 "graph": self.graph.to_payload(),
                 "form": self.form.values,
             },
