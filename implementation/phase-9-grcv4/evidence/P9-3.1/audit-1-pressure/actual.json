@@ -62,7 +62,8 @@
   "pip_check": {
     "exit_code": 0,
     "stdout": "No broken requirements found.\n",
-    "stderr": "WARNING: The directory '/home/uros/.cache/pip' or its parent directory is not owned or is not writable by the current user. The cache has been disabled. Check the permissions and owner of that directory. If executing pip with sudo, you should use sudo's -H flag.\n"
+    "stderr": "WARNING: The directory '<user-cache>/pip' or its parent directory is not owned or is not writable by the current user. The cache has been disabled. Check the permissions and owner of that directory. If executing pip with sudo, you should use sudo's -H flag.\n"
   },
-  "source_stayed_exact": true
+  "source_stayed_exact": true,
+  "path_presentation": "implementation/phase-9-grcv4/verification/Phase9PathPresentation.json"
 }

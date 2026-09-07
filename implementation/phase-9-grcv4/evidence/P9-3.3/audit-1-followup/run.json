@@ -65,7 +65,7 @@
       "exit_status": 0,
       "elapsed_seconds": 0.859,
       "tests_run": null,
-      "output": "No broken requirements found.\nWARNING: The directory '/home/uros/.cache/pip' or its parent directory is not owned or is not writable by the current user. The cache has been disabled. Check the permissions and owner of that directory. If executing pip with sudo, you should use sudo's -H flag.\n"
+      "output": "No broken requirements found.\nWARNING: The directory '<user-cache>/pip' or its parent directory is not owned or is not writable by the current user. The cache has been disabled. Check the permissions and owner of that directory. If executing pip with sudo, you should use sudo's -H flag.\n"
     }
   ],
   "wheelhouse_sha256": {
@@ -144,5 +144,6 @@
       "forensic_loader"
     ]
   },
-  "retention": "User-authorized pre-acceptance cleanup: shared data referenced by path and hash; original execution times, results and tested source versions retained."
+  "retention": "User-authorized pre-acceptance cleanup: shared data referenced by path and hash; original execution times, results and tested source versions retained.",
+  "path_presentation": "implementation/phase-9-grcv4/verification/Phase9PathPresentation.json"
 }

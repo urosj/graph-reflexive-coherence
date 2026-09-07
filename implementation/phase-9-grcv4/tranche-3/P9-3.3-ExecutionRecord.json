@@ -146,5 +146,15 @@
     "basis": "Explicit user acceptance after audit follow-up and repository-local evidence consolidation.",
     "scope": "P9-3.3 local provisional resource/charge boundary; numerical limits and later-owner obligations remain recorded; no runtime profile support is accepted.",
     "commit_binding": "The Git commit carrying this record authenticates the accepted subject. A separate successor permission transition can bind that commit without circular self-reference."
+  },
+  "repository_path_presentation": {
+    "manifest": "implementation/phase-9-grcv4/verification/Phase9PathPresentation.json",
+    "original_revision": "155c728241a7592cbde45c2ff756acefecc60a48",
+    "hash_semantics": "Existing bindings identify historical objects. The path manifest supplies current evidence presentation hashes; this annotation supplies the updated replay-guide hash. Original scientific validation scope is unchanged.",
+    "review": {
+      "path": "implementation/phase-9-grcv4/tranche-3/P9-3.3-Review.md",
+      "original_sha256": "398342e7a68dc7f41c543f7d58aefff62c26c47036445c03697853d28a7f3bb2",
+      "presented_sha256": "56ae51ef5b1267877226487450001693cb40015b78f8ad36d910003a1756e02f"
+    }
   }
 }

@@ -4567,21 +4567,22 @@
     "numpy": "2.4.6",
     "loaded": {
       "pygrc.models.grc_v4_geometry": {
-        "path": "/home/uros/RC-github/graph-reflexive-coherence/src/pygrc/models/grc_v4_geometry.py",
+        "path": "src/pygrc/models/grc_v4_geometry.py",
         "sha256": "d715f67555d3c6e68a4e031ba132cb1854cc839de03dcd2c7101fbeb40c13dcd"
       },
       "pygrc.models.grc_v4_profile": {
-        "path": "/home/uros/RC-github/graph-reflexive-coherence/src/pygrc/models/grc_v4_profile.py",
+        "path": "src/pygrc/models/grc_v4_profile.py",
         "sha256": "188e4ceb92b6a36fe81849911b88b233b8dd16bf3de07383e1508d76232fdbfb"
       },
       "pygrc.models.grc_v4_state": {
-        "path": "/home/uros/RC-github/graph-reflexive-coherence/src/pygrc/models/grc_v4_state.py",
+        "path": "src/pygrc/models/grc_v4_state.py",
         "sha256": "b0ccf06ef91b66feb8670fb67281465998f4bcb085c4d547fedd3ce6d85ad3cb"
       },
       "pygrc.models.grc_v4_codec": {
-        "path": "/home/uros/RC-github/graph-reflexive-coherence/src/pygrc/models/grc_v4_codec.py",
+        "path": "src/pygrc/models/grc_v4_codec.py",
         "sha256": "bd6d9390c818c5a25b70da119cfbc3a3de3707ee84566f6bb06160bb4780e154"
       }
     }
-  }
+  },
+  "path_presentation": "implementation/phase-9-grcv4/verification/Phase9PathPresentation.json"
 }

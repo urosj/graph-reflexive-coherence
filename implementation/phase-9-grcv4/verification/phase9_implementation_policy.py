@@ -17,6 +17,11 @@ _presentation_spec = importlib.util.spec_from_file_location(
 )
 _presentation = importlib.util.module_from_spec(_presentation_spec)
 _presentation_spec.loader.exec_module(_presentation)
+_paths_spec = importlib.util.spec_from_file_location(
+    "phase9_evidence_paths", _HERE / "evidence_paths.py"
+)
+_paths = importlib.util.module_from_spec(_paths_spec)
+_paths_spec.loader.exec_module(_paths)
 REVIEW_INPUT = _presentation.REVIEW_INPUT
 normalized_snapshot = _presentation.normalized_snapshot
 _old = _HERE / "phase9_policy.py"
@@ -128,6 +133,9 @@ PATHS = {
     HERE + "test_phase9_g1.py",
     HERE + "handoff_evidence.py",
     HERE + "test_handoff_evidence.py",
+    HERE + "evidence_paths.py",
+    HERE + "test_evidence_paths.py",
+    _paths.MANIFEST,
     PHASE + "tranche-1/P9-1.9-EvidenceHandoff.md",
     HERE + "inputs/P9-1.9-G1-Acceptance-And-Scoped-Authorization-Pressure-Guide.md",
     PHASE + "tranche-1/P9-1.9-G1Review.md",
@@ -735,9 +743,11 @@ def current_boundary(root):
             "implementation maintenance binding drift: " + row["path"],
         )
     work = work_entries(root, approval)
+    presentations = _paths.load_manifest(root)
     # G1 grants creation/update, not deletion/rename of published runtime work.
     # Deliberately published supporting evidence is immutable, apart from the
-    # exact user-authorized presentation pairs above. This does NOT
+    # exact user-authorized presentation pairs above and in the path manifest.
+    # Every path presentation is also recomputed from its Git preimage. This does NOT
     # require publishing routine failed attempts: relevant development failures
     # may be summarized in the leaf record (see P9-1.9-EvidenceHandoff.md).
     # Removing a manifest row or staging deletion cannot rewrite that evidence.
@@ -757,9 +767,11 @@ def current_boundary(root):
                 current_oid = planning.blob_id(safe_path(root, name).read_bytes())
                 require(
                     current_oid == oid
-                    or P931_AUDIT_SOURCE_PRESENTATIONS.get(name) == (oid, current_oid),
+                    or P931_AUDIT_SOURCE_PRESENTATIONS.get(name) == (oid, current_oid)
+                    or _paths.permits(presentations, name, oid, current_oid),
                     "published run evidence is immutable",
                 )
+    _paths.verify(root, presentations)
     baseline = baseline_files(root)
     frozen = 0
     for name, (mode, oid) in baseline.items():

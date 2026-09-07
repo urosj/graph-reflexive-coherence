@@ -14,26 +14,26 @@
   "commands": [
     {
       "argv": [
-        "/home/uros/RC-github/graph-reflexive-coherence/.venv/bin/python",
+        ".venv/bin/python",
         "-m",
         "tests.models.test_grc_v4_step",
         "--export-p933-audit",
-        "/tmp/p933-packet-yfv0_168/review.zip"
+        "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/generated/phase9-portability/temporary/p933-packet-yfv0_168/review.zip"
       ],
-      "cwd": "/home/uros/RC-github/graph-reflexive-coherence",
+      "cwd": ".",
       "exit_status": 0,
       "stdout": "{\"bytes\": 16528890, \"files\": 964, \"sha256\": \"18ecf06795f24469a296abb034da41c5a7056a2b6ca662b47282e9db60d67a62\"}\n",
       "stderr": ""
     },
     {
       "argv": [
-        "/home/uros/RC-github/graph-reflexive-coherence/.venv/bin/python",
+        ".venv/bin/python",
         "-I",
         "-c",
         "\nimport importlib, json, pathlib, sys, unittest\nroot = pathlib.Path(sys.argv[1]).resolve()\nsys.path[:0] = [str(root / 'src'), str(root)]\nmodules = ['pygrc.models.' + name for name in ('grc_v4', 'grc_v4_transport', 'grc_v4_step', 'grc_v4_geometry', 'grc_v4_state', 'grc_v4_profile', 'grc_v4_codec')]\nmodules += ['tests.models.' + name for name in ('test_grc_v4_geometry', 'test_grc_v4_profile', 'test_grc_v4_step', 'test_grc_v4_transport')]\norigins = {}\nfor name in modules:\n    path = pathlib.Path(importlib.import_module(name).__file__).resolve()\n    assert path.is_relative_to(root), (name, str(path))\n    origins[name] = str(path.relative_to(root))\nfrom pygrc.models import grc_v4_codec as codec\nfrom importlib import resources\nasset_root = resources.files(codec._ASSET_PACKAGE)\nassert pathlib.Path(str(asset_root)).resolve().is_relative_to(root)\nnames = [\n    'tests.models.test_grc_v4_step.ResourceBoundaryTests.test_zero_rounded_residual_can_hide_exact_stored_sum_growth',\n    'tests.models.test_grc_v4_step.ResourceBoundaryTests.test_cycle_circulation_with_same_resource_cannot_borrow_selection',\n    'tests.models.test_grc_v4_transport.ContinuityTests.test_repeated_primitive_transfers_can_hide_exact_stored_sum_growth',\n    'tests.models.test_grc_v4_step.ResourceReconstructionTests.test_resource_reconstruction_outside_checkout_with_three_hash_seeds',\n]\nresult = unittest.TextTestRunner(verbosity=2).run(unittest.defaultTestLoader.loadTestsFromNames(names))\nassert result.testsRun == 4 and not result.skipped\nprint(json.dumps({'loaded_origins': origins, 'tests_run': result.testsRun, 'skips': len(result.skipped), 'failures': len(result.failures), 'errors': len(result.errors), 'passed': result.wasSuccessful()}))\nraise SystemExit(not result.wasSuccessful())\n",
-        "/tmp/p933-packet-yfv0_168/extracted"
+        "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/generated/phase9-portability/temporary/p933-packet-yfv0_168/extracted"
       ],
-      "cwd": "/tmp/p933-packet-yfv0_168",
+      "cwd": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/generated/phase9-portability/temporary/p933-packet-yfv0_168",
       "exit_status": 0,
       "stdout": "{\"loaded_origins\": {\"pygrc.models.grc_v4\": \"src/pygrc/models/grc_v4.py\", \"pygrc.models.grc_v4_transport\": \"src/pygrc/models/grc_v4_transport.py\", \"pygrc.models.grc_v4_step\": \"src/pygrc/models/grc_v4_step.py\", \"pygrc.models.grc_v4_geometry\": \"src/pygrc/models/grc_v4_geometry.py\", \"pygrc.models.grc_v4_state\": \"src/pygrc/models/grc_v4_state.py\", \"pygrc.models.grc_v4_profile\": \"src/pygrc/models/grc_v4_profile.py\", \"pygrc.models.grc_v4_codec\": \"src/pygrc/models/grc_v4_codec.py\", \"tests.models.test_grc_v4_geometry\": \"tests/models/test_grc_v4_geometry.py\", \"tests.models.test_grc_v4_profile\": \"tests/models/test_grc_v4_profile.py\", \"tests.models.test_grc_v4_step\": \"tests/models/test_grc_v4_step.py\", \"tests.models.test_grc_v4_transport\": \"tests/models/test_grc_v4_transport.py\"}, \"tests_run\": 4, \"skips\": 0, \"failures\": 0, \"errors\": 0, \"passed\": true}\n",
       "stderr": "test_zero_rounded_residual_can_hide_exact_stored_sum_growth (tests.models.test_grc_v4_step.ResourceBoundaryTests.test_zero_rounded_residual_can_hide_exact_stored_sum_growth) ... ok\ntest_cycle_circulation_with_same_resource_cannot_borrow_selection (tests.models.test_grc_v4_step.ResourceBoundaryTests.test_cycle_circulation_with_same_resource_cannot_borrow_selection) ... ok\ntest_repeated_primitive_transfers_can_hide_exact_stored_sum_growth (tests.models.test_grc_v4_transport.ContinuityTests.test_repeated_primitive_transfers_can_hide_exact_stored_sum_growth) ... ok\ntest_resource_reconstruction_outside_checkout_with_three_hash_seeds (tests.models.test_grc_v4_step.ResourceReconstructionTests.test_resource_reconstruction_outside_checkout_with_three_hash_seeds) ... ok\n\n----------------------------------------------------------------------\nRan 4 tests in 36.015s\n\nOK\n"
@@ -98,5 +98,6 @@
       "errors": 0,
       "passed": true
     }
-  }
+  },
+  "path_presentation": "implementation/phase-9-grcv4/verification/Phase9PathPresentation.json"
 }

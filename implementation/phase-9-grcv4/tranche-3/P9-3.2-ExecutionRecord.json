@@ -147,5 +147,15 @@
       "production_arithmetic_changed": false,
       "P9_3_3_new_dependency": false
     }
-  ]
+  ],
+  "repository_path_presentation": {
+    "manifest": "implementation/phase-9-grcv4/verification/Phase9PathPresentation.json",
+    "original_revision": "155c728241a7592cbde45c2ff756acefecc60a48",
+    "hash_semantics": "Existing bindings identify historical objects. The path manifest supplies current evidence presentation hashes; this annotation supplies the updated replay-guide hash. Original scientific validation scope is unchanged.",
+    "review": {
+      "path": "implementation/phase-9-grcv4/tranche-3/P9-3.2-Review.md",
+      "original_sha256": "b374912016152c1d600b8db02962c29ce73af9a4472642c05adcc0c1e0e67339",
+      "presented_sha256": "a60cadabe91de71ca51a786409837312a7b8811a011a51b28f2bdc82f9a3880b"
+    }
+  }
 }

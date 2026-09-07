@@ -2756,7 +2756,13 @@ def export_p933_audit(output: Path) -> dict[str, Any]:
     root = Path(__file__).resolve().parents[2]
     output = output.resolve()
     if output.is_relative_to(root):
-        raise ValueError("export outside the checkout to avoid recursive evidence")
+        ignored = subprocess.run(
+            ["git", "check-ignore", "--quiet", "--", str(output.relative_to(root))],
+            cwd=root,
+            check=False,
+        )
+        if ignored.returncode != 0:
+            raise ValueError("export to ignored storage to avoid recursive evidence")
     paths = (
         subprocess.check_output(
             ["git", "ls-files", "-c", "-o", "--exclude-standard", "-z"], cwd=root

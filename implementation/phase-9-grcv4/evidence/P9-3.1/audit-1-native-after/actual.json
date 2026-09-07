@@ -161,41 +161,41 @@
         }
       ]
     },
-    "numpy_build_config": "Build Dependencies:\n  blas:\n    detection method: pkgconfig\n    found: true\n    include directory: /opt/_internal/cpython-3.12.12/lib/python3.12/site-packages/scipy_openblas64/include\n    lib directory: /opt/_internal/cpython-3.12.12/lib/python3.12/site-packages/scipy_openblas64/lib\n    name: scipy-openblas\n    openblas configuration: OpenBLAS 0.3.31.188.0  USE64BITINT DYNAMIC_ARCH NO_AFFINITY\n      SkylakeX MAX_THREADS=64\n    pc file directory: /project/.openblas\n    version: 0.3.31.188.0\n  lapack:\n    detection method: pkgconfig\n    found: true\n    include directory: /opt/_internal/cpython-3.12.12/lib/python3.12/site-packages/scipy_openblas64/include\n    lib directory: /opt/_internal/cpython-3.12.12/lib/python3.12/site-packages/scipy_openblas64/lib\n    name: scipy-openblas\n    openblas configuration: OpenBLAS 0.3.31.188.0  USE64BITINT DYNAMIC_ARCH NO_AFFINITY\n      SkylakeX MAX_THREADS=64\n    pc file directory: /project/.openblas\n    version: 0.3.31.188.0\nCompilers:\n  c:\n    commands: cc\n    linker: ld.bfd\n    name: gcc\n    version: 14.2.1\n  c++:\n    commands: c++\n    linker: ld.bfd\n    name: gcc\n    version: 14.2.1\n  cython:\n    commands: cython\n    linker: cython\n    name: cython\n    version: 3.2.4\nMachine Information:\n  build:\n    cpu: x86_64\n    endian: little\n    family: x86_64\n    system: linux\n  host:\n    cpu: x86_64\n    endian: little\n    family: x86_64\n    system: linux\nPython Information:\n  path: /tmp/build-env-tgi5ymto/bin/python\n  version: '3.12'\nSIMD Extensions:\n  baseline:\n  - X86_V2\n  found:\n  - X86_V3\n  not found:\n  - X86_V4\n  - AVX512_ICL\n  - AVX512_SPR\n\n",
+    "numpy_build_config": "Build Dependencies:\n  blas:\n    detection method: pkgconfig\n    found: true\n    include directory: <numpy-build-environment>/lib/python3.12/site-packages/scipy_openblas64/include\n    lib directory: <numpy-build-environment>/lib/python3.12/site-packages/scipy_openblas64/lib\n    name: scipy-openblas\n    openblas configuration: OpenBLAS 0.3.31.188.0  USE64BITINT DYNAMIC_ARCH NO_AFFINITY\n      SkylakeX MAX_THREADS=64\n    pc file directory: /project/.openblas\n    version: 0.3.31.188.0\n  lapack:\n    detection method: pkgconfig\n    found: true\n    include directory: <numpy-build-environment>/lib/python3.12/site-packages/scipy_openblas64/include\n    lib directory: <numpy-build-environment>/lib/python3.12/site-packages/scipy_openblas64/lib\n    name: scipy-openblas\n    openblas configuration: OpenBLAS 0.3.31.188.0  USE64BITINT DYNAMIC_ARCH NO_AFFINITY\n      SkylakeX MAX_THREADS=64\n    pc file directory: /project/.openblas\n    version: 0.3.31.188.0\nCompilers:\n  c:\n    commands: cc\n    linker: ld.bfd\n    name: gcc\n    version: 14.2.1\n  c++:\n    commands: c++\n    linker: ld.bfd\n    name: gcc\n    version: 14.2.1\n  cython:\n    commands: cython\n    linker: cython\n    name: cython\n    version: 3.2.4\nMachine Information:\n  build:\n    cpu: x86_64\n    endian: little\n    family: x86_64\n    system: linux\n  host:\n    cpu: x86_64\n    endian: little\n    family: x86_64\n    system: linux\nPython Information:\n  path: implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/generated/phase9-portability/temporary/build-env-tgi5ymto/bin/python\n  version: '3.12'\nSIMD Extensions:\n  baseline:\n  - X86_V2\n  found:\n  - X86_V3\n  not found:\n  - X86_V4\n  - AVX512_ICL\n  - AVX512_SPR\n\n",
     "loaded_source_bindings": [
       {
         "module": "pygrc.models.grc_v4_geometry",
-        "path": "/home/uros/RC-github/graph-reflexive-coherence/src/pygrc/models/grc_v4_geometry.py",
+        "path": "src/pygrc/models/grc_v4_geometry.py",
         "sha256": "831e0590d79f7e9088fdd6ad3c1fe1a8aca54b56d8463f11ac120474829061f0"
       },
       {
         "module": "pygrc.models.grc_v4_transport",
-        "path": "/home/uros/RC-github/graph-reflexive-coherence/src/pygrc/models/grc_v4_transport.py",
+        "path": "src/pygrc/models/grc_v4_transport.py",
         "sha256": "8bad1a9642456f3a63976177b9baba3f1dd8ec0df2ec6376e18a71fb032823a2"
       },
       {
         "module": "pygrc.models.grc_v4_state",
-        "path": "/home/uros/RC-github/graph-reflexive-coherence/src/pygrc/models/grc_v4_state.py",
+        "path": "src/pygrc/models/grc_v4_state.py",
         "sha256": "b0ccf06ef91b66feb8670fb67281465998f4bcb085c4d547fedd3ce6d85ad3cb"
       },
       {
         "module": "pygrc.models.grc_v4_profile",
-        "path": "/home/uros/RC-github/graph-reflexive-coherence/src/pygrc/models/grc_v4_profile.py",
+        "path": "src/pygrc/models/grc_v4_profile.py",
         "sha256": "188e4ceb92b6a36fe81849911b88b233b8dd16bf3de07383e1508d76232fdbfb"
       },
       {
         "module": "pygrc.models.grc_v4_codec",
-        "path": "/home/uros/RC-github/graph-reflexive-coherence/src/pygrc/models/grc_v4_codec.py",
+        "path": "src/pygrc/models/grc_v4_codec.py",
         "sha256": "bd6d9390c818c5a25b70da119cfbc3a3de3707ee84566f6bb06160bb4780e154"
       },
       {
         "module": "tests.models.test_grc_v4_geometry",
-        "path": "/home/uros/RC-github/graph-reflexive-coherence/tests/models/test_grc_v4_geometry.py",
+        "path": "tests/models/test_grc_v4_geometry.py",
         "sha256": "629916068c2098ccc77d96f9c1b014481a5d397357234e54ab694dfbe9781bb1"
       },
       {
         "module": "tests.models.test_grc_v4_transport",
-        "path": "/home/uros/RC-github/graph-reflexive-coherence/tests/models/test_grc_v4_transport.py",
+        "path": "tests/models/test_grc_v4_transport.py",
         "sha256": "13ac20f700a10f7a13fb5ba09243844e2bced9e79bcd1260d2740191fa5e691b"
       }
     ],
@@ -5500,5 +5500,6 @@
   },
   "stress_exit_code": 0,
   "raw_stress_result_sha256": "481480b539743f327044fefcb1b07462e26737e3807e8c8afb92902c1f14de2c",
-  "raw_loaded_inputs_sha256": "6bd155497ecac68b04ce836dd05c97373427bff27f9fe0d6035cc86da45cdfba"
+  "raw_loaded_inputs_sha256": "6bd155497ecac68b04ce836dd05c97373427bff27f9fe0d6035cc86da45cdfba",
+  "path_presentation": "implementation/phase-9-grcv4/verification/Phase9PathPresentation.json"
 }

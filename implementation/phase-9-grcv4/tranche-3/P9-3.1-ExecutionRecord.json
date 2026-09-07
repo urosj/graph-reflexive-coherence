@@ -367,5 +367,15 @@
       ],
       "initial_boundary_rejection": "The general published-evidence immutability guard rejected the presentation change; the correction admits only the two fixed original-to-presented Git blob pairs. Other rewrites remain forbidden."
     }
+  },
+  "repository_path_presentation": {
+    "manifest": "implementation/phase-9-grcv4/verification/Phase9PathPresentation.json",
+    "original_revision": "155c728241a7592cbde45c2ff756acefecc60a48",
+    "hash_semantics": "Existing bindings identify historical objects. The path manifest supplies current evidence presentation hashes; this annotation supplies the updated replay-guide hash. Original scientific validation scope is unchanged.",
+    "review": {
+      "path": "implementation/phase-9-grcv4/tranche-3/P9-3.1-Review.md",
+      "original_sha256": "258860fa7c05e34ae9c9c83bb06698f3bd26a6bec11960df359ac9a6456089b6",
+      "presented_sha256": "09ffe9fb2797596ea0a06e2c36911248f0c9b63dff566ff0f0ef3ac2ad2afb5f"
+    }
   }
 }

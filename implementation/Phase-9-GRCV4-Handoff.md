@@ -23,6 +23,15 @@ The live permission adapter binds P9-3.4 at `12611fe`, with eleven ready leaves
 and 23 eligible runtime paths. A later authorized entry must bind P9-3.5's
 accepted commit separately. P9-4.1 has not started; runtime support remains empty.
 
+Subsequent portability maintenance presents older machine-specific paths relative
+to the project. Read the [path presentation and exact-replay guide](./phase-9-grcv4/tranche-1/P9-1.9-EvidenceHandoff.md#repository-path-presentations)
+before comparing historical hashes or extracting embedded source. Original
+bytes remain in Git; current presentations do not represent new scientific runs.
+Direct historical-SHA checks against normalized files still need reconciliation;
+the linked guide names the confirmed cases. The user authorized committing this
+maintenance and merging `impl/phase-9-grcv4-tranche-3` into `main` with that
+limitation known. After the merge, resume from `main`; P9-4.1 remains unstarted.
+
 ## Where we stopped
 
 P9-G1 and P9-2.1 through P9-2.6 are accepted. The user's instruction to commit

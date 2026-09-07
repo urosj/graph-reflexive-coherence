@@ -123,7 +123,7 @@
     },
     {
       "path": "implementation/phase-9-grcv4/tranche-1/P9-1.9-EvidenceHandoff.md",
-      "sha256": "840fbef554d1a1ce9940bf657045f13cdd3839730e3bed61365972a3a686b71c"
+      "sha256": "391cd6b23203fee6eaa04e8a57e32a6a588bd6644926ba3c01116b3f8f43ae09"
     },
     {
       "path": "implementation/phase-9-grcv4/tranche-1/P9-1.9-ExecutionRecord.json",
@@ -174,8 +174,16 @@
       "sha256": "eb28af43e767b2d2c24e6100c567e17cd5c7397693c0269209598c9bf3c78745"
     },
     {
+      "path": "implementation/phase-9-grcv4/verification/Phase9PathPresentation.json",
+      "sha256": "e998284bc41455cbcdda8a9c884aa68c53b0f4770eab0bdb529007a94b86f09a"
+    },
+    {
       "path": "implementation/phase-9-grcv4/verification/audit_phase9_implementation.py",
       "sha256": "8a1dd7f2917912cafe413ee5916db10d148cd918130cab9aef8474f95dc3b9e4"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/evidence_paths.py",
+      "sha256": "6cc5541a8adc336971a127a197c51aeee5c48f9d751bd091de0fe44d45d403d6"
     },
     {
       "path": "implementation/phase-9-grcv4/verification/handoff_evidence.py",
@@ -195,7 +203,11 @@
     },
     {
       "path": "implementation/phase-9-grcv4/verification/phase9_implementation_policy.py",
-      "sha256": "c0ed7212d753f060a5d1ba2fc5abb17c5a9fa7a3fb853596191a0d00b7443bec"
+      "sha256": "b5fc661faa121664b9c133c0769082c645ad37e71111d6a2bbefe0abcbc0fad8"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_evidence_paths.py",
+      "sha256": "34ea2f07f7b93d7a57c44d36b27923f9068abf76ff0f648977f81d4eeac684ce"
     },
     {
       "path": "implementation/phase-9-grcv4/verification/test_handoff_evidence.py",
@@ -206,5 +218,5 @@
       "sha256": "ce9e0c090cefd3b6b457add0491d91d3f244cb6de1951566a80fd208df966141"
     }
   ],
-  "record_digest": "36c8e0ab6b6a32d4f11514745b1dd075243fce3624e728c9880cb97a09671fb3"
+  "record_digest": "67ddce6a2589b7f7a18acb6081918cb4bc14c9811186ec0dffede9e15b50ef42"
 }
