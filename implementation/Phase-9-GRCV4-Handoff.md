@@ -12,6 +12,17 @@ to preserve published evidence and simplify future capture and reconstruction.
 The Tranche 2 status below remains the historical snapshot named above; use
 the current plan/checklist and acceptance records for continuation status.
 
+Current continuation: P9-3.5 is explicitly accepted by the user for commit
+after the limited audit follow-up. Tranche 3's five leaves are accepted within
+their recorded scopes. Start with the [P9-3.5 review](./phase-9-grcv4/tranche-3/P9-3.5-Review.md)
+and [execution record](./phase-9-grcv4/tranche-3/P9-3.5-ExecutionRecord.json).
+Their pending-acceptance wording records the earlier review state; this user
+decision and the commit message record acceptance. The limited external audit
+did not complete the primary preservation review, and that limitation remains.
+The live permission adapter binds P9-3.4 at `12611fe`, with eleven ready leaves
+and 23 eligible runtime paths. A later authorized entry must bind P9-3.5's
+accepted commit separately. P9-4.1 has not started; runtime support remains empty.
+
 ## Where we stopped
 
 P9-G1 and P9-2.1 through P9-2.6 are accepted. The user's instruction to commit

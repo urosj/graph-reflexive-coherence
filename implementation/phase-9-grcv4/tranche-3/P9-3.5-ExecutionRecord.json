@@ -1,0 +1,133 @@
+{
+  "schema": "phase9_leaf_execution_v1",
+  "iteration_id": "P9-3.5",
+  "release_id": "grcv4-spec-release-sha256:9f4c8fe5b57b1c477d834a3e4dae3f98a2b18c70e6e7f598e3c9652170c8645f",
+  "status": "implemented_and_verified",
+  "entry_acceptance": "implementation/phase-9-grcv4/tranche-3/P9-3.4-AcceptanceRecord.json",
+  "review": {
+    "path": "implementation/phase-9-grcv4/tranche-3/P9-3.5-Review.md",
+    "sha256": "80983966d9a740d7d5ef4bbc7a8b886c95095ffd51ee52f252a3848eff9ba5eb"
+  },
+  "implemented_scope": "Full captured input preservation at existing duration/result/resource/cache rejection boundaries, pre-operation constructor/wire failures, independent observer mutation controls and reproducible validation.",
+  "runtime_source_changes": [],
+  "validation_runs": [
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-3.5/validation/run.json",
+      "sha256": "e1a8f1b447416d793258663038310ec80978ea572c005831815f7c81ea148aa9"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-3.5/permission-surfaces/run.json",
+      "sha256": "9cd4a83443a2a25690f62b7fffd9748d4b089aacce6c26e40eded8e3eaa00259"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-3.5/audit-followup/run.json",
+      "sha256": "200cd35344b3581f1c5a7a2b9afeb404667f39f8a5ee5addb6eeb679ce91ab41"
+    }
+  ],
+  "accepted_generic_runtime_support": [],
+  "admitted_specialization_support_sets": [],
+  "remaining_obligations": [
+    {
+      "owner": "P9-4.5/P9-4.7a",
+      "requirement": "Execute complete candidate/root and full-beat rejection with unchanged complete authority, including later writers and commit checks."
+    },
+    {
+      "owner": "P9-7.*",
+      "requirement": "Execute full current/reset lifecycle rollback and receipt-lineage verification for set/restore, reset, migration and topology events."
+    },
+    {
+      "owner": "P9-SCI-SINGULAR",
+      "requirement": "Scoped local preservation evidence does not close the complete source debt or scientific gate."
+    }
+  ],
+  "next_step": "Complete the independent primary-source preservation audit using the supplied handoff, then user acceptance; no P9-3.5 acceptance or successor opening is recorded.",
+  "reviewer_decision": "pending_user_acceptance",
+  "scientific_verdict": "Verified within the implemented local rejection boundaries. Evidence distinguishes preservation of supplied inputs from complete candidate execution, authoritative transaction rollback, observer authentication and receipt-lineage certification; these later obligations remain open.",
+  "completed_utc": "2026-09-07T17:29:39.775116+00:00",
+  "verification_summary": {
+    "full_repository_methods": 1675,
+    "new_preservation_methods": 13,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "authority_cases": 145,
+    "notebook_cells": 2,
+    "javascript_tests": 21,
+    "browser_tests": 18,
+    "API_notebook_and_download_identity": "byte_exact",
+    "numerical_static_checks": "Ruff, strict mypy and pip check passed in the full capture; geometry capture self-test maintenance also passed formatting, Ruff and strict mypy.",
+    "numerical_source_hashes": 457,
+    "source_unchanged_during_numerical_run": true,
+    "previous_published_evidence_files_unchanged": 151,
+    "production_specs_paper_and_dependency_lock_unchanged": true,
+    "full_repository_run_scope": "Original pre-audit source, retained unchanged; the reporter correction and new observer pressure have a separate focused follow-up.",
+    "latest_followup_methods": 20,
+    "latest_followup_failures": 0,
+    "latest_followup_errors": 0,
+    "latest_followup_skips": 0
+  },
+  "reconstruction_checks": {
+    "numerical": {
+      "source_inputs": {
+        "path": "implementation/phase-9-grcv4/evidence/P9-3.5/validation/inputs.json",
+        "sha256": "51aa348a8d26452c2e7c840451d36657104f538c208eb81ecba9dfda9718ef55"
+      },
+      "matching_source_hashes": 457,
+      "patch_paths": 3,
+      "required_method_roster": 1675,
+      "clone_local_imports": true,
+      "executed_controls": [
+        "tests.models.test_grc_v4_geometry.CaptureIntegrityTests.test_capture_rejects_missing_and_duplicate_discovery",
+        "tests.models.test_grc_v4_step.PrestatePreservationTests.test_independent_observer_exposes_mutating_and_lying_serializers"
+      ],
+      "passed_controls": 2,
+      "limit": "Bounded source reconstruction with the existing dependency environment; no claim of a second full-suite or clean development-environment execution."
+    },
+    "permission": {
+      "matching_additional_files": 3,
+      "clone_local_policy_import": true,
+      "recomputed_tree": {
+        "current_artifact_digest": "db46d851d7544eeb7198120fe600a77809f0d90d0114e7d9ab561d2fb5e4cc8c",
+        "protected_baseline_files": 725,
+        "registered_runtime_files": 195
+      },
+      "matched_recorded_tree": true
+    },
+    "dependency_recipe": {
+      "external_environment_requirements": 52,
+      "wheel_requirements": 43,
+      "recorded_platform_wheel_filename_and_hash_matches": 43,
+      "limit": "Requirements derivation and existing wheel checks; fresh installation commands are provided for replay."
+    }
+  },
+  "maintenance_scope": {
+    "tests/models/test_grc_v4_geometry.py": "Existing P9-3.4 owner: inherited capture self-test maintenance plus active-test-aware skip reporting and its controls. Frozen coverage rules and prior retained runs are unchanged."
+  },
+  "claim_ceiling": "Full captured input preservation at existing local APIs; supplied solver dispositions and observer controls do not execute a complete solve or lifecycle rollback. Runtime support remains empty.",
+  "audit_followup": {
+    "disposition": "confirmed_reporter_finding_corrected",
+    "independent_audit_scope": "Review/record and inherited capture helpers only; main preservation source was absent from the external audit. Its independent review remains pending.",
+    "source_changes": [
+      "tests/models/test_grc_v4_geometry.py",
+      "tests/models/test_grc_v4_step.py"
+    ],
+    "runtime_source_changes": [],
+    "reporter_pressure": "Two ordinary method names across eleven real skip modes, plus active-case shadowing control; skipped/mixed work cannot pass coverage.",
+    "observer_pressure": "Cross-root alias merge/split, signed/payload NaN bits, repeated observation, detached output, unsupported iterator non-consumption.",
+    "source_reconstruction": {
+      "matching_source_hashes": 457,
+      "clone_local_test_imports": true,
+      "passed_controls": 2,
+      "failures": 0,
+      "errors": 0,
+      "skips": 0,
+      "methods": [
+        "tests.models.test_grc_v4_geometry.CaptureIntegrityTests.test_result_reconciles_execution_and_records_subtest_failures",
+        "tests.models.test_grc_v4_step.PrestatePreservationTests.test_observer_detects_each_coordinate_alias_type_and_cycle_change"
+      ],
+      "limit": "Source reconstruction and two controls using the existing dependency environment; no separate full-suite or fresh development-environment execution."
+    },
+    "completed_utc": "2026-09-07T18:24:23.554419+00:00",
+    "inputs": "implementation/phase-9-grcv4/evidence/P9-3.5/audit-followup/inputs.json"
+  }
+}

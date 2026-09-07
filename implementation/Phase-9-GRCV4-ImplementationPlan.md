@@ -602,6 +602,24 @@ validity policy against it; no clipping or positivity repair is authorized.
 Actual selector coverage must test both sides of the cutoff, its exact boundary,
 strict-gap loss and physical-versus-retained conditioning.
 
+P9-3.5 entry now binds P9-3.4's accepted commit `12611fe` in
+[its acceptance record](./phase-9-grcv4/tranche-3/P9-3.4-AcceptanceRecord.json),
+advancing the earlier ten-leaf permission state to eleven ready leaves with
+the same 23 eligible runtime paths. The
+[P9-3.5 review](./phase-9-grcv4/tranche-3/P9-3.5-Review.md) maps complete captured
+prestate preservation to implemented local rejection boundaries, pre-operation
+reconstruction failures and independent observer controls. The original full
+capture passed all 1,675 regression methods and the permission/surface checks.
+The limited audit follow-up corrected skip-name reporting and expanded observer
+pressure; all 20 focused methods passed. Implementation and validation are
+complete, and the user explicitly accepted P9-3.5 for commit after that follow-up.
+The bound review and execution record preserve their pre-acceptance state.
+The external audit's primary-source review remains incomplete; this acceptance
+does not extend its findings. Tranche 3's five leaves are accepted within their
+recorded scopes. A later authorized entry will bind P9-3.5's accepted commit;
+P9-4.1 has not started. Runtime support remains empty, and real complete-step
+and lifecycle rollback remain later obligations.
+
 Implement deterministic graph order/orientation, differential identity,
 one-form versus physical-flux maps, Hodge pairings, candidate-local mobility,
 geometry profiles, and stage-aware derived caches. Implement one authoritative

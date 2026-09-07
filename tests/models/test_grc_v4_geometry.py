@@ -3056,7 +3056,16 @@ class _P934Result(unittest.TextTestResult):
 
     def addSkip(self, test: unittest.TestCase, reason: str) -> None:
         super().addSkip(test, reason)
-        parent = getattr(test, "test_case", test)
+        # An ordinary active test can itself have a method named test_case.
+        # Only an inactive subtest wrapper may identify an active parent.
+        parent = test
+        if id(test) not in self._active:
+            candidate = getattr(test, "test_case", None)
+            if (
+                isinstance(candidate, unittest.TestCase)
+                and id(candidate) in self._active
+            ):
+                parent = candidate
         self._outcome(parent, "skipped", reason=reason)
         if parent is not test:
             self._active[id(parent)].setdefault("subtests", []).append(
@@ -3236,7 +3245,10 @@ class CaptureIntegrityTests(unittest.TestCase):
         )
         ids = _p934_ids(suite)
         required = _p934_required(root)
-        self.assertTrue(_p934_coverage(required, ids)["passed"])
+        reviewed_ids = [name for name in ids if name in required]
+        self.assertTrue(_p934_coverage(required, reviewed_ids)["passed"])
+        if set(ids) - required:
+            self.assertFalse(_p934_coverage(required, ids)["passed"])
         installed = "tests.models.test_grc_v4_geometry.ReconstructionTests.test_clean_installed_wheel_and_sdist_primitives"
         numerical = "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_star_mixed_scale_retains_representable_coupling"
 
@@ -3254,9 +3266,13 @@ class CaptureIntegrityTests(unittest.TestCase):
         for label, names in (
             ("empty", []),
             ("unrelated", ["unrelated.smoke"]),
-            ("missing_numerical", [n for n in ids if n != numerical]),
-            ("missing_installed", [n for n in ids if n != installed]),
-            ("duplicate", ids + [numerical]),
+            (
+                "missing_numerical",
+                [n for n in reviewed_ids if n != numerical],
+            ),
+            ("missing_installed", [n for n in reviewed_ids if n != installed]),
+            ("duplicate", reviewed_ids + [numerical]),
+            ("unreviewed_extension", reviewed_ids + ["unreviewed.extension"]),
         ):
             with (
                 self.subTest(control=label),
@@ -3363,6 +3379,116 @@ class CaptureIntegrityTests(unittest.TestCase):
         self.assertEqual(rows["test_subskip"]["subtests"][0]["status"], "skipped")
         self.assertEqual(rows["test_error"]["exception_type"], "ValueError")
         self.assertFalse(_p934_coverage(set(ids), ids, result.rows)["passed"])
+
+        # Names must not change skip reporting. Exercise real unittest
+        # callbacks, including holder objects for skipped class setup and
+        # multiple/nested subtests whose parent is the active ordinary case.
+        skip_modes = (
+            "ordinary",
+            "decorator",
+            "class_decorator",
+            "setup",
+            "teardown",
+            "cleanup",
+            "class_setup",
+            "subtest",
+            "nested_subtest",
+            "multiple_subtests",
+            "mixed_subtests",
+        )
+        for method in ("test_probe", "test_case"):
+            for mode in skip_modes:
+                with self.subTest(method=method, skip_mode=mode):
+
+                    def skip_body(test: unittest.TestCase) -> None:
+                        if mode == "ordinary":
+                            test.skipTest("ordinary skip")
+                        elif mode == "cleanup":
+                            test.addCleanup(test.skipTest, "cleanup skip")
+                        elif mode == "nested_subtest":
+                            with test.subTest(outer=1):
+                                with test.subTest(inner=2):
+                                    test.skipTest("nested skip")
+                        elif mode in ("subtest", "multiple_subtests", "mixed_subtests"):
+                            count = 1 if mode == "subtest" else 2
+                            for index in range(count):
+                                with test.subTest(index=index):
+                                    if mode == "mixed_subtests" and index == 0:
+                                        test.fail("failure before skip")
+                                    test.skipTest("subtest skip")
+
+                    def skip_setup(test: unittest.TestCase) -> None:
+                        test.skipTest("setup/teardown skip")
+
+                    def skip_class(cls: type[unittest.TestCase]) -> None:
+                        raise unittest.SkipTest("class setup skip")
+
+                    methods: dict[str, Any] = {method: skip_body}
+                    if mode == "decorator":
+                        methods[method] = unittest.skip("decorator skip")(skip_body)
+                    elif mode == "setup":
+                        methods["setUp"] = skip_setup
+                    elif mode == "teardown":
+                        methods["tearDown"] = skip_setup
+                    elif mode == "class_setup":
+                        methods["setUpClass"] = classmethod(skip_class)
+                    cls = type("SkipNames", (unittest.TestCase,), methods)
+                    if mode == "class_decorator":
+                        cls = unittest.skip("class decorator skip")(cls)
+                    case = cls(method)
+                    result = cast(
+                        _P934Result,
+                        unittest.TextTestRunner(
+                            stream=io.StringIO(), resultclass=_P934Result
+                        ).run(unittest.TestSuite([case])),
+                    )
+                    self.assertEqual(result.testsRun, int(mode != "class_setup"))
+                    self.assertEqual(
+                        len(result.skipped), 2 if mode == "multiple_subtests" else 1
+                    )
+                    self.assertEqual(result.errors, [])
+                    self.assertEqual(
+                        len(result.failures), int(mode == "mixed_subtests")
+                    )
+                    self.assertEqual(len(result.rows), 1)
+                    row = result.rows[0]
+                    self.assertEqual(row["status"], "skipped")
+                    if mode != "class_setup":
+                        self.assertEqual(row["test"], case.id())
+                    if mode in (
+                        "subtest",
+                        "nested_subtest",
+                        "multiple_subtests",
+                        "mixed_subtests",
+                    ):
+                        expected = (
+                            ["failed", "skipped"]
+                            if mode == "mixed_subtests"
+                            else ["skipped"] * len(result.skipped)
+                        )
+                        self.assertEqual(
+                            [s["status"] for s in row["subtests"]], expected
+                        )
+                    else:
+                        self.assertNotIn("subtests", row)
+                    self.assertFalse(
+                        _p934_coverage({case.id()}, [case.id()], result.rows)["passed"]
+                    )
+
+        # A shadowing attribute must not redirect an ordinary active callback
+        # into a different active case. This is a reporter control, not a real
+        # concurrent test execution or a runtime authority claim.
+        result = _P934Result(io.StringIO(), True, 0)
+        first = unittest.FunctionTestCase(lambda: None, description="first")
+        second = unittest.FunctionTestCase(lambda: None, description="second")
+        result.startTest(first)
+        result.startTest(second)
+        second.test_case = first  # type: ignore[attr-defined]
+        result.addSkip(second, "ordinary case with shadowing attribute")
+        self.assertEqual([r["status"] for r in result.rows], ["started", "skipped"])
+        self.assertNotIn("subtests", result.rows[0])
+        result.stopTest(second)
+        result.stopTest(first)
 
         class ClassFailure(unittest.TestCase):
             @classmethod

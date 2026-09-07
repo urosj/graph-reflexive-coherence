@@ -52,7 +52,7 @@ def main():
             ],
             check=True,
         )
-        fixture_revision = p.accepted_resources(p.ROOT)["baseline_commit"]
+        fixture_revision = p.accepted_numerical_pressure(p.ROOT)["baseline_commit"]
         subprocess.run(
             ["git", "checkout", "--quiet", "--detach", fixture_revision],
             cwd=root, check=True,
@@ -514,9 +514,14 @@ def main():
             lambda: registered("src/pygrc/models/grc_v4.py", content, leaf="P9-2.3"),
         )
         case(
-            "numerical_work_does_not_accept_next_leaf",
+            "accepted_numerical_pressure_enables_rejection_preservation_leaf",
             lambda: registered(p.PHASE + "evidence/P9-3.5/probe/inputs.json",
                                b"{}", leaf="P9-3.5"),
+        )
+        case(
+            "numerical_pressure_does_not_accept_future_leaf",
+            lambda: registered(p.PHASE + "evidence/P9-4.1/probe/inputs.json",
+                               b"{}", leaf="P9-4.1"),
             "owning leaf entry dependencies are not accepted",
         )
         for name in ["src/pygrc/models/grc_v4_state.py", "src/pygrc/models/grc_v4_step.py"]:
@@ -551,6 +556,21 @@ def main():
                     p.accepted_resources(root)
             case("resource_acceptance_cannot_self_authorize_" + key, forged_resource,
                  "untrusted resource acceptance", scope="isolated_resource_acceptance_authentication")
+        case("missing_numerical_pressure_acceptance", lambda: edit(p.NUMERICAL_ACCEPTANCE, None),
+             "P9-3.4-AcceptanceRecord.json")
+        for key, replacement in [("status", "pending"), ("accepted_iterations", ["P9-3.4", "P9-3.5"]),
+                                 ("accepted_generic_runtime_support", ["C_OS"]),
+                                 ("admitted_specialization_support_sets", [["C_OS"]]),
+                                 ("baseline_commit", p.BASELINE), ("evidence_bindings", [])]:
+            def forged_numerical(key=key, replacement=replacement):
+                value = p.read(root / p.NUMERICAL_ACCEPTANCE)
+                value[key] = replacement
+                value["record_digest"] = p.digest_record(value)
+                with mutate(p.NUMERICAL_ACCEPTANCE, p.canonical(value)):
+                    p.accepted_numerical_pressure(root)
+            case("numerical_pressure_acceptance_cannot_self_authorize_" + key,
+                 forged_numerical, "untrusted numerical pressure acceptance",
+                 scope="isolated_numerical_pressure_acceptance_authentication")
         case("accepted_harness_enables_export_owner",
              lambda: registered(init, before + lazy, leaf="P9-2.6"))
         for key, replacement in [("status", "pending"), ("accepted_iterations", ["P9-2.5", "P9-2.6"]),

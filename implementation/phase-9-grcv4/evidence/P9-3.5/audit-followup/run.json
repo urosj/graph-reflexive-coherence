@@ -1,0 +1,227 @@
+{
+  "schema": "phase9_leaf_audit_followup_v1",
+  "iteration_id": "P9-3.5",
+  "status": "passed",
+  "started_utc": "2026-09-07T18:13:07.891429+00:00",
+  "scope": "Reporter correction and observer pressure; all thirteen preservation and seven capture-integrity methods. This is a focused follow-up, not a new execution of all 1675 repository methods.",
+  "source": {
+    "base_commit": "12611fe42ba47f2fa200defa606d89e7f460b76d",
+    "prior_inputs": {
+      "path": "../validation/inputs.json",
+      "sha256": "51aa348a8d26452c2e7c840451d36657104f538c208eb81ecba9dfda9718ef55"
+    },
+    "post_validation_patch": "--- a/tests/models/test_grc_v4_geometry.py\n+++ b/tests/models/test_grc_v4_geometry.py\n@@ -3056,7 +3056,16 @@\n \n     def addSkip(self, test: unittest.TestCase, reason: str) -> None:\n         super().addSkip(test, reason)\n-        parent = getattr(test, \"test_case\", test)\n+        # An ordinary active test can itself have a method named test_case.\n+        # Only an inactive subtest wrapper may identify an active parent.\n+        parent = test\n+        if id(test) not in self._active:\n+            candidate = getattr(test, \"test_case\", None)\n+            if (\n+                isinstance(candidate, unittest.TestCase)\n+                and id(candidate) in self._active\n+            ):\n+                parent = candidate\n         self._outcome(parent, \"skipped\", reason=reason)\n         if parent is not test:\n             self._active[id(parent)].setdefault(\"subtests\", []).append(\n@@ -3370,6 +3379,116 @@\n         self.assertEqual(rows[\"test_subskip\"][\"subtests\"][0][\"status\"], \"skipped\")\n         self.assertEqual(rows[\"test_error\"][\"exception_type\"], \"ValueError\")\n         self.assertFalse(_p934_coverage(set(ids), ids, result.rows)[\"passed\"])\n+\n+        # Names must not change skip reporting. Exercise real unittest\n+        # callbacks, including holder objects for skipped class setup and\n+        # multiple/nested subtests whose parent is the active ordinary case.\n+        skip_modes = (\n+            \"ordinary\",\n+            \"decorator\",\n+            \"class_decorator\",\n+            \"setup\",\n+            \"teardown\",\n+            \"cleanup\",\n+            \"class_setup\",\n+            \"subtest\",\n+            \"nested_subtest\",\n+            \"multiple_subtests\",\n+            \"mixed_subtests\",\n+        )\n+        for method in (\"test_probe\", \"test_case\"):\n+            for mode in skip_modes:\n+                with self.subTest(method=method, skip_mode=mode):\n+\n+                    def skip_body(test: unittest.TestCase) -> None:\n+                        if mode == \"ordinary\":\n+                            test.skipTest(\"ordinary skip\")\n+                        elif mode == \"cleanup\":\n+                            test.addCleanup(test.skipTest, \"cleanup skip\")\n+                        elif mode == \"nested_subtest\":\n+                            with test.subTest(outer=1):\n+                                with test.subTest(inner=2):\n+                                    test.skipTest(\"nested skip\")\n+                        elif mode in (\"subtest\", \"multiple_subtests\", \"mixed_subtests\"):\n+                            count = 1 if mode == \"subtest\" else 2\n+                            for index in range(count):\n+                                with test.subTest(index=index):\n+                                    if mode == \"mixed_subtests\" and index == 0:\n+                                        test.fail(\"failure before skip\")\n+                                    test.skipTest(\"subtest skip\")\n+\n+                    def skip_setup(test: unittest.TestCase) -> None:\n+                        test.skipTest(\"setup/teardown skip\")\n+\n+                    def skip_class(cls: type[unittest.TestCase]) -> None:\n+                        raise unittest.SkipTest(\"class setup skip\")\n+\n+                    methods: dict[str, Any] = {method: skip_body}\n+                    if mode == \"decorator\":\n+                        methods[method] = unittest.skip(\"decorator skip\")(skip_body)\n+                    elif mode == \"setup\":\n+                        methods[\"setUp\"] = skip_setup\n+                    elif mode == \"teardown\":\n+                        methods[\"tearDown\"] = skip_setup\n+                    elif mode == \"class_setup\":\n+                        methods[\"setUpClass\"] = classmethod(skip_class)\n+                    cls = type(\"SkipNames\", (unittest.TestCase,), methods)\n+                    if mode == \"class_decorator\":\n+                        cls = unittest.skip(\"class decorator skip\")(cls)\n+                    case = cls(method)\n+                    result = cast(\n+                        _P934Result,\n+                        unittest.TextTestRunner(\n+                            stream=io.StringIO(), resultclass=_P934Result\n+                        ).run(unittest.TestSuite([case])),\n+                    )\n+                    self.assertEqual(result.testsRun, int(mode != \"class_setup\"))\n+                    self.assertEqual(\n+                        len(result.skipped), 2 if mode == \"multiple_subtests\" else 1\n+                    )\n+                    self.assertEqual(result.errors, [])\n+                    self.assertEqual(\n+                        len(result.failures), int(mode == \"mixed_subtests\")\n+                    )\n+                    self.assertEqual(len(result.rows), 1)\n+                    row = result.rows[0]\n+                    self.assertEqual(row[\"status\"], \"skipped\")\n+                    if mode != \"class_setup\":\n+                        self.assertEqual(row[\"test\"], case.id())\n+                    if mode in (\n+                        \"subtest\",\n+                        \"nested_subtest\",\n+                        \"multiple_subtests\",\n+                        \"mixed_subtests\",\n+                    ):\n+                        expected = (\n+                            [\"failed\", \"skipped\"]\n+                            if mode == \"mixed_subtests\"\n+                            else [\"skipped\"] * len(result.skipped)\n+                        )\n+                        self.assertEqual(\n+                            [s[\"status\"] for s in row[\"subtests\"]], expected\n+                        )\n+                    else:\n+                        self.assertNotIn(\"subtests\", row)\n+                    self.assertFalse(\n+                        _p934_coverage({case.id()}, [case.id()], result.rows)[\"passed\"]\n+                    )\n+\n+        # A shadowing attribute must not redirect an ordinary active callback\n+        # into a different active case. This is a reporter control, not a real\n+        # concurrent test execution or a runtime authority claim.\n+        result = _P934Result(io.StringIO(), True, 0)\n+        first = unittest.FunctionTestCase(lambda: None, description=\"first\")\n+        second = unittest.FunctionTestCase(lambda: None, description=\"second\")\n+        result.startTest(first)\n+        result.startTest(second)\n+        second.test_case = first  # type: ignore[attr-defined]\n+        result.addSkip(second, \"ordinary case with shadowing attribute\")\n+        self.assertEqual([r[\"status\"] for r in result.rows], [\"started\", \"skipped\"])\n+        self.assertNotIn(\"subtests\", result.rows[0])\n+        result.stopTest(second)\n+        result.stopTest(first)\n \n         class ClassFailure(unittest.TestCase):\n             @classmethod\n--- a/tests/models/test_grc_v4_step.py\n+++ b/tests/models/test_grc_v4_step.py\n@@ -1489,6 +1489,8 @@\n         return caught_error\n \n     def test_observer_detects_each_coordinate_alias_type_and_cycle_change(self) -> None:\n+        import struct\n+\n         before = preservation_fixture(\"A\", \"CI+PC\")\n         raw = before.to_payload()\n \n@@ -1531,6 +1533,45 @@\n         cyclic = preservation_snapshot(shared)\n         shared[0] = 2.0\n         self.assertNotEqual(preservation_snapshot(shared), cyclic)\n+\n+        # Observe both argument roots together; splitting and merging equal\n+        # mutable storage must each differ from that attempt's own baseline.\n+        left, right = [1.0], [1.0]\n+        roots = [left, right]\n+        separate = preservation_snapshot(roots)\n+        roots[1] = left\n+        merged = preservation_snapshot(roots)\n+        self.assertNotEqual(merged, separate)\n+        roots[1] = right\n+        self.assertNotEqual(preservation_snapshot(roots), merged)\n+        self.assertEqual(preservation_snapshot(roots), separate)\n+\n+        # Malformed floating values still have observable bits. Repeated\n+        # observation must neither canonicalize them nor consume input.\n+        patterns = (\"7ff8000000000001\", \"7ff8000000000002\", \"fff8000000000001\")\n+        nans = [struct.unpack(\"!d\", bytes.fromhex(bits))[0] for bits in patterns]\n+        self.assertTrue(all(math.isnan(value) for value in nans))\n+        self.assertEqual(len({preservation_snapshot(value) for value in nans}), 3)\n+        raw_graph = [proxy, shared, nans, roots]\n+        saved = preservation_snapshot(raw_graph)\n+        for _ in range(3):\n+            self.assertEqual(preservation_snapshot(raw_graph), saved)\n+        self.assertEqual(\n+            [struct.pack(\"!d\", value).hex() for value in nans], list(patterns)\n+        )\n+\n+        def detached(value: Any) -> None:\n+            self.assertIn(type(value), (tuple, type(None), bool, int, str, bytes))\n+            if type(value) is tuple:\n+                for child in value:\n+                    detached(child)\n+\n+        detached(saved)\n+        iterator = iter([\"first\", \"second\"])\n+        with self.assertRaisesRegex(TypeError, \"unobserved preservation type\"):\n+            preservation_snapshot(iterator)\n+        self.assertEqual(next(iterator), \"first\")\n+        self.assertEqual(preservation_snapshot(raw_graph), saved)\n \n     def test_all_failed_dispositions_preserve_ten_full_prestates_and_selection(\n         self,\n",
+    "post_validation_patch_sha256": "5853b743b67a6f5b599babc0845ad99c3b21462b52fbc7a79651b13dfdf60c23",
+    "source_overrides": {
+      "tests/models/test_grc_v4_geometry.py": "b3383f393fbafa0c7be228e0011fb51f8b705ffaf4b5b2721c0a3cfd0630e69a",
+      "tests/models/test_grc_v4_step.py": "e322a9862a09468e1b29b03be296e81cf24dd423e9789bf30e970a748087c98c"
+    },
+    "instructions": "Reconstruct the original source using prior_inputs, then git apply post_validation_patch and verify source_overrides plus the unchanged prior source hashes. Preserve this record and the external audit instruments inside the repository before switching Git revisions."
+  },
+  "environment": {
+    "python": "3.12.3 (main, Jul 15 2026, 23:46:41) [GCC 13.3.0]",
+    "platform": "Linux-5.15.167-0515167-generic-x86_64-with-glibc2.39",
+    "dependency_environment": "../validation/run.json",
+    "dependency_environment_sha256": "e1a8f1b447416d793258663038310ec80978ea572c005831815f7c81ea148aa9",
+    "dependency_versions_match_prior": true
+  },
+  "commands": [
+    {
+      "argv": [
+        ".venv/bin/python",
+        "implementation/phase-9-grcv4/evidence/P9-3.5/audit-followup/skip-name-reproducer.py",
+        "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/generated/p935-audit-followup/before/tests/models/test_grc_v4_geometry.py"
+      ],
+      "exit_status": 0,
+      "elapsed_seconds": 0.165,
+      "output": "{\n  \"scope\": \"Reporting only; original inherited helper and audit-only candidate repair\",\n  \"python\": \"3.12.3\",\n  \"source\": \"implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/generated/p935-audit-followup/before/tests/models/test_grc_v4_geometry.py\",\n  \"source_sha256\": \"e56aafe3c02d34233b48c4bdff4d026f561eb459ef970977feb9d5bc9f47441d\",\n  \"original\": [\n    {\n      \"method\": \"test_probe\",\n      \"subtest\": false,\n      \"reporting_exception\": null,\n      \"tests_run\": 1,\n      \"skipped\": 1,\n      \"recorded_rows\": [\n        {\n          \"test\": \"__main__.OrdinaryTests.test_probe\",\n          \"status\": \"skipped\",\n          \"reason\": \"unavailable test dependency\"\n        }\n      ]\n    },\n    {\n      \"method\": \"test_case\",\n      \"subtest\": false,\n      \"reporting_exception\": {\n        \"type\": \"AttributeError\",\n        \"message\": \"'function' object has no attribute 'id'\"\n      },\n      \"tests_run\": 1,\n      \"skipped\": 1,\n      \"recorded_rows\": [\n        {\n          \"test\": \"__main__.OrdinaryTests.test_case\",\n          \"status\": \"started\"\n        }\n      ]\n    },\n    {\n      \"method\": \"test_probe\",\n      \"subtest\": true,\n      \"reporting_exception\": null,\n      \"tests_run\": 1,\n      \"skipped\": 1,\n      \"recorded_rows\": [\n        {\n          \"test\": \"__main__.OrdinaryTests.test_probe\",\n          \"status\": \"skipped\",\n          \"reason\": \"unavailable test dependency\",\n          \"subtests\": [\n            {\n              \"test\": \"__main__.OrdinaryTests.test_probe (role='ordinary control')\",\n              \"status\": \"skipped\",\n              \"reason\": \"unavailable test dependency\"\n            }\n          ]\n        }\n      ]\n    },\n    {\n      \"method\": \"test_case\",\n      \"subtest\": true,\n      \"reporting_exception\": null,\n      \"tests_run\": 1,\n      \"skipped\": 1,\n      \"recorded_rows\": [\n        {\n          \"test\": \"__main__.OrdinaryTests.test_case\",\n          \"status\": \"skipped\",\n          \"reason\": \"unavailable test dependency\",\n          \"subtests\": [\n            {\n              \"test\": \"__main__.OrdinaryTests.test_case (role='ordinary control')\",\n              \"status\": \"skipped\",\n              \"reason\": \"unavailable test dependency\"\n            }\n          ]\n        }\n      ]\n    }\n  ],\n  \"audit_only_repair\": [\n    {\n      \"method\": \"test_probe\",\n      \"subtest\": false,\n      \"reporting_exception\": null,\n      \"tests_run\": 1,\n      \"skipped\": 1,\n      \"recorded_rows\": [\n        {\n          \"test\": \"__main__.OrdinaryTests.test_probe\",\n          \"status\": \"skipped\",\n          \"reason\": \"unavailable test dependency\"\n        }\n      ]\n    },\n    {\n      \"method\": \"test_case\",\n      \"subtest\": false,\n      \"reporting_exception\": null,\n      \"tests_run\": 1,\n      \"skipped\": 1,\n      \"recorded_rows\": [\n        {\n          \"test\": \"__main__.OrdinaryTests.test_case\",\n          \"status\": \"skipped\",\n          \"reason\": \"unavailable test dependency\"\n        }\n      ]\n    },\n    {\n      \"method\": \"test_probe\",\n      \"subtest\": true,\n      \"reporting_exception\": null,\n      \"tests_run\": 1,\n      \"skipped\": 1,\n      \"recorded_rows\": [\n        {\n          \"test\": \"__main__.OrdinaryTests.test_probe\",\n          \"status\": \"skipped\",\n          \"reason\": \"unavailable test dependency\",\n          \"subtests\": [\n            {\n              \"test\": \"__main__.OrdinaryTests.test_probe (role='ordinary control')\",\n              \"status\": \"skipped\",\n              \"reason\": \"unavailable test dependency\"\n            }\n          ]\n        }\n      ]\n    },\n    {\n      \"method\": \"test_case\",\n      \"subtest\": true,\n      \"reporting_exception\": null,\n      \"tests_run\": 1,\n      \"skipped\": 1,\n      \"recorded_rows\": [\n        {\n          \"test\": \"__main__.OrdinaryTests.test_case\",\n          \"status\": \"skipped\",\n          \"reason\": \"unavailable test dependency\",\n          \"subtests\": [\n            {\n              \"test\": \"__main__.OrdinaryTests.test_case (role='ordinary control')\",\n              \"status\": \"skipped\",\n              \"reason\": \"unavailable test dependency\"\n            }\n          ]\n        }\n      ]\n    }\n  ],\n  \"source_unchanged\": true\n}\n",
+      "replay_argv": [
+        ".venv/bin/python",
+        "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/generated/p935-audit-followup/skip-name-reproducer.py",
+        "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/generated/p935-audit-followup/before/tests/models/test_grc_v4_geometry.py"
+      ],
+      "path_presentation": "argv records the actual original execution location. That temporary source file was consolidated into inputs.json; replay_argv uses an extracted identical script in ignored local storage."
+    },
+    {
+      "argv": [
+        ".venv/bin/python",
+        "-c",
+        "from pathlib import Path\nfrom hashlib import sha256\nimport json, sys, unittest\nfrom tests.models import test_grc_v4_geometry as geometry, test_grc_v4_step as step, test_grc_v4_transport\nroot = Path.cwd()\nrecord = json.loads(Path(sys.argv[1]).read_text())\nprior = json.loads((Path(sys.argv[1]).parent / record['source']['prior_inputs']['path']).read_text())\nhashes = prior['source_sha256'] | record['source']['source_overrides']\nassert all(sha256((root / p).read_bytes()).hexdigest() == h for p, h in hashes.items())\nclasses = ('tests.models.test_grc_v4_geometry.CaptureIntegrityTests', 'tests.models.test_grc_v4_step.PrestatePreservationTests')\nrequired = {name for name in step.p935_required(root) if any(name.startswith(c + '.') for c in classes)}\nassert len(required) == 20\nsuite = unittest.defaultTestLoader.loadTestsFromNames(classes)\nids = geometry._p934_ids(suite)\nassert geometry._p934_coverage(required, ids)['passed']\nbefore = geometry._p934_loaded_sources(root, hashes)\nresult = unittest.TextTestRunner(stream=sys.stderr, verbosity=2, resultclass=geometry._P934Result).run(suite)\ncoverage = geometry._p934_coverage(required, ids, result.rows)\nafter = geometry._p934_loaded_sources(root, hashes)\nassert all(after.get(name) == value for name, value in before.items())\nassert all(sha256((root / p).read_bytes()).hexdigest() == h for p, h in hashes.items())\nactual = dict(tests_run=result.testsRun, failures=len(result.failures), errors=len(result.errors), skips=len(result.skipped), coverage=coverage, methods=result.rows, source_unchanged=True, live_modules_before=len(before), live_modules_after=len(after), existing_live_modules_unchanged=True)\nPath(sys.argv[2]).write_text(json.dumps(actual, indent=2) + '\\n')\nif not (result.wasSuccessful() and not result.skipped and coverage['passed'] and result.testsRun == 20):\n    raise SystemExit(1)\nprint('P935_AUDIT_FOLLOWUP_PASS methods=20 failures=0 errors=0 skips=0')\n",
+        "implementation/phase-9-grcv4/evidence/P9-3.5/audit-followup/run.json",
+        "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/generated/p935-audit-followup/actual.json"
+      ],
+      "exit_status": 0,
+      "elapsed_seconds": 675.033,
+      "output": "P935_AUDIT_FOLLOWUP_PASS methods=20 failures=0 errors=0 skips=0\ntest_capture_rejects_missing_and_duplicate_discovery (tests.models.test_grc_v4_geometry.CaptureIntegrityTests.test_capture_rejects_missing_and_duplicate_discovery) ... ok\ntest_capture_resets_observations_in_same_process (tests.models.test_grc_v4_geometry.CaptureIntegrityTests.test_capture_resets_observations_in_same_process) ... ok\ntest_coverage_requires_every_reviewed_id_to_pass (tests.models.test_grc_v4_geometry.CaptureIntegrityTests.test_coverage_requires_every_reviewed_id_to_pass) ... ok\ntest_forensic_rows_must_match_reviewed_contracts (tests.models.test_grc_v4_geometry.CaptureIntegrityTests.test_forensic_rows_must_match_reviewed_contracts) ... ok\ntest_loaded_module_origin_and_bytes_are_checked (tests.models.test_grc_v4_geometry.CaptureIntegrityTests.test_loaded_module_origin_and_bytes_are_checked) ... ok\ntest_missing_or_stale_diagnostics_are_rejected (tests.models.test_grc_v4_geometry.CaptureIntegrityTests.test_missing_or_stale_diagnostics_are_rejected) ... ok\ntest_result_reconciles_execution_and_records_subtest_failures (tests.models.test_grc_v4_geometry.CaptureIntegrityTests.test_result_reconciles_execution_and_records_subtest_failures) ... ok\ntest_admission_and_missing_selection_preserve_both_histories (tests.models.test_grc_v4_step.PrestatePreservationTests.test_admission_and_missing_selection_preserve_both_histories) ... ok\ntest_all_failed_dispositions_preserve_ten_full_prestates_and_selection (tests.models.test_grc_v4_step.PrestatePreservationTests.test_all_failed_dispositions_preserve_ten_full_prestates_and_selection) ... ok\ntest_binding_detects_full_state_changes_without_mutating_either_observation (tests.models.test_grc_v4_step.PrestatePreservationTests.test_binding_detects_full_state_changes_without_mutating_either_observation) ... ok\ntest_capture_requires_each_reviewed_preservation_method (tests.models.test_grc_v4_step.PrestatePreservationTests.test_capture_requires_each_reviewed_preservation_method) ... ok\ntest_consumption_rejection_preserves_cache_and_independent_expectations (tests.models.test_grc_v4_step.PrestatePreservationTests.test_consumption_rejection_preserves_cache_and_independent_expectations) ... ok\ntest_harness_catches_nonresource_reset_ledger_and_exception_mutations (tests.models.test_grc_v4_step.PrestatePreservationTests.test_harness_catches_nonresource_reset_ledger_and_exception_mutations) ... ok\ntest_independent_observer_exposes_mutating_and_lying_serializers (tests.models.test_grc_v4_step.PrestatePreservationTests.test_independent_observer_exposes_mutating_and_lying_serializers) ... ok\ntest_late_resource_failures_preserve_inputs_and_detach_charge_diagnostics (tests.models.test_grc_v4_step.PrestatePreservationTests.test_late_resource_failures_preserve_inputs_and_detach_charge_diagnostics) ... ok\ntest_malformed_wire_rejection_preserves_cyclic_and_shared_input (tests.models.test_grc_v4_step.PrestatePreservationTests.test_malformed_wire_rejection_preserves_cyclic_and_shared_input) ... ok\ntest_negative_attempts_preserve_full_payload_and_result_isolation (tests.models.test_grc_v4_step.PrestatePreservationTests.test_negative_attempts_preserve_full_payload_and_result_isolation) ... ok\ntest_observer_detects_each_coordinate_alias_type_and_cycle_change (tests.models.test_grc_v4_step.PrestatePreservationTests.test_observer_detects_each_coordinate_alias_type_and_cycle_change) ... ok\ntest_reconstruction_rejection_preserves_raw_nested_aliases_and_live_records (tests.models.test_grc_v4_step.PrestatePreservationTests.test_reconstruction_rejection_preserves_raw_nested_aliases_and_live_records) ... ok\ntest_stale_selection_preserves_request_reference_history_and_order (tests.models.test_grc_v4_step.PrestatePreservationTests.test_stale_selection_preserves_request_reference_history_and_order) ... ok\n\n----------------------------------------------------------------------\nRan 20 tests in 670.584s\n\nOK\n"
+    },
+    {
+      "argv": [
+        ".venv/bin/python",
+        "-m",
+        "ruff",
+        "format",
+        "--check",
+        "tests/models/test_grc_v4_geometry.py",
+        "tests/models/test_grc_v4_step.py"
+      ],
+      "exit_status": 0,
+      "elapsed_seconds": 0.032,
+      "output": "2 files already formatted\n"
+    },
+    {
+      "argv": [
+        ".venv/bin/python",
+        "-m",
+        "ruff",
+        "check",
+        "tests/models/test_grc_v4_geometry.py",
+        "tests/models/test_grc_v4_step.py"
+      ],
+      "exit_status": 0,
+      "elapsed_seconds": 0.033,
+      "output": "All checks passed!\n"
+    },
+    {
+      "argv": [
+        ".venv/bin/python",
+        "-m",
+        "mypy",
+        "--strict",
+        "tests/models/test_grc_v4_geometry.py",
+        "tests/models/test_grc_v4_step.py"
+      ],
+      "exit_status": 0,
+      "elapsed_seconds": 0.347,
+      "output": "Success: no issues found in 2 source files\n"
+    }
+  ],
+  "claim_ceiling": "No production change, full-transaction proof, independent completion of the limited external audit, user acceptance, or runtime support is claimed.",
+  "reported_defect_reproduced": {
+    "type": "AttributeError",
+    "message": "'function' object has no attribute 'id'"
+  },
+  "tests": {
+    "tests_run": 20,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "coverage": {
+      "required_count": 20,
+      "discovered_count": 20,
+      "passed": true,
+      "missing_discovery": [],
+      "unreviewed_discovery": [],
+      "duplicate_discovery": [],
+      "missing_execution": [],
+      "unexpected_execution": [],
+      "duplicate_execution": [],
+      "nonpassing_execution": []
+    },
+    "methods": [
+      {
+        "test": "tests.models.test_grc_v4_geometry.CaptureIntegrityTests.test_capture_rejects_missing_and_duplicate_discovery",
+        "status": "passed"
+      },
+      {
+        "test": "tests.models.test_grc_v4_geometry.CaptureIntegrityTests.test_capture_resets_observations_in_same_process",
+        "status": "passed"
+      },
+      {
+        "test": "tests.models.test_grc_v4_geometry.CaptureIntegrityTests.test_coverage_requires_every_reviewed_id_to_pass",
+        "status": "passed"
+      },
+      {
+        "test": "tests.models.test_grc_v4_geometry.CaptureIntegrityTests.test_forensic_rows_must_match_reviewed_contracts",
+        "status": "passed"
+      },
+      {
+        "test": "tests.models.test_grc_v4_geometry.CaptureIntegrityTests.test_loaded_module_origin_and_bytes_are_checked",
+        "status": "passed"
+      },
+      {
+        "test": "tests.models.test_grc_v4_geometry.CaptureIntegrityTests.test_missing_or_stale_diagnostics_are_rejected",
+        "status": "passed"
+      },
+      {
+        "test": "tests.models.test_grc_v4_geometry.CaptureIntegrityTests.test_result_reconciles_execution_and_records_subtest_failures",
+        "status": "passed"
+      },
+      {
+        "test": "tests.models.test_grc_v4_step.PrestatePreservationTests.test_admission_and_missing_selection_preserve_both_histories",
+        "status": "passed"
+      },
+      {
+        "test": "tests.models.test_grc_v4_step.PrestatePreservationTests.test_all_failed_dispositions_preserve_ten_full_prestates_and_selection",
+        "status": "passed"
+      },
+      {
+        "test": "tests.models.test_grc_v4_step.PrestatePreservationTests.test_binding_detects_full_state_changes_without_mutating_either_observation",
+        "status": "passed"
+      },
+      {
+        "test": "tests.models.test_grc_v4_step.PrestatePreservationTests.test_capture_requires_each_reviewed_preservation_method",
+        "status": "passed"
+      },
+      {
+        "test": "tests.models.test_grc_v4_step.PrestatePreservationTests.test_consumption_rejection_preserves_cache_and_independent_expectations",
+        "status": "passed"
+      },
+      {
+        "test": "tests.models.test_grc_v4_step.PrestatePreservationTests.test_harness_catches_nonresource_reset_ledger_and_exception_mutations",
+        "status": "passed"
+      },
+      {
+        "test": "tests.models.test_grc_v4_step.PrestatePreservationTests.test_independent_observer_exposes_mutating_and_lying_serializers",
+        "status": "passed"
+      },
+      {
+        "test": "tests.models.test_grc_v4_step.PrestatePreservationTests.test_late_resource_failures_preserve_inputs_and_detach_charge_diagnostics",
+        "status": "passed"
+      },
+      {
+        "test": "tests.models.test_grc_v4_step.PrestatePreservationTests.test_malformed_wire_rejection_preserves_cyclic_and_shared_input",
+        "status": "passed"
+      },
+      {
+        "test": "tests.models.test_grc_v4_step.PrestatePreservationTests.test_negative_attempts_preserve_full_payload_and_result_isolation",
+        "status": "passed"
+      },
+      {
+        "test": "tests.models.test_grc_v4_step.PrestatePreservationTests.test_observer_detects_each_coordinate_alias_type_and_cycle_change",
+        "status": "passed"
+      },
+      {
+        "test": "tests.models.test_grc_v4_step.PrestatePreservationTests.test_reconstruction_rejection_preserves_raw_nested_aliases_and_live_records",
+        "status": "passed"
+      },
+      {
+        "test": "tests.models.test_grc_v4_step.PrestatePreservationTests.test_stale_selection_preserves_request_reference_history_and_order",
+        "status": "passed"
+      }
+    ],
+    "source_unchanged": true,
+    "live_modules_before": 143,
+    "live_modules_after": 282,
+    "existing_live_modules_unchanged": true
+  },
+  "completed_utc": "2026-09-07T18:24:23.554419+00:00",
+  "source_reconstruction_check": {
+    "matching_source_hashes": 457,
+    "clone_local_test_imports": true,
+    "passed_controls": 2,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "methods": [
+      "tests.models.test_grc_v4_geometry.CaptureIntegrityTests.test_result_reconciles_execution_and_records_subtest_failures",
+      "tests.models.test_grc_v4_step.PrestatePreservationTests.test_observer_detects_each_coordinate_alias_type_and_cycle_change"
+    ],
+    "limit": "Source reconstruction and two controls using the existing dependency environment; no separate full-suite or fresh development-environment execution."
+  },
+  "independent_audit_status": "Confirmed reporter finding corrected. The external audit did not inspect or execute the primary preservation source; supplying the missing material and this implementation follow-up do not complete that independent review.",
+  "external_inputs": {
+    "path": "inputs.json",
+    "sha256": "6e458e2c99f8588eeecce77610207adedee18069c9de165e435b75337281eb7e",
+    "scope": "Exact audit text and audited documents; original reproducer with only usage/default path normalization. Extract reproducer.text to an ignored repository-local path for replay."
+  }
+}

@@ -464,8 +464,27 @@ three bounded batches retain their own results and raw per-run manifests.
   with no clipping, floor or absolute-value repair. Actual selectors must cover
   both sides of the declared cutoff, the exact boundary and strict-gap loss;
   retained conditioning must not be relabeled as physical conditioning.
-  P9-3.5 remains held.
-- [ ] P9-3.5: Verify full prestate preservation after every rejected operation.
+  Its committed acceptance at `12611fe` is now bound by the
+  [successor entry record](./phase-9-grcv4/tranche-3/P9-3.4-AcceptanceRecord.json).
+- [x] P9-3.5: Verify full prestate preservation after every rejected operation.
+  [Review](./phase-9-grcv4/tranche-3/P9-3.5-Review.md) and
+  [execution](./phase-9-grcv4/tranche-3/P9-3.5-ExecutionRecord.json): implementation
+  and validation complete; explicitly accepted by the user for commit after
+  the limited audit follow-up. The original full capture passed all 1,675
+  regression methods with zero failures, errors or skips. Observe full reachable
+  inputs at implemented local rejection boundaries, including both histories,
+  ordered receipts, request/current selection, provisional results and caches.
+  Constructor/wire failures and harness mutation controls remain separately
+  identified. Real complete-beat and lifecycle rollback retain P9-4.5/P9-4.7a
+  and P9-7.* ownership. Eleven leaves and 23 runtime paths are dependency-ready;
+  runtime profile support remains empty.
+  The limited independent audit's skip-reporting finding is corrected;
+  all 20 focused follow-up methods passed. The original full run remains
+  separately identified. The limited external audit did not complete the primary
+  preservation review; user acceptance does not change that audit's scope.
+  The bound review and execution record retain their pre-acceptance state.
+  A later authorized entry will bind P9-3.5's accepted commit separately;
+  no Tranche 4 work is started by this acceptance.
 
 ## Tranche 4. D11-C and the first C_OS runtime slice
 

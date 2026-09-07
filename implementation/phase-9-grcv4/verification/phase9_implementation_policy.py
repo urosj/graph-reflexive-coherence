@@ -66,6 +66,8 @@ STAGE_ACCEPTANCE = PHASE + "tranche-3/P9-3.2-AcceptanceRecord.json"
 STAGE_ACCEPTANCE_DIGEST = "425cd05eb85213185a4b531a09c16cefec4be992ac4755d404b5f263e09ebd0a"
 RESOURCE_ACCEPTANCE = PHASE + "tranche-3/P9-3.3-AcceptanceRecord.json"
 RESOURCE_ACCEPTANCE_DIGEST = "3e71b580090ba1712dbec4a1718653c2057e4062200f3367ba0c1ed7adeae6fa"
+NUMERICAL_ACCEPTANCE = PHASE + "tranche-3/P9-3.4-AcceptanceRecord.json"
+NUMERICAL_ACCEPTANCE_DIGEST = "0626df41be15fdb2d5a5a7b4fa6f8be52693f8d3ba40297ae98acbe334f480c1"
 # Explicit user-authorized presentation maintenance after accepted P9-3.3
 # ce83d7a. Only these original -> presented Git blobs may differ from HEAD.
 # The run's /presentation binds the original repository revision and embedded
@@ -120,6 +122,7 @@ PATHS = {
     GEOMETRY_ACCEPTANCE,
     STAGE_ACCEPTANCE,
     RESOURCE_ACCEPTANCE,
+    NUMERICAL_ACCEPTANCE,
     HERE + "phase9_implementation_policy.py",
     HERE + "audit_phase9_implementation.py",
     HERE + "test_phase9_g1.py",
@@ -486,6 +489,26 @@ def accepted_resources(root):
     return value
 
 
+def accepted_numerical_pressure(root):
+    """Committed P9-3.4 acceptance opens only its dependency-ready successors."""
+    value = read(safe_path(root, NUMERICAL_ACCEPTANCE))
+    require(value["record_digest"] == digest_record(value) == NUMERICAL_ACCEPTANCE_DIGEST,
+            "untrusted numerical pressure acceptance")
+    require(value["schema"] == "phase9_numerical_pressure_acceptance_v1"
+            and value["status"] == "accepted_by_user"
+            and value["release_id"] == prior.RELEASE_ID
+            and value["predecessor_record_digest"] == RESOURCE_ACCEPTANCE_DIGEST
+            and value["accepted_iterations"] == ["P9-3.4"]
+            and value["accepted_generic_runtime_support"] == []
+            and value["admitted_specialization_support_sets"] == [],
+            "invalid numerical pressure acceptance scope")
+    prior.ancestor(root, value["baseline_commit"])
+    for row in value["evidence_bindings"]:
+        require(sha(git(root, "show", f"{value['baseline_commit']}:{row['path']}"))
+                == row["sha256"], "accepted numerical pressure subject changed")
+    return value
+
+
 def leaf_permissions(root):
     """Readiness from accepted dependencies, never inferred from completion."""
     accepted = {"P9-G1", *accepted_foundation(root)["accepted_iterations"],
@@ -495,7 +518,8 @@ def leaf_permissions(root):
                 *accepted_integration(root)["accepted_iterations"],
                 *accepted_geometry(root)["accepted_iterations"],
                 *accepted_stages(root)["accepted_iterations"],
-                *accepted_resources(root)["accepted_iterations"]}
+                *accepted_resources(root)["accepted_iterations"],
+                *accepted_numerical_pressure(root)["accepted_iterations"]}
     support = read(
         safe_path(root, PHASE + "tranche-1/P9-1.4-SupportAndDependencies.json")
     )
