@@ -1,0 +1,44 @@
+{
+  "schema": "phase9_numerical_pressure_acceptance_v1",
+  "status": "accepted_by_user",
+  "baseline_commit": "12611fe42ba47f2fa200defa606d89e7f460b76d",
+  "release_id": "grcv4-spec-release-sha256:9f4c8fe5b57b1c477d834a3e4dae3f98a2b18c70e6e7f598e3c9652170c8645f",
+  "predecessor_record_digest": "3e71b580090ba1712dbec4a1718653c2057e4062200f3367ba0c1ed7adeae6fa",
+  "accepted_iterations": [
+    "P9-3.4"
+  ],
+  "acceptance_basis": "Explicit user instruction: accept and commit changes. Accepted at the named committed subject; subsequent explicit authorization starts P9-3.5. Historical executions and numerical limitations remain unchanged.",
+  "evidence_bindings": [
+    {
+      "path": "implementation/phase-9-grcv4/tranche-3/P9-3.4-Review.md",
+      "sha256": "b373aaaec10816410cb65e8719b372cee6915416577d07f7de6ce555805f19a8"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-3/P9-3.4-ExecutionRecord.json",
+      "sha256": "6be319318aacf45cdfc829e466a5e2c6262d8afb899bd7b90ae8c4adab8def7f"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-3.4/validation/run.json",
+      "sha256": "7ce5af41219406e8fea9cfab9af32c91128e8eb9b6290ce10f75ea9cfabdc962"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-3.4/projector-pressure/run.json",
+      "sha256": "e25af68b1cdd483250ad6b2f2d65f26f3104a64020b61093af1f578442100aa1"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-3.4/permission-surfaces/run.json",
+      "sha256": "08b39475e7fddd27c73ca5f6f2c70e97b8289e0dd1f25087338017c90a5d4198"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-3.4/audit-followup/run.json",
+      "sha256": "40ed8093b2d9b6ac4da984fa472d57acd0147c02e7f8ade869f92429b8cc72fd"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/runtime/RuntimeWorkManifest.json",
+      "sha256": "b71c9931072e11471684c7101c2013ce66d99f947b0f80c6b6be72f7e3e15dbc"
+    }
+  ],
+  "accepted_generic_runtime_support": [],
+  "admitted_specialization_support_sets": [],
+  "record_digest": "0626df41be15fdb2d5a5a7b4fa6f8be52693f8d3ba40297ae98acbe334f480c1"
+}

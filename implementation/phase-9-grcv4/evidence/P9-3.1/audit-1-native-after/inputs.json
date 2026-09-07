@@ -1,0 +1,64 @@
+{
+  "iteration_id": "P9-3.1",
+  "audit_round": 1,
+  "subject": "after local positivity correction",
+  "attachment_binding": {
+    "path": "implementation/phase-9-grcv4/evidence/P9-3.1/audit-1-inputs/inputs.json",
+    "sha256": "dd08e0f8821c53ac951343c9c54159b21e10da0ecd40e43ed963ab3e108bdef7"
+  },
+  "mode": "native; actual repository providers and installed dependencies, no audit compatibility adapters",
+  "reconstruction": [
+    "Materialize each attachment utf8_content from audit-1-inputs/inputs.json to a scratch directory using its filename; verify SHA-256.",
+    "For the before subject only, materialize audited_subject source/test bytes in a separate checkout; do not overwrite the working repository.",
+    "Install the pinned dependencies described by self-check/inputs.json for the target platform.",
+    "Run the following commands from that checkout; use a new output directory."
+  ],
+  "commands": [
+    ".venv/bin/python <scratch>/P9-3.1-spd-boundary-reproducer.py --repo .",
+    ".venv/bin/python <scratch>/P9-3.1-independent-stress-tests.py --repo . --output <new-output>"
+  ],
+  "loaded_inputs": [
+    {
+      "module": "pygrc.models.grc_v4_geometry",
+      "path": "src/pygrc/models/grc_v4_geometry.py",
+      "sha256": "831e0590d79f7e9088fdd6ad3c1fe1a8aca54b56d8463f11ac120474829061f0"
+    },
+    {
+      "module": "pygrc.models.grc_v4_transport",
+      "path": "src/pygrc/models/grc_v4_transport.py",
+      "sha256": "8bad1a9642456f3a63976177b9baba3f1dd8ec0df2ec6376e18a71fb032823a2"
+    },
+    {
+      "module": "pygrc.models.grc_v4_state",
+      "path": "src/pygrc/models/grc_v4_state.py",
+      "sha256": "b0ccf06ef91b66feb8670fb67281465998f4bcb085c4d547fedd3ce6d85ad3cb"
+    },
+    {
+      "module": "pygrc.models.grc_v4_profile",
+      "path": "src/pygrc/models/grc_v4_profile.py",
+      "sha256": "188e4ceb92b6a36fe81849911b88b233b8dd16bf3de07383e1508d76232fdbfb"
+    },
+    {
+      "module": "pygrc.models.grc_v4_codec",
+      "path": "src/pygrc/models/grc_v4_codec.py",
+      "sha256": "bd6d9390c818c5a25b70da119cfbc3a3de3707ee84566f6bb06160bb4780e154"
+    },
+    {
+      "module": "tests.models.test_grc_v4_geometry",
+      "path": "tests/models/test_grc_v4_geometry.py",
+      "sha256": "629916068c2098ccc77d96f9c1b014481a5d397357234e54ab694dfbe9781bb1"
+    },
+    {
+      "module": "tests.models.test_grc_v4_transport",
+      "path": "tests/models/test_grc_v4_transport.py",
+      "sha256": "13ac20f700a10f7a13fb5ba09243844e2bced9e79bcd1260d2740191fa5e691b"
+    }
+  ],
+  "environment": {
+    "python": "3.12.3 (main, Jul 15 2026, 23:46:41) [GCC 13.3.0]",
+    "numpy": "2.4.6",
+    "platform": "Linux-5.15.167-0515167-generic-x86_64-with-glibc2.39"
+  },
+  "comparison_policy": "Literal rejection expectations and independent graph/rational/covariance oracles in the preserved supplied scripts; their numeric comparison tolerances remain test-only.",
+  "path_presentation": "implementation/phase-9-grcv4/verification/Phase9PathPresentation.json"
+}

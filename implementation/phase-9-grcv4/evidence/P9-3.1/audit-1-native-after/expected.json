@@ -1,0 +1,8 @@
+{
+  "expected_native_reproducer_exit_code": 0,
+  "expected_main_runner_exit_code": 0,
+  "total_scenarios": 876,
+  "passes": 876,
+  "nonpositive_exposures": 0,
+  "meaning": "Close F1 without loss of prior positive controls; no full runtime admission"
+}

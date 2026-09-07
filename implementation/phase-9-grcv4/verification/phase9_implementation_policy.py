@@ -17,6 +17,11 @@ _presentation_spec = importlib.util.spec_from_file_location(
 )
 _presentation = importlib.util.module_from_spec(_presentation_spec)
 _presentation_spec.loader.exec_module(_presentation)
+_paths_spec = importlib.util.spec_from_file_location(
+    "phase9_evidence_paths", _HERE / "evidence_paths.py"
+)
+_paths = importlib.util.module_from_spec(_paths_spec)
+_paths_spec.loader.exec_module(_paths)
 REVIEW_INPUT = _presentation.REVIEW_INPUT
 normalized_snapshot = _presentation.normalized_snapshot
 _old = _HERE / "phase9_policy.py"
@@ -58,6 +63,30 @@ RESULT_ACCEPTANCE = PHASE + "tranche-2/P9-2.4-AcceptanceRecord.json"
 RESULT_ACCEPTANCE_DIGEST = "9d2fd4f0bb0445b9b3c46fd6f7e5b0ff710a8a85aceaeabacad44a477ff365a0"
 HARNESS_ACCEPTANCE = PHASE + "tranche-2/P9-2.5-AcceptanceRecord.json"
 HARNESS_ACCEPTANCE_DIGEST = "e479a8e5935fc8740b59f96b31651070f842f73f92541bb84dbc1c9d63f59896"
+INTEGRATION_ACCEPTANCE = PHASE + "tranche-2/P9-2.6-AcceptanceRecord.json"
+INTEGRATION_ACCEPTANCE_DIGEST = "e5ba16731e03dc916b8755c5999ab2b59acf431255612e76e0dcebe108104bc2"
+GEOMETRY_ACCEPTANCE = PHASE + "tranche-3/P9-3.1-AcceptanceRecord.json"
+GEOMETRY_ACCEPTANCE_DIGEST = "f119e1361500e72f58297bc8186f868954b4065c853fcdd089280a5d28f88618"
+STAGE_ACCEPTANCE = PHASE + "tranche-3/P9-3.2-AcceptanceRecord.json"
+STAGE_ACCEPTANCE_DIGEST = "425cd05eb85213185a4b531a09c16cefec4be992ac4755d404b5f263e09ebd0a"
+RESOURCE_ACCEPTANCE = PHASE + "tranche-3/P9-3.3-AcceptanceRecord.json"
+RESOURCE_ACCEPTANCE_DIGEST = "3e71b580090ba1712dbec4a1718653c2057e4062200f3367ba0c1ed7adeae6fa"
+NUMERICAL_ACCEPTANCE = PHASE + "tranche-3/P9-3.4-AcceptanceRecord.json"
+NUMERICAL_ACCEPTANCE_DIGEST = "0626df41be15fdb2d5a5a7b4fa6f8be52693f8d3ba40297ae98acbe334f480c1"
+# Explicit user-authorized presentation maintenance after accepted P9-3.3
+# ce83d7a. Only these original -> presented Git blobs may differ from HEAD.
+# The run's /presentation binds the original repository revision and embedded
+# audit source. This grants no general path rewrite or evidence-edit permission.
+P931_AUDIT_SOURCE_PRESENTATIONS = {
+    PHASE + "evidence/P9-3.1/audit-1-native-before/actual.json": (
+        "5a0a1f9e7ecefb83990d000aeca8e1f4231195aa",
+        "16e79b60efbbbfbd75bea36c570e29dfea83e437",
+    ),
+    PHASE + "evidence/P9-3.1/audit-1-native-before/run.json": (
+        "e065f308d41e4fcc24f606cf4b69ace56fce6096",
+        "0e2c18ce206cb1cd177ae9331f01ffd9168a4b4e",
+    ),
+}
 GENERATED = SIDE + "tool/generated/phase9-verification/"
 REPORT_SCHEMA = "phase9_G1_pressure_results_v1"
 REPORT_FILE = "g1-pressure-results.json"
@@ -94,11 +123,19 @@ PATHS = {
     REQUEST_ACCEPTANCE,
     RESULT_ACCEPTANCE,
     HARNESS_ACCEPTANCE,
+    INTEGRATION_ACCEPTANCE,
+    GEOMETRY_ACCEPTANCE,
+    STAGE_ACCEPTANCE,
+    RESOURCE_ACCEPTANCE,
+    NUMERICAL_ACCEPTANCE,
     HERE + "phase9_implementation_policy.py",
     HERE + "audit_phase9_implementation.py",
     HERE + "test_phase9_g1.py",
     HERE + "handoff_evidence.py",
     HERE + "test_handoff_evidence.py",
+    HERE + "evidence_paths.py",
+    HERE + "test_evidence_paths.py",
+    _paths.MANIFEST,
     PHASE + "tranche-1/P9-1.9-EvidenceHandoff.md",
     HERE + "inputs/P9-1.9-G1-Acceptance-And-Scoped-Authorization-Pressure-Guide.md",
     PHASE + "tranche-1/P9-1.9-G1Review.md",
@@ -380,12 +417,117 @@ def accepted_harness(root):
     return value
 
 
+def accepted_integration(root):
+    """Committed P9-2.6 acceptance opens only its dependency-ready successors."""
+    value = read(safe_path(root, INTEGRATION_ACCEPTANCE))
+    require(value["record_digest"] == digest_record(value) == INTEGRATION_ACCEPTANCE_DIGEST,
+            "untrusted integration acceptance")
+    require(value["schema"] == "phase9_integration_foundation_acceptance_v1"
+            and value["status"] == "accepted_by_user"
+            and value["release_id"] == prior.RELEASE_ID
+            and value["predecessor_record_digest"] == HARNESS_ACCEPTANCE_DIGEST
+            and value["accepted_iterations"] == ["P9-2.6"]
+            and value["accepted_generic_runtime_support"] == []
+            and value["admitted_specialization_support_sets"] == [],
+            "invalid integration acceptance scope")
+    prior.ancestor(root, value["baseline_commit"])
+    for row in value["evidence_bindings"]:
+        require(sha(git(root, "show", f"{value['baseline_commit']}:{row['path']}"))
+                == row["sha256"], "accepted integration subject changed")
+    return value
+
+
+def accepted_geometry(root):
+    """Committed P9-3.1 acceptance opens only its dependency-ready successors."""
+    value = read(safe_path(root, GEOMETRY_ACCEPTANCE))
+    require(value["record_digest"] == digest_record(value) == GEOMETRY_ACCEPTANCE_DIGEST,
+            "untrusted geometry acceptance")
+    require(value["schema"] == "phase9_geometry_foundation_acceptance_v1"
+            and value["status"] == "accepted_by_user"
+            and value["release_id"] == prior.RELEASE_ID
+            and value["predecessor_record_digest"] == INTEGRATION_ACCEPTANCE_DIGEST
+            and value["accepted_iterations"] == ["P9-3.1"]
+            and value["accepted_generic_runtime_support"] == []
+            and value["admitted_specialization_support_sets"] == [],
+            "invalid geometry acceptance scope")
+    prior.ancestor(root, value["baseline_commit"])
+    for row in value["evidence_bindings"]:
+        require(sha(git(root, "show", f"{value['baseline_commit']}:{row['path']}"))
+                == row["sha256"], "accepted geometry subject changed")
+    return value
+
+
+def accepted_stages(root):
+    """Committed P9-3.2 acceptance opens only its dependency-ready successors."""
+    value = read(safe_path(root, STAGE_ACCEPTANCE))
+    require(value["record_digest"] == digest_record(value) == STAGE_ACCEPTANCE_DIGEST,
+            "untrusted stage acceptance")
+    require(value["schema"] == "phase9_stage_geometry_acceptance_v1"
+            and value["status"] == "accepted_by_user"
+            and value["release_id"] == prior.RELEASE_ID
+            and value["predecessor_record_digest"] == GEOMETRY_ACCEPTANCE_DIGEST
+            and value["accepted_iterations"] == ["P9-3.2"]
+            and value["accepted_generic_runtime_support"] == []
+            and value["admitted_specialization_support_sets"] == [],
+            "invalid stage acceptance scope")
+    prior.ancestor(root, value["baseline_commit"])
+    for row in value["evidence_bindings"]:
+        require(sha(git(root, "show", f"{value['baseline_commit']}:{row['path']}"))
+                == row["sha256"], "accepted stage subject changed")
+    return value
+
+
+def accepted_resources(root):
+    """Committed P9-3.3 acceptance opens only its dependency-ready successors."""
+    value = read(safe_path(root, RESOURCE_ACCEPTANCE))
+    require(value["record_digest"] == digest_record(value) == RESOURCE_ACCEPTANCE_DIGEST,
+            "untrusted resource acceptance")
+    require(value["schema"] == "phase9_resource_boundary_acceptance_v1"
+            and value["status"] == "accepted_by_user"
+            and value["release_id"] == prior.RELEASE_ID
+            and value["predecessor_record_digest"] == STAGE_ACCEPTANCE_DIGEST
+            and value["accepted_iterations"] == ["P9-3.3"]
+            and value["accepted_generic_runtime_support"] == []
+            and value["admitted_specialization_support_sets"] == [],
+            "invalid resource acceptance scope")
+    prior.ancestor(root, value["baseline_commit"])
+    for row in value["evidence_bindings"]:
+        require(sha(git(root, "show", f"{value['baseline_commit']}:{row['path']}"))
+                == row["sha256"], "accepted resource subject changed")
+    return value
+
+
+def accepted_numerical_pressure(root):
+    """Committed P9-3.4 acceptance opens only its dependency-ready successors."""
+    value = read(safe_path(root, NUMERICAL_ACCEPTANCE))
+    require(value["record_digest"] == digest_record(value) == NUMERICAL_ACCEPTANCE_DIGEST,
+            "untrusted numerical pressure acceptance")
+    require(value["schema"] == "phase9_numerical_pressure_acceptance_v1"
+            and value["status"] == "accepted_by_user"
+            and value["release_id"] == prior.RELEASE_ID
+            and value["predecessor_record_digest"] == RESOURCE_ACCEPTANCE_DIGEST
+            and value["accepted_iterations"] == ["P9-3.4"]
+            and value["accepted_generic_runtime_support"] == []
+            and value["admitted_specialization_support_sets"] == [],
+            "invalid numerical pressure acceptance scope")
+    prior.ancestor(root, value["baseline_commit"])
+    for row in value["evidence_bindings"]:
+        require(sha(git(root, "show", f"{value['baseline_commit']}:{row['path']}"))
+                == row["sha256"], "accepted numerical pressure subject changed")
+    return value
+
+
 def leaf_permissions(root):
     """Readiness from accepted dependencies, never inferred from completion."""
     accepted = {"P9-G1", *accepted_foundation(root)["accepted_iterations"],
                 *accepted_requests(root)["accepted_iterations"],
                 *accepted_results(root)["accepted_iterations"],
-                *accepted_harness(root)["accepted_iterations"]}
+                *accepted_harness(root)["accepted_iterations"],
+                *accepted_integration(root)["accepted_iterations"],
+                *accepted_geometry(root)["accepted_iterations"],
+                *accepted_stages(root)["accepted_iterations"],
+                *accepted_resources(root)["accepted_iterations"],
+                *accepted_numerical_pressure(root)["accepted_iterations"]}
     support = read(
         safe_path(root, PHASE + "tranche-1/P9-1.4-SupportAndDependencies.json")
     )
@@ -412,6 +554,10 @@ def leaf_permissions(root):
             # to P9-2.4, omitted from the coarse source-group iteration lists.
             # Refine only these existing record/composition owners, not lifecycle.
             leaves.add("P9-2.4")
+        if module["module_id"] == "grc_v4_step":
+            # P9-3.3 explicitly owns the provisional one-resource-write boundary
+            # in the frozen checklist; the coarse step group omits this leaf.
+            leaves.add("P9-3.3")
         for field in ["path", "test_path"]:
             owners[module[field]] = leaves
     for name in [
@@ -426,7 +572,7 @@ def leaf_permissions(root):
             # P9-2.2 owns installed identity assets and their reviewed extras.
             # Facade exports remain with the later common-interface leaf.
             owners[row["path"]] = (
-                {"P9-2.2", "P9-2.6"}
+                {"P9-2.2", "P9-2.6", "P9-3.1"}
                 if row["path"] == "pyproject.toml" else {"P9-2.6"}
             )
     return ready, owners
@@ -597,8 +743,11 @@ def current_boundary(root):
             "implementation maintenance binding drift: " + row["path"],
         )
     work = work_entries(root, approval)
+    presentations = _paths.load_manifest(root)
     # G1 grants creation/update, not deletion/rename of published runtime work.
-    # Deliberately published supporting evidence is immutable. This does NOT
+    # Deliberately published supporting evidence is immutable, apart from the
+    # exact user-authorized presentation pairs above and in the path manifest.
+    # Every path presentation is also recomputed from its Git preimage. This does NOT
     # require publishing routine failed attempts: relevant development failures
     # may be summarized in the leaf record (see P9-1.9-EvidenceHandoff.md).
     # Removing a manifest row or staging deletion cannot rewrite that evidence.
@@ -615,10 +764,14 @@ def current_boundary(root):
             )
             if name.startswith(PHASE + "evidence/"):
                 oid = header.decode().split()[2]
+                current_oid = planning.blob_id(safe_path(root, name).read_bytes())
                 require(
-                    planning.blob_id(safe_path(root, name).read_bytes()) == oid,
+                    current_oid == oid
+                    or P931_AUDIT_SOURCE_PRESENTATIONS.get(name) == (oid, current_oid)
+                    or _paths.permits(presentations, name, oid, current_oid),
                     "published run evidence is immutable",
                 )
+    _paths.verify(root, presentations)
     baseline = baseline_files(root)
     frozen = 0
     for name, (mode, oid) in baseline.items():

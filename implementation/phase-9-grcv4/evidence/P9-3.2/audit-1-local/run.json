@@ -1,0 +1,20 @@
+{
+  "iteration_id": "P9-3.2",
+  "status": "passed",
+  "scope": "fresh 95-method geometry/transport suite, all reconstruction methods and clean wheel/sdist consumers",
+  "artifact_bindings": [
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-3.2/audit-1-local/actual.json",
+      "sha256": "3ccd63cb87bad8a5405b6cd7ae757fdc7103f3b79af54da18c54bb877f5404c1"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-3.2/audit-1-local/inputs.json",
+      "sha256": "16bdf87846fe21315a9958d61942a74ddcb81ad3b243cc0263e6f80f139a218d"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-3.2/audit-1-local/stdout.txt",
+      "sha256": "6380128b2d655735e8d58550ca20e647167a53e130d33c8222229ca7f162091d"
+    }
+  ],
+  "claim_ceiling": "no numerical runtime conformance, P9-3.2 acceptance or P9-3.3 admission"
+}

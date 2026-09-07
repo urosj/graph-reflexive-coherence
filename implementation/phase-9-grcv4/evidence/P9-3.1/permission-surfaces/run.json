@@ -1,0 +1,20 @@
+{
+  "iteration_id": "P9-3.1",
+  "status": "passed",
+  "subject_policy_digest": "55804b5a7a4c486a3f256773efaf7e4df04a4c84644c68efe88a853be28c12ad",
+  "artifact_bindings": [
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-3.1/permission-surfaces/inputs.json",
+      "sha256": "024c6012275a6a818be30e55de4335801de55c51d7cf2495d84b7c96b161f6c6"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-3.1/permission-surfaces/actual.json",
+      "sha256": "f09ceab2b78bc90fb4357863d83c0b022d0b339eb5a1becbd91bac114b187d8f"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-3.1/permission-surfaces/receipts.json",
+      "sha256": "996f3e9ac12ec0cc59030f2a86df7e70fba19fc9de8de706558b14032af6bf14"
+    }
+  ],
+  "claim_ceiling": "scoped implementation permission and display correctness, not accepted runtime support"
+}

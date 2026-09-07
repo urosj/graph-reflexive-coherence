@@ -1,0 +1,206 @@
+{
+  "flat": [
+    1,
+    1
+  ],
+  "input_roundtrip": {
+    "descriptor_version": "grcv4-geometry-stage-inputs-v1",
+    "reference": {
+      "descriptor_version": "grcv4-reference-geometry-v1",
+      "structural_coordinates_id": "grcv4-vertex-star-dense-row-major-v1",
+      "graph": {
+        "schema_version": "grcv4-serialized-graph-v1",
+        "live_node_ids": [
+          "b",
+          1,
+          "1"
+        ],
+        "oriented_edges": [
+          {
+            "edge_id": "z",
+            "tail_node_id": "b",
+            "head_node_id": 1
+          },
+          {
+            "edge_id": "a",
+            "tail_node_id": 1,
+            "head_node_id": "1"
+          }
+        ]
+      },
+      "profile": {
+        "identity_payload": {
+          "schema_version": "grcv4-profile-identity-v1",
+          "profile_family_id": "C_OS",
+          "candidate": "C",
+          "realization": "OS",
+          "differential_backend_id": "oriented_incidence_d0_equals_BT_v1",
+          "charge_profile_id": "unit_vertex_measure_v1",
+          "geometry_profile_id": "affine_reference_relative_v1",
+          "context_contract_id": "constant_zero_context_v1",
+          "units_id": "grcv4_nondimensional_reference_v1",
+          "gauge_id": "component_zero_mean_potential_v1",
+          "normalization_id": "unnormalized_vertex_stiffness_v1",
+          "domain_id": "fixed_graph_strict_gap_spd_v1",
+          "solver_id": "direct_unique_root_v1",
+          "lifecycle_policy_id": "grcv4-lifecycle-policy-v1",
+          "candidate_c_transport_id": "C-HM-STIFFNESS-BASELINE-v1",
+          "composition_gain": null,
+          "params_hash": "grcv4-params-sha256:6fc90ed0739b57c56f38a29b874dab4dd4eb792dd9bc8729592b24d2a71d79c0"
+        },
+        "params_resolved": {
+          "schema_version": "grcv4-resolved-params-v1",
+          "common": {
+            "schema_version": "grcv4-common-params-v1",
+            "differential_backend_id": "oriented_incidence_d0_equals_BT_v1",
+            "boundary_policy_id": "closed_no_flux_v1",
+            "measure_profile_id": "unit_vertex_measure_v1",
+            "context_contract_id": "constant_zero_context_v1",
+            "units_id": "grcv4_nondimensional_reference_v1",
+            "gauge_id": "component_zero_mean_potential_v1",
+            "normalization_id": "unnormalized_vertex_stiffness_v1",
+            "domain_id": "fixed_graph_strict_gap_spd_v1",
+            "default_step_request": null
+          },
+          "candidate": {
+            "schema_version": "grcv4-candidate-c-params-v1",
+            "transport_id": "C-HM-STIFFNESS-BASELINE-v1",
+            "Lambda_C": 1,
+            "selector_boundary_policy_id": "strict_rank_gap_fail_closed_v1",
+            "C_ref": 1,
+            "kappa_M_C": 0.5,
+            "kappa_Phi_C": 1,
+            "eta_C": 0.5,
+            "W_C_tr": {
+              "a": 3.0,
+              "z": 2.0
+            },
+            "W_C_tr_content_digest": "grcv4-wctr-sha256:bbc5e20189f55fb24792222cc045b0124bb26a1fca916e89d73e448cfe1fd4fa",
+            "potential_evaluator_id": "quadratic_site_potential_zero_derivative_v1",
+            "tau_C": 0,
+            "chi_C": 1,
+            "zeta_C": 0.5,
+            "current_conditioning_policy_id": "strict_invertible_current_block_v1",
+            "E_H_policy_id": "diag_W_C_tr_structural_hodge_v1",
+            "E_M_policy_id": "eta_C_diag_W_C_tr_mobility_v1"
+          },
+          "realization": {
+            "schema_version": "grcv4-os-params-v1",
+            "predictor_policy_id": "reference_geometry_predictor_v1",
+            "corrector_policy_id": "one_fresh_geometry_corrector_v1",
+            "split_residual_norm_id": "edge_l2_v1",
+            "tolerance": 0
+          },
+          "geometry": {
+            "schema_version": "grcv4-geometry-profile-params-v1",
+            "K4_base_digest": "grcv4-k4-sha256:e3c3d6b1942e3cf0c573fda53556140ba4af7902e7b71dc904018486263bf0a3",
+            "reference_hodge_digest": "grcv4-hodge-sha256:df6d665023bdccd7ce6e8d9a80f58d505f2fa18dc2d1705939003623ab0a520b",
+            "star_cover_id": "vertex_star_exact_overlap_v1",
+            "overlap_normalization_id": "edge_multiplicity_inverse_sqrt_v1",
+            "candidate_adapter_id": "candidate_c_exact_star_adapter_v1",
+            "flat_sharp_solver_id": "spd_direct_v1",
+            "geometry_domain_id": "positive_hodge_fixed_graph_v1",
+            "kappa_H": 0.5
+          },
+          "solver": {
+            "schema_version": "grcv4-solver-policy-v1",
+            "solver_kind": "direct",
+            "root_selector_id": "unique_admitted_root_v1",
+            "iteration_limit": 1,
+            "conditioning_limit": 100,
+            "residual_norm_id": "edge_l2_v1",
+            "absolute_tolerance": 0,
+            "relative_tolerance": 0,
+            "failure_policy_id": "fail_closed_no_fallback_v1"
+          },
+          "charge": {
+            "schema_version": "grcv4-charge-policy-v1",
+            "policy_id": "stable_pairwise_binary64_charge_v1",
+            "accumulation_order": "canonical_live_vertex_balanced_binary_tree",
+            "rounding_mode": "IEEE754_binary64_roundTiesToEven",
+            "absolute_tolerance": 0,
+            "relative_tolerance": 0,
+            "repair_policy": "never_mutate_resource",
+            "remainder_policy": "compatibility_projection_is_none"
+          },
+          "lifecycle": {
+            "schema_version": "grcv4-lifecycle-policy-v1",
+            "migration_policy_id": "typed_bidirectional_profile_migration_v1",
+            "mapped_event_policy_id": "caller_mapped_atomic_topology_event_v1",
+            "reset_policy_id": "restore_current_baseline_append_receipt_v1",
+            "rebase_policy_id": "replace_baseline_append_receipt_v1",
+            "history_policy_id": "candidate_c_no_independent_history_v1",
+            "receipt_policy_id": "operation_delta_plus_persistent_ledger_v1",
+            "target_readmission_policy_id": "full_target_fail_closed_v1"
+          }
+        },
+        "complete_profile_id": "grcv4-profile-sha256:7bd47a789b066a0ab2efa5e949e7719cd7a7b78129df2ded08ada1b69246fa15"
+      },
+      "context": {
+        "contract_id": "constant_zero_context_v1",
+        "value": {}
+      },
+      "K4_base": [
+        [
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0
+        ]
+      ],
+      "reference_hodge": {
+        "schema_version": "grcv4-reference-hodge-identity-v1",
+        "edge_weights": {
+          "a": 3.0,
+          "z": 2.0
+        }
+      }
+    },
+    "H1_form": [
+      [
+        2.0,
+        0.0
+      ],
+      [
+        0.0,
+        3.0
+      ]
+    ],
+    "context": {
+      "contract_id": "constant_zero_context_v1",
+      "value": {}
+    },
+    "current": {
+      "C": [
+        1.0,
+        2.0,
+        3.0
+      ],
+      "W_A": null,
+      "Z_4": null
+    },
+    "reset": {
+      "C": [
+        1.0,
+        2.0,
+        3.0
+      ],
+      "W_A": null,
+      "Z_4": null
+    },
+    "operation_id": "ordinary-step-1",
+    "Q_target": 6.0,
+    "receipt_ids": [],
+    "source_lifecycle_id": "grcv4-lifecycle-sha256:e7d6ce39d6ae50a31f4996b99e14c54aa52b3ac87db11b08e2cb7b2d37bc181e",
+    "scientific_state_id": "grcv4-state-sha256:07c2b0a5d82537bf7ecfa6be8a1a18ae600e325468e2fa889e6ecb589bbd0d82",
+    "reset_id": "grcv4-reset-sha256:aa8938a26d5a7fc5beeb7a286eb038637b82c01f149b6351506e57717f4548bd",
+    "step_index": 0,
+    "time": 0.0,
+    "dt": 1.0,
+    "stage": "pre_read",
+    "evaluation_index": 0,
+    "trial_current": null
+  }
+}

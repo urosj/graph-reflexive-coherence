@@ -5,6 +5,33 @@ commit `5307343e34d33ab4a95a5712fbafe0ebd1df1a62`.
 This is a navigation and continuation note, not a new acceptance gate, scientific
 claim, execution record, or authorization to start another iteration.
 
+Later working guidance, recorded 2026-09-07: read the
+[prospective evidence workflow](./phase-9-grcv4/tranche-1/P9-1.9-EvidenceHandoff.md#prospective-evidence-workflow)
+before collecting evidence for the next leaf. It records the user's direction
+to preserve published evidence and simplify future capture and reconstruction.
+The Tranche 2 status below remains the historical snapshot named above; use
+the current plan/checklist and acceptance records for continuation status.
+
+Current continuation: P9-3.5 is explicitly accepted by the user for commit
+after the limited audit follow-up. Tranche 3's five leaves are accepted within
+their recorded scopes. Start with the [P9-3.5 review](./phase-9-grcv4/tranche-3/P9-3.5-Review.md)
+and [execution record](./phase-9-grcv4/tranche-3/P9-3.5-ExecutionRecord.json).
+Their pending-acceptance wording records the earlier review state; this user
+decision and the commit message record acceptance. The limited external audit
+did not complete the primary preservation review, and that limitation remains.
+The live permission adapter binds P9-3.4 at `12611fe`, with eleven ready leaves
+and 23 eligible runtime paths. A later authorized entry must bind P9-3.5's
+accepted commit separately. P9-4.1 has not started; runtime support remains empty.
+
+Subsequent portability maintenance presents older machine-specific paths relative
+to the project. Read the [path presentation and exact-replay guide](./phase-9-grcv4/tranche-1/P9-1.9-EvidenceHandoff.md#repository-path-presentations)
+before comparing historical hashes or extracting embedded source. Original
+bytes remain in Git; current presentations do not represent new scientific runs.
+Direct historical-SHA checks against normalized files still need reconciliation;
+the linked guide names the confirmed cases. The user authorized committing this
+maintenance and merging `impl/phase-9-grcv4-tranche-3` into `main` with that
+limitation known. After the merge, resume from `main`; P9-4.1 remains unstarted.
+
 ## Where we stopped
 
 P9-G1 and P9-2.1 through P9-2.6 are accepted. The user's instruction to commit

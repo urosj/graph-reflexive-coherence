@@ -1,0 +1,4588 @@
+{
+  "iteration_id": "P9-3.2",
+  "status": "passed",
+  "independent_assertions": {
+    "executed": 652,
+    "passed": 652,
+    "failed": 0
+  },
+  "fresh_local_suite": {
+    "executed": 95,
+    "passed": 95,
+    "failures": 0,
+    "errors": 0,
+    "skips": [],
+    "clean_installed_environments": 2,
+    "formerly_unavailable_checks": "current profile canonical reconstruction, Candidate C reference equality, all three excluded fresh-process/package methods"
+  },
+  "dependency_check": "No broken requirements found.",
+  "source_matches_audited_geometry_and_tests": true,
+  "source_matches_prior_native_local_pressure": true,
+  "original_evidence_files_unchanged": 27,
+  "browser_reconciliation": {
+    "disposition": "supplied audit describes earlier pending upload; current completed successor already bound before this follow-up",
+    "status_before_followup": "passed",
+    "successor_run": {
+      "path": "implementation/phase-9-grcv4/evidence/P9-3.2/browser-font-environment/run.json",
+      "sha256": "4ff6c860548dfa687683cbd0a9f884b0f026136faa0b6a39b77a0e90d22d9e2c"
+    },
+    "successor_source_bindings_checked": 2,
+    "original_DOM_and_blank_rendering_evidence_preserved": true,
+    "new_browser_execution_claimed": false
+  },
+  "owner_routing": {
+    "corrected": "Tranche 6 / P9-6.1 through P9-6.4 and candidate-indexed children",
+    "Tranche_5": "Candidate A with OS",
+    "new_P9_3_3_prerequisite": false
+  },
+  "numerical_witness": {
+    "disposition": "confirmed; unresolved numerical envelope explicitly owned by P9-3.4",
+    "run": "implementation/phase-9-grcv4/evidence/P9-3.2/audit-1-followup/run.json"
+  },
+  "accepted_generic_runtime_support": [],
+  "admitted_specialization_support_sets": [],
+  "reviewer_decision": "pending_user_review",
+  "independent_stress_results": {
+    "schema": "independent-p932-stress-v1",
+    "source_sha256": "d715f67555d3c6e68a4e031ba132cb1854cc839de03dcd2c7101fbeb40c13dcd",
+    "tests": [
+      {
+        "group": "exact_positive_domain",
+        "name": "1-0",
+        "passed": true,
+        "detail": {
+          "exact_positive": true
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "1-1",
+        "passed": true,
+        "detail": {
+          "exact_positive": false
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "1-2",
+        "passed": true,
+        "detail": {
+          "exact_positive": true
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "1-3",
+        "passed": true,
+        "detail": {
+          "exact_positive": true
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "1-4",
+        "passed": true,
+        "detail": {
+          "exact_positive": false
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "1-5",
+        "passed": true,
+        "detail": {
+          "exact_positive": true
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "1-6",
+        "passed": true,
+        "detail": {
+          "exact_positive": true
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "1-7",
+        "passed": true,
+        "detail": {
+          "exact_positive": false
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "1-8",
+        "passed": true,
+        "detail": {
+          "exact_positive": true
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "1-9",
+        "passed": true,
+        "detail": {
+          "exact_positive": true
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "1-10",
+        "passed": true,
+        "detail": {
+          "exact_positive": false
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "1-11",
+        "passed": true,
+        "detail": {
+          "exact_positive": true
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "1-12",
+        "passed": true,
+        "detail": {
+          "exact_positive": true
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "1-13",
+        "passed": true,
+        "detail": {
+          "exact_positive": true
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "1-14",
+        "passed": true,
+        "detail": {
+          "exact_positive": true
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "1-15",
+        "passed": true,
+        "detail": {
+          "exact_positive": true
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "1-16",
+        "passed": true,
+        "detail": {
+          "exact_positive": true
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "1-17",
+        "passed": true,
+        "detail": {
+          "exact_positive": true
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "1-18",
+        "passed": true,
+        "detail": {
+          "exact_positive": true
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "1-19",
+        "passed": true,
+        "detail": {
+          "exact_positive": true
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "1-20",
+        "passed": true,
+        "detail": {
+          "exact_positive": true
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "1-21",
+        "passed": true,
+        "detail": {
+          "exact_positive": true
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "1-22",
+        "passed": true,
+        "detail": {
+          "exact_positive": true
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "1-23",
+        "passed": true,
+        "detail": {
+          "exact_positive": true
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "1-24",
+        "passed": true,
+        "detail": {
+          "exact_positive": true
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "1-25",
+        "passed": true,
+        "detail": {
+          "exact_positive": false
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "1-26",
+        "passed": true,
+        "detail": {
+          "exact_positive": true
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "1-27",
+        "passed": true,
+        "detail": {
+          "exact_positive": true
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "1-28",
+        "passed": true,
+        "detail": {
+          "exact_positive": false
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "1-29",
+        "passed": true,
+        "detail": {
+          "exact_positive": true
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "1-30",
+        "passed": true,
+        "detail": {
+          "exact_positive": true
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "1-31",
+        "passed": true,
+        "detail": {
+          "exact_positive": false
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "1-32",
+        "passed": true,
+        "detail": {
+          "exact_positive": false
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "1-33",
+        "passed": true,
+        "detail": {
+          "exact_positive": true
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "1-34",
+        "passed": true,
+        "detail": {
+          "exact_positive": true
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "1-35",
+        "passed": true,
+        "detail": {
+          "exact_positive": true
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "2-0",
+        "passed": true,
+        "detail": {
+          "exact_positive": true
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "2-1",
+        "passed": true,
+        "detail": {
+          "exact_positive": true
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "2-2",
+        "passed": true,
+        "detail": {
+          "exact_positive": false
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "2-3",
+        "passed": true,
+        "detail": {
+          "exact_positive": true
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "2-4",
+        "passed": true,
+        "detail": {
+          "exact_positive": false
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "2-5",
+        "passed": true,
+        "detail": {
+          "exact_positive": false
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "2-6",
+        "passed": true,
+        "detail": {
+          "exact_positive": true
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "2-7",
+        "passed": true,
+        "detail": {
+          "exact_positive": false
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "2-8",
+        "passed": true,
+        "detail": {
+          "exact_positive": false
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "2-9",
+        "passed": true,
+        "detail": {
+          "exact_positive": true
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "2-10",
+        "passed": true,
+        "detail": {
+          "exact_positive": false
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "2-11",
+        "passed": true,
+        "detail": {
+          "exact_positive": false
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "2-12",
+        "passed": true,
+        "detail": {
+          "exact_positive": true
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "2-13",
+        "passed": true,
+        "detail": {
+          "exact_positive": false
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "2-14",
+        "passed": true,
+        "detail": {
+          "exact_positive": false
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "2-15",
+        "passed": true,
+        "detail": {
+          "exact_positive": true
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "2-16",
+        "passed": true,
+        "detail": {
+          "exact_positive": false
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "2-17",
+        "passed": true,
+        "detail": {
+          "exact_positive": false
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "2-18",
+        "passed": true,
+        "detail": {
+          "exact_positive": true
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "2-19",
+        "passed": true,
+        "detail": {
+          "exact_positive": true
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "2-20",
+        "passed": true,
+        "detail": {
+          "exact_positive": false
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "2-21",
+        "passed": true,
+        "detail": {
+          "exact_positive": true
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "2-22",
+        "passed": true,
+        "detail": {
+          "exact_positive": false
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "2-23",
+        "passed": true,
+        "detail": {
+          "exact_positive": false
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "2-24",
+        "passed": true,
+        "detail": {
+          "exact_positive": true
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "2-25",
+        "passed": true,
+        "detail": {
+          "exact_positive": true
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "2-26",
+        "passed": true,
+        "detail": {
+          "exact_positive": false
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "2-27",
+        "passed": true,
+        "detail": {
+          "exact_positive": true
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "2-28",
+        "passed": true,
+        "detail": {
+          "exact_positive": false
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "2-29",
+        "passed": true,
+        "detail": {
+          "exact_positive": false
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "2-30",
+        "passed": true,
+        "detail": {
+          "exact_positive": true
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "2-31",
+        "passed": true,
+        "detail": {
+          "exact_positive": false
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "2-32",
+        "passed": true,
+        "detail": {
+          "exact_positive": false
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "2-33",
+        "passed": true,
+        "detail": {
+          "exact_positive": true
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "2-34",
+        "passed": true,
+        "detail": {
+          "exact_positive": false
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "2-35",
+        "passed": true,
+        "detail": {
+          "exact_positive": false
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "3-0",
+        "passed": true,
+        "detail": {
+          "exact_positive": true
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "3-1",
+        "passed": true,
+        "detail": {
+          "exact_positive": false
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "3-2",
+        "passed": true,
+        "detail": {
+          "exact_positive": false
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "3-3",
+        "passed": true,
+        "detail": {
+          "exact_positive": true
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "3-4",
+        "passed": true,
+        "detail": {
+          "exact_positive": false
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "3-5",
+        "passed": true,
+        "detail": {
+          "exact_positive": false
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "3-6",
+        "passed": true,
+        "detail": {
+          "exact_positive": true
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "3-7",
+        "passed": true,
+        "detail": {
+          "exact_positive": false
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "3-8",
+        "passed": true,
+        "detail": {
+          "exact_positive": false
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "3-9",
+        "passed": true,
+        "detail": {
+          "exact_positive": true
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "3-10",
+        "passed": true,
+        "detail": {
+          "exact_positive": false
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "3-11",
+        "passed": true,
+        "detail": {
+          "exact_positive": false
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "3-12",
+        "passed": true,
+        "detail": {
+          "exact_positive": true
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "3-13",
+        "passed": true,
+        "detail": {
+          "exact_positive": false
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "3-14",
+        "passed": true,
+        "detail": {
+          "exact_positive": false
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "3-15",
+        "passed": true,
+        "detail": {
+          "exact_positive": true
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "3-16",
+        "passed": true,
+        "detail": {
+          "exact_positive": false
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "3-17",
+        "passed": true,
+        "detail": {
+          "exact_positive": false
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "3-18",
+        "passed": true,
+        "detail": {
+          "exact_positive": true
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "3-19",
+        "passed": true,
+        "detail": {
+          "exact_positive": false
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "3-20",
+        "passed": true,
+        "detail": {
+          "exact_positive": false
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "3-21",
+        "passed": true,
+        "detail": {
+          "exact_positive": true
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "3-22",
+        "passed": true,
+        "detail": {
+          "exact_positive": false
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "3-23",
+        "passed": true,
+        "detail": {
+          "exact_positive": false
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "3-24",
+        "passed": true,
+        "detail": {
+          "exact_positive": true
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "3-25",
+        "passed": true,
+        "detail": {
+          "exact_positive": false
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "3-26",
+        "passed": true,
+        "detail": {
+          "exact_positive": false
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "3-27",
+        "passed": true,
+        "detail": {
+          "exact_positive": true
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "3-28",
+        "passed": true,
+        "detail": {
+          "exact_positive": false
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "3-29",
+        "passed": true,
+        "detail": {
+          "exact_positive": false
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "3-30",
+        "passed": true,
+        "detail": {
+          "exact_positive": true
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "3-31",
+        "passed": true,
+        "detail": {
+          "exact_positive": false
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "3-32",
+        "passed": true,
+        "detail": {
+          "exact_positive": false
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "3-33",
+        "passed": true,
+        "detail": {
+          "exact_positive": true
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "3-34",
+        "passed": true,
+        "detail": {
+          "exact_positive": false
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "3-35",
+        "passed": true,
+        "detail": {
+          "exact_positive": false
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "4-0",
+        "passed": true,
+        "detail": {
+          "exact_positive": true
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "4-1",
+        "passed": true,
+        "detail": {
+          "exact_positive": false
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "4-2",
+        "passed": true,
+        "detail": {
+          "exact_positive": false
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "4-3",
+        "passed": true,
+        "detail": {
+          "exact_positive": true
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "4-4",
+        "passed": true,
+        "detail": {
+          "exact_positive": false
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "4-5",
+        "passed": true,
+        "detail": {
+          "exact_positive": false
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "4-6",
+        "passed": true,
+        "detail": {
+          "exact_positive": true
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "4-7",
+        "passed": true,
+        "detail": {
+          "exact_positive": false
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "4-8",
+        "passed": true,
+        "detail": {
+          "exact_positive": false
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "4-9",
+        "passed": true,
+        "detail": {
+          "exact_positive": true
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "4-10",
+        "passed": true,
+        "detail": {
+          "exact_positive": false
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "4-11",
+        "passed": true,
+        "detail": {
+          "exact_positive": false
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "4-12",
+        "passed": true,
+        "detail": {
+          "exact_positive": true
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "4-13",
+        "passed": true,
+        "detail": {
+          "exact_positive": false
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "4-14",
+        "passed": true,
+        "detail": {
+          "exact_positive": false
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "4-15",
+        "passed": true,
+        "detail": {
+          "exact_positive": true
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "4-16",
+        "passed": true,
+        "detail": {
+          "exact_positive": false
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "4-17",
+        "passed": true,
+        "detail": {
+          "exact_positive": false
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "4-18",
+        "passed": true,
+        "detail": {
+          "exact_positive": true
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "4-19",
+        "passed": true,
+        "detail": {
+          "exact_positive": false
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "4-20",
+        "passed": true,
+        "detail": {
+          "exact_positive": false
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "4-21",
+        "passed": true,
+        "detail": {
+          "exact_positive": true
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "4-22",
+        "passed": true,
+        "detail": {
+          "exact_positive": false
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "4-23",
+        "passed": true,
+        "detail": {
+          "exact_positive": false
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "4-24",
+        "passed": true,
+        "detail": {
+          "exact_positive": true
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "4-25",
+        "passed": true,
+        "detail": {
+          "exact_positive": false
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "4-26",
+        "passed": true,
+        "detail": {
+          "exact_positive": false
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "4-27",
+        "passed": true,
+        "detail": {
+          "exact_positive": true
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "4-28",
+        "passed": true,
+        "detail": {
+          "exact_positive": false
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "4-29",
+        "passed": true,
+        "detail": {
+          "exact_positive": false
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "4-30",
+        "passed": true,
+        "detail": {
+          "exact_positive": true
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "4-31",
+        "passed": true,
+        "detail": {
+          "exact_positive": false
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "4-32",
+        "passed": true,
+        "detail": {
+          "exact_positive": false
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "4-33",
+        "passed": true,
+        "detail": {
+          "exact_positive": true
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "4-34",
+        "passed": true,
+        "detail": {
+          "exact_positive": false
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "4-35",
+        "passed": true,
+        "detail": {
+          "exact_positive": false
+        }
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "rank-boundary-0x1.0000000000000p-900-0x1.0000000000000p-900-0",
+        "passed": true,
+        "detail": "ValueError"
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "rank-boundary-0x1.0000000000000p-900-0x1.0000000000000p-900-1",
+        "passed": true,
+        "detail": "ValueError"
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "rank-boundary-0x1.0000000000000p-900-0x1.fffffffffffffp-901-0",
+        "passed": true,
+        "detail": "ValueError"
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "rank-boundary-0x1.0000000000000p-900-0x1.fffffffffffffp-901-1",
+        "passed": true,
+        "detail": "ValueError"
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "rank-boundary-0x1.0000000000000p-200-0x1.0000000000000p-200-0",
+        "passed": true,
+        "detail": "ValueError"
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "rank-boundary-0x1.0000000000000p-200-0x1.0000000000000p-200-1",
+        "passed": true,
+        "detail": "ValueError"
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "rank-boundary-0x1.0000000000000p-200-0x1.fffffffffffffp-201-0",
+        "passed": true,
+        "detail": "ValueError"
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "rank-boundary-0x1.0000000000000p-200-0x1.fffffffffffffp-201-1",
+        "passed": true,
+        "detail": "ValueError"
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "rank-boundary-0x1.0000000000000p+1-0x1.0000000000000p+1-0",
+        "passed": true,
+        "detail": "ValueError"
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "rank-boundary-0x1.0000000000000p+1-0x1.0000000000000p+1-1",
+        "passed": true,
+        "detail": "ValueError"
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "rank-boundary-0x1.0000000000000p+1-0x1.fffffffffffffp+0-0",
+        "passed": true,
+        "detail": "ValueError"
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "rank-boundary-0x1.0000000000000p+1-0x1.fffffffffffffp+0-1",
+        "passed": true,
+        "detail": "ValueError"
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "rank-boundary-0x1.0000000000000p+200-0x1.0000000000000p+200-0",
+        "passed": true,
+        "detail": "ValueError"
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "rank-boundary-0x1.0000000000000p+200-0x1.0000000000000p+200-1",
+        "passed": true,
+        "detail": "ValueError"
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "rank-boundary-0x1.0000000000000p+200-0x1.fffffffffffffp+199-0",
+        "passed": true,
+        "detail": "ValueError"
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "rank-boundary-0x1.0000000000000p+200-0x1.fffffffffffffp+199-1",
+        "passed": true,
+        "detail": "ValueError"
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "rank-boundary-0x1.0000000000000p+900-0x1.0000000000000p+900-0",
+        "passed": true,
+        "detail": "ValueError"
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "rank-boundary-0x1.0000000000000p+900-0x1.0000000000000p+900-1",
+        "passed": true,
+        "detail": "ValueError"
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "rank-boundary-0x1.0000000000000p+900-0x1.fffffffffffffp+899-0",
+        "passed": true,
+        "detail": "ValueError"
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "rank-boundary-0x1.0000000000000p+900-0x1.fffffffffffffp+899-1",
+        "passed": true,
+        "detail": "ValueError"
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "positive-scale-0x0.0000000000001p-1022",
+        "passed": true,
+        "detail": [
+          [
+            5e-324,
+            0.0
+          ],
+          [
+            0.0,
+            5e-324
+          ]
+        ]
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "positive-scale-0x0.730d67819e8d2p-1022",
+        "passed": true,
+        "detail": [
+          [
+            1e-308,
+            0.0
+          ],
+          [
+            0.0,
+            1e-308
+          ]
+        ]
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "positive-scale-0x1.0000000000000p-500",
+        "passed": true,
+        "detail": [
+          [
+            3.054936363499605e-151,
+            0.0
+          ],
+          [
+            0.0,
+            3.054936363499605e-151
+          ]
+        ]
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "positive-scale-0x1.0000000000000p+0",
+        "passed": true,
+        "detail": [
+          [
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "positive-scale-0x1.0000000000000p+500",
+        "passed": true,
+        "detail": [
+          [
+            3.273390607896142e+150,
+            0.0
+          ],
+          [
+            0.0,
+            3.273390607896142e+150
+          ]
+        ]
+      },
+      {
+        "group": "exact_positive_domain",
+        "name": "positive-scale-0x1.1ccf385ebc8a0p+1023",
+        "passed": true,
+        "detail": [
+          [
+            1e+308,
+            0.0
+          ],
+          [
+            0.0,
+            1e+308
+          ]
+        ]
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "1-0",
+        "passed": true,
+        "detail": {
+          "exact_and_stored_positive": true
+        }
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "1-1",
+        "passed": true,
+        "detail": {
+          "exact_and_stored_positive": true
+        }
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "1-2",
+        "passed": true,
+        "detail": {
+          "exact_and_stored_positive": true
+        }
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "1-3",
+        "passed": true,
+        "detail": {
+          "exact_and_stored_positive": false
+        }
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "1-4",
+        "passed": true,
+        "detail": {
+          "exact_and_stored_positive": true
+        }
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "1-5",
+        "passed": true,
+        "detail": {
+          "exact_and_stored_positive": true
+        }
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "1-6",
+        "passed": true,
+        "detail": {
+          "exact_and_stored_positive": true
+        }
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "1-7",
+        "passed": true,
+        "detail": {
+          "exact_and_stored_positive": true
+        }
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "1-8",
+        "passed": true,
+        "detail": {
+          "exact_and_stored_positive": true
+        }
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "1-9",
+        "passed": true,
+        "detail": {
+          "exact_and_stored_positive": true
+        }
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "1-10",
+        "passed": true,
+        "detail": {
+          "exact_and_stored_positive": true
+        }
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "1-11",
+        "passed": true,
+        "detail": {
+          "exact_and_stored_positive": true
+        }
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "1-12",
+        "passed": true,
+        "detail": {
+          "exact_and_stored_positive": true
+        }
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "1-13",
+        "passed": true,
+        "detail": {
+          "exact_and_stored_positive": false
+        }
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "1-14",
+        "passed": true,
+        "detail": {
+          "exact_and_stored_positive": true
+        }
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "1-15",
+        "passed": true,
+        "detail": {
+          "exact_and_stored_positive": true
+        }
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "1-16",
+        "passed": true,
+        "detail": {
+          "exact_and_stored_positive": true
+        }
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "1-17",
+        "passed": true,
+        "detail": {
+          "exact_and_stored_positive": true
+        }
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "1-18",
+        "passed": true,
+        "detail": {
+          "exact_and_stored_positive": true
+        }
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "1-19",
+        "passed": true,
+        "detail": {
+          "exact_and_stored_positive": true
+        }
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "1-20",
+        "passed": true,
+        "detail": {
+          "exact_and_stored_positive": true
+        }
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "1-21",
+        "passed": true,
+        "detail": {
+          "exact_and_stored_positive": true
+        }
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "1-22",
+        "passed": true,
+        "detail": {
+          "exact_and_stored_positive": true
+        }
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "1-23",
+        "passed": true,
+        "detail": {
+          "exact_and_stored_positive": true
+        }
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "2-0",
+        "passed": true,
+        "detail": {
+          "exact_and_stored_positive": true
+        }
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "2-1",
+        "passed": true,
+        "detail": {
+          "exact_and_stored_positive": true
+        }
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "2-2",
+        "passed": true,
+        "detail": {
+          "exact_and_stored_positive": true
+        }
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "2-3",
+        "passed": true,
+        "detail": {
+          "exact_and_stored_positive": true
+        }
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "2-4",
+        "passed": true,
+        "detail": {
+          "exact_and_stored_positive": false
+        }
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "2-5",
+        "passed": true,
+        "detail": {
+          "exact_and_stored_positive": true
+        }
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "2-6",
+        "passed": true,
+        "detail": {
+          "exact_and_stored_positive": true
+        }
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "2-7",
+        "passed": true,
+        "detail": {
+          "exact_and_stored_positive": false
+        }
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "2-8",
+        "passed": true,
+        "detail": {
+          "exact_and_stored_positive": true
+        }
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "2-9",
+        "passed": true,
+        "detail": {
+          "exact_and_stored_positive": false
+        }
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "2-10",
+        "passed": true,
+        "detail": {
+          "exact_and_stored_positive": true
+        }
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "2-11",
+        "passed": true,
+        "detail": {
+          "exact_and_stored_positive": true
+        }
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "2-12",
+        "passed": true,
+        "detail": {
+          "exact_and_stored_positive": true
+        }
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "2-13",
+        "passed": true,
+        "detail": {
+          "exact_and_stored_positive": false
+        }
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "2-14",
+        "passed": true,
+        "detail": {
+          "exact_and_stored_positive": false
+        }
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "2-15",
+        "passed": true,
+        "detail": {
+          "exact_and_stored_positive": true
+        }
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "2-16",
+        "passed": true,
+        "detail": {
+          "exact_and_stored_positive": true
+        }
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "2-17",
+        "passed": true,
+        "detail": {
+          "exact_and_stored_positive": true
+        }
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "2-18",
+        "passed": true,
+        "detail": {
+          "exact_and_stored_positive": false
+        }
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "2-19",
+        "passed": true,
+        "detail": {
+          "exact_and_stored_positive": false
+        }
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "2-20",
+        "passed": true,
+        "detail": {
+          "exact_and_stored_positive": true
+        }
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "2-21",
+        "passed": true,
+        "detail": {
+          "exact_and_stored_positive": true
+        }
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "2-22",
+        "passed": true,
+        "detail": {
+          "exact_and_stored_positive": true
+        }
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "2-23",
+        "passed": true,
+        "detail": {
+          "exact_and_stored_positive": false
+        }
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "3-0",
+        "passed": true,
+        "detail": {
+          "exact_and_stored_positive": true
+        }
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "3-1",
+        "passed": true,
+        "detail": {
+          "exact_and_stored_positive": true
+        }
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "3-2",
+        "passed": true,
+        "detail": {
+          "exact_and_stored_positive": false
+        }
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "3-3",
+        "passed": true,
+        "detail": {
+          "exact_and_stored_positive": true
+        }
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "3-4",
+        "passed": true,
+        "detail": {
+          "exact_and_stored_positive": false
+        }
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "3-5",
+        "passed": true,
+        "detail": {
+          "exact_and_stored_positive": true
+        }
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "3-6",
+        "passed": true,
+        "detail": {
+          "exact_and_stored_positive": true
+        }
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "3-7",
+        "passed": true,
+        "detail": {
+          "exact_and_stored_positive": false
+        }
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "3-8",
+        "passed": true,
+        "detail": {
+          "exact_and_stored_positive": false
+        }
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "3-9",
+        "passed": true,
+        "detail": {
+          "exact_and_stored_positive": false
+        }
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "3-10",
+        "passed": true,
+        "detail": {
+          "exact_and_stored_positive": true
+        }
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "3-11",
+        "passed": true,
+        "detail": {
+          "exact_and_stored_positive": true
+        }
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "3-12",
+        "passed": true,
+        "detail": {
+          "exact_and_stored_positive": true
+        }
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "3-13",
+        "passed": true,
+        "detail": {
+          "exact_and_stored_positive": false
+        }
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "3-14",
+        "passed": true,
+        "detail": {
+          "exact_and_stored_positive": false
+        }
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "3-15",
+        "passed": true,
+        "detail": {
+          "exact_and_stored_positive": true
+        }
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "3-16",
+        "passed": true,
+        "detail": {
+          "exact_and_stored_positive": true
+        }
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "3-17",
+        "passed": true,
+        "detail": {
+          "exact_and_stored_positive": false
+        }
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "3-18",
+        "passed": true,
+        "detail": {
+          "exact_and_stored_positive": false
+        }
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "3-19",
+        "passed": true,
+        "detail": {
+          "exact_and_stored_positive": false
+        }
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "3-20",
+        "passed": true,
+        "detail": {
+          "exact_and_stored_positive": true
+        }
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "3-21",
+        "passed": true,
+        "detail": {
+          "exact_and_stored_positive": true
+        }
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "3-22",
+        "passed": true,
+        "detail": {
+          "exact_and_stored_positive": true
+        }
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "3-23",
+        "passed": true,
+        "detail": {
+          "exact_and_stored_positive": false
+        }
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "4-0",
+        "passed": true,
+        "detail": {
+          "exact_and_stored_positive": true
+        }
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "4-1",
+        "passed": true,
+        "detail": {
+          "exact_and_stored_positive": true
+        }
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "4-2",
+        "passed": true,
+        "detail": {
+          "exact_and_stored_positive": true
+        }
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "4-3",
+        "passed": true,
+        "detail": {
+          "exact_and_stored_positive": false
+        }
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "4-4",
+        "passed": true,
+        "detail": {
+          "exact_and_stored_positive": false
+        }
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "4-5",
+        "passed": true,
+        "detail": {
+          "exact_and_stored_positive": true
+        }
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "4-6",
+        "passed": true,
+        "detail": {
+          "exact_and_stored_positive": true
+        }
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "4-7",
+        "passed": true,
+        "detail": {
+          "exact_and_stored_positive": false
+        }
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "4-8",
+        "passed": true,
+        "detail": {
+          "exact_and_stored_positive": false
+        }
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "4-9",
+        "passed": true,
+        "detail": {
+          "exact_and_stored_positive": false
+        }
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "4-10",
+        "passed": true,
+        "detail": {
+          "exact_and_stored_positive": true
+        }
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "4-11",
+        "passed": true,
+        "detail": {
+          "exact_and_stored_positive": true
+        }
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "4-12",
+        "passed": true,
+        "detail": {
+          "exact_and_stored_positive": false
+        }
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "4-13",
+        "passed": true,
+        "detail": {
+          "exact_and_stored_positive": false
+        }
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "4-14",
+        "passed": true,
+        "detail": {
+          "exact_and_stored_positive": false
+        }
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "4-15",
+        "passed": true,
+        "detail": {
+          "exact_and_stored_positive": true
+        }
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "4-16",
+        "passed": true,
+        "detail": {
+          "exact_and_stored_positive": true
+        }
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "4-17",
+        "passed": true,
+        "detail": {
+          "exact_and_stored_positive": true
+        }
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "4-18",
+        "passed": true,
+        "detail": {
+          "exact_and_stored_positive": false
+        }
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "4-19",
+        "passed": true,
+        "detail": {
+          "exact_and_stored_positive": false
+        }
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "4-20",
+        "passed": true,
+        "detail": {
+          "exact_and_stored_positive": true
+        }
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "4-21",
+        "passed": true,
+        "detail": {
+          "exact_and_stored_positive": false
+        }
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "4-22",
+        "passed": true,
+        "detail": {
+          "exact_and_stored_positive": false
+        }
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "4-23",
+        "passed": true,
+        "detail": {
+          "exact_and_stored_positive": false
+        }
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "baseline-1e+308-0.0",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "baseline-1e+308-0.5",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "baseline-1e+308-2.0",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "baseline--1e+308-0.0",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "baseline--1e+308-0.5",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "baseline--1e+308-2.0",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "baseline-0.0-0.0",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "baseline-0.0-0.5",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "baseline-0.0-2.0",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "boundary--1",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "boundary-0",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "affine_domain_and_values",
+        "name": "boundary-1",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "star_restriction_scatter",
+        "name": "0",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "star_restriction_scatter",
+        "name": "1",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "star_restriction_scatter",
+        "name": "2",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "star_restriction_scatter",
+        "name": "3",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "star_restriction_scatter",
+        "name": "4",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "star_restriction_scatter",
+        "name": "5",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "star_restriction_scatter",
+        "name": "6",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "star_restriction_scatter",
+        "name": "7",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "star_restriction_scatter",
+        "name": "8",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "star_restriction_scatter",
+        "name": "9",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "star_restriction_scatter",
+        "name": "10",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "star_restriction_scatter",
+        "name": "11",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "star_restriction_scatter",
+        "name": "12",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "star_restriction_scatter",
+        "name": "13",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "star_restriction_scatter",
+        "name": "14",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "star_restriction_scatter",
+        "name": "15",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "star_restriction_scatter",
+        "name": "16",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "star_restriction_scatter",
+        "name": "17",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "star_restriction_scatter",
+        "name": "18",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "star_restriction_scatter",
+        "name": "19",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "star_restriction_scatter",
+        "name": "20",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "star_restriction_scatter",
+        "name": "21",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "star_restriction_scatter",
+        "name": "22",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "star_restriction_scatter",
+        "name": "23",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "star_restriction_scatter",
+        "name": "24",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "star_restriction_scatter",
+        "name": "25",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "star_restriction_scatter",
+        "name": "26",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "star_restriction_scatter",
+        "name": "27",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "star_restriction_scatter",
+        "name": "28",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "star_restriction_scatter",
+        "name": "29",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "star_restriction_scatter",
+        "name": "30",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "star_restriction_scatter",
+        "name": "31",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "star_restriction_scatter",
+        "name": "32",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "star_restriction_scatter",
+        "name": "33",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "star_restriction_scatter",
+        "name": "34",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "star_restriction_scatter",
+        "name": "35",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "star_restriction_scatter",
+        "name": "36",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "star_restriction_scatter",
+        "name": "37",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "star_restriction_scatter",
+        "name": "38",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "star_restriction_scatter",
+        "name": "39",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "star_restriction_scatter",
+        "name": "40",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "star_restriction_scatter",
+        "name": "41",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "star_restriction_scatter",
+        "name": "42",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "star_restriction_scatter",
+        "name": "43",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "star_restriction_scatter",
+        "name": "44",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "star_restriction_scatter",
+        "name": "45",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "star_restriction_scatter",
+        "name": "46",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "star_restriction_scatter",
+        "name": "47",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "star_restriction_scatter",
+        "name": "48",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "star_restriction_scatter",
+        "name": "49",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "star_restriction_scatter",
+        "name": "50",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "star_restriction_scatter",
+        "name": "51",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "star_restriction_scatter",
+        "name": "52",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "star_restriction_scatter",
+        "name": "53",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "star_restriction_scatter",
+        "name": "54",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "star_restriction_scatter",
+        "name": "55",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "star_restriction_scatter",
+        "name": "56",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "star_restriction_scatter",
+        "name": "57",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "star_restriction_scatter",
+        "name": "58",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "star_restriction_scatter",
+        "name": "59",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "star_restriction_scatter",
+        "name": "60",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "star_restriction_scatter",
+        "name": "61",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "star_restriction_scatter",
+        "name": "62",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "star_restriction_scatter",
+        "name": "63",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "star_restriction_scatter",
+        "name": "64",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "star_restriction_scatter",
+        "name": "65",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "star_restriction_scatter",
+        "name": "66",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "star_restriction_scatter",
+        "name": "67",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "star_restriction_scatter",
+        "name": "68",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "star_restriction_scatter",
+        "name": "69",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "star_restriction_scatter",
+        "name": "70",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "star_restriction_scatter",
+        "name": "71",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "star_restriction_scatter",
+        "name": "72",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "star_restriction_scatter",
+        "name": "73",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "star_restriction_scatter",
+        "name": "74",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "star_restriction_scatter",
+        "name": "75",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "star_restriction_scatter",
+        "name": "76",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "star_restriction_scatter",
+        "name": "77",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "star_restriction_scatter",
+        "name": "78",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "star_restriction_scatter",
+        "name": "79",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "star_restriction_scatter",
+        "name": "80",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "star_restriction_scatter",
+        "name": "81",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "star_restriction_scatter",
+        "name": "82",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "star_restriction_scatter",
+        "name": "83",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "star_restriction_scatter",
+        "name": "84",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "star_restriction_scatter",
+        "name": "85",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "star_restriction_scatter",
+        "name": "86",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "star_restriction_scatter",
+        "name": "87",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "star_restriction_scatter",
+        "name": "88",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "star_restriction_scatter",
+        "name": "89",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "star_restriction_scatter",
+        "name": "90",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "star_restriction_scatter",
+        "name": "91",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "star_restriction_scatter",
+        "name": "92",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "star_restriction_scatter",
+        "name": "93",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "star_restriction_scatter",
+        "name": "94",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "star_restriction_scatter",
+        "name": "95",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "star_restriction_scatter",
+        "name": "96",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "star_restriction_scatter",
+        "name": "97",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "star_restriction_scatter",
+        "name": "98",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "star_restriction_scatter",
+        "name": "99",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "signed_graph_actions",
+        "name": "0",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "signed_graph_actions",
+        "name": "1",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "signed_graph_actions",
+        "name": "2",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "signed_graph_actions",
+        "name": "3",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "signed_graph_actions",
+        "name": "4",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "signed_graph_actions",
+        "name": "5",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "signed_graph_actions",
+        "name": "6",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "signed_graph_actions",
+        "name": "7",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "signed_graph_actions",
+        "name": "8",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "signed_graph_actions",
+        "name": "9",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "signed_graph_actions",
+        "name": "10",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "signed_graph_actions",
+        "name": "11",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "signed_graph_actions",
+        "name": "12",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "signed_graph_actions",
+        "name": "13",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "signed_graph_actions",
+        "name": "14",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "signed_graph_actions",
+        "name": "15",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "signed_graph_actions",
+        "name": "16",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "signed_graph_actions",
+        "name": "17",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "signed_graph_actions",
+        "name": "18",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "signed_graph_actions",
+        "name": "19",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "signed_graph_actions",
+        "name": "20",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "signed_graph_actions",
+        "name": "21",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "signed_graph_actions",
+        "name": "22",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "signed_graph_actions",
+        "name": "23",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "signed_graph_actions",
+        "name": "24",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "signed_graph_actions",
+        "name": "25",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "signed_graph_actions",
+        "name": "26",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "signed_graph_actions",
+        "name": "27",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "signed_graph_actions",
+        "name": "28",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "signed_graph_actions",
+        "name": "29",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "signed_graph_actions",
+        "name": "30",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "signed_graph_actions",
+        "name": "31",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "signed_graph_actions",
+        "name": "32",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "signed_graph_actions",
+        "name": "33",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "signed_graph_actions",
+        "name": "34",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "signed_graph_actions",
+        "name": "35",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "signed_graph_actions",
+        "name": "36",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "signed_graph_actions",
+        "name": "37",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "signed_graph_actions",
+        "name": "38",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "signed_graph_actions",
+        "name": "39",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "signed_graph_actions",
+        "name": "40",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "signed_graph_actions",
+        "name": "41",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "signed_graph_actions",
+        "name": "42",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "signed_graph_actions",
+        "name": "43",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "signed_graph_actions",
+        "name": "44",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "signed_graph_actions",
+        "name": "45",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "signed_graph_actions",
+        "name": "46",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "signed_graph_actions",
+        "name": "47",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "ten_family_cache_values_and_roundtrip",
+        "name": "A-OS-d0",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "ten_family_cache_values_and_roundtrip",
+        "name": "A-OS-divergence",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "ten_family_cache_values_and_roundtrip",
+        "name": "A-OS-flat",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "ten_family_cache_values_and_roundtrip",
+        "name": "A-OS-sharp",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "ten_family_cache_values_and_roundtrip",
+        "name": "A-OS-star_assembly",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "ten_family_cache_values_and_roundtrip",
+        "name": "A-OS-H_profile",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "same_output_stale_provenance",
+        "name": "A-OS-0",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "same_output_stale_provenance",
+        "name": "A-OS-1",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "same_output_stale_provenance",
+        "name": "A-OS-2",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "same_output_stale_provenance",
+        "name": "A-OS-3",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "same_output_stale_provenance",
+        "name": "A-OS-4",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "same_output_stale_provenance",
+        "name": "A-OS-5",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "same_output_stale_provenance",
+        "name": "A-OS-6",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "same_output_stale_provenance",
+        "name": "A-OS-7",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "same_output_stale_provenance",
+        "name": "A-OS-8",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "same_output_stale_provenance",
+        "name": "A-OS-9",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "ten_family_cache_values_and_roundtrip",
+        "name": "A-CI-d0",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "ten_family_cache_values_and_roundtrip",
+        "name": "A-CI-divergence",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "ten_family_cache_values_and_roundtrip",
+        "name": "A-CI-flat",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "ten_family_cache_values_and_roundtrip",
+        "name": "A-CI-sharp",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "ten_family_cache_values_and_roundtrip",
+        "name": "A-CI-star_assembly",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "ten_family_cache_values_and_roundtrip",
+        "name": "A-CI-H_profile",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "same_output_stale_provenance",
+        "name": "A-CI-0",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "same_output_stale_provenance",
+        "name": "A-CI-1",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "same_output_stale_provenance",
+        "name": "A-CI-2",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "same_output_stale_provenance",
+        "name": "A-CI-3",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "same_output_stale_provenance",
+        "name": "A-CI-4",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "same_output_stale_provenance",
+        "name": "A-CI-5",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "same_output_stale_provenance",
+        "name": "A-CI-6",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "same_output_stale_provenance",
+        "name": "A-CI-7",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "same_output_stale_provenance",
+        "name": "A-CI-8",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "same_output_stale_provenance",
+        "name": "A-CI-9",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "ten_family_cache_values_and_roundtrip",
+        "name": "A-PC-d0",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "ten_family_cache_values_and_roundtrip",
+        "name": "A-PC-divergence",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "ten_family_cache_values_and_roundtrip",
+        "name": "A-PC-flat",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "ten_family_cache_values_and_roundtrip",
+        "name": "A-PC-sharp",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "ten_family_cache_values_and_roundtrip",
+        "name": "A-PC-star_assembly",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "ten_family_cache_values_and_roundtrip",
+        "name": "A-PC-H_profile",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "same_output_stale_provenance",
+        "name": "A-PC-0",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "same_output_stale_provenance",
+        "name": "A-PC-1",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "same_output_stale_provenance",
+        "name": "A-PC-2",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "same_output_stale_provenance",
+        "name": "A-PC-3",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "same_output_stale_provenance",
+        "name": "A-PC-4",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "same_output_stale_provenance",
+        "name": "A-PC-5",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "same_output_stale_provenance",
+        "name": "A-PC-6",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "same_output_stale_provenance",
+        "name": "A-PC-7",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "same_output_stale_provenance",
+        "name": "A-PC-8",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "same_output_stale_provenance",
+        "name": "A-PC-9",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "same_output_stale_provenance",
+        "name": "A-PC-10",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "ten_family_cache_values_and_roundtrip",
+        "name": "A-CI+PC-d0",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "ten_family_cache_values_and_roundtrip",
+        "name": "A-CI+PC-divergence",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "ten_family_cache_values_and_roundtrip",
+        "name": "A-CI+PC-flat",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "ten_family_cache_values_and_roundtrip",
+        "name": "A-CI+PC-sharp",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "ten_family_cache_values_and_roundtrip",
+        "name": "A-CI+PC-star_assembly",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "ten_family_cache_values_and_roundtrip",
+        "name": "A-CI+PC-H_profile",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "same_output_stale_provenance",
+        "name": "A-CI+PC-0",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "same_output_stale_provenance",
+        "name": "A-CI+PC-1",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "same_output_stale_provenance",
+        "name": "A-CI+PC-2",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "same_output_stale_provenance",
+        "name": "A-CI+PC-3",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "same_output_stale_provenance",
+        "name": "A-CI+PC-4",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "same_output_stale_provenance",
+        "name": "A-CI+PC-5",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "same_output_stale_provenance",
+        "name": "A-CI+PC-6",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "same_output_stale_provenance",
+        "name": "A-CI+PC-7",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "same_output_stale_provenance",
+        "name": "A-CI+PC-8",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "same_output_stale_provenance",
+        "name": "A-CI+PC-9",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "same_output_stale_provenance",
+        "name": "A-CI+PC-10",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "ten_family_cache_values_and_roundtrip",
+        "name": "A-RG2b-d0",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "ten_family_cache_values_and_roundtrip",
+        "name": "A-RG2b-divergence",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "ten_family_cache_values_and_roundtrip",
+        "name": "A-RG2b-flat",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "ten_family_cache_values_and_roundtrip",
+        "name": "A-RG2b-sharp",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "ten_family_cache_values_and_roundtrip",
+        "name": "A-RG2b-star_assembly",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "ten_family_cache_values_and_roundtrip",
+        "name": "A-RG2b-H_profile",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "same_output_stale_provenance",
+        "name": "A-RG2b-0",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "same_output_stale_provenance",
+        "name": "A-RG2b-1",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "same_output_stale_provenance",
+        "name": "A-RG2b-2",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "same_output_stale_provenance",
+        "name": "A-RG2b-3",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "same_output_stale_provenance",
+        "name": "A-RG2b-4",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "same_output_stale_provenance",
+        "name": "A-RG2b-5",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "same_output_stale_provenance",
+        "name": "A-RG2b-6",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "same_output_stale_provenance",
+        "name": "A-RG2b-7",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "same_output_stale_provenance",
+        "name": "A-RG2b-8",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "same_output_stale_provenance",
+        "name": "A-RG2b-9",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "ten_family_cache_values_and_roundtrip",
+        "name": "C-OS-d0",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "ten_family_cache_values_and_roundtrip",
+        "name": "C-OS-divergence",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "ten_family_cache_values_and_roundtrip",
+        "name": "C-OS-flat",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "ten_family_cache_values_and_roundtrip",
+        "name": "C-OS-sharp",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "ten_family_cache_values_and_roundtrip",
+        "name": "C-OS-star_assembly",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "ten_family_cache_values_and_roundtrip",
+        "name": "C-OS-H_profile",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "same_output_stale_provenance",
+        "name": "C-OS-0",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "same_output_stale_provenance",
+        "name": "C-OS-1",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "same_output_stale_provenance",
+        "name": "C-OS-2",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "same_output_stale_provenance",
+        "name": "C-OS-3",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "same_output_stale_provenance",
+        "name": "C-OS-4",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "same_output_stale_provenance",
+        "name": "C-OS-5",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "same_output_stale_provenance",
+        "name": "C-OS-6",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "same_output_stale_provenance",
+        "name": "C-OS-7",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "same_output_stale_provenance",
+        "name": "C-OS-8",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "ten_family_cache_values_and_roundtrip",
+        "name": "C-CI-d0",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "ten_family_cache_values_and_roundtrip",
+        "name": "C-CI-divergence",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "ten_family_cache_values_and_roundtrip",
+        "name": "C-CI-flat",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "ten_family_cache_values_and_roundtrip",
+        "name": "C-CI-sharp",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "ten_family_cache_values_and_roundtrip",
+        "name": "C-CI-star_assembly",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "ten_family_cache_values_and_roundtrip",
+        "name": "C-CI-H_profile",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "same_output_stale_provenance",
+        "name": "C-CI-0",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "same_output_stale_provenance",
+        "name": "C-CI-1",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "same_output_stale_provenance",
+        "name": "C-CI-2",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "same_output_stale_provenance",
+        "name": "C-CI-3",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "same_output_stale_provenance",
+        "name": "C-CI-4",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "same_output_stale_provenance",
+        "name": "C-CI-5",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "same_output_stale_provenance",
+        "name": "C-CI-6",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "same_output_stale_provenance",
+        "name": "C-CI-7",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "same_output_stale_provenance",
+        "name": "C-CI-8",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "ten_family_cache_values_and_roundtrip",
+        "name": "C-PC-d0",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "ten_family_cache_values_and_roundtrip",
+        "name": "C-PC-divergence",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "ten_family_cache_values_and_roundtrip",
+        "name": "C-PC-flat",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "ten_family_cache_values_and_roundtrip",
+        "name": "C-PC-sharp",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "ten_family_cache_values_and_roundtrip",
+        "name": "C-PC-star_assembly",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "ten_family_cache_values_and_roundtrip",
+        "name": "C-PC-H_profile",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "same_output_stale_provenance",
+        "name": "C-PC-0",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "same_output_stale_provenance",
+        "name": "C-PC-1",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "same_output_stale_provenance",
+        "name": "C-PC-2",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "same_output_stale_provenance",
+        "name": "C-PC-3",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "same_output_stale_provenance",
+        "name": "C-PC-4",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "same_output_stale_provenance",
+        "name": "C-PC-5",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "same_output_stale_provenance",
+        "name": "C-PC-6",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "same_output_stale_provenance",
+        "name": "C-PC-7",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "same_output_stale_provenance",
+        "name": "C-PC-8",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "same_output_stale_provenance",
+        "name": "C-PC-9",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "ten_family_cache_values_and_roundtrip",
+        "name": "C-CI+PC-d0",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "ten_family_cache_values_and_roundtrip",
+        "name": "C-CI+PC-divergence",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "ten_family_cache_values_and_roundtrip",
+        "name": "C-CI+PC-flat",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "ten_family_cache_values_and_roundtrip",
+        "name": "C-CI+PC-sharp",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "ten_family_cache_values_and_roundtrip",
+        "name": "C-CI+PC-star_assembly",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "ten_family_cache_values_and_roundtrip",
+        "name": "C-CI+PC-H_profile",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "same_output_stale_provenance",
+        "name": "C-CI+PC-0",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "same_output_stale_provenance",
+        "name": "C-CI+PC-1",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "same_output_stale_provenance",
+        "name": "C-CI+PC-2",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "same_output_stale_provenance",
+        "name": "C-CI+PC-3",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "same_output_stale_provenance",
+        "name": "C-CI+PC-4",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "same_output_stale_provenance",
+        "name": "C-CI+PC-5",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "same_output_stale_provenance",
+        "name": "C-CI+PC-6",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "same_output_stale_provenance",
+        "name": "C-CI+PC-7",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "same_output_stale_provenance",
+        "name": "C-CI+PC-8",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "same_output_stale_provenance",
+        "name": "C-CI+PC-9",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "ten_family_cache_values_and_roundtrip",
+        "name": "C-RG2b-d0",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "ten_family_cache_values_and_roundtrip",
+        "name": "C-RG2b-divergence",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "ten_family_cache_values_and_roundtrip",
+        "name": "C-RG2b-flat",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "ten_family_cache_values_and_roundtrip",
+        "name": "C-RG2b-sharp",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "ten_family_cache_values_and_roundtrip",
+        "name": "C-RG2b-star_assembly",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "ten_family_cache_values_and_roundtrip",
+        "name": "C-RG2b-H_profile",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "same_output_stale_provenance",
+        "name": "C-RG2b-0",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "same_output_stale_provenance",
+        "name": "C-RG2b-1",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "same_output_stale_provenance",
+        "name": "C-RG2b-2",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "same_output_stale_provenance",
+        "name": "C-RG2b-3",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "same_output_stale_provenance",
+        "name": "C-RG2b-4",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "same_output_stale_provenance",
+        "name": "C-RG2b-5",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "same_output_stale_provenance",
+        "name": "C-RG2b-6",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "same_output_stale_provenance",
+        "name": "C-RG2b-7",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "same_output_stale_provenance",
+        "name": "C-RG2b-8",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "rehashed_cache_corruption",
+        "name": "d0-false_value",
+        "passed": true,
+        "detail": "ValueError"
+      },
+      {
+        "group": "rehashed_cache_corruption",
+        "name": "d0-false_type",
+        "passed": true,
+        "detail": "ValueError"
+      },
+      {
+        "group": "rehashed_cache_corruption",
+        "name": "d0-extra",
+        "passed": true,
+        "detail": "ValueError"
+      },
+      {
+        "group": "rehashed_cache_corruption",
+        "name": "d0-bool_index",
+        "passed": true,
+        "detail": "ValueError"
+      },
+      {
+        "group": "rehashed_cache_corruption",
+        "name": "d0-false_receipt",
+        "passed": true,
+        "detail": "ValueError"
+      },
+      {
+        "group": "rehashed_cache_corruption",
+        "name": "d0-wrong_role",
+        "passed": true,
+        "detail": "ValueError"
+      },
+      {
+        "group": "rehashed_cache_corruption",
+        "name": "d0-foreign_version",
+        "passed": true,
+        "detail": "ValueError"
+      },
+      {
+        "group": "rehashed_cache_corruption",
+        "name": "d0-source_alias",
+        "passed": true,
+        "detail": "ValueError"
+      },
+      {
+        "group": "rehashed_cache_corruption",
+        "name": "divergence-false_value",
+        "passed": true,
+        "detail": "ValueError"
+      },
+      {
+        "group": "rehashed_cache_corruption",
+        "name": "divergence-false_type",
+        "passed": true,
+        "detail": "ValueError"
+      },
+      {
+        "group": "rehashed_cache_corruption",
+        "name": "divergence-extra",
+        "passed": true,
+        "detail": "ValueError"
+      },
+      {
+        "group": "rehashed_cache_corruption",
+        "name": "divergence-bool_index",
+        "passed": true,
+        "detail": "ValueError"
+      },
+      {
+        "group": "rehashed_cache_corruption",
+        "name": "divergence-false_receipt",
+        "passed": true,
+        "detail": "ValueError"
+      },
+      {
+        "group": "rehashed_cache_corruption",
+        "name": "divergence-wrong_role",
+        "passed": true,
+        "detail": "ValueError"
+      },
+      {
+        "group": "rehashed_cache_corruption",
+        "name": "divergence-foreign_version",
+        "passed": true,
+        "detail": "ValueError"
+      },
+      {
+        "group": "rehashed_cache_corruption",
+        "name": "divergence-source_alias",
+        "passed": true,
+        "detail": "ValueError"
+      },
+      {
+        "group": "rehashed_cache_corruption",
+        "name": "flat-false_value",
+        "passed": true,
+        "detail": "ValueError"
+      },
+      {
+        "group": "rehashed_cache_corruption",
+        "name": "flat-false_type",
+        "passed": true,
+        "detail": "ValueError"
+      },
+      {
+        "group": "rehashed_cache_corruption",
+        "name": "flat-extra",
+        "passed": true,
+        "detail": "ValueError"
+      },
+      {
+        "group": "rehashed_cache_corruption",
+        "name": "flat-bool_index",
+        "passed": true,
+        "detail": "ValueError"
+      },
+      {
+        "group": "rehashed_cache_corruption",
+        "name": "flat-false_receipt",
+        "passed": true,
+        "detail": "ValueError"
+      },
+      {
+        "group": "rehashed_cache_corruption",
+        "name": "flat-wrong_role",
+        "passed": true,
+        "detail": "ValueError"
+      },
+      {
+        "group": "rehashed_cache_corruption",
+        "name": "flat-foreign_version",
+        "passed": true,
+        "detail": "ValueError"
+      },
+      {
+        "group": "rehashed_cache_corruption",
+        "name": "flat-source_alias",
+        "passed": true,
+        "detail": "ValueError"
+      },
+      {
+        "group": "rehashed_cache_corruption",
+        "name": "sharp-false_value",
+        "passed": true,
+        "detail": "ValueError"
+      },
+      {
+        "group": "rehashed_cache_corruption",
+        "name": "sharp-false_type",
+        "passed": true,
+        "detail": "ValueError"
+      },
+      {
+        "group": "rehashed_cache_corruption",
+        "name": "sharp-extra",
+        "passed": true,
+        "detail": "ValueError"
+      },
+      {
+        "group": "rehashed_cache_corruption",
+        "name": "sharp-bool_index",
+        "passed": true,
+        "detail": "ValueError"
+      },
+      {
+        "group": "rehashed_cache_corruption",
+        "name": "sharp-false_receipt",
+        "passed": true,
+        "detail": "ValueError"
+      },
+      {
+        "group": "rehashed_cache_corruption",
+        "name": "sharp-wrong_role",
+        "passed": true,
+        "detail": "ValueError"
+      },
+      {
+        "group": "rehashed_cache_corruption",
+        "name": "sharp-foreign_version",
+        "passed": true,
+        "detail": "ValueError"
+      },
+      {
+        "group": "rehashed_cache_corruption",
+        "name": "sharp-source_alias",
+        "passed": true,
+        "detail": "ValueError"
+      },
+      {
+        "group": "rehashed_cache_corruption",
+        "name": "star_assembly-false_value",
+        "passed": true,
+        "detail": "ValueError"
+      },
+      {
+        "group": "rehashed_cache_corruption",
+        "name": "star_assembly-false_type",
+        "passed": true,
+        "detail": "ValueError"
+      },
+      {
+        "group": "rehashed_cache_corruption",
+        "name": "star_assembly-extra",
+        "passed": true,
+        "detail": "ValueError"
+      },
+      {
+        "group": "rehashed_cache_corruption",
+        "name": "star_assembly-bool_index",
+        "passed": true,
+        "detail": "ValueError"
+      },
+      {
+        "group": "rehashed_cache_corruption",
+        "name": "star_assembly-false_receipt",
+        "passed": true,
+        "detail": "ValueError"
+      },
+      {
+        "group": "rehashed_cache_corruption",
+        "name": "star_assembly-wrong_role",
+        "passed": true,
+        "detail": "ValueError"
+      },
+      {
+        "group": "rehashed_cache_corruption",
+        "name": "star_assembly-foreign_version",
+        "passed": true,
+        "detail": "ValueError"
+      },
+      {
+        "group": "rehashed_cache_corruption",
+        "name": "star_assembly-source_alias",
+        "passed": true,
+        "detail": "ValueError"
+      },
+      {
+        "group": "rehashed_cache_corruption",
+        "name": "H_profile-false_value",
+        "passed": true,
+        "detail": "ValueError"
+      },
+      {
+        "group": "rehashed_cache_corruption",
+        "name": "H_profile-false_type",
+        "passed": true,
+        "detail": "ValueError"
+      },
+      {
+        "group": "rehashed_cache_corruption",
+        "name": "H_profile-extra",
+        "passed": true,
+        "detail": "ValueError"
+      },
+      {
+        "group": "rehashed_cache_corruption",
+        "name": "H_profile-bool_index",
+        "passed": true,
+        "detail": "ValueError"
+      },
+      {
+        "group": "rehashed_cache_corruption",
+        "name": "H_profile-false_receipt",
+        "passed": true,
+        "detail": "ValueError"
+      },
+      {
+        "group": "rehashed_cache_corruption",
+        "name": "H_profile-wrong_role",
+        "passed": true,
+        "detail": "ValueError"
+      },
+      {
+        "group": "rehashed_cache_corruption",
+        "name": "H_profile-foreign_version",
+        "passed": true,
+        "detail": "ValueError"
+      },
+      {
+        "group": "rehashed_cache_corruption",
+        "name": "H_profile-source_alias",
+        "passed": true,
+        "detail": "ValueError"
+      },
+      {
+        "group": "stale_before_producer",
+        "name": "d0",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "stale_before_producer",
+        "name": "divergence",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "stale_before_producer",
+        "name": "flat",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "stale_before_producer",
+        "name": "sharp",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "stale_before_producer",
+        "name": "star_assembly",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "stale_before_producer",
+        "name": "H_profile",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "carrier_stage_contract",
+        "name": "A-good-old",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "carrier_stage_contract",
+        "name": "A-new-hodge-old-state",
+        "passed": true,
+        "detail": "ValueError"
+      },
+      {
+        "group": "carrier_stage_contract",
+        "name": "A-new-operand-old-state",
+        "passed": true,
+        "detail": "ValueError"
+      },
+      {
+        "group": "carrier_stage_contract",
+        "name": "C-good-old",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "carrier_stage_contract",
+        "name": "C-new-hodge-old-state",
+        "passed": true,
+        "detail": "ValueError"
+      },
+      {
+        "group": "carrier_stage_contract",
+        "name": "C-new-operand-old-state",
+        "passed": true,
+        "detail": "ValueError"
+      },
+      {
+        "group": "composed_ownership",
+        "name": "A-OS",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "composed_ownership",
+        "name": "C-OS",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "composed_ownership",
+        "name": "A-PC",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "composed_ownership",
+        "name": "C-PC",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "composed_ownership",
+        "name": "A-CI+PC",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "composed_ownership",
+        "name": "C-CI+PC",
+        "passed": true,
+        "detail": null
+      },
+      {
+        "group": "support_ceiling",
+        "name": "registry-remains-empty",
+        "passed": true,
+        "detail": null
+      }
+    ],
+    "observations": [
+      {
+        "kind": "star_intermediate_underflow",
+        "source_offdiagonal": 0.0,
+        "permuted_offdiagonal": 2.4703282292062327e-174,
+        "exact_rounded": 2.4703282292062327e-174,
+        "status": "characterization; no universal relative-error/bitwise covariance contract asserted"
+      },
+      {
+        "kind": "independently_supplied_expectations_required",
+        "self_consistent_other_time_consumes": [
+          2.0,
+          1.0
+        ],
+        "status": "expected scope ceiling; operation owner must provide live independently captured subject"
+      }
+    ],
+    "counts": {
+      "exact_positive_domain": {
+        "passed": 170,
+        "failed": 0
+      },
+      "affine_domain_and_values": {
+        "passed": 108,
+        "failed": 0
+      },
+      "star_restriction_scatter": {
+        "passed": 100,
+        "failed": 0
+      },
+      "signed_graph_actions": {
+        "passed": 48,
+        "failed": 0
+      },
+      "ten_family_cache_values_and_roundtrip": {
+        "passed": 60,
+        "failed": 0
+      },
+      "same_output_stale_provenance": {
+        "passed": 99,
+        "failed": 0
+      },
+      "rehashed_cache_corruption": {
+        "passed": 48,
+        "failed": 0
+      },
+      "stale_before_producer": {
+        "passed": 6,
+        "failed": 0
+      },
+      "carrier_stage_contract": {
+        "passed": 6,
+        "failed": 0
+      },
+      "composed_ownership": {
+        "passed": 6,
+        "failed": 0
+      },
+      "support_ceiling": {
+        "passed": 1,
+        "failed": 0
+      }
+    },
+    "elapsed_seconds": 136.21347403526306,
+    "total": 652,
+    "passed": 652,
+    "failed": 0
+  },
+  "independent_environment_and_subject": {
+    "mode": "native",
+    "python": "3.12.3 (main, Jul 15 2026, 23:46:41) [GCC 13.3.0]",
+    "numpy": "2.4.6",
+    "loaded": {
+      "pygrc.models.grc_v4_geometry": {
+        "path": "src/pygrc/models/grc_v4_geometry.py",
+        "sha256": "d715f67555d3c6e68a4e031ba132cb1854cc839de03dcd2c7101fbeb40c13dcd"
+      },
+      "pygrc.models.grc_v4_profile": {
+        "path": "src/pygrc/models/grc_v4_profile.py",
+        "sha256": "188e4ceb92b6a36fe81849911b88b233b8dd16bf3de07383e1508d76232fdbfb"
+      },
+      "pygrc.models.grc_v4_state": {
+        "path": "src/pygrc/models/grc_v4_state.py",
+        "sha256": "b0ccf06ef91b66feb8670fb67281465998f4bcb085c4d547fedd3ce6d85ad3cb"
+      },
+      "pygrc.models.grc_v4_codec": {
+        "path": "src/pygrc/models/grc_v4_codec.py",
+        "sha256": "bd6d9390c818c5a25b70da119cfbc3a3de3707ee84566f6bb06160bb4780e154"
+      }
+    }
+  },
+  "path_presentation": "implementation/phase-9-grcv4/verification/Phase9PathPresentation.json"
+}

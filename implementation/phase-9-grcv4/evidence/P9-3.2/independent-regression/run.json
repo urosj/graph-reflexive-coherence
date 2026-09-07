@@ -1,0 +1,15 @@
+{
+  "iteration_id": "P9-3.2",
+  "status": "passed",
+  "scope": "876 external audit scenarios executed natively against final P9-3.2 numerical sources; no qualified-provider substitution",
+  "artifact_bindings": [
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-3.2/independent-regression/actual.json",
+      "sha256": "481480b539743f327044fefcb1b07462e26737e3807e8c8afb92902c1f14de2c"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-3.2/independent-regression/inputs.json",
+      "sha256": "831b09f88d3e617049f8c3926efac41a9d04720938cc5ca1a795c40d75bcf02e"
+    }
+  ]
+}

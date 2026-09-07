@@ -1,0 +1,67 @@
+{
+  "iteration_id": "P9-3.1",
+  "status": "finding_reproduced",
+  "audit_finding": "F1: one local positivity admission defect",
+  "artifact_bindings": [
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-3.1/audit-1-native-before/inputs.json",
+      "sha256": "1cd59f4ca2f3c4d57e08638ebae143a02a2a35fbfdee17fdc3026a48d45136cf"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-3.1/audit-1-native-before/expected.json",
+      "sha256": "b548c0394a9f1401ea9e8f26388eff54545852c0f45a2c4c57596b2ed82a685e"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-3.1/audit-1-native-before/actual.json",
+      "sha256": "85fc0a5aabedd4af9c6af3046f59d899a5d5adb5b2c93642483e7c9365fbc8d0"
+    }
+  ],
+  "qualification": "Native source-mode runs; clean installed archive coverage is separately bound by audit-1-pressure.",
+  "presentation": {
+    "kind": "repository_local_traceback_source_references",
+    "original_artifact": {
+      "git_revision": "ce83d7a709d63b9445a0e81226425597ed37ced0",
+      "path": "implementation/phase-9-grcv4/evidence/P9-3.1/audit-1-native-before/actual.json",
+      "sha256": "3e166a5a855019ad0e05eb96ce4b853d367488cac6e930b01e58761c3bb67c1e"
+    },
+    "presented_sha256": "85fc0a5aabedd4af9c6af3046f59d899a5d5adb5b2c93642483e7c9365fbc8d0",
+    "source": {
+      "path": "implementation/phase-9-grcv4/evidence/P9-3.1/audit-1-inputs/inputs.json",
+      "sha256": "dd08e0f8821c53ac951343c9c54159b21e10da0ecd40e43ed963ab3e108bdef7",
+      "pointer": "/attachments/2/utf8_content",
+      "attachment_sha256": "27827ae5739154107aab4c42a6d31a57c2ce68744f2482d8e7f55f2656fd4c88"
+    },
+    "changed_trace_fields": [
+      "/stress/cases_detail/582/trace",
+      "/stress/cases_detail/583/trace",
+      "/stress/cases_detail/592/trace",
+      "/stress/cases_detail/593/trace",
+      "/stress/cases_detail/594/trace",
+      "/stress/cases_detail/595/trace",
+      "/stress/cases_detail/608/trace",
+      "/stress/cases_detail/616/trace",
+      "/stress/cases_detail/622/trace",
+      "/stress/cases_detail/623/trace",
+      "/stress/cases_detail/634/trace",
+      "/stress/cases_detail/635/trace",
+      "/stress/cases_detail/636/trace",
+      "/stress/cases_detail/638/trace",
+      "/stress/cases_detail/639/trace",
+      "/stress/cases_detail/642/trace",
+      "/stress/cases_detail/643/trace",
+      "/stress/cases_detail/646/trace",
+      "/stress/cases_detail/648/trace",
+      "/stress/cases_detail/664/trace",
+      "/stress/cases_detail/680/trace",
+      "/stress/cases_detail/694/trace",
+      "/stress/cases_detail/698/trace",
+      "/stress/cases_detail/704/trace",
+      "/stress/cases_detail/705/trace"
+    ],
+    "filename_occurrences_replaced": 50,
+    "line_number_scope": "Line numbers identify lines of the embedded Python attachment, not lines of its JSON container.",
+    "transformation": "Only traceback filenames for the supplied stress script are replaced with the repository input path and JSON Pointer. Retrieve the original artifact from the stated repository Git revision to compare or reverse this presentation.",
+    "original_observations_preserved": true,
+    "new_numerical_execution": false
+  }
+}

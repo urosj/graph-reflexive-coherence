@@ -1,0 +1,10 @@
+{
+  "iteration_id": "P9-3.1",
+  "status": "passed",
+  "inputs_sha256": "f83478cff9bc447a8eb70197b911bfc307779f763e0d367fb9a895f8eb109ce8",
+  "actual_sha256": "94549221327337ab17a6c41f104fd9ef3f5f75bea4681bc5dc4b34553dba069d",
+  "stdout_sha256": "eb9b74f2f46d45507278912f02e0088ec5b4febee6545ed19f1e01308559cd6b",
+  "scope": "current primitive, foundation, installed package and older-model regressions; not full GRCV4 runtime conformance",
+  "diagnostic_normalization": "Machine-specific pip cache path replaced by <pip_cache>; no source identity or result normalized.",
+  "subject_scope": "pre-outlier-hardening P9-3.1 candidate, see bound source roster"
+}

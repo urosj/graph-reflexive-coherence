@@ -1,0 +1,79 @@
+{
+  "schema": "phase9_leaf_run_v1",
+  "iteration_id": "P9-3.3",
+  "status": "passed",
+  "completed_utc": "2026-09-07T11:48:29.501022+00:00",
+  "subject_inputs": "inputs.json",
+  "policy_digest": "cf8fec71d071c4e499abf93f81f71f688f115ea3f6c77e45c63d3e7eee67f4c7",
+  "source_unchanged_during_run": true,
+  "python": "3.12.3 (main, Jul 15 2026, 23:46:41) [GCC 13.3.0]",
+  "platform": "Linux-5.15.167-0515167-generic-x86_64-with-glibc2.39",
+  "managed_node": "v22.23.2",
+  "playwright": "1.55.0",
+  "browser_declarations": [
+    {
+      "name": "chromium",
+      "revision": "1187",
+      "installByDefault": true,
+      "browserVersion": "140.0.7339.16"
+    },
+    {
+      "name": "chromium-headless-shell",
+      "revision": "1187",
+      "installByDefault": true,
+      "browserVersion": "140.0.7339.16"
+    },
+    {
+      "name": "chromium-tip-of-tree",
+      "revision": "1357",
+      "installByDefault": false,
+      "browserVersion": "141.0.7342.0"
+    },
+    {
+      "name": "chromium-tip-of-tree-headless-shell",
+      "revision": "1357",
+      "installByDefault": false,
+      "browserVersion": "141.0.7342.0"
+    }
+  ],
+  "toolchain_source": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/toolchain.toml",
+  "commands": [
+    {
+      "argv": [
+        ".venv/bin/python",
+        "implementation/phase-9-grcv4/verification/test_phase9_g1.py"
+      ],
+      "exit_status": 0,
+      "result": "122/122 authority cases"
+    },
+    {
+      "argv": [
+        ".venv/bin/python",
+        "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/test_phase9_g1_surfaces.py"
+      ],
+      "exit_status": 0,
+      "result": "API/notebook byte identity and 19/19 JavaScript tests"
+    },
+    {
+      "argv": [
+        ".venv/bin/python",
+        "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/test_phase9_g1_surfaces.py",
+        "--browser"
+      ],
+      "exit_status": 0,
+      "result": "18/18 desktop/mobile browser tests; authorized localhost/Chromium execution"
+    }
+  ],
+  "initial_browser_attempt": {
+    "exit_status": 1,
+    "tests_executed": 0,
+    "reason": "Sandbox denied creation of the localhost server socket. The authorized rerun above completed the same browser command."
+  },
+  "claim_ceiling": "implementation permission and read-only API/notebook/browser surfaces; no numerical runtime conformance or leaf self-acceptance",
+  "retention_note": "Inputs were captured before these commands. Generated authority/surface records and stdout were checked and reduced after execution. Numerical source belongs to the separately retained validation run. Later review/execution/evidence binding maintenance requires a fresh current-boundary check, not repetition of unchanged numerical/browser tests.",
+  "artifacts": {
+    "inputs.json": "414c8d38be7feaee866493308e35926783136c7f6c2525b63f7cdc77d4672081",
+    "actual.json": "b88295484e42d35c0ef9e773ba4640084e1f4b8bd954234ea3790d0d71d7ddd5",
+    "stdout.txt": "4e76c6b9b815c792d423b010c552f67804312885b2259c042f9bf6c88d3d2847"
+  }
+}

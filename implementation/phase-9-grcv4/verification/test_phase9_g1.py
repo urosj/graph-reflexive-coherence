@@ -52,7 +52,7 @@ def main():
             ],
             check=True,
         )
-        fixture_revision = p.accepted_harness(p.ROOT)["baseline_commit"]
+        fixture_revision = p.accepted_numerical_pressure(p.ROOT)["baseline_commit"]
         subprocess.run(
             ["git", "checkout", "--quiet", "--detach", fixture_revision],
             cwd=root, check=True,
@@ -514,9 +514,14 @@ def main():
             lambda: registered("src/pygrc/models/grc_v4.py", content, leaf="P9-2.3"),
         )
         case(
-            "integration_work_does_not_accept_next_leaf",
-            lambda: registered(p.PHASE + "evidence/P9-3.1/probe/inputs.json",
-                               b"{}", leaf="P9-3.1"),
+            "accepted_numerical_pressure_enables_rejection_preservation_leaf",
+            lambda: registered(p.PHASE + "evidence/P9-3.5/probe/inputs.json",
+                               b"{}", leaf="P9-3.5"),
+        )
+        case(
+            "numerical_pressure_does_not_accept_future_leaf",
+            lambda: registered(p.PHASE + "evidence/P9-4.1/probe/inputs.json",
+                               b"{}", leaf="P9-4.1"),
             "owning leaf entry dependencies are not accepted",
         )
         for name in ["src/pygrc/models/grc_v4_state.py", "src/pygrc/models/grc_v4_step.py"]:
@@ -525,6 +530,47 @@ def main():
         for name in ["tests/models/grcv4_conformance_harness.py", "tests/models/grcv4_reference_oracles.py"]:
             case("accepted_results_enable_harness_owner_" + Path(name).stem,
                  lambda name=name: registered(name, content, leaf="P9-2.5"))
+        for name in ['src/pygrc/models/grc_v4_geometry.py', 'src/pygrc/models/grc_v4_transport.py', 'tests/models/test_grc_v4_geometry.py', 'tests/models/test_grc_v4_transport.py']:
+            case("accepted_integration_enables_" + Path(name).stem,
+                 lambda name=name: registered(name, content, leaf="P9-3.1"))
+        for name in ["src/pygrc/models/grc_v4_geometry.py", "tests/models/test_grc_v4_geometry.py"]:
+            case("accepted_geometry_enables_stage_owner_" + Path(name).stem,
+                 lambda name=name: registered(name, content, leaf="P9-3.2"))
+        for name in ["src/pygrc/models/grc_v4_transport.py", "tests/models/test_grc_v4_transport.py", "src/pygrc/models/grc_v4_step.py", "tests/models/test_grc_v4_step.py"]:
+            case("accepted_stage_enables_charge_owner_" + Path(name).stem,
+                 lambda name=name: registered(name, content, leaf="P9-3.3"))
+        for name in ["src/pygrc/models/grc_v4_geometry.py", "tests/models/test_grc_v4_geometry.py", "src/pygrc/models/grc_v4_transport.py", "tests/models/test_grc_v4_transport.py"]:
+            case("accepted_resources_enable_numerical_owner_" + Path(name).stem,
+                 lambda name=name: registered(name, content, leaf="P9-3.4"))
+        case("missing_resource_acceptance", lambda: edit(p.RESOURCE_ACCEPTANCE, None),
+             "P9-3.3-AcceptanceRecord.json")
+        for key, replacement in [("status", "pending"), ("accepted_iterations", ["P9-3.3", "P9-3.4"]),
+                                 ("accepted_generic_runtime_support", ["C_OS"]),
+                                 ("admitted_specialization_support_sets", [["C_OS"]]),
+                                 ("baseline_commit", p.BASELINE), ("evidence_bindings", [])]:
+            def forged_resource(key=key, replacement=replacement):
+                value = p.read(root / p.RESOURCE_ACCEPTANCE)
+                value[key] = replacement
+                value["record_digest"] = p.digest_record(value)
+                with mutate(p.RESOURCE_ACCEPTANCE, p.canonical(value)):
+                    p.accepted_resources(root)
+            case("resource_acceptance_cannot_self_authorize_" + key, forged_resource,
+                 "untrusted resource acceptance", scope="isolated_resource_acceptance_authentication")
+        case("missing_numerical_pressure_acceptance", lambda: edit(p.NUMERICAL_ACCEPTANCE, None),
+             "P9-3.4-AcceptanceRecord.json")
+        for key, replacement in [("status", "pending"), ("accepted_iterations", ["P9-3.4", "P9-3.5"]),
+                                 ("accepted_generic_runtime_support", ["C_OS"]),
+                                 ("admitted_specialization_support_sets", [["C_OS"]]),
+                                 ("baseline_commit", p.BASELINE), ("evidence_bindings", [])]:
+            def forged_numerical(key=key, replacement=replacement):
+                value = p.read(root / p.NUMERICAL_ACCEPTANCE)
+                value[key] = replacement
+                value["record_digest"] = p.digest_record(value)
+                with mutate(p.NUMERICAL_ACCEPTANCE, p.canonical(value)):
+                    p.accepted_numerical_pressure(root)
+            case("numerical_pressure_acceptance_cannot_self_authorize_" + key,
+                 forged_numerical, "untrusted numerical pressure acceptance",
+                 scope="isolated_numerical_pressure_acceptance_authentication")
         case("accepted_harness_enables_export_owner",
              lambda: registered(init, before + lazy, leaf="P9-2.6"))
         for key, replacement in [("status", "pending"), ("accepted_iterations", ["P9-2.5", "P9-2.6"]),
@@ -538,6 +584,51 @@ def main():
                     p.accepted_harness(root)
             case("harness_acceptance_cannot_self_authorize_" + key, forged_harness,
                  "untrusted harness acceptance", scope="isolated_harness_acceptance_authentication")
+        case("missing_integration_acceptance",
+             lambda: edit(p.INTEGRATION_ACCEPTANCE, None),
+             "P9-2.6-AcceptanceRecord.json")
+        for key, replacement in [("status", "pending"), ("accepted_iterations", ["P9-2.6", "P9-3.1"]),
+                                 ("accepted_generic_runtime_support", ["C_OS"]),
+                                 ("admitted_specialization_support_sets", [["C_OS"]]),
+                                 ("baseline_commit", p.BASELINE), ("evidence_bindings", [])]:
+            def forged_integration(key=key, replacement=replacement):
+                value = p.read(root / p.INTEGRATION_ACCEPTANCE)
+                value[key] = replacement
+                value["record_digest"] = p.digest_record(value)
+                with mutate(p.INTEGRATION_ACCEPTANCE, p.canonical(value)):
+                    p.accepted_integration(root)
+            case("integration_acceptance_cannot_self_authorize_" + key, forged_integration,
+                 "untrusted integration acceptance", scope="isolated_integration_acceptance_authentication")
+        case("missing_geometry_acceptance",
+             lambda: edit(p.GEOMETRY_ACCEPTANCE, None),
+             "P9-3.1-AcceptanceRecord.json")
+        for key, replacement in [("status", "pending"), ("accepted_iterations", ["P9-3.1", "P9-3.2"]),
+                                 ("accepted_generic_runtime_support", ["C_OS"]),
+                                 ("admitted_specialization_support_sets", [["C_OS"]]),
+                                 ("baseline_commit", p.BASELINE), ("evidence_bindings", [])]:
+            def forged_geometry(key=key, replacement=replacement):
+                value = p.read(root / p.GEOMETRY_ACCEPTANCE)
+                value[key] = replacement
+                value["record_digest"] = p.digest_record(value)
+                with mutate(p.GEOMETRY_ACCEPTANCE, p.canonical(value)):
+                    p.accepted_geometry(root)
+            case("geometry_acceptance_cannot_self_authorize_" + key, forged_geometry,
+                 "untrusted geometry acceptance", scope="isolated_geometry_acceptance_authentication")
+        case("missing_stage_acceptance",
+             lambda: edit(p.STAGE_ACCEPTANCE, None),
+             "P9-3.2-AcceptanceRecord.json")
+        for key, replacement in [("status", "pending"), ("accepted_iterations", ["P9-3.2", "P9-3.3"]),
+                                 ("accepted_generic_runtime_support", ["C_OS"]),
+                                 ("admitted_specialization_support_sets", [["C_OS"]]),
+                                 ("baseline_commit", p.BASELINE), ("evidence_bindings", [])]:
+            def forged_stage(key=key, replacement=replacement):
+                value = p.read(root / p.STAGE_ACCEPTANCE)
+                value[key] = replacement
+                value["record_digest"] = p.digest_record(value)
+                with mutate(p.STAGE_ACCEPTANCE, p.canonical(value)):
+                    p.accepted_stages(root)
+            case("stage_acceptance_cannot_self_authorize_" + key, forged_stage,
+                 "untrusted stage acceptance", scope="isolated_stage_acceptance_authentication")
         for key, replacement in [("status", "pending"), ("accepted_iterations", ["P9-2.4", "P9-2.5"]),
                                  ("accepted_generic_runtime_support", ["C_OS"]),
                                  ("baseline_commit", p.BASELINE), ("evidence_bindings", [])]:
@@ -593,6 +684,8 @@ def main():
             "accepted_harness_enables_integration_owner",
             lambda: registered("pyproject.toml", extra, leaf="P9-2.6"),
         )
+        case("geometry_leaf_direct_numpy_dependency_owner",
+             lambda: registered("pyproject.toml", extra, leaf="P9-3.1"))
         case(
             "identity_leaf_package_integration",
             lambda: registered("pyproject.toml", extra, leaf="P9-2.2"),
@@ -830,6 +923,43 @@ def main():
                     b"new independent run\n",
                 ),
             ),
+        )
+
+        case("authorized_p931_repository_source_presentation", inspect)
+        presented_actual = p.PHASE + "evidence/P9-3.1/audit-1-native-before/actual.json"
+        presented_run = p.PHASE + "evidence/P9-3.1/audit-1-native-before/run.json"
+
+        def corrupt_presentation(name, transform):
+            value = p.read(root / name)
+            transform(value)
+            registered(name, p.canonical(value) + b"\n", leaf="P9-3.1")
+
+        def conceal_exposure(value):
+            row = next(row for row in value["stress"]["cases_detail"] if "trace" in row)
+            p.require(row["status"] != "pass", "fixture exposure is already hidden")
+            row["status"] = "pass"
+
+        def misidentify_trace(value):
+            row = next(row for row in value["stress"]["cases_detail"] if "trace" in row)
+            p.require("/attachments/2/utf8_content" in row["trace"], "fixture source missing")
+            row["trace"] = row["trace"].replace(
+                "/attachments/2/utf8_content", "/attachments/3/utf8_content"
+            )
+
+        case(
+            "presentation_cannot_conceal_numerical_exposure",
+            lambda: corrupt_presentation(presented_actual, conceal_exposure),
+            "published run evidence is immutable",
+        )
+        case(
+            "presentation_cannot_change_audit_source",
+            lambda: corrupt_presentation(presented_actual, misidentify_trace),
+            "published run evidence is immutable",
+        )
+        case(
+            "presentation_cannot_relabel_failed_run",
+            lambda: corrupt_presentation(presented_run, lambda v: v.update(status="passed")),
+            "published run evidence is immutable",
         )
 
         def before_acceptance():

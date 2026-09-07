@@ -1,0 +1,8 @@
+{
+  "expected_native_reproducer_exit_code": 1,
+  "expected_main_runner_exit_code": 1,
+  "total_scenarios": 876,
+  "passes": 851,
+  "nonpositive_exposures": 25,
+  "meaning": "Reproduce the finding on the audited source"
+}

@@ -1,0 +1,1180 @@
+{
+  "iteration_id": "P9-3.1",
+  "release_id": "grcv4-spec-release-sha256:9f4c8fe5b57b1c477d834a3e4dae3f98a2b18c70e6e7f598e3c9652170c8645f",
+  "entry": {
+    "baseline_commit": "5307343e34d33ab4a95a5712fbafe0ebd1df1a62",
+    "acceptance_record": "implementation/phase-9-grcv4/tranche-2/P9-2.6-AcceptanceRecord.json",
+    "record_digest": "e5ba16731e03dc916b8755c5999ab2b59acf431255612e76e0dcebe108104bc2",
+    "user_request": "now i think we're ready and can start with P9-3.1"
+  },
+  "source_bindings": [
+    {
+      "path": "specs/grc-v4-spec.md",
+      "sha256": "8681e14bf229959183f772c547a6ba17e0cc60c264dad9a1975be147d12168ea"
+    },
+    {
+      "path": "specs/grc-common-interface-v4-ext.md",
+      "sha256": "7d5be95242619fcaaae7ea5d8e950b3f335efe9a81492e67e6baa91c4643bc26"
+    },
+    {
+      "path": "specs/grc-v4-contract-schema.json",
+      "sha256": "3fd072fc8c2b315f1b5dc32a4e4821a5082b5f3fc9d9a4794c007419a7aa0bea"
+    },
+    {
+      "path": "specs/grc-v4-conformance-vectors.json",
+      "sha256": "ab12e2ffe02e9a9267eca9bdc3ca9361c0cf973cb87917d0eb090d3d68654ce4"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/drafts/2026-09-GRC-V4.md",
+      "sha256": "2da39c3bb0d102804f9135384317771f3fe1b3e48df3b4ab1813a3575642a739"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-1/P9-1.5-OwnershipReview.md",
+      "sha256": "38bf405cf6ff10b89f5deaf5d3dd2ea195d977da77793ec7bf5a619f82d031bf"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-2/P9-2.6-Review.md",
+      "sha256": "b8de86d7612bad33f932866e89626e783bd5a330824ce5cdbe871e070d1f9917"
+    }
+  ],
+  "contract_traces": [
+    {
+      "schema": "grcv4_explorer_forensic_evidence_trace_v1",
+      "output_class": "forensic_evidence_trace",
+      "operation": "contract_provenance",
+      "query": {
+        "contract_id": "D10.2-EC-PARENT-BASE-GRC-DIFFERENTIAL"
+      },
+      "source_bundle_digest": "98c273b3cc097f0d95adfba98ed7dfac0ac494dce9e779bb4b04fe79fef4f6aa",
+      "graph_digest": "44d8c7d33950af5e5f7c61caa4fe6fbd14fc9aedf14218d0a11de7c705542e09",
+      "ET_C2_record_digest": "10dc5cef2bffc764296cb9e38908cd1f992b9ce7c4c60d04a8ef6efda5d1453b",
+      "row_count": 1,
+      "rows": [
+        {
+          "row_id": "D10.2-EC-PARENT-BASE-GRC-DIFFERENTIAL",
+          "classification": "source_exact_contract_provenance",
+          "payload": {
+            "contract": {
+              "attributes": {
+                "GRC9V3_premise_deletion_test": "survives_from_GRC_premises",
+                "accepted_claim_ids": [
+                  "D10-CL-C-011",
+                  "D10-CL-N-001"
+                ],
+                "blocked_overread": "the_current_GRCV3_backend_menu_is_not_the_only_future_GRCV4_realization",
+                "contract_scope": "parent_atomic_contract",
+                "equation_contract_id": "D10.2-EC-PARENT-BASE-GRC-DIFFERENTIAL",
+                "independent_derivation_ids": [
+                  "D10.2-DER-DIFFERENTIAL"
+                ],
+                "normative_equation_or_contract": "explicit_deterministic_serialized_graph_differential_backend_satisfying_declared_contracts",
+                "parent_object_ids": [
+                  "BASE-GRC-DIFFERENTIAL"
+                ],
+                "premises_used": [
+                  "declared_frame_and_orientation",
+                  "fresh_graph_local_differentials",
+                  "stable_regularization_and_covariance"
+                ],
+                "profile_ids": [],
+                "promotion_status": "promotion_proved",
+                "source_lineage": [
+                  "GRCV3-NORMATIVE-SPEC",
+                  "GRCV3-RUNTIME-SOURCE"
+                ],
+                "specification_destination": "GRCV4_current_promoted_common_core",
+                "substrate_disposition": "GRC_derived"
+              },
+              "identifier": "D10.2-EC-PARENT-BASE-GRC-DIFFERENTIAL",
+              "kind": "equation_contract",
+              "node_id": "equation_contract:D10.2-EC-PARENT-BASE-GRC-DIFFERENTIAL",
+              "source_json_pointer": "/normative_equation_contract_registry/10",
+              "source_record_id": "GRC9V4-CD-D10.2-v1"
+            },
+            "accepted_claim_support_semantics": [
+              "indeterminate_requires_review"
+            ],
+            "support_disposition": "indeterminate_requires_review"
+          },
+          "source_ref": {
+            "record_id": "GRC9V4-CD-D10.2-v1",
+            "record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+            "source_json_pointer": "/normative_equation_contract_registry/10",
+            "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D10_2FullSubstrateProvenanceAndPromotionAudit.json"
+          },
+          "edge_refs": [
+            {
+              "edge_id": "propagation:4436961aab2d2db8f10401f886a2bf56afb8edc50bf5b71f5b98763976f4bf45",
+              "source": "equation_contract:D10.2-EC-PARENT-BASE-GRC-DIFFERENTIAL",
+              "target": "source_record:8c40dc16442939e029c666b78ddb76307db5ee417e7c40f989a07ef3d8d53815",
+              "relation": "source_identity",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/10"
+            },
+            {
+              "edge_id": "propagation:46421650c96918a9fbd5528d3c08d8dff926782c7b9397b342b8e6603d0f674a",
+              "source": "equation_contract:D10.2-EC-PARENT-BASE-GRC-DIFFERENTIAL",
+              "target": "current_claim:D10-CL-N-001",
+              "relation": "accepted_claim",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/10/accepted_claim_ids/1"
+            },
+            {
+              "edge_id": "propagation:7368a5723fef319a9a8b0803996db36d2b6c2513ef0d2b18243eeb2189f644a9",
+              "source": "equation_contract:D10.2-EC-PARENT-BASE-GRC-DIFFERENTIAL",
+              "target": "source_record:dc1073c31ac353ad1d0e34fdf84622021d59d1d0809f20ec042f46c1eda8044a",
+              "relation": "source_identity",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/10/source_lineage/1"
+            },
+            {
+              "edge_id": "propagation:973048360770fe9851b4494e7643fad54255b96780d3e714c29d7b5312b95aaa",
+              "source": "equation_contract:D10.2-EC-PARENT-BASE-GRC-DIFFERENTIAL",
+              "target": "source_record:8c0eacfef81153ed27af17920eb21a11b01cbe878ca07799d89823877f42f335",
+              "relation": "source_identity",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/10/source_lineage/0"
+            },
+            {
+              "edge_id": "propagation:a94db07d2d93c51ae528928cbd75d446153d5410bf549af49eb584e98b22e603",
+              "source": "equation_contract:D10.2-EC-PARENT-BASE-GRC-DIFFERENTIAL",
+              "target": "current_claim:D10-CL-C-011",
+              "relation": "accepted_claim",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/10/accepted_claim_ids/0"
+            },
+            {
+              "edge_id": "propagation:d7f9fc3d67189d50100bd959c08c0a57f9a1a12218a623b7462b4a27a8968136",
+              "source": "equation_contract:D10.2-EC-PARENT-BASE-GRC-DIFFERENTIAL",
+              "target": "normative_object:BASE-GRC-DIFFERENTIAL",
+              "relation": "parent_object",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/10/parent_object_ids/0"
+            }
+          ]
+        }
+      ],
+      "trace_digest": "90a344a6746d084bad8db5dbb80563fd199f80daaeefe39367e0953def3a217a",
+      "authority_extension_digest": "833acc5988761f8ba68ca573ad270bf7c87cf2fe32061336a71e42647968630a"
+    },
+    {
+      "schema": "grcv4_explorer_forensic_evidence_trace_v1",
+      "output_class": "forensic_evidence_trace",
+      "operation": "contract_provenance",
+      "query": {
+        "contract_id": "D10.2-EC-PARENT-GEOM-H1-FORM"
+      },
+      "source_bundle_digest": "98c273b3cc097f0d95adfba98ed7dfac0ac494dce9e779bb4b04fe79fef4f6aa",
+      "graph_digest": "44d8c7d33950af5e5f7c61caa4fe6fbd14fc9aedf14218d0a11de7c705542e09",
+      "ET_C2_record_digest": "10dc5cef2bffc764296cb9e38908cd1f992b9ce7c4c60d04a8ef6efda5d1453b",
+      "row_count": 1,
+      "rows": [
+        {
+          "row_id": "D10.2-EC-PARENT-GEOM-H1-FORM",
+          "classification": "source_exact_contract_provenance",
+          "payload": {
+            "contract": {
+              "attributes": {
+                "GRC9V3_premise_deletion_test": "survives_from_GRC_premises",
+                "accepted_claim_ids": [
+                  "D10-CL-C-011",
+                  "D10-CL-N-006",
+                  "D10-CL-U-005"
+                ],
+                "blocked_overread": "the_reference_Hodge_is_a_V4_embedding_not_preexisting_GRCv3_physical_geometry",
+                "contract_scope": "parent_atomic_contract",
+                "equation_contract_id": "D10.2-EC-PARENT-GEOM-H1-FORM",
+                "independent_derivation_ids": [
+                  "D10.2-DER-GEOMETRY"
+                ],
+                "normative_equation_or_contract": "H0_ref_equals_diag_mu_H1_form_ref_equals_diag_W_ref_GJ_ref_equals_diag_W_ref_inverse_then_H1_form_plus_equals_H1_form_ref_plus_kappa_H_Delta_K4",
+                "parent_object_ids": [
+                  "GEOM-H1-FORM"
+                ],
+                "premises_used": [
+                  "GRC_graph_measure_mu",
+                  "positive_GRC_base_conductance_W_ref",
+                  "typed_K4_to_H1_pushforward",
+                  "positive_admission_domain"
+                ],
+                "profile_ids": [],
+                "promotion_status": "promotion_proved",
+                "source_lineage": [
+                  "GRCV3-NORMATIVE-SPEC",
+                  "GRCV3-RUNTIME-SOURCE",
+                  "GRC9V4-CD-D7G-v2",
+                  "GRC9V4-CD-D7G-post-v2-HODGE-TYPE-CORRECTION-v1"
+                ],
+                "specification_destination": "GRCV4_current_promoted_common_geometry",
+                "substrate_disposition": "GRC_derived"
+              },
+              "identifier": "D10.2-EC-PARENT-GEOM-H1-FORM",
+              "kind": "equation_contract",
+              "node_id": "equation_contract:D10.2-EC-PARENT-GEOM-H1-FORM",
+              "source_json_pointer": "/normative_equation_contract_registry/30",
+              "source_record_id": "GRC9V4-CD-D10.2-v1"
+            },
+            "accepted_claim_support_semantics": [
+              "indeterminate_requires_review"
+            ],
+            "support_disposition": "indeterminate_requires_review"
+          },
+          "source_ref": {
+            "record_id": "GRC9V4-CD-D10.2-v1",
+            "record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+            "source_json_pointer": "/normative_equation_contract_registry/30",
+            "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D10_2FullSubstrateProvenanceAndPromotionAudit.json"
+          },
+          "edge_refs": [
+            {
+              "edge_id": "propagation:0fd666c2cba96fc1a829845988a8712f02476287242deae50adaf93e6ae76162",
+              "source": "equation_contract:D10.2-EC-PARENT-GEOM-H1-FORM",
+              "target": "source_record:8c40dc16442939e029c666b78ddb76307db5ee417e7c40f989a07ef3d8d53815",
+              "relation": "source_identity",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/30"
+            },
+            {
+              "edge_id": "propagation:12a2761526478d05fd769a2d6e5daac6333c5d5ccdbc92096a64b61f67e5d8e4",
+              "source": "equation_contract:D10.2-EC-PARENT-GEOM-H1-FORM",
+              "target": "current_claim:D10-CL-U-005",
+              "relation": "accepted_claim",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/30/accepted_claim_ids/2"
+            },
+            {
+              "edge_id": "propagation:1d52e696591462aa75f3770396986c29f728b85da7487e323a632c080235e03e",
+              "source": "equation_contract:D10.2-EC-PARENT-GEOM-H1-FORM",
+              "target": "current_claim:D10-CL-N-006",
+              "relation": "accepted_claim",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/30/accepted_claim_ids/1"
+            },
+            {
+              "edge_id": "propagation:3b41e07fe9c70f5d6b40505490b0caef5d1f2ae147544ccb658910bf56858d32",
+              "source": "equation_contract:D10.2-EC-PARENT-GEOM-H1-FORM",
+              "target": "source_record:8c0eacfef81153ed27af17920eb21a11b01cbe878ca07799d89823877f42f335",
+              "relation": "source_identity",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/30/source_lineage/0"
+            },
+            {
+              "edge_id": "propagation:544f36cc2dfc6245948e36484ce5036e1cfc7447ee3a39a7f16baacf95886f49",
+              "source": "equation_contract:D10.2-EC-PARENT-GEOM-H1-FORM",
+              "target": "source_record:007f992251f1aac7aa68b93b0eff736fdcd77632cdbf83e83fa97e483c6c634c",
+              "relation": "source_identity",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/30/source_lineage/2"
+            },
+            {
+              "edge_id": "propagation:69e0a43887ea8ec87ee1b62acc60ef0141a41746297cfe94c2e4cf1756eaac3e",
+              "source": "equation_contract:D10.2-EC-PARENT-GEOM-H1-FORM",
+              "target": "current_claim:D10-CL-C-011",
+              "relation": "accepted_claim",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/30/accepted_claim_ids/0"
+            },
+            {
+              "edge_id": "propagation:705b4900cffb013fb46f71e2ec556d71b832230d2ba6d88125db932e651e8822",
+              "source": "equation_contract:D10.2-EC-PARENT-GEOM-H1-FORM",
+              "target": "source_record:2250c360dd5c1141510bfe4e487e44a607139fed1cfd2c09ba6720e4ef5b977b",
+              "relation": "source_identity",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/30/source_lineage/3"
+            },
+            {
+              "edge_id": "propagation:aaae448b39c6c8b510a5d6659088560fc58013601a6a675f0a8d30151df164c8",
+              "source": "equation_contract:D10.2-EC-PARENT-GEOM-H1-FORM",
+              "target": "source_record:dc1073c31ac353ad1d0e34fdf84622021d59d1d0809f20ec042f46c1eda8044a",
+              "relation": "source_identity",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/30/source_lineage/1"
+            },
+            {
+              "edge_id": "propagation:d6849a08df2129aaeea0ae35152dc46cc1a339c95edd75f75f48cb541692006a",
+              "source": "equation_contract:D10.2-EC-PARENT-GEOM-H1-FORM",
+              "target": "normative_object:GEOM-H1-FORM",
+              "relation": "parent_object",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/30/parent_object_ids/0"
+            }
+          ]
+        }
+      ],
+      "trace_digest": "c499b186bd0e3e369ba24b88fab1dda1489099853cf06e6fd86e6034884f11ad",
+      "authority_extension_digest": "833acc5988761f8ba68ca573ad270bf7c87cf2fe32061336a71e42647968630a"
+    },
+    {
+      "schema": "grcv4_explorer_forensic_evidence_trace_v1",
+      "output_class": "forensic_evidence_trace",
+      "operation": "contract_provenance",
+      "query": {
+        "contract_id": "D10.2-EC-PARENT-GEOM-GJ"
+      },
+      "source_bundle_digest": "98c273b3cc097f0d95adfba98ed7dfac0ac494dce9e779bb4b04fe79fef4f6aa",
+      "graph_digest": "44d8c7d33950af5e5f7c61caa4fe6fbd14fc9aedf14218d0a11de7c705542e09",
+      "ET_C2_record_digest": "10dc5cef2bffc764296cb9e38908cd1f992b9ce7c4c60d04a8ef6efda5d1453b",
+      "row_count": 1,
+      "rows": [
+        {
+          "row_id": "D10.2-EC-PARENT-GEOM-GJ",
+          "classification": "source_exact_contract_provenance",
+          "payload": {
+            "contract": {
+              "attributes": {
+                "GRC9V3_premise_deletion_test": "survives_from_GRC_premises",
+                "accepted_claim_ids": [
+                  "D10-CL-C-011",
+                  "D10-CL-N-006"
+                ],
+                "blocked_overread": "G_J_is_not_transport_mobility_M4_and_telemetry_current_is_not_a_structural_source",
+                "contract_scope": "parent_atomic_contract",
+                "equation_contract_id": "D10.2-EC-PARENT-GEOM-GJ",
+                "independent_derivation_ids": [
+                  "D10.2-DER-GEOMETRY"
+                ],
+                "normative_equation_or_contract": "G_J_equals_H1_form_inverse_and_j_struct_flat_equals_G_J_j_flux",
+                "parent_object_ids": [
+                  "GEOM-GJ"
+                ],
+                "premises_used": [
+                  "positive_H1_form",
+                  "physical_flux_one_form",
+                  "typed_flat_map"
+                ],
+                "profile_ids": [],
+                "promotion_status": "promotion_proved",
+                "source_lineage": [
+                  "GRC9V4-CD-D7G-v2",
+                  "GRC9V4-CD-D7G-post-v2-HODGE-TYPE-CORRECTION-v1",
+                  "GRC9V4-CD-D8A-v1"
+                ],
+                "specification_destination": "GRCV4_current_promoted_common_geometry",
+                "substrate_disposition": "GRC_derived"
+              },
+              "identifier": "D10.2-EC-PARENT-GEOM-GJ",
+              "kind": "equation_contract",
+              "node_id": "equation_contract:D10.2-EC-PARENT-GEOM-GJ",
+              "source_json_pointer": "/normative_equation_contract_registry/31",
+              "source_record_id": "GRC9V4-CD-D10.2-v1"
+            },
+            "accepted_claim_support_semantics": [
+              "indeterminate_requires_review"
+            ],
+            "support_disposition": "indeterminate_requires_review"
+          },
+          "source_ref": {
+            "record_id": "GRC9V4-CD-D10.2-v1",
+            "record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+            "source_json_pointer": "/normative_equation_contract_registry/31",
+            "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D10_2FullSubstrateProvenanceAndPromotionAudit.json"
+          },
+          "edge_refs": [
+            {
+              "edge_id": "propagation:1dc0af1fd04761d51fd693a78f86d1203222514eda0707ed6c6af15b31175eb1",
+              "source": "equation_contract:D10.2-EC-PARENT-GEOM-GJ",
+              "target": "source_record:007f992251f1aac7aa68b93b0eff736fdcd77632cdbf83e83fa97e483c6c634c",
+              "relation": "source_identity",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/31/source_lineage/0"
+            },
+            {
+              "edge_id": "propagation:3600b682e5ea8be0acae52b2456c0b51514cbacd25610644c2094668f34ad0f6",
+              "source": "equation_contract:D10.2-EC-PARENT-GEOM-GJ",
+              "target": "source_record:9e131771524042bd68261c086a84cfd0adb866dd8c3f4c065cba4e356f7b6aeb",
+              "relation": "source_identity",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/31/source_lineage/2"
+            },
+            {
+              "edge_id": "propagation:6b91e52e588f7f2a347f11521f30229d2765133bb035e5d1ecab5aa061e94ad3",
+              "source": "equation_contract:D10.2-EC-PARENT-GEOM-GJ",
+              "target": "source_record:8c40dc16442939e029c666b78ddb76307db5ee417e7c40f989a07ef3d8d53815",
+              "relation": "source_identity",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/31"
+            },
+            {
+              "edge_id": "propagation:78e28c1865c174dcd5b298df81b869985a32e1bd21a02e3022a5319e9944a7b0",
+              "source": "equation_contract:D10.2-EC-PARENT-GEOM-GJ",
+              "target": "current_claim:D10-CL-C-011",
+              "relation": "accepted_claim",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/31/accepted_claim_ids/0"
+            },
+            {
+              "edge_id": "propagation:ab807a9f5f70682b5583c1fb22f65f35bcefea7e698f37a1b6974b5e0acbb71b",
+              "source": "equation_contract:D10.2-EC-PARENT-GEOM-GJ",
+              "target": "current_claim:D10-CL-N-006",
+              "relation": "accepted_claim",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/31/accepted_claim_ids/1"
+            },
+            {
+              "edge_id": "propagation:ace3a289509daa344da1810c18e996ade590e03bd6aa5b01db05f4ea651af019",
+              "source": "equation_contract:D10.2-EC-PARENT-GEOM-GJ",
+              "target": "normative_object:GEOM-GJ",
+              "relation": "parent_object",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/31/parent_object_ids/0"
+            },
+            {
+              "edge_id": "propagation:dc7c1b0103ab49ec9b6ec837172be3deffe34cbc1495cd90f2f1bd10f34f9701",
+              "source": "equation_contract:D10.2-EC-PARENT-GEOM-GJ",
+              "target": "source_record:2250c360dd5c1141510bfe4e487e44a607139fed1cfd2c09ba6720e4ef5b977b",
+              "relation": "source_identity",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/31/source_lineage/1"
+            }
+          ]
+        }
+      ],
+      "trace_digest": "43750060d8f7e864be9dc49493ba438e8192b362615cb1c14a9cb21d4beb3f97",
+      "authority_extension_digest": "833acc5988761f8ba68ca573ad270bf7c87cf2fe32061336a71e42647968630a"
+    },
+    {
+      "schema": "grcv4_explorer_forensic_evidence_trace_v1",
+      "output_class": "forensic_evidence_trace",
+      "operation": "contract_provenance",
+      "query": {
+        "contract_id": "D10.2-EC-GEOM-FLAT"
+      },
+      "source_bundle_digest": "98c273b3cc097f0d95adfba98ed7dfac0ac494dce9e779bb4b04fe79fef4f6aa",
+      "graph_digest": "44d8c7d33950af5e5f7c61caa4fe6fbd14fc9aedf14218d0a11de7c705542e09",
+      "ET_C2_record_digest": "10dc5cef2bffc764296cb9e38908cd1f992b9ce7c4c60d04a8ef6efda5d1453b",
+      "row_count": 1,
+      "rows": [
+        {
+          "row_id": "D10.2-EC-GEOM-FLAT",
+          "classification": "source_exact_contract_provenance",
+          "payload": {
+            "contract": {
+              "attributes": {
+                "GRC9V3_premise_deletion_test": "survives_from_GRC_premises",
+                "accepted_claim_ids": [
+                  "D10-CL-N-006"
+                ],
+                "blocked_overread": "G_J_is_flux_resistance_not_M4_transport_mobility",
+                "contract_scope": "structural_geometry",
+                "equation_contract_id": "D10.2-EC-GEOM-FLAT",
+                "independent_derivation_ids": [
+                  "D10.2-DER-GEOMETRY"
+                ],
+                "normative_equation_or_contract": "G_J(h) = H1_form(h)^-1_and_j_struct_flat = G_J(h)*j_flux",
+                "parent_object_ids": [
+                  "GEOM-GJ"
+                ],
+                "premises_used": [
+                  "physical_flux_one_form",
+                  "positive_H1_form",
+                  "typed_flat_map"
+                ],
+                "profile_ids": [],
+                "promotion_status": "promotion_proved",
+                "source_lineage": [
+                  "GRC9V4-CD-D7G-post-v2-HODGE-TYPE-CORRECTION-v1",
+                  "GRC9V4-CD-D7G-v2",
+                  "GRC9V4-CD-D8A-v1"
+                ],
+                "specification_destination": "GRCV4_current_promoted_common_geometry",
+                "substrate_disposition": "GRC_derived"
+              },
+              "identifier": "D10.2-EC-GEOM-FLAT",
+              "kind": "equation_contract",
+              "node_id": "equation_contract:D10.2-EC-GEOM-FLAT",
+              "source_json_pointer": "/normative_equation_contract_registry/143",
+              "source_record_id": "GRC9V4-CD-D10.2-v1"
+            },
+            "accepted_claim_support_semantics": [
+              "indeterminate_requires_review"
+            ],
+            "support_disposition": "indeterminate_requires_review"
+          },
+          "source_ref": {
+            "record_id": "GRC9V4-CD-D10.2-v1",
+            "record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+            "source_json_pointer": "/normative_equation_contract_registry/143",
+            "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D10_2FullSubstrateProvenanceAndPromotionAudit.json"
+          },
+          "edge_refs": [
+            {
+              "edge_id": "propagation:0ca328e4daf204e50d86eb4c1b0390b0f9d6a2b76d44c8ca5d4aee086f4ad08d",
+              "source": "equation_contract:D10.2-EC-GEOM-FLAT",
+              "target": "current_claim:D10-CL-N-006",
+              "relation": "accepted_claim",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/143/accepted_claim_ids/0"
+            },
+            {
+              "edge_id": "propagation:2f204b5464598ae293e6f615d97916e195c08b90d2b478cd25ccb61c2614044e",
+              "source": "equation_contract:D10.2-EC-GEOM-FLAT",
+              "target": "source_record:9e131771524042bd68261c086a84cfd0adb866dd8c3f4c065cba4e356f7b6aeb",
+              "relation": "source_identity",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/143/source_lineage/2"
+            },
+            {
+              "edge_id": "propagation:5e37f88a0e66908818688e2132ef76169bc9656d32a9cc81ea5bd05eddea2bab",
+              "source": "equation_contract:D10.2-EC-GEOM-FLAT",
+              "target": "source_record:2250c360dd5c1141510bfe4e487e44a607139fed1cfd2c09ba6720e4ef5b977b",
+              "relation": "source_identity",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/143/source_lineage/0"
+            },
+            {
+              "edge_id": "propagation:8707867dec415eb31a4e85f0b7444defde997f0cb6b7fba3f9917e6d890446bc",
+              "source": "equation_contract:D10.2-EC-GEOM-FLAT",
+              "target": "source_record:007f992251f1aac7aa68b93b0eff736fdcd77632cdbf83e83fa97e483c6c634c",
+              "relation": "source_identity",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/143/source_lineage/1"
+            },
+            {
+              "edge_id": "propagation:a4801a6d662ddce1858c2565242dcdc4f4a3b1b5ad597999dbf916730687e2c1",
+              "source": "equation_contract:D10.2-EC-GEOM-FLAT",
+              "target": "source_record:8c40dc16442939e029c666b78ddb76307db5ee417e7c40f989a07ef3d8d53815",
+              "relation": "source_identity",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/143"
+            },
+            {
+              "edge_id": "propagation:dd6b3bbb079e0679e417e1bead02135a6ccc931d6ddeb0fbec6eba2ae726d901",
+              "source": "equation_contract:D10.2-EC-GEOM-FLAT",
+              "target": "normative_object:GEOM-GJ",
+              "relation": "parent_object",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/143/parent_object_ids/0"
+            }
+          ]
+        }
+      ],
+      "trace_digest": "c50779dd032926f6af69258639c8236c20b155663202cec6a820c4df348fe5ff",
+      "authority_extension_digest": "833acc5988761f8ba68ca573ad270bf7c87cf2fe32061336a71e42647968630a"
+    },
+    {
+      "schema": "grcv4_explorer_forensic_evidence_trace_v1",
+      "output_class": "forensic_evidence_trace",
+      "operation": "contract_provenance",
+      "query": {
+        "contract_id": "D10.2-EC-GEOM-MOBILITY-BOUNDARY"
+      },
+      "source_bundle_digest": "98c273b3cc097f0d95adfba98ed7dfac0ac494dce9e779bb4b04fe79fef4f6aa",
+      "graph_digest": "44d8c7d33950af5e5f7c61caa4fe6fbd14fc9aedf14218d0a11de7c705542e09",
+      "ET_C2_record_digest": "10dc5cef2bffc764296cb9e38908cd1f992b9ce7c4c60d04a8ef6efda5d1453b",
+      "row_count": 1,
+      "rows": [
+        {
+          "row_id": "D10.2-EC-GEOM-MOBILITY-BOUNDARY",
+          "classification": "source_exact_contract_provenance",
+          "payload": {
+            "contract": {
+              "attributes": {
+                "GRC9V3_premise_deletion_test": "survives_from_GRC_premises",
+                "accepted_claim_ids": [
+                  "D10-CL-N-006"
+                ],
+                "blocked_overread": "numerical_matrix_coincidence_cannot_transfer_authority",
+                "contract_scope": "structural_geometry",
+                "equation_contract_id": "D10.2-EC-GEOM-MOBILITY-BOUNDARY",
+                "independent_derivation_ids": [
+                  "D10.2-DER-MOBILITY"
+                ],
+                "normative_equation_or_contract": "M4_is_candidate_specific_transport_mobility_and_no_H1_form_to_M4_or_h4_to_M4_map_exists_without_a_successor_contract",
+                "parent_object_ids": [
+                  "GEOM-M4"
+                ],
+                "premises_used": [
+                  "candidate_transport_authority",
+                  "current_solve",
+                  "positive_or_admitted_mobility_factorization"
+                ],
+                "profile_ids": [],
+                "promotion_status": "promotion_proved",
+                "source_lineage": [
+                  "GRC9V4-CD-D4V2-v1",
+                  "GRC9V4-CD-D7G-post-v2-HODGE-TYPE-CORRECTION-v1",
+                  "GRC9V4-CD-D7G-v1",
+                  "GRC9V4-CD-D7G-v2"
+                ],
+                "specification_destination": "GRCV4_current_promoted_common_transport",
+                "substrate_disposition": "GRC_derived"
+              },
+              "identifier": "D10.2-EC-GEOM-MOBILITY-BOUNDARY",
+              "kind": "equation_contract",
+              "node_id": "equation_contract:D10.2-EC-GEOM-MOBILITY-BOUNDARY",
+              "source_json_pointer": "/normative_equation_contract_registry/145",
+              "source_record_id": "GRC9V4-CD-D10.2-v1"
+            },
+            "accepted_claim_support_semantics": [
+              "indeterminate_requires_review"
+            ],
+            "support_disposition": "indeterminate_requires_review"
+          },
+          "source_ref": {
+            "record_id": "GRC9V4-CD-D10.2-v1",
+            "record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+            "source_json_pointer": "/normative_equation_contract_registry/145",
+            "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D10_2FullSubstrateProvenanceAndPromotionAudit.json"
+          },
+          "edge_refs": [
+            {
+              "edge_id": "propagation:0f6b7000d71c41a53f12de0e4b5294e5617caa6f750546dbd613d544037a0ee3",
+              "source": "equation_contract:D10.2-EC-GEOM-MOBILITY-BOUNDARY",
+              "target": "source_record:8e2e926d2a1dd605f7eb1761ceb59317be3241ba82488584e928308104b23840",
+              "relation": "source_identity",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/145/source_lineage/2"
+            },
+            {
+              "edge_id": "propagation:245c50e4a9190c593f5f19b942be886a9c6e126c341142783aa28c2f559377ee",
+              "source": "equation_contract:D10.2-EC-GEOM-MOBILITY-BOUNDARY",
+              "target": "source_record:940942217e69f5b3713c80d435c988fe762198ece40e76b6499b45f58dea09df",
+              "relation": "source_identity",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/145/source_lineage/0"
+            },
+            {
+              "edge_id": "propagation:596c34b5fc5572351a185fceaac53ad62e2bb51473cb3e7b11a0b6402d076bd9",
+              "source": "equation_contract:D10.2-EC-GEOM-MOBILITY-BOUNDARY",
+              "target": "source_record:2250c360dd5c1141510bfe4e487e44a607139fed1cfd2c09ba6720e4ef5b977b",
+              "relation": "source_identity",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/145/source_lineage/1"
+            },
+            {
+              "edge_id": "propagation:81c6f6d9d3ace41cd5f447387f35b8655690190ca76912cdc0ee85f79eda3c09",
+              "source": "equation_contract:D10.2-EC-GEOM-MOBILITY-BOUNDARY",
+              "target": "normative_object:GEOM-M4",
+              "relation": "parent_object",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/145/parent_object_ids/0"
+            },
+            {
+              "edge_id": "propagation:b64bcfc8ce60800313fde0c14bd35a9a4aa02dcd75cf9b3d60481e0811817863",
+              "source": "equation_contract:D10.2-EC-GEOM-MOBILITY-BOUNDARY",
+              "target": "source_record:8c40dc16442939e029c666b78ddb76307db5ee417e7c40f989a07ef3d8d53815",
+              "relation": "source_identity",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/145"
+            },
+            {
+              "edge_id": "propagation:b8ca0a83366aaffea2a71bb232a3364d2be46087a3535383ae10b423be909cfd",
+              "source": "equation_contract:D10.2-EC-GEOM-MOBILITY-BOUNDARY",
+              "target": "source_record:007f992251f1aac7aa68b93b0eff736fdcd77632cdbf83e83fa97e483c6c634c",
+              "relation": "source_identity",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/145/source_lineage/3"
+            },
+            {
+              "edge_id": "propagation:c6400eb69a167c888d967bbe5dae6b1ea44f97dc7515188db005756ca43f9e6e",
+              "source": "equation_contract:D10.2-EC-GEOM-MOBILITY-BOUNDARY",
+              "target": "current_claim:D10-CL-N-006",
+              "relation": "accepted_claim",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/145/accepted_claim_ids/0"
+            }
+          ]
+        }
+      ],
+      "trace_digest": "294ddd0b9dd5b166604b1b7daff76c707e1af624aa0e30883681dce0645d296d",
+      "authority_extension_digest": "833acc5988761f8ba68ca573ad270bf7c87cf2fe32061336a71e42647968630a"
+    },
+    {
+      "schema": "grcv4_explorer_forensic_evidence_trace_v1",
+      "output_class": "forensic_evidence_trace",
+      "operation": "contract_provenance",
+      "query": {
+        "contract_id": "D10.2-EC-PARENT-GEOM-COVARIANCE"
+      },
+      "source_bundle_digest": "98c273b3cc097f0d95adfba98ed7dfac0ac494dce9e779bb4b04fe79fef4f6aa",
+      "graph_digest": "44d8c7d33950af5e5f7c61caa4fe6fbd14fc9aedf14218d0a11de7c705542e09",
+      "ET_C2_record_digest": "10dc5cef2bffc764296cb9e38908cd1f992b9ce7c4c60d04a8ef6efda5d1453b",
+      "row_count": 1,
+      "rows": [
+        {
+          "row_id": "D10.2-EC-PARENT-GEOM-COVARIANCE",
+          "classification": "source_exact_contract_provenance",
+          "payload": {
+            "contract": {
+              "attributes": {
+                "GRC9V3_premise_deletion_test": "survives_from_GRC_premises",
+                "accepted_claim_ids": [
+                  "D10-CL-C-011",
+                  "D10-CL-N-006"
+                ],
+                "blocked_overread": "coordinate_sign_change_is_not_physical_history_reversal",
+                "contract_scope": "parent_atomic_contract",
+                "equation_contract_id": "D10.2-EC-PARENT-GEOM-COVARIANCE",
+                "independent_derivation_ids": [
+                  "D10.2-DER-GEOMETRY"
+                ],
+                "normative_equation_or_contract": "graph_relabel_and_signed_edge_orientation_covariance",
+                "parent_object_ids": [
+                  "GEOM-COVARIANCE"
+                ],
+                "premises_used": [
+                  "stable_graph_isomorphism",
+                  "cochain_orientation_transform",
+                  "typed_operator_transport"
+                ],
+                "profile_ids": [],
+                "promotion_status": "promotion_proved",
+                "source_lineage": [
+                  "GRC9V4-CD-D7G-v2",
+                  "GRC9V4-CD-D8A-v1"
+                ],
+                "specification_destination": "GRCV4_current_promoted_common_geometry",
+                "substrate_disposition": "GRC_derived"
+              },
+              "identifier": "D10.2-EC-PARENT-GEOM-COVARIANCE",
+              "kind": "equation_contract",
+              "node_id": "equation_contract:D10.2-EC-PARENT-GEOM-COVARIANCE",
+              "source_json_pointer": "/normative_equation_contract_registry/35",
+              "source_record_id": "GRC9V4-CD-D10.2-v1"
+            },
+            "accepted_claim_support_semantics": [
+              "indeterminate_requires_review"
+            ],
+            "support_disposition": "indeterminate_requires_review"
+          },
+          "source_ref": {
+            "record_id": "GRC9V4-CD-D10.2-v1",
+            "record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+            "source_json_pointer": "/normative_equation_contract_registry/35",
+            "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D10_2FullSubstrateProvenanceAndPromotionAudit.json"
+          },
+          "edge_refs": [
+            {
+              "edge_id": "propagation:4de3752c7e899c948d111476113c9d25042fe3db787ff303f7689c07115601ef",
+              "source": "equation_contract:D10.2-EC-PARENT-GEOM-COVARIANCE",
+              "target": "current_claim:D10-CL-N-006",
+              "relation": "accepted_claim",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/35/accepted_claim_ids/1"
+            },
+            {
+              "edge_id": "propagation:514035dfb599a4c0896cd60b8837c244929325eda1654bf7be9ee6fb836c4feb",
+              "source": "equation_contract:D10.2-EC-PARENT-GEOM-COVARIANCE",
+              "target": "source_record:8c40dc16442939e029c666b78ddb76307db5ee417e7c40f989a07ef3d8d53815",
+              "relation": "source_identity",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/35"
+            },
+            {
+              "edge_id": "propagation:5f5a0c5f3272e610a8cca86538c527dc38e93617406be91c12f7e678c9a70f56",
+              "source": "equation_contract:D10.2-EC-PARENT-GEOM-COVARIANCE",
+              "target": "source_record:9e131771524042bd68261c086a84cfd0adb866dd8c3f4c065cba4e356f7b6aeb",
+              "relation": "source_identity",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/35/source_lineage/1"
+            },
+            {
+              "edge_id": "propagation:b5aafa7ba2132f2b3e4dd200e9b6cb3883d53ea7db7e1f83506993f58e91d50c",
+              "source": "equation_contract:D10.2-EC-PARENT-GEOM-COVARIANCE",
+              "target": "normative_object:GEOM-COVARIANCE",
+              "relation": "parent_object",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/35/parent_object_ids/0"
+            },
+            {
+              "edge_id": "propagation:d356807a71177620c01f0e5b45e93a05bc055eb23716e4c1280fc04c681833ad",
+              "source": "equation_contract:D10.2-EC-PARENT-GEOM-COVARIANCE",
+              "target": "current_claim:D10-CL-C-011",
+              "relation": "accepted_claim",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/35/accepted_claim_ids/0"
+            },
+            {
+              "edge_id": "propagation:e1dac02dbf3c3354c7df4f9095ed96272b5a21b5e526224d963eec40bcb7f465",
+              "source": "equation_contract:D10.2-EC-PARENT-GEOM-COVARIANCE",
+              "target": "source_record:007f992251f1aac7aa68b93b0eff736fdcd77632cdbf83e83fa97e483c6c634c",
+              "relation": "source_identity",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/35/source_lineage/0"
+            }
+          ]
+        }
+      ],
+      "trace_digest": "9a857c754a5a7a07f6ed09541c366c402f7687f1ce4444ff48d42a6189444689",
+      "authority_extension_digest": "833acc5988761f8ba68ca573ad270bf7c87cf2fe32061336a71e42647968630a"
+    },
+    {
+      "schema": "grcv4_explorer_forensic_evidence_trace_v1",
+      "output_class": "forensic_evidence_trace",
+      "operation": "contract_provenance",
+      "query": {
+        "contract_id": "D11-C-EC-C-TR-REFERENCE-FIELD"
+      },
+      "source_bundle_digest": "98c273b3cc097f0d95adfba98ed7dfac0ac494dce9e779bb4b04fe79fef4f6aa",
+      "graph_digest": "44d8c7d33950af5e5f7c61caa4fe6fbd14fc9aedf14218d0a11de7c705542e09",
+      "ET_C2_record_digest": "10dc5cef2bffc764296cb9e38908cd1f992b9ce7c4c60d04a8ef6efda5d1453b",
+      "row_count": 1,
+      "rows": [
+        {
+          "row_id": "D11-C-EC-C-TR-REFERENCE-FIELD",
+          "classification": "source_exact_contract_provenance",
+          "payload": {
+            "contract": {
+              "node_id": "equation_contract:D11-C-EC-C-TR-REFERENCE-FIELD",
+              "kind": "equation_contract",
+              "identifier": "D11-C-EC-C-TR-REFERENCE-FIELD",
+              "source_record_id": "GRC9V4-D11-C-PROVENANCE-SUPPLEMENT-v1",
+              "source_json_pointer": "/equation_contracts/0",
+              "attributes": {
+                "equation_contract_id": "D11-C-EC-C-TR-REFERENCE-FIELD",
+                "parent_object_ids": [
+                  "C-BASELINE-TRANSPORT-REFERENCE"
+                ],
+                "normative_equation_or_contract": "complete_profile_binds_exact_map_W_C_tr_from_target_live_stable_unoriented_edge_IDs_to_positive_finite_scalars_with_no_ordinary_beat_writer",
+                "support_semantics": "accepted_bounded_D11_C_successor",
+                "accepted_claim_ids": [
+                  "D11-C-CL-O-001"
+                ]
+              }
+            },
+            "accepted_claim_support_semantics": [
+              "accepted_bounded_D11_C_successor"
+            ],
+            "support_disposition": [
+              "accepted_bounded_D11_C_successor"
+            ]
+          },
+          "source_ref": {
+            "record_id": "GRC9V4-D11-C-PROVENANCE-SUPPLEMENT-v1",
+            "record_digest": "57d711d80e648c8ee73401f3a7e76a0076374fc43bd4d2d0f3dbe4bb4ee3acb1",
+            "source_json_pointer": "/equation_contracts/0",
+            "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D11CCandidateBaselineTransportProvenanceSupplement.json"
+          },
+          "edge_refs": [
+            {
+              "edge_id": "propagation:02af562df8e04ac723aa735fd277e7bac13f7690102a8736354c7891e1455b10",
+              "source": "equation_contract:D11-C-EC-C-TR-REFERENCE-FIELD",
+              "target": "source_record:1ba90e62a7f7907094aff26dd201ba232ec0f2a1ea26e79e473ecd8885ea3174",
+              "relation": "source_identity",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-D11-C-PROVENANCE-SUPPLEMENT-v1",
+              "source_record_digest": "57d711d80e648c8ee73401f3a7e76a0076374fc43bd4d2d0f3dbe4bb4ee3acb1",
+              "source_json_pointer": "/equation_contracts/0"
+            },
+            {
+              "edge_id": "propagation:6a9e3d713ef52004ba44f7ab45dfc7b151b3e9ceda635fc0b3c215ff98a02c47",
+              "source": "equation_contract:D11-C-EC-C-TR-REFERENCE-FIELD",
+              "target": "current_claim:D11-C-CL-O-001",
+              "relation": "accepted_claim",
+              "support_semantic": "accepted_bounded_D11_C_successor",
+              "source_record_id": "GRC9V4-D11-C-PROVENANCE-SUPPLEMENT-v1",
+              "source_record_digest": "57d711d80e648c8ee73401f3a7e76a0076374fc43bd4d2d0f3dbe4bb4ee3acb1",
+              "source_json_pointer": "/equation_contracts/0/accepted_claim_ids/0"
+            },
+            {
+              "edge_id": "propagation:957d5f473293b8a244b6d400ce2af938129d5e16cfae0ed9fb083882b828b4d2",
+              "source": "equation_contract:D11-C-EC-C-TR-REFERENCE-FIELD",
+              "target": "normative_object:C-BASELINE-TRANSPORT-REFERENCE",
+              "relation": "parent_object",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-D11-C-PROVENANCE-SUPPLEMENT-v1",
+              "source_record_digest": "57d711d80e648c8ee73401f3a7e76a0076374fc43bd4d2d0f3dbe4bb4ee3acb1",
+              "source_json_pointer": "/equation_contracts/0/parent_object_ids/0"
+            }
+          ]
+        }
+      ],
+      "trace_digest": "ce518db4711884c92d7045a455935f0ebe7df98b55fbdfa042dc907e358ff9cf",
+      "authority_extension_digest": "833acc5988761f8ba68ca573ad270bf7c87cf2fe32061336a71e42647968630a"
+    },
+    {
+      "schema": "grcv4_explorer_forensic_evidence_trace_v1",
+      "output_class": "forensic_evidence_trace",
+      "operation": "contract_provenance",
+      "query": {
+        "contract_id": "D11-C-EC-C-M4-FACTORIZATION"
+      },
+      "source_bundle_digest": "98c273b3cc097f0d95adfba98ed7dfac0ac494dce9e779bb4b04fe79fef4f6aa",
+      "graph_digest": "44d8c7d33950af5e5f7c61caa4fe6fbd14fc9aedf14218d0a11de7c705542e09",
+      "ET_C2_record_digest": "10dc5cef2bffc764296cb9e38908cd1f992b9ce7c4c60d04a8ef6efda5d1453b",
+      "row_count": 1,
+      "rows": [
+        {
+          "row_id": "D11-C-EC-C-M4-FACTORIZATION",
+          "classification": "source_exact_contract_provenance",
+          "payload": {
+            "contract": {
+              "node_id": "equation_contract:D11-C-EC-C-M4-FACTORIZATION",
+              "kind": "equation_contract",
+              "identifier": "D11-C-EC-C-M4-FACTORIZATION",
+              "source_record_id": "GRC9V4-D11-C-PROVENANCE-SUPPLEMENT-v1",
+              "source_json_pointer": "/equation_contracts/1",
+              "attributes": {
+                "equation_contract_id": "D11-C-EC-C-M4-FACTORIZATION",
+                "parent_object_ids": [
+                  "C-BASELINE-TRANSPORT-REFERENCE"
+                ],
+                "normative_equation_or_contract": "E_M_of_W_C_tr_equals_M4_C_equals_eta_C_times_Diag_W_C_tr_with_eta_C_positive_and_D_T_C_M4_C_equals_D_h_M4_C_equals_zero_inside_the_profile",
+                "support_semantics": "accepted_bounded_D11_C_successor",
+                "accepted_claim_ids": [
+                  "D11-C-CL-O-001",
+                  "D10-CL-N-006"
+                ]
+              }
+            },
+            "accepted_claim_support_semantics": [
+              "accepted_bounded_D11_C_successor"
+            ],
+            "support_disposition": [
+              "accepted_bounded_D11_C_successor"
+            ]
+          },
+          "source_ref": {
+            "record_id": "GRC9V4-D11-C-PROVENANCE-SUPPLEMENT-v1",
+            "record_digest": "57d711d80e648c8ee73401f3a7e76a0076374fc43bd4d2d0f3dbe4bb4ee3acb1",
+            "source_json_pointer": "/equation_contracts/1",
+            "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D11CCandidateBaselineTransportProvenanceSupplement.json"
+          },
+          "edge_refs": [
+            {
+              "edge_id": "propagation:125061a30602d4dea1fc4a90fb2400553bcce770f3d5afbafe5e0dd77cb50176",
+              "source": "equation_contract:D11-C-EC-C-M4-FACTORIZATION",
+              "target": "source_record:1ba90e62a7f7907094aff26dd201ba232ec0f2a1ea26e79e473ecd8885ea3174",
+              "relation": "source_identity",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-D11-C-PROVENANCE-SUPPLEMENT-v1",
+              "source_record_digest": "57d711d80e648c8ee73401f3a7e76a0076374fc43bd4d2d0f3dbe4bb4ee3acb1",
+              "source_json_pointer": "/equation_contracts/1"
+            },
+            {
+              "edge_id": "propagation:70d8446f9bafade7b74a07301f32cdf861557f43e1945e38e948ae030a4557fd",
+              "source": "equation_contract:D11-C-EC-C-M4-FACTORIZATION",
+              "target": "current_claim:D11-C-CL-O-001",
+              "relation": "accepted_claim",
+              "support_semantic": "accepted_bounded_D11_C_successor",
+              "source_record_id": "GRC9V4-D11-C-PROVENANCE-SUPPLEMENT-v1",
+              "source_record_digest": "57d711d80e648c8ee73401f3a7e76a0076374fc43bd4d2d0f3dbe4bb4ee3acb1",
+              "source_json_pointer": "/equation_contracts/1/accepted_claim_ids/0"
+            },
+            {
+              "edge_id": "propagation:db33489402c837acf03f2d9eec49fbfcf85675a3ac6cf2522c5a8a974948166c",
+              "source": "equation_contract:D11-C-EC-C-M4-FACTORIZATION",
+              "target": "normative_object:C-BASELINE-TRANSPORT-REFERENCE",
+              "relation": "parent_object",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-D11-C-PROVENANCE-SUPPLEMENT-v1",
+              "source_record_digest": "57d711d80e648c8ee73401f3a7e76a0076374fc43bd4d2d0f3dbe4bb4ee3acb1",
+              "source_json_pointer": "/equation_contracts/1/parent_object_ids/0"
+            },
+            {
+              "edge_id": "propagation:dbe02e32e3e0cb8f5db5d485989cf888679ec83aa0df21d1b1c8cd789f7b96bb",
+              "source": "equation_contract:D11-C-EC-C-M4-FACTORIZATION",
+              "target": "current_claim:D10-CL-N-006",
+              "relation": "accepted_claim",
+              "support_semantic": "accepted_bounded_D11_C_successor",
+              "source_record_id": "GRC9V4-D11-C-PROVENANCE-SUPPLEMENT-v1",
+              "source_record_digest": "57d711d80e648c8ee73401f3a7e76a0076374fc43bd4d2d0f3dbe4bb4ee3acb1",
+              "source_json_pointer": "/equation_contracts/1/accepted_claim_ids/1"
+            }
+          ]
+        }
+      ],
+      "trace_digest": "a83b99b84339eca89f2d7427cb6ed6ba087cc6062f1b3ef13fbdfa28ddbbff89",
+      "authority_extension_digest": "833acc5988761f8ba68ca573ad270bf7c87cf2fe32061336a71e42647968630a"
+    }
+  ],
+  "source_map": [
+    {
+      "surface": "immutable graph, identity, incidence differential, fixed-space relabeling",
+      "spec": "grc-v4-spec.md: Graph and differential backend; grc-common-interface-v4-ext.md: Canonical identity and Graph backend extension",
+      "paper": "3.1, 3.4, 6.5",
+      "schema": "serialized_graph_payload; generic graph SHA-256/JCS grammar",
+      "owner": "src/pygrc/models/grc_v4_geometry.py",
+      "tests": "tests/models/test_grc_v4_geometry.py",
+      "scope": "oriented_incidence_d0_equals_BT_v1 with closed_no_flux_v1; serialized live order is preserved. No GRC-v3 ego-frame or nine-port row-basis alias."
+    },
+    {
+      "surface": "vertex/one-form pairings and paired physical-flux flat/sharp",
+      "spec": "grc-v4-spec.md: Structural geometry and current typing",
+      "paper": "3.1; 6.2; 6.4–6.5",
+      "owner": "src/pygrc/models/grc_v4_geometry.py",
+      "tests": "tests/models/test_grc_v4_geometry.py",
+      "scope": "Finite symmetric positive-definite typed matrix values and explicit dense binary64 solve; full stage/cache/conditioning admission remains P9-3.2/P9-3.4."
+    },
+    {
+      "surface": "candidate-local mobility factors",
+      "spec": "grc-v4-spec.md: Candidate A, Candidate C, and Structural geometry/current typing",
+      "paper": "6.4; D.2.1; D.3.2–D.3.3",
+      "owner": "src/pygrc/models/grc_v4_transport.py",
+      "tests": "tests/models/test_grc_v4_transport.py",
+      "scope": "A uses supplied positive retained W_A and eta; C uses the resolved profile W_C_tr and eta_C. No Hodge/geometry-to-mobility constructor, current solve, resource write, or candidate-history mutation."
+    }
+  ],
+  "reuse_ledger": [
+    {
+      "path": "src/pygrc/core/storage.py",
+      "sha256": "a73d30238bc81dc3c366f04f3e8d5e8a266d0a683e7db88560196930d279c397",
+      "symbols": [
+        "WeightedGraphBackend",
+        "PortGraphBackend"
+      ],
+      "decision": "not consumed: mutable payloads, allocation and journals; V4-local immutable stable-ID lookup"
+    },
+    {
+      "path": "src/pygrc/core/ids.py",
+      "sha256": "f57ae8530b5b943aad37b247b0716df583dafbf6ceffaa970cbf02cc6907d428",
+      "symbols": [
+        "MonotoneIdSource",
+        "TombstoneSlotTable"
+      ],
+      "decision": "not consumed: use existing serialized IDs; no allocation authority"
+    },
+    {
+      "path": "src/pygrc/core/serialization.py",
+      "sha256": "a1ce1489870962af1032b8e69acc09ba8b9dcbcefaf86ea97250fc9a47009cf4",
+      "symbols": [
+        "canonical_json_dumps"
+      ],
+      "decision": "not consumed: V4 uses its installed JCS codec"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_state.py",
+      "sha256": "b0ccf06ef91b66feb8670fb67281465998f4bcb085c4d547fedd3ce6d85ad3cb",
+      "symbols": [
+        "_number",
+        "_vector",
+        "_text"
+      ],
+      "decision": "reuse V4 numeric/container admission and text guards; no new direct legacy imports"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_codec.py",
+      "sha256": "bd6d9390c818c5a25b70da119cfbc3a3de3707ee84566f6bb06160bb4780e154",
+      "symbols": [
+        "canonical_json_bytes",
+        "decode_json",
+        "decode_canonical_json",
+        "validate_payload",
+        "_dependency",
+        "V4DependencyError"
+      ],
+      "decision": "reuse installed JCS and closed graph schema, explicit configuration/canonical JSON routes, lazy dependency error vocabulary; decode_record_payload remains reserved for its accepted request schemas and is not changed"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_profile.py",
+      "sha256": "188e4ceb92b6a36fe81849911b88b233b8dd16bf3de07383e1508d76232fdbfb",
+      "symbols": [
+        "GRCV4CommonParams",
+        "CandidateAParams",
+        "CandidateCParams"
+      ],
+      "decision": "consume immutable declarations; never infer executable profile support"
+    }
+  ],
+  "comparison_scope": "Exact serialized identity and small exactly representable incidence/permutation examples; declared tolerance for nontrivial dense SPD solves. Raw eigenvector signs or array shape never establish authority.",
+  "preserved_source_boundary": "D10.2 source-exact contracts retain indeterminate_requires_review support associations; D11-C factorization retains accepted_bounded_D11_C_successor. No source semantics are upgraded.",
+  "deferred_owners": {
+    "P9-3.2": "stage/cache provenance, geometry-profile and complete domain admission",
+    "P9-3.3": "one provisional resource write and exact charge gate",
+    "P9-3.4": "conditioning, near-boundary, invariant-projector and charge-precision pressure",
+    "P9-3.5": "complete rejected-operation prestate preservation",
+    "Tranche 4": "C_OS numerical realization and facade",
+    "P9-7.6": "parent-reference lineage",
+    "Tranches 8–9": "specialization and exact legacy delegation"
+  },
+  "implementation_decisions": {
+    "coordinate_order": "Preserve serialized live vertex and oriented-edge order. Strings and safe integral numeric node IDs are distinct. Integral float IDs normalize to safe int on direct and wire paths; bool, unsafe integer, nonintegral, nonfinite and negative-zero IDs reject.",
+    "orientation_convention": "Declared coordinate choice: positive tail-to-head physical flux gives outward divergence +1 at tail, -1 at head; loops cancel. Both signs and the ordered graph bind the versioned implementation-local orientation descriptor. The frozen sources permit an orientation choice; they do not supply this implementation hash prefix.",
+    "local_descriptors": {
+      "orientation": "grcv4-ordered-outward-incidence-v1",
+      "differential": "grcv4-incidence-differential-v1",
+      "pairing": "grcv4-typed-pairing-v1",
+      "flat": "grcv4-paired-flat-spd-direct-v1",
+      "mobility": "grcv4-candidate-mobility-factor-v1"
+    },
+    "descriptor_scope": "Graph SHA-256 follows the frozen generic graph grammar. Other descriptors bind pure mathematical inputs/roles, use JCS, and are implementation-local. They do not alter the frozen schema or replace future complete stage/cache/current identities. Reconstruction supplies full graph and resolved common/candidate parameters, matrix values and retained A values; a digest alone is not a reconstructible payload.",
+    "numeric_backend": "NumPy 2.4.6 is a direct pinned V4 extra. Dense binary64 Cholesky screens positive definiteness; direct solve applies paired flat. Matrix/vector products iterate declared tuple order. Exact symmetry is required. No silent symmetrization, pseudoinverse, diagonal damping, conductance floor, or resource repair.",
+    "representation_zero": "Input negative zero rejects using the established V4 guards. Arithmetic zero normalizes to +0 for the existing canonical wire representation. Nonfinite output and zero/overflowed mobility factors reject.",
+    "storage": "Immutable tuples and mapping proxies over privately copied dictionaries. Stable-ID lookup is O(1); retained matrices expose no mutable array alias. Empty spaces, isolates, parallel edges and loops have explicit incidence/star behavior.",
+    "covariance": "GraphCoordinateAction validates complete signed bijections and endpoint preservation before applying P or U. H0 and H1 transform covariantly. Node/edge label changes and signed reorientation are fixed-space coordinate actions only.",
+    "candidate_boundary": "A factor consumes supplied positive retained W_A without updating it. C factor consumes eta_C and the exact stable-edge W_C_tr map. Separate C E_H construction returns structural OneFormHodge and never grants mobility authority; complete profile/stage constructor identities remain P9-3.2/P9-4.1."
+  },
+  "outlier_verification": "outlier-pressure records 58 final-source tests including 24 exact-rational dense SPD systems, 48 signed coordinate actions, zero-size buffer shape rejection, extreme IDs/buffers, singular scaling and subnormal/overflow cases. These primitive tests do not discharge later stage/conditioning/charge obligations."
+}

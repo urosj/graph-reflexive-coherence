@@ -1,0 +1,31 @@
+
+Running 18 tests using 1 worker
+
+
+
+
+
+[1/18] [desktop] › browser.spec.mjs:24:1 › live API, source bindings, leaf states and downloadable JSON agree
+[2/18] [desktop] › browser.spec.mjs:74:1 › archive availability is visible without revoking acceptance or blocking export
+[3/18] [desktop] › browser.spec.mjs:92:1 › a current source failure holds work but preserves the recorded acceptance display
+[4/18] [desktop] › browser.spec.mjs:106:1 › refresh failure removes stale success and disables download
+[5/18] [desktop] › browser.spec.mjs:119:1 › forged runtime payload and changed digest fail closed
+[6/18] [desktop] › browser.spec.mjs:130:1 › server exposes no write or arbitrary repository read route
+[7/18] [desktop] › browser.spec.mjs:136:1 › actual negative assertion and future fixture keep their subjects through UI and export
+[8/18] [desktop] › browser.spec.mjs:160:1 › older subject A finishing after B cannot overwrite B
+[9/18] [desktop] › browser.spec.mjs:179:1 › failed probe refresh clears assertion and candidate; unknown full ID is not a neighbor
+
+
+
+
+[10/18] [mobile] › browser.spec.mjs:24:1 › live API, source bindings, leaf states and downloadable JSON agree
+[11/18] [mobile] › browser.spec.mjs:74:1 › archive availability is visible without revoking acceptance or blocking export
+[12/18] [mobile] › browser.spec.mjs:92:1 › a current source failure holds work but preserves the recorded acceptance display
+[13/18] [mobile] › browser.spec.mjs:106:1 › refresh failure removes stale success and disables download
+[14/18] [mobile] › browser.spec.mjs:119:1 › forged runtime payload and changed digest fail closed
+[15/18] [mobile] › browser.spec.mjs:130:1 › server exposes no write or arbitrary repository read route
+[16/18] [mobile] › browser.spec.mjs:136:1 › actual negative assertion and future fixture keep their subjects through UI and export
+[17/18] [mobile] › browser.spec.mjs:160:1 › older subject A finishing after B cannot overwrite B
+[18/18] [mobile] › browser.spec.mjs:179:1 › failed probe refresh clears assertion and candidate; unknown full ID is not a neighbor
+  18 passed (3.0m)
+PHASE9_BROWSER_PASS projects=desktop,mobile screenshots=4 API_download_identity=byte_exact

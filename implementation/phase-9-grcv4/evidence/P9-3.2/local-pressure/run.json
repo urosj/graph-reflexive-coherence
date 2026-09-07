@@ -1,0 +1,19 @@
+{
+  "iteration_id": "P9-3.2",
+  "status": "passed",
+  "scope": "final-source common geometry, exact stage/cache and retained P9-3.1 graph/pairing/transport pressure; clean wheel and source installs; no candidate runtime admission",
+  "artifact_bindings": [
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-3.2/local-pressure/inputs.json",
+      "sha256": "886a3fd5aeb6c223dcec714364b2f79e61dd0e49c18fa7569900e99c645ea6d8"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-3.2/local-pressure/actual.json",
+      "sha256": "4da871b7a5abcfdeb285280fe9feb61179ad2339ef13c3e90ab05c4f956d6287"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-3.2/local-pressure/stdout.txt",
+      "sha256": "30732e7a2d138e2c35c66028fed2abdd7cab0cc11d747cb8156cddab0001854b"
+    }
+  ]
+}

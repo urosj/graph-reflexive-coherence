@@ -1,0 +1,20 @@
+{
+  "iteration_id": "P9-3.1",
+  "status": "passed",
+  "subject_policy_digest": "f1bed0d0a42093cdfeb62f7c7840f8fa3ebcafa6c4fa52e1408c0901b8a01341",
+  "artifact_bindings": [
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-3.1/audit-1-permission/inputs.json",
+      "sha256": "518493f0916026a50b29e0d3d9d1c0cd216718cd3862cd96c437f0cc2be87270"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-3.1/audit-1-permission/actual.json",
+      "sha256": "5405cf0aee3e1ba4b3aa5b26206b8542be8391854c534e7381981b19745b06db"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-3.1/audit-1-permission/receipts.json",
+      "sha256": "8f4a7d531f97d263284f827f9fc5899d4df43ac99af4674f5c99cfd9235281f8"
+    }
+  ],
+  "claim_ceiling": "implementation permission, source reconstruction and API/notebook/JavaScript display correctness; no runtime acceptance or new browser run"
+}

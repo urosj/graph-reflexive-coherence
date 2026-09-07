@@ -1,0 +1,25 @@
+{
+  "iteration_id": "P9-3.2",
+  "status": "passed",
+  "subject_policy_digest": "b7cba6f9ec48597389df7bb4cba0f06da18b6a269a7374834a9b611a1d0394f2",
+  "subject_tree": {
+    "protected_baseline_files": 725,
+    "current_artifact_digest": "876a78f619b53d8eaef87a5c9ad8efd91e5362b1a02492ff623beee221aa0343",
+    "registered_runtime_files": 152
+  },
+  "artifact_bindings": [
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-3.2/browser-font-environment/inputs.json",
+      "sha256": "2a75f8fe76cd9cc0ea437b1b600ccf3fdcf6bf555238a1b1e862fbf1a53ad90d"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-3.2/browser-font-environment/actual.json",
+      "sha256": "d0085bbc82576b7aa40707cda057aebb497fb78511372a7c44fbdbf190d8f41d"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-3.2/browser-font-environment/stdout.txt",
+      "sha256": "12fe7bf81ae3c37e37f1ce9a159ef869c4143c1e97252cae58f32e318f9d89fe"
+    }
+  ],
+  "claim_ceiling": "corrected browser rendering/interaction, API/notebook/Node agreement and implementation permission only; no runtime conformance or acceptance"
+}

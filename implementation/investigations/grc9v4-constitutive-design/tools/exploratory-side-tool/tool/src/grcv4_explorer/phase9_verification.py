@@ -94,6 +94,31 @@ def verification_status(repo_root: Path) -> dict:
                     "accepted_iterations": ["P9-2.5"],
                     "path": module.HARNESS_ACCEPTANCE,
                 },
+                integration_acceptance={
+                    "record_digest": module.accepted_integration(root)["record_digest"],
+                    "accepted_iterations": ["P9-2.6"],
+                    "path": module.INTEGRATION_ACCEPTANCE,
+                },
+                geometry_acceptance={
+                    "record_digest": module.accepted_geometry(root)["record_digest"],
+                    "accepted_iterations": ["P9-3.1"],
+                    "path": module.GEOMETRY_ACCEPTANCE,
+                },
+                stage_acceptance={
+                    "record_digest": module.accepted_stages(root)["record_digest"],
+                    "accepted_iterations": ["P9-3.2"],
+                    "path": module.STAGE_ACCEPTANCE,
+                },
+                resource_acceptance={
+                    "record_digest": module.accepted_resources(root)["record_digest"],
+                    "accepted_iterations": ["P9-3.3"],
+                    "path": module.RESOURCE_ACCEPTANCE,
+                },
+                numerical_pressure_acceptance={
+                    "record_digest": module.accepted_numerical_pressure(root)["record_digest"],
+                    "accepted_iterations": ["P9-3.4"],
+                    "path": module.NUMERICAL_ACCEPTANCE,
+                },
                 implementation_scope=approval["runtime_targets"],
                 dependency_ready_leaves=ready,
                 permitted_runtime_paths=sorted(
@@ -101,7 +126,7 @@ def verification_status(repo_root: Path) -> dict:
                     for r in approval["runtime_targets"]
                     if r["requires_gate"] == "P9-G1" and set(ready) & owners[r["path"]]
                 ),
-                next_gate="P9-2.6 foundation integration review; P9-3.1, P9-G2 and P9-G3 remain pending",
+                next_gate="P9-3.5 rejected-operation prestate preservation; P9-G2 and P9-G3 remain pending",
                 claim_ceiling="Accepted permission to implement reviewed V4 scope is not executed or accepted runtime conformance.",
             )
         cross = module.read(
@@ -237,6 +262,11 @@ def verification_status(repo_root: Path) -> dict:
         payload.pop("request_acceptance", None)
         payload.pop("result_acceptance", None)
         payload.pop("harness_acceptance", None)
+        payload.pop("integration_acceptance", None)
+        payload.pop("geometry_acceptance", None)
+        payload.pop("stage_acceptance", None)
+        payload.pop("resource_acceptance", None)
+        payload.pop("numerical_pressure_acceptance", None)
         payload.pop("permitted_runtime_paths", None)
         payload.pop("source_meaning", None)
         payload.pop("tree", None)

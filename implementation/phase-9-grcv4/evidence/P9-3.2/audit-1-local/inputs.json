@@ -1,0 +1,88 @@
+{
+  "iteration_id": "P9-3.2",
+  "source_bindings": [
+    {
+      "path": "pyproject.toml",
+      "sha256": "018c364413f75ee49186975c05e9cdaba7a78e171d47833609fbebc223a64a66"
+    },
+    {
+      "path": "src/pygrc/models/__init__.py",
+      "sha256": "23768e181455f4e7eb68908cdac532464c063fa5eb4250c4d05537eca0dcaa70"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4.py",
+      "sha256": "65efdf547d8e88e67c22d62a869bd61464ed3d2eb8b2709be6661796b37e824c"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_assets/__init__.py",
+      "sha256": "a1f3aba168a9f9331d1fc9580d5055404f8bc4c705936c7e388e7a47f80a0051"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_assets/asset-index.json",
+      "sha256": "c1ac9d8d3bb924f29b775bd9863a33a454da41e98c57ef0b8bb3c24171fafc9f"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_assets/grc-v4-contract-schema.json",
+      "sha256": "3fd072fc8c2b315f1b5dc32a4e4821a5082b5f3fc9d9a4794c007419a7aa0bea"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_assets/grc-v4-specification-release.json",
+      "sha256": "bba0bb649bc2e80c5bfa99f96bd5824bbdda3b3fbc87fb68c3e3a59da1cee46b"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_assets/grc-v4-specification-release.sha256",
+      "sha256": "50b20509b84a6b21f3036ecb1d7e13861f662bc8319873c5321fc0317ada7e33"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_codec.py",
+      "sha256": "bd6d9390c818c5a25b70da119cfbc3a3de3707ee84566f6bb06160bb4780e154"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_geometry.py",
+      "sha256": "d715f67555d3c6e68a4e031ba132cb1854cc839de03dcd2c7101fbeb40c13dcd"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_profile.py",
+      "sha256": "188e4ceb92b6a36fe81849911b88b233b8dd16bf3de07383e1508d76232fdbfb"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_state.py",
+      "sha256": "b0ccf06ef91b66feb8670fb67281465998f4bcb085c4d547fedd3ce6d85ad3cb"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_step.py",
+      "sha256": "773975e1131791f93d86f6dac38b27ebac9dca46c1b87ef2e0a31bc8c90a705b"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_transport.py",
+      "sha256": "8bad1a9642456f3a63976177b9baba3f1dd8ec0df2ec6376e18a71fb032823a2"
+    },
+    {
+      "path": "tests/models/test_grc_v4_geometry.py",
+      "sha256": "de8957be72deeaf92cef84795d0356cbcba99b4563975f03413e627140908eea"
+    },
+    {
+      "path": "tests/models/test_grc_v4_transport.py",
+      "sha256": "13ac20f700a10f7a13fb5ba09243844e2bced9e79bcd1260d2740191fa5e691b"
+    }
+  ],
+  "command": "GRCV4_PACKAGE_TESTS=1 GRCV4_WHEELHOUSE=<wheelhouse> .venv/bin/python -m unittest -v tests.models.test_grc_v4_geometry tests.models.test_grc_v4_transport",
+  "environment": {
+    "python": "3.12.3",
+    "platform": "Linux-5.15.167-0515167-generic-x86_64-with-glibc2.39",
+    "dependencies": {
+      "numpy": "2.4.6",
+      "rfc8785": "0.1.4",
+      "jsonschema": "4.26.0",
+      "build": "1.6.0",
+      "setuptools": "84.0.0",
+      "wheel": "0.48.0",
+      "ruff": "0.15.16",
+      "mypy": "2.1.0"
+    }
+  },
+  "dependency_wheelhouse_recipe": {
+    "path": "implementation/phase-9-grcv4/evidence/P9-3.1/self-check/inputs.json",
+    "sha256": "f83478cff9bc447a8eb70197b911bfc307779f763e0d367fb9a895f8eb109ce8"
+  }
+}

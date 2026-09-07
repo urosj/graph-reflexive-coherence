@@ -182,17 +182,41 @@ owning-leaf IDs. The user's commit instructions accept the corrected P9-2.1
 and P9-2.2 foundation; a separate committed-subject acceptance record preserves
 the historical review/command evidence. The separately accepted P9-2.3 and
 P9-2.4 commits enabled P9-2.5; its separately accepted commit now enables
-P9-2.6 alongside those five leaves, with nineteen
-eligible runtime paths; later generic and specialization leaves retain their
+P9-2.6. The accepted P9-2.6 commit enables P9-3.1; explicit P9-3.1
+acceptance at `dccb1ca` enabled P9-3.2. P9-3.2 acceptance at `77286b2` now
+enables P9-3.3, giving nine dependency-ready leaves and twenty-three eligible runtime paths; later generic and specialization leaves retain their
 own gates. API/export includes `dependency_ready_leaves` and
 `permitted_runtime_paths`, separately from the full conditional target roster.
 `foundation_acceptance` identifies the exact acceptance record and accepted
 foundation leaves. `request_acceptance` binds the user's P9-2.3 commit decision;
 `result_acceptance` binds the user's P9-2.4 commit decision;
-`harness_acceptance` binds the user's P9-2.5 commit decision. Current P9-2.6
-work cannot accept itself or unlock P9-3.1. The ownership adapter retains the
+`harness_acceptance` binds the user's P9-2.5 commit decision;
+`integration_acceptance` binds the P9-2.6 committed subject;
+`geometry_acceptance` binds the separately accepted P9-3.1 committed subject;
+`stage_acceptance` binds the separately accepted P9-3.2 committed subject.
+Current P9-3.3 work cannot accept itself or unlock P9-3.4. The transport/step
+modules and tests retain the checklist-assigned resource-boundary ownership; this entry adds no
+runtime path. NumPy is an
+explicit V4 extra under P9-3.1's scoped dependency ownership. The ownership adapter retains the
 checklist-assigned result leaf on the existing state/step pairs; P9-2.5 uses
 the two already-reviewed harness/oracle test paths.
 G1 approval permits reviewed work under those conditions; the manifest is integrity
 data, not an acceptance mechanism. No unexecuted profile may be advertised.
 New scope, G2 conformance or G3 admission needs a separately reviewed successor.
+
+
+P9-3.2 browser reconstruction includes installed DejaVu Sans, Serif and Sans Mono
+families (the `fonts-dejavu-core` package on Debian/Ubuntu). The browser test
+sets its generic font preferences explicitly through `Page.setFontFamilies`
+and requires nonzero rendered title glyph width and line height. This catches
+an observed host/headless-browser condition where DOM assertions passed but
+generic-family text was invisible. It does not alter served CSS or page content.
+The P9-3.2 font-environment record preserves the original blank screenshot,
+protocol observations and font hashes. Browser pixels are scoped to that font
+and browser environment, independently of numerical runtime conformance.
+
+Use viewport screenshots in this pinned Chromium environment: full-page capture
+was observed to discard generic-font overrides while rasterizing. The tests
+check glyph dimensions before and after capture. Probe tests wait for their
+exact network subject before checking the rendered decision; they do not rely
+on a ten-second DOM wait to absorb full authority-report verification latency.

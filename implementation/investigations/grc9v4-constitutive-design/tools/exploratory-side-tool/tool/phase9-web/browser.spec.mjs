@@ -10,6 +10,17 @@ function canonical(value) {
   return JSON.stringify(value);
 }
 
+// The browser's generic-font preferences are part of this Linux test
+// environment. Named installed families avoid host-dependent empty defaults;
+// this does not inject application CSS or modify the served document.
+test.beforeEach(async ({page}) => {
+  const session = await page.context().newCDPSession(page);
+  await session.send('Page.setFontFamilies', {fontFamilies: {
+    standard: 'DejaVu Sans', sansSerif: 'DejaVu Sans',
+    serif: 'DejaVu Serif', fixed: 'DejaVu Sans Mono',
+  }});
+});
+
 test('live API, source bindings, leaf states and downloadable JSON agree', async ({page, request}, info) => {
   const response = await request.get('/api/status');
   expect(response.headers()['cache-control']).toBe('no-store');
@@ -19,20 +30,38 @@ test('live API, source bindings, leaf states and downloadable JSON agree', async
   expect(api.P9_G1_accepted).toBe(true);
   expect(api.accepted_generic_runtime_support).toEqual([]);
   expect(api.admitted_specialization_support_sets).toEqual([]);
-  expect(api.dependency_ready_leaves).toEqual(['P9-2.1','P9-2.2','P9-2.3','P9-2.4','P9-2.5','P9-2.6']);
+  expect(api.dependency_ready_leaves).toEqual(['P9-2.1','P9-2.2','P9-2.3','P9-2.4','P9-2.5','P9-2.6','P9-3.1','P9-3.2','P9-3.3','P9-3.4','P9-3.5']);
   expect(api.result_acceptance.accepted_iterations).toEqual(['P9-2.4']);
   expect(api.harness_acceptance.accepted_iterations).toEqual(['P9-2.5']);
+  expect(api.integration_acceptance.accepted_iterations).toEqual(['P9-2.6']);
+  expect(api.geometry_acceptance.accepted_iterations).toEqual(['P9-3.1']);
+  expect(api.stage_acceptance.accepted_iterations).toEqual(['P9-3.2']);
+  expect(api.resource_acceptance.accepted_iterations).toEqual(['P9-3.3']);
+  expect(api.numerical_pressure_acceptance.accepted_iterations).toEqual(['P9-3.4']);
+  expect(api.permitted_runtime_paths).toHaveLength(23);
   expect(api.request_acceptance.accepted_iterations).toEqual(['P9-2.3']);
   expect(api.foundation_acceptance.accepted_iterations).toEqual(['P9-2.1','P9-2.2']);
   await page.goto('/');
   await expect(page.locator('#boundary')).toContainText('Passed');
+  await page.evaluate(() => document.fonts.ready);
+  const glyphs = await page.locator('h1').evaluate(element => {
+    const canvas = document.createElement('canvas').getContext('2d');
+    canvas.font = getComputedStyle(element).font;
+    const width = canvas.measureText(element.textContent).width;
+    return {width, height: element.getBoundingClientRect().height};
+  });
+  expect(glyphs.width, 'browser generic fonts must render actual glyphs').toBeGreaterThan(0);
+  expect(glyphs.height, 'title text must occupy a visible line').toBeGreaterThan(0);
+
   await expect(page.locator('#iterations')).toContainText('P9-1.7');
   await expect(page.locator('#iterations')).toContainText('P9-1.8');
   await expect(page.locator('#iterations')).toContainText('P9-1.9');
   await expect(page.locator('#authority')).toContainText('Accepted / bounded implementation only');
   await expect(page.locator('#next-work')).toContainText('Accepted results: P9-2.4');
   await expect(page.locator('#next-work')).toContainText('Accepted harness: P9-2.5');
-  await expect(page.locator('#next-work')).toContainText('P9-2.1, P9-2.2, P9-2.3, P9-2.4, P9-2.5, P9-2.6');
+  await expect(page.locator('#next-work')).toContainText('Accepted integration: P9-2.6');
+  await expect(page.locator('#next-work')).toContainText('P9-2.1, P9-2.2, P9-2.3, P9-2.4, P9-2.5, P9-2.6, P9-3.1, P9-3.2, P9-3.3, P9-3.4, P9-3.5');
+  await expect(page.locator('#next-work')).toContainText('Accepted numerical pressure: P9-3.4');
   await expect(page.locator('#next-work')).toContainText('Accepted foundation: P9-2.1, P9-2.2.');
   await expect(page.locator('#handoff')).toContainText('Verified');
   await expect(page.locator('#policy')).toContainText(api.policy_digest);
@@ -41,7 +70,8 @@ test('live API, source bindings, leaf states and downloadable JSON agree', async
   await page.locator('#download').click();
   const download = await downloading;
   expect(JSON.parse(await readFile(await download.path(), 'utf8'))).toEqual(api);
-  await page.screenshot({path: info.outputPath('verification.png'), fullPage: true});
+  await page.screenshot({path: info.outputPath('verification.png'), fullPage: false});
+  expect(await page.locator('h1').evaluate(e=>e.getBoundingClientRect().height)).toBeGreaterThan(0);
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
 });
 
@@ -66,7 +96,7 @@ test('archive availability is visible without revoking acceptance or blocking ex
 test('a current source failure holds work but preserves the recorded acceptance display', async ({page,request}) => {
   const value=await (await request.get('/api/status')).json();
   Object.assign(value,{current_boundary:'failed_closed',runtime_authorized:false,runtime_authority_state:'accepted_P9_G1_current_work_held',recorded_full_verification:'not_current',source_refs:[],iterations:[],policy_digest:null,error:'Current source binding failed'});
-  for(const key of ['implementation_scope','dependency_ready_leaves','permitted_runtime_paths','foundation_acceptance','request_acceptance','result_acceptance','harness_acceptance','status_digest']) delete value[key];
+  for(const key of ['implementation_scope','dependency_ready_leaves','permitted_runtime_paths','foundation_acceptance','request_acceptance','result_acceptance','harness_acceptance','integration_acceptance','geometry_acceptance','stage_acceptance','resource_acceptance','numerical_pressure_acceptance','status_digest']) delete value[key];
   value.status_digest=createHash('sha256').update(canonical(value)).digest('hex');
   await page.route('**/api/status',route=>route.fulfill({json:value}));
   await page.goto('/');
@@ -108,13 +138,15 @@ test('server exposes no write or arbitrary repository read route', async ({reque
 });
 
 test('actual negative assertion and future fixture keep their subjects through UI and export', async ({page, request}, info) => {
+  test.setTimeout(90000); // Two independently verified API subjects plus browser reads.
   await page.goto('/');
   await expect(page.locator('#source-meaning')).toContainText('indeterminate_requires_review');
   await expect(page.locator('#source-meaning')).toContainText('accepted_frozen');
   for (const [id,decision] of [['normal_entry_forbidden_source','rejected'],['accepted_G1_exact_targets','admitted']]) {
     const api=await (await request.get(`/api/probe?case_id=${id}`)).json();
-    await page.selectOption('#probe',id);
-    await page.locator('#probe-refresh').click();
+    const loaded=page.waitForResponse(r=>new URL(r.url()).searchParams.get('case_id')===id);
+    await page.selectOption('#probe',id); // The change event performs the real refresh.
+    await loaded;
     await expect(page.locator('#probe-candidate')).toHaveText(decision);
     await expect(page.locator('#probe-assertion')).toHaveText('passed');
     await expect(page.locator('#probe-status')).toContainText('no live permission');
@@ -122,7 +154,10 @@ test('actual negative assertion and future fixture keep their subjects through U
     const pending=page.waitForEvent('download'); await page.locator('#probe-download').click();
     const file=await pending;
     expect(JSON.parse(await readFile(await file.path(),'utf8'))).toEqual(api);
-    if (decision==='rejected') await page.screenshot({path:info.outputPath('negative-assertion-not-admission.png'),fullPage:true});
+    if (decision==='rejected') {
+      await page.screenshot({path:info.outputPath('negative-assertion-not-admission.png'),fullPage:false});
+      expect(await page.locator('#probe-candidate').evaluate(e=>e.getBoundingClientRect().height)).toBeGreaterThan(0);
+    }
   }
 });
 
@@ -147,7 +182,11 @@ test('older subject A finishing after B cannot overwrite B', async ({page,reques
 
 test('failed probe refresh clears assertion and candidate; unknown full ID is not a neighbor', async ({page,request}) => {
   expect((await request.get('/api/probe?case_id=normal_entry_forbidden_source-unknown')).status()).toBe(404);
-  await page.goto('/');await page.locator('#probe-refresh').click();
+  await page.goto('/');
+  await expect(page.locator('#boundary')).toContainText('Passed');
+  const loaded=page.waitForResponse(r=>new URL(r.url()).searchParams.get('case_id')==='normal_entry_forbidden_source');
+  await page.locator('#probe-refresh').click();
+  await loaded;
   await expect(page.locator('#probe-candidate')).toHaveText('rejected');
   await page.route('**/api/probe?**',route=>route.fulfill({status:503,body:'unavailable'}));
   await page.locator('#probe-refresh').click();

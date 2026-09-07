@@ -1,0 +1,166 @@
+{
+  "iteration_id": "P9-3.1",
+  "test_ids": [
+    "tests.models.test_grc_v4_geometry.CovarianceTests.test_dense_vertex_pairing_covariance",
+    "tests.models.test_grc_v4_geometry.CovarianceTests.test_invalid_permutations_signs_and_topology_changes_rejected",
+    "tests.models.test_grc_v4_geometry.CovarianceTests.test_signed_incidence_differential_and_divergence",
+    "tests.models.test_grc_v4_geometry.CovarianceTests.test_signed_nonidentity_hodge_flat_sharp_covariance",
+    "tests.models.test_grc_v4_geometry.ExactPositiveDomainTests.test_cholesky_return_or_exception_cannot_decide_positivity",
+    "tests.models.test_grc_v4_geometry.ExactPositiveDomainTests.test_exact_nonpositive_scale_family_in_both_orders",
+    "tests.models.test_grc_v4_geometry.ExactPositiveDomainTests.test_general_dimensional_inertia_by_explicit_congruence",
+    "tests.models.test_grc_v4_geometry.ExactPositiveDomainTests.test_literal_audit_boundary_both_types_and_signed_orders",
+    "tests.models.test_grc_v4_geometry.ExactPositiveDomainTests.test_non_diagonal_mixed_dyadic_denominators",
+    "tests.models.test_grc_v4_geometry.ExactPositiveDomainTests.test_positive_scaled_identity_controls_survive",
+    "tests.models.test_grc_v4_geometry.ExactPositiveDomainTests.test_regression_detects_restoration_of_the_old_screen",
+    "tests.models.test_grc_v4_geometry.ExactPositiveDomainTests.test_rejection_preserves_original_matrix_and_graph",
+    "tests.models.test_grc_v4_geometry.ExactPositiveDomainTests.test_three_dimensional_exhaustive_leibniz_oracle",
+    "tests.models.test_grc_v4_geometry.GraphTests.test_bad_node_ids_rejected_before_coercion",
+    "tests.models.test_grc_v4_geometry.GraphTests.test_closed_graph_allows_isolates_parallel_edges_and_loops",
+    "tests.models.test_grc_v4_geometry.GraphTests.test_coordinate_type_and_graph_are_load_bearing",
+    "tests.models.test_grc_v4_geometry.GraphTests.test_detached_mutable_input_and_output",
+    "tests.models.test_grc_v4_geometry.GraphTests.test_differential_and_divergence_independent_expected",
+    "tests.models.test_grc_v4_geometry.GraphTests.test_differential_identity_is_reconstructible_and_context_bound",
+    "tests.models.test_grc_v4_geometry.GraphTests.test_direct_and_wire_integral_float_ids_agree",
+    "tests.models.test_grc_v4_geometry.GraphTests.test_direct_construction_copies_ordered_lists",
+    "tests.models.test_grc_v4_geometry.GraphTests.test_discrete_unweighted_adjoint_identity",
+    "tests.models.test_grc_v4_geometry.GraphTests.test_duplicate_edge_missing_endpoint_and_extra_fields_rejected",
+    "tests.models.test_grc_v4_geometry.GraphTests.test_empty_spaces_have_explicit_zero_maps",
+    "tests.models.test_grc_v4_geometry.GraphTests.test_graph_digest_has_independent_canonical_preimage",
+    "tests.models.test_grc_v4_geometry.GraphTests.test_graph_wire_reconstruction_is_explicit",
+    "tests.models.test_grc_v4_geometry.GraphTests.test_orientation_identity_binds_sign_convention_and_order",
+    "tests.models.test_grc_v4_geometry.GraphTests.test_serialized_order_mixed_ids_and_lookup",
+    "tests.models.test_grc_v4_geometry.GraphTests.test_unknown_backend_or_boundary_is_not_an_alias",
+    "tests.models.test_grc_v4_geometry.OutlierTests.test_all_48_small_signed_coordinate_actions",
+    "tests.models.test_grc_v4_geometry.OutlierTests.test_duplicate_wire_keys_and_unsafe_numeric_tokens_fail",
+    "tests.models.test_grc_v4_geometry.OutlierTests.test_empty_numeric_buffers_preserve_declared_shape",
+    "tests.models.test_grc_v4_geometry.OutlierTests.test_extreme_safe_ids_empty_strings_and_unicode_remain_distinct",
+    "tests.models.test_grc_v4_geometry.OutlierTests.test_noncontiguous_unsigned_matrix_input_checks_exact_integer_range",
+    "tests.models.test_grc_v4_geometry.OutlierTests.test_power_of_two_dynamic_range_has_exact_inverse_action",
+    "tests.models.test_grc_v4_geometry.OutlierTests.test_rejected_primitive_calls_preserve_all_supplied_buffers",
+    "tests.models.test_grc_v4_geometry.OutlierTests.test_scaled_singular_and_indefinite_inputs_fail_closed",
+    "tests.models.test_grc_v4_geometry.OutlierTests.test_seeded_dense_spd_against_exact_rational_oracle",
+    "tests.models.test_grc_v4_geometry.PairingTests.test_arithmetic_zero_is_canonical_but_input_negative_zero_rejected",
+    "tests.models.test_grc_v4_geometry.PairingTests.test_hodge_identity_binds_every_entry_and_map_role",
+    "tests.models.test_grc_v4_geometry.PairingTests.test_missing_numpy_dependency_reports_v4_extra",
+    "tests.models.test_grc_v4_geometry.PairingTests.test_nonfinite_arithmetic_fails_without_regularization",
+    "tests.models.test_grc_v4_geometry.PairingTests.test_nonidentity_flat_rational_inverse",
+    "tests.models.test_grc_v4_geometry.PairingTests.test_numeric_arrays_are_detached_and_bad_dtypes_rejected",
+    "tests.models.test_grc_v4_geometry.PairingTests.test_pairings_are_distinct_and_nonunit",
+    "tests.models.test_grc_v4_geometry.PairingTests.test_same_numbers_do_not_substitute_types",
+    "tests.models.test_grc_v4_geometry.PairingTests.test_shape_nonfinite_asymmetric_and_non_spd_rejected",
+    "tests.models.test_grc_v4_geometry.PairingTests.test_wrong_graph_flat_sharp_and_pairing_rejected",
+    "tests.models.test_grc_v4_geometry.ReconstructionTests.test_clean_installed_wheel_and_sdist_primitives",
+    "tests.models.test_grc_v4_geometry.ReconstructionTests.test_replay_across_hash_seeds_outside_checkout",
+    "tests.models.test_grc_v4_transport.MobilityTests.test_a_foundation_does_not_run_candidate_write_or_floor",
+    "tests.models.test_grc_v4_transport.MobilityTests.test_a_reads_retained_authority_with_its_own_gain",
+    "tests.models.test_grc_v4_transport.MobilityTests.test_a_retained_values_shape_and_positive_domain",
+    "tests.models.test_grc_v4_transport.MobilityTests.test_c_ownership_excludes_selector_and_geometry_inputs",
+    "tests.models.test_grc_v4_transport.MobilityTests.test_c_reads_reference_by_edge_id_in_live_order",
+    "tests.models.test_grc_v4_transport.MobilityTests.test_c_reference_exact_coverage_and_positive_values",
+    "tests.models.test_grc_v4_transport.MobilityTests.test_c_structural_and_mobility_embeddings_are_siblings",
+    "tests.models.test_grc_v4_transport.MobilityTests.test_candidate_authority_is_not_interchangeable",
+    "tests.models.test_grc_v4_transport.MobilityTests.test_construction_does_not_advertise_runtime_support",
+    "tests.models.test_grc_v4_transport.MobilityTests.test_extreme_finite_a_factor_keeps_retained_authority",
+    "tests.models.test_grc_v4_transport.MobilityTests.test_geometry_cannot_supply_mobility_authority",
+    "tests.models.test_grc_v4_transport.MobilityTests.test_mobility_factors_reject_overflow_and_underflow",
+    "tests.models.test_grc_v4_transport.MobilityTests.test_mutable_authority_inputs_are_detached",
+    "tests.models.test_grc_v4_transport.MobilityTests.test_reconstruction_preserves_candidate_identity_and_output",
+    "tests.models.test_grc_v4_transport.MobilityTests.test_signed_candidate_mobility_covariance",
+    "tests.models.test_grc_v4_transport.MobilityTests.test_subnormal_positive_factors_and_arithmetic_underflow",
+    "tests.models.test_grc_v4_transport.MobilityTests.test_wrong_typed_or_foreign_driving_form_rejected"
+  ],
+  "source_bindings": [
+    {
+      "path": "pyproject.toml",
+      "sha256": "018c364413f75ee49186975c05e9cdaba7a78e171d47833609fbebc223a64a66"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_geometry.py",
+      "sha256": "831e0590d79f7e9088fdd6ad3c1fe1a8aca54b56d8463f11ac120474829061f0"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_transport.py",
+      "sha256": "8bad1a9642456f3a63976177b9baba3f1dd8ec0df2ec6376e18a71fb032823a2"
+    },
+    {
+      "path": "tests/models/test_grc_v4_geometry.py",
+      "sha256": "629916068c2098ccc77d96f9c1b014481a5d397357234e54ab694dfbe9781bb1"
+    },
+    {
+      "path": "tests/models/test_grc_v4_transport.py",
+      "sha256": "13ac20f700a10f7a13fb5ba09243844e2bced9e79bcd1260d2740191fa5e691b"
+    }
+  ],
+  "command": "GRCV4_PACKAGE_TESTS=1 GRCV4_WHEELHOUSE=<wheelhouse> .venv/bin/python -m unittest -v tests.models.test_grc_v4_geometry tests.models.test_grc_v4_transport",
+  "environment_inputs": "implementation/phase-9-grcv4/evidence/P9-3.1/self-check/inputs.json",
+  "pressure_populations": {
+    "seeded_exact_rational_SPD_systems": 24,
+    "dimensions": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "random_seed": 931,
+    "signed_coordinate_actions": 48,
+    "malformed_empty_array_shapes": 5,
+    "scaled_singular_or_indefinite_matrices": 10,
+    "additional_controls": [
+      "duplicate JSON keys",
+      "unsafe and underflowed node ID tokens",
+      "extreme safe integer IDs",
+      "Unicode normalization distinction",
+      "noncontiguous unsigned numeric buffers",
+      "power-of-two SPD dynamic range",
+      "positive subnormal mobility",
+      "arithmetic underflow with canonical zero",
+      "extreme finite A gain/history",
+      "primitive pre-input preservation after rejection"
+    ]
+  },
+  "audit_round": 1,
+  "positivity_policy_id": "exact_binary64_sylvester_bareiss_v1",
+  "new_positive_domain_test_class": "tests.models.test_grc_v4_geometry.ExactPositiveDomainTests",
+  "previous_pressure_record": "implementation/phase-9-grcv4/evidence/P9-3.1/outlier-pressure/run.json",
+  "new_pressure_populations": {
+    "literal_boundary_signed_orders": 24,
+    "negative_scale_matrices": 140,
+    "orders_per_negative": 2,
+    "exhaustive_symmetric_3x3": 4096,
+    "independent_entry_alphabet": [
+      -1,
+      0,
+      1,
+      2
+    ],
+    "known_inertia_congruences": 360,
+    "dimensions": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "congruence_scale_exponents": [
+      -900,
+      -100,
+      0,
+      100,
+      900
+    ],
+    "positive_scaled_identities": 12,
+    "mixed_dyadic_orders": 3,
+    "both_hodge_types": true,
+    "qualification": "These counts are matrix scenarios, each exercised through both constructors; they are not additional unittest methods or frozen conformance cases."
+  },
+  "algorithm_scope": "Exact dyadic positivity at every dimension, with integer-preserving leading-principal-minor elimination; does not decide conditioning, solve accuracy or stage admission.",
+  "regression_scope": {
+    "production_change": "grc_v4_geometry._spd and _require_positive_definite",
+    "unchanged_production": "transport and all earlier graph/foundation/legacy modules",
+    "additional_installed_consumers": "F1 literal nonpositive cases, both constructors/orders; positive nextafter and extreme-scale controls",
+    "mutation_sensitivity": "old constructor screen with a simulated returned NumPy factor; isolated patched function restored automatically"
+  }
+}

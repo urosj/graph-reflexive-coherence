@@ -1,0 +1,107 @@
+{
+  "iteration_id": "P9-3.2",
+  "original_audit_record": {
+    "path": "implementation/phase-9-grcv4/evidence/P9-3.2/audit-1-inputs/inputs.json",
+    "sha256": "8d185c0934b7780f74508e459446832810398ad58da5af4c9ee973684e087639"
+  },
+  "program_filename": "P9-3.2-independent-stress-tests.py",
+  "program_sha256": "ed5ec6803cd6bd3641ed1e93622a05223f4118dfc2dfc62b0d9d62b2d136e0de",
+  "mode": "native without bootstrap, fallback or provider patches",
+  "source_bindings": [
+    {
+      "path": "pyproject.toml",
+      "sha256": "018c364413f75ee49186975c05e9cdaba7a78e171d47833609fbebc223a64a66"
+    },
+    {
+      "path": "src/pygrc/models/__init__.py",
+      "sha256": "23768e181455f4e7eb68908cdac532464c063fa5eb4250c4d05537eca0dcaa70"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4.py",
+      "sha256": "65efdf547d8e88e67c22d62a869bd61464ed3d2eb8b2709be6661796b37e824c"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_assets/__init__.py",
+      "sha256": "a1f3aba168a9f9331d1fc9580d5055404f8bc4c705936c7e388e7a47f80a0051"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_assets/asset-index.json",
+      "sha256": "c1ac9d8d3bb924f29b775bd9863a33a454da41e98c57ef0b8bb3c24171fafc9f"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_assets/grc-v4-contract-schema.json",
+      "sha256": "3fd072fc8c2b315f1b5dc32a4e4821a5082b5f3fc9d9a4794c007419a7aa0bea"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_assets/grc-v4-specification-release.json",
+      "sha256": "bba0bb649bc2e80c5bfa99f96bd5824bbdda3b3fbc87fb68c3e3a59da1cee46b"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_assets/grc-v4-specification-release.sha256",
+      "sha256": "50b20509b84a6b21f3036ecb1d7e13861f662bc8319873c5321fc0317ada7e33"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_codec.py",
+      "sha256": "bd6d9390c818c5a25b70da119cfbc3a3de3707ee84566f6bb06160bb4780e154"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_geometry.py",
+      "sha256": "d715f67555d3c6e68a4e031ba132cb1854cc839de03dcd2c7101fbeb40c13dcd"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_profile.py",
+      "sha256": "188e4ceb92b6a36fe81849911b88b233b8dd16bf3de07383e1508d76232fdbfb"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_state.py",
+      "sha256": "b0ccf06ef91b66feb8670fb67281465998f4bcb085c4d547fedd3ce6d85ad3cb"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_step.py",
+      "sha256": "773975e1131791f93d86f6dac38b27ebac9dca46c1b87ef2e0a31bc8c90a705b"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_transport.py",
+      "sha256": "8bad1a9642456f3a63976177b9baba3f1dd8ec0df2ec6376e18a71fb032823a2"
+    },
+    {
+      "path": "tests/models/test_grc_v4_geometry.py",
+      "sha256": "de8957be72deeaf92cef84795d0356cbcba99b4563975f03413e627140908eea"
+    },
+    {
+      "path": "tests/models/test_grc_v4_transport.py",
+      "sha256": "13ac20f700a10f7a13fb5ba09243844e2bced9e79bcd1260d2740191fa5e691b"
+    }
+  ],
+  "commands": {
+    "independent": ".venv/bin/python <verified extracted audit program> --repo <repo root> --output <fresh output directory>",
+    "local": "GRCV4_PACKAGE_TESTS=1 GRCV4_WHEELHOUSE=<wheelhouse> .venv/bin/python -m unittest -v tests.models.test_grc_v4_geometry tests.models.test_grc_v4_transport",
+    "dependency_check": ".venv/bin/python -m pip check"
+  },
+  "environment": {
+    "python": "3.12.3",
+    "platform": "Linux-5.15.167-0515167-generic-x86_64-with-glibc2.39",
+    "dependencies": {
+      "numpy": "2.4.6",
+      "rfc8785": "0.1.4",
+      "jsonschema": "4.26.0",
+      "build": "1.6.0",
+      "setuptools": "84.0.0",
+      "wheel": "0.48.0",
+      "ruff": "0.15.16",
+      "mypy": "2.1.0"
+    }
+  },
+  "dependency_wheelhouse_recipe": {
+    "path": "implementation/phase-9-grcv4/evidence/P9-3.1/self-check/inputs.json",
+    "sha256": "f83478cff9bc447a8eb70197b911bfc307779f763e0d367fb9a895f8eb109ce8"
+  },
+  "package_subject": "fresh wheel and sdist installations from exact current source bytes, isolated consumers and declared V4 extra; current profile reconstruction and C map-value guard are also directly covered by the full 95-method suite",
+  "programs": [
+    {
+      "filename": "export_packet.py",
+      "sha256": "ff6a92fc31ffcd214a857436c9738869c149c81b30e3399ca95ed387344aece1",
+      "utf8_content": "#!/usr/bin/env python3\n\"\"\"Export source and retained evidence for review without local environments.\"\"\"\n\nimport argparse\nimport hashlib\nimport json\nfrom pathlib import Path\nimport subprocess\nimport zipfile\n\n\ndef main():\n    parser = argparse.ArgumentParser(description=__doc__)\n    parser.add_argument(\"--repo\", type=Path, required=True)\n    parser.add_argument(\"--output\", type=Path, required=True)\n    args = parser.parse_args()\n    root = args.repo.resolve()\n    paths = subprocess.check_output(\n        [\"git\", \"ls-files\", \"-c\", \"-o\", \"--exclude-standard\", \"-z\"], cwd=root\n    ).decode().split(\"\\0\")\n    prefixes = (\n        \"src/\", \"tests/\", \"specs/\", \"implementation/phase-9-grcv4/\",\n        \"implementation/investigations/grc9v4-constitutive-design/\",\n        \"implementation/Phase-9-GRCV4-\",\n    )\n    metadata = {\"README.md\", \"LICENSE\", \"pyproject.toml\", \"MANIFEST.in\"}\n    names = sorted({p for p in paths if p and (p in metadata or p.startswith(prefixes))})\n    manifest = {\n        \"schema\": \"p932_review_packet_v1\",\n        \"base_commit\": subprocess.check_output(\n            [\"git\", \"rev-parse\", \"HEAD\"], cwd=root, text=True\n        ).strip(),\n        \"scope\": \"current source and retained audit evidence; no Git history, virtual environments, dependency wheels, managed browsers or generated tool receipts\",\n        \"authority_limit\": \"standalone numerical reconstruction only; historical acceptance and permission replay require the declared Git baseline and its protected tree\",\n        \"files\": [],\n    }\n\n    def write(archive, name, data):\n        entry = zipfile.ZipInfo(name, date_time=(1980, 1, 1, 0, 0, 0))\n        entry.compress_type = zipfile.ZIP_DEFLATED\n        entry.external_attr = 0o100644 << 16\n        archive.writestr(entry, data)\n\n    with zipfile.ZipFile(args.output, mode=\"x\", compression=zipfile.ZIP_DEFLATED) as archive:\n        for name in names:\n            path = root / name\n            if path.is_symlink() or not path.is_file():\n                raise ValueError(f\"non-regular packet input: {name}\")\n            data = path.read_bytes()\n            manifest[\"files\"].append({\n                \"path\": name, \"sha256\": hashlib.sha256(data).hexdigest(), \"bytes\": len(data)\n            })\n            write(archive, name, data)\n        write(archive, \"BUNDLE-MANIFEST.json\", (json.dumps(manifest, indent=2) + \"\\n\").encode())\n    print(json.dumps({\n        \"files\": len(names), \"bytes\": args.output.stat().st_size,\n        \"sha256\": hashlib.sha256(args.output.read_bytes()).hexdigest(),\n    }, sort_keys=True))\n\n\nif __name__ == \"__main__\":\n    main()\n"
+    }
+  ]
+}

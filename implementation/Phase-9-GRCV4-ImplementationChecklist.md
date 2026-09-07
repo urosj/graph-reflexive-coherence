@@ -380,17 +380,111 @@ three bounded batches retain their own results and raw per-run manifests.
 
 ## Tranche 3. Typed graph, geometry, transport, and charge
 
-- [ ] P9-3.1: Implement deterministic graph/differential identities, typed
+- [x] P9-3.1: Implement deterministic graph/differential identities, typed
   Hodge/one-form/physical-flux maps, and candidate-local mobility ownership.
   Resolve graph-backend storage/lookup and utility reuse before implementation (§7.2).
-- [ ] P9-3.2: Implement exact stage/cache provenance and domain admission.
-- [ ] P9-3.3: Implement the one-resource-write complete-step boundary and
+  [Review](./phase-9-grcv4/tranche-3/P9-3.1-Review.md) and
+  [execution](./phase-9-grcv4/tranche-3/P9-3.1-ExecutionRecord.json): implemented
+  primitive graph/pairing/mobility foundations, pending user review. Entry
+  follows the separate [P9-2.6 acceptance](./phase-9-grcv4/tranche-2/P9-2.6-AcceptanceRecord.json).
+  Completion does not accept P9-3.1, admit a profile, or enable P9-3.2.
+  Audit 1 F1 is corrected with exact local positivity validation: native
+  before/after evidence, 876/876 independent stress scenarios and 67 primitive
+  tests including isolated wheel/source installations are bound in the review.
+  Signed boundary cases, exact nonpositive families and positive extreme-scale
+  controls are included; conditioning and stage admission remain separate.
+- [x] P9-3.2: Implement exact stage/cache provenance and domain admission.
+  [Review](./phase-9-grcv4/tranche-3/P9-3.2-Review.md) and
+  [execution](./phase-9-grcv4/tranche-3/P9-3.2-ExecutionRecord.json): local reference,
+  affine positive-geometry and stage/cache implementation. Accepted at `77286b2`;
+  the separate [P9-3.2 acceptance record](./phase-9-grcv4/tranche-3/P9-3.2-AcceptanceRecord.json)
+  preserves that decision without rewriting historical review evidence.
+  Entry follows explicit P9-3.1 acceptance at `dccb1ca`, preserved in the
+  separate [acceptance record](./phase-9-grcv4/tranche-3/P9-3.1-AcceptanceRecord.json).
+  Historical preparation statements above do not override that later decision.
+  Full candidate/root/PC invariant-domain and transaction execution remain with
+  their assigned later leaves. No numerical profile is admitted.
+- [x] P9-3.3: Implement the one-resource-write complete-step boundary and
   exact charge gate, without an extra remainder/repair coordinate.
-- [ ] P9-3.4: Execute nonidentity SPD, permutation, signed-edge covariance,
+  [Review](./phase-9-grcv4/tranche-3/P9-3.3-Review.md) and
+  [execution](./phase-9-grcv4/tranche-3/P9-3.3-ExecutionRecord.json): one provisional
+  continuity evaluation after a bound supplied current result, exact charge
+  inequality after the prescribed binary64 tree, no resource repair, and local
+  zero-duration identity. Explicitly accepted by the user for commit after
+  audit follow-up and evidence cleanup. P9-3.4's committed-subject permission
+  transition remains separate. Actual root
+  selection, final reconstruction, writers and atomic commit remain with the
+  full-step/lifecycle owners; no numerical runtime profile is advertised.
+  First audit follow-up: native independent driver 701/701, eight mutation
+  controls detected, and 96 transport/step methods including both clean
+  resource package/reconstruction tests pass. Six added regressions preserve
+  charge precision limits and charge-blind flow/authority controls. Executable
+  numerical logic is unchanged; the review links reconstructible audit inputs
+  and a complete packet exporter. The retained numerical limitations remain
+  assigned to P9-3.4 and the later experimental/transaction owners.
+- [x] P9-3.4: Execute nonidentity SPD, permutation, signed-edge covariance,
   nonfinite/domain, stale-cache, and charge-precision cases.
   Include near-admitted conditioning boundaries and repeated eigenvalues
   within a strictly separated cluster; compare invariant projectors (§7.4).
-- [ ] P9-3.5: Verify full prestate preservation after every rejected operation.
+  Carry the [P9-3.2 audit numerical witness](./phase-9-grcv4/evidence/P9-3.2/audit-1-followup/run.json):
+  adjacent-edge form `(5e-324, 1e150)` loses a representable off-diagonal
+  coupling through intermediate underflow; reversing edge order retains it.
+  Compare componentwise and normwise error, signed/permuted coordinates,
+  true underflow, and overflow before declaring the numerical envelope or
+  changing product evaluation. This follow-through is not discharged by the
+  moderate-scale covariance tests and adds no P9-3.3 prerequisite.
+  Carry the [P9-3.3 paired precision witnesses](./phase-9-grcv4/tranche-3/P9-3.3-Review.md#independent-audit-follow-up):
+  `(2**53, 0)` with unit flux and duration `0.5` admits `(2**53, 0.5)`
+  at zero rounded residual despite exact stored-sum growth `1/2`; the existing
+  four-vertex exact-conservative transfer instead rejects with residual `2`.
+  Include `(1e20, 0)` and 100 primitive continuity compositions, subnormal
+  transfers, cancellation-heavy/high-degree divergence and safe-order controls.
+  Declare the aggregation/environment envelope before broader covariance or
+  experimental conservation claims. Zero rounded residual is not exact
+  stored-sum conservation; diagnostic exact sums must not become hidden state,
+  resource repair or an alternate admission rule. Primitive compositions are
+  not executed full beats. The product correction and remaining precision
+  boundaries are recorded in the review below.
+  [Review](./phase-9-grcv4/tranche-3/P9-3.4-Review.md) and
+  [execution](./phase-9-grcv4/tranche-3/P9-3.4-ExecutionRecord.json): implemented
+  and verified; explicitly accepted by the user for commit after audit follow-up
+  and evidence consolidation. P9-3.5's separate permission transition will bind
+  the accepted commit. Corrected intermediate product underflow;
+  retained true-underflow/rounded-PSD and charge/aggregation limits. The
+  original full suite passes 1,653 tests, no skips; a separate added method passes
+  288 dense near-gap projector actions. Audit follow-up: 1,662 current native
+  tests, no failures/errors/skips, and 568 independent native scenarios pass.
+  Verified 137 authority, 20 JavaScript and 18 browser checks, exact source reconstruction and unchanged earlier evidence.
+  These primitive and analysis results do not execute the future C selector,
+  current block, complete beat or lifecycle transaction. The
+  [audit follow-up](./phase-9-grcv4/tranche-3/P9-3.4-Review.md#independent-audit-follow-up)
+  closes capture coverage and provenance/diagnostic integrity gaps. Exact-SPD
+  input can still evaluate negative/zero self-pairings: P9-4.2/P9-4.5 and later
+  norm/energy consumers own demonstrated numerical validity at that boundary,
+  with no clipping, floor or absolute-value repair. Actual selectors must cover
+  both sides of the declared cutoff, the exact boundary and strict-gap loss;
+  retained conditioning must not be relabeled as physical conditioning.
+  Its committed acceptance at `12611fe` is now bound by the
+  [successor entry record](./phase-9-grcv4/tranche-3/P9-3.4-AcceptanceRecord.json).
+- [x] P9-3.5: Verify full prestate preservation after every rejected operation.
+  [Review](./phase-9-grcv4/tranche-3/P9-3.5-Review.md) and
+  [execution](./phase-9-grcv4/tranche-3/P9-3.5-ExecutionRecord.json): implementation
+  and validation complete; explicitly accepted by the user for commit after
+  the limited audit follow-up. The original full capture passed all 1,675
+  regression methods with zero failures, errors or skips. Observe full reachable
+  inputs at implemented local rejection boundaries, including both histories,
+  ordered receipts, request/current selection, provisional results and caches.
+  Constructor/wire failures and harness mutation controls remain separately
+  identified. Real complete-beat and lifecycle rollback retain P9-4.5/P9-4.7a
+  and P9-7.* ownership. Eleven leaves and 23 runtime paths are dependency-ready;
+  runtime profile support remains empty.
+  The limited independent audit's skip-reporting finding is corrected;
+  all 20 focused follow-up methods passed. The original full run remains
+  separately identified. The limited external audit did not complete the primary
+  preservation review; user acceptance does not change that audit's scope.
+  The bound review and execution record retain their pre-acceptance state.
+  A later authorized entry will bind P9-3.5's accepted commit separately;
+  no Tranche 4 work is started by this acceptance.
 
 ## Tranche 4. D11-C and the first C_OS runtime slice
 

@@ -1,0 +1,231 @@
+{
+  "schema": "phase9_leaf_run_v1",
+  "iteration_id": "P9-3.3",
+  "started_utc": "2026-09-07T11:23:08.965924+00:00",
+  "status": "passed",
+  "subject_inputs": "inputs.json",
+  "python": "3.12.3 (main, Jul 15 2026, 23:46:41) [GCC 13.3.0]",
+  "platform": "Linux-5.15.167-0515167-generic-x86_64-with-glibc2.39",
+  "dependencies": [
+    "Jinja2==3.1.6",
+    "MarkupSafe==3.0.3",
+    "PyYAML==6.0.3",
+    "Pygments==2.20.0",
+    "ast_serialize==0.9.0",
+    "asttokens==3.0.2",
+    "attrs==26.1.0",
+    "build==1.6.0",
+    "contourpy==1.3.3",
+    "cycler==0.12.1",
+    "decorator==5.3.1",
+    "executing==2.2.1",
+    "fonttools==4.63.0",
+    "ipython==9.15.0",
+    "ipython_pygments_lexers==1.1.1",
+    "jedi==0.20.0",
+    "jsonpickle==4.1.2",
+    "jsonschema-specifications==2025.9.1",
+    "jsonschema==4.26.0",
+    "kiwisolver==1.5.0",
+    "librt==0.15.0",
+    "matplotlib-inline==0.2.2",
+    "matplotlib==3.11.1",
+    "mypy==2.1.0",
+    "mypy_extensions==1.1.0",
+    "networkx==3.6.1",
+    "numpy==2.4.6",
+    "packaging==26.2",
+    "parso==0.8.7",
+    "pathspec==1.1.1",
+    "pexpect==4.9.0",
+    "pillow==12.3.0",
+    "pip==24.0",
+    "prompt_toolkit==3.0.52",
+    "psutil==7.2.2",
+    "ptyprocess==0.7.0",
+    "pure_eval==0.2.3",
+    "pygrc==0.1",
+    "pygrc==0.1",
+    "pyparsing==3.3.2",
+    "pyproject_hooks==1.2.0",
+    "python-dateutil==2.9.0.post0",
+    "pyvis==0.3.2",
+    "referencing==0.37.0",
+    "rfc8785==0.1.4",
+    "rpds-py==2026.6.3",
+    "ruff==0.15.16",
+    "setuptools==84.0.0",
+    "six==1.17.0",
+    "stack-data==0.6.3",
+    "traitlets==5.15.1",
+    "typing_extensions==4.16.0",
+    "wcwidth==0.8.2",
+    "wheel==0.48.0"
+  ],
+  "environment": {
+    "GRCV4_PACKAGE_TESTS": "1",
+    "GRCV4_WHEELHOUSE": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/generated/phase9-portability/temporary/grcv4-p931-wheelhouse",
+    "PYTHONHASHSEED": null
+  },
+  "commands": [
+    {
+      "argv": [
+        "<venv-python>",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-t",
+        "."
+      ],
+      "cwd": "<checkout>",
+      "exit_status": 0,
+      "elapsed_seconds": 828.653,
+      "tests_run": 1632,
+      "output": ".....................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................\n----------------------------------------------------------------------\nRan 1632 tests in 826.725s\n\nOK\n"
+    },
+    {
+      "argv": [
+        "<venv-python>",
+        "-m",
+        "ruff",
+        "check",
+        "src/pygrc/models/grc_v4_transport.py",
+        "src/pygrc/models/grc_v4_step.py",
+        "tests/models/test_grc_v4_transport.py",
+        "tests/models/test_grc_v4_step.py"
+      ],
+      "cwd": "<checkout>",
+      "exit_status": 0,
+      "elapsed_seconds": 0.032,
+      "tests_run": null,
+      "output": "All checks passed!\n"
+    },
+    {
+      "argv": [
+        "<venv-python>",
+        "-m",
+        "mypy",
+        "--strict",
+        "src/pygrc/models/grc_v4_transport.py",
+        "src/pygrc/models/grc_v4_step.py",
+        "tests/models/test_grc_v4_transport.py",
+        "tests/models/test_grc_v4_step.py"
+      ],
+      "cwd": "<checkout>",
+      "exit_status": 0,
+      "elapsed_seconds": 0.346,
+      "tests_run": null,
+      "output": "Success: no issues found in 4 source files\n"
+    },
+    {
+      "argv": [
+        "<venv-python>",
+        "-m",
+        "pip",
+        "check"
+      ],
+      "cwd": "<checkout>",
+      "exit_status": 0,
+      "elapsed_seconds": 0.773,
+      "tests_run": null,
+      "output": "No broken requirements found.\nWARNING: The directory '<user-cache>/pip' or its parent directory is not owned or is not writable by the current user. The cache has been disabled. Check the permissions and owner of that directory. If executing pip with sudo, you should use sudo's -H flag.\n"
+    }
+  ],
+  "claim_ceiling": "local resource/charge boundary, regression and installed reconstruction; supplied current results are not root certificates or full runtime support",
+  "forensic_queries": [
+    {
+      "operation": "contract_provenance",
+      "contract_id": "D10.2-EC-PARENT-CORE-GENERAL-CHARGE",
+      "trace_digest": "602532b22f3ab69fa9fd4ef863195b0b11743ec4d85d3c46657e302f600b4c43",
+      "source_bundle_digest": "98c273b3cc097f0d95adfba98ed7dfac0ac494dce9e779bb4b04fe79fef4f6aa",
+      "authority_extension_digest": "833acc5988761f8ba68ca573ad270bf7c87cf2fe32061336a71e42647968630a",
+      "source_ref": {
+        "record_id": "GRC9V4-CD-D10.2-v1",
+        "record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+        "source_json_pointer": "/normative_equation_contract_registry/2",
+        "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D10_2FullSubstrateProvenanceAndPromotionAudit.json"
+      },
+      "support_disposition": "indeterminate_requires_review"
+    },
+    {
+      "operation": "contract_provenance",
+      "contract_id": "D10.2-EC-PARENT-CORE-INCIDENCE-CONTINUITY",
+      "trace_digest": "cbbf36b7f1f604259a3b03fef0f2da170f4b8ba821cba2c71a5d3307621ad102",
+      "source_bundle_digest": "98c273b3cc097f0d95adfba98ed7dfac0ac494dce9e779bb4b04fe79fef4f6aa",
+      "authority_extension_digest": "833acc5988761f8ba68ca573ad270bf7c87cf2fe32061336a71e42647968630a",
+      "source_ref": {
+        "record_id": "GRC9V4-CD-D10.2-v1",
+        "record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+        "source_json_pointer": "/normative_equation_contract_registry/1",
+        "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D10_2FullSubstrateProvenanceAndPromotionAudit.json"
+      },
+      "support_disposition": "indeterminate_requires_review"
+    },
+    {
+      "operation": "contract_provenance",
+      "contract_id": "D10.2-EC-PARENT-L-AUTHORITATIVE-CURRENT",
+      "trace_digest": "34ee0a81f2aeaad781ec2fa6093e73cd0d7fc6e470874907866d0c5cedde0635",
+      "source_bundle_digest": "98c273b3cc097f0d95adfba98ed7dfac0ac494dce9e779bb4b04fe79fef4f6aa",
+      "authority_extension_digest": "833acc5988761f8ba68ca573ad270bf7c87cf2fe32061336a71e42647968630a",
+      "source_ref": {
+        "record_id": "GRC9V4-CD-D10.2-v1",
+        "record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+        "source_json_pointer": "/normative_equation_contract_registry/41",
+        "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D10_2FullSubstrateProvenanceAndPromotionAudit.json"
+      },
+      "support_disposition": "indeterminate_requires_review"
+    },
+    {
+      "operation": "contract_provenance",
+      "contract_id": "D10.2-EC-PARENT-L-CONTINUITY-WRITE",
+      "trace_digest": "3466595cbe59185e029a3e7981c30071db6a4e94c95d5650cbb8f557a36da5a8",
+      "source_bundle_digest": "98c273b3cc097f0d95adfba98ed7dfac0ac494dce9e779bb4b04fe79fef4f6aa",
+      "authority_extension_digest": "833acc5988761f8ba68ca573ad270bf7c87cf2fe32061336a71e42647968630a",
+      "source_ref": {
+        "record_id": "GRC9V4-CD-D10.2-v1",
+        "record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+        "source_json_pointer": "/normative_equation_contract_registry/42",
+        "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D10_2FullSubstrateProvenanceAndPromotionAudit.json"
+      },
+      "support_disposition": "indeterminate_requires_review"
+    },
+    {
+      "operation": "contract_provenance",
+      "contract_id": "D10.2-EC-PARENT-L-POSTCONTINUITY-REFRESH",
+      "trace_digest": "b2ddb14405072cd64fd1fed45e78bfd1080611346a12cab71aa1217260e291fc",
+      "source_bundle_digest": "98c273b3cc097f0d95adfba98ed7dfac0ac494dce9e779bb4b04fe79fef4f6aa",
+      "authority_extension_digest": "833acc5988761f8ba68ca573ad270bf7c87cf2fe32061336a71e42647968630a",
+      "source_ref": {
+        "record_id": "GRC9V4-CD-D10.2-v1",
+        "record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+        "source_json_pointer": "/normative_equation_contract_registry/43",
+        "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D10_2FullSubstrateProvenanceAndPromotionAudit.json"
+      },
+      "support_disposition": "indeterminate_requires_review"
+    },
+    {
+      "operation": "contract_provenance",
+      "contract_id": "D10.2-EC-CHARGE-BUDGET-STAGE",
+      "trace_digest": "27941fc947ff776e705eda1657f5d5e8c7ff43072744d2c4d681a074d178dc4c",
+      "source_bundle_digest": "98c273b3cc097f0d95adfba98ed7dfac0ac494dce9e779bb4b04fe79fef4f6aa",
+      "authority_extension_digest": "833acc5988761f8ba68ca573ad270bf7c87cf2fe32061336a71e42647968630a",
+      "source_ref": {
+        "record_id": "GRC9V4-CD-D10.2-v1",
+        "record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+        "source_json_pointer": "/normative_equation_contract_registry/71",
+        "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D10_2FullSubstrateProvenanceAndPromotionAudit.json"
+      },
+      "support_disposition": "indeterminate_requires_review"
+    }
+  ],
+  "forensic_loader": "grcv4_explorer.successor.load_successor_forensic_context",
+  "source_unchanged_during_run": true,
+  "completed_utc": "2026-09-07T11:37:01.400263+00:00",
+  "artifacts": {
+    "actual.json": "f3ac7b2e16cf1112bc5b3e348e9b38aadfdddba576b92014b2a77e0fe2c7644d",
+    "inputs.json": "20cb16e35b282eb3459ca4e6934711e771df8a7897bf45c3946c8a6ae6dbcf87"
+  },
+  "path_presentation": "implementation/phase-9-grcv4/verification/Phase9PathPresentation.json"
+}

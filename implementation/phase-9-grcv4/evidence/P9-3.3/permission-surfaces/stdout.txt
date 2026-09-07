@@ -1,0 +1,173 @@
+authority
+PHASE9_G1_PRESSURE_PASS cases=122 accepted_permission=true conformance_claimed=false live_runtime_unchanged=true
+
+
+surfaces
+PHASE9_NOTEBOOK_PASS cells=2 API_identity=byte_exact runtime_authorized=true P9_G1=accepted runtime_support=empty
+TAP version 13
+# Subtest: planning is not runtime and lacks a recorded pass
+ok 1 - planning is not runtime and lacks a recorded pass
+  ---
+  duration_ms: 8.180328
+  type: 'test'
+  ...
+# Subtest: runtime/support promotion rejected
+ok 2 - runtime/support promotion rejected
+  ---
+  duration_ms: 0.759209
+  type: 'test'
+  ...
+# Subtest: unrecognized and contradictory status rejected
+ok 3 - unrecognized and contradictory status rejected
+  ---
+  duration_ms: 0.428043
+  type: 'test'
+  ...
+# Subtest: modified payload with stale digest rejected
+ok 4 - modified payload with stale digest rejected
+  ---
+  duration_ms: 2.505186
+  type: 'test'
+  ...
+# Subtest: explicit failed-closed result is valid but never a pass
+ok 5 - explicit failed-closed result is valid but never a pass
+  ---
+  duration_ms: 0.785924
+  type: 'test'
+  ...
+# Subtest: canonical planning JSON is key-order independent
+ok 6 - canonical planning JSON is key-order independent
+  ---
+  duration_ms: 0.186253
+  type: 'test'
+  ...
+# Subtest: full probe IDs sharing a prefix cannot collide and assertion never changes candidate
+ok 7 - full probe IDs sharing a prefix cannot collide and assertion never changes candidate
+  ---
+  duration_ms: 2.460561
+  type: 'test'
+  ...
+# Subtest: missing null and unrecognized permission cannot substitute for false
+ok 8 - missing null and unrecognized permission cannot substitute for false
+  ---
+  duration_ms: 0.328786
+  type: 'test'
+  ...
+# Subtest: accepted G1 permission does not imply accepted profile support
+ok 9 - accepted G1 permission does not imply accepted profile support
+  ---
+  duration_ms: 3.883782
+  type: 'test'
+  ...
+# Subtest: failed G1 boundary cannot retain permission even with a recomputed digest
+ok 10 - failed G1 boundary cannot retain permission even with a recomputed digest
+  ---
+  duration_ms: 1.683131
+  type: 'test'
+  ...
+# Subtest: missing and invalid handoff evidence do not change accepted permission
+ok 11 - missing and invalid handoff evidence do not change accepted permission
+  ---
+  duration_ms: 2.477675
+  type: 'test'
+  ...
+# Subtest: current work can be held while historical acceptance remains verified
+ok 12 - current work can be held while historical acceptance remains verified
+  ---
+  duration_ms: 1.119762
+  type: 'test'
+  ...
+# Subtest: committed foundation acceptance does not accept request work or conformance
+ok 13 - committed foundation acceptance does not accept request work or conformance
+  ---
+  duration_ms: 0.93142
+  type: 'test'
+  ...
+# Subtest: request acceptance cannot be missing or promote result work
+ok 14 - request acceptance cannot be missing or promote result work
+  ---
+  duration_ms: 0.624557
+  type: 'test'
+  ...
+# Subtest: result acceptance cannot be missing or accept harness work
+ok 15 - result acceptance cannot be missing or accept harness work
+  ---
+  duration_ms: 0.887183
+  type: 'test'
+  ...
+# Subtest: harness acceptance cannot be missing or accept integration work
+ok 16 - harness acceptance cannot be missing or accept integration work
+  ---
+  duration_ms: 0.738348
+  type: 'test'
+  ...
+# Subtest: integration acceptance cannot be missing, forged or accept geometry work
+ok 17 - integration acceptance cannot be missing, forged or accept geometry work
+  ---
+  duration_ms: 2.379267
+  type: 'test'
+  ...
+# Subtest: geometry acceptance cannot be missing, forged or accept stage work
+ok 18 - geometry acceptance cannot be missing, forged or accept stage work
+  ---
+  duration_ms: 0.794142
+  type: 'test'
+  ...
+# Subtest: stage acceptance cannot be missing, forged or accept stage work
+ok 19 - stage acceptance cannot be missing, forged or accept stage work
+  ---
+  duration_ms: 0.903148
+  type: 'test'
+  ...
+1..19
+# tests 19
+# suites 0
+# pass 19
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 42.152926
+PHASE9_G1_SURFACES_PASS API_notebook_identity=byte_exact negative_candidate=rejected P9_G1=accepted runtime_support=empty
+
+
+browser-authorized
+
+Running 18 tests using 1 worker
+
+(node:324563) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+(node:324563) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/18] [desktop] › browser.spec.mjs:24:1 › live API, source bindings, leaf states and downloadable JSON agree
+[2/18] [desktop] › browser.spec.mjs:75:1 › archive availability is visible without revoking acceptance or blocking export
+[3/18] [desktop] › browser.spec.mjs:93:1 › a current source failure holds work but preserves the recorded acceptance display
+[4/18] [desktop] › browser.spec.mjs:107:1 › refresh failure removes stale success and disables download
+[5/18] [desktop] › browser.spec.mjs:120:1 › forged runtime payload and changed digest fail closed
+[6/18] [desktop] › browser.spec.mjs:131:1 › server exposes no write or arbitrary repository read route
+[7/18] [desktop] › browser.spec.mjs:137:1 › actual negative assertion and future fixture keep their subjects through UI and export
+[8/18] [desktop] › browser.spec.mjs:161:1 › older subject A finishing after B cannot overwrite B
+[9/18] [desktop] › browser.spec.mjs:180:1 › failed probe refresh clears assertion and candidate; unknown full ID is not a neighbor
+(node:330988) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+(node:330988) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[10/18] [mobile] › browser.spec.mjs:24:1 › live API, source bindings, leaf states and downloadable JSON agree
+[11/18] [mobile] › browser.spec.mjs:75:1 › archive availability is visible without revoking acceptance or blocking export
+[12/18] [mobile] › browser.spec.mjs:93:1 › a current source failure holds work but preserves the recorded acceptance display
+[13/18] [mobile] › browser.spec.mjs:107:1 › refresh failure removes stale success and disables download
+[14/18] [mobile] › browser.spec.mjs:120:1 › forged runtime payload and changed digest fail closed
+[15/18] [mobile] › browser.spec.mjs:131:1 › server exposes no write or arbitrary repository read route
+[16/18] [mobile] › browser.spec.mjs:137:1 › actual negative assertion and future fixture keep their subjects through UI and export
+[17/18] [mobile] › browser.spec.mjs:161:1 › older subject A finishing after B cannot overwrite B
+[18/18] [mobile] › browser.spec.mjs:180:1 › failed probe refresh clears assertion and candidate; unknown full ID is not a neighbor
+  18 passed (2.4m)
+PHASE9_BROWSER_PASS projects=desktop,mobile screenshots=4 API_download_identity=byte_exact

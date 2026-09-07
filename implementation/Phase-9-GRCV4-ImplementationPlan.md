@@ -252,6 +252,14 @@ supporting evidence remains immutable; no new gate or per-attempt process is
 introduced. Historical blanket retention wording remains as-recorded and is
 superseded by this clarification.
 
+The user-requested [prospective evidence workflow](./phase-9-grcv4/tranche-1/P9-1.9-EvidenceHandoff.md#prospective-evidence-workflow)
+records the direction for subsequent leaves: one readable claim-to-check index,
+one manifest per retained execution, small runnable reproducers, selective
+supporting outputs, Git references for committed source and capture alongside
+execution. Preserve published evidence and simplify future collection. Shared
+capture automation remains follow-through work; this note does not claim it
+has been implemented or add a new acceptance gate.
+
 P9-1.1–P9-1.3 are prepared as the first controlled
 [review package](./phase-9-grcv4/tranche-1/P9-1.1-1.3-Review.md), with separate
 iteration results, a reproducible source crosswalk, all 31 debt records, and
@@ -497,6 +505,120 @@ The review reconciles every guide section with a current check or its precise
 later owner. Production, older families, accepted claims and release stay fixed.
 
 ### Tranche 3. Typed graph, geometry, transport, and charge
+
+P9-3.1 now follows the separately recorded P9-2.6 acceptance at committed
+subject `5307343`; the user explicitly requested this entry. Historical
+P9-2.6 review states above remain evidence of their original review time.
+The [P9-3.1 review](./phase-9-grcv4/tranche-3/P9-3.1-Review.md) binds the
+source/spec/paper/forensic map, immutable stable-ID lookup decision, typed
+pairings and flat/sharp maps, candidate-owned factors and reconstruction
+checks. Its implementation is pending user review. Only P9-3.1 is newly
+eligible (seven dependency-ready leaves, twenty-three runtime paths);
+P9-3.2 and numerical support remain gated.
+
+The first independent audit's local positivity finding is corrected by exact
+dyadic Sylvester/Bareiss validation in both Hodge constructors. Native NumPy
+2.4.6 runs preserve the original 25 exposures and the corrected 876/876 stress
+result; 67 primitive tests pass, including clean wheel/source installations.
+The review records the proof, independent multidimensional/scale/permutation
+pressure, reconstruction inputs and exact remaining stage/conditioning gates.
+This correction does not accept P9-3.1 or change frozen mathematical policy.
+
+P9-3.2 follows the explicit P9-3.1 acceptance at committed subject `dccb1ca`,
+recorded separately in [P9-3.1 acceptance](./phase-9-grcv4/tranche-3/P9-3.1-AcceptanceRecord.json).
+The historical preparation states above remain unchanged in their original
+records. The [P9-3.2 review](./phase-9-grcv4/tranche-3/P9-3.2-Review.md) and
+[execution](./phase-9-grcv4/tranche-3/P9-3.2-ExecutionRecord.json) cover the bound
+reference/context geometry, affine domain, exact stage inputs and closed derived
+cache reconstruction. P9-3.2 is implemented pending user review; eight leaves
+are dependency-ready and twenty-three runtime paths eligible. P9-3.3 and
+numerical runtime support remain held. Candidate current regularity, full
+persistent-carrier invariant domains and complete-step admission keep their
+existing later owners.
+
+The independent P9-3.2 audit's mixed-scale star-assembly witness is retained
+as concrete P9-3.4 numerical-envelope work: `(5e-324, 1e150)` on adjacent
+ordinary edges loses a representable coupling in one edge order. The review
+distinguishes this componentwise loss from small normwise error and records
+native audit/package confirmation separately from the external qualified run.
+Additional CI/PC/CI+PC/RG2b realization work remains in Tranche 6 and does not
+become a new prerequisite of the immediate P9-3.3 charge step.
+
+P9-3.3 follows explicit acceptance of P9-3.2 at `77286b2`, preserved in
+[the P9-3.2 acceptance record](./phase-9-grcv4/tranche-3/P9-3.2-AcceptanceRecord.json).
+Earlier pending states above describe their original executions. The
+[P9-3.3 review](./phase-9-grcv4/tranche-3/P9-3.3-Review.md) maps the charge,
+continuity and selected-current boundary to exact spec/paper/tool sources and
+independent tests. Its [execution](./phase-9-grcv4/tranche-3/P9-3.3-ExecutionRecord.json)
+retains automated numerical/package and permission/surface validation.
+One provisional resource evaluation follows a full bound supplied current;
+nonnegative/finite/charge admission precedes final-consumer exposure. The
+prescribed binary64 tree and exact tolerance inequality retain the unchanged
+resource and no remainder. Root execution, final reconstruction, writers and
+atomic lifecycle commit retain their later owners. The user explicitly accepted
+P9-3.3 for commit after audit follow-up and evidence cleanup. The current
+permission adapter still has nine dependency-ready leaves and 23 eligible
+runtime paths; a later transition can bind the accepted commit for P9-3.4.
+Runtime support remains empty. The mixed-scale star witness and broader
+numerical-envelope work remain open. The next separately requested maintenance
+task is to remove P9-3.1's dependency on Downloads paths using repository-local
+evidence while preserving audit provenance, after the P9-3.3 commit.
+
+The P9-3.3 independent audit adds a paired conservation limit to that handoff:
+zero rounded residual can hide exact stored-coordinate sum growth, while an
+exact-conservative transfer can fail the prescribed rounded charge gate.
+The [leaf review](./phase-9-grcv4/tranche-3/P9-3.3-Review.md#independent-audit-follow-up)
+binds literal witnesses, native audit replay and mutation controls. P9-3.4 must
+characterize cancellation-heavy divergence and the charge/dynamic-range
+envelope; later experiments must distinguish rounded-policy compliance from
+exact conservation and primitive compositions from complete executed beats.
+No numerical repair or alternate charge rule is introduced by this audit.
+
+P9-3.4 follows the committed P9-3.3 acceptance at `ce83d7a`, preserved in
+[its separate record](./phase-9-grcv4/tranche-3/P9-3.3-AcceptanceRecord.json).
+The P9-3.1 repository-reference maintenance mentioned above was completed in
+`9409252`. The [P9-3.4 review](./phase-9-grcv4/tranche-3/P9-3.4-Review.md) maps
+nonidentity SPD solves, conditioning, repeated-cluster projectors, signed
+coordinates, domain/cache failures and charge precision to independent checks.
+The star witness is corrected by an exact represented product with one final
+binary64 rounding and a new derived-assembly identity; true final underflow,
+rounded PSD loss and aggregation overflow remain explicit numerical limits.
+The original full run passes 1,653 tests with no skips; a separate test-only
+follow-up adds 288 dense near-gap projector actions. The audit follow-up passes
+the full current 1,662-method roster with no failures, errors or skips and all
+568 native independent scenarios. Permission/surface checks pass
+137 authority, 20 JavaScript and 18 browser tests. Ten leaves and 23 runtime
+paths are dependency-ready; P9-3.5 and runtime support remain held. The leaf
+is implemented, verified and explicitly accepted by the user for commit after
+audit follow-up and evidence consolidation. This accepts the bounded P9-3.4
+implementation; runtime profile support remains empty. P9-3.5's separate
+permission transition can bind the accepted commit.
+The [independent audit follow-up](./phase-9-grcv4/tranche-3/P9-3.4-Review.md#independent-audit-follow-up)
+closes the capture-coverage gap with a reviewed exact test roster, structured
+outcomes, run-local diagnostics, loaded-source checks and validated provenance.
+It retains the exact-SPD/nonpositive-computed-pairing witness for both Hodge
+types. P9-4.2/P9-4.5 and later norm/energy consumers must execute their numerical
+validity policy against it; no clipping or positivity repair is authorized.
+Actual selector coverage must test both sides of the cutoff, its exact boundary,
+strict-gap loss and physical-versus-retained conditioning.
+
+P9-3.5 entry now binds P9-3.4's accepted commit `12611fe` in
+[its acceptance record](./phase-9-grcv4/tranche-3/P9-3.4-AcceptanceRecord.json),
+advancing the earlier ten-leaf permission state to eleven ready leaves with
+the same 23 eligible runtime paths. The
+[P9-3.5 review](./phase-9-grcv4/tranche-3/P9-3.5-Review.md) maps complete captured
+prestate preservation to implemented local rejection boundaries, pre-operation
+reconstruction failures and independent observer controls. The original full
+capture passed all 1,675 regression methods and the permission/surface checks.
+The limited audit follow-up corrected skip-name reporting and expanded observer
+pressure; all 20 focused methods passed. Implementation and validation are
+complete, and the user explicitly accepted P9-3.5 for commit after that follow-up.
+The bound review and execution record preserve their pre-acceptance state.
+The external audit's primary-source review remains incomplete; this acceptance
+does not extend its findings. Tranche 3's five leaves are accepted within their
+recorded scopes. A later authorized entry will bind P9-3.5's accepted commit;
+P9-4.1 has not started. Runtime support remains empty, and real complete-step
+and lifecycle rollback remain later obligations.
 
 Implement deterministic graph order/orientation, differential identity,
 one-form versus physical-flux maps, Hodge pairings, candidate-local mobility,

@@ -1,0 +1,2222 @@
+{
+  "pressure": {
+    "run_id": "p9-g1-7c1ec776253346279e42e618e12ec6d8",
+    "report_digest": "818e8ce1d946d9bf267b3f450d86485e374754044f70075052efb82a8b74ec7f",
+    "policy_digest": "cf8fec71d071c4e499abf93f81f71f688f115ea3f6c77e45c63d3e7eee67f4c7",
+    "tree": {
+      "current_artifact_digest": "49fd5f4c672b40de726c5ab06c2e0744f8b694a7e3deeab854aefcb9491252d6",
+      "protected_baseline_files": 725,
+      "registered_runtime_files": 173
+    },
+    "passed": 122,
+    "failed": 0,
+    "runtime_conformance_claimed": false
+  },
+  "case_outcomes": [
+    {
+      "case_id": "accepted_G1_current_tree",
+      "candidate_decision": "admitted",
+      "assertion_result": "passed",
+      "expected_reason": null,
+      "actual_reason": "exact accepted scope admitted",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "corrupt_handoff_does_not_revoke_implementation_permission",
+      "candidate_decision": "admitted",
+      "assertion_result": "passed",
+      "expected_reason": null,
+      "actual_reason": "exact accepted scope admitted",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "missing_handoff_does_not_revoke_implementation_permission",
+      "candidate_decision": "admitted",
+      "assertion_result": "passed",
+      "expected_reason": null,
+      "actual_reason": "exact accepted scope admitted",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "portable_paths_cannot_change_dependencies",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "expected_reason": "portability amendment changed reviewed content",
+      "actual_reason": "portability amendment changed reviewed content: implementation/phase-9-grcv4/tranche-1/P9-1.4-1.5-ExecutionRecord.json",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "portable_paths_cannot_change_ownership",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "expected_reason": "portability amendment changed reviewed content",
+      "actual_reason": "portability amendment changed reviewed content: implementation/phase-9-grcv4/tranche-1/P9-1.4-1.5-ExecutionRecord.json",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "portable_opening_cannot_change_authority",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "expected_reason": "path normalization changed historical meaning",
+      "actual_reason": "path normalization changed historical meaning: implementation/Phase-9-GRCV4-PhaseOpening.json",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "portable_snapshot_cannot_change_content",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "expected_reason": "path normalization changed historical meaning",
+      "actual_reason": "path normalization changed historical meaning: implementation/phase-9-grcv4/verification/history/P9-1.6-ArtifactSnapshot.json",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "portable_checker_cannot_disable_claim_checks",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "expected_reason": "path normalization changed historical meaning",
+      "actual_reason": "path normalization changed historical meaning: implementation/investigations/grc9v4-constitutive-design/scripts/audit_grc9v4_d10_claim_topology.py",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "portable_review_input_must_match_original_hash",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "expected_reason": "planning review input bytes changed",
+      "actual_reason": "planning review input bytes changed",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "accepted_G1_exact_targets",
+      "candidate_decision": "admitted",
+      "assertion_result": "passed",
+      "expected_reason": null,
+      "actual_reason": "exact accepted scope admitted",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "accepted_G1_test_target",
+      "candidate_decision": "admitted",
+      "assertion_result": "passed",
+      "expected_reason": null,
+      "actual_reason": "exact accepted scope admitted",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "published_permitted_path_cannot_drop_registration",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "expected_reason": "published runtime/evidence deletion or rename forbidden",
+      "actual_reason": "published runtime/evidence deletion or rename forbidden",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "missing_acceptance",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "expected_reason": "P9-1.9-G1Acceptance.json",
+      "actual_reason": "missing protected file: implementation/phase-9-grcv4/tranche-1/P9-1.9-G1Acceptance.json",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "rehashed_expanded_acceptance",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "expected_reason": "untrusted P9-G1 acceptance",
+      "actual_reason": "untrusted P9-G1 acceptance",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "manifest_accepted_generic_runtime_support",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "expected_reason": "cannot grant conformance",
+      "actual_reason": "work manifest cannot grant conformance",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "manifest_admitted_specialization_support_sets",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "expected_reason": "cannot grant conformance",
+      "actual_reason": "work manifest cannot grant conformance",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "manifest_approval_digest",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "expected_reason": "stale work manifest",
+      "actual_reason": "stale work manifest",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "manifest_new_runtime_authority",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "expected_reason": "cannot add authority",
+      "actual_reason": "work manifest cannot add authority",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "GRC9V4_before_G3",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "expected_reason": "specialization requires accepted P9-G3",
+      "actual_reason": "specialization requires accepted P9-G3",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "GRC9V4_iteration_before_G3",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "expected_reason": "specialization requires accepted P9-G3",
+      "actual_reason": "specialization requires accepted P9-G3",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "unregistered_leaf",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "expected_reason": "unregistered work iteration",
+      "actual_reason": "unregistered work iteration",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "unreviewed_new_V4_module",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "expected_reason": "unapproved runtime or evidence target",
+      "actual_reason": "unapproved runtime or evidence target: src/pygrc/models/grc_v4_surprise.py",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "stale_work_bytes",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "expected_reason": "work content binding mismatch",
+      "actual_reason": "work content binding mismatch",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "combined_good_and_frozen_edit",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "expected_reason": "frozen bytes changed",
+      "actual_reason": "frozen bytes changed: specs/grc-v4-spec.md",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "legacy_bytes",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "expected_reason": "frozen bytes changed",
+      "actual_reason": "frozen bytes changed: src/pygrc/models/grc_9_v3.py",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "legacy_test_bytes",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "expected_reason": "frozen bytes changed",
+      "actual_reason": "frozen bytes changed: tests/core/test_capabilities.py",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "old_planning_policy",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "expected_reason": "immutable predecessor changed",
+      "actual_reason": "immutable predecessor changed: implementation/phase-9-grcv4/verification/Phase9VerificationSuccessor.json",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "additive_lazy_export",
+      "candidate_decision": "admitted",
+      "assertion_result": "passed",
+      "expected_reason": null,
+      "actual_reason": "exact accepted scope admitted",
+      "scope": "isolated_integration_contract_not_current_leaf_permission",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "eager_export_rejected",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "expected_reason": "unreviewed or eager V4 export",
+      "actual_reason": "unreviewed or eager V4 export",
+      "scope": "isolated_integration_contract_not_current_leaf_permission",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "legacy_export_rebinding",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "expected_reason": "legacy export prefix changed",
+      "actual_reason": "legacy export prefix changed",
+      "scope": "isolated_integration_contract_not_current_leaf_permission",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "additive_V4_dependency_extra",
+      "candidate_decision": "admitted",
+      "assertion_result": "passed",
+      "expected_reason": null,
+      "actual_reason": "exact accepted scope admitted",
+      "scope": "isolated_integration_contract_not_current_leaf_permission",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "unreviewed_dependency",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "expected_reason": "unreviewed V4 dependency",
+      "actual_reason": "unreviewed V4 dependency",
+      "scope": "isolated_integration_contract_not_current_leaf_permission",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "legacy_dependency_change",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "expected_reason": "non-additive dependency integration",
+      "actual_reason": "non-additive dependency integration",
+      "scope": "isolated_integration_contract_not_current_leaf_permission",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "exact_packaged_schema",
+      "candidate_decision": "admitted",
+      "assertion_result": "passed",
+      "expected_reason": null,
+      "actual_reason": "exact accepted scope admitted",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "changed_packaged_schema",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "expected_reason": "packaged accepted asset differs",
+      "actual_reason": "packaged accepted asset differs",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "runtime_mode",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "expected_reason": "unapproved executable runtime mode",
+      "actual_reason": "unapproved executable runtime mode",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "runtime_symlink",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "expected_reason": "symlink at protected path",
+      "actual_reason": "symlink at protected path: src/pygrc/models/grc_v4_state.py",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "normal_entry_forbidden_source",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "expected_reason": "unauthorized source/test/planning addition",
+      "actual_reason": "Traceback (most recent call last):\n  File \"implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/generated/phase9-portability/temporary/grcv4-p919-pressure-pjuc6p7n/repository/implementation/phase-9-grcv4/verification/audit_phase9_implementation.py\", line 157, in <module>\n    main()\n  File \"implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/generated/phase9-portability/temporary/grcv4-p919-pressure-pjuc6p7n/repository/implementation/phase-9-grcv4/verification/audit_phase9_implementation.py\", line 141, in main\n    result = verify(policy.ROOT, args.boundary_only)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/generated/phase9-portability/temporary/grcv4-p919-pressure-pjuc6p7n/repository/implementation/phase-9-grcv4/verification/audit_phase9_implementation.py\", line 75, in verify\n    boundary, tree = policy.current_boundary(root)\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/generated/phase9-portability/temporary/grcv4-p919-pressure-pjuc6p7n/repository/implementation/phase-9-grcv4/verification/phase9_implementation_policy.py\", line 721, in current_boundary\n    require(\n  File \"implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/generated/phase9-portability/temporary/grcv4-p919-pressure-pjuc6p7n/repository/implementation/phase-9-grcv4/verification/audit_phase9.py\", line 72, in require\n    raise ValueError(message)\nValueError: unauthorized source/test/planning addition: ['src/pygrc/models/not_reviewed.py']\n",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "normal_entry_accepted_G1",
+      "candidate_decision": "admitted",
+      "assertion_result": "passed",
+      "expected_reason": null,
+      "actual_reason": "exact accepted scope admitted",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "normal_entry_accepted_runtime_target",
+      "candidate_decision": "admitted",
+      "assertion_result": "passed",
+      "expected_reason": null,
+      "actual_reason": "exact accepted scope admitted",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "ready_identity_leaf",
+      "candidate_decision": "admitted",
+      "assertion_result": "passed",
+      "expected_reason": null,
+      "actual_reason": "exact accepted scope admitted",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "accepted_foundation_enables_request_leaf",
+      "candidate_decision": "admitted",
+      "assertion_result": "passed",
+      "expected_reason": null,
+      "actual_reason": "exact accepted scope admitted",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "charge_work_does_not_accept_next_leaf",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "expected_reason": "owning leaf entry dependencies are not accepted",
+      "actual_reason": "owning leaf entry dependencies are not accepted",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "accepted_requests_enable_result_owner_grc_v4_state",
+      "candidate_decision": "admitted",
+      "assertion_result": "passed",
+      "expected_reason": null,
+      "actual_reason": "exact accepted scope admitted",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "accepted_requests_enable_result_owner_grc_v4_step",
+      "candidate_decision": "admitted",
+      "assertion_result": "passed",
+      "expected_reason": null,
+      "actual_reason": "exact accepted scope admitted",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "accepted_results_enable_harness_owner_grcv4_conformance_harness",
+      "candidate_decision": "admitted",
+      "assertion_result": "passed",
+      "expected_reason": null,
+      "actual_reason": "exact accepted scope admitted",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "accepted_results_enable_harness_owner_grcv4_reference_oracles",
+      "candidate_decision": "admitted",
+      "assertion_result": "passed",
+      "expected_reason": null,
+      "actual_reason": "exact accepted scope admitted",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "accepted_integration_enables_grc_v4_geometry",
+      "candidate_decision": "admitted",
+      "assertion_result": "passed",
+      "expected_reason": null,
+      "actual_reason": "exact accepted scope admitted",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "accepted_integration_enables_grc_v4_transport",
+      "candidate_decision": "admitted",
+      "assertion_result": "passed",
+      "expected_reason": null,
+      "actual_reason": "exact accepted scope admitted",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "accepted_integration_enables_test_grc_v4_geometry",
+      "candidate_decision": "admitted",
+      "assertion_result": "passed",
+      "expected_reason": null,
+      "actual_reason": "exact accepted scope admitted",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "accepted_integration_enables_test_grc_v4_transport",
+      "candidate_decision": "admitted",
+      "assertion_result": "passed",
+      "expected_reason": null,
+      "actual_reason": "exact accepted scope admitted",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "accepted_geometry_enables_stage_owner_grc_v4_geometry",
+      "candidate_decision": "admitted",
+      "assertion_result": "passed",
+      "expected_reason": null,
+      "actual_reason": "exact accepted scope admitted",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "accepted_geometry_enables_stage_owner_test_grc_v4_geometry",
+      "candidate_decision": "admitted",
+      "assertion_result": "passed",
+      "expected_reason": null,
+      "actual_reason": "exact accepted scope admitted",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "accepted_stage_enables_charge_owner_grc_v4_transport",
+      "candidate_decision": "admitted",
+      "assertion_result": "passed",
+      "expected_reason": null,
+      "actual_reason": "exact accepted scope admitted",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "accepted_stage_enables_charge_owner_test_grc_v4_transport",
+      "candidate_decision": "admitted",
+      "assertion_result": "passed",
+      "expected_reason": null,
+      "actual_reason": "exact accepted scope admitted",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "accepted_stage_enables_charge_owner_grc_v4_step",
+      "candidate_decision": "admitted",
+      "assertion_result": "passed",
+      "expected_reason": null,
+      "actual_reason": "exact accepted scope admitted",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "accepted_stage_enables_charge_owner_test_grc_v4_step",
+      "candidate_decision": "admitted",
+      "assertion_result": "passed",
+      "expected_reason": null,
+      "actual_reason": "exact accepted scope admitted",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "accepted_harness_enables_export_owner",
+      "candidate_decision": "admitted",
+      "assertion_result": "passed",
+      "expected_reason": null,
+      "actual_reason": "exact accepted scope admitted",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "harness_acceptance_cannot_self_authorize_status",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "expected_reason": "untrusted harness acceptance",
+      "actual_reason": "untrusted harness acceptance",
+      "scope": "isolated_harness_acceptance_authentication",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "harness_acceptance_cannot_self_authorize_accepted_iterations",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "expected_reason": "untrusted harness acceptance",
+      "actual_reason": "untrusted harness acceptance",
+      "scope": "isolated_harness_acceptance_authentication",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "harness_acceptance_cannot_self_authorize_accepted_generic_runtime_support",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "expected_reason": "untrusted harness acceptance",
+      "actual_reason": "untrusted harness acceptance",
+      "scope": "isolated_harness_acceptance_authentication",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "harness_acceptance_cannot_self_authorize_baseline_commit",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "expected_reason": "untrusted harness acceptance",
+      "actual_reason": "untrusted harness acceptance",
+      "scope": "isolated_harness_acceptance_authentication",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "harness_acceptance_cannot_self_authorize_evidence_bindings",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "expected_reason": "untrusted harness acceptance",
+      "actual_reason": "untrusted harness acceptance",
+      "scope": "isolated_harness_acceptance_authentication",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "missing_integration_acceptance",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "expected_reason": "P9-2.6-AcceptanceRecord.json",
+      "actual_reason": "missing protected file: implementation/phase-9-grcv4/tranche-2/P9-2.6-AcceptanceRecord.json",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "integration_acceptance_cannot_self_authorize_status",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "expected_reason": "untrusted integration acceptance",
+      "actual_reason": "untrusted integration acceptance",
+      "scope": "isolated_integration_acceptance_authentication",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "integration_acceptance_cannot_self_authorize_accepted_iterations",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "expected_reason": "untrusted integration acceptance",
+      "actual_reason": "untrusted integration acceptance",
+      "scope": "isolated_integration_acceptance_authentication",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "integration_acceptance_cannot_self_authorize_accepted_generic_runtime_support",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "expected_reason": "untrusted integration acceptance",
+      "actual_reason": "untrusted integration acceptance",
+      "scope": "isolated_integration_acceptance_authentication",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "integration_acceptance_cannot_self_authorize_admitted_specialization_support_sets",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "expected_reason": "untrusted integration acceptance",
+      "actual_reason": "untrusted integration acceptance",
+      "scope": "isolated_integration_acceptance_authentication",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "integration_acceptance_cannot_self_authorize_baseline_commit",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "expected_reason": "untrusted integration acceptance",
+      "actual_reason": "untrusted integration acceptance",
+      "scope": "isolated_integration_acceptance_authentication",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "integration_acceptance_cannot_self_authorize_evidence_bindings",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "expected_reason": "untrusted integration acceptance",
+      "actual_reason": "untrusted integration acceptance",
+      "scope": "isolated_integration_acceptance_authentication",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "missing_geometry_acceptance",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "expected_reason": "P9-3.1-AcceptanceRecord.json",
+      "actual_reason": "missing protected file: implementation/phase-9-grcv4/tranche-3/P9-3.1-AcceptanceRecord.json",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "geometry_acceptance_cannot_self_authorize_status",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "expected_reason": "untrusted geometry acceptance",
+      "actual_reason": "untrusted geometry acceptance",
+      "scope": "isolated_geometry_acceptance_authentication",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "geometry_acceptance_cannot_self_authorize_accepted_iterations",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "expected_reason": "untrusted geometry acceptance",
+      "actual_reason": "untrusted geometry acceptance",
+      "scope": "isolated_geometry_acceptance_authentication",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "geometry_acceptance_cannot_self_authorize_accepted_generic_runtime_support",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "expected_reason": "untrusted geometry acceptance",
+      "actual_reason": "untrusted geometry acceptance",
+      "scope": "isolated_geometry_acceptance_authentication",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "geometry_acceptance_cannot_self_authorize_admitted_specialization_support_sets",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "expected_reason": "untrusted geometry acceptance",
+      "actual_reason": "untrusted geometry acceptance",
+      "scope": "isolated_geometry_acceptance_authentication",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "geometry_acceptance_cannot_self_authorize_baseline_commit",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "expected_reason": "untrusted geometry acceptance",
+      "actual_reason": "untrusted geometry acceptance",
+      "scope": "isolated_geometry_acceptance_authentication",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "geometry_acceptance_cannot_self_authorize_evidence_bindings",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "expected_reason": "untrusted geometry acceptance",
+      "actual_reason": "untrusted geometry acceptance",
+      "scope": "isolated_geometry_acceptance_authentication",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "missing_stage_acceptance",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "expected_reason": "P9-3.2-AcceptanceRecord.json",
+      "actual_reason": "missing protected file: implementation/phase-9-grcv4/tranche-3/P9-3.2-AcceptanceRecord.json",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "stage_acceptance_cannot_self_authorize_status",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "expected_reason": "untrusted stage acceptance",
+      "actual_reason": "untrusted stage acceptance",
+      "scope": "isolated_stage_acceptance_authentication",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "stage_acceptance_cannot_self_authorize_accepted_iterations",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "expected_reason": "untrusted stage acceptance",
+      "actual_reason": "untrusted stage acceptance",
+      "scope": "isolated_stage_acceptance_authentication",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "stage_acceptance_cannot_self_authorize_accepted_generic_runtime_support",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "expected_reason": "untrusted stage acceptance",
+      "actual_reason": "untrusted stage acceptance",
+      "scope": "isolated_stage_acceptance_authentication",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "stage_acceptance_cannot_self_authorize_admitted_specialization_support_sets",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "expected_reason": "untrusted stage acceptance",
+      "actual_reason": "untrusted stage acceptance",
+      "scope": "isolated_stage_acceptance_authentication",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "stage_acceptance_cannot_self_authorize_baseline_commit",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "expected_reason": "untrusted stage acceptance",
+      "actual_reason": "untrusted stage acceptance",
+      "scope": "isolated_stage_acceptance_authentication",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "stage_acceptance_cannot_self_authorize_evidence_bindings",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "expected_reason": "untrusted stage acceptance",
+      "actual_reason": "untrusted stage acceptance",
+      "scope": "isolated_stage_acceptance_authentication",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "result_acceptance_cannot_self_authorize_status",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "expected_reason": "untrusted result acceptance",
+      "actual_reason": "untrusted result acceptance",
+      "scope": "isolated_result_acceptance_authentication",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "result_acceptance_cannot_self_authorize_accepted_iterations",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "expected_reason": "untrusted result acceptance",
+      "actual_reason": "untrusted result acceptance",
+      "scope": "isolated_result_acceptance_authentication",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "result_acceptance_cannot_self_authorize_accepted_generic_runtime_support",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "expected_reason": "untrusted result acceptance",
+      "actual_reason": "untrusted result acceptance",
+      "scope": "isolated_result_acceptance_authentication",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "result_acceptance_cannot_self_authorize_baseline_commit",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "expected_reason": "untrusted result acceptance",
+      "actual_reason": "untrusted result acceptance",
+      "scope": "isolated_result_acceptance_authentication",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "result_acceptance_cannot_self_authorize_evidence_bindings",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "expected_reason": "untrusted result acceptance",
+      "actual_reason": "untrusted result acceptance",
+      "scope": "isolated_result_acceptance_authentication",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "request_acceptance_cannot_self_authorize_status",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "expected_reason": "untrusted request acceptance",
+      "actual_reason": "untrusted request acceptance",
+      "scope": "isolated_request_acceptance_authentication",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "request_acceptance_cannot_self_authorize_accepted_iterations",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "expected_reason": "untrusted request acceptance",
+      "actual_reason": "untrusted request acceptance",
+      "scope": "isolated_request_acceptance_authentication",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "request_acceptance_cannot_self_authorize_accepted_generic_runtime_support",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "expected_reason": "untrusted request acceptance",
+      "actual_reason": "untrusted request acceptance",
+      "scope": "isolated_request_acceptance_authentication",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "request_acceptance_cannot_self_authorize_baseline_commit",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "expected_reason": "untrusted request acceptance",
+      "actual_reason": "untrusted request acceptance",
+      "scope": "isolated_request_acceptance_authentication",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "request_acceptance_cannot_self_authorize_evidence_bindings",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "expected_reason": "untrusted request acceptance",
+      "actual_reason": "untrusted request acceptance",
+      "scope": "isolated_request_acceptance_authentication",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "foundation_cannot_self_authorize_status",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "expected_reason": "untrusted foundation acceptance",
+      "actual_reason": "untrusted foundation acceptance",
+      "scope": "isolated_foundation_acceptance_authentication",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "foundation_cannot_self_authorize_accepted_iterations",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "expected_reason": "untrusted foundation acceptance",
+      "actual_reason": "untrusted foundation acceptance",
+      "scope": "isolated_foundation_acceptance_authentication",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "foundation_cannot_self_authorize_accepted_generic_runtime_support",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "expected_reason": "untrusted foundation acceptance",
+      "actual_reason": "untrusted foundation acceptance",
+      "scope": "isolated_foundation_acceptance_authentication",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "foundation_cannot_self_authorize_baseline_commit",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "expected_reason": "untrusted foundation acceptance",
+      "actual_reason": "untrusted foundation acceptance",
+      "scope": "isolated_foundation_acceptance_authentication",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "foundation_cannot_self_authorize_evidence_bindings",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "expected_reason": "untrusted foundation acceptance",
+      "actual_reason": "untrusted foundation acceptance",
+      "scope": "isolated_foundation_acceptance_authentication",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "later_generic_leaf_held",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "expected_reason": "owning leaf entry dependencies are not accepted",
+      "actual_reason": "owning leaf entry dependencies are not accepted",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "path_cannot_borrow_ready_leaf",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "expected_reason": "runtime target belongs to a different owning leaf",
+      "actual_reason": "runtime target belongs to a different owning leaf",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "accepted_harness_enables_integration_owner",
+      "candidate_decision": "admitted",
+      "assertion_result": "passed",
+      "expected_reason": null,
+      "actual_reason": "exact accepted scope admitted",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "geometry_leaf_direct_numpy_dependency_owner",
+      "candidate_decision": "admitted",
+      "assertion_result": "passed",
+      "expected_reason": null,
+      "actual_reason": "exact accepted scope admitted",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "identity_leaf_package_integration",
+      "candidate_decision": "admitted",
+      "assertion_result": "passed",
+      "expected_reason": null,
+      "actual_reason": "exact accepted scope admitted",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "identity_leaf_cannot_borrow_exports",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "expected_reason": "runtime target belongs to a different owning leaf",
+      "actual_reason": "runtime target belongs to a different owning leaf",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "acceptance_release_id",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "expected_reason": "untrusted P9-G1 acceptance",
+      "actual_reason": "untrusted P9-G1 acceptance",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "acceptance_baseline_commit",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "expected_reason": "untrusted P9-G1 acceptance",
+      "actual_reason": "untrusted P9-G1 acceptance",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "acceptance_user_authority",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "expected_reason": "untrusted P9-G1 acceptance",
+      "actual_reason": "untrusted P9-G1 acceptance",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "missing_consumed_surface_evidence",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "expected_reason": "P9-1.8-SurfaceInventory.json",
+      "actual_reason": "missing protected file: implementation/phase-9-grcv4/tranche-1/P9-1.8-SurfaceInventory.json",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "conflicting_G1_record",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "expected_reason": "unauthorized source/test/planning addition",
+      "actual_reason": "unauthorized source/test/planning addition: ['implementation/phase-9-grcv4/tranche-1/P9-1.9-OtherAcceptance.json']",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "changed_verifier_after_pressure",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "expected_reason": "implementation maintenance binding drift",
+      "actual_reason": "implementation maintenance binding drift: implementation/phase-9-grcv4/verification/phase9_implementation_policy.py",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "runtime_manifest_cannot_change_governance",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "expected_reason": "unapproved runtime or evidence target",
+      "actual_reason": "unapproved runtime or evidence target: implementation/phase-9-grcv4/verification/Phase9ImplementationBoundary.json",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "evidence_path_escape",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "expected_reason": "unsafe path",
+      "actual_reason": "unsafe path: ../escape.py",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "identical_acceptance_is_idempotent",
+      "candidate_decision": "admitted",
+      "assertion_result": "passed",
+      "expected_reason": null,
+      "actual_reason": "exact accepted scope admitted",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "partial_publication",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "expected_reason": "P9-1.9-ExecutionRecord.json",
+      "actual_reason": "missing protected file: implementation/phase-9-grcv4/tranche-1/P9-1.9-ExecutionRecord.json",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "synthetic_acceptance_not_live_authority",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "expected_reason": "untrusted P9-G1 acceptance",
+      "actual_reason": "untrusted P9-G1 acceptance",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "clean_committed_unauthorized_tree",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "expected_reason": "frozen bytes changed",
+      "actual_reason": "frozen bytes changed: src/pygrc/models/grc_9_v3.py",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "published_runtime_update",
+      "candidate_decision": "admitted",
+      "assertion_result": "passed",
+      "expected_reason": null,
+      "actual_reason": "exact accepted scope admitted",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "published_runtime_deletion",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "expected_reason": "published runtime/evidence deletion or rename forbidden",
+      "actual_reason": "published runtime/evidence deletion or rename forbidden",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "published_failure_evidence_overwrite",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "expected_reason": "published run evidence is immutable",
+      "actual_reason": "published run evidence is immutable",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "new_evidence_run_preserves_failure",
+      "candidate_decision": "admitted",
+      "assertion_result": "passed",
+      "expected_reason": null,
+      "actual_reason": "exact accepted scope admitted",
+      "scope": "disposable_P9_G1_candidate_not_live_runtime",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    },
+    {
+      "case_id": "preacceptance_same_runtime_addition",
+      "candidate_decision": "rejected",
+      "assertion_result": "passed",
+      "expected_reason": "planning authority rejects the same runtime addition",
+      "actual_reason": "planning authority rejects the same runtime addition",
+      "scope": "exact_6e0a507_planning_subject_before_actual_G1_acceptance",
+      "intended_check_reached": true,
+      "project_effect": {
+        "P9_G1_accepted": false,
+        "runtime_authorized": false,
+        "scientific_promotion": false
+      }
+    }
+  ],
+  "API": {
+    "P9_G1_accepted": true,
+    "accepted_generic_runtime_support": [],
+    "admitted_specialization_support_sets": [],
+    "approval_digest": "cd2c52f30477e1042bb903bd0553da237ddccc9cad373afecc1a84e4e0b37ea2",
+    "claim_ceiling": "Accepted permission to implement reviewed V4 scope is not executed or accepted runtime conformance.",
+    "current_boundary": "passed",
+    "dependency_ready_leaves": [
+      "P9-2.1",
+      "P9-2.2",
+      "P9-2.3",
+      "P9-2.4",
+      "P9-2.5",
+      "P9-2.6",
+      "P9-3.1",
+      "P9-3.2",
+      "P9-3.3"
+    ],
+    "foundation_acceptance": {
+      "accepted_iterations": [
+        "P9-2.1",
+        "P9-2.2"
+      ],
+      "path": "implementation/phase-9-grcv4/tranche-2/P9-2.1-2.2-AcceptanceRecord.json",
+      "record_digest": "1e3f0ddb06b119fa46dc7609d05b7db0c3a4cbc07428c05b8a032da081ae9dd4"
+    },
+    "geometry_acceptance": {
+      "accepted_iterations": [
+        "P9-3.1"
+      ],
+      "path": "implementation/phase-9-grcv4/tranche-3/P9-3.1-AcceptanceRecord.json",
+      "record_digest": "f119e1361500e72f58297bc8186f868954b4065c853fcdd089280a5d28f88618"
+    },
+    "handoff_evidence": {
+      "archive_sha256": "da9c3de7a8f6b1b7bb2b242800b89efdf211de65ff435baf51fe679e216ce8e8",
+      "artifacts": 21,
+      "new_acceptance": false,
+      "original_archive_sha256": "089185f8251dbf888d23fcaf67df712f17755ab69ed2ea1ecb3f0749df04b8af",
+      "original_bytes_verified": false,
+      "status": "verified",
+      "subjects": 3
+    },
+    "harness_acceptance": {
+      "accepted_iterations": [
+        "P9-2.5"
+      ],
+      "path": "implementation/phase-9-grcv4/tranche-2/P9-2.5-AcceptanceRecord.json",
+      "record_digest": "e479a8e5935fc8740b59f96b31651070f842f73f92541bb84dbc1c9d63f59896"
+    },
+    "implementation_scope": [
+      {
+        "before_sha256": "b96f7e82c3e398502d12037548701e88aaf82b5b7c47f7153306fcea747a6d8b",
+        "module_owner": "reviewed_additive_integration",
+        "operation": "additive_integration",
+        "path": "pyproject.toml",
+        "requires_gate": "P9-G1"
+      },
+      {
+        "before_sha256": "23768e181455f4e7eb68908cdac532464c063fa5eb4250c4d05537eca0dcaa70",
+        "module_owner": "reviewed_additive_integration",
+        "operation": "additive_integration",
+        "path": "src/pygrc/models/__init__.py",
+        "requires_gate": "P9-G1"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "grc_9_v4",
+        "operation": "v4_owned_add_or_update",
+        "path": "src/pygrc/models/grc_9_v4.py",
+        "requires_gate": "P9-G3[exact_consumed_support_set]"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "grc_9_v4_compatibility",
+        "operation": "v4_owned_add_or_update",
+        "path": "src/pygrc/models/grc_9_v4_compatibility.py",
+        "requires_gate": "P9-G3[exact_consumed_support_set]"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "grc_9_v4_expansion",
+        "operation": "v4_owned_add_or_update",
+        "path": "src/pygrc/models/grc_9_v4_expansion.py",
+        "requires_gate": "P9-G3[exact_consumed_support_set]"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "grc_9_v4_lifecycle",
+        "operation": "v4_owned_add_or_update",
+        "path": "src/pygrc/models/grc_9_v4_lifecycle.py",
+        "requires_gate": "P9-G3[exact_consumed_support_set]"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "grc_9_v4_topology",
+        "operation": "v4_owned_add_or_update",
+        "path": "src/pygrc/models/grc_9_v4_topology.py",
+        "requires_gate": "P9-G3[exact_consumed_support_set]"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "grc_v4",
+        "operation": "v4_owned_add_or_update",
+        "path": "src/pygrc/models/grc_v4.py",
+        "requires_gate": "P9-G1"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "grc_v4_analysis",
+        "operation": "v4_owned_add_or_update",
+        "path": "src/pygrc/models/grc_v4_analysis.py",
+        "requires_gate": "P9-G1"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "packaged_accepted_identity_assets",
+        "operation": "v4_owned_add_or_update",
+        "path": "src/pygrc/models/grc_v4_assets/__init__.py",
+        "requires_gate": "P9-G1"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "packaged_accepted_identity_assets",
+        "operation": "v4_owned_add_or_update",
+        "path": "src/pygrc/models/grc_v4_assets/asset-index.json",
+        "requires_gate": "P9-G1"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "packaged_accepted_identity_assets",
+        "operation": "v4_owned_add_or_update",
+        "path": "src/pygrc/models/grc_v4_assets/grc-v4-contract-schema.json",
+        "requires_gate": "P9-G1"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "packaged_accepted_identity_assets",
+        "operation": "v4_owned_add_or_update",
+        "path": "src/pygrc/models/grc_v4_assets/grc-v4-specification-release.json",
+        "requires_gate": "P9-G1"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "packaged_accepted_identity_assets",
+        "operation": "v4_owned_add_or_update",
+        "path": "src/pygrc/models/grc_v4_assets/grc-v4-specification-release.sha256",
+        "requires_gate": "P9-G1"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "grc_v4_candidate_a",
+        "operation": "v4_owned_add_or_update",
+        "path": "src/pygrc/models/grc_v4_candidate_a.py",
+        "requires_gate": "P9-G1"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "grc_v4_candidate_c",
+        "operation": "v4_owned_add_or_update",
+        "path": "src/pygrc/models/grc_v4_candidate_c.py",
+        "requires_gate": "P9-G1"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "grc_v4_codec",
+        "operation": "v4_owned_add_or_update",
+        "path": "src/pygrc/models/grc_v4_codec.py",
+        "requires_gate": "P9-G1"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "grc_v4_geometry",
+        "operation": "v4_owned_add_or_update",
+        "path": "src/pygrc/models/grc_v4_geometry.py",
+        "requires_gate": "P9-G1"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "grc_v4_lifecycle",
+        "operation": "v4_owned_add_or_update",
+        "path": "src/pygrc/models/grc_v4_lifecycle.py",
+        "requires_gate": "P9-G1"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "grc_v4_profile",
+        "operation": "v4_owned_add_or_update",
+        "path": "src/pygrc/models/grc_v4_profile.py",
+        "requires_gate": "P9-G1"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "grc_v4_realizations",
+        "operation": "v4_owned_add_or_update",
+        "path": "src/pygrc/models/grc_v4_realizations.py",
+        "requires_gate": "P9-G1"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "grc_v4_state",
+        "operation": "v4_owned_add_or_update",
+        "path": "src/pygrc/models/grc_v4_state.py",
+        "requires_gate": "P9-G1"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "grc_v4_step",
+        "operation": "v4_owned_add_or_update",
+        "path": "src/pygrc/models/grc_v4_step.py",
+        "requires_gate": "P9-G1"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "grc_v4_transport",
+        "operation": "v4_owned_add_or_update",
+        "path": "src/pygrc/models/grc_v4_transport.py",
+        "requires_gate": "P9-G1"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "independent_conformance_harness",
+        "operation": "v4_owned_add_or_update",
+        "path": "tests/models/grcv4_conformance_harness.py",
+        "requires_gate": "P9-G1"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "independent_conformance_harness",
+        "operation": "v4_owned_add_or_update",
+        "path": "tests/models/grcv4_reference_oracles.py",
+        "requires_gate": "P9-G1"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "grc_9_v4",
+        "operation": "v4_owned_add_or_update",
+        "path": "tests/models/test_grc_9_v4.py",
+        "requires_gate": "P9-G3[exact_consumed_support_set]"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "grc_9_v4_compatibility",
+        "operation": "v4_owned_add_or_update",
+        "path": "tests/models/test_grc_9_v4_compatibility.py",
+        "requires_gate": "P9-G3[exact_consumed_support_set]"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "grc_9_v4_expansion",
+        "operation": "v4_owned_add_or_update",
+        "path": "tests/models/test_grc_9_v4_expansion.py",
+        "requires_gate": "P9-G3[exact_consumed_support_set]"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "grc_9_v4_lifecycle",
+        "operation": "v4_owned_add_or_update",
+        "path": "tests/models/test_grc_9_v4_lifecycle.py",
+        "requires_gate": "P9-G3[exact_consumed_support_set]"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "grc_9_v4_topology",
+        "operation": "v4_owned_add_or_update",
+        "path": "tests/models/test_grc_9_v4_topology.py",
+        "requires_gate": "P9-G3[exact_consumed_support_set]"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "grc_v4",
+        "operation": "v4_owned_add_or_update",
+        "path": "tests/models/test_grc_v4.py",
+        "requires_gate": "P9-G1"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "grc_v4_analysis",
+        "operation": "v4_owned_add_or_update",
+        "path": "tests/models/test_grc_v4_analysis.py",
+        "requires_gate": "P9-G1"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "grc_v4_candidate_a",
+        "operation": "v4_owned_add_or_update",
+        "path": "tests/models/test_grc_v4_candidate_a.py",
+        "requires_gate": "P9-G1"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "grc_v4_candidate_c",
+        "operation": "v4_owned_add_or_update",
+        "path": "tests/models/test_grc_v4_candidate_c.py",
+        "requires_gate": "P9-G1"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "grc_v4_codec",
+        "operation": "v4_owned_add_or_update",
+        "path": "tests/models/test_grc_v4_codec.py",
+        "requires_gate": "P9-G1"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "grc_v4_geometry",
+        "operation": "v4_owned_add_or_update",
+        "path": "tests/models/test_grc_v4_geometry.py",
+        "requires_gate": "P9-G1"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "grc_v4_lifecycle",
+        "operation": "v4_owned_add_or_update",
+        "path": "tests/models/test_grc_v4_lifecycle.py",
+        "requires_gate": "P9-G1"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "grc_v4_profile",
+        "operation": "v4_owned_add_or_update",
+        "path": "tests/models/test_grc_v4_profile.py",
+        "requires_gate": "P9-G1"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "grc_v4_realizations",
+        "operation": "v4_owned_add_or_update",
+        "path": "tests/models/test_grc_v4_realizations.py",
+        "requires_gate": "P9-G1"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "grc_v4_state",
+        "operation": "v4_owned_add_or_update",
+        "path": "tests/models/test_grc_v4_state.py",
+        "requires_gate": "P9-G1"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "grc_v4_step",
+        "operation": "v4_owned_add_or_update",
+        "path": "tests/models/test_grc_v4_step.py",
+        "requires_gate": "P9-G1"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "grc_v4_transport",
+        "operation": "v4_owned_add_or_update",
+        "path": "tests/models/test_grc_v4_transport.py",
+        "requires_gate": "P9-G1"
+      }
+    ],
+    "integration_acceptance": {
+      "accepted_iterations": [
+        "P9-2.6"
+      ],
+      "path": "implementation/phase-9-grcv4/tranche-2/P9-2.6-AcceptanceRecord.json",
+      "record_digest": "e5ba16731e03dc916b8755c5999ab2b59acf431255612e76e0dcebe108104bc2"
+    },
+    "iterations": [
+      {
+        "iteration_id": "P9-1.4",
+        "reviewer_decision": "accepted_by_user",
+        "status": "implemented_and_verified"
+      },
+      {
+        "iteration_id": "P9-1.5",
+        "reviewer_decision": "accepted_by_user",
+        "status": "implemented_and_verified"
+      },
+      {
+        "iteration_id": "P9-1.6",
+        "reviewer_decision": "accepted_by_user",
+        "status": "implemented_and_verified"
+      },
+      {
+        "iteration_id": "P9-1.7",
+        "reviewer_decision": "accepted_by_user",
+        "status": "implemented_and_verified"
+      },
+      {
+        "iteration_id": "P9-1.8",
+        "reviewer_decision": "accepted_by_user",
+        "status": "implemented_and_verified"
+      },
+      {
+        "iteration_id": "P9-1.9",
+        "reviewer_decision": "accepted_by_user",
+        "status": "implemented_and_verified"
+      }
+    ],
+    "next_gate": "P9-3.3 resource-write and charge review; P9-3.4, P9-G2 and P9-G3 remain pending",
+    "output_class": "implementation_verification_status_not_forensic_trace",
+    "permitted_runtime_paths": [
+      "pyproject.toml",
+      "src/pygrc/models/__init__.py",
+      "src/pygrc/models/grc_v4.py",
+      "src/pygrc/models/grc_v4_assets/__init__.py",
+      "src/pygrc/models/grc_v4_assets/asset-index.json",
+      "src/pygrc/models/grc_v4_assets/grc-v4-contract-schema.json",
+      "src/pygrc/models/grc_v4_assets/grc-v4-specification-release.json",
+      "src/pygrc/models/grc_v4_assets/grc-v4-specification-release.sha256",
+      "src/pygrc/models/grc_v4_codec.py",
+      "src/pygrc/models/grc_v4_geometry.py",
+      "src/pygrc/models/grc_v4_profile.py",
+      "src/pygrc/models/grc_v4_state.py",
+      "src/pygrc/models/grc_v4_step.py",
+      "src/pygrc/models/grc_v4_transport.py",
+      "tests/models/grcv4_conformance_harness.py",
+      "tests/models/grcv4_reference_oracles.py",
+      "tests/models/test_grc_v4.py",
+      "tests/models/test_grc_v4_codec.py",
+      "tests/models/test_grc_v4_geometry.py",
+      "tests/models/test_grc_v4_profile.py",
+      "tests/models/test_grc_v4_state.py",
+      "tests/models/test_grc_v4_step.py",
+      "tests/models/test_grc_v4_transport.py"
+    ],
+    "policy_digest": "cf8fec71d071c4e499abf93f81f71f688f115ea3f6c77e45c63d3e7eee67f4c7",
+    "recorded_full_verification": "not_current",
+    "request_acceptance": {
+      "accepted_iterations": [
+        "P9-2.3"
+      ],
+      "path": "implementation/phase-9-grcv4/tranche-2/P9-2.3-AcceptanceRecord.json",
+      "record_digest": "ac07a2f7c93538454d9663aba78ca0eb5af385d7975582e4c21682f41ce4c17f"
+    },
+    "result_acceptance": {
+      "accepted_iterations": [
+        "P9-2.4"
+      ],
+      "path": "implementation/phase-9-grcv4/tranche-2/P9-2.4-AcceptanceRecord.json",
+      "record_digest": "9d2fd4f0bb0445b9b3c46fd6f7e5b0ff710a8a85aceaeabacad44a477ff365a0"
+    },
+    "runtime_authority_state": "accepted_P9_G1_bounded_implementation_not_conformance",
+    "runtime_authorized": true,
+    "schema": "phase9_governance_status_v2",
+    "source_meaning": {
+      "association_count": 152,
+      "association_denominator": 183,
+      "evidence_kind": "source_bound_planning_crosswalk_not_runtime_evidence",
+      "forensic_support_disposition": "indeterminate_requires_review",
+      "pending_source_obligations": 15,
+      "source_bindings": [
+        {
+          "path": "implementation/phase-9-grcv4/tranche-1/P9-1.1-SourceCrosswalk.json",
+          "sha256": "85fe7204f5a40e3ffa502fce33519000adb443ba6480cb85e0d6ee4155893ede"
+        },
+        {
+          "path": "implementation/phase-9-grcv4/tranche-1/P9-1.3-VerificationRouting.json",
+          "sha256": "8b926fda8edc7c0ed025b19721c5fb57c1d5aa448b082696eba9bef9459e3ddc"
+        }
+      ],
+      "specification_authority": "accepted_frozen"
+    },
+    "source_refs": [
+      {
+        "path": "implementation/phase-9-grcv4/verification/Phase9ImplementationBoundary.json",
+        "sha256": "a0350020cf4aae1821c9998af138e675ac3ef5465a44cb5c797529568845759f"
+      },
+      {
+        "path": "implementation/Phase-9-GRCV4-PhaseOpening.json",
+        "sha256": "68c1df72fdd4980cda3c0c8071fff3cc055b30255cf1d60778c6f17c463fa888"
+      },
+      {
+        "path": "specs/grc-v4-specification-release.json",
+        "sha256": "bba0bb649bc2e80c5bfa99f96bd5824bbdda3b3fbc87fb68c3e3a59da1cee46b"
+      },
+      {
+        "path": "implementation/phase-9-grcv4/tranche-1/P9-1.9-ExecutionRecord.json",
+        "sha256": "3165fa1d259aaa446496b3311cd02a5893933fda529f944183508a15050094fc"
+      }
+    ],
+    "stage_acceptance": {
+      "accepted_iterations": [
+        "P9-3.2"
+      ],
+      "path": "implementation/phase-9-grcv4/tranche-3/P9-3.2-AcceptanceRecord.json",
+      "record_digest": "425cd05eb85213185a4b531a09c16cefec4be992ac4755d404b5f263e09ebd0a"
+    },
+    "status_digest": "0422ab369d708aa77ab617f05b58226641253cfbd3292044aa5248283a219fc2",
+    "tree": {
+      "current_artifact_digest": "49fd5f4c672b40de726c5ab06c2e0744f8b694a7e3deeab854aefcb9491252d6",
+      "protected_baseline_files": 725,
+      "registered_runtime_files": 173
+    }
+  },
+  "API_notebook_identity": "byte_exact",
+  "node_tests": 19,
+  "browser_tests": 18,
+  "browser_viewports": [
+    "1440x900",
+    "390x844"
+  ],
+  "viewport_images_inspected": 2,
+  "raw_pressure_trace_retention": "Generated 27 MB mutation transcript is not duplicated here. Case outcomes and exact executable subject are retained; rerunning the recorded commands creates a new full trace.",
+  "path_presentation": "implementation/phase-9-grcv4/verification/Phase9PathPresentation.json"
+}

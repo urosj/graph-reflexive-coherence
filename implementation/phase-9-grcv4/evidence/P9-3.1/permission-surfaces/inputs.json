@@ -1,0 +1,248 @@
+{
+  "iteration_id": "P9-3.1",
+  "commands": [
+    ".venv/bin/python implementation/phase-9-grcv4/verification/test_phase9_g1.py",
+    ".venv/bin/python implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/test_phase9_g1_surfaces.py",
+    ".venv/bin/python implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/test_phase9_g1_surfaces.py --browser"
+  ],
+  "policy_digest": "55804b5a7a4c486a3f256773efaf7e4df04a4c84644c68efe88a853be28c12ad",
+  "tree": {
+    "protected_baseline_files": 725,
+    "current_artifact_digest": "5379583a98a4fb7eb2c1bb290b7d3ff10a91c53fe9743ce5b8f7ed641c7bd737",
+    "registered_runtime_files": 100
+  },
+  "maintenance_bindings": [
+    {
+      "path": "implementation/ImplementationPhases.md",
+      "sha256": "129b5cbdc304c6993e999a6e73c4401d106ddf1c5a28f6982997215088f7c48f"
+    },
+    {
+      "path": "implementation/Phase-9-GRCV4-ImplementationChecklist.md",
+      "sha256": "f7885af32b21a719c023f7946ba9d62b50059fefa9230d5fa38f0d2bf532fcda"
+    },
+    {
+      "path": "implementation/Phase-9-GRCV4-ImplementationPlan.md",
+      "sha256": "4322a37067994939eb5f75ecc026ce4d464c931fb6f21198a5b73022c1632127"
+    },
+    {
+      "path": "implementation/Phase-9-GRCV4-PhaseOpening.json",
+      "sha256": "68c1df72fdd4980cda3c0c8071fff3cc055b30255cf1d60778c6f17c463fa888"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/audit_grc9v4_d10_claim_topology.py",
+      "sha256": "996f885d2b3da426b08e29cc0bc1d2dca1c243a65c959504bde38cbc81f27606"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/GRCV4ExploratorySideToolImplementationChecklist.md",
+      "sha256": "209f4f1e7b018a89c214e0fca934a224744cd20861ab178afc2dadc36c10d6ae"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/GRCV4ExploratorySideToolImplementationPlan.md",
+      "sha256": "93e6e546feb6ceb616a188c41a281374f1a0b90e1138ff02c018b6c3c96d385f"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/docs/Phase9VerificationGuide.md",
+      "sha256": "3065e207489fd3990d5bc2f04123fd9a83f693c1e04093fa1cb536ab0b194a4c"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/notebooks/phase9_verification.ipynb",
+      "sha256": "ad6bfd41bdbe66652809b3b6f74634946c52a0b37fe8c9c33ac174991d0ef5e3"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/browser.spec.mjs",
+      "sha256": "8abb37adec48773785b7696a96a3a9ce421ba451d4e71e25c76147923de639ae"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/index.html",
+      "sha256": "018a870415898a033eb962389c6e4e8884034ec791c52e1f43a94e49d8a52199"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/verification.js",
+      "sha256": "77a0ea5b702ac1fcb3ade37342fd3f9ae0c4d469d364e58d1b3e47aad36c750d"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/verification.test.mjs",
+      "sha256": "8e63e206458574f439967418a4b95f3620422e7ac4a7e9bb505c1bb83fe58d6e"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/active_phase.py",
+      "sha256": "f85dd7dad8be8d616aeef0ab7aeab67cff667eeaef53a899d40ef603d57be148"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/run.py",
+      "sha256": "5cbdd41906294663e659392ca9420210d8bad833dceaecbc0c8e5533e0bee57f"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/run_phase9_notebook.py",
+      "sha256": "93d62b89d470859cd31caa1082d48ded66ae4ded985cc9797f4da7004ef700e6"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/test_phase9_g1_surfaces.py",
+      "sha256": "8771681862682810d2e94f9e8940823407350d4554c924adf49fa3cc085f4869"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/test_phase9_surfaces.py",
+      "sha256": "295bc2cf67526a2daedd160cc72fb65de3b38949ac5cbb5c59606be6639f6db9"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/verify_iteration9.py",
+      "sha256": "26d58af207695919868e7eeadf6ff5324f67ee6d5e0542d7c5739c88257d9257"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/phase9_verification.py",
+      "sha256": "a0c7c3dce47e71bb2898c60f58de756491286109743e0504c5c3e7cfdfeafb37"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-1/P9-1.1-1.3-ExecutionRecord.json",
+      "sha256": "d79eaadecd572a3566918744623bd6e3f4ce60b6974900690ff631b760a932ea"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-1/P9-1.1-1.3-Review.md",
+      "sha256": "3fc6b2fee918a242f9a8c6e68f279891133dad906f952fb2a82f63ff02fb71ce"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-1/P9-1.1-SourceCrosswalk.json",
+      "sha256": "85fe7204f5a40e3ffa502fce33519000adb443ba6480cb85e0d6ee4155893ede"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-1/P9-1.2-DebtInventory.json",
+      "sha256": "9811da71ad7f5cbefcf84d85be3baa91e245c130c37f3d32a625cd0d33e246d8"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-1/P9-1.3-VerificationRouting.json",
+      "sha256": "8b926fda8edc7c0ed025b19721c5fb57c1d5aa448b082696eba9bef9459e3ddc"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-1/P9-1.4-1.5-ExecutionRecord.json",
+      "sha256": "818785f1275cae0219340090c260383b141f23acdc0bd952602e90ca0c3f8532"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-1/P9-1.4-SupportAndDependencies.json",
+      "sha256": "e984ebcd61d294e1a87b149c48db11511e7eab62f2b0f7bedcd0123e27f5f66a"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-1/P9-1.5-OwnershipAndLegacyBaseline.json",
+      "sha256": "01204c93512aa6aa12f1f9498bd96b4403f655899c0fd012a00f942bf847a301"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-1/P9-1.6-SuccessorVerification.md",
+      "sha256": "cb97c8bf2a277c38fa672c4f1fe2cd65c4006bfe2396c9bd0bb8ee7837424de2"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-1/P9-1.9-EvidenceHandoff.md",
+      "sha256": "55e88e35bae42056457a31f62c2b6725215fb81e71a0eda959583515532f8f4e"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-1/P9-1.9-ExecutionRecord.json",
+      "sha256": "3165fa1d259aaa446496b3311cd02a5893933fda529f944183508a15050094fc"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-1/P9-1.9-G1Acceptance.json",
+      "sha256": "218b29ae251cc93e749ff46ad919268621eabafcfe85412aa549a688571a8cc9"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-1/P9-1.9-G1Review.md",
+      "sha256": "bc608f1d9cc039d89bd25e6923454f34280c009145b3a1065b8669804e43f4ec"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-2/P9-2.1-2.2-AcceptanceRecord.json",
+      "sha256": "0e0e35db0e23d5da0607d4132ce149947b26feeb4ac7e8b685a92d6eee30ae66"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-2/P9-2.3-AcceptanceRecord.json",
+      "sha256": "beb535785feeb302caa7889a100e48167c80fb46266d5fdfcf20b9a302b442c2"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-2/P9-2.4-AcceptanceRecord.json",
+      "sha256": "e88c3c0af0665cf976bee229b4693dad6f0bba91fd6f5ff0d242b871d042ea40"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-2/P9-2.5-AcceptanceRecord.json",
+      "sha256": "8c20d17d0bede0fd08308014b3b67fdaa787075808048c6c92b54640156158f5"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-2/P9-2.6-AcceptanceRecord.json",
+      "sha256": "a0eed719fa359c00913480567e87c25be409c3a79b88f15a7168aa2b928ca8b5"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/audit_phase9_implementation.py",
+      "sha256": "8a1dd7f2917912cafe413ee5916db10d148cd918130cab9aef8474f95dc3b9e4"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/handoff_evidence.py",
+      "sha256": "e388f809e487f88a8a38fff94d1e3eb8f941da4dcc95d6c0d8dc46749d271f05"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/history/P9-1.6-ArtifactSnapshot.json",
+      "sha256": "49a90196c17c3b1eb9ae720a22eb7b1a78b4ee9a8eb922bfd06c3481170fcbb7"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/inputs/P9-1.9-G1-Acceptance-And-Scoped-Authorization-Pressure-Guide.md",
+      "sha256": "d2ff0e903da022e08b62a233e51479664c8915d7a0fd78ed2d305df84b1043ac"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/inputs/P9-PlanningReview.md",
+      "sha256": "bf9aa0b4f5411f7e210e67c95a5f8273744b474d6e8a69fc0c237656585a9e74"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/phase9_implementation_policy.py",
+      "sha256": "8c589611efe269f628d89884260c7a30138764734f04ddeb01bd6209ad4c3455"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_handoff_evidence.py",
+      "sha256": "1989bab65f12c4c5f1df925426ea8a80b9f735940808721294a6cb857fda0e23"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/verification/test_phase9_g1.py",
+      "sha256": "80a8df6bf6d01f08ba54d5649a5ac20d1e7743895609f2ea020e61fe8fd3f5fb"
+    }
+  ],
+  "work_manifest_sha256": "9d6bae0595e493eff448e0cd94f57a822859e53567f1cf4544cce11dd038b851",
+  "source_exact_forensic_replay": {
+    "status": "passed",
+    "contract_count": 8,
+    "contracts": [
+      {
+        "contract_id": "D10.2-EC-PARENT-BASE-GRC-DIFFERENTIAL",
+        "trace_digest": "90a344a6746d084bad8db5dbb80563fd199f80daaeefe39367e0953def3a217a",
+        "reconstruction": "byte-equivalent JSON values"
+      },
+      {
+        "contract_id": "D10.2-EC-PARENT-GEOM-H1-FORM",
+        "trace_digest": "c499b186bd0e3e369ba24b88fab1dda1489099853cf06e6fd86e6034884f11ad",
+        "reconstruction": "byte-equivalent JSON values"
+      },
+      {
+        "contract_id": "D10.2-EC-PARENT-GEOM-GJ",
+        "trace_digest": "43750060d8f7e864be9dc49493ba438e8192b362615cb1c14a9cb21d4beb3f97",
+        "reconstruction": "byte-equivalent JSON values"
+      },
+      {
+        "contract_id": "D10.2-EC-GEOM-FLAT",
+        "trace_digest": "c50779dd032926f6af69258639c8236c20b155663202cec6a820c4df348fe5ff",
+        "reconstruction": "byte-equivalent JSON values"
+      },
+      {
+        "contract_id": "D10.2-EC-GEOM-MOBILITY-BOUNDARY",
+        "trace_digest": "294ddd0b9dd5b166604b1b7daff76c707e1af624aa0e30883681dce0645d296d",
+        "reconstruction": "byte-equivalent JSON values"
+      },
+      {
+        "contract_id": "D10.2-EC-PARENT-GEOM-COVARIANCE",
+        "trace_digest": "9a857c754a5a7a07f6ed09541c366c402f7687f1ce4444ff48d42a6189444689",
+        "reconstruction": "byte-equivalent JSON values"
+      },
+      {
+        "contract_id": "D11-C-EC-C-TR-REFERENCE-FIELD",
+        "trace_digest": "ce518db4711884c92d7045a455935f0ebe7df98b55fbdfa042dc907e358ff9cf",
+        "reconstruction": "byte-equivalent JSON values"
+      },
+      {
+        "contract_id": "D11-C-EC-C-M4-FACTORIZATION",
+        "trace_digest": "a83b99b84339eca89f2d7427cb6ed6ba087cc6062f1b3ef13fbdfa28ddbbff89",
+        "reconstruction": "byte-equivalent JSON values"
+      }
+    ]
+  },
+  "retention_scope": "Executed numerical/source/tool code at its stated pre-retention boundary; final review/evidence bindings are refreshed and current pressure/API rerun afterward. No historical predecessor suite replay claimed."
+}

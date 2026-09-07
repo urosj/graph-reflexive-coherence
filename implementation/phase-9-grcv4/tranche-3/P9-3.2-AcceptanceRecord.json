@@ -1,0 +1,40 @@
+{
+  "schema": "phase9_stage_geometry_acceptance_v1",
+  "status": "accepted_by_user",
+  "baseline_commit": "77286b276ac1b944c2e07c9489ffead89ed984d5",
+  "release_id": "grcv4-spec-release-sha256:9f4c8fe5b57b1c477d834a3e4dae3f98a2b18c70e6e7f598e3c9652170c8645f",
+  "predecessor_record_digest": "f119e1361500e72f58297bc8186f868954b4065c853fcdd089280a5d28f88618",
+  "accepted_iterations": [
+    "P9-3.2"
+  ],
+  "acceptance_basis": "Explicit user acceptance and commit at the stated subject, followed by authorization to continue with P9-3.3. Historical review and execution states remain unchanged; mixed-scale star arithmetic remains P9-3.4 follow-through.",
+  "evidence_bindings": [
+    {
+      "path": "implementation/phase-9-grcv4/tranche-3/P9-3.2-Review.md",
+      "sha256": "b374912016152c1d600b8db02962c29ce73af9a4472642c05adcc0c1e0e67339"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-3/P9-3.2-ExecutionRecord.json",
+      "sha256": "af949b383d6ea8545fe1276abb497dda3897669331c6986b1c1de7d97c6998e9"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-3.2/local-pressure/run.json",
+      "sha256": "824499d2ae6b21649d5a0010c47d19c6faf4028f18494e85220eba6fd7de0ee3"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-3.2/audit-1-native/run.json",
+      "sha256": "5ac002244c68b16fd7078da3ee32f708c0ade076d2e673510db08774b7570b02"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-3.2/audit-1-followup/run.json",
+      "sha256": "508b9f6d559ba0b179749f2ad755f7daf51a9b10d1016c6c6d4af0482235a0bb"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/runtime/RuntimeWorkManifest.json",
+      "sha256": "b4308a89a6b43d02d4c0b6970e717c377c975a1de0469f9a226a40649bc4fabb"
+    }
+  ],
+  "accepted_generic_runtime_support": [],
+  "admitted_specialization_support_sets": [],
+  "record_digest": "425cd05eb85213185a4b531a09c16cefec4be992ac4755d404b5f263e09ebd0a"
+}

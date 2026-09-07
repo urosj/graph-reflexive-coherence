@@ -1,0 +1,16 @@
+{
+  "test_methods": 67,
+  "failures": 0,
+  "errors": 0,
+  "skips": 0,
+  "source_stays_exact": true,
+  "static_and_dependency_checks_exit_code": 0,
+  "exhaustive_oracle": {
+    "recipe": "itertools.product((-1.,0.,1.,2.), repeat=6) mapped as ((a,d,e),(d,b,f),(e,f,c)); all three leading minors by Fraction Leibniz expansion strictly positive",
+    "positive": 96,
+    "nonpositive": 4000,
+    "ordered_boolean_bytes_sha256": "3fbf9615546632e55a10d2857148e79d788b1b733a0df35a71c450889f4e60f4",
+    "meaning": "Independent expected labels, asserted one by one in the retained executed test source; no production elimination supplies the labels."
+  },
+  "known_inertia_oracle": "L unit lower triangular with ones below the diagonal; positive diagonal, zero final direction, one negative final direction, two negative final directions; exact powers of two and signed permutations preserve inertia."
+}

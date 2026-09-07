@@ -1674,3 +1674,38 @@ It may not claim that the tool proves a new V4 result, predicts reopened-gate
 outcomes, implements GRCv4, or independently authorizes specification/runtime
 changes. Paper and specification propagation are reported only when the
 external hash-bound phase authority and their dedicated audits agree.
+
+
+### P9-3.1 geometry and transport foundation entry
+
+The P9-2.6 decision is now separately bound to accepted commit `5307343`.
+The historical P9-2.6 entry statements retain their original temporal scope.
+API, notebook, browser and exports add `integration_acceptance` and expose
+seven dependency-ready leaves with twenty-three eligible runtime paths.
+Only the reviewed geometry/transport source and test pairs become newly
+eligible. Forged/missing acceptance and premature P9-3.2 promotion fail closed.
+P9-3.1 work remains pending user review, with empty runtime support sets.
+
+
+### P9-3.2 geometry stage and cache entry
+
+The user's explicit P9-3.1 acceptance and commit `dccb1ca` supersede its earlier
+pending-review preparation state. A separate committed-subject acceptance
+record enables only the dependency-ready P9-3.2 successor. API, notebook,
+browser and exports bind `geometry_acceptance`, eight dependency-ready leaves
+and the same twenty-three eligible runtime paths. Missing or forged acceptance,
+self-acceptance of P9-3.2, and unauthorized P9-3.3 work remain fail-closed.
+P9-3.2 implementation is pending review; runtime support remains empty.
+
+
+### P9-3.3 resource and charge entry
+
+P9-3.2 acceptance at committed subject `77286b2` is recorded separately from
+its historical review. The accepted entry exposes `stage_acceptance`, nine
+dependency-ready leaves and the same twenty-three eligible runtime paths.
+The step ownership adapter carries the frozen checklist's explicit P9-3.3
+resource-boundary assignment onto the existing step source/test pair. Missing
+or forged acceptance, premature P9-3.4 work and self-acceptance remain rejected.
+API/notebook/browser and their exports keep numerical support empty. The
+Phase 9 P9-3.3 review links numerical charge/continuity evidence; these display
+checks do not execute candidate roots or promote source claim dispositions.

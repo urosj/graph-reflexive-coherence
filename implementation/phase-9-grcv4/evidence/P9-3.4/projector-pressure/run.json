@@ -1,0 +1,243 @@
+{
+  "schema": "phase9_leaf_run_v1",
+  "iteration_id": "P9-3.4",
+  "status": "passed",
+  "started_utc": "2026-09-07T14:33:48.415449+00:00",
+  "completed_utc": "2026-09-07T14:33:52.910753+00:00",
+  "purpose": "Final review added dense cross-sector mixing after the exactly representable Hadamard fixture showed near-machine-zero error even at the smallest gap. This is a separate test-only follow-up; the completed full-suite source/result are unchanged.",
+  "subject": {
+    "original_inputs": "implementation/phase-9-grcv4/evidence/P9-3.4/validation/inputs.json",
+    "file": "tests/models/test_grc_v4_geometry.py",
+    "before_sha256": "9b3c32b9e0472a585062fec8ff7a953c2772ab6571da9a7c794630d7e9bf60b9",
+    "after_sha256": "b02e088113467715870f4f1da835edaaf3ca850135a15ff400cfe220827b902e",
+    "additional_patch": "--- a/tests/models/test_grc_v4_geometry.py\n+++ b/tests/models/test_grc_v4_geometry.py\n@@ -2697,6 +2697,90 @@\n             )\n         )\n \n+    def test_dense_rational_projector_with_input_rounding_near_gap(self) -> None:\n+        \"\"\"Challenge dense cross-sector mixing absent from the dyadic fixture.\n+\n+        Exact Householder reflectors give a rational rank-two projector with\n+        repeated eigenvalues and a known gap before input rounding. Stored\n+        matrices may split the internal degeneracy by roundoff. Compare the\n+        whole isolated cluster, including input error, not its individual modes.\n+        \"\"\"\n+        import itertools\n+\n+        graph = self.graph(4)\n+        for direction in ((1, 2, 3, 5), (2, 3, 5, 7), (1, 4, 9, 16)):\n+            norm2 = sum(x * x for x in direction)\n+            reflector = tuple(\n+                tuple(\n+                    Fraction(int(i == j)) - Fraction(2 * x * y, norm2)\n+                    for j, y in enumerate(direction)\n+                )\n+                for i, x in enumerate(direction)\n+            )\n+            sector = tuple(\n+                tuple(\n+                    sum(reflector[i][k] * reflector[j][k] for k in (0, 1))\n+                    for j in range(4)\n+                )\n+                for i in range(4)\n+            )\n+            # Establish the exact projector independently of all eigensolvers.\n+            self.assertEqual(sum(sector[i][i] for i in range(4)), 2)\n+            self.assertEqual(\n+                tuple(\n+                    tuple(\n+                        sum(sector[i][k] * sector[k][j] for k in range(4))\n+                        for j in range(4)\n+                    )\n+                    for i in range(4)\n+                ),\n+                sector,\n+            )\n+            oracle = np.array([[float(x) for x in row] for row in sector])\n+            for gap in (4.0, 2.0**-12, 2.0**-28, 2.0**-40):\n+                upper = 1.0 + gap\n+                exact_matrix = tuple(\n+                    tuple(\n+                        Fraction(upper) * int(i == j) - Fraction(gap) * sector[i][j]\n+                        for j in range(4)\n+                    )\n+                    for i in range(4)\n+                )\n+                matrix = tuple(tuple(float(x) for x in row) for row in exact_matrix)\n+                hodge = OneFormHodge(graph, matrix)\n+                input_error = max(\n+                    sum(abs(Fraction(a) - b) for a, b in zip(left, right, strict=True))\n+                    for left, right in zip(matrix, exact_matrix, strict=True)\n+                )\n+                self.assertLessEqual(input_error, Fraction(4, 2**53) * Fraction(upper))\n+                bound = 32 * np.finfo(float).eps * upper / gap\n+                worst = 0.0\n+                for order in itertools.permutations(range(4)):\n+                    signs = tuple((-1) ** i for i in order)\n+                    action = pressure_action(graph, order, signs)\n+                    values, vectors = np.linalg.eigh(\n+                        action.one_form_hodge(hodge).matrix\n+                    )\n+                    self.assertLess(values[1], 1 + gap / 2)\n+                    self.assertGreater(values[2], 1 + gap / 2)\n+                    projector = vectors[:, :2] @ vectors[:, :2].T\n+                    expected = oracle[np.ix_(order, order)] * np.outer(signs, signs)\n+                    error = float(np.linalg.norm(projector - expected, ord=2))\n+                    self.assertLessEqual(error, bound)\n+                    worst = max(worst, error)\n+                self.observations.append(\n+                    dict(\n+                        case=\"dense_rational_projector\",\n+                        direction=list(direction),\n+                        gap=gap,\n+                        coordinate_actions=24,\n+                        input_error_infinity=float(input_error),\n+                        worst_projector_error=worst,\n+                        projector_error_bound=bound,\n+                        exact_pre_round_cluster_multiplicity=2,\n+                    )\n+                )\n+\n     def test_pressure_detects_broken_product_inverse_and_sector_controls(self) -> None:\n         def old_product(value: geometry_stage.StarAssembly) -> None:\n             a, b = value.form.values\n",
+    "reconstruction_verified": true
+  },
+  "environment_reference": "implementation/phase-9-grcv4/evidence/P9-3.4/validation/run.json",
+  "commands": [
+    {
+      "argv": [
+        ".venv/bin/python",
+        "-m",
+        "unittest",
+        "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_dense_rational_projector_with_input_rounding_near_gap"
+      ],
+      "exit_status": 0,
+      "tests_run": 1,
+      "elapsed_seconds": 2.624,
+      "output": ".\n----------------------------------------------------------------------\nRan 1 test in 2.623s\n\nOK\n"
+    },
+    {
+      "argv": [
+        ".venv/bin/python",
+        "-m",
+        "ruff",
+        "check",
+        "tests/models/test_grc_v4_geometry.py"
+      ],
+      "exit_status": 0,
+      "output": "All checks passed!\n"
+    },
+    {
+      "argv": [
+        ".venv/bin/python",
+        "-m",
+        "mypy",
+        "--strict",
+        "tests/models/test_grc_v4_geometry.py"
+      ],
+      "exit_status": 0,
+      "output": "Success: no issues found in 1 source file\n"
+    }
+  ],
+  "observations": [
+    {
+      "case": "dense_rational_projector",
+      "direction": [
+        1,
+        2,
+        3,
+        5
+      ],
+      "gap": 4.0,
+      "coordinate_actions": 24,
+      "input_error_infinity": 2.9584049433305454e-16,
+      "worst_projector_error": 1.0664679514886493e-15,
+      "projector_error_bound": 8.881784197001252e-15,
+      "exact_pre_round_cluster_multiplicity": 2
+    },
+    {
+      "case": "dense_rational_projector",
+      "direction": [
+        1,
+        2,
+        3,
+        5
+      ],
+      "gap": 0.000244140625,
+      "coordinate_actions": 24,
+      "input_error_infinity": 9.591573882713956e-17,
+      "worst_projector_error": 2.7516185273153245e-12,
+      "projector_error_bound": 2.9110935884091305e-11,
+      "exact_pre_round_cluster_multiplicity": 2
+    },
+    {
+      "case": "dense_rational_projector",
+      "direction": [
+        1,
+        2,
+        3,
+        5
+      ],
+      "gap": 3.725290298461914e-09,
+      "coordinate_actions": 24,
+      "input_error_infinity": 9.138719450689691e-17,
+      "worst_projector_error": 1.590808983916695e-07,
+      "projector_error_bound": 1.9073486399179274e-06,
+      "exact_pre_round_cluster_multiplicity": 2
+    },
+    {
+      "case": "dense_rational_projector",
+      "direction": [
+        1,
+        2,
+        3,
+        5
+      ],
+      "gap": 9.094947017729282e-13,
+      "coordinate_actions": 24,
+      "input_error_infinity": 1.0715367522354577e-16,
+      "worst_projector_error": 0.0006469274939943463,
+      "projector_error_bound": 0.007812500000007105,
+      "exact_pre_round_cluster_multiplicity": 2
+    },
+    {
+      "case": "dense_rational_projector",
+      "direction": [
+        2,
+        3,
+        5,
+        7
+      ],
+      "gap": 4.0,
+      "coordinate_actions": 24,
+      "input_error_infinity": 5.110340887559843e-16,
+      "worst_projector_error": 9.57161256430733e-16,
+      "projector_error_bound": 8.881784197001252e-15,
+      "exact_pre_round_cluster_multiplicity": 2
+    },
+    {
+      "case": "dense_rational_projector",
+      "direction": [
+        2,
+        3,
+        5,
+        7
+      ],
+      "gap": 0.000244140625,
+      "coordinate_actions": 24,
+      "input_error_infinity": 1.0617458373178718e-16,
+      "worst_projector_error": 1.921729449084752e-12,
+      "projector_error_bound": 2.9110935884091305e-11,
+      "exact_pre_round_cluster_multiplicity": 2
+    },
+    {
+      "case": "dense_rational_projector",
+      "direction": [
+        2,
+        3,
+        5,
+        7
+      ],
+      "gap": 3.725290298461914e-09,
+      "coordinate_actions": 24,
+      "input_error_infinity": 1.0757531603157831e-16,
+      "worst_projector_error": 1.6429957528499265e-07,
+      "projector_error_bound": 1.9073486399179274e-06,
+      "exact_pre_round_cluster_multiplicity": 2
+    },
+    {
+      "case": "dense_rational_projector",
+      "direction": [
+        2,
+        3,
+        5,
+        7
+      ],
+      "gap": 9.094947017729282e-13,
+      "coordinate_actions": 24,
+      "input_error_infinity": 1.1077294598984368e-16,
+      "worst_projector_error": 0.0007258485891457125,
+      "projector_error_bound": 0.007812500000007105,
+      "exact_pre_round_cluster_multiplicity": 2
+    },
+    {
+      "case": "dense_rational_projector",
+      "direction": [
+        1,
+        4,
+        9,
+        16
+      ],
+      "gap": 4.0,
+      "coordinate_actions": 24,
+      "input_error_infinity": 5.562171638931683e-16,
+      "worst_projector_error": 9.076594730829833e-16,
+      "projector_error_bound": 8.881784197001252e-15,
+      "exact_pre_round_cluster_multiplicity": 2
+    },
+    {
+      "case": "dense_rational_projector",
+      "direction": [
+        1,
+        4,
+        9,
+        16
+      ],
+      "gap": 0.000244140625,
+      "coordinate_actions": 24,
+      "input_error_infinity": 7.182673782080472e-17,
+      "worst_projector_error": 2.8945096100323653e-12,
+      "projector_error_bound": 2.9110935884091305e-11,
+      "exact_pre_round_cluster_multiplicity": 2
+    },
+    {
+      "case": "dense_rational_projector",
+      "direction": [
+        1,
+        4,
+        9,
+        16
+      ],
+      "gap": 3.725290298461914e-09,
+      "coordinate_actions": 24,
+      "input_error_infinity": 1.050865128553115e-16,
+      "worst_projector_error": 1.9853823665887181e-07,
+      "projector_error_bound": 1.9073486399179274e-06,
+      "exact_pre_round_cluster_multiplicity": 2
+    },
+    {
+      "case": "dense_rational_projector",
+      "direction": [
+        1,
+        4,
+        9,
+        16
+      ],
+      "gap": 9.094947017729282e-13,
+      "coordinate_actions": 24,
+      "input_error_infinity": 1.3296169007616535e-17,
+      "worst_projector_error": 0.000661066232456476,
+      "projector_error_bound": 0.007812500000007105,
+      "exact_pre_round_cluster_multiplicity": 2
+    }
+  ],
+  "claim_ceiling": "Independent analysis fixture with rational target and explicit binary64 input perturbation; not a production selector or full C step.",
+  "other_numerical_source_unchanged": true,
+  "environment_overrides": {
+    "GRCV4_PACKAGE_TESTS": null,
+    "GRCV4_WHEELHOUSE": null,
+    "PIP_NO_CACHE_DIR": null
+  },
+  "environment_note": "Same Python, installed dependencies and numeric backend as the referenced run; package-test and pip-cache variables were unset because this execution runs only the added projector method and static checks."
+}
