@@ -1,0 +1,53 @@
+{
+  "graph": {
+    "schema_version": "grcv4-serialized-graph-v1",
+    "live_node_ids": [
+      "b",
+      1,
+      "1"
+    ],
+    "oriented_edges": [
+      {
+        "edge_id": "z",
+        "tail_node_id": "b",
+        "head_node_id": 1
+      },
+      {
+        "edge_id": "a",
+        "tail_node_id": 1,
+        "head_node_id": "1"
+      }
+    ]
+  },
+  "common": {
+    "schema_version": "grcv4-common-params-v1",
+    "differential_backend_id": "oriented_incidence_d0_equals_BT_v1",
+    "boundary_policy_id": "closed_no_flux_v1",
+    "measure_profile_id": "unit_vertex_measure_v1",
+    "context_contract_id": "constant_zero_context_v1",
+    "units_id": "grcv4_nondimensional_reference_v1",
+    "gauge_id": "component_zero_mean_potential_v1",
+    "normalization_id": "unnormalized_vertex_stiffness_v1",
+    "domain_id": "fixed_graph_strict_gap_spd_v1",
+    "default_step_request": null
+  },
+  "H1_form": [
+    [
+      2,
+      1
+    ],
+    [
+      1,
+      3
+    ]
+  ],
+  "flux": [
+    3,
+    -2
+  ],
+  "scalar": [
+    4,
+    2,
+    1
+  ]
+}

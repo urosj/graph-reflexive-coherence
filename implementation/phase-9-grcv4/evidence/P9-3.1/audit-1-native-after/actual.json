@@ -1,0 +1,5504 @@
+{
+  "iteration_id": "P9-3.1",
+  "minimal": {
+    "iteration_id": "P9-3.1",
+    "reproducer_exit_code": 0,
+    "native_reproducer": {
+      "scope": "native repository and installed dependencies",
+      "python": "3.12.3 (main, Jul 15 2026, 23:46:41) [GCC 13.3.0]",
+      "numpy": "2.4.6",
+      "platform": "Linux-5.15.167-0515167-generic-x86_64-with-glibc2.39",
+      "geometry_file": "src/pygrc/models/grc_v4_geometry.py",
+      "geometry_sha256": "831e0590d79f7e9088fdd6ad3c1fe1a8aca54b56d8463f11ac120474829061f0",
+      "cases": [
+        {
+          "case": "rank_one",
+          "class": "OneFormHodge",
+          "matrix": [
+            [
+              2.0,
+              2.0
+            ],
+            [
+              2.0,
+              2.0
+            ]
+          ],
+          "exact_determinant": "0",
+          "exact_spd": false,
+          "constructor_accepted": false,
+          "error": "Hodge matrix must be positive definite"
+        },
+        {
+          "case": "rank_one",
+          "class": "VertexHodge",
+          "matrix": [
+            [
+              2.0,
+              2.0
+            ],
+            [
+              2.0,
+              2.0
+            ]
+          ],
+          "exact_determinant": "0",
+          "exact_spd": false,
+          "constructor_accepted": false,
+          "error": "Hodge matrix must be positive definite"
+        },
+        {
+          "case": "indefinite_neighbor",
+          "class": "OneFormHodge",
+          "matrix": [
+            [
+              2.0,
+              2.0
+            ],
+            [
+              2.0,
+              1.9999999999999998
+            ]
+          ],
+          "exact_determinant": "-1/2251799813685248",
+          "exact_spd": false,
+          "constructor_accepted": false,
+          "error": "Hodge matrix must be positive definite"
+        },
+        {
+          "case": "indefinite_neighbor",
+          "class": "VertexHodge",
+          "matrix": [
+            [
+              2.0,
+              2.0
+            ],
+            [
+              2.0,
+              1.9999999999999998
+            ]
+          ],
+          "exact_determinant": "-1/2251799813685248",
+          "exact_spd": false,
+          "constructor_accepted": false,
+          "error": "Hodge matrix must be positive definite"
+        },
+        {
+          "case": "indefinite_neighbor_permuted",
+          "class": "OneFormHodge",
+          "matrix": [
+            [
+              1.9999999999999998,
+              2.0
+            ],
+            [
+              2.0,
+              2.0
+            ]
+          ],
+          "exact_determinant": "-1/2251799813685248",
+          "exact_spd": false,
+          "constructor_accepted": false,
+          "error": "Hodge matrix must be positive definite"
+        },
+        {
+          "case": "indefinite_neighbor_permuted",
+          "class": "VertexHodge",
+          "matrix": [
+            [
+              1.9999999999999998,
+              2.0
+            ],
+            [
+              2.0,
+              2.0
+            ]
+          ],
+          "exact_determinant": "-1/2251799813685248",
+          "exact_spd": false,
+          "constructor_accepted": false,
+          "error": "Hodge matrix must be positive definite"
+        },
+        {
+          "case": "well_conditioned_positive_control",
+          "class": "OneFormHodge",
+          "matrix": [
+            [
+              2.0,
+              1.0
+            ],
+            [
+              1.0,
+              3.0
+            ]
+          ],
+          "exact_determinant": "5",
+          "exact_spd": true,
+          "constructor_accepted": true,
+          "self_pairing": 3.0,
+          "flat": [
+            0.8,
+            -0.6
+          ]
+        },
+        {
+          "case": "well_conditioned_positive_control",
+          "class": "VertexHodge",
+          "matrix": [
+            [
+              2.0,
+              1.0
+            ],
+            [
+              1.0,
+              3.0
+            ]
+          ],
+          "exact_determinant": "5",
+          "exact_spd": true,
+          "constructor_accepted": true,
+          "self_pairing": 3.0
+        }
+      ]
+    },
+    "numpy_build_config": "Build Dependencies:\n  blas:\n    detection method: pkgconfig\n    found: true\n    include directory: /opt/_internal/cpython-3.12.12/lib/python3.12/site-packages/scipy_openblas64/include\n    lib directory: /opt/_internal/cpython-3.12.12/lib/python3.12/site-packages/scipy_openblas64/lib\n    name: scipy-openblas\n    openblas configuration: OpenBLAS 0.3.31.188.0  USE64BITINT DYNAMIC_ARCH NO_AFFINITY\n      SkylakeX MAX_THREADS=64\n    pc file directory: /project/.openblas\n    version: 0.3.31.188.0\n  lapack:\n    detection method: pkgconfig\n    found: true\n    include directory: /opt/_internal/cpython-3.12.12/lib/python3.12/site-packages/scipy_openblas64/include\n    lib directory: /opt/_internal/cpython-3.12.12/lib/python3.12/site-packages/scipy_openblas64/lib\n    name: scipy-openblas\n    openblas configuration: OpenBLAS 0.3.31.188.0  USE64BITINT DYNAMIC_ARCH NO_AFFINITY\n      SkylakeX MAX_THREADS=64\n    pc file directory: /project/.openblas\n    version: 0.3.31.188.0\nCompilers:\n  c:\n    commands: cc\n    linker: ld.bfd\n    name: gcc\n    version: 14.2.1\n  c++:\n    commands: c++\n    linker: ld.bfd\n    name: gcc\n    version: 14.2.1\n  cython:\n    commands: cython\n    linker: cython\n    name: cython\n    version: 3.2.4\nMachine Information:\n  build:\n    cpu: x86_64\n    endian: little\n    family: x86_64\n    system: linux\n  host:\n    cpu: x86_64\n    endian: little\n    family: x86_64\n    system: linux\nPython Information:\n  path: /tmp/build-env-tgi5ymto/bin/python\n  version: '3.12'\nSIMD Extensions:\n  baseline:\n  - X86_V2\n  found:\n  - X86_V3\n  not found:\n  - X86_V4\n  - AVX512_ICL\n  - AVX512_SPR\n\n",
+    "loaded_source_bindings": [
+      {
+        "module": "pygrc.models.grc_v4_geometry",
+        "path": "/home/uros/RC-github/graph-reflexive-coherence/src/pygrc/models/grc_v4_geometry.py",
+        "sha256": "831e0590d79f7e9088fdd6ad3c1fe1a8aca54b56d8463f11ac120474829061f0"
+      },
+      {
+        "module": "pygrc.models.grc_v4_transport",
+        "path": "/home/uros/RC-github/graph-reflexive-coherence/src/pygrc/models/grc_v4_transport.py",
+        "sha256": "8bad1a9642456f3a63976177b9baba3f1dd8ec0df2ec6376e18a71fb032823a2"
+      },
+      {
+        "module": "pygrc.models.grc_v4_state",
+        "path": "/home/uros/RC-github/graph-reflexive-coherence/src/pygrc/models/grc_v4_state.py",
+        "sha256": "b0ccf06ef91b66feb8670fb67281465998f4bcb085c4d547fedd3ce6d85ad3cb"
+      },
+      {
+        "module": "pygrc.models.grc_v4_profile",
+        "path": "/home/uros/RC-github/graph-reflexive-coherence/src/pygrc/models/grc_v4_profile.py",
+        "sha256": "188e4ceb92b6a36fe81849911b88b233b8dd16bf3de07383e1508d76232fdbfb"
+      },
+      {
+        "module": "pygrc.models.grc_v4_codec",
+        "path": "/home/uros/RC-github/graph-reflexive-coherence/src/pygrc/models/grc_v4_codec.py",
+        "sha256": "bd6d9390c818c5a25b70da119cfbc3a3de3707ee84566f6bb06160bb4780e154"
+      },
+      {
+        "module": "tests.models.test_grc_v4_geometry",
+        "path": "/home/uros/RC-github/graph-reflexive-coherence/tests/models/test_grc_v4_geometry.py",
+        "sha256": "629916068c2098ccc77d96f9c1b014481a5d397357234e54ab694dfbe9781bb1"
+      },
+      {
+        "module": "tests.models.test_grc_v4_transport",
+        "path": "/home/uros/RC-github/graph-reflexive-coherence/tests/models/test_grc_v4_transport.py",
+        "sha256": "13ac20f700a10f7a13fb5ba09243844e2bced9e79bcd1260d2740191fa5e691b"
+      }
+    ],
+    "qualification": "Native checkout and actual installed dependencies, no adapter or namespace substitution; paths identify this machine, source hashes identify reconstruction subjects."
+  },
+  "stress": {
+    "scope": "native repository dependencies; independent new audit run",
+    "python": "3.12.3 (main, Jul 15 2026, 23:46:41) [GCC 13.3.0]",
+    "numpy": "2.4.6",
+    "platform": "Linux-5.15.167-0515167-generic-x86_64-with-glibc2.39",
+    "cases": 876,
+    "totals": {
+      "pass": 876
+    },
+    "groups": {
+      "candidate_c_independence": {
+        "pass": 54
+      },
+      "candidate_factor": {
+        "pass": 18
+      },
+      "exact_non_spd_rejection": {
+        "pass": 140
+      },
+      "graph_oracle": {
+        "pass": 100
+      },
+      "matrix_shape_admission": {
+        "pass": 39
+      },
+      "ownership": {
+        "pass": 24
+      },
+      "rational_spd_solve": {
+        "pass": 192
+      },
+      "signed_covariance_inverse": {
+        "pass": 288
+      },
+      "type_and_graph_rejection": {
+        "pass": 21
+      }
+    },
+    "cases_detail": [
+      {
+        "group": "graph_oracle",
+        "case": "0",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "graph_oracle",
+        "case": "1",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "graph_oracle",
+        "case": "2",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "graph_oracle",
+        "case": "3",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "graph_oracle",
+        "case": "4",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "graph_oracle",
+        "case": "5",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "graph_oracle",
+        "case": "6",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "graph_oracle",
+        "case": "7",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "graph_oracle",
+        "case": "8",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "graph_oracle",
+        "case": "9",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "graph_oracle",
+        "case": "10",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "graph_oracle",
+        "case": "11",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "graph_oracle",
+        "case": "12",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "graph_oracle",
+        "case": "13",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "graph_oracle",
+        "case": "14",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "graph_oracle",
+        "case": "15",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "graph_oracle",
+        "case": "16",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "graph_oracle",
+        "case": "17",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "graph_oracle",
+        "case": "18",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "graph_oracle",
+        "case": "19",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "graph_oracle",
+        "case": "20",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "graph_oracle",
+        "case": "21",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "graph_oracle",
+        "case": "22",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "graph_oracle",
+        "case": "23",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "graph_oracle",
+        "case": "24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "graph_oracle",
+        "case": "25",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "graph_oracle",
+        "case": "26",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "graph_oracle",
+        "case": "27",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "graph_oracle",
+        "case": "28",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "graph_oracle",
+        "case": "29",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "graph_oracle",
+        "case": "30",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "graph_oracle",
+        "case": "31",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "graph_oracle",
+        "case": "32",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "graph_oracle",
+        "case": "33",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "graph_oracle",
+        "case": "34",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "graph_oracle",
+        "case": "35",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "graph_oracle",
+        "case": "36",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "graph_oracle",
+        "case": "37",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "graph_oracle",
+        "case": "38",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "graph_oracle",
+        "case": "39",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "graph_oracle",
+        "case": "40",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "graph_oracle",
+        "case": "41",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "graph_oracle",
+        "case": "42",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "graph_oracle",
+        "case": "43",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "graph_oracle",
+        "case": "44",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "graph_oracle",
+        "case": "45",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "graph_oracle",
+        "case": "46",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "graph_oracle",
+        "case": "47",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "graph_oracle",
+        "case": "48",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "graph_oracle",
+        "case": "49",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "graph_oracle",
+        "case": "50",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "graph_oracle",
+        "case": "51",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "graph_oracle",
+        "case": "52",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "graph_oracle",
+        "case": "53",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "graph_oracle",
+        "case": "54",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "graph_oracle",
+        "case": "55",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "graph_oracle",
+        "case": "56",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "graph_oracle",
+        "case": "57",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "graph_oracle",
+        "case": "58",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "graph_oracle",
+        "case": "59",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "graph_oracle",
+        "case": "60",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "graph_oracle",
+        "case": "61",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "graph_oracle",
+        "case": "62",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "graph_oracle",
+        "case": "63",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "graph_oracle",
+        "case": "64",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "graph_oracle",
+        "case": "65",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "graph_oracle",
+        "case": "66",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "graph_oracle",
+        "case": "67",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "graph_oracle",
+        "case": "68",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "graph_oracle",
+        "case": "69",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "graph_oracle",
+        "case": "70",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "graph_oracle",
+        "case": "71",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "graph_oracle",
+        "case": "72",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "graph_oracle",
+        "case": "73",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "graph_oracle",
+        "case": "74",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "graph_oracle",
+        "case": "75",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "graph_oracle",
+        "case": "76",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "graph_oracle",
+        "case": "77",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "graph_oracle",
+        "case": "78",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "graph_oracle",
+        "case": "79",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "graph_oracle",
+        "case": "80",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "graph_oracle",
+        "case": "81",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "graph_oracle",
+        "case": "82",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "graph_oracle",
+        "case": "83",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "graph_oracle",
+        "case": "84",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "graph_oracle",
+        "case": "85",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "graph_oracle",
+        "case": "86",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "graph_oracle",
+        "case": "87",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "graph_oracle",
+        "case": "88",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "graph_oracle",
+        "case": "89",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "graph_oracle",
+        "case": "90",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "graph_oracle",
+        "case": "91",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "graph_oracle",
+        "case": "92",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "graph_oracle",
+        "case": "93",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "graph_oracle",
+        "case": "94",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "graph_oracle",
+        "case": "95",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "graph_oracle",
+        "case": "96",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "graph_oracle",
+        "case": "97",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "graph_oracle",
+        "case": "98",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "graph_oracle",
+        "case": "99",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n1-0-scale-24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n1-0-scale0",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n1-0-scale24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n1-1-scale-24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n1-1-scale0",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n1-1-scale24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n1-2-scale-24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n1-2-scale0",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n1-2-scale24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n1-3-scale-24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n1-3-scale0",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n1-3-scale24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n1-4-scale-24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n1-4-scale0",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n1-4-scale24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n1-5-scale-24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n1-5-scale0",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n1-5-scale24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n1-6-scale-24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n1-6-scale0",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n1-6-scale24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n1-7-scale-24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n1-7-scale0",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n1-7-scale24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n2-0-scale-24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n2-0-scale0",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n2-0-scale24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n2-1-scale-24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n2-1-scale0",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n2-1-scale24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n2-2-scale-24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n2-2-scale0",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n2-2-scale24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n2-3-scale-24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n2-3-scale0",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n2-3-scale24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n2-4-scale-24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n2-4-scale0",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n2-4-scale24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n2-5-scale-24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n2-5-scale0",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n2-5-scale24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n2-6-scale-24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n2-6-scale0",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n2-6-scale24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n2-7-scale-24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n2-7-scale0",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n2-7-scale24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n3-0-scale-24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n3-0-scale0",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n3-0-scale24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n3-1-scale-24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n3-1-scale0",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n3-1-scale24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n3-2-scale-24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n3-2-scale0",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n3-2-scale24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n3-3-scale-24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n3-3-scale0",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n3-3-scale24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n3-4-scale-24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n3-4-scale0",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n3-4-scale24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n3-5-scale-24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n3-5-scale0",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n3-5-scale24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n3-6-scale-24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n3-6-scale0",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n3-6-scale24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n3-7-scale-24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n3-7-scale0",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n3-7-scale24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n4-0-scale-24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n4-0-scale0",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n4-0-scale24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n4-1-scale-24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n4-1-scale0",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n4-1-scale24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n4-2-scale-24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n4-2-scale0",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n4-2-scale24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n4-3-scale-24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n4-3-scale0",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n4-3-scale24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n4-4-scale-24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n4-4-scale0",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n4-4-scale24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n4-5-scale-24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n4-5-scale0",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n4-5-scale24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n4-6-scale-24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n4-6-scale0",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n4-6-scale24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n4-7-scale-24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n4-7-scale0",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n4-7-scale24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n5-0-scale-24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n5-0-scale0",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n5-0-scale24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n5-1-scale-24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n5-1-scale0",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n5-1-scale24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n5-2-scale-24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n5-2-scale0",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n5-2-scale24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n5-3-scale-24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n5-3-scale0",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n5-3-scale24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n5-4-scale-24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n5-4-scale0",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n5-4-scale24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n5-5-scale-24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n5-5-scale0",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n5-5-scale24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n5-6-scale-24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n5-6-scale0",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n5-6-scale24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n5-7-scale-24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n5-7-scale0",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n5-7-scale24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n6-0-scale-24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n6-0-scale0",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n6-0-scale24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n6-1-scale-24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n6-1-scale0",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n6-1-scale24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n6-2-scale-24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n6-2-scale0",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n6-2-scale24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n6-3-scale-24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n6-3-scale0",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n6-3-scale24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n6-4-scale-24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n6-4-scale0",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n6-4-scale24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n6-5-scale-24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n6-5-scale0",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n6-5-scale24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n6-6-scale-24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n6-6-scale0",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n6-6-scale24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n6-7-scale-24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n6-7-scale0",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n6-7-scale24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n7-0-scale-24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n7-0-scale0",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n7-0-scale24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n7-1-scale-24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n7-1-scale0",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n7-1-scale24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n7-2-scale-24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n7-2-scale0",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n7-2-scale24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n7-3-scale-24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n7-3-scale0",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n7-3-scale24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n7-4-scale-24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n7-4-scale0",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n7-4-scale24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n7-5-scale-24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n7-5-scale0",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n7-5-scale24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n7-6-scale-24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n7-6-scale0",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n7-6-scale24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n7-7-scale-24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n7-7-scale0",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n7-7-scale24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n8-0-scale-24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n8-0-scale0",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n8-0-scale24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n8-1-scale-24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n8-1-scale0",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n8-1-scale24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n8-2-scale-24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n8-2-scale0",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n8-2-scale24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n8-3-scale-24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n8-3-scale0",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n8-3-scale24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n8-4-scale-24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n8-4-scale0",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n8-4-scale24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n8-5-scale-24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n8-5-scale0",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n8-5-scale24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n8-6-scale-24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n8-6-scale0",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n8-6-scale24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n8-7-scale-24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n8-7-scale0",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "rational_spd_solve",
+        "case": "n8-7-scale24",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(0, 1, 2)(0, 1, 2)(-1, -1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(0, 1, 2)(0, 1, 2)(-1, -1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(0, 1, 2)(0, 1, 2)(-1, 1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(0, 1, 2)(0, 1, 2)(-1, 1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(0, 1, 2)(0, 1, 2)(1, -1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(0, 1, 2)(0, 1, 2)(1, -1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(0, 1, 2)(0, 1, 2)(1, 1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(0, 1, 2)(0, 1, 2)(1, 1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(0, 1, 2)(0, 2, 1)(-1, -1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(0, 1, 2)(0, 2, 1)(-1, -1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(0, 1, 2)(0, 2, 1)(-1, 1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(0, 1, 2)(0, 2, 1)(-1, 1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(0, 1, 2)(0, 2, 1)(1, -1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(0, 1, 2)(0, 2, 1)(1, -1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(0, 1, 2)(0, 2, 1)(1, 1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(0, 1, 2)(0, 2, 1)(1, 1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(0, 1, 2)(1, 0, 2)(-1, -1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(0, 1, 2)(1, 0, 2)(-1, -1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(0, 1, 2)(1, 0, 2)(-1, 1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(0, 1, 2)(1, 0, 2)(-1, 1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(0, 1, 2)(1, 0, 2)(1, -1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(0, 1, 2)(1, 0, 2)(1, -1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(0, 1, 2)(1, 0, 2)(1, 1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(0, 1, 2)(1, 0, 2)(1, 1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(0, 1, 2)(1, 2, 0)(-1, -1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(0, 1, 2)(1, 2, 0)(-1, -1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(0, 1, 2)(1, 2, 0)(-1, 1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(0, 1, 2)(1, 2, 0)(-1, 1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(0, 1, 2)(1, 2, 0)(1, -1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(0, 1, 2)(1, 2, 0)(1, -1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(0, 1, 2)(1, 2, 0)(1, 1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(0, 1, 2)(1, 2, 0)(1, 1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(0, 1, 2)(2, 0, 1)(-1, -1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(0, 1, 2)(2, 0, 1)(-1, -1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(0, 1, 2)(2, 0, 1)(-1, 1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(0, 1, 2)(2, 0, 1)(-1, 1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(0, 1, 2)(2, 0, 1)(1, -1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(0, 1, 2)(2, 0, 1)(1, -1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(0, 1, 2)(2, 0, 1)(1, 1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(0, 1, 2)(2, 0, 1)(1, 1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(0, 1, 2)(2, 1, 0)(-1, -1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(0, 1, 2)(2, 1, 0)(-1, -1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(0, 1, 2)(2, 1, 0)(-1, 1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(0, 1, 2)(2, 1, 0)(-1, 1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(0, 1, 2)(2, 1, 0)(1, -1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(0, 1, 2)(2, 1, 0)(1, -1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(0, 1, 2)(2, 1, 0)(1, 1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(0, 1, 2)(2, 1, 0)(1, 1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(0, 2, 1)(0, 1, 2)(-1, -1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(0, 2, 1)(0, 1, 2)(-1, -1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(0, 2, 1)(0, 1, 2)(-1, 1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(0, 2, 1)(0, 1, 2)(-1, 1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(0, 2, 1)(0, 1, 2)(1, -1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(0, 2, 1)(0, 1, 2)(1, -1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(0, 2, 1)(0, 1, 2)(1, 1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(0, 2, 1)(0, 1, 2)(1, 1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(0, 2, 1)(0, 2, 1)(-1, -1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(0, 2, 1)(0, 2, 1)(-1, -1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(0, 2, 1)(0, 2, 1)(-1, 1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(0, 2, 1)(0, 2, 1)(-1, 1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(0, 2, 1)(0, 2, 1)(1, -1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(0, 2, 1)(0, 2, 1)(1, -1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(0, 2, 1)(0, 2, 1)(1, 1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(0, 2, 1)(0, 2, 1)(1, 1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(0, 2, 1)(1, 0, 2)(-1, -1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(0, 2, 1)(1, 0, 2)(-1, -1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(0, 2, 1)(1, 0, 2)(-1, 1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(0, 2, 1)(1, 0, 2)(-1, 1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(0, 2, 1)(1, 0, 2)(1, -1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(0, 2, 1)(1, 0, 2)(1, -1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(0, 2, 1)(1, 0, 2)(1, 1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(0, 2, 1)(1, 0, 2)(1, 1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(0, 2, 1)(1, 2, 0)(-1, -1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(0, 2, 1)(1, 2, 0)(-1, -1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(0, 2, 1)(1, 2, 0)(-1, 1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(0, 2, 1)(1, 2, 0)(-1, 1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(0, 2, 1)(1, 2, 0)(1, -1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(0, 2, 1)(1, 2, 0)(1, -1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(0, 2, 1)(1, 2, 0)(1, 1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(0, 2, 1)(1, 2, 0)(1, 1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(0, 2, 1)(2, 0, 1)(-1, -1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(0, 2, 1)(2, 0, 1)(-1, -1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(0, 2, 1)(2, 0, 1)(-1, 1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(0, 2, 1)(2, 0, 1)(-1, 1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(0, 2, 1)(2, 0, 1)(1, -1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(0, 2, 1)(2, 0, 1)(1, -1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(0, 2, 1)(2, 0, 1)(1, 1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(0, 2, 1)(2, 0, 1)(1, 1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(0, 2, 1)(2, 1, 0)(-1, -1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(0, 2, 1)(2, 1, 0)(-1, -1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(0, 2, 1)(2, 1, 0)(-1, 1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(0, 2, 1)(2, 1, 0)(-1, 1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(0, 2, 1)(2, 1, 0)(1, -1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(0, 2, 1)(2, 1, 0)(1, -1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(0, 2, 1)(2, 1, 0)(1, 1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(0, 2, 1)(2, 1, 0)(1, 1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(1, 0, 2)(0, 1, 2)(-1, -1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(1, 0, 2)(0, 1, 2)(-1, -1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(1, 0, 2)(0, 1, 2)(-1, 1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(1, 0, 2)(0, 1, 2)(-1, 1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(1, 0, 2)(0, 1, 2)(1, -1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(1, 0, 2)(0, 1, 2)(1, -1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(1, 0, 2)(0, 1, 2)(1, 1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(1, 0, 2)(0, 1, 2)(1, 1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(1, 0, 2)(0, 2, 1)(-1, -1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(1, 0, 2)(0, 2, 1)(-1, -1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(1, 0, 2)(0, 2, 1)(-1, 1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(1, 0, 2)(0, 2, 1)(-1, 1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(1, 0, 2)(0, 2, 1)(1, -1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(1, 0, 2)(0, 2, 1)(1, -1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(1, 0, 2)(0, 2, 1)(1, 1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(1, 0, 2)(0, 2, 1)(1, 1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(1, 0, 2)(1, 0, 2)(-1, -1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(1, 0, 2)(1, 0, 2)(-1, -1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(1, 0, 2)(1, 0, 2)(-1, 1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(1, 0, 2)(1, 0, 2)(-1, 1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(1, 0, 2)(1, 0, 2)(1, -1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(1, 0, 2)(1, 0, 2)(1, -1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(1, 0, 2)(1, 0, 2)(1, 1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(1, 0, 2)(1, 0, 2)(1, 1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(1, 0, 2)(1, 2, 0)(-1, -1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(1, 0, 2)(1, 2, 0)(-1, -1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(1, 0, 2)(1, 2, 0)(-1, 1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(1, 0, 2)(1, 2, 0)(-1, 1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(1, 0, 2)(1, 2, 0)(1, -1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(1, 0, 2)(1, 2, 0)(1, -1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(1, 0, 2)(1, 2, 0)(1, 1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(1, 0, 2)(1, 2, 0)(1, 1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(1, 0, 2)(2, 0, 1)(-1, -1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(1, 0, 2)(2, 0, 1)(-1, -1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(1, 0, 2)(2, 0, 1)(-1, 1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(1, 0, 2)(2, 0, 1)(-1, 1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(1, 0, 2)(2, 0, 1)(1, -1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(1, 0, 2)(2, 0, 1)(1, -1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(1, 0, 2)(2, 0, 1)(1, 1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(1, 0, 2)(2, 0, 1)(1, 1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(1, 0, 2)(2, 1, 0)(-1, -1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(1, 0, 2)(2, 1, 0)(-1, -1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(1, 0, 2)(2, 1, 0)(-1, 1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(1, 0, 2)(2, 1, 0)(-1, 1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(1, 0, 2)(2, 1, 0)(1, -1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(1, 0, 2)(2, 1, 0)(1, -1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(1, 0, 2)(2, 1, 0)(1, 1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(1, 0, 2)(2, 1, 0)(1, 1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(1, 2, 0)(0, 1, 2)(-1, -1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(1, 2, 0)(0, 1, 2)(-1, -1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(1, 2, 0)(0, 1, 2)(-1, 1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(1, 2, 0)(0, 1, 2)(-1, 1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(1, 2, 0)(0, 1, 2)(1, -1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(1, 2, 0)(0, 1, 2)(1, -1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(1, 2, 0)(0, 1, 2)(1, 1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(1, 2, 0)(0, 1, 2)(1, 1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(1, 2, 0)(0, 2, 1)(-1, -1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(1, 2, 0)(0, 2, 1)(-1, -1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(1, 2, 0)(0, 2, 1)(-1, 1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(1, 2, 0)(0, 2, 1)(-1, 1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(1, 2, 0)(0, 2, 1)(1, -1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(1, 2, 0)(0, 2, 1)(1, -1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(1, 2, 0)(0, 2, 1)(1, 1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(1, 2, 0)(0, 2, 1)(1, 1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(1, 2, 0)(1, 0, 2)(-1, -1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(1, 2, 0)(1, 0, 2)(-1, -1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(1, 2, 0)(1, 0, 2)(-1, 1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(1, 2, 0)(1, 0, 2)(-1, 1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(1, 2, 0)(1, 0, 2)(1, -1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(1, 2, 0)(1, 0, 2)(1, -1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(1, 2, 0)(1, 0, 2)(1, 1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(1, 2, 0)(1, 0, 2)(1, 1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(1, 2, 0)(1, 2, 0)(-1, -1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(1, 2, 0)(1, 2, 0)(-1, -1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(1, 2, 0)(1, 2, 0)(-1, 1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(1, 2, 0)(1, 2, 0)(-1, 1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(1, 2, 0)(1, 2, 0)(1, -1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(1, 2, 0)(1, 2, 0)(1, -1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(1, 2, 0)(1, 2, 0)(1, 1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(1, 2, 0)(1, 2, 0)(1, 1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(1, 2, 0)(2, 0, 1)(-1, -1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(1, 2, 0)(2, 0, 1)(-1, -1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(1, 2, 0)(2, 0, 1)(-1, 1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(1, 2, 0)(2, 0, 1)(-1, 1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(1, 2, 0)(2, 0, 1)(1, -1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(1, 2, 0)(2, 0, 1)(1, -1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(1, 2, 0)(2, 0, 1)(1, 1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(1, 2, 0)(2, 0, 1)(1, 1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(1, 2, 0)(2, 1, 0)(-1, -1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(1, 2, 0)(2, 1, 0)(-1, -1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(1, 2, 0)(2, 1, 0)(-1, 1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(1, 2, 0)(2, 1, 0)(-1, 1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(1, 2, 0)(2, 1, 0)(1, -1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(1, 2, 0)(2, 1, 0)(1, -1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(1, 2, 0)(2, 1, 0)(1, 1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(1, 2, 0)(2, 1, 0)(1, 1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(2, 0, 1)(0, 1, 2)(-1, -1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(2, 0, 1)(0, 1, 2)(-1, -1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(2, 0, 1)(0, 1, 2)(-1, 1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(2, 0, 1)(0, 1, 2)(-1, 1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(2, 0, 1)(0, 1, 2)(1, -1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(2, 0, 1)(0, 1, 2)(1, -1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(2, 0, 1)(0, 1, 2)(1, 1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(2, 0, 1)(0, 1, 2)(1, 1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(2, 0, 1)(0, 2, 1)(-1, -1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(2, 0, 1)(0, 2, 1)(-1, -1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(2, 0, 1)(0, 2, 1)(-1, 1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(2, 0, 1)(0, 2, 1)(-1, 1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(2, 0, 1)(0, 2, 1)(1, -1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(2, 0, 1)(0, 2, 1)(1, -1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(2, 0, 1)(0, 2, 1)(1, 1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(2, 0, 1)(0, 2, 1)(1, 1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(2, 0, 1)(1, 0, 2)(-1, -1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(2, 0, 1)(1, 0, 2)(-1, -1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(2, 0, 1)(1, 0, 2)(-1, 1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(2, 0, 1)(1, 0, 2)(-1, 1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(2, 0, 1)(1, 0, 2)(1, -1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(2, 0, 1)(1, 0, 2)(1, -1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(2, 0, 1)(1, 0, 2)(1, 1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(2, 0, 1)(1, 0, 2)(1, 1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(2, 0, 1)(1, 2, 0)(-1, -1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(2, 0, 1)(1, 2, 0)(-1, -1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(2, 0, 1)(1, 2, 0)(-1, 1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(2, 0, 1)(1, 2, 0)(-1, 1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(2, 0, 1)(1, 2, 0)(1, -1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(2, 0, 1)(1, 2, 0)(1, -1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(2, 0, 1)(1, 2, 0)(1, 1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(2, 0, 1)(1, 2, 0)(1, 1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(2, 0, 1)(2, 0, 1)(-1, -1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(2, 0, 1)(2, 0, 1)(-1, -1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(2, 0, 1)(2, 0, 1)(-1, 1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(2, 0, 1)(2, 0, 1)(-1, 1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(2, 0, 1)(2, 0, 1)(1, -1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(2, 0, 1)(2, 0, 1)(1, -1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(2, 0, 1)(2, 0, 1)(1, 1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(2, 0, 1)(2, 0, 1)(1, 1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(2, 0, 1)(2, 1, 0)(-1, -1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(2, 0, 1)(2, 1, 0)(-1, -1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(2, 0, 1)(2, 1, 0)(-1, 1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(2, 0, 1)(2, 1, 0)(-1, 1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(2, 0, 1)(2, 1, 0)(1, -1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(2, 0, 1)(2, 1, 0)(1, -1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(2, 0, 1)(2, 1, 0)(1, 1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(2, 0, 1)(2, 1, 0)(1, 1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(2, 1, 0)(0, 1, 2)(-1, -1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(2, 1, 0)(0, 1, 2)(-1, -1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(2, 1, 0)(0, 1, 2)(-1, 1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(2, 1, 0)(0, 1, 2)(-1, 1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(2, 1, 0)(0, 1, 2)(1, -1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(2, 1, 0)(0, 1, 2)(1, -1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(2, 1, 0)(0, 1, 2)(1, 1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(2, 1, 0)(0, 1, 2)(1, 1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(2, 1, 0)(0, 2, 1)(-1, -1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(2, 1, 0)(0, 2, 1)(-1, -1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(2, 1, 0)(0, 2, 1)(-1, 1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(2, 1, 0)(0, 2, 1)(-1, 1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(2, 1, 0)(0, 2, 1)(1, -1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(2, 1, 0)(0, 2, 1)(1, -1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(2, 1, 0)(0, 2, 1)(1, 1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(2, 1, 0)(0, 2, 1)(1, 1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(2, 1, 0)(1, 0, 2)(-1, -1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(2, 1, 0)(1, 0, 2)(-1, -1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(2, 1, 0)(1, 0, 2)(-1, 1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(2, 1, 0)(1, 0, 2)(-1, 1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(2, 1, 0)(1, 0, 2)(1, -1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(2, 1, 0)(1, 0, 2)(1, -1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(2, 1, 0)(1, 0, 2)(1, 1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(2, 1, 0)(1, 0, 2)(1, 1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(2, 1, 0)(1, 2, 0)(-1, -1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(2, 1, 0)(1, 2, 0)(-1, -1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(2, 1, 0)(1, 2, 0)(-1, 1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(2, 1, 0)(1, 2, 0)(-1, 1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(2, 1, 0)(1, 2, 0)(1, -1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(2, 1, 0)(1, 2, 0)(1, -1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(2, 1, 0)(1, 2, 0)(1, 1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(2, 1, 0)(1, 2, 0)(1, 1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(2, 1, 0)(2, 0, 1)(-1, -1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(2, 1, 0)(2, 0, 1)(-1, -1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(2, 1, 0)(2, 0, 1)(-1, 1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(2, 1, 0)(2, 0, 1)(-1, 1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(2, 1, 0)(2, 0, 1)(1, -1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(2, 1, 0)(2, 0, 1)(1, -1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(2, 1, 0)(2, 0, 1)(1, 1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(2, 1, 0)(2, 0, 1)(1, 1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(2, 1, 0)(2, 1, 0)(-1, -1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(2, 1, 0)(2, 1, 0)(-1, -1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(2, 1, 0)(2, 1, 0)(-1, 1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(2, 1, 0)(2, 1, 0)(-1, 1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(2, 1, 0)(2, 1, 0)(1, -1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(2, 1, 0)(2, 1, 0)(1, -1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(2, 1, 0)(2, 1, 0)(1, 1, -1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "signed_covariance_inverse",
+        "case": "(2, 1, 0)(2, 1, 0)(1, 1, 1)",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.0000000000000p+0-singular",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.0000000000000p+0-indefinite",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.0000000000000p+1-singular",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.0000000000000p+1-indefinite",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.8000000000000p+1-singular",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.8000000000000p+1-indefinite",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.0000000000000p+2-singular",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.0000000000000p+2-indefinite",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.4000000000000p+2-singular",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.4000000000000p+2-indefinite",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.8000000000000p+2-singular",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.8000000000000p+2-indefinite",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.c000000000000p+2-singular",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.c000000000000p+2-indefinite",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.0000000000000p+3-singular",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.0000000000000p+3-indefinite",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.2000000000000p+3-singular",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.2000000000000p+3-indefinite",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.4000000000000p+3-singular",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.4000000000000p+3-indefinite",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.6000000000000p+3-singular",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.6000000000000p+3-indefinite",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.8000000000000p+3-singular",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.8000000000000p+3-indefinite",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.a000000000000p+3-singular",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.a000000000000p+3-indefinite",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.c000000000000p+3-singular",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.c000000000000p+3-indefinite",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.e000000000000p+3-singular",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.e000000000000p+3-indefinite",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.0000000000000p+4-singular",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.0000000000000p+4-indefinite",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.1000000000000p+4-singular",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.1000000000000p+4-indefinite",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.2000000000000p+4-singular",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.2000000000000p+4-indefinite",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.3000000000000p+4-singular",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.3000000000000p+4-indefinite",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.4000000000000p+4-singular",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.4000000000000p+4-indefinite",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.5000000000000p+4-singular",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.5000000000000p+4-indefinite",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.6000000000000p+4-singular",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.6000000000000p+4-indefinite",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.7000000000000p+4-singular",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.7000000000000p+4-indefinite",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.8000000000000p+4-singular",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.8000000000000p+4-indefinite",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.9000000000000p+4-singular",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.9000000000000p+4-indefinite",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.a000000000000p+4-singular",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.a000000000000p+4-indefinite",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.b000000000000p+4-singular",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.b000000000000p+4-indefinite",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.c000000000000p+4-singular",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.c000000000000p+4-indefinite",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.d000000000000p+4-singular",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.d000000000000p+4-indefinite",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.e000000000000p+4-singular",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.e000000000000p+4-indefinite",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.f000000000000p+4-singular",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.f000000000000p+4-indefinite",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.0000000000000p+5-singular",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.0000000000000p+5-indefinite",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.0800000000000p+5-singular",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.0800000000000p+5-indefinite",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.1000000000000p+5-singular",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.1000000000000p+5-indefinite",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.1800000000000p+5-singular",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.1800000000000p+5-indefinite",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.2000000000000p+5-singular",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.2000000000000p+5-indefinite",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.2800000000000p+5-singular",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.2800000000000p+5-indefinite",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.3000000000000p+5-singular",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.3000000000000p+5-indefinite",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.3800000000000p+5-singular",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.3800000000000p+5-indefinite",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.4000000000000p+5-singular",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.4000000000000p+5-indefinite",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.4800000000000p+5-singular",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.4800000000000p+5-indefinite",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.5000000000000p+5-singular",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.5000000000000p+5-indefinite",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.5800000000000p+5-singular",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.5800000000000p+5-indefinite",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.6000000000000p+5-singular",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.6000000000000p+5-indefinite",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.6800000000000p+5-singular",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.6800000000000p+5-indefinite",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.7000000000000p+5-singular",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.7000000000000p+5-indefinite",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.7800000000000p+5-singular",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.7800000000000p+5-indefinite",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.8000000000000p+5-singular",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.8000000000000p+5-indefinite",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.8800000000000p+5-singular",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.8800000000000p+5-indefinite",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.9000000000000p+5-singular",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.9000000000000p+5-indefinite",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.9800000000000p+5-singular",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.9800000000000p+5-indefinite",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.a000000000000p+5-singular",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.a000000000000p+5-indefinite",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.a800000000000p+5-singular",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.a800000000000p+5-indefinite",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.b000000000000p+5-singular",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.b000000000000p+5-indefinite",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.b800000000000p+5-singular",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.b800000000000p+5-indefinite",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.c000000000000p+5-singular",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.c000000000000p+5-indefinite",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.c800000000000p+5-singular",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.c800000000000p+5-indefinite",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.d000000000000p+5-singular",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.d000000000000p+5-indefinite",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.d800000000000p+5-singular",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.d800000000000p+5-indefinite",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.e000000000000p+5-singular",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.e000000000000p+5-indefinite",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.e800000000000p+5-singular",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.e800000000000p+5-indefinite",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.f000000000000p+5-singular",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.f000000000000p+5-indefinite",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.f800000000000p+5-singular",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.f800000000000p+5-indefinite",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.0000000000000p+6-singular",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.0000000000000p+6-indefinite",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.0000000000000p-900-singular",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.0000000000000p-900-indefinite",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.0000000000000p-500-singular",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.0000000000000p-500-indefinite",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.0000000000000p-100-singular",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.0000000000000p-100-indefinite",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.0000000000000p+100-singular",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.0000000000000p+100-indefinite",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.0000000000000p+500-singular",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.0000000000000p+500-indefinite",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.0000000000000p+900-singular",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "exact_non_spd_rejection",
+        "case": "0x1.0000000000000p+900-indefinite",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "matrix_shape_admission",
+        "case": "n0-0",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "matrix_shape_admission",
+        "case": "n0-1",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "matrix_shape_admission",
+        "case": "n0-2",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "matrix_shape_admission",
+        "case": "n0-3",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "matrix_shape_admission",
+        "case": "n0-4",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "matrix_shape_admission",
+        "case": "n0-5",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "matrix_shape_admission",
+        "case": "n0-6",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "matrix_shape_admission",
+        "case": "n0-7",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "matrix_shape_admission",
+        "case": "n0-8",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "matrix_shape_admission",
+        "case": "n0-9",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "matrix_shape_admission",
+        "case": "n0-10",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "matrix_shape_admission",
+        "case": "n0-11",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "matrix_shape_admission",
+        "case": "n0-12",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "matrix_shape_admission",
+        "case": "n1-0",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "matrix_shape_admission",
+        "case": "n1-1",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "matrix_shape_admission",
+        "case": "n1-2",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "matrix_shape_admission",
+        "case": "n1-3",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "matrix_shape_admission",
+        "case": "n1-4",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "matrix_shape_admission",
+        "case": "n1-5",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "matrix_shape_admission",
+        "case": "n1-6",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "matrix_shape_admission",
+        "case": "n1-7",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "matrix_shape_admission",
+        "case": "n1-8",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "matrix_shape_admission",
+        "case": "n1-9",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "matrix_shape_admission",
+        "case": "n1-10",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "matrix_shape_admission",
+        "case": "n1-11",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "matrix_shape_admission",
+        "case": "n1-12",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "matrix_shape_admission",
+        "case": "n2-0",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "matrix_shape_admission",
+        "case": "n2-1",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "matrix_shape_admission",
+        "case": "n2-2",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "matrix_shape_admission",
+        "case": "n2-3",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "matrix_shape_admission",
+        "case": "n2-4",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "matrix_shape_admission",
+        "case": "n2-5",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "matrix_shape_admission",
+        "case": "n2-6",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "matrix_shape_admission",
+        "case": "n2-7",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "matrix_shape_admission",
+        "case": "n2-8",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "matrix_shape_admission",
+        "case": "n2-9",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "matrix_shape_admission",
+        "case": "n2-10",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "matrix_shape_admission",
+        "case": "n2-11",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "matrix_shape_admission",
+        "case": "n2-12",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "type_and_graph_rejection",
+        "case": "n1-flat_wrong",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "type_and_graph_rejection",
+        "case": "n1-pair_wrong",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "type_and_graph_rejection",
+        "case": "n1-foreign_graph",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "type_and_graph_rejection",
+        "case": "n2-flat_wrong",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "type_and_graph_rejection",
+        "case": "n2-pair_wrong",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "type_and_graph_rejection",
+        "case": "n2-foreign_graph",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "type_and_graph_rejection",
+        "case": "n3-flat_wrong",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "type_and_graph_rejection",
+        "case": "n3-pair_wrong",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "type_and_graph_rejection",
+        "case": "n3-foreign_graph",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "type_and_graph_rejection",
+        "case": "n4-flat_wrong",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "type_and_graph_rejection",
+        "case": "n4-pair_wrong",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "type_and_graph_rejection",
+        "case": "n4-foreign_graph",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "type_and_graph_rejection",
+        "case": "n5-flat_wrong",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "type_and_graph_rejection",
+        "case": "n5-pair_wrong",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "type_and_graph_rejection",
+        "case": "n5-foreign_graph",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "type_and_graph_rejection",
+        "case": "n6-flat_wrong",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "type_and_graph_rejection",
+        "case": "n6-pair_wrong",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "type_and_graph_rejection",
+        "case": "n6-foreign_graph",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "type_and_graph_rejection",
+        "case": "n7-flat_wrong",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "type_and_graph_rejection",
+        "case": "n7-pair_wrong",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "type_and_graph_rejection",
+        "case": "n7-foreign_graph",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "candidate_factor",
+        "case": "n1-A",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "candidate_factor",
+        "case": "n1-C",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "candidate_c_independence",
+        "case": "n1-Lambda_C",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "candidate_c_independence",
+        "case": "n1-kappa_M_C",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "candidate_c_independence",
+        "case": "n1-kappa_Phi_C",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "candidate_c_independence",
+        "case": "n1-chi_C",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "candidate_c_independence",
+        "case": "n1-zeta_C",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "candidate_c_independence",
+        "case": "n1-tau_C",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "candidate_factor",
+        "case": "n2-A",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "candidate_factor",
+        "case": "n2-C",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "candidate_c_independence",
+        "case": "n2-Lambda_C",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "candidate_c_independence",
+        "case": "n2-kappa_M_C",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "candidate_c_independence",
+        "case": "n2-kappa_Phi_C",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "candidate_c_independence",
+        "case": "n2-chi_C",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "candidate_c_independence",
+        "case": "n2-zeta_C",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "candidate_c_independence",
+        "case": "n2-tau_C",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "candidate_factor",
+        "case": "n3-A",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "candidate_factor",
+        "case": "n3-C",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "candidate_c_independence",
+        "case": "n3-Lambda_C",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "candidate_c_independence",
+        "case": "n3-kappa_M_C",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "candidate_c_independence",
+        "case": "n3-kappa_Phi_C",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "candidate_c_independence",
+        "case": "n3-chi_C",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "candidate_c_independence",
+        "case": "n3-zeta_C",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "candidate_c_independence",
+        "case": "n3-tau_C",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "candidate_factor",
+        "case": "n4-A",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "candidate_factor",
+        "case": "n4-C",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "candidate_c_independence",
+        "case": "n4-Lambda_C",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "candidate_c_independence",
+        "case": "n4-kappa_M_C",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "candidate_c_independence",
+        "case": "n4-kappa_Phi_C",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "candidate_c_independence",
+        "case": "n4-chi_C",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "candidate_c_independence",
+        "case": "n4-zeta_C",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "candidate_c_independence",
+        "case": "n4-tau_C",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "candidate_factor",
+        "case": "n5-A",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "candidate_factor",
+        "case": "n5-C",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "candidate_c_independence",
+        "case": "n5-Lambda_C",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "candidate_c_independence",
+        "case": "n5-kappa_M_C",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "candidate_c_independence",
+        "case": "n5-kappa_Phi_C",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "candidate_c_independence",
+        "case": "n5-chi_C",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "candidate_c_independence",
+        "case": "n5-zeta_C",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "candidate_c_independence",
+        "case": "n5-tau_C",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "candidate_factor",
+        "case": "n6-A",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "candidate_factor",
+        "case": "n6-C",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "candidate_c_independence",
+        "case": "n6-Lambda_C",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "candidate_c_independence",
+        "case": "n6-kappa_M_C",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "candidate_c_independence",
+        "case": "n6-kappa_Phi_C",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "candidate_c_independence",
+        "case": "n6-chi_C",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "candidate_c_independence",
+        "case": "n6-zeta_C",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "candidate_c_independence",
+        "case": "n6-tau_C",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "candidate_factor",
+        "case": "n7-A",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "candidate_factor",
+        "case": "n7-C",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "candidate_c_independence",
+        "case": "n7-Lambda_C",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "candidate_c_independence",
+        "case": "n7-kappa_M_C",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "candidate_c_independence",
+        "case": "n7-kappa_Phi_C",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "candidate_c_independence",
+        "case": "n7-chi_C",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "candidate_c_independence",
+        "case": "n7-zeta_C",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "candidate_c_independence",
+        "case": "n7-tau_C",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "candidate_factor",
+        "case": "n8-A",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "candidate_factor",
+        "case": "n8-C",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "candidate_c_independence",
+        "case": "n8-Lambda_C",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "candidate_c_independence",
+        "case": "n8-kappa_M_C",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "candidate_c_independence",
+        "case": "n8-kappa_Phi_C",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "candidate_c_independence",
+        "case": "n8-chi_C",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "candidate_c_independence",
+        "case": "n8-zeta_C",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "candidate_c_independence",
+        "case": "n8-tau_C",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "candidate_factor",
+        "case": "n9-A",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "candidate_factor",
+        "case": "n9-C",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "candidate_c_independence",
+        "case": "n9-Lambda_C",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "candidate_c_independence",
+        "case": "n9-kappa_M_C",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "candidate_c_independence",
+        "case": "n9-kappa_Phi_C",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "candidate_c_independence",
+        "case": "n9-chi_C",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "candidate_c_independence",
+        "case": "n9-zeta_C",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "candidate_c_independence",
+        "case": "n9-tau_C",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "ownership",
+        "case": "1-list",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "ownership",
+        "case": "1-numpy",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "ownership",
+        "case": "1-transpose",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "ownership",
+        "case": "1-memoryview",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "ownership",
+        "case": "2-list",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "ownership",
+        "case": "2-numpy",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "ownership",
+        "case": "2-transpose",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "ownership",
+        "case": "2-memoryview",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "ownership",
+        "case": "3-list",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "ownership",
+        "case": "3-numpy",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "ownership",
+        "case": "3-transpose",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "ownership",
+        "case": "3-memoryview",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "ownership",
+        "case": "4-list",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "ownership",
+        "case": "4-numpy",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "ownership",
+        "case": "4-transpose",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "ownership",
+        "case": "4-memoryview",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "ownership",
+        "case": "5-list",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "ownership",
+        "case": "5-numpy",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "ownership",
+        "case": "5-transpose",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "ownership",
+        "case": "5-memoryview",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "ownership",
+        "case": "6-list",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "ownership",
+        "case": "6-numpy",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "ownership",
+        "case": "6-transpose",
+        "status": "pass",
+        "detail": null
+      },
+      {
+        "group": "ownership",
+        "case": "6-memoryview",
+        "status": "pass",
+        "detail": null
+      }
+    ]
+  },
+  "stress_exit_code": 0,
+  "raw_stress_result_sha256": "481480b539743f327044fefcb1b07462e26737e3807e8c8afb92902c1f14de2c",
+  "raw_loaded_inputs_sha256": "6bd155497ecac68b04ce836dd05c97373427bff27f9fe0d6035cc86da45cdfba"
+}

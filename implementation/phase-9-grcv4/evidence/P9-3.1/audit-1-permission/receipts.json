@@ -1,0 +1,1087 @@
+{
+  "API": {
+    "P9_G1_accepted": true,
+    "accepted_generic_runtime_support": [],
+    "admitted_specialization_support_sets": [],
+    "approval_digest": "cd2c52f30477e1042bb903bd0553da237ddccc9cad373afecc1a84e4e0b37ea2",
+    "claim_ceiling": "Accepted permission to implement reviewed V4 scope is not executed or accepted runtime conformance.",
+    "current_boundary": "passed",
+    "dependency_ready_leaves": [
+      "P9-2.1",
+      "P9-2.2",
+      "P9-2.3",
+      "P9-2.4",
+      "P9-2.5",
+      "P9-2.6",
+      "P9-3.1"
+    ],
+    "foundation_acceptance": {
+      "accepted_iterations": [
+        "P9-2.1",
+        "P9-2.2"
+      ],
+      "path": "implementation/phase-9-grcv4/tranche-2/P9-2.1-2.2-AcceptanceRecord.json",
+      "record_digest": "1e3f0ddb06b119fa46dc7609d05b7db0c3a4cbc07428c05b8a032da081ae9dd4"
+    },
+    "handoff_evidence": {
+      "archive_sha256": "da9c3de7a8f6b1b7bb2b242800b89efdf211de65ff435baf51fe679e216ce8e8",
+      "artifacts": 21,
+      "new_acceptance": false,
+      "original_archive_sha256": "089185f8251dbf888d23fcaf67df712f17755ab69ed2ea1ecb3f0749df04b8af",
+      "original_bytes_verified": false,
+      "status": "verified",
+      "subjects": 3
+    },
+    "harness_acceptance": {
+      "accepted_iterations": [
+        "P9-2.5"
+      ],
+      "path": "implementation/phase-9-grcv4/tranche-2/P9-2.5-AcceptanceRecord.json",
+      "record_digest": "e479a8e5935fc8740b59f96b31651070f842f73f92541bb84dbc1c9d63f59896"
+    },
+    "implementation_scope": [
+      {
+        "before_sha256": "b96f7e82c3e398502d12037548701e88aaf82b5b7c47f7153306fcea747a6d8b",
+        "module_owner": "reviewed_additive_integration",
+        "operation": "additive_integration",
+        "path": "pyproject.toml",
+        "requires_gate": "P9-G1"
+      },
+      {
+        "before_sha256": "23768e181455f4e7eb68908cdac532464c063fa5eb4250c4d05537eca0dcaa70",
+        "module_owner": "reviewed_additive_integration",
+        "operation": "additive_integration",
+        "path": "src/pygrc/models/__init__.py",
+        "requires_gate": "P9-G1"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "grc_9_v4",
+        "operation": "v4_owned_add_or_update",
+        "path": "src/pygrc/models/grc_9_v4.py",
+        "requires_gate": "P9-G3[exact_consumed_support_set]"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "grc_9_v4_compatibility",
+        "operation": "v4_owned_add_or_update",
+        "path": "src/pygrc/models/grc_9_v4_compatibility.py",
+        "requires_gate": "P9-G3[exact_consumed_support_set]"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "grc_9_v4_expansion",
+        "operation": "v4_owned_add_or_update",
+        "path": "src/pygrc/models/grc_9_v4_expansion.py",
+        "requires_gate": "P9-G3[exact_consumed_support_set]"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "grc_9_v4_lifecycle",
+        "operation": "v4_owned_add_or_update",
+        "path": "src/pygrc/models/grc_9_v4_lifecycle.py",
+        "requires_gate": "P9-G3[exact_consumed_support_set]"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "grc_9_v4_topology",
+        "operation": "v4_owned_add_or_update",
+        "path": "src/pygrc/models/grc_9_v4_topology.py",
+        "requires_gate": "P9-G3[exact_consumed_support_set]"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "grc_v4",
+        "operation": "v4_owned_add_or_update",
+        "path": "src/pygrc/models/grc_v4.py",
+        "requires_gate": "P9-G1"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "grc_v4_analysis",
+        "operation": "v4_owned_add_or_update",
+        "path": "src/pygrc/models/grc_v4_analysis.py",
+        "requires_gate": "P9-G1"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "packaged_accepted_identity_assets",
+        "operation": "v4_owned_add_or_update",
+        "path": "src/pygrc/models/grc_v4_assets/__init__.py",
+        "requires_gate": "P9-G1"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "packaged_accepted_identity_assets",
+        "operation": "v4_owned_add_or_update",
+        "path": "src/pygrc/models/grc_v4_assets/asset-index.json",
+        "requires_gate": "P9-G1"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "packaged_accepted_identity_assets",
+        "operation": "v4_owned_add_or_update",
+        "path": "src/pygrc/models/grc_v4_assets/grc-v4-contract-schema.json",
+        "requires_gate": "P9-G1"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "packaged_accepted_identity_assets",
+        "operation": "v4_owned_add_or_update",
+        "path": "src/pygrc/models/grc_v4_assets/grc-v4-specification-release.json",
+        "requires_gate": "P9-G1"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "packaged_accepted_identity_assets",
+        "operation": "v4_owned_add_or_update",
+        "path": "src/pygrc/models/grc_v4_assets/grc-v4-specification-release.sha256",
+        "requires_gate": "P9-G1"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "grc_v4_candidate_a",
+        "operation": "v4_owned_add_or_update",
+        "path": "src/pygrc/models/grc_v4_candidate_a.py",
+        "requires_gate": "P9-G1"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "grc_v4_candidate_c",
+        "operation": "v4_owned_add_or_update",
+        "path": "src/pygrc/models/grc_v4_candidate_c.py",
+        "requires_gate": "P9-G1"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "grc_v4_codec",
+        "operation": "v4_owned_add_or_update",
+        "path": "src/pygrc/models/grc_v4_codec.py",
+        "requires_gate": "P9-G1"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "grc_v4_geometry",
+        "operation": "v4_owned_add_or_update",
+        "path": "src/pygrc/models/grc_v4_geometry.py",
+        "requires_gate": "P9-G1"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "grc_v4_lifecycle",
+        "operation": "v4_owned_add_or_update",
+        "path": "src/pygrc/models/grc_v4_lifecycle.py",
+        "requires_gate": "P9-G1"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "grc_v4_profile",
+        "operation": "v4_owned_add_or_update",
+        "path": "src/pygrc/models/grc_v4_profile.py",
+        "requires_gate": "P9-G1"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "grc_v4_realizations",
+        "operation": "v4_owned_add_or_update",
+        "path": "src/pygrc/models/grc_v4_realizations.py",
+        "requires_gate": "P9-G1"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "grc_v4_state",
+        "operation": "v4_owned_add_or_update",
+        "path": "src/pygrc/models/grc_v4_state.py",
+        "requires_gate": "P9-G1"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "grc_v4_step",
+        "operation": "v4_owned_add_or_update",
+        "path": "src/pygrc/models/grc_v4_step.py",
+        "requires_gate": "P9-G1"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "grc_v4_transport",
+        "operation": "v4_owned_add_or_update",
+        "path": "src/pygrc/models/grc_v4_transport.py",
+        "requires_gate": "P9-G1"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "independent_conformance_harness",
+        "operation": "v4_owned_add_or_update",
+        "path": "tests/models/grcv4_conformance_harness.py",
+        "requires_gate": "P9-G1"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "independent_conformance_harness",
+        "operation": "v4_owned_add_or_update",
+        "path": "tests/models/grcv4_reference_oracles.py",
+        "requires_gate": "P9-G1"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "grc_9_v4",
+        "operation": "v4_owned_add_or_update",
+        "path": "tests/models/test_grc_9_v4.py",
+        "requires_gate": "P9-G3[exact_consumed_support_set]"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "grc_9_v4_compatibility",
+        "operation": "v4_owned_add_or_update",
+        "path": "tests/models/test_grc_9_v4_compatibility.py",
+        "requires_gate": "P9-G3[exact_consumed_support_set]"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "grc_9_v4_expansion",
+        "operation": "v4_owned_add_or_update",
+        "path": "tests/models/test_grc_9_v4_expansion.py",
+        "requires_gate": "P9-G3[exact_consumed_support_set]"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "grc_9_v4_lifecycle",
+        "operation": "v4_owned_add_or_update",
+        "path": "tests/models/test_grc_9_v4_lifecycle.py",
+        "requires_gate": "P9-G3[exact_consumed_support_set]"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "grc_9_v4_topology",
+        "operation": "v4_owned_add_or_update",
+        "path": "tests/models/test_grc_9_v4_topology.py",
+        "requires_gate": "P9-G3[exact_consumed_support_set]"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "grc_v4",
+        "operation": "v4_owned_add_or_update",
+        "path": "tests/models/test_grc_v4.py",
+        "requires_gate": "P9-G1"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "grc_v4_analysis",
+        "operation": "v4_owned_add_or_update",
+        "path": "tests/models/test_grc_v4_analysis.py",
+        "requires_gate": "P9-G1"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "grc_v4_candidate_a",
+        "operation": "v4_owned_add_or_update",
+        "path": "tests/models/test_grc_v4_candidate_a.py",
+        "requires_gate": "P9-G1"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "grc_v4_candidate_c",
+        "operation": "v4_owned_add_or_update",
+        "path": "tests/models/test_grc_v4_candidate_c.py",
+        "requires_gate": "P9-G1"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "grc_v4_codec",
+        "operation": "v4_owned_add_or_update",
+        "path": "tests/models/test_grc_v4_codec.py",
+        "requires_gate": "P9-G1"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "grc_v4_geometry",
+        "operation": "v4_owned_add_or_update",
+        "path": "tests/models/test_grc_v4_geometry.py",
+        "requires_gate": "P9-G1"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "grc_v4_lifecycle",
+        "operation": "v4_owned_add_or_update",
+        "path": "tests/models/test_grc_v4_lifecycle.py",
+        "requires_gate": "P9-G1"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "grc_v4_profile",
+        "operation": "v4_owned_add_or_update",
+        "path": "tests/models/test_grc_v4_profile.py",
+        "requires_gate": "P9-G1"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "grc_v4_realizations",
+        "operation": "v4_owned_add_or_update",
+        "path": "tests/models/test_grc_v4_realizations.py",
+        "requires_gate": "P9-G1"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "grc_v4_state",
+        "operation": "v4_owned_add_or_update",
+        "path": "tests/models/test_grc_v4_state.py",
+        "requires_gate": "P9-G1"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "grc_v4_step",
+        "operation": "v4_owned_add_or_update",
+        "path": "tests/models/test_grc_v4_step.py",
+        "requires_gate": "P9-G1"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "grc_v4_transport",
+        "operation": "v4_owned_add_or_update",
+        "path": "tests/models/test_grc_v4_transport.py",
+        "requires_gate": "P9-G1"
+      }
+    ],
+    "integration_acceptance": {
+      "accepted_iterations": [
+        "P9-2.6"
+      ],
+      "path": "implementation/phase-9-grcv4/tranche-2/P9-2.6-AcceptanceRecord.json",
+      "record_digest": "e5ba16731e03dc916b8755c5999ab2b59acf431255612e76e0dcebe108104bc2"
+    },
+    "iterations": [
+      {
+        "iteration_id": "P9-1.4",
+        "reviewer_decision": "accepted_by_user",
+        "status": "implemented_and_verified"
+      },
+      {
+        "iteration_id": "P9-1.5",
+        "reviewer_decision": "accepted_by_user",
+        "status": "implemented_and_verified"
+      },
+      {
+        "iteration_id": "P9-1.6",
+        "reviewer_decision": "accepted_by_user",
+        "status": "implemented_and_verified"
+      },
+      {
+        "iteration_id": "P9-1.7",
+        "reviewer_decision": "accepted_by_user",
+        "status": "implemented_and_verified"
+      },
+      {
+        "iteration_id": "P9-1.8",
+        "reviewer_decision": "accepted_by_user",
+        "status": "implemented_and_verified"
+      },
+      {
+        "iteration_id": "P9-1.9",
+        "reviewer_decision": "accepted_by_user",
+        "status": "implemented_and_verified"
+      }
+    ],
+    "next_gate": "P9-3.1 geometry and transport foundation review; P9-3.2, P9-G2 and P9-G3 remain pending",
+    "output_class": "implementation_verification_status_not_forensic_trace",
+    "permitted_runtime_paths": [
+      "pyproject.toml",
+      "src/pygrc/models/__init__.py",
+      "src/pygrc/models/grc_v4.py",
+      "src/pygrc/models/grc_v4_assets/__init__.py",
+      "src/pygrc/models/grc_v4_assets/asset-index.json",
+      "src/pygrc/models/grc_v4_assets/grc-v4-contract-schema.json",
+      "src/pygrc/models/grc_v4_assets/grc-v4-specification-release.json",
+      "src/pygrc/models/grc_v4_assets/grc-v4-specification-release.sha256",
+      "src/pygrc/models/grc_v4_codec.py",
+      "src/pygrc/models/grc_v4_geometry.py",
+      "src/pygrc/models/grc_v4_profile.py",
+      "src/pygrc/models/grc_v4_state.py",
+      "src/pygrc/models/grc_v4_step.py",
+      "src/pygrc/models/grc_v4_transport.py",
+      "tests/models/grcv4_conformance_harness.py",
+      "tests/models/grcv4_reference_oracles.py",
+      "tests/models/test_grc_v4.py",
+      "tests/models/test_grc_v4_codec.py",
+      "tests/models/test_grc_v4_geometry.py",
+      "tests/models/test_grc_v4_profile.py",
+      "tests/models/test_grc_v4_state.py",
+      "tests/models/test_grc_v4_step.py",
+      "tests/models/test_grc_v4_transport.py"
+    ],
+    "policy_digest": "f1bed0d0a42093cdfeb62f7c7840f8fa3ebcafa6c4fa52e1408c0901b8a01341",
+    "recorded_full_verification": "not_current",
+    "request_acceptance": {
+      "accepted_iterations": [
+        "P9-2.3"
+      ],
+      "path": "implementation/phase-9-grcv4/tranche-2/P9-2.3-AcceptanceRecord.json",
+      "record_digest": "ac07a2f7c93538454d9663aba78ca0eb5af385d7975582e4c21682f41ce4c17f"
+    },
+    "result_acceptance": {
+      "accepted_iterations": [
+        "P9-2.4"
+      ],
+      "path": "implementation/phase-9-grcv4/tranche-2/P9-2.4-AcceptanceRecord.json",
+      "record_digest": "9d2fd4f0bb0445b9b3c46fd6f7e5b0ff710a8a85aceaeabacad44a477ff365a0"
+    },
+    "runtime_authority_state": "accepted_P9_G1_bounded_implementation_not_conformance",
+    "runtime_authorized": true,
+    "schema": "phase9_governance_status_v2",
+    "source_meaning": {
+      "association_count": 152,
+      "association_denominator": 183,
+      "evidence_kind": "source_bound_planning_crosswalk_not_runtime_evidence",
+      "forensic_support_disposition": "indeterminate_requires_review",
+      "pending_source_obligations": 15,
+      "source_bindings": [
+        {
+          "path": "implementation/phase-9-grcv4/tranche-1/P9-1.1-SourceCrosswalk.json",
+          "sha256": "85fe7204f5a40e3ffa502fce33519000adb443ba6480cb85e0d6ee4155893ede"
+        },
+        {
+          "path": "implementation/phase-9-grcv4/tranche-1/P9-1.3-VerificationRouting.json",
+          "sha256": "8b926fda8edc7c0ed025b19721c5fb57c1d5aa448b082696eba9bef9459e3ddc"
+        }
+      ],
+      "specification_authority": "accepted_frozen"
+    },
+    "source_refs": [
+      {
+        "path": "implementation/phase-9-grcv4/verification/Phase9ImplementationBoundary.json",
+        "sha256": "af81081cfcacc91c71c12cd73ba49f3d44015eaeb98b26fd32f7baadcc8f6a8b"
+      },
+      {
+        "path": "implementation/Phase-9-GRCV4-PhaseOpening.json",
+        "sha256": "68c1df72fdd4980cda3c0c8071fff3cc055b30255cf1d60778c6f17c463fa888"
+      },
+      {
+        "path": "specs/grc-v4-specification-release.json",
+        "sha256": "bba0bb649bc2e80c5bfa99f96bd5824bbdda3b3fbc87fb68c3e3a59da1cee46b"
+      },
+      {
+        "path": "implementation/phase-9-grcv4/tranche-1/P9-1.9-ExecutionRecord.json",
+        "sha256": "3165fa1d259aaa446496b3311cd02a5893933fda529f944183508a15050094fc"
+      }
+    ],
+    "status_digest": "7e892fb957e4729f6c704de3f113e74f8432f2786b6d6ec4d63ab4050f86abb4",
+    "tree": {
+      "current_artifact_digest": "0c667a1b81bd9dd86fafede6fd807dfdc25515990c65600f1925eb4340452ad8",
+      "protected_baseline_files": 725,
+      "registered_runtime_files": 122
+    }
+  },
+  "accepted_scope_probe": {
+    "actual_reason": "exact accepted scope admitted",
+    "assertion_result": "passed",
+    "authority": {
+      "approval_digest": "cd2c52f30477e1042bb903bd0553da237ddccc9cad373afecc1a84e4e0b37ea2",
+      "scope": "existing_user_approval_not_created_by_probe"
+    },
+    "base_fixture_identity": {
+      "baseline_commit": "6e0a507c0fd7e0758392514acce5e79312a2069c",
+      "fixture_revision": "5307343e34d33ab4a95a5712fbafe0ebd1df1a62",
+      "policy_digest": "f1bed0d0a42093cdfeb62f7c7840f8fa3ebcafa6c4fa52e1408c0901b8a01341",
+      "tree": {
+        "current_artifact_digest": "0c667a1b81bd9dd86fafede6fd807dfdc25515990c65600f1925eb4340452ad8",
+        "protected_baseline_files": 725,
+        "registered_runtime_files": 122
+      }
+    },
+    "candidate_decision": "admitted",
+    "case_id": "accepted_G1_exact_targets",
+    "claim_ceiling": "A passed harness assertion is not candidate admission, live runtime permission, scientific support or P9-G1 acceptance.",
+    "evidence_kind": "actual_checker_and_mutation",
+    "historical_runtime_authorized": false,
+    "historical_subject": "f1817b8cf41e439cbb18ad82dfab6b39a77ae43d",
+    "intended_check_reached": true,
+    "output_class": "isolated_probe_not_current_tree_admission",
+    "project_effect": {
+      "P9_G1_accepted": false,
+      "runtime_authorized": false,
+      "scientific_promotion": false
+    },
+    "projection_digest": "4ade9abd59892ed283e518b1eddb1333fa1c78b8236d2eaa85a334d7674c8bde",
+    "protected_pre_post": {
+      "after_digest": "6b6b91f9f62c45db6eae3f10a5bf0af4169781093c53d6afffc7f74fb9223d03",
+      "before_digest": "6b6b91f9f62c45db6eae3f10a5bf0af4169781093c53d6afffc7f74fb9223d03",
+      "restored": true
+    },
+    "report_digest": "3a8a9310afb2fb031a696d4b73d943cba77a5309d159ac0c51b7439076232764",
+    "run_id": "p9-g1-e63f2162bc134f9fa1d6d8a2782a5772",
+    "schema": "phase9_pressure_projection_v1",
+    "source_meaning": {
+      "association_count": 152,
+      "association_denominator": 183,
+      "evidence_kind": "source_bound_planning_crosswalk_not_runtime_evidence",
+      "forensic_support_disposition": "indeterminate_requires_review",
+      "pending_source_obligations": 15,
+      "source_bindings": [
+        {
+          "path": "implementation/phase-9-grcv4/tranche-1/P9-1.1-SourceCrosswalk.json",
+          "sha256": "85fe7204f5a40e3ffa502fce33519000adb443ba6480cb85e0d6ee4155893ede"
+        },
+        {
+          "path": "implementation/phase-9-grcv4/tranche-1/P9-1.3-VerificationRouting.json",
+          "sha256": "8b926fda8edc7c0ed025b19721c5fb57c1d5aa448b082696eba9bef9459e3ddc"
+        }
+      ],
+      "specification_authority": "accepted_frozen"
+    },
+    "subject_scope": "disposable_P9_G1_candidate_not_live_runtime",
+    "trace": [
+      {
+        "after_digest": "dc3886f2f5bcb9a562b0e1c04a3d29b0d52c121ac00f00b752894ee96ac5a041",
+        "before_digest": "dc3886f2f5bcb9a562b0e1c04a3d29b0d52c121ac00f00b752894ee96ac5a041",
+        "check": "phase9_implementation_policy.current_boundary",
+        "read_only": true
+      }
+    ]
+  },
+  "negative_probe": {
+    "actual_reason": "Traceback (most recent call last):\n  File \"/tmp/grcv4-p919-pressure-mr756kde/repository/implementation/phase-9-grcv4/verification/audit_phase9_implementation.py\", line 157, in <module>\n    main()\n  File \"/tmp/grcv4-p919-pressure-mr756kde/repository/implementation/phase-9-grcv4/verification/audit_phase9_implementation.py\", line 141, in main\n    result = verify(policy.ROOT, args.boundary_only)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/grcv4-p919-pressure-mr756kde/repository/implementation/phase-9-grcv4/verification/audit_phase9_implementation.py\", line 75, in verify\n    boundary, tree = policy.current_boundary(root)\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/grcv4-p919-pressure-mr756kde/repository/implementation/phase-9-grcv4/verification/phase9_implementation_policy.py\", line 669, in current_boundary\n    require(\n  File \"/tmp/grcv4-p919-pressure-mr756kde/repository/implementation/phase-9-grcv4/verification/audit_phase9.py\", line 72, in require\n    raise ValueError(message)\nValueError: unauthorized source/test/planning addition: ['src/pygrc/models/not_reviewed.py']\n",
+    "assertion_result": "passed",
+    "authority": {
+      "approval_digest": "cd2c52f30477e1042bb903bd0553da237ddccc9cad373afecc1a84e4e0b37ea2",
+      "scope": "existing_user_approval_not_created_by_probe"
+    },
+    "base_fixture_identity": {
+      "baseline_commit": "6e0a507c0fd7e0758392514acce5e79312a2069c",
+      "fixture_revision": "5307343e34d33ab4a95a5712fbafe0ebd1df1a62",
+      "policy_digest": "f1bed0d0a42093cdfeb62f7c7840f8fa3ebcafa6c4fa52e1408c0901b8a01341",
+      "tree": {
+        "current_artifact_digest": "0c667a1b81bd9dd86fafede6fd807dfdc25515990c65600f1925eb4340452ad8",
+        "protected_baseline_files": 725,
+        "registered_runtime_files": 122
+      }
+    },
+    "candidate_decision": "rejected",
+    "case_id": "normal_entry_forbidden_source",
+    "claim_ceiling": "A passed harness assertion is not candidate admission, live runtime permission, scientific support or P9-G1 acceptance.",
+    "evidence_kind": "actual_checker_and_mutation",
+    "historical_runtime_authorized": false,
+    "historical_subject": "f1817b8cf41e439cbb18ad82dfab6b39a77ae43d",
+    "intended_check_reached": true,
+    "output_class": "isolated_probe_not_current_tree_admission",
+    "project_effect": {
+      "P9_G1_accepted": false,
+      "runtime_authorized": false,
+      "scientific_promotion": false
+    },
+    "projection_digest": "9ded8b26e584aec897a2d550dcc625606d4c76fc4aafe273a59c07e103ba0dbd",
+    "protected_pre_post": {
+      "after_digest": "6b6b91f9f62c45db6eae3f10a5bf0af4169781093c53d6afffc7f74fb9223d03",
+      "before_digest": "6b6b91f9f62c45db6eae3f10a5bf0af4169781093c53d6afffc7f74fb9223d03",
+      "restored": true
+    },
+    "report_digest": "3a8a9310afb2fb031a696d4b73d943cba77a5309d159ac0c51b7439076232764",
+    "run_id": "p9-g1-e63f2162bc134f9fa1d6d8a2782a5772",
+    "schema": "phase9_pressure_projection_v1",
+    "source_meaning": {
+      "association_count": 152,
+      "association_denominator": 183,
+      "evidence_kind": "source_bound_planning_crosswalk_not_runtime_evidence",
+      "forensic_support_disposition": "indeterminate_requires_review",
+      "pending_source_obligations": 15,
+      "source_bindings": [
+        {
+          "path": "implementation/phase-9-grcv4/tranche-1/P9-1.1-SourceCrosswalk.json",
+          "sha256": "85fe7204f5a40e3ffa502fce33519000adb443ba6480cb85e0d6ee4155893ede"
+        },
+        {
+          "path": "implementation/phase-9-grcv4/tranche-1/P9-1.3-VerificationRouting.json",
+          "sha256": "8b926fda8edc7c0ed025b19721c5fb57c1d5aa448b082696eba9bef9459e3ddc"
+        }
+      ],
+      "specification_authority": "accepted_frozen"
+    },
+    "subject_scope": "disposable_P9_G1_candidate_not_live_runtime",
+    "trace": [
+      {
+        "check": "actual_subprocess",
+        "command": [
+          "/home/uros/RC-github/graph-reflexive-coherence/.venv/bin/python",
+          "/tmp/grcv4-p919-pressure-mr756kde/repository/implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/run.py",
+          "verify-phase9",
+          "--boundary-only"
+        ],
+        "exit_code": 1,
+        "stderr": "Traceback (most recent call last):\n  File \"/tmp/grcv4-p919-pressure-mr756kde/repository/implementation/phase-9-grcv4/verification/audit_phase9_implementation.py\", line 157, in <module>\n    main()\n  File \"/tmp/grcv4-p919-pressure-mr756kde/repository/implementation/phase-9-grcv4/verification/audit_phase9_implementation.py\", line 141, in main\n    result = verify(policy.ROOT, args.boundary_only)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/grcv4-p919-pressure-mr756kde/repository/implementation/phase-9-grcv4/verification/audit_phase9_implementation.py\", line 75, in verify\n    boundary, tree = policy.current_boundary(root)\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/grcv4-p919-pressure-mr756kde/repository/implementation/phase-9-grcv4/verification/phase9_implementation_policy.py\", line 669, in current_boundary\n    require(\n  File \"/tmp/grcv4-p919-pressure-mr756kde/repository/implementation/phase-9-grcv4/verification/audit_phase9.py\", line 72, in require\n    raise ValueError(message)\nValueError: unauthorized source/test/planning addition: ['src/pygrc/models/not_reviewed.py']\n",
+        "stdout": ""
+      }
+    ]
+  },
+  "node_stdout": "TAP version 13\n# Subtest: planning is not runtime and lacks a recorded pass\nok 1 - planning is not runtime and lacks a recorded pass\n  ---\n  duration_ms: 9.370785\n  type: 'test'\n  ...\n# Subtest: runtime/support promotion rejected\nok 2 - runtime/support promotion rejected\n  ---\n  duration_ms: 0.86242\n  type: 'test'\n  ...\n# Subtest: unrecognized and contradictory status rejected\nok 3 - unrecognized and contradictory status rejected\n  ---\n  duration_ms: 0.592736\n  type: 'test'\n  ...\n# Subtest: modified payload with stale digest rejected\nok 4 - modified payload with stale digest rejected\n  ---\n  duration_ms: 2.96632\n  type: 'test'\n  ...\n# Subtest: explicit failed-closed result is valid but never a pass\nok 5 - explicit failed-closed result is valid but never a pass\n  ---\n  duration_ms: 0.893354\n  type: 'test'\n  ...\n# Subtest: canonical planning JSON is key-order independent\nok 6 - canonical planning JSON is key-order independent\n  ---\n  duration_ms: 0.20736\n  type: 'test'\n  ...\n# Subtest: full probe IDs sharing a prefix cannot collide and assertion never changes candidate\nok 7 - full probe IDs sharing a prefix cannot collide and assertion never changes candidate\n  ---\n  duration_ms: 3.002138\n  type: 'test'\n  ...\n# Subtest: missing null and unrecognized permission cannot substitute for false\nok 8 - missing null and unrecognized permission cannot substitute for false\n  ---\n  duration_ms: 0.36177\n  type: 'test'\n  ...\n# Subtest: accepted G1 permission does not imply accepted profile support\nok 9 - accepted G1 permission does not imply accepted profile support\n  ---\n  duration_ms: 3.556479\n  type: 'test'\n  ...\n# Subtest: failed G1 boundary cannot retain permission even with a recomputed digest\nok 10 - failed G1 boundary cannot retain permission even with a recomputed digest\n  ---\n  duration_ms: 1.820235\n  type: 'test'\n  ...\n# Subtest: missing and invalid handoff evidence do not change accepted permission\nok 11 - missing and invalid handoff evidence do not change accepted permission\n  ---\n  duration_ms: 2.9116\n  type: 'test'\n  ...\n# Subtest: current work can be held while historical acceptance remains verified\nok 12 - current work can be held while historical acceptance remains verified\n  ---\n  duration_ms: 1.150069\n  type: 'test'\n  ...\n# Subtest: committed foundation acceptance does not accept request work or conformance\nok 13 - committed foundation acceptance does not accept request work or conformance\n  ---\n  duration_ms: 0.947766\n  type: 'test'\n  ...\n# Subtest: request acceptance cannot be missing or promote result work\nok 14 - request acceptance cannot be missing or promote result work\n  ---\n  duration_ms: 0.686682\n  type: 'test'\n  ...\n# Subtest: result acceptance cannot be missing or accept harness work\nok 15 - result acceptance cannot be missing or accept harness work\n  ---\n  duration_ms: 0.900698\n  type: 'test'\n  ...\n# Subtest: harness acceptance cannot be missing or accept integration work\nok 16 - harness acceptance cannot be missing or accept integration work\n  ---\n  duration_ms: 0.692155\n  type: 'test'\n  ...\n# Subtest: integration acceptance cannot be missing, forged or accept geometry work\nok 17 - integration acceptance cannot be missing, forged or accept geometry work\n  ---\n  duration_ms: 2.492439\n  type: 'test'\n  ...\n1..17\n# tests 17\n# suites 0\n# pass 17\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 44.952601\n",
+  "notebook": {
+    "P9_G1_accepted": true,
+    "accepted_generic_runtime_support": [],
+    "admitted_specialization_support_sets": [],
+    "approval_digest": "cd2c52f30477e1042bb903bd0553da237ddccc9cad373afecc1a84e4e0b37ea2",
+    "claim_ceiling": "Accepted permission to implement reviewed V4 scope is not executed or accepted runtime conformance.",
+    "current_boundary": "passed",
+    "dependency_ready_leaves": [
+      "P9-2.1",
+      "P9-2.2",
+      "P9-2.3",
+      "P9-2.4",
+      "P9-2.5",
+      "P9-2.6",
+      "P9-3.1"
+    ],
+    "foundation_acceptance": {
+      "accepted_iterations": [
+        "P9-2.1",
+        "P9-2.2"
+      ],
+      "path": "implementation/phase-9-grcv4/tranche-2/P9-2.1-2.2-AcceptanceRecord.json",
+      "record_digest": "1e3f0ddb06b119fa46dc7609d05b7db0c3a4cbc07428c05b8a032da081ae9dd4"
+    },
+    "handoff_evidence": {
+      "archive_sha256": "da9c3de7a8f6b1b7bb2b242800b89efdf211de65ff435baf51fe679e216ce8e8",
+      "artifacts": 21,
+      "new_acceptance": false,
+      "original_archive_sha256": "089185f8251dbf888d23fcaf67df712f17755ab69ed2ea1ecb3f0749df04b8af",
+      "original_bytes_verified": false,
+      "status": "verified",
+      "subjects": 3
+    },
+    "harness_acceptance": {
+      "accepted_iterations": [
+        "P9-2.5"
+      ],
+      "path": "implementation/phase-9-grcv4/tranche-2/P9-2.5-AcceptanceRecord.json",
+      "record_digest": "e479a8e5935fc8740b59f96b31651070f842f73f92541bb84dbc1c9d63f59896"
+    },
+    "implementation_scope": [
+      {
+        "before_sha256": "b96f7e82c3e398502d12037548701e88aaf82b5b7c47f7153306fcea747a6d8b",
+        "module_owner": "reviewed_additive_integration",
+        "operation": "additive_integration",
+        "path": "pyproject.toml",
+        "requires_gate": "P9-G1"
+      },
+      {
+        "before_sha256": "23768e181455f4e7eb68908cdac532464c063fa5eb4250c4d05537eca0dcaa70",
+        "module_owner": "reviewed_additive_integration",
+        "operation": "additive_integration",
+        "path": "src/pygrc/models/__init__.py",
+        "requires_gate": "P9-G1"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "grc_9_v4",
+        "operation": "v4_owned_add_or_update",
+        "path": "src/pygrc/models/grc_9_v4.py",
+        "requires_gate": "P9-G3[exact_consumed_support_set]"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "grc_9_v4_compatibility",
+        "operation": "v4_owned_add_or_update",
+        "path": "src/pygrc/models/grc_9_v4_compatibility.py",
+        "requires_gate": "P9-G3[exact_consumed_support_set]"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "grc_9_v4_expansion",
+        "operation": "v4_owned_add_or_update",
+        "path": "src/pygrc/models/grc_9_v4_expansion.py",
+        "requires_gate": "P9-G3[exact_consumed_support_set]"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "grc_9_v4_lifecycle",
+        "operation": "v4_owned_add_or_update",
+        "path": "src/pygrc/models/grc_9_v4_lifecycle.py",
+        "requires_gate": "P9-G3[exact_consumed_support_set]"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "grc_9_v4_topology",
+        "operation": "v4_owned_add_or_update",
+        "path": "src/pygrc/models/grc_9_v4_topology.py",
+        "requires_gate": "P9-G3[exact_consumed_support_set]"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "grc_v4",
+        "operation": "v4_owned_add_or_update",
+        "path": "src/pygrc/models/grc_v4.py",
+        "requires_gate": "P9-G1"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "grc_v4_analysis",
+        "operation": "v4_owned_add_or_update",
+        "path": "src/pygrc/models/grc_v4_analysis.py",
+        "requires_gate": "P9-G1"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "packaged_accepted_identity_assets",
+        "operation": "v4_owned_add_or_update",
+        "path": "src/pygrc/models/grc_v4_assets/__init__.py",
+        "requires_gate": "P9-G1"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "packaged_accepted_identity_assets",
+        "operation": "v4_owned_add_or_update",
+        "path": "src/pygrc/models/grc_v4_assets/asset-index.json",
+        "requires_gate": "P9-G1"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "packaged_accepted_identity_assets",
+        "operation": "v4_owned_add_or_update",
+        "path": "src/pygrc/models/grc_v4_assets/grc-v4-contract-schema.json",
+        "requires_gate": "P9-G1"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "packaged_accepted_identity_assets",
+        "operation": "v4_owned_add_or_update",
+        "path": "src/pygrc/models/grc_v4_assets/grc-v4-specification-release.json",
+        "requires_gate": "P9-G1"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "packaged_accepted_identity_assets",
+        "operation": "v4_owned_add_or_update",
+        "path": "src/pygrc/models/grc_v4_assets/grc-v4-specification-release.sha256",
+        "requires_gate": "P9-G1"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "grc_v4_candidate_a",
+        "operation": "v4_owned_add_or_update",
+        "path": "src/pygrc/models/grc_v4_candidate_a.py",
+        "requires_gate": "P9-G1"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "grc_v4_candidate_c",
+        "operation": "v4_owned_add_or_update",
+        "path": "src/pygrc/models/grc_v4_candidate_c.py",
+        "requires_gate": "P9-G1"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "grc_v4_codec",
+        "operation": "v4_owned_add_or_update",
+        "path": "src/pygrc/models/grc_v4_codec.py",
+        "requires_gate": "P9-G1"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "grc_v4_geometry",
+        "operation": "v4_owned_add_or_update",
+        "path": "src/pygrc/models/grc_v4_geometry.py",
+        "requires_gate": "P9-G1"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "grc_v4_lifecycle",
+        "operation": "v4_owned_add_or_update",
+        "path": "src/pygrc/models/grc_v4_lifecycle.py",
+        "requires_gate": "P9-G1"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "grc_v4_profile",
+        "operation": "v4_owned_add_or_update",
+        "path": "src/pygrc/models/grc_v4_profile.py",
+        "requires_gate": "P9-G1"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "grc_v4_realizations",
+        "operation": "v4_owned_add_or_update",
+        "path": "src/pygrc/models/grc_v4_realizations.py",
+        "requires_gate": "P9-G1"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "grc_v4_state",
+        "operation": "v4_owned_add_or_update",
+        "path": "src/pygrc/models/grc_v4_state.py",
+        "requires_gate": "P9-G1"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "grc_v4_step",
+        "operation": "v4_owned_add_or_update",
+        "path": "src/pygrc/models/grc_v4_step.py",
+        "requires_gate": "P9-G1"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "grc_v4_transport",
+        "operation": "v4_owned_add_or_update",
+        "path": "src/pygrc/models/grc_v4_transport.py",
+        "requires_gate": "P9-G1"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "independent_conformance_harness",
+        "operation": "v4_owned_add_or_update",
+        "path": "tests/models/grcv4_conformance_harness.py",
+        "requires_gate": "P9-G1"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "independent_conformance_harness",
+        "operation": "v4_owned_add_or_update",
+        "path": "tests/models/grcv4_reference_oracles.py",
+        "requires_gate": "P9-G1"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "grc_9_v4",
+        "operation": "v4_owned_add_or_update",
+        "path": "tests/models/test_grc_9_v4.py",
+        "requires_gate": "P9-G3[exact_consumed_support_set]"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "grc_9_v4_compatibility",
+        "operation": "v4_owned_add_or_update",
+        "path": "tests/models/test_grc_9_v4_compatibility.py",
+        "requires_gate": "P9-G3[exact_consumed_support_set]"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "grc_9_v4_expansion",
+        "operation": "v4_owned_add_or_update",
+        "path": "tests/models/test_grc_9_v4_expansion.py",
+        "requires_gate": "P9-G3[exact_consumed_support_set]"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "grc_9_v4_lifecycle",
+        "operation": "v4_owned_add_or_update",
+        "path": "tests/models/test_grc_9_v4_lifecycle.py",
+        "requires_gate": "P9-G3[exact_consumed_support_set]"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "grc_9_v4_topology",
+        "operation": "v4_owned_add_or_update",
+        "path": "tests/models/test_grc_9_v4_topology.py",
+        "requires_gate": "P9-G3[exact_consumed_support_set]"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "grc_v4",
+        "operation": "v4_owned_add_or_update",
+        "path": "tests/models/test_grc_v4.py",
+        "requires_gate": "P9-G1"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "grc_v4_analysis",
+        "operation": "v4_owned_add_or_update",
+        "path": "tests/models/test_grc_v4_analysis.py",
+        "requires_gate": "P9-G1"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "grc_v4_candidate_a",
+        "operation": "v4_owned_add_or_update",
+        "path": "tests/models/test_grc_v4_candidate_a.py",
+        "requires_gate": "P9-G1"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "grc_v4_candidate_c",
+        "operation": "v4_owned_add_or_update",
+        "path": "tests/models/test_grc_v4_candidate_c.py",
+        "requires_gate": "P9-G1"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "grc_v4_codec",
+        "operation": "v4_owned_add_or_update",
+        "path": "tests/models/test_grc_v4_codec.py",
+        "requires_gate": "P9-G1"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "grc_v4_geometry",
+        "operation": "v4_owned_add_or_update",
+        "path": "tests/models/test_grc_v4_geometry.py",
+        "requires_gate": "P9-G1"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "grc_v4_lifecycle",
+        "operation": "v4_owned_add_or_update",
+        "path": "tests/models/test_grc_v4_lifecycle.py",
+        "requires_gate": "P9-G1"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "grc_v4_profile",
+        "operation": "v4_owned_add_or_update",
+        "path": "tests/models/test_grc_v4_profile.py",
+        "requires_gate": "P9-G1"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "grc_v4_realizations",
+        "operation": "v4_owned_add_or_update",
+        "path": "tests/models/test_grc_v4_realizations.py",
+        "requires_gate": "P9-G1"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "grc_v4_state",
+        "operation": "v4_owned_add_or_update",
+        "path": "tests/models/test_grc_v4_state.py",
+        "requires_gate": "P9-G1"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "grc_v4_step",
+        "operation": "v4_owned_add_or_update",
+        "path": "tests/models/test_grc_v4_step.py",
+        "requires_gate": "P9-G1"
+      },
+      {
+        "before_sha256": null,
+        "module_owner": "grc_v4_transport",
+        "operation": "v4_owned_add_or_update",
+        "path": "tests/models/test_grc_v4_transport.py",
+        "requires_gate": "P9-G1"
+      }
+    ],
+    "integration_acceptance": {
+      "accepted_iterations": [
+        "P9-2.6"
+      ],
+      "path": "implementation/phase-9-grcv4/tranche-2/P9-2.6-AcceptanceRecord.json",
+      "record_digest": "e5ba16731e03dc916b8755c5999ab2b59acf431255612e76e0dcebe108104bc2"
+    },
+    "iterations": [
+      {
+        "iteration_id": "P9-1.4",
+        "reviewer_decision": "accepted_by_user",
+        "status": "implemented_and_verified"
+      },
+      {
+        "iteration_id": "P9-1.5",
+        "reviewer_decision": "accepted_by_user",
+        "status": "implemented_and_verified"
+      },
+      {
+        "iteration_id": "P9-1.6",
+        "reviewer_decision": "accepted_by_user",
+        "status": "implemented_and_verified"
+      },
+      {
+        "iteration_id": "P9-1.7",
+        "reviewer_decision": "accepted_by_user",
+        "status": "implemented_and_verified"
+      },
+      {
+        "iteration_id": "P9-1.8",
+        "reviewer_decision": "accepted_by_user",
+        "status": "implemented_and_verified"
+      },
+      {
+        "iteration_id": "P9-1.9",
+        "reviewer_decision": "accepted_by_user",
+        "status": "implemented_and_verified"
+      }
+    ],
+    "next_gate": "P9-3.1 geometry and transport foundation review; P9-3.2, P9-G2 and P9-G3 remain pending",
+    "output_class": "implementation_verification_status_not_forensic_trace",
+    "permitted_runtime_paths": [
+      "pyproject.toml",
+      "src/pygrc/models/__init__.py",
+      "src/pygrc/models/grc_v4.py",
+      "src/pygrc/models/grc_v4_assets/__init__.py",
+      "src/pygrc/models/grc_v4_assets/asset-index.json",
+      "src/pygrc/models/grc_v4_assets/grc-v4-contract-schema.json",
+      "src/pygrc/models/grc_v4_assets/grc-v4-specification-release.json",
+      "src/pygrc/models/grc_v4_assets/grc-v4-specification-release.sha256",
+      "src/pygrc/models/grc_v4_codec.py",
+      "src/pygrc/models/grc_v4_geometry.py",
+      "src/pygrc/models/grc_v4_profile.py",
+      "src/pygrc/models/grc_v4_state.py",
+      "src/pygrc/models/grc_v4_step.py",
+      "src/pygrc/models/grc_v4_transport.py",
+      "tests/models/grcv4_conformance_harness.py",
+      "tests/models/grcv4_reference_oracles.py",
+      "tests/models/test_grc_v4.py",
+      "tests/models/test_grc_v4_codec.py",
+      "tests/models/test_grc_v4_geometry.py",
+      "tests/models/test_grc_v4_profile.py",
+      "tests/models/test_grc_v4_state.py",
+      "tests/models/test_grc_v4_step.py",
+      "tests/models/test_grc_v4_transport.py"
+    ],
+    "policy_digest": "f1bed0d0a42093cdfeb62f7c7840f8fa3ebcafa6c4fa52e1408c0901b8a01341",
+    "recorded_full_verification": "not_current",
+    "request_acceptance": {
+      "accepted_iterations": [
+        "P9-2.3"
+      ],
+      "path": "implementation/phase-9-grcv4/tranche-2/P9-2.3-AcceptanceRecord.json",
+      "record_digest": "ac07a2f7c93538454d9663aba78ca0eb5af385d7975582e4c21682f41ce4c17f"
+    },
+    "result_acceptance": {
+      "accepted_iterations": [
+        "P9-2.4"
+      ],
+      "path": "implementation/phase-9-grcv4/tranche-2/P9-2.4-AcceptanceRecord.json",
+      "record_digest": "9d2fd4f0bb0445b9b3c46fd6f7e5b0ff710a8a85aceaeabacad44a477ff365a0"
+    },
+    "runtime_authority_state": "accepted_P9_G1_bounded_implementation_not_conformance",
+    "runtime_authorized": true,
+    "schema": "phase9_governance_status_v2",
+    "source_meaning": {
+      "association_count": 152,
+      "association_denominator": 183,
+      "evidence_kind": "source_bound_planning_crosswalk_not_runtime_evidence",
+      "forensic_support_disposition": "indeterminate_requires_review",
+      "pending_source_obligations": 15,
+      "source_bindings": [
+        {
+          "path": "implementation/phase-9-grcv4/tranche-1/P9-1.1-SourceCrosswalk.json",
+          "sha256": "85fe7204f5a40e3ffa502fce33519000adb443ba6480cb85e0d6ee4155893ede"
+        },
+        {
+          "path": "implementation/phase-9-grcv4/tranche-1/P9-1.3-VerificationRouting.json",
+          "sha256": "8b926fda8edc7c0ed025b19721c5fb57c1d5aa448b082696eba9bef9459e3ddc"
+        }
+      ],
+      "specification_authority": "accepted_frozen"
+    },
+    "source_refs": [
+      {
+        "path": "implementation/phase-9-grcv4/verification/Phase9ImplementationBoundary.json",
+        "sha256": "af81081cfcacc91c71c12cd73ba49f3d44015eaeb98b26fd32f7baadcc8f6a8b"
+      },
+      {
+        "path": "implementation/Phase-9-GRCV4-PhaseOpening.json",
+        "sha256": "68c1df72fdd4980cda3c0c8071fff3cc055b30255cf1d60778c6f17c463fa888"
+      },
+      {
+        "path": "specs/grc-v4-specification-release.json",
+        "sha256": "bba0bb649bc2e80c5bfa99f96bd5824bbdda3b3fbc87fb68c3e3a59da1cee46b"
+      },
+      {
+        "path": "implementation/phase-9-grcv4/tranche-1/P9-1.9-ExecutionRecord.json",
+        "sha256": "3165fa1d259aaa446496b3311cd02a5893933fda529f944183508a15050094fc"
+      }
+    ],
+    "status_digest": "7e892fb957e4729f6c704de3f113e74f8432f2786b6d6ec4d63ab4050f86abb4",
+    "tree": {
+      "current_artifact_digest": "0c667a1b81bd9dd86fafede6fd807dfdc25515990c65600f1925eb4340452ad8",
+      "protected_baseline_files": 725,
+      "registered_runtime_files": 122
+    }
+  },
+  "runtime_support": [],
+  "schema": "phase9_G1_surface_evidence_v1"
+}

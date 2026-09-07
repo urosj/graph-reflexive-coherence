@@ -1,0 +1,2485 @@
+{
+  "iteration_id": "P9-3.1",
+  "suite_rosters": {
+    "core": [
+      "tests.core.test_backends.BackendSelectionContractTest.test_backend_selection_builds_canonical_immutable_payload",
+      "tests.core.test_backends.BackendSelectionContractTest.test_backend_selection_payload_can_participate_in_params_identity",
+      "tests.core.test_backends.BackendSelectionContractTest.test_backend_selection_payload_is_stable_independent_of_input_order",
+      "tests.core.test_backends.BackendSelectionContractTest.test_backend_selection_payload_roundtrips_to_objects",
+      "tests.core.test_backends.BackendSelectionContractTest.test_backend_selection_rejects_invalid_category_or_name_tokens",
+      "tests.core.test_backends.BackendSelectionContractTest.test_common_backend_category_vocabulary_exposes_expected_names",
+      "tests.core.test_backends.BackendSelectionContractTest.test_supported_backend_selection_validation_rejects_unknown_names",
+      "tests.core.test_canonical_serialization.CanonicalSerializationTest.test_canonical_json_dumps_is_stable_for_identical_semantic_input",
+      "tests.core.test_canonical_serialization.CanonicalSerializationTest.test_canonicalize_json_value_normalizes_supported_nested_values",
+      "tests.core.test_canonical_serialization.CanonicalSerializationTest.test_canonicalize_json_value_rejects_non_finite_float",
+      "tests.core.test_canonical_serialization.CanonicalSerializationTest.test_canonicalize_json_value_rejects_non_string_mapping_keys",
+      "tests.core.test_canonical_serialization.CanonicalSerializationTest.test_canonicalize_json_value_rejects_unsupported_value_types",
+      "tests.core.test_capabilities.CapabilityContractTest.test_common_vocabulary_contains_required_spec_names",
+      "tests.core.test_capabilities.CapabilityContractTest.test_family_profiles_exist_for_all_four_families",
+      "tests.core.test_capabilities.CapabilityContractTest.test_profiles_accept_valid_minimum_claims",
+      "tests.core.test_capabilities.CapabilityContractTest.test_profiles_reject_forbidden_claims",
+      "tests.core.test_capabilities.CapabilityContractTest.test_profiles_reject_missing_required_claims",
+      "tests.core.test_capabilities.CapabilityContractTest.test_profiles_reject_unknown_capabilities",
+      "tests.core.test_digests_and_persistence.DigestAndPersistenceTest.test_digest_helpers_use_sha256_and_ignore_mapping_order",
+      "tests.core.test_digests_and_persistence.DigestAndPersistenceTest.test_rng_helpers_tag_python_random_state",
+      "tests.core.test_digests_and_persistence.DigestAndPersistenceTest.test_snapshot_and_topology_digests_are_stable_for_equivalent_content",
+      "tests.core.test_digests_and_persistence.DigestAndPersistenceTest.test_snapshot_flow_preserves_raw_params_resolved_params_and_hash",
+      "tests.core.test_digests_and_persistence.DigestAndPersistenceTest.test_state_payload_roundtrip_preserves_remainder_and_python_rng_state",
+      "tests.core.test_events_observables_errors.EventsObservablesErrorsContractTest.test_error_types_are_explicit_and_stable",
+      "tests.core.test_events_observables_errors.EventsObservablesErrorsContractTest.test_grc_event_exposes_required_shared_fields",
+      "tests.core.test_events_observables_errors.EventsObservablesErrorsContractTest.test_observable_snapshot_wraps_mapping",
+      "tests.core.test_graph_protocols.GraphProtocolContractTest.test_fixed_port_chart_constants_match_the_specs",
+      "tests.core.test_graph_protocols.GraphProtocolContractTest.test_port_graph_protocol_is_runtime_checkable",
+      "tests.core.test_graph_protocols.GraphProtocolContractTest.test_port_graph_retains_ordered_nine_slot_surface",
+      "tests.core.test_graph_protocols.GraphProtocolContractTest.test_weighted_graph_protocol_is_runtime_checkable",
+      "tests.core.test_ids.IdSourceAndTombstoneTableTest.test_monotone_id_source_allocates_non_reused_ids",
+      "tests.core.test_ids.IdSourceAndTombstoneTableTest.test_monotone_id_source_allows_forward_restore",
+      "tests.core.test_ids.IdSourceAndTombstoneTableTest.test_monotone_id_source_rejects_backward_restore",
+      "tests.core.test_ids.IdSourceAndTombstoneTableTest.test_monotone_id_source_rejects_negative_start",
+      "tests.core.test_ids.IdSourceAndTombstoneTableTest.test_tombstone_slot_table_get_live_rejects_dead_or_missing_slots",
+      "tests.core.test_ids.IdSourceAndTombstoneTableTest.test_tombstone_slot_table_iter_live_items_and_raw_slots_are_stable",
+      "tests.core.test_ids.IdSourceAndTombstoneTableTest.test_tombstone_slot_table_preserves_next_id_after_restore_gap",
+      "tests.core.test_ids.IdSourceAndTombstoneTableTest.test_tombstone_slot_table_rejects_invalid_restoration_shape",
+      "tests.core.test_ids.IdSourceAndTombstoneTableTest.test_tombstone_slot_table_skips_deleted_ids_in_live_iteration",
+      "tests.core.test_import_smoke.ImportSmokeTest.test_package_imports",
+      "tests.core.test_interfaces.InterfaceContractTest.test_abstract_surface_matches_required_methods",
+      "tests.core.test_interfaces.InterfaceContractTest.test_rebase_reset_baseline_is_additive_common_surface",
+      "tests.core.test_interfaces.InterfaceContractTest.test_run_rejects_negative_step_counts",
+      "tests.core.test_interfaces.InterfaceContractTest.test_run_uses_step_exactly_num_steps_times",
+      "tests.core.test_module_imports.ModuleImportContractTest.test_core_contract_modules_import",
+      "tests.core.test_mutations_and_invalidation.MutationAndInvalidationContractTest.test_apply_cache_invalidation_can_target_specific_cache_keys",
+      "tests.core.test_mutations_and_invalidation.MutationAndInvalidationContractTest.test_cache_invalidation_hook_can_clear_state_cached_quantities",
+      "tests.core.test_mutations_and_invalidation.MutationAndInvalidationContractTest.test_clearing_cache_invalidation_hook_stops_state_cache_mutation",
+      "tests.core.test_mutations_and_invalidation.MutationAndInvalidationContractTest.test_port_backend_logs_connect_rewire_and_remove_mutations",
+      "tests.core.test_mutations_and_invalidation.MutationAndInvalidationContractTest.test_port_remove_node_mutation_records_cascade",
+      "tests.core.test_mutations_and_invalidation.MutationAndInvalidationContractTest.test_remove_node_records_cascade_edge_ids",
+      "tests.core.test_mutations_and_invalidation.MutationAndInvalidationContractTest.test_weighted_backend_is_mutation_aware_and_logs_mutations",
+      "tests.core.test_params.ParamsContractTest.test_core_domains_are_exposed_centrally",
+      "tests.core.test_params.ParamsContractTest.test_core_param_hash_is_stable_for_equivalent_mappings",
+      "tests.core.test_params.ParamsContractTest.test_excluded_domains_are_rejected_from_core_params",
+      "tests.core.test_params.ParamsContractTest.test_from_mapping_builds_immutable_core_params",
+      "tests.core.test_params.ParamsContractTest.test_raw_config_and_resolved_config_are_distinct",
+      "tests.core.test_port_graph_backend.PortGraphBackendTest.test_add_node_exposes_exactly_nine_ordered_ports",
+      "tests.core.test_port_graph_backend.PortGraphBackendTest.test_backend_satisfies_port_graph_protocol",
+      "tests.core.test_port_graph_backend.PortGraphBackendTest.test_connect_ports_rejects_already_occupied_slot",
+      "tests.core.test_port_graph_backend.PortGraphBackendTest.test_connect_ports_sets_deterministic_occupancy_and_lookup",
+      "tests.core.test_port_graph_backend.PortGraphBackendTest.test_remove_edge_tombstones_edge_and_clears_ports",
+      "tests.core.test_port_graph_backend.PortGraphBackendTest.test_remove_node_cascades_edge_removal_and_clears_port_state",
+      "tests.core.test_port_graph_backend.PortGraphBackendTest.test_removed_edge_id_is_not_reused_on_later_connect",
+      "tests.core.test_port_graph_backend.PortGraphBackendTest.test_restored_backend_rebuilds_occupancy_and_counters",
+      "tests.core.test_port_graph_backend.PortGraphBackendTest.test_restored_backend_rejects_duplicate_port_occupancy",
+      "tests.core.test_port_graph_backend.PortGraphBackendTest.test_rewire_edge_moves_occupancy_without_changing_edge_id",
+      "tests.core.test_port_graph_backend.PortGraphBackendTest.test_rewire_rejects_target_slot_occupied_by_different_edge",
+      "tests.core.test_port_graph_backend.PortGraphBackendTest.test_row_column_conversion_is_canonical",
+      "tests.core.test_serialization_contract.SnapshotContractTest.test_build_dynamics_group_canonicalizes_payload_sections",
+      "tests.core.test_serialization_contract.SnapshotContractTest.test_build_event_records_returns_canonical_event_list",
+      "tests.core.test_serialization_contract.SnapshotContractTest.test_build_snapshot_metadata_produces_required_fields",
+      "tests.core.test_serialization_contract.SnapshotContractTest.test_build_standard_snapshot_preserves_canonical_group_order",
+      "tests.core.test_serialization_contract.SnapshotContractTest.test_build_standard_snapshot_rejects_mutation_history_in_standard_mode",
+      "tests.core.test_serialization_contract.SnapshotContractTest.test_build_topology_snapshot_keeps_lists_and_omits_unsupported_groups",
+      "tests.core.test_serialization_contract.SnapshotContractTest.test_core_exports_include_canonical_serialization_helpers",
+      "tests.core.test_serialization_contract.SnapshotContractTest.test_export_port_topology_is_deterministic_and_exposes_port_structure",
+      "tests.core.test_serialization_contract.SnapshotContractTest.test_export_port_topology_sorts_multi_edge_incidence",
+      "tests.core.test_serialization_contract.SnapshotContractTest.test_export_weighted_topology_is_deterministic_and_live_only",
+      "tests.core.test_serialization_contract.SnapshotContractTest.test_export_weighted_topology_sorts_multi_edge_incidence",
+      "tests.core.test_serialization_contract.SnapshotContractTest.test_exported_topology_remains_compatible_with_snapshot_contract",
+      "tests.core.test_serialization_contract.SnapshotContractTest.test_require_snapshot_family_rejects_family_mismatch",
+      "tests.core.test_serialization_contract.SnapshotContractTest.test_reset_baseline_group_is_versioned_and_non_recursive",
+      "tests.core.test_serialization_contract.SnapshotContractTest.test_restore_port_graph_preserves_ids_counters_and_structure",
+      "tests.core.test_serialization_contract.SnapshotContractTest.test_restore_weighted_graph_preserves_ids_counters_and_structure",
+      "tests.core.test_serialization_contract.SnapshotContractTest.test_save_load_roundtrip_on_port_snapshot_preserves_metadata_and_topology",
+      "tests.core.test_serialization_contract.SnapshotContractTest.test_save_snapshot_writes_atomically_and_load_snapshot_is_strict",
+      "tests.core.test_serialization_contract.SnapshotContractTest.test_snapshot_from_json_rejects_malformed_or_invalid_payload",
+      "tests.core.test_serialization_contract.SnapshotContractTest.test_snapshot_to_json_and_from_json_roundtrip",
+      "tests.core.test_serialization_contract.SnapshotContractTest.test_unavailable_reset_baseline_requires_explicit_reason",
+      "tests.core.test_serialization_contract.SnapshotContractTest.test_validate_snapshot_contract_accepts_minimal_shared_shape",
+      "tests.core.test_serialization_contract.SnapshotContractTest.test_validate_snapshot_contract_rejects_missing_metadata",
+      "tests.core.test_serialization_contract.SnapshotContractTest.test_validate_snapshot_contract_rejects_wrong_schema",
+      "tests.core.test_types.TypesContractTest.test_state_exposes_required_shared_fields",
+      "tests.core.test_types.TypesContractTest.test_state_keeps_generic_topology_payloads",
+      "tests.core.test_types.TypesContractTest.test_step_result_exposes_required_spec_fields",
+      "tests.core.test_weighted_graph_backend.WeightedGraphBackendTest.test_add_node_and_edge_produce_deterministic_live_iteration",
+      "tests.core.test_weighted_graph_backend.WeightedGraphBackendTest.test_backend_satisfies_weighted_graph_protocol",
+      "tests.core.test_weighted_graph_backend.WeightedGraphBackendTest.test_neighbor_order_is_by_neighbor_id_then_edge_id",
+      "tests.core.test_weighted_graph_backend.WeightedGraphBackendTest.test_payloads_are_stored_in_family_neutral_dict_slots",
+      "tests.core.test_weighted_graph_backend.WeightedGraphBackendTest.test_remove_node_cascades_incident_edge_removal",
+      "tests.core.test_weighted_graph_backend.WeightedGraphBackendTest.test_removed_edges_are_tombstoned_and_not_reused",
+      "tests.core.test_weighted_graph_backend.WeightedGraphBackendTest.test_removed_node_id_is_not_reused_on_later_insert",
+      "tests.core.test_weighted_graph_backend.WeightedGraphBackendTest.test_restored_backend_rebuilds_adjacency_and_counters",
+      "tests.core.test_weighted_graph_backend.WeightedGraphBackendTest.test_restored_backend_rejects_live_edge_with_dead_endpoint"
+    ],
+    "models": [
+      "tests.models.test_family_stubs.FamilyStubContractTest.test_family_identifiers_and_capability_sets_are_correct",
+      "tests.models.test_family_stubs.FamilyStubContractTest.test_family_stub_load_rejects_wrong_model_family",
+      "tests.models.test_family_stubs.FamilyStubContractTest.test_family_stub_snapshot_round_trip_via_save_and_load",
+      "tests.models.test_family_stubs.FamilyStubContractTest.test_family_stub_snapshot_uses_shared_contract_shape",
+      "tests.models.test_family_stubs.FamilyStubContractTest.test_family_stubs_bind_shared_params_and_state",
+      "tests.models.test_family_stubs.FamilyStubContractTest.test_family_stubs_import_and_inherit_contract",
+      "tests.models.test_family_stubs.FamilyStubContractTest.test_family_stubs_reject_non_state_objects_in_set_state",
+      "tests.models.test_family_stubs.FamilyStubContractTest.test_grc9_now_uses_a_real_typed_and_executable_surface",
+      "tests.models.test_grc_9_coarse.GRC9CoarseGrainingTest.test_coarse_cache_invalidates_after_expansion_rewiring",
+      "tests.models.test_grc_9_coarse.GRC9CoarseGrainingTest.test_coarse_cache_invalidates_after_metric_and_flux_recomputation",
+      "tests.models.test_grc_9_coarse.GRC9CoarseGrainingTest.test_coarse_cache_invalidates_after_topology_mutation",
+      "tests.models.test_grc_9_coarse.GRC9CoarseGrainingTest.test_coarse_grain_columns_exactly_reconstructs_nonnegative_conductance",
+      "tests.models.test_grc_9_coarse.GRC9CoarseGrainingTest.test_coarse_grain_columns_exactly_reconstructs_signed_flux_via_split",
+      "tests.models.test_grc_9_expansion.GRC9ExpansionGrowthTest.test_apply_growth_accepts_pressure_boundary_capacity_source",
+      "tests.models.test_grc_9_expansion.GRC9ExpansionGrowthTest.test_apply_growth_front_capacity_mode_requires_eligible_port_metadata",
+      "tests.models.test_grc_9_expansion.GRC9ExpansionGrowthTest.test_apply_growth_front_capacity_mode_uses_lowest_eligible_port",
+      "tests.models.test_grc_9_expansion.GRC9ExpansionGrowthTest.test_apply_growth_records_seeded_birth_probability_and_rng_sample",
+      "tests.models.test_grc_9_expansion.GRC9ExpansionGrowthTest.test_apply_growth_uses_lowest_inactive_parent_port_and_preserves_budget",
+      "tests.models.test_grc_9_expansion.GRC9ExpansionGrowthTest.test_apply_topology_changes_builds_canonical_module_and_rewires_by_column",
+      "tests.models.test_grc_9_expansion.GRC9ExpansionGrowthTest.test_apply_topology_changes_handles_multiple_sparks_sequentially",
+      "tests.models.test_grc_9_expansion.GRC9ExpansionGrowthTest.test_apply_topology_changes_uses_w_bond_fallback_for_empty_columns",
+      "tests.models.test_grc_9_expansion.GRC9ExpansionGrowthTest.test_expansion_size_over_four_adds_round_robin_tree_node",
+      "tests.models.test_grc_9_expansion.GRC9ExpansionGrowthTest.test_invalid_growth_parent_eligibility_mode_raises",
+      "tests.models.test_grc_9_expansion.GRC9ExpansionGrowthTest.test_pressure_boundary_growth_requires_positive_outward_pressure",
+      "tests.models.test_grc_9_grcl9_lowering.GRCL9LowererTest.test_all_default_fixtures_lower_to_connected_grc9_states",
+      "tests.models.test_grc_9_grcl9_lowering.GRCL9LowererTest.test_assembly_policy_and_motif_registry_are_populated",
+      "tests.models.test_grc_9_grcl9_lowering.GRCL9LowererTest.test_builtin_fixture_names_lower_by_name",
+      "tests.models.test_grc_9_grcl9_lowering.GRCL9LowererTest.test_fission_fixtures_use_explicit_bridge_edges",
+      "tests.models.test_grc_9_grcl9_lowering.GRCL9LowererTest.test_front_capacity_growth_lowers_to_grc9_runtime_caches",
+      "tests.models.test_grc_9_grcl9_lowering.GRCL9LowererTest.test_legacy_growth_lowers_as_non_evidence_metadata_without_front_cache",
+      "tests.models.test_grc_9_grcl9_lowering.GRCL9LowererTest.test_lowering_accepts_mapping_input",
+      "tests.models.test_grc_9_grcl9_lowering.GRCL9LowererTest.test_lowering_is_deterministic_and_does_not_mutate_source",
+      "tests.models.test_grc_9_grcl9_lowering.GRCL9LowererTest.test_provenance_covers_every_lowered_node_and_edge",
+      "tests.models.test_grc_9_grcl9_lowering.GRCL9LowererTest.test_spark_fixtures_record_expected_candidate_caches",
+      "tests.models.test_grc_9_landscape.GRC9LandscapeLoweringTest.test_build_grc9_from_landscape_seed_is_deterministic",
+      "tests.models.test_grc_9_landscape.GRC9LandscapeLoweringTest.test_run_grc9_landscape_seed_executes_replay_stably",
+      "tests.models.test_grc_9_runtime.GRC9RuntimeSurfaceTest.test_basin_extraction_is_deterministic_on_fixed_inputs",
+      "tests.models.test_grc_9_runtime.GRC9RuntimeSurfaceTest.test_compute_potential_and_flux_preserve_oriented_antisymmetry",
+      "tests.models.test_grc_9_runtime.GRC9RuntimeSurfaceTest.test_successor_map_tie_break_uses_ascending_neighbor_id_and_zero_outflow_self",
+      "tests.models.test_grc_9_runtime.GRC9RuntimeSurfaceTest.test_topology_hydration_enforces_canonical_port_edge_orientation",
+      "tests.models.test_grc_9_sparks.GRC9MechanicalSparkTest.test_detect_events_can_emit_sign_crossing_branch_when_enabled",
+      "tests.models.test_grc_9_sparks.GRC9MechanicalSparkTest.test_detect_events_defers_near_saturation_relaxation",
+      "tests.models.test_grc_9_sparks.GRC9MechanicalSparkTest.test_detect_events_emits_column_proxy_branch_with_correct_column_grouping",
+      "tests.models.test_grc_9_sparks.GRC9MechanicalSparkTest.test_detect_events_emits_instability_branch_for_saturated_sink",
+      "tests.models.test_grc_9_sparks.GRC9MechanicalSparkTest.test_detect_events_orders_multiple_sinks_by_ascending_node_id",
+      "tests.models.test_grc_9_state.GRC9StateContractTest.test_budget_target_is_locked_from_initial_state_when_omitted",
+      "tests.models.test_grc_9_state.GRC9StateContractTest.test_capabilities_reflect_intrinsic_frame_only_for_phase6_baseline",
+      "tests.models.test_grc_9_state.GRC9StateContractTest.test_explicit_budget_targets_are_preserved_including_zero",
+      "tests.models.test_grc_9_state.GRC9StateContractTest.test_from_state_restores_port_topology_and_typed_registries",
+      "tests.models.test_grc_9_state.GRC9StateContractTest.test_invalid_mode_values_are_rejected_early",
+      "tests.models.test_grc_9_state.GRC9StateContractTest.test_minimal_config_resolves_defaults_and_constructs_grc9_state",
+      "tests.models.test_grc_9_state.GRC9StateContractTest.test_port_helpers_cover_forward_inverse_and_membership",
+      "tests.models.test_grc_9_state.GRC9StateContractTest.test_set_state_rejects_incompatible_objects",
+      "tests.models.test_grc_9_state.GRC9StateContractTest.test_snapshot_save_load_preserves_grc9_surface",
+      "tests.models.test_grc_9_step.GRC9StepLoopPersistenceTest.test_compute_observables_uses_topology_updated_current_flux_abundance_contract",
+      "tests.models.test_grc_9_step.GRC9StepLoopPersistenceTest.test_enforce_budget_uses_uniform_positive_shift_instead_of_single_node_patch",
+      "tests.models.test_grc_9_step.GRC9StepLoopPersistenceTest.test_representative_lane_is_deterministic_from_same_state_and_rng",
+      "tests.models.test_grc_9_step.GRC9StepLoopPersistenceTest.test_save_load_roundtrip_preserves_continued_runtime_progression",
+      "tests.models.test_grc_9_step.GRC9StepLoopPersistenceTest.test_snapshot_roundtrip_preserves_grc9_runtime_groups_and_rng",
+      "tests.models.test_grc_9_step.GRC9StepLoopPersistenceTest.test_step_executes_full_phase6_order_and_updates_runtime_state",
+      "tests.models.test_grc_9_tensor.GRC9TensorMetricTest.test_edge_labels_are_explicit_and_separately_serialized",
+      "tests.models.test_grc_9_tensor.GRC9TensorMetricTest.test_geometry_accumulates_row_mismatch_deterministically",
+      "tests.models.test_grc_9_tensor.GRC9TensorMetricTest.test_metric_integrates_curvature_backend_selection",
+      "tests.models.test_grc_9_tensor.GRC9TensorMetricTest.test_metric_update_uses_only_edge_local_inputs_when_curvature_is_none",
+      "tests.models.test_grc_9_v3_choice_budget.GRC9V3ChoiceBudgetTest.test_boundary_prune_and_coarse_cache_invalidation_are_explicit",
+      "tests.models.test_grc_9_v3_choice_budget.GRC9V3ChoiceBudgetTest.test_choice_detection_uses_grc9v3_port_flux_successors",
+      "tests.models.test_grc_9_v3_choice_budget.GRC9V3ChoiceBudgetTest.test_collapse_records_learning_as_persistent_basin_assignment",
+      "tests.models.test_grc_9_v3_choice_budget.GRC9V3ChoiceBudgetTest.test_disabled_choice_backend_clears_choice_and_collapse_registries",
+      "tests.models.test_grc_9_v3_choice_budget.GRC9V3ChoiceBudgetTest.test_growth_uses_outward_flux_pressure_and_invalidates_coarse_cache",
+      "tests.models.test_grc_9_v3_choice_budget.GRC9V3ChoiceBudgetTest.test_simplex_projection_budget_correction_preserves_positivity",
+      "tests.models.test_grc_9_v3_choice_budget.GRC9V3ChoiceBudgetTest.test_uniform_shift_budget_correction_matches_target",
+      "tests.models.test_grc_9_v3_coarse.GRC9V3CoarseGrainingTest.test_coarse_cache_invalidates_after_transport_recomputation",
+      "tests.models.test_grc_9_v3_coarse.GRC9V3CoarseGrainingTest.test_coarse_grain_columns_exactly_reconstructs_nonnegative_conductance",
+      "tests.models.test_grc_9_v3_coarse.GRC9V3CoarseGrainingTest.test_coarse_grain_columns_exactly_reconstructs_signed_flux_via_split",
+      "tests.models.test_grc_9_v3_coarse.GRC9V3CoarseGrainingTest.test_nonnegative_edge_label_fields_reconstruct_after_transport",
+      "tests.models.test_grc_9_v3_coarse.GRC9V3CoarseGrainingTest.test_required_capability_has_public_operator_surface",
+      "tests.models.test_grc_9_v3_coarse.GRC9V3CoarseGrainingTest.test_unsupported_coarse_field_or_split_mode_raises",
+      "tests.models.test_grc_9_v3_column_h_assisted.GRC9V3ColumnHAssistedConfigTest.test_column_h_numeric_params_are_validated",
+      "tests.models.test_grc_9_v3_column_h_assisted.GRC9V3ColumnHAssistedConfigTest.test_default_config_keeps_lane_a",
+      "tests.models.test_grc_9_v3_column_h_assisted.GRC9V3ColumnHAssistedConfigTest.test_explicit_lane_b_config_is_accepted",
+      "tests.models.test_grc_9_v3_column_h_assisted.GRC9V3ColumnHAssistedConfigTest.test_lane_b_near_saturation_is_rejected_in_v1",
+      "tests.models.test_grc_9_v3_column_h_assisted.GRC9V3ColumnHAssistedConfigTest.test_lane_b_requires_active_degree_nine_in_v1",
+      "tests.models.test_grc_9_v3_column_h_assisted.GRC9V3ColumnHAssistedConfigTest.test_lane_b_requires_at_least_one_column_h_branch",
+      "tests.models.test_grc_9_v3_column_h_assisted.GRC9V3ColumnHAssistedConfigTest.test_lane_b_requires_sink_scope_in_v1",
+      "tests.models.test_grc_9_v3_column_h_assisted.GRC9V3ColumnHAssistedConfigTest.test_sign_crossing_requires_previous_h_storage",
+      "tests.models.test_grc_9_v3_column_h_assisted.GRC9V3ColumnHAssistedConfigTest.test_unknown_lane_is_rejected",
+      "tests.models.test_grc_9_v3_column_h_assisted.GRC9V3ColumnHAssistedConfigTest.test_unknown_sign_crossing_mode_is_rejected",
+      "tests.models.test_grc_9_v3_column_h_assisted.GRC9V3ColumnHAssistedPredicateTest.test_lane_a_candidate_payload_remains_backward_compatible",
+      "tests.models.test_grc_9_v3_column_h_assisted.GRC9V3ColumnHAssistedPredicateTest.test_lane_a_does_not_consume_or_update_existing_column_h_history",
+      "tests.models.test_grc_9_v3_column_h_assisted.GRC9V3ColumnHAssistedPredicateTest.test_lane_a_does_not_gate_on_column_h_by_default",
+      "tests.models.test_grc_9_v3_column_h_assisted.GRC9V3ColumnHAssistedPredicateTest.test_lane_b_candidate_detection_does_not_expand_or_complete_identity",
+      "tests.models.test_grc_9_v3_column_h_assisted.GRC9V3ColumnHAssistedPredicateTest.test_lane_b_candidate_id_is_stable_under_deterministic_rebuild",
+      "tests.models.test_grc_9_v3_column_h_assisted.GRC9V3ColumnHAssistedPredicateTest.test_lane_b_column_h_sign_crossing_hit_emits_candidate",
+      "tests.models.test_grc_9_v3_column_h_assisted.GRC9V3ColumnHAssistedPredicateTest.test_lane_b_column_h_threshold_hit_emits_candidate_without_signed_hit",
+      "tests.models.test_grc_9_v3_column_h_assisted.GRC9V3ColumnHAssistedPredicateTest.test_lane_b_degree_eight_column_h_hit_emits_no_candidate",
+      "tests.models.test_grc_9_v3_column_h_assisted.GRC9V3ColumnHAssistedPredicateTest.test_lane_b_event_payload_matches_captured_column_h_result",
+      "tests.models.test_grc_9_v3_column_h_assisted.GRC9V3ColumnHAssistedPredicateTest.test_lane_b_event_payload_matches_telemetry_contract",
+      "tests.models.test_grc_9_v3_column_h_assisted.GRC9V3ColumnHAssistedPredicateTest.test_lane_b_expansion_reassignment_preserves_old_columns",
+      "tests.models.test_grc_9_v3_column_h_assisted.GRC9V3ColumnHAssistedPredicateTest.test_lane_b_fullness_without_spark_branch_emits_no_candidate",
+      "tests.models.test_grc_9_v3_column_h_assisted.GRC9V3ColumnHAssistedPredicateTest.test_lane_b_large_gradient_column_h_hit_emits_no_candidate",
+      "tests.models.test_grc_9_v3_column_h_assisted.GRC9V3ColumnHAssistedPredicateTest.test_lane_b_mechanical_expansion_is_not_identity_acceptance",
+      "tests.models.test_grc_9_v3_column_h_assisted.GRC9V3ColumnHAssistedPredicateTest.test_lane_b_non_sink_emits_no_candidate",
+      "tests.models.test_grc_9_v3_column_h_assisted.GRC9V3ColumnHAssistedPredicateTest.test_lane_b_sign_crossing_candidate_routes_to_existing_expansion",
+      "tests.models.test_grc_9_v3_column_h_assisted.GRC9V3ColumnHAssistedPredicateTest.test_lane_b_signed_and_column_h_hits_emit_one_candidate_with_both_reasons",
+      "tests.models.test_grc_9_v3_column_h_assisted.GRC9V3ColumnHAssistedPredicateTest.test_lane_b_signed_hessian_hit_emits_candidate_without_column_h_hit",
+      "tests.models.test_grc_9_v3_column_h_assisted.GRC9V3ColumnHAssistedPredicateTest.test_lane_b_signed_hessian_only_candidate_routes_to_existing_expansion",
+      "tests.models.test_grc_9_v3_column_h_assisted.GRC9V3ColumnHAssistedPredicateTest.test_lane_b_threshold_candidate_routes_to_existing_expansion",
+      "tests.models.test_grc_9_v3_column_h_assisted.GRC9V3ColumnHAssistedPredicateTest.test_lane_b_threshold_equalities_follow_strict_less_than",
+      "tests.models.test_grc_9_v3_column_h_assisted.GRC9V3ColumnHAssistedPredicateTest.test_same_fixture_contrasts_lane_a_and_lane_b_column_h_threshold",
+      "tests.models.test_grc_9_v3_column_h_assisted.GRC9V3ColumnHComputationTest.test_base_conductance_changes_only_its_local_column",
+      "tests.models.test_grc_9_v3_column_h_assisted.GRC9V3ColumnHComputationTest.test_candidate_local_ports_drive_grouping_and_base_conductance",
+      "tests.models.test_grc_9_v3_column_h_assisted.GRC9V3ColumnHComputationTest.test_column_h_values_match_hand_calculation",
+      "tests.models.test_grc_9_v3_column_h_assisted.GRC9V3ColumnHComputationTest.test_degree_eight_node_computes_diagnostic_without_full_candidate",
+      "tests.models.test_grc_9_v3_column_h_assisted.GRC9V3ColumnHComputationTest.test_duplicate_candidate_local_port_is_rejected",
+      "tests.models.test_grc_9_v3_column_h_assisted.GRC9V3ColumnHComputationTest.test_flux_coupling_does_not_change_canonical_column_h",
+      "tests.models.test_grc_9_v3_column_h_assisted.GRC9V3ColumnHComputationTest.test_invalid_explicit_previous_values_are_reported_unavailable",
+      "tests.models.test_grc_9_v3_column_h_assisted.GRC9V3ColumnHComputationTest.test_nonfinite_coherence_fails_clearly",
+      "tests.models.test_grc_9_v3_column_h_assisted.GRC9V3ColumnHComputationTest.test_nonfinite_conductance_fails_clearly",
+      "tests.models.test_grc_9_v3_column_h_assisted.GRC9V3ColumnHComputationTest.test_previous_column_h_cache_is_invalidated_after_expansion",
+      "tests.models.test_grc_9_v3_column_h_assisted.GRC9V3ColumnHComputationTest.test_previous_column_h_history_is_idempotent_per_state_epoch",
+      "tests.models.test_grc_9_v3_column_h_assisted.GRC9V3ColumnHComputationTest.test_previous_column_h_history_shifts_on_new_state_epoch",
+      "tests.models.test_grc_9_v3_column_h_assisted.GRC9V3ColumnHComputationTest.test_previous_column_h_storage_is_disabled_by_default",
+      "tests.models.test_grc_9_v3_column_h_assisted.GRC9V3ColumnHComputationTest.test_theory_product_sign_crossing_fires_positive_to_negative",
+      "tests.models.test_grc_9_v3_column_h_assisted.GRC9V3ColumnHComputationTest.test_theory_product_sign_crossing_uses_direct_product_rule",
+      "tests.models.test_grc_9_v3_column_h_assisted.GRC9V3ColumnHComputationTest.test_theory_product_touching_zero_does_not_cross",
+      "tests.models.test_grc_9_v3_column_h_assisted.GRC9V3ColumnHComputationTest.test_zero_band_sign_crossing_suppresses_small_crossings",
+      "tests.models.test_grc_9_v3_differential.GRC9V3DifferentialLayerTest.test_cached_hessian_sign_is_reused_as_run_fixed_convention",
+      "tests.models.test_grc_9_v3_differential.GRC9V3DifferentialLayerTest.test_differential_rebuild_carries_signed_hessian_history",
+      "tests.models.test_grc_9_v3_differential.GRC9V3DifferentialLayerTest.test_hybrid_node_tensor_uses_eq1_diagonal_mismatch_and_isotropic_flux",
+      "tests.models.test_grc_9_v3_differential.GRC9V3DifferentialLayerTest.test_net_flux_summary_refreshes_when_edge_flux_changes",
+      "tests.models.test_grc_9_v3_differential.GRC9V3DifferentialLayerTest.test_row_basis_gradient_and_default_hessian_follow_g2_g3",
+      "tests.models.test_grc_9_v3_differential.GRC9V3DifferentialLayerTest.test_weighted_least_squares_backend_records_comparison_geometry",
+      "tests.models.test_grc_9_v3_grcl9v3_lowering.GRCL9V3LowererTest.test_all_default_fixtures_lower_to_connected_grc9v3_states",
+      "tests.models.test_grc_9_v3_grcl9v3_lowering.GRCL9V3LowererTest.test_appendix_e_fixtures_use_explicit_bridge_edges",
+      "tests.models.test_grc_9_v3_grcl9v3_lowering.GRCL9V3LowererTest.test_assembly_policy_and_motif_registry_are_populated",
+      "tests.models.test_grc_9_v3_grcl9v3_lowering.GRCL9V3LowererTest.test_builtin_fixture_names_lower_by_name",
+      "tests.models.test_grc_9_v3_grcl9v3_lowering.GRCL9V3LowererTest.test_duplicate_construct_kinds_are_rejected_by_lowerer",
+      "tests.models.test_grc_9_v3_grcl9v3_lowering.GRCL9V3LowererTest.test_expected_region_caches_are_populated",
+      "tests.models.test_grc_9_v3_grcl9v3_lowering.GRCL9V3LowererTest.test_front_capacity_growth_can_propagate_bounded_child_front",
+      "tests.models.test_grc_9_v3_grcl9v3_lowering.GRCL9V3LowererTest.test_front_capacity_growth_gates_parent_port_selection",
+      "tests.models.test_grc_9_v3_grcl9v3_lowering.GRCL9V3LowererTest.test_front_capacity_growth_provenance_is_cached",
+      "tests.models.test_grc_9_v3_grcl9v3_lowering.GRCL9V3LowererTest.test_hessian_backend_default_is_source_owned_not_runtime_param_fallback",
+      "tests.models.test_grc_9_v3_grcl9v3_lowering.GRCL9V3LowererTest.test_lowering_accepts_mapping_input",
+      "tests.models.test_grc_9_v3_grcl9v3_lowering.GRCL9V3LowererTest.test_lowering_initializes_replay_rng_state",
+      "tests.models.test_grc_9_v3_grcl9v3_lowering.GRCL9V3LowererTest.test_lowering_is_deterministic_and_does_not_mutate_source",
+      "tests.models.test_grc_9_v3_grcl9v3_lowering.GRCL9V3LowererTest.test_non_executable_constructs_are_rejected_by_lowerer",
+      "tests.models.test_grc_9_v3_grcl9v3_lowering.GRCL9V3LowererTest.test_pressure_boundary_front_capacity_is_cached_as_expected_region",
+      "tests.models.test_grc_9_v3_grcl9v3_lowering.GRCL9V3LowererTest.test_provenance_covers_every_lowered_node_and_edge",
+      "tests.models.test_grc_9_v3_hessian_readiness.GRC9V3HessianReadinessConformanceTest.test_differential_transport_and_edge_labels_are_available",
+      "tests.models.test_grc_9_v3_hessian_readiness.GRC9V3HessianReadinessConformanceTest.test_endpoint_ports_and_signed_flux_orientation_are_canonicalized",
+      "tests.models.test_grc_9_v3_hessian_readiness.GRC9V3HessianReadinessConformanceTest.test_inactive_port_does_not_contribute_to_fields_or_continuity",
+      "tests.models.test_grc_9_v3_hessian_readiness.GRC9V3HessianReadinessConformanceTest.test_lane_a_trace_schema_documents_minimal_contract",
+      "tests.models.test_grc_9_v3_hessian_readiness.GRC9V3HessianReadinessConformanceTest.test_port_row_column_mapping_is_total_for_all_nine_ports",
+      "tests.models.test_grc_9_v3_hessian_readiness.GRC9V3HessianReadinessConformanceTest.test_positive_eps_spark_accepts_exact_hessian_degeneracy",
+      "tests.models.test_grc_9_v3_hessian_readiness.GRC9V3HessianReadinessConformanceTest.test_sink_basin_hierarchy_is_available_before_spark_events",
+      "tests.models.test_grc_9_v3_hessian_readiness.GRC9V3HessianReadinessConformanceTest.test_snapshot_uses_runtime_groups_documented_for_artifact_extraction",
+      "tests.models.test_grc_9_v3_hessian_readiness.GRC9V3HessianReadinessConformanceTest.test_spark_expansion_budget_and_hierarchy_payloads_are_direct",
+      "tests.models.test_grc_9_v3_hessian_readiness.GRC9V3HessianReadinessConformanceTest.test_theory_runtime_gap_ledger_has_expected_surface_classification",
+      "tests.models.test_grc_9_v3_hessian_readiness.GRC9V3HessianReadinessConformanceTest.test_zero_column_profile_and_signed_flux_j_split_reconstruct_exactly",
+      "tests.models.test_grc_9_v3_hessian_readiness.GRC9V3HessianReadinessConformanceTest.test_zero_partial_and_saturated_active_degree_are_distinguished",
+      "tests.models.test_grc_9_v3_representative_runtime.GRC9V3RepresentativeRuntimeTest.test_appendix_e_fixture_produces_one_spark_and_two_daughter_sinks",
+      "tests.models.test_grc_9_v3_representative_runtime.GRC9V3RepresentativeRuntimeTest.test_representative_artifacts_are_replayable_and_self_consistent",
+      "tests.models.test_grc_9_v3_sparks.GRC9V3HybridSparkTest.test_candidate_detection_does_not_complete_or_expand_by_itself",
+      "tests.models.test_grc_9_v3_sparks.GRC9V3HybridSparkTest.test_lane_a_ignores_column_h_like_threshold_by_default",
+      "tests.models.test_grc_9_v3_sparks.GRC9V3HybridSparkTest.test_mechanical_expansion_can_assign_nonzero_core_coherence",
+      "tests.models.test_grc_9_v3_sparks.GRC9V3HybridSparkTest.test_mechanical_expansion_registry_survives_snapshot_round_trip",
+      "tests.models.test_grc_9_v3_sparks.GRC9V3HybridSparkTest.test_mechanical_expansion_with_module_sink_gain_completes_spark",
+      "tests.models.test_grc_9_v3_sparks.GRC9V3HybridSparkTest.test_signed_crossing_criterion_is_capability_gated",
+      "tests.models.test_grc_9_v3_sparks.GRC9V3HybridSparkTest.test_stabilized_child_basin_registers_completed_spark_and_hierarchy",
+      "tests.models.test_grc_9_v3_state.GRC9V3StateContractTest.test_budget_target_is_fixed_at_initialization_when_not_provided",
+      "tests.models.test_grc_9_v3_state.GRC9V3StateContractTest.test_capabilities_claim_required_hybrid_surface_without_optional_claims",
+      "tests.models.test_grc_9_v3_state.GRC9V3StateContractTest.test_defaults_are_parent_derived_not_ad_hoc_thresholds",
+      "tests.models.test_grc_9_v3_state.GRC9V3StateContractTest.test_explicit_zero_budget_target_is_preserved",
+      "tests.models.test_grc_9_v3_state.GRC9V3StateContractTest.test_from_state_restores_port_topology_and_hybrid_fields",
+      "tests.models.test_grc_9_v3_state.GRC9V3StateContractTest.test_invalid_mode_values_are_rejected_early",
+      "tests.models.test_grc_9_v3_state.GRC9V3StateContractTest.test_invalid_threshold_values_are_rejected_early",
+      "tests.models.test_grc_9_v3_state.GRC9V3StateContractTest.test_minimal_config_resolves_defaults_and_constructs_hybrid_state",
+      "tests.models.test_grc_9_v3_state.GRC9V3StateContractTest.test_set_state_rejects_incompatible_objects_and_invalid_references",
+      "tests.models.test_grc_9_v3_state.GRC9V3StateContractTest.test_snapshot_save_load_preserves_hybrid_groups",
+      "tests.models.test_grc_9_v3_state.GRC9V3StateContractTest.test_weighted_least_squares_hessian_backend_is_allowed_for_comparison",
+      "tests.models.test_grc_9_v3_step.GRC9V3StepLoopTest.test_snapshot_replay_after_step_preserves_settled_state",
+      "tests.models.test_grc_9_v3_step.GRC9V3StepLoopTest.test_step_executes_documented_loop_and_advances_time",
+      "tests.models.test_grc_9_v3_step.GRC9V3StepLoopTest.test_step_preserves_fixed_budget_after_continuity_and_invalidates_coarse_cache",
+      "tests.models.test_grc_9_v3_transport.GRC9V3TransportIdentityTest.test_edge_label_selection_can_omit_post_flux_labels",
+      "tests.models.test_grc_9_v3_transport.GRC9V3TransportIdentityTest.test_identity_basin_mass_recomputes_after_membership_changes",
+      "tests.models.test_grc_9_v3_transport.GRC9V3TransportIdentityTest.test_identity_pass_extracts_flux_basins_and_eq_g7_seed",
+      "tests.models.test_grc_9_v3_transport.GRC9V3TransportIdentityTest.test_transport_pass_computes_conductance_potential_flux_and_labels",
+      "tests.models.test_grc_v2_budget_observables.GRCV2BudgetObservablesTest.test_apply_continuity_updates_node_coherence_from_flux",
+      "tests.models.test_grc_v2_budget_observables.GRCV2BudgetObservablesTest.test_enforce_budget_clips_negative_coherence_and_tracks_correction",
+      "tests.models.test_grc_v2_budget_observables.GRCV2BudgetObservablesTest.test_enforce_budget_corrects_drift_and_clears_remainder",
+      "tests.models.test_grc_v2_budget_observables.GRCV2BudgetObservablesTest.test_observables_use_paper_abundance_semantics",
+      "tests.models.test_grc_v2_budget_observables.GRCV2BudgetObservablesTest.test_step_observables_reflect_post_step_topology_and_budget",
+      "tests.models.test_grc_v2_construction.GRCV2ConstructionTest.test_from_config_constructs_grcv2_state",
+      "tests.models.test_grc_v2_construction.GRCV2ConstructionTest.test_from_state_restores_weighted_topology_and_fields",
+      "tests.models.test_grc_v2_construction.GRCV2ConstructionTest.test_host_embedding_requires_host_geometry_fields",
+      "tests.models.test_grc_v2_construction.GRCV2ConstructionTest.test_invalid_mode_values_are_rejected_early",
+      "tests.models.test_grc_v2_construction.GRCV2ConstructionTest.test_list_capabilities_advertises_intrinsic_or_host_frame_exactly_once",
+      "tests.models.test_grc_v2_construction.GRCV2ConstructionTest.test_reset_restores_initial_state",
+      "tests.models.test_grc_v2_construction.GRCV2ConstructionTest.test_set_state_validates_topology_membership",
+      "tests.models.test_grc_v2_construction.GRCV2ConstructionTest.test_snapshot_save_load_preserve_grcv2_state_surface",
+      "tests.models.test_grc_v2_landscape_blueprint.GRCV2LandscapeBlueprintTest.test_accepts_hostless_junction_with_chart_center_as_standalone_routing_site",
+      "tests.models.test_grc_v2_landscape_blueprint.GRCV2LandscapeBlueprintTest.test_cell1_realization_keeps_root_boundary_ridge_as_explicit_metadata_only_marker",
+      "tests.models.test_grc_v2_landscape_blueprint.GRCV2LandscapeBlueprintTest.test_cell4_realization_uses_valleys_as_edges_and_routing_hub_as_node",
+      "tests.models.test_grc_v2_landscape_blueprint.GRCV2LandscapeBlueprintTest.test_plateau_is_a_node_carrier_in_baseline_grcv2_projection",
+      "tests.models.test_grc_v2_landscape_blueprint.GRCV2LandscapeBlueprintTest.test_rejects_basin_boundary_reference_that_is_not_a_ridge",
+      "tests.models.test_grc_v2_landscape_blueprint.GRCV2LandscapeBlueprintTest.test_rejects_duplicate_primitive_ids_even_when_seed_validation_is_disabled",
+      "tests.models.test_grc_v2_landscape_blueprint.GRCV2LandscapeBlueprintTest.test_rejects_hostless_junction_without_chart_center_or_incident_valley",
+      "tests.models.test_grc_v2_landscape_blueprint.GRCV2LandscapeBlueprintTest.test_rejects_ridge_that_would_realize_to_duplicate_edge_blueprint_ids",
+      "tests.models.test_grc_v2_landscape_blueprint.GRCV2LandscapeBlueprintTest.test_rejects_unresolved_non_boundary_ridge_without_support_target",
+      "tests.models.test_grc_v2_landscape_blueprint.GRCV2LandscapeBlueprintTest.test_rejects_valley_endpoint_that_is_not_a_node_carrier",
+      "tests.models.test_grc_v2_landscape_import.GRCV2LandscapeImportSmokeTest.test_models_package_exports_grcv2_landscape_boundary",
+      "tests.models.test_grc_v2_landscape_import.GRCV2LandscapeImportSmokeTest.test_param_family_surface_and_runner_imports_are_executable",
+      "tests.models.test_grc_v2_landscape_import.GRCV2LandscapeImportSmokeTest.test_prepare_projection_accepts_runtime_seed_and_params_object",
+      "tests.models.test_grc_v2_landscape_import.GRCV2LandscapeImportSmokeTest.test_prepare_projection_accepts_seed_path_and_valid_grcv2_config",
+      "tests.models.test_grc_v2_landscape_import.GRCV2LandscapeImportSmokeTest.test_projection_and_build_entry_points_remain_explicitly_deferred",
+      "tests.models.test_grc_v2_landscape_runtime.GRCV2LandscapeRuntimeTest.test_fixed_seed_and_family_replay_is_deterministic",
+      "tests.models.test_grc_v2_landscape_runtime.GRCV2LandscapeRuntimeTest.test_param_family_resolution_uses_seed_constitutive_profile_and_distinguishes_families",
+      "tests.models.test_grc_v2_landscape_runtime.GRCV2LandscapeRuntimeTest.test_projected_model_save_load_roundtrip_preserves_runtime_progression",
+      "tests.models.test_grc_v2_landscape_runtime.GRCV2LandscapeRuntimeTest.test_projected_state_for_cell1_has_budget_and_support_edge",
+      "tests.models.test_grc_v2_landscape_runtime.GRCV2LandscapeRuntimeTest.test_projected_state_for_cell4_has_expected_connected_runtime_surface",
+      "tests.models.test_grc_v2_landscape_runtime.GRCV2LandscapeRuntimeTest.test_projection_adds_explicit_plateau_containment_and_hostless_junction_flags",
+      "tests.models.test_grc_v2_landscape_runtime.GRCV2LandscapeRuntimeTest.test_projection_rejects_duplicate_primitive_ids_even_when_validation_is_disabled",
+      "tests.models.test_grc_v2_landscape_runtime.GRCV2LandscapeRuntimeTest.test_projection_rejects_invalid_seed_even_when_validation_is_disabled",
+      "tests.models.test_grc_v2_landscape_runtime.GRCV2LandscapeRuntimeTest.test_runner_can_write_telemetry_artifacts_without_changing_runtime_behavior",
+      "tests.models.test_grc_v2_landscape_runtime.GRCV2LandscapeRuntimeTest.test_runner_executes_cell1_and_cell4_for_multiple_steps",
+      "tests.models.test_grc_v2_landscape_runtime.GRCV2LandscapeRuntimeTest.test_transport_intent_biases_initial_edge_weight_without_setting_flux",
+      "tests.models.test_grc_v2_metric_labels.GRCV2MetricLabelsTest.test_edge_label_selection_subset_omits_unselected_labels",
+      "tests.models.test_grc_v2_metric_labels.GRCV2MetricLabelsTest.test_flux_uses_negative_eta_weighted_potential_gradient",
+      "tests.models.test_grc_v2_metric_labels.GRCV2MetricLabelsTest.test_forman_curvature_backend_computes_real_edge_curvature",
+      "tests.models.test_grc_v2_metric_labels.GRCV2MetricLabelsTest.test_geometry_computes_paper_style_tensor_terms",
+      "tests.models.test_grc_v2_metric_labels.GRCV2MetricLabelsTest.test_host_embedding_uses_ambient_edge_length",
+      "tests.models.test_grc_v2_metric_labels.GRCV2MetricLabelsTest.test_metric_and_labels_are_repeatable_for_equivalent_builds",
+      "tests.models.test_grc_v2_metric_labels.GRCV2MetricLabelsTest.test_ollivier_curvature_backend_computes_real_edge_curvature",
+      "tests.models.test_grc_v2_metric_labels.GRCV2MetricLabelsTest.test_quadratic_site_potential_contributes_to_runtime_potential",
+      "tests.models.test_grc_v2_metric_labels.GRCV2MetricLabelsTest.test_step_computes_paper_style_exponential_conductance_and_label_metadata",
+      "tests.models.test_grc_v2_metric_labels.GRCV2MetricLabelsTest.test_temporal_delay_uses_transport_ratio_formula",
+      "tests.models.test_grc_v2_runtime_persistence.GRCV2RuntimePersistenceTest.test_reset_restores_executable_construction_baseline",
+      "tests.models.test_grc_v2_runtime_persistence.GRCV2RuntimePersistenceTest.test_save_load_preserves_ability_to_continue_deterministically",
+      "tests.models.test_grc_v2_runtime_persistence.GRCV2RuntimePersistenceTest.test_snapshot_includes_v2_runtime_groups_and_event_records",
+      "tests.models.test_grc_v2_sparks.GRCV2SparkDetectionTest.test_equivalent_builds_emit_identical_spark_payloads",
+      "tests.models.test_grc_v2_sparks.GRCV2SparkDetectionTest.test_invalid_spark_backend_is_rejected",
+      "tests.models.test_grc_v2_sparks.GRCV2SparkDetectionTest.test_step_emits_deterministic_cheeger_spark_events",
+      "tests.models.test_grc_v2_step_skeleton.GRCV2StepSkeletonTest.test_run_uses_executable_step_surface",
+      "tests.models.test_grc_v2_step_skeleton.GRCV2StepSkeletonTest.test_sink_requires_non_negative_incoming_flux_from_every_neighbor",
+      "tests.models.test_grc_v2_step_skeleton.GRCV2StepSkeletonTest.test_step_detects_sinks_from_current_flux",
+      "tests.models.test_grc_v2_step_skeleton.GRCV2StepSkeletonTest.test_step_executes_and_returns_real_step_result",
+      "tests.models.test_grc_v2_step_skeleton.GRCV2StepSkeletonTest.test_step_extracts_basins_by_successor_composition",
+      "tests.models.test_grc_v2_step_skeleton.GRCV2StepSkeletonTest.test_step_keeps_event_surface_structured",
+      "tests.models.test_grc_v2_step_skeleton.GRCV2StepSkeletonTest.test_step_populates_cached_trace_and_updates_state_time",
+      "tests.models.test_grc_v2_step_skeleton.GRCV2StepSkeletonTest.test_step_skeleton_preserves_flux_antisymmetry",
+      "tests.models.test_grc_v2_topology_events.GRCV2TopologyEventsTest.test_barrier_and_ghost_modes_fail_explicitly_when_unimplemented",
+      "tests.models.test_grc_v2_topology_events.GRCV2TopologyEventsTest.test_front_birth_adds_node_edge_and_transfers_mass",
+      "tests.models.test_grc_v2_topology_events.GRCV2TopologyEventsTest.test_prune_removes_isolated_low_mass_nodes_and_redistributes_mass",
+      "tests.models.test_grc_v2_topology_events.GRCV2TopologyEventsTest.test_soft_split_initialization_is_deterministic",
+      "tests.models.test_grc_v2_topology_events.GRCV2TopologyEventsTest.test_split_progression_removes_parent_only_after_completion",
+      "tests.models.test_grc_v2_validation_matrix.GRCV2ValidationMatrixTest.test_incompatible_state_deserialization_is_rejected",
+      "tests.models.test_grc_v2_validation_matrix.GRCV2ValidationMatrixTest.test_invalid_parameter_ranges_are_rejected",
+      "tests.models.test_grc_v2_validation_matrix.GRCV2ValidationMatrixTest.test_multi_step_save_load_replay_remains_deterministic",
+      "tests.models.test_grc_v2_validation_matrix.GRCV2ValidationMatrixTest.test_unsupported_capability_requests_are_rejected",
+      "tests.models.test_grc_v3_choice.GRCV3ChoiceContractTest.test_choice_state_wraps_invalid_successor_map_payloads",
+      "tests.models.test_grc_v3_choice.GRCV3ChoiceContractTest.test_disabled_choice_backend_clears_partial_state",
+      "tests.models.test_grc_v3_choice.GRCV3ChoiceContractTest.test_sink_compatibility_emits_choice_resolved_below_collapse_threshold",
+      "tests.models.test_grc_v3_choice.GRCV3ChoiceContractTest.test_sink_compatibility_emits_choice_then_collapse",
+      "tests.models.test_grc_v3_choice.GRCV3ChoiceContractTest.test_sink_compatibility_is_deterministic_under_fixed_inputs",
+      "tests.models.test_grc_v3_differential.GRCV3DifferentialBackendTest.test_calibrate_hessian_sign_prefers_positive_definite_basin_convention",
+      "tests.models.test_grc_v3_differential.GRCV3DifferentialBackendTest.test_induced_local_frame_displacements_are_deterministic_on_chain",
+      "tests.models.test_grc_v3_differential.GRCV3DifferentialBackendTest.test_rebuild_basin_attributes_materializes_gradient_hessian_and_sign",
+      "tests.models.test_grc_v3_differential.GRCV3DifferentialBackendTest.test_rebuild_basin_attributes_preserves_existing_hessian_sign",
+      "tests.models.test_grc_v3_differential.GRCV3DifferentialBackendTest.test_symmetric_eigenvalues_returns_sorted_real_spectrum",
+      "tests.models.test_grc_v3_differential.GRCV3DifferentialBackendTest.test_weighted_least_squares_gradient_matches_linear_profile",
+      "tests.models.test_grc_v3_differential.GRCV3DifferentialBackendTest.test_weighted_least_squares_hessian_matches_quadratic_profile",
+      "tests.models.test_grc_v3_frontier_birth.GRCV3FrontierBirthTest.test_disabled_frontier_birth_warning_emits_once",
+      "tests.models.test_grc_v3_frontier_birth.GRCV3FrontierBirthTest.test_frontier_birth_mode_is_absent_by_default",
+      "tests.models.test_grc_v3_frontier_birth.GRCV3FrontierBirthTest.test_missing_and_disabled_modes_have_identical_no_birth_step_trace",
+      "tests.models.test_grc_v3_frontier_birth.GRCV3FrontierBirthTest.test_no_frontier_candidates_do_not_warn_when_birth_disabled",
+      "tests.models.test_grc_v3_frontier_birth.GRCV3FrontierBirthTest.test_opt_in_mode_creates_birth_from_pressure_boundary_frontier",
+      "tests.models.test_grc_v3_frontier_birth.GRCV3FrontierBirthTest.test_opt_in_mode_requires_explicit_frontier_metadata",
+      "tests.models.test_grc_v3_frontier_birth.GRCV3FrontierBirthTest.test_strict_allow_preserves_explicit_no_birth_control",
+      "tests.models.test_grc_v3_frontier_birth.GRCV3FrontierBirthTest.test_strict_error_stops_disabled_frontier_birth_candidates",
+      "tests.models.test_grc_v3_frontier_birth.GRCV3FrontierBirthTest.test_unknown_frontier_birth_mode_is_rejected",
+      "tests.models.test_grc_v3_frontier_birth.GRCV3FrontierBirthTest.test_unknown_frontier_birth_strict_mode_is_rejected",
+      "tests.models.test_grc_v3_hierarchy.GRCV3HierarchyTest.test_hierarchy_update_preserves_parent_and_depth_deterministically",
+      "tests.models.test_grc_v3_hierarchy.GRCV3HierarchyTest.test_rebuild_identity_state_exposes_flux_and_geometric_layers",
+      "tests.models.test_grc_v3_hierarchy.GRCV3HierarchyTest.test_snapshot_roundtrip_preserves_hierarchy_and_identity_fields",
+      "tests.models.test_grc_v3_landscape_runtime.GRCV3LandscapeRuntimeTest.test_compatibility_lane_still_calls_grcv2_projector",
+      "tests.models.test_grc_v3_landscape_runtime.GRCV3LandscapeRuntimeTest.test_family_native_lane_does_not_call_grcv2_projector",
+      "tests.models.test_grc_v3_landscape_runtime.GRCV3LandscapeRuntimeTest.test_grcv2_aligned_profile_resolves_for_grcv3_landscape",
+      "tests.models.test_grc_v3_landscape_runtime.GRCV3LandscapeRuntimeTest.test_grcv3_rich_junction_probe_is_consumed_by_typed_lowering_path",
+      "tests.models.test_grc_v3_landscape_runtime.GRCV3LandscapeRuntimeTest.test_grcv3_rich_junction_probe_uses_explicit_branch_target_attachment",
+      "tests.models.test_grc_v3_landscape_runtime.GRCV3LandscapeRuntimeTest.test_grcv3_rich_v2_junction_seed_uses_family_native_branch_lowering",
+      "tests.models.test_grc_v3_landscape_runtime.GRCV3LandscapeRuntimeTest.test_grcv3_rich_v2_plateau_seed_realizes_native_axes_and_containment",
+      "tests.models.test_grc_v3_landscape_runtime.GRCV3LandscapeRuntimeTest.test_grcv3_rich_v2_probe_realizes_role_aware_basin_channel_and_boundary_structure",
+      "tests.models.test_grc_v3_landscape_runtime.GRCV3LandscapeRuntimeTest.test_grcv3_rich_v2_probe_uses_preferred_attachment_roles_for_channels_and_boundary",
+      "tests.models.test_grc_v3_landscape_runtime.GRCV3LandscapeRuntimeTest.test_grcv3_rich_v3_load_carrier_probe_realizes_noncoincident_carriers",
+      "tests.models.test_grc_v3_landscape_runtime.GRCV3LandscapeRuntimeTest.test_grcv3_rich_v3_partition_probe_realizes_two_tier_probe_and_load_shells",
+      "tests.models.test_grc_v3_landscape_runtime.GRCV3LandscapeRuntimeTest.test_grcv3_rich_v3_probe_realizes_interior_geometry_and_support_only_attachment",
+      "tests.models.test_grc_v3_landscape_runtime.GRCV3LandscapeRuntimeTest.test_grcv3_rich_v4_asymmetric_center_coupling_refinement_preserves_direct_spark_and_improves_path_geometry",
+      "tests.models.test_grc_v3_landscape_runtime.GRCV3LandscapeRuntimeTest.test_grcv3_rich_v4_asymmetric_pair_mediation_localizes_direct_spark_but_not_path_settlement",
+      "tests.models.test_grc_v3_landscape_runtime.GRCV3LandscapeRuntimeTest.test_grcv3_rich_v4_carrier_site_split_child_inheriting_does_not_create_repeating_split_child_regime",
+      "tests.models.test_grc_v3_landscape_runtime.GRCV3LandscapeRuntimeTest.test_grcv3_rich_v4_center_coupling_probe_changes_support_spokes_without_leaving_transfer_mediation",
+      "tests.models.test_grc_v3_landscape_runtime.GRCV3LandscapeRuntimeTest.test_grcv3_rich_v4_center_coupling_probe_overguards_the_baseline_spark_lane",
+      "tests.models.test_grc_v3_landscape_runtime.GRCV3LandscapeRuntimeTest.test_grcv3_rich_v4_mediated_spill_branch_restores_path_spark_at_path_node",
+      "tests.models.test_grc_v3_landscape_runtime.GRCV3LandscapeRuntimeTest.test_grcv3_rich_v4_open_center_comparison_shows_guard_regime_and_path_topology_both_matter",
+      "tests.models.test_grc_v3_landscape_runtime.GRCV3LandscapeRuntimeTest.test_grcv3_rich_v4_path_node_regime_is_not_portable_to_fan_in",
+      "tests.models.test_grc_v3_landscape_runtime.GRCV3LandscapeRuntimeTest.test_grcv3_rich_v4_path_topology_probe_realizes_shared_fan_in_paths",
+      "tests.models.test_grc_v3_landscape_runtime.GRCV3LandscapeRuntimeTest.test_grcv3_rich_v4_path_topology_probe_suppresses_the_baseline_spark_lane",
+      "tests.models.test_grc_v3_landscape_runtime.GRCV3LandscapeRuntimeTest.test_grcv3_rich_v4_role_locked_spill_policy_suppresses_settlement_regimes",
+      "tests.models.test_grc_v3_landscape_runtime.GRCV3LandscapeRuntimeTest.test_grcv3_rich_v4_settlement_regime_can_suppress_mismatched_path_lane",
+      "tests.models.test_grc_v3_landscape_runtime.GRCV3LandscapeRuntimeTest.test_grcv3_rich_v4_settlement_regime_decomposition_separates_anchor_and_later_migration",
+      "tests.models.test_grc_v3_landscape_runtime.GRCV3LandscapeRuntimeTest.test_grcv3_rich_v4_settlement_regime_makes_known_direct_and_path_regimes_executable",
+      "tests.models.test_grc_v3_landscape_runtime.GRCV3LandscapeRuntimeTest.test_grcv3_rich_v4_single_intermediate_low_mass_diagnostic_only_changes_path_node_mass",
+      "tests.models.test_grc_v3_landscape_runtime.GRCV3LandscapeRuntimeTest.test_grcv3_rich_v4_single_intermediate_probe_realizes_dedicated_pair_paths",
+      "tests.models.test_grc_v3_landscape_runtime.GRCV3LandscapeRuntimeTest.test_grcv3_rich_v4_single_intermediate_probe_shows_suppression_is_general_to_intermediacy",
+      "tests.models.test_grc_v3_landscape_runtime.GRCV3LandscapeRuntimeTest.test_grcv3_rich_v4_single_intermediate_strong_path_diagnostic_only_changes_path_edge_coupling",
+      "tests.models.test_grc_v3_landscape_runtime.GRCV3LandscapeRuntimeTest.test_grcv3_rich_v4_transfer_mediation_breaks_the_rich_v3_plateau_under_baseline_gate",
+      "tests.models.test_grc_v3_landscape_runtime.GRCV3LandscapeRuntimeTest.test_grcv3_rich_v4_transfer_mediation_probe_realizes_guarded_transfer_surface",
+      "tests.models.test_grc_v3_landscape_runtime.GRCV3LandscapeRuntimeTest.test_invalid_profile_name_is_rejected",
+      "tests.models.test_grc_v3_landscape_runtime.GRCV3LandscapeRuntimeTest.test_native_lane_is_deterministic_for_same_rich_v2_seed_and_params",
+      "tests.models.test_grc_v3_landscape_runtime.GRCV3LandscapeRuntimeTest.test_projected_hostless_junction_preserves_anchor_mode_and_branch_interfaces",
+      "tests.models.test_grc_v3_landscape_runtime.GRCV3LandscapeRuntimeTest.test_projected_model_save_load_roundtrip_preserves_topology_and_replay",
+      "tests.models.test_grc_v3_landscape_runtime.GRCV3LandscapeRuntimeTest.test_projected_state_for_cell1_has_budget_and_semantic_basin_ids",
+      "tests.models.test_grc_v3_landscape_runtime.GRCV3LandscapeRuntimeTest.test_projected_state_for_cell4_has_expected_connected_runtime_surface",
+      "tests.models.test_grc_v3_landscape_runtime.GRCV3LandscapeRuntimeTest.test_projection_is_deterministic_for_same_seed_and_params",
+      "tests.models.test_grc_v3_landscape_runtime.GRCV3LandscapeRuntimeTest.test_projection_uses_default_radius_for_basin_support_when_scale_hint_missing",
+      "tests.models.test_grc_v3_landscape_runtime.GRCV3LandscapeRuntimeTest.test_rich_collapse_example_enters_choice_and_collapses",
+      "tests.models.test_grc_v3_landscape_runtime.GRCV3LandscapeRuntimeTest.test_runner_allows_zero_steps_as_initial_state_probe",
+      "tests.models.test_grc_v3_landscape_runtime.GRCV3LandscapeRuntimeTest.test_runner_executes_cell1_and_cell4_for_multiple_steps",
+      "tests.models.test_grc_v3_metric_labels.GRCV3MetricLabelsTest.test_missing_host_coordinates_fall_back_to_intrinsic_surrogate",
+      "tests.models.test_grc_v3_metric_labels.GRCV3MetricLabelsTest.test_rebuild_transport_state_materializes_host_embedding_labels",
+      "tests.models.test_grc_v3_metric_labels.GRCV3MetricLabelsTest.test_snapshot_roundtrip_preserves_materialized_transport_state",
+      "tests.models.test_grc_v3_runtime.GRCV3RepresentativeRuntimeTest.test_representative_lane_save_load_replays_identically",
+      "tests.models.test_grc_v3_runtime.GRCV3RepresentativeRuntimeTest.test_representative_lane_steps_deterministically",
+      "tests.models.test_grc_v3_serialization.GRCV3SerializationContractTest.test_load_can_restore_event_log_from_top_level_events_fallback",
+      "tests.models.test_grc_v3_serialization.GRCV3SerializationContractTest.test_load_rejects_invalid_event_log_shape",
+      "tests.models.test_grc_v3_serialization.GRCV3SerializationContractTest.test_snapshot_digest_is_stable_across_save_load_roundtrip",
+      "tests.models.test_grc_v3_serialization.GRCV3SerializationContractTest.test_snapshot_roundtrip_preserves_backend_selections_choice_state_events_and_rng",
+      "tests.models.test_grc_v3_sparks.GRCV3SparkTest.test_candidate_degeneracy_does_not_force_completed_spark",
+      "tests.models.test_grc_v3_sparks.GRCV3SparkTest.test_completed_spark_creates_child_basins_with_ancestry",
+      "tests.models.test_grc_v3_sparks.GRCV3SparkTest.test_split_progression_is_deterministic_and_removes_parent_on_completion",
+      "tests.models.test_grc_v3_sparks.GRCV3SparkTest.test_split_progression_preserves_external_conductance_budget",
+      "tests.models.test_grc_v3_state.GRCV3StateContractTest.test_capabilities_reflect_frame_and_boundary_modes",
+      "tests.models.test_grc_v3_state.GRCV3StateContractTest.test_from_state_restores_basin_attribute_nodes",
+      "tests.models.test_grc_v3_state.GRCV3StateContractTest.test_host_embedding_requires_host_geometry_fields",
+      "tests.models.test_grc_v3_state.GRCV3StateContractTest.test_minimal_config_resolves_defaults_and_backend_selections",
+      "tests.models.test_grc_v3_state.GRCV3StateContractTest.test_minimal_family_surface_uses_grcv3_state",
+      "tests.models.test_grc_v3_state.GRCV3StateContractTest.test_set_state_rejects_non_grcv3_state_objects",
+      "tests.models.test_grc_v3_state.GRCV3StateContractTest.test_snapshot_roundtrip_preserves_grcv3_groups",
+      "tests.models.test_grc_v3_step.GRCV3TheoryFacingStepTest.test_signed_hessian_basin_criterion_requires_small_gradient_and_positive_curvature",
+      "tests.models.test_grc_v3_step.GRCV3TheoryFacingStepTest.test_split_completion_confirms_spark_when_geometric_basin_count_increases",
+      "tests.models.test_grc_v3_step.GRCV3TheoryFacingStepTest.test_split_completion_stays_pending_without_required_attractor_gain",
+      "tests.models.test_grc_v4.FoundationIntegrationTests.test_consumed_legacy_imports_and_replacement_boundary",
+      "tests.models.test_grc_v4.FoundationIntegrationTests.test_distinct_current_reset_history_and_carrier_ownership",
+      "tests.models.test_grc_v4.FoundationIntegrationTests.test_duration_validation_still_does_not_admit_a_profile_or_context",
+      "tests.models.test_grc_v4.FoundationIntegrationTests.test_explicit_legacy_baseline_and_package_exports_remain_unchanged",
+      "tests.models.test_grc_v4.FoundationIntegrationTests.test_no_ambient_support_after_templates_prefix_controls_and_inspection",
+      "tests.models.test_grc_v4.FoundationIntegrationTests.test_recursive_ownership_across_records_and_common_projections",
+      "tests.models.test_grc_v4.FoundationIntegrationTests.test_selected_guard_mutations_are_detected_at_the_intended_boundary",
+      "tests.models.test_grc_v4.FoundationIntegrationTests.test_shared_acyclic_wide_context_survives_projection_and_reconstruction",
+      "tests.models.test_grc_v4.FoundationIntegrationTests.test_ten_declarations_and_parameter_variants_do_not_register_support",
+      "tests.models.test_grc_v4.RequestTests.test_all_missing_extra_and_wrong_shape_inputs_fail_before_admission",
+      "tests.models.test_grc_v4.RequestTests.test_configuration_accepts_subnormals_and_large_exponents_in_isolation",
+      "tests.models.test_grc_v4.RequestTests.test_cycles_arbitrary_objects_and_pickle_never_enter_request_decoding",
+      "tests.models.test_grc_v4.RequestTests.test_decode_shape_error_retains_cause_not_dependency_failure",
+      "tests.models.test_grc_v4.RequestTests.test_exact_underflow_midpoint_applies_to_duration_and_nested_data",
+      "tests.models.test_grc_v4.RequestTests.test_harness_payload_is_not_a_production_request_or_hidden_hook",
+      "tests.models.test_grc_v4.RequestTests.test_input_and_strict_types_are_distinct_on_all_construction_paths",
+      "tests.models.test_grc_v4.RequestTests.test_int_and_float_duration_have_identical_pinned_jcs_bytes",
+      "tests.models.test_grc_v4.RequestTests.test_malformed_wire_is_not_a_semantic_failure",
+      "tests.models.test_grc_v4.RequestTests.test_migration_closed_fields_channels_and_exact_reference_grammar",
+      "tests.models.test_grc_v4.RequestTests.test_migration_is_declaration_only_and_uses_explicit_numeric_routes",
+      "tests.models.test_grc_v4.RequestTests.test_migration_nested_typed_declaration_and_roundtrip",
+      "tests.models.test_grc_v4.RequestTests.test_native_numeric_rejections_cannot_be_erased_by_conversion",
+      "tests.models.test_grc_v4.RequestTests.test_negative_duration_is_input_not_strict_record",
+      "tests.models.test_grc_v4.RequestTests.test_nested_sources_projections_and_copies_do_not_alias",
+      "tests.models.test_grc_v4.RequestTests.test_nonzero_wire_underflow_cannot_become_zero_duration_or_context",
+      "tests.models.test_grc_v4.RequestTests.test_numeric_routes_are_explicit_without_automatic_fallback",
+      "tests.models.test_grc_v4.RequestTests.test_seeded_binary64_transport_and_admission_composition",
+      "tests.models.test_grc_v4.RequestTests.test_strict_and_input_schemas_cannot_be_interchanged",
+      "tests.models.test_grc_v4.RequestTests.test_typed_and_json_identity_preserve_boolean_number_distinctions",
+      "tests.models.test_grc_v4.RequestTests.test_typed_nested_migration_inputs_are_copied_and_cannot_bypass_validation",
+      "tests.models.test_grc_v4_codec.CodecTests.test_all_published_canonical_preimages",
+      "tests.models.test_grc_v4_codec.CodecTests.test_boolean_number_identity_is_distinct",
+      "tests.models.test_grc_v4_codec.CodecTests.test_canonical_numeric_reconstruction_closes_the_encoder_image",
+      "tests.models.test_grc_v4_codec.CodecTests.test_canonical_numeric_tokens_still_obey_field_schemas",
+      "tests.models.test_grc_v4_codec.CodecTests.test_canonical_route_rejects_rounding_and_noncanonical_spellings",
+      "tests.models.test_grc_v4_codec.CodecTests.test_configuration_rejects_coercions_cycles_and_unordered_data",
+      "tests.models.test_grc_v4_codec.CodecTests.test_custom_mapping_duplicate_and_defensive_projection",
+      "tests.models.test_grc_v4_codec.CodecTests.test_identity_tampering_unknown_fields_and_non_preimages",
+      "tests.models.test_grc_v4_codec.CodecTests.test_independent_ecmascript_binary64_edges",
+      "tests.models.test_grc_v4_codec.CodecTests.test_installed_assets_are_exact_release_copies_and_unshared",
+      "tests.models.test_grc_v4_codec.CodecTests.test_missing_altered_wrong_release_assets_fail_closed",
+      "tests.models.test_grc_v4_codec.CodecTests.test_missing_optional_dependencies_are_typed",
+      "tests.models.test_grc_v4_codec.CodecTests.test_schema_negatives_and_no_remote_schema_selection",
+      "tests.models.test_grc_v4_codec.CodecTests.test_strict_wire_numbers_duplicates_and_unicode",
+      "tests.models.test_grc_v4_codec.CodecTests.test_unicode_order_preservation_and_escapes",
+      "tests.models.test_grc_v4_codec.CodecTests.test_wide_frozen_maps_do_not_use_per_key_linear_lookup",
+      "tests.models.test_grc_v4_codec.DistributionTests.test_wheel_and_sdist_offline_clean_install",
+      "tests.models.test_grc_v4_geometry.CovarianceTests.test_dense_vertex_pairing_covariance",
+      "tests.models.test_grc_v4_geometry.CovarianceTests.test_invalid_permutations_signs_and_topology_changes_rejected",
+      "tests.models.test_grc_v4_geometry.CovarianceTests.test_signed_incidence_differential_and_divergence",
+      "tests.models.test_grc_v4_geometry.CovarianceTests.test_signed_nonidentity_hodge_flat_sharp_covariance",
+      "tests.models.test_grc_v4_geometry.GraphTests.test_bad_node_ids_rejected_before_coercion",
+      "tests.models.test_grc_v4_geometry.GraphTests.test_closed_graph_allows_isolates_parallel_edges_and_loops",
+      "tests.models.test_grc_v4_geometry.GraphTests.test_coordinate_type_and_graph_are_load_bearing",
+      "tests.models.test_grc_v4_geometry.GraphTests.test_detached_mutable_input_and_output",
+      "tests.models.test_grc_v4_geometry.GraphTests.test_differential_and_divergence_independent_expected",
+      "tests.models.test_grc_v4_geometry.GraphTests.test_differential_identity_is_reconstructible_and_context_bound",
+      "tests.models.test_grc_v4_geometry.GraphTests.test_direct_and_wire_integral_float_ids_agree",
+      "tests.models.test_grc_v4_geometry.GraphTests.test_direct_construction_copies_ordered_lists",
+      "tests.models.test_grc_v4_geometry.GraphTests.test_discrete_unweighted_adjoint_identity",
+      "tests.models.test_grc_v4_geometry.GraphTests.test_duplicate_edge_missing_endpoint_and_extra_fields_rejected",
+      "tests.models.test_grc_v4_geometry.GraphTests.test_empty_spaces_have_explicit_zero_maps",
+      "tests.models.test_grc_v4_geometry.GraphTests.test_graph_digest_has_independent_canonical_preimage",
+      "tests.models.test_grc_v4_geometry.GraphTests.test_graph_wire_reconstruction_is_explicit",
+      "tests.models.test_grc_v4_geometry.GraphTests.test_orientation_identity_binds_sign_convention_and_order",
+      "tests.models.test_grc_v4_geometry.GraphTests.test_serialized_order_mixed_ids_and_lookup",
+      "tests.models.test_grc_v4_geometry.GraphTests.test_unknown_backend_or_boundary_is_not_an_alias",
+      "tests.models.test_grc_v4_geometry.PairingTests.test_arithmetic_zero_is_canonical_but_input_negative_zero_rejected",
+      "tests.models.test_grc_v4_geometry.PairingTests.test_hodge_identity_binds_every_entry_and_map_role",
+      "tests.models.test_grc_v4_geometry.PairingTests.test_missing_numpy_dependency_reports_v4_extra",
+      "tests.models.test_grc_v4_geometry.PairingTests.test_nonfinite_arithmetic_fails_without_regularization",
+      "tests.models.test_grc_v4_geometry.PairingTests.test_nonidentity_flat_rational_inverse",
+      "tests.models.test_grc_v4_geometry.PairingTests.test_numeric_arrays_are_detached_and_bad_dtypes_rejected",
+      "tests.models.test_grc_v4_geometry.PairingTests.test_pairings_are_distinct_and_nonunit",
+      "tests.models.test_grc_v4_geometry.PairingTests.test_same_numbers_do_not_substitute_types",
+      "tests.models.test_grc_v4_geometry.PairingTests.test_shape_nonfinite_asymmetric_and_non_spd_rejected",
+      "tests.models.test_grc_v4_geometry.PairingTests.test_wrong_graph_flat_sharp_and_pairing_rejected",
+      "tests.models.test_grc_v4_geometry.ReconstructionTests.test_clean_installed_wheel_and_sdist_primitives",
+      "tests.models.test_grc_v4_geometry.ReconstructionTests.test_replay_across_hash_seeds_outside_checkout",
+      "tests.models.test_grc_v4_profile.ProfileTests.test_all_ten_declared_shapes_not_executable_support",
+      "tests.models.test_grc_v4_profile.ProfileTests.test_all_trajectory_sections_change_parameter_identity",
+      "tests.models.test_grc_v4_profile.ProfileTests.test_candidate_c_map_digest_and_transport_cannot_be_inferred",
+      "tests.models.test_grc_v4_profile.ProfileTests.test_deep_immutability_explicit_projection_and_copy",
+      "tests.models.test_grc_v4_profile.ProfileTests.test_direct_profile_constructor_cannot_skip_identity_validation",
+      "tests.models.test_grc_v4_profile.ProfileTests.test_each_realization_rejects_noncanonical_policy",
+      "tests.models.test_grc_v4_profile.ProfileTests.test_every_required_parameter_and_unknown_field",
+      "tests.models.test_grc_v4_profile.ProfileTests.test_exact_discriminants_and_prohibited_successors",
+      "tests.models.test_grc_v4_profile.ProfileTests.test_forbidden_numbers_and_adapter_scalars",
+      "tests.models.test_grc_v4_profile.ProfileTests.test_full_profile_canonical_roundtrip_preserves_identity_and_types",
+      "tests.models.test_grc_v4_profile.ProfileTests.test_integral_fields_resolve_identically_through_every_constructor",
+      "tests.models.test_grc_v4_profile.ProfileTests.test_integral_resolution_does_not_truncate_or_admit_booleans",
+      "tests.models.test_grc_v4_profile.ProfileTests.test_nested_boolean_identity_does_not_use_python_equality",
+      "tests.models.test_grc_v4_profile.ProfileTests.test_nested_default_is_identity_bearing_and_has_no_event",
+      "tests.models.test_grc_v4_profile.ProfileTests.test_no_environment_or_implicit_numeric_defaults",
+      "tests.models.test_grc_v4_profile.ProfileTests.test_profile_canonical_restoration_rejects_forgery_and_extra_fields",
+      "tests.models.test_grc_v4_profile.ProfileTests.test_profile_digest_has_no_self_reference",
+      "tests.models.test_grc_v4_profile.ProfileTests.test_published_c_os_exact_resolution_and_roundtrip",
+      "tests.models.test_grc_v4_profile.ProfileTests.test_published_semantic_parameter_digest_negative",
+      "tests.models.test_grc_v4_profile.ProfileTests.test_published_wctr_live_edge_negative",
+      "tests.models.test_grc_v4_profile.ProfileTests.test_reference_values_must_match_without_repair_or_mobility_transfer",
+      "tests.models.test_grc_v4_profile.ProfileTests.test_referenced_content_and_stable_edge_coverage",
+      "tests.models.test_grc_v4_profile.ProfileTests.test_schema_valid_cross_record_disagreement",
+      "tests.models.test_grc_v4_profile.ProfileTests.test_template_identity_discriminants_and_source",
+      "tests.models.test_grc_v4_state.AuthorityTests.test_all_ten_coordinate_shapes_without_advertising_profiles",
+      "tests.models.test_grc_v4_state.AuthorityTests.test_array_inputs_detached_in_all_channels",
+      "tests.models.test_grc_v4_state.AuthorityTests.test_authority_does_not_acquire_derived_state",
+      "tests.models.test_grc_v4_state.AuthorityTests.test_invalid_numeric_authority_rejected",
+      "tests.models.test_grc_v4_state.AuthorityTests.test_schema_agrees_with_authoritative_and_reset_field_sets",
+      "tests.models.test_grc_v4_state.AuthorityTests.test_wrong_current_or_reset_coordinate_shapes_rejected",
+      "tests.models.test_grc_v4_state.FrozenJSONTests.test_boolean_number_types_survive_for_later_identity_validation",
+      "tests.models.test_grc_v4_state.FrozenJSONTests.test_cycles_rejected_but_shared_acyclic_values_copied",
+      "tests.models.test_grc_v4_state.FrozenJSONTests.test_deep_input_and_output_independence",
+      "tests.models.test_grc_v4_state.FrozenJSONTests.test_nested_public_and_backing_mutation_rejected",
+      "tests.models.test_grc_v4_state.FrozenJSONTests.test_non_json_payloads_rejected",
+      "tests.models.test_grc_v4_state.FrozenJSONTests.test_numeric_and_unicode_boundaries",
+      "tests.models.test_grc_v4_state.FrozenJSONTests.test_order_independent_mapping_equality_and_hash",
+      "tests.models.test_grc_v4_state.FrozenJSONTests.test_proxy_cannot_retain_its_writable_backing",
+      "tests.models.test_grc_v4_state.LifecycleOwnershipTests.test_common_state_projection_has_no_duplicate_storage",
+      "tests.models.test_grc_v4_state.LifecycleOwnershipTests.test_duplicate_values_do_not_reintroduce_writable_aliases",
+      "tests.models.test_grc_v4_state.LifecycleOwnershipTests.test_invalid_clock_and_context_mismatches_rejected",
+      "tests.models.test_grc_v4_state.LifecycleOwnershipTests.test_missing_profile_payloads_and_unknown_shapes_rejected",
+      "tests.models.test_grc_v4_state.LifecycleOwnershipTests.test_nested_graph_profile_and_receipt_inputs_detached",
+      "tests.models.test_grc_v4_state.LifecycleOwnershipTests.test_reset_is_reduced_and_distinct_from_live_state",
+      "tests.models.test_grc_v4_state.NumericInputBoundaryTests.test_finite_float_domain_not_replaced_by_integer_domain",
+      "tests.models.test_grc_v4_state.NumericInputBoundaryTests.test_integral_adapters_guard_before_abs_or_float",
+      "tests.models.test_grc_v4_state.NumericInputBoundaryTests.test_multidimensional_or_nonnumeric_buffers_reject",
+      "tests.models.test_grc_v4_state.NumericInputBoundaryTests.test_one_shot_and_untyped_iterables_reject_without_consumption",
+      "tests.models.test_grc_v4_state.NumericInputBoundaryTests.test_ordered_sequences_and_typed_views_remain_supported",
+      "tests.models.test_grc_v4_state.NumericInputBoundaryTests.test_safe_integral_adapters_preserve_exact_value",
+      "tests.models.test_grc_v4_state.NumericInputBoundaryTests.test_unordered_mapping_and_raw_byte_containers_reject",
+      "tests.models.test_grc_v4_state.OptionalNumpyInputBoundaryTests.test_integral_scalar_targets_and_clocks",
+      "tests.models.test_grc_v4_state.OptionalNumpyInputBoundaryTests.test_numpy_views_detach_without_flattening_or_dtype_coercion",
+      "tests.models.test_grc_v4_state.OptionalNumpyInputBoundaryTests.test_signed_unsigned_safe_endpoints_and_bool_distinction",
+      "tests.models.test_grc_v4_state.OptionalNumpyInputBoundaryTests.test_signed_unsigned_unsafe_scalars_in_every_coordinate",
+      "tests.models.test_grc_v4_state.ResultOwnershipTests.test_charge_rejection_does_not_erase_valid_solver_disposition",
+      "tests.models.test_grc_v4_state.ResultOwnershipTests.test_common_result_projection_and_schema_fields",
+      "tests.models.test_grc_v4_state.ResultOwnershipTests.test_failure_and_receipt_payloads_detached",
+      "tests.models.test_grc_v4_state.ResultOwnershipTests.test_inconsistent_step_result_shapes_rejected",
+      "tests.models.test_grc_v4_state.ResultOwnershipTests.test_legacy_event_and_nested_payload_detached_in_both_directions",
+      "tests.models.test_grc_v4_state.ResultOwnershipTests.test_lifecycle_result_owns_detached_values",
+      "tests.models.test_grc_v4_state.ResultOwnershipTests.test_observables_and_operation_delta_not_ledger_aliases",
+      "tests.models.test_grc_v4_state.ResultOwnershipTests.test_v4_event_input_is_refrozen_and_legacy_unchanged",
+      "tests.models.test_grc_v4_step.AuditBoundaryTests.test_builder_commit_binds_in_typed_and_primitive_forms",
+      "tests.models.test_grc_v4_step.AuditBoundaryTests.test_consistent_records_do_not_prove_a_numerical_transition",
+      "tests.models.test_grc_v4_step.AuditBoundaryTests.test_direct_evidence_requires_exact_bytes_without_granting_authority",
+      "tests.models.test_grc_v4_step.AuditBoundaryTests.test_event_iterators_reject_without_consumption",
+      "tests.models.test_grc_v4_step.AuditBoundaryTests.test_legal_integral_indices_keep_canonical_identity",
+      "tests.models.test_grc_v4_step.AuditBoundaryTests.test_ordered_event_sequences_preserve_order_and_detach",
+      "tests.models.test_grc_v4_step.AuditBoundaryTests.test_original_index_numbers_reject_before_normalization",
+      "tests.models.test_grc_v4_step.AuditBoundaryTests.test_parent_references_are_content_not_lineage_certification",
+      "tests.models.test_grc_v4_step.AuditBoundaryTests.test_primitive_event_input_cannot_smuggle_an_outer_adapter",
+      "tests.models.test_grc_v4_step.AuditBoundaryTests.test_real_time_is_not_restricted_to_safe_integer_domain",
+      "tests.models.test_grc_v4_step.AuditBoundaryTests.test_unordered_and_raw_event_containers_reject",
+      "tests.models.test_grc_v4_step.ResultCompositionTests.test_all_result_missing_extra_and_numeric_fields_reject",
+      "tests.models.test_grc_v4_step.ResultCompositionTests.test_boolean_number_payload_equality_and_projection_ownership",
+      "tests.models.test_grc_v4_step.ResultCompositionTests.test_commit_payload_counts_and_receipt_sequence_are_not_mutably_aliased",
+      "tests.models.test_grc_v4_step.ResultCompositionTests.test_committed_result_cannot_include_failures_or_foreign_envelopes",
+      "tests.models.test_grc_v4_step.ResultCompositionTests.test_direct_factory_and_canonical_reconstruction_share_validation",
+      "tests.models.test_grc_v4_step.ResultCompositionTests.test_distinct_negative_requests_keep_distinct_evidence_when_receipts_match",
+      "tests.models.test_grc_v4_step.ResultCompositionTests.test_events_bind_delta_receipt_graph_profile_clock_and_commit",
+      "tests.models.test_grc_v4_step.ResultCompositionTests.test_failure_compares_full_ledger_even_when_receipt_ids_match",
+      "tests.models.test_grc_v4_step.ResultCompositionTests.test_failure_nested_tampering_rehash_does_not_repair_detail",
+      "tests.models.test_grc_v4_step.ResultCompositionTests.test_imported_typed_records_revalidated_before_consumption",
+      "tests.models.test_grc_v4_step.ResultCompositionTests.test_ledger_prefix_delta_and_commit_links_checked_both_directions",
+      "tests.models.test_grc_v4_step.ResultCompositionTests.test_lifecycle_result_has_no_invented_solver_or_persistent_failure_receipt",
+      "tests.models.test_grc_v4_step.ResultCompositionTests.test_multi_receipt_order_and_information_loss_order_are_identity_bearing",
+      "tests.models.test_grc_v4_step.ResultCompositionTests.test_negative_duration_composes_result_with_real_payload_hashes",
+      "tests.models.test_grc_v4_step.ResultCompositionTests.test_postsolver_charge_rejection_retains_valid_root_with_no_ledger_append",
+      "tests.models.test_grc_v4_step.ResultCompositionTests.test_published_result_preimages_and_solver_operation_split",
+      "tests.models.test_grc_v4_step.ResultCompositionTests.test_receipt_commit_then_envelope_order_matches_independent_preimages",
+      "tests.models.test_grc_v4_step.ResultCompositionTests.test_recomputed_commit_does_not_repair_wrong_receipt_state_binding",
+      "tests.models.test_grc_v4_step.ResultCompositionTests.test_result_binding_rejects_wrong_state_foreign_operation_and_causal_labels",
+      "tests.models.test_grc_v4_step.ResultCompositionTests.test_solver_failures_cannot_continue_or_be_relabelled_as_postsolve",
+      "tests.models.test_grc_v4_step.ResultCompositionTests.test_specialization_profile_cannot_be_inferred_from_model_label",
+      "tests.models.test_grc_v4_step.ResultCompositionTests.test_zero_subnormal_and_extreme_requests_are_not_completed_by_prefix",
+      "tests.models.test_grc_v4_step.StepAdmissionTests.test_admission_detaches_input_even_after_unsupported_reinitialization",
+      "tests.models.test_grc_v4_step.StepAdmissionTests.test_bad_source_context_never_becomes_synthetic_failure_evidence",
+      "tests.models.test_grc_v4_step.StepAdmissionTests.test_failure_envelope_reconstruction_checks_all_content_fields",
+      "tests.models.test_grc_v4_step.StepAdmissionTests.test_failure_payload_nested_ownership_and_no_self_digest",
+      "tests.models.test_grc_v4_step.StepAdmissionTests.test_failure_vocabulary_matches_schema_not_executed_failure_modes",
+      "tests.models.test_grc_v4_step.StepAdmissionTests.test_negative_duration_is_rejected_without_solver_or_ledger_authority",
+      "tests.models.test_grc_v4_step.StepAdmissionTests.test_positive_and_zero_produce_strict_requests_not_executed_states",
+      "tests.models.test_grc_v4_step.StepAdmissionTests.test_published_negative_duration_exact_receipt",
+      "tests.models.test_grc_v4_step.StepAdmissionTests.test_receipt_content_is_not_source_or_execution_authentication",
+      "tests.models.test_grc_v4_step.StepAdmissionTests.test_receipt_equality_does_not_identify_the_request",
+      "tests.models.test_grc_v4_step.StepAdmissionTests.test_rehashing_does_not_admit_nonatomic_failure_evidence",
+      "tests.models.test_grc_v4_step.StepAdmissionTests.test_wrong_python_types_and_forged_objects_raise_without_receipt",
+      "tests.models.test_grc_v4_transport.MobilityTests.test_a_foundation_does_not_run_candidate_write_or_floor",
+      "tests.models.test_grc_v4_transport.MobilityTests.test_a_reads_retained_authority_with_its_own_gain",
+      "tests.models.test_grc_v4_transport.MobilityTests.test_a_retained_values_shape_and_positive_domain",
+      "tests.models.test_grc_v4_transport.MobilityTests.test_c_ownership_excludes_selector_and_geometry_inputs",
+      "tests.models.test_grc_v4_transport.MobilityTests.test_c_reads_reference_by_edge_id_in_live_order",
+      "tests.models.test_grc_v4_transport.MobilityTests.test_c_reference_exact_coverage_and_positive_values",
+      "tests.models.test_grc_v4_transport.MobilityTests.test_c_structural_and_mobility_embeddings_are_siblings",
+      "tests.models.test_grc_v4_transport.MobilityTests.test_candidate_authority_is_not_interchangeable",
+      "tests.models.test_grc_v4_transport.MobilityTests.test_construction_does_not_advertise_runtime_support",
+      "tests.models.test_grc_v4_transport.MobilityTests.test_geometry_cannot_supply_mobility_authority",
+      "tests.models.test_grc_v4_transport.MobilityTests.test_mobility_factors_reject_overflow_and_underflow",
+      "tests.models.test_grc_v4_transport.MobilityTests.test_mutable_authority_inputs_are_detached",
+      "tests.models.test_grc_v4_transport.MobilityTests.test_reconstruction_preserves_candidate_identity_and_output",
+      "tests.models.test_grc_v4_transport.MobilityTests.test_signed_candidate_mobility_covariance",
+      "tests.models.test_grc_v4_transport.MobilityTests.test_wrong_typed_or_foreign_driving_form_rejected",
+      "tests.models.test_lgrc_9_v3_autonomy_contract.LGRC9V3AutonomyContractTest.test_autonomous_run_empty_no_producer_work_stops_cleanly",
+      "tests.models.test_lgrc_9_v3_autonomy_contract.LGRC9V3AutonomyContractTest.test_autonomous_run_max_events_zero_is_noop",
+      "tests.models.test_lgrc_9_v3_autonomy_contract.LGRC9V3AutonomyContractTest.test_autonomous_run_reproduces_manual_packet_route_fixture",
+      "tests.models.test_lgrc_9_v3_autonomy_contract.LGRC9V3AutonomyContractTest.test_autonomous_run_schedules_and_consumes_boundary_birth_trial",
+      "tests.models.test_lgrc_9_v3_autonomy_contract.LGRC9V3AutonomyContractTest.test_autonomous_run_snapshot_round_trips_after_execution",
+      "tests.models.test_lgrc_9_v3_autonomy_contract.LGRC9V3AutonomyContractTest.test_boundary_birth_producer_front_capacity_missing_metadata_fails_closed",
+      "tests.models.test_lgrc_9_v3_autonomy_contract.LGRC9V3AutonomyContractTest.test_boundary_birth_producer_front_capacity_partial_metadata_fails_closed",
+      "tests.models.test_lgrc_9_v3_autonomy_contract.LGRC9V3AutonomyContractTest.test_boundary_birth_producer_is_idempotent_on_same_surface",
+      "tests.models.test_lgrc_9_v3_autonomy_contract.LGRC9V3AutonomyContractTest.test_boundary_birth_producer_is_noop_when_policy_disabled",
+      "tests.models.test_lgrc_9_v3_autonomy_contract.LGRC9V3AutonomyContractTest.test_boundary_birth_producer_schedules_trial_with_probability_evidence",
+      "tests.models.test_lgrc_9_v3_autonomy_contract.LGRC9V3AutonomyContractTest.test_boundary_birth_producer_trial_routes_through_step",
+      "tests.models.test_lgrc_9_v3_autonomy_contract.LGRC9V3AutonomyContractTest.test_boundary_birth_producer_uses_front_capacity_eligibility",
+      "tests.models.test_lgrc_9_v3_autonomy_contract.LGRC9V3AutonomyContractTest.test_disabled_model_producer_is_noop_and_idempotent",
+      "tests.models.test_lgrc_9_v3_autonomy_contract.LGRC9V3AutonomyContractTest.test_disabled_producer_contract_json_round_trips",
+      "tests.models.test_lgrc_9_v3_autonomy_contract.LGRC9V3AutonomyContractTest.test_disabled_producer_does_not_change_step_behavior",
+      "tests.models.test_lgrc_9_v3_autonomy_contract.LGRC9V3AutonomyContractTest.test_packet_departure_producer_is_idempotent_on_same_surface",
+      "tests.models.test_lgrc_9_v3_autonomy_contract.LGRC9V3AutonomyContractTest.test_packet_departure_producer_rejects_malformed_route",
+      "tests.models.test_lgrc_9_v3_autonomy_contract.LGRC9V3AutonomyContractTest.test_packet_departure_producer_rejects_route_overdraw",
+      "tests.models.test_lgrc_9_v3_autonomy_contract.LGRC9V3AutonomyContractTest.test_packet_departure_producer_reports_no_eligible_routes",
+      "tests.models.test_lgrc_9_v3_autonomy_contract.LGRC9V3AutonomyContractTest.test_packet_departure_producer_schedules_fractional_route",
+      "tests.models.test_lgrc_9_v3_autonomy_contract.LGRC9V3AutonomyContractTest.test_packet_departure_producer_schedules_from_route_policy",
+      "tests.models.test_lgrc_9_v3_construction.LGRC9V3ConstructionTest.test_corrected_cascade_queue_policy_is_explicit",
+      "tests.models.test_lgrc_9_v3_construction.LGRC9V3ConstructionTest.test_model_facade_builds_from_landscape_seed",
+      "tests.models.test_lgrc_9_v3_construction.LGRC9V3ConstructionTest.test_prepare_landscape_runtime_preserves_lowering_sequence",
+      "tests.models.test_lgrc_9_v3_construction.LGRC9V3ConstructionTest.test_route_generation_and_broad_seed_priming_are_library_owned",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3AnnotationTest.test_causal_cone_and_basin_core_are_bounded_derived_overlays",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3AnnotationTest.test_explicit_event_time_policy_requires_event_payload_key",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3AnnotationTest.test_lgrc0_annotation_artifact_round_trips_through_json",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3AnnotationTest.test_lgrc0_annotation_does_not_mutate_synchronous_state",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3AnnotationTest.test_lgrc0_annotation_with_no_events_is_still_valid",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ArtifactReplayTest.test_causal_history_artifact_restores_with_timing_fields_distinct",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ArtifactReplayTest.test_causal_history_restore_validates_serialized_evidence_constants",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ArtifactReplayTest.test_optional_causal_history_preserves_old_snapshot_readers",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_ambiguous_causal_mode_combinations_are_rejected",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_boundary_birth_front_capacity_eligibility_requires_enabled_birth",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_causal_modes_allow_lineage_transport_only_in_lgrc3",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_causal_modes_gate_multi_basin_to_lgrc3",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_causal_modes_gate_native_route_arbitration_to_lgrc3",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_causal_modes_gate_topology_state_reabsorption_to_lgrc3",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_causal_modes_reject_multi_basin_flag_mismatches",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_causal_modes_reject_native_route_arbitration_flag_mismatches",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_causal_modes_reject_topology_state_flag_mismatches",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_causal_pulse_substrate_contract_is_default_off",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_causal_pulse_substrate_default_off_is_synchronous_noop",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_causal_pulse_substrate_digest_is_stable_and_sensitive",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_causal_pulse_substrate_kind_inputs_are_declared",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_causal_pulse_substrate_lineage_digest_is_stable_and_sensitive",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_causal_pulse_substrate_lineage_record_round_trips",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_causal_pulse_substrate_lineage_schema_rejects_bad_inputs",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_causal_pulse_substrate_lineage_schema_rejects_below_lgrc3",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_causal_pulse_substrate_lineage_schema_supports_supersession",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_causal_pulse_substrate_policy_round_trips",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_causal_pulse_substrate_schema_rejects_below_lgrc2",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_causal_pulse_substrate_schema_rejects_claim_promotion",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_causal_pulse_substrate_schema_rejects_hidden_inputs",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_causal_pulse_substrate_schema_rejects_invalid_update_policy",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_causal_pulse_substrate_schema_rejects_merged_budget_fields",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_causal_pulse_substrate_schema_rejects_missing_kind_inputs",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_causal_pulse_substrate_schema_rejects_nonfixed_lineage",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_causal_pulse_substrate_schema_rejects_producer_system_writes",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_causal_pulse_substrate_schema_rejects_unknown_surface_kind",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_causal_pulse_substrate_surface_row_round_trips",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_causal_pulse_substrate_synchronous_limit_row_has_no_claim",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_child_basin_state_record_round_trips",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_default_causal_modes_are_lgrc0_annotation",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_existing_grc9v3_default_does_not_claim_causal_layer",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_lgrc1_semicausal_fixed_topology_config_is_accepted",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_lgrc2_arrival_does_not_emit_spark_expansion_or_identity",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_lgrc2_arrival_event_time_key_derives_from_captured_delay",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_lgrc2_arrival_event_time_key_is_not_node_proper_time",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_lgrc2_arrival_exposes_update_and_diagnostic_eligibility",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_lgrc2_departure_arrival_cycle_round_trips_and_preserves_budget",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_lgrc2_empty_packet_ledger_round_trips",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_lgrc2_explicit_arrival_event_time_key_remains_replay_fixture_path",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_lgrc2_multiple_packets_on_one_edge_have_deterministic_order",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_lgrc2_next_packet_event_processes_earliest_arrival",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_lgrc2_packet_and_event_records_round_trip",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_lgrc2_packet_arrival_credits_target_and_removes_in_flight",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_lgrc2_packet_contract_artifact_is_boundary_explicit",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_lgrc2_packet_contract_names_are_stable",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_lgrc2_packet_departure_debits_source_and_adds_in_flight",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_lgrc2_packet_ids_are_deterministic",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_lgrc2_packet_ledger_orders_queue_events_deterministically",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_lgrc2_packet_ledger_rejects_budget_inconsistency",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_lgrc2_packet_ledger_round_trips_without_mutating_state",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_lgrc2_packet_processing_rejects_topology_drift",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_lgrc2_packetized_fixed_topology_config_is_accepted",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_lgrc2_pending_flux_compaction_preserves_budget_and_lineage",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_lgrc2_pending_flux_ledger_round_trips_and_ignores_scheduled_packets",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_lgrc2_processing_remains_external_to_grc9v3_model_defaults",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_lgrc2_scheduled_packet_processes_departure_then_arrival",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_lgrc3_collapse_packet_transport_redirects_and_settles_packets",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_lgrc3_collapse_packet_transport_round_trips_json",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_lgrc3_collapse_reabsorption_records_budget_lineage_and_ledgers",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_lgrc3_collapse_reabsorption_requires_complete_lineage_map",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_lgrc3_collapse_reabsorption_requires_explicit_policy_enablement",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_lgrc3_identity_acceptance_disabled_policy_prevents_emission",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_lgrc3_identity_acceptance_emits_one_event_after_passing_evaluation",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_lgrc3_identity_acceptance_failed_persistence_prevents_emission",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_lgrc3_identity_acceptance_payload_distinguishes_identity_from_transport",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_lgrc3_packet_transport_handles_multiple_packets_deterministically",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_lgrc3_packet_transport_rejects_missing_reassignment_for_expanded_node",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_lgrc3_packet_transport_through_one_refinement_preserves_budget",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_lgrc3_policy_contract_defaults_disable_collapse_and_identity",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_lgrc3_policy_contract_rejects_unknown_policy",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_lgrc3_policy_contract_round_trips_budget_and_lineage_fields",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_lgrc3_proper_time_identity_evaluation_round_trips_json",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_lgrc3_proper_time_identity_persistent_basin_passes",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_lgrc3_proper_time_identity_requires_topology_and_basin_evidence",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_lgrc3_proper_time_identity_short_lived_refinement_fails",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_lgrc3_proper_time_inheritance_rejects_missing_parent_clock",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_lgrc3_proper_time_inheritance_rejects_unknown_internal_edge_delay",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_lgrc3_proper_time_inheritance_round_trips_through_json",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_lgrc3_proper_time_inheritance_uses_parent_event_clock",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_lgrc3_reabsorption_event_round_trips_through_json",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_lgrc3_runtime_mode_requires_operational_proper_time",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_lgrc3_topology_contract_artifact_is_boundary_explicit",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_lgrc3_topology_contract_names_required_audit_fields",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_lgrc3_topology_replay_accepts_valid_deterministic_fixture",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_lgrc3_topology_replay_rejects_budget_mismatch",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_lgrc3_topology_replay_rejects_impossible_event_time_ordering",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_lgrc3_topology_replay_rejects_missing_lineage",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_multi_basin_contract_exports_are_on_model_facade",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_multi_basin_control_record_round_trips",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_multi_basin_default_modes_are_disabled",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_multi_basin_digests_are_stable_and_sensitive",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_multi_basin_flow_window_record_round_trips",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_multi_basin_replay_validation_record_round_trips",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_multi_basin_schema_rejects_bad_inputs",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_native_route_arbitration_default_modes_are_disabled",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_native_route_arbitration_digests_are_stable_and_sensitive",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_native_route_arbitration_record_round_trips",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_native_route_arbitration_schema_rejects_bad_inputs",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_native_route_candidate_record_round_trips",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_native_route_candidate_schema_rejects_bad_inputs",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_native_route_candidate_set_record_round_trips",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_native_route_candidate_set_schema_rejects_bad_inputs",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_timing_field_names_are_stable_and_distinct",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_topology_event_digest_is_stable_and_derived",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_topology_state_reabsorption_default_modes_are_disabled",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_topology_state_reabsorption_digest_is_stable_and_sensitive",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_topology_state_reabsorption_record_round_trips",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_topology_state_reabsorption_schema_rejects_bad_inputs",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3ContractTest.test_topology_state_reabsorption_schema_rejects_below_lgrc3",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3FixedTopologyEligibilityTest.test_fixed_topology_eligibility_is_opt_in_and_semi_causal",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3FixedTopologyEligibilityTest.test_lgrc1_eligibility_is_side_effect_free_and_preserves_budget",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3FixedTopologyEligibilityTest.test_lgrc1_rejects_annotation_modes_and_topology_change",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3FixedTopologyEligibilityTest.test_lgrc1_rejects_topology_changing_and_packet_claims",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3HelperTest.test_edge_delay_helpers_are_policy_specific_and_side_effect_free",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3HelperTest.test_helpers_fail_clearly_on_invalid_inputs",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3HelperTest.test_helpers_handle_empty_and_single_node_states",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3HelperTest.test_lapse_helper_supports_unit_and_bounded_density_tension",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3HelperTest.test_three_distance_surfaces_are_not_conflated",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3SynchronousLimitNoRegressionTest.test_constant_delay_policy_is_standalone_synchronous_limit_case",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3SynchronousLimitNoRegressionTest.test_existing_default_models_do_not_claim_causal_layer",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3SynchronousLimitNoRegressionTest.test_lane_a_signed_hessian_spark_evidence_unchanged_when_lgrc_disabled",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3SynchronousLimitNoRegressionTest.test_lane_b_column_h_spark_evidence_unchanged_when_lgrc_disabled",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3SynchronousLimitNoRegressionTest.test_lgrc0_synchronous_limit_uses_unit_lapse_and_constant_delay",
+      "tests.models.test_lgrc_9_v3_contract.LGRC9V3SynchronousLimitNoRegressionTest.test_lgrc1_synchronous_eligibility_has_no_in_flight_retention",
+      "tests.models.test_lgrc_9_v3_module_split.LGRC9V3ModuleSplitTest.test_direct_split_module_imports_are_callable",
+      "tests.models.test_lgrc_9_v3_module_split.LGRC9V3ModuleSplitTest.test_legacy_facade_reexports_runtime_and_split_symbols",
+      "tests.models.test_lgrc_9_v3_native_packet_loop_baseline.LGRC9V3NativePacketLoopBaselineTest.test_disabled_policy_does_not_change_static_route_autonomy",
+      "tests.models.test_lgrc_9_v3_native_packet_loop_baseline.LGRC9V3NativePacketLoopBaselineTest.test_disabled_policy_preserves_default_off_boundary",
+      "tests.models.test_lgrc_9_v3_native_packet_loop_baseline.LGRC9V3NativePacketLoopBaselineTest.test_e2_route_fixture_is_imported_as_compact_test_contract",
+      "tests.models.test_lgrc_9_v3_native_packet_loop_baseline.LGRC9V3NativePacketLoopBaselineTest.test_existing_scheduled_packet_route_replay_baseline",
+      "tests.models.test_lgrc_9_v3_native_packet_loop_baseline.LGRC9V3NativePacketLoopBaselineTest.test_existing_static_route_autonomy_is_not_d2_3_equivalent",
+      "tests.models.test_lgrc_9_v3_native_packet_loop_baseline.LGRC9V3NativePacketLoopBaselineTest.test_native_surplus_trigger_policy_is_not_claimed_yet",
+      "tests.models.test_lgrc_9_v3_native_packet_loop_control_parity.LGRC9V3NativePacketLoopControlParityTest.test_broken_return_and_scrambled_order_controls_are_rejected",
+      "tests.models.test_lgrc_9_v3_native_packet_loop_control_parity.LGRC9V3NativePacketLoopControlParityTest.test_clockwise_and_counter_clockwise_positive_controls_validate_cycles",
+      "tests.models.test_lgrc_9_v3_native_packet_loop_control_parity.LGRC9V3NativePacketLoopControlParityTest.test_continue_after_load_preserves_order_and_duplicate_suppression",
+      "tests.models.test_lgrc_9_v3_native_packet_loop_control_parity.LGRC9V3NativePacketLoopControlParityTest.test_disabled_policy_stays_default_off_after_save_load",
+      "tests.models.test_lgrc_9_v3_native_packet_loop_control_parity.LGRC9V3NativePacketLoopControlParityTest.test_jittered_delay_positive_control_validates",
+      "tests.models.test_lgrc_9_v3_native_packet_loop_control_parity.LGRC9V3NativePacketLoopControlParityTest.test_no_surplus_subthreshold_and_threshold_too_high_controls_stay_negative",
+      "tests.models.test_lgrc_9_v3_native_packet_loop_control_parity.LGRC9V3NativePacketLoopControlParityTest.test_snapshot_save_load_preserves_packet_loop_surfaces",
+      "tests.models.test_lgrc_9_v3_native_packet_loop_control_parity.LGRC9V3NativePacketLoopControlParityTest.test_telemetry_exposes_packet_loop_fields",
+      "tests.models.test_lgrc_9_v3_native_packet_loop_control_parity.LGRC9V3NativePacketLoopControlParityTest.test_wrong_direction_and_forward_only_controls_stay_negative",
+      "tests.models.test_lgrc_9_v3_native_packet_loop_route_aspect.LGRC9V3RouteAspectContractTest.test_broken_return_route_is_rejected",
+      "tests.models.test_lgrc_9_v3_native_packet_loop_route_aspect.LGRC9V3RouteAspectContractTest.test_overlapping_pole_regions_are_rejected",
+      "tests.models.test_lgrc_9_v3_native_packet_loop_route_aspect.LGRC9V3RouteAspectContractTest.test_route_aspect_digest_changes_with_channel_order",
+      "tests.models.test_lgrc_9_v3_native_packet_loop_route_aspect.LGRC9V3RouteAspectContractTest.test_route_aspect_digest_changes_with_direction",
+      "tests.models.test_lgrc_9_v3_native_packet_loop_route_aspect.LGRC9V3RouteAspectContractTest.test_route_aspect_digest_changes_with_pole_mask",
+      "tests.models.test_lgrc_9_v3_native_packet_loop_route_aspect.LGRC9V3RouteAspectContractTest.test_route_aspect_json_round_trips_with_stable_digests",
+      "tests.models.test_lgrc_9_v3_native_packet_loop_route_aspect.LGRC9V3RouteAspectContractTest.test_route_aspect_state_validation_rejects_bad_edge",
+      "tests.models.test_lgrc_9_v3_native_packet_loop_route_aspect.LGRC9V3RouteAspectContractTest.test_route_aspect_state_validation_rejects_missing_pole_node",
+      "tests.models.test_lgrc_9_v3_native_packet_loop_route_aspect.LGRC9V3RouteAspectContractTest.test_route_aspect_state_validation_rejects_reversed_edge_direction",
+      "tests.models.test_lgrc_9_v3_native_packet_loop_route_aspect.LGRC9V3RouteAspectContractTest.test_route_aspect_validates_against_state_and_compiles_to_routes",
+      "tests.models.test_lgrc_9_v3_native_packet_loop_route_aspect.LGRC9V3RouteAspectContractTest.test_scrambled_channel_sequence_is_rejected",
+      "tests.models.test_lgrc_9_v3_native_packet_loop_surplus_trigger.LGRC9V3RouteAspectSurplusTriggerTest.test_artifact_validator_rejects_missing_parent_arrival",
+      "tests.models.test_lgrc_9_v3_native_packet_loop_surplus_trigger.LGRC9V3RouteAspectSurplusTriggerTest.test_artifact_validator_rejects_missing_producer_record",
+      "tests.models.test_lgrc_9_v3_native_packet_loop_surplus_trigger.LGRC9V3RouteAspectSurplusTriggerTest.test_artifact_validator_rejects_route_digest_mismatch",
+      "tests.models.test_lgrc_9_v3_native_packet_loop_surplus_trigger.LGRC9V3RouteAspectSurplusTriggerTest.test_artifact_validator_rejects_wrong_channel_order",
+      "tests.models.test_lgrc_9_v3_native_packet_loop_surplus_trigger.LGRC9V3RouteAspectSurplusTriggerTest.test_disabled_policy_remains_noop_with_surplus_config",
+      "tests.models.test_lgrc_9_v3_native_packet_loop_surplus_trigger.LGRC9V3RouteAspectSurplusTriggerTest.test_missing_surplus_config_reports_no_eligible_work",
+      "tests.models.test_lgrc_9_v3_native_packet_loop_surplus_trigger.LGRC9V3RouteAspectSurplusTriggerTest.test_no_surplus_fixture_schedules_no_packet",
+      "tests.models.test_lgrc_9_v3_native_packet_loop_surplus_trigger.LGRC9V3RouteAspectSurplusTriggerTest.test_scheduled_child_without_departure_remains_incomplete",
+      "tests.models.test_lgrc_9_v3_native_packet_loop_surplus_trigger.LGRC9V3RouteAspectSurplusTriggerTest.test_self_rearm_candidate_and_completion_chain_are_native_artifacts",
+      "tests.models.test_lgrc_9_v3_native_packet_loop_surplus_trigger.LGRC9V3RouteAspectSurplusTriggerTest.test_self_rearm_candidate_requires_prior_parent_arrival",
+      "tests.models.test_lgrc_9_v3_native_packet_loop_surplus_trigger.LGRC9V3RouteAspectSurplusTriggerTest.test_subthreshold_surplus_schedules_no_packet",
+      "tests.models.test_lgrc_9_v3_native_packet_loop_surplus_trigger.LGRC9V3RouteAspectSurplusTriggerTest.test_subthreshold_trigger_emits_no_self_rearm_evidence",
+      "tests.models.test_lgrc_9_v3_native_packet_loop_surplus_trigger.LGRC9V3RouteAspectSurplusTriggerTest.test_surplus_trigger_is_idempotent_in_same_eligibility_window",
+      "tests.models.test_lgrc_9_v3_native_packet_loop_surplus_trigger.LGRC9V3RouteAspectSurplusTriggerTest.test_surplus_trigger_rejects_source_node_overdraw",
+      "tests.models.test_lgrc_9_v3_native_packet_loop_surplus_trigger.LGRC9V3RouteAspectSurplusTriggerTest.test_surplus_trigger_schedules_departure_without_debiting_source",
+      "tests.models.test_lgrc_9_v3_native_packet_loop_surplus_trigger.LGRC9V3RouteAspectSurplusTriggerTest.test_wrong_channel_direction_is_rejected_at_configuration",
+      "tests.models.test_lgrc_9_v3_restoration.LGRC9V3CompositeRestorationIdentityTests.test_public_artifact_and_digest_are_deterministic",
+      "tests.models.test_lgrc_9_v3_restoration.LGRC9V3CompositeRestorationIdentityTests.test_public_artifact_composes_exact_native_groups",
+      "tests.models.test_lgrc_9_v3_restoration.LGRC9V3CompositeRestorationIdentityTests.test_public_identity_is_stable_across_native_load",
+      "tests.models.test_lgrc_9_v3_restoration.LGRC9V3CompositeRestorationIdentityTests.test_public_identity_rejects_unsupported_or_malformed_sources",
+      "tests.models.test_lgrc_9_v3_restoration.LGRC9V3CompositeRestorationIdentityTests.test_runtime_event_and_observable_mutations_change_digest",
+      "tests.models.test_lgrc_9_v3_restoration.LGRC9V3EmbeddedRestorationStateTests.test_component_is_deterministic_complete_and_non_mutating",
+      "tests.models.test_lgrc_9_v3_restoration.LGRC9V3EmbeddedRestorationStateTests.test_component_is_stable_across_native_load",
+      "tests.models.test_lgrc_9_v3_restoration.LGRC9V3EmbeddedRestorationStateTests.test_included_state_mutation_changes_digest",
+      "tests.models.test_lgrc_9_v3_restoration.LGRC9V3EmbeddedRestorationStateTests.test_non_mapping_input_fails_closed",
+      "tests.models.test_lgrc_9_v3_restoration.LGRC9V3EmbeddedRestorationStateTests.test_nonzero_flux_mutation_changes_digest",
+      "tests.models.test_lgrc_9_v3_restoration.LGRC9V3EmbeddedRestorationStateTests.test_opposite_raw_orientation_preserves_nonzero_signed_flux",
+      "tests.models.test_lgrc_9_v3_restoration.LGRC9V3EmbeddedRestorationStateTests.test_wrong_family_and_malformed_inputs_fail_closed",
+      "tests.models.test_lgrc_9_v3_restoration.LGRC9V3EmbeddedRestorationStateTests.test_zero_flux_has_canonical_positive_sign",
+      "tests.models.test_lgrc_9_v3_restoration_matrix.LGRC9V3RestorationCompatibilityAndControlTests.test_legacy_supported_grc9v3_snapshot_remains_loadable",
+      "tests.models.test_lgrc_9_v3_restoration_matrix.LGRC9V3RestorationCompatibilityAndControlTests.test_legacy_supported_lgrc9v3_snapshot_reaches_same_identity",
+      "tests.models.test_lgrc_9_v3_restoration_matrix.LGRC9V3RestorationCompatibilityAndControlTests.test_missing_wrong_family_and_malformed_runtime_fail_closed",
+      "tests.models.test_lgrc_9_v3_restoration_matrix.LGRC9V3RestorationCompatibilityAndControlTests.test_relabel_controls_fail_closed",
+      "tests.models.test_lgrc_9_v3_restoration_matrix.LGRC9V3RestorationNormalizationMatrixTests.test_deterministic_default_materialization_is_invariant",
+      "tests.models.test_lgrc_9_v3_restoration_matrix.LGRC9V3RestorationNormalizationMatrixTests.test_endpoint_and_nonzero_signed_flux_reversal_is_invariant",
+      "tests.models.test_lgrc_9_v3_restoration_matrix.LGRC9V3RestorationNormalizationMatrixTests.test_mapping_and_set_order_are_invariant",
+      "tests.models.test_lgrc_9_v3_restoration_matrix.LGRC9V3RestorationNormalizationMatrixTests.test_raw_duplicate_base_event_and_observable_views_normalize_away",
+      "tests.models.test_lgrc_9_v3_restoration_matrix.LGRC9V3RestorationNormalizationMatrixTests.test_signed_zero_outside_port_flux_remains_exact",
+      "tests.models.test_lgrc_9_v3_restoration_matrix.LGRC9V3RestorationReplayMatrixTests.test_composite_fixed_point_and_raw_digest_cycle_across_three_loads",
+      "tests.models.test_lgrc_9_v3_restoration_matrix.LGRC9V3RestorationReplayMatrixTests.test_current_runtime_events_and_observables_remain_exact",
+      "tests.models.test_lgrc_9_v3_restoration_matrix.LGRC9V3RestorationReplayMatrixTests.test_equal_input_continuation_twins_remain_equivalent",
+      "tests.models.test_lgrc_9_v3_restoration_matrix.LGRC9V3RestorationSensitivityMatrixTests.test_embedded_node_basin_and_edge_label_sensitivity",
+      "tests.models.test_lgrc_9_v3_restoration_matrix.LGRC9V3RestorationSensitivityMatrixTests.test_embedded_topology_and_allocation_sensitivity",
+      "tests.models.test_lgrc_9_v3_restoration_matrix.LGRC9V3RestorationSensitivityMatrixTests.test_lgrc_queue_clock_ledger_route_topology_and_producer_sensitivity",
+      "tests.models.test_lgrc_9_v3_restoration_matrix.LGRC9V3RestorationSensitivityMatrixTests.test_potential_sink_basin_budget_and_remainder_sensitivity",
+      "tests.models.test_lgrc_9_v3_restoration_matrix.LGRC9V3RestorationSensitivityMatrixTests.test_rng_and_hidden_cache_sensitivity",
+      "tests.models.test_lgrc_9_v3_restoration_matrix.LGRC9V3RestorationSensitivityMatrixTests.test_source_current_surface_mutation_changes_identity",
+      "tests.models.test_lgrc_9_v3_restoration_matrix.LGRC9V3RestorationSensitivityMatrixTests.test_state_owned_event_and_observable_sensitivity",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_active_topology_integration_expands_causal_lane_b_candidate",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_arrival_local_update_can_emit_lane_b_causal_column_h_candidate",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_arrival_local_update_can_schedule_outbound_causal_flux",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_bounded_event_queue_does_not_starve_interleaved_packets",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_causal_boundary_birth_can_require_front_capacity_eligibility",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_causal_boundary_birth_front_capacity_rejects_missing_or_wrong_port",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_causal_boundary_birth_is_disabled_by_default",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_causal_boundary_birth_rejects_queued_packets_until_topology_routing",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_causal_boundary_birth_rejects_when_rng_does_not_accept",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_causal_boundary_birth_uses_grc9v3_probability_and_preserves_budget",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_causal_lane_b_large_gradient_column_h_hit_is_blocked",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_comparison_delay_sensitive_fixture_reports_causal_history_delta",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_comparison_identity_fixture_reports_lgrc_only_identity_surface",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_comparison_refinement_fixture_matches_topology_delta_with_causal_evidence",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_comparison_synchronous_limit_fixture_matches_timing_baseline",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_coupling_producer_blocks_transported_surface_without_reabsorption",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_coupling_producer_schedules_from_reabsorbed_transported_surface",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_departure_arrival_lifecycle_preserves_budget",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_disabled_lineage_policy_blocks_topology_surface_construction",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_empty_queue_step_is_explicit_stop_condition",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_enabled_pulse_substrate_surface_emits_after_committed_packet_event",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_explicit_causal_diagnostic_preserves_lane_a_signed_hessian_attribution",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_feedback_coupled_pulse_budget_violation_fails_closed",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_feedback_coupled_pulse_duplicate_suppression",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_feedback_coupled_pulse_order_mismatch_blocks_scheduling",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_feedback_coupled_pulse_producer_disabled_by_default",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_feedback_coupled_pulse_producer_policy_round_trips",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_feedback_coupled_pulse_producer_suppressed_by_disabled_surface_policy",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_feedback_coupled_pulse_subthreshold_and_wrong_polarity_are_negative",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_feedback_producer_blocks_stale_superseded_surface_row",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_feedback_producer_reads_transported_successor_row",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_feedback_producer_schedules_from_reabsorbed_transported_surface",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_feedback_surface_and_producer_schedule_via_packet_queue_only",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_first_causal_lane_b_evaluation_has_no_previous_h_crossing",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_large_delay_changes_causal_arrival_surface",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_lgrc3_packet_processing_continues_after_state_reabsorption",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_lgrc3_rebases_in_flight_packet_endpoints_after_topology",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_lgrc9v3_load_rejects_partial_runtime_snapshot",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_lgrc9v3_load_rejects_plain_grc9v3_snapshot",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_local_update_rejects_overdrawn_route_set",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_many_event_packet_budget_is_audited_after_each_step",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_multi_basin_control_claim_promotion_is_rejected",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_multi_basin_controls_block_mb5_with_failed_open_control",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_multi_basin_controls_block_mb5_with_incomplete_matrix",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_multi_basin_controls_block_mb5_without_clean_replay",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_multi_basin_failed_open_control_cannot_be_bypassed_by_rerun",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_multi_basin_merge_leakage_controls_are_idempotent",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_multi_basin_merge_leakage_controls_support_mb5_candidate",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_multi_basin_replay_duplicate_validation_is_stable",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_multi_basin_replay_missing_snapshot_blocks_mb4",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_multi_basin_replay_order_inversion_fails_closed",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_multi_basin_replay_tampered_snapshot_fails_closed",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_multi_basin_replay_validation_passes_with_loaded_snapshot",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_native_route_arbitration_artifact_validator_reconstructs_chain",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_native_route_arbitration_artifact_validator_records_fail_closed_controls",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_native_route_arbitration_artifact_validator_rejects_budget_mismatch",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_native_route_arbitration_artifact_validator_rejects_claim_promotion",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_native_route_arbitration_artifact_validator_rejects_duplicate_record",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_native_route_arbitration_artifact_validator_rejects_hidden_input",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_native_route_arbitration_artifact_validator_rejects_order_inversion",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_native_route_arbitration_artifact_validator_rejects_topology_drift",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_native_route_arbitration_budget_invalid_fails_closed",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_native_route_arbitration_commit_duplicate_is_idempotent",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_native_route_arbitration_commit_integrates_topology_and_producer",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_native_route_arbitration_commit_rejects_candidate_digest_drift",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_native_route_arbitration_commit_rejects_missing_candidate_record",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_native_route_arbitration_commit_rejects_stale_candidate_set",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_native_route_arbitration_declared_tiebreaker_selects_first_ordered",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_native_route_arbitration_default_off",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_native_route_arbitration_duplicate_replay_suppresses_record",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_native_route_arbitration_no_candidates_fails_closed",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_native_route_arbitration_old_snapshot_without_log_still_loads",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_native_route_arbitration_order_invalid_fails_closed",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_native_route_arbitration_rejects_experiment_if_else_selection",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_native_route_arbitration_selects_highest_score_without_commit",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_native_route_arbitration_snapshot_reload_suppresses_duplicate_producer",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_native_route_arbitration_snapshot_roundtrip_preserves_full_chain",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_native_route_arbitration_telemetry_is_policy_gated",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_native_route_arbitration_unresolved_tie_fails_closed",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_native_route_candidate_emission_cites_reabsorbed_state",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_native_route_candidate_emission_default_off",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_native_route_candidate_emission_records_candidate_set",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_native_route_candidate_emission_rejects_experiment_if_else_input",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_native_route_candidate_emission_rejects_hidden_route_selection",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_native_route_candidate_emission_rejects_missing_budget_prediction",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_native_route_candidate_emission_rejects_partial_lineage_map",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_native_route_candidate_emission_rejects_preselected_sink_input",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_native_route_candidate_emission_rejects_unknown_source_surface",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_native_route_candidate_emission_supports_digest_ordering",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_native_route_candidate_emission_suppresses_duplicates",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_native_route_candidate_old_snapshot_without_logs_still_loads",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_native_route_commit_emits_multi_basin_candidate_records_when_enabled",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_native_route_multi_basin_duplicate_commit_is_idempotent",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_native_route_multi_basin_emitter_fails_closed_on_malformed_event",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_native_route_multi_basin_wrong_policy_emits_no_records",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_native_route_topology_event_rejects_wrong_arbitration_record",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_native_runtime_snapshot_load_preserves_queue_and_continuation",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_producers_block_source_reads_when_transported_successor_is_missing",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_producers_block_stale_reads_against_superseded_surface_rows",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_pulse_substrate_coupling_producer_disabled_by_default",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_pulse_substrate_coupling_producer_duplicate_suppression",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_pulse_substrate_coupling_producer_policy_round_trips",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_pulse_substrate_coupling_producer_schedules_via_packet_queue_only",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_pulse_substrate_coupling_producer_subthreshold_is_negative",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_pulse_substrate_coupling_producer_suppressed_by_disabled_surface_policy",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_pulse_substrate_surface_artifact_validator_accepts_snapshot_events",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_pulse_substrate_surface_artifact_validator_rejects_digest_mismatch",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_pulse_substrate_surface_artifact_validator_rejects_early_producer",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_pulse_substrate_surface_artifact_validator_rejects_local_update_row",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_pulse_substrate_surface_artifact_validator_rejects_missing_reason_code",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_pulse_substrate_surface_artifact_validator_rejects_missing_route_digest",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_pulse_substrate_surface_artifact_validator_rejects_missing_source",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_pulse_substrate_surface_artifact_validator_rejects_orphaned_producer",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_pulse_substrate_surface_artifact_validator_rejects_producer_mutation_gap",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_pulse_substrate_surface_artifact_validator_rejects_proper_time_mismatch",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_pulse_substrate_surface_artifact_validator_rejects_sub_lgrc2_row",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_pulse_substrate_surface_disabled_policy_round_trips_empty_log",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_pulse_substrate_surface_emission_is_idempotent_per_packet_event",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_pulse_substrate_surface_emits_arrival_row_after_arrival_commit",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_pulse_substrate_surface_is_default_off_for_packet_events",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_pulse_substrate_surface_is_rejected_below_lgrc2",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_pulse_substrate_surface_old_snapshot_without_rows_still_loads",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_pulse_substrate_surface_rejects_topology_changing_runtime_v1",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_pulse_substrate_surface_snapshot_round_trip_and_continuation",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_pulse_substrate_surface_synchronous_default_noop_suppresses_producers",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_queue_ordering_uses_event_time_then_scheduler_index",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_run_event_queue_interleaves_packet_and_birth_queues",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_run_event_queue_processes_birth_only_queue",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_run_event_queue_stops_when_queue_is_empty",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_runtime_collapse_and_identity_routes_are_policy_gated",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_runtime_loads_snapshot_without_multi_basin_logs",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_runtime_model_composes_grc9v3_state",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_scheduled_causal_boundary_birth_routes_through_step",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_snapshot_serializes_runtime_queue_and_events",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_stress_default_grc9v3_remains_causal_layer_free_after_lgrc_run",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_stress_mixed_packet_birth_and_lane_b_expansion_preserves_runtime_refs",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_stress_packet_queue_ties_are_deterministic_and_budget_safe",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_stress_runtime_snapshot_round_trips_after_mixed_events",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_surface_lineage_artifact_validator_reconstructs_supersession_chain",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_surface_lineage_artifact_validator_reconstructs_transport_chain",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_surface_lineage_artifact_validator_rejects_budget_discontinuity",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_surface_lineage_artifact_validator_rejects_duplicate_and_bad_order",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_surface_lineage_artifact_validator_rejects_missing_scheduled_packet",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_surface_lineage_artifact_validator_rejects_missing_surface_digest",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_surface_lineage_artifact_validator_rejects_missing_topology_event",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_surface_lineage_artifact_validator_rejects_source_read_after_transport",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_surface_lineage_artifact_validator_rejects_stale_scheduling",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_surface_lineage_artifact_validator_rejects_topology_digest_mismatch",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_surface_lineage_artifact_validator_time_scopes_producer_reads",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_surface_lineage_missing_topology_or_source_fails_closed",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_surface_lineage_snapshot_round_trip_and_continue_after_load",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_surface_lineage_stale_read_prevention_survives_load",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_surface_lineage_supersedes_rows_after_committed_topology_event",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_surface_lineage_supersession_is_idempotent",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_surface_lineage_transport_duplicate_is_suppressed",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_surface_lineage_transport_partial_map_fails_closed_to_supersession",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_surface_lineage_transports_rows_with_complete_node_map",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_topology_state_reabsorption_artifact_validator_reconstructs_chain",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_topology_state_reabsorption_artifact_validator_rejects_budget_drift",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_topology_state_reabsorption_artifact_validator_rejects_claim_promotion",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_topology_state_reabsorption_artifact_validator_rejects_duplicates",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_topology_state_reabsorption_artifact_validator_rejects_missing_record",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_topology_state_reabsorption_default_off_keeps_old_mismatch",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_topology_state_reabsorption_duplicate_attempt_is_suppressed",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_topology_state_reabsorption_rejects_direct_state_rewrite",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_topology_state_reabsorption_rejects_missing_topology_event",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_topology_state_reabsorption_requires_complete_lineage",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_topology_state_reabsorption_snapshot_load_preserves_producer_gate",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_topology_state_reabsorption_updates_active_state_after_collapse",
+      "tests.models.test_lgrc_9_v3_runtime.LGRC9V3RuntimeTest.test_unit_lapse_constant_delay_is_named_synchronous_limit_surface",
+      "tests.models.test_reset_baseline_persistence.ResetBaselinePersistenceTests.test_all_concrete_families_preserve_construction_baseline",
+      "tests.models.test_reset_baseline_persistence.ResetBaselinePersistenceTests.test_legacy_snapshot_loads_but_reset_requires_explicit_rebase",
+      "tests.models.test_reset_baseline_persistence.ResetBaselinePersistenceTests.test_lgrc_identity_v2_includes_reset_baseline_without_changing_v1",
+      "tests.models.test_reset_baseline_persistence.ResetBaselinePersistenceTests.test_lgrc_identity_v2_is_stable_across_save_load",
+      "tests.models.test_reset_baseline_persistence.ResetBaselinePersistenceTests.test_lgrc_identity_v2_rejects_legacy_missing_baseline",
+      "tests.models.test_reset_baseline_persistence.ResetBaselinePersistenceTests.test_malformed_or_cross_family_baseline_fails_closed",
+      "tests.models.test_reset_baseline_persistence.ResetBaselinePersistenceTests.test_repeated_save_load_preserves_baseline",
+      "tests.models.test_reset_baseline_persistence.ResetBaselinePersistenceTests.test_set_state_preserves_baseline_and_rebase_is_explicit"
+    ],
+    "harness_oracles": [
+      "tests.models.grcv4_conformance_harness.HarnessTests.test_checker_origins_and_import_time_hashes_are_bound",
+      "tests.models.grcv4_conformance_harness.HarnessTests.test_cli_retention_rejects_nondefault_fixture_and_control_before_writing",
+      "tests.models.grcv4_conformance_harness.HarnessTests.test_exact_request_distinction_survives_equal_failure_receipts",
+      "tests.models.grcv4_conformance_harness.HarnessTests.test_expected_payload_and_passing_label_cannot_be_rehashed_into_authority",
+      "tests.models.grcv4_conformance_harness.HarnessTests.test_failed_reports_require_closed_diagnostics_and_actual_comparison_failure",
+      "tests.models.grcv4_conformance_harness.HarnessTests.test_fixture_and_report_are_detached_and_forged_values_revalidate",
+      "tests.models.grcv4_conformance_harness.HarnessTests.test_foreign_loaded_code_cannot_borrow_repository_source_identity",
+      "tests.models.grcv4_conformance_harness.HarnessTests.test_fresh_interpreter_binds_lazy_assets_before_execution",
+      "tests.models.grcv4_conformance_harness.HarnessTests.test_full_ledger_detects_commit_envelope_change_with_unchanged_receipt_ids",
+      "tests.models.grcv4_conformance_harness.HarnessTests.test_invalid_transition_characterizations_are_rejected_by_fixture_oracle",
+      "tests.models.grcv4_conformance_harness.HarnessTests.test_large_time_is_oracle_unavailable_before_any_operation",
+      "tests.models.grcv4_conformance_harness.HarnessTests.test_malformed_capture_is_diagnostic_only_and_preserves_valid_inputs",
+      "tests.models.grcv4_conformance_harness.HarnessTests.test_missing_subject_and_invocation_errors_are_separate_from_comparisons",
+      "tests.models.grcv4_conformance_harness.HarnessTests.test_mutating_operation_is_a_failing_control_not_an_accepted_rejection",
+      "tests.models.grcv4_conformance_harness.HarnessTests.test_nonnegative_requests_never_become_completed_prefix_runs",
+      "tests.models.grcv4_conformance_harness.HarnessTests.test_noop_imported_result_does_not_receive_execution_class",
+      "tests.models.grcv4_conformance_harness.HarnessTests.test_oracles_and_production_keep_one_way_import_boundary",
+      "tests.models.grcv4_conformance_harness.HarnessTests.test_paths_and_source_identity_are_portable_and_fail_closed",
+      "tests.models.grcv4_conformance_harness.HarnessTests.test_production_checker_bypass_does_not_choose_expected_values",
+      "tests.models.grcv4_conformance_harness.HarnessTests.test_real_prefix_compared_to_independent_expected_bytes",
+      "tests.models.grcv4_conformance_harness.HarnessTests.test_record_codec_rejects_ambiguous_unordered_and_invalid_values",
+      "tests.models.grcv4_conformance_harness.HarnessTests.test_reference_identity_and_dimensions_fail_before_invocation",
+      "tests.models.grcv4_conformance_harness.HarnessTests.test_rehashed_wrong_source_and_foreign_request_are_rejected",
+      "tests.models.grcv4_conformance_harness.HarnessTests.test_retained_run_is_portable_inspectable_and_never_overwritten",
+      "tests.models.grcv4_reference_oracles.ReferenceOracleTests.test_ascii_writer_fails_outside_its_declared_domain",
+      "tests.models.grcv4_reference_oracles.ReferenceOracleTests.test_audited_large_dyadics_are_unavailable_not_noncanonical_identities",
+      "tests.models.grcv4_reference_oracles.ReferenceOracleTests.test_charge_is_ordered_binary64_without_repair",
+      "tests.models.grcv4_reference_oracles.ReferenceOracleTests.test_clock_allows_rounded_tiny_increment_without_a_strict_time_increase",
+      "tests.models.grcv4_reference_oracles.ReferenceOracleTests.test_fractional_magnitude_guard_and_safe_integral_endpoints",
+      "tests.models.grcv4_reference_oracles.ReferenceOracleTests.test_numeric_policies_are_explicit_finite_and_overflow_safe",
+      "tests.models.grcv4_reference_oracles.ReferenceOracleTests.test_published_ascii_preimages",
+      "tests.models.grcv4_reference_oracles.ReferenceOracleTests.test_reference_fixture_reidentifies_and_separates_live_reset"
+    ]
+  },
+  "source_bindings": [
+    {
+      "path": "pyproject.toml",
+      "sha256": "018c364413f75ee49186975c05e9cdaba7a78e171d47833609fbebc223a64a66"
+    },
+    {
+      "path": "src/pygrc/__init__.py",
+      "sha256": "87cbe85db2f0f16b428df7f76701b68db79ffe1908e76ee71b2134ef20453a40"
+    },
+    {
+      "path": "src/pygrc/causal_pathways/__init__.py",
+      "sha256": "84eafd80a26d40399ee22f9e0f670c5eaa40840841742a5b37a5a0401061e74e"
+    },
+    {
+      "path": "src/pygrc/causal_pathways/binding/__init__.py",
+      "sha256": "1c639c99991a04337af6f6799264ca6d92fed8b3eb83fb38a2c784854ef52c34"
+    },
+    {
+      "path": "src/pygrc/causal_pathways/binding/artifacts.py",
+      "sha256": "770507a7e45a6d6ab39ff5ea8328893791910945341fe6a5369f312fb1618d59"
+    },
+    {
+      "path": "src/pygrc/causal_pathways/binding/authority.py",
+      "sha256": "17abcfb0f42f3a85dfd587d038e92bab321c8afe24e25a1854dc6c662cde14e2"
+    },
+    {
+      "path": "src/pygrc/causal_pathways/binding/candidates.py",
+      "sha256": "fdd2ae9cc6a7bb1028eb6d9a9dfa3dec5ab4eb68d9c62fab42259c19fa32b3e9"
+    },
+    {
+      "path": "src/pygrc/causal_pathways/binding/effects.py",
+      "sha256": "882983fc3aa64330e34431e898610ff451f026e0fe76cf84c89f7cc866971d90"
+    },
+    {
+      "path": "src/pygrc/causal_pathways/binding/identity.py",
+      "sha256": "bb2d1208b12b277e795c8358bdb2a16b53dd757b34bdd3dde4da6021d0050f23"
+    },
+    {
+      "path": "src/pygrc/causal_pathways/binding/scopes.py",
+      "sha256": "f6c4b40a03c96758588203c7fbb7a5d20872bf90ab4903be604fab4c5122c49c"
+    },
+    {
+      "path": "src/pygrc/causal_pathways/binding/session.py",
+      "sha256": "98b0a0eaeff5b018cf36872fe0a5a3102b33cc27f7ba7eaa5de8407637657972"
+    },
+    {
+      "path": "src/pygrc/cli/__init__.py",
+      "sha256": "6351fe1e42fd9b3cfc17f32937e9999896f061004813deabfbcca1c8e0af9a19"
+    },
+    {
+      "path": "src/pygrc/cli/grc9_landscape_visuals.py",
+      "sha256": "609d59738d44681878acd12523118255ee00715508a6610229e91b7af210f914"
+    },
+    {
+      "path": "src/pygrc/cli/grc9_representative_visuals.py",
+      "sha256": "f95b9b870eb0ca212f745abb0c5af65b763d332eab7c39b2a75e457b602b088a"
+    },
+    {
+      "path": "src/pygrc/cli/grc9v3_representative_visuals.py",
+      "sha256": "87c699f5d872842dbb653124cdc907eef05ef3d385b736a9b8d9453bfb33e3e2"
+    },
+    {
+      "path": "src/pygrc/cli/grcv2_representative_experiment.py",
+      "sha256": "b1d2e9625ecc1b357467dc9d5bf86cdcdbd3ea2840de37dcafb826dda9172c62"
+    },
+    {
+      "path": "src/pygrc/cli/grcv2_representative_graphs.py",
+      "sha256": "23194a64e4eaf11b7a77ab1b1cc38aa584d34f3a22578f198ecb500acdc29d41"
+    },
+    {
+      "path": "src/pygrc/cli/grcv2_representative_visuals.py",
+      "sha256": "62fe30cdb298322e540bc462c4823625658345b13771e0f3610180c753b62b4b"
+    },
+    {
+      "path": "src/pygrc/cli/grcv3_landscape_visuals.py",
+      "sha256": "8e7bce03d43c1ecb72ea4942cfe44abe4ba4014dbcd0849409a4efea9a7c64e6"
+    },
+    {
+      "path": "src/pygrc/cli/grcv3_representative_visuals.py",
+      "sha256": "a4748ee0d0e173f330c86bf3f0c92391c202b4661caebb37686632bb2f86e887"
+    },
+    {
+      "path": "src/pygrc/core/__init__.py",
+      "sha256": "1de90ece2242642584f399b744240207a15f1d56b1ee62247bfb1389647ec7ae"
+    },
+    {
+      "path": "src/pygrc/core/backends.py",
+      "sha256": "344f13dcf664ecbc1ec591cd1cc4c9be241d8c292ca736551201eee81a2c8c07"
+    },
+    {
+      "path": "src/pygrc/core/capabilities.py",
+      "sha256": "40fb8fc51284c25d99b7bb9310ebff7055f170d46a0a978d190ccd9f2b97a41b"
+    },
+    {
+      "path": "src/pygrc/core/digests.py",
+      "sha256": "c54fdedbea3dc9547ae9450bcc4d69385a7f0cba5b9e592dee8d785fbd3c5f07"
+    },
+    {
+      "path": "src/pygrc/core/errors.py",
+      "sha256": "6cebc00fd55fb6f78f505510c71ff6e41fc76877621dbb8832c342b1ec728a31"
+    },
+    {
+      "path": "src/pygrc/core/events.py",
+      "sha256": "a77be381e49e84745a687be432fd03ca0cbc394efe749db2538542d3cc80f9b2"
+    },
+    {
+      "path": "src/pygrc/core/graph.py",
+      "sha256": "7a7383934a6c8fa78e05a4f7a6435b3293acfc59bcfdcdc8e3b73310f51867c6"
+    },
+    {
+      "path": "src/pygrc/core/ids.py",
+      "sha256": "f57ae8530b5b943aad37b247b0716df583dafbf6ceffaa970cbf02cc6907d428"
+    },
+    {
+      "path": "src/pygrc/core/interfaces.py",
+      "sha256": "551d68fc103285608cef1a7ea4a69b9455181de21d9f91ea61cdd80c6065bc8f"
+    },
+    {
+      "path": "src/pygrc/core/mutations.py",
+      "sha256": "8072749b817b7a8e6f0b750b6e476e4355845f75ffe15315cec926d67369b207"
+    },
+    {
+      "path": "src/pygrc/core/observables.py",
+      "sha256": "7e91df6d1ba0929e45f22f34e928551270a5c55828199876c4c8d463e2febf5e"
+    },
+    {
+      "path": "src/pygrc/core/params.py",
+      "sha256": "ff1a1a12ba050fc8654c88b0d786e9a342b6fd1bab656a12b95cdc45a5976ca4"
+    },
+    {
+      "path": "src/pygrc/core/serialization.py",
+      "sha256": "a1ce1489870962af1032b8e69acc09ba8b9dcbcefaf86ea97250fc9a47009cf4"
+    },
+    {
+      "path": "src/pygrc/core/storage.py",
+      "sha256": "a73d30238bc81dc3c366f04f3e8d5e8a266d0a683e7db88560196930d279c397"
+    },
+    {
+      "path": "src/pygrc/core/types.py",
+      "sha256": "63932777bcf619cf8719a69b16adce0dd61e4b9296308ab6f8e41f925048c6f8"
+    },
+    {
+      "path": "src/pygrc/discovery/__init__.py",
+      "sha256": "18f56eea2a0a8529027e3fd21fed21a9aeea76cd939b5795b8267bcfbcb5fa50"
+    },
+    {
+      "path": "src/pygrc/discovery/grc9_checkpoint_visual_index.py",
+      "sha256": "cde80b4f0cc1707e30d2c527d77a159e578ebd4ed61acbee3b1c92a7cbd52066"
+    },
+    {
+      "path": "src/pygrc/discovery/grc9_corrected_growth_catalog.py",
+      "sha256": "85ce35a6b48dd165a3cfe25e0bd6dd918a096f2e8ddd4e02281078437f6e59be"
+    },
+    {
+      "path": "src/pygrc/discovery/grc9_discovery_runner.py",
+      "sha256": "59c7e3a1a8c1e102eed9cc061b416f9ce3fadeb06989e15ac8f6c1452f304b2c"
+    },
+    {
+      "path": "src/pygrc/discovery/grc9_grcl9_handoff.py",
+      "sha256": "b38491571733916827912162cc0ba9cfdb3883afa5253f68b3ca06b4b8111cd3"
+    },
+    {
+      "path": "src/pygrc/discovery/grc9_hypothesis_catalog.py",
+      "sha256": "33f3753f9d4354937766f33fd4d1003db12aa4adfe8c38145535e5fe2febe423"
+    },
+    {
+      "path": "src/pygrc/discovery/grc9_manifest.py",
+      "sha256": "92e2c25bf9ef54eb6f91c6a30f4637ad8b1ae9802cae4bd289d37f1593274318"
+    },
+    {
+      "path": "src/pygrc/discovery/grc9_mechanism_ledger.py",
+      "sha256": "cc6732c6f080fa0ebaae62b24f8287f056f471ceeb2c54d81b146cfe0ff38d80"
+    },
+    {
+      "path": "src/pygrc/discovery/grc9_reviewed_motif_catalog.py",
+      "sha256": "2f1601e96b4caf0600c114bb64d6f7e2ee805b0e4f1ac8f6ba2b1f3d87f718a1"
+    },
+    {
+      "path": "src/pygrc/discovery/grc9_seed_generator.py",
+      "sha256": "13619efd6b079730904d16c3872bf69aef09c2c6544f5b6b152289d2593d0aa2"
+    },
+    {
+      "path": "src/pygrc/discovery/grc9_selector_feedback.py",
+      "sha256": "0820a9295455e92f2dc8cf7457b7dac688b6afd1ea698f490085d9c693d11e29"
+    },
+    {
+      "path": "src/pygrc/discovery/grc9_selector_validation.py",
+      "sha256": "213077e5b3ddb2c6c5d4f61a5091e359f4c42b6952273d01469c3003ac9df6dc"
+    },
+    {
+      "path": "src/pygrc/discovery/grc9v3_catalog_breadth_expansion.py",
+      "sha256": "fd526c8a68faae9fa56278f49f350205f5455d01081dcfbff03ab0fb69e2351c"
+    },
+    {
+      "path": "src/pygrc/discovery/grc9v3_discovery_runner.py",
+      "sha256": "bb8279fe05856ae44c702c5a41eafaac6ca25d4ae8e38b5372cf0a4795047834"
+    },
+    {
+      "path": "src/pygrc/discovery/grc9v3_hessian_comparator_review.py",
+      "sha256": "6f5b9c96ce40f89f9b2a5faf23e25b0af28044ae75ebebf73f060d3581adf15d"
+    },
+    {
+      "path": "src/pygrc/discovery/grc9v3_hypothesis_catalog.py",
+      "sha256": "60fcfc76fecef70d86ee96db718a31bcdc6a420c67da5364d5cdaacaccf7ce29"
+    },
+    {
+      "path": "src/pygrc/discovery/grc9v3_mechanism_ledger.py",
+      "sha256": "c56d2f500615cbde39eba2febadcda1e1515317b71000e2fda7c5f59573eeba4"
+    },
+    {
+      "path": "src/pygrc/discovery/grc9v3_reviewed_motif_catalog.py",
+      "sha256": "7ea66982c110b7f26cd3b00b0a34a4b20904b45877b902dbe6875065c580f793"
+    },
+    {
+      "path": "src/pygrc/discovery/grc9v3_seed_generator.py",
+      "sha256": "b1742fadad209bc88e74c27886f6d536a5197f4dbdfbf72ce43ecaaf8aee1549"
+    },
+    {
+      "path": "src/pygrc/discovery/grc9v3_selector_validation.py",
+      "sha256": "b30295a706af8f18554bbe080eb5de27967f1e352bf92eb23b26b125ccfcf4a4"
+    },
+    {
+      "path": "src/pygrc/discovery/grc9v3_source_handoff.py",
+      "sha256": "f6670dc9f3dd93e39dfa40aaa524ad9f79b4c27a21e7d2a8a24b894db38e6219"
+    },
+    {
+      "path": "src/pygrc/discovery/grc9v3_visual_review.py",
+      "sha256": "cd72703f7184671f261b1c17edf480b18c8e9bec3345497c57cad9e1f9d7bfab"
+    },
+    {
+      "path": "src/pygrc/integrations/__init__.py",
+      "sha256": "24feb5ce79dfe64bbaae8ae14fb5ebb7bfc6a508630beef433b08bab65f23237"
+    },
+    {
+      "path": "src/pygrc/integrations/graph_adapter_boundary.py",
+      "sha256": "86497ebec49fb8918a8f22327320648ffad0f04eadda7498fffde15feb481e0d"
+    },
+    {
+      "path": "src/pygrc/landscapes/__init__.py",
+      "sha256": "6b99bcf78c2674e8505429d9a228572b32aad5c7141e76bb202fad0aadad5a53"
+    },
+    {
+      "path": "src/pygrc/landscapes/equivalence.py",
+      "sha256": "e64233dc0a8b1cb96f7cc566cfa2d3813862736be4467fd87167f78a8a8de7ff"
+    },
+    {
+      "path": "src/pygrc/landscapes/extensions/__init__.py",
+      "sha256": "25cdbde259a934d1f4acba11c8f5a1f4fa301d190fc229528de5f35c59f15f34"
+    },
+    {
+      "path": "src/pygrc/landscapes/extensions/grcl9/__init__.py",
+      "sha256": "730c9dc782cf00a4e6ac669083a36bafe0fbbcdf6a1b20cab9fc0c5681a454f8"
+    },
+    {
+      "path": "src/pygrc/landscapes/extensions/grcl9/examples.py",
+      "sha256": "2e1b63cdd77eb33d0c45bb497084da06d2370a575f2c026ffb75739b96ae83d9"
+    },
+    {
+      "path": "src/pygrc/landscapes/extensions/grcl9/fixtures.py",
+      "sha256": "94b43d5dedb627962e11c5febd37d7f8c66c5deab840b63437e2aeb6f9c48218"
+    },
+    {
+      "path": "src/pygrc/landscapes/extensions/grcl9/manifest.py",
+      "sha256": "d8833f5e4b3456267471ad242ad93d2d392eb7c1e412206551e194a57792d942"
+    },
+    {
+      "path": "src/pygrc/landscapes/extensions/grcl9/schema.py",
+      "sha256": "802bed1568ae657918cf12fd1872a5fbfb62fbcf1345ca2799d14a25e33a07ed"
+    },
+    {
+      "path": "src/pygrc/landscapes/extensions/grcl9v3/__init__.py",
+      "sha256": "a32ee2195e77cf83fce0bc63ec351d18c2f74f0978866c936c9f827417efcf8d"
+    },
+    {
+      "path": "src/pygrc/landscapes/extensions/grcl9v3/examples.py",
+      "sha256": "07530212437d4a17812f7f467f64eb6f3cd6e2c71feb2f82df1e02cf4a164ccf"
+    },
+    {
+      "path": "src/pygrc/landscapes/extensions/grcl9v3/fixtures.py",
+      "sha256": "502269198206cee130430747ff6a482356d32354843f59542796ea063edc42df"
+    },
+    {
+      "path": "src/pygrc/landscapes/extensions/grcl9v3/manifest.py",
+      "sha256": "0d269952b95fa10a37879acf69f6b9b256bb9a4f9a64d0f2e07f759924e3ebf6"
+    },
+    {
+      "path": "src/pygrc/landscapes/extensions/grcl9v3/schema.py",
+      "sha256": "d35dc4f944d72c70f98ae134685e3783fd5d551ee91fb0134a5205f1464b0f10"
+    },
+    {
+      "path": "src/pygrc/landscapes/extensions/grcl9v3/selector_expansions.py",
+      "sha256": "6bdd8f8ae9417a3dcec92bd4423047e7bc1daa686056b2583fe763220b9ad56a"
+    },
+    {
+      "path": "src/pygrc/landscapes/extensions/grcv3.py",
+      "sha256": "6221464121cd6bcfa8f9250fe65db6da1196640bbd37ce46d1d0adbbb80000f8"
+    },
+    {
+      "path": "src/pygrc/landscapes/inference.py",
+      "sha256": "28b0b54bc37d5894f69e77fbeaa3f84dc856bddae845cdf4e9948dfedb0c9b32"
+    },
+    {
+      "path": "src/pygrc/landscapes/inference_basin.py",
+      "sha256": "2e784026b62c89c618ae905ce4ea0552d729c80c69ac4567cb30c3a962c59ce7"
+    },
+    {
+      "path": "src/pygrc/landscapes/inference_compare.py",
+      "sha256": "f29dbfa87f2051871168eb3ff5b9d1b05903a789fad53ea2e831735801b7852f"
+    },
+    {
+      "path": "src/pygrc/landscapes/inference_junction.py",
+      "sha256": "69b3e772659a87fae8b3431de6bb40ebb385e4dc785e05ec072c20919a438789"
+    },
+    {
+      "path": "src/pygrc/landscapes/inference_kg.py",
+      "sha256": "a1e006bfbfec04841a30b8b0c6eb43d69b574cb695dedecb962aa6c0a8f6a00d"
+    },
+    {
+      "path": "src/pygrc/landscapes/inference_loader.py",
+      "sha256": "61c381a9a826410cc6989512d2cff746465154d98cb1565d01c02010a20f29df"
+    },
+    {
+      "path": "src/pygrc/landscapes/inference_pheromone.py",
+      "sha256": "e2f6a0d93ca800be18df6ce955f347122a3b393a5590cdf81b2011572d599b2c"
+    },
+    {
+      "path": "src/pygrc/landscapes/inference_revival.py",
+      "sha256": "de741fd9c070fed65e5113524a68b3a2163ef7017edb57d949c59c8c25bc56a8"
+    },
+    {
+      "path": "src/pygrc/landscapes/inference_ridge.py",
+      "sha256": "3f6b3b4a82973ca092bc83f0ee0e996e3d95cf4f06226de1d03b140a6d7ba8b5"
+    },
+    {
+      "path": "src/pygrc/landscapes/inference_substrate.py",
+      "sha256": "7b7076ae54de4a526b5faa15e9ec90789ce64390182e756e5895cb9deffc5a1d"
+    },
+    {
+      "path": "src/pygrc/landscapes/inference_valley.py",
+      "sha256": "07dcb641650d3ece24d6c90fe0acf85c9497daf7933b230b1d84209ac2b49f8b"
+    },
+    {
+      "path": "src/pygrc/landscapes/io.py",
+      "sha256": "c17609a2615c0dd104ae4a8efd8ca94624ef2883837b3b205571ffefeea602cd"
+    },
+    {
+      "path": "src/pygrc/landscapes/motion.py",
+      "sha256": "0d3790354198a72f75d8c6ca44ef4c8023e9180eb6d03b2a9d81c6edb9706452"
+    },
+    {
+      "path": "src/pygrc/landscapes/motion_boundary.py",
+      "sha256": "87fbfeb0439417e9ca0fd0e192a2b90393f1a067b12b4da97decd3ae171308ef"
+    },
+    {
+      "path": "src/pygrc/landscapes/motion_catalog.py",
+      "sha256": "6d5c57baaa5da0b02684bc226331c83b8907f318481147ee1cbb77e8682f249c"
+    },
+    {
+      "path": "src/pygrc/landscapes/motion_coherence.py",
+      "sha256": "86e7fe23ccf9342c6cf27330994a00915b42f0691690c249a9be065b5b07db1c"
+    },
+    {
+      "path": "src/pygrc/landscapes/motion_examples.py",
+      "sha256": "99ecc0d81f6db5409a45fc0d72df71fae5739ce221f7b88c7967c64ea767a586"
+    },
+    {
+      "path": "src/pygrc/landscapes/motion_identity.py",
+      "sha256": "af6a3af033a70305818b8dc747710075b8ec8315fafc32ef9692de222100a08c"
+    },
+    {
+      "path": "src/pygrc/landscapes/motion_interpretation.py",
+      "sha256": "7d9a331e954f511a8daae285017877349540128ed708793456e0e21a6cb1098b"
+    },
+    {
+      "path": "src/pygrc/landscapes/motion_landscape_bridge.py",
+      "sha256": "eb40c0aaeac07a48e13aae34002b498d62249a9695ea50b6f7ae3e9d6cc0af5c"
+    },
+    {
+      "path": "src/pygrc/landscapes/motion_loader.py",
+      "sha256": "8e14af636695b1a9d7a7487808f3ff98daca331c016c832679a271e3bc1b4977"
+    },
+    {
+      "path": "src/pygrc/landscapes/motion_representative.py",
+      "sha256": "18d135532076eeab69d966adb99d1f346fda85ae474c7f34782cc985b85343c9"
+    },
+    {
+      "path": "src/pygrc/landscapes/motion_seed_examples.py",
+      "sha256": "6d02cd7859cb94c743294396d307ef750ecb61e9b633bee1de0d9d1f47f4943a"
+    },
+    {
+      "path": "src/pygrc/landscapes/motion_topological.py",
+      "sha256": "ba75dde8bfffbe0e3e704bdd5cb45741ce542e59f1164bf67996dd1c839af9de"
+    },
+    {
+      "path": "src/pygrc/landscapes/pde_translation.py",
+      "sha256": "97af774c5243c017055ebe11bacf787d2e0411966e18e6cc70965388c446ff8f"
+    },
+    {
+      "path": "src/pygrc/landscapes/seed.py",
+      "sha256": "457c4bc2fd2ffd597be29394087864d2295bc3a60a432fed604c801fbec7aac2"
+    },
+    {
+      "path": "src/pygrc/landscapes/validation.py",
+      "sha256": "bf2428dda75061cedb2c8a8074df8c5aa27a7f601b5a94b4fd0070cb0580a72b"
+    },
+    {
+      "path": "src/pygrc/models/__init__.py",
+      "sha256": "23768e181455f4e7eb68908cdac532464c063fa5eb4250c4d05537eca0dcaa70"
+    },
+    {
+      "path": "src/pygrc/models/_base.py",
+      "sha256": "e5e2a310def994b0583ba0185e3243253095a5a919804da2fce860df1911eeff"
+    },
+    {
+      "path": "src/pygrc/models/grc_9.py",
+      "sha256": "a857f41ea919bb311d283681a13609e4bac6c5295d975ab61e57559454131de1"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_checkpoints.py",
+      "sha256": "283b662b3ac232465504082ae68a874d5b00f7745ee39eeee2d03828bbfa85d7"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_coarse.py",
+      "sha256": "43a20c5ae379e488ce7abcdc8b1f2b68007ba27fd27b3561f361d180e5906b49"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_expansion.py",
+      "sha256": "f71b7370e56b59328692000831842435e6512dcc3539f8dd9e5ac059f1eb1569"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_grcl9_lowering.py",
+      "sha256": "40a855d6f56417cabf442c68cd32280b1c07dcc4075a8cad2570750c9cca6c7c"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_grcl9_provenance.py",
+      "sha256": "c21593818c52c905c19f865d9fbe22937d560478b2c0f65efd44ae635b9fb122"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_landscape.py",
+      "sha256": "6f3059b701e28413b0252442d4b8449cfb8ccb341338b14da71d810d5965f244"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_ports.py",
+      "sha256": "7f9142f96de1e1a2880db5b0d767df4a78866093a8b051a2615778d3fa8ac780"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_state.py",
+      "sha256": "b3d979fe4bffbc86fe256f71ff4894c3da03fd4af706457a281f650242ca26b7"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v3.py",
+      "sha256": "d297def1eddfaf79a7ad3d6b676caaeebb29e6d7235f4fac5c6729bd7e26ca9e"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v3_choice.py",
+      "sha256": "ab8be0391a37e71d4610022afe3f64dac6102b929ade4448a59e7f4e02167933"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v3_grcl9v3_lowering.py",
+      "sha256": "653d0963d4df55c278cf1f6fc475a764ef03a13eee7d2ada756f5605434a1f05"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v3_grcl9v3_provenance.py",
+      "sha256": "607c65b7dc28e45c5c73801e76144f112e122948d9b478b2722575788407e33b"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v3_runtime.py",
+      "sha256": "f6f12de4e9bf66cd97b4063854ea225ae00874fed7073d4e72775891db54f502"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v3_sparks.py",
+      "sha256": "fa1db78355e1dba41245da44c9c515ac09820035ca451723873da779420ee820"
+    },
+    {
+      "path": "src/pygrc/models/grc_9_v3_state.py",
+      "sha256": "4ab5ffcb95d69a0767b24d6c95277ba3619a5d477c4865cc0d31735a2377918e"
+    },
+    {
+      "path": "src/pygrc/models/grc_v2.py",
+      "sha256": "949bbb90766193934c96e4c4cbb84d3838e175b92968d93f9650477cce9e925e"
+    },
+    {
+      "path": "src/pygrc/models/grc_v2_checkpoints.py",
+      "sha256": "e51abbec14fd03d5a54ab022529a2fce1b55d2f5cfce574ffdceae388225e45e"
+    },
+    {
+      "path": "src/pygrc/models/grc_v2_landscape.py",
+      "sha256": "a531e7c4c8dee941b353696ff47b6265ecc03ac0ded07ab0fe9756479842661e"
+    },
+    {
+      "path": "src/pygrc/models/grc_v2_state.py",
+      "sha256": "d9edff07065309059d030531febec4dd63c9586745f26cb9dd8eb309b357a659"
+    },
+    {
+      "path": "src/pygrc/models/grc_v3.py",
+      "sha256": "01081bc3f2b394a0797d93c38539a3d6139c6bb412323f6eda09a4fe7c66b473"
+    },
+    {
+      "path": "src/pygrc/models/grc_v3_checkpoints.py",
+      "sha256": "ed27a01eb18decc506450d0a25cd5fc7861c1f1bcf3fce5af84373b42eb67b96"
+    },
+    {
+      "path": "src/pygrc/models/grc_v3_differential.py",
+      "sha256": "3e88a76d7eea94b255c588300305e5119cebc1e2599dd9a43e0aaf80cc9af837"
+    },
+    {
+      "path": "src/pygrc/models/grc_v3_landscape.py",
+      "sha256": "a6d81d828bcf6e8c67d3e2e40bdbffd311d7126cf0a4b3b5efb72559aef687ad"
+    },
+    {
+      "path": "src/pygrc/models/grc_v3_landscape_native.py",
+      "sha256": "d4a93b18bfeb71eb5098309b9ed0c2ae42c41b387b964a1ebbf5a43fd9ddb019"
+    },
+    {
+      "path": "src/pygrc/models/grc_v3_state.py",
+      "sha256": "d0399ce9a733b8aeb1662de72ad0088cceab239e9b0dcf51c52367e70eb65e1c"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4.py",
+      "sha256": "65efdf547d8e88e67c22d62a869bd61464ed3d2eb8b2709be6661796b37e824c"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_assets/__init__.py",
+      "sha256": "a1f3aba168a9f9331d1fc9580d5055404f8bc4c705936c7e388e7a47f80a0051"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_codec.py",
+      "sha256": "bd6d9390c818c5a25b70da119cfbc3a3de3707ee84566f6bb06160bb4780e154"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_geometry.py",
+      "sha256": "6166f76947a422f909a7040d431c89b8fd2031f47bd765367cd3aaff3fa45f79"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_profile.py",
+      "sha256": "188e4ceb92b6a36fe81849911b88b233b8dd16bf3de07383e1508d76232fdbfb"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_state.py",
+      "sha256": "b0ccf06ef91b66feb8670fb67281465998f4bcb085c4d547fedd3ce6d85ad3cb"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_step.py",
+      "sha256": "773975e1131791f93d86f6dac38b27ebac9dca46c1b87ef2e0a31bc8c90a705b"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_transport.py",
+      "sha256": "8bad1a9642456f3a63976177b9baba3f1dd8ec0df2ec6376e18a71fb032823a2"
+    },
+    {
+      "path": "src/pygrc/models/lgrc_9_v3.py",
+      "sha256": "37f9f9a0452fba447c875f7e652d8632dc49bb159c0d1af5caecb4ce4acf48bb"
+    },
+    {
+      "path": "src/pygrc/models/lgrc_9_v3_construction.py",
+      "sha256": "c59f8d0747a5a6f5c954927fd1e1b1d71464bdffbdbf0401e39b17219a364938"
+    },
+    {
+      "path": "src/pygrc/models/lgrc_9_v3_contract.py",
+      "sha256": "b86fb41ab530a7aa01abdf01dbc048da10c2e312a18c8b874cbd1386c4794680"
+    },
+    {
+      "path": "src/pygrc/models/lgrc_9_v3_identity.py",
+      "sha256": "02a7b9dddb16b925042e014725aa13f66883f16f05f04ca754883dd002fc4ac2"
+    },
+    {
+      "path": "src/pygrc/models/lgrc_9_v3_packets.py",
+      "sha256": "14d99292e18e2fe34e0fd5c6a1f69051e82115a051d142f10792775e2321e58f"
+    },
+    {
+      "path": "src/pygrc/models/lgrc_9_v3_restoration.py",
+      "sha256": "e7c6b143c08eb0bda210152aeb0f6b12e0efcb666268416404ed3b649dd46931"
+    },
+    {
+      "path": "src/pygrc/models/lgrc_9_v3_runtime.py",
+      "sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4"
+    },
+    {
+      "path": "src/pygrc/models/lgrc_9_v3_runtime_state.py",
+      "sha256": "ef409403954749a45fbf444116a9a253b95b3e2d74a119006f1cbb364a83630c"
+    },
+    {
+      "path": "src/pygrc/models/lgrc_9_v3_timing.py",
+      "sha256": "3a8528da792ee57ea6a229cdf952af38a52c3f2689525cf12adf63a27a63983c"
+    },
+    {
+      "path": "src/pygrc/models/lgrc_9_v3_topology.py",
+      "sha256": "f3cf7e2281c4073531a5951a19f9ae9141a336f9f9b6398f76eda7e1493abde4"
+    },
+    {
+      "path": "src/pygrc/telemetry/__init__.py",
+      "sha256": "ec2c17bcbc8d36ab411296c55e2c9b7c23170edacf837b9a95827d65ba51fae3"
+    },
+    {
+      "path": "src/pygrc/telemetry/_experiment_defaults.py",
+      "sha256": "720fc58700e9a620315040399b81a6e7f510b3ecd575f0ea2eb9b82527931d75"
+    },
+    {
+      "path": "src/pygrc/telemetry/_experiment_results.py",
+      "sha256": "5b4155119c78059e01a4c32ea7df0d19454f3c483b7a3e71ac4b4816441d5628"
+    },
+    {
+      "path": "src/pygrc/telemetry/_grc9_extensions.py",
+      "sha256": "ef7ef3aba763feaaa7a6485891a7396d628adb5ff0b7c8afa1586f457d6acb9f"
+    },
+    {
+      "path": "src/pygrc/telemetry/_grc9v3_extensions.py",
+      "sha256": "4ddeeda6b376cce190c5dae8ba6d224688e2491d60c65dd637f271e22c51ae69"
+    },
+    {
+      "path": "src/pygrc/telemetry/_grcv3_collapse_traces.py",
+      "sha256": "d7267ecad2e39cf919eb2c9600901abf6743ab3c873c23f435da23e461310425"
+    },
+    {
+      "path": "src/pygrc/telemetry/_grcv3_extensions.py",
+      "sha256": "d45a93b05760307a1eca5332e5363a4134bb86ca358586d78ca1b9032ca7bb73"
+    },
+    {
+      "path": "src/pygrc/telemetry/_grcv3_failure_traces.py",
+      "sha256": "ab6aaf648bcf4a31103b9370c0ee049fe1376ac7f276c1c2dfbaeed27f14895e"
+    },
+    {
+      "path": "src/pygrc/telemetry/_grcv3_lane_runner.py",
+      "sha256": "5c7c87c20ea51db8985f56a3906d32ddadb70ec708473d38b339ea3c3801562c"
+    },
+    {
+      "path": "src/pygrc/telemetry/_grcv3_settlement_traces.py",
+      "sha256": "ece0fbb52ac6bddfaae6a7e993dfdbefc91fb54fb5a137e19f28e740686010d3"
+    },
+    {
+      "path": "src/pygrc/telemetry/_grcv3_trace_utils.py",
+      "sha256": "df577a990c175407371aa6349b6822e94e77ef7ec88b7e86c7ec25b41ed7043f"
+    },
+    {
+      "path": "src/pygrc/telemetry/_telemetry_utils.py",
+      "sha256": "49df2b9f2676c59ba65fa3524c9ddc59e3232a4fa883a1b05229b191a7d340bb"
+    },
+    {
+      "path": "src/pygrc/telemetry/compare.py",
+      "sha256": "75702eebcf38a5f3286d6207d214224b3a6596c6c0949f379cecc650e5f3ec11"
+    },
+    {
+      "path": "src/pygrc/telemetry/experiments.py",
+      "sha256": "1ddd8406c2a1de57f86e17df4b015044fd88ef08f03f297df1d8231650386a92"
+    },
+    {
+      "path": "src/pygrc/telemetry/grc9_contract.py",
+      "sha256": "2566ff2d1a94fc732a2e954f42c35fc7974d37f10d393a406779a9d0b9121cbf"
+    },
+    {
+      "path": "src/pygrc/telemetry/grc9_grcl9_growth_record_classification.py",
+      "sha256": "5e3116ce1883397bdddeec96bb1d2611d311e861ebe65c779c7c013046837642"
+    },
+    {
+      "path": "src/pygrc/telemetry/grc9_grcl9_growth_supersession_summary.py",
+      "sha256": "ae70535cca16decdb5d01517feaf989f09695ebc3c6734df4cb181a0a9bc0b03"
+    },
+    {
+      "path": "src/pygrc/telemetry/grc9v3_contract.py",
+      "sha256": "86619fb1484971bfa5476eeb2e825c9f9ad386aa91d7296606e848a119cad86a"
+    },
+    {
+      "path": "src/pygrc/telemetry/grcl9_corrected_growth_catalog.py",
+      "sha256": "5805f6c2bad8049949dc17caaeb8f2133ff586d06d742e3344adaff717a87851"
+    },
+    {
+      "path": "src/pygrc/telemetry/grcl9_lowered_motif_catalog.py",
+      "sha256": "9f00dbef7eb8f97a15f84764112f2de8e3c650da98979196c94396d34c1e4191"
+    },
+    {
+      "path": "src/pygrc/telemetry/grcl9_replay.py",
+      "sha256": "33db3c2f6765f2d4bfc9578e22c9c456fca9d31494a78124e9767014c390a7c3"
+    },
+    {
+      "path": "src/pygrc/telemetry/grcl9_selector_validation.py",
+      "sha256": "ed9baeafca9b8fc3d5ab541d9b2578b59affc6d61e440a70715b63b5ea109f53"
+    },
+    {
+      "path": "src/pygrc/telemetry/grcl9v3_lowered_motif_catalog.py",
+      "sha256": "833fb0c7f982f908919a1670c34cfe43c218b30955105839cb9ffdf34eb8e849"
+    },
+    {
+      "path": "src/pygrc/telemetry/grcl9v3_replay.py",
+      "sha256": "c1c28f6d1b30cfcb9fd85e4a4e325f04e13ce826accc6f516655dfe9b76d5352"
+    },
+    {
+      "path": "src/pygrc/telemetry/grcl9v3_selector_validation.py",
+      "sha256": "7553c7f9bcb4325bdb3c20d0c687f5a944cd583a9d8837571c2f58605685346c"
+    },
+    {
+      "path": "src/pygrc/telemetry/grcv3_contract.py",
+      "sha256": "ea696cd5676769217f35449c7f5f20a43b0178567223ac81e9b81d53220c55a4"
+    },
+    {
+      "path": "src/pygrc/telemetry/grcv3_pressure_boundary_evidence.py",
+      "sha256": "8988226e7a38a31c691ff5ef94bdccec693c35a48446cad2a4debeec9a361a5c"
+    },
+    {
+      "path": "src/pygrc/telemetry/grcv3_pressure_boundary_selectors.py",
+      "sha256": "3ca51479d74b862db1fc915173b47491ee034f559b7420caf7cdf5da4e4ed3cb"
+    },
+    {
+      "path": "src/pygrc/telemetry/io.py",
+      "sha256": "cff2c5660bbcff93fc3b65ee9c71c6672aa8126e78946d9f2b04ef16cc029929"
+    },
+    {
+      "path": "src/pygrc/telemetry/lgrc9v3_contract.py",
+      "sha256": "5b35cce35bd2a1323efce682c10938b6e005baa6106bfa879b8f06b58a87899f"
+    },
+    {
+      "path": "src/pygrc/telemetry/pressure_boundary_complex_source_comparison.py",
+      "sha256": "b27b1f21b08ed90154a38d60de603e24829f3f7725e48fdc43307b8f3833eec8"
+    },
+    {
+      "path": "src/pygrc/telemetry/pressure_boundary_cross_family.py",
+      "sha256": "f0dd089af6b53c92ec78a96a617c8e3b27f4a8933e228e41f3cb6ef9187e05c8"
+    },
+    {
+      "path": "src/pygrc/telemetry/recorder.py",
+      "sha256": "404c5fcc5859dc608d71775bc8050b4d42467cef4569839fbe439cd7f04d6613"
+    },
+    {
+      "path": "src/pygrc/telemetry/reports.py",
+      "sha256": "99f641686d71fd4424390de5caef81ae634615d69d1fd974cab4934dfc82d556"
+    },
+    {
+      "path": "src/pygrc/telemetry/schema.py",
+      "sha256": "a7800ab181ec96844da88d82538a8e42318dd54ee6d9a9a9ab092821cc947fdc"
+    },
+    {
+      "path": "src/pygrc/utils/__init__.py",
+      "sha256": "465e64f97c386e4b932eb520932858cab261e75623af8812a80ecc7695054e16"
+    },
+    {
+      "path": "src/pygrc/visualization/__init__.py",
+      "sha256": "0f3093af422e6eb2e904052798fa6d801bf97f1666c834e3b81a25078ae397eb"
+    },
+    {
+      "path": "src/pygrc/visualization/graph_render.py",
+      "sha256": "dc3a88e4aa4d5b291cb34b71d9109b708345c1111667a7fd0c2a54c523255c0f"
+    },
+    {
+      "path": "src/pygrc/visualization/grcl9_lowering.py",
+      "sha256": "53a0d2bdb7e8e5b980ab6e8eb6481c9df97a77d5a46b5e561cfd552fcbcfe2de"
+    },
+    {
+      "path": "src/pygrc/visualization/grcl9v3_lowering.py",
+      "sha256": "2699f9d1a7d3d8173f1f07eab0a88dd6a964a3e81e8871d3c2368efb038fffd4"
+    },
+    {
+      "path": "src/pygrc/visualization/layout.py",
+      "sha256": "21981d0c825b1e758c0ce3e4ecb5818e9587af201baff7eb8aea312ee06d116b"
+    },
+    {
+      "path": "src/pygrc/visualization/motion.py",
+      "sha256": "2790d3fdb0792cecadcb777aa6e1f58cd2732cb8f018c20c530c17d441bddf0b"
+    },
+    {
+      "path": "src/pygrc/visualization/render.py",
+      "sha256": "6f1f6629a3da4895a5e3fcdf5e073843da66cf5b02a4b26d76652275e9f0d340"
+    },
+    {
+      "path": "src/pygrc/visualization/representative.py",
+      "sha256": "a13e6125fd621bf02dc8bfaf76a76f7224cd722c0ebeef21cd43d302c0b5811e"
+    },
+    {
+      "path": "src/pygrc/visualization/representative_graphs.py",
+      "sha256": "48107e4d97556e53e60190a5fab1cfb383462b3f6680c9ce1c813f3b952c73ef"
+    },
+    {
+      "path": "tests/core/__init__.py",
+      "sha256": "76f41a0df27e45fc87349b67be016b1fd1802633a11b13a7eb7ed4bbc0717c7a"
+    },
+    {
+      "path": "tests/core/test_backends.py",
+      "sha256": "bc8edd6986a8851d503a75dd2239fff50d225c43cc34c04a9c120581949969b6"
+    },
+    {
+      "path": "tests/core/test_canonical_serialization.py",
+      "sha256": "552193d59b10a3ef293fa7629a78f51e59fb947587428527721d1d0942407ffc"
+    },
+    {
+      "path": "tests/core/test_capabilities.py",
+      "sha256": "f9d0f142c1d8ce89ffa28f7cc0ce71620571b23abf064d2f03489340ba42665a"
+    },
+    {
+      "path": "tests/core/test_digests_and_persistence.py",
+      "sha256": "64f1931ea13456865343b156b779a8df1127568729d2b27495fa365605b94103"
+    },
+    {
+      "path": "tests/core/test_events_observables_errors.py",
+      "sha256": "95f322b2d9782175831c47b8ff7b1043c7f066f3a403fc4414d7e5448a18bd0c"
+    },
+    {
+      "path": "tests/core/test_graph_protocols.py",
+      "sha256": "99095399a15ba96dccfd8ebedd2661ea7366f50071fdfb91c9c2eba56878ff01"
+    },
+    {
+      "path": "tests/core/test_ids.py",
+      "sha256": "1b20380ad8c41324b7f0cdf576fbb0c07e978b74a78933e27b7fc70e8534e932"
+    },
+    {
+      "path": "tests/core/test_import_smoke.py",
+      "sha256": "27987b2cc5d8c6acf57b6df16201181cce4c0a8c9897496e24f3d72a2b2a8c65"
+    },
+    {
+      "path": "tests/core/test_interfaces.py",
+      "sha256": "702c67b6cc8d98c8ae87e586f7270e5afab65d8c2178527b651a14effbc98e69"
+    },
+    {
+      "path": "tests/core/test_module_imports.py",
+      "sha256": "aa2df40e620432997c167a2c19cdd9340f79c77dffffae2b6b13d5b1e8dc19c2"
+    },
+    {
+      "path": "tests/core/test_mutations_and_invalidation.py",
+      "sha256": "306cc0912a0ad0d28797425b2829454e47f75a891fed0e4b2dfbcd4881e656a0"
+    },
+    {
+      "path": "tests/core/test_params.py",
+      "sha256": "3e2ab26bb32cf9409c0dae4622380c608d5be5ab486ff0129eac6c52c67518fb"
+    },
+    {
+      "path": "tests/core/test_port_graph_backend.py",
+      "sha256": "b04b1e2c94372b66d482357023c7264fa5b265aa3d662e88b62fd75212368113"
+    },
+    {
+      "path": "tests/core/test_serialization_contract.py",
+      "sha256": "f19f762830853ed35d243ab7390dc3e7337ee1c7fb05922b0c2742f3062c7bcc"
+    },
+    {
+      "path": "tests/core/test_types.py",
+      "sha256": "df71e51295540f25b4cc135193c6558986ba462633460bd29ab3684d9b8b1869"
+    },
+    {
+      "path": "tests/core/test_weighted_graph_backend.py",
+      "sha256": "98dc7d67f64ed80db808900179ac5f90e257304cf8ab80fc2c98799979fb51e6"
+    },
+    {
+      "path": "tests/models/__init__.py",
+      "sha256": "a75a97f69ccfe9043bca38dcb91a41a7393d299d8af2fe804cc034930fb6c440"
+    },
+    {
+      "path": "tests/models/grcv4_conformance_harness.py",
+      "sha256": "15ee128da66dd25f6e028cf601f4de1047bee8812d51f83391a3f7adda3c7e89"
+    },
+    {
+      "path": "tests/models/grcv4_reference_oracles.py",
+      "sha256": "b973babbca55854f2b2a9f629b4b914cf767627533b26460013c8b9cfa611ea4"
+    },
+    {
+      "path": "tests/models/test_family_stubs.py",
+      "sha256": "68693ccd01da4760a6d099d9cd5e4e52a6d5084b03b684eee1847fe972fa9c9d"
+    },
+    {
+      "path": "tests/models/test_grc9v3_spec_reconciliation.py",
+      "sha256": "6ee26588ebebab2b64bd89814bda4baf98dfe3430be7858f597b11769351f94a"
+    },
+    {
+      "path": "tests/models/test_grc_9_coarse.py",
+      "sha256": "6d6552d1381ecc5bd41b77b479d619853f9e75306dec089f642fd2441eaaabc8"
+    },
+    {
+      "path": "tests/models/test_grc_9_expansion.py",
+      "sha256": "de1e080fa26b841ab46089269b71394160a94c15730edb621dae643ef8c63eb3"
+    },
+    {
+      "path": "tests/models/test_grc_9_grcl9_lowering.py",
+      "sha256": "3b4345e29661324acb48a2d7b99f8e3fa8603e3dce74e062a37984b6ab25845c"
+    },
+    {
+      "path": "tests/models/test_grc_9_landscape.py",
+      "sha256": "1d5cbca650e6fcea4c7c106dff5bf24067445dadceb9eb5ece32e2f5076650a5"
+    },
+    {
+      "path": "tests/models/test_grc_9_runtime.py",
+      "sha256": "3df5f4c98ac18e43266511246e21e3ba62926beb34570090ffdac87481ec3ae0"
+    },
+    {
+      "path": "tests/models/test_grc_9_sparks.py",
+      "sha256": "b33b02efecfca729d72715de08c3a6248ccd690a9d3498bfdc0ff3cd0ed74447"
+    },
+    {
+      "path": "tests/models/test_grc_9_state.py",
+      "sha256": "1dbdb68d8c9b78539c667e6a548c4673d7a27d86f02f24faa5dc216584919d9a"
+    },
+    {
+      "path": "tests/models/test_grc_9_step.py",
+      "sha256": "962d266938a06c1894361e9f3d97cdea59ba048ba8a8c6e43cc5832c001a9e05"
+    },
+    {
+      "path": "tests/models/test_grc_9_tensor.py",
+      "sha256": "cc8ce248febbec9d6ef24db28e3a2a40241ebe2d5aa1e6bd4cd987a23a13c191"
+    },
+    {
+      "path": "tests/models/test_grc_9_v3_choice_budget.py",
+      "sha256": "a3e203069b470e62da185930abdf52d98848666d7ef627b23ea6ea7445e0fff9"
+    },
+    {
+      "path": "tests/models/test_grc_9_v3_coarse.py",
+      "sha256": "36945571d4d9bdcee8fa24d07119a0f47f83b015524ec0f370e9da5a28187841"
+    },
+    {
+      "path": "tests/models/test_grc_9_v3_column_h_assisted.py",
+      "sha256": "11216319f7bd26b38316d0fa0b1b0ad5dd482eafeabda0e97e10efb411228858"
+    },
+    {
+      "path": "tests/models/test_grc_9_v3_differential.py",
+      "sha256": "6db9601146e851e686c96bafb1fa8bb972fe117ef9e02c2ccceade9b6049b906"
+    },
+    {
+      "path": "tests/models/test_grc_9_v3_grcl9v3_lowering.py",
+      "sha256": "a94250d721c479475a39d014c43494b5fc5e204b2b32d076526deeb6f476ed29"
+    },
+    {
+      "path": "tests/models/test_grc_9_v3_hessian_readiness.py",
+      "sha256": "c1ed11fe4fcab3d83ce29caf9457a0999e110857e486385dd7d157289a282936"
+    },
+    {
+      "path": "tests/models/test_grc_9_v3_representative_runtime.py",
+      "sha256": "0c841de19954f98019dbedb90174bd53cac731862e8b503e3a161464e7347b00"
+    },
+    {
+      "path": "tests/models/test_grc_9_v3_sparks.py",
+      "sha256": "53b6337b50ffa97bfa4cbe34676b5817837fd6864cbe5870c5ed0acf256b310b"
+    },
+    {
+      "path": "tests/models/test_grc_9_v3_state.py",
+      "sha256": "fd1bf3f4fe3752c416fdc419f39d1a85bac608d194b5c434634a3602f7f74246"
+    },
+    {
+      "path": "tests/models/test_grc_9_v3_step.py",
+      "sha256": "dab5f857f395188c09c70cf0f5d257578e107422268908ec869746eecde52c69"
+    },
+    {
+      "path": "tests/models/test_grc_9_v3_transport.py",
+      "sha256": "e5fbd4c3012bbf4afbaceddb990afcceea0a6eec96f3d2f080351becc79fdadd"
+    },
+    {
+      "path": "tests/models/test_grc_v2_budget_observables.py",
+      "sha256": "2510fc8efd36b2c927edbbb15fea27b5d6c97d16e124a10fa2019350faef43d6"
+    },
+    {
+      "path": "tests/models/test_grc_v2_construction.py",
+      "sha256": "09d9ff8cd56dbd6cc646b19bfcaa2d038b315ed7b5f7635486f7c78f4b3dc5d3"
+    },
+    {
+      "path": "tests/models/test_grc_v2_landscape_blueprint.py",
+      "sha256": "dc0bb21973a0571b8c4ccefc059e477498b2cc05ce8e9f85250ef834d84bc942"
+    },
+    {
+      "path": "tests/models/test_grc_v2_landscape_import.py",
+      "sha256": "b4d4e3ee60db84769b0b9dc023bdff56a38164898fdc715b1cf139e755288ce7"
+    },
+    {
+      "path": "tests/models/test_grc_v2_landscape_runtime.py",
+      "sha256": "0de21b5d85afecbcbd93ee040ab372f5c23feda6eac3af6e6948d8075705891f"
+    },
+    {
+      "path": "tests/models/test_grc_v2_metric_labels.py",
+      "sha256": "072031927ba95ac478c1900ee4ec31bf540480fc6ff7f9778f23faa913d5b4d7"
+    },
+    {
+      "path": "tests/models/test_grc_v2_runtime_persistence.py",
+      "sha256": "29d3016512f8bf75f9c318c382a6c9f11a689f17ffabd3e7788f9d238bbb319e"
+    },
+    {
+      "path": "tests/models/test_grc_v2_sparks.py",
+      "sha256": "b41c5c7170fb41fa5fd675246aa0cd3d5b09878bc961820f27fed1ee775cab2c"
+    },
+    {
+      "path": "tests/models/test_grc_v2_step_skeleton.py",
+      "sha256": "09b8144dcf540f4a5d1680834f58e26fb4fc464ce9150728a156f5df8ca88842"
+    },
+    {
+      "path": "tests/models/test_grc_v2_topology_events.py",
+      "sha256": "d7181153112da5d56e82dec448c0171df9f7c2ca215b150ca89b8888fdf15966"
+    },
+    {
+      "path": "tests/models/test_grc_v2_validation_matrix.py",
+      "sha256": "6814ad6aec6a4743a1666ba3c4ff4f47055a203f6afce33f2ddf161682f6ff45"
+    },
+    {
+      "path": "tests/models/test_grc_v3_choice.py",
+      "sha256": "3fa092c6f4d9b65b35173a219537b82d1176d38f9772576c9e41e2f222d8a240"
+    },
+    {
+      "path": "tests/models/test_grc_v3_differential.py",
+      "sha256": "148a9422b2a84040b4716a9a1ab4d508f35020a22ad4aac67aa296ab8ba88aea"
+    },
+    {
+      "path": "tests/models/test_grc_v3_frontier_birth.py",
+      "sha256": "5078ff981c5cd0b07f08b16fe4c55263a07ab18ff84450322c5bf05381db10e7"
+    },
+    {
+      "path": "tests/models/test_grc_v3_hierarchy.py",
+      "sha256": "c40c383d6504986e2353a296c873b137a03a65581454896fd0d7e62cdb4d94a2"
+    },
+    {
+      "path": "tests/models/test_grc_v3_landscape_runtime.py",
+      "sha256": "5b09f3e05794480472c58b72016ff055c5957f9c1f0318d7f03fcdb43a1e22be"
+    },
+    {
+      "path": "tests/models/test_grc_v3_metric_labels.py",
+      "sha256": "18705d2e29498e83181aea8d6d1b1e348e0e3404d12ed2585bdf17cd7beb2f1e"
+    },
+    {
+      "path": "tests/models/test_grc_v3_runtime.py",
+      "sha256": "3dbc5bc167404d70f21a53ed582edd2b0f1371eaa92fd112d9a126790af3fb07"
+    },
+    {
+      "path": "tests/models/test_grc_v3_serialization.py",
+      "sha256": "86701f465a94a0eacdde146f5294c61bc1f6db3aec2b4591c66d6e66ca0e356a"
+    },
+    {
+      "path": "tests/models/test_grc_v3_sparks.py",
+      "sha256": "32d5fffe5174379f6cb8bf73e3791e403aad0d9979174e0887aac7ed9e944d83"
+    },
+    {
+      "path": "tests/models/test_grc_v3_state.py",
+      "sha256": "f3c66862b1ff7c3f9aaf931a94e3abe17c990c18c065d42222d448d81e8d010c"
+    },
+    {
+      "path": "tests/models/test_grc_v3_step.py",
+      "sha256": "cec289512df7f33a21c80ed6f46d23f0d34be6208524b4b2ee1a4dddcd2864e2"
+    },
+    {
+      "path": "tests/models/test_grc_v4.py",
+      "sha256": "6fef68572fb17afdd48a679554d0cc6abaae8d34c95ca31f2e33b3ec8248c193"
+    },
+    {
+      "path": "tests/models/test_grc_v4_codec.py",
+      "sha256": "465bc3448fcc196e01ab0003665e5eeebde581208a5628f0adeeeabebb770983"
+    },
+    {
+      "path": "tests/models/test_grc_v4_geometry.py",
+      "sha256": "0b0d6259079a15ff5096f23775173cc4b9fbf23d9c23662bdb7c1e0028164a73"
+    },
+    {
+      "path": "tests/models/test_grc_v4_profile.py",
+      "sha256": "6dcd4a0abffca13bc8a0c0e7e697a54e421ba079eaef5d77e4609184d67a0dea"
+    },
+    {
+      "path": "tests/models/test_grc_v4_state.py",
+      "sha256": "d7ce02acc2d663fd3f4513158193dd473a78c1f42bc985edfa2d2eff0943fb54"
+    },
+    {
+      "path": "tests/models/test_grc_v4_step.py",
+      "sha256": "cd6470b181eec32abf4540b4ddb0bc28d5303fd40dca40febf22ba6bc71cf51f"
+    },
+    {
+      "path": "tests/models/test_grc_v4_transport.py",
+      "sha256": "773e1315880ba8fbee5186c4ce3849aa3623e81f271c1730064254bbecf61f06"
+    },
+    {
+      "path": "tests/models/test_lgrc_9_v3_autonomy_contract.py",
+      "sha256": "1172e6a8caf79fcf57848e8b1dd788251e4978e3f34ee3f595330a5133610e17"
+    },
+    {
+      "path": "tests/models/test_lgrc_9_v3_construction.py",
+      "sha256": "ed397b97cb586eec30a882d5b4da92f395ade95f4cba6b3b1b6823fe2c944999"
+    },
+    {
+      "path": "tests/models/test_lgrc_9_v3_contract.py",
+      "sha256": "38574deb0bf0790ea9d63800d800478da5ffbe65073dd0c570f361dc85d5ba2b"
+    },
+    {
+      "path": "tests/models/test_lgrc_9_v3_module_split.py",
+      "sha256": "50e920647cb35aa824a1a2a15bdd6176e2b9bbcf0f8a4ac864be14caee6a54bb"
+    },
+    {
+      "path": "tests/models/test_lgrc_9_v3_native_packet_loop_baseline.py",
+      "sha256": "e9f5fe5a644007b8246a548c687c51bd5b561d0364cd3a2ffc31c40f7c31b520"
+    },
+    {
+      "path": "tests/models/test_lgrc_9_v3_native_packet_loop_control_parity.py",
+      "sha256": "8cc6dd9fbfca574b8370d46997a2d84e0b910eede52a0d3dee2c67200631cddd"
+    },
+    {
+      "path": "tests/models/test_lgrc_9_v3_native_packet_loop_route_aspect.py",
+      "sha256": "9d0a55c702f8e77bd9204752f5f4f6993a493bdb9d1022ad907c9313a30401bd"
+    },
+    {
+      "path": "tests/models/test_lgrc_9_v3_native_packet_loop_surplus_trigger.py",
+      "sha256": "ebd56dc1d25a10014dde069c0db2102f7c4a28a10edfa1c2d38b7b619449a193"
+    },
+    {
+      "path": "tests/models/test_lgrc_9_v3_restoration.py",
+      "sha256": "881e1596ee39594bb21ce1ae9e3928c1a9eafe79255dbc69438d4de98c9d5b97"
+    },
+    {
+      "path": "tests/models/test_lgrc_9_v3_restoration_matrix.py",
+      "sha256": "b5c740545022c3be11e256d95645b57954bce993a46e7cc26edcca33517eb154"
+    },
+    {
+      "path": "tests/models/test_lgrc_9_v3_runtime.py",
+      "sha256": "19f310a120c5efaa4ee068fca7c6b7ffc9cedec745bc42e1f8156eb120b8736b"
+    },
+    {
+      "path": "tests/models/test_reset_baseline_persistence.py",
+      "sha256": "6236748f6bc7995dda86f7a207ccce373b33d1b7ecd90849106839baa305f01a"
+    }
+  ],
+  "commands": [
+    "GRCV4_PACKAGE_TESTS=1 GRCV4_WHEELHOUSE=<wheelhouse> .venv/bin/python -m unittest discover -s tests/core -t .",
+    "GRCV4_PACKAGE_TESTS=1 GRCV4_WHEELHOUSE=<wheelhouse> .venv/bin/python -m unittest discover -s tests/models -t .",
+    ".venv/bin/python -m unittest tests.models.grcv4_conformance_harness tests.models.grcv4_reference_oracles"
+  ],
+  "execution_note": "The recorded run concatenates these identical unittest suites in one process, using TextTestRunner(verbosity=2). No test source is modified by the runner.",
+  "requirements": [
+    "ast_serialize==0.9.0",
+    "asttokens==3.0.2",
+    "attrs==26.1.0",
+    "build==1.6.0",
+    "contourpy==1.3.3",
+    "cycler==0.12.1",
+    "decorator==5.3.1",
+    "executing==2.2.1",
+    "fonttools==4.63.0",
+    "ipython==9.15.0",
+    "ipython_pygments_lexers==1.1.1",
+    "jedi==0.20.0",
+    "Jinja2==3.1.6",
+    "jsonpickle==4.1.2",
+    "jsonschema==4.26.0",
+    "jsonschema-specifications==2025.9.1",
+    "kiwisolver==1.5.0",
+    "librt==0.15.0",
+    "MarkupSafe==3.0.3",
+    "matplotlib==3.11.1",
+    "matplotlib-inline==0.2.2",
+    "mypy==2.1.0",
+    "mypy_extensions==1.1.0",
+    "networkx==3.6.1",
+    "numpy==2.4.6",
+    "packaging==26.2",
+    "parso==0.8.7",
+    "pathspec==1.1.1",
+    "pexpect==4.9.0",
+    "pillow==12.3.0",
+    "pip==24.0",
+    "prompt_toolkit==3.0.52",
+    "psutil==7.2.2",
+    "ptyprocess==0.7.0",
+    "pure_eval==0.2.3",
+    "Pygments==2.20.0",
+    "pyparsing==3.3.2",
+    "pyproject_hooks==1.2.0",
+    "python-dateutil==2.9.0.post0",
+    "pyvis==0.3.2",
+    "PyYAML==6.0.3",
+    "referencing==0.37.0",
+    "rfc8785==0.1.4",
+    "rpds-py==2026.6.3",
+    "ruff==0.15.16",
+    "setuptools==84.0.0",
+    "six==1.17.0",
+    "stack-data==0.6.3",
+    "traitlets==5.15.1",
+    "typing_extensions==4.16.0",
+    "wcwidth==0.8.2",
+    "wheel==0.48.0"
+  ],
+  "wheelhouse": [
+    {
+      "filename": "ast_serialize-0.9.0-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+      "sha256": "1514f4a39704e2e815f9fc675fc13f19f694f212086b520110840782cf3c5295"
+    },
+    {
+      "filename": "asttokens-3.0.2-py3-none-any.whl",
+      "sha256": "9da13157f5b28becde0bd374fc677dcd3c290614264eff096f167c469cd9f933"
+    },
+    {
+      "filename": "attrs-26.1.0-py3-none-any.whl",
+      "sha256": "c647aa4a12dfbad9333ca4e71fe62ddc36f4e63b2d260a37a8b83d2f043ac309"
+    },
+    {
+      "filename": "build-1.6.0-py3-none-any.whl",
+      "sha256": "f7aaf1ebbb79178a02ba248bb524f2176b256017e17e8e4bd4289c7b38cc2bad"
+    },
+    {
+      "filename": "contourpy-1.3.3-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+      "sha256": "4d00e655fcef08aba35ec9610536bfe90267d7ab5ba944f7032549c55a146da1"
+    },
+    {
+      "filename": "cycler-0.12.1-py3-none-any.whl",
+      "sha256": "85cef7cff222d8644161529808465972e51340599459b8ac3ccbac5a854e0d30"
+    },
+    {
+      "filename": "decorator-5.3.1-py3-none-any.whl",
+      "sha256": "f47fe6fdbd2edd623ecfe36875d37aba411624e2670dd395dddae1358689bb3c"
+    },
+    {
+      "filename": "executing-2.2.1-py2.py3-none-any.whl",
+      "sha256": "760643d3452b4d777d295bb167ccc74c64a81df23fb5e08eff250c425a4b2017"
+    },
+    {
+      "filename": "fonttools-4.63.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+      "sha256": "58dc6bb86a78d782f00f9190ca02c119cf5bbe2807536e361e18d42019f877d8"
+    },
+    {
+      "filename": "ipython-9.15.0-py3-none-any.whl",
+      "sha256": "515ad9c3cdf0c932a5a9f6245419e8aba706b7bd03c3e1d3a1c83d9351d6aa6e"
+    },
+    {
+      "filename": "ipython_pygments_lexers-1.1.1-py3-none-any.whl",
+      "sha256": "a9462224a505ade19a605f71f8fa63c2048833ce50abc86768a0d81d876dc81c"
+    },
+    {
+      "filename": "jedi-0.20.0-py2.py3-none-any.whl",
+      "sha256": "7bdd9c2634f56713299976f4cbd59cb3fa92165cc5e05ea811fb253480728b67"
+    },
+    {
+      "filename": "jinja2-3.1.6-py3-none-any.whl",
+      "sha256": "85ece4451f492d0c13c5dd7c13a64681a86afae63a5f347908daf103ce6d2f67"
+    },
+    {
+      "filename": "jsonpickle-4.1.2-py3-none-any.whl",
+      "sha256": "7ffe34426bc797684dbf1dc84185558bd864cd25b1ff5fb01b7405e392d0a937"
+    },
+    {
+      "filename": "jsonschema-4.26.0-py3-none-any.whl",
+      "sha256": "d489f15263b8d200f8387e64b4c3a75f06629559fb73deb8fdfb525f2dab50ce"
+    },
+    {
+      "filename": "jsonschema_specifications-2025.9.1-py3-none-any.whl",
+      "sha256": "98802fee3a11ee76ecaca44429fda8a41bff98b00a0f2838151b113f210cc6fe"
+    },
+    {
+      "filename": "kiwisolver-1.5.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+      "sha256": "bb5136fb5352d3f422df33f0c879a1b0c204004324150cc3b5e3c4f310c9049f"
+    },
+    {
+      "filename": "librt-0.15.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+      "sha256": "89cc46cfd15022e35084355478c9ac809d90b1152222706ac9a7655ec21df6fa"
+    },
+    {
+      "filename": "markupsafe-3.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+      "sha256": "d6dd0be5b5b189d31db7cda48b91d7e0a9795f31430b7f271219ab30f1d3ac9d"
+    },
+    {
+      "filename": "matplotlib-3.11.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+      "sha256": "ba8f811b8ddfac493734d6af0b2dff96919d0c28ca0d641858dab4262777c6ea"
+    },
+    {
+      "filename": "matplotlib_inline-0.2.2-py3-none-any.whl",
+      "sha256": "3c821cf1c209f59fb2d2d64abbf5b23b67bcb2210d663f9918dd851c6da1fcf6"
+    },
+    {
+      "filename": "mypy-2.1.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+      "sha256": "bf03e12003084a67395184d3eb8cbd6a489dc3655b5664b28c210a9e2403ab0b"
+    },
+    {
+      "filename": "mypy_extensions-1.1.0-py3-none-any.whl",
+      "sha256": "1be4cccdb0f2482337c4743e60421de3a356cd97508abadd57d47403e94f5505"
+    },
+    {
+      "filename": "networkx-3.6.1-py3-none-any.whl",
+      "sha256": "d47fbf302e7d9cbbb9e2555a0d267983d2aa476bac30e90dfbe5669bd57f3762"
+    },
+    {
+      "filename": "numpy-2.4.6-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+      "sha256": "90f9849678c75fe7afa2d348ac842c168b0a4d3d61919687216dfc547976d853"
+    },
+    {
+      "filename": "packaging-26.2-py3-none-any.whl",
+      "sha256": "5fc45236b9446107ff2415ce77c807cee2862cb6fac22b8a73826d0693b0980e"
+    },
+    {
+      "filename": "parso-0.8.7-py2.py3-none-any.whl",
+      "sha256": "a8926eb2a1b915486941fdbd31e86a4baf88fe8c210f25f2f35ecec5b574ca1c"
+    },
+    {
+      "filename": "pathspec-1.1.1-py3-none-any.whl",
+      "sha256": "a00ce642f577bf7f473932318056212bc4f8bfdf53128c78bbd5af0b9b20b189"
+    },
+    {
+      "filename": "pexpect-4.9.0-py2.py3-none-any.whl",
+      "sha256": "7236d1e080e4936be2dc3e326cec0af72acf9212a7e1d060210e70a47e253523"
+    },
+    {
+      "filename": "pillow-12.3.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+      "sha256": "78cb2c6865a35ab8ff8b75fd122f6033b92a62c82801110e48ddd6c936a45d91"
+    },
+    {
+      "filename": "pip-24.0-py3-none-any.whl",
+      "sha256": "ba0d021a166865d2265246961bec0152ff124de910c5cc39f1156ce3fa7c69dc"
+    },
+    {
+      "filename": "prompt_toolkit-3.0.52-py3-none-any.whl",
+      "sha256": "9aac639a3bbd33284347de5ad8d68ecc044b91a762dc39b7c21095fcd6a19955"
+    },
+    {
+      "filename": "psutil-7.2.2-cp36-abi3-manylinux2010_x86_64.manylinux_2_12_x86_64.manylinux_2_28_x86_64.whl",
+      "sha256": "076a2d2f923fd4821644f5ba89f059523da90dc9014e85f8e45a5774ca5bc6f9"
+    },
+    {
+      "filename": "ptyprocess-0.7.0-py2.py3-none-any.whl",
+      "sha256": "4b41f3967fce3af57cc7e94b888626c18bf37a083e3651ca8feeb66d492fef35"
+    },
+    {
+      "filename": "pure_eval-0.2.3-py3-none-any.whl",
+      "sha256": "1db8e35b67b3d218d818ae653e27f06c3aa420901fa7b081ca98cbedc874e0d0"
+    },
+    {
+      "filename": "pygments-2.20.0-py3-none-any.whl",
+      "sha256": "81a9e26dd42fd28a23a2d169d86d7ac03b46e2f8b59ed4698fb4785f946d0176"
+    },
+    {
+      "filename": "pyparsing-3.3.2-py3-none-any.whl",
+      "sha256": "850ba148bd908d7e2411587e247a1e4f0327839c40e2e5e6d05a007ecc69911d"
+    },
+    {
+      "filename": "pyproject_hooks-1.2.0-py3-none-any.whl",
+      "sha256": "9e5c6bfa8dcc30091c74b0cf803c81fdd29d94f01992a7707bc97babb1141913"
+    },
+    {
+      "filename": "python_dateutil-2.9.0.post0-py2.py3-none-any.whl",
+      "sha256": "a8b2bc7bffae282281c8140a97d3aa9c14da0b136dfe83f850eea9a5f7470427"
+    },
+    {
+      "filename": "pyvis-0.3.2-py3-none-any.whl",
+      "sha256": "5720c4ca8161dc5d9ab352015723abb7a8bb8fb443edeb07f7a322db34a97555"
+    },
+    {
+      "filename": "pyyaml-6.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+      "sha256": "ba1cc08a7ccde2d2ec775841541641e4548226580ab850948cbfda66a1befcdc"
+    },
+    {
+      "filename": "referencing-0.37.0-py3-none-any.whl",
+      "sha256": "381329a9f99628c9069361716891d34ad94af76e461dcb0335825aecc7692231"
+    },
+    {
+      "filename": "rfc8785-0.1.4-py3-none-any.whl",
+      "sha256": "520d690b448ecf0703691c76e1a34a24ddcd4fc5bc41d589cb7c58ec651bcd48"
+    },
+    {
+      "filename": "rpds_py-2026.6.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+      "sha256": "ecabd69db66de867690f9797f2f8fa27ba501bbc24540cbdbdc649cd15888ba6"
+    },
+    {
+      "filename": "ruff-0.15.16-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+      "sha256": "bb27515fa6240fb586ae82b901a59e67d24acff86f2190b433dc542fe0435aeb"
+    },
+    {
+      "filename": "setuptools-84.0.0-py3-none-any.whl",
+      "sha256": "51a52592b3b99e102b609654876bd65f19f999935166d1352678931132b0c670"
+    },
+    {
+      "filename": "six-1.17.0-py2.py3-none-any.whl",
+      "sha256": "4721f391ed90541fddacab5acf947aa0d3dc7d27b2e1e8eda2be8970586c3274"
+    },
+    {
+      "filename": "stack_data-0.6.3-py3-none-any.whl",
+      "sha256": "d5558e0c25a4cb0853cddad3d77da9891a08cb85dd9f9f91b9f8cd66e511e695"
+    },
+    {
+      "filename": "traitlets-5.15.1-py3-none-any.whl",
+      "sha256": "770a53705f84b81ac107e83a1b3328ff2dae16094d8fc3cfc004e4b22dfd8e92"
+    },
+    {
+      "filename": "typing_extensions-4.16.0-py3-none-any.whl",
+      "sha256": "481caa481374e813c1b176ada14e97f1f67a4539ce9cfeb3f350d78d6370c2e8"
+    },
+    {
+      "filename": "wcwidth-0.8.2-py3-none-any.whl",
+      "sha256": "d63947694a0539a1d51e01eda7caf800c291020e6cdd7e28ad7b14dd33ad4f85"
+    },
+    {
+      "filename": "wheel-0.48.0-py3-none-any.whl",
+      "sha256": "3217dcc807155e45db462d7ef2431f5ddda0d7273b700d05a67b271ceb1287ab"
+    }
+  ]
+}

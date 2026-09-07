@@ -1,0 +1,35 @@
+{
+  "iteration_id": "P9-3.1",
+  "status": "passed",
+  "command": [
+    ".venv/bin/python",
+    "tests/models/test_grc_v4_geometry.py",
+    "--reconstruct",
+    "implementation/phase-9-grcv4/evidence/P9-3.1/primitive-replay/inputs.json"
+  ],
+  "comparison": "exact identity/incidence values; absolute tolerance 4e-15 on the explicitly rational SPD witness",
+  "artifact_bindings": [
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-3.1/primitive-replay/inputs.json",
+      "sha256": "cb52b3da21cca28049219e7fb78346999d23a4404c8c10d4cadfcb0437926a07"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-3.1/primitive-replay/expected.json",
+      "sha256": "acd92892126efa24b83635fec0ff44d6fba4353dfe37ec9fb361948a1b0f55d7"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-3.1/primitive-replay/actual.json",
+      "sha256": "2e4500e50f7372323d07eca4464265da9562e1c3653e40aa0ada7a706c21c0a8"
+    }
+  ],
+  "source_bindings": [
+    {
+      "path": "src/pygrc/models/grc_v4_geometry.py",
+      "sha256": "d33efd39c6432ce192be6fa348a0041e065d6a962f020afa96fb64198aae1bbb"
+    },
+    {
+      "path": "tests/models/test_grc_v4_geometry.py",
+      "sha256": "794bb23d8a8f713ee94ea7504a7b00e1d99a80f2bd5dc301fde534648616f9d1"
+    }
+  ]
+}

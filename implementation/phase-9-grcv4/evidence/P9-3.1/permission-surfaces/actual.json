@@ -1,0 +1,2217 @@
+{
+  "iteration_id": "P9-3.1",
+  "status": "passed",
+  "authority_pressure": {
+    "passed": 102,
+    "failed": 0,
+    "report_digest": "825fad0802523eff2e9b1a67df4a29a4c6c41fa8aa594f72c0937a63a61a1a5b",
+    "raw_report_sha256": "bc2f1ce63ee65346d0f06dd090e00d952a1536dd487f08e352f31effc4c76979",
+    "policy_digest": "55804b5a7a4c486a3f256773efaf7e4df04a4c84644c68efe88a853be28c12ad",
+    "tree": {
+      "current_artifact_digest": "5379583a98a4fb7eb2c1bb290b7d3ff10a91c53fe9743ce5b8f7ed641c7bd737",
+      "protected_baseline_files": 725,
+      "registered_runtime_files": 100
+    },
+    "runtime_conformance_claimed": false,
+    "cases": [
+      {
+        "case_id": "accepted_G1_current_tree",
+        "scope": "disposable_P9_G1_candidate_not_live_runtime",
+        "evidence_kind": "actual_checker_and_mutation",
+        "candidate_decision": "admitted",
+        "assertion_result": "passed",
+        "expected_reason": null,
+        "actual_reason": "exact accepted scope admitted",
+        "intended_check_reached": true,
+        "protected_pre_post": {
+          "after_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "before_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "restored": true
+        },
+        "project_effect": {
+          "P9_G1_accepted": false,
+          "runtime_authorized": false,
+          "scientific_promotion": false
+        },
+        "raw_case_sha256": "35a5f020b01c5ab60456e6c1ed5a9d2f5e156baa8a02af3f4a0bedf37887153f"
+      },
+      {
+        "case_id": "corrupt_handoff_does_not_revoke_implementation_permission",
+        "scope": "disposable_P9_G1_candidate_not_live_runtime",
+        "evidence_kind": "actual_checker_and_mutation",
+        "candidate_decision": "admitted",
+        "assertion_result": "passed",
+        "expected_reason": null,
+        "actual_reason": "exact accepted scope admitted",
+        "intended_check_reached": true,
+        "protected_pre_post": {
+          "after_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "before_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "restored": true
+        },
+        "project_effect": {
+          "P9_G1_accepted": false,
+          "runtime_authorized": false,
+          "scientific_promotion": false
+        },
+        "raw_case_sha256": "fab6b2575ee3a189a993246a54f733ffd3ea6b74538bd8592d5c99c4db4e0912"
+      },
+      {
+        "case_id": "missing_handoff_does_not_revoke_implementation_permission",
+        "scope": "disposable_P9_G1_candidate_not_live_runtime",
+        "evidence_kind": "actual_checker_and_mutation",
+        "candidate_decision": "admitted",
+        "assertion_result": "passed",
+        "expected_reason": null,
+        "actual_reason": "exact accepted scope admitted",
+        "intended_check_reached": true,
+        "protected_pre_post": {
+          "after_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "before_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "restored": true
+        },
+        "project_effect": {
+          "P9_G1_accepted": false,
+          "runtime_authorized": false,
+          "scientific_promotion": false
+        },
+        "raw_case_sha256": "06bfb6e5098ef88a758a3061a1df2a0f8729c13df40c1c02efb5c6b21010ff14"
+      },
+      {
+        "case_id": "portable_paths_cannot_change_dependencies",
+        "scope": "disposable_P9_G1_candidate_not_live_runtime",
+        "evidence_kind": "actual_checker_and_mutation",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "expected_reason": "portability amendment changed reviewed content",
+        "actual_reason": "portability amendment changed reviewed content: implementation/phase-9-grcv4/tranche-1/P9-1.4-1.5-ExecutionRecord.json",
+        "intended_check_reached": true,
+        "protected_pre_post": {
+          "after_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "before_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "restored": true
+        },
+        "project_effect": {
+          "P9_G1_accepted": false,
+          "runtime_authorized": false,
+          "scientific_promotion": false
+        },
+        "raw_case_sha256": "f5ce883b6dc4257bf7b620bd4a42b54d6c95b949587fc2c0ca32c15855a95588"
+      },
+      {
+        "case_id": "portable_paths_cannot_change_ownership",
+        "scope": "disposable_P9_G1_candidate_not_live_runtime",
+        "evidence_kind": "actual_checker_and_mutation",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "expected_reason": "portability amendment changed reviewed content",
+        "actual_reason": "portability amendment changed reviewed content: implementation/phase-9-grcv4/tranche-1/P9-1.4-1.5-ExecutionRecord.json",
+        "intended_check_reached": true,
+        "protected_pre_post": {
+          "after_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "before_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "restored": true
+        },
+        "project_effect": {
+          "P9_G1_accepted": false,
+          "runtime_authorized": false,
+          "scientific_promotion": false
+        },
+        "raw_case_sha256": "9ed55ed8088b7df092c2a914136e87480a96e3126af93aac7fc0b07beb9c9260"
+      },
+      {
+        "case_id": "portable_opening_cannot_change_authority",
+        "scope": "disposable_P9_G1_candidate_not_live_runtime",
+        "evidence_kind": "actual_checker_and_mutation",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "expected_reason": "path normalization changed historical meaning",
+        "actual_reason": "path normalization changed historical meaning: implementation/Phase-9-GRCV4-PhaseOpening.json",
+        "intended_check_reached": true,
+        "protected_pre_post": {
+          "after_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "before_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "restored": true
+        },
+        "project_effect": {
+          "P9_G1_accepted": false,
+          "runtime_authorized": false,
+          "scientific_promotion": false
+        },
+        "raw_case_sha256": "60400e79c4476208cabe88948d8537f92f487d71ba1a176617e55201e0b9f563"
+      },
+      {
+        "case_id": "portable_snapshot_cannot_change_content",
+        "scope": "disposable_P9_G1_candidate_not_live_runtime",
+        "evidence_kind": "actual_checker_and_mutation",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "expected_reason": "path normalization changed historical meaning",
+        "actual_reason": "path normalization changed historical meaning: implementation/phase-9-grcv4/verification/history/P9-1.6-ArtifactSnapshot.json",
+        "intended_check_reached": true,
+        "protected_pre_post": {
+          "after_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "before_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "restored": true
+        },
+        "project_effect": {
+          "P9_G1_accepted": false,
+          "runtime_authorized": false,
+          "scientific_promotion": false
+        },
+        "raw_case_sha256": "ba1fd3264e82ef188e36dc700a268358e1f986dfc9415969663681ae4dd63ff8"
+      },
+      {
+        "case_id": "portable_checker_cannot_disable_claim_checks",
+        "scope": "disposable_P9_G1_candidate_not_live_runtime",
+        "evidence_kind": "actual_checker_and_mutation",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "expected_reason": "path normalization changed historical meaning",
+        "actual_reason": "path normalization changed historical meaning: implementation/investigations/grc9v4-constitutive-design/scripts/audit_grc9v4_d10_claim_topology.py",
+        "intended_check_reached": true,
+        "protected_pre_post": {
+          "after_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "before_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "restored": true
+        },
+        "project_effect": {
+          "P9_G1_accepted": false,
+          "runtime_authorized": false,
+          "scientific_promotion": false
+        },
+        "raw_case_sha256": "8894f7e25d66769f8fb3457a8ff16a33f02245671dab0cd8b6b0bad052c8eeff"
+      },
+      {
+        "case_id": "portable_review_input_must_match_original_hash",
+        "scope": "disposable_P9_G1_candidate_not_live_runtime",
+        "evidence_kind": "actual_checker_and_mutation",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "expected_reason": "planning review input bytes changed",
+        "actual_reason": "planning review input bytes changed",
+        "intended_check_reached": true,
+        "protected_pre_post": {
+          "after_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "before_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "restored": true
+        },
+        "project_effect": {
+          "P9_G1_accepted": false,
+          "runtime_authorized": false,
+          "scientific_promotion": false
+        },
+        "raw_case_sha256": "38840cfcc39b26f1356c5e9949347d165755dd7d5ecad6a19df45737d43b90ad"
+      },
+      {
+        "case_id": "accepted_G1_exact_targets",
+        "scope": "disposable_P9_G1_candidate_not_live_runtime",
+        "evidence_kind": "actual_checker_and_mutation",
+        "candidate_decision": "admitted",
+        "assertion_result": "passed",
+        "expected_reason": null,
+        "actual_reason": "exact accepted scope admitted",
+        "intended_check_reached": true,
+        "protected_pre_post": {
+          "after_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "before_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "restored": true
+        },
+        "project_effect": {
+          "P9_G1_accepted": false,
+          "runtime_authorized": false,
+          "scientific_promotion": false
+        },
+        "raw_case_sha256": "da2ed4d0991806daf8713af9ced3ff491191586d8fffd453b0ea68a949111429"
+      },
+      {
+        "case_id": "accepted_G1_test_target",
+        "scope": "disposable_P9_G1_candidate_not_live_runtime",
+        "evidence_kind": "actual_checker_and_mutation",
+        "candidate_decision": "admitted",
+        "assertion_result": "passed",
+        "expected_reason": null,
+        "actual_reason": "exact accepted scope admitted",
+        "intended_check_reached": true,
+        "protected_pre_post": {
+          "after_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "before_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "restored": true
+        },
+        "project_effect": {
+          "P9_G1_accepted": false,
+          "runtime_authorized": false,
+          "scientific_promotion": false
+        },
+        "raw_case_sha256": "b8ac2a6baa82a69a1d9c8647664abb9fa175920751c6ae07524ff1c386f63292"
+      },
+      {
+        "case_id": "published_permitted_path_cannot_drop_registration",
+        "scope": "disposable_P9_G1_candidate_not_live_runtime",
+        "evidence_kind": "actual_checker_and_mutation",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "expected_reason": "published runtime/evidence deletion or rename forbidden",
+        "actual_reason": "published runtime/evidence deletion or rename forbidden",
+        "intended_check_reached": true,
+        "protected_pre_post": {
+          "after_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "before_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "restored": true
+        },
+        "project_effect": {
+          "P9_G1_accepted": false,
+          "runtime_authorized": false,
+          "scientific_promotion": false
+        },
+        "raw_case_sha256": "f948edf32b09ca0a938f06c1190f05e02f63afb700c3d23109a4e6dd851044a4"
+      },
+      {
+        "case_id": "missing_acceptance",
+        "scope": "disposable_P9_G1_candidate_not_live_runtime",
+        "evidence_kind": "actual_checker_and_mutation",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "expected_reason": "P9-1.9-G1Acceptance.json",
+        "actual_reason": "missing protected file: implementation/phase-9-grcv4/tranche-1/P9-1.9-G1Acceptance.json",
+        "intended_check_reached": true,
+        "protected_pre_post": {
+          "after_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "before_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "restored": true
+        },
+        "project_effect": {
+          "P9_G1_accepted": false,
+          "runtime_authorized": false,
+          "scientific_promotion": false
+        },
+        "raw_case_sha256": "e6be3632d6afda59adc6b3f713af5a12e6d26598eeee42b20d7895d58ff161a0"
+      },
+      {
+        "case_id": "rehashed_expanded_acceptance",
+        "scope": "disposable_P9_G1_candidate_not_live_runtime",
+        "evidence_kind": "actual_checker_and_mutation",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "expected_reason": "untrusted P9-G1 acceptance",
+        "actual_reason": "untrusted P9-G1 acceptance",
+        "intended_check_reached": true,
+        "protected_pre_post": {
+          "after_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "before_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "restored": true
+        },
+        "project_effect": {
+          "P9_G1_accepted": false,
+          "runtime_authorized": false,
+          "scientific_promotion": false
+        },
+        "raw_case_sha256": "8c2c19e9ae992b24380946627152391c0d36776e3ab8df45c5f45d77b34b7722"
+      },
+      {
+        "case_id": "manifest_accepted_generic_runtime_support",
+        "scope": "disposable_P9_G1_candidate_not_live_runtime",
+        "evidence_kind": "actual_checker_and_mutation",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "expected_reason": "cannot grant conformance",
+        "actual_reason": "work manifest cannot grant conformance",
+        "intended_check_reached": true,
+        "protected_pre_post": {
+          "after_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "before_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "restored": true
+        },
+        "project_effect": {
+          "P9_G1_accepted": false,
+          "runtime_authorized": false,
+          "scientific_promotion": false
+        },
+        "raw_case_sha256": "d0ff258efc41a62444cf3323f08eae062b619acccbaae026062bb5a4495c3a88"
+      },
+      {
+        "case_id": "manifest_admitted_specialization_support_sets",
+        "scope": "disposable_P9_G1_candidate_not_live_runtime",
+        "evidence_kind": "actual_checker_and_mutation",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "expected_reason": "cannot grant conformance",
+        "actual_reason": "work manifest cannot grant conformance",
+        "intended_check_reached": true,
+        "protected_pre_post": {
+          "after_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "before_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "restored": true
+        },
+        "project_effect": {
+          "P9_G1_accepted": false,
+          "runtime_authorized": false,
+          "scientific_promotion": false
+        },
+        "raw_case_sha256": "828235a938db08f260f5cbf9d13cb584914aa23c424f2b9623187c7d59bc8ff5"
+      },
+      {
+        "case_id": "manifest_approval_digest",
+        "scope": "disposable_P9_G1_candidate_not_live_runtime",
+        "evidence_kind": "actual_checker_and_mutation",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "expected_reason": "stale work manifest",
+        "actual_reason": "stale work manifest",
+        "intended_check_reached": true,
+        "protected_pre_post": {
+          "after_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "before_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "restored": true
+        },
+        "project_effect": {
+          "P9_G1_accepted": false,
+          "runtime_authorized": false,
+          "scientific_promotion": false
+        },
+        "raw_case_sha256": "661bade2fd4dc467e83fe28d3e1b638a565e737a25cca4bb789f6bd531f0edf3"
+      },
+      {
+        "case_id": "manifest_new_runtime_authority",
+        "scope": "disposable_P9_G1_candidate_not_live_runtime",
+        "evidence_kind": "actual_checker_and_mutation",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "expected_reason": "cannot add authority",
+        "actual_reason": "work manifest cannot add authority",
+        "intended_check_reached": true,
+        "protected_pre_post": {
+          "after_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "before_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "restored": true
+        },
+        "project_effect": {
+          "P9_G1_accepted": false,
+          "runtime_authorized": false,
+          "scientific_promotion": false
+        },
+        "raw_case_sha256": "341673a992f9441a388935cef300a71552ca4d08bc81a3f5dae97e2c36480239"
+      },
+      {
+        "case_id": "GRC9V4_before_G3",
+        "scope": "disposable_P9_G1_candidate_not_live_runtime",
+        "evidence_kind": "actual_checker_and_mutation",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "expected_reason": "specialization requires accepted P9-G3",
+        "actual_reason": "specialization requires accepted P9-G3",
+        "intended_check_reached": true,
+        "protected_pre_post": {
+          "after_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "before_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "restored": true
+        },
+        "project_effect": {
+          "P9_G1_accepted": false,
+          "runtime_authorized": false,
+          "scientific_promotion": false
+        },
+        "raw_case_sha256": "8d75cf41e6d01b28f8b3855d3b96709e4bd2dbf2b4300f4199e5eab20babfc05"
+      },
+      {
+        "case_id": "GRC9V4_iteration_before_G3",
+        "scope": "disposable_P9_G1_candidate_not_live_runtime",
+        "evidence_kind": "actual_checker_and_mutation",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "expected_reason": "specialization requires accepted P9-G3",
+        "actual_reason": "specialization requires accepted P9-G3",
+        "intended_check_reached": true,
+        "protected_pre_post": {
+          "after_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "before_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "restored": true
+        },
+        "project_effect": {
+          "P9_G1_accepted": false,
+          "runtime_authorized": false,
+          "scientific_promotion": false
+        },
+        "raw_case_sha256": "928a16e08ebf9f5610504a7860923461642feac4d1888d23b438b1e99b1371af"
+      },
+      {
+        "case_id": "unregistered_leaf",
+        "scope": "disposable_P9_G1_candidate_not_live_runtime",
+        "evidence_kind": "actual_checker_and_mutation",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "expected_reason": "unregistered work iteration",
+        "actual_reason": "unregistered work iteration",
+        "intended_check_reached": true,
+        "protected_pre_post": {
+          "after_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "before_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "restored": true
+        },
+        "project_effect": {
+          "P9_G1_accepted": false,
+          "runtime_authorized": false,
+          "scientific_promotion": false
+        },
+        "raw_case_sha256": "b11b58f6e9bd0df97af365a8b5ef606e8513cbe02f7feaeeaa445c1ff545e74e"
+      },
+      {
+        "case_id": "unreviewed_new_V4_module",
+        "scope": "disposable_P9_G1_candidate_not_live_runtime",
+        "evidence_kind": "actual_checker_and_mutation",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "expected_reason": "unapproved runtime or evidence target",
+        "actual_reason": "unapproved runtime or evidence target: src/pygrc/models/grc_v4_surprise.py",
+        "intended_check_reached": true,
+        "protected_pre_post": {
+          "after_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "before_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "restored": true
+        },
+        "project_effect": {
+          "P9_G1_accepted": false,
+          "runtime_authorized": false,
+          "scientific_promotion": false
+        },
+        "raw_case_sha256": "72309739684a902690dd0477e6f94527b3ad70fad9bc2b628e6d6394bc81faf8"
+      },
+      {
+        "case_id": "stale_work_bytes",
+        "scope": "disposable_P9_G1_candidate_not_live_runtime",
+        "evidence_kind": "actual_checker_and_mutation",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "expected_reason": "work content binding mismatch",
+        "actual_reason": "work content binding mismatch",
+        "intended_check_reached": true,
+        "protected_pre_post": {
+          "after_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "before_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "restored": true
+        },
+        "project_effect": {
+          "P9_G1_accepted": false,
+          "runtime_authorized": false,
+          "scientific_promotion": false
+        },
+        "raw_case_sha256": "b96f3c38c7e44cfb1d7a765daed685ec9b87a19f0a039ff20b2f2063d41c5183"
+      },
+      {
+        "case_id": "combined_good_and_frozen_edit",
+        "scope": "disposable_P9_G1_candidate_not_live_runtime",
+        "evidence_kind": "actual_checker_and_mutation",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "expected_reason": "frozen bytes changed",
+        "actual_reason": "frozen bytes changed: specs/grc-v4-spec.md",
+        "intended_check_reached": true,
+        "protected_pre_post": {
+          "after_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "before_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "restored": true
+        },
+        "project_effect": {
+          "P9_G1_accepted": false,
+          "runtime_authorized": false,
+          "scientific_promotion": false
+        },
+        "raw_case_sha256": "f2e9f8040d0ac05124dc09b7ee702515a363c8ca57b1229837371134bfe61cf5"
+      },
+      {
+        "case_id": "legacy_bytes",
+        "scope": "disposable_P9_G1_candidate_not_live_runtime",
+        "evidence_kind": "actual_checker_and_mutation",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "expected_reason": "frozen bytes changed",
+        "actual_reason": "frozen bytes changed: src/pygrc/models/grc_9_v3.py",
+        "intended_check_reached": true,
+        "protected_pre_post": {
+          "after_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "before_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "restored": true
+        },
+        "project_effect": {
+          "P9_G1_accepted": false,
+          "runtime_authorized": false,
+          "scientific_promotion": false
+        },
+        "raw_case_sha256": "a292f64068df2b379e361f9dc33ddcbb66ab58319852bf40406ec6be5c8b5131"
+      },
+      {
+        "case_id": "legacy_test_bytes",
+        "scope": "disposable_P9_G1_candidate_not_live_runtime",
+        "evidence_kind": "actual_checker_and_mutation",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "expected_reason": "frozen bytes changed",
+        "actual_reason": "frozen bytes changed: tests/core/test_capabilities.py",
+        "intended_check_reached": true,
+        "protected_pre_post": {
+          "after_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "before_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "restored": true
+        },
+        "project_effect": {
+          "P9_G1_accepted": false,
+          "runtime_authorized": false,
+          "scientific_promotion": false
+        },
+        "raw_case_sha256": "8758e51fe6e641459942fed55ae1dae021d8d4cd05aabb4c51e20bd22a3cf7f8"
+      },
+      {
+        "case_id": "old_planning_policy",
+        "scope": "disposable_P9_G1_candidate_not_live_runtime",
+        "evidence_kind": "actual_checker_and_mutation",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "expected_reason": "immutable predecessor changed",
+        "actual_reason": "immutable predecessor changed: implementation/phase-9-grcv4/verification/Phase9VerificationSuccessor.json",
+        "intended_check_reached": true,
+        "protected_pre_post": {
+          "after_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "before_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "restored": true
+        },
+        "project_effect": {
+          "P9_G1_accepted": false,
+          "runtime_authorized": false,
+          "scientific_promotion": false
+        },
+        "raw_case_sha256": "e9cffa942a54faca5e2d82a01c685dabf2b0e5e5a55e6f194ddfe3bf006081f6"
+      },
+      {
+        "case_id": "additive_lazy_export",
+        "scope": "isolated_integration_contract_not_current_leaf_permission",
+        "evidence_kind": "actual_checker_and_mutation",
+        "candidate_decision": "admitted",
+        "assertion_result": "passed",
+        "expected_reason": null,
+        "actual_reason": "exact accepted scope admitted",
+        "intended_check_reached": true,
+        "protected_pre_post": {
+          "after_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "before_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "restored": true
+        },
+        "project_effect": {
+          "P9_G1_accepted": false,
+          "runtime_authorized": false,
+          "scientific_promotion": false
+        },
+        "raw_case_sha256": "bb800a3ee544726e1bf0da6babcfae7d3fe8a0fd12297bd8f7d962f685d5c521"
+      },
+      {
+        "case_id": "eager_export_rejected",
+        "scope": "isolated_integration_contract_not_current_leaf_permission",
+        "evidence_kind": "actual_checker_and_mutation",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "expected_reason": "unreviewed or eager V4 export",
+        "actual_reason": "unreviewed or eager V4 export",
+        "intended_check_reached": true,
+        "protected_pre_post": {
+          "after_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "before_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "restored": true
+        },
+        "project_effect": {
+          "P9_G1_accepted": false,
+          "runtime_authorized": false,
+          "scientific_promotion": false
+        },
+        "raw_case_sha256": "dd32ca1b5252c375da99153c2cd07475136689e8832178655a81c8434555a6e6"
+      },
+      {
+        "case_id": "legacy_export_rebinding",
+        "scope": "isolated_integration_contract_not_current_leaf_permission",
+        "evidence_kind": "actual_checker_and_mutation",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "expected_reason": "legacy export prefix changed",
+        "actual_reason": "legacy export prefix changed",
+        "intended_check_reached": true,
+        "protected_pre_post": {
+          "after_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "before_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "restored": true
+        },
+        "project_effect": {
+          "P9_G1_accepted": false,
+          "runtime_authorized": false,
+          "scientific_promotion": false
+        },
+        "raw_case_sha256": "1917c890e3752fb447295a759b4dd6c5c9b06cd840d97e7092a6415361c177e9"
+      },
+      {
+        "case_id": "additive_V4_dependency_extra",
+        "scope": "isolated_integration_contract_not_current_leaf_permission",
+        "evidence_kind": "actual_checker_and_mutation",
+        "candidate_decision": "admitted",
+        "assertion_result": "passed",
+        "expected_reason": null,
+        "actual_reason": "exact accepted scope admitted",
+        "intended_check_reached": true,
+        "protected_pre_post": {
+          "after_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "before_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "restored": true
+        },
+        "project_effect": {
+          "P9_G1_accepted": false,
+          "runtime_authorized": false,
+          "scientific_promotion": false
+        },
+        "raw_case_sha256": "93a01bd142cf6377bdf64caba07e2b2a938d83ce2b7bffa88d242e063c48d4e4"
+      },
+      {
+        "case_id": "unreviewed_dependency",
+        "scope": "isolated_integration_contract_not_current_leaf_permission",
+        "evidence_kind": "actual_checker_and_mutation",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "expected_reason": "unreviewed V4 dependency",
+        "actual_reason": "unreviewed V4 dependency",
+        "intended_check_reached": true,
+        "protected_pre_post": {
+          "after_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "before_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "restored": true
+        },
+        "project_effect": {
+          "P9_G1_accepted": false,
+          "runtime_authorized": false,
+          "scientific_promotion": false
+        },
+        "raw_case_sha256": "daac11c8054ad2e906f94af91b78615b17c9f486bb51eba9b3afd5da2af3e4d7"
+      },
+      {
+        "case_id": "legacy_dependency_change",
+        "scope": "isolated_integration_contract_not_current_leaf_permission",
+        "evidence_kind": "actual_checker_and_mutation",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "expected_reason": "non-additive dependency integration",
+        "actual_reason": "non-additive dependency integration",
+        "intended_check_reached": true,
+        "protected_pre_post": {
+          "after_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "before_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "restored": true
+        },
+        "project_effect": {
+          "P9_G1_accepted": false,
+          "runtime_authorized": false,
+          "scientific_promotion": false
+        },
+        "raw_case_sha256": "3135903c3de5767528bdbca1e208bccb9a73797d862302d01a42b874e4c85bf2"
+      },
+      {
+        "case_id": "exact_packaged_schema",
+        "scope": "disposable_P9_G1_candidate_not_live_runtime",
+        "evidence_kind": "actual_checker_and_mutation",
+        "candidate_decision": "admitted",
+        "assertion_result": "passed",
+        "expected_reason": null,
+        "actual_reason": "exact accepted scope admitted",
+        "intended_check_reached": true,
+        "protected_pre_post": {
+          "after_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "before_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "restored": true
+        },
+        "project_effect": {
+          "P9_G1_accepted": false,
+          "runtime_authorized": false,
+          "scientific_promotion": false
+        },
+        "raw_case_sha256": "3aa821ff89c7dd3fb97c8ca409eee947c360e27203960f2401a91c69a6d248c2"
+      },
+      {
+        "case_id": "changed_packaged_schema",
+        "scope": "disposable_P9_G1_candidate_not_live_runtime",
+        "evidence_kind": "actual_checker_and_mutation",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "expected_reason": "packaged accepted asset differs",
+        "actual_reason": "packaged accepted asset differs",
+        "intended_check_reached": true,
+        "protected_pre_post": {
+          "after_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "before_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "restored": true
+        },
+        "project_effect": {
+          "P9_G1_accepted": false,
+          "runtime_authorized": false,
+          "scientific_promotion": false
+        },
+        "raw_case_sha256": "9aad40e582deb8eaad8a998397c52f0ab547479a70f44b8992b94813a4a73dc6"
+      },
+      {
+        "case_id": "runtime_mode",
+        "scope": "disposable_P9_G1_candidate_not_live_runtime",
+        "evidence_kind": "actual_checker_and_mutation",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "expected_reason": "unapproved executable runtime mode",
+        "actual_reason": "unapproved executable runtime mode",
+        "intended_check_reached": true,
+        "protected_pre_post": {
+          "after_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "before_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "restored": true
+        },
+        "project_effect": {
+          "P9_G1_accepted": false,
+          "runtime_authorized": false,
+          "scientific_promotion": false
+        },
+        "raw_case_sha256": "eb53dabe74e52493293e0cd94a8f7b2d4bd4f2bee47f53a690213d0fe201a051"
+      },
+      {
+        "case_id": "runtime_symlink",
+        "scope": "disposable_P9_G1_candidate_not_live_runtime",
+        "evidence_kind": "actual_checker_and_mutation",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "expected_reason": "symlink at protected path",
+        "actual_reason": "symlink at protected path: src/pygrc/models/grc_v4_state.py",
+        "intended_check_reached": true,
+        "protected_pre_post": {
+          "after_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "before_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "restored": true
+        },
+        "project_effect": {
+          "P9_G1_accepted": false,
+          "runtime_authorized": false,
+          "scientific_promotion": false
+        },
+        "raw_case_sha256": "88f3378d4c6f7def0d7f676cef845f0cace14883bcdf971dec61eb345fa2fec0"
+      },
+      {
+        "case_id": "normal_entry_forbidden_source",
+        "scope": "disposable_P9_G1_candidate_not_live_runtime",
+        "evidence_kind": "actual_checker_and_mutation",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "expected_reason": "unauthorized source/test/planning addition",
+        "actual_reason": "Traceback (most recent call last):\n  File \"<isolated_repository>/implementation/phase-9-grcv4/verification/audit_phase9_implementation.py\", line 157, in <module>\n    main()\n  File \"<isolated_repository>/implementation/phase-9-grcv4/verification/audit_phase9_implementation.py\", line 141, in main\n    result = verify(policy.ROOT, args.boundary_only)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<isolated_repository>/implementation/phase-9-grcv4/verification/audit_phase9_implementation.py\", line 75, in verify\n    boundary, tree = policy.current_boundary(root)\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<isolated_repository>/implementation/phase-9-grcv4/verification/phase9_implementation_policy.py\", line 669, in current_boundary\n    require(\n  File \"<isolated_repository>/implementation/phase-9-grcv4/verification/audit_phase9.py\", line 72, in require\n    raise ValueError(message)\nValueError: unauthorized source/test/planning addition: ['src/pygrc/models/not_reviewed.py']\n",
+        "intended_check_reached": true,
+        "protected_pre_post": {
+          "after_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "before_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "restored": true
+        },
+        "project_effect": {
+          "P9_G1_accepted": false,
+          "runtime_authorized": false,
+          "scientific_promotion": false
+        },
+        "raw_case_sha256": "1d62a20ffceb0d9144061bf2de1bdc3d0e2f3e64a2216b75e40a28c7e45ba5a7"
+      },
+      {
+        "case_id": "normal_entry_accepted_G1",
+        "scope": "disposable_P9_G1_candidate_not_live_runtime",
+        "evidence_kind": "actual_checker_and_mutation",
+        "candidate_decision": "admitted",
+        "assertion_result": "passed",
+        "expected_reason": null,
+        "actual_reason": "exact accepted scope admitted",
+        "intended_check_reached": true,
+        "protected_pre_post": {
+          "after_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "before_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "restored": true
+        },
+        "project_effect": {
+          "P9_G1_accepted": false,
+          "runtime_authorized": false,
+          "scientific_promotion": false
+        },
+        "raw_case_sha256": "656ceb72d13c26de3ea162c8aff1c22d1226fdc2506c64a62b6016f345ec527d"
+      },
+      {
+        "case_id": "normal_entry_accepted_runtime_target",
+        "scope": "disposable_P9_G1_candidate_not_live_runtime",
+        "evidence_kind": "actual_checker_and_mutation",
+        "candidate_decision": "admitted",
+        "assertion_result": "passed",
+        "expected_reason": null,
+        "actual_reason": "exact accepted scope admitted",
+        "intended_check_reached": true,
+        "protected_pre_post": {
+          "after_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "before_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "restored": true
+        },
+        "project_effect": {
+          "P9_G1_accepted": false,
+          "runtime_authorized": false,
+          "scientific_promotion": false
+        },
+        "raw_case_sha256": "b9be4e64aa9c9776682eb3f3fa90499c40a9bd6a35ac93a95346c013476149bd"
+      },
+      {
+        "case_id": "ready_identity_leaf",
+        "scope": "disposable_P9_G1_candidate_not_live_runtime",
+        "evidence_kind": "actual_checker_and_mutation",
+        "candidate_decision": "admitted",
+        "assertion_result": "passed",
+        "expected_reason": null,
+        "actual_reason": "exact accepted scope admitted",
+        "intended_check_reached": true,
+        "protected_pre_post": {
+          "after_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "before_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "restored": true
+        },
+        "project_effect": {
+          "P9_G1_accepted": false,
+          "runtime_authorized": false,
+          "scientific_promotion": false
+        },
+        "raw_case_sha256": "8133f35cf33c48c92c86cb956c8cd81af475d686eea53d32efeda5911c8f5ac2"
+      },
+      {
+        "case_id": "accepted_foundation_enables_request_leaf",
+        "scope": "disposable_P9_G1_candidate_not_live_runtime",
+        "evidence_kind": "actual_checker_and_mutation",
+        "candidate_decision": "admitted",
+        "assertion_result": "passed",
+        "expected_reason": null,
+        "actual_reason": "exact accepted scope admitted",
+        "intended_check_reached": true,
+        "protected_pre_post": {
+          "after_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "before_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "restored": true
+        },
+        "project_effect": {
+          "P9_G1_accepted": false,
+          "runtime_authorized": false,
+          "scientific_promotion": false
+        },
+        "raw_case_sha256": "f50f66bdf55b8b8682aecd20c3f3bdf0b77568c7f87d20754af7c4eb68c751e9"
+      },
+      {
+        "case_id": "geometry_work_does_not_accept_next_leaf",
+        "scope": "disposable_P9_G1_candidate_not_live_runtime",
+        "evidence_kind": "actual_checker_and_mutation",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "expected_reason": "owning leaf entry dependencies are not accepted",
+        "actual_reason": "owning leaf entry dependencies are not accepted",
+        "intended_check_reached": true,
+        "protected_pre_post": {
+          "after_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "before_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "restored": true
+        },
+        "project_effect": {
+          "P9_G1_accepted": false,
+          "runtime_authorized": false,
+          "scientific_promotion": false
+        },
+        "raw_case_sha256": "6cb5c5e9097df87b65bd7748693513da09737e5faf5c0bc22c1da9b4b6a102a4"
+      },
+      {
+        "case_id": "accepted_requests_enable_result_owner_grc_v4_state",
+        "scope": "disposable_P9_G1_candidate_not_live_runtime",
+        "evidence_kind": "actual_checker_and_mutation",
+        "candidate_decision": "admitted",
+        "assertion_result": "passed",
+        "expected_reason": null,
+        "actual_reason": "exact accepted scope admitted",
+        "intended_check_reached": true,
+        "protected_pre_post": {
+          "after_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "before_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "restored": true
+        },
+        "project_effect": {
+          "P9_G1_accepted": false,
+          "runtime_authorized": false,
+          "scientific_promotion": false
+        },
+        "raw_case_sha256": "1b2bc68ace9aa4980a24131ab5f791b97049f32819d32532cd1706921806e644"
+      },
+      {
+        "case_id": "accepted_requests_enable_result_owner_grc_v4_step",
+        "scope": "disposable_P9_G1_candidate_not_live_runtime",
+        "evidence_kind": "actual_checker_and_mutation",
+        "candidate_decision": "admitted",
+        "assertion_result": "passed",
+        "expected_reason": null,
+        "actual_reason": "exact accepted scope admitted",
+        "intended_check_reached": true,
+        "protected_pre_post": {
+          "after_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "before_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "restored": true
+        },
+        "project_effect": {
+          "P9_G1_accepted": false,
+          "runtime_authorized": false,
+          "scientific_promotion": false
+        },
+        "raw_case_sha256": "b4376bf95fe719a14b3ae0283a74db8e9191cf82343d6b1e8ce97775296162c9"
+      },
+      {
+        "case_id": "accepted_results_enable_harness_owner_grcv4_conformance_harness",
+        "scope": "disposable_P9_G1_candidate_not_live_runtime",
+        "evidence_kind": "actual_checker_and_mutation",
+        "candidate_decision": "admitted",
+        "assertion_result": "passed",
+        "expected_reason": null,
+        "actual_reason": "exact accepted scope admitted",
+        "intended_check_reached": true,
+        "protected_pre_post": {
+          "after_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "before_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "restored": true
+        },
+        "project_effect": {
+          "P9_G1_accepted": false,
+          "runtime_authorized": false,
+          "scientific_promotion": false
+        },
+        "raw_case_sha256": "c46c86796df1b21c7b3d044245330ce1e5b5a6f51e55d45134526d1771193093"
+      },
+      {
+        "case_id": "accepted_results_enable_harness_owner_grcv4_reference_oracles",
+        "scope": "disposable_P9_G1_candidate_not_live_runtime",
+        "evidence_kind": "actual_checker_and_mutation",
+        "candidate_decision": "admitted",
+        "assertion_result": "passed",
+        "expected_reason": null,
+        "actual_reason": "exact accepted scope admitted",
+        "intended_check_reached": true,
+        "protected_pre_post": {
+          "after_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "before_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "restored": true
+        },
+        "project_effect": {
+          "P9_G1_accepted": false,
+          "runtime_authorized": false,
+          "scientific_promotion": false
+        },
+        "raw_case_sha256": "f7f375dd63808c7e5dda24ea97c77e525736f7f9bc58e1f3167acce87c7b26c3"
+      },
+      {
+        "case_id": "accepted_integration_enables_grc_v4_geometry",
+        "scope": "disposable_P9_G1_candidate_not_live_runtime",
+        "evidence_kind": "actual_checker_and_mutation",
+        "candidate_decision": "admitted",
+        "assertion_result": "passed",
+        "expected_reason": null,
+        "actual_reason": "exact accepted scope admitted",
+        "intended_check_reached": true,
+        "protected_pre_post": {
+          "after_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "before_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "restored": true
+        },
+        "project_effect": {
+          "P9_G1_accepted": false,
+          "runtime_authorized": false,
+          "scientific_promotion": false
+        },
+        "raw_case_sha256": "6ae17797b4356a1f37a749dbb5e790582ea910b42e6c1be49b71f24bbb3547df"
+      },
+      {
+        "case_id": "accepted_integration_enables_grc_v4_transport",
+        "scope": "disposable_P9_G1_candidate_not_live_runtime",
+        "evidence_kind": "actual_checker_and_mutation",
+        "candidate_decision": "admitted",
+        "assertion_result": "passed",
+        "expected_reason": null,
+        "actual_reason": "exact accepted scope admitted",
+        "intended_check_reached": true,
+        "protected_pre_post": {
+          "after_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "before_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "restored": true
+        },
+        "project_effect": {
+          "P9_G1_accepted": false,
+          "runtime_authorized": false,
+          "scientific_promotion": false
+        },
+        "raw_case_sha256": "24cc434a2dbb339608a925ec083b921e0852015ad2b6cabd1caae63a4080767f"
+      },
+      {
+        "case_id": "accepted_integration_enables_test_grc_v4_geometry",
+        "scope": "disposable_P9_G1_candidate_not_live_runtime",
+        "evidence_kind": "actual_checker_and_mutation",
+        "candidate_decision": "admitted",
+        "assertion_result": "passed",
+        "expected_reason": null,
+        "actual_reason": "exact accepted scope admitted",
+        "intended_check_reached": true,
+        "protected_pre_post": {
+          "after_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "before_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "restored": true
+        },
+        "project_effect": {
+          "P9_G1_accepted": false,
+          "runtime_authorized": false,
+          "scientific_promotion": false
+        },
+        "raw_case_sha256": "8e8a58377dcdad4354e7c4ad29eb03c0ab7f4f2cfd0ef19e2fd0110c341e5a02"
+      },
+      {
+        "case_id": "accepted_integration_enables_test_grc_v4_transport",
+        "scope": "disposable_P9_G1_candidate_not_live_runtime",
+        "evidence_kind": "actual_checker_and_mutation",
+        "candidate_decision": "admitted",
+        "assertion_result": "passed",
+        "expected_reason": null,
+        "actual_reason": "exact accepted scope admitted",
+        "intended_check_reached": true,
+        "protected_pre_post": {
+          "after_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "before_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "restored": true
+        },
+        "project_effect": {
+          "P9_G1_accepted": false,
+          "runtime_authorized": false,
+          "scientific_promotion": false
+        },
+        "raw_case_sha256": "3669606ccbb47fbeb4e3baf92fe7bcf05da441c18b36e5090313a612ed68d2d2"
+      },
+      {
+        "case_id": "accepted_harness_enables_export_owner",
+        "scope": "disposable_P9_G1_candidate_not_live_runtime",
+        "evidence_kind": "actual_checker_and_mutation",
+        "candidate_decision": "admitted",
+        "assertion_result": "passed",
+        "expected_reason": null,
+        "actual_reason": "exact accepted scope admitted",
+        "intended_check_reached": true,
+        "protected_pre_post": {
+          "after_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "before_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "restored": true
+        },
+        "project_effect": {
+          "P9_G1_accepted": false,
+          "runtime_authorized": false,
+          "scientific_promotion": false
+        },
+        "raw_case_sha256": "9bd9dd9b37a6545f77ca1247c0a3c67240f405a05fab39c5f89e9c4c29c67344"
+      },
+      {
+        "case_id": "harness_acceptance_cannot_self_authorize_status",
+        "scope": "isolated_harness_acceptance_authentication",
+        "evidence_kind": "actual_checker_and_mutation",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "expected_reason": "untrusted harness acceptance",
+        "actual_reason": "untrusted harness acceptance",
+        "intended_check_reached": true,
+        "protected_pre_post": {
+          "after_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "before_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "restored": true
+        },
+        "project_effect": {
+          "P9_G1_accepted": false,
+          "runtime_authorized": false,
+          "scientific_promotion": false
+        },
+        "raw_case_sha256": "07b405db446277d1fbd8bffafac10815a30e0036a068b2d1deba2eb795c6d3bb"
+      },
+      {
+        "case_id": "harness_acceptance_cannot_self_authorize_accepted_iterations",
+        "scope": "isolated_harness_acceptance_authentication",
+        "evidence_kind": "actual_checker_and_mutation",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "expected_reason": "untrusted harness acceptance",
+        "actual_reason": "untrusted harness acceptance",
+        "intended_check_reached": true,
+        "protected_pre_post": {
+          "after_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "before_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "restored": true
+        },
+        "project_effect": {
+          "P9_G1_accepted": false,
+          "runtime_authorized": false,
+          "scientific_promotion": false
+        },
+        "raw_case_sha256": "7c52c7836db08d8d9e62387ac128eb5284cda0285d3dfb97c861ae646561b628"
+      },
+      {
+        "case_id": "harness_acceptance_cannot_self_authorize_accepted_generic_runtime_support",
+        "scope": "isolated_harness_acceptance_authentication",
+        "evidence_kind": "actual_checker_and_mutation",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "expected_reason": "untrusted harness acceptance",
+        "actual_reason": "untrusted harness acceptance",
+        "intended_check_reached": true,
+        "protected_pre_post": {
+          "after_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "before_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "restored": true
+        },
+        "project_effect": {
+          "P9_G1_accepted": false,
+          "runtime_authorized": false,
+          "scientific_promotion": false
+        },
+        "raw_case_sha256": "8af7df4cad628039cd04936284e8a2463802887144601311c3cda382091aae42"
+      },
+      {
+        "case_id": "harness_acceptance_cannot_self_authorize_baseline_commit",
+        "scope": "isolated_harness_acceptance_authentication",
+        "evidence_kind": "actual_checker_and_mutation",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "expected_reason": "untrusted harness acceptance",
+        "actual_reason": "untrusted harness acceptance",
+        "intended_check_reached": true,
+        "protected_pre_post": {
+          "after_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "before_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "restored": true
+        },
+        "project_effect": {
+          "P9_G1_accepted": false,
+          "runtime_authorized": false,
+          "scientific_promotion": false
+        },
+        "raw_case_sha256": "f2e612341e88b2a63ada9800d9dba4576012480b1956b63d8c6306bf389df614"
+      },
+      {
+        "case_id": "harness_acceptance_cannot_self_authorize_evidence_bindings",
+        "scope": "isolated_harness_acceptance_authentication",
+        "evidence_kind": "actual_checker_and_mutation",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "expected_reason": "untrusted harness acceptance",
+        "actual_reason": "untrusted harness acceptance",
+        "intended_check_reached": true,
+        "protected_pre_post": {
+          "after_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "before_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "restored": true
+        },
+        "project_effect": {
+          "P9_G1_accepted": false,
+          "runtime_authorized": false,
+          "scientific_promotion": false
+        },
+        "raw_case_sha256": "a978a805abfd3685e48076c2e586da2ed532e6c05d5514031765d9e567371a56"
+      },
+      {
+        "case_id": "missing_integration_acceptance",
+        "scope": "disposable_P9_G1_candidate_not_live_runtime",
+        "evidence_kind": "actual_checker_and_mutation",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "expected_reason": "P9-2.6-AcceptanceRecord.json",
+        "actual_reason": "missing protected file: implementation/phase-9-grcv4/tranche-2/P9-2.6-AcceptanceRecord.json",
+        "intended_check_reached": true,
+        "protected_pre_post": {
+          "after_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "before_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "restored": true
+        },
+        "project_effect": {
+          "P9_G1_accepted": false,
+          "runtime_authorized": false,
+          "scientific_promotion": false
+        },
+        "raw_case_sha256": "c449d97fdfe705186de5c57da4183372dc372822dde7ec5db63449fcfd074589"
+      },
+      {
+        "case_id": "integration_acceptance_cannot_self_authorize_status",
+        "scope": "isolated_integration_acceptance_authentication",
+        "evidence_kind": "actual_checker_and_mutation",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "expected_reason": "untrusted integration acceptance",
+        "actual_reason": "untrusted integration acceptance",
+        "intended_check_reached": true,
+        "protected_pre_post": {
+          "after_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "before_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "restored": true
+        },
+        "project_effect": {
+          "P9_G1_accepted": false,
+          "runtime_authorized": false,
+          "scientific_promotion": false
+        },
+        "raw_case_sha256": "77b525d6eda66230650719ac54f659c9cccf463f84d2f390da694b962f77ad27"
+      },
+      {
+        "case_id": "integration_acceptance_cannot_self_authorize_accepted_iterations",
+        "scope": "isolated_integration_acceptance_authentication",
+        "evidence_kind": "actual_checker_and_mutation",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "expected_reason": "untrusted integration acceptance",
+        "actual_reason": "untrusted integration acceptance",
+        "intended_check_reached": true,
+        "protected_pre_post": {
+          "after_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "before_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "restored": true
+        },
+        "project_effect": {
+          "P9_G1_accepted": false,
+          "runtime_authorized": false,
+          "scientific_promotion": false
+        },
+        "raw_case_sha256": "1f8e5598e16ea82e735b4bd9620114730d7ab08c7bd71f44a0a52c703064451b"
+      },
+      {
+        "case_id": "integration_acceptance_cannot_self_authorize_accepted_generic_runtime_support",
+        "scope": "isolated_integration_acceptance_authentication",
+        "evidence_kind": "actual_checker_and_mutation",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "expected_reason": "untrusted integration acceptance",
+        "actual_reason": "untrusted integration acceptance",
+        "intended_check_reached": true,
+        "protected_pre_post": {
+          "after_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "before_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "restored": true
+        },
+        "project_effect": {
+          "P9_G1_accepted": false,
+          "runtime_authorized": false,
+          "scientific_promotion": false
+        },
+        "raw_case_sha256": "44304291c98c082dd83c0b4382a909819ec73054f4ece790385c166dc0081055"
+      },
+      {
+        "case_id": "integration_acceptance_cannot_self_authorize_admitted_specialization_support_sets",
+        "scope": "isolated_integration_acceptance_authentication",
+        "evidence_kind": "actual_checker_and_mutation",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "expected_reason": "untrusted integration acceptance",
+        "actual_reason": "untrusted integration acceptance",
+        "intended_check_reached": true,
+        "protected_pre_post": {
+          "after_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "before_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "restored": true
+        },
+        "project_effect": {
+          "P9_G1_accepted": false,
+          "runtime_authorized": false,
+          "scientific_promotion": false
+        },
+        "raw_case_sha256": "6e578861995645191680affb4f4cd63c4ef84699e74d805d7798b58f7a003288"
+      },
+      {
+        "case_id": "integration_acceptance_cannot_self_authorize_baseline_commit",
+        "scope": "isolated_integration_acceptance_authentication",
+        "evidence_kind": "actual_checker_and_mutation",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "expected_reason": "untrusted integration acceptance",
+        "actual_reason": "untrusted integration acceptance",
+        "intended_check_reached": true,
+        "protected_pre_post": {
+          "after_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "before_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "restored": true
+        },
+        "project_effect": {
+          "P9_G1_accepted": false,
+          "runtime_authorized": false,
+          "scientific_promotion": false
+        },
+        "raw_case_sha256": "0e006e10692bcae7ff58647be9bfc69c6453e92d37c4ea0a337a7d67ef5b1fbc"
+      },
+      {
+        "case_id": "integration_acceptance_cannot_self_authorize_evidence_bindings",
+        "scope": "isolated_integration_acceptance_authentication",
+        "evidence_kind": "actual_checker_and_mutation",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "expected_reason": "untrusted integration acceptance",
+        "actual_reason": "untrusted integration acceptance",
+        "intended_check_reached": true,
+        "protected_pre_post": {
+          "after_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "before_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "restored": true
+        },
+        "project_effect": {
+          "P9_G1_accepted": false,
+          "runtime_authorized": false,
+          "scientific_promotion": false
+        },
+        "raw_case_sha256": "a28718cb29479bb860d7ac3350c26106d2ef739b082a43577a9c4d5c2eca83fd"
+      },
+      {
+        "case_id": "result_acceptance_cannot_self_authorize_status",
+        "scope": "isolated_result_acceptance_authentication",
+        "evidence_kind": "actual_checker_and_mutation",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "expected_reason": "untrusted result acceptance",
+        "actual_reason": "untrusted result acceptance",
+        "intended_check_reached": true,
+        "protected_pre_post": {
+          "after_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "before_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "restored": true
+        },
+        "project_effect": {
+          "P9_G1_accepted": false,
+          "runtime_authorized": false,
+          "scientific_promotion": false
+        },
+        "raw_case_sha256": "99eb4d26ff3ce360877a43d49422c71118e417234f9f7631fff04939ded4a024"
+      },
+      {
+        "case_id": "result_acceptance_cannot_self_authorize_accepted_iterations",
+        "scope": "isolated_result_acceptance_authentication",
+        "evidence_kind": "actual_checker_and_mutation",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "expected_reason": "untrusted result acceptance",
+        "actual_reason": "untrusted result acceptance",
+        "intended_check_reached": true,
+        "protected_pre_post": {
+          "after_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "before_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "restored": true
+        },
+        "project_effect": {
+          "P9_G1_accepted": false,
+          "runtime_authorized": false,
+          "scientific_promotion": false
+        },
+        "raw_case_sha256": "60fee44702e70b1c406a49c6738f8b271c4f9f50b349aabc281ea056802d7edc"
+      },
+      {
+        "case_id": "result_acceptance_cannot_self_authorize_accepted_generic_runtime_support",
+        "scope": "isolated_result_acceptance_authentication",
+        "evidence_kind": "actual_checker_and_mutation",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "expected_reason": "untrusted result acceptance",
+        "actual_reason": "untrusted result acceptance",
+        "intended_check_reached": true,
+        "protected_pre_post": {
+          "after_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "before_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "restored": true
+        },
+        "project_effect": {
+          "P9_G1_accepted": false,
+          "runtime_authorized": false,
+          "scientific_promotion": false
+        },
+        "raw_case_sha256": "5ec6f6c92f1763d73d3a9d98fda8ccdbf7e40885872358eefc71e14df1740f0b"
+      },
+      {
+        "case_id": "result_acceptance_cannot_self_authorize_baseline_commit",
+        "scope": "isolated_result_acceptance_authentication",
+        "evidence_kind": "actual_checker_and_mutation",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "expected_reason": "untrusted result acceptance",
+        "actual_reason": "untrusted result acceptance",
+        "intended_check_reached": true,
+        "protected_pre_post": {
+          "after_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "before_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "restored": true
+        },
+        "project_effect": {
+          "P9_G1_accepted": false,
+          "runtime_authorized": false,
+          "scientific_promotion": false
+        },
+        "raw_case_sha256": "0085a865dae24369fbd9387018a66ee68067bfc9c3e512a08ba6a1051300c866"
+      },
+      {
+        "case_id": "result_acceptance_cannot_self_authorize_evidence_bindings",
+        "scope": "isolated_result_acceptance_authentication",
+        "evidence_kind": "actual_checker_and_mutation",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "expected_reason": "untrusted result acceptance",
+        "actual_reason": "untrusted result acceptance",
+        "intended_check_reached": true,
+        "protected_pre_post": {
+          "after_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "before_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "restored": true
+        },
+        "project_effect": {
+          "P9_G1_accepted": false,
+          "runtime_authorized": false,
+          "scientific_promotion": false
+        },
+        "raw_case_sha256": "c0cffeafc909a6911ade6a2d18bb5e9f701ae2e9a6b1a844d43bad4765f475a3"
+      },
+      {
+        "case_id": "request_acceptance_cannot_self_authorize_status",
+        "scope": "isolated_request_acceptance_authentication",
+        "evidence_kind": "actual_checker_and_mutation",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "expected_reason": "untrusted request acceptance",
+        "actual_reason": "untrusted request acceptance",
+        "intended_check_reached": true,
+        "protected_pre_post": {
+          "after_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "before_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "restored": true
+        },
+        "project_effect": {
+          "P9_G1_accepted": false,
+          "runtime_authorized": false,
+          "scientific_promotion": false
+        },
+        "raw_case_sha256": "bdfa5a8314df99a7f0dc86dd3cdd7115d237987d33500cf225d4fae084646dc5"
+      },
+      {
+        "case_id": "request_acceptance_cannot_self_authorize_accepted_iterations",
+        "scope": "isolated_request_acceptance_authentication",
+        "evidence_kind": "actual_checker_and_mutation",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "expected_reason": "untrusted request acceptance",
+        "actual_reason": "untrusted request acceptance",
+        "intended_check_reached": true,
+        "protected_pre_post": {
+          "after_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "before_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "restored": true
+        },
+        "project_effect": {
+          "P9_G1_accepted": false,
+          "runtime_authorized": false,
+          "scientific_promotion": false
+        },
+        "raw_case_sha256": "cce4ae8155a4391e491d4b84f1e7fa2eea4c66ed482a1d386087877dc9e198c2"
+      },
+      {
+        "case_id": "request_acceptance_cannot_self_authorize_accepted_generic_runtime_support",
+        "scope": "isolated_request_acceptance_authentication",
+        "evidence_kind": "actual_checker_and_mutation",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "expected_reason": "untrusted request acceptance",
+        "actual_reason": "untrusted request acceptance",
+        "intended_check_reached": true,
+        "protected_pre_post": {
+          "after_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "before_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "restored": true
+        },
+        "project_effect": {
+          "P9_G1_accepted": false,
+          "runtime_authorized": false,
+          "scientific_promotion": false
+        },
+        "raw_case_sha256": "4ebd423a12716d743fbf9de4eb34e3429fca4846f02b66cfc5ba34a6ad97d4d1"
+      },
+      {
+        "case_id": "request_acceptance_cannot_self_authorize_baseline_commit",
+        "scope": "isolated_request_acceptance_authentication",
+        "evidence_kind": "actual_checker_and_mutation",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "expected_reason": "untrusted request acceptance",
+        "actual_reason": "untrusted request acceptance",
+        "intended_check_reached": true,
+        "protected_pre_post": {
+          "after_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "before_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "restored": true
+        },
+        "project_effect": {
+          "P9_G1_accepted": false,
+          "runtime_authorized": false,
+          "scientific_promotion": false
+        },
+        "raw_case_sha256": "47269113294adbb2d10daa5bd0fd171273c8f18ec42f88d4057b33b3ec8ec001"
+      },
+      {
+        "case_id": "request_acceptance_cannot_self_authorize_evidence_bindings",
+        "scope": "isolated_request_acceptance_authentication",
+        "evidence_kind": "actual_checker_and_mutation",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "expected_reason": "untrusted request acceptance",
+        "actual_reason": "untrusted request acceptance",
+        "intended_check_reached": true,
+        "protected_pre_post": {
+          "after_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "before_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "restored": true
+        },
+        "project_effect": {
+          "P9_G1_accepted": false,
+          "runtime_authorized": false,
+          "scientific_promotion": false
+        },
+        "raw_case_sha256": "3bb1984d3c004a653a2c2e4ed5b7e94d2a7b7fc2657317079ffec68b08623278"
+      },
+      {
+        "case_id": "foundation_cannot_self_authorize_status",
+        "scope": "isolated_foundation_acceptance_authentication",
+        "evidence_kind": "actual_checker_and_mutation",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "expected_reason": "untrusted foundation acceptance",
+        "actual_reason": "untrusted foundation acceptance",
+        "intended_check_reached": true,
+        "protected_pre_post": {
+          "after_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "before_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "restored": true
+        },
+        "project_effect": {
+          "P9_G1_accepted": false,
+          "runtime_authorized": false,
+          "scientific_promotion": false
+        },
+        "raw_case_sha256": "e2522c56c207622d9656f9919c3b8a7eeffe880899da299ca12b30747a2f0443"
+      },
+      {
+        "case_id": "foundation_cannot_self_authorize_accepted_iterations",
+        "scope": "isolated_foundation_acceptance_authentication",
+        "evidence_kind": "actual_checker_and_mutation",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "expected_reason": "untrusted foundation acceptance",
+        "actual_reason": "untrusted foundation acceptance",
+        "intended_check_reached": true,
+        "protected_pre_post": {
+          "after_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "before_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "restored": true
+        },
+        "project_effect": {
+          "P9_G1_accepted": false,
+          "runtime_authorized": false,
+          "scientific_promotion": false
+        },
+        "raw_case_sha256": "d94e16870b94886ee43bf20b03f803790d3649185c3091ec865681661af2d39a"
+      },
+      {
+        "case_id": "foundation_cannot_self_authorize_accepted_generic_runtime_support",
+        "scope": "isolated_foundation_acceptance_authentication",
+        "evidence_kind": "actual_checker_and_mutation",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "expected_reason": "untrusted foundation acceptance",
+        "actual_reason": "untrusted foundation acceptance",
+        "intended_check_reached": true,
+        "protected_pre_post": {
+          "after_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "before_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "restored": true
+        },
+        "project_effect": {
+          "P9_G1_accepted": false,
+          "runtime_authorized": false,
+          "scientific_promotion": false
+        },
+        "raw_case_sha256": "f2c070fdaf09a05b8bf0b824eace1a79eb283245be6ed59bd8a4f1f1a5d805e4"
+      },
+      {
+        "case_id": "foundation_cannot_self_authorize_baseline_commit",
+        "scope": "isolated_foundation_acceptance_authentication",
+        "evidence_kind": "actual_checker_and_mutation",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "expected_reason": "untrusted foundation acceptance",
+        "actual_reason": "untrusted foundation acceptance",
+        "intended_check_reached": true,
+        "protected_pre_post": {
+          "after_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "before_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "restored": true
+        },
+        "project_effect": {
+          "P9_G1_accepted": false,
+          "runtime_authorized": false,
+          "scientific_promotion": false
+        },
+        "raw_case_sha256": "00b1c04970c49415c07301950614ab8d02cfa7164d35470a91cc8c049cc64695"
+      },
+      {
+        "case_id": "foundation_cannot_self_authorize_evidence_bindings",
+        "scope": "isolated_foundation_acceptance_authentication",
+        "evidence_kind": "actual_checker_and_mutation",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "expected_reason": "untrusted foundation acceptance",
+        "actual_reason": "untrusted foundation acceptance",
+        "intended_check_reached": true,
+        "protected_pre_post": {
+          "after_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "before_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "restored": true
+        },
+        "project_effect": {
+          "P9_G1_accepted": false,
+          "runtime_authorized": false,
+          "scientific_promotion": false
+        },
+        "raw_case_sha256": "ad2df6c6088d4f214c63816148072551fdc2a9db07d05915bf300161f6af29a1"
+      },
+      {
+        "case_id": "later_generic_leaf_held",
+        "scope": "disposable_P9_G1_candidate_not_live_runtime",
+        "evidence_kind": "actual_checker_and_mutation",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "expected_reason": "owning leaf entry dependencies are not accepted",
+        "actual_reason": "owning leaf entry dependencies are not accepted",
+        "intended_check_reached": true,
+        "protected_pre_post": {
+          "after_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "before_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "restored": true
+        },
+        "project_effect": {
+          "P9_G1_accepted": false,
+          "runtime_authorized": false,
+          "scientific_promotion": false
+        },
+        "raw_case_sha256": "6f27cd3c892d373091801d83695ca3bfeba537d9855a2a4e518e0097172b2f48"
+      },
+      {
+        "case_id": "path_cannot_borrow_ready_leaf",
+        "scope": "disposable_P9_G1_candidate_not_live_runtime",
+        "evidence_kind": "actual_checker_and_mutation",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "expected_reason": "runtime target belongs to a different owning leaf",
+        "actual_reason": "runtime target belongs to a different owning leaf",
+        "intended_check_reached": true,
+        "protected_pre_post": {
+          "after_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "before_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "restored": true
+        },
+        "project_effect": {
+          "P9_G1_accepted": false,
+          "runtime_authorized": false,
+          "scientific_promotion": false
+        },
+        "raw_case_sha256": "edd5ff1899b0449970f90e4612561f01e1620af833707e7d02cf7e02cb205cc3"
+      },
+      {
+        "case_id": "accepted_harness_enables_integration_owner",
+        "scope": "disposable_P9_G1_candidate_not_live_runtime",
+        "evidence_kind": "actual_checker_and_mutation",
+        "candidate_decision": "admitted",
+        "assertion_result": "passed",
+        "expected_reason": null,
+        "actual_reason": "exact accepted scope admitted",
+        "intended_check_reached": true,
+        "protected_pre_post": {
+          "after_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "before_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "restored": true
+        },
+        "project_effect": {
+          "P9_G1_accepted": false,
+          "runtime_authorized": false,
+          "scientific_promotion": false
+        },
+        "raw_case_sha256": "e63ed45cb4fe129010dc39c91aef1b113239b9eb2f022c7fad538294256744cb"
+      },
+      {
+        "case_id": "geometry_leaf_direct_numpy_dependency_owner",
+        "scope": "disposable_P9_G1_candidate_not_live_runtime",
+        "evidence_kind": "actual_checker_and_mutation",
+        "candidate_decision": "admitted",
+        "assertion_result": "passed",
+        "expected_reason": null,
+        "actual_reason": "exact accepted scope admitted",
+        "intended_check_reached": true,
+        "protected_pre_post": {
+          "after_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "before_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "restored": true
+        },
+        "project_effect": {
+          "P9_G1_accepted": false,
+          "runtime_authorized": false,
+          "scientific_promotion": false
+        },
+        "raw_case_sha256": "de507239b40edf0292d733a922ca0095020a1a56e9f91cb5444a39cfe8e6e60c"
+      },
+      {
+        "case_id": "identity_leaf_package_integration",
+        "scope": "disposable_P9_G1_candidate_not_live_runtime",
+        "evidence_kind": "actual_checker_and_mutation",
+        "candidate_decision": "admitted",
+        "assertion_result": "passed",
+        "expected_reason": null,
+        "actual_reason": "exact accepted scope admitted",
+        "intended_check_reached": true,
+        "protected_pre_post": {
+          "after_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "before_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "restored": true
+        },
+        "project_effect": {
+          "P9_G1_accepted": false,
+          "runtime_authorized": false,
+          "scientific_promotion": false
+        },
+        "raw_case_sha256": "e74066a96e25c0b0d7525566a8c34a02860ffc07aee3203fde5b1d71e4bb7a71"
+      },
+      {
+        "case_id": "identity_leaf_cannot_borrow_exports",
+        "scope": "disposable_P9_G1_candidate_not_live_runtime",
+        "evidence_kind": "actual_checker_and_mutation",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "expected_reason": "runtime target belongs to a different owning leaf",
+        "actual_reason": "runtime target belongs to a different owning leaf",
+        "intended_check_reached": true,
+        "protected_pre_post": {
+          "after_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "before_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "restored": true
+        },
+        "project_effect": {
+          "P9_G1_accepted": false,
+          "runtime_authorized": false,
+          "scientific_promotion": false
+        },
+        "raw_case_sha256": "eab3700c150f47b71435b71773d4f8ffdfa42c6ac956b20966c24745c170a212"
+      },
+      {
+        "case_id": "acceptance_release_id",
+        "scope": "disposable_P9_G1_candidate_not_live_runtime",
+        "evidence_kind": "actual_checker_and_mutation",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "expected_reason": "untrusted P9-G1 acceptance",
+        "actual_reason": "untrusted P9-G1 acceptance",
+        "intended_check_reached": true,
+        "protected_pre_post": {
+          "after_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "before_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "restored": true
+        },
+        "project_effect": {
+          "P9_G1_accepted": false,
+          "runtime_authorized": false,
+          "scientific_promotion": false
+        },
+        "raw_case_sha256": "77f4e22fa3f5373c84dba9707884bee0ca1c3c4595a568763cd735b8ac344a94"
+      },
+      {
+        "case_id": "acceptance_baseline_commit",
+        "scope": "disposable_P9_G1_candidate_not_live_runtime",
+        "evidence_kind": "actual_checker_and_mutation",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "expected_reason": "untrusted P9-G1 acceptance",
+        "actual_reason": "untrusted P9-G1 acceptance",
+        "intended_check_reached": true,
+        "protected_pre_post": {
+          "after_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "before_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "restored": true
+        },
+        "project_effect": {
+          "P9_G1_accepted": false,
+          "runtime_authorized": false,
+          "scientific_promotion": false
+        },
+        "raw_case_sha256": "5a7e325013de99c80a78d0e2ee36fb9e6ed691d871b0e749776095646be80a84"
+      },
+      {
+        "case_id": "acceptance_user_authority",
+        "scope": "disposable_P9_G1_candidate_not_live_runtime",
+        "evidence_kind": "actual_checker_and_mutation",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "expected_reason": "untrusted P9-G1 acceptance",
+        "actual_reason": "untrusted P9-G1 acceptance",
+        "intended_check_reached": true,
+        "protected_pre_post": {
+          "after_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "before_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "restored": true
+        },
+        "project_effect": {
+          "P9_G1_accepted": false,
+          "runtime_authorized": false,
+          "scientific_promotion": false
+        },
+        "raw_case_sha256": "fa1e4011b49d55697e4bac589c88b63b0c6710094a39d50785f8df06658ef2d8"
+      },
+      {
+        "case_id": "missing_consumed_surface_evidence",
+        "scope": "disposable_P9_G1_candidate_not_live_runtime",
+        "evidence_kind": "actual_checker_and_mutation",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "expected_reason": "P9-1.8-SurfaceInventory.json",
+        "actual_reason": "missing protected file: implementation/phase-9-grcv4/tranche-1/P9-1.8-SurfaceInventory.json",
+        "intended_check_reached": true,
+        "protected_pre_post": {
+          "after_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "before_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "restored": true
+        },
+        "project_effect": {
+          "P9_G1_accepted": false,
+          "runtime_authorized": false,
+          "scientific_promotion": false
+        },
+        "raw_case_sha256": "cfa6f78d3bd60a9aa41601af03a917a624c6bfc3d09dbc5e246d9179c2cd78d1"
+      },
+      {
+        "case_id": "conflicting_G1_record",
+        "scope": "disposable_P9_G1_candidate_not_live_runtime",
+        "evidence_kind": "actual_checker_and_mutation",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "expected_reason": "unauthorized source/test/planning addition",
+        "actual_reason": "unauthorized source/test/planning addition: ['implementation/phase-9-grcv4/tranche-1/P9-1.9-OtherAcceptance.json']",
+        "intended_check_reached": true,
+        "protected_pre_post": {
+          "after_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "before_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "restored": true
+        },
+        "project_effect": {
+          "P9_G1_accepted": false,
+          "runtime_authorized": false,
+          "scientific_promotion": false
+        },
+        "raw_case_sha256": "d06821552f28ef2b3b7de28259aa0e2670d4d9f8b5b93d8b726ecc7435e7e436"
+      },
+      {
+        "case_id": "changed_verifier_after_pressure",
+        "scope": "disposable_P9_G1_candidate_not_live_runtime",
+        "evidence_kind": "actual_checker_and_mutation",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "expected_reason": "implementation maintenance binding drift",
+        "actual_reason": "implementation maintenance binding drift: implementation/phase-9-grcv4/verification/phase9_implementation_policy.py",
+        "intended_check_reached": true,
+        "protected_pre_post": {
+          "after_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "before_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "restored": true
+        },
+        "project_effect": {
+          "P9_G1_accepted": false,
+          "runtime_authorized": false,
+          "scientific_promotion": false
+        },
+        "raw_case_sha256": "f45bcc6726d852366fbcae40548a97b93af979b26c8c81fd21ae428666dc3d89"
+      },
+      {
+        "case_id": "runtime_manifest_cannot_change_governance",
+        "scope": "disposable_P9_G1_candidate_not_live_runtime",
+        "evidence_kind": "actual_checker_and_mutation",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "expected_reason": "unapproved runtime or evidence target",
+        "actual_reason": "unapproved runtime or evidence target: implementation/phase-9-grcv4/verification/Phase9ImplementationBoundary.json",
+        "intended_check_reached": true,
+        "protected_pre_post": {
+          "after_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "before_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "restored": true
+        },
+        "project_effect": {
+          "P9_G1_accepted": false,
+          "runtime_authorized": false,
+          "scientific_promotion": false
+        },
+        "raw_case_sha256": "1c83f12f0ded8109b2aa526ac0835ead00316151afdd9d031bab3bea836e5058"
+      },
+      {
+        "case_id": "evidence_path_escape",
+        "scope": "disposable_P9_G1_candidate_not_live_runtime",
+        "evidence_kind": "actual_checker_and_mutation",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "expected_reason": "unsafe path",
+        "actual_reason": "unsafe path: ../escape.py",
+        "intended_check_reached": true,
+        "protected_pre_post": {
+          "after_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "before_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "restored": true
+        },
+        "project_effect": {
+          "P9_G1_accepted": false,
+          "runtime_authorized": false,
+          "scientific_promotion": false
+        },
+        "raw_case_sha256": "3a262f24e2119bb8bdd7bb5171364f2806791c21c928bde6d372a9c454e78420"
+      },
+      {
+        "case_id": "identical_acceptance_is_idempotent",
+        "scope": "disposable_P9_G1_candidate_not_live_runtime",
+        "evidence_kind": "actual_checker_and_mutation",
+        "candidate_decision": "admitted",
+        "assertion_result": "passed",
+        "expected_reason": null,
+        "actual_reason": "exact accepted scope admitted",
+        "intended_check_reached": true,
+        "protected_pre_post": {
+          "after_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "before_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "restored": true
+        },
+        "project_effect": {
+          "P9_G1_accepted": false,
+          "runtime_authorized": false,
+          "scientific_promotion": false
+        },
+        "raw_case_sha256": "6779231d47bf475c8575009885f964d205d70fa0568e2ffcc6a3ec39ebbeb4d7"
+      },
+      {
+        "case_id": "partial_publication",
+        "scope": "disposable_P9_G1_candidate_not_live_runtime",
+        "evidence_kind": "actual_checker_and_mutation",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "expected_reason": "P9-1.9-ExecutionRecord.json",
+        "actual_reason": "missing protected file: implementation/phase-9-grcv4/tranche-1/P9-1.9-ExecutionRecord.json",
+        "intended_check_reached": true,
+        "protected_pre_post": {
+          "after_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "before_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "restored": true
+        },
+        "project_effect": {
+          "P9_G1_accepted": false,
+          "runtime_authorized": false,
+          "scientific_promotion": false
+        },
+        "raw_case_sha256": "3d72bb7d51a77d5c687b53be40338d9c5352d695eb4184a1a706329000d41661"
+      },
+      {
+        "case_id": "synthetic_acceptance_not_live_authority",
+        "scope": "disposable_P9_G1_candidate_not_live_runtime",
+        "evidence_kind": "actual_checker_and_mutation",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "expected_reason": "untrusted P9-G1 acceptance",
+        "actual_reason": "untrusted P9-G1 acceptance",
+        "intended_check_reached": true,
+        "protected_pre_post": {
+          "after_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "before_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "restored": true
+        },
+        "project_effect": {
+          "P9_G1_accepted": false,
+          "runtime_authorized": false,
+          "scientific_promotion": false
+        },
+        "raw_case_sha256": "b65ccc732ebf1257f70e6f6d773feeb1b3327d4ee30aacda7dd8ff5972ce96c0"
+      },
+      {
+        "case_id": "clean_committed_unauthorized_tree",
+        "scope": "disposable_P9_G1_candidate_not_live_runtime",
+        "evidence_kind": "actual_checker_and_mutation",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "expected_reason": "frozen bytes changed",
+        "actual_reason": "frozen bytes changed: src/pygrc/models/grc_9_v3.py",
+        "intended_check_reached": true,
+        "protected_pre_post": {
+          "after_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "before_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "restored": true
+        },
+        "project_effect": {
+          "P9_G1_accepted": false,
+          "runtime_authorized": false,
+          "scientific_promotion": false
+        },
+        "raw_case_sha256": "fdb1096f6f7df8d88f42bcdac91efddb88a535884ab816f97fb5604dfcc7e9e5"
+      },
+      {
+        "case_id": "published_runtime_update",
+        "scope": "disposable_P9_G1_candidate_not_live_runtime",
+        "evidence_kind": "actual_checker_and_mutation",
+        "candidate_decision": "admitted",
+        "assertion_result": "passed",
+        "expected_reason": null,
+        "actual_reason": "exact accepted scope admitted",
+        "intended_check_reached": true,
+        "protected_pre_post": {
+          "after_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "before_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "restored": true
+        },
+        "project_effect": {
+          "P9_G1_accepted": false,
+          "runtime_authorized": false,
+          "scientific_promotion": false
+        },
+        "raw_case_sha256": "295d5a4860974cef5c0f7eda223715724f1b7b99c1cec050275cbce196c2ce9a"
+      },
+      {
+        "case_id": "published_runtime_deletion",
+        "scope": "disposable_P9_G1_candidate_not_live_runtime",
+        "evidence_kind": "actual_checker_and_mutation",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "expected_reason": "published runtime/evidence deletion or rename forbidden",
+        "actual_reason": "published runtime/evidence deletion or rename forbidden",
+        "intended_check_reached": true,
+        "protected_pre_post": {
+          "after_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "before_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "restored": true
+        },
+        "project_effect": {
+          "P9_G1_accepted": false,
+          "runtime_authorized": false,
+          "scientific_promotion": false
+        },
+        "raw_case_sha256": "71610ba6c743427d5b95875a4b2d86b1e91c8d4544b414da9b948575b747431d"
+      },
+      {
+        "case_id": "published_failure_evidence_overwrite",
+        "scope": "disposable_P9_G1_candidate_not_live_runtime",
+        "evidence_kind": "actual_checker_and_mutation",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "expected_reason": "published run evidence is immutable",
+        "actual_reason": "published run evidence is immutable",
+        "intended_check_reached": true,
+        "protected_pre_post": {
+          "after_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "before_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "restored": true
+        },
+        "project_effect": {
+          "P9_G1_accepted": false,
+          "runtime_authorized": false,
+          "scientific_promotion": false
+        },
+        "raw_case_sha256": "7160bb753f79357c338337348001d3e9f77aa63c123e89600c20257c4a98ee5d"
+      },
+      {
+        "case_id": "new_evidence_run_preserves_failure",
+        "scope": "disposable_P9_G1_candidate_not_live_runtime",
+        "evidence_kind": "actual_checker_and_mutation",
+        "candidate_decision": "admitted",
+        "assertion_result": "passed",
+        "expected_reason": null,
+        "actual_reason": "exact accepted scope admitted",
+        "intended_check_reached": true,
+        "protected_pre_post": {
+          "after_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "before_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "restored": true
+        },
+        "project_effect": {
+          "P9_G1_accepted": false,
+          "runtime_authorized": false,
+          "scientific_promotion": false
+        },
+        "raw_case_sha256": "ce0bc74b9edcb73e9fd7685f205d5242e54a82bb1b698bfe4ccd4bdcaee936dd"
+      },
+      {
+        "case_id": "preacceptance_same_runtime_addition",
+        "scope": "exact_6e0a507_planning_subject_before_actual_G1_acceptance",
+        "evidence_kind": "actual_checker_and_mutation",
+        "candidate_decision": "rejected",
+        "assertion_result": "passed",
+        "expected_reason": "planning authority rejects the same runtime addition",
+        "actual_reason": "planning authority rejects the same runtime addition",
+        "intended_check_reached": true,
+        "protected_pre_post": {
+          "after_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "before_digest": "7d9e5bf7ace624a1c8899f79eedfdff2562a02a0e7f248b65acb1209cff97490",
+          "restored": true
+        },
+        "project_effect": {
+          "P9_G1_accepted": false,
+          "runtime_authorized": false,
+          "scientific_promotion": false
+        },
+        "raw_case_sha256": "f267cee7c36f9d07bc3cc785de20ba7d7b1418c3a993638be27eb3d4cf854fb3"
+      }
+    ],
+    "projection_note": "Selected outcomes and protected pre/post digests from the executed raw report. raw_case_sha256 hashes each original canonical case. Diagnostic temporary repository paths alone are normalized; raw report retrieval is not claimed by this projection."
+  },
+  "surfaces": {
+    "API_notebook_byte_exact": true,
+    "status_digest": "066c20bfae6bcd5fcb2f7d64e5133d234a573774e7c6825ae6af178a74027689",
+    "dependency_ready_leaves": [
+      "P9-2.1",
+      "P9-2.2",
+      "P9-2.3",
+      "P9-2.4",
+      "P9-2.5",
+      "P9-2.6",
+      "P9-3.1"
+    ],
+    "eligible_runtime_paths": 23,
+    "integration_acceptance": {
+      "accepted_iterations": [
+        "P9-2.6"
+      ],
+      "path": "implementation/phase-9-grcv4/tranche-2/P9-2.6-AcceptanceRecord.json",
+      "record_digest": "e5ba16731e03dc916b8755c5999ab2b59acf431255612e76e0dcebe108104bc2"
+    },
+    "node_passed": 17,
+    "node_failed": 0,
+    "node_stdout": "TAP version 13\n# Subtest: planning is not runtime and lacks a recorded pass\nok 1 - planning is not runtime and lacks a recorded pass\n  ---\n  duration_ms: 7.575521\n  type: 'test'\n  ...\n# Subtest: runtime/support promotion rejected\nok 2 - runtime/support promotion rejected\n  ---\n  duration_ms: 0.694009\n  type: 'test'\n  ...\n# Subtest: unrecognized and contradictory status rejected\nok 3 - unrecognized and contradictory status rejected\n  ---\n  duration_ms: 0.463776\n  type: 'test'\n  ...\n# Subtest: modified payload with stale digest rejected\nok 4 - modified payload with stale digest rejected\n  ---\n  duration_ms: 2.382019\n  type: 'test'\n  ...\n# Subtest: explicit failed-closed result is valid but never a pass\nok 5 - explicit failed-closed result is valid but never a pass\n  ---\n  duration_ms: 0.655176\n  type: 'test'\n  ...\n# Subtest: canonical planning JSON is key-order independent\nok 6 - canonical planning JSON is key-order independent\n  ---\n  duration_ms: 0.282084\n  type: 'test'\n  ...\n# Subtest: full probe IDs sharing a prefix cannot collide and assertion never changes candidate\nok 7 - full probe IDs sharing a prefix cannot collide and assertion never changes candidate\n  ---\n  duration_ms: 2.168263\n  type: 'test'\n  ...\n# Subtest: missing null and unrecognized permission cannot substitute for false\nok 8 - missing null and unrecognized permission cannot substitute for false\n  ---\n  duration_ms: 0.298181\n  type: 'test'\n  ...\n# Subtest: accepted G1 permission does not imply accepted profile support\nok 9 - accepted G1 permission does not imply accepted profile support\n  ---\n  duration_ms: 2.976018\n  type: 'test'\n  ...\n# Subtest: failed G1 boundary cannot retain permission even with a recomputed digest\nok 10 - failed G1 boundary cannot retain permission even with a recomputed digest\n  ---\n  duration_ms: 1.635082\n  type: 'test'\n  ...\n# Subtest: missing and invalid handoff evidence do not change accepted permission\nok 11 - missing and invalid handoff evidence do not change accepted permission\n  ---\n  duration_ms: 2.28729\n  type: 'test'\n  ...\n# Subtest: current work can be held while historical acceptance remains verified\nok 12 - current work can be held while historical acceptance remains verified\n  ---\n  duration_ms: 1.73975\n  type: 'test'\n  ...\n# Subtest: committed foundation acceptance does not accept request work or conformance\nok 13 - committed foundation acceptance does not accept request work or conformance\n  ---\n  duration_ms: 0.942058\n  type: 'test'\n  ...\n# Subtest: request acceptance cannot be missing or promote result work\nok 14 - request acceptance cannot be missing or promote result work\n  ---\n  duration_ms: 0.56558\n  type: 'test'\n  ...\n# Subtest: result acceptance cannot be missing or accept harness work\nok 15 - result acceptance cannot be missing or accept harness work\n  ---\n  duration_ms: 0.699958\n  type: 'test'\n  ...\n# Subtest: harness acceptance cannot be missing or accept integration work\nok 16 - harness acceptance cannot be missing or accept integration work\n  ---\n  duration_ms: 0.625188\n  type: 'test'\n  ...\n# Subtest: integration acceptance cannot be missing, forged or accept geometry work\nok 17 - integration acceptance cannot be missing, forged or accept geometry work\n  ---\n  duration_ms: 1.865746\n  type: 'test'\n  ...\n1..17\n# tests 17\n# suites 0\n# pass 17\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 36.775227\n",
+    "browser_passed": 18,
+    "browser_failed": 0,
+    "browser_projects": [
+      "desktop",
+      "mobile"
+    ],
+    "browser_last_run": {
+      "status": "passed",
+      "failedTests": []
+    },
+    "browser_command_exit_code": 0,
+    "browser_output_summary": "18 passed (2.2m); PHASE9_BROWSER_PASS projects=desktop,mobile screenshots=4 API_download_identity=byte_exact",
+    "screenshots": [
+      {
+        "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/generated/phase9-verification/browser/browser-actual-negative-as-372dc-jects-through-UI-and-export-desktop/negative-assertion-not-admission.png",
+        "sha256": "e9d93b6e8609ca0d619a8e814e44c3520fb465dcc79da5185a55ba414ab5f27d"
+      },
+      {
+        "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/generated/phase9-verification/browser/browser-actual-negative-as-372dc-jects-through-UI-and-export-mobile/negative-assertion-not-admission.png",
+        "sha256": "dd396b7ac490c2ea85835c5204cfeb961fd64cc0c0c4eff373860f7604d5111d"
+      },
+      {
+        "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/generated/phase9-verification/browser/browser-live-API-source-bi-7f2cf-and-downloadable-JSON-agree-desktop/verification.png",
+        "sha256": "e7aa33cbddcc794cf72f5344d65b5a644a2f109982bbf1e367ef9d49bb1948f7"
+      },
+      {
+        "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/generated/phase9-verification/browser/browser-live-API-source-bi-7f2cf-and-downloadable-JSON-agree-mobile/verification.png",
+        "sha256": "28b898691287a3183a1bf7f2d36e0e0655ecb2466064a605db292671b8ba9111"
+      }
+    ]
+  },
+  "forensic_contracts_reconstructed_exactly": 8
+}

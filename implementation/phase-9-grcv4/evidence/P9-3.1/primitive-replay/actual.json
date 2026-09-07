@@ -1,0 +1,39 @@
+{
+  "d0": [
+    2.0,
+    1.0
+  ],
+  "differential_identity": "grcv4-differential-sha256:60d259decf2fb6cdf0d9cfaf6ff40d20d3395d20b6076a7ef8e2ff3febbd8691",
+  "divergence": [
+    3.0,
+    -5.0,
+    2.0
+  ],
+  "flat": [
+    2.2,
+    -1.4
+  ],
+  "flat_identity": "grcv4-flat-sha256:efe4e958b21dc4713fc8c7a8f27fce6a6a66f62e9d0dc9459ca6a252c9893066",
+  "form_pairing": 9.4,
+  "graph_digest": "grc-graph-sha256:cb0d1f6f018e362fdd89571a7b9d65250b5029962b7375a54c99732d7406094e",
+  "incidence": [
+    [
+      1.0,
+      0.0
+    ],
+    [
+      -1.0,
+      1.0
+    ],
+    [
+      0.0,
+      -1.0
+    ]
+  ],
+  "one_form_hodge_identity": "grcv4-pairing-sha256:8137284996d42b811a69750395409d040bcaab4b574ad2adb5200623fd928eb5",
+  "orientation_identity": "grcv4-orientation-sha256:bef5e920d5b98bc04f0b889ead99425840315b7fe14c2a4ded6e2884660138c1",
+  "sharp_flat": [
+    3.0000000000000004,
+    -1.9999999999999991
+  ]
+}

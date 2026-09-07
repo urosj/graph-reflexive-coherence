@@ -498,6 +498,24 @@ later owner. Production, older families, accepted claims and release stay fixed.
 
 ### Tranche 3. Typed graph, geometry, transport, and charge
 
+P9-3.1 now follows the separately recorded P9-2.6 acceptance at committed
+subject `5307343`; the user explicitly requested this entry. Historical
+P9-2.6 review states above remain evidence of their original review time.
+The [P9-3.1 review](./phase-9-grcv4/tranche-3/P9-3.1-Review.md) binds the
+source/spec/paper/forensic map, immutable stable-ID lookup decision, typed
+pairings and flat/sharp maps, candidate-owned factors and reconstruction
+checks. Its implementation is pending user review. Only P9-3.1 is newly
+eligible (seven dependency-ready leaves, twenty-three runtime paths);
+P9-3.2 and numerical support remain gated.
+
+The first independent audit's local positivity finding is corrected by exact
+dyadic Sylvester/Bareiss validation in both Hodge constructors. Native NumPy
+2.4.6 runs preserve the original 25 exposures and the corrected 876/876 stress
+result; 67 primitive tests pass, including clean wheel/source installations.
+The review records the proof, independent multidimensional/scale/permutation
+pressure, reconstruction inputs and exact remaining stage/conditioning gates.
+This correction does not accept P9-3.1 or change frozen mathematical policy.
+
 Implement deterministic graph order/orientation, differential identity,
 one-form versus physical-flux maps, Hodge pairings, candidate-local mobility,
 geometry profiles, and stage-aware derived caches. Implement one authoritative

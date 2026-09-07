@@ -1341,3 +1341,14 @@ clarification adds no acceptance or runtime gate.
 - [x] Keep P9-2.6's self-check source/package/legacy/replay evidence scoped to
       the existing foundation owners; update current bindings without changing
       historical subjects, runtime-support sets or API/UX authority semantics.
+
+
+### P9-3.1 geometry and transport foundation entry
+
+The P9-2.6 decision is now separately bound to accepted commit `5307343`.
+The historical P9-2.6 entry statements retain their original temporal scope.
+API, notebook, browser and exports add `integration_acceptance` and expose
+seven dependency-ready leaves with twenty-three eligible runtime paths.
+Only the reviewed geometry/transport source and test pairs become newly
+eligible. Forged/missing acceptance and premature P9-3.2 promotion fail closed.
+P9-3.1 work remains pending user review, with empty runtime support sets.

@@ -380,9 +380,19 @@ three bounded batches retain their own results and raw per-run manifests.
 
 ## Tranche 3. Typed graph, geometry, transport, and charge
 
-- [ ] P9-3.1: Implement deterministic graph/differential identities, typed
+- [x] P9-3.1: Implement deterministic graph/differential identities, typed
   Hodge/one-form/physical-flux maps, and candidate-local mobility ownership.
   Resolve graph-backend storage/lookup and utility reuse before implementation (§7.2).
+  [Review](./phase-9-grcv4/tranche-3/P9-3.1-Review.md) and
+  [execution](./phase-9-grcv4/tranche-3/P9-3.1-ExecutionRecord.json): implemented
+  primitive graph/pairing/mobility foundations, pending user review. Entry
+  follows the separate [P9-2.6 acceptance](./phase-9-grcv4/tranche-2/P9-2.6-AcceptanceRecord.json).
+  Completion does not accept P9-3.1, admit a profile, or enable P9-3.2.
+  Audit 1 F1 is corrected with exact local positivity validation: native
+  before/after evidence, 876/876 independent stress scenarios and 67 primitive
+  tests including isolated wheel/source installations are bound in the review.
+  Signed boundary cases, exact nonpositive families and positive extreme-scale
+  controls are included; conditioning and stage admission remain separate.
 - [ ] P9-3.2: Implement exact stage/cache provenance and domain admission.
 - [ ] P9-3.3: Implement the one-resource-write complete-step boundary and
   exact charge gate, without an extra remainder/repair coordinate.

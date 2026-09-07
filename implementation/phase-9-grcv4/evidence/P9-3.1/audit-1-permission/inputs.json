@@ -1,10 +1,18 @@
 {
-  "schema": "phase9_implementation_boundary_v1",
-  "active_phase": "implementation",
-  "baseline_commit": "6e0a507c0fd7e0758392514acce5e79312a2069c",
-  "approval_digest": "cd2c52f30477e1042bb903bd0553da237ddccc9cad373afecc1a84e4e0b37ea2",
-  "release_id": "grcv4-spec-release-sha256:9f4c8fe5b57b1c477d834a3e4dae3f98a2b18c70e6e7f598e3c9652170c8645f",
-  "artifact_bindings": [
+  "iteration_id": "P9-3.1",
+  "audit_round": 1,
+  "commands": [
+    ".venv/bin/python implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/run.py verify-phase9 --boundary-only",
+    ".venv/bin/python implementation/phase-9-grcv4/verification/test_phase9_g1.py",
+    ".venv/bin/python implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/test_phase9_g1_surfaces.py"
+  ],
+  "policy_digest": "f1bed0d0a42093cdfeb62f7c7840f8fa3ebcafa6c4fa52e1408c0901b8a01341",
+  "tree": {
+    "protected_baseline_files": 725,
+    "current_artifact_digest": "0c667a1b81bd9dd86fafede6fd807dfdc25515990c65600f1925eb4340452ad8",
+    "registered_runtime_files": 122
+  },
+  "maintenance_bindings": [
     {
       "path": "implementation/ImplementationPhases.md",
       "sha256": "129b5cbdc304c6993e999a6e73c4401d106ddf1c5a28f6982997215088f7c48f"
@@ -190,5 +198,11 @@
       "sha256": "80a8df6bf6d01f08ba54d5649a5ac20d1e7743895609f2ea020e61fe8fd3f5fb"
     }
   ],
-  "record_digest": "f1bed0d0a42093cdfeb62f7c7840f8fa3ebcafa6c4fa52e1408c0901b8a01341"
+  "work_manifest_binding": {
+    "path": "implementation/phase-9-grcv4/runtime/RuntimeWorkManifest.json",
+    "sha256": "00c23dcaea6eb5b9efea4a8505cf637ec3abd9b9e50bbfce9e1a21e2a6b10d39"
+  },
+  "scope": "Post-audit numerical source/test/records at this pre-retention boundary. Retaining this report changes manifest content; final boundary, pressure and API/notebook projections are regenerated afterward.",
+  "browser_scope": "Not rerun for this numerical correction. Original 18-test browser evidence remains scoped to its original permission-surfaces subject; no UI/adapter source changed during audit 1.",
+  "ordering_observation": "An initial API surface attempt while refreshed authority pressure was still running rejected the stale preceding pressure subject. The completed pressure run precedes the successful surface run retained here."
 }

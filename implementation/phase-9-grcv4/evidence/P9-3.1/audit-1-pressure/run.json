@@ -1,0 +1,45 @@
+{
+  "iteration_id": "P9-3.1",
+  "status": "passed",
+  "scope": "Post-audit local primitives, numerical outliers, clean installed wheel/source consumers and static/dependency checks; earlier full regression remains separately source-bound.",
+  "artifact_bindings": [
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-3.1/audit-1-pressure/inputs.json",
+      "sha256": "0536895f14ffbf5fbf157b76f063f637cfccc8757cf4c434f2bb053149fc6680"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-3.1/audit-1-pressure/expected.json",
+      "sha256": "efefd6ed3d26310eb9d08aa3870231dbd527d767270ee7fe9b188677e99b726a"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-3.1/audit-1-pressure/actual.json",
+      "sha256": "ebd24dc2eae2b9d3ec2d1de4efc0b651690dab4d1b175e77df2fb97e8e1479f5"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-3.1/audit-1-pressure/stdout.txt",
+      "sha256": "54d24892bc84b6e02509b4d057ddcfa6b492debb9d03562e67ce8def37fb32b9"
+    }
+  ],
+  "source_bindings": [
+    {
+      "path": "pyproject.toml",
+      "sha256": "018c364413f75ee49186975c05e9cdaba7a78e171d47833609fbebc223a64a66"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_geometry.py",
+      "sha256": "831e0590d79f7e9088fdd6ad3c1fe1a8aca54b56d8463f11ac120474829061f0"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_transport.py",
+      "sha256": "8bad1a9642456f3a63976177b9baba3f1dd8ec0df2ec6376e18a71fb032823a2"
+    },
+    {
+      "path": "tests/models/test_grc_v4_geometry.py",
+      "sha256": "629916068c2098ccc77d96f9c1b014481a5d397357234e54ab694dfbe9781bb1"
+    },
+    {
+      "path": "tests/models/test_grc_v4_transport.py",
+      "sha256": "13ac20f700a10f7a13fb5ba09243844e2bced9e79bcd1260d2740191fa5e691b"
+    }
+  ]
+}

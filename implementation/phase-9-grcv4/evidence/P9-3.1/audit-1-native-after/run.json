@@ -1,0 +1,20 @@
+{
+  "iteration_id": "P9-3.1",
+  "status": "passed",
+  "audit_finding": "F1: one local positivity admission defect",
+  "artifact_bindings": [
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-3.1/audit-1-native-after/inputs.json",
+      "sha256": "451b7aa654f90c944659f344a682197a2e4758550c116e70ae9d58519377d14d"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-3.1/audit-1-native-after/expected.json",
+      "sha256": "c835efcec2356ad32042306f8f018938fb4cba561697ac78c51e903562c75163"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-3.1/audit-1-native-after/actual.json",
+      "sha256": "c64eb47c65e2692bca634575a0985f5b041c7c7bc0f1f0b4b4eb4face6891197"
+    }
+  ],
+  "qualification": "Native source-mode runs; clean installed archive coverage is separately bound by audit-1-pressure."
+}

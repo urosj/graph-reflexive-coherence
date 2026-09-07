@@ -1,0 +1,19 @@
+{
+  "iteration_id": "P9-3.1",
+  "status": "passed",
+  "scope": "final-source graph/pairing/mobility/outlier and clean installed primitives; no later-leaf conformance",
+  "artifact_bindings": [
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-3.1/outlier-pressure/inputs.json",
+      "sha256": "881f17edad40afaee0e8c49cebbe4c263a28e6dd78cd8ad6c476b644b4249a20"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-3.1/outlier-pressure/actual.json",
+      "sha256": "c9ba578eea1c06c4e7df830242dabf380046da5648ee8247278e87574a2a2e89"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-3.1/outlier-pressure/stdout.txt",
+      "sha256": "9423d6d91bf0add8ed16ba4063f08d5f65a187c97b3f391d0678967db2517fd3"
+    }
+  ]
+}

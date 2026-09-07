@@ -26,6 +26,7 @@ Documentation = "https://github.com/urosj/graph-reflexive-coherence/tree/main/do
 
 [project.optional-dependencies]
 v4 = [
+  "numpy==2.4.6",
   "rfc8785==0.1.4",
   "jsonschema==4.26.0",
 ]
