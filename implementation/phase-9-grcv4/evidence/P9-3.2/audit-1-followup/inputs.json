@@ -1,0 +1,94 @@
+{
+  "iteration_id": "P9-3.2",
+  "owner": "P9-3.4",
+  "source_bindings": [
+    {
+      "path": "pyproject.toml",
+      "sha256": "018c364413f75ee49186975c05e9cdaba7a78e171d47833609fbebc223a64a66"
+    },
+    {
+      "path": "src/pygrc/models/__init__.py",
+      "sha256": "23768e181455f4e7eb68908cdac532464c063fa5eb4250c4d05537eca0dcaa70"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4.py",
+      "sha256": "65efdf547d8e88e67c22d62a869bd61464ed3d2eb8b2709be6661796b37e824c"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_assets/__init__.py",
+      "sha256": "a1f3aba168a9f9331d1fc9580d5055404f8bc4c705936c7e388e7a47f80a0051"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_assets/asset-index.json",
+      "sha256": "c1ac9d8d3bb924f29b775bd9863a33a454da41e98c57ef0b8bb3c24171fafc9f"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_assets/grc-v4-contract-schema.json",
+      "sha256": "3fd072fc8c2b315f1b5dc32a4e4821a5082b5f3fc9d9a4794c007419a7aa0bea"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_assets/grc-v4-specification-release.json",
+      "sha256": "bba0bb649bc2e80c5bfa99f96bd5824bbdda3b3fbc87fb68c3e3a59da1cee46b"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_assets/grc-v4-specification-release.sha256",
+      "sha256": "50b20509b84a6b21f3036ecb1d7e13861f662bc8319873c5321fc0317ada7e33"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_codec.py",
+      "sha256": "bd6d9390c818c5a25b70da119cfbc3a3de3707ee84566f6bb06160bb4780e154"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_geometry.py",
+      "sha256": "d715f67555d3c6e68a4e031ba132cb1854cc839de03dcd2c7101fbeb40c13dcd"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_profile.py",
+      "sha256": "188e4ceb92b6a36fe81849911b88b233b8dd16bf3de07383e1508d76232fdbfb"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_state.py",
+      "sha256": "b0ccf06ef91b66feb8670fb67281465998f4bcb085c4d547fedd3ce6d85ad3cb"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_step.py",
+      "sha256": "773975e1131791f93d86f6dac38b27ebac9dca46c1b87ef2e0a31bc8c90a705b"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_transport.py",
+      "sha256": "8bad1a9642456f3a63976177b9baba3f1dd8ec0df2ec6376e18a71fb032823a2"
+    },
+    {
+      "path": "tests/models/test_grc_v4_geometry.py",
+      "sha256": "de8957be72deeaf92cef84795d0356cbcba99b4563975f03413e627140908eea"
+    },
+    {
+      "path": "tests/models/test_grc_v4_transport.py",
+      "sha256": "13ac20f700a10f7a13fb5ba09243844e2bced9e79bcd1260d2740191fa5e691b"
+    }
+  ],
+  "original_audit_record": {
+    "path": "implementation/phase-9-grcv4/evidence/P9-3.2/audit-1-inputs/inputs.json",
+    "sha256": "8d185c0934b7780f74508e459446832810398ad58da5af4c9ee973684e087639"
+  },
+  "command": ".venv/bin/python <verified extracted reproduce.py> --repo <repo root> --output <fresh output file>",
+  "reported_witness": {
+    "values": [
+      5e-324,
+      1e+150
+    ],
+    "original_offdiagonal": 0.0,
+    "reversed_offdiagonal": 2.4703282292062327e-174,
+    "exact_product": "Fraction(0.5) * Fraction(5e-324) * Fraction(1e150)"
+  },
+  "population": "8 scale pairs x 4 independent signed coordinate actions x 2 edge orders",
+  "oracle": "exact Fraction diagonal squares and half off-diagonal products, rounded once for measurement; no production-policy promotion",
+  "scope": "characterize componentwise coupling loss versus max-entry normalized error, true underflow and nonfinite overflow rejection; do not sort coordinates or introduce repair",
+  "programs": [
+    {
+      "filename": "reproduce.py",
+      "sha256": "597c2cc8ef75d1da177d75d2889515e7434e133050ae3b7e089189844c3c79a7",
+      "utf8_content": "#!/usr/bin/env python3\n\"\"\"Characterize the audit's numerical envelope; do not change admission policy.\"\"\"\n\nimport argparse\nfrom fractions import Fraction\nimport hashlib\nimport itertools\nimport json\nimport math\nfrom pathlib import Path\nimport sys\n\n\ndef main():\n    parser = argparse.ArgumentParser(description=__doc__)\n    parser.add_argument(\"--repo\", type=Path, required=True)\n    parser.add_argument(\"--output\", type=Path, required=True)\n    args = parser.parse_args()\n    sys.path.insert(0, str(args.repo.resolve() / \"src\"))\n    from pygrc.models import grc_v4_geometry as geometry\n\n    edges = (\n        geometry.OrientedEdge(\"x\", \"a\", \"b\"),\n        geometry.OrientedEdge(\"y\", \"b\", \"c\"),\n    )\n    populations = (\n        (\"audit_witness\", 5e-324, 1e150),\n        (\"true_final_underflow\", 5e-324, 1.0),\n        (\"normal_boundary\", 2.0**-1022, 1e150),\n        (\"mixed_normal\", 1e-200, 1e150),\n        (\"all_final_underflow\", 5e-324, 5e-324),\n        (\"large_finite\", 1e154, 1e154),\n        (\"diagonal_overflow\", 1e155, 1e150),\n        (\"finite_coupling_with_diagonal_overflow\", 1e308, 5e-324),\n    )\n    rows = []\n    for name, first, second in populations:\n        for signs in itertools.product((-1, 1), repeat=2):\n            for reverse in (False, True):\n                values = (first * signs[0], second * signs[1])\n                signed_edges = tuple(\n                    edge if sign == 1 else geometry.OrientedEdge(\n                        edge.edge_id, edge.head_node_id, edge.tail_node_id\n                    )\n                    for edge, sign in zip(edges, signs)\n                )\n                if reverse:\n                    values = values[::-1]\n                    signed_edges = signed_edges[::-1]\n                graph = geometry.GRCV4Graph((\"a\", \"b\", \"c\"), signed_edges)\n                x, y = map(Fraction, values)\n                exact = ((x * x, x * y / 2), (x * y / 2, y * y))\n                row = {\n                    \"case\": name,\n                    \"signs_in_original_order\": signs,\n                    \"reversed\": reverse,\n                    \"graph\": graph.to_payload(),\n                    \"values\": values,\n                    \"values_hex\": [v.hex() for v in values],\n                    \"exact_offdiagonal\": str(exact[0][1]),\n                }\n                try:\n                    rounded = tuple(tuple(float(v) or 0.0 for v in r) for r in exact)\n                except OverflowError:\n                    rounded = None\n                row[\"once_rounded_exact_matrix\"] = rounded\n                try:\n                    actual = geometry.StarAssembly(geometry.OneForm(graph, values)).matrix\n                except ValueError as exc:\n                    assert rounded is None, (name, str(exc))\n                    row.update(outcome=\"overflow_rejected\", error=str(exc))\n                else:\n                    assert rounded is not None\n                    assert all(math.isfinite(v) for r in actual for v in r)\n                    assert actual[0][1] == actual[1][0]\n                    expected = rounded[0][1]\n                    difference = abs(Fraction(actual[0][1]) - Fraction(expected))\n                    scale = max(abs(v) for r in rounded for v in r)\n                    row.update(\n                        outcome=\"finite_assembly\",\n                        actual=actual,\n                        lost_representable_coupling=expected != 0 and actual[0][1] == 0,\n                        offdiagonal_relative_error=(\n                            float(difference / abs(Fraction(expected))) if expected else None\n                        ),\n                        max_entry_normalized_error=(\n                            float(difference / Fraction(scale)) if scale else 0.0\n                        ),\n                    )\n                rows.append(row)\n    output = {\n        \"iteration_id\": \"P9-3.2\",\n        \"owner\": \"P9-3.4\",\n        \"status\": \"characterized_unresolved_numerical_envelope\",\n        \"source_sha256\": hashlib.sha256(Path(geometry.__file__).read_bytes()).hexdigest(),\n        \"oracle\": \"Exact Fraction products for two adjacent ordinary edges; single rounding for comparison only, not a production arithmetic rule\",\n        \"claim_ceiling\": \"64 signed/order observations and overflow checks; no universal covariance, relative-error or numerical runtime admission\",\n        \"counts\": {\n            \"cases\": len(rows),\n            \"finite\": sum(r[\"outcome\"] == \"finite_assembly\" for r in rows),\n            \"overflow_rejected\": sum(r[\"outcome\"] == \"overflow_rejected\" for r in rows),\n            \"lost_representable_couplings\": sum(r.get(\"lost_representable_coupling\", False) for r in rows),\n        },\n        \"cases\": rows,\n    }\n    with args.output.open(\"x\") as destination:\n        json.dump(output, destination, indent=2, allow_nan=False)\n        destination.write(\"\\n\")\n    print(json.dumps(output[\"counts\"], sort_keys=True))\n\n\nif __name__ == \"__main__\":\n    main()\n"
+    }
+  ]
+}

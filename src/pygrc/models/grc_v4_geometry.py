@@ -1,21 +1,23 @@
-"""P9-3.1 fixed-graph coordinates, pairings and physical-flux flat/sharp.
+"""P9-3.1/P9-3.2 fixed-graph geometry, domain and exact stage/cache inputs.
 
 The serialized order is the coordinate order. Positive tail-to-head flux has
 positive outward divergence at its tail: B[tail,e]=+1, B[head,e]=-1. Loops
 cancel in B; parallel edges keep distinct IDs. No legacy slots or port chart
 enter this backend. Descriptor hashes below are versioned implementation-local
-identities, not additions to the frozen wire schema or stage-cache admission.
+identities, not additions to the frozen wire schema. Pure pairing descriptors
+do not establish freshness; the separate stage/cache package binds its inputs.
 
 All retained numerical storage is immutable binary64 tuples. Positivity is
 checked exactly on those dyadic values; dense solves use the reviewed NumPy
 dependency. Local positivity does not certify a complete profile's conditioning,
-selector, stage provenance or solver domain.
+selector or solver domain. Stage/cache identity does not authenticate a caller.
 """
 
 from __future__ import annotations
 
 from collections.abc import Mapping, Sequence
 from dataclasses import dataclass, field
+from fractions import Fraction
 import hashlib
 import math
 from types import MappingProxyType
@@ -27,10 +29,18 @@ from .grc_v4_codec import (
     canonical_json_bytes,
     decode_canonical_json,
     decode_json,
+    payload_identity,
     validate_payload,
 )
-from .grc_v4_profile import GRCV4CommonParams
-from .grc_v4_state import _number, _text, _vector
+from .grc_v4_profile import GRCV4CommonParams, GRCV4Profile, validate_profile_references
+from .grc_v4_state import (
+    FrozenJSONMap,
+    GRCV4AuthoritativeState,
+    _index,
+    _number,
+    _text,
+    _vector,
+)
 
 NodeId: TypeAlias = str | int
 Matrix: TypeAlias = tuple[tuple[float, ...], ...]
@@ -91,7 +101,9 @@ def _matrix(value: object, size: int) -> Matrix:
     return matrix
 
 
-def _require_positive_definite(matrix: Matrix) -> None:
+def _require_positive_definite(
+    matrix: tuple[tuple[float | Fraction, ...], ...],
+) -> None:
     """Exact Sylvester criterion by fraction-free elimination, at every size.
 
     A common positive power-of-two denominator turns the finite binary64
@@ -113,6 +125,10 @@ def _require_positive_definite(matrix: Matrix) -> None:
 
     ratios = [[x.as_integer_ratio() for x in row] for row in matrix]
     denominator = max(d for row in ratios for _, d in row)
+    if denominator & (denominator - 1) or any(
+        denominator % d for row in ratios for _, d in row
+    ):
+        raise ValueError("positivity validation requires exact dyadic entries")
     work = [[n * (denominator // d) for n, d in row] for row in ratios]
     previous = 1
     for k in range(size):
@@ -610,3 +626,880 @@ class GraphCoordinateAction:
                 for i, a in enumerate(self.edge_permutation)
             ),
         )
+
+
+# P9-3.2: fixed-graph structural crossing and stage-bound derived operations.
+# These are implementation-local reconstruction records, not new wire schemas,
+# a candidate current solver, or complete-profile runtime support.
+
+
+def _symmetric(value: object, graph: GRCV4Graph) -> Matrix:
+    if type(graph) is not GRCV4Graph:
+        raise TypeError("structural matrix requires a V4 graph")
+    matrix = _matrix(value, len(graph.oriented_edges))
+    if any(matrix[i][j] != matrix[j][i] for i in range(len(matrix)) for j in range(i)):
+        raise ValueError("structural matrix must be exactly symmetric")
+    return matrix
+
+
+STRUCTURAL_COORDINATES_ID = "grcv4-vertex-star-dense-row-major-v1"
+
+
+def _structural_matrix(value: object, graph: GRCV4Graph) -> Matrix:
+    """The shipped star-supported bilinear carrier space, stored densely.
+
+    This is assembly support, not support of the inverse Hodge or response.
+    Signed/indefinite increments are permitted; H_profile owns positivity.
+    """
+    matrix = _symmetric(value, graph)
+    endpoints = tuple({e.tail_node_id, e.head_node_id} for e in graph.oriented_edges)
+    if any(
+        matrix[i][j] != 0 and endpoints[i].isdisjoint(endpoints[j])
+        for i in range(len(matrix))
+        for j in range(i)
+    ):
+        raise ValueError(
+            "structural matrix has support outside the declared vertex stars"
+        )
+    return matrix
+
+
+@dataclass(frozen=True, slots=True)
+class K4Tensor:
+    """Total K4 represented by its separate baseline and structural increment.
+
+    Keeping the two terms avoids subtracting rounded, nearly equal totals to
+    recover a lost increment. Neither term is a mobility or an admitted Hodge.
+    """
+
+    graph: GRCV4Graph
+    base: Matrix
+    increment: Matrix
+
+    def __post_init__(self) -> None:
+        object.__setattr__(self, "base", _structural_matrix(self.base, self.graph))
+        object.__setattr__(
+            self, "increment", _structural_matrix(self.increment, self.graph)
+        )
+
+    @property
+    def base_preimage(self) -> dict[str, JSONValue]:
+        return {
+            "schema_version": "grcv4-k4-identity-v1",
+            "K4_base": [list(r) for r in self.base],
+        }
+
+    @property
+    def identity(self) -> str:
+        return _identity(
+            "grcv4-structural-tensor-sha256",
+            {
+                "descriptor_version": "grcv4-baseline-plus-increment-v1",
+                "graph": self.graph.to_payload(),
+                "base": self.base,
+                "increment": self.increment,
+            },
+        )
+
+
+@dataclass(frozen=True, slots=True)
+class StarAssembly:
+    """Common overlap-normalized assembly, before a candidate's adapter/gain."""
+
+    form: OneForm
+    matrix: Matrix = field(init=False)
+
+    def __post_init__(self) -> None:
+        if type(self.form) is not OneForm:
+            raise TypeError("star assembly requires a lowered structural one-form")
+        graph = self.form.graph
+        stars = tuple(set(graph.star(v)) for v in graph.live_node_ids)
+        multiplicities = tuple(
+            sum(e in star for star in stars) for e in range(len(graph.oriented_edges))
+        )
+        size = len(multiplicities)
+        rows = [[0.0] * size for _ in range(size)]
+        # The co-occurrence expression is the stated star sum algebraically.
+        # It preserves the exact diagonal partition (m_e/m_e=1), including
+        # once-counted loops, without squaring an approximate inverse sqrt.
+        for i in range(size):
+            for j in range(i, size):
+                count = sum(i in star and j in star for star in stars)
+                if count:
+                    weight = count / math.sqrt(multiplicities[i] * multiplicities[j])
+                    value = _computed(
+                        weight * self.form.values[i] * self.form.values[j]
+                    )
+                    rows[i][j] = rows[j][i] = value
+        object.__setattr__(self, "matrix", tuple(tuple(row) for row in rows))
+
+    @property
+    def graph(self) -> GRCV4Graph:
+        return self.form.graph
+
+    @property
+    def identity(self) -> str:
+        return _identity(
+            "grcv4-star-assembly-sha256",
+            {
+                "descriptor_version": "grcv4-vertex-star-cooccurrence-v1",
+                "graph": self.graph.to_payload(),
+                "form": self.form.values,
+            },
+        )
+
+
+@dataclass(frozen=True, slots=True)
+class GRCV4Context:
+    """The shipped constant-zero context contract; no opaque evaluator input."""
+
+    contract_id: str
+    value: FrozenJSONMap
+
+    def __post_init__(self) -> None:
+        object.__setattr__(self, "value", FrozenJSONMap(self.value))
+        if (
+            type(self.contract_id) is not str
+            or self.contract_id != "constant_zero_context_v1"
+            or self.value
+        ):
+            raise ValueError(
+                "unimplemented context contract or nonzero context payload"
+            )
+
+    def to_payload(self) -> dict[str, JSONValue]:
+        return {"contract_id": self.contract_id, "value": {}}
+
+
+def _geometry_declarations(profile: GRCV4Profile, context: GRCV4Context) -> None:
+    if type(profile) is not GRCV4Profile or type(context) is not GRCV4Context:
+        raise TypeError("geometry requires a complete profile and typed context")
+    params, identity = profile.params_resolved, profile.identity_payload
+    required = (
+        (identity.geometry_profile_id, "affine_reference_relative_v1"),
+        (params.geometry.geometry_domain_id, "positive_hodge_fixed_graph_v1"),
+        (params.geometry.flat_sharp_solver_id, "spd_direct_v1"),
+        (params.geometry.star_cover_id, "vertex_star_exact_overlap_v1"),
+        (params.geometry.overlap_normalization_id, "edge_multiplicity_inverse_sqrt_v1"),
+        (
+            params.geometry.candidate_adapter_id,
+            f"candidate_{identity.candidate.lower()}_exact_star_adapter_v1",
+        ),
+        (params.common.measure_profile_id, "unit_vertex_measure_v1"),
+        (params.common.context_contract_id, context.contract_id),
+        (params.common.units_id, "grcv4_nondimensional_reference_v1"),
+    )
+    if any(actual != expected for actual, expected in required):
+        raise ValueError("unimplemented or mismatched geometry declaration")
+    # The common/current domain, candidate solver and gauge declarations are
+    # identity inputs here. Their candidate-specific execution is not admitted
+    # by this local positive geometry check.
+
+
+@dataclass(frozen=True, slots=True)
+class GRCV4ReferenceGeometry:
+    graph: GRCV4Graph
+    profile: GRCV4Profile
+    context: GRCV4Context
+    K4_base: Matrix
+    edge_weights: FrozenJSONMap
+    pairings: GRCV4Pairings = field(init=False)
+    differential: GRCV4Differential = field(init=False)
+
+    def __post_init__(self) -> None:
+        _geometry_declarations(self.profile, self.context)
+        base = _structural_matrix(self.K4_base, self.graph)
+        weights = FrozenJSONMap(self.edge_weights)
+        object.__setattr__(self, "K4_base", base)
+        object.__setattr__(self, "edge_weights", weights)
+        validate_profile_references(
+            self.profile,
+            live_edge_ids=self.graph.live_edge_ids,
+            k4_preimage=self.k4_preimage,
+            reference_hodge_preimage=self.hodge_preimage,
+        )
+        object.__setattr__(
+            self,
+            "differential",
+            GRCV4Differential(self.graph, self.profile.params_resolved.common),
+        )
+        object.__setattr__(
+            self,
+            "pairings",
+            reference_pairings(
+                self.graph,
+                vertex_measure=(1.0,) * len(self.graph.live_node_ids),
+                reference_edge_weights=_vector(
+                    tuple(weights[e] for e in self.graph.live_edge_ids), positive=True
+                ),
+            ),
+        )
+
+    @property
+    def k4_preimage(self) -> dict[str, JSONValue]:
+        return {
+            "schema_version": "grcv4-k4-identity-v1",
+            "K4_base": [list(r) for r in self.K4_base],
+        }
+
+    @property
+    def hodge_preimage(self) -> dict[str, JSONValue]:
+        return validate_payload(
+            "reference_hodge_identity_payload",
+            {
+                "schema_version": "grcv4-reference-hodge-identity-v1",
+                "edge_weights": self.edge_weights,
+            },
+        )
+
+    @property
+    def identity(self) -> str:
+        return _identity("grcv4-reference-geometry-sha256", self.to_payload())
+
+    def to_payload(self) -> dict[str, JSONValue]:
+        return {
+            "descriptor_version": "grcv4-reference-geometry-v1",
+            "structural_coordinates_id": STRUCTURAL_COORDINATES_ID,
+            "graph": self.graph.to_payload(),
+            "profile": self.profile.to_payload(),
+            "context": self.context.to_payload(),
+            "K4_base": [list(r) for r in self.K4_base],
+            "reference_hodge": self.hodge_preimage,
+        }
+
+    @classmethod
+    def from_payload(cls, value: object) -> GRCV4ReferenceGeometry:
+        data = _local_payload(
+            value,
+            {
+                "descriptor_version",
+                "graph",
+                "profile",
+                "context",
+                "K4_base",
+                "reference_hodge",
+                "structural_coordinates_id",
+            },
+            "descriptor_version",
+            "grcv4-reference-geometry-v1",
+        )
+        if data["structural_coordinates_id"] != STRUCTURAL_COORDINATES_ID:
+            raise ValueError("unimplemented structural coordinates")
+        profile = GRCV4Profile.from_canonical_bytes(
+            canonical_json_bytes(data["profile"])
+        )
+        context = _context_payload(data["context"])
+        hodge = validate_payload(
+            "reference_hodge_identity_payload", data["reference_hodge"]
+        )
+        return cls(
+            GRCV4Graph.from_payload(data["graph"]),
+            profile,
+            context,
+            cast(Matrix, data["K4_base"]),
+            FrozenJSONMap(cast(Mapping[str, object], hodge["edge_weights"])),
+        )
+
+    def geometry(self) -> GRCV4Geometry:
+        return GRCV4Geometry(self, self.pairings.one_form)
+
+
+@dataclass(frozen=True, slots=True)
+class GRCV4Geometry:
+    """Admitted fixed-graph Hodge package, also usable as a solver trial input.
+
+    Positivity of this package is not a candidate-current/root certificate.
+    A trial need not already satisfy the future coupled geometry residual.
+    """
+
+    reference: GRCV4ReferenceGeometry
+    one_form_hodge: OneFormHodge
+
+    def __post_init__(self) -> None:
+        if (
+            type(self.reference) is not GRCV4ReferenceGeometry
+            or type(self.one_form_hodge) is not OneFormHodge
+        ):
+            raise TypeError("geometry requires a bound reference and one-form Hodge")
+        if self.one_form_hodge.graph != self.reference.graph:
+            raise ValueError("geometry uses foreign graph coordinates")
+
+    @property
+    def pairings(self) -> GRCV4Pairings:
+        return GRCV4Pairings(self.reference.pairings.vertex, self.one_form_hodge)
+
+    @property
+    def identity(self) -> str:
+        return _identity(
+            "grcv4-geometry-sha256",
+            {
+                "descriptor_version": "grcv4-fixed-reference-positive-geometry-v1",
+                "reference_identity": self.reference.identity,
+                "one_form_hodge_identity": self.one_form_hodge.identity,
+                "positivity_policy_id": POSITIVITY_POLICY_ID,
+            },
+        )
+
+
+def H_profile(
+    K_4: K4Tensor,
+    *,
+    reference: GRCV4ReferenceGeometry,
+    context: GRCV4Context,
+    profile: GRCV4Profile,
+) -> GRCV4Geometry:
+    """Accepted affine reference-relative map; explicitly consumes Delta K4.
+
+    Exact dyadic positivity checks the mathematical affine expression before
+    rounding; the public Hodge constructor separately checks retained binary64
+    entries. No square-root estimate decides the congruent I+Theta domain.
+    Products/additions retain declared binary64 operation order, canonical zero
+    and fail-closed nonfinite behavior. Exact neutral controls reuse reference.
+    """
+    if type(K_4) is not K4Tensor or type(reference) is not GRCV4ReferenceGeometry:
+        raise TypeError("H_profile requires typed K4 and reference geometry")
+    _geometry_declarations(profile, context)
+    if (
+        profile != reference.profile
+        or context != reference.context
+        or K_4.graph != reference.graph
+    ):
+        raise ValueError("geometry reference/profile/context/graph mismatch")
+    if K_4.base != reference.K4_base:
+        raise ValueError("K4 baseline differs from the declared reference preimage")
+    gain = profile.params_resolved.geometry.kappa_H
+    if gain == 0 or not any(x for row in K_4.increment for x in row):
+        return reference.geometry()
+    ref = reference.pairings.one_form.matrix
+    exact = tuple(
+        tuple(
+            Fraction(a) + Fraction(gain) * Fraction(b)
+            for a, b in zip(left, right, strict=True)
+        )
+        for left, right in zip(ref, K_4.increment, strict=True)
+    )
+    _require_positive_definite(exact)
+    result = tuple(
+        tuple(
+            _computed(a + _computed(gain * b)) for a, b in zip(left, right, strict=True)
+        )
+        for left, right in zip(ref, K_4.increment, strict=True)
+    )
+    return GRCV4Geometry(reference, OneFormHodge(reference.graph, result))
+
+
+GeometryStage: TypeAlias = Literal[
+    "pre_read",
+    "os_predictor",
+    "os_corrector",
+    "ci_trial",
+    "cipc_trial",
+    "rg2b_section",
+    "pc_old_history",
+    "post_continuity",
+    "reset_readmission",
+    "target_readmission",
+]
+_STAGE_REALIZATIONS = {
+    "os_predictor": "OS",
+    "os_corrector": "OS",
+    "ci_trial": "CI",
+    "cipc_trial": "CI+PC",
+    "rg2b_section": "RG2b",
+    "pc_old_history": "PC",
+}
+_COMMON_STAGES = frozenset(
+    {"pre_read", "post_continuity", "reset_readmission", "target_readmission"}
+)
+
+
+def _state_payload(value: GRCV4AuthoritativeState) -> dict[str, JSONValue]:
+    return {
+        "C": list(value.C),
+        "W_A": None if value.W_A is None else list(value.W_A),
+        "Z_4": None if value.Z_4 is None else list(value.Z_4),
+    }
+
+
+def _geometry_state(
+    value: GRCV4AuthoritativeState, reference: GRCV4ReferenceGeometry
+) -> GRCV4AuthoritativeState:
+    if type(value) is not GRCV4AuthoritativeState:
+        raise TypeError("stage requires current and reset authoritative values")
+    result = GRCV4AuthoritativeState(value.C, value.W_A, value.Z_4)
+    graph, identity = reference.graph, reference.profile.identity_payload
+    if len(result.C) != len(graph.live_node_ids) or (result.W_A is not None) != (
+        identity.candidate == "A"
+    ):
+        raise ValueError("stage resource/candidate coordinates mismatch")
+    if result.W_A is not None and len(result.W_A) != len(graph.oriented_edges):
+        raise ValueError("stage A history/live-edge mismatch")
+    if (result.Z_4 is not None) != (identity.realization in ("PC", "CI+PC")):
+        raise ValueError("stage realization/history coordinates mismatch")
+    if result.Z_4 is not None:
+        n = len(graph.oriented_edges)
+        if len(result.Z_4) != n * n:
+            raise ValueError(
+                "stage carrier requires declared dense row-major edge bilinear coordinates"
+            )
+        increment = _structural_matrix(
+            tuple(result.Z_4[i * n : (i + 1) * n] for i in range(n)), graph
+        )
+        H_profile(
+            K4Tensor(graph, reference.K4_base, increment),
+            reference=reference,
+            context=reference.context,
+            profile=reference.profile,
+        )
+    return result
+
+
+@dataclass(frozen=True, slots=True)
+class GeometryStageInputs:
+    """Exact reconstruction inputs captured independently by the stage owner.
+
+    Reset/scientific/lifecycle IDs are rebuilt from their frozen preimages,
+    including Q_target and ordered receipt IDs. This does not authenticate a
+    caller/receipt ledger or admit a full lifecycle/charge/current-solver state.
+    Concrete current/reset values are also retained, never replaced by IDs.
+    """
+
+    geometry: GRCV4Geometry
+    context: GRCV4Context
+    current: GRCV4AuthoritativeState
+    reset: GRCV4AuthoritativeState
+    operation_id: str
+    Q_target: float
+    receipt_ids: tuple[str, ...]
+    step_index: int
+    time: float
+    dt: float
+    stage: GeometryStage
+    evaluation_index: int
+    trial_current: PhysicalFlux | None
+
+    def __post_init__(self) -> None:
+        if (
+            type(self.geometry) is not GRCV4Geometry
+            or type(self.context) is not GRCV4Context
+        ):
+            raise TypeError("stage requires admitted geometry and typed context")
+        ref = self.geometry.reference
+        if self.context != ref.context:
+            raise ValueError("stage context differs from geometry context")
+        for name in ("current", "reset"):
+            object.__setattr__(self, name, _geometry_state(getattr(self, name), ref))
+        _text(self.operation_id)
+        object.__setattr__(self, "Q_target", _number(self.Q_target))
+        object.__setattr__(self, "receipt_ids", tuple(_ordered(self.receipt_ids)))
+        # Validate the exact frozen identity preimages, including receipt grammar.
+        # Charge equality and ledger payload authenticity belong to their owners.
+        _index(self.step_index)
+        _index(self.evaluation_index)
+        for name in ("time", "dt"):
+            number = _number(getattr(self, name))
+            if number < 0:
+                raise ValueError("stage clock and duration must be nonnegative")
+            object.__setattr__(self, name, number)
+        self.source_lifecycle_id
+        if (
+            type(self.stage) is not str
+            or self.stage not in _COMMON_STAGES | _STAGE_REALIZATIONS.keys()
+        ):
+            raise ValueError("unknown geometry stage")
+        if (
+            self.stage in _STAGE_REALIZATIONS
+            and _STAGE_REALIZATIONS[self.stage]
+            != ref.profile.identity_payload.realization
+        ):
+            raise ValueError("geometry stage belongs to another realization")
+        if (
+            self.stage not in ("ci_trial", "cipc_trial", "rg2b_section")
+            and self.evaluation_index != 0
+        ):
+            raise ValueError("noniterated stage requires evaluation_index zero")
+        if self.trial_current is not None:
+            _require_coordinates(self.trial_current, PhysicalFlux, ref.graph)
+        if self.stage in ("ci_trial", "cipc_trial") and self.trial_current is None:
+            raise ValueError("joint-root evaluation must bind its trial current")
+        if self.stage == "os_predictor" and self.geometry != ref.geometry():
+            raise ValueError("OS predictor requires the supplied reference geometry")
+        if self.stage == "pc_old_history":
+            assert self.current.Z_4 is not None
+            n = len(ref.graph.oriented_edges)
+            increment = tuple(self.current.Z_4[i * n : (i + 1) * n] for i in range(n))
+            expected = H_profile(
+                K4Tensor(ref.graph, ref.K4_base, increment),
+                reference=ref,
+                context=self.context,
+                profile=ref.profile,
+            )
+            if self.geometry != expected:
+                raise ValueError(
+                    "PC read geometry must derive from old committed history"
+                )
+
+    @property
+    def reset_preimage(self) -> dict[str, JSONValue]:
+        ref = self.geometry.reference
+        return {
+            "schema_version": "grcv4-reset-baseline-v1",
+            "active_model_identity": ref.profile.complete_profile_id,
+            "graph_digest": ref.graph.graph_digest,
+            "orientation_identity": ref.graph.orientation_identity,
+            "authoritative": _state_payload(self.reset),
+            "Q_target": self.Q_target,
+            "context_contract_id": self.context.contract_id,
+        }
+
+    @property
+    def reset_id(self) -> str:
+        return payload_identity("grcv4_reset_payload", self.reset_preimage)
+
+    @property
+    def scientific_state_preimage(self) -> dict[str, JSONValue]:
+        ref = self.geometry.reference
+        return {
+            "schema_version": "grcv4-scientific-state-v1",
+            "active_model_identity": ref.profile.complete_profile_id,
+            "graph_digest": ref.graph.graph_digest,
+            "orientation_identity": ref.graph.orientation_identity,
+            "step_index": self.step_index,
+            "time": self.time,
+            "authoritative": _state_payload(self.current),
+            "reset_digest": self.reset_id,
+            "Q_target": self.Q_target,
+            "context_contract_id": self.context.contract_id,
+            # The shipped constant-zero contract has no trajectory-varying value.
+            "context_value_digest": None,
+        }
+
+    @property
+    def scientific_state_id(self) -> str:
+        return payload_identity(
+            "scientific_state_payload", self.scientific_state_preimage
+        )
+
+    @property
+    def source_lifecycle_id(self) -> str:
+        return payload_identity(
+            "lifecycle_envelope_payload",
+            {
+                "schema_version": "grcv4-lifecycle-envelope-v1",
+                "scientific_state_digest": self.scientific_state_id,
+                "receipt_ids": list(self.receipt_ids),
+            },
+        )
+
+    def to_payload(self) -> dict[str, JSONValue]:
+        return {
+            "descriptor_version": "grcv4-geometry-stage-inputs-v1",
+            "reference": self.geometry.reference.to_payload(),
+            "H1_form": [list(r) for r in self.geometry.one_form_hodge.matrix],
+            "context": self.context.to_payload(),
+            "current": _state_payload(self.current),
+            "reset": _state_payload(self.reset),
+            "operation_id": self.operation_id,
+            "Q_target": self.Q_target,
+            "receipt_ids": list(self.receipt_ids),
+            "source_lifecycle_id": self.source_lifecycle_id,
+            "scientific_state_id": self.scientific_state_id,
+            "reset_id": self.reset_id,
+            "step_index": self.step_index,
+            "time": self.time,
+            "dt": self.dt,
+            "stage": self.stage,
+            "evaluation_index": self.evaluation_index,
+            "trial_current": None
+            if self.trial_current is None
+            else list(self.trial_current.values),
+        }
+
+    @property
+    def identity(self) -> str:
+        return _identity("grcv4-geometry-stage-sha256", self.to_payload())
+
+    @classmethod
+    def from_payload(cls, value: object) -> GeometryStageInputs:
+        data = _local_payload(
+            value,
+            {
+                "descriptor_version",
+                "reference",
+                "H1_form",
+                "context",
+                "current",
+                "reset",
+                "operation_id",
+                "Q_target",
+                "receipt_ids",
+                "source_lifecycle_id",
+                "scientific_state_id",
+                "reset_id",
+                "step_index",
+                "time",
+                "dt",
+                "stage",
+                "evaluation_index",
+                "trial_current",
+            },
+            "descriptor_version",
+            "grcv4-geometry-stage-inputs-v1",
+        )
+        ref = GRCV4ReferenceGeometry.from_payload(data["reference"])
+        geometry = GRCV4Geometry(
+            ref, OneFormHodge(ref.graph, cast(Matrix, data["H1_form"]))
+        )
+        current, reset = (
+            _state_from_payload(data[name]) for name in ("current", "reset")
+        )
+        trial = data["trial_current"]
+        result = cls(
+            geometry,
+            _context_payload(data["context"]),
+            current,
+            reset,
+            cast(str, data["operation_id"]),
+            cast(float, data["Q_target"]),
+            cast(tuple[str, ...], data["receipt_ids"]),
+            cast(int, data["step_index"]),
+            cast(float, data["time"]),
+            cast(float, data["dt"]),
+            cast(GeometryStage, data["stage"]),
+            cast(int, data["evaluation_index"]),
+            None
+            if trial is None
+            else PhysicalFlux(ref.graph, cast(tuple[float, ...], trial)),
+        )
+        if any(
+            data[name] != getattr(result, name)
+            for name in ("reset_id", "scientific_state_id", "source_lifecycle_id")
+        ):
+            raise ValueError(
+                "stage authority identity differs from reconstructed preimage"
+            )
+        return result
+
+
+DerivedGeometryKind: TypeAlias = Literal[
+    "d0", "divergence", "flat", "sharp", "star_assembly", "H_profile"
+]
+GeometryOperand: TypeAlias = VertexScalar | OneForm | PhysicalFlux | K4Tensor
+GeometryOutput: TypeAlias = (
+    VertexScalar | OneForm | PhysicalFlux | StarAssembly | GRCV4Geometry
+)
+_DERIVED_OPERANDS: dict[str, type[GeometryOperand]] = {
+    "d0": VertexScalar,
+    "divergence": PhysicalFlux,
+    "flat": PhysicalFlux,
+    "sharp": OneForm,
+    "star_assembly": OneForm,
+    "H_profile": K4Tensor,
+}
+
+
+def _operand_payload(operand: GeometryOperand) -> dict[str, JSONValue]:
+    if type(operand) is K4Tensor:
+        return {
+            "type": "K4Tensor",
+            "base": [list(r) for r in operand.base],
+            "increment": [list(r) for r in operand.increment],
+        }
+    if type(operand) not in (VertexScalar, OneForm, PhysicalFlux):
+        raise TypeError("unsupported derived geometry operand")
+    assert isinstance(operand, _Coordinates)
+    return {"type": type(operand).__name__, "values": list(operand.values)}
+
+
+def _output_payload(output: GeometryOutput) -> dict[str, JSONValue]:
+    if type(output) is GRCV4Geometry:
+        return {
+            "type": "GRCV4Geometry",
+            "identity": output.identity,
+            "H1_form": [list(r) for r in output.one_form_hodge.matrix],
+        }
+    if type(output) is StarAssembly:
+        return {
+            "type": "StarAssembly",
+            "identity": output.identity,
+            "matrix": [list(r) for r in output.matrix],
+        }
+    assert isinstance(output, _Coordinates)
+    return {"type": type(output).__name__, "values": list(output.values)}
+
+
+@dataclass(frozen=True, slots=True)
+class GeometryStageCache:
+    """Closed, actually evaluated primitive cache; no callback or causal state.
+
+    Consumers must supply fresh expected inputs, operation and operand. Import
+    rebuilds the operation and compares the result; a recomputed cache hash
+    cannot authenticate arbitrary stored output. No candidate selector/current
+    solver cache is implemented or admitted by this wrapper.
+    """
+
+    inputs: GeometryStageInputs
+    kind: DerivedGeometryKind
+    operand: GeometryOperand
+    value: GeometryOutput = field(init=False)
+
+    def __post_init__(self) -> None:
+        if type(self.inputs) is not GeometryStageInputs or type(self.kind) is not str:
+            raise TypeError("cache requires typed stage inputs and a literal operation")
+        if (
+            self.kind not in _DERIVED_OPERANDS
+            or type(self.operand) is not _DERIVED_OPERANDS[self.kind]
+        ):
+            raise TypeError("derived operation/operand type mismatch")
+        geometry = self.inputs.geometry
+        ref = geometry.reference
+        if self.operand.graph != ref.graph:
+            raise ValueError("cache operand has foreign graph coordinates")
+        value: GeometryOutput
+        if self.kind == "H_profile":
+            assert isinstance(self.operand, K4Tensor)
+            if (
+                self.inputs.stage == "pc_old_history"
+                and tuple(x for row in self.operand.increment for x in row)
+                != self.inputs.current.Z_4
+            ):
+                raise ValueError("PC geometry operand must be old committed history")
+            value = H_profile(
+                self.operand,
+                reference=ref,
+                context=self.inputs.context,
+                profile=ref.profile,
+            )
+        elif self.kind == "star_assembly":
+            assert isinstance(self.operand, OneForm)
+            value = StarAssembly(self.operand)
+        elif self.kind == "d0":
+            assert isinstance(self.operand, VertexScalar)
+            value = ref.differential.d0(self.operand)
+        elif self.kind == "divergence":
+            assert isinstance(self.operand, PhysicalFlux)
+            value = ref.differential.divergence(self.operand)
+        elif self.kind == "flat":
+            assert isinstance(self.operand, PhysicalFlux)
+            value = geometry.pairings.flat_map.flat(self.operand)
+        else:
+            assert isinstance(self.operand, OneForm)
+            value = geometry.pairings.flat_map.sharp(self.operand)
+        object.__setattr__(self, "value", value)
+
+    def consume(
+        self,
+        *,
+        expected_inputs: GeometryStageInputs,
+        expected_kind: DerivedGeometryKind,
+        expected_operand: GeometryOperand,
+    ) -> GeometryOutput:
+        if (
+            type(expected_inputs) is not GeometryStageInputs
+            or type(expected_kind) is not str
+        ):
+            raise TypeError("cache consumer must supply independent typed expectations")
+        if (
+            canonical_json_bytes(self.inputs.to_payload())
+            != canonical_json_bytes(expected_inputs.to_payload())
+            or self.kind != expected_kind
+            or type(self.operand) is not type(expected_operand)
+            or self.operand != expected_operand
+        ):
+            raise ValueError(
+                "stale_cache: stage, identity, inputs, role or operand differs"
+            )
+        return self.value
+
+    def to_payload(self) -> dict[str, JSONValue]:
+        return {
+            "descriptor_version": "grcv4-derived-geometry-cache-v1",
+            "inputs": self.inputs.to_payload(),
+            "kind": self.kind,
+            "operand": _operand_payload(self.operand),
+            "output": _output_payload(self.value),
+        }
+
+    @property
+    def identity(self) -> str:
+        return _identity("grcv4-derived-geometry-cache-sha256", self.to_payload())
+
+    def to_canonical_bytes(self) -> bytes:
+        return canonical_json_bytes(
+            {"payload": self.to_payload(), "cache_id": self.identity}
+        )
+
+    @classmethod
+    def from_canonical_bytes(
+        cls,
+        value: str | bytes,
+        *,
+        expected_inputs: GeometryStageInputs,
+        expected_kind: DerivedGeometryKind,
+        expected_operand: GeometryOperand,
+    ) -> GeometryStageCache:
+        if (
+            type(expected_inputs) is not GeometryStageInputs
+            or type(expected_kind) is not str
+        ):
+            raise TypeError("cache import requires independent typed expectations")
+        envelope = _local_payload(decode_canonical_json(value), {"payload", "cache_id"})
+        data = _local_payload(
+            envelope["payload"],
+            {"descriptor_version", "inputs", "kind", "operand", "output"},
+            "descriptor_version",
+            "grcv4-derived-geometry-cache-v1",
+        )
+        # Compare independently supplied expectations before invoking a solver
+        # or rebuilding untrusted stale numerical work.
+        if (
+            canonical_json_bytes(data["inputs"])
+            != canonical_json_bytes(expected_inputs.to_payload())
+            or data["kind"] != expected_kind
+            or canonical_json_bytes(data["operand"])
+            != canonical_json_bytes(_operand_payload(expected_operand))
+        ):
+            raise ValueError(
+                "stale_cache: imported provenance does not match the consumer"
+            )
+        rebuilt = cls(expected_inputs, expected_kind, expected_operand)
+        if (
+            canonical_json_bytes(data) != canonical_json_bytes(rebuilt.to_payload())
+            or envelope["cache_id"] != rebuilt.identity
+        ):
+            raise ValueError(
+                "invalid derived cache: reconstructed output or identity differs"
+            )
+        return rebuilt
+
+
+def _local_payload(
+    value: object,
+    keys: set[str],
+    version_key: str | None = None,
+    version: str | None = None,
+) -> dict[str, JSONValue]:
+    # JCS copy enforces finite I-JSON values and detaches mutable input. These
+    # closed local reconstruction envelopes never extend the frozen wire schema.
+    data = decode_canonical_json(canonical_json_bytes(value))
+    if not isinstance(data, dict) or set(data) != keys:
+        raise ValueError("unexpected local reconstruction fields")
+    if version_key is not None and data[version_key] != version:
+        raise ValueError("unsupported local reconstruction version")
+    return data
+
+
+def _context_payload(value: object) -> GRCV4Context:
+    data = _local_payload(value, {"contract_id", "value"})
+    if not isinstance(data["value"], dict):
+        raise TypeError("context value must be a mapping")
+    return GRCV4Context(cast(str, data["contract_id"]), FrozenJSONMap(data["value"]))
+
+
+def _state_from_payload(value: object) -> GRCV4AuthoritativeState:
+    data = _local_payload(value, {"C", "W_A", "Z_4"})
+    return GRCV4AuthoritativeState(
+        cast(tuple[float, ...], data["C"]),
+        cast(tuple[float, ...] | None, data["W_A"]),
+        cast(tuple[float, ...] | None, data["Z_4"]),
+    )

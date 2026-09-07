@@ -43,7 +43,8 @@ function accepted(extra={}) {
     result_acceptance:{record_digest:'9d2fd4f0bb0445b9b3c46fd6f7e5b0ff710a8a85aceaeabacad44a477ff365a0',accepted_iterations:['P9-2.4']},
     harness_acceptance:{record_digest:'e479a8e5935fc8740b59f96b31651070f842f73f92541bb84dbc1c9d63f59896',accepted_iterations:['P9-2.5']},
     integration_acceptance:{record_digest:'e5ba16731e03dc916b8755c5999ab2b59acf431255612e76e0dcebe108104bc2',accepted_iterations:['P9-2.6']},
-    dependency_ready_leaves:['P9-2.1','P9-2.2','P9-2.3','P9-2.4','P9-2.5','P9-2.6','P9-3.1'],permitted_runtime_paths:[...Array.from({length:15},(_,i)=>`synthetic/${i}`),'pyproject.toml','tests/models/grcv4_conformance_harness.py','tests/models/grcv4_reference_oracles.py','src/pygrc/models/__init__.py',"src/pygrc/models/grc_v4_geometry.py","src/pygrc/models/grc_v4_transport.py","tests/models/test_grc_v4_geometry.py","tests/models/test_grc_v4_transport.py"],
+    geometry_acceptance:{record_digest:'f119e1361500e72f58297bc8186f868954b4065c853fcdd089280a5d28f88618',accepted_iterations:['P9-3.1']},
+    dependency_ready_leaves:['P9-2.1','P9-2.2','P9-2.3','P9-2.4','P9-2.5','P9-2.6','P9-3.1','P9-3.2'],permitted_runtime_paths:[...Array.from({length:15},(_,i)=>`synthetic/${i}`),'pyproject.toml','tests/models/grcv4_conformance_harness.py','tests/models/grcv4_reference_oracles.py','src/pygrc/models/__init__.py',"src/pygrc/models/grc_v4_geometry.py","src/pygrc/models/grc_v4_transport.py","tests/models/test_grc_v4_geometry.py","tests/models/test_grc_v4_transport.py"],
     iterations:[4,5,6,7,8,9].map(i=>({iteration_id:`P9-1.${i}`,status:'implemented_and_verified',reviewer_decision:'accepted_by_user'})),...extra});
 }
 test('accepted G1 permission does not imply accepted profile support',async()=>{
@@ -72,7 +73,7 @@ test('missing and invalid handoff evidence do not change accepted permission',as
 
 test('current work can be held while historical acceptance remains verified',async()=>{
   const value=accepted({current_boundary:'failed_closed',runtime_authorized:false,runtime_authority_state:'accepted_P9_G1_current_work_held'});
-  for(const key of ['implementation_scope','dependency_ready_leaves','permitted_runtime_paths','foundation_acceptance','request_acceptance','result_acceptance','harness_acceptance','integration_acceptance','status_digest']) delete value[key];
+  for(const key of ['implementation_scope','dependency_ready_leaves','permitted_runtime_paths','foundation_acceptance','request_acceptance','result_acceptance','harness_acceptance','integration_acceptance','geometry_acceptance','status_digest']) delete value[key];
   value.status_digest=createHash('sha256').update(canonical(value)).digest('hex');
   assert.equal((await verifiedStatus(value)).P9_G1_accepted,true);
   assert.equal(value.runtime_authorized,false);
@@ -84,7 +85,7 @@ test('committed foundation acceptance does not accept request work or conformanc
     {record_digest:'0'.repeat(64),accepted_iterations:['P9-2.1','P9-2.2']},
     {record_digest:'1e3f0ddb06b119fa46dc7609d05b7db0c3a4cbc07428c05b8a032da081ae9dd4',accepted_iterations:['P9-2.1','P9-2.2','P9-2.3']}])
     assert.throws(()=>checkedStatus(accepted({foundation_acceptance})),/foundation/);
-  assert.throws(()=>checkedStatus(accepted({dependency_ready_leaves:['P9-2.1','P9-2.2','P9-2.3','P9-2.4','P9-2.5','P9-2.6','P9-3.1','P9-3.2']})),/dependency-ready/);
+  assert.throws(()=>checkedStatus(accepted({dependency_ready_leaves:['P9-2.1','P9-2.2','P9-2.3','P9-2.4','P9-2.5','P9-2.6','P9-3.1','P9-3.2','P9-3.3']})),/dependency-ready/);
 });
 
  test('request acceptance cannot be missing or promote result work',()=>{
@@ -116,4 +117,11 @@ test('integration acceptance cannot be missing, forged or accept geometry work',
     value.permitted_runtime_paths[value.permitted_runtime_paths.indexOf(path)]='synthetic/missing-owner';
     assert.throws(()=>checkedStatus(value),/dependency-ready/);
   }
+});
+
+test('geometry acceptance cannot be missing, forged or accept stage work',()=>{
+  for(const geometry_acceptance of [undefined,{},
+    {record_digest:'0'.repeat(64),accepted_iterations:['P9-3.1']},
+    {record_digest:'f119e1361500e72f58297bc8186f868954b4065c853fcdd089280a5d28f88618',accepted_iterations:['P9-3.1','P9-3.2']}])
+    assert.throws(()=>checkedStatus(accepted({geometry_acceptance})),/accepted geometry/);
 });

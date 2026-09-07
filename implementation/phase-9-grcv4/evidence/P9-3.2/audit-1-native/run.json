@@ -1,0 +1,24 @@
+{
+  "iteration_id": "P9-3.2",
+  "status": "passed",
+  "scope": "native 652-assertion audit and current evidence reconciliation",
+  "artifact_bindings": [
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-3.2/audit-1-native/actual.json",
+      "sha256": "d048063b637a7503c4e4b772c5c4491ff969dcdd40411e9570a88273b559e502"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-3.2/audit-1-native/inputs.json",
+      "sha256": "1d6ee210e22b3bcfe0468f80048ab010ae81c482be9d3946ed67f4541b3a6f14"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-3.2/audit-1-native/stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-3.2/audit-1-native/stdout.txt",
+      "sha256": "212d8177f80dd2062952cec3191d8a5ba3cd9ac908ebb5a7fa602880d5a161c7"
+    }
+  ],
+  "claim_ceiling": "no numerical runtime conformance, P9-3.2 acceptance or P9-3.3 admission"
+}

@@ -1,0 +1,36 @@
+{
+  "schema": "phase9_geometry_foundation_acceptance_v1",
+  "status": "accepted_by_user",
+  "baseline_commit": "dccb1ca396121d01b1db62b5437ccf48d5a33665",
+  "release_id": "grcv4-spec-release-sha256:9f4c8fe5b57b1c477d834a3e4dae3f98a2b18c70e6e7f598e3c9652170c8645f",
+  "predecessor_record_digest": "e5ba16731e03dc916b8755c5999ab2b59acf431255612e76e0dcebe108104bc2",
+  "accepted_iterations": [
+    "P9-3.1"
+  ],
+  "acceptance_basis": "Explicit user instruction \"accept and commit\", recorded in the P9-3.1 commit, followed by explicit authorization to continue with P9-3.2. Historical review and execution states remain unchanged.",
+  "evidence_bindings": [
+    {
+      "path": "implementation/phase-9-grcv4/tranche-3/P9-3.1-Review.md",
+      "sha256": "2d5c2cabc198b52a21b8d9afd37e7b1b245b4dde7aafdb71e32e34aed5087a21"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-3/P9-3.1-ExecutionRecord.json",
+      "sha256": "06c5e1e35c5364134f5b0c54c567fc5bf4c3474fbcb86be4c870844b4c284eb6"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-3.1/audit-1-pressure/run.json",
+      "sha256": "dfd8e2a8a594ab450f2ed3ecc9aad525739aaaefd95782d0b39062b89739d078"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-3.1/audit-1-native-after/run.json",
+      "sha256": "21512a5dba3146062b73fba2cc04df5e00f1af3b7b05c28203da5ad5c7585ea5"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/runtime/RuntimeWorkManifest.json",
+      "sha256": "2e45d91a50433e041bc367e528a22a2ade141f83e7d4c23d301c07032b8bfff0"
+    }
+  ],
+  "accepted_generic_runtime_support": [],
+  "admitted_specialization_support_sets": [],
+  "record_digest": "f119e1361500e72f58297bc8186f868954b4065c853fcdd089280a5d28f88618"
+}

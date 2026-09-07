@@ -1,0 +1,135 @@
+{
+  "iteration_id": "P9-3.2",
+  "status": "passed",
+  "forensic_traces": [
+    {
+      "contract_id": "D10.2-EC-PARENT-BASE-GRC-DIFFERENTIAL",
+      "exact_reconstruction": true,
+      "trace_digest": "90a344a6746d084bad8db5dbb80563fd199f80daaeefe39367e0953def3a217a",
+      "support_dispositions": [
+        "indeterminate_requires_review"
+      ]
+    },
+    {
+      "contract_id": "D10.2-EC-PARENT-GEOM-H1-FORM",
+      "exact_reconstruction": true,
+      "trace_digest": "c499b186bd0e3e369ba24b88fab1dda1489099853cf06e6fd86e6034884f11ad",
+      "support_dispositions": [
+        "indeterminate_requires_review"
+      ]
+    },
+    {
+      "contract_id": "D10.2-EC-PARENT-GEOM-GJ",
+      "exact_reconstruction": true,
+      "trace_digest": "43750060d8f7e864be9dc49493ba438e8192b362615cb1c14a9cb21d4beb3f97",
+      "support_dispositions": [
+        "indeterminate_requires_review"
+      ]
+    },
+    {
+      "contract_id": "D10.2-EC-GEOM-FLAT",
+      "exact_reconstruction": true,
+      "trace_digest": "c50779dd032926f6af69258639c8236c20b155663202cec6a820c4df348fe5ff",
+      "support_dispositions": [
+        "indeterminate_requires_review"
+      ]
+    },
+    {
+      "contract_id": "D10.2-EC-GEOM-MOBILITY-BOUNDARY",
+      "exact_reconstruction": true,
+      "trace_digest": "294ddd0b9dd5b166604b1b7daff76c707e1af624aa0e30883681dce0645d296d",
+      "support_dispositions": [
+        "indeterminate_requires_review"
+      ]
+    },
+    {
+      "contract_id": "D10.2-EC-PARENT-GEOM-COVARIANCE",
+      "exact_reconstruction": true,
+      "trace_digest": "9a857c754a5a7a07f6ed09541c366c402f7687f1ce4444ff48d42a6189444689",
+      "support_dispositions": [
+        "indeterminate_requires_review"
+      ]
+    },
+    {
+      "contract_id": "D11-C-EC-C-TR-REFERENCE-FIELD",
+      "exact_reconstruction": true,
+      "trace_digest": "ce518db4711884c92d7045a455935f0ebe7df98b55fbdfa042dc907e358ff9cf",
+      "support_dispositions": [
+        [
+          "accepted_bounded_D11_C_successor"
+        ]
+      ]
+    },
+    {
+      "contract_id": "D11-C-EC-C-M4-FACTORIZATION",
+      "exact_reconstruction": true,
+      "trace_digest": "a83b99b84339eca89f2d7427cb6ed6ba087cc6062f1b3ef13fbdfa28ddbbff89",
+      "support_dispositions": [
+        [
+          "accepted_bounded_D11_C_successor"
+        ]
+      ]
+    },
+    {
+      "contract_id": "D10.2-EC-GEOM-K4-ASSEMBLY",
+      "exact_reconstruction": true,
+      "trace_digest": "121cf72ffa997fab1b16ab66ff9d4df63e94e03d3b71d827be181fa4ffba5b8f",
+      "support_dispositions": [
+        "indeterminate_requires_review"
+      ]
+    },
+    {
+      "contract_id": "D10.2-EC-GEOM-HODGE-UPDATE",
+      "exact_reconstruction": true,
+      "trace_digest": "8b8ccf36c9c3e6016e11f5676c909b17c99de415a4c42afe2c0f0a7615812eef",
+      "support_dispositions": [
+        "indeterminate_requires_review"
+      ]
+    },
+    {
+      "contract_id": "D10.2-EC-GEOM-PROFILE",
+      "exact_reconstruction": true,
+      "trace_digest": "67ead126d31bc9135e3b15eac52b377612d3fe19deb8464bf010afb0ae2f3ddf",
+      "support_dispositions": [
+        "indeterminate_requires_review"
+      ]
+    },
+    {
+      "contract_id": "D10.2-EC-PARENT-GEOM-K4",
+      "exact_reconstruction": true,
+      "trace_digest": "e1435b36789fa4d37be76d67ff9ec76bd7e8f8680603716b1e836fab21a0340d",
+      "support_dispositions": [
+        "indeterminate_requires_review"
+      ]
+    },
+    {
+      "contract_id": "D10.2-EC-PARENT-GEOM-K4-TO-H4-TO-h4",
+      "exact_reconstruction": true,
+      "trace_digest": "cea80ad4b50545b42ace8decbfb0502c36afad433dd63f91d0e3a16328f88f9f",
+      "support_dispositions": [
+        "indeterminate_requires_review"
+      ]
+    },
+    {
+      "contract_id": "D10.2-EC-OS-STAGE-ORDER",
+      "exact_reconstruction": true,
+      "trace_digest": "05c5b8e0a6c8fe42f0bc90c66d66701a37e6ae9d32c1561e9e8ae3d78a293719",
+      "support_dispositions": [
+        "indeterminate_requires_review"
+      ]
+    },
+    {
+      "contract_id": "D11-C-EC-C-J0-REALIZATION-COVERAGE",
+      "exact_reconstruction": true,
+      "trace_digest": "db0b5506ef7b912791d54884fad2810b4f39894c83fdf28ffb7696960d7c9da9",
+      "support_dispositions": [
+        [
+          "accepted_bounded_D11_C_successor"
+        ]
+      ]
+    }
+  ],
+  "source_bindings_exact": true,
+  "old_P9_3_1_evidence_files_unchanged": 35,
+  "runtime_support": []
+}

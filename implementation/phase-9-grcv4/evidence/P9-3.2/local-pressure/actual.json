@@ -1,0 +1,58 @@
+{
+  "iteration_id": "P9-3.2",
+  "status": "passed",
+  "tests_run": 95,
+  "failures": [],
+  "errors": [],
+  "skips": [],
+  "elapsed_seconds": 105.54067834499801,
+  "environment": {
+    "python": "3.12.3",
+    "platform": "Linux-5.15.167-0515167-generic-x86_64-with-glibc2.39",
+    "numpy": "2.4.6",
+    "rfc8785": "0.1.4",
+    "jsonschema": "4.26.0"
+  },
+  "ruff": {
+    "command": [
+      ".venv/bin/python",
+      "-m",
+      "ruff",
+      "check",
+      "src/pygrc/models/grc_v4_geometry.py",
+      "src/pygrc/models/grc_v4_transport.py",
+      "tests/models/test_grc_v4_geometry.py",
+      "tests/models/test_grc_v4_transport.py"
+    ],
+    "exit_code": 0,
+    "stdout": "All checks passed!\n",
+    "stderr": ""
+  },
+  "mypy": {
+    "command": [
+      ".venv/bin/python",
+      "-m",
+      "mypy",
+      "--strict",
+      "src/pygrc/models/grc_v4_geometry.py",
+      "src/pygrc/models/grc_v4_transport.py",
+      "tests/models/test_grc_v4_geometry.py",
+      "tests/models/test_grc_v4_transport.py"
+    ],
+    "exit_code": 0,
+    "stdout": "Success: no issues found in 4 source files\n",
+    "stderr": ""
+  },
+  "pip_check": {
+    "command": [
+      ".venv/bin/python",
+      "-m",
+      "pip",
+      "check"
+    ],
+    "exit_code": 0,
+    "stdout": "No broken requirements found.\n",
+    "stderr": "WARNING: The directory '<user_home>/.cache/pip' or its parent directory is not owned or is not writable by the current user. The cache has been disabled. Check the permissions and owner of that directory. If executing pip with sudo, you should use sudo's -H flag.\n"
+  },
+  "source_stayed_exact": true
+}

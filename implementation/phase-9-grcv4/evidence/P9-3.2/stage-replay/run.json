@@ -1,0 +1,36 @@
+{
+  "iteration_id": "P9-3.2",
+  "status": "passed",
+  "scope": "Independent literal reference flat and full stage/cache reconstruction; state-preimage identities have a separate literal oracle test",
+  "artifact_bindings": [
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-3.2/stage-replay/actual.json",
+      "sha256": "2c166e3592bc55e799305bf8f8982b44d90395281c03c013ffb455f8e4dd08a2"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-3.2/stage-replay/expected.json",
+      "sha256": "f6033fab72df42467a52b4efa165d52b5ef303ffc2a3018f8ec9ff385476f845"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-3.2/stage-replay/inputs.json",
+      "sha256": "d9f78348e9d55b2e35a635c69bdb6ab7b0c4521d2197a0c9bd1f8f52384a6a5c"
+    }
+  ],
+  "command": [
+    ".venv/bin/python",
+    "tests/models/test_grc_v4_geometry.py",
+    "--reconstruct-stage",
+    "implementation/phase-9-grcv4/evidence/P9-3.2/stage-replay/inputs.json"
+  ],
+  "comparison": "exact values and full input roundtrip; derived cache IDs are measured outputs, not independent expected hashes",
+  "source_bindings": [
+    {
+      "path": "src/pygrc/models/grc_v4_geometry.py",
+      "sha256": "d715f67555d3c6e68a4e031ba132cb1854cc839de03dcd2c7101fbeb40c13dcd"
+    },
+    {
+      "path": "tests/models/test_grc_v4_geometry.py",
+      "sha256": "de8957be72deeaf92cef84795d0356cbcba99b4563975f03413e627140908eea"
+    }
+  ]
+}

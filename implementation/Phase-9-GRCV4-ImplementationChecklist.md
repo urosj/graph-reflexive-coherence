@@ -393,13 +393,28 @@ three bounded batches retain their own results and raw per-run manifests.
   tests including isolated wheel/source installations are bound in the review.
   Signed boundary cases, exact nonpositive families and positive extreme-scale
   controls are included; conditioning and stage admission remain separate.
-- [ ] P9-3.2: Implement exact stage/cache provenance and domain admission.
+- [x] P9-3.2: Implement exact stage/cache provenance and domain admission.
+  [Review](./phase-9-grcv4/tranche-3/P9-3.2-Review.md) and
+  [execution](./phase-9-grcv4/tranche-3/P9-3.2-ExecutionRecord.json): local reference,
+  affine positive-geometry and stage/cache implementation, pending user review.
+  Entry follows explicit P9-3.1 acceptance at `dccb1ca`, preserved in the
+  separate [acceptance record](./phase-9-grcv4/tranche-3/P9-3.1-AcceptanceRecord.json).
+  Historical preparation statements above do not override that later decision.
+  Full candidate/root/PC invariant-domain and transaction execution remain with
+  their assigned later leaves. No numerical profile or P9-3.3 is admitted.
 - [ ] P9-3.3: Implement the one-resource-write complete-step boundary and
   exact charge gate, without an extra remainder/repair coordinate.
 - [ ] P9-3.4: Execute nonidentity SPD, permutation, signed-edge covariance,
   nonfinite/domain, stale-cache, and charge-precision cases.
   Include near-admitted conditioning boundaries and repeated eigenvalues
   within a strictly separated cluster; compare invariant projectors (§7.4).
+  Carry the [P9-3.2 audit numerical witness](./phase-9-grcv4/evidence/P9-3.2/audit-1-followup/run.json):
+  adjacent-edge form `(5e-324, 1e150)` loses a representable off-diagonal
+  coupling through intermediate underflow; reversing edge order retains it.
+  Compare componentwise and normwise error, signed/permuted coordinates,
+  true underflow, and overflow before declaring the numerical envelope or
+  changing product evaluation. This follow-through is not discharged by the
+  moderate-scale covariance tests and adds no P9-3.3 prerequisite.
 - [ ] P9-3.5: Verify full prestate preservation after every rejected operation.
 
 ## Tranche 4. D11-C and the first C_OS runtime slice

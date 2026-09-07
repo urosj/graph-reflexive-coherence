@@ -1,0 +1,29 @@
+{
+  "iteration_id": "P9-3.2",
+  "status": "passed",
+  "subject_policy_digest": "7fe43f8deab8f3101175e798c39985ed5eb8b2efd222f28fa2052f121ace3849",
+  "subject_tree": {
+    "protected_baseline_files": 725,
+    "current_artifact_digest": "3901382b63ff77581d3581cfea55e5e964a79f0f7132de8410de48ad5224e37d",
+    "registered_runtime_files": 146
+  },
+  "artifact_bindings": [
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-3.2/permission-surfaces/inputs.json",
+      "sha256": "a1b202d6fc364a1c22e12fa1e49d501de9da36b191a48782bdf82ea3dd382025"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-3.2/permission-surfaces/actual.json",
+      "sha256": "31fad647b3ef44c2f00da2e747e020e90caa7623c38a734db683eff1d62b1b1c"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-3.2/permission-surfaces/receipts.json",
+      "sha256": "cd42b4b52416dfce2b2f777f5a507f71b5bfe5c2ad7210237834f61ea6eae40b"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-3.2/permission-surfaces/stdout.txt",
+      "sha256": "3612c4fe760608c821883c04c8e0d6e425350575b3d57a99fb744f3f39374dc7"
+    }
+  ],
+  "claim_ceiling": "implementation permission, source reconstruction and API/notebook/JavaScript/browser display correctness; no runtime acceptance"
+}

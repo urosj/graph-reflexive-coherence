@@ -5,6 +5,13 @@ commit `5307343e34d33ab4a95a5712fbafe0ebd1df1a62`.
 This is a navigation and continuation note, not a new acceptance gate, scientific
 claim, execution record, or authorization to start another iteration.
 
+Later working guidance, recorded 2026-09-07: read the
+[prospective evidence workflow](./phase-9-grcv4/tranche-1/P9-1.9-EvidenceHandoff.md#prospective-evidence-workflow)
+before collecting evidence for the next leaf. It records the user's direction
+to preserve published evidence and simplify future capture and reconstruction.
+The Tranche 2 status below remains the historical snapshot named above; use
+the current plan/checklist and acceptance records for continuation status.
+
 ## Where we stopped
 
 P9-G1 and P9-2.1 through P9-2.6 are accepted. The user's instruction to commit

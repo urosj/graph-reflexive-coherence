@@ -60,6 +60,8 @@ HARNESS_ACCEPTANCE = PHASE + "tranche-2/P9-2.5-AcceptanceRecord.json"
 HARNESS_ACCEPTANCE_DIGEST = "e479a8e5935fc8740b59f96b31651070f842f73f92541bb84dbc1c9d63f59896"
 INTEGRATION_ACCEPTANCE = PHASE + "tranche-2/P9-2.6-AcceptanceRecord.json"
 INTEGRATION_ACCEPTANCE_DIGEST = "e5ba16731e03dc916b8755c5999ab2b59acf431255612e76e0dcebe108104bc2"
+GEOMETRY_ACCEPTANCE = PHASE + "tranche-3/P9-3.1-AcceptanceRecord.json"
+GEOMETRY_ACCEPTANCE_DIGEST = "f119e1361500e72f58297bc8186f868954b4065c853fcdd089280a5d28f88618"
 GENERATED = SIDE + "tool/generated/phase9-verification/"
 REPORT_SCHEMA = "phase9_G1_pressure_results_v1"
 REPORT_FILE = "g1-pressure-results.json"
@@ -97,6 +99,7 @@ PATHS = {
     RESULT_ACCEPTANCE,
     HARNESS_ACCEPTANCE,
     INTEGRATION_ACCEPTANCE,
+    GEOMETRY_ACCEPTANCE,
     HERE + "phase9_implementation_policy.py",
     HERE + "audit_phase9_implementation.py",
     HERE + "test_phase9_g1.py",
@@ -403,13 +406,34 @@ def accepted_integration(root):
     return value
 
 
+def accepted_geometry(root):
+    """Committed P9-3.1 acceptance opens only its dependency-ready successors."""
+    value = read(safe_path(root, GEOMETRY_ACCEPTANCE))
+    require(value["record_digest"] == digest_record(value) == GEOMETRY_ACCEPTANCE_DIGEST,
+            "untrusted geometry acceptance")
+    require(value["schema"] == "phase9_geometry_foundation_acceptance_v1"
+            and value["status"] == "accepted_by_user"
+            and value["release_id"] == prior.RELEASE_ID
+            and value["predecessor_record_digest"] == INTEGRATION_ACCEPTANCE_DIGEST
+            and value["accepted_iterations"] == ["P9-3.1"]
+            and value["accepted_generic_runtime_support"] == []
+            and value["admitted_specialization_support_sets"] == [],
+            "invalid geometry acceptance scope")
+    prior.ancestor(root, value["baseline_commit"])
+    for row in value["evidence_bindings"]:
+        require(sha(git(root, "show", f"{value['baseline_commit']}:{row['path']}"))
+                == row["sha256"], "accepted geometry subject changed")
+    return value
+
+
 def leaf_permissions(root):
     """Readiness from accepted dependencies, never inferred from completion."""
     accepted = {"P9-G1", *accepted_foundation(root)["accepted_iterations"],
                 *accepted_requests(root)["accepted_iterations"],
                 *accepted_results(root)["accepted_iterations"],
                 *accepted_harness(root)["accepted_iterations"],
-                *accepted_integration(root)["accepted_iterations"]}
+                *accepted_integration(root)["accepted_iterations"],
+                *accepted_geometry(root)["accepted_iterations"]}
     support = read(
         safe_path(root, PHASE + "tranche-1/P9-1.4-SupportAndDependencies.json")
     )

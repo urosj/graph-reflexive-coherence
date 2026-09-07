@@ -1,0 +1,20 @@
+{
+  "iteration_id": "P9-3.2",
+  "status": "passed",
+  "scope": "Core, other models, V4 foundation/installed codec and harness regression before final local stage-state provenance hardening; final changed geometry/test files rechecked separately in local-pressure",
+  "artifact_bindings": [
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-3.2/regression/actual.json",
+      "sha256": "1f16ab787407a579f26d7439f4176d4cb49317f40a338a4e505a05df4d5527ce"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-3.2/regression/inputs.json",
+      "sha256": "66955324b062e29b75ce63024c3e3e0cdfa95339a19a967d2591a37498bb53fe"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-3.2/regression/stdout.txt",
+      "sha256": "1ff1e4083579b22c811651b10ecae0b42eea59dde46be96fe484ccfe0126b8b5"
+    }
+  ],
+  "final_followup": "implementation/phase-9-grcv4/evidence/P9-3.2/local-pressure/run.json"
+}

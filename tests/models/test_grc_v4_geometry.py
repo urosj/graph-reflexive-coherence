@@ -1,8 +1,8 @@
-"""P9-3.1 independent finite-graph and rational-pairing witnesses.
+"""P9-3.1/P9-3.2 independent geometry and stage-cache witnesses.
 
 Expected matrices and 2x2 inverse actions below are hand/scalar Fraction
 calculations, not calls back into the production implementation or NumPy.
-These primitive tests do not admit a full numerical profile.
+These local geometry tests do not execute a candidate current or numerical step.
 """
 
 from __future__ import annotations
@@ -18,12 +18,17 @@ import shutil
 import subprocess
 import sys
 import tempfile
-from typing import Any
+from typing import Any, cast
 import unittest
 from unittest.mock import patch
 import venv
 
 import numpy as np
+
+from pygrc.models import grc_v4_geometry as geometry_stage
+from pygrc.models.grc_v4_codec import payload_identity
+from pygrc.models.grc_v4_profile import resolve_profile
+from pygrc.models.grc_v4_state import FrozenJSONMap, GRCV4AuthoritativeState
 
 from pygrc.models.grc_v4_codec import V4DependencyError, canonical_json_bytes
 from pygrc.models.grc_v4_geometry import (
@@ -40,7 +45,7 @@ from pygrc.models.grc_v4_geometry import (
     VertexScalar,
     reference_pairings,
 )
-from pygrc.models.grc_v4_profile import GRCV4CommonParams
+from pygrc.models.grc_v4_profile import CandidateCParams, GRCV4CommonParams
 
 
 def graph_payload() -> dict[str, Any]:
@@ -647,6 +652,7 @@ class ReconstructionTests(unittest.TestCase):
             **replay_input(),
             "a_params": a_params().to_payload(),
             "c_params": c_payload(),
+            "stage": stage_inputs_fixture().to_payload(),
             "source_hashes": {
                 Path(name).stem: sha256((root / name).read_bytes()).hexdigest()
                 for name in source_paths
@@ -657,7 +663,27 @@ import hashlib, importlib, importlib.metadata, json, pathlib, sys
 from pygrc.models.grc_v4_geometry import GRCV4Graph, OrientedEdge, OneForm, OneFormHodge, VertexHodge, PhysicalFlux, PhysicalFluxFlatMap
 from pygrc.models.grc_v4_profile import CandidateAParams, CandidateCParams, list_supported_profiles
 from pygrc.models.grc_v4_transport import CandidateAMobility, CandidateCMobility
+from dataclasses import replace
+from pygrc.models.grc_v4_geometry import GeometryStageInputs, GeometryStageCache, K4Tensor, H_profile
+from pygrc.models.grc_v4_codec import canonical_json_bytes
+stage=None
 data=json.load(sys.stdin)
+stage=GeometryStageInputs.from_payload(data['stage'])
+ref=stage.geometry.reference
+operand=PhysicalFlux(ref.graph,(4,6))
+cache=GeometryStageCache(stage,'flat',operand)
+restored=GeometryStageCache.from_canonical_bytes(cache.to_canonical_bytes(),expected_inputs=stage,expected_kind='flat',expected_operand=operand)
+assert restored.consume(expected_inputs=stage,expected_kind='flat',expected_operand=operand).values==(2,2)
+assert H_profile(K4Tensor(ref.graph,ref.K4_base,((2,1),(1,4))),reference=ref,context=ref.context,profile=ref.profile).one_form_hodge.matrix==((3,.5),(.5,5))
+try: restored.consume(expected_inputs=replace(stage,stage='post_continuity'),expected_kind='flat',expected_operand=operand)
+except ValueError as exc: assert 'stale_cache' in str(exc)
+else: raise AssertionError('installed stale stage accepted')
+raw=json.loads(cache.to_canonical_bytes())
+raw['payload']['output']['values'][0]=999
+raw['cache_id']='grcv4-derived-geometry-cache-sha256:'+hashlib.sha256(canonical_json_bytes(raw['payload'])).hexdigest()
+try: GeometryStageCache.from_canonical_bytes(canonical_json_bytes(raw),expected_inputs=stage,expected_kind='flat',expected_operand=operand)
+except ValueError: pass
+else: raise AssertionError('installed rehashed false cache accepted')
 for name, expected in data['source_hashes'].items():
     module=importlib.import_module('pygrc.models.'+name)
     location=pathlib.Path(module.__file__).resolve()
@@ -1139,11 +1165,1061 @@ class ExactPositiveDomainTests(unittest.TestCase):
                 )
 
 
+# P9-3.2 independent reconstruction, domain and stage pressure.
+
+
+def stage_reference_fixture(
+    candidate: str = "C",
+    realization: str = "OS",
+    *,
+    graph: GRCV4Graph | None = None,
+    weights: dict[str, float] | None = None,
+    base: list[list[float]] | None = None,
+    gain: float = 0.5,
+    changes: dict[str, dict[str, Any]] | None = None,
+) -> geometry_stage.GRCV4ReferenceGeometry:
+    from tests.models.test_grc_v4_profile import family_fixture, reidentify
+
+    graph = GRCV4Graph.from_payload(graph_payload()) if graph is None else graph
+    weights = (
+        {e: float(i + 2) for i, e in reversed(list(enumerate(graph.live_edge_ids)))}
+        if weights is None
+        else weights
+    )
+    n = len(graph.oriented_edges)
+    base = (
+        [[float(i == j) for j in range(n)] for i in range(n)] if base is None else base
+    )
+    params, identity = family_fixture(candidate, realization)
+    params["geometry"].update(
+        K4_base_digest=payload_identity(
+            "k4_identity_payload",
+            {"schema_version": "grcv4-k4-identity-v1", "K4_base": base},
+        ),
+        reference_hodge_digest=payload_identity(
+            "reference_hodge_identity_payload",
+            {
+                "schema_version": "grcv4-reference-hodge-identity-v1",
+                "edge_weights": weights,
+            },
+        ),
+        candidate_adapter_id=f"candidate_{candidate.lower()}_exact_star_adapter_v1",
+        kappa_H=gain,
+    )
+    if candidate == "C":
+        params["candidate"]["W_C_tr"] = weights
+        params["candidate"]["W_C_tr_content_digest"] = payload_identity(
+            "wctr_identity_payload",
+            {"schema_version": "grcv4-wctr-identity-v1", "W_C_tr": weights},
+        )
+    if changes:
+        for group, values in changes.items():
+            if group == "identity":
+                identity.update(values)
+            else:
+                params[group].update(values)
+    reidentify(params, identity)
+    profile = resolve_profile(params, identity)
+    context = geometry_stage.GRCV4Context("constant_zero_context_v1", FrozenJSONMap({}))
+    return geometry_stage.GRCV4ReferenceGeometry(
+        graph, profile, context, tuple(tuple(r) for r in base), FrozenJSONMap(weights)
+    )
+
+
+def stage_inputs_fixture(
+    ref: geometry_stage.GRCV4ReferenceGeometry | None = None,
+    *,
+    stage: str = "pre_read",
+) -> geometry_stage.GeometryStageInputs:
+    ref = stage_reference_fixture() if ref is None else ref
+    n, m = len(ref.graph.live_node_ids), len(ref.graph.oriented_edges)
+    current = GRCV4AuthoritativeState(
+        tuple(float(i + 1) for i in range(n)),
+        (2.0,) * m if ref.profile.identity_payload.candidate == "A" else None,
+        (0.0,) * (m * m)
+        if ref.profile.identity_payload.realization in ("PC", "CI+PC")
+        else None,
+    )
+    return geometry_stage.GeometryStageInputs(
+        ref.geometry(),
+        ref.context,
+        current,
+        current,
+        "ordinary-step-1",
+        float(sum(current.C)),
+        (),
+        0,
+        0.0,
+        1.0,
+        cast(geometry_stage.GeometryStage, stage),
+        0,
+        PhysicalFlux(ref.graph, (0.0,) * m)
+        if stage in ("ci_trial", "cipc_trial")
+        else None,
+    )
+
+
+def replace_stage(
+    subject: geometry_stage.GeometryStageInputs, **changes: Any
+) -> geometry_stage.GeometryStageInputs:
+    """Permit deliberate invalid argument types in negative admission fixtures."""
+    return replace(subject, **changes)
+
+
+def reconstruct_stage(data: object) -> dict[str, Any]:
+    """Portable consumer: input payloads, no repository fixtures or callbacks."""
+    inputs = geometry_stage.GeometryStageInputs.from_payload(data)
+    ref = inputs.geometry.reference
+    flux = PhysicalFlux(
+        ref.graph, tuple(float(i + 2) for i in range(len(ref.graph.oriented_edges)))
+    )
+    cache = geometry_stage.GeometryStageCache(inputs, "flat", flux)
+    restored = geometry_stage.GeometryStageCache.from_canonical_bytes(
+        cache.to_canonical_bytes(),
+        expected_inputs=inputs,
+        expected_kind="flat",
+        expected_operand=flux,
+    )
+    result = restored.consume(
+        expected_inputs=inputs, expected_kind="flat", expected_operand=flux
+    )
+    assert isinstance(result, OneForm)
+    return {
+        "stage_id": inputs.identity,
+        "cache_id": restored.identity,
+        "flat": list(result.values),
+        "input_roundtrip": inputs.to_payload(),
+    }
+
+
+class GeometryAdmissionTests(unittest.TestCase):
+    def test_structural_support_is_star_local_and_not_inverse_support(self) -> None:
+        graph = GRCV4Graph(
+            ("u", "v", "w", "x"),
+            (
+                OrientedEdge("a", "u", "v"),
+                OrientedEdge("b", "v", "w"),
+                OrientedEdge("c", "w", "x"),
+            ),
+        )
+        ref = stage_reference_fixture(graph=graph)
+        nonlocal_matrix = ((0, 0, 1), (0, 0, 0), (1, 0, 0))
+        with self.assertRaisesRegex(ValueError, "outside.*stars"):
+            geometry_stage.K4Tensor(graph, ref.K4_base, nonlocal_matrix)
+        with self.assertRaisesRegex(ValueError, "outside.*stars"):
+            stage_reference_fixture(
+                graph=graph, base=[list(r) for r in nonlocal_matrix]
+            )
+        delta = ((2, 1, 0), (1, 2, 1), (0, 1, 2))
+        geometry = geometry_stage.H_profile(
+            geometry_stage.K4Tensor(graph, ref.K4_base, delta),
+            reference=ref,
+            context=ref.context,
+            profile=ref.profile,
+        )
+        # A local tridiagonal Hodge has nonlocal inverse action: no masking.
+        lowered = geometry.pairings.flat_map.flat(PhysicalFlux(graph, (0, 0, 1)))
+        self.assertNotEqual(lowered.values[0], 0)
+        payload = ref.to_payload()
+        payload["structural_coordinates_id"] = "unbound_carrier"
+        with self.assertRaises(ValueError):
+            geometry_stage.GRCV4ReferenceGeometry.from_payload(payload)
+        pc = stage_reference_fixture("C", "PC", graph=graph)
+        stage = stage_inputs_fixture(pc)
+        with self.assertRaisesRegex(ValueError, "outside.*stars"):
+            replace(
+                stage,
+                current=GRCV4AuthoritativeState(
+                    stage.current.C,
+                    None,
+                    tuple(x for row in nonlocal_matrix for x in row),
+                ),
+            )
+
+    def test_affine_baseline_increment_and_fixed_vertex_measure(self) -> None:
+        ref = stage_reference_fixture(base=[[13.0, 2.0], [2.0, -7.0]])
+        tensor = geometry_stage.K4Tensor(
+            ref.graph, ref.K4_base, ((2.0, 1.0), (1.0, 4.0))
+        )
+        actual = geometry_stage.H_profile(
+            tensor, reference=ref, context=ref.context, profile=ref.profile
+        )
+        self.assertEqual(actual.one_form_hodge.matrix, ((3.0, 0.5), (0.5, 5.0)))
+        self.assertEqual(
+            actual.pairings.vertex.matrix,
+            ((1.0, 0.0, 0.0), (0.0, 1.0, 0.0), (0.0, 0.0, 1.0)),
+        )
+        self.assertIs(actual.reference.differential, ref.differential)
+        self.assertNotEqual(actual.identity, ref.geometry().identity)
+        with self.assertRaises(TypeError):
+            geometry_stage.H_profile(tensor)  # type: ignore[call-arg]
+        with self.assertRaises(TypeError):
+            geometry_stage.H_profile(
+                cast(Any, OneForm(ref.graph, (1, 2))),
+                reference=ref,
+                context=ref.context,
+                profile=ref.profile,
+            )
+
+    def test_neutral_controls_are_reference_exact_with_nonzero_baseline(self) -> None:
+        for gain, delta in [
+            (0.0, ((1e308, 0.0), (0.0, -1e308))),
+            (2.0, ((0.0, 0.0), (0.0, 0.0))),
+        ]:
+            ref = stage_reference_fixture(base=[[1e308, 0.0], [0.0, -1e308]], gain=gain)
+            actual = geometry_stage.H_profile(
+                geometry_stage.K4Tensor(ref.graph, ref.K4_base, delta),
+                reference=ref,
+                context=ref.context,
+                profile=ref.profile,
+            )
+            self.assertEqual(actual, ref.geometry())
+            self.assertEqual(actual.identity, ref.geometry().identity)
+
+    def test_reference_digest_dimension_and_baseline_fail_closed(self) -> None:
+        ref = stage_reference_fixture()
+        for bad in [((1.0,),), ((1.0, 1.0), (0.0, 1.0)), ((1.0, 0.0), (0.0, 2.0))]:
+            with self.subTest(base=bad), self.assertRaises(ValueError):
+                replace(ref, K4_base=bad)
+        with self.assertRaises(ValueError):
+            replace(ref, edge_weights=FrozenJSONMap({"z": 2.0, "a": 4.0}))
+        with self.assertRaises(ValueError):
+            geometry_stage.H_profile(
+                geometry_stage.K4Tensor(
+                    ref.graph, ((2.0, 0.0), (0.0, 2.0)), ((0.0, 0.0), (0.0, 0.0))
+                ),
+                reference=ref,
+                context=ref.context,
+                profile=ref.profile,
+            )
+        # The frozen identity fixture has nine edge weights but a 2x2 K4. It
+        # remains a valid declaration, and cannot stand in for a graph domain.
+        from tests.models.test_grc_v4_profile import fixture
+
+        profile = resolve_profile(*fixture())
+        assert isinstance(profile.params_resolved.candidate, CandidateCParams)
+        graph = GRCV4Graph(
+            ("u", "v"),
+            tuple(
+                OrientedEdge(e, "u", "v")
+                for e in profile.params_resolved.candidate.W_C_tr
+            ),
+        )
+        with self.assertRaises(ValueError):
+            geometry_stage.GRCV4ReferenceGeometry(
+                graph,
+                profile,
+                ref.context,
+                ((1.0, 0.0), (0.0, 1.0)),
+                FrozenJSONMap(profile.params_resolved.candidate.W_C_tr),
+            )
+
+    def test_valid_recomputed_C_reference_hashes_do_not_hide_weight_disagreement(
+        self,
+    ) -> None:
+        ref = stage_reference_fixture()
+        for weights in (
+            {"z": 4.0, "a": 6.0},
+            {"z": 2.0, "a": 4.0},
+            {"z": 1.0, "a": 1.5},
+        ):
+            payload = ref.profile.to_payload()
+            params, identity = payload["params_resolved"], payload["identity_payload"]
+            assert isinstance(params, dict) and isinstance(identity, dict)
+            geometry = params["geometry"]
+            assert isinstance(geometry, dict)
+            geometry["reference_hodge_digest"] = payload_identity(
+                "reference_hodge_identity_payload",
+                {
+                    "schema_version": "grcv4-reference-hodge-identity-v1",
+                    "edge_weights": weights,
+                },
+            )
+            identity["params_hash"] = payload_identity("resolved_params", params)
+            profile = resolve_profile(params, identity)
+            with (
+                self.subTest(weights=weights),
+                self.assertRaisesRegex(ValueError, "weights must match"),
+            ):
+                geometry_stage.GRCV4ReferenceGeometry(
+                    ref.graph, profile, ref.context, ref.K4_base, FrozenJSONMap(weights)
+                )
+
+    def test_unknown_geometry_algorithms_and_context_are_not_aliases(self) -> None:
+        fields = {
+            "geometry": [
+                "star_cover_id",
+                "overlap_normalization_id",
+                "candidate_adapter_id",
+                "flat_sharp_solver_id",
+                "geometry_domain_id",
+            ],
+            "common": ["measure_profile_id"],
+            "identity": ["geometry_profile_id"],
+        }
+        for group, names in fields.items():
+            for name in names:
+                with (
+                    self.subTest(field=name),
+                    self.assertRaisesRegex(ValueError, "geometry declaration"),
+                ):
+                    stage_reference_fixture(changes={group: {name: "unimplemented_v1"}})
+        for contract, value in [
+            ("arbitrary_context", {}),
+            ("constant_zero_context_v1", {"forcing": 0}),
+            ("constant_zero_context_v1", {"callback": "noop"}),
+        ]:
+            with self.assertRaises(ValueError):
+                geometry_stage.GRCV4Context(
+                    contract, FrozenJSONMap(cast(dict[str, Any], value))
+                )
+
+    def test_reference_order_is_stable_ID_based_and_inputs_are_detached(self) -> None:
+        weights = {"a": 3.0, "z": 2.0}
+        base = [[1.0, 0.0], [0.0, 1.0]]
+        ref = stage_reference_fixture(weights=weights, base=base)
+        before = ref.to_payload()
+        weights["z"] = 100.0
+        base[0][0] = 100.0
+        self.assertEqual(ref.to_payload(), before)
+        self.assertEqual(ref.pairings.one_form.matrix, ((2.0, 0.0), (0.0, 3.0)))
+        restored = geometry_stage.GRCV4ReferenceGeometry.from_payload(before)
+        self.assertEqual(restored, ref)
+        self.assertEqual(restored.identity, ref.identity)
+        with self.assertRaises(FrozenInstanceError):
+            ref.K4_base = ()  # type: ignore[misc]
+
+    def test_full_reference_empty_domain_is_not_inferred_from_empty_primitive(
+        self,
+    ) -> None:
+        graph = GRCV4Graph((), ())
+        self.assertEqual(geometry_stage.StarAssembly(OneForm(graph, ())).matrix, ())
+        for candidate in ("A", "C"):
+            with self.assertRaises(ValueError):
+                stage_reference_fixture(candidate, graph=graph, weights={}, base=[])
+
+    def test_positive_boundary_and_rounding_collapse_fail_closed(self) -> None:
+        ref = stage_reference_fixture(weights={"a": 1.0, "z": 1.0}, gain=1.0)
+        for value, admitted in [
+            (-1.0, False),
+            (math.nextafter(-1.0, -math.inf), False),
+            (math.nextafter(-1.0, 0.0), True),
+        ]:
+            tensor = geometry_stage.K4Tensor(
+                ref.graph, ref.K4_base, ((value, 0.0), (0.0, 0.0))
+            )
+            with self.subTest(value=value):
+                if admitted:
+                    self.assertGreater(
+                        geometry_stage.H_profile(
+                            tensor,
+                            reference=ref,
+                            context=ref.context,
+                            profile=ref.profile,
+                        ).one_form_hodge.matrix[0][0],
+                        0,
+                    )
+                else:
+                    with self.assertRaisesRegex(ValueError, "positive definite"):
+                        geometry_stage.H_profile(
+                            tensor,
+                            reference=ref,
+                            context=ref.context,
+                            profile=ref.profile,
+                        )
+        # Exact 1+(1+u)*(-1+u)=u^2 is positive, but the declared binary64
+        # multiply/add collapses to zero. Both expression and stored matrix
+        # must be admitted; a positive exact expression alone cannot certify it.
+        u = 2.0**-52
+        ref = stage_reference_fixture(weights={"a": 1.0, "z": 1.0}, gain=1.0 + u)
+        tensor = geometry_stage.K4Tensor(
+            ref.graph, ref.K4_base, ((-1.0 + u, 0.0), (0.0, 0.0))
+        )
+        self.assertEqual(
+            Fraction(1) + Fraction(1.0 + u) * Fraction(-1.0 + u), Fraction(u) ** 2
+        )
+        with self.assertRaisesRegex(ValueError, "positive definite"):
+            geometry_stage.H_profile(
+                tensor, reference=ref, context=ref.context, profile=ref.profile
+            )
+
+    def test_affine_overflow_and_scaled_positive_controls(self) -> None:
+        for size in (1, 2, 4):
+            graph = ExactPositiveDomainTests.graph(size)
+            for scale in (5e-324, 1e-308, 2.0**-500, 1.0, 2.0**500, 1e308):
+                ref = stage_reference_fixture(
+                    graph=graph, weights={e: scale for e in graph.live_edge_ids}
+                )
+                zero = tuple((0.0,) * size for _ in range(size))
+                self.assertEqual(
+                    geometry_stage.H_profile(
+                        geometry_stage.K4Tensor(graph, ref.K4_base, zero),
+                        reference=ref,
+                        context=ref.context,
+                        profile=ref.profile,
+                    ),
+                    ref.geometry(),
+                )
+        ref = stage_reference_fixture(gain=1e308)
+        tensor = geometry_stage.K4Tensor(
+            ref.graph, ref.K4_base, ((2.0, 0.0), (0.0, 2.0))
+        )
+        before = ref.to_payload(), tensor.identity
+        with self.assertRaisesRegex(ValueError, "nonfinite"):
+            geometry_stage.H_profile(
+                tensor, reference=ref, context=ref.context, profile=ref.profile
+            )
+        self.assertEqual((ref.to_payload(), tensor.identity), before)
+
+    def test_affine_covariance_all_signed_actions_and_nonzero_base(self) -> None:
+        import itertools
+
+        ref = stage_reference_fixture(base=[[3.0, 1.0], [1.0, 4.0]])
+        delta = ((2.0, 1.0), (1.0, 4.0))
+        tensor = geometry_stage.K4Tensor(ref.graph, ref.K4_base, delta)
+        actual = geometry_stage.H_profile(
+            tensor, reference=ref, context=ref.context, profile=ref.profile
+        )
+        for nodes in itertools.permutations(range(3)):
+            for edges in itertools.permutations(range(2)):
+                for signs in itertools.product((-1, 1), repeat=2):
+                    target_graph = GRCV4Graph(
+                        tuple(ref.graph.live_node_ids[i] for i in nodes),
+                        tuple(
+                            OrientedEdge(
+                                ref.graph.oriented_edges[old].edge_id,
+                                ref.graph.oriented_edges[old].tail_node_id
+                                if signs[i] == 1
+                                else ref.graph.oriented_edges[old].head_node_id,
+                                ref.graph.oriented_edges[old].head_node_id
+                                if signs[i] == 1
+                                else ref.graph.oriented_edges[old].tail_node_id,
+                            )
+                            for i, old in enumerate(edges)
+                        ),
+                    )
+                    action = GraphCoordinateAction(
+                        ref.graph,
+                        target_graph,
+                        tuple(nodes),
+                        tuple(edges),
+                        tuple(signs),
+                    )
+
+                    def move(
+                        matrix: tuple[tuple[float, ...], ...],
+                    ) -> list[list[float]]:
+                        return [
+                            [
+                                float(signs[i] * signs[j]) * matrix[a][b]
+                                if matrix[a][b]
+                                else 0.0
+                                for j, b in enumerate(edges)
+                            ]
+                            for i, a in enumerate(edges)
+                        ]
+
+                    # Stable edge IDs retain their reference weights after reordering.
+                    target = stage_reference_fixture(
+                        graph=action.target,
+                        weights={"a": 3.0, "z": 2.0},
+                        base=move(ref.K4_base),
+                    )
+                    result = geometry_stage.H_profile(
+                        geometry_stage.K4Tensor(
+                            action.target,
+                            target.K4_base,
+                            tuple(tuple(r) for r in move(delta)),
+                        ),
+                        reference=target,
+                        context=target.context,
+                        profile=target.profile,
+                    )
+                    self.assertEqual(
+                        result.one_form_hodge.matrix,
+                        tuple(tuple(r) for r in move(actual.one_form_hodge.matrix)),
+                    )
+
+
+class StarAssemblyTests(unittest.TestCase):
+    def test_hand_derived_chain_parallel_loop_and_disconnected_cases(self) -> None:
+        graph = GRCV4Graph.from_payload(graph_payload())
+        self.assertEqual(
+            geometry_stage.StarAssembly(OneForm(graph, (2, 3))).matrix,
+            ((4.0, 3.0), (3.0, 9.0)),
+        )
+        graph = GRCV4Graph(
+            ("u", "v", "isolated"),
+            (
+                OrientedEdge("loop", "u", "u"),
+                OrientedEdge("p", "u", "v"),
+                OrientedEdge("q", "u", "v"),
+            ),
+        )
+        matrix = geometry_stage.StarAssembly(OneForm(graph, (2, 3, -4))).matrix
+        self.assertEqual(tuple(matrix[i][i] for i in range(3)), (4, 9, 16))
+        self.assertEqual(matrix[1][2], -12)
+        self.assertAlmostEqual(matrix[0][1], 6 / math.sqrt(2), delta=2e-15)
+        self.assertAlmostEqual(matrix[0][2], -8 / math.sqrt(2), delta=2e-15)
+        graph = GRCV4Graph(
+            ("u", "v", "x", "y"),
+            (OrientedEdge("a", "u", "v"), OrientedEdge("b", "x", "y")),
+        )
+        self.assertEqual(
+            geometry_stage.StarAssembly(OneForm(graph, (2, 3))).matrix, ((4, 0), (0, 9))
+        )
+
+    def test_seeded_multigraphs_against_decimal_restriction_sum(self) -> None:
+        from decimal import Decimal, localcontext
+        import random
+
+        rng = random.Random(932)
+        for case in range(80):
+            n = rng.randrange(1, 8)
+            m = rng.randrange(0, 9)
+            endpoints = [(rng.randrange(n), rng.randrange(n)) for _ in range(m)]
+            graph = GRCV4Graph(
+                tuple(range(n)),
+                tuple(
+                    OrientedEdge(f"e-{i}", a, b) for i, (a, b) in enumerate(endpoints)
+                ),
+            )
+            values = tuple(float(rng.randrange(-7, 8)) for _ in range(m))
+            actual = geometry_stage.StarAssembly(OneForm(graph, values)).matrix
+            # Independent scatter of each local rank-one form at high precision;
+            # neither graph.star nor production weights/assembly are the oracle.
+            with localcontext() as ctx:
+                ctx.prec = 70
+                local_edges = [
+                    [i for i, (a, b) in enumerate(endpoints) if v == a or v == b]
+                    for v in range(n)
+                ]
+                expected = [[Decimal(0)] * m for _ in range(m)]
+                for edges in local_edges:
+                    local = {
+                        i: Decimal(values[i])
+                        / Decimal(sum(i in star for star in local_edges)).sqrt()
+                        for i in edges
+                    }
+                    for i in edges:
+                        for j in edges:
+                            expected[i][j] += local[i] * local[j]
+                for i in range(m):
+                    for j in range(m):
+                        with self.subTest(case=case, i=i, j=j):
+                            self.assertAlmostEqual(
+                                actual[i][j], float(expected[i][j]), delta=2e-14
+                            )
+                            self.assertEqual(actual[i][j], actual[j][i])
+                    self.assertEqual(actual[i][i], values[i] ** 2)
+
+    def test_only_lowered_forms_are_consumed_and_overflow_rejects(self) -> None:
+        graph = GRCV4Graph.from_payload(graph_payload())
+        for value in [
+            PhysicalFlux(graph, (2, 3)),
+            VertexScalar(graph, (2, 3, 4)),
+            [2, 3],
+        ]:
+            with self.assertRaises(TypeError):
+                geometry_stage.StarAssembly(value)  # type: ignore[arg-type]
+        with self.assertRaisesRegex(ValueError, "nonfinite"):
+            geometry_stage.StarAssembly(OneForm(graph, (1e308, 1.0)))
+        self.assertEqual(
+            geometry_stage.StarAssembly(OneForm(graph, (0, 0))).matrix, ((0, 0), (0, 0))
+        )
+
+
+class StageCacheTests(unittest.TestCase):
+    def test_frozen_state_preimages_and_rehashed_subject_mismatches(self) -> None:
+        stage = stage_inputs_fixture()
+        ref = stage.geometry.reference
+        reset = {
+            "schema_version": "grcv4-reset-baseline-v1",
+            "active_model_identity": ref.profile.complete_profile_id,
+            "graph_digest": ref.graph.graph_digest,
+            "orientation_identity": ref.graph.orientation_identity,
+            "authoritative": {"C": [1, 2, 3], "W_A": None, "Z_4": None},
+            "Q_target": 6,
+            "context_contract_id": "constant_zero_context_v1",
+        }
+        reset_id = independent_ascii_id("grcv4-reset-sha256", reset)
+        scientific = {
+            "schema_version": "grcv4-scientific-state-v1",
+            "active_model_identity": ref.profile.complete_profile_id,
+            "graph_digest": ref.graph.graph_digest,
+            "orientation_identity": ref.graph.orientation_identity,
+            "step_index": 0,
+            "time": 0,
+            "authoritative": {"C": [1, 2, 3], "W_A": None, "Z_4": None},
+            "reset_digest": reset_id,
+            "Q_target": 6,
+            "context_contract_id": "constant_zero_context_v1",
+            "context_value_digest": None,
+        }
+        scientific_id = independent_ascii_id("grcv4-state-sha256", scientific)
+        lifecycle_id = independent_ascii_id(
+            "grcv4-lifecycle-sha256",
+            {
+                "schema_version": "grcv4-lifecycle-envelope-v1",
+                "scientific_state_digest": scientific_id,
+                "receipt_ids": [],
+            },
+        )
+        self.assertEqual(stage.reset_preimage, reset)
+        self.assertEqual(stage.scientific_state_preimage, scientific)
+        self.assertEqual(
+            (stage.reset_id, stage.scientific_state_id, stage.source_lifecycle_id),
+            (reset_id, scientific_id, lifecycle_id),
+        )
+        for name in ("reset_id", "scientific_state_id", "source_lifecycle_id"):
+            data = stage.to_payload()
+            data[name] = str(data[name])[:-64] + "f" * 64
+            with self.assertRaisesRegex(ValueError, "authority identity"):
+                geometry_stage.GeometryStageInputs.from_payload(data)
+        for receipt_ids in (("fake",), ("grc-receipt-sha256:" + "a" * 64 + "\n",)):
+            with self.assertRaises(ValueError):
+                replace(stage, receipt_ids=receipt_ids)
+        first = "grc-receipt-sha256:" + "a" * 64
+        second = "grc-receipt-sha256:" + "b" * 64
+        left = replace(stage, receipt_ids=(first, second))
+        right = replace(stage, receipt_ids=(second, first))
+        self.assertEqual(left.scientific_state_id, right.scientific_state_id)
+        self.assertNotEqual(left.source_lifecycle_id, right.source_lifecycle_id)
+
+    def test_all_primitive_producers_have_independent_expected_values(self) -> None:
+        stage = stage_inputs_fixture()
+        ref = stage.geometry.reference
+        graph = ref.graph
+        cases: list[
+            tuple[
+                geometry_stage.DerivedGeometryKind,
+                geometry_stage.GeometryOperand,
+                object,
+            ]
+        ] = [
+            ("d0", VertexScalar(graph, (4, 2, 1)), (2.0, 1.0)),
+            ("divergence", PhysicalFlux(graph, (3, -2)), (3.0, -5.0, 2.0)),
+            ("flat", PhysicalFlux(graph, (4, 6)), (2.0, 2.0)),
+            ("sharp", OneForm(graph, (2, 3)), (4.0, 9.0)),
+            ("star_assembly", OneForm(graph, (2, 3)), ((4.0, 3.0), (3.0, 9.0))),
+            (
+                "H_profile",
+                geometry_stage.K4Tensor(graph, ref.K4_base, ((2.0, 1.0), (1.0, 4.0))),
+                ((3.0, 0.5), (0.5, 5.0)),
+            ),
+        ]
+        fresh = geometry_stage.GeometryStageInputs.from_payload(stage.to_payload())
+        for kind, operand, expected in cases:
+            cache = geometry_stage.GeometryStageCache(stage, kind, operand)
+            value = cache.consume(
+                expected_inputs=fresh, expected_kind=kind, expected_operand=operand
+            )
+            actual: object
+            if isinstance(value, geometry_stage.StarAssembly):
+                actual = value.matrix
+            elif isinstance(value, geometry_stage.GRCV4Geometry):
+                actual = value.one_form_hodge.matrix
+            else:
+                actual = value.values
+            self.assertEqual(actual, expected)
+            restored = geometry_stage.GeometryStageCache.from_canonical_bytes(
+                cache.to_canonical_bytes(),
+                expected_inputs=fresh,
+                expected_kind=kind,
+                expected_operand=operand,
+            )
+            self.assertEqual(restored.to_canonical_bytes(), cache.to_canonical_bytes())
+
+    def test_identical_predictor_and_corrector_matrices_do_not_share_authority(
+        self,
+    ) -> None:
+        stage = stage_inputs_fixture(stage="os_predictor")
+        graph = stage.geometry.reference.graph
+        flux = PhysicalFlux(graph, (4, 6))
+        cache = geometry_stage.GeometryStageCache(stage, "flat", flux)
+        corrector = replace(stage, stage="os_corrector")
+        self.assertEqual(stage.geometry, corrector.geometry)
+        self.assertNotEqual(stage.identity, corrector.identity)
+        with self.assertRaisesRegex(ValueError, "stale_cache"):
+            cache.consume(
+                expected_inputs=corrector, expected_kind="flat", expected_operand=flux
+            )
+        fresh = geometry_stage.GeometryStageCache(corrector, "flat", flux)
+        self.assertEqual(fresh.value, cache.value)
+        self.assertNotEqual(fresh.identity, cache.identity)
+
+    def test_every_stage_input_is_bound_even_when_operation_output_is_unchanged(
+        self,
+    ) -> None:
+        stage = stage_inputs_fixture()
+        graph = stage.geometry.reference.graph
+        flux = PhysicalFlux(graph, (4, 6))
+        cache = geometry_stage.GeometryStageCache(stage, "flat", flux)
+        variants = [
+            replace_stage(stage, **{name: value})
+            for name, value in [
+                ("operation_id", "operation-2"),
+                ("Q_target", 7.0),
+                ("receipt_ids", ("grc-receipt-sha256:" + "1" * 64,)),
+                ("step_index", 1),
+                ("time", 1.0),
+                ("dt", 2.0),
+                ("stage", "post_continuity"),
+                ("current", GRCV4AuthoritativeState((3, 2, 1), None, None)),
+                ("reset", GRCV4AuthoritativeState((3, 2, 1), None, None)),
+                ("trial_current", PhysicalFlux(graph, (0, 0))),
+            ]
+        ]
+        for changed in variants:
+            with (
+                self.subTest(stage=changed.to_payload()),
+                self.assertRaisesRegex(ValueError, "stale_cache"),
+            ):
+                cache.consume(
+                    expected_inputs=changed, expected_kind="flat", expected_operand=flux
+                )
+            self.assertEqual(
+                geometry_stage.GeometryStageCache(changed, "flat", flux).value,
+                cache.value,
+            )
+        with self.assertRaisesRegex(ValueError, "stale_cache"):
+            cache.consume(
+                expected_inputs=stage, expected_kind="divergence", expected_operand=flux
+            )
+        with self.assertRaisesRegex(ValueError, "stale_cache"):
+            cache.consume(
+                expected_inputs=stage,
+                expected_kind="flat",
+                expected_operand=PhysicalFlux(graph, (8, 12)),
+            )
+
+    def test_changed_profile_reference_and_geometry_invalidate_cache(self) -> None:
+        stage = stage_inputs_fixture()
+        ref = stage.geometry.reference
+        flux = PhysicalFlux(ref.graph, (4, 6))
+        cache = geometry_stage.GeometryStageCache(stage, "flat", flux)
+        other = stage_inputs_fixture(stage_reference_fixture(gain=2.0))
+        self.assertEqual(
+            other.geometry.one_form_hodge.matrix, stage.geometry.one_form_hodge.matrix
+        )
+        other_base = stage_inputs_fixture(
+            stage_reference_fixture(base=[[3.0, 1.0], [1.0, 4.0]])
+        )
+        dense = replace(
+            stage,
+            geometry=geometry_stage.GRCV4Geometry(
+                ref, OneFormHodge(ref.graph, ((2.0, 1.0), (1.0, 3.0)))
+            ),
+        )
+        for variant in (other, other_base, dense):
+            with self.assertRaisesRegex(ValueError, "stale_cache"):
+                cache.consume(
+                    expected_inputs=variant, expected_kind="flat", expected_operand=flux
+                )
+
+    def test_joint_trials_bind_evaluation_and_current_even_with_identical_geometry(
+        self,
+    ) -> None:
+        for candidate in ("A", "C"):
+            for realization, label in (("CI", "ci_trial"), ("CI+PC", "cipc_trial")):
+                stage = stage_inputs_fixture(
+                    stage_reference_fixture(candidate, realization), stage=label
+                )
+                graph = stage.geometry.reference.graph
+                flux = PhysicalFlux(graph, (4, 6))
+                cache = geometry_stage.GeometryStageCache(stage, "flat", flux)
+                for altered in (
+                    replace(stage, evaluation_index=1),
+                    replace(stage, trial_current=PhysicalFlux(graph, (1, 0))),
+                ):
+                    with self.assertRaisesRegex(ValueError, "stale_cache"):
+                        cache.consume(
+                            expected_inputs=altered,
+                            expected_kind="flat",
+                            expected_operand=flux,
+                        )
+                with self.assertRaisesRegex(ValueError, "trial current"):
+                    replace(stage, trial_current=None)
+
+    def test_realization_stage_labels_are_closed_and_not_solver_execution(self) -> None:
+        labels = {
+            "OS": ("os_predictor", "os_corrector"),
+            "CI": ("ci_trial",),
+            "CI+PC": ("cipc_trial",),
+            "PC": ("pc_old_history",),
+            "RG2b": ("rg2b_section",),
+        }
+        for candidate in ("A", "C"):
+            for realization, admitted in labels.items():
+                ref = stage_reference_fixture(candidate, realization)
+                for label in (
+                    "pre_read",
+                    "post_continuity",
+                    "reset_readmission",
+                    "target_readmission",
+                    *admitted,
+                ):
+                    stage_inputs_fixture(ref, stage=label)
+                for label in set(sum(labels.values(), ())) - set(admitted):
+                    with self.assertRaises(ValueError):
+                        stage_inputs_fixture(ref, stage=label)
+        stage = stage_inputs_fixture()
+        for name, value in [
+            ("stage", "os_second_corrector"),
+            ("stage", None),
+            ("evaluation_index", True),
+            ("evaluation_index", 1),
+            ("step_index", -1),
+            ("step_index", 2**53),
+            ("time", -0.0),
+            ("time", math.inf),
+            ("dt", -1.0),
+            ("operation_id", ""),
+        ]:
+            with (
+                self.subTest(field=name, value=value),
+                self.assertRaises((TypeError, ValueError)),
+            ):
+                replace_stage(stage, **{name: value})
+
+    def test_current_reset_authority_shape_and_old_PC_history(self) -> None:
+        stage = stage_inputs_fixture()
+        for name in ("current", "reset"):
+            for invalid in [
+                GRCV4AuthoritativeState((1, 2), None, None),
+                GRCV4AuthoritativeState((1, 2, 3), (1, 2), None),
+                GRCV4AuthoritativeState((1, 2, 3), None, (0, 0, 0, 0)),
+            ]:
+                with self.assertRaises(ValueError):
+                    replace_stage(stage, **{name: invalid})
+        ref = stage_reference_fixture("C", "PC")
+        stage = stage_inputs_fixture(ref, stage="pc_old_history")
+        old = GRCV4AuthoritativeState(stage.current.C, None, (2, 1, 1, 4))
+        new_geometry = geometry_stage.H_profile(
+            geometry_stage.K4Tensor(ref.graph, ref.K4_base, ((2, 1), (1, 4))),
+            reference=ref,
+            context=ref.context,
+            profile=ref.profile,
+        )
+        with self.assertRaisesRegex(ValueError, "old committed history"):
+            replace(stage, geometry=new_geometry)
+        with self.assertRaisesRegex(ValueError, "old committed history"):
+            geometry_stage.GeometryStageCache(
+                stage,
+                "H_profile",
+                geometry_stage.K4Tensor(ref.graph, ref.K4_base, ((2, 1), (1, 4))),
+            )
+        accepted = geometry_stage.GeometryStageCache(
+            stage,
+            "H_profile",
+            geometry_stage.K4Tensor(ref.graph, ref.K4_base, ((0, 0), (0, 0))),
+        )
+        self.assertEqual(accepted.value, stage.geometry)
+        changed = replace(stage, current=old, geometry=new_geometry)
+        self.assertEqual(changed.geometry.one_form_hodge.matrix, ((3, 0.5), (0.5, 5)))
+        # Even outside the read stage, both retained point images must be positive.
+        for realization in ("PC", "CI+PC"):
+            subject = stage_inputs_fixture(stage_reference_fixture("C", realization))
+            for name in ("current", "reset"):
+                with self.assertRaises(ValueError):
+                    replace_stage(
+                        subject,
+                        **{
+                            name: GRCV4AuthoritativeState(
+                                subject.current.C, None, (-4, 0, 0, -6)
+                            )
+                        },
+                    )
+        for values in [(1, 2), (1, 0, 1, 1)]:
+            with self.assertRaises(ValueError):
+                replace(
+                    stage,
+                    current=GRCV4AuthoritativeState(stage.current.C, None, values),
+                )
+
+    def test_A_retained_values_are_provenance_even_for_geometry_only_results(
+        self,
+    ) -> None:
+        stage = stage_inputs_fixture(stage_reference_fixture("A"))
+        graph = stage.geometry.reference.graph
+        flux = PhysicalFlux(graph, (4, 6))
+        cache = geometry_stage.GeometryStageCache(stage, "flat", flux)
+        for name in ("current", "reset"):
+            changed = replace_stage(
+                stage, **{name: GRCV4AuthoritativeState(stage.current.C, (3, 4), None)}
+            )
+            with self.assertRaisesRegex(ValueError, "stale_cache"):
+                cache.consume(
+                    expected_inputs=changed, expected_kind="flat", expected_operand=flux
+                )
+        with self.assertRaises(ValueError):
+            replace(stage, current=GRCV4AuthoritativeState(stage.current.C, (3,), None))
+
+    def test_stale_import_is_rejected_before_any_numerical_rebuild(self) -> None:
+        stage = stage_inputs_fixture()
+        graph = stage.geometry.reference.graph
+        flux = PhysicalFlux(graph, (4, 6))
+        cache = geometry_stage.GeometryStageCache(stage, "flat", flux)
+        with patch.object(
+            np.linalg, "solve", side_effect=AssertionError("stale cache reached solver")
+        ):
+            with self.assertRaisesRegex(ValueError, "stale_cache"):
+                geometry_stage.GeometryStageCache.from_canonical_bytes(
+                    cache.to_canonical_bytes(),
+                    expected_inputs=replace(stage, stage="post_continuity"),
+                    expected_kind="flat",
+                    expected_operand=flux,
+                )
+
+    def test_rehashed_corrupt_outputs_unknown_fields_and_boolean_aliases_reject(
+        self,
+    ) -> None:
+        stage = stage_inputs_fixture()
+        graph = stage.geometry.reference.graph
+        flux = PhysicalFlux(graph, (4, 6))
+        cache = geometry_stage.GeometryStageCache(stage, "flat", flux)
+        for mode in (
+            "output",
+            "extra",
+            "version",
+            "boolean_input",
+            "boolean_output",
+            "role",
+            "operand",
+        ):
+            data = json.loads(cache.to_canonical_bytes())
+            payload = data["payload"]
+            if mode == "output":
+                payload["output"]["values"][0] = 9
+            elif mode == "extra":
+                payload["extra"] = "opaque cache state"
+            elif mode == "version":
+                payload["descriptor_version"] = "unknown"
+            elif mode == "boolean_input":
+                payload["inputs"]["step_index"] = False
+            elif mode == "boolean_output":
+                payload["output"]["values"][0] = True
+            elif mode == "role":
+                payload["kind"] = "sharp"
+            else:
+                payload["operand"]["values"][0] = 8
+            data["cache_id"] = (
+                "grcv4-derived-geometry-cache-sha256:"
+                + sha256(canonical_json_bytes(payload)).hexdigest()
+            )
+            with self.subTest(mode=mode), self.assertRaises(ValueError):
+                geometry_stage.GeometryStageCache.from_canonical_bytes(
+                    canonical_json_bytes(data),
+                    expected_inputs=stage,
+                    expected_kind="flat",
+                    expected_operand=flux,
+                )
+        data = json.loads(cache.to_canonical_bytes())
+        data["payload"]["inputs"]["step_index"] = False
+        with self.assertRaises(ValueError):
+            geometry_stage.GeometryStageCache.from_canonical_bytes(
+                canonical_json_bytes(data),
+                expected_inputs=stage,
+                expected_kind="flat",
+                expected_operand=flux,
+            )
+
+    def test_wrong_operand_roles_foreign_coordinates_and_caller_mutation(self) -> None:
+        stage = stage_inputs_fixture()
+        ref = stage.geometry.reference
+        graph = ref.graph
+        for kind, operand in [
+            ("flat", OneForm(graph, (4, 6))),
+            ("sharp", PhysicalFlux(graph, (4, 6))),
+            ("star_assembly", PhysicalFlux(graph, (4, 6))),
+            ("arbitrary_callback", OneForm(graph, (4, 6))),
+        ]:
+            with self.assertRaises(TypeError):
+                geometry_stage.GeometryStageCache(stage, kind, operand)  # type: ignore[arg-type]
+        foreign = replace(graph, oriented_edges=graph.oriented_edges[::-1])
+        with self.assertRaises(ValueError):
+            geometry_stage.GeometryStageCache(
+                stage, "flat", PhysicalFlux(foreign, (4, 6))
+            )
+        data = stage.to_payload()
+        restored = geometry_stage.GeometryStageInputs.from_payload(data)
+        before = restored.to_payload()
+        data["current"] = {"C": [99], "W_A": None, "Z_4": None}
+        self.assertEqual(restored.to_payload(), before)
+        flux = PhysicalFlux(graph, (4, 6))
+        cache = geometry_stage.GeometryStageCache(restored, "flat", flux)
+        before_bytes = cache.to_canonical_bytes()
+        with self.assertRaises(ValueError):
+            cache.consume(
+                expected_inputs=replace(restored, operation_id="different"),
+                expected_kind="flat",
+                expected_operand=flux,
+            )
+        self.assertEqual(cache.to_canonical_bytes(), before_bytes)
+
+    def test_mutation_control_detects_omitted_stage_guard(self) -> None:
+        stage = stage_inputs_fixture(stage="os_predictor")
+        flux = PhysicalFlux(stage.geometry.reference.graph, (4, 6))
+        cache = geometry_stage.GeometryStageCache(stage, "flat", flux)
+
+        def unsafe(
+            cache: geometry_stage.GeometryStageCache, **kwargs: object
+        ) -> geometry_stage.GeometryOutput:
+            return cache.value
+
+        with patch.object(geometry_stage.GeometryStageCache, "consume", unsafe):
+            with self.assertRaises(AssertionError):
+                with self.assertRaises(ValueError):
+                    cache.consume(
+                        expected_inputs=replace(stage, stage="os_corrector"),
+                        expected_kind="flat",
+                        expected_operand=flux,
+                    )
+
+    def test_stage_reconstruction_outside_checkout_and_hash_seed_independence(
+        self,
+    ) -> None:
+        inputs = stage_inputs_fixture().to_payload()
+        expected = reconstruct_stage(inputs)
+        environment = {
+            k: v for k, v in os.environ.items() if k not in {"PYTHONPATH", "PYTHONHOME"}
+        }
+        with tempfile.TemporaryDirectory(prefix="grcv4-p932-replay-") as directory:
+            root = Path(directory)
+            consumer = root / "consumer.py"
+            source = Path(__file__).read_text()
+            consumer.write_text(source)
+            payload = root / "inputs.json"
+            payload.write_text(json.dumps(inputs))
+            for seed in ("0", "1", "932"):
+                run = subprocess.run(
+                    [
+                        sys.executable,
+                        str(consumer),
+                        "--reconstruct-stage",
+                        str(payload),
+                    ],
+                    cwd=root,
+                    env={**environment, "PYTHONHASHSEED": seed},
+                    text=True,
+                    capture_output=True,
+                    check=True,
+                )
+                self.assertEqual(json.loads(run.stdout), expected)
+
+
 if __name__ == "__main__":
     if len(sys.argv) == 3 and sys.argv[1] == "--reconstruct":
         print(
             json.dumps(
                 reconstruct(json.loads(Path(sys.argv[2]).read_text())), sort_keys=True
+            )
+        )
+    elif len(sys.argv) == 3 and sys.argv[1] == "--reconstruct-stage":
+        print(
+            json.dumps(
+                reconstruct_stage(json.loads(Path(sys.argv[2]).read_text())),
+                sort_keys=True,
             )
         )
     else:

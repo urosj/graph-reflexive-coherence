@@ -99,6 +99,11 @@ def verification_status(repo_root: Path) -> dict:
                     "accepted_iterations": ["P9-2.6"],
                     "path": module.INTEGRATION_ACCEPTANCE,
                 },
+                geometry_acceptance={
+                    "record_digest": module.accepted_geometry(root)["record_digest"],
+                    "accepted_iterations": ["P9-3.1"],
+                    "path": module.GEOMETRY_ACCEPTANCE,
+                },
                 implementation_scope=approval["runtime_targets"],
                 dependency_ready_leaves=ready,
                 permitted_runtime_paths=sorted(
@@ -243,6 +248,7 @@ def verification_status(repo_root: Path) -> dict:
         payload.pop("result_acceptance", None)
         payload.pop("harness_acceptance", None)
         payload.pop("integration_acceptance", None)
+        payload.pop("geometry_acceptance", None)
         payload.pop("permitted_runtime_paths", None)
         payload.pop("source_meaning", None)
         payload.pop("tree", None)

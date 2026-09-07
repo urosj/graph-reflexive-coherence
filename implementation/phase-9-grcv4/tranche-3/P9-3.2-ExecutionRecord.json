@@ -1,0 +1,151 @@
+{
+  "schema": "phase9_iteration_execution_record_v1",
+  "iteration_id": "P9-3.2",
+  "status": "implemented_and_verified_bounded_geometry_domain_stage_cache",
+  "reviewer_decision": "pending_user_review",
+  "release_id": "grcv4-spec-release-sha256:9f4c8fe5b57b1c477d834a3e4dae3f98a2b18c70e6e7f598e3c9652170c8645f",
+  "entry_authority": {
+    "acceptance_record": "implementation/phase-9-grcv4/tranche-3/P9-3.1-AcceptanceRecord.json",
+    "record_digest": "f119e1361500e72f58297bc8186f868954b4065c853fcdd089280a5d28f88618",
+    "baseline_commit": "dccb1ca396121d01b1db62b5437ccf48d5a33665",
+    "accepted_prerequisites": [
+      "P9-3.1"
+    ],
+    "basis": "Explicit user acceptance and commit, followed by authorization to continue with P9-3.2."
+  },
+  "accepted_generic_runtime_support": [],
+  "admitted_specialization_support_sets": [],
+  "next_step": "P9-3.2 user review; P9-3.3 remains held.",
+  "verification": {
+    "local_pressure": {
+      "run": "implementation/phase-9-grcv4/evidence/P9-3.2/local-pressure/run.json",
+      "tests_run": 95,
+      "new_test_methods": 28,
+      "inherited_test_methods": 67,
+      "failures": 0,
+      "errors": 0,
+      "skips": [],
+      "clean_installed_environments": 2,
+      "outside_checkout_hash_seeds": [
+        0,
+        1,
+        932
+      ],
+      "star_multigraphs": 80,
+      "signed_affine_actions": 48,
+      "static_checks": "Ruff and strict mypy on all four geometry/transport source and test files; pip check"
+    },
+    "broader_regression": {
+      "run": "implementation/phase-9-grcv4/evidence/P9-3.2/regression/run.json",
+      "tests_run": 1055,
+      "failures": 0,
+      "errors": 0,
+      "skips": [],
+      "subject": "source before final local state-preimage and current/reset carrier-image hardening; all final changed files rechecked by local-pressure; no other production/regression file changed"
+    },
+    "independent_audit_regression": {
+      "run": "implementation/phase-9-grcv4/evidence/P9-3.2/independent-regression/run.json",
+      "scenarios": 876,
+      "passed": 876,
+      "source": "final numerical source, native supplied audit program"
+    },
+    "source_map": {
+      "run": "implementation/phase-9-grcv4/evidence/P9-3.2/source-map/run.json",
+      "source_exact_forensic_contracts": 15,
+      "old_P9_3_1_evidence_files_unchanged": 35
+    },
+    "reconstruction": "implementation/phase-9-grcv4/evidence/P9-3.2/stage-replay/run.json",
+    "permission_surfaces": {
+      "run": "implementation/phase-9-grcv4/evidence/P9-3.2/permission-surfaces/run.json",
+      "authority_cases": 111,
+      "node_tests": 18,
+      "desktop_mobile_browser_tests": 18,
+      "API_notebook_identity": "byte_exact",
+      "ready_leaves": 8,
+      "eligible_runtime_paths": 23,
+      "subject": "exact embedded pre-retention policy/work/execution/review; final record/binding maintenance followed by fresh boundary, authority and API/notebook checks"
+    },
+    "browser_font_environment": {
+      "status": "passed",
+      "run": "implementation/phase-9-grcv4/evidence/P9-3.2/browser-font-environment/run.json",
+      "browser_tests": 18,
+      "node_tests": 18,
+      "authority_cases": 111,
+      "API_notebook_identity": "byte_exact",
+      "glyph_assertions": "before and after viewport capture",
+      "retained_readable_viewports": 2,
+      "original_blank_screenshot_preserved": true,
+      "scope": "explicit DejaVu browser preferences and viewport rendering; full-page rendering is not claimed"
+    },
+    "independent_P9_3_2_audit_followup": {
+      "run": "implementation/phase-9-grcv4/evidence/P9-3.2/audit-1-native/run.json",
+      "native_assertions": 652,
+      "fresh_local_tests": 95,
+      "failures": 0,
+      "skips": [],
+      "clean_installed_environments": 2,
+      "qualified_original_preserved": true,
+      "browser_status": "completed successor verified; earlier pending upload is historical",
+      "owner_routing": "Tranche 6 / P9-6.1 through P9-6.4 children",
+      "local_run": "implementation/phase-9-grcv4/evidence/P9-3.2/audit-1-local/run.json"
+    }
+  },
+  "artifact_bindings": [
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-3.2/audit-1-followup/run.json",
+      "sha256": "508b9f6d559ba0b179749f2ad755f7daf51a9b10d1016c6c6d4af0482235a0bb"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-3.2/audit-1-local/run.json",
+      "sha256": "18f8d81b3fb5029f3338a46554cddc40a8c5985c839761618aec8a6a9621fd6e"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-3.2/audit-1-native/run.json",
+      "sha256": "5ac002244c68b16fd7078da3ee32f708c0ade076d2e673510db08774b7570b02"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-3.2/browser-font-environment/run.json",
+      "sha256": "4ff6c860548dfa687683cbd0a9f884b0f026136faa0b6a39b77a0e90d22d9e2c"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-3.2/independent-regression/run.json",
+      "sha256": "85bd0acc05e981995597c0a59d0470f4caacf3d43e19e3649396b182dfcee788"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-3.2/local-pressure/run.json",
+      "sha256": "824499d2ae6b21649d5a0010c47d19c6faf4028f18494e85220eba6fd7de0ee3"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-3.2/permission-surfaces/run.json",
+      "sha256": "6df946b39ae3246a56cdb204ba19f69f177caabf718c41e8596d31574631c7d5"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-3.2/regression/run.json",
+      "sha256": "9f6a2e3adc8ef41fc85b8353a2331923a21e44681881fd9cc327b25e5a633318"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-3.2/source-map/run.json",
+      "sha256": "102a8a2f88b441d6cc738f5e70978cc283b23fd62449aa92918930fcf3f29b5a"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-3.2/stage-replay/run.json",
+      "sha256": "050d6905ee0a994338cd5e14db4aa0b41f8a3d1ddd4c6e7f9eb11be839231308"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-3/P9-3.2-Review.md",
+      "sha256": "b374912016152c1d600b8db02962c29ce73af9a4472642c05adcc0c1e0e67339"
+    }
+  ],
+  "claim_ceiling": "common affine positive-geometry and exact derived-stage/cache inputs only; no full current/root/charge/PC invariant-ball, lifecycle operation, numerical runtime support or acceptance",
+  "open_numerical_followups": [
+    {
+      "owner": "P9-3.4",
+      "status": "characterized_unresolved_numerical_envelope",
+      "run": "implementation/phase-9-grcv4/evidence/P9-3.2/audit-1-followup/run.json",
+      "issue": "mixed-scale intermediate underflow loses a representable star coupling in one edge order",
+      "observations": 64,
+      "production_arithmetic_changed": false,
+      "P9_3_3_new_dependency": false
+    }
+  ]
+}

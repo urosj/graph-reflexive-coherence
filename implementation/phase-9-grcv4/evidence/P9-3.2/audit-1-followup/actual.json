@@ -1,0 +1,3584 @@
+{
+  "iteration_id": "P9-3.2",
+  "owner": "P9-3.4",
+  "status": "characterized_unresolved_numerical_envelope",
+  "source_sha256": "d715f67555d3c6e68a4e031ba132cb1854cc839de03dcd2c7101fbeb40c13dcd",
+  "oracle": "Exact Fraction products for two adjacent ordinary edges; single rounding for comparison only, not a production arithmetic rule",
+  "claim_ceiling": "64 signed/order observations and overflow checks; no universal covariance, relative-error or numerical runtime admission",
+  "counts": {
+    "cases": 64,
+    "finite": 48,
+    "overflow_rejected": 16,
+    "lost_representable_couplings": 4
+  },
+  "cases": [
+    {
+      "case": "audit_witness",
+      "signs_in_original_order": [
+        -1,
+        -1
+      ],
+      "reversed": false,
+      "graph": {
+        "schema_version": "grcv4-serialized-graph-v1",
+        "live_node_ids": [
+          "a",
+          "b",
+          "c"
+        ],
+        "oriented_edges": [
+          {
+            "edge_id": "x",
+            "tail_node_id": "b",
+            "head_node_id": "a"
+          },
+          {
+            "edge_id": "y",
+            "tail_node_id": "c",
+            "head_node_id": "b"
+          }
+        ]
+      },
+      "values": [
+        -5e-324,
+        -1e+150
+      ],
+      "values_hex": [
+        "-0x0.0000000000001p-1022",
+        "-0x1.38d352e5096afp+498"
+      ],
+      "exact_offdiagonal": "5503284107318959/2227754207823337509102134573095845373483021732054960903603121346630505452738612005129840239901060253798165190221481644194672219102234100585084307285020612396607419274589973120157653414182912",
+      "once_rounded_exact_matrix": [
+        [
+          0.0,
+          2.4703282292062327e-174
+        ],
+        [
+          2.4703282292062327e-174,
+          9.999999999999999e+299
+        ]
+      ],
+      "outcome": "finite_assembly",
+      "actual": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          9.999999999999999e+299
+        ]
+      ],
+      "lost_representable_coupling": true,
+      "offdiagonal_relative_error": 1.0,
+      "max_entry_normalized_error": 0.0
+    },
+    {
+      "case": "audit_witness",
+      "signs_in_original_order": [
+        -1,
+        -1
+      ],
+      "reversed": true,
+      "graph": {
+        "schema_version": "grcv4-serialized-graph-v1",
+        "live_node_ids": [
+          "a",
+          "b",
+          "c"
+        ],
+        "oriented_edges": [
+          {
+            "edge_id": "y",
+            "tail_node_id": "c",
+            "head_node_id": "b"
+          },
+          {
+            "edge_id": "x",
+            "tail_node_id": "b",
+            "head_node_id": "a"
+          }
+        ]
+      },
+      "values": [
+        -1e+150,
+        -5e-324
+      ],
+      "values_hex": [
+        "-0x1.38d352e5096afp+498",
+        "-0x0.0000000000001p-1022"
+      ],
+      "exact_offdiagonal": "5503284107318959/2227754207823337509102134573095845373483021732054960903603121346630505452738612005129840239901060253798165190221481644194672219102234100585084307285020612396607419274589973120157653414182912",
+      "once_rounded_exact_matrix": [
+        [
+          9.999999999999999e+299,
+          2.4703282292062327e-174
+        ],
+        [
+          2.4703282292062327e-174,
+          0.0
+        ]
+      ],
+      "outcome": "finite_assembly",
+      "actual": [
+        [
+          9.999999999999999e+299,
+          2.4703282292062327e-174
+        ],
+        [
+          2.4703282292062327e-174,
+          0.0
+        ]
+      ],
+      "lost_representable_coupling": false,
+      "offdiagonal_relative_error": 0.0,
+      "max_entry_normalized_error": 0.0
+    },
+    {
+      "case": "audit_witness",
+      "signs_in_original_order": [
+        -1,
+        1
+      ],
+      "reversed": false,
+      "graph": {
+        "schema_version": "grcv4-serialized-graph-v1",
+        "live_node_ids": [
+          "a",
+          "b",
+          "c"
+        ],
+        "oriented_edges": [
+          {
+            "edge_id": "x",
+            "tail_node_id": "b",
+            "head_node_id": "a"
+          },
+          {
+            "edge_id": "y",
+            "tail_node_id": "b",
+            "head_node_id": "c"
+          }
+        ]
+      },
+      "values": [
+        -5e-324,
+        1e+150
+      ],
+      "values_hex": [
+        "-0x0.0000000000001p-1022",
+        "0x1.38d352e5096afp+498"
+      ],
+      "exact_offdiagonal": "-5503284107318959/2227754207823337509102134573095845373483021732054960903603121346630505452738612005129840239901060253798165190221481644194672219102234100585084307285020612396607419274589973120157653414182912",
+      "once_rounded_exact_matrix": [
+        [
+          0.0,
+          -2.4703282292062327e-174
+        ],
+        [
+          -2.4703282292062327e-174,
+          9.999999999999999e+299
+        ]
+      ],
+      "outcome": "finite_assembly",
+      "actual": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          9.999999999999999e+299
+        ]
+      ],
+      "lost_representable_coupling": true,
+      "offdiagonal_relative_error": 1.0,
+      "max_entry_normalized_error": 0.0
+    },
+    {
+      "case": "audit_witness",
+      "signs_in_original_order": [
+        -1,
+        1
+      ],
+      "reversed": true,
+      "graph": {
+        "schema_version": "grcv4-serialized-graph-v1",
+        "live_node_ids": [
+          "a",
+          "b",
+          "c"
+        ],
+        "oriented_edges": [
+          {
+            "edge_id": "y",
+            "tail_node_id": "b",
+            "head_node_id": "c"
+          },
+          {
+            "edge_id": "x",
+            "tail_node_id": "b",
+            "head_node_id": "a"
+          }
+        ]
+      },
+      "values": [
+        1e+150,
+        -5e-324
+      ],
+      "values_hex": [
+        "0x1.38d352e5096afp+498",
+        "-0x0.0000000000001p-1022"
+      ],
+      "exact_offdiagonal": "-5503284107318959/2227754207823337509102134573095845373483021732054960903603121346630505452738612005129840239901060253798165190221481644194672219102234100585084307285020612396607419274589973120157653414182912",
+      "once_rounded_exact_matrix": [
+        [
+          9.999999999999999e+299,
+          -2.4703282292062327e-174
+        ],
+        [
+          -2.4703282292062327e-174,
+          0.0
+        ]
+      ],
+      "outcome": "finite_assembly",
+      "actual": [
+        [
+          9.999999999999999e+299,
+          -2.4703282292062327e-174
+        ],
+        [
+          -2.4703282292062327e-174,
+          0.0
+        ]
+      ],
+      "lost_representable_coupling": false,
+      "offdiagonal_relative_error": 0.0,
+      "max_entry_normalized_error": 0.0
+    },
+    {
+      "case": "audit_witness",
+      "signs_in_original_order": [
+        1,
+        -1
+      ],
+      "reversed": false,
+      "graph": {
+        "schema_version": "grcv4-serialized-graph-v1",
+        "live_node_ids": [
+          "a",
+          "b",
+          "c"
+        ],
+        "oriented_edges": [
+          {
+            "edge_id": "x",
+            "tail_node_id": "a",
+            "head_node_id": "b"
+          },
+          {
+            "edge_id": "y",
+            "tail_node_id": "c",
+            "head_node_id": "b"
+          }
+        ]
+      },
+      "values": [
+        5e-324,
+        -1e+150
+      ],
+      "values_hex": [
+        "0x0.0000000000001p-1022",
+        "-0x1.38d352e5096afp+498"
+      ],
+      "exact_offdiagonal": "-5503284107318959/2227754207823337509102134573095845373483021732054960903603121346630505452738612005129840239901060253798165190221481644194672219102234100585084307285020612396607419274589973120157653414182912",
+      "once_rounded_exact_matrix": [
+        [
+          0.0,
+          -2.4703282292062327e-174
+        ],
+        [
+          -2.4703282292062327e-174,
+          9.999999999999999e+299
+        ]
+      ],
+      "outcome": "finite_assembly",
+      "actual": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          9.999999999999999e+299
+        ]
+      ],
+      "lost_representable_coupling": true,
+      "offdiagonal_relative_error": 1.0,
+      "max_entry_normalized_error": 0.0
+    },
+    {
+      "case": "audit_witness",
+      "signs_in_original_order": [
+        1,
+        -1
+      ],
+      "reversed": true,
+      "graph": {
+        "schema_version": "grcv4-serialized-graph-v1",
+        "live_node_ids": [
+          "a",
+          "b",
+          "c"
+        ],
+        "oriented_edges": [
+          {
+            "edge_id": "y",
+            "tail_node_id": "c",
+            "head_node_id": "b"
+          },
+          {
+            "edge_id": "x",
+            "tail_node_id": "a",
+            "head_node_id": "b"
+          }
+        ]
+      },
+      "values": [
+        -1e+150,
+        5e-324
+      ],
+      "values_hex": [
+        "-0x1.38d352e5096afp+498",
+        "0x0.0000000000001p-1022"
+      ],
+      "exact_offdiagonal": "-5503284107318959/2227754207823337509102134573095845373483021732054960903603121346630505452738612005129840239901060253798165190221481644194672219102234100585084307285020612396607419274589973120157653414182912",
+      "once_rounded_exact_matrix": [
+        [
+          9.999999999999999e+299,
+          -2.4703282292062327e-174
+        ],
+        [
+          -2.4703282292062327e-174,
+          0.0
+        ]
+      ],
+      "outcome": "finite_assembly",
+      "actual": [
+        [
+          9.999999999999999e+299,
+          -2.4703282292062327e-174
+        ],
+        [
+          -2.4703282292062327e-174,
+          0.0
+        ]
+      ],
+      "lost_representable_coupling": false,
+      "offdiagonal_relative_error": 0.0,
+      "max_entry_normalized_error": 0.0
+    },
+    {
+      "case": "audit_witness",
+      "signs_in_original_order": [
+        1,
+        1
+      ],
+      "reversed": false,
+      "graph": {
+        "schema_version": "grcv4-serialized-graph-v1",
+        "live_node_ids": [
+          "a",
+          "b",
+          "c"
+        ],
+        "oriented_edges": [
+          {
+            "edge_id": "x",
+            "tail_node_id": "a",
+            "head_node_id": "b"
+          },
+          {
+            "edge_id": "y",
+            "tail_node_id": "b",
+            "head_node_id": "c"
+          }
+        ]
+      },
+      "values": [
+        5e-324,
+        1e+150
+      ],
+      "values_hex": [
+        "0x0.0000000000001p-1022",
+        "0x1.38d352e5096afp+498"
+      ],
+      "exact_offdiagonal": "5503284107318959/2227754207823337509102134573095845373483021732054960903603121346630505452738612005129840239901060253798165190221481644194672219102234100585084307285020612396607419274589973120157653414182912",
+      "once_rounded_exact_matrix": [
+        [
+          0.0,
+          2.4703282292062327e-174
+        ],
+        [
+          2.4703282292062327e-174,
+          9.999999999999999e+299
+        ]
+      ],
+      "outcome": "finite_assembly",
+      "actual": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          9.999999999999999e+299
+        ]
+      ],
+      "lost_representable_coupling": true,
+      "offdiagonal_relative_error": 1.0,
+      "max_entry_normalized_error": 0.0
+    },
+    {
+      "case": "audit_witness",
+      "signs_in_original_order": [
+        1,
+        1
+      ],
+      "reversed": true,
+      "graph": {
+        "schema_version": "grcv4-serialized-graph-v1",
+        "live_node_ids": [
+          "a",
+          "b",
+          "c"
+        ],
+        "oriented_edges": [
+          {
+            "edge_id": "y",
+            "tail_node_id": "b",
+            "head_node_id": "c"
+          },
+          {
+            "edge_id": "x",
+            "tail_node_id": "a",
+            "head_node_id": "b"
+          }
+        ]
+      },
+      "values": [
+        1e+150,
+        5e-324
+      ],
+      "values_hex": [
+        "0x1.38d352e5096afp+498",
+        "0x0.0000000000001p-1022"
+      ],
+      "exact_offdiagonal": "5503284107318959/2227754207823337509102134573095845373483021732054960903603121346630505452738612005129840239901060253798165190221481644194672219102234100585084307285020612396607419274589973120157653414182912",
+      "once_rounded_exact_matrix": [
+        [
+          9.999999999999999e+299,
+          2.4703282292062327e-174
+        ],
+        [
+          2.4703282292062327e-174,
+          0.0
+        ]
+      ],
+      "outcome": "finite_assembly",
+      "actual": [
+        [
+          9.999999999999999e+299,
+          2.4703282292062327e-174
+        ],
+        [
+          2.4703282292062327e-174,
+          0.0
+        ]
+      ],
+      "lost_representable_coupling": false,
+      "offdiagonal_relative_error": 0.0,
+      "max_entry_normalized_error": 0.0
+    },
+    {
+      "case": "true_final_underflow",
+      "signs_in_original_order": [
+        -1,
+        -1
+      ],
+      "reversed": false,
+      "graph": {
+        "schema_version": "grcv4-serialized-graph-v1",
+        "live_node_ids": [
+          "a",
+          "b",
+          "c"
+        ],
+        "oriented_edges": [
+          {
+            "edge_id": "x",
+            "tail_node_id": "b",
+            "head_node_id": "a"
+          },
+          {
+            "edge_id": "y",
+            "tail_node_id": "c",
+            "head_node_id": "b"
+          }
+        ]
+      },
+      "values": [
+        -5e-324,
+        -1.0
+      ],
+      "values_hex": [
+        "-0x0.0000000000001p-1022",
+        "-0x1.0000000000000p+0"
+      ],
+      "exact_offdiagonal": "1/404804506614621236704990693437834614099113299528284236713802716054860679135990693783920767402874248990374155728633623822779617474771586953734026799881477019843034848553132722728933815484186432682479535356945490137124014966849385397236206711298319112681620113024717539104666829230461005064372655017292012526615415482186989568",
+      "once_rounded_exact_matrix": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0
+        ]
+      ],
+      "outcome": "finite_assembly",
+      "actual": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0
+        ]
+      ],
+      "lost_representable_coupling": false,
+      "offdiagonal_relative_error": null,
+      "max_entry_normalized_error": 0.0
+    },
+    {
+      "case": "true_final_underflow",
+      "signs_in_original_order": [
+        -1,
+        -1
+      ],
+      "reversed": true,
+      "graph": {
+        "schema_version": "grcv4-serialized-graph-v1",
+        "live_node_ids": [
+          "a",
+          "b",
+          "c"
+        ],
+        "oriented_edges": [
+          {
+            "edge_id": "y",
+            "tail_node_id": "c",
+            "head_node_id": "b"
+          },
+          {
+            "edge_id": "x",
+            "tail_node_id": "b",
+            "head_node_id": "a"
+          }
+        ]
+      },
+      "values": [
+        -1.0,
+        -5e-324
+      ],
+      "values_hex": [
+        "-0x1.0000000000000p+0",
+        "-0x0.0000000000001p-1022"
+      ],
+      "exact_offdiagonal": "1/404804506614621236704990693437834614099113299528284236713802716054860679135990693783920767402874248990374155728633623822779617474771586953734026799881477019843034848553132722728933815484186432682479535356945490137124014966849385397236206711298319112681620113024717539104666829230461005064372655017292012526615415482186989568",
+      "once_rounded_exact_matrix": [
+        [
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "outcome": "finite_assembly",
+      "actual": [
+        [
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "lost_representable_coupling": false,
+      "offdiagonal_relative_error": null,
+      "max_entry_normalized_error": 0.0
+    },
+    {
+      "case": "true_final_underflow",
+      "signs_in_original_order": [
+        -1,
+        1
+      ],
+      "reversed": false,
+      "graph": {
+        "schema_version": "grcv4-serialized-graph-v1",
+        "live_node_ids": [
+          "a",
+          "b",
+          "c"
+        ],
+        "oriented_edges": [
+          {
+            "edge_id": "x",
+            "tail_node_id": "b",
+            "head_node_id": "a"
+          },
+          {
+            "edge_id": "y",
+            "tail_node_id": "b",
+            "head_node_id": "c"
+          }
+        ]
+      },
+      "values": [
+        -5e-324,
+        1.0
+      ],
+      "values_hex": [
+        "-0x0.0000000000001p-1022",
+        "0x1.0000000000000p+0"
+      ],
+      "exact_offdiagonal": "-1/404804506614621236704990693437834614099113299528284236713802716054860679135990693783920767402874248990374155728633623822779617474771586953734026799881477019843034848553132722728933815484186432682479535356945490137124014966849385397236206711298319112681620113024717539104666829230461005064372655017292012526615415482186989568",
+      "once_rounded_exact_matrix": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0
+        ]
+      ],
+      "outcome": "finite_assembly",
+      "actual": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0
+        ]
+      ],
+      "lost_representable_coupling": false,
+      "offdiagonal_relative_error": null,
+      "max_entry_normalized_error": 0.0
+    },
+    {
+      "case": "true_final_underflow",
+      "signs_in_original_order": [
+        -1,
+        1
+      ],
+      "reversed": true,
+      "graph": {
+        "schema_version": "grcv4-serialized-graph-v1",
+        "live_node_ids": [
+          "a",
+          "b",
+          "c"
+        ],
+        "oriented_edges": [
+          {
+            "edge_id": "y",
+            "tail_node_id": "b",
+            "head_node_id": "c"
+          },
+          {
+            "edge_id": "x",
+            "tail_node_id": "b",
+            "head_node_id": "a"
+          }
+        ]
+      },
+      "values": [
+        1.0,
+        -5e-324
+      ],
+      "values_hex": [
+        "0x1.0000000000000p+0",
+        "-0x0.0000000000001p-1022"
+      ],
+      "exact_offdiagonal": "-1/404804506614621236704990693437834614099113299528284236713802716054860679135990693783920767402874248990374155728633623822779617474771586953734026799881477019843034848553132722728933815484186432682479535356945490137124014966849385397236206711298319112681620113024717539104666829230461005064372655017292012526615415482186989568",
+      "once_rounded_exact_matrix": [
+        [
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "outcome": "finite_assembly",
+      "actual": [
+        [
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "lost_representable_coupling": false,
+      "offdiagonal_relative_error": null,
+      "max_entry_normalized_error": 0.0
+    },
+    {
+      "case": "true_final_underflow",
+      "signs_in_original_order": [
+        1,
+        -1
+      ],
+      "reversed": false,
+      "graph": {
+        "schema_version": "grcv4-serialized-graph-v1",
+        "live_node_ids": [
+          "a",
+          "b",
+          "c"
+        ],
+        "oriented_edges": [
+          {
+            "edge_id": "x",
+            "tail_node_id": "a",
+            "head_node_id": "b"
+          },
+          {
+            "edge_id": "y",
+            "tail_node_id": "c",
+            "head_node_id": "b"
+          }
+        ]
+      },
+      "values": [
+        5e-324,
+        -1.0
+      ],
+      "values_hex": [
+        "0x0.0000000000001p-1022",
+        "-0x1.0000000000000p+0"
+      ],
+      "exact_offdiagonal": "-1/404804506614621236704990693437834614099113299528284236713802716054860679135990693783920767402874248990374155728633623822779617474771586953734026799881477019843034848553132722728933815484186432682479535356945490137124014966849385397236206711298319112681620113024717539104666829230461005064372655017292012526615415482186989568",
+      "once_rounded_exact_matrix": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0
+        ]
+      ],
+      "outcome": "finite_assembly",
+      "actual": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0
+        ]
+      ],
+      "lost_representable_coupling": false,
+      "offdiagonal_relative_error": null,
+      "max_entry_normalized_error": 0.0
+    },
+    {
+      "case": "true_final_underflow",
+      "signs_in_original_order": [
+        1,
+        -1
+      ],
+      "reversed": true,
+      "graph": {
+        "schema_version": "grcv4-serialized-graph-v1",
+        "live_node_ids": [
+          "a",
+          "b",
+          "c"
+        ],
+        "oriented_edges": [
+          {
+            "edge_id": "y",
+            "tail_node_id": "c",
+            "head_node_id": "b"
+          },
+          {
+            "edge_id": "x",
+            "tail_node_id": "a",
+            "head_node_id": "b"
+          }
+        ]
+      },
+      "values": [
+        -1.0,
+        5e-324
+      ],
+      "values_hex": [
+        "-0x1.0000000000000p+0",
+        "0x0.0000000000001p-1022"
+      ],
+      "exact_offdiagonal": "-1/404804506614621236704990693437834614099113299528284236713802716054860679135990693783920767402874248990374155728633623822779617474771586953734026799881477019843034848553132722728933815484186432682479535356945490137124014966849385397236206711298319112681620113024717539104666829230461005064372655017292012526615415482186989568",
+      "once_rounded_exact_matrix": [
+        [
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "outcome": "finite_assembly",
+      "actual": [
+        [
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "lost_representable_coupling": false,
+      "offdiagonal_relative_error": null,
+      "max_entry_normalized_error": 0.0
+    },
+    {
+      "case": "true_final_underflow",
+      "signs_in_original_order": [
+        1,
+        1
+      ],
+      "reversed": false,
+      "graph": {
+        "schema_version": "grcv4-serialized-graph-v1",
+        "live_node_ids": [
+          "a",
+          "b",
+          "c"
+        ],
+        "oriented_edges": [
+          {
+            "edge_id": "x",
+            "tail_node_id": "a",
+            "head_node_id": "b"
+          },
+          {
+            "edge_id": "y",
+            "tail_node_id": "b",
+            "head_node_id": "c"
+          }
+        ]
+      },
+      "values": [
+        5e-324,
+        1.0
+      ],
+      "values_hex": [
+        "0x0.0000000000001p-1022",
+        "0x1.0000000000000p+0"
+      ],
+      "exact_offdiagonal": "1/404804506614621236704990693437834614099113299528284236713802716054860679135990693783920767402874248990374155728633623822779617474771586953734026799881477019843034848553132722728933815484186432682479535356945490137124014966849385397236206711298319112681620113024717539104666829230461005064372655017292012526615415482186989568",
+      "once_rounded_exact_matrix": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0
+        ]
+      ],
+      "outcome": "finite_assembly",
+      "actual": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0
+        ]
+      ],
+      "lost_representable_coupling": false,
+      "offdiagonal_relative_error": null,
+      "max_entry_normalized_error": 0.0
+    },
+    {
+      "case": "true_final_underflow",
+      "signs_in_original_order": [
+        1,
+        1
+      ],
+      "reversed": true,
+      "graph": {
+        "schema_version": "grcv4-serialized-graph-v1",
+        "live_node_ids": [
+          "a",
+          "b",
+          "c"
+        ],
+        "oriented_edges": [
+          {
+            "edge_id": "y",
+            "tail_node_id": "b",
+            "head_node_id": "c"
+          },
+          {
+            "edge_id": "x",
+            "tail_node_id": "a",
+            "head_node_id": "b"
+          }
+        ]
+      },
+      "values": [
+        1.0,
+        5e-324
+      ],
+      "values_hex": [
+        "0x1.0000000000000p+0",
+        "0x0.0000000000001p-1022"
+      ],
+      "exact_offdiagonal": "1/404804506614621236704990693437834614099113299528284236713802716054860679135990693783920767402874248990374155728633623822779617474771586953734026799881477019843034848553132722728933815484186432682479535356945490137124014966849385397236206711298319112681620113024717539104666829230461005064372655017292012526615415482186989568",
+      "once_rounded_exact_matrix": [
+        [
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "outcome": "finite_assembly",
+      "actual": [
+        [
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "lost_representable_coupling": false,
+      "offdiagonal_relative_error": null,
+      "max_entry_normalized_error": 0.0
+    },
+    {
+      "case": "normal_boundary",
+      "signs_in_original_order": [
+        -1,
+        -1
+      ],
+      "reversed": false,
+      "graph": {
+        "schema_version": "grcv4-serialized-graph-v1",
+        "live_node_ids": [
+          "a",
+          "b",
+          "c"
+        ],
+        "oriented_edges": [
+          {
+            "edge_id": "x",
+            "tail_node_id": "b",
+            "head_node_id": "a"
+          },
+          {
+            "edge_id": "y",
+            "tail_node_id": "c",
+            "head_node_id": "b"
+          }
+        ]
+      },
+      "values": [
+        -2.2250738585072014e-308,
+        -1e+150
+      ],
+      "values_hex": [
+        "-0x1.0000000000000p-1022",
+        "-0x1.38d352e5096afp+498"
+      ],
+      "exact_offdiagonal": "5503284107318959/494660802946209068121005042039294380070262698202423679828126112185794450213063734340632802122486089979195342852032278678702730068613502419935092310203786335833213544297398272",
+      "once_rounded_exact_matrix": [
+        [
+          0.0,
+          1.1125369292536007e-158
+        ],
+        [
+          1.1125369292536007e-158,
+          9.999999999999999e+299
+        ]
+      ],
+      "outcome": "finite_assembly",
+      "actual": [
+        [
+          0.0,
+          1.1125369292536007e-158
+        ],
+        [
+          1.1125369292536007e-158,
+          9.999999999999999e+299
+        ]
+      ],
+      "lost_representable_coupling": false,
+      "offdiagonal_relative_error": 0.0,
+      "max_entry_normalized_error": 0.0
+    },
+    {
+      "case": "normal_boundary",
+      "signs_in_original_order": [
+        -1,
+        -1
+      ],
+      "reversed": true,
+      "graph": {
+        "schema_version": "grcv4-serialized-graph-v1",
+        "live_node_ids": [
+          "a",
+          "b",
+          "c"
+        ],
+        "oriented_edges": [
+          {
+            "edge_id": "y",
+            "tail_node_id": "c",
+            "head_node_id": "b"
+          },
+          {
+            "edge_id": "x",
+            "tail_node_id": "b",
+            "head_node_id": "a"
+          }
+        ]
+      },
+      "values": [
+        -1e+150,
+        -2.2250738585072014e-308
+      ],
+      "values_hex": [
+        "-0x1.38d352e5096afp+498",
+        "-0x1.0000000000000p-1022"
+      ],
+      "exact_offdiagonal": "5503284107318959/494660802946209068121005042039294380070262698202423679828126112185794450213063734340632802122486089979195342852032278678702730068613502419935092310203786335833213544297398272",
+      "once_rounded_exact_matrix": [
+        [
+          9.999999999999999e+299,
+          1.1125369292536007e-158
+        ],
+        [
+          1.1125369292536007e-158,
+          0.0
+        ]
+      ],
+      "outcome": "finite_assembly",
+      "actual": [
+        [
+          9.999999999999999e+299,
+          1.1125369292536007e-158
+        ],
+        [
+          1.1125369292536007e-158,
+          0.0
+        ]
+      ],
+      "lost_representable_coupling": false,
+      "offdiagonal_relative_error": 0.0,
+      "max_entry_normalized_error": 0.0
+    },
+    {
+      "case": "normal_boundary",
+      "signs_in_original_order": [
+        -1,
+        1
+      ],
+      "reversed": false,
+      "graph": {
+        "schema_version": "grcv4-serialized-graph-v1",
+        "live_node_ids": [
+          "a",
+          "b",
+          "c"
+        ],
+        "oriented_edges": [
+          {
+            "edge_id": "x",
+            "tail_node_id": "b",
+            "head_node_id": "a"
+          },
+          {
+            "edge_id": "y",
+            "tail_node_id": "b",
+            "head_node_id": "c"
+          }
+        ]
+      },
+      "values": [
+        -2.2250738585072014e-308,
+        1e+150
+      ],
+      "values_hex": [
+        "-0x1.0000000000000p-1022",
+        "0x1.38d352e5096afp+498"
+      ],
+      "exact_offdiagonal": "-5503284107318959/494660802946209068121005042039294380070262698202423679828126112185794450213063734340632802122486089979195342852032278678702730068613502419935092310203786335833213544297398272",
+      "once_rounded_exact_matrix": [
+        [
+          0.0,
+          -1.1125369292536007e-158
+        ],
+        [
+          -1.1125369292536007e-158,
+          9.999999999999999e+299
+        ]
+      ],
+      "outcome": "finite_assembly",
+      "actual": [
+        [
+          0.0,
+          -1.1125369292536007e-158
+        ],
+        [
+          -1.1125369292536007e-158,
+          9.999999999999999e+299
+        ]
+      ],
+      "lost_representable_coupling": false,
+      "offdiagonal_relative_error": 0.0,
+      "max_entry_normalized_error": 0.0
+    },
+    {
+      "case": "normal_boundary",
+      "signs_in_original_order": [
+        -1,
+        1
+      ],
+      "reversed": true,
+      "graph": {
+        "schema_version": "grcv4-serialized-graph-v1",
+        "live_node_ids": [
+          "a",
+          "b",
+          "c"
+        ],
+        "oriented_edges": [
+          {
+            "edge_id": "y",
+            "tail_node_id": "b",
+            "head_node_id": "c"
+          },
+          {
+            "edge_id": "x",
+            "tail_node_id": "b",
+            "head_node_id": "a"
+          }
+        ]
+      },
+      "values": [
+        1e+150,
+        -2.2250738585072014e-308
+      ],
+      "values_hex": [
+        "0x1.38d352e5096afp+498",
+        "-0x1.0000000000000p-1022"
+      ],
+      "exact_offdiagonal": "-5503284107318959/494660802946209068121005042039294380070262698202423679828126112185794450213063734340632802122486089979195342852032278678702730068613502419935092310203786335833213544297398272",
+      "once_rounded_exact_matrix": [
+        [
+          9.999999999999999e+299,
+          -1.1125369292536007e-158
+        ],
+        [
+          -1.1125369292536007e-158,
+          0.0
+        ]
+      ],
+      "outcome": "finite_assembly",
+      "actual": [
+        [
+          9.999999999999999e+299,
+          -1.1125369292536007e-158
+        ],
+        [
+          -1.1125369292536007e-158,
+          0.0
+        ]
+      ],
+      "lost_representable_coupling": false,
+      "offdiagonal_relative_error": 0.0,
+      "max_entry_normalized_error": 0.0
+    },
+    {
+      "case": "normal_boundary",
+      "signs_in_original_order": [
+        1,
+        -1
+      ],
+      "reversed": false,
+      "graph": {
+        "schema_version": "grcv4-serialized-graph-v1",
+        "live_node_ids": [
+          "a",
+          "b",
+          "c"
+        ],
+        "oriented_edges": [
+          {
+            "edge_id": "x",
+            "tail_node_id": "a",
+            "head_node_id": "b"
+          },
+          {
+            "edge_id": "y",
+            "tail_node_id": "c",
+            "head_node_id": "b"
+          }
+        ]
+      },
+      "values": [
+        2.2250738585072014e-308,
+        -1e+150
+      ],
+      "values_hex": [
+        "0x1.0000000000000p-1022",
+        "-0x1.38d352e5096afp+498"
+      ],
+      "exact_offdiagonal": "-5503284107318959/494660802946209068121005042039294380070262698202423679828126112185794450213063734340632802122486089979195342852032278678702730068613502419935092310203786335833213544297398272",
+      "once_rounded_exact_matrix": [
+        [
+          0.0,
+          -1.1125369292536007e-158
+        ],
+        [
+          -1.1125369292536007e-158,
+          9.999999999999999e+299
+        ]
+      ],
+      "outcome": "finite_assembly",
+      "actual": [
+        [
+          0.0,
+          -1.1125369292536007e-158
+        ],
+        [
+          -1.1125369292536007e-158,
+          9.999999999999999e+299
+        ]
+      ],
+      "lost_representable_coupling": false,
+      "offdiagonal_relative_error": 0.0,
+      "max_entry_normalized_error": 0.0
+    },
+    {
+      "case": "normal_boundary",
+      "signs_in_original_order": [
+        1,
+        -1
+      ],
+      "reversed": true,
+      "graph": {
+        "schema_version": "grcv4-serialized-graph-v1",
+        "live_node_ids": [
+          "a",
+          "b",
+          "c"
+        ],
+        "oriented_edges": [
+          {
+            "edge_id": "y",
+            "tail_node_id": "c",
+            "head_node_id": "b"
+          },
+          {
+            "edge_id": "x",
+            "tail_node_id": "a",
+            "head_node_id": "b"
+          }
+        ]
+      },
+      "values": [
+        -1e+150,
+        2.2250738585072014e-308
+      ],
+      "values_hex": [
+        "-0x1.38d352e5096afp+498",
+        "0x1.0000000000000p-1022"
+      ],
+      "exact_offdiagonal": "-5503284107318959/494660802946209068121005042039294380070262698202423679828126112185794450213063734340632802122486089979195342852032278678702730068613502419935092310203786335833213544297398272",
+      "once_rounded_exact_matrix": [
+        [
+          9.999999999999999e+299,
+          -1.1125369292536007e-158
+        ],
+        [
+          -1.1125369292536007e-158,
+          0.0
+        ]
+      ],
+      "outcome": "finite_assembly",
+      "actual": [
+        [
+          9.999999999999999e+299,
+          -1.1125369292536007e-158
+        ],
+        [
+          -1.1125369292536007e-158,
+          0.0
+        ]
+      ],
+      "lost_representable_coupling": false,
+      "offdiagonal_relative_error": 0.0,
+      "max_entry_normalized_error": 0.0
+    },
+    {
+      "case": "normal_boundary",
+      "signs_in_original_order": [
+        1,
+        1
+      ],
+      "reversed": false,
+      "graph": {
+        "schema_version": "grcv4-serialized-graph-v1",
+        "live_node_ids": [
+          "a",
+          "b",
+          "c"
+        ],
+        "oriented_edges": [
+          {
+            "edge_id": "x",
+            "tail_node_id": "a",
+            "head_node_id": "b"
+          },
+          {
+            "edge_id": "y",
+            "tail_node_id": "b",
+            "head_node_id": "c"
+          }
+        ]
+      },
+      "values": [
+        2.2250738585072014e-308,
+        1e+150
+      ],
+      "values_hex": [
+        "0x1.0000000000000p-1022",
+        "0x1.38d352e5096afp+498"
+      ],
+      "exact_offdiagonal": "5503284107318959/494660802946209068121005042039294380070262698202423679828126112185794450213063734340632802122486089979195342852032278678702730068613502419935092310203786335833213544297398272",
+      "once_rounded_exact_matrix": [
+        [
+          0.0,
+          1.1125369292536007e-158
+        ],
+        [
+          1.1125369292536007e-158,
+          9.999999999999999e+299
+        ]
+      ],
+      "outcome": "finite_assembly",
+      "actual": [
+        [
+          0.0,
+          1.1125369292536007e-158
+        ],
+        [
+          1.1125369292536007e-158,
+          9.999999999999999e+299
+        ]
+      ],
+      "lost_representable_coupling": false,
+      "offdiagonal_relative_error": 0.0,
+      "max_entry_normalized_error": 0.0
+    },
+    {
+      "case": "normal_boundary",
+      "signs_in_original_order": [
+        1,
+        1
+      ],
+      "reversed": true,
+      "graph": {
+        "schema_version": "grcv4-serialized-graph-v1",
+        "live_node_ids": [
+          "a",
+          "b",
+          "c"
+        ],
+        "oriented_edges": [
+          {
+            "edge_id": "y",
+            "tail_node_id": "b",
+            "head_node_id": "c"
+          },
+          {
+            "edge_id": "x",
+            "tail_node_id": "a",
+            "head_node_id": "b"
+          }
+        ]
+      },
+      "values": [
+        1e+150,
+        2.2250738585072014e-308
+      ],
+      "values_hex": [
+        "0x1.38d352e5096afp+498",
+        "0x1.0000000000000p-1022"
+      ],
+      "exact_offdiagonal": "5503284107318959/494660802946209068121005042039294380070262698202423679828126112185794450213063734340632802122486089979195342852032278678702730068613502419935092310203786335833213544297398272",
+      "once_rounded_exact_matrix": [
+        [
+          9.999999999999999e+299,
+          1.1125369292536007e-158
+        ],
+        [
+          1.1125369292536007e-158,
+          0.0
+        ]
+      ],
+      "outcome": "finite_assembly",
+      "actual": [
+        [
+          9.999999999999999e+299,
+          1.1125369292536007e-158
+        ],
+        [
+          1.1125369292536007e-158,
+          0.0
+        ]
+      ],
+      "lost_representable_coupling": false,
+      "offdiagonal_relative_error": 0.0,
+      "max_entry_normalized_error": 0.0
+    },
+    {
+      "case": "mixed_normal",
+      "signs_in_original_order": [
+        -1,
+        -1
+      ],
+      "reversed": false,
+      "graph": {
+        "schema_version": "grcv4-serialized-graph-v1",
+        "live_node_ids": [
+          "a",
+          "b",
+          "c"
+        ],
+        "oriented_edges": [
+          {
+            "edge_id": "x",
+            "tail_node_id": "b",
+            "head_node_id": "a"
+          },
+          {
+            "edge_id": "y",
+            "tail_node_id": "c",
+            "head_node_id": "b"
+          }
+        ]
+      },
+      "values": [
+        -1e-200,
+        -1e+150
+      ],
+      "values_hex": [
+        "-0x1.87e92154ef7acp-665",
+        "-0x1.38d352e5096afp+498"
+      ],
+      "exact_offdiagonal": "9485687950320942377520055354789/1897137590064188545819787018382342682267975428761855001222473056385648716020711424",
+      "once_rounded_exact_matrix": [
+        [
+          0.0,
+          5e-51
+        ],
+        [
+          5e-51,
+          9.999999999999999e+299
+        ]
+      ],
+      "outcome": "finite_assembly",
+      "actual": [
+        [
+          0.0,
+          5e-51
+        ],
+        [
+          5e-51,
+          9.999999999999999e+299
+        ]
+      ],
+      "lost_representable_coupling": false,
+      "offdiagonal_relative_error": 0.0,
+      "max_entry_normalized_error": 0.0
+    },
+    {
+      "case": "mixed_normal",
+      "signs_in_original_order": [
+        -1,
+        -1
+      ],
+      "reversed": true,
+      "graph": {
+        "schema_version": "grcv4-serialized-graph-v1",
+        "live_node_ids": [
+          "a",
+          "b",
+          "c"
+        ],
+        "oriented_edges": [
+          {
+            "edge_id": "y",
+            "tail_node_id": "c",
+            "head_node_id": "b"
+          },
+          {
+            "edge_id": "x",
+            "tail_node_id": "b",
+            "head_node_id": "a"
+          }
+        ]
+      },
+      "values": [
+        -1e+150,
+        -1e-200
+      ],
+      "values_hex": [
+        "-0x1.38d352e5096afp+498",
+        "-0x1.87e92154ef7acp-665"
+      ],
+      "exact_offdiagonal": "9485687950320942377520055354789/1897137590064188545819787018382342682267975428761855001222473056385648716020711424",
+      "once_rounded_exact_matrix": [
+        [
+          9.999999999999999e+299,
+          5e-51
+        ],
+        [
+          5e-51,
+          0.0
+        ]
+      ],
+      "outcome": "finite_assembly",
+      "actual": [
+        [
+          9.999999999999999e+299,
+          5e-51
+        ],
+        [
+          5e-51,
+          0.0
+        ]
+      ],
+      "lost_representable_coupling": false,
+      "offdiagonal_relative_error": 0.0,
+      "max_entry_normalized_error": 0.0
+    },
+    {
+      "case": "mixed_normal",
+      "signs_in_original_order": [
+        -1,
+        1
+      ],
+      "reversed": false,
+      "graph": {
+        "schema_version": "grcv4-serialized-graph-v1",
+        "live_node_ids": [
+          "a",
+          "b",
+          "c"
+        ],
+        "oriented_edges": [
+          {
+            "edge_id": "x",
+            "tail_node_id": "b",
+            "head_node_id": "a"
+          },
+          {
+            "edge_id": "y",
+            "tail_node_id": "b",
+            "head_node_id": "c"
+          }
+        ]
+      },
+      "values": [
+        -1e-200,
+        1e+150
+      ],
+      "values_hex": [
+        "-0x1.87e92154ef7acp-665",
+        "0x1.38d352e5096afp+498"
+      ],
+      "exact_offdiagonal": "-9485687950320942377520055354789/1897137590064188545819787018382342682267975428761855001222473056385648716020711424",
+      "once_rounded_exact_matrix": [
+        [
+          0.0,
+          -5e-51
+        ],
+        [
+          -5e-51,
+          9.999999999999999e+299
+        ]
+      ],
+      "outcome": "finite_assembly",
+      "actual": [
+        [
+          0.0,
+          -5e-51
+        ],
+        [
+          -5e-51,
+          9.999999999999999e+299
+        ]
+      ],
+      "lost_representable_coupling": false,
+      "offdiagonal_relative_error": 0.0,
+      "max_entry_normalized_error": 0.0
+    },
+    {
+      "case": "mixed_normal",
+      "signs_in_original_order": [
+        -1,
+        1
+      ],
+      "reversed": true,
+      "graph": {
+        "schema_version": "grcv4-serialized-graph-v1",
+        "live_node_ids": [
+          "a",
+          "b",
+          "c"
+        ],
+        "oriented_edges": [
+          {
+            "edge_id": "y",
+            "tail_node_id": "b",
+            "head_node_id": "c"
+          },
+          {
+            "edge_id": "x",
+            "tail_node_id": "b",
+            "head_node_id": "a"
+          }
+        ]
+      },
+      "values": [
+        1e+150,
+        -1e-200
+      ],
+      "values_hex": [
+        "0x1.38d352e5096afp+498",
+        "-0x1.87e92154ef7acp-665"
+      ],
+      "exact_offdiagonal": "-9485687950320942377520055354789/1897137590064188545819787018382342682267975428761855001222473056385648716020711424",
+      "once_rounded_exact_matrix": [
+        [
+          9.999999999999999e+299,
+          -5e-51
+        ],
+        [
+          -5e-51,
+          0.0
+        ]
+      ],
+      "outcome": "finite_assembly",
+      "actual": [
+        [
+          9.999999999999999e+299,
+          -5e-51
+        ],
+        [
+          -5e-51,
+          0.0
+        ]
+      ],
+      "lost_representable_coupling": false,
+      "offdiagonal_relative_error": 0.0,
+      "max_entry_normalized_error": 0.0
+    },
+    {
+      "case": "mixed_normal",
+      "signs_in_original_order": [
+        1,
+        -1
+      ],
+      "reversed": false,
+      "graph": {
+        "schema_version": "grcv4-serialized-graph-v1",
+        "live_node_ids": [
+          "a",
+          "b",
+          "c"
+        ],
+        "oriented_edges": [
+          {
+            "edge_id": "x",
+            "tail_node_id": "a",
+            "head_node_id": "b"
+          },
+          {
+            "edge_id": "y",
+            "tail_node_id": "c",
+            "head_node_id": "b"
+          }
+        ]
+      },
+      "values": [
+        1e-200,
+        -1e+150
+      ],
+      "values_hex": [
+        "0x1.87e92154ef7acp-665",
+        "-0x1.38d352e5096afp+498"
+      ],
+      "exact_offdiagonal": "-9485687950320942377520055354789/1897137590064188545819787018382342682267975428761855001222473056385648716020711424",
+      "once_rounded_exact_matrix": [
+        [
+          0.0,
+          -5e-51
+        ],
+        [
+          -5e-51,
+          9.999999999999999e+299
+        ]
+      ],
+      "outcome": "finite_assembly",
+      "actual": [
+        [
+          0.0,
+          -5e-51
+        ],
+        [
+          -5e-51,
+          9.999999999999999e+299
+        ]
+      ],
+      "lost_representable_coupling": false,
+      "offdiagonal_relative_error": 0.0,
+      "max_entry_normalized_error": 0.0
+    },
+    {
+      "case": "mixed_normal",
+      "signs_in_original_order": [
+        1,
+        -1
+      ],
+      "reversed": true,
+      "graph": {
+        "schema_version": "grcv4-serialized-graph-v1",
+        "live_node_ids": [
+          "a",
+          "b",
+          "c"
+        ],
+        "oriented_edges": [
+          {
+            "edge_id": "y",
+            "tail_node_id": "c",
+            "head_node_id": "b"
+          },
+          {
+            "edge_id": "x",
+            "tail_node_id": "a",
+            "head_node_id": "b"
+          }
+        ]
+      },
+      "values": [
+        -1e+150,
+        1e-200
+      ],
+      "values_hex": [
+        "-0x1.38d352e5096afp+498",
+        "0x1.87e92154ef7acp-665"
+      ],
+      "exact_offdiagonal": "-9485687950320942377520055354789/1897137590064188545819787018382342682267975428761855001222473056385648716020711424",
+      "once_rounded_exact_matrix": [
+        [
+          9.999999999999999e+299,
+          -5e-51
+        ],
+        [
+          -5e-51,
+          0.0
+        ]
+      ],
+      "outcome": "finite_assembly",
+      "actual": [
+        [
+          9.999999999999999e+299,
+          -5e-51
+        ],
+        [
+          -5e-51,
+          0.0
+        ]
+      ],
+      "lost_representable_coupling": false,
+      "offdiagonal_relative_error": 0.0,
+      "max_entry_normalized_error": 0.0
+    },
+    {
+      "case": "mixed_normal",
+      "signs_in_original_order": [
+        1,
+        1
+      ],
+      "reversed": false,
+      "graph": {
+        "schema_version": "grcv4-serialized-graph-v1",
+        "live_node_ids": [
+          "a",
+          "b",
+          "c"
+        ],
+        "oriented_edges": [
+          {
+            "edge_id": "x",
+            "tail_node_id": "a",
+            "head_node_id": "b"
+          },
+          {
+            "edge_id": "y",
+            "tail_node_id": "b",
+            "head_node_id": "c"
+          }
+        ]
+      },
+      "values": [
+        1e-200,
+        1e+150
+      ],
+      "values_hex": [
+        "0x1.87e92154ef7acp-665",
+        "0x1.38d352e5096afp+498"
+      ],
+      "exact_offdiagonal": "9485687950320942377520055354789/1897137590064188545819787018382342682267975428761855001222473056385648716020711424",
+      "once_rounded_exact_matrix": [
+        [
+          0.0,
+          5e-51
+        ],
+        [
+          5e-51,
+          9.999999999999999e+299
+        ]
+      ],
+      "outcome": "finite_assembly",
+      "actual": [
+        [
+          0.0,
+          5e-51
+        ],
+        [
+          5e-51,
+          9.999999999999999e+299
+        ]
+      ],
+      "lost_representable_coupling": false,
+      "offdiagonal_relative_error": 0.0,
+      "max_entry_normalized_error": 0.0
+    },
+    {
+      "case": "mixed_normal",
+      "signs_in_original_order": [
+        1,
+        1
+      ],
+      "reversed": true,
+      "graph": {
+        "schema_version": "grcv4-serialized-graph-v1",
+        "live_node_ids": [
+          "a",
+          "b",
+          "c"
+        ],
+        "oriented_edges": [
+          {
+            "edge_id": "y",
+            "tail_node_id": "b",
+            "head_node_id": "c"
+          },
+          {
+            "edge_id": "x",
+            "tail_node_id": "a",
+            "head_node_id": "b"
+          }
+        ]
+      },
+      "values": [
+        1e+150,
+        1e-200
+      ],
+      "values_hex": [
+        "0x1.38d352e5096afp+498",
+        "0x1.87e92154ef7acp-665"
+      ],
+      "exact_offdiagonal": "9485687950320942377520055354789/1897137590064188545819787018382342682267975428761855001222473056385648716020711424",
+      "once_rounded_exact_matrix": [
+        [
+          9.999999999999999e+299,
+          5e-51
+        ],
+        [
+          5e-51,
+          0.0
+        ]
+      ],
+      "outcome": "finite_assembly",
+      "actual": [
+        [
+          9.999999999999999e+299,
+          5e-51
+        ],
+        [
+          5e-51,
+          0.0
+        ]
+      ],
+      "lost_representable_coupling": false,
+      "offdiagonal_relative_error": 0.0,
+      "max_entry_normalized_error": 0.0
+    },
+    {
+      "case": "all_final_underflow",
+      "signs_in_original_order": [
+        -1,
+        -1
+      ],
+      "reversed": false,
+      "graph": {
+        "schema_version": "grcv4-serialized-graph-v1",
+        "live_node_ids": [
+          "a",
+          "b",
+          "c"
+        ],
+        "oriented_edges": [
+          {
+            "edge_id": "x",
+            "tail_node_id": "b",
+            "head_node_id": "a"
+          },
+          {
+            "edge_id": "y",
+            "tail_node_id": "c",
+            "head_node_id": "b"
+          }
+        ]
+      },
+      "values": [
+        -5e-324,
+        -5e-324
+      ],
+      "values_hex": [
+        "-0x0.0000000000001p-1022",
+        "-0x0.0000000000001p-1022"
+      ],
+      "exact_offdiagonal": "1/81933344287753464290352457696086182287857132851736628739601276754021558106248987428521920298140584458954000375924069414628262688558027981401114168432135406200220795253831860100035338833562316499488472344730006203527200547188804127729444650403064289208231043636921325247870287294938330169029758951631760934327964364820227611019286676329671678372081690061058588235394436588878510650436529630360080108591841800561055670606127457750571554496925409023391889648461108695697253013885223876670583998515511324227383576492107760797446643730639618957836163262863779115105499015668392716584487321674492437012392892589787514324161591945051205137174325270413312",
+      "once_rounded_exact_matrix": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "outcome": "finite_assembly",
+      "actual": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "lost_representable_coupling": false,
+      "offdiagonal_relative_error": null,
+      "max_entry_normalized_error": 0.0
+    },
+    {
+      "case": "all_final_underflow",
+      "signs_in_original_order": [
+        -1,
+        -1
+      ],
+      "reversed": true,
+      "graph": {
+        "schema_version": "grcv4-serialized-graph-v1",
+        "live_node_ids": [
+          "a",
+          "b",
+          "c"
+        ],
+        "oriented_edges": [
+          {
+            "edge_id": "y",
+            "tail_node_id": "c",
+            "head_node_id": "b"
+          },
+          {
+            "edge_id": "x",
+            "tail_node_id": "b",
+            "head_node_id": "a"
+          }
+        ]
+      },
+      "values": [
+        -5e-324,
+        -5e-324
+      ],
+      "values_hex": [
+        "-0x0.0000000000001p-1022",
+        "-0x0.0000000000001p-1022"
+      ],
+      "exact_offdiagonal": "1/81933344287753464290352457696086182287857132851736628739601276754021558106248987428521920298140584458954000375924069414628262688558027981401114168432135406200220795253831860100035338833562316499488472344730006203527200547188804127729444650403064289208231043636921325247870287294938330169029758951631760934327964364820227611019286676329671678372081690061058588235394436588878510650436529630360080108591841800561055670606127457750571554496925409023391889648461108695697253013885223876670583998515511324227383576492107760797446643730639618957836163262863779115105499015668392716584487321674492437012392892589787514324161591945051205137174325270413312",
+      "once_rounded_exact_matrix": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "outcome": "finite_assembly",
+      "actual": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "lost_representable_coupling": false,
+      "offdiagonal_relative_error": null,
+      "max_entry_normalized_error": 0.0
+    },
+    {
+      "case": "all_final_underflow",
+      "signs_in_original_order": [
+        -1,
+        1
+      ],
+      "reversed": false,
+      "graph": {
+        "schema_version": "grcv4-serialized-graph-v1",
+        "live_node_ids": [
+          "a",
+          "b",
+          "c"
+        ],
+        "oriented_edges": [
+          {
+            "edge_id": "x",
+            "tail_node_id": "b",
+            "head_node_id": "a"
+          },
+          {
+            "edge_id": "y",
+            "tail_node_id": "b",
+            "head_node_id": "c"
+          }
+        ]
+      },
+      "values": [
+        -5e-324,
+        5e-324
+      ],
+      "values_hex": [
+        "-0x0.0000000000001p-1022",
+        "0x0.0000000000001p-1022"
+      ],
+      "exact_offdiagonal": "-1/81933344287753464290352457696086182287857132851736628739601276754021558106248987428521920298140584458954000375924069414628262688558027981401114168432135406200220795253831860100035338833562316499488472344730006203527200547188804127729444650403064289208231043636921325247870287294938330169029758951631760934327964364820227611019286676329671678372081690061058588235394436588878510650436529630360080108591841800561055670606127457750571554496925409023391889648461108695697253013885223876670583998515511324227383576492107760797446643730639618957836163262863779115105499015668392716584487321674492437012392892589787514324161591945051205137174325270413312",
+      "once_rounded_exact_matrix": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "outcome": "finite_assembly",
+      "actual": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "lost_representable_coupling": false,
+      "offdiagonal_relative_error": null,
+      "max_entry_normalized_error": 0.0
+    },
+    {
+      "case": "all_final_underflow",
+      "signs_in_original_order": [
+        -1,
+        1
+      ],
+      "reversed": true,
+      "graph": {
+        "schema_version": "grcv4-serialized-graph-v1",
+        "live_node_ids": [
+          "a",
+          "b",
+          "c"
+        ],
+        "oriented_edges": [
+          {
+            "edge_id": "y",
+            "tail_node_id": "b",
+            "head_node_id": "c"
+          },
+          {
+            "edge_id": "x",
+            "tail_node_id": "b",
+            "head_node_id": "a"
+          }
+        ]
+      },
+      "values": [
+        5e-324,
+        -5e-324
+      ],
+      "values_hex": [
+        "0x0.0000000000001p-1022",
+        "-0x0.0000000000001p-1022"
+      ],
+      "exact_offdiagonal": "-1/81933344287753464290352457696086182287857132851736628739601276754021558106248987428521920298140584458954000375924069414628262688558027981401114168432135406200220795253831860100035338833562316499488472344730006203527200547188804127729444650403064289208231043636921325247870287294938330169029758951631760934327964364820227611019286676329671678372081690061058588235394436588878510650436529630360080108591841800561055670606127457750571554496925409023391889648461108695697253013885223876670583998515511324227383576492107760797446643730639618957836163262863779115105499015668392716584487321674492437012392892589787514324161591945051205137174325270413312",
+      "once_rounded_exact_matrix": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "outcome": "finite_assembly",
+      "actual": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "lost_representable_coupling": false,
+      "offdiagonal_relative_error": null,
+      "max_entry_normalized_error": 0.0
+    },
+    {
+      "case": "all_final_underflow",
+      "signs_in_original_order": [
+        1,
+        -1
+      ],
+      "reversed": false,
+      "graph": {
+        "schema_version": "grcv4-serialized-graph-v1",
+        "live_node_ids": [
+          "a",
+          "b",
+          "c"
+        ],
+        "oriented_edges": [
+          {
+            "edge_id": "x",
+            "tail_node_id": "a",
+            "head_node_id": "b"
+          },
+          {
+            "edge_id": "y",
+            "tail_node_id": "c",
+            "head_node_id": "b"
+          }
+        ]
+      },
+      "values": [
+        5e-324,
+        -5e-324
+      ],
+      "values_hex": [
+        "0x0.0000000000001p-1022",
+        "-0x0.0000000000001p-1022"
+      ],
+      "exact_offdiagonal": "-1/81933344287753464290352457696086182287857132851736628739601276754021558106248987428521920298140584458954000375924069414628262688558027981401114168432135406200220795253831860100035338833562316499488472344730006203527200547188804127729444650403064289208231043636921325247870287294938330169029758951631760934327964364820227611019286676329671678372081690061058588235394436588878510650436529630360080108591841800561055670606127457750571554496925409023391889648461108695697253013885223876670583998515511324227383576492107760797446643730639618957836163262863779115105499015668392716584487321674492437012392892589787514324161591945051205137174325270413312",
+      "once_rounded_exact_matrix": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "outcome": "finite_assembly",
+      "actual": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "lost_representable_coupling": false,
+      "offdiagonal_relative_error": null,
+      "max_entry_normalized_error": 0.0
+    },
+    {
+      "case": "all_final_underflow",
+      "signs_in_original_order": [
+        1,
+        -1
+      ],
+      "reversed": true,
+      "graph": {
+        "schema_version": "grcv4-serialized-graph-v1",
+        "live_node_ids": [
+          "a",
+          "b",
+          "c"
+        ],
+        "oriented_edges": [
+          {
+            "edge_id": "y",
+            "tail_node_id": "c",
+            "head_node_id": "b"
+          },
+          {
+            "edge_id": "x",
+            "tail_node_id": "a",
+            "head_node_id": "b"
+          }
+        ]
+      },
+      "values": [
+        -5e-324,
+        5e-324
+      ],
+      "values_hex": [
+        "-0x0.0000000000001p-1022",
+        "0x0.0000000000001p-1022"
+      ],
+      "exact_offdiagonal": "-1/81933344287753464290352457696086182287857132851736628739601276754021558106248987428521920298140584458954000375924069414628262688558027981401114168432135406200220795253831860100035338833562316499488472344730006203527200547188804127729444650403064289208231043636921325247870287294938330169029758951631760934327964364820227611019286676329671678372081690061058588235394436588878510650436529630360080108591841800561055670606127457750571554496925409023391889648461108695697253013885223876670583998515511324227383576492107760797446643730639618957836163262863779115105499015668392716584487321674492437012392892589787514324161591945051205137174325270413312",
+      "once_rounded_exact_matrix": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "outcome": "finite_assembly",
+      "actual": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "lost_representable_coupling": false,
+      "offdiagonal_relative_error": null,
+      "max_entry_normalized_error": 0.0
+    },
+    {
+      "case": "all_final_underflow",
+      "signs_in_original_order": [
+        1,
+        1
+      ],
+      "reversed": false,
+      "graph": {
+        "schema_version": "grcv4-serialized-graph-v1",
+        "live_node_ids": [
+          "a",
+          "b",
+          "c"
+        ],
+        "oriented_edges": [
+          {
+            "edge_id": "x",
+            "tail_node_id": "a",
+            "head_node_id": "b"
+          },
+          {
+            "edge_id": "y",
+            "tail_node_id": "b",
+            "head_node_id": "c"
+          }
+        ]
+      },
+      "values": [
+        5e-324,
+        5e-324
+      ],
+      "values_hex": [
+        "0x0.0000000000001p-1022",
+        "0x0.0000000000001p-1022"
+      ],
+      "exact_offdiagonal": "1/81933344287753464290352457696086182287857132851736628739601276754021558106248987428521920298140584458954000375924069414628262688558027981401114168432135406200220795253831860100035338833562316499488472344730006203527200547188804127729444650403064289208231043636921325247870287294938330169029758951631760934327964364820227611019286676329671678372081690061058588235394436588878510650436529630360080108591841800561055670606127457750571554496925409023391889648461108695697253013885223876670583998515511324227383576492107760797446643730639618957836163262863779115105499015668392716584487321674492437012392892589787514324161591945051205137174325270413312",
+      "once_rounded_exact_matrix": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "outcome": "finite_assembly",
+      "actual": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "lost_representable_coupling": false,
+      "offdiagonal_relative_error": null,
+      "max_entry_normalized_error": 0.0
+    },
+    {
+      "case": "all_final_underflow",
+      "signs_in_original_order": [
+        1,
+        1
+      ],
+      "reversed": true,
+      "graph": {
+        "schema_version": "grcv4-serialized-graph-v1",
+        "live_node_ids": [
+          "a",
+          "b",
+          "c"
+        ],
+        "oriented_edges": [
+          {
+            "edge_id": "y",
+            "tail_node_id": "b",
+            "head_node_id": "c"
+          },
+          {
+            "edge_id": "x",
+            "tail_node_id": "a",
+            "head_node_id": "b"
+          }
+        ]
+      },
+      "values": [
+        5e-324,
+        5e-324
+      ],
+      "values_hex": [
+        "0x0.0000000000001p-1022",
+        "0x0.0000000000001p-1022"
+      ],
+      "exact_offdiagonal": "1/81933344287753464290352457696086182287857132851736628739601276754021558106248987428521920298140584458954000375924069414628262688558027981401114168432135406200220795253831860100035338833562316499488472344730006203527200547188804127729444650403064289208231043636921325247870287294938330169029758951631760934327964364820227611019286676329671678372081690061058588235394436588878510650436529630360080108591841800561055670606127457750571554496925409023391889648461108695697253013885223876670583998515511324227383576492107760797446643730639618957836163262863779115105499015668392716584487321674492437012392892589787514324161591945051205137174325270413312",
+      "once_rounded_exact_matrix": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "outcome": "finite_assembly",
+      "actual": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "lost_representable_coupling": false,
+      "offdiagonal_relative_error": null,
+      "max_entry_normalized_error": 0.0
+    },
+    {
+      "case": "large_finite",
+      "signs_in_original_order": [
+        -1,
+        -1
+      ],
+      "reversed": false,
+      "graph": {
+        "schema_version": "grcv4-serialized-graph-v1",
+        "live_node_ids": [
+          "a",
+          "b",
+          "c"
+        ],
+        "oriented_edges": [
+          {
+            "edge_id": "x",
+            "tail_node_id": "b",
+            "head_node_id": "a"
+          },
+          {
+            "edge_id": "y",
+            "tail_node_id": "c",
+            "head_node_id": "b"
+          }
+        ]
+      },
+      "values": [
+        -1e+154,
+        -1e+154
+      ],
+      "values_hex": [
+        "-0x1.7dddf6b095ff1p+511",
+        "-0x1.7dddf6b095ff1p+511"
+      ],
+      "exact_offdiagonal": "50000000000000003694754568805822722354148416855929330034064453274443536960546005402682670783121701230644089547754860819335239358288145669067663642806673036373933445522196121212567568843361766557951907656361565516290211185038516644398633608896876046181502230557335411888769226418083095932594665037927192461312",
+      "once_rounded_exact_matrix": [
+        [
+          1e+308,
+          5e+307
+        ],
+        [
+          5e+307,
+          1e+308
+        ]
+      ],
+      "outcome": "finite_assembly",
+      "actual": [
+        [
+          1e+308,
+          5e+307
+        ],
+        [
+          5e+307,
+          1e+308
+        ]
+      ],
+      "lost_representable_coupling": false,
+      "offdiagonal_relative_error": 0.0,
+      "max_entry_normalized_error": 0.0
+    },
+    {
+      "case": "large_finite",
+      "signs_in_original_order": [
+        -1,
+        -1
+      ],
+      "reversed": true,
+      "graph": {
+        "schema_version": "grcv4-serialized-graph-v1",
+        "live_node_ids": [
+          "a",
+          "b",
+          "c"
+        ],
+        "oriented_edges": [
+          {
+            "edge_id": "y",
+            "tail_node_id": "c",
+            "head_node_id": "b"
+          },
+          {
+            "edge_id": "x",
+            "tail_node_id": "b",
+            "head_node_id": "a"
+          }
+        ]
+      },
+      "values": [
+        -1e+154,
+        -1e+154
+      ],
+      "values_hex": [
+        "-0x1.7dddf6b095ff1p+511",
+        "-0x1.7dddf6b095ff1p+511"
+      ],
+      "exact_offdiagonal": "50000000000000003694754568805822722354148416855929330034064453274443536960546005402682670783121701230644089547754860819335239358288145669067663642806673036373933445522196121212567568843361766557951907656361565516290211185038516644398633608896876046181502230557335411888769226418083095932594665037927192461312",
+      "once_rounded_exact_matrix": [
+        [
+          1e+308,
+          5e+307
+        ],
+        [
+          5e+307,
+          1e+308
+        ]
+      ],
+      "outcome": "finite_assembly",
+      "actual": [
+        [
+          1e+308,
+          5e+307
+        ],
+        [
+          5e+307,
+          1e+308
+        ]
+      ],
+      "lost_representable_coupling": false,
+      "offdiagonal_relative_error": 0.0,
+      "max_entry_normalized_error": 0.0
+    },
+    {
+      "case": "large_finite",
+      "signs_in_original_order": [
+        -1,
+        1
+      ],
+      "reversed": false,
+      "graph": {
+        "schema_version": "grcv4-serialized-graph-v1",
+        "live_node_ids": [
+          "a",
+          "b",
+          "c"
+        ],
+        "oriented_edges": [
+          {
+            "edge_id": "x",
+            "tail_node_id": "b",
+            "head_node_id": "a"
+          },
+          {
+            "edge_id": "y",
+            "tail_node_id": "b",
+            "head_node_id": "c"
+          }
+        ]
+      },
+      "values": [
+        -1e+154,
+        1e+154
+      ],
+      "values_hex": [
+        "-0x1.7dddf6b095ff1p+511",
+        "0x1.7dddf6b095ff1p+511"
+      ],
+      "exact_offdiagonal": "-50000000000000003694754568805822722354148416855929330034064453274443536960546005402682670783121701230644089547754860819335239358288145669067663642806673036373933445522196121212567568843361766557951907656361565516290211185038516644398633608896876046181502230557335411888769226418083095932594665037927192461312",
+      "once_rounded_exact_matrix": [
+        [
+          1e+308,
+          -5e+307
+        ],
+        [
+          -5e+307,
+          1e+308
+        ]
+      ],
+      "outcome": "finite_assembly",
+      "actual": [
+        [
+          1e+308,
+          -5e+307
+        ],
+        [
+          -5e+307,
+          1e+308
+        ]
+      ],
+      "lost_representable_coupling": false,
+      "offdiagonal_relative_error": 0.0,
+      "max_entry_normalized_error": 0.0
+    },
+    {
+      "case": "large_finite",
+      "signs_in_original_order": [
+        -1,
+        1
+      ],
+      "reversed": true,
+      "graph": {
+        "schema_version": "grcv4-serialized-graph-v1",
+        "live_node_ids": [
+          "a",
+          "b",
+          "c"
+        ],
+        "oriented_edges": [
+          {
+            "edge_id": "y",
+            "tail_node_id": "b",
+            "head_node_id": "c"
+          },
+          {
+            "edge_id": "x",
+            "tail_node_id": "b",
+            "head_node_id": "a"
+          }
+        ]
+      },
+      "values": [
+        1e+154,
+        -1e+154
+      ],
+      "values_hex": [
+        "0x1.7dddf6b095ff1p+511",
+        "-0x1.7dddf6b095ff1p+511"
+      ],
+      "exact_offdiagonal": "-50000000000000003694754568805822722354148416855929330034064453274443536960546005402682670783121701230644089547754860819335239358288145669067663642806673036373933445522196121212567568843361766557951907656361565516290211185038516644398633608896876046181502230557335411888769226418083095932594665037927192461312",
+      "once_rounded_exact_matrix": [
+        [
+          1e+308,
+          -5e+307
+        ],
+        [
+          -5e+307,
+          1e+308
+        ]
+      ],
+      "outcome": "finite_assembly",
+      "actual": [
+        [
+          1e+308,
+          -5e+307
+        ],
+        [
+          -5e+307,
+          1e+308
+        ]
+      ],
+      "lost_representable_coupling": false,
+      "offdiagonal_relative_error": 0.0,
+      "max_entry_normalized_error": 0.0
+    },
+    {
+      "case": "large_finite",
+      "signs_in_original_order": [
+        1,
+        -1
+      ],
+      "reversed": false,
+      "graph": {
+        "schema_version": "grcv4-serialized-graph-v1",
+        "live_node_ids": [
+          "a",
+          "b",
+          "c"
+        ],
+        "oriented_edges": [
+          {
+            "edge_id": "x",
+            "tail_node_id": "a",
+            "head_node_id": "b"
+          },
+          {
+            "edge_id": "y",
+            "tail_node_id": "c",
+            "head_node_id": "b"
+          }
+        ]
+      },
+      "values": [
+        1e+154,
+        -1e+154
+      ],
+      "values_hex": [
+        "0x1.7dddf6b095ff1p+511",
+        "-0x1.7dddf6b095ff1p+511"
+      ],
+      "exact_offdiagonal": "-50000000000000003694754568805822722354148416855929330034064453274443536960546005402682670783121701230644089547754860819335239358288145669067663642806673036373933445522196121212567568843361766557951907656361565516290211185038516644398633608896876046181502230557335411888769226418083095932594665037927192461312",
+      "once_rounded_exact_matrix": [
+        [
+          1e+308,
+          -5e+307
+        ],
+        [
+          -5e+307,
+          1e+308
+        ]
+      ],
+      "outcome": "finite_assembly",
+      "actual": [
+        [
+          1e+308,
+          -5e+307
+        ],
+        [
+          -5e+307,
+          1e+308
+        ]
+      ],
+      "lost_representable_coupling": false,
+      "offdiagonal_relative_error": 0.0,
+      "max_entry_normalized_error": 0.0
+    },
+    {
+      "case": "large_finite",
+      "signs_in_original_order": [
+        1,
+        -1
+      ],
+      "reversed": true,
+      "graph": {
+        "schema_version": "grcv4-serialized-graph-v1",
+        "live_node_ids": [
+          "a",
+          "b",
+          "c"
+        ],
+        "oriented_edges": [
+          {
+            "edge_id": "y",
+            "tail_node_id": "c",
+            "head_node_id": "b"
+          },
+          {
+            "edge_id": "x",
+            "tail_node_id": "a",
+            "head_node_id": "b"
+          }
+        ]
+      },
+      "values": [
+        -1e+154,
+        1e+154
+      ],
+      "values_hex": [
+        "-0x1.7dddf6b095ff1p+511",
+        "0x1.7dddf6b095ff1p+511"
+      ],
+      "exact_offdiagonal": "-50000000000000003694754568805822722354148416855929330034064453274443536960546005402682670783121701230644089547754860819335239358288145669067663642806673036373933445522196121212567568843361766557951907656361565516290211185038516644398633608896876046181502230557335411888769226418083095932594665037927192461312",
+      "once_rounded_exact_matrix": [
+        [
+          1e+308,
+          -5e+307
+        ],
+        [
+          -5e+307,
+          1e+308
+        ]
+      ],
+      "outcome": "finite_assembly",
+      "actual": [
+        [
+          1e+308,
+          -5e+307
+        ],
+        [
+          -5e+307,
+          1e+308
+        ]
+      ],
+      "lost_representable_coupling": false,
+      "offdiagonal_relative_error": 0.0,
+      "max_entry_normalized_error": 0.0
+    },
+    {
+      "case": "large_finite",
+      "signs_in_original_order": [
+        1,
+        1
+      ],
+      "reversed": false,
+      "graph": {
+        "schema_version": "grcv4-serialized-graph-v1",
+        "live_node_ids": [
+          "a",
+          "b",
+          "c"
+        ],
+        "oriented_edges": [
+          {
+            "edge_id": "x",
+            "tail_node_id": "a",
+            "head_node_id": "b"
+          },
+          {
+            "edge_id": "y",
+            "tail_node_id": "b",
+            "head_node_id": "c"
+          }
+        ]
+      },
+      "values": [
+        1e+154,
+        1e+154
+      ],
+      "values_hex": [
+        "0x1.7dddf6b095ff1p+511",
+        "0x1.7dddf6b095ff1p+511"
+      ],
+      "exact_offdiagonal": "50000000000000003694754568805822722354148416855929330034064453274443536960546005402682670783121701230644089547754860819335239358288145669067663642806673036373933445522196121212567568843361766557951907656361565516290211185038516644398633608896876046181502230557335411888769226418083095932594665037927192461312",
+      "once_rounded_exact_matrix": [
+        [
+          1e+308,
+          5e+307
+        ],
+        [
+          5e+307,
+          1e+308
+        ]
+      ],
+      "outcome": "finite_assembly",
+      "actual": [
+        [
+          1e+308,
+          5e+307
+        ],
+        [
+          5e+307,
+          1e+308
+        ]
+      ],
+      "lost_representable_coupling": false,
+      "offdiagonal_relative_error": 0.0,
+      "max_entry_normalized_error": 0.0
+    },
+    {
+      "case": "large_finite",
+      "signs_in_original_order": [
+        1,
+        1
+      ],
+      "reversed": true,
+      "graph": {
+        "schema_version": "grcv4-serialized-graph-v1",
+        "live_node_ids": [
+          "a",
+          "b",
+          "c"
+        ],
+        "oriented_edges": [
+          {
+            "edge_id": "y",
+            "tail_node_id": "b",
+            "head_node_id": "c"
+          },
+          {
+            "edge_id": "x",
+            "tail_node_id": "a",
+            "head_node_id": "b"
+          }
+        ]
+      },
+      "values": [
+        1e+154,
+        1e+154
+      ],
+      "values_hex": [
+        "0x1.7dddf6b095ff1p+511",
+        "0x1.7dddf6b095ff1p+511"
+      ],
+      "exact_offdiagonal": "50000000000000003694754568805822722354148416855929330034064453274443536960546005402682670783121701230644089547754860819335239358288145669067663642806673036373933445522196121212567568843361766557951907656361565516290211185038516644398633608896876046181502230557335411888769226418083095932594665037927192461312",
+      "once_rounded_exact_matrix": [
+        [
+          1e+308,
+          5e+307
+        ],
+        [
+          5e+307,
+          1e+308
+        ]
+      ],
+      "outcome": "finite_assembly",
+      "actual": [
+        [
+          1e+308,
+          5e+307
+        ],
+        [
+          5e+307,
+          1e+308
+        ]
+      ],
+      "lost_representable_coupling": false,
+      "offdiagonal_relative_error": 0.0,
+      "max_entry_normalized_error": 0.0
+    },
+    {
+      "case": "diagonal_overflow",
+      "signs_in_original_order": [
+        -1,
+        -1
+      ],
+      "reversed": false,
+      "graph": {
+        "schema_version": "grcv4-serialized-graph-v1",
+        "live_node_ids": [
+          "a",
+          "b",
+          "c"
+        ],
+        "oriented_edges": [
+          {
+            "edge_id": "x",
+            "tail_node_id": "b",
+            "head_node_id": "a"
+          },
+          {
+            "edge_id": "y",
+            "tail_node_id": "c",
+            "head_node_id": "b"
+          }
+        ]
+      },
+      "values": [
+        -1e+155,
+        -1e+150
+      ],
+      "values_hex": [
+        "-0x1.dd55745cbb7edp+514",
+        "-0x1.38d352e5096afp+498"
+      ],
+      "exact_offdiagonal": "49999999999999999400591385667377137856276780791372759618749251012358707640268249244038066000518075076863689087828109192062017182351127307692038180231909523796446912159024641105826388039339770497334145089837024953503361907799126821861332090286372429171832436957655919853936368012643399044912021698062057472",
+      "once_rounded_exact_matrix": null,
+      "outcome": "overflow_rejected",
+      "error": "nonfinite numerical result"
+    },
+    {
+      "case": "diagonal_overflow",
+      "signs_in_original_order": [
+        -1,
+        -1
+      ],
+      "reversed": true,
+      "graph": {
+        "schema_version": "grcv4-serialized-graph-v1",
+        "live_node_ids": [
+          "a",
+          "b",
+          "c"
+        ],
+        "oriented_edges": [
+          {
+            "edge_id": "y",
+            "tail_node_id": "c",
+            "head_node_id": "b"
+          },
+          {
+            "edge_id": "x",
+            "tail_node_id": "b",
+            "head_node_id": "a"
+          }
+        ]
+      },
+      "values": [
+        -1e+150,
+        -1e+155
+      ],
+      "values_hex": [
+        "-0x1.38d352e5096afp+498",
+        "-0x1.dd55745cbb7edp+514"
+      ],
+      "exact_offdiagonal": "49999999999999999400591385667377137856276780791372759618749251012358707640268249244038066000518075076863689087828109192062017182351127307692038180231909523796446912159024641105826388039339770497334145089837024953503361907799126821861332090286372429171832436957655919853936368012643399044912021698062057472",
+      "once_rounded_exact_matrix": null,
+      "outcome": "overflow_rejected",
+      "error": "nonfinite numerical result"
+    },
+    {
+      "case": "diagonal_overflow",
+      "signs_in_original_order": [
+        -1,
+        1
+      ],
+      "reversed": false,
+      "graph": {
+        "schema_version": "grcv4-serialized-graph-v1",
+        "live_node_ids": [
+          "a",
+          "b",
+          "c"
+        ],
+        "oriented_edges": [
+          {
+            "edge_id": "x",
+            "tail_node_id": "b",
+            "head_node_id": "a"
+          },
+          {
+            "edge_id": "y",
+            "tail_node_id": "b",
+            "head_node_id": "c"
+          }
+        ]
+      },
+      "values": [
+        -1e+155,
+        1e+150
+      ],
+      "values_hex": [
+        "-0x1.dd55745cbb7edp+514",
+        "0x1.38d352e5096afp+498"
+      ],
+      "exact_offdiagonal": "-49999999999999999400591385667377137856276780791372759618749251012358707640268249244038066000518075076863689087828109192062017182351127307692038180231909523796446912159024641105826388039339770497334145089837024953503361907799126821861332090286372429171832436957655919853936368012643399044912021698062057472",
+      "once_rounded_exact_matrix": null,
+      "outcome": "overflow_rejected",
+      "error": "nonfinite numerical result"
+    },
+    {
+      "case": "diagonal_overflow",
+      "signs_in_original_order": [
+        -1,
+        1
+      ],
+      "reversed": true,
+      "graph": {
+        "schema_version": "grcv4-serialized-graph-v1",
+        "live_node_ids": [
+          "a",
+          "b",
+          "c"
+        ],
+        "oriented_edges": [
+          {
+            "edge_id": "y",
+            "tail_node_id": "b",
+            "head_node_id": "c"
+          },
+          {
+            "edge_id": "x",
+            "tail_node_id": "b",
+            "head_node_id": "a"
+          }
+        ]
+      },
+      "values": [
+        1e+150,
+        -1e+155
+      ],
+      "values_hex": [
+        "0x1.38d352e5096afp+498",
+        "-0x1.dd55745cbb7edp+514"
+      ],
+      "exact_offdiagonal": "-49999999999999999400591385667377137856276780791372759618749251012358707640268249244038066000518075076863689087828109192062017182351127307692038180231909523796446912159024641105826388039339770497334145089837024953503361907799126821861332090286372429171832436957655919853936368012643399044912021698062057472",
+      "once_rounded_exact_matrix": null,
+      "outcome": "overflow_rejected",
+      "error": "nonfinite numerical result"
+    },
+    {
+      "case": "diagonal_overflow",
+      "signs_in_original_order": [
+        1,
+        -1
+      ],
+      "reversed": false,
+      "graph": {
+        "schema_version": "grcv4-serialized-graph-v1",
+        "live_node_ids": [
+          "a",
+          "b",
+          "c"
+        ],
+        "oriented_edges": [
+          {
+            "edge_id": "x",
+            "tail_node_id": "a",
+            "head_node_id": "b"
+          },
+          {
+            "edge_id": "y",
+            "tail_node_id": "c",
+            "head_node_id": "b"
+          }
+        ]
+      },
+      "values": [
+        1e+155,
+        -1e+150
+      ],
+      "values_hex": [
+        "0x1.dd55745cbb7edp+514",
+        "-0x1.38d352e5096afp+498"
+      ],
+      "exact_offdiagonal": "-49999999999999999400591385667377137856276780791372759618749251012358707640268249244038066000518075076863689087828109192062017182351127307692038180231909523796446912159024641105826388039339770497334145089837024953503361907799126821861332090286372429171832436957655919853936368012643399044912021698062057472",
+      "once_rounded_exact_matrix": null,
+      "outcome": "overflow_rejected",
+      "error": "nonfinite numerical result"
+    },
+    {
+      "case": "diagonal_overflow",
+      "signs_in_original_order": [
+        1,
+        -1
+      ],
+      "reversed": true,
+      "graph": {
+        "schema_version": "grcv4-serialized-graph-v1",
+        "live_node_ids": [
+          "a",
+          "b",
+          "c"
+        ],
+        "oriented_edges": [
+          {
+            "edge_id": "y",
+            "tail_node_id": "c",
+            "head_node_id": "b"
+          },
+          {
+            "edge_id": "x",
+            "tail_node_id": "a",
+            "head_node_id": "b"
+          }
+        ]
+      },
+      "values": [
+        -1e+150,
+        1e+155
+      ],
+      "values_hex": [
+        "-0x1.38d352e5096afp+498",
+        "0x1.dd55745cbb7edp+514"
+      ],
+      "exact_offdiagonal": "-49999999999999999400591385667377137856276780791372759618749251012358707640268249244038066000518075076863689087828109192062017182351127307692038180231909523796446912159024641105826388039339770497334145089837024953503361907799126821861332090286372429171832436957655919853936368012643399044912021698062057472",
+      "once_rounded_exact_matrix": null,
+      "outcome": "overflow_rejected",
+      "error": "nonfinite numerical result"
+    },
+    {
+      "case": "diagonal_overflow",
+      "signs_in_original_order": [
+        1,
+        1
+      ],
+      "reversed": false,
+      "graph": {
+        "schema_version": "grcv4-serialized-graph-v1",
+        "live_node_ids": [
+          "a",
+          "b",
+          "c"
+        ],
+        "oriented_edges": [
+          {
+            "edge_id": "x",
+            "tail_node_id": "a",
+            "head_node_id": "b"
+          },
+          {
+            "edge_id": "y",
+            "tail_node_id": "b",
+            "head_node_id": "c"
+          }
+        ]
+      },
+      "values": [
+        1e+155,
+        1e+150
+      ],
+      "values_hex": [
+        "0x1.dd55745cbb7edp+514",
+        "0x1.38d352e5096afp+498"
+      ],
+      "exact_offdiagonal": "49999999999999999400591385667377137856276780791372759618749251012358707640268249244038066000518075076863689087828109192062017182351127307692038180231909523796446912159024641105826388039339770497334145089837024953503361907799126821861332090286372429171832436957655919853936368012643399044912021698062057472",
+      "once_rounded_exact_matrix": null,
+      "outcome": "overflow_rejected",
+      "error": "nonfinite numerical result"
+    },
+    {
+      "case": "diagonal_overflow",
+      "signs_in_original_order": [
+        1,
+        1
+      ],
+      "reversed": true,
+      "graph": {
+        "schema_version": "grcv4-serialized-graph-v1",
+        "live_node_ids": [
+          "a",
+          "b",
+          "c"
+        ],
+        "oriented_edges": [
+          {
+            "edge_id": "y",
+            "tail_node_id": "b",
+            "head_node_id": "c"
+          },
+          {
+            "edge_id": "x",
+            "tail_node_id": "a",
+            "head_node_id": "b"
+          }
+        ]
+      },
+      "values": [
+        1e+150,
+        1e+155
+      ],
+      "values_hex": [
+        "0x1.38d352e5096afp+498",
+        "0x1.dd55745cbb7edp+514"
+      ],
+      "exact_offdiagonal": "49999999999999999400591385667377137856276780791372759618749251012358707640268249244038066000518075076863689087828109192062017182351127307692038180231909523796446912159024641105826388039339770497334145089837024953503361907799126821861332090286372429171832436957655919853936368012643399044912021698062057472",
+      "once_rounded_exact_matrix": null,
+      "outcome": "overflow_rejected",
+      "error": "nonfinite numerical result"
+    },
+    {
+      "case": "finite_coupling_with_diagonal_overflow",
+      "signs_in_original_order": [
+        -1,
+        -1
+      ],
+      "reversed": false,
+      "graph": {
+        "schema_version": "grcv4-serialized-graph-v1",
+        "live_node_ids": [
+          "a",
+          "b",
+          "c"
+        ],
+        "oriented_edges": [
+          {
+            "edge_id": "x",
+            "tail_node_id": "b",
+            "head_node_id": "a"
+          },
+          {
+            "edge_id": "y",
+            "tail_node_id": "c",
+            "head_node_id": "b"
+          }
+        ]
+      },
+      "values": [
+        -1e+308,
+        -5e-324
+      ],
+      "values_hex": [
+        "-0x1.1ccf385ebc8a0p+1023",
+        "-0x0.0000000000001p-1022"
+      ],
+      "exact_offdiagonal": "156575653125701/633825300114114700748351602688",
+      "once_rounded_exact_matrix": null,
+      "outcome": "overflow_rejected",
+      "error": "nonfinite numerical result"
+    },
+    {
+      "case": "finite_coupling_with_diagonal_overflow",
+      "signs_in_original_order": [
+        -1,
+        -1
+      ],
+      "reversed": true,
+      "graph": {
+        "schema_version": "grcv4-serialized-graph-v1",
+        "live_node_ids": [
+          "a",
+          "b",
+          "c"
+        ],
+        "oriented_edges": [
+          {
+            "edge_id": "y",
+            "tail_node_id": "c",
+            "head_node_id": "b"
+          },
+          {
+            "edge_id": "x",
+            "tail_node_id": "b",
+            "head_node_id": "a"
+          }
+        ]
+      },
+      "values": [
+        -5e-324,
+        -1e+308
+      ],
+      "values_hex": [
+        "-0x0.0000000000001p-1022",
+        "-0x1.1ccf385ebc8a0p+1023"
+      ],
+      "exact_offdiagonal": "156575653125701/633825300114114700748351602688",
+      "once_rounded_exact_matrix": null,
+      "outcome": "overflow_rejected",
+      "error": "nonfinite numerical result"
+    },
+    {
+      "case": "finite_coupling_with_diagonal_overflow",
+      "signs_in_original_order": [
+        -1,
+        1
+      ],
+      "reversed": false,
+      "graph": {
+        "schema_version": "grcv4-serialized-graph-v1",
+        "live_node_ids": [
+          "a",
+          "b",
+          "c"
+        ],
+        "oriented_edges": [
+          {
+            "edge_id": "x",
+            "tail_node_id": "b",
+            "head_node_id": "a"
+          },
+          {
+            "edge_id": "y",
+            "tail_node_id": "b",
+            "head_node_id": "c"
+          }
+        ]
+      },
+      "values": [
+        -1e+308,
+        5e-324
+      ],
+      "values_hex": [
+        "-0x1.1ccf385ebc8a0p+1023",
+        "0x0.0000000000001p-1022"
+      ],
+      "exact_offdiagonal": "-156575653125701/633825300114114700748351602688",
+      "once_rounded_exact_matrix": null,
+      "outcome": "overflow_rejected",
+      "error": "nonfinite numerical result"
+    },
+    {
+      "case": "finite_coupling_with_diagonal_overflow",
+      "signs_in_original_order": [
+        -1,
+        1
+      ],
+      "reversed": true,
+      "graph": {
+        "schema_version": "grcv4-serialized-graph-v1",
+        "live_node_ids": [
+          "a",
+          "b",
+          "c"
+        ],
+        "oriented_edges": [
+          {
+            "edge_id": "y",
+            "tail_node_id": "b",
+            "head_node_id": "c"
+          },
+          {
+            "edge_id": "x",
+            "tail_node_id": "b",
+            "head_node_id": "a"
+          }
+        ]
+      },
+      "values": [
+        5e-324,
+        -1e+308
+      ],
+      "values_hex": [
+        "0x0.0000000000001p-1022",
+        "-0x1.1ccf385ebc8a0p+1023"
+      ],
+      "exact_offdiagonal": "-156575653125701/633825300114114700748351602688",
+      "once_rounded_exact_matrix": null,
+      "outcome": "overflow_rejected",
+      "error": "nonfinite numerical result"
+    },
+    {
+      "case": "finite_coupling_with_diagonal_overflow",
+      "signs_in_original_order": [
+        1,
+        -1
+      ],
+      "reversed": false,
+      "graph": {
+        "schema_version": "grcv4-serialized-graph-v1",
+        "live_node_ids": [
+          "a",
+          "b",
+          "c"
+        ],
+        "oriented_edges": [
+          {
+            "edge_id": "x",
+            "tail_node_id": "a",
+            "head_node_id": "b"
+          },
+          {
+            "edge_id": "y",
+            "tail_node_id": "c",
+            "head_node_id": "b"
+          }
+        ]
+      },
+      "values": [
+        1e+308,
+        -5e-324
+      ],
+      "values_hex": [
+        "0x1.1ccf385ebc8a0p+1023",
+        "-0x0.0000000000001p-1022"
+      ],
+      "exact_offdiagonal": "-156575653125701/633825300114114700748351602688",
+      "once_rounded_exact_matrix": null,
+      "outcome": "overflow_rejected",
+      "error": "nonfinite numerical result"
+    },
+    {
+      "case": "finite_coupling_with_diagonal_overflow",
+      "signs_in_original_order": [
+        1,
+        -1
+      ],
+      "reversed": true,
+      "graph": {
+        "schema_version": "grcv4-serialized-graph-v1",
+        "live_node_ids": [
+          "a",
+          "b",
+          "c"
+        ],
+        "oriented_edges": [
+          {
+            "edge_id": "y",
+            "tail_node_id": "c",
+            "head_node_id": "b"
+          },
+          {
+            "edge_id": "x",
+            "tail_node_id": "a",
+            "head_node_id": "b"
+          }
+        ]
+      },
+      "values": [
+        -5e-324,
+        1e+308
+      ],
+      "values_hex": [
+        "-0x0.0000000000001p-1022",
+        "0x1.1ccf385ebc8a0p+1023"
+      ],
+      "exact_offdiagonal": "-156575653125701/633825300114114700748351602688",
+      "once_rounded_exact_matrix": null,
+      "outcome": "overflow_rejected",
+      "error": "nonfinite numerical result"
+    },
+    {
+      "case": "finite_coupling_with_diagonal_overflow",
+      "signs_in_original_order": [
+        1,
+        1
+      ],
+      "reversed": false,
+      "graph": {
+        "schema_version": "grcv4-serialized-graph-v1",
+        "live_node_ids": [
+          "a",
+          "b",
+          "c"
+        ],
+        "oriented_edges": [
+          {
+            "edge_id": "x",
+            "tail_node_id": "a",
+            "head_node_id": "b"
+          },
+          {
+            "edge_id": "y",
+            "tail_node_id": "b",
+            "head_node_id": "c"
+          }
+        ]
+      },
+      "values": [
+        1e+308,
+        5e-324
+      ],
+      "values_hex": [
+        "0x1.1ccf385ebc8a0p+1023",
+        "0x0.0000000000001p-1022"
+      ],
+      "exact_offdiagonal": "156575653125701/633825300114114700748351602688",
+      "once_rounded_exact_matrix": null,
+      "outcome": "overflow_rejected",
+      "error": "nonfinite numerical result"
+    },
+    {
+      "case": "finite_coupling_with_diagonal_overflow",
+      "signs_in_original_order": [
+        1,
+        1
+      ],
+      "reversed": true,
+      "graph": {
+        "schema_version": "grcv4-serialized-graph-v1",
+        "live_node_ids": [
+          "a",
+          "b",
+          "c"
+        ],
+        "oriented_edges": [
+          {
+            "edge_id": "y",
+            "tail_node_id": "b",
+            "head_node_id": "c"
+          },
+          {
+            "edge_id": "x",
+            "tail_node_id": "a",
+            "head_node_id": "b"
+          }
+        ]
+      },
+      "values": [
+        5e-324,
+        1e+308
+      ],
+      "values_hex": [
+        "0x0.0000000000001p-1022",
+        "0x1.1ccf385ebc8a0p+1023"
+      ],
+      "exact_offdiagonal": "156575653125701/633825300114114700748351602688",
+      "once_rounded_exact_matrix": null,
+      "outcome": "overflow_rejected",
+      "error": "nonfinite numerical result"
+    }
+  ]
+}

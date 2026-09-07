@@ -1,0 +1,16 @@
+{
+  "iteration_id": "P9-3.2",
+  "status": "characterized_unresolved_numerical_envelope",
+  "scope": "64 signed/order/scale observations; P9-3.4 numerical envelope remains open",
+  "artifact_bindings": [
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-3.2/audit-1-followup/actual.json",
+      "sha256": "4eb42c543ceb48ad16e1a0828f715bf5218007ab4f13b5400f671e063cfedcaf"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-3.2/audit-1-followup/inputs.json",
+      "sha256": "8668ff5c740e0109ce52d368a38f947949da928b97890d70c352a7fbcb65c3f5"
+    }
+  ],
+  "claim_ceiling": "no numerical runtime conformance, P9-3.2 acceptance or P9-3.3 admission"
+}

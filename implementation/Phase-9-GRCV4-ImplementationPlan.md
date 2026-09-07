@@ -252,6 +252,14 @@ supporting evidence remains immutable; no new gate or per-attempt process is
 introduced. Historical blanket retention wording remains as-recorded and is
 superseded by this clarification.
 
+The user-requested [prospective evidence workflow](./phase-9-grcv4/tranche-1/P9-1.9-EvidenceHandoff.md#prospective-evidence-workflow)
+records the direction for subsequent leaves: one readable claim-to-check index,
+one manifest per retained execution, small runnable reproducers, selective
+supporting outputs, Git references for committed source and capture alongside
+execution. Preserve published evidence and simplify future collection. Shared
+capture automation remains follow-through work; this note does not claim it
+has been implemented or add a new acceptance gate.
+
 P9-1.1–P9-1.3 are prepared as the first controlled
 [review package](./phase-9-grcv4/tranche-1/P9-1.1-1.3-Review.md), with separate
 iteration results, a reproducible source crosswalk, all 31 debt records, and
@@ -515,6 +523,26 @@ result; 67 primitive tests pass, including clean wheel/source installations.
 The review records the proof, independent multidimensional/scale/permutation
 pressure, reconstruction inputs and exact remaining stage/conditioning gates.
 This correction does not accept P9-3.1 or change frozen mathematical policy.
+
+P9-3.2 follows the explicit P9-3.1 acceptance at committed subject `dccb1ca`,
+recorded separately in [P9-3.1 acceptance](./phase-9-grcv4/tranche-3/P9-3.1-AcceptanceRecord.json).
+The historical preparation states above remain unchanged in their original
+records. The [P9-3.2 review](./phase-9-grcv4/tranche-3/P9-3.2-Review.md) and
+[execution](./phase-9-grcv4/tranche-3/P9-3.2-ExecutionRecord.json) cover the bound
+reference/context geometry, affine domain, exact stage inputs and closed derived
+cache reconstruction. P9-3.2 is implemented pending user review; eight leaves
+are dependency-ready and twenty-three runtime paths eligible. P9-3.3 and
+numerical runtime support remain held. Candidate current regularity, full
+persistent-carrier invariant domains and complete-step admission keep their
+existing later owners.
+
+The independent P9-3.2 audit's mixed-scale star-assembly witness is retained
+as concrete P9-3.4 numerical-envelope work: `(5e-324, 1e150)` on adjacent
+ordinary edges loses a representable coupling in one edge order. The review
+distinguishes this componentwise loss from small normwise error and records
+native audit/package confirmation separately from the external qualified run.
+Additional CI/PC/CI+PC/RG2b realization work remains in Tranche 6 and does not
+become a new prerequisite of the immediate P9-3.3 charge step.
 
 Implement deterministic graph order/orientation, differential identity,
 one-form versus physical-flux maps, Hodge pairings, candidate-local mobility,

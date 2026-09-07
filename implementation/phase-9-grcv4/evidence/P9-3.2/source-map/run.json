@@ -1,0 +1,15 @@
+{
+  "iteration_id": "P9-3.2",
+  "status": "passed",
+  "scope": "scientific source bindings, successor forensic reconstruction and preservation; not numerical runtime support",
+  "artifact_bindings": [
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-3.2/source-map/inputs.json",
+      "sha256": "4501ead7cdeb0f5e70d8ceef213b791be7bf9d97111c19de13625e9ae00c3959"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-3.2/source-map/actual.json",
+      "sha256": "776376ee97a1ff86e7ef3f93624fbc9489db3342a16f1592a34788038043ca9e"
+    }
+  ]
+}

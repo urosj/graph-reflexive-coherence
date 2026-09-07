@@ -52,7 +52,7 @@ def main():
             ],
             check=True,
         )
-        fixture_revision = p.accepted_integration(p.ROOT)["baseline_commit"]
+        fixture_revision = p.accepted_geometry(p.ROOT)["baseline_commit"]
         subprocess.run(
             ["git", "checkout", "--quiet", "--detach", fixture_revision],
             cwd=root, check=True,
@@ -514,9 +514,9 @@ def main():
             lambda: registered("src/pygrc/models/grc_v4.py", content, leaf="P9-2.3"),
         )
         case(
-            "geometry_work_does_not_accept_next_leaf",
-            lambda: registered(p.PHASE + "evidence/P9-3.2/probe/inputs.json",
-                               b"{}", leaf="P9-3.2"),
+            "stage_work_does_not_accept_next_leaf",
+            lambda: registered(p.PHASE + "evidence/P9-3.3/probe/inputs.json",
+                               b"{}", leaf="P9-3.3"),
             "owning leaf entry dependencies are not accepted",
         )
         for name in ["src/pygrc/models/grc_v4_state.py", "src/pygrc/models/grc_v4_step.py"]:
@@ -528,6 +528,9 @@ def main():
         for name in ['src/pygrc/models/grc_v4_geometry.py', 'src/pygrc/models/grc_v4_transport.py', 'tests/models/test_grc_v4_geometry.py', 'tests/models/test_grc_v4_transport.py']:
             case("accepted_integration_enables_" + Path(name).stem,
                  lambda name=name: registered(name, content, leaf="P9-3.1"))
+        for name in ["src/pygrc/models/grc_v4_geometry.py", "tests/models/test_grc_v4_geometry.py"]:
+            case("accepted_geometry_enables_stage_owner_" + Path(name).stem,
+                 lambda name=name: registered(name, content, leaf="P9-3.2"))
         case("accepted_harness_enables_export_owner",
              lambda: registered(init, before + lazy, leaf="P9-2.6"))
         for key, replacement in [("status", "pending"), ("accepted_iterations", ["P9-2.5", "P9-2.6"]),
@@ -556,6 +559,21 @@ def main():
                     p.accepted_integration(root)
             case("integration_acceptance_cannot_self_authorize_" + key, forged_integration,
                  "untrusted integration acceptance", scope="isolated_integration_acceptance_authentication")
+        case("missing_geometry_acceptance",
+             lambda: edit(p.GEOMETRY_ACCEPTANCE, None),
+             "P9-3.1-AcceptanceRecord.json")
+        for key, replacement in [("status", "pending"), ("accepted_iterations", ["P9-3.1", "P9-3.2"]),
+                                 ("accepted_generic_runtime_support", ["C_OS"]),
+                                 ("admitted_specialization_support_sets", [["C_OS"]]),
+                                 ("baseline_commit", p.BASELINE), ("evidence_bindings", [])]:
+            def forged_geometry(key=key, replacement=replacement):
+                value = p.read(root / p.GEOMETRY_ACCEPTANCE)
+                value[key] = replacement
+                value["record_digest"] = p.digest_record(value)
+                with mutate(p.GEOMETRY_ACCEPTANCE, p.canonical(value)):
+                    p.accepted_geometry(root)
+            case("geometry_acceptance_cannot_self_authorize_" + key, forged_geometry,
+                 "untrusted geometry acceptance", scope="isolated_geometry_acceptance_authentication")
         for key, replacement in [("status", "pending"), ("accepted_iterations", ["P9-2.4", "P9-2.5"]),
                                  ("accepted_generic_runtime_support", ["C_OS"]),
                                  ("baseline_commit", p.BASELINE), ("evidence_bindings", [])]:

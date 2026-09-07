@@ -1,0 +1,11 @@
+{
+  "iteration_id": "P9-3.2",
+  "status": "passed",
+  "executed": 95,
+  "passed": 95,
+  "failures": 0,
+  "errors": 0,
+  "skips": [],
+  "clean_installed_environments": 2,
+  "formerly_unavailable_checks": "current profile canonical reconstruction, Candidate C reference equality, all three excluded fresh-process/package methods"
+}

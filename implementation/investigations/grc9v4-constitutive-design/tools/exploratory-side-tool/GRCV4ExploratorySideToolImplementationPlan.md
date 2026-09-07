@@ -1685,3 +1685,14 @@ seven dependency-ready leaves with twenty-three eligible runtime paths.
 Only the reviewed geometry/transport source and test pairs become newly
 eligible. Forged/missing acceptance and premature P9-3.2 promotion fail closed.
 P9-3.1 work remains pending user review, with empty runtime support sets.
+
+
+### P9-3.2 geometry stage and cache entry
+
+The user's explicit P9-3.1 acceptance and commit `dccb1ca` supersede its earlier
+pending-review preparation state. A separate committed-subject acceptance
+record enables only the dependency-ready P9-3.2 successor. API, notebook,
+browser and exports bind `geometry_acceptance`, eight dependency-ready leaves
+and the same twenty-three eligible runtime paths. Missing or forged acceptance,
+self-acceptance of P9-3.2, and unauthorized P9-3.3 work remain fail-closed.
+P9-3.2 implementation is pending review; runtime support remains empty.

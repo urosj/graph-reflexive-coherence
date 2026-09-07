@@ -1,0 +1,47 @@
+{
+  "iteration_id": "P9-3.2",
+  "program_record": {
+    "path": "implementation/phase-9-grcv4/evidence/P9-3.1/audit-1-inputs/inputs.json",
+    "sha256": "dd08e0f8821c53ac951343c9c54159b21e10da0ecd40e43ed963ab3e108bdef7"
+  },
+  "program_filename": "P9-3.1-independent-stress-tests.py",
+  "program_sha256": "27827ae5739154107aab4c42a6d31a57c2ce68744f2482d8e7f55f2656fd4c88",
+  "source_bindings": [
+    {
+      "module": "pygrc.models.grc_v4_geometry",
+      "path": "src/pygrc/models/grc_v4_geometry.py",
+      "sha256": "d715f67555d3c6e68a4e031ba132cb1854cc839de03dcd2c7101fbeb40c13dcd"
+    },
+    {
+      "module": "pygrc.models.grc_v4_transport",
+      "path": "src/pygrc/models/grc_v4_transport.py",
+      "sha256": "8bad1a9642456f3a63976177b9baba3f1dd8ec0df2ec6376e18a71fb032823a2"
+    },
+    {
+      "module": "pygrc.models.grc_v4_state",
+      "path": "src/pygrc/models/grc_v4_state.py",
+      "sha256": "b0ccf06ef91b66feb8670fb67281465998f4bcb085c4d547fedd3ce6d85ad3cb"
+    },
+    {
+      "module": "pygrc.models.grc_v4_profile",
+      "path": "src/pygrc/models/grc_v4_profile.py",
+      "sha256": "188e4ceb92b6a36fe81849911b88b233b8dd16bf3de07383e1508d76232fdbfb"
+    },
+    {
+      "module": "pygrc.models.grc_v4_codec",
+      "path": "src/pygrc/models/grc_v4_codec.py",
+      "sha256": "bd6d9390c818c5a25b70da119cfbc3a3de3707ee84566f6bb06160bb4780e154"
+    },
+    {
+      "module": "tests.models.test_grc_v4_geometry",
+      "path": "tests/models/test_grc_v4_geometry.py",
+      "sha256": "de8957be72deeaf92cef84795d0356cbcba99b4563975f03413e627140908eea"
+    },
+    {
+      "module": "tests.models.test_grc_v4_transport",
+      "path": "tests/models/test_grc_v4_transport.py",
+      "sha256": "13ac20f700a10f7a13fb5ba09243844e2bced9e79bcd1260d2740191fa5e691b"
+    }
+  ],
+  "reconstruction": "Extract matching utf8_content from program_record into a scratch file, verify its SHA-256, then invoke .venv/bin/python <script> --repo <repo_root> --output <new_output_directory>"
+}

@@ -1,0 +1,85 @@
+progress 0 exact_positive_domain
+progress 40 exact_positive_domain
+progress 80 exact_positive_domain
+progress 120 exact_positive_domain
+progress 160 exact_positive_domain
+progress 200 affine_domain_and_values
+progress 240 affine_domain_and_values
+progress 280 star_restriction_scatter
+progress 320 star_restriction_scatter
+progress 360 star_restriction_scatter
+progress 400 signed_graph_actions
+progress 440 same_output_stale_provenance
+progress 480 ten_family_cache_values_and_roundtrip
+progress 520 same_output_stale_provenance
+progress 560 same_output_stale_provenance
+progress 600 rehashed_cache_corruption
+progress 640 carrier_stage_contract
+{
+  "total": 652,
+  "passed": 652,
+  "failed": 0,
+  "counts": {
+    "exact_positive_domain": {
+      "passed": 170,
+      "failed": 0
+    },
+    "affine_domain_and_values": {
+      "passed": 108,
+      "failed": 0
+    },
+    "star_restriction_scatter": {
+      "passed": 100,
+      "failed": 0
+    },
+    "signed_graph_actions": {
+      "passed": 48,
+      "failed": 0
+    },
+    "ten_family_cache_values_and_roundtrip": {
+      "passed": 60,
+      "failed": 0
+    },
+    "same_output_stale_provenance": {
+      "passed": 99,
+      "failed": 0
+    },
+    "rehashed_cache_corruption": {
+      "passed": 48,
+      "failed": 0
+    },
+    "stale_before_producer": {
+      "passed": 6,
+      "failed": 0
+    },
+    "carrier_stage_contract": {
+      "passed": 6,
+      "failed": 0
+    },
+    "composed_ownership": {
+      "passed": 6,
+      "failed": 0
+    },
+    "support_ceiling": {
+      "passed": 1,
+      "failed": 0
+    }
+  },
+  "observations": [
+    {
+      "kind": "star_intermediate_underflow",
+      "source_offdiagonal": 0.0,
+      "permuted_offdiagonal": 2.4703282292062327e-174,
+      "exact_rounded": 2.4703282292062327e-174,
+      "status": "characterization; no universal relative-error/bitwise covariance contract asserted"
+    },
+    {
+      "kind": "independently_supplied_expectations_required",
+      "self_consistent_other_time_consumes": [
+        2.0,
+        1.0
+      ],
+      "status": "expected scope ceiling; operation owner must provide live independently captured subject"
+    }
+  ]
+}
