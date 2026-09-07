@@ -544,6 +544,36 @@ native audit/package confirmation separately from the external qualified run.
 Additional CI/PC/CI+PC/RG2b realization work remains in Tranche 6 and does not
 become a new prerequisite of the immediate P9-3.3 charge step.
 
+P9-3.3 follows explicit acceptance of P9-3.2 at `77286b2`, preserved in
+[the P9-3.2 acceptance record](./phase-9-grcv4/tranche-3/P9-3.2-AcceptanceRecord.json).
+Earlier pending states above describe their original executions. The
+[P9-3.3 review](./phase-9-grcv4/tranche-3/P9-3.3-Review.md) maps the charge,
+continuity and selected-current boundary to exact spec/paper/tool sources and
+independent tests. Its [execution](./phase-9-grcv4/tranche-3/P9-3.3-ExecutionRecord.json)
+retains automated numerical/package and permission/surface validation.
+One provisional resource evaluation follows a full bound supplied current;
+nonnegative/finite/charge admission precedes final-consumer exposure. The
+prescribed binary64 tree and exact tolerance inequality retain the unchanged
+resource and no remainder. Root execution, final reconstruction, writers and
+atomic lifecycle commit retain their later owners. The user explicitly accepted
+P9-3.3 for commit after audit follow-up and evidence cleanup. The current
+permission adapter still has nine dependency-ready leaves and 23 eligible
+runtime paths; a later transition can bind the accepted commit for P9-3.4.
+Runtime support remains empty. The mixed-scale star witness and broader
+numerical-envelope work remain open. The next separately requested maintenance
+task is to remove P9-3.1's dependency on Downloads paths using repository-local
+evidence while preserving audit provenance, after the P9-3.3 commit.
+
+The P9-3.3 independent audit adds a paired conservation limit to that handoff:
+zero rounded residual can hide exact stored-coordinate sum growth, while an
+exact-conservative transfer can fail the prescribed rounded charge gate.
+The [leaf review](./phase-9-grcv4/tranche-3/P9-3.3-Review.md#independent-audit-follow-up)
+binds literal witnesses, native audit replay and mutation controls. P9-3.4 must
+characterize cancellation-heavy divergence and the charge/dynamic-range
+envelope; later experiments must distinguish rounded-policy compliance from
+exact conservation and primitive compositions from complete executed beats.
+No numerical repair or alternate charge rule is introduced by this audit.
+
 Implement deterministic graph order/orientation, differential identity,
 one-form versus physical-flux maps, Hodge pairings, candidate-local mobility,
 geometry profiles, and stage-aware derived caches. Implement one authoritative

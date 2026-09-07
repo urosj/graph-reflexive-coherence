@@ -1363,3 +1363,12 @@ browser and exports bind `geometry_acceptance`, eight dependency-ready leaves
 and the same twenty-three eligible runtime paths. Missing or forged acceptance,
 self-acceptance of P9-3.2, and unauthorized P9-3.3 work remain fail-closed.
 P9-3.2 implementation is pending review; runtime support remains empty.
+
+### P9-3.3 resource and charge entry
+
+- [x] Bind P9-3.2's user acceptance at `77286b2` separately from its original
+      review and preserve the P9-3.4 mixed-scale numerical follow-up.
+- [x] Project `stage_acceptance`, nine ready leaves and the same 23 eligible
+      paths; carry the checklist's resource-boundary ownership on step files.
+- [x] Reject forged/missing acceptance and premature P9-3.4 entry, while
+      preserving empty runtime support and unchanged scientific source status.

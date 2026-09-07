@@ -1,0 +1,150 @@
+{
+  "schema": "phase9_iteration_execution_record_v1",
+  "iteration_id": "P9-3.3",
+  "status": "implemented_and_verified_provisional_resource_boundary_and_charge",
+  "reviewer_decision": "accepted_by_user",
+  "release_id": "grcv4-spec-release-sha256:9f4c8fe5b57b1c477d834a3e4dae3f98a2b18c70e6e7f598e3c9652170c8645f",
+  "entry_authority": {
+    "acceptance_record": "implementation/phase-9-grcv4/tranche-3/P9-3.2-AcceptanceRecord.json",
+    "record_digest": "425cd05eb85213185a4b531a09c16cefec4be992ac4755d404b5f263e09ebd0a",
+    "baseline_commit": "77286b276ac1b944c2e07c9489ffead89ed984d5",
+    "accepted_prerequisites": [
+      "P9-3.2"
+    ]
+  },
+  "accepted_generic_runtime_support": [],
+  "admitted_specialization_support_sets": [],
+  "review": "implementation/phase-9-grcv4/tranche-3/P9-3.3-Review.md",
+  "verification": {
+    "numerical_and_regression": {
+      "run": "implementation/phase-9-grcv4/evidence/P9-3.3/validation/run.json",
+      "tests_run": 1632,
+      "new_test_methods": 28,
+      "failures": 0,
+      "errors": 0,
+      "skips": 0,
+      "clean_installed_environments": 8,
+      "forensic_contracts": 6,
+      "source_unchanged_during_run": true
+    },
+    "permission_and_surfaces": {
+      "status": "passed",
+      "run": "implementation/phase-9-grcv4/evidence/P9-3.3/permission-surfaces/run.json",
+      "authority_cases": 122,
+      "node_tests": 19,
+      "desktop_mobile_browser_tests": 18,
+      "API_notebook_identity": "byte_exact",
+      "ready_leaves": 9,
+      "eligible_runtime_paths": 23,
+      "subject": "Exact retained pre-retention policy/work/review/execution subject; final record and evidence binding maintenance is followed by a fresh current-boundary check."
+    },
+    "published_evidence_preservation": {
+      "baseline_commit": "77286b276ac1b944c2e07c9489ffead89ed984d5",
+      "files_checked": 130,
+      "changed": 0
+    },
+    "independent_audit_native": {
+      "run": "implementation/phase-9-grcv4/evidence/P9-3.3/audit-1-native/run.json",
+      "status": "passed",
+      "independent_cases": 701,
+      "failed": 0,
+      "mutation_controls_detected": 8,
+      "audited_four_files_match_uploaded_bytes": true,
+      "source_unchanged_during_run": true,
+      "external_bundle_preserved": "implementation/phase-9-grcv4/evidence/P9-3.3/audit-1-native/inputs.json",
+      "external_bundle_sha256": "2c8688a542e1495a60afef64f192df22c44d886fc72dfc2e8549efea14570ace",
+      "provider_scope": "current repository providers; no qualified provider adapters",
+      "support_script_preparation": "Only mutation_controls.py and characterize.py remove the exact first-line bootstrap import and bind native paths; original and derived sources retained.",
+      "historical_external_scope": "Original qualified 701-case run and exported repeat preserved separately; not additional independent cases."
+    },
+    "audit_followup": {
+      "run": "implementation/phase-9-grcv4/evidence/P9-3.3/audit-1-followup/run.json",
+      "status": "passed",
+      "tests_run": 96,
+      "new_test_methods": 6,
+      "failures": 0,
+      "errors": 0,
+      "skips": 0,
+      "resource_reconstruction_methods": 2,
+      "clean_installed_environments": 2,
+      "inherited_result_receipt_methods": 45,
+      "ruff": "passed",
+      "strict_mypy": "passed",
+      "pip_check": "passed",
+      "forensic_contracts": 6,
+      "source_unchanged_during_run": true,
+      "algorithm_change": "none; both submitted production ASTs match after stripping docstrings",
+      "scope": "Current transport/step cohort; initial 1632-test repository run remains separately bound historical evidence."
+    },
+    "audit_published_evidence_preservation": {
+      "files_checked": 137,
+      "changed": 0,
+      "scope": "130 committed evidence files plus 7 P9-3.3 evidence files published before this audit"
+    },
+    "audit_packet_portability": {
+      "run": "implementation/phase-9-grcv4/evidence/P9-3.3/audit-1-portability/run.json",
+      "status": "passed",
+      "numerical_subject_files_verified": 434,
+      "exported_members_verified": 964,
+      "tests_run": 4,
+      "failures": 0,
+      "errors": 0,
+      "skips": 0,
+      "git_directory_absent": true,
+      "source_unchanged_during_run": true,
+      "scope": "Pre-retention export consumed outside checkout; providers/helpers/assets loaded from extraction, numerical subject matches follow-up inputs. Final metadata retention does not change that subject.",
+      "result_location": "implementation/phase-9-grcv4/evidence/P9-3.3/audit-1-portability/run.json#/result",
+      "retention": "Original inputs and result consolidated into the run record before acceptance; original observation values and numerical subject preserved."
+    },
+    "pre_acceptance_evidence_cleanup": {
+      "references_inside_repository": true,
+      "reconstructed_subjects": {
+        "validation": 456,
+        "audit-1-native": 434,
+        "audit-1-followup": 456
+      },
+      "unchanged_execution_results": [
+        "validation",
+        "permission-surfaces",
+        "audit-1-native",
+        "audit-1-followup",
+        "audit-1-portability"
+      ],
+      "removed_duplicate_files": [
+        "audit-1-followup/actual.json",
+        "audit-1-portability/actual.json",
+        "audit-1-portability/inputs.json"
+      ],
+      "shared_replay_matches": true,
+      "before": {
+        "files": 16,
+        "bytes": 1393856
+      },
+      "after": {
+        "files": 13,
+        "bytes": 1175621
+      },
+      "bytes_reduced": 218235,
+      "expanded_original_inputs_sha256": {
+        "validation": "20cb16e35b282eb3459ca4e6934711e771df8a7897bf45c3946c8a6ae6dbcf87",
+        "audit-1-native": "630688aa79a46fd47c0504358b037a810a0c58ae7ffde08d49f74e45c6f6e98b",
+        "audit-1-followup": "11dcbbfed2768d5b84305b73a90082a6f2a2ed35b9100bd20531f8ca8332d17c"
+      },
+      "status": "passed",
+      "authorization": "User explicitly requested cleanup before P9-3.3 acceptance; all required source/evidence references must remain inside the repository.",
+      "verification_scope": "Storage/reference checks and exact source reconstruction; no numerical rerun or acceptance claimed.",
+      "source_spec_tool_files_unchanged": 4124,
+      "previous_evidence_files_unchanged": 137,
+      "reconstruction_recipe": "implementation/phase-9-grcv4/tranche-3/P9-3.3-Review.md#expanding-shared-input-records"
+    }
+  },
+  "claim_ceiling": "one provisional resource evaluation and exact charge gate from a supplied stage current result; no full candidate/root/step/lifecycle execution or numerical profile support",
+  "next_step": "Commit accepted P9-3.3, then address P9-3.1 Downloads references using repository-local inputs and preserved audit provenance. P9-3.4 retains paired rounded/exact conservation, cancellation-heavy divergence and mixed-scale star follow-through.",
+  "audit_disposition": "Native evidence and regression/interpretation gaps closed; no new local numerical algorithm defect. The user accepted P9-3.3 after the audits.",
+  "acceptance": {
+    "instruction": "so, accept p9-3.3 and commit, both audits didn't find anything",
+    "basis": "Explicit user acceptance after audit follow-up and repository-local evidence consolidation.",
+    "scope": "P9-3.3 local provisional resource/charge boundary; numerical limits and later-owner obligations remain recorded; no runtime profile support is accepted.",
+    "commit_binding": "The Git commit carrying this record authenticates the accepted subject. A separate successor permission transition can bind that commit without circular self-reference."
+  }
+}

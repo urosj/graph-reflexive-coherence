@@ -297,5 +297,442 @@ class MobilityTests(unittest.TestCase):
         self.assertFalse(hasattr(models, "GRCV4"))
 
 
+def charge_profile(**changes: float) -> Any:
+    from tests.models.test_grc_v4_geometry import stage_reference_fixture
+
+    return stage_reference_fixture(changes={"charge": changes}).profile
+
+
+def padded_charge_oracle(values: tuple[float, ...]) -> float:
+    """Exact rational internal nodes in an independently padded recursive tree."""
+    from fractions import Fraction
+
+    n = 1 << max(0, (len(values) - 1).bit_length())
+    leaves = values + (0.0,) * (n - len(values))
+
+    def reduce(left: int, right: int) -> float:
+        if right - left == 1:
+            return leaves[left]
+        middle = (left + right) // 2
+        return float(Fraction(reduce(left, middle)) + Fraction(reduce(middle, right)))
+
+    return reduce(0, n)
+
+
+class ChargeTests(unittest.TestCase):
+    def test_literal_tree_ties_odd_lengths_and_empty_space(self) -> None:
+        from pygrc.models.grc_v4_geometry import VertexScalar
+        from pygrc.models.grc_v4_transport import unit_charge
+
+        large = float(2**53)
+        for values, expected in [
+            ((), 0.0),
+            ((5e-324,), 5e-324),
+            ((large, 1.0, 1.0), large),
+            ((large, 1.0, 1.0, 1.0), large + 2),
+            ((1.0, 1.0, large), large + 2),
+            ((0.5, 1.0, 1.5), 3.0),
+        ]:
+            with self.subTest(values=values):
+                graph = GRCV4Graph(tuple(range(len(values))), ())
+                self.assertEqual(unit_charge(VertexScalar(graph, values)), expected)
+
+    def test_seeded_scale_trees_against_padded_rational_oracle(self) -> None:
+        import math
+        import random
+        from pygrc.models.grc_v4_geometry import VertexScalar
+        from pygrc.models.grc_v4_transport import unit_charge
+
+        rng = random.Random(933)
+        for case in range(160):
+            values = tuple(
+                math.ldexp(rng.choice((0.0, 1.0, 1.5)), rng.randint(-1074, 1022))
+                for _ in range(case % 19)
+            )
+            graph = GRCV4Graph(tuple(range(len(values))), ())
+            scalar = VertexScalar(graph, values)
+            with self.subTest(case=case):
+                try:
+                    expected = padded_charge_oracle(values)
+                except OverflowError:
+                    with self.assertRaisesRegex(ValueError, "nonfinite"):
+                        unit_charge(scalar)
+                else:
+                    self.assertEqual(unit_charge(scalar), expected)
+
+    def test_charge_rejects_nonresource_roles_negative_and_overflow(self) -> None:
+        from pygrc.models.grc_v4_geometry import VertexScalar
+        from pygrc.models.grc_v4_transport import unit_charge
+
+        graph = GRCV4Graph.from_payload(graph_payload())
+        for other in (PhysicalFlux(graph, (1, 2)), OneForm(graph, (1, 2)), [1, 2, 3]):
+            with self.assertRaises(TypeError):
+                unit_charge(other)  # type: ignore[arg-type]
+        for values in ((-5e-324, 1.0, 2.0), (1e308, 1e308, 0.0)):
+            with self.assertRaises(ValueError):
+                unit_charge(VertexScalar(graph, values))
+
+    def test_tolerance_inclusive_edges_and_signed_receipt_values(self) -> None:
+        import math
+        from pygrc.models.grc_v4_geometry import VertexScalar
+        from pygrc.models.grc_v4_transport import ChargeEvaluation
+
+        graph = GRCV4Graph(("u",), ())
+        profile = charge_profile(absolute_tolerance=0.25)
+        for actual, admitted in [
+            (1.25, True),
+            (math.nextafter(1.25, math.inf), False),
+            (0.75, True),
+            (math.nextafter(0.75, 0), False),
+        ]:
+            with self.subTest(actual=actual):
+                resource = VertexScalar(graph, (actual,))
+                check = ChargeEvaluation(resource, 1.0, profile)
+                self.assertEqual(check.admitted, admitted)
+                self.assertEqual(check.residual, actual - 1.0)
+                self.assertEqual(
+                    check.receipt_values(),
+                    {
+                        "target_charge": 1.0,
+                        "admitted_charge": actual,
+                        "residual": actual - 1.0,
+                    },
+                )
+                self.assertEqual(check.resource, resource)
+                self.assertIsNone(check.remainder)
+
+    def test_relative_scale_floor_and_exact_threshold_no_rounded_enlargement(
+        self,
+    ) -> None:
+        import math
+        from fractions import Fraction
+        from pygrc.models.grc_v4_geometry import VertexScalar
+        from pygrc.models.grc_v4_transport import ChargeEvaluation
+
+        graph = GRCV4Graph(("u",), ())
+        profile = charge_profile(relative_tolerance=0.25)
+        self.assertTrue(
+            ChargeEvaluation(VertexScalar(graph, (0.75,)), 0.5, profile).admitted
+        )
+        self.assertTrue(
+            ChargeEvaluation(VertexScalar(graph, (5.0,)), 4.0, profile).admitted
+        )
+        relative = float.fromhex("0x1.5555555555555p-53")
+        actual = math.nextafter(3.0, math.inf)
+        self.assertEqual(relative * 3.0, actual - 3.0)
+        self.assertLess(Fraction(relative) * 3, Fraction(actual) - 3)
+        self.assertFalse(
+            ChargeEvaluation(
+                VertexScalar(graph, (actual,)),
+                3.0,
+                charge_profile(relative_tolerance=relative),
+            ).admitted
+        )
+        self.assertTrue(
+            ChargeEvaluation(
+                VertexScalar(graph, (actual,)),
+                3.0,
+                charge_profile(relative_tolerance=math.nextafter(relative, math.inf)),
+            ).admitted
+        )
+
+    def test_extreme_tolerance_and_unrepresentable_residual_are_distinct(self) -> None:
+        from pygrc.models.grc_v4_geometry import VertexScalar
+        from pygrc.models.grc_v4_transport import ChargeEvaluation
+
+        graph = GRCV4Graph(("u",), ())
+        huge = charge_profile(relative_tolerance=1e308)
+        check = ChargeEvaluation(VertexScalar(graph, (0.0,)), 1e308, huge)
+        self.assertTrue(check.admitted)
+        self.assertEqual(check.residual, -1e308)
+        with self.assertRaisesRegex(ValueError, "nonfinite"):
+            ChargeEvaluation(VertexScalar(graph, (1e308,)), -1e308, huge)
+        # Frozen target schema is finite, not nonnegative; apply its inequality.
+        check = ChargeEvaluation(
+            VertexScalar(graph, (0.0,)), -0.25, charge_profile(absolute_tolerance=0.25)
+        )
+        self.assertTrue(check.admitted)
+        self.assertEqual(check.residual, 0.25)
+
+    def test_policy_and_measure_declarations_cannot_be_rehashed_aliases(self) -> None:
+        from tests.models.test_grc_v4_profile import reidentify
+        from pygrc.models.grc_v4_profile import resolve_profile
+        from pygrc.models.grc_v4_geometry import VertexScalar
+        from pygrc.models.grc_v4_transport import ChargeEvaluation
+
+        graph = GRCV4Graph(("u",), ())
+        base = charge_profile().to_payload()
+        for field in ("charge_profile_id", "measure_profile_id"):
+            params = json.loads(json.dumps(base["params_resolved"]))
+            identity = json.loads(json.dumps(base["identity_payload"]))
+            (identity if field == "charge_profile_id" else params["common"])[field] = (
+                "unimplemented_v1"
+            )
+            reidentify(params, identity)
+            with self.assertRaisesRegex(ValueError, "charge/measure"):
+                ChargeEvaluation(
+                    VertexScalar(graph, (1.0,)), 1.0, resolve_profile(params, identity)
+                )
+        for target in (True, float("nan"), float("inf"), -0.0):
+            with self.assertRaises((TypeError, ValueError)):
+                ChargeEvaluation(VertexScalar(graph, (1.0,)), target, charge_profile())
+
+    def test_charge_has_no_geometry_or_candidate_resource_ledger(self) -> None:
+        from tests.models.test_grc_v4_geometry import stage_reference_fixture
+        from pygrc.models.grc_v4_geometry import VertexScalar
+        from pygrc.models.grc_v4_transport import ChargeEvaluation
+
+        for candidate in ("A", "C"):
+            for gain in (0.0, 0.5, 1e308):
+                ref = stage_reference_fixture(candidate, gain=gain)
+                check = ChargeEvaluation(
+                    VertexScalar(ref.graph, (1, 2, 3)), 6.0, ref.profile
+                )
+                self.assertEqual(check.actual, 6.0)
+                self.assertTrue(check.admitted)
+
+
+class ContinuityTests(unittest.TestCase):
+    def test_repeated_primitive_transfers_can_hide_exact_stored_sum_growth(
+        self,
+    ) -> None:
+        from fractions import Fraction
+        from pygrc.models.grc_v4_geometry import OrientedEdge, VertexScalar
+        from pygrc.models.grc_v4_transport import (
+            ChargeEvaluation,
+            provisional_continuity,
+        )
+        from tests.models.test_grc_v4_geometry import stage_reference_fixture
+
+        graph = GRCV4Graph(("rich", "small"), (OrientedEdge("e", "rich", "small"),))
+        ref = stage_reference_fixture(
+            graph=graph,
+            changes={"charge": {"absolute_tolerance": 0.0, "relative_tolerance": 0.0}},
+        )
+        current = PhysicalFlux(graph, (1.0,))
+        original = VertexScalar(graph, (1e20, 0.0))
+        value = original
+        # These are primitive compositions, not full beats: no current solve,
+        # histories, clock, final readmission or commit is executed here.
+        for count in range(1, 101):
+            value = provisional_continuity(
+                value, current, 1.0, differential=ref.differential
+            )
+            self.assertEqual(value.values, (1e20, float(count)))
+            self.assertEqual(
+                sum(map(Fraction, value.values)) - sum(map(Fraction, original.values)),
+                Fraction(count),
+            )
+        check = ChargeEvaluation(value, 1e20, ref.profile)
+        self.assertTrue(check.admitted)
+        self.assertEqual(check.residual, 0.0)
+        self.assertIsNone(check.remainder)
+
+    def test_charge_alone_cannot_detect_wrong_sign_or_duplicate_update(self) -> None:
+        from pygrc.models.grc_v4_geometry import VertexScalar
+        from pygrc.models.grc_v4_transport import provisional_continuity, unit_charge
+        from tests.models.test_grc_v4_geometry import stage_reference_fixture
+
+        ref = stage_reference_fixture()
+        original = VertexScalar(ref.graph, (8.0, 6.0, 4.0))
+        forward = provisional_continuity(
+            original,
+            PhysicalFlux(ref.graph, (1.0, 0.5)),
+            0.25,
+            differential=ref.differential,
+        )
+        reverse = provisional_continuity(
+            original,
+            PhysicalFlux(ref.graph, (-1.0, -0.5)),
+            0.25,
+            differential=ref.differential,
+        )
+        twice = provisional_continuity(
+            forward,
+            PhysicalFlux(ref.graph, (1.0, 0.5)),
+            0.25,
+            differential=ref.differential,
+        )
+        # Literal per-vertex expectations distinguish three equal-charge flows.
+        self.assertEqual(forward.values, (7.75, 6.125, 4.125))
+        self.assertEqual(reverse.values, (8.25, 5.875, 3.875))
+        self.assertEqual(twice.values, (7.5, 6.25, 4.25))
+        self.assertEqual(
+            tuple(unit_charge(x) for x in (forward, reverse, twice)), (18.0,) * 3
+        )
+
+    def test_seeded_multigraphs_against_independent_exact_edge_scatter(self) -> None:
+        from fractions import Fraction
+        import random
+        from pygrc.models.grc_v4_geometry import (
+            GRCV4Differential,
+            OrientedEdge,
+            VertexScalar,
+        )
+        from pygrc.models.grc_v4_transport import provisional_continuity, unit_charge
+        from tests.models.test_grc_v4_geometry import stage_reference_fixture
+
+        common = stage_reference_fixture().profile.params_resolved.common
+        randomizer = random.Random(933)
+        for case in range(100):
+            count = randomizer.randint(1, 8)
+            vertices = tuple(f"v-{i}" for i in range(count))
+            edges = tuple(
+                OrientedEdge(
+                    f"e-{i}", randomizer.choice(vertices), randomizer.choice(vertices)
+                )
+                for i in range(randomizer.randint(0, 14))
+            )
+            graph = GRCV4Graph(vertices, edges)
+            current = tuple(float(randomizer.randint(-8, 8)) for _ in edges)
+            resource = tuple(float(randomizer.randint(40, 80)) for _ in vertices)
+            dt = Fraction(randomizer.choice((0, 1, 2, 3)), 8)
+            expected: dict[str | int, Fraction] = {
+                v: Fraction(c) for v, c in zip(vertices, resource, strict=True)
+            }
+            for edge, flux in zip(edges, current, strict=True):
+                expected[edge.tail_node_id] -= dt * Fraction(flux)
+                expected[edge.head_node_id] += dt * Fraction(flux)
+            result = provisional_continuity(
+                VertexScalar(graph, resource),
+                PhysicalFlux(graph, current),
+                float(dt),
+                differential=GRCV4Differential(graph, common),
+            )
+            with self.subTest(case=case):
+                self.assertEqual(
+                    result.values, tuple(float(expected[v]) for v in vertices)
+                )
+                self.assertEqual(unit_charge(result), sum(resource))
+
+    def test_continuity_all_48_exact_signed_coordinate_actions(self) -> None:
+        import itertools
+        from pygrc.models.grc_v4_geometry import (
+            GRCV4Differential,
+            GraphCoordinateAction,
+            OrientedEdge,
+            VertexScalar,
+        )
+        from pygrc.models.grc_v4_transport import provisional_continuity, unit_charge
+        from tests.models.test_grc_v4_geometry import stage_reference_fixture
+
+        ref = stage_reference_fixture()
+        graph = ref.graph
+        resource = VertexScalar(graph, (4.0, 5.0, 6.0))
+        current = PhysicalFlux(graph, (3.0, -2.0))
+        baseline = provisional_continuity(
+            resource, current, 0.25, differential=ref.differential
+        )
+        ids = ("renamed", "", 2**53 - 1)
+        for p in itertools.permutations(range(3)):
+            mapping = {old: ids[new] for new, old in enumerate(p)}
+            for u in itertools.permutations(range(2)):
+                for signs in itertools.product((-1, 1), repeat=2):
+                    edges = []
+                    for i, old in enumerate(u):
+                        edge = graph.oriented_edges[old]
+                        tail, head = (
+                            graph.node_index(edge.tail_node_id),
+                            graph.node_index(edge.head_node_id),
+                        )
+                        if signs[i] < 0:
+                            tail, head = head, tail
+                        edges.append(
+                            OrientedEdge(f"new-{i}", mapping[tail], mapping[head])
+                        )
+                    target = GRCV4Graph(ids, tuple(edges))
+                    action = GraphCoordinateAction(graph, target, p, u, signs)
+                    result = provisional_continuity(
+                        action.vertex_scalar(resource),
+                        action.physical_flux(current),
+                        0.25,
+                        differential=GRCV4Differential(
+                            target, ref.profile.params_resolved.common
+                        ),
+                    )
+                    self.assertEqual(result, action.vertex_scalar(baseline))
+                    self.assertEqual(unit_charge(result), 15.0)
+
+    def test_literal_mixed_graph_and_single_simultaneous_update(self) -> None:
+        from tests.models.test_grc_v4_geometry import stage_reference_fixture
+        from pygrc.models.grc_v4_geometry import OrientedEdge, VertexScalar
+        from pygrc.models.grc_v4_transport import provisional_continuity
+
+        graph = GRCV4Graph(
+            ("u", "v", "isolated"),
+            (
+                OrientedEdge("p", "u", "v"),
+                OrientedEdge("q", "v", "u"),
+                OrientedEdge("loop", "u", "u"),
+            ),
+        )
+        ref = stage_reference_fixture(graph=graph)
+        resource = VertexScalar(graph, (4, 5, 6))
+        flux = PhysicalFlux(graph, (3, -1, 1e308))
+        actual = provisional_continuity(
+            resource, flux, 0.5, differential=ref.differential
+        )
+        self.assertEqual(actual.values, (2.0, 7.0, 6.0))
+        self.assertEqual(resource.values, (4, 5, 6))
+        self.assertEqual(flux.values, (3, -1, 1e308))
+
+    def test_negative_candidate_is_not_repaired_by_continuity(self) -> None:
+        from tests.models.test_grc_v4_geometry import stage_reference_fixture
+        from pygrc.models.grc_v4_geometry import VertexScalar
+        from pygrc.models.grc_v4_transport import provisional_continuity
+
+        ref = stage_reference_fixture()
+        result = provisional_continuity(
+            VertexScalar(ref.graph, (0, 2, 3)),
+            PhysicalFlux(ref.graph, (1, 0)),
+            1.0,
+            differential=ref.differential,
+        )
+        self.assertEqual(result.values, (-1.0, 3.0, 3.0))
+
+    def test_zero_underflow_overflow_duration_and_operand_roles(self) -> None:
+        from tests.models.test_grc_v4_geometry import stage_reference_fixture
+        from pygrc.models.grc_v4_geometry import VertexScalar
+        from pygrc.models.grc_v4_transport import provisional_continuity
+
+        ref = stage_reference_fixture()
+        resource = VertexScalar(ref.graph, (1, 2, 3))
+        flux = PhysicalFlux(ref.graph, (0.5, 0))
+        for dt in (0.0, 5e-324):
+            self.assertEqual(
+                provisional_continuity(
+                    resource, flux, dt, differential=ref.differential
+                ),
+                resource,
+            )
+        for dt in (-1.0, -0.0, float("inf"), True):
+            with self.assertRaises((TypeError, ValueError)):
+                provisional_continuity(
+                    resource, flux, dt, differential=ref.differential
+                )
+        with self.assertRaisesRegex(ValueError, "nonfinite"):
+            provisional_continuity(
+                resource,
+                PhysicalFlux(ref.graph, (2, 0)),
+                1e308,
+                differential=ref.differential,
+            )
+        with self.assertRaises(TypeError):
+            provisional_continuity(
+                resource,
+                OneForm(ref.graph, (1, 0)),  # type: ignore[arg-type]
+                1.0,
+                differential=ref.differential,
+            )
+        foreign = replace(ref.graph, live_node_ids=ref.graph.live_node_ids[::-1])
+        with self.assertRaises(ValueError):
+            provisional_continuity(
+                resource,
+                PhysicalFlux(foreign, (1, 0)),
+                1.0,
+                differential=ref.differential,
+            )
+
+
 if __name__ == "__main__":
     unittest.main()

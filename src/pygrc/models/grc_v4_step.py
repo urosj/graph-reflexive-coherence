@@ -1,4 +1,4 @@
-"""Result/receipt composition and duration prefix; no numerical step or state writer.
+"""Result composition, duration admission and the provisional resource boundary.
 
 The lifecycle owner must supply a genuine prestate digest and still admit the
 complete graph/profile/context/state before running a strict request. This
@@ -8,8 +8,8 @@ module neither discovers those inputs nor claims runtime-profile support.
 from __future__ import annotations
 
 from collections.abc import Mapping
-from dataclasses import dataclass, fields
-from typing import Any, ClassVar, Literal, TypeAlias, cast
+from dataclasses import dataclass, field as dataclass_field, fields
+from typing import Any, ClassVar, Literal, TypeAlias, cast, get_args
 
 from .grc_v4 import GRCV4StepRequest, GRCV4StepRequestInput, _nested_record
 from .grc_v4_codec import (
@@ -20,12 +20,22 @@ from .grc_v4_codec import (
     validate_payload,
 )
 from .grc_v4_profile import _Record
+from .grc_v4_geometry import (
+    GeometryStageInputs,
+    PhysicalFlux,
+    VertexScalar,
+    _local_payload,
+    _require_coordinates,
+    _state_payload,
+)
 from .grc_v4_state import (
     FrozenJSONMap,
+    GRCV4AuthoritativeState,
     GRCV4LifecycleResult,
     GRCV4StepResult,
     SolverDisposition,
 )
+from .grc_v4_transport import ChargeEvaluation, provisional_continuity
 
 OperationStage: TypeAlias = Literal[
     "admission",
@@ -721,3 +731,277 @@ def admit_step_request(
     payload = detached.to_payload()
     payload["schema_version"] = "grcv4-step-request-v1"
     return GRCV4StepRequest.from_payload(payload)
+
+
+@dataclass(frozen=True, slots=True)
+class CurrentSelection:
+    """A stage owner's supplied result; construction is not a root certificate.
+
+    The later candidate/realization owner must actually execute residual,
+    branch/stratum and current-domain checks. This record lets the common
+    boundary reject failed dispositions, foreign inputs and predictor/trial
+    substitutions without manufacturing an executable candidate provider.
+    """
+
+    inputs: GeometryStageInputs
+    solver_disposition: SolverDisposition
+    current: PhysicalFlux | None
+
+    def __post_init__(self) -> None:
+        if type(self.inputs) is not GeometryStageInputs:
+            raise TypeError("current selection requires captured stage inputs")
+        inputs = GeometryStageInputs.from_payload(self.inputs.to_payload())
+        if type(
+            self.solver_disposition
+        ) is not str or self.solver_disposition not in get_args(SolverDisposition):
+            raise ValueError("unknown current solver disposition")
+        if self.current is not None:
+            _require_coordinates(
+                self.current, PhysicalFlux, inputs.geometry.reference.graph
+            )
+            object.__setattr__(
+                self, "current", PhysicalFlux(self.current.graph, self.current.values)
+            )
+        object.__setattr__(self, "inputs", inputs)
+
+    def to_payload(self) -> dict[str, Any]:
+        return {
+            "descriptor_version": "grcv4-current-selection-v1",
+            "inputs": self.inputs.to_payload(),
+            "solver_disposition": self.solver_disposition,
+            "current": None if self.current is None else list(self.current.values),
+        }
+
+    @classmethod
+    def from_payload(cls, value: object) -> CurrentSelection:
+        data = _local_payload(
+            value,
+            {"descriptor_version", "inputs", "solver_disposition", "current"},
+            "descriptor_version",
+            "grcv4-current-selection-v1",
+        )
+        inputs = GeometryStageInputs.from_payload(data["inputs"])
+        current = (
+            None
+            if data["current"] is None
+            else PhysicalFlux(
+                inputs.geometry.reference.graph, cast(Any, data["current"])
+            )
+        )
+        return cls(inputs, cast(SolverDisposition, data["solver_disposition"]), current)
+
+
+class ResourceBoundaryError(ValueError):
+    """Local rejection to be composed by the later operation/receipt owner.
+
+    This is not a returned GRCV4StepResult or evidence that a live lifecycle
+    rolled back. No authoritative model is consumed or mutated here.
+    """
+
+    def __init__(
+        self,
+        stage: OperationStage,
+        code: FailureCode,
+        message: str,
+        *,
+        charge: ChargeEvaluation | None = None,
+    ) -> None:
+        super().__init__(message)
+        self.stage = stage
+        self.code = code
+        self.charge = charge
+
+
+def _resource_charge(
+    inputs: GeometryStageInputs, resource: VertexScalar, stage: OperationStage
+) -> ChargeEvaluation:
+    try:
+        evaluation = ChargeEvaluation(
+            resource, inputs.Q_target, inputs.geometry.reference.profile
+        )
+    except ValueError as exc:
+        code: FailureCode = (
+            "domain_failure"
+            if any(v < 0 for v in resource.values)
+            else "nonfinite_value"
+            if "nonfinite" in str(exc)
+            else "domain_failure"
+        )
+        raise ResourceBoundaryError(stage, code, str(exc)) from exc
+    if not evaluation.admitted:
+        raise ResourceBoundaryError(
+            stage,
+            "charge_failure",
+            "resource charge is outside the declared tolerance",
+            charge=evaluation,
+        )
+    return evaluation
+
+
+_RESOURCE_SOLVER_FAILURES: dict[SolverDisposition, FailureCode] = {
+    "domain_failure": "domain_failure",
+    "singular": "singular_solver",
+    "conditioning_failure": "conditioning_failure",
+    "nonfinite": "nonfinite_value",
+    "no_admitted_root": "no_admitted_root",
+    "multiple_admitted_roots": "multiple_admitted_roots",
+}
+_SELECTED_CURRENT_STAGES = {
+    "OS": "os_corrector",
+    "CI": "ci_trial",
+    "PC": "pc_old_history",
+    "CI+PC": "cipc_trial",
+    "RG2b": "rg2b_section",
+}
+
+
+@dataclass(frozen=True, slots=True)
+class ProvisionalResourceStep:
+    """The common resource-write/charge boundary inside a complete step.
+
+    The caller independently captures pre-read inputs and supplies the actual
+    current owner's result. A positive-duration evaluation invokes continuity
+    once, validates its resource/charge and returns a provisional C with old
+    nonresource authority. A zero-duration evaluation checks local prestate
+    and reset charges and returns their unchanged resource with no current
+    selection or writer advancement. Full admission, current/root execution,
+    final-C reconstruction, writers, clock advancement and atomic lifecycle
+    commit remain with their owners; this is not a complete numerical step.
+    """
+
+    prestate: GeometryStageInputs
+    selection: CurrentSelection | None
+    provisional_state: GRCV4AuthoritativeState = dataclass_field(init=False)
+    charge: ChargeEvaluation = dataclass_field(init=False)
+    continuity_evaluations: int = dataclass_field(init=False)
+
+    def __post_init__(self) -> None:
+        if type(self.prestate) is not GeometryStageInputs:
+            raise TypeError(
+                "resource boundary requires independently captured prestate"
+            )
+        before = GeometryStageInputs.from_payload(self.prestate.to_payload())
+        if before.stage != "pre_read" or before.trial_current is not None:
+            raise ResourceBoundaryError(
+                "admission", "stale_cache", "resource boundary requires pre-read inputs"
+            )
+        ref = before.geometry.reference
+        initial = VertexScalar(ref.graph, before.current.C)
+        charge = _resource_charge(before, initial, "admission")
+        _resource_charge(before, VertexScalar(ref.graph, before.reset.C), "admission")
+        selection = self.selection
+        if before.dt == 0:
+            if selection is not None:
+                raise ResourceBoundaryError(
+                    "admission",
+                    "domain_failure",
+                    "zero duration has no current-selection or writer advancement",
+                )
+            resource = initial
+        else:
+            if type(selection) is not CurrentSelection:
+                raise TypeError("positive duration requires the current owner's result")
+            selection = CurrentSelection.from_payload(selection.to_payload())
+            chosen = selection.inputs
+            # Scientific/lifecycle IDs omit duration and actual stage geometry.
+            # Bind those separately without forbidding a lawful corrected Hodge.
+            if (
+                canonical_json_bytes(before.scientific_state_preimage)
+                != canonical_json_bytes(chosen.scientific_state_preimage)
+                or before.source_lifecycle_id != chosen.source_lifecycle_id
+                or before.operation_id != chosen.operation_id
+                or before.dt != chosen.dt
+                or canonical_json_bytes(ref.to_payload())
+                != canonical_json_bytes(chosen.geometry.reference.to_payload())
+                or before.context != chosen.context
+                or chosen.stage
+                != _SELECTED_CURRENT_STAGES[ref.profile.identity_payload.realization]
+            ):
+                raise ResourceBoundaryError(
+                    "candidate_solve",
+                    "stale_cache",
+                    "selected current belongs to another input or realization stage",
+                )
+            if selection.solver_disposition != "valid_root":
+                raise ResourceBoundaryError(
+                    "candidate_solve",
+                    _RESOURCE_SOLVER_FAILURES[selection.solver_disposition],
+                    "failed solver disposition cannot supply a fallback current",
+                )
+            if selection.current is None:
+                raise ResourceBoundaryError(
+                    "candidate_solve",
+                    "domain_failure",
+                    "valid root lacks a typed current",
+                )
+            if (
+                chosen.stage in ("ci_trial", "cipc_trial")
+                and selection.current != chosen.trial_current
+            ):
+                raise ResourceBoundaryError(
+                    "candidate_solve",
+                    "stale_cache",
+                    "selected current differs from the accepted trial evaluation",
+                )
+            try:
+                resource = provisional_continuity(
+                    initial, selection.current, before.dt, differential=ref.differential
+                )
+            except ValueError as exc:
+                raise ResourceBoundaryError(
+                    "continuity", "nonfinite_value", str(exc)
+                ) from exc
+            charge = _resource_charge(before, resource, "charge_admission")
+        provisional = GRCV4AuthoritativeState(
+            resource.values, before.current.W_A, before.current.Z_4
+        )
+        for name, value in (
+            ("prestate", before),
+            ("selection", selection),
+            ("provisional_state", provisional),
+            ("charge", charge),
+            ("continuity_evaluations", int(before.dt > 0)),
+        ):
+            object.__setattr__(self, name, value)
+
+    def consume(
+        self,
+        *,
+        expected_prestate: GeometryStageInputs,
+        expected_selection: CurrentSelection | None,
+    ) -> GRCV4AuthoritativeState:
+        """Check independently held expectations before a final-C consumer."""
+        if type(expected_prestate) is not GeometryStageInputs or (
+            expected_selection is not None
+            and type(expected_selection) is not CurrentSelection
+        ):
+            raise TypeError(
+                "resource consumption requires typed independent expectations"
+            )
+        if canonical_json_bytes(self.prestate.to_payload()) != canonical_json_bytes(
+            expected_prestate.to_payload()
+        ) or canonical_json_bytes(
+            None if self.selection is None else self.selection.to_payload()
+        ) != canonical_json_bytes(
+            None if expected_selection is None else expected_selection.to_payload()
+        ):
+            raise ResourceBoundaryError(
+                "final_reconstruction",
+                "stale_cache",
+                "stale provisional resource result",
+            )
+        return self.provisional_state
+
+    def to_payload(self) -> dict[str, Any]:
+        """Local reconstruction evidence, separate from frozen lifecycle wire data."""
+        return {
+            "descriptor_version": "grcv4-provisional-resource-step-v1",
+            "prestate": self.prestate.to_payload(),
+            "selection": None
+            if self.selection is None
+            else self.selection.to_payload(),
+            "provisional_state": _state_payload(self.provisional_state),
+            "charge": self.charge.receipt_values(),
+            "remainder": self.charge.remainder,
+            "continuity_evaluations": self.continuity_evaluations,
+        }

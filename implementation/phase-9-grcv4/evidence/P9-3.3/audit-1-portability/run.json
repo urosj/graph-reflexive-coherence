@@ -1,0 +1,102 @@
+{
+  "schema": "phase9_leaf_run_v1",
+  "iteration_id": "P9-3.3",
+  "status": "passed",
+  "started_utc": "2026-09-07T13:03:18.205013+00:00",
+  "replay_argv": [
+    "<venv-python>",
+    "<extracted-runner>",
+    "--repo",
+    "<checkout>",
+    "--output",
+    "<fresh-output>"
+  ],
+  "commands": [
+    {
+      "argv": [
+        "/home/uros/RC-github/graph-reflexive-coherence/.venv/bin/python",
+        "-m",
+        "tests.models.test_grc_v4_step",
+        "--export-p933-audit",
+        "/tmp/p933-packet-yfv0_168/review.zip"
+      ],
+      "cwd": "/home/uros/RC-github/graph-reflexive-coherence",
+      "exit_status": 0,
+      "stdout": "{\"bytes\": 16528890, \"files\": 964, \"sha256\": \"18ecf06795f24469a296abb034da41c5a7056a2b6ca662b47282e9db60d67a62\"}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/home/uros/RC-github/graph-reflexive-coherence/.venv/bin/python",
+        "-I",
+        "-c",
+        "\nimport importlib, json, pathlib, sys, unittest\nroot = pathlib.Path(sys.argv[1]).resolve()\nsys.path[:0] = [str(root / 'src'), str(root)]\nmodules = ['pygrc.models.' + name for name in ('grc_v4', 'grc_v4_transport', 'grc_v4_step', 'grc_v4_geometry', 'grc_v4_state', 'grc_v4_profile', 'grc_v4_codec')]\nmodules += ['tests.models.' + name for name in ('test_grc_v4_geometry', 'test_grc_v4_profile', 'test_grc_v4_step', 'test_grc_v4_transport')]\norigins = {}\nfor name in modules:\n    path = pathlib.Path(importlib.import_module(name).__file__).resolve()\n    assert path.is_relative_to(root), (name, str(path))\n    origins[name] = str(path.relative_to(root))\nfrom pygrc.models import grc_v4_codec as codec\nfrom importlib import resources\nasset_root = resources.files(codec._ASSET_PACKAGE)\nassert pathlib.Path(str(asset_root)).resolve().is_relative_to(root)\nnames = [\n    'tests.models.test_grc_v4_step.ResourceBoundaryTests.test_zero_rounded_residual_can_hide_exact_stored_sum_growth',\n    'tests.models.test_grc_v4_step.ResourceBoundaryTests.test_cycle_circulation_with_same_resource_cannot_borrow_selection',\n    'tests.models.test_grc_v4_transport.ContinuityTests.test_repeated_primitive_transfers_can_hide_exact_stored_sum_growth',\n    'tests.models.test_grc_v4_step.ResourceReconstructionTests.test_resource_reconstruction_outside_checkout_with_three_hash_seeds',\n]\nresult = unittest.TextTestRunner(verbosity=2).run(unittest.defaultTestLoader.loadTestsFromNames(names))\nassert result.testsRun == 4 and not result.skipped\nprint(json.dumps({'loaded_origins': origins, 'tests_run': result.testsRun, 'skips': len(result.skipped), 'failures': len(result.failures), 'errors': len(result.errors), 'passed': result.wasSuccessful()}))\nraise SystemExit(not result.wasSuccessful())\n",
+        "/tmp/p933-packet-yfv0_168/extracted"
+      ],
+      "cwd": "/tmp/p933-packet-yfv0_168",
+      "exit_status": 0,
+      "stdout": "{\"loaded_origins\": {\"pygrc.models.grc_v4\": \"src/pygrc/models/grc_v4.py\", \"pygrc.models.grc_v4_transport\": \"src/pygrc/models/grc_v4_transport.py\", \"pygrc.models.grc_v4_step\": \"src/pygrc/models/grc_v4_step.py\", \"pygrc.models.grc_v4_geometry\": \"src/pygrc/models/grc_v4_geometry.py\", \"pygrc.models.grc_v4_state\": \"src/pygrc/models/grc_v4_state.py\", \"pygrc.models.grc_v4_profile\": \"src/pygrc/models/grc_v4_profile.py\", \"pygrc.models.grc_v4_codec\": \"src/pygrc/models/grc_v4_codec.py\", \"tests.models.test_grc_v4_geometry\": \"tests/models/test_grc_v4_geometry.py\", \"tests.models.test_grc_v4_profile\": \"tests/models/test_grc_v4_profile.py\", \"tests.models.test_grc_v4_step\": \"tests/models/test_grc_v4_step.py\", \"tests.models.test_grc_v4_transport\": \"tests/models/test_grc_v4_transport.py\"}, \"tests_run\": 4, \"skips\": 0, \"failures\": 0, \"errors\": 0, \"passed\": true}\n",
+      "stderr": "test_zero_rounded_residual_can_hide_exact_stored_sum_growth (tests.models.test_grc_v4_step.ResourceBoundaryTests.test_zero_rounded_residual_can_hide_exact_stored_sum_growth) ... ok\ntest_cycle_circulation_with_same_resource_cannot_borrow_selection (tests.models.test_grc_v4_step.ResourceBoundaryTests.test_cycle_circulation_with_same_resource_cannot_borrow_selection) ... ok\ntest_repeated_primitive_transfers_can_hide_exact_stored_sum_growth (tests.models.test_grc_v4_transport.ContinuityTests.test_repeated_primitive_transfers_can_hide_exact_stored_sum_growth) ... ok\ntest_resource_reconstruction_outside_checkout_with_three_hash_seeds (tests.models.test_grc_v4_step.ResourceReconstructionTests.test_resource_reconstruction_outside_checkout_with_three_hash_seeds) ... ok\n\n----------------------------------------------------------------------\nRan 4 tests in 36.015s\n\nOK\n"
+    }
+  ],
+  "claim_ceiling": "Numerical packet consumption only; no standalone historical authority replay or additional clean package environment.",
+  "source_unchanged_during_run": true,
+  "completed_utc": "2026-09-07T13:04:00.313731+00:00",
+  "artifacts": {},
+  "shared_fields": {
+    "reference": {
+      "path": "../validation/run.json",
+      "sha256": "d5067e59440bd937cba645cd232a19c7e6fe81525d31b4b2c16054b324743e6a",
+      "pointer": ""
+    },
+    "fields": [
+      "python",
+      "platform",
+      "dependencies"
+    ]
+  },
+  "retention": "User-authorized pre-acceptance cleanup: shared data referenced by path and hash; original execution times, results and tested source versions retained.",
+  "inputs": {
+    "numerical_subject": {
+      "inputs": "implementation/phase-9-grcv4/evidence/P9-3.3/audit-1-followup/inputs.json",
+      "sha256": "c30c21928bea8c639305d31b34b06bd611df02b13cd7a0981833c076410cecfa",
+      "original_sha256": "11dcbbfed2768d5b84305b73a90082a6f2a2ed35b9100bd20531f8ca8332d17c"
+    },
+    "runner": {
+      "name": "p933_packet_check.py",
+      "source": "\"\"\"Validate a fresh P9-3.3 export using only its numerical source and assets.\"\"\"\nimport argparse\nfrom datetime import datetime, timezone\nimport hashlib\nimport importlib.metadata\nimport json\nfrom pathlib import Path, PurePosixPath\nimport platform\nimport stat\nimport subprocess\nimport sys\nimport tempfile\nimport zipfile\n\n\ndef sha(data):\n    return hashlib.sha256(data).hexdigest()\n\n\ndef main():\n    parser = argparse.ArgumentParser(description=__doc__)\n    parser.add_argument('--repo', type=Path, required=True)\n    parser.add_argument('--output', type=Path, required=True)\n    args = parser.parse_args()\n    root, output = args.repo.resolve(), args.output.resolve()\n    output.mkdir(parents=True, exist_ok=False)\n    followup = 'implementation/phase-9-grcv4/evidence/P9-3.3/audit-1-followup/inputs.json'\n    subject = json.loads((root / followup).read_text())['subject']\n    numerical = {p: h for p, h in subject['tracked_file_sha256'].items()\n                 if p.startswith(('src/', 'tests/', 'specs/')) or p in ('pyproject.toml', 'README.md', 'LICENSE')}\n    consumer = '''\nimport importlib, json, pathlib, sys, unittest\nroot = pathlib.Path(sys.argv[1]).resolve()\nsys.path[:0] = [str(root / 'src'), str(root)]\nmodules = ['pygrc.models.' + name for name in ('grc_v4', 'grc_v4_transport', 'grc_v4_step', 'grc_v4_geometry', 'grc_v4_state', 'grc_v4_profile', 'grc_v4_codec')]\nmodules += ['tests.models.' + name for name in ('test_grc_v4_geometry', 'test_grc_v4_profile', 'test_grc_v4_step', 'test_grc_v4_transport')]\norigins = {}\nfor name in modules:\n    path = pathlib.Path(importlib.import_module(name).__file__).resolve()\n    assert path.is_relative_to(root), (name, str(path))\n    origins[name] = str(path.relative_to(root))\nfrom pygrc.models import grc_v4_codec as codec\nfrom importlib import resources\nasset_root = resources.files(codec._ASSET_PACKAGE)\nassert pathlib.Path(str(asset_root)).resolve().is_relative_to(root)\nnames = [\n    'tests.models.test_grc_v4_step.ResourceBoundaryTests.test_zero_rounded_residual_can_hide_exact_stored_sum_growth',\n    'tests.models.test_grc_v4_step.ResourceBoundaryTests.test_cycle_circulation_with_same_resource_cannot_borrow_selection',\n    'tests.models.test_grc_v4_transport.ContinuityTests.test_repeated_primitive_transfers_can_hide_exact_stored_sum_growth',\n    'tests.models.test_grc_v4_step.ResourceReconstructionTests.test_resource_reconstruction_outside_checkout_with_three_hash_seeds',\n]\nresult = unittest.TextTestRunner(verbosity=2).run(unittest.defaultTestLoader.loadTestsFromNames(names))\nassert result.testsRun == 4 and not result.skipped\nprint(json.dumps({'loaded_origins': origins, 'tests_run': result.testsRun, 'skips': len(result.skipped), 'failures': len(result.failures), 'errors': len(result.errors), 'passed': result.wasSuccessful()}))\nraise SystemExit(not result.wasSuccessful())\n'''\n    inputs = {'numerical_subject': {'inputs': followup, 'sha256': sha((root / followup).read_bytes())},\n              'runner': {'name': Path(__file__).name, 'source': Path(__file__).read_text()},\n              'consumer': consumer,\n              'scope': 'Export and outside-checkout numerical consumption before retaining this result. Later document/evidence retention does not change the numerical subject.'}\n    (output / 'inputs.json').write_text(json.dumps(inputs, indent=2) + '\\n')\n    record = {'schema': 'phase9_leaf_run_v1', 'iteration_id': 'P9-3.3', 'status': 'running',\n              'started_utc': datetime.now(timezone.utc).isoformat(), 'python': sys.version,\n              'platform': platform.platform(), 'subject_inputs': 'inputs.json',\n              'dependencies': sorted(f\"{d.metadata['Name']}=={d.version}\" for d in importlib.metadata.distributions()),\n              'replay_argv': ['<venv-python>', '<extracted-runner>', '--repo', '<checkout>', '--output', '<fresh-output>'],\n              'commands': [], 'claim_ceiling': 'Numerical packet consumption only; no standalone historical authority replay or additional clean package environment.'}\n    def retain():\n        (output / 'run.json').write_text(json.dumps(record, indent=2) + '\\n')\n    def run(argv, cwd):\n        print('Executing', ' '.join(argv[:6]), flush=True)\n        p = subprocess.run(argv, cwd=cwd, capture_output=True, text=True, timeout=240)\n        record['commands'].append({'argv': argv, 'cwd': str(cwd), 'exit_status': p.returncode,\n                                   'stdout': p.stdout, 'stderr': p.stderr})\n        retain()\n        if p.returncode:\n            raise RuntimeError('Packet verification command failed')\n        return p.stdout\n    retain()\n    try:\n        with tempfile.TemporaryDirectory(prefix='p933-packet-') as temp:\n            scratch = Path(temp)\n            packet = scratch / 'review.zip'\n            exported = json.loads(run([sys.executable, '-m', 'tests.models.test_grc_v4_step',\n                                       '--export-p933-audit', str(packet)], root))\n            extracted = scratch / 'extracted'\n            with zipfile.ZipFile(packet) as archive:\n                manifest = json.loads(archive.read('BUNDLE-MANIFEST.json'))\n                entries = {e['path']: e for e in manifest['files']}\n                assert len(entries) == len(manifest['files'])\n                assert set(archive.namelist()) == set(entries) | {'BUNDLE-MANIFEST.json'}\n                assert len(archive.namelist()) == len(set(archive.namelist()))\n                for info in archive.infolist():\n                    p = PurePosixPath(info.filename)\n                    assert not p.is_absolute() and '..' not in p.parts\n                    assert not stat.S_ISLNK(info.external_attr >> 16)\n                    data = archive.read(info)\n                    if info.filename in entries:\n                        entry = entries[info.filename]\n                        assert len(data) == entry['bytes'] and sha(data) == entry['sha256']\n                    target = extracted / info.filename\n                    target.parent.mkdir(parents=True, exist_ok=True)\n                    target.write_bytes(data)\n            assert not (extracted / '.git').exists()\n            assert all(entries[p]['sha256'] == h for p, h in numerical.items())\n            result = json.loads(run([sys.executable, '-I', '-c', consumer, str(extracted)], scratch))\n            actual = {'export': exported, 'manifest_members_verified': len(entries),\n                      'numerical_subject_files_verified': len(numerical), 'git_directory_absent': True,\n                      'consumer': result}\n            (output / 'actual.json').write_text(json.dumps(actual, indent=2) + '\\n')\n        record['source_unchanged_during_run'] = all(sha((root / p).read_bytes()) == h for p, h in numerical.items())\n        assert record['source_unchanged_during_run']\n        record['status'] = 'passed'\n    except Exception as error:\n        record['status'], record['error'] = 'failed', repr(error)\n    record['completed_utc'] = datetime.now(timezone.utc).isoformat()\n    record['artifacts'] = {p.name: sha(p.read_bytes()) for p in output.iterdir() if p.name != 'run.json'}\n    retain()\n    return int(record['status'] != 'passed')\n\n\nif __name__ == '__main__':\n    raise SystemExit(main())\n"
+    },
+    "consumer": "\nimport importlib, json, pathlib, sys, unittest\nroot = pathlib.Path(sys.argv[1]).resolve()\nsys.path[:0] = [str(root / 'src'), str(root)]\nmodules = ['pygrc.models.' + name for name in ('grc_v4', 'grc_v4_transport', 'grc_v4_step', 'grc_v4_geometry', 'grc_v4_state', 'grc_v4_profile', 'grc_v4_codec')]\nmodules += ['tests.models.' + name for name in ('test_grc_v4_geometry', 'test_grc_v4_profile', 'test_grc_v4_step', 'test_grc_v4_transport')]\norigins = {}\nfor name in modules:\n    path = pathlib.Path(importlib.import_module(name).__file__).resolve()\n    assert path.is_relative_to(root), (name, str(path))\n    origins[name] = str(path.relative_to(root))\nfrom pygrc.models import grc_v4_codec as codec\nfrom importlib import resources\nasset_root = resources.files(codec._ASSET_PACKAGE)\nassert pathlib.Path(str(asset_root)).resolve().is_relative_to(root)\nnames = [\n    'tests.models.test_grc_v4_step.ResourceBoundaryTests.test_zero_rounded_residual_can_hide_exact_stored_sum_growth',\n    'tests.models.test_grc_v4_step.ResourceBoundaryTests.test_cycle_circulation_with_same_resource_cannot_borrow_selection',\n    'tests.models.test_grc_v4_transport.ContinuityTests.test_repeated_primitive_transfers_can_hide_exact_stored_sum_growth',\n    'tests.models.test_grc_v4_step.ResourceReconstructionTests.test_resource_reconstruction_outside_checkout_with_three_hash_seeds',\n]\nresult = unittest.TextTestRunner(verbosity=2).run(unittest.defaultTestLoader.loadTestsFromNames(names))\nassert result.testsRun == 4 and not result.skipped\nprint(json.dumps({'loaded_origins': origins, 'tests_run': result.testsRun, 'skips': len(result.skipped), 'failures': len(result.failures), 'errors': len(result.errors), 'passed': result.wasSuccessful()}))\nraise SystemExit(not result.wasSuccessful())\n",
+    "scope": "Export and outside-checkout numerical consumption before retaining this result. Later document/evidence retention does not change the numerical subject."
+  },
+  "result": {
+    "export": {
+      "bytes": 16528890,
+      "files": 964,
+      "sha256": "18ecf06795f24469a296abb034da41c5a7056a2b6ca662b47282e9db60d67a62"
+    },
+    "manifest_members_verified": 964,
+    "numerical_subject_files_verified": 434,
+    "git_directory_absent": true,
+    "consumer": {
+      "loaded_origins": {
+        "pygrc.models.grc_v4": "src/pygrc/models/grc_v4.py",
+        "pygrc.models.grc_v4_transport": "src/pygrc/models/grc_v4_transport.py",
+        "pygrc.models.grc_v4_step": "src/pygrc/models/grc_v4_step.py",
+        "pygrc.models.grc_v4_geometry": "src/pygrc/models/grc_v4_geometry.py",
+        "pygrc.models.grc_v4_state": "src/pygrc/models/grc_v4_state.py",
+        "pygrc.models.grc_v4_profile": "src/pygrc/models/grc_v4_profile.py",
+        "pygrc.models.grc_v4_codec": "src/pygrc/models/grc_v4_codec.py",
+        "tests.models.test_grc_v4_geometry": "tests/models/test_grc_v4_geometry.py",
+        "tests.models.test_grc_v4_profile": "tests/models/test_grc_v4_profile.py",
+        "tests.models.test_grc_v4_step": "tests/models/test_grc_v4_step.py",
+        "tests.models.test_grc_v4_transport": "tests/models/test_grc_v4_transport.py"
+      },
+      "tests_run": 4,
+      "skips": 0,
+      "failures": 0,
+      "errors": 0,
+      "passed": true
+    }
+  }
+}

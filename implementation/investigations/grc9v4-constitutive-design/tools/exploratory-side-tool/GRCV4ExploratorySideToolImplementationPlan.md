@@ -1696,3 +1696,16 @@ browser and exports bind `geometry_acceptance`, eight dependency-ready leaves
 and the same twenty-three eligible runtime paths. Missing or forged acceptance,
 self-acceptance of P9-3.2, and unauthorized P9-3.3 work remain fail-closed.
 P9-3.2 implementation is pending review; runtime support remains empty.
+
+
+### P9-3.3 resource and charge entry
+
+P9-3.2 acceptance at committed subject `77286b2` is recorded separately from
+its historical review. The accepted entry exposes `stage_acceptance`, nine
+dependency-ready leaves and the same twenty-three eligible runtime paths.
+The step ownership adapter carries the frozen checklist's explicit P9-3.3
+resource-boundary assignment onto the existing step source/test pair. Missing
+or forged acceptance, premature P9-3.4 work and self-acceptance remain rejected.
+API/notebook/browser and their exports keep numerical support empty. The
+Phase 9 P9-3.3 review links numerical charge/continuity evidence; these display
+checks do not execute candidate roots or promote source claim dispositions.

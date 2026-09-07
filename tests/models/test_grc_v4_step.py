@@ -9,9 +9,16 @@ from dataclasses import fields, replace
 from hashlib import sha256
 import json
 import math
+import os
 from pathlib import Path
+import shutil
+import subprocess
+import sys
+import tempfile
 from typing import Any, cast, get_args
 import unittest
+from unittest.mock import patch
+import venv
 
 from pygrc.models.grc_v4 import (
     GRCV4StepRequest,
@@ -29,11 +36,14 @@ from pygrc.core.events import GRCEvent
 from pygrc.models.grc_v4_state import FrozenJSONMap, GRCV4Event
 from pygrc.models.grc_v4_step import (
     CommitPayload,
+    CurrentSelection,
     FailureCode,
     FailureReceipt,
     FailureReceiptIdentityPayload,
     GRCV4Failure,
     OperationStage,
+    ProvisionalResourceStep,
+    ResourceBoundaryError,
     StepResultEvidence,
     SuccessfulReceiptEnvelope,
     admit_step_request,
@@ -42,6 +52,23 @@ from pygrc.models.grc_v4_step import (
     negative_duration_result,
 )
 from pygrc.models.grc_v4_state import GRCV4LifecycleResult, GRCV4StepResult
+from pygrc.models.grc_v4_state import GRCV4AuthoritativeState, SolverDisposition
+from pygrc.models.grc_v4_geometry import (
+    GRCV4Graph,
+    GeometryStage,
+    GeometryStageInputs,
+    H_profile,
+    K4Tensor,
+    OneForm,
+    OrientedEdge,
+    PhysicalFlux,
+)
+from pygrc.models.grc_v4_profile import list_supported_profiles
+from pygrc.models.grc_v4_transport import provisional_continuity
+from tests.models.test_grc_v4_geometry import (
+    stage_inputs_fixture,
+    stage_reference_fixture,
+)
 from tests.models.test_grc_v4 import step_input
 from tests.models.test_grc_v4_state import (
     fixture_id,
@@ -1265,5 +1292,988 @@ class AuditBoundaryTests(unittest.TestCase):
                 self.assertEqual(json.loads(evidence.poststate_bytes), target)
 
 
+# P9-3.3: supplied current results, not candidate/root or full-step fixtures.
+
+
+def resource_selection(
+    before: GeometryStageInputs, values: tuple[float, ...] = (1.0, 0.5)
+) -> CurrentSelection:
+    stages = {
+        "OS": "os_corrector",
+        "CI": "ci_trial",
+        "PC": "pc_old_history",
+        "CI+PC": "cipc_trial",
+        "RG2b": "rg2b_section",
+    }
+    flux = PhysicalFlux(before.geometry.reference.graph, values)
+    stage = stages[before.geometry.reference.profile.identity_payload.realization]
+    geometry = before.geometry
+    if stage == "pc_old_history":
+        ref = geometry.reference
+        n = len(ref.graph.oriented_edges)
+        history = before.current.Z_4
+        assert history is not None
+        increment = tuple(tuple(history[i * n : (i + 1) * n]) for i in range(n))
+        geometry = H_profile(
+            K4Tensor(ref.graph, ref.K4_base, increment),
+            reference=ref,
+            profile=ref.profile,
+            context=ref.context,
+        )
+    chosen = replace(
+        before,
+        stage=cast(GeometryStage, stage),
+        geometry=geometry,
+        trial_current=flux if stage in ("ci_trial", "cipc_trial") else None,
+    )
+    return CurrentSelection(chosen, "valid_root", flux)
+
+
+def resource_replay_input() -> dict[str, Any]:
+    before = stage_inputs_fixture()
+    return {
+        "prestate": before.to_payload(),
+        "selection": resource_selection(before).to_payload(),
+    }
+
+
+def reconstruct_resource(data: dict[str, Any]) -> dict[str, Any]:
+    """Recompute from full portable inputs; no fixture or cached output is read."""
+    if set(data) != {"prestate", "selection"}:
+        raise ValueError("resource replay requires only the full operation inputs")
+    before = GeometryStageInputs.from_payload(data["prestate"])
+    selected = (
+        None
+        if data["selection"] is None
+        else CurrentSelection.from_payload(data["selection"])
+    )
+    result = ProvisionalResourceStep(before, selected)
+    result.consume(expected_prestate=before, expected_selection=selected)
+    return result.to_payload()
+
+
+class ResourceBoundaryTests(unittest.TestCase):
+    def test_zero_rounded_residual_can_hide_exact_stored_sum_growth(self) -> None:
+        from fractions import Fraction
+
+        # Pair with test_conservative_real_transfer_can_fail_the_binary64_charge_gate.
+        # Neither implication between exact conservation and gate admission holds.
+        for magnitude, duration in ((float(2**53), 0.5), (1e20, 1.0)):
+            for vertices in (("rich", "small"), ("small", "rich")):
+                for reversed_edge in (False, True):
+                    with self.subTest(
+                        magnitude=magnitude,
+                        vertices=vertices,
+                        reversed_edge=reversed_edge,
+                    ):
+                        tail, head = (
+                            ("small", "rich") if reversed_edge else ("rich", "small")
+                        )
+                        graph = GRCV4Graph(vertices, (OrientedEdge("e", tail, head),))
+                        ref = stage_reference_fixture(
+                            graph=graph,
+                            changes={
+                                "charge": {
+                                    "absolute_tolerance": 0.0,
+                                    "relative_tolerance": 0.0,
+                                }
+                            },
+                        )
+                        base = stage_inputs_fixture(ref)
+                        state = replace(
+                            base.current,
+                            C=tuple(
+                                magnitude if v == "rich" else 0.0 for v in vertices
+                            ),
+                        )
+                        before = replace(
+                            base,
+                            current=state,
+                            reset=state,
+                            Q_target=magnitude,
+                            dt=duration,
+                        )
+                        selected = resource_selection(
+                            before, (-1.0 if reversed_edge else 1.0,)
+                        )
+                        result = ProvisionalResourceStep(before, selected)
+                        expected = tuple(
+                            magnitude if v == "rich" else duration for v in vertices
+                        )
+                        self.assertEqual(result.provisional_state.C, expected)
+                        self.assertEqual(
+                            sum(map(Fraction, expected)) - sum(map(Fraction, state.C)),
+                            Fraction(duration),
+                        )
+                        self.assertTrue(result.charge.admitted)
+                        self.assertEqual(
+                            (result.charge.actual, result.charge.residual),
+                            (magnitude, 0.0),
+                        )
+                        self.assertIsNone(result.charge.remainder)
+                        self.assertEqual(result.continuity_evaluations, 1)
+
+    def test_distinct_live_reset_resources_and_histories_across_ten_declarations(
+        self,
+    ) -> None:
+        for candidate in ("A", "C"):
+            for realization in ("OS", "CI", "PC", "CI+PC", "RG2b"):
+                with self.subTest(candidate=candidate, realization=realization):
+                    base = stage_inputs_fixture(
+                        stage_reference_fixture(candidate, realization)
+                    )
+                    live = GRCV4AuthoritativeState(
+                        (8.0, 6.0, 4.0),
+                        (2.0, 5.0) if candidate == "A" else None,
+                        (0.25, 0.0, 0.0, 0.5)
+                        if realization in ("PC", "CI+PC")
+                        else None,
+                    )
+                    reset = GRCV4AuthoritativeState(
+                        (4.0, 8.0, 6.0),
+                        (3.0, 7.0) if candidate == "A" else None,
+                        (0.75, 0.0, 0.0, 0.25)
+                        if realization in ("PC", "CI+PC")
+                        else None,
+                    )
+                    before = replace(
+                        base, current=live, reset=reset, Q_target=18.0, dt=0.25
+                    )
+                    selected = resource_selection(before)
+                    original = canonical_json_bytes(before.to_payload())
+                    selected_original = canonical_json_bytes(selected.to_payload())
+                    with patch(
+                        "pygrc.models.grc_v4_step.provisional_continuity",
+                        wraps=provisional_continuity,
+                    ) as write:
+                        result = ProvisionalResourceStep(before, selected)
+                        for _ in range(3):
+                            value = result.consume(
+                                expected_prestate=before, expected_selection=selected
+                            )
+                            self.assertEqual(value.C, (7.75, 6.125, 4.125))
+                            self.assertEqual(
+                                (value.W_A, value.Z_4), (live.W_A, live.Z_4)
+                            )
+                        self.assertEqual(write.call_count, 1)
+                    self.assertEqual(
+                        canonical_json_bytes(before.to_payload()), original
+                    )
+                    self.assertEqual(
+                        canonical_json_bytes(selected.to_payload()), selected_original
+                    )
+                    self.assertEqual(result.charge.actual, 18.0)
+
+    def test_cycle_circulation_with_same_resource_cannot_borrow_selection(self) -> None:
+        graph = GRCV4Graph(
+            ("a", "b", "c"),
+            (
+                OrientedEdge("ab", "a", "b"),
+                OrientedEdge("bc", "b", "c"),
+                OrientedEdge("ca", "c", "a"),
+            ),
+        )
+        before = stage_inputs_fixture(stage_reference_fixture(graph=graph))
+        zero = resource_selection(before, (0.0,) * 3)
+        cycle = resource_selection(before, (3.0,) * 3)
+        first = ProvisionalResourceStep(before, zero)
+        second = ProvisionalResourceStep(before, cycle)
+        self.assertEqual(first.provisional_state, second.provisional_state)
+        self.assertEqual(first.charge.receipt_values(), second.charge.receipt_values())
+        self.assertNotEqual(
+            canonical_json_bytes(first.to_payload()),
+            canonical_json_bytes(second.to_payload()),
+        )
+        for result, foreign in ((first, cycle), (second, zero)):
+            with self.assertRaises(ResourceBoundaryError) as caught:
+                result.consume(expected_prestate=before, expected_selection=foreign)
+            self.assertEqual(
+                (caught.exception.stage, caught.exception.code),
+                ("final_reconstruction", "stale_cache"),
+            )
+
+    def test_exact_zero_divergence_can_overflow_before_cancellation(self) -> None:
+        from fractions import Fraction
+
+        graph = GRCV4Graph(
+            ("a", "b"), tuple(OrientedEdge(f"e{i}", "a", "b") for i in range(4))
+        )
+        base = stage_inputs_fixture(stage_reference_fixture(graph=graph))
+        state = replace(base.current, C=(4.0, 4.0))
+        before = replace(base, current=state, reset=state, Q_target=8.0)
+        # Exact scatter is zero in every order. The accepted native aggregation
+        # still has a finite-intermediate envelope; no compensating fallback.
+        for values, overflows in (
+            ((1e308, 1e308, -1e308, -1e308), True),
+            ((-1e308, -1e308, 1e308, 1e308), True),
+            ((1e308, -1e308, 1e308, -1e308), False),
+            ((-1e308, 1e308, -1e308, 1e308), False),
+        ):
+            with self.subTest(values=values):
+                self.assertEqual(sum(map(Fraction, values)), 0)
+                selected = resource_selection(before, values)
+                if overflows:
+                    self.assert_rejection(
+                        before, selected, "continuity", "nonfinite_value", evaluations=1
+                    )
+                else:
+                    result = ProvisionalResourceStep(before, selected)
+                    self.assertEqual(result.provisional_state, state)
+                    self.assertEqual(result.charge.residual, 0.0)
+
+    def assert_rejection(
+        self,
+        before: GeometryStageInputs,
+        chosen: CurrentSelection | None,
+        stage: str,
+        code: str,
+        *,
+        evaluations: int = 0,
+    ) -> ResourceBoundaryError:
+        original = canonical_json_bytes(before.to_payload())
+        with patch(
+            "pygrc.models.grc_v4_step.provisional_continuity",
+            wraps=provisional_continuity,
+        ) as write:
+            with self.assertRaises(ResourceBoundaryError) as caught:
+                ProvisionalResourceStep(before, chosen)
+            self.assertEqual(write.call_count, evaluations)
+        self.assertEqual((caught.exception.stage, caught.exception.code), (stage, code))
+        self.assertEqual(canonical_json_bytes(before.to_payload()), original)
+        return caught.exception
+
+    def test_ten_declarations_write_once_preserve_nonresource_authority(self) -> None:
+        for candidate in ("A", "C"):
+            for realization in ("OS", "CI", "PC", "CI+PC", "RG2b"):
+                with self.subTest(candidate=candidate, realization=realization):
+                    before = stage_inputs_fixture(
+                        stage_reference_fixture(candidate, realization)
+                    )
+                    selected = resource_selection(before)
+                    original = canonical_json_bytes(before.to_payload())
+                    with patch(
+                        "pygrc.models.grc_v4_step.provisional_continuity",
+                        wraps=provisional_continuity,
+                    ) as write:
+                        result = ProvisionalResourceStep(before, selected)
+                        self.assertEqual(write.call_count, 1)
+                    self.assertEqual(result.provisional_state.C, (0, 2.5, 3.5))
+                    self.assertEqual(result.provisional_state.W_A, before.current.W_A)
+                    self.assertEqual(result.provisional_state.Z_4, before.current.Z_4)
+                    self.assertEqual(result.continuity_evaluations, 1)
+                    self.assertEqual(
+                        result.charge.receipt_values(),
+                        {
+                            "target_charge": 6.0,
+                            "admitted_charge": 6.0,
+                            "residual": 0.0,
+                        },
+                    )
+                    self.assertIsNone(result.charge.remainder)
+                    self.assertEqual(
+                        canonical_json_bytes(before.to_payload()), original
+                    )
+                    self.assertEqual(
+                        result.consume(
+                            expected_prestate=before, expected_selection=selected
+                        ),
+                        result.provisional_state,
+                    )
+        self.assertEqual(list_supported_profiles(), frozenset())
+
+    def test_every_failed_solver_disposition_blocks_fallback_before_continuity(
+        self,
+    ) -> None:
+        before = stage_inputs_fixture()
+        chosen = resource_selection(before)
+        codes = {
+            "domain_failure": "domain_failure",
+            "singular": "singular_solver",
+            "conditioning_failure": "conditioning_failure",
+            "nonfinite": "nonfinite_value",
+            "no_admitted_root": "no_admitted_root",
+            "multiple_admitted_roots": "multiple_admitted_roots",
+        }
+        self.assertEqual(set(codes), set(get_args(SolverDisposition)) - {"valid_root"})
+        for disposition, code in codes.items():
+            for current in (None, chosen.current):
+                self.assert_rejection(
+                    before,
+                    replace(
+                        chosen,
+                        solver_disposition=cast(SolverDisposition, disposition),
+                        current=current,
+                    ),
+                    "candidate_solve",
+                    code,
+                )
+        self.assert_rejection(
+            before, replace(chosen, current=None), "candidate_solve", "domain_failure"
+        )
+
+    def test_predictor_and_postcontinuity_cannot_supply_selected_current(self) -> None:
+        before = stage_inputs_fixture()
+        chosen = resource_selection(before)
+        for stage in ("os_predictor", "post_continuity", "pre_read"):
+            self.assert_rejection(
+                before,
+                replace(chosen, inputs=replace(before, stage=stage)),
+                "candidate_solve",
+                "stale_cache",
+            )
+        self.assert_rejection(
+            replace(before, stage="os_corrector"), chosen, "admission", "stale_cache"
+        )
+
+    def test_full_prestate_clock_reset_ledger_and_request_are_bound(self) -> None:
+        before = stage_inputs_fixture()
+        chosen = resource_selection(before)
+        foreign_state = GRCV4AuthoritativeState((2.0, 1.0, 3.0), None, None)
+        variations: dict[str, Any] = {
+            "operation_id": "foreign",
+            "dt": 0.5,
+            "time": 0.5,
+            "step_index": 1,
+            "Q_target": 7.0,
+            "current": foreign_state,
+            "reset": foreign_state,
+            "receipt_ids": ("grc-receipt-sha256:" + "1" * 64,),
+        }
+        for name, value in variations.items():
+            with self.subTest(field=name):
+                self.assert_rejection(
+                    before,
+                    replace(chosen, inputs=replace(chosen.inputs, **{name: value})),
+                    "candidate_solve",
+                    "stale_cache",
+                )
+        ref = stage_reference_fixture(gain=1.0)
+        foreign = resource_selection(stage_inputs_fixture(ref))
+        self.assert_rejection(before, foreign, "candidate_solve", "stale_cache")
+
+    def test_corrected_hodge_is_allowed_with_same_reference_and_authority(self) -> None:
+        before = stage_inputs_fixture()
+        ref = before.geometry.reference
+        geometry = H_profile(
+            K4Tensor(ref.graph, ref.K4_base, ((1.0, 0.0), (0.0, 1.0))),
+            reference=ref,
+            profile=ref.profile,
+            context=ref.context,
+        )
+        chosen = resource_selection(before)
+        corrected = replace(chosen, inputs=replace(chosen.inputs, geometry=geometry))
+        self.assertNotEqual(corrected.inputs.geometry, before.geometry)
+        self.assertEqual(
+            ProvisionalResourceStep(before, corrected).provisional_state.C,
+            (0, 2.5, 3.5),
+        )
+
+    def test_joint_selection_must_equal_exact_bound_trial(self) -> None:
+        for realization in ("CI", "CI+PC"):
+            before = stage_inputs_fixture(
+                stage_reference_fixture(realization=realization)
+            )
+            chosen = resource_selection(before)
+            changed = PhysicalFlux(before.geometry.reference.graph, (1.0, 0.25))
+            self.assert_rejection(
+                before,
+                replace(chosen, current=changed),
+                "candidate_solve",
+                "stale_cache",
+            )
+
+    def test_prestate_and_reset_charge_gate_precedes_current_consumption(self) -> None:
+        before = stage_inputs_fixture()
+        chosen = resource_selection(before)
+        self.assert_rejection(
+            replace(before, Q_target=7.0), chosen, "admission", "charge_failure"
+        )
+        reset = replace(before.reset, C=(1.0, 2.0, 4.0))
+        self.assert_rejection(
+            replace(before, reset=reset), chosen, "admission", "charge_failure"
+        )
+        overflow = replace(before.current, C=(1e308, 1e308, 0.0))
+        self.assert_rejection(
+            replace(before, current=overflow), chosen, "admission", "nonfinite_value"
+        )
+
+    def test_postcontinuity_negative_and_overflow_reject_before_exposure(self) -> None:
+        before = stage_inputs_fixture()
+        self.assert_rejection(
+            before,
+            resource_selection(before, (2.0, 0.0)),
+            "charge_admission",
+            "domain_failure",
+            evaluations=1,
+        )
+        huge = replace(before, dt=1e308)
+        self.assert_rejection(
+            huge,
+            resource_selection(huge, (2.0, 0.0)),
+            "continuity",
+            "nonfinite_value",
+            evaluations=1,
+        )
+
+    def test_conservative_real_transfer_can_fail_the_binary64_charge_gate(self) -> None:
+        # Exact conservation is insufficient: the prescribed reduction changes
+        # from 2**53+2 to 2**53+4. A passing tolerance must never repair C.
+        graph = GRCV4Graph(("a", "b", "c", "d"), (OrientedEdge("e", "a", "d"),))
+        for tolerance in (0.0, 2.0):
+            ref = stage_reference_fixture(
+                graph=graph,
+                changes={
+                    "charge": {
+                        "absolute_tolerance": tolerance,
+                        "relative_tolerance": 0.0,
+                    }
+                },
+            )
+            before = stage_inputs_fixture(ref)
+            state = replace(before.current, C=(float(2**53), 1.0, 1.0, 1.0))
+            before = replace(
+                before, current=state, reset=state, Q_target=float(2**53 + 2)
+            )
+            chosen = resource_selection(before, (1.0,))
+            if tolerance == 0:
+                error = self.assert_rejection(
+                    before, chosen, "charge_admission", "charge_failure", evaluations=1
+                )
+                assert error.charge is not None
+                self.assertEqual(error.charge.residual, 2.0)
+            else:
+                result = ProvisionalResourceStep(before, chosen)
+                self.assertEqual(
+                    result.provisional_state.C, (float(2**53 - 1), 1.0, 1.0, 2.0)
+                )
+                self.assertEqual(result.charge.actual, float(2**53 + 4))
+                self.assertEqual(result.charge.residual, 2.0)
+                self.assertIsNone(result.charge.remainder)
+
+    def test_zero_duration_is_locally_admitted_identity_without_selection(self) -> None:
+        for realization in ("OS", "CI", "PC", "CI+PC", "RG2b"):
+            before = replace(
+                stage_inputs_fixture(stage_reference_fixture(realization=realization)),
+                dt=0.0,
+            )
+            with patch(
+                "pygrc.models.grc_v4_step.provisional_continuity",
+                side_effect=AssertionError("zero wrote resource"),
+            ):
+                result = ProvisionalResourceStep(before, None)
+            self.assertEqual(result.provisional_state, before.current)
+            self.assertEqual(result.continuity_evaluations, 0)
+            self.assert_rejection(
+                before, resource_selection(before), "admission", "domain_failure"
+            )
+            self.assert_rejection(
+                replace(before, Q_target=7.0), None, "admission", "charge_failure"
+            )
+        with self.assertRaises(TypeError):
+            ProvisionalResourceStep(stage_inputs_fixture(), None)
+
+    def test_consumer_requires_independent_exact_inputs_even_if_output_matches(
+        self,
+    ) -> None:
+        before = stage_inputs_fixture()
+        chosen = resource_selection(before)
+        result = ProvisionalResourceStep(before, chosen)
+        for expected_prestate, expected_selection in (
+            (replace(before, operation_id="other"), chosen),
+            (before, None),
+            (
+                before,
+                replace(chosen, inputs=replace(chosen.inputs, operation_id="other")),
+            ),
+        ):
+            with self.assertRaises(ResourceBoundaryError) as caught:
+                result.consume(
+                    expected_prestate=expected_prestate,
+                    expected_selection=expected_selection,
+                )
+            self.assertEqual(
+                (caught.exception.stage, caught.exception.code),
+                ("final_reconstruction", "stale_cache"),
+            )
+
+    def test_selection_reconstruction_revalidates_roles_shape_and_forged_types(
+        self,
+    ) -> None:
+        before = stage_inputs_fixture()
+        chosen = resource_selection(before)
+        raw = chosen.to_payload()
+        self.assertEqual(CurrentSelection.from_payload(raw), chosen)
+        for data in (
+            raw | {"extra": 1},
+            raw | {"solver_disposition": "fallback"},
+            raw | {"current": [1.0]},
+            raw | {"current": [True, 0.0]},
+            raw | {"current": [math.inf, 0.0]},
+        ):
+            with self.assertRaises((TypeError, ValueError)):
+                CurrentSelection.from_payload(data)
+        with self.assertRaises(TypeError):
+            CurrentSelection(
+                chosen.inputs,
+                "valid_root",
+                cast(Any, OneForm(before.geometry.reference.graph, (1.0, 0.5))),
+            )
+        forged = replace(chosen)
+        object.__setattr__(forged, "solver_disposition", "fallback")
+        with self.assertRaises(ValueError):
+            ProvisionalResourceStep(before, forged)
+        raw["current"][0] = 999
+        self.assertEqual(
+            chosen.current, PhysicalFlux(before.geometry.reference.graph, (1.0, 0.5))
+        )
+        output = ProvisionalResourceStep(before, chosen).to_payload()
+        output["provisional_state"]["C"][0] = 999
+        self.assertEqual(
+            reconstruct_resource(resource_replay_input())["provisional_state"]["C"],
+            [0.0, 2.5, 3.5],
+        )
+
+    def test_charge_values_fit_frozen_receipt_without_inventing_commit(self) -> None:
+        result, args = positive_fixture()
+        before = stage_inputs_fixture()
+        charge = ProvisionalResourceStep(before, resource_selection(before)).charge
+        # A content fixture proves schema integration only, never a live commit.
+        core = cast(
+            dict[str, Any], result.emitted_receipts[0].to_payload()["identity_payload"]
+        )["core"]
+        payload = {
+            "schema_version": "grcv4-charge-receipt-v1",
+            "core": core,
+            **charge.receipt_values(),
+        }
+        old = args["commit_payload"]
+        _, envelopes = make_commit_receipts(
+            [payload],
+            **{
+                k: old[k]
+                for k in (
+                    "operation_id",
+                    "source_state_digest",
+                    "target_state_digest",
+                    "target_step_index",
+                    "target_time",
+                )
+            },
+        )
+        self.assertEqual(envelopes[0].to_payload()["identity_payload"], payload)
+
+
+class ResourceReconstructionTests(unittest.TestCase):
+    def test_resource_reconstruction_outside_checkout_with_three_hash_seeds(
+        self,
+    ) -> None:
+        root = Path(__file__).resolve().parents[2]
+        supplied = resource_replay_input()
+        expected = reconstruct_resource(supplied)
+        with tempfile.TemporaryDirectory(prefix="p933-replay-") as directory:
+            input_path = Path(directory) / "inputs.json"
+            input_path.write_text(json.dumps(supplied))
+            for seed in ("0", "1", "933"):
+                environment = dict(
+                    os.environ,
+                    PYTHONHASHSEED=seed,
+                    PYTHONPATH=os.pathsep.join((str(root / "src"), str(root))),
+                )
+                process = subprocess.run(
+                    [
+                        sys.executable,
+                        str(Path(__file__).resolve()),
+                        "--reconstruct-resource",
+                        str(input_path),
+                    ],
+                    cwd=directory,
+                    env=environment,
+                    text=True,
+                    capture_output=True,
+                    timeout=60,
+                )
+                self.assertEqual(process.returncode, 0, process.stderr)
+                self.assertEqual(json.loads(process.stdout), expected)
+
+    @unittest.skipUnless(
+        os.environ.get("GRCV4_PACKAGE_TESTS") == "1",
+        "opt-in clean resource wheel/sdist replay",
+    )
+    def test_clean_installed_wheel_and_sdist_resource_boundary(self) -> None:
+        root = Path(__file__).resolve().parents[2]
+        supplied = resource_replay_input()
+        expected = reconstruct_resource(supplied)
+        source_names = ("grc_v4_transport", "grc_v4_step")
+        hashes = {
+            name: sha256(
+                (root / f"src/pygrc/models/{name}.py").read_bytes()
+            ).hexdigest()
+            for name in source_names
+        }
+        consumer = """
+import hashlib, importlib, json, pathlib, sys
+from dataclasses import replace
+from pygrc.models.grc_v4_geometry import GeometryStageInputs
+from pygrc.models.grc_v4_step import CurrentSelection, ProvisionalResourceStep, ResourceBoundaryError
+from pygrc.models.grc_v4_profile import list_supported_profiles
+data=json.load(sys.stdin)
+for name, digest in data['hashes'].items():
+    path=pathlib.Path(importlib.import_module('pygrc.models.'+name).__file__).resolve()
+    assert path.is_relative_to(pathlib.Path(sys.prefix).resolve())
+    assert hashlib.sha256(path.read_bytes()).hexdigest()==digest
+before=GeometryStageInputs.from_payload(data['inputs']['prestate'])
+selected=CurrentSelection.from_payload(data['inputs']['selection'])
+result=ProvisionalResourceStep(before,selected)
+assert result.provisional_state.C==(0.,2.5,3.5)
+assert result.charge.residual==0. and result.charge.remainder is None
+try: ProvisionalResourceStep(before,replace(selected,solver_disposition='singular'))
+except ResourceBoundaryError as error: assert (error.stage,error.code)==('candidate_solve','singular_solver')
+else: raise AssertionError('installed fallback current was consumed')
+assert not list_supported_profiles()
+print(json.dumps(result.to_payload(),sort_keys=True))
+"""
+        environment = {
+            k: v for k, v in os.environ.items() if k not in {"PYTHONPATH", "PYTHONHOME"}
+        }
+        with tempfile.TemporaryDirectory(prefix="p933-package-") as directory:
+            temporary = Path(directory)
+            source = temporary / "source"
+            source.mkdir()
+            shutil.copytree(
+                root / "src",
+                source / "src",
+                ignore=shutil.ignore_patterns("__pycache__", "*.egg-info"),
+            )
+            for name in ("pyproject.toml", "README.md", "LICENSE"):
+                shutil.copyfile(root / name, source / name)
+
+            def run(command: list[str], cwd: Path, stdin: str | None = None) -> str:
+                process = subprocess.run(
+                    command,
+                    cwd=cwd,
+                    env=environment,
+                    input=stdin,
+                    text=True,
+                    capture_output=True,
+                    timeout=240,
+                )
+                self.assertEqual(process.returncode, 0, process.stdout + process.stderr)
+                return process.stdout
+
+            dist = temporary / "dist"
+            run(
+                [
+                    sys.executable,
+                    "-m",
+                    "build",
+                    "--no-isolation",
+                    "--outdir",
+                    str(dist),
+                ],
+                source,
+            )
+            for archive in (next(dist.glob("*.whl")), next(dist.glob("*.tar.gz"))):
+                with self.subTest(archive=archive.name):
+                    isolated = temporary / (archive.name + "-env")
+                    venv.EnvBuilder(with_pip=True).create(isolated)
+                    python = isolated / "bin/python"
+                    outside = temporary / (archive.name + "-consumer")
+                    outside.mkdir()
+                    run(
+                        [
+                            str(python),
+                            "-m",
+                            "pip",
+                            "install",
+                            "--no-index",
+                            "--find-links",
+                            str(Path(os.environ["GRCV4_WHEELHOUSE"]).resolve()),
+                            str(archive) + "[v4]",
+                        ],
+                        outside,
+                    )
+                    actual = json.loads(
+                        run(
+                            [str(python), "-I", "-c", consumer],
+                            outside,
+                            json.dumps({"inputs": supplied, "hashes": hashes}),
+                        )
+                    )
+                    self.assertEqual(actual, expected)
+                    run([str(python), "-m", "pip", "check"], outside)
+
+
+def export_p933_audit(output: Path) -> dict[str, Any]:
+    """Export current sources/assets/evidence without a machine-local environment."""
+    import zipfile
+
+    root = Path(__file__).resolve().parents[2]
+    output = output.resolve()
+    if output.is_relative_to(root):
+        raise ValueError("export outside the checkout to avoid recursive evidence")
+    paths = (
+        subprocess.check_output(
+            ["git", "ls-files", "-c", "-o", "--exclude-standard", "-z"], cwd=root
+        )
+        .decode()
+        .split("\0")
+    )
+    prefixes = (
+        "src/",
+        "tests/",
+        "specs/",
+        "implementation/phase-9-grcv4/",
+        "implementation/investigations/grc9v4-constitutive-design/",
+        "implementation/Phase-9-GRCV4-",
+    )
+    metadata = {"README.md", "LICENSE", "pyproject.toml", "MANIFEST.in"}
+    names = sorted(
+        {p for p in paths if p and (p in metadata or p.startswith(prefixes))}
+    )
+    manifest: dict[str, Any] = {
+        "schema": "p933_review_packet_v1",
+        "base_commit": subprocess.check_output(
+            ["git", "rev-parse", "HEAD"], cwd=root, text=True
+        ).strip(),
+        "scope": "Current source, dependency declarations, fixtures, frozen assets, scientific sources and retained evidence. No virtual environments, dependency wheels, Git history or managed browsers.",
+        "authority_limit": "Standalone numerical reconstruction; historical acceptance and permission replay require the stated Git base and protected history.",
+        "review": "implementation/phase-9-grcv4/tranche-3/P9-3.3-Review.md",
+        "files": [],
+    }
+
+    def write(archive: zipfile.ZipFile, name: str, data: bytes) -> None:
+        entry = zipfile.ZipInfo(name, date_time=(1980, 1, 1, 0, 0, 0))
+        entry.compress_type = zipfile.ZIP_DEFLATED
+        entry.external_attr = 0o100644 << 16
+        archive.writestr(entry, data)
+
+    with zipfile.ZipFile(output, mode="x") as archive:
+        for name in names:
+            path = root / name
+            if path.is_symlink() or not path.is_file():
+                raise ValueError(f"non-regular packet input: {name}")
+            data = path.read_bytes()
+            manifest["files"].append(
+                {"path": name, "sha256": sha256(data).hexdigest(), "bytes": len(data)}
+            )
+            write(archive, name, data)
+        write(
+            archive,
+            "BUNDLE-MANIFEST.json",
+            (json.dumps(manifest, indent=2) + "\n").encode(),
+        )
+    return {
+        "files": len(names),
+        "bytes": output.stat().st_size,
+        "sha256": sha256(output.read_bytes()).hexdigest(),
+    }
+
+
+def capture_p933(output: Path, *, audit_only: bool = False) -> int:
+    """Capture a reconstructible numerical run as it executes; never overwrite.
+
+    Run from a checkout with the declared extra/dev/build dependencies. Set
+    GRCV4_PACKAGE_TESTS=1 and GRCV4_WHEELHOUSE to exercise clean offline installs.
+    Permission/browser checks have their own existing runner and subject.
+    """
+    from datetime import datetime, timezone
+    import importlib.metadata
+    import platform
+    import re
+    import time
+
+    root = Path(__file__).resolve().parents[2]
+    if audit_only and (
+        os.environ.get("GRCV4_PACKAGE_TESTS") != "1"
+        or not Path(os.environ.get("GRCV4_WHEELHOUSE", "<missing>")).is_dir()
+    ):
+        raise ValueError(
+            "audit capture requires both clean package tests and a wheelhouse"
+        )
+    output.mkdir(parents=True, exist_ok=False)
+    tool = (
+        root
+        / "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool"
+    )
+    paper = "implementation/investigations/grc9v4-constitutive-design/drafts/2026-09-GRC-V4.md"
+    scopes = [
+        "src",
+        "tests",
+        "specs",
+        "pyproject.toml",
+        "README.md",
+        "LICENSE",
+        paper,
+        str((tool / "src").relative_to(root)),
+    ]
+
+    def git(*arguments: str) -> str:
+        return subprocess.check_output(["git", *arguments], cwd=root, text=True)
+
+    paths = git("ls-files", "--", *scopes).splitlines()
+    hashes = {p: sha256((root / p).read_bytes()).hexdigest() for p in paths}
+    supplied = resource_replay_input()
+    subject = {
+        "base_commit": git("rev-parse", "HEAD").strip(),
+        "patch": git("diff", "--binary", "HEAD", "--", *scopes),
+        "tracked_file_sha256": hashes,
+        "untracked_source_files": git(
+            "ls-files", "--others", "--exclude-standard", "--", *scopes
+        ).splitlines(),
+    }
+    if subject["untracked_source_files"]:
+        raise ValueError(
+            "capture requires any new source to be tracked for base-plus-patch reconstruction"
+        )
+    (output / "inputs.json").write_text(
+        json.dumps({"subject": subject, "resource_replay": supplied}, indent=2) + "\n"
+    )
+    record: dict[str, Any] = {
+        "schema": "phase9_leaf_run_v1",
+        "iteration_id": "P9-3.3",
+        "started_utc": datetime.now(timezone.utc).isoformat(),
+        "status": "running",
+        "subject_inputs": "inputs.json",
+        "scope": "transport/step audit follow-up"
+        if audit_only
+        else "complete repository regression",
+        "python": sys.version,
+        "platform": platform.platform(),
+        "dependencies": sorted(
+            f"{d.metadata['Name']}=={d.version}"
+            for d in importlib.metadata.distributions()
+        ),
+        "environment": {
+            k: os.environ.get(k)
+            for k in ("GRCV4_PACKAGE_TESTS", "GRCV4_WHEELHOUSE", "PYTHONHASHSEED")
+        },
+        "commands": [],
+        "wheelhouse_sha256": {
+            p.name: sha256(p.read_bytes()).hexdigest()
+            for p in sorted(Path(os.environ["GRCV4_WHEELHOUSE"]).iterdir())
+            if p.is_file()
+        }
+        if os.environ.get("GRCV4_WHEELHOUSE")
+        else {},
+        "claim_ceiling": "local resource/charge boundary, regression and installed reconstruction; supplied current results are not root certificates or full runtime support",
+    }
+
+    def retain() -> None:
+        (output / "run.json").write_text(json.dumps(record, indent=2) + "\n")
+
+    retain()
+    changed = [
+        f"{prefix}/grc_v4_{module}.py"
+        if prefix == "src/pygrc/models"
+        else f"{prefix}/test_grc_v4_{module}.py"
+        for prefix in ("src/pygrc/models", "tests/models")
+        for module in ("transport", "step")
+    ]
+    commands = [
+        [
+            sys.executable,
+            "-m",
+            "unittest",
+            "tests.models.test_grc_v4_transport",
+            "tests.models.test_grc_v4_step",
+        ]
+        if audit_only
+        else [sys.executable, "-m", "unittest", "discover", "-s", "tests", "-t", "."],
+        [sys.executable, "-m", "ruff", "check", *changed],
+        [sys.executable, "-m", "mypy", "--strict", *changed],
+        [sys.executable, "-m", "pip", "check"],
+    ]
+    try:
+        for command in commands:
+            started = time.monotonic()
+            print("Executing", " ".join(command), flush=True)
+            process = subprocess.run(
+                command, cwd=root, text=True, capture_output=True, timeout=2400
+            )
+            transcript = process.stdout + process.stderr
+            tests = re.search(r"Ran (\d+) tests? in", transcript)
+            record["commands"].append(
+                {
+                    "argv": ["<venv-python>", *command[1:]],
+                    "cwd": "<checkout>",
+                    "exit_status": process.returncode,
+                    "elapsed_seconds": round(time.monotonic() - started, 3),
+                    "tests_run": None if tests is None else int(tests.group(1)),
+                    "output": transcript if process.returncode else transcript[-1500:],
+                }
+            )
+            retain()
+            if process.returncode:
+                raise RuntimeError("validation command failed; see run.json")
+        sys.path.insert(0, str(tool / "src"))
+        successor = importlib.import_module("grcv4_explorer.successor")
+        forensic = importlib.import_module("grcv4_explorer.forensic")
+        context = successor.load_successor_forensic_context(root, tool.parent)
+        contracts = [
+            "D10.2-EC-PARENT-CORE-GENERAL-CHARGE",
+            "D10.2-EC-PARENT-CORE-INCIDENCE-CONTINUITY",
+            "D10.2-EC-PARENT-L-AUTHORITATIVE-CURRENT",
+            "D10.2-EC-PARENT-L-CONTINUITY-WRITE",
+            "D10.2-EC-PARENT-L-POSTCONTINUITY-REFRESH",
+            "D10.2-EC-CHARGE-BUDGET-STAGE",
+        ]
+        traces = [forensic.contract_provenance(context, name) for name in contracts]
+        record["forensic_queries"] = [
+            {
+                "operation": "contract_provenance",
+                "contract_id": trace["query"]["contract_id"],
+                "trace_digest": trace["trace_digest"],
+                "source_bundle_digest": trace["source_bundle_digest"],
+                "authority_extension_digest": trace["authority_extension_digest"],
+                "source_ref": trace["rows"][0]["source_ref"],
+                "support_disposition": trace["rows"][0]["payload"][
+                    "support_disposition"
+                ],
+            }
+            for trace in traces
+        ]
+        record["forensic_loader"] = (
+            "grcv4_explorer.successor.load_successor_forensic_context"
+        )
+        (output / "actual.json").write_text(
+            json.dumps(reconstruct_resource(supplied), indent=2) + "\n"
+        )
+        record["source_unchanged_during_run"] = all(
+            sha256((root / p).read_bytes()).hexdigest() == digest
+            for p, digest in hashes.items()
+        )
+        if not record["source_unchanged_during_run"]:
+            raise RuntimeError("validation source changed during capture")
+        record["status"] = "passed"
+    except Exception as error:
+        record["status"] = "failed"
+        record["error"] = str(error)
+    record["completed_utc"] = datetime.now(timezone.utc).isoformat()
+    record["artifacts"] = {
+        p.name: sha256(p.read_bytes()).hexdigest()
+        for p in sorted(output.iterdir())
+        if p.name != "run.json"
+    }
+    retain()
+    return int(record["status"] != "passed")
+
+
 if __name__ == "__main__":
-    unittest.main()
+    if len(sys.argv) == 3 and sys.argv[1] in ("--capture-p933", "--capture-p933-audit"):
+        raise SystemExit(
+            capture_p933(
+                Path(sys.argv[2]).resolve(),
+                audit_only=sys.argv[1] == "--capture-p933-audit",
+            )
+        )
+    elif len(sys.argv) == 3 and sys.argv[1] == "--export-p933-audit":
+        print(json.dumps(export_p933_audit(Path(sys.argv[2])), sort_keys=True))
+    elif len(sys.argv) == 3 and sys.argv[1] == "--reconstruct-resource":
+        print(
+            json.dumps(
+                reconstruct_resource(json.loads(Path(sys.argv[2]).read_text())),
+                sort_keys=True,
+            )
+        )
+    else:
+        unittest.main()

@@ -62,6 +62,8 @@ INTEGRATION_ACCEPTANCE = PHASE + "tranche-2/P9-2.6-AcceptanceRecord.json"
 INTEGRATION_ACCEPTANCE_DIGEST = "e5ba16731e03dc916b8755c5999ab2b59acf431255612e76e0dcebe108104bc2"
 GEOMETRY_ACCEPTANCE = PHASE + "tranche-3/P9-3.1-AcceptanceRecord.json"
 GEOMETRY_ACCEPTANCE_DIGEST = "f119e1361500e72f58297bc8186f868954b4065c853fcdd089280a5d28f88618"
+STAGE_ACCEPTANCE = PHASE + "tranche-3/P9-3.2-AcceptanceRecord.json"
+STAGE_ACCEPTANCE_DIGEST = "425cd05eb85213185a4b531a09c16cefec4be992ac4755d404b5f263e09ebd0a"
 GENERATED = SIDE + "tool/generated/phase9-verification/"
 REPORT_SCHEMA = "phase9_G1_pressure_results_v1"
 REPORT_FILE = "g1-pressure-results.json"
@@ -100,6 +102,7 @@ PATHS = {
     HARNESS_ACCEPTANCE,
     INTEGRATION_ACCEPTANCE,
     GEOMETRY_ACCEPTANCE,
+    STAGE_ACCEPTANCE,
     HERE + "phase9_implementation_policy.py",
     HERE + "audit_phase9_implementation.py",
     HERE + "test_phase9_g1.py",
@@ -426,6 +429,26 @@ def accepted_geometry(root):
     return value
 
 
+def accepted_stages(root):
+    """Committed P9-3.2 acceptance opens only its dependency-ready successors."""
+    value = read(safe_path(root, STAGE_ACCEPTANCE))
+    require(value["record_digest"] == digest_record(value) == STAGE_ACCEPTANCE_DIGEST,
+            "untrusted stage acceptance")
+    require(value["schema"] == "phase9_stage_geometry_acceptance_v1"
+            and value["status"] == "accepted_by_user"
+            and value["release_id"] == prior.RELEASE_ID
+            and value["predecessor_record_digest"] == GEOMETRY_ACCEPTANCE_DIGEST
+            and value["accepted_iterations"] == ["P9-3.2"]
+            and value["accepted_generic_runtime_support"] == []
+            and value["admitted_specialization_support_sets"] == [],
+            "invalid stage acceptance scope")
+    prior.ancestor(root, value["baseline_commit"])
+    for row in value["evidence_bindings"]:
+        require(sha(git(root, "show", f"{value['baseline_commit']}:{row['path']}"))
+                == row["sha256"], "accepted stage subject changed")
+    return value
+
+
 def leaf_permissions(root):
     """Readiness from accepted dependencies, never inferred from completion."""
     accepted = {"P9-G1", *accepted_foundation(root)["accepted_iterations"],
@@ -433,7 +456,8 @@ def leaf_permissions(root):
                 *accepted_results(root)["accepted_iterations"],
                 *accepted_harness(root)["accepted_iterations"],
                 *accepted_integration(root)["accepted_iterations"],
-                *accepted_geometry(root)["accepted_iterations"]}
+                *accepted_geometry(root)["accepted_iterations"],
+                *accepted_stages(root)["accepted_iterations"]}
     support = read(
         safe_path(root, PHASE + "tranche-1/P9-1.4-SupportAndDependencies.json")
     )
@@ -460,6 +484,10 @@ def leaf_permissions(root):
             # to P9-2.4, omitted from the coarse source-group iteration lists.
             # Refine only these existing record/composition owners, not lifecycle.
             leaves.add("P9-2.4")
+        if module["module_id"] == "grc_v4_step":
+            # P9-3.3 explicitly owns the provisional one-resource-write boundary
+            # in the frozen checklist; the coarse step group omits this leaf.
+            leaves.add("P9-3.3")
         for field in ["path", "test_path"]:
             owners[module[field]] = leaves
     for name in [

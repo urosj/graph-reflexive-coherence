@@ -1,0 +1,85 @@
+{
+  "schema": "phase9_leaf_run_v1",
+  "iteration_id": "P9-3.3",
+  "started_utc": "2026-09-07T12:51:51.249504+00:00",
+  "status": "passed",
+  "subject_inputs": "inputs.json",
+  "replay_argv": [
+    "<venv-python>",
+    "<extracted-runner>",
+    "--repo",
+    "<checkout>",
+    "--bundle",
+    "<decoded-bundle>",
+    "--output",
+    "<fresh-output>"
+  ],
+  "commands": [
+    {
+      "argv": [
+        "/home/uros/RC-github/graph-reflexive-coherence/.venv/bin/python",
+        "/tmp/p933-native-audit-rcm2mnpm/external/P9-3.3-independent-stress-tests.py",
+        "--repo",
+        "/home/uros/RC-github/graph-reflexive-coherence",
+        "--output",
+        "/tmp/p933-native-audit-rcm2mnpm/native"
+      ],
+      "cwd": "/tmp/p933-native-audit-rcm2mnpm",
+      "exit_status": 0,
+      "stdout": "{\n  \"scope\": \"P9-3.3 independent local audit; supplied currents are not executed roots or runtime profile conformance\",\n  \"total\": 701,\n  \"passed\": 701,\n  \"failed\": 0,\n  \"groups\": {\n    \"balanced_charge\": {\n      \"passed\": 225,\n      \"failed\": 0\n    },\n    \"claim_ceiling\": {\n      \"passed\": 1,\n      \"failed\": 0\n    },\n    \"consumer_binding\": {\n      \"passed\": 4,\n      \"failed\": 0\n    },\n    \"exact_charge_inequality\": {\n      \"passed\": 147,\n      \"failed\": 0\n    },\n    \"failed_solver_not_fallback\": {\n      \"passed\": 60,\n      \"failed\": 0\n    },\n    \"independent_continuity\": {\n      \"passed\": 120,\n      \"failed\": 0\n    },\n    \"nonfinite_negative_and_charge\": {\n      \"passed\": 12,\n      \"failed\": 0\n    },\n    \"provenance_and_stages\": {\n      \"passed\": 15,\n      \"failed\": 0\n    },\n    \"signed_coordinate_actions\": {\n      \"passed\": 48,\n      \"failed\": 0\n    },\n    \"ten_family_value_boundary\": {\n      \"passed\": 20,\n      \"failed\": 0\n    },\n    \"typed_and_numeric_input\": {\n      \"passed\": 19,\n      \"failed\": 0\n    },\n    \"zero_and_admission_priority\": {\n      \"passed\": 30,\n      \"failed\": 0\n    }\n  },\n  \"seconds\": 252.97017308900104\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/home/uros/RC-github/graph-reflexive-coherence/.venv/bin/python",
+        "/tmp/p933-native-audit-rcm2mnpm/external/P9-3.3-charge-resolution-reproducer.py",
+        "--repo",
+        "/home/uros/RC-github/graph-reflexive-coherence"
+      ],
+      "cwd": "/tmp/p933-native-audit-rcm2mnpm",
+      "exit_status": 0,
+      "stdout": "{\n  \"scope\": \"supplied-current provisional resource evaluation; no root/lifecycle execution\",\n  \"C_before\": [\n    9007199254740992.0,\n    0.0\n  ],\n  \"dt\": 0.5,\n  \"J\": [\n    1.0\n  ],\n  \"C_after\": [\n    9007199254740992.0,\n    0.5\n  ],\n  \"charge\": {\n    \"target_charge\": 9007199254740992.0,\n    \"admitted_charge\": 9007199254740992.0,\n    \"residual\": 0.0\n  },\n  \"admitted\": true,\n  \"exact_sum_delta\": \"1/2\",\n  \"meaning\": \"zero rounded residual is not proof of exact-sum conservation\",\n  \"loaded_sources\": [\n    {\n      \"module\": \"grc_v4_transport\",\n      \"path\": \"src/pygrc/models/grc_v4_transport.py\",\n      \"sha256\": \"8678e183c8f19ab4e484925516f2724f79d3ece1a7bc5316ec8521c732627856\"\n    },\n    {\n      \"module\": \"grc_v4_step\",\n      \"path\": \"src/pygrc/models/grc_v4_step.py\",\n      \"sha256\": \"7f9d1073dd4a0c0504bea65a9f2e2a335f038042a14345612e13c737f8f8bc6d\"\n    },\n    {\n      \"module\": \"grc_v4_geometry\",\n      \"path\": \"src/pygrc/models/grc_v4_geometry.py\",\n      \"sha256\": \"d715f67555d3c6e68a4e031ba132cb1854cc839de03dcd2c7101fbeb40c13dcd\"\n    },\n    {\n      \"module\": \"grc_v4_profile\",\n      \"path\": \"src/pygrc/models/grc_v4_profile.py\",\n      \"sha256\": \"188e4ceb92b6a36fe81849911b88b233b8dd16bf3de07383e1508d76232fdbfb\"\n    }\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/home/uros/RC-github/graph-reflexive-coherence/.venv/bin/python",
+        "/tmp/p933-native-audit-rcm2mnpm/mutation_controls.py"
+      ],
+      "cwd": "/tmp/p933-native-audit-rcm2mnpm",
+      "exit_status": 0,
+      "stdout": "[\n  {\n    \"control\": \"wrong-continuity-sign-not-hidden-by-charge\",\n    \"baseline_pass\": true,\n    \"mutant_detected\": true,\n    \"diagnostic\": \"(2.0, 1.5, 2.5)\"\n  },\n  {\n    \"control\": \"failed-solver-guard-omitted\",\n    \"baseline_pass\": true,\n    \"mutant_detected\": true,\n    \"diagnostic\": \"unexpected acceptance\"\n  },\n  {\n    \"control\": \"duration-provenance-guard-omitted\",\n    \"baseline_pass\": true,\n    \"mutant_detected\": true,\n    \"diagnostic\": \"unexpected acceptance\"\n  },\n  {\n    \"control\": \"reset-charge-guard-omitted\",\n    \"baseline_pass\": true,\n    \"mutant_detected\": true,\n    \"diagnostic\": \"unexpected acceptance\"\n  },\n  {\n    \"control\": \"exact-charge-threshold-replaced-by-rounded-expression\",\n    \"baseline_pass\": true,\n    \"mutant_detected\": true,\n    \"diagnostic\": \"rounded threshold admitted a false positive\"\n  },\n  {\n    \"control\": \"two-resource-updates-not-hidden-by-charge\",\n    \"baseline_pass\": true,\n    \"mutant_detected\": true,\n    \"diagnostic\": \"(7.5, 6.25, 4.25)\"\n  },\n  {\n    \"control\": \"reset-resource-used-in-place-of-live-resource\",\n    \"baseline_pass\": true,\n    \"mutant_detected\": true,\n    \"diagnostic\": \"(3.75, 8.125, 6.125)\"\n  },\n  {\n    \"control\": \"reset-histories-used-in-place-of-live-histories\",\n    \"baseline_pass\": true,\n    \"mutant_detected\": true,\n    \"diagnostic\": \"((3.0, 7.0), (2.0, 5.0))\"\n  }\n]\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/home/uros/RC-github/graph-reflexive-coherence/.venv/bin/python",
+        "/tmp/p933-native-audit-rcm2mnpm/characterize.py"
+      ],
+      "cwd": "/tmp/p933-native-audit-rcm2mnpm",
+      "exit_status": 0,
+      "stdout": "[\n  {\n    \"case\": \"rounded_gate_is_not_exact_sum\",\n    \"current\": [\n      9007199254740992.0,\n      0.0\n    ],\n    \"flux\": [\n      1.0\n    ],\n    \"dt\": 0.5,\n    \"C_next\": [\n      9007199254740992.0,\n      0.5\n    ],\n    \"Q_target\": 9007199254740992.0,\n    \"Q_actual\": 9007199254740992.0,\n    \"residual\": 0.0,\n    \"admitted\": true,\n    \"exact_sum_error\": \"1/2\",\n    \"interpretation\": \"not a code contradiction: the frozen gate governs the prescribed rounded reduction, not an exact-sum invariant\"\n  },\n  {\n    \"case\": \"one_step_unit_transfer\",\n    \"current\": [\n      1e+20,\n      0.0\n    ],\n    \"flux\": [\n      1.0\n    ],\n    \"dt\": 1.0,\n    \"C_next\": [\n      1e+20,\n      1.0\n    ],\n    \"Q_target\": 1e+20,\n    \"Q_actual\": 1e+20,\n    \"residual\": 0.0,\n    \"admitted\": true,\n    \"exact_sum_error\": \"1\",\n    \"interpretation\": \"not a code contradiction: the frozen gate governs the prescribed rounded reduction, not an exact-sum invariant\"\n  },\n  {\n    \"case\": \"100_compositions_of_pure_continuity\",\n    \"C_next\": [\n      1e+20,\n      100.0\n    ],\n    \"Q_actual\": 1e+20,\n    \"exact_sum_error\": \"100\",\n    \"interpretation\": \"no candidate/clock/lifecycle or runtime trajectory executed\"\n  }\n]\n",
+      "stderr": ""
+    }
+  ],
+  "claim_ceiling": "Local boundary evidence; no acceptance, full beats, root certification or runtime support.",
+  "source_unchanged_during_run": true,
+  "completed_utc": "2026-09-07T12:56:40.363693+00:00",
+  "artifacts": {
+    "actual.json": "33eefcdc610819f646251f5f95c30ff4d25779bc9ad420b1c80a3a5517392bbd",
+    "inputs.json": "03c33fb2064caf9253c3c1af81adc6f5d26d662b2c591b72a4fc876128ca2dbc"
+  },
+  "shared_fields": {
+    "reference": {
+      "path": "../validation/run.json",
+      "sha256": "d5067e59440bd937cba645cd232a19c7e6fe81525d31b4b2c16054b324743e6a",
+      "pointer": ""
+    },
+    "fields": [
+      "python",
+      "platform",
+      "dependencies"
+    ]
+  },
+  "retention": "User-authorized pre-acceptance cleanup: shared data referenced by path and hash; original execution times, results and tested source versions retained."
+}
