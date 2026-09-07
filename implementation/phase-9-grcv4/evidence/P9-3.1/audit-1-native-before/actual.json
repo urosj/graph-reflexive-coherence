@@ -3729,14 +3729,14 @@
         "case": "0x1.0000000000000p+1-singular",
         "status": "exposure",
         "error": "AssertionError: input unexpectedly accepted",
-        "trace": "Traceback (most recent call last):\n  File \"/home/uros/Downloads/P9-3.1-independent-stress-tests.py\", line 57, in probe\n    result=fn();ROWS.append({'group':group,'case':label,'status':'pass','detail':result})\n           ^^^^\n  File \"/home/uros/Downloads/P9-3.1-independent-stress-tests.py\", line 140, in run\n    rejects(lambda:OneFormHodge(g2,M))\nAssertionError: input unexpectedly accepted\n"
+        "trace": "Traceback (most recent call last):\n  File \"implementation/phase-9-grcv4/evidence/P9-3.1/audit-1-inputs/inputs.json#/attachments/2/utf8_content\", line 57, in probe\n    result=fn();ROWS.append({'group':group,'case':label,'status':'pass','detail':result})\n           ^^^^\n  File \"implementation/phase-9-grcv4/evidence/P9-3.1/audit-1-inputs/inputs.json#/attachments/2/utf8_content\", line 140, in run\n    rejects(lambda:OneFormHodge(g2,M))\nAssertionError: input unexpectedly accepted\n"
       },
       {
         "group": "exact_non_spd_rejection",
         "case": "0x1.0000000000000p+1-indefinite",
         "status": "exposure",
         "error": "AssertionError: input unexpectedly accepted",
-        "trace": "Traceback (most recent call last):\n  File \"/home/uros/Downloads/P9-3.1-independent-stress-tests.py\", line 57, in probe\n    result=fn();ROWS.append({'group':group,'case':label,'status':'pass','detail':result})\n           ^^^^\n  File \"/home/uros/Downloads/P9-3.1-independent-stress-tests.py\", line 140, in run\n    rejects(lambda:OneFormHodge(g2,M))\nAssertionError: input unexpectedly accepted\n"
+        "trace": "Traceback (most recent call last):\n  File \"implementation/phase-9-grcv4/evidence/P9-3.1/audit-1-inputs/inputs.json#/attachments/2/utf8_content\", line 57, in probe\n    result=fn();ROWS.append({'group':group,'case':label,'status':'pass','detail':result})\n           ^^^^\n  File \"implementation/phase-9-grcv4/evidence/P9-3.1/audit-1-inputs/inputs.json#/attachments/2/utf8_content\", line 140, in run\n    rejects(lambda:OneFormHodge(g2,M))\nAssertionError: input unexpectedly accepted\n"
       },
       {
         "group": "exact_non_spd_rejection",
@@ -3791,28 +3791,28 @@
         "case": "0x1.c000000000000p+2-singular",
         "status": "exposure",
         "error": "AssertionError: input unexpectedly accepted",
-        "trace": "Traceback (most recent call last):\n  File \"/home/uros/Downloads/P9-3.1-independent-stress-tests.py\", line 57, in probe\n    result=fn();ROWS.append({'group':group,'case':label,'status':'pass','detail':result})\n           ^^^^\n  File \"/home/uros/Downloads/P9-3.1-independent-stress-tests.py\", line 140, in run\n    rejects(lambda:OneFormHodge(g2,M))\nAssertionError: input unexpectedly accepted\n"
+        "trace": "Traceback (most recent call last):\n  File \"implementation/phase-9-grcv4/evidence/P9-3.1/audit-1-inputs/inputs.json#/attachments/2/utf8_content\", line 57, in probe\n    result=fn();ROWS.append({'group':group,'case':label,'status':'pass','detail':result})\n           ^^^^\n  File \"implementation/phase-9-grcv4/evidence/P9-3.1/audit-1-inputs/inputs.json#/attachments/2/utf8_content\", line 140, in run\n    rejects(lambda:OneFormHodge(g2,M))\nAssertionError: input unexpectedly accepted\n"
       },
       {
         "group": "exact_non_spd_rejection",
         "case": "0x1.c000000000000p+2-indefinite",
         "status": "exposure",
         "error": "AssertionError: input unexpectedly accepted",
-        "trace": "Traceback (most recent call last):\n  File \"/home/uros/Downloads/P9-3.1-independent-stress-tests.py\", line 57, in probe\n    result=fn();ROWS.append({'group':group,'case':label,'status':'pass','detail':result})\n           ^^^^\n  File \"/home/uros/Downloads/P9-3.1-independent-stress-tests.py\", line 140, in run\n    rejects(lambda:OneFormHodge(g2,M))\nAssertionError: input unexpectedly accepted\n"
+        "trace": "Traceback (most recent call last):\n  File \"implementation/phase-9-grcv4/evidence/P9-3.1/audit-1-inputs/inputs.json#/attachments/2/utf8_content\", line 57, in probe\n    result=fn();ROWS.append({'group':group,'case':label,'status':'pass','detail':result})\n           ^^^^\n  File \"implementation/phase-9-grcv4/evidence/P9-3.1/audit-1-inputs/inputs.json#/attachments/2/utf8_content\", line 140, in run\n    rejects(lambda:OneFormHodge(g2,M))\nAssertionError: input unexpectedly accepted\n"
       },
       {
         "group": "exact_non_spd_rejection",
         "case": "0x1.0000000000000p+3-singular",
         "status": "exposure",
         "error": "AssertionError: input unexpectedly accepted",
-        "trace": "Traceback (most recent call last):\n  File \"/home/uros/Downloads/P9-3.1-independent-stress-tests.py\", line 57, in probe\n    result=fn();ROWS.append({'group':group,'case':label,'status':'pass','detail':result})\n           ^^^^\n  File \"/home/uros/Downloads/P9-3.1-independent-stress-tests.py\", line 140, in run\n    rejects(lambda:OneFormHodge(g2,M))\nAssertionError: input unexpectedly accepted\n"
+        "trace": "Traceback (most recent call last):\n  File \"implementation/phase-9-grcv4/evidence/P9-3.1/audit-1-inputs/inputs.json#/attachments/2/utf8_content\", line 57, in probe\n    result=fn();ROWS.append({'group':group,'case':label,'status':'pass','detail':result})\n           ^^^^\n  File \"implementation/phase-9-grcv4/evidence/P9-3.1/audit-1-inputs/inputs.json#/attachments/2/utf8_content\", line 140, in run\n    rejects(lambda:OneFormHodge(g2,M))\nAssertionError: input unexpectedly accepted\n"
       },
       {
         "group": "exact_non_spd_rejection",
         "case": "0x1.0000000000000p+3-indefinite",
         "status": "exposure",
         "error": "AssertionError: input unexpectedly accepted",
-        "trace": "Traceback (most recent call last):\n  File \"/home/uros/Downloads/P9-3.1-independent-stress-tests.py\", line 57, in probe\n    result=fn();ROWS.append({'group':group,'case':label,'status':'pass','detail':result})\n           ^^^^\n  File \"/home/uros/Downloads/P9-3.1-independent-stress-tests.py\", line 140, in run\n    rejects(lambda:OneFormHodge(g2,M))\nAssertionError: input unexpectedly accepted\n"
+        "trace": "Traceback (most recent call last):\n  File \"implementation/phase-9-grcv4/evidence/P9-3.1/audit-1-inputs/inputs.json#/attachments/2/utf8_content\", line 57, in probe\n    result=fn();ROWS.append({'group':group,'case':label,'status':'pass','detail':result})\n           ^^^^\n  File \"implementation/phase-9-grcv4/evidence/P9-3.1/audit-1-inputs/inputs.json#/attachments/2/utf8_content\", line 140, in run\n    rejects(lambda:OneFormHodge(g2,M))\nAssertionError: input unexpectedly accepted\n"
       },
       {
         "group": "exact_non_spd_rejection",
@@ -3891,7 +3891,7 @@
         "case": "0x1.e000000000000p+3-singular",
         "status": "exposure",
         "error": "AssertionError: input unexpectedly accepted",
-        "trace": "Traceback (most recent call last):\n  File \"/home/uros/Downloads/P9-3.1-independent-stress-tests.py\", line 57, in probe\n    result=fn();ROWS.append({'group':group,'case':label,'status':'pass','detail':result})\n           ^^^^\n  File \"/home/uros/Downloads/P9-3.1-independent-stress-tests.py\", line 140, in run\n    rejects(lambda:OneFormHodge(g2,M))\nAssertionError: input unexpectedly accepted\n"
+        "trace": "Traceback (most recent call last):\n  File \"implementation/phase-9-grcv4/evidence/P9-3.1/audit-1-inputs/inputs.json#/attachments/2/utf8_content\", line 57, in probe\n    result=fn();ROWS.append({'group':group,'case':label,'status':'pass','detail':result})\n           ^^^^\n  File \"implementation/phase-9-grcv4/evidence/P9-3.1/audit-1-inputs/inputs.json#/attachments/2/utf8_content\", line 140, in run\n    rejects(lambda:OneFormHodge(g2,M))\nAssertionError: input unexpectedly accepted\n"
       },
       {
         "group": "exact_non_spd_rejection",
@@ -3940,7 +3940,7 @@
         "case": "0x1.3000000000000p+4-singular",
         "status": "exposure",
         "error": "AssertionError: input unexpectedly accepted",
-        "trace": "Traceback (most recent call last):\n  File \"/home/uros/Downloads/P9-3.1-independent-stress-tests.py\", line 57, in probe\n    result=fn();ROWS.append({'group':group,'case':label,'status':'pass','detail':result})\n           ^^^^\n  File \"/home/uros/Downloads/P9-3.1-independent-stress-tests.py\", line 140, in run\n    rejects(lambda:OneFormHodge(g2,M))\nAssertionError: input unexpectedly accepted\n"
+        "trace": "Traceback (most recent call last):\n  File \"implementation/phase-9-grcv4/evidence/P9-3.1/audit-1-inputs/inputs.json#/attachments/2/utf8_content\", line 57, in probe\n    result=fn();ROWS.append({'group':group,'case':label,'status':'pass','detail':result})\n           ^^^^\n  File \"implementation/phase-9-grcv4/evidence/P9-3.1/audit-1-inputs/inputs.json#/attachments/2/utf8_content\", line 140, in run\n    rejects(lambda:OneFormHodge(g2,M))\nAssertionError: input unexpectedly accepted\n"
       },
       {
         "group": "exact_non_spd_rejection",
@@ -3977,14 +3977,14 @@
         "case": "0x1.6000000000000p+4-singular",
         "status": "exposure",
         "error": "AssertionError: input unexpectedly accepted",
-        "trace": "Traceback (most recent call last):\n  File \"/home/uros/Downloads/P9-3.1-independent-stress-tests.py\", line 57, in probe\n    result=fn();ROWS.append({'group':group,'case':label,'status':'pass','detail':result})\n           ^^^^\n  File \"/home/uros/Downloads/P9-3.1-independent-stress-tests.py\", line 140, in run\n    rejects(lambda:OneFormHodge(g2,M))\nAssertionError: input unexpectedly accepted\n"
+        "trace": "Traceback (most recent call last):\n  File \"implementation/phase-9-grcv4/evidence/P9-3.1/audit-1-inputs/inputs.json#/attachments/2/utf8_content\", line 57, in probe\n    result=fn();ROWS.append({'group':group,'case':label,'status':'pass','detail':result})\n           ^^^^\n  File \"implementation/phase-9-grcv4/evidence/P9-3.1/audit-1-inputs/inputs.json#/attachments/2/utf8_content\", line 140, in run\n    rejects(lambda:OneFormHodge(g2,M))\nAssertionError: input unexpectedly accepted\n"
       },
       {
         "group": "exact_non_spd_rejection",
         "case": "0x1.6000000000000p+4-indefinite",
         "status": "exposure",
         "error": "AssertionError: input unexpectedly accepted",
-        "trace": "Traceback (most recent call last):\n  File \"/home/uros/Downloads/P9-3.1-independent-stress-tests.py\", line 57, in probe\n    result=fn();ROWS.append({'group':group,'case':label,'status':'pass','detail':result})\n           ^^^^\n  File \"/home/uros/Downloads/P9-3.1-independent-stress-tests.py\", line 140, in run\n    rejects(lambda:OneFormHodge(g2,M))\nAssertionError: input unexpectedly accepted\n"
+        "trace": "Traceback (most recent call last):\n  File \"implementation/phase-9-grcv4/evidence/P9-3.1/audit-1-inputs/inputs.json#/attachments/2/utf8_content\", line 57, in probe\n    result=fn();ROWS.append({'group':group,'case':label,'status':'pass','detail':result})\n           ^^^^\n  File \"implementation/phase-9-grcv4/evidence/P9-3.1/audit-1-inputs/inputs.json#/attachments/2/utf8_content\", line 140, in run\n    rejects(lambda:OneFormHodge(g2,M))\nAssertionError: input unexpectedly accepted\n"
       },
       {
         "group": "exact_non_spd_rejection",
@@ -4051,21 +4051,21 @@
         "case": "0x1.c000000000000p+4-singular",
         "status": "exposure",
         "error": "AssertionError: input unexpectedly accepted",
-        "trace": "Traceback (most recent call last):\n  File \"/home/uros/Downloads/P9-3.1-independent-stress-tests.py\", line 57, in probe\n    result=fn();ROWS.append({'group':group,'case':label,'status':'pass','detail':result})\n           ^^^^\n  File \"/home/uros/Downloads/P9-3.1-independent-stress-tests.py\", line 140, in run\n    rejects(lambda:OneFormHodge(g2,M))\nAssertionError: input unexpectedly accepted\n"
+        "trace": "Traceback (most recent call last):\n  File \"implementation/phase-9-grcv4/evidence/P9-3.1/audit-1-inputs/inputs.json#/attachments/2/utf8_content\", line 57, in probe\n    result=fn();ROWS.append({'group':group,'case':label,'status':'pass','detail':result})\n           ^^^^\n  File \"implementation/phase-9-grcv4/evidence/P9-3.1/audit-1-inputs/inputs.json#/attachments/2/utf8_content\", line 140, in run\n    rejects(lambda:OneFormHodge(g2,M))\nAssertionError: input unexpectedly accepted\n"
       },
       {
         "group": "exact_non_spd_rejection",
         "case": "0x1.c000000000000p+4-indefinite",
         "status": "exposure",
         "error": "AssertionError: input unexpectedly accepted",
-        "trace": "Traceback (most recent call last):\n  File \"/home/uros/Downloads/P9-3.1-independent-stress-tests.py\", line 57, in probe\n    result=fn();ROWS.append({'group':group,'case':label,'status':'pass','detail':result})\n           ^^^^\n  File \"/home/uros/Downloads/P9-3.1-independent-stress-tests.py\", line 140, in run\n    rejects(lambda:OneFormHodge(g2,M))\nAssertionError: input unexpectedly accepted\n"
+        "trace": "Traceback (most recent call last):\n  File \"implementation/phase-9-grcv4/evidence/P9-3.1/audit-1-inputs/inputs.json#/attachments/2/utf8_content\", line 57, in probe\n    result=fn();ROWS.append({'group':group,'case':label,'status':'pass','detail':result})\n           ^^^^\n  File \"implementation/phase-9-grcv4/evidence/P9-3.1/audit-1-inputs/inputs.json#/attachments/2/utf8_content\", line 140, in run\n    rejects(lambda:OneFormHodge(g2,M))\nAssertionError: input unexpectedly accepted\n"
       },
       {
         "group": "exact_non_spd_rejection",
         "case": "0x1.d000000000000p+4-singular",
         "status": "exposure",
         "error": "AssertionError: input unexpectedly accepted",
-        "trace": "Traceback (most recent call last):\n  File \"/home/uros/Downloads/P9-3.1-independent-stress-tests.py\", line 57, in probe\n    result=fn();ROWS.append({'group':group,'case':label,'status':'pass','detail':result})\n           ^^^^\n  File \"/home/uros/Downloads/P9-3.1-independent-stress-tests.py\", line 140, in run\n    rejects(lambda:OneFormHodge(g2,M))\nAssertionError: input unexpectedly accepted\n"
+        "trace": "Traceback (most recent call last):\n  File \"implementation/phase-9-grcv4/evidence/P9-3.1/audit-1-inputs/inputs.json#/attachments/2/utf8_content\", line 57, in probe\n    result=fn();ROWS.append({'group':group,'case':label,'status':'pass','detail':result})\n           ^^^^\n  File \"implementation/phase-9-grcv4/evidence/P9-3.1/audit-1-inputs/inputs.json#/attachments/2/utf8_content\", line 140, in run\n    rejects(lambda:OneFormHodge(g2,M))\nAssertionError: input unexpectedly accepted\n"
       },
       {
         "group": "exact_non_spd_rejection",
@@ -4078,14 +4078,14 @@
         "case": "0x1.e000000000000p+4-singular",
         "status": "exposure",
         "error": "AssertionError: input unexpectedly accepted",
-        "trace": "Traceback (most recent call last):\n  File \"/home/uros/Downloads/P9-3.1-independent-stress-tests.py\", line 57, in probe\n    result=fn();ROWS.append({'group':group,'case':label,'status':'pass','detail':result})\n           ^^^^\n  File \"/home/uros/Downloads/P9-3.1-independent-stress-tests.py\", line 140, in run\n    rejects(lambda:OneFormHodge(g2,M))\nAssertionError: input unexpectedly accepted\n"
+        "trace": "Traceback (most recent call last):\n  File \"implementation/phase-9-grcv4/evidence/P9-3.1/audit-1-inputs/inputs.json#/attachments/2/utf8_content\", line 57, in probe\n    result=fn();ROWS.append({'group':group,'case':label,'status':'pass','detail':result})\n           ^^^^\n  File \"implementation/phase-9-grcv4/evidence/P9-3.1/audit-1-inputs/inputs.json#/attachments/2/utf8_content\", line 140, in run\n    rejects(lambda:OneFormHodge(g2,M))\nAssertionError: input unexpectedly accepted\n"
       },
       {
         "group": "exact_non_spd_rejection",
         "case": "0x1.e000000000000p+4-indefinite",
         "status": "exposure",
         "error": "AssertionError: input unexpectedly accepted",
-        "trace": "Traceback (most recent call last):\n  File \"/home/uros/Downloads/P9-3.1-independent-stress-tests.py\", line 57, in probe\n    result=fn();ROWS.append({'group':group,'case':label,'status':'pass','detail':result})\n           ^^^^\n  File \"/home/uros/Downloads/P9-3.1-independent-stress-tests.py\", line 140, in run\n    rejects(lambda:OneFormHodge(g2,M))\nAssertionError: input unexpectedly accepted\n"
+        "trace": "Traceback (most recent call last):\n  File \"implementation/phase-9-grcv4/evidence/P9-3.1/audit-1-inputs/inputs.json#/attachments/2/utf8_content\", line 57, in probe\n    result=fn();ROWS.append({'group':group,'case':label,'status':'pass','detail':result})\n           ^^^^\n  File \"implementation/phase-9-grcv4/evidence/P9-3.1/audit-1-inputs/inputs.json#/attachments/2/utf8_content\", line 140, in run\n    rejects(lambda:OneFormHodge(g2,M))\nAssertionError: input unexpectedly accepted\n"
       },
       {
         "group": "exact_non_spd_rejection",
@@ -4104,14 +4104,14 @@
         "case": "0x1.0000000000000p+5-singular",
         "status": "exposure",
         "error": "AssertionError: input unexpectedly accepted",
-        "trace": "Traceback (most recent call last):\n  File \"/home/uros/Downloads/P9-3.1-independent-stress-tests.py\", line 57, in probe\n    result=fn();ROWS.append({'group':group,'case':label,'status':'pass','detail':result})\n           ^^^^\n  File \"/home/uros/Downloads/P9-3.1-independent-stress-tests.py\", line 140, in run\n    rejects(lambda:OneFormHodge(g2,M))\nAssertionError: input unexpectedly accepted\n"
+        "trace": "Traceback (most recent call last):\n  File \"implementation/phase-9-grcv4/evidence/P9-3.1/audit-1-inputs/inputs.json#/attachments/2/utf8_content\", line 57, in probe\n    result=fn();ROWS.append({'group':group,'case':label,'status':'pass','detail':result})\n           ^^^^\n  File \"implementation/phase-9-grcv4/evidence/P9-3.1/audit-1-inputs/inputs.json#/attachments/2/utf8_content\", line 140, in run\n    rejects(lambda:OneFormHodge(g2,M))\nAssertionError: input unexpectedly accepted\n"
       },
       {
         "group": "exact_non_spd_rejection",
         "case": "0x1.0000000000000p+5-indefinite",
         "status": "exposure",
         "error": "AssertionError: input unexpectedly accepted",
-        "trace": "Traceback (most recent call last):\n  File \"/home/uros/Downloads/P9-3.1-independent-stress-tests.py\", line 57, in probe\n    result=fn();ROWS.append({'group':group,'case':label,'status':'pass','detail':result})\n           ^^^^\n  File \"/home/uros/Downloads/P9-3.1-independent-stress-tests.py\", line 140, in run\n    rejects(lambda:OneFormHodge(g2,M))\nAssertionError: input unexpectedly accepted\n"
+        "trace": "Traceback (most recent call last):\n  File \"implementation/phase-9-grcv4/evidence/P9-3.1/audit-1-inputs/inputs.json#/attachments/2/utf8_content\", line 57, in probe\n    result=fn();ROWS.append({'group':group,'case':label,'status':'pass','detail':result})\n           ^^^^\n  File \"implementation/phase-9-grcv4/evidence/P9-3.1/audit-1-inputs/inputs.json#/attachments/2/utf8_content\", line 140, in run\n    rejects(lambda:OneFormHodge(g2,M))\nAssertionError: input unexpectedly accepted\n"
       },
       {
         "group": "exact_non_spd_rejection",
@@ -4130,7 +4130,7 @@
         "case": "0x1.1000000000000p+5-singular",
         "status": "exposure",
         "error": "AssertionError: input unexpectedly accepted",
-        "trace": "Traceback (most recent call last):\n  File \"/home/uros/Downloads/P9-3.1-independent-stress-tests.py\", line 57, in probe\n    result=fn();ROWS.append({'group':group,'case':label,'status':'pass','detail':result})\n           ^^^^\n  File \"/home/uros/Downloads/P9-3.1-independent-stress-tests.py\", line 140, in run\n    rejects(lambda:OneFormHodge(g2,M))\nAssertionError: input unexpectedly accepted\n"
+        "trace": "Traceback (most recent call last):\n  File \"implementation/phase-9-grcv4/evidence/P9-3.1/audit-1-inputs/inputs.json#/attachments/2/utf8_content\", line 57, in probe\n    result=fn();ROWS.append({'group':group,'case':label,'status':'pass','detail':result})\n           ^^^^\n  File \"implementation/phase-9-grcv4/evidence/P9-3.1/audit-1-inputs/inputs.json#/attachments/2/utf8_content\", line 140, in run\n    rejects(lambda:OneFormHodge(g2,M))\nAssertionError: input unexpectedly accepted\n"
       },
       {
         "group": "exact_non_spd_rejection",
@@ -4143,7 +4143,7 @@
         "case": "0x1.1800000000000p+5-singular",
         "status": "exposure",
         "error": "AssertionError: input unexpectedly accepted",
-        "trace": "Traceback (most recent call last):\n  File \"/home/uros/Downloads/P9-3.1-independent-stress-tests.py\", line 57, in probe\n    result=fn();ROWS.append({'group':group,'case':label,'status':'pass','detail':result})\n           ^^^^\n  File \"/home/uros/Downloads/P9-3.1-independent-stress-tests.py\", line 140, in run\n    rejects(lambda:OneFormHodge(g2,M))\nAssertionError: input unexpectedly accepted\n"
+        "trace": "Traceback (most recent call last):\n  File \"implementation/phase-9-grcv4/evidence/P9-3.1/audit-1-inputs/inputs.json#/attachments/2/utf8_content\", line 57, in probe\n    result=fn();ROWS.append({'group':group,'case':label,'status':'pass','detail':result})\n           ^^^^\n  File \"implementation/phase-9-grcv4/evidence/P9-3.1/audit-1-inputs/inputs.json#/attachments/2/utf8_content\", line 140, in run\n    rejects(lambda:OneFormHodge(g2,M))\nAssertionError: input unexpectedly accepted\n"
       },
       {
         "group": "exact_non_spd_rejection",
@@ -4240,7 +4240,7 @@
         "case": "0x1.5800000000000p+5-singular",
         "status": "exposure",
         "error": "AssertionError: input unexpectedly accepted",
-        "trace": "Traceback (most recent call last):\n  File \"/home/uros/Downloads/P9-3.1-independent-stress-tests.py\", line 57, in probe\n    result=fn();ROWS.append({'group':group,'case':label,'status':'pass','detail':result})\n           ^^^^\n  File \"/home/uros/Downloads/P9-3.1-independent-stress-tests.py\", line 140, in run\n    rejects(lambda:OneFormHodge(g2,M))\nAssertionError: input unexpectedly accepted\n"
+        "trace": "Traceback (most recent call last):\n  File \"implementation/phase-9-grcv4/evidence/P9-3.1/audit-1-inputs/inputs.json#/attachments/2/utf8_content\", line 57, in probe\n    result=fn();ROWS.append({'group':group,'case':label,'status':'pass','detail':result})\n           ^^^^\n  File \"implementation/phase-9-grcv4/evidence/P9-3.1/audit-1-inputs/inputs.json#/attachments/2/utf8_content\", line 140, in run\n    rejects(lambda:OneFormHodge(g2,M))\nAssertionError: input unexpectedly accepted\n"
       },
       {
         "group": "exact_non_spd_rejection",
@@ -4337,7 +4337,7 @@
         "case": "0x1.9800000000000p+5-singular",
         "status": "exposure",
         "error": "AssertionError: input unexpectedly accepted",
-        "trace": "Traceback (most recent call last):\n  File \"/home/uros/Downloads/P9-3.1-independent-stress-tests.py\", line 57, in probe\n    result=fn();ROWS.append({'group':group,'case':label,'status':'pass','detail':result})\n           ^^^^\n  File \"/home/uros/Downloads/P9-3.1-independent-stress-tests.py\", line 140, in run\n    rejects(lambda:OneFormHodge(g2,M))\nAssertionError: input unexpectedly accepted\n"
+        "trace": "Traceback (most recent call last):\n  File \"implementation/phase-9-grcv4/evidence/P9-3.1/audit-1-inputs/inputs.json#/attachments/2/utf8_content\", line 57, in probe\n    result=fn();ROWS.append({'group':group,'case':label,'status':'pass','detail':result})\n           ^^^^\n  File \"implementation/phase-9-grcv4/evidence/P9-3.1/audit-1-inputs/inputs.json#/attachments/2/utf8_content\", line 140, in run\n    rejects(lambda:OneFormHodge(g2,M))\nAssertionError: input unexpectedly accepted\n"
       },
       {
         "group": "exact_non_spd_rejection",
@@ -4422,7 +4422,7 @@
         "case": "0x1.d000000000000p+5-singular",
         "status": "exposure",
         "error": "AssertionError: input unexpectedly accepted",
-        "trace": "Traceback (most recent call last):\n  File \"/home/uros/Downloads/P9-3.1-independent-stress-tests.py\", line 57, in probe\n    result=fn();ROWS.append({'group':group,'case':label,'status':'pass','detail':result})\n           ^^^^\n  File \"/home/uros/Downloads/P9-3.1-independent-stress-tests.py\", line 140, in run\n    rejects(lambda:OneFormHodge(g2,M))\nAssertionError: input unexpectedly accepted\n"
+        "trace": "Traceback (most recent call last):\n  File \"implementation/phase-9-grcv4/evidence/P9-3.1/audit-1-inputs/inputs.json#/attachments/2/utf8_content\", line 57, in probe\n    result=fn();ROWS.append({'group':group,'case':label,'status':'pass','detail':result})\n           ^^^^\n  File \"implementation/phase-9-grcv4/evidence/P9-3.1/audit-1-inputs/inputs.json#/attachments/2/utf8_content\", line 140, in run\n    rejects(lambda:OneFormHodge(g2,M))\nAssertionError: input unexpectedly accepted\n"
       },
       {
         "group": "exact_non_spd_rejection",
@@ -4447,7 +4447,7 @@
         "case": "0x1.e000000000000p+5-singular",
         "status": "exposure",
         "error": "AssertionError: input unexpectedly accepted",
-        "trace": "Traceback (most recent call last):\n  File \"/home/uros/Downloads/P9-3.1-independent-stress-tests.py\", line 57, in probe\n    result=fn();ROWS.append({'group':group,'case':label,'status':'pass','detail':result})\n           ^^^^\n  File \"/home/uros/Downloads/P9-3.1-independent-stress-tests.py\", line 140, in run\n    rejects(lambda:OneFormHodge(g2,M))\nAssertionError: input unexpectedly accepted\n"
+        "trace": "Traceback (most recent call last):\n  File \"implementation/phase-9-grcv4/evidence/P9-3.1/audit-1-inputs/inputs.json#/attachments/2/utf8_content\", line 57, in probe\n    result=fn();ROWS.append({'group':group,'case':label,'status':'pass','detail':result})\n           ^^^^\n  File \"implementation/phase-9-grcv4/evidence/P9-3.1/audit-1-inputs/inputs.json#/attachments/2/utf8_content\", line 140, in run\n    rejects(lambda:OneFormHodge(g2,M))\nAssertionError: input unexpectedly accepted\n"
       },
       {
         "group": "exact_non_spd_rejection",
@@ -4484,14 +4484,14 @@
         "case": "0x1.f800000000000p+5-singular",
         "status": "exposure",
         "error": "AssertionError: input unexpectedly accepted",
-        "trace": "Traceback (most recent call last):\n  File \"/home/uros/Downloads/P9-3.1-independent-stress-tests.py\", line 57, in probe\n    result=fn();ROWS.append({'group':group,'case':label,'status':'pass','detail':result})\n           ^^^^\n  File \"/home/uros/Downloads/P9-3.1-independent-stress-tests.py\", line 140, in run\n    rejects(lambda:OneFormHodge(g2,M))\nAssertionError: input unexpectedly accepted\n"
+        "trace": "Traceback (most recent call last):\n  File \"implementation/phase-9-grcv4/evidence/P9-3.1/audit-1-inputs/inputs.json#/attachments/2/utf8_content\", line 57, in probe\n    result=fn();ROWS.append({'group':group,'case':label,'status':'pass','detail':result})\n           ^^^^\n  File \"implementation/phase-9-grcv4/evidence/P9-3.1/audit-1-inputs/inputs.json#/attachments/2/utf8_content\", line 140, in run\n    rejects(lambda:OneFormHodge(g2,M))\nAssertionError: input unexpectedly accepted\n"
       },
       {
         "group": "exact_non_spd_rejection",
         "case": "0x1.f800000000000p+5-indefinite",
         "status": "exposure",
         "error": "AssertionError: input unexpectedly accepted",
-        "trace": "Traceback (most recent call last):\n  File \"/home/uros/Downloads/P9-3.1-independent-stress-tests.py\", line 57, in probe\n    result=fn();ROWS.append({'group':group,'case':label,'status':'pass','detail':result})\n           ^^^^\n  File \"/home/uros/Downloads/P9-3.1-independent-stress-tests.py\", line 140, in run\n    rejects(lambda:OneFormHodge(g2,M))\nAssertionError: input unexpectedly accepted\n"
+        "trace": "Traceback (most recent call last):\n  File \"implementation/phase-9-grcv4/evidence/P9-3.1/audit-1-inputs/inputs.json#/attachments/2/utf8_content\", line 57, in probe\n    result=fn();ROWS.append({'group':group,'case':label,'status':'pass','detail':result})\n           ^^^^\n  File \"implementation/phase-9-grcv4/evidence/P9-3.1/audit-1-inputs/inputs.json#/attachments/2/utf8_content\", line 140, in run\n    rejects(lambda:OneFormHodge(g2,M))\nAssertionError: input unexpectedly accepted\n"
       },
       {
         "group": "exact_non_spd_rejection",

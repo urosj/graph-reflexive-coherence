@@ -162,7 +162,7 @@
     },
     {
       "path": "implementation/phase-9-grcv4/evidence/P9-3.1/audit-1-native-before/actual.json",
-      "sha256": "3e166a5a855019ad0e05eb96ce4b853d367488cac6e930b01e58761c3bb67c1e"
+      "sha256": "85fc0a5aabedd4af9c6af3046f59d899a5d5adb5b2c93642483e7c9365fbc8d0"
     },
     {
       "path": "implementation/phase-9-grcv4/evidence/P9-3.1/audit-1-native-before/expected.json",
@@ -174,7 +174,7 @@
     },
     {
       "path": "implementation/phase-9-grcv4/evidence/P9-3.1/audit-1-native-before/run.json",
-      "sha256": "615ab4eed4a8f1de06dd51917261e7e4c8f79f6905df6180852709d5007a79a4"
+      "sha256": "355aa271f1f87c00815ecddd0f63febae35b97f7110e6dd9109fe6f59e23a90a"
     },
     {
       "path": "implementation/phase-9-grcv4/evidence/P9-3.1/audit-1-permission/actual.json",
@@ -282,7 +282,7 @@
     },
     {
       "path": "implementation/phase-9-grcv4/tranche-3/P9-3.1-Review.md",
-      "sha256": "2d5c2cabc198b52a21b8d9afd37e7b1b245b4dde7aafdb71e32e34aed5087a21"
+      "sha256": "258860fa7c05e34ae9c9c83bb06698f3bd26a6bec11960df359ac9a6456089b6"
     }
   ],
   "source_bindings": [
@@ -306,5 +306,66 @@
       "path": "tests/models/test_grc_v4_transport.py",
       "sha256": "13ac20f700a10f7a13fb5ba09243844e2bced9e79bcd1260d2740191fa5e691b"
     }
-  ]
+  ],
+  "repository_reference_maintenance": {
+    "authorization": "User requested repository-local P9-3.1 audit references after P9-3.3 acceptance and commit.",
+    "performed_after_P9_3_3_commit": "ce83d7a709d63b9445a0e81226425597ed37ced0",
+    "presentation_record": "implementation/phase-9-grcv4/evidence/P9-3.1/audit-1-native-before/run.json#/presentation",
+    "status": "verified_path_only_normalization",
+    "trace_fields": 25,
+    "filename_occurrences": 50,
+    "original_observations_preserved": true,
+    "new_numerical_execution": false,
+    "historical_acceptance_preserved": "Accepted subjects and original bytes remain in repository Git history; original review-time status fields are not rewritten.",
+    "authority_verification": {
+      "command": ".venv/bin/python implementation/phase-9-grcv4/verification/test_phase9_g1.py",
+      "run_id": "p9-g1-03a036a8770a43fca87b410bdfbb0cc2",
+      "report_digest": "921b48e5a889153ce880d79fa9ce96c309e14e9219d68bf9f2db46158647973d",
+      "policy_digest": "92eee5513bdd8fde896d2c5b269ff9a1a1def7e5c3e62fad7aadcb119a55e49f",
+      "passed": 126,
+      "failed": 0,
+      "scope": "Actual checker pressure on disposable checkouts before retaining this summary; final document/work bindings receive a fresh boundary check.",
+      "source_bindings": [
+        {
+          "path": "implementation/phase-9-grcv4/verification/phase9_implementation_policy.py",
+          "sha256": "d6bbac4e9c7edc6cf858af7561052b2ae1d27ae3493ca07d21937cbd44858fac"
+        },
+        {
+          "path": "implementation/phase-9-grcv4/verification/test_phase9_g1.py",
+          "sha256": "26329a41ad3ba3667d7c52a75f91ee22eced3c8f4274bcfafbca0ed5067e106a"
+        }
+      ],
+      "presentation_cases": [
+        {
+          "case_id": "authorized_p931_repository_source_presentation",
+          "candidate_decision": "admitted",
+          "assertion_result": "passed",
+          "actual_reason": "exact accepted scope admitted",
+          "expected_reason": null
+        },
+        {
+          "case_id": "presentation_cannot_conceal_numerical_exposure",
+          "candidate_decision": "rejected",
+          "assertion_result": "passed",
+          "actual_reason": "published run evidence is immutable",
+          "expected_reason": "published run evidence is immutable"
+        },
+        {
+          "case_id": "presentation_cannot_change_audit_source",
+          "candidate_decision": "rejected",
+          "assertion_result": "passed",
+          "actual_reason": "published run evidence is immutable",
+          "expected_reason": "published run evidence is immutable"
+        },
+        {
+          "case_id": "presentation_cannot_relabel_failed_run",
+          "candidate_decision": "rejected",
+          "assertion_result": "passed",
+          "actual_reason": "published run evidence is immutable",
+          "expected_reason": "published run evidence is immutable"
+        }
+      ],
+      "initial_boundary_rejection": "The general published-evidence immutability guard rejected the presentation change; the correction admits only the two fixed original-to-presented Git blob pairs. Other rewrites remain forbidden."
+    }
+  }
 }

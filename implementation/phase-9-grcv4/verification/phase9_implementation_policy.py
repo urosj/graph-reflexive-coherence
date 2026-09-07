@@ -64,6 +64,20 @@ GEOMETRY_ACCEPTANCE = PHASE + "tranche-3/P9-3.1-AcceptanceRecord.json"
 GEOMETRY_ACCEPTANCE_DIGEST = "f119e1361500e72f58297bc8186f868954b4065c853fcdd089280a5d28f88618"
 STAGE_ACCEPTANCE = PHASE + "tranche-3/P9-3.2-AcceptanceRecord.json"
 STAGE_ACCEPTANCE_DIGEST = "425cd05eb85213185a4b531a09c16cefec4be992ac4755d404b5f263e09ebd0a"
+# Explicit user-authorized presentation maintenance after accepted P9-3.3
+# ce83d7a. Only these original -> presented Git blobs may differ from HEAD.
+# The run's /presentation binds the original repository revision and embedded
+# audit source. This grants no general path rewrite or evidence-edit permission.
+P931_AUDIT_SOURCE_PRESENTATIONS = {
+    PHASE + "evidence/P9-3.1/audit-1-native-before/actual.json": (
+        "5a0a1f9e7ecefb83990d000aeca8e1f4231195aa",
+        "16e79b60efbbbfbd75bea36c570e29dfea83e437",
+    ),
+    PHASE + "evidence/P9-3.1/audit-1-native-before/run.json": (
+        "e065f308d41e4fcc24f606cf4b69ace56fce6096",
+        "0e2c18ce206cb1cd177ae9331f01ffd9168a4b4e",
+    ),
+}
 GENERATED = SIDE + "tool/generated/phase9-verification/"
 REPORT_SCHEMA = "phase9_G1_pressure_results_v1"
 REPORT_FILE = "g1-pressure-results.json"
@@ -674,7 +688,8 @@ def current_boundary(root):
         )
     work = work_entries(root, approval)
     # G1 grants creation/update, not deletion/rename of published runtime work.
-    # Deliberately published supporting evidence is immutable. This does NOT
+    # Deliberately published supporting evidence is immutable, apart from the
+    # exact user-authorized presentation pairs above. This does NOT
     # require publishing routine failed attempts: relevant development failures
     # may be summarized in the leaf record (see P9-1.9-EvidenceHandoff.md).
     # Removing a manifest row or staging deletion cannot rewrite that evidence.
@@ -691,8 +706,10 @@ def current_boundary(root):
             )
             if name.startswith(PHASE + "evidence/"):
                 oid = header.decode().split()[2]
+                current_oid = planning.blob_id(safe_path(root, name).read_bytes())
                 require(
-                    planning.blob_id(safe_path(root, name).read_bytes()) == oid,
+                    current_oid == oid
+                    or P931_AUDIT_SOURCE_PRESENTATIONS.get(name) == (oid, current_oid),
                     "published run evidence is immutable",
                 )
     baseline = baseline_files(root)

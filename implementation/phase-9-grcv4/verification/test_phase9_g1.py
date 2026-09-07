@@ -888,6 +888,43 @@ def main():
             ),
         )
 
+        case("authorized_p931_repository_source_presentation", inspect)
+        presented_actual = p.PHASE + "evidence/P9-3.1/audit-1-native-before/actual.json"
+        presented_run = p.PHASE + "evidence/P9-3.1/audit-1-native-before/run.json"
+
+        def corrupt_presentation(name, transform):
+            value = p.read(root / name)
+            transform(value)
+            registered(name, p.canonical(value) + b"\n", leaf="P9-3.1")
+
+        def conceal_exposure(value):
+            row = next(row for row in value["stress"]["cases_detail"] if "trace" in row)
+            p.require(row["status"] != "pass", "fixture exposure is already hidden")
+            row["status"] = "pass"
+
+        def misidentify_trace(value):
+            row = next(row for row in value["stress"]["cases_detail"] if "trace" in row)
+            p.require("/attachments/2/utf8_content" in row["trace"], "fixture source missing")
+            row["trace"] = row["trace"].replace(
+                "/attachments/2/utf8_content", "/attachments/3/utf8_content"
+            )
+
+        case(
+            "presentation_cannot_conceal_numerical_exposure",
+            lambda: corrupt_presentation(presented_actual, conceal_exposure),
+            "published run evidence is immutable",
+        )
+        case(
+            "presentation_cannot_change_audit_source",
+            lambda: corrupt_presentation(presented_actual, misidentify_trace),
+            "published run evidence is immutable",
+        )
+        case(
+            "presentation_cannot_relabel_failed_run",
+            lambda: corrupt_presentation(presented_run, lambda v: v.update(status="passed")),
+            "published run evidence is immutable",
+        )
+
         def before_acceptance():
             with tempfile.TemporaryDirectory(
                 prefix="grcv4-p919-before-acceptance-"

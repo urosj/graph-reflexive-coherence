@@ -187,7 +187,7 @@
     },
     {
       "path": "implementation/phase-9-grcv4/verification/phase9_implementation_policy.py",
-      "sha256": "7416bd9a19ce6d22f2bc0c2b89579caa11f54e62fb67f7af8a250b80c1b322d7"
+      "sha256": "d6bbac4e9c7edc6cf858af7561052b2ae1d27ae3493ca07d21937cbd44858fac"
     },
     {
       "path": "implementation/phase-9-grcv4/verification/test_handoff_evidence.py",
@@ -195,8 +195,8 @@
     },
     {
       "path": "implementation/phase-9-grcv4/verification/test_phase9_g1.py",
-      "sha256": "6a210e0a78bd52e4fcdf35835d3702df4dffa14dc64cc0cb79682c0b8f79febe"
+      "sha256": "26329a41ad3ba3667d7c52a75f91ee22eced3c8f4274bcfafbca0ed5067e106a"
     }
   ],
-  "record_digest": "d3642de5fecd799fc39b5abc12693f5549e44177bb4209fc9fc012d3d9d482ac"
+  "record_digest": "92eee5513bdd8fde896d2c5b269ff9a1a1def7e5c3e62fad7aadcb119a55e49f"
 }
