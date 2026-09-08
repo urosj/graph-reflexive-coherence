@@ -134,6 +134,11 @@ def verification_status(repo_root: Path) -> dict:
                     "accepted_iterations": ["P9-4.2"],
                     "path": module.CURRENT_ACCEPTANCE,
                 },
+                c_controls_acceptance={
+                    "record_digest": module.accepted_c_controls(root)["record_digest"],
+                    "accepted_iterations": ["P9-4.3"],
+                    "path": module.CONTROLS_ACCEPTANCE,
+                },
                 implementation_scope=approval["runtime_targets"],
                 dependency_ready_leaves=ready,
                 permitted_runtime_paths=sorted(
@@ -285,6 +290,7 @@ def verification_status(repo_root: Path) -> dict:
         payload.pop("preservation_acceptance", None)
         payload.pop("reference_transport_acceptance", None)
         payload.pop("c_current_acceptance", None)
+        payload.pop("c_controls_acceptance", None)
         payload.pop("permitted_runtime_paths", None)
         payload.pop("source_meaning", None)
         payload.pop("tree", None)

@@ -630,8 +630,8 @@ handling, domain failures, and precision edges.
 
 ### Tranche 4. Candidate C with OS
 
-Current leaf: P9-4.3 on `impl/phase-9-grcv4-tranche-4`. Accepted predecessor:
-P9-4.2 at `ac3a7cf`, with P9-3.5's
+Current leaf: P9-4.4 on `impl/phase-9-grcv4-tranche-4`. Accepted predecessor:
+P9-4.3 including its audit follow-up at `4a3a7ee`, with P9-3.5's
 accepted `155c728` subject separately authenticated. The
 [P9-4.1 review](./phase-9-grcv4/tranche-4/P9-4.1-Review.md) covers the implemented
 complete-profile reference binding, exact stable-edge admission, separate
@@ -676,6 +676,29 @@ interpreter and changed hash seed. The user has accepted the verified follow-up.
 Its index and run retain their validation-time dispositions; this plan and the
 commit record the later acceptance. Original evidence and acceptance history
 remain unchanged. P9-4.4 stays held.
+
+P9-4.4 entry now binds accepted `4a3a7ee` in the separate
+[P9-4.3 acceptance record](./phase-9-grcv4/tranche-4/P9-4.3-AcceptanceRecord.json).
+Fifteen leaves and 27 paths are dependency-ready. The
+[P9-4.4 review](./phase-9-grcv4/tranche-4/P9-4.4-Review.md) maps one-pass OS,
+exact reference-relative split admission, fixed-selector-stratum pressure,
+one corrector resource write and final-C reconstruction to the preserved
+187-method initial run and 188 passing audit-follow-up methods in a reconstructed
+checkout. The audit regression forces both pass and step through equal-endpoint
+rank/interior crossings and safe mixed paths; endpoint-only and blanket-rejection
+mutations are detected. Production source is unchanged by the follow-up.
+The numerical pipeline remains provisional;
+operation/lifecycle owners still authenticate and commit live state and receipts.
+P9-4.4 has closed its confirmed audit gap and is explicitly accepted by the user
+for commit, including the follow-up. Review, execution and run records retain
+their validation-time dispositions; this plan and the commit record the later
+acceptance. A separately authorized P9-4.5 entry can bind the accepted commit;
+P9-4.5 and G2 remain held. Before a commit-ready positive vector, P9-4.5 must resolve
+complete poststate reference/pre-read current/domain admission under the frozen
+complete-step contract. Consumed-corrector admission does not establish that
+reference admission. P9-4.5/P9-4.6 must bind actual request and ledger metadata;
+`next_inputs` is numerical continuation only. Final-C current remains excluded
+from a second geometry, residual or continuity pass.
 
 Implement the positive stable-edge reference map and separate Hodge/mobility
 constructors, the exact D11-C potential and baseline flux, strict-gap selector,

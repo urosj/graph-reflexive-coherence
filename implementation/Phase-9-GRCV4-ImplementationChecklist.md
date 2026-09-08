@@ -539,12 +539,36 @@ three bounded batches retain their own results and raw per-run manifests.
   accepted the verified follow-up. Its index and run retain their validation-time
   dispositions; this checklist and the commit record the later acceptance.
   Original evidence is unchanged and P9-4.4 remains held.
-- [ ] P9-4.4: Implement one OS pass, explicit split residual, one resource
+- [x] P9-4.4: Implement one OS pass, explicit split residual, one resource
   write, and post-continuity rederivation.
+  Implemented and verified; the user explicitly accepts the leaf and its audit
+  follow-up for commit. The
+  [review](./phase-9-grcv4/tranche-4/P9-4.4-Review.md) and
+  [execution record](./phase-9-grcv4/tranche-4/P9-4.4-ExecutionRecord.json) bind
+  the preserved 187-method initial run and 188 passing follow-up methods
+  (22 OS), in a reconstructed checkout with a fresh interpreter and changed
+  hash seed. The follow-up catches endpoint-only path checking at both pass/step
+  entry points, rejects before residual/resource work, and admits safe mixed
+  paths; both underchecking and blanket-rejection mutations are detected.
+  Production source is unchanged by the audit follow-up. Exact split-norm
+  boundaries, interior selector crossings, corrected-current singularity,
+  dense signed covariance, strict zero/subnormal/extreme durations, single-write
+  ordering and final-C failure receive explicit pressure. The pipeline is
+  provisional; live lifecycle commit/receipts remain with P9-4.5/4.6/4.7.
+  Review, execution and run records retain their validation-time dispositions;
+  this checklist and the commit record later user acceptance. Fifteen leaves
+  and 27 paths are ready; P9-4.5 entry and runtime conformance stay held.
 - [ ] P9-4.5: Execute positive and atomic-negative `C_OS` vectors; keep full
   profile conformance pending lifecycle completion.
   Exercise the declared numerical reproducibility scope without hidden
   damping, regularization, pseudoinverse, fallback or charge repair (§7.4).
+  Resolve complete poststate reference/pre-read current/domain admission before
+  a commit-ready positive vector; success at consumed corrector geometry does
+  not prove reference-restart admission. Verify the required check or justify
+  its exact source-backed operation-boundary placement (complete-step 8–11).
+  Keep final-C current out of a second geometry/residual/continuity pass.
+  P9-4.5/P9-4.6 must bind actual request/ledger identities; inherited
+  `next_inputs.operation_id`, `dt` and `receipt_ids` have no lifecycle authority.
 - [ ] P9-4.6: Execute the C_OS snapshot/load/reset/rebase and deep-copy/
   immutability slice; record the corresponding P9-7.1-C_OS evidence.
 - [ ] P9-4.7a: Execute atomic failed-step, receipt identity/ownership, and

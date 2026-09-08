@@ -63,6 +63,31 @@ follow-up. Original evidence and acceptance history remain intact; the follow-up
 index and run retain their validation-time dispositions. This handoff and the
 commit record the later user acceptance. P9-4.4 remains held.
 
+P9-4.4 continuation: the user authorized the next leaf. The
+[P9-4.3 acceptance record](./phase-9-grcv4/tranche-4/P9-4.3-AcceptanceRecord.json)
+binds accepted follow-up `4a3a7ee`, opening fifteen leaves and 27 eligible paths.
+P9-4.4 is implemented, verified and explicitly accepted by the user for commit,
+including its closed audit gap: see its
+[review](./phase-9-grcv4/tranche-4/P9-4.4-Review.md) and
+[execution record](./phase-9-grcv4/tranche-4/P9-4.4-ExecutionRecord.json).
+The initial 187-method run is preserved. The audit follow-up passes 188 focused
+methods, including 22 OS methods, in a reconstructed checkout. It adds actual
+pass/step crossing rejection and safe-path controls; endpoint-only and blanket
+rejection mutations are detected. Runtime source is unchanged by the follow-up.
+The bounded provisional pipeline performs one reference predictor,
+one geometry update, one fresh corrector, an explicit reference-relative split
+check, one resource write and final-C reconstruction. Live lifecycle commit and
+receipt authentication remain with their later owners; runtime support stays
+empty. The review, execution and run records retain their validation-time
+dispositions; this handoff and the commit record the later user acceptance.
+A separately authorized P9-4.5 entry can bind the accepted commit. P9-4.5 remains
+held. Its complete-operation work must resolve next-reference
+current/domain admission before claiming a commit-ready positive vector. Current
+`next_inputs` constructs reference geometry without evaluating that current; its
+operation ID, duration and receipt IDs are numerical continuation metadata, not
+an authenticated next request/ledger. Preserve final-C current quarantine from
+a second geometry, residual or continuity pass.
+
 Validation scope for continuation: select the leaf's scientific/edge-case tests,
 relevant shared V4 regression tests, and checks for changed verification surfaces.
 The full repository run for P9-4.1 is not a requirement to repeat it after every

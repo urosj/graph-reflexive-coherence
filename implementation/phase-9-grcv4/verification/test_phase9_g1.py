@@ -52,7 +52,7 @@ def main():
             ],
             check=True,
         )
-        fixture_revision = p.accepted_c_current(p.ROOT)["baseline_commit"]
+        fixture_revision = p.accepted_c_controls(p.ROOT)["baseline_commit"]
         subprocess.run(
             ["git", "checkout", "--quiet", "--detach", fixture_revision],
             cwd=root, check=True,
@@ -520,8 +520,8 @@ def main():
         )
         case(
             "c_current_does_not_accept_future_leaf",
-            lambda: registered(p.PHASE + "evidence/P9-4.4/probe/inputs.json",
-                               b"{}", leaf="P9-4.4"),
+            lambda: registered(p.PHASE + "evidence/P9-4.5/probe/inputs.json",
+                               b"{}", leaf="P9-4.5"),
             "owning leaf entry dependencies are not accepted",
         )
         case(
@@ -627,6 +627,21 @@ def main():
             case("c_current_acceptance_cannot_self_authorize_" + key,
                  forged_current, "untrusted C stage current acceptance",
                  scope="isolated_c_current_acceptance_authentication")
+        case("missing_c_controls_acceptance", lambda: edit(p.CONTROLS_ACCEPTANCE, None),
+             "P9-4.3-AcceptanceRecord.json")
+        for key, replacement in [("status", "pending"), ("accepted_iterations", ["P9-4.3", "P9-4.4"]),
+                                 ("accepted_generic_runtime_support", ["C_OS"]),
+                                 ("admitted_specialization_support_sets", [["C_OS"]]),
+                                 ("baseline_commit", p.BASELINE), ("evidence_bindings", [])]:
+            def forged_controls(key=key, replacement=replacement):
+                value = p.read(root / p.CONTROLS_ACCEPTANCE)
+                value[key] = replacement
+                value["record_digest"] = p.digest_record(value)
+                with mutate(p.CONTROLS_ACCEPTANCE, p.canonical(value)):
+                    p.accepted_c_controls(root)
+            case("c_controls_acceptance_cannot_self_authorize_" + key,
+                 forged_controls, "untrusted C control derivative acceptance",
+                 scope="isolated_c_controls_acceptance_authentication")
         for name in ["src/pygrc/models/grc_v4_candidate_c.py", "tests/models/test_grc_v4_candidate_c.py"]:
             case("accepted_preservation_enables_" + Path(name).stem,
                  lambda name=name: registered(name, content, leaf="P9-4.1"))
@@ -636,6 +651,9 @@ def main():
         for name in ["src/pygrc/models/grc_v4_candidate_c.py", "tests/models/test_grc_v4_candidate_c.py"]:
             case("accepted_current_enables_controls_" + Path(name).stem,
                  lambda name=name: registered(name, content, leaf="P9-4.3"))
+        for name in ["src/pygrc/models/grc_v4_realizations.py", "tests/models/test_grc_v4_realizations.py", "src/pygrc/models/grc_v4_step.py", "tests/models/test_grc_v4_step.py"]:
+            case("accepted_controls_enable_os_" + Path(name).stem,
+                 lambda name=name: registered(name, content, leaf="P9-4.4"))
         case("accepted_harness_enables_export_owner",
              lambda: registered(init, before + lazy, leaf="P9-2.6"))
         for key, replacement in [("status", "pending"), ("accepted_iterations", ["P9-2.5", "P9-2.6"]),
@@ -736,7 +754,7 @@ def main():
         case(
             "later_generic_leaf_held",
             lambda: registered(
-                "src/pygrc/models/grc_v4_realizations.py", content, leaf="P9-4.4"
+                "src/pygrc/models/grc_v4_realizations.py", content, leaf="P9-6.1a"
             ),
             "owning leaf entry dependencies are not accepted",
         )

@@ -44,7 +44,7 @@ def checks(root):
         return namespace
 
     require(
-        status["dependency_ready_leaves"] == ["P9-2.1", "P9-2.2", "P9-2.3", "P9-2.4", "P9-2.5", "P9-2.6", "P9-3.1", "P9-3.2", "P9-3.3", "P9-3.4", "P9-3.5", "P9-4.1", "P9-4.2", "P9-4.3"]
+        status["dependency_ready_leaves"] == ["P9-2.1", "P9-2.2", "P9-2.3", "P9-2.4", "P9-2.5", "P9-2.6", "P9-3.1", "P9-3.2", "P9-3.3", "P9-3.4", "P9-3.5", "P9-4.1", "P9-4.2", "P9-4.3", "P9-4.4"]
         and status["harness_acceptance"]["record_digest"] == policy.HARNESS_ACCEPTANCE_DIGEST
         and status["harness_acceptance"]["accepted_iterations"] == ["P9-2.5"]
         and status["geometry_acceptance"]["record_digest"] == policy.GEOMETRY_ACCEPTANCE_DIGEST
@@ -56,6 +56,8 @@ def checks(root):
         and status["preservation_acceptance"]["accepted_iterations"] == ["P9-3.5"]
         and status["reference_transport_acceptance"]["accepted_iterations"] == ["P9-4.1"]
         and status["c_current_acceptance"]["accepted_iterations"] == ["P9-4.2"]
+        and status["c_controls_acceptance"]["accepted_iterations"] == ["P9-4.3"]
+        and status["c_controls_acceptance"]["record_digest"] == policy.CONTROLS_ACCEPTANCE_DIGEST
         and status["reference_transport_acceptance"]["record_digest"] == policy.REFERENCE_ACCEPTANCE_DIGEST
         and status["c_current_acceptance"]["record_digest"] == policy.CURRENT_ACCEPTANCE_DIGEST
         and status["numerical_pressure_acceptance"]["record_digest"] == policy.NUMERICAL_ACCEPTANCE_DIGEST
@@ -69,7 +71,7 @@ def checks(root):
         and status["request_acceptance"]["accepted_iterations"] == ["P9-2.3"]
         and status["foundation_acceptance"]["record_digest"] == policy.FOUNDATION_DIGEST
         and status["foundation_acceptance"]["accepted_iterations"] == ["P9-2.1", "P9-2.2"]
-        and len(status["permitted_runtime_paths"]) == 25
+        and len(status["permitted_runtime_paths"]) == 27
         and "tests/models/grcv4_conformance_harness.py" in status["permitted_runtime_paths"]
         and "tests/models/grcv4_reference_oracles.py" in status["permitted_runtime_paths"]
         and "pyproject.toml" in status["permitted_runtime_paths"]

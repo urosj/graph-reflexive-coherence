@@ -36,6 +36,8 @@ from .grc_v4_state import (
     SolverDisposition,
 )
 from .grc_v4_transport import ChargeEvaluation, provisional_continuity
+from .grc_v4_candidate_c import CandidateCCurrent
+from .grc_v4_realizations import CandidateCOSPass, _os_inputs
 
 OperationStage: TypeAlias = Literal[
     "admission",
@@ -1005,3 +1007,91 @@ class ProvisionalResourceStep:
             "remainder": self.charge.remainder,
             "continuity_evaluations": self.continuity_evaluations,
         }
+
+
+@dataclass(frozen=True, slots=True)
+class ProvisionalCandidateCOSStep:
+    """A C_OS numerical step through final-C refresh, with no live mutation.
+
+    One pass selects the corrector, one resource boundary writes provisional C,
+    and all final C-derived operators are rebuilt at the consumed geometry.
+    next_inputs resets geometry to the profile reference for the next beat;
+    no OS geometry/cache becomes retained history. Clock addition is binary64;
+    a positive subnormal duration still takes the positive-duration path even
+    if the represented clock or resource does not change.
+
+    The lifecycle owner still authenticates the source/ledger, creates commit
+    receipts, checks its complete postconditions and commits atomically. This
+    immutable result is not an exported model, receipt or conformance claim.
+    """
+
+    inputs: GeometryStageInputs
+    os_pass: CandidateCOSPass | None = dataclass_field(init=False)
+    resource: ProvisionalResourceStep = dataclass_field(init=False)
+    final: CandidateCCurrent | None = dataclass_field(init=False)
+    next_inputs: GeometryStageInputs = dataclass_field(init=False)
+
+    def __post_init__(self) -> None:
+        from dataclasses import replace
+        from fractions import Fraction
+        import math
+
+        before = _os_inputs(self.inputs)
+        graph = before.geometry.reference.graph
+        _resource_charge(before, VertexScalar(graph, before.current.C), "admission")
+        _resource_charge(before, VertexScalar(graph, before.reset.C), "admission")
+        # The reset baseline is a future restart input, not just a charge label.
+        CandidateCCurrent(
+            replace(before, current=before.reset, stage="reset_readmission")
+        )
+        try:
+            next_time = float(Fraction(before.time) + Fraction(before.dt))
+        except OverflowError as exc:
+            raise ResourceBoundaryError(
+                "admission", "nonfinite_value", "step clock overflow"
+            ) from exc
+        if not math.isfinite(next_time):
+            raise ResourceBoundaryError(
+                "admission", "nonfinite_value", "step clock overflow"
+            )
+        if before.dt == 0:
+            # Admission is still required; identity is not an escape from a
+            # singular current, invalid selector, context or reset baseline.
+            CandidateCCurrent(before)
+            result = ProvisionalResourceStep(before, None)
+            passed = None
+            final = None
+            following = before
+        else:
+            passed = CandidateCOSPass(before)
+            corrector = passed.corrector
+            result = ProvisionalResourceStep(
+                before,
+                CurrentSelection(corrector.inputs, "valid_root", corrector.current),
+            )
+            try:
+                final = CandidateCCurrent(
+                    replace(
+                        corrector.inputs,
+                        current=result.provisional_state,
+                        stage="post_continuity",
+                    )
+                )
+            except ValueError as exc:
+                raise ResourceBoundaryError(
+                    "final_reconstruction", "domain_failure", str(exc)
+                ) from exc
+            following = replace(
+                before,
+                current=result.provisional_state,
+                step_index=before.step_index + 1,
+                time=next_time,
+            )
+        for name, value in (
+            ("inputs", before),
+            ("os_pass", passed),
+            ("resource", result),
+            ("final", final),
+            ("next_inputs", following),
+        ):
+            object.__setattr__(self, name, value)
