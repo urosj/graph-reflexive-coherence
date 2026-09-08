@@ -524,6 +524,17 @@ def main():
                                b"{}", leaf="P9-4.4"),
             "owning leaf entry dependencies are not accepted",
         )
+        case(
+            "p943_postacceptance_audit_index_has_its_own_leaf",
+            lambda: registered(p.PHASE + "tranche-4/P9-4.3-AuditFollowup.md",
+                               b"# Audit follow-up\n", leaf="P9-4.3"),
+        )
+        case(
+            "p943_postacceptance_audit_index_cannot_borrow_another_leaf",
+            lambda: registered(p.PHASE + "tranche-4/P9-4.3-AuditFollowup.md",
+                               b"# Audit follow-up\n", leaf="P9-4.2"),
+            "unapproved runtime or evidence target",
+        )
         for name in ["src/pygrc/models/grc_v4_state.py", "src/pygrc/models/grc_v4_step.py"]:
             case("accepted_requests_enable_result_owner_" + Path(name).stem,
                  lambda name=name: registered(name, content, leaf="P9-2.4"))

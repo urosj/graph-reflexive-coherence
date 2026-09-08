@@ -54,6 +54,15 @@ their validation-time dispositions; this handoff and the commit record the later
 user acceptance. A separately authorized P9-4.4 entry can bind the accepted commit.
 P9-4.4 remains held; generic runtime and specialization support remain empty.
 
+Post-acceptance P9-4.3 audit follow-up: the audit identified a test-only extreme
+saturation defect in accepted `39cfe6a`. The correction and numerical limits are
+recorded in the [follow-up index](./phase-9-grcv4/tranche-4/P9-4.3-AuditFollowup.md).
+The new capture passed 148 focused methods in a reconstructed checkout with a
+fresh interpreter and changed hash seed. The user has accepted the verified
+follow-up. Original evidence and acceptance history remain intact; the follow-up
+index and run retain their validation-time dispositions. This handoff and the
+commit record the later user acceptance. P9-4.4 remains held.
+
 Validation scope for continuation: select the leaf's scientific/edge-case tests,
 relevant shared V4 regression tests, and checks for changed verification surfaces.
 The full repository run for P9-4.1 is not a requirement to repeat it after every

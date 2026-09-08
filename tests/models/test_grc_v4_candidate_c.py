@@ -1657,40 +1657,129 @@ def p943_direction(inputs: Any, dc: Any, dh: Any) -> dict[str, Any]:
                     / (values[i] - values[j])
                 )
     dp = vectors @ divided @ vectors.T
-    t = projector @ c
-    dt = dp @ c + projector @ dc
-    rho = np.tanh(t / p.C_ref)
-    # Stable sech^2, including saturation tails; no 1-tanh(x)^2 cancellation.
-    tail = np.exp(-2 * np.abs(t / p.C_ref))
-    drho = 4 * tail / (1 + tail) ** 2 * (dt / p.C_ref)
-    ends = [
-        (ref.graph.node_index(e.tail_node_id), ref.graph.node_index(e.head_node_id))
-        for e in ref.graph.oriented_edges
-    ]
-    average = np.array([0.5 * (rho[i] + rho[j]) for i, j in ends])
-    daverage = np.array([0.5 * (drho[i] + drho[j]) for i, j in ends])
-    d = np.exp(0.5 * p.kappa_M_C * average)
-    dd = 0.5 * p.kappa_M_C * d * daverage
-    diag, ddiag = np.diag(d), np.diag(dd)
-    hm = diag @ h @ diag
-    left, middle, right = ddiag @ h @ diag, diag @ dh @ diag, diag @ h @ ddiag
-    dhm = left + middle + right
-    geometry_term = p.kappa_Phi_C * b @ dhm @ b.T @ c
-    resource_term = p.kappa_Phi_C * b @ hm @ b.T @ dc
-    dphi = geometry_term + resource_term  # V'=0 and delta_U=0 for this declaration.
-    mobility = p.eta_C * np.diag([p.W_C_tr[e] for e in ref.graph.live_edge_ids])
+    # The spectral proposal remains binary64; carry the nonlinear/product chain
+    # in an explicit Decimal context so a small intermediate can be amplified
+    # before final binary64 rounding. This is a bounded numerical oracle, not
+    # an arbitrary-range spectral or transcendental proof.
+    from decimal import (
+        Context,
+        Decimal,
+        DecimalException,
+        DivisionByZero,
+        InvalidOperation,
+        Overflow,
+        ROUND_HALF_EVEN,
+        Underflow,
+        localcontext,
+    )
+
+    context = Context(
+        prec=90,
+        Emin=-999999,
+        Emax=999999,
+        rounding=ROUND_HALF_EVEN,
+        traps=[InvalidOperation, DivisionByZero, Overflow, Underflow],
+    )
+    decimal_array = np.vectorize(
+        lambda value: Decimal.from_float(float(value)), otypes=[object]
+    )
+    try:
+        with localcontext(context):
+            b, c, h, dc, dh, pd, dpd = map(
+                decimal_array, (b, c, h, dc, dh, projector, dp)
+            )
+            cref, km, kphi, eta = map(
+                Decimal.from_float,
+                map(float, (p.C_ref, p.kappa_M_C, p.kappa_Phi_C, p.eta_C)),
+            )
+            t = pd @ c
+            dt = dpd @ c + pd @ dc
+            ratios = t / cref
+            tails = [(-2 * abs(x)).exp() for x in ratios]
+            rho = np.array(
+                [
+                    (1 - q) / (1 + q) * (-1 if x < 0 else 1)
+                    for x, q in zip(ratios, tails, strict=True)
+                ],
+                dtype=object,
+            )
+            drho = np.array(
+                [
+                    4 * q * v / (cref * (1 + q) ** 2)
+                    for q, v in zip(tails, dt, strict=True)
+                ],
+                dtype=object,
+            )
+            ends = [
+                (
+                    ref.graph.node_index(e.tail_node_id),
+                    ref.graph.node_index(e.head_node_id),
+                )
+                for e in ref.graph.oriented_edges
+            ]
+            average = np.array([(rho[i] + rho[j]) / 2 for i, j in ends], dtype=object)
+            daverage = np.array(
+                [(drho[i] + drho[j]) / 2 for i, j in ends], dtype=object
+            )
+            d = np.array([(km * a / 2).exp() for a in average], dtype=object)
+            dd = km * d * daverage / 2
+            diag, ddiag = np.diag(d), np.diag(dd)
+            hm = diag @ h @ diag
+            left, middle, right = ddiag @ h @ diag, diag @ dh @ diag, diag @ h @ ddiag
+            dhm = left + middle + right
+            geometry_term = kphi * b @ dhm @ b.T @ c
+            resource_term = kphi * b @ hm @ b.T @ dc
+            dphi = geometry_term + resource_term  # V''=0 and delta_U=0 by declaration.
+            mobility = eta * np.diag(
+                [
+                    Decimal.from_float(float(p.W_C_tr[e]))
+                    for e in ref.graph.live_edge_ids
+                ]
+            )
+            wide = dict(
+                sector=dt,
+                deformation=dd,
+                hm=dhm,
+                phi=dphi,
+                j0=-mobility @ b.T @ dphi,
+                left=left,
+                middle=middle,
+                right=right,
+                geometry_term=geometry_term,
+                resource_term=resource_term,
+            )
+            rounded = {
+                key: np.asarray(value, dtype=float) for key, value in wide.items()
+            }
+            if any(not np.all(np.isfinite(value)) for value in rounded.values()):
+                raise ValueError("derivative oracle final binary64 range exceeded")
+            representation = []
+            for key in ("sector", "deformation", "hm", "phi", "j0"):
+                for index in np.ndindex(wide[key].shape):
+                    value = wide[key][index]
+                    binary = float(rounded[key][index])
+                    if value and abs(binary) < sys.float_info.min:
+                        representation.append(
+                            dict(
+                                output=key,
+                                index=list(index),
+                                decimal_sign=1 if value > 0 else -1,
+                                log_abs_decimal=str(abs(value).ln()),
+                                binary64_hex=binary.hex(),
+                                status="rounded_to_zero"
+                                if binary == 0
+                                else "subnormal",
+                            )
+                        )
+    except DecimalException as failure:
+        raise ValueError(
+            "derivative oracle Decimal operation/exponent range exceeded; "
+            "no zero or NaN derivative is certified"
+        ) from failure
     return dict(
         projector=dp,
-        sector=dt,
-        deformation=dd,
-        hm=dhm,
-        phi=dphi,
-        j0=-mobility @ b.T @ dphi,
-        left=left,
-        middle=middle,
-        right=right,
-        geometry_term=geometry_term,
-        resource_term=resource_term,
+        **rounded,
+        representation=representation,
         base_projector=projector,
         rank=int(np.count_nonzero(selected)),
     )
@@ -1753,6 +1842,10 @@ class CandidateCControlDerivativeTests(unittest.TestCase):
         import numpy as np
 
         expected = p943_direction(inputs, dc, dh)
+        if expected["representation"]:
+            raise ValueError(
+                "finite-difference comparison cannot certify subnormal or rounded-zero derivatives"
+            )
         observed = p943_centered(inputs, dc, dh, 2**-12)
         errors = {}
         for key in observed:
@@ -2450,6 +2543,251 @@ class CandidateCControlDerivativeTests(unittest.TestCase):
                 inputs, dc, dh, label=f"seeded_spd_{case}", tolerance=1e-5
             )
 
+    @staticmethod
+    def saturation_fixture(cref: float, *, km: float = 0.75, gain: float = 1) -> Any:
+        return current_fixture(
+            graph=CandidateCCurrentTests.edge_graph(),
+            weights={"e": 2},
+            resource=(0.75, 1.25),
+            changes={
+                "candidate": {
+                    "Lambda_C": 1,
+                    "kappa_M_C": km,
+                    "eta_C": 0.5 * gain,
+                    "kappa_Phi_C": 1,
+                    "C_ref": cref,
+                }
+            },
+        )
+
+    @staticmethod
+    def scalar_saturation_derivative(
+        cref: float, km: float, direction: float, gain: float = 1
+    ) -> Any:
+        """Independent one-edge closed form using the positive exponential.
+
+        C=(.75,1.25), Hpre=W=2, eta=gain/2, uniform delta_C.
+        T=1 exactly; no spectral routine or production/derivative helper is used.
+        The callers keep this witness within its stated Decimal exponent range.
+        """
+        from decimal import Context, Decimal, localcontext
+
+        with localcontext(Context(prec=120)):
+            cf, k, v, g = map(
+                Decimal.from_float, map(float, (cref, km, direction, gain))
+            )
+            e = (2 / cf).exp()
+            rho = (e - 1) / (e + 1)
+            return 2 * g * k * v * (k * rho).exp() * (4 * e / (e + 1) ** 2) / cf
+
+    def test_extreme_saturation_preserves_representable_subnormal(self) -> None:
+        from pygrc.models.grc_v4_candidate_c import CandidateCCurrent
+
+        for cf in (
+            math.nextafter(1 / 373, 0),
+            1 / 373,
+            math.nextafter(1 / 373, math.inf),
+        ):
+            for km in (0.75, -0.75):
+                inputs = self.saturation_fixture(cf, km=km)
+                self.assertTrue(
+                    math.isfinite(CandidateCCurrent(inputs).algebra.baseline.values[0])
+                )
+                for direction in (1, -1):
+                    with self.subTest(cref=cf, km=km, direction=direction):
+                        expected = self.scalar_saturation_derivative(cf, km, direction)
+                        actual = p943_direction(inputs, (direction, direction), ((0,),))
+                        self.assertNotEqual(float(expected), 0)
+                        self.assertEqual(actual["j0"][0].hex(), float(expected).hex())
+                        row = next(
+                            r for r in actual["representation"] if r["output"] == "j0"
+                        )
+                        self.assertEqual(row["status"], "subnormal")
+                        self.assertEqual(row["decimal_sign"], 1 if expected > 0 else -1)
+        expected = self.scalar_saturation_derivative(1 / 373, 0.75, 1)
+        self.assertEqual(float(expected).hex(), "0x0.00000000003e4p-1022")
+        self.observations.append(
+            dict(
+                case="audit_representable_subnormal",
+                C_ref=1 / 373,
+                independent_decimal=str(expected),
+                binary64_hex=float(expected).hex(),
+            )
+        )
+
+    def test_subnormal_intermediates_are_not_rounded_before_mobility(self) -> None:
+        inputs = self.saturation_fixture(1 / 400, gain=1e100)
+        expected = self.scalar_saturation_derivative(1 / 400, 0.75, 1, 1e100)
+        actual = p943_direction(inputs, (1, 1), ((0,),))
+        self.assertGreater(actual["j0"][0], 0)
+        self.assertAlmostEqual(actual["j0"][0] / float(expected), 1, delta=2e-12)
+        self.assertEqual(actual["deformation"][0], 0)
+        row = next(r for r in actual["representation"] if r["output"] == "deformation")
+        self.assertEqual(row["status"], "rounded_to_zero")
+        self.assertEqual(row["decimal_sign"], 1)
+        # Rounding delta_D or delta_Hm to float before multiplying by mobility
+        # loses this representable final derivative. An absolute FD tolerance
+        # must not turn the unresolved zero quotient into a claimed check.
+        with self.assertRaisesRegex(ValueError, "cannot certify"):
+            self.check_direction(inputs, (1, 1), ((0,),), label="unresolved_saturation")
+        difference = p943_centered(inputs, (1, 1), ((0,),), 2**-12)
+        self.assertEqual(difference["j0"][0], 0)
+        self.observations.append(
+            dict(
+                case="later_mobility_amplifies_tail",
+                C_ref=1 / 400,
+                gain=1e100,
+                independent_decimal=str(expected),
+                observed_j0=float(actual["j0"][0]),
+                deformation_representation=row,
+                rounded_current_difference=0,
+                finite_difference_claim=False,
+            )
+        )
+
+    def test_negative_selected_content_keeps_saturation_derivative_sign(self) -> None:
+        from decimal import Context, Decimal, localcontext
+        import numpy as np
+        from pygrc.models.grc_v4_candidate_c import CandidateCCurrent
+
+        graph = p943_fixture().geometry.reference.graph
+        inputs = current_fixture(
+            graph=graph,
+            weights={"a": 1, "b": 1},
+            resource=(0, 1, 8),
+            changes={
+                "candidate": {
+                    "Lambda_C": 2,
+                    "kappa_M_C": 0.75,
+                    "eta_C": 1e100,
+                    "C_ref": 1 / 373,
+                }
+            },
+        )
+        point = CandidateCCurrent(inputs)
+        self.assertLess(point.algebra.selector.selected.values[0], 0)
+        actual = p943_direction(inputs, (1, 1, 1), ((0, 0), (0, 0)))
+        # Literal path projector gives T=(-1,3,7), delta_T=(1,1,1).
+        # Hpre=I: delta_h_e = kappa/2 * h_e * (delta_rho_i+delta_rho_j).
+        # Differentiating Phi and -eta B^T Phi yields these two scalar formulas.
+        with localcontext(Context(prec=120)):
+            cf, eta, km = (
+                Decimal.from_float(1 / 373),
+                Decimal.from_float(1e100),
+                Decimal(".75"),
+            )
+            rho, drho = [], []
+            for t in (-1, 3, 7):
+                e = (2 * abs(t) / cf).exp()
+                rho.append((e - 1) / (e + 1) * (-1 if t < 0 else 1))
+                drho.append(4 * e / (e + 1) ** 2 / cf)
+            a, b = (
+                km
+                / 2
+                * (km * (rho[i] + rho[i + 1]) / 2).exp()
+                * (drho[i] + drho[i + 1])
+                for i in (0, 1)
+            )
+            expected = np.array(
+                [float(eta * (2 * a - 7 * b)), float(eta * (-a + 14 * b))]
+            )
+        np.testing.assert_allclose(actual["j0"], expected, rtol=3e-12, atol=0)
+        self.assertGreater(actual["j0"][0], 0)
+        self.assertLess(actual["j0"][1], 0)
+
+    def test_extreme_saturation_range_rejection_has_independent_log_witness(
+        self,
+    ) -> None:
+        from decimal import Context, Decimal, ROUND_CEILING, ROUND_FLOOR, localcontext
+        import warnings
+        from pygrc.models.grc_v4_candidate_c import CandidateCCurrent
+
+        tiny = math.ulp(0.0)
+        inputs = self.saturation_fixture(tiny)
+        before = canonical_json_bytes(inputs.to_payload())
+        with warnings.catch_warnings(record=True) as messages:
+            warnings.simplefilter("always")
+            with self.assertRaisesRegex(ValueError, "Decimal operation/exponent range"):
+                p943_direction(inputs, (1, 1), ((0,),))
+        self.assertEqual(messages, [])
+        self.assertTrue(
+            math.isfinite(CandidateCCurrent(inputs).algebra.baseline.values[0])
+        )
+        self.assertEqual(canonical_json_bytes(inputs.to_payload()), before)
+        self.assertEqual(p943_centered(inputs, (1, 1), ((0,),), 2**-12)["j0"][0], 0)
+        # For this exact scalar equation, dJ0>0 and
+        # 1.5 exp(-.75-2/cf)/cf <= dJ0 <= 6 exp(.75-2/cf)/cf.
+        # Bound logs without attempting exp(-2/cf). ln is correctly rounded;
+        # widen its endpoints and use directed arithmetic for the interval.
+        with localcontext(Context(prec=110)) as ctx:
+            cf = Decimal.from_float(tiny)
+            ctx.rounding = ROUND_FLOOR
+            x_lower = 1 / cf
+            ctx.rounding = ROUND_CEILING
+            x_upper = 1 / cf
+            log_cf_lower, log_cf_upper = cf.ln().next_minus(), cf.ln().next_plus()
+            ctx.rounding = ROUND_FLOOR
+            lower = (
+                -Decimal(2) * x_upper
+                + Decimal("1.5").ln().next_minus()
+                - Decimal(".75")
+                - log_cf_upper
+            )
+            half_min_log_lower = -Decimal(1075) * Decimal(2).ln().next_plus()
+            ctx.rounding = ROUND_CEILING
+            upper = (
+                -Decimal(2) * x_lower
+                + Decimal(6).ln().next_plus()
+                + Decimal(".75")
+                - log_cf_lower
+            )
+            self.assertTrue(lower.is_finite() and upper.is_finite())
+            self.assertLess(lower, upper)
+            self.assertLess(upper, half_min_log_lower)
+        self.observations.append(
+            dict(
+                case="minimum_positive_C_ref_log_witness",
+                C_ref=tiny,
+                mathematical_sign=1,
+                mathematical_nonzero=True,
+                log_abs_lower=str(lower),
+                log_abs_upper=str(upper),
+                final_binary64_hex=(0.0).hex(),
+                rounding_reason="below_half_min_subnormal",
+                generic_oracle="explicit_range_rejection",
+                rounded_current_difference=0,
+                finite_difference_claim=False,
+            )
+        )
+
+    def test_decimal_context_and_final_binary64_range_are_explicit(self) -> None:
+        from decimal import Inexact, ROUND_DOWN, localcontext
+        import numpy as np
+        from pygrc.models.grc_v4_candidate_c import CandidateCCurrent
+        from pygrc.models.grc_v4_state import GRCV4AuthoritativeState
+
+        inputs = self.saturation_fixture(1 / 373)
+        expected = p943_direction(inputs, (1, 1), ((0,),))
+        with localcontext() as ctx:
+            ctx.prec, ctx.Emin, ctx.Emax, ctx.rounding = 6, -20, 20, ROUND_DOWN
+            ctx.traps[Inexact] = True
+            actual = p943_direction(inputs, (1, 1), ((0,),))
+            for key in ("sector", "deformation", "hm", "phi", "j0"):
+                np.testing.assert_array_equal(actual[key], expected[key])
+            self.assertEqual(actual["representation"], expected["representation"])
+            self.assertEqual(ctx.prec, 6)
+            self.assertTrue(ctx.traps[Inexact])
+        zero = p943_direction(inputs, (0, 0), ((0,),))
+        self.assertEqual(zero["representation"], [])
+        self.assertEqual(zero["j0"][0], 0)
+        # At T=0 and the minimum C_ref the exponential fits, but delta_D does
+        # not fit binary64. This is a different, explicitly rejected range.
+        extreme = self.saturation_fixture(math.ulp(0.0))
+        extreme = replace(extreme, current=GRCV4AuthoritativeState((0, 0), None, None))
+        self.assertEqual(CandidateCCurrent(extreme).algebra.baseline.values, (0,))
+        with self.assertRaisesRegex(ValueError, "final binary64 range"):
+            p943_direction(extreme, (1, 1), ((0,),))
+
 
 class CandidateCCaptureTests(unittest.TestCase):
     """Synthetic gate controls; these do not substitute for numeric leaf tests."""
@@ -3011,6 +3349,15 @@ _P943_METHODS = (
 )
 
 
+_P943_AUDIT_METHODS = (
+    "test_extreme_saturation_preserves_representable_subnormal",
+    "test_subnormal_intermediates_are_not_rounded_before_mobility",
+    "test_negative_selected_content_keeps_saturation_derivative_sign",
+    "test_extreme_saturation_range_rejection_has_independent_log_witness",
+    "test_decimal_context_and_final_binary64_range_are_explicit",
+)
+
+
 def _capture_candidate_c(output: str, *, scope: str) -> int:
     """One manifest; source is recovered from Git, without copying source blobs.
 
@@ -3025,7 +3372,7 @@ def _capture_candidate_c(output: str, *, scope: str) -> int:
     import subprocess
     from tests.models.test_grc_v4_step import p935_required
 
-    if scope not in {"full", "focused", "current", "derivative"}:
+    if scope not in {"full", "focused", "current", "derivative", "derivative_audit"}:
         raise ValueError("unknown capture scope")
     root = Path(__file__).resolve().parents[2]
     destination = (root / output).resolve()
@@ -3049,7 +3396,9 @@ def _capture_candidate_c(output: str, *, scope: str) -> int:
         [
             "git",
             "rev-parse",
-            "ac3a7cf"
+            "39cfe6a"
+            if scope == "derivative_audit"
+            else "ac3a7cf"
             if scope == "derivative"
             else "94a079d"
             if scope == "current"
@@ -3071,7 +3420,7 @@ def _capture_candidate_c(output: str, *, scope: str) -> int:
         "tests/models/test_grc_v4_candidate_c.py",
     }
 
-    if scope == "derivative":
+    if scope in {"derivative", "derivative_audit"}:
         overrides = {"tests/models/test_grc_v4_candidate_c.py"}
 
     def source_hashes() -> dict[str, str]:
@@ -3097,7 +3446,7 @@ def _capture_candidate_c(output: str, *, scope: str) -> int:
 
     iteration = (
         "P9-4.3"
-        if scope == "derivative"
+        if scope in {"derivative", "derivative_audit"}
         else "P9-4.2"
         if scope == "current"
         else "P9-4.1"
@@ -3133,7 +3482,7 @@ def _capture_candidate_c(output: str, *, scope: str) -> int:
                 )
             )
         }
-    if scope in {"current", "derivative"}:
+    if scope in {"current", "derivative", "derivative_audit"}:
         inherited = {
             name
             for name in inherited
@@ -3161,16 +3510,22 @@ def _capture_candidate_c(output: str, *, scope: str) -> int:
             for name in _P941_CAPTURE_METHODS
         }
     )
-    if scope in {"current", "derivative"}:
+    if scope in {"current", "derivative", "derivative_audit"}:
         required |= {
             "tests.models.test_grc_v4_candidate_c.CandidateCCurrentTests." + name
             for name in _P942_METHODS
         }
-    if scope == "derivative":
+    if scope in {"derivative", "derivative_audit"}:
         required |= {
             "tests.models.test_grc_v4_candidate_c.CandidateCControlDerivativeTests."
             + name
             for name in _P943_METHODS
+        }
+    if scope == "derivative_audit":
+        required |= {
+            "tests.models.test_grc_v4_candidate_c.CandidateCControlDerivativeTests."
+            + name
+            for name in _P943_AUDIT_METHODS
         }
     suite = (
         unittest.defaultTestLoader.discover(
@@ -3179,7 +3534,7 @@ def _capture_candidate_c(output: str, *, scope: str) -> int:
         if scope == "full"
         else unittest.defaultTestLoader.loadTestsFromNames(sorted(required))
     )
-    if scope == "derivative":
+    if scope in {"derivative", "derivative_audit"}:
         from tests.models import test_grc_v4_candidate_c as leaf
 
         leaf.CandidateCControlDerivativeTests.observations = []
@@ -3221,7 +3576,9 @@ def _capture_candidate_c(output: str, *, scope: str) -> int:
             ".venv/bin/python",
             "-m",
             "tests.models.test_grc_v4_candidate_c",
-            "--capture-p943"
+            "--capture-p943-audit"
+            if scope == "derivative_audit"
+            else "--capture-p943"
             if scope == "derivative"
             else "--capture-p942"
             if scope == "current"
@@ -3232,16 +3589,23 @@ def _capture_candidate_c(output: str, *, scope: str) -> int:
         ],
         "claim_ceiling": (
             "Candidate C supported-profile smooth-stratum baseline derivative/covariance and independent zero controls; no production derivative API, complete beat, lifecycle, runtime conformance or cross-platform bitwise numerical claim."
-            if scope == "derivative"
+            if scope in {"derivative", "derivative_audit"}
             else "Fixed-stage Candidate C selector, potential, baseline, typed read and regular current solve; no complete beat, lifecycle, profile conformance or cross-platform bitwise numerical claim."
             if scope == "current"
             else "Reference transport constructors only; no selector, baseline flux, solve, beat, lifecycle or runtime conformance."
         ),
     }
+    if scope == "derivative_audit":
+        record["audit_followup"] = {
+            "subject_commit": base,
+            "finding": "Test-only saturation oracle intermediate underflow and 0*infinity NaN; no production defect.",
+            "oracle_policy": "NumPy spectral proposal; 90-digit Decimal nonlinear/product chain with explicit exponent traps; outputs rounded once, subnormal/rounded-zero coordinates labeled and excluded from ordinary finite-difference certification.",
+            "range_limit": "Generic Decimal exponent/operation and final binary64 overflow reject. Minimum-positive C_ref uses a separate scalar sign/log bound, not a returned general derivative. Working precision is not a general cancellation or spectral error certificate.",
+        }
     record["required_ids"] = sorted(required)
     record.update(_p941_execute(root, before, required, suite, source_hashes))
     passed = record["status"] == "passed"
-    if scope == "derivative":
+    if scope in {"derivative", "derivative_audit"}:
         record["control_derivative_observations"] = (
             leaf.CandidateCControlDerivativeTests.observations
         )
@@ -3295,7 +3659,13 @@ def capture_p943(output: str) -> int:
     return _capture_candidate_c(output, scope="derivative")
 
 
+def capture_p943_audit(output: str) -> int:
+    return _capture_candidate_c(output, scope="derivative_audit")
+
+
 if __name__ == "__main__":
+    if len(sys.argv) == 3 and sys.argv[1] == "--capture-p943-audit":
+        raise SystemExit(capture_p943_audit(sys.argv[2]))
     if len(sys.argv) == 3 and sys.argv[1] == "--capture-p943":
         raise SystemExit(capture_p943(sys.argv[2]))
     if len(sys.argv) == 3 and sys.argv[1] == "--capture-p942":

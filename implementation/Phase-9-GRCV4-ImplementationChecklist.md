@@ -532,6 +532,13 @@ three bounded batches retain their own results and raw per-run manifests.
   P9-4.4 and runtime conformance remain held. Review, execution and run records
   retain their validation-time dispositions; this checklist and the commit record
   the later acceptance. A separately authorized P9-4.4 entry can bind this commit.
+  Post-acceptance audit: `39cfe6a` had a test-only saturation false-zero/NaN gap.
+  The [follow-up](./phase-9-grcv4/tranche-4/P9-4.3-AuditFollowup.md) corrects the
+  derivative arithmetic, declares its numerical limits and adds five regressions.
+  All 148 focused methods passed in a reconstructed checkout. The user has
+  accepted the verified follow-up. Its index and run retain their validation-time
+  dispositions; this checklist and the commit record the later acceptance.
+  Original evidence is unchanged and P9-4.4 remains held.
 - [ ] P9-4.4: Implement one OS pass, explicit split residual, one resource
   write, and post-continuity rederivation.
 - [ ] P9-4.5: Execute positive and atomic-negative `C_OS` vectors; keep full

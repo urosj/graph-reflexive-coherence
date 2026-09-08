@@ -749,6 +749,10 @@ def work_entries(root, approval):
                 PHASE + f"tranche-{tranche}/{leaf}-ExecutionRecord.json",
                 PHASE + f"tranche-{tranche}/{leaf}-Review.md",
             }
+            # The post-acceptance P9-4.3 audit needs a separate index so its
+            # accepted review/execution bindings remain reconstructible intact.
+            if leaf == "P9-4.3":
+                records.add(PHASE + "tranche-4/P9-4.3-AuditFollowup.md")
             evidence = re.fullmatch(
                 re.escape(PHASE + f"evidence/{leaf}/")
                 + r"[A-Za-z0-9][A-Za-z0-9_-]{0,95}/([^/]+)",

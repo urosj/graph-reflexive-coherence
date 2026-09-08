@@ -668,6 +668,15 @@ acceptance. A separately authorized P9-4.4 entry can bind the accepted commit;
 P9-4.4 and profile conformance remain held. The reviewed owner combines Candidate C
 work in `grc_v4_candidate_c.py` rather than the earlier proposed split transport module.
 
+A post-acceptance audit found a test-only extreme-saturation defect in `39cfe6a`.
+The [P9-4.3 follow-up](./phase-9-grcv4/tranche-4/P9-4.3-AuditFollowup.md) carries
+widened derivative arithmetic, explicit range limits and five new regressions.
+All 148 focused methods passed in a reconstructed checkout with a fresh
+interpreter and changed hash seed. The user has accepted the verified follow-up.
+Its index and run retain their validation-time dispositions; this plan and the
+commit record the later acceptance. Original evidence and acceptance history
+remain unchanged. P9-4.4 stays held.
+
 Implement the positive stable-edge reference map and separate Hodge/mobility
 constructors, the exact D11-C potential and baseline flux, strict-gap selector,
 Read-Back typing, and the regular total-current solve. Preserve the three
