@@ -77,6 +77,8 @@ PRESERVATION_ACCEPTANCE = PHASE + "tranche-3/P9-3.5-AcceptanceRecord.json"
 PRESERVATION_ACCEPTANCE_DIGEST = "b866b4b5d9b8b7ecdf087fd6f2a6d879810ec19464a9d3368ddddaf4d2edf43b"
 REFERENCE_ACCEPTANCE = PHASE + "tranche-4/P9-4.1-AcceptanceRecord.json"
 REFERENCE_ACCEPTANCE_DIGEST = "ff07f5d71ad094d4c28f3fafdd0c0ca1d74f9f34f18678c8ff6909029b24358a"
+CURRENT_ACCEPTANCE = PHASE + "tranche-4/P9-4.2-AcceptanceRecord.json"
+CURRENT_ACCEPTANCE_DIGEST = "5ce39f22e2999ee6f375648263a5902f883866420b497822cbf7daaa6e043b43"
 # Explicit user-authorized presentation maintenance after accepted P9-3.3
 # ce83d7a. Only these original -> presented Git blobs may differ from HEAD.
 # The run's /presentation binds the original repository revision and embedded
@@ -134,6 +136,7 @@ PATHS = {
     NUMERICAL_ACCEPTANCE,
     PRESERVATION_ACCEPTANCE,
     REFERENCE_ACCEPTANCE,
+    CURRENT_ACCEPTANCE,
     HERE + "phase9_implementation_policy.py",
     HERE + "audit_phase9_implementation.py",
     HERE + "test_phase9_g1.py",
@@ -563,6 +566,26 @@ def accepted_reference_transport(root):
     return value
 
 
+def accepted_c_current(root):
+    """Committed P9-4.2 acceptance opens only its dependency-ready successors."""
+    value = read(safe_path(root, CURRENT_ACCEPTANCE))
+    require(value["record_digest"] == digest_record(value) == CURRENT_ACCEPTANCE_DIGEST,
+            "untrusted C stage current acceptance")
+    require(value["schema"] == "phase9_c_stage_current_acceptance_v1"
+            and value["status"] == "accepted_by_user"
+            and value["release_id"] == prior.RELEASE_ID
+            and value["predecessor_record_digest"] == REFERENCE_ACCEPTANCE_DIGEST
+            and value["accepted_iterations"] == ["P9-4.2"]
+            and value["accepted_generic_runtime_support"] == []
+            and value["admitted_specialization_support_sets"] == [],
+            "invalid C stage current acceptance scope")
+    prior.ancestor(root, value["baseline_commit"])
+    for row in value["evidence_bindings"]:
+        require(sha(git(root, "show", f"{value['baseline_commit']}:{row['path']}"))
+                == row["sha256"], "accepted C stage current subject changed")
+    return value
+
+
 def leaf_permissions(root):
     """Readiness from accepted dependencies, never inferred from completion."""
     accepted = {"P9-G1", *accepted_foundation(root)["accepted_iterations"],
@@ -575,7 +598,8 @@ def leaf_permissions(root):
                 *accepted_resources(root)["accepted_iterations"],
                 *accepted_numerical_pressure(root)["accepted_iterations"],
                 *accepted_preservation(root)["accepted_iterations"],
-                *accepted_reference_transport(root)["accepted_iterations"]}
+                *accepted_reference_transport(root)["accepted_iterations"],
+                *accepted_c_current(root)["accepted_iterations"]}
     support = read(
         safe_path(root, PHASE + "tranche-1/P9-1.4-SupportAndDependencies.json")
     )

@@ -1,0 +1,32 @@
+{
+  "schema": "phase9_c_stage_current_acceptance_v1",
+  "status": "accepted_by_user",
+  "baseline_commit": "ac3a7cf43098e4ec1608a08b5d35954204f833e5",
+  "release_id": "grcv4-spec-release-sha256:9f4c8fe5b57b1c477d834a3e4dae3f98a2b18c70e6e7f598e3c9652170c8645f",
+  "predecessor_record_digest": "ff07f5d71ad094d4c28f3fafdd0c0ca1d74f9f34f18678c8ff6909029b24358a",
+  "accepted_iterations": [
+    "P9-4.2"
+  ],
+  "acceptance_basis": "User explicitly accepted and requested commit of P9-4.2 after reporting both reviews found no defects, then authorized P9-4.3. Validation-time dispositions and scope limits remain unchanged.",
+  "evidence_bindings": [
+    {
+      "path": "implementation/phase-9-grcv4/tranche-4/P9-4.2-Review.md",
+      "sha256": "b599be171cff26284465e718bbf487a713b480b0c523b1639c6e2a01d7ec1514"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-4/P9-4.2-ExecutionRecord.json",
+      "sha256": "363a5ca3a77c57b1781e556dfe349e8251bc7bf2e40866007d618b4180111f99"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-4.2/validation/run.json",
+      "sha256": "0a19a6955b4baaddf1250c3398c30435a346de50df3d84f13475af55c6bb3f53"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/runtime/RuntimeWorkManifest.json",
+      "sha256": "948050f65a62b5ccc73bbf4ad7f48ba9d2a970e7b5e8063e20a1bbc7f78392d7"
+    }
+  ],
+  "accepted_generic_runtime_support": [],
+  "admitted_specialization_support_sets": [],
+  "record_digest": "5ce39f22e2999ee6f375648263a5902f883866420b497822cbf7daaa6e043b43"
+}

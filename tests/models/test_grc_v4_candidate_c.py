@@ -1,4 +1,4 @@
-"""P9-4.1 reference-map and P9-4.2 fixed-stage current pressure.
+"""P9-4.1/P9-4.2 construction and P9-4.3 derivative/control pressure.
 
 Expectations use scalar rational products, explicit coordinate permutations
 and independent ASCII hashing. Profile helpers construct inputs only.
@@ -1568,6 +1568,889 @@ class CandidateCCurrentTests(unittest.TestCase):
             self.assertEqual(preservation_snapshot(inputs.to_payload()), before)
 
 
+def p943_fixture(**candidate: float) -> Any:
+    """Nonreference SPD partial-selector point, with dyadic resource inputs."""
+    graph = GRCV4Graph((0, 1, 2), (OrientedEdge("a", 0, 1), OrientedEdge("b", 1, 2)))
+    return current_fixture(
+        graph=graph,
+        weights={"a": 2, "b": 3},
+        hodge=((2, 0.5), (0.5, 1.5)),
+        resource=(0.5, 1.25, 2.25),
+        changes={
+            "candidate": {
+                "Lambda_C": 3,
+                "kappa_M_C": 1.1,
+                "chi_C": 1,
+                "zeta_C": 0.4,
+                "tau_C": 0.3,
+                **candidate,
+            }
+        },
+    )
+
+
+def p943_arrays(current: Any) -> dict[str, Any]:
+    import numpy as np
+
+    a = current.algebra
+    return {
+        key: np.asarray(value, dtype=float)
+        for key, value in {
+            "projector": a.selector.projector,
+            "sector": a.selector.selected.values,
+            "deformation": a.deformation,
+            "hm": a.retained_hodge.matrix,
+            "phi": a.potential.values,
+            "j0": a.baseline.values,
+        }.items()
+    }
+
+
+def p943_direction(inputs: Any, dc: Any, dh: Any) -> dict[str, Any]:
+    """Independent analytic chain; no production selector or linear-solve helper.
+
+    H0, B, reference mobility and the complete profile are fixed. Spectral
+    divided differences occur only across selected/unselected clusters.
+    The derivative is of the real constitutive equations, not a derivative of
+    the discontinuous map that rounds every input/output to binary64.
+    """
+    import numpy as np
+
+    ref = inputs.geometry.reference
+    p = ref.profile.params_resolved.candidate
+    b = np.asarray(ref.graph.incidence)
+    c, h = (
+        np.asarray(inputs.current.C),
+        np.asarray(inputs.geometry.one_form_hodge.matrix),
+    )
+    dc, dh = np.asarray(dc, dtype=float), np.asarray(dh, dtype=float)
+    if (
+        p.potential_evaluator_id != "quadratic_site_potential_zero_derivative_v1"
+        or inputs.context.contract_id != "constant_zero_context_v1"
+        or dict(inputs.context.value)
+        or not np.array_equal(inputs.geometry.pairings.vertex.matrix, np.eye(len(c)))
+    ):
+        raise ValueError(
+            "derivative oracle requires the supported zero-potential/context and unit-measure declarations"
+        )
+    if (
+        dc.shape != c.shape
+        or dh.shape != h.shape
+        or not np.array_equal(dh, dh.T)
+        or not np.all(np.isfinite(dc))
+        or not np.all(np.isfinite(dh))
+    ):
+        raise ValueError("invalid derivative direction")
+    values, vectors = np.linalg.eigh(b @ h @ b.T)
+    if min(abs(values - p.Lambda_C)) == 0:
+        raise ValueError("oracle cutoff tie")
+    selected = values < p.Lambda_C
+    projector = vectors[:, selected] @ vectors[:, selected].T
+    perturbation = vectors.T @ (b @ dh @ b.T) @ vectors
+    divided = np.zeros_like(perturbation)
+    for i in range(len(c)):
+        for j in range(len(c)):
+            if selected[i] != selected[j]:
+                divided[i, j] = (
+                    (int(selected[i]) - int(selected[j]))
+                    * perturbation[i, j]
+                    / (values[i] - values[j])
+                )
+    dp = vectors @ divided @ vectors.T
+    t = projector @ c
+    dt = dp @ c + projector @ dc
+    rho = np.tanh(t / p.C_ref)
+    # Stable sech^2, including saturation tails; no 1-tanh(x)^2 cancellation.
+    tail = np.exp(-2 * np.abs(t / p.C_ref))
+    drho = 4 * tail / (1 + tail) ** 2 * (dt / p.C_ref)
+    ends = [
+        (ref.graph.node_index(e.tail_node_id), ref.graph.node_index(e.head_node_id))
+        for e in ref.graph.oriented_edges
+    ]
+    average = np.array([0.5 * (rho[i] + rho[j]) for i, j in ends])
+    daverage = np.array([0.5 * (drho[i] + drho[j]) for i, j in ends])
+    d = np.exp(0.5 * p.kappa_M_C * average)
+    dd = 0.5 * p.kappa_M_C * d * daverage
+    diag, ddiag = np.diag(d), np.diag(dd)
+    hm = diag @ h @ diag
+    left, middle, right = ddiag @ h @ diag, diag @ dh @ diag, diag @ h @ ddiag
+    dhm = left + middle + right
+    geometry_term = p.kappa_Phi_C * b @ dhm @ b.T @ c
+    resource_term = p.kappa_Phi_C * b @ hm @ b.T @ dc
+    dphi = geometry_term + resource_term  # V'=0 and delta_U=0 for this declaration.
+    mobility = p.eta_C * np.diag([p.W_C_tr[e] for e in ref.graph.live_edge_ids])
+    return dict(
+        projector=dp,
+        sector=dt,
+        deformation=dd,
+        hm=dhm,
+        phi=dphi,
+        j0=-mobility @ b.T @ dphi,
+        left=left,
+        middle=middle,
+        right=right,
+        geometry_term=geometry_term,
+        resource_term=resource_term,
+        base_projector=projector,
+        rank=int(np.count_nonzero(selected)),
+    )
+
+
+def p943_perturb(inputs: Any, dc: Any, dh: Any, epsilon: float) -> Any:
+    import numpy as np
+    from pygrc.models.grc_v4_state import GRCV4AuthoritativeState
+
+    c = np.asarray(inputs.current.C) + epsilon * np.asarray(dc)
+    h = np.asarray(inputs.geometry.one_form_hodge.matrix) + epsilon * np.asarray(dh)
+    return replace(
+        inputs,
+        current=GRCV4AuthoritativeState(
+            tuple(float(x) for x in c), None, inputs.current.Z_4
+        ),
+        geometry=GRCV4Geometry(
+            inputs.geometry.reference,
+            OneFormHodge(
+                inputs.geometry.reference.graph,
+                tuple(tuple(float(x) for x in row) for row in h),
+            ),
+        ),
+    )
+
+
+def p943_centered(inputs: Any, dc: Any, dh: Any, epsilon: float) -> dict[str, Any]:
+    """Differentiate actual fresh current evaluations only within the same stratum."""
+    from pygrc.models.grc_v4_candidate_c import CandidateCCurrent
+
+    if epsilon <= 0 or not math.isfinite(epsilon):
+        raise ValueError("positive finite difference step required")
+    plus, minus = (
+        p943_perturb(inputs, dc, dh, epsilon),
+        p943_perturb(inputs, dc, dh, -epsilon),
+    )
+    if plus.current == minus.current and plus.geometry == minus.geometry:
+        raise ValueError("finite difference step is unresolvable in binary64")
+    actual, left, right = (
+        CandidateCCurrent(inputs),
+        CandidateCCurrent(plus),
+        CandidateCCurrent(minus),
+    )
+    if (
+        not actual.algebra.selector.rank
+        == left.algebra.selector.rank
+        == right.algebra.selector.rank
+    ):
+        raise ValueError("finite difference crosses a selector stratum")
+    a, b = p943_arrays(left), p943_arrays(right)
+    return {key: (a[key] - b[key]) / (2 * epsilon) for key in a}
+
+
+class CandidateCControlDerivativeTests(unittest.TestCase):
+    observations: list[dict[str, Any]] = []
+
+    def check_direction(
+        self, inputs: Any, dc: Any, dh: Any, *, label: str, tolerance: float = 2e-6
+    ) -> None:
+        import numpy as np
+
+        expected = p943_direction(inputs, dc, dh)
+        observed = p943_centered(inputs, dc, dh, 2**-12)
+        errors = {}
+        for key in observed:
+            error = float(
+                np.max(abs(observed[key] - expected[key]))
+                / max(1, float(np.max(abs(expected[key]))))
+            )
+            errors[key] = error
+            self.assertLess(error, tolerance, (label, key, error))
+        self.observations.append(
+            dict(case=label, normalized_max_errors=errors, tolerance=tolerance)
+        )
+
+    def test_exact_path_projector_and_geometry_derivative_oracle(self) -> None:
+        import numpy as np
+        from pygrc.models.grc_v4_candidate_c import CandidateCCurrent
+
+        graph = p943_fixture().geometry.reference.graph
+        # Path spectrum 0,1,3. Cutoff 2 retains constant and antisymmetric modes.
+        inputs = current_fixture(
+            graph=graph,
+            weights={"a": 2, "b": 3},
+            hodge=((1, 0), (0, 1)),
+            resource=(0.5, 1.25, 2.25),
+            changes={"candidate": {"Lambda_C": 2, "kappa_M_C": 1.1}},
+        )
+        expected_p = np.array([[5, 2, -1], [2, 2, 2], [-1, 2, 5]]) / 6
+        expected_dp = np.array([[-1, 1, 0], [1, 0, -1], [0, -1, 1]]) / 2
+        direction = p943_direction(inputs, (0, 0, 0), ((1, 0), (0, -1)))
+        np.testing.assert_allclose(
+            direction["base_projector"], expected_p, atol=1e-15, rtol=0
+        )
+        np.testing.assert_allclose(
+            direction["projector"], expected_dp, atol=1e-15, rtol=0
+        )
+        np.testing.assert_allclose(
+            CandidateCCurrent(inputs).algebra.selector.projector,
+            expected_p,
+            atol=1e-15,
+            rtol=0,
+        )
+        self.check_direction(
+            inputs, (0, 0, 0), ((1, 0), (0, -1)), label="literal_path_projector"
+        )
+
+    def test_complete_resource_geometry_and_joint_derivatives(self) -> None:
+        inputs = p943_fixture()
+        for label, dc, dh in [
+            ("resource", (0.25, -0.5, 0.25), ((0, 0), (0, 0))),
+            ("geometry", (0, 0, 0), ((0.25, -0.5), (-0.5, 0.125))),
+            ("joint", (0.25, -0.5, 0.25), ((0.25, -0.5), (-0.5, 0.125))),
+        ]:
+            with self.subTest(direction=label):
+                self.check_direction(inputs, dc, dh, label=label)
+
+    def test_joint_difference_converges_at_second_order(self) -> None:
+        import numpy as np
+
+        inputs, dc, dh = (
+            p943_fixture(kappa_M_C=1.7),
+            (0.5, -0.75, 0.25),
+            ((0.5, -0.25), (-0.25, 0.25)),
+        )
+        expected = p943_direction(inputs, dc, dh)
+        errors = []
+        for step in (2**-5, 2**-7, 2**-9):
+            actual = p943_centered(inputs, dc, dh, step)
+            errors.append(float(np.linalg.norm(actual["j0"] - expected["j0"])))
+        self.assertLess(errors[1], errors[0] / 8)
+        self.assertLess(errors[2], errors[1] / 8)
+        self.observations.append(
+            dict(
+                case="second_order_convergence",
+                steps=[2**-5, 2**-7, 2**-9],
+                errors=errors,
+            )
+        )
+
+    def test_every_hodge_product_and_resource_term_is_load_bearing(self) -> None:
+        import numpy as np
+
+        inputs, dc, dh = (
+            p943_fixture(),
+            (0.25, -0.5, 0.25),
+            ((0.25, -0.5), (-0.5, 0.125)),
+        )
+        derivative = p943_direction(inputs, dc, dh)
+        observed = p943_centered(inputs, dc, dh, 2**-12)
+        for term in ("left", "middle", "right"):
+            with self.subTest(term=term):
+                self.assertGreater(np.linalg.norm(derivative[term]), 0.01)
+                self.assertGreater(
+                    np.linalg.norm(
+                        observed["hm"] - (derivative["hm"] - derivative[term])
+                    ),
+                    0.01,
+                )
+        for term in ("geometry_term", "resource_term"):
+            with self.subTest(term=term):
+                self.assertGreater(
+                    np.linalg.norm(
+                        observed["phi"] - (derivative["phi"] - derivative[term])
+                    ),
+                    0.01,
+                )
+        # Freezing P when h changes gives the wrong selected-content derivative.
+        fixed_selector = derivative["base_projector"] @ np.array(dc)
+        self.assertGreater(np.linalg.norm(observed["sector"] - fixed_selector), 0.01)
+
+    def test_directional_linearity_and_zero_direction(self) -> None:
+        import numpy as np
+
+        inputs = p943_fixture()
+        a = p943_direction(inputs, (0.25, -0.5, 0.25), ((0.25, 0), (0, -0.125)))
+        b = p943_direction(inputs, (-0.5, 0.25, 0.25), ((0, 0.25), (0.25, 0.125)))
+        combined = p943_direction(
+            inputs, (0.75, -0.9375, 0.1875), ((0.375, -0.1875), (-0.1875, -0.28125))
+        )
+        zero = p943_direction(inputs, (0, 0, 0), ((0, 0), (0, 0)))
+        for key in ("projector", "sector", "deformation", "hm", "phi", "j0"):
+            np.testing.assert_allclose(
+                combined[key], 1.5 * a[key] - 0.75 * b[key], atol=3e-14, rtol=2e-14
+            )
+            np.testing.assert_array_equal(zero[key], np.zeros_like(zero[key]))
+
+    def test_zero_controls_are_separate_full_chains_on_nonreference_hodge(self) -> None:
+        import numpy as np
+        from pygrc.models.grc_v4_candidate_c import CandidateCCurrent
+
+        baseline = CandidateCCurrent(p943_fixture())
+        controls = {
+            key: CandidateCCurrent(p943_fixture(**{key: 0}))
+            for key in ("kappa_M_C", "chi_C", "zeta_C", "tau_C")
+        }
+        for key, point in controls.items():
+            source = point.inputs.geometry.reference.profile.params_resolved.candidate.to_payload()
+            original = baseline.inputs.geometry.reference.profile.params_resolved.candidate.to_payload()
+            self.assertEqual(
+                {name for name in source if source[name] != original[name]}, {key}
+            )
+            self.assertEqual(
+                point.algebra.transport.mobility.matrix,
+                baseline.algebra.transport.mobility.matrix,
+            )
+            self.assertEqual(
+                point.algebra.transport.mobility_constructor_identity,
+                baseline.algebra.transport.mobility_constructor_identity,
+            )
+            self.assertEqual(
+                point.algebra.transport.mobility.apply(
+                    OneForm(point.algebra.transport.graph, (1, -2))
+                ),
+                baseline.algebra.transport.mobility.apply(
+                    OneForm(baseline.algebra.transport.graph, (1, -2))
+                ),
+            )
+            self.assertEqual(point.algebra.selector, baseline.algebra.selector)
+        km, chi, zeta, tau = (
+            controls[k] for k in ("kappa_M_C", "chi_C", "zeta_C", "tau_C")
+        )
+        self.assertEqual(km.algebra.retained_hodge, km.inputs.geometry.one_form_hodge)
+        self.assertEqual(km.algebra.deformation, (1, 1))
+        self.assertNotEqual(
+            km.algebra.retained_hodge, km.algebra.transport.structural_hodge
+        )
+        self.assertNotEqual(km.algebra.baseline, baseline.algebra.baseline)
+        self.assertNotEqual(km.read.flux.values, (0, 0))
+        for point in (chi, zeta, tau):
+            self.assertEqual(
+                point.algebra.retained_hodge, baseline.algebra.retained_hodge
+            )
+            self.assertEqual(point.algebra.baseline, baseline.algebra.baseline)
+        self.assertEqual(chi.current, chi.algebra.baseline)
+        self.assertEqual(chi.read.flux.values, (0, 0))
+        self.assertNotEqual(chi.read.ungated_flat.values, (0, 0))
+        self.assertEqual(zeta.current, zeta.algebra.baseline)
+        self.assertNotEqual(zeta.read.flux.values, (0, 0))
+        self.assertEqual(tau.algebra.response, ((1, 0), (0, 1)))
+        self.assertEqual(tau.read.flux, tau.current)
+        np.testing.assert_allclose(
+            tau.current.values, np.array(tau.algebra.baseline.values) / 0.6, rtol=2e-14
+        )
+        self.assertNotEqual(
+            tau.algebra.retained_hodge, tau.inputs.geometry.one_form_hodge
+        )
+        self.assertNotEqual(tau.algebra.physical_identification, ((1, 0), (0, 1)))
+        self.assertNotEqual(tau.current, baseline.current)
+
+    def test_derivatives_under_each_zero_control_remain_distinct(self) -> None:
+        import numpy as np
+
+        dc, dh = (0.25, -0.5, 0.25), ((0.25, -0.5), (-0.5, 0.125))
+        original = p943_direction(p943_fixture(), dc, dh)
+        for key in ("kappa_M_C", "chi_C", "zeta_C", "tau_C"):
+            inputs = p943_fixture(**{key: 0})
+            self.check_direction(inputs, dc, dh, label="zero_" + key)
+            derived = p943_direction(inputs, dc, dh)
+            if key == "kappa_M_C":
+                np.testing.assert_array_equal(derived["deformation"], (0, 0))
+                np.testing.assert_array_equal(derived["hm"], dh)
+                self.assertGreater(np.linalg.norm(derived["j0"] - original["j0"]), 0.01)
+            else:
+                np.testing.assert_array_equal(derived["j0"], original["j0"])
+
+    def test_reference_reduction_has_closed_resource_and_hodge_derivatives(
+        self,
+    ) -> None:
+        import numpy as np
+        from pygrc.models.grc_v4_candidate_c import CandidateCCurrent
+
+        inputs = p943_fixture(kappa_M_C=0)
+        inputs = replace(inputs, geometry=inputs.geometry.reference.geometry())
+        actual = CandidateCCurrent(inputs)
+        b = np.asarray(inputs.geometry.reference.graph.incidence)
+        w = np.diag((2, 3))
+        p = actual.algebra.transport.params
+        c, dc, dh = (
+            np.array(inputs.current.C),
+            np.array((0.25, -0.5, 0.25)),
+            np.array(((0.25, 0.125), (0.125, -0.125))),
+        )
+        phi = p.kappa_Phi_C * b @ w @ b.T @ c
+        np.testing.assert_array_equal(actual.algebra.potential.values, phi)
+        expected = (
+            -p.eta_C * w @ b.T @ (p.kappa_Phi_C * b @ (dh @ b.T @ c + w @ b.T @ dc))
+        )
+        np.testing.assert_allclose(
+            p943_direction(inputs, dc, dh)["j0"], expected, atol=1e-14
+        )
+        self.check_direction(inputs, dc, dh, label="reference_kappa_zero")
+
+    def test_vertex_signed_edge_covariance_of_values_and_directions(self) -> None:
+        import numpy as np
+        from pygrc.models.grc_v4_candidate_c import CandidateCCurrent
+
+        inputs, dc, dh = (
+            p943_fixture(),
+            np.array((0.25, -0.5, 0.25)),
+            np.array(((0.25, -0.5), (-0.5, 0.125))),
+        )
+        graph = inputs.geometry.reference.graph
+        base = CandidateCCurrent(inputs)
+        derivative = p943_direction(inputs, dc, dh)
+        h = np.asarray(inputs.geometry.one_form_hodge.matrix)
+        rng = random.Random(943)
+        for case in range(12):
+            nodes, order = list(range(3)), list(range(2))
+            rng.shuffle(nodes)
+            rng.shuffle(order)
+            signs = np.array([rng.choice((-1, 1)) for _ in order])
+            labels = {i: f"node-{case}-{i}" for i in range(3)}
+            edges = []
+            for j, sign in zip(order, signs, strict=True):
+                edge = graph.oriented_edges[j]
+                tail, head = edge.tail_node_id, edge.head_node_id
+                if sign < 0:
+                    tail, head = head, tail
+                edges.append(OrientedEdge(edge.edge_id, labels[tail], labels[head]))
+            moved = GRCV4Graph(tuple(labels[i] for i in nodes), tuple(edges))
+            h2 = h[np.ix_(order, order)] * np.outer(signs, signs)
+            target = current_fixture(
+                graph=moved,
+                weights={"a": 2, "b": 3},
+                hodge=tuple(map(tuple, h2)),
+                resource=tuple(inputs.current.C[i] for i in nodes),
+                changes={
+                    "candidate": {
+                        "Lambda_C": 3,
+                        "kappa_M_C": 1.1,
+                        "chi_C": 1,
+                        "zeta_C": 0.4,
+                        "tau_C": 0.3,
+                    }
+                },
+            )
+            current = CandidateCCurrent(target)
+            tangent = p943_direction(
+                target, dc[nodes], dh[np.ix_(order, order)] * np.outer(signs, signs)
+            )
+            for original, transformed in [
+                (p943_arrays(base), p943_arrays(current)),
+                (derivative, tangent),
+            ]:
+                np.testing.assert_allclose(
+                    transformed["projector"],
+                    original["projector"][np.ix_(nodes, nodes)],
+                    atol=2e-12,
+                    rtol=2e-12,
+                )
+                np.testing.assert_allclose(
+                    transformed["sector"],
+                    original["sector"][nodes],
+                    atol=2e-12,
+                    rtol=2e-12,
+                )
+                np.testing.assert_allclose(
+                    transformed["deformation"],
+                    original["deformation"][order],
+                    atol=2e-12,
+                    rtol=2e-12,
+                )
+                np.testing.assert_allclose(
+                    transformed["phi"], original["phi"][nodes], atol=2e-12, rtol=2e-12
+                )
+                np.testing.assert_allclose(
+                    transformed["j0"],
+                    original["j0"][order] * signs,
+                    atol=2e-12,
+                    rtol=2e-12,
+                )
+                np.testing.assert_allclose(
+                    transformed["hm"],
+                    original["hm"][np.ix_(order, order)] * np.outer(signs, signs),
+                    atol=2e-12,
+                    rtol=2e-12,
+                )
+            self.check_direction(
+                target,
+                dc[nodes],
+                dh[np.ix_(order, order)] * np.outer(signs, signs),
+                label=f"signed_covariance_{case}",
+            )
+
+    def test_repeated_cluster_derivative_is_basis_independent_and_finite(self) -> None:
+        import numpy as np
+        from unittest.mock import patch
+
+        graph = GRCV4Graph(
+            tuple(range(4)),
+            tuple(OrientedEdge(str(i), i, (i + 1) % 4) for i in range(4)),
+        )
+        inputs = current_fixture(
+            graph=graph,
+            weights={str(i): 1 for i in range(4)},
+            resource=(0.5, 1, 1.5, 2),
+            changes={"candidate": {"Lambda_C": 3, "kappa_M_C": 0.8}},
+        )
+        dc = np.array((0.25, -0.5, 0.5, -0.25))
+        dh = np.diag((0.25, -0.25, 0.5, -0.5))
+        expected = p943_direction(inputs, dc, dh)
+        real = np.linalg.eigh
+
+        def varied(matrix: Any) -> Any:
+            values, vectors = real(matrix)
+            if abs(values[1] - values[2]) < 1e-12:
+                rotation = np.array([[0.6, -0.8], [0.8, 0.6]])
+                vectors[:, 1:3] = vectors[:, 1:3] @ rotation
+            order = [3, 1, 0, 2]
+            return values[order], vectors[:, order] * np.array((-1, 1, -1, 1))
+
+        with patch.object(np.linalg, "eigh", side_effect=varied):
+            actual = p943_direction(inputs, dc, dh)
+            for key in ("projector", "sector", "hm", "phi", "j0"):
+                np.testing.assert_allclose(
+                    actual[key], expected[key], atol=3e-14, rtol=3e-14
+                )
+            self.check_direction(inputs, dc, dh, label="repeated_cluster_rotation")
+
+    def test_near_gap_growth_and_crossing_are_not_hidden(self) -> None:
+        import numpy as np
+
+        # Complete 3-node graph with Laplacian on the nonconstant plane:
+        # diag(lambda-gap/2,lambda+gap/2). An off-diagonal edge
+        # perturbation couples the sectors; sensitivity grows like 1/gap.
+        graph = GRCV4Graph(
+            (0, 1, 2),
+            (OrientedEdge("a", 0, 1), OrientedEdge("b", 1, 2), OrientedEdge("c", 2, 0)),
+        )
+        b = np.array(graph.incidence)
+        q1 = np.array((1, -1, 0)) / math.sqrt(2)
+        q2 = np.array((1, 1, -2)) / math.sqrt(6)
+        norms = []
+        for gap in (2**-4, 2**-8, 2**-12):
+            laplacian = (
+                3 * np.eye(3)
+                - np.ones((3, 3))
+                + 0.5 * gap * (np.outer(q2, q2) - np.outer(q1, q1))
+            )
+            h = (
+                np.eye(3)
+                + b.T @ (laplacian - (3 * np.eye(3) - np.ones((3, 3)))) @ b / 9
+            )
+            # h(t)=h+t*dh, with lambda gap about the cutoff 3.
+            dh = b.T @ (np.outer(q1, q2) + np.outer(q2, q1)) @ b / 9
+            inputs = current_fixture(
+                graph=graph,
+                weights={e: 1 for e in "abc"},
+                hodge=tuple(map(tuple, h)),
+                resource=(0.5, 1.25, 2.25),
+                changes={"candidate": {"Lambda_C": 3, "kappa_M_C": 0.7}},
+            )
+            expected = p943_direction(inputs, (0, 0, 0), dh)
+            norms.append(float(np.linalg.norm(expected["projector"])))
+            observed = p943_centered(inputs, (0, 0, 0), dh, gap / 1024)
+            for key in ("projector", "sector", "hm", "phi", "j0"):
+                np.testing.assert_allclose(
+                    observed[key], expected[key], rtol=2e-5, atol=2e-6
+                )
+        self.assertAlmostEqual(norms[1] / norms[0], 16, delta=1e-8)
+        self.assertAlmostEqual(norms[2] / norms[1], 16, delta=1e-7)
+        self.observations.append(
+            dict(
+                case="near_gap_sensitivity",
+                gaps=[2**-4, 2**-8, 2**-12],
+                projector_derivative_norms=norms,
+            )
+        )
+        # Endpoint evaluations in different ranks are locally admissible, but
+        # their quotient cannot certify a fixed-stratum derivative.
+        inputs = p943_fixture(Lambda_C=3)
+        with self.assertRaisesRegex(ValueError, "stratum|spectrum"):
+            p943_centered(inputs, (0, 0, 0), ((2, 0), (0, 2)), 0.5)
+
+    def test_disconnected_loop_parallel_and_exterior_sector_derivatives(self) -> None:
+        import numpy as np
+
+        graph = GRCV4Graph(
+            (0, 1, 2),
+            (OrientedEdge("a", 0, 1), OrientedEdge("b", 1, 0), OrientedEdge("l", 0, 0)),
+        )
+        for cutoff in (-1, 0.5, 100):
+            inputs = current_fixture(
+                graph=graph,
+                weights={e: 1 for e in ("a", "b", "l")},
+                hodge=((2, 0.25, 0.125), (0.25, 1, 0.25), (0.125, 0.25, 1.5)),
+                resource=(0.5, 1.5, 2),
+                changes={"candidate": {"Lambda_C": cutoff, "kappa_M_C": 0.9}},
+            )
+            dc = (0.25, -0.25, 0)
+            dh = ((0.25, 0.125, 0), (0.125, -0.25, 0.125), (0, 0.125, 0.5))
+            expected = p943_direction(inputs, dc, dh)
+            np.testing.assert_allclose(
+                expected["projector"], np.zeros((3, 3)), atol=1e-14
+            )
+            self.check_direction(inputs, dc, dh, label=f"multigraph_cutoff_{cutoff}")
+            # A loop has zero direct gradient/baseline, even with offdiagonal H.
+            self.assertEqual(expected["j0"][2], 0)
+            self.assertEqual(expected["phi"][2], 0)
+
+    def test_trial_current_and_metadata_do_not_become_baseline_directions(self) -> None:
+        from pygrc.models.grc_v4_candidate_c import CandidateCCurrent
+        from tests.models.test_grc_v4_geometry import stage_inputs_fixture
+
+        inputs = p943_fixture()
+        ref = stage_reference_fixture(
+            "C",
+            "CI",
+            graph=inputs.geometry.reference.graph,
+            weights={"a": 2, "b": 3},
+            changes={
+                "solver": {"absolute_tolerance": 1e-11, "relative_tolerance": 1e-11},
+                "candidate": {"Lambda_C": 3, "kappa_M_C": 1.1, "tau_C": 0.3},
+            },
+        )
+        inputs = stage_inputs_fixture(ref, stage="ci_trial")
+        first = CandidateCCurrent(inputs)
+        for values in ((0, 0), (1e6, -1e6)):
+            current = CandidateCCurrent(
+                replace(
+                    inputs,
+                    trial_current=PhysicalFlux(ref.graph, values),
+                    evaluation_index=9,
+                    time=7,
+                )
+            )
+            self.assertNotEqual(current.identity, first.identity)
+            self.assertEqual(current.algebra.baseline, first.algebra.baseline)
+            self.assertEqual(current.current, first.current)
+
+    def test_eta_profile_family_variation_has_the_declared_delta_m_term(self) -> None:
+        import numpy as np
+        from pygrc.models.grc_v4_candidate_c import CandidateCCurrent
+
+        base = CandidateCCurrent(p943_fixture(eta_C=1))
+        h = 2**-10
+        plus, minus = (
+            CandidateCCurrent(p943_fixture(eta_C=1 + s * h)) for s in (1, -1)
+        )
+        self.assertNotEqual(
+            base.inputs.geometry.reference.profile.complete_profile_id,
+            plus.inputs.geometry.reference.profile.complete_profile_id,
+        )
+        self.assertEqual(base.algebra.potential, plus.algebra.potential)
+        self.assertEqual(base.algebra.retained_hodge, plus.algebra.retained_hodge)
+        expected = (
+            -np.diag((2, 3))
+            @ np.array(base.inputs.geometry.reference.graph.incidence).T
+            @ np.array(base.algebra.potential.values)
+        )
+        np.testing.assert_allclose(
+            (
+                np.array(plus.algebra.baseline.values)
+                - np.array(minus.algebra.baseline.values)
+            )
+            / (2 * h),
+            expected,
+            rtol=1e-12,
+            atol=1e-12,
+        )
+        # This is explicitly an adjacent-profile parameter study, not ordinary
+        # same-profile delta_M=0 or a lawful lifecycle migration.
+
+    def test_resource_boundary_uses_admitted_one_sided_direction(self) -> None:
+        import numpy as np
+        from pygrc.models.grc_v4_candidate_c import CandidateCCurrent
+        from pygrc.models.grc_v4_state import GRCV4AuthoritativeState
+
+        inputs = p943_fixture()
+        inputs = replace(inputs, current=GRCV4AuthoritativeState((0, 1, 2), None, None))
+        dc, dh = (1, -1, 0), ((0, 0), (0, 0))
+        step = 2**-12
+        with self.assertRaises(ValueError):
+            p943_centered(inputs, dc, dh, step)
+        points = [
+            p943_arrays(CandidateCCurrent(p943_perturb(inputs, dc, dh, t * step)))
+            for t in (0, 1, 2)
+        ]
+        expected = p943_direction(inputs, dc, dh)
+        for key in ("sector", "hm", "phi", "j0"):
+            estimate = (-3 * points[0][key] + 4 * points[1][key] - points[2][key]) / (
+                2 * step
+            )
+            np.testing.assert_allclose(estimate, expected[key], rtol=3e-6, atol=3e-6)
+
+    def test_difference_probe_rejects_unresolvable_steps_and_domain_loss(self) -> None:
+        inputs = p943_fixture()
+        before = canonical_json_bytes(inputs.to_payload())
+        for step in (0, -1, float("inf"), 5e-324):
+            with self.subTest(step=step), self.assertRaises(ValueError):
+                p943_centered(inputs, (0.25, -0.5, 0.25), ((0.25, 0), (0, 0.25)), step)
+        with self.assertRaises(ValueError):
+            p943_centered(inputs, (0, 0, 0), ((4, 0), (0, 4)), 1)
+        self.assertEqual(canonical_json_bytes(inputs.to_payload()), before)
+
+    def test_literal_scalar_derivative_and_saturation_tail(self) -> None:
+        from decimal import Decimal, localcontext
+        from pygrc.models.grc_v4_candidate_c import CandidateCCurrent
+
+        graph = CandidateCCurrentTests.edge_graph()
+        for mean in (0.5, 4, 20):
+            inputs = current_fixture(
+                graph=graph,
+                weights={"e": 2},
+                resource=(mean - 0.25, mean + 0.25),
+                changes={
+                    "candidate": {
+                        "Lambda_C": 1,
+                        "kappa_M_C": 0.75,
+                        "eta_C": 0.5,
+                        "kappa_Phi_C": 1,
+                        "C_ref": 1,
+                    }
+                },
+            )
+            # Uniform delta_C changes mean, retaining the fixed resource gradient.
+            # This is ambient constitutive sensitivity, not charge-preserving motion.
+            expected = p943_direction(inputs, (1, 1), ((0,),))
+            with localcontext() as ctx:
+                ctx.prec = 70
+                m = Decimal(str(mean))
+                e = (2 * m).exp()
+                rho = (e - 1) / (e + 1)
+                hm = Decimal(2) * (Decimal(".75") * rho).exp()
+                j0 = hm
+                dj0 = j0 * Decimal(".75") * (4 * e / (e + 1) ** 2)
+                target = float(dj0)
+            self.assertGreater(target, 0)
+            self.assertAlmostEqual(expected["j0"][0] / target, 1, delta=2e-14)
+            self.assertAlmostEqual(
+                CandidateCCurrent(inputs).algebra.baseline.values[0] / float(j0),
+                1,
+                delta=2e-14,
+            )
+            if mean < 20:
+                self.check_direction(
+                    inputs, (1, 1), ((0,),), label=f"scalar_mean_{mean}"
+                )
+            else:
+                self.assertEqual(math.tanh(mean), 1)
+                rounded = p943_centered(inputs, (1, 1), ((0,),), 2**-12)
+                self.assertEqual(rounded["j0"][0], 0)
+                self.observations.append(
+                    dict(
+                        case="saturated_tanh_tail",
+                        mean=mean,
+                        mathematical_derivative=target,
+                        rounded_tanh=1,
+                        rounded_current_difference=0,
+                        finite_difference_claim=False,
+                    )
+                )
+
+    def test_constitutive_potential_is_not_total_retained_energy_gradient(self) -> None:
+        import numpy as np
+        from pygrc.models.grc_v4_candidate_c import CandidateCCurrent
+
+        inputs, dc, dh = p943_fixture(), np.array((0.25, -0.5, 0.25)), np.zeros((2, 2))
+        current = CandidateCCurrent(inputs)
+        tangent = p943_direction(inputs, dc, dh)
+        b = np.asarray(inputs.geometry.reference.graph.incidence)
+        gradient = b.T @ np.asarray(inputs.current.C)
+        kappa = current.algebra.transport.params.kappa_Phi_C
+        frozen = float(np.asarray(current.algebra.potential.values) @ dc)
+        extra = float(0.5 * kappa * gradient @ tangent["hm"] @ gradient)
+        self.assertGreater(abs(extra), 0.01)
+
+        def energy(epsilon: float) -> float:
+            point = CandidateCCurrent(p943_perturb(inputs, dc, dh, epsilon))
+            g = b.T @ np.asarray(point.inputs.current.C)
+            return float(
+                0.5 * kappa * g @ np.asarray(point.algebra.retained_hodge.matrix) @ g
+            )
+
+        step = 2**-12
+        observed = (energy(step) - energy(-step)) / (2 * step)
+        self.assertAlmostEqual(observed, frozen + extra, delta=1e-7)
+        self.assertGreater(abs(observed - frozen), 0.01)
+        self.observations.append(
+            dict(
+                case="constitutive_potential_not_energy_gradient",
+                frozen_potential_action=frozen,
+                retained_energy_chain_term=extra,
+                energy_difference=observed,
+            )
+        )
+
+    def test_zero_context_and_potential_declarations_bound_derivative_scope(
+        self,
+    ) -> None:
+        from pygrc.models.grc_v4_candidate_c import CandidateCCurrent
+        from pygrc.models.grc_v4_geometry import GRCV4Context
+        from pygrc.models.grc_v4_state import FrozenJSONMap
+
+        unknown = current_fixture(
+            changes={
+                "candidate": {
+                    "potential_evaluator_id": "unimplemented_nonzero_potential"
+                }
+            }
+        )
+        with self.assertRaisesRegex(ValueError, "oracle requires"):
+            p943_direction(unknown, (1, -1, 0), ((0, 0), (0, 0)))
+        with self.assertRaisesRegex(ValueError, "unimplemented C site potential"):
+            CandidateCCurrent(unknown)
+        inputs = p943_fixture()
+        before = canonical_json_bytes(inputs.to_payload())
+        with self.assertRaises(ValueError):
+            replace(
+                inputs,
+                context=GRCV4Context(
+                    "constant_zero_context_v1", FrozenJSONMap({"U": 1})
+                ),
+            )
+        for dc, dh in [
+            ((float("inf"), 0, 0), ((0, 0), (0, 0))),
+            ((0, 0, 0), ((0, 1), (0, 0))),
+        ]:
+            with self.assertRaisesRegex(ValueError, "invalid derivative direction"):
+                p943_direction(inputs, dc, dh)
+        self.assertEqual(canonical_json_bytes(inputs.to_payload()), before)
+
+    def test_seeded_spd_mixed_directions_match_actual_baseline(self) -> None:
+        import numpy as np
+
+        rng = np.random.default_rng(943)
+        graph = GRCV4Graph(
+            (0, 1, 2),
+            (OrientedEdge("a", 0, 1), OrientedEdge("b", 1, 2), OrientedEdge("c", 2, 0)),
+        )
+        b = np.array(graph.incidence)
+        for case in range(8):
+            a = rng.integers(-2, 3, size=(3, 3))
+            h = (a.T @ a + np.eye(3)) / 4
+            values = np.linalg.eigvalsh(b @ h @ b.T)
+            cutoff = float((values[1] + values[2]) / 2)
+            if values[2] - values[1] < 0.01:
+                cutoff = 0.01
+            inputs = current_fixture(
+                graph=graph,
+                weights={"a": 0.5, "b": 2, "c": 4},
+                hodge=tuple(map(tuple, h)),
+                resource=(0.75, 1.25, 2),
+                changes={
+                    "candidate": {
+                        "Lambda_C": cutoff,
+                        "kappa_M_C": float(rng.uniform(-1, 1)),
+                    }
+                },
+            )
+            a = rng.integers(-2, 3, size=(3, 3))
+            dh = (a + a.T) / 16
+            dc = rng.integers(-2, 3, size=3) / 8
+            dc[-1] = -sum(dc[:-1])
+            self.check_direction(
+                inputs, dc, dh, label=f"seeded_spd_{case}", tolerance=1e-5
+            )
+
+
 class CandidateCCaptureTests(unittest.TestCase):
     """Synthetic gate controls; these do not substitute for numeric leaf tests."""
 
@@ -2104,12 +2987,36 @@ _P942_METHODS = (
 )
 
 
+_P943_METHODS = (
+    "test_exact_path_projector_and_geometry_derivative_oracle",
+    "test_complete_resource_geometry_and_joint_derivatives",
+    "test_joint_difference_converges_at_second_order",
+    "test_every_hodge_product_and_resource_term_is_load_bearing",
+    "test_directional_linearity_and_zero_direction",
+    "test_zero_controls_are_separate_full_chains_on_nonreference_hodge",
+    "test_derivatives_under_each_zero_control_remain_distinct",
+    "test_reference_reduction_has_closed_resource_and_hodge_derivatives",
+    "test_vertex_signed_edge_covariance_of_values_and_directions",
+    "test_repeated_cluster_derivative_is_basis_independent_and_finite",
+    "test_near_gap_growth_and_crossing_are_not_hidden",
+    "test_disconnected_loop_parallel_and_exterior_sector_derivatives",
+    "test_trial_current_and_metadata_do_not_become_baseline_directions",
+    "test_eta_profile_family_variation_has_the_declared_delta_m_term",
+    "test_resource_boundary_uses_admitted_one_sided_direction",
+    "test_difference_probe_rejects_unresolvable_steps_and_domain_loss",
+    "test_literal_scalar_derivative_and_saturation_tail",
+    "test_constitutive_potential_is_not_total_retained_energy_gradient",
+    "test_zero_context_and_potential_declarations_bound_derivative_scope",
+    "test_seeded_spd_mixed_directions_match_actual_baseline",
+)
+
+
 def _capture_candidate_c(output: str, *, scope: str) -> int:
     """One manifest; source is recovered from Git, without copying source blobs.
 
     The inherited pinned method roster and audited result collector detect
     omission, duplicates, skips and subtest failures. All source bytes are
-    observed before/after, with only this leaf's two overrides over its base.
+    observed before/after, with only this leaf's listed overrides over its base.
     """
     from datetime import datetime, timezone
     import importlib.metadata
@@ -2118,7 +3025,7 @@ def _capture_candidate_c(output: str, *, scope: str) -> int:
     import subprocess
     from tests.models.test_grc_v4_step import p935_required
 
-    if scope not in {"full", "focused", "current"}:
+    if scope not in {"full", "focused", "current", "derivative"}:
         raise ValueError("unknown capture scope")
     root = Path(__file__).resolve().parents[2]
     destination = (root / output).resolve()
@@ -2139,7 +3046,15 @@ def _capture_candidate_c(output: str, *, scope: str) -> int:
             "full capture requires enabled package tests and repository-local dependency wheels"
         )
     base = subprocess.check_output(
-        ["git", "rev-parse", "94a079d" if scope == "current" else "2e90398"],
+        [
+            "git",
+            "rev-parse",
+            "ac3a7cf"
+            if scope == "derivative"
+            else "94a079d"
+            if scope == "current"
+            else "2e90398",
+        ],
         cwd=root,
         text=True,
     ).strip()
@@ -2155,6 +3070,9 @@ def _capture_candidate_c(output: str, *, scope: str) -> int:
         "src/pygrc/models/grc_v4_candidate_c.py",
         "tests/models/test_grc_v4_candidate_c.py",
     }
+
+    if scope == "derivative":
+        overrides = {"tests/models/test_grc_v4_candidate_c.py"}
 
     def source_hashes() -> dict[str, str]:
         names = set(
@@ -2177,7 +3095,13 @@ def _capture_candidate_c(output: str, *, scope: str) -> int:
             for name in sorted(names)
         }
 
-    iteration = "P9-4.2" if scope == "current" else "P9-4.1"
+    iteration = (
+        "P9-4.3"
+        if scope == "derivative"
+        else "P9-4.2"
+        if scope == "current"
+        else "P9-4.1"
+    )
     before = source_hashes()
     # Git diff also sees staged changes, while the explicit overrides cover
     # this leaf's new files before they have been staged.
@@ -2195,7 +3119,7 @@ def _capture_candidate_c(output: str, *, scope: str) -> int:
     )
     if (changed | untracked) != overrides:
         raise ValueError(
-            "capture source differs from the two reviewed " + iteration + " overrides"
+            "capture source differs from the reviewed " + iteration + " overrides"
         )
     inherited = p935_required(root)
     if scope == "focused":
@@ -2209,7 +3133,7 @@ def _capture_candidate_c(output: str, *, scope: str) -> int:
                 )
             )
         }
-    if scope == "current":
+    if scope in {"current", "derivative"}:
         inherited = {
             name
             for name in inherited
@@ -2237,10 +3161,16 @@ def _capture_candidate_c(output: str, *, scope: str) -> int:
             for name in _P941_CAPTURE_METHODS
         }
     )
-    if scope == "current":
+    if scope in {"current", "derivative"}:
         required |= {
             "tests.models.test_grc_v4_candidate_c.CandidateCCurrentTests." + name
             for name in _P942_METHODS
+        }
+    if scope == "derivative":
+        required |= {
+            "tests.models.test_grc_v4_candidate_c.CandidateCControlDerivativeTests."
+            + name
+            for name in _P943_METHODS
         }
     suite = (
         unittest.defaultTestLoader.discover(
@@ -2249,6 +3179,10 @@ def _capture_candidate_c(output: str, *, scope: str) -> int:
         if scope == "full"
         else unittest.defaultTestLoader.loadTestsFromNames(sorted(required))
     )
+    if scope == "derivative":
+        from tests.models import test_grc_v4_candidate_c as leaf
+
+        leaf.CandidateCControlDerivativeTests.observations = []
     destination.mkdir(parents=True, exist_ok=False)
     record: dict[str, Any] = {
         "schema": "phase9_leaf_run_v1",
@@ -2262,7 +3196,7 @@ def _capture_candidate_c(output: str, *, scope: str) -> int:
             "overrides_sha256": {n: before[n] for n in sorted(overrides)},
             "manifest_sha256": hashlib.sha256(canonical_json_bytes(before)).hexdigest(),
             "file_count": len(before),
-            "reconstruction": "Recover the two override files from the Git commit containing this record (or a later commit with matching hashes), overlay on base_commit, and verify the manifest hash. No uncommitted source blob is preserved separately.",
+            "reconstruction": "Recover the listed override files from the Git commit containing this record (or a later commit with matching hashes), overlay on base_commit, and verify the manifest hash. No uncommitted source blob is preserved separately.",
         },
         "python": platform.python_version(),
         "platform": platform.platform(),
@@ -2287,7 +3221,9 @@ def _capture_candidate_c(output: str, *, scope: str) -> int:
             ".venv/bin/python",
             "-m",
             "tests.models.test_grc_v4_candidate_c",
-            "--capture-p942"
+            "--capture-p943"
+            if scope == "derivative"
+            else "--capture-p942"
             if scope == "current"
             else "--capture-p941"
             if scope == "full"
@@ -2295,7 +3231,9 @@ def _capture_candidate_c(output: str, *, scope: str) -> int:
             "<fresh-repository-relative-generated-directory>",
         ],
         "claim_ceiling": (
-            "Fixed-stage Candidate C selector, potential, baseline, typed read and regular current solve; no complete beat, lifecycle, profile conformance or cross-platform bitwise numerical claim."
+            "Candidate C supported-profile smooth-stratum baseline derivative/covariance and independent zero controls; no production derivative API, complete beat, lifecycle, runtime conformance or cross-platform bitwise numerical claim."
+            if scope == "derivative"
+            else "Fixed-stage Candidate C selector, potential, baseline, typed read and regular current solve; no complete beat, lifecycle, profile conformance or cross-platform bitwise numerical claim."
             if scope == "current"
             else "Reference transport constructors only; no selector, baseline flux, solve, beat, lifecycle or runtime conformance."
         ),
@@ -2303,6 +3241,10 @@ def _capture_candidate_c(output: str, *, scope: str) -> int:
     record["required_ids"] = sorted(required)
     record.update(_p941_execute(root, before, required, suite, source_hashes))
     passed = record["status"] == "passed"
+    if scope == "derivative":
+        record["control_derivative_observations"] = (
+            leaf.CandidateCControlDerivativeTests.observations
+        )
     if passed:
         loaded_before = record.pop("loaded_sources_before")
         loaded_after = record.pop("loaded_sources_after")
@@ -2349,7 +3291,13 @@ def capture_p942(output: str) -> int:
     return _capture_candidate_c(output, scope="current")
 
 
+def capture_p943(output: str) -> int:
+    return _capture_candidate_c(output, scope="derivative")
+
+
 if __name__ == "__main__":
+    if len(sys.argv) == 3 and sys.argv[1] == "--capture-p943":
+        raise SystemExit(capture_p943(sys.argv[2]))
     if len(sys.argv) == 3 and sys.argv[1] == "--capture-p942":
         raise SystemExit(capture_p942(sys.argv[2]))
     if len(sys.argv) == 3 and sys.argv[1] in {

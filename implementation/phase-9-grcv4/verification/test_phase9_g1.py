@@ -52,7 +52,7 @@ def main():
             ],
             check=True,
         )
-        fixture_revision = p.accepted_reference_transport(p.ROOT)["baseline_commit"]
+        fixture_revision = p.accepted_c_current(p.ROOT)["baseline_commit"]
         subprocess.run(
             ["git", "checkout", "--quiet", "--detach", fixture_revision],
             cwd=root, check=True,
@@ -519,9 +519,9 @@ def main():
                                b"{}", leaf="P9-3.5"),
         )
         case(
-            "reference_transport_does_not_accept_future_leaf",
-            lambda: registered(p.PHASE + "evidence/P9-4.3/probe/inputs.json",
-                               b"{}", leaf="P9-4.3"),
+            "c_current_does_not_accept_future_leaf",
+            lambda: registered(p.PHASE + "evidence/P9-4.4/probe/inputs.json",
+                               b"{}", leaf="P9-4.4"),
             "owning leaf entry dependencies are not accepted",
         )
         for name in ["src/pygrc/models/grc_v4_state.py", "src/pygrc/models/grc_v4_step.py"]:
@@ -601,12 +601,30 @@ def main():
             case("reference_transport_acceptance_cannot_self_authorize_" + key,
                  forged_reference, "untrusted C reference transport acceptance",
                  scope="isolated_reference_transport_acceptance_authentication")
+        case("missing_c_current_acceptance", lambda: edit(p.CURRENT_ACCEPTANCE, None),
+             "P9-4.2-AcceptanceRecord.json")
+        for key, replacement in [("status", "pending"), ("accepted_iterations", ["P9-4.2", "P9-4.3"]),
+                                 ("accepted_generic_runtime_support", ["C_OS"]),
+                                 ("admitted_specialization_support_sets", [["C_OS"]]),
+                                 ("baseline_commit", p.BASELINE), ("evidence_bindings", [])]:
+            def forged_current(key=key, replacement=replacement):
+                value = p.read(root / p.CURRENT_ACCEPTANCE)
+                value[key] = replacement
+                value["record_digest"] = p.digest_record(value)
+                with mutate(p.CURRENT_ACCEPTANCE, p.canonical(value)):
+                    p.accepted_c_current(root)
+            case("c_current_acceptance_cannot_self_authorize_" + key,
+                 forged_current, "untrusted C stage current acceptance",
+                 scope="isolated_c_current_acceptance_authentication")
         for name in ["src/pygrc/models/grc_v4_candidate_c.py", "tests/models/test_grc_v4_candidate_c.py"]:
             case("accepted_preservation_enables_" + Path(name).stem,
                  lambda name=name: registered(name, content, leaf="P9-4.1"))
         for name in ["src/pygrc/models/grc_v4_candidate_c.py", "tests/models/test_grc_v4_candidate_c.py"]:
             case("accepted_reference_enables_current_" + Path(name).stem,
                  lambda name=name: registered(name, content, leaf="P9-4.2"))
+        for name in ["src/pygrc/models/grc_v4_candidate_c.py", "tests/models/test_grc_v4_candidate_c.py"]:
+            case("accepted_current_enables_controls_" + Path(name).stem,
+                 lambda name=name: registered(name, content, leaf="P9-4.3"))
         case("accepted_harness_enables_export_owner",
              lambda: registered(init, before + lazy, leaf="P9-2.6"))
         for key, replacement in [("status", "pending"), ("accepted_iterations", ["P9-2.5", "P9-2.6"]),
@@ -707,7 +725,7 @@ def main():
         case(
             "later_generic_leaf_held",
             lambda: registered(
-                "src/pygrc/models/grc_v4_candidate_c.py", content, leaf="P9-4.3"
+                "src/pygrc/models/grc_v4_realizations.py", content, leaf="P9-4.4"
             ),
             "owning leaf entry dependencies are not accepted",
         )

@@ -11,11 +11,11 @@
     },
     {
       "path": "implementation/Phase-9-GRCV4-ImplementationChecklist.md",
-      "sha256": "44ed548d01538cb66df4968aed73f99019633dd6f254a3fde553ce7af04b5764"
+      "sha256": "cb5edfa9400b930487ef21318976aed0d473c788fd4bb7f2a9afd234d57adebc"
     },
     {
       "path": "implementation/Phase-9-GRCV4-ImplementationPlan.md",
-      "sha256": "62e007864a0e4c64b367d7973a8e98d60461968ea4f6b254c1e7b6d4bd1d2624"
+      "sha256": "56c9f563687301f1a170585f2ff1407350af77d23f6f1be7e507e90a0bbfd0ec"
     },
     {
       "path": "implementation/Phase-9-GRCV4-PhaseOpening.json",
@@ -43,7 +43,7 @@
     },
     {
       "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/browser.spec.mjs",
-      "sha256": "436b7d0ad09cedc41fb54c5e2d63d30bb1ea1dbfa6a02c351b9aac54240f9e9a"
+      "sha256": "661087ecacb0aae92386654b3e13d98f2a4a77ec82cbb4df89ead30b5c09fa70"
     },
     {
       "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/index.html",
@@ -51,11 +51,11 @@
     },
     {
       "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/verification.js",
-      "sha256": "4ad0c552e698d6378da575caf856d6a03db3d15bad3fc150b964f61d350062a2"
+      "sha256": "918ab853de2b9f69ae1be419865dcb1cbf9077665f9fa44553a98a2f31b890aa"
     },
     {
       "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/verification.test.mjs",
-      "sha256": "69887dc42457b0b3514908b7ccf0c4483ce2e60d753fc06c32a925c3d9cebd79"
+      "sha256": "dd0321a51687a98a1523ba76ff354b913dbad1ca1179da64a447072f0c373231"
     },
     {
       "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/active_phase.py",
@@ -71,7 +71,7 @@
     },
     {
       "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/test_phase9_g1_surfaces.py",
-      "sha256": "11fa2cf7a180c6fdb4c215a4cc75f61deaa158118b5f2ba4df5cc8df7a3d092e"
+      "sha256": "e798c05ca8aad2a50b0814b88f5f28d0875788c0a19c8092ade63689ac4705ea"
     },
     {
       "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/test_phase9_surfaces.py",
@@ -83,7 +83,7 @@
     },
     {
       "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/phase9_verification.py",
-      "sha256": "2288e0b7bace2e78f32bf72be9dd589f4e46d2832e1e6e301d2ced2791f4c06c"
+      "sha256": "5a2a90a23dcc2d162f5f83325a4c173a80aa012655c780069b26f0e6c6f3beef"
     },
     {
       "path": "implementation/phase-9-grcv4/tranche-1/P9-1.1-1.3-ExecutionRecord.json",
@@ -182,6 +182,10 @@
       "sha256": "4d5e694a38cbfc9663271b03922386b908e6565e88be4247becee6c590fef0b1"
     },
     {
+      "path": "implementation/phase-9-grcv4/tranche-4/P9-4.2-AcceptanceRecord.json",
+      "sha256": "7443b64c2c775ebdc5c8b5221e7bca449927d55d922c515a1c3c024f029ae8ae"
+    },
+    {
       "path": "implementation/phase-9-grcv4/verification/Phase9PathPresentation.json",
       "sha256": "e998284bc41455cbcdda8a9c884aa68c53b0f4770eab0bdb529007a94b86f09a"
     },
@@ -211,7 +215,7 @@
     },
     {
       "path": "implementation/phase-9-grcv4/verification/phase9_implementation_policy.py",
-      "sha256": "4a917647bbf180e7b722899a6f4de0da01ef2e840d634d06f6a4aac27c347bd0"
+      "sha256": "84bdcb304a68773ae5814deb8d5f5a970bfe510e8ea315372fa0c78763fe9ba9"
     },
     {
       "path": "implementation/phase-9-grcv4/verification/test_evidence_paths.py",
@@ -223,8 +227,8 @@
     },
     {
       "path": "implementation/phase-9-grcv4/verification/test_phase9_g1.py",
-      "sha256": "114ad59d254a39b5b2eea364016a55e69e67ccc405f27e985b7742e2b0596c7f"
+      "sha256": "53d8172f55243b2bc0daf086b7d95691b27e8f00d02f634fa4a929889e8441c9"
     }
   ],
-  "record_digest": "e3f479faf7291c0f56881b4fcdffb57991b2025bd9e883248046a974c4fe6b84"
+  "record_digest": "fe477692c9a1e7b01a5d4c8d761716e766aed4d49a54f54e044de3e827daa2f3"
 }

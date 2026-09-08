@@ -513,12 +513,25 @@ three bounded batches retain their own results and raw per-run manifests.
   SPD geometry, multigraph modes, previous pairing outliers, numerical extremes,
   strict declarations and input preservation are exercised. Thirteen leaves and
   25 paths are dependency-ready; full OS, lifecycle and runtime support remain held.
-  Review/execution records retain their validation-time dispositions. A separate
-  P9-4.3 entry transition can bind this accepted commit.
-- [ ] P9-4.3: Verify independent kappa-M, chi, and zeta zero controls and
+  Review/execution records retain their validation-time dispositions. P9-4.3 entry
+  now binds accepted `ac3a7cf` in the separate
+  [acceptance record](./phase-9-grcv4/tranche-4/P9-4.2-AcceptanceRecord.json).
+- [x] P9-4.3: Verify independent kappa-M, chi, and zeta zero controls and
   complete smooth-stratum baseline derivative/covariance cases.
   Add the separate tau-C-zero control on nontrivial retained Hodge with
   nonzero kappa-M; no frozen-catalog edit or simultaneous-zero shortcut (§7.3).
+  Implemented and verified; explicitly accepted by the user for commit. The
+  [review](./phase-9-grcv4/tranche-4/P9-4.3-Review.md) maps the complete supported
+  baseline chain, independent controls, covariance and edge cases to 20 new
+  methods. The [execution record](./phase-9-grcv4/tranche-4/P9-4.3-ExecutionRecord.json)
+  binds 143 passing focused methods and 27 passing reconstructed derivative/capture
+  methods with a changed hash seed. Literal projector/scalar/reference witnesses,
+  nonzero omitted terms, repeated/closing gaps, domain boundaries and saturation
+  pressure the oracle and actual current independently. Production, frozen specs
+  and paper are unchanged. Fourteen leaves and 25 paths are dependency-ready;
+  P9-4.4 and runtime conformance remain held. Review, execution and run records
+  retain their validation-time dispositions; this checklist and the commit record
+  the later acceptance. A separately authorized P9-4.4 entry can bind this commit.
 - [ ] P9-4.4: Implement one OS pass, explicit split residual, one resource
   write, and post-continuity rederivation.
 - [ ] P9-4.5: Execute positive and atomic-negative `C_OS` vectors; keep full

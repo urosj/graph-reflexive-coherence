@@ -37,8 +37,22 @@ records numerical policy, source queries, reconstruction and validation limits.
 P9-4.2 is implemented, verified and explicitly accepted by the user for commit.
 The user reports that both reviews found no defects. The review, execution record
 and run manifest retain their validation-time dispositions; this handoff and the
-commit record the later acceptance. A separately authorized P9-4.3 entry can bind
-the accepted commit. Generic runtime and specialization support remain empty.
+commit record the later acceptance. P9-4.3 entry now binds accepted `ac3a7cf` in
+[the P9-4.2 acceptance record](./phase-9-grcv4/tranche-4/P9-4.2-AcceptanceRecord.json),
+opening fourteen leaves with the same 25 eligible paths. P9-4.3 is implemented,
+verified and explicitly accepted by the user for commit: see its
+[review](./phase-9-grcv4/tranche-4/P9-4.3-Review.md) and
+[execution record](./phase-9-grcv4/tranche-4/P9-4.3-ExecutionRecord.json).
+All 143 focused methods passed, including 20 new derivative/control methods;
+27 derivative/capture methods also passed after exact source reconstruction in a
+checkout with spaces and a changed hash seed. Coverage includes the moving
+selector, all retained-Hodge product terms, covariance, separate zero controls,
+repeated/near-gap spectra, resource-domain boundaries and saturation. The checks
+identified no production defect; runtime source is unchanged. Evidence is one
+review index, one execution record and one run manifest. Those records retain
+their validation-time dispositions; this handoff and the commit record the later
+user acceptance. A separately authorized P9-4.4 entry can bind the accepted commit.
+P9-4.4 remains held; generic runtime and specialization support remain empty.
 
 Validation scope for continuation: select the leaf's scientific/edge-case tests,
 relevant shared V4 regression tests, and checks for changed verification surfaces.

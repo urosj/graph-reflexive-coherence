@@ -630,8 +630,8 @@ handling, domain failures, and precision edges.
 
 ### Tranche 4. Candidate C with OS
 
-Current leaf: P9-4.2 on `impl/phase-9-grcv4-tranche-4`. Accepted predecessor:
-P9-4.1, with P9-3.5's
+Current leaf: P9-4.3 on `impl/phase-9-grcv4-tranche-4`. Accepted predecessor:
+P9-4.2 at `ac3a7cf`, with P9-3.5's
 accepted `155c728` subject separately authenticated. The
 [P9-4.1 review](./phase-9-grcv4/tranche-4/P9-4.1-Review.md) covers the implemented
 complete-profile reference binding, exact stable-edge admission, separate
@@ -652,10 +652,21 @@ current regularity precedes rounding, and conditioning is checked on the actual
 physical block. Selector ties/gap loss, the earlier pairing audit witness,
 dense SPD multigraphs, numerical extremes, stage provenance and typed Read-Back
 receive executable pressure. Review/execution records retain their validation-time
-dispositions. A separately authorized P9-4.3 entry can bind this accepted commit;
-profile conformance remains held. The reviewed owner combines
-Candidate C work in `grc_v4_candidate_c.py` rather than the earlier proposed
-split transport module.
+dispositions. P9-4.3 entry binds accepted `ac3a7cf` in the separate
+[P9-4.2 acceptance record](./phase-9-grcv4/tranche-4/P9-4.2-AcceptanceRecord.json),
+opening fourteen leaves and the same 25 paths. P9-4.3 is implemented, verified and
+explicitly accepted by the user for commit: its
+[review](./phase-9-grcv4/tranche-4/P9-4.3-Review.md) and
+[execution record](./phase-9-grcv4/tranche-4/P9-4.3-ExecutionRecord.json) bind
+143 passing focused methods and 27 passing reconstructed derivative/capture
+methods with a changed hash seed. Complete supported-profile baseline derivatives,
+all four separate zero controls, covariance, literal oracles, term-omission
+controls, repeated/closing gaps, resource boundaries and saturation are covered.
+Production source is unchanged. Review, execution and run records retain their
+validation-time dispositions; this plan and the commit record the later user
+acceptance. A separately authorized P9-4.4 entry can bind the accepted commit;
+P9-4.4 and profile conformance remain held. The reviewed owner combines Candidate C
+work in `grc_v4_candidate_c.py` rather than the earlier proposed split transport module.
 
 Implement the positive stable-edge reference map and separate Hodge/mobility
 constructors, the exact D11-C potential and baseline flux, strict-gap selector,
