@@ -44,7 +44,7 @@ def checks(root):
         return namespace
 
     require(
-        status["dependency_ready_leaves"] == ["P9-2.1", "P9-2.2", "P9-2.3", "P9-2.4", "P9-2.5", "P9-2.6", "P9-3.1", "P9-3.2", "P9-3.3", "P9-3.4", "P9-3.5", "P9-4.1", "P9-4.2", "P9-4.3", "P9-4.4", "P9-4.5", "P9-4.6"]
+        status["dependency_ready_leaves"] == ["P9-2.1","P9-2.2","P9-2.3","P9-2.4","P9-2.5","P9-2.6","P9-3.1","P9-3.2","P9-3.3","P9-3.4","P9-3.5","P9-4.1","P9-4.2","P9-4.3","P9-4.4","P9-4.5","P9-4.6","P9-4.7a","P9-4.7b","P9-7.2a-C_OS-NH-NH","P9-7.2a-C_OS-UNSUPPORTED","P9-7.2b-C_OS-MAPPED","P9-7.3-C_OS","P9-7.4-C_OS","P9-7.5-C_OS","P9-7.6-C_OS"]
         and status["harness_acceptance"]["record_digest"] == policy.HARNESS_ACCEPTANCE_DIGEST
         and status["harness_acceptance"]["accepted_iterations"] == ["P9-2.5"]
         and status["geometry_acceptance"]["record_digest"] == policy.GEOMETRY_ACCEPTANCE_DIGEST
@@ -62,6 +62,11 @@ def checks(root):
         and status["os_pass_acceptance"]["accepted_iterations"] == ["P9-4.4"]
         and status["os_operations_acceptance"]["record_digest"] == policy.OPERATIONS_ACCEPTANCE_DIGEST
         and status["os_operations_acceptance"]["accepted_iterations"] == ["P9-4.5"]
+        and status["lifecycle_batch_authorization"]["record_digest"] == policy.LIFECYCLE_BATCH_DIGEST
+        and status["lifecycle_batch_authorization"]["audit_status"] == "findings_closed_after_correction"
+        and status["specification_correction"]["record_digest"] == policy.SPECIFICATION_CORRECTION_DIGEST
+        and status["specification_correction"]["release_id"] == policy.CORRECTED_RELEASE_ID
+        and status["lifecycle_batch_authorization"]["execution_order"] == ["P9-4.7a", "P9-4.7b"]
         and status["reference_transport_acceptance"]["record_digest"] == policy.REFERENCE_ACCEPTANCE_DIGEST
         and status["c_current_acceptance"]["record_digest"] == policy.CURRENT_ACCEPTANCE_DIGEST
         and status["numerical_pressure_acceptance"]["record_digest"] == policy.NUMERICAL_ACCEPTANCE_DIGEST
@@ -156,7 +161,9 @@ def checks(root):
                 and "c_current_acceptance" not in held
                 and "c_controls_acceptance" not in held
                 and "os_pass_acceptance" not in held
-                and "os_operations_acceptance" not in held,
+                and "os_operations_acceptance" not in held
+                and "lifecycle_batch_authorization" not in held
+                and "specification_correction" not in held,
                 "API TOCTOU retained authority",
             )
         with tempfile.TemporaryDirectory(prefix="grcv4-g1-receipt-") as scratch:

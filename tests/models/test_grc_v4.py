@@ -1,4 +1,4 @@
-"""Production request transport/shape tests; no live model admission."""
+"""V4 record contracts, lifecycle integration and mapped-vector correction audits."""
 
 from __future__ import annotations
 
@@ -640,5 +640,745 @@ class RequestTests(unittest.TestCase):
                 decode_record_payload(schema, b"{}")
 
 
+def _precorrection_artifact(relative: str) -> bytes:
+    """Historical audit inputs remain exact after the successor release."""
+    import subprocess
+
+    return subprocess.check_output([
+        "git", "show", "f10d105bbed71da7e9a58d851b18e9799a952e0c:" + relative,
+    ], cwd=Path(__file__).resolve().parents[2])
+
+
+def _precorrection_builder() -> dict[str, Any]:
+    root = Path(__file__).resolve().parents[2]
+    name = "implementation/investigations/grc9v4-constitutive-design/scripts/build_grcv4_specification_vectors.py"
+    namespace: dict[str, Any] = {"__file__": str(root / name), "__name__": "precorrection_vector_builder"}
+    exec(compile(_precorrection_artifact(name), str(root / name), "exec"), namespace)
+    namespace["file_sha256"] = lambda path: sha256(_precorrection_artifact(path.relative_to(root).as_posix())).hexdigest()
+    return namespace
+
+
+def _audit_identity(prefix: str, payload: Any) -> str:
+    return prefix + ":" + sha256(canonical_json_bytes(payload)).hexdigest()
+
+
+class LifecycleCompositionAuditTests(unittest.TestCase):
+    """Cross-record integration; original lifecycle capture stays reconstructible."""
+
+    def test_mixed_reference_charge_lineage_and_continuation(self) -> None:
+        from fractions import Fraction
+        import tempfile
+        from pygrc.models.grc_v4_codec import V4IdentityError
+        from pygrc.models.grc_v4_lifecycle import CandidateCOSOperation
+        identity = _audit_identity
+        from tests.models.test_grc_v4_geometry import stage_reference_fixture
+        from tests.models.test_grc_v4_lifecycle import (
+            dyadic_fixture, event_request, event_target, migration_request,
+            request,
+        )
+
+        from tests.models.test_grc_v4_realizations import os_fixture
+
+        initial = dyadic_fixture()
+        migrated = os_fixture(
+            candidate={"chi_C": 0, "zeta_C": 0}, geometry={"kappa_H": 0}
+        ).geometry.reference
+        target = event_target()
+        target_migrated = stage_reference_fixture(
+            graph=target.graph, weights={"e": 2, "f": 2}, gain=0,
+            changes={
+                "candidate": {"tau_C": 0, "chi_C": 0, "zeta_C": 0, "kappa_M_C": 0},
+                "charge": {"absolute_tolerance": 0, "relative_tolerance": 0},
+                "solver": {"iteration_limit": 2},
+            },
+        )
+        self.assertEqual(len({r.profile.complete_profile_id for r in (
+            initial.geometry.reference, migrated, target, target_migrated,
+        )}), 4)
+        owner = CandidateCOSOperation(initial, targets=(migrated, target, target_migrated))
+        last_primary = last_ordinary = None
+        crossing_commits: list[str] = []
+        receipts: list[dict[str, Any]] = []
+        references = [initial.geometry.reference, migrated, target, target_migrated]
+
+        def checkpoint(result: Any, kind: str, current: tuple[float, ...],
+                       reset: tuple[float, ...], ref: Any, q: float,
+                       index: int, time: float, parent: str | None) -> None:
+            nonlocal last_primary, last_ordinary
+            if result is not None:
+                self.assertTrue(result.committed, result)
+            else:
+                self.assertIn(kind, ("reset", "rebase_reset_baseline"))
+            snap = owner.snapshot()
+            self.assertEqual(owner.reference, ref)
+            self.assertEqual(owner.state.current.C, current)
+            self.assertEqual(owner.state.reset.authoritative.C, reset)
+            self.assertEqual((owner.state.Q_target, owner.state.step_index, owner.state.time),
+                             (q, index, time))
+            reset_payload = {
+                "schema_version": "grcv4-reset-baseline-v1",
+                "active_model_identity": ref.profile.complete_profile_id,
+                "graph_digest": ref.graph.graph_digest,
+                "orientation_identity": ref.graph.orientation_identity,
+                "authoritative": {"C": list(reset), "W_A": None, "Z_4": None},
+                "Q_target": q, "context_contract_id": "constant_zero_context_v1",
+            }
+            self.assertEqual(owner.state.reset.reset_digest,
+                             identity("grcv4-reset-sha256", reset_payload))
+            delta = snap["receipt_ledger"][len(receipts):]
+            if result is not None:
+                self.assertEqual(delta, [r.to_payload() for r in result.emitted_receipts])
+            self.assertEqual(len(delta), 4)
+            schemas = {"ordinary_step": "grcv4-step-commit-receipt-v1",
+                       "migration": "grcv4-profile-migration-receipt-v1",
+                       "mapped_topology_event": "grcv4-topology-event-receipt-v1",
+                       "reset": "grcv4-reset-receipt-v1",
+                       "rebase_reset_baseline": "grcv4-rebase-receipt-v1"}
+            self.assertEqual(delta[0]["identity_payload"]["schema_version"], schemas[kind])
+            for row in delta:
+                core = row["identity_payload"]["core"]
+                self.assertEqual(core["parent_receipt_ids"], [] if parent is None else [parent])
+                self.assertEqual(core["target_state_digest"], owner.state.scientific_state_digest)
+                self.assertEqual(core["target_model_identity"], ref.profile.complete_profile_id)
+                self.assertEqual(core["target_graph_digest"], ref.graph.graph_digest)
+            receipts.extend(delta)
+            self.assertEqual(snap["receipt_ledger"], receipts)
+            self.assertEqual(len(snap["commit_records"]), len(receipts) // 4)
+            if kind in ("migration", "mapped_topology_event"):
+                crossing_commits.append(snap["commit_records"][-1]["commit_id"])
+            self.assertEqual([r["commit_id"] for r in snap["transition_records"]], crossing_commits)
+            self.assertEqual(len(snap["reference_registry"]), len(references))
+            last_primary = delta[0]["receipt_id"]
+            if kind == "ordinary_step":
+                last_ordinary = last_primary
+
+        checkpoint(owner.step_v4(request(1 / 8, "mixed-step-1")), "ordinary_step",
+                   (2.5, 1.5), (3, 1), references[0], 4, 1, 1 / 8, None)
+        checkpoint(owner.migrate_profile(migration_request(owner, migrated)), "migration",
+                   (2.5, 1.5), (3, 1), migrated, 4, 1, 1 / 8, last_primary)
+        stale = event_request(owner, target, [1, 0, 0, 1, 0, 0], [0, 0, .5])
+        checkpoint(owner.apply_topology_event(stale), "mapped_topology_event",
+                   (2.5, 1.5, .5), (3, 1, .5), target, 4.5, 1, 1 / 8, last_primary)
+        # A failed crossing inside a mixed ledger cannot perturb any archive.
+        saved = owner.snapshot()
+        failure = owner.apply_topology_event(stale)
+        self.assertFalse(failure.committed)
+        assert failure.failure is not None
+        self.assertEqual(failure.failure.code, "invalid_identity")
+        self.assertEqual(owner.snapshot(), saved)
+        owner.reset()
+        checkpoint(None, "reset", (3, 1, .5), (3, 1, .5), target,
+                   4.5, 1, 1 / 8, last_primary)
+        owner.rebase_reset_baseline()
+        checkpoint(None, "rebase_reset_baseline",
+                   (3, 1, .5), (3, 1, .5), target, 4.5, 1, 1 / 8, last_primary)
+        checkpoint(owner.migrate_profile(migration_request(owner, target_migrated)),
+                   "migration", (3, 1, .5), (3, 1, .5), target_migrated,
+                   4.5, 1, 1 / 8, last_primary)
+
+        def evolved(c: tuple[float, ...]) -> tuple[float, ...]:
+            # eta=1/2 and edge weights=(2,2): dC/dt = (1/2) L^2 C.
+            # This literal matrix is independent of the production step/solver.
+            matrix = ((4, -6, 2), (-6, 12, -6), (2, -6, 4))
+            return tuple(float(Fraction(c[i]) + sum(
+                (Fraction(a) * Fraction(x) / 1024 for a, x in zip(row, c, strict=True)),
+                Fraction(),
+            )) for i, row in enumerate(matrix))
+
+        c = evolved((3, 1, .5))
+        checkpoint(owner.step_v4(request(1 / 1024, "mixed-step-2")), "ordinary_step",
+                   c, (3, 1, .5), target_migrated, 4.5, 2, 129 / 1024, last_ordinary)
+        # Rebase with a changed current makes the otherwise identity rebase
+        # above non-vacuous; the following reset must retain this new baseline.
+        owner.rebase_reset_baseline()
+        checkpoint(None, "rebase_reset_baseline",
+                   c, c, target_migrated, 4.5, 2, 129 / 1024, last_primary)
+        final = owner.snapshot()
+        for mode in ("reverse", "missing", "duplicate", "wrong_commit"):
+            altered = deepcopy(final)
+            rows = altered["transition_records"]
+            if mode == "reverse":
+                rows.reverse()
+            elif mode == "missing":
+                rows.pop(1)
+            elif mode == "duplicate":
+                rows[1] = deepcopy(rows[0])
+            else:
+                rows[1]["commit_id"] = final["commit_records"][0]["commit_id"]
+            with self.subTest(archive=mode), self.assertRaises(V4IdentityError):
+                CandidateCOSOperation.from_state(altered)
+        with tempfile.TemporaryDirectory(prefix="p947 mixed replay ") as scratch:
+            path = Path(scratch) / "saved state.json"
+            owner.save(str(path))
+            restored = CandidateCOSOperation.load(str(path))
+            self.assertEqual(restored.snapshot(), final)
+            for actor in (owner, restored):
+                self.assertTrue(actor.step_v4(request(1 / 1024, "mixed-continuation")).committed)
+                self.assertEqual(actor.state.current.C, evolved(c))
+                self.assertEqual(actor.state.reset.authoritative.C, c)
+                actor.reset()
+                self.assertEqual(actor.state.current.C, c)
+                # Return to an earlier graph AND exact profile (A -> B -> A).
+                # Registry reuse must not collapse distinct crossing commits.
+                back = actor.apply_topology_event(event_request(
+                    actor, references[0], [1, 0, 0, 0, 1, 1], [0, -.5],
+                    operation_id="mixed-return-event",
+                ))
+                self.assertTrue(back.committed, back)
+                returned = (3 + 7 / 1024, 1 - 7 / 1024)
+                self.assertEqual(actor.state.current.C, returned)
+                self.assertEqual(actor.state.reset.authoritative.C, returned)
+                self.assertEqual(actor.state.Q_target, 4)
+                self.assertEqual(actor.reference, references[0])
+                self.assertEqual(len(actor.snapshot()["transition_records"]), 4)
+                self.assertTrue(actor.step_v4(request(1 / 8, "mixed-return-step")).committed)
+                difference = Fraction(returned[0]) - Fraction(returned[1])
+                self.assertEqual(actor.state.current.C, (
+                    float(Fraction(returned[0]) - difference / 4),
+                    float(Fraction(returned[1]) + difference / 4),
+                ))
+            self.assertEqual(owner.snapshot(), restored.snapshot())
+            self.assertEqual(CandidateCOSOperation.from_state(owner.snapshot()).snapshot(), owner.snapshot())
+
+
+def mapped_vector_correction(*, tolerance: float = 2**-40) -> dict[str, Any]:
+    """Proposed inputs only. Never rewrite or promote the frozen release."""
+    identity = _audit_identity
+
+    builder = _precorrection_builder()
+    original = json.loads(_precorrection_artifact("specs/grc-v4-conformance-vectors.json"))[
+        "grcv4_mapped_topology_event_vectors"][0]
+    graphs = [
+        {"schema_version": "grcv4-serialized-graph-v1", "live_node_ids": ["u", "v"],
+         "oriented_edges": [{"edge_id": "e-uv", "tail_node_id": "u", "head_node_id": "v"}]},
+        original["request"]["target_graph"],
+    ]
+    references = []
+    for graph, weights in zip(graphs, ({"e-uv": 1}, {"e-uv": 1, "e-vw": 2}), strict=True):
+        n = len(graph["oriented_edges"])
+        k4 = [[int(i == j) for j in range(n)] for i in range(n)]
+        params = builder["resolved_params"](weights)
+        params["geometry"]["K4_base_digest"] = identity(
+            "grcv4-k4-sha256", {"schema_version": "grcv4-k4-identity-v1", "K4_base": k4})
+        params["solver"].update(absolute_tolerance=tolerance, relative_tolerance=tolerance)
+        profile = builder["profile_payload"](identity("grcv4-params-sha256", params))
+        references.append({
+            "graph": graph, "params": params, "profile": profile,
+            "profile_id": identity("grcv4-profile-sha256", profile),
+            "K4_base": k4, "edge_weights": weights,
+            "orientation_descriptor": {
+                "descriptor_version": "grcv4-ordered-outward-incidence-v1",
+                "graph": graph, "positive_flux": "tail_to_head",
+                "incidence_tail": 1, "incidence_head": -1,
+            },
+        })
+    states = []
+    for ref, resource, q in zip(references, ([1, 2], [1, 2, .5]), (3, 3.5), strict=True):
+        reset = {
+            "schema_version": "grcv4-reset-baseline-v1",
+            "active_model_identity": ref["profile_id"],
+            "graph_digest": identity("grc-graph-sha256", ref["graph"]),
+            "orientation_identity": identity("grcv4-orientation-sha256", ref["orientation_descriptor"]),
+            "authoritative": {"C": resource, "W_A": None, "Z_4": None},
+            "Q_target": q, "context_contract_id": "constant_zero_context_v1",
+        }
+        science = {
+            **reset, "schema_version": "grcv4-scientific-state-v1",
+            "reset_digest": identity("grcv4-reset-sha256", reset),
+            "step_index": 0, "time": 0, "context_value_digest": None,
+        }
+        states.append({"reset": reset, "science": science,
+                       "state_id": identity("grcv4-state-sha256", science)})
+    request_payload = {
+        **original["request"], "source_state_digest": states[0]["state_id"],
+        "target_profile_id": references[1]["profile_id"],
+    }
+    event_payload = {**original["event_identity_payload"],
+                     "source_state_digest": states[0]["state_id"],
+                     "target_profile_id": references[1]["profile_id"]}
+    return {
+        "status": "correction_candidate_not_authoritative",
+        "fixture_id": original["fixture_id"],
+        "references": references, "states": states,
+        "request": request_payload, "event_identity_payload": event_payload,
+        "event_identity_canonical_jcs_utf8": canonical_json_bytes(event_payload).decode(),
+        "expected": {**original["expected"], "event_id": identity("grc-event-sha256", event_payload)},
+    }
+
+
+def mapped_candidate_owner(candidate: dict[str, Any]) -> Any:
+    from pygrc.models.grc_v4_geometry import (
+        GRCV4Context, GRCV4Graph, GRCV4ReferenceGeometry, GeometryStageInputs,
+    )
+    from pygrc.models.grc_v4_profile import resolve_profile
+    from pygrc.models.grc_v4_state import GRCV4AuthoritativeState
+    from pygrc.models.grc_v4_lifecycle import CandidateCOSOperation
+
+    refs = [GRCV4ReferenceGeometry(
+        GRCV4Graph.from_payload(row["graph"]), resolve_profile(row["params"], row["profile"]),
+        GRCV4Context("constant_zero_context_v1", FrozenJSONMap({})),
+        tuple(tuple(r) for r in row["K4_base"]), FrozenJSONMap(row["edge_weights"]),
+    ) for row in candidate["references"]]
+    resource = GRCV4AuthoritativeState(tuple(candidate["expected"]["source_resource"]), None, None)
+    initial = GeometryStageInputs(
+        refs[0].geometry(), refs[0].context, resource, resource,
+        "mapped-vector-correction", 3, (), 0, 0, 0, "pre_read", 0, None,
+    )
+    return CandidateCOSOperation(initial, targets=(refs[1],))
+
+
+def mapped_builder_correction() -> tuple[str, str]:
+    """Exact, bounded successor patch, returned for review without applying it."""
+    import difflib
+
+    name = "implementation/investigations/grc9v4-constitutive-design/scripts/build_grcv4_specification_vectors.py"
+    original = _precorrection_artifact(name).decode()
+    helper = '''def mapped_runtime_params(weights: dict[str, float]) -> dict[str, Any]:
+    """Complete binary64-admissible references for the generic mapped fixture."""
+    params = resolved_params(weights)
+    size = len(weights)
+    params["geometry"]["K4_base_digest"] = wrapped_digest(
+        "grcv4-k4-sha256", "grcv4-k4-identity-v1", "K4_base",
+        [[int(i == j) for j in range(size)] for i in range(size)],
+    )
+    params["solver"].update(absolute_tolerance=2**-40, relative_tolerance=2**-40)
+    return params
+
+
+def mapped_orientation(graph: dict[str, Any]) -> str:
+    return identity("grcv4-orientation-sha256", {
+        "descriptor_version": "grcv4-ordered-outward-incidence-v1",
+        "graph": graph, "positive_flux": "tail_to_head",
+        "incidence_tail": 1, "incidence_head": -1,
+    })
+
+
+'''
+    source = original.replace("def build() -> dict[str, Any]:\n", helper + "def build() -> dict[str, Any]:\n")
+    start = source.index("    generic_source_params = resolved_params(")
+    end = source.index("    first_expansion_payloads =", start)
+    block = source[start:end]
+    if block.count('"orientation_identity": "tail_to_head_edge_id_order_v1"') != 2:
+        raise ValueError("frozen mapped builder orientation slots changed")
+    block = block.replace("= resolved_params(", "= mapped_runtime_params(")
+    block = block.replace('"orientation_identity": "tail_to_head_edge_id_order_v1"',
+                          '"orientation_identity": mapped_orientation(generic_source_graph)')
+    marker = '            "event_identity_payload": mapped_event_payload,'
+    inputs = '''            "runtime_inputs": {
+                "source_graph": generic_source_graph,
+                "source_params": generic_source_params,
+                "source_profile": generic_source_profile_payload,
+                "source_K4_base": [[1]],
+                "source_reference_edge_weights": {"e-uv": 1},
+                "source_reset": generic_source_reset_payload,
+                "source_state": generic_source_state_payload,
+                "target_params": generic_target_params,
+                "target_profile": generic_target_profile_payload,
+                "target_K4_base": [[1, 0], [0, 1]],
+                "target_reference_edge_weights": {"e-uv": 1, "e-vw": 2},
+            },
+'''
+    if block.count(marker) != 1:
+        raise ValueError("frozen mapped builder row changed")
+    block = block.replace(marker, inputs + marker)
+    source = source[:start] + block + source[end:]
+    delta = "".join(difflib.unified_diff(original.splitlines(True), source.splitlines(True),
+                                        fromfile="a/" + name, tofile="b/" + name))
+    return source, delta
+
+
+class MappedVectorCorrectionAuditTests(unittest.TestCase):
+    def test_proposed_tolerance_checks_every_solve_without_changing_physics(self) -> None:
+        from fractions import Fraction
+        from pygrc.models import grc_v4_candidate_c as numerical
+
+        candidate = mapped_vector_correction()
+        # Execute the proposed builder patch in memory. Its exact row agrees
+        # with independently assembled inputs; the one dependent negative keeps
+        # rejecting a foreign params hash. All other vector content stays intact.
+        root = Path(__file__).resolve().parents[2]
+        builder_path = root / "implementation/investigations/grc9v4-constitutive-design/scripts/build_grcv4_specification_vectors.py"
+        proposed, _ = mapped_builder_correction()
+        namespace: dict[str, Any] = {"__file__": str(builder_path), "__name__": "mapped_correction_candidate"}
+        exec(compile(proposed, str(builder_path), "exec"), namespace)
+        namespace["file_sha256"] = _precorrection_builder()["file_sha256"]
+        rebuilt = namespace["build"]()
+        frozen = json.loads(_precorrection_artifact("specs/grc-v4-conformance-vectors.json"))
+        row = rebuilt["grcv4_mapped_topology_event_vectors"][0]
+        for field in ("request", "event_identity_payload", "event_identity_canonical_jcs_utf8", "expected"):
+            self.assertEqual(row[field], candidate[field])
+        self.assertEqual(row["runtime_inputs"]["source_params"], candidate["references"][0]["params"])
+        self.assertEqual(row["runtime_inputs"]["target_params"], candidate["references"][1]["params"])
+        rebuilt["grcv4_mapped_topology_event_vectors"] = frozen["grcv4_mapped_topology_event_vectors"]
+        from pygrc.models.grc_v4_profile import resolve_profile
+
+        negative = rebuilt["semantic_admission"]["negative_vectors"][4]
+        self.assertEqual(negative["vector_id"], "SEMANTIC-REJECT-PROFILE-PARAMS-HASH-MISMATCH")
+        self.assertIn(negative["input"]["profile_identity"]["params_hash"],
+                      [r["profile"]["params_hash"] for r in candidate["references"]])
+        with self.assertRaises(ValueError):
+            resolve_profile(negative["input"]["resolved_params"], negative["input"]["profile_identity"])
+        negative["input"]["profile_identity"]["params_hash"] = frozen["semantic_admission"]["negative_vectors"][4]["input"]["profile_identity"]["params_hash"]
+        self.assertEqual(rebuilt, frozen)
+        original_solve = numerical._c_solve
+        observed: set[str] = set()
+
+        def measured(matrix: Any, rhs: Any, policy: Any, label: str, certificates: Any) -> Any:
+            result = original_solve(matrix, rhs, policy, label, certificates)
+            observed.add(label)
+            for col in range(len(rhs[0])):
+                residual = [sum((Fraction(a) * Fraction(result[j][col])
+                                 for j, a in enumerate(row)), Fraction()) - Fraction(rhs[i][col])
+                            for i, row in enumerate(matrix)]
+                # Independent squared norm of A*x-b for every source/target,
+                # current/reset readmission solve; no rounded norm comparison.
+                self.assertLess(sum((x*x for x in residual), Fraction()), Fraction(2)**-90, label)
+            return result
+
+        with patch.object(numerical, "_c_solve", measured):
+            owner = mapped_candidate_owner(candidate)
+            result = owner.apply_topology_event(api.GRCV4MappedTopologyEventRequest.from_payload(candidate["request"]))
+            self.assertTrue(result.committed, result)
+        self.assertTrue({"structural flat map", "pre-to-retained identification",
+                         "inverse retained identification", "physical current solve"} <= observed)
+        # All scientific controls survive the correction; tolerances are explicit
+        # profile authority, not a receiver fallback or a zeroed mobility control.
+        for row in candidate["references"]:
+            c = row["params"]["candidate"]
+            self.assertEqual((c["chi_C"], c["zeta_C"], c["kappa_M_C"], c["tau_C"]), (1, .5, .5, 0))
+            self.assertEqual(row["params"]["geometry"]["kappa_H"], .5)
+            self.assertEqual(row["params"]["solver"]["absolute_tolerance"], 2**-40)
+
+    def test_candidate_exact_identity_execution_and_complete_preimages(self) -> None:
+        from pygrc.models.grc_v4_lifecycle import CandidateCOSOperation
+        from pygrc.models.grc_v4_candidate_c import CandidateCCurrent
+        from pygrc.models.grc_v4_lifecycle import _state_inputs
+        from fractions import Fraction
+
+        candidate = mapped_vector_correction()
+        owner = mapped_candidate_owner(candidate)
+        self.assertEqual(owner.state.scientific_state_digest, candidate["states"][0]["state_id"])
+        self.assertEqual(owner.reference.profile.complete_profile_id, candidate["references"][0]["profile_id"])
+        declaration = api.GRCV4MappedTopologyEventRequest.from_payload(candidate["request"])
+        result = owner.apply_topology_event(declaration)
+        self.assertTrue(result.committed, result)
+        self.assertEqual(owner.state.current.C, (1, 2, .5))
+        self.assertEqual(owner.state.reset.authoritative.C, (1, 2, .5))
+        self.assertEqual((owner.state.Q_target, owner.state.step_index, owner.state.time), (3.5, 0, 0))
+        self.assertEqual(owner.state.scientific_state_digest, candidate["states"][1]["state_id"])
+        primary: Any = result.emitted_receipts[0].to_payload()["identity_payload"]
+        self.assertEqual(primary["event_id"], candidate["expected"]["event_id"])
+        self.assertEqual(primary["core"]["actual_charge_delta"], .5)
+        self.assertEqual(owner.reference.profile.complete_profile_id, candidate["references"][1]["profile_id"])
+        self.assertEqual(len(result.emitted_receipts), 4)
+        restored = CandidateCOSOperation.from_state(owner.snapshot())
+        self.assertEqual(restored.snapshot(), owner.snapshot())
+        restored.reset()
+        self.assertEqual(restored.state.current.C, (1, 2, .5))
+        # Independently evaluate the emitted binary64 solution residual with
+        # rational arithmetic, far below the proposed declared tolerance.
+        for actor in (mapped_candidate_owner(candidate), owner):
+            inputs = _state_inputs(actor.reference, actor.state, "residual-oracle")
+            solved = CandidateCCurrent(inputs)
+            matrix, current = solved.algebra.current_block, solved.current.values
+            residual = [sum((Fraction(a) * Fraction(x) for a, x in zip(row, current, strict=True)),
+                            Fraction()) - Fraction(b)
+                        for row, b in zip(matrix, solved.algebra.baseline.values, strict=True)]
+            self.assertLess(sum((x * x for x in residual), Fraction()), Fraction(2)**-90)
+            self.assertLess(Fraction(solved.closure_residual_squared), Fraction(2)**-90)
+
+    def test_k4_only_and_zero_tolerance_alternatives_do_not_earn_vector_credit(self) -> None:
+        from fractions import Fraction
+        from pygrc.models.grc_v4_candidate_c import CandidateCStageError
+        identity = _audit_identity
+
+        zero = mapped_vector_correction(tolerance=0)
+        with self.assertRaisesRegex(CandidateCStageError, "inverse retained identification"):
+            mapped_candidate_owner(zero)
+        candidate = mapped_vector_correction()
+        owner = mapped_candidate_owner(candidate)
+        # A named convention is schema-valid; it is a different representation
+        # identity, not a proof that the specification prohibits named strings.
+        reset = deepcopy(candidate["states"][0]["reset"])
+        reset["orientation_identity"] = "tail_to_head_edge_id_order_v1"
+        science = {**candidate["states"][0]["science"],
+                   "orientation_identity": reset["orientation_identity"],
+                   "reset_digest": identity("grcv4-reset-sha256", reset)}
+        changed = {**candidate["request"], "source_state_digest": identity("grcv4-state-sha256", science)}
+        before = owner.snapshot()
+        result = owner.apply_topology_event(api.GRCV4MappedTopologyEventRequest.from_payload(changed))
+        self.assertFalse(result.committed)
+        self.assertEqual(result.failure.code, "invalid_identity")
+        self.assertEqual(owner.snapshot(), before)
+        # For the scalar source, retained identification is a binary64 h.
+        # Its rounded reciprocal generally cannot have exact product one.
+        deformation = math.exp(.25 * math.tanh(1.5))
+        h = float(Fraction(deformation) ** 2)
+        x = float(Fraction(1) / Fraction(h))
+        residual = abs(Fraction(h) * Fraction(x) - 1)
+        self.assertGreater(residual, 0)
+        self.assertLess(residual, Fraction(2)**-52)
+
+    def test_dimension_fault_blast_radius_and_graph_coordinate_alternatives(self) -> None:
+        from collections import Counter
+        from pygrc.models.grc_v4_geometry import (
+            GRCV4Context, GRCV4Graph, GRCV4ReferenceGeometry, OrientedEdge,
+        )
+        from pygrc.models.grc_v4_profile import resolve_profile
+        identity = _audit_identity
+
+        builder = _precorrection_builder()
+        original = builder["resolved_params"]
+        counts: Counter[tuple[str, int]] = Counter()
+
+        def measured(weights: dict[str, Any], profile_family: str = "C_OS") -> dict[str, Any]:
+            counts[(profile_family, len(weights))] += 1
+            return dict(original(weights, profile_family))
+
+        builder["build"].__globals__["resolved_params"] = measured
+        rebuilt = builder["build"]()
+        self.assertEqual(rebuilt, json.loads(_precorrection_artifact("specs/grc-v4-conformance-vectors.json")))
+        self.assertEqual(sum(counts.values()), 23)
+        self.assertEqual(sum(v for (_, n), v in counts.items() if n != 2), 22)
+        self.assertEqual(counts[("C_PC", 9)], 1)
+        self.assertEqual(counts[("C_PC", 12)], 1)
+        # Rank and vertex count do not size K4: repeated/loop coordinates count
+        # as full distinct edges, including a graph with one vertex.
+        for n in (1, 2, 3, 9):
+            graph = GRCV4Graph(("only",), tuple(
+                OrientedEdge(f"e-{n-i}", "only", "only") for i in range(n)))
+            weights = {edge: 1 for edge in graph.live_edge_ids}
+            params = original(weights)
+            frozen_profile = resolve_profile(params, builder["profile_payload"](
+                identity("grcv4-params-sha256", params)))
+            context = GRCV4Context("constant_zero_context_v1", FrozenJSONMap({}))
+            if n != 2:
+                with self.subTest(edges=n), self.assertRaisesRegex(ValueError, "K4|shape"):
+                    GRCV4ReferenceGeometry(graph, frozen_profile, context,
+                                           ((1, 0), (0, 1)), FrozenJSONMap(weights))
+            k4 = tuple(tuple(int(i == j) for j in range(n)) for i in range(n))
+            params["geometry"]["K4_base_digest"] = identity("grcv4-k4-sha256", {
+                "schema_version": "grcv4-k4-identity-v1", "K4_base": [list(r) for r in k4]})
+            profile = resolve_profile(params, builder["profile_payload"](
+                identity("grcv4-params-sha256", params)))
+            reference = GRCV4ReferenceGeometry(graph, profile, context, k4, FrozenJSONMap(weights))
+            self.assertEqual(len(reference.K4_base), n)
+            self.assertEqual(reference.graph.live_edge_ids, graph.live_edge_ids)
+
+
+class AuthoritativeMappedVectorTests(unittest.TestCase):
+    def test_current_release_executes_published_request_and_exact_event_identity(self) -> None:
+        from pygrc.models.grc_v4 import GRCV4MappedTopologyEventRequest
+        from pygrc.models.grc_v4_codec import RELEASE_ID, load_contract_schema
+        from pygrc.models.grc_v4_geometry import (
+            GRCV4Context, GRCV4Graph, GRCV4ReferenceGeometry, GeometryStageInputs,
+        )
+        from pygrc.models.grc_v4_profile import resolve_profile
+        from pygrc.models.grc_v4_state import GRCV4AuthoritativeState
+        from pygrc.models.grc_v4_lifecycle import CandidateCOSOperation
+        from tests.models.test_grc_v4_lifecycle import request
+
+        root = Path(__file__).resolve().parents[2]
+        release = json.loads((root / "specs/grc-v4-specification-release.json").read_text())
+        self.assertEqual(release["release_id"], RELEASE_ID)
+        self.assertEqual(RELEASE_ID, "grcv4-spec-release-sha256:7b8b4d4e32e48fd35f70421cce7f547eebb21dd81389764061efe6e1a8c19886")
+        load_contract_schema()
+        vector = json.loads((root / "specs/grc-v4-conformance-vectors.json").read_text())[
+            "grcv4_mapped_topology_event_vectors"][0]
+        self.assertEqual(vector["fixture_id"], "GENERIC-MAPPED-EVENT-NONZERO-RESOURCE-INCREMENT")
+        inputs = vector["runtime_inputs"]
+        context = GRCV4Context("constant_zero_context_v1", FrozenJSONMap({}))
+        refs = [GRCV4ReferenceGeometry(
+            GRCV4Graph.from_payload(graph),
+            resolve_profile(inputs[prefix + "_params"], inputs[prefix + "_profile"]), context,
+            tuple(tuple(row) for row in inputs[prefix + "_K4_base"]),
+            FrozenJSONMap(inputs[prefix + "_reference_edge_weights"]),
+        ) for prefix, graph in (("source", inputs["source_graph"]), ("target", vector["request"]["target_graph"]))]
+        c = GRCV4AuthoritativeState(tuple(vector["expected"]["source_resource"]), None, None)
+        initial = GeometryStageInputs(refs[0].geometry(), context, c, c, "authoritative-vector",
+                                      3, (), 0, 0, 0, "pre_read", 0, None)
+        self.assertEqual(initial.scientific_state_preimage, inputs["source_state"])
+        self.assertEqual(initial.reset_preimage, inputs["source_reset"])
+        self.assertEqual(initial.scientific_state_id, vector["request"]["source_state_digest"])
+        self.assertEqual(refs[1].profile.complete_profile_id, vector["request"]["target_profile_id"])
+        owner = CandidateCOSOperation(initial, targets=(refs[1],))
+        # Consume the actual published request without changing a single identity.
+        declaration = GRCV4MappedTopologyEventRequest.from_payload(vector["request"])
+        result = owner.apply_topology_event(declaration)
+        self.assertTrue(result.committed, result)
+        primary: Any = result.emitted_receipts[0].to_payload()["identity_payload"]
+        self.assertEqual(primary["event_id"], vector["expected"]["event_id"])
+        self.assertEqual(primary["event_id"], "grc-event-sha256:583d7337ff5d3910fb189ee1aad0f81485a4722bdb889d5623e82828a759807c")
+        self.assertEqual(primary["core"]["actual_charge_delta"], .5)
+        self.assertEqual(owner.state.current.C, (1, 2, .5))
+        self.assertEqual(owner.state.reset.authoritative.C, (1, 2, .5))
+        self.assertEqual((owner.state.Q_target, owner.state.step_index, owner.state.time), (3.5, 0, 0))
+        self.assertEqual(len(owner.snapshot()["transition_records"]), 1)
+        restored = CandidateCOSOperation.from_state(owner.snapshot())
+        for actor in (owner, restored):
+            actor.reset()
+            self.assertEqual(actor.state.current.C, (1, 2, .5))
+            self.assertTrue(actor.step_v4(request(0, "authoritative-continuation")).committed)
+        self.assertEqual(owner.snapshot(), restored.snapshot())
+
+
+_P947_AUDIT_METHODS = {
+    "LifecycleCompositionAuditTests": (
+        "test_mixed_reference_charge_lineage_and_continuation",
+    ),
+    "MappedVectorCorrectionAuditTests": (
+        "test_candidate_exact_identity_execution_and_complete_preimages",
+        "test_dimension_fault_blast_radius_and_graph_coordinate_alternatives",
+        "test_k4_only_and_zero_tolerance_alternatives_do_not_earn_vector_credit",
+        "test_proposed_tolerance_checks_every_solve_without_changing_physics",
+    ),
+}
+
+
+def capture_p947_audit(output: str, *, corrected: bool = False) -> int:
+    """Additive source-bound pressure; preserve the original 135-method run."""
+    from datetime import datetime, timezone
+    import importlib
+    import importlib.metadata
+    import os
+    import platform
+    import subprocess
+    from tests.models.test_grc_v4_candidate_c import _p941_execute
+
+    root = Path(__file__).resolve().parents[2]
+    generated = root / (
+        "implementation/investigations/grc9v4-constitutive-design/"
+        "tools/exploratory-side-tool/tool/generated"
+    )
+    destination = (root / output).resolve()
+    if (not destination.is_relative_to(generated.resolve())
+            or destination == generated.resolve() or destination.exists()):
+        raise ValueError("capture requires a fresh repository-local generated destination")
+    base = "f10d105bbed71da7e9a58d851b18e9799a952e0c"
+    scopes = [
+        "src", "tests", "specs", "pyproject.toml", "uv.lock",
+        "implementation/investigations/grc9v4-constitutive-design/drafts/2026-09-GRC-V4.md",
+        "implementation/investigations/grc9v4-constitutive-design/scripts/build_grcv4_specification_vectors.py",
+    ]
+    overrides = {
+        "src/pygrc/models/grc_v4.py", "src/pygrc/models/grc_v4_codec.py",
+        "src/pygrc/models/grc_v4_lifecycle.py", "tests/models/test_grc_v4_lifecycle.py",
+        "tests/models/test_grc_v4.py",
+    }
+    if corrected:
+        correction_paths = {
+            "implementation/phase-9-grcv4/verification/build_mapped_vector_release.py",
+            "implementation/phase-9-grcv4/tranche-4/P9-4.7b-SpecificationCorrection.json",
+        }
+        scopes.extend(sorted(correction_paths))
+        overrides |= correction_paths | {
+            "implementation/investigations/grc9v4-constitutive-design/scripts/build_grcv4_specification_vectors.py",
+            "tests/models/grcv4_reference_oracles.py",
+            "tests/models/grcv4_conformance_harness.py",
+            "specs/README.md", "specs/grc-v4-conformance-vectors.json",
+            "specs/grc-v4-specification-release.json", "specs/grc-v4-specification-release.sha256",
+            "src/pygrc/models/grc_v4_assets/grc-v4-specification-release.json",
+            "src/pygrc/models/grc_v4_assets/grc-v4-specification-release.sha256",
+            "src/pygrc/models/grc_v4_assets/asset-index.json",
+        }
+
+    def git(*args: str) -> str:
+        return subprocess.check_output(["git", *args], cwd=root, text=True)
+
+    def snapshot() -> dict[str, str]:
+        return {n: sha256((root / n).read_bytes()).hexdigest() for n in sorted(set(
+            git("ls-files", "--cached", "--others", "--exclude-standard", "--", *scopes).splitlines()))}
+
+    subprocess.run(["git", "merge-base", "--is-ancestor", base, "HEAD"], cwd=root, check=True)
+    before = snapshot()
+    baseline = set(git("ls-tree", "-r", "--name-only", base, "--", *scopes).splitlines())
+    changed = set(git("diff", "--name-only", base, "--", *scopes).splitlines())
+    if (changed | (set(before) - baseline)) - overrides or baseline - set(before):
+        raise ValueError("source differs outside the P9-4.7 audit reconstruction envelope")
+    predecessor = ast.parse(git("show", base + ":tests/models/test_grc_v4.py"))
+    prefix = "tests.models.test_grc_v4."
+    required = {
+        prefix + c.name + "." + n.name
+        for c in predecessor.body if isinstance(c, ast.ClassDef)
+        and c.name in {"FoundationIntegrationTests", "RequestTests"}
+        for n in c.body if isinstance(n, ast.FunctionDef) and n.name.startswith("test_")
+    } | {prefix + cls + "." + method for cls, methods in _P947_AUDIT_METHODS.items() for method in methods}
+    if corrected:
+        required -= {prefix + cls + "." + method for cls, methods in _P947_AUDIT_METHODS.items() for method in methods}
+        required |= {
+            prefix + "AuthoritativeMappedVectorTests.test_current_release_executes_published_request_and_exact_event_identity",
+            prefix + "MappedVectorCorrectionAuditTests.test_proposed_tolerance_checks_every_solve_without_changing_physics",
+            prefix + "MappedVectorCorrectionAuditTests.test_dimension_fault_blast_radius_and_graph_coordinate_alternatives",
+            "tests.models.test_grc_v4_lifecycle.CandidateCOSCrossingTests.test_published_affine_vector_identities_and_admitted_runtime_companion",
+        }
+        codec_tests = ast.parse(git("show", base + ":tests/models/test_grc_v4_codec.py"))
+        required |= {
+            "tests.models.test_grc_v4_codec.CodecTests." + n.name
+            for c in codec_tests.body if isinstance(c, ast.ClassDef) and c.name == "CodecTests"
+            for n in c.body if isinstance(n, ast.FunctionDef) and n.name.startswith("test_")
+        }
+    importlib.import_module("tests.models.test_grc_v4_lifecycle")
+    importlib.import_module("tests.models.test_grc_v4_transport")
+    suite = unittest.defaultTestLoader.loadTestsFromNames(sorted(required))
+    started = datetime.now(timezone.utc).isoformat()
+    record: dict[str, Any] = {
+        "schema": "phase9_leaf_focused_run_v1", "iteration_id": "P9-4.7b audit follow-up",
+        "source": {
+            "base_commit": base, "scopes": scopes,
+            "overrides_sha256": {n: before[n] for n in sorted(overrides)},
+            "manifest_sha256": sha256(canonical_json_bytes(before)).hexdigest(), "file_count": len(before),
+            "reconstruction": "Overlay only the five hash-matching files from the commit containing this run onto base_commit, then verify the scoped manifest. Before commit use the reviewed working tree. The original 135-method run reconstructs separately with its original four-file overlay.",
+        },
+        "required_ids": sorted(required), "started_utc": started,
+        "python": platform.python_version(), "platform": platform.platform(),
+        "dependencies": sorted(f"{d.metadata['Name']}=={d.version}" for d in importlib.metadata.distributions()),
+        "environment": {k: os.environ.get(k) for k in ("PYTHONHASHSEED", "OPENBLAS_NUM_THREADS", "OMP_NUM_THREADS")},
+        "replay_command": [".venv/bin/python", "-m", "tests.models.test_grc_v4", "--capture-p947-audit", str(destination.relative_to(root))],
+        "claim_ceiling": "Mixed C_OS lifecycle composition and a NONAUTHORITATIVE mapped-vector correction candidate. No acceptance of the mandatory frozen row, dependent child, P9-4.8, or runtime support set. No GRC9 runtime execution or blanket fixture repair.",
+    }
+    if corrected:
+        from pygrc.models.grc_v4_codec import RELEASE_ID
+
+        record["iteration_id"] = "P9-4.7b authoritative corrected mapped vector"
+        record["release_id"] = RELEASE_ID
+        record["replay_command"][3] = "--capture-p947-corrected"
+        record["source"]["reconstruction"] = "Overlay exactly the listed hash-matching files from the commit containing this run onto base_commit and verify the scoped manifest. Before commit use the reviewed working tree. Earlier runs retain their separate predecessor-source reconstruction."
+        record["claim_ceiling"] = "Exact published mandatory mapped event executed under the accepted successor specification release, plus codec/installed-asset and request/integration regressions. Historical dimension/tolerance controls remain explicitly predecessor-scoped. No P9-4.8, generic parent-DAG, support-set or GRC9 conformance claim."
+    record.update(_p941_execute(root, before, required, suite, snapshot, extra_modules=frozenset({
+        "pygrc.models.grc_v4", "tests.models.test_grc_v4",
+        "pygrc.models.grc_v4_codec", "pygrc.models.grc_v4_state",
+        "pygrc.models.grc_v4_geometry", "pygrc.models.grc_v4_transport",
+        "pygrc.models.grc_v4_step", "pygrc.models.grc_v4_realizations",
+        "pygrc.models.grc_v4_lifecycle", "tests.models.test_grc_v4_lifecycle",
+        "tests.models.test_grc_v4_realizations",
+    } | ({"tests.models.test_grc_v4_codec"} if corrected else set()))))
+    if record["status"] == "passed" and not corrected:
+        record["correction_candidate"] = mapped_vector_correction()
+        record["proposed_builder_patch"] = mapped_builder_correction()[1]
+    elif record["status"] == "passed":
+        vector = json.loads((root / "specs/grc-v4-conformance-vectors.json").read_text())["grcv4_mapped_topology_event_vectors"][0]
+        record["authoritative_fixture"] = {"fixture_id": vector["fixture_id"], "request_modified": False,
+                                            "event_id": vector["expected"]["event_id"], "mandatory_row_waived": False}
+    record["completed_utc"] = datetime.now(timezone.utc).isoformat()
+    record["live_source_check_limits"] = (
+        "Accepted source-slot/live-code and before/after disk/roster guards; not hostile-interpreter attestation. Relocated checkout/fresh interpreter reuse installed dependencies; no fresh-install or different-platform claim."
+    )
+    if record.get("loaded_sources_before") == record.get("loaded_sources_after"):
+        record["loaded_sources"] = record.pop("loaded_sources_before")
+        record.pop("loaded_sources_after")
+    destination.mkdir(parents=True, exist_ok=False)
+    (destination / "run.json").write_text(json.dumps(record, indent=2) + "\n")
+    print("P9-4.7 audit", record["status"], json.dumps(record.get("results", {})), flush=True)
+    if record["status"] != "passed":
+        print(record.get("capture_error", record.get("failure_output", "")), flush=True)
+    return 0 if record["status"] == "passed" else 1
+
+
 if __name__ == "__main__":
+    import sys
+
+    if len(sys.argv) == 3 and sys.argv[1] == "--capture-p947-audit":
+        raise SystemExit(capture_p947_audit(sys.argv[2]))
+    if len(sys.argv) == 3 and sys.argv[1] == "--capture-p947-corrected":
+        raise SystemExit(capture_p947_audit(sys.argv[2], corrected=True))
     unittest.main()

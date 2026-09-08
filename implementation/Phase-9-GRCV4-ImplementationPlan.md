@@ -630,7 +630,7 @@ handling, domain failures, and precision edges.
 
 ### Tranche 4. Candidate C with OS
 
-Current leaf: P9-4.5, accepted on `impl/phase-9-grcv4-tranche-4`; successor entry
+Earlier leaf status: P9-4.5 was accepted on `impl/phase-9-grcv4-tranche-4`; successor entry
 remains pending. Accepted predecessor:
 P9-4.4 including its audit follow-up at `1752426`, with P9-3.5's
 accepted `155c728` subject separately authenticated. The
@@ -744,8 +744,8 @@ binds `ec9f8662d08eafc5346837ddbbb74c9a4359a9b4`. Seventeen leaves and 29 paths
 are dependency-ready. P9-4.6 implements actual C_OS snapshot/load/reset/rebase,
 compatible current assignment and independent duplication. All 76 focused
 methods passed in the reconstructed checkout with no failures/errors/skips.
-The user authorized commit without a full audit; **the full independent audit
-of P9-4.6 remains pending**. See the
+The user authorized the original commit with the full independent audit
+pending; the later combined audit and its findings are recorded below. See the
 [review](./phase-9-grcv4/tranche-4/P9-4.6-Review.md) and
 [execution record](./phase-9-grcv4/tranche-4/P9-4.6-ExecutionRecord.json).
 The `P9-7.1-C_OS` child aliases this evidence without duplicate credit. Snapshots
@@ -757,9 +757,31 @@ implementation snapshot layout and local receipt-parent conventions. Full
 receipt ownership/replay, events/migrations and profile conformance remain with
 their later leaves. The bound review and execution record retain their
 verification-time pending-review status; this plan records the later commit
-authorization. Carry the outstanding P9-4.6 audit into subsequent work and
-record its findings and closure separately. Automated checks and commit
-authorization do not close that audit. P9-4.7a/b and G2 remain pending.
+authorization. The later supplied audits, correction and closure are recorded
+separately below; the original pending-audit records remain unchanged.
+
+P9-4.7 batch accepted: the user authorized acceptance of P9-4.6, P9-4.7a and
+P9-4.7b after closing the combined audit findings. The
+[batch record](./phase-9-grcv4/tranche-4/P9-4.7ab-AuthorizationRecord.json)
+records that disposition. The [P9-4.6 follow-up](./phase-9-grcv4/tranche-4/P9-4.6-AuditFollowup.md)
+closes the deferred audit without rewriting its original records.
+
+The [P9-4.7b review](./phase-9-grcv4/tranche-4/P9-4.7b-Review.md) records the
+accepted edge/K4 correction, explicit solver tolerances and orientation/reference
+preimages. The successor specification release and packaged assets are active;
+the exact published mandatory request/event identity passes in the retained
+50-method replay. The earlier 135- and 35-method runs remain reproducible through
+Git plus compact reverse patches. Mixed lifecycle pressure includes returning
+to the original graph/profile and restoring its archive. P9-7.2a/b and 7.3–7.6
+have scoped C_OS evidence reconciled; P9-7.1-C_OS retains only bounded snapshot/
+continuation credit. Broader GRC9/reference-carrier correction and generic
+parent-DAG conformance remain outside these accepted leaves.
+
+P9-4.8 is the next separate review. P9-G2[C_OS] and runtime support sets remain
+pending/empty. The existing permission envelope still covers 26 leaves and 29
+paths; accepting this batch does not silently grant later implementation scope.
+
+
 
 ### Tranche 5. Candidate A with OS
 

@@ -27,6 +27,18 @@ The implementation strategy assumed by these specs is:
 
 ## GRCV4 phase boundary
 
+Phase 9 now uses the [bounded mapped-vector correction](../implementation/phase-9-grcv4/tranche-4/P9-4.7b-SpecificationCorrection.json)
+and the resulting [successor release](grc-v4-specification-release.json).
+It corrects the generic mapped fixture's K4 reference dimension, explicit
+binary64 solver tolerances and orientation identity, and includes complete
+runtime reference preimages. The mathematical specifications and contract
+schema are unchanged. Other builder dimension defects, including GRC9
+expansion references, remain explicitly inventoried in that correction;
+this release does not claim their runtime conformance. Earlier release and
+acceptance records describe their original Git subjects and remain history.
+
+The following describes the predecessor specification phase:
+
 The [post-D10 boundary manifest](../implementation/investigations/grc9v4-constitutive-design/specification/PostD10SpecificationBoundary.json)
 hash-freezes every pre-existing normative file in this directory except this
 registry. The active `specification_correction` phase is hash-bound to the
@@ -39,15 +51,15 @@ registry while freezing the accepted proposal, paper, older specifications,
 `GRCV4_GRC9V4_implementation`. The pre-existing-spec hashes remain enforced in
 every phase.
 
-Run the separate claim, contract, phase-boundary, link, and rendering audit
-with the repository virtual environment:
+Run the current Phase-9 boundary and successor-release checks with the
+repository virtual environment:
 
 ```bash
-.venv/bin/python implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/run.py verify-post-d10-specifications
+.venv/bin/python implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/run.py verify-phase9 --boundary-only
 ```
 
-The full `verify-iteration9` command detects the same hash-bound D10.2 entry
-state automatically and includes this successor audit when it is active.
+The full `verify-iteration9` command follows the active Phase-9 successor.
+The older specification auditors retain their exact historical subjects.
 
 ## Documents
 

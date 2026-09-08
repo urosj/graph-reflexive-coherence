@@ -149,6 +149,18 @@ def verification_status(repo_root: Path) -> dict:
                     "accepted_iterations": ["P9-4.5"],
                     "path": module.OPERATIONS_ACCEPTANCE,
                 },
+                lifecycle_batch_authorization={
+                    "record_digest": module.lifecycle_batch_authorization(root)["record_digest"],
+                    "execution_order": ["P9-4.7a", "P9-4.7b"],
+                    "audit_status": "findings_closed_after_correction",
+                    "combined_audit_scope": ["P9-4.6", "P9-4.7a", "P9-4.7b"],
+                    "path": module.LIFECYCLE_BATCH,
+                },
+                specification_correction={
+                    "record_digest": module.accepted_specification_correction(root)["record_digest"],
+                    "release_id": module.CORRECTED_RELEASE_ID,
+                    "path": module.SPECIFICATION_CORRECTION,
+                },
                 implementation_scope=approval["runtime_targets"],
                 dependency_ready_leaves=ready,
                 permitted_runtime_paths=sorted(
@@ -156,7 +168,7 @@ def verification_status(repo_root: Path) -> dict:
                     for r in approval["runtime_targets"]
                     if r["requires_gate"] == "P9-G1" and set(ready) & owners[r["path"]]
                 ),
-                next_gate="P9-4.6 Candidate C OS snapshot/load/reset/rebase and deep immutability verification; P9-G2 and P9-G3 remain pending",
+                next_gate="P9-4.6/4.7a/4.7b accepted after audit corrections; P9-4.8 is next for separate review; P9-G2 and P9-G3 remain pending",
                 claim_ceiling="Accepted permission to implement reviewed V4 scope is not executed or accepted runtime conformance.",
             )
         cross = module.read(
@@ -303,6 +315,8 @@ def verification_status(repo_root: Path) -> dict:
         payload.pop("c_controls_acceptance", None)
         payload.pop("os_pass_acceptance", None)
         payload.pop("os_operations_acceptance", None)
+        payload.pop("lifecycle_batch_authorization", None)
+        payload.pop("specification_correction", None)
         payload.pop("permitted_runtime_paths", None)
         payload.pop("source_meaning", None)
         payload.pop("tree", None)

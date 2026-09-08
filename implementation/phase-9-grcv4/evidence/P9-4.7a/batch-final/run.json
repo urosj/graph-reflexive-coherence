@@ -1,0 +1,1809 @@
+{
+  "schema": "phase9_leaf_focused_run_v1",
+  "iteration_id": "P9-4.7ab",
+  "source": {
+    "base_commit": "f10d105bbed71da7e9a58d851b18e9799a952e0c",
+    "scopes": [
+      "src",
+      "tests",
+      "specs",
+      "pyproject.toml",
+      "uv.lock",
+      "implementation/investigations/grc9v4-constitutive-design/drafts/2026-09-GRC-V4.md",
+      "implementation/investigations/grc9v4-constitutive-design/scripts/build_grcv4_specification_vectors.py"
+    ],
+    "overrides_sha256": {
+      "src/pygrc/models/grc_v4.py": "7b692142a98c8010f9f0521e0c54c4e6f91dc78909dcffab8e60a9f108c702e9",
+      "src/pygrc/models/grc_v4_codec.py": "8d2460106d45748fdba69ebaa78930121c0f1a3296399bf3cdacf1c1abb40a46",
+      "src/pygrc/models/grc_v4_lifecycle.py": "04e1afffa886778730512f84e0633b0aa44ffcb7a2feae5de5b9802476bccc06",
+      "tests/models/test_grc_v4_lifecycle.py": "6a66c89447e0f1bb33705f27eecb375535d5d4f611a0cd11f62764aab9958441"
+    },
+    "manifest_sha256": "93a6a60ca861a91ed7134f09c844df2a1a2a9969c85a9af5f45e7fc55be9e2cf",
+    "file_count": 441,
+    "reconstruction": "Overlay only the listed hash-matching source files from the commit containing this run onto base_commit; verify the scoped manifest. Before commit, use the reviewed working tree."
+  },
+  "required_ids": [
+    "tests.models.test_grc_v4.FoundationIntegrationTests.test_consumed_legacy_imports_and_replacement_boundary",
+    "tests.models.test_grc_v4.FoundationIntegrationTests.test_distinct_current_reset_history_and_carrier_ownership",
+    "tests.models.test_grc_v4.FoundationIntegrationTests.test_duration_validation_still_does_not_admit_a_profile_or_context",
+    "tests.models.test_grc_v4.FoundationIntegrationTests.test_explicit_legacy_baseline_and_package_exports_remain_unchanged",
+    "tests.models.test_grc_v4.FoundationIntegrationTests.test_no_ambient_support_after_templates_prefix_controls_and_inspection",
+    "tests.models.test_grc_v4.FoundationIntegrationTests.test_recursive_ownership_across_records_and_common_projections",
+    "tests.models.test_grc_v4.FoundationIntegrationTests.test_selected_guard_mutations_are_detected_at_the_intended_boundary",
+    "tests.models.test_grc_v4.FoundationIntegrationTests.test_shared_acyclic_wide_context_survives_projection_and_reconstruction",
+    "tests.models.test_grc_v4.FoundationIntegrationTests.test_ten_declarations_and_parameter_variants_do_not_register_support",
+    "tests.models.test_grc_v4.RequestTests.test_all_missing_extra_and_wrong_shape_inputs_fail_before_admission",
+    "tests.models.test_grc_v4.RequestTests.test_configuration_accepts_subnormals_and_large_exponents_in_isolation",
+    "tests.models.test_grc_v4.RequestTests.test_cycles_arbitrary_objects_and_pickle_never_enter_request_decoding",
+    "tests.models.test_grc_v4.RequestTests.test_decode_shape_error_retains_cause_not_dependency_failure",
+    "tests.models.test_grc_v4.RequestTests.test_exact_underflow_midpoint_applies_to_duration_and_nested_data",
+    "tests.models.test_grc_v4.RequestTests.test_harness_payload_is_not_a_production_request_or_hidden_hook",
+    "tests.models.test_grc_v4.RequestTests.test_input_and_strict_types_are_distinct_on_all_construction_paths",
+    "tests.models.test_grc_v4.RequestTests.test_int_and_float_duration_have_identical_pinned_jcs_bytes",
+    "tests.models.test_grc_v4.RequestTests.test_malformed_wire_is_not_a_semantic_failure",
+    "tests.models.test_grc_v4.RequestTests.test_migration_closed_fields_channels_and_exact_reference_grammar",
+    "tests.models.test_grc_v4.RequestTests.test_migration_is_declaration_only_and_uses_explicit_numeric_routes",
+    "tests.models.test_grc_v4.RequestTests.test_migration_nested_typed_declaration_and_roundtrip",
+    "tests.models.test_grc_v4.RequestTests.test_native_numeric_rejections_cannot_be_erased_by_conversion",
+    "tests.models.test_grc_v4.RequestTests.test_negative_duration_is_input_not_strict_record",
+    "tests.models.test_grc_v4.RequestTests.test_nested_sources_projections_and_copies_do_not_alias",
+    "tests.models.test_grc_v4.RequestTests.test_nonzero_wire_underflow_cannot_become_zero_duration_or_context",
+    "tests.models.test_grc_v4.RequestTests.test_numeric_routes_are_explicit_without_automatic_fallback",
+    "tests.models.test_grc_v4.RequestTests.test_seeded_binary64_transport_and_admission_composition",
+    "tests.models.test_grc_v4.RequestTests.test_strict_and_input_schemas_cannot_be_interchanged",
+    "tests.models.test_grc_v4.RequestTests.test_typed_and_json_identity_preserve_boolean_number_distinctions",
+    "tests.models.test_grc_v4.RequestTests.test_typed_nested_migration_inputs_are_copied_and_cannot_bypass_validation",
+    "tests.models.test_grc_v4_codec.CodecTests.test_all_published_canonical_preimages",
+    "tests.models.test_grc_v4_codec.CodecTests.test_boolean_number_identity_is_distinct",
+    "tests.models.test_grc_v4_codec.CodecTests.test_canonical_numeric_reconstruction_closes_the_encoder_image",
+    "tests.models.test_grc_v4_codec.CodecTests.test_canonical_numeric_tokens_still_obey_field_schemas",
+    "tests.models.test_grc_v4_codec.CodecTests.test_canonical_route_rejects_rounding_and_noncanonical_spellings",
+    "tests.models.test_grc_v4_codec.CodecTests.test_configuration_rejects_coercions_cycles_and_unordered_data",
+    "tests.models.test_grc_v4_codec.CodecTests.test_custom_mapping_duplicate_and_defensive_projection",
+    "tests.models.test_grc_v4_codec.CodecTests.test_identity_tampering_unknown_fields_and_non_preimages",
+    "tests.models.test_grc_v4_codec.CodecTests.test_independent_ecmascript_binary64_edges",
+    "tests.models.test_grc_v4_codec.CodecTests.test_installed_assets_are_exact_release_copies_and_unshared",
+    "tests.models.test_grc_v4_codec.CodecTests.test_missing_altered_wrong_release_assets_fail_closed",
+    "tests.models.test_grc_v4_codec.CodecTests.test_missing_optional_dependencies_are_typed",
+    "tests.models.test_grc_v4_codec.CodecTests.test_schema_negatives_and_no_remote_schema_selection",
+    "tests.models.test_grc_v4_codec.CodecTests.test_strict_wire_numbers_duplicates_and_unicode",
+    "tests.models.test_grc_v4_codec.CodecTests.test_unicode_order_preservation_and_escapes",
+    "tests.models.test_grc_v4_codec.CodecTests.test_wide_frozen_maps_do_not_use_per_key_linear_lookup",
+    "tests.models.test_grc_v4_lifecycle.CandidateCOSAuditCorrectionTests.test_administrative_returned_target_cannot_exploit_empty_ledger",
+    "tests.models.test_grc_v4_lifecycle.CandidateCOSAuditCorrectionTests.test_exact_audit_zero_then_minimum_positive_clock_cases",
+    "tests.models.test_grc_v4_lifecycle.CandidateCOSAuditCorrectionTests.test_schema_valid_administrative_corruption_never_publishes",
+    "tests.models.test_grc_v4_lifecycle.CandidateCOSAuditCorrectionTests.test_unreceipted_assignment_preserves_snapshot_continuation_replay",
+    "tests.models.test_grc_v4_lifecycle.CandidateCOSCrossingTests.test_affine_increment_maps_distinct_live_and_reset_then_replays",
+    "tests.models.test_grc_v4_lifecycle.CandidateCOSCrossingTests.test_extended_snapshot_archive_tampering_and_duplicate_independence",
+    "tests.models.test_grc_v4_lifecycle.CandidateCOSCrossingTests.test_map_shape_conservation_order_and_numeric_wire_domains",
+    "tests.models.test_grc_v4_lifecycle.CandidateCOSCrossingTests.test_metadata_exclusion_and_crossing_receipt_semantic_corruption",
+    "tests.models.test_grc_v4_lifecycle.CandidateCOSCrossingTests.test_native_negative_reset_and_unrepresentable_affine_charge_fail_atomically",
+    "tests.models.test_grc_v4_lifecycle.CandidateCOSCrossingTests.test_native_target_current_and_reset_singularities_have_distinct_pressure",
+    "tests.models.test_grc_v4_lifecycle.CandidateCOSCrossingTests.test_parameter_migration_preserves_both_states_and_reset_after_migration",
+    "tests.models.test_grc_v4_lifecycle.CandidateCOSCrossingTests.test_publication_checks_returned_crossing_map_and_atomic_reference_observation",
+    "tests.models.test_grc_v4_lifecycle.CandidateCOSCrossingTests.test_published_affine_vector_identities_and_admitted_runtime_companion",
+    "tests.models.test_grc_v4_lifecycle.CandidateCOSCrossingTests.test_registry_requires_unique_complete_reference_preimages",
+    "tests.models.test_grc_v4_lifecycle.CandidateCOSCrossingTests.test_separate_history_channels_reject_invented_retention_loss_and_initializers",
+    "tests.models.test_grc_v4_lifecycle.CandidateCOSCrossingTests.test_split_removal_negative_increment_and_stable_identifier_permutation",
+    "tests.models.test_grc_v4_lifecycle.CandidateCOSCrossingTests.test_target_charge_readmission_checks_reset_independently",
+    "tests.models.test_grc_v4_lifecycle.CandidateCOSCrossingTests.test_unregistered_target_families_and_stale_identity_are_explicit",
+    "tests.models.test_grc_v4_lifecycle.CandidateCOSLifecycleTests.test_all_administrative_faults_keep_state_and_commit_preimages_atomic",
+    "tests.models.test_grc_v4_lifecycle.CandidateCOSLifecycleTests.test_canonical_save_load_rejects_duplicate_keys_nonfinite_and_negative_zero",
+    "tests.models.test_grc_v4_lifecycle.CandidateCOSLifecycleTests.test_charge_tolerance_reset_receipt_reports_actual_negative_delta",
+    "tests.models.test_grc_v4_lifecycle.CandidateCOSLifecycleTests.test_closed_snapshot_requires_every_field_and_rejects_extra_authority",
+    "tests.models.test_grc_v4_lifecycle.CandidateCOSLifecycleTests.test_deep_independence_of_snapshot_duplicate_copy_and_retained_state",
+    "tests.models.test_grc_v4_lifecycle.CandidateCOSLifecycleTests.test_dyadic_snapshot_embeds_exact_preimages_and_acyclic_identities",
+    "tests.models.test_grc_v4_lifecycle.CandidateCOSLifecycleTests.test_load_verifies_historical_commit_preimages_and_order",
+    "tests.models.test_grc_v4_lifecycle.CandidateCOSLifecycleTests.test_loop_parallel_isolated_and_permuted_graphs_roundtrip_with_exact_maps",
+    "tests.models.test_grc_v4_lifecycle.CandidateCOSLifecycleTests.test_native_singular_current_and_reset_reject_even_with_coherent_hashes",
+    "tests.models.test_grc_v4_lifecycle.CandidateCOSLifecycleTests.test_null_wrong_typed_and_stale_digest_fields_never_disable_verification",
+    "tests.models.test_grc_v4_lifecycle.CandidateCOSLifecycleTests.test_rebase_reset_and_assignment_have_distinct_exact_effects",
+    "tests.models.test_grc_v4_lifecycle.CandidateCOSLifecycleTests.test_reference_content_and_every_nested_identity_are_load_bearing",
+    "tests.models.test_grc_v4_lifecycle.CandidateCOSLifecycleTests.test_rehashed_cross_identity_mismatch_still_rejects",
+    "tests.models.test_grc_v4_lifecycle.CandidateCOSLifecycleTests.test_rehashed_negative_history_shape_and_charge_inputs_fail_readmission",
+    "tests.models.test_grc_v4_lifecycle.CandidateCOSLifecycleTests.test_rehashed_receipt_semantic_contradictions_reject",
+    "tests.models.test_grc_v4_lifecycle.CandidateCOSLifecycleTests.test_repeated_identity_operations_append_distinct_commits_without_writers",
+    "tests.models.test_grc_v4_lifecycle.CandidateCOSLifecycleTests.test_reset_after_ordinary_preserves_lineage_clock_profile_and_charge",
+    "tests.models.test_grc_v4_lifecycle.CandidateCOSLifecycleTests.test_restoration_and_assignment_do_not_publish_before_final_readmission",
+    "tests.models.test_grc_v4_lifecycle.CandidateCOSLifecycleTests.test_restoration_detaches_caller_payload_and_asserts_parameters",
+    "tests.models.test_grc_v4_lifecycle.CandidateCOSLifecycleTests.test_restored_positive_continuation_has_literal_dyadic_resource",
+    "tests.models.test_grc_v4_lifecycle.CandidateCOSLifecycleTests.test_save_load_fresh_process_and_large_canonical_clock_tokens",
+    "tests.models.test_grc_v4_lifecycle.CandidateCOSLifecycleTests.test_set_state_validates_full_target_and_forbids_lifecycle_replacement",
+    "tests.models.test_grc_v4_lifecycle.CandidateCOSLifecycleTests.test_snapshot_during_admission_observes_one_state_and_commit_generation",
+    "tests.models.test_grc_v4_lifecycle.CandidateCOSOperationTests.test_capture_rejects_same_file_method_slot_substitution",
+    "tests.models.test_grc_v4_lifecycle.CandidateCOSOperationTests.test_connected_repeated_cluster_uses_general_certificate_and_covaries",
+    "tests.models.test_grc_v4_lifecycle.CandidateCOSOperationTests.test_dense_conditioning_certificate_operation_inside_and_outside_limit",
+    "tests.models.test_grc_v4_lifecycle.CandidateCOSOperationTests.test_dense_nonidentity_multigraph_operation_and_signed_covariance",
+    "tests.models.test_grc_v4_lifecycle.CandidateCOSOperationTests.test_duration_and_clock_extremes_keep_classification_and_atomicity",
+    "tests.models.test_grc_v4_lifecycle.CandidateCOSOperationTests.test_empty_edge_declarations_reject_and_loop_only_operation_commits",
+    "tests.models.test_grc_v4_lifecycle.CandidateCOSOperationTests.test_exact_dyadic_receipts_commit_and_whole_state_identity",
+    "tests.models.test_grc_v4_lifecycle.CandidateCOSOperationTests.test_fault_controls_charge_types_override_hostile_text",
+    "tests.models.test_grc_v4_lifecycle.CandidateCOSOperationTests.test_fault_controls_every_solver_disposition_has_typed_provenance",
+    "tests.models.test_grc_v4_lifecycle.CandidateCOSOperationTests.test_fault_controls_final_consumed_and_reference_readmission_are_atomic",
+    "tests.models.test_grc_v4_lifecycle.CandidateCOSOperationTests.test_fault_controls_receipt_construction_binding_and_exceptions_before_publish",
+    "tests.models.test_grc_v4_lifecycle.CandidateCOSOperationTests.test_fresh_owner_rejects_unauthenticated_ledger_and_foreign_domains",
+    "tests.models.test_grc_v4_lifecycle.CandidateCOSOperationTests.test_native_charge_tolerance_boundary_commits_without_resource_repair",
+    "tests.models.test_grc_v4_lifecycle.CandidateCOSOperationTests.test_native_corrector_conditioning_failure",
+    "tests.models.test_grc_v4_lifecycle.CandidateCOSOperationTests.test_native_postsolve_resource_domain_overflow_and_charge_failures",
+    "tests.models.test_grc_v4_lifecycle.CandidateCOSOperationTests.test_native_reference_only_poststate_singularity_rejects_after_valid_consumed_final",
+    "tests.models.test_grc_v4_lifecycle.CandidateCOSOperationTests.test_native_solver_geometry_selector_and_split_failures_are_atomic",
+    "tests.models.test_grc_v4_lifecycle.CandidateCOSOperationTests.test_negative_duration_and_closed_external_inputs_fail_before_solver",
+    "tests.models.test_grc_v4_lifecycle.CandidateCOSOperationTests.test_no_cache_input_and_immutable_detached_observations",
+    "tests.models.test_grc_v4_lifecycle.CandidateCOSOperationTests.test_positive_nonzero_split_matches_rational_oracle_and_one_publication",
+    "tests.models.test_grc_v4_lifecycle.CandidateCOSOperationTests.test_repeated_cluster_projector_and_near_conditioning_boundary_operations",
+    "tests.models.test_grc_v4_lifecycle.CandidateCOSOperationTests.test_two_beats_use_actual_request_poststate_ledger_and_reference",
+    "tests.models.test_grc_v4_lifecycle.CandidateCOSOperationTests.test_zero_duration_identity_no_writer_but_authenticated_receipt_delta",
+    "tests.models.test_grc_v4_lifecycle.CandidateCOSReplayTests.test_complete_authority_replacement_controls_cannot_publish",
+    "tests.models.test_grc_v4_lifecycle.CandidateCOSReplayTests.test_deterministic_replay_every_checkpoint_with_rational_expected_states",
+    "tests.models.test_grc_v4_lifecycle.CandidateCOSReplayTests.test_failed_operations_preserve_seeded_tuple_and_recovery_replay",
+    "tests.models.test_grc_v4_lifecycle.CandidateCOSReplayTests.test_failure_receipts_never_become_persistent_authority",
+    "tests.models.test_grc_v4_lifecycle.CandidateCOSReplayTests.test_four_invalid_live_transition_controls_cannot_publish",
+    "tests.models.test_grc_v4_lifecycle.CandidateCOSReplayTests.test_interleaved_ledger_deltas_and_parent_scope",
+    "tests.models.test_grc_v4_lifecycle.CandidateCOSReplayTests.test_live_clock_and_resource_against_rational_oracle",
+    "tests.models.test_grc_v4_lifecycle.CandidateCOSReplayTests.test_missing_foreign_and_reordered_parents_reject_after_coherent_rehash",
+    "tests.models.test_grc_v4_lifecycle.CandidateCOSReplayTests.test_native_solver_failure_preserves_existing_ledger_and_reset",
+    "tests.models.test_grc_v4_lifecycle.CandidateCOSReplayTests.test_replay_does_not_consume_saved_observables_or_old_results",
+    "tests.models.test_grc_v4_lifecycle.CandidateCOSReplayTests.test_seeded_programmer_failures_preserve_reference_and_commit_archive",
+    "tests.models.test_grc_v4_state.FrozenJSONTests.test_boolean_number_types_survive_for_later_identity_validation",
+    "tests.models.test_grc_v4_state.FrozenJSONTests.test_cycles_rejected_but_shared_acyclic_values_copied",
+    "tests.models.test_grc_v4_state.FrozenJSONTests.test_deep_input_and_output_independence",
+    "tests.models.test_grc_v4_state.FrozenJSONTests.test_nested_public_and_backing_mutation_rejected",
+    "tests.models.test_grc_v4_state.FrozenJSONTests.test_non_json_payloads_rejected",
+    "tests.models.test_grc_v4_state.FrozenJSONTests.test_numeric_and_unicode_boundaries",
+    "tests.models.test_grc_v4_state.FrozenJSONTests.test_order_independent_mapping_equality_and_hash",
+    "tests.models.test_grc_v4_state.FrozenJSONTests.test_proxy_cannot_retain_its_writable_backing",
+    "tests.models.test_grc_v4_state.LifecycleOwnershipTests.test_common_state_projection_has_no_duplicate_storage",
+    "tests.models.test_grc_v4_state.LifecycleOwnershipTests.test_duplicate_values_do_not_reintroduce_writable_aliases",
+    "tests.models.test_grc_v4_state.LifecycleOwnershipTests.test_invalid_clock_and_context_mismatches_rejected",
+    "tests.models.test_grc_v4_state.LifecycleOwnershipTests.test_missing_profile_payloads_and_unknown_shapes_rejected",
+    "tests.models.test_grc_v4_state.LifecycleOwnershipTests.test_nested_graph_profile_and_receipt_inputs_detached",
+    "tests.models.test_grc_v4_state.LifecycleOwnershipTests.test_reset_is_reduced_and_distinct_from_live_state"
+  ],
+  "started_utc": "2026-09-08T18:46:26.556100+00:00",
+  "python": "3.12.3",
+  "platform": "Linux-5.15.167-0515167-generic-x86_64-with-glibc2.39",
+  "dependencies": [
+    "Jinja2==3.1.6",
+    "MarkupSafe==3.0.3",
+    "PyYAML==6.0.3",
+    "Pygments==2.20.0",
+    "ast_serialize==0.9.0",
+    "asttokens==3.0.1",
+    "attrs==26.1.0",
+    "build==1.6.0",
+    "contourpy==1.3.3",
+    "cycler==0.12.1",
+    "decorator==5.3.0",
+    "executing==2.2.1",
+    "fonttools==4.63.0",
+    "ipython==9.13.0",
+    "ipython_pygments_lexers==1.1.1",
+    "jedi==0.20.0",
+    "jsonpickle==4.1.1",
+    "jsonschema-specifications==2025.9.1",
+    "jsonschema==4.26.0",
+    "kiwisolver==1.5.0",
+    "librt==0.15.0",
+    "matplotlib-inline==0.2.2",
+    "matplotlib==3.10.9",
+    "mypy==2.1.0",
+    "mypy_extensions==1.1.0",
+    "networkx==3.6.1",
+    "numpy==2.4.6",
+    "packaging==26.2",
+    "parso==0.8.7",
+    "pathspec==1.1.1",
+    "pexpect==4.9.0",
+    "pillow==12.2.0",
+    "pip==24.0",
+    "prompt_toolkit==3.0.52",
+    "psutil==7.2.2",
+    "ptyprocess==0.7.0",
+    "pure_eval==0.2.3",
+    "pygrc==0.1",
+    "pygrc==0.1",
+    "pyparsing==3.3.2",
+    "pyproject_hooks==1.2.0",
+    "python-dateutil==2.9.0.post0",
+    "pyvis==0.3.2",
+    "referencing==0.37.0",
+    "rfc8785==0.1.4",
+    "rpds-py==2026.6.3",
+    "ruff==0.15.16",
+    "setuptools==84.0.0",
+    "six==1.17.0",
+    "stack-data==0.6.3",
+    "traitlets==5.15.0",
+    "typing_extensions==4.16.0",
+    "wcwidth==0.7.0",
+    "wheel==0.48.0"
+  ],
+  "environment": {
+    "PYTHONHASHSEED": "947",
+    "OPENBLAS_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1"
+  },
+  "replay_command": [
+    ".venv/bin/python",
+    "-m",
+    "tests.models.test_grc_v4_lifecycle",
+    "--capture-p947ab",
+    "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/generated/p947ab-final"
+  ],
+  "claim_ceiling": "C_OS failed-step atomicity, local receipt ownership, snapshot continuation replay, registered same-candidate nonhistory migration and affine mapped events over current AND reset; P9-4.6 audit correction regressions. Exact published mapped-vector backend applicability remains unresolved; the admitted runtime companion has rederived profile/event identities. No historical truth authentication, full parent-DAG conformance, public facade/profile acceptance or cross-platform bitwise claim.",
+  "numerical_policy": "Inherited C stage/star/geometry binary64 policy; exact reference-relative split tolerance via symmetric inertia; fixed-rank affine selector path certification with a 256-bisection fail-closed ceiling. Positive subnormal durations are never classified as zero.",
+  "status": "passed",
+  "coverage": {
+    "required_count": 135,
+    "discovered_count": 135,
+    "passed": true,
+    "missing_discovery": [],
+    "unreviewed_discovery": [],
+    "duplicate_discovery": [],
+    "missing_execution": [],
+    "unexpected_execution": [],
+    "duplicate_execution": [],
+    "nonpassing_execution": []
+  },
+  "loaded_sources_before": {
+    "tests": {
+      "path": "tests/__init__.py",
+      "sha256": "b8c1c2c06b79a3cda0ddac97e383a7023ef0b2901a0866925d7b96699a562434",
+      "live_code_objects_checked": 0
+    },
+    "tests.models": {
+      "path": "tests/models/__init__.py",
+      "sha256": "a75a97f69ccfe9043bca38dcb91a41a7393d299d8af2fe804cc034930fb6c440",
+      "live_code_objects_checked": 0
+    },
+    "pygrc.causal_pathways.binding.identity": {
+      "path": "src/pygrc/causal_pathways/binding/identity.py",
+      "sha256": "bb2d1208b12b277e795c8358bdb2a16b53dd757b34bdd3dde4da6021d0050f23",
+      "live_code_objects_checked": 19
+    },
+    "pygrc.causal_pathways.binding.effects": {
+      "path": "src/pygrc/causal_pathways/binding/effects.py",
+      "sha256": "882983fc3aa64330e34431e898610ff451f026e0fe76cf84c89f7cc866971d90",
+      "live_code_objects_checked": 8
+    },
+    "pygrc.causal_pathways.binding.authority": {
+      "path": "src/pygrc/causal_pathways/binding/authority.py",
+      "sha256": "17abcfb0f42f3a85dfd587d038e92bab321c8afe24e25a1854dc6c662cde14e2",
+      "live_code_objects_checked": 29
+    },
+    "pygrc.causal_pathways.binding.candidates": {
+      "path": "src/pygrc/causal_pathways/binding/candidates.py",
+      "sha256": "fdd2ae9cc6a7bb1028eb6d9a9dfa3dec5ab4eb68d9c62fab42259c19fa32b3e9",
+      "live_code_objects_checked": 48
+    },
+    "pygrc.causal_pathways.binding.scopes": {
+      "path": "src/pygrc/causal_pathways/binding/scopes.py",
+      "sha256": "f6c4b40a03c96758588203c7fbb7a5d20872bf90ab4903be604fab4c5122c49c",
+      "live_code_objects_checked": 81
+    },
+    "pygrc.causal_pathways.binding.artifacts": {
+      "path": "src/pygrc/causal_pathways/binding/artifacts.py",
+      "sha256": "770507a7e45a6d6ab39ff5ea8328893791910945341fe6a5369f312fb1618d59",
+      "live_code_objects_checked": 25
+    },
+    "pygrc.causal_pathways.binding.session": {
+      "path": "src/pygrc/causal_pathways/binding/session.py",
+      "sha256": "98b0a0eaeff5b018cf36872fe0a5a3102b33cc27f7ba7eaa5de8407637657972",
+      "live_code_objects_checked": 61
+    },
+    "pygrc.causal_pathways.binding": {
+      "path": "src/pygrc/causal_pathways/binding/__init__.py",
+      "sha256": "1c639c99991a04337af6f6799264ca6d92fed8b3eb83fb38a2c784854ef52c34",
+      "live_code_objects_checked": 0
+    },
+    "pygrc.causal_pathways": {
+      "path": "src/pygrc/causal_pathways/__init__.py",
+      "sha256": "84eafd80a26d40399ee22f9e0f670c5eaa40840841742a5b37a5a0401061e74e",
+      "live_code_objects_checked": 0
+    },
+    "pygrc.core.errors": {
+      "path": "src/pygrc/core/errors.py",
+      "sha256": "6cebc00fd55fb6f78f505510c71ff6e41fc76877621dbb8832c342b1ec728a31",
+      "live_code_objects_checked": 0
+    },
+    "pygrc.core.events": {
+      "path": "src/pygrc/core/events.py",
+      "sha256": "a77be381e49e84745a687be432fd03ca0cbc394efe749db2538542d3cc80f9b2",
+      "live_code_objects_checked": 0
+    },
+    "pygrc.core.ids": {
+      "path": "src/pygrc/core/ids.py",
+      "sha256": "f57ae8530b5b943aad37b247b0716df583dafbf6ceffaa970cbf02cc6907d428",
+      "live_code_objects_checked": 19
+    },
+    "pygrc.core.observables": {
+      "path": "src/pygrc/core/observables.py",
+      "sha256": "7e91df6d1ba0929e45f22f34e928551270a5c55828199876c4c8d463e2febf5e",
+      "live_code_objects_checked": 0
+    },
+    "pygrc.core.types": {
+      "path": "src/pygrc/core/types.py",
+      "sha256": "63932777bcf619cf8719a69b16adce0dd61e4b9296308ab6f8e41f925048c6f8",
+      "live_code_objects_checked": 0
+    },
+    "pygrc.core.mutations": {
+      "path": "src/pygrc/core/mutations.py",
+      "sha256": "8072749b817b7a8e6f0b750b6e476e4355845f75ffe15315cec926d67369b207",
+      "live_code_objects_checked": 2
+    },
+    "pygrc.core.graph": {
+      "path": "src/pygrc/core/graph.py",
+      "sha256": "7a7383934a6c8fa78e05a4f7a6435b3293acfc59bcfdcdc8e3b73310f51867c6",
+      "live_code_objects_checked": 27
+    },
+    "pygrc.core.storage": {
+      "path": "src/pygrc/core/storage.py",
+      "sha256": "a73d30238bc81dc3c366f04f3e8d5e8a266d0a683e7db88560196930d279c397",
+      "live_code_objects_checked": 56
+    },
+    "pygrc.core.serialization": {
+      "path": "src/pygrc/core/serialization.py",
+      "sha256": "a1ce1489870962af1032b8e69acc09ba8b9dcbcefaf86ea97250fc9a47009cf4",
+      "live_code_objects_checked": 30
+    },
+    "pygrc.core.digests": {
+      "path": "src/pygrc/core/digests.py",
+      "sha256": "c54fdedbea3dc9547ae9450bcc4d69385a7f0cba5b9e592dee8d785fbd3c5f07",
+      "live_code_objects_checked": 3
+    },
+    "pygrc.core.backends": {
+      "path": "src/pygrc/core/backends.py",
+      "sha256": "344f13dcf664ecbc1ec591cd1cc4c9be241d8c292ca736551201eee81a2c8c07",
+      "live_code_objects_checked": 9
+    },
+    "pygrc.core.capabilities": {
+      "path": "src/pygrc/core/capabilities.py",
+      "sha256": "40fb8fc51284c25d99b7bb9310ebff7055f170d46a0a978d190ccd9f2b97a41b",
+      "live_code_objects_checked": 1
+    },
+    "pygrc.core.interfaces": {
+      "path": "src/pygrc/core/interfaces.py",
+      "sha256": "551d68fc103285608cef1a7ea4a69b9455181de21d9f91ea61cdd80c6065bc8f",
+      "live_code_objects_checked": 14
+    },
+    "pygrc.core.params": {
+      "path": "src/pygrc/core/params.py",
+      "sha256": "ff1a1a12ba050fc8654c88b0d786e9a342b6fd1bab656a12b95cdc45a5976ca4",
+      "live_code_objects_checked": 4
+    },
+    "pygrc.core": {
+      "path": "src/pygrc/core/__init__.py",
+      "sha256": "1de90ece2242642584f399b744240207a15f1d56b1ee62247bfb1389647ec7ae",
+      "live_code_objects_checked": 0
+    },
+    "pygrc.integrations.graph_adapter_boundary": {
+      "path": "src/pygrc/integrations/graph_adapter_boundary.py",
+      "sha256": "86497ebec49fb8918a8f22327320648ffad0f04eadda7498fffde15feb481e0d",
+      "live_code_objects_checked": 5
+    },
+    "pygrc.integrations": {
+      "path": "src/pygrc/integrations/__init__.py",
+      "sha256": "24feb5ce79dfe64bbaae8ae14fb5ebb7bfc6a508630beef433b08bab65f23237",
+      "live_code_objects_checked": 0
+    },
+    "pygrc.landscapes.seed": {
+      "path": "src/pygrc/landscapes/seed.py",
+      "sha256": "457c4bc2fd2ffd597be29394087864d2295bc3a60a432fed604c801fbec7aac2",
+      "live_code_objects_checked": 0
+    },
+    "pygrc.landscapes.validation": {
+      "path": "src/pygrc/landscapes/validation.py",
+      "sha256": "bf2428dda75061cedb2c8a8074df8c5aa27a7f601b5a94b4fd0070cb0580a72b",
+      "live_code_objects_checked": 13
+    },
+    "pygrc.landscapes.pde_translation": {
+      "path": "src/pygrc/landscapes/pde_translation.py",
+      "sha256": "97af774c5243c017055ebe11bacf787d2e0411966e18e6cc70965388c446ff8f",
+      "live_code_objects_checked": 27
+    },
+    "pygrc.landscapes.equivalence": {
+      "path": "src/pygrc/landscapes/equivalence.py",
+      "sha256": "e64233dc0a8b1cb96f7cc566cfa2d3813862736be4467fd87167f78a8a8de7ff",
+      "live_code_objects_checked": 25
+    },
+    "pygrc.landscapes.io": {
+      "path": "src/pygrc/landscapes/io.py",
+      "sha256": "c17609a2615c0dd104ae4a8efd8ca94624ef2883837b3b205571ffefeea602cd",
+      "live_code_objects_checked": 13
+    },
+    "pygrc.landscapes.inference": {
+      "path": "src/pygrc/landscapes/inference.py",
+      "sha256": "28b0b54bc37d5894f69e77fbeaa3f84dc856bddae845cdf4e9948dfedb0c9b32",
+      "live_code_objects_checked": 29
+    },
+    "pygrc.landscapes.inference_loader": {
+      "path": "src/pygrc/landscapes/inference_loader.py",
+      "sha256": "61c381a9a826410cc6989512d2cff746465154d98cb1565d01c02010a20f29df",
+      "live_code_objects_checked": 11
+    },
+    "pygrc.landscapes.inference_substrate": {
+      "path": "src/pygrc/landscapes/inference_substrate.py",
+      "sha256": "7b7076ae54de4a526b5faa15e9ec90789ce64390182e756e5895cb9deffc5a1d",
+      "live_code_objects_checked": 50
+    },
+    "pygrc.landscapes.inference_basin": {
+      "path": "src/pygrc/landscapes/inference_basin.py",
+      "sha256": "2e784026b62c89c618ae905ce4ea0552d729c80c69ac4567cb30c3a962c59ce7",
+      "live_code_objects_checked": 14
+    },
+    "pygrc.landscapes.inference_valley": {
+      "path": "src/pygrc/landscapes/inference_valley.py",
+      "sha256": "07dcb641650d3ece24d6c90fe0acf85c9497daf7933b230b1d84209ac2b49f8b",
+      "live_code_objects_checked": 24
+    },
+    "pygrc.landscapes.inference_ridge": {
+      "path": "src/pygrc/landscapes/inference_ridge.py",
+      "sha256": "3f6b3b4a82973ca092bc83f0ee0e996e3d95cf4f06226de1d03b140a6d7ba8b5",
+      "live_code_objects_checked": 11
+    },
+    "pygrc.landscapes.inference_junction": {
+      "path": "src/pygrc/landscapes/inference_junction.py",
+      "sha256": "69b3e772659a87fae8b3431de6bb40ebb385e4dc785e05ec072c20919a438789",
+      "live_code_objects_checked": 17
+    },
+    "pygrc.landscapes.inference_pheromone": {
+      "path": "src/pygrc/landscapes/inference_pheromone.py",
+      "sha256": "e2f6a0d93ca800be18df6ce955f347122a3b393a5590cdf81b2011572d599b2c",
+      "live_code_objects_checked": 23
+    },
+    "pygrc.landscapes.inference_compare": {
+      "path": "src/pygrc/landscapes/inference_compare.py",
+      "sha256": "f29dbfa87f2051871168eb3ff5b9d1b05903a789fad53ea2e831735801b7852f",
+      "live_code_objects_checked": 26
+    },
+    "pygrc.landscapes.inference_kg": {
+      "path": "src/pygrc/landscapes/inference_kg.py",
+      "sha256": "a1e006bfbfec04841a30b8b0c6eb43d69b574cb695dedecb962aa6c0a8f6a00d",
+      "live_code_objects_checked": 10
+    },
+    "pygrc.landscapes.inference_revival": {
+      "path": "src/pygrc/landscapes/inference_revival.py",
+      "sha256": "de741fd9c070fed65e5113524a68b3a2163ef7017edb57d949c59c8c25bc56a8",
+      "live_code_objects_checked": 15
+    },
+    "pygrc.landscapes.motion": {
+      "path": "src/pygrc/landscapes/motion.py",
+      "sha256": "0d3790354198a72f75d8c6ca44ef4c8023e9180eb6d03b2a9d81c6edb9706452",
+      "live_code_objects_checked": 41
+    },
+    "pygrc.landscapes.motion_loader": {
+      "path": "src/pygrc/landscapes/motion_loader.py",
+      "sha256": "8e14af636695b1a9d7a7487808f3ff98daca331c016c832679a271e3bc1b4977",
+      "live_code_objects_checked": 20
+    },
+    "pygrc.landscapes.motion_coherence": {
+      "path": "src/pygrc/landscapes/motion_coherence.py",
+      "sha256": "86e7fe23ccf9342c6cf27330994a00915b42f0691690c249a9be065b5b07db1c",
+      "live_code_objects_checked": 19
+    },
+    "pygrc.landscapes.motion_representative": {
+      "path": "src/pygrc/landscapes/motion_representative.py",
+      "sha256": "18d135532076eeab69d966adb99d1f346fda85ae474c7f34782cc985b85343c9",
+      "live_code_objects_checked": 27
+    },
+    "pygrc.landscapes.motion_identity": {
+      "path": "src/pygrc/landscapes/motion_identity.py",
+      "sha256": "af6a3af033a70305818b8dc747710075b8ec8315fafc32ef9692de222100a08c",
+      "live_code_objects_checked": 40
+    },
+    "pygrc.landscapes.motion_boundary": {
+      "path": "src/pygrc/landscapes/motion_boundary.py",
+      "sha256": "87fbfeb0439417e9ca0fd0e192a2b90393f1a067b12b4da97decd3ae171308ef",
+      "live_code_objects_checked": 25
+    },
+    "pygrc.landscapes.motion_topological": {
+      "path": "src/pygrc/landscapes/motion_topological.py",
+      "sha256": "ba75dde8bfffbe0e3e704bdd5cb45741ce542e59f1164bf67996dd1c839af9de",
+      "live_code_objects_checked": 28
+    },
+    "pygrc.landscapes": {
+      "path": "src/pygrc/landscapes/__init__.py",
+      "sha256": "6b99bcf78c2674e8505429d9a228572b32aad5c7141e76bb202fad0aadad5a53",
+      "live_code_objects_checked": 0
+    },
+    "pygrc.models.grc_9_coarse": {
+      "path": "src/pygrc/models/grc_9_coarse.py",
+      "sha256": "43a20c5ae379e488ce7abcdc8b1f2b68007ba27fd27b3561f361d180e5906b49",
+      "live_code_objects_checked": 5
+    },
+    "pygrc.models.grc_9_expansion": {
+      "path": "src/pygrc/models/grc_9_expansion.py",
+      "sha256": "f71b7370e56b59328692000831842435e6512dcc3539f8dd9e5ac059f1eb1569",
+      "live_code_objects_checked": 5
+    },
+    "pygrc.models.grc_9_ports": {
+      "path": "src/pygrc/models/grc_9_ports.py",
+      "sha256": "7f9142f96de1e1a2880db5b0d767df4a78866093a8b051a2615778d3fa8ac780",
+      "live_code_objects_checked": 6
+    },
+    "pygrc.models.grc_9_state": {
+      "path": "src/pygrc/models/grc_9_state.py",
+      "sha256": "b3d979fe4bffbc86fe256f71ff4894c3da03fd4af706457a281f650242ca26b7",
+      "live_code_objects_checked": 0
+    },
+    "pygrc.models.grc_9": {
+      "path": "src/pygrc/models/grc_9.py",
+      "sha256": "a857f41ea919bb311d283681a13609e4bac6c5295d975ab61e57559454131de1",
+      "live_code_objects_checked": 96
+    },
+    "pygrc.landscapes.extensions.grcv3": {
+      "path": "src/pygrc/landscapes/extensions/grcv3.py",
+      "sha256": "6221464121cd6bcfa8f9250fe65db6da1196640bbd37ce46d1d0adbbb80000f8",
+      "live_code_objects_checked": 36
+    },
+    "pygrc.landscapes.extensions.grcl9.manifest": {
+      "path": "src/pygrc/landscapes/extensions/grcl9/manifest.py",
+      "sha256": "d8833f5e4b3456267471ad242ad93d2d392eb7c1e412206551e194a57792d942",
+      "live_code_objects_checked": 29
+    },
+    "pygrc.landscapes.extensions.grcl9.schema": {
+      "path": "src/pygrc/landscapes/extensions/grcl9/schema.py",
+      "sha256": "802bed1568ae657918cf12fd1872a5fbfb62fbcf1345ca2799d14a25e33a07ed",
+      "live_code_objects_checked": 45
+    },
+    "pygrc.landscapes.extensions.grcl9.fixtures": {
+      "path": "src/pygrc/landscapes/extensions/grcl9/fixtures.py",
+      "sha256": "94b43d5dedb627962e11c5febd37d7f8c66c5deab840b63437e2aeb6f9c48218",
+      "live_code_objects_checked": 9
+    },
+    "pygrc.landscapes.extensions.grcl9.examples": {
+      "path": "src/pygrc/landscapes/extensions/grcl9/examples.py",
+      "sha256": "2e1b63cdd77eb33d0c45bb497084da06d2370a575f2c026ffb75739b96ae83d9",
+      "live_code_objects_checked": 83
+    },
+    "pygrc.landscapes.extensions.grcl9": {
+      "path": "src/pygrc/landscapes/extensions/grcl9/__init__.py",
+      "sha256": "730c9dc782cf00a4e6ac669083a36bafe0fbbcdf6a1b20cab9fc0c5681a454f8",
+      "live_code_objects_checked": 0
+    },
+    "pygrc.landscapes.extensions.grcl9v3.manifest": {
+      "path": "src/pygrc/landscapes/extensions/grcl9v3/manifest.py",
+      "sha256": "0d269952b95fa10a37879acf69f6b9b256bb9a4f9a64d0f2e07f759924e3ebf6",
+      "live_code_objects_checked": 43
+    },
+    "pygrc.landscapes.extensions.grcl9v3.schema": {
+      "path": "src/pygrc/landscapes/extensions/grcl9v3/schema.py",
+      "sha256": "d35dc4f944d72c70f98ae134685e3783fd5d551ee91fb0134a5205f1464b0f10",
+      "live_code_objects_checked": 64
+    },
+    "pygrc.landscapes.extensions.grcl9v3.fixtures": {
+      "path": "src/pygrc/landscapes/extensions/grcl9v3/fixtures.py",
+      "sha256": "502269198206cee130430747ff6a482356d32354843f59542796ea063edc42df",
+      "live_code_objects_checked": 23
+    },
+    "pygrc.landscapes.extensions.grcl9v3.examples": {
+      "path": "src/pygrc/landscapes/extensions/grcl9v3/examples.py",
+      "sha256": "07530212437d4a17812f7f467f64eb6f3cd6e2c71feb2f82df1e02cf4a164ccf",
+      "live_code_objects_checked": 44
+    },
+    "pygrc.landscapes.extensions.grcl9v3.selector_expansions": {
+      "path": "src/pygrc/landscapes/extensions/grcl9v3/selector_expansions.py",
+      "sha256": "6bdd8f8ae9417a3dcec92bd4423047e7bc1daa686056b2583fe763220b9ad56a",
+      "live_code_objects_checked": 1
+    },
+    "pygrc.landscapes.extensions.grcl9v3": {
+      "path": "src/pygrc/landscapes/extensions/grcl9v3/__init__.py",
+      "sha256": "a32ee2195e77cf83fce0bc63ec351d18c2f74f0978866c936c9f827417efcf8d",
+      "live_code_objects_checked": 0
+    },
+    "pygrc.landscapes.extensions": {
+      "path": "src/pygrc/landscapes/extensions/__init__.py",
+      "sha256": "25cdbde259a934d1f4acba11c8f5a1f4fa301d190fc229528de5f35c59f15f34",
+      "live_code_objects_checked": 0
+    },
+    "pygrc.models.grc_9_grcl9_provenance": {
+      "path": "src/pygrc/models/grc_9_grcl9_provenance.py",
+      "sha256": "c21593818c52c905c19f865d9fbe22937d560478b2c0f65efd44ae635b9fb122",
+      "live_code_objects_checked": 2
+    },
+    "pygrc.models.grc_9_grcl9_lowering": {
+      "path": "src/pygrc/models/grc_9_grcl9_lowering.py",
+      "sha256": "40a855d6f56417cabf442c68cd32280b1c07dcc4075a8cad2570750c9cca6c7c",
+      "live_code_objects_checked": 35
+    },
+    "pygrc.models.grc_v2_state": {
+      "path": "src/pygrc/models/grc_v2_state.py",
+      "sha256": "d9edff07065309059d030531febec4dd63c9586745f26cb9dd8eb309b357a659",
+      "live_code_objects_checked": 0
+    },
+    "pygrc.models.grc_v2": {
+      "path": "src/pygrc/models/grc_v2.py",
+      "sha256": "949bbb90766193934c96e4c4cbb84d3838e175b92968d93f9650477cce9e925e",
+      "live_code_objects_checked": 73
+    },
+    "pygrc.models.grc_v2_checkpoints": {
+      "path": "src/pygrc/models/grc_v2_checkpoints.py",
+      "sha256": "e51abbec14fd03d5a54ab022529a2fce1b55d2f5cfce574ffdceae388225e45e",
+      "live_code_objects_checked": 1
+    },
+    "pygrc.models.grc_v2_landscape": {
+      "path": "src/pygrc/models/grc_v2_landscape.py",
+      "sha256": "a531e7c4c8dee941b353696ff47b6265ecc03ac0ded07ab0fe9756479842661e",
+      "live_code_objects_checked": 35
+    },
+    "pygrc.models.grc_9_landscape": {
+      "path": "src/pygrc/models/grc_9_landscape.py",
+      "sha256": "6f3059b701e28413b0252442d4b8449cfb8ccb341338b14da71d810d5965f244",
+      "live_code_objects_checked": 17
+    },
+    "pygrc.models.grc_9_v3_state": {
+      "path": "src/pygrc/models/grc_9_v3_state.py",
+      "sha256": "4ab5ffcb95d69a0767b24d6c95277ba3619a5d477c4865cc0d31735a2377918e",
+      "live_code_objects_checked": 0
+    },
+    "pygrc.models.grc_9_v3_choice": {
+      "path": "src/pygrc/models/grc_9_v3_choice.py",
+      "sha256": "ab8be0391a37e71d4610022afe3f64dac6102b929ade4448a59e7f4e02167933",
+      "live_code_objects_checked": 16
+    },
+    "pygrc.models.grc_9_v3_sparks": {
+      "path": "src/pygrc/models/grc_9_v3_sparks.py",
+      "sha256": "fa1db78355e1dba41245da44c9c515ac09820035ca451723873da779420ee820",
+      "live_code_objects_checked": 29
+    },
+    "pygrc.models.grc_v3_state": {
+      "path": "src/pygrc/models/grc_v3_state.py",
+      "sha256": "d0399ce9a733b8aeb1662de72ad0088cceab239e9b0dcf51c52367e70eb65e1c",
+      "live_code_objects_checked": 0
+    },
+    "pygrc.models.grc_v3_differential": {
+      "path": "src/pygrc/models/grc_v3_differential.py",
+      "sha256": "3e88a76d7eea94b255c588300305e5119cebc1e2599dd9a43e0aaf80cc9af837",
+      "live_code_objects_checked": 17
+    },
+    "pygrc.models.grc_9_v3_runtime": {
+      "path": "src/pygrc/models/grc_9_v3_runtime.py",
+      "sha256": "f6f12de4e9bf66cd97b4063854ea225ae00874fed7073d4e72775891db54f502",
+      "live_code_objects_checked": 37
+    },
+    "pygrc.models.grc_9_v3": {
+      "path": "src/pygrc/models/grc_9_v3.py",
+      "sha256": "d297def1eddfaf79a7ad3d6b676caaeebb29e6d7235f4fac5c6729bd7e26ca9e",
+      "live_code_objects_checked": 66
+    },
+    "pygrc.models.grc_9_v3_grcl9v3_provenance": {
+      "path": "src/pygrc/models/grc_9_v3_grcl9v3_provenance.py",
+      "sha256": "607c65b7dc28e45c5c73801e76144f112e122948d9b478b2722575788407e33b",
+      "live_code_objects_checked": 2
+    },
+    "pygrc.models.grc_9_v3_grcl9v3_lowering": {
+      "path": "src/pygrc/models/grc_9_v3_grcl9v3_lowering.py",
+      "sha256": "653d0963d4df55c278cf1f6fc475a764ef03a13eee7d2ada756f5605434a1f05",
+      "live_code_objects_checked": 36
+    },
+    "pygrc.models.lgrc_9_v3_contract": {
+      "path": "src/pygrc/models/lgrc_9_v3_contract.py",
+      "sha256": "b86fb41ab530a7aa01abdf01dbc048da10c2e312a18c8b874cbd1386c4794680",
+      "live_code_objects_checked": 126
+    },
+    "pygrc.models.lgrc_9_v3_packets": {
+      "path": "src/pygrc/models/lgrc_9_v3_packets.py",
+      "sha256": "14d99292e18e2fe34e0fd5c6a1f69051e82115a051d142f10792775e2321e58f",
+      "live_code_objects_checked": 46
+    },
+    "pygrc.models.lgrc_9_v3_topology": {
+      "path": "src/pygrc/models/lgrc_9_v3_topology.py",
+      "sha256": "f3cf7e2281c4073531a5951a19f9ae9141a336f9f9b6398f76eda7e1493abde4",
+      "live_code_objects_checked": 51
+    },
+    "pygrc.models.lgrc_9_v3_identity": {
+      "path": "src/pygrc/models/lgrc_9_v3_identity.py",
+      "sha256": "02a7b9dddb16b925042e014725aa13f66883f16f05f04ca754883dd002fc4ac2",
+      "live_code_objects_checked": 8
+    },
+    "pygrc.models.lgrc_9_v3_timing": {
+      "path": "src/pygrc/models/lgrc_9_v3_timing.py",
+      "sha256": "3a8528da792ee57ea6a229cdf952af38a52c3f2689525cf12adf63a27a63983c",
+      "live_code_objects_checked": 25
+    },
+    "pygrc.models.lgrc_9_v3_runtime_state": {
+      "path": "src/pygrc/models/lgrc_9_v3_runtime_state.py",
+      "sha256": "ef409403954749a45fbf444116a9a253b95b3e2d74a119006f1cbb364a83630c",
+      "live_code_objects_checked": 18
+    },
+    "pygrc.models.lgrc_9_v3_runtime": {
+      "path": "src/pygrc/models/lgrc_9_v3_runtime.py",
+      "sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4",
+      "live_code_objects_checked": 201
+    },
+    "pygrc.models.lgrc_9_v3_construction": {
+      "path": "src/pygrc/models/lgrc_9_v3_construction.py",
+      "sha256": "c59f8d0747a5a6f5c954927fd1e1b1d71464bdffbdbf0401e39b17219a364938",
+      "live_code_objects_checked": 16
+    },
+    "pygrc.models.lgrc_9_v3": {
+      "path": "src/pygrc/models/lgrc_9_v3.py",
+      "sha256": "37f9f9a0452fba447c875f7e652d8632dc49bb159c0d1af5caecb4ce4acf48bb",
+      "live_code_objects_checked": 0
+    },
+    "pygrc.models.lgrc_9_v3_restoration": {
+      "path": "src/pygrc/models/lgrc_9_v3_restoration.py",
+      "sha256": "e7c6b143c08eb0bda210152aeb0f6b12e0efcb666268416404ed3b649dd46931",
+      "live_code_objects_checked": 16
+    },
+    "pygrc.models.grc_v3": {
+      "path": "src/pygrc/models/grc_v3.py",
+      "sha256": "01081bc3f2b394a0797d93c38539a3d6139c6bb412323f6eda09a4fe7c66b473",
+      "live_code_objects_checked": 120
+    },
+    "pygrc.models.grc_v3_landscape_native": {
+      "path": "src/pygrc/models/grc_v3_landscape_native.py",
+      "sha256": "d4a93b18bfeb71eb5098309b9ed0c2ae42c41b387b964a1ebbf5a43fd9ddb019",
+      "live_code_objects_checked": 20
+    },
+    "pygrc.models.grc_v3_landscape": {
+      "path": "src/pygrc/models/grc_v3_landscape.py",
+      "sha256": "a6d81d828bcf6e8c67d3e2e40bdbffd311d7126cf0a4b3b5efb72559aef687ad",
+      "live_code_objects_checked": 71
+    },
+    "pygrc.models": {
+      "path": "src/pygrc/models/__init__.py",
+      "sha256": "23768e181455f4e7eb68908cdac532464c063fa5eb4250c4d05537eca0dcaa70",
+      "live_code_objects_checked": 0
+    },
+    "pygrc.telemetry.schema": {
+      "path": "src/pygrc/telemetry/schema.py",
+      "sha256": "a7800ab181ec96844da88d82538a8e42318dd54ee6d9a9a9ab092821cc947fdc",
+      "live_code_objects_checked": 20
+    },
+    "pygrc.telemetry.io": {
+      "path": "src/pygrc/telemetry/io.py",
+      "sha256": "cff2c5660bbcff93fc3b65ee9c71c6672aa8126e78946d9f2b04ef16cc029929",
+      "live_code_objects_checked": 53
+    },
+    "pygrc.telemetry.reports": {
+      "path": "src/pygrc/telemetry/reports.py",
+      "sha256": "99f641686d71fd4424390de5caef81ae634615d69d1fd974cab4934dfc82d556",
+      "live_code_objects_checked": 7
+    },
+    "pygrc.telemetry.compare": {
+      "path": "src/pygrc/telemetry/compare.py",
+      "sha256": "75702eebcf38a5f3286d6207d214224b3a6596c6c0949f379cecc650e5f3ec11",
+      "live_code_objects_checked": 4
+    },
+    "pygrc.telemetry.grc9_contract": {
+      "path": "src/pygrc/telemetry/grc9_contract.py",
+      "sha256": "2566ff2d1a94fc732a2e954f42c35fc7974d37f10d393a406779a9d0b9121cbf",
+      "live_code_objects_checked": 66
+    },
+    "pygrc.models.grc_9_checkpoints": {
+      "path": "src/pygrc/models/grc_9_checkpoints.py",
+      "sha256": "283b662b3ac232465504082ae68a874d5b00f7745ee39eeee2d03828bbfa85d7",
+      "live_code_objects_checked": 6
+    },
+    "pygrc.telemetry._experiment_defaults": {
+      "path": "src/pygrc/telemetry/_experiment_defaults.py",
+      "sha256": "720fc58700e9a620315040399b81a6e7f510b3ecd575f0ea2eb9b82527931d75",
+      "live_code_objects_checked": 0
+    },
+    "pygrc.telemetry.grcv3_contract": {
+      "path": "src/pygrc/telemetry/grcv3_contract.py",
+      "sha256": "ea696cd5676769217f35449c7f5f20a43b0178567223ac81e9b81d53220c55a4",
+      "live_code_objects_checked": 37
+    },
+    "pygrc.telemetry._telemetry_utils": {
+      "path": "src/pygrc/telemetry/_telemetry_utils.py",
+      "sha256": "49df2b9f2676c59ba65fa3524c9ddc59e3232a4fa883a1b05229b191a7d340bb",
+      "live_code_objects_checked": 2
+    },
+    "pygrc.telemetry._grcv3_extensions": {
+      "path": "src/pygrc/telemetry/_grcv3_extensions.py",
+      "sha256": "d45a93b05760307a1eca5332e5363a4134bb86ca358586d78ca1b9032ca7bb73",
+      "live_code_objects_checked": 23
+    },
+    "pygrc.telemetry._grcv3_trace_utils": {
+      "path": "src/pygrc/telemetry/_grcv3_trace_utils.py",
+      "sha256": "df577a990c175407371aa6349b6822e94e77ef7ec88b7e86c7ec25b41ed7043f",
+      "live_code_objects_checked": 29
+    },
+    "pygrc.telemetry._grcv3_collapse_traces": {
+      "path": "src/pygrc/telemetry/_grcv3_collapse_traces.py",
+      "sha256": "d7267ecad2e39cf919eb2c9600901abf6743ab3c873c23f435da23e461310425",
+      "live_code_objects_checked": 21
+    },
+    "pygrc.telemetry._grcv3_failure_traces": {
+      "path": "src/pygrc/telemetry/_grcv3_failure_traces.py",
+      "sha256": "ab6aaf648bcf4a31103b9370c0ee049fe1376ac7f276c1c2dfbaeed27f14895e",
+      "live_code_objects_checked": 7
+    },
+    "pygrc.models.grc_v3_checkpoints": {
+      "path": "src/pygrc/models/grc_v3_checkpoints.py",
+      "sha256": "ed27a01eb18decc506450d0a25cd5fc7861c1f1bcf3fce5af84373b42eb67b96",
+      "live_code_objects_checked": 9
+    },
+    "pygrc.telemetry.recorder": {
+      "path": "src/pygrc/telemetry/recorder.py",
+      "sha256": "404c5fcc5859dc608d71775bc8050b4d42467cef4569839fbe439cd7f04d6613",
+      "live_code_objects_checked": 8
+    },
+    "pygrc.telemetry._grcv3_lane_runner": {
+      "path": "src/pygrc/telemetry/_grcv3_lane_runner.py",
+      "sha256": "5c7c87c20ea51db8985f56a3906d32ddadb70ec708473d38b339ea3c3801562c",
+      "live_code_objects_checked": 3
+    },
+    "pygrc.telemetry._grcv3_settlement_traces": {
+      "path": "src/pygrc/telemetry/_grcv3_settlement_traces.py",
+      "sha256": "ece0fbb52ac6bddfaae6a7e993dfdbefc91fb54fb5a137e19f28e740686010d3",
+      "live_code_objects_checked": 10
+    },
+    "pygrc.telemetry._grc9_extensions": {
+      "path": "src/pygrc/telemetry/_grc9_extensions.py",
+      "sha256": "ef7ef3aba763feaaa7a6485891a7396d628adb5ff0b7c8afa1586f457d6acb9f",
+      "live_code_objects_checked": 42
+    },
+    "pygrc.telemetry._experiment_results": {
+      "path": "src/pygrc/telemetry/_experiment_results.py",
+      "sha256": "5b4155119c78059e01a4c32ea7df0d19454f3c483b7a3e71ac4b4816441d5628",
+      "live_code_objects_checked": 0
+    },
+    "pygrc.telemetry.experiments": {
+      "path": "src/pygrc/telemetry/experiments.py",
+      "sha256": "1ddd8406c2a1de57f86e17df4b015044fd88ef08f03f297df1d8231650386a92",
+      "live_code_objects_checked": 50
+    },
+    "pygrc.telemetry.grc9v3_contract": {
+      "path": "src/pygrc/telemetry/grc9v3_contract.py",
+      "sha256": "86619fb1484971bfa5476eeb2e825c9f9ad386aa91d7296606e848a119cad86a",
+      "live_code_objects_checked": 69
+    },
+    "pygrc.telemetry.lgrc9v3_contract": {
+      "path": "src/pygrc/telemetry/lgrc9v3_contract.py",
+      "sha256": "5b35cce35bd2a1323efce682c10938b6e005baa6106bfa879b8f06b58a87899f",
+      "live_code_objects_checked": 30
+    },
+    "pygrc.telemetry.grcv3_pressure_boundary_selectors": {
+      "path": "src/pygrc/telemetry/grcv3_pressure_boundary_selectors.py",
+      "sha256": "3ca51479d74b862db1fc915173b47491ee034f559b7420caf7cdf5da4e4ed3cb",
+      "live_code_objects_checked": 6
+    },
+    "pygrc.telemetry": {
+      "path": "src/pygrc/telemetry/__init__.py",
+      "sha256": "ec2c17bcbc8d36ab411296c55e2c9b7c23170edacf837b9a95827d65ba51fae3",
+      "live_code_objects_checked": 1
+    },
+    "pygrc.utils": {
+      "path": "src/pygrc/utils/__init__.py",
+      "sha256": "465e64f97c386e4b932eb520932858cab261e75623af8812a80ecc7695054e16",
+      "live_code_objects_checked": 0
+    },
+    "pygrc.visualization.layout": {
+      "path": "src/pygrc/visualization/layout.py",
+      "sha256": "21981d0c825b1e758c0ce3e4ecb5818e9587af201baff7eb8aea312ee06d116b",
+      "live_code_objects_checked": 5
+    },
+    "pygrc.visualization.graph_render": {
+      "path": "src/pygrc/visualization/graph_render.py",
+      "sha256": "dc3a88e4aa4d5b291cb34b71d9109b708345c1111667a7fd0c2a54c523255c0f",
+      "live_code_objects_checked": 56
+    },
+    "pygrc.visualization.render": {
+      "path": "src/pygrc/visualization/render.py",
+      "sha256": "6f1f6629a3da4895a5e3fcdf5e073843da66cf5b02a4b26d76652275e9f0d340",
+      "live_code_objects_checked": 31
+    },
+    "pygrc.visualization.representative_graphs": {
+      "path": "src/pygrc/visualization/representative_graphs.py",
+      "sha256": "48107e4d97556e53e60190a5fab1cfb383462b3f6680c9ce1c813f3b952c73ef",
+      "live_code_objects_checked": 10
+    },
+    "pygrc.visualization.representative": {
+      "path": "src/pygrc/visualization/representative.py",
+      "sha256": "a13e6125fd621bf02dc8bfaf76a76f7224cd722c0ebeef21cd43d302c0b5811e",
+      "live_code_objects_checked": 12
+    },
+    "pygrc.visualization": {
+      "path": "src/pygrc/visualization/__init__.py",
+      "sha256": "0f3093af422e6eb2e904052798fa6d801bf97f1666c834e3b81a25078ae397eb",
+      "live_code_objects_checked": 1
+    },
+    "pygrc.models.grc_v4_codec": {
+      "path": "src/pygrc/models/grc_v4_codec.py",
+      "sha256": "8d2460106d45748fdba69ebaa78930121c0f1a3296399bf3cdacf1c1abb40a46",
+      "source_declared_code_objects_checked": 17
+    },
+    "pygrc.models.grc_v4_state": {
+      "path": "src/pygrc/models/grc_v4_state.py",
+      "sha256": "b0ccf06ef91b66feb8670fb67281465998f4bcb085c4d547fedd3ce6d85ad3cb",
+      "source_declared_code_objects_checked": 46
+    },
+    "pygrc.models.grc_v4_profile": {
+      "path": "src/pygrc/models/grc_v4_profile.py",
+      "sha256": "188e4ceb92b6a36fe81849911b88b233b8dd16bf3de07383e1508d76232fdbfb",
+      "live_code_objects_checked": 21
+    },
+    "pygrc.models.grc_v4": {
+      "path": "src/pygrc/models/grc_v4.py",
+      "sha256": "7b692142a98c8010f9f0521e0c54c4e6f91dc78909dcffab8e60a9f108c702e9",
+      "source_declared_code_objects_checked": 11
+    },
+    "pygrc.models.grc_v4_geometry": {
+      "path": "src/pygrc/models/grc_v4_geometry.py",
+      "sha256": "cb2d9b900d0091b59e4fe77ef4acc4037225e79b2ee166c99486c93b307c92a4",
+      "source_declared_code_objects_checked": 91
+    },
+    "pygrc.models.grc_v4_transport": {
+      "path": "src/pygrc/models/grc_v4_transport.py",
+      "sha256": "4ead39ae9343c4873a7cef149471e72ce6df562f82b2a6f03c3c00f1b07f4730",
+      "source_declared_code_objects_checked": 14
+    },
+    "pygrc.models.grc_v4_candidate_c": {
+      "path": "src/pygrc/models/grc_v4_candidate_c.py",
+      "sha256": "59dde00ff754e9ce8879bdb6b3980fa2db9eefab98b02698cb0600fda356c2c6",
+      "source_declared_code_objects_checked": 37
+    },
+    "pygrc.models.grc_v4_realizations": {
+      "path": "src/pygrc/models/grc_v4_realizations.py",
+      "sha256": "2fd35e9a7641fc460651497120f42ee4407959243e8970718727b01398375753",
+      "source_declared_code_objects_checked": 7
+    },
+    "pygrc.models.grc_v4_step": {
+      "path": "src/pygrc/models/grc_v4_step.py",
+      "sha256": "cf8eda58bf1582a76360bb88eed07405315820c9e2c63980170b1f350ee1f16d",
+      "source_declared_code_objects_checked": 23
+    },
+    "pygrc.models.grc_v4_lifecycle": {
+      "path": "src/pygrc/models/grc_v4_lifecycle.py",
+      "sha256": "04e1afffa886778730512f84e0633b0aa44ffcb7a2feae5de5b9802476bccc06",
+      "source_declared_code_objects_checked": 45
+    },
+    "tests.models.grcv4_reference_oracles": {
+      "path": "tests/models/grcv4_reference_oracles.py",
+      "sha256": "b973babbca55854f2b2a9f629b4b914cf767627533b26460013c8b9cfa611ea4",
+      "live_code_objects_checked": 19
+    },
+    "tests.models.test_grc_v4_geometry": {
+      "path": "tests/models/test_grc_v4_geometry.py",
+      "sha256": "b3383f393fbafa0c7be228e0011fb51f8b705ffaf4b5b2721c0a3cfd0630e69a",
+      "live_code_objects_checked": 135
+    },
+    "tests.models.test_grc_v4_profile": {
+      "path": "tests/models/test_grc_v4_profile.py",
+      "sha256": "6dcd4a0abffca13bc8a0c0e7e697a54e421ba079eaef5d77e4609184d67a0dea",
+      "live_code_objects_checked": 28
+    },
+    "tests.models.test_grc_v4_candidate_c": {
+      "path": "tests/models/test_grc_v4_candidate_c.py",
+      "sha256": "a9fd322349c67745dda9f915c78f10ecdf452c783064e3b5717acd079b45bfca",
+      "source_declared_code_objects_checked": 101
+    },
+    "tests.models.test_grc_v4_realizations": {
+      "path": "tests/models/test_grc_v4_realizations.py",
+      "sha256": "b88383e6384c89453ebb8434fde30634dc0bdd13a08b4cfcb6f6b71a4d5c3193",
+      "source_declared_code_objects_checked": 26
+    },
+    "tests.models.test_grc_v4_transport": {
+      "path": "tests/models/test_grc_v4_transport.py",
+      "sha256": "ad44a64357ad5cef25deaf2c778a4a4a0ea4ec016f461ce40e07f0724c09f2a9",
+      "live_code_objects_checked": 42
+    },
+    "tests.models.test_grc_v4": {
+      "path": "tests/models/test_grc_v4.py",
+      "sha256": "6fef68572fb17afdd48a679554d0cc6abaae8d34c95ca31f2e33b3ec8248c193",
+      "source_declared_code_objects_checked": 32
+    },
+    "tests.models.test_grc_v4_codec": {
+      "path": "tests/models/test_grc_v4_codec.py",
+      "sha256": "465bc3448fcc196e01ab0003665e5eeebde581208a5628f0adeeeabebb770983",
+      "source_declared_code_objects_checked": 18
+    },
+    "tests.models.test_grc_v4_lifecycle": {
+      "path": "tests/models/test_grc_v4_lifecycle.py",
+      "sha256": "6a66c89447e0f1bb33705f27eecb375535d5d4f611a0cd11f62764aab9958441",
+      "source_declared_code_objects_checked": 93
+    },
+    "tests.models.test_grc_v4_state": {
+      "path": "tests/models/test_grc_v4_state.py",
+      "sha256": "d7ce02acc2d663fd3f4513158193dd473a78c1f42bc985edfa2d2eff0943fb54",
+      "source_declared_code_objects_checked": 52
+    },
+    "__main__": {
+      "path": "tests/models/test_grc_v4_lifecycle.py",
+      "sha256": "6a66c89447e0f1bb33705f27eecb375535d5d4f611a0cd11f62764aab9958441",
+      "source_declared_code_objects_checked": 93
+    },
+    "pygrc": {
+      "path": "src/pygrc/__init__.py",
+      "sha256": "87cbe85db2f0f16b428df7f76701b68db79ffe1908e76ee71b2134ef20453a40",
+      "source_declared_code_objects_checked": 0
+    }
+  },
+  "results": {
+    "tests_run": 135,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "nonpassing_methods": [],
+    "executed_ids_sha256": "3af97a26d96760daeca8cf9c7093bf7b38d03edf2852a218d538b53745894881"
+  },
+  "loaded_sources_after": {
+    "tests": {
+      "path": "tests/__init__.py",
+      "sha256": "b8c1c2c06b79a3cda0ddac97e383a7023ef0b2901a0866925d7b96699a562434",
+      "live_code_objects_checked": 0
+    },
+    "tests.models": {
+      "path": "tests/models/__init__.py",
+      "sha256": "a75a97f69ccfe9043bca38dcb91a41a7393d299d8af2fe804cc034930fb6c440",
+      "live_code_objects_checked": 0
+    },
+    "pygrc.causal_pathways.binding.identity": {
+      "path": "src/pygrc/causal_pathways/binding/identity.py",
+      "sha256": "bb2d1208b12b277e795c8358bdb2a16b53dd757b34bdd3dde4da6021d0050f23",
+      "live_code_objects_checked": 19
+    },
+    "pygrc.causal_pathways.binding.effects": {
+      "path": "src/pygrc/causal_pathways/binding/effects.py",
+      "sha256": "882983fc3aa64330e34431e898610ff451f026e0fe76cf84c89f7cc866971d90",
+      "live_code_objects_checked": 8
+    },
+    "pygrc.causal_pathways.binding.authority": {
+      "path": "src/pygrc/causal_pathways/binding/authority.py",
+      "sha256": "17abcfb0f42f3a85dfd587d038e92bab321c8afe24e25a1854dc6c662cde14e2",
+      "live_code_objects_checked": 29
+    },
+    "pygrc.causal_pathways.binding.candidates": {
+      "path": "src/pygrc/causal_pathways/binding/candidates.py",
+      "sha256": "fdd2ae9cc6a7bb1028eb6d9a9dfa3dec5ab4eb68d9c62fab42259c19fa32b3e9",
+      "live_code_objects_checked": 48
+    },
+    "pygrc.causal_pathways.binding.scopes": {
+      "path": "src/pygrc/causal_pathways/binding/scopes.py",
+      "sha256": "f6c4b40a03c96758588203c7fbb7a5d20872bf90ab4903be604fab4c5122c49c",
+      "live_code_objects_checked": 81
+    },
+    "pygrc.causal_pathways.binding.artifacts": {
+      "path": "src/pygrc/causal_pathways/binding/artifacts.py",
+      "sha256": "770507a7e45a6d6ab39ff5ea8328893791910945341fe6a5369f312fb1618d59",
+      "live_code_objects_checked": 25
+    },
+    "pygrc.causal_pathways.binding.session": {
+      "path": "src/pygrc/causal_pathways/binding/session.py",
+      "sha256": "98b0a0eaeff5b018cf36872fe0a5a3102b33cc27f7ba7eaa5de8407637657972",
+      "live_code_objects_checked": 61
+    },
+    "pygrc.causal_pathways.binding": {
+      "path": "src/pygrc/causal_pathways/binding/__init__.py",
+      "sha256": "1c639c99991a04337af6f6799264ca6d92fed8b3eb83fb38a2c784854ef52c34",
+      "live_code_objects_checked": 0
+    },
+    "pygrc.causal_pathways": {
+      "path": "src/pygrc/causal_pathways/__init__.py",
+      "sha256": "84eafd80a26d40399ee22f9e0f670c5eaa40840841742a5b37a5a0401061e74e",
+      "live_code_objects_checked": 0
+    },
+    "pygrc.core.errors": {
+      "path": "src/pygrc/core/errors.py",
+      "sha256": "6cebc00fd55fb6f78f505510c71ff6e41fc76877621dbb8832c342b1ec728a31",
+      "live_code_objects_checked": 0
+    },
+    "pygrc.core.events": {
+      "path": "src/pygrc/core/events.py",
+      "sha256": "a77be381e49e84745a687be432fd03ca0cbc394efe749db2538542d3cc80f9b2",
+      "live_code_objects_checked": 0
+    },
+    "pygrc.core.ids": {
+      "path": "src/pygrc/core/ids.py",
+      "sha256": "f57ae8530b5b943aad37b247b0716df583dafbf6ceffaa970cbf02cc6907d428",
+      "live_code_objects_checked": 19
+    },
+    "pygrc.core.observables": {
+      "path": "src/pygrc/core/observables.py",
+      "sha256": "7e91df6d1ba0929e45f22f34e928551270a5c55828199876c4c8d463e2febf5e",
+      "live_code_objects_checked": 0
+    },
+    "pygrc.core.types": {
+      "path": "src/pygrc/core/types.py",
+      "sha256": "63932777bcf619cf8719a69b16adce0dd61e4b9296308ab6f8e41f925048c6f8",
+      "live_code_objects_checked": 0
+    },
+    "pygrc.core.mutations": {
+      "path": "src/pygrc/core/mutations.py",
+      "sha256": "8072749b817b7a8e6f0b750b6e476e4355845f75ffe15315cec926d67369b207",
+      "live_code_objects_checked": 2
+    },
+    "pygrc.core.graph": {
+      "path": "src/pygrc/core/graph.py",
+      "sha256": "7a7383934a6c8fa78e05a4f7a6435b3293acfc59bcfdcdc8e3b73310f51867c6",
+      "live_code_objects_checked": 27
+    },
+    "pygrc.core.storage": {
+      "path": "src/pygrc/core/storage.py",
+      "sha256": "a73d30238bc81dc3c366f04f3e8d5e8a266d0a683e7db88560196930d279c397",
+      "live_code_objects_checked": 56
+    },
+    "pygrc.core.serialization": {
+      "path": "src/pygrc/core/serialization.py",
+      "sha256": "a1ce1489870962af1032b8e69acc09ba8b9dcbcefaf86ea97250fc9a47009cf4",
+      "live_code_objects_checked": 30
+    },
+    "pygrc.core.digests": {
+      "path": "src/pygrc/core/digests.py",
+      "sha256": "c54fdedbea3dc9547ae9450bcc4d69385a7f0cba5b9e592dee8d785fbd3c5f07",
+      "live_code_objects_checked": 3
+    },
+    "pygrc.core.backends": {
+      "path": "src/pygrc/core/backends.py",
+      "sha256": "344f13dcf664ecbc1ec591cd1cc4c9be241d8c292ca736551201eee81a2c8c07",
+      "live_code_objects_checked": 9
+    },
+    "pygrc.core.capabilities": {
+      "path": "src/pygrc/core/capabilities.py",
+      "sha256": "40fb8fc51284c25d99b7bb9310ebff7055f170d46a0a978d190ccd9f2b97a41b",
+      "live_code_objects_checked": 1
+    },
+    "pygrc.core.interfaces": {
+      "path": "src/pygrc/core/interfaces.py",
+      "sha256": "551d68fc103285608cef1a7ea4a69b9455181de21d9f91ea61cdd80c6065bc8f",
+      "live_code_objects_checked": 14
+    },
+    "pygrc.core.params": {
+      "path": "src/pygrc/core/params.py",
+      "sha256": "ff1a1a12ba050fc8654c88b0d786e9a342b6fd1bab656a12b95cdc45a5976ca4",
+      "live_code_objects_checked": 4
+    },
+    "pygrc.core": {
+      "path": "src/pygrc/core/__init__.py",
+      "sha256": "1de90ece2242642584f399b744240207a15f1d56b1ee62247bfb1389647ec7ae",
+      "live_code_objects_checked": 0
+    },
+    "pygrc.integrations.graph_adapter_boundary": {
+      "path": "src/pygrc/integrations/graph_adapter_boundary.py",
+      "sha256": "86497ebec49fb8918a8f22327320648ffad0f04eadda7498fffde15feb481e0d",
+      "live_code_objects_checked": 5
+    },
+    "pygrc.integrations": {
+      "path": "src/pygrc/integrations/__init__.py",
+      "sha256": "24feb5ce79dfe64bbaae8ae14fb5ebb7bfc6a508630beef433b08bab65f23237",
+      "live_code_objects_checked": 0
+    },
+    "pygrc.landscapes.seed": {
+      "path": "src/pygrc/landscapes/seed.py",
+      "sha256": "457c4bc2fd2ffd597be29394087864d2295bc3a60a432fed604c801fbec7aac2",
+      "live_code_objects_checked": 0
+    },
+    "pygrc.landscapes.validation": {
+      "path": "src/pygrc/landscapes/validation.py",
+      "sha256": "bf2428dda75061cedb2c8a8074df8c5aa27a7f601b5a94b4fd0070cb0580a72b",
+      "live_code_objects_checked": 13
+    },
+    "pygrc.landscapes.pde_translation": {
+      "path": "src/pygrc/landscapes/pde_translation.py",
+      "sha256": "97af774c5243c017055ebe11bacf787d2e0411966e18e6cc70965388c446ff8f",
+      "live_code_objects_checked": 27
+    },
+    "pygrc.landscapes.equivalence": {
+      "path": "src/pygrc/landscapes/equivalence.py",
+      "sha256": "e64233dc0a8b1cb96f7cc566cfa2d3813862736be4467fd87167f78a8a8de7ff",
+      "live_code_objects_checked": 25
+    },
+    "pygrc.landscapes.io": {
+      "path": "src/pygrc/landscapes/io.py",
+      "sha256": "c17609a2615c0dd104ae4a8efd8ca94624ef2883837b3b205571ffefeea602cd",
+      "live_code_objects_checked": 13
+    },
+    "pygrc.landscapes.inference": {
+      "path": "src/pygrc/landscapes/inference.py",
+      "sha256": "28b0b54bc37d5894f69e77fbeaa3f84dc856bddae845cdf4e9948dfedb0c9b32",
+      "live_code_objects_checked": 29
+    },
+    "pygrc.landscapes.inference_loader": {
+      "path": "src/pygrc/landscapes/inference_loader.py",
+      "sha256": "61c381a9a826410cc6989512d2cff746465154d98cb1565d01c02010a20f29df",
+      "live_code_objects_checked": 11
+    },
+    "pygrc.landscapes.inference_substrate": {
+      "path": "src/pygrc/landscapes/inference_substrate.py",
+      "sha256": "7b7076ae54de4a526b5faa15e9ec90789ce64390182e756e5895cb9deffc5a1d",
+      "live_code_objects_checked": 50
+    },
+    "pygrc.landscapes.inference_basin": {
+      "path": "src/pygrc/landscapes/inference_basin.py",
+      "sha256": "2e784026b62c89c618ae905ce4ea0552d729c80c69ac4567cb30c3a962c59ce7",
+      "live_code_objects_checked": 14
+    },
+    "pygrc.landscapes.inference_valley": {
+      "path": "src/pygrc/landscapes/inference_valley.py",
+      "sha256": "07dcb641650d3ece24d6c90fe0acf85c9497daf7933b230b1d84209ac2b49f8b",
+      "live_code_objects_checked": 24
+    },
+    "pygrc.landscapes.inference_ridge": {
+      "path": "src/pygrc/landscapes/inference_ridge.py",
+      "sha256": "3f6b3b4a82973ca092bc83f0ee0e996e3d95cf4f06226de1d03b140a6d7ba8b5",
+      "live_code_objects_checked": 11
+    },
+    "pygrc.landscapes.inference_junction": {
+      "path": "src/pygrc/landscapes/inference_junction.py",
+      "sha256": "69b3e772659a87fae8b3431de6bb40ebb385e4dc785e05ec072c20919a438789",
+      "live_code_objects_checked": 17
+    },
+    "pygrc.landscapes.inference_pheromone": {
+      "path": "src/pygrc/landscapes/inference_pheromone.py",
+      "sha256": "e2f6a0d93ca800be18df6ce955f347122a3b393a5590cdf81b2011572d599b2c",
+      "live_code_objects_checked": 23
+    },
+    "pygrc.landscapes.inference_compare": {
+      "path": "src/pygrc/landscapes/inference_compare.py",
+      "sha256": "f29dbfa87f2051871168eb3ff5b9d1b05903a789fad53ea2e831735801b7852f",
+      "live_code_objects_checked": 26
+    },
+    "pygrc.landscapes.inference_kg": {
+      "path": "src/pygrc/landscapes/inference_kg.py",
+      "sha256": "a1e006bfbfec04841a30b8b0c6eb43d69b574cb695dedecb962aa6c0a8f6a00d",
+      "live_code_objects_checked": 10
+    },
+    "pygrc.landscapes.inference_revival": {
+      "path": "src/pygrc/landscapes/inference_revival.py",
+      "sha256": "de741fd9c070fed65e5113524a68b3a2163ef7017edb57d949c59c8c25bc56a8",
+      "live_code_objects_checked": 15
+    },
+    "pygrc.landscapes.motion": {
+      "path": "src/pygrc/landscapes/motion.py",
+      "sha256": "0d3790354198a72f75d8c6ca44ef4c8023e9180eb6d03b2a9d81c6edb9706452",
+      "live_code_objects_checked": 41
+    },
+    "pygrc.landscapes.motion_loader": {
+      "path": "src/pygrc/landscapes/motion_loader.py",
+      "sha256": "8e14af636695b1a9d7a7487808f3ff98daca331c016c832679a271e3bc1b4977",
+      "live_code_objects_checked": 20
+    },
+    "pygrc.landscapes.motion_coherence": {
+      "path": "src/pygrc/landscapes/motion_coherence.py",
+      "sha256": "86e7fe23ccf9342c6cf27330994a00915b42f0691690c249a9be065b5b07db1c",
+      "live_code_objects_checked": 19
+    },
+    "pygrc.landscapes.motion_representative": {
+      "path": "src/pygrc/landscapes/motion_representative.py",
+      "sha256": "18d135532076eeab69d966adb99d1f346fda85ae474c7f34782cc985b85343c9",
+      "live_code_objects_checked": 27
+    },
+    "pygrc.landscapes.motion_identity": {
+      "path": "src/pygrc/landscapes/motion_identity.py",
+      "sha256": "af6a3af033a70305818b8dc747710075b8ec8315fafc32ef9692de222100a08c",
+      "live_code_objects_checked": 40
+    },
+    "pygrc.landscapes.motion_boundary": {
+      "path": "src/pygrc/landscapes/motion_boundary.py",
+      "sha256": "87fbfeb0439417e9ca0fd0e192a2b90393f1a067b12b4da97decd3ae171308ef",
+      "live_code_objects_checked": 25
+    },
+    "pygrc.landscapes.motion_topological": {
+      "path": "src/pygrc/landscapes/motion_topological.py",
+      "sha256": "ba75dde8bfffbe0e3e704bdd5cb45741ce542e59f1164bf67996dd1c839af9de",
+      "live_code_objects_checked": 28
+    },
+    "pygrc.landscapes": {
+      "path": "src/pygrc/landscapes/__init__.py",
+      "sha256": "6b99bcf78c2674e8505429d9a228572b32aad5c7141e76bb202fad0aadad5a53",
+      "live_code_objects_checked": 0
+    },
+    "pygrc.models.grc_9_coarse": {
+      "path": "src/pygrc/models/grc_9_coarse.py",
+      "sha256": "43a20c5ae379e488ce7abcdc8b1f2b68007ba27fd27b3561f361d180e5906b49",
+      "live_code_objects_checked": 5
+    },
+    "pygrc.models.grc_9_expansion": {
+      "path": "src/pygrc/models/grc_9_expansion.py",
+      "sha256": "f71b7370e56b59328692000831842435e6512dcc3539f8dd9e5ac059f1eb1569",
+      "live_code_objects_checked": 5
+    },
+    "pygrc.models.grc_9_ports": {
+      "path": "src/pygrc/models/grc_9_ports.py",
+      "sha256": "7f9142f96de1e1a2880db5b0d767df4a78866093a8b051a2615778d3fa8ac780",
+      "live_code_objects_checked": 6
+    },
+    "pygrc.models.grc_9_state": {
+      "path": "src/pygrc/models/grc_9_state.py",
+      "sha256": "b3d979fe4bffbc86fe256f71ff4894c3da03fd4af706457a281f650242ca26b7",
+      "live_code_objects_checked": 0
+    },
+    "pygrc.models.grc_9": {
+      "path": "src/pygrc/models/grc_9.py",
+      "sha256": "a857f41ea919bb311d283681a13609e4bac6c5295d975ab61e57559454131de1",
+      "live_code_objects_checked": 96
+    },
+    "pygrc.landscapes.extensions.grcv3": {
+      "path": "src/pygrc/landscapes/extensions/grcv3.py",
+      "sha256": "6221464121cd6bcfa8f9250fe65db6da1196640bbd37ce46d1d0adbbb80000f8",
+      "live_code_objects_checked": 36
+    },
+    "pygrc.landscapes.extensions.grcl9.manifest": {
+      "path": "src/pygrc/landscapes/extensions/grcl9/manifest.py",
+      "sha256": "d8833f5e4b3456267471ad242ad93d2d392eb7c1e412206551e194a57792d942",
+      "live_code_objects_checked": 29
+    },
+    "pygrc.landscapes.extensions.grcl9.schema": {
+      "path": "src/pygrc/landscapes/extensions/grcl9/schema.py",
+      "sha256": "802bed1568ae657918cf12fd1872a5fbfb62fbcf1345ca2799d14a25e33a07ed",
+      "live_code_objects_checked": 45
+    },
+    "pygrc.landscapes.extensions.grcl9.fixtures": {
+      "path": "src/pygrc/landscapes/extensions/grcl9/fixtures.py",
+      "sha256": "94b43d5dedb627962e11c5febd37d7f8c66c5deab840b63437e2aeb6f9c48218",
+      "live_code_objects_checked": 9
+    },
+    "pygrc.landscapes.extensions.grcl9.examples": {
+      "path": "src/pygrc/landscapes/extensions/grcl9/examples.py",
+      "sha256": "2e1b63cdd77eb33d0c45bb497084da06d2370a575f2c026ffb75739b96ae83d9",
+      "live_code_objects_checked": 83
+    },
+    "pygrc.landscapes.extensions.grcl9": {
+      "path": "src/pygrc/landscapes/extensions/grcl9/__init__.py",
+      "sha256": "730c9dc782cf00a4e6ac669083a36bafe0fbbcdf6a1b20cab9fc0c5681a454f8",
+      "live_code_objects_checked": 0
+    },
+    "pygrc.landscapes.extensions.grcl9v3.manifest": {
+      "path": "src/pygrc/landscapes/extensions/grcl9v3/manifest.py",
+      "sha256": "0d269952b95fa10a37879acf69f6b9b256bb9a4f9a64d0f2e07f759924e3ebf6",
+      "live_code_objects_checked": 43
+    },
+    "pygrc.landscapes.extensions.grcl9v3.schema": {
+      "path": "src/pygrc/landscapes/extensions/grcl9v3/schema.py",
+      "sha256": "d35dc4f944d72c70f98ae134685e3783fd5d551ee91fb0134a5205f1464b0f10",
+      "live_code_objects_checked": 64
+    },
+    "pygrc.landscapes.extensions.grcl9v3.fixtures": {
+      "path": "src/pygrc/landscapes/extensions/grcl9v3/fixtures.py",
+      "sha256": "502269198206cee130430747ff6a482356d32354843f59542796ea063edc42df",
+      "live_code_objects_checked": 23
+    },
+    "pygrc.landscapes.extensions.grcl9v3.examples": {
+      "path": "src/pygrc/landscapes/extensions/grcl9v3/examples.py",
+      "sha256": "07530212437d4a17812f7f467f64eb6f3cd6e2c71feb2f82df1e02cf4a164ccf",
+      "live_code_objects_checked": 44
+    },
+    "pygrc.landscapes.extensions.grcl9v3.selector_expansions": {
+      "path": "src/pygrc/landscapes/extensions/grcl9v3/selector_expansions.py",
+      "sha256": "6bdd8f8ae9417a3dcec92bd4423047e7bc1daa686056b2583fe763220b9ad56a",
+      "live_code_objects_checked": 1
+    },
+    "pygrc.landscapes.extensions.grcl9v3": {
+      "path": "src/pygrc/landscapes/extensions/grcl9v3/__init__.py",
+      "sha256": "a32ee2195e77cf83fce0bc63ec351d18c2f74f0978866c936c9f827417efcf8d",
+      "live_code_objects_checked": 0
+    },
+    "pygrc.landscapes.extensions": {
+      "path": "src/pygrc/landscapes/extensions/__init__.py",
+      "sha256": "25cdbde259a934d1f4acba11c8f5a1f4fa301d190fc229528de5f35c59f15f34",
+      "live_code_objects_checked": 0
+    },
+    "pygrc.models.grc_9_grcl9_provenance": {
+      "path": "src/pygrc/models/grc_9_grcl9_provenance.py",
+      "sha256": "c21593818c52c905c19f865d9fbe22937d560478b2c0f65efd44ae635b9fb122",
+      "live_code_objects_checked": 2
+    },
+    "pygrc.models.grc_9_grcl9_lowering": {
+      "path": "src/pygrc/models/grc_9_grcl9_lowering.py",
+      "sha256": "40a855d6f56417cabf442c68cd32280b1c07dcc4075a8cad2570750c9cca6c7c",
+      "live_code_objects_checked": 35
+    },
+    "pygrc.models.grc_v2_state": {
+      "path": "src/pygrc/models/grc_v2_state.py",
+      "sha256": "d9edff07065309059d030531febec4dd63c9586745f26cb9dd8eb309b357a659",
+      "live_code_objects_checked": 0
+    },
+    "pygrc.models.grc_v2": {
+      "path": "src/pygrc/models/grc_v2.py",
+      "sha256": "949bbb90766193934c96e4c4cbb84d3838e175b92968d93f9650477cce9e925e",
+      "live_code_objects_checked": 73
+    },
+    "pygrc.models.grc_v2_checkpoints": {
+      "path": "src/pygrc/models/grc_v2_checkpoints.py",
+      "sha256": "e51abbec14fd03d5a54ab022529a2fce1b55d2f5cfce574ffdceae388225e45e",
+      "live_code_objects_checked": 1
+    },
+    "pygrc.models.grc_v2_landscape": {
+      "path": "src/pygrc/models/grc_v2_landscape.py",
+      "sha256": "a531e7c4c8dee941b353696ff47b6265ecc03ac0ded07ab0fe9756479842661e",
+      "live_code_objects_checked": 35
+    },
+    "pygrc.models.grc_9_landscape": {
+      "path": "src/pygrc/models/grc_9_landscape.py",
+      "sha256": "6f3059b701e28413b0252442d4b8449cfb8ccb341338b14da71d810d5965f244",
+      "live_code_objects_checked": 17
+    },
+    "pygrc.models.grc_9_v3_state": {
+      "path": "src/pygrc/models/grc_9_v3_state.py",
+      "sha256": "4ab5ffcb95d69a0767b24d6c95277ba3619a5d477c4865cc0d31735a2377918e",
+      "live_code_objects_checked": 0
+    },
+    "pygrc.models.grc_9_v3_choice": {
+      "path": "src/pygrc/models/grc_9_v3_choice.py",
+      "sha256": "ab8be0391a37e71d4610022afe3f64dac6102b929ade4448a59e7f4e02167933",
+      "live_code_objects_checked": 16
+    },
+    "pygrc.models.grc_9_v3_sparks": {
+      "path": "src/pygrc/models/grc_9_v3_sparks.py",
+      "sha256": "fa1db78355e1dba41245da44c9c515ac09820035ca451723873da779420ee820",
+      "live_code_objects_checked": 29
+    },
+    "pygrc.models.grc_v3_state": {
+      "path": "src/pygrc/models/grc_v3_state.py",
+      "sha256": "d0399ce9a733b8aeb1662de72ad0088cceab239e9b0dcf51c52367e70eb65e1c",
+      "live_code_objects_checked": 0
+    },
+    "pygrc.models.grc_v3_differential": {
+      "path": "src/pygrc/models/grc_v3_differential.py",
+      "sha256": "3e88a76d7eea94b255c588300305e5119cebc1e2599dd9a43e0aaf80cc9af837",
+      "live_code_objects_checked": 17
+    },
+    "pygrc.models.grc_9_v3_runtime": {
+      "path": "src/pygrc/models/grc_9_v3_runtime.py",
+      "sha256": "f6f12de4e9bf66cd97b4063854ea225ae00874fed7073d4e72775891db54f502",
+      "live_code_objects_checked": 37
+    },
+    "pygrc.models.grc_9_v3": {
+      "path": "src/pygrc/models/grc_9_v3.py",
+      "sha256": "d297def1eddfaf79a7ad3d6b676caaeebb29e6d7235f4fac5c6729bd7e26ca9e",
+      "live_code_objects_checked": 66
+    },
+    "pygrc.models.grc_9_v3_grcl9v3_provenance": {
+      "path": "src/pygrc/models/grc_9_v3_grcl9v3_provenance.py",
+      "sha256": "607c65b7dc28e45c5c73801e76144f112e122948d9b478b2722575788407e33b",
+      "live_code_objects_checked": 2
+    },
+    "pygrc.models.grc_9_v3_grcl9v3_lowering": {
+      "path": "src/pygrc/models/grc_9_v3_grcl9v3_lowering.py",
+      "sha256": "653d0963d4df55c278cf1f6fc475a764ef03a13eee7d2ada756f5605434a1f05",
+      "live_code_objects_checked": 36
+    },
+    "pygrc.models.lgrc_9_v3_contract": {
+      "path": "src/pygrc/models/lgrc_9_v3_contract.py",
+      "sha256": "b86fb41ab530a7aa01abdf01dbc048da10c2e312a18c8b874cbd1386c4794680",
+      "live_code_objects_checked": 126
+    },
+    "pygrc.models.lgrc_9_v3_packets": {
+      "path": "src/pygrc/models/lgrc_9_v3_packets.py",
+      "sha256": "14d99292e18e2fe34e0fd5c6a1f69051e82115a051d142f10792775e2321e58f",
+      "live_code_objects_checked": 46
+    },
+    "pygrc.models.lgrc_9_v3_topology": {
+      "path": "src/pygrc/models/lgrc_9_v3_topology.py",
+      "sha256": "f3cf7e2281c4073531a5951a19f9ae9141a336f9f9b6398f76eda7e1493abde4",
+      "live_code_objects_checked": 51
+    },
+    "pygrc.models.lgrc_9_v3_identity": {
+      "path": "src/pygrc/models/lgrc_9_v3_identity.py",
+      "sha256": "02a7b9dddb16b925042e014725aa13f66883f16f05f04ca754883dd002fc4ac2",
+      "live_code_objects_checked": 8
+    },
+    "pygrc.models.lgrc_9_v3_timing": {
+      "path": "src/pygrc/models/lgrc_9_v3_timing.py",
+      "sha256": "3a8528da792ee57ea6a229cdf952af38a52c3f2689525cf12adf63a27a63983c",
+      "live_code_objects_checked": 25
+    },
+    "pygrc.models.lgrc_9_v3_runtime_state": {
+      "path": "src/pygrc/models/lgrc_9_v3_runtime_state.py",
+      "sha256": "ef409403954749a45fbf444116a9a253b95b3e2d74a119006f1cbb364a83630c",
+      "live_code_objects_checked": 18
+    },
+    "pygrc.models.lgrc_9_v3_runtime": {
+      "path": "src/pygrc/models/lgrc_9_v3_runtime.py",
+      "sha256": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4",
+      "live_code_objects_checked": 201
+    },
+    "pygrc.models.lgrc_9_v3_construction": {
+      "path": "src/pygrc/models/lgrc_9_v3_construction.py",
+      "sha256": "c59f8d0747a5a6f5c954927fd1e1b1d71464bdffbdbf0401e39b17219a364938",
+      "live_code_objects_checked": 16
+    },
+    "pygrc.models.lgrc_9_v3": {
+      "path": "src/pygrc/models/lgrc_9_v3.py",
+      "sha256": "37f9f9a0452fba447c875f7e652d8632dc49bb159c0d1af5caecb4ce4acf48bb",
+      "live_code_objects_checked": 0
+    },
+    "pygrc.models.lgrc_9_v3_restoration": {
+      "path": "src/pygrc/models/lgrc_9_v3_restoration.py",
+      "sha256": "e7c6b143c08eb0bda210152aeb0f6b12e0efcb666268416404ed3b649dd46931",
+      "live_code_objects_checked": 16
+    },
+    "pygrc.models.grc_v3": {
+      "path": "src/pygrc/models/grc_v3.py",
+      "sha256": "01081bc3f2b394a0797d93c38539a3d6139c6bb412323f6eda09a4fe7c66b473",
+      "live_code_objects_checked": 120
+    },
+    "pygrc.models.grc_v3_landscape_native": {
+      "path": "src/pygrc/models/grc_v3_landscape_native.py",
+      "sha256": "d4a93b18bfeb71eb5098309b9ed0c2ae42c41b387b964a1ebbf5a43fd9ddb019",
+      "live_code_objects_checked": 20
+    },
+    "pygrc.models.grc_v3_landscape": {
+      "path": "src/pygrc/models/grc_v3_landscape.py",
+      "sha256": "a6d81d828bcf6e8c67d3e2e40bdbffd311d7126cf0a4b3b5efb72559aef687ad",
+      "live_code_objects_checked": 71
+    },
+    "pygrc.models": {
+      "path": "src/pygrc/models/__init__.py",
+      "sha256": "23768e181455f4e7eb68908cdac532464c063fa5eb4250c4d05537eca0dcaa70",
+      "live_code_objects_checked": 0
+    },
+    "pygrc.telemetry.schema": {
+      "path": "src/pygrc/telemetry/schema.py",
+      "sha256": "a7800ab181ec96844da88d82538a8e42318dd54ee6d9a9a9ab092821cc947fdc",
+      "live_code_objects_checked": 20
+    },
+    "pygrc.telemetry.io": {
+      "path": "src/pygrc/telemetry/io.py",
+      "sha256": "cff2c5660bbcff93fc3b65ee9c71c6672aa8126e78946d9f2b04ef16cc029929",
+      "live_code_objects_checked": 53
+    },
+    "pygrc.telemetry.reports": {
+      "path": "src/pygrc/telemetry/reports.py",
+      "sha256": "99f641686d71fd4424390de5caef81ae634615d69d1fd974cab4934dfc82d556",
+      "live_code_objects_checked": 7
+    },
+    "pygrc.telemetry.compare": {
+      "path": "src/pygrc/telemetry/compare.py",
+      "sha256": "75702eebcf38a5f3286d6207d214224b3a6596c6c0949f379cecc650e5f3ec11",
+      "live_code_objects_checked": 4
+    },
+    "pygrc.telemetry.grc9_contract": {
+      "path": "src/pygrc/telemetry/grc9_contract.py",
+      "sha256": "2566ff2d1a94fc732a2e954f42c35fc7974d37f10d393a406779a9d0b9121cbf",
+      "live_code_objects_checked": 66
+    },
+    "pygrc.models.grc_9_checkpoints": {
+      "path": "src/pygrc/models/grc_9_checkpoints.py",
+      "sha256": "283b662b3ac232465504082ae68a874d5b00f7745ee39eeee2d03828bbfa85d7",
+      "live_code_objects_checked": 6
+    },
+    "pygrc.telemetry._experiment_defaults": {
+      "path": "src/pygrc/telemetry/_experiment_defaults.py",
+      "sha256": "720fc58700e9a620315040399b81a6e7f510b3ecd575f0ea2eb9b82527931d75",
+      "live_code_objects_checked": 0
+    },
+    "pygrc.telemetry.grcv3_contract": {
+      "path": "src/pygrc/telemetry/grcv3_contract.py",
+      "sha256": "ea696cd5676769217f35449c7f5f20a43b0178567223ac81e9b81d53220c55a4",
+      "live_code_objects_checked": 37
+    },
+    "pygrc.telemetry._telemetry_utils": {
+      "path": "src/pygrc/telemetry/_telemetry_utils.py",
+      "sha256": "49df2b9f2676c59ba65fa3524c9ddc59e3232a4fa883a1b05229b191a7d340bb",
+      "live_code_objects_checked": 2
+    },
+    "pygrc.telemetry._grcv3_extensions": {
+      "path": "src/pygrc/telemetry/_grcv3_extensions.py",
+      "sha256": "d45a93b05760307a1eca5332e5363a4134bb86ca358586d78ca1b9032ca7bb73",
+      "live_code_objects_checked": 23
+    },
+    "pygrc.telemetry._grcv3_trace_utils": {
+      "path": "src/pygrc/telemetry/_grcv3_trace_utils.py",
+      "sha256": "df577a990c175407371aa6349b6822e94e77ef7ec88b7e86c7ec25b41ed7043f",
+      "live_code_objects_checked": 29
+    },
+    "pygrc.telemetry._grcv3_collapse_traces": {
+      "path": "src/pygrc/telemetry/_grcv3_collapse_traces.py",
+      "sha256": "d7267ecad2e39cf919eb2c9600901abf6743ab3c873c23f435da23e461310425",
+      "live_code_objects_checked": 21
+    },
+    "pygrc.telemetry._grcv3_failure_traces": {
+      "path": "src/pygrc/telemetry/_grcv3_failure_traces.py",
+      "sha256": "ab6aaf648bcf4a31103b9370c0ee049fe1376ac7f276c1c2dfbaeed27f14895e",
+      "live_code_objects_checked": 7
+    },
+    "pygrc.models.grc_v3_checkpoints": {
+      "path": "src/pygrc/models/grc_v3_checkpoints.py",
+      "sha256": "ed27a01eb18decc506450d0a25cd5fc7861c1f1bcf3fce5af84373b42eb67b96",
+      "live_code_objects_checked": 9
+    },
+    "pygrc.telemetry.recorder": {
+      "path": "src/pygrc/telemetry/recorder.py",
+      "sha256": "404c5fcc5859dc608d71775bc8050b4d42467cef4569839fbe439cd7f04d6613",
+      "live_code_objects_checked": 8
+    },
+    "pygrc.telemetry._grcv3_lane_runner": {
+      "path": "src/pygrc/telemetry/_grcv3_lane_runner.py",
+      "sha256": "5c7c87c20ea51db8985f56a3906d32ddadb70ec708473d38b339ea3c3801562c",
+      "live_code_objects_checked": 3
+    },
+    "pygrc.telemetry._grcv3_settlement_traces": {
+      "path": "src/pygrc/telemetry/_grcv3_settlement_traces.py",
+      "sha256": "ece0fbb52ac6bddfaae6a7e993dfdbefc91fb54fb5a137e19f28e740686010d3",
+      "live_code_objects_checked": 10
+    },
+    "pygrc.telemetry._grc9_extensions": {
+      "path": "src/pygrc/telemetry/_grc9_extensions.py",
+      "sha256": "ef7ef3aba763feaaa7a6485891a7396d628adb5ff0b7c8afa1586f457d6acb9f",
+      "live_code_objects_checked": 42
+    },
+    "pygrc.telemetry._experiment_results": {
+      "path": "src/pygrc/telemetry/_experiment_results.py",
+      "sha256": "5b4155119c78059e01a4c32ea7df0d19454f3c483b7a3e71ac4b4816441d5628",
+      "live_code_objects_checked": 0
+    },
+    "pygrc.telemetry.experiments": {
+      "path": "src/pygrc/telemetry/experiments.py",
+      "sha256": "1ddd8406c2a1de57f86e17df4b015044fd88ef08f03f297df1d8231650386a92",
+      "live_code_objects_checked": 50
+    },
+    "pygrc.telemetry.grc9v3_contract": {
+      "path": "src/pygrc/telemetry/grc9v3_contract.py",
+      "sha256": "86619fb1484971bfa5476eeb2e825c9f9ad386aa91d7296606e848a119cad86a",
+      "live_code_objects_checked": 69
+    },
+    "pygrc.telemetry.lgrc9v3_contract": {
+      "path": "src/pygrc/telemetry/lgrc9v3_contract.py",
+      "sha256": "5b35cce35bd2a1323efce682c10938b6e005baa6106bfa879b8f06b58a87899f",
+      "live_code_objects_checked": 30
+    },
+    "pygrc.telemetry.grcv3_pressure_boundary_selectors": {
+      "path": "src/pygrc/telemetry/grcv3_pressure_boundary_selectors.py",
+      "sha256": "3ca51479d74b862db1fc915173b47491ee034f559b7420caf7cdf5da4e4ed3cb",
+      "live_code_objects_checked": 6
+    },
+    "pygrc.telemetry": {
+      "path": "src/pygrc/telemetry/__init__.py",
+      "sha256": "ec2c17bcbc8d36ab411296c55e2c9b7c23170edacf837b9a95827d65ba51fae3",
+      "live_code_objects_checked": 1
+    },
+    "pygrc.utils": {
+      "path": "src/pygrc/utils/__init__.py",
+      "sha256": "465e64f97c386e4b932eb520932858cab261e75623af8812a80ecc7695054e16",
+      "live_code_objects_checked": 0
+    },
+    "pygrc.visualization.layout": {
+      "path": "src/pygrc/visualization/layout.py",
+      "sha256": "21981d0c825b1e758c0ce3e4ecb5818e9587af201baff7eb8aea312ee06d116b",
+      "live_code_objects_checked": 5
+    },
+    "pygrc.visualization.graph_render": {
+      "path": "src/pygrc/visualization/graph_render.py",
+      "sha256": "dc3a88e4aa4d5b291cb34b71d9109b708345c1111667a7fd0c2a54c523255c0f",
+      "live_code_objects_checked": 56
+    },
+    "pygrc.visualization.render": {
+      "path": "src/pygrc/visualization/render.py",
+      "sha256": "6f1f6629a3da4895a5e3fcdf5e073843da66cf5b02a4b26d76652275e9f0d340",
+      "live_code_objects_checked": 31
+    },
+    "pygrc.visualization.representative_graphs": {
+      "path": "src/pygrc/visualization/representative_graphs.py",
+      "sha256": "48107e4d97556e53e60190a5fab1cfb383462b3f6680c9ce1c813f3b952c73ef",
+      "live_code_objects_checked": 10
+    },
+    "pygrc.visualization.representative": {
+      "path": "src/pygrc/visualization/representative.py",
+      "sha256": "a13e6125fd621bf02dc8bfaf76a76f7224cd722c0ebeef21cd43d302c0b5811e",
+      "live_code_objects_checked": 12
+    },
+    "pygrc.visualization": {
+      "path": "src/pygrc/visualization/__init__.py",
+      "sha256": "0f3093af422e6eb2e904052798fa6d801bf97f1666c834e3b81a25078ae397eb",
+      "live_code_objects_checked": 1
+    },
+    "pygrc.models.grc_v4_codec": {
+      "path": "src/pygrc/models/grc_v4_codec.py",
+      "sha256": "8d2460106d45748fdba69ebaa78930121c0f1a3296399bf3cdacf1c1abb40a46",
+      "source_declared_code_objects_checked": 17
+    },
+    "pygrc.models.grc_v4_state": {
+      "path": "src/pygrc/models/grc_v4_state.py",
+      "sha256": "b0ccf06ef91b66feb8670fb67281465998f4bcb085c4d547fedd3ce6d85ad3cb",
+      "source_declared_code_objects_checked": 46
+    },
+    "pygrc.models.grc_v4_profile": {
+      "path": "src/pygrc/models/grc_v4_profile.py",
+      "sha256": "188e4ceb92b6a36fe81849911b88b233b8dd16bf3de07383e1508d76232fdbfb",
+      "live_code_objects_checked": 21
+    },
+    "pygrc.models.grc_v4": {
+      "path": "src/pygrc/models/grc_v4.py",
+      "sha256": "7b692142a98c8010f9f0521e0c54c4e6f91dc78909dcffab8e60a9f108c702e9",
+      "source_declared_code_objects_checked": 11
+    },
+    "pygrc.models.grc_v4_geometry": {
+      "path": "src/pygrc/models/grc_v4_geometry.py",
+      "sha256": "cb2d9b900d0091b59e4fe77ef4acc4037225e79b2ee166c99486c93b307c92a4",
+      "source_declared_code_objects_checked": 91
+    },
+    "pygrc.models.grc_v4_transport": {
+      "path": "src/pygrc/models/grc_v4_transport.py",
+      "sha256": "4ead39ae9343c4873a7cef149471e72ce6df562f82b2a6f03c3c00f1b07f4730",
+      "source_declared_code_objects_checked": 14
+    },
+    "pygrc.models.grc_v4_candidate_c": {
+      "path": "src/pygrc/models/grc_v4_candidate_c.py",
+      "sha256": "59dde00ff754e9ce8879bdb6b3980fa2db9eefab98b02698cb0600fda356c2c6",
+      "source_declared_code_objects_checked": 37
+    },
+    "pygrc.models.grc_v4_realizations": {
+      "path": "src/pygrc/models/grc_v4_realizations.py",
+      "sha256": "2fd35e9a7641fc460651497120f42ee4407959243e8970718727b01398375753",
+      "source_declared_code_objects_checked": 7
+    },
+    "pygrc.models.grc_v4_step": {
+      "path": "src/pygrc/models/grc_v4_step.py",
+      "sha256": "cf8eda58bf1582a76360bb88eed07405315820c9e2c63980170b1f350ee1f16d",
+      "source_declared_code_objects_checked": 23
+    },
+    "pygrc.models.grc_v4_lifecycle": {
+      "path": "src/pygrc/models/grc_v4_lifecycle.py",
+      "sha256": "04e1afffa886778730512f84e0633b0aa44ffcb7a2feae5de5b9802476bccc06",
+      "source_declared_code_objects_checked": 45
+    },
+    "tests.models.grcv4_reference_oracles": {
+      "path": "tests/models/grcv4_reference_oracles.py",
+      "sha256": "b973babbca55854f2b2a9f629b4b914cf767627533b26460013c8b9cfa611ea4",
+      "live_code_objects_checked": 19
+    },
+    "tests.models.test_grc_v4_geometry": {
+      "path": "tests/models/test_grc_v4_geometry.py",
+      "sha256": "b3383f393fbafa0c7be228e0011fb51f8b705ffaf4b5b2721c0a3cfd0630e69a",
+      "live_code_objects_checked": 135
+    },
+    "tests.models.test_grc_v4_profile": {
+      "path": "tests/models/test_grc_v4_profile.py",
+      "sha256": "6dcd4a0abffca13bc8a0c0e7e697a54e421ba079eaef5d77e4609184d67a0dea",
+      "live_code_objects_checked": 28
+    },
+    "tests.models.test_grc_v4_candidate_c": {
+      "path": "tests/models/test_grc_v4_candidate_c.py",
+      "sha256": "a9fd322349c67745dda9f915c78f10ecdf452c783064e3b5717acd079b45bfca",
+      "source_declared_code_objects_checked": 101
+    },
+    "tests.models.test_grc_v4_realizations": {
+      "path": "tests/models/test_grc_v4_realizations.py",
+      "sha256": "b88383e6384c89453ebb8434fde30634dc0bdd13a08b4cfcb6f6b71a4d5c3193",
+      "source_declared_code_objects_checked": 26
+    },
+    "tests.models.test_grc_v4_transport": {
+      "path": "tests/models/test_grc_v4_transport.py",
+      "sha256": "ad44a64357ad5cef25deaf2c778a4a4a0ea4ec016f461ce40e07f0724c09f2a9",
+      "live_code_objects_checked": 42
+    },
+    "tests.models.test_grc_v4": {
+      "path": "tests/models/test_grc_v4.py",
+      "sha256": "6fef68572fb17afdd48a679554d0cc6abaae8d34c95ca31f2e33b3ec8248c193",
+      "source_declared_code_objects_checked": 32
+    },
+    "tests.models.test_grc_v4_codec": {
+      "path": "tests/models/test_grc_v4_codec.py",
+      "sha256": "465bc3448fcc196e01ab0003665e5eeebde581208a5628f0adeeeabebb770983",
+      "source_declared_code_objects_checked": 18
+    },
+    "tests.models.test_grc_v4_lifecycle": {
+      "path": "tests/models/test_grc_v4_lifecycle.py",
+      "sha256": "6a66c89447e0f1bb33705f27eecb375535d5d4f611a0cd11f62764aab9958441",
+      "source_declared_code_objects_checked": 93
+    },
+    "tests.models.test_grc_v4_state": {
+      "path": "tests/models/test_grc_v4_state.py",
+      "sha256": "d7ce02acc2d663fd3f4513158193dd473a78c1f42bc985edfa2d2eff0943fb54",
+      "source_declared_code_objects_checked": 52
+    },
+    "tests.models.test_grc_v4_step": {
+      "path": "tests/models/test_grc_v4_step.py",
+      "sha256": "2919ca812f547de37c0c1a735326f7923aacfe32c52d0c2c800a3bc9e6da5fd5",
+      "live_code_objects_checked": 95
+    },
+    "pygrc.models.grc_v4_assets": {
+      "path": "src/pygrc/models/grc_v4_assets/__init__.py",
+      "sha256": "a1f3aba168a9f9331d1fc9580d5055404f8bc4c705936c7e388e7a47f80a0051",
+      "live_code_objects_checked": 0
+    },
+    "tests.models.grcv4_conformance_harness": {
+      "path": "tests/models/grcv4_conformance_harness.py",
+      "sha256": "15ee128da66dd25f6e028cf601f4de1047bee8812d51f83391a3f7adda3c7e89",
+      "live_code_objects_checked": 45
+    },
+    "__main__": {
+      "path": "tests/models/test_grc_v4_lifecycle.py",
+      "sha256": "6a66c89447e0f1bb33705f27eecb375535d5d4f611a0cd11f62764aab9958441",
+      "source_declared_code_objects_checked": 93
+    },
+    "pygrc": {
+      "path": "src/pygrc/__init__.py",
+      "sha256": "87cbe85db2f0f16b428df7f76701b68db79ffe1908e76ee71b2134ef20453a40",
+      "source_declared_code_objects_checked": 0
+    }
+  },
+  "source_unchanged": true,
+  "elapsed_seconds": 2029.264,
+  "completed_utc": "2026-09-08T19:20:15.867815+00:00",
+  "live_source_check_limits": "Inherited source-slot, live-code, before/after disk and exact executed-roster checks; not hostile-interpreter attestation. Relocated checkout and fresh interpreter reuse the installed dependency environment; no fresh-install or different-platform claim."
+}

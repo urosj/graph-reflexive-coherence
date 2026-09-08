@@ -1,6 +1,6 @@
 {
   "schema": "grcv4-packaged-assets-v1",
-  "release_id": "grcv4-spec-release-sha256:9f4c8fe5b57b1c477d834a3e4dae3f98a2b18c70e6e7f598e3c9652170c8645f",
+  "release_id": "grcv4-spec-release-sha256:7b8b4d4e32e48fd35f70421cce7f547eebb21dd81389764061efe6e1a8c19886",
   "files": [
     {
       "name": "grc-v4-contract-schema.json",
@@ -8,11 +8,11 @@
     },
     {
       "name": "grc-v4-specification-release.json",
-      "sha256": "bba0bb649bc2e80c5bfa99f96bd5824bbdda3b3fbc87fb68c3e3a59da1cee46b"
+      "sha256": "bbfe5cdc2689e6f2768e7ef586320c86c8ee9eaf441a4bad74225f34f565b939"
     },
     {
       "name": "grc-v4-specification-release.sha256",
-      "sha256": "50b20509b84a6b21f3036ecb1d7e13861f662bc8319873c5321fc0317ada7e33"
+      "sha256": "5c0f3fc054d26b8ffa50e47910a4a571526ba660e2fc44a0c5d2c88f0337b5e7"
     }
   ]
 }

@@ -585,23 +585,27 @@ three bounded batches retain their own results and raw per-run manifests.
 - [x] P9-4.6: Execute the C_OS snapshot/load/reset/rebase and deep-copy/
   immutability slice; record the corresponding P9-7.1-C_OS evidence.
   Implemented and verified; the user authorized commit without a full audit.
-  **The full independent audit remains pending.** This completion mark covers
-  implementation and verification only. All 76 focused methods pass
+  The original commit carried a deferred full audit, since supplied and closed
+  by the combined independent review below. This mark records implementation
+  and verification; subsequent corrections are now accepted. All 76 original
+  focused methods passed
   after exact source reconstruction with zero failures/errors/skips. The
   [review](./phase-9-grcv4/tranche-4/P9-4.6-Review.md) maps actual restoration,
   reset/rebase/assignment, deep independence and edge-case pressure to tests.
   The [execution record](./phase-9-grcv4/tranche-4/P9-4.6-ExecutionRecord.json)
   binds portable reconstruction and compact source queries. P9-7.1-C_OS is an
-  evidence alias, not another execution or whole-parent acceptance. Seventeen
-  leaves and 29 paths are ready; P9-4.7a/b and profile conformance remain pending.
+  evidence alias, not another execution or whole-parent acceptance. The original
+  entry exposed seventeen leaves and 29 paths; the accepted batch status follows
+  the P9-4.7a/b task rows below.
   The bound review and execution record retain their verification-time status;
   this checklist records the later commit authorization.
-- [ ] Complete the deferred full independent audit of P9-4.6 and record its
-  findings and closure. Carry this obligation into subsequent work; the passing
-  automated checks and user-authorized commit do not discharge it.
-- [ ] P9-4.7a: Execute atomic failed-step, receipt identity/ownership, and
+- [x] Complete the deferred full independent audit of P9-4.6 and record its
+  findings and closure. The combined audit explicitly closes all three findings;
+  the user has accepted the corrections.
+
+- [x] P9-4.7a: Execute atomic failed-step, receipt identity/ownership, and
   state-to-step-to-snapshot-to-restore-to-replay pressure for C_OS.
-- [ ] P9-4.7b: Execute the remaining applicable C_OS lifecycle product through
+- [x] P9-4.7b: Execute the remaining applicable C_OS lifecycle product through
   early Tranche 7 children: mapped events, migration admission/rejection,
   reset after events/migrations, reference maps, and atomic readmission.
   Unsupported targets must reject; mandatory fixtures cannot be waived.
@@ -611,6 +615,27 @@ three bounded batches retain their own results and raw per-run manifests.
 
 `P9-4.7` is the parent of P9-4.7a and P9-4.7b. The early state/receipt/replay
 cycle supplies evidence; P9-4.8 grants no reduced form of generic conformance.
+
+P9-4.7 batch accepted: the user authorized acceptance of P9-4.6, P9-4.7a and
+P9-4.7b after closing the combined audit findings. The
+[batch record](./phase-9-grcv4/tranche-4/P9-4.7ab-AuthorizationRecord.json)
+records that disposition. The [P9-4.6 follow-up](./phase-9-grcv4/tranche-4/P9-4.6-AuditFollowup.md)
+closes the deferred audit without rewriting its original records.
+
+The [P9-4.7b review](./phase-9-grcv4/tranche-4/P9-4.7b-Review.md) records the
+accepted edge/K4 correction, explicit solver tolerances and orientation/reference
+preimages. The successor specification release and packaged assets are active;
+the exact published mandatory request/event identity passes in the retained
+50-method replay. The earlier 135- and 35-method runs remain reproducible through
+Git plus compact reverse patches. Mixed lifecycle pressure includes returning
+to the original graph/profile and restoring its archive. P9-7.2a/b and 7.3–7.6
+have scoped C_OS evidence reconciled; P9-7.1-C_OS retains only bounded snapshot/
+continuation credit. Broader GRC9/reference-carrier correction and generic
+parent-DAG conformance remain outside these accepted leaves.
+
+P9-4.8 is the next separate review. P9-G2[C_OS] and runtime support sets remain
+pending/empty. The existing permission envelope still covers 26 leaves and 29
+paths; accepting this batch does not silently grant later implementation scope.
 
 ## Tranche 5. Candidate A and A_OS
 

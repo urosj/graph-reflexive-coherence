@@ -77,16 +77,11 @@ def verify(root, boundary_only=False):
     policy.prior.run_logged(
         [
             sys.executable,
-            str(
-                root
-                / policy.INV
-                / "scripts/audit_grcv4_specification_release_acceptance.py"
-            ),
-            "--audit-file",
-            str(root / policy.prior.INPUT),
+            str(root / policy.CORRECTION_BUILDER),
+            "--check",
         ],
         root,
-        "current_accepted_release",
+        "current_accepted_vector_correction_release",
         commands,
     )
     if not boundary_only:
@@ -121,7 +116,8 @@ def verify(root, boundary_only=False):
         "tree": tree,
         "historical_revision": policy.prior.HISTORICAL,
         "accepted_planning_revision": policy.BASELINE,
-        "release_id": policy.prior.RELEASE_ID,
+        "release_id": policy.CORRECTED_RELEASE_ID,
+        "predecessor_release_id": policy.prior.RELEASE_ID,
         "runtime_authorized": True,
         "P9_G1_accepted": True,
         "accepted_generic_runtime_support": [],

@@ -52,7 +52,7 @@ def main():
             ],
             check=True,
         )
-        fixture_revision = p.accepted_os_operations(p.ROOT)["baseline_commit"]
+        fixture_revision = p.lifecycle_batch_authorization(p.ROOT)["baseline_commit"]
         subprocess.run(
             ["git", "checkout", "--quiet", "--detach", fixture_revision],
             cwd=root, check=True,
@@ -506,7 +506,7 @@ def main():
         case(
             "ready_identity_leaf",
             lambda: registered(
-                "src/pygrc/models/grc_v4_codec.py", content, leaf="P9-2.2"
+                "src/pygrc/models/grc_v4_codec.py", (root / "src/pygrc/models/grc_v4_codec.py").read_bytes() + b"\n# permission probe\n", leaf="P9-2.2"
             ),
         )
         case(
@@ -519,9 +519,9 @@ def main():
                                b"{}", leaf="P9-3.5"),
         )
         case(
-            "os_operations_do_not_accept_future_leaf",
-            lambda: registered(p.PHASE + "evidence/P9-4.7a/probe/inputs.json",
-                               b"{}", leaf="P9-4.7a"),
+            "lifecycle_batch_does_not_open_fixture_acceptance",
+            lambda: registered(p.PHASE + "evidence/P9-4.8/probe/inputs.json",
+                               b"{}", leaf="P9-4.8"),
             "owning leaf entry dependencies are not accepted",
         )
         case(
@@ -672,6 +672,73 @@ def main():
             case("os_operations_acceptance_cannot_self_authorize_" + key,
                  forged_os_operations, "untrusted C OS operations acceptance",
                  scope="isolated_os_operations_acceptance_authentication")
+        case("missing_lifecycle_batch_authorization", lambda: edit(p.LIFECYCLE_BATCH, None),
+             "P9-4.7ab-AuthorizationRecord.json")
+        for key, replacement in [("status", "accepted"), ("audit_status", "complete"),
+                                 ("execution_order", ["P9-4.7b", "P9-4.7a"]),
+                                 ("authorized_iterations", ["P9-4.8"]),
+                                 ("combined_audit_scope", ["P9-4.7a", "P9-4.7b"]),
+                                 ("baseline_commit", p.BASELINE), ("evidence_bindings", []),
+                                 ("accepted_generic_runtime_support", ["C_OS"])]:
+            def forged_batch(key=key, replacement=replacement):
+                value = p.read(root / p.LIFECYCLE_BATCH)
+                value[key] = replacement
+                value["record_digest"] = p.digest_record(value)
+                with mutate(p.LIFECYCLE_BATCH, p.canonical(value)):
+                    p.lifecycle_batch_authorization(root)
+            case("lifecycle_batch_cannot_self_authorize_" + key,
+                 forged_batch, "untrusted C OS lifecycle batch authorization",
+                 scope="isolated_lifecycle_batch_authentication")
+        for leaf in ("P9-4.7a", "P9-4.7b"):
+            case("explicit_batch_enables_" + leaf,
+                 lambda leaf=leaf: registered("src/pygrc/models/grc_v4_lifecycle.py", content, leaf=leaf))
+        audit_input = p.lifecycle_batch_authorization(root)["audit_response"]["path"]
+        for label, replacement, reason in (
+            ("missing", None, "inputs.json"),
+            ("changed", b"{}", "combined lifecycle audit response changed"),
+        ):
+            def altered_audit(replacement=replacement):
+                with mutate(audit_input, replacement):
+                    p.lifecycle_batch_authorization(root)
+            case("combined_audit_input_" + label, altered_audit, reason,
+                 scope="isolated_lifecycle_batch_authentication")
+        case("accepted_bounded_specification_correction", lambda: p.accepted_specification_correction(root),
+             scope="isolated_specification_correction_authentication")
+        for key, replacement in [("status", "pending"), ("predecessor_release_id", "forged"),
+                                 ("paper_or_equation_change", True), ("schema_change", True),
+                                 ("corrected_artifacts", []), ("evidence_bindings", [])]:
+            def forged_correction(key=key, replacement=replacement):
+                value = p.read(root / p.SPECIFICATION_CORRECTION)
+                value[key] = replacement
+                value["record_digest"] = p.digest_record(value)
+                with mutate(p.SPECIFICATION_CORRECTION, p.canonical(value)):
+                    p.accepted_specification_correction(root)
+            case("correction_cannot_self_authorize_" + key, forged_correction,
+                 "untrusted mapped-vector specification correction",
+                 scope="isolated_specification_correction_authentication")
+        for name, expected in [
+            ("specs/grc-v4-conformance-vectors.json", "mapped-vector correction binding changed"),
+            ("implementation/investigations/grc9v4-constitutive-design/scripts/build_grcv4_specification_vectors.py", "mapped-vector correction binding changed"),
+            ("specs/grc-v4-specification-release.json", "mapped-vector successor output changed"),
+            ("src/pygrc/models/grc_v4_assets/asset-index.json", "mapped-vector successor output changed"),
+            (p.CORRECTION_BUILDER, "untrusted mapped-vector successor release"),
+        ]:
+            def changed_correction(name=name):
+                with mutate(name, (root / name).read_bytes() + b"\n"):
+                    p.accepted_specification_correction(root)
+            case("successor_rejects_changed_" + Path(name).name, changed_correction, expected,
+                 scope="isolated_specification_correction_authentication")
+        def changed_codec_pin():
+            name = "src/pygrc/models/grc_v4_codec.py"
+            source = (root / name).read_bytes()
+            source = source.replace(p.CORRECTED_RELEASE_ID.split(":")[1].encode(), b"0" * 64)
+            with mutate(name, source):
+                p.accepted_specification_correction(root)
+        case("successor_rejects_actual_codec_pin_change", changed_codec_pin,
+             "packaged successor release is not pinned by the codec",
+             scope="isolated_specification_correction_authentication")
+        case("mapped_audit_has_shared_integration_test_owner",
+             lambda: registered("tests/models/test_grc_v4.py", content, leaf="P9-4.7b"))
         for name in ["src/pygrc/models/grc_v4_candidate_c.py", "tests/models/test_grc_v4_candidate_c.py"]:
             case("accepted_preservation_enables_" + Path(name).stem,
                  lambda name=name: registered(name, content, leaf="P9-4.1"))
@@ -689,7 +756,7 @@ def main():
                  lambda name=name: registered(name, content, leaf="P9-4.5"))
         for name in ["src/pygrc/models/grc_v4_lifecycle.py", "tests/models/test_grc_v4_lifecycle.py", "src/pygrc/models/grc_v4_codec.py", "tests/models/test_grc_v4_codec.py"]:
             case("accepted_os_operations_enable_lifecycle_" + Path(name).stem,
-                 lambda name=name: registered(name, content, leaf="P9-4.6"))
+                 lambda name=name: registered(name, (root / name).read_bytes() + b"\n# permission probe\n", leaf="P9-4.6"))
         case("accepted_harness_enables_export_owner",
              lambda: registered(init, before + lazy, leaf="P9-2.6"))
         for key, replacement in [("status", "pending"), ("accepted_iterations", ["P9-2.5", "P9-2.6"]),
