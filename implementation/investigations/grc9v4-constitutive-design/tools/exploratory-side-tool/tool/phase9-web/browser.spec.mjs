@@ -30,7 +30,7 @@ test('live API, source bindings, leaf states and downloadable JSON agree', async
   expect(api.P9_G1_accepted).toBe(true);
   expect(api.accepted_generic_runtime_support).toEqual([]);
   expect(api.admitted_specialization_support_sets).toEqual([]);
-  expect(api.dependency_ready_leaves).toEqual(['P9-2.1','P9-2.2','P9-2.3','P9-2.4','P9-2.5','P9-2.6','P9-3.1','P9-3.2','P9-3.3','P9-3.4','P9-3.5','P9-4.1','P9-4.2','P9-4.3','P9-4.4','P9-4.5']);
+  expect(api.dependency_ready_leaves).toEqual(['P9-2.1','P9-2.2','P9-2.3','P9-2.4','P9-2.5','P9-2.6','P9-3.1','P9-3.2','P9-3.3','P9-3.4','P9-3.5','P9-4.1','P9-4.2','P9-4.3','P9-4.4','P9-4.5','P9-4.6']);
   expect(api.result_acceptance.accepted_iterations).toEqual(['P9-2.4']);
   expect(api.harness_acceptance.accepted_iterations).toEqual(['P9-2.5']);
   expect(api.integration_acceptance.accepted_iterations).toEqual(['P9-2.6']);
@@ -42,6 +42,7 @@ test('live API, source bindings, leaf states and downloadable JSON agree', async
   expect(api.c_current_acceptance.accepted_iterations).toEqual(['P9-4.2']);
   expect(api.c_controls_acceptance.accepted_iterations).toEqual(['P9-4.3']);
   expect(api.os_pass_acceptance.accepted_iterations).toEqual(['P9-4.4']);
+  expect(api.os_operations_acceptance.accepted_iterations).toEqual(['P9-4.5']);
   expect(api.preservation_acceptance.accepted_iterations).toEqual(['P9-3.5']);
   expect(api.permitted_runtime_paths).toHaveLength(29);
   expect(api.request_acceptance.accepted_iterations).toEqual(['P9-2.3']);
@@ -65,7 +66,7 @@ test('live API, source bindings, leaf states and downloadable JSON agree', async
   await expect(page.locator('#next-work')).toContainText('Accepted results: P9-2.4');
   await expect(page.locator('#next-work')).toContainText('Accepted harness: P9-2.5');
   await expect(page.locator('#next-work')).toContainText('Accepted integration: P9-2.6');
-  await expect(page.locator('#next-work')).toContainText('P9-2.1, P9-2.2, P9-2.3, P9-2.4, P9-2.5, P9-2.6, P9-3.1, P9-3.2, P9-3.3, P9-3.4, P9-3.5, P9-4.1, P9-4.2, P9-4.3, P9-4.4, P9-4.5');
+  await expect(page.locator('#next-work')).toContainText('P9-2.1, P9-2.2, P9-2.3, P9-2.4, P9-2.5, P9-2.6, P9-3.1, P9-3.2, P9-3.3, P9-3.4, P9-3.5, P9-4.1, P9-4.2, P9-4.3, P9-4.4, P9-4.5, P9-4.6');
   await expect(page.locator('#next-work')).toContainText('Accepted numerical pressure: P9-3.4');
   await expect(page.locator('#next-work')).toContainText('Accepted prestate preservation: P9-3.5');
   await expect(page.locator('#next-work')).toContainText('Accepted C reference transport: P9-4.1');
@@ -105,7 +106,7 @@ test('archive availability is visible without revoking acceptance or blocking ex
 test('a current source failure holds work but preserves the recorded acceptance display', async ({page,request}) => {
   const value=await (await request.get('/api/status')).json();
   Object.assign(value,{current_boundary:'failed_closed',runtime_authorized:false,runtime_authority_state:'accepted_P9_G1_current_work_held',recorded_full_verification:'not_current',source_refs:[],iterations:[],policy_digest:null,error:'Current source binding failed'});
-  for(const key of ['implementation_scope','dependency_ready_leaves','permitted_runtime_paths','foundation_acceptance','request_acceptance','result_acceptance','harness_acceptance','integration_acceptance','geometry_acceptance','stage_acceptance','resource_acceptance','numerical_pressure_acceptance','preservation_acceptance','reference_transport_acceptance','c_current_acceptance','c_controls_acceptance','os_pass_acceptance','status_digest']) delete value[key];
+  for(const key of ['implementation_scope','dependency_ready_leaves','permitted_runtime_paths','foundation_acceptance','request_acceptance','result_acceptance','harness_acceptance','integration_acceptance','geometry_acceptance','stage_acceptance','resource_acceptance','numerical_pressure_acceptance','preservation_acceptance','reference_transport_acceptance','c_current_acceptance','c_controls_acceptance','os_pass_acceptance','os_operations_acceptance','status_digest']) delete value[key];
   value.status_digest=createHash('sha256').update(canonical(value)).digest('hex');
   await page.route('**/api/status',route=>route.fulfill({json:value}));
   await page.goto('/');

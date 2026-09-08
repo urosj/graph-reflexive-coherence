@@ -144,6 +144,11 @@ def verification_status(repo_root: Path) -> dict:
                     "accepted_iterations": ["P9-4.4"],
                     "path": module.OS_PASS_ACCEPTANCE,
                 },
+                os_operations_acceptance={
+                    "record_digest": module.accepted_os_operations(root)["record_digest"],
+                    "accepted_iterations": ["P9-4.5"],
+                    "path": module.OPERATIONS_ACCEPTANCE,
+                },
                 implementation_scope=approval["runtime_targets"],
                 dependency_ready_leaves=ready,
                 permitted_runtime_paths=sorted(
@@ -151,7 +156,7 @@ def verification_status(repo_root: Path) -> dict:
                     for r in approval["runtime_targets"]
                     if r["requires_gate"] == "P9-G1" and set(ready) & owners[r["path"]]
                 ),
-                next_gate="P9-4.5 Candidate C OS positive and atomic-negative ordinary-operation verification; P9-G2 and P9-G3 remain pending",
+                next_gate="P9-4.6 Candidate C OS snapshot/load/reset/rebase and deep immutability verification; P9-G2 and P9-G3 remain pending",
                 claim_ceiling="Accepted permission to implement reviewed V4 scope is not executed or accepted runtime conformance.",
             )
         cross = module.read(
@@ -297,6 +302,7 @@ def verification_status(repo_root: Path) -> dict:
         payload.pop("c_current_acceptance", None)
         payload.pop("c_controls_acceptance", None)
         payload.pop("os_pass_acceptance", None)
+        payload.pop("os_operations_acceptance", None)
         payload.pop("permitted_runtime_paths", None)
         payload.pop("source_meaning", None)
         payload.pop("tree", None)

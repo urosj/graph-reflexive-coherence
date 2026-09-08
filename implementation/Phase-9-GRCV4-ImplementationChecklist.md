@@ -582,8 +582,23 @@ three bounded batches retain their own results and raw per-run manifests.
   and general cluster/conditioning branches and reference atomicity are pressured.
   Parent-receipt scope stays provisional for the later lineage owner.
   Sixteen leaves and 29 paths are dependency-ready; support sets remain empty.
-- [ ] P9-4.6: Execute the C_OS snapshot/load/reset/rebase and deep-copy/
+- [x] P9-4.6: Execute the C_OS snapshot/load/reset/rebase and deep-copy/
   immutability slice; record the corresponding P9-7.1-C_OS evidence.
+  Implemented and verified; the user authorized commit without a full audit.
+  **The full independent audit remains pending.** This completion mark covers
+  implementation and verification only. All 76 focused methods pass
+  after exact source reconstruction with zero failures/errors/skips. The
+  [review](./phase-9-grcv4/tranche-4/P9-4.6-Review.md) maps actual restoration,
+  reset/rebase/assignment, deep independence and edge-case pressure to tests.
+  The [execution record](./phase-9-grcv4/tranche-4/P9-4.6-ExecutionRecord.json)
+  binds portable reconstruction and compact source queries. P9-7.1-C_OS is an
+  evidence alias, not another execution or whole-parent acceptance. Seventeen
+  leaves and 29 paths are ready; P9-4.7a/b and profile conformance remain pending.
+  The bound review and execution record retain their verification-time status;
+  this checklist records the later commit authorization.
+- [ ] Complete the deferred full independent audit of P9-4.6 and record its
+  findings and closure. Carry this obligation into subsequent work; the passing
+  automated checks and user-authorized commit do not discharge it.
 - [ ] P9-4.7a: Execute atomic failed-step, receipt identity/ownership, and
   state-to-step-to-snapshot-to-restore-to-replay pressure for C_OS.
 - [ ] P9-4.7b: Execute the remaining applicable C_OS lifecycle product through
@@ -644,9 +659,10 @@ coverage. Record bounded shared-audit results for the available profile set.
 
 The [P9-1.4 child register](./phase-9-grcv4/tranche-1/P9-1.4-SupportAndDependencies.json)
 now declares exact C_OS and A_OS lifecycle children, source/target crossing
-scopes, evidence aliases and dependencies. All are planned/unexecuted;
-P9-7.1-C_OS aliases P9-4.6 and P9-7.7-C_OS aliases P9-4.8, with no duplicate
-execution credit. Parent completion remains scoped to reviewed child evidence.
+scopes, evidence aliases and dependencies. P9-7.1-C_OS now has the P9-4.6
+implementation/evidence slice, authorized for commit with full audit pending;
+the other children remain
+planned/unexecuted. P9-7.7-C_OS aliases P9-4.8, with no duplicate execution credit. Parent completion remains scoped to reviewed child evidence.
 
 The registered C_OS/A_OS migration/event and P9-7.3–P9-7.6 children also own
 §7.5: deliberately distinct live/reset prestates, independently calculated

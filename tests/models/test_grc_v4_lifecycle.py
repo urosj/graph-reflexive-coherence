@@ -1,7 +1,7 @@
-"""Actual C_OS ordinary operations: independent oracles and atomic pressure.
+"""C_OS ordinary operations and lifecycle: independent oracles and atomic pressure.
 
 Fault-injection tests are explicitly controls, separate from native failures.
-No complete facade, reset/load/migration or global profile conformance claim.
+No complete facade/profile conformance, full lineage/replay or migration claim.
 """
 
 from __future__ import annotations
@@ -1240,6 +1240,814 @@ class CandidateCOSOperationTests(unittest.TestCase):
                 CandidateCOSOperation(inputs)
 
 
+def _p946_rehash(snapshot: dict[str, Any]) -> None:
+    """Independent ASCII/dyadic identity oracle, for coherent hostile inputs."""
+    snapshot["reset_digest"] = identity("grcv4-reset-sha256", snapshot["reset"])
+    snapshot["scientific_state"]["reset_digest"] = snapshot["reset_digest"]
+    snapshot["scientific_state_digest"] = scientific_id(snapshot["scientific_state"])
+    snapshot["lifecycle"]["scientific_state_digest"] = snapshot[
+        "scientific_state_digest"
+    ]
+    snapshot["lifecycle"]["receipt_ids"] = [
+        r["receipt_id"] for r in snapshot["receipt_ledger"]
+    ]
+    snapshot["lifecycle_digest"] = lifecycle_id(
+        snapshot["scientific_state"], snapshot["receipt_ledger"]
+    )
+
+
+def _p946_assignment(
+    owner: CandidateCOSOperation, C: tuple[float, ...], **clock: Any
+) -> Any:
+    state = replace(
+        owner.state, current=GRCV4AuthoritativeState(C, None, None), **clock
+    )
+    scientific = owner.snapshot()["scientific_state"]
+    scientific.update(
+        authoritative={"C": list(C), "W_A": None, "Z_4": None},
+        step_index=state.step_index,
+        time=state.time,
+    )
+    sid = scientific_id(scientific)
+    return replace(
+        state,
+        scientific_state_digest=sid,
+        lifecycle_digest=lifecycle_id(
+            scientific, [r.to_dict() for r in state.receipt_ledger]
+        ),
+    )
+
+
+class CandidateCOSLifecycleTests(unittest.TestCase):
+    def assert_snapshot(self, owner: CandidateCOSOperation, expected: bytes) -> None:
+        self.assertEqual(canonical_json_bytes(owner.snapshot()), expected)
+
+    def test_dyadic_snapshot_embeds_exact_preimages_and_acyclic_identities(
+        self,
+    ) -> None:
+        owner = CandidateCOSOperation(dyadic_fixture())
+        self.assertTrue(owner.step_v4(request(0.125)).committed)
+        snap = owner.snapshot()
+        self.assertEqual(
+            snap["scientific_state"]["authoritative"],
+            {"C": [2.5, 1.5], "W_A": None, "Z_4": None},
+        )
+        self.assertEqual(snap["reset"]["authoritative"]["C"], [3, 1])
+        self.assertNotIn("time", snap["reset"])
+        self.assertNotIn("receipt_ledger", snap["reset"])
+        self.assertEqual(
+            snap["scientific_state_digest"], scientific_id(snap["scientific_state"])
+        )
+        self.assertEqual(
+            snap["reset_digest"], identity("grcv4-reset-sha256", snap["reset"])
+        )
+        self.assertEqual(
+            snap["lifecycle_digest"],
+            lifecycle_id(
+                snap["scientific_state"],
+                snap["receipt_ledger"],
+            ),
+        )
+        record = snap["commit_records"][0]
+        self.assertEqual(
+            record["commit_id"], identity("grc-commit-sha256", record["payload"])
+        )
+        self.assertEqual(record["payload"]["target_time"], 0.125)
+        for receipt in snap["receipt_ledger"]:
+            self.assertEqual(
+                receipt["receipt_id"],
+                identity("grc-receipt-sha256", receipt["identity_payload"]),
+            )
+            self.assertEqual(receipt["commit_id"], record["commit_id"])
+        restored = CandidateCOSOperation.from_state(
+            snap, owner.reference.profile.params_resolved.to_payload()
+        )
+        self.assertEqual(restored.snapshot(), snap)
+
+    def test_reset_after_ordinary_preserves_lineage_clock_profile_and_charge(
+        self,
+    ) -> None:
+        owner = CandidateCOSOperation(dyadic_fixture())
+        owner.step_v4(request(0.125))
+        before = owner.snapshot()
+        owner.reset()
+        after = owner.snapshot()
+        self.assertEqual(owner.state.current.C, (3, 1))
+        self.assertEqual((owner.state.step_index, owner.state.time), (1, 0.125))
+        self.assertEqual(after["reset"], before["reset"])
+        self.assertEqual(after["reference"], before["reference"])
+        self.assertEqual(after["receipt_ledger"][:4], before["receipt_ledger"])
+        emitted = after["receipt_ledger"][4:]
+        self.assertEqual(len(emitted), 4)
+        primary = emitted[0]["identity_payload"]
+        self.assertEqual(primary["schema_version"], "grcv4-reset-receipt-v1")
+        self.assertEqual(primary["reset_baseline_digest"], before["reset_digest"])
+        self.assertEqual(
+            primary["core"]["parent_receipt_ids"],
+            [before["receipt_ledger"][0]["receipt_id"]],
+        )
+        for row in emitted:
+            core = row["identity_payload"]["core"]
+            self.assertEqual(
+                core["source_state_digest"], before["scientific_state_digest"]
+            )
+            self.assertEqual(
+                core["target_state_digest"], scientific_id(after["scientific_state"])
+            )
+            self.assertEqual(core["actual_charge_delta"], 0)
+        self.assertEqual(CandidateCOSOperation.from_state(after).snapshot(), after)
+
+    def test_rebase_reset_and_assignment_have_distinct_exact_effects(self) -> None:
+        owner = CandidateCOSOperation(dyadic_fixture())
+        owner.step_v4(request(0.125))
+        before = owner.snapshot()
+        owner.rebase_reset_baseline()
+        rebased = owner.snapshot()
+        self.assertEqual(owner.state.current.C, (2.5, 1.5))
+        self.assertEqual(owner.state.reset.authoritative.C, (2.5, 1.5))
+        self.assertEqual(owner.state.Q_target, 4)
+        self.assertEqual((owner.state.step_index, owner.state.time), (1, 0.125))
+        p = rebased["receipt_ledger"][4]["identity_payload"]
+        self.assertEqual(
+            (p["old_reset_digest"], p["new_reset_digest"]),
+            (before["reset_digest"], rebased["reset_digest"]),
+        )
+        owner.set_state(_p946_assignment(owner, (4, 0)))
+        self.assertEqual(owner.state.reset.authoritative.C, (2.5, 1.5))
+        self.assertEqual(owner.snapshot()["receipt_ledger"], rebased["receipt_ledger"])
+        self.assertEqual(owner.snapshot()["commit_records"], rebased["commit_records"])
+        # Current assignment may break adjacency to the latest commit's state.
+        # It must still be restorable without inventing a commit for assignment.
+        owner = CandidateCOSOperation.from_state(owner.snapshot())
+        owner.reset()
+        self.assertEqual(owner.state.current.C, (2.5, 1.5))
+        self.assertEqual((owner.state.step_index, owner.state.time), (1, 0.125))
+
+    def test_repeated_identity_operations_append_distinct_commits_without_writers(
+        self,
+    ) -> None:
+        owner = CandidateCOSOperation(dyadic_fixture())
+        before = owner.snapshot()
+        with patch(
+            "pygrc.models.grc_v4_step.CandidateCOSPass",
+            side_effect=AssertionError("administration must not execute OS"),
+        ):
+            for action in (
+                owner.reset,
+                owner.reset,
+                owner.rebase_reset_baseline,
+                owner.rebase_reset_baseline,
+            ):
+                action()
+                self.assertEqual(
+                    owner.state.scientific_state_digest,
+                    before["scientific_state_digest"],
+                )
+            self.assertTrue(owner.step_v4(request(0)).committed)
+        ledger = owner.snapshot()["receipt_ledger"]
+        self.assertEqual(len(ledger), 20)
+        self.assertEqual(len({r["receipt_id"] for r in ledger}), 20)
+        self.assertEqual(len({r["commit_id"] for r in ledger}), 5)
+        self.assertEqual(owner.duplicate().snapshot(), owner.snapshot())
+
+    def test_deep_independence_of_snapshot_duplicate_copy_and_retained_state(
+        self,
+    ) -> None:
+        from copy import copy, deepcopy
+
+        owner = CandidateCOSOperation(dyadic_fixture())
+        owner.step_v4(request(0.125))
+        old_state = owner.get_state()
+        original = canonical_json_bytes(owner.snapshot())
+        for duplicate in (owner.duplicate(), copy(owner), deepcopy(owner)):
+            self.assertEqual(duplicate.snapshot(), owner.snapshot())
+            self.assertIsNot(duplicate.reference, owner.reference)
+            self.assertIsNot(duplicate.state, owner.state)
+            self.assertIsNot(
+                duplicate.state.receipt_ledger[0], old_state.receipt_ledger[0]
+            )
+            duplicate.rebase_reset_baseline()
+            duplicate.set_state(_p946_assignment(duplicate, (4, 0)))
+            self.assert_snapshot(owner, original)
+        snapshot = owner.snapshot()
+        for path in (
+            ("reference", "graph", "live_node_ids"),
+            ("scientific_state", "authoritative", "C"),
+            ("reset", "authoritative", "C"),
+            ("commit_records", 0, "payload", "emitted_receipt_ids"),
+            ("receipt_ledger", 0, "identity_payload", "core", "parent_receipt_ids"),
+        ):
+            value: Any = snapshot
+            for key in path:
+                value = value[key]
+            value.append("mutated")
+        snapshot["reference"]["profile"]["params_resolved"]["candidate"]["W_C_tr"][
+            "e"
+        ] = 999
+        self.assert_snapshot(owner, original)
+        owner.reset()
+        self.assertEqual(old_state.current.C, (2.5, 1.5))
+        self.assertEqual(len(old_state.receipt_ledger), 4)
+        with self.assertRaises((TypeError, AttributeError, FrozenInstanceError)):
+            old_state.current.C[0] = 0  # type: ignore[index]
+        immutable_receipt: Any = old_state.receipt_ledger[0]
+        with self.assertRaises(TypeError):
+            immutable_receipt["identity_payload"]["core"]["operation_id"] = "mutated"
+
+    def test_restoration_detaches_caller_payload_and_asserts_parameters(self) -> None:
+        source = CandidateCOSOperation(dyadic_fixture()).snapshot()
+        target = CandidateCOSOperation.from_state(source)
+        expected = canonical_json_bytes(target.snapshot())
+        source["reference"]["K4_base"][0][0] = 99
+        source["reset"]["authoritative"]["C"][0] = 99
+        self.assert_snapshot(target, expected)
+        params: Any = target.reference.profile.params_resolved.to_payload()
+        params["candidate"]["eta_C"] = 99
+        with self.assertRaises(V4IdentityError):
+            CandidateCOSOperation.from_state(target.snapshot(), params)
+
+    def test_closed_snapshot_requires_every_field_and_rejects_extra_authority(
+        self,
+    ) -> None:
+        from copy import deepcopy
+
+        original = CandidateCOSOperation(dyadic_fixture()).snapshot()
+        for field in original:
+            altered = deepcopy(original)
+            del altered[field]
+            with self.subTest(missing=field), self.assertRaises(ValueError):
+                CandidateCOSOperation.from_state(altered)
+        for field in (
+            "T_C",
+            "J",
+            "h",
+            "H1_form",
+            "previous_root",
+            "inspection_cache",
+            "telemetry",
+            "file",
+            "rng",
+        ):
+            altered = deepcopy(original)
+            altered[field] = {}
+            with self.subTest(extra=field), self.assertRaises(ValueError):
+                CandidateCOSOperation.from_state(altered)
+        for field in ("schema_version", "model_family", "implementation_layout_id"):
+            for bad in (None, "GRC9V3", "unknown", 1, False):
+                altered = deepcopy(original)
+                altered[field] = bad
+                with self.subTest(field=field, bad=bad), self.assertRaises(ValueError):
+                    CandidateCOSOperation.from_state(altered)
+
+    def test_null_wrong_typed_and_stale_digest_fields_never_disable_verification(
+        self,
+    ) -> None:
+        from copy import deepcopy
+
+        owner = CandidateCOSOperation(dyadic_fixture())
+        owner.step_v4(request(0.125))
+        original = owner.snapshot()
+        bad: Any
+        for path in (
+            ("scientific_state_digest",),
+            ("reset_digest",),
+            ("lifecycle_digest",),
+            ("commit_records", 0, "commit_id"),
+            ("receipt_ledger", 0, "receipt_id"),
+            ("receipt_ledger", 0, "commit_id"),
+        ):
+            for bad in (None, False, 0, {}, [], "grcv4-state-sha256:" + "0" * 64):
+                altered = deepcopy(original)
+                value: Any = altered
+                for key in path[:-1]:
+                    value = value[key]
+                value[path[-1]] = bad
+                with (
+                    self.subTest(path=path, bad=bad),
+                    self.assertRaises((ValueError, TypeError)),
+                ):
+                    CandidateCOSOperation.from_state(altered)
+        self.assertEqual(owner.snapshot(), original)
+
+    def test_rehashed_cross_identity_mismatch_still_rejects(self) -> None:
+        from copy import deepcopy
+
+        original = CandidateCOSOperation(dyadic_fixture()).snapshot()
+        fields = {
+            "active_model_identity": "grcv4-profile-sha256:" + "0" * 64,
+            "graph_digest": "grc-graph-sha256:" + "0" * 64,
+            "orientation_identity": "foreign",
+            "context_contract_id": "foreign",
+            "Q_target": 5,
+        }
+        for group in ("scientific_state", "reset"):
+            for field, bad in fields.items():
+                altered = deepcopy(original)
+                altered[group][field] = bad
+                _p946_rehash(altered)
+                with (
+                    self.subTest(group=group, field=field),
+                    self.assertRaises(ValueError),
+                ):
+                    CandidateCOSOperation.from_state(altered)
+        altered = deepcopy(original)
+        altered["scientific_state"]["context_value_digest"] = (
+            "grcv4-context-sha256:" + "0" * 64
+        )
+        _p946_rehash(altered)
+        with self.assertRaises(ValueError):
+            CandidateCOSOperation.from_state(altered)
+
+    def test_rehashed_negative_history_shape_and_charge_inputs_fail_readmission(
+        self,
+    ) -> None:
+        from copy import deepcopy
+
+        original = CandidateCOSOperation(dyadic_fixture()).snapshot()
+        for group in ("scientific_state", "reset"):
+            for field, bad in (
+                ("C", [-1, 5]),
+                ("C", [3]),
+                ("C", [2, 1]),
+                ("W_A", [1]),
+                ("Z_4", [0]),
+            ):
+                altered = deepcopy(original)
+                altered[group]["authoritative"][field] = bad
+                _p946_rehash(altered)
+                with (
+                    self.subTest(group=group, field=field, value=bad),
+                    self.assertRaises(ValueError),
+                ):
+                    CandidateCOSOperation.from_state(altered)
+
+    def test_native_singular_current_and_reset_reject_even_with_coherent_hashes(
+        self,
+    ) -> None:
+        from copy import deepcopy
+
+        deformation = math.exp(0.25 * (0.5 * (math.tanh(3) + math.tanh(1))))
+        retained = float(2 * Fraction(deformation) ** 2)
+        beta = 1 + 2 * retained
+        self.assertEqual(1 - Fraction(beta) + 2 * Fraction(retained), 0)
+        state = GRCV4AuthoritativeState((4, 0), None, None)
+        inputs = replace(
+            os_fixture(
+                candidate={
+                    "kappa_M_C": 0.5,
+                    "tau_C": 1,
+                    "chi_C": 1,
+                    "zeta_C": beta,
+                    "Lambda_C": 10,
+                },
+                geometry={"kappa_H": 0.0001},
+            ),
+            current=state,
+            reset=state,
+        )
+        owner = CandidateCOSOperation(inputs)
+        original = owner.snapshot()
+        for group in ("scientific_state", "reset"):
+            altered = deepcopy(original)
+            altered[group]["authoritative"]["C"] = [3, 1]
+            _p946_rehash(altered)
+            with (
+                self.subTest(group=group),
+                self.assertRaises(CandidateCStageError) as raised,
+            ):
+                CandidateCOSOperation.from_state(altered)
+            self.assertEqual(raised.exception.disposition, "singular")
+        with self.assertRaises(CandidateCStageError):
+            owner.set_state(_p946_assignment(owner, (3, 1)))
+        self.assertEqual(owner.snapshot(), original)
+
+    def test_set_state_validates_full_target_and_forbids_lifecycle_replacement(
+        self,
+    ) -> None:
+        owner = CandidateCOSOperation(dyadic_fixture())
+        owner.step_v4(request(0.125))
+        original = canonical_json_bytes(owner.snapshot())
+        for changes in (
+            {"scientific_state_digest": "x"},
+            {"lifecycle_digest": "x"},
+            {"context_value_digest": "x"},
+            {"current": GRCV4AuthoritativeState((3, 1), None, None)},
+            {"receipt_ledger": ()},
+        ):
+            with self.subTest(changes=changes), self.assertRaises(ValueError):
+                owner.set_state(replace(owner.state, **changes))
+            self.assert_snapshot(owner, original)
+        for clock in ({"step_index": 7}, {"time": 3.5}):
+            with self.subTest(clock=clock), self.assertRaises(ValueError):
+                owner.set_state(_p946_assignment(owner, (4, 0), **clock))
+            self.assert_snapshot(owner, original)
+        with self.assertRaises(ValueError):
+            owner.set_state(_p946_assignment(owner, (4, 1)))
+        foreign = CandidateCOSOperation(os_fixture())
+        with self.assertRaises(ValueError):
+            owner.set_state(foreign.state)
+        twin = owner.duplicate()
+        twin.rebase_reset_baseline()
+        with self.assertRaises(ValueError):
+            owner.set_state(twin.state)
+        with self.assertRaises(TypeError):
+            owner.set_state(owner.snapshot())  # type: ignore[arg-type]
+        self.assert_snapshot(owner, original)
+
+    def test_load_verifies_historical_commit_preimages_and_order(self) -> None:
+        from copy import deepcopy
+
+        owner = CandidateCOSOperation(dyadic_fixture())
+        owner.step_v4(request(0.125))
+        owner.rebase_reset_baseline()
+        owner.step_v4(request(0.125))
+        owner.reset()
+        original = owner.snapshot()
+        for field in ("commit_records", "receipt_ledger"):
+            for operation in (
+                lambda rows: rows.pop(0),
+                lambda rows: rows.reverse(),
+                lambda rows: rows.append(deepcopy(rows[0])),
+                lambda rows: rows.clear(),
+            ):
+                altered = deepcopy(original)
+                cast(Any, operation)(altered[field])
+                _p946_rehash(altered)
+                with self.subTest(field=field), self.assertRaises(ValueError):
+                    CandidateCOSOperation.from_state(altered)
+        for field in (
+            "target_time",
+            "target_step_index",
+            "operation_id",
+            "source_state_digest",
+            "target_state_digest",
+        ):
+            altered = deepcopy(original)
+            record = altered["commit_records"][0]["payload"]
+            record[field] = (
+                42 if field in ("target_time", "target_step_index") else "bad"
+            )
+            with self.subTest(field=field), self.assertRaises(ValueError):
+                CandidateCOSOperation.from_state(altered)
+
+        # Coherently rehash the changed historical commit. Receipt IDs and final
+        # scientific/lifecycle identities remain valid. This must fail on the
+        # local clock transition, not a stale hash or unrelated schema error.
+        self.assertEqual(
+            CandidateCOSOperation.from_state(original).snapshot(), original
+        )
+        for index, field, value in (
+            (0, "target_time", 0.5),
+            (0, "target_step_index", 3),
+            (1, "target_time", 0.25),
+            (1, "target_step_index", 2),
+            (2, "target_step_index", 4),
+            (2, "target_time", 0),
+        ):
+            altered = deepcopy(original)
+            record = altered["commit_records"][index]
+            record["payload"][field] = value
+            record["commit_id"] = identity("grc-commit-sha256", record["payload"])
+            for row in altered["receipt_ledger"][4 * index : 4 * (index + 1)]:
+                row["commit_id"] = record["commit_id"]
+            with (
+                self.subTest(index=index, field=field),
+                self.assertRaisesRegex(V4IdentityError, "clock transition"),
+            ):
+                CandidateCOSOperation.from_state(altered)
+
+    def test_reference_content_and_every_nested_identity_are_load_bearing(self) -> None:
+        from copy import deepcopy
+
+        original = CandidateCOSOperation(dyadic_fixture()).snapshot()
+        for path, value in (
+            (("K4_base",), [[9]]),
+            (("reference_hodge", "edge_weights"), {"e": 99}),
+            (("graph", "live_node_ids"), ["a", "a"]),
+            (("graph", "oriented_edges", 0, "tail_node_id"), "absent"),
+            (("profile", "complete_profile_id"), "grcv4-profile-sha256:" + "0" * 64),
+            (
+                ("profile", "identity_payload", "params_hash"),
+                "grcv4-params-sha256:" + "0" * 64,
+            ),
+            (("profile", "params_resolved", "candidate", "W_C_tr"), {"e": 5}),
+            (
+                ("profile", "params_resolved", "candidate", "W_C_tr_content_digest"),
+                "grcv4-wctr-sha256:" + "0" * 64,
+            ),
+            (("context", "value"), {"x": 1}),
+        ):
+            altered = deepcopy(original)
+            ref = altered["reference"]
+            for key in path[:-1]:
+                ref = ref[key]
+            ref[path[-1]] = value
+            with self.subTest(path=path), self.assertRaises(ValueError):
+                CandidateCOSOperation.from_state(altered)
+
+    def test_charge_tolerance_reset_receipt_reports_actual_negative_delta(self) -> None:
+        owner = CandidateCOSOperation(charge_fixture(2))
+        self.assertTrue(owner.step_v4(request(1)).committed)
+        before = owner.snapshot()
+        owner.reset()
+        after = owner.snapshot()
+        self.assertEqual(
+            after["receipt_ledger"][4]["identity_payload"]["core"][
+                "actual_charge_delta"
+            ],
+            -2,
+        )
+        self.assertEqual(after["receipt_ledger"][5]["identity_payload"]["residual"], 0)
+        self.assertEqual(after["scientific_state"]["Q_target"], float(2**53 + 2))
+        self.assertEqual(after["reset"], before["reset"])
+        self.assertEqual(owner.duplicate().snapshot(), after)
+
+    def test_loop_parallel_isolated_and_permuted_graphs_roundtrip_with_exact_maps(
+        self,
+    ) -> None:
+        for graph, resource, weights in (
+            (
+                GRCV4Graph(("node",), (OrientedEdge("loop", "node", "node"),)),
+                (4,),
+                {"loop": 3},
+            ),
+            (
+                GRCV4Graph(
+                    (9, "a", "isolate"),
+                    (
+                        OrientedEdge("z", "a", 9),
+                        OrientedEdge("a", 9, "a"),
+                        OrientedEdge("l", 9, 9),
+                    ),
+                ),
+                (3, 1, 0),
+                {"z": 3, "a": 7, "l": 2},
+            ),
+        ):
+            inputs = current_fixture(
+                graph=graph,
+                resource=resource,
+                weights={k: float(v) for k, v in weights.items()},
+                changes={"candidate": {"chi_C": 0}, "geometry": {"kappa_H": 0}},
+            )
+            owner = CandidateCOSOperation(replace(inputs, receipt_ids=()))
+            self.assertTrue(owner.step_v4(request(0)).committed)
+            copy = owner.duplicate()
+            self.assertEqual(copy.reference.graph, graph)
+            self.assertEqual(
+                cast(Any, copy.reference.profile.params_resolved.to_payload())[
+                    "candidate"
+                ]["W_C_tr"],
+                weights,
+            )
+            self.assertEqual(copy.snapshot(), owner.snapshot())
+            copy.reset()
+            self.assertEqual(copy.state.current.C, resource)
+
+    def test_canonical_save_load_rejects_duplicate_keys_nonfinite_and_negative_zero(
+        self,
+    ) -> None:
+        from pathlib import Path
+        from tempfile import TemporaryDirectory
+        from pygrc.models.grc_v4_codec import V4WireError
+
+        owner = CandidateCOSOperation(dyadic_fixture())
+        owner.step_v4(request(0.125))
+        with TemporaryDirectory(prefix="p946 snapshot ") as directory:
+            path = Path(directory) / "state with spaces.json"
+            owner.save(str(path))
+            content = path.read_bytes()
+            self.assertEqual(content, canonical_json_bytes(owner.snapshot()))
+            self.assertEqual(
+                CandidateCOSOperation.load(str(path)).snapshot(), owner.snapshot()
+            )
+            for invalid in (
+                content + b"\n",
+                b'{"model_family":"GRCV4",' + content[1:],
+                content.replace(b'"time":0.125', b'"time":-0'),
+                content.replace(b'"time":0.125', b'"time":NaN'),
+                content.replace(b'"time":0.125', b'"time":1e-999'),
+                content.replace(b'"step_index":1', b'"step_index":9007199254740993'),
+            ):
+                self.assertNotEqual(invalid, content)
+                path.write_bytes(invalid)
+                with self.assertRaises((V4WireError, ValueError)):
+                    CandidateCOSOperation.load(str(path))
+
+    def test_save_load_fresh_process_and_large_canonical_clock_tokens(self) -> None:
+        import os
+        import subprocess
+        import sys
+        from pathlib import Path
+        from tempfile import TemporaryDirectory
+
+        # Clock extremes are legitimate lifecycle values, independent of dt.
+        owner = CandidateCOSOperation(
+            replace(dyadic_fixture(), step_index=2**53 - 1, time=1e308)
+        )
+        with TemporaryDirectory(prefix="p946 portable ") as directory:
+            path = Path(directory) / "snapshot.json"
+            owner.save(str(path))
+            script = "from pygrc.models.grc_v4_lifecycle import CandidateCOSOperation; import sys; x=CandidateCOSOperation.load(sys.argv[1]); x.save(sys.argv[2]); assert x.state.time==1e308 and x.state.step_index==2**53-1; x.reset(); assert x.state.time==1e308"
+            output = path.with_name("restored.json")
+            env = dict(os.environ, PYTHONHASHSEED="946")
+            env["PYTHONPATH"] = str(Path(__file__).resolve().parents[2] / "src")
+            process = subprocess.run(
+                [sys.executable, "-c", script, str(path), str(output)],
+                cwd=directory,
+                env=env,
+                capture_output=True,
+                text=True,
+            )
+            self.assertEqual(process.returncode, 0, process.stderr)
+            self.assertEqual(path.read_bytes(), output.read_bytes())
+
+    def test_all_administrative_faults_keep_state_and_commit_preimages_atomic(
+        self,
+    ) -> None:
+        from pygrc.models.grc_v4_step import ResourceBoundaryError
+
+        owner = CandidateCOSOperation(dyadic_fixture())
+        owner.step_v4(request(0.125))
+        original = canonical_json_bytes(owner.snapshot())
+        for method in (owner.reset, owner.rebase_reset_baseline):
+            for name in (
+                "_os_inputs",
+                "ProvisionalCandidateCOSStep",
+                "_ordinary_receipts",
+                "make_commit_receipts",
+                "_lifecycle_state",
+                "_OwnedCOS",
+            ):
+                for error in (
+                    ValueError("programmer"),
+                    RuntimeError("programmer"),
+                    V4IdentityError("internal identity"),
+                    ResourceBoundaryError(
+                        "target_readmission",
+                        "domain_failure",
+                        "native typed boundary control",
+                    ),
+                ):
+
+                    def fail(*args: Any, **kwargs: Any) -> Any:
+                        self.assert_snapshot(owner, original)
+                        raise error
+
+                    with (
+                        self.subTest(
+                            method=method.__name__,
+                            name=name,
+                            error=type(error).__name__,
+                        ),
+                        patch(
+                            "pygrc.models.grc_v4_lifecycle." + name, side_effect=fail
+                        ),
+                        self.assertRaises(type(error)) as raised,
+                    ):
+                        method()
+                    self.assertIs(raised.exception, error)
+                    self.assert_snapshot(owner, original)
+
+    def test_restoration_and_assignment_do_not_publish_before_final_readmission(
+        self,
+    ) -> None:
+        owner = CandidateCOSOperation(dyadic_fixture())
+        owner.step_v4(request(0.125))
+        original = canonical_json_bytes(owner.snapshot())
+        assigned = _p946_assignment(owner, (4, 0))
+        for name in (
+            "_os_inputs",
+            "ProvisionalCandidateCOSStep",
+            "_lifecycle_state",
+            "_OwnedCOS",
+        ):
+            with (
+                self.subTest(name=name),
+                patch(
+                    "pygrc.models.grc_v4_lifecycle." + name,
+                    side_effect=RuntimeError("late failure"),
+                ),
+            ):
+                with self.assertRaises(RuntimeError):
+                    owner.set_state(assigned)
+                with self.assertRaises(RuntimeError):
+                    CandidateCOSOperation.from_state(owner.snapshot())
+            self.assert_snapshot(owner, original)
+
+    def test_rehashed_receipt_semantic_contradictions_reject(self) -> None:
+        from copy import deepcopy
+
+        owner = CandidateCOSOperation(dyadic_fixture())
+        owner.step_v4(request(0.125))
+        original = owner.snapshot()
+
+        def resign(snap: dict[str, Any]) -> None:
+            record = snap["commit_records"][0]
+            for r in snap["receipt_ledger"]:
+                r["receipt_id"] = identity("grc-receipt-sha256", r["identity_payload"])
+            record["payload"]["emitted_receipt_ids"] = [
+                r["receipt_id"] for r in snap["receipt_ledger"]
+            ]
+            record["commit_id"] = identity("grc-commit-sha256", record["payload"])
+            for r in snap["receipt_ledger"]:
+                r["commit_id"] = record["commit_id"]
+            _p946_rehash(snap)
+
+        unchanged = deepcopy(original)
+        resign(unchanged)
+        self.assertEqual(unchanged, original)
+        self.assertEqual(
+            CandidateCOSOperation.from_state(unchanged).snapshot(), original
+        )
+        for field, bad in (
+            (
+                "resource_transform_digest",
+                "grcv4-resource-transform-sha256:" + "0" * 64,
+            ),
+            ("history_bundle_digest", "grcv4-history-map-sha256:" + "0" * 64),
+            ("target_authoritative_digest", "grcv4-authoritative-sha256:" + "0" * 64),
+            ("parent_receipt_ids", [original["receipt_ledger"][0]["receipt_id"]]),
+        ):
+            altered = deepcopy(original)
+            for r in altered["receipt_ledger"]:
+                r["identity_payload"]["core"][field] = bad
+            resign(altered)
+            with self.subTest(field=field), self.assertRaises(ValueError):
+                CandidateCOSOperation.from_state(altered)
+        for field, value in (
+            ("admitted_charge", -4),
+            ("residual", 1),
+            ("target_charge", 5),
+        ):
+            altered = deepcopy(original)
+            altered["receipt_ledger"][1]["identity_payload"][field] = value
+            resign(altered)
+            with self.subTest(charge=field), self.assertRaises(ValueError):
+                CandidateCOSOperation.from_state(altered)
+        altered = deepcopy(original)
+        altered["commit_records"][0]["payload"]["target_time"] = 0.25
+        resign(altered)
+        with self.assertRaises(V4IdentityError):
+            CandidateCOSOperation.from_state(altered)
+
+    def test_restored_positive_continuation_has_literal_dyadic_resource(self) -> None:
+        owner = CandidateCOSOperation(dyadic_fixture())
+        owner.step_v4(request(0.125, "first"))
+        owner.rebase_reset_baseline()
+        restored = owner.duplicate()
+        left, right = (
+            owner.step_v4(request(0.125, "second")),
+            restored.step_v4(request(0.125, "second")),
+        )
+        self.assertTrue(left.committed)
+        self.assertTrue(right.committed)
+        self.assertEqual(owner.state.current.C, (2.25, 1.75))
+        self.assertEqual(owner.state.reset.authoritative.C, (2.5, 1.5))
+        self.assertEqual(owner.snapshot(), restored.snapshot())
+        self.assertEqual(left.commit_id, right.commit_id)
+
+    def test_snapshot_during_admission_observes_one_state_and_commit_generation(
+        self,
+    ) -> None:
+        from threading import Event, Thread
+        import pygrc.models.grc_v4_lifecycle as lifecycle
+
+        owner = CandidateCOSOperation(dyadic_fixture())
+        owner.step_v4(request(0.125))
+        old = owner.snapshot()
+        ready, release = Event(), Event()
+        errors: list[BaseException] = []
+        real = lifecycle._lifecycle_state
+
+        def pause(*args: Any, **kwargs: Any) -> Any:
+            target = real(*args, **kwargs)
+            ready.set()
+            if not release.wait(10):
+                raise RuntimeError("publication test timed out")
+            return target
+
+        def worker() -> None:
+            try:
+                owner.reset()
+            except BaseException as exc:
+                errors.append(exc)
+
+        with patch.object(lifecycle, "_lifecycle_state", side_effect=pause):
+            thread = Thread(target=worker)
+            thread.start()
+            try:
+                self.assertTrue(ready.wait(10))
+                self.assertEqual(owner.snapshot(), old)
+            finally:
+                release.set()
+                thread.join(10)
+        self.assertFalse(thread.is_alive())
+        self.assertEqual(errors, [])
+        self.assertEqual(len(owner.snapshot()["commit_records"]), 2)
+        self.assertEqual(owner.duplicate().snapshot(), owner.snapshot())
+
+
 _P945_METHODS = (
     "test_capture_rejects_same_file_method_slot_substitution",
     "test_native_reference_only_poststate_singularity_rejects_after_valid_consumed_final",
@@ -1450,9 +2258,219 @@ def capture_p945(output: str) -> int:
     return 0 if record["status"] == "passed" else 1
 
 
+_P946_METHODS = (
+    "test_dyadic_snapshot_embeds_exact_preimages_and_acyclic_identities",
+    "test_reset_after_ordinary_preserves_lineage_clock_profile_and_charge",
+    "test_rebase_reset_and_assignment_have_distinct_exact_effects",
+    "test_repeated_identity_operations_append_distinct_commits_without_writers",
+    "test_deep_independence_of_snapshot_duplicate_copy_and_retained_state",
+    "test_restoration_detaches_caller_payload_and_asserts_parameters",
+    "test_closed_snapshot_requires_every_field_and_rejects_extra_authority",
+    "test_null_wrong_typed_and_stale_digest_fields_never_disable_verification",
+    "test_rehashed_cross_identity_mismatch_still_rejects",
+    "test_rehashed_negative_history_shape_and_charge_inputs_fail_readmission",
+    "test_native_singular_current_and_reset_reject_even_with_coherent_hashes",
+    "test_set_state_validates_full_target_and_forbids_lifecycle_replacement",
+    "test_load_verifies_historical_commit_preimages_and_order",
+    "test_reference_content_and_every_nested_identity_are_load_bearing",
+    "test_charge_tolerance_reset_receipt_reports_actual_negative_delta",
+    "test_loop_parallel_isolated_and_permuted_graphs_roundtrip_with_exact_maps",
+    "test_canonical_save_load_rejects_duplicate_keys_nonfinite_and_negative_zero",
+    "test_save_load_fresh_process_and_large_canonical_clock_tokens",
+    "test_all_administrative_faults_keep_state_and_commit_preimages_atomic",
+    "test_restoration_and_assignment_do_not_publish_before_final_readmission",
+    "test_rehashed_receipt_semantic_contradictions_reject",
+    "test_restored_positive_continuation_has_literal_dyadic_resource",
+    "test_snapshot_during_admission_observes_one_state_and_commit_generation",
+)
+
+
+def capture_p946(output: str) -> int:
+    """One source-bound focused run; replay source comes from Git history."""
+    from datetime import datetime, timezone
+    import hashlib
+    import importlib.metadata
+    import json
+    import os
+    from pathlib import Path
+    import platform
+    import subprocess
+    from tests.models.test_grc_v4_candidate_c import _p941_execute
+
+    root = Path(__file__).resolve().parents[2]
+    generated = (
+        root
+        / "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/generated"
+    )
+    destination = (root / output).resolve()
+    if (
+        not destination.is_relative_to(generated.resolve())
+        or destination == generated.resolve()
+        or destination.exists()
+    ):
+        raise ValueError(
+            "capture requires a fresh repository-local generated destination"
+        )
+    base = "ec9f8662d08eafc5346837ddbbb74c9a4359a9b4"
+    subprocess.run(
+        ["git", "merge-base", "--is-ancestor", base, "HEAD"], cwd=root, check=True
+    )
+    scopes = [
+        "src",
+        "tests",
+        "specs",
+        "pyproject.toml",
+        "uv.lock",
+        "implementation/investigations/grc9v4-constitutive-design/drafts/2026-09-GRC-V4.md",
+    ]
+    overrides = {
+        "src/pygrc/models/grc_v4_codec.py",
+        "src/pygrc/models/grc_v4_lifecycle.py",
+        "tests/models/test_grc_v4_lifecycle.py",
+    }
+
+    def snapshot() -> dict[str, str]:
+        names = subprocess.check_output(
+            [
+                "git",
+                "ls-files",
+                "--cached",
+                "--others",
+                "--exclude-standard",
+                "--",
+                *scopes,
+            ],
+            cwd=root,
+            text=True,
+        ).splitlines()
+        return {
+            n: hashlib.sha256((root / n).read_bytes()).hexdigest()
+            for n in sorted(set(names))
+        }
+
+    before = snapshot()
+    changed = set(
+        subprocess.check_output(
+            ["git", "diff", "--name-only", base, "--", *scopes], cwd=root, text=True
+        ).splitlines()
+    )
+    base_names = set(
+        subprocess.check_output(
+            ["git", "ls-tree", "-r", "--name-only", base, "--", *scopes],
+            cwd=root,
+            text=True,
+        ).splitlines()
+    )
+    if (changed | (set(before) - base_names)) - overrides or base_names - set(before):
+        raise ValueError("source differs outside the P9-4.6 reconstruction envelope")
+    import ast
+
+    # Accepted predecessor source pins shared test names; current discovery
+    # cannot turn a renamed/skipped test into a smaller successful obligation.
+    shared: set[str] = set()
+    for module, classes in {
+        "test_grc_v4_lifecycle": {"CandidateCOSOperationTests"},
+        "test_grc_v4_codec": {"CodecTests"},
+        "test_grc_v4_state": {"FrozenJSONTests", "LifecycleOwnershipTests"},
+    }.items():
+        base_tests = ast.parse(
+            subprocess.check_output(
+                ["git", "show", base + ":tests/models/" + module + ".py"], cwd=root
+            )
+        )
+        shared.update(
+            "tests.models." + module + "." + c.name + "." + n.name
+            for c in base_tests.body
+            if isinstance(c, ast.ClassDef) and c.name in classes
+            for n in c.body
+            if isinstance(n, ast.FunctionDef) and n.name.startswith("test_")
+        )
+    required = shared | {
+        "tests.models.test_grc_v4_lifecycle.CandidateCOSLifecycleTests." + n
+        for n in _P946_METHODS
+    }
+    import importlib
+
+    importlib.import_module("tests.models.test_grc_v4_transport")
+    suite = unittest.defaultTestLoader.loadTestsFromNames(sorted(required))
+    started = datetime.now(timezone.utc).isoformat()
+    record = {
+        "schema": "phase9_leaf_focused_run_v1",
+        "iteration_id": "P9-4.6",
+        "source": {
+            "base_commit": base,
+            "scopes": scopes,
+            "overrides_sha256": {n: before[n] for n in sorted(overrides)},
+            "manifest_sha256": hashlib.sha256(canonical_json_bytes(before)).hexdigest(),
+            "file_count": len(before),
+            "reconstruction": "Overlay only the listed hash-matching source files from the commit containing this run onto base_commit; verify the scoped manifest. Before commit, use the reviewed working tree.",
+        },
+        "required_ids": sorted(required),
+        "started_utc": started,
+        "python": platform.python_version(),
+        "platform": platform.platform(),
+        "dependencies": sorted(
+            f"{d.metadata['Name']}=={d.version}"
+            for d in importlib.metadata.distributions()
+        ),
+        "environment": {
+            key: os.environ.get(key)
+            for key in ("PYTHONHASHSEED", "OPENBLAS_NUM_THREADS", "OMP_NUM_THREADS")
+        },
+        "replay_command": [
+            ".venv/bin/python",
+            "-m",
+            "tests.models.test_grc_v4_lifecycle",
+            "--capture-p946",
+            str(destination.relative_to(root)),
+        ],
+        "claim_ceiling": "Bounded C_OS snapshot/load/reset/rebase/set-state and deep independence, plus accepted ordinary-operation and codec/immutable-state regression. P9-7.1-C_OS slice only; no full replay/receipt-ownership, event/migration, public facade/profile conformance or cross-platform bitwise claim.",
+        "numerical_policy": "Inherited C stage/star/geometry binary64 policy; exact reference-relative split tolerance via symmetric inertia; fixed-rank affine selector path certification with a 256-bisection fail-closed ceiling. Positive subnormal durations are never classified as zero.",
+    }
+    record.update(
+        _p941_execute(
+            root,
+            before,
+            required,
+            suite,
+            snapshot,
+            extra_modules=frozenset(
+                {
+                    "pygrc.models.grc_v4_codec",
+                    "tests.models.test_grc_v4_codec",
+                    "pygrc.models.grc_v4_state",
+                    "tests.models.test_grc_v4_state",
+                    "pygrc.models.grc_v4_geometry",
+                    "pygrc.models.grc_v4_transport",
+                    "pygrc.models.grc_v4_step",
+                    "pygrc.models.grc_v4_realizations",
+                    "pygrc.models.grc_v4_lifecycle",
+                    "tests.models.test_grc_v4_lifecycle",
+                    "tests.models.test_grc_v4_realizations",
+                }
+            ),
+        )
+    )
+    record["completed_utc"] = datetime.now(timezone.utc).isoformat()
+    record["live_source_check_limits"] = (
+        "Inherited source-slot, live-code, before/after disk and exact executed-roster checks; not hostile-interpreter attestation. Relocated checkout and fresh interpreter reuse the installed dependency environment; no fresh-install or different-platform claim."
+    )
+    if record.get("loaded_sources_before") == record.get("loaded_sources_after"):
+        record["loaded_sources"] = record.pop("loaded_sources_before")
+        record.pop("loaded_sources_after")
+    destination.mkdir(parents=True, exist_ok=False)
+    (destination / "run.json").write_text(json.dumps(record, indent=2) + "\n")
+    print("P9-4.6", record["status"], json.dumps(record.get("results", {})), flush=True)
+    if record["status"] != "passed":
+        print(record.get("capture_error", record.get("failure_output", "")), flush=True)
+    return 0 if record["status"] == "passed" else 1
+
+
 if __name__ == "__main__":
     import sys
 
     if len(sys.argv) == 3 and sys.argv[1] == "--capture-p945":
         raise SystemExit(capture_p945(sys.argv[2]))
+    if len(sys.argv) == 3 and sys.argv[1] == "--capture-p946":
+        raise SystemExit(capture_p946(sys.argv[2]))
     unittest.main()

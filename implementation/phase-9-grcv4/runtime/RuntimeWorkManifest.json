@@ -839,6 +839,11 @@
       "iteration_id": "P9-4.5"
     },
     {
+      "path": "implementation/phase-9-grcv4/evidence/P9-4.6/validation/run.json",
+      "sha256": "52d49e360303d5d757e25d4c27d0390a19cf5ba5814680a664260c2bfca3ba33",
+      "iteration_id": "P9-4.6"
+    },
+    {
       "path": "implementation/phase-9-grcv4/tranche-2/P9-2.1-ExecutionRecord.json",
       "sha256": "561817390d50afbd1eaf2c8ee2bc12409de9458892ae944f947eaabed66a916c",
       "iteration_id": "P9-2.1"
@@ -1004,6 +1009,16 @@
       "iteration_id": "P9-4.5"
     },
     {
+      "path": "implementation/phase-9-grcv4/tranche-4/P9-4.6-ExecutionRecord.json",
+      "sha256": "2eb16be1b1662c9748d611cd4dc86300bcd412c3335c128a327b484f7f346e31",
+      "iteration_id": "P9-4.6"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-4/P9-4.6-Review.md",
+      "sha256": "2ae29c0c512bc3225545be489f062d24b3ee0e2bdccd6547c5dccae628b3e0cb",
+      "iteration_id": "P9-4.6"
+    },
+    {
       "path": "pyproject.toml",
       "sha256": "018c364413f75ee49186975c05e9cdaba7a78e171d47833609fbebc223a64a66",
       "iteration_id": "P9-3.1"
@@ -1045,8 +1060,8 @@
     },
     {
       "path": "src/pygrc/models/grc_v4_codec.py",
-      "sha256": "bd6d9390c818c5a25b70da119cfbc3a3de3707ee84566f6bb06160bb4780e154",
-      "iteration_id": "P9-2.3"
+      "sha256": "90ee2f9c29d94c4566f081b90066592d2370b16bacbf3bf397527483d889dde3",
+      "iteration_id": "P9-4.6"
     },
     {
       "path": "src/pygrc/models/grc_v4_geometry.py",
@@ -1055,8 +1070,8 @@
     },
     {
       "path": "src/pygrc/models/grc_v4_lifecycle.py",
-      "sha256": "f90e2aa58db7b79306e18157ddc4f241af3acf758bcaf691bc6b32b47a787f60",
-      "iteration_id": "P9-4.5"
+      "sha256": "52a3e3656070ee6ee5849581ed86f746f0c83ea27c4544a9b4c7383ee432c89e",
+      "iteration_id": "P9-4.6"
     },
     {
       "path": "src/pygrc/models/grc_v4_profile.py",
@@ -1115,8 +1130,8 @@
     },
     {
       "path": "tests/models/test_grc_v4_lifecycle.py",
-      "sha256": "c24ed614db501e5a4f22a6d6a2465ea5b517ed23798fd4682dd8989b83da7541",
-      "iteration_id": "P9-4.5"
+      "sha256": "2f2da3ef9b6fb5da0ae3812183cfb86927ce76e4233e3adbfe8b479ad30ddcdc",
+      "iteration_id": "P9-4.6"
     },
     {
       "path": "tests/models/test_grc_v4_profile.py",
@@ -1147,5 +1162,5 @@
   "accepted_generic_runtime_support": [],
   "admitted_specialization_support_sets": [],
   "claim_ceiling": "Exact current implementation content bindings, not review acceptance or conformance.",
-  "record_digest": "0e5a43658042cb33771d7532d2d1112e179951a1a3554569f5292382c97e2c68"
+  "record_digest": "a869a0c3d48f8987cf5c6eb38c55e7703bd64067b84e95fbc9c4d20100ac8245"
 }

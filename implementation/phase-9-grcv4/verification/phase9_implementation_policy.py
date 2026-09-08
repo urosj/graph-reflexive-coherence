@@ -83,6 +83,8 @@ CONTROLS_ACCEPTANCE = PHASE + "tranche-4/P9-4.3-AcceptanceRecord.json"
 CONTROLS_ACCEPTANCE_DIGEST = "b2834e343fc50fa447ca430475a064157d27b431e27eb64ee721ff52e66a6f15"
 OS_PASS_ACCEPTANCE = PHASE + "tranche-4/P9-4.4-AcceptanceRecord.json"
 OS_PASS_ACCEPTANCE_DIGEST = "37d61d733bf90b794e4c68f0b2d078f7d38b41aa3f4c0679457c24a3161ad074"
+OPERATIONS_ACCEPTANCE = PHASE + "tranche-4/P9-4.5-AcceptanceRecord.json"
+OPERATIONS_ACCEPTANCE_DIGEST = "b37b037f0baa0fe5e291c96deba0520933070077b8d5a6a64995fbca21b5e274"
 # Explicit user-authorized presentation maintenance after accepted P9-3.3
 # ce83d7a. Only these original -> presented Git blobs may differ from HEAD.
 # The run's /presentation binds the original repository revision and embedded
@@ -143,6 +145,7 @@ PATHS = {
     CURRENT_ACCEPTANCE,
     CONTROLS_ACCEPTANCE,
     OS_PASS_ACCEPTANCE,
+    OPERATIONS_ACCEPTANCE,
     HERE + "phase9_implementation_policy.py",
     HERE + "audit_phase9_implementation.py",
     HERE + "test_phase9_g1.py",
@@ -631,6 +634,26 @@ def accepted_os_pass(root):
     return value
 
 
+def accepted_os_operations(root):
+    """Committed P9-4.5 acceptance opens only its dependency-ready successors."""
+    value = read(safe_path(root, OPERATIONS_ACCEPTANCE))
+    require(value["record_digest"] == digest_record(value) == OPERATIONS_ACCEPTANCE_DIGEST,
+            "untrusted C OS operations acceptance")
+    require(value["schema"] == "phase9_c_os_operations_acceptance_v1"
+            and value["status"] == "accepted_by_user"
+            and value["release_id"] == prior.RELEASE_ID
+            and value["predecessor_record_digest"] == OS_PASS_ACCEPTANCE_DIGEST
+            and value["accepted_iterations"] == ["P9-4.5"]
+            and value["accepted_generic_runtime_support"] == []
+            and value["admitted_specialization_support_sets"] == [],
+            "invalid C OS operations acceptance scope")
+    prior.ancestor(root, value["baseline_commit"])
+    for row in value["evidence_bindings"]:
+        require(sha(git(root, "show", f"{value['baseline_commit']}:{row['path']}"))
+                == row["sha256"], "accepted C OS operations subject changed")
+    return value
+
+
 def leaf_permissions(root):
     """Readiness from accepted dependencies, never inferred from completion."""
     accepted = {"P9-G1", *accepted_foundation(root)["accepted_iterations"],
@@ -646,7 +669,8 @@ def leaf_permissions(root):
                 *accepted_reference_transport(root)["accepted_iterations"],
                 *accepted_c_current(root)["accepted_iterations"],
                 *accepted_c_controls(root)["accepted_iterations"],
-                *accepted_os_pass(root)["accepted_iterations"]}
+                *accepted_os_pass(root)["accepted_iterations"],
+                *accepted_os_operations(root)["accepted_iterations"]}
     support = read(
         safe_path(root, PHASE + "tranche-1/P9-1.4-SupportAndDependencies.json")
     )
@@ -687,6 +711,9 @@ def leaf_permissions(root):
             # existing sole lifecycle commit owner and typed numerical failure
             # provenance. This does not open later lifecycle operations.
             leaves.add("P9-4.5")
+        if module["module_id"] in {"grc_v4_lifecycle", "grc_v4_codec"}:
+            # P9-4.6 owns the C_OS lifecycle receiver and closed snapshot codec.
+            leaves.add("P9-4.6")
         for field in ["path", "test_path"]:
             owners[module[field]] = leaves
     for name in [

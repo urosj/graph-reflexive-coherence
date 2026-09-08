@@ -54,6 +54,62 @@ class V4IdentityError(ValueError):
     """An identity-bearing payload and a supplied identifier disagree."""
 
 
+def cos_snapshot_payload(value: object) -> dict[str, JSONValue]:
+    """Closed implementation envelope around the frozen V4 identity payloads.
+
+    The release names grcv4-snapshot-v1 and freezes its constituent preimages,
+    but supplies no top-level snapshot schema. This explicit layout marker
+    limits decoding to this C_OS receiver; it is not a new release schema or
+    permission to restore arbitrary profiles. Numerical/ledger admission is
+    performed by the lifecycle owner, after this defensive wire copy.
+    """
+    data = _copy_json(value, set())
+    keys = {
+        "schema_version",
+        "model_family",
+        "implementation_layout_id",
+        "reference",
+        "scientific_state",
+        "scientific_state_digest",
+        "reset",
+        "reset_digest",
+        "receipt_ledger",
+        "commit_records",
+        "lifecycle",
+        "lifecycle_digest",
+    }
+    if not isinstance(data, dict) or set(data) != keys:
+        raise V4SchemaError("expected the complete closed C_OS snapshot envelope")
+    if (
+        data["schema_version"],
+        data["model_family"],
+        data["implementation_layout_id"],
+    ) != (
+        "grcv4-snapshot-v1",
+        "GRCV4",
+        "pygrc-c-os-snapshot-v1",
+    ):
+        raise V4SchemaError("unsupported snapshot family, version or layout")
+    for field, schema in (
+        ("scientific_state", "scientific_state_payload"),
+        ("reset", "grcv4_reset_payload"),
+        ("lifecycle", "lifecycle_envelope_payload"),
+    ):
+        data[field] = validate_payload(schema, data[field])
+    if not isinstance(data["reference"], dict):
+        raise V4SchemaError("snapshot requires embedded reference content")
+    if not isinstance(data["receipt_ledger"], list) or not isinstance(
+        data["commit_records"], list
+    ):
+        raise V4SchemaError("snapshot requires ordered receipt and commit arrays")
+    for record in data["commit_records"]:
+        if not isinstance(record, dict) or set(record) != {"commit_id", "payload"}:
+            raise V4SchemaError("expected a commit ID and its complete preimage")
+        record["payload"] = validate_payload("commit_payload", record["payload"])
+        if payload_identity("commit_payload", record["payload"]) != record["commit_id"]:
+            raise V4IdentityError("commit ID does not match its complete preimage")
+    return data
+
 def _dependency(name: str) -> ModuleType:
     try:
         return importlib.import_module(name)

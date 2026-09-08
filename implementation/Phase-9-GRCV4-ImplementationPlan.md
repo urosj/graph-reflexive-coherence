@@ -738,6 +738,29 @@ the accepted commit without promoting ordinary-operation evidence to conformance
 P9-4.6 snapshot/load/reset/rebase and later lifecycle product coverage remain held;
 no generic-runtime or specialization conformance is accepted.
 
+P9-4.6 continuation: the user authorized this leaf after accepting P9-4.5.
+The [P9-4.5 acceptance record](./phase-9-grcv4/tranche-4/P9-4.5-AcceptanceRecord.json)
+binds `ec9f8662d08eafc5346837ddbbb74c9a4359a9b4`. Seventeen leaves and 29 paths
+are dependency-ready. P9-4.6 implements actual C_OS snapshot/load/reset/rebase,
+compatible current assignment and independent duplication. All 76 focused
+methods passed in the reconstructed checkout with no failures/errors/skips.
+The user authorized commit without a full audit; **the full independent audit
+of P9-4.6 remains pending**. See the
+[review](./phase-9-grcv4/tranche-4/P9-4.6-Review.md) and
+[execution record](./phase-9-grcv4/tranche-4/P9-4.6-ExecutionRecord.json).
+The `P9-7.1-C_OS` child aliases this evidence without duplicate credit. Snapshots
+embed resolved reference/profile content, scientific/reset payloads, ordered
+receipts and historical commit preimages. Target current and reset are freshly
+readmitted; state and commit preimages publish together. Reset preserves live
+clock and lineage; assignment changes only C. The review states the explicit
+implementation snapshot layout and local receipt-parent conventions. Full
+receipt ownership/replay, events/migrations and profile conformance remain with
+their later leaves. The bound review and execution record retain their
+verification-time pending-review status; this plan records the later commit
+authorization. Carry the outstanding P9-4.6 audit into subsequent work and
+record its findings and closure separately. Automated checks and commit
+authorization do not close that audit. P9-4.7a/b and G2 remain pending.
+
 ### Tranche 5. Candidate A with OS
 
 Implement exact history-free initialization, authoritative positive retained

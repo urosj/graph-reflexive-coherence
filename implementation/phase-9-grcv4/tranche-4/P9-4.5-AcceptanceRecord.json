@@ -1,0 +1,32 @@
+{
+  "schema": "phase9_c_os_operations_acceptance_v1",
+  "status": "accepted_by_user",
+  "baseline_commit": "ec9f8662d08eafc5346837ddbbb74c9a4359a9b4",
+  "release_id": "grcv4-spec-release-sha256:9f4c8fe5b57b1c477d834a3e4dae3f98a2b18c70e6e7f598e3c9652170c8645f",
+  "predecessor_record_digest": "37d61d733bf90b794e4c68f0b2d078f7d38b41aa3f4c0679457c24a3161ad074",
+  "accepted_iterations": [
+    "P9-4.5"
+  ],
+  "acceptance_basis": "User accepted P9-4.5 and its audit corrections, committed at ec9f8662d08eafc5346837ddbbb74c9a4359a9b4, then authorized P9-4.6. Published validation-time records and claim limits remain unchanged.",
+  "evidence_bindings": [
+    {
+      "path": "implementation/phase-9-grcv4/tranche-4/P9-4.5-Review.md",
+      "sha256": "dfed0c1607c858a072ce842a28e09b0ee9f22e385bcd8240c72265098497d6dc"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-4/P9-4.5-ExecutionRecord.json",
+      "sha256": "8050284467b945e0ab73da5b1151c1a73cfffe374cef549e78f174b22cba949f"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-4.5/validation/run.json",
+      "sha256": "6c5537d9ba03cb8400b9dd8a3fafff108ddde8184474643c3c023cdc91b78477"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/runtime/RuntimeWorkManifest.json",
+      "sha256": "feb6aeee336434344a0d62efda7a435453cb7371bb8be7e8802c74bd78f8a4ac"
+    }
+  ],
+  "accepted_generic_runtime_support": [],
+  "admitted_specialization_support_sets": [],
+  "record_digest": "b37b037f0baa0fe5e291c96deba0520933070077b8d5a6a64995fbca21b5e274"
+}
