@@ -834,6 +834,11 @@
       "iteration_id": "P9-4.4"
     },
     {
+      "path": "implementation/phase-9-grcv4/evidence/P9-4.5/validation/run.json",
+      "sha256": "6c5537d9ba03cb8400b9dd8a3fafff108ddde8184474643c3c023cdc91b78477",
+      "iteration_id": "P9-4.5"
+    },
+    {
       "path": "implementation/phase-9-grcv4/tranche-2/P9-2.1-ExecutionRecord.json",
       "sha256": "561817390d50afbd1eaf2c8ee2bc12409de9458892ae944f947eaabed66a916c",
       "iteration_id": "P9-2.1"
@@ -989,6 +994,16 @@
       "iteration_id": "P9-4.4"
     },
     {
+      "path": "implementation/phase-9-grcv4/tranche-4/P9-4.5-ExecutionRecord.json",
+      "sha256": "8050284467b945e0ab73da5b1151c1a73cfffe374cef549e78f174b22cba949f",
+      "iteration_id": "P9-4.5"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-4/P9-4.5-Review.md",
+      "sha256": "dfed0c1607c858a072ce842a28e09b0ee9f22e385bcd8240c72265098497d6dc",
+      "iteration_id": "P9-4.5"
+    },
+    {
       "path": "pyproject.toml",
       "sha256": "018c364413f75ee49186975c05e9cdaba7a78e171d47833609fbebc223a64a66",
       "iteration_id": "P9-3.1"
@@ -1025,8 +1040,8 @@
     },
     {
       "path": "src/pygrc/models/grc_v4_candidate_c.py",
-      "sha256": "f8e3a4b184dea4641c1921be3df5a5e5cd43ff211c4ea67317b1ba6c60cc45de",
-      "iteration_id": "P9-4.2"
+      "sha256": "59dde00ff754e9ce8879bdb6b3980fa2db9eefab98b02698cb0600fda356c2c6",
+      "iteration_id": "P9-4.5"
     },
     {
       "path": "src/pygrc/models/grc_v4_codec.py",
@@ -1035,8 +1050,13 @@
     },
     {
       "path": "src/pygrc/models/grc_v4_geometry.py",
-      "sha256": "02711d13bc0075d961b8538dfb2e811014c0051e8c3dcefd03c1eb409f32004b",
-      "iteration_id": "P9-3.4"
+      "sha256": "cb2d9b900d0091b59e4fe77ef4acc4037225e79b2ee166c99486c93b307c92a4",
+      "iteration_id": "P9-4.5"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_lifecycle.py",
+      "sha256": "f90e2aa58db7b79306e18157ddc4f241af3acf758bcaf691bc6b32b47a787f60",
+      "iteration_id": "P9-4.5"
     },
     {
       "path": "src/pygrc/models/grc_v4_profile.py",
@@ -1045,8 +1065,8 @@
     },
     {
       "path": "src/pygrc/models/grc_v4_realizations.py",
-      "sha256": "b7c56283c2cd1b6cd1000a479a2d1e6922698aa2e9902e5ff51f9ef0bdd38707",
-      "iteration_id": "P9-4.4"
+      "sha256": "2fd35e9a7641fc460651497120f42ee4407959243e8970718727b01398375753",
+      "iteration_id": "P9-4.5"
     },
     {
       "path": "src/pygrc/models/grc_v4_state.py",
@@ -1055,13 +1075,13 @@
     },
     {
       "path": "src/pygrc/models/grc_v4_step.py",
-      "sha256": "7530315cf903483ac22603d65f08c1f759ffa52f1874e04829024a8465bc8a1f",
-      "iteration_id": "P9-4.4"
+      "sha256": "cf8eda58bf1582a76360bb88eed07405315820c9e2c63980170b1f350ee1f16d",
+      "iteration_id": "P9-4.5"
     },
     {
       "path": "src/pygrc/models/grc_v4_transport.py",
-      "sha256": "f2a1c04f1ea458e95e07f9f5feb8f96914e20fedc399ae4385e94128d25be1e3",
-      "iteration_id": "P9-3.3"
+      "sha256": "4ead39ae9343c4873a7cef149471e72ce6df562f82b2a6f03c3c00f1b07f4730",
+      "iteration_id": "P9-4.5"
     },
     {
       "path": "tests/models/grcv4_conformance_harness.py",
@@ -1080,8 +1100,8 @@
     },
     {
       "path": "tests/models/test_grc_v4_candidate_c.py",
-      "sha256": "6afe30188f3fb3a709f11fd7822daab61ea542bfc522be6a207bdb1c7246783a",
-      "iteration_id": "P9-4.3"
+      "sha256": "a9fd322349c67745dda9f915c78f10ecdf452c783064e3b5717acd079b45bfca",
+      "iteration_id": "P9-4.5"
     },
     {
       "path": "tests/models/test_grc_v4_codec.py",
@@ -1094,14 +1114,19 @@
       "iteration_id": "P9-3.4"
     },
     {
+      "path": "tests/models/test_grc_v4_lifecycle.py",
+      "sha256": "c24ed614db501e5a4f22a6d6a2465ea5b517ed23798fd4682dd8989b83da7541",
+      "iteration_id": "P9-4.5"
+    },
+    {
       "path": "tests/models/test_grc_v4_profile.py",
       "sha256": "6dcd4a0abffca13bc8a0c0e7e697a54e421ba079eaef5d77e4609184d67a0dea",
       "iteration_id": "P9-2.2"
     },
     {
       "path": "tests/models/test_grc_v4_realizations.py",
-      "sha256": "874437d96d0fd1ef4a4fddf9dc428052f2bec08862c1fee04e5d8299c058f700",
-      "iteration_id": "P9-4.4"
+      "sha256": "b88383e6384c89453ebb8434fde30634dc0bdd13a08b4cfcb6f6b71a4d5c3193",
+      "iteration_id": "P9-4.5"
     },
     {
       "path": "tests/models/test_grc_v4_state.py",
@@ -1122,5 +1147,5 @@
   "accepted_generic_runtime_support": [],
   "admitted_specialization_support_sets": [],
   "claim_ceiling": "Exact current implementation content bindings, not review acceptance or conformance.",
-  "record_digest": "1ee9c66f7aed933b3a924ee28582f5949debb229b4f6e5286aa115fded373ad1"
+  "record_digest": "0e5a43658042cb33771d7532d2d1112e179951a1a3554569f5292382c97e2c68"
 }

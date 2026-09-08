@@ -3123,7 +3123,9 @@ _P941_METHODS = (
 )
 
 
-def _p941_loaded_sources(root: Path, hashes: dict[str, str]) -> dict[str, Any]:
+def _p941_loaded_sources(
+    root: Path, hashes: dict[str, str], *, extra_modules: frozenset[str] = frozenset()
+) -> dict[str, Any]:
     """Check origins and live source code; not hostile-interpreter attestation."""
     import inspect
     from types import CodeType
@@ -3131,7 +3133,7 @@ def _p941_loaded_sources(root: Path, hashes: dict[str, str]) -> dict[str, Any]:
     leaf_modules = {
         "pygrc.models.grc_v4_candidate_c",
         "tests.models.test_grc_v4_candidate_c",
-    }
+    } | extra_modules
     # A local file can still be the wrong module. Bind names to their actual
     # package paths, including the second instance created by `python -m`.
     aliases = {}
@@ -3235,6 +3237,8 @@ def _p941_execute(
     required: set[str],
     suite: unittest.TestSuite,
     source_hashes: Callable[[], dict[str, str]],
+    *,
+    extra_modules: frozenset[str] = frozenset(),
 ) -> dict[str, Any]:
     """The same before/run/after gate serves full and explicitly focused runs."""
     import io
@@ -3249,7 +3253,9 @@ def _p941_execute(
         record["coverage"] = _p934_coverage(required, names)
         if not record["coverage"]["passed"]:
             raise RuntimeError("discovery differs from the independently pinned roster")
-        record["loaded_sources_before"] = _p941_loaded_sources(root, before)
+        record["loaded_sources_before"] = _p941_loaded_sources(
+            root, before, extra_modules=extra_modules
+        )
         result = cast(
             _P934Result,
             unittest.TextTestRunner(stream=stream, resultclass=_P934Result).run(suite),
@@ -3265,7 +3271,9 @@ def _p941_execute(
                 canonical_json_bytes(sorted(r["test"] for r in result.rows))
             ).hexdigest(),
         }
-        record["loaded_sources_after"] = _p941_loaded_sources(root, before)
+        record["loaded_sources_after"] = _p941_loaded_sources(
+            root, before, extra_modules=extra_modules
+        )
         if any(
             record["loaded_sources_after"].get(name) != row
             for name, row in record["loaded_sources_before"].items()

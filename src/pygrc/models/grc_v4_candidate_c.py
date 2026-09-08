@@ -36,7 +36,7 @@ from .grc_v4_geometry import (
 )
 from .grc_v4_codec import _dependency
 from .grc_v4_profile import CandidateCParams, GRCV4Profile, SolverPolicy
-from .grc_v4_state import FrozenJSONMap, _number, _vector
+from .grc_v4_state import FrozenJSONMap, SolverDisposition, _number, _vector
 from .grc_v4_transport import CandidateCMobility, candidate_c_structural_hodge
 
 
@@ -160,6 +160,27 @@ _CExact: TypeAlias = tuple[tuple[Fraction, ...], ...]
 C_STAGE_NUMERICS = "grcv4-c-stage-exact-linear-binary64-v1"
 
 
+class CandidateCStageError(ValueError):
+    """Observed numeric failure; the operation owner supplies stage and receipt.
+
+    Residual rejection means no numerically admitted root was produced, not
+    proof that the underlying exact constitutive equation lacks a solution.
+    """
+
+    def __init__(self, disposition: SolverDisposition, message: str) -> None:
+        if disposition not in (
+            "domain_failure",
+            "singular",
+            "conditioning_failure",
+            "nonfinite",
+            "no_admitted_root",
+            "multiple_admitted_roots",
+        ):
+            raise ValueError("expected a failed C stage disposition")
+        super().__init__(message)
+        self.disposition = disposition
+
+
 def _c_exact(matrix: Matrix) -> _CExact:
     return tuple(tuple(Fraction(x) for x in row) for row in matrix)
 
@@ -168,7 +189,9 @@ def _c_float(matrix: _CExact) -> Matrix:
     try:
         return tuple(tuple(_computed(float(x)) for x in row) for row in matrix)
     except OverflowError as exc:
-        raise ValueError("C stage result is not finite binary64") from exc
+        raise CandidateCStageError(
+            "nonfinite", "C stage result is not finite binary64"
+        ) from exc
 
 
 def _c_transpose(matrix: _CExact) -> _CExact:
@@ -207,7 +230,9 @@ def _c_inverse(matrix: _CExact) -> _CExact:
     for j in range(n):
         pivot = next((i for i in range(j, n) if rows[i][j]), None)
         if pivot is None:
-            raise ValueError("singular C stage block; no fallback")
+            raise CandidateCStageError(
+                "singular", "singular C stage block; no fallback"
+            )
         rows[j], rows[pivot] = rows[pivot], rows[j]
         divisor = rows[j][j]
         rows[j] = [x / divisor for x in rows[j]]
@@ -272,7 +297,7 @@ def _c_condition(matrix: Matrix, limit: float, label: str) -> FrozenJSONMap:
     exact = _c_exact(matrix)
     scale = max(abs(x) for row in exact for x in row)
     if not scale:
-        raise ValueError("singular " + label)
+        raise CandidateCStageError("singular", "singular " + label)
     normalized = tuple(tuple(x / scale for x in row) for row in exact)
     gram = _c_mm(_c_transpose(normalized), normalized)
     n = len(gram)
@@ -282,17 +307,19 @@ def _c_condition(matrix: Matrix, limit: float, label: str) -> FrozenJSONMap:
             max(gram[i][i] for i in range(n)),
         )
         if lower <= 0:
-            raise ValueError("singular " + label)
+            raise CandidateCStageError("singular", "singular " + label)
     elif n == 2:
         # Squaring the exact 2x2 Gram eigenvalue ratio inequality avoids
         # deciding an equality from rounded singular-value endpoints.
         a, b, d = gram[0][0], gram[0][1], gram[1][1]
         if a * d <= b * b:
-            raise ValueError("singular " + label)
+            raise CandidateCStageError("singular", "singular " + label)
         trace, discriminant = a + d, (a - d) ** 2 + 4 * b * b
         k2 = Fraction(limit) ** 2
         if k2 < 1 or (k2 - 1) ** 2 * trace**2 < (k2 + 1) ** 2 * discriminant:
-            raise ValueError("conditioning limit exceeded: " + label)
+            raise CandidateCStageError(
+                "conditioning_failure", "conditioning limit exceeded: " + label
+            )
         numerator = math.isqrt(discriminant.numerator)
         denominator = math.isqrt(discriminant.denominator)
         if (
@@ -308,9 +335,17 @@ def _c_condition(matrix: Matrix, limit: float, label: str) -> FrozenJSONMap:
         try:
             singular = np.linalg.svd(np.array(_c_float(normalized)), compute_uv=False)
         except np.linalg.LinAlgError as exc:
-            raise ValueError("conditioning decomposition failed: " + label) from exc
-        if not np.all(np.isfinite(singular)) or min(singular) <= 0:
-            raise ValueError("conditioning cannot resolve " + label)
+            raise CandidateCStageError(
+                "conditioning_failure", "conditioning decomposition failed: " + label
+            ) from exc
+        if not np.all(np.isfinite(singular)):
+            raise CandidateCStageError(
+                "nonfinite", "nonfinite conditioning decomposition: " + label
+            )
+        if min(singular) <= 0:
+            raise CandidateCStageError(
+                "conditioning_failure", "conditioning cannot resolve " + label
+            )
         small, large = float(min(singular)), float(max(singular))
         for attempt in range(32):
             if attempt:
@@ -319,7 +354,9 @@ def _c_condition(matrix: Matrix, limit: float, label: str) -> FrozenJSONMap:
             else:
                 small_bound, large_bound = small, large
             if small_bound <= 0 or not math.isfinite(large_bound):
-                raise ValueError("conditioning cannot resolve " + label)
+                raise CandidateCStageError(
+                    "conditioning_failure", "conditioning cannot resolve " + label
+                )
             lower, upper = Fraction(small_bound) ** 2, Fraction(large_bound) ** 2
             low_test = tuple(
                 tuple(x - (lower if i == j else 0) for j, x in enumerate(row))
@@ -332,10 +369,14 @@ def _c_condition(matrix: Matrix, limit: float, label: str) -> FrozenJSONMap:
             if _c_inertia(low_test)[0] == 0 and _c_inertia(high_test)[0] == 0:
                 break
         else:
-            raise ValueError("conditioning certificate unresolved: " + label)
+            raise CandidateCStageError(
+                "conditioning_failure", "conditioning certificate unresolved: " + label
+            )
     bound = upper / lower
     if bound > Fraction(limit) ** 2:
-        raise ValueError("conditioning limit exceeded: " + label)
+        raise CandidateCStageError(
+            "conditioning_failure", "conditioning limit exceeded: " + label
+        )
     return FrozenJSONMap(
         {
             "block": label,
@@ -379,7 +420,9 @@ def _c_solve(
         strict=True,
     ):
         if not _c_residual_pass(residual, target, policy):
-            raise ValueError("declared residual tolerance failed: " + label)
+            raise CandidateCStageError(
+                "no_admitted_root", "declared residual tolerance failed: " + label
+            )
     return result
 
 
@@ -442,7 +485,9 @@ class CandidateCSelector:
         )
         rank, zeros, _ = _c_inertia(shifted)
         if zeros:
-            raise ValueError("selector cutoff lies on the exact spectrum")
+            raise CandidateCStageError(
+                "domain_failure", "selector cutoff lies on the exact spectrum"
+            )
         components = _c_components(graph)
         certificate: dict[str, object] = {
             "method": "exact_generalized_shift_inertia",
@@ -477,9 +522,13 @@ class CandidateCSelector:
             try:
                 values, vectors = np.linalg.eigh(np.array(whitened))
             except np.linalg.LinAlgError as exc:
-                raise ValueError("selector decomposition failed") from exc
+                raise CandidateCStageError(
+                    "domain_failure", "selector decomposition failed"
+                ) from exc
             if not np.all(np.isfinite(values)) or not np.all(np.isfinite(vectors)):
-                raise ValueError("nonfinite selector decomposition")
+                raise CandidateCStageError(
+                    "nonfinite", "nonfinite selector decomposition"
+                )
             physical = tuple(
                 tuple(
                     Fraction(_computed(float(vectors[i, j]) / roots[i]))
@@ -509,7 +558,9 @@ class CandidateCSelector:
             )
             lower_root = math.nextafter(min(roots), 0.0)
             if defect >= 1 or lower_root <= 0 or Fraction(lower_root) ** 2 > min(mu):
-                raise ValueError("selector metric certificate failed")
+                raise CandidateCStageError(
+                    "domain_failure", "selector metric certificate failed"
+                )
             # Polar orthonormalization bounds the difference to an orthogonal
             # diagonalization: ||R||/(1-delta) + 4||D||delta/(1-delta).
             error = (
@@ -518,7 +569,9 @@ class CandidateCSelector:
             ) / (1 - defect)
             gap = min(abs(Fraction(float(v)) - Fraction(cutoff)) for v in values)
             if gap <= error or sum(float(v) < cutoff for v in values) != rank:
-                raise ValueError("selector gap is numerically unresolved")
+                raise CandidateCStageError(
+                    "domain_failure", "selector gap is numerically unresolved"
+                )
             selected_indices = [
                 j for j, value in enumerate(values) if float(value) < cutoff
             ]
@@ -647,7 +700,13 @@ class _CandidateCAlgebra:
                 for e in graph.oriented_edges
             )
         except OverflowError as exc:
-            raise ValueError("nonfinite C Hodge deformation") from exc
+            raise CandidateCStageError(
+                "nonfinite", "nonfinite C Hodge deformation"
+            ) from exc
+        if any(x <= 0 for x in deformation):
+            raise CandidateCStageError(
+                "domain_failure", "computed C deformation must be positive"
+            )
         deformation = _vector(deformation, positive=True)
         pre = self.pairings.one_form.matrix
         retained = OneFormHodge(
@@ -899,7 +958,9 @@ class CandidateCCurrent:
         if not _c_residual_pass(
             residual, tuple(Fraction(x) for x in algebra.baseline.values), policy
         ):
-            raise ValueError("physical read-back closure residual failed")
+            raise CandidateCStageError(
+                "no_admitted_root", "physical read-back closure residual failed"
+            )
         object.__setattr__(self, "algebra", algebra)
         object.__setattr__(self, "current", current)
         object.__setattr__(self, "read", read)

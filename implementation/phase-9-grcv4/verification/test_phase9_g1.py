@@ -52,7 +52,7 @@ def main():
             ],
             check=True,
         )
-        fixture_revision = p.accepted_c_controls(p.ROOT)["baseline_commit"]
+        fixture_revision = p.accepted_os_pass(p.ROOT)["baseline_commit"]
         subprocess.run(
             ["git", "checkout", "--quiet", "--detach", fixture_revision],
             cwd=root, check=True,
@@ -519,9 +519,9 @@ def main():
                                b"{}", leaf="P9-3.5"),
         )
         case(
-            "c_current_does_not_accept_future_leaf",
-            lambda: registered(p.PHASE + "evidence/P9-4.5/probe/inputs.json",
-                               b"{}", leaf="P9-4.5"),
+            "os_pass_does_not_accept_future_leaf",
+            lambda: registered(p.PHASE + "evidence/P9-4.6/probe/inputs.json",
+                               b"{}", leaf="P9-4.6"),
             "owning leaf entry dependencies are not accepted",
         )
         case(
@@ -642,6 +642,21 @@ def main():
             case("c_controls_acceptance_cannot_self_authorize_" + key,
                  forged_controls, "untrusted C control derivative acceptance",
                  scope="isolated_c_controls_acceptance_authentication")
+        case("missing_os_pass_acceptance", lambda: edit(p.OS_PASS_ACCEPTANCE, None),
+             "P9-4.4-AcceptanceRecord.json")
+        for key, replacement in [("status", "pending"), ("accepted_iterations", ["P9-4.4", "P9-4.5"]),
+                                 ("accepted_generic_runtime_support", ["C_OS"]),
+                                 ("admitted_specialization_support_sets", [["C_OS"]]),
+                                 ("baseline_commit", p.BASELINE), ("evidence_bindings", [])]:
+            def forged_os_pass(key=key, replacement=replacement):
+                value = p.read(root / p.OS_PASS_ACCEPTANCE)
+                value[key] = replacement
+                value["record_digest"] = p.digest_record(value)
+                with mutate(p.OS_PASS_ACCEPTANCE, p.canonical(value)):
+                    p.accepted_os_pass(root)
+            case("os_pass_acceptance_cannot_self_authorize_" + key,
+                 forged_os_pass, "untrusted C OS pass acceptance",
+                 scope="isolated_os_pass_acceptance_authentication")
         for name in ["src/pygrc/models/grc_v4_candidate_c.py", "tests/models/test_grc_v4_candidate_c.py"]:
             case("accepted_preservation_enables_" + Path(name).stem,
                  lambda name=name: registered(name, content, leaf="P9-4.1"))
@@ -654,6 +669,9 @@ def main():
         for name in ["src/pygrc/models/grc_v4_realizations.py", "tests/models/test_grc_v4_realizations.py", "src/pygrc/models/grc_v4_step.py", "tests/models/test_grc_v4_step.py"]:
             case("accepted_controls_enable_os_" + Path(name).stem,
                  lambda name=name: registered(name, content, leaf="P9-4.4"))
+        for name in ["src/pygrc/models/grc_v4_lifecycle.py", "tests/models/test_grc_v4_lifecycle.py", "src/pygrc/models/grc_v4_step.py", "tests/models/test_grc_v4_step.py", "src/pygrc/models/grc_v4_candidate_c.py", "src/pygrc/models/grc_v4_geometry.py", "src/pygrc/models/grc_v4_transport.py"]:
+            case("accepted_os_pass_enables_vectors_" + Path(name).stem,
+                 lambda name=name: registered(name, content, leaf="P9-4.5"))
         case("accepted_harness_enables_export_owner",
              lambda: registered(init, before + lazy, leaf="P9-2.6"))
         for key, replacement in [("status", "pending"), ("accepted_iterations", ["P9-2.5", "P9-2.6"]),

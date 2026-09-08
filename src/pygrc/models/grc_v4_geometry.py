@@ -69,11 +69,19 @@ def _ordered(value: object) -> Sequence[object]:
     return value
 
 
+class GeometryDomainError(ValueError):
+    """Finite computed geometry lies outside the positive-definite domain."""
+
+
+class NonfiniteGeometryError(ValueError):
+    """Computed nonfinite value, distinct from a finite geometry-domain failure."""
+
+
 def _computed(value: float) -> float:
     # Arithmetic may produce -0. Its exact real value has a unique +0 wire
     # representation. Inputs still reject -0; no resource repair occurs here.
     if not math.isfinite(value):
-        raise ValueError("nonfinite numerical result")
+        raise NonfiniteGeometryError("nonfinite numerical result")
     return 0.0 if value == 0 else value
 
 
@@ -119,7 +127,7 @@ def _require_positive_definite(
     """
     size = len(matrix)
     if any(matrix[i][i] <= 0 for i in range(size)):
-        raise ValueError("Hodge matrix must be positive definite")
+        raise GeometryDomainError("Hodge matrix must be positive definite")
     if all(matrix[i][j] == 0 for i in range(size) for j in range(i)):
         return  # Symmetry was checked by _spd; includes the empty space.
 
@@ -134,7 +142,7 @@ def _require_positive_definite(
     for k in range(size):
         pivot = work[k][k]
         if pivot <= 0:
-            raise ValueError("Hodge matrix must be positive definite")
+            raise GeometryDomainError("Hodge matrix must be positive definite")
         for i in range(k + 1, size):
             for j in range(k + 1, size):
                 numerator = pivot * work[i][j] - work[i][k] * work[k][j]
@@ -744,7 +752,9 @@ class StarAssembly:
                             )
                         )
                     except OverflowError as exc:
-                        raise ValueError("nonfinite numerical result") from exc
+                        raise NonfiniteGeometryError(
+                            "nonfinite numerical result"
+                        ) from exc
                     rows[i][j] = rows[j][i] = value
         object.__setattr__(self, "matrix", tuple(tuple(row) for row in rows))
 

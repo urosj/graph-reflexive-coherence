@@ -88,6 +88,25 @@ operation ID, duration and receipt IDs are numerical continuation metadata, not
 an authenticated next request/ledger. Preserve final-C current quarantine from
 a second geometry, residual or continuity pass.
 
+P9-4.5 continuation: the user authorized the next leaf. The accepted P9-4.4
+`1752426` subject is bound in [its acceptance record](./phase-9-grcv4/tranche-4/P9-4.4-AcceptanceRecord.json).
+The bounded ordinary-operation owner is implemented, verified and explicitly
+accepted by the user for commit, including all six audit corrections.
+All 256 scoped methods pass after exact source reconstruction. Its
+[review](./phase-9-grcv4/tranche-4/P9-4.5-Review.md) explains the
+minimal lifecycle ownership refinement, actual committed vectors, typed failures,
+full-tuple atomicity and explicit local receipt conventions. The
+[execution record](./phase-9-grcv4/tranche-4/P9-4.5-ExecutionRecord.json) carries
+source queries and reproduction metadata. Final C is admitted at both consumed
+and next-reference geometry before publication, without another OS pass. Actual
+next requests and receipt ledgers replace provisional continuation metadata.
+The verified scope also passed 199 permission checks, API/notebook checks,
+26 JavaScript tests and 18 desktop/mobile browser tests. Review, execution and
+run records retain their validation-time dispositions; this handoff and the
+commit record the later user acceptance. Receipt parenting remains a provisional
+local convention that the later lineage owner may revise. A separately authorized
+P9-4.6 entry can bind the accepted commit; P9-4.6 and profile conformance remain held.
+
 Validation scope for continuation: select the leaf's scientific/edge-case tests,
 relevant shared V4 regression tests, and checks for changed verification surfaces.
 The full repository run for P9-4.1 is not a requirement to repeat it after every

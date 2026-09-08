@@ -11,7 +11,7 @@ from unittest.mock import patch
 
 import numpy as np
 
-from pygrc.models.grc_v4_candidate_c import CandidateCCurrent
+from pygrc.models.grc_v4_candidate_c import CandidateCCurrent, CandidateCStageError
 from pygrc.models.grc_v4_codec import canonical_json_bytes
 from pygrc.models.grc_v4_geometry import (
     GRCV4Geometry,
@@ -702,18 +702,33 @@ class CandidateCOSStepTests(unittest.TestCase):
         before = canonical_json_bytes(inputs.to_payload())
         original = CandidateCCurrent
 
-        def fail_final(stage: GeometryStageInputs) -> CandidateCCurrent:
-            if stage.stage == "post_continuity":
-                raise ValueError("injected final admission failure")
-            return original(stage)
-
-        with (
-            patch.object(owner, "CandidateCCurrent", side_effect=fail_final),
-            self.assertRaisesRegex(ResourceBoundaryError, "injected final") as failure,
+        for fault in (
+            CandidateCStageError("domain_failure", "injected final admission failure"),
+            ValueError("injected final admission failure"),
         ):
-            ProvisionalCandidateCOSStep(inputs)
-        self.assertEqual(failure.exception.stage, "final_reconstruction")
-        self.assertEqual(canonical_json_bytes(inputs.to_payload()), before)
+
+            def fail_final(stage: GeometryStageInputs) -> CandidateCCurrent:
+                if stage.stage == "post_continuity":
+                    raise fault
+                return original(stage)
+
+            with (
+                self.subTest(kind=type(fault)),
+                patch.object(owner, "CandidateCCurrent", side_effect=fail_final),
+            ):
+                if isinstance(fault, CandidateCStageError):
+                    with self.assertRaisesRegex(
+                        ResourceBoundaryError, "injected final"
+                    ) as failure:
+                        ProvisionalCandidateCOSStep(inputs)
+                    self.assertEqual(failure.exception.stage, "final_reconstruction")
+                    self.assertEqual(failure.exception.code, "domain_failure")
+                    self.assertIs(failure.exception.__cause__, fault)
+                else:
+                    with self.assertRaises(ValueError) as programmer:
+                        ProvisionalCandidateCOSStep(inputs)
+                    self.assertIs(programmer.exception, fault)
+            self.assertEqual(canonical_json_bytes(inputs.to_payload()), before)
 
     def test_extreme_finite_duration_with_zero_current_still_writes_once(self) -> None:
         before = replace(

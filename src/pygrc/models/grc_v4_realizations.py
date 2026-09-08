@@ -11,6 +11,7 @@ from fractions import Fraction
 
 from .grc_v4_candidate_c import (
     CandidateCCurrent,
+    CandidateCStageError,
     _c_exact,
     _c_float,
     _c_inertia,
@@ -21,6 +22,8 @@ from .grc_v4_candidate_c import (
 from .grc_v4_geometry import (
     GRCV4Geometry,
     GeometryStageInputs,
+    GeometryDomainError,
+    NonfiniteGeometryError,
     H_profile,
     K4Tensor,
     Matrix,
@@ -106,7 +109,9 @@ def _selector_path_segments(
     """
     rank = predictor.algebra.selector.rank
     if corrector.algebra.selector.rank != rank:
-        raise ValueError("OS geometry update changes selector stratum")
+        raise CandidateCStageError(
+            "domain_failure", "OS geometry update changes selector stratum"
+        )
     graph = predictor.current.graph
     b = _c_exact(graph.incidence)
     matrices = []
@@ -140,14 +145,18 @@ def _selector_path_segments(
         )
         negative, zero, _ = _c_inertia(center)
         if zero or negative != rank:
-            raise ValueError("OS geometry path crosses selector cutoff")
+            raise CandidateCStageError(
+                "domain_failure", "OS geometry path crosses selector cutoff"
+            )
         inverse_norm = max(sum(abs(x) for x in row) for row in _c_inverse(center))
         if inverse_norm * norm * (hi - lo) / 2 < 1:
             certified += 1
         else:
             splits += 1
             if splits > 256:
-                raise ValueError("OS selector path certificate unresolved")
+                raise CandidateCStageError(
+                    "domain_failure", "OS selector path certificate unresolved"
+                )
             pending.extend(((lo, mid), (mid, hi)))
     return certified
 
@@ -246,10 +255,15 @@ class CandidateCOSPass:
             stage = "split_residual"
             residual = OSSplitResidual(geometry, _source_geometry(corrector))
             if not residual.admitted:
-                raise ValueError(
-                    "declared OS split tolerance exceeded; no second iteration"
+                raise CandidateCStageError(
+                    "domain_failure",
+                    "declared OS split tolerance exceeded; no second iteration",
                 )
-        except ValueError as exc:
+        except (
+            CandidateCStageError,
+            GeometryDomainError,
+            NonfiniteGeometryError,
+        ) as exc:
             raise OSStageError(stage, str(exc)) from exc
         for name, value in (
             ("inputs", before),

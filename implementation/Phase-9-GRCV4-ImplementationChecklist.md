@@ -558,7 +558,7 @@ three bounded batches retain their own results and raw per-run manifests.
   Review, execution and run records retain their validation-time dispositions;
   this checklist and the commit record later user acceptance. Fifteen leaves
   and 27 paths are ready; P9-4.5 entry and runtime conformance stay held.
-- [ ] P9-4.5: Execute positive and atomic-negative `C_OS` vectors; keep full
+- [x] P9-4.5: Execute positive and atomic-negative `C_OS` vectors; keep full
   profile conformance pending lifecycle completion.
   Exercise the declared numerical reproducibility scope without hidden
   damping, regularization, pseudoinverse, fallback or charge repair (§7.4).
@@ -569,6 +569,19 @@ three bounded batches retain their own results and raw per-run manifests.
   Keep final-C current out of a second geometry/residual/continuity pass.
   P9-4.5/P9-4.6 must bind actual request/ledger identities; inherited
   `next_inputs.operation_id`, `dt` and `receipt_ids` have no lifecycle authority.
+  Implemented and verified in the bounded lifecycle ordinary-operation owner;
+  explicitly accepted by the user for commit, including all six audit corrections.
+  All 256 scoped methods pass with zero failures/errors/skips
+  in a reconstructed checkout; exact source and live declared-method bindings hold. The [review](./phase-9-grcv4/tranche-4/P9-4.5-Review.md) maps
+  actual commits and native/injected negative vectors to independent oracles.
+  The [execution record](./phase-9-grcv4/tranche-4/P9-4.5-ExecutionRecord.json)
+  preserves source-query meanings and the scoped reconstruction recipe.
+  Review, execution and run records retain their validation-time dispositions;
+  this checklist and the commit record the later acceptance. Programmer errors
+  propagate atomically, typed nonfinite causes survive both final-C boundaries,
+  and general cluster/conditioning branches and reference atomicity are pressured.
+  Parent-receipt scope stays provisional for the later lineage owner.
+  Sixteen leaves and 29 paths are dependency-ready; support sets remain empty.
 - [ ] P9-4.6: Execute the C_OS snapshot/load/reset/rebase and deep-copy/
   immutability slice; record the corresponding P9-7.1-C_OS evidence.
 - [ ] P9-4.7a: Execute atomic failed-step, receipt identity/ownership, and

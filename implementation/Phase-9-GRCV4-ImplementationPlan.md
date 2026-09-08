@@ -630,8 +630,9 @@ handling, domain failures, and precision edges.
 
 ### Tranche 4. Candidate C with OS
 
-Current leaf: P9-4.4 on `impl/phase-9-grcv4-tranche-4`. Accepted predecessor:
-P9-4.3 including its audit follow-up at `4a3a7ee`, with P9-3.5's
+Current leaf: P9-4.5, accepted on `impl/phase-9-grcv4-tranche-4`; successor entry
+remains pending. Accepted predecessor:
+P9-4.4 including its audit follow-up at `1752426`, with P9-3.5's
 accepted `155c728` subject separately authenticated. The
 [P9-4.1 review](./phase-9-grcv4/tranche-4/P9-4.1-Review.md) covers the implemented
 complete-profile reference binding, exact stable-edge admission, separate
@@ -719,6 +720,23 @@ excluding an operation cannot waive a mandatory C_OS fixture.
 `P9-G2[C_OS]`. A successful state-to-step-to-receipt-to-snapshot-to-replay
 cycle is valuable early evidence, but cannot alone earn generic conformance.
 Each remaining mandatory case keeps G2 pending until it is executed.
+
+P9-4.5 continuation binds accepted `1752426` in the
+[P9-4.4 acceptance record](./phase-9-grcv4/tranche-4/P9-4.4-AcceptanceRecord.json).
+Sixteen leaves and 29 paths are dependency-ready. The bounded ordinary-operation
+owner and actual positive/atomic-negative vectors are implemented, verified and
+explicitly accepted by the user for commit, including all six audit corrections.
+All 256 scoped methods pass after exact reconstruction. See the
+[review](./phase-9-grcv4/tranche-4/P9-4.5-Review.md)
+and [execution record](./phase-9-grcv4/tranche-4/P9-4.5-ExecutionRecord.json).
+The lifecycle owner publishes C/clock/receipts together only after final-C consumed
+and reference admission, receipt construction and actual request/result binding.
+Review, execution and run records retain their validation-time dispositions;
+this plan and the commit record the later user acceptance. The local receipt-parent
+convention remains provisional. A separately authorized P9-4.6 entry can bind
+the accepted commit without promoting ordinary-operation evidence to conformance.
+P9-4.6 snapshot/load/reset/rebase and later lifecycle product coverage remain held;
+no generic-runtime or specialization conformance is accepted.
 
 ### Tranche 5. Candidate A with OS
 
