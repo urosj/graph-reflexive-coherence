@@ -799,6 +799,11 @@
       "iteration_id": "P9-4.1"
     },
     {
+      "path": "implementation/phase-9-grcv4/evidence/P9-4.2/validation/run.json",
+      "sha256": "0a19a6955b4baaddf1250c3398c30435a346de50df3d84f13475af55c6bb3f53",
+      "iteration_id": "P9-4.2"
+    },
+    {
       "path": "implementation/phase-9-grcv4/tranche-2/P9-2.1-ExecutionRecord.json",
       "sha256": "561817390d50afbd1eaf2c8ee2bc12409de9458892ae944f947eaabed66a916c",
       "iteration_id": "P9-2.1"
@@ -919,6 +924,16 @@
       "iteration_id": "P9-4.1"
     },
     {
+      "path": "implementation/phase-9-grcv4/tranche-4/P9-4.2-ExecutionRecord.json",
+      "sha256": "363a5ca3a77c57b1781e556dfe349e8251bc7bf2e40866007d618b4180111f99",
+      "iteration_id": "P9-4.2"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-4/P9-4.2-Review.md",
+      "sha256": "b599be171cff26284465e718bbf487a713b480b0c523b1639c6e2a01d7ec1514",
+      "iteration_id": "P9-4.2"
+    },
+    {
       "path": "pyproject.toml",
       "sha256": "018c364413f75ee49186975c05e9cdaba7a78e171d47833609fbebc223a64a66",
       "iteration_id": "P9-3.1"
@@ -955,8 +970,8 @@
     },
     {
       "path": "src/pygrc/models/grc_v4_candidate_c.py",
-      "sha256": "d91ac25fb0d91cd62c33d4c3f07b78e435c111d18cdccf4539abe7d01bfafe62",
-      "iteration_id": "P9-4.1"
+      "sha256": "f8e3a4b184dea4641c1921be3df5a5e5cd43ff211c4ea67317b1ba6c60cc45de",
+      "iteration_id": "P9-4.2"
     },
     {
       "path": "src/pygrc/models/grc_v4_codec.py",
@@ -1005,8 +1020,8 @@
     },
     {
       "path": "tests/models/test_grc_v4_candidate_c.py",
-      "sha256": "e580c6d8ab06ef6ac3b5ce80e8fb19f0e5cb6ce862dfc501f14d76e59d1756a8",
-      "iteration_id": "P9-4.1"
+      "sha256": "29febbe546d72d06c009cf62e1f90627531b3a50fe02222e2e0b90ba3c56c227",
+      "iteration_id": "P9-4.2"
     },
     {
       "path": "tests/models/test_grc_v4_codec.py",
@@ -1042,5 +1057,5 @@
   "accepted_generic_runtime_support": [],
   "admitted_specialization_support_sets": [],
   "claim_ceiling": "Exact current implementation content bindings, not review acceptance or conformance.",
-  "record_digest": "f05155f21ecd314ec07496705319e71d7eb3db678c465f51d8723a50133f5b21"
+  "record_digest": "70b16a82cffe636e04a8161f8a81ad369d44295c30724334a54b699823c71316"
 }

@@ -498,9 +498,23 @@ three bounded batches retain their own results and raw per-run manifests.
   Entry binds P9-3.5 at `155c728`: twelve ready leaves, 25 eligible paths,
   empty runtime support. The corrected capture passed 51 focused methods and
   seven relocated checks; historical records retain their original dispositions
-  and attribution limits. P9-4.2 entry will bind the accepted commit separately.
-- [ ] P9-4.2: Implement the accepted potential and baseline flux, selector
+  and attribution limits. P9-4.2 entry now binds accepted `94a079d` in its separate
+  [acceptance record](./phase-9-grcv4/tranche-4/P9-4.1-AcceptanceRecord.json).
+- [x] P9-4.2: Implement the accepted potential and baseline flux, selector
   gap, Read-Back typing, and regular current solve at their declared stages.
+  Implemented and verified; explicitly accepted by the user for commit after
+  the user reported that both reviews found no defects. The
+  [review](./phase-9-grcv4/tranche-4/P9-4.2-Review.md) and
+  [execution record](./phase-9-grcv4/tranche-4/P9-4.2-ExecutionRecord.json) bind
+  123 passing focused methods, including 27 current methods, source reconstruction
+  and 17 relocated methods under each of two hash seeds. Exact singularity is
+  checked before resolvent rounding; actual physical conditioning is certified
+  separately from retained coordinates. Cutoff ties/unresolved gaps, nonreference
+  SPD geometry, multigraph modes, previous pairing outliers, numerical extremes,
+  strict declarations and input preservation are exercised. Thirteen leaves and
+  25 paths are dependency-ready; full OS, lifecycle and runtime support remain held.
+  Review/execution records retain their validation-time dispositions. A separate
+  P9-4.3 entry transition can bind this accepted commit.
 - [ ] P9-4.3: Verify independent kappa-M, chi, and zeta zero controls and
   complete smooth-stratum baseline derivative/covariance cases.
   Add the separate tau-C-zero control on nontrivial retained Hodge with

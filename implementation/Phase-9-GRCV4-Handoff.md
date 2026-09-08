@@ -15,7 +15,7 @@ the current plan/checklist and acceptance records for continuation status.
 Current continuation (2026-09-08): branch `impl/phase-9-grcv4-tranche-4`
 starts from the Tranche 3 merge `2e90398`. P9-3.5's accepted `155c728` subject
 is now authenticated in its [acceptance record](./phase-9-grcv4/tranche-3/P9-3.5-AcceptanceRecord.json),
-without expanding the limited audit's scope. The permission adapter exposes
+without expanding the limited audit's scope. That P9-4.1 entry exposed
 twelve dependency-ready leaves and 25 eligible paths. P9-4.1 implements the
 Candidate C complete-profile/reference-map binding and separate typed
 constructor identities; see the [P9-4.1 review](./phase-9-grcv4/tranche-4/P9-4.1-Review.md)
@@ -25,8 +25,20 @@ review, execution record and run manifests retain their validation-time pending
 dispositions; this handoff and the commit record the later acceptance separately.
 The follow-up passed 51 focused methods and seven relocated capture checks,
 and reconstructed both source revisions. The older broad-run observations retain
-their live-code attribution limit. P9-4.2 entry still needs a separate transition
-binding the accepted commit. Generic runtime and specialization support remain empty.
+their live-code attribution limit. P9-4.2 entry now binds accepted commit `94a079d`
+in [its acceptance record](./phase-9-grcv4/tranche-4/P9-4.1-AcceptanceRecord.json):
+thirteen dependency-ready leaves and 25 eligible paths. P9-4.2 implements the
+fresh stage selector, retained-Hodge potential/baseline, typed Read-Back and regular
+physical current solve. All 123 focused methods passed, with exact source
+reconstruction and 17 relocated methods passing under each of two hash seeds.
+The [P9-4.2 review](./phase-9-grcv4/tranche-4/P9-4.2-Review.md) maps equations and
+outlier pressure to the tests; its [execution record](./phase-9-grcv4/tranche-4/P9-4.2-ExecutionRecord.json)
+records numerical policy, source queries, reconstruction and validation limits.
+P9-4.2 is implemented, verified and explicitly accepted by the user for commit.
+The user reports that both reviews found no defects. The review, execution record
+and run manifest retain their validation-time dispositions; this handoff and the
+commit record the later acceptance. A separately authorized P9-4.3 entry can bind
+the accepted commit. Generic runtime and specialization support remain empty.
 
 Validation scope for continuation: select the leaf's scientific/edge-case tests,
 relevant shared V4 regression tests, and checks for changed verification surfaces.

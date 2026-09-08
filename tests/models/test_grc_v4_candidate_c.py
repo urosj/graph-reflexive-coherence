@@ -1,4 +1,4 @@
-"""P9-4.1 reference-map and constructor pressure; no candidate solve claims.
+"""P9-4.1 reference-map and P9-4.2 fixed-stage current pressure.
 
 Expectations use scalar rational products, explicit coordinate permutations
 and independent ASCII hashing. Profile helpers construct inputs only.
@@ -30,6 +30,7 @@ from pygrc.models.grc_v4_geometry import (
     OrientedEdge,
     PhysicalFlux,
     PhysicalFluxFlatMap,
+    VertexScalar,
 )
 from pygrc.models.grc_v4_profile import GRCV4Profile, resolve_profile
 from tests.models.test_grc_v4_geometry import (
@@ -539,6 +540,1034 @@ class CandidateCReferenceTests(unittest.TestCase):
             CandidateCTransport(GRCV4Graph(("isolated",), ()), self.binding.profile)
 
 
+def current_fixture(
+    *,
+    graph: GRCV4Graph | None = None,
+    weights: dict[str, float] | None = None,
+    hodge: tuple[tuple[float, ...], ...] | None = None,
+    resource: tuple[float, ...] | None = None,
+    realization: str = "OS",
+    stage: str = "pre_read",
+    changes: dict[str, dict[str, Any]] | None = None,
+) -> Any:
+    from pygrc.models.grc_v4_geometry import GRCV4Geometry
+    from pygrc.models.grc_v4_state import GRCV4AuthoritativeState
+    from tests.models.test_grc_v4_geometry import stage_inputs_fixture
+
+    updates = {
+        "candidate": {"tau_C": 0.2},
+        "solver": {"absolute_tolerance": 1e-11, "relative_tolerance": 1e-11},
+    }
+    for group, values in (changes or {}).items():
+        updates.setdefault(group, {}).update(values)
+    ref = stage_reference_fixture(
+        "C", realization, graph=graph, weights=weights, changes=updates
+    )
+    inputs = stage_inputs_fixture(ref, stage=stage)
+    if resource is not None:
+        state = GRCV4AuthoritativeState(resource, None, inputs.current.Z_4)
+        inputs = replace(inputs, current=state, reset=state, Q_target=sum(resource))
+    if hodge is not None:
+        inputs = replace(
+            inputs, geometry=GRCV4Geometry(ref, OneFormHodge(ref.graph, hodge))
+        )
+    return inputs
+
+
+def dense_current_oracle(inputs: Any) -> dict[str, Any]:
+    """Literal independent dense equations; no production selector/solve helpers."""
+    import numpy as np
+
+    ref = inputs.geometry.reference
+    p = ref.profile.params_resolved.candidate
+    b = np.array(ref.graph.incidence)
+    h = np.array(inputs.geometry.one_form_hodge.matrix)
+    c = np.array(inputs.current.C)
+    values, vectors = np.linalg.eigh(b @ h @ b.T)
+    selected = vectors[:, values < p.Lambda_C]
+    projector = selected @ selected.T
+    sector = projector @ c
+    rho = np.tanh(sector / p.C_ref)
+    edge_rho = np.array(
+        [
+            0.5
+            * (
+                rho[ref.graph.node_index(e.tail_node_id)]
+                + rho[ref.graph.node_index(e.head_node_id)]
+            )
+            for e in ref.graph.oriented_edges
+        ]
+    )
+    d = np.diag(np.exp(0.5 * p.kappa_M_C * edge_rho))
+    hm = d @ h @ d
+    phi = p.kappa_Phi_C * b @ hm @ b.T @ c
+    j0 = -p.eta_C * np.diag([p.W_C_tr[e] for e in ref.graph.live_edge_ids]) @ b.T @ phi
+    ident = hm @ np.linalg.inv(h)
+    q = ident @ np.linalg.inv(h)
+    delta = b.T @ b @ hm
+    response = np.linalg.inv(np.eye(len(h)) + p.tau_C * delta)
+    flux_response = np.linalg.inv(q) @ response @ q
+    block = np.eye(len(h)) - p.zeta_C * p.chi_C * flux_response
+    current = np.linalg.solve(block, j0)
+    return dict(
+        projector=projector,
+        sector=sector,
+        hm=hm,
+        phi=phi,
+        j0=j0,
+        ident=ident,
+        q=q,
+        delta=delta,
+        response=response,
+        flux_response=flux_response,
+        block=block,
+        current=current,
+        read=p.chi_C * flux_response @ current,
+    )
+
+
+class CandidateCCurrentTests(unittest.TestCase):
+    @staticmethod
+    def edge_graph() -> GRCV4Graph:
+        return GRCV4Graph(("u", "v"), (OrientedEdge("e", "u", "v"),))
+
+    def test_scalar_chain_has_literal_independent_solution(self) -> None:
+        from pygrc.models.grc_v4_candidate_c import CandidateCCurrent
+
+        inputs = current_fixture(
+            graph=self.edge_graph(),
+            weights={"e": 2},
+            resource=(3, 1),
+            changes={
+                "candidate": {
+                    "kappa_M_C": 0,
+                    "eta_C": 0.5,
+                    "kappa_Phi_C": 1,
+                    "tau_C": 0.25,
+                    "zeta_C": 0.5,
+                    "chi_C": 0.5,
+                }
+            },
+        )
+        actual = CandidateCCurrent(inputs)
+        self.assertEqual(actual.algebra.selector.projector, ((0.5, 0.5), (0.5, 0.5)))
+        self.assertEqual(actual.algebra.selector.selected.values, (2, 2))
+        self.assertEqual(actual.algebra.potential.values, (4, -4))
+        self.assertEqual(actual.algebra.baseline.values, (-8,))
+        self.assertEqual(actual.algebra.response, ((0.5,),))
+        self.assertEqual(actual.algebra.current_block, ((0.875,),))
+        self.assertEqual(actual.current.values, (-64 / 7,))
+        self.assertEqual(actual.read.flux.values, (-16 / 7,))
+        self.assertEqual(actual.read.causal_flat.values, (-8 / 7,))
+        residual = Fraction(-64 / 7) + 8 - Fraction(1, 2) * Fraction(-16 / 7)
+        self.assertEqual(actual.closure_residual_squared, str(residual**2))
+
+    def test_scalar_random_controls_against_closed_formula(self) -> None:
+        from pygrc.models.grc_v4_candidate_c import CandidateCCurrent
+
+        rng = random.Random(942)
+        for case in range(30):
+            weight = 2.0 ** rng.randint(-3, 3)
+            c0, c1 = rng.uniform(0, 2), rng.uniform(0, 2)
+            km, kphi, eta = rng.uniform(-1, 1), rng.uniform(-2, 2), rng.uniform(0.2, 2)
+            tau, chi, zeta = (
+                rng.uniform(0, 1),
+                rng.uniform(-1, 1),
+                rng.uniform(-0.5, 0.8),
+            )
+            inputs = current_fixture(
+                graph=self.edge_graph(),
+                weights={"e": weight},
+                resource=(c0, c1),
+                changes={
+                    "candidate": {
+                        "Lambda_C": weight,
+                        "kappa_M_C": km,
+                        "kappa_Phi_C": kphi,
+                        "eta_C": eta,
+                        "tau_C": tau,
+                        "chi_C": chi,
+                        "zeta_C": zeta,
+                    }
+                },
+            )
+            with self.subTest(case=case):
+                actual = CandidateCCurrent(inputs)
+                hm = weight * math.exp(km * math.tanh((c0 + c1) / 2))
+                j0 = -2 * eta * weight * kphi * hm * (c0 - c1)
+                expected = j0 * (1 + 2 * tau * hm) / (1 + 2 * tau * hm - zeta * chi)
+                self.assertAlmostEqual(
+                    actual.current.values[0],
+                    expected,
+                    delta=2e-12 * max(1, abs(expected)),
+                )
+                self.assertAlmostEqual(
+                    actual.read.flux.values[0],
+                    chi * expected / (1 + 2 * tau * hm),
+                    delta=2e-12 * max(1, abs(expected)),
+                )
+
+    def test_frozen_weighted_three_node_algebra_vector(self) -> None:
+        from pygrc.models.grc_v4_candidate_c import _CandidateCAlgebra, _c_solve
+        from pygrc.models.grc_v4_geometry import VertexScalar, reference_pairings
+
+        vector = json.loads(
+            (
+                Path(__file__).resolve().parents[2]
+                / "specs/grc-v4-conformance-vectors.json"
+            ).read_text()
+        )["candidate_c_algebra_vectors"][0]
+        data, expected = vector["inputs"], vector["expected"]
+        graph = GRCV4Graph(
+            ("a", "b", "c"),
+            (OrientedEdge("e0", "b", "a"), OrientedEdge("e1", "c", "b")),
+        )
+        inputs = current_fixture(
+            graph=graph,
+            weights={"e0": 2, "e1": 3},
+            resource=tuple(data["C"]),
+            changes={
+                "candidate": {
+                    "Lambda_C": 4,
+                    "eta_C": data["eta_C"],
+                    "kappa_M_C": data["kappa_M_C"],
+                    "kappa_Phi_C": data["kappa_Phi_C"],
+                    "tau_C": data["resolvent_tau_C"],
+                    "zeta_C": data["zeta_C"],
+                    "chi_C": data["chi_C"],
+                }
+            },
+        )
+        algebra = _CandidateCAlgebra(
+            CandidateCTransport(graph, inputs.geometry.reference.profile),
+            VertexScalar(graph, tuple(data["C"])),
+            reference_pairings(
+                graph,
+                vertex_measure=tuple(data["H0_diagonal"]),
+                reference_edge_weights=tuple(data["W_C_tr"]),
+            ),
+        )
+        policy = inputs.geometry.reference.profile.params_resolved.solver
+        total = PhysicalFlux(
+            graph,
+            tuple(
+                r[0]
+                for r in _c_solve(
+                    algebra.current_block,
+                    tuple((x,) for x in algebra.baseline.values),
+                    policy,
+                    "algebra witness",
+                    [],
+                )
+            ),
+        )
+        read = algebra.read_back(total, "algebra_witness_only")
+        for field, actual in {
+            "baseline_potential": algebra.potential.values,
+            "baseline_current": algebra.baseline.values,
+            "total_current": total.values,
+            "read_current": read.flux.values,
+            "retained_h1_diagonal": tuple(
+                algebra.retained_hodge.matrix[i][i] for i in range(2)
+            ),
+        }.items():
+            for value, target in zip(actual, expected[field], strict=True):
+                self.assertAlmostEqual(value, target, delta=1e-12, msg=field)
+        self.assertEqual(algebra.selector.rank, 2)
+
+    def test_dense_nonreference_hodge_matches_literal_equations(self) -> None:
+        import numpy as np
+        from pygrc.models.grc_v4_candidate_c import CandidateCCurrent
+
+        inputs = current_fixture(
+            hodge=((3, 0.75), (0.75, 1.5)),
+            resource=(0.2, 1.5, 2.4),
+            changes={
+                "candidate": {
+                    "Lambda_C": 3,
+                    "kappa_M_C": 0.7,
+                    "chi_C": 0.6,
+                    "zeta_C": 0.4,
+                }
+            },
+        )
+        actual = CandidateCCurrent(inputs)
+        expected = dense_current_oracle(inputs)
+        for field, value in {
+            "projector": actual.algebra.selector.projector,
+            "sector": actual.algebra.selector.selected.values,
+            "hm": actual.algebra.retained_hodge.matrix,
+            "phi": actual.algebra.potential.values,
+            "j0": actual.algebra.baseline.values,
+            "ident": actual.algebra.identification,
+            "q": actual.algebra.physical_identification,
+            "delta": actual.algebra.laplacian,
+            "response": actual.algebra.response,
+            "flux_response": actual.algebra.flux_response,
+            "block": actual.algebra.current_block,
+            "current": actual.current.values,
+            "read": actual.read.flux.values,
+        }.items():
+            np.testing.assert_allclose(
+                np.asarray(value, dtype=float),
+                expected[field],
+                rtol=3e-12,
+                atol=3e-12,
+                err_msg=field,
+            )
+        self.assertNotEqual(
+            actual.algebra.retained_hodge.matrix,
+            actual.algebra.transport.structural_hodge.matrix,
+        )
+        self.assertNotEqual(
+            actual.algebra.physical_identification, actual.algebra.flat_matrix
+        )
+        self.assertNotEqual(actual.algebra.flux_response, actual.algebra.response)
+
+    def test_selector_ties_zero_and_exterior_strata(self) -> None:
+        from pygrc.models.grc_v4_candidate_c import CandidateCCurrent
+
+        for cutoff, rank in [(-1, 0), (0.5, 1), (3, 2)]:
+            with self.subTest(cutoff=cutoff):
+                actual = CandidateCCurrent(
+                    current_fixture(
+                        graph=self.edge_graph(),
+                        weights={"e": 1},
+                        changes={"candidate": {"Lambda_C": cutoff}},
+                    )
+                )
+                self.assertEqual(actual.algebra.selector.rank, rank)
+        for cutoff in (0, 2):
+            with (
+                self.subTest(cutoff=cutoff),
+                self.assertRaisesRegex(ValueError, "exact spectrum"),
+            ):
+                CandidateCCurrent(
+                    current_fixture(
+                        graph=self.edge_graph(),
+                        weights={"e": 1},
+                        changes={"candidate": {"Lambda_C": cutoff}},
+                    )
+                )
+        for cutoff, rank in [
+            (math.nextafter(2, 0), 1),
+            (math.nextafter(2, math.inf), 2),
+        ]:
+            actual = CandidateCCurrent(
+                current_fixture(
+                    graph=self.edge_graph(),
+                    weights={"e": 1},
+                    changes={"candidate": {"Lambda_C": cutoff}},
+                )
+            )
+            self.assertEqual(actual.algebra.selector.rank, rank)
+
+    def test_exact_inertia_handles_zero_diagonal_pivots(self) -> None:
+        from pygrc.models.grc_v4_candidate_c import _c_inertia
+
+        for matrix, expected in [
+            (((0, 2), (2, 0)), (1, 0, 1)),
+            (((0, 0), (0, 0)), (0, 2, 0)),
+            (((0, 2, 0), (2, 0, 0), (0, 0, 0)), (1, 1, 1)),
+            (((1, 1), (1, 1)), (0, 1, 1)),
+            (((-1, 0), (0, 2)), (1, 0, 1)),
+        ]:
+            self.assertEqual(
+                _c_inertia(tuple(tuple(Fraction(x) for x in row) for row in matrix)),
+                expected,
+            )
+
+    def test_selector_pair_permutation_sign_and_repeated_cluster_rotations(
+        self,
+    ) -> None:
+        import numpy as np
+        from unittest.mock import patch
+        from pygrc.models.grc_v4_candidate_c import CandidateCSelector
+
+        graph = GRCV4Graph(
+            (0, 1, 2, 3), tuple(OrientedEdge(str(i), i, (i + 1) % 4) for i in range(4))
+        )
+        inputs = current_fixture(
+            graph=graph,
+            weights={str(i): 1 for i in range(4)},
+            resource=(0, 1, 2, 4),
+            changes={"candidate": {"Lambda_C": 3}},
+        )
+        resource = VertexScalar(graph, inputs.current.C)
+        real = np.linalg.eigh
+        expected = CandidateCSelector(resource, inputs.geometry.pairings, 3)
+
+        def varied(a: Any) -> Any:
+            values, vectors = real(a)
+            angle = 0.371
+            rotation = np.array(
+                [
+                    [math.cos(angle), -math.sin(angle)],
+                    [math.sin(angle), math.cos(angle)],
+                ]
+            )
+            vectors[:, 1:3] = vectors[:, 1:3] @ rotation
+            order = [3, 1, 0, 2]
+            return values[order], vectors[:, order] * np.array([-1, 1, -1, 1])
+
+        with patch.object(np.linalg, "eigh", side_effect=varied):
+            actual = CandidateCSelector(resource, inputs.geometry.pairings, 3)
+        np.testing.assert_allclose(
+            actual.projector, expected.projector, atol=2e-14, rtol=0
+        )
+        self.assertEqual(actual.rank, 3)
+        self.assertAlmostEqual(sum(actual.selected.values), 7, delta=2e-14)
+
+    def test_selector_rejects_unresolved_or_malformed_decomposition(self) -> None:
+        import numpy as np
+        from unittest.mock import patch
+        from pygrc.models.grc_v4_candidate_c import CandidateCSelector
+        from pygrc.models.grc_v4_geometry import VertexScalar
+
+        graph = GRCV4Graph(
+            (0, 1, 2), (OrientedEdge("a", 0, 1), OrientedEdge("b", 1, 2))
+        )
+        inputs = current_fixture(graph=graph, weights={"a": 1, "b": 1})
+        resource = VertexScalar(graph, (0, 1, 3))
+        for values, vectors in [
+            (np.array([0, 1, 3]), np.zeros((3, 3))),
+            (np.array([0, float("nan"), 3]), np.eye(3)),
+            (np.array([0, 1, 3]), np.eye(3)),
+        ]:
+            with (
+                patch.object(np.linalg, "eigh", return_value=(values, vectors)),
+                self.assertRaises(ValueError),
+            ):
+                CandidateCSelector(resource, inputs.geometry.pairings, 2)
+        with self.assertRaisesRegex(ValueError, "unresolved"):
+            CandidateCSelector(resource, inputs.geometry.pairings, math.nextafter(3, 0))
+
+    def test_disconnected_isolated_parallel_and_loop_coordinates(self) -> None:
+        import numpy as np
+        from pygrc.models.grc_v4_candidate_c import CandidateCCurrent
+
+        graph = GRCV4Graph(
+            ("u", "v", "w", "x", "isolated"),
+            (
+                OrientedEdge("parallel2", "u", "v"),
+                OrientedEdge("loop", "u", "u"),
+                OrientedEdge("other", "x", "w"),
+                OrientedEdge("parallel1", "v", "u"),
+            ),
+        )
+        inputs = current_fixture(
+            graph=graph,
+            weights={e.edge_id: 1 for e in graph.oriented_edges},
+            resource=(1, 3, 5, 7, 11),
+            changes={"candidate": {"Lambda_C": 0.5}},
+        )
+        actual = CandidateCCurrent(inputs)
+        self.assertEqual(actual.algebra.selector.rank, 3)
+        self.assertEqual(actual.algebra.selector.selected.values, (2, 2, 6, 6, 11))
+        self.assertEqual(actual.algebra.baseline.values[1], 0)
+        self.assertEqual(actual.current.values[1], 0)
+        np.testing.assert_allclose(
+            actual.current.values, dense_current_oracle(inputs)["current"], atol=2e-12
+        )
+        self.assertEqual(actual.algebra.potential.values[-1], 0)
+
+    def test_offdiagonal_loop_and_cycle_modes_match_oracle(self) -> None:
+        import numpy as np
+        from pygrc.models.grc_v4_candidate_c import CandidateCCurrent
+
+        graph = GRCV4Graph(
+            (0, 1),
+            (OrientedEdge("a", 0, 1), OrientedEdge("b", 1, 0), OrientedEdge("l", 0, 0)),
+        )
+        inputs = current_fixture(
+            graph=graph,
+            weights={"a": 1, "b": 1, "l": 1},
+            resource=(0.2, 1.7),
+            hodge=((2, 0.3, 0.2), (0.3, 1.5, 0.1), (0.2, 0.1, 1)),
+            changes={"candidate": {"Lambda_C": 20, "kappa_M_C": 1.1}},
+        )
+        actual = CandidateCCurrent(inputs)
+        expected = dense_current_oracle(inputs)
+        np.testing.assert_allclose(
+            actual.current.values, expected["current"], atol=2e-12
+        )
+        self.assertEqual(actual.algebra.baseline.values[2], 0)
+        self.assertNotEqual(actual.current.values[2], 0)
+
+    def test_only_loop_graph_has_full_selector_and_harmonic_response(self) -> None:
+        from pygrc.models.grc_v4_candidate_c import CandidateCCurrent
+
+        graph = GRCV4Graph(("u",), (OrientedEdge("loop", "u", "u"),))
+        actual = CandidateCCurrent(
+            current_fixture(graph=graph, weights={"loop": 2}, resource=(3,))
+        )
+        self.assertEqual(actual.algebra.selector.rank, 1)
+        self.assertEqual(actual.current.values, (0,))
+        self.assertEqual(actual.algebra.response, ((1,),))
+        with self.assertRaisesRegex(ValueError, "singular"):
+            CandidateCCurrent(
+                current_fixture(
+                    graph=graph,
+                    weights={"loop": 2},
+                    changes={"candidate": {"zeta_C": 0.5, "chi_C": 2}},
+                )
+            )
+
+    def test_one_chi_gate_linearity_and_zero_input(self) -> None:
+        import numpy as np
+        from pygrc.models.grc_v4_candidate_c import (
+            CandidateCCurrent,
+            CandidateCSelectedForm,
+        )
+
+        inputs = current_fixture(
+            hodge=((2, 0.4), (0.4, 3)),
+            changes={"candidate": {"chi_C": 0.25, "zeta_C": 0}},
+        )
+        actual = CandidateCCurrent(inputs)
+        graph = inputs.geometry.reference.graph
+        j = PhysicalFlux(graph, (1, -2))
+        once = actual.read_back(j)
+        double = actual.read_back(PhysicalFlux(graph, (2, -4)))
+        np.testing.assert_allclose(
+            double.flux.values, np.array(once.flux.values) * 2, atol=1e-14
+        )
+        self.assertIs(type(once.selected_input), CandidateCSelectedForm)
+        self.assertIs(type(once.ungated_flat), OneForm)
+        self.assertIs(type(once.flux), PhysicalFlux)
+        np.testing.assert_allclose(
+            once.causal_flat.values,
+            np.array(once.ungated_flat.values) * 0.25,
+            atol=1e-14,
+        )
+        self.assertEqual(
+            actual.read_back(PhysicalFlux(graph, (0, 0))).flux.values, (0, 0)
+        )
+        with self.assertRaises(TypeError):
+            actual.read_back(OneForm(graph, (1, 2)))  # type: ignore[arg-type]
+        with self.assertRaises(TypeError):
+            actual.read_back(once.selected_input)  # type: ignore[arg-type]
+
+    def test_zero_controls_are_independent_current_equations(self) -> None:
+        import numpy as np
+        from pygrc.models.grc_v4_candidate_c import CandidateCCurrent
+
+        def run(**updates: float) -> Any:
+            return CandidateCCurrent(
+                current_fixture(
+                    hodge=((2, 0.4), (0.4, 3)),
+                    resource=(0.1, 1.1, 2.3),
+                    changes={
+                        "candidate": {
+                            "Lambda_C": 4,
+                            "kappa_M_C": 0.7,
+                            "chi_C": 0.6,
+                            "zeta_C": 0.4,
+                            **updates,
+                        }
+                    },
+                )
+            )
+
+        actual = run()
+        km = run(kappa_M_C=0)
+        chi = run(chi_C=0)
+        zeta = run(zeta_C=0)
+        tau = run(tau_C=0)
+        self.assertNotEqual(actual.algebra.baseline, km.algebra.baseline)
+        for neutral in (chi, zeta, tau):
+            self.assertEqual(actual.algebra.baseline, neutral.algebra.baseline)
+        self.assertEqual(chi.current, chi.algebra.baseline)
+        self.assertEqual(zeta.current, zeta.algebra.baseline)
+        self.assertEqual(chi.read.flux.values, (0, 0))
+        self.assertNotEqual(zeta.read.flux.values, (0, 0))
+        np.testing.assert_allclose(
+            tau.current.values,
+            np.array(tau.algebra.baseline.values) / (1 - 0.4 * 0.6),
+            atol=1e-12,
+        )
+        self.assertNotEqual(
+            tau.algebra.retained_hodge, tau.inputs.geometry.one_form_hodge
+        )
+
+    def test_singular_current_and_zero_rhs_do_not_get_a_fallback(self) -> None:
+        from pygrc.models.grc_v4_candidate_c import CandidateCCurrent
+
+        for resource in ((0, 0), (1, 2)):
+            with (
+                self.subTest(resource=resource),
+                self.assertRaisesRegex(ValueError, "singular"),
+            ):
+                CandidateCCurrent(
+                    current_fixture(
+                        graph=self.edge_graph(),
+                        weights={"e": 1},
+                        resource=resource,
+                        changes={"candidate": {"tau_C": 0, "zeta_C": 0.5, "chi_C": 2}},
+                    )
+                )
+        # A negative but regular scalar block is mathematically invertible;
+        # declaration alone still does not admit a complete runtime profile.
+        actual = CandidateCCurrent(
+            current_fixture(
+                graph=self.edge_graph(),
+                weights={"e": 1},
+                resource=(1, 2),
+                changes={"candidate": {"tau_C": 0, "zeta_C": 0.5, "chi_C": 3}},
+            )
+        )
+        self.assertEqual(actual.algebra.current_block, ((-0.5,),))
+        self.assertEqual(
+            actual.current.values, tuple(-2 * x for x in actual.algebra.baseline.values)
+        )
+
+    def test_conditioning_bounds_are_checked_in_actual_euclidean_coordinates(
+        self,
+    ) -> None:
+        from pygrc.models.grc_v4_candidate_c import _c_condition
+
+        # Orthogonally rotated singular values 4 and 2: exact equality admits.
+        cert = _c_condition(((3, 1), (1, 3)), 2, "physical test")
+        self.assertEqual(cert["condition_upper_squared"], "4")
+        with self.assertRaisesRegex(ValueError, "conditioning"):
+            _c_condition(((3, 1), (1, 3)), math.nextafter(2, 0), "physical test")
+        self.assertEqual(
+            _c_condition(((1, 0), (0, 1)), 1, "identity")["condition_upper_squared"],
+            "1",
+        )
+        # A similarity retains eigenvalues but can lose a Euclidean margin.
+        _c_condition(((0.5, 0), (0, 1)), 2, "retained")
+        with self.assertRaisesRegex(ValueError, "conditioning"):
+            _c_condition(((0.5, 5), (0, 1)), 2, "physical similarity")
+
+    def test_exact_current_singularity_is_not_hidden_by_rounded_resolvent(self) -> None:
+        from pygrc.models.grc_v4_candidate_c import CandidateCCurrent
+
+        # nu=2, tau=1, beta=3: 1-beta/(1+tau*nu)=0 exactly, whereas
+        # 1-Fraction(3)*Fraction(1/3) is nonzero. Scalar cond_2 is always 1.
+        self.assertNotEqual(1 - 3 * Fraction(1 / 3), 0)
+        for resource in ((1, 1), (0, 2)):
+            with (
+                self.subTest(resource=resource),
+                self.assertRaisesRegex(ValueError, "singular"),
+            ):
+                CandidateCCurrent(
+                    current_fixture(
+                        graph=self.edge_graph(),
+                        weights={"e": 1},
+                        resource=resource,
+                        changes={
+                            "candidate": {
+                                "kappa_M_C": 0,
+                                "tau_C": 1,
+                                "zeta_C": 3,
+                                "chi_C": 1,
+                            }
+                        },
+                    )
+                )
+        # A triangle has a harmonic edge mode for every SPD retained Hodge.
+        graph = GRCV4Graph(
+            (0, 1, 2),
+            (OrientedEdge("a", 0, 1), OrientedEdge("b", 1, 2), OrientedEdge("c", 2, 0)),
+        )
+        with self.assertRaisesRegex(ValueError, "singular"):
+            CandidateCCurrent(
+                current_fixture(
+                    graph=graph,
+                    weights={"a": 1, "b": 1, "c": 1},
+                    resource=(0.2, 1, 3),
+                    hodge=((3, 0.5, 0.25), (0.5, 2, 0.5), (0.25, 0.5, 1)),
+                    changes={"candidate": {"chi_C": 1, "zeta_C": 1}},
+                )
+            )
+
+    def test_positive_pairing_audit_witness_reaches_current_conditioning_guard(
+        self,
+    ) -> None:
+        from pygrc.models.grc_v4_candidate_c import CandidateCCurrent
+
+        graph = GRCV4Graph((0, 1), (OrientedEdge("a", 0, 1), OrientedEdge("b", 0, 1)))
+        witness = ((1.0, 0.1), (0.1, 0.010000000000000002))
+        self.assertGreater(Fraction(witness[1][1]) - Fraction(witness[0][1]) ** 2, 0)
+        for scale in (-400, 0, 400):
+            for signs in ((1, 1), (1, -1)):
+                hodge = tuple(
+                    tuple(
+                        math.ldexp(x * signs[i] * signs[j], scale)
+                        for j, x in enumerate(row)
+                    )
+                    for i, row in enumerate(witness)
+                )
+                inputs = current_fixture(
+                    graph=graph,
+                    weights={"a": 1, "b": 1},
+                    hodge=hodge,
+                    changes={
+                        "candidate": {"kappa_M_C": 0, "Lambda_C": -1},
+                        "solver": {"conditioning_limit": 1e12},
+                    },
+                )
+                before = canonical_json_bytes(inputs.to_payload())
+                with (
+                    self.subTest(scale=scale, signs=signs),
+                    self.assertRaisesRegex(
+                        ValueError, "conditioning limit exceeded: structural flat map"
+                    ),
+                ):
+                    CandidateCCurrent(inputs)
+                self.assertEqual(canonical_json_bytes(inputs.to_payload()), before)
+
+    def test_seeded_dense_spd_multigraphs_against_independent_equations(self) -> None:
+        import numpy as np
+        from pygrc.models.grc_v4_candidate_c import CandidateCCurrent
+
+        rng = np.random.default_rng(94242)
+        for case in range(12):
+            edges = [
+                OrientedEdge("a", 0, 1),
+                OrientedEdge("b", 1, 2),
+                OrientedEdge("c", 2, 0),
+            ]
+            if case % 2:
+                edges.append(OrientedEdge("l", 1, 1))
+            graph = GRCV4Graph((0, 1, 2), tuple(edges))
+            a = rng.integers(-2, 3, size=(len(edges), len(edges)))
+            h = (a.T @ a + np.eye(len(edges))) / 4
+            b = np.array(graph.incidence)
+            eig = np.linalg.eigvalsh(b @ h @ b.T)
+            cutoff = float((eig[1] + eig[2]) / 2)
+            # Avoid repeated nonzero clusters for this partial-projector oracle;
+            # exact repeated-cluster rotation has its own deterministic test.
+            if eig[2] - eig[1] < 0.01:
+                cutoff = 0.01
+            inputs = current_fixture(
+                graph=graph,
+                weights={e.edge_id: float(2 ** (i - 1)) for i, e in enumerate(edges)},
+                hodge=tuple(tuple(float(x) for x in row) for row in h),
+                resource=tuple(float(x) for x in rng.uniform(0, 3, size=3)),
+                changes={
+                    "candidate": {
+                        "Lambda_C": cutoff,
+                        "kappa_M_C": float(rng.uniform(-0.8, 0.8)),
+                        "chi_C": 0.65,
+                        "zeta_C": 0.55,
+                        "tau_C": 0.17,
+                    }
+                },
+            )
+            actual, expected = CandidateCCurrent(inputs), dense_current_oracle(inputs)
+            for label, value in (
+                ("projector", actual.algebra.selector.projector),
+                ("phi", actual.algebra.potential.values),
+                ("j0", actual.algebra.baseline.values),
+                ("current", actual.current.values),
+                ("read", actual.read.flux.values),
+            ):
+                with self.subTest(case=case, field=label):
+                    np.testing.assert_allclose(
+                        np.asarray(value, dtype=float),
+                        expected[label],
+                        atol=2e-11,
+                        rtol=2e-11,
+                    )
+
+    def test_actual_current_rejects_lost_physical_conditioning_margin(self) -> None:
+        import numpy as np
+        from pygrc.models.grc_v4_candidate_c import CandidateCCurrent
+
+        graph = GRCV4Graph(
+            (0, 1, 2),
+            tuple(OrientedEdge(e, i, (i + 1) % 3) for i, e in enumerate("abc")),
+        )
+
+        def fixture(limit: float) -> Any:
+            return current_fixture(
+                graph=graph,
+                weights={"a": 1, "b": 1, "c": 1},
+                hodge=((9, -6, 4), (-6, 10, -1), (4, -1, 4)),
+                resource=(0.02, 0.2, 2),
+                changes={
+                    "candidate": {
+                        "Lambda_C": 100,
+                        "kappa_M_C": 2,
+                        "zeta_C": 0.999,
+                        "chi_C": 1,
+                        "tau_C": 0.2,
+                    },
+                    "solver": {"conditioning_limit": limit},
+                },
+            )
+
+        inputs = fixture(2000)
+        expected = dense_current_oracle(inputs)
+        self.assertLess(np.linalg.cond(np.eye(3) - 0.999 * expected["response"]), 1500)
+        self.assertGreater(np.linalg.cond(expected["block"]), 390000)
+        with self.assertRaisesRegex(
+            ValueError, "conditioning limit exceeded: physical total-current block"
+        ):
+            CandidateCCurrent(inputs)
+        # Changing only the serialized bound admits the same regular equation;
+        # neither a retained-space certificate nor a repair is substituted.
+        admitted = CandidateCCurrent(fixture(1e6))
+        np.testing.assert_allclose(
+            admitted.current.values, expected["current"], rtol=2e-10, atol=2e-10
+        )
+
+    def test_tiny_residuals_cannot_underflow_into_zero_tolerance_success(self) -> None:
+        from pygrc.models.grc_v4_candidate_c import _c_residual_pass, _c_solve
+
+        policy = current_fixture().geometry.reference.profile.params_resolved.solver
+        zero = replace(policy, absolute_tolerance=0, relative_tolerance=0)
+        self.assertFalse(_c_residual_pass((Fraction(1, 10**500),), (Fraction(),), zero))
+        self.assertTrue(
+            _c_residual_pass(
+                (Fraction(1),),
+                (Fraction(1),),
+                replace(policy, absolute_tolerance=1, relative_tolerance=0),
+            )
+        )
+        self.assertFalse(
+            _c_residual_pass(
+                (Fraction(1),),
+                (Fraction(1),),
+                replace(
+                    policy,
+                    absolute_tolerance=math.nextafter(1, 0),
+                    relative_tolerance=0,
+                ),
+            )
+        )
+        with self.assertRaisesRegex(ValueError, "residual"):
+            _c_solve(((3,),), ((1,),), zero, "one third", [])
+        with self.assertRaisesRegex(ValueError, "residual"):
+            _c_solve(((3,),), ((5e-324,),), zero, "subnormal rhs", [])
+
+    def test_stage_declarations_reject_unsupported_policies(self) -> None:
+        from pygrc.models.grc_v4_candidate_c import CandidateCCurrent
+
+        controls = [
+            ("common", "domain_id", "wrong"),
+            ("common", "gauge_id", "wrong"),
+            ("common", "normalization_id", "wrong"),
+            ("candidate", "potential_evaluator_id", "wrong"),
+            ("candidate", "current_conditioning_policy_id", "wrong"),
+            ("solver", "solver_kind", "newton"),
+            ("solver", "residual_norm_id", "wrong"),
+            ("identity", "solver_id", "wrong"),
+        ]
+        for group, key, value in controls:
+            changes = {group: {key: value}}
+            if group == "common":
+                changes["identity"] = {key: value}
+            with (
+                self.subTest(field=key),
+                self.assertRaisesRegex(ValueError, "unimplemented"),
+            ):
+                CandidateCCurrent(current_fixture(changes=changes))
+        with self.assertRaises(TypeError):
+            CandidateCCurrent({})  # type: ignore[arg-type]
+        from tests.models.test_grc_v4_geometry import stage_inputs_fixture
+
+        with self.assertRaisesRegex(ValueError, "profile"):
+            CandidateCCurrent(stage_inputs_fixture(stage_reference_fixture("A")))
+
+    def test_nonfinite_and_underflowed_required_operators_fail_without_repair(
+        self,
+    ) -> None:
+        from pygrc.models.grc_v4_candidate_c import CandidateCCurrent
+
+        for km in (2000, -2000):
+            with self.subTest(km=km), self.assertRaises(ValueError):
+                CandidateCCurrent(
+                    current_fixture(
+                        graph=self.edge_graph(),
+                        weights={"e": 1},
+                        resource=(100, 100),
+                        changes={"candidate": {"kappa_M_C": km}},
+                    )
+                )
+        with self.assertRaises(ValueError):
+            CandidateCCurrent(
+                current_fixture(
+                    graph=self.edge_graph(),
+                    weights={"e": 5e-324},
+                    resource=(0, 0),
+                    changes={"candidate": {"kappa_M_C": 0, "tau_C": 0}},
+                )
+            )
+        # Saturated tanh remains well-defined for a finite quotient above the
+        # binary64 range; it does not authorize an infinite Hodge or inverse.
+        actual = CandidateCCurrent(
+            current_fixture(
+                graph=self.edge_graph(),
+                weights={"e": 1},
+                resource=(1, 1),
+                changes={"candidate": {"C_ref": 5e-324}},
+            )
+        )
+        self.assertEqual(actual.algebra.deformation, (math.exp(0.25),))
+
+    def test_fresh_geometry_and_trial_current_have_distinct_stage_roles(self) -> None:
+        from pygrc.models.grc_v4_candidate_c import CandidateCCurrent
+        from pygrc.models.grc_v4_geometry import GRCV4Geometry
+
+        inputs = current_fixture(
+            realization="CI",
+            stage="ci_trial",
+            resource=(0.1, 1.5, 2.7),
+            changes={"candidate": {"Lambda_C": 4}},
+        )
+        first = CandidateCCurrent(inputs)
+        changed = replace(
+            inputs,
+            trial_current=PhysicalFlux(inputs.geometry.reference.graph, (12, -4)),
+            evaluation_index=7,
+        )
+        trial = CandidateCCurrent(changed)
+        self.assertEqual(first.current, trial.current)
+        self.assertEqual(first.algebra.baseline, trial.algebra.baseline)
+        self.assertNotEqual(first.identity, trial.identity)
+        next_geometry = GRCV4Geometry(
+            inputs.geometry.reference,
+            OneFormHodge(inputs.geometry.reference.graph, ((3, 0.5), (0.5, 2))),
+        )
+        refreshed = CandidateCCurrent(replace(inputs, geometry=next_geometry))
+        self.assertNotEqual(
+            first.algebra.selector.projector, refreshed.algebra.selector.projector
+        )
+        self.assertNotEqual(first.algebra.baseline, refreshed.algebra.baseline)
+        self.assertEqual(
+            first.algebra.transport.mobility, refreshed.algebra.transport.mobility
+        )
+
+    def test_local_evaluation_at_each_declared_stage_is_not_a_complete_beat(
+        self,
+    ) -> None:
+        from pygrc.models.grc_v4_candidate_c import CandidateCCurrent
+        from pygrc.models.grc_v4_profile import list_supported_profiles
+
+        for realization, stage in [
+            ("OS", "os_predictor"),
+            ("OS", "os_corrector"),
+            ("CI", "ci_trial"),
+            ("CI+PC", "cipc_trial"),
+            ("PC", "pc_old_history"),
+            ("RG2b", "rg2b_section"),
+            ("OS", "post_continuity"),
+            ("OS", "reset_readmission"),
+            ("OS", "target_readmission"),
+        ]:
+            with self.subTest(stage=stage):
+                inputs = current_fixture(realization=realization, stage=stage)
+                before = inputs.to_payload()
+                current = CandidateCCurrent(inputs)
+                self.assertEqual(inputs.to_payload(), before)
+                self.assertEqual(current.inputs.stage, stage)
+        self.assertFalse(list_supported_profiles())
+
+    def test_signed_permutation_and_vertex_relabeling_covariance(self) -> None:
+        import numpy as np
+        from pygrc.models.grc_v4_candidate_c import CandidateCCurrent
+
+        original = current_fixture(
+            hodge=((3, 0.75), (0.75, 1.5)),
+            resource=(0.2, 1.5, 2.4),
+            changes={"candidate": {"Lambda_C": 3}},
+        )
+        first = CandidateCCurrent(original)
+        graph = original.geometry.reference.graph
+        edge_order = (1, 0)
+        node_order = (2, 0, 1)
+        sign = (-1, 1)
+        labels = {node: f"relabel-{i}" for i, node in enumerate(graph.live_node_ids)}
+        edges = []
+        for j, s in zip(edge_order, sign, strict=True):
+            e = graph.oriented_edges[j]
+            tail, head = e.tail_node_id, e.head_node_id
+            if s < 0:
+                tail, head = head, tail
+            edges.append(OrientedEdge(e.edge_id, labels[tail], labels[head]))
+        transformed = GRCV4Graph(
+            tuple(labels[graph.live_node_ids[i]] for i in node_order), tuple(edges)
+        )
+        h = original.geometry.one_form_hodge.matrix
+        h2 = tuple(
+            tuple(float(sign[i] * sign[j] * h[a][b]) for j, b in enumerate(edge_order))
+            for i, a in enumerate(edge_order)
+        )
+        target = current_fixture(
+            graph=transformed,
+            weights=dict(original.geometry.reference.edge_weights),
+            hodge=h2,
+            resource=tuple(original.current.C[i] for i in node_order),
+            changes={"candidate": {"Lambda_C": 3}},
+        )
+        second = CandidateCCurrent(target)
+        np.testing.assert_allclose(
+            second.algebra.potential.values,
+            np.array(first.algebra.potential.values)[list(node_order)],
+            atol=2e-12,
+        )
+        np.testing.assert_allclose(
+            second.current.values,
+            np.array(first.current.values)[list(edge_order)] * sign,
+            atol=2e-12,
+        )
+        np.testing.assert_allclose(
+            second.read.flux.values,
+            np.array(first.read.flux.values)[list(edge_order)] * sign,
+            atol=2e-12,
+        )
+
+    def test_input_reconstruction_immutability_and_no_derived_authority(self) -> None:
+        from pygrc.models.grc_v4_candidate_c import CandidateCCurrent
+
+        inputs = current_fixture()
+        raw = inputs.to_payload()
+        before = deepcopy(raw)
+        current = CandidateCCurrent(inputs)
+        payload = current.to_payload()
+        restored = CandidateCCurrent.from_canonical_bytes(current.to_canonical_bytes())
+        self.assertEqual(restored.current, current.current)
+        self.assertEqual(restored.identity, current.identity)
+        self.assertEqual(raw, before)
+        self.assertEqual(set(payload), {"descriptor_version", "numerics", "inputs"})
+        for key in (
+            "current",
+            "selector",
+            "retained_hodge",
+            "response",
+            "baseline",
+            "history",
+        ):
+            with self.subTest(key=key), self.assertRaises(ValueError):
+                CandidateCCurrent.from_payload({**payload, key: []})
+        mutable: Any = payload
+        mutable["inputs"]["current"]["C"][0] = 99
+        self.assertEqual(current.inputs.current.C, inputs.current.C)
+        with self.assertRaises(FrozenInstanceError):
+            current.current = PhysicalFlux(inputs.geometry.reference.graph, (0, 0))  # type: ignore[misc]
+        with self.assertRaises(TypeError):
+            current.algebra.certificates[0]["limit"] = 1  # type: ignore[index]
+
+    def test_rejected_evaluation_preserves_full_stage_preimage(self) -> None:
+        from pygrc.models.grc_v4_candidate_c import CandidateCCurrent
+        from tests.models.test_grc_v4_step import preservation_snapshot
+
+        for changes in (
+            {"candidate": {"Lambda_C": 0}},
+            {"candidate": {"tau_C": 0, "zeta_C": 0.5, "chi_C": 2}},
+            {"solver": {"conditioning_limit": 0.5}},
+            {"solver": {"absolute_tolerance": 0, "relative_tolerance": 0}},
+        ):
+            inputs = current_fixture(changes=changes)
+            before = preservation_snapshot(inputs.to_payload())
+            with self.assertRaises(ValueError):
+                CandidateCCurrent(inputs)
+            self.assertEqual(preservation_snapshot(inputs.to_payload()), before)
+
+
 class CandidateCCaptureTests(unittest.TestCase):
     """Synthetic gate controls; these do not substitute for numeric leaf tests."""
 
@@ -1044,7 +2073,38 @@ def _p941_execute(
     return record
 
 
-def capture_p941(output: str, *, scope: str = "full") -> int:
+_P942_METHODS = (
+    "test_scalar_chain_has_literal_independent_solution",
+    "test_scalar_random_controls_against_closed_formula",
+    "test_frozen_weighted_three_node_algebra_vector",
+    "test_dense_nonreference_hodge_matches_literal_equations",
+    "test_selector_ties_zero_and_exterior_strata",
+    "test_exact_inertia_handles_zero_diagonal_pivots",
+    "test_selector_pair_permutation_sign_and_repeated_cluster_rotations",
+    "test_selector_rejects_unresolved_or_malformed_decomposition",
+    "test_disconnected_isolated_parallel_and_loop_coordinates",
+    "test_offdiagonal_loop_and_cycle_modes_match_oracle",
+    "test_only_loop_graph_has_full_selector_and_harmonic_response",
+    "test_one_chi_gate_linearity_and_zero_input",
+    "test_zero_controls_are_independent_current_equations",
+    "test_singular_current_and_zero_rhs_do_not_get_a_fallback",
+    "test_conditioning_bounds_are_checked_in_actual_euclidean_coordinates",
+    "test_exact_current_singularity_is_not_hidden_by_rounded_resolvent",
+    "test_positive_pairing_audit_witness_reaches_current_conditioning_guard",
+    "test_seeded_dense_spd_multigraphs_against_independent_equations",
+    "test_actual_current_rejects_lost_physical_conditioning_margin",
+    "test_tiny_residuals_cannot_underflow_into_zero_tolerance_success",
+    "test_stage_declarations_reject_unsupported_policies",
+    "test_nonfinite_and_underflowed_required_operators_fail_without_repair",
+    "test_fresh_geometry_and_trial_current_have_distinct_stage_roles",
+    "test_local_evaluation_at_each_declared_stage_is_not_a_complete_beat",
+    "test_signed_permutation_and_vertex_relabeling_covariance",
+    "test_input_reconstruction_immutability_and_no_derived_authority",
+    "test_rejected_evaluation_preserves_full_stage_preimage",
+)
+
+
+def _capture_candidate_c(output: str, *, scope: str) -> int:
     """One manifest; source is recovered from Git, without copying source blobs.
 
     The inherited pinned method roster and audited result collector detect
@@ -1058,7 +2118,7 @@ def capture_p941(output: str, *, scope: str = "full") -> int:
     import subprocess
     from tests.models.test_grc_v4_step import p935_required
 
-    if scope not in {"full", "focused"}:
+    if scope not in {"full", "focused", "current"}:
         raise ValueError("unknown capture scope")
     root = Path(__file__).resolve().parents[2]
     destination = (root / output).resolve()
@@ -1079,7 +2139,9 @@ def capture_p941(output: str, *, scope: str = "full") -> int:
             "full capture requires enabled package tests and repository-local dependency wheels"
         )
     base = subprocess.check_output(
-        ["git", "rev-parse", "2e90398"], cwd=root, text=True
+        ["git", "rev-parse", "94a079d" if scope == "current" else "2e90398"],
+        cwd=root,
+        text=True,
     ).strip()
     scopes = [
         "src",
@@ -1115,6 +2177,7 @@ def capture_p941(output: str, *, scope: str = "full") -> int:
             for name in sorted(names)
         }
 
+    iteration = "P9-4.2" if scope == "current" else "P9-4.1"
     before = source_hashes()
     # Git diff also sees staged changes, while the explicit overrides cover
     # this leaf's new files before they have been staged.
@@ -1132,7 +2195,7 @@ def capture_p941(output: str, *, scope: str = "full") -> int:
     )
     if (changed | untracked) != overrides:
         raise ValueError(
-            "capture source differs from the two reviewed P9-4.1 overrides"
+            "capture source differs from the two reviewed " + iteration + " overrides"
         )
     inherited = p935_required(root)
     if scope == "focused":
@@ -1146,6 +2209,23 @@ def capture_p941(output: str, *, scope: str = "full") -> int:
                 )
             )
         }
+    if scope == "current":
+        inherited = {
+            name
+            for name in inherited
+            if name.startswith(
+                (
+                    "tests.models.test_grc_v4_geometry.CaptureIntegrityTests.",
+                    "tests.models.test_grc_v4_geometry.PairingTests.",
+                    "tests.models.test_grc_v4_geometry.ExactPositiveDomainTests.",
+                    "tests.models.test_grc_v4_geometry.GeometryAdmissionTests.",
+                    "tests.models.test_grc_v4_geometry.StageCacheTests.",
+                    "tests.models.test_grc_v4_transport.MobilityTests.",
+                )
+            )
+        } | {
+            "tests.models.test_grc_v4_geometry.NumericalEnvelopeTests.test_exact_positive_matrix_can_have_nonpositive_computed_self_pairing"
+        }
     required = (
         inherited
         | {
@@ -1157,6 +2237,11 @@ def capture_p941(output: str, *, scope: str = "full") -> int:
             for name in _P941_CAPTURE_METHODS
         }
     )
+    if scope == "current":
+        required |= {
+            "tests.models.test_grc_v4_candidate_c.CandidateCCurrentTests." + name
+            for name in _P942_METHODS
+        }
     suite = (
         unittest.defaultTestLoader.discover(
             str(root / "tests"), top_level_dir=str(root)
@@ -1167,7 +2252,7 @@ def capture_p941(output: str, *, scope: str = "full") -> int:
     destination.mkdir(parents=True, exist_ok=False)
     record: dict[str, Any] = {
         "schema": "phase9_leaf_run_v1",
-        "iteration_id": "P9-4.1",
+        "iteration_id": iteration,
         "scope": scope,
         "status": "running",
         "started_utc": datetime.now(timezone.utc).isoformat(),
@@ -1202,10 +2287,18 @@ def capture_p941(output: str, *, scope: str = "full") -> int:
             ".venv/bin/python",
             "-m",
             "tests.models.test_grc_v4_candidate_c",
-            "--capture-p941" if scope == "full" else "--capture-p941-focused",
+            "--capture-p942"
+            if scope == "current"
+            else "--capture-p941"
+            if scope == "full"
+            else "--capture-p941-focused",
             "<fresh-repository-relative-generated-directory>",
         ],
-        "claim_ceiling": "Reference transport constructors only; no selector, baseline flux, solve, beat, lifecycle or runtime conformance.",
+        "claim_ceiling": (
+            "Fixed-stage Candidate C selector, potential, baseline, typed read and regular current solve; no complete beat, lifecycle, profile conformance or cross-platform bitwise numerical claim."
+            if scope == "current"
+            else "Reference transport constructors only; no selector, baseline flux, solve, beat, lifecycle or runtime conformance."
+        ),
     }
     record["required_ids"] = sorted(required)
     record.update(_p941_execute(root, before, required, suite, source_hashes))
@@ -1246,7 +2339,19 @@ def capture_p941(output: str, *, scope: str = "full") -> int:
     return 0 if passed else 1
 
 
+def capture_p941(output: str, *, scope: str = "full") -> int:
+    if scope not in {"full", "focused"}:
+        raise ValueError("unknown P9-4.1 capture scope")
+    return _capture_candidate_c(output, scope=scope)
+
+
+def capture_p942(output: str) -> int:
+    return _capture_candidate_c(output, scope="current")
+
+
 if __name__ == "__main__":
+    if len(sys.argv) == 3 and sys.argv[1] == "--capture-p942":
+        raise SystemExit(capture_p942(sys.argv[2]))
     if len(sys.argv) == 3 and sys.argv[1] in {
         "--capture-p941",
         "--capture-p941-focused",

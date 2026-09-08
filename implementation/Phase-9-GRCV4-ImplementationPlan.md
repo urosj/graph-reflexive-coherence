@@ -630,7 +630,8 @@ handling, domain failures, and precision edges.
 
 ### Tranche 4. Candidate C with OS
 
-Current leaf: P9-4.1 on `impl/phase-9-grcv4-tranche-4`, with P9-3.5's
+Current leaf: P9-4.2 on `impl/phase-9-grcv4-tranche-4`. Accepted predecessor:
+P9-4.1, with P9-3.5's
 accepted `155c728` subject separately authenticated. The
 [P9-4.1 review](./phase-9-grcv4/tranche-4/P9-4.1-Review.md) covers the implemented
 complete-profile reference binding, exact stable-edge admission, separate
@@ -639,9 +640,20 @@ The user's commit instruction accepts this leaf after the capture audit
 correction and execution-record reconciliation. The focused follow-up passed
 51 methods and seven relocated checks; both source revisions reconstruct.
 Review/execution records retain their validation-time dispositions and historical
-attribution limits. Twelve leaves and 25 paths remain dependency-ready until a
-separate P9-4.2 entry transition binds this accepted commit. Profile conformance
-remains held. The reviewed owner combines
+attribution limits. P9-4.2 entry binds accepted `94a079d` in the separate
+[P9-4.1 acceptance record](./phase-9-grcv4/tranche-4/P9-4.1-AcceptanceRecord.json),
+opening thirteen leaves with the same 25 paths. P9-4.2 is implemented, verified and
+explicitly accepted by the user for commit after the user reported that both
+reviews found no defects: see its [review](./phase-9-grcv4/tranche-4/P9-4.2-Review.md)
+and [execution record](./phase-9-grcv4/tranche-4/P9-4.2-ExecutionRecord.json).
+All 123 focused methods passed; reconstruction verifies the source manifest and
+17 relocated methods pass under each of two hash seeds. Exact mathematical
+current regularity precedes rounding, and conditioning is checked on the actual
+physical block. Selector ties/gap loss, the earlier pairing audit witness,
+dense SPD multigraphs, numerical extremes, stage provenance and typed Read-Back
+receive executable pressure. Review/execution records retain their validation-time
+dispositions. A separately authorized P9-4.3 entry can bind this accepted commit;
+profile conformance remains held. The reviewed owner combines
 Candidate C work in `grc_v4_candidate_c.py` rather than the earlier proposed
 split transport module.
 

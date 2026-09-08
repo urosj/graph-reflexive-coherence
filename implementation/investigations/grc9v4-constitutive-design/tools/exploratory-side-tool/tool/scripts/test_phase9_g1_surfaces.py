@@ -44,7 +44,7 @@ def checks(root):
         return namespace
 
     require(
-        status["dependency_ready_leaves"] == ["P9-2.1", "P9-2.2", "P9-2.3", "P9-2.4", "P9-2.5", "P9-2.6", "P9-3.1", "P9-3.2", "P9-3.3", "P9-3.4", "P9-3.5", "P9-4.1"]
+        status["dependency_ready_leaves"] == ["P9-2.1", "P9-2.2", "P9-2.3", "P9-2.4", "P9-2.5", "P9-2.6", "P9-3.1", "P9-3.2", "P9-3.3", "P9-3.4", "P9-3.5", "P9-4.1", "P9-4.2"]
         and status["harness_acceptance"]["record_digest"] == policy.HARNESS_ACCEPTANCE_DIGEST
         and status["harness_acceptance"]["accepted_iterations"] == ["P9-2.5"]
         and status["geometry_acceptance"]["record_digest"] == policy.GEOMETRY_ACCEPTANCE_DIGEST
@@ -54,6 +54,8 @@ def checks(root):
         and status["resource_acceptance"]["record_digest"] == policy.RESOURCE_ACCEPTANCE_DIGEST
         and status["resource_acceptance"]["accepted_iterations"] == ["P9-3.3"]
         and status["preservation_acceptance"]["accepted_iterations"] == ["P9-3.5"]
+        and status["reference_transport_acceptance"]["accepted_iterations"] == ["P9-4.1"]
+        and status["reference_transport_acceptance"]["record_digest"] == policy.REFERENCE_ACCEPTANCE_DIGEST
         and status["numerical_pressure_acceptance"]["record_digest"] == policy.NUMERICAL_ACCEPTANCE_DIGEST
         and status["numerical_pressure_acceptance"]["accepted_iterations"] == ["P9-3.4"]
         and status["integration_acceptance"]["record_digest"] == policy.INTEGRATION_ACCEPTANCE_DIGEST
@@ -141,7 +143,8 @@ def checks(root):
                 and held["runtime_authorized"] is False
                 and held["P9_G1_accepted"] is True
                 and "implementation_scope" not in held
-                and "preservation_acceptance" not in held,
+                and "preservation_acceptance" not in held
+                and "reference_transport_acceptance" not in held,
                 "API TOCTOU retained authority",
             )
         with tempfile.TemporaryDirectory(prefix="grcv4-g1-receipt-") as scratch:
