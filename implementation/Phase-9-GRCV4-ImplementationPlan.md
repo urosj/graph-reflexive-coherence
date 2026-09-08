@@ -777,9 +777,17 @@ have scoped C_OS evidence reconciled; P9-7.1-C_OS retains only bounded snapshot/
 continuation credit. Broader GRC9/reference-carrier correction and generic
 parent-DAG conformance remain outside these accepted leaves.
 
-P9-4.8 is the next separate review. P9-G2[C_OS] and runtime support sets remain
-pending/empty. The existing permission envelope still covers 26 leaves and 29
-paths; accepting this batch does not silently grant later implementation scope.
+P9-4.8 has a draft **HOLD P9-G2[C_OS]**, pending fixture reconciliation and
+user review. Start from the [current continuation handoff](./phase-9-grcv4/tranche-4/P9-4.8-Handoff.md).
+The [gate review](./phase-9-grcv4/tranche-4/P9-4.8-Review.md) and
+[33-case evidence index](./phase-9-grcv4/tranche-4/P9-4.8-GateReview.json)
+record unfinished public-interface integration and deferred receipt-parent
+authority. Fixture reconciliation is P9-4.8 work; its absent consolidated mapping
+is not proof of missing behavior. Reassess the stale-cache case using the existing
+second-beat reconstruction test before claiming a new gap. The corrected mandatory
+mapped-event execution retains its scoped credit. A_OS and P9-G3[C_OS] stay
+behind G2. Runtime support remains empty; permissions remain 26 leaves / 29
+eligible paths. P9-4.8 has changed review artifacts only.
 
 
 

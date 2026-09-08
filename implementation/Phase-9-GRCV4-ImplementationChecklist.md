@@ -609,9 +609,10 @@ three bounded batches retain their own results and raw per-run manifests.
   early Tranche 7 children: mapped events, migration admission/rejection,
   reset after events/migrations, reference maps, and atomic readmission.
   Unsupported targets must reject; mandatory fixtures cannot be waived.
-- [ ] P9-4.8: Review all applicable C_OS fixtures and accept, reject, or hold
-  `P9-G2[C_OS]`. Missing mandatory cases keep this gate pending. Record the
-  next permitted A_OS or `P9-G3[C_OS]` review path.
+- [ ] P9-4.8: Draft **HOLD P9-G2[C_OS]**; fixture reconciliation and user
+  review/acceptance remain open. Carry the existing facade and receipt-authority
+  obligations into explicit closure work. Reconcile existing fixture evidence
+  before asserting missing behavior. A_OS and `P9-G3[C_OS]` remain behind G2.
 
 `P9-4.7` is the parent of P9-4.7a and P9-4.7b. The early state/receipt/replay
 cycle supplies evidence; P9-4.8 grants no reduced form of generic conformance.
@@ -633,9 +634,17 @@ have scoped C_OS evidence reconciled; P9-7.1-C_OS retains only bounded snapshot/
 continuation credit. Broader GRC9/reference-carrier correction and generic
 parent-DAG conformance remain outside these accepted leaves.
 
-P9-4.8 is the next separate review. P9-G2[C_OS] and runtime support sets remain
-pending/empty. The existing permission envelope still covers 26 leaves and 29
-paths; accepting this batch does not silently grant later implementation scope.
+P9-4.8 has a draft **HOLD P9-G2[C_OS]**, pending fixture reconciliation and
+user review. Start from the [current continuation handoff](./phase-9-grcv4/tranche-4/P9-4.8-Handoff.md).
+The [gate review](./phase-9-grcv4/tranche-4/P9-4.8-Review.md) and
+[33-case evidence index](./phase-9-grcv4/tranche-4/P9-4.8-GateReview.json)
+record unfinished public-interface integration and deferred receipt-parent
+authority. Fixture reconciliation is P9-4.8 work; its absent consolidated mapping
+is not proof of missing behavior. Reassess the stale-cache case using the existing
+second-beat reconstruction test before claiming a new gap. The corrected mandatory
+mapped-event execution retains its scoped credit. A_OS and P9-G3[C_OS] stay
+behind G2. Runtime support remains empty; permissions remain 26 leaves / 29
+eligible paths. P9-4.8 has changed review artifacts only.
 
 ## Tranche 5. Candidate A and A_OS
 
@@ -684,10 +693,12 @@ coverage. Record bounded shared-audit results for the available profile set.
 
 The [P9-1.4 child register](./phase-9-grcv4/tranche-1/P9-1.4-SupportAndDependencies.json)
 now declares exact C_OS and A_OS lifecycle children, source/target crossing
-scopes, evidence aliases and dependencies. P9-7.1-C_OS now has the P9-4.6
-implementation/evidence slice, authorized for commit with full audit pending;
-the other children remain
-planned/unexecuted. P9-7.7-C_OS aliases P9-4.8, with no duplicate execution credit. Parent completion remains scoped to reviewed child evidence.
+scopes, evidence aliases and dependencies. P9-7.1-C_OS and the early C_OS
+P9-7.2a/b–P9-7.6 children have scoped evidence accepted with the P9-4.6/4.7 batch;
+its full audit findings are closed. Generic parent-reference conformance remains
+open. A_OS children remain planned/unexecuted. P9-7.7-C_OS aliases the
+P9-4.8 draft HOLD review, pending fixture reconciliation and user review, with no duplicate execution credit.
+Parent completion remains scoped to reviewed child evidence.
 
 The registered C_OS/A_OS migration/event and P9-7.3–P9-7.6 children also own
 §7.5: deliberately distinct live/reset prestates, independently calculated

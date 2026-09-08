@@ -138,6 +138,12 @@ HANDOFF_PATHS = {
     HERE + "handoff/P9-G1-outputs.zip",
 }
 PATHS = {
+    # User-authorized P9-4.8 gate review only. This does not add runtime-ready
+    # leaves, editable runtime paths, or accepted profile support.
+    PHASE + "tranche-4/P9-4.8-Review.md",
+    PHASE + "tranche-4/P9-4.8-GateReview.json",
+    PHASE + "tranche-4/P9-4.8-Handoff.md",
+    HERE + "verify_p948_review.py",
     APPROVAL,
     POLICY,
     RECORD,

@@ -1,4 +1,29 @@
-# Phase 9 GRCV4 handoff — accepted through P9-2.6
+# Phase 9 GRCV4 handoff — P9-4.8 continuation
+
+Current restart point, 2026-09-09: **read the
+[P9-4.8 continuation handoff](./phase-9-grcv4/tranche-4/P9-4.8-Handoff.md)**.
+It contains the current checkout/acceptance state, source links, remaining work,
+environment commands, verification limits and files intended for the next commit.
+
+The branch is `impl/phase-9-grcv4-tranche-4`; accepted runtime base is
+`12411282422ba3cd9e91ce93051fe3470b9bf084`. P9-4.6/4.7 audit corrections are
+accepted. P9-4.8 has a draft G2 HOLD; fixture reconciliation and user review
+remain open. The user intends to commit the review files after this handoff.
+Use that later handoff-bearing branch tip on the destination machine.
+
+The latest correction is essential: the user followed the checklist. Facade
+integration and receipt-parent authority were left deferred under narrower
+accepted scopes. Missing fixture mapping is not proof of missing behavior;
+existing second-beat reconstruction tests must be considered before asserting
+a stale-cache gap. The linked handoff and revised draft review preserve this
+distinction. No new scientific requirements or runtime defects are inferred
+from missing paperwork.
+
+Everything below is historical navigation accumulated from earlier handoffs.
+Its old “held”, “next” and “not started” statements describe those earlier
+snapshots; they must not override the current restart point above.
+
+## Historical Tranche 2 snapshot and subsequent continuation notes
 
 Snapshot: 2026-09-06, branch `impl/phase-9-grcv4-tranche-2`, accepted implementation
 commit `5307343e34d33ab4a95a5712fbafe0ebd1df1a62`.
@@ -146,9 +171,17 @@ have scoped C_OS evidence reconciled; P9-7.1-C_OS retains only bounded snapshot/
 continuation credit. Broader GRC9/reference-carrier correction and generic
 parent-DAG conformance remain outside these accepted leaves.
 
-P9-4.8 is the next separate review. P9-G2[C_OS] and runtime support sets remain
-pending/empty. The existing permission envelope still covers 26 leaves and 29
-paths; accepting this batch does not silently grant later implementation scope.
+P9-4.8 has a draft **HOLD P9-G2[C_OS]**, pending fixture reconciliation and
+user review. Start from the [current continuation handoff](./phase-9-grcv4/tranche-4/P9-4.8-Handoff.md).
+The [gate review](./phase-9-grcv4/tranche-4/P9-4.8-Review.md) and
+[33-case evidence index](./phase-9-grcv4/tranche-4/P9-4.8-GateReview.json)
+record unfinished public-interface integration and deferred receipt-parent
+authority. Fixture reconciliation is P9-4.8 work; its absent consolidated mapping
+is not proof of missing behavior. Reassess the stale-cache case using the existing
+second-beat reconstruction test before claiming a new gap. The corrected mandatory
+mapped-event execution retains its scoped credit. A_OS and P9-G3[C_OS] stay
+behind G2. Runtime support remains empty; permissions remain 26 leaves / 29
+eligible paths. P9-4.8 has changed review artifacts only.
 
 
 
@@ -171,7 +204,7 @@ limitation known. That merge is the base of the Tranche 4 branch named above.
 The old direct historical-SHA consumers remain a separate maintenance limitation;
 P9-4.1 reconstruction uses its own source bindings and does not depend on them.
 
-## Where we stopped
+## Historical Tranche 2 stopping point
 
 P9-G1 and P9-2.1 through P9-2.6 are accepted. The user's instruction to commit
 is acceptance; the P9-2.6 commit message explicitly records that decision.
