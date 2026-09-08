@@ -488,8 +488,17 @@ three bounded batches retain their own results and raw per-run manifests.
 
 ## Tranche 4. D11-C and the first C_OS runtime slice
 
-- [ ] P9-4.1: Bind `C-HM-STIFFNESS-BASELINE-v1`, the exact positive stable-edge
+- [x] P9-4.1: Bind `C-HM-STIFFNESS-BASELINE-v1`, the exact positive stable-edge
   reference map, and separate Hodge/mobility constructor identities.
+  Implemented and verified on `impl/phase-9-grcv4-tranche-4`; accepted by the
+  user's commit instruction after audit follow-up. The
+  [review](./phase-9-grcv4/tranche-4/P9-4.1-Review.md) maps source contracts,
+  typed constructor and complete-profile identities, strict reference-map
+  admission, binary64/outlier pressure and reconstruction to executable tests.
+  Entry binds P9-3.5 at `155c728`: twelve ready leaves, 25 eligible paths,
+  empty runtime support. The corrected capture passed 51 focused methods and
+  seven relocated checks; historical records retain their original dispositions
+  and attribution limits. P9-4.2 entry will bind the accepted commit separately.
 - [ ] P9-4.2: Implement the accepted potential and baseline flux, selector
   gap, Read-Back typing, and regular current solve at their declared stages.
 - [ ] P9-4.3: Verify independent kappa-M, chi, and zeta zero controls and

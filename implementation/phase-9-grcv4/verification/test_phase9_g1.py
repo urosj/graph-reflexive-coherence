@@ -52,7 +52,7 @@ def main():
             ],
             check=True,
         )
-        fixture_revision = p.accepted_numerical_pressure(p.ROOT)["baseline_commit"]
+        fixture_revision = p.git(p.ROOT, "rev-parse", "2e90398").decode().strip()
         subprocess.run(
             ["git", "checkout", "--quiet", "--detach", fixture_revision],
             cwd=root, check=True,
@@ -519,9 +519,9 @@ def main():
                                b"{}", leaf="P9-3.5"),
         )
         case(
-            "numerical_pressure_does_not_accept_future_leaf",
-            lambda: registered(p.PHASE + "evidence/P9-4.1/probe/inputs.json",
-                               b"{}", leaf="P9-4.1"),
+            "preservation_does_not_accept_future_leaf",
+            lambda: registered(p.PHASE + "evidence/P9-4.2/probe/inputs.json",
+                               b"{}", leaf="P9-4.2"),
             "owning leaf entry dependencies are not accepted",
         )
         for name in ["src/pygrc/models/grc_v4_state.py", "src/pygrc/models/grc_v4_step.py"]:
@@ -571,6 +571,24 @@ def main():
             case("numerical_pressure_acceptance_cannot_self_authorize_" + key,
                  forged_numerical, "untrusted numerical pressure acceptance",
                  scope="isolated_numerical_pressure_acceptance_authentication")
+        case("missing_preservation_acceptance", lambda: edit(p.PRESERVATION_ACCEPTANCE, None),
+             "P9-3.5-AcceptanceRecord.json")
+        for key, replacement in [("status", "pending"), ("accepted_iterations", ["P9-3.5", "P9-4.1"]),
+                                 ("accepted_generic_runtime_support", ["C_OS"]),
+                                 ("admitted_specialization_support_sets", [["C_OS"]]),
+                                 ("baseline_commit", p.BASELINE), ("evidence_bindings", [])]:
+            def forged_preservation(key=key, replacement=replacement):
+                value = p.read(root / p.PRESERVATION_ACCEPTANCE)
+                value[key] = replacement
+                value["record_digest"] = p.digest_record(value)
+                with mutate(p.PRESERVATION_ACCEPTANCE, p.canonical(value)):
+                    p.accepted_preservation(root)
+            case("preservation_acceptance_cannot_self_authorize_" + key,
+                 forged_preservation, "untrusted prestate preservation acceptance",
+                 scope="isolated_preservation_acceptance_authentication")
+        for name in ["src/pygrc/models/grc_v4_candidate_c.py", "tests/models/test_grc_v4_candidate_c.py"]:
+            case("accepted_preservation_enables_" + Path(name).stem,
+                 lambda name=name: registered(name, content, leaf="P9-4.1"))
         case("accepted_harness_enables_export_owner",
              lambda: registered(init, before + lazy, leaf="P9-2.6"))
         for key, replacement in [("status", "pending"), ("accepted_iterations", ["P9-2.5", "P9-2.6"]),
@@ -671,7 +689,7 @@ def main():
         case(
             "later_generic_leaf_held",
             lambda: registered(
-                "src/pygrc/models/grc_v4_candidate_c.py", content, leaf="P9-4.1"
+                "src/pygrc/models/grc_v4_candidate_c.py", content, leaf="P9-4.2"
             ),
             "owning leaf entry dependencies are not accepted",
         )

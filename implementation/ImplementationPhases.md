@@ -1204,6 +1204,13 @@ foundation starting at P9-2.1. The unchanged historical opening carries the acce
 D10/D10.2 and D11 populations, their debt and claim boundaries, and the
 frozen release. Existing family behavior remains the regression baseline.
 
+Current continuation: Tranche 3 is accepted within its recorded scopes.
+Tranche 4 starts on `impl/phase-9-grcv4-tranche-4` with
+[P9-4.1 reference transport](./phase-9-grcv4/tranche-4/P9-4.1-Review.md)
+implemented, verified and accepted by the user's commit instruction after audit
+follow-up. P9-4.2 entry will bind the accepted commit separately; runtime support
+remains empty.
+
 The proposed first path closes generic `C_OS` dynamics and its applicable
 lifecycle/fixture product before `P9-G2[C_OS]`. The next reviewed route may
 be `A_OS` or C-only GRC9V4 pressure after `P9-G3[C_OS]`. Other realizations

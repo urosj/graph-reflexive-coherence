@@ -616,8 +616,9 @@ complete, and the user explicitly accepted P9-3.5 for commit after that follow-u
 The bound review and execution record preserve their pre-acceptance state.
 The external audit's primary-source review remains incomplete; this acceptance
 does not extend its findings. Tranche 3's five leaves are accepted within their
-recorded scopes. A later authorized entry will bind P9-3.5's accepted commit;
-P9-4.1 has not started. Runtime support remains empty, and real complete-step
+recorded scopes. At that Tranche 3 handoff, the later entry still needed to bind
+P9-3.5's accepted commit and P9-4.1 had not started; the current Tranche 4 status
+is recorded below. Runtime support remains empty, and real complete-step
 and lifecycle rollback remain later obligations.
 
 Implement deterministic graph order/orientation, differential identity,
@@ -628,6 +629,21 @@ coordinate. Test nonidentity SPD cases, signed reorientation, stale-cache
 handling, domain failures, and precision edges.
 
 ### Tranche 4. Candidate C with OS
+
+Current leaf: P9-4.1 on `impl/phase-9-grcv4-tranche-4`, with P9-3.5's
+accepted `155c728` subject separately authenticated. The
+[P9-4.1 review](./phase-9-grcv4/tranche-4/P9-4.1-Review.md) covers the implemented
+complete-profile reference binding, exact stable-edge admission, separate
+constructor identities (including declared units), and reconstruction.
+The user's commit instruction accepts this leaf after the capture audit
+correction and execution-record reconciliation. The focused follow-up passed
+51 methods and seven relocated checks; both source revisions reconstruct.
+Review/execution records retain their validation-time dispositions and historical
+attribution limits. Twelve leaves and 25 paths remain dependency-ready until a
+separate P9-4.2 entry transition binds this accepted commit. Profile conformance
+remains held. The reviewed owner combines
+Candidate C work in `grc_v4_candidate_c.py` rather than the earlier proposed
+split transport module.
 
 Implement the positive stable-edge reference map and separate Hodge/mobility
 constructors, the exact D11-C potential and baseline flux, strict-gap selector,

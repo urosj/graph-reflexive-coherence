@@ -119,6 +119,11 @@ def verification_status(repo_root: Path) -> dict:
                     "accepted_iterations": ["P9-3.4"],
                     "path": module.NUMERICAL_ACCEPTANCE,
                 },
+                preservation_acceptance={
+                    "record_digest": module.accepted_preservation(root)["record_digest"],
+                    "accepted_iterations": ["P9-3.5"],
+                    "path": module.PRESERVATION_ACCEPTANCE,
+                },
                 implementation_scope=approval["runtime_targets"],
                 dependency_ready_leaves=ready,
                 permitted_runtime_paths=sorted(
@@ -126,7 +131,7 @@ def verification_status(repo_root: Path) -> dict:
                     for r in approval["runtime_targets"]
                     if r["requires_gate"] == "P9-G1" and set(ready) & owners[r["path"]]
                 ),
-                next_gate="P9-3.5 rejected-operation prestate preservation; P9-G2 and P9-G3 remain pending",
+                next_gate="P9-4.1 Candidate C reference transport binding; P9-G2 and P9-G3 remain pending",
                 claim_ceiling="Accepted permission to implement reviewed V4 scope is not executed or accepted runtime conformance.",
             )
         cross = module.read(
@@ -267,6 +272,7 @@ def verification_status(repo_root: Path) -> dict:
         payload.pop("stage_acceptance", None)
         payload.pop("resource_acceptance", None)
         payload.pop("numerical_pressure_acceptance", None)
+        payload.pop("preservation_acceptance", None)
         payload.pop("permitted_runtime_paths", None)
         payload.pop("source_meaning", None)
         payload.pop("tree", None)

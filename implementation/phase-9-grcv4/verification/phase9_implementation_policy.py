@@ -73,6 +73,8 @@ RESOURCE_ACCEPTANCE = PHASE + "tranche-3/P9-3.3-AcceptanceRecord.json"
 RESOURCE_ACCEPTANCE_DIGEST = "3e71b580090ba1712dbec4a1718653c2057e4062200f3367ba0c1ed7adeae6fa"
 NUMERICAL_ACCEPTANCE = PHASE + "tranche-3/P9-3.4-AcceptanceRecord.json"
 NUMERICAL_ACCEPTANCE_DIGEST = "0626df41be15fdb2d5a5a7b4fa6f8be52693f8d3ba40297ae98acbe334f480c1"
+PRESERVATION_ACCEPTANCE = PHASE + "tranche-3/P9-3.5-AcceptanceRecord.json"
+PRESERVATION_ACCEPTANCE_DIGEST = "b866b4b5d9b8b7ecdf087fd6f2a6d879810ec19464a9d3368ddddaf4d2edf43b"
 # Explicit user-authorized presentation maintenance after accepted P9-3.3
 # ce83d7a. Only these original -> presented Git blobs may differ from HEAD.
 # The run's /presentation binds the original repository revision and embedded
@@ -128,6 +130,7 @@ PATHS = {
     STAGE_ACCEPTANCE,
     RESOURCE_ACCEPTANCE,
     NUMERICAL_ACCEPTANCE,
+    PRESERVATION_ACCEPTANCE,
     HERE + "phase9_implementation_policy.py",
     HERE + "audit_phase9_implementation.py",
     HERE + "test_phase9_g1.py",
@@ -517,6 +520,26 @@ def accepted_numerical_pressure(root):
     return value
 
 
+def accepted_preservation(root):
+    """Committed P9-3.5 acceptance opens only its dependency-ready successors."""
+    value = read(safe_path(root, PRESERVATION_ACCEPTANCE))
+    require(value["record_digest"] == digest_record(value) == PRESERVATION_ACCEPTANCE_DIGEST,
+            "untrusted prestate preservation acceptance")
+    require(value["schema"] == "phase9_prestate_preservation_acceptance_v1"
+            and value["status"] == "accepted_by_user"
+            and value["release_id"] == prior.RELEASE_ID
+            and value["predecessor_record_digest"] == NUMERICAL_ACCEPTANCE_DIGEST
+            and value["accepted_iterations"] == ["P9-3.5"]
+            and value["accepted_generic_runtime_support"] == []
+            and value["admitted_specialization_support_sets"] == [],
+            "invalid prestate preservation acceptance scope")
+    prior.ancestor(root, value["baseline_commit"])
+    for row in value["evidence_bindings"]:
+        require(sha(git(root, "show", f"{value['baseline_commit']}:{row['path']}"))
+                == row["sha256"], "accepted prestate preservation subject changed")
+    return value
+
+
 def leaf_permissions(root):
     """Readiness from accepted dependencies, never inferred from completion."""
     accepted = {"P9-G1", *accepted_foundation(root)["accepted_iterations"],
@@ -527,7 +550,8 @@ def leaf_permissions(root):
                 *accepted_geometry(root)["accepted_iterations"],
                 *accepted_stages(root)["accepted_iterations"],
                 *accepted_resources(root)["accepted_iterations"],
-                *accepted_numerical_pressure(root)["accepted_iterations"]}
+                *accepted_numerical_pressure(root)["accepted_iterations"],
+                *accepted_preservation(root)["accepted_iterations"]}
     support = read(
         safe_path(root, PHASE + "tranche-1/P9-1.4-SupportAndDependencies.json")
     )

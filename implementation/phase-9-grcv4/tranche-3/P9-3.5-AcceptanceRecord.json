@@ -1,0 +1,40 @@
+{
+  "schema": "phase9_prestate_preservation_acceptance_v1",
+  "status": "accepted_by_user",
+  "baseline_commit": "155c728241a7592cbde45c2ff756acefecc60a48",
+  "release_id": "grcv4-spec-release-sha256:9f4c8fe5b57b1c477d834a3e4dae3f98a2b18c70e6e7f598e3c9652170c8645f",
+  "predecessor_record_digest": "0626df41be15fdb2d5a5a7b4fa6f8be52693f8d3ba40297ae98acbe334f480c1",
+  "accepted_iterations": [
+    "P9-3.5"
+  ],
+  "acceptance_basis": "Explicit user instruction: accept and commit changes. The accepted subject is the named commit. Subsequent authorization starts Tranche 4. Historical execution scope and limitations remain unchanged.",
+  "evidence_bindings": [
+    {
+      "path": "implementation/phase-9-grcv4/tranche-3/P9-3.5-Review.md",
+      "sha256": "80983966d9a740d7d5ef4bbc7a8b886c95095ffd51ee52f252a3848eff9ba5eb"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-3/P9-3.5-ExecutionRecord.json",
+      "sha256": "2fcfa16b62c0a867ef533fe279b95e88710ab5e220ff6cd4109d3a6cd9b77c76"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-3.5/validation/run.json",
+      "sha256": "e1a8f1b447416d793258663038310ec80978ea572c005831815f7c81ea148aa9"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-3.5/permission-surfaces/run.json",
+      "sha256": "9cd4a83443a2a25690f62b7fffd9748d4b089aacce6c26e40eded8e3eaa00259"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-3.5/audit-followup/run.json",
+      "sha256": "200cd35344b3581f1c5a7a2b9afeb404667f39f8a5ee5addb6eeb679ce91ab41"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/runtime/RuntimeWorkManifest.json",
+      "sha256": "8b536a1181bbc1176266d40256cd5f5c173112e0eab82525b1b3f04c7599cfeb"
+    }
+  ],
+  "accepted_generic_runtime_support": [],
+  "admitted_specialization_support_sets": [],
+  "record_digest": "b866b4b5d9b8b7ecdf087fd6f2a6d879810ec19464a9d3368ddddaf4d2edf43b"
+}

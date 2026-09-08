@@ -12,16 +12,29 @@ to preserve published evidence and simplify future capture and reconstruction.
 The Tranche 2 status below remains the historical snapshot named above; use
 the current plan/checklist and acceptance records for continuation status.
 
-Current continuation: P9-3.5 is explicitly accepted by the user for commit
-after the limited audit follow-up. Tranche 3's five leaves are accepted within
-their recorded scopes. Start with the [P9-3.5 review](./phase-9-grcv4/tranche-3/P9-3.5-Review.md)
-and [execution record](./phase-9-grcv4/tranche-3/P9-3.5-ExecutionRecord.json).
-Their pending-acceptance wording records the earlier review state; this user
-decision and the commit message record acceptance. The limited external audit
-did not complete the primary preservation review, and that limitation remains.
-The live permission adapter binds P9-3.4 at `12611fe`, with eleven ready leaves
-and 23 eligible runtime paths. A later authorized entry must bind P9-3.5's
-accepted commit separately. P9-4.1 has not started; runtime support remains empty.
+Current continuation (2026-09-08): branch `impl/phase-9-grcv4-tranche-4`
+starts from the Tranche 3 merge `2e90398`. P9-3.5's accepted `155c728` subject
+is now authenticated in its [acceptance record](./phase-9-grcv4/tranche-3/P9-3.5-AcceptanceRecord.json),
+without expanding the limited audit's scope. The permission adapter exposes
+twelve dependency-ready leaves and 25 eligible paths. P9-4.1 implements the
+Candidate C complete-profile/reference-map binding and separate typed
+constructor identities; see the [P9-4.1 review](./phase-9-grcv4/tranche-4/P9-4.1-Review.md)
+and [execution record](./phase-9-grcv4/tranche-4/P9-4.1-ExecutionRecord.json).
+The user's commit instruction accepts P9-4.1 after its audit follow-up. The
+review, execution record and run manifests retain their validation-time pending
+dispositions; this handoff and the commit record the later acceptance separately.
+The follow-up passed 51 focused methods and seven relocated capture checks,
+and reconstructed both source revisions. The older broad-run observations retain
+their live-code attribution limit. P9-4.2 entry still needs a separate transition
+binding the accepted commit. Generic runtime and specialization support remain empty.
+
+Validation scope for continuation: select the leaf's scientific/edge-case tests,
+relevant shared V4 regression tests, and checks for changed verification surfaces.
+The full repository run for P9-4.1 is not a requirement to repeat it after every
+leaf. Use full regression at integration/tranche milestones or when changes to
+shared infrastructure, dependencies, public exports, or observed failures justify
+wider coverage. Record what ran and its limits; test counts are not a substitute
+for coverage of the scientific obligations.
 
 Subsequent portability maintenance presents older machine-specific paths relative
 to the project. Read the [path presentation and exact-replay guide](./phase-9-grcv4/tranche-1/P9-1.9-EvidenceHandoff.md#repository-path-presentations)
@@ -30,7 +43,9 @@ bytes remain in Git; current presentations do not represent new scientific runs.
 Direct historical-SHA checks against normalized files still need reconciliation;
 the linked guide names the confirmed cases. The user authorized committing this
 maintenance and merging `impl/phase-9-grcv4-tranche-3` into `main` with that
-limitation known. After the merge, resume from `main`; P9-4.1 remains unstarted.
+limitation known. That merge is the base of the Tranche 4 branch named above.
+The old direct historical-SHA consumers remain a separate maintenance limitation;
+P9-4.1 reconstruction uses its own source bindings and does not depend on them.
 
 ## Where we stopped
 

@@ -1,0 +1,204 @@
+{
+  "schema": "phase9_leaf_execution_v1",
+  "iteration_id": "P9-4.1",
+  "status": "implemented_and_verified",
+  "release_id": "grcv4-spec-release-sha256:9f4c8fe5b57b1c477d834a3e4dae3f98a2b18c70e6e7f598e3c9652170c8645f",
+  "entry_acceptance": "implementation/phase-9-grcv4/tranche-3/P9-3.5-AcceptanceRecord.json",
+  "review": {
+    "path": "implementation/phase-9-grcv4/tranche-4/P9-4.1-Review.md",
+    "sha256": "ebd68f9f2d9e8a1da97aca3503db3528c5fd4286d3d2560ce9011f394fa3dafe"
+  },
+  "implemented_scope": "Complete Candidate C profile/reference transport binding, exact stable-edge map admission and separate typed constructor identities, with source-only reconstruction.",
+  "runtime_source_changes": [
+    "src/pygrc/models/grc_v4_candidate_c.py"
+  ],
+  "test_source_changes": [
+    "tests/models/test_grc_v4_candidate_c.py"
+  ],
+  "side_tool_queries": [
+    {
+      "operation": "contract_provenance",
+      "query": {
+        "contract_id": "D11-C-EC-C-TR-REFERENCE-FIELD"
+      },
+      "source_bundle_digest": "98c273b3cc097f0d95adfba98ed7dfac0ac494dce9e779bb4b04fe79fef4f6aa",
+      "graph_digest": "44d8c7d33950af5e5f7c61caa4fe6fbd14fc9aedf14218d0a11de7c705542e09",
+      "authority_extension_digest": "833acc5988761f8ba68ca573ad270bf7c87cf2fe32061336a71e42647968630a",
+      "trace_digest": "ce518db4711884c92d7045a455935f0ebe7df98b55fbdfa042dc907e358ff9cf",
+      "row_count": 1,
+      "source_witnesses": [
+        {
+          "classification": "source_exact_contract_provenance",
+          "source_ref": {
+            "record_id": "GRC9V4-D11-C-PROVENANCE-SUPPLEMENT-v1",
+            "record_digest": "57d711d80e648c8ee73401f3a7e76a0076374fc43bd4d2d0f3dbe4bb4ee3acb1",
+            "source_json_pointer": "/equation_contracts/0",
+            "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D11CCandidateBaselineTransportProvenanceSupplement.json"
+          }
+        }
+      ]
+    },
+    {
+      "operation": "contract_provenance",
+      "query": {
+        "contract_id": "D11-C-EC-C-M4-FACTORIZATION"
+      },
+      "source_bundle_digest": "98c273b3cc097f0d95adfba98ed7dfac0ac494dce9e779bb4b04fe79fef4f6aa",
+      "graph_digest": "44d8c7d33950af5e5f7c61caa4fe6fbd14fc9aedf14218d0a11de7c705542e09",
+      "authority_extension_digest": "833acc5988761f8ba68ca573ad270bf7c87cf2fe32061336a71e42647968630a",
+      "trace_digest": "a83b99b84339eca89f2d7427cb6ed6ba087cc6062f1b3ef13fbdfa28ddbbff89",
+      "row_count": 1,
+      "source_witnesses": [
+        {
+          "classification": "source_exact_contract_provenance",
+          "source_ref": {
+            "record_id": "GRC9V4-D11-C-PROVENANCE-SUPPLEMENT-v1",
+            "record_digest": "57d711d80e648c8ee73401f3a7e76a0076374fc43bd4d2d0f3dbe4bb4ee3acb1",
+            "source_json_pointer": "/equation_contracts/1",
+            "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D11CCandidateBaselineTransportProvenanceSupplement.json"
+          }
+        }
+      ]
+    },
+    {
+      "operation": "object_dependents",
+      "query": {
+        "object_id": "C-BASELINE-TRANSPORT-REFERENCE"
+      },
+      "source_bundle_digest": "98c273b3cc097f0d95adfba98ed7dfac0ac494dce9e779bb4b04fe79fef4f6aa",
+      "graph_digest": "44d8c7d33950af5e5f7c61caa4fe6fbd14fc9aedf14218d0a11de7c705542e09",
+      "authority_extension_digest": "833acc5988761f8ba68ca573ad270bf7c87cf2fe32061336a71e42647968630a",
+      "trace_digest": "48473a7dcc8605253d71ce7141f509d5e8b628f74504a2bfd3c37497c3eb6943",
+      "row_count": 1,
+      "source_witnesses": [
+        {
+          "classification": "source_exact_object_dependents",
+          "source_ref": {
+            "record_id": "GRC9V4-D11-C-PROVENANCE-SUPPLEMENT-v1",
+            "record_digest": "57d711d80e648c8ee73401f3a7e76a0076374fc43bd4d2d0f3dbe4bb4ee3acb1",
+            "source_json_pointer": "/normative_objects/0",
+            "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D11CCandidateBaselineTransportProvenanceSupplement.json"
+          }
+        }
+      ]
+    }
+  ],
+  "reconstruction_check": {
+    "schema": "phase9_relocation_check_v1",
+    "methods": [
+      "tests.models.test_grc_v4_candidate_c.CandidateCReferenceTests.test_unicode_and_numeric_looking_edge_ids_roundtrip",
+      "tests.models.test_grc_v4_candidate_c.CandidateCReferenceTests.test_binary64_positive_extremes_and_product_boundaries",
+      "tests.models.test_grc_v4_candidate_c.CandidateCReferenceTests.test_noncanonical_duplicate_or_extra_wire_authority_rejects",
+      "tests.models.test_grc_v4_candidate_c.CandidateCReferenceTests.test_no_mutable_source_or_output_aliases"
+    ],
+    "source_overrides_sha256": {
+      "src/pygrc/models/grc_v4_candidate_c.py": "d91ac25fb0d91cd62c33d4c3f07b78e435c111d18cdccf4539abe7d01bfafe62",
+      "tests/models/test_grc_v4_candidate_c.py": "775cbf41ea40d2cfe2a7af53f7daf2965f8cb4b3327bdd413e3c716ffca0760c"
+    },
+    "results": [
+      {
+        "hash_seed": "0",
+        "exit_code": 0,
+        "output": "....\n----------------------------------------------------------------------\nRan 4 tests in 11.534s\n\nOK\n"
+      },
+      {
+        "hash_seed": "941",
+        "exit_code": 0,
+        "output": "....\n----------------------------------------------------------------------\nRan 4 tests in 9.119s\n\nOK\n"
+      }
+    ],
+    "clone_local_imports": true,
+    "limit": "Source reconstruction in a checkout whose path contains spaces, using the existing dependency environment; this does not claim fresh dependency installation.",
+    "scope_note": "Historical pre-audit relocation result on its stated source hashes. The retained reverse patch recovers that original test source; current relocation and complete manifest reconstruction are in the follow-up run."
+  },
+  "additional_numeric_probe": {
+    "source": "CandidateCTransport with profile_fixture from this leaf test module",
+    "eta_C": 1,
+    "W_C_tr": {
+      "z": 5e-324,
+      "a": 1.7976931348623157e+308
+    },
+    "live_edge_order": [
+      "z",
+      "a"
+    ],
+    "expected_mobility_diagonal": "Exactly the supplied weights in live-edge order",
+    "observed": "accepted_exactly",
+    "scope": "Mixed smallest-positive/largest-finite reference construction; no inverse or conditioning claim."
+  },
+  "static_validation": {
+    "ruff": "passed",
+    "strict_mypy": "passed",
+    "ruff_format": "passed",
+    "javascript_tests": 22,
+    "pip_check": "passed",
+    "scope_note": "Python Ruff/format and strict mypy rerun for final source. JavaScript tests and pip check remain the recorded pre-follow-up observations; their source/dependency subjects were unchanged by the capture correction."
+  },
+  "accepted_generic_runtime_support": [],
+  "admitted_specialization_support_sets": [],
+  "reviewer_decision": "pending_user_acceptance",
+  "remaining_obligations": [
+    "P9-4.2: potential, baseline flux, strict-gap selector, Read-Back and regular current solve at declared stages.",
+    "P9-4.3: independent zero controls and complete smooth-stratum baseline derivative/covariance.",
+    "P9-4.4 through P9-4.8: OS step, full-beat atomicity, lifecycle and exact-profile G2 product."
+  ],
+  "claim_ceiling": "Typed reference transport binding only. Complete profile declarations, local constructor checks and source reconstruction do not admit an executable profile, event or lifecycle.",
+  "next_step": "User review and acceptance; P9-4.2 remains held.",
+  "validation_runs": [
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-4.1/validation/run.json",
+      "sha256": "bf06baae0240c7278b855c5d3e31b654d5b2a464417b636f79bfa29c09b46f00"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-4.1/audit-followup/run.json",
+      "sha256": "84aa366a918988d7eee56d434a5d1177865199a49c5757c32927483f7b350d55"
+    }
+  ],
+  "verification_summary": {
+    "passed": true,
+    "scope": "focused_capture_audit_followup",
+    "methods_passed": 51,
+    "leaf_methods_passed": 20,
+    "shared_mobility_methods_passed": 17,
+    "new_capture_methods_passed": 7,
+    "inherited_capture_methods_passed": 7,
+    "live_source_checked_before_and_after": true,
+    "source_unchanged_during_run": true,
+    "source_changes_since_original_run": [
+      "tests/models/test_grc_v4_candidate_c.py"
+    ],
+    "production_changed_since_original_run": false,
+    "original_scientific_test_class_ast_unchanged": true,
+    "single_clean_full_suite_run": false,
+    "full_repository_suite_repeated": false,
+    "relocated_new_capture_methods_passed": 7,
+    "historical_and_current_source_manifests_reconstructed": true
+  },
+  "completed_utc": "2026-09-08T05:47:40.188779+00:00",
+  "scientific_verdict": "P9-4.1 reference transport scope verified by the native focused run, including the corrected live-source capture and boundary controls. No production or source-contract change was indicated. The older broad-run observations retain their live-code attribution limit; the qualified external audit and historical package/surface checks are not promoted to current native full-suite evidence. Runtime and lifecycle admission remain pending.",
+  "historical_verification_summary": {
+    "passed": true,
+    "distinct_methods_with_passing_observations": 1695,
+    "leaf_methods_passed": 20,
+    "source_content_changes_between_runs": false,
+    "single_clean_full_suite_run": false,
+    "live_code_to_disk_correspondence": "not_checked_by_original_capture"
+  },
+  "historical_completed_utc": "2026-09-08T05:09:49.803662+00:00",
+  "audit_resolution": {
+    "inputs": {
+      "path": "implementation/phase-9-grcv4/evidence/P9-4.1/audit-followup/inputs.json",
+      "sha256": "c3ba9e95a4ac726f4035a7ce2a622a6be0a3bd7d100a580c519be7503ddfc9e1"
+    },
+    "finding": "P941-AUD-01",
+    "disposition": "corrected_and_focused_verified",
+    "external_result_limit": "646 additional cases and six mutation controls were reported in a qualified audit assembly with earlier providers and a Node JCS adapter; they were not rerun as native cases. Exact report and supplied result totals are retained in inputs.",
+    "execution_attachment_reconciliation": {
+      "audit_attachment_status": "verification_in_progress",
+      "audit_execution_attachment_sha256": "b60fee78e90b8091fd525556541fa9cd288df9fc855ceeb5f5d1e17e4eb867d6",
+      "audit_review_attachment_sha256": "9e3bf3057a2d9b62119337f08b0dce72b71a490b026f9dc426e921586010b4e6",
+      "resolution": "Earlier document attachments. The audit source/test hashes match the pre-follow-up subject, while the repository already held the completed composite native record. The current execution record links both that historical run and this independently captured follow-up; no audit replay of the completed record is inferred."
+    },
+    "historical_run_limit": "The original broad run and two-method precondition rerun remain observations of the original source envelope. Their disk hashes and local paths do not establish live-code correspondence. The corrected native focused run does not retroactively attest them or claim a fresh full-repository/package/UI run."
+  }
+}
