@@ -18,7 +18,44 @@ from grcv4_explorer.paths import repository_root  # noqa: E402
 from grcv4_explorer.tooling import managed_node, tool_environment  # noqa: E402
 
 
+def status_only_check(root):
+    """Lean notebook mode must omit pressure, not turn stale evidence green."""
+    notebook = json.loads((TOOL / "notebooks/phase9_verification.ipynb").read_text())
+    query = next(c for c in notebook["cells"] if c["id"] == "query-status")
+    calls = []
+
+    def stale_pressure(*args):
+        calls.append(args)
+        raise ValueError("recorded pressure subject is stale")
+
+    namespace = {
+        "Path": Path, "PHASE9_REPO_ROOT": root, "repo_root": root,
+        "PHASE9_STATUS_ONLY": True,
+        "verification_status": api.verification_status,
+        "pressure_projection": stale_pressure,
+    }
+    code = compile("".join(query["source"]), "phase9_verification.ipynb:query-status", "exec")
+    exec(code, namespace)
+    require = api._policy(root).require
+    require(namespace["phase9_status"] == api.verification_status(root)
+            and namespace["phase9_status"]["current_boundary"] == "passed"
+            and "P9-4.9.1a" not in namespace["phase9_status"]["dependency_ready_leaves"]
+            and "P9-4.9.1a" in namespace["phase9_status"]["next_gate"]
+            and namespace["phase9_pressure"] is None and not calls,
+            "status-only mode queried or promoted pressure evidence")
+    namespace["PHASE9_STATUS_ONLY"] = False
+    try:
+        exec(code, namespace)
+    except ValueError as exc:
+        require(str(exc) == "recorded pressure subject is stale" and len(calls) == 1
+                and namespace["phase9_pressure"] is None,
+                "full notebook retained stale pressure")
+    else:
+        raise AssertionError("full notebook must still reject stale pressure")
+
+
 def checks(root):
+    status_only_check(root)
     policy = api._policy(root)
     status = api.verification_status(root)
     require = policy.require
@@ -44,7 +81,7 @@ def checks(root):
         return namespace
 
     require(
-        status["dependency_ready_leaves"] == ["P9-2.1","P9-2.2","P9-2.3","P9-2.4","P9-2.5","P9-2.6","P9-3.1","P9-3.2","P9-3.3","P9-3.4","P9-3.5","P9-4.1","P9-4.2","P9-4.3","P9-4.4","P9-4.5","P9-4.6","P9-4.7a","P9-4.7b","P9-4.9.2","P9-7.2a-C_OS-NH-NH","P9-7.2a-C_OS-UNSUPPORTED","P9-7.2b-C_OS-MAPPED","P9-7.3-C_OS","P9-7.4-C_OS","P9-7.5-C_OS","P9-7.6-C_OS"]
+        status["dependency_ready_leaves"] == ["P9-2.1","P9-2.2","P9-2.3","P9-2.4","P9-2.5","P9-2.6","P9-3.1","P9-3.2","P9-3.3","P9-3.4","P9-3.5","P9-4.1","P9-4.2","P9-4.3","P9-4.4","P9-4.5","P9-4.6","P9-4.7a","P9-4.7b","P9-4.9.1","P9-4.9.2","P9-7.2a-C_OS-NH-NH","P9-7.2a-C_OS-UNSUPPORTED","P9-7.2b-C_OS-MAPPED","P9-7.3-C_OS","P9-7.4-C_OS","P9-7.5-C_OS","P9-7.6-C_OS"]
         and status["harness_acceptance"]["record_digest"] == policy.HARNESS_ACCEPTANCE_DIGEST
         and status["harness_acceptance"]["accepted_iterations"] == ["P9-2.5"]
         and status["geometry_acceptance"]["record_digest"] == policy.GEOMETRY_ACCEPTANCE_DIGEST

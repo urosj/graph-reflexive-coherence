@@ -3,7 +3,7 @@
 One immutable lifecycle tuple is published only after numerical admission,
 reference restart admission, receipt construction and result binding succeed.
 Snapshot/load/reset/rebase, registered C_OS migration and affine events use
-that same receiver. Public facade/profile conformance remains later work.
+that same receiver, including through GRCV4. Full G2 conformance remains separate.
 There are no injectable production solvers, commit callbacks or faults.
 """
 
@@ -17,6 +17,8 @@ from typing import Any, Self, cast
 
 from .grc_v4 import (
     GRCV4StepRequestInput,
+    GRCV4StepRequest,
+    MissingV4StepRequest,
     GRCV4MigrationRequest,
     GRCV4MappedTopologyEventRequest,
 )
@@ -71,6 +73,52 @@ from .grc_v4_step import (
 )
 
 from .grc_v4_transport import ChargeEvaluation, ChargeDomainError
+from .grc_v4_profile import GRCV4Profile
+
+
+def _public_observables(
+    inputs: GeometryStageInputs,
+    ledger: tuple[SuccessfulReceiptEnvelope, ...],
+    charge: ChargeEvaluation,
+    current: CandidateCCurrent,
+    *,
+    stage: str,
+    current_stage: str,
+    solver: SolverDisposition | None,
+    consumed: bool,
+) -> dict[str, Any]:
+    """Detached projections; no new scientific state or retained solver cache.
+
+    The common abundance key has no accepted V4 definition (in particular no
+    V4 sink/basin contract). Null with an explicit status avoids inventing a
+    number or silently importing legacy sink semantics.
+    """
+    ref = inputs.geometry.reference
+    identity = ref.profile.identity_payload
+    return {
+        "stage": stage,
+        "budget_current": charge.actual,
+        "budget_error": charge.residual,
+        "num_nodes": len(ref.graph.live_node_ids),
+        "num_edges": len(ref.graph.oriented_edges),
+        "abundance": None,
+        "abundance_status": "not_defined_by_v4_contract",
+        "complete_profile_id": ref.profile.complete_profile_id,
+        "candidate_id": identity.candidate,
+        "realization_id": identity.realization,
+        "charge_target": charge.target,
+        "charge_current": charge.actual,
+        "charge_error": charge.residual,
+        "solver_disposition": solver,
+        "authoritative_current": {
+            "stage": current_stage,
+            "consumed_by_continuity": consumed,
+            "values": list(current.current.values),
+        },
+        "geometry_profile_id": identity.geometry_profile_id,
+        "receipt_ledger": [r.to_payload() for r in ledger],
+        "support_status": "local_C_OS_execution_not_G2_acceptance",
+    }
 
 
 def _lifecycle_state(
@@ -1133,7 +1181,7 @@ def _validate_publication(
 
 
 class CandidateCOSOperation:
-    """Bounded C_OS receiver; the full public GRCV4 facade remains later work.
+    """Sole bounded C_OS lifecycle owner, also used by the public GRCV4 facade.
 
     Fresh construction has an empty ledger. from_state/load restore a complete
     snapshot, including commit preimages. References, current/reset coordinates,
@@ -1468,6 +1516,36 @@ class CandidateCOSOperation:
         """Locally registered C_OS targets; not public conformance advertisement."""
         return frozenset(ref.profile.complete_profile_id for ref in self._registry)
 
+    def get_supported_profile(self, complete_profile_id: str) -> GRCV4Profile:
+        if type(complete_profile_id) is not str:
+            raise TypeError("expected an exact complete-profile identifier")
+        for reference in self._registry:
+            if reference.profile.complete_profile_id == complete_profile_id:
+                return reference.profile
+        raise V4IdentityError("unregistered complete-profile identifier")
+
+    def compute_observables(self) -> dict[str, Any]:
+        # One immutable capture remains coherent even if another thread commits.
+        owned = self._owned
+        state, ref = owned.state, owned.reference
+        ledger = _ledger([r.to_dict() for r in state.receipt_ledger])
+        inputs = GeometryStageInputs(
+            ref.geometry(), ref.context, state.current, state.reset.authoritative,
+            "read-only-observation", state.Q_target,
+            tuple(r.receipt_id for r in ledger), state.step_index, state.time,
+            0, "pre_read", 0, None,
+        )
+        current = CandidateCCurrent(inputs)
+        charge = _resource_charge(
+            inputs, VertexScalar(ref.graph, state.current.C), "pre_read_reconstruction"
+        )
+        result = _public_observables(
+            inputs, ledger, charge, current, stage="read_only_reference",
+            current_stage="read_only_reference", solver=None, consumed=False,
+        )
+        # Same serializable, recursively owned domain as successful results.
+        return FrozenJSONMap(result).to_dict()
+
     def migrate_profile(self, request: GRCV4MigrationRequest) -> GRCV4LifecycleResult:
         if type(request) is not GRCV4MigrationRequest:
             raise TypeError("expected a typed migration request")
@@ -1623,6 +1701,17 @@ class CandidateCOSOperation:
         with self._lock:
             return self._execute(request)
 
+    def step_default(self) -> GRCV4StepResult:
+        # Bind default selection and admission to one active profile: migration
+        # cannot interleave between reading its parameters and executing it.
+        with self._lock:
+            default = self._reference.profile.params_resolved.common.default_step_request
+            if default is None:
+                raise MissingV4StepRequest("active profile has no default_step_request")
+            request = GRCV4StepRequest.from_payload(default).to_payload()
+            request["schema_version"] = "grcv4-step-request-input-v1"
+            return self._execute(GRCV4StepRequestInput.from_payload(request))
+
     def _execute(self, request: GRCV4StepRequestInput) -> GRCV4StepResult:
         before = self._inputs(request)
         owned = self._state
@@ -1758,14 +1847,21 @@ class CandidateCOSOperation:
         )
         target_ledger = ledger + emitted
         target = _lifecycle_state(following, target_ledger)
-        observations: dict[str, Any] = {
+        observations = _public_observables(
+            following, target_ledger, step.resource.charge,
+            step.os_pass.corrector if step.os_pass is not None else restart,
+            stage="commit", solver="valid_root",
+            current_stage="os_corrector" if step.os_pass is not None else "commit_reference_readmission",
+            consumed=step.os_pass is not None,
+        )
+        observations.update({
             "charge": step.resource.charge.receipt_values(),
             "reference_current": {
                 "stage": "commit_reference_readmission",
                 "values": list(restart.current.values),
             },
             "continuity_evaluations": step.resource.continuity_evaluations,
-        }
+        })
         if step.os_pass is not None:
             observations["os"] = {
                 "stage": "os_corrector",

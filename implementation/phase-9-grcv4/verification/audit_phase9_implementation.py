@@ -94,11 +94,13 @@ def verify(root, boundary_only=False):
             policy.prior.run_logged(
                 [sys.executable, str(root / script)], root, label, commands
             )
-        policy.prior.run_logged(
-            [sys.executable, str(root / policy.HERE / "verify_p9492_parents.py"), "--check"],
-            root, "P9492_retained_runtime_evidence_current_inputs", commands,
-        )
+        # The accepted parent run belongs to its immutable Git subject. Shared
+        # source changes are now checked by P9-4.9.1's focused successor record.
         policy.parent_runtime_evidence(root)
+        policy.prior.run_logged(
+            [sys.executable, str(root / policy.HERE / "verify_p9491_facade.py"), "--check"],
+            root, "P9491_retained_facade_evidence_current_inputs", commands,
+        )
         report = policy.read(root / policy.GENERATED / policy.REPORT_FILE)
         policy.require(
             report["policy_digest"] == boundary["record_digest"]

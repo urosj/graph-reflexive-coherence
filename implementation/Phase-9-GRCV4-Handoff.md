@@ -2,13 +2,26 @@
 
 Current restart point, 2026-09-09: use branch
 `impl/phase-9-grcv4-tranche-4-closure` and the
-[P9-4.9.2 implementation review](./phase-9-grcv4/tranche-4/P9-4.9.2-Review.md).
+[P9-4.9.1 implementation review](./phase-9-grcv4/tranche-4/P9-4.9.1-Review.md).
 The user accepted the receipt-parent design and requested full implementation:
 the admitted claim/debt overlay, actual tool UX, proposal/paper/spec successor
 and internal C_OS parent rule are implemented. Consult that review and the
-current checklist for validation/acceptance state. P9-4.9.1 facade and final
-P9-4.9.3 fixture product remain pending, then the single P9-4.8B G2 review.
+current checklist for validation/acceptance state. P9-4.9.2 was accepted in
+`d8f26d9`. The public C_OS facade is implemented with focused evidence, pending
+user review. Its `abundance` diagnostic is an explicit interim placeholder, not
+accepted interface semantics or inferred legacy sinks. The next planned item
+is **P9-4.9.1a abundance interface authority closure**, before final P9-4.9.3
+reconciliation and the single P9-4.8B G2 review. Family/capability ownership is
+the preferred proposal only. Do not repeat the initial inventory or reopen
+unaffected scientific implementation results.
 G2 remains held; no support set is promoted.
+
+Lean checks: use `verification/verify_p9491_facade.py --check` and
+`verification/audit_phase9_implementation.py --boundary-only` under
+`implementation/phase-9-grcv4/`, with `.venv/bin/python` from the repository
+root. The accepted parent run is checked at its original Git subject; the new
+focused record binds current source. Neither check reruns numerical tests or
+claims fresh full historical/browser verification.
 
 Historical P9-4.8 restart point: **read the
 [P9-4.8 continuation handoff](./phase-9-grcv4/tranche-4/P9-4.8-Handoff.md)**.

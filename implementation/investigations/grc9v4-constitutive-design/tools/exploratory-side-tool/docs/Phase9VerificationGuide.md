@@ -21,7 +21,8 @@ From the repository root, use the existing `.venv`:
 the unchanged accepted V2 verifier on commit `6e0a507`, including its four
 historical audits, source/architecture, pressure and API/notebook/Node checks.
 It then executes current G1/parent pressure and API/notebook/Node checks,
-inspects retained parent runtime evidence against current inputs, and writes
+inspects retained parent evidence at accepted Git `d8f26d9` and focused facade
+evidence against current runtime inputs, and writes
 an ignored execution receipt. The normal `verify-iteration9` additionally runs
 the unchanged D11 suites and old browser regression on their exact historical
 Git subject, then the current Phase 9 browser regressions. Historical source
@@ -102,14 +103,44 @@ identity and retains generated output under `tool/generated/phase9-verification/
   to D10.2.
 - Run `tool/scripts/test_p9492_parents.py` with the repository `.venv` for the
   source/graph/notebook checks. The normal Phase 9 verification includes these
-  checks and inspection of retained P9-4.9.2 runtime evidence against current
-  inputs. A new runtime capture is a separate explicitly requested rerun, not
+  checks and inspection of retained P9-4.9.2 runtime evidence at its original
+  accepted Git subject. A new runtime capture is a separate rerun, not
   a replacement for the retained execution.
 
 Current parent policy: `grcv4-previous-successful-primary-v1`. The new runtime
 work permission is exactly P9-4.9.2 on its existing lifecycle/codec/test/asset
 owners: 27 ready leaves, unchanged 29 eligible runtime paths. It grants neither
 P9-4.9.1 facade completion nor complete-profile/G2 acceptance.
+
+P9-4.9.1 is now separately authorized and implemented, pending user review:
+28 ready leaves, the same 29 eligible paths, and empty accepted support sets.
+The next planned work is P9-4.9.1a abundance-interface authority closure, then
+final P9-4.9.3 reconciliation and P9-4.8B. P9-4.9.1a is not runtime-ready and
+accepts no proposed family/capability rule. The current null is an explicit
+placeholder, not conformance closure.
+For lean current checks, use the command below and the boundary-only entry above:
+
+```bash
+.venv/bin/python implementation/phase-9-grcv4/verification/verify_p9491_facade.py --check
+.venv/bin/python implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/run_phase9_notebook.py --status-only
+```
+
+The focused record covers 14 interface and
+affected regression tests; it is not a fresh 140-test parent campaign.
+
+In an interactive notebook set `PHASE9_STATUS_ONLY = True` before the status
+cell to request current authority alone. The isolated-pressure value is cleared
+and remains `None`; it is never a synthetic pass. The CLI writes a separate
+`notebook-current-status.json`, preserving the full notebook evidence files.
+Default/full execution still rejects stale pressure evidence and requires a
+fresh corresponding pressure run; lean status inspection does not refresh it.
+
+Status scenarios: API and the existing notebook query must expose P9-4.9.1
+readiness without promoting G2. The web component's exact roster includes that
+leaf and still rejects forged support. Original parent evidence remains at
+`d8f26d9`; current facade-source drift invalidates the focused record. These
+changes require targeted status/component checks, not another full browser
+campaign or a new claim/debt graph.
 
 The [scenario register](../../../../../phase-9-grcv4/tranche-1/P9-1.7-1.8-Scenarios.json)
 links all six independent-review pressures and the live access scenarios to

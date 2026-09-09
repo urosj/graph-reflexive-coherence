@@ -811,8 +811,9 @@ order:
 2. Resolve P9-4.9.2's parent-authority decision and propagate the accepted
    contract before changing the corresponding runtime behavior.
 3. Implement P9-4.9.1 and the demonstrated parent/fixture gaps together where
-   useful, adding targeted tests alongside each change. Finish P9-4.9.3 against
-   the completed public interface and parent contract. Reuse unaffected evidence
+   useful, adding targeted tests alongside each change. Resolve the narrow
+   P9-4.9.1a abundance-interface authority gap before declaring public-interface
+   closure. Finish P9-4.9.3 against the completed public interface and parent contract. Reuse unaffected evidence
    within its actual scope; run the necessary integrated checks once the result
    is stable, repeating only checks affected by subsequent corrections.
 4. Perform one integrated P9-4.8B review of the actual public interface, parent
@@ -857,6 +858,54 @@ Completion evidence: a spec-to-public-method/test mapping and passing focused in
 evidence for the nominated C_OS scope, including actual lifecycle delegation,
 request/result projections and truthful discovery. Receipt-parent conformance
 remains dependent on P9-4.9.2; interface completion alone cannot open G2.
+
+Implemented on 2026-09-09 after accepted parent commit `d8f26d9`; see the
+[P9-4.9.1 review](./phase-9-grcv4/tranche-4/P9-4.9.1-Review.md) and its method/test
+mapping. Review and interface closure remain pending P9-4.9.1a. `abundance` is explicitly unavailable (`null`)
+because the accepted V4 sources do not define it; no legacy sink semantics or
+new numerical diagnostic is inferred. Verification is focused on this facade
+and affected regressions, preserving the accepted parent run at its Git subject.
+Final fixture reconciliation and P9-4.8B remain separate.
+
+##### P9-4.9.1a. Abundance interface authority closure
+
+Planning only, added at the user's request on 2026-09-09. This is a bounded
+sub-obligation of `G2-COS-INTERFACE`, not another governance gate or a reopening
+of Candidate C, OS, charge, lifecycle, migration/event or receipt-parent results.
+The common interface requires the name `abundance`, but the accepted V4 source
+stack supplies no V4 meaning. Treat this as a cross-layer interface gap, not an
+accepted deferral or proof of an intentional theoretical decision.
+
+Separate the long-horizon RC idea of identity multiplicity from an instantaneous
+operational diagnostic. Preferred **proposal**, not accepted authority: make
+the V4 diagnostic family/capability-owned, with an explicitly admitted detector
+and evaluation stage where available. Do not force a new generic basin detector
+into C_OS or infer one from GRC9V4 specialization mechanics.
+
+Perform the smallest necessary source/claim check, then record a narrow successor
+decision in the existing constitutive investigation. Resolve the exact V4
+interface contract: required key versus capability-gated availability; value
+type and unavailable/error semantics; detector/stage identity if applicable;
+read-only status and consumer compatibility. Decide explicitly whether a tagged
+unavailable value is lawful for profiles without an admitted detector. Today's
+`null` plus status is only an honest interim placeholder, **not** normative
+closure. Reject charge/`Q_target`, node count, positive-resource count, invented
+basin count or silent zero/null substitutions as an abundance definition.
+
+After acceptance, propagate through the existing claim/tool and
+proposal → paper → V4 specification chain as applicable, then align the facade
+and targeted tests. If a layer needs no semantic change, record that disposition
+instead of manufacturing one. Keep all legacy/common/V3 specifications and
+implementations unchanged; any exception to unchanged common-interface
+inheritance must be explicit in the **V4** extension and V4 spec, not implied by
+code. Do not silently introduce a new trajectory parameter or scientific state.
+
+Completion evidence is one accepted bounded decision and source-to-interface/test
+mapping for availability, capability truth, stage labels, restored profiles and
+unchanged scientific state. Reuse the P9-4.9.1 execution for unaffected behavior;
+rerun only changed expectations/paths. Final public-facade/G2 conformance and
+P9-4.9.3's completed interface product remain blocked until this is resolved.
+This planning entry opens no runtime-ready leaf and accepts no proposed rule.
 
 ##### P9-4.9.2. Receipt-parent authority and conformance closure
 
@@ -909,6 +958,8 @@ dimension-input/diagnostic coverage, facade integration and the final profile
 product remain open. The inventory itself reran no numerical tests or runtime
 changes; subsequent parent-authority/implementation work is recorded under
 P9-4.9.2 above. It is not G2 acceptance.
+Final public-interface reconciliation also requires accepted P9-4.9.1a abundance
+semantics; the interim null diagnostic must not receive conformance credit.
 
 Own `G2-COS-FIXTURES`: reconcile all 33 indexed catalog cases (8 common,
 14 Candidate C, 1 OS and 10 lifecycle) against the

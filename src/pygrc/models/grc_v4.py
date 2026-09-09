@@ -1,4 +1,4 @@
-"""Generic V4 request boundary; no executable GRCV4 facade or support claims.
+"""Generic V4 requests and the bounded C_OS public model facade.
 
 Step input shape is weaker than the strict operation request. Migration
 records are declarations only: decoding cannot resolve profiles, authenticate
@@ -9,9 +9,11 @@ hooks, pickle and state restoration are not request inputs.
 
 from __future__ import annotations
 
-from collections.abc import Mapping
+from collections.abc import Iterable, Mapping
 from dataclasses import dataclass
-from typing import ClassVar, Literal, Self, TypeVar
+from typing import Any, ClassVar, Literal, Self, TYPE_CHECKING, TypeVar
+
+from ..core.interfaces import GRCModel
 
 from .grc_v4_codec import (
     V4SchemaError,
@@ -19,8 +21,13 @@ from .grc_v4_codec import (
     decode_canonical_json,
     decode_record_payload,
 )
-from .grc_v4_profile import _Record
-from .grc_v4_state import FrozenJSONMap
+from .grc_v4_profile import GRCV4Profile, GRCV4ResolvedParams, _Record
+from .grc_v4_state import (
+    FrozenJSONMap, GRCV4State, GRCV4StepResult, GRCV4LifecycleResult,
+)
+
+if TYPE_CHECKING:
+    from .grc_v4_geometry import GeometryStageInputs, GRCV4ReferenceGeometry
 
 _T = TypeVar("_T", bound=_Record)
 
@@ -72,6 +79,10 @@ class GRCV4StepRequest(_StepRequestRecord):
 
     SCHEMA: ClassVar[str] = "step_request"
     schema_version: Literal["grcv4-step-request-v1"]
+
+
+class MissingV4StepRequest(ValueError):
+    """The active complete profile has no serialized default step request."""
 
 
 def decode_step_request_input(
@@ -246,3 +257,181 @@ def decode_mapped_topology_event_request(
     return GRCV4MappedTopologyEventRequest.from_payload(
         decode_record_payload("mapped_topology_event_request", data, encoding=encoding)
     )
+
+
+class GRCV4(GRCModel):
+    """Public C_OS adapter with one owner, not an accepted G2 support claim.
+
+    Construction accepts complete, fresh reference-stage inputs. The JSON
+    configuration is exactly ``{"initial": inputs.to_payload(), "targets":
+    [reference.to_payload(), ...]}``; targets defaults to an empty array.
+    Snapshots use the existing complete C_OS v3 envelope, including defaults
+    within resolved profile parameters. No facade cache or request queue exists.
+
+    The inherited legacy ABC annotates mutable dataclasses/its own snapshot
+    layout, which cannot store V4 authority. Only those inherited return slots
+    use Any here; state and step_v4 expose the concrete immutable V4 records.
+    This is a structural adapter, not a cast to legacy mutable storage.
+    """
+
+    __slots__ = ("_operation",)
+
+    def __init__(
+        self,
+        initial: GeometryStageInputs,
+        *,
+        targets: tuple[GRCV4ReferenceGeometry, ...] = (),
+    ) -> None:
+        # Lazy import keeps legacy package imports free of V4 numerical extras
+        # and avoids a request/lifecycle import cycle.
+        from .grc_v4_lifecycle import CandidateCOSOperation
+
+        self._operation = CandidateCOSOperation(initial, targets=targets)
+
+    @classmethod
+    def from_config(cls, config: Mapping[str, Any]) -> Self:
+        from .grc_v4_geometry import GeometryStageInputs, GRCV4ReferenceGeometry
+
+        if not isinstance(config, Mapping):
+            raise TypeError("V4 configuration must be a mapping")
+        if set(config) not in ({"initial"}, {"initial", "targets"}):
+            raise V4SchemaError("V4 configuration requires initial and optional targets")
+        targets = config.get("targets", [])
+        if type(targets) is not list:
+            raise V4SchemaError("configuration targets must be an ordered array")
+        return cls(
+            GeometryStageInputs.from_payload(config["initial"]),
+            targets=tuple(GRCV4ReferenceGeometry.from_payload(v) for v in targets),
+        )
+
+    @classmethod
+    def from_state(cls, state: Mapping[str, Any], params: Mapping[str, Any]) -> Self:
+        from .grc_v4_lifecycle import CandidateCOSOperation
+
+        if not isinstance(params, Mapping):
+            raise TypeError("from_state requires the serialized resolved parameters")
+        operation = CandidateCOSOperation.from_state(state, params)
+        result = cls.__new__(cls)
+        result._operation = operation
+        return result
+
+    @property
+    def state(self) -> GRCV4State:
+        return GRCV4State(self._operation.state)
+
+    def get_state(self) -> Any:
+        """Return the immutable GRCV4State common-surface projection."""
+        return self.state
+
+    def set_state(self, state: object) -> None:
+        if type(state) is not GRCV4State:
+            raise TypeError("expected a GRCV4State projection")
+        self._operation.set_state(state.lifecycle)
+
+    def get_params(self) -> GRCV4ResolvedParams:
+        return self._operation.reference.profile.params_resolved
+
+    def snapshot(self) -> Any:
+        return self._operation.snapshot()
+
+    def save(self, path: str) -> None:
+        self._operation.save(path)
+
+    @classmethod
+    def load(cls, path: str) -> Self:
+        from .grc_v4_lifecycle import CandidateCOSOperation
+
+        operation = CandidateCOSOperation.load(path)
+        result = cls.__new__(cls)
+        result._operation = operation
+        return result
+
+    def duplicate(self) -> Self:
+        # Capture parameters with the same atomic snapshot, never a second read.
+        snapshot = self.snapshot()
+        return type(self).from_state(
+            snapshot, snapshot["reference"]["profile"]["params_resolved"]
+        )
+
+    def __copy__(self) -> Self:
+        return self.duplicate()
+
+    def __deepcopy__(self, memo: dict[int, Any]) -> Self:
+        result = self.duplicate()
+        memo[id(self)] = result
+        return result
+
+    def reset(self) -> None:
+        self._operation.reset()
+
+    def rebase_reset_baseline(self) -> None:
+        self._operation.rebase_reset_baseline()
+
+    def step_v4(self, request: GRCV4StepRequest) -> GRCV4StepResult:
+        if type(request) is not GRCV4StepRequest:
+            raise TypeError("step_v4 requires a strict GRCV4StepRequest")
+        request = GRCV4StepRequest.from_payload(request.to_payload())
+        payload = request.to_payload()
+        payload["schema_version"] = "grcv4-step-request-input-v1"
+        return self.step_v4_input(GRCV4StepRequestInput.from_payload(payload))
+
+    def step_v4_input(self, request: GRCV4StepRequestInput) -> GRCV4StepResult:
+        """External admission, including typed negative-duration rejection.
+
+        Use decode_step_request_input for wire input. Shape errors raise before
+        admission; semantic failures return noncommitting failure results.
+        """
+        return self._operation.step_v4(request)
+
+    def run_v4(self, requests: Iterable[GRCV4StepRequest]) -> list[GRCV4StepResult]:
+        # Do not preconsume the iterator or erase earlier commits if it raises.
+        return [self.step_v4(request) for request in requests]
+
+    def step(self) -> Any:
+        """Use only the active profile's immutable serialized default."""
+        return self._operation.step_default()
+
+    def run(self, num_steps: int) -> list[Any]:
+        if type(num_steps) is not int:
+            raise TypeError("num_steps must be an integer, not bool")
+        if num_steps < 0:
+            raise ValueError("num_steps must be nonnegative")
+        return [self.step() for _ in range(num_steps)]
+
+    def migrate_profile(self, request: GRCV4MigrationRequest) -> GRCV4LifecycleResult:
+        return self._operation.migrate_profile(request)
+
+    def apply_topology_event(
+        self, request: GRCV4MappedTopologyEventRequest
+    ) -> GRCV4LifecycleResult:
+        return self._operation.apply_topology_event(request)
+
+    def compute_observables(self) -> dict[str, Any]:
+        return self._operation.compute_observables()
+
+    @property
+    def active_profile_id(self) -> str:
+        return self._operation.reference.profile.complete_profile_id
+
+    @property
+    def active_model_identity(self) -> str:
+        return self.active_profile_id
+
+    def list_supported_profiles(self) -> frozenset[str]:
+        """Exact local construction/crossing targets, not accepted conformance."""
+        return self._operation.list_supported_profiles()
+
+    def get_supported_profile(self, complete_profile_id: str) -> GRCV4Profile:
+        return self._operation.get_supported_profile(complete_profile_id)
+
+    def list_supported_model_identities(self) -> frozenset[str]:
+        return self.list_supported_profiles()
+
+    def list_capabilities(self) -> set[str]:
+        """Executable C_OS methods only; no G2, other profile or GRC9 claim."""
+        return {
+            "profile_explicit_v4", "single_resource_ledger",
+            "authoritative_current", "structural_hodge_geometry",
+            "typed_topology_events", "profile_migration", "quadrature_budget",
+            "v4_candidate_c_derived_sector", "v4_realization_os",
+        }

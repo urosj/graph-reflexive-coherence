@@ -222,8 +222,8 @@ class FoundationIntegrationTests(unittest.TestCase):
                 admission.negative_duration_result(
                     request, prestate=fixture, receipt_ledger=[],
                     active_profile_id=fixture["active_model_identity"])
-        # These are current-stage assertions only, not a ban on later facades.
-        self.assertFalse(hasattr(api, "GRCV4"))
+        from pygrc.core.interfaces import GRCModel
+        self.assertTrue(issubclass(api.GRCV4, GRCModel))
 
     def test_recursive_ownership_across_records_and_common_projections(self) -> None:
         from collections.abc import Mapping
@@ -309,7 +309,11 @@ class FoundationIntegrationTests(unittest.TestCase):
                                           "pygrc.models")
                     if module.startswith("pygrc.") and not module.startswith("pygrc.models.grc_v4"):
                         legacy.extend(f"{module}.{alias.name}" for alias in node.names)
-            self.assertEqual(legacy, ["pygrc.core.events.GRCEvent"] if name == "grc_v4_state" else [])
+            expected = {
+                "grc_v4_state": ["pygrc.core.events.GRCEvent"],
+                "grc_v4": ["pygrc.core.interfaces.GRCModel"],
+            }
+            self.assertEqual(legacy, expected.get(name, []))
             self.assertNotIn("type: ignore[override]", source)
             self.assertNotIn("mypy: ignore-errors", source)
         from pygrc.core.serialization import canonical_json_dumps
@@ -321,16 +325,301 @@ class FoundationIntegrationTests(unittest.TestCase):
         register = json.loads((root / "implementation/phase-9-grcv4/tranche-1/"
                                "P9-1.5-OwnershipAndLegacyBaseline.json").read_text())
         # pyproject's reviewed V4-only extra is checked by the successor audit.
-        # No facade exists at this stage, so exports require no edit either.
+        # P9-4.9.1 adds exactly one V4 export; legacy bytes remain intact after
+        # stripping the explicit lazy export, not a new mutable baseline.
         checked = 0
         for row in register["legacy_bindings"]:
             if row["path"] == "pyproject.toml":
                 continue
             with self.subTest(path=row["path"]):
-                self.assertEqual(sha256((root / row["path"]).read_bytes()).hexdigest(),
-                                 row["sha256"])
+                data = (root / row["path"]).read_bytes()
+                if row["path"] == "src/pygrc/models/__init__.py":
+                    addition = (b'\n\ndef __getattr__(name):\n'
+                                b'    if name == "GRCV4":\n'
+                                b'        from .grc_v4 import GRCV4\n'
+                                b'        return GRCV4\n'
+                                b'    raise AttributeError(name)\n')
+                    self.assertTrue(data.endswith(addition))
+                    data = data[:-len(addition)]
+                    from pygrc.models import GRCV4
+                    self.assertIs(GRCV4, api.GRCV4)
+                self.assertEqual(sha256(data).hexdigest(), row["sha256"])
             checked += 1
         self.assertEqual(checked, 134)
+
+
+class PublicFacadeTests(unittest.TestCase):
+    """P9-4.9.1 actual-receiver integration, not the full G2 catalog."""
+
+    @staticmethod
+    def initial(default: dict[str, Any] | None = None) -> Any:
+        from tests.models.test_grc_v4_realizations import os_fixture
+        return replace(os_fixture(
+            candidate={"tau_C": 0, "chi_C": 1, "zeta_C": 3},
+            geometry={"kappa_H": 0},
+            solver={"absolute_tolerance": 0, "relative_tolerance": 0},
+            charge={"absolute_tolerance": 0, "relative_tolerance": 0},
+            common={"default_step_request": default},
+        ), dt=0.125)
+
+    @staticmethod
+    def strict(dt: float = 0.125, operation_id: str = "public-step") -> api.GRCV4StepRequest:
+        return api.GRCV4StepRequest(
+            "grcv4-step-request-v1", operation_id, dt, FrozenJSONMap({})
+        )
+
+    def bytes(self, model: api.GRCV4) -> bytes:
+        return canonical_json_bytes(model.snapshot())
+
+    def test_construction_protocols_and_exact_discovery(self) -> None:
+        import inspect
+        from pygrc.core.interfaces import GRCModel
+        from pygrc.core.types import GRCState, StepResult
+        from pygrc.models.grc_v4_state import GRCStateSurface, StepResultSurface, GRCV4State
+        initial = self.initial()
+        config = {"initial": initial.to_payload(), "targets": []}
+        model = api.GRCV4.from_config(config)
+        self.assertIsInstance(model, GRCModel)
+        state = model.get_state()
+        self.assertIs(type(state), GRCV4State)
+        self.assertIsInstance(state, GRCStateSurface)
+        self.assertNotIsInstance(state, GRCState)
+        self.assertEqual((state.step_index, state.time, state.budget_target, state.remainder),
+                         (0, 0, 4, None))
+        self.assertEqual(model.active_model_identity, model.active_profile_id)
+        self.assertEqual(model.list_supported_profiles(), frozenset({model.active_profile_id}))
+        self.assertEqual(model.list_supported_model_identities(), model.list_supported_profiles())
+        self.assertEqual(model.get_supported_profile(model.active_profile_id), initial.geometry.reference.profile)
+        for invalid in ("C_OS", "A_OS", "grcv4-profile-sha256:" + "0" * 64):
+            with self.assertRaises(ValueError):
+                model.get_supported_profile(invalid)
+        self.assertEqual(list_supported_profiles(), frozenset())  # accepted set still empty
+        self.assertEqual(model.list_capabilities(), {
+            "profile_explicit_v4", "single_resource_ledger", "authoritative_current",
+            "structural_hodge_geometry", "typed_topology_events", "profile_migration",
+            "quadrature_budget", "v4_candidate_c_derived_sector", "v4_realization_os",
+        })
+        for method, args in (("step", ["self"]), ("run", ["self", "num_steps"]),
+                             ("step_v4", ["self", "request"]),
+                             ("run_v4", ["self", "requests"]),
+                             ("from_state", ["state", "params"])):
+            self.assertEqual(list(inspect.signature(getattr(api.GRCV4, method)).parameters), args)
+        config["initial"].clear()
+        self.assertEqual(model.state, state)
+        result = model.step_v4(self.strict())
+        self.assertIsInstance(result, StepResultSurface)
+        self.assertNotIsInstance(result, StepResult)
+        self.assertEqual(model.state.lifecycle.current.C, (2.5, 1.5))  # exact dyadic oracle
+
+    def test_construction_and_restoration_fail_closed(self) -> None:
+        from tests.models.test_grc_v4_candidate_c import current_fixture
+        from pygrc.models.grc_v4_state import GRCV4AuthoritativeState
+        initial = self.initial()
+        for config in (None, [], {}, {"initial": initial.to_payload(), "default_step_request": {}},
+                       {"initial": initial.to_payload(), "targets": ()}):
+            with self.subTest(config=config), self.assertRaises((TypeError, ValueError)):
+                api.GRCV4.from_config(config)
+        for bad in (replace(initial, stage="os_corrector"),
+                    replace(initial, current=GRCV4AuthoritativeState((3, 2), None, None)),
+                    replace(initial, receipt_ids=("grc-receipt-sha256:" + "0" * 64,)),
+                    current_fixture(realization="CI")):
+            with self.assertRaises((TypeError, ValueError)):
+                api.GRCV4(bad)
+        model = api.GRCV4(initial)
+        saved = model.snapshot()
+        for key in ("reset", "receipt_parent_policy_id", "reference_registry"):
+            bad = deepcopy(saved)
+            del bad[key]
+            with self.assertRaises(ValueError):
+                api.GRCV4.from_state(bad, model.get_params().to_payload())
+        with self.assertRaises(ValueError):
+            api.GRCV4.from_state(saved, {})
+        self.assertEqual(model.snapshot(), saved)
+
+    def test_strict_input_duration_edges_and_atomic_rejection(self) -> None:
+        model = api.GRCV4(self.initial())
+        before = self.bytes(model)
+        for request in ({}, None, step_input(), api.GRCV4StepRequestInput.from_payload(step_input())):
+            with self.assertRaises(TypeError):
+                model.step_v4(request)
+        for dt in (-1.0, -5e-324, -1.7976931348623157e308):
+            value = api.GRCV4StepRequestInput.from_payload(step_input(dt))
+            result = model.step_v4_input(value)
+            self.assertFalse(result.committed)
+            self.assertEqual(result.failure.code, "invalid_duration")
+            self.assertEqual(self.bytes(model), before)
+        for dt in (True, -0.0, float("nan"), float("inf"), 2**53):
+            with self.assertRaises(ValueError):
+                self.strict(dt)
+        for dt in (0.0, 5e-324):
+            instance = api.GRCV4(self.initial())
+            result = instance.step_v4(self.strict(dt))
+            self.assertTrue(result.committed, result.failure)
+            self.assertEqual(instance.state.time, dt)
+            self.assertEqual(instance.state.step_index, int(dt > 0))
+            self.assertEqual(instance.state.lifecycle.current.C, (3, 1))
+            self.assertEqual(len(instance.state.lifecycle.receipt_ledger), 4)
+        extreme = model.step_v4(self.strict(1.7976931348623157e308))
+        self.assertFalse(extreme.committed)
+        self.assertEqual(extreme.failure.code, "nonfinite_value")
+        self.assertEqual(self.bytes(model), before)
+        for field, value in (("context_value", {"unimplemented": 1}),
+                             ("boundary_input", {}), ("external_source", {})):
+            payload = self.strict().to_payload()
+            payload[field] = value
+            result = model.step_v4(api.GRCV4StepRequest.from_payload(payload))
+            self.assertFalse(result.committed)
+            self.assertEqual(result.failure.code, "domain_failure")
+            self.assertEqual(self.bytes(model), before)
+
+    def test_fixed_default_common_run_and_missing_request(self) -> None:
+        missing = api.GRCV4(self.initial())
+        before = self.bytes(missing)
+        for call in (missing.step, lambda: missing.run(1)):
+            with self.assertRaises(api.MissingV4StepRequest):
+                call()
+        self.assertEqual(self.bytes(missing), before)
+        self.assertEqual(missing.run(0), [])
+        for n in (True, 1.5, "2", None):
+            with self.assertRaises(TypeError):
+                missing.run(n)
+        with self.assertRaises(ValueError):
+            missing.run(-1)
+        default = self.strict().to_payload()
+        model = api.GRCV4(self.initial(default))
+        default["dt"] = 0  # caller alias cannot alter profile/default identity
+        explicit = api.GRCV4(self.initial(self.strict().to_payload()))
+        results = model.run(2)
+        expected = explicit.run_v4(iter([self.strict(), self.strict()]))
+        self.assertEqual([r.to_payload() for r in results], [r.to_payload() for r in expected])
+        self.assertEqual(model.snapshot(), explicit.snapshot())
+        restored = api.GRCV4.from_state(model.snapshot(), model.get_params().to_payload())
+        self.assertEqual(restored.step().to_payload(), model.step().to_payload())
+        restored.reset()
+        self.assertEqual(restored.get_params().common.default_step_request["dt"], 0.125)
+        self.assertTrue(restored.step().committed)
+
+    def test_run_v4_is_lazy_and_does_not_rollback_consumed_commits(self) -> None:
+        model = api.GRCV4(self.initial())
+        seen = []
+        def requests():
+            seen.append(model.state.step_index)
+            yield self.strict()
+            seen.append(model.state.step_index)
+            payload = self.strict().to_payload()
+            payload["context_value"] = {"invalid": 1}
+            yield api.GRCV4StepRequest.from_payload(payload)
+            seen.append(model.state.step_index)
+            yield self.strict(0)
+        results = model.run_v4(requests())
+        self.assertEqual([r.committed for r in results], [True, False, True])
+        self.assertEqual(seen, [0, 1, 1])
+        def broken():
+            yield self.strict()
+            raise RuntimeError("iterator stopped")
+        with self.assertRaisesRegex(RuntimeError, "iterator stopped"):
+            model.run_v4(broken())
+        self.assertEqual(model.state.step_index, 2)
+        with self.assertRaises(TypeError):
+            model.run_v4([self.strict(0), {}])
+        self.assertEqual(len(model.state.lifecycle.receipt_ledger), 16)
+
+    def test_observables_are_fresh_staged_detached_and_prepublication(self) -> None:
+        from pygrc.models import grc_v4_lifecycle as lifecycle
+        model = api.GRCV4(self.initial())
+        before = self.bytes(model)
+        obs = model.compute_observables()
+        self.assertEqual((obs["budget_current"], obs["charge_current"], obs["budget_error"],
+                          obs["num_nodes"], obs["num_edges"]), (4, 4, 0, 2, 1))
+        self.assertIsNone(obs["abundance"])
+        self.assertEqual(obs["abundance_status"], "not_defined_by_v4_contract")
+        self.assertIsNone(obs["solver_disposition"])
+        self.assertEqual(obs["authoritative_current"]["values"], [4])
+        self.assertFalse(obs["authoritative_current"]["consumed_by_continuity"])
+        obs["authoritative_current"]["values"].clear()
+        self.assertEqual(self.bytes(model), before)
+        # A facade must not compute a fallible result projection after commit.
+        with patch.object(lifecycle, "_public_observables", side_effect=RuntimeError("projection")):
+            with self.assertRaisesRegex(RuntimeError, "projection"):
+                model.step_v4(self.strict())
+        self.assertEqual(self.bytes(model), before)
+        result = model.step_v4(self.strict())
+        self.assertEqual(result.observables["authoritative_current"]["stage"], "os_corrector")
+        self.assertTrue(result.observables["authoritative_current"]["consumed_by_continuity"])
+        self.assertEqual(result.observables["authoritative_current"]["values"], (4,))
+        after = self.bytes(model)
+        fresh = model.compute_observables()
+        self.assertEqual(fresh["authoritative_current"]["stage"], "read_only_reference")
+        self.assertEqual(fresh["authoritative_current"]["values"], [2])
+        self.assertEqual(len(fresh["receipt_ledger"]), 4)
+        fresh["receipt_ledger"].clear()
+        self.assertEqual(self.bytes(model), after)
+        self.assertNotIn("authoritative_current", model.snapshot())
+
+    def test_public_lifecycle_restore_assignment_and_receipt_parent_delegation(self) -> None:
+        from pygrc.models.grc_v4_state import GRCV4State
+        from tests.models.test_grc_v4_lifecycle import _p946_assignment
+        model = api.GRCV4(self.initial())
+        model.set_state(GRCV4State(_p946_assignment(model._operation, (1, 3))))
+        self.assertEqual(model.state.lifecycle.current.C, (1, 3))
+        self.assertEqual(model.state.lifecycle.receipt_ledger, ())
+        before = self.bytes(model)
+        with self.assertRaises(TypeError):
+            model.set_state(model.state.lifecycle)
+        with self.assertRaises(ValueError):
+            model.set_state(GRCV4State(replace(model.state.lifecycle, time=1)))
+        self.assertEqual(self.bytes(model), before)
+        model.rebase_reset_baseline()
+        model.step_v4(self.strict())
+        model.reset()
+        self.assertEqual(model.state.lifecycle.current.C, (1, 3))
+        ledger = model.snapshot()["receipt_ledger"]
+        # Public reset/rebase and steps share the previous-primary owner.
+        for offset in range(0, len(ledger), 4):
+            expected = [] if offset == 0 else [ledger[offset - 4]["receipt_id"]]
+            for row in ledger[offset:offset + 4]:
+                self.assertEqual(row["identity_payload"]["core"]["parent_receipt_ids"], expected)
+        for duplicate in (copy(model), deepcopy(model),
+                          api.GRCV4.from_state(model.snapshot(), model.get_params().to_payload())):
+            self.assertEqual(duplicate.snapshot(), model.snapshot())
+            self.assertIsNot(duplicate._operation, model._operation)
+            self.assertTrue(duplicate.step_v4(self.strict(0)).committed)
+        self.assertEqual(len(model.snapshot()["receipt_ledger"]), 12)
+
+    def test_save_load_defaults_and_actual_crossings(self) -> None:
+        import tempfile
+        from tests.models.test_grc_v4_lifecycle import event_request, event_target, migration_request
+        from tests.models.test_grc_v4_realizations import os_fixture
+        target = os_fixture(candidate={"chi_C": 0, "zeta_C": 0}, geometry={"kappa_H": 0},
+                            common={"default_step_request": self.strict(0, "target-default").to_payload()}).geometry.reference
+        event_ref = event_target()
+        model = api.GRCV4(self.initial(), targets=(target, event_ref))
+        migrated = model.migrate_profile(migration_request(model._operation, target))
+        self.assertTrue(migrated.committed, migrated.failure)
+        self.assertEqual(model.active_profile_id, target.profile.complete_profile_id)
+        self.assertTrue(model.step().committed)
+        before = self.bytes(model)
+        bad = migration_request(model._operation, target, target_profile_id="grcv4-profile-sha256:" + "0" * 64)
+        self.assertFalse(model.migrate_profile(bad).committed)
+        self.assertEqual(self.bytes(model), before)
+        event = event_request(model._operation, event_ref, [1, 0, 0, 1, 0, 0], [0, 0, 0.5])
+        result = model.apply_topology_event(event)
+        self.assertTrue(result.committed, result.failure)
+        self.assertEqual(model.state.lifecycle.current.C, (3, 1, 0.5))
+        self.assertEqual(model.state.budget_target, 4.5)
+        self.assertEqual(model.compute_observables()["num_nodes"], 3)
+        with self.assertRaises(api.MissingV4StepRequest):
+            model.step()  # target has no default; never reuse the source profile's
+        # File paths are transient test resources, never embedded in snapshots.
+        with tempfile.TemporaryDirectory() as directory:
+            path = str(Path(directory) / "snapshot.json")
+            model.save(path)
+            restored = api.GRCV4.load(path)
+            self.assertEqual(restored.snapshot(), model.snapshot())
+            self.assertEqual(restored.list_supported_profiles(), model.list_supported_profiles())
+            self.assertTrue(restored.step_v4(self.strict(0)).committed)
+        model.reset()
+        self.assertEqual(model.state.lifecycle.current.C, (3, 1, 0.5))
 
 
 class RequestTests(unittest.TestCase):
@@ -578,7 +867,7 @@ class RequestTests(unittest.TestCase):
         value = api.decode_step_request_input(json.dumps(data))
         self.assertEqual(value.context_value.to_dict(), data["context_value"])
         self.assertEqual(list_supported_profiles(), frozenset())
-        self.assertFalse(hasattr(api, "GRCV4"))
+        self.assertTrue(hasattr(api, "GRCV4"))
 
     def test_migration_nested_typed_declaration_and_roundtrip(self) -> None:
         data = migration()

@@ -176,7 +176,7 @@ def verification_status(repo_root: Path) -> dict:
                     for r in approval["runtime_targets"]
                     if r["requires_gate"] == "P9-G1" and set(ready) & owners[r["path"]]
                 ),
-                next_gate="P9-4.9.2 parent authority accepted for implementation; P9-4.9.1 facade and P9-4.9.3 final evidence remain pending, then P9-4.8B. P9-G2/G3 remain held.",
+                next_gate="P9-4.9.2 implemented and accepted; P9-4.9.1 facade implemented, interface closure pending P9-4.9.1a abundance authority and review. P9-4.9.1a is planning only, then final P9-4.9.3 reconciliation and P9-4.8B. P9-G2/G3 remain held.",
                 claim_ceiling="Accepted permission to implement reviewed V4 scope is not executed or accepted runtime conformance.",
             )
         cross = module.read(

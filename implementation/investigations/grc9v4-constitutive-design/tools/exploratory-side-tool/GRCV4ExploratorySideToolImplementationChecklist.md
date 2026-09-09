@@ -1386,3 +1386,17 @@ P9-3.2 implementation is pending review; runtime support remains empty.
 - [x] Wire current verification and record bounded runtime, pressure and surface
       results in the P9-4.9.2 review. The normal command binds its final result to
       exact current inputs. Do not relabel the historical P9-4.8 HOLD as acceptance.
+
+## Phase 9 Tranche 4 — P9-4.9.1 public C_OS facade
+
+- [x] Register only the separately authorized facade leaf on existing owners;
+      preserve parent scope, legacy exports and empty accepted support sets.
+- [x] Keep API/notebook/browser status at pending P9-4.9.1a authority and facade
+      review, with G2 HOLD; P9-4.9.1a is not a runtime-ready or accepted leaf.
+      update the exact readiness roster without changing claim/debt authority.
+- [x] Allow a scoped notebook current-status query without pressure evidence;
+      preserve stale-pressure rejection in full mode and separate output files.
+- [x] Check original parent evidence against accepted Git `d8f26d9` and current
+      facade evidence through the existing focused source-capture mechanism.
+- [ ] Complete the separate P9-4.9.3 fixture product and P9-4.8B acceptance;
+      do not infer them from targeted facade or boundary checks.

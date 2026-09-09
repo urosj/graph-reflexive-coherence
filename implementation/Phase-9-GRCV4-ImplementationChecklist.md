@@ -614,7 +614,12 @@ three bounded batches retain their own results and raw per-run manifests.
   discharge its obligations through P9-4.9.1–P9-4.9.3 and the successor P9-4.8B
   result, not by relabeling the historical HOLD. A_OS and `P9-G3[C_OS]` remain
   behind G2.
-- [ ] P9-4.9.1: Close the public C_OS common/V4 interface integration deferred
+- [ ] P9-4.9.1: Public C_OS facade implemented and 14 focused tests passed;
+  interface closure is blocked on P9-4.9.1a and user review. See the
+  [method/test mapping and ceilings](./phase-9-grcv4/tranche-4/P9-4.9.1-Review.md).
+  `abundance` remains an explicit interim placeholder without accepted V4
+  semantics; it does not close public-interface or G2 conformance.
+  Close the public C_OS common/V4 interface integration deferred
   from P9-2.6 and its consumers (`G2-COS-INTERFACE`). Implement the specified
   `GRCV4(GRCModel)` facade using the existing sole atomic publication owner.
   Use the initial P9-4.9.3 inventory and accepted P9-4.9.2 parent contract;
@@ -626,6 +631,20 @@ three bounded batches retain their own results and raw per-run manifests.
   duration inputs, atomic failure, exact profile/model discovery and capability
   truth. Update stage-local no-facade assertions only with real integration;
   registered test targets do not establish accepted public support.
+- [ ] P9-4.9.1a: Resolve the narrow abundance-interface authority gap under
+  `G2-COS-INTERFACE`, without reopening accepted constitutive/lifecycle results.
+  Distinguish theoretical identity multiplicity from an instantaneous diagnostic.
+  Propose family/capability ownership; do not accept it merely by adding this row.
+  Decide exact V4 key/availability/type/unavailable semantics and any admitted
+  detector/stage, read-only status and consumer compatibility. Current null/status
+  is not an accepted resolution; no invented charge, topology or basin proxy.
+  Record the bounded investigation decision, obtain acceptance, and propagate
+  through claims/tooling and proposal/paper/V4 specs as applicable before changing
+  runtime semantics. Keep legacy/common/V3 files unchanged; explain any V4
+  inheritance exception explicitly in the V4 extension. Add only affected tests
+  for availability, capability truth, stages, restoration and nonmutation.
+  Keep final P9-4.9.1/P9-4.9.3 public-interface and G2 closure held until resolved.
+  Planning only: no new runtime permission, accepted rule or extra governance gate.
 - [x] P9-4.9.2: Resolve P9-2.4/P9-7.6's receipt-parent authority obligation.
   The user accepted the [uniform predecessor decision](./investigations/grc9v4-constitutive-design/decisions/P9ReceiptParentAuthorityProposal.md)
   on 2026-09-09; the 9 valid and 16 invalid symbolic controls are design evidence
@@ -634,7 +653,8 @@ three bounded batches retain their own results and raw per-run manifests.
   rule and explicit versioned snapshot admission. See the
   [bounded implementation review](./phase-9-grcv4/tranche-4/P9-4.9.2-Review.md)
   for validation (140 runtime tests; 242 boundary-pressure cases). Implementation
-  review remains pending user acceptance; public-facade, fixture and G2 review
+  was accepted by the user's commit instruction in `d8f26d9`; the original
+  validation-time record remains unchanged. Public-facade, fixture and G2 review
   remain separate.
   Own `G2-COS-PARENTS`. Verify accepted provenance with the forensic API;
   ordered source/target profile identities and acyclic content hashing do not
@@ -661,7 +681,8 @@ three bounded batches retain their own results and raw per-run manifests.
   Begin with a bounded gap list: requirement, existing usable evidence/limits,
   actual remaining change/test and owner. This is the first closure activity,
   not another audit framework or a reason to repeat suites. Final reconciliation
-  follows the integrated P9-4.9.1/P9-4.9.2 implementation and targeted tests.
+  follows the integrated P9-4.9.1/P9-4.9.2 implementation, accepted P9-4.9.1a
+  interface semantics and targeted tests.
   Bind resolved parameters, graph/reference/context/domain, ordered crossing
   identities and required per-execution result fields. Reuse accepted evidence
   with its actual source/environment and limits; keep reruns distinct. Resolve

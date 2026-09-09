@@ -1730,3 +1730,23 @@ runtime evidence. Frozen historical checks run only on their historical inputs;
 they do not veto the authorized proposal/paper/spec/runtime successor. Permission
 adds exactly P9-4.9.2 on existing owners: 27 ready leaves and the same 29 eligible
 paths. G2 and GRC9V4 remain held. No new governance gate is introduced.
+
+## Phase 9 Tranche 4 — P9-4.9.1 public C_OS facade
+
+Following accepted parent implementation `d8f26d9`, expose the separate
+user-requested facade leaf on four existing runtime/test paths. Current
+permission is 28 ready leaves and the same 29 eligible paths, not G2 support.
+API/notebook/browser status reflects implementation pending review and the
+P9-4.9.1a abundance authority gap, followed by P9-4.9.3/P9-4.8B. P9-4.9.1a
+is planning only: it adds no ready leaf, claim or accepted capability rule.
+The claim/debt graph is unchanged. The explicit null placeholder does not
+discharge public-interface conformance.
+
+The ordinary verifier checks the accepted 140-test parent record at its exact
+Git subject and the focused facade record at current runtime inputs. Shared
+source edits do not force a numerical rerun just to preserve historical evidence.
+Use the facade check and boundary-only path for this leaf, with targeted status
+tests; reserve full historical/browser/integrated verification for G2 review.
+Notebook `--status-only` / `PHASE9_STATUS_ONLY=True` omits pressure queries and
+uses a separate scoped output; full mode still rejects stale pressure records.
+See the [facade review](../../../../phase-9-grcv4/tranche-4/P9-4.9.1-Review.md).

@@ -874,6 +874,21 @@
       "iteration_id": "P9-4.7b"
     },
     {
+      "path": "implementation/phase-9-grcv4/evidence/P9-4.9.1/facade/run.json",
+      "sha256": "bdfd0afd24dc5b2401c21827f835b40dd62e5b88d32e20cf07e0eeb184714654",
+      "iteration_id": "P9-4.9.1"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-4.9.2/parent-rule/inputs.json",
+      "sha256": "cac8be801478bedd3f7c4bc55f406e095b57d23bcfef4aef193f16232a898cff",
+      "iteration_id": "P9-4.9.2"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-4.9.2/parent-rule/run.json",
+      "sha256": "d499ba3aa205ace577c317f2ced98837ff1ee593ccd20c4b80ec6a0392a86ac9",
+      "iteration_id": "P9-4.9.2"
+    },
+    {
       "path": "implementation/phase-9-grcv4/tranche-2/P9-2.1-ExecutionRecord.json",
       "sha256": "561817390d50afbd1eaf2c8ee2bc12409de9458892ae944f947eaabed66a916c",
       "iteration_id": "P9-2.1"
@@ -1074,14 +1089,39 @@
       "iteration_id": "P9-4.7b"
     },
     {
+      "path": "implementation/phase-9-grcv4/tranche-4/P9-4.9.1-ExecutionRecord.json",
+      "sha256": "a49d18850c9586da576226a5033c8473175399c614f2169f85829b24723636a7",
+      "iteration_id": "P9-4.9.1"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-4/P9-4.9.1-Review.md",
+      "sha256": "acc88040063784a8e1dd241770f26789c0c4ff0609c3429445b6844d1d341830",
+      "iteration_id": "P9-4.9.1"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-4/P9-4.9.2-ExecutionRecord.json",
+      "sha256": "88bcf12cccd0f74a002af55c8542ab9d2242654cc6f449d708e96cb4e2430426",
+      "iteration_id": "P9-4.9.2"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-4/P9-4.9.2-Review.md",
+      "sha256": "43c26791166b2123c2f041554ef73499d948ecc23c611f3a8d0c9251abb02ca3",
+      "iteration_id": "P9-4.9.2"
+    },
+    {
       "path": "pyproject.toml",
       "sha256": "018c364413f75ee49186975c05e9cdaba7a78e171d47833609fbebc223a64a66",
       "iteration_id": "P9-3.1"
     },
     {
+      "path": "src/pygrc/models/__init__.py",
+      "sha256": "3253def6cdda3527bdf5989bc004421f0fbc11b5df39d932127f65e84e46e234",
+      "iteration_id": "P9-4.9.1"
+    },
+    {
       "path": "src/pygrc/models/grc_v4.py",
-      "sha256": "7b692142a98c8010f9f0521e0c54c4e6f91dc78909dcffab8e60a9f108c702e9",
-      "iteration_id": "P9-4.7b"
+      "sha256": "9cc3bf916b546a5ea07d5c1cb93bea7c3e6be8d28ebd6fcae4bd6d15196bedf6",
+      "iteration_id": "P9-4.9.1"
     },
     {
       "path": "src/pygrc/models/grc_v4_assets/__init__.py",
@@ -1125,8 +1165,8 @@
     },
     {
       "path": "src/pygrc/models/grc_v4_lifecycle.py",
-      "sha256": "b31221c6bf583beb8a104a6f8ddf465d1734cb145bc0c55bf33b61476de19a68",
-      "iteration_id": "P9-4.9.2"
+      "sha256": "c1524ce5dead1d9fa1addcf4f5061d21222991bee3487894ecb2ce663b1ba08f",
+      "iteration_id": "P9-4.9.1"
     },
     {
       "path": "src/pygrc/models/grc_v4_profile.py",
@@ -1165,8 +1205,8 @@
     },
     {
       "path": "tests/models/test_grc_v4.py",
-      "iteration_id": "P9-4.9.2",
-      "sha256": "dfbcba70ff721354e8a9a4c16676ecf4fdca1d4411852ddc8ea9b91c1abc59a0"
+      "sha256": "76641f11d46180098a35dbb83926d813030aadeb9f46149231ea0c20fd851270",
+      "iteration_id": "P9-4.9.1"
     },
     {
       "path": "tests/models/test_grc_v4_candidate_c.py",
@@ -1212,30 +1252,10 @@
       "path": "tests/models/test_grc_v4_transport.py",
       "sha256": "ad44a64357ad5cef25deaf2c778a4a4a0ea4ec016f461ce40e07f0724c09f2a9",
       "iteration_id": "P9-3.4"
-    },
-    {
-      "path": "implementation/phase-9-grcv4/tranche-4/P9-4.9.2-Review.md",
-      "sha256": "43c26791166b2123c2f041554ef73499d948ecc23c611f3a8d0c9251abb02ca3",
-      "iteration_id": "P9-4.9.2"
-    },
-    {
-      "path": "implementation/phase-9-grcv4/tranche-4/P9-4.9.2-ExecutionRecord.json",
-      "sha256": "88bcf12cccd0f74a002af55c8542ab9d2242654cc6f449d708e96cb4e2430426",
-      "iteration_id": "P9-4.9.2"
-    },
-    {
-      "path": "implementation/phase-9-grcv4/evidence/P9-4.9.2/parent-rule/run.json",
-      "sha256": "d499ba3aa205ace577c317f2ced98837ff1ee593ccd20c4b80ec6a0392a86ac9",
-      "iteration_id": "P9-4.9.2"
-    },
-    {
-      "path": "implementation/phase-9-grcv4/evidence/P9-4.9.2/parent-rule/inputs.json",
-      "sha256": "cac8be801478bedd3f7c4bc55f406e095b57d23bcfef4aef193f16232a898cff",
-      "iteration_id": "P9-4.9.2"
     }
   ],
   "accepted_generic_runtime_support": [],
   "admitted_specialization_support_sets": [],
   "claim_ceiling": "Exact current implementation content bindings, not review acceptance or conformance.",
-  "record_digest": "a6d931a3c732b54c4c7c2da85f450053e5096ce8cc8a0c3e5b99485ce25a6010"
+  "record_digest": "5911c6969e401d9f32583d78faf3552a2a1c9ec46dec4a7bcf1ffdb94ad4d6cb"
 }

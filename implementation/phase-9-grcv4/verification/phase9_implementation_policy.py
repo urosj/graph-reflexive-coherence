@@ -97,6 +97,14 @@ PARENT_AUTHORITY = INV + "decisions/P9ReceiptParentAuthority.json"
 PARENT_AUTHORITY_DIGEST = "ba7d69189c527153828b02c2bb3311899b036a634446de9ad8f36af6592c28f8"
 PARENT_RELEASE_BUILDER = HERE + "build_receipt_parent_release.py"
 PARENT_RELEASE_ID = "grcv4-spec-release-sha256:f777519824f86c3e9382bcf9b45cba28554351506f354d3f778746e2aaff5c6b"
+PARENT_IMPLEMENTATION_COMMIT = "d8f26d925272c83c2e289261c6fd988a2b05b4a5"
+PARENT_RUN_SHA256 = "d499ba3aa205ace577c317f2ced98837ff1ee593ccd20c4b80ec6a0392a86ac9"
+# Separate explicit user request to continue P9-4.9.1 after accepting/committing
+# P9-4.9.2. This does not broaden the parent leaf or authorize G2 acceptance.
+FACADE_RUNTIME_PATHS = {
+    "src/pygrc/models/grc_v4.py", "src/pygrc/models/grc_v4_lifecycle.py",
+    "src/pygrc/models/__init__.py", "tests/models/test_grc_v4.py",
+}
 PARENT_RUNTIME_PATHS = {
     "src/pygrc/models/grc_v4_codec.py", "src/pygrc/models/grc_v4_lifecycle.py",
     "tests/models/test_grc_v4.py", "tests/models/test_grc_v4_lifecycle.py",
@@ -168,6 +176,7 @@ HANDOFF_PATHS = {
     HERE + "handoff/P9-G1-outputs.zip",
 }
 PATHS = {
+    HERE + "verify_p9491_facade.py",
     # User-authorized P9-4.8 gate review only. This does not add runtime-ready
     # leaves, editable runtime paths, or accepted profile support.
     PHASE + "tranche-4/P9-4.8-Review.md",
@@ -786,8 +795,17 @@ def current_parent_release(root):
 
 
 def parent_runtime_evidence(root):
-    """Admission of retained run facts, not another runtime test implementation."""
+    """Preserve accepted parent evidence at its Git subject, not a new rerun.
+
+    P9-4.9.1 changes shared source/test bytes legitimately. Those new bytes are
+    checked by the focused facade run; the 140-test accepted run remains exact
+    evidence about d8f26d9, never relabeled as execution of today's tree.
+    """
     name = PHASE + "evidence/P9-4.9.2/parent-rule/run.json"
+    data = safe_path(root, name).read_bytes()
+    require(sha(data) == PARENT_RUN_SHA256
+            and data == git(root, "show", PARENT_IMPLEMENTATION_COMMIT + ":" + name),
+            "accepted parent execution record changed")
     record = read(safe_path(root, name))
     require(record["schema"] == "phase9_leaf_focused_run_v1"
             and record["iteration_id"] == "P9-4.9.2"
@@ -800,12 +818,13 @@ def parent_runtime_evidence(root):
             and record["admitted_specialization_support_sets"] == [],
             "parent evidence cannot promote scope or hide failed source attribution")
     for path, expected in record["source_bindings"].items():
-        require(sha(safe_path(root, path).read_bytes()) == expected,
-                "parent evidence input changed: " + path)
+        safe_path(root, path)
+        require(sha(git(root, "show", PARENT_IMPLEMENTATION_COMMIT + ":" + path)) == expected,
+                "accepted parent Git subject differs: " + path)
     require(all(record["loaded_sources_after"].get(name) == row
                 for name, row in record["loaded_sources_before"].items()),
             "parent run loaded-source attribution changed")
-    return {"path": name, "sha256": sha(safe_path(root, name).read_bytes()),
+    return {"path": name, "sha256": sha(data), "subject_commit": PARENT_IMPLEMENTATION_COMMIT,
             "G2_accepted": False}
 
 
@@ -843,6 +862,8 @@ def leaf_permissions(root):
     ready = sorted(set(ready) | set(lifecycle_batch_authorization(root)["authorized_iterations"]))
     accepted_parent_authority(root)
     ready = sorted(set(ready) | {"P9-4.9.2"})
+    git(root, "merge-base", "--is-ancestor", PARENT_IMPLEMENTATION_COMMIT, "HEAD")
+    ready = sorted(set(ready) | {"P9-4.9.1"})
     owners = {}
     for module in ownership["modules"]:
         leaves = {
@@ -902,6 +923,9 @@ def leaf_permissions(root):
         # Source/test owners historically share a set. The parent task may
         # update a test without authorizing its paired facade source.
         owners[name] = owners[name] | {"P9-4.9.2"}
+    for name in FACADE_RUNTIME_PATHS:
+        require(name in owners, "facade invents a runtime target")
+        owners[name] = owners[name] | {"P9-4.9.1"}
     return ready, owners
 
 
@@ -944,7 +968,7 @@ def work_entries(root, approval):
     )
     # The accepted baseline cannot contain later closure IDs. Register exactly
     # the user-approved successor, not a broad regex-based permission.
-    leaves.add("P9-4.9.2")
+    leaves.update({"P9-4.9.1", "P9-4.9.2"})
     rows = value["entries"]
     require(len({r["path"] for r in rows}) == len(rows), "duplicate work target")
     result = {}
@@ -1029,7 +1053,7 @@ def work_entries(root, approval):
                 require(
                     record["iteration_id"] == leaf
                     and record["release_id"] == (
-                        current_parent_release(root) if leaf == "P9-4.9.2" else prior.RELEASE_ID
+                        current_parent_release(root) if leaf in {"P9-4.9.1", "P9-4.9.2"} else prior.RELEASE_ID
                     ),
                     "execution record subject mismatch",
                 )

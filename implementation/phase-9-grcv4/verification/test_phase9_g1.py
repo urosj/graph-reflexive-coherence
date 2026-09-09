@@ -751,6 +751,9 @@ def main():
         case("parent_owner_ready", lambda: registered("src/pygrc/models/grc_v4_lifecycle.py", content, leaf="P9-4.9.2"))
         case("parent_cannot_open_facade", lambda: registered("src/pygrc/models/grc_v4.py", content, leaf="P9-4.9.2"),
              "runtime target belongs to a different owning leaf")
+        case("facade_explicitly_ready", lambda: registered("src/pygrc/models/grc_v4.py", content, leaf="P9-4.9.1"))
+        case("facade_cannot_rewrite_numerical_authority", lambda: registered("src/pygrc/models/grc_v4_candidate_c.py", content, leaf="P9-4.9.1"),
+             "runtime target belongs to a different owning leaf")
         case("mapped_audit_has_shared_integration_test_owner",
              lambda: registered("tests/models/test_grc_v4.py", content, leaf="P9-4.7b"))
         for name in ["src/pygrc/models/grc_v4_candidate_c.py", "tests/models/test_grc_v4_candidate_c.py"]:

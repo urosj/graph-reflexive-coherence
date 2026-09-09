@@ -1036,3 +1036,10 @@ __all__ = [
     "restore_lgrc9v3_multi_basin_flow_window_record_artifact",
     "restore_lgrc9v3_multi_basin_replay_validation_record_artifact",
 ]
+
+
+def __getattr__(name):
+    if name == "GRCV4":
+        from .grc_v4 import GRCV4
+        return GRCV4
+    raise AttributeError(name)
