@@ -1,41 +1,50 @@
-# Phase 9 GRCV4 handoff — P9-5.2 implementation
+# Phase 9 GRCV4 handoff — P9-5.3 numerical A_OS integration
 
 Current restart point, 2026-09-09: branch `impl/phase-9-grcv4-tranche-5`,
-based on accepted P9-5.1 commit `c920376`.
-[P9-5.2](./phase-9-grcv4/tranche-5/P9-5.2-Review.md) implements fixed-geometry
-A current/Read-Back, structural source and the provisional final-C log writer.
-The independent audit's two findings are corrected: potential decomposition
-diagnostics now remain exact rational values, and the writer pins its complete
-Decimal context without modifying caller state. 65 focused methods and all
-three supplied integrated audit regressions pass. **P9-5.2 was accepted by the
-user on 2026-09-09**, with P9-5.3 authorized next.
-The [audit follow-up](./phase-9-grcv4/tranche-5/P9-5.2-AuditFollowup.json)
-records reconstruction and scoped checks; the original 61-method/33-browser
-execution remains intact. Current permission is 32 leaves /
-31 runtime paths. Use:
+based on accepted P9-5.2 commit `d5e1ede`.
+[P9-5.3](./phase-9-grcv4/tranche-5/P9-5.3-Review.md) implements one A_OS
+predictor/geometry/fresh-corrector pass, exact split admission, one continuity
+and retained writer, final current readmission at consumed and next-reference
+geometry, clocks and zero-duration numerical identity. Audit F1/F2 are
+corrected: exact split admission survives an unavailable binary64 display,
+and shared numerical exceptions retain the A_OS stage and original cause.
+The follow-up records 68 focused methods and four supplied audit regressions.
+**Accepted by the user on 2026-09-09; P9-5.4 is authorized next.**
+
+The [audit follow-up](./phase-9-grcv4/tranche-5/P9-5.3-AuditFollowup.json)
+records source identity, reconstruction and scoped checks. The original
+[61-method execution](./phase-9-grcv4/tranche-5/P9-5.3-ExecutionRecord.json)
+remains unchanged; a verified reversible delta recovers its audited sources. Current permission
+is 33 leaves / 31 runtime paths. Use:
 
 ```sh
-.venv/bin/python implementation/phase-9-grcv4/verification/verify_p952_current_writer.py --check
+.venv/bin/python implementation/phase-9-grcv4/verification/verify_p953_a_os.py --check
 ```
 
-P9-5.3 is the authorized continuation after this acceptance commit. It must
-integrate and verify
-the complete A_OS pass, split residual, one corrector/continuity/writer, clocks
-and zero-duration path. The current writer validates its supplied corrector
-and resource result; the OS owner must prove the corrector geometry came from
-the admitted predictor pass. Full lifecycle admission/commit and A_OS G2 remain
-with their owners. No accepted C_OS scientific implementation changed.
+The numerical outputs are provisional. The registered `P9-7.1-A_OS` lifecycle
+child follows P9-5.4 and owns live publication/receipts, snapshot and reset.
+P9-5.4 follows this accepted numerical leaf. No A_OS G2 support is advertised.
+C exact admission and other numerical behavior are preserved. Two pinned
+diagnostic changes affect the shared residual and its C publication consumer:
+`values`/`split_residual` may be `None`/JSON `null`, while the complete exact
+defect remains available. Both candidates, signed range limits, numerical and
+programmer failures, and unchanged C publication authority are pressured.
+The affected C_OS pass/step regressions are rerun in the follow-up.
 
-Concrete post-writer pressure for P9-5.3/full lifecycle: `C=(0,0)`, `W_old=4`,
-zero potential, `alpha=beta=gamma=0`, `chi=1`, `zeta=3`, `tau=1`, and binary64
-`dt=log(2)` give an admitted zero current with denominator `-4/5`. The local
-writer lawfully returns `W_next=2`; reconstructing the poststate current is
-singular (denominator zero). The integrated owner must reject atomically at
-post-writer readmission, preserving the whole prestate. That read-only check
-must not change the already selected same-beat current or misreport its
-earlier solve as failed. The portable regression is retained in the leaf's
-test suite and audit reproducer; it currently characterizes the local boundary,
-not a completed lifecycle rollback implementation.
+Carry both post-writer failures into the later lifecycle child. The P9-5.2
+witness (`W_old=4`, `W_next=2`, zero C/current, `chi=1`, `zeta=3`,
+`dt=log(2)`) now rejects during final numerical reconstruction. The additional
+reference-only witness in the review writes `W_next=1/2`: its current is
+regular at consumed Hodge 2 but singular at reference Hodge 1. Both preserve
+all supplied prestate inputs; the later live owner must prove atomic rollback
+and unchanged ledger. Read-only poststate admission must not feed new W into
+the earlier corrector or label that successful solve as failed.
+
+**P9-5.2 was accepted and committed as `d5e1ede` on 2026-09-09.** Its two audit
+findings are corrected: exact rational potential diagnostics and a fully pinned
+Decimal context. Its 65-method run and three supplied audit regressions remain
+in the [accepted follow-up](./phase-9-grcv4/tranche-5/P9-5.2-AuditFollowup.json).
+Use its historical checker in that checkout, not against this successor.
 
 Accepted predecessor: [P9-5.1](./phase-9-grcv4/tranche-5/P9-5.1-Review.md)
 implements explicit history-free Candidate A current/reset construction and

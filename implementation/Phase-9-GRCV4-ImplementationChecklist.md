@@ -825,12 +825,21 @@ updates discovery and status without authorizing new runtime leaves.
   2026-09-09**; P9-5.3 is authorized next.
   These are provisional
   current/writer primitives; complete A_OS integration remains in P9-5.3.
-- [ ] P9-5.3: Execute independent Candidate A numerical/stage/control vectors
-  and the `A_OS` step cases. Carry the P9-5.2 positive-but-singular writer
-  witness (`W_old=4`, `W_next=2`, `chi=1`, `zeta=3`, zero C/current) into
-  complete post-writer readmission: reject atomically while preserving the
-  whole prestate and the earlier successful solve's provenance; do not feed
-  the new retained value into the already selected same-beat current.
+- [x] P9-5.3: Execute independent Candidate A numerical/stage/control vectors
+  and the `A_OS` step cases. [Review/source-test map](./phase-9-grcv4/tranche-5/P9-5.3-Review.md)
+  and [audit follow-up](./phase-9-grcv4/tranche-5/P9-5.3-AuditFollowup.json):
+  68 focused methods and four supplied audit regressions pass, including one-pass/fresh-corrector staging, exact
+  split boundaries, one continuity/writer, independent scalar and multigraph
+  expectations, controls, clocks and zero duration. Numerical readmission
+  rejects both consumed-geometry and reference-only post-writer singularities.
+  Audit F1/F2 are corrected: an unavailable raw split display cannot veto
+  exact admission; shared numeric failures retain the A_OS stage and cause.
+  Both candidates and signs, display/tolerance boundaries and the existing C
+  publication consumer are covered. The original execution remains unchanged.
+  **Accepted by the user on 2026-09-09**. The later A_OS
+  lifecycle child must prove live atomic rollback and receipt provenance for
+  these retained witnesses; provisional input preservation does not discharge
+  that obligation. P9-5.4 is authorized next.
 - [ ] P9-5.4: Preserve separate initialization/formation/history claims and
   keep lifecycle-dependent conformance pending. Before complete initializer
   conformance, the A lifecycle owner must establish the admitted reference-flux

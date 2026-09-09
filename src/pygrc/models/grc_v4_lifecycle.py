@@ -1939,7 +1939,10 @@ class CandidateCOSOperation:
             observations["os"] = {
                 "stage": "os_corrector",
                 "current": list(step.os_pass.corrector.current.values),
-                "split_residual": [list(row) for row in step.os_pass.residual.values],
+                "split_residual": (
+                    None if step.os_pass.residual.values is None
+                    else [list(row) for row in step.os_pass.residual.values]
+                ),
                 "exact_split_residual": [
                     list(row) for row in step.os_pass.residual.exact_values
                 ],

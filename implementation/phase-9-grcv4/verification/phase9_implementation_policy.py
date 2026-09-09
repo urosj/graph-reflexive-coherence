@@ -193,6 +193,7 @@ PATHS = {
     G2_ACCEPTANCE,
     HERE + "verify_p951_initialization.py",
     HERE + "verify_p952_current_writer.py",
+    HERE + "verify_p953_a_os.py",
     # P9-4.8B is a review-only successor; no runtime leaf or support grant.
     HERE + "verify_p948b_review.py",
     PHASE + "tranche-4/P9-4.8B-Review.md",
@@ -946,7 +947,8 @@ def leaf_permissions(root):
                 *accepted_c_controls(root)["accepted_iterations"],
                 *accepted_os_pass(root)["accepted_iterations"],
                 *accepted_os_operations(root)["accepted_iterations"],
-                *accepted_a_initialization(root)["accepted_iterations"]}
+                *accepted_a_initialization(root)["accepted_iterations"],
+                *accepted_a_current_writer(root)["accepted_iterations"]}
     support = read(
         safe_path(root, PHASE + "tranche-1/P9-1.4-SupportAndDependencies.json")
     )
@@ -999,6 +1001,9 @@ def leaf_permissions(root):
             # P9-4.4 explicitly composes the OS pass, single resource write
             # and final-C reconstruction in this provisional pipeline owner.
             leaves.add("P9-4.4")
+            # P9-5.3 integrates A's one-pass numerical step, including final
+            # writer/current readmission. Live commit remains a lifecycle leaf.
+            leaves.add("P9-5.3")
         if module["module_id"] in {
             "grc_v4_lifecycle", "grc_v4_candidate_c", "grc_v4_geometry", "grc_v4_transport",
         }:
@@ -1045,6 +1050,11 @@ def leaf_permissions(root):
         owners[name] = owners[name] | {"P9-4.9.1a"}
     for name in ("src/pygrc/models/grc_v4_lifecycle.py", "tests/models/test_grc_v4.py"):
         owners[name] = owners[name] | {"P9-4.9.3"}
+    # P9-5.3's shared split-display correction also updates its existing C
+    # publication consumer. The finite AST projection limits that change to
+    # this diagnostic field; it opens no A lifecycle operation or commit.
+    name = "src/pygrc/models/grc_v4_lifecycle.py"
+    owners[name] = owners[name] | {"P9-5.3"}
     return ready, owners
 
 
@@ -1068,6 +1078,30 @@ def accepted_a_initialization(root):
     for source in ("src/pygrc/models/grc_v4_candidate_a.py", "tests/models/test_grc_v4_candidate_a.py"):
         require(sha(git(root, "show", commit + ":" + source)) == value["source_bindings"][source],
                 "accepted A initialization source mismatch")
+    return value["acceptance"]
+
+
+def accepted_a_current_writer(root):
+    """Bind accepted P9-5.2 at its Git subject, independent of later A work."""
+    commit = "d5e1ede"
+    name = PHASE + "tranche-5/P9-5.2-AuditFollowup.json"
+    git(root, "merge-base", "--is-ancestor", commit, "HEAD")
+    content = git(root, "show", commit + ":" + name)
+    value = json.loads(content)
+    require(
+        safe_path(root, name).read_bytes() == content
+        and value["record_digest"] == digest_record(value)
+        == "783f762d59653b3249eba8f4b5859a924d3b5ad14ccc825fd03d9072d31ef2c1"
+        and value["acceptance"]["status"] == "accepted_by_user"
+        and value["acceptance"]["accepted_iterations"] == ["P9-5.2"]
+        and value["acceptance"]["new_runtime_iterations_authorized"] == ["P9-5.3"]
+        and value["acceptance"]["open_leaf_blockers"] == []
+        and value["acceptance"]["A_OS_G2_accepted"] is False,
+        "untrusted Candidate A current/writer acceptance",
+    )
+    for source in ("src/pygrc/models/grc_v4_candidate_a.py", "tests/models/test_grc_v4_candidate_a.py"):
+        require(sha(git(root, "show", commit + ":" + source)) == value["source_bindings"][source],
+                "accepted A current/writer source mismatch: " + source)
     return value["acceptance"]
 
 
@@ -1216,9 +1250,9 @@ def work_entries(root, approval):
                         "AuditFollowup.json", "AuditPressure.json", "KernelPressure.py"
                     )
                 )
-            if leaf == "P9-5.2":
+            if leaf in {"P9-5.2", "P9-5.3"}:
                 records.update(
-                    PHASE + "tranche-5/P9-5.2-" + suffix
+                    PHASE + "tranche-5/" + leaf + "-" + suffix
                     for suffix in (
                         "AuditFollowup.json", "AuditPressure.json", "AuditReproducer.py"
                     )
@@ -1239,12 +1273,13 @@ def work_entries(root, approval):
             if name.endswith("-ExecutionRecord.json") or name in {
                 PHASE + "tranche-5/P9-5.1-AuditFollowup.json",
                 PHASE + "tranche-5/P9-5.2-AuditFollowup.json",
+                PHASE + "tranche-5/P9-5.3-AuditFollowup.json",
             }:
                 record = json.loads(content)
                 require(
                     record["iteration_id"] == leaf
                     and record["release_id"] == (
-                        current_abundance_release(root) if leaf in {"P9-4.9.1a", "P9-4.9.3", "P9-5.1", "P9-5.2"} else
+                        current_abundance_release(root) if leaf in {"P9-4.9.1a", "P9-4.9.3", "P9-5.1", "P9-5.2", "P9-5.3"} else
                         current_parent_release(root) if leaf in {"P9-4.9.1", "P9-4.9.2"} else prior.RELEASE_ID
                     ),
                     "execution record subject mismatch",

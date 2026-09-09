@@ -39,8 +39,8 @@ DEBTS = ("P9-4.9.2-DEBT-PARENTS", "P9-4.9.1a-DEBT-ABUNDANCE")
 # for arbitrary edits or a relabeling of the historical run as a new execution.
 ACCEPTANCE_PROJECTIONS = {
     "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/notebooks/phase9_verification.ipynb": "4789175b7d89d487185761ab9324c311e61e159b2cd789964d1867e6c6c44c69",
-    "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/verification.js": "b0335898cc681a654da95393af86033ecb019c02c25a4c7faccd1aa1d8f9e452",
-    "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/phase9_verification.py": "07b3f558552975ebdab63c6eff252d70ffed01d5269e53f538f697a2dd982360",
+    "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/verification.js": "409b119d2531408092753e5d090b3d35d3e8281c74190900e83602d657764ada",
+    "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/phase9_verification.py": "23637036fedcd2cf941611c74d5be123d0e2c369b9ab41658262a0dabd67ae0d",
     "src/pygrc/models/grc_v4.py": "338ad4195d4c27a492738820b6c88a44b570a9376c2ea5992c1a6fc62b5e5dc4",
     "src/pygrc/models/grc_v4_profile.py": "66441b1c1bd50bd64183dbc39980f2a013f1ce554a10d7364490ff3854ba9988",
     "tests/models/test_grc_v4.py": "54ca792640ccef324db22d9c9275a8ebe274de779a05b2463d802edf3d3d83d7",
@@ -79,6 +79,17 @@ def capture_reuse(current=None):
     }, "captured source population changed")
     corrections = []
     for name, expected in captured.items():
+        if name in A_EXTENSION_PATHS:
+            content = policy.safe_path(ROOT, name).read_bytes()
+            require(current[name] == policy.sha(content), "reused source changed: " + name)
+            original = policy.git(ROOT, "show", "d5e1ede:" + name)
+            require(policy.sha(original) == ACCEPTANCE_PROJECTIONS.get(name, expected),
+                    "A extension has a different C baseline: " + name)
+            a_extension_projection(name, content)
+            corrections.append({"path": name, "original_sha256": expected,
+                                "current_sha256": current[name],
+                                "change": ("shared split diagnostic correction; exact admission preserved; fresh focused regressions in P9-5.3-AuditFollowup.json" if name in SPLIT_DIAGNOSTIC_PATHS else "A additions only; existing C executable AST preserved; focused C regressions recorded in P9-5.3")})
+            continue
         if name not in ACCEPTANCE_PROJECTIONS:
             require(current[name] == expected, "reused source changed: " + name)
             continue
@@ -91,6 +102,108 @@ def capture_reuse(current=None):
             "additional_candidate_A_sources_not_used_for_C_OS_credit": sorted(added),
             "unchanged_capture_bindings": len(captured) - len(corrections),
             "acceptance_projections": corrections}
+
+
+# P9-5.3 extends the shared realization/step owners. This finite projection
+# removes only the named new A definitions/imports and module documentation;
+# every other existing executable statement must match accepted Git source.
+# The two exact diagnostic projections below have separate fresh audit tests.
+# Historical C execution is not relabeled as a new run of these extensions.
+A_EXTENSION_PATHS = {
+    "src/pygrc/models/grc_v4_lifecycle.py": (set(), {}),
+    "src/pygrc/models/grc_v4_realizations.py": (
+        {"_a_os_inputs", "_a_source_geometry", "CandidateAOSPass"},
+        {
+            (1, "grc_v4_candidate_a"): {("HISTORY_POLICY", None), ("CandidateACurrent", None), ("CandidateADifferentialReference", None), ("CandidateAStageError", None)},
+            (1, "grc_v4_geometry"): {("_local_payload", None)},
+        },
+    ),
+    "src/pygrc/models/grc_v4_step.py": (
+        {"ProvisionalCandidateAOSStep"},
+        {
+            (1, "grc_v4_candidate_a"): {("CandidateACurrent", None), ("CandidateADifferentialReference", None), ("CandidateAStageError", None), ("CandidateAWriter", None)},
+            (1, "grc_v4_realizations"): {("CandidateAOSPass", None), ("_a_os_inputs", None)},
+        },
+    ),
+    "tests/models/test_grc_v4_realizations.py": (
+        {"a_os_fixture", "a_scalar_pass", "a_dense_pass", "CandidateAOSIntegrationTests",
+         "a_extreme_split_fixture", "a_split_source_geometry", "split_exact_difference",
+         "split_positive_two_by_two", "CandidateAOSAuditTests", "OSSplitResidualAuditTests"},
+        {
+            (0, "pygrc.models.grc_v4_candidate_a"): {("CandidateACurrent", None), ("CandidateAStageError", None), ("CandidateAWriter", None)},
+            (0, "pygrc.models.grc_v4_codec"): {("V4SchemaError", None)},
+            (0, "pygrc.models.grc_v4_realizations"): {("CandidateAOSPass", None)},
+            (0, "pygrc.models.grc_v4_step"): {("ProvisionalCandidateAOSStep", None)},
+            (0, "tests.models.test_grc_v4_candidate_a"): {("current_fixture", "a_current_fixture"), ("scalar_oracle", "a_conductance_oracle"), ("log_writer_oracle", "a_writer_oracle")},
+        },
+    ),
+}
+
+
+# Only these reviewed diagnostic bodies may differ from the accepted C AST.
+# Admission arithmetic, selector logic, receipt construction and publication
+# order remain compared. Historical campaigns retain their original subject.
+SPLIT_DIAGNOSTIC_PATHS = {
+    "src/pygrc/models/grc_v4_realizations.py": "3dcee65572aa2148558bcdd31612860d954bde991ada32f8b5d0201d6303ac30",
+    "src/pygrc/models/grc_v4_lifecycle.py": "ffb51ab1e968106a93360a34e10ad9a302f9935c11af2ae5864149716c899b26",
+}
+
+
+def split_diagnostic_projection(name, baseline, current):
+    expected = SPLIT_DIAGNOSTIC_PATHS.get(name)
+    if expected is None:
+        return
+    if name.endswith("grc_v4_realizations.py"):
+        old = [n for n in baseline.body if isinstance(n, ast.ClassDef) and n.name == "OSSplitResidual"]
+        new = [(i, n) for i, n in enumerate(current.body) if isinstance(n, ast.ClassDef) and n.name == "OSSplitResidual"]
+        require(len(old) == len(new) == 1, "missing split residual definition")
+        i, node = new[0]
+        require(policy.sha(ast.dump(node).encode()) == expected,
+                "split correction changes existing C beyond reviewed diagnostic: " + name)
+        current.body[i] = deepcopy(old[0])
+    else:
+        def entries(tree):
+            return [(n, i) for n in ast.walk(tree) if isinstance(n, ast.Dict)
+                    for i, k in enumerate(n.keys)
+                    if isinstance(k, ast.Constant) and k.value == "split_residual"]
+        old, new = entries(baseline), entries(current)
+        require(len(old) == len(new) == 1, "missing split residual observation")
+        source, si = old[0]
+        target, ti = new[0]
+        require(policy.sha(ast.dump(target.values[ti]).encode()) == expected,
+                "split correction changes existing C beyond reviewed diagnostic: " + name)
+        target.values[ti] = deepcopy(source.values[si])
+
+
+def a_extension_projection(name, content):
+    baseline = ast.parse(policy.git(ROOT, "show", "d5e1ede:" + name))
+    current = ast.parse(content)
+    split_diagnostic_projection(name, baseline, current)
+    additions, imports = A_EXTENSION_PATHS[name]
+    found, body = [], []
+    for node in current.body:
+        if isinstance(node, (ast.FunctionDef, ast.ClassDef)) and node.name in additions:
+            found.append(node.name)
+            continue
+        if isinstance(node, ast.ImportFrom):
+            allowed = imports.get((node.level, node.module), set())
+            node.names = [a for a in node.names if (a.name, a.asname) not in allowed]
+            if not node.names:
+                continue
+        body.append(node)
+    require(len(found) == len(additions) and set(found) == additions,
+            "missing or duplicated A extension: " + name)
+    current.body = body
+    # Only the module's descriptive title changes; function/class docstrings
+    # and executable bodies, including all C algorithms, remain compared.
+    for tree in (baseline, current):
+        require(isinstance(tree.body[0], ast.Expr)
+                and isinstance(tree.body[0].value, ast.Constant)
+                and isinstance(tree.body[0].value.value, str), "missing module description")
+        tree.body = tree.body[1:]
+    require(ast.dump(current) == ast.dump(baseline),
+            "A extension changes existing C executable source: " + name)
+    return policy.sha(ast.dump(baseline).encode())
 
 
 def retained_fixture_evidence():

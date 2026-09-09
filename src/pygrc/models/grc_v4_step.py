@@ -43,7 +43,18 @@ from .grc_v4_transport import (
     provisional_continuity,
 )
 from .grc_v4_candidate_c import CandidateCCurrent, CandidateCStageError
-from .grc_v4_realizations import CandidateCOSPass, _os_inputs
+from .grc_v4_candidate_a import (
+    CandidateACurrent,
+    CandidateADifferentialReference,
+    CandidateAStageError,
+    CandidateAWriter,
+)
+from .grc_v4_realizations import (
+    CandidateCOSPass,
+    CandidateAOSPass,
+    _a_os_inputs,
+    _os_inputs,
+)
 
 OperationStage: TypeAlias = Literal[
     "admission",
@@ -1116,3 +1127,165 @@ class ProvisionalCandidateCOSStep:
             ("next_inputs", following),
         ):
             object.__setattr__(self, name, value)
+
+
+@dataclass(frozen=True, slots=True)
+class ProvisionalCandidateAOSStep:
+    """A OS pass, one continuity/write, and separate final current admission.
+
+    Positive writer output does not establish current regularity. Reconstruct
+    the written state at consumed geometry and at the next reference geometry
+    before returning any candidate poststate. Neither check can feed back into
+    continuity or the writer. Complete receipt/lifecycle publication remains
+    with the A lifecycle child; a failure leaves all supplied authority intact.
+    """
+
+    inputs: GeometryStageInputs
+    differential_reference: CandidateADifferentialReference
+    os_pass: CandidateAOSPass | None = dataclass_field(init=False)
+    resource: ProvisionalResourceStep = dataclass_field(init=False)
+    writer: CandidateAWriter | None = dataclass_field(init=False)
+    final: CandidateACurrent = dataclass_field(init=False)
+    restart: CandidateACurrent = dataclass_field(init=False)
+    next_inputs: GeometryStageInputs = dataclass_field(init=False)
+
+    def __post_init__(self) -> None:
+        from dataclasses import replace
+        from fractions import Fraction
+        import math
+
+        before = _a_os_inputs(self.inputs)
+        if before.dt > 0 and before.step_index == 2**53 - 1:
+            raise ResourceBoundaryError(
+                "admission",
+                "domain_failure",
+                "step index would exceed the safe integer domain",
+            )
+        graph = before.geometry.reference.graph
+        _resource_charge(before, VertexScalar(graph, before.current.C), "admission")
+        _resource_charge(before, VertexScalar(graph, before.reset.C), "admission")
+        try:
+            CandidateACurrent(
+                replace(before, current=before.reset, stage="reset_readmission"),
+                self.differential_reference,
+            )
+        except (
+            CandidateAStageError,
+            GeometryDomainError,
+            NonfiniteGeometryError,
+        ) as exc:
+            raise ResourceBoundaryError(
+                "pre_read_reconstruction",
+                "nonfinite_value"
+                if isinstance(exc, NonfiniteGeometryError)
+                or isinstance(exc, CandidateAStageError)
+                and exc.disposition == "nonfinite"
+                else "domain_failure",
+                str(exc),
+            ) from exc
+        try:
+            next_time = float(Fraction(before.time) + Fraction(before.dt))
+        except OverflowError as exc:
+            raise ResourceBoundaryError(
+                "admission", "nonfinite_value", "step clock overflow"
+            ) from exc
+        if not math.isfinite(next_time):
+            raise ResourceBoundaryError(
+                "admission", "nonfinite_value", "step clock overflow"
+            )
+        passed = None
+        writer = None
+        if before.dt == 0:
+            try:
+                final = CandidateACurrent(before, self.differential_reference)
+            except (
+                CandidateAStageError,
+                GeometryDomainError,
+                NonfiniteGeometryError,
+            ) as exc:
+                raise ResourceBoundaryError(
+                    "pre_read_reconstruction",
+                    "nonfinite_value"
+                    if isinstance(exc, NonfiniteGeometryError)
+                    or isinstance(exc, CandidateAStageError)
+                    and exc.disposition == "nonfinite"
+                    else "domain_failure",
+                    str(exc),
+                ) from exc
+            resource = ProvisionalResourceStep(before, None)
+            restart, following = final, before
+        else:
+            passed = CandidateAOSPass(before, self.differential_reference)
+            corrector = passed.corrector
+            resource = ProvisionalResourceStep(
+                before,
+                CurrentSelection(corrector.inputs, "valid_root", corrector.current),
+            )
+            stage: OperationStage = "history_write"
+            try:
+                writer = CandidateAWriter(corrector, resource)
+                stage = "final_reconstruction"
+                final = CandidateACurrent(
+                    replace(
+                        corrector.inputs,
+                        current=writer.authority.state,
+                        stage="post_continuity",
+                    ),
+                    self.differential_reference,
+                )
+                following = replace(
+                    before,
+                    current=writer.authority.state,
+                    step_index=before.step_index + 1,
+                    time=next_time,
+                )
+                restart = CandidateACurrent(
+                    replace(following, dt=0, stage="target_readmission"),
+                    self.differential_reference,
+                )
+            except (
+                CandidateAStageError,
+                GeometryDomainError,
+                NonfiniteGeometryError,
+            ) as exc:
+                raise ResourceBoundaryError(
+                    stage,
+                    "nonfinite_value"
+                    if isinstance(exc, NonfiniteGeometryError)
+                    or isinstance(exc, CandidateAStageError)
+                    and exc.disposition == "nonfinite"
+                    else "domain_failure",
+                    str(exc),
+                ) from exc
+        for name, value in (
+            ("inputs", before),
+            ("os_pass", passed),
+            ("resource", resource),
+            ("writer", writer),
+            ("final", final),
+            ("restart", restart),
+            ("next_inputs", following),
+        ):
+            object.__setattr__(self, name, value)
+
+    def to_payload(self) -> dict[str, object]:
+        return {
+            "schema_version": "grcv4-a-os-step-v1",
+            "inputs": self.inputs.to_payload(),
+            "differential_reference": self.differential_reference.to_payload(),
+        }
+
+    @classmethod
+    def from_payload(cls, value: object) -> ProvisionalCandidateAOSStep:
+        data = _local_payload(
+            value,
+            {"schema_version", "inputs", "differential_reference"},
+            "schema_version",
+            "grcv4-a-os-step-v1",
+        )
+        return cls(
+            GeometryStageInputs.from_payload(data["inputs"]),
+            CandidateADifferentialReference.from_payload(
+                data["differential_reference"]
+            ),
+        )

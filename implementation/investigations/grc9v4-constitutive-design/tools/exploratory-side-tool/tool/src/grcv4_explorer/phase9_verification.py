@@ -195,7 +195,7 @@ def verification_status(repo_root: Path) -> dict:
                     for r in approval["runtime_targets"]
                     if r["requires_gate"] == "P9-G1" and set(ready) & owners[r["path"]]
                 ),
-                next_gate="Tranche 4 closed: P9-4.8B / P9-7.7-C_OS accepted for one exact C_OS profile. G3, other profiles and specialization remain closed. P9-5.1 is accepted and P9-5.2 current/writer work is authorized; A_OS conformance, P9-5.3 and G3 remain pending their own acceptance or entry. No numeric abundance definition.",
+                next_gate="Tranche 4 closed: P9-4.8B / P9-7.7-C_OS accepted for one exact C_OS profile. G3, other profiles and specialization remain closed. P9-5.2 is accepted and P9-5.3 numerical A_OS step work is authorized; A_OS lifecycle/conformance, P9-5.4 and G3 remain pending their own acceptance or entry. No numeric abundance definition.",
                 claim_ceiling="G1 is bounded implementation permission. Separate user-accepted G2 covers only the listed complete C_OS profile and reviewed domain; no family-wide, other-profile or specialization conformance is inferred.",
             )
         cross = module.read(

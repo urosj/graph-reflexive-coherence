@@ -114,7 +114,7 @@ def checks(root):
         return namespace
 
     require(
-        status["dependency_ready_leaves"] == ["P9-2.1","P9-2.2","P9-2.3","P9-2.4","P9-2.5","P9-2.6","P9-3.1","P9-3.2","P9-3.3","P9-3.4","P9-3.5","P9-4.1","P9-4.2","P9-4.3","P9-4.4","P9-4.5","P9-4.6","P9-4.7a","P9-4.7b","P9-4.9.1","P9-4.9.1a","P9-4.9.2","P9-4.9.3","P9-5.1","P9-5.2","P9-7.2a-C_OS-NH-NH","P9-7.2a-C_OS-UNSUPPORTED","P9-7.2b-C_OS-MAPPED","P9-7.3-C_OS","P9-7.4-C_OS","P9-7.5-C_OS","P9-7.6-C_OS"]
+        status["dependency_ready_leaves"] == ["P9-2.1","P9-2.2","P9-2.3","P9-2.4","P9-2.5","P9-2.6","P9-3.1","P9-3.2","P9-3.3","P9-3.4","P9-3.5","P9-4.1","P9-4.2","P9-4.3","P9-4.4","P9-4.5","P9-4.6","P9-4.7a","P9-4.7b","P9-4.9.1","P9-4.9.1a","P9-4.9.2","P9-4.9.3","P9-5.1","P9-5.2","P9-5.3","P9-7.2a-C_OS-NH-NH","P9-7.2a-C_OS-UNSUPPORTED","P9-7.2b-C_OS-MAPPED","P9-7.3-C_OS","P9-7.4-C_OS","P9-7.5-C_OS","P9-7.6-C_OS"]
         and status["harness_acceptance"]["record_digest"] == policy.HARNESS_ACCEPTANCE_DIGEST
         and status["harness_acceptance"]["accepted_iterations"] == ["P9-2.5"]
         and status["geometry_acceptance"]["record_digest"] == policy.GEOMETRY_ACCEPTANCE_DIGEST
@@ -158,8 +158,8 @@ def checks(root):
         and "src/pygrc/models/grc_v4_candidate_a.py"
         in status["permitted_runtime_paths"]
         and "tests/models/test_grc_v4_candidate_a.py" in status["permitted_runtime_paths"]
-        and "P9-5.2" in status["dependency_ready_leaves"]
-        and "P9-5.3" not in status["dependency_ready_leaves"],
+        and "P9-5.3" in status["dependency_ready_leaves"]
+        and "P9-5.4" not in status["dependency_ready_leaves"],
         "G1 bypassed generic leaf dependencies",
     )
     require(status["current_boundary"] == "passed", str(status.get("error")))
