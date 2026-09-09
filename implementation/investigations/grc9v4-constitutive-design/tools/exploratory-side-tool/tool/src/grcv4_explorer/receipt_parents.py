@@ -29,7 +29,7 @@ CONTRACT_IDS = (
 )
 
 
-def build_parent_context(repo_root: Path, side_tool_root: Path):
+def build_parent_context(repo_root: Path, side_tool_root: Path, *, historical_only=False):
     """Build from exact sources; callers must check the accepted admission pin."""
     old = load_successor_forensic_context(repo_root, side_tool_root)
     data = load_json_object(repo_root / SOURCE)
@@ -52,6 +52,17 @@ def build_parent_context(repo_root: Path, side_tool_root: Path):
     }
     rows = [d.admission for d in old.documents] + [admission_row]
     observation = discover_sources(repo_root, rows)
+    if historical_only and observation["state"] == "new_unprocessed_source_available":
+        # Reconstruct the pinned P9-4.9.2 observation, never admit new source
+        # here. The current successor independently checks the complete inventory.
+        observation = dict(observation)
+        observation.update(
+            state="current_bundle_exact", observed_record_count=len(rows),
+            added_unprocessed=[], current_repository_state_complete=True,
+            historical_snapshot_only=False, live_rebuild_allowed=True,
+            refresh_requirement={"required": False, "steps": []},
+        )
+        observation["observation_digest"] = record_digest(observation, "observation_digest")
     if observation["state"] != "current_bundle_exact":
         raise SourceAdmissionError(
             "current parent source set is not exact: " + observation["state"]
@@ -191,13 +202,19 @@ def build_parent_context(repo_root: Path, side_tool_root: Path):
     ), binding
 
 
-def load_current_forensic_context(repo_root: Path, side_tool_root: Path):
-    """Current admitted authority, including P9 parents; no fallback to D11."""
-    context, binding = build_parent_context(repo_root, side_tool_root)
+def load_parent_forensic_context(repo_root: Path, side_tool_root: Path):
+    """Pinned historical P9 parent authority; excludes subsequent decisions."""
+    context, binding = build_parent_context(repo_root, side_tool_root, historical_only=True)
     if (load_json_object(side_tool_root / "records" / ADMISSION) != binding
             or binding["record_digest"] != ACCEPTED_ADMISSION_DIGEST):
         raise SourceAdmissionError("parent admission no longer rebuilds exactly")
     return context
+
+
+def load_current_forensic_context(repo_root: Path, side_tool_root: Path):
+    """Current admitted authority; compatibility import, no historical fallback."""
+    from .abundance import load_current_forensic_context as load
+    return load(repo_root, side_tool_root)
 
 
 def parent_authority(repo_root: Path, side_tool_root: Path):

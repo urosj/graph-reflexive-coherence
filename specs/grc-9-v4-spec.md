@@ -1186,6 +1186,15 @@ without its resolved payload is invalid.
 
 ## Observables
 
+Enabled GRC9V4 obeys the [V4 abundance availability contract](grc-common-interface-v4-ext.md#abundance-availability)
+(`P9-4.9.1a-CL-N-001`, paper §14.2.1). It currently exposes the exact unavailable
+triplet. `basin_attributes`, transient basins, expansion and completed sparks do
+not select a numeric definition or imply `v4_abundance_diagnostic`. A future count
+must separately define which objects count, stage, domain and hierarchy treatment
+under the admitted release. The disabled compatibility branch retains the exact
+declared legacy observable projection; do not overwrite legacy abundance or add
+V4-only metadata to that projection. No GRC9V3 repair is made or inferred.
+
 In addition to enabled `GRCV4` observables, expose:
 
 - `active_port_degree`

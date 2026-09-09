@@ -1391,12 +1391,24 @@ P9-3.2 implementation is pending review; runtime support remains empty.
 
 - [x] Register only the separately authorized facade leaf on existing owners;
       preserve parent scope, legacy exports and empty accepted support sets.
-- [x] Keep API/notebook/browser status at pending P9-4.9.1a authority and facade
-      review, with G2 HOLD; P9-4.9.1a is not a runtime-ready or accepted leaf.
-      update the exact readiness roster without changing claim/debt authority.
+- [x] At the original facade stage, keep pending P9-4.9.1a authority separate
+      from G2. The accepted abundance successor below supersedes that status.
 - [x] Allow a scoped notebook current-status query without pressure evidence;
       preserve stale-pressure rejection in full mode and separate output files.
 - [x] Check original parent evidence against accepted Git `d8f26d9` and current
       facade evidence through the existing focused source-capture mechanism.
 - [ ] Complete the separate P9-4.9.3 fixture product and P9-4.8B acceptance;
       do not infer them from targeted facade or boundary checks.
+
+## Phase 9 Tranche 4 — P9-4.9.1a abundance availability
+
+- [x] Record user acceptance of the three-refinement proposal; admit the separate
+      source/graph extension without changing earlier authority classifications.
+- [x] Propagate to proposal/paper §14.2.1 and V4-only specs/release; no numeric
+      definition, scientific-state parameter or legacy repair.
+- [x] Expose actual API/notebook/HTTP/browser authority access with source/edge
+      references and stale-output clearing, not documentation-only access.
+- [x] Route current discovery/verification and exact scoped readiness to the
+      successor; keep original parent/facade runs at their accepted Git subjects.
+- [x] Verify the focused source/runtime/UX controls (11 tests); record exact
+      evidence and limits in the P9-4.9.1a review, not a full campaign claim.

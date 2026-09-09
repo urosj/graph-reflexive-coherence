@@ -7,7 +7,31 @@ The API reconstructs accepted evidence and evaluates a closed set of
 structural counterfactuals; it does not create scientific evidence or predict a
 gate that has not been rerun.
 
-## Current P9 receipt-parent authority
+## Current P9 abundance and receipt-parent authority
+
+P9-4.9.1a is now an accepted append-only availability contract. Use
+`grcv4_explorer.abundance.load_current_forensic_context` for current queries;
+the older import from `receipt_parents` delegates to this same loader.
+`load_parent_forensic_context` reconstructs only the pinned historical P9-4.9.2
+layer. Current discovery must include both sources and fails closed on changed,
+missing or unprocessed source; there is no historical fallback.
+
+```python
+from grcv4_explorer.abundance import load_current_forensic_context, abundance_authority
+
+context = load_current_forensic_context(root, side)
+views = abundance_authority(root, side)
+```
+
+After the root/side setup below, query `P9-4.9.1a-CL-N-001`,
+`P9-4.9.1a-DEBT-ABUNDANCE`, `P9-O-ABUNDANCE-INTERFACE` or
+`P9-EC-ABUNDANCE-INTERFACE`, `P9-EC-ABUNDANCE-OBSERVATION` and
+`P9-EC-ABUNDANCE-FAILURE-AND-CEILING` with the existing typed functions.
+The debt is resolved at bounded design scope, with implementation/product review
+still distinct. No numeric definition, GRC9V4 runtime support or G2 is inferred.
+**Load abundance authority** in the Phase 9 browser and the notebook's
+`abundance-authority` cell expose those same traces, including classifications,
+source/edge references and trace digests; failure clears stale output.
 
 For current claim investigations, use the append-only P9 context below. The
 existing `load_successor_forensic_context` intentionally reconstructs D11 only;

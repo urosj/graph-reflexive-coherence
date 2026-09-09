@@ -77,17 +77,18 @@ def verify(root, boundary_only=False):
     policy.prior.run_logged(
         [
             sys.executable,
-            str(root / policy.PARENT_RELEASE_BUILDER),
+            str(root / policy.ABUNDANCE_RELEASE_BUILDER),
             "--check",
         ],
         root,
-        "current_accepted_receipt_parent_release",
+        "current_accepted_abundance_release",
         commands,
     )
     if not boundary_only:
         predecessor_checks(root, commands)
         for label, script in [
             ("P9492_parent_authority_surfaces", policy.SCRIPTS + "test_p9492_parents.py"),
+            ("P9491a_abundance_authority_surfaces", policy.SCRIPTS + "test_p9491a_abundance.py"),
             ("P9_G1_authority_pressure", policy.HERE + "test_phase9_g1.py"),
             ("P9_G1_API_notebook", policy.SCRIPTS + "test_phase9_g1_surfaces.py"),
         ]:
@@ -97,9 +98,10 @@ def verify(root, boundary_only=False):
         # The accepted parent run belongs to its immutable Git subject. Shared
         # source changes are now checked by P9-4.9.1's focused successor record.
         policy.parent_runtime_evidence(root)
+        policy.facade_runtime_evidence(root)
         policy.prior.run_logged(
-            [sys.executable, str(root / policy.HERE / "verify_p9491_facade.py"), "--check"],
-            root, "P9491_retained_facade_evidence_current_inputs", commands,
+            [sys.executable, str(root / policy.HERE / "verify_p9491a_abundance.py"), "--check"],
+            root, "P9491a_retained_abundance_evidence_current_inputs", commands,
         )
         report = policy.read(root / policy.GENERATED / policy.REPORT_FILE)
         policy.require(
@@ -124,8 +126,8 @@ def verify(root, boundary_only=False):
         "tree": tree,
         "historical_revision": policy.prior.HISTORICAL,
         "accepted_planning_revision": policy.BASELINE,
-        "release_id": policy.current_parent_release(root),
-        "predecessor_release_id": policy.CORRECTED_RELEASE_ID,
+        "release_id": policy.current_abundance_release(root),
+        "predecessor_release_id": policy.PARENT_RELEASE_ID,
         "runtime_authorized": True,
         "P9_G1_accepted": True,
         "accepted_generic_runtime_support": [],

@@ -44,6 +44,7 @@ test('parent successor cannot promote support or substitute an authority identit
 function accepted(extra={}) {
   return fixture({schema:'phase9_governance_status_v2',runtime_authorized:true,P9_G1_accepted:true,
     handoff_evidence:{status:'verified'},
+    abundance_interface_authority:{record_digest:'d9488700be9624da8500c1e533aa65d33b4f36a3307748ad12fd66449d8fe053',policy_id:'grcv4-family-abundance-diagnostic-v1',release_id:'grcv4-spec-release-sha256:e2acd9df0cc02c5fd4bbed4989ff5d7da3a819adeb2950d922b8a6ef4bf35f24',G2_accepted:false,numeric_definition_admitted:false},
     runtime_authority_state:'accepted_P9_G1_bounded_implementation_not_conformance',
     approval_digest:'cd2c52f30477e1042bb903bd0553da237ddccc9cad373afecc1a84e4e0b37ea2',
     resource_acceptance:{record_digest:'3e71b580090ba1712dbec4a1718653c2057e4062200f3367ba0c1ed7adeae6fa',accepted_iterations:['P9-3.3']},
@@ -64,7 +65,7 @@ function accepted(extra={}) {
     integration_acceptance:{record_digest:'e5ba16731e03dc916b8755c5999ab2b59acf431255612e76e0dcebe108104bc2',accepted_iterations:['P9-2.6']},
     geometry_acceptance:{record_digest:'f119e1361500e72f58297bc8186f868954b4065c853fcdd089280a5d28f88618',accepted_iterations:['P9-3.1']},
     stage_acceptance:{record_digest:'425cd05eb85213185a4b531a09c16cefec4be992ac4755d404b5f263e09ebd0a',accepted_iterations:['P9-3.2']},
-    dependency_ready_leaves:["P9-2.1","P9-2.2","P9-2.3","P9-2.4","P9-2.5","P9-2.6","P9-3.1","P9-3.2","P9-3.3","P9-3.4","P9-3.5","P9-4.1","P9-4.2","P9-4.3","P9-4.4","P9-4.5","P9-4.6","P9-4.7a","P9-4.7b","P9-4.9.1","P9-4.9.2","P9-7.2a-C_OS-NH-NH","P9-7.2a-C_OS-UNSUPPORTED","P9-7.2b-C_OS-MAPPED","P9-7.3-C_OS","P9-7.4-C_OS","P9-7.5-C_OS","P9-7.6-C_OS"],permitted_runtime_paths:[...Array.from({length:15},(_,i)=>`synthetic/${i}`),'pyproject.toml','tests/models/grcv4_conformance_harness.py','tests/models/grcv4_reference_oracles.py','src/pygrc/models/__init__.py',"src/pygrc/models/grc_v4_geometry.py","src/pygrc/models/grc_v4_transport.py","tests/models/test_grc_v4_geometry.py","tests/models/test_grc_v4_transport.py","src/pygrc/models/grc_v4_candidate_c.py","tests/models/test_grc_v4_candidate_c.py","src/pygrc/models/grc_v4_realizations.py","tests/models/test_grc_v4_realizations.py","src/pygrc/models/grc_v4_lifecycle.py","tests/models/test_grc_v4_lifecycle.py"],
+    dependency_ready_leaves:["P9-2.1","P9-2.2","P9-2.3","P9-2.4","P9-2.5","P9-2.6","P9-3.1","P9-3.2","P9-3.3","P9-3.4","P9-3.5","P9-4.1","P9-4.2","P9-4.3","P9-4.4","P9-4.5","P9-4.6","P9-4.7a","P9-4.7b","P9-4.9.1","P9-4.9.1a","P9-4.9.2","P9-7.2a-C_OS-NH-NH","P9-7.2a-C_OS-UNSUPPORTED","P9-7.2b-C_OS-MAPPED","P9-7.3-C_OS","P9-7.4-C_OS","P9-7.5-C_OS","P9-7.6-C_OS"],permitted_runtime_paths:[...Array.from({length:15},(_,i)=>`synthetic/${i}`),'pyproject.toml','tests/models/grcv4_conformance_harness.py','tests/models/grcv4_reference_oracles.py','src/pygrc/models/__init__.py',"src/pygrc/models/grc_v4_geometry.py","src/pygrc/models/grc_v4_transport.py","tests/models/test_grc_v4_geometry.py","tests/models/test_grc_v4_transport.py","src/pygrc/models/grc_v4_candidate_c.py","tests/models/test_grc_v4_candidate_c.py","src/pygrc/models/grc_v4_realizations.py","tests/models/test_grc_v4_realizations.py","src/pygrc/models/grc_v4_lifecycle.py","tests/models/test_grc_v4_lifecycle.py"],
     iterations:[4,5,6,7,8,9].map(i=>({iteration_id:`P9-1.${i}`,status:'implemented_and_verified',reviewer_decision:'accepted_by_user'})),...extra});
 }
 test('accepted G1 permission does not imply accepted profile support',async()=>{
@@ -93,6 +94,7 @@ test('missing and invalid handoff evidence do not change accepted permission',as
 
 test('current work can be held while historical acceptance remains verified',async()=>{
   const value=accepted({current_boundary:'failed_closed',runtime_authorized:false,runtime_authority_state:'accepted_P9_G1_current_work_held'});
+  delete value.abundance_interface_authority;
   for(const key of ['implementation_scope','dependency_ready_leaves','permitted_runtime_paths','foundation_acceptance','request_acceptance','result_acceptance','harness_acceptance','integration_acceptance','geometry_acceptance','stage_acceptance','resource_acceptance','numerical_pressure_acceptance','preservation_acceptance','reference_transport_acceptance','c_current_acceptance','c_controls_acceptance','os_pass_acceptance','os_operations_acceptance','lifecycle_batch_authorization','specification_correction','receipt_parent_authority','status_digest']) delete value[key];
   value.status_digest=createHash('sha256').update(canonical(value)).digest('hex');
   assert.equal((await verifiedStatus(value)).P9_G1_accepted,true);
@@ -204,4 +206,10 @@ test('ordered lifecycle batch cannot imply audit closure or open G2', () => {
 test('successor specification authority cannot be omitted or forged', () => {
   const valid = accepted();
   for (const changed of [undefined, {...valid.specification_correction, record_digest:'0'.repeat(64)}, {...valid.specification_correction, release_id:'predecessor'}]) assert.throws(()=>checkedStatus(accepted({specification_correction:changed})));
+});
+
+test('abundance authority cannot imply a detector or open the final review', () => {
+  const valid = accepted();
+  for (const changed of [undefined, {...valid.abundance_interface_authority, record_digest:'0'.repeat(64)}, {...valid.abundance_interface_authority, release_id:'predecessor'}, {...valid.abundance_interface_authority, numeric_definition_admitted:true}, {...valid.abundance_interface_authority, G2_accepted:true}]) assert.throws(()=>checkedStatus(accepted({abundance_interface_authority:changed})));
+  for (const leaf of ['P9-4.9.3','P9-4.8B']) assert.throws(()=>checkedStatus(accepted({dependency_ready_leaves:[...valid.dependency_ready_leaves,leaf]})));
 });

@@ -170,13 +170,21 @@ def verification_status(repo_root: Path) -> dict:
                     "G2_accepted": False,
                 },
                 implementation_scope=approval["runtime_targets"],
+                abundance_interface_authority={
+                    "record_digest": module.accepted_abundance_authority(root)["record_digest"],
+                    "path": module.ABUNDANCE_AUTHORITY,
+                    "policy_id": "grcv4-family-abundance-diagnostic-v1",
+                    "release_id": module.current_abundance_release(root),
+                    "iteration_id": "P9-4.9.1a", "numeric_definition_admitted": False,
+                    "G2_accepted": False,
+                },
                 dependency_ready_leaves=ready,
                 permitted_runtime_paths=sorted(
                     r["path"]
                     for r in approval["runtime_targets"]
                     if r["requires_gate"] == "P9-G1" and set(ready) & owners[r["path"]]
                 ),
-                next_gate="P9-4.9.2 implemented and accepted; P9-4.9.1 facade implemented, interface closure pending P9-4.9.1a abundance authority and review. P9-4.9.1a is planning only, then final P9-4.9.3 reconciliation and P9-4.8B. P9-G2/G3 remain held.",
+                next_gate="P9-4.9.1a abundance availability authority accepted and propagated; bounded C_OS projection implemented, no numeric definition. Next: final P9-4.9.3 evidence reconciliation, then one P9-4.8B review. P9-G2/G3 remain held.",
                 claim_ceiling="Accepted permission to implement reviewed V4 scope is not executed or accepted runtime conformance.",
             )
         cross = module.read(
@@ -329,6 +337,7 @@ def verification_status(repo_root: Path) -> dict:
         payload.pop("lifecycle_batch_authorization", None)
         payload.pop("specification_correction", None)
         payload.pop("receipt_parent_authority", None)
+        payload.pop("abundance_interface_authority", None)
         payload.pop("permitted_runtime_paths", None)
         payload.pop("source_meaning", None)
         payload.pop("tree", None)

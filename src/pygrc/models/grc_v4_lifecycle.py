@@ -12,6 +12,7 @@ from __future__ import annotations
 from dataclasses import dataclass, fields, replace
 from pathlib import Path
 from fractions import Fraction
+from math import isfinite
 from threading import Lock
 from typing import Any, Self, cast
 
@@ -76,6 +77,53 @@ from .grc_v4_transport import ChargeEvaluation, ChargeDomainError
 from .grc_v4_profile import GRCV4Profile
 
 
+def _validate_abundance_projection(
+    projection: dict[str, Any], *, release_id: str, model_identity: str,
+    observed_state_digest: str, stage: str, capability: bool,
+    definition: tuple[str, str, str, str, str, str] | None = None,
+) -> None:
+    """Pure protocol validation, not definition admission or detector execution.
+
+    Production has no admitted definition and never advertises the capability.
+    Synthetic tests exercise the numeric protocol using a declared tuple of
+    (release, model, definition, detector, stage, value-kind). No public receiver
+    accepts this tuple or an injected detector; future admission remains separate.
+    """
+    if set(projection) != {"abundance", "abundance_status", "abundance_observation"}:
+        raise ValueError("invalid abundance projection fields")
+    if not all(isinstance(v, str) and v for v in (release_id, model_identity, observed_state_digest, stage)):
+        raise ValueError("missing abundance observation context")
+    if type(capability) is not bool:
+        raise ValueError("invalid abundance capability")
+    value = projection["abundance"]
+    metadata = projection["abundance_observation"]
+    if definition is None:
+        if capability or value is not None or metadata is not None or projection["abundance_status"] != "unavailable_no_admitted_definition":
+            raise ValueError("no admitted abundance definition")
+        return
+    if (len(definition) != 6 or definition[0:2] != (release_id, model_identity)
+            or definition[4] != stage or definition[5] not in {"count", "nonnegative_number"}
+            or not all(isinstance(v, str) and v for v in definition)):
+        raise ValueError("unresolved abundance definition context")
+    if not capability or projection["abundance_status"] != "available":
+        raise ValueError("declared definition cannot downgrade to unavailable")
+    if type(value) not in (int, float):
+        raise ValueError("abundance must be a finite nonnegative number")
+    try:
+        finite = isfinite(value)
+    except OverflowError:
+        finite = False
+    if (not finite or value < 0 or (type(value) is int and value > 2**53 - 1)
+            or (definition[5] == "count" and (value > 2**53 - 1 or value % 1 != 0))):
+        raise ValueError("invalid abundance numeric value")
+    if type(metadata) is not dict or metadata != {
+        "definition_id": definition[2], "detector_id": definition[3],
+        "stage": stage, "observed_state_digest": observed_state_digest,
+        "model_identity": model_identity,
+    }:
+        raise ValueError("stale or invalid abundance observation metadata")
+
+
 def _public_observables(
     inputs: GeometryStageInputs,
     ledger: tuple[SuccessfulReceiptEnvelope, ...],
@@ -89,20 +137,24 @@ def _public_observables(
 ) -> dict[str, Any]:
     """Detached projections; no new scientific state or retained solver cache.
 
-    The common abundance key has no accepted V4 definition (in particular no
-    V4 sink/basin contract). Null with an explicit status avoids inventing a
-    number or silently importing legacy sink semantics.
+    P9-4.9.1a admits availability semantics, not a numeric V4 definition.
+    No detector is advertised or run; no basin/charge proxy is inferred.
     """
     ref = inputs.geometry.reference
     identity = ref.profile.identity_payload
+    abundance = {"abundance": None, "abundance_status": "unavailable_no_admitted_definition",
+                 "abundance_observation": None}
+    _validate_abundance_projection(
+        abundance, release_id=RELEASE_ID, model_identity=ref.profile.complete_profile_id,
+        observed_state_digest=inputs.scientific_state_id, stage=stage, capability=False,
+    )
     return {
         "stage": stage,
         "budget_current": charge.actual,
         "budget_error": charge.residual,
         "num_nodes": len(ref.graph.live_node_ids),
         "num_edges": len(ref.graph.oriented_edges),
-        "abundance": None,
-        "abundance_status": "not_defined_by_v4_contract",
+        **abundance,
         "complete_profile_id": ref.profile.complete_profile_id,
         "candidate_id": identity.candidate,
         "realization_id": identity.realization,

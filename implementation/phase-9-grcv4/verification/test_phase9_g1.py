@@ -719,8 +719,8 @@ def main():
         for name, expected in [
             ("specs/grc-v4-conformance-vectors.json", "unrelated release member changed"),
             ("implementation/investigations/grc9v4-constitutive-design/scripts/build_grcv4_specification_vectors.py", "unrelated release member changed"),
-            ("specs/grc-v4-specification-release.json", "parent successor output changed"),
-            ("src/pygrc/models/grc_v4_assets/asset-index.json", "parent successor output changed"),
+            ("specs/grc-v4-specification-release.json", "abundance successor output changed"),
+            ("src/pygrc/models/grc_v4_assets/asset-index.json", "abundance successor output changed"),
             (p.CORRECTION_BUILDER, "unrelated release member changed"),
         ]:
             def changed_correction(name=name):
@@ -731,11 +731,11 @@ def main():
         def changed_codec_pin():
             name = "src/pygrc/models/grc_v4_codec.py"
             source = (root / name).read_bytes()
-            source = source.replace(p.current_parent_release(root).split(":")[1].encode(), b"0" * 64)
+            source = source.replace(p.current_abundance_release(root).split(":")[1].encode(), b"0" * 64)
             with mutate(name, source):
                 p.accepted_specification_correction(root)
         case("successor_rejects_actual_codec_pin_change", changed_codec_pin,
-             "codec does not pin the parent successor release",
+             "codec does not pin the abundance successor release",
              scope="isolated_specification_correction_authentication")
         for key, replacement in [("status", "proposed"), ("G2_accepted", True),
                                  ("policy_id", "ordinary-only")]:

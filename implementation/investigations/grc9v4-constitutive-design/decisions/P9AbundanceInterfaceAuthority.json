@@ -1,0 +1,69 @@
+{
+  "schema_version": "grcv4_p9_abundance_interface_authority_v1",
+  "record_id": "GRCV4-P9-4.9.1a-ABUNDANCE-v1",
+  "status": "accepted_by_user_for_implementation",
+  "accepted_on": "2026-09-09",
+  "acceptance": "User explicitly accepted the audit-refined proposal and authorized continuation. This accepts bounded interface authority, not numeric abundance or G2.",
+  "design_path": "implementation/investigations/grc9v4-constitutive-design/decisions/P9AbundanceInterfaceAuthorityProposal.md",
+  "policy_id": "grcv4-family-abundance-diagnostic-v1",
+  "predecessor_release_id": "grcv4-spec-release-sha256:f777519824f86c3e9382bcf9b45cba28554351506f354d3f778746e2aaff5c6b",
+  "predecessor_commit": "7905e7e22bb2fb37f09d0de01f3f161b83332618",
+  "source_contract_ids": [
+    "D10.2-EC-PARENT-SPEC-COMPOSITION-PROFILE-IDENTITY",
+    "D10.2-EC-PARENT-L-SNAPSHOT-RESET",
+    "D10.2-EC-PARENT-GRC9-CHILD-BASIN-STABILIZATION",
+    "D10.2-EC-PARENT-BASE-DISABLED-OBSERVABLE",
+    "D10.2-EC-DISABLED-C_OS-OBSERVABLE"
+  ],
+  "claim": {
+    "claim_id": "P9-4.9.1a-CL-N-001",
+    "claim_class": "normative",
+    "status": "accepted_bounded_design",
+    "statement": "Enabled V4 retains the required common abundance key; numeric availability requires an admitted release-bound family definition and total detector. Without an admitted definition it publishes the exact unavailable triplet, never an invented numeric proxy.",
+    "scope": "V4 availability semantics only; no numeric functional is selected for generic GRCV4 or enabled GRC9V4.",
+    "not_claimed": ["numeric_abundance_definition", "generic_basin_detector", "increasing_abundance", "RC_theorem", "G2_acceptance", "other_profile_runtime_support", "GRC9_runtime_support", "legacy_semantic_repair"]
+  },
+  "debt": {
+    "debt_id": "P9-4.9.1a-DEBT-ABUNDANCE",
+    "status": "resolved_bounded_design",
+    "transformation": "The inherited-interface availability gap is resolved by explicit new authority, not attributed retroactively to D10.2/D11 or treated as an intentional accepted deferral.",
+    "successor_claim_ids": ["P9-4.9.1a-CL-N-001"],
+    "origin": "P9-4.8 G2-COS-INTERFACE; P9-4.9.1 interim null projection",
+    "remaining_work": ["source_to_paper_spec_runtime_conformance", "final_evidence_reconciliation_P9-4.9.3", "integrated_G2_review_P9-4.8B"]
+  },
+  "object": {
+    "object_id": "P9-O-ABUNDANCE-INTERFACE",
+    "object_role": "required abundance observable and release-bound numeric availability",
+    "accepted_claim_ids": ["P9-4.9.1a-CL-N-001"]
+  },
+  "contracts": [
+    {
+      "equation_contract_id": "P9-EC-ABUNDANCE-INTERFACE",
+      "parent_object_ids": ["P9-O-ABUNDANCE-INTERFACE"],
+      "accepted_claim_ids": ["P9-4.9.1a-CL-N-001"],
+      "support_semantics": "required",
+      "normative_equation_or_contract": "Enabled compute_observables and successful ordinary-step observable maps always expose abundance, abundance_status and abundance_observation. No admitted definition means exactly null, unavailable_no_admitted_definition, null. Numeric zero means a detector computed zero, not unavailability. Available mode requires v4_abundance_diagnostic for the exact model, admitted release, definition and detector; basin_attributes or specialization alone does not imply it. Failed results and lifecycle methods returning no observables gain no new fields.",
+      "unavailable_projection": {"abundance": null, "abundance_status": "unavailable_no_admitted_definition", "abundance_observation": null},
+      "capability": "v4_abundance_diagnostic",
+      "admitted_numeric_definitions": []
+    },
+    {
+      "equation_contract_id": "P9-EC-ABUNDANCE-OBSERVATION",
+      "parent_object_ids": ["P9-O-ABUNDANCE-INTERFACE"],
+      "accepted_claim_ids": ["P9-4.9.1a-CL-N-001"],
+      "support_semantics": "required",
+      "normative_equation_or_contract": "Available abundance is a finite nonnegative I-JSON number, never bool; integer counts are safe integers. The closed observation object has exactly definition_id, detector_id, stage, observed_state_digest and model_identity. The admitted versioned family definition owns units, domain, reduction/counting, thresholds and deterministic order. It uniquely resolves under the producing interface/specification release; model_identity alone never implies diagnostic semantics. Read-only observation binds one captured committed state; step observation binds the fully reconstructed prospective target, not the operation source or predictor. Exported observations retain release and definition/detector source context; missing context never defaults to the currently installed release. Incompatible state/profile/graph/context changes invalidate cached observations. No numeric definition is admitted here."
+    },
+    {
+      "equation_contract_id": "P9-EC-ABUNDANCE-FAILURE-AND-CEILING",
+      "parent_object_ids": ["P9-O-ABUNDANCE-INTERFACE"],
+      "accepted_claim_ids": ["P9-4.9.1a-CL-N-001"],
+      "support_semantics": "required",
+      "normative_equation_or_contract": "An advertised detector is total over its advertised domain and has an admitted typed error contract. Unsupported declared definitions reject support/admission, never downgrade to unavailable. Failure on an otherwise admitted state is a conformance/programmer error, not a scientific outcome; it raises before sole publication and preserves full prestate, never returning null, zero or stale success. API failure may abort publication, but diagnostic values never control constitutive evolution, admission, solver disposition, sparks or selection. No diagnostic state, trajectory parameter, authoritative history, mutable callback, scientific receipt kind or model/profile identity coordinate is added. Definition/release revisions may leave scientific model identity unchanged. Disabled GRC9V4 delegates exact legacy observable semantics and projects out V4-only fields; no common/V3/GRC9V3 repair or enabled GRC9V4 count is inferred."
+    }
+  ],
+  "accepted_generic_runtime_support": [],
+  "admitted_specialization_support_sets": [],
+  "G2_accepted": false,
+  "record_digest": "d9488700be9624da8500c1e533aa65d33b4f36a3307748ad12fd66449d8fe053"
+}

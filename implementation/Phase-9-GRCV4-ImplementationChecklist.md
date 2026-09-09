@@ -614,11 +614,12 @@ three bounded batches retain their own results and raw per-run manifests.
   discharge its obligations through P9-4.9.1–P9-4.9.3 and the successor P9-4.8B
   result, not by relabeling the historical HOLD. A_OS and `P9-G3[C_OS]` remain
   behind G2.
-- [ ] P9-4.9.1: Public C_OS facade implemented and 14 focused tests passed;
-  interface closure is blocked on P9-4.9.1a and user review. See the
+- [x] P9-4.9.1: Bounded public C_OS facade implementation accepted in `7905e7e`;
+  14 focused tests passed at that subject. P9-4.9.1a supplies the subsequent
+  abundance authority/projection; final product review is P9-4.9.3/P9-4.8B. See the
   [method/test mapping and ceilings](./phase-9-grcv4/tranche-4/P9-4.9.1-Review.md).
-  `abundance` remains an explicit interim placeholder without accepted V4
-  semantics; it does not close public-interface or G2 conformance.
+  The former interim `abundance` placeholder is superseded, not retroactively
+  treated as accepted semantics in the original run. G2 remains held.
   Close the public C_OS common/V4 interface integration deferred
   from P9-2.6 and its consumers (`G2-COS-INTERFACE`). Implement the specified
   `GRCV4(GRCModel)` facade using the existing sole atomic publication owner.
@@ -631,20 +632,29 @@ three bounded batches retain their own results and raw per-run manifests.
   duration inputs, atomic failure, exact profile/model discovery and capability
   truth. Update stage-local no-facade assertions only with real integration;
   registered test targets do not establish accepted public support.
-- [ ] P9-4.9.1a: Resolve the narrow abundance-interface authority gap under
+- [x] P9-4.9.1a: Resolve the narrow abundance-interface authority gap under
   `G2-COS-INTERFACE`, without reopening accepted constitutive/lifecycle results.
+  The [source-checked proposal](./investigations/grc9v4-constitutive-design/decisions/P9AbundanceInterfaceAuthorityProposal.md)
+  incorporates all three proposal-audit refinements: `observed_state_digest`,
+  detector totality/conformance failure and release-bound definition identity.
+  The user explicitly accepted this refined rule on 2026-09-09. Source admission,
+  proposal/paper §14.2.1, V4 specs/release and bounded C_OS projection are implemented;
+  11 focused tests passed. The [abundance review](./phase-9-grcv4/tranche-4/P9-4.9.1a-Review.md)
+  records the validation-time scope and pending review. The user's subsequent
+  commit instruction accepts this bounded implementation, not G2; preserve the
+  original execution/review records and continue next with final P9-4.9.3.
   Distinguish theoretical identity multiplicity from an instantaneous diagnostic.
-  Propose family/capability ownership; do not accept it merely by adding this row.
+  Apply accepted family/capability ownership; numeric abundance remains unadmitted.
   Decide exact V4 key/availability/type/unavailable semantics and any admitted
-  detector/stage, read-only status and consumer compatibility. Current null/status
-  is not an accepted resolution; no invented charge, topology or basin proxy.
+  detector/stage, read-only status and consumer compatibility. The accepted exact
+  unavailable triplet supersedes the interim null/status; no invented proxy.
   Record the bounded investigation decision, obtain acceptance, and propagate
   through claims/tooling and proposal/paper/V4 specs as applicable before changing
   runtime semantics. Keep legacy/common/V3 files unchanged; explain any V4
   inheritance exception explicitly in the V4 extension. Add only affected tests
   for availability, capability truth, stages, restoration and nonmutation.
-  Keep final P9-4.9.1/P9-4.9.3 public-interface and G2 closure held until resolved.
-  Planning only: no new runtime permission, accepted rule or extra governance gate.
+  Keep final P9-4.9.3/P9-4.8B product review separate. Only the existing
+  lifecycle/codec/test/packaged-release paths gain P9-4.9.1a permission; no extra gate.
 - [x] P9-4.9.2: Resolve P9-2.4/P9-7.6's receipt-parent authority obligation.
   The user accepted the [uniform predecessor decision](./investigations/grc9v4-constitutive-design/decisions/P9ReceiptParentAuthorityProposal.md)
   on 2026-09-09; the 9 valid and 16 invalid symbolic controls are design evidence

@@ -33,17 +33,17 @@
       "role": "canonical_grcv4_substrate_paper",
       "path": "implementation/investigations/grc9v4-constitutive-design/drafts/2026-09-GRC-V4.md",
       "commit_sha": "073a8014c745426d164be5e7d81223cea0d5d370",
-      "file_sha256": "8e8dd0119c8aa3c4695dc9f65a303cdfcffa5adeba02f04246d6e6ea8d5fd062",
-      "semantic_status": "canonical_D11_and_P9_receipt_parent_integrated_mathematical_authority",
-      "commit_sha_semantics": "historical extraction locator; file_sha256 binds the current P9 receipt-parent propagation"
+      "file_sha256": "8a7f86b51e1df0a3bb9d5503007c15784d27ca99dbbd85cf5d4b61ab4a27d3fc",
+      "semantic_status": "canonical_D11_P9_receipt_parent_and_abundance_availability_authority",
+      "commit_sha_semantics": "historical extraction locator; file_sha256 binds current P9 propagation"
     },
     {
       "role": "proposal_and_provenance_companion",
       "path": "implementation/investigations/grc9v4-constitutive-design/drafts/GRCV4-proposal.md",
       "commit_sha": "a96efea38a74d71d391c1217dbb202008575c2be",
-      "file_sha256": "6b2877aaefd8345d5137181ce9f544546d8e93e01fecc8f3581a08bd60b0b791",
-      "semantic_status": "provenance_companion_not_coequal_mathematical_authority",
-      "commit_sha_semantics": "historical extraction locator; file_sha256 binds the current P9 receipt-parent propagation"
+      "file_sha256": "6a1935c9158e3391e8ed1ad7ab9cc891f4aad1ce2fbd12da89aa8b6469a5b7c0",
+      "semantic_status": "proposal_provenance_with_P9_abundance_availability",
+      "commit_sha_semantics": "historical extraction locator; file_sha256 binds current P9 propagation"
     },
     {
       "role": "d10_specification_authority",
@@ -177,5 +177,11 @@
     "claim_id": "P9-4.9.2-CL-N-001",
     "policy_id": "grcv4-previous-successful-primary-v1",
     "authority": "accepted_bounded_structural_contract_not_G2_acceptance"
+  },
+  "abundance_interface_successor": {
+    "path": "implementation/investigations/grc9v4-constitutive-design/decisions/P9AbundanceInterfaceAuthority.json",
+    "claim_id": "P9-4.9.1a-CL-N-001",
+    "policy_id": "grcv4-family-abundance-diagnostic-v1",
+    "authority": "accepted_availability_contract_not_numeric_definition_or_G2"
   }
 }

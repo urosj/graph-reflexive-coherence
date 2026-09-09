@@ -7,19 +7,36 @@ The user accepted the receipt-parent design and requested full implementation:
 the admitted claim/debt overlay, actual tool UX, proposal/paper/spec successor
 and internal C_OS parent rule are implemented. Consult that review and the
 current checklist for validation/acceptance state. P9-4.9.2 was accepted in
-`d8f26d9`. The public C_OS facade is implemented with focused evidence, pending
-user review. Its `abundance` diagnostic is an explicit interim placeholder, not
-accepted interface semantics or inferred legacy sinks. The next planned item
-is **P9-4.9.1a abundance interface authority closure**, before final P9-4.9.3
-reconciliation and the single P9-4.8B G2 review. Family/capability ownership is
-the preferred proposal only. Do not repeat the initial inventory or reopen
-unaffected scientific implementation results.
+`d8f26d9`. The bounded public C_OS facade implementation and focused evidence
+were accepted in `7905e7e`. The user then explicitly accepted the audit-refined
+**P9-4.9.1a abundance availability authority** on 2026-09-09 and authorized
+implementation. It is admitted through the forensic API and propagated through
+proposal/paper §14.2.1, the V4 specs and the C_OS projection. Consult the
+[abundance review](./phase-9-grcv4/tranche-4/P9-4.9.1a-Review.md) for focused
+verification and limits. The next work is **final P9-4.9.3 reconciliation**,
+then the single P9-4.8B G2 review. Do not repeat the initial inventory or reopen
+unaffected scientific results.
 G2 remains held; no support set is promoted.
 
-Lean checks: use `verification/verify_p9491_facade.py --check` and
+The [P9-4.9.1a proposal](./investigations/grc9v4-constitutive-design/decisions/P9AbundanceInterfaceAuthorityProposal.md)
+is accepted. All three refinements
+(observed-state naming, detector totality/conformance failure, and release-bound
+definition identity) are incorporated; the user's explicit acceptance followed
+the conditional audit. The rule is a required common key,
+explicit unavailable triplet for C_OS, and numeric capability only with a separately
+admitted family definition/detector/stage. No numeric functional is admitted.
+The new release preserves scientific/model/reset identity and the v3 snapshot
+layout, but old-release snapshots remain explicitly rejected. The old parent
+and facade runs are retained at their Git subjects, not relabeled as current.
+The user's subsequent instruction to commit accepts the bounded P9-4.9.1a
+implementation and its focused evidence. The review/execution records retain
+their validation-time pending disposition; this handoff and the commit record
+the later acceptance. G2 remains held; 4.9.3 has not been started here.
+
+Lean checks: use `verification/verify_p9491a_abundance.py --check` and
 `verification/audit_phase9_implementation.py --boundary-only` under
 `implementation/phase-9-grcv4/`, with `.venv/bin/python` from the repository
-root. The accepted parent run is checked at its original Git subject; the new
+root. The accepted parent/facade runs are checked at their original Git subjects; the new
 focused record binds current source. Neither check reruns numerical tests or
 claims fresh full historical/browser verification.
 

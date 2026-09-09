@@ -27,6 +27,12 @@ The implementation strategy assumed by these specs is:
 
 ## GRCV4 phase boundary
 
+The current release also binds the [accepted abundance availability authority](../implementation/investigations/grc9v4-constitutive-design/decisions/P9AbundanceInterfaceAuthority.json),
+propagated through proposal/paper §14.2.1 and the V4 interface/family specs.
+`grcv4-family-abundance-diagnostic-v1` preserves the required key with explicit
+unavailability; it admits no numeric definition, changes no older version and
+does not accept G2. Earlier execution records retain their source/release identity.
+
 Phase 9 now additionally uses the [accepted receipt-parent authority](../implementation/investigations/grc9v4-constitutive-design/decisions/P9ReceiptParentAuthority.json),
 propagated through proposal, paper §12.5.1 and the V4 interface/family specs.
 The current [successor release](grc-v4-specification-release.json) binds

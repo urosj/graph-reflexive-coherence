@@ -88,36 +88,10 @@ def capture(destination):
 
 
 def inspect():
+    """Accepted facade evidence is historical after the abundance successor."""
     import phase9_implementation_policy as policy
-
-    record = json.loads((ROOT / RUN).read_text())
-    if (
-        record["schema"] != "phase9_leaf_focused_run_v1"
-        or record["status"] != "passed" or record["iteration_id"] != "P9-4.9.1"
-        or record["base_commit"] != policy.PARENT_IMPLEMENTATION_COMMIT
-        or record["release_id"] != policy.current_parent_release(ROOT)
-        or record["G2_accepted"] is not False
-        or record["accepted_generic_runtime_support"] != []
-        or record["admitted_specialization_support_sets"] != []
-        or record["source_unchanged"] is not True
-        or record["coverage"]["passed"] is not True
-        or record["results"]["tests_run"] != len(REQUIRED)
-        or any(record["results"][k] for k in ("failures", "errors", "skips"))
-        or record["required_ids"] != sorted(REQUIRED)
-        or record["source_bindings"] != source_hashes()
-        or any(record["loaded_sources_after"].get(name) != row
-               for name, row in record["loaded_sources_before"].items())
-    ):
-        raise ValueError("facade evidence does not match its current inputs or focused roster")
-    historical = policy.parent_runtime_evidence(ROOT)
-    ready, owners = policy.leaf_permissions(ROOT)
-    if ("P9-4.9.1" not in ready
-        or {path for path, leaves in owners.items() if "P9-4.9.1" in leaves} != policy.FACADE_RUNTIME_PATHS
-        or "P9-4.9.2" in owners["src/pygrc/models/grc_v4.py"]
-        or "P9-4.9.3" in ready or "P9-4.8B" in ready):
-        raise ValueError("facade permission must remain distinct from parent authority and G2")
-    return {"status": "passed", "tests": len(REQUIRED), "G2_accepted": False,
-            "parent_evidence_subject": historical["subject_commit"]}
+    return {"status": "passed", "scope": "historical_facade_subject",
+            **policy.facade_runtime_evidence(ROOT)}
 
 
 if __name__ == "__main__":

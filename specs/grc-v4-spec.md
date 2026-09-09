@@ -1626,6 +1626,14 @@ $$
 
 ## Observables
 
+The [V4 abundance availability contract](grc-common-interface-v4-ext.md#abundance-availability)
+is normative, following paper §14.2.1 and `P9-4.9.1a-CL-N-001`.
+Every enabled profile, including C_OS, retains `abundance` and currently publishes
+the exact unavailable triplet; no numeric definition or `v4_abundance_diagnostic`
+capability is admitted here. This does not introduce a generic basin detector,
+scientific state or profile parameter. Future numeric support requires separately
+admitted release-bound family semantics and total detector conformance.
+
 In addition to common observables, every instance must expose:
 
 - `complete_profile_id`

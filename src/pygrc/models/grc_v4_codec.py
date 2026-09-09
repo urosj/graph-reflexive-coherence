@@ -24,10 +24,10 @@ JSONValue: TypeAlias = (
 
 RELEASE_ID = (
     "grcv4-spec-release-sha256:"
-    "f777519824f86c3e9382bcf9b45cba28554351506f354d3f778746e2aaff5c6b"
+    "e2acd9df0cc02c5fd4bbed4989ff5d7da3a819adeb2950d922b8a6ef4bf35f24"
 )
 _ASSET_PACKAGE = "pygrc.models.grc_v4_assets"
-_INDEX_SHA256 = "b2b00db16dc7db81be8b5b4cec658e480b5b80ba2e96ddd9516bc089577948f5"
+_INDEX_SHA256 = "6d4adce3ac2d98a1c16c82f31768be7e1a1480df5aaf886d2507b0e1a7dc55b2"
 
 
 class V4DependencyError(RuntimeError):

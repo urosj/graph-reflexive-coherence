@@ -22,6 +22,7 @@ from grcv4_explorer.source_contract import (  # noqa: E402
     load_d11_source_contract,
 )
 from grcv4_explorer.receipt_parents import ADMISSION, ACCEPTED_ADMISSION_DIGEST  # noqa: E402
+from grcv4_explorer.abundance import ADMISSION as ABUNDANCE_ADMISSION, ACCEPTED_ADMISSION_DIGEST as ABUNDANCE_DIGEST  # noqa: E402
 
 
 def require_repository_venv(repo_root: Path) -> None:
@@ -46,6 +47,10 @@ def main() -> int:
         if admission.get("record_digest") != record_digest(admission, "record_digest") or admission["record_digest"] != ACCEPTED_ADMISSION_DIGEST:
             raise ValueError("current discovery admission is not pinned")
         rows.append(admission["source"])
+        abundance = load_json_object(SIDE_TOOL_ROOT / "records" / ABUNDANCE_ADMISSION)
+        if abundance.get("record_digest") != record_digest(abundance, "record_digest") or abundance["record_digest"] != ABUNDANCE_DIGEST:
+            raise ValueError("abundance discovery admission is not pinned")
+        rows.append(abundance["source"])
     observation = discover_sources(repo_root, rows)
     generated = TOOL_ROOT / "generated"
     generated.mkdir(parents=True, exist_ok=True)

@@ -99,6 +99,18 @@ PARENT_RELEASE_BUILDER = HERE + "build_receipt_parent_release.py"
 PARENT_RELEASE_ID = "grcv4-spec-release-sha256:f777519824f86c3e9382bcf9b45cba28554351506f354d3f778746e2aaff5c6b"
 PARENT_IMPLEMENTATION_COMMIT = "d8f26d925272c83c2e289261c6fd988a2b05b4a5"
 PARENT_RUN_SHA256 = "d499ba3aa205ace577c317f2ced98837ff1ee593ccd20c4b80ec6a0392a86ac9"
+ABUNDANCE_AUTHORITY = INV + "decisions/P9AbundanceInterfaceAuthority.json"
+ABUNDANCE_AUTHORITY_DIGEST = "d9488700be9624da8500c1e533aa65d33b4f36a3307748ad12fd66449d8fe053"
+ABUNDANCE_RELEASE_BUILDER = HERE + "build_abundance_release.py"
+ABUNDANCE_RELEASE_ID = "grcv4-spec-release-sha256:e2acd9df0cc02c5fd4bbed4989ff5d7da3a819adeb2950d922b8a6ef4bf35f24"
+FACADE_IMPLEMENTATION_COMMIT = "7905e7e22bb2fb37f09d0de01f3f161b83332618"
+ABUNDANCE_RUNTIME_PATHS = {
+    "src/pygrc/models/grc_v4_lifecycle.py", "src/pygrc/models/grc_v4_codec.py",
+    "tests/models/test_grc_v4.py",
+    "src/pygrc/models/grc_v4_assets/asset-index.json",
+    "src/pygrc/models/grc_v4_assets/grc-v4-specification-release.json",
+    "src/pygrc/models/grc_v4_assets/grc-v4-specification-release.sha256",
+}
 # Separate explicit user request to continue P9-4.9.1 after accepting/committing
 # P9-4.9.2. This does not broaden the parent leaf or authorize G2 acceptance.
 FACADE_RUNTIME_PATHS = {
@@ -176,6 +188,14 @@ HANDOFF_PATHS = {
     HERE + "handoff/P9-G1-outputs.zip",
 }
 PATHS = {
+    # Explicitly user-accepted P9-4.9.1a availability authority; no numeric/G2 grant.
+    INV + "decisions/P9AbundanceInterfaceAuthorityProposal.md",
+    ABUNDANCE_AUTHORITY, ABUNDANCE_RELEASE_BUILDER,
+    "specs/grc-9-v4-spec.md",
+    SIDE + "records/P9491aAbundanceAdmission.json",
+    SIDE + "tool/src/grcv4_explorer/abundance.py",
+    SCRIPTS + "test_p9491a_abundance.py",
+    HERE + "verify_p9491a_abundance.py",
     HERE + "verify_p9491_facade.py",
     # User-authorized P9-4.8 gate review only. This does not add runtime-ready
     # leaves, editable runtime paths, or accepted profile support.
@@ -763,7 +783,7 @@ def accepted_specification_correction(root):
     # The old correction is historical authority, not a current-tree veto.
     # The parent successor binds that exact release and freezes all unrelated
     # members. Do not make the old builder reinterpret new paper/spec bytes.
-    current_parent_release(root)
+    current_abundance_release(root)
     return value
 
 
@@ -779,19 +799,39 @@ def accepted_parent_authority(root):
 
 
 def current_parent_release(root):
+    """Historical parent release, not a veto on the accepted successor tree."""
     accepted_parent_authority(root)
+    historical = json.loads(git(root, "show", FACADE_IMPLEMENTATION_COMMIT + ":specs/grc-v4-specification-release.json"))
+    require(historical["release_id"] == PARENT_RELEASE_ID,
+            "historical parent release changed")
+    return PARENT_RELEASE_ID
+
+
+def accepted_abundance_authority(root):
+    value = read(safe_path(root, ABUNDANCE_AUTHORITY))
+    require(value["record_digest"] == digest_record(value) == ABUNDANCE_AUTHORITY_DIGEST
+            and value["status"] == "accepted_by_user_for_implementation"
+            and value["G2_accepted"] is False
+            and value["accepted_generic_runtime_support"] == []
+            and value["admitted_specialization_support_sets"] == [],
+            "untrusted abundance availability authority")
+    return value
+
+
+def current_abundance_release(root):
+    accepted_abundance_authority(root)
     # Use the builder's own CLI/import context. API and notebook callers must
     # not depend on the verifier directory being in their sys.path, or mutate
     # process-global import paths while concurrent read-only queries execute.
     result = subprocess.run(
-        [sys.executable, str(safe_path(root, PARENT_RELEASE_BUILDER)), "--check"],
+        [sys.executable, str(safe_path(root, ABUNDANCE_RELEASE_BUILDER)), "--check"],
         cwd=root, capture_output=True, text=True,
     )
     require(result.returncode == 0,
-            "receipt-parent release check failed: " + result.stdout + result.stderr)
-    require(result.stdout.strip() == "P9492_PARENT_RELEASE_PASS release_id=" + PARENT_RELEASE_ID,
-            "untrusted receipt-parent successor release")
-    return PARENT_RELEASE_ID
+            "abundance release check failed: " + result.stdout + result.stderr)
+    require(result.stdout.strip() == "P9491A_ABUNDANCE_RELEASE_PASS release_id=" + ABUNDANCE_RELEASE_ID,
+            "untrusted abundance successor release")
+    return ABUNDANCE_RELEASE_ID
 
 
 def parent_runtime_evidence(root):
@@ -826,6 +866,28 @@ def parent_runtime_evidence(root):
             "parent run loaded-source attribution changed")
     return {"path": name, "sha256": sha(data), "subject_commit": PARENT_IMPLEMENTATION_COMMIT,
             "G2_accepted": False}
+
+
+def facade_runtime_evidence(root):
+    """Original 14-test facade run stays bound to its accepted Git subject."""
+    name = PHASE + "evidence/P9-4.9.1/facade/run.json"
+    data = safe_path(root, name).read_bytes()
+    require(sha(data) == "bdfd0afd24dc5b2401c21827f835b40dd62e5b88d32e20cf07e0eeb184714654"
+            and data == git(root, "show", FACADE_IMPLEMENTATION_COMMIT + ":" + name),
+            "accepted facade execution record changed")
+    record = json.loads(data)
+    require(record["status"] == "passed" and record["source_unchanged"] is True
+            and record["coverage"]["passed"] is True
+            and record["release_id"] == PARENT_RELEASE_ID
+            and record["results"]["tests_run"] == 14
+            and not any(record["results"][k] for k in ("failures", "errors", "skips")),
+            "invalid historical facade execution")
+    for path, expected in record["source_bindings"].items():
+        safe_path(root, path)
+        require(sha(git(root, "show", FACADE_IMPLEMENTATION_COMMIT + ":" + path)) == expected,
+                "accepted facade Git subject differs: " + path)
+    return {"path": name, "sha256": sha(data), "subject_commit": FACADE_IMPLEMENTATION_COMMIT,
+            "tests": 14, "G2_accepted": False}
 
 
 def leaf_permissions(root):
@@ -864,6 +926,8 @@ def leaf_permissions(root):
     ready = sorted(set(ready) | {"P9-4.9.2"})
     git(root, "merge-base", "--is-ancestor", PARENT_IMPLEMENTATION_COMMIT, "HEAD")
     ready = sorted(set(ready) | {"P9-4.9.1"})
+    accepted_abundance_authority(root)
+    ready = sorted(set(ready) | {"P9-4.9.1a"})
     owners = {}
     for module in ownership["modules"]:
         leaves = {
@@ -926,6 +990,9 @@ def leaf_permissions(root):
     for name in FACADE_RUNTIME_PATHS:
         require(name in owners, "facade invents a runtime target")
         owners[name] = owners[name] | {"P9-4.9.1"}
+    for name in ABUNDANCE_RUNTIME_PATHS:
+        require(name in owners, "abundance target outside accepted runtime roster")
+        owners[name] = owners[name] | {"P9-4.9.1a"}
     return ready, owners
 
 
@@ -968,7 +1035,7 @@ def work_entries(root, approval):
     )
     # The accepted baseline cannot contain later closure IDs. Register exactly
     # the user-approved successor, not a broad regex-based permission.
-    leaves.update({"P9-4.9.1", "P9-4.9.2"})
+    leaves.update({"P9-4.9.1", "P9-4.9.1a", "P9-4.9.2"})
     rows = value["entries"]
     require(len({r["path"] for r in rows}) == len(rows), "duplicate work target")
     result = {}
@@ -1053,6 +1120,7 @@ def work_entries(root, approval):
                 require(
                     record["iteration_id"] == leaf
                     and record["release_id"] == (
+                        current_abundance_release(root) if leaf == "P9-4.9.1a" else
                         current_parent_release(root) if leaf in {"P9-4.9.1", "P9-4.9.2"} else prior.RELEASE_ID
                     ),
                     "execution record subject mismatch",

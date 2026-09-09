@@ -11,6 +11,7 @@ sys.path.insert(0, str(TOOL / "src"))
 from grcv4_explorer.paths import repository_root  # noqa: E402
 from grcv4_explorer.phase9_verification import verification_status, pressure_projection  # noqa: E402
 from grcv4_explorer.receipt_parents import parent_authority  # noqa: E402
+from grcv4_explorer.abundance import abundance_authority  # noqa: E402
 
 
 def main():
@@ -57,6 +58,12 @@ def main():
     parents = namespace["phase9_parent_authority"]
     if parents != parent_authority(root, TOOL.parent):
         raise RuntimeError("notebook/API parent-authority identity mismatch")
+    abundance = namespace["phase9_abundance_authority"]
+    if abundance != abundance_authority(root, TOOL.parent):
+        raise RuntimeError("notebook/API abundance-authority identity mismatch")
+    destination.with_name("notebook-abundance-authority.json").write_text(
+        json.dumps(abundance, sort_keys=True, separators=(",", ":"), ensure_ascii=False) + "\n"
+    )
     destination.with_name("notebook-parent-authority.json").write_text(
         json.dumps(parents, sort_keys=True, separators=(",", ":"), ensure_ascii=False) + "\n"
     )

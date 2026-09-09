@@ -1733,6 +1733,9 @@ paths. G2 and GRC9V4 remain held. No new governance gate is introduced.
 
 ## Phase 9 Tranche 4 — P9-4.9.1 public C_OS facade
 
+Historical implementation stage at `7905e7e`; the P9-4.9.1a entry below supersedes
+its pending-abundance/current-evidence statements without relabeling that run.
+
 Following accepted parent implementation `d8f26d9`, expose the separate
 user-requested facade leaf on four existing runtime/test paths. Current
 permission is 28 ready leaves and the same 29 eligible paths, not G2 support.
@@ -1750,3 +1753,22 @@ tests; reserve full historical/browser/integrated verification for G2 review.
 Notebook `--status-only` / `PHASE9_STATUS_ONLY=True` omits pressure queries and
 uses a separate scoped output; full mode still rejects stale pressure records.
 See the [facade review](../../../../phase-9-grcv4/tranche-4/P9-4.9.1-Review.md).
+
+## Phase 9 Tranche 4 — P9-4.9.1a abundance availability
+
+The user accepted the audit-refined availability contract on 2026-09-09.
+Append its claim/debt/object/three contracts to the pinned parent graph; preserve
+every D10/D11/parent row and historical admission. Current source discovery and
+the ordinary verification route use the successor, without silent fallback.
+
+Expose actual read-only API, notebook and browser access to the six typed traces.
+Scenarios: exact required support/source/edge identities; unknown or rehashed
+authority rejection; notebook and HTTP-handler output identity/stale clearing;
+browser validator rejection of numeric/G2 overclaims. Use focused execution,
+not a full desktop/mobile or historical campaign for this diagnostic change.
+
+Propagate source → proposal/paper §14.2.1 → V4 specs/release → C_OS projection.
+Add only P9-4.9.1a permission on existing lifecycle/codec/test/release assets:
+29 ready leaves, unchanged 29 eligible paths. The exact unavailable triplet
+admits no numeric detector. Preserve parent/facade runs at `d8f26d9`/`7905e7e`;
+the focused successor binds new inputs. Final P9-4.9.3 and P9-4.8B remain separate.

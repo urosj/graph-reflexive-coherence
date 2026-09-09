@@ -791,6 +791,82 @@ Derived observables must name their producing stage. Capability and observable
 presence establishes implementation support only; it is not scientific
 evidence for stability, persistence, preference, or physical attribution.
 
+## Abundance availability
+
+[Paper §14.2.1](../implementation/investigations/grc9v4-constitutive-design/drafts/2026-09-GRC-V4.md#1421-abundance-availability-is-interface-authority-not-a-new-functional)
+propagates [accepted P9-4.9.1a authority](../implementation/investigations/grc9v4-constitutive-design/decisions/P9AbundanceInterfaceAuthority.json):
+`P9-EC-ABUNDANCE-INTERFACE`, `P9-EC-ABUNDANCE-OBSERVATION` and
+`P9-EC-ABUNDANCE-FAILURE-AND-CEILING`. The policy ID is
+`grcv4-family-abundance-diagnostic-v1`, not a resolved trajectory parameter.
+
+Enabled V4 `compute_observables()` and successful ordinary-step observable maps
+must retain the common `abundance` key and expose this exact triplet whenever
+no numeric definition is admitted for that model under the applicable release:
+
+```json
+{
+  "abundance": null,
+  "abundance_status": "unavailable_no_admitted_definition",
+  "abundance_observation": null
+}
+```
+
+This is the current C_OS projection. No numeric abundance functional is admitted
+for generic GRCV4 or enabled GRC9V4. Failed results and lifecycle methods returning
+no observables do not gain an observable obligation. Common key presence is
+inherited; a universal numeric interpretation is **not** inherited. Numeric
+consumers must check capability and status, then interpret the named definition.
+
+`abundance_status="available"` requires `v4_abundance_diagnostic` for the exact
+active model, admitted interface/specification release, definition and detector.
+It is absent in unavailable mode. `basin_attributes`, candidate/realization,
+expansion, completion or legacy support does not imply it. Available `abundance`
+must be a finite nonnegative I-JSON number, not bool; integer counts must be safe
+integers. Zero means the admitted detector computed zero. The family definition
+owns units, domain, reduction/counting, thresholds and deterministic ordering.
+Available `abundance_observation` is a closed object with exactly:
+
+| Field | Required meaning |
+| --- | --- |
+| `definition_id` | Admitted versioned definition uniquely resolved under the producing V4 interface/specification release. |
+| `detector_id` | Detector resolved within that definition, not an arbitrary caller label. |
+| `stage` | Admitted producing stage for that detector. |
+| `observed_state_digest` | Scientific identity of the actual evaluated state, not an operation's source endpoint. |
+| `model_identity` | Complete scientific identity of the observed model. |
+
+The release, model, definition and detector jointly determine interpretation.
+`model_identity` alone must not imply diagnostic semantics. The observation
+inherits release context from the producing interface; exported records must
+retain that release and resolved definition/detector source alongside the object,
+never substitute the currently installed release. Diagnostic revisions do not
+add a coordinate to scientific model/profile identity or change otherwise
+identical scientific/reset/event digest preimages.
+
+Read-only diagnostics bind one captured committed state. Successful step
+diagnostics bind the fully reconstructed prospective target before the sole
+publication, not the OS predictor or pre-operation `source_state_digest`.
+Incompatible resource/profile/graph/context changes, reset, restoration or
+assignment cannot retain stale availability, metadata or cached detector values.
+
+An advertised detector must be total over its advertised domain, with an admitted
+typed error contract. Unsupported declared numeric definitions reject support/
+admission, not downgrade to unavailable. Failure on an otherwise admitted state
+is a conformance/programmer failure; it raises, never publishes null/zero/stale
+success, and preserves the full prestate when it aborts step publication.
+Read-only evaluation never publishes state. Such API failure is not a scientific
+outcome, solver disposition or new scientific receipt. Diagnostic values/status/
+metadata never control evolution, admission choice, solver disposition, sparks
+or selection and add no state, authoritative history, mutable callback or
+trajectory parameter. A detector needing those requires separate scientific
+authority.
+
+Disabled GRC9V4 continues to delegate exact legacy observables, projecting out
+V4-only diagnostic fields without overwriting native legacy values. Common, V3
+and GRC9V3 files remain unchanged. Enabled specialization does not inherit a
+numeric definition from that delegate. Numeric abundance and G2 are not certified
+by this availability rule. Existing release admission still rejects stale
+snapshot releases; this diagnostic adds no snapshot layout or upgrade promise.
+
 ## Successful-commit receipt-parent policy
 
 The source is [paper §12.5.1](../implementation/investigations/grc9v4-constitutive-design/drafts/2026-09-GRC-V4.md#1251-successful-commit-receipt-parents),

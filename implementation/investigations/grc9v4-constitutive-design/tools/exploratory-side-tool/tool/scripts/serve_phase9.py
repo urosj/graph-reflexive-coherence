@@ -14,17 +14,19 @@ from grcv4_explorer.paths import repository_root  # noqa: E402
 from grcv4_explorer.phase9_verification import verification_status  # noqa: E402
 from grcv4_explorer.phase9_verification import pressure_projection  # noqa: E402
 from grcv4_explorer.receipt_parents import parent_authority  # noqa: E402
+from grcv4_explorer.abundance import abundance_authority  # noqa: E402
 
 
 class Handler(BaseHTTPRequestHandler):
     def do_GET(self):
         request = urlsplit(self.path)
-        if self.path == "/api/receipt-parents":
+        if self.path in {"/api/receipt-parents", "/api/abundance"}:
             try:
-                content = json.dumps(parent_authority(repository_root(), TOOL.parent)).encode()
+                query = abundance_authority if self.path == "/api/abundance" else parent_authority
+                content = json.dumps(query(repository_root(), TOOL.parent)).encode()
                 self.send_response(200)
             except Exception:
-                content = b'{"error":"Parent authority unavailable; no historical fallback or conformance inferred."}'
+                content = b'{"error":"Authority unavailable; no historical fallback or conformance inferred."}'
                 self.send_response(503)
             self.send_header("Content-Type", "application/json")
             self.send_header("Cache-Control", "no-store")

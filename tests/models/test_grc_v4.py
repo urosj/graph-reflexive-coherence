@@ -371,6 +371,16 @@ class PublicFacadeTests(unittest.TestCase):
     def bytes(self, model: api.GRCV4) -> bytes:
         return canonical_json_bytes(model.snapshot())
 
+    def assert_unavailable(self, model: api.GRCV4, observations: Any = None) -> None:
+        """Real public projections; numeric controls do not imply a detector."""
+        if observations is None:
+            observations = model.compute_observables()
+        self.assertEqual({k: observations[k] for k in (
+            "abundance", "abundance_status", "abundance_observation"
+        )}, {"abundance": None, "abundance_status": "unavailable_no_admitted_definition",
+            "abundance_observation": None})
+        self.assertNotIn("v4_abundance_diagnostic", model.list_capabilities())
+
     def test_construction_protocols_and_exact_discovery(self) -> None:
         import inspect
         from pygrc.core.interfaces import GRCModel
@@ -531,12 +541,15 @@ class PublicFacadeTests(unittest.TestCase):
         obs = model.compute_observables()
         self.assertEqual((obs["budget_current"], obs["charge_current"], obs["budget_error"],
                           obs["num_nodes"], obs["num_edges"]), (4, 4, 0, 2, 1))
-        self.assertIsNone(obs["abundance"])
-        self.assertEqual(obs["abundance_status"], "not_defined_by_v4_contract")
+        self.assert_unavailable(model, obs)
         self.assertIsNone(obs["solver_disposition"])
         self.assertEqual(obs["authoritative_current"]["values"], [4])
         self.assertFalse(obs["authoritative_current"]["consumed_by_continuity"])
         obs["authoritative_current"]["values"].clear()
+        # Detached edits cannot fabricate a capability or persist a detector.
+        obs.update(abundance=0, abundance_status="available",
+                   abundance_observation={"source_state_digest": "invented"})
+        self.assert_unavailable(model)
         self.assertEqual(self.bytes(model), before)
         # A facade must not compute a fallible result projection after commit.
         with patch.object(lifecycle, "_public_observables", side_effect=RuntimeError("projection")):
@@ -544,6 +557,7 @@ class PublicFacadeTests(unittest.TestCase):
                 model.step_v4(self.strict())
         self.assertEqual(self.bytes(model), before)
         result = model.step_v4(self.strict())
+        self.assert_unavailable(model, result.observables)
         self.assertEqual(result.observables["authoritative_current"]["stage"], "os_corrector")
         self.assertTrue(result.observables["authoritative_current"]["consumed_by_continuity"])
         self.assertEqual(result.observables["authoritative_current"]["values"], (4,))
@@ -555,12 +569,86 @@ class PublicFacadeTests(unittest.TestCase):
         fresh["receipt_ledger"].clear()
         self.assertEqual(self.bytes(model), after)
         self.assertNotIn("authoritative_current", model.snapshot())
+        self.assertNotIn("abundance", model.snapshot())
+        self.assert_unavailable(model, model.step_v4(self.strict(0)).observables)
+
+    def test_abundance_release_and_observation_failures_do_not_relabel_state(self) -> None:
+        from pygrc.models import grc_v4_lifecycle as lifecycle
+        from pygrc.models.grc_v4_codec import RELEASE_ID
+        model = api.GRCV4(self.initial())
+        before = self.bytes(model)
+        with patch.object(lifecycle, "_public_observables", side_effect=RuntimeError("detector conformance")):
+            with self.assertRaisesRegex(RuntimeError, "detector conformance"):
+                model.compute_observables()
+            with self.assertRaisesRegex(RuntimeError, "detector conformance"):
+                model.step_v4(self.strict(0))
+        self.assertEqual(self.bytes(model), before)
+        self.assert_unavailable(model)
+        # Diagnostic release changes neither snapshot layout nor scientific
+        # coordinates. Old-release snapshots are rejected, not upgraded.
+        stale = model.snapshot()
+        self.assertEqual(stale["specification_release_id"], RELEASE_ID)
+        stale["specification_release_id"] = "grcv4-spec-release-sha256:f777519824f86c3e9382bcf9b45cba28554351506f354d3f778746e2aaff5c6b"
+        with self.assertRaises(ValueError):
+            api.GRCV4.from_state(stale, model.get_params().to_payload())
+        self.assertEqual(self.bytes(model), before)
+
+    def test_abundance_protocol_controls_are_synthetic_not_admission(self) -> None:
+        from pygrc.models.grc_v4_lifecycle import _validate_abundance_projection as validate
+        # No production definition/capability is admitted by these protocol controls.
+        context = dict(release_id="synthetic-release-1", model_identity="same-scientific-model",
+                       observed_state_digest="synthetic-target", stage="synthetic-target-stage")
+        definition = (context["release_id"], context["model_identity"], "definition-1",
+                      "detector-1", context["stage"], "count")
+        unavailable = {"abundance": None, "abundance_status": "unavailable_no_admitted_definition",
+                       "abundance_observation": None}
+        metadata = {"definition_id": "definition-1", "detector_id": "detector-1",
+                    "stage": context["stage"], "observed_state_digest": context["observed_state_digest"],
+                    "model_identity": context["model_identity"]}
+        available = {"abundance": 0, "abundance_status": "available", "abundance_observation": metadata}
+        validate(unavailable, **context, capability=False)
+        validate(available, **context, capability=True, definition=definition)
+        defects = [
+            dict(available, abundance=v) for v in (None, True, -1, 0.5, 2**53, 10**400, float("nan"), float("inf"))
+        ] + [dict(available, abundance_status="unavailable_no_admitted_definition"),
+             dict(available, abundance_observation=None), dict(available, extra="not-closed")]
+        for field in metadata:
+            broken = dict(metadata)
+            broken[field] = "wrong"
+            defects.append(dict(available, abundance_observation=broken))
+        renamed = dict(metadata)
+        renamed["source_state_digest"] = renamed.pop("observed_state_digest")
+        defects.append(dict(available, abundance_observation=renamed))
+        for wrong in defects:
+            with self.subTest(wrong=wrong), self.assertRaises(ValueError):
+                validate(wrong, **context, capability=True, definition=definition)
+        for wrong in (available, dict(unavailable, abundance=0), dict(unavailable, abundance_observation=metadata)):
+            with self.assertRaises(ValueError):
+                validate(wrong, **context, capability=False)
+        with self.assertRaises(ValueError):
+            validate(unavailable, **context, capability=True)
+        with self.assertRaises(ValueError):
+            validate(unavailable, **context, capability=True, definition=definition)
+        with self.assertRaises(ValueError):
+            validate(available, **context, capability=False, definition=definition)
+        for field in context:
+            for value in ("", "wrong"):
+                with self.subTest(field=field, value=value), self.assertRaises(ValueError):
+                    validate(available, **dict(context, **{field: value}), capability=True, definition=definition)
+        # Same scientific model can have a separately admitted diagnostic release.
+        second = dict(context, release_id="synthetic-release-2")
+        revised = (second["release_id"], second["model_identity"], "definition-2", "detector-2", second["stage"], "count")
+        output = dict(available, abundance_observation=dict(metadata, definition_id="definition-2", detector_id="detector-2"))
+        validate(output, **second, capability=True, definition=revised)
+        with self.assertRaises(ValueError):
+            validate(output, **context, capability=True, definition=revised)
 
     def test_public_lifecycle_restore_assignment_and_receipt_parent_delegation(self) -> None:
         from pygrc.models.grc_v4_state import GRCV4State
         from tests.models.test_grc_v4_lifecycle import _p946_assignment
         model = api.GRCV4(self.initial())
         model.set_state(GRCV4State(_p946_assignment(model._operation, (1, 3))))
+        self.assert_unavailable(model)
         self.assertEqual(model.state.lifecycle.current.C, (1, 3))
         self.assertEqual(model.state.lifecycle.receipt_ledger, ())
         before = self.bytes(model)
@@ -570,8 +658,10 @@ class PublicFacadeTests(unittest.TestCase):
             model.set_state(GRCV4State(replace(model.state.lifecycle, time=1)))
         self.assertEqual(self.bytes(model), before)
         model.rebase_reset_baseline()
+        self.assert_unavailable(model)
         model.step_v4(self.strict())
         model.reset()
+        self.assert_unavailable(model)
         self.assertEqual(model.state.lifecycle.current.C, (1, 3))
         ledger = model.snapshot()["receipt_ledger"]
         # Public reset/rebase and steps share the previous-primary owner.
@@ -583,6 +673,7 @@ class PublicFacadeTests(unittest.TestCase):
                           api.GRCV4.from_state(model.snapshot(), model.get_params().to_payload())):
             self.assertEqual(duplicate.snapshot(), model.snapshot())
             self.assertIsNot(duplicate._operation, model._operation)
+            self.assert_unavailable(duplicate)
             self.assertTrue(duplicate.step_v4(self.strict(0)).committed)
         self.assertEqual(len(model.snapshot()["receipt_ledger"]), 12)
 
@@ -597,6 +688,7 @@ class PublicFacadeTests(unittest.TestCase):
         migrated = model.migrate_profile(migration_request(model._operation, target))
         self.assertTrue(migrated.committed, migrated.failure)
         self.assertEqual(model.active_profile_id, target.profile.complete_profile_id)
+        self.assert_unavailable(model)
         self.assertTrue(model.step().committed)
         before = self.bytes(model)
         bad = migration_request(model._operation, target, target_profile_id="grcv4-profile-sha256:" + "0" * 64)
@@ -608,6 +700,7 @@ class PublicFacadeTests(unittest.TestCase):
         self.assertEqual(model.state.lifecycle.current.C, (3, 1, 0.5))
         self.assertEqual(model.state.budget_target, 4.5)
         self.assertEqual(model.compute_observables()["num_nodes"], 3)
+        self.assert_unavailable(model)
         with self.assertRaises(api.MissingV4StepRequest):
             model.step()  # target has no default; never reuse the source profile's
         # File paths are transient test resources, never embedded in snapshots.
@@ -616,10 +709,12 @@ class PublicFacadeTests(unittest.TestCase):
             model.save(path)
             restored = api.GRCV4.load(path)
             self.assertEqual(restored.snapshot(), model.snapshot())
+            self.assert_unavailable(restored)
             self.assertEqual(restored.list_supported_profiles(), model.list_supported_profiles())
             self.assertTrue(restored.step_v4(self.strict(0)).committed)
         model.reset()
         self.assertEqual(model.state.lifecycle.current.C, (3, 1, 0.5))
+        self.assert_unavailable(model)
 
 
 class RequestTests(unittest.TestCase):

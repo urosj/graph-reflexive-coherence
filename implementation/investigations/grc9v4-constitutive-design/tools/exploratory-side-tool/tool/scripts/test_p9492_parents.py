@@ -10,6 +10,7 @@ from unittest.mock import patch
 
 TOOL = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(TOOL / "src"))
+from grcv4_explorer import abundance  # noqa: E402
 from grcv4_explorer import receipt_parents as api  # noqa: E402
 from grcv4_explorer.canonical import record_digest  # noqa: E402
 from grcv4_explorer.errors import SourceAdmissionError  # noqa: E402
@@ -32,7 +33,7 @@ class ParentAuthorityTests(unittest.TestCase):
         current_edges = {e["edge_id"]: e for e in self.current.propagation_edges}
         for edge in self.old.propagation_edges:
             self.assertEqual(current_edges[edge["edge_id"]], edge)
-        self.assertEqual(len(self.current.nodes) - len(self.old.nodes), 7)
+        self.assertEqual(len(self.current.nodes) - len(self.old.nodes), 14)
         for identifier in api.CONTRACT_IDS:
             trace = contract_provenance(self.current, identifier)
             self.assertEqual(
@@ -120,7 +121,7 @@ class ParentAuthorityTests(unittest.TestCase):
 
     def test_unknown_source_holds_current_but_does_not_become_accepted(self):
         with patch.object(
-            api,
+            abundance,
             "discover_sources",
             return_value={"state": "new_unprocessed_source_available"},
         ):
