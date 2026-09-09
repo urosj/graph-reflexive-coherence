@@ -67,6 +67,8 @@ def binding(name):
 
 def capture_reuse(current=None):
     """Reuse original evidence with exact separately checked projection bindings."""
+    from verify_p95_regressions import TEST_SOURCES, corrected_test_source
+
     captured = policy.read(ROOT / fixtures.RUN)["source_bindings"]
     current = fixtures.source_hashes() if current is None else current
     # P9-5.1 adds a separate candidate module and tests. The accepted C_OS
@@ -79,6 +81,16 @@ def capture_reuse(current=None):
     }, "captured source population changed")
     corrections = []
     for name, expected in captured.items():
+        if name in TEST_SOURCES:
+            content = policy.safe_path(ROOT, name).read_bytes()
+            require(current[name] == policy.sha(content), "reused test source changed: " + name)
+            original = corrected_test_source(name, content)
+            require(policy.sha(original) == ACCEPTANCE_PROJECTIONS.get(name, expected),
+                    "test correction has a different accepted baseline: " + name)
+            corrections.append({"path": name, "original_sha256": expected,
+                                "current_sha256": current[name],
+                                "change": "finite test-maintenance correction after c61b37c; fresh focused checks in the handoff; historical numerical execution unchanged"})
+            continue
         if name in A_EXTENSION_PATHS:
             content = policy.safe_path(ROOT, name).read_bytes()
             require(current[name] == policy.sha(content), "reused source changed: " + name)

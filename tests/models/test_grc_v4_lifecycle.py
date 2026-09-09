@@ -111,6 +111,7 @@ class CandidateCOSOperationTests(unittest.TestCase):
         # The inherited checker also requires the shared transport test owner,
         # including when this control is invoked as a standalone reproducer.
         importlib.import_module("tests.models.test_grc_v4_transport")
+        canonical_tests = importlib.import_module("tests.models.test_grc_v4_lifecycle")
         root = Path(__file__).resolve().parents[2]
         names = subprocess.check_output(
             ["git", "ls-files", "--cached", "--others", "--exclude-standard"],
@@ -131,7 +132,7 @@ class CandidateCOSOperationTests(unittest.TestCase):
         for cls, name, other in (
             (CandidateCOSOperation, "step_v4", "_execute"),
             (
-                CandidateCOSOperationTests,
+                canonical_tests.CandidateCOSOperationTests,
                 "test_native_corrector_conditioning_failure",
                 "test_fresh_owner_rejects_unauthenticated_ledger_and_foreign_domains",
             ),

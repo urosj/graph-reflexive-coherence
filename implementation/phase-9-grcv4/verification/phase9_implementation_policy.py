@@ -195,6 +195,7 @@ PATHS = {
     HERE + "verify_p952_current_writer.py",
     HERE + "verify_p953_a_os.py",
     HERE + "verify_p954_claims.py",
+    HERE + "verify_p95_regressions.py",
     # P9-4.8B is a review-only successor; no runtime leaf or support grant.
     HERE + "verify_p948b_review.py",
     PHASE + "tranche-4/P9-4.8B-Review.md",

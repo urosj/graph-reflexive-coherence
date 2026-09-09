@@ -3510,11 +3510,15 @@ class CaptureIntegrityTests(unittest.TestCase):
     def test_capture_resets_observations_in_same_process(self) -> None:
         import contextlib
         import io
+        from tests.models import test_grc_v4_geometry as geometry
         from tests.models import test_grc_v4_transport as transport
 
+        # capture_p934 discovers the canonical tests.models instance even when
+        # this control itself was discovered under the shorter models name.
+        envelope = geometry.NumericalEnvelopeTests
         root = Path(__file__).resolve().parents[2]
         old_geo, old_charge = (
-            NumericalEnvelopeTests.observations,
+            envelope.observations,
             transport.ChargePrecisionEnvelopeTests.observations,
         )
         for _ in range(2):
@@ -3522,11 +3526,11 @@ class CaptureIntegrityTests(unittest.TestCase):
                 folder = Path(temp)
 
                 def empty(*args: Any, **kwargs: Any) -> unittest.TestSuite:
-                    self.assertEqual(NumericalEnvelopeTests.observations, [])
+                    self.assertEqual(envelope.observations, [])
                     self.assertEqual(
                         transport.ChargePrecisionEnvelopeTests.observations, []
                     )
-                    NumericalEnvelopeTests.observations.append({"case": "stale"})
+                    envelope.observations.append({"case": "stale"})
                     return unittest.TestSuite()
 
                 with (
@@ -3543,7 +3547,7 @@ class CaptureIntegrityTests(unittest.TestCase):
                         RuntimeError, "required test discovery"
                     ):
                         capture_p934(folder / "run")
-                self.assertIs(NumericalEnvelopeTests.observations, old_geo)
+                self.assertIs(envelope.observations, old_geo)
                 self.assertIs(
                     transport.ChargePrecisionEnvelopeTests.observations, old_charge
                 )

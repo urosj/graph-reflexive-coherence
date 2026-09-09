@@ -1,6 +1,96 @@
-# Phase 9 GRCV4 handoff — P9-5.4 Candidate A claim separation
+# Phase 9 GRCV4 handoff — Tranche 5 completion and regression closure
 
-Current restart point, 2026-09-09: branch `impl/phase-9-grcv4-tranche-5`.
+Current restart point, 2026-09-10: branch `impl/phase-9-grcv4-tranche-5`.
+
+**Tranche 5 was accepted by the user on 2026-09-10**, including the four
+repository-regression test and harness corrections below. Its planned
+implementation scope is complete. All four leaves
+are accepted: [P9-5.1](./phase-9-grcv4/tranche-5/P9-5.1-AuditFollowup.json)
+(`c920376`), [P9-5.2](./phase-9-grcv4/tranche-5/P9-5.2-AuditFollowup.json)
+(`d5e1ede`), [P9-5.3](./phase-9-grcv4/tranche-5/P9-5.3-AuditFollowup.json)
+(`5a3e674`), and [P9-5.4](./phase-9-grcv4/tranche-5/P9-5.4-AuditFollowup.json)
+(`c61b37c`). Their bounded acceptance does not establish live A lifecycle,
+authenticated initializer-current provenance, formation, or A_OS G2.
+
+The requested repository regression ran once against the clean Git subject
+`c61b37cee8b18e87836ea5a690f89ab743401690`, using root `.venv` provisioned
+from `uv.lock`: CPython 3.12.3, Linux x86_64, NumPy 2.4.6, rfc8785 0.1.4,
+and jsonschema 4.26.0. UTC execution was 2026-09-09 20:57:59–22:25:55.
+From the repository root:
+
+```sh
+.venv/bin/python -m unittest discover -s tests -p 'test_*.py' -v
+```
+
+**Result: 1,950 tests in 5,273.051 seconds; 1,943 passed, 3 failed, 1 errored,
+and 3 skipped; exit status 1.** The skips are the explicitly opt-in clean
+wheel/sdist installation, primitive reconstruction, and resource replay tests
+(`GRCV4_PACKAGE_TESTS` was not enabled). This run supplies no fresh installed
+package validation. All four failure/error cases were reproduced on unchanged
+`main` at `c2cb423c8eace088c276ae8afa1aa95afe48128d`:
+
+- [Mapped-vector release assertion](../tests/models/test_grc_v4.py#L1553):
+  expects the old `f777519…` release, although runtime and packaged/repository
+  specifications agree on the accepted `e2acd9d…` release; fails at line 1568.
+- [Mixed lifecycle lineage assertion](../tests/models/test_grc_v4.py#L1049):
+  the second ordinary step expects the last ordinary primary rather than the
+  previous successful primary required by the
+  [accepted parent policy](../specs/grc-common-interface-v4-ext.md#successful-commit-receipt-parent-policy);
+  fails at line 1124 from the checkpoint at line 1173. Current parent-policy
+  regressions pass in this run.
+- [Geometry capture-reset control](../tests/models/test_grc_v4_geometry.py#L3510):
+  discovery imports `models.test_grc_v4_geometry` alongside its canonical
+  `tests.models` instance, so observation reset affects a different module;
+  fails at line 3550. Canonical invocation passes on both Git subjects.
+- [Lifecycle capture-source control](../tests/models/test_grc_v4_lifecycle.py#L104):
+  the [source inspector](../tests/models/test_grc_v4_candidate_c.py#L3164)
+  rejects the legitimate `tests.fixtures` namespace package as a module-path
+  mismatch. Importing `tests.fixtures.causal_pathway_candidate_mechanisms`
+  before this test reproduces the exact error on both subjects; isolated
+  canonical invocation without that import passes.
+
+**All four failures/errors were corrected on 2026-09-10.** The two assertions
+now follow the accepted release and previous-successful-primary rule; the
+mapped event's independent event-ID expectation remains unchanged. The
+capture controls inspect the canonical module instance even when discovered
+under an alias. The source inspector admits a namespace only at its single
+source-bound repository directory, checks both module/spec search paths, and
+continues to verify loaded child origins and hashes. No runtime code changed.
+
+Fresh focused validation passed **12 methods in 261.510 seconds**, including
+all four reported cases and all eight Candidate C capture-integrity methods.
+The added namespace method covers one valid and nine rejecting cases: foreign,
+extra or empty paths, wrong spec name, absent child binding, wrong child
+origin/hash, and a regular package disguised as a namespace. An additional
+**four checks in 8.838 seconds** passed for both capture controls under both
+`models` and `tests.models`, with the real `tests.fixtures` module preloaded.
+Ruff passed. Scoped mypy has the same 62 pre-existing diagnostics as `c61b37c`
+(compared using original Git files as shadows); none were introduced here.
+Reproduce the 12-method run with:
+
+```sh
+.venv/bin/python -m unittest -v \
+  tests.models.test_grc_v4.AuthoritativeMappedVectorTests \
+  tests.models.test_grc_v4.LifecycleCompositionAuditTests \
+  tests.models.test_grc_v4_geometry.CaptureIntegrityTests.test_capture_resets_observations_in_same_process \
+  tests.models.test_grc_v4_lifecycle.CandidateCOSOperationTests.test_capture_rejects_same_file_method_slot_substitution \
+  tests.models.test_grc_v4_candidate_c.CandidateCCaptureTests
+```
+
+For the four import-order controls, prepend `tests` to `sys.path`, import
+`tests.fixtures.causal_pathway_candidate_mechanisms`, and run the two named
+capture methods above through `unittest.defaultTestLoader.loadTestsFromNames`
+under both prefixes in one process. The full 88-minute run remains the
+historical failed run above; it was not repeated or relabeled as a fresh pass.
+The three opt-in package tests remain unexecuted in this follow-up.
+
+The [maintenance checker](./phase-9-grcv4/verification/verify_p95_regressions.py)
+pins the corrected test bytes, checks every unrelated test body and all runtime
+source unchanged, and preserves all four leaf reviews/executions/acceptances
+at `c61b37c`. Original C execution is reused with those finite test corrections
+identified separately. No merge has been performed; preserve the four commit
+identities in any eventual merge.
+
 **P9-5.3 was accepted and committed as `5a3e674`.** Its 68 focused methods,
 four supplied audit regressions, corrected exact split/display boundary and
 shared numerical error provenance remain at that accepted Git subject.
@@ -37,9 +127,12 @@ rollback or native release evidence.
 Current permission is 34 leaves / 31 runtime paths. Use:
 
 ```sh
-.venv/bin/python implementation/phase-9-grcv4/verification/verify_p954_claims.py --test
-.venv/bin/python implementation/phase-9-grcv4/verification/verify_p954_claims.py --check
+.venv/bin/python implementation/phase-9-grcv4/verification/verify_p95_regressions.py --check
 ```
+
+The original `verify_p954_claims.py --check` belongs to the accepted `c61b37c`
+checkout. Its exact source bindings remain historical; the maintenance checker
+above verifies the current test corrections and API/notebook/browser status.
 
 The numerical outputs remain provisional. The registered `P9-7.1-A_OS`
 lifecycle child now has its P9-5.4 acceptance prerequisite satisfied and owns live publication/receipts,
@@ -64,7 +157,8 @@ cannot be represented; the existing C publication field is then JSON `null`.
 The complete exact defect and exact normalized admission remain authoritative.
 The P9-5.3 follow-up preserves the original execution and reconstructs its
 157 source bindings. Use its checker at `5a3e674`; current status uses the
-P9-5.4 command above. Its `--audit` option reruns only the supplemental pressure.
+maintenance command above. P9-5.4's `--audit` option reruns only its supplemental
+pressure and its accepted source checker belongs to `c61b37c`.
 
 **P9-5.2 was accepted and committed as `d5e1ede` on 2026-09-09.** Its two audit
 findings are corrected: exact rational potential diagnostics and a fully pinned

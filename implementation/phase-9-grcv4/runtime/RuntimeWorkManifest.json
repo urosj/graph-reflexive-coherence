@@ -1340,7 +1340,7 @@
     },
     {
       "path": "tests/models/test_grc_v4.py",
-      "sha256": "54ca792640ccef324db22d9c9275a8ebe274de779a05b2463d802edf3d3d83d7",
+      "sha256": "718a1cb287b5f92ffb900bab4cda14b6b8b4148b28bad38010bd26353ab80edc",
       "iteration_id": "P9-4.9.3"
     },
     {
@@ -1350,7 +1350,7 @@
     },
     {
       "path": "tests/models/test_grc_v4_candidate_c.py",
-      "sha256": "c54488109204510e4df2e48b92b651dfcc243f488c1c653f9527742a626867c7",
+      "sha256": "10d4d9f2f763803a6c6509389bc834f6e1756ee1a2e1c426a7ad94ba83e13392",
       "iteration_id": "P9-4.5"
     },
     {
@@ -1360,12 +1360,12 @@
     },
     {
       "path": "tests/models/test_grc_v4_geometry.py",
-      "sha256": "d0d4f257a9cb991bd8a0b2a55d66914791fe0925182e4db6976c13acd38194d9",
+      "sha256": "8e954cdf956e0b8aef585c948fc307c2466b9e2a83ac2f6933387297acf73004",
       "iteration_id": "P9-3.4"
     },
     {
       "path": "tests/models/test_grc_v4_lifecycle.py",
-      "sha256": "8f54e0ac0b18e0c3498622d9db28d9c59c591e0d8a6b6e439c6952ed01b78d3d",
+      "sha256": "3af96fc343d33f94dde2066c2092b21d1143a9fbf5fc6d13b68915c5ca7aa788",
       "iteration_id": "P9-4.9.2"
     },
     {
@@ -1399,5 +1399,5 @@
   ],
   "admitted_specialization_support_sets": [],
   "claim_ceiling": "Work entries grant no conformance; the only accepted support is the separate P9-4.8B exact C_OS singleton. Local targets, other profiles and specialization are not promoted.",
-  "record_digest": "7c864101949d53b2bdfede88659acac0732932102d8c9b09bccfbd4a72c41e98"
+  "record_digest": "6b818e569bf7c9303a6be0ff58403dbd4aa111a50f37db2874adc5a860e4a54e"
 }

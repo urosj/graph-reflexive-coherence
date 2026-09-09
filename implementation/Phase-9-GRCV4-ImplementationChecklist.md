@@ -804,6 +804,13 @@ updates discovery and status without authorizing new runtime leaves.
 
 ## Tranche 5. Candidate A and A_OS
 
+**Tranche 5 accepted by the user on 2026-09-10.** P9-5.1–P9-5.4 and the four
+repository-regression test and harness corrections are complete. The
+[handoff](./Phase-9-GRCV4-Handoff.md) records the original full-suite result,
+focused correction checks, and remaining validation limits. Live A lifecycle,
+authenticated initializer-current provenance, formation, and A_OS G2 remain
+with their owning leaves; this acceptance grants no new execution permission.
+
 - [x] P9-5.1: Implement exact history-free initialization and positive
   retained-mobility authority. [Review and source/test map](./phase-9-grcv4/tranche-5/P9-5.1-Review.md)
   and [audit follow-up manifest](./phase-9-grcv4/tranche-5/P9-5.1-AuditFollowup.json).
