@@ -1,10 +1,77 @@
 # Agentic Query Guide
 
 This guide describes how an automated research agent can query the accepted
-GRCv4 exploratory side-tool API. The API is a local Python interface, not an
-HTTP service. It reconstructs accepted evidence and evaluates a closed set of
+GRCv4 exploratory side-tool API. The primary API is a local Python interface;
+the Phase 9 web service exposes read-only projections of selected results.
+The API reconstructs accepted evidence and evaluates a closed set of
 structural counterfactuals; it does not create scientific evidence or predict a
 gate that has not been rerun.
+
+## Current P9 abundance and receipt-parent authority
+
+P9-4.9.1a is now an accepted append-only availability contract. Use
+`grcv4_explorer.abundance.load_current_forensic_context` for current queries;
+the older import from `receipt_parents` delegates to this same loader.
+`load_parent_forensic_context` reconstructs only the pinned historical P9-4.9.2
+layer. Current discovery must include both sources and fails closed on changed,
+missing or unprocessed source; there is no historical fallback.
+
+```python
+from grcv4_explorer.abundance import load_current_forensic_context, abundance_authority
+
+context = load_current_forensic_context(root, side)
+views = abundance_authority(root, side)
+```
+
+After the root/side setup below, query `P9-4.9.1a-CL-N-001`,
+`P9-4.9.1a-DEBT-ABUNDANCE`, `P9-O-ABUNDANCE-INTERFACE` or
+`P9-EC-ABUNDANCE-INTERFACE`, `P9-EC-ABUNDANCE-OBSERVATION` and
+`P9-EC-ABUNDANCE-FAILURE-AND-CEILING` with the existing typed functions.
+The debt is resolved at bounded design scope, with implementation/product review
+still distinct. No numeric definition, GRC9V4 runtime support or G2 is inferred.
+**Load abundance authority** in the Phase 9 browser and the notebook's
+`abundance-authority` cell expose those same traces, including classifications,
+source/edge references and trace digests; failure clears stale output.
+
+For current claim investigations, use the append-only P9 context below. The
+existing `load_successor_forensic_context` intentionally reconstructs D11 only;
+`load_forensic_context` reconstructs ET-C2. Neither silently admits new sources.
+
+```python
+from pathlib import Path
+import sys
+
+root = Path.cwd()  # repository root
+side = root / "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool"
+sys.path.insert(0, str(side / "tool/src"))
+from grcv4_explorer.receipt_parents import load_current_forensic_context, parent_authority
+from grcv4_explorer.forensic import contract_provenance, debt_lifecycle
+
+context = load_current_forensic_context(root, side)
+contract = contract_provenance(context, "P9-EC-RECEIPT-PARENT-CHAIN")
+debt = debt_lifecycle(context, "P9-4.9.2-DEBT-PARENTS")
+views = parent_authority(root, side)  # same typed traces as notebook/browser
+```
+
+`P9-4.9.2-CL-N-001` is accepted bounded structural authority. It resolves absent
+parent-selection authority, not a D10/D11 extraction omission. The new chain,
+admission and ceiling contracts have explicit required support; historical
+contract dispositions and graph rows remain unchanged. This does not establish
+public-facade, other-profile, GRC9V4 or G2 conformance. Current loading checks
+exact source discovery and pinned admission; missing, changed or unprocessed
+sources hold it without a historical fallback.
+This P9 overlay is admitted for the forensic queries shown here. Historical
+counterfactual scenarios are not silently promoted into predictions about the
+new parent policy or its runtime implementation.
+
+`run.py discover-sources` observes the current admitted source inventory.
+Use `--scope d11` or `--scope et-c0` only for an explicitly historical discovery
+comparison; newer files correctly appear as unprocessed relative to that scope.
+
+Open `run.py serve-phase9` and use **Load parent authority** to select the claim,
+debt, object or one of the three contracts. The existing Phase 9 notebook has
+the same executable query. Both clear stale output on failure and retain
+classification, source/edge references and trace digests.
 
 ## Short Glossary
 

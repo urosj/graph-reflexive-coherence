@@ -2325,7 +2325,7 @@ class ResourceBoundaryTests(unittest.TestCase):
                         ),
                         result.provisional_state,
                     )
-        self.assertEqual(list_supported_profiles(), frozenset())
+        self.assertEqual(list_supported_profiles(), frozenset({'grcv4-profile-sha256:a6b853ee382895eb78b1a7955a0df22f95d68b27cb0f762503e8c424c2f59b6d'}))
 
     def test_every_failed_solver_disposition_blocks_fallback_before_continuity(
         self,
@@ -2675,7 +2675,7 @@ assert result.charge.residual==0. and result.charge.remainder is None
 try: ProvisionalResourceStep(before,replace(selected,solver_disposition='singular'))
 except ResourceBoundaryError as error: assert (error.stage,error.code)==('candidate_solve','singular_solver')
 else: raise AssertionError('installed fallback current was consumed')
-assert not list_supported_profiles()
+assert list_supported_profiles() == frozenset({'grcv4-profile-sha256:a6b853ee382895eb78b1a7955a0df22f95d68b27cb0f762503e8c424c2f59b6d'})
 print(json.dumps(result.to_payload(),sort_keys=True))
 """
         environment = {
@@ -3147,7 +3147,7 @@ def capture_p935(output: Path) -> int:
             "--capture-p935",
             "<fresh-repository-relative-output>",
         ],
-        "claim_ceiling": "Full preservation of observed inputs at implemented local rejection boundaries. Supplied solver dispositions, immutable constructors and harness mutation controls do not execute a complete candidate solve or live lifecycle rollback; runtime support remains empty.",
+        "claim_ceiling": "Full preservation of observed inputs at implemented local rejection boundaries. Supplied solver dispositions, immutable constructors and harness mutation controls do not execute a complete candidate solve or live lifecycle rollback; this local check does not extend the separately accepted P9-4.8B runtime scope.",
         "commands": [],
     }
     save("run.json", record)

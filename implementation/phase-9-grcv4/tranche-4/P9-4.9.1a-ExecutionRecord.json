@@ -1,0 +1,43 @@
+{
+  "schema": "phase9_leaf_execution_record_v1",
+  "iteration_id": "P9-4.9.1a",
+  "status": "implemented_and_focused_verified",
+  "design_acceptance": "accepted_by_user_2026-09-09",
+  "reviewer_decision": "pending_implementation_review",
+  "release_id": "grcv4-spec-release-sha256:e2acd9df0cc02c5fd4bbed4989ff5d7da3a819adeb2950d922b8a6ef4bf35f24",
+  "authority_record_digest": "d9488700be9624da8500c1e533aa65d33b4f36a3307748ad12fd66449d8fe053",
+  "authority_extension_digest": "f50b4623cf0400532cda0c6c4ea600d1d55552d7927fbfcef62931524380188e",
+  "run": {
+    "path": "implementation/phase-9-grcv4/evidence/P9-4.9.1a/abundance/run.json",
+    "sha256": "a5e1e0f0a8a92deb9a0e5ccee63211bbc3b60474461011325f497dd59103d868",
+    "tests": 11,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "source_bindings": 472,
+    "elapsed_seconds": 102.976
+  },
+  "historical_evidence": [
+    {
+      "iteration_id": "P9-4.9.2",
+      "subject_commit": "d8f26d925272c83c2e289261c6fd988a2b05b4a5",
+      "current_rerun": false
+    },
+    {
+      "iteration_id": "P9-4.9.1",
+      "subject_commit": "7905e7e22bb2fb37f09d0de01f3f161b83332618",
+      "current_rerun": false
+    }
+  ],
+  "numeric_definition_admitted": false,
+  "full_browser_campaign_rerun": false,
+  "full_numerical_campaign_rerun": false,
+  "G2_accepted": false,
+  "accepted_generic_runtime_support": [],
+  "admitted_specialization_support_sets": [],
+  "remaining_work": [
+    "P9-4.9.3_final_fixture_reconciliation",
+    "P9-4.8B_integrated_G2_review"
+  ],
+  "record_digest": "f163632e3e4df5ae029b84a8f4b29eccac2b19cf2c1053501228694023b73b62"
+}

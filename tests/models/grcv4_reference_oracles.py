@@ -26,7 +26,8 @@ IMPORTED_SOURCE_SHA256 = sha256(Path(__file__).read_bytes()).hexdigest()
 MAX_FRACTIONAL_MAGNITUDE = 2**16
 VECTOR_PATH = "specs/grc-v4-conformance-vectors.json"
 VECTOR_SHA256 = "9d9917511816f8d6ca97feca14de3ffca6b720504041f879bb1fa3e8e57b4e22"
-RELEASE_ID = "grcv4-spec-release-sha256:7b8b4d4e32e48fd35f70421cce7f547eebb21dd81389764061efe6e1a8c19886"
+RELEASE_ID = "grcv4-spec-release-sha256:f777519824f86c3e9382bcf9b45cba28554351506f354d3f778746e2aaff5c6b"
+MAPPED_VECTOR_RELEASE_ID = "grcv4-spec-release-sha256:7b8b4d4e32e48fd35f70421cce7f547eebb21dd81389764061efe6e1a8c19886"
 # Historical evidence remains inspectable under its own published authority.
 PREDECESSOR_RELEASE_ID = "grcv4-spec-release-sha256:9f4c8fe5b57b1c477d834a3e4dae3f98a2b18c70e6e7f598e3c9652170c8645f"
 

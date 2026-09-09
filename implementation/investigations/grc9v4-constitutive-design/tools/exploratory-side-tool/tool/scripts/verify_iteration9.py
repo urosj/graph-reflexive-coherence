@@ -7,6 +7,7 @@ import json
 import shutil
 import subprocess
 import sys
+import tempfile
 from pathlib import Path
 from typing import Any
 
@@ -20,6 +21,7 @@ sys.path.insert(0, str(TOOL_ROOT / "src"))
 
 from grcv4_explorer.canonical import (  # noqa: E402
     canonical_bytes,
+    file_sha256,
     load_json_object,
     record_digest,
 )
@@ -213,6 +215,68 @@ def run_build_sequence(scripts: Path) -> None:
         run_python(scripts / name)
 
 
+def historical_d11_checks(repo_root: Path) -> None:
+    """Re-run unchanged D11 checks on their accepted pre-Phase-9 Git subject.
+
+    The working graph is checked by the P9 parent adapter, not by teaching the
+    frozen D11 admission contract to accept an additional source retroactively.
+    """
+    # ET-C9 freezes dependency bytes predating Phase 9. The latest runtime
+    # commit is not its historical subject, even though D11 records match.
+    revision = "f1817b8cf41e439cbb18ad82dfab6b39a77ae43d"
+    generated = TOOL_ROOT / "generated"
+    generated.mkdir(parents=True, exist_ok=True)
+    with tempfile.TemporaryDirectory(prefix="p9492-d11-history-", dir=generated) as folder:
+        checkout = Path(folder) / "repository"
+        subprocess.run(["git", "clone", "--shared", "--no-checkout", "--quiet", str(repo_root), str(checkout)], check=True)
+        subprocess.run(["git", "checkout", "--quiet", "--detach", revision], cwd=checkout, check=True)
+        (checkout / ".venv").symlink_to(Path(sys.prefix).resolve(), target_is_directory=True)
+        side = checkout / SIDE_TOOL_ROOT.relative_to(repo_root)
+        for relative in ("tool/web/node_modules", "tool/.tooling", "tool/.cache"):
+            source, target = SIDE_TOOL_ROOT / relative, side / relative
+            if source.exists():
+                target.mkdir(parents=True, exist_ok=True)
+                for child in source.iterdir():
+                    (target / child.name).symlink_to(child, target_is_directory=child.is_dir())
+        accepted_records = snapshot_tree(side / "records", checkout)
+        # A fresh clone has no ignored public-data cache. Reconstruct exactly
+        # the accepted browser inputs from tracked records before Vite builds.
+        public_data = side / "tool/web/public/data"
+        public_data.mkdir(parents=True, exist_ok=True)
+        manifest = load_json_object(side / "records/ETC11D11UXWebBuildManifest.json")
+        for row in manifest["files"]:
+            if row["path"].startswith("data/"):
+                original = side / "records" / Path(row["path"]).name
+                if file_sha256(original) != row["sha256"]:
+                    raise RuntimeError("historical browser input identity mismatch")
+                shutil.copyfile(original, public_data / original.name)
+        commands = [*HISTORICAL_LAYER_AUDITS,
+                    *((name,) for name in SUCCESSOR_PHASE_PYTHON_SUITE),
+                    *((name,) for name in D11_FORENSIC_SUITE),
+                    *((name,) for name in D11_UX_SUITE),
+                    ("build_iteration11_d11_ux.py",),
+                    ("test_iteration11_d11_browser.py",)]
+        results = []
+        for name, *arguments in commands:
+            result = subprocess.run([sys.executable, str(side / "tool/scripts" / name), *arguments],
+                                    cwd=checkout, capture_output=True, text=True)
+            results.append({"script": name, "arguments": arguments, "exit_code": result.returncode})
+            if result.returncode:
+                raise RuntimeError("historical D11 check failed: " + name + "\n" + result.stdout + result.stderr)
+            if snapshot_tree(side / "records", checkout) != accepted_records:
+                raise RuntimeError("historical check or rebuild changed accepted records: " + name)
+        node = subprocess.run(
+            [str(managed_node()), "--test", *map(str, sorted((side / "tool/web/tests").glob("*.test.mjs")))],
+            cwd=side / "tool/web", env=tool_environment(), capture_output=True, text=True,
+        )
+        if node.returncode:
+            raise RuntimeError("historical Node checks failed\n" + node.stdout + node.stderr)
+        results.append({"script": "web/tests/*.test.mjs", "arguments": ["--test"], "exit_code": node.returncode})
+        evidence = {"source_commit": revision, "scope": "historical_D11_not_current_parent_admission", "commands": results}
+        write_json(generated / "phase9-verification/historical-d11-parent-successor.json", evidence)
+    print("P9492_HISTORICAL_D11_PASS source=" + revision + " current_tree_attestation=false")
+
+
 def run_node_tests() -> tuple[int, int, str]:
     tests = tuple(sorted((TOOL_ROOT / "web/tests").glob("*.test.mjs")))
     test_count = sum(
@@ -276,7 +340,19 @@ def main() -> int:
     )
     if phase9:
         run_python(verification_script(repo_root))
-        active_post_d10_phase = "implementation"
+        # P9-4.9.2 is a separately admitted source/release successor. Keep the
+        # normal entry point, but apply each checker to its actual authority.
+        from grcv4_explorer.receipt_parents import load_current_forensic_context
+
+        load_current_forensic_context(repo_root, SIDE_TOOL_ROOT)
+        historical_d11_checks(repo_root)
+        run_python(scripts / "test_phase9_surfaces.py", "--browser")
+        if source_snapshot(repo_root, records) != source_before:
+            raise RuntimeError("parent verification changed historical source bytes")
+        if protected_snapshot(repo_root) != protected_before or accepted_artifact_snapshot(include_web=False) != accepted_records_before:
+            raise RuntimeError("parent verification changed protected source/accepted artifacts")
+        print("P9492_CURRENT_SUCCESSOR_VERIFY_PASS historical_D11=exact_subject current_parent_API_notebook_browser=verified G2=held runtime_support=empty")
+        return 0
     elif post_d10_boundary.is_file():
         run_python(investigation_scripts / POST_D10_SPECIFICATION_AUDIT)
         active_post_d10_phase = json.loads(

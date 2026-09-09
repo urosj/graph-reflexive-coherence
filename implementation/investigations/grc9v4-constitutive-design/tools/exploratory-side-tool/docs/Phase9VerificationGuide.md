@@ -1,10 +1,12 @@
 # Phase 9 verification access
 
-This is implementation-governance tooling, not a new scientific graph or a
-forensic claim API. The frozen specifications, paper, accepted D10/D11 claims,
-and existing explorer retain their authority and bytes. P9-G1 is accepted;
-bounded implementation is authorized, but accepted runtime support sets remain
-empty. GRC9V4 still requires its separate P9-G3 admission.
+This panel separates implementation verification from forensic authority.
+P9-4.9.2 adds a separately admitted parent-contract overlay and propagates its
+accepted rule through proposal, paper and a V4 successor release; historical
+D10/D11 graph and acceptance records retain their authority and bytes. P9-G1 is accepted;
+bounded implementation is authorized. Separately, the user accepted P9-4.8B
+for one exact C_OS profile on 2026-09-09, closing Tranche 4. GRC9V4 still
+requires separate P9-G3 admission; other profiles remain unaccepted.
 
 ## CLI and browser
 
@@ -19,9 +21,13 @@ From the repository root, use the existing `.venv`:
 `verify-phase9` checks current accepted implementation authority, then replays
 the unchanged accepted V2 verifier on commit `6e0a507`, including its four
 historical audits, source/architecture, pressure and API/notebook/Node checks.
-It then executes current G1 pressure and API/notebook/Node checks and writes an
-ignored execution receipt. The normal `verify-iteration9` additionally runs
-the unchanged D11 suites and both old and Phase 9 browser regressions.
+It then executes current G1/parent pressure and API/notebook/Node checks,
+inspects retained parent evidence at accepted Git `d8f26d9` and focused facade
+evidence against current runtime inputs, and writes
+an ignored execution receipt. The normal `verify-iteration9` additionally runs
+the unchanged D11 suites and old browser regression on their exact historical
+Git subject, then the current Phase 9 browser regressions. Historical source
+clones are disposable, under the repository's ignored generated directory.
 Neither command creates approval; both validate the separately recorded user
 acceptance. `--boundary-only` on `verify-phase9` or
 `verify-post-d10-specifications` checks current authority/release only and is
@@ -58,7 +64,11 @@ from grcv4_explorer.phase9_verification import verification_status
 status = verification_status(root)
 assert status["P9_G1_accepted"] is True  # separately accepted implementation scope
 assert status["runtime_authorized"] is True
-assert status["accepted_generic_runtime_support"] == []  # not conformance
+assert status["g2_acceptance"]["G2_accepted"] is True  # separate scoped decision
+assert status["accepted_generic_runtime_support"] == [
+    "grcv4-profile-sha256:a6b853ee382895eb78b1a7955a0df22f95d68b27cb0f762503e8c424c2f59b6d"
+]
+assert status["g2_acceptance"]["G3_accepted"] is False
 ```
 
 The separate `phase9_verification` module does not alter historical exports.
@@ -79,6 +89,65 @@ and leaves saved code-cell outputs empty. The runner checks exact API payload
 identity and retains generated output under `tool/generated/phase9-verification/`.
 
 ## Scenarios and evidence
+
+### P9-4.9.2 parent authority scenarios
+
+- Load the parent claim, debt resolution, object and all three contracts using
+  **Load parent authority** in the existing Phase 9 browser. Its
+  `/api/receipt-parents` endpoint returns the same `parent_authority` typed
+  traces as the executable notebook cell; use the selector to inspect full
+  source/edge witnesses. It neither runs the model nor grants G2.
+- Change or coherently rehash a source/admission candidate: the pinned current
+  loader must hold. The historical D11 context remains historical, not a fallback
+  that pretends the P9 contract is present.
+- Fail a refresh after a successful load: old output clears in browser and
+  notebook. The desktop/mobile browser regression exercises this behavior.
+- Query the old ordered-profile contract in both contexts: its source payload
+  and support disposition are unchanged; only the new successor trace identity
+  adds the P9 source bundle. Parent selection is not retroactively attributed
+  to D10.2.
+- Run `tool/scripts/test_p9492_parents.py` with the repository `.venv` for the
+  source/graph/notebook checks. The normal Phase 9 verification includes these
+  checks and inspection of retained P9-4.9.2 runtime evidence at its original
+  accepted Git subject. A new runtime capture is a separate rerun, not
+  a replacement for the retained execution.
+
+Current policies: `grcv4-previous-successful-primary-v1` and the separately
+accepted `grcv4-family-abundance-diagnostic-v1`. P9-4.9.1a adds its bounded
+availability permission on existing paths. After accepted fixture reconciliation
+and the explicit P9-4.8B decision, readiness remains 30 leaves / 29 eligible
+paths, with only the exact accepted C_OS singleton published. No numeric
+detector is admitted. Choose A_OS continuation or scoped G3 entry review
+separately; acceptance adds no new runtime permission.
+
+For lean current checks:
+
+```bash
+.venv/bin/python implementation/phase-9-grcv4/verification/verify_p948b_review.py --check
+.venv/bin/python implementation/phase-9-grcv4/verification/audit_phase9_implementation.py --boundary-only
+.venv/bin/python implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/run_phase9_notebook.py --status-only
+```
+
+The focused successor checks affected C_OS projections, synthetic numeric
+protocol controls and real API/notebook/HTTP-handler/browser-validator identity.
+The original parent/facade runs remain at `d8f26d9`/`7905e7e`; they are not new
+execution of today's tree. Use a fresh generated destination for a deliberate
+rerun; do not replace original evidence.
+
+Use **Load abundance authority** in the browser or the notebook's
+`abundance-authority` cell to inspect the accepted claim, debt, object or three
+contracts. All views use the same typed forensic traces and clear stale output
+on failure. Availability authority never implies numeric abundance or G2.
+The registered scenarios are exact source/graph identity, rehashed/missing/new
+source rejection, metadata/release/state distinction and typed failure versus
+unavailability. The scoped handler/validator checks are not a desktop/mobile
+browser campaign.
+
+`PHASE9_STATUS_ONLY = True` or CLI `--status-only` queries current status without
+pressure. It clears the isolated-pressure value to `None` and writes separate
+`notebook-current-status.json`; it cannot refresh a stale full-pressure run.
+Default/full mode still rejects stale evidence. Normal verification dispatches
+to the abundance successor without applying older current-tree assertions to it.
 
 The [scenario register](../../../../../phase-9-grcv4/tranche-1/P9-1.7-1.8-Scenarios.json)
 links all six independent-review pressures and the live access scenarios to

@@ -1,0 +1,141 @@
+{
+  "schema": "phase9_leaf_execution_record_v1",
+  "iteration_id": "P9-4.9.3",
+  "status": "implemented_and_focused_verified",
+  "reviewer_decision": "pending_integrated_P9-4.8B_review",
+  "release_id": "grcv4-spec-release-sha256:e2acd9df0cc02c5fd4bbed4989ff5d7da3a819adeb2950d922b8a6ef4bf35f24",
+  "base_commit": "1f5f5e9541a7d58b66d949a3eb08c7d77b3377f9",
+  "run": {
+    "path": "implementation/phase-9-grcv4/evidence/P9-4.9.3/complete-profile/run.json",
+    "sha256": "a8f35e74366708bdc1d576e2b2e1f8646e8cf9579061172357b85f8f6f54ee1a",
+    "tests": 22,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "source_bindings": 473,
+    "elapsed_seconds": 343.662
+  },
+  "nominated_complete_profiles": [
+    "grcv4-profile-sha256:a6b853ee382895eb78b1a7955a0df22f95d68b27cb0f762503e8c424c2f59b6d"
+  ],
+  "catalog_product": {
+    "nominated_profiles": 1,
+    "catalog_product_rows": 33,
+    "additional_exact_vectors": 2
+  },
+  "catalog_result_locations": {
+    "ALL-MIGRATION-CLASSES": "/fixture_results/21",
+    "C-BASELINE-DERIVATIVE-COVARIANCE": "/fixture_results/8",
+    "C-BASELINE-EXACT": "/fixture_results/1",
+    "C-C-ONLY-AUTHORITY": "/fixture_results/6",
+    "C-CHI-ZERO": "/fixture_results/9",
+    "C-KAPPA-M-ZERO": "/fixture_results/7",
+    "C-LIFECYCLE-REFERENCE-MAP": "/fixture_results/25",
+    "C-ONE-CHI-GATE": "/fixture_results/11",
+    "C-POST-CONTINUITY-REDERIVATION": "/fixture_results/29",
+    "C-QC-TYPING": "/fixture_results/4",
+    "C-RETAINED-VS-PHYSICAL-CONDITIONING": "/fixture_results/5",
+    "C-SELECTOR-BOUNDARY": "/fixture_results/3",
+    "C-SELECTOR-STRICT-GAP": "/fixture_results/2",
+    "C-TR-REFERENCE-MAP": "/fixture_results/0",
+    "C-ZETA-ZERO": "/fixture_results/10",
+    "COMMON-ATOMIC-FAILURE": "/fixture_results/18",
+    "COMMON-CHARGE-MISMATCH": "/fixture_results/17",
+    "COMMON-INVALID-DOMAIN": "/fixture_results/13",
+    "COMMON-NEGATIVE-DURATION": "/fixture_results/16",
+    "COMMON-NONFINITE": "/fixture_results/14",
+    "COMMON-STALE-CACHE": "/fixture_results/19",
+    "COMMON-VALID-ORDINARY-STEP": "/fixture_results/12",
+    "COMMON-ZERO-DURATION": "/fixture_results/15",
+    "DUPLICATION-INDEPENDENCE": "/fixture_results/32",
+    "GENERIC-MAPPED-EVENT-NONZERO-RESOURCE-INCREMENT": "/fixture_results/34",
+    "HISTORY-DISPOSITION": "/fixture_results/24",
+    "OS-ONE-PASS": "/fixture_results/28",
+    "RECEIPT-OWNERSHIP": "/fixture_results/33",
+    "RESET-AFTER-EVENT": "/fixture_results/22",
+    "RESET-AFTER-MIGRATION": "/fixture_results/20",
+    "RESET-AFTER-ORDINARY": "/fixture_results/31",
+    "SEMANTIC-REJECT-RESOURCE-TRANSFORM-DIMENSIONS": "/fixture_results/27",
+    "SNAPSHOT-LOAD-REPLAY": "/fixture_results/30",
+    "TARGET-READMISSION-FAILURE": "/fixture_results/26",
+    "WHOLE-LIFECYCLE-TUPLE-MAP": "/fixture_results/23"
+  },
+  "control_profiles_not_nominated": [
+    "grcv4-profile-sha256:32b4e7960a7bfdc33676282ec8a15b8ffdbf5415367c5481d9c75f83788177c1",
+    "grcv4-profile-sha256:c902a14c87ffbfbbaad6f9b67cd0b95ff7cd0ded7756166971e769b7b2a6790b",
+    "grcv4-profile-sha256:d8974193bd0916239806c201041fccac96a3ba6a2bf719d855be60b6e9d65d81"
+  ],
+  "ordered_crossing_pairs": [
+    {
+      "fixture_id": "RESET-AFTER-MIGRATION",
+      "source_complete_profile_id": "grcv4-profile-sha256:a6b853ee382895eb78b1a7955a0df22f95d68b27cb0f762503e8c424c2f59b6d",
+      "target_complete_profile_id": "grcv4-profile-sha256:074693ddcf22c5f6c156c04a1df9727135fa20c9b5c7c9d10ab246b54934ff68",
+      "request_object": "a99c255e6d2301d35030aa8c3e260ea4f88d5bd33eb0dd45ab0e92b42ad8bcfd"
+    },
+    {
+      "fixture_id": "WHOLE-LIFECYCLE-TUPLE-MAP",
+      "source_complete_profile_id": "grcv4-profile-sha256:a6b853ee382895eb78b1a7955a0df22f95d68b27cb0f762503e8c424c2f59b6d",
+      "target_complete_profile_id": "grcv4-profile-sha256:b281ae57b9e531be1437b8a9b0595707b91fe7c7535d2b1f61b20b3a786a38cb",
+      "request_object": "e0c527326736c18353e7d1fd39fa3c5ba0e2c03cf0e44cf2f08d01f13f3d4a0f"
+    },
+    {
+      "fixture_id": "GENERIC-MAPPED-EVENT-NONZERO-RESOURCE-INCREMENT",
+      "source_complete_profile_id": "grcv4-profile-sha256:4a631bc25ab15c5b10e06588ff58aa6a802fd9a2749a0dd1909ffd3eae535ed8",
+      "target_complete_profile_id": "grcv4-profile-sha256:f7b4023ed543c496fa693e8a1bbd701d357495374b415602fcc6b4774caffb7b",
+      "request_object": "0e9572fb9a084e0275d92febd5bfe4ac15790bb51b327d37e22e797ec9c91423"
+    }
+  ],
+  "semantic_dimension_outcome": {
+    "admitted": false,
+    "semantic_code": "resource_transform_dimension_mismatch",
+    "operation_failure_code": "invalid_topology_event",
+    "committed": false,
+    "dimension_valid_control_is_not_target_admission": true
+  },
+  "product_mutations_rejected": [
+    "missing_row",
+    "duplicate_row",
+    "empty_nomination",
+    "family_nomination",
+    "borrowed_profile",
+    "altered_result",
+    "premature_G2",
+    "borrowed_event"
+  ],
+  "historical_evidence": [
+    {
+      "iteration_id": "P9-4.9.2",
+      "subject_commit": "d8f26d925272c83c2e289261c6fd988a2b05b4a5",
+      "current_rerun": false
+    },
+    {
+      "iteration_id": "P9-4.9.1",
+      "subject_commit": "7905e7e22bb2fb37f09d0de01f3f161b83332618",
+      "current_rerun": false
+    },
+    {
+      "iteration_id": "P9-4.9.1a",
+      "subject_commit": "1f5f5e9541a7d58b66d949a3eb08c7d77b3377f9",
+      "current_rerun": false
+    }
+  ],
+  "prior_inventory_and_hold_preserved": true,
+  "migration_class_disposition_count": 7,
+  "schema_semantic_negative_disposition_count": 7,
+  "historical_component_evidence": "implementation/phase-9-grcv4/tranche-4/P9-4.9.3-EvidenceInventory.md",
+  "reconciliation": "implementation/phase-9-grcv4/tranche-4/P9-4.9.3-Review.md",
+  "development_notes": [
+    "New fixture setup initially used wrong serialization/member names; corrected before final capture.",
+    "Arbitrary centered Hodge perturbations violated the exact profile zero-tolerance solve policy; replaced by a valid exact linear-Hodge secant plus resource derivative, without changing scientific tolerances.",
+    "A preliminary 22-test capture passed; formatting-only cleanup was followed by this separately captured final run. Counts are not additive; routine development runs are not retained as accepted evidence."
+  ],
+  "full_browser_campaign_rerun": false,
+  "full_numerical_campaign_rerun": false,
+  "G2_accepted": false,
+  "accepted_generic_runtime_support": [],
+  "admitted_specialization_support_sets": [],
+  "remaining_work": [
+    "P9-4.8B_integrated_G2_review_and_separate_acceptance"
+  ],
+  "record_digest": "e9655b6980f4e4405ed676fe4d11cb4449ba8c152112b004d22eaeddc2387727"
+}

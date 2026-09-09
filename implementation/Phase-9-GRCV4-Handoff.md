@@ -1,8 +1,80 @@
-# Phase 9 GRCV4 handoff — P9-4.8 continuation
+# Phase 9 GRCV4 handoff — Tranche 4 closure
 
-Current restart point, 2026-09-09: **read the
+Current restart point, 2026-09-09: use branch
+`impl/phase-9-grcv4-tranche-4-closure` and the
+[P9-4.8B integrated review](./phase-9-grcv4/tranche-4/P9-4.8B-Review.md).
+The user accepted the receipt-parent design and requested full implementation:
+the admitted claim/debt overlay, actual tool UX, proposal/paper/spec successor
+and internal C_OS parent rule are implemented. Consult that review and the
+current checklist for validation/acceptance state. P9-4.9.2 was accepted in
+`d8f26d9`. The bounded public C_OS facade implementation and focused evidence
+were accepted in `7905e7e`. The user then explicitly accepted the audit-refined
+**P9-4.9.1a abundance availability authority** on 2026-09-09 and authorized
+implementation. It is admitted through the forensic API and propagated through
+proposal/paper §14.2.1, the V4 specs and the C_OS projection. Consult the
+[abundance review](./phase-9-grcv4/tranche-4/P9-4.9.1a-Review.md) for focused
+verification and limits. P9-4.9.3 was accepted by the user's commit instruction
+in `c01526c`. It supplies the exact 33-case product for one
+nominated complete profile, plus exact dimension and mapped-event vectors.
+Control/target identities are not broader support. **The user explicitly accepted
+P9-4.8B on 2026-09-09; Tranche 4 is closed.** The
+[explicit G2 acceptance](./phase-9-grcv4/tranche-4/P9-4.8B-G2Acceptance.json) links the original proposed review and execution.
+All three phase closure obligations are discharged for exactly:
+
+`grcv4-profile-sha256:a6b853ee382895eb78b1a7955a0df22f95d68b27cb0f762503e8c424c2f59b6d`
+
+Global runtime discovery reconstructs this exact declaration. Instance-local
+migration targets do not expand the accepted set. API/notebook/browser status
+projects the same acceptance, with `P9-7.7-C_OS` as an alias, not extra credit.
+G3, other profiles and specialization remain closed. Next is a separate user
+choice of A_OS continuation or a scoped G3 entry review—not a further Tranche 4
+numerical run or automatic authorization of new runtime work.
+
+The [P9-4.9.1a proposal](./investigations/grc9v4-constitutive-design/decisions/P9AbundanceInterfaceAuthorityProposal.md)
+is accepted. All three refinements
+(observed-state naming, detector totality/conformance failure, and release-bound
+definition identity) are incorporated; the user's explicit acceptance followed
+the conditional audit. The rule is a required common key,
+explicit unavailable triplet for C_OS, and numeric capability only with a separately
+admitted family definition/detector/stage. No numeric functional is admitted.
+The new release preserves scientific/model/reset identity and the v3 snapshot
+layout, but old-release snapshots remain explicitly rejected. The old parent
+and facade runs are retained at their Git subjects, not relabeled as current.
+The user's subsequent instruction to commit accepts the bounded P9-4.9.1a
+implementation and its focused evidence. The review/execution records retain
+their validation-time pending disposition; this handoff and the commit record
+the later acceptance in `1f5f5e9`. Those earlier decisions did not grant G2; the separate
+P9-4.8B acceptance above now grants the exact reviewed scope.
+
+Lean checks: use `verification/verify_p948b_review.py --check` and
+`verification/audit_phase9_implementation.py --boundary-only` under
+`implementation/phase-9-grcv4/`, with `.venv/bin/python` from the repository
+root. The accepted parent/facade/abundance runs are checked at their original Git
+subjects; the retained 22-test fixture record binds unchanged scientific
+source. Acceptance-only discovery, registry assertions and status projections
+have separate exact bindings; the original source hashes and run are unchanged. The successor also checks PASS/HOLD and misleading-record controls,
+plus existing status/authority API, notebook and HTTP/browser-validator paths.
+Neither command reruns numerical tests or claims fresh full historical/browser
+verification. The current surface remains 30 ready leaves / 29 eligible paths;
+review maintenance opens no runtime leaf.
+
+Full-path follow-up: historical replay and complete parent/abundance authority
+checks passed before a stale disposable-HEAD defect stopped permission pressure.
+The harness now uses the actual reviewed HEAD and explicitly rejects missing
+parent/abundance acceptance ancestry. See the
+[failure explanation and resumed stages](./phase-9-grcv4/tranche-4/P9-4.8B-Review.md#full-path-follow-up-and-harness-correction).
+The passed historical stages are reused; the failed pressure stage and remaining
+current-surface/review checks are the continuation, not another numerical run.
+The export probe also uses its frozen pre-integration baseline. Browser
+readiness and API next-work text now match the accepted fixture stage and
+then-pending G2 review. The accepted successor now projects the exact singleton;
+actual API-to-browser validation guards that boundary.
+
+## Historical P9-4.8 snapshot
+
+Historical P9-4.8 restart point: **read the
 [P9-4.8 continuation handoff](./phase-9-grcv4/tranche-4/P9-4.8-Handoff.md)**.
-It contains the current checkout/acceptance state, source links, remaining work,
+It contains the then-current checkout/acceptance state, source links, remaining work,
 environment commands, verification limits and files intended for the next commit.
 
 The branch is `impl/phase-9-grcv4-tranche-4`; accepted runtime base is

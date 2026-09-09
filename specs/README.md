@@ -27,7 +27,20 @@ The implementation strategy assumed by these specs is:
 
 ## GRCV4 phase boundary
 
-Phase 9 now uses the [bounded mapped-vector correction](../implementation/phase-9-grcv4/tranche-4/P9-4.7b-SpecificationCorrection.json)
+The current release also binds the [accepted abundance availability authority](../implementation/investigations/grc9v4-constitutive-design/decisions/P9AbundanceInterfaceAuthority.json),
+propagated through proposal/paper §14.2.1 and the V4 interface/family specs.
+`grcv4-family-abundance-diagnostic-v1` preserves the required key with explicit
+unavailability; it admits no numeric definition, changes no older version and
+does not accept G2. Earlier execution records retain their source/release identity.
+
+Phase 9 now additionally uses the [accepted receipt-parent authority](../implementation/investigations/grc9v4-constitutive-design/decisions/P9ReceiptParentAuthority.json),
+propagated through proposal, paper §12.5.1 and the V4 interface/family specs.
+The current [successor release](grc-v4-specification-release.json) binds
+`grcv4-previous-successful-primary-v1` and explicit C_OS v3 snapshot admission.
+This does not complete the public facade or accept G2. Earlier releases and
+their execution evidence retain their original identities.
+
+The preceding [bounded mapped-vector correction](../implementation/phase-9-grcv4/tranche-4/P9-4.7b-SpecificationCorrection.json)
 and the resulting [successor release](grc-v4-specification-release.json).
 It corrects the generic mapped fixture's K4 reference dimension, explicit
 binary64 solver tolerances and orientation identity, and includes complete

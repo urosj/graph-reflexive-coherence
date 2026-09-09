@@ -1,0 +1,56 @@
+{
+  "schema": "phase9_leaf_execution_record_v1",
+  "iteration_id": "P9-4.9.1",
+  "status": "implemented_verified_pending_abundance_authority_and_user_review",
+  "release_id": "grcv4-spec-release-sha256:f777519824f86c3e9382bcf9b45cba28554351506f354d3f778746e2aaff5c6b",
+  "authority": {
+    "request": "continue with P9-4.9.1; lean necessary tools and tests only",
+    "accepted_parent_implementation_commit": "d8f26d925272c83c2e289261c6fd988a2b05b4a5",
+    "source": "implementation/Phase-9-GRCV4-ImplementationPlan.md#p9-491-c_os-public-commonv4-interface-closure"
+  },
+  "evidence_bindings": [
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-4.9.1/facade/run.json",
+      "sha256": "bdfd0afd24dc5b2401c21827f835b40dd62e5b88d32e20cf07e0eeb184714654"
+    }
+  ],
+  "runtime_result": {
+    "tests_run": 14,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "nonpassing_methods": [],
+    "executed_ids_sha256": "a583a47914e03721b1836de78e40973c0633aa0bf077292d564a288fe5292811"
+  },
+  "source_count": 441,
+  "elapsed_seconds": 179.319,
+  "other_validation": {
+    "node_component_tests_passed": 30,
+    "changed_runtime_and_test_ruff": "passed",
+    "facade_mypy_follow_imports_silent": "passed",
+    "full_historical_pressure_browser_or_numerical_campaign": "not_run_for_this_leaf",
+    "full_notebook_cached_pressure": "correctly_rejected_stale_subject; no fresh full pressure campaign claimed"
+  },
+  "current_read_only_checks": [
+    ".venv/bin/python implementation/phase-9-grcv4/verification/verify_p9491_facade.py --check",
+    ".venv/bin/python implementation/phase-9-grcv4/verification/audit_phase9_implementation.py --boundary-only",
+    ".venv/bin/python implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/run_phase9_notebook.py --status-only"
+  ],
+  "check_semantics": "Commands above inspect current inputs and generate their own scoped status; this record does not assert freshness of any cached full verification receipt.",
+  "parent_run": {
+    "path": "implementation/phase-9-grcv4/evidence/P9-4.9.2/parent-rule/run.json",
+    "sha256": "d499ba3aa205ace577c317f2ced98837ff1ee593ccd20c4b80ec6a0392a86ac9",
+    "subject_commit": "d8f26d925272c83c2e289261c6fd988a2b05b4a5",
+    "rerun": false
+  },
+  "abundance": {
+    "value": null,
+    "status": "not_defined_by_v4_contract",
+    "scope": "Explicit interim placeholder, not accepted interface semantics. P9-4.9.1a is planning only and blocks final public-interface/G2 closure; unaffected numerical/lifecycle results remain valid."
+  },
+  "claim_ceiling": "Public C_OS adapter and focused actual-receiver integration only. Exact local registered targets and executable capability marginals are not accepted complete-profile support. Final P9-4.9.3 fixture reconciliation and P9-4.8B remain open.",
+  "accepted_generic_runtime_support": [],
+  "admitted_specialization_support_sets": [],
+  "G2_accepted": false,
+  "record_digest": "e1b7e7995657eed275f1210ced6c2ee44f3fa68a1620832c6db2952ddd33a323"
+}

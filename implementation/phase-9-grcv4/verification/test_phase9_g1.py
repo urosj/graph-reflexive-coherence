@@ -52,7 +52,10 @@ def main():
             ],
             check=True,
         )
-        fixture_revision = p.lifecycle_batch_authorization(p.ROOT)["baseline_commit"]
+        # Current-file pressure needs the reviewed checkout's accepted ancestry.
+        # The lifecycle authorization baseline still governs its historical
+        # scope; it is not the HEAD for a candidate containing later work.
+        fixture_revision = p.git(p.ROOT, "rev-parse", "HEAD").decode().strip()
         subprocess.run(
             ["git", "checkout", "--quiet", "--detach", fixture_revision],
             cwd=root, check=True,
@@ -117,7 +120,10 @@ def main():
                 if expected is None
                 else (error is not None and expected in error)
             )
-            restored = protected_manifest(root) == pristine
+            restored = (
+                protected_manifest(root) == pristine
+                and p.git(root, "rev-parse", "HEAD").decode().strip() == fixture_revision
+            )
             passed = passed and restored
             cases.append(
                 {
@@ -185,6 +191,48 @@ def main():
                         inspect()
 
         case("accepted_G1_current_tree", inspect)
+
+        def missing_accepted_ancestry(subject, required):
+            # Change only the disposable detached HEAD, keeping the exact
+            # current files. This reproduces the stale-fixture defect and
+            # proves the real ancestry guard is still enforced.
+            with mutate(".git/HEAD", (subject + "\n").encode()):
+                try:
+                    inspect()
+                except subprocess.CalledProcessError as failure:
+                    expected_command = [
+                        "git", "merge-base", "--is-ancestor", required, "HEAD"
+                    ]
+                    if failure.returncode != 1 or failure.cmd != expected_command:
+                        raise
+                    traces.append({
+                        "check": "actual_required_commit_ancestry",
+                        "subject_commit": subject,
+                        "required_commit": required,
+                        "command": expected_command,
+                        "exit_code": failure.returncode,
+                    })
+                    raise ValueError("missing accepted ancestry: " + required) from failure
+
+        for label, subject, required in (
+            (
+                "current_files_without_parent_acceptance_rejected",
+                p.lifecycle_batch_authorization(p.ROOT)["baseline_commit"],
+                p.PARENT_IMPLEMENTATION_COMMIT,
+            ),
+            (
+                "current_files_without_abundance_acceptance_rejected",
+                p.PARENT_IMPLEMENTATION_COMMIT,
+                "1f5f5e9",
+            ),
+        ):
+            case(
+                label,
+                lambda subject=subject, required=required: missing_accepted_ancestry(
+                    subject, required
+                ),
+                "missing accepted ancestry: " + required,
+            )
         p.require(
             p.HANDOFF_PATHS.isdisjoint(p.PATHS), "archive still gates implementation"
         )
@@ -343,9 +391,9 @@ def main():
         case(
             "combined_good_and_frozen_edit",
             lambda: registered(
-                source, content, extra=lambda: edit("specs/grc-v4-spec.md", b"changed")
+                source, content, extra=lambda: edit("specs/grc-common-interface.md", b"changed")
             ),
-            "frozen bytes changed",
+            "unrelated release member changed: specs/grc-common-interface.md",
         )
         legacy = "src/pygrc/models/grc_9_v3.py"
         case(
@@ -364,7 +412,9 @@ def main():
             "immutable predecessor changed",
         )
         init = "src/pygrc/models/__init__.py"
-        before = (root / init).read_bytes()
+        # Exercise one addition to the frozen legacy prefix, even when the
+        # reviewed current checkout already contains the accepted lazy export.
+        before = p.git(root, "show", p.BASELINE + ":" + init)
         lazy = b'\n\ndef __getattr__(name):\n    if name == "GRCV4":\n        from .grc_v4 import GRCV4\n        return GRCV4\n    raise AttributeError(name)\n'
 
         def integration_contract(name, before, after):
@@ -400,6 +450,12 @@ def main():
             lambda: integration_contract(
                 init, before, b"# legacy names removed\n" + lazy
             ),
+            "legacy export prefix changed",
+            scope="isolated_integration_contract_not_current_leaf_permission",
+        )
+        case(
+            "duplicate_lazy_export_rejected",
+            lambda: integration_contract(init, before, before + lazy + lazy),
             "legacy export prefix changed",
             scope="isolated_integration_contract_not_current_leaf_permission",
         )
@@ -717,11 +773,11 @@ def main():
                  "untrusted mapped-vector specification correction",
                  scope="isolated_specification_correction_authentication")
         for name, expected in [
-            ("specs/grc-v4-conformance-vectors.json", "mapped-vector correction binding changed"),
-            ("implementation/investigations/grc9v4-constitutive-design/scripts/build_grcv4_specification_vectors.py", "mapped-vector correction binding changed"),
-            ("specs/grc-v4-specification-release.json", "mapped-vector successor output changed"),
-            ("src/pygrc/models/grc_v4_assets/asset-index.json", "mapped-vector successor output changed"),
-            (p.CORRECTION_BUILDER, "untrusted mapped-vector successor release"),
+            ("specs/grc-v4-conformance-vectors.json", "unrelated release member changed"),
+            ("implementation/investigations/grc9v4-constitutive-design/scripts/build_grcv4_specification_vectors.py", "unrelated release member changed"),
+            ("specs/grc-v4-specification-release.json", "abundance successor output changed"),
+            ("src/pygrc/models/grc_v4_assets/asset-index.json", "abundance successor output changed"),
+            (p.CORRECTION_BUILDER, "unrelated release member changed"),
         ]:
             def changed_correction(name=name):
                 with mutate(name, (root / name).read_bytes() + b"\n"):
@@ -731,12 +787,29 @@ def main():
         def changed_codec_pin():
             name = "src/pygrc/models/grc_v4_codec.py"
             source = (root / name).read_bytes()
-            source = source.replace(p.CORRECTED_RELEASE_ID.split(":")[1].encode(), b"0" * 64)
+            source = source.replace(p.current_abundance_release(root).split(":")[1].encode(), b"0" * 64)
             with mutate(name, source):
                 p.accepted_specification_correction(root)
         case("successor_rejects_actual_codec_pin_change", changed_codec_pin,
-             "packaged successor release is not pinned by the codec",
+             "codec does not pin the abundance successor release",
              scope="isolated_specification_correction_authentication")
+        for key, replacement in [("status", "proposed"), ("G2_accepted", True),
+                                 ("policy_id", "ordinary-only")]:
+            def forged_parent(key=key, replacement=replacement):
+                value = p.read(root / p.PARENT_AUTHORITY)
+                value[key] = replacement
+                value["record_digest"] = p.digest_record(value)
+                with mutate(p.PARENT_AUTHORITY, p.canonical(value)):
+                    p.accepted_parent_authority(root)
+            case("parent_cannot_self_authorize_" + key, forged_parent,
+                 "untrusted receipt-parent implementation authority",
+                 scope="isolated_receipt_parent_authority")
+        case("parent_owner_ready", lambda: registered("src/pygrc/models/grc_v4_lifecycle.py", content, leaf="P9-4.9.2"))
+        case("parent_cannot_open_facade", lambda: registered("src/pygrc/models/grc_v4.py", content, leaf="P9-4.9.2"),
+             "runtime target belongs to a different owning leaf")
+        case("facade_explicitly_ready", lambda: registered("src/pygrc/models/grc_v4.py", content, leaf="P9-4.9.1"))
+        case("facade_cannot_rewrite_numerical_authority", lambda: registered("src/pygrc/models/grc_v4_candidate_c.py", content, leaf="P9-4.9.1"),
+             "runtime target belongs to a different owning leaf")
         case("mapped_audit_has_shared_integration_test_owner",
              lambda: registered("tests/models/test_grc_v4.py", content, leaf="P9-4.7b"))
         for name in ["src/pygrc/models/grc_v4_candidate_c.py", "tests/models/test_grc_v4_candidate_c.py"]:

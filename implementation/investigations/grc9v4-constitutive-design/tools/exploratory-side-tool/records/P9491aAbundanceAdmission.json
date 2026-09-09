@@ -1,0 +1,17 @@
+{
+  "schema": "grcv4_p9491a_abundance_admission_v1",
+  "status": "accepted_source_admission",
+  "source": {
+    "source_id": "GRCV4-P9-4.9.1a-ABUNDANCE-v1",
+    "path": "implementation/investigations/grc9v4-constitutive-design/decisions/P9AbundanceInterfaceAuthority.json",
+    "file_sha256": "df45fa8985c58514300d3bd0dcc7aa6923251180c1f52cbe47cb8485326d20e8"
+  },
+  "source_record_digest": "d9488700be9624da8500c1e533aa65d33b4f36a3307748ad12fd66449d8fe053",
+  "historical_authority_extension_digest": "3715d198eb15564ea459fcd0fdf9d7f185ddce4800cc9b66c31fed41b3f129a0",
+  "historical_graph_digest": "a624af16396dfa5eccaede2f5ee9edc378f7bd8bd8f66fd4d7da00f97b8e2eaf",
+  "source_bundle_digest": "94363db34f2222493328e66021dfd021ae4ebe96eb5cd4c1b99e2802318bf1a5",
+  "graph_digest": "76a37282a91833cd41c065fcc4d3c82a43e7aa4cf9b8e8c7f3846efc6f1ffb6c",
+  "policy_id": "grcv4-family-abundance-diagnostic-v1",
+  "G2_accepted": false,
+  "record_digest": "f50b4623cf0400532cda0c6c4ea600d1d55552d7927fbfcef62931524380188e"
+}

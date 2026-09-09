@@ -249,7 +249,7 @@ class ProfileTests(unittest.TestCase):
                                           else CandidateCParams)
                     with self.assertRaises(V4IdentityError):
                         get_supported_profile(profile.complete_profile_id)
-        self.assertEqual(list_supported_profiles(), frozenset())
+        self.assertEqual(list_supported_profiles(), frozenset({'grcv4-profile-sha256:a6b853ee382895eb78b1a7955a0df22f95d68b27cb0f762503e8c424c2f59b6d'}))
 
     def test_every_required_parameter_and_unknown_field(self) -> None:
         for candidate, realization in [("A", "CI+PC"), ("C", "OS"), ("C", "RG2b")]:
@@ -518,6 +518,46 @@ class ProfileTests(unittest.TestCase):
         self.assertNotIn("complete_profile_id", identity)
         self.assertEqual(profile.complete_profile_id.split(":")[1],
                          sha256(canonical_json_bytes(identity)).hexdigest())
+
+
+class AcceptedG2RegistryTests(unittest.TestCase):
+    """The accepted exact declaration is discoverable without widening scope."""
+
+    accepted_id = "grcv4-profile-sha256:a6b853ee382895eb78b1a7955a0df22f95d68b27cb0f762503e8c424c2f59b6d"
+
+    def test_lossless_accepted_declaration_matches_retained_execution(self) -> None:
+        phase = ROOT / "implementation/phase-9-grcv4"
+        acceptance = json.loads((phase / "tranche-4/P9-4.8B-G2Acceptance.json").read_text())
+        run = json.loads((ROOT / acceptance["fixture_run"]["path"]).read_text())
+        prestate = run["objects"][acceptance["fixture_run"]["nominated_prestate_object"]]
+        profile = get_supported_profile(self.accepted_id)
+        self.assertEqual(list_supported_profiles(), frozenset({self.accepted_id}))
+        self.assertEqual(acceptance["accepted_generic_runtime_support"], [self.accepted_id])
+        self.assertEqual(profile.to_payload(), acceptance["accepted_profile"])
+        self.assertEqual(profile.to_payload(), prestate["reference"]["profile"])
+        self.assertEqual(GRCV4Profile.from_canonical_bytes(profile.to_canonical_bytes()), profile)
+
+    def test_registry_is_immutable_and_resolution_does_not_promote_other_profiles(self) -> None:
+        profile = get_supported_profile(self.accepted_id)
+        detached = profile.to_payload()
+        detached.clear()
+        again = get_supported_profile(self.accepted_id)
+        self.assertEqual(again, profile)
+        self.assertIsNot(again, profile)
+        with self.assertRaises((FrozenInstanceError, AttributeError, TypeError)):
+            profile.complete_profile_id = "C_OS"
+        for candidate in ("A", "C"):
+            for realization in ("CI", "OS", "RG2b", "PC", "CI+PC"):
+                declared = resolve_profile(*family_fixture(candidate, realization))
+                with self.assertRaises(V4IdentityError):
+                    get_supported_profile(declared.complete_profile_id)
+        self.assertEqual(list_supported_profiles(), frozenset({self.accepted_id}))
+
+    def test_family_labels_and_unknown_exact_ids_fail_closed(self) -> None:
+        for key in ("C_OS", "A_OS", "GRC9V4", "grcv4-profile-sha256:" + "0" * 64,
+                    self.accepted_id + " ", None, [], {}):
+            with self.subTest(key=key), self.assertRaises(V4IdentityError):
+                get_supported_profile(key)
 
 
 if __name__ == "__main__":

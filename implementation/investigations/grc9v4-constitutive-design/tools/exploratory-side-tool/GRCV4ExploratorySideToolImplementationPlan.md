@@ -1709,3 +1709,117 @@ or forged acceptance, premature P9-3.4 work and self-acceptance remain rejected.
 API/notebook/browser and their exports keep numerical support empty. The
 Phase 9 P9-3.3 review links numerical charge/continuity evidence; these display
 checks do not execute candidate roots or promote source claim dispositions.
+
+## Phase 9 Tranche 4 — P9-4.9.2 receipt-parent successor
+
+The user-approved `grcv4-previous-successful-primary-v1` contract is added as
+one claim, one bounded debt resolution, one object and three contracts in a
+hash-pinned append-only overlay. `load_current_forensic_context` admits it;
+`load_successor_forensic_context` keeps D11 historical. Existing D10/D11 nodes,
+edges and accepted records are not rewritten. New unprocessed sources hold
+current admission without preventing exact historical reconstruction.
+
+The existing Phase 9 browser and notebook expose the same typed source-bound
+traces through `parent_authority` and `/api/receipt-parents`. The browser's
+claim/debt/object/contract selector is operational, not documentation-only.
+The [scenario guide](./docs/Phase9VerificationGuide.md#p9-492-parent-authority-scenarios)
+covers API identity, admission drift, historical scope and stale-result clearing.
+
+Current verification checks the bounded parent release and retained exact-source
+runtime evidence. Frozen historical checks run only on their historical inputs;
+they do not veto the authorized proposal/paper/spec/runtime successor. Permission
+adds exactly P9-4.9.2 on existing owners: 27 ready leaves and the same 29 eligible
+paths. G2 and GRC9V4 remain held. No new governance gate is introduced.
+
+## Phase 9 Tranche 4 — P9-4.9.1 public C_OS facade
+
+Historical implementation stage at `7905e7e`; the P9-4.9.1a entry below supersedes
+its pending-abundance/current-evidence statements without relabeling that run.
+
+Following accepted parent implementation `d8f26d9`, expose the separate
+user-requested facade leaf on four existing runtime/test paths. Current
+permission is 28 ready leaves and the same 29 eligible paths, not G2 support.
+API/notebook/browser status reflects implementation pending review and the
+P9-4.9.1a abundance authority gap, followed by P9-4.9.3/P9-4.8B. P9-4.9.1a
+is planning only: it adds no ready leaf, claim or accepted capability rule.
+The claim/debt graph is unchanged. The explicit null placeholder does not
+discharge public-interface conformance.
+
+The ordinary verifier checks the accepted 140-test parent record at its exact
+Git subject and the focused facade record at current runtime inputs. Shared
+source edits do not force a numerical rerun just to preserve historical evidence.
+Use the facade check and boundary-only path for this leaf, with targeted status
+tests; reserve full historical/browser/integrated verification for G2 review.
+Notebook `--status-only` / `PHASE9_STATUS_ONLY=True` omits pressure queries and
+uses a separate scoped output; full mode still rejects stale pressure records.
+See the [facade review](../../../../phase-9-grcv4/tranche-4/P9-4.9.1-Review.md).
+
+## Phase 9 Tranche 4 — P9-4.9.1a abundance availability
+
+The user accepted the audit-refined availability contract on 2026-09-09.
+Append its claim/debt/object/three contracts to the pinned parent graph; preserve
+every D10/D11/parent row and historical admission. Current source discovery and
+the ordinary verification route use the successor, without silent fallback.
+
+Expose actual read-only API, notebook and browser access to the six typed traces.
+Scenarios: exact required support/source/edge identities; unknown or rehashed
+authority rejection; notebook and HTTP-handler output identity/stale clearing;
+browser validator rejection of numeric/G2 overclaims. Use focused execution,
+not a full desktop/mobile or historical campaign for this diagnostic change.
+
+Propagate source → proposal/paper §14.2.1 → V4 specs/release → C_OS projection.
+Add only P9-4.9.1a permission on existing lifecycle/codec/test/release assets:
+29 ready leaves, unchanged 29 eligible paths. The exact unavailable triplet
+admits no numeric detector. Preserve parent/facade runs at `d8f26d9`/`7905e7e`;
+the focused successor binds new inputs. Final P9-4.9.3 and P9-4.8B remain separate.
+
+## Phase 9 Tranche 4 — P9-4.9.3 fixture reconciliation
+
+The fixture verifier inspects the retained exact-profile product through
+`verify_p9493_fixtures.py --check`; the P9-4.8B normal route below reuses it. Preserve the original
+abundance/facade/parent executions at their Git subjects; no historical run is
+relabeled current. Readiness adds only the fixture leaf on existing lifecycle
+and test paths (30 ready leaves, unchanged 29 eligible runtime paths).
+
+Scenarios: exact nonempty profile × 33 catalog rows; typed stale-cache rebuild;
+unaltered dimension-vector semantic/operation outcomes; exact mapped-event
+identity; separate control/target preimages; missing/duplicate/family/empty,
+borrowed-profile/event, altered-result and premature-G2 rejection. Use the
+existing focused source capture and content-addressed input/output records.
+No new claim/authority graph or API/notebook/browser behavior is introduced;
+reuse their accepted evidence. P9-4.8B reviews sufficiency and acceptance, not
+another automatic numerical/browser campaign.
+
+## Phase 9 Tranche 4 — P9-4.8B integrated G2 review
+
+Route normal current verification to `verify_p948b_review.py --check`, reusing
+the accepted `c01526c` fixture product and historical parent/facade/abundance
+subjects. Bind the active release, exact nominated profile, all 33 rows, mapped
+identities and typed contract/debt traces. The user accepted that
+single nomination on 2026-09-09; Tranche 4 is closed. Preserve the original HOLD
+and source debt dispositions. Only the exact accepted singleton is published; no new runtime leaf:
+readiness stays 30 leaves / 29 eligible paths. Correct the existing browser
+validator's stale 29-leaf list and API navigation to this actual phase; test the
+real API payload through the shipped browser validator, not only synthetic JS
+fixtures. Reject missing/duplicate fixture leaves and premature review permission.
+
+Scenarios: valid complete PASS proposal and valid HOLD; coherently rehashed
+missing/duplicate/empty/family inputs, unreviewed support, borrowed mapped
+identity, erased debt/obligation, historical support promotion, open-blocker
+PASS, premature acceptance/registry and stale release rejection. Reuse existing
+status notebook/API and authority notebook/HTTP/browser-validator controls.
+No numerical or desktop/mobile campaign is repeated. See the
+[review and acceptance boundary](../../../../phase-9-grcv4/tranche-4/P9-4.8B-Review.md).
+The [acceptance record](../../../../phase-9-grcv4/tranche-4/P9-4.8B-G2Acceptance.json)
+now authorizes exact G2 support/discovery. G3, other profiles and specialization
+remain closed. API/notebook/browser show that exact scope; held current
+verification must clear the current accepted-support projection. Source-level
+parent/abundance authority panels still do not themselves grant conformance.
+Full-path pressure uses the reviewed HEAD for current-file candidates and the
+frozen legacy prefix for its additive-export probe. Missing accepted ancestry
+and duplicate hooks remain rejected. Preserve the original 473-file numerical
+capture. Finite exact bindings separately identify acceptance-only registry,
+assertion and status changes, tested for lossless discovery, no ambient support
+expansion, forged/overbroad acceptance rejection and actual surface equality.
+All remaining captured source is byte-exact; the successor rejects other differences;
+it does not rewrite the original run or repeat numerical tests for status work.

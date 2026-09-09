@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Accepted permission, empty conformance sets, and preserved negative subjects."""
+"""Accepted permission, exact accepted conformance scope, and preserved negative subjects."""
 
 import argparse
 from copy import deepcopy
@@ -18,7 +18,77 @@ from grcv4_explorer.paths import repository_root  # noqa: E402
 from grcv4_explorer.tooling import managed_node, tool_environment  # noqa: E402
 
 
+def status_only_check(root):
+    """Lean notebook mode must omit pressure, not turn stale evidence green."""
+    notebook = json.loads((TOOL / "notebooks/phase9_verification.ipynb").read_text())
+    query = next(c for c in notebook["cells"] if c["id"] == "query-status")
+    calls = []
+
+    def stale_pressure(*args):
+        calls.append(args)
+        raise ValueError("recorded pressure subject is stale")
+
+    namespace = {
+        "Path": Path, "PHASE9_REPO_ROOT": root, "repo_root": root,
+        "PHASE9_STATUS_ONLY": True,
+        "verification_status": api.verification_status,
+        "pressure_projection": stale_pressure,
+    }
+    code = compile("".join(query["source"]), "phase9_verification.ipynb:query-status", "exec")
+    exec(code, namespace)
+    require = api._policy(root).require
+    require(namespace["phase9_status"] == api.verification_status(root)
+            and namespace["phase9_status"]["current_boundary"] == "passed"
+            and "P9-4.9.1a" in namespace["phase9_status"]["dependency_ready_leaves"]
+            and "P9-4.8B" in namespace["phase9_status"]["next_gate"]
+            and namespace["phase9_pressure"] is None and not calls,
+            "status-only mode queried or promoted pressure evidence")
+    namespace["PHASE9_STATUS_ONLY"] = False
+    try:
+        exec(code, namespace)
+    except ValueError as exc:
+        require(str(exc) == "recorded pressure subject is stale" and len(calls) == 1
+                and namespace["phase9_pressure"] is None,
+                "full notebook retained stale pressure")
+    else:
+        raise AssertionError("full notebook must still reject stale pressure")
+
+
+def acceptance_status_check(root):
+    """Current API/browser identity and fail-closed cleanup, without replay."""
+    policy = api._policy(root)
+    status = api.verification_status(root)
+    require = policy.require
+    # Feed the actual API payload to the shipped browser validator, not only a
+    # synthetic JS fixture; readiness drift must fail this cross-surface check.
+    browser_status = subprocess.run(
+        [str(managed_node()), "--input-type=module", "-e",
+         "import { verifiedStatus } from './verification.js'; "
+         "let raw=''; for await (const chunk of process.stdin) raw+=chunk; "
+         "console.log(JSON.stringify(await verifiedStatus(JSON.parse(raw))));"],
+        cwd=TOOL / "phase9-web", input=json.dumps(status),
+        capture_output=True, text=True, env=tool_environment(), check=True,
+    )
+    require(json.loads(browser_status.stdout) == status,
+            "actual browser/API status differs")
+    require(status["g2_acceptance"]["G2_accepted"] is True
+            and status["g2_acceptance"]["G3_accepted"] is False
+            and status["g2_acceptance"]["tranche_4_status"] == "closed"
+            and status["accepted_generic_runtime_support"] == policy.accepted_g2(root)["accepted_generic_runtime_support"],
+            "accepted G2 projection differs")
+    boundary = policy.current_boundary(root)
+    with patch.object(api, "_policy", return_value=policy), patch.object(
+        policy, "current_boundary", side_effect=[boundary, ValueError("changed during read")]
+    ):
+        held = api.verification_status(root)
+    require(held["current_boundary"] == "failed_closed"
+            and held["accepted_generic_runtime_support"] == []
+            and "g2_acceptance" not in held, "held status retained current G2 support")
+
+
 def checks(root):
+    status_only_check(root)
+    acceptance_status_check(root)
     policy = api._policy(root)
     status = api.verification_status(root)
     require = policy.require
@@ -44,7 +114,7 @@ def checks(root):
         return namespace
 
     require(
-        status["dependency_ready_leaves"] == ["P9-2.1","P9-2.2","P9-2.3","P9-2.4","P9-2.5","P9-2.6","P9-3.1","P9-3.2","P9-3.3","P9-3.4","P9-3.5","P9-4.1","P9-4.2","P9-4.3","P9-4.4","P9-4.5","P9-4.6","P9-4.7a","P9-4.7b","P9-7.2a-C_OS-NH-NH","P9-7.2a-C_OS-UNSUPPORTED","P9-7.2b-C_OS-MAPPED","P9-7.3-C_OS","P9-7.4-C_OS","P9-7.5-C_OS","P9-7.6-C_OS"]
+        status["dependency_ready_leaves"] == ["P9-2.1","P9-2.2","P9-2.3","P9-2.4","P9-2.5","P9-2.6","P9-3.1","P9-3.2","P9-3.3","P9-3.4","P9-3.5","P9-4.1","P9-4.2","P9-4.3","P9-4.4","P9-4.5","P9-4.6","P9-4.7a","P9-4.7b","P9-4.9.1","P9-4.9.1a","P9-4.9.2","P9-4.9.3","P9-7.2a-C_OS-NH-NH","P9-7.2a-C_OS-UNSUPPORTED","P9-7.2b-C_OS-MAPPED","P9-7.3-C_OS","P9-7.4-C_OS","P9-7.5-C_OS","P9-7.6-C_OS"]
         and status["harness_acceptance"]["record_digest"] == policy.HARNESS_ACCEPTANCE_DIGEST
         and status["harness_acceptance"]["accepted_iterations"] == ["P9-2.5"]
         and status["geometry_acceptance"]["record_digest"] == policy.GEOMETRY_ACCEPTANCE_DIGEST
@@ -97,7 +167,7 @@ def checks(root):
         "accepted G1 authority lost",
     )
     require(
-        status["accepted_generic_runtime_support"] == []
+        status["accepted_generic_runtime_support"] == policy.accepted_g2(root)["accepted_generic_runtime_support"]
         and status["admitted_specialization_support_sets"] == [],
         "G1 promoted conformance",
     )
@@ -296,14 +366,14 @@ def checks(root):
             (TOOL / "generated/phase9-verification/notebook-status.json").read_text()
         ),
         "node_stdout": result.stdout,
-        "runtime_support": [],
+        "runtime_support": status["accepted_generic_runtime_support"],
     }
     require(output["notebook"] == status, "notebook/API identity differs")
     (TOOL / "generated/phase9-verification/g1-surface-evidence.json").write_bytes(
         policy.canonical(output) + b"\n"
     )
     print(
-        "PHASE9_G1_SURFACES_PASS API_notebook_identity=byte_exact negative_candidate=rejected P9_G1=accepted runtime_support=empty"
+        "PHASE9_G1_SURFACES_PASS API_notebook_identity=byte_exact negative_candidate=rejected P9_G1=accepted runtime_support=accepted_exact_C_OS_singleton"
     )
 
 

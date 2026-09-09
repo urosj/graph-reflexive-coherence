@@ -217,7 +217,7 @@ class CandidateCReferenceTests(unittest.TestCase):
                 self.assertEqual(
                     bound.profile.identity_payload.realization, realization
                 )
-        self.assertEqual(list_supported_profiles(), frozenset())
+        self.assertEqual(list_supported_profiles(), frozenset({'grcv4-profile-sha256:a6b853ee382895eb78b1a7955a0df22f95d68b27cb0f762503e8c424c2f59b6d'}))
 
     def test_units_declaration_is_part_of_each_typed_constructor_identity(self) -> None:
         bound = CandidateCTransport(
@@ -1464,7 +1464,7 @@ class CandidateCCurrentTests(unittest.TestCase):
                 current = CandidateCCurrent(inputs)
                 self.assertEqual(inputs.to_payload(), before)
                 self.assertEqual(current.inputs.stage, stage)
-        self.assertFalse(list_supported_profiles())
+        self.assertEqual(list_supported_profiles(), frozenset({'grcv4-profile-sha256:a6b853ee382895eb78b1a7955a0df22f95d68b27cb0f762503e8c424c2f59b6d'}))
 
     def test_signed_permutation_and_vertex_relabeling_covariance(self) -> None:
         import numpy as np

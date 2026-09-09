@@ -88,7 +88,7 @@ def _load_historical_identities(
 
 
 def build_d11_source_bundle(
-    repo_root: Path, side_tool_root: Path
+    repo_root: Path, side_tool_root: Path, *, historical_only: bool = False
 ) -> tuple[dict[str, Any], tuple[SourceDocument, ...]]:
     """Build the D11 source manifest against the immutable historical base."""
 
@@ -108,6 +108,17 @@ def build_d11_source_bundle(
     d11_rows = admitted_rows(contract)
     combined_rows = [*admitted_rows(et_c0), *d11_rows]
     observation = discover_sources(repo_root, combined_rows)
+    if historical_only and observation.get("state") == "new_unprocessed_source_available":
+        # Reconstruct the accepted historical observation, not today's discovery
+        # status. New sources are NOT admitted by this historical loader.
+        observation = dict(observation)
+        observation.update(
+            state="current_bundle_exact", observed_record_count=len(combined_rows),
+            added_unprocessed=[], current_repository_state_complete=True,
+            historical_snapshot_only=False, live_rebuild_allowed=True,
+            refresh_requirement={"required": False, "steps": []},
+        )
+        observation["observation_digest"] = record_digest(observation, "observation_digest")
     if observation.get("state") != "current_bundle_exact":
         raise SourceAdmissionError(
             f"D11 admitted source set is not exact: {observation.get('state')}"
@@ -880,7 +891,9 @@ def load_successor_forensic_context(
 
     historical = load_forensic_context(repo_root, side_tool_root)
     records = side_tool_root / "records"
-    manifest, d11_documents = build_d11_source_bundle(repo_root, side_tool_root)
+    manifest, d11_documents = build_d11_source_bundle(
+        repo_root, side_tool_root, historical_only=True
+    )
     accepted_manifest = load_json_object(records / D11_SOURCE_MANIFEST)
     if canonical_bytes(manifest) != canonical_bytes(accepted_manifest):
         raise SourceAdmissionError("accepted D11 source manifest no longer rebuilds")

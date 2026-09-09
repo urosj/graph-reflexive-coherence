@@ -2228,9 +2228,9 @@ class CandidateCOSReplayTests(unittest.TestCase):
 
     def test_interleaved_ledger_deltas_and_parent_scope(self) -> None:
         owner = CandidateCOSOperation(dyadic_fixture())
-        last_step = None
         for action in ("step", "reset", "rebase", "step", "zero", "reset", "step"):
             before = owner.snapshot()
+            parent = before["receipt_ledger"][-4]["receipt_id"] if before["receipt_ledger"] else None
             if action in ("step", "zero"):
                 result = owner.step_v4(
                     request(0 if action == "zero" else 0.125, "same-id")
@@ -2241,14 +2241,7 @@ class CandidateCOSReplayTests(unittest.TestCase):
                     cast(dict[str, Any], r.to_payload())
                     for r in result.emitted_receipts
                 ]
-                parent = last_step
-                last_step = delta[0]["receipt_id"]
             else:
-                parent = (
-                    before["receipt_ledger"][-4]["receipt_id"]
-                    if before["receipt_ledger"]
-                    else None
-                )
                 getattr(
                     owner, "reset" if action == "reset" else "rebase_reset_baseline"
                 )()
@@ -2280,7 +2273,9 @@ class CandidateCOSReplayTests(unittest.TestCase):
         parents = [original["receipt_ledger"][i]["receipt_id"] for i in (0, 4)]
         for bad_parents in (
             [],
-            [parents[1]],
+            [parents[0]],  # Historical ordinary-only convention skips reset.
+            [parents[1], parents[1]],
+            [original["receipt_ledger"][5]["receipt_id"]],
             parents,
             list(reversed(parents)),
             ["grc-receipt-sha256:" + "f" * 64],
@@ -3945,6 +3940,190 @@ def capture_p947ab(output: str) -> int:
     if record["status"] != "passed":
         print(record.get("capture_error", record.get("failure_output", "")), flush=True)
     return 0 if record["status"] == "passed" else 1
+
+
+class CandidateCOSParentPolicyTests(unittest.TestCase):
+    """Accepted P9 parent semantics, not full facade or authenticated history."""
+
+    def assert_chain(self, owner: CandidateCOSOperation) -> None:
+        snapshot = owner.snapshot()
+        position, parent = 0, []
+        seen = set()
+        for record in snapshot["commit_records"]:
+            ids = record["payload"]["emitted_receipt_ids"]
+            group = snapshot["receipt_ledger"][position:position + len(ids)]
+            self.assertEqual(len(group), 4)
+            self.assertEqual([r["receipt_id"] for r in group], ids)
+            for row in group:
+                self.assertEqual(row["identity_payload"]["core"]["parent_receipt_ids"], parent)
+                self.assertNotIn(row["receipt_id"], seen)
+                seen.add(row["receipt_id"])
+            parent = [ids[0]]
+            position += len(ids)
+        self.assertEqual(position, len(snapshot["receipt_ledger"]))
+        self.assertEqual(owner.duplicate().snapshot(), snapshot)
+
+    def test_every_primary_kind_can_root_and_step_after_crossings_uses_latest_primary(self) -> None:
+        for kind in ("step", "zero", "reset", "rebase", "migration", "event"):
+            target = event_target()
+            migrated = os_fixture(candidate={"chi_C": 0, "zeta_C": 0}, geometry={"kappa_H": 0}).geometry.reference
+            owner = CandidateCOSOperation(dyadic_fixture(), targets=(target, migrated))
+            with self.subTest(kind=kind):
+                if kind in ("step", "zero"):
+                    self.assertTrue(owner.step_v4(request(0 if kind == "zero" else 0.125)).committed)
+                elif kind == "reset":
+                    owner.reset()
+                elif kind == "rebase":
+                    owner.rebase_reset_baseline()
+                elif kind == "migration":
+                    self.assertTrue(owner.migrate_profile(migration_request(owner, migrated)).committed)
+                    self.assertEqual(owner.reference, migrated)
+                else:
+                    self.assertTrue(owner.apply_topology_event(
+                        event_request(owner, target, [1, 0, 0, 1, 0, 0], [0, 0, 0.5])
+                    ).committed)
+                first = owner.snapshot()
+                self.assertTrue(all(r["identity_payload"]["core"]["parent_receipt_ids"] == []
+                                    for r in first["receipt_ledger"]))
+                self.assertTrue(owner.step_v4(request(0, "after-root")).committed)
+                self.assertEqual(owner.snapshot()["receipt_ledger"][:4], first["receipt_ledger"])
+                self.assert_chain(owner)
+
+    def test_nonwriting_operations_and_failures_do_not_advance_parent_head(self) -> None:
+        import tempfile
+        from pathlib import Path
+
+        owner = CandidateCOSOperation(dyadic_fixture())
+        owner.step_v4(request(0.125, "first"))
+        owner.reset()
+        before = owner.snapshot()
+        previous = before["receipt_ledger"][-4]["receipt_id"]
+        owner.get_state()
+        owner.snapshot()
+        duplicate = owner.duplicate()
+        self.assertEqual(duplicate.snapshot(), before)
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "snapshot.json"
+            owner.save(path)
+            self.assertEqual(CandidateCOSOperation.load(path).snapshot(), before)
+        self.assertFalse(owner.step_v4(request(-1)).committed)
+        with self.assertRaises(TypeError):
+            owner.step_v4(object())
+        self.assertEqual(owner.snapshot(), before)
+        owner.set_state(_p946_assignment(owner, (1, 3)))
+        assigned = owner.snapshot()
+        self.assertEqual(assigned["receipt_ledger"], before["receipt_ledger"])
+        self.assertNotEqual(assigned["scientific_state_digest"], before["scientific_state_digest"])
+        self.assertTrue(owner.step_v4(request(0, "after-assignment")).committed)
+        for row in owner.snapshot()["receipt_ledger"][-4:]:
+            self.assertEqual(row["identity_payload"]["core"]["parent_receipt_ids"], [previous])
+        self.assert_chain(owner)
+        # Content identity is shared by a repeated fork of the same prefix.
+        fork = CandidateCOSOperation.from_state(assigned)
+        fork.step_v4(request(0, "after-assignment"))
+        self.assertEqual(fork.snapshot(), owner.snapshot())
+
+    def test_snapshot_declares_policy_release_and_rejects_legacy_or_guessed_admission(self) -> None:
+        from copy import deepcopy
+        from pygrc.models.grc_v4_codec import COS_SNAPSHOT_LAYOUT_ID, RECEIPT_PARENT_POLICY_ID, RELEASE_ID
+
+        owner = CandidateCOSOperation(dyadic_fixture())
+        original = owner.snapshot()
+        self.assertEqual(original["implementation_layout_id"], COS_SNAPSHOT_LAYOUT_ID)
+        self.assertEqual(original["receipt_parent_policy_id"], RECEIPT_PARENT_POLICY_ID)
+        self.assertEqual(original["specification_release_id"], RELEASE_ID)
+        for field, value in (
+            ("implementation_layout_id", "pygrc-c-os-snapshot-v1"),
+            ("implementation_layout_id", "pygrc-c-os-snapshot-v2"),
+            ("receipt_parent_policy_id", "ordinary-only"),
+            ("specification_release_id", "grcv4-spec-release-sha256:" + "0" * 64),
+            ("receipt_parent_policy_id", None),
+            ("specification_release_id", None),
+        ):
+            bad = deepcopy(original)
+            if value is None:
+                del bad[field]
+            else:
+                bad[field] = value
+            with self.subTest(field=field, value=value), self.assertRaises(ValueError):
+                CandidateCOSOperation.from_state(bad)
+        self.assertEqual(owner.snapshot(), original)
+
+    def test_auxiliary_and_partition_mutations_reject_without_observable_restore(self) -> None:
+        from copy import deepcopy
+
+        owner = CandidateCOSOperation(dyadic_fixture())
+        owner.reset()
+        owner.step_v4(request(0, "last"))
+        original = owner.snapshot()
+        for defect in ("auxiliary", "duplicate", "empty", "reordered", "missing", "root-parent"):
+            bad = deepcopy(original)
+            if defect == "auxiliary":
+                row = bad["receipt_ledger"][-1]
+                row["identity_payload"]["core"]["parent_receipt_ids"] = []
+                row["receipt_id"] = identity("grc-receipt-sha256", row["identity_payload"])
+                record = bad["commit_records"][-1]
+                record["payload"]["emitted_receipt_ids"][-1] = row["receipt_id"]
+                record["commit_id"] = identity("grc-commit-sha256", record["payload"])
+                for entry in bad["receipt_ledger"][-4:]:
+                    entry["commit_id"] = record["commit_id"]
+                _p946_rehash(bad)
+            elif defect == "duplicate":
+                bad["receipt_ledger"] += deepcopy(bad["receipt_ledger"][-4:])
+                bad["commit_records"].append(deepcopy(bad["commit_records"][-1]))
+                _p946_rehash(bad)
+            elif defect == "empty":
+                bad["commit_records"][-1]["payload"]["emitted_receipt_ids"] = []
+                record = bad["commit_records"][-1]
+                record["commit_id"] = identity("grc-commit-sha256", record["payload"])
+            elif defect == "reordered":
+                bad["commit_records"].reverse()
+            elif defect == "missing":
+                bad["commit_records"].pop()
+            else:
+                # Structural self/forward/cycle labels are tested symbolically.
+                # Real content IDs cannot be coherently cyclically rehashed
+                # without solving a hash fixed point; do not claim otherwise.
+                bad["receipt_ledger"][0]["identity_payload"]["core"]["parent_receipt_ids"] = [
+                    bad["receipt_ledger"][4]["receipt_id"]]
+            with self.subTest(defect=defect), self.assertRaises(ValueError):
+                CandidateCOSOperation.from_state(bad)
+            self.assertEqual(owner.snapshot(), original)
+
+    def test_hash_coherent_wrong_parents_fail_before_atomic_publication(self) -> None:
+        from copy import deepcopy
+        import pygrc.models.grc_v4_lifecycle as module
+        from pygrc.models.grc_v4_step import make_commit_receipts as real
+
+        target = event_target()
+        owner = CandidateCOSOperation(dyadic_fixture(), targets=(target,))
+        owner.step_v4(request(0.125, "first"))
+        owner.reset()
+        before = owner.snapshot()
+        old_owned = owner._owned
+        for kind in ("step", "reset", "rebase", "migration", "event"):
+            def corrupt(payloads: Any, **kwargs: Any) -> Any:
+                copied = deepcopy(payloads)
+                for payload in copied:
+                    payload["core"]["parent_receipt_ids"] = [before["receipt_ledger"][0]["receipt_id"]]
+                return real(copied, **kwargs)
+
+            with self.subTest(kind=kind), patch.object(module, "make_commit_receipts", side_effect=corrupt):
+                with self.assertRaises(V4IdentityError):
+                    if kind == "step":
+                        owner.step_v4(request(0, "bad"))
+                    elif kind == "reset":
+                        owner.reset()
+                    elif kind == "rebase":
+                        owner.rebase_reset_baseline()
+                    elif kind == "migration":
+                        owner.migrate_profile(migration_request(owner, owner.reference))
+                    else:
+                        owner.apply_topology_event(event_request(owner, target, [1, 0, 0, 1, 0, 0], [0, 0, 0.5]))
+            self.assertIs(owner._owned, old_owned)
+            self.assertEqual(owner.snapshot(), before)
+        owner.step_v4(request(0, "good"))
+        self.assert_chain(owner)
 
 
 if __name__ == "__main__":

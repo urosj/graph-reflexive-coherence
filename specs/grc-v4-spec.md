@@ -1626,6 +1626,14 @@ $$
 
 ## Observables
 
+The [V4 abundance availability contract](grc-common-interface-v4-ext.md#abundance-availability)
+is normative, following paper §14.2.1 and `P9-4.9.1a-CL-N-001`.
+Every enabled profile, including C_OS, retains `abundance` and currently publishes
+the exact unavailable triplet; no numeric definition or `v4_abundance_diagnostic`
+capability is admitted here. This does not introduce a generic basin detector,
+scientific state or profile parameter. Future numeric support requires separately
+admitted release-bound family semantics and total detector conformance.
+
 In addition to common observables, every instance must expose:
 
 - `complete_profile_id`
@@ -1643,6 +1651,24 @@ Candidate/realization observables are exposed only when implemented. Derived
 surfaces must be labeled by stage and must not be presented as authoritative
 state. Claim-ceiling metadata may be exposed as diagnostics but is not causal
 state.
+
+## Receipt-parent admission
+
+The [successful-commit parent policy](grc-common-interface-v4-ext.md#successful-commit-receipt-parent-policy)
+is normative for every successful V4 lifecycle operation, including ordinary
+and zero-duration steps, reset/rebase and migration/events. Its authority is
+[paper §12.5.1](../implementation/investigations/grc9v4-constitutive-design/drafts/2026-09-GRC-V4.md#1251-successful-commit-receipt-parents),
+not an inferred extension of D10.2. All receipts of a commit name precisely
+the previous successful primary, or no parent for the first commit. Validate
+the entire ordered commit/ledger partition before publication or restoration.
+Content identity alone does not establish valid lineage or authenticated
+uninterrupted history; lawful unreceipted assignment is still permitted.
+
+Snapshots declare the policy and release explicitly. The internal C_OS v3
+layout rejects historical v1/v2 layouts without implicit conversion. Older
+accepted executions and their receipt identities remain historical evidence,
+not executions of this successor policy. Generic structural authority and
+bounded C_OS implementation do not confer complete-profile or G2 acceptance.
 
 ## Serialization
 

@@ -1,10 +1,13 @@
+const acceptedProfile = "grcv4-profile-sha256:a6b853ee382895eb78b1a7955a0df22f95d68b27cb0f762503e8c424c2f59b6d";
 export function checkedStatus(value) {
   if (!['phase9_governance_status_v1','phase9_governance_status_v2'].includes(value?.schema) || value.output_class !== "implementation_verification_status_not_forensic_trace") throw new Error("Unrecognized verification status");
   const implementation = value.schema === 'phase9_governance_status_v2' && value.current_boundary === 'passed';
-  if (typeof value.P9_G1_accepted !== 'boolean' || value.runtime_authorized !== implementation || (implementation && !value.P9_G1_accepted) || (value.schema === 'phase9_governance_status_v1' && value.P9_G1_accepted) || !Array.isArray(value.accepted_generic_runtime_support) || value.accepted_generic_runtime_support.length !== 0 || !Array.isArray(value.admitted_specialization_support_sets) || value.admitted_specialization_support_sets.length !== 0) throw new Error("Unverified runtime authority or support");
+  if (typeof value.P9_G1_accepted !== 'boolean' || value.runtime_authorized !== implementation || (implementation && !value.P9_G1_accepted) || (value.schema === 'phase9_governance_status_v1' && value.P9_G1_accepted) || !Array.isArray(value.accepted_generic_runtime_support) || JSON.stringify(value.accepted_generic_runtime_support) !== JSON.stringify(implementation ? [acceptedProfile] : []) || !Array.isArray(value.admitted_specialization_support_sets) || value.admitted_specialization_support_sets.length !== 0) throw new Error("Unverified runtime authority or support");
+  if (implementation && (value.g2_acceptance?.record_digest !== 'e7165dc2f4cfe159d397c7aa61ccfbc89a30909db888e6638ef1ffe5905ec6dd' || value.g2_acceptance?.gate !== 'P9-G2[C_OS]' || value.g2_acceptance?.alias !== 'P9-7.7-C_OS' || value.g2_acceptance?.G2_accepted !== true || value.g2_acceptance?.G3_accepted !== false || value.g2_acceptance?.tranche_4_status !== 'closed' || JSON.stringify(value.g2_acceptance?.accepted_generic_runtime_support) !== JSON.stringify([acceptedProfile]) || JSON.stringify(value.g2_acceptance?.new_runtime_iterations_authorized) !== '[]')) throw new Error('Missing or widened exact-profile G2 acceptance');
+  if (!implementation && value.g2_acceptance !== undefined) throw new Error('Unverified boundary cannot advertise current G2 support');
   if (value.P9_G1_accepted && value.approval_digest !== 'cd2c52f30477e1042bb903bd0553da237ddccc9cad373afecc1a84e4e0b37ea2') throw new Error('Missing recorded P9-G1 acceptance');
   if (implementation && (value.runtime_authority_state !== 'accepted_P9_G1_bounded_implementation_not_conformance' || !Array.isArray(value.implementation_scope) || value.implementation_scope.length !== 43)) throw new Error('Missing accepted P9-G1 scope');
-  if (!implementation && value.P9_G1_accepted && (value.current_boundary !== 'failed_closed' || value.runtime_authority_state !== 'accepted_P9_G1_current_work_held' || value.implementation_scope !== undefined || value.permitted_runtime_paths !== undefined || value.dependency_ready_leaves !== undefined || value.foundation_acceptance !== undefined || value.request_acceptance !== undefined || value.result_acceptance !== undefined || value.harness_acceptance !== undefined || value.integration_acceptance !== undefined || value.geometry_acceptance !== undefined || value.stage_acceptance !== undefined || value.resource_acceptance !== undefined || value.numerical_pressure_acceptance !== undefined || value.preservation_acceptance !== undefined || value.reference_transport_acceptance !== undefined || value.c_current_acceptance !== undefined || value.c_controls_acceptance !== undefined || value.os_pass_acceptance !== undefined || value.os_operations_acceptance !== undefined || value.lifecycle_batch_authorization !== undefined || value.specification_correction !== undefined)) throw new Error('Held work cannot retain implementation permission');
+  if (!implementation && value.P9_G1_accepted && (value.current_boundary !== 'failed_closed' || value.runtime_authority_state !== 'accepted_P9_G1_current_work_held' || value.implementation_scope !== undefined || value.permitted_runtime_paths !== undefined || value.dependency_ready_leaves !== undefined || value.foundation_acceptance !== undefined || value.request_acceptance !== undefined || value.result_acceptance !== undefined || value.harness_acceptance !== undefined || value.integration_acceptance !== undefined || value.geometry_acceptance !== undefined || value.stage_acceptance !== undefined || value.resource_acceptance !== undefined || value.numerical_pressure_acceptance !== undefined || value.preservation_acceptance !== undefined || value.reference_transport_acceptance !== undefined || value.c_current_acceptance !== undefined || value.c_controls_acceptance !== undefined || value.os_pass_acceptance !== undefined || value.os_operations_acceptance !== undefined || value.lifecycle_batch_authorization !== undefined || value.specification_correction !== undefined || value.receipt_parent_authority !== undefined || value.abundance_interface_authority !== undefined)) throw new Error('Held work cannot retain implementation permission');
   if (value.schema === 'phase9_governance_status_v2' && !['verified','unavailable','invalid'].includes(value.handoff_evidence?.status)) throw new Error('Unknown handoff evidence disposition');
   if (implementation && (value.foundation_acceptance?.record_digest !== '1e3f0ddb06b119fa46dc7609d05b7db0c3a4cbc07428c05b8a032da081ae9dd4' || JSON.stringify(value.foundation_acceptance?.accepted_iterations) !== JSON.stringify(['P9-2.1','P9-2.2']))) throw new Error('Missing accepted foundation');
   if (implementation && (value.request_acceptance?.record_digest !== 'ac07a2f7c93538454d9663aba78ca0eb5af385d7975582e4c21682f41ce4c17f' || JSON.stringify(value.request_acceptance?.accepted_iterations) !== JSON.stringify(['P9-2.3']))) throw new Error('Missing accepted requests');
@@ -23,7 +26,9 @@ export function checkedStatus(value) {
   if (implementation && (value.os_operations_acceptance?.record_digest !== 'b37b037f0baa0fe5e291c96deba0520933070077b8d5a6a64995fbca21b5e274' || JSON.stringify(value.os_operations_acceptance?.accepted_iterations) !== JSON.stringify(['P9-4.5']))) throw new Error('Missing accepted C OS operations');
   if (implementation && (value.lifecycle_batch_authorization?.record_digest !== 'fe11cfd2db36a9e1a74301aeaf89e316a3e93e7d3f5ea9d5f1197e199ee27d6b' || value.lifecycle_batch_authorization?.audit_status !== 'findings_closed_after_correction' || JSON.stringify(value.lifecycle_batch_authorization?.execution_order) !== JSON.stringify(['P9-4.7a','P9-4.7b']) || JSON.stringify(value.lifecycle_batch_authorization?.combined_audit_scope) !== JSON.stringify(['P9-4.6','P9-4.7a','P9-4.7b']))) throw new Error('Missing accepted lifecycle batch and audit closure');
   if (implementation && (value.specification_correction?.record_digest !== '56f1d4378eb8273d261b76aff3b128c526fb5064fa3bceace5c73fbb1f9f9903' || value.specification_correction?.release_id !== 'grcv4-spec-release-sha256:7b8b4d4e32e48fd35f70421cce7f547eebb21dd81389764061efe6e1a8c19886')) throw new Error('Missing accepted mapped-vector successor release');
-  if (implementation && (JSON.stringify(value.dependency_ready_leaves) !== JSON.stringify(["P9-2.1","P9-2.2","P9-2.3","P9-2.4","P9-2.5","P9-2.6","P9-3.1","P9-3.2","P9-3.3","P9-3.4","P9-3.5","P9-4.1","P9-4.2","P9-4.3","P9-4.4","P9-4.5","P9-4.6","P9-4.7a","P9-4.7b","P9-7.2a-C_OS-NH-NH","P9-7.2a-C_OS-UNSUPPORTED","P9-7.2b-C_OS-MAPPED","P9-7.3-C_OS","P9-7.4-C_OS","P9-7.5-C_OS","P9-7.6-C_OS"]) || !Array.isArray(value.permitted_runtime_paths) || value.permitted_runtime_paths.length !== 29 || !['src/pygrc/models/__init__.py','pyproject.toml','tests/models/grcv4_conformance_harness.py','tests/models/grcv4_reference_oracles.py',"src/pygrc/models/grc_v4_geometry.py","src/pygrc/models/grc_v4_transport.py","tests/models/test_grc_v4_geometry.py","tests/models/test_grc_v4_transport.py","src/pygrc/models/grc_v4_candidate_c.py","tests/models/test_grc_v4_candidate_c.py","src/pygrc/models/grc_v4_realizations.py","tests/models/test_grc_v4_realizations.py","src/pygrc/models/grc_v4_lifecycle.py","tests/models/test_grc_v4_lifecycle.py"].every(path => value.permitted_runtime_paths.includes(path)))) throw new Error('Invalid dependency-ready permission');
+  if (implementation && (value.receipt_parent_authority?.record_digest !== 'ba7d69189c527153828b02c2bb3311899b036a634446de9ad8f36af6592c28f8' || value.receipt_parent_authority?.policy_id !== 'grcv4-previous-successful-primary-v1' || value.receipt_parent_authority?.G2_accepted !== false || value.receipt_parent_authority?.release_id !== 'grcv4-spec-release-sha256:f777519824f86c3e9382bcf9b45cba28554351506f354d3f778746e2aaff5c6b')) throw new Error('Missing bounded receipt-parent successor');
+  if (implementation && (value.abundance_interface_authority?.record_digest !== 'd9488700be9624da8500c1e533aa65d33b4f36a3307748ad12fd66449d8fe053' || value.abundance_interface_authority?.policy_id !== 'grcv4-family-abundance-diagnostic-v1' || value.abundance_interface_authority?.release_id !== 'grcv4-spec-release-sha256:e2acd9df0cc02c5fd4bbed4989ff5d7da3a819adeb2950d922b8a6ef4bf35f24' || value.abundance_interface_authority?.G2_accepted !== false || value.abundance_interface_authority?.numeric_definition_admitted !== false)) throw new Error('Missing bounded abundance successor');
+  if (implementation && (JSON.stringify(value.dependency_ready_leaves) !== JSON.stringify(["P9-2.1","P9-2.2","P9-2.3","P9-2.4","P9-2.5","P9-2.6","P9-3.1","P9-3.2","P9-3.3","P9-3.4","P9-3.5","P9-4.1","P9-4.2","P9-4.3","P9-4.4","P9-4.5","P9-4.6","P9-4.7a","P9-4.7b","P9-4.9.1","P9-4.9.1a","P9-4.9.2","P9-4.9.3","P9-7.2a-C_OS-NH-NH","P9-7.2a-C_OS-UNSUPPORTED","P9-7.2b-C_OS-MAPPED","P9-7.3-C_OS","P9-7.4-C_OS","P9-7.5-C_OS","P9-7.6-C_OS"]) || !Array.isArray(value.permitted_runtime_paths) || value.permitted_runtime_paths.length !== 29 || !['src/pygrc/models/__init__.py','pyproject.toml','tests/models/grcv4_conformance_harness.py','tests/models/grcv4_reference_oracles.py',"src/pygrc/models/grc_v4_geometry.py","src/pygrc/models/grc_v4_transport.py","tests/models/test_grc_v4_geometry.py","tests/models/test_grc_v4_transport.py","src/pygrc/models/grc_v4_candidate_c.py","tests/models/test_grc_v4_candidate_c.py","src/pygrc/models/grc_v4_realizations.py","tests/models/test_grc_v4_realizations.py","src/pygrc/models/grc_v4_lifecycle.py","tests/models/test_grc_v4_lifecycle.py"].every(path => value.permitted_runtime_paths.includes(path)))) throw new Error('Invalid dependency-ready permission');
   if (!['passed', 'failed_closed'].includes(value.current_boundary)) throw new Error("Unknown boundary disposition");
   if (!['not_current', 'recorded_pass_matching_current_inputs'].includes(value.recorded_full_verification)) throw new Error("Unknown recorded evidence disposition");
   if (value.current_boundary !== 'passed' && value.recorded_full_verification !== 'not_current') throw new Error("Failed boundary cannot retain a passing receipt");
@@ -51,6 +56,96 @@ export async function verifiedStatus(value) {
   return value;
 }
 
+export async function verifiedParents(value) {
+  if (value?.authority_extension_digest !== 'f50b4623cf0400532cda0c6c4ea600d1d55552d7927fbfcef62931524380188e') throw new Error('Unadmitted parent authority identity');
+  if (value?.schema !== 'grcv4_p9492_parent_surface_v1' || value.policy_id !== 'grcv4-previous-successful-primary-v1' || value.G2_accepted !== false || value.runtime_conformance_inferred !== false || !Array.isArray(value.contracts) || value.contracts.length !== 3) throw new Error('Unknown parent authority or widened conformance');
+  const {projection_digest, ...body} = value;
+  const hash = async v => Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256', new TextEncoder().encode(canonical(v)))), b => b.toString(16).padStart(2, '0')).join('');
+  if (await hash(body) !== projection_digest) throw new Error('Parent projection digest mismatch');
+  for (const trace of [value.claim, value.debt, value.object, ...value.contracts]) {
+    const {trace_digest, ...payload} = trace;
+    if (trace.output_class !== 'forensic_evidence_trace' || trace.authority_extension_digest !== value.authority_extension_digest || await hash(payload) !== trace_digest || !trace.rows.length || trace.rows.some(r => !r.source_ref || !r.edge_refs.length)) throw new Error('Missing source-bound parent trace');
+  }
+  return value;
+}
+
+let parentGeneration = 0;
+let parentValue = null;
+function renderParents() {
+  const output = document.querySelector('#parents-output');
+  output.textContent = '';
+  if (!parentValue) return;
+  const key = document.querySelector('#parent-view').value;
+  output.textContent = JSON.stringify(['claim', 'debt', 'object'].includes(key) ? parentValue[key] : parentValue.contracts[Number(key)], null, 2);
+}
+async function loadParents() {
+  const generation = ++parentGeneration;
+  parentValue = null;
+  renderParents();
+  const status = document.querySelector('#parents-status');
+  status.textContent = 'Checking source-bound parent authority…';
+  try {
+    const response = await fetch('/api/receipt-parents', {cache: 'no-store'});
+    if (!response.ok) throw new Error('Parent authority unavailable');
+    const value = await verifiedParents(await response.json());
+    if (generation !== parentGeneration) return;
+    parentValue = value;
+    status.textContent = `Accepted policy: ${value.policy_id}. Source authority only; runtime gate status is reported above.`;
+    renderParents();
+  } catch (error) {
+    if (generation === parentGeneration) status.textContent = `Held: ${error.message}`;
+  }
+}
+if (typeof document !== 'undefined') {
+  document.querySelector('#parents-refresh')?.addEventListener('click', loadParents);
+  document.querySelector('#parent-view')?.addEventListener('change', renderParents);
+}
+
+export async function verifiedAbundance(value) {
+  if (value?.authority_extension_digest !== 'f50b4623cf0400532cda0c6c4ea600d1d55552d7927fbfcef62931524380188e') throw new Error('Unadmitted abundance authority identity');
+  if (value?.schema !== 'grcv4_p9491a_abundance_surface_v1' || value.policy_id !== 'grcv4-family-abundance-diagnostic-v1' || value.numeric_definition_admitted !== false || value.G2_accepted !== false || value.runtime_conformance_inferred !== false || !Array.isArray(value.contracts) || value.contracts.length !== 3) throw new Error('Unknown abundance authority or widened conformance');
+  const {projection_digest, ...body} = value;
+  const hash = async v => Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256', new TextEncoder().encode(canonical(v)))), b => b.toString(16).padStart(2, '0')).join('');
+  if (await hash(body) !== projection_digest) throw new Error('Abundance projection digest mismatch');
+  for (const trace of [value.claim, value.debt, value.object, ...value.contracts]) {
+    const {trace_digest, ...payload} = trace;
+    if (trace.output_class !== 'forensic_evidence_trace' || trace.authority_extension_digest !== value.authority_extension_digest || await hash(payload) !== trace_digest || !trace.rows.length || trace.rows.some(r => !r.source_ref || !r.edge_refs.length)) throw new Error('Missing source-bound abundance trace');
+  }
+  return value;
+}
+
+let abundanceGeneration = 0;
+let abundanceValue = null;
+function renderAbundance() {
+  const output = document.querySelector('#abundance-output');
+  output.textContent = '';
+  if (!abundanceValue) return;
+  const key = document.querySelector('#abundance-view').value;
+  output.textContent = JSON.stringify(['claim', 'debt', 'object'].includes(key) ? abundanceValue[key] : abundanceValue.contracts[Number(key)], null, 2);
+}
+async function loadAbundance() {
+  const generation = ++abundanceGeneration;
+  abundanceValue = null;
+  renderAbundance();
+  const status = document.querySelector('#abundance-status');
+  status.textContent = 'Checking source-bound abundance authority…';
+  try {
+    const response = await fetch('/api/abundance', {cache: 'no-store'});
+    if (!response.ok) throw new Error('Abundance authority unavailable');
+    const value = await verifiedAbundance(await response.json());
+    if (generation !== abundanceGeneration) return;
+    abundanceValue = value;
+    status.textContent = `Accepted policy: ${value.policy_id}. Source authority only; runtime gate status is reported above.`;
+    renderAbundance();
+  } catch (error) {
+    if (generation === abundanceGeneration) status.textContent = `Held: ${error.message}`;
+  }
+}
+if (typeof document !== 'undefined') {
+  document.querySelector('#abundance-refresh')?.addEventListener('click', loadAbundance);
+  document.querySelector('#abundance-view')?.addEventListener('change', renderAbundance);
+}
+
 let refreshGeneration = 0;
 async function refresh() {
   const generation = ++refreshGeneration;
@@ -74,9 +169,9 @@ async function refresh() {
     if (generation !== refreshGeneration) return;
     const held = value.current_boundary !== 'passed';
     status.classList.toggle('error', held);
-    status.textContent = held ? `Held: ${value.error || 'Current inputs failed verification'}. ${value.P9_G1_accepted ? 'Recorded P9-G1 acceptance remains intact.' : 'P9-G1 acceptance is not verified.'}` : value.P9_G1_accepted ? 'P9-G1 accepted. Bounded implementation is authorized; runtime conformance remains pending.' : 'Current planning checks passed. Runtime remains unauthorized.';
-    document.querySelector('#authority').textContent = value.P9_G1_accepted ? (held ? 'Accepted / current work held' : 'Accepted / bounded implementation only') : 'Not accepted or not verified / not authorized';
-    document.querySelector('#next-work').textContent = value.runtime_authorized ? `Accepted foundation: ${value.foundation_acceptance.accepted_iterations.join(', ')}. Accepted requests: ${value.request_acceptance.accepted_iterations.join(', ')}. Accepted results: ${value.result_acceptance.accepted_iterations.join(', ')}. Accepted harness: ${value.harness_acceptance.accepted_iterations.join(', ')}. Accepted integration: ${value.integration_acceptance.accepted_iterations.join(', ')}. Accepted geometry: ${value.geometry_acceptance.accepted_iterations.join(', ')}. Accepted stages: ${value.stage_acceptance.accepted_iterations.join(', ')}. Accepted resources: ${value.resource_acceptance.accepted_iterations.join(', ')}. Accepted numerical pressure: ${value.numerical_pressure_acceptance.accepted_iterations.join(', ')}. Accepted prestate preservation: ${value.preservation_acceptance.accepted_iterations.join(', ')}. Accepted C reference transport: ${value.reference_transport_acceptance.accepted_iterations.join(', ')}. Accepted C stage current: ${value.c_current_acceptance.accepted_iterations.join(', ')}. Accepted C control derivative: ${value.c_controls_acceptance.accepted_iterations.join(', ')}. Accepted C OS pass: ${value.os_pass_acceptance.accepted_iterations.join(', ')}. Accepted C OS operations: ${value.os_operations_acceptance.accepted_iterations.join(', ')}. Authorized lifecycle batch: P9-4.7a then P9-4.7b. Accepted after audit corrections: P9-4.6, P9-4.7a and P9-4.7b. Exact mapped vector verified under the successor release. P9-4.8 is next for separate review. Execution-permitted leaves: ${value.dependency_ready_leaves.join(', ')}. ${value.permitted_runtime_paths.length} runtime paths are currently eligible under their owners. Later leaves remain gated.` : held ? 'Current work held; resolve the reported current-boundary failure.' : 'P9-G1 review remains pending.';
+    status.textContent = held ? `Held: ${value.error || 'Current inputs failed verification'}. ${value.P9_G1_accepted ? 'Recorded P9-G1 acceptance remains intact.' : 'P9-G1 acceptance is not verified.'}` : value.P9_G1_accepted ? 'Tranche 4 closed. G2 accepted for the single listed C_OS profile; G3 and other profiles remain closed.' : 'Current planning checks passed. Runtime remains unauthorized.';
+    document.querySelector('#authority').textContent = value.P9_G1_accepted ? (held ? 'Accepted / current work held' : `G2 accepted / ${value.accepted_generic_runtime_support[0]}`) : 'Not accepted or not verified / not authorized';
+    document.querySelector('#next-work').textContent = value.runtime_authorized ? `Accepted foundation: ${value.foundation_acceptance.accepted_iterations.join(', ')}. Accepted requests: ${value.request_acceptance.accepted_iterations.join(', ')}. Accepted results: ${value.result_acceptance.accepted_iterations.join(', ')}. Accepted harness: ${value.harness_acceptance.accepted_iterations.join(', ')}. Accepted integration: ${value.integration_acceptance.accepted_iterations.join(', ')}. Accepted geometry: ${value.geometry_acceptance.accepted_iterations.join(', ')}. Accepted stages: ${value.stage_acceptance.accepted_iterations.join(', ')}. Accepted resources: ${value.resource_acceptance.accepted_iterations.join(', ')}. Accepted numerical pressure: ${value.numerical_pressure_acceptance.accepted_iterations.join(', ')}. Accepted prestate preservation: ${value.preservation_acceptance.accepted_iterations.join(', ')}. Accepted C reference transport: ${value.reference_transport_acceptance.accepted_iterations.join(', ')}. Accepted C stage current: ${value.c_current_acceptance.accepted_iterations.join(', ')}. Accepted C control derivative: ${value.c_controls_acceptance.accepted_iterations.join(', ')}. Accepted C OS pass: ${value.os_pass_acceptance.accepted_iterations.join(', ')}. Accepted C OS operations: ${value.os_operations_acceptance.accepted_iterations.join(', ')}. Authorized lifecycle batch: P9-4.7a then P9-4.7b. Accepted after audit corrections: P9-4.6, P9-4.7a and P9-4.7b. Exact mapped vector verified under the successor release. ${value.next_gate} Execution-permitted leaves: ${value.dependency_ready_leaves.join(', ')}. ${value.permitted_runtime_paths.length} runtime paths are currently eligible under their owners. Later leaves remain gated.` : held ? 'Current work held; resolve the reported current-boundary failure.' : 'P9-G1 review remains pending.';
     document.querySelector('#boundary').textContent = held ? 'Failed · current work held' : 'Passed · current bytes';
     document.querySelector('#recorded').textContent = value.recorded_full_verification === 'not_current' ? 'Not current · rerun CLI' : 'Recorded pass · matching inputs';
     document.querySelector('#handoff').textContent = ({verified:'Verified · normalized archive and historical inputs', unavailable:'Unavailable · no archive integrity pass', invalid:'Invalid · archive integrity check failed'})[value.handoff_evidence?.status] || 'Not applicable to this historical phase';

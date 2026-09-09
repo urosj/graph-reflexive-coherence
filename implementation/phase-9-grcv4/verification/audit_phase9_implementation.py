@@ -77,22 +77,30 @@ def verify(root, boundary_only=False):
     policy.prior.run_logged(
         [
             sys.executable,
-            str(root / policy.CORRECTION_BUILDER),
+            str(root / policy.ABUNDANCE_RELEASE_BUILDER),
             "--check",
         ],
         root,
-        "current_accepted_vector_correction_release",
+        "current_accepted_abundance_release",
         commands,
     )
     if not boundary_only:
         predecessor_checks(root, commands)
         for label, script in [
+            ("P9492_parent_authority_surfaces", policy.SCRIPTS + "test_p9492_parents.py"),
+            ("P9491a_abundance_authority_surfaces", policy.SCRIPTS + "test_p9491a_abundance.py"),
             ("P9_G1_authority_pressure", policy.HERE + "test_phase9_g1.py"),
             ("P9_G1_API_notebook", policy.SCRIPTS + "test_phase9_g1_surfaces.py"),
         ]:
             policy.prior.run_logged(
                 [sys.executable, str(root / script)], root, label, commands
             )
+        # The successor review verifies the current fixture run and original
+        # parent/facade/abundance Git subjects without numerical reexecution.
+        policy.prior.run_logged(
+            [sys.executable, str(root / policy.HERE / "verify_p948b_review.py"), "--check"],
+            root, "P948B_accepted_exact_profile_review", commands,
+        )
         report = policy.read(root / policy.GENERATED / policy.REPORT_FILE)
         policy.require(
             report["policy_digest"] == boundary["record_digest"]
@@ -116,15 +124,15 @@ def verify(root, boundary_only=False):
         "tree": tree,
         "historical_revision": policy.prior.HISTORICAL,
         "accepted_planning_revision": policy.BASELINE,
-        "release_id": policy.CORRECTED_RELEASE_ID,
-        "predecessor_release_id": policy.prior.RELEASE_ID,
+        "release_id": policy.current_abundance_release(root),
+        "predecessor_release_id": policy.PARENT_RELEASE_ID,
         "runtime_authorized": True,
         "P9_G1_accepted": True,
-        "accepted_generic_runtime_support": [],
+        "accepted_generic_runtime_support": policy.accepted_g2(root)["accepted_generic_runtime_support"],
         "admitted_specialization_support_sets": [],
         "commands": commands,
         "handoff_evidence": policy.handoff_status(root),
-        "claim_ceiling": "accepted_implementation_permission_not_runtime_conformance",
+        "claim_ceiling": "G1_implementation_permission_plus_separate_exact_C_OS_G2_acceptance",
     }
     result["receipt_digest"] = policy.digest_record(result, "receipt_digest")
     return result
@@ -143,7 +151,7 @@ def main():
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_bytes(policy.canonical(result) + b"\n")
     print(
-        f"PHASE9_IMPLEMENTATION_VERIFICATION_PASS version=3 runtime_authorized=true P9_G1=accepted runtime_support=empty scope={result['scope']} handoff={result['handoff_evidence']['status']}"
+        f"PHASE9_IMPLEMENTATION_VERIFICATION_PASS version=3 runtime_authorized=true P9_G1=accepted runtime_support=accepted_exact_C_OS_singleton scope={result['scope']} handoff={result['handoff_evidence']['status']}"
     )
     if result["handoff_evidence"]["status"] != "verified":
         print("PHASE9_HANDOFF_WARNING " + result["handoff_evidence"]["detail"])

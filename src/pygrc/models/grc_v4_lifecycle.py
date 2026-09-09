@@ -3,7 +3,7 @@
 One immutable lifecycle tuple is published only after numerical admission,
 reference restart admission, receipt construction and result binding succeed.
 Snapshot/load/reset/rebase, registered C_OS migration and affine events use
-that same receiver. Public facade/profile conformance remains later work.
+that same receiver, including through GRCV4. Full G2 conformance remains separate.
 There are no injectable production solvers, commit callbacks or faults.
 """
 
@@ -12,16 +12,22 @@ from __future__ import annotations
 from dataclasses import dataclass, fields, replace
 from pathlib import Path
 from fractions import Fraction
+from math import isfinite
 from threading import Lock
 from typing import Any, Self, cast
 
 from .grc_v4 import (
     GRCV4StepRequestInput,
+    GRCV4StepRequest,
+    MissingV4StepRequest,
     GRCV4MigrationRequest,
     GRCV4MappedTopologyEventRequest,
 )
 from .grc_v4_candidate_c import CandidateCCurrent, CandidateCStageError
 from .grc_v4_codec import (
+    COS_SNAPSHOT_LAYOUT_ID,
+    RECEIPT_PARENT_POLICY_ID,
+    RELEASE_ID,
     V4IdentityError,
     V4SchemaError,
     canonical_json_bytes,
@@ -68,6 +74,103 @@ from .grc_v4_step import (
 )
 
 from .grc_v4_transport import ChargeEvaluation, ChargeDomainError
+from .grc_v4_profile import GRCV4Profile
+
+
+def _validate_abundance_projection(
+    projection: dict[str, Any], *, release_id: str, model_identity: str,
+    observed_state_digest: str, stage: str, capability: bool,
+    definition: tuple[str, str, str, str, str, str] | None = None,
+) -> None:
+    """Pure protocol validation, not definition admission or detector execution.
+
+    Production has no admitted definition and never advertises the capability.
+    Synthetic tests exercise the numeric protocol using a declared tuple of
+    (release, model, definition, detector, stage, value-kind). No public receiver
+    accepts this tuple or an injected detector; future admission remains separate.
+    """
+    if set(projection) != {"abundance", "abundance_status", "abundance_observation"}:
+        raise ValueError("invalid abundance projection fields")
+    if not all(isinstance(v, str) and v for v in (release_id, model_identity, observed_state_digest, stage)):
+        raise ValueError("missing abundance observation context")
+    if type(capability) is not bool:
+        raise ValueError("invalid abundance capability")
+    value = projection["abundance"]
+    metadata = projection["abundance_observation"]
+    if definition is None:
+        if capability or value is not None or metadata is not None or projection["abundance_status"] != "unavailable_no_admitted_definition":
+            raise ValueError("no admitted abundance definition")
+        return
+    if (len(definition) != 6 or definition[0:2] != (release_id, model_identity)
+            or definition[4] != stage or definition[5] not in {"count", "nonnegative_number"}
+            or not all(isinstance(v, str) and v for v in definition)):
+        raise ValueError("unresolved abundance definition context")
+    if not capability or projection["abundance_status"] != "available":
+        raise ValueError("declared definition cannot downgrade to unavailable")
+    if type(value) not in (int, float):
+        raise ValueError("abundance must be a finite nonnegative number")
+    try:
+        finite = isfinite(value)
+    except OverflowError:
+        finite = False
+    if (not finite or value < 0 or (type(value) is int and value > 2**53 - 1)
+            or (definition[5] == "count" and (value > 2**53 - 1 or value % 1 != 0))):
+        raise ValueError("invalid abundance numeric value")
+    if type(metadata) is not dict or metadata != {
+        "definition_id": definition[2], "detector_id": definition[3],
+        "stage": stage, "observed_state_digest": observed_state_digest,
+        "model_identity": model_identity,
+    }:
+        raise ValueError("stale or invalid abundance observation metadata")
+
+
+def _public_observables(
+    inputs: GeometryStageInputs,
+    ledger: tuple[SuccessfulReceiptEnvelope, ...],
+    charge: ChargeEvaluation,
+    current: CandidateCCurrent,
+    *,
+    stage: str,
+    current_stage: str,
+    solver: SolverDisposition | None,
+    consumed: bool,
+) -> dict[str, Any]:
+    """Detached projections; no new scientific state or retained solver cache.
+
+    P9-4.9.1a admits availability semantics, not a numeric V4 definition.
+    No detector is advertised or run; no basin/charge proxy is inferred.
+    """
+    ref = inputs.geometry.reference
+    identity = ref.profile.identity_payload
+    abundance = {"abundance": None, "abundance_status": "unavailable_no_admitted_definition",
+                 "abundance_observation": None}
+    _validate_abundance_projection(
+        abundance, release_id=RELEASE_ID, model_identity=ref.profile.complete_profile_id,
+        observed_state_digest=inputs.scientific_state_id, stage=stage, capability=False,
+    )
+    return {
+        "stage": stage,
+        "budget_current": charge.actual,
+        "budget_error": charge.residual,
+        "num_nodes": len(ref.graph.live_node_ids),
+        "num_edges": len(ref.graph.oriented_edges),
+        **abundance,
+        "complete_profile_id": ref.profile.complete_profile_id,
+        "candidate_id": identity.candidate,
+        "realization_id": identity.realization,
+        "charge_target": charge.target,
+        "charge_current": charge.actual,
+        "charge_error": charge.residual,
+        "solver_disposition": solver,
+        "authoritative_current": {
+            "stage": current_stage,
+            "consumed_by_continuity": consumed,
+            "values": list(current.current.values),
+        },
+        "geometry_profile_id": identity.geometry_profile_id,
+        "receipt_ledger": [r.to_payload() for r in ledger],
+        "support_status": "local_C_OS_execution_not_G2_acceptance",
+    }
 
 
 def _lifecycle_state(
@@ -183,19 +286,12 @@ def _ordinary_receipts(
     The universal core's resource transform identifies unchanged vertex
     placement (identity, no event increment), not the nonlinear continuity
     map. Source/target authority binds the actual resource write. The history
-    bundle names C rederivation and absence of a carrier. Parents follow this owner's ordinary-commit chain; administrative and
-    crossing parents follow the latest primary. The full ledger retains order.
+    bundle names C rederivation and absence of a carrier. All operations use
+    the accepted previous-successful-primary policy, including auxiliaries.
     """
     ref = before.geometry.reference
     channels, references = _receipt_context(ref)
-    parent = next(
-        (
-            r.receipt_id
-            for r in reversed(ledger)
-            if r.identity_payload["schema_version"] == "grcv4-step-commit-receipt-v1"
-        ),
-        None,
-    )
+    parent = None if not ledger else ledger[-4].receipt_id
     core: dict[str, Any] = {
         "operation_id": before.operation_id,
         **references,
@@ -417,6 +513,25 @@ def _crossing_references(
     }
 
 
+class ResourceTransformDimensionError(ValueError):
+    """Semantic shape diagnostic, distinct from wire and operation errors."""
+
+    diagnostic = "resource_transform_dimension_mismatch"
+
+
+def _validate_resource_transform_dimensions(transform: Any) -> None:
+    # Decode/schema validation precedes this semantic boundary. The matrix is
+    # target-by-source; an admissible shape does not admit a graph or event.
+    from .grc_v4 import ResolvedResourceEventTransform
+
+    if type(transform) is not ResolvedResourceEventTransform:
+        raise TypeError("expected a decoded resource transform")
+    n, m = len(transform.source_vertex_ids), len(transform.target_vertex_ids)
+    if (len(transform.row_major_coefficients) != m * n
+            or len(transform.target_increment) != m):
+        raise ResourceTransformDimensionError(ResourceTransformDimensionError.diagnostic)
+
+
 def _affine_resource(
     request: GRCV4MappedTopologyEventRequest,
     before: GeometryStageInputs,
@@ -429,11 +544,13 @@ def _affine_resource(
     n, m = len(source_ids), len(target_ids)
     # These exact orders are part of the map's type. Unit vertex measures are
     # fixed by the admitted receiver; no row normalization or implicit reorder.
+    try:
+        _validate_resource_transform_dimensions(transform)
+    except ResourceTransformDimensionError as exc:
+        raise _CrossingFailure("admission", "invalid_topology_event", exc.diagnostic) from exc
     if (
         tuple(transform.source_vertex_ids) != source_ids
         or tuple(transform.target_vertex_ids) != target_ids
-        or len(transform.row_major_coefficients) != m * n
-        or len(transform.target_increment) != m
     ):
         raise _CrossingFailure(
             "admission",
@@ -811,7 +928,6 @@ def _restore_commits(
     commits: list[CommitPayload] = []
     position = 0
     seen: set[str] = set()
-    last_step: str | None = None
     last_primary: str | None = None
     last_reset: str | None = None
     crossings = {} if crossings is None else crossings
@@ -910,14 +1026,12 @@ def _restore_commits(
                 )
         core = primary["core"]
         assert isinstance(core, dict)
-        expected_parent = (
-            last_step if kind == "grcv4-step-commit-receipt-v1" else last_primary
-        )
+        expected_parent = last_primary
         if core["parent_receipt_ids"] != (
             [] if expected_parent is None else [expected_parent]
         ):
             raise V4IdentityError(
-                "snapshot does not use this receiver's local parent convention"
+                "snapshot violates the accepted previous-successful-primary parent convention"
             )
         if (
             core["operation_id"],
@@ -1016,7 +1130,6 @@ def _restore_commits(
         if kind == "grcv4-step-commit-receipt-v1":
             if core["source_reset_digest"] != core["target_reset_digest"]:
                 raise V4IdentityError("ordinary step cannot rebase reset")
-            last_step = group[0].receipt_id
         last_primary = group[0].receipt_id
         position += len(group)
         commits.append(commit)
@@ -1141,7 +1254,7 @@ def _validate_publication(
 
 
 class CandidateCOSOperation:
-    """Bounded C_OS receiver; the full public GRCV4 facade remains later work.
+    """Sole bounded C_OS lifecycle owner, also used by the public GRCV4 facade.
 
     Fresh construction has an empty ledger. from_state/load restore a complete
     snapshot, including commit preimages. References, current/reset coordinates,
@@ -1198,7 +1311,11 @@ class CandidateCOSOperation:
         snapshot = {
             "schema_version": "grcv4-snapshot-v1",
             "model_family": "GRCV4",
-            "implementation_layout_id": "pygrc-c-os-snapshot-v1",
+            "implementation_layout_id": COS_SNAPSHOT_LAYOUT_ID,
+            "receipt_parent_policy_id": RECEIPT_PARENT_POLICY_ID,
+            "specification_release_id": RELEASE_ID,
+            "reference_registry": [ref.to_payload() for ref in self._registry],
+            "transition_records": [row.to_dict() for row in owned.transitions],
             "reference": owned.reference.to_payload(),
             "scientific_state": inputs.scientific_state_preimage,
             "scientific_state_digest": owned.state.scientific_state_digest,
@@ -1220,14 +1337,6 @@ class CandidateCOSOperation:
             "lifecycle_digest": owned.state.lifecycle_digest,
         }
 
-        if len(self._registry) > 1 or owned.transitions:
-            snapshot["implementation_layout_id"] = "pygrc-c-os-snapshot-v2"
-            snapshot["reference_registry"] = [
-                ref.to_payload() for ref in self._registry
-            ]
-            snapshot["transition_records"] = [
-                row.to_dict() for row in owned.transitions
-            ]
         return snapshot
 
     @classmethod
@@ -1240,20 +1349,10 @@ class CandidateCOSOperation:
         """
         data = cast(dict[str, Any], cos_snapshot_payload(state))
         reference = GRCV4ReferenceGeometry.from_payload(data["reference"])
-        registry = _reference_registry(
-            data.get("reference_registry", [data["reference"]])
-        )
+        registry = _reference_registry(data["reference_registry"])
         if _resolve_reference(registry, *_reference_key(reference)) != reference:
             raise V4IdentityError("current reference contradicts the snapshot registry")
-        transitions = data.get("transition_records", [])
-        if (
-            data["implementation_layout_id"] == "pygrc-c-os-snapshot-v2"
-            and len(registry) == 1
-            and not transitions
-        ):
-            raise V4SchemaError(
-                "extended snapshot must carry additional references or crossings"
-            )
+        transitions = data["transition_records"]
         crossings = _restore_crossings(transitions, registry)
         if params is not None and canonical_json_bytes(params) != canonical_json_bytes(
             reference.profile.params_resolved.to_payload()
@@ -1490,6 +1589,36 @@ class CandidateCOSOperation:
         """Locally registered C_OS targets; not public conformance advertisement."""
         return frozenset(ref.profile.complete_profile_id for ref in self._registry)
 
+    def get_supported_profile(self, complete_profile_id: str) -> GRCV4Profile:
+        if type(complete_profile_id) is not str:
+            raise TypeError("expected an exact complete-profile identifier")
+        for reference in self._registry:
+            if reference.profile.complete_profile_id == complete_profile_id:
+                return reference.profile
+        raise V4IdentityError("unregistered complete-profile identifier")
+
+    def compute_observables(self) -> dict[str, Any]:
+        # One immutable capture remains coherent even if another thread commits.
+        owned = self._owned
+        state, ref = owned.state, owned.reference
+        ledger = _ledger([r.to_dict() for r in state.receipt_ledger])
+        inputs = GeometryStageInputs(
+            ref.geometry(), ref.context, state.current, state.reset.authoritative,
+            "read-only-observation", state.Q_target,
+            tuple(r.receipt_id for r in ledger), state.step_index, state.time,
+            0, "pre_read", 0, None,
+        )
+        current = CandidateCCurrent(inputs)
+        charge = _resource_charge(
+            inputs, VertexScalar(ref.graph, state.current.C), "pre_read_reconstruction"
+        )
+        result = _public_observables(
+            inputs, ledger, charge, current, stage="read_only_reference",
+            current_stage="read_only_reference", solver=None, consumed=False,
+        )
+        # Same serializable, recursively owned domain as successful results.
+        return FrozenJSONMap(result).to_dict()
+
     def migrate_profile(self, request: GRCV4MigrationRequest) -> GRCV4LifecycleResult:
         if type(request) is not GRCV4MigrationRequest:
             raise TypeError("expected a typed migration request")
@@ -1645,6 +1774,17 @@ class CandidateCOSOperation:
         with self._lock:
             return self._execute(request)
 
+    def step_default(self) -> GRCV4StepResult:
+        # Bind default selection and admission to one active profile: migration
+        # cannot interleave between reading its parameters and executing it.
+        with self._lock:
+            default = self._reference.profile.params_resolved.common.default_step_request
+            if default is None:
+                raise MissingV4StepRequest("active profile has no default_step_request")
+            request = GRCV4StepRequest.from_payload(default).to_payload()
+            request["schema_version"] = "grcv4-step-request-input-v1"
+            return self._execute(GRCV4StepRequestInput.from_payload(request))
+
     def _execute(self, request: GRCV4StepRequestInput) -> GRCV4StepResult:
         before = self._inputs(request)
         owned = self._state
@@ -1780,14 +1920,21 @@ class CandidateCOSOperation:
         )
         target_ledger = ledger + emitted
         target = _lifecycle_state(following, target_ledger)
-        observations: dict[str, Any] = {
+        observations = _public_observables(
+            following, target_ledger, step.resource.charge,
+            step.os_pass.corrector if step.os_pass is not None else restart,
+            stage="commit", solver="valid_root",
+            current_stage="os_corrector" if step.os_pass is not None else "commit_reference_readmission",
+            consumed=step.os_pass is not None,
+        )
+        observations.update({
             "charge": step.resource.charge.receipt_values(),
             "reference_current": {
                 "stage": "commit_reference_readmission",
                 "values": list(restart.current.values),
             },
             "continuity_evaluations": step.resource.continuity_evaluations,
-        }
+        })
         if step.os_pass is not None:
             observations["os"] = {
                 "stage": "os_corrector",
