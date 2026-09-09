@@ -1772,3 +1772,20 @@ Add only P9-4.9.1a permission on existing lifecycle/codec/test/release assets:
 29 ready leaves, unchanged 29 eligible paths. The exact unavailable triplet
 admits no numeric detector. Preserve parent/facade runs at `d8f26d9`/`7905e7e`;
 the focused successor binds new inputs. Final P9-4.9.3 and P9-4.8B remain separate.
+
+## Phase 9 Tranche 4 — P9-4.9.3 fixture reconciliation
+
+The normal implementation verifier now inspects the retained exact-profile
+product through `verify_p9493_fixtures.py --check`. Preserve the original
+abundance/facade/parent executions at their Git subjects; no historical run is
+relabeled current. Readiness adds only the fixture leaf on existing lifecycle
+and test paths (30 ready leaves, unchanged 29 eligible runtime paths).
+
+Scenarios: exact nonempty profile × 33 catalog rows; typed stale-cache rebuild;
+unaltered dimension-vector semantic/operation outcomes; exact mapped-event
+identity; separate control/target preimages; missing/duplicate/family/empty,
+borrowed-profile/event, altered-result and premature-G2 rejection. Use the
+existing focused source capture and content-addressed input/output records.
+No new claim/authority graph or API/notebook/browser behavior is introduced;
+reuse their accepted evidence. P9-4.8B reviews sufficiency and acceptance, not
+another automatic numerical/browser campaign.

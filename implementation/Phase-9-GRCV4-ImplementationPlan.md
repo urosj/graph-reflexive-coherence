@@ -943,15 +943,14 @@ proved the missing authority. Other profiles' parent obligations remain scoped.
 
 ##### P9-4.9.3. Complete-profile fixture and evidence closure
 
-Initial inventory completed on `impl/phase-9-grcv4-tranche-4-closure`; see the
-[bounded gap list](./phase-9-grcv4/tranche-4/P9-4.9.3-EvidenceInventory.md).
-Existing internal stale-cache rebuild evidence is reusable. Exact semantic
-dimension-input/diagnostic coverage, facade integration and the final profile
-product remain open. The inventory itself reran no numerical tests or runtime
-changes; subsequent parent-authority/implementation work is recorded under
-P9-4.9.2 above. It is not G2 acceptance.
-Final public-interface reconciliation also requires accepted P9-4.9.1a abundance
-semantics; the interim null diagnostic must not receive conformance credit.
+The initial [gap list](./phase-9-grcv4/tranche-4/P9-4.9.3-EvidenceInventory.md)
+is retained as history. The [final reconciliation](./phase-9-grcv4/tranche-4/P9-4.9.3-Review.md)
+submits 33 catalog rows for one exact nominated complete profile, plus the
+published dimension negative and mapped event. It follows accepted parent,
+facade and abundance implementation (`d8f26d9`, `7905e7e`, `1f5f5e9`).
+Control and target identities remain separate. Focused captured execution and
+nonnumerical integrity checks replace repeated broad campaigns. This is fixture
+closure for review; P9-4.8B alone owns the integrated G2 decision below.
 
 Own `G2-COS-FIXTURES`: reconcile all 33 indexed catalog cases (8 common,
 14 Candidate C, 1 OS and 10 lifecycle) against the

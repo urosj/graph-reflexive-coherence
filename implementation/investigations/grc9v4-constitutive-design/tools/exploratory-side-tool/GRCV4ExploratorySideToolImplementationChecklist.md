@@ -1412,3 +1412,16 @@ P9-3.2 implementation is pending review; runtime support remains empty.
       successor; keep original parent/facade runs at their accepted Git subjects.
 - [x] Verify the focused source/runtime/UX controls (11 tests); record exact
       evidence and limits in the P9-4.9.1a review, not a full campaign claim.
+
+## Phase 9 Tranche 4 — P9-4.9.3 fixture reconciliation
+
+- [x] Register only the fixture leaf on existing lifecycle/test owners; leave
+      G2 and accepted profile/specialization support unchanged.
+- [x] Route normal current verification to the retained exact-profile fixture
+      successor, with original abundance/facade/parent Git subjects preserved.
+- [x] Bind the 33-row nonempty product and two exact vectors to actual inputs,
+      output/receipt identities and explicit fixed-stage/control/crossing scope.
+- [x] Check positive product and missing/duplicate/family/empty/borrowed/altered
+      result and premature-acceptance controls without a numerical rerun.
+- [ ] P9-4.8B: review the integrated fixture, interface and parent result and
+      decide G2 separately. No new UX/authority claim is inferred here.

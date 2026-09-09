@@ -1606,6 +1606,782 @@ class AuthoritativeMappedVectorTests(unittest.TestCase):
         self.assertEqual(owner.snapshot(), restored.snapshot())
 
 
+class CompleteProfileCatalogTests(unittest.TestCase):
+    """P9-4.9.3 exact dyadic nomination; control/target identities are not support.
+
+    Results are collected only after assertions, with full replay preimages.
+    Fixed-stage rows are not disguised as committed operations. Fault controls
+    are test-only patches, never payload fields or a production injection API.
+    """
+
+    rows: list[dict[str, Any]] = []
+    objects: dict[str, Any] = {}
+
+    @classmethod
+    def setUpClass(cls) -> None:
+        cls.rows = []
+        cls.objects = {}
+
+    def obj(self, value: Any) -> str:
+        from hashlib import sha256
+
+        raw = canonical_json_bytes(value)
+        key = sha256(raw).hexdigest()
+        self.objects[key] = json.loads(raw)
+        return key
+
+    def model(self, targets: tuple[Any, ...] = ()) -> api.GRCV4:
+        from tests.models.test_grc_v4_lifecycle import dyadic_fixture
+
+        return api.GRCV4(dyadic_fixture(), targets=targets)
+
+    def emit(
+        self,
+        fixture: str,
+        before: Any,
+        model: api.GRCV4,
+        result: Any = None,
+        *,
+        request: Any = None,
+        observation: Any = None,
+        layer: str = "public_operation",
+        fault: str | None = None,
+    ) -> None:
+        from tests.models.test_grc_v4_lifecycle import primitive
+
+        after = model.snapshot()
+        profile = before["reference"]["profile"]
+        old_ids = [r["receipt_id"] for r in before["receipt_ledger"]]
+        new_ids = [r["receipt_id"] for r in after["receipt_ledger"]]
+        emitted = (
+            [r.receipt_id for r in result.emitted_receipts]
+            if result is not None
+            else new_ids[len(old_ids) :]
+        )
+        committed = result.committed if result is not None else bool(emitted)
+        if result is not None and not committed:
+            self.assertEqual(before, after)
+            self.assertEqual(
+                result.failure.prestate_digest, result.failure.poststate_digest
+            )
+            self.assertEqual(len(emitted), 1)
+        elif committed:
+            self.assertEqual(new_ids, old_ids + emitted)
+        self.rows.append(
+            {
+                "fixture_id": fixture,
+                "complete_profile_id": profile["complete_profile_id"],
+                "active_model_identity": before["scientific_state"][
+                    "active_model_identity"
+                ],
+                "resolved_params_id": profile["identity_payload"]["params_hash"],
+                "prestate_digest": before["scientific_state_digest"],
+                "poststate_digest": after["scientific_state_digest"],
+                "operation_disposition": (
+                    result.operation_disposition
+                    if result is not None
+                    else "committed"
+                    if committed
+                    else "not_invoked"
+                ),
+                "solver_disposition": getattr(result, "solver_disposition", None),
+                "committed": committed,
+                "emitted_receipt_ids": emitted,
+                "failure_code": result.failure.code
+                if result is not None and result.failure
+                else None,
+                "evidence_layer": layer,
+                "nonproduction_fault_control": fault,
+                "prestate_object": self.obj(before),
+                "poststate_object": self.obj(after),
+                "request_object": None
+                if request is None
+                else self.obj(request.to_payload()),
+                "result_object": None
+                if result is None
+                else self.obj(primitive(result)),
+                "observation": observation,
+                "target_active_model_identity": model.active_model_identity,
+            }
+        )
+
+    def test_common_product_and_fresh_second_beat(self) -> None:
+        from pygrc.models.grc_v4_candidate_c import (
+            CandidateCCurrent,
+            CandidateCStageError,
+        )
+        from pygrc.models.grc_v4_step import ResourceBoundaryError
+        import pygrc.models.grc_v4_realizations as realization
+        import pygrc.models.grc_v4_step as step
+        from tests.models.test_grc_v4_lifecycle import request
+
+        for fixture, dt, error in (
+            ("COMMON-VALID-ORDINARY-STEP", 0.125, None),
+            ("COMMON-INVALID-DOMAIN", 0.125, "domain_failure"),
+            ("COMMON-NONFINITE", 0.125, "nonfinite"),
+            ("COMMON-ZERO-DURATION", 0, None),
+            ("COMMON-NEGATIVE-DURATION", -0.125, None),
+        ):
+            model = self.model()
+            before = model.snapshot()
+            req = request(dt, fixture)
+            if error:
+                with patch.object(
+                    realization,
+                    "CandidateCCurrent",
+                    side_effect=CandidateCStageError(error, "test-only typed fault"),
+                ):
+                    result = model.step_v4_input(req)
+                self.assertFalse(result.committed)
+                self.assertEqual(result.solver_disposition, error)
+            else:
+                result = model.step_v4_input(req)
+                self.assertEqual(result.committed, dt >= 0)
+                if dt >= 0:
+                    self.assertEqual(
+                        model.state.lifecycle.current.C, (2.5, 1.5) if dt else (3, 1)
+                    )
+                    self.assertEqual(
+                        result.observables["continuity_evaluations"], int(dt > 0)
+                    )
+            self.emit(
+                fixture,
+                before,
+                model,
+                result,
+                request=req,
+                fault=None if not error else "candidate_solve_" + error,
+            )
+
+        # A valid solve followed by a typed charge failure: no fake public hook.
+        model = self.model()
+        before = model.snapshot()
+        req = request(0.125, "charge-control")
+        original_charge = step._resource_charge
+
+        def fail_charge(*args: Any, **kwargs: Any) -> Any:
+            if args[1].values == (2.5, 1.5):
+                raise ResourceBoundaryError(
+                    "charge_admission", "charge_failure", "test-only"
+                )
+            return original_charge(*args, **kwargs)
+
+        with patch.object(step, "_resource_charge", side_effect=fail_charge):
+            result = model.step_v4_input(req)
+        self.assertFalse(result.committed)
+        self.assertEqual(
+            (result.solver_disposition, result.failure.code),
+            ("valid_root", "charge_failure"),
+        )
+        self.emit(
+            "COMMON-CHARGE-MISMATCH",
+            before,
+            model,
+            result,
+            request=req,
+            fault="postsolve_charge_mismatch",
+        )
+        self.emit(
+            "COMMON-ATOMIC-FAILURE",
+            before,
+            model,
+            result,
+            request=req,
+            fault="same_postsolve_charge_mismatch_execution_not_an_additional_run",
+        )
+
+        model = self.model()
+        first = model.step_v4(PublicFacadeTests.strict(0.125, "cache-first"))
+        before = model.snapshot()
+        state = model.state.lifecycle
+        req = PublicFacadeTests.strict(0.25, "cache-second")
+        with patch.object(
+            realization, "CandidateCCurrent", wraps=CandidateCCurrent
+        ) as rebuild:
+            result = model.step_v4(req)
+        predictor = rebuild.call_args_list[0].args[0]
+        self.assertEqual(predictor.current, state.current)
+        self.assertEqual((predictor.dt, predictor.operation_id), (0.25, "cache-second"))
+        self.assertEqual(
+            predictor.receipt_ids,
+            tuple(r["receipt_id"] for r in before["receipt_ledger"]),
+        )
+        self.assertEqual(predictor.geometry, predictor.geometry.reference.geometry())
+        self.assertEqual(model.state.lifecycle.current.C, (2, 2))
+        self.assertTrue(result.committed)
+        self.assertEqual(result.observables["os"]["current"], (2,))
+        self.assertEqual(
+            result.emitted_receipts[0].identity_payload["core"]["parent_receipt_ids"],
+            (first.emitted_receipts[0].receipt_id,),
+        )
+        malformed = req.to_payload()
+        malformed["cache"] = {"current": [999]}
+        with self.assertRaises(ValueError):
+            api.GRCV4StepRequest.from_payload(malformed)
+        self.emit(
+            "COMMON-STALE-CACHE",
+            before,
+            model,
+            result,
+            request=req,
+            observation={
+                "postcondition": "cache_rebuilt_before_consumer",
+                "stale_value_never_consumed": True,
+                "predictor_inputs_object": self.obj(predictor.to_payload()),
+                "previous_current": [4],
+                "consumed_current": [2],
+                "cache_input_rejected_before_operation": True,
+            },
+        )
+
+    def test_candidate_fixed_stage_product(self) -> None:
+        import numpy as np
+        from pygrc.models.grc_v4_candidate_c import (
+            CandidateCCurrent,
+            CandidateCStageError,
+        )
+        from pygrc.models.grc_v4_geometry import GRCV4Geometry, OneFormHodge
+        from tests.models.test_grc_v4_lifecycle import dyadic_fixture
+        from tests.models.test_grc_v4_candidate_c import p943_direction, p943_centered
+
+        model = self.model()
+        before = model.snapshot()
+        inputs = dyadic_fixture()
+        point = CandidateCCurrent(inputs)
+        a = point.algebra
+        p = a.transport.params
+
+        def row(name: str, observation: Any) -> None:
+            self.emit(
+                name,
+                before,
+                model,
+                layer="fixed_stage_no_operation",
+                observation={
+                    "stage_inputs_object": self.obj(inputs.to_payload()),
+                    "fixed_stage_identity": point.identity,
+                    **observation,
+                },
+            )
+
+        self.assertEqual(dict(p.W_C_tr), {"e": 2})
+        self.assertNotEqual(
+            a.transport.mobility_constructor_identity,
+            a.transport.structural_hodge_constructor_identity,
+        )
+        self.assertEqual(a.transport.mobility.diagonal, (1,))
+        row(
+            "C-TR-REFERENCE-MAP",
+            {
+                "mobility": [[1]],
+                "hodge": [[2]],
+                "E_H": a.transport.structural_hodge_constructor_identity,
+                "E_M": a.transport.mobility_constructor_identity,
+            },
+        )
+        self.assertEqual(a.potential.values, (4, -4))
+        self.assertEqual(a.baseline.values, (-8,))
+        self.assertEqual(point.current.values, (4,))
+        row("C-BASELINE-EXACT", {"Phi0": [4, -4], "J0": [-8], "J": [4]})
+        self.assertEqual(a.selector.rank, 1)
+        self.assertEqual(a.selector.selected.values, (2, 2))
+        row("C-SELECTOR-STRICT-GAP", {"rank": 1, "spectrum": [0, 4], "cutoff": 1})
+        # Preserve this profile: moving h to 1/2 puts eigenvalue 1 on its cutoff.
+        boundary = replace(
+            inputs,
+            geometry=GRCV4Geometry(
+                inputs.geometry.reference,
+                OneFormHodge(inputs.geometry.reference.graph, ((0.5,),)),
+            ),
+        )
+        with self.assertRaises(CandidateCStageError) as rejected:
+            CandidateCCurrent(boundary)
+        self.assertEqual(rejected.exception.disposition, "domain_failure")
+        row(
+            "C-SELECTOR-BOUNDARY",
+            {
+                "boundary_input_object": self.obj(boundary.to_payload()),
+                "diagnostic": rejected.exception.disposition,
+            },
+        )
+        self.assertEqual(a.physical_identification, ((0.5,),))
+        np.testing.assert_array_equal(
+            a.physical_identification,
+            np.array(a.identification) @ np.array(a.flat_matrix),
+        )
+        row(
+            "C-QC-TYPING",
+            {
+                "I_4M": a.identification,
+                "G_J": a.flat_matrix,
+                "Q_C": a.physical_identification,
+            },
+        )
+        self.assertTrue(
+            all(c["condition_upper_squared"] == "1" for c in a.certificates)
+        )
+        self.assertIn(
+            "physical Q_C identification", {c["block"] for c in a.certificates}
+        )
+        self.assertIn(
+            "physical total-current block", {c["block"] for c in a.certificates}
+        )
+        row(
+            "C-RETAINED-VS-PHYSICAL-CONDITIONING",
+            {
+                "certificates": [c.to_dict() for c in a.certificates],
+                "scope": "one-dimensional nominated block; dense adverse contrast remains separately attributed",
+            },
+        )
+        self.assertEqual(point.read.flux.values, (4,))
+        self.assertEqual(
+            point.current.values[0],
+            a.baseline.values[0] + p.zeta_C * point.read.flux.values[0],
+        )
+        self.assertEqual([f.name for f in fields(inputs.current)], ["C", "W_A", "Z_4"])
+        self.assertIsNone(inputs.current.W_A)
+        self.assertIsNone(inputs.current.Z_4)
+        row(
+            "C-C-ONLY-AUTHORITY",
+            {"C": list(inputs.current.C), "W_A": None, "Z_4": None},
+        )
+        self.assertEqual(a.deformation, (1,))
+        self.assertEqual(a.retained_hodge.matrix, inputs.geometry.one_form_hodge.matrix)
+        row(
+            "C-KAPPA-M-ZERO",
+            {"deformation": [1], "retained_hodge": [[2]], "mobility": [[1]]},
+        )
+        dc, dh = (0.25, -0.25), ((0.25,),)
+        tangent = p943_direction(inputs, dc, dh)
+        # This nominated profile has literal zero solve tolerances. Arbitrary
+        # h perturbations need not have exactly representable inverses. Use an
+        # exact dyadic H secant (J0 is linear in H when kappa_M=0), plus the
+        # resource derivative; do not silently relax the profile's tolerances.
+        observed = p943_centered(inputs, dc, ((0,),), 2**-12)
+        h_control = replace(
+            inputs,
+            geometry=GRCV4Geometry(
+                inputs.geometry.reference,
+                OneFormHodge(inputs.geometry.reference.graph, ((1,),)),
+            ),
+        )
+        h_point = CandidateCCurrent(h_control)
+        self.assertEqual(
+            h_point.algebra.transport.mobility_constructor_identity,
+            a.transport.mobility_constructor_identity,
+        )
+        self.assertEqual(h_point.algebra.transport.mobility.diagonal, (1,))
+        observed_joint = observed["j0"] + 0.25 * (
+            np.array(a.baseline.values) - h_point.algebra.baseline.values
+        )
+        np.testing.assert_allclose(
+            tangent["j0"], observed_joint, atol=1e-12, rtol=1e-12
+        )
+        self.assertEqual(tangent["j0"].tolist(), [-3])
+        # Same exact profile, signed edge and vertex permutation with full graph
+        # preimage; never attach a dense fixture's profile ID to this calculation.
+        from pygrc.models.grc_v4_geometry import (
+            GRCV4Graph,
+            OrientedEdge,
+            GRCV4ReferenceGeometry,
+        )
+        from pygrc.models.grc_v4_state import GRCV4AuthoritativeState
+
+        graph = GRCV4Graph(("v", "u"), (OrientedEdge("e", "v", "u"),))
+        ref = inputs.geometry.reference
+        moved_ref = GRCV4ReferenceGeometry(
+            graph, ref.profile, ref.context, ref.K4_base, ref.edge_weights
+        )
+        moved = replace(
+            inputs,
+            geometry=moved_ref.geometry(),
+            current=GRCV4AuthoritativeState((1, 3), None, None),
+            reset=GRCV4AuthoritativeState((1, 3), None, None),
+        )
+        moved_point = CandidateCCurrent(moved)
+        moved_tangent = p943_direction(moved, dc[::-1], dh)
+        self.assertEqual(moved_point.algebra.baseline.values, (8,))
+        np.testing.assert_array_equal(moved_tangent["j0"], -tangent["j0"])
+        row(
+            "C-BASELINE-DERIVATIVE-COVARIANCE",
+            {
+                "dc": dc,
+                "dh": dh,
+                "analytic_delta_J0": tangent["j0"].tolist(),
+                "production_delta_J0": observed_joint.tolist(),
+                "resource_difference_epsilon": 2**-12,
+                "exact_linear_h_secant_inputs_object": self.obj(h_control.to_payload()),
+                "signed_permuted_inputs_object": self.obj(moved.to_payload()),
+                "signed_delta_J0": moved_tangent["j0"].tolist(),
+            },
+        )
+        # Controls change complete parameter identity; retain their preimages
+        # and label the relation, never expand the nominated support population.
+        from pygrc.models.grc_v4_profile import resolve_profile
+
+        for field, value, name in (
+            ("chi_C", 0, "C-CHI-ZERO"),
+            ("zeta_C", 0, "C-ZETA-ZERO"),
+            ("chi_C", 0.5, "C-ONE-CHI-GATE"),
+        ):
+            params = ref.profile.params_resolved.to_payload()
+            params["candidate"][field] = value
+            identity = ref.profile.identity_payload.to_payload()
+            from tests.models.grcv4_reference_oracles import identity as independent_id
+
+            identity["params_hash"] = independent_id("grcv4-params-sha256", params)
+            profile = resolve_profile(params, identity)
+            control_ref = replace(ref, profile=profile)
+            control_inputs = replace(inputs, geometry=control_ref.geometry())
+            control = CandidateCCurrent(control_inputs)
+            self.assertNotEqual(
+                profile.complete_profile_id, ref.profile.complete_profile_id
+            )
+            self.assertEqual(
+                control.current.values,
+                (16,) if value else control.algebra.baseline.values,
+            )
+            if field == "chi_C" and not value:
+                self.assertEqual(control.read.flux.values, (0,))
+            if value:
+                self.assertEqual(control.read.flux.values, (8,))
+            row(
+                name,
+                {
+                    "control_inputs_object": self.obj(control_inputs.to_payload()),
+                    "control_complete_profile_id": profile.complete_profile_id,
+                    "control_J": list(control.current.values),
+                    "control_J0": list(control.algebra.baseline.values),
+                    "control_read": list(control.read.flux.values),
+                    "control_is_nominated_support": False,
+                },
+            )
+
+    def test_public_stage_and_lifecycle_product(self) -> None:
+        from pygrc.models.grc_v4_candidate_c import CandidateCCurrent
+        from tests.models.test_grc_v4_lifecycle import primitive
+        import pygrc.models.grc_v4_realizations as realization
+        import pygrc.models.grc_v4_step as step
+
+        model = self.model()
+        before = model.snapshot()
+        req = PublicFacadeTests.strict()
+        with (
+            patch.object(
+                realization, "CandidateCCurrent", wraps=CandidateCCurrent
+            ) as current,
+            patch.object(
+                step, "provisional_continuity", wraps=step.provisional_continuity
+            ) as writer,
+        ):
+            result = model.step_v4(req)
+        self.assertTrue(result.committed)
+        self.assertEqual(writer.call_count, 1)
+        self.assertEqual(
+            [c.args[0].stage for c in current.call_args_list],
+            ["os_predictor", "os_corrector"],
+        )
+        self.emit(
+            "OS-ONE-PASS",
+            before,
+            model,
+            result,
+            request=req,
+            observation={
+                "predictor_count": 1,
+                "corrector_count": 1,
+                "resource_writes": 1,
+                "os": result.observables["os"].to_dict(),
+            },
+        )
+        fresh = model.compute_observables()
+        self.assertEqual(fresh["authoritative_current"]["values"], [2])
+        self.emit(
+            "C-POST-CONTINUITY-REDERIVATION",
+            before,
+            model,
+            result,
+            request=req,
+            observation={"observables_object": self.obj(fresh)},
+        )
+        checkpoint = model.snapshot()
+        restored = api.GRCV4.from_state(checkpoint, model.get_params().to_payload())
+        next_request = PublicFacadeTests.strict(0.25, "identical-future")
+        left, right = model.step_v4(next_request), restored.step_v4(next_request)
+        self.assertEqual(primitive(left), primitive(right))
+        self.assertEqual(model.snapshot(), restored.snapshot())
+        self.assertEqual(model.state.lifecycle.current.C, (2, 2))
+        self.emit(
+            "SNAPSHOT-LOAD-REPLAY",
+            checkpoint,
+            model,
+            left,
+            request=next_request,
+            observation={
+                "restored_poststate_object": self.obj(restored.snapshot()),
+                "semantics": "restore plus identical future inputs, not authenticated history",
+            },
+        )
+        before = model.snapshot()
+        model.reset()
+        self.assertEqual(model.state.lifecycle.current.C, (3, 1))
+        self.assertEqual((model.state.step_index, model.state.time), (2, 0.375))
+        self.emit("RESET-AFTER-ORDINARY", before, model)
+        before = model.snapshot()
+        clone = model.duplicate()
+        detached = clone.snapshot()
+        detached["reference_registry"].clear()
+        clone.step_v4(PublicFacadeTests.strict())
+        self.assertEqual(model.snapshot(), before)
+        self.emit(
+            "DUPLICATION-INDEPENDENCE",
+            before,
+            model,
+            layer="public_observation_no_operation",
+            observation={"independent_clone_object": self.obj(clone.snapshot())},
+        )
+        before = model.snapshot()
+        result = model.step_v4(PublicFacadeTests.strict())
+        primary = before["receipt_ledger"][-4]["receipt_id"]
+        self.assertEqual(
+            result.emitted_receipts[0].identity_payload["core"]["parent_receipt_ids"],
+            (primary,),
+        )
+        self.emit(
+            "RECEIPT-OWNERSHIP",
+            before,
+            model,
+            result,
+            request=PublicFacadeTests.strict(),
+            observation={
+                "parent_policy": "grcv4-previous-successful-primary-v1",
+                "parent": primary,
+            },
+        )
+
+    def test_published_mapped_event_through_public_facade(self) -> None:
+        from pygrc.models.grc_v4_geometry import (
+            GRCV4Context,
+            GRCV4Graph,
+            GRCV4ReferenceGeometry,
+            GeometryStageInputs,
+        )
+        from pygrc.models.grc_v4_profile import resolve_profile
+        from pygrc.models.grc_v4_state import GRCV4AuthoritativeState
+
+        vector = json.loads(
+            (
+                Path(__file__).resolve().parents[2]
+                / "specs/grc-v4-conformance-vectors.json"
+            ).read_text()
+        )["grcv4_mapped_topology_event_vectors"][0]
+        data = vector["runtime_inputs"]
+        context = GRCV4Context("constant_zero_context_v1", FrozenJSONMap({}))
+        refs = [
+            GRCV4ReferenceGeometry(
+                GRCV4Graph.from_payload(graph),
+                resolve_profile(data[prefix + "_params"], data[prefix + "_profile"]),
+                context,
+                tuple(tuple(row) for row in data[prefix + "_K4_base"]),
+                FrozenJSONMap(data[prefix + "_reference_edge_weights"]),
+            )
+            for prefix, graph in (
+                ("source", data["source_graph"]),
+                ("target", vector["request"]["target_graph"]),
+            )
+        ]
+        state = GRCV4AuthoritativeState(
+            tuple(vector["expected"]["source_resource"]), None, None
+        )
+        initial = GeometryStageInputs(
+            refs[0].geometry(),
+            context,
+            state,
+            state,
+            "exact-published-vector",
+            3,
+            (),
+            0,
+            0,
+            0,
+            "pre_read",
+            0,
+            None,
+        )
+        self.assertEqual(initial.scientific_state_preimage, data["source_state"])
+        self.assertEqual(initial.reset_preimage, data["source_reset"])
+        model = api.GRCV4(initial, targets=(refs[1],))
+        before = model.snapshot()
+        req = api.GRCV4MappedTopologyEventRequest.from_payload(vector["request"])
+        result = model.apply_topology_event(req)
+        self.assertTrue(result.committed)
+        event_id = result.emitted_receipts[0].identity_payload["event_id"]
+        self.assertEqual(event_id, vector["expected"]["event_id"])
+        self.assertEqual(model.state.lifecycle.current.C, (1, 2, 0.5))
+        self.assertEqual(model.state.lifecycle.reset.authoritative.C, (1, 2, 0.5))
+        self.assertEqual(model.state.budget_target, 3.5)
+        self.emit(
+            vector["fixture_id"],
+            before,
+            model,
+            result,
+            request=req,
+            observation={
+                "event_id": event_id,
+                "request_modified": False,
+                "mandatory_row_waived": False,
+                "vector_endpoints_are_nominated_support": False,
+            },
+        )
+
+    def test_public_crossing_product_and_exact_dimension_vector(self) -> None:
+        from pygrc.models.grc_v4 import ResolvedResourceEventTransform
+        from pygrc.models.grc_v4_lifecycle import (
+            _validate_resource_transform_dimensions,
+            ResourceTransformDimensionError,
+        )
+        from pygrc.models.grc_v4_state import GRCV4State
+        from tests.models.test_grc_v4_lifecycle import (
+            os_fixture,
+            event_target,
+            event_request,
+            migration_request,
+            _p946_assignment,
+        )
+
+        target = os_fixture(
+            candidate={"chi_C": 0, "zeta_C": 0}, geometry={"kappa_H": 0}
+        ).geometry.reference
+        model = self.model((target,))
+        model.set_state(GRCV4State(_p946_assignment(model._operation, (1, 3))))
+        before = model.snapshot()
+        req = migration_request(model._operation, target)
+        result = model.migrate_profile(req)
+        self.assertTrue(result.committed)
+        self.assertEqual(model.state.lifecycle.current.C, (1, 3))
+        self.assertEqual(model.state.lifecycle.reset.authoritative.C, (3, 1))
+        crossing_snapshot = model.snapshot()
+        model.reset()
+        self.assertEqual(model.state.lifecycle.current.C, (3, 1))
+        # Record the actual migration result at its immediate poststate, plus
+        # reset evidence separately; never bind a result to a later operation.
+        migrated = api.GRCV4.from_state(
+            crossing_snapshot, target.profile.params_resolved.to_payload()
+        )
+        self.emit(
+            "RESET-AFTER-MIGRATION",
+            before,
+            migrated,
+            result,
+            request=req,
+            observation={"after_reset_object": self.obj(model.snapshot())},
+        )
+        self.emit(
+            "ALL-MIGRATION-CLASSES",
+            before,
+            migrated,
+            result,
+            request=req,
+            observation={
+                "executed_class": "same_candidate_nonhistory_to_nonhistory",
+                "other_classes": "see disposition index; no unavailable source executed",
+            },
+        )
+        target = event_target()
+        model = self.model((target,))
+        model.set_state(GRCV4State(_p946_assignment(model._operation, (1, 3))))
+        before = model.snapshot()
+        req = event_request(model._operation, target, [1, 0, 0, 1, 0, 0], [0, 0, 0.5])
+        result = model.apply_topology_event(req)
+        self.assertTrue(result.committed)
+        self.assertEqual(model.state.lifecycle.current.C, (1, 3, 0.5))
+        self.assertEqual(model.state.lifecycle.reset.authoritative.C, (3, 1, 0.5))
+        self.assertEqual(model.state.budget_target, 4.5)
+        after = model.snapshot()
+        model.reset()
+        self.assertEqual(model.state.lifecycle.current.C, (3, 1, 0.5))
+        mapped = api.GRCV4.from_state(
+            after, target.profile.params_resolved.to_payload()
+        )
+        observation = {
+            "ordered_profiles": [
+                before["reference"]["profile"]["complete_profile_id"],
+                mapped.active_profile_id,
+            ],
+            "after_reset_object": self.obj(model.snapshot()),
+            "target_W_C_tr": dict(target.profile.params_resolved.candidate.W_C_tr),
+            "history_policy": req.history_policy.to_payload(),
+        }
+        self.assertEqual(observation["target_W_C_tr"], {"e": 2, "f": 2})
+        for fixture in (
+            "RESET-AFTER-EVENT",
+            "WHOLE-LIFECYCLE-TUPLE-MAP",
+            "HISTORY-DISPOSITION",
+            "C-LIFECYCLE-REFERENCE-MAP",
+        ):
+            self.emit(
+                fixture, before, mapped, result, request=req, observation=observation
+            )
+        # Current would remain positive; the distinct reset maps to a negative
+        # resource at v. Whole-target readmission must reject atomically.
+        model = self.model((target,))
+        model.set_state(GRCV4State(_p946_assignment(model._operation, (1, 3))))
+        before = model.snapshot()
+        req = event_request(model._operation, target, [1, 0, 0, 1, 0, 0], [0, -2, 0])
+        result = model.apply_topology_event(req)
+        self.assertFalse(result.committed)
+        self.assertEqual(result.failure.code, "domain_failure")
+        self.emit(
+            "TARGET-READMISSION-FAILURE",
+            before,
+            model,
+            result,
+            request=req,
+            observation={"mapped_current": [1, 1, 0], "mapped_reset": [3, -1, 0]},
+        )
+        vector = json.loads(
+            (
+                Path(__file__).resolve().parents[2]
+                / "specs/grc-v4-conformance-vectors.json"
+            ).read_text()
+        )["semantic_admission"]["negative_vectors"][1]
+        decoded = ResolvedResourceEventTransform.from_payload(vector["input"])
+        with self.assertRaises(ResourceTransformDimensionError) as failure:
+            _validate_resource_transform_dimensions(decoded)
+        self.assertEqual(failure.exception.diagnostic, vector["expected"]["code"])
+        valid = deepcopy(vector["input"])
+        valid["target_increment"] = [0, 0, 0]
+        _validate_resource_transform_dimensions(
+            ResolvedResourceEventTransform.from_payload(valid)
+        )
+        before = model.snapshot()
+        req = event_request(
+            model._operation,
+            target,
+            [1, 0, 0, 1, 0, 0],
+            [0, 0],
+            resource_transform=vector["input"],
+        )
+        self.assertEqual(req.resource_transform.to_payload(), vector["input"])
+        result = model.apply_topology_event(req)
+        self.assertFalse(result.committed)
+        self.assertEqual(result.failure.code, "invalid_topology_event")
+        self.assertEqual(result.failure.message, vector["expected"]["code"])
+        self.emit(
+            vector["vector_id"],
+            before,
+            model,
+            result,
+            request=req,
+            observation={
+                "exact_vector_input_object": self.obj(vector["input"]),
+                "semantic_diagnostic": failure.exception.diagnostic,
+                "dimension_valid_control_object": self.obj(valid),
+                "dimension_valid_is_not_target_admission": True,
+            },
+        )
+
+
 _P947_AUDIT_METHODS = {
     "LifecycleCompositionAuditTests": (
         "test_mixed_reference_charge_lineage_and_continuation",

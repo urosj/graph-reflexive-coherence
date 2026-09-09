@@ -894,6 +894,11 @@
       "iteration_id": "P9-4.9.2"
     },
     {
+      "path": "implementation/phase-9-grcv4/evidence/P9-4.9.3/complete-profile/run.json",
+      "sha256": "a8f35e74366708bdc1d576e2b2e1f8646e8cf9579061172357b85f8f6f54ee1a",
+      "iteration_id": "P9-4.9.3"
+    },
+    {
       "path": "implementation/phase-9-grcv4/tranche-2/P9-2.1-ExecutionRecord.json",
       "sha256": "561817390d50afbd1eaf2c8ee2bc12409de9458892ae944f947eaabed66a916c",
       "iteration_id": "P9-2.1"
@@ -1124,6 +1129,16 @@
       "iteration_id": "P9-4.9.2"
     },
     {
+      "path": "implementation/phase-9-grcv4/tranche-4/P9-4.9.3-ExecutionRecord.json",
+      "sha256": "7e7f1b8321437d759035893f376b849fa7b6734efa9fb0f8bac18cb62820ac25",
+      "iteration_id": "P9-4.9.3"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-4/P9-4.9.3-Review.md",
+      "sha256": "2d993cc6930b949e7e440e0a9e2017ee3c8a3cba1e4048042d1b62485ceddfc4",
+      "iteration_id": "P9-4.9.3"
+    },
+    {
       "path": "pyproject.toml",
       "sha256": "018c364413f75ee49186975c05e9cdaba7a78e171d47833609fbebc223a64a66",
       "iteration_id": "P9-3.1"
@@ -1180,8 +1195,8 @@
     },
     {
       "path": "src/pygrc/models/grc_v4_lifecycle.py",
-      "sha256": "875bbc2150c6bd7f2fa428b5eb78340e8c509249a920401a0990b26a6a17f6ef",
-      "iteration_id": "P9-4.9.1a"
+      "sha256": "483754dc1652104dca2434976cbbdc539b9864e0e7df5d55f4b688c77241c4a0",
+      "iteration_id": "P9-4.9.3"
     },
     {
       "path": "src/pygrc/models/grc_v4_profile.py",
@@ -1220,8 +1235,8 @@
     },
     {
       "path": "tests/models/test_grc_v4.py",
-      "sha256": "bc0ef3b303600a406d2c50d47a8e58b9204355a263ce312ee254438d4505d55f",
-      "iteration_id": "P9-4.9.1a"
+      "sha256": "c2fbe2e6f7eb63f77765581056f33878776feca9c86496ff2710d1403613a76f",
+      "iteration_id": "P9-4.9.3"
     },
     {
       "path": "tests/models/test_grc_v4_candidate_c.py",
@@ -1272,5 +1287,5 @@
   "accepted_generic_runtime_support": [],
   "admitted_specialization_support_sets": [],
   "claim_ceiling": "Exact current implementation content bindings, not review acceptance or conformance.",
-  "record_digest": "323a913c7b0e48c08d0c7436af53aff3ebe434418bcb9594afbf0e6c0c03cf8c"
+  "record_digest": "c4e4a3e147722a67d6e6238e80f4313b3f572ae8afe3d1015313284cf342db79"
 }

@@ -513,6 +513,25 @@ def _crossing_references(
     }
 
 
+class ResourceTransformDimensionError(ValueError):
+    """Semantic shape diagnostic, distinct from wire and operation errors."""
+
+    diagnostic = "resource_transform_dimension_mismatch"
+
+
+def _validate_resource_transform_dimensions(transform: Any) -> None:
+    # Decode/schema validation precedes this semantic boundary. The matrix is
+    # target-by-source; an admissible shape does not admit a graph or event.
+    from .grc_v4 import ResolvedResourceEventTransform
+
+    if type(transform) is not ResolvedResourceEventTransform:
+        raise TypeError("expected a decoded resource transform")
+    n, m = len(transform.source_vertex_ids), len(transform.target_vertex_ids)
+    if (len(transform.row_major_coefficients) != m * n
+            or len(transform.target_increment) != m):
+        raise ResourceTransformDimensionError(ResourceTransformDimensionError.diagnostic)
+
+
 def _affine_resource(
     request: GRCV4MappedTopologyEventRequest,
     before: GeometryStageInputs,
@@ -525,11 +544,13 @@ def _affine_resource(
     n, m = len(source_ids), len(target_ids)
     # These exact orders are part of the map's type. Unit vertex measures are
     # fixed by the admitted receiver; no row normalization or implicit reorder.
+    try:
+        _validate_resource_transform_dimensions(transform)
+    except ResourceTransformDimensionError as exc:
+        raise _CrossingFailure("admission", "invalid_topology_event", exc.diagnostic) from exc
     if (
         tuple(transform.source_vertex_ids) != source_ids
         or tuple(transform.target_vertex_ids) != target_ids
-        or len(transform.row_major_coefficients) != m * n
-        or len(transform.target_increment) != m
     ):
         raise _CrossingFailure(
             "admission",

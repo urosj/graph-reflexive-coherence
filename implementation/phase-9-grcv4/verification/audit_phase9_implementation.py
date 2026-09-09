@@ -100,8 +100,8 @@ def verify(root, boundary_only=False):
         policy.parent_runtime_evidence(root)
         policy.facade_runtime_evidence(root)
         policy.prior.run_logged(
-            [sys.executable, str(root / policy.HERE / "verify_p9491a_abundance.py"), "--check"],
-            root, "P9491a_retained_abundance_evidence_current_inputs", commands,
+            [sys.executable, str(root / policy.HERE / "verify_p9493_fixtures.py"), "--check"],
+            root, "P9493_retained_fixture_evidence_current_inputs", commands,
         )
         report = policy.read(root / policy.GENERATED / policy.REPORT_FILE)
         policy.require(

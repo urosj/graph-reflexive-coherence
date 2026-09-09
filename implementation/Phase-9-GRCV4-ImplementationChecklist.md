@@ -680,14 +680,15 @@ three bounded batches retain their own results and raw per-run manifests.
   duplicates/reordering, coherent rehashes and snapshot/restoration. Preserve
   lawful unreceipted assignment and distinguish future replay from authenticated
   history. Discharge only the reviewed C_OS scope of the parent obligation.
-- [ ] P9-4.9.3: Reconcile the 33-case catalog index and exact semantic vectors
+- [x] P9-4.9.3: Reconcile the 33-case catalog index and exact semantic vectors
   into the full fixture product for a nonempty nominated complete-profile set
   (`G2-COS-FIXTURES`).
-  Initial bounded inventory is complete in the
-  [gap list](./phase-9-grcv4/tranche-4/P9-4.9.3-EvidenceInventory.md); this row
-  remains unchecked for final public/profile reconciliation. The inventory
-  itself reran no numerical tests and added no runtime support. Subsequent
-  P9-4.9.2 authority/implementation work is recorded above, not as G2 acceptance.
+  Implemented for review in the
+  [final reconciliation](./phase-9-grcv4/tranche-4/P9-4.9.3-Review.md): one exact
+  nominated complete-profile product, 33 catalog rows and two exact vectors,
+  with distinct control/target identities and whole input/output records.
+  The original inventory and accepted runs remain historical. This completion
+  mark is not G2 acceptance; P9-4.8B remains unchecked below.
   Begin with a bounded gap list: requirement, existing usable evidence/limits,
   actual remaining change/test and owner. This is the first closure activity,
   not another audit framework or a reason to repeat suites. Final reconciliation

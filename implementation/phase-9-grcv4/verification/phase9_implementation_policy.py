@@ -188,6 +188,7 @@ HANDOFF_PATHS = {
     HERE + "handoff/P9-G1-outputs.zip",
 }
 PATHS = {
+    HERE + "verify_p9493_fixtures.py",
     # Explicitly user-accepted P9-4.9.1a availability authority; no numeric/G2 grant.
     INV + "decisions/P9AbundanceInterfaceAuthorityProposal.md",
     ABUNDANCE_AUTHORITY, ABUNDANCE_RELEASE_BUILDER,
@@ -890,6 +891,34 @@ def facade_runtime_evidence(root):
             "tests": 14, "G2_accepted": False}
 
 
+def abundance_runtime_evidence(root):
+    """Keep the accepted 11-test availability run at its exact Git subject.
+
+    The fixture successor changes shared lifecycle/tests, not abundance policy.
+    This is original evidence verification, not a relabeled current-tree rerun.
+    """
+    commit = "1f5f5e9"
+    name = PHASE + "evidence/P9-4.9.1a/abundance/run.json"
+    data = safe_path(root, name).read_bytes()
+    git(root, "merge-base", "--is-ancestor", commit, "HEAD")
+    require(sha(data) == "a5e1e0f0a8a92deb9a0e5ccee63211bbc3b60474461011325f497dd59103d868"
+            and data == git(root, "show", commit + ":" + name), "accepted abundance run changed")
+    record = json.loads(data)
+    require(record["status"] == "passed" and record["source_unchanged"] is True
+            and record["coverage"]["passed"] is True and record["results"]["tests_run"] == 11
+            and not any(record["results"][k] for k in ("failures", "errors", "skips"))
+            and record["release_id"] == current_abundance_release(root)
+            and record["G2_accepted"] is False, "invalid historical abundance execution")
+    for path, expected in record["source_bindings"].items():
+        safe_path(root, path)
+        require(sha(git(root, "show", commit + ":" + path)) == expected,
+                "accepted abundance Git subject differs: " + path)
+    parent_runtime_evidence(root)
+    facade_runtime_evidence(root)
+    return {"path": name, "sha256": sha(data), "subject_commit": commit,
+            "tests": 11, "G2_accepted": False}
+
+
 def leaf_permissions(root):
     """Readiness from accepted dependencies, never inferred from completion."""
     accepted = {"P9-G1", *accepted_foundation(root)["accepted_iterations"],
@@ -928,6 +957,10 @@ def leaf_permissions(root):
     ready = sorted(set(ready) | {"P9-4.9.1"})
     accepted_abundance_authority(root)
     ready = sorted(set(ready) | {"P9-4.9.1a"})
+    # User requested final fixture reconciliation after accepting 4.9.1a.
+    # This opens only two existing runtime/test paths, not G2 or new families.
+    git(root, "merge-base", "--is-ancestor", "1f5f5e9", "HEAD")
+    ready = sorted(set(ready) | {"P9-4.9.3"})
     owners = {}
     for module in ownership["modules"]:
         leaves = {
@@ -993,6 +1026,8 @@ def leaf_permissions(root):
     for name in ABUNDANCE_RUNTIME_PATHS:
         require(name in owners, "abundance target outside accepted runtime roster")
         owners[name] = owners[name] | {"P9-4.9.1a"}
+    for name in ("src/pygrc/models/grc_v4_lifecycle.py", "tests/models/test_grc_v4.py"):
+        owners[name] = owners[name] | {"P9-4.9.3"}
     return ready, owners
 
 
@@ -1035,7 +1070,7 @@ def work_entries(root, approval):
     )
     # The accepted baseline cannot contain later closure IDs. Register exactly
     # the user-approved successor, not a broad regex-based permission.
-    leaves.update({"P9-4.9.1", "P9-4.9.1a", "P9-4.9.2"})
+    leaves.update({"P9-4.9.1", "P9-4.9.1a", "P9-4.9.2", "P9-4.9.3"})
     rows = value["entries"]
     require(len({r["path"] for r in rows}) == len(rows), "duplicate work target")
     result = {}
@@ -1120,7 +1155,7 @@ def work_entries(root, approval):
                 require(
                     record["iteration_id"] == leaf
                     and record["release_id"] == (
-                        current_abundance_release(root) if leaf == "P9-4.9.1a" else
+                        current_abundance_release(root) if leaf in {"P9-4.9.1a", "P9-4.9.3"} else
                         current_parent_release(root) if leaf in {"P9-4.9.1", "P9-4.9.2"} else prior.RELEASE_ID
                     ),
                     "execution record subject mismatch",

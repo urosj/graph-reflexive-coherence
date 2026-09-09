@@ -2,7 +2,7 @@
 
 Current restart point, 2026-09-09: use branch
 `impl/phase-9-grcv4-tranche-4-closure` and the
-[P9-4.9.1 implementation review](./phase-9-grcv4/tranche-4/P9-4.9.1-Review.md).
+[P9-4.9.3 fixture reconciliation](./phase-9-grcv4/tranche-4/P9-4.9.3-Review.md).
 The user accepted the receipt-parent design and requested full implementation:
 the admitted claim/debt overlay, actual tool UX, proposal/paper/spec successor
 and internal C_OS parent rule are implemented. Consult that review and the
@@ -13,8 +13,10 @@ were accepted in `7905e7e`. The user then explicitly accepted the audit-refined
 implementation. It is admitted through the forensic API and propagated through
 proposal/paper §14.2.1, the V4 specs and the C_OS projection. Consult the
 [abundance review](./phase-9-grcv4/tranche-4/P9-4.9.1a-Review.md) for focused
-verification and limits. The next work is **final P9-4.9.3 reconciliation**,
-then the single P9-4.8B G2 review. Do not repeat the initial inventory or reopen
+verification and limits. P9-4.9.3 now submits the exact 33-case product for one
+nominated complete profile, plus exact dimension and mapped-event vectors.
+Control/target identities are not broader support. The next work is the single
+**P9-4.8B G2 review**. Do not repeat the fixture run or reopen
 unaffected scientific results.
 G2 remains held; no support set is promoted.
 
@@ -31,12 +33,13 @@ and facade runs are retained at their Git subjects, not relabeled as current.
 The user's subsequent instruction to commit accepts the bounded P9-4.9.1a
 implementation and its focused evidence. The review/execution records retain
 their validation-time pending disposition; this handoff and the commit record
-the later acceptance. G2 remains held; 4.9.3 has not been started here.
+the later acceptance in `1f5f5e9`. G2 remains held; the fixture closure is now
+implemented for review, not accepted generic runtime support.
 
-Lean checks: use `verification/verify_p9491a_abundance.py --check` and
+Lean checks: use `verification/verify_p9493_fixtures.py --check` and
 `verification/audit_phase9_implementation.py --boundary-only` under
 `implementation/phase-9-grcv4/`, with `.venv/bin/python` from the repository
-root. The accepted parent/facade runs are checked at their original Git subjects; the new
+root. The accepted parent/facade/abundance runs are checked at their original Git subjects; the new
 focused record binds current source. Neither check reruns numerical tests or
 claims fresh full historical/browser verification.
 
