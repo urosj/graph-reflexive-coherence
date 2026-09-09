@@ -840,12 +840,25 @@ updates discovery and status without authorizing new runtime leaves.
   lifecycle child must prove live atomic rollback and receipt provenance for
   these retained witnesses; provisional input preservation does not discharge
   that obligation. P9-5.4 is authorized next.
-- [ ] P9-5.4: Preserve separate initialization/formation/history claims and
+- [x] P9-5.4: Preserve separate initialization/formation/history claims and
   keep lifecycle-dependent conformance pending. Before complete initializer
   conformance, the A lifecycle owner must establish the admitted reference-flux
   source, bind its actual target stage, exclude discarded-history dependence,
   and perform separate target-current and lifecycle readmission. P9-5.1's
   explicit operand and pair construction do not discharge these obligations.
+  [Review and claim map](./phase-9-grcv4/tranche-5/P9-5.4-Review.md) and
+  [execution manifest](./phase-9-grcv4/tranche-5/P9-5.4-ExecutionRecord.json):
+  13 focused methods verify existing claim guards and three new counterexamples
+  (reset-only current singularity after positive initialization, identical
+  initializer/writer values, and reference neutrality without a W write).
+  Twelve claim boundaries and seven source-contract queries retain formation,
+  retention, release, branch, history-transport and lifecycle/G2 obligations.
+  Numerical runtime remains unchanged. **Independent audit passed the substantive
+  scope**; its squared-current formula correction and provenance/receipt
+  clarifications are applied. The [audit follow-up](./phase-9-grcv4/tranche-5/P9-5.4-AuditFollowup.json)
+  adds signed non-unit current pressure and a same-charge comparison while
+  preserving the original execution record. **Accepted by the user on 2026-09-09**;
+  P9-7.1-A_OS is not yet execution-permitted.
 
 ## Tranche 6. CI, PC, CI+PC, and RG2b
 

@@ -1,44 +1,70 @@
-# Phase 9 GRCV4 handoff — P9-5.3 numerical A_OS integration
+# Phase 9 GRCV4 handoff — P9-5.4 Candidate A claim separation
 
-Current restart point, 2026-09-09: branch `impl/phase-9-grcv4-tranche-5`,
-based on accepted P9-5.2 commit `d5e1ede`.
-[P9-5.3](./phase-9-grcv4/tranche-5/P9-5.3-Review.md) implements one A_OS
-predictor/geometry/fresh-corrector pass, exact split admission, one continuity
-and retained writer, final current readmission at consumed and next-reference
-geometry, clocks and zero-duration numerical identity. Audit F1/F2 are
-corrected: exact split admission survives an unavailable binary64 display,
-and shared numerical exceptions retain the A_OS stage and original cause.
-The follow-up records 68 focused methods and four supplied audit regressions.
-**Accepted by the user on 2026-09-09; P9-5.4 is authorized next.**
+Current restart point, 2026-09-09: branch `impl/phase-9-grcv4-tranche-5`.
+**P9-5.3 was accepted and committed as `5a3e674`.** Its 68 focused methods,
+four supplied audit regressions, corrected exact split/display boundary and
+shared numerical error provenance remain at that accepted Git subject.
 
-The [audit follow-up](./phase-9-grcv4/tranche-5/P9-5.3-AuditFollowup.json)
-records source identity, reconstruction and scoped checks. The original
-[61-method execution](./phase-9-grcv4/tranche-5/P9-5.3-ExecutionRecord.json)
-remains unchanged; a verified reversible delta recovers its audited sources. Current permission
-is 33 leaves / 31 runtime paths. Use:
+[P9-5.4](./phase-9-grcv4/tranche-5/P9-5.4-Review.md) is implemented and
+verified. Independent audit passed the substantive scope; the squared-current
+formula correction and clarifications are applied. **Accepted by the user on
+2026-09-09.** Its
+[execution manifest](./phase-9-grcv4/tranche-5/P9-5.4-ExecutionRecord.json)
+records 12 distinct claim boundaries, seven source-contract queries and
+13 focused tests. Numerical runtime sources remain unchanged. Initialization
+values and provisional A dynamics are verified; authenticated initializer
+reference-current origin, source-history transport, native formation,
+post-input retention, native release, structural branch evidence, live A
+lifecycle and A_OS G2 are not thereby established.
+
+The [audit follow-up](./phase-9-grcv4/tranche-5/P9-5.4-AuditFollowup.json)
+preserves the original execution record, reproduces the independent equation
+checks and adds seven typed current cases plus a same-charge comparison.
+The G_W exponent uses `-gamma*J_ref**2/2`, including for non-unit currents.
+Constructor flags state what is not established, not that formed origins are
+impossible; internal maintaining activity may remain declared and active.
+A→C loss and C→A no-fabricated-history receipts remain direction-specific.
+
+Three counterexamples are directly runnable: positive current/reset
+initialization can leave only reset current singular; an initializer and a
+zero-current ordinary writer can produce identical C/W with different
+provenance; and the instantaneous contrast can become neutral without a W
+write when its reference changes. The review states each experiment's scope,
+including the deliberately unauthenticated initializer flux and the
+fixed-stage, different-charge comparison. These are not live migration,
+rollback or native release evidence.
+
+Current permission is 34 leaves / 31 runtime paths. Use:
 
 ```sh
-.venv/bin/python implementation/phase-9-grcv4/verification/verify_p953_a_os.py --check
+.venv/bin/python implementation/phase-9-grcv4/verification/verify_p954_claims.py --test
+.venv/bin/python implementation/phase-9-grcv4/verification/verify_p954_claims.py --check
 ```
 
-The numerical outputs are provisional. The registered `P9-7.1-A_OS` lifecycle
-child follows P9-5.4 and owns live publication/receipts, snapshot and reset.
-P9-5.4 follows this accepted numerical leaf. No A_OS G2 support is advertised.
-C exact admission and other numerical behavior are preserved. Two pinned
-diagnostic changes affect the shared residual and its C publication consumer:
-`values`/`split_residual` may be `None`/JSON `null`, while the complete exact
-defect remains available. Both candidates, signed range limits, numerical and
-programmer failures, and unchanged C publication authority are pressured.
-The affected C_OS pass/step regressions are rerun in the follow-up.
+The numerical outputs remain provisional. The registered `P9-7.1-A_OS`
+lifecycle child now has its P9-5.4 acceptance prerequisite satisfied and owns live publication/receipts,
+snapshot and reset. Migration/event target integration must authenticate the
+initializer reference-current source for the actual current/reset target
+stages, exclude discarded-history dependence and readmit both targets before
+atomic publication. Neither P9-5.4 completion nor numeric equality grants
+that continuation or A_OS G2. Current generic support remains the exact C_OS
+singleton; specialization and G3 remain separate.
 
-Carry both post-writer failures into the later lifecycle child. The P9-5.2
-witness (`W_old=4`, `W_next=2`, zero C/current, `chi=1`, `zeta=3`,
-`dt=log(2)`) now rejects during final numerical reconstruction. The additional
-reference-only witness in the review writes `W_next=1/2`: its current is
-regular at consumed Hodge 2 but singular at reference Hodge 1. Both preserve
-all supplied prestate inputs; the later live owner must prove atomic rollback
-and unchanged ledger. Read-only poststate admission must not feed new W into
-the earlier corrector or label that successful solve as failed.
+Carry the reset-only initializer counterexample and both P9-5.3 post-writer
+failures into the later A lifecycle work. The first post-writer witness
+(`W_old=4`, `W_next=2`, zero C/current, `chi=1`, `zeta=3`, `dt=log(2)`)
+rejects at final numerical reconstruction. The reference-only witness writes
+`W_next=1/2`: current is regular at consumed Hodge 2 but singular at reference
+Hodge 1. The live owner must prove complete rollback, unchanged ledger and
+correct failure receipts, without feeding new W into the successful earlier
+corrector.
+
+Shared `OSSplitResidual.values` may be `None` when its binary64 display
+cannot be represented; the existing C publication field is then JSON `null`.
+The complete exact defect and exact normalized admission remain authoritative.
+The P9-5.3 follow-up preserves the original execution and reconstructs its
+157 source bindings. Use its checker at `5a3e674`; current status uses the
+P9-5.4 command above. Its `--audit` option reruns only the supplemental pressure.
 
 **P9-5.2 was accepted and committed as `d5e1ede` on 2026-09-09.** Its two audit
 findings are corrected: exact rational potential diagnostics and a fully pinned
@@ -56,15 +82,6 @@ by the user on 2026-09-09** after 41 focused tests, the 269-kernel local rerun,
 and entry/status verification passed. Its retained-source checker belongs to
 the historical `c920376` checkout; use the successor command above for current
 status. No A state was added to the accepted C_OS facade or support set.
-
-For continuation, the explicit reference flux remains a declared operand:
-later integration must establish its admitted source, bind the actual target
-stage, exclude discarded-history dependence, and perform current/lifecycle
-readmission before claiming the complete initializer. P9-5.2 must also pressure
-finite large `W_A`/`W_hat_A` contrasts without overflowing their denominator;
-the P9-5.2 tests now cover this, including exact regular denominators whose
-displayed binary64 contrast rounds to an endpoint.
-The review distinguishes value-constructor failure from lifecycle rollback.
 
 The [P9-4.8B integrated review](./phase-9-grcv4/tranche-4/P9-4.8B-Review.md)
 remains the accepted Tranche 4 basis.

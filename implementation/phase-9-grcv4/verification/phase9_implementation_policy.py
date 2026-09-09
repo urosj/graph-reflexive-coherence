@@ -194,6 +194,7 @@ PATHS = {
     HERE + "verify_p951_initialization.py",
     HERE + "verify_p952_current_writer.py",
     HERE + "verify_p953_a_os.py",
+    HERE + "verify_p954_claims.py",
     # P9-4.8B is a review-only successor; no runtime leaf or support grant.
     HERE + "verify_p948b_review.py",
     PHASE + "tranche-4/P9-4.8B-Review.md",
@@ -948,7 +949,8 @@ def leaf_permissions(root):
                 *accepted_os_pass(root)["accepted_iterations"],
                 *accepted_os_operations(root)["accepted_iterations"],
                 *accepted_a_initialization(root)["accepted_iterations"],
-                *accepted_a_current_writer(root)["accepted_iterations"]}
+                *accepted_a_current_writer(root)["accepted_iterations"],
+                *accepted_a_os(root)["accepted_iterations"]}
     support = read(
         safe_path(root, PHASE + "tranche-1/P9-1.4-SupportAndDependencies.json")
     )
@@ -1105,6 +1107,36 @@ def accepted_a_current_writer(root):
     return value["acceptance"]
 
 
+def accepted_a_os(root):
+    """Bind accepted P9-5.3; numerical acceptance is not A lifecycle/G2 credit."""
+    commit = "5a3e674"
+    name = PHASE + "tranche-5/P9-5.3-AuditFollowup.json"
+    git(root, "merge-base", "--is-ancestor", commit, "HEAD")
+    content = git(root, "show", commit + ":" + name)
+    value = json.loads(content)
+    require(
+        safe_path(root, name).read_bytes() == content
+        and value["record_digest"] == digest_record(value)
+        == "d177dd4f207f61c291a16fd6695577b8fc6091943a6bb20c23d697feb1188376"
+        and value["acceptance"]["status"] == "accepted_by_user"
+        and value["acceptance"]["accepted_iterations"] == ["P9-5.3"]
+        and value["acceptance"]["new_runtime_iterations_authorized"] == ["P9-5.4"]
+        and value["acceptance"]["open_leaf_blockers"] == []
+        and value["acceptance"]["A_OS_G2_accepted"] is False,
+        "untrusted Candidate A OS numerical acceptance",
+    )
+    for source in (
+        "src/pygrc/models/grc_v4_candidate_a.py",
+        "src/pygrc/models/grc_v4_realizations.py",
+        "src/pygrc/models/grc_v4_step.py",
+        "src/pygrc/models/grc_v4_lifecycle.py",
+        "tests/models/test_grc_v4_realizations.py",
+    ):
+        require(sha(git(root, "show", commit + ":" + source)) == value["source_bindings"][source],
+                "accepted A OS source mismatch: " + source)
+    return value["acceptance"]
+
+
 def accepted_g2(root):
     """Explicit singleton acceptance, never inferred from permission or tests."""
     value = read(safe_path(root, G2_ACCEPTANCE))
@@ -1257,6 +1289,9 @@ def work_entries(root, approval):
                         "AuditFollowup.json", "AuditPressure.json", "AuditReproducer.py"
                     )
                 )
+            if leaf == "P9-5.4":
+                records.update(PHASE + "tranche-5/P9-5.4-" + suffix
+                               for suffix in ("AuditFollowup.json", "AuditChecks.json", "AuditChecks.py"))
             evidence = re.fullmatch(
                 re.escape(PHASE + f"evidence/{leaf}/")
                 + r"[A-Za-z0-9][A-Za-z0-9_-]{0,95}/([^/]+)",
@@ -1274,12 +1309,13 @@ def work_entries(root, approval):
                 PHASE + "tranche-5/P9-5.1-AuditFollowup.json",
                 PHASE + "tranche-5/P9-5.2-AuditFollowup.json",
                 PHASE + "tranche-5/P9-5.3-AuditFollowup.json",
+                PHASE + "tranche-5/P9-5.4-AuditFollowup.json",
             }:
                 record = json.loads(content)
                 require(
                     record["iteration_id"] == leaf
                     and record["release_id"] == (
-                        current_abundance_release(root) if leaf in {"P9-4.9.1a", "P9-4.9.3", "P9-5.1", "P9-5.2", "P9-5.3"} else
+                        current_abundance_release(root) if leaf in {"P9-4.9.1a", "P9-4.9.3", "P9-5.1", "P9-5.2", "P9-5.3", "P9-5.4"} else
                         current_parent_release(root) if leaf in {"P9-4.9.1", "P9-4.9.2"} else prior.RELEASE_ID
                     ),
                     "execution record subject mismatch",

@@ -1214,6 +1214,31 @@
       "sha256": "6897b09d09d5c9c00dda97bc9839e96a527ef23df15bc82ce2cfb006867858e3"
     },
     {
+      "path": "implementation/phase-9-grcv4/tranche-5/P9-5.4-AuditChecks.json",
+      "iteration_id": "P9-5.4",
+      "sha256": "0358f6063c348f2bea313379654531b6626376242a0651175e3f39423920a7a1"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-5/P9-5.4-AuditChecks.py",
+      "iteration_id": "P9-5.4",
+      "sha256": "30e6b8401a2600f74808caa837e8dcd90f9b92b9a76dfe4f0dc6a9ea320942cb"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-5/P9-5.4-AuditFollowup.json",
+      "iteration_id": "P9-5.4",
+      "sha256": "1622ac065d1b427c060190e2c04703b9de6224687fdb085c7894443f24fbfb86"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-5/P9-5.4-ExecutionRecord.json",
+      "iteration_id": "P9-5.4",
+      "sha256": "c2e81d97ab05e1593ff949f59b245786722980e506cc94d61f9fe5ba12f40aac"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-5/P9-5.4-Review.md",
+      "iteration_id": "P9-5.4",
+      "sha256": "d778ddb6cc01715d8c4173e1866d16e2c393df04cf83412c3b5fdd279d1eae92"
+    },
+    {
       "path": "pyproject.toml",
       "sha256": "018c364413f75ee49186975c05e9cdaba7a78e171d47833609fbebc223a64a66",
       "iteration_id": "P9-3.1"
@@ -1374,5 +1399,5 @@
   ],
   "admitted_specialization_support_sets": [],
   "claim_ceiling": "Work entries grant no conformance; the only accepted support is the separate P9-4.8B exact C_OS singleton. Local targets, other profiles and specialization are not promoted.",
-  "record_digest": "daf09be34185e808423057e14eee45162175a077b21c1c4ebab038b53e114a0e"
+  "record_digest": "7c864101949d53b2bdfede88659acac0732932102d8c9b09bccfbd4a72c41e98"
 }
