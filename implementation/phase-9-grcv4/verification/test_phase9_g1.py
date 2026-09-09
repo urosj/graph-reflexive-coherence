@@ -52,7 +52,10 @@ def main():
             ],
             check=True,
         )
-        fixture_revision = p.lifecycle_batch_authorization(p.ROOT)["baseline_commit"]
+        # Current-file pressure needs the reviewed checkout's accepted ancestry.
+        # The lifecycle authorization baseline still governs its historical
+        # scope; it is not the HEAD for a candidate containing later work.
+        fixture_revision = p.git(p.ROOT, "rev-parse", "HEAD").decode().strip()
         subprocess.run(
             ["git", "checkout", "--quiet", "--detach", fixture_revision],
             cwd=root, check=True,
@@ -117,7 +120,10 @@ def main():
                 if expected is None
                 else (error is not None and expected in error)
             )
-            restored = protected_manifest(root) == pristine
+            restored = (
+                protected_manifest(root) == pristine
+                and p.git(root, "rev-parse", "HEAD").decode().strip() == fixture_revision
+            )
             passed = passed and restored
             cases.append(
                 {
@@ -185,6 +191,48 @@ def main():
                         inspect()
 
         case("accepted_G1_current_tree", inspect)
+
+        def missing_accepted_ancestry(subject, required):
+            # Change only the disposable detached HEAD, keeping the exact
+            # current files. This reproduces the stale-fixture defect and
+            # proves the real ancestry guard is still enforced.
+            with mutate(".git/HEAD", (subject + "\n").encode()):
+                try:
+                    inspect()
+                except subprocess.CalledProcessError as failure:
+                    expected_command = [
+                        "git", "merge-base", "--is-ancestor", required, "HEAD"
+                    ]
+                    if failure.returncode != 1 or failure.cmd != expected_command:
+                        raise
+                    traces.append({
+                        "check": "actual_required_commit_ancestry",
+                        "subject_commit": subject,
+                        "required_commit": required,
+                        "command": expected_command,
+                        "exit_code": failure.returncode,
+                    })
+                    raise ValueError("missing accepted ancestry: " + required) from failure
+
+        for label, subject, required in (
+            (
+                "current_files_without_parent_acceptance_rejected",
+                p.lifecycle_batch_authorization(p.ROOT)["baseline_commit"],
+                p.PARENT_IMPLEMENTATION_COMMIT,
+            ),
+            (
+                "current_files_without_abundance_acceptance_rejected",
+                p.PARENT_IMPLEMENTATION_COMMIT,
+                "1f5f5e9",
+            ),
+        ):
+            case(
+                label,
+                lambda subject=subject, required=required: missing_accepted_ancestry(
+                    subject, required
+                ),
+                "missing accepted ancestry: " + required,
+            )
         p.require(
             p.HANDOFF_PATHS.isdisjoint(p.PATHS), "archive still gates implementation"
         )
@@ -364,7 +412,9 @@ def main():
             "immutable predecessor changed",
         )
         init = "src/pygrc/models/__init__.py"
-        before = (root / init).read_bytes()
+        # Exercise one addition to the frozen legacy prefix, even when the
+        # reviewed current checkout already contains the accepted lazy export.
+        before = p.git(root, "show", p.BASELINE + ":" + init)
         lazy = b'\n\ndef __getattr__(name):\n    if name == "GRCV4":\n        from .grc_v4 import GRCV4\n        return GRCV4\n    raise AttributeError(name)\n'
 
         def integration_contract(name, before, after):
@@ -400,6 +450,12 @@ def main():
             lambda: integration_contract(
                 init, before, b"# legacy names removed\n" + lazy
             ),
+            "legacy export prefix changed",
+            scope="isolated_integration_contract_not_current_leaf_permission",
+        )
+        case(
+            "duplicate_lazy_export_rejected",
+            lambda: integration_contract(init, before, before + lazy + lazy),
             "legacy export prefix changed",
             scope="isolated_integration_contract_not_current_leaf_permission",
         )

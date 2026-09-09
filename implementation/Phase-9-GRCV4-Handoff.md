@@ -2,7 +2,7 @@
 
 Current restart point, 2026-09-09: use branch
 `impl/phase-9-grcv4-tranche-4-closure` and the
-[P9-4.9.3 fixture reconciliation](./phase-9-grcv4/tranche-4/P9-4.9.3-Review.md).
+[P9-4.8B integrated review](./phase-9-grcv4/tranche-4/P9-4.8B-Review.md).
 The user accepted the receipt-parent design and requested full implementation:
 the admitted claim/debt overlay, actual tool UX, proposal/paper/spec successor
 and internal C_OS parent rule are implemented. Consult that review and the
@@ -13,12 +13,17 @@ were accepted in `7905e7e`. The user then explicitly accepted the audit-refined
 implementation. It is admitted through the forensic API and propagated through
 proposal/paper §14.2.1, the V4 specs and the C_OS projection. Consult the
 [abundance review](./phase-9-grcv4/tranche-4/P9-4.9.1a-Review.md) for focused
-verification and limits. P9-4.9.3 now submits the exact 33-case product for one
+verification and limits. P9-4.9.3 was accepted by the user's commit instruction
+in `c01526c`. It supplies the exact 33-case product for one
 nominated complete profile, plus exact dimension and mapped-event vectors.
-Control/target identities are not broader support. The next work is the single
-**P9-4.8B G2 review**. Do not repeat the fixture run or reopen
-unaffected scientific results.
-G2 remains held; no support set is promoted.
+Control/target identities are not broader support. **P9-4.8B proposes PASS for
+that single exact nomination; user acceptance is still required.** Its
+[record](./phase-9-grcv4/tranche-4/P9-4.8B-GateReview.json) binds the three
+satisfied closure obligations, current release, retained execution and typed
+authority/debt traces. Next is the user's scoped G2 decision, not another
+numerical run. G2 remains closed; no support set is promoted. Acceptance must
+be recorded before exact support/discovery changes; A_OS and G3 still require
+separate continuation/entry review.
 
 The [P9-4.9.1a proposal](./investigations/grc9v4-constitutive-design/decisions/P9AbundanceInterfaceAuthorityProposal.md)
 is accepted. All three refinements
@@ -33,19 +38,37 @@ and facade runs are retained at their Git subjects, not relabeled as current.
 The user's subsequent instruction to commit accepts the bounded P9-4.9.1a
 implementation and its focused evidence. The review/execution records retain
 their validation-time pending disposition; this handoff and the commit record
-the later acceptance in `1f5f5e9`. G2 remains held; the fixture closure is now
-implemented for review, not accepted generic runtime support.
+the later acceptance in `1f5f5e9`. G2 remains held; acceptance of fixture closure
+in `c01526c` is not acceptance of generic runtime support.
 
-Lean checks: use `verification/verify_p9493_fixtures.py --check` and
+Lean checks: use `verification/verify_p948b_review.py --check` and
 `verification/audit_phase9_implementation.py --boundary-only` under
 `implementation/phase-9-grcv4/`, with `.venv/bin/python` from the repository
-root. The accepted parent/facade/abundance runs are checked at their original Git subjects; the new
-focused record binds current source. Neither check reruns numerical tests or
-claims fresh full historical/browser verification.
+root. The accepted parent/facade/abundance runs are checked at their original Git
+subjects; the retained 22-test fixture record binds unchanged scientific
+source, with two exact status-only corrections separately checked against
+their original hashes. The successor also checks PASS/HOLD and misleading-record controls,
+plus existing status/authority API, notebook and HTTP/browser-validator paths.
+Neither command reruns numerical tests or claims fresh full historical/browser
+verification. The current surface remains 30 ready leaves / 29 eligible paths;
+review maintenance opens no runtime leaf.
+
+Full-path follow-up: historical replay and complete parent/abundance authority
+checks passed before a stale disposable-HEAD defect stopped permission pressure.
+The harness now uses the actual reviewed HEAD and explicitly rejects missing
+parent/abundance acceptance ancestry. See the
+[failure explanation and resumed stages](./phase-9-grcv4/tranche-4/P9-4.8B-Review.md#full-path-follow-up-and-harness-correction).
+The passed historical stages are reused; the failed pressure stage and remaining
+current-surface/review checks are the continuation, not another numerical run.
+The export probe also uses its frozen pre-integration baseline. Browser
+readiness and API next-work text now match the accepted fixture stage and
+pending G2 review; actual API-to-browser validation guards that boundary.
+
+## Historical P9-4.8 snapshot
 
 Historical P9-4.8 restart point: **read the
 [P9-4.8 continuation handoff](./phase-9-grcv4/tranche-4/P9-4.8-Handoff.md)**.
-It contains the current checkout/acceptance state, source links, remaining work,
+It contains the then-current checkout/acceptance state, source links, remaining work,
 environment commands, verification limits and files intended for the next commit.
 
 The branch is `impl/phase-9-grcv4-tranche-4`; accepted runtime base is

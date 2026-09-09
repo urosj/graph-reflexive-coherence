@@ -95,13 +95,11 @@ def verify(root, boundary_only=False):
             policy.prior.run_logged(
                 [sys.executable, str(root / script)], root, label, commands
             )
-        # The accepted parent run belongs to its immutable Git subject. Shared
-        # source changes are now checked by P9-4.9.1's focused successor record.
-        policy.parent_runtime_evidence(root)
-        policy.facade_runtime_evidence(root)
+        # The successor review verifies the current fixture run and original
+        # parent/facade/abundance Git subjects without numerical reexecution.
         policy.prior.run_logged(
-            [sys.executable, str(root / policy.HERE / "verify_p9493_fixtures.py"), "--check"],
-            root, "P9493_retained_fixture_evidence_current_inputs", commands,
+            [sys.executable, str(root / policy.HERE / "verify_p948b_review.py"), "--check"],
+            root, "P948B_integrated_review_pending_user_acceptance", commands,
         )
         report = policy.read(root / policy.GENERATED / policy.REPORT_FILE)
         policy.require(

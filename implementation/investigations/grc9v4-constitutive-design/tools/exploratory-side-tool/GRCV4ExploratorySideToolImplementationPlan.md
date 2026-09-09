@@ -1775,8 +1775,8 @@ the focused successor binds new inputs. Final P9-4.9.3 and P9-4.8B remain separa
 
 ## Phase 9 Tranche 4 — P9-4.9.3 fixture reconciliation
 
-The normal implementation verifier now inspects the retained exact-profile
-product through `verify_p9493_fixtures.py --check`. Preserve the original
+The fixture verifier inspects the retained exact-profile product through
+`verify_p9493_fixtures.py --check`; the P9-4.8B normal route below reuses it. Preserve the original
 abundance/facade/parent executions at their Git subjects; no historical run is
 relabeled current. Readiness adds only the fixture leaf on existing lifecycle
 and test paths (30 ready leaves, unchanged 29 eligible runtime paths).
@@ -1789,3 +1789,31 @@ existing focused source capture and content-addressed input/output records.
 No new claim/authority graph or API/notebook/browser behavior is introduced;
 reuse their accepted evidence. P9-4.8B reviews sufficiency and acceptance, not
 another automatic numerical/browser campaign.
+
+## Phase 9 Tranche 4 — P9-4.8B integrated G2 review
+
+Route normal current verification to `verify_p948b_review.py --check`, reusing
+the accepted `c01526c` fixture product and historical parent/facade/abundance
+subjects. Bind the active release, exact nominated profile, all 33 rows, mapped
+identities and typed contract/debt traces. The review proposes PASS for that
+single nomination; user acceptance remains pending. Preserve the original HOLD
+and source debt dispositions. No new runtime leaf, support or authority claim:
+readiness stays 30 leaves / 29 eligible paths. Correct the existing browser
+validator's stale 29-leaf list and API navigation to this actual phase; test the
+real API payload through the shipped browser validator, not only synthetic JS
+fixtures. Reject missing/duplicate fixture leaves and premature review permission.
+
+Scenarios: valid complete PASS proposal and valid HOLD; coherently rehashed
+missing/duplicate/empty/family inputs, unreviewed support, borrowed mapped
+identity, erased debt/obligation, historical support promotion, open-blocker
+PASS, premature acceptance/registry and stale release rejection. Reuse existing
+status notebook/API and authority notebook/HTTP/browser-validator controls.
+No numerical or desktop/mobile campaign is repeated. See the
+[review and acceptance boundary](../../../../phase-9-grcv4/tranche-4/P9-4.8B-Review.md).
+Only subsequent user acceptance may propagate exact G2 support/discovery.
+Full-path pressure uses the reviewed HEAD for current-file candidates and the
+frozen legacy prefix for its additive-export probe. Missing accepted ancestry
+and duplicate hooks remain rejected. Preserve the original 473-file numerical
+capture: 471 bindings unchanged, two exact status-only replacements separately
+source-compared and surface-tested. The successor rejects all other differences;
+it does not rewrite the original run or repeat numerical tests for status work.

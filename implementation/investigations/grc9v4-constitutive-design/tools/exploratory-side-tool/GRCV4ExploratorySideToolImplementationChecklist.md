@@ -1397,8 +1397,9 @@ P9-3.2 implementation is pending review; runtime support remains empty.
       preserve stale-pressure rejection in full mode and separate output files.
 - [x] Check original parent evidence against accepted Git `d8f26d9` and current
       facade evidence through the existing focused source-capture mechanism.
-- [ ] Complete the separate P9-4.9.3 fixture product and P9-4.8B acceptance;
-      do not infer them from targeted facade or boundary checks.
+- [x] Complete the separate P9-4.9.3 fixture product, accepted in `c01526c`;
+      do not infer G2 from targeted facade or boundary checks.
+- [ ] Obtain P9-4.8B acceptance before promoting exact runtime support.
 
 ## Phase 9 Tranche 4 — P9-4.9.1a abundance availability
 
@@ -1417,11 +1418,33 @@ P9-3.2 implementation is pending review; runtime support remains empty.
 
 - [x] Register only the fixture leaf on existing lifecycle/test owners; leave
       G2 and accepted profile/specialization support unchanged.
-- [x] Route normal current verification to the retained exact-profile fixture
-      successor, with original abundance/facade/parent Git subjects preserved.
+- [x] Route fixture verification to the retained exact-profile product, now
+      reused by P9-4.8B; preserve original abundance/facade/parent Git subjects.
 - [x] Bind the 33-row nonempty product and two exact vectors to actual inputs,
       output/receipt identities and explicit fixed-stage/control/crossing scope.
 - [x] Check positive product and missing/duplicate/family/empty/borrowed/altered
       result and premature-acceptance controls without a numerical rerun.
-- [ ] P9-4.8B: review the integrated fixture, interface and parent result and
-      decide G2 separately. No new UX/authority claim is inferred here.
+- [x] Perform the integrated fixture/interface/parent review through P9-4.8B
+      below. No new UX/authority claim is inferred here.
+
+## Phase 9 Tranche 4 — P9-4.8B integrated G2 review
+
+- [x] Route normal verification to the successor review; bind exact current
+      source/release, 33-row fixture product, retained runs and typed authority.
+- [x] Retain original HOLD and debt dispositions; accept valid PASS-proposal
+      and HOLD controls, reject 13 coherent misleading-record mutations.
+- [x] Check current boundary/status and existing API/notebook/HTTP/browser
+      validators without a numerical or full desktop/mobile rerun.
+- [x] Record [exact-scope PASS proposal](../../../../phase-9-grcv4/tranche-4/P9-4.8B-Review.md)
+      with G2 still closed, no accepted support and unchanged 30 leaves / 29 paths.
+- [ ] Obtain user acceptance before changing exact support/discovery and gate
+      state. P9-7.7-C_OS aliases this review; other profiles/G3 stay separate.
+- [x] Correct the full-path pressure fixture to use reviewed HEAD, preserving
+      historical baselines and testing actual missing-parent/abundance ancestry.
+      Continue from the failed stage; do not repeat passed historical checks.
+- [x] Keep export probes relative to frozen legacy source; reject a duplicate
+      lazy hook. Align browser readiness with the actual API's 30 leaves / 29
+      paths and test their real payload identity, missing/duplicate leaves and
+      premature review permission. Correct API next-work text without gate promotion.
+- [x] Preserve the original numerical capture and hashes; verify only the two
+      exact status replacements separately, rejecting broader source changes.

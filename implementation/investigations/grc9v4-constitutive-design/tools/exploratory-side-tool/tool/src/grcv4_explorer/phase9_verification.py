@@ -184,7 +184,7 @@ def verification_status(repo_root: Path) -> dict:
                     for r in approval["runtime_targets"]
                     if r["requires_gate"] == "P9-G1" and set(ready) & owners[r["path"]]
                 ),
-                next_gate="P9-4.9.1a abundance availability authority accepted and propagated; bounded C_OS projection implemented, no numeric definition. Next: final P9-4.9.3 evidence reconciliation, then one P9-4.8B review. P9-G2/G3 remain held.",
+                next_gate="P9-4.9.3 fixture reconciliation accepted; P9-4.8B proposes PASS for one exact C_OS profile, pending user acceptance. P9-G2/G3 remain held; accepted support stays empty. No numeric abundance definition.",
                 claim_ceiling="Accepted permission to implement reviewed V4 scope is not executed or accepted runtime conformance.",
             )
         cross = module.read(

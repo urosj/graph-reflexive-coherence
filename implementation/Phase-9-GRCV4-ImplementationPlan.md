@@ -779,8 +779,11 @@ have scoped C_OS evidence reconciled; P9-7.1-C_OS retains only bounded snapshot/
 continuation credit. Broader GRC9/reference-carrier correction and generic
 parent-DAG conformance remain outside these accepted leaves.
 
-P9-4.8 has a draft **HOLD P9-G2[C_OS]**, pending fixture reconciliation and
-user review. Start from the [current continuation handoff](./phase-9-grcv4/tranche-4/P9-4.8-Handoff.md).
+Historical P9-4.8 snapshot: draft **HOLD P9-G2[C_OS]**, pending fixture
+reconciliation and user review at that stage. Its
+[continuation handoff](./phase-9-grcv4/tranche-4/P9-4.8-Handoff.md) is historical.
+The current [P9-4.8B review](./phase-9-grcv4/tranche-4/P9-4.8B-Review.md)
+proposes exact-scope PASS, with G2 acceptance still pending.
 The [gate review](./phase-9-grcv4/tranche-4/P9-4.8-Review.md) and
 [33-case evidence index](./phase-9-grcv4/tranche-4/P9-4.8-GateReview.json)
 record unfinished public-interface integration and deferred receipt-parent
@@ -788,17 +791,18 @@ authority. Fixture reconciliation is P9-4.8 work; its absent consolidated mappin
 is not proof of missing behavior. Reassess the stale-cache case using the existing
 second-beat reconstruction test before claiming a new gap. The corrected mandatory
 mapped-event execution retains its scoped credit. A_OS and P9-G3[C_OS] stay
-behind G2. Runtime support remains empty; permissions remain 26 leaves / 29
-eligible paths. P9-4.8 has changed review artifacts only.
+behind G2. That snapshot had empty runtime support and 26 leaves / 29 eligible
+paths. Current support is still empty; closure work has 30 leaves / 29 paths.
+P9-4.8 and P9-4.8B change review artifacts only.
 
 #### P9-4.9. Closure of the P9-4.8 obligations
 
 P9-4.9 is an aggregate register, not an extra execution or acceptance step.
-Its three pending children are work packages, not three new gates or separate
-full-review cycles. They close the obligations identified in the
+Its three children (including the P9-4.9.1a interface refinement) are accepted
+work packages, not new gates or separate full-review cycles. They close the obligations identified in the
 [P9-4.8 handoff](./phase-9-grcv4/tranche-4/P9-4.8-Handoff.md). These are not three
-demonstrated runtime bugs: interface integration is unfinished, receipt-parent
-authority is unresolved, and fixture sufficiency requires reconciliation.
+demonstrated runtime bugs: interface integration was unfinished, receipt-parent
+authority was unresolved, and fixture sufficiency required reconciliation.
 The original P9-4.8 draft HOLD and its evidence remain unchanged.
 
 Use one integrated closure sequence; the IDs identify ownership, not execution
@@ -945,7 +949,7 @@ proved the missing authority. Other profiles' parent obligations remain scoped.
 
 The initial [gap list](./phase-9-grcv4/tranche-4/P9-4.9.3-EvidenceInventory.md)
 is retained as history. The [final reconciliation](./phase-9-grcv4/tranche-4/P9-4.9.3-Review.md)
-submits 33 catalog rows for one exact nominated complete profile, plus the
+was accepted in `c01526c`: 33 catalog rows for one exact nominated complete profile, plus the
 published dimension negative and mapped event. It follows accepted parent,
 facade and abundance implementation (`d8f26d9`, `7905e7e`, `1f5f5e9`).
 Control and target identities remain separate. Focused captured execution and
@@ -1007,6 +1011,15 @@ remaining out-of-scope dispositions explicit. Passing test counts alone do not
 establish this product.
 
 #### P9-4.8B. Successor G2 closure review
+
+The [integrated review](./phase-9-grcv4/tranche-4/P9-4.8B-Review.md) and
+[bound decision](./phase-9-grcv4/tranche-4/P9-4.8B-GateReview.json) now propose
+**PASS for one exact nominated C_OS complete profile**, with all three closure
+obligations satisfied for that scope. User acceptance is pending: G2 remains
+closed and both accepted support sets remain empty. The normal verifier routes
+through the successor, reusing the final 22-test fixture run and checking
+current source/authority/release, misleading-record controls and affected
+status/authority surfaces without a numerical or full browser rerun.
 
 Once the integrated corrections and exact-profile evidence are ready, reassess
 the original P9-4.8 obligations under the unchanged full `P9-G2[C_OS]` criteria.
