@@ -119,6 +119,48 @@ def verification_status(repo_root: Path) -> dict:
                     "accepted_iterations": ["P9-3.4"],
                     "path": module.NUMERICAL_ACCEPTANCE,
                 },
+                preservation_acceptance={
+                    "record_digest": module.accepted_preservation(root)["record_digest"],
+                    "accepted_iterations": ["P9-3.5"],
+                    "path": module.PRESERVATION_ACCEPTANCE,
+                },
+                reference_transport_acceptance={
+                    "record_digest": module.accepted_reference_transport(root)["record_digest"],
+                    "accepted_iterations": ["P9-4.1"],
+                    "path": module.REFERENCE_ACCEPTANCE,
+                },
+                c_current_acceptance={
+                    "record_digest": module.accepted_c_current(root)["record_digest"],
+                    "accepted_iterations": ["P9-4.2"],
+                    "path": module.CURRENT_ACCEPTANCE,
+                },
+                c_controls_acceptance={
+                    "record_digest": module.accepted_c_controls(root)["record_digest"],
+                    "accepted_iterations": ["P9-4.3"],
+                    "path": module.CONTROLS_ACCEPTANCE,
+                },
+                os_pass_acceptance={
+                    "record_digest": module.accepted_os_pass(root)["record_digest"],
+                    "accepted_iterations": ["P9-4.4"],
+                    "path": module.OS_PASS_ACCEPTANCE,
+                },
+                os_operations_acceptance={
+                    "record_digest": module.accepted_os_operations(root)["record_digest"],
+                    "accepted_iterations": ["P9-4.5"],
+                    "path": module.OPERATIONS_ACCEPTANCE,
+                },
+                lifecycle_batch_authorization={
+                    "record_digest": module.lifecycle_batch_authorization(root)["record_digest"],
+                    "execution_order": ["P9-4.7a", "P9-4.7b"],
+                    "audit_status": "findings_closed_after_correction",
+                    "combined_audit_scope": ["P9-4.6", "P9-4.7a", "P9-4.7b"],
+                    "path": module.LIFECYCLE_BATCH,
+                },
+                specification_correction={
+                    "record_digest": module.accepted_specification_correction(root)["record_digest"],
+                    "release_id": module.CORRECTED_RELEASE_ID,
+                    "path": module.SPECIFICATION_CORRECTION,
+                },
                 implementation_scope=approval["runtime_targets"],
                 dependency_ready_leaves=ready,
                 permitted_runtime_paths=sorted(
@@ -126,7 +168,7 @@ def verification_status(repo_root: Path) -> dict:
                     for r in approval["runtime_targets"]
                     if r["requires_gate"] == "P9-G1" and set(ready) & owners[r["path"]]
                 ),
-                next_gate="P9-3.5 rejected-operation prestate preservation; P9-G2 and P9-G3 remain pending",
+                next_gate="P9-4.6/4.7a/4.7b accepted after audit corrections; P9-4.8 is next for separate review; P9-G2 and P9-G3 remain pending",
                 claim_ceiling="Accepted permission to implement reviewed V4 scope is not executed or accepted runtime conformance.",
             )
         cross = module.read(
@@ -267,6 +309,14 @@ def verification_status(repo_root: Path) -> dict:
         payload.pop("stage_acceptance", None)
         payload.pop("resource_acceptance", None)
         payload.pop("numerical_pressure_acceptance", None)
+        payload.pop("preservation_acceptance", None)
+        payload.pop("reference_transport_acceptance", None)
+        payload.pop("c_current_acceptance", None)
+        payload.pop("c_controls_acceptance", None)
+        payload.pop("os_pass_acceptance", None)
+        payload.pop("os_operations_acceptance", None)
+        payload.pop("lifecycle_batch_authorization", None)
+        payload.pop("specification_correction", None)
         payload.pop("permitted_runtime_paths", None)
         payload.pop("source_meaning", None)
         payload.pop("tree", None)

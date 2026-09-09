@@ -488,34 +488,163 @@ three bounded batches retain their own results and raw per-run manifests.
 
 ## Tranche 4. D11-C and the first C_OS runtime slice
 
-- [ ] P9-4.1: Bind `C-HM-STIFFNESS-BASELINE-v1`, the exact positive stable-edge
+- [x] P9-4.1: Bind `C-HM-STIFFNESS-BASELINE-v1`, the exact positive stable-edge
   reference map, and separate Hodge/mobility constructor identities.
-- [ ] P9-4.2: Implement the accepted potential and baseline flux, selector
+  Implemented and verified on `impl/phase-9-grcv4-tranche-4`; accepted by the
+  user's commit instruction after audit follow-up. The
+  [review](./phase-9-grcv4/tranche-4/P9-4.1-Review.md) maps source contracts,
+  typed constructor and complete-profile identities, strict reference-map
+  admission, binary64/outlier pressure and reconstruction to executable tests.
+  Entry binds P9-3.5 at `155c728`: twelve ready leaves, 25 eligible paths,
+  empty runtime support. The corrected capture passed 51 focused methods and
+  seven relocated checks; historical records retain their original dispositions
+  and attribution limits. P9-4.2 entry now binds accepted `94a079d` in its separate
+  [acceptance record](./phase-9-grcv4/tranche-4/P9-4.1-AcceptanceRecord.json).
+- [x] P9-4.2: Implement the accepted potential and baseline flux, selector
   gap, Read-Back typing, and regular current solve at their declared stages.
-- [ ] P9-4.3: Verify independent kappa-M, chi, and zeta zero controls and
+  Implemented and verified; explicitly accepted by the user for commit after
+  the user reported that both reviews found no defects. The
+  [review](./phase-9-grcv4/tranche-4/P9-4.2-Review.md) and
+  [execution record](./phase-9-grcv4/tranche-4/P9-4.2-ExecutionRecord.json) bind
+  123 passing focused methods, including 27 current methods, source reconstruction
+  and 17 relocated methods under each of two hash seeds. Exact singularity is
+  checked before resolvent rounding; actual physical conditioning is certified
+  separately from retained coordinates. Cutoff ties/unresolved gaps, nonreference
+  SPD geometry, multigraph modes, previous pairing outliers, numerical extremes,
+  strict declarations and input preservation are exercised. Thirteen leaves and
+  25 paths are dependency-ready; full OS, lifecycle and runtime support remain held.
+  Review/execution records retain their validation-time dispositions. P9-4.3 entry
+  now binds accepted `ac3a7cf` in the separate
+  [acceptance record](./phase-9-grcv4/tranche-4/P9-4.2-AcceptanceRecord.json).
+- [x] P9-4.3: Verify independent kappa-M, chi, and zeta zero controls and
   complete smooth-stratum baseline derivative/covariance cases.
   Add the separate tau-C-zero control on nontrivial retained Hodge with
   nonzero kappa-M; no frozen-catalog edit or simultaneous-zero shortcut (§7.3).
-- [ ] P9-4.4: Implement one OS pass, explicit split residual, one resource
+  Implemented and verified; explicitly accepted by the user for commit. The
+  [review](./phase-9-grcv4/tranche-4/P9-4.3-Review.md) maps the complete supported
+  baseline chain, independent controls, covariance and edge cases to 20 new
+  methods. The [execution record](./phase-9-grcv4/tranche-4/P9-4.3-ExecutionRecord.json)
+  binds 143 passing focused methods and 27 passing reconstructed derivative/capture
+  methods with a changed hash seed. Literal projector/scalar/reference witnesses,
+  nonzero omitted terms, repeated/closing gaps, domain boundaries and saturation
+  pressure the oracle and actual current independently. Production, frozen specs
+  and paper are unchanged. Fourteen leaves and 25 paths are dependency-ready;
+  P9-4.4 and runtime conformance remain held. Review, execution and run records
+  retain their validation-time dispositions; this checklist and the commit record
+  the later acceptance. A separately authorized P9-4.4 entry can bind this commit.
+  Post-acceptance audit: `39cfe6a` had a test-only saturation false-zero/NaN gap.
+  The [follow-up](./phase-9-grcv4/tranche-4/P9-4.3-AuditFollowup.md) corrects the
+  derivative arithmetic, declares its numerical limits and adds five regressions.
+  All 148 focused methods passed in a reconstructed checkout. The user has
+  accepted the verified follow-up. Its index and run retain their validation-time
+  dispositions; this checklist and the commit record the later acceptance.
+  Original evidence is unchanged and P9-4.4 remains held.
+- [x] P9-4.4: Implement one OS pass, explicit split residual, one resource
   write, and post-continuity rederivation.
-- [ ] P9-4.5: Execute positive and atomic-negative `C_OS` vectors; keep full
+  Implemented and verified; the user explicitly accepts the leaf and its audit
+  follow-up for commit. The
+  [review](./phase-9-grcv4/tranche-4/P9-4.4-Review.md) and
+  [execution record](./phase-9-grcv4/tranche-4/P9-4.4-ExecutionRecord.json) bind
+  the preserved 187-method initial run and 188 passing follow-up methods
+  (22 OS), in a reconstructed checkout with a fresh interpreter and changed
+  hash seed. The follow-up catches endpoint-only path checking at both pass/step
+  entry points, rejects before residual/resource work, and admits safe mixed
+  paths; both underchecking and blanket-rejection mutations are detected.
+  Production source is unchanged by the audit follow-up. Exact split-norm
+  boundaries, interior selector crossings, corrected-current singularity,
+  dense signed covariance, strict zero/subnormal/extreme durations, single-write
+  ordering and final-C failure receive explicit pressure. The pipeline is
+  provisional; live lifecycle commit/receipts remain with P9-4.5/4.6/4.7.
+  Review, execution and run records retain their validation-time dispositions;
+  this checklist and the commit record later user acceptance. Fifteen leaves
+  and 27 paths are ready; P9-4.5 entry and runtime conformance stay held.
+- [x] P9-4.5: Execute positive and atomic-negative `C_OS` vectors; keep full
   profile conformance pending lifecycle completion.
   Exercise the declared numerical reproducibility scope without hidden
   damping, regularization, pseudoinverse, fallback or charge repair (§7.4).
-- [ ] P9-4.6: Execute the C_OS snapshot/load/reset/rebase and deep-copy/
+  Resolve complete poststate reference/pre-read current/domain admission before
+  a commit-ready positive vector; success at consumed corrector geometry does
+  not prove reference-restart admission. Verify the required check or justify
+  its exact source-backed operation-boundary placement (complete-step 8–11).
+  Keep final-C current out of a second geometry/residual/continuity pass.
+  P9-4.5/P9-4.6 must bind actual request/ledger identities; inherited
+  `next_inputs.operation_id`, `dt` and `receipt_ids` have no lifecycle authority.
+  Implemented and verified in the bounded lifecycle ordinary-operation owner;
+  explicitly accepted by the user for commit, including all six audit corrections.
+  All 256 scoped methods pass with zero failures/errors/skips
+  in a reconstructed checkout; exact source and live declared-method bindings hold. The [review](./phase-9-grcv4/tranche-4/P9-4.5-Review.md) maps
+  actual commits and native/injected negative vectors to independent oracles.
+  The [execution record](./phase-9-grcv4/tranche-4/P9-4.5-ExecutionRecord.json)
+  preserves source-query meanings and the scoped reconstruction recipe.
+  Review, execution and run records retain their validation-time dispositions;
+  this checklist and the commit record the later acceptance. Programmer errors
+  propagate atomically, typed nonfinite causes survive both final-C boundaries,
+  and general cluster/conditioning branches and reference atomicity are pressured.
+  Parent-receipt scope stays provisional for the later lineage owner.
+  Sixteen leaves and 29 paths are dependency-ready; support sets remain empty.
+- [x] P9-4.6: Execute the C_OS snapshot/load/reset/rebase and deep-copy/
   immutability slice; record the corresponding P9-7.1-C_OS evidence.
-- [ ] P9-4.7a: Execute atomic failed-step, receipt identity/ownership, and
+  Implemented and verified; the user authorized commit without a full audit.
+  The original commit carried a deferred full audit, since supplied and closed
+  by the combined independent review below. This mark records implementation
+  and verification; subsequent corrections are now accepted. All 76 original
+  focused methods passed
+  after exact source reconstruction with zero failures/errors/skips. The
+  [review](./phase-9-grcv4/tranche-4/P9-4.6-Review.md) maps actual restoration,
+  reset/rebase/assignment, deep independence and edge-case pressure to tests.
+  The [execution record](./phase-9-grcv4/tranche-4/P9-4.6-ExecutionRecord.json)
+  binds portable reconstruction and compact source queries. P9-7.1-C_OS is an
+  evidence alias, not another execution or whole-parent acceptance. The original
+  entry exposed seventeen leaves and 29 paths; the accepted batch status follows
+  the P9-4.7a/b task rows below.
+  The bound review and execution record retain their verification-time status;
+  this checklist records the later commit authorization.
+- [x] Complete the deferred full independent audit of P9-4.6 and record its
+  findings and closure. The combined audit explicitly closes all three findings;
+  the user has accepted the corrections.
+
+- [x] P9-4.7a: Execute atomic failed-step, receipt identity/ownership, and
   state-to-step-to-snapshot-to-restore-to-replay pressure for C_OS.
-- [ ] P9-4.7b: Execute the remaining applicable C_OS lifecycle product through
+- [x] P9-4.7b: Execute the remaining applicable C_OS lifecycle product through
   early Tranche 7 children: mapped events, migration admission/rejection,
   reset after events/migrations, reference maps, and atomic readmission.
   Unsupported targets must reject; mandatory fixtures cannot be waived.
-- [ ] P9-4.8: Review all applicable C_OS fixtures and accept, reject, or hold
-  `P9-G2[C_OS]`. Missing mandatory cases keep this gate pending. Record the
-  next permitted A_OS or `P9-G3[C_OS]` review path.
+- [ ] P9-4.8: Draft **HOLD P9-G2[C_OS]**; fixture reconciliation and user
+  review/acceptance remain open. Carry the existing facade and receipt-authority
+  obligations into explicit closure work. Reconcile existing fixture evidence
+  before asserting missing behavior. A_OS and `P9-G3[C_OS]` remain behind G2.
 
 `P9-4.7` is the parent of P9-4.7a and P9-4.7b. The early state/receipt/replay
 cycle supplies evidence; P9-4.8 grants no reduced form of generic conformance.
+
+P9-4.7 batch accepted: the user authorized acceptance of P9-4.6, P9-4.7a and
+P9-4.7b after closing the combined audit findings. The
+[batch record](./phase-9-grcv4/tranche-4/P9-4.7ab-AuthorizationRecord.json)
+records that disposition. The [P9-4.6 follow-up](./phase-9-grcv4/tranche-4/P9-4.6-AuditFollowup.md)
+closes the deferred audit without rewriting its original records.
+
+The [P9-4.7b review](./phase-9-grcv4/tranche-4/P9-4.7b-Review.md) records the
+accepted edge/K4 correction, explicit solver tolerances and orientation/reference
+preimages. The successor specification release and packaged assets are active;
+the exact published mandatory request/event identity passes in the retained
+50-method replay. The earlier 135- and 35-method runs remain reproducible through
+Git plus compact reverse patches. Mixed lifecycle pressure includes returning
+to the original graph/profile and restoring its archive. P9-7.2a/b and 7.3–7.6
+have scoped C_OS evidence reconciled; P9-7.1-C_OS retains only bounded snapshot/
+continuation credit. Broader GRC9/reference-carrier correction and generic
+parent-DAG conformance remain outside these accepted leaves.
+
+P9-4.8 has a draft **HOLD P9-G2[C_OS]**, pending fixture reconciliation and
+user review. Start from the [current continuation handoff](./phase-9-grcv4/tranche-4/P9-4.8-Handoff.md).
+The [gate review](./phase-9-grcv4/tranche-4/P9-4.8-Review.md) and
+[33-case evidence index](./phase-9-grcv4/tranche-4/P9-4.8-GateReview.json)
+record unfinished public-interface integration and deferred receipt-parent
+authority. Fixture reconciliation is P9-4.8 work; its absent consolidated mapping
+is not proof of missing behavior. Reassess the stale-cache case using the existing
+second-beat reconstruction test before claiming a new gap. The corrected mandatory
+mapped-event execution retains its scoped credit. A_OS and P9-G3[C_OS] stay
+behind G2. Runtime support remains empty; permissions remain 26 leaves / 29
+eligible paths. P9-4.8 has changed review artifacts only.
 
 ## Tranche 5. Candidate A and A_OS
 
@@ -564,9 +693,12 @@ coverage. Record bounded shared-audit results for the available profile set.
 
 The [P9-1.4 child register](./phase-9-grcv4/tranche-1/P9-1.4-SupportAndDependencies.json)
 now declares exact C_OS and A_OS lifecycle children, source/target crossing
-scopes, evidence aliases and dependencies. All are planned/unexecuted;
-P9-7.1-C_OS aliases P9-4.6 and P9-7.7-C_OS aliases P9-4.8, with no duplicate
-execution credit. Parent completion remains scoped to reviewed child evidence.
+scopes, evidence aliases and dependencies. P9-7.1-C_OS and the early C_OS
+P9-7.2a/b–P9-7.6 children have scoped evidence accepted with the P9-4.6/4.7 batch;
+its full audit findings are closed. Generic parent-reference conformance remains
+open. A_OS children remain planned/unexecuted. P9-7.7-C_OS aliases the
+P9-4.8 draft HOLD review, pending fixture reconciliation and user review, with no duplicate execution credit.
+Parent completion remains scoped to reviewed child evidence.
 
 The registered C_OS/A_OS migration/event and P9-7.3–P9-7.6 children also own
 §7.5: deliberately distinct live/reset prestates, independently calculated

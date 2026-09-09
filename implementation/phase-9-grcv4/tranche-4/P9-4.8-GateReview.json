@@ -1,0 +1,436 @@
+{
+  "schema": "phase9_cos_gate_review_v1",
+  "iteration_id": "P9-4.8",
+  "alias": "P9-7.7-C_OS",
+  "review_status": "draft_hold_pending_fixture_reconciliation_and_user_review",
+  "gate": "P9-G2[C_OS]",
+  "verdict": "HOLD",
+  "reviewed_runtime_commit": "12411282422ba3cd9e91ce93051fe3470b9bf084",
+  "release_id": "grcv4-spec-release-sha256:7b8b4d4e32e48fd35f70421cce7f547eebb21dd81389764061efe6e1a8c19886",
+  "accepted_generic_runtime_support": [],
+  "admitted_specialization_support_sets": [],
+  "nominated_complete_profiles": [],
+  "blockers": [
+    {
+      "id": "G2-COS-INTERFACE",
+      "finding": "The public GRCV4(GRCModel) facade and mandatory discovery, common stepping and stage-tagged observable methods are absent.",
+      "closure": "Implement and validate the common/V4 surface using the existing bounded receiver, including defaults, lifecycle projections and exact profile discovery."
+    },
+    {
+      "id": "G2-COS-PARENTS",
+      "finding": "Accepted sources do not settle generic parent_receipt_ids scope/order; scoped local ledger acceptance does not close that debt.",
+      "closure": "Resolve authority through the specification/design route; then pressure historical/intra-commit, missing, forward, self, cyclic, duplicate and reordered references. Do not infer an intra-commit-only rule."
+    },
+    {
+      "id": "G2-COS-FIXTURES",
+      "finding": "P9-4.8 exact-profile fixture reconciliation is unfinished; the initial index alone does not establish a runtime defect or missing stale-cache behavior.",
+      "closure": "Reconcile existing evidence against nominated exact profiles and catalog outcomes, including the actual second-beat reconstruction test. Add implementation or tests only for demonstrated uncovered obligations, with independently justified expectations."
+    }
+  ],
+  "catalog_rows": [
+    {
+      "fixture_id": "COMMON-VALID-ORDINARY-STEP",
+      "evidence_leaf": "P9-4.5",
+      "test": "tests.models.test_grc_v4_lifecycle.CandidateCOSOperationTests.test_positive_nonzero_split_matches_rational_oracle_and_one_publication",
+      "limit": "Scoped implementation evidence; full nominated-profile product remains open."
+    },
+    {
+      "fixture_id": "COMMON-INVALID-DOMAIN",
+      "evidence_leaf": "P9-4.5",
+      "test": "tests.models.test_grc_v4_lifecycle.CandidateCOSOperationTests.test_native_solver_geometry_selector_and_split_failures_are_atomic",
+      "limit": "Scoped implementation evidence; full nominated-profile product remains open."
+    },
+    {
+      "fixture_id": "COMMON-NONFINITE",
+      "evidence_leaf": "P9-4.5",
+      "test": "tests.models.test_grc_v4_lifecycle.CandidateCOSOperationTests.test_native_solver_geometry_selector_and_split_failures_are_atomic",
+      "limit": "Scoped implementation evidence; full nominated-profile product remains open."
+    },
+    {
+      "fixture_id": "COMMON-CHARGE-MISMATCH",
+      "evidence_leaf": "P9-4.5",
+      "test": "tests.models.test_grc_v4_lifecycle.CandidateCOSOperationTests.test_native_postsolve_resource_domain_overflow_and_charge_failures",
+      "limit": "Scoped implementation evidence; full nominated-profile product remains open."
+    },
+    {
+      "fixture_id": "COMMON-STALE-CACHE",
+      "evidence_leaf": "P9-4.5",
+      "test": "tests.models.test_grc_v4_lifecycle.CandidateCOSOperationTests.test_two_beats_use_actual_request_poststate_ledger_and_reference",
+      "limit": "RECONCILE: this existing test observes the second predictor using fresh current/request/ledger/reference and asserts a committed beat. Combine with cache-attribute exclusion and geometry/stage provenance tests before claiming missing behavior or deciding the catalog outcome for the nominated public profile."
+    },
+    {
+      "fixture_id": "COMMON-ZERO-DURATION",
+      "evidence_leaf": "P9-4.5",
+      "test": "tests.models.test_grc_v4_lifecycle.CandidateCOSOperationTests.test_zero_duration_identity_no_writer_but_authenticated_receipt_delta",
+      "limit": "Scoped implementation evidence; full nominated-profile product remains open."
+    },
+    {
+      "fixture_id": "COMMON-NEGATIVE-DURATION",
+      "evidence_leaf": "P9-4.5",
+      "test": "tests.models.test_grc_v4_lifecycle.CandidateCOSOperationTests.test_negative_duration_and_closed_external_inputs_fail_before_solver",
+      "limit": "Scoped implementation evidence; full nominated-profile product remains open."
+    },
+    {
+      "fixture_id": "COMMON-ATOMIC-FAILURE",
+      "evidence_leaf": "P9-4.5",
+      "test": "tests.models.test_grc_v4_lifecycle.CandidateCOSOperationTests.test_fault_controls_receipt_construction_binding_and_exceptions_before_publish",
+      "limit": "Scoped implementation evidence; full nominated-profile product remains open."
+    },
+    {
+      "fixture_id": "C-TR-REFERENCE-MAP",
+      "evidence_leaf": "P9-4.1",
+      "test": "tests.models.test_grc_v4_candidate_c.CandidateCReferenceTests.test_exact_siblings_and_typed_operator_actions",
+      "limit": "Scoped implementation evidence; full nominated-profile product remains open."
+    },
+    {
+      "fixture_id": "C-BASELINE-EXACT",
+      "evidence_leaf": "P9-4.2",
+      "test": "tests.models.test_grc_v4_candidate_c.CandidateCCurrentTests.test_frozen_weighted_three_node_algebra_vector",
+      "limit": "Scoped implementation evidence; full nominated-profile product remains open."
+    },
+    {
+      "fixture_id": "C-BASELINE-DERIVATIVE-COVARIANCE",
+      "evidence_leaf": "P9-4.3",
+      "test": "tests.models.test_grc_v4_candidate_c.CandidateCControlDerivativeTests.test_vertex_signed_edge_covariance_of_values_and_directions",
+      "limit": "Scoped implementation evidence; full nominated-profile product remains open."
+    },
+    {
+      "fixture_id": "C-SELECTOR-STRICT-GAP",
+      "evidence_leaf": "P9-4.2",
+      "test": "tests.models.test_grc_v4_candidate_c.CandidateCCurrentTests.test_selector_ties_zero_and_exterior_strata",
+      "limit": "Scoped implementation evidence; full nominated-profile product remains open."
+    },
+    {
+      "fixture_id": "C-SELECTOR-BOUNDARY",
+      "evidence_leaf": "P9-4.2",
+      "test": "tests.models.test_grc_v4_candidate_c.CandidateCCurrentTests.test_selector_rejects_unresolved_or_malformed_decomposition",
+      "limit": "Scoped implementation evidence; full nominated-profile product remains open."
+    },
+    {
+      "fixture_id": "C-QC-TYPING",
+      "evidence_leaf": "P9-4.2",
+      "test": "tests.models.test_grc_v4_candidate_c.CandidateCCurrentTests.test_dense_nonreference_hodge_matches_literal_equations",
+      "limit": "Scoped implementation evidence; full nominated-profile product remains open."
+    },
+    {
+      "fixture_id": "C-RETAINED-VS-PHYSICAL-CONDITIONING",
+      "evidence_leaf": "P9-4.2",
+      "test": "tests.models.test_grc_v4_candidate_c.CandidateCCurrentTests.test_actual_current_rejects_lost_physical_conditioning_margin",
+      "limit": "Scoped implementation evidence; full nominated-profile product remains open."
+    },
+    {
+      "fixture_id": "C-ONE-CHI-GATE",
+      "evidence_leaf": "P9-4.2",
+      "test": "tests.models.test_grc_v4_candidate_c.CandidateCCurrentTests.test_one_chi_gate_linearity_and_zero_input",
+      "limit": "Scoped implementation evidence; full nominated-profile product remains open."
+    },
+    {
+      "fixture_id": "C-C-ONLY-AUTHORITY",
+      "evidence_leaf": "P9-4.2",
+      "test": "tests.models.test_grc_v4_candidate_c.CandidateCCurrentTests.test_input_reconstruction_immutability_and_no_derived_authority",
+      "limit": "Scoped implementation evidence; full nominated-profile product remains open."
+    },
+    {
+      "fixture_id": "C-POST-CONTINUITY-REDERIVATION",
+      "evidence_leaf": "P9-4.4",
+      "test": "tests.models.test_grc_v4_realizations.CandidateCOSStepTests.test_one_corrector_resource_write_and_fresh_final_chain",
+      "limit": "Scoped implementation evidence; full nominated-profile product remains open."
+    },
+    {
+      "fixture_id": "C-KAPPA-M-ZERO",
+      "evidence_leaf": "P9-4.3",
+      "test": "tests.models.test_grc_v4_candidate_c.CandidateCControlDerivativeTests.test_zero_controls_are_separate_full_chains_on_nonreference_hodge",
+      "limit": "Scoped implementation evidence; full nominated-profile product remains open."
+    },
+    {
+      "fixture_id": "C-CHI-ZERO",
+      "evidence_leaf": "P9-4.3",
+      "test": "tests.models.test_grc_v4_candidate_c.CandidateCControlDerivativeTests.test_derivatives_under_each_zero_control_remain_distinct",
+      "limit": "Scoped implementation evidence; full nominated-profile product remains open."
+    },
+    {
+      "fixture_id": "C-ZETA-ZERO",
+      "evidence_leaf": "P9-4.3",
+      "test": "tests.models.test_grc_v4_candidate_c.CandidateCControlDerivativeTests.test_zero_controls_are_separate_full_chains_on_nonreference_hodge",
+      "limit": "Scoped implementation evidence; full nominated-profile product remains open."
+    },
+    {
+      "fixture_id": "C-LIFECYCLE-REFERENCE-MAP",
+      "evidence_leaf": "P9-4.7b",
+      "test": "tests.models.test_grc_v4_lifecycle.CandidateCOSCrossingTests.test_native_target_current_and_reset_singularities_have_distinct_pressure",
+      "limit": "Scoped implementation evidence; full nominated-profile product remains open."
+    },
+    {
+      "fixture_id": "OS-ONE-PASS",
+      "evidence_leaf": "P9-4.4",
+      "test": "tests.models.test_grc_v4_realizations.CandidateCOSPassTests.test_stage_count_rebuilds_corrector_without_consuming_residual_geometry",
+      "limit": "Scoped implementation evidence; full nominated-profile product remains open."
+    },
+    {
+      "fixture_id": "SNAPSHOT-LOAD-REPLAY",
+      "evidence_leaf": "P9-4.7a",
+      "test": "tests.models.test_grc_v4_lifecycle.CandidateCOSReplayTests.test_deterministic_replay_every_checkpoint_with_rational_expected_states",
+      "limit": "Restore plus identical future inputs; unreceipted set_state is lawful. No authenticated historical trajectory claim."
+    },
+    {
+      "fixture_id": "RESET-AFTER-ORDINARY",
+      "evidence_leaf": "P9-4.6",
+      "test": "tests.models.test_grc_v4_lifecycle.CandidateCOSLifecycleTests.test_reset_after_ordinary_preserves_lineage_clock_profile_and_charge",
+      "limit": "Scoped implementation evidence; full nominated-profile product remains open."
+    },
+    {
+      "fixture_id": "RESET-AFTER-MIGRATION",
+      "evidence_leaf": "P9-4.7b",
+      "test": "tests.models.test_grc_v4_lifecycle.CandidateCOSCrossingTests.test_parameter_migration_preserves_both_states_and_reset_after_migration",
+      "limit": "Scoped implementation evidence; full nominated-profile product remains open."
+    },
+    {
+      "fixture_id": "RESET-AFTER-EVENT",
+      "evidence_leaf": "P9-4.7b",
+      "test": "tests.models.test_grc_v4_lifecycle.CandidateCOSCrossingTests.test_affine_increment_maps_distinct_live_and_reset_then_replays",
+      "limit": "Scoped implementation evidence; full nominated-profile product remains open."
+    },
+    {
+      "fixture_id": "WHOLE-LIFECYCLE-TUPLE-MAP",
+      "evidence_leaf": "P9-4.7b",
+      "test": "tests.models.test_grc_v4_lifecycle.CandidateCOSCrossingTests.test_split_removal_negative_increment_and_stable_identifier_permutation",
+      "limit": "Scoped implementation evidence; full nominated-profile product remains open."
+    },
+    {
+      "fixture_id": "ALL-MIGRATION-CLASSES",
+      "evidence_leaf": "P9-4.7b",
+      "test": "tests.models.test_grc_v4_lifecycle.CandidateCOSCrossingTests.test_unregistered_target_families_and_stale_identity_are_explicit",
+      "limit": "See seven-class disposition below; unsupported targets are executed negatives, unimplemented sources are not executed migration sources."
+    },
+    {
+      "fixture_id": "HISTORY-DISPOSITION",
+      "evidence_leaf": "P9-4.7b",
+      "test": "tests.models.test_grc_v4_lifecycle.CandidateCOSCrossingTests.test_separate_history_channels_reject_invented_retention_loss_and_initializers",
+      "limit": "Scoped implementation evidence; full nominated-profile product remains open."
+    },
+    {
+      "fixture_id": "TARGET-READMISSION-FAILURE",
+      "evidence_leaf": "P9-4.7b",
+      "test": "tests.models.test_grc_v4_lifecycle.CandidateCOSCrossingTests.test_target_charge_readmission_checks_reset_independently",
+      "limit": "Scoped implementation evidence; full nominated-profile product remains open."
+    },
+    {
+      "fixture_id": "RECEIPT-OWNERSHIP",
+      "evidence_leaf": "P9-4.7a",
+      "test": "tests.models.test_grc_v4_lifecycle.CandidateCOSReplayTests.test_interleaved_ledger_deltas_and_parent_scope",
+      "limit": "Local parent convention and ordered ledger only; accepted generic parent-reference scope/order remains unresolved."
+    },
+    {
+      "fixture_id": "DUPLICATION-INDEPENDENCE",
+      "evidence_leaf": "P9-4.6",
+      "test": "tests.models.test_grc_v4_lifecycle.CandidateCOSLifecycleTests.test_deep_independence_of_snapshot_duplicate_copy_and_retained_state",
+      "limit": "Scoped implementation evidence; full nominated-profile product remains open."
+    }
+  ],
+  "reused_runs": [
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-4.7a/batch-final/run.json",
+      "tests_run": 135,
+      "credit": "historical scoped execution; not a new P9-4.8 run"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-4.7b/audit-followup/run.json",
+      "tests_run": 35,
+      "credit": "historical scoped execution; not a new P9-4.8 run"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-4.7b/authoritative-vector/run.json",
+      "tests_run": 50,
+      "credit": "historical scoped execution; not a new P9-4.8 run"
+    }
+  ],
+  "source_bindings": [
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D10_2FullSubstrateProvenanceAndPromotionAudit.json",
+      "sha256": "59c2b956cec7d258b1db09d43d6df44deb8c0be0453a5d741f7e2733d6881a33"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/drafts/2026-09-GRC-V4.md",
+      "sha256": "2da39c3bb0d102804f9135384317771f3fe1b3e48df3b4ab1813a3575642a739"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-4.7a/batch-final/run.json",
+      "sha256": "7098d2d718bf42b64f93733ab888a81ff2bf9c78e628042b58b99c99feecb06f"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-4.7b/audit-followup/run.json",
+      "sha256": "81e10b893f6b7e8a5f1be9098874393e0f9e6f376b628a3bf9c9fb6d8f0bf930"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-4.7b/authoritative-vector/run.json",
+      "sha256": "63f5a26548627c6090eca6615c8c512b0b6a8bd11e43d5a14dd66c2167b281dd"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-1/P9-1.4-SupportAndDependencies.json",
+      "sha256": "e984ebcd61d294e1a87b149c48db11511e7eab62f2b0f7bedcd0123e27f5f66a"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-2/P9-2.4-Review.md",
+      "sha256": "f5d48b5f3d8f75ba12605db8092da8eea8a3fca1769827bd2cf68b5d92e0a11a"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-2/P9-2.6-Review.md",
+      "sha256": "b8de86d7612bad33f932866e89626e783bd5a330824ce5cdbe871e070d1f9917"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-4/P9-4.1-ExecutionRecord.json",
+      "sha256": "e0c2c2fa1cea9cf3ad12b2c078be04cf3231a4c76b538283721b8e5267efebca"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-4/P9-4.2-ExecutionRecord.json",
+      "sha256": "363a5ca3a77c57b1781e556dfe349e8251bc7bf2e40866007d618b4180111f99"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-4/P9-4.3-ExecutionRecord.json",
+      "sha256": "72c252e103407ab23ce30f2d8080176761f9c2fbb4aa4179597948e5f085c046"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-4/P9-4.4-ExecutionRecord.json",
+      "sha256": "8e6436e28e79caf3dddbd4b08d68613d18900397e4c508126e0ee22ad21dca08"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-4/P9-4.5-ExecutionRecord.json",
+      "sha256": "8050284467b945e0ab73da5b1151c1a73cfffe374cef549e78f174b22cba949f"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-4/P9-4.5-Review.md",
+      "sha256": "dfed0c1607c858a072ce842a28e09b0ee9f22e385bcd8240c72265098497d6dc"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-4/P9-4.6-ExecutionRecord.json",
+      "sha256": "2eb16be1b1662c9748d611cd4dc86300bcd412c3335c128a327b484f7f346e31"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-4/P9-4.7a-ExecutionRecord.json",
+      "sha256": "92f0c31ed9739611037fb0b1ca37a23b8ff85a4480baee681456d5d2c44da1a3"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-4/P9-4.7a-Review.md",
+      "sha256": "7a503fc0d27531fba8ec785f79ca9de59cd7126a0590f8e2d6cdaeb6976999fd"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-4/P9-4.7ab-AuthorizationRecord.json",
+      "sha256": "0a5bff1121bb8e4e93adfef2dc1df4306016b44e633f41eefe8cefecd37aeac7"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-4/P9-4.7b-ExecutionRecord.json",
+      "sha256": "4cacccdc0df522f485763598993e8575c4f2c2353d082e1126863b75e817e27b"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-4/P9-4.7b-Review.md",
+      "sha256": "bfeb98a56167202b9b686561e7ba3f5a3395ae0e2fa8f5848d41e16a969e2f10"
+    },
+    {
+      "path": "specs/grc-common-interface-v4-ext.md",
+      "sha256": "7d5be95242619fcaaae7ea5d8e950b3f335efe9a81492e67e6baa91c4643bc26"
+    },
+    {
+      "path": "specs/grc-common-interface.md",
+      "sha256": "3ccc27250a3ddb2ecccdf27984436e3dee2b10b3f71de610bfbbbcd084ae7be6"
+    },
+    {
+      "path": "specs/grc-v4-conformance-fixtures.json",
+      "sha256": "90b4f4fd5b259f94363a29e23715af0450bef944002f8e611f23efabc9c7043a"
+    },
+    {
+      "path": "specs/grc-v4-conformance-vectors.json",
+      "sha256": "9d9917511816f8d6ca97feca14de3ffca6b720504041f879bb1fa3e8e57b4e22"
+    },
+    {
+      "path": "specs/grc-v4-contract-schema.json",
+      "sha256": "3fd072fc8c2b315f1b5dc32a4e4821a5082b5f3fc9d9a4794c007419a7aa0bea"
+    },
+    {
+      "path": "specs/grc-v4-spec.md",
+      "sha256": "8681e14bf229959183f772c547a6ba17e0cc60c264dad9a1975be147d12168ea"
+    },
+    {
+      "path": "specs/grc-v4-specification-release.json",
+      "sha256": "bbfe5cdc2689e6f2768e7ef586320c86c8ee9eaf441a4bad74225f34f565b939"
+    }
+  ],
+  "verification": {
+    "command": ".venv/bin/python implementation/phase-9-grcv4/verification/verify_p948_review.py",
+    "kind": "review integrity and mechanical counterexamples; no new numerical execution",
+    "status": "passed",
+    "python": "3.12.3",
+    "elapsed_seconds": 4.038,
+    "results": {
+      "review_check": "passed",
+      "gate": "HOLD",
+      "catalog_rows": 33,
+      "scientific_source_files": 443,
+      "mutation_controls_rejected": [
+        "missing_catalog_row",
+        "duplicate_catalog_row",
+        "family_label_as_profile",
+        "empty_population_vacuous_pass",
+        "unreviewed_support",
+        "borrowed_mapped_identity",
+        "lineage_debt_silently_closed"
+      ],
+      "numerical_tests_rerun": 0
+    },
+    "dependencies": {
+      "numpy": "2.4.6",
+      "jsonschema": "4.26.0",
+      "rfc8785": "0.1.4"
+    },
+    "additional_checks": [
+      "implementation boundary and unchanged runtime permission scope",
+      "Ruff",
+      "repository-relative review links",
+      "git diff --check"
+    ],
+    "review_status_at_check": "draft_hold_pending_fixture_reconciliation_and_user_review",
+    "handoff_validation": {
+      "repository_relative_document_links": 97,
+      "runtime_changes": false,
+      "numerical_tests_rerun": 0
+    }
+  },
+  "next_path": "Finish and correct P9-4.8 evidence reconciliation; explicitly assign existing facade and receipt-authority closure work, implement demonstrated gaps, then re-review G2. A_OS and P9-G3[C_OS] remain behind G2.",
+  "observations": {
+    "public_GRCV4_present": false,
+    "receiver_is_GRCModel": false,
+    "missing_receiver_methods": [
+      "active_model_identity",
+      "active_profile_id",
+      "compute_observables",
+      "from_config",
+      "get_params",
+      "get_supported_profile",
+      "list_capabilities",
+      "list_supported_model_identities",
+      "run",
+      "run_v4",
+      "step"
+    ],
+    "public_supported_profiles": [],
+    "same_graph_migration_profiles": [
+      {
+        "complete_profile_id": "grcv4-profile-sha256:a6b853ee382895eb78b1a7955a0df22f95d68b27cb0f762503e8c424c2f59b6d",
+        "params_hash": "grcv4-params-sha256:81b0876e6852f2b08755f08cf932abf08d95a4763b43fc14bc607f45a5fde48f"
+      },
+      {
+        "complete_profile_id": "grcv4-profile-sha256:074693ddcf22c5f6c156c04a1df9727135fa20c9b5c7c9d10ab246b54934ff68",
+        "params_hash": "grcv4-params-sha256:e18fbb88a5ef3f3cac69f94dd270074a7534eb3cbb97f6a3f6d3f775131ee93e"
+      }
+    ],
+    "mapped_fixture_id": "GENERIC-MAPPED-EVENT-NONZERO-RESOURCE-INCREMENT",
+    "mapped_event_id": "grc-event-sha256:583d7337ff5d3910fb189ee1aad0f81485a4722bdb889d5623e82828a759807c",
+    "mapped_source_profile": "grcv4-profile-sha256:4a631bc25ab15c5b10e06588ff58aa6a802fd9a2749a0dd1909ffd3eae535ed8",
+    "mapped_target_profile": "grcv4-profile-sha256:f7b4023ed543c496fa693e8a1bbd701d357495374b415602fcc6b4774caffb7b"
+  },
+  "interpretation_correction": {
+    "trigger": "User asked why gaps remain despite following all checklist leaves.",
+    "interface": "Previously assigned facade integration was deferred across accepted Tranche 4 consumers without an explicit closure task.",
+    "parents": "The scoped C_OS child acceptance did not close the parent P9-7.6 authority-resolution obligation.",
+    "fixtures": "Missing consolidated evidence is not proof of missing runtime behavior. Finish P9-4.8 reconciliation, including existing second-beat reconstruction evidence, before asserting new implementation or test gaps."
+  }
+}

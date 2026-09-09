@@ -1,0 +1,94 @@
+{
+  "schema": "phase9_lifecycle_batch_authorization_v1",
+  "status": "user_authorized_batch_accepted_after_correction",
+  "baseline_commit": "f10d105bbed71da7e9a58d851b18e9799a952e0c",
+  "release_id": "grcv4-spec-release-sha256:9f4c8fe5b57b1c477d834a3e4dae3f98a2b18c70e6e7f598e3c9652170c8645f",
+  "predecessor_record_digest": "b37b037f0baa0fe5e291c96deba0520933070077b8d5a6a64995fbca21b5e274",
+  "execution_order": [
+    "P9-4.7a",
+    "P9-4.7b"
+  ],
+  "authorized_iterations": [
+    "P9-4.7a",
+    "P9-7.2a-C_OS-NH-NH",
+    "P9-7.2a-C_OS-UNSUPPORTED",
+    "P9-7.2b-C_OS-MAPPED",
+    "P9-7.3-C_OS",
+    "P9-7.4-C_OS",
+    "P9-7.5-C_OS",
+    "P9-7.6-C_OS",
+    "P9-4.7b"
+  ],
+  "audit_status": "findings_closed_after_correction",
+  "combined_audit_scope": [
+    "P9-4.6",
+    "P9-4.7a",
+    "P9-4.7b"
+  ],
+  "held_iterations": [
+    "P9-4.8",
+    "P9-G2[C_OS]"
+  ],
+  "authorization_basis": "The user committed P9-4.6 with its full audit pending, then explicitly authorized P9-4.7a followed by P9-4.7b as one development batch, with one audit after both and before P9-4.8. This is execution permission, not acceptance of unaudited science or a fabricated accepted dependency. Internal C_OS child order is retained. The user subsequently authorized correction, acceptance of all three leaves and commit. The original independent HOLD is closed by the accepted bounded specification correction and exact successor-vector replay; no new independent audit or P9-4.8/G2 acceptance is asserted.",
+  "evidence_bindings": [
+    {
+      "path": "implementation/phase-9-grcv4/tranche-4/P9-4.6-Review.md",
+      "sha256": "2ae29c0c512bc3225545be489f062d24b3ee0e2bdccd6547c5dccae628b3e0cb"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-4/P9-4.6-ExecutionRecord.json",
+      "sha256": "2eb16be1b1662c9748d611cd4dc86300bcd412c3335c128a327b484f7f346e31"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-4.6/validation/run.json",
+      "sha256": "52d49e360303d5d757e25d4c27d0390a19cf5ba5814680a664260c2bfca3ba33"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/runtime/RuntimeWorkManifest.json",
+      "sha256": "c5419095a88dc639330809ad636e01d0b14d13f74c644a0637cf6ab799e035f6"
+    }
+  ],
+  "accepted_generic_runtime_support": [],
+  "admitted_specialization_support_sets": [],
+  "record_digest": "fe11cfd2db36a9e1a74301aeaf89e316a3e93e7d3f5ea9d5f1197e199ee27d6b",
+  "audit_response": {
+    "path": "implementation/phase-9-grcv4/evidence/P9-4.7b/audit-followup/inputs.json",
+    "sha256": "bf2f6e705604fb956ea778694bc3606c74f7588077ef797d218e6b0685079580"
+  },
+  "accepted_iterations": [
+    "P9-4.6",
+    "P9-4.7a",
+    "P9-4.7b"
+  ],
+  "current_release_id": "grcv4-spec-release-sha256:7b8b4d4e32e48fd35f70421cce7f547eebb21dd81389764061efe6e1a8c19886",
+  "acceptance_bindings": [
+    {
+      "path": "implementation/phase-9-grcv4/tranche-4/P9-4.6-AuditFollowup.md",
+      "sha256": "4db8e26e17d7e23659051955a49f10bd44bbcff5762de437e4811bff63d68013"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-4/P9-4.7a-Review.md",
+      "sha256": "7a503fc0d27531fba8ec785f79ca9de59cd7126a0590f8e2d6cdaeb6976999fd"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-4/P9-4.7a-ExecutionRecord.json",
+      "sha256": "92f0c31ed9739611037fb0b1ca37a23b8ff85a4480baee681456d5d2c44da1a3"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-4/P9-4.7b-Review.md",
+      "sha256": "bfeb98a56167202b9b686561e7ba3f5a3395ae0e2fa8f5848d41e16a969e2f10"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-4/P9-4.7b-ExecutionRecord.json",
+      "sha256": "4cacccdc0df522f485763598993e8575c4f2c2353d082e1126863b75e817e27b"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-4.7b/authoritative-vector/run.json",
+      "sha256": "63f5a26548627c6090eca6615c8c512b0b6a8bd11e43d5a14dd66c2167b281dd"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-4.7b/pre-release-source/inputs.json",
+      "sha256": "3c97abe65188e5f9b1967a4bbf26bdaa15c977f3f167c23b74c95d2be1065cbc"
+    }
+  ]
+}

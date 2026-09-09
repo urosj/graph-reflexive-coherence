@@ -1,0 +1,1117 @@
+{
+  "schema": "phase9_leaf_execution_v1",
+  "iteration_id": "P9-4.7b",
+  "release_id": "grcv4-spec-release-sha256:9f4c8fe5b57b1c477d834a3e4dae3f98a2b18c70e6e7f598e3c9652170c8645f",
+  "status": "accepted_by_user",
+  "baseline_commit": "f10d105bbed71da7e9a58d851b18e9799a952e0c",
+  "entry_authorization": "implementation/phase-9-grcv4/tranche-4/P9-4.7ab-AuthorizationRecord.json",
+  "source_query_context": {
+    "source_bundle_digest": "98c273b3cc097f0d95adfba98ed7dfac0ac494dce9e779bb4b04fe79fef4f6aa",
+    "graph_digest": "44d8c7d33950af5e5f7c61caa4fe6fbd14fc9aedf14218d0a11de7c705542e09",
+    "authority_extension_digest": "833acc5988761f8ba68ca573ad270bf7c87cf2fe32061336a71e42647968630a",
+    "ET_C2_record_digest": "10dc5cef2bffc764296cb9e38908cd1f992b9ce7c4c60d04a8ef6efda5d1453b"
+  },
+  "source_queries": [
+    {
+      "operation": "contract_provenance",
+      "query": {
+        "contract_id": "D10.2-EC-PARENT-L-PROFILE-MIGRATION"
+      },
+      "trace_digest": "6f2a036b27d20a43ae14b557a934d2d0efbc61be77f5626fd51890f4b30b1571",
+      "row_count": 1,
+      "rows": [
+        {
+          "row_id": "D10.2-EC-PARENT-L-PROFILE-MIGRATION",
+          "classification": "source_exact_contract_provenance",
+          "source_ref": {
+            "record_id": "GRC9V4-CD-D10.2-v1",
+            "record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+            "source_json_pointer": "/normative_equation_contract_registry/46",
+            "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D10_2FullSubstrateProvenanceAndPromotionAudit.json"
+          },
+          "source_statement": {
+            "GRC9V3_premise_deletion_test": "survives_from_GRC_premises",
+            "accepted_claim_ids": [
+              "D10-CL-C-011",
+              "D10-CL-N-005"
+            ],
+            "blocked_overread": "generic_migration_does_not_select_a_target_initializer_or_allow_in_place_semantic_reinterpretation",
+            "contract_scope": "parent_atomic_contract",
+            "equation_contract_id": "D10.2-EC-PARENT-L-PROFILE-MIGRATION",
+            "independent_derivation_ids": [
+              "D10.2-DER-LIFECYCLE"
+            ],
+            "normative_equation_or_contract": "profile_change_uses_typed_source_target_map_target_readmission_and_loss_receipts",
+            "parent_object_ids": [
+              "L-PROFILE-MIGRATION"
+            ],
+            "premises_used": [
+              "ordered_profile_pair",
+              "typed_state_map",
+              "information_loss_receipt",
+              "target_readmission"
+            ],
+            "profile_ids": [],
+            "promotion_status": "promotion_proved",
+            "source_lineage": [
+              "GRC9V4-CD-D9-v1",
+              "GRC9V4-D9-PROFILE-STATE-LIFECYCLE-REGISTRY-v1"
+            ],
+            "specification_destination": "GRCV4_current_promoted_common_lifecycle",
+            "substrate_disposition": "GRC_derived"
+          },
+          "accepted_claim_support_semantics": [
+            "indeterminate_requires_review"
+          ],
+          "support_disposition": "indeterminate_requires_review",
+          "edge_refs": [
+            {
+              "edge_id": "propagation:42aad3564e73f55e284e9f84803b37be50a9db9ea012da48a87598b2d08600ad",
+              "source": "equation_contract:D10.2-EC-PARENT-L-PROFILE-MIGRATION",
+              "target": "normative_object:L-PROFILE-MIGRATION",
+              "relation": "parent_object",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/46/parent_object_ids/0"
+            },
+            {
+              "edge_id": "propagation:7180f6f09bf7489db5e0e7c0c018828fb5a953da19e749f776a3d4a427a28c5b",
+              "source": "equation_contract:D10.2-EC-PARENT-L-PROFILE-MIGRATION",
+              "target": "source_record:18ac2f841c2abbc9e722378b33be8bc34280fdc0e3a3e50f673d85a3d6bcb6f3",
+              "relation": "source_identity",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/46/source_lineage/0"
+            },
+            {
+              "edge_id": "propagation:c4db830dc99fa68e62a13b4ce6a7e969cdddc60c2da06c71b7718bb736b35c33",
+              "source": "equation_contract:D10.2-EC-PARENT-L-PROFILE-MIGRATION",
+              "target": "source_record:8c40dc16442939e029c666b78ddb76307db5ee417e7c40f989a07ef3d8d53815",
+              "relation": "source_identity",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/46"
+            },
+            {
+              "edge_id": "propagation:cb9b51638ffc8b48ab556c6adb6a036ee1476be199cb952f82fe972f5f9dd241",
+              "source": "equation_contract:D10.2-EC-PARENT-L-PROFILE-MIGRATION",
+              "target": "current_claim:D10-CL-N-005",
+              "relation": "accepted_claim",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/46/accepted_claim_ids/1"
+            },
+            {
+              "edge_id": "propagation:e3e747788ac3bccc87e01d1ac84a325b8fc997b1f17dcdb5e8f837910d0fdb2d",
+              "source": "equation_contract:D10.2-EC-PARENT-L-PROFILE-MIGRATION",
+              "target": "source_record:af13ffa0f91c70aec295640101ce3987d8f4d2735f56a12a6e64ce4eda333501",
+              "relation": "source_identity",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/46/source_lineage/1"
+            },
+            {
+              "edge_id": "propagation:f9928bf88f672793cea2c9bf49864d561af5d711b0b0fc5042d53a36531019c9",
+              "source": "equation_contract:D10.2-EC-PARENT-L-PROFILE-MIGRATION",
+              "target": "current_claim:D10-CL-C-011",
+              "relation": "accepted_claim",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/46/accepted_claim_ids/0"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "operation": "contract_provenance",
+      "query": {
+        "contract_id": "D10.2-EC-EVENT-LIFECYCLE-TUPLE"
+      },
+      "trace_digest": "a7b8ce31cd6320379dddc5a5e4ed259ac9c42a830b173d073588fc3c06b0f820",
+      "row_count": 1,
+      "rows": [
+        {
+          "row_id": "D10.2-EC-EVENT-LIFECYCLE-TUPLE",
+          "classification": "source_exact_contract_provenance",
+          "source_ref": {
+            "record_id": "GRC9V4-CD-D10.2-v1",
+            "record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+            "source_json_pointer": "/normative_equation_contract_registry/150",
+            "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D10_2FullSubstrateProvenanceAndPromotionAudit.json"
+          },
+          "source_statement": {
+            "GRC9V3_premise_deletion_test": "survives_from_GRC_premises",
+            "accepted_claim_ids": [
+              "D10-CL-N-005",
+              "D10-CL-X-001"
+            ],
+            "blocked_overread": "mapping_only_current_state_would_allow_reset_to_resurrect_an_obsolete_graph_or_profile",
+            "contract_scope": "typed_topology_event",
+            "equation_contract_id": "D10.2-EC-EVENT-LIFECYCLE-TUPLE",
+            "independent_derivation_ids": [
+              "D10.2-DER-LIFECYCLE"
+            ],
+            "normative_equation_or_contract": "the_event_maps_(X_current,X_reset,Q_target)_as_one_atomic_lifecycle_tuple",
+            "parent_object_ids": [
+              "L-TOPOLOGY-EVENT"
+            ],
+            "premises_used": [
+              "history_transport_or_reset",
+              "resource_transport",
+              "source_target_graph_map"
+            ],
+            "profile_ids": [
+              "A_CI",
+              "C_CI",
+              "A_OS",
+              "C_OS",
+              "A_RG2b",
+              "C_RG2b",
+              "A_PC",
+              "C_PC",
+              "A_CI_PC",
+              "C_CI_PC"
+            ],
+            "promotion_status": "promotion_proved",
+            "source_lineage": [
+              "GRC9V4-CD-D9-v1",
+              "GRC9V4-D9-LIFECYCLE-COVERAGE-MATRIX-v1"
+            ],
+            "specification_destination": "GRCV4_current_promoted_common_lifecycle",
+            "substrate_disposition": "GRC_derived"
+          },
+          "accepted_claim_support_semantics": [
+            "indeterminate_requires_review"
+          ],
+          "support_disposition": "indeterminate_requires_review",
+          "edge_refs": [
+            {
+              "edge_id": "propagation:0db38842c1164008bfded1c0b9d361e8b8f7ac46f59f5eb3588dfc9d9c373551",
+              "source": "equation_contract:D10.2-EC-EVENT-LIFECYCLE-TUPLE",
+              "target": "profile:A_CI_PC",
+              "relation": "active_in_profile",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/150/profile_ids/8"
+            },
+            {
+              "edge_id": "propagation:11647986b2e289e64ff301140be06a748ecabf6bcda2994de7891e0e1491b9d8",
+              "source": "equation_contract:D10.2-EC-EVENT-LIFECYCLE-TUPLE",
+              "target": "normative_object:L-TOPOLOGY-EVENT",
+              "relation": "parent_object",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/150/parent_object_ids/0"
+            },
+            {
+              "edge_id": "propagation:45aa167e7323769c7f9b50f64399726cf0427f1c689b7e0d73c281b22f968c7a",
+              "source": "equation_contract:D10.2-EC-EVENT-LIFECYCLE-TUPLE",
+              "target": "profile:A_RG2b",
+              "relation": "active_in_profile",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/150/profile_ids/4"
+            },
+            {
+              "edge_id": "propagation:481033dc2439891af80208882a212d71ff4eed7799762d49413976690947b9cb",
+              "source": "equation_contract:D10.2-EC-EVENT-LIFECYCLE-TUPLE",
+              "target": "profile:C_CI",
+              "relation": "active_in_profile",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/150/profile_ids/1"
+            },
+            {
+              "edge_id": "propagation:4de85f67e7159ac2b800f63041ef5ac79153a4d68bdfe8a8271f268bf596acef",
+              "source": "equation_contract:D10.2-EC-EVENT-LIFECYCLE-TUPLE",
+              "target": "source_record:18ac2f841c2abbc9e722378b33be8bc34280fdc0e3a3e50f673d85a3d6bcb6f3",
+              "relation": "source_identity",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/150/source_lineage/0"
+            },
+            {
+              "edge_id": "propagation:5a859d49ff1e4e81f9893e4e9709e502f2fe76f0278526265ddd82a56e592be1",
+              "source": "equation_contract:D10.2-EC-EVENT-LIFECYCLE-TUPLE",
+              "target": "profile:C_PC",
+              "relation": "active_in_profile",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/150/profile_ids/7"
+            },
+            {
+              "edge_id": "propagation:72647cf4162827305d615510ef63dc84200ccc59b437508819cb16197792eb17",
+              "source": "equation_contract:D10.2-EC-EVENT-LIFECYCLE-TUPLE",
+              "target": "profile:C_RG2b",
+              "relation": "active_in_profile",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/150/profile_ids/5"
+            },
+            {
+              "edge_id": "propagation:7410f552b1afaf07f630f04c4832bb1c3001d5eb97574a903ef7cfe896673c73",
+              "source": "equation_contract:D10.2-EC-EVENT-LIFECYCLE-TUPLE",
+              "target": "profile:A_CI",
+              "relation": "active_in_profile",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/150/profile_ids/0"
+            },
+            {
+              "edge_id": "propagation:a7cd5a63c83fc01aa46eb4b0542dba1963172de33686d33629d211ef6ab8e2e2",
+              "source": "equation_contract:D10.2-EC-EVENT-LIFECYCLE-TUPLE",
+              "target": "current_claim:D10-CL-X-001",
+              "relation": "accepted_claim",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/150/accepted_claim_ids/1"
+            },
+            {
+              "edge_id": "propagation:a9c50a266bbd514b4942f0b532557b752d3077eef37e7d0be7b6e3cc27533d0b",
+              "source": "equation_contract:D10.2-EC-EVENT-LIFECYCLE-TUPLE",
+              "target": "profile:C_OS",
+              "relation": "active_in_profile",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/150/profile_ids/3"
+            },
+            {
+              "edge_id": "propagation:b37574a9fa94b909cefa880ce93c258f39488b639ac4275526eb97be13f1744e",
+              "source": "equation_contract:D10.2-EC-EVENT-LIFECYCLE-TUPLE",
+              "target": "profile:A_PC",
+              "relation": "active_in_profile",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/150/profile_ids/6"
+            },
+            {
+              "edge_id": "propagation:b4a3691ea7d1e6a2d7df8c1773e2f160efd100aeada653286f162d382496034c",
+              "source": "equation_contract:D10.2-EC-EVENT-LIFECYCLE-TUPLE",
+              "target": "current_claim:D10-CL-N-005",
+              "relation": "accepted_claim",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/150/accepted_claim_ids/0"
+            },
+            {
+              "edge_id": "propagation:d1e39e382a3d26895c1e9b6d59fac16812e61d1ee619a0d9fb4facdd87740ef8",
+              "source": "equation_contract:D10.2-EC-EVENT-LIFECYCLE-TUPLE",
+              "target": "profile:A_OS",
+              "relation": "active_in_profile",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/150/profile_ids/2"
+            },
+            {
+              "edge_id": "propagation:d8b7f801bfcac1df186fd20df9887d79bbcdcd88da2c44dc793ff3919280d14a",
+              "source": "equation_contract:D10.2-EC-EVENT-LIFECYCLE-TUPLE",
+              "target": "profile:C_CI_PC",
+              "relation": "active_in_profile",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/150/profile_ids/9"
+            },
+            {
+              "edge_id": "propagation:e6968ea9e9f3febf85499874a486d2101770d0238eb9d928f05102184740464b",
+              "source": "equation_contract:D10.2-EC-EVENT-LIFECYCLE-TUPLE",
+              "target": "source_record:8c40dc16442939e029c666b78ddb76307db5ee417e7c40f989a07ef3d8d53815",
+              "relation": "source_identity",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/150"
+            },
+            {
+              "edge_id": "propagation:ea4d697696693a1db0b26b7db15b80434469002cd28ee2ea3ff15b885167aab3",
+              "source": "equation_contract:D10.2-EC-EVENT-LIFECYCLE-TUPLE",
+              "target": "source_record:9aef8c48ac663d035435b629355d103b0c6e9dd677071c3f24d7e9cd441b0811",
+              "relation": "source_identity",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/150/source_lineage/1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "operation": "contract_provenance",
+      "query": {
+        "contract_id": "D10.2-EC-EVENT-READMISSION-RECEIPT"
+      },
+      "trace_digest": "2e08b2c901d7b3758d2b9f9c75bec5e18862dde44986a842eab8029db8055b07",
+      "row_count": 1,
+      "rows": [
+        {
+          "row_id": "D10.2-EC-EVENT-READMISSION-RECEIPT",
+          "classification": "source_exact_contract_provenance",
+          "source_ref": {
+            "record_id": "GRC9V4-CD-D10.2-v1",
+            "record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+            "source_json_pointer": "/normative_equation_contract_registry/151",
+            "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D10_2FullSubstrateProvenanceAndPromotionAudit.json"
+          },
+          "source_statement": {
+            "GRC9V3_premise_deletion_test": "survives_from_GRC_premises",
+            "accepted_claim_ids": [
+              "D10-CL-N-005",
+              "D10-CL-X-001"
+            ],
+            "blocked_overread": "endpoint_coverage_does_not_replace_crossing_evidence",
+            "contract_scope": "typed_topology_event",
+            "equation_contract_id": "D10.2-EC-EVENT-READMISSION-RECEIPT",
+            "independent_derivation_ids": [
+              "D10.2-DER-LIFECYCLE"
+            ],
+            "normative_equation_or_contract": "target_profile_readmission_precedes_atomic_commit_and_the_receipt_binds_ordered_source_target_profiles_resource_delta_and_history_loss",
+            "parent_object_ids": [
+              "L-ORDERED-RECEIPTS"
+            ],
+            "premises_used": [
+              "charge_receipt",
+              "complete_profile_identity",
+              "direction_specific_loss"
+            ],
+            "profile_ids": [
+              "A_CI",
+              "C_CI",
+              "A_OS",
+              "C_OS",
+              "A_RG2b",
+              "C_RG2b",
+              "A_PC",
+              "C_PC",
+              "A_CI_PC",
+              "C_CI_PC"
+            ],
+            "promotion_status": "promotion_proved",
+            "source_lineage": [
+              "GRC9V4-CD-D10-v1",
+              "GRC9V4-CD-D9-v1"
+            ],
+            "specification_destination": "GRCV4_current_promoted_common_lifecycle",
+            "substrate_disposition": "GRC_derived"
+          },
+          "accepted_claim_support_semantics": [
+            "indeterminate_requires_review"
+          ],
+          "support_disposition": "indeterminate_requires_review",
+          "edge_refs": [
+            {
+              "edge_id": "propagation:115ed1c2cf56fa8145337eb2f4bd6c37bea1d02fbc71a020eaffabe59089252c",
+              "source": "equation_contract:D10.2-EC-EVENT-READMISSION-RECEIPT",
+              "target": "source_record:8c40dc16442939e029c666b78ddb76307db5ee417e7c40f989a07ef3d8d53815",
+              "relation": "source_identity",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/151"
+            },
+            {
+              "edge_id": "propagation:1f9c550423a323c3045da2fe04ce8e910bd88ac1c0bd1c8829e6e34cb55e2411",
+              "source": "equation_contract:D10.2-EC-EVENT-READMISSION-RECEIPT",
+              "target": "profile:C_CI",
+              "relation": "active_in_profile",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/151/profile_ids/1"
+            },
+            {
+              "edge_id": "propagation:3f01fafd277dd286c6044d4f9f680ff4472dbe341a8ff7753bfc2afd064a8032",
+              "source": "equation_contract:D10.2-EC-EVENT-READMISSION-RECEIPT",
+              "target": "source_record:18ac2f841c2abbc9e722378b33be8bc34280fdc0e3a3e50f673d85a3d6bcb6f3",
+              "relation": "source_identity",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/151/source_lineage/1"
+            },
+            {
+              "edge_id": "propagation:55d4ee98dc2fab741fbf1368c6fb9525b8bd9da52365cbc92c6d781f975a81eb",
+              "source": "equation_contract:D10.2-EC-EVENT-READMISSION-RECEIPT",
+              "target": "profile:C_OS",
+              "relation": "active_in_profile",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/151/profile_ids/3"
+            },
+            {
+              "edge_id": "propagation:62ada569eeac789a022801861b3b5fa02536a04625e0657f717d8090592d157a",
+              "source": "equation_contract:D10.2-EC-EVENT-READMISSION-RECEIPT",
+              "target": "profile:C_PC",
+              "relation": "active_in_profile",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/151/profile_ids/7"
+            },
+            {
+              "edge_id": "propagation:6aa3a63f107fede68aea27df922a06be16a4c6f884cc73097ca616c46076ca59",
+              "source": "equation_contract:D10.2-EC-EVENT-READMISSION-RECEIPT",
+              "target": "source_record:93afe04293b480712e378f264cb696a0ef20ffd4c3a1044c088fc9fe2cf784aa",
+              "relation": "source_identity",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/151/source_lineage/0"
+            },
+            {
+              "edge_id": "propagation:7fe259ed72ad76a97cbcd8278d55684e14f80bb6817d5d23683594c3385ef4cf",
+              "source": "equation_contract:D10.2-EC-EVENT-READMISSION-RECEIPT",
+              "target": "profile:A_PC",
+              "relation": "active_in_profile",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/151/profile_ids/6"
+            },
+            {
+              "edge_id": "propagation:833e7d6844ddb26ec4ae96792a488ffd131503df1bb6fd823b0790603356e326",
+              "source": "equation_contract:D10.2-EC-EVENT-READMISSION-RECEIPT",
+              "target": "normative_object:L-ORDERED-RECEIPTS",
+              "relation": "parent_object",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/151/parent_object_ids/0"
+            },
+            {
+              "edge_id": "propagation:8e84a586ad81d9b9a25c548bedaa57a5bced5d81a770cbba69e54615f787693d",
+              "source": "equation_contract:D10.2-EC-EVENT-READMISSION-RECEIPT",
+              "target": "profile:C_RG2b",
+              "relation": "active_in_profile",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/151/profile_ids/5"
+            },
+            {
+              "edge_id": "propagation:a3d0c20ee7d8bd97ce1c5da1a5bdb5295635937b65a45bd5ed07cf8c48d15176",
+              "source": "equation_contract:D10.2-EC-EVENT-READMISSION-RECEIPT",
+              "target": "current_claim:D10-CL-N-005",
+              "relation": "accepted_claim",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/151/accepted_claim_ids/0"
+            },
+            {
+              "edge_id": "propagation:a8c9416139ea676c159c8ed43c8292b68f952bea05c45d725ba3a7a395388ba0",
+              "source": "equation_contract:D10.2-EC-EVENT-READMISSION-RECEIPT",
+              "target": "current_claim:D10-CL-X-001",
+              "relation": "accepted_claim",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/151/accepted_claim_ids/1"
+            },
+            {
+              "edge_id": "propagation:b8a3f4b09e2715989d9c3c9052ec17d8a5ed40ab51b55d5d38edff738bd10155",
+              "source": "equation_contract:D10.2-EC-EVENT-READMISSION-RECEIPT",
+              "target": "profile:A_CI_PC",
+              "relation": "active_in_profile",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/151/profile_ids/8"
+            },
+            {
+              "edge_id": "propagation:d3d46a0bd6af0cd258bb7ae57dc73e232a0bc05e017ba8cfeb2c3e0aa6610e25",
+              "source": "equation_contract:D10.2-EC-EVENT-READMISSION-RECEIPT",
+              "target": "profile:A_OS",
+              "relation": "active_in_profile",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/151/profile_ids/2"
+            },
+            {
+              "edge_id": "propagation:db26a8c71d28f1d0b6beccd76a088270900dd3dc34f850c13ca3c93cfa082b84",
+              "source": "equation_contract:D10.2-EC-EVENT-READMISSION-RECEIPT",
+              "target": "profile:C_CI_PC",
+              "relation": "active_in_profile",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/151/profile_ids/9"
+            },
+            {
+              "edge_id": "propagation:dcd3fc3caf09bb87f738ef90f495b7c26196db75eb722ae56c58ef444c0952fe",
+              "source": "equation_contract:D10.2-EC-EVENT-READMISSION-RECEIPT",
+              "target": "profile:A_CI",
+              "relation": "active_in_profile",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/151/profile_ids/0"
+            },
+            {
+              "edge_id": "propagation:de858309ca105b3852bf6dfc6beecc1452add7a9ce73da6fb2c1324360c8326e",
+              "source": "equation_contract:D10.2-EC-EVENT-READMISSION-RECEIPT",
+              "target": "profile:A_RG2b",
+              "relation": "active_in_profile",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/151/profile_ids/4"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "operation": "contract_provenance",
+      "query": {
+        "contract_id": "D11-C-EC-C-J0-LIFECYCLE"
+      },
+      "trace_digest": "12c7d5adc9fd0d42d0501483d9b5a0a71a442cc18290e05ee9cc9c7b1a6bb2fe",
+      "row_count": 1,
+      "rows": [
+        {
+          "row_id": "D11-C-EC-C-J0-LIFECYCLE",
+          "classification": "source_exact_contract_provenance",
+          "source_ref": {
+            "record_id": "GRC9V4-D11-C-PROVENANCE-SUPPLEMENT-v1",
+            "record_digest": "57d711d80e648c8ee73401f3a7e76a0076374fc43bd4d2d0f3dbe4bb4ee3acb1",
+            "source_json_pointer": "/equation_contracts/10",
+            "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D11CCandidateBaselineTransportProvenanceSupplement.json"
+          },
+          "source_statement": {
+            "equation_contract_id": "D11-C-EC-C-J0-LIFECYCLE",
+            "parent_object_ids": [
+              "C-BASELINE-TRANSPORT-REFERENCE",
+              "C-BASELINE-CURRENT"
+            ],
+            "normative_equation_or_contract": "snapshot_and_target_complete_profile_bind_the_exact_stable_edge_ID_to_W_C_tr_map_and_missing_duplicate_nonpositive_nonfinite_or_unmatched_target_entries_fail_before_atomic_commit",
+            "support_semantics": "accepted_design_level_lifecycle_contract_with_runtime_conformance_still_pending",
+            "accepted_claim_ids": [
+              "D11-C-CL-O-001",
+              "D10-CL-N-005",
+              "D10-CL-N-008"
+            ]
+          },
+          "accepted_claim_support_semantics": [
+            "accepted_design_level_lifecycle_contract_with_runtime_conformance_still_pending"
+          ],
+          "support_disposition": [
+            "accepted_design_level_lifecycle_contract_with_runtime_conformance_still_pending"
+          ],
+          "edge_refs": [
+            {
+              "edge_id": "propagation:02f6f4674fb71712818d07a2a1d5ae9cb467caea8f4e7b6525e2adf71af8c25e",
+              "source": "equation_contract:D11-C-EC-C-J0-LIFECYCLE",
+              "target": "current_claim:D10-CL-N-008",
+              "relation": "accepted_claim",
+              "support_semantic": "accepted_design_level_lifecycle_contract_with_runtime_conformance_still_pending",
+              "source_record_id": "GRC9V4-D11-C-PROVENANCE-SUPPLEMENT-v1",
+              "source_record_digest": "57d711d80e648c8ee73401f3a7e76a0076374fc43bd4d2d0f3dbe4bb4ee3acb1",
+              "source_json_pointer": "/equation_contracts/10/accepted_claim_ids/2"
+            },
+            {
+              "edge_id": "propagation:107dea726b299702c9cc46882365d77331c7332eefc2cc766f85a4d1c028e483",
+              "source": "equation_contract:D11-C-EC-C-J0-LIFECYCLE",
+              "target": "current_claim:D10-CL-N-005",
+              "relation": "accepted_claim",
+              "support_semantic": "accepted_design_level_lifecycle_contract_with_runtime_conformance_still_pending",
+              "source_record_id": "GRC9V4-D11-C-PROVENANCE-SUPPLEMENT-v1",
+              "source_record_digest": "57d711d80e648c8ee73401f3a7e76a0076374fc43bd4d2d0f3dbe4bb4ee3acb1",
+              "source_json_pointer": "/equation_contracts/10/accepted_claim_ids/1"
+            },
+            {
+              "edge_id": "propagation:2602d4f41875348b180e305d0e7c5e5c67a9160d3360482797cbca6878101d90",
+              "source": "equation_contract:D11-C-EC-C-J0-LIFECYCLE",
+              "target": "current_claim:D11-C-CL-O-001",
+              "relation": "accepted_claim",
+              "support_semantic": "accepted_design_level_lifecycle_contract_with_runtime_conformance_still_pending",
+              "source_record_id": "GRC9V4-D11-C-PROVENANCE-SUPPLEMENT-v1",
+              "source_record_digest": "57d711d80e648c8ee73401f3a7e76a0076374fc43bd4d2d0f3dbe4bb4ee3acb1",
+              "source_json_pointer": "/equation_contracts/10/accepted_claim_ids/0"
+            },
+            {
+              "edge_id": "propagation:4ef3e7ca97bc488e6382a3c7ef693f97c60651c3c93f3ed7102ff0e84279d224",
+              "source": "equation_contract:D11-C-EC-C-J0-LIFECYCLE",
+              "target": "normative_object:C-BASELINE-CURRENT",
+              "relation": "parent_object",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-D11-C-PROVENANCE-SUPPLEMENT-v1",
+              "source_record_digest": "57d711d80e648c8ee73401f3a7e76a0076374fc43bd4d2d0f3dbe4bb4ee3acb1",
+              "source_json_pointer": "/equation_contracts/10/parent_object_ids/1"
+            },
+            {
+              "edge_id": "propagation:e17b553f692a5833f7bb3edf53fa0bf2eeb888b984e153cd5af18faa4c52f68a",
+              "source": "equation_contract:D11-C-EC-C-J0-LIFECYCLE",
+              "target": "source_record:1ba90e62a7f7907094aff26dd201ba232ec0f2a1ea26e79e473ecd8885ea3174",
+              "relation": "source_identity",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-D11-C-PROVENANCE-SUPPLEMENT-v1",
+              "source_record_digest": "57d711d80e648c8ee73401f3a7e76a0076374fc43bd4d2d0f3dbe4bb4ee3acb1",
+              "source_json_pointer": "/equation_contracts/10"
+            },
+            {
+              "edge_id": "propagation:e46e269d9b9d69dba9fffad5a961ca48f3b5f2b4f85f832daaad7319f248196e",
+              "source": "equation_contract:D11-C-EC-C-J0-LIFECYCLE",
+              "target": "normative_object:C-BASELINE-TRANSPORT-REFERENCE",
+              "relation": "parent_object",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-D11-C-PROVENANCE-SUPPLEMENT-v1",
+              "source_record_digest": "57d711d80e648c8ee73401f3a7e76a0076374fc43bd4d2d0f3dbe4bb4ee3acb1",
+              "source_json_pointer": "/equation_contracts/10/parent_object_ids/0"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "operation": "contract_provenance",
+      "query": {
+        "contract_id": "D10.2-EC-PARENT-GEOM-K4"
+      },
+      "trace_digest": "e1435b36789fa4d37be76d67ff9ec76bd7e8f8680603716b1e836fab21a0340d",
+      "row_count": 1,
+      "rows": [
+        {
+          "row_id": "D10.2-EC-PARENT-GEOM-K4",
+          "classification": "source_exact_contract_provenance",
+          "source_ref": {
+            "record_id": "GRC9V4-CD-D10.2-v1",
+            "record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+            "source_json_pointer": "/normative_equation_contract_registry/29",
+            "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D10_2FullSubstrateProvenanceAndPromotionAudit.json"
+          },
+          "source_statement": {
+            "GRC9V3_premise_deletion_test": "survives_from_GRC_premises",
+            "accepted_claim_ids": [
+              "D10-CL-C-011",
+              "D10-CL-N-006"
+            ],
+            "blocked_overread": "graph_K4_must_not_be_relabelled_as_core_K_or_as_legacy_cached_GRC9_tensor",
+            "contract_scope": "parent_atomic_contract",
+            "equation_contract_id": "D10.2-EC-PARENT-GEOM-K4",
+            "independent_derivation_ids": [
+              "D10.2-DER-GEOMETRY"
+            ],
+            "normative_equation_or_contract": "K4_is_a_graph_local_symmetric_bilinear_form_on_oriented_one_forms",
+            "parent_object_ids": [
+              "GEOM-K4"
+            ],
+            "premises_used": [
+              "finite_oriented_graph",
+              "typed_one_form_space",
+              "graph_local_structural_payload"
+            ],
+            "profile_ids": [],
+            "promotion_status": "promotion_proved",
+            "source_lineage": [
+              "GRC9V4-CD-D4V2-v1",
+              "GRC9V4-CD-D7G-v1",
+              "GRC9V4-CD-D8A-v1"
+            ],
+            "specification_destination": "GRCV4_current_promoted_common_geometry",
+            "substrate_disposition": "GRC_derived"
+          },
+          "accepted_claim_support_semantics": [
+            "indeterminate_requires_review"
+          ],
+          "support_disposition": "indeterminate_requires_review",
+          "edge_refs": [
+            {
+              "edge_id": "propagation:4065c73531dd3725f8377e4293d07eb5e898d8fe8ffe1f5efb68febfd6b8b326",
+              "source": "equation_contract:D10.2-EC-PARENT-GEOM-K4",
+              "target": "current_claim:D10-CL-N-006",
+              "relation": "accepted_claim",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/29/accepted_claim_ids/1"
+            },
+            {
+              "edge_id": "propagation:5dc770e866217e2189a2ad8206793f8de1fb01f332f6955e8a3e04c71230c493",
+              "source": "equation_contract:D10.2-EC-PARENT-GEOM-K4",
+              "target": "normative_object:GEOM-K4",
+              "relation": "parent_object",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/29/parent_object_ids/0"
+            },
+            {
+              "edge_id": "propagation:6b7d03610eb67eab8b8888d5b65f486a706d5bba8bd272e83537fa82027a0b2a",
+              "source": "equation_contract:D10.2-EC-PARENT-GEOM-K4",
+              "target": "source_record:8c40dc16442939e029c666b78ddb76307db5ee417e7c40f989a07ef3d8d53815",
+              "relation": "source_identity",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/29"
+            },
+            {
+              "edge_id": "propagation:9cb9acef35d95130997c45ac25df19e8933ef49520db68b8d4165a772cc8fb54",
+              "source": "equation_contract:D10.2-EC-PARENT-GEOM-K4",
+              "target": "current_claim:D10-CL-C-011",
+              "relation": "accepted_claim",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/29/accepted_claim_ids/0"
+            },
+            {
+              "edge_id": "propagation:a66682604c5e3659e61ec67284dd2e027fd5e926a51dbe0e91b814a8fd40808e",
+              "source": "equation_contract:D10.2-EC-PARENT-GEOM-K4",
+              "target": "source_record:9e131771524042bd68261c086a84cfd0adb866dd8c3f4c065cba4e356f7b6aeb",
+              "relation": "source_identity",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/29/source_lineage/2"
+            },
+            {
+              "edge_id": "propagation:c4674c450862a4cc0d2e546b386860d8e2d9c7b0e9176d60582e86819c47fb0c",
+              "source": "equation_contract:D10.2-EC-PARENT-GEOM-K4",
+              "target": "source_record:8e2e926d2a1dd605f7eb1761ceb59317be3241ba82488584e928308104b23840",
+              "relation": "source_identity",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/29/source_lineage/1"
+            },
+            {
+              "edge_id": "propagation:f0113a56efdd61997bf4768f13fc6daf9a9c6369af13049ac82c090b0e3ae5ba",
+              "source": "equation_contract:D10.2-EC-PARENT-GEOM-K4",
+              "target": "source_record:940942217e69f5b3713c80d435c988fe762198ece40e76b6499b45f58dea09df",
+              "relation": "source_identity",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/29/source_lineage/0"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "review": {
+    "path": "implementation/phase-9-grcv4/tranche-4/P9-4.7b-Review.md",
+    "sha256": "237bd671618aa240797ca8a04044ff02ea89ff7a110c47eb44f64e3b4e20bff2"
+  },
+  "scientific_run": {
+    "path": "implementation/phase-9-grcv4/evidence/P9-4.7a/batch-final/run.json",
+    "sha256": "7098d2d718bf42b64f93733ab888a81ff2bf9c78e628042b58b99c99feecb06f",
+    "shared_once_across": [
+      "P9-4.6 audit follow-up",
+      "P9-4.7a",
+      "P9-4.7b"
+    ],
+    "results": {
+      "tests_run": 135,
+      "failures": 0,
+      "errors": 0,
+      "skips": 0,
+      "nonpassing_methods": [],
+      "executed_ids_sha256": "3af97a26d96760daeca8cf9c7093bf7b38d03edf2852a218d538b53745894881"
+    }
+  },
+  "owned_pressure_methods": {
+    "CandidateCOSCrossingTests": [
+      "test_target_charge_readmission_checks_reset_independently",
+      "test_registry_requires_unique_complete_reference_preimages",
+      "test_parameter_migration_preserves_both_states_and_reset_after_migration",
+      "test_affine_increment_maps_distinct_live_and_reset_then_replays",
+      "test_unregistered_target_families_and_stale_identity_are_explicit",
+      "test_separate_history_channels_reject_invented_retention_loss_and_initializers",
+      "test_map_shape_conservation_order_and_numeric_wire_domains",
+      "test_native_negative_reset_and_unrepresentable_affine_charge_fail_atomically",
+      "test_native_target_current_and_reset_singularities_have_distinct_pressure",
+      "test_split_removal_negative_increment_and_stable_identifier_permutation",
+      "test_metadata_exclusion_and_crossing_receipt_semantic_corruption",
+      "test_extended_snapshot_archive_tampering_and_duplicate_independence",
+      "test_publication_checks_returned_crossing_map_and_atomic_reference_observation",
+      "test_published_affine_vector_identities_and_admitted_runtime_companion"
+    ]
+  },
+  "source": {
+    "base_commit": "f10d105bbed71da7e9a58d851b18e9799a952e0c",
+    "scopes": [
+      "src",
+      "tests",
+      "specs",
+      "pyproject.toml",
+      "uv.lock",
+      "implementation/investigations/grc9v4-constitutive-design/drafts/2026-09-GRC-V4.md",
+      "implementation/investigations/grc9v4-constitutive-design/scripts/build_grcv4_specification_vectors.py"
+    ],
+    "overrides_sha256": {
+      "src/pygrc/models/grc_v4.py": "7b692142a98c8010f9f0521e0c54c4e6f91dc78909dcffab8e60a9f108c702e9",
+      "src/pygrc/models/grc_v4_codec.py": "8d2460106d45748fdba69ebaa78930121c0f1a3296399bf3cdacf1c1abb40a46",
+      "src/pygrc/models/grc_v4_lifecycle.py": "04e1afffa886778730512f84e0633b0aa44ffcb7a2feae5de5b9802476bccc06",
+      "tests/models/test_grc_v4_lifecycle.py": "6a66c89447e0f1bb33705f27eecb375535d5d4f611a0cd11f62764aab9958441"
+    },
+    "manifest_sha256": "93a6a60ca861a91ed7134f09c844df2a1a2a9969c85a9af5f45e7fc55be9e2cf",
+    "file_count": 441,
+    "reconstruction": "Recover exact historical overlay files with the bound reverse patches, then overlay only the selected run file roster onto its full Git base. Both old scoped manifests were verified exactly."
+  },
+  "reconstruction": {
+    "full_history_checkout": true,
+    "checkout_path_contains_spaces": true,
+    "fresh_interpreter": true,
+    "source_unchanged": true,
+    "environment": {
+      "PYTHONHASHSEED": "947",
+      "OPENBLAS_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1"
+    },
+    "limits": "Inherited source-slot, live-code, before/after disk and exact executed-roster checks; not hostile-interpreter attestation. Relocated checkout and fresh interpreter reuse the installed dependency environment; no fresh-install or different-platform claim."
+  },
+  "replay_command": [
+    ".venv/bin/python",
+    "-m",
+    "tests.models.test_grc_v4_lifecycle",
+    "--capture-p947ab",
+    "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/generated/p947ab-final"
+  ],
+  "evidence_aliases": [
+    "P9-7.2a-C_OS-NH-NH",
+    "P9-7.2a-C_OS-UNSUPPORTED",
+    "P9-7.2b-C_OS-MAPPED",
+    "P9-7.3-C_OS",
+    "P9-7.4-C_OS",
+    "P9-7.5-C_OS",
+    "P9-7.6-C_OS"
+  ],
+  "alias_ceiling": "Scoped C_OS cases only; no duplicate run credit, positive unimplemented source families, generic parent-DAG conformance or P9-4.8 acceptance.",
+  "audit_followup": "implementation/phase-9-grcv4/tranche-4/P9-4.6-AuditFollowup.md",
+  "audit_status": "combined_audit_findings_closed_after_bounded_correction",
+  "unresolved_acceptance_questions": [],
+  "verification_commands": [
+    ".venv/bin/python implementation/phase-9-grcv4/verification/audit_phase9_implementation.py --boundary-only",
+    ".venv/bin/python implementation/phase-9-grcv4/verification/test_phase9_g1.py",
+    ".venv/bin/python implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/test_phase9_g1_surfaces.py",
+    ".venv/bin/python implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/test_phase9_g1_surfaces.py --browser"
+  ],
+  "verification_policy": "Generated permission/API/notebook/browser projections are checked after final evidence registration. They do not supply another scientific run or audit acceptance.",
+  "accepted_generic_runtime_support": [],
+  "admitted_specialization_support_sets": [],
+  "mapped_vector_disposition": {
+    "fixture": "GENERIC-MAPPED-EVENT-NONZERO-RESOURCE-INCREMENT",
+    "frozen_exact_runtime_row": "historical_predecessor_row_rejected_correctly; replaced_by_accepted_bounded_successor",
+    "mandatory_row_waived": false,
+    "additional_dimension_only_failure": "zero_solver_tolerance_rejects_inverse_retained_identification",
+    "orientation_assessment": "stable_named_identity_is_not_forbidden_by_spec_but_differs_from_backend_descriptor_hash",
+    "candidate_status": "reviewed_patch_applied_and_authoritative_exact_ids_executed",
+    "candidate_event_id": "grc-event-sha256:583d7337ff5d3910fb189ee1aad0f81485a4722bdb889d5623e82828a759807c",
+    "candidate_reference_parameters": "published_physical_parameters_preserved; edge_sized_K4 and explicit 2^-40 absolute/relative solver tolerances",
+    "proposed_patch_location": "followup_run/proposed_builder_patch",
+    "source_target_inputs_location": "followup_run/correction_candidate",
+    "successor_release_activated": true,
+    "held_dependencies": [],
+    "current_release_id": "grcv4-spec-release-sha256:7b8b4d4e32e48fd35f70421cce7f547eebb21dd81389764061efe6e1a8c19886",
+    "accepted_scoped_children": [
+      "P9-7.2a-C_OS-NH-NH",
+      "P9-7.2a-C_OS-UNSUPPORTED",
+      "P9-7.2b-C_OS-MAPPED",
+      "P9-7.3-C_OS",
+      "P9-7.4-C_OS",
+      "P9-7.5-C_OS",
+      "P9-7.6-C_OS"
+    ],
+    "next_separate_review": [
+      "P9-4.8",
+      "P9-G2[C_OS]"
+    ],
+    "authoritative_fixture": {
+      "fixture_id": "GENERIC-MAPPED-EVENT-NONZERO-RESOURCE-INCREMENT",
+      "request_modified": false,
+      "event_id": "grc-event-sha256:583d7337ff5d3910fb189ee1aad0f81485a4722bdb889d5623e82828a759807c",
+      "mandatory_row_waived": false
+    }
+  },
+  "independent_audit": {
+    "path": "implementation/phase-9-grcv4/evidence/P9-4.7b/audit-followup/inputs.json",
+    "sha256": "bf2f6e705604fb956ea778694bc3606c74f7588077ef797d218e6b0685079580",
+    "disposition": "PASS_mechanics_HOLD_mandatory_exact_vector",
+    "user_acceptance": "accepted_after_corrections",
+    "run_manifest_review_limit": "Auditor received execution-record bindings, not the original retained batch-final/run.json itself."
+  },
+  "claim_boundaries": [
+    "Local receipt-parent convention only, no generic parent-DAG conformance.",
+    "Snapshot continuation replay, not historical truth authentication.",
+    "Runtime support sets remain empty."
+  ],
+  "followup_run": {
+    "path": "implementation/phase-9-grcv4/evidence/P9-4.7b/audit-followup/run.json",
+    "sha256": "81e10b893f6b7e8a5f1be9098874393e0f9e6f376b628a3bf9c9fb6d8f0bf930",
+    "results": {
+      "tests_run": 35,
+      "failures": 0,
+      "errors": 0,
+      "skips": 0,
+      "nonpassing_methods": [],
+      "executed_ids_sha256": "058e911a8b49acffe2e03154c3caef14edc4c17da328eea1edb9092ba5b01e56"
+    },
+    "source": {
+      "base_commit": "f10d105bbed71da7e9a58d851b18e9799a952e0c",
+      "scopes": [
+        "src",
+        "tests",
+        "specs",
+        "pyproject.toml",
+        "uv.lock",
+        "implementation/investigations/grc9v4-constitutive-design/drafts/2026-09-GRC-V4.md",
+        "implementation/investigations/grc9v4-constitutive-design/scripts/build_grcv4_specification_vectors.py"
+      ],
+      "overrides_sha256": {
+        "src/pygrc/models/grc_v4.py": "7b692142a98c8010f9f0521e0c54c4e6f91dc78909dcffab8e60a9f108c702e9",
+        "src/pygrc/models/grc_v4_codec.py": "8d2460106d45748fdba69ebaa78930121c0f1a3296399bf3cdacf1c1abb40a46",
+        "src/pygrc/models/grc_v4_lifecycle.py": "04e1afffa886778730512f84e0633b0aa44ffcb7a2feae5de5b9802476bccc06",
+        "tests/models/test_grc_v4.py": "be491e583e2d0bd096f11abe757d36906738dcf1649b40aea0423ca388164e03",
+        "tests/models/test_grc_v4_lifecycle.py": "6a66c89447e0f1bb33705f27eecb375535d5d4f611a0cd11f62764aab9958441"
+      },
+      "manifest_sha256": "c8419e3a44eaddcb68e65033804c8bdc76db7d1013d17fc0c7df9caf82aa8eaa",
+      "file_count": 441,
+      "reconstruction": "Recover exact historical overlay files with the bound reverse patches, then overlay only the selected run file roster onto its full Git base. Both old scoped manifests were verified exactly."
+    },
+    "replay_command": [
+      ".venv/bin/python",
+      "-m",
+      "tests.models.test_grc_v4",
+      "--capture-p947-audit",
+      "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/generated/p947-audit-final"
+    ],
+    "source_unchanged": true,
+    "full_history_checkout": true,
+    "checkout_path_contains_spaces": true,
+    "fresh_interpreter": true,
+    "limits": "Accepted source-slot/live-code and before/after disk/roster guards; not hostile-interpreter attestation. Relocated checkout/fresh interpreter reuse installed dependencies; no fresh-install or different-platform claim.",
+    "owned_methods": {
+      "LifecycleCompositionAuditTests": [
+        "test_mixed_reference_charge_lineage_and_continuation"
+      ],
+      "MappedVectorCorrectionAuditTests": [
+        "test_candidate_exact_identity_execution_and_complete_preimages",
+        "test_dimension_fault_blast_radius_and_graph_coordinate_alternatives",
+        "test_k4_only_and_zero_tolerance_alternatives_do_not_earn_vector_credit",
+        "test_proposed_tolerance_checks_every_solve_without_changing_physics"
+      ]
+    },
+    "unique_execution_credit": true
+  },
+  "evidence_alias_dispositions": {
+    "P9-7.2a-C_OS-NH-NH": "accepted_scoped_C_OS_evidence_after_dependency_reconciliation",
+    "P9-7.2a-C_OS-UNSUPPORTED": "accepted_scoped_C_OS_evidence_after_dependency_reconciliation",
+    "P9-7.2b-C_OS-MAPPED": "accepted_scoped_C_OS_evidence_after_dependency_reconciliation",
+    "P9-7.3-C_OS": "accepted_scoped_C_OS_evidence_after_dependency_reconciliation",
+    "P9-7.4-C_OS": "accepted_scoped_C_OS_evidence_after_dependency_reconciliation",
+    "P9-7.5-C_OS": "accepted_scoped_C_OS_evidence_after_dependency_reconciliation",
+    "P9-7.6-C_OS": "accepted_scoped_C_OS_evidence_after_dependency_reconciliation"
+  },
+  "broader_defect_inventory": {
+    "frozen_builder_profile_helper_calls": 23,
+    "calls_with_non_two_edge_count": 22,
+    "scope": "Call sites include A helper reuse and C_OS/C_PC GRC9 expansion references; not 22 independently executed failures. Bounded generic mapped patch leaves other profile families for separate correction review.",
+    "global_helper_fix_applied": false
+  },
+  "historical_source_reconstruction": {
+    "path": "implementation/phase-9-grcv4/evidence/P9-4.7b/pre-release-source/inputs.json",
+    "sha256": "3c97abe65188e5f9b1967a4bbf26bdaa15c977f3f167c23b74c95d2be1065cbc",
+    "instruction": "Recover exact historical overlay files with the bound reverse patches, then overlay only the selected run file roster onto its full Git base. Both old scoped manifests were verified exactly."
+  },
+  "current_release_id": "grcv4-spec-release-sha256:7b8b4d4e32e48fd35f70421cce7f547eebb21dd81389764061efe6e1a8c19886",
+  "acceptance_basis": "User explicitly requested correction followed by acceptance of P9-4.6, P9-4.7a and P9-4.7b and commit. Original independent verdicts remain separately recorded; final correction validation is the primary auditor follow-up, not a fabricated second independent audit.",
+  "authoritative_run": {
+    "path": "implementation/phase-9-grcv4/evidence/P9-4.7b/authoritative-vector/run.json",
+    "sha256": "63f5a26548627c6090eca6615c8c512b0b6a8bd11e43d5a14dd66c2167b281dd",
+    "results": {
+      "tests_run": 50,
+      "failures": 0,
+      "errors": 0,
+      "skips": 0,
+      "nonpassing_methods": [],
+      "executed_ids_sha256": "a04b1f55cfc6c25afe5e7cf63295f5e73740db8d8c47e380b949c7dc07f838f4"
+    },
+    "source": {
+      "base_commit": "f10d105bbed71da7e9a58d851b18e9799a952e0c",
+      "scopes": [
+        "src",
+        "tests",
+        "specs",
+        "pyproject.toml",
+        "uv.lock",
+        "implementation/investigations/grc9v4-constitutive-design/drafts/2026-09-GRC-V4.md",
+        "implementation/investigations/grc9v4-constitutive-design/scripts/build_grcv4_specification_vectors.py",
+        "implementation/phase-9-grcv4/tranche-4/P9-4.7b-SpecificationCorrection.json",
+        "implementation/phase-9-grcv4/verification/build_mapped_vector_release.py"
+      ],
+      "overrides_sha256": {
+        "implementation/investigations/grc9v4-constitutive-design/scripts/build_grcv4_specification_vectors.py": "7c404c0f64d5577e7802e6702c4cedd3fc852530ad8ae3f13058ddaea4c9d217",
+        "implementation/phase-9-grcv4/tranche-4/P9-4.7b-SpecificationCorrection.json": "1ecdfa384215d8bf534a548646792b5a82c5c5f5a93d1d1476eaf26286becce7",
+        "implementation/phase-9-grcv4/verification/build_mapped_vector_release.py": "adac7517df0c01aedc9ed1e91fbc79a5b3ea0ead64a90b910c428378d021954a",
+        "specs/README.md": "d34311c4255eb1fc666b506f2efdba029d8b87d45c6956987d2d5a31c95412e6",
+        "specs/grc-v4-conformance-vectors.json": "9d9917511816f8d6ca97feca14de3ffca6b720504041f879bb1fa3e8e57b4e22",
+        "specs/grc-v4-specification-release.json": "bbfe5cdc2689e6f2768e7ef586320c86c8ee9eaf441a4bad74225f34f565b939",
+        "specs/grc-v4-specification-release.sha256": "5c0f3fc054d26b8ffa50e47910a4a571526ba660e2fc44a0c5d2c88f0337b5e7",
+        "src/pygrc/models/grc_v4.py": "7b692142a98c8010f9f0521e0c54c4e6f91dc78909dcffab8e60a9f108c702e9",
+        "src/pygrc/models/grc_v4_assets/asset-index.json": "0ec015d67b2c44eeca20748c16139f6fd743ec21c6de02a10ae4ba40a0cc9d7c",
+        "src/pygrc/models/grc_v4_assets/grc-v4-specification-release.json": "bbfe5cdc2689e6f2768e7ef586320c86c8ee9eaf441a4bad74225f34f565b939",
+        "src/pygrc/models/grc_v4_assets/grc-v4-specification-release.sha256": "5c0f3fc054d26b8ffa50e47910a4a571526ba660e2fc44a0c5d2c88f0337b5e7",
+        "src/pygrc/models/grc_v4_codec.py": "87c34fc03ba41d156390425c42d6e42bbf5c3fb8c7a165a0b8ed0823e7f95b7f",
+        "src/pygrc/models/grc_v4_lifecycle.py": "04e1afffa886778730512f84e0633b0aa44ffcb7a2feae5de5b9802476bccc06",
+        "tests/models/grcv4_conformance_harness.py": "19c21a802930e26d155d268cbda8fd06c3c4910728bce74332b6e00742634604",
+        "tests/models/grcv4_reference_oracles.py": "0dc05bedc04640dab09a4234a7b7ff3037699ee6f789c88a8abce0d756e97ff1",
+        "tests/models/test_grc_v4.py": "15fd0530a4eb4607fd0cb04da8be502ede14fb394bcc501de45892af8f395a25",
+        "tests/models/test_grc_v4_lifecycle.py": "1167ae317c3307488fc0cce1ebfdf2b6a697e71c1a66b3fd37d01a794fbba844"
+      },
+      "manifest_sha256": "191e4041df71ae42a54d07088febe74cded827db6b6ef408eb6d6778f3b12a61",
+      "file_count": 443,
+      "reconstruction": "Overlay exactly the listed hash-matching files from the commit containing this run onto base_commit and verify the scoped manifest. Before commit use the reviewed working tree. Earlier runs retain their separate predecessor-source reconstruction."
+    },
+    "replay_command": [
+      ".venv/bin/python",
+      "-m",
+      "tests.models.test_grc_v4",
+      "--capture-p947-corrected",
+      "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/generated/p947-corrected-final"
+    ]
+  },
+  "specification_correction": "implementation/phase-9-grcv4/tranche-4/P9-4.7b-SpecificationCorrection.json",
+  "remaining_outside_leaf": [
+    "Generic parent-DAG conformance beyond the tested local convention.",
+    "Broader GRC9/C_PC and A helper dimension/reference/carrier reconciliation, as inventoried by the bounded correction.",
+    "P9-4.8 and runtime support-set acceptance."
+  ],
+  "shared_harness_regression": {
+    "command": [
+      ".venv/bin/python",
+      "-m",
+      "unittest",
+      "tests.models.grcv4_conformance_harness.HarnessTests",
+      "-q"
+    ],
+    "tests_run": 24,
+    "failures": 0,
+    "errors": 0,
+    "claim_ceiling": "Routine current-source regression; no separate captured scientific run or independent audit."
+  }
+}

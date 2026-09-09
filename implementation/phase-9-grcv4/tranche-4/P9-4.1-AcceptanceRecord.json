@@ -1,0 +1,40 @@
+{
+  "schema": "phase9_c_reference_transport_acceptance_v1",
+  "status": "accepted_by_user",
+  "baseline_commit": "94a079d11bc24d6c30dce44931499fad6afe1953",
+  "release_id": "grcv4-spec-release-sha256:9f4c8fe5b57b1c477d834a3e4dae3f98a2b18c70e6e7f598e3c9652170c8645f",
+  "predecessor_record_digest": "b866b4b5d9b8b7ecdf087fd6f2a6d879810ec19464a9d3368ddddaf4d2edf43b",
+  "accepted_iterations": [
+    "P9-4.1"
+  ],
+  "acceptance_basis": "User instruction to commit P9-4.1 after audit follow-up, followed by explicit authorization to continue with P9-4.2. Historical run dispositions and live-code attribution limits are preserved.",
+  "evidence_bindings": [
+    {
+      "path": "implementation/phase-9-grcv4/tranche-4/P9-4.1-Review.md",
+      "sha256": "ebd68f9f2d9e8a1da97aca3503db3528c5fd4286d3d2560ce9011f394fa3dafe"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-4/P9-4.1-ExecutionRecord.json",
+      "sha256": "e0c2c2fa1cea9cf3ad12b2c078be04cf3231a4c76b538283721b8e5267efebca"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-4.1/validation/run.json",
+      "sha256": "bf06baae0240c7278b855c5d3e31b654d5b2a464417b636f79bfa29c09b46f00"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-4.1/audit-followup/run.json",
+      "sha256": "84aa366a918988d7eee56d434a5d1177865199a49c5757c32927483f7b350d55"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-4.1/audit-followup/inputs.json",
+      "sha256": "c3ba9e95a4ac726f4035a7ce2a622a6be0a3bd7d100a580c519be7503ddfc9e1"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/runtime/RuntimeWorkManifest.json",
+      "sha256": "3cd9d192406ce1a447ffed58205e2fd3bde7bfb7df1184b92f0a7839409bd159"
+    }
+  ],
+  "accepted_generic_runtime_support": [],
+  "admitted_specialization_support_sets": [],
+  "record_digest": "ff07f5d71ad094d4c28f3fafdd0c0ca1d74f9f34f18678c8ff6909029b24358a"
+}

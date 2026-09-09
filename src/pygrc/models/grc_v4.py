@@ -2,8 +2,9 @@
 
 Step input shape is weaker than the strict operation request. Migration
 records are declarations only: decoding cannot resolve profiles, authenticate
-live state or admit a crossing. No topology events, harness hooks, pickle or
-state restoration are accepted through this request surface.
+live state or admit a crossing. Mapped-event records likewise declare shape;
+lifecycle admission owns graph, affine-map, history and target checks. Harness
+hooks, pickle and state restoration are not request inputs.
 """
 
 from __future__ import annotations
@@ -13,7 +14,10 @@ from dataclasses import dataclass
 from typing import ClassVar, Literal, Self, TypeVar
 
 from .grc_v4_codec import (
-    V4SchemaError, canonical_json_bytes, decode_canonical_json, decode_record_payload,
+    V4SchemaError,
+    canonical_json_bytes,
+    decode_canonical_json,
+    decode_record_payload,
 )
 from .grc_v4_profile import _Record
 from .grc_v4_state import FrozenJSONMap
@@ -71,7 +75,8 @@ class GRCV4StepRequest(_StepRequestRecord):
 
 
 def decode_step_request_input(
-    data: bytes | str, *,
+    data: bytes | str,
+    *,
     encoding: Literal["configuration", "canonical"] = "configuration",
 ) -> GRCV4StepRequestInput:
     """Decode configuration JSON by default, not live-state admission.
@@ -103,8 +108,13 @@ class ResolvedHistoryChannelPolicy(_Record):
     subject: Literal["candidate", "carrier"]
     policy_id: str
     disposition: Literal[
-        "not_applicable", "exact_transport", "target_initializer",
-        "whole_carrier_map", "whole_carrier_reset", "explicit_loss", "rederived",
+        "not_applicable",
+        "exact_transport",
+        "target_initializer",
+        "whole_carrier_map",
+        "whole_carrier_reset",
+        "explicit_loss",
+        "rederived",
     ]
     source_history_digest: str | None
     target_initializer_id: str | None
@@ -120,8 +130,11 @@ class ResolvedHistoryBundlePolicy(_Record):
 
     def __post_init__(self) -> None:
         for name in ("candidate", "carrier"):
-            object.__setattr__(self, name, _nested_record(
-                getattr(self, name), ResolvedHistoryChannelPolicy))
+            object.__setattr__(
+                self,
+                name,
+                _nested_record(getattr(self, name), ResolvedHistoryChannelPolicy),
+            )
         _Record.__post_init__(self)
 
 
@@ -139,15 +152,22 @@ class GRCV4MigrationRequest(_Record):
     target_context_value: FrozenJSONMap
 
     def __post_init__(self) -> None:
-        object.__setattr__(self, "migration_policy", _nested_record(
-            self.migration_policy, GRCV4MigrationPolicy))
-        object.__setattr__(self, "history_policy", _nested_record(
-            self.history_policy, ResolvedHistoryBundlePolicy))
+        object.__setattr__(
+            self,
+            "migration_policy",
+            _nested_record(self.migration_policy, GRCV4MigrationPolicy),
+        )
+        object.__setattr__(
+            self,
+            "history_policy",
+            _nested_record(self.history_policy, ResolvedHistoryBundlePolicy),
+        )
         _Record.__post_init__(self)
 
 
 def decode_migration_request(
-    data: bytes | str, *,
+    data: bytes | str,
+    *,
     encoding: Literal["configuration", "canonical"] = "configuration",
 ) -> GRCV4MigrationRequest:
     """Decode declaration shape only; Tranche 7 owns crossing admission.
@@ -156,5 +176,73 @@ def decode_migration_request(
     including numbers nested in target_context_value. A resolved-policy record
     does not establish source history, target support or a lawful crossing.
     """
-    return GRCV4MigrationRequest.from_payload(decode_record_payload(
-        "migration_request", data, encoding=encoding))
+    return GRCV4MigrationRequest.from_payload(
+        decode_record_payload("migration_request", data, encoding=encoding)
+    )
+
+
+@dataclass(frozen=True, slots=True, eq=False)
+class ResolvedResourceEventTransform(_Record):
+    """Closed affine declaration; dimensions and conservation need live graphs."""
+
+    SCHEMA: ClassVar[str] = "resource_event_transform"
+    schema_version: Literal["grcv4-resource-event-transform-v1"]
+    policy_id: str
+    source_vertex_ids: tuple[str | int, ...]
+    target_vertex_ids: tuple[str | int, ...]
+    row_major_coefficients: tuple[float, ...]
+    target_increment: tuple[float, ...]
+
+    def __post_init__(self) -> None:
+        # Validate before normalization: bool, unsafe integer, -0, NaN/Inf and
+        # non-sequence containers cannot disappear through tuple/float coercion.
+        _Record.__post_init__(self)
+        for name in (
+            "source_vertex_ids",
+            "target_vertex_ids",
+            "row_major_coefficients",
+            "target_increment",
+        ):
+            value = getattr(self, name)
+            if type(value) not in (tuple, list):
+                raise V4SchemaError("affine declaration requires ordered arrays")
+            object.__setattr__(self, name, tuple(value))
+
+
+@dataclass(frozen=True, slots=True, eq=False)
+class GRCV4MappedTopologyEventRequest(_Record):
+    """Mapped-event request shape only; no live admission or graph mutation."""
+
+    SCHEMA: ClassVar[str] = "mapped_topology_event_request"
+    schema_version: Literal["grcv4-mapped-topology-event-request-v1"]
+    operation_id: str
+    source_state_digest: str
+    source_graph_digest: str
+    target_graph: FrozenJSONMap
+    target_profile_id: str
+    resource_transform: ResolvedResourceEventTransform
+    history_policy: ResolvedHistoryBundlePolicy
+    metadata: FrozenJSONMap
+
+    def __post_init__(self) -> None:
+        object.__setattr__(
+            self,
+            "resource_transform",
+            _nested_record(self.resource_transform, ResolvedResourceEventTransform),
+        )
+        object.__setattr__(
+            self,
+            "history_policy",
+            _nested_record(self.history_policy, ResolvedHistoryBundlePolicy),
+        )
+        _Record.__post_init__(self)
+
+
+def decode_mapped_topology_event_request(
+    data: bytes | str,
+    *,
+    encoding: Literal["configuration", "canonical"] = "configuration",
+) -> GRCV4MappedTopologyEventRequest:
+    return GRCV4MappedTopologyEventRequest.from_payload(
+        decode_record_payload("mapped_topology_event_request", data, encoding=encoding)
+    )

@@ -15,6 +15,8 @@ from .grc_v4_codec import canonical_json_bytes
 from .grc_v4_geometry import (
     GRCV4Differential,
     GRCV4Graph,
+    GeometryDomainError,
+    NonfiniteGeometryError,
     Matrix,
     OneForm,
     OneFormHodge,
@@ -34,7 +36,10 @@ def _positive_products(eta: float, weights: tuple[float, ...]) -> tuple[float, .
     if gain <= 0:
         raise ValueError("mobility gain must be strictly positive")
     # Reject underflow to zero as well as overflow. No floor or fallback.
-    return _vector(tuple(_computed(gain * w) for w in weights), positive=True)
+    products = tuple(_computed(gain * w) for w in weights)
+    if any(x <= 0 for x in products):
+        raise GeometryDomainError("computed mobility must be strictly positive")
+    return _vector(products, positive=True)
 
 
 def _c_reference(graph: GRCV4Graph, params: CandidateCParams) -> tuple[float, ...]:
@@ -133,6 +138,10 @@ def candidate_c_structural_hodge(
     return OneFormHodge(graph, _diagonal(_c_reference(graph, params)))
 
 
+class ChargeDomainError(ValueError):
+    """Finite resource outside the nonnegative charge domain."""
+
+
 def unit_charge(resource: VertexScalar) -> float:
     """Adjacent balanced binary64 tree in the graph's live-vertex order.
 
@@ -142,6 +151,8 @@ def unit_charge(resource: VertexScalar) -> float:
     """
     if type(resource) is not VertexScalar:
         raise TypeError("charge requires a typed vertex resource")
+    if any(value < 0 for value in resource.values):
+        raise ChargeDomainError("charge resource must be nonnegative")
     values = _vector(resource.values, nonnegative=True)
     while len(values) > 1:
         values = tuple(
@@ -196,7 +207,7 @@ class ChargeEvaluation:
         try:
             residual = _computed(float(delta))
         except OverflowError:
-            raise ValueError("nonfinite charge residual") from None
+            raise NonfiniteGeometryError("nonfinite charge residual") from None
         for name, value in (
             ("profile", profile),
             ("resource", resource),

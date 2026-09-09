@@ -1,0 +1,549 @@
+{
+  "schema": "phase9_leaf_execution_v1",
+  "iteration_id": "P9-4.5",
+  "status": "implemented_and_verified",
+  "reviewer_decision": "pending_user_acceptance",
+  "entry_acceptance": "implementation/phase-9-grcv4/tranche-4/P9-4.4-AcceptanceRecord.json",
+  "source_changes": [
+    "src/pygrc/models/grc_v4_geometry.py",
+    "src/pygrc/models/grc_v4_candidate_c.py",
+    "src/pygrc/models/grc_v4_step.py",
+    "src/pygrc/models/grc_v4_lifecycle.py",
+    "tests/models/test_grc_v4_lifecycle.py",
+    "tests/models/test_grc_v4_candidate_c.py",
+    "src/pygrc/models/grc_v4_transport.py",
+    "src/pygrc/models/grc_v4_realizations.py",
+    "tests/models/test_grc_v4_realizations.py"
+  ],
+  "source_queries": [
+    {
+      "operation": "reconstruction_path",
+      "query": {
+        "claim_id": "D10-CL-N-003"
+      },
+      "trace_digest": "dc69d4b790eefae43256d7283e4c01f8bc878f9c9d6a2ada10f740bd587aff2d",
+      "row_count": 1,
+      "rows": [
+        {
+          "row_id": "D10-CL-N-003",
+          "classification": "accepted_backward_reconstruction",
+          "source_ref": {
+            "record_id": "GRC9V4-D10-CLAIM-TOPOLOGY-v2",
+            "record_digest": "2bd78fc5d9a075d0958813dd199a8a57a8c23565e10b68fce89c967d4b3ee373",
+            "source_json_pointer": "/claims/2",
+            "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D10NormativeClaimTopology.json"
+          },
+          "retention_scope": "Only the start claim is extracted; verification obligations are excluded, and the trace digest identifies the full regenerable query, not this extraction.",
+          "source_statement": {
+            "blocked_relabels": [
+              "formal_consumer_is_executed_endpoint_witness",
+              "failed_substage_partially_commits"
+            ],
+            "normative_effect": "the_spec_must_freeze_order_atomicity_and_authority_but_must_not_call_the_unexecuted_endpoint_effect_empirically_verified",
+            "statement": "every_profile_uses_a_declared_complete_step_with_one_authoritative_current_one_continuity_write_postcontinuity_refresh_atomic_failure_and_no_hidden_same_beat_authority"
+          }
+        }
+      ]
+    },
+    {
+      "operation": "contract_provenance",
+      "query": {
+        "contract_id": "D10.2-EC-OS-C-CORRECTOR"
+      },
+      "trace_digest": "b97195a294b1e1f17bf3077257405c58a8f54dbf8cc9adcb223dacd6ac7e3fdc",
+      "row_count": 1,
+      "rows": [
+        {
+          "row_id": "D10.2-EC-OS-C-CORRECTOR",
+          "classification": "source_exact_contract_provenance",
+          "source_ref": {
+            "record_id": "GRC9V4-CD-D10.2-v1",
+            "record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+            "source_json_pointer": "/normative_equation_contract_registry/129",
+            "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D10_2FullSubstrateProvenanceAndPromotionAudit.json"
+          },
+          "edge_refs": [
+            {
+              "edge_id": "propagation:60f422d7e80f906a63a345518174e28110cae32caf7e9d36badc3d4b19c9daa7",
+              "source": "equation_contract:D10.2-EC-OS-C-CORRECTOR",
+              "target": "source_record:8c40dc16442939e029c666b78ddb76307db5ee417e7c40f989a07ef3d8d53815",
+              "relation": "source_identity",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/129"
+            },
+            {
+              "edge_id": "propagation:76a8f562d3820f59e4c30b43daf887074e5b93794600ddbd75f15eb3fb8f9f59",
+              "source": "equation_contract:D10.2-EC-OS-C-CORRECTOR",
+              "target": "profile:C_OS",
+              "relation": "active_in_profile",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/129/profile_ids/0"
+            },
+            {
+              "edge_id": "propagation:83bf8734f0435b04f1812ea59dcda6916dab40d2f7db9a353bc3116523884b17",
+              "source": "equation_contract:D10.2-EC-OS-C-CORRECTOR",
+              "target": "current_claim:D10-CL-O-004",
+              "relation": "accepted_claim",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/129/accepted_claim_ids/0"
+            },
+            {
+              "edge_id": "propagation:b575a29dd26f2f970f24d740d67639a08e43f0aa1d7eaf1c4ef5e294a602ff5e",
+              "source": "equation_contract:D10.2-EC-OS-C-CORRECTOR",
+              "target": "normative_object:REAL-OS",
+              "relation": "parent_object",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/129/parent_object_ids/0"
+            },
+            {
+              "edge_id": "propagation:e0c2c6184fdb6246bf1332b17ab18ec51d4d9dfab1dec8e42035de06a9b5bd60",
+              "source": "equation_contract:D10.2-EC-OS-C-CORRECTOR",
+              "target": "source_record:97c0b7a6290bb16fe882b89f15e2555a78b189e2fe3f624d80363d9aed4c0973",
+              "relation": "source_identity",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/129/source_lineage/0"
+            }
+          ],
+          "accepted_claim_support_semantics": [
+            "indeterminate_requires_review"
+          ],
+          "support_disposition": "indeterminate_requires_review",
+          "source_statement": {
+            "blocked_overread": "selector_or_Hodge_predictor_caches_cannot_enter_the_C_corrector",
+            "normative_equation_or_contract": "at_fixed_h_C^(1)_recompute_P_M_T_C_H_M_I_4M_Rhat_C_M_G_J_J0_C_and_solve_the_full_C_corrector"
+          }
+        }
+      ]
+    },
+    {
+      "operation": "contract_provenance",
+      "query": {
+        "contract_id": "D10.2-EC-PARENT-L-ATOMICITY"
+      },
+      "trace_digest": "62a376f2a8e613b18a0999ce6bd16367ac45d0566c6b7b76d092fc64fbd11a57",
+      "row_count": 1,
+      "rows": [
+        {
+          "row_id": "D10.2-EC-PARENT-L-ATOMICITY",
+          "classification": "source_exact_contract_provenance",
+          "source_ref": {
+            "record_id": "GRC9V4-CD-D10.2-v1",
+            "record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+            "source_json_pointer": "/normative_equation_contract_registry/44",
+            "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D10_2FullSubstrateProvenanceAndPromotionAudit.json"
+          },
+          "edge_refs": [
+            {
+              "edge_id": "propagation:161392ad4643ba32ec7307ab1bd7f3d782db58373bbc86926051457b3912a75d",
+              "source": "equation_contract:D10.2-EC-PARENT-L-ATOMICITY",
+              "target": "current_claim:D10-CL-N-003",
+              "relation": "accepted_claim",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/44/accepted_claim_ids/1"
+            },
+            {
+              "edge_id": "propagation:1a3c5713112e2ec5a27729a91dbb861a6b6aeeb32ff542f345d128568f66a96a",
+              "source": "equation_contract:D10.2-EC-PARENT-L-ATOMICITY",
+              "target": "source_record:1ffcd4c5ac5a124c6daf00b29f2237d1932a66d3095af94455b380d252b3328e",
+              "relation": "source_identity",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/44/source_lineage/0"
+            },
+            {
+              "edge_id": "propagation:218a832d940c483816cfac757f02724f0c57617c872e2e7746a285bac58e4683",
+              "source": "equation_contract:D10.2-EC-PARENT-L-ATOMICITY",
+              "target": "normative_object:L-ATOMICITY",
+              "relation": "parent_object",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/44/parent_object_ids/0"
+            },
+            {
+              "edge_id": "propagation:643ba9043af0b4dd0501386d6de427a4ceca8d2634765494032a2de5eb5e4cf7",
+              "source": "equation_contract:D10.2-EC-PARENT-L-ATOMICITY",
+              "target": "source_record:3c535da4e9935800544d88fcf7160b8f1dc257337382b1069889967c68f558f9",
+              "relation": "source_identity",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/44/source_lineage/1"
+            },
+            {
+              "edge_id": "propagation:ace7c23b09b212a7e08619413e43ff0d6b85a63d1336ff5391ddfcf848c8985f",
+              "source": "equation_contract:D10.2-EC-PARENT-L-ATOMICITY",
+              "target": "source_record:8c40dc16442939e029c666b78ddb76307db5ee417e7c40f989a07ef3d8d53815",
+              "relation": "source_identity",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/44"
+            },
+            {
+              "edge_id": "propagation:da98c33cdcec405c9832466dc4cd59f41c4edde57e5a0c6e007cb3188abfb7d0",
+              "source": "equation_contract:D10.2-EC-PARENT-L-ATOMICITY",
+              "target": "current_claim:D10-CL-C-011",
+              "relation": "accepted_claim",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/44/accepted_claim_ids/0"
+            },
+            {
+              "edge_id": "propagation:f7432ec1d0b96be007a8ddb916adc1a650b2f5b6358c5afa38146e87a7c48b11",
+              "source": "equation_contract:D10.2-EC-PARENT-L-ATOMICITY",
+              "target": "source_record:18ac2f841c2abbc9e722378b33be8bc34280fdc0e3a3e50f673d85a3d6bcb6f3",
+              "relation": "source_identity",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/44/source_lineage/2"
+            }
+          ],
+          "accepted_claim_support_semantics": [
+            "indeterminate_requires_review"
+          ],
+          "support_disposition": "indeterminate_requires_review",
+          "source_statement": {
+            "blocked_overread": "partial_valid_substage_is_not_a_committed_state",
+            "normative_equation_or_contract": "all_authoritative_coordinates_commit_together_or_not_at_all"
+          }
+        }
+      ]
+    },
+    {
+      "operation": "contract_provenance",
+      "query": {
+        "contract_id": "D10.2-EC-PARENT-L-ORDERED-RECEIPTS"
+      },
+      "trace_digest": "77fee7e8c48800eaf09ff53d4ba53fe20cfb14a749b036f1d37cb2b857fe854a",
+      "row_count": 1,
+      "rows": [
+        {
+          "row_id": "D10.2-EC-PARENT-L-ORDERED-RECEIPTS",
+          "classification": "source_exact_contract_provenance",
+          "source_ref": {
+            "record_id": "GRC9V4-CD-D10.2-v1",
+            "record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+            "source_json_pointer": "/normative_equation_contract_registry/50",
+            "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D10_2FullSubstrateProvenanceAndPromotionAudit.json"
+          },
+          "edge_refs": [
+            {
+              "edge_id": "propagation:3263543ad8eaf3b4b9678815cfcc75e74cdd9250fe4db855e0e4c8e4360b3dc0",
+              "source": "equation_contract:D10.2-EC-PARENT-L-ORDERED-RECEIPTS",
+              "target": "source_record:93afe04293b480712e378f264cb696a0ef20ffd4c3a1044c088fc9fe2cf784aa",
+              "relation": "source_identity",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/50/source_lineage/1"
+            },
+            {
+              "edge_id": "propagation:876e7b9b83df334d502563c4286d30fb2bdad32c753801a2578e481bbc5e306f",
+              "source": "equation_contract:D10.2-EC-PARENT-L-ORDERED-RECEIPTS",
+              "target": "normative_object:L-ORDERED-RECEIPTS",
+              "relation": "parent_object",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/50/parent_object_ids/0"
+            },
+            {
+              "edge_id": "propagation:b003aebed1b46da6b3f762d4fcdac4ada5f266678fc052496b4320613d476be5",
+              "source": "equation_contract:D10.2-EC-PARENT-L-ORDERED-RECEIPTS",
+              "target": "current_claim:D10-CL-C-011",
+              "relation": "accepted_claim",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/50/accepted_claim_ids/1"
+            },
+            {
+              "edge_id": "propagation:da568aefa7774227e2b90256ef0970d3464d90887aece1943a26b929b4b47f73",
+              "source": "equation_contract:D10.2-EC-PARENT-L-ORDERED-RECEIPTS",
+              "target": "current_claim:D10-CL-C-002",
+              "relation": "accepted_claim",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/50/accepted_claim_ids/0"
+            },
+            {
+              "edge_id": "propagation:e0f8a704f861c8b6506712435f5d107e6f38e9d3c68b5a0bc40b6ecf6f96cd9c",
+              "source": "equation_contract:D10.2-EC-PARENT-L-ORDERED-RECEIPTS",
+              "target": "source_record:8c40dc16442939e029c666b78ddb76307db5ee417e7c40f989a07ef3d8d53815",
+              "relation": "source_identity",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/50"
+            },
+            {
+              "edge_id": "propagation:efbba4d7456540579cad3245efd53044c6526029a4fa59c55c341f6a88b987f9",
+              "source": "equation_contract:D10.2-EC-PARENT-L-ORDERED-RECEIPTS",
+              "target": "current_claim:D10-CL-X-001",
+              "relation": "accepted_claim",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/50/accepted_claim_ids/3"
+            },
+            {
+              "edge_id": "propagation:f371d3bf9079fda9d7d31edda02efa0bf46acdbda6076c3f9e1dc7967d44a86b",
+              "source": "equation_contract:D10.2-EC-PARENT-L-ORDERED-RECEIPTS",
+              "target": "current_claim:D10-CL-N-005",
+              "relation": "accepted_claim",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/50/accepted_claim_ids/2"
+            },
+            {
+              "edge_id": "propagation:ffdf7d00986d952799103c59ec66c1db42b54cb29afad6a116f2d3f0e56a4c2d",
+              "source": "equation_contract:D10.2-EC-PARENT-L-ORDERED-RECEIPTS",
+              "target": "source_record:18ac2f841c2abbc9e722378b33be8bc34280fdc0e3a3e50f673d85a3d6bcb6f3",
+              "relation": "source_identity",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-CD-D10.2-v1",
+              "source_record_digest": "28343064e85065b7f18227cf429e8cd8f33b414d7a19d5f3e9090a318adcb32c",
+              "source_json_pointer": "/normative_equation_contract_registry/50/source_lineage/0"
+            }
+          ],
+          "accepted_claim_support_semantics": [
+            "indeterminate_requires_review"
+          ],
+          "support_disposition": "indeterminate_requires_review",
+          "source_statement": {
+            "blocked_overread": "endpoint_profile_coverage_is_not_crossing_evidence",
+            "normative_equation_or_contract": "migration_and_event_receipts_bind_ordered_p_source_p_target"
+          }
+        }
+      ]
+    },
+    {
+      "operation": "contract_provenance",
+      "query": {
+        "contract_id": "D11-C-EC-C-J0-LIFECYCLE"
+      },
+      "trace_digest": "12c7d5adc9fd0d42d0501483d9b5a0a71a442cc18290e05ee9cc9c7b1a6bb2fe",
+      "row_count": 1,
+      "rows": [
+        {
+          "row_id": "D11-C-EC-C-J0-LIFECYCLE",
+          "classification": "source_exact_contract_provenance",
+          "source_ref": {
+            "record_id": "GRC9V4-D11-C-PROVENANCE-SUPPLEMENT-v1",
+            "record_digest": "57d711d80e648c8ee73401f3a7e76a0076374fc43bd4d2d0f3dbe4bb4ee3acb1",
+            "source_json_pointer": "/equation_contracts/10",
+            "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D11CCandidateBaselineTransportProvenanceSupplement.json"
+          },
+          "edge_refs": [
+            {
+              "edge_id": "propagation:02f6f4674fb71712818d07a2a1d5ae9cb467caea8f4e7b6525e2adf71af8c25e",
+              "source": "equation_contract:D11-C-EC-C-J0-LIFECYCLE",
+              "target": "current_claim:D10-CL-N-008",
+              "relation": "accepted_claim",
+              "support_semantic": "accepted_design_level_lifecycle_contract_with_runtime_conformance_still_pending",
+              "source_record_id": "GRC9V4-D11-C-PROVENANCE-SUPPLEMENT-v1",
+              "source_record_digest": "57d711d80e648c8ee73401f3a7e76a0076374fc43bd4d2d0f3dbe4bb4ee3acb1",
+              "source_json_pointer": "/equation_contracts/10/accepted_claim_ids/2"
+            },
+            {
+              "edge_id": "propagation:107dea726b299702c9cc46882365d77331c7332eefc2cc766f85a4d1c028e483",
+              "source": "equation_contract:D11-C-EC-C-J0-LIFECYCLE",
+              "target": "current_claim:D10-CL-N-005",
+              "relation": "accepted_claim",
+              "support_semantic": "accepted_design_level_lifecycle_contract_with_runtime_conformance_still_pending",
+              "source_record_id": "GRC9V4-D11-C-PROVENANCE-SUPPLEMENT-v1",
+              "source_record_digest": "57d711d80e648c8ee73401f3a7e76a0076374fc43bd4d2d0f3dbe4bb4ee3acb1",
+              "source_json_pointer": "/equation_contracts/10/accepted_claim_ids/1"
+            },
+            {
+              "edge_id": "propagation:2602d4f41875348b180e305d0e7c5e5c67a9160d3360482797cbca6878101d90",
+              "source": "equation_contract:D11-C-EC-C-J0-LIFECYCLE",
+              "target": "current_claim:D11-C-CL-O-001",
+              "relation": "accepted_claim",
+              "support_semantic": "accepted_design_level_lifecycle_contract_with_runtime_conformance_still_pending",
+              "source_record_id": "GRC9V4-D11-C-PROVENANCE-SUPPLEMENT-v1",
+              "source_record_digest": "57d711d80e648c8ee73401f3a7e76a0076374fc43bd4d2d0f3dbe4bb4ee3acb1",
+              "source_json_pointer": "/equation_contracts/10/accepted_claim_ids/0"
+            },
+            {
+              "edge_id": "propagation:4ef3e7ca97bc488e6382a3c7ef693f97c60651c3c93f3ed7102ff0e84279d224",
+              "source": "equation_contract:D11-C-EC-C-J0-LIFECYCLE",
+              "target": "normative_object:C-BASELINE-CURRENT",
+              "relation": "parent_object",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-D11-C-PROVENANCE-SUPPLEMENT-v1",
+              "source_record_digest": "57d711d80e648c8ee73401f3a7e76a0076374fc43bd4d2d0f3dbe4bb4ee3acb1",
+              "source_json_pointer": "/equation_contracts/10/parent_object_ids/1"
+            },
+            {
+              "edge_id": "propagation:e17b553f692a5833f7bb3edf53fa0bf2eeb888b984e153cd5af18faa4c52f68a",
+              "source": "equation_contract:D11-C-EC-C-J0-LIFECYCLE",
+              "target": "source_record:1ba90e62a7f7907094aff26dd201ba232ec0f2a1ea26e79e473ecd8885ea3174",
+              "relation": "source_identity",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRC9V4-D11-C-PROVENANCE-SUPPLEMENT-v1",
+              "source_record_digest": "57d711d80e648c8ee73401f3a7e76a0076374fc43bd4d2d0f3dbe4bb4ee3acb1",
+              "source_json_pointer": "/equation_contracts/10"
+            },
+            {
+              "edge_id": "propagation:e46e269d9b9d69dba9fffad5a961ca48f3b5f2b4f85f832daaad7319f248196e",
+              "source": "equation_contract:D11-C-EC-C-J0-LIFECYCLE",
+              "target": "normative_object:C-BASELINE-TRANSPORT-REFERENCE",
+              "relation": "parent_object",
+              "support_semantic": "indeterminate_requires_review",
+              "source_record_id": "GRC9V4-D11-C-PROVENANCE-SUPPLEMENT-v1",
+              "source_record_digest": "57d711d80e648c8ee73401f3a7e76a0076374fc43bd4d2d0f3dbe4bb4ee3acb1",
+              "source_json_pointer": "/equation_contracts/10/parent_object_ids/0"
+            }
+          ],
+          "accepted_claim_support_semantics": [
+            "accepted_design_level_lifecycle_contract_with_runtime_conformance_still_pending"
+          ],
+          "support_disposition": [
+            "accepted_design_level_lifecycle_contract_with_runtime_conformance_still_pending"
+          ],
+          "source_statement": {
+            "normative_equation_or_contract": "snapshot_and_target_complete_profile_bind_the_exact_stable_edge_ID_to_W_C_tr_map_and_missing_duplicate_nonpositive_nonfinite_or_unmatched_target_entries_fail_before_atomic_commit"
+          }
+        }
+      ]
+    }
+  ],
+  "implemented_scope": "Actual C_OS ordinary operation with full final/reference poststate admission, one atomic lifecycle publication, content-bound receipts and native/injected atomic-negative pressure. Not a complete public facade or profile conformance.",
+  "accepted_generic_runtime_support": [],
+  "admitted_specialization_support_sets": [],
+  "release_id": "grcv4-spec-release-sha256:9f4c8fe5b57b1c477d834a3e4dae3f98a2b18c70e6e7f598e3c9652170c8645f",
+  "ordinary_operation_conventions": {
+    "clock": "Positive dt uses one binary64 addition and one safe-index increment; dt=0 retains clock/index but appends a successful local receipt delta.",
+    "resource_transform": "Identity vertex relocation, zero event increment; not the nonlinear continuity map. Actual resource evolution is bound by source/target authoritative identities.",
+    "history_bundle": "C rederived under declared history policy; absent carrier not_applicable; no loss.",
+    "receipt_order": [
+      "step_commit",
+      "charge",
+      "candidate_history_disposition",
+      "carrier_history_disposition"
+    ],
+    "parent_scope": "Provisional local schema-filling convention: previous actual ordinary step-commit receipt only, or empty for a fresh owner. P9-4.5 binds content/order/local reconstructibility, not final lineage. Later lineage ownership may preserve or revise parents and resulting identities."
+  },
+  "remaining_obligations": [
+    "User review/acceptance of P9-4.5",
+    "P9-4.6 snapshot/load/reset/rebase and copy/lifecycle slice",
+    "P9-4.7a complete restoration/replay and receipt-ownership pressure",
+    "P9-4.7b remaining C_OS lifecycle product; no G2 or runtime support acceptance"
+  ],
+  "entry_and_surface_verification": {
+    "commands": [
+      ".venv/bin/python implementation/phase-9-grcv4/verification/audit_phase9_implementation.py --boundary-only",
+      ".venv/bin/python implementation/phase-9-grcv4/verification/test_phase9_g1.py",
+      ".venv/bin/python implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/test_phase9_g1_surfaces.py",
+      ".venv/bin/python implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/test_phase9_g1_surfaces.py --browser"
+    ],
+    "policy": "Run after final registration; generated permission/API/notebook/browser outputs remain disposable verification projections, not duplicate scientific evidence.",
+    "environment": "Repository root with .venv/bin on PATH; existing managed Node/browser assets."
+  },
+  "capture_scope": "Inherited source-bound capture with additional strict source-declared method-slot checks for geometry, transport, step, realizations, lifecycle and the P9-4.5 and shared realization test owners, before and after execution. Genuine same-file method substitution is an explicit negative control. Earlier captures retain their default scope.",
+  "independent_audit_closure": [
+    {
+      "finding": 1,
+      "correction": "Only typed semantic failures become scientific rejections; all receipt/lifecycle/result binding is outside the semantic handler. Generic ValueError/V4IdentityError/RuntimeError propagate atomically, including from numerical wrappers. The inherited final-reconstruction fault control now distinguishes typed scientific admission failure from a propagating generic programmer exception; numerical expectations are unchanged."
+    },
+    {
+      "finding": 2,
+      "correction": "Typed charge domain/nonfinite origins and typed consumed/reference final-C classification; identical hostile-text controls follow types. No message parsing."
+    },
+    {
+      "finding": 3,
+      "correction": "Local previous-commit parent convention explicitly provisional; later lineage owner may revise receipt identities."
+    },
+    {
+      "finding": 4,
+      "correction": "Connected C4 rank-3 general clustered-eigensolver operation and signed vertex/edge covariance."
+    },
+    {
+      "finding": 5,
+      "correction": "Native non-diagonal four-dimensional resolvent condition 129/64, operation limits at +/- 2^-35; real SVD proposals and exact inertia certificates."
+    },
+    {
+      "finding": 6,
+      "correction": "Rejected operations compare reference pointer, identity and full payload alongside all lifecycle bytes."
+    }
+  ],
+  "source_query_context": {
+    "source_bundle_digest": "98c273b3cc097f0d95adfba98ed7dfac0ac494dce9e779bb4b04fe79fef4f6aa",
+    "graph_digest": "44d8c7d33950af5e5f7c61caa4fe6fbd14fc9aedf14218d0a11de7c705542e09",
+    "authority_extension_digest": "833acc5988761f8ba68ca573ad270bf7c87cf2fe32061336a71e42647968630a",
+    "ET_C2_record_digest": "10dc5cef2bffc764296cb9e38908cd1f992b9ce7c4c60d04a8ef6efda5d1453b",
+    "loader": "grcv4_explorer.successor.load_successor_forensic_context",
+    "replay_guide": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/docs/AgenticQueryGuide.md",
+    "extraction_scope": "Compact row classifications, exact source/edge references and authority limits. Full source-owned nodes are recoverable through their JSON pointers; trace digests identify the full regenerable queries, not these extracts.",
+    "replay_verification": "All five typed forensic queries regenerated from the accepted successor context; trace digests, four context identities, retained classifications and exact source/edge references matched."
+  },
+  "review": {
+    "path": "implementation/phase-9-grcv4/tranche-4/P9-4.5-Review.md",
+    "sha256": "dfed0c1607c858a072ce842a28e09b0ee9f22e385bcd8240c72265098497d6dc"
+  },
+  "validation_runs": [
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-4.5/validation/run.json",
+      "sha256": "6c5537d9ba03cb8400b9dd8a3fafff108ddde8184474643c3c023cdc91b78477"
+    }
+  ],
+  "verification_summary": {
+    "tests_run": 256,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "nonpassing_methods": [],
+    "executed_ids_sha256": "2b21fd24575a44799512addba3b37783bf0dd8a96d6bf0d87d1cc1b8765de04b",
+    "new_operation_methods": 22,
+    "new_capture_methods": 1,
+    "inherited_numerical_and_resource_methods": 188,
+    "shared_admission_result_binding_methods": 45
+  },
+  "reconstruction_check": {
+    "base_commit": "175242621cd5a37625835a9ce95044f0b8a3837d",
+    "manifest_sha256": "4e023776d8716f3ceba60b7e8939c3bab5af7f544deb850ea5f1a18d6bbb3226",
+    "file_count": 440,
+    "checkout_path_contains_spaces": true,
+    "fresh_interpreter": true,
+    "hash_seed": 945,
+    "new_overlay_paths_intent_to_add": true,
+    "source_equal_before_and_after": true,
+    "strict_source_declared_slots": [
+      "pygrc.models.grc_v4_candidate_c",
+      "tests.models.test_grc_v4_candidate_c",
+      "pygrc.models.grc_v4_geometry",
+      "pygrc.models.grc_v4_transport",
+      "pygrc.models.grc_v4_step",
+      "pygrc.models.grc_v4_realizations",
+      "pygrc.models.grc_v4_lifecycle",
+      "tests.models.test_grc_v4_lifecycle",
+      "tests.models.test_grc_v4_realizations"
+    ],
+    "limits": "Existing dependency environment reused; no fresh install, full repository/package suite or cross-platform bitwise guarantee. Not hostile-interpreter attestation."
+  },
+  "static_validation": {
+    "ruff": "passed",
+    "format": "passed",
+    "strict_mypy": "passed",
+    "scope": "Nine changed numerical/operation/test files; Ruff also checks changed policy/API scripts."
+  }
+}

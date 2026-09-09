@@ -1,0 +1,48 @@
+{
+  "schema": "phase9_bounded_specification_correction_v1",
+  "status": "accepted_by_user_for_implementation",
+  "correction_id": "P9-4.7b-GENERIC-MAPPED-VECTOR-CORRECTION",
+  "predecessor_commit": "f10d105bbed71da7e9a58d851b18e9799a952e0c",
+  "predecessor_release_id": "grcv4-spec-release-sha256:9f4c8fe5b57b1c477d834a3e4dae3f98a2b18c70e6e7f598e3c9652170c8645f",
+  "authorization_basis": "The user requested remaining audit gaps and alternative pressure, then explicitly instructed completion followed by acceptance of P9-4.6, P9-4.7a, P9-4.7b and commit. This authorizes the necessary bounded vector correction and successor release, without weakening K4 typing or waiving mandatory conformance.",
+  "scientific_verdict": "Accept the bounded correction; the supplied 2x2 one-edge preimage is inconsistent with edge-one-form typing. Declare nonzero solver tolerances and the complete orientation descriptor to execute the retained physical parameters.",
+  "specification_sources": [
+    "specs/grc-v4-spec.md#structural-geometry-and-current-typing",
+    "specs/grc-common-interface-v4-ext.md",
+    "implementation/investigations/grc9v4-constitutive-design/drafts/2026-09-GRC-V4.md"
+  ],
+  "accepted_contract": "D10.2-EC-PARENT-GEOM-K4",
+  "paper_or_equation_change": false,
+  "schema_change": false,
+  "fixture_id": "GENERIC-MAPPED-EVENT-NONZERO-RESOURCE-INCREMENT",
+  "source_profile_id": "grcv4-profile-sha256:4a631bc25ab15c5b10e06588ff58aa6a802fd9a2749a0dd1909ffd3eae535ed8",
+  "target_profile_id": "grcv4-profile-sha256:f7b4023ed543c496fa693e8a1bbd701d357495374b415602fcc6b4774caffb7b",
+  "corrected_event_id": "grc-event-sha256:583d7337ff5d3910fb189ee1aad0f81485a4722bdb889d5623e82828a759807c",
+  "evidence_bindings": [
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-4.7b/audit-followup/inputs.json",
+      "sha256": "bf2f6e705604fb956ea778694bc3606c74f7588077ef797d218e6b0685079580"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-4.7b/audit-followup/run.json",
+      "sha256": "81e10b893f6b7e8a5f1be9098874393e0f9e6f376b628a3bf9c9fb6d8f0bf930"
+    }
+  ],
+  "corrected_artifacts": [
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/scripts/build_grcv4_specification_vectors.py",
+      "sha256": "7c404c0f64d5577e7802e6702c4cedd3fc852530ad8ae3f13058ddaea4c9d217"
+    },
+    {
+      "path": "specs/grc-v4-conformance-vectors.json",
+      "sha256": "9d9917511816f8d6ca97feca14de3ffca6b720504041f879bb1fa3e8e57b4e22"
+    },
+    {
+      "path": "specs/README.md",
+      "sha256": "d34311c4255eb1fc666b506f2efdba029d8b87d45c6956987d2d5a31c95412e6"
+    }
+  ],
+  "unresolved_other_families": "The frozen helper has 23 calls, 22 with edge counts other than two, including helper reuse for Candidate A and GRC9 C_OS/C_PC reference construction. This correction repairs only the generic mapped fixture. GRC9 reference/carrier reconciliation and its runtime gates remain required.",
+  "claim_ceiling": "Bounded specification/vector correction, not runtime support-set acceptance, general parent-DAG conformance or GRC9 execution.",
+  "record_digest": "56f1d4378eb8273d261b76aff3b128c526fb5064fa3bceace5c73fbb1f9f9903"
+}

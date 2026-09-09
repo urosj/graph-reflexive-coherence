@@ -73,6 +73,29 @@ RESOURCE_ACCEPTANCE = PHASE + "tranche-3/P9-3.3-AcceptanceRecord.json"
 RESOURCE_ACCEPTANCE_DIGEST = "3e71b580090ba1712dbec4a1718653c2057e4062200f3367ba0c1ed7adeae6fa"
 NUMERICAL_ACCEPTANCE = PHASE + "tranche-3/P9-3.4-AcceptanceRecord.json"
 NUMERICAL_ACCEPTANCE_DIGEST = "0626df41be15fdb2d5a5a7b4fa6f8be52693f8d3ba40297ae98acbe334f480c1"
+PRESERVATION_ACCEPTANCE = PHASE + "tranche-3/P9-3.5-AcceptanceRecord.json"
+PRESERVATION_ACCEPTANCE_DIGEST = "b866b4b5d9b8b7ecdf087fd6f2a6d879810ec19464a9d3368ddddaf4d2edf43b"
+REFERENCE_ACCEPTANCE = PHASE + "tranche-4/P9-4.1-AcceptanceRecord.json"
+REFERENCE_ACCEPTANCE_DIGEST = "ff07f5d71ad094d4c28f3fafdd0c0ca1d74f9f34f18678c8ff6909029b24358a"
+CURRENT_ACCEPTANCE = PHASE + "tranche-4/P9-4.2-AcceptanceRecord.json"
+CURRENT_ACCEPTANCE_DIGEST = "5ce39f22e2999ee6f375648263a5902f883866420b497822cbf7daaa6e043b43"
+CONTROLS_ACCEPTANCE = PHASE + "tranche-4/P9-4.3-AcceptanceRecord.json"
+CONTROLS_ACCEPTANCE_DIGEST = "b2834e343fc50fa447ca430475a064157d27b431e27eb64ee721ff52e66a6f15"
+OS_PASS_ACCEPTANCE = PHASE + "tranche-4/P9-4.4-AcceptanceRecord.json"
+OS_PASS_ACCEPTANCE_DIGEST = "37d61d733bf90b794e4c68f0b2d078f7d38b41aa3f4c0679457c24a3161ad074"
+OPERATIONS_ACCEPTANCE = PHASE + "tranche-4/P9-4.5-AcceptanceRecord.json"
+OPERATIONS_ACCEPTANCE_DIGEST = "b37b037f0baa0fe5e291c96deba0520933070077b8d5a6a64995fbca21b5e274"
+LIFECYCLE_BATCH = PHASE + "tranche-4/P9-4.7ab-AuthorizationRecord.json"
+LIFECYCLE_BATCH_DIGEST = "fe11cfd2db36a9e1a74301aeaf89e316a3e93e7d3f5ea9d5f1197e199ee27d6b"
+SPECIFICATION_CORRECTION = PHASE + "tranche-4/P9-4.7b-SpecificationCorrection.json"
+SPECIFICATION_CORRECTION_DIGEST = "56f1d4378eb8273d261b76aff3b128c526fb5064fa3bceace5c73fbb1f9f9903"
+CORRECTED_RELEASE_ID = "grcv4-spec-release-sha256:7b8b4d4e32e48fd35f70421cce7f547eebb21dd81389764061efe6e1a8c19886"
+CORRECTION_BUILDER = HERE + "build_mapped_vector_release.py"
+CORRECTED_SPECIFICATION_PATHS = {
+    "specs/README.md", "specs/grc-v4-conformance-vectors.json",
+    "specs/grc-v4-specification-release.json", "specs/grc-v4-specification-release.sha256",
+    INV + "scripts/build_grcv4_specification_vectors.py",
+}
 # Explicit user-authorized presentation maintenance after accepted P9-3.3
 # ce83d7a. Only these original -> presented Git blobs may differ from HEAD.
 # The run's /presentation binds the original repository revision and embedded
@@ -115,6 +138,12 @@ HANDOFF_PATHS = {
     HERE + "handoff/P9-G1-outputs.zip",
 }
 PATHS = {
+    # User-authorized P9-4.8 gate review only. This does not add runtime-ready
+    # leaves, editable runtime paths, or accepted profile support.
+    PHASE + "tranche-4/P9-4.8-Review.md",
+    PHASE + "tranche-4/P9-4.8-GateReview.json",
+    PHASE + "tranche-4/P9-4.8-Handoff.md",
+    HERE + "verify_p948_review.py",
     APPROVAL,
     POLICY,
     RECORD,
@@ -128,6 +157,16 @@ PATHS = {
     STAGE_ACCEPTANCE,
     RESOURCE_ACCEPTANCE,
     NUMERICAL_ACCEPTANCE,
+    PRESERVATION_ACCEPTANCE,
+    REFERENCE_ACCEPTANCE,
+    CURRENT_ACCEPTANCE,
+    CONTROLS_ACCEPTANCE,
+    OS_PASS_ACCEPTANCE,
+    OPERATIONS_ACCEPTANCE,
+    LIFECYCLE_BATCH,
+    SPECIFICATION_CORRECTION,
+    CORRECTION_BUILDER,
+    *CORRECTED_SPECIFICATION_PATHS,
     HERE + "phase9_implementation_policy.py",
     HERE + "audit_phase9_implementation.py",
     HERE + "test_phase9_g1.py",
@@ -190,7 +229,7 @@ def acceptance(root):
     """Recorded acceptance plus current source fidelity; not archive retrieval."""
     value = recorded_acceptance(root)
     for row in value["review_bindings"]:
-        if row["path"] not in PORTABLE_REVIEW_PATHS | PORTABLE_SOURCE_PATHS:
+        if row["path"] not in PORTABLE_REVIEW_PATHS | PORTABLE_SOURCE_PATHS | CORRECTED_SPECIFICATION_PATHS:
             prior.git_exact(root, BASELINE, row["path"])
     check_portable_source_amendments(root)
     check_portable_review_amendments(root)
@@ -517,6 +556,172 @@ def accepted_numerical_pressure(root):
     return value
 
 
+def accepted_preservation(root):
+    """Committed P9-3.5 acceptance opens only its dependency-ready successors."""
+    value = read(safe_path(root, PRESERVATION_ACCEPTANCE))
+    require(value["record_digest"] == digest_record(value) == PRESERVATION_ACCEPTANCE_DIGEST,
+            "untrusted prestate preservation acceptance")
+    require(value["schema"] == "phase9_prestate_preservation_acceptance_v1"
+            and value["status"] == "accepted_by_user"
+            and value["release_id"] == prior.RELEASE_ID
+            and value["predecessor_record_digest"] == NUMERICAL_ACCEPTANCE_DIGEST
+            and value["accepted_iterations"] == ["P9-3.5"]
+            and value["accepted_generic_runtime_support"] == []
+            and value["admitted_specialization_support_sets"] == [],
+            "invalid prestate preservation acceptance scope")
+    prior.ancestor(root, value["baseline_commit"])
+    for row in value["evidence_bindings"]:
+        require(sha(git(root, "show", f"{value['baseline_commit']}:{row['path']}"))
+                == row["sha256"], "accepted prestate preservation subject changed")
+    return value
+
+
+def accepted_reference_transport(root):
+    """Committed P9-4.1 acceptance opens only its dependency-ready successors."""
+    value = read(safe_path(root, REFERENCE_ACCEPTANCE))
+    require(value["record_digest"] == digest_record(value) == REFERENCE_ACCEPTANCE_DIGEST,
+            "untrusted C reference transport acceptance")
+    require(value["schema"] == "phase9_c_reference_transport_acceptance_v1"
+            and value["status"] == "accepted_by_user"
+            and value["release_id"] == prior.RELEASE_ID
+            and value["predecessor_record_digest"] == PRESERVATION_ACCEPTANCE_DIGEST
+            and value["accepted_iterations"] == ["P9-4.1"]
+            and value["accepted_generic_runtime_support"] == []
+            and value["admitted_specialization_support_sets"] == [],
+            "invalid C reference transport acceptance scope")
+    prior.ancestor(root, value["baseline_commit"])
+    for row in value["evidence_bindings"]:
+        require(sha(git(root, "show", f"{value['baseline_commit']}:{row['path']}"))
+                == row["sha256"], "accepted C reference transport subject changed")
+    return value
+
+
+def accepted_c_current(root):
+    """Committed P9-4.2 acceptance opens only its dependency-ready successors."""
+    value = read(safe_path(root, CURRENT_ACCEPTANCE))
+    require(value["record_digest"] == digest_record(value) == CURRENT_ACCEPTANCE_DIGEST,
+            "untrusted C stage current acceptance")
+    require(value["schema"] == "phase9_c_stage_current_acceptance_v1"
+            and value["status"] == "accepted_by_user"
+            and value["release_id"] == prior.RELEASE_ID
+            and value["predecessor_record_digest"] == REFERENCE_ACCEPTANCE_DIGEST
+            and value["accepted_iterations"] == ["P9-4.2"]
+            and value["accepted_generic_runtime_support"] == []
+            and value["admitted_specialization_support_sets"] == [],
+            "invalid C stage current acceptance scope")
+    prior.ancestor(root, value["baseline_commit"])
+    for row in value["evidence_bindings"]:
+        require(sha(git(root, "show", f"{value['baseline_commit']}:{row['path']}"))
+                == row["sha256"], "accepted C stage current subject changed")
+    return value
+
+
+def accepted_c_controls(root):
+    """Committed P9-4.3 acceptance opens only its dependency-ready successors."""
+    value = read(safe_path(root, CONTROLS_ACCEPTANCE))
+    require(value["record_digest"] == digest_record(value) == CONTROLS_ACCEPTANCE_DIGEST,
+            "untrusted C control derivative acceptance")
+    require(value["schema"] == "phase9_c_control_derivative_acceptance_v1"
+            and value["status"] == "accepted_by_user"
+            and value["release_id"] == prior.RELEASE_ID
+            and value["predecessor_record_digest"] == CURRENT_ACCEPTANCE_DIGEST
+            and value["accepted_iterations"] == ["P9-4.3"]
+            and value["accepted_generic_runtime_support"] == []
+            and value["admitted_specialization_support_sets"] == [],
+            "invalid C control derivative acceptance scope")
+    prior.ancestor(root, value["baseline_commit"])
+    for row in value["evidence_bindings"]:
+        require(sha(git(root, "show", f"{value['baseline_commit']}:{row['path']}"))
+                == row["sha256"], "accepted C control derivative subject changed")
+    return value
+
+def accepted_os_pass(root):
+    """Committed P9-4.4 acceptance opens only its dependency-ready successors."""
+    value = read(safe_path(root, OS_PASS_ACCEPTANCE))
+    require(value["record_digest"] == digest_record(value) == OS_PASS_ACCEPTANCE_DIGEST,
+            "untrusted C OS pass acceptance")
+    require(value["schema"] == "phase9_c_os_pass_acceptance_v1"
+            and value["status"] == "accepted_by_user"
+            and value["release_id"] == prior.RELEASE_ID
+            and value["predecessor_record_digest"] == CONTROLS_ACCEPTANCE_DIGEST
+            and value["accepted_iterations"] == ["P9-4.4"]
+            and value["accepted_generic_runtime_support"] == []
+            and value["admitted_specialization_support_sets"] == [],
+            "invalid C OS pass acceptance scope")
+    prior.ancestor(root, value["baseline_commit"])
+    for row in value["evidence_bindings"]:
+        require(sha(git(root, "show", f"{value['baseline_commit']}:{row['path']}"))
+                == row["sha256"], "accepted C OS pass subject changed")
+    return value
+
+
+def accepted_os_operations(root):
+    """Committed P9-4.5 acceptance opens only its dependency-ready successors."""
+    value = read(safe_path(root, OPERATIONS_ACCEPTANCE))
+    require(value["record_digest"] == digest_record(value) == OPERATIONS_ACCEPTANCE_DIGEST,
+            "untrusted C OS operations acceptance")
+    require(value["schema"] == "phase9_c_os_operations_acceptance_v1"
+            and value["status"] == "accepted_by_user"
+            and value["release_id"] == prior.RELEASE_ID
+            and value["predecessor_record_digest"] == OS_PASS_ACCEPTANCE_DIGEST
+            and value["accepted_iterations"] == ["P9-4.5"]
+            and value["accepted_generic_runtime_support"] == []
+            and value["admitted_specialization_support_sets"] == [],
+            "invalid C OS operations acceptance scope")
+    prior.ancestor(root, value["baseline_commit"])
+    for row in value["evidence_bindings"]:
+        require(sha(git(root, "show", f"{value['baseline_commit']}:{row['path']}"))
+                == row["sha256"], "accepted C OS operations subject changed")
+    return value
+
+
+def lifecycle_batch_authorization(root):
+    """Ordered development grant with accepted, bounded audit-correction closure."""
+    value = read(safe_path(root, LIFECYCLE_BATCH))
+    require(value["record_digest"] == digest_record(value) == LIFECYCLE_BATCH_DIGEST,
+            "untrusted C OS lifecycle batch authorization")
+    require(value["schema"] == "phase9_lifecycle_batch_authorization_v1"
+            and value["status"] == "user_authorized_batch_accepted_after_correction"
+            and value["release_id"] == prior.RELEASE_ID
+            and value["predecessor_record_digest"] == OPERATIONS_ACCEPTANCE_DIGEST
+            and value["audit_status"] == "findings_closed_after_correction"
+            and value["accepted_iterations"] == ["P9-4.6", "P9-4.7a", "P9-4.7b"]
+            and value["current_release_id"] == CORRECTED_RELEASE_ID
+            and value["execution_order"] == ["P9-4.7a", "P9-4.7b"]
+            and value["combined_audit_scope"] == ["P9-4.6", "P9-4.7a", "P9-4.7b"]
+            and value["accepted_generic_runtime_support"] == []
+            and value["admitted_specialization_support_sets"] == [],
+            "invalid C OS lifecycle batch scope")
+    prior.ancestor(root, value["baseline_commit"])
+    for row in value["evidence_bindings"]:
+        require(sha(git(root, "show", f"{value['baseline_commit']}:{row['path']}"))
+                == row["sha256"], "committed lifecycle batch predecessor changed")
+    row = value["audit_response"]
+    require(sha(safe_path(root, row["path"]).read_bytes()) == row["sha256"],
+            "combined lifecycle audit response changed")
+    for row in value["acceptance_bindings"]:
+        require(sha(safe_path(root, row["path"]).read_bytes()) == row["sha256"],
+                "accepted lifecycle correction evidence changed")
+    return value
+
+
+def accepted_specification_correction(root):
+    """Exact bounded successor; historical G1/release decisions are unchanged."""
+    value = read(safe_path(root, SPECIFICATION_CORRECTION))
+    require(value["record_digest"] == digest_record(value) == SPECIFICATION_CORRECTION_DIGEST,
+            "untrusted mapped-vector specification correction")
+    require(value["predecessor_release_id"] == prior.RELEASE_ID
+            and value["status"] == "accepted_by_user_for_implementation"
+            and value["paper_or_equation_change"] is False
+            and value["schema_change"] is False,
+            "invalid mapped-vector specification correction scope")
+    spec = importlib.util.spec_from_file_location("mapped_vector_release", root / CORRECTION_BUILDER)
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    module.verify(root, CORRECTED_RELEASE_ID)
+    return value
+
+
 def leaf_permissions(root):
     """Readiness from accepted dependencies, never inferred from completion."""
     accepted = {"P9-G1", *accepted_foundation(root)["accepted_iterations"],
@@ -527,7 +732,13 @@ def leaf_permissions(root):
                 *accepted_geometry(root)["accepted_iterations"],
                 *accepted_stages(root)["accepted_iterations"],
                 *accepted_resources(root)["accepted_iterations"],
-                *accepted_numerical_pressure(root)["accepted_iterations"]}
+                *accepted_numerical_pressure(root)["accepted_iterations"],
+                *accepted_preservation(root)["accepted_iterations"],
+                *accepted_reference_transport(root)["accepted_iterations"],
+                *accepted_c_current(root)["accepted_iterations"],
+                *accepted_c_controls(root)["accepted_iterations"],
+                *accepted_os_pass(root)["accepted_iterations"],
+                *accepted_os_operations(root)["accepted_iterations"]}
     support = read(
         safe_path(root, PHASE + "tranche-1/P9-1.4-SupportAndDependencies.json")
     )
@@ -540,6 +751,9 @@ def leaf_permissions(root):
         for r in support["dependency_edges"]
         if r["requires"] and set(r["requires"]) <= accepted
     )
+    # The user explicitly grouped these dependent leaves for one later audit.
+    # Preserve the accepted dependency set; add bounded execution permission.
+    ready = sorted(set(ready) | set(lifecycle_batch_authorization(root)["authorized_iterations"]))
     owners = {}
     for module in ownership["modules"]:
         leaves = {
@@ -558,6 +772,22 @@ def leaf_permissions(root):
             # P9-3.3 explicitly owns the provisional one-resource-write boundary
             # in the frozen checklist; the coarse step group omits this leaf.
             leaves.add("P9-3.3")
+            # P9-4.4 explicitly composes the OS pass, single resource write
+            # and final-C reconstruction in this provisional pipeline owner.
+            leaves.add("P9-4.4")
+        if module["module_id"] in {
+            "grc_v4_lifecycle", "grc_v4_candidate_c", "grc_v4_geometry", "grc_v4_transport",
+        }:
+            # P9-4.5's committed positive/atomic-negative vectors need the
+            # existing sole lifecycle commit owner and typed numerical failure
+            # provenance. This does not open later lifecycle operations.
+            leaves.add("P9-4.5")
+        if module["module_id"] in {"grc_v4_lifecycle", "grc_v4_codec"}:
+            # P9-4.6 owns the C_OS lifecycle receiver and closed snapshot codec.
+            leaves.add("P9-4.6")
+        if module["module_id"] in {"grc_v4", "grc_v4_codec", "grc_v4_state"}:
+            # Mapped-event records, snapshot references and result ownership.
+            leaves.add("P9-4.7b")
         for field in ["path", "test_path"]:
             owners[module[field]] = leaves
     for name in [
@@ -565,9 +795,12 @@ def leaf_permissions(root):
         "tests/models/grcv4_reference_oracles.py",
     ]:
         owners[name] = {"P9-2.5"}
+    # The successor updates shared fixture binding and historical inspection.
+    owners["tests/models/grcv4_reference_oracles.py"].add("P9-4.7b")
+    owners["tests/models/grcv4_conformance_harness.py"].add("P9-4.7b")
     for row in read(safe_path(root, APPROVAL))["runtime_targets"]:
         if row["path"].startswith("src/pygrc/models/grc_v4_assets/"):
-            owners[row["path"]] = {"P9-2.2", "P9-2.6"}
+            owners[row["path"]] = {"P9-2.2", "P9-2.6", "P9-4.7b"}
         elif row["operation"] == "additive_integration":
             # P9-2.2 owns installed identity assets and their reviewed extras.
             # Facade exports remain with the later common-interface leaf.
@@ -677,6 +910,10 @@ def work_entries(root, approval):
                 PHASE + f"tranche-{tranche}/{leaf}-ExecutionRecord.json",
                 PHASE + f"tranche-{tranche}/{leaf}-Review.md",
             }
+            # The post-acceptance P9-4.3 audit needs a separate index so its
+            # accepted review/execution bindings remain reconstructible intact.
+            if leaf in {"P9-4.3", "P9-4.6"}:
+                records.add(PHASE + "tranche-4/" + leaf + "-AuditFollowup.md")
             evidence = re.fullmatch(
                 re.escape(PHASE + f"evidence/{leaf}/")
                 + r"[A-Za-z0-9][A-Za-z0-9_-]{0,95}/([^/]+)",
@@ -784,6 +1021,7 @@ def current_boundary(root):
         actual_mode = "100755" if path.stat().st_mode & stat.S_IXUSR else "100644"
         require(actual_mode == mode, "frozen mode changed: " + name)
         frozen += 1
+    accepted_specification_correction(root)
     entries = set(
         filter(
             None,

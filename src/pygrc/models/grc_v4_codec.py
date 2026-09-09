@@ -24,10 +24,10 @@ JSONValue: TypeAlias = (
 
 RELEASE_ID = (
     "grcv4-spec-release-sha256:"
-    "9f4c8fe5b57b1c477d834a3e4dae3f98a2b18c70e6e7f598e3c9652170c8645f"
+    "7b8b4d4e32e48fd35f70421cce7f547eebb21dd81389764061efe6e1a8c19886"
 )
 _ASSET_PACKAGE = "pygrc.models.grc_v4_assets"
-_INDEX_SHA256 = "c1ac9d8d3bb924f29b775bd9863a33a454da41e98c57ef0b8bb3c24171fafc9f"
+_INDEX_SHA256 = "0ec015d67b2c44eeca20748c16139f6fd743ec21c6de02a10ae4ba40a0cc9d7c"
 
 
 class V4DependencyError(RuntimeError):
@@ -52,6 +52,97 @@ class V4DecodeShapeError(V4WireError):
 
 class V4IdentityError(ValueError):
     """An identity-bearing payload and a supplied identifier disagree."""
+
+
+def cos_snapshot_payload(value: object) -> dict[str, JSONValue]:
+    """Closed implementation envelope around the frozen V4 identity payloads.
+
+    The release names grcv4-snapshot-v1 and freezes its constituent preimages,
+    but supplies no top-level snapshot schema. This explicit layout marker
+    limits decoding to this C_OS receiver; it is not a new release schema or
+    permission to restore arbitrary profiles. Numerical/ledger admission is
+    performed by the lifecycle owner, after this defensive wire copy.
+    """
+    data = _copy_json(value, set())
+    keys = {
+        "schema_version",
+        "model_family",
+        "implementation_layout_id",
+        "reference",
+        "scientific_state",
+        "scientific_state_digest",
+        "reset",
+        "reset_digest",
+        "receipt_ledger",
+        "commit_records",
+        "lifecycle",
+        "lifecycle_digest",
+    }
+    extended = (
+        isinstance(data, dict)
+        and data.get("implementation_layout_id") == "pygrc-c-os-snapshot-v2"
+    )
+    if extended:
+        keys |= {"reference_registry", "transition_records"}
+    if not isinstance(data, dict) or set(data) != keys:
+        raise V4SchemaError("expected the complete closed C_OS snapshot envelope")
+    if (
+        data["schema_version"],
+        data["model_family"],
+        data["implementation_layout_id"],
+    ) != (
+        "grcv4-snapshot-v1",
+        "GRCV4",
+        "pygrc-c-os-snapshot-v2" if extended else "pygrc-c-os-snapshot-v1",
+    ):
+        raise V4SchemaError("unsupported snapshot family, version or layout")
+    for field, schema in (
+        ("scientific_state", "scientific_state_payload"),
+        ("reset", "grcv4_reset_payload"),
+        ("lifecycle", "lifecycle_envelope_payload"),
+    ):
+        data[field] = validate_payload(schema, data[field])
+    if not isinstance(data["reference"], dict):
+        raise V4SchemaError("snapshot requires embedded reference content")
+    if not isinstance(data["receipt_ledger"], list) or not isinstance(
+        data["commit_records"], list
+    ):
+        raise V4SchemaError("snapshot requires ordered receipt and commit arrays")
+    if extended:
+        if not isinstance(data["reference_registry"], list) or not isinstance(
+            data["transition_records"], list
+        ):
+            raise V4SchemaError(
+                "snapshot requires ordered reference/transition archives"
+            )
+        for row in data["transition_records"]:
+            if not isinstance(row, dict) or set(row) != {
+                "commit_id",
+                "request",
+                "source",
+                "source_reset",
+                "target",
+                "target_reset",
+            }:
+                raise V4SchemaError(
+                    "expected complete crossing reconstruction preimages"
+                )
+            for field, schema in (
+                ("source", "scientific_state_payload"),
+                ("target", "scientific_state_payload"),
+                ("source_reset", "grcv4_reset_payload"),
+                ("target_reset", "grcv4_reset_payload"),
+            ):
+                row[field] = validate_payload(schema, row[field])
+            if not isinstance(row["request"], dict):
+                raise V4SchemaError("crossing archive requires its request declaration")
+    for record in data["commit_records"]:
+        if not isinstance(record, dict) or set(record) != {"commit_id", "payload"}:
+            raise V4SchemaError("expected a commit ID and its complete preimage")
+        record["payload"] = validate_payload("commit_payload", record["payload"])
+        if payload_identity("commit_payload", record["payload"]) != record["commit_id"]:
+            raise V4IdentityError("commit ID does not match its complete preimage")
+    return data
 
 
 def _dependency(name: str) -> ModuleType:
@@ -154,10 +245,15 @@ def decode_json(data: bytes | str) -> JSONValue:
         raise V4WireError("wire input must be UTF-8 bytes or text")
     try:
         text = data.decode("utf-8") if isinstance(data, bytes) else data
-        return json_value(json.loads(
-            text, object_pairs_hook=_pairs, parse_int=_integer,
-            parse_float=_floating, parse_constant=_constant,
-        ))
+        return json_value(
+            json.loads(
+                text,
+                object_pairs_hook=_pairs,
+                parse_int=_integer,
+                parse_float=_floating,
+                parse_constant=_constant,
+            )
+        )
     except (ValueError, UnicodeError, RecursionError) as exc:
         if isinstance(exc, V4WireError):
             raise
@@ -195,10 +291,15 @@ def decode_canonical_json(data: bytes | str) -> JSONValue:
     try:
         text = data.decode("utf-8") if isinstance(data, bytes) else data
         raw = text.encode("utf-8")
-        value = json_value(json.loads(
-            text, object_pairs_hook=_pairs, parse_int=_canonical_integer,
-            parse_float=_floating, parse_constant=_constant,
-        ))
+        value = json_value(
+            json.loads(
+                text,
+                object_pairs_hook=_pairs,
+                parse_int=_canonical_integer,
+                parse_float=_floating,
+                parse_constant=_constant,
+            )
+        )
         if canonical_json_bytes(value) != raw:
             raise V4WireError("not exact canonical binary64 JSON")
         return value
@@ -229,9 +330,10 @@ def load_contract_schema() -> dict[str, JSONValue]:
         if manifest["release_id"] != RELEASE_ID:
             raise V4AssetError("packaged manifest release mismatch")
         release_preimage = canonical_json_bytes(manifest["release_identity_payload"])
-        if RELEASE_ID != "grcv4-spec-release-sha256:" + sha256(
-            release_preimage
-        ).hexdigest():
+        if (
+            RELEASE_ID
+            != "grcv4-spec-release-sha256:" + sha256(release_preimage).hexdigest()
+        ):
             raise V4AssetError("release preimage identity mismatch")
         schema = decode_json(loaded["grc-v4-contract-schema.json"])
         if not isinstance(schema, dict):
@@ -278,7 +380,9 @@ def validate_payload(schema_ref: str, value: object) -> dict[str, JSONValue]:
 
 
 def decode_record_payload(
-    schema_ref: str, data: bytes | str, *,
+    schema_ref: str,
+    data: bytes | str,
+    *,
     encoding: Literal["configuration", "canonical"] = "configuration",
 ) -> dict[str, JSONValue]:
     """Decode the generic request transport shapes owned by P9-2.3.
@@ -291,11 +395,19 @@ def decode_record_payload(
     """
     if type(schema_ref) is not str:
         raise TypeError("request schema selector must be a string")
-    if schema_ref not in ("step_request_input", "migration_request"):
+    if schema_ref not in (
+        "step_request_input",
+        "migration_request",
+        "mapped_topology_event_request",
+    ):
         raise V4SchemaError("unsupported generic request transport schema")
     if type(encoding) is not str or encoding not in ("configuration", "canonical"):
         raise TypeError("encoding must select configuration or canonical")
-    value = decode_json(data) if encoding == "configuration" else decode_canonical_json(data)
+    value = (
+        decode_json(data)
+        if encoding == "configuration"
+        else decode_canonical_json(data)
+    )
     try:
         return validate_payload(schema_ref, value)
     except V4SchemaError as exc:
@@ -335,9 +447,15 @@ _IDENTITY_PREFIXES = {
     **{
         name + "_receipt_identity_payload": "grc-receipt-sha256"
         for name in (
-            "topology_event", "step_commit", "reset", "rebase",
-            "profile_migration", "charge", "history_disposition",
-            "legacy_compatibility", "failure",
+            "topology_event",
+            "step_commit",
+            "reset",
+            "rebase",
+            "profile_migration",
+            "charge",
+            "history_disposition",
+            "legacy_compatibility",
+            "failure",
         )
     },
 }
@@ -351,9 +469,9 @@ def payload_identity(
     if name not in _IDENTITY_PREFIXES:
         raise V4SchemaError("definition is not an identity preimage")
     data = validate_payload(name, value)
-    identifier = _IDENTITY_PREFIXES[name] + ":" + sha256(
-        canonical_json_bytes(data)
-    ).hexdigest()
+    identifier = (
+        _IDENTITY_PREFIXES[name] + ":" + sha256(canonical_json_bytes(data)).hexdigest()
+    )
     if expected is not None and identifier != expected:
         raise V4IdentityError(f"{name}: supplied identity does not match payload")
     return identifier

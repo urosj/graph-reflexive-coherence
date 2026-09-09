@@ -1,0 +1,44 @@
+{
+  "schema": "phase9_c_control_derivative_acceptance_v1",
+  "status": "accepted_by_user",
+  "baseline_commit": "4a3a7ee10e60cc2ddb274f868d8d1177b07b431f",
+  "release_id": "grcv4-spec-release-sha256:9f4c8fe5b57b1c477d834a3e4dae3f98a2b18c70e6e7f598e3c9652170c8645f",
+  "predecessor_record_digest": "5ce39f22e2999ee6f375648263a5902f883866420b497822cbf7daaa6e043b43",
+  "accepted_iterations": [
+    "P9-4.3"
+  ],
+  "acceptance_basis": "User accepted and committed P9-4.3, then accepted and committed its saturation-oracle audit follow-up at 4a3a7ee10e60cc2ddb274f868d8d1177b07b431f, and authorized P9-4.4. Original validation-time dispositions and numerical limits remain unchanged.",
+  "evidence_bindings": [
+    {
+      "path": "implementation/phase-9-grcv4/tranche-4/P9-4.3-Review.md",
+      "sha256": "802dc0ae9092bbcbf420da465799ae9091436861ffedc0111894d52bed61c2cd"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-4/P9-4.3-ExecutionRecord.json",
+      "sha256": "72c252e103407ab23ce30f2d8080176761f9c2fbb4aa4179597948e5f085c046"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-4.3/validation/run.json",
+      "sha256": "4af569a96d7397dcb03eef822209f60e3e3592a896d67a40fc363d7b4492ca3a"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-4/P9-4.3-AuditFollowup.md",
+      "sha256": "fbd03f05fa038e7ae384395e55ee73a272f1710541e99e8c064a708cb2db8392"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-4.3/audit-followup/inputs.json",
+      "sha256": "2c14c7966b8fa8e424d1c0a1fae151fcc525191fabb0954f7b055faa1c3fefd0"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-4.3/audit-followup/run.json",
+      "sha256": "567e73099b89cd10ef18aafb997523470a97542426bf80035af18e7367bb51af"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/runtime/RuntimeWorkManifest.json",
+      "sha256": "a26d4fcefc5c886c50d4fd431bf545fceea53e45105ab07bbae3b7b4ed0e0212"
+    }
+  ],
+  "accepted_generic_runtime_support": [],
+  "admitted_specialization_support_sets": [],
+  "record_digest": "b2834e343fc50fa447ca430475a064157d27b431e27eb64ee721ff52e66a6f15"
+}

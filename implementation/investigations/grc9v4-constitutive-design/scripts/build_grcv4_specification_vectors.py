@@ -999,6 +999,26 @@ def persistent_expansion_vector(
     }
 
 
+def mapped_runtime_params(weights: dict[str, float]) -> dict[str, Any]:
+    """Complete binary64-admissible references for the generic mapped fixture."""
+    params = resolved_params(weights)
+    size = len(weights)
+    params["geometry"]["K4_base_digest"] = wrapped_digest(
+        "grcv4-k4-sha256", "grcv4-k4-identity-v1", "K4_base",
+        [[int(i == j) for j in range(size)] for i in range(size)],
+    )
+    params["solver"].update(absolute_tolerance=2**-40, relative_tolerance=2**-40)
+    return params
+
+
+def mapped_orientation(graph: dict[str, Any]) -> str:
+    return identity("grcv4-orientation-sha256", {
+        "descriptor_version": "grcv4-ordered-outward-incidence-v1",
+        "graph": graph, "positive_flux": "tail_to_head",
+        "incidence_tail": 1, "incidence_head": -1,
+    })
+
+
 def build() -> dict[str, Any]:
     source_weights = {f"old-{port}": 1 for port in range(1, 10)}
     source_params = resolved_params(source_weights)
@@ -1620,7 +1640,7 @@ def build() -> dict[str, Any]:
         ],
     }
     generic_source_graph_id = identity("grc-graph-sha256", generic_source_graph)
-    generic_source_params = resolved_params({"e-uv": 1})
+    generic_source_params = mapped_runtime_params({"e-uv": 1})
     generic_source_params_id = identity("grcv4-params-sha256", generic_source_params)
     generic_source_profile_payload = profile_payload(generic_source_params_id)
     generic_source_profile_id = identity(
@@ -1631,7 +1651,7 @@ def build() -> dict[str, Any]:
         "schema_version": "grcv4-reset-baseline-v1",
         "active_model_identity": generic_source_profile_id,
         "graph_digest": generic_source_graph_id,
-        "orientation_identity": "tail_to_head_edge_id_order_v1",
+        "orientation_identity": mapped_orientation(generic_source_graph),
         "authoritative": generic_source_authoritative,
         "Q_target": 3,
         "context_contract_id": "constant_zero_context_v1",
@@ -1643,7 +1663,7 @@ def build() -> dict[str, Any]:
         "schema_version": "grcv4-scientific-state-v1",
         "active_model_identity": generic_source_profile_id,
         "graph_digest": generic_source_graph_id,
-        "orientation_identity": "tail_to_head_edge_id_order_v1",
+        "orientation_identity": mapped_orientation(generic_source_graph),
         "step_index": 0,
         "time": 0,
         "authoritative": generic_source_authoritative,
@@ -1664,7 +1684,7 @@ def build() -> dict[str, Any]:
         ],
     }
     generic_target_graph_id = identity("grc-graph-sha256", generic_target_graph)
-    generic_target_params = resolved_params({"e-uv": 1, "e-vw": 2})
+    generic_target_params = mapped_runtime_params({"e-uv": 1, "e-vw": 2})
     generic_target_params_id = identity("grcv4-params-sha256", generic_target_params)
     generic_target_profile_payload = profile_payload(generic_target_params_id)
     generic_target_profile_id = identity(
@@ -1718,6 +1738,19 @@ def build() -> dict[str, Any]:
                 "resource_transform": generic_transform,
                 "history_policy": generic_history_bundle,
                 "metadata": {"note": "excluded_from_event_identity"},
+            },
+            "runtime_inputs": {
+                "source_graph": generic_source_graph,
+                "source_params": generic_source_params,
+                "source_profile": generic_source_profile_payload,
+                "source_K4_base": [[1]],
+                "source_reference_edge_weights": {"e-uv": 1},
+                "source_reset": generic_source_reset_payload,
+                "source_state": generic_source_state_payload,
+                "target_params": generic_target_params,
+                "target_profile": generic_target_profile_payload,
+                "target_K4_base": [[1, 0], [0, 1]],
+                "target_reference_edge_weights": {"e-uv": 1, "e-vw": 2},
             },
             "event_identity_payload": mapped_event_payload,
             "event_identity_canonical_jcs_utf8": jcs(mapped_event_payload),

@@ -1,0 +1,305 @@
+{
+  "schema": "phase9_leaf_run_v1",
+  "iteration_id": "P9-4.1",
+  "source": {
+    "base_commit": "2e903981ff84057dacf685b940ba0b2e08ea7634",
+    "scopes": [
+      "src",
+      "tests",
+      "specs",
+      "pyproject.toml",
+      "uv.lock",
+      "implementation/investigations/grc9v4-constitutive-design/drafts/2026-09-GRC-V4.md"
+    ],
+    "overrides_sha256": {
+      "src/pygrc/models/grc_v4_candidate_c.py": "d91ac25fb0d91cd62c33d4c3f07b78e435c111d18cdccf4539abe7d01bfafe62",
+      "tests/models/test_grc_v4_candidate_c.py": "775cbf41ea40d2cfe2a7af53f7daf2965f8cb4b3327bdd413e3c716ffca0760c"
+    },
+    "manifest_sha256": "9fd00cb5bb49be56fbd01bdc3c570a4be9e46bacdc146baf824dba70790b1fd4",
+    "file_count": 436,
+    "reconstruction": "Recover the two override files from the Git commit containing this record (or a later commit with matching hashes), overlay on base_commit, and verify the manifest hash. No uncommitted source blob is preserved separately."
+  },
+  "python": "3.12.3",
+  "platform": "Linux-5.15.167-0515167-generic-x86_64-with-glibc2.39",
+  "dependencies": [
+    "Jinja2==3.1.6",
+    "MarkupSafe==3.0.3",
+    "PyYAML==6.0.3",
+    "Pygments==2.20.0",
+    "ast_serialize==0.9.0",
+    "asttokens==3.0.1",
+    "attrs==26.1.0",
+    "build==1.6.0",
+    "contourpy==1.3.3",
+    "cycler==0.12.1",
+    "decorator==5.3.0",
+    "executing==2.2.1",
+    "fonttools==4.63.0",
+    "ipython==9.13.0",
+    "ipython_pygments_lexers==1.1.1",
+    "jedi==0.20.0",
+    "jsonpickle==4.1.1",
+    "jsonschema-specifications==2025.9.1",
+    "jsonschema==4.26.0",
+    "kiwisolver==1.5.0",
+    "librt==0.15.0",
+    "matplotlib-inline==0.2.2",
+    "matplotlib==3.10.9",
+    "mypy==2.1.0",
+    "mypy_extensions==1.1.0",
+    "networkx==3.6.1",
+    "numpy==2.4.6",
+    "packaging==26.2",
+    "parso==0.8.7",
+    "pathspec==1.1.1",
+    "pexpect==4.9.0",
+    "pillow==12.2.0",
+    "pip==24.0",
+    "prompt_toolkit==3.0.52",
+    "psutil==7.2.2",
+    "ptyprocess==0.7.0",
+    "pure_eval==0.2.3",
+    "pygrc==0.1",
+    "pygrc==0.1",
+    "pyparsing==3.3.2",
+    "pyproject_hooks==1.2.0",
+    "python-dateutil==2.9.0.post0",
+    "pyvis==0.3.2",
+    "referencing==0.37.0",
+    "rfc8785==0.1.4",
+    "rpds-py==2026.6.3",
+    "ruff==0.15.16",
+    "setuptools==84.0.0",
+    "six==1.17.0",
+    "stack-data==0.6.3",
+    "traitlets==5.15.0",
+    "typing_extensions==4.16.0",
+    "wcwidth==0.7.0",
+    "wheel==0.48.0"
+  ],
+  "environment": {
+    "GRCV4_PACKAGE_TESTS": "1",
+    "GRCV4_WHEELHOUSE": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/generated/p935-wheelhouse",
+    "PYTHONHASHSEED": "941",
+    "OPENBLAS_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1"
+  },
+  "wheel_requirements": [
+    "asttokens-3.0.1-py3-none-any.whl",
+    "attrs-26.1.0-py3-none-any.whl",
+    "contourpy-1.3.3-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+    "cycler-0.12.1-py3-none-any.whl",
+    "decorator-5.3.0-py3-none-any.whl",
+    "executing-2.2.1-py2.py3-none-any.whl",
+    "fonttools-4.63.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+    "ipython-9.13.0-py3-none-any.whl",
+    "ipython_pygments_lexers-1.1.1-py3-none-any.whl",
+    "jedi-0.20.0-py2.py3-none-any.whl",
+    "jinja2-3.1.6-py3-none-any.whl",
+    "jsonpickle-4.1.1-py3-none-any.whl",
+    "jsonschema-4.26.0-py3-none-any.whl",
+    "jsonschema_specifications-2025.9.1-py3-none-any.whl",
+    "kiwisolver-1.5.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+    "markupsafe-3.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+    "matplotlib-3.10.9-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+    "matplotlib_inline-0.2.2-py3-none-any.whl",
+    "networkx-3.6.1-py3-none-any.whl",
+    "numpy-2.4.6-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+    "packaging-26.2-py3-none-any.whl",
+    "parso-0.8.7-py2.py3-none-any.whl",
+    "pexpect-4.9.0-py2.py3-none-any.whl",
+    "pillow-12.2.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+    "prompt_toolkit-3.0.52-py3-none-any.whl",
+    "psutil-7.2.2-cp36-abi3-manylinux2010_x86_64.manylinux_2_12_x86_64.manylinux_2_28_x86_64.whl",
+    "ptyprocess-0.7.0-py2.py3-none-any.whl",
+    "pure_eval-0.2.3-py3-none-any.whl",
+    "pygments-2.20.0-py3-none-any.whl",
+    "pyparsing-3.3.2-py3-none-any.whl",
+    "python_dateutil-2.9.0.post0-py2.py3-none-any.whl",
+    "pyvis-0.3.2-py3-none-any.whl",
+    "pyyaml-6.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+    "referencing-0.37.0-py3-none-any.whl",
+    "rfc8785-0.1.4-py3-none-any.whl",
+    "rpds_py-2026.6.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+    "setuptools-84.0.0-py3-none-any.whl",
+    "six-1.17.0-py2.py3-none-any.whl",
+    "stack_data-0.6.3-py3-none-any.whl",
+    "traitlets-5.15.0-py3-none-any.whl",
+    "typing_extensions-4.16.0-py3-none-any.whl",
+    "wcwidth-0.7.0-py3-none-any.whl",
+    "wheel-0.48.0-py3-none-any.whl"
+  ],
+  "replay_command": [
+    ".venv/bin/python",
+    "-m",
+    "tests.models.test_grc_v4_candidate_c",
+    "--capture-p941",
+    "<fresh-repository-relative-generated-directory>"
+  ],
+  "claim_ceiling": "Reference transport constructors only; no selector, baseline flux, solve, beat, lifecycle or runtime conformance.",
+  "status": "verified_after_capture_precondition_correction",
+  "full_suite_run": {
+    "status": "failed",
+    "started_utc": "2026-09-08T04:29:46.115506+00:00",
+    "completed_utc": "2026-09-08T05:02:44.316664+00:00",
+    "coverage": {
+      "required_count": 1695,
+      "discovered_count": 1695,
+      "passed": false,
+      "missing_discovery": [],
+      "unreviewed_discovery": [],
+      "duplicate_discovery": [],
+      "missing_execution": [],
+      "unexpected_execution": [],
+      "duplicate_execution": [],
+      "nonpassing_execution": [
+        "tests.models.test_grc_v4_geometry.CaptureIntegrityTests.test_capture_rejects_missing_and_duplicate_discovery",
+        "tests.models.test_grc_v4_geometry.CaptureIntegrityTests.test_capture_resets_observations_in_same_process"
+      ]
+    },
+    "results": {
+      "tests_run": 1695,
+      "leaf_methods": 20,
+      "failures": 0,
+      "errors": 7,
+      "skips": 0,
+      "nonpassing_methods": [
+        {
+          "test": "tests.models.test_grc_v4_geometry.CaptureIntegrityTests.test_capture_rejects_missing_and_duplicate_discovery",
+          "status": "error",
+          "subtests": [
+            {
+              "test": "tests.models.test_grc_v4_geometry.CaptureIntegrityTests.test_capture_rejects_missing_and_duplicate_discovery (control='empty')",
+              "status": "error",
+              "exception_type": "ValueError",
+              "reason": "new source needs a tracked Git reconstruction preimage"
+            },
+            {
+              "test": "tests.models.test_grc_v4_geometry.CaptureIntegrityTests.test_capture_rejects_missing_and_duplicate_discovery (control='unrelated')",
+              "status": "error",
+              "exception_type": "ValueError",
+              "reason": "new source needs a tracked Git reconstruction preimage"
+            },
+            {
+              "test": "tests.models.test_grc_v4_geometry.CaptureIntegrityTests.test_capture_rejects_missing_and_duplicate_discovery (control='missing_numerical')",
+              "status": "error",
+              "exception_type": "ValueError",
+              "reason": "new source needs a tracked Git reconstruction preimage"
+            },
+            {
+              "test": "tests.models.test_grc_v4_geometry.CaptureIntegrityTests.test_capture_rejects_missing_and_duplicate_discovery (control='missing_installed')",
+              "status": "error",
+              "exception_type": "ValueError",
+              "reason": "new source needs a tracked Git reconstruction preimage"
+            },
+            {
+              "test": "tests.models.test_grc_v4_geometry.CaptureIntegrityTests.test_capture_rejects_missing_and_duplicate_discovery (control='duplicate')",
+              "status": "error",
+              "exception_type": "ValueError",
+              "reason": "new source needs a tracked Git reconstruction preimage"
+            },
+            {
+              "test": "tests.models.test_grc_v4_geometry.CaptureIntegrityTests.test_capture_rejects_missing_and_duplicate_discovery (control='unreviewed_extension')",
+              "status": "error",
+              "exception_type": "ValueError",
+              "reason": "new source needs a tracked Git reconstruction preimage"
+            }
+          ]
+        },
+        {
+          "test": "tests.models.test_grc_v4_geometry.CaptureIntegrityTests.test_capture_resets_observations_in_same_process",
+          "status": "error",
+          "exception_type": "ValueError",
+          "reason": "new source needs a tracked Git reconstruction preimage"
+        }
+      ],
+      "executed_ids_sha256": "f7c86198287b11ef7abfbe5099f0cb5af63c79aeed397f6268c8e27c7ff8d8ec",
+      "elapsed_seconds": 1978.065
+    },
+    "source_unchanged": true,
+    "initial_source_index_state": "The two new source files were untracked. The inherited capture self-tests require tracked Git reconstruction inputs; all other 1693 methods, including the 20 leaf methods, passed."
+  },
+  "focused_rerun": {
+    "schema": "phase9_capture_precondition_rerun_v1",
+    "precondition_correction": "Register the two new source files with git add --intent-to-add; no source content changes. Inherited capture self-tests require tracked reconstruction inputs.",
+    "source_overrides_sha256": {
+      "src/pygrc/models/grc_v4_candidate_c.py": "d91ac25fb0d91cd62c33d4c3f07b78e435c111d18cdccf4539abe7d01bfafe62",
+      "tests/models/test_grc_v4_candidate_c.py": "775cbf41ea40d2cfe2a7af53f7daf2965f8cb4b3327bdd413e3c716ffca0760c"
+    },
+    "methods": [
+      "tests.models.test_grc_v4_geometry.CaptureIntegrityTests.test_capture_rejects_missing_and_duplicate_discovery",
+      "tests.models.test_grc_v4_geometry.CaptureIntegrityTests.test_capture_resets_observations_in_same_process"
+    ],
+    "results": [
+      {
+        "test": "tests.models.test_grc_v4_geometry.CaptureIntegrityTests.test_capture_rejects_missing_and_duplicate_discovery",
+        "status": "passed"
+      },
+      {
+        "test": "tests.models.test_grc_v4_geometry.CaptureIntegrityTests.test_capture_resets_observations_in_same_process",
+        "status": "passed"
+      }
+    ],
+    "tests_run": 2,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "elapsed_seconds": 1.245,
+    "output": "..\n----------------------------------------------------------------------\nRan 2 tests in 1.244s\n\nOK\n",
+    "source_unchanged": true,
+    "passed": true
+  },
+  "combined_result": {
+    "passed": true,
+    "distinct_methods_with_passing_observations": 1695,
+    "leaf_methods_passed": 20,
+    "source_content_changes_between_runs": false,
+    "single_clean_full_suite_run": false
+  },
+  "wheelhouse_sha256": {
+    "asttokens-3.0.1-py3-none-any.whl": "15a3ebc0f43c2d0a50eeafea25e19046c68398e487b9f1f5b517f7c0f40f976a",
+    "attrs-26.1.0-py3-none-any.whl": "c647aa4a12dfbad9333ca4e71fe62ddc36f4e63b2d260a37a8b83d2f043ac309",
+    "contourpy-1.3.3-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl": "4d00e655fcef08aba35ec9610536bfe90267d7ab5ba944f7032549c55a146da1",
+    "cycler-0.12.1-py3-none-any.whl": "85cef7cff222d8644161529808465972e51340599459b8ac3ccbac5a854e0d30",
+    "decorator-5.3.0-py3-none-any.whl": "f8c2d71ede92f073144ddd7f3e9fbbc3bd0f2f29522c9d75ee648d66553834f4",
+    "executing-2.2.1-py2.py3-none-any.whl": "760643d3452b4d777d295bb167ccc74c64a81df23fb5e08eff250c425a4b2017",
+    "fonttools-4.63.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl": "58dc6bb86a78d782f00f9190ca02c119cf5bbe2807536e361e18d42019f877d8",
+    "ipython-9.13.0-py3-none-any.whl": "57f9d4639e20818d328d287c7b549af3d05f12486ea8f2e7f73e52a36ec4d201",
+    "ipython_pygments_lexers-1.1.1-py3-none-any.whl": "a9462224a505ade19a605f71f8fa63c2048833ce50abc86768a0d81d876dc81c",
+    "jedi-0.20.0-py2.py3-none-any.whl": "7bdd9c2634f56713299976f4cbd59cb3fa92165cc5e05ea811fb253480728b67",
+    "jinja2-3.1.6-py3-none-any.whl": "85ece4451f492d0c13c5dd7c13a64681a86afae63a5f347908daf103ce6d2f67",
+    "jsonpickle-4.1.1-py3-none-any.whl": "bb141da6057898aa2438ff268362b126826c812a1721e31cf08a6e142910dc91",
+    "jsonschema-4.26.0-py3-none-any.whl": "d489f15263b8d200f8387e64b4c3a75f06629559fb73deb8fdfb525f2dab50ce",
+    "jsonschema_specifications-2025.9.1-py3-none-any.whl": "98802fee3a11ee76ecaca44429fda8a41bff98b00a0f2838151b113f210cc6fe",
+    "kiwisolver-1.5.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl": "bb5136fb5352d3f422df33f0c879a1b0c204004324150cc3b5e3c4f310c9049f",
+    "markupsafe-3.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl": "d6dd0be5b5b189d31db7cda48b91d7e0a9795f31430b7f271219ab30f1d3ac9d",
+    "matplotlib-3.10.9-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl": "ae20801130378b82d647ff5047c07316295b68dc054ca6b3c13519d0ea624285",
+    "matplotlib_inline-0.2.2-py3-none-any.whl": "3c821cf1c209f59fb2d2d64abbf5b23b67bcb2210d663f9918dd851c6da1fcf6",
+    "networkx-3.6.1-py3-none-any.whl": "d47fbf302e7d9cbbb9e2555a0d267983d2aa476bac30e90dfbe5669bd57f3762",
+    "numpy-2.4.6-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl": "90f9849678c75fe7afa2d348ac842c168b0a4d3d61919687216dfc547976d853",
+    "packaging-26.2-py3-none-any.whl": "5fc45236b9446107ff2415ce77c807cee2862cb6fac22b8a73826d0693b0980e",
+    "parso-0.8.7-py2.py3-none-any.whl": "a8926eb2a1b915486941fdbd31e86a4baf88fe8c210f25f2f35ecec5b574ca1c",
+    "pexpect-4.9.0-py2.py3-none-any.whl": "7236d1e080e4936be2dc3e326cec0af72acf9212a7e1d060210e70a47e253523",
+    "pillow-12.2.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl": "62f5409336adb0663b7caa0da5c7d9e7bdbaae9ce761d34669420c2a801b2780",
+    "prompt_toolkit-3.0.52-py3-none-any.whl": "9aac639a3bbd33284347de5ad8d68ecc044b91a762dc39b7c21095fcd6a19955",
+    "psutil-7.2.2-cp36-abi3-manylinux2010_x86_64.manylinux_2_12_x86_64.manylinux_2_28_x86_64.whl": "076a2d2f923fd4821644f5ba89f059523da90dc9014e85f8e45a5774ca5bc6f9",
+    "ptyprocess-0.7.0-py2.py3-none-any.whl": "4b41f3967fce3af57cc7e94b888626c18bf37a083e3651ca8feeb66d492fef35",
+    "pure_eval-0.2.3-py3-none-any.whl": "1db8e35b67b3d218d818ae653e27f06c3aa420901fa7b081ca98cbedc874e0d0",
+    "pygments-2.20.0-py3-none-any.whl": "81a9e26dd42fd28a23a2d169d86d7ac03b46e2f8b59ed4698fb4785f946d0176",
+    "pyparsing-3.3.2-py3-none-any.whl": "850ba148bd908d7e2411587e247a1e4f0327839c40e2e5e6d05a007ecc69911d",
+    "python_dateutil-2.9.0.post0-py2.py3-none-any.whl": "a8b2bc7bffae282281c8140a97d3aa9c14da0b136dfe83f850eea9a5f7470427",
+    "pyvis-0.3.2-py3-none-any.whl": "5720c4ca8161dc5d9ab352015723abb7a8bb8fb443edeb07f7a322db34a97555",
+    "pyyaml-6.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl": "ba1cc08a7ccde2d2ec775841541641e4548226580ab850948cbfda66a1befcdc",
+    "referencing-0.37.0-py3-none-any.whl": "381329a9f99628c9069361716891d34ad94af76e461dcb0335825aecc7692231",
+    "rfc8785-0.1.4-py3-none-any.whl": "520d690b448ecf0703691c76e1a34a24ddcd4fc5bc41d589cb7c58ec651bcd48",
+    "rpds_py-2026.6.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl": "ecabd69db66de867690f9797f2f8fa27ba501bbc24540cbdbdc649cd15888ba6",
+    "setuptools-84.0.0-py3-none-any.whl": "51a52592b3b99e102b609654876bd65f19f999935166d1352678931132b0c670",
+    "six-1.17.0-py2.py3-none-any.whl": "4721f391ed90541fddacab5acf947aa0d3dc7d27b2e1e8eda2be8970586c3274",
+    "stack_data-0.6.3-py3-none-any.whl": "d5558e0c25a4cb0853cddad3d77da9891a08cb85dd9f9f91b9f8cd66e511e695",
+    "traitlets-5.15.0-py3-none-any.whl": "fb36a18867a6803deab09f3c5e0fa81bb7b26a5c9e82501c9933f759166eff40",
+    "typing_extensions-4.16.0-py3-none-any.whl": "481caa481374e813c1b176ada14e97f1f67a4539ce9cfeb3f350d78d6370c2e8",
+    "wcwidth-0.7.0-py3-none-any.whl": "5d69154c429a82910e241c738cd0e2976fac8a2dd47a1a805f4afed1c0f136f2",
+    "wheel-0.48.0-py3-none-any.whl": "3217dcc807155e45db462d7ef2431f5ddda0d7273b700d05a67b271ceb1287ab"
+  },
+  "dependency_wheel_check": "All 43 wheel filenames and hashes match the previously recorded P9-3.5 wheelhouse; installed distribution versions are recorded separately."
+}

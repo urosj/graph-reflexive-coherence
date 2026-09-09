@@ -22,6 +22,8 @@ from .grc_v4_codec import (
 from .grc_v4_profile import _Record
 from .grc_v4_geometry import (
     GeometryStageInputs,
+    GeometryDomainError,
+    NonfiniteGeometryError,
     PhysicalFlux,
     VertexScalar,
     _local_payload,
@@ -35,7 +37,13 @@ from .grc_v4_state import (
     GRCV4StepResult,
     SolverDisposition,
 )
-from .grc_v4_transport import ChargeEvaluation, provisional_continuity
+from .grc_v4_transport import (
+    ChargeDomainError,
+    ChargeEvaluation,
+    provisional_continuity,
+)
+from .grc_v4_candidate_c import CandidateCCurrent, CandidateCStageError
+from .grc_v4_realizations import CandidateCOSPass, _os_inputs
 
 OperationStage: TypeAlias = Literal[
     "admission",
@@ -819,12 +827,10 @@ def _resource_charge(
         evaluation = ChargeEvaluation(
             resource, inputs.Q_target, inputs.geometry.reference.profile
         )
-    except ValueError as exc:
+    except (ChargeDomainError, NonfiniteGeometryError) as exc:
         code: FailureCode = (
-            "domain_failure"
-            if any(v < 0 for v in resource.values)
-            else "nonfinite_value"
-            if "nonfinite" in str(exc)
+            "nonfinite_value"
+            if isinstance(exc, NonfiniteGeometryError)
             else "domain_failure"
         )
         raise ResourceBoundaryError(stage, code, str(exc)) from exc
@@ -947,7 +953,7 @@ class ProvisionalResourceStep:
                 resource = provisional_continuity(
                     initial, selection.current, before.dt, differential=ref.differential
                 )
-            except ValueError as exc:
+            except NonfiniteGeometryError as exc:
                 raise ResourceBoundaryError(
                     "continuity", "nonfinite_value", str(exc)
                 ) from exc
@@ -1005,3 +1011,108 @@ class ProvisionalResourceStep:
             "remainder": self.charge.remainder,
             "continuity_evaluations": self.continuity_evaluations,
         }
+
+
+@dataclass(frozen=True, slots=True)
+class ProvisionalCandidateCOSStep:
+    """A C_OS numerical step through final-C refresh, with no live mutation.
+
+    One pass selects the corrector, one resource boundary writes provisional C,
+    and all final C-derived operators are rebuilt at the consumed geometry.
+    next_inputs resets geometry to the profile reference for the next beat;
+    no OS geometry/cache becomes retained history. Clock addition is binary64;
+    a positive subnormal duration still takes the positive-duration path even
+    if the represented clock or resource does not change.
+
+    The lifecycle owner still authenticates the source/ledger, creates commit
+    receipts, checks its complete postconditions and commits atomically. This
+    immutable result is not an exported model, receipt or conformance claim.
+    """
+
+    inputs: GeometryStageInputs
+    os_pass: CandidateCOSPass | None = dataclass_field(init=False)
+    resource: ProvisionalResourceStep = dataclass_field(init=False)
+    final: CandidateCCurrent | None = dataclass_field(init=False)
+    next_inputs: GeometryStageInputs = dataclass_field(init=False)
+
+    def __post_init__(self) -> None:
+        from dataclasses import replace
+        from fractions import Fraction
+        import math
+
+        before = _os_inputs(self.inputs)
+        if before.dt > 0 and before.step_index == 2**53 - 1:
+            raise ResourceBoundaryError(
+                "admission",
+                "domain_failure",
+                "step index would exceed the safe integer domain",
+            )
+        graph = before.geometry.reference.graph
+        _resource_charge(before, VertexScalar(graph, before.current.C), "admission")
+        _resource_charge(before, VertexScalar(graph, before.reset.C), "admission")
+        # The reset baseline is a future restart input, not just a charge label.
+        CandidateCCurrent(
+            replace(before, current=before.reset, stage="reset_readmission")
+        )
+        try:
+            next_time = float(Fraction(before.time) + Fraction(before.dt))
+        except OverflowError as exc:
+            raise ResourceBoundaryError(
+                "admission", "nonfinite_value", "step clock overflow"
+            ) from exc
+        if not math.isfinite(next_time):
+            raise ResourceBoundaryError(
+                "admission", "nonfinite_value", "step clock overflow"
+            )
+        if before.dt == 0:
+            # Admission is still required; identity is not an escape from a
+            # singular current, invalid selector, context or reset baseline.
+            CandidateCCurrent(before)
+            result = ProvisionalResourceStep(before, None)
+            passed = None
+            final = None
+            following = before
+        else:
+            passed = CandidateCOSPass(before)
+            corrector = passed.corrector
+            result = ProvisionalResourceStep(
+                before,
+                CurrentSelection(corrector.inputs, "valid_root", corrector.current),
+            )
+            try:
+                final = CandidateCCurrent(
+                    replace(
+                        corrector.inputs,
+                        current=result.provisional_state,
+                        stage="post_continuity",
+                    )
+                )
+            except (
+                CandidateCStageError,
+                GeometryDomainError,
+                NonfiniteGeometryError,
+            ) as exc:
+                code: FailureCode = (
+                    "nonfinite_value"
+                    if isinstance(exc, NonfiniteGeometryError)
+                    or isinstance(exc, CandidateCStageError)
+                    and exc.disposition == "nonfinite"
+                    else "domain_failure"
+                )
+                raise ResourceBoundaryError(
+                    "final_reconstruction", code, str(exc)
+                ) from exc
+            following = replace(
+                before,
+                current=result.provisional_state,
+                step_index=before.step_index + 1,
+                time=next_time,
+            )
+        for name, value in (
+            ("inputs", before),
+            ("os_pass", passed),
+            ("resource", result),
+            ("final", final),
+            ("next_inputs", following),
+        ):
+            object.__setattr__(self, name, value)

@@ -1,0 +1,280 @@
+{
+  "schema": "phase9_leaf_execution_v1",
+  "iteration_id": "P9-4.3",
+  "status": "implemented_and_verified",
+  "release_id": "grcv4-spec-release-sha256:9f4c8fe5b57b1c477d834a3e4dae3f98a2b18c70e6e7f598e3c9652170c8645f",
+  "entry_acceptance": "implementation/phase-9-grcv4/tranche-4/P9-4.2-AcceptanceRecord.json",
+  "review": {
+    "path": "implementation/phase-9-grcv4/tranche-4/P9-4.3-Review.md",
+    "sha256": "802dc0ae9092bbcbf420da465799ae9091436861ffedc0111894d52bed61c2cd"
+  },
+  "implemented_scope": "Independent supported-profile smooth-stratum baseline derivative/covariance oracle and production differences; separate kappa_M, chi, zeta and supplemental tau zero controls. Verification only; production code is unchanged.",
+  "runtime_source_changes": [],
+  "test_source_changes": [
+    "tests/models/test_grc_v4_candidate_c.py"
+  ],
+  "numerical_policy": "grcv4-c-stage-exact-linear-binary64-v1 (unchanged)",
+  "validation_runs": [
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-4.3/validation/run.json",
+      "sha256": "4af569a96d7397dcb03eef822209f60e3e3592a896d67a40fc363d7b4492ca3a"
+    }
+  ],
+  "verification_summary": {
+    "passed": true,
+    "scope": "focused_derivative_control_current_reference_and_shared_geometry_stage_mobility_capture",
+    "methods_passed": 143,
+    "derivative_control_methods_passed": 20,
+    "current_methods_passed": 27,
+    "reference_methods_passed": 20,
+    "capture_control_methods_passed": 14,
+    "shared_methods_passed": 62,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "source_unchanged_during_run": true,
+    "live_source_checked_before_and_after": true,
+    "full_repository_suite_repeated": false,
+    "installed_package_tests_repeated": false
+  },
+  "side_tool_queries": [
+    {
+      "operation": "contract_provenance",
+      "query": {
+        "contract_id": "D11-C-EC-C-DIRECT-POTENTIAL-DECOMPOSITION"
+      },
+      "source_bundle_digest": "98c273b3cc097f0d95adfba98ed7dfac0ac494dce9e779bb4b04fe79fef4f6aa",
+      "graph_digest": "44d8c7d33950af5e5f7c61caa4fe6fbd14fc9aedf14218d0a11de7c705542e09",
+      "authority_extension_digest": "833acc5988761f8ba68ca573ad270bf7c87cf2fe32061336a71e42647968630a",
+      "trace_digest": "a20215d3886573ab55451a0d47764bbff4ceca3b7b9c23bfdf60da4fc830685c",
+      "row_count": 1,
+      "source_witnesses": [
+        {
+          "classification": "source_exact_contract_provenance",
+          "source_ref": {
+            "record_id": "GRC9V4-D11-C-PROVENANCE-SUPPLEMENT-v1",
+            "record_digest": "57d711d80e648c8ee73401f3a7e76a0076374fc43bd4d2d0f3dbe4bb4ee3acb1",
+            "source_json_pointer": "/equation_contracts/3",
+            "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D11CCandidateBaselineTransportProvenanceSupplement.json"
+          },
+          "support_disposition": [
+            "accepted_bounded_D11_C_successor"
+          ],
+          "edge_support_semantics": [
+            "accepted_bounded_D11_C_successor",
+            "indeterminate_requires_review",
+            "not_applicable"
+          ]
+        }
+      ]
+    },
+    {
+      "operation": "contract_provenance",
+      "query": {
+        "contract_id": "D11-C-EC-C-J0-COVARIANCE"
+      },
+      "source_bundle_digest": "98c273b3cc097f0d95adfba98ed7dfac0ac494dce9e779bb4b04fe79fef4f6aa",
+      "graph_digest": "44d8c7d33950af5e5f7c61caa4fe6fbd14fc9aedf14218d0a11de7c705542e09",
+      "authority_extension_digest": "833acc5988761f8ba68ca573ad270bf7c87cf2fe32061336a71e42647968630a",
+      "trace_digest": "a84fa7a7c1cc40ad953ae608b88bed24c8b5f6443699342bbd78b1e30252a4cc",
+      "row_count": 1,
+      "source_witnesses": [
+        {
+          "classification": "source_exact_contract_provenance",
+          "source_ref": {
+            "record_id": "GRC9V4-D11-C-PROVENANCE-SUPPLEMENT-v1",
+            "record_digest": "57d711d80e648c8ee73401f3a7e76a0076374fc43bd4d2d0f3dbe4bb4ee3acb1",
+            "source_json_pointer": "/equation_contracts/7",
+            "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D11CCandidateBaselineTransportProvenanceSupplement.json"
+          },
+          "support_disposition": [
+            "accepted_design_level_algebra_with_implementation_verification_still_pending"
+          ],
+          "edge_support_semantics": [
+            "accepted_design_level_algebra_with_implementation_verification_still_pending",
+            "indeterminate_requires_review",
+            "not_applicable"
+          ]
+        }
+      ]
+    },
+    {
+      "operation": "contract_provenance",
+      "query": {
+        "contract_id": "D11-C-EC-C-J0-DERIVATIVE"
+      },
+      "source_bundle_digest": "98c273b3cc097f0d95adfba98ed7dfac0ac494dce9e779bb4b04fe79fef4f6aa",
+      "graph_digest": "44d8c7d33950af5e5f7c61caa4fe6fbd14fc9aedf14218d0a11de7c705542e09",
+      "authority_extension_digest": "833acc5988761f8ba68ca573ad270bf7c87cf2fe32061336a71e42647968630a",
+      "trace_digest": "352a5a851be06579b47e3b3e8644bf1400ee4a49335ef8f676ca0f78e5e66025",
+      "row_count": 1,
+      "source_witnesses": [
+        {
+          "classification": "source_exact_contract_provenance",
+          "source_ref": {
+            "record_id": "GRC9V4-D11-C-PROVENANCE-SUPPLEMENT-v1",
+            "record_digest": "57d711d80e648c8ee73401f3a7e76a0076374fc43bd4d2d0f3dbe4bb4ee3acb1",
+            "source_json_pointer": "/equation_contracts/8",
+            "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D11CCandidateBaselineTransportProvenanceSupplement.json"
+          },
+          "support_disposition": [
+            "accepted_on_the_existing_smooth_fixed_rank_SPD_selector_stratum"
+          ],
+          "edge_support_semantics": [
+            "accepted_on_the_existing_smooth_fixed_rank_SPD_selector_stratum",
+            "indeterminate_requires_review",
+            "not_applicable"
+          ]
+        }
+      ]
+    },
+    {
+      "operation": "contract_provenance",
+      "query": {
+        "contract_id": "D11-C-EC-C-J0-REFERENCE-REDUCTION"
+      },
+      "source_bundle_digest": "98c273b3cc097f0d95adfba98ed7dfac0ac494dce9e779bb4b04fe79fef4f6aa",
+      "graph_digest": "44d8c7d33950af5e5f7c61caa4fe6fbd14fc9aedf14218d0a11de7c705542e09",
+      "authority_extension_digest": "833acc5988761f8ba68ca573ad270bf7c87cf2fe32061336a71e42647968630a",
+      "trace_digest": "3a63db7e9ae37c1871d5f7b26f4f8be3885d44c862ce50d29dd2472f09a61ef0",
+      "row_count": 1,
+      "source_witnesses": [
+        {
+          "classification": "source_exact_contract_provenance",
+          "source_ref": {
+            "record_id": "GRC9V4-D11-C-PROVENANCE-SUPPLEMENT-v1",
+            "record_digest": "57d711d80e648c8ee73401f3a7e76a0076374fc43bd4d2d0f3dbe4bb4ee3acb1",
+            "source_json_pointer": "/equation_contracts/5",
+            "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D11CCandidateBaselineTransportProvenanceSupplement.json"
+          },
+          "support_disposition": [
+            "accepted_bounded_D11_C_successor"
+          ],
+          "edge_support_semantics": [
+            "accepted_bounded_D11_C_successor",
+            "indeterminate_requires_review",
+            "not_applicable"
+          ]
+        }
+      ]
+    },
+    {
+      "operation": "contract_provenance",
+      "query": {
+        "contract_id": "D11-C-EC-C-J0-SWITCH-SEPARATION"
+      },
+      "source_bundle_digest": "98c273b3cc097f0d95adfba98ed7dfac0ac494dce9e779bb4b04fe79fef4f6aa",
+      "graph_digest": "44d8c7d33950af5e5f7c61caa4fe6fbd14fc9aedf14218d0a11de7c705542e09",
+      "authority_extension_digest": "833acc5988761f8ba68ca573ad270bf7c87cf2fe32061336a71e42647968630a",
+      "trace_digest": "36a0853f40e058a03db99039c673a42e33bc456d975c75eb6d410d680b75574e",
+      "row_count": 1,
+      "source_witnesses": [
+        {
+          "classification": "source_exact_contract_provenance",
+          "source_ref": {
+            "record_id": "GRC9V4-D11-C-PROVENANCE-SUPPLEMENT-v1",
+            "record_digest": "57d711d80e648c8ee73401f3a7e76a0076374fc43bd4d2d0f3dbe4bb4ee3acb1",
+            "source_json_pointer": "/equation_contracts/6",
+            "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D11CCandidateBaselineTransportProvenanceSupplement.json"
+          },
+          "support_disposition": [
+            "accepted_bounded_D11_C_successor"
+          ],
+          "edge_support_semantics": [
+            "accepted_bounded_D11_C_successor",
+            "indeterminate_requires_review",
+            "not_applicable"
+          ]
+        }
+      ]
+    }
+  ],
+  "reconstruction_check": {
+    "schema": "phase9_relocation_check_v1",
+    "base_commit": "ac3a7cf43098e4ec1608a08b5d35954204f833e5",
+    "source_manifest_sha256": "8390a9d73ab113cd51e4a49f434b325f57e169eea8c62593a07dad8cbfa1c692",
+    "source_overrides_sha256": {
+      "tests/models/test_grc_v4_candidate_c.py": "6742975fde2a834fdefd4c3a212e448a01bb2fafd92ee65455af3cb427da23db"
+    },
+    "methods": [
+      "tests.models.test_grc_v4_candidate_c.CandidateCCaptureTests.test_disk_change_during_execution_fails",
+      "tests.models.test_grc_v4_candidate_c.CandidateCCaptureTests.test_foreign_wrong_local_and_missing_origins_reject",
+      "tests.models.test_grc_v4_candidate_c.CandidateCCaptureTests.test_matching_live_sources_and_main_alias_pass",
+      "tests.models.test_grc_v4_candidate_c.CandidateCCaptureTests.test_postrun_live_changes_and_late_imports_are_checked",
+      "tests.models.test_grc_v4_candidate_c.CandidateCCaptureTests.test_replaced_declared_slots_cannot_hide_as_generated_or_foreign",
+      "tests.models.test_grc_v4_candidate_c.CandidateCCaptureTests.test_roster_and_nonpassing_outcomes_still_reject",
+      "tests.models.test_grc_v4_candidate_c.CandidateCCaptureTests.test_same_path_stale_code_and_main_alias_reject",
+      "tests.models.test_grc_v4_candidate_c.CandidateCControlDerivativeTests.test_complete_resource_geometry_and_joint_derivatives",
+      "tests.models.test_grc_v4_candidate_c.CandidateCControlDerivativeTests.test_constitutive_potential_is_not_total_retained_energy_gradient",
+      "tests.models.test_grc_v4_candidate_c.CandidateCControlDerivativeTests.test_derivatives_under_each_zero_control_remain_distinct",
+      "tests.models.test_grc_v4_candidate_c.CandidateCControlDerivativeTests.test_difference_probe_rejects_unresolvable_steps_and_domain_loss",
+      "tests.models.test_grc_v4_candidate_c.CandidateCControlDerivativeTests.test_directional_linearity_and_zero_direction",
+      "tests.models.test_grc_v4_candidate_c.CandidateCControlDerivativeTests.test_disconnected_loop_parallel_and_exterior_sector_derivatives",
+      "tests.models.test_grc_v4_candidate_c.CandidateCControlDerivativeTests.test_eta_profile_family_variation_has_the_declared_delta_m_term",
+      "tests.models.test_grc_v4_candidate_c.CandidateCControlDerivativeTests.test_every_hodge_product_and_resource_term_is_load_bearing",
+      "tests.models.test_grc_v4_candidate_c.CandidateCControlDerivativeTests.test_exact_path_projector_and_geometry_derivative_oracle",
+      "tests.models.test_grc_v4_candidate_c.CandidateCControlDerivativeTests.test_joint_difference_converges_at_second_order",
+      "tests.models.test_grc_v4_candidate_c.CandidateCControlDerivativeTests.test_literal_scalar_derivative_and_saturation_tail",
+      "tests.models.test_grc_v4_candidate_c.CandidateCControlDerivativeTests.test_near_gap_growth_and_crossing_are_not_hidden",
+      "tests.models.test_grc_v4_candidate_c.CandidateCControlDerivativeTests.test_reference_reduction_has_closed_resource_and_hodge_derivatives",
+      "tests.models.test_grc_v4_candidate_c.CandidateCControlDerivativeTests.test_repeated_cluster_derivative_is_basis_independent_and_finite",
+      "tests.models.test_grc_v4_candidate_c.CandidateCControlDerivativeTests.test_resource_boundary_uses_admitted_one_sided_direction",
+      "tests.models.test_grc_v4_candidate_c.CandidateCControlDerivativeTests.test_seeded_spd_mixed_directions_match_actual_baseline",
+      "tests.models.test_grc_v4_candidate_c.CandidateCControlDerivativeTests.test_trial_current_and_metadata_do_not_become_baseline_directions",
+      "tests.models.test_grc_v4_candidate_c.CandidateCControlDerivativeTests.test_vertex_signed_edge_covariance_of_values_and_directions",
+      "tests.models.test_grc_v4_candidate_c.CandidateCControlDerivativeTests.test_zero_context_and_potential_declarations_bound_derivative_scope",
+      "tests.models.test_grc_v4_candidate_c.CandidateCControlDerivativeTests.test_zero_controls_are_separate_full_chains_on_nonreference_hodge"
+    ],
+    "results": [
+      {
+        "hash_seed": "943",
+        "exit_code": 0,
+        "status": "passed",
+        "results": {
+          "tests_run": 27,
+          "failures": 0,
+          "errors": 0,
+          "skips": 0,
+          "nonpassing_methods": [],
+          "executed_ids_sha256": "4af81f387bb5035d4b481c319eccf4dcea846abe56fbca3e828541ad841a320b"
+        },
+        "source_unchanged": true,
+        "loaded_source_count": 143,
+        "live_sources_checked_before_and_after": true
+      }
+    ],
+    "source_manifest_reconstructed": true,
+    "checkout_path_contains_spaces": true,
+    "limit": "Reconstructed base plus one hash-pinned test-source override, a fresh interpreter and changed hash seed, using existing dependency environment; no fresh dependency installation or cross-platform claim."
+  },
+  "static_validation": {
+    "ruff": "passed (changed Python files)",
+    "strict_mypy": "passed (Candidate C test module)",
+    "ruff_format": "passed (Candidate C test module)"
+  },
+  "changed_authority_and_surface_validation": {
+    "authority_pressure_checks": 172,
+    "javascript_tests": 24,
+    "browser_checks": 18,
+    "status": "passed",
+    "commands": [
+      ".venv/bin/python implementation/phase-9-grcv4/verification/audit_phase9_implementation.py --boundary-only",
+      ".venv/bin/python implementation/phase-9-grcv4/verification/test_phase9_g1.py",
+      ".venv/bin/python implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/test_phase9_g1_surfaces.py",
+      ".venv/bin/python implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/test_phase9_g1_surfaces.py --browser"
+    ],
+    "environment": "Run from repository root with .venv/bin on PATH; managed side-tool browser assets are disposable.",
+    "binding_note": "Final document bindings are refreshed and authority pressure/API/notebook checks rerun after writing this summary. Browser and JavaScript checks apply to unchanged surface source and are not repeated for document-only updates. Disposable raw reports are not duplicate scientific records."
+  },
+  "accepted_generic_runtime_support": [],
+  "admitted_specialization_support_sets": [],
+  "reviewer_decision": "pending_user_acceptance",
+  "scientific_verdict": "P9-4.3 is verified for the implemented unit-measure, zero-potential/context profile declarations. Independent equations, literal projector/scalar/reference witnesses, term-omission controls and actual current differences support the complete baseline chain and discrete covariance. Separate zero controls preserve their distinct owners, including nontrivial retained Hodge at tau zero. No production defect was identified. This does not accept a complete beat or runtime profile.",
+  "remaining_obligations": [
+    "Independent audit and user acceptance of P9-4.3.",
+    "P9-4.4 through P9-4.8: OS ordering, continuity and post-continuity rederivation, atomic beats, lifecycle and exact-profile G2 product."
+  ],
+  "claim_ceiling": "Derivative of the real constitutive equations within the supported fixed-profile smooth stratum; V double-prime and delta_U vanish by declaration, delta_B and delta_M vanish for ordinary motion. The adjacent-profile eta study and ambient scalar direction are explicitly separate. Finite-difference sample rank agreement is not proof of beat-wide stratum preservation. Saturation has a positive mathematical derivative despite rounded zero output differences. No production derivative API, full beat, lifecycle, runtime conformance or cross-platform bitwise claim.",
+  "next_step": "Independent review and user acceptance; P9-4.4 remains held.",
+  "scientific_validation_completed_utc": "2026-09-08T08:30:35.524578+00:00"
+}
