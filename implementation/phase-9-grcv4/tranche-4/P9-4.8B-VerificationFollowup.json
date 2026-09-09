@@ -1,0 +1,402 @@
+{
+  "schema": "phase9_verification_provenance_followup_v1",
+  "iteration_id": "P9-4.8B",
+  "status": "closed",
+  "audit_disposition": {
+    "scientific_closure": "confirmed for the previously accepted exact C_OS singleton",
+    "historical_P9_4_8": "unchanged historical HOLD",
+    "remaining_finding": "retain completion of the corrected resumed verification stages",
+    "new_scientific_requirement": false
+  },
+  "execution": {
+    "schema": "phase9_resumed_verification_run_v1",
+    "subject_commit": "b44f4bdd0a6b02409341ff2f91149b5c1caf70fa",
+    "source_overlay": {
+      "format": "git diff --binary --no-ext-diff",
+      "sha256": "d9e67bec449b3b3917dcb9d7c7dca58b8d8de01a771eaf6299243be9f8358037",
+      "patch": "diff --git a/implementation/phase-9-grcv4/verification/Phase9ImplementationBoundary.json b/implementation/phase-9-grcv4/verification/Phase9ImplementationBoundary.json\nindex 1ebaaec..37abb53 100644\n--- a/implementation/phase-9-grcv4/verification/Phase9ImplementationBoundary.json\n+++ b/implementation/phase-9-grcv4/verification/Phase9ImplementationBoundary.json\n@@ -367,7 +367,7 @@\n     },\n     {\n       \"path\": \"implementation/phase-9-grcv4/verification/test_phase9_g1.py\",\n-      \"sha256\": \"a12ceaa4fa6fd23b065a1281c0cbea0a2668642d91b65c712c842d38b89044d8\"\n+      \"sha256\": \"3b6d4565fea681ee8a80d142578f61c413804da2271e2417203ab0125242a994\"\n     },\n     {\n       \"path\": \"implementation/phase-9-grcv4/verification/verify_p948_review.py\",\n@@ -426,5 +426,5 @@\n       \"sha256\": \"d3fc6e50bce85685694901e3d6f5f90ead87413877414cf8dc6ea1b9225540ce\"\n     }\n   ],\n-  \"record_digest\": \"d9e131832370111a5763b985cbd37103df40b8a7f212b0e2459882547ae3513e\"\n+  \"record_digest\": \"80e2193a097160297eb7488b046fd268eaa954508c49a642c7749e7011a24d63\"\n }\ndiff --git a/implementation/phase-9-grcv4/verification/test_phase9_g1.py b/implementation/phase-9-grcv4/verification/test_phase9_g1.py\nindex 8d04ebd..0aeaa4a 100644\n--- a/implementation/phase-9-grcv4/verification/test_phase9_g1.py\n+++ b/implementation/phase-9-grcv4/verification/test_phase9_g1.py\n@@ -1032,7 +1032,7 @@ def main():\n             \"untrusted P9-G1 acceptance\",\n         )\n \n-        def committed_wrong_tree():\n+        def committed_wrong_tree(*, clean_setup=False):\n             # Both commits and index restoration are confined to this private clone.\n             baseline = p.git(root, \"rev-parse\", \"HEAD\").decode().strip()\n \n@@ -1052,12 +1052,23 @@ def main():\n                 )\n                 p.require(\n                     result.returncode == 0,\n-                    \"isolated Git fixture setup failed: \" + result.stderr,\n+                    \"isolated Git fixture setup failed: \"\n+                    + (result.stderr or result.stdout),\n                 )\n                 return result.stdout\n \n             try:\n                 git(\"add\", \"--\", *sorted(p.PATHS | current_work_paths))\n+                if clean_setup:\n+                    # Exercise an empty setup commit even when the live candidate\n+                    # contains uncommitted corrections over its reviewed HEAD.\n+                    git(\n+                        \"-c\", \"user.name=P9 test fixture\",\n+                        \"-c\", \"user.email=p9-fixture@example.invalid\",\n+                        \"commit\", \"--quiet\", \"--allow-empty\",\n+                        \"-m\", \"isolated clean starting fixture\",\n+                    )\n+                    p.require(git(\"status\", \"--porcelain\") == \"\", \"setup is not clean\")\n                 git(\n                     \"-c\",\n                     \"user.name=P9 test fixture\",\n@@ -1065,6 +1076,7 @@ def main():\n                     \"user.email=p9-fixture@example.invalid\",\n                     \"commit\",\n                     \"--quiet\",\n+                    \"--allow-empty\",\n                     \"-m\",\n                     \"isolated accepted G1 fixture\",\n                 )\n@@ -1093,7 +1105,19 @@ def main():\n \n         case(\n             \"clean_committed_unauthorized_tree\",\n-            committed_wrong_tree,\n+            lambda: committed_wrong_tree(clean_setup=True),\n+            \"frozen bytes changed\",\n+        )\n+\n+        def overlaid_committed_wrong_tree():\n+            # JSON whitespace preserves policy meaning while guaranteeing a\n+            # candidate overlay for the nonempty setup-commit alternative.\n+            with mutate(p.POLICY, (root / p.POLICY).read_bytes() + b\"\\n\"):\n+                committed_wrong_tree()\n+\n+        case(\n+            \"overlaid_candidate_committed_unauthorized_tree\",\n+            overlaid_committed_wrong_tree,\n             \"frozen bytes changed\",\n         )\n \n",
+      "paths": [
+        "implementation/phase-9-grcv4/verification/Phase9ImplementationBoundary.json",
+        "implementation/phase-9-grcv4/verification/test_phase9_g1.py"
+      ]
+    },
+    "started_utc": "2026-09-09T16:16:37.594137+00:00",
+    "python": "3.12.3",
+    "platform": "Linux-5.15.167-0515167-generic-x86_64-with-glibc2.39",
+    "dependencies": {
+      "numpy": "2.4.6",
+      "jsonschema": "4.26.0",
+      "rfc8785": "0.1.4"
+    },
+    "environment": {
+      "PYTHONHASHSEED": null,
+      "OPENBLAS_NUM_THREADS": null,
+      "OMP_NUM_THREADS": null
+    },
+    "policy_digest": "80e2193a097160297eb7488b046fd268eaa954508c49a642c7749e7011a24d63",
+    "tree": {
+      "protected_baseline_files": 708,
+      "current_artifact_digest": "618418d02cacac8fb8f0332ab1a746e4c984acf81eea35e046824e5a94456bfb",
+      "registered_runtime_files": 256
+    },
+    "first_attempt": {
+      "subject_commit": "b44f4bdd0a6b02409341ff2f91149b5c1caf70fa",
+      "stage": [
+        ".venv/bin/python",
+        "implementation/phase-9-grcv4/verification/test_phase9_g1.py"
+      ],
+      "elapsed_seconds": 359.402,
+      "exit_code": 1,
+      "passed": 246,
+      "failed": 1,
+      "raw_report_sha256": "311cb020868a735d914f2144b34ca49c0f581537f4f1c13293301b0cc7ac54f8",
+      "case_id": "clean_committed_unauthorized_tree",
+      "intended_check_reached": false,
+      "cause": "The accepted-fixture setup commit had no staged change on the clean committed subject; Git exited 1 with nothing to commit before frozen-byte inspection.",
+      "correction": "Allow an empty accepted-fixture setup commit; keep the unauthorized edit commit nonempty. Exercise both an explicitly clean setup and a policy-equivalent uncommitted overlay, and include stdout in Git setup failure diagnostics."
+    },
+    "stages": [
+      {
+        "command": [
+          ".venv/bin/python",
+          "implementation/phase-9-grcv4/verification/test_phase9_g1.py"
+        ],
+        "script_sha256": "3b6d4565fea681ee8a80d142578f61c413804da2271e2417203ab0125242a994",
+        "started_utc": "2026-09-09T16:16:37.604031+00:00",
+        "completed_utc": "2026-09-09T16:24:10.410455+00:00",
+        "elapsed_seconds": 452.807,
+        "exit_code": 0,
+        "stdout": "PHASE9_G1_PRESSURE_PASS cases=248 accepted_permission=true conformance_claimed=false live_runtime_unchanged=true\n",
+        "stderr": ""
+      },
+      {
+        "command": [
+          ".venv/bin/python",
+          "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/test_phase9_g1_surfaces.py"
+        ],
+        "script_sha256": "918388a5c022757d14c65fdd3d7a6f3f1076b9c967adb980af344c195a6ab1e5",
+        "started_utc": "2026-09-09T16:24:11.103582+00:00",
+        "completed_utc": "2026-09-09T16:28:21.379097+00:00",
+        "elapsed_seconds": 250.276,
+        "exit_code": 0,
+        "stderr": "",
+        "stdout_sha256": "0819d2632deb62ff0569c538d126265c75ee2c94952d1d10950411c2981512b5",
+        "stdout_excerpt": "PHASE9_NOTEBOOK_PASS cells=4 API_identity=byte_exact runtime_authorized=true P9_G1=accepted runtime_support=empty\n# tests 32\n# pass 32\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\nPHASE9_G1_SURFACES_PASS API_notebook_identity=byte_exact negative_candidate=rejected P9_G1=accepted runtime_support=accepted_exact_C_OS_singleton\n"
+      },
+      {
+        "command": [
+          ".venv/bin/python",
+          "implementation/phase-9-grcv4/verification/verify_p948b_review.py",
+          "--check"
+        ],
+        "script_sha256": "5560e58ee85ac990d4d48053a37aec8499ca4f8e7c8a2ee38751784cdb8e4aba",
+        "started_utc": "2026-09-09T16:28:21.384685+00:00",
+        "completed_utc": "2026-09-09T16:29:27.319808+00:00",
+        "elapsed_seconds": 65.935,
+        "exit_code": 0,
+        "stderr": "",
+        "stdout_json": "execution.review"
+      }
+    ],
+    "status": "passed",
+    "numerical_tests_rerun": 0,
+    "pressure": {
+      "run_id": "p9-g1-09e922512b4d44e799b036521ce04940",
+      "report_digest": "b8969b312ebe828df65f9615052b24e29e7a1a8cf2525d2327bdd9003e1b1b4e",
+      "policy_digest": "80e2193a097160297eb7488b046fd268eaa954508c49a642c7749e7011a24d63",
+      "tree": {
+        "current_artifact_digest": "618418d02cacac8fb8f0332ab1a746e4c984acf81eea35e046824e5a94456bfb",
+        "protected_baseline_files": 708,
+        "registered_runtime_files": 256
+      },
+      "passed": 248,
+      "failed": 0,
+      "runtime_conformance_claimed": false,
+      "raw_report_sha256": "c567e8128283837570a87d405946b028fe5e973f5313463ff2079a1f8f71c137",
+      "all_intended_checks_reached": true,
+      "all_private_fixtures_restored": true,
+      "setup_regressions": [
+        {
+          "case_id": "clean_committed_unauthorized_tree",
+          "actual_reason": "frozen bytes changed: src/pygrc/models/grc_9_v3.py",
+          "intended_check_reached": true,
+          "restored": true,
+          "git_commands": [
+            {
+              "command": [
+                "git",
+                "-c",
+                "user.name=P9 test fixture",
+                "-c",
+                "user.email=p9-fixture@example.invalid",
+                "commit",
+                "--quiet",
+                "--allow-empty",
+                "-m",
+                "isolated clean starting fixture"
+              ],
+              "exit_code": 0,
+              "stdout": "",
+              "stderr": ""
+            },
+            {
+              "command": [
+                "git",
+                "status",
+                "--porcelain"
+              ],
+              "exit_code": 0,
+              "stdout": "",
+              "stderr": ""
+            },
+            {
+              "command": [
+                "git",
+                "-c",
+                "user.name=P9 test fixture",
+                "-c",
+                "user.email=p9-fixture@example.invalid",
+                "commit",
+                "--quiet",
+                "--allow-empty",
+                "-m",
+                "isolated accepted G1 fixture"
+              ],
+              "exit_code": 0,
+              "stdout": "",
+              "stderr": ""
+            },
+            {
+              "command": [
+                "git",
+                "-c",
+                "user.name=P9 test fixture",
+                "-c",
+                "user.email=p9-fixture@example.invalid",
+                "commit",
+                "--quiet",
+                "-m",
+                "isolated unauthorized fixture"
+              ],
+              "exit_code": 0,
+              "stdout": "",
+              "stderr": ""
+            },
+            {
+              "command": [
+                "git",
+                "status",
+                "--porcelain"
+              ],
+              "exit_code": 0,
+              "stdout": "",
+              "stderr": ""
+            },
+            {
+              "command": [
+                "git",
+                "reset",
+                "--mixed",
+                "b44f4bdd0a6b02409341ff2f91149b5c1caf70fa"
+              ],
+              "exit_code": 0,
+              "stdout": "Unstaged changes after reset:\nM\timplementation/phase-9-grcv4/verification/Phase9ImplementationBoundary.json\nM\timplementation/phase-9-grcv4/verification/test_phase9_g1.py\n",
+              "stderr": ""
+            }
+          ]
+        },
+        {
+          "case_id": "overlaid_candidate_committed_unauthorized_tree",
+          "actual_reason": "frozen bytes changed: src/pygrc/models/grc_9_v3.py",
+          "intended_check_reached": true,
+          "restored": true,
+          "git_commands": [
+            {
+              "command": [
+                "git",
+                "-c",
+                "user.name=P9 test fixture",
+                "-c",
+                "user.email=p9-fixture@example.invalid",
+                "commit",
+                "--quiet",
+                "--allow-empty",
+                "-m",
+                "isolated accepted G1 fixture"
+              ],
+              "exit_code": 0,
+              "stdout": "",
+              "stderr": ""
+            },
+            {
+              "command": [
+                "git",
+                "-c",
+                "user.name=P9 test fixture",
+                "-c",
+                "user.email=p9-fixture@example.invalid",
+                "commit",
+                "--quiet",
+                "-m",
+                "isolated unauthorized fixture"
+              ],
+              "exit_code": 0,
+              "stdout": "",
+              "stderr": ""
+            },
+            {
+              "command": [
+                "git",
+                "status",
+                "--porcelain"
+              ],
+              "exit_code": 0,
+              "stdout": "",
+              "stderr": ""
+            },
+            {
+              "command": [
+                "git",
+                "reset",
+                "--mixed",
+                "b44f4bdd0a6b02409341ff2f91149b5c1caf70fa"
+              ],
+              "exit_code": 0,
+              "stdout": "Unstaged changes after reset:\nM\timplementation/phase-9-grcv4/verification/Phase9ImplementationBoundary.json\nM\timplementation/phase-9-grcv4/verification/test_phase9_g1.py\n",
+              "stderr": ""
+            }
+          ]
+        }
+      ],
+      "case_count": 248,
+      "ordered_case_ids_sha256": "48f4fabe9d07853dd69f9fd0541184da13992bf5af07b53665eabb1a4fb05e84"
+    },
+    "surfaces": {
+      "raw_report_sha256": "f7bea099c87e49e58b191b5fdb642035a837cdf819711d300f76f17483373be6",
+      "schema": "phase9_G1_surface_evidence_v1",
+      "notebook_equals_API": true,
+      "runtime_support": [
+        "grcv4-profile-sha256:a6b853ee382895eb78b1a7955a0df22f95d68b27cb0f762503e8c424c2f59b6d"
+      ],
+      "node_tests": {
+        "tests": 32,
+        "passed": 32,
+        "failed": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0,
+        "stdout_sha256": "8f0d261158251b65686084057cd2d678d59ac883405b56536f85bea22ce24ba7"
+      },
+      "console_limitation": "The retained legacy notebook PASS banner has a hard-coded runtime_support=empty token. Actual notebook/API JSON equality and exact singleton G2 checks passed; that console token is not the structured support result."
+    },
+    "review": {
+      "status": "passed",
+      "review_verdict": "PASS",
+      "G2_accepted": true,
+      "accepted_generic_runtime_support": [
+        "grcv4-profile-sha256:a6b853ee382895eb78b1a7955a0df22f95d68b27cb0f762503e8c424c2f59b6d"
+      ],
+      "G3_accepted": false,
+      "numerical_tests_rerun": 0,
+      "reused_runtime_tests": 22,
+      "catalog_rows": 33,
+      "controls": {
+        "valid_controls": [
+          "PASS_proposal_without_acceptance",
+          "HOLD_with_open_obligation"
+        ],
+        "rejected_mutations": [
+          "borrowed_mapped_identity",
+          "duplicate_fixture",
+          "empty_population",
+          "erased_obligation",
+          "erased_parent_debt",
+          "family_substitution",
+          "missing_fixture",
+          "outstanding_blocker_PASS",
+          "premature_acceptance",
+          "premature_registry",
+          "promoted_historical_contract",
+          "stale_release",
+          "unreviewed_support"
+        ],
+        "rejected_source_changes": [
+          "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/notebooks/phase9_verification.ipynb",
+          "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/verification.js",
+          "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/phase9_verification.py",
+          "src/pygrc/models/grc_v4.py",
+          "src/pygrc/models/grc_v4_profile.py",
+          "tests/models/test_grc_v4.py",
+          "tests/models/test_grc_v4_candidate_c.py",
+          "tests/models/test_grc_v4_codec.py",
+          "tests/models/test_grc_v4_geometry.py",
+          "tests/models/test_grc_v4_profile.py",
+          "tests/models/test_grc_v4_step.py",
+          "tests/models/test_grc_v4_transport.py",
+          "src/pygrc/models/grc_v4_lifecycle.py"
+        ],
+        "rejected_acceptance_changes": [
+          "G3_promotion",
+          "borrowed_declaration",
+          "erased_obligation",
+          "family_support",
+          "forged_acceptance",
+          "new_runtime_work",
+          "other_profile",
+          "stale_release"
+        ]
+      },
+      "surfaces": {
+        "accepted_status_API_browser_and_failure_cleanup": "passed",
+        "status_notebook_API": "passed",
+        "authority_notebook_HTTP_browser_validator": "passed",
+        "full_browser_campaign": "not_rerun"
+      }
+    },
+    "completed_utc": "2026-09-09T16:29:29.644716+00:00",
+    "subject_unchanged": true,
+    "managed_node_version": "v22.23.2"
+  },
+  "unchanged_accepted_bindings": [
+    {
+      "path": "implementation/phase-9-grcv4/tranche-4/P9-4.8-GateReview.json",
+      "sha256": "cab7ef1b7b2747141a34f9c8a4b4d6f38ff1ff04e1d779e41db7ca552e729a66"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-4/P9-4.8B-GateReview.json",
+      "sha256": "36e200d45044b3b880a125de62b73a07e012f8ec2b5a092104e2af62f535df0f"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-4/P9-4.8B-G2Acceptance.json",
+      "sha256": "b8be072df369b6dfc64b96ccecf4766c9186ad7444baa85133f71fd71898b6be"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-4.9.3/complete-profile/run.json",
+      "sha256": "a8f35e74366708bdc1d576e2b2e1f8646e8cf9579061172357b85f8f6f54ee1a"
+    },
+    {
+      "path": "uv.lock",
+      "sha256": "8935f5c29dd72daf9755b5c495be6e1af5fbbd933e9ce9c6f226a02027c3d3f7"
+    }
+  ],
+  "scope": {
+    "initial_interrupted_full_invocation_claimed_passed": false,
+    "completed_resumed_stages": 3,
+    "historical_and_parent_abundance_full_campaigns": "previously passed stages reused, not reexecuted here",
+    "numerical_campaigns_rerun": 0,
+    "desktop_mobile_browser_campaign_rerun": false,
+    "accepted_generic_runtime_support": [
+      "grcv4-profile-sha256:a6b853ee382895eb78b1a7955a0df22f95d68b27cb0f762503e8c424c2f59b6d"
+    ],
+    "G3_accepted": false,
+    "new_runtime_work_authorized": []
+  },
+  "reconstruction": "In a separate full-history checkout at execution.subject_commit, apply the exact execution.source_overlay.patch with git apply, then provision the root .venv and the managed side-tool Node runtime using the committed bootstrap instructions and dependency locks. Run execution.stages[*].command in order from that checkout root. The embedded small patch preserves the two-file uncommitted correction and its execution-time boundary; it is not a copy of the scientific source. The commands include their own pressure/source/failure guards. A rerun is new evidence: random run IDs, temporary checkout names, timings and raw report digests need not repeat.",
+  "reconstruction_check": {
+    "method": "Apply the retained patch in a fresh full-history disposable checkout at the base commit; compare both patched files and evaluate current_boundary there.",
+    "patched_bytes_match": true,
+    "policy_digest_and_tree_match": true
+  },
+  "retention": "This compact record preserves command outputs (surface output is a labelled summary with its normalized full-output digest), the execution subject and exact correction, checked report identities, pressure counts and ordered case-roster digest, both setup regression traces, status outcomes and unchanged accepted subjects. The ordered case IDs are hashed as compact UTF-8 JSON without spaces. The large generated pressure report contains repeated mutation source hex and disposable-checkout traces; it is intentionally not copied into version control. Its digest identifies the observed raw report rather than promising its availability on another machine. Successful output paths are normalized relative to the checkout root.",
+  "publication_boundary": "All three stages completed on the recorded Git subject plus the exact two-file overlay, with unchanged source and boundary during execution, before publishing this record. Later handoff/checklist/maintenance bindings are publication changes, not another execution of the pressure suite. Do not rewrite the recorded subject or claim the interrupted full invocation passed."
+}

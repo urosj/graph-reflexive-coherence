@@ -738,17 +738,17 @@ three bounded batches retain their own results and raw per-run manifests.
     is accepted. G3, other profiles and specialization remain closed.
     Registry, API, notebook and browser project the same singleton; local
     migration targets are not global accepted support.
-  Full-path follow-up uses the reviewed HEAD for disposable current-tree
-  pressure, with explicit missing-parent/missing-abundance ancestry rejection.
-  Historical authorization baselines stay frozen; resume pressure and remaining
-  surfaces after the already passed historical/authority stages. See the
-  [bounded correction](./phase-9-grcv4/tranche-4/P9-4.8B-Review.md#full-path-follow-up-and-harness-correction).
-  Keep the lazy-export probe baseline-relative and reject a duplicate hook.
-  Require the actual 30-leaf API payload to pass the browser status validator,
-  while missing/duplicate fixture leaves and premature G2 permission reject.
-  Preserve the original numerical capture. Its acceptance successor binds
-  the exact discovery/status changes and tests them separately; all other
-  captured source remains byte-exact, with no new numerical run implied.
+  - [x] Final corrected verification continuation completed on 2026-09-09:
+    [portable completion record](./phase-9-grcv4/tranche-4/P9-4.8B-VerificationFollowup.json).
+    Permission pressure **248/248**, surface checks with **32/32** browser-validator
+    tests and exact API/notebook agreement, and the accepted G2 review checker
+    passed. Clean and modified setup-commit alternatives both reach the intended
+    committed frozen-file rejection; ancestry and export controls remain active.
+    The record binds the execution Git subject plus exact correction and verifies
+    reconstruction. Later publication metadata receives a separate boundary check.
+    Previously passed historical/authority stages and original numerical captures
+    are reused; the earlier interrupted invocation earns no completion credit.
+    Historical P9-4.8 HOLD, accepted singleton scope and closed G3 are unchanged.
 
 P9-4.9 is an aggregate of work packages, not new gates or separate full-review
 cycles. Execution order is P9-4.9.3 inventory, P9-4.9.2 authority resolution,

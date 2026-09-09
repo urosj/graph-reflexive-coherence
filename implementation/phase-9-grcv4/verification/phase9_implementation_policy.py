@@ -195,6 +195,7 @@ PATHS = {
     HERE + "verify_p948b_review.py",
     PHASE + "tranche-4/P9-4.8B-Review.md",
     PHASE + "tranche-4/P9-4.8B-GateReview.json",
+    PHASE + "tranche-4/P9-4.8B-VerificationFollowup.json",
     HERE + "verify_p9493_fixtures.py",
     # Explicitly user-accepted P9-4.9.1a availability authority; no numeric/G2 grant.
     INV + "decisions/P9AbundanceInterfaceAuthorityProposal.md",

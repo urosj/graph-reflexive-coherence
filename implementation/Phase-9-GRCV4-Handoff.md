@@ -58,17 +58,20 @@ Neither command reruns numerical tests or claims fresh full historical/browser
 verification. The current surface remains 30 ready leaves / 29 eligible paths;
 review maintenance opens no runtime leaf.
 
-Full-path follow-up: historical replay and complete parent/abundance authority
-checks passed before a stale disposable-HEAD defect stopped permission pressure.
-The harness now uses the actual reviewed HEAD and explicitly rejects missing
-parent/abundance acceptance ancestry. See the
-[failure explanation and resumed stages](./phase-9-grcv4/tranche-4/P9-4.8B-Review.md#full-path-follow-up-and-harness-correction).
-The passed historical stages are reused; the failed pressure stage and remaining
-current-surface/review checks are the continuation, not another numerical run.
-The export probe also uses its frozen pre-integration baseline. Browser
-readiness and API next-work text now match the accepted fixture stage and
-then-pending G2 review. The accepted successor now projects the exact singleton;
-actual API-to-browser validation guards that boundary.
+**Verification provenance follow-up closed on 2026-09-09.** The
+[compact completion record](./phase-9-grcv4/tranche-4/P9-4.8B-VerificationFollowup.json)
+retains all three resumed stages: permission pressure **248/248**, surface checks
+including **32/32** browser-validator tests and exact API/notebook agreement,
+and the accepted G2 review checker. Resumption exposed an empty setup-commit
+failure on a clean checkout; the corrected harness explicitly exercises both
+clean and modified candidates before requiring the committed forbidden edit to
+reach frozen-byte rejection. The record preserves the Git subject, exact small
+correction, reconstruction check, outputs and digests. Historical/authority
+stages are reused; no numerical or desktop/mobile browser campaign was rerun.
+The [earlier interrupted runs](./phase-9-grcv4/tranche-4/P9-4.8B-Review.md#full-path-follow-up-and-harness-correction)
+remain incomplete at their original subjects. Completion belongs to the recorded
+source plus correction; subsequent publication metadata is checked separately
+at the current boundary. Use the lean checks above for current status.
 
 ## Historical P9-4.8 snapshot
 

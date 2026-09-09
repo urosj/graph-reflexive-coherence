@@ -1032,7 +1032,7 @@ def main():
             "untrusted P9-G1 acceptance",
         )
 
-        def committed_wrong_tree():
+        def committed_wrong_tree(*, clean_setup=False):
             # Both commits and index restoration are confined to this private clone.
             baseline = p.git(root, "rev-parse", "HEAD").decode().strip()
 
@@ -1052,12 +1052,23 @@ def main():
                 )
                 p.require(
                     result.returncode == 0,
-                    "isolated Git fixture setup failed: " + result.stderr,
+                    "isolated Git fixture setup failed: "
+                    + (result.stderr or result.stdout),
                 )
                 return result.stdout
 
             try:
                 git("add", "--", *sorted(p.PATHS | current_work_paths))
+                if clean_setup:
+                    # Exercise an empty setup commit even when the live candidate
+                    # contains uncommitted corrections over its reviewed HEAD.
+                    git(
+                        "-c", "user.name=P9 test fixture",
+                        "-c", "user.email=p9-fixture@example.invalid",
+                        "commit", "--quiet", "--allow-empty",
+                        "-m", "isolated clean starting fixture",
+                    )
+                    p.require(git("status", "--porcelain") == "", "setup is not clean")
                 git(
                     "-c",
                     "user.name=P9 test fixture",
@@ -1065,6 +1076,7 @@ def main():
                     "user.email=p9-fixture@example.invalid",
                     "commit",
                     "--quiet",
+                    "--allow-empty",
                     "-m",
                     "isolated accepted G1 fixture",
                 )
@@ -1093,7 +1105,19 @@ def main():
 
         case(
             "clean_committed_unauthorized_tree",
-            committed_wrong_tree,
+            lambda: committed_wrong_tree(clean_setup=True),
+            "frozen bytes changed",
+        )
+
+        def overlaid_committed_wrong_tree():
+            # JSON whitespace preserves policy meaning while guaranteeing a
+            # candidate overlay for the nonempty setup-commit alternative.
+            with mutate(p.POLICY, (root / p.POLICY).read_bytes() + b"\n"):
+                committed_wrong_tree()
+
+        case(
+            "overlaid_candidate_committed_unauthorized_tree",
+            overlaid_committed_wrong_tree,
             "frozen bytes changed",
         )
 
