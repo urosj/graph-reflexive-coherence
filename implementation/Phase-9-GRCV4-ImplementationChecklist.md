@@ -804,14 +804,27 @@ updates discovery and status without authorizing new runtime leaves.
 
 ## Tranche 5. Candidate A and A_OS
 
-- [ ] P9-5.1: Implement exact history-free initialization and positive
-  retained-mobility authority.
+- [x] P9-5.1: Implement exact history-free initialization and positive
+  retained-mobility authority. [Review and source/test map](./phase-9-grcv4/tranche-5/P9-5.1-Review.md)
+  and [audit follow-up manifest](./phase-9-grcv4/tranche-5/P9-5.1-AuditFollowup.json).
+  Implementation/verification and bounded independent audit corrections are
+  complete; **accepted by the user on 2026-09-09**. Target differential/reference-current
+  inputs and current/reset
+  construction are explicit. Whole-target current/lifecycle admission, formation
+  evidence and A_OS G2 remain with their owning leaves. Only P9-5.1 is newly
+  execution-permitted; this scoped acceptance does not open P9-5.2 or accept A_OS G2.
 - [ ] P9-5.2: Implement log-space writing, direct current, and Read-Back with
-  no same-beat reading of newly written retained state.
+  no same-beat reading of newly written retained state. Pressure
+  `(W_A-W_hat_A)/(W_A+W_hat_A)` at large finite positive operands without
+  denominator-overflow artifacts.
 - [ ] P9-5.3: Execute independent Candidate A numerical/stage/control vectors
   and the `A_OS` step cases.
 - [ ] P9-5.4: Preserve separate initialization/formation/history claims and
-  keep lifecycle-dependent conformance pending.
+  keep lifecycle-dependent conformance pending. Before complete initializer
+  conformance, the A lifecycle owner must establish the admitted reference-flux
+  source, bind its actual target stage, exclude discarded-history dependence,
+  and perform separate target-current and lifecycle readmission. P9-5.1's
+  explicit operand and pair construction do not discharge these obligations.
 
 ## Tranche 6. CI, PC, CI+PC, and RG2b
 

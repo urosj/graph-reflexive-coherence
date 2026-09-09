@@ -1,8 +1,27 @@
-# Phase 9 GRCV4 handoff — Tranche 4 closure
+# Phase 9 GRCV4 handoff — P9-5.1 accepted
 
-Current restart point, 2026-09-09: use branch
-`impl/phase-9-grcv4-tranche-4-closure` and the
-[P9-4.8B integrated review](./phase-9-grcv4/tranche-4/P9-4.8B-Review.md).
+Current restart point, 2026-09-09: branch `impl/phase-9-grcv4-tranche-5`,
+based on `c2cb423`. [P9-5.1](./phase-9-grcv4/tranche-5/P9-5.1-Review.md)
+implements explicit history-free Candidate A current/reset construction and
+positive retained mobility authority, with a portable
+[audit follow-up manifest](./phase-9-grcv4/tranche-5/P9-5.1-AuditFollowup.json).
+Independent audit passed its bounded scope; the rounding descriptions and
+underflow/exponent/multigraph regressions are corrected. **P9-5.1 was accepted
+by the user on 2026-09-09** after 41 focused tests, the 269-kernel local rerun,
+and entry/status verification passed. P9-5.2 and A_OS conformance
+remain closed. Use `.venv/bin/python implementation/phase-9-grcv4/verification/verify_p951_initialization.py --check`
+for retained-source, entry and current status checks. Readiness is now 31 leaves /
+31 runtime paths. No A state was added to the accepted C_OS facade or support set.
+
+For continuation, the explicit reference flux remains a declared operand:
+later integration must establish its admitted source, bind the actual target
+stage, exclude discarded-history dependence, and perform current/lifecycle
+readmission before claiming the complete initializer. P9-5.2 must also pressure
+finite large `W_A`/`W_hat_A` contrasts without overflowing their denominator.
+The review distinguishes value-constructor failure from lifecycle rollback.
+
+The [P9-4.8B integrated review](./phase-9-grcv4/tranche-4/P9-4.8B-Review.md)
+remains the accepted Tranche 4 basis.
 The user accepted the receipt-parent design and requested full implementation:
 the admitted claim/debt overlay, actual tool UX, proposal/paper/spec successor
 and internal C_OS parent rule are implemented. Consult that review and the
@@ -26,9 +45,9 @@ All three phase closure obligations are discharged for exactly:
 Global runtime discovery reconstructs this exact declaration. Instance-local
 migration targets do not expand the accepted set. API/notebook/browser status
 projects the same acceptance, with `P9-7.7-C_OS` as an alias, not extra credit.
-G3, other profiles and specialization remain closed. Next is a separate user
-choice of A_OS continuation or a scoped G3 entry review—not a further Tranche 4
-numerical run or automatic authorization of new runtime work.
+G3, other profiles and specialization remain closed. The user chose the bounded
+P9-5.1 continuation above; further A work and a G3 entry review require their
+own continuation. The exact accepted C_OS population is unchanged.
 
 The [P9-4.9.1a proposal](./investigations/grc9v4-constitutive-design/decisions/P9AbundanceInterfaceAuthorityProposal.md)
 is accepted. All three refinements
@@ -55,8 +74,9 @@ source. Acceptance-only discovery, registry assertions and status projections
 have separate exact bindings; the original source hashes and run are unchanged. The successor also checks PASS/HOLD and misleading-record controls,
 plus existing status/authority API, notebook and HTTP/browser-validator paths.
 Neither command reruns numerical tests or claims fresh full historical/browser
-verification. The current surface remains 30 ready leaves / 29 eligible paths;
-review maintenance opens no runtime leaf.
+verification. Tranche 4 closed with 30 ready leaves / 29 eligible paths;
+the separate P9-5.1 entry above adds one leaf and its two candidate module/test
+paths. Review maintenance itself opens no runtime leaf.
 
 **Verification provenance follow-up closed on 2026-09-09.** The
 [compact completion record](./phase-9-grcv4/tranche-4/P9-4.8B-VerificationFollowup.json)

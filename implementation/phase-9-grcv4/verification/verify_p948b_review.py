@@ -39,8 +39,8 @@ DEBTS = ("P9-4.9.2-DEBT-PARENTS", "P9-4.9.1a-DEBT-ABUNDANCE")
 # for arbitrary edits or a relabeling of the historical run as a new execution.
 ACCEPTANCE_PROJECTIONS = {
     "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/notebooks/phase9_verification.ipynb": "4789175b7d89d487185761ab9324c311e61e159b2cd789964d1867e6c6c44c69",
-    "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/verification.js": "7c73b10e4bf1909de72fee42ae0c0903c9d17818d2d159d8379770ff4cccf121",
-    "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/phase9_verification.py": "dfc6cf56e70c4bd68b7065df931bf44e3e4544daf8dbf14285a509f69aa9a81b",
+    "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/verification.js": "389e2884180a006a96258a0841ff4976b10bee95690453f5459e801818f3434f",
+    "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/phase9_verification.py": "054100e9ad39ca24c100211a05a4396ec198dc511e2e1f3ead9d098031ac6077",
     "src/pygrc/models/grc_v4.py": "338ad4195d4c27a492738820b6c88a44b570a9376c2ea5992c1a6fc62b5e5dc4",
     "src/pygrc/models/grc_v4_profile.py": "66441b1c1bd50bd64183dbc39980f2a013f1ce554a10d7364490ff3854ba9988",
     "tests/models/test_grc_v4.py": "54ca792640ccef324db22d9c9275a8ebe274de779a05b2463d802edf3d3d83d7",
@@ -69,7 +69,14 @@ def capture_reuse(current=None):
     """Reuse original evidence with exact separately checked projection bindings."""
     captured = policy.read(ROOT / fixtures.RUN)["source_bindings"]
     current = fixtures.source_hashes() if current is None else current
-    require(set(current) == set(captured), "captured source population changed")
+    # P9-5.1 adds a separate candidate module and tests. The accepted C_OS
+    # facade and every old scientific binding remain exact; no A code is used
+    # to earn C_OS credit, and this comparison does not grant A conformance.
+    added = set(current) - set(captured)
+    require(set(captured) <= set(current) and added <= {
+        "src/pygrc/models/grc_v4_candidate_a.py",
+        "tests/models/test_grc_v4_candidate_a.py",
+    }, "captured source population changed")
     corrections = []
     for name, expected in captured.items():
         if name not in ACCEPTANCE_PROJECTIONS:
@@ -81,6 +88,7 @@ def capture_reuse(current=None):
                             "current_sha256": current[name],
                             "change": "acceptance_discovery_or_status_separately_tested"})
     return {"original_subject": SUBJECT,
+            "additional_candidate_A_sources_not_used_for_C_OS_credit": sorted(added),
             "unchanged_capture_bindings": len(captured) - len(corrections),
             "acceptance_projections": corrections}
 

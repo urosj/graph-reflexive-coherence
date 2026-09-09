@@ -191,6 +191,7 @@ HANDOFF_PATHS = {
 }
 PATHS = {
     G2_ACCEPTANCE,
+    HERE + "verify_p951_initialization.py",
     # P9-4.8B is a review-only successor; no runtime leaf or support grant.
     HERE + "verify_p948b_review.py",
     PHASE + "tranche-4/P9-4.8B-Review.md",
@@ -969,6 +970,12 @@ def leaf_permissions(root):
     # This opens only two existing runtime/test paths, not G2 or new families.
     git(root, "merge-base", "--is-ancestor", "1f5f5e9", "HEAD")
     ready = sorted(set(ready) | {"P9-4.9.3"})
+    # The user explicitly requested P9-5.1 on the Tranche 5 branch after the
+    # accepted exact C_OS G2 and its committed verification continuation.
+    # Satisfy this leaf's gate without opening every successor of C_OS G2.
+    accepted_g2(root)
+    git(root, "merge-base", "--is-ancestor", "c2cb423", "HEAD")
+    ready = sorted(set(ready) | {"P9-5.1"})
     owners = {}
     for module in ownership["modules"]:
         leaves = {
@@ -1177,6 +1184,13 @@ def work_entries(root, approval):
             # accepted review/execution bindings remain reconstructible intact.
             if leaf in {"P9-4.3", "P9-4.6"}:
                 records.add(PHASE + "tranche-4/" + leaf + "-AuditFollowup.md")
+            if leaf == "P9-5.1":
+                records.update(
+                    PHASE + "tranche-5/P9-5.1-" + suffix
+                    for suffix in (
+                        "AuditFollowup.json", "AuditPressure.json", "KernelPressure.py"
+                    )
+                )
             evidence = re.fullmatch(
                 re.escape(PHASE + f"evidence/{leaf}/")
                 + r"[A-Za-z0-9][A-Za-z0-9_-]{0,95}/([^/]+)",
@@ -1190,12 +1204,14 @@ def work_entries(root, approval):
                 ),
                 "unapproved runtime or evidence target: " + name,
             )
-            if name.endswith("-ExecutionRecord.json"):
+            if name.endswith("-ExecutionRecord.json") or name == (
+                PHASE + "tranche-5/P9-5.1-AuditFollowup.json"
+            ):
                 record = json.loads(content)
                 require(
                     record["iteration_id"] == leaf
                     and record["release_id"] == (
-                        current_abundance_release(root) if leaf in {"P9-4.9.1a", "P9-4.9.3"} else
+                        current_abundance_release(root) if leaf in {"P9-4.9.1a", "P9-4.9.3", "P9-5.1"} else
                         current_parent_release(root) if leaf in {"P9-4.9.1", "P9-4.9.2"} else prior.RELEASE_ID
                     ),
                     "execution record subject mismatch",
