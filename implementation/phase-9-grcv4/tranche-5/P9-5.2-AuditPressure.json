@@ -1,0 +1,291 @@
+{
+  "schema": "independent_bounded_source_audit_v1",
+  "iteration": "P9-5.2",
+  "audit_disposition": "HOLD_for_two_bounded_numerical_contract_corrections; formula_and_stage_design_pass",
+  "environment": {
+    "python": "3.13.5",
+    "platform": "Linux-6.18.35-x86_64-with-glibc2.41",
+    "libmpdec": "2.5.1",
+    "mpmath": "1.3.0",
+    "numpy": "2.3.5",
+    "sympy": "1.14.0"
+  },
+  "submitted_source_bindings": {
+    "src/pygrc/models/grc_v4_candidate_a.py": {
+      "sha256": "2fba6baf2b77056ce1a13d09b7681503f08511fdcf0587140a6ac7b05aae2c97",
+      "matches_execution_record": true
+    },
+    "tests/models/test_grc_v4_candidate_a.py": {
+      "sha256": "5d5e2e13623b1f8113a90c3f7678bbeac9316c41697cf1354d7dea72429d5434",
+      "matches_execution_record": true
+    }
+  },
+  "reported_suite": {
+    "executed_ids": 61,
+    "unique_executed_ids": 61,
+    "all_44_uploaded_test_methods_in_report": true,
+    "repository_suite_independently_rerun": false
+  },
+  "executed_isolated_pressure": {
+    "log_helper": {
+      "kind": "unchanged_AST_log_helper_with_lightweight_input_validation",
+      "source": "src/pygrc/models/grc_v4_candidate_a.py",
+      "tests": 1007,
+      "max_ulp_vs_mpmath250": 0.0,
+      "failures": []
+    },
+    "current_constructor": {
+      "kind": "unchanged_AST_current_with_lightweight_admission_and_independent_reference_lowering",
+      "source": "src/pygrc/models/grc_v4_candidate_a.py",
+      "probes": [
+        {
+          "label": "ordinary",
+          "status": "returned",
+          "potential": [
+            2.0,
+            -2.0
+          ],
+          "baseline": [
+            -2.0
+          ],
+          "current": [
+            -2.2857142857142856
+          ],
+          "flat": [
+            -0.38095238095238093
+          ]
+        },
+        {
+          "label": "exact_large_cancel",
+          "status": "raised",
+          "type": "CandidateAStageError",
+          "disposition": "nonfinite",
+          "message": "A stage output is not finite binary64",
+          "failure_callsite_line": 662,
+          "computed_before_failure": {
+            "phi": [
+              0.0,
+              0.0
+            ],
+            "baseline": [
+              0.0
+            ],
+            "current": [
+              0.0
+            ]
+          },
+          "exact_phi0": [
+            "200000000000000002195812725888091083480984619354623692673621365806315170809822983074326657956989377798122499339442345031223180567486280176656614018396292092062543329005866054371394979399177118086676768932330002356853795252425890355256182391573414916245567940343568830210583605786415746545949771430860446236672",
+            "-200000000000000002195812725888091083480984619354623692673621365806315170809822983074326657956989377798122499339442345031223180567486280176656614018396292092062543329005866054371394979399177118086676768932330002356853795252425890355256182391573414916245567940343568830210583605786415746545949771430860446236672"
+          ],
+          "exact_delta_phi": [
+            "-200000000000000002195812725888091083480984619354623692673621365806315170809822983074326657956989377798122499339442345031223180567486280176656614018396292092062543329005866054371394979399177118086676768932330002356853795252425890355256182391573414916245567940343568830210583605786415746545949771430860446236672",
+            "200000000000000002195812725888091083480984619354623692673621365806315170809822983074326657956989377798122499339442345031223180567486280176656614018396292092062543329005866054371394979399177118086676768932330002356853795252425890355256182391573414916245567940343568830210583605786415746545949771430860446236672"
+          ]
+        },
+        {
+          "label": "reference_before_corrector",
+          "status": "returned",
+          "potential": [
+            -8.98846567431158e+307,
+            8.98846567431158e+307
+          ],
+          "baseline": [
+            2.0
+          ],
+          "current": [
+            4.0
+          ],
+          "flat": [
+            1.3333333333333333
+          ]
+        },
+        {
+          "label": "predictor_reached_cancelling_corrector",
+          "status": "raised",
+          "type": "CandidateAStageError",
+          "disposition": "nonfinite",
+          "message": "A stage output is not finite binary64",
+          "failure_callsite_line": 665,
+          "computed_before_failure": {
+            "phi": [
+              1.1235582092889474e+308,
+              -1.1235582092889474e+308
+            ],
+            "baseline": [
+              -2.5
+            ],
+            "current": [
+              -5.0
+            ]
+          },
+          "exact_phi0": [
+            "-89884656743115795386465259539451236680898848947115328636715040578866337902750481566354238661203768010560056939935696678829394884407208311246423715319737062188883946712432742638151109800623047059726541476042502884419075341171231440736956555270413618581675255342293149119973622969239858152417678164812112068608",
+            "89884656743115795386465259539451236680898848947115328636715040578866337902750481566354238661203768010560056939935696678829394884407208311246423715319737062188883946712432742638151109800623047059726541476042502884419075341171231440736956555270413618581675255342293149119973622969239858152417678164812112068608"
+          ],
+          "exact_delta_phi": [
+            "202240477672010539619546833963765282532022410131009489432608841302449260281188583524297036987708478023760128114855317527366138489916218700304453359469408389924988880102973670935839997051401855884384718321095631489942919517635270741658152249358430641808769324520159585519940651680789680842939775870827252154368",
+            "-202240477672010539619546833963765282532022410131009489432608841302449260281188583524297036987708478023760128114855317527366138489916218700304453359469408389924988880102973670935839997051401855884384718321095631489942919517635270741658152249358430641808769324520159585519940651680789680842939775870827252154368"
+          ]
+        },
+        {
+          "label": "reference_positive_kappa",
+          "status": "returned",
+          "potential": [
+            8.98846567431158e+307,
+            -8.98846567431158e+307
+          ],
+          "baseline": [
+            -2.0
+          ],
+          "current": [
+            -4.0
+          ],
+          "flat": [
+            -1.3333333333333333
+          ]
+        },
+        {
+          "label": "predictor_reached_cancelling_corrector_positive_kappa",
+          "status": "raised",
+          "type": "CandidateAStageError",
+          "disposition": "nonfinite",
+          "message": "A stage output is not finite binary64",
+          "failure_callsite_line": 665,
+          "computed_before_failure": {
+            "phi": [
+              -1.1235582092889474e+308,
+              1.1235582092889474e+308
+            ],
+            "baseline": [
+              2.5
+            ],
+            "current": [
+              5.0
+            ]
+          },
+          "exact_phi0": [
+            "89884656743115795386465259539451236680898848947115328636715040578866337902750481566354238661203768010560056939935696678829394884407208311246423715319737062188883946712432742638151109800623047059726541476042502884419075341171231440736956555270413618581675255342293149119973622969239858152417678164812112068608",
+            "-89884656743115795386465259539451236680898848947115328636715040578866337902750481566354238661203768010560056939935696678829394884407208311246423715319737062188883946712432742638151109800623047059726541476042502884419075341171231440736956555270413618581675255342293149119973622969239858152417678164812112068608"
+          ],
+          "exact_delta_phi": [
+            "-202240477672010539619546833963765282532022410131009489432608841302449260281188583524297036987708478023760128114855317527366138489916218700304453359469408389924988880102973670935839997051401855884384718321095631489942919517635270741658152249358430641808769324520159585519940651680789680842939775870827252154368",
+            "202240477672010539619546833963765282532022410131009489432608841302449260281188583524297036987708478023760128114855317527366138489916218700304453359469408389924988880102973670935839997051401855884384718321095631489942919517635270741658152249358430641808769324520159585519940651680789680842939775870827252154368"
+          ]
+        }
+      ],
+      "random_cases": 100,
+      "random_failures": []
+    }
+  },
+  "findings": [
+    {
+      "id": "P952-F1",
+      "classification": "numerical_admission_domain_and_diagnostic_representation",
+      "source_lines": [
+        606,
+        665
+      ],
+      "observed": "Constructor computes finite total potential, baseline and current, then raises nonfinite while converting a separate potential decomposition component for storage.",
+      "stronger_witness": {
+        "one_edge": true,
+        "reference_H1": 1.0,
+        "predictor_generated_H1": 4.0,
+        "C": [
+          1.0,
+          0.0
+        ],
+        "W_A": [
+          2.0
+        ],
+        "eta": "2^-1024",
+        "kappa_c": "2^1022",
+        "kappa_Ah": "-3*2^1021",
+        "chi_A": 1.0,
+        "zeta_A": 1.5,
+        "kappa_H": 1.125,
+        "alpha_beta_gamma": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "reference_potential": "(s,-s), s=2^1023",
+        "geometry_increment": "(-9s/4,9s/4), not representable componentwise in binary64",
+        "total_potential": "(-5s/4,5s/4), representable",
+        "computed_baseline": [
+          2.5
+        ],
+        "computed_current": [
+          5.0
+        ]
+      },
+      "required_resolution": "Avoid making nonconsumed diagnostic decomposition overflow veto a finite physical solve, or explicitly admit and document that stronger numerical domain. Preferred correction is an exact/explicit representation for breakdowns, with no clipping or fake numeric values.",
+      "evidence_limit": "Unchanged uploaded constructor and helper bodies executed with lightweight fixture/admission scaffolding. Native repository reproducer supplied but not executed."
+    },
+    {
+      "id": "P952-F2",
+      "classification": "caller_default_context_dependence",
+      "source_lines": [
+        800,
+        819
+      ],
+      "baseline_input": {
+        "old": [
+          0.125
+        ],
+        "target": [
+          7.0
+        ],
+        "dt": 0.125,
+        "tau": 0.7
+      },
+      "baseline_output": [
+        0.2414355139455957
+      ],
+      "after_DefaultContext_Inexact_trap_true": {
+        "raised": "Inexact",
+        "message": "[<class 'decimal.Inexact'>]"
+      },
+      "required_resolution": "Explicitly pin the Decimal trap/flag policy and other context fields relevant to the numerical recipe; test mutation of DefaultContext as well as local precision. Do not mutate global context as a workaround."
+    }
+  ],
+  "forward_pressure": {
+    "owner": "P9-5.3 and whole A lifecycle readmission",
+    "not_a_P9_5_2_defect": true,
+    "case": {
+      "C": [
+        0.0,
+        0.0
+      ],
+      "W_A_old": [
+        4.0
+      ],
+      "W_drv": [
+        1.0
+      ],
+      "chi_A": 1.0,
+      "zeta_A": 3.0,
+      "tau_A": 1.0,
+      "dt": 0.6931471805599453,
+      "writer_result": [
+        2.0
+      ],
+      "old_current_denominator": "-4/5",
+      "new_current_denominator": "0"
+    },
+    "required_later_behavior": "Reject the complete post-writer transaction atomically on target-current readmission; do not let new W alter the already selected same-beat current."
+  },
+  "limits": [
+    "No runnable dependency-complete repository checkout obtained; network fetch of pinned base was unavailable.",
+    "61-method repository suite, verifier entry/ownership checks, browser checks, and exact release/source-bundle hashes were not independently executed.",
+    "Isolated type/admission/identity scaffolding is not frozen-schema, serialization, receipt or lifecycle evidence.",
+    "The dense solve in isolated current tests is an independent reference implementation, not validation of the shared C solver.",
+    "No theorem of universal correct rounding, complete A_OS pass, lifecycle atomicity, formation, A_OS G2 or G3 is asserted."
+  ],
+  "reproducer": {
+    "path": "P9-5.2-AuditReproducer.py",
+    "compiled": true,
+    "executed_in_repository": false
+  },
+  "repository_import_note": "The two isolated-harness source labels are normalized to the repository path named in submitted_source_bindings; those SHA-256 values identify the historical audited bytes. All reported outcomes and limits are preserved."
+}

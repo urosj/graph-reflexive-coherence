@@ -1,23 +1,60 @@
-# Phase 9 GRCV4 handoff — P9-5.1 accepted
+# Phase 9 GRCV4 handoff — P9-5.2 implementation
 
 Current restart point, 2026-09-09: branch `impl/phase-9-grcv4-tranche-5`,
-based on `c2cb423`. [P9-5.1](./phase-9-grcv4/tranche-5/P9-5.1-Review.md)
+based on accepted P9-5.1 commit `c920376`.
+[P9-5.2](./phase-9-grcv4/tranche-5/P9-5.2-Review.md) implements fixed-geometry
+A current/Read-Back, structural source and the provisional final-C log writer.
+The independent audit's two findings are corrected: potential decomposition
+diagnostics now remain exact rational values, and the writer pins its complete
+Decimal context without modifying caller state. 65 focused methods and all
+three supplied integrated audit regressions pass. **P9-5.2 was accepted by the
+user on 2026-09-09**, with P9-5.3 authorized next.
+The [audit follow-up](./phase-9-grcv4/tranche-5/P9-5.2-AuditFollowup.json)
+records reconstruction and scoped checks; the original 61-method/33-browser
+execution remains intact. Current permission is 32 leaves /
+31 runtime paths. Use:
+
+```sh
+.venv/bin/python implementation/phase-9-grcv4/verification/verify_p952_current_writer.py --check
+```
+
+P9-5.3 is the authorized continuation after this acceptance commit. It must
+integrate and verify
+the complete A_OS pass, split residual, one corrector/continuity/writer, clocks
+and zero-duration path. The current writer validates its supplied corrector
+and resource result; the OS owner must prove the corrector geometry came from
+the admitted predictor pass. Full lifecycle admission/commit and A_OS G2 remain
+with their owners. No accepted C_OS scientific implementation changed.
+
+Concrete post-writer pressure for P9-5.3/full lifecycle: `C=(0,0)`, `W_old=4`,
+zero potential, `alpha=beta=gamma=0`, `chi=1`, `zeta=3`, `tau=1`, and binary64
+`dt=log(2)` give an admitted zero current with denominator `-4/5`. The local
+writer lawfully returns `W_next=2`; reconstructing the poststate current is
+singular (denominator zero). The integrated owner must reject atomically at
+post-writer readmission, preserving the whole prestate. That read-only check
+must not change the already selected same-beat current or misreport its
+earlier solve as failed. The portable regression is retained in the leaf's
+test suite and audit reproducer; it currently characterizes the local boundary,
+not a completed lifecycle rollback implementation.
+
+Accepted predecessor: [P9-5.1](./phase-9-grcv4/tranche-5/P9-5.1-Review.md)
 implements explicit history-free Candidate A current/reset construction and
 positive retained mobility authority, with a portable
 [audit follow-up manifest](./phase-9-grcv4/tranche-5/P9-5.1-AuditFollowup.json).
 Independent audit passed its bounded scope; the rounding descriptions and
 underflow/exponent/multigraph regressions are corrected. **P9-5.1 was accepted
 by the user on 2026-09-09** after 41 focused tests, the 269-kernel local rerun,
-and entry/status verification passed. P9-5.2 and A_OS conformance
-remain closed. Use `.venv/bin/python implementation/phase-9-grcv4/verification/verify_p951_initialization.py --check`
-for retained-source, entry and current status checks. Readiness is now 31 leaves /
-31 runtime paths. No A state was added to the accepted C_OS facade or support set.
+and entry/status verification passed. Its retained-source checker belongs to
+the historical `c920376` checkout; use the successor command above for current
+status. No A state was added to the accepted C_OS facade or support set.
 
 For continuation, the explicit reference flux remains a declared operand:
 later integration must establish its admitted source, bind the actual target
 stage, exclude discarded-history dependence, and perform current/lifecycle
 readmission before claiming the complete initializer. P9-5.2 must also pressure
-finite large `W_A`/`W_hat_A` contrasts without overflowing their denominator.
+finite large `W_A`/`W_hat_A` contrasts without overflowing their denominator;
+the P9-5.2 tests now cover this, including exact regular denominators whose
+displayed binary64 contrast rounds to an endpoint.
 The review distinguishes value-constructor failure from lifecycle rollback.
 
 The [P9-4.8B integrated review](./phase-9-grcv4/tranche-4/P9-4.8B-Review.md)

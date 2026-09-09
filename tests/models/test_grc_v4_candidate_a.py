@@ -4,24 +4,35 @@ from __future__ import annotations
 
 from copy import deepcopy
 from dataclasses import FrozenInstanceError, replace
-from decimal import Decimal, localcontext
+from decimal import Decimal, DefaultContext, ROUND_UP, getcontext, localcontext
+from fractions import Fraction
 import json
 import math
 import random
 import unittest
+from unittest.mock import patch
 
 from pygrc.models.grc_v4_candidate_a import (
     BACKEND,
     HISTORY_POLICY,
+    A_SITE_POTENTIAL,
+    CandidateACurrent,
     CandidateADifferentialReference,
     CandidateAInitialization,
     CandidateAInitializationStage,
     CandidateARetainedAuthority,
+    CandidateAStageError,
+    CandidateAWriter,
+    candidate_a_log_interpolation,
 )
 from pygrc.models.grc_v4_codec import canonical_json_bytes
 from pygrc.models.grc_v4_geometry import (
     GRCV4Graph,
+    GRCV4Geometry,
+    GeometryStageInputs,
+    H_profile,
     OneForm,
+    OneFormHodge,
     OrientedEdge,
     PhysicalFlux,
     VertexScalar,
@@ -32,6 +43,11 @@ from pygrc.models.grc_v4_profile import (
     resolve_profile,
 )
 from pygrc.models.grc_v4_state import FrozenJSONMap, GRCV4AuthoritativeState
+from pygrc.models.grc_v4_step import (
+    CurrentSelection,
+    ProvisionalResourceStep,
+    ResourceBoundaryError,
+)
 from tests.models.test_grc_v4_geometry import stage_reference_fixture
 from tests.models.test_grc_v4_profile import reidentify
 
@@ -601,6 +617,838 @@ class CandidateAInitializationTests(unittest.TestCase):
                 for p in list_supported_profiles()
             )
         )
+
+
+def current_fixture(*, C=(3.0, 1.0), W=(2.0,), dt=0.125, changes=None, **kwargs):
+    candidate = dict(
+        site_potential_id=A_SITE_POTENTIAL,
+        kappa_c=0.5,
+        eta=0.25,
+        alpha=0.0,
+        beta=0.0,
+        gamma=0.0,
+        chi_A=0.5,
+        zeta_A=0.75,
+    )
+    candidate.update(kwargs)
+    ref, backend = fixture(**candidate)
+    params, identity = (
+        ref.profile.params_resolved.to_payload(),
+        ref.profile.identity_payload.to_payload(),
+    )
+    params["solver"].update(absolute_tolerance=1e-12, relative_tolerance=1e-12)
+    params["charge"].update(absolute_tolerance=1e-12)
+    for group, values in (changes or {}).items():
+        params[group].update(values)
+    reidentify(params, identity)
+    ref = replace(ref, profile=resolve_profile(params, identity))
+    state = GRCV4AuthoritativeState(C, W, None)
+    inputs = GeometryStageInputs(
+        ref.geometry(),
+        ref.context,
+        state,
+        state,
+        "operation:p952",
+        float(sum(C)),
+        (),
+        0,
+        0.0,
+        dt,
+        "pre_read",
+        0,
+        None,
+    )
+    return inputs, backend
+
+
+def write_fixture(**kwargs):
+    before, backend = current_fixture(**kwargs)
+    point = CandidateACurrent(replace(before, stage="os_corrector"), backend)
+    resource = ProvisionalResourceStep(
+        before, CurrentSelection(point.inputs, "valid_root", point.current)
+    )
+    return point, resource
+
+
+def log_writer_oracle(old, target, dt, tau):
+    """Independent 240-digit multiplicative powers, not the runtime log increment."""
+    with localcontext() as ctx:
+        ctx.prec = 240
+        a = (-Decimal.from_float(float(dt)) / Decimal.from_float(float(tau))).exp()
+        return tuple(
+            float(
+                Decimal.from_float(float(w)) ** a
+                * Decimal.from_float(float(d)) ** (1 - a)
+            )
+            for w, d in zip(old, target, strict=True)
+        )
+
+
+class CandidateACurrentWriterTests(unittest.TestCase):
+    def test_reference_baseline_and_regular_read_have_closed_form(self):
+        inputs, backend = current_fixture()
+        result = CandidateACurrent(inputs, backend)
+        self.assertEqual(result.reference_potential_exact, (2.0, -2.0))
+        self.assertEqual(result.geometry_potential_increment_exact, (0.0, 0.0))
+        self.assertEqual(result.baseline.values, (-2.0,))
+        self.assertEqual(result.W_hat_A, (1.0,))
+        self.assertEqual(result.contrast_exact, (Fraction(1, 3),))
+        self.assertEqual(result.denominator_exact, (Fraction(7, 8),))
+        self.assertEqual(result.current.values, (-16 / 7,))
+        self.assertAlmostEqual(
+            result.read.flux.values[0], -8 / 21, delta=math.ulp(8 / 21)
+        )
+        self.assertEqual(result.read.causal_flat.values, result.read.flux.values)
+
+    def test_nonreference_geometry_changes_potential_without_mobility_transfer(self):
+        before, backend = current_fixture(kappa_Ah=0.25)
+        ref = before.geometry.reference
+        point = CandidateACurrent(
+            replace(
+                before,
+                geometry=GRCV4Geometry(ref, OneFormHodge(ref.graph, ((3.0,),))),
+                stage="os_corrector",
+            ),
+            backend,
+        )
+        self.assertEqual(point.geometry_potential_increment_exact, (1.0, -1.0))
+        self.assertEqual(point.potential.values, (3.0, -3.0))
+        self.assertEqual(point.baseline.values, (-3.0,))
+        self.assertEqual(point.authority.mobility.diagonal, (0.5,))
+        self.assertAlmostEqual(
+            point.read.causal_flat.values[0], point.read.flux.values[0] / 3, delta=1e-16
+        )
+        source = point.structural_source()
+        self.assertAlmostEqual(
+            source.increment[0][0],
+            0.75 * point.read.causal_flat.values[0] ** 2,
+            delta=1e-16,
+        )
+
+    def test_explicit_gate_and_structural_gain_controls_preserve_direct_history(self):
+        points = []
+        for options in ({}, dict(chi_A=0.0), dict(zeta_A=0.0)):
+            inputs, backend = current_fixture(**options)
+            points.append(CandidateACurrent(inputs, backend))
+        self.assertEqual({p.baseline.values for p in points}, {(-2.0,)})
+        self.assertEqual(points[1].current, points[1].baseline)
+        self.assertEqual(points[1].read.flux.values, (0.0,))
+        self.assertEqual(points[2].current, points[2].baseline)
+        self.assertNotEqual(points[2].read.flux.values, (0.0,))
+        self.assertEqual(points[2].structural_source().increment, ((0.0,),))
+        inputs, backend = current_fixture(chi_A=0.0, W=(1.0,))
+        self.assertNotEqual(
+            CandidateACurrent(inputs, backend).baseline, points[1].baseline
+        )
+
+    def test_exact_contrast_avoids_overflow_and_false_endpoint_singularities(self):
+        for w, target, zeta, expected in (
+            (1e308, 5e307, 0.5, Fraction(1, 3)),
+            (1e308, 1.0, 1.0, None),
+            (math.nextafter(0.0, 1.0), 1e308, -1.0, None),
+        ):
+            with self.subTest(w=w, target=target):
+                inputs, backend = current_fixture(
+                    C=(0.0, 0.0),
+                    W=(w,),
+                    eta=1.0,
+                    W_floor=target,
+                    kappa_c=0.0,
+                    chi_A=1.0,
+                    zeta_A=zeta,
+                )
+                point = CandidateACurrent(inputs, backend)
+                if expected is not None:
+                    self.assertEqual(point.contrast_exact, (expected,))
+                else:
+                    self.assertEqual(abs(point.contrast[0]), 1.0)
+                    self.assertLess(abs(point.contrast_exact[0]), 1)
+                self.assertGreater(point.denominator_exact[0], 0)
+                self.assertEqual(point.current.values, (0.0,))
+
+    def test_singular_and_exact_conditioning_boundaries_fail_closed(self):
+        for C in ((0.0, 0.0), (3.0, 1.0)):
+            inputs, backend = current_fixture(C=C, W=(3.0,), chi_A=1.0, zeta_A=2.0)
+            with self.assertRaises(CandidateAStageError) as error:
+                CandidateACurrent(inputs, backend)
+            self.assertEqual(error.exception.disposition, "singular")
+        graph = GRCV4Graph(
+            (0, 1, 2, 3), (OrientedEdge("a", 0, 1), OrientedEdge("b", 2, 3))
+        )
+        for limit, valid in ((4.0, True), (math.nextafter(4.0, 0.0), False)):
+            inputs, backend = current_fixture(
+                graph=graph,
+                C=(0.0,) * 4,
+                W=(3.0, 1.0),
+                chi_A=1.0,
+                zeta_A=1.5,
+                changes={"solver": {"conditioning_limit": limit}},
+            )
+            if valid:
+                self.assertEqual(
+                    CandidateACurrent(inputs, backend).denominator_exact,
+                    (Fraction(1, 4), Fraction(1)),
+                )
+            else:
+                with self.assertRaises(CandidateAStageError) as error:
+                    CandidateACurrent(inputs, backend)
+                self.assertEqual(error.exception.disposition, "conditioning_failure")
+
+    def test_signed_regular_gain_outside_sufficient_uniform_region(self):
+        inputs, backend = current_fixture(W=(3.0,), chi_A=1.0, zeta_A=3.0)
+        point = CandidateACurrent(inputs, backend)
+        self.assertEqual(point.denominator_exact, (Fraction(-1, 2),))
+        self.assertEqual(point.current.values, (-2 * point.baseline.values[0],))
+
+    def test_strict_residual_rejects_unrepresentable_root_and_typed_flat_failure(self):
+        inputs, backend = current_fixture(
+            changes={"solver": {"absolute_tolerance": 0.0, "relative_tolerance": 0.0}}
+        )
+        with self.assertRaises(CandidateAStageError) as error:
+            CandidateACurrent(inputs, backend)
+        self.assertEqual(error.exception.disposition, "no_admitted_root")
+        graph = GRCV4Graph(
+            (0, 1, 2), (OrientedEdge("a", 0, 1), OrientedEdge("b", 1, 2))
+        )
+        inputs, backend = current_fixture(
+            graph=graph,
+            C=(0.0, 0.0, 0.0),
+            W=(1.0, 1.0),
+            changes={"solver": {"conditioning_limit": 2.0}},
+        )
+        ref = inputs.geometry.reference
+        with self.assertRaises(CandidateAStageError) as error:
+            CandidateACurrent(
+                replace(
+                    inputs,
+                    geometry=GRCV4Geometry(
+                        ref, OneFormHodge(graph, ((1.0, 0.0), (0.0, 4.0)))
+                    ),
+                ),
+                backend,
+            )
+        self.assertEqual(error.exception.disposition, "conditioning_failure")
+
+    def test_dense_geometry_multigraph_and_all_conductance_channels(self):
+        graph = GRCV4Graph(
+            ("u", "v", "w", "i"),
+            (
+                OrientedEdge("a", "u", "v"),
+                OrientedEdge("b", "v", "u"),
+                OrientedEdge("c", "v", "w"),
+                OrientedEdge("loop", "u", "u"),
+            ),
+        )
+        inputs, backend = current_fixture(
+            graph=graph,
+            C=(3.0, 1.0, 2.0, 7.0),
+            W=(2.0, 0.5, 1.0, 3.0),
+            kappa_Ah=0.25,
+            alpha=0.125,
+            beta=0.25,
+            gamma=0.0625,
+        )
+        ref = inputs.geometry.reference
+        h = (
+            (2.0, 0.25, 0.0, 0.25),
+            (0.25, 3.0, 0.5, 0.0),
+            (0.0, 0.5, 2.0, 0.0),
+            (0.25, 0.0, 0.0, 4.0),
+        )
+        point = CandidateACurrent(
+            replace(
+                inputs,
+                geometry=GRCV4Geometry(ref, OneFormHodge(graph, h)),
+                stage="os_corrector",
+            ),
+            backend,
+        )
+        # Independent literal incidence/matrix oracle at small exact inputs.
+        import numpy as np
+
+        B = np.array(
+            ((1, -1, 0, 0), (-1, 1, 1, 0), (0, 0, -1, 0), (0, 0, 0, 0)), dtype=float
+        )
+        C = np.array(inputs.current.C)
+        expected_phi = 0.5 * (B @ np.diag(inputs.current.W_A) @ B.T @ C) + 0.25 * (
+            B @ (np.array(h) - np.eye(4)) @ B.T @ C
+        )
+        self.assertEqual(point.potential.values, tuple(expected_phi))
+        self.assertEqual(
+            point.baseline.values,
+            tuple(-0.25 * np.array(inputs.current.W_A) * (B.T @ expected_phi)),
+        )
+        D, hat = scalar_oracle(ref, backend, inputs.current.C, point.baseline.values)
+        self.assertEqual(point.descriptors, D)
+        for w, expected in zip(point.W_hat_A, hat, strict=True):
+            self.assertAlmostEqual(w, expected, delta=4 * math.ulp(expected))
+        self.assertEqual(point.baseline.values[-1], 0.0)
+        self.assertNotEqual(point.read.causal_flat.values[-1], 0.0)
+        self.assertEqual(point.potential.values[-1], 0.0)
+        np.testing.assert_allclose(
+            np.array(h) @ np.array(point.read.causal_flat.values),
+            point.read.flux.values,
+            rtol=1e-14,
+            atol=1e-14,
+        )
+
+    def test_current_reconstruction_and_rejection_of_unknown_or_cached_inputs(self):
+        inputs, backend = current_fixture()
+        point = CandidateACurrent(inputs, backend)
+        self.assertEqual(CandidateACurrent.from_payload(point.to_payload()), point)
+        for field, value in (
+            ("current", [1.0]),
+            ("W_hat_A", [1.0]),
+            ("contrast", [0.0]),
+            ("numerics", "invented"),
+        ):
+            payload = deepcopy(point.to_payload())
+            payload[field] = value
+            with self.assertRaises(ValueError):
+                CandidateACurrent.from_payload(payload)
+        for options in (
+            dict(site_potential_id="test_site_potential_v1"),
+            dict(changes={"solver": {"solver_kind": "newton"}}),
+        ):
+            x, b = current_fixture(**options)
+            with self.assertRaises(ValueError):
+                CandidateACurrent(x, b)
+        with self.assertRaises(ValueError):
+            CandidateACurrent(replace(inputs, trial_current=point.current), backend)
+        with self.assertRaises(ValueError):
+            CandidateACurrent(inputs, replace(backend, regularization=2.0))
+        with self.assertRaises(TypeError):
+            point.read_back(OneForm(point.current.graph, (1.0,)))
+
+    def test_current_orientation_permutation_and_resource_shift_covariance(self):
+        graph = GRCV4Graph(
+            ("u", "v", "w"), (OrientedEdge("a", "u", "v"), OrientedEdge("b", "v", "w"))
+        )
+        x, b = current_fixture(
+            graph=graph, C=(3.0, 1.0, 2.0), W=(2.0, 0.5), gamma=0.125, beta=0.25
+        )
+        point = CandidateACurrent(x, b)
+        changed = GRCV4Graph(
+            ("w", "u", "v"), (OrientedEdge("b", "w", "v"), OrientedEdge("a", "v", "u"))
+        )
+        y, b2 = current_fixture(
+            graph=changed,
+            positions=((2.0,), (0.0,), (1.0,)),
+            C=(2.0, 3.0, 1.0),
+            W=(0.5, 2.0),
+            gamma=0.125,
+            beta=0.25,
+        )
+        moved = CandidateACurrent(y, b2)
+        self.assertEqual(moved.W_hat_A, point.W_hat_A[::-1])
+        self.assertEqual(
+            moved.current.values, tuple(-v for v in point.current.values[::-1])
+        )
+        shifted = CandidateACurrent(
+            replace(
+                x, current=GRCV4AuthoritativeState((5.0, 3.0, 4.0), (2.0, 0.5), None)
+            ),
+            b,
+        )
+        self.assertEqual(
+            shifted.current, point.current
+        )  # alpha=0, zero site derivative
+
+    def test_predictor_corrector_rebuilds_baseline_reference_and_contrast(self):
+        before, backend = current_fixture(kappa_Ah=0.25, gamma=0.25)
+        predictor = CandidateACurrent(replace(before, stage="os_predictor"), backend)
+        ref = before.geometry.reference
+        geometry = H_profile(
+            predictor.structural_source(),
+            reference=ref,
+            context=ref.context,
+            profile=ref.profile,
+        )
+        corrector = CandidateACurrent(
+            replace(before, stage="os_corrector", geometry=geometry), backend
+        )
+        self.assertNotEqual(corrector.baseline, predictor.baseline)
+        self.assertNotEqual(corrector.W_hat_A, predictor.W_hat_A)
+        self.assertNotEqual(corrector.contrast_exact, predictor.contrast_exact)
+        self.assertEqual(corrector.authority.state.W_A, predictor.authority.state.W_A)
+
+    def test_log_writer_small_ratio_and_extreme_endpoints_against_powers(self):
+        tiny = math.nextafter(0.0, 1.0)
+        large = math.nextafter(math.inf, 0.0)
+        cases = [
+            (1.0, 16.0, math.log(2.0), 1.0),
+            (tiny, large, 1.0, 1.0),
+            (large, tiny, 1.0, 1.0),
+            (1.0, 1e308, 1e-17, 1.0),
+            (1e308, tiny, 1e-17, 1.0),
+            (tiny, 2 * tiny, 1.0, 1.0),
+            (large, large, 1.0, 1.0),
+            (1.0, 2.0, tiny, 1e308),
+        ]
+        for w, d, dt, tau in cases:
+            with self.subTest(old=w, target=d, dt=dt, tau=tau):
+                actual = candidate_a_log_interpolation((w,), (d,), dt, tau)[0]
+                expected = log_writer_oracle((w,), (d,), dt, tau)[0]
+                self.assertAlmostEqual(actual, expected, delta=math.ulp(expected))
+                self.assertGreater(actual, 0.0)
+                self.assertLessEqual(min(w, d), actual)
+                self.assertLessEqual(actual, max(w, d))
+        self.assertNotEqual(
+            candidate_a_log_interpolation((1.0,), (1e308,), 1e-17, 1.0), (1.0,)
+        )
+
+    def test_log_writer_endpoints_validation_and_decimal_context_independence(self):
+        tiny = math.nextafter(0.0, 1.0)
+        for dt, tau in ((1000.0, 1.0), (1e308, tiny)):
+            self.assertEqual(
+                candidate_a_log_interpolation((tiny,), (1e308,), dt, tau), (1e308,)
+            )
+        self.assertEqual(
+            candidate_a_log_interpolation((tiny,), (1.0,), 0.0, 1.0), (tiny,)
+        )
+        expected = candidate_a_log_interpolation((0.125,), (7.0,), 0.125, 0.7)
+        with localcontext() as ctx:
+            ctx.prec = 3
+            self.assertEqual(
+                candidate_a_log_interpolation((0.125,), (7.0,), 0.125, 0.7), expected
+            )
+        for old, target, dt, tau in (
+            ((0.0,), (1.0,), 1.0, 1.0),
+            ((1.0,), (-1.0,), 1.0, 1.0),
+            ((1.0,), (), 1.0, 1.0),
+            ((1.0,), (1.0,), -1.0, 1.0),
+            ((1.0,), (1.0,), 1.0, 0.0),
+            ((True,), (1.0,), 1.0, 1.0),
+            ((1.0,), (1.0,), math.inf, 1.0),
+        ):
+            with self.assertRaises((TypeError, ValueError)):
+                candidate_a_log_interpolation(old, target, dt, tau)
+
+    def test_seeded_log_interpolation_with_independent_multiplicative_oracle(self):
+        rng = random.Random(952)
+        for _ in range(40):
+            w, d = (
+                math.ldexp(rng.uniform(1.0, 2.0), rng.randrange(-1074, 1023))
+                for _ in range(2)
+            )
+            dt, tau = (
+                math.ldexp(rng.uniform(1.0, 2.0), rng.randrange(-20, 20))
+                for _ in range(2)
+            )
+            actual = candidate_a_log_interpolation((w,), (d,), dt, tau)[0]
+            expected = log_writer_oracle((w,), (d,), dt, tau)[0]
+            self.assertAlmostEqual(actual, expected, delta=math.ulp(expected))
+
+    def test_writer_rebuilds_final_differential_and_reads_selected_total_current(self):
+        graph = GRCV4Graph(
+            (0, 1, 2), (OrientedEdge("a", 0, 1), OrientedEdge("b", 1, 2))
+        )
+        point, resource = write_fixture(
+            graph=graph,
+            C=(2.0, 1.0, 3.0),
+            W=(2.0, 0.5),
+            kappa_c=0.05,
+            eta=0.1,
+            alpha=0.25,
+            beta=0.5,
+            gamma=1.0,
+            chi_A=1.0,
+            zeta_A=0.5,
+        )
+        before = canonical_json_bytes(point.to_payload())
+        original = CandidateADifferentialReference.rebuild
+        with patch.object(
+            CandidateADifferentialReference,
+            "rebuild",
+            autospec=True,
+            side_effect=original,
+        ) as rebuild:
+            writer = CandidateAWriter(point, resource)
+        self.assertEqual(rebuild.call_count, 1)
+        self.assertEqual(rebuild.call_args.args[1].values, resource.provisional_state.C)
+        D, drive = scalar_oracle(
+            point.inputs.geometry.reference,
+            point.differential_reference,
+            resource.provisional_state.C,
+            point.current.values,
+        )
+        self.assertEqual(writer.descriptors, D)
+        self.assertNotEqual(writer.descriptors, point.descriptors)
+        for actual, expected in zip(writer.W_drv_A, drive, strict=True):
+            self.assertAlmostEqual(actual, expected, delta=4 * math.ulp(expected))
+        expected = log_writer_oracle(
+            point.inputs.current.W_A, writer.W_drv_A, point.inputs.dt, 1.0
+        )
+        self.assertEqual(writer.authority.state.W_A, expected)
+        self.assertEqual(resource.continuity_evaluations, 1)
+        self.assertEqual(canonical_json_bytes(point.to_payload()), before)
+        self.assertNotEqual(writer.W_drv_A, point.W_hat_A)
+        hold = replace(
+            point.inputs,
+            current=GRCV4AuthoritativeState(
+                writer.authority.state.C, point.inputs.current.W_A, None
+            ),
+        )
+        next_point = CandidateACurrent(
+            replace(hold, current=writer.authority.state), point.differential_reference
+        )
+        self.assertNotEqual(
+            next_point.baseline,
+            CandidateACurrent(hold, point.differential_reference).baseline,
+        )
+
+    def test_writer_rejects_wrong_current_stage_operation_and_duration(self):
+        point, resource = write_fixture(gamma=0.25)
+        for flux in (point.baseline, point.read.flux):
+            forged = ProvisionalResourceStep(
+                resource.prestate, CurrentSelection(point.inputs, "valid_root", flux)
+            )
+            with self.assertRaises(ResourceBoundaryError):
+                CandidateAWriter(point, forged)
+        for changes in (dict(operation_id="another"), dict(dt=0.25)):
+            foreign = CandidateACurrent(
+                replace(point.inputs, **changes), point.differential_reference
+            )
+            with self.assertRaises(ResourceBoundaryError):
+                CandidateAWriter(foreign, resource)
+        for stage_name in ("os_predictor", "pre_read", "post_continuity"):
+            wrong = CandidateACurrent(
+                replace(point.inputs, stage=stage_name), point.differential_reference
+            )
+            with self.assertRaises(ValueError):
+                CandidateAWriter(wrong, resource)
+        zero = CandidateACurrent(
+            replace(point.inputs, dt=0.0), point.differential_reference
+        )
+        with self.assertRaises(ValueError):
+            CandidateAWriter(zero, resource)
+
+    def test_resource_failure_prevents_writer_and_final_mobility_failure_preserves_inputs(
+        self,
+    ):
+        inputs, backend = current_fixture(C=(0.0, 1.0), dt=1.0)
+        point = CandidateACurrent(replace(inputs, stage="os_corrector"), backend)
+        with patch("pygrc.models.grc_v4_candidate_a._conductance") as target:
+            with self.assertRaises(ResourceBoundaryError):
+                resource = ProvisionalResourceStep(
+                    inputs, CurrentSelection(point.inputs, "valid_root", point.current)
+                )
+                CandidateAWriter(point, resource)
+            target.assert_not_called()
+        point, resource = write_fixture(
+            C=(500.0, 500.0),
+            W=(1e-308,),
+            eta=1e308,
+            kappa_c=0.0,
+            alpha=-1.0,
+            chi_A=0.0,
+            zeta_A=0.0,
+            dt=1000.0,
+        )
+        before = canonical_json_bytes(resource.to_payload())
+        with self.assertRaises(CandidateAStageError) as error:
+            CandidateAWriter(point, resource)
+        self.assertEqual(error.exception.disposition, "nonfinite")
+        self.assertEqual(canonical_json_bytes(resource.to_payload()), before)
+
+    def test_writer_roundtrip_recomputes_outputs_and_rejects_claim_promotions(self):
+        point, resource = write_fixture(gamma=0.25)
+        writer = CandidateAWriter(point, resource)
+        rebuilt = CandidateAWriter.from_payload(writer.to_payload())
+        self.assertEqual(rebuilt.identity, writer.identity)
+        self.assertEqual(rebuilt.authority.state, writer.authority.state)
+        for field, value in (
+            ("W_A", [1.0]),
+            ("W_drv_A", [1.0]),
+            ("lifecycle_committed", True),
+            ("native_formation_claimed", True),
+        ):
+            payload = deepcopy(writer.to_payload())
+            payload[field] = value
+            with self.assertRaises(ValueError):
+                CandidateAWriter.from_payload(payload)
+        with self.assertRaises(FrozenInstanceError):
+            writer.authority.state.W_A = (1.0,)
+        self.assertEqual(len(list_supported_profiles()), 1)
+
+    def test_current_range_failures_and_exact_potential_cancellation(self):
+        inputs, backend = current_fixture(
+            C=(1.0, 0.0),
+            W=(1.0,),
+            eta=1.0,
+            kappa_c=1e308,
+            kappa_Ah=-1e308,
+        )
+        ref = inputs.geometry.reference
+        point = CandidateACurrent(
+            replace(
+                inputs, geometry=GRCV4Geometry(ref, OneFormHodge(ref.graph, ((2.0,),)))
+            ),
+            backend,
+        )
+        self.assertEqual(point.potential.values, (0.0, 0.0))
+        self.assertEqual(point.baseline.values, (0.0,))
+        inputs, backend = current_fixture(
+            C=(0.25, 0.75),
+            W=(1e308,),
+            eta=1.0,
+            kappa_c=1e-308,
+            chi_A=1.0,
+            zeta_A=1.0,
+        )
+        with self.assertRaises(CandidateAStageError) as error:
+            CandidateACurrent(inputs, backend)
+        self.assertEqual(error.exception.disposition, "nonfinite")
+        inputs, backend = current_fixture(
+            C=(0.0, 1e308),
+            W=(1.0,),
+            kappa_c=0.0,
+            positions=((0.0,), (1e-161,)),
+            ridge=math.nextafter(0.0, 1.0),
+        )
+        with self.assertRaises(CandidateAStageError) as error:
+            CandidateACurrent(inputs, backend)
+        self.assertEqual(error.exception.disposition, "nonfinite")
+
+    def test_writer_preserves_subnormal_below_floor_history_and_checks_policy(self):
+        point, resource = write_fixture(
+            C=(0.0, 0.0),
+            W=(math.nextafter(0.0, 1.0),),
+            eta=1.0,
+            kappa_c=0.0,
+            W_floor=0.5,
+            dt=0.01,
+        )
+        writer = CandidateAWriter(point, resource)
+        self.assertGreater(writer.authority.state.W_A[0], 0.0)
+        self.assertLess(writer.authority.state.W_A[0], 0.5)
+        point, resource = write_fixture(
+            changes={"lifecycle": {"history_policy_id": "unknown_writer"}}
+        )
+        with self.assertRaisesRegex(ValueError, "writer policy"):
+            CandidateAWriter(point, resource)
+
+    def test_predictor_reached_corrector_retains_unbounded_exact_diagnostics(self):
+        s = math.ldexp(1.0, 1023)
+        # Signed gains, edge reversal and node-order permutation must preserve
+        # this reachable cancellation, including its exact diagnostic meaning.
+        for sign, reverse, permute in (
+            (1, False, False),
+            (-1, False, False),
+            (1, True, False),
+            (1, False, True),
+        ):
+            with self.subTest(sign=sign, reverse=reverse, permute=permute):
+                nodes = ("v", "u") if permute else ("u", "v")
+                edge = (
+                    OrientedEdge("e", "v", "u")
+                    if reverse
+                    else OrientedEdge("e", "u", "v")
+                )
+                before, backend = current_fixture(
+                    graph=GRCV4Graph(nodes, (edge,)),
+                    C=tuple(1.0 if node == "u" else 0.0 for node in nodes),
+                    W=(2.0,),
+                    eta=math.ldexp(1.0, -1024),
+                    kappa_c=sign * math.ldexp(1.0, 1022),
+                    kappa_Ah=-sign * 3 * math.ldexp(1.0, 1021),
+                    chi_A=1.0,
+                    zeta_A=1.5,
+                    changes={"geometry": {"kappa_H": 1.125}},
+                )
+                original = canonical_json_bytes(before.to_payload())
+                ref = before.geometry.reference
+                predictor = CandidateACurrent(
+                    replace(before, stage="os_predictor"), backend
+                )
+                edge_sign = -sign if reverse else sign
+                self.assertEqual(predictor.baseline.values, (-2.0 * edge_sign,))
+                self.assertEqual(predictor.current.values, (-4.0 * edge_sign,))
+                geometry = H_profile(
+                    predictor.structural_source(),
+                    reference=ref,
+                    context=ref.context,
+                    profile=ref.profile,
+                )
+                self.assertEqual(geometry.one_form_hodge.matrix, ((4.0,),))
+                point = CandidateACurrent(
+                    replace(before, stage="os_corrector", geometry=geometry), backend
+                )
+                phi0 = tuple(
+                    Fraction(sign * s) * (1 if node == "u" else -1) for node in nodes
+                )
+                delta = tuple(-Fraction(9, 4) * x for x in phi0)
+                self.assertEqual(point.reference_potential_exact, phi0)
+                self.assertEqual(point.geometry_potential_increment_exact, delta)
+                self.assertTrue(
+                    all(
+                        type(x) is Fraction
+                        for x in point.geometry_potential_increment_exact
+                    )
+                )
+                with self.assertRaises(OverflowError):
+                    float(delta[0])
+                self.assertEqual(
+                    point.potential.values,
+                    tuple(float(-Fraction(5, 4) * x) for x in phi0),
+                )
+                self.assertEqual(point.baseline.values, (2.5 * edge_sign,))
+                self.assertEqual(point.denominator_exact, (Fraction(1, 2),))
+                self.assertEqual(point.current.values, (5.0 * edge_sign,))
+                rebuilt = CandidateACurrent.from_payload(point.to_payload())
+                self.assertEqual(rebuilt, point)
+                self.assertEqual(canonical_json_bytes(before.to_payload()), original)
+
+    def test_both_potential_components_can_overflow_but_consumed_values_must_fit(self):
+        for sign in (1, -1):
+            before, backend = current_fixture(
+                C=(1.0, 0.0),
+                W=(2.0,),
+                eta=0.25,
+                kappa_c=sign * 1e308,
+                kappa_Ah=-sign * 1e308,
+            )
+            ref = before.geometry.reference
+            point = CandidateACurrent(
+                replace(
+                    before,
+                    geometry=GRCV4Geometry(ref, OneFormHodge(ref.graph, ((3.0,),))),
+                ),
+                backend,
+            )
+            expected = Fraction(sign * 1e308) * 2
+            self.assertEqual(point.reference_potential_exact, (expected, -expected))
+            self.assertEqual(
+                point.geometry_potential_increment_exact, (-expected, expected)
+            )
+            for value in (
+                point.reference_potential_exact[0],
+                point.geometry_potential_increment_exact[0],
+            ):
+                with self.assertRaises(OverflowError):
+                    float(value)
+            self.assertEqual(point.potential.values, (0.0, 0.0))
+            self.assertEqual(point.baseline.values, (0.0,))
+            self.assertEqual(point.current.values, (0.0,))
+            # Reference geometry has no cancelling increment: its consumed
+            # total is truly outside binary64 and must still reject.
+            with self.assertRaises(CandidateAStageError) as caught:
+                CandidateACurrent(before, backend)
+            self.assertEqual(caught.exception.disposition, "nonfinite")
+        # Here the potential fits but its consumed baseline does not.
+        before, backend = current_fixture(
+            C=(1.0, 0.0), W=(2.0,), eta=1.0, kappa_c=5e307
+        )
+        with self.assertRaises(CandidateAStageError) as caught:
+            CandidateACurrent(before, backend)
+        self.assertEqual(caught.exception.disposition, "nonfinite")
+
+    def test_log_writer_isolates_all_decimal_defaults_and_current_context_fields(self):
+        fields = (
+            "prec",
+            "rounding",
+            "Emin",
+            "Emax",
+            "capitals",
+            "clamp",
+            "traps",
+            "flags",
+        )
+
+        def snapshot(ctx):
+            return {
+                name: dict(getattr(ctx, name))
+                if name in ("traps", "flags")
+                else getattr(ctx, name)
+                for name in fields
+            }
+
+        cases = [
+            ((0.125,), (7.0,), 0.125, 0.7),
+            ((7.0,), (0.125,), 2.0, 0.7),
+            ((math.nextafter(0.0, 1.0),), (1e308,), 0.125, 1.0),
+            ((0.125,), (7.0,), 0.0, 0.7),
+            ((0.125,), (7.0,), 1000.0, 0.7),
+            ((7.0,), (7.0,), 1.0, 0.7),
+            ((), (), 1.0, 0.7),
+        ]
+        expected = [log_writer_oracle(*case) for case in cases]
+        self.assertEqual(expected[0], (0.2414355139455957,))
+        point, resource = write_fixture(gamma=0.25)
+        expected_writer = CandidateAWriter(point, resource).authority.state
+        saved_default, saved_current = snapshot(DefaultContext), snapshot(getcontext())
+        try:
+            for mode in ("current", "default", "both"):
+                for flags_set in (False, True):
+                    with (
+                        self.subTest(mode=mode, flags_set=flags_set),
+                        localcontext() as current,
+                    ):
+                        for name, value in saved_default.items():
+                            setattr(DefaultContext, name, value)
+                        contexts = {
+                            "current": (current,),
+                            "default": (DefaultContext,),
+                            "both": (current, DefaultContext),
+                        }[mode]
+                        for ctx in contexts:
+                            ctx.prec, ctx.rounding, ctx.Emin, ctx.Emax = (
+                                2,
+                                ROUND_UP,
+                                -2,
+                                2,
+                            )
+                            ctx.capitals, ctx.clamp = 0, 1
+                            ctx.traps = dict.fromkeys(ctx.traps, True)
+                            ctx.flags = dict.fromkeys(ctx.flags, flags_set)
+                        hostile_default, hostile_current = (
+                            snapshot(DefaultContext),
+                            snapshot(current),
+                        )
+                        for case, value in zip(cases, expected, strict=True):
+                            self.assertEqual(
+                                candidate_a_log_interpolation(*case), value
+                            )
+                        self.assertEqual(
+                            CandidateAWriter(point, resource).authority.state,
+                            expected_writer,
+                        )
+                        with self.assertRaises(ValueError):
+                            candidate_a_log_interpolation((0.0,), (1.0,), 1.0, 1.0)
+                        self.assertEqual(snapshot(DefaultContext), hostile_default)
+                        self.assertEqual(snapshot(current), hostile_current)
+        finally:
+            for name, value in saved_default.items():
+                setattr(DefaultContext, name, value)
+        self.assertEqual(snapshot(getcontext()), saved_current)
+
+    def test_positive_writer_can_require_singular_poststate_readmission(self):
+        # P9-5.3/full lifecycle must reject the complete transaction atomically;
+        # the provisional writer must not feed new W into this beat's solve.
+        point, resource = write_fixture(
+            C=(0.0, 0.0),
+            W=(4.0,),
+            kappa_c=0.0,
+            chi_A=1.0,
+            zeta_A=3.0,
+            tau_A=1.0,
+            dt=math.log(2.0),
+        )
+        original = canonical_json_bytes(resource.to_payload())
+        self.assertEqual(point.denominator_exact, (Fraction(-4, 5),))
+        self.assertEqual(point.current.values, (0.0,))
+        writer = CandidateAWriter(point, resource)
+        self.assertEqual(writer.W_drv_A, (1.0,))
+        self.assertEqual(writer.authority.state.W_A, (2.0,))
+        self.assertEqual(writer.authority.state.C, point.inputs.current.C)
+        with self.assertRaises(CandidateAStageError) as caught:
+            CandidateACurrent(
+                replace(point.inputs, current=writer.authority.state),
+                point.differential_reference,
+            )
+        self.assertEqual(caught.exception.disposition, "singular")
+        self.assertEqual(canonical_json_bytes(resource.to_payload()), original)
+        self.assertEqual(point.current.values, (0.0,))
 
 
 if __name__ == "__main__":

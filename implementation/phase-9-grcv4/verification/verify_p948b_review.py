@@ -39,8 +39,8 @@ DEBTS = ("P9-4.9.2-DEBT-PARENTS", "P9-4.9.1a-DEBT-ABUNDANCE")
 # for arbitrary edits or a relabeling of the historical run as a new execution.
 ACCEPTANCE_PROJECTIONS = {
     "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/notebooks/phase9_verification.ipynb": "4789175b7d89d487185761ab9324c311e61e159b2cd789964d1867e6c6c44c69",
-    "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/verification.js": "389e2884180a006a96258a0841ff4976b10bee95690453f5459e801818f3434f",
-    "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/phase9_verification.py": "054100e9ad39ca24c100211a05a4396ec198dc511e2e1f3ead9d098031ac6077",
+    "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/verification.js": "b0335898cc681a654da95393af86033ecb019c02c25a4c7faccd1aa1d8f9e452",
+    "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/phase9_verification.py": "07b3f558552975ebdab63c6eff252d70ffed01d5269e53f538f697a2dd982360",
     "src/pygrc/models/grc_v4.py": "338ad4195d4c27a492738820b6c88a44b570a9376c2ea5992c1a6fc62b5e5dc4",
     "src/pygrc/models/grc_v4_profile.py": "66441b1c1bd50bd64183dbc39980f2a013f1ce554a10d7364490ff3854ba9988",
     "tests/models/test_grc_v4.py": "54ca792640ccef324db22d9c9275a8ebe274de779a05b2463d802edf3d3d83d7",

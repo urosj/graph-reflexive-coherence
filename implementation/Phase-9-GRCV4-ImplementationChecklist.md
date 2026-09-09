@@ -813,12 +813,24 @@ updates discovery and status without authorizing new runtime leaves.
   construction are explicit. Whole-target current/lifecycle admission, formation
   evidence and A_OS G2 remain with their owning leaves. Only P9-5.1 is newly
   execution-permitted; this scoped acceptance does not open P9-5.2 or accept A_OS G2.
-- [ ] P9-5.2: Implement log-space writing, direct current, and Read-Back with
+- [x] P9-5.2: Implement log-space writing, direct current, and Read-Back with
   no same-beat reading of newly written retained state. Pressure
   `(W_A-W_hat_A)/(W_A+W_hat_A)` at large finite positive operands without
-  denominator-overflow artifacts.
+  denominator-overflow artifacts. [Review/source-test map](./phase-9-grcv4/tranche-5/P9-5.2-Review.md)
+  and [audit follow-up](./phase-9-grcv4/tranche-5/P9-5.2-AuditFollowup.json):
+  65 focused methods and three supplied audit regressions pass. Audit F1/F2
+  are corrected: exact potential-decomposition diagnostics admit finite
+  cancellation beyond component binary64 range, and the complete Decimal
+  context is isolated from caller defaults. **Accepted by the user on
+  2026-09-09**; P9-5.3 is authorized next.
+  These are provisional
+  current/writer primitives; complete A_OS integration remains in P9-5.3.
 - [ ] P9-5.3: Execute independent Candidate A numerical/stage/control vectors
-  and the `A_OS` step cases.
+  and the `A_OS` step cases. Carry the P9-5.2 positive-but-singular writer
+  witness (`W_old=4`, `W_next=2`, `chi=1`, `zeta=3`, zero C/current) into
+  complete post-writer readmission: reject atomically while preserving the
+  whole prestate and the earlier successful solve's provenance; do not feed
+  the new retained value into the already selected same-beat current.
 - [ ] P9-5.4: Preserve separate initialization/formation/history claims and
   keep lifecycle-dependent conformance pending. Before complete initializer
   conformance, the A lifecycle owner must establish the admitted reference-flux

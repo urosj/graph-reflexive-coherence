@@ -1164,6 +1164,31 @@
       "iteration_id": "P9-5.1"
     },
     {
+      "path": "implementation/phase-9-grcv4/tranche-5/P9-5.2-AuditFollowup.json",
+      "iteration_id": "P9-5.2",
+      "sha256": "e2760efd1d7e7c6726a6f2748da78c229ae3c3dd9643cd08cf49120d3da891aa"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-5/P9-5.2-AuditPressure.json",
+      "iteration_id": "P9-5.2",
+      "sha256": "8af4f8c26d7c56549954f28030d27e0297a7fa25db9d12e9d1250f011750301a"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-5/P9-5.2-AuditReproducer.py",
+      "iteration_id": "P9-5.2",
+      "sha256": "5304330d9456b9b8ff9cd812644c898e60a0cfb9deccdfbe5eefdc79ebc29cd5"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-5/P9-5.2-ExecutionRecord.json",
+      "iteration_id": "P9-5.2",
+      "sha256": "ddea3de51e6bbd000f679d24e4a819d7de5b464eb640a508c5cc9812ee6d426e"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-5/P9-5.2-Review.md",
+      "iteration_id": "P9-5.2",
+      "sha256": "0e115a21df097fc1db5e618531a936d71c6dfc0e4c54b71290e6c6f5121a586e"
+    },
+    {
       "path": "pyproject.toml",
       "sha256": "018c364413f75ee49186975c05e9cdaba7a78e171d47833609fbebc223a64a66",
       "iteration_id": "P9-3.1"
@@ -1205,8 +1230,8 @@
     },
     {
       "path": "src/pygrc/models/grc_v4_candidate_a.py",
-      "sha256": "b099c20235337cff1a53bc3609af38c500c5df8cc7229dce804acc39d0fff5ed",
-      "iteration_id": "P9-5.1"
+      "sha256": "f3517d1bb5af440bb212fe4870355c1193ba55169478a8766d32e2f947fb1db1",
+      "iteration_id": "P9-5.2"
     },
     {
       "path": "src/pygrc/models/grc_v4_candidate_c.py",
@@ -1270,8 +1295,8 @@
     },
     {
       "path": "tests/models/test_grc_v4_candidate_a.py",
-      "sha256": "84f5df7a6b397c4faf9185e214080bc62197c8078bb50f4fc6ad27202db2fa8a",
-      "iteration_id": "P9-5.1"
+      "sha256": "6f54255ee3c766621c30a3f236f4104d3981c757c15d76ccd55b63e98a3464d2",
+      "iteration_id": "P9-5.2"
     },
     {
       "path": "tests/models/test_grc_v4_candidate_c.py",
@@ -1324,5 +1349,5 @@
   ],
   "admitted_specialization_support_sets": [],
   "claim_ceiling": "Work entries grant no conformance; the only accepted support is the separate P9-4.8B exact C_OS singleton. Local targets, other profiles and specialization are not promoted.",
-  "record_digest": "895c242cbfe9c9af8f19f30aaf1f208bb3e857178a06822b834d88c2c21b1e4d"
+  "record_digest": "c8c0f540ed0a64c59ea7a99abee1e3c5fc0cab525153a3e53e2a553c8a0b1d94"
 }
