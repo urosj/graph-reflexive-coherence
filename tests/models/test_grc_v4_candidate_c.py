@@ -2971,6 +2971,60 @@ class CandidateCCaptureTests(unittest.TestCase):
                 self.assertEqual(result["status"], "failed")
                 self.assertIn("code differs", result["capture_error"])
 
+    def test_namespace_packages_keep_local_paths_and_child_source_checks(self) -> None:
+        from importlib.machinery import ModuleSpec
+
+        for mode in (
+            "local", "foreign_spec_path", "foreign_module_path", "extra_path",
+            "empty_path", "wrong_name", "unbound_child", "wrong_child_origin",
+            "forged_child_hash", "regular_package_disguised_as_namespace",
+        ):
+            with self.subTest(mode=mode), self.fixture() as (root, _, hashes):
+                folder = root / "tests/fixtures"
+                folder.mkdir()
+                child_path = folder / "probe.py"
+                child_path.write_text("value = 7\n")
+                namespace = ModuleType("tests.fixtures")
+                namespace.__spec__ = ModuleSpec(namespace.__name__, None, is_package=True)
+                namespace.__spec__.submodule_search_locations = [str(folder)]
+                namespace.__path__ = [str(folder)]
+                child = ModuleType("tests.fixtures.probe")
+                child.__file__ = str(child_path)
+                child.__spec__ = ModuleSpec(child.__name__, None, origin=str(child_path))
+                exec(compile(child_path.read_bytes(), str(child_path), "exec"), child.__dict__)
+                sys.modules[namespace.__name__] = namespace
+                sys.modules[child.__name__] = child
+                if mode == "foreign_spec_path":
+                    namespace.__spec__.submodule_search_locations = [str(root.parent)]
+                elif mode == "foreign_module_path":
+                    namespace.__path__ = [str(root.parent)]
+                elif mode == "extra_path":
+                    namespace.__path__.append(str(root.parent))
+                elif mode == "empty_path":
+                    namespace.__path__ = []
+                elif mode == "wrong_name":
+                    namespace.__spec__.name = "tests.another"
+                elif mode == "wrong_child_origin":
+                    child.__spec__.origin = str(folder / "another.py")
+                elif mode == "regular_package_disguised_as_namespace":
+                    (folder / "__init__.py").write_text("")
+
+                def snapshot() -> dict[str, str]:
+                    extra = {} if mode == "unbound_child" else {
+                        "tests/fixtures/probe.py": (
+                            "0" * 64 if mode == "forged_child_hash"
+                            else hashlib.sha256(child_path.read_bytes()).hexdigest()
+                        )
+                    }
+                    return {**hashes(), **extra}
+
+                result = self.execute(root, snapshot)
+                self.assertEqual(result["status"], "passed" if mode == "local" else "failed", result)
+                if mode == "local":
+                    self.assertIn(child.__name__, result["loaded_sources_after"])
+                else:
+                    self.assertNotIn("results", result)
+
     def test_disk_change_during_execution_fails(self) -> None:
         for mode in ("edited", "deleted"):
             with self.subTest(mode=mode), self.fixture() as (root, modules, hashes):
@@ -3159,6 +3213,23 @@ def _p941_loaded_sources(
             )
         stem = prefix + canonical.replace(".", "/")
         file = getattr(module, "__file__", None)
+        if file is None and spec is not None and spec.origin is None:
+            # A namespace owns no executable file. Admit only its one actual,
+            # source-bound local directory; inspect every loaded child normally.
+            expected = root / stem
+            locations = tuple(Path(p).resolve() for p in (spec.submodule_search_locations or ()))
+            module_locations = tuple(Path(p).resolve() for p in getattr(module, "__path__", ()))
+            if (
+                canonical in leaf_modules
+                or spec.name != canonical
+                or locations != (expected,)
+                or module_locations != (expected,)
+                or not expected.is_dir()
+                or (expected / "__init__.py").exists()
+                or not any(p.startswith(stem + "/") for p in hashes)
+            ):
+                raise RuntimeError("loaded namespace path mismatch: " + name)
+            continue
         path = Path(file).resolve() if file else None
         if path not in {root / (stem + ".py"), root / stem / "__init__.py"}:
             raise RuntimeError("loaded module path mismatch: " + name)

@@ -804,14 +804,68 @@ updates discovery and status without authorizing new runtime leaves.
 
 ## Tranche 5. Candidate A and A_OS
 
-- [ ] P9-5.1: Implement exact history-free initialization and positive
-  retained-mobility authority.
-- [ ] P9-5.2: Implement log-space writing, direct current, and Read-Back with
-  no same-beat reading of newly written retained state.
-- [ ] P9-5.3: Execute independent Candidate A numerical/stage/control vectors
-  and the `A_OS` step cases.
-- [ ] P9-5.4: Preserve separate initialization/formation/history claims and
-  keep lifecycle-dependent conformance pending.
+**Tranche 5 accepted by the user on 2026-09-10.** P9-5.1–P9-5.4 and the four
+repository-regression test and harness corrections are complete. The
+[handoff](./Phase-9-GRCV4-Handoff.md) records the original full-suite result,
+focused correction checks, and remaining validation limits. Live A lifecycle,
+authenticated initializer-current provenance, formation, and A_OS G2 remain
+with their owning leaves; this acceptance grants no new execution permission.
+
+- [x] P9-5.1: Implement exact history-free initialization and positive
+  retained-mobility authority. [Review and source/test map](./phase-9-grcv4/tranche-5/P9-5.1-Review.md)
+  and [audit follow-up manifest](./phase-9-grcv4/tranche-5/P9-5.1-AuditFollowup.json).
+  Implementation/verification and bounded independent audit corrections are
+  complete; **accepted by the user on 2026-09-09**. Target differential/reference-current
+  inputs and current/reset
+  construction are explicit. Whole-target current/lifecycle admission, formation
+  evidence and A_OS G2 remain with their owning leaves. Only P9-5.1 is newly
+  execution-permitted; this scoped acceptance does not open P9-5.2 or accept A_OS G2.
+- [x] P9-5.2: Implement log-space writing, direct current, and Read-Back with
+  no same-beat reading of newly written retained state. Pressure
+  `(W_A-W_hat_A)/(W_A+W_hat_A)` at large finite positive operands without
+  denominator-overflow artifacts. [Review/source-test map](./phase-9-grcv4/tranche-5/P9-5.2-Review.md)
+  and [audit follow-up](./phase-9-grcv4/tranche-5/P9-5.2-AuditFollowup.json):
+  65 focused methods and three supplied audit regressions pass. Audit F1/F2
+  are corrected: exact potential-decomposition diagnostics admit finite
+  cancellation beyond component binary64 range, and the complete Decimal
+  context is isolated from caller defaults. **Accepted by the user on
+  2026-09-09**; P9-5.3 is authorized next.
+  These are provisional
+  current/writer primitives; complete A_OS integration remains in P9-5.3.
+- [x] P9-5.3: Execute independent Candidate A numerical/stage/control vectors
+  and the `A_OS` step cases. [Review/source-test map](./phase-9-grcv4/tranche-5/P9-5.3-Review.md)
+  and [audit follow-up](./phase-9-grcv4/tranche-5/P9-5.3-AuditFollowup.json):
+  68 focused methods and four supplied audit regressions pass, including one-pass/fresh-corrector staging, exact
+  split boundaries, one continuity/writer, independent scalar and multigraph
+  expectations, controls, clocks and zero duration. Numerical readmission
+  rejects both consumed-geometry and reference-only post-writer singularities.
+  Audit F1/F2 are corrected: an unavailable raw split display cannot veto
+  exact admission; shared numeric failures retain the A_OS stage and cause.
+  Both candidates and signs, display/tolerance boundaries and the existing C
+  publication consumer are covered. The original execution remains unchanged.
+  **Accepted by the user on 2026-09-09**. The later A_OS
+  lifecycle child must prove live atomic rollback and receipt provenance for
+  these retained witnesses; provisional input preservation does not discharge
+  that obligation. P9-5.4 is authorized next.
+- [x] P9-5.4: Preserve separate initialization/formation/history claims and
+  keep lifecycle-dependent conformance pending. Before complete initializer
+  conformance, the A lifecycle owner must establish the admitted reference-flux
+  source, bind its actual target stage, exclude discarded-history dependence,
+  and perform separate target-current and lifecycle readmission. P9-5.1's
+  explicit operand and pair construction do not discharge these obligations.
+  [Review and claim map](./phase-9-grcv4/tranche-5/P9-5.4-Review.md) and
+  [execution manifest](./phase-9-grcv4/tranche-5/P9-5.4-ExecutionRecord.json):
+  13 focused methods verify existing claim guards and three new counterexamples
+  (reset-only current singularity after positive initialization, identical
+  initializer/writer values, and reference neutrality without a W write).
+  Twelve claim boundaries and seven source-contract queries retain formation,
+  retention, release, branch, history-transport and lifecycle/G2 obligations.
+  Numerical runtime remains unchanged. **Independent audit passed the substantive
+  scope**; its squared-current formula correction and provenance/receipt
+  clarifications are applied. The [audit follow-up](./phase-9-grcv4/tranche-5/P9-5.4-AuditFollowup.json)
+  adds signed non-unit current pressure and a same-charge comparison while
+  preserving the original execution record. **Accepted by the user on 2026-09-09**;
+  P9-7.1-A_OS is not yet execution-permitted.
 
 ## Tranche 6. CI, PC, CI+PC, and RG2b
 

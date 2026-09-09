@@ -1170,8 +1170,11 @@ class LifecycleCompositionAuditTests(unittest.TestCase):
             )) for i, row in enumerate(matrix))
 
         c = evolved((3, 1, .5))
+        # P9-4.9.2: every successful operation advances the primary head.
+        # The intervening migration must remain distinguishable from the old step.
+        self.assertNotEqual(last_primary, last_ordinary)
         checkpoint(owner.step_v4(request(1 / 1024, "mixed-step-2")), "ordinary_step",
-                   c, (3, 1, .5), target_migrated, 4.5, 2, 129 / 1024, last_ordinary)
+                   c, (3, 1, .5), target_migrated, 4.5, 2, 129 / 1024, last_primary)
         # Rebase with a changed current makes the otherwise identity rebase
         # above non-vacuous; the following reset must retain this new baseline.
         owner.rebase_reset_baseline()
@@ -1565,7 +1568,7 @@ class AuthoritativeMappedVectorTests(unittest.TestCase):
         root = Path(__file__).resolve().parents[2]
         release = json.loads((root / "specs/grc-v4-specification-release.json").read_text())
         self.assertEqual(release["release_id"], RELEASE_ID)
-        self.assertEqual(RELEASE_ID, "grcv4-spec-release-sha256:f777519824f86c3e9382bcf9b45cba28554351506f354d3f778746e2aaff5c6b")
+        self.assertEqual(RELEASE_ID, "grcv4-spec-release-sha256:e2acd9df0cc02c5fd4bbed4989ff5d7da3a819adeb2950d922b8a6ef4bf35f24")
         load_contract_schema()
         vector = json.loads((root / "specs/grc-v4-conformance-vectors.json").read_text())[
             "grcv4_mapped_topology_event_vectors"][0]

@@ -1,0 +1,135 @@
+{
+  "schema": "p954_independent_document_equation_checks_v1",
+  "scope": "Document/manifest consistency and independent algebra only; zero production runtime executions.",
+  "inputs_sha256": {
+    "P9-5.4-ExecutionRecord.json": "c2e81d97ab05e1593ff949f59b245786722980e506cc94d61f9fe5ba12f40aac",
+    "P9-5.4-Review.md": "43434ee8ab0df3e9e7ac98049eff90637ab11047ed5b3d3f54768d2bbc6c200e"
+  },
+  "verified_record_digest": "3e5ebe246b246a1f2bfbae0b86162ab546c3da954434de7d0b8a784f40b1ae59",
+  "record_hash_convention": "SHA256 of UTF-8 json.dumps(record without record_digest, sort_keys=True, separators=(comma,colon)); identity consistency, not a signature.",
+  "record_inventory": {
+    "source_bindings": 160,
+    "unique_method_ids": 13,
+    "claim_separation_entries": 12,
+    "source_contracts": 7,
+    "reported_preserved_predecessor_bindings": 162
+  },
+  "probe_1": {
+    "initialized_current_W": 1.0,
+    "initialized_reset_W": 2.0,
+    "current_denominator": "1",
+    "reset_denominator": "0",
+    "interpretation": "Positive constructor outputs do not imply regular current/reset admission; supplied initializer currents are not authenticated."
+  },
+  "probe_2": {
+    "old_W": 4.0,
+    "drive_W": 1.0,
+    "selected_current": 0.0,
+    "chi": 0.0,
+    "dt": 0.6931471805599453,
+    "decay_at_binary64_dt": "0.500000000000000011595234069231498211923730439644239842104667993992658760487341258183653591468621386375135195234323911167265926578005069817940892990789638068087862154479800365068854",
+    "high_precision_written_W": "2.00000000000000003214881521208173898411073547569547087935336698890851652511291377974857250779774900532155926286150717785592872529581878631398720902553450329700883058158027217327957",
+    "rounded_written_W": 2.0,
+    "initialized_W_for_plus_one": 2.0,
+    "initialized_W_for_minus_one": 2.0,
+    "interpretation": "Equal C/W coordinate projections from different constructions do not establish equal provenance; no live commit is tested."
+  },
+  "probe_3": {
+    "submitted_algebraic_pair": [
+      {
+        "C": [
+          1.0,
+          1.0
+        ],
+        "Q": 2.0,
+        "W": 2.0,
+        "J0": 0.0,
+        "W_hat": 1.0,
+        "q": "1/3"
+      },
+      {
+        "C": [
+          2.0,
+          1.0
+        ],
+        "Q": 3.0,
+        "W": 2.0,
+        "J0": -1.0,
+        "W_hat": 2.0,
+        "q": "0"
+      }
+    ],
+    "additional_same_charge_algebraic_pair": [
+      {
+        "C": [
+          1.5,
+          1.5
+        ],
+        "Q": 3.0,
+        "W": 2.0,
+        "J0": 0.0,
+        "W_hat": 1.0,
+        "q": "1/3"
+      },
+      {
+        "C": [
+          2.0,
+          1.0
+        ],
+        "Q": 3.0,
+        "W": 2.0,
+        "J0": -1.0,
+        "W_hat": 2.0,
+        "q": "0"
+      }
+    ],
+    "interpretation": "Only fixed-state algebraic comparisons, not an executed C transition or native release."
+  },
+  "squared_vs_absolute_current_probe": [
+    {
+      "J": 0.0,
+      "squared_law": 1.0,
+      "absolute_value_substitution": 1.0
+    },
+    {
+      "J": 1.0,
+      "squared_law": 2.0,
+      "absolute_value_substitution": 2.0
+    },
+    {
+      "J": -1.0,
+      "squared_law": 2.0,
+      "absolute_value_substitution": 2.0
+    },
+    {
+      "J": 0.5,
+      "squared_law": 1.189207115002721,
+      "absolute_value_substitution": 1.414213562373095
+    },
+    {
+      "J": -0.5,
+      "squared_law": 1.189207115002721,
+      "absolute_value_substitution": 1.414213562373095
+    },
+    {
+      "J": 2.0,
+      "squared_law": 15.999999999999998,
+      "absolute_value_substitution": 4.0
+    },
+    {
+      "J": -2.0,
+      "squared_law": 15.999999999999998,
+      "absolute_value_substitution": 4.0
+    }
+  ],
+  "review_correction": "Replace abs(J_ref)/2 by J_ref**2/2, or state that the exponent contribution is -gamma*J_ref**2/2.",
+  "not_independently_verified": [
+    "Production verifier and its 13-test execution",
+    "162-file accepted-predecessor preservation check",
+    "The seven forensic query trace re-executions",
+    "Executed/current verifier patch and body equivalence",
+    "Browser component and API/notebook permission checks",
+    "Pinned September 9 paper/specification bytes"
+  ],
+  "historical_source_note": "Earlier uploaded A source is not substituted for the corrected P9-5.3 dependency named in P9-5.4."
+}

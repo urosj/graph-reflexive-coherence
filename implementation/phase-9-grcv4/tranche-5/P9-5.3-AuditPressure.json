@@ -1,0 +1,290 @@
+{
+  "audit": "P9-5.3",
+  "disposition": "hold_for_shared_split_residual_representation_and_error_boundary",
+  "subject_sources": {
+    "grc_v4_realizations(1).py": {
+      "repository_path": "src/pygrc/models/grc_v4_realizations.py",
+      "sha256": "7a834e9dbf85afb0b95048dac3f5654585f1a6d470adc13cd418edf8aa7c7b5a",
+      "matches_submission": true
+    },
+    "grc_v4_step(5).py": {
+      "repository_path": "src/pygrc/models/grc_v4_step.py",
+      "sha256": "741e533c004b3ec8da2fc9e5e3f0c9bc404fb1a4f439d69f6e6d0d07643f59a7",
+      "matches_submission": true
+    },
+    "test_grc_v4_realizations(1).py": {
+      "repository_path": "tests/models/test_grc_v4_realizations.py",
+      "sha256": "7867dd277399cbc34af034df5ae3f3d9a0bcf15d5af568058630e68716543b30",
+      "matches_submission": true
+    }
+  },
+  "execution_record_sha256": "10245b2eaa2b8672d9cb686b1a69f3b0c88b797ac24715463a10a97f2bd81eea",
+  "submission_reported_suite": {
+    "count": 61,
+    "new_A_OS": 15,
+    "A_current_writer": 24,
+    "C_OS": 22,
+    "independently_rerun": false
+  },
+  "local_environment": {
+    "python": "3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]",
+    "platform": "Linux-6.18.35-x86_64-with-glibc2.41",
+    "numpy": "2.3.5",
+    "mpmath": "1.3.0",
+    "sympy": "1.14.0"
+  },
+  "isolated_dependency_limit": {
+    "corrected_candidate_a_sha256_required": "f3517d1bb5af440bb212fe4870355c1193ba55169478a8766d32e2f947fb1db1",
+    "available_older_A_sha256": "2fba6baf2b77056ce1a13d09b7681503f08511fdcf0587140a6ac7b05aae2c97",
+    "available_older_C_sha256": "f556be57dec006f185136194c9678b0726ec1522d808131e0cca5b60e74355d6",
+    "C_sha256_required": "59dde00ff754e9ce8879bdb6b3980fa2db9eefab98b02698cb0600fda356c2c6",
+    "note": "New submitted pass/residual/resource/step bodies executed unchanged with explicitly isolated dependency/identity scaffolding. Updated hash-pinned dependencies and full checkout were not available. The central residual witness does not exercise either prior A correction."
+  },
+  "pressure_groups": [
+    {
+      "name": "scalar_full_step",
+      "status": "passed",
+      "details": {
+        "C": [
+          3.002293488824101,
+          0.9977065111758989
+        ],
+        "W": [
+          1.9986148784170878
+        ],
+        "h": [
+          [
+            1.0136054421768708
+          ]
+        ]
+      }
+    },
+    {
+      "name": "stage_sequence",
+      "status": "passed",
+      "details": [
+        [
+          "readmit",
+          "reset_readmission"
+        ],
+        [
+          "pass_current",
+          "os_predictor"
+        ],
+        [
+          "pass_current",
+          "os_corrector"
+        ],
+        [
+          "continuity",
+          null
+        ],
+        [
+          "writer",
+          null
+        ],
+        [
+          "readmit",
+          "post_continuity"
+        ],
+        [
+          "readmit",
+          "target_readmission"
+        ]
+      ]
+    },
+    {
+      "name": "written_singularity",
+      "status": "passed",
+      "details": {
+        "calls": [
+          [
+            "reset_readmission",
+            "returned"
+          ],
+          [
+            "post_continuity",
+            "failed"
+          ]
+        ],
+        "stage": "final_reconstruction",
+        "code": "domain_failure"
+      }
+    },
+    {
+      "name": "reference_only_singularity",
+      "status": "passed",
+      "details": {
+        "calls": [
+          [
+            "reset_readmission",
+            "returned"
+          ],
+          [
+            "post_continuity",
+            "returned"
+          ],
+          [
+            "target_readmission",
+            "failed"
+          ]
+        ],
+        "stage": "final_reconstruction",
+        "code": "domain_failure"
+      }
+    },
+    {
+      "name": "typed_and_programmer_faults",
+      "status": "passed",
+      "details": {
+        "cases": 34
+      }
+    },
+    {
+      "name": "clock_controls",
+      "status": "passed",
+      "details": {
+        "cases": 11
+      }
+    },
+    {
+      "name": "random_multigraph_full_steps",
+      "status": "passed",
+      "details": {
+        "cases": 64,
+        "dimensions": [
+          1,
+          2,
+          3
+        ],
+        "max_absolute_difference": 1.1096214716085582e-16
+      }
+    },
+    {
+      "name": "native_regenerated_geometry_failure",
+      "status": "passed",
+      "details": {
+        "substage": "split_residual",
+        "cause": "GeometryDomainError",
+        "writer_reached": false
+      }
+    }
+  ],
+  "predictor_reached_residual_witness": {
+    "reference": [
+      [
+        0.125,
+        0.0
+      ],
+      [
+        0.0,
+        0.375
+      ]
+    ],
+    "predictor_current_over_s": [
+      0.46875,
+      0.9375
+    ],
+    "corrector_current_over_s": [
+      0.615234375,
+      1.23046875
+    ],
+    "corrector_geometry_over_s": [
+      [
+        1.6875,
+        1.5625
+      ],
+      [
+        1.5625,
+        1.9375
+      ]
+    ],
+    "regenerated_over_s": [
+      [
+        0.5887802737851549,
+        -0.590265802999288
+      ],
+      [
+        -0.590265802999288,
+        1.1262473856354573
+      ]
+    ],
+    "residual_over_s": [
+      [
+        1.0987197262148451,
+        2.152765802999288
+      ],
+      [
+        2.152765802999288,
+        0.8112526143645427
+      ]
+    ],
+    "residual_off_diagonal_exceeds_max": true,
+    "split_inertia": [
+      [
+        0,
+        0,
+        2
+      ],
+      [
+        0,
+        0,
+        2
+      ]
+    ],
+    "exact_admitted": true,
+    "failure": {
+      "type": "CandidateCStageError",
+      "substage": null,
+      "disposition": "nonfinite",
+      "message": "C stage result is not finite binary64"
+    },
+    "consumed_poststate": {
+      "current_finite": true,
+      "baseline_over_s": [
+        0.42198479175567627,
+        0.6329771876335144
+      ]
+    },
+    "reference_poststate": {
+      "current_finite": true,
+      "baseline_over_s": [
+        0.32151222229003906,
+        0.4822683334350586
+      ]
+    },
+    "dt": 8.691694759794e-311,
+    "target_C": [
+      0.9855804443359375,
+      2.0144195556640625
+    ]
+  },
+  "findings": [
+    {
+      "id": "F1",
+      "surface": "OSSplitResidual.values conversion",
+      "result": "exact whitened norm admitted; raw residual display conversion exceeds binary64 and aborts",
+      "required": "separate exact admission from diagnostic representability, or explicitly select a narrower numerical domain; no silent saturation/repair"
+    },
+    {
+      "id": "F2",
+      "surface": "CandidateAOSPass exception adapter",
+      "result": "available shared C numerical helper leaks CandidateCStageError without OS substage",
+      "required": "retain typed numerical cause at A split_residual boundary; programmer exceptions must still propagate"
+    }
+  ],
+  "repository_regressions": {
+    "file": "P9-5.3-AuditReproducer.py",
+    "status": "compiled_not_executed",
+    "sha256": "d4b449d79bf92734d2b33ab295d9bce73827e3cdbff36f9e5c9956801d178cc9"
+  },
+  "not_claimed": [
+    "Full repository suite execution",
+    "Verification script execution",
+    "Updated P9-5.2 source re-audit",
+    "A lifecycle rollback or receipts",
+    "A_OS G2",
+    "G3",
+    "New acceptance or closure of previous gates"
+  ]
+}

@@ -1,4 +1,4 @@
-"""Bounded Candidate C OS realization, without lifecycle or profile support.
+"""Bounded Candidate A and C OS realizations, without lifecycle/profile support.
 
 All objects are provisional. Only the later complete-step/lifecycle owner can
 commit authority; reconstructed geometry and residual work are never history.
@@ -9,6 +9,12 @@ from __future__ import annotations
 from dataclasses import dataclass, field, replace
 from fractions import Fraction
 
+from .grc_v4_candidate_a import (
+    HISTORY_POLICY,
+    CandidateACurrent,
+    CandidateADifferentialReference,
+    CandidateAStageError,
+)
 from .grc_v4_candidate_c import (
     CandidateCCurrent,
     CandidateCStageError,
@@ -28,6 +34,7 @@ from .grc_v4_geometry import (
     K4Tensor,
     Matrix,
     StarAssembly,
+    _local_payload,
 )
 from .grc_v4_profile import OSParams
 
@@ -169,12 +176,14 @@ class OSSplitResidual:
     ||Href^(-1/2) R Href^(-1/2)||_2 <= tolerance. For symmetric R this is
     equivalent to both tolerance*Href +/- R being positive semidefinite.
     Exact dyadic differences and inertia decide admission, including equality
-    and subnormal limits. Rounded residual entries are presentation only.
+    and subnormal limits. Rounded residual entries are presentation only:
+    values is None if any exact entry cannot round to finite binary64.
+    exact_values always retains the complete defect, including in that case.
     """
 
     geometry: GRCV4Geometry
     regenerated: GRCV4Geometry
-    values: Matrix = field(init=False)
+    values: Matrix | None = field(init=False)
     exact_values: tuple[tuple[str, ...], ...] = field(init=False)
     admitted: bool = field(init=False)
 
@@ -216,7 +225,15 @@ class OSSplitResidual:
             == 0
             for sign in (-1, 1)
         )
-        object.__setattr__(self, "values", _c_float(residual))
+        # Fraction conversion raises OverflowError outside binary64 range.
+        # A missing display matrix must never veto the exact norm decision.
+        try:
+            values: Matrix | None = tuple(
+                tuple(float(x) for x in row) for row in residual
+            )
+        except OverflowError:
+            values = None
+        object.__setattr__(self, "values", values)
         object.__setattr__(
             self, "exact_values", tuple(tuple(str(x) for x in row) for row in residual)
         )
@@ -273,3 +290,114 @@ class CandidateCOSPass:
             ("selector_path_segments", segments),
         ):
             object.__setattr__(self, name, value)
+
+
+def _a_os_inputs(inputs: GeometryStageInputs) -> GeometryStageInputs:
+    """Admit the A declaration independently of the C selector contract."""
+    if type(inputs) is not GeometryStageInputs:
+        raise TypeError("A OS requires captured stage inputs")
+    before = GeometryStageInputs.from_payload(inputs.to_payload())
+    ref = before.geometry.reference
+    params = ref.profile.params_resolved.realization
+    if (
+        ref.profile.identity_payload.profile_family_id != "A_OS"
+        or ref.profile.params_resolved.lifecycle.history_policy_id != HISTORY_POLICY
+        or type(params) is not OSParams
+        or params.predictor_policy_id != "reference_geometry_predictor_v1"
+        or params.corrector_policy_id != "one_fresh_geometry_corrector_v1"
+        or params.split_residual_norm_id != "edge_l2_v1"
+    ):
+        raise ValueError("unimplemented Candidate A OS declaration")
+    if (
+        before.stage != "pre_read"
+        or before.geometry != ref.geometry()
+        or before.trial_current is not None
+    ):
+        raise ValueError("A OS requires fresh reference pre-read inputs")
+    return before
+
+
+def _a_source_geometry(point: CandidateACurrent) -> GRCV4Geometry:
+    ref = point.inputs.geometry.reference
+    return H_profile(
+        point.structural_source(),
+        reference=ref,
+        context=point.inputs.context,
+        profile=ref.profile,
+    )
+
+
+@dataclass(frozen=True, slots=True)
+class CandidateAOSPass:
+    """One A predictor and fresh corrector, followed by a read-only defect.
+
+    Incoming W_A supplies both current stages. Regeneration for the split
+    residual supplies no second corrector and does not become retained state.
+    The common reference-whitened split norm is independent of C's selector.
+    """
+
+    inputs: GeometryStageInputs
+    differential_reference: CandidateADifferentialReference
+    predictor: CandidateACurrent = field(init=False)
+    corrector: CandidateACurrent = field(init=False)
+    residual: OSSplitResidual = field(init=False)
+
+    def __post_init__(self) -> None:
+        before = _a_os_inputs(self.inputs)
+        if before.dt <= 0:
+            raise ValueError("A OS pass requires positive duration")
+        stage = "os_predictor"
+        try:
+            predictor = CandidateACurrent(
+                replace(before, stage="os_predictor"), self.differential_reference
+            )
+            stage = "geometry_update"
+            geometry = _a_source_geometry(predictor)
+            stage = "os_corrector"
+            corrector = CandidateACurrent(
+                replace(before, geometry=geometry, stage="os_corrector"),
+                self.differential_reference,
+            )
+            stage = "split_residual"
+            residual = OSSplitResidual(geometry, _a_source_geometry(corrector))
+            if not residual.admitted:
+                raise CandidateAStageError(
+                    "domain_failure",
+                    "declared OS split tolerance exceeded; no second iteration",
+                )
+        except (
+            CandidateAStageError,
+            CandidateCStageError,  # shared exact numerical utilities
+            GeometryDomainError,
+            NonfiniteGeometryError,
+        ) as exc:
+            raise OSStageError(stage, str(exc)) from exc
+        for name, value in (
+            ("inputs", before),
+            ("predictor", predictor),
+            ("corrector", corrector),
+            ("residual", residual),
+        ):
+            object.__setattr__(self, name, value)
+
+    def to_payload(self) -> dict[str, object]:
+        return {
+            "schema_version": "grcv4-a-os-pass-v1",
+            "inputs": self.inputs.to_payload(),
+            "differential_reference": self.differential_reference.to_payload(),
+        }
+
+    @classmethod
+    def from_payload(cls, value: object) -> CandidateAOSPass:
+        data = _local_payload(
+            value,
+            {"schema_version", "inputs", "differential_reference"},
+            "schema_version",
+            "grcv4-a-os-pass-v1",
+        )
+        return cls(
+            GeometryStageInputs.from_payload(data["inputs"]),
+            CandidateADifferentialReference.from_payload(
+                data["differential_reference"]
+            ),
+        )
