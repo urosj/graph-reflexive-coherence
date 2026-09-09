@@ -1,0 +1,59 @@
+{
+  "schema": "phase9_leaf_execution_record_v1",
+  "iteration_id": "P9-4.9.2",
+  "status": "implemented_verified_pending_user_review",
+  "release_id": "grcv4-spec-release-sha256:f777519824f86c3e9382bcf9b45cba28554351506f354d3f778746e2aaff5c6b",
+  "authority": {
+    "path": "implementation/investigations/grc9v4-constitutive-design/decisions/P9ReceiptParentAuthority.json",
+    "record_digest": "ba7d69189c527153828b02c2bb3311899b036a634446de9ad8f36af6592c28f8",
+    "user_accepted": "2026-09-09",
+    "scope": "accepted_design_and_full_implementation_instruction_not_G2_acceptance"
+  },
+  "receipt_parent_policy_id": "grcv4-previous-successful-primary-v1",
+  "forensic_admission_digest": "3715d198eb15564ea459fcd0fdf9d7f185ddce4800cc9b66c31fed41b3f129a0",
+  "evidence_bindings": [
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-4.9.2/parent-rule/run.json",
+      "sha256": "d499ba3aa205ace577c317f2ced98837ff1ee593ccd20c4b80ec6a0392a86ac9"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/evidence/P9-4.9.2/parent-rule/inputs.json",
+      "sha256": "cac8be801478bedd3f7c4bc55f406e095b57d23bcfef4aef193f16232a898cff"
+    }
+  ],
+  "runtime_result": {
+    "tests_run": 140,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "nonpassing_methods": [],
+    "executed_ids_sha256": "d04f19238bd1c211335e224e46efc1ed18e99aa17de0e8498d33befefb3a5d5f"
+  },
+  "source_count": 440,
+  "elapsed_seconds": 1888.891,
+  "other_validation": {
+    "source_graph_notebook_and_propagation_tests": 5,
+    "node_component_tests": 30,
+    "published_exact_mapped_event_tests": 1,
+    "symbolic_valid_cases": 9,
+    "symbolic_mutations_rejected": 16,
+    "browser_and_full_tool_verification": {
+      "command": ".venv/bin/python implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/run.py verify-iteration9",
+      "receipt": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/generated/phase9-verification/verification-v3.json",
+      "scope": "separate generated verification of its exact current inputs; this record does not assert cache freshness",
+      "historical_D11_subject": "f1817b8cf41e439cbb18ad82dfab6b39a77ae43d",
+      "numerical_rerun": false
+    },
+    "boundary_pressure_cases_passed": 242,
+    "API_notebook_identity": "byte_exact",
+    "parent_browser_views_verified": [
+      "desktop",
+      "mobile"
+    ]
+  },
+  "claim_ceiling": "Only the internal C_OS parent-policy share of P9-2.4/P9-7.6 is implemented and verified. Structural DAG validity is not authenticated uninterrupted history. Public facade, final complete-profile product and P9-4.8B remain pending.",
+  "accepted_generic_runtime_support": [],
+  "admitted_specialization_support_sets": [],
+  "G2_accepted": false,
+  "record_digest": "b3c78d4c9dc5d5635eca2532b357a628c57d70a02acda970eda0a0e60de55a71"
+}

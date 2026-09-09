@@ -1,0 +1,946 @@
+{
+  "schema": "grcv4_p9492_parent_surface_v1",
+  "policy_id": "grcv4-previous-successful-primary-v1",
+  "authority_extension_digest": "3715d198eb15564ea459fcd0fdf9d7f185ddce4800cc9b66c31fed41b3f129a0",
+  "G2_accepted": false,
+  "runtime_conformance_inferred": false,
+  "claim": {
+    "schema": "grcv4_explorer_forensic_evidence_trace_v1",
+    "output_class": "forensic_evidence_trace",
+    "operation": "reconstruction_path",
+    "query": {
+      "claim_id": "P9-4.9.2-CL-N-001"
+    },
+    "source_bundle_digest": "c9fbcabacf22bb554e82dae80f8cc79da811b94baf1350dac5c488aff0503f64",
+    "graph_digest": "a624af16396dfa5eccaede2f5ee9edc378f7bd8bd8f66fd4d7da00f97b8e2eaf",
+    "ET_C2_record_digest": "10dc5cef2bffc764296cb9e38908cd1f992b9ce7c4c60d04a8ef6efda5d1453b",
+    "row_count": 1,
+    "rows": [
+      {
+        "row_id": "P9-4.9.2-CL-N-001",
+        "classification": "accepted_backward_reconstruction",
+        "payload": {
+          "start_node": "current_claim:P9-4.9.2-CL-N-001",
+          "nodes": [
+            {
+              "node_id": "current_claim:P9-4.9.2-CL-N-001",
+              "kind": "current_claim",
+              "identifier": "P9-4.9.2-CL-N-001",
+              "source_record_id": "GRCV4-P9-4.9.2-PARENTS-v1",
+              "source_json_pointer": "/claim",
+              "attributes": {
+                "claim_id": "P9-4.9.2-CL-N-001",
+                "claim_class": "normative",
+                "status": "accepted_bounded_design",
+                "statement": "Every receipt of a successful commit names exactly the preceding successful commit's primary receipt, or no parent for the first commit.",
+                "scope": "Generic GRCV4 structural contract; this implementation closes only the internal C_OS parent rule.",
+                "not_claimed": [
+                  "authenticated_uninterrupted_history",
+                  "G2_acceptance",
+                  "public_facade_conformance",
+                  "other_profile_runtime_support",
+                  "GRC9_runtime_support"
+                ]
+              }
+            },
+            {
+              "node_id": "debt_transformation:P9-4.9.2-DEBT-PARENTS",
+              "kind": "debt_transformation",
+              "identifier": "P9-4.9.2-DEBT-PARENTS",
+              "source_record_id": "GRCV4-P9-4.9.2-PARENTS-v1",
+              "source_json_pointer": "/debt",
+              "attributes": {
+                "debt_id": "P9-4.9.2-DEBT-PARENTS",
+                "status": "resolved_bounded_design",
+                "transformation": "Absent accepted parent-selection authority is closed by a new explicit contract, not attributed retroactively to D10.2 or D11.",
+                "successor_claim_ids": [
+                  "P9-4.9.2-CL-N-001"
+                ],
+                "origin": "P9-4.8 G2-COS-PARENTS",
+                "remaining_work": [
+                  "runtime_verification_does_not_close_P9-4.9.1",
+                  "complete_profile_evidence_P9-4.9.3",
+                  "integrated_G2_review_P9-4.8B"
+                ]
+              }
+            },
+            {
+              "node_id": "equation_contract:P9-EC-RECEIPT-PARENT-ADMISSION",
+              "kind": "equation_contract",
+              "identifier": "P9-EC-RECEIPT-PARENT-ADMISSION",
+              "source_record_id": "GRCV4-P9-4.9.2-PARENTS-v1",
+              "source_json_pointer": "/contracts/1",
+              "attributes": {
+                "equation_contract_id": "P9-EC-RECEIPT-PARENT-ADMISSION",
+                "parent_object_ids": [
+                  "P9-L-RECEIPT-PARENTS",
+                  "L-ORDERED-RECEIPTS"
+                ],
+                "accepted_claim_ids": [
+                  "P9-4.9.2-CL-N-001"
+                ],
+                "support_semantics": "required",
+                "normative_equation_or_contract": "The lifecycle owner checks the complete partition, primary types, content identities, commit backlinks and every primary/auxiliary parent before publication or restored observability. Reject missing, skipped, foreign, forward, self, cyclic, duplicate, nonprimary or extra parents. Content constructors/comparators alone do not establish lineage validity.",
+                "snapshot_policy": "The C_OS implementation declares pygrc-c-os-snapshot-v3 with receipt_parent_policy_id and specification_release_id, a complete reference_registry and transition_records. Both identifiers must match the current accepted contract. Historical v1/v2 layouts are explicitly rejected, never guessed, upgraded or silently rehashed. Historical execution remains reconstructible through Git."
+              }
+            },
+            {
+              "node_id": "equation_contract:P9-EC-RECEIPT-PARENT-CEILING",
+              "kind": "equation_contract",
+              "identifier": "P9-EC-RECEIPT-PARENT-CEILING",
+              "source_record_id": "GRCV4-P9-4.9.2-PARENTS-v1",
+              "source_json_pointer": "/contracts/2",
+              "attributes": {
+                "equation_contract_id": "P9-EC-RECEIPT-PARENT-CEILING",
+                "parent_object_ids": [
+                  "P9-L-RECEIPT-PARENTS"
+                ],
+                "accepted_claim_ids": [
+                  "P9-4.9.2-CL-N-001"
+                ],
+                "support_semantics": "required",
+                "normative_equation_or_contract": "Commit rank strictly decreases on parent edges, proving a finite DAG, not an authenticated uninterrupted history. Do not require next source=previous target after lawful unreceipted set_state. Coherent structural rewrites may validate; retained run hashes bind external provenance. Duplicates/forks may share content IDs. Parent changes can change receipt/commit/lifecycle IDs and descendants, not the scientific/reset/event preimages for the same scientific operation."
+              }
+            },
+            {
+              "node_id": "equation_contract:P9-EC-RECEIPT-PARENT-CHAIN",
+              "kind": "equation_contract",
+              "identifier": "P9-EC-RECEIPT-PARENT-CHAIN",
+              "source_record_id": "GRCV4-P9-4.9.2-PARENTS-v1",
+              "source_json_pointer": "/contracts/0",
+              "attributes": {
+                "equation_contract_id": "P9-EC-RECEIPT-PARENT-CHAIN",
+                "parent_object_ids": [
+                  "P9-L-RECEIPT-PARENTS",
+                  "L-ORDERED-RECEIPTS"
+                ],
+                "accepted_claim_ids": [
+                  "P9-4.9.2-CL-N-001"
+                ],
+                "support_semantics": "required",
+                "normative_equation_or_contract": "For every receipt r in commit group k, parents(r)=[] when k=0, otherwise [primary(k-1)]. Group order is successful commit order; emitted_receipt_ids partitions the persistent ledger exactly, with one operation primary first and globally unique receipt IDs within that ledger.",
+                "primary_kinds": [
+                  "step-commit",
+                  "reset",
+                  "rebase",
+                  "profile-migration",
+                  "topology-event"
+                ],
+                "controls": "Zero-duration successes advance the head; failures, save/load, snapshot, duplicate, observation and lawful unreceipted set_state do not. Crossings retain the prior ledger prefix. Caller overrides and intra-commit parent edges are forbidden."
+              }
+            },
+            {
+              "attributes": {
+                "GRC9V3_premise_deletion_test": "survives_from_GRC_premises",
+                "blocked_overread": "endpoint_profile_coverage_is_not_crossing_evidence",
+                "conclusion": "general_GRC_typed_receipt",
+                "family": "complete_step_lifecycle",
+                "independent_derivation_ids": [
+                  "D10.2-DER-LIFECYCLE"
+                ],
+                "normative_object": "migration_and_event_receipts_bind_ordered_p_source_p_target",
+                "object_id": "L-ORDERED-RECEIPTS",
+                "object_kind": "receipt_contract",
+                "premises_used": [
+                  "complete_profile_identity",
+                  "direction_specific_loss",
+                  "charge_receipt"
+                ],
+                "promotion_status": "promotion_proved",
+                "source_lineage": [
+                  "GRC9V4-CD-D9-v1",
+                  "GRC9V4-CD-D10-v1"
+                ],
+                "specification_destination": "GRCV4_current_promoted_common_lifecycle",
+                "substrate_disposition": "GRC_derived"
+              },
+              "identifier": "L-ORDERED-RECEIPTS",
+              "kind": "normative_object",
+              "node_id": "normative_object:L-ORDERED-RECEIPTS",
+              "source_json_pointer": "/normatively_load_bearing_objects/50",
+              "source_record_id": "GRC9V4-CD-D10.2-v1"
+            },
+            {
+              "node_id": "normative_object:P9-L-RECEIPT-PARENTS",
+              "kind": "normative_object",
+              "identifier": "P9-L-RECEIPT-PARENTS",
+              "source_record_id": "GRCV4-P9-4.9.2-PARENTS-v1",
+              "source_json_pointer": "/object",
+              "attributes": {
+                "object_id": "P9-L-RECEIPT-PARENTS",
+                "object_role": "ordered successful commit receipt-group parent authority",
+                "accepted_claim_ids": [
+                  "P9-4.9.2-CL-N-001"
+                ]
+              }
+            },
+            {
+              "node_id": "source_record:b89e5f20f5252a6537a590314771a38528bc26ecc46eb5f4c89ec730ab8b133d",
+              "kind": "source_record",
+              "identifier": "b89e5f20f5252a6537a590314771a38528bc26ecc46eb5f4c89ec730ab8b133d",
+              "source_record_id": "GRCV4-P9-4.9.2-PARENTS-v1",
+              "source_json_pointer": "/",
+              "attributes": {
+                "source_id": "GRCV4-P9-4.9.2-PARENTS-v1",
+                "path": "implementation/investigations/grc9v4-constitutive-design/decisions/P9ReceiptParentAuthority.json",
+                "file_sha256": "7e8490a2b1e781645330052f1304650d6f38163310cfe270dcc5fb9000887c22",
+                "source_digests": [
+                  "ba7d69189c527153828b02c2bb3311899b036a634446de9ad8f36af6592c28f8"
+                ],
+                "admission_layer": "P9-4.9.2"
+              }
+            }
+          ],
+          "verification_obligations_excluded": true
+        },
+        "source_ref": {
+          "record_id": "GRCV4-P9-4.9.2-PARENTS-v1",
+          "record_digest": "ba7d69189c527153828b02c2bb3311899b036a634446de9ad8f36af6592c28f8",
+          "source_json_pointer": "/claim",
+          "path": "implementation/investigations/grc9v4-constitutive-design/decisions/P9ReceiptParentAuthority.json"
+        },
+        "edge_refs": [
+          {
+            "edge_id": "propagation:1041352f8438760fb26e65830ba153076a645abd1384651c2966408788dc2167",
+            "source": "equation_contract:P9-EC-RECEIPT-PARENT-CEILING",
+            "target": "current_claim:P9-4.9.2-CL-N-001",
+            "relation": "accepted_claim",
+            "support_semantic": "required",
+            "source_record_id": "GRCV4-P9-4.9.2-PARENTS-v1",
+            "source_record_digest": "ba7d69189c527153828b02c2bb3311899b036a634446de9ad8f36af6592c28f8",
+            "source_json_pointer": "/contracts/2/accepted_claim_ids/0"
+          },
+          {
+            "edge_id": "propagation:2a71915d46e9fd872de871c4e6dc7860547572245b60f8336f3457ffbe9d93a1",
+            "source": "normative_object:P9-L-RECEIPT-PARENTS",
+            "target": "current_claim:P9-4.9.2-CL-N-001",
+            "relation": "accepted_claim",
+            "support_semantic": "required",
+            "source_record_id": "GRCV4-P9-4.9.2-PARENTS-v1",
+            "source_record_digest": "ba7d69189c527153828b02c2bb3311899b036a634446de9ad8f36af6592c28f8",
+            "source_json_pointer": "/object/accepted_claim_ids/0"
+          },
+          {
+            "edge_id": "propagation:2b49a3159064daae79e5550697867aa5e9a149f595046d32b5bdd8bc842fda0d",
+            "source": "equation_contract:P9-EC-RECEIPT-PARENT-ADMISSION",
+            "target": "normative_object:L-ORDERED-RECEIPTS",
+            "relation": "parent_object",
+            "support_semantic": "required",
+            "source_record_id": "GRCV4-P9-4.9.2-PARENTS-v1",
+            "source_record_digest": "ba7d69189c527153828b02c2bb3311899b036a634446de9ad8f36af6592c28f8",
+            "source_json_pointer": "/contracts/1/parent_object_ids/1"
+          },
+          {
+            "edge_id": "propagation:41975d5c5dc5ad8537e0c1833242c12fa68c5bd9f5d57482348a7567a054989b",
+            "source": "equation_contract:P9-EC-RECEIPT-PARENT-CEILING",
+            "target": "source_record:b89e5f20f5252a6537a590314771a38528bc26ecc46eb5f4c89ec730ab8b133d",
+            "relation": "source_identity",
+            "support_semantic": "not_applicable",
+            "source_record_id": "GRCV4-P9-4.9.2-PARENTS-v1",
+            "source_record_digest": "ba7d69189c527153828b02c2bb3311899b036a634446de9ad8f36af6592c28f8",
+            "source_json_pointer": "/contracts/2"
+          },
+          {
+            "edge_id": "propagation:6c4499ff31c2d5d41a2877fc0eaddd8ecc466eeeb7668c306657ebf9355dbfa5",
+            "source": "normative_object:P9-L-RECEIPT-PARENTS",
+            "target": "source_record:b89e5f20f5252a6537a590314771a38528bc26ecc46eb5f4c89ec730ab8b133d",
+            "relation": "source_identity",
+            "support_semantic": "not_applicable",
+            "source_record_id": "GRCV4-P9-4.9.2-PARENTS-v1",
+            "source_record_digest": "ba7d69189c527153828b02c2bb3311899b036a634446de9ad8f36af6592c28f8",
+            "source_json_pointer": "/object"
+          },
+          {
+            "edge_id": "propagation:7951dbacdda4236879d070f260abcf59a66d4e95f8fa5df0cea5be796c3afecb",
+            "source": "equation_contract:P9-EC-RECEIPT-PARENT-CHAIN",
+            "target": "source_record:b89e5f20f5252a6537a590314771a38528bc26ecc46eb5f4c89ec730ab8b133d",
+            "relation": "source_identity",
+            "support_semantic": "not_applicable",
+            "source_record_id": "GRCV4-P9-4.9.2-PARENTS-v1",
+            "source_record_digest": "ba7d69189c527153828b02c2bb3311899b036a634446de9ad8f36af6592c28f8",
+            "source_json_pointer": "/contracts/0"
+          },
+          {
+            "edge_id": "propagation:9eaa8752497abf2aac83dd2d6de17bd1595b87ebb86d415b6ca0a7812787dd60",
+            "source": "equation_contract:P9-EC-RECEIPT-PARENT-CEILING",
+            "target": "normative_object:P9-L-RECEIPT-PARENTS",
+            "relation": "parent_object",
+            "support_semantic": "required",
+            "source_record_id": "GRCV4-P9-4.9.2-PARENTS-v1",
+            "source_record_digest": "ba7d69189c527153828b02c2bb3311899b036a634446de9ad8f36af6592c28f8",
+            "source_json_pointer": "/contracts/2/parent_object_ids/0"
+          },
+          {
+            "edge_id": "propagation:af2874aa6a5cf33d9c88d84af52a96b5d1311e444dce38a44c5b6c55ea93f61a",
+            "source": "debt_transformation:P9-4.9.2-DEBT-PARENTS",
+            "target": "source_record:b89e5f20f5252a6537a590314771a38528bc26ecc46eb5f4c89ec730ab8b133d",
+            "relation": "source_identity",
+            "support_semantic": "not_applicable",
+            "source_record_id": "GRCV4-P9-4.9.2-PARENTS-v1",
+            "source_record_digest": "ba7d69189c527153828b02c2bb3311899b036a634446de9ad8f36af6592c28f8",
+            "source_json_pointer": "/debt"
+          },
+          {
+            "edge_id": "propagation:b60781a3537485b9dccb665e4850a9d2df1bca806a119b9f4922589847ca9fd3",
+            "source": "current_claim:P9-4.9.2-CL-N-001",
+            "target": "source_record:b89e5f20f5252a6537a590314771a38528bc26ecc46eb5f4c89ec730ab8b133d",
+            "relation": "source_identity",
+            "support_semantic": "not_applicable",
+            "source_record_id": "GRCV4-P9-4.9.2-PARENTS-v1",
+            "source_record_digest": "ba7d69189c527153828b02c2bb3311899b036a634446de9ad8f36af6592c28f8",
+            "source_json_pointer": "/claim"
+          },
+          {
+            "edge_id": "propagation:b702083bf4c40ae26f1d6eff98a42bc57eecac7d55da9786ee9df963da610058",
+            "source": "equation_contract:P9-EC-RECEIPT-PARENT-CHAIN",
+            "target": "normative_object:L-ORDERED-RECEIPTS",
+            "relation": "parent_object",
+            "support_semantic": "required",
+            "source_record_id": "GRCV4-P9-4.9.2-PARENTS-v1",
+            "source_record_digest": "ba7d69189c527153828b02c2bb3311899b036a634446de9ad8f36af6592c28f8",
+            "source_json_pointer": "/contracts/0/parent_object_ids/1"
+          },
+          {
+            "edge_id": "propagation:b788708e61a4ce7efe425a2510fa00993642a3c1bfaca23ccac78ca3331c6692",
+            "source": "equation_contract:P9-EC-RECEIPT-PARENT-ADMISSION",
+            "target": "current_claim:P9-4.9.2-CL-N-001",
+            "relation": "accepted_claim",
+            "support_semantic": "required",
+            "source_record_id": "GRCV4-P9-4.9.2-PARENTS-v1",
+            "source_record_digest": "ba7d69189c527153828b02c2bb3311899b036a634446de9ad8f36af6592c28f8",
+            "source_json_pointer": "/contracts/1/accepted_claim_ids/0"
+          },
+          {
+            "edge_id": "propagation:c40e8bfe4717ee6fae9a872ad65ffad2190b1e35eaaf1f85cb04d3e5ade00fef",
+            "source": "equation_contract:P9-EC-RECEIPT-PARENT-ADMISSION",
+            "target": "source_record:b89e5f20f5252a6537a590314771a38528bc26ecc46eb5f4c89ec730ab8b133d",
+            "relation": "source_identity",
+            "support_semantic": "not_applicable",
+            "source_record_id": "GRCV4-P9-4.9.2-PARENTS-v1",
+            "source_record_digest": "ba7d69189c527153828b02c2bb3311899b036a634446de9ad8f36af6592c28f8",
+            "source_json_pointer": "/contracts/1"
+          },
+          {
+            "edge_id": "propagation:c5e83fa28a6b409e18087537e9f948c6b56b06c2723321ae5b7faa93c9aff451",
+            "source": "debt_transformation:P9-4.9.2-DEBT-PARENTS",
+            "target": "current_claim:P9-4.9.2-CL-N-001",
+            "relation": "resolved_bounded_by",
+            "support_semantic": "required",
+            "source_record_id": "GRCV4-P9-4.9.2-PARENTS-v1",
+            "source_record_digest": "ba7d69189c527153828b02c2bb3311899b036a634446de9ad8f36af6592c28f8",
+            "source_json_pointer": "/debt/successor_claim_ids/0"
+          },
+          {
+            "edge_id": "propagation:e0e490a76fe52cbf8ed77c5152dc47a749cde7341c35b53f6d34769b2ac4ceec",
+            "source": "equation_contract:P9-EC-RECEIPT-PARENT-CHAIN",
+            "target": "current_claim:P9-4.9.2-CL-N-001",
+            "relation": "accepted_claim",
+            "support_semantic": "required",
+            "source_record_id": "GRCV4-P9-4.9.2-PARENTS-v1",
+            "source_record_digest": "ba7d69189c527153828b02c2bb3311899b036a634446de9ad8f36af6592c28f8",
+            "source_json_pointer": "/contracts/0/accepted_claim_ids/0"
+          },
+          {
+            "edge_id": "propagation:e8a64a28cffb5841bbd7c31a7de7b9623313cbd9d6b575a3d5afbe0b7b185552",
+            "source": "equation_contract:P9-EC-RECEIPT-PARENT-ADMISSION",
+            "target": "normative_object:P9-L-RECEIPT-PARENTS",
+            "relation": "parent_object",
+            "support_semantic": "required",
+            "source_record_id": "GRCV4-P9-4.9.2-PARENTS-v1",
+            "source_record_digest": "ba7d69189c527153828b02c2bb3311899b036a634446de9ad8f36af6592c28f8",
+            "source_json_pointer": "/contracts/1/parent_object_ids/0"
+          },
+          {
+            "edge_id": "propagation:e9828f7b7c7a74073c6006fa2de26b2d61a04a943e7ec298e5c7b326d8fe5991",
+            "source": "equation_contract:P9-EC-RECEIPT-PARENT-CHAIN",
+            "target": "normative_object:P9-L-RECEIPT-PARENTS",
+            "relation": "parent_object",
+            "support_semantic": "required",
+            "source_record_id": "GRCV4-P9-4.9.2-PARENTS-v1",
+            "source_record_digest": "ba7d69189c527153828b02c2bb3311899b036a634446de9ad8f36af6592c28f8",
+            "source_json_pointer": "/contracts/0/parent_object_ids/0"
+          }
+        ]
+      }
+    ],
+    "trace_digest": "9a3b2b408926bd7bbd5b12b57a3f0c0d954ea788717f1b9045792f78b370bec7",
+    "authority_extension_digest": "3715d198eb15564ea459fcd0fdf9d7f185ddce4800cc9b66c31fed41b3f129a0"
+  },
+  "debt": {
+    "schema": "grcv4_explorer_forensic_evidence_trace_v1",
+    "output_class": "forensic_evidence_trace",
+    "operation": "debt_lifecycle",
+    "query": {
+      "debt_id": "P9-4.9.2-DEBT-PARENTS"
+    },
+    "source_bundle_digest": "c9fbcabacf22bb554e82dae80f8cc79da811b94baf1350dac5c488aff0503f64",
+    "graph_digest": "a624af16396dfa5eccaede2f5ee9edc378f7bd8bd8f66fd4d7da00f97b8e2eaf",
+    "ET_C2_record_digest": "10dc5cef2bffc764296cb9e38908cd1f992b9ce7c4c60d04a8ef6efda5d1453b",
+    "row_count": 1,
+    "rows": [
+      {
+        "row_id": "P9-4.9.2-DEBT-PARENTS",
+        "classification": "Absent accepted parent-selection authority is closed by a new explicit contract, not attributed retroactively to D10.2 or D11.",
+        "payload": {
+          "debt_id": "P9-4.9.2-DEBT-PARENTS",
+          "status": "resolved_bounded_design",
+          "transformation": "Absent accepted parent-selection authority is closed by a new explicit contract, not attributed retroactively to D10.2 or D11.",
+          "successor_claim_ids": [
+            "P9-4.9.2-CL-N-001"
+          ],
+          "origin": "P9-4.8 G2-COS-PARENTS",
+          "remaining_work": [
+            "runtime_verification_does_not_close_P9-4.9.1",
+            "complete_profile_evidence_P9-4.9.3",
+            "integrated_G2_review_P9-4.8B"
+          ]
+        },
+        "source_ref": {
+          "record_id": "GRCV4-P9-4.9.2-PARENTS-v1",
+          "record_digest": "ba7d69189c527153828b02c2bb3311899b036a634446de9ad8f36af6592c28f8",
+          "source_json_pointer": "/debt",
+          "path": "implementation/investigations/grc9v4-constitutive-design/decisions/P9ReceiptParentAuthority.json"
+        },
+        "edge_refs": [
+          {
+            "edge_id": "propagation:0946902f897aaec2caad6ed704c827e9d46d22f4f33ea6f279f37a65ac7e73bd",
+            "source": "equation_contract:D10.2-EC-PARENT-L-ORDERED-RECEIPTS",
+            "target": "debt_transformation:P9-4.9.2-DEBT-PARENTS",
+            "relation": "exposed_authority_gap",
+            "support_semantic": "indeterminate_requires_review",
+            "source_record_id": "GRCV4-P9-4.9.2-PARENTS-v1",
+            "source_record_digest": "ba7d69189c527153828b02c2bb3311899b036a634446de9ad8f36af6592c28f8",
+            "source_json_pointer": "/source_contract_ids/0"
+          },
+          {
+            "edge_id": "propagation:95547668b709cb1db2ca5377ca940ff4bd5437a026fc4ed636a71b5b1a2ebc20",
+            "source": "equation_contract:D10.2-EC-PARENT-L-SNAPSHOT-RESET",
+            "target": "debt_transformation:P9-4.9.2-DEBT-PARENTS",
+            "relation": "exposed_authority_gap",
+            "support_semantic": "indeterminate_requires_review",
+            "source_record_id": "GRCV4-P9-4.9.2-PARENTS-v1",
+            "source_record_digest": "ba7d69189c527153828b02c2bb3311899b036a634446de9ad8f36af6592c28f8",
+            "source_json_pointer": "/source_contract_ids/2"
+          },
+          {
+            "edge_id": "propagation:af2874aa6a5cf33d9c88d84af52a96b5d1311e444dce38a44c5b6c55ea93f61a",
+            "source": "debt_transformation:P9-4.9.2-DEBT-PARENTS",
+            "target": "source_record:b89e5f20f5252a6537a590314771a38528bc26ecc46eb5f4c89ec730ab8b133d",
+            "relation": "source_identity",
+            "support_semantic": "not_applicable",
+            "source_record_id": "GRCV4-P9-4.9.2-PARENTS-v1",
+            "source_record_digest": "ba7d69189c527153828b02c2bb3311899b036a634446de9ad8f36af6592c28f8",
+            "source_json_pointer": "/debt"
+          },
+          {
+            "edge_id": "propagation:b7289d1659f518fbbdc9b70d5ab59494c1d751a1fe4803847d69f61d5d721b1c",
+            "source": "equation_contract:D10.2-EC-PARENT-L-ATOMICITY",
+            "target": "debt_transformation:P9-4.9.2-DEBT-PARENTS",
+            "relation": "exposed_authority_gap",
+            "support_semantic": "indeterminate_requires_review",
+            "source_record_id": "GRCV4-P9-4.9.2-PARENTS-v1",
+            "source_record_digest": "ba7d69189c527153828b02c2bb3311899b036a634446de9ad8f36af6592c28f8",
+            "source_json_pointer": "/source_contract_ids/1"
+          },
+          {
+            "edge_id": "propagation:c5e83fa28a6b409e18087537e9f948c6b56b06c2723321ae5b7faa93c9aff451",
+            "source": "debt_transformation:P9-4.9.2-DEBT-PARENTS",
+            "target": "current_claim:P9-4.9.2-CL-N-001",
+            "relation": "resolved_bounded_by",
+            "support_semantic": "required",
+            "source_record_id": "GRCV4-P9-4.9.2-PARENTS-v1",
+            "source_record_digest": "ba7d69189c527153828b02c2bb3311899b036a634446de9ad8f36af6592c28f8",
+            "source_json_pointer": "/debt/successor_claim_ids/0"
+          },
+          {
+            "edge_id": "propagation:f76d4592b28f34fb3ba41b37279ff4e9d670db745de40b5932982bb2779c56fe",
+            "source": "equation_contract:D10.2-EC-EVENT-READMISSION-RECEIPT",
+            "target": "debt_transformation:P9-4.9.2-DEBT-PARENTS",
+            "relation": "exposed_authority_gap",
+            "support_semantic": "indeterminate_requires_review",
+            "source_record_id": "GRCV4-P9-4.9.2-PARENTS-v1",
+            "source_record_digest": "ba7d69189c527153828b02c2bb3311899b036a634446de9ad8f36af6592c28f8",
+            "source_json_pointer": "/source_contract_ids/3"
+          }
+        ]
+      }
+    ],
+    "trace_digest": "b1aba0d4a9f1c87bae04a2b25701065519ac4e4783e43cc4a8bccb2626b4893d",
+    "authority_extension_digest": "3715d198eb15564ea459fcd0fdf9d7f185ddce4800cc9b66c31fed41b3f129a0"
+  },
+  "object": {
+    "schema": "grcv4_explorer_forensic_evidence_trace_v1",
+    "output_class": "forensic_evidence_trace",
+    "operation": "object_dependents",
+    "query": {
+      "object_id": "P9-L-RECEIPT-PARENTS"
+    },
+    "source_bundle_digest": "c9fbcabacf22bb554e82dae80f8cc79da811b94baf1350dac5c488aff0503f64",
+    "graph_digest": "a624af16396dfa5eccaede2f5ee9edc378f7bd8bd8f66fd4d7da00f97b8e2eaf",
+    "ET_C2_record_digest": "10dc5cef2bffc764296cb9e38908cd1f992b9ce7c4c60d04a8ef6efda5d1453b",
+    "row_count": 1,
+    "rows": [
+      {
+        "row_id": "P9-L-RECEIPT-PARENTS",
+        "classification": "source_exact_object_dependents",
+        "payload": {
+          "object": {
+            "node_id": "normative_object:P9-L-RECEIPT-PARENTS",
+            "kind": "normative_object",
+            "identifier": "P9-L-RECEIPT-PARENTS",
+            "source_record_id": "GRCV4-P9-4.9.2-PARENTS-v1",
+            "source_json_pointer": "/object",
+            "attributes": {
+              "object_id": "P9-L-RECEIPT-PARENTS",
+              "object_role": "ordered successful commit receipt-group parent authority",
+              "accepted_claim_ids": [
+                "P9-4.9.2-CL-N-001"
+              ]
+            }
+          },
+          "direct_contract_nodes": [
+            "equation_contract:P9-EC-RECEIPT-PARENT-ADMISSION",
+            "equation_contract:P9-EC-RECEIPT-PARENT-CEILING",
+            "equation_contract:P9-EC-RECEIPT-PARENT-CHAIN"
+          ],
+          "dependent_nodes": [
+            "current_claim:P9-4.9.2-CL-N-001",
+            "equation_contract:P9-EC-RECEIPT-PARENT-ADMISSION",
+            "equation_contract:P9-EC-RECEIPT-PARENT-CEILING",
+            "equation_contract:P9-EC-RECEIPT-PARENT-CHAIN",
+            "normative_object:L-ORDERED-RECEIPTS",
+            "normative_object:P9-L-RECEIPT-PARENTS",
+            "source_record:b89e5f20f5252a6537a590314771a38528bc26ecc46eb5f4c89ec730ab8b133d"
+          ],
+          "dependency_reach_is_not_importance_or_ranking": true
+        },
+        "source_ref": {
+          "record_id": "GRCV4-P9-4.9.2-PARENTS-v1",
+          "record_digest": "ba7d69189c527153828b02c2bb3311899b036a634446de9ad8f36af6592c28f8",
+          "source_json_pointer": "/object",
+          "path": "implementation/investigations/grc9v4-constitutive-design/decisions/P9ReceiptParentAuthority.json"
+        },
+        "edge_refs": [
+          {
+            "edge_id": "propagation:1041352f8438760fb26e65830ba153076a645abd1384651c2966408788dc2167",
+            "source": "equation_contract:P9-EC-RECEIPT-PARENT-CEILING",
+            "target": "current_claim:P9-4.9.2-CL-N-001",
+            "relation": "accepted_claim",
+            "support_semantic": "required",
+            "source_record_id": "GRCV4-P9-4.9.2-PARENTS-v1",
+            "source_record_digest": "ba7d69189c527153828b02c2bb3311899b036a634446de9ad8f36af6592c28f8",
+            "source_json_pointer": "/contracts/2/accepted_claim_ids/0"
+          },
+          {
+            "edge_id": "propagation:2a71915d46e9fd872de871c4e6dc7860547572245b60f8336f3457ffbe9d93a1",
+            "source": "normative_object:P9-L-RECEIPT-PARENTS",
+            "target": "current_claim:P9-4.9.2-CL-N-001",
+            "relation": "accepted_claim",
+            "support_semantic": "required",
+            "source_record_id": "GRCV4-P9-4.9.2-PARENTS-v1",
+            "source_record_digest": "ba7d69189c527153828b02c2bb3311899b036a634446de9ad8f36af6592c28f8",
+            "source_json_pointer": "/object/accepted_claim_ids/0"
+          },
+          {
+            "edge_id": "propagation:2b49a3159064daae79e5550697867aa5e9a149f595046d32b5bdd8bc842fda0d",
+            "source": "equation_contract:P9-EC-RECEIPT-PARENT-ADMISSION",
+            "target": "normative_object:L-ORDERED-RECEIPTS",
+            "relation": "parent_object",
+            "support_semantic": "required",
+            "source_record_id": "GRCV4-P9-4.9.2-PARENTS-v1",
+            "source_record_digest": "ba7d69189c527153828b02c2bb3311899b036a634446de9ad8f36af6592c28f8",
+            "source_json_pointer": "/contracts/1/parent_object_ids/1"
+          },
+          {
+            "edge_id": "propagation:41975d5c5dc5ad8537e0c1833242c12fa68c5bd9f5d57482348a7567a054989b",
+            "source": "equation_contract:P9-EC-RECEIPT-PARENT-CEILING",
+            "target": "source_record:b89e5f20f5252a6537a590314771a38528bc26ecc46eb5f4c89ec730ab8b133d",
+            "relation": "source_identity",
+            "support_semantic": "not_applicable",
+            "source_record_id": "GRCV4-P9-4.9.2-PARENTS-v1",
+            "source_record_digest": "ba7d69189c527153828b02c2bb3311899b036a634446de9ad8f36af6592c28f8",
+            "source_json_pointer": "/contracts/2"
+          },
+          {
+            "edge_id": "propagation:6c4499ff31c2d5d41a2877fc0eaddd8ecc466eeeb7668c306657ebf9355dbfa5",
+            "source": "normative_object:P9-L-RECEIPT-PARENTS",
+            "target": "source_record:b89e5f20f5252a6537a590314771a38528bc26ecc46eb5f4c89ec730ab8b133d",
+            "relation": "source_identity",
+            "support_semantic": "not_applicable",
+            "source_record_id": "GRCV4-P9-4.9.2-PARENTS-v1",
+            "source_record_digest": "ba7d69189c527153828b02c2bb3311899b036a634446de9ad8f36af6592c28f8",
+            "source_json_pointer": "/object"
+          },
+          {
+            "edge_id": "propagation:7951dbacdda4236879d070f260abcf59a66d4e95f8fa5df0cea5be796c3afecb",
+            "source": "equation_contract:P9-EC-RECEIPT-PARENT-CHAIN",
+            "target": "source_record:b89e5f20f5252a6537a590314771a38528bc26ecc46eb5f4c89ec730ab8b133d",
+            "relation": "source_identity",
+            "support_semantic": "not_applicable",
+            "source_record_id": "GRCV4-P9-4.9.2-PARENTS-v1",
+            "source_record_digest": "ba7d69189c527153828b02c2bb3311899b036a634446de9ad8f36af6592c28f8",
+            "source_json_pointer": "/contracts/0"
+          },
+          {
+            "edge_id": "propagation:9eaa8752497abf2aac83dd2d6de17bd1595b87ebb86d415b6ca0a7812787dd60",
+            "source": "equation_contract:P9-EC-RECEIPT-PARENT-CEILING",
+            "target": "normative_object:P9-L-RECEIPT-PARENTS",
+            "relation": "parent_object",
+            "support_semantic": "required",
+            "source_record_id": "GRCV4-P9-4.9.2-PARENTS-v1",
+            "source_record_digest": "ba7d69189c527153828b02c2bb3311899b036a634446de9ad8f36af6592c28f8",
+            "source_json_pointer": "/contracts/2/parent_object_ids/0"
+          },
+          {
+            "edge_id": "propagation:b702083bf4c40ae26f1d6eff98a42bc57eecac7d55da9786ee9df963da610058",
+            "source": "equation_contract:P9-EC-RECEIPT-PARENT-CHAIN",
+            "target": "normative_object:L-ORDERED-RECEIPTS",
+            "relation": "parent_object",
+            "support_semantic": "required",
+            "source_record_id": "GRCV4-P9-4.9.2-PARENTS-v1",
+            "source_record_digest": "ba7d69189c527153828b02c2bb3311899b036a634446de9ad8f36af6592c28f8",
+            "source_json_pointer": "/contracts/0/parent_object_ids/1"
+          },
+          {
+            "edge_id": "propagation:b788708e61a4ce7efe425a2510fa00993642a3c1bfaca23ccac78ca3331c6692",
+            "source": "equation_contract:P9-EC-RECEIPT-PARENT-ADMISSION",
+            "target": "current_claim:P9-4.9.2-CL-N-001",
+            "relation": "accepted_claim",
+            "support_semantic": "required",
+            "source_record_id": "GRCV4-P9-4.9.2-PARENTS-v1",
+            "source_record_digest": "ba7d69189c527153828b02c2bb3311899b036a634446de9ad8f36af6592c28f8",
+            "source_json_pointer": "/contracts/1/accepted_claim_ids/0"
+          },
+          {
+            "edge_id": "propagation:c40e8bfe4717ee6fae9a872ad65ffad2190b1e35eaaf1f85cb04d3e5ade00fef",
+            "source": "equation_contract:P9-EC-RECEIPT-PARENT-ADMISSION",
+            "target": "source_record:b89e5f20f5252a6537a590314771a38528bc26ecc46eb5f4c89ec730ab8b133d",
+            "relation": "source_identity",
+            "support_semantic": "not_applicable",
+            "source_record_id": "GRCV4-P9-4.9.2-PARENTS-v1",
+            "source_record_digest": "ba7d69189c527153828b02c2bb3311899b036a634446de9ad8f36af6592c28f8",
+            "source_json_pointer": "/contracts/1"
+          },
+          {
+            "edge_id": "propagation:e0e490a76fe52cbf8ed77c5152dc47a749cde7341c35b53f6d34769b2ac4ceec",
+            "source": "equation_contract:P9-EC-RECEIPT-PARENT-CHAIN",
+            "target": "current_claim:P9-4.9.2-CL-N-001",
+            "relation": "accepted_claim",
+            "support_semantic": "required",
+            "source_record_id": "GRCV4-P9-4.9.2-PARENTS-v1",
+            "source_record_digest": "ba7d69189c527153828b02c2bb3311899b036a634446de9ad8f36af6592c28f8",
+            "source_json_pointer": "/contracts/0/accepted_claim_ids/0"
+          },
+          {
+            "edge_id": "propagation:e8a64a28cffb5841bbd7c31a7de7b9623313cbd9d6b575a3d5afbe0b7b185552",
+            "source": "equation_contract:P9-EC-RECEIPT-PARENT-ADMISSION",
+            "target": "normative_object:P9-L-RECEIPT-PARENTS",
+            "relation": "parent_object",
+            "support_semantic": "required",
+            "source_record_id": "GRCV4-P9-4.9.2-PARENTS-v1",
+            "source_record_digest": "ba7d69189c527153828b02c2bb3311899b036a634446de9ad8f36af6592c28f8",
+            "source_json_pointer": "/contracts/1/parent_object_ids/0"
+          },
+          {
+            "edge_id": "propagation:e9828f7b7c7a74073c6006fa2de26b2d61a04a943e7ec298e5c7b326d8fe5991",
+            "source": "equation_contract:P9-EC-RECEIPT-PARENT-CHAIN",
+            "target": "normative_object:P9-L-RECEIPT-PARENTS",
+            "relation": "parent_object",
+            "support_semantic": "required",
+            "source_record_id": "GRCV4-P9-4.9.2-PARENTS-v1",
+            "source_record_digest": "ba7d69189c527153828b02c2bb3311899b036a634446de9ad8f36af6592c28f8",
+            "source_json_pointer": "/contracts/0/parent_object_ids/0"
+          }
+        ]
+      }
+    ],
+    "trace_digest": "2115875d2e6af77dd0392948e64214ef180fd20d5e34e80efe0c70736481e51e",
+    "authority_extension_digest": "3715d198eb15564ea459fcd0fdf9d7f185ddce4800cc9b66c31fed41b3f129a0"
+  },
+  "contracts": [
+    {
+      "schema": "grcv4_explorer_forensic_evidence_trace_v1",
+      "output_class": "forensic_evidence_trace",
+      "operation": "contract_provenance",
+      "query": {
+        "contract_id": "P9-EC-RECEIPT-PARENT-CHAIN"
+      },
+      "source_bundle_digest": "c9fbcabacf22bb554e82dae80f8cc79da811b94baf1350dac5c488aff0503f64",
+      "graph_digest": "a624af16396dfa5eccaede2f5ee9edc378f7bd8bd8f66fd4d7da00f97b8e2eaf",
+      "ET_C2_record_digest": "10dc5cef2bffc764296cb9e38908cd1f992b9ce7c4c60d04a8ef6efda5d1453b",
+      "row_count": 1,
+      "rows": [
+        {
+          "row_id": "P9-EC-RECEIPT-PARENT-CHAIN",
+          "classification": "source_exact_contract_provenance",
+          "payload": {
+            "contract": {
+              "node_id": "equation_contract:P9-EC-RECEIPT-PARENT-CHAIN",
+              "kind": "equation_contract",
+              "identifier": "P9-EC-RECEIPT-PARENT-CHAIN",
+              "source_record_id": "GRCV4-P9-4.9.2-PARENTS-v1",
+              "source_json_pointer": "/contracts/0",
+              "attributes": {
+                "equation_contract_id": "P9-EC-RECEIPT-PARENT-CHAIN",
+                "parent_object_ids": [
+                  "P9-L-RECEIPT-PARENTS",
+                  "L-ORDERED-RECEIPTS"
+                ],
+                "accepted_claim_ids": [
+                  "P9-4.9.2-CL-N-001"
+                ],
+                "support_semantics": "required",
+                "normative_equation_or_contract": "For every receipt r in commit group k, parents(r)=[] when k=0, otherwise [primary(k-1)]. Group order is successful commit order; emitted_receipt_ids partitions the persistent ledger exactly, with one operation primary first and globally unique receipt IDs within that ledger.",
+                "primary_kinds": [
+                  "step-commit",
+                  "reset",
+                  "rebase",
+                  "profile-migration",
+                  "topology-event"
+                ],
+                "controls": "Zero-duration successes advance the head; failures, save/load, snapshot, duplicate, observation and lawful unreceipted set_state do not. Crossings retain the prior ledger prefix. Caller overrides and intra-commit parent edges are forbidden."
+              }
+            },
+            "accepted_claim_support_semantics": [
+              "required"
+            ],
+            "support_disposition": [
+              "required"
+            ]
+          },
+          "source_ref": {
+            "record_id": "GRCV4-P9-4.9.2-PARENTS-v1",
+            "record_digest": "ba7d69189c527153828b02c2bb3311899b036a634446de9ad8f36af6592c28f8",
+            "source_json_pointer": "/contracts/0",
+            "path": "implementation/investigations/grc9v4-constitutive-design/decisions/P9ReceiptParentAuthority.json"
+          },
+          "edge_refs": [
+            {
+              "edge_id": "propagation:7951dbacdda4236879d070f260abcf59a66d4e95f8fa5df0cea5be796c3afecb",
+              "source": "equation_contract:P9-EC-RECEIPT-PARENT-CHAIN",
+              "target": "source_record:b89e5f20f5252a6537a590314771a38528bc26ecc46eb5f4c89ec730ab8b133d",
+              "relation": "source_identity",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRCV4-P9-4.9.2-PARENTS-v1",
+              "source_record_digest": "ba7d69189c527153828b02c2bb3311899b036a634446de9ad8f36af6592c28f8",
+              "source_json_pointer": "/contracts/0"
+            },
+            {
+              "edge_id": "propagation:b702083bf4c40ae26f1d6eff98a42bc57eecac7d55da9786ee9df963da610058",
+              "source": "equation_contract:P9-EC-RECEIPT-PARENT-CHAIN",
+              "target": "normative_object:L-ORDERED-RECEIPTS",
+              "relation": "parent_object",
+              "support_semantic": "required",
+              "source_record_id": "GRCV4-P9-4.9.2-PARENTS-v1",
+              "source_record_digest": "ba7d69189c527153828b02c2bb3311899b036a634446de9ad8f36af6592c28f8",
+              "source_json_pointer": "/contracts/0/parent_object_ids/1"
+            },
+            {
+              "edge_id": "propagation:e0e490a76fe52cbf8ed77c5152dc47a749cde7341c35b53f6d34769b2ac4ceec",
+              "source": "equation_contract:P9-EC-RECEIPT-PARENT-CHAIN",
+              "target": "current_claim:P9-4.9.2-CL-N-001",
+              "relation": "accepted_claim",
+              "support_semantic": "required",
+              "source_record_id": "GRCV4-P9-4.9.2-PARENTS-v1",
+              "source_record_digest": "ba7d69189c527153828b02c2bb3311899b036a634446de9ad8f36af6592c28f8",
+              "source_json_pointer": "/contracts/0/accepted_claim_ids/0"
+            },
+            {
+              "edge_id": "propagation:e9828f7b7c7a74073c6006fa2de26b2d61a04a943e7ec298e5c7b326d8fe5991",
+              "source": "equation_contract:P9-EC-RECEIPT-PARENT-CHAIN",
+              "target": "normative_object:P9-L-RECEIPT-PARENTS",
+              "relation": "parent_object",
+              "support_semantic": "required",
+              "source_record_id": "GRCV4-P9-4.9.2-PARENTS-v1",
+              "source_record_digest": "ba7d69189c527153828b02c2bb3311899b036a634446de9ad8f36af6592c28f8",
+              "source_json_pointer": "/contracts/0/parent_object_ids/0"
+            }
+          ]
+        }
+      ],
+      "trace_digest": "2999660f5dca1cc49d727af9836d987591544f1d888f4d5f2d09b254914e73d5",
+      "authority_extension_digest": "3715d198eb15564ea459fcd0fdf9d7f185ddce4800cc9b66c31fed41b3f129a0"
+    },
+    {
+      "schema": "grcv4_explorer_forensic_evidence_trace_v1",
+      "output_class": "forensic_evidence_trace",
+      "operation": "contract_provenance",
+      "query": {
+        "contract_id": "P9-EC-RECEIPT-PARENT-ADMISSION"
+      },
+      "source_bundle_digest": "c9fbcabacf22bb554e82dae80f8cc79da811b94baf1350dac5c488aff0503f64",
+      "graph_digest": "a624af16396dfa5eccaede2f5ee9edc378f7bd8bd8f66fd4d7da00f97b8e2eaf",
+      "ET_C2_record_digest": "10dc5cef2bffc764296cb9e38908cd1f992b9ce7c4c60d04a8ef6efda5d1453b",
+      "row_count": 1,
+      "rows": [
+        {
+          "row_id": "P9-EC-RECEIPT-PARENT-ADMISSION",
+          "classification": "source_exact_contract_provenance",
+          "payload": {
+            "contract": {
+              "node_id": "equation_contract:P9-EC-RECEIPT-PARENT-ADMISSION",
+              "kind": "equation_contract",
+              "identifier": "P9-EC-RECEIPT-PARENT-ADMISSION",
+              "source_record_id": "GRCV4-P9-4.9.2-PARENTS-v1",
+              "source_json_pointer": "/contracts/1",
+              "attributes": {
+                "equation_contract_id": "P9-EC-RECEIPT-PARENT-ADMISSION",
+                "parent_object_ids": [
+                  "P9-L-RECEIPT-PARENTS",
+                  "L-ORDERED-RECEIPTS"
+                ],
+                "accepted_claim_ids": [
+                  "P9-4.9.2-CL-N-001"
+                ],
+                "support_semantics": "required",
+                "normative_equation_or_contract": "The lifecycle owner checks the complete partition, primary types, content identities, commit backlinks and every primary/auxiliary parent before publication or restored observability. Reject missing, skipped, foreign, forward, self, cyclic, duplicate, nonprimary or extra parents. Content constructors/comparators alone do not establish lineage validity.",
+                "snapshot_policy": "The C_OS implementation declares pygrc-c-os-snapshot-v3 with receipt_parent_policy_id and specification_release_id, a complete reference_registry and transition_records. Both identifiers must match the current accepted contract. Historical v1/v2 layouts are explicitly rejected, never guessed, upgraded or silently rehashed. Historical execution remains reconstructible through Git."
+              }
+            },
+            "accepted_claim_support_semantics": [
+              "required"
+            ],
+            "support_disposition": [
+              "required"
+            ]
+          },
+          "source_ref": {
+            "record_id": "GRCV4-P9-4.9.2-PARENTS-v1",
+            "record_digest": "ba7d69189c527153828b02c2bb3311899b036a634446de9ad8f36af6592c28f8",
+            "source_json_pointer": "/contracts/1",
+            "path": "implementation/investigations/grc9v4-constitutive-design/decisions/P9ReceiptParentAuthority.json"
+          },
+          "edge_refs": [
+            {
+              "edge_id": "propagation:2b49a3159064daae79e5550697867aa5e9a149f595046d32b5bdd8bc842fda0d",
+              "source": "equation_contract:P9-EC-RECEIPT-PARENT-ADMISSION",
+              "target": "normative_object:L-ORDERED-RECEIPTS",
+              "relation": "parent_object",
+              "support_semantic": "required",
+              "source_record_id": "GRCV4-P9-4.9.2-PARENTS-v1",
+              "source_record_digest": "ba7d69189c527153828b02c2bb3311899b036a634446de9ad8f36af6592c28f8",
+              "source_json_pointer": "/contracts/1/parent_object_ids/1"
+            },
+            {
+              "edge_id": "propagation:b788708e61a4ce7efe425a2510fa00993642a3c1bfaca23ccac78ca3331c6692",
+              "source": "equation_contract:P9-EC-RECEIPT-PARENT-ADMISSION",
+              "target": "current_claim:P9-4.9.2-CL-N-001",
+              "relation": "accepted_claim",
+              "support_semantic": "required",
+              "source_record_id": "GRCV4-P9-4.9.2-PARENTS-v1",
+              "source_record_digest": "ba7d69189c527153828b02c2bb3311899b036a634446de9ad8f36af6592c28f8",
+              "source_json_pointer": "/contracts/1/accepted_claim_ids/0"
+            },
+            {
+              "edge_id": "propagation:c40e8bfe4717ee6fae9a872ad65ffad2190b1e35eaaf1f85cb04d3e5ade00fef",
+              "source": "equation_contract:P9-EC-RECEIPT-PARENT-ADMISSION",
+              "target": "source_record:b89e5f20f5252a6537a590314771a38528bc26ecc46eb5f4c89ec730ab8b133d",
+              "relation": "source_identity",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRCV4-P9-4.9.2-PARENTS-v1",
+              "source_record_digest": "ba7d69189c527153828b02c2bb3311899b036a634446de9ad8f36af6592c28f8",
+              "source_json_pointer": "/contracts/1"
+            },
+            {
+              "edge_id": "propagation:e8a64a28cffb5841bbd7c31a7de7b9623313cbd9d6b575a3d5afbe0b7b185552",
+              "source": "equation_contract:P9-EC-RECEIPT-PARENT-ADMISSION",
+              "target": "normative_object:P9-L-RECEIPT-PARENTS",
+              "relation": "parent_object",
+              "support_semantic": "required",
+              "source_record_id": "GRCV4-P9-4.9.2-PARENTS-v1",
+              "source_record_digest": "ba7d69189c527153828b02c2bb3311899b036a634446de9ad8f36af6592c28f8",
+              "source_json_pointer": "/contracts/1/parent_object_ids/0"
+            }
+          ]
+        }
+      ],
+      "trace_digest": "194fee99f80343761afb4de8ea2954978c8dbbf26ad08271493c58bf8f5e5a88",
+      "authority_extension_digest": "3715d198eb15564ea459fcd0fdf9d7f185ddce4800cc9b66c31fed41b3f129a0"
+    },
+    {
+      "schema": "grcv4_explorer_forensic_evidence_trace_v1",
+      "output_class": "forensic_evidence_trace",
+      "operation": "contract_provenance",
+      "query": {
+        "contract_id": "P9-EC-RECEIPT-PARENT-CEILING"
+      },
+      "source_bundle_digest": "c9fbcabacf22bb554e82dae80f8cc79da811b94baf1350dac5c488aff0503f64",
+      "graph_digest": "a624af16396dfa5eccaede2f5ee9edc378f7bd8bd8f66fd4d7da00f97b8e2eaf",
+      "ET_C2_record_digest": "10dc5cef2bffc764296cb9e38908cd1f992b9ce7c4c60d04a8ef6efda5d1453b",
+      "row_count": 1,
+      "rows": [
+        {
+          "row_id": "P9-EC-RECEIPT-PARENT-CEILING",
+          "classification": "source_exact_contract_provenance",
+          "payload": {
+            "contract": {
+              "node_id": "equation_contract:P9-EC-RECEIPT-PARENT-CEILING",
+              "kind": "equation_contract",
+              "identifier": "P9-EC-RECEIPT-PARENT-CEILING",
+              "source_record_id": "GRCV4-P9-4.9.2-PARENTS-v1",
+              "source_json_pointer": "/contracts/2",
+              "attributes": {
+                "equation_contract_id": "P9-EC-RECEIPT-PARENT-CEILING",
+                "parent_object_ids": [
+                  "P9-L-RECEIPT-PARENTS"
+                ],
+                "accepted_claim_ids": [
+                  "P9-4.9.2-CL-N-001"
+                ],
+                "support_semantics": "required",
+                "normative_equation_or_contract": "Commit rank strictly decreases on parent edges, proving a finite DAG, not an authenticated uninterrupted history. Do not require next source=previous target after lawful unreceipted set_state. Coherent structural rewrites may validate; retained run hashes bind external provenance. Duplicates/forks may share content IDs. Parent changes can change receipt/commit/lifecycle IDs and descendants, not the scientific/reset/event preimages for the same scientific operation."
+              }
+            },
+            "accepted_claim_support_semantics": [
+              "required"
+            ],
+            "support_disposition": [
+              "required"
+            ]
+          },
+          "source_ref": {
+            "record_id": "GRCV4-P9-4.9.2-PARENTS-v1",
+            "record_digest": "ba7d69189c527153828b02c2bb3311899b036a634446de9ad8f36af6592c28f8",
+            "source_json_pointer": "/contracts/2",
+            "path": "implementation/investigations/grc9v4-constitutive-design/decisions/P9ReceiptParentAuthority.json"
+          },
+          "edge_refs": [
+            {
+              "edge_id": "propagation:1041352f8438760fb26e65830ba153076a645abd1384651c2966408788dc2167",
+              "source": "equation_contract:P9-EC-RECEIPT-PARENT-CEILING",
+              "target": "current_claim:P9-4.9.2-CL-N-001",
+              "relation": "accepted_claim",
+              "support_semantic": "required",
+              "source_record_id": "GRCV4-P9-4.9.2-PARENTS-v1",
+              "source_record_digest": "ba7d69189c527153828b02c2bb3311899b036a634446de9ad8f36af6592c28f8",
+              "source_json_pointer": "/contracts/2/accepted_claim_ids/0"
+            },
+            {
+              "edge_id": "propagation:41975d5c5dc5ad8537e0c1833242c12fa68c5bd9f5d57482348a7567a054989b",
+              "source": "equation_contract:P9-EC-RECEIPT-PARENT-CEILING",
+              "target": "source_record:b89e5f20f5252a6537a590314771a38528bc26ecc46eb5f4c89ec730ab8b133d",
+              "relation": "source_identity",
+              "support_semantic": "not_applicable",
+              "source_record_id": "GRCV4-P9-4.9.2-PARENTS-v1",
+              "source_record_digest": "ba7d69189c527153828b02c2bb3311899b036a634446de9ad8f36af6592c28f8",
+              "source_json_pointer": "/contracts/2"
+            },
+            {
+              "edge_id": "propagation:9eaa8752497abf2aac83dd2d6de17bd1595b87ebb86d415b6ca0a7812787dd60",
+              "source": "equation_contract:P9-EC-RECEIPT-PARENT-CEILING",
+              "target": "normative_object:P9-L-RECEIPT-PARENTS",
+              "relation": "parent_object",
+              "support_semantic": "required",
+              "source_record_id": "GRCV4-P9-4.9.2-PARENTS-v1",
+              "source_record_digest": "ba7d69189c527153828b02c2bb3311899b036a634446de9ad8f36af6592c28f8",
+              "source_json_pointer": "/contracts/2/parent_object_ids/0"
+            }
+          ]
+        }
+      ],
+      "trace_digest": "b0c7e77e75d5cb958b9cc2aa38f6de7fce632ec59d0560ccf6a7d3c5ca9a4427",
+      "authority_extension_digest": "3715d198eb15564ea459fcd0fdf9d7f185ddce4800cc9b66c31fed41b3f129a0"
+    }
+  ],
+  "projection_digest": "10b1a4e2961b8a99436eb2100eeaa543c55538856cefe0c4935bace3660a0624"
+}

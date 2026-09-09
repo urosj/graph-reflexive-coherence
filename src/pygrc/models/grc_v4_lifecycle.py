@@ -22,6 +22,9 @@ from .grc_v4 import (
 )
 from .grc_v4_candidate_c import CandidateCCurrent, CandidateCStageError
 from .grc_v4_codec import (
+    COS_SNAPSHOT_LAYOUT_ID,
+    RECEIPT_PARENT_POLICY_ID,
+    RELEASE_ID,
     V4IdentityError,
     V4SchemaError,
     canonical_json_bytes,
@@ -183,19 +186,12 @@ def _ordinary_receipts(
     The universal core's resource transform identifies unchanged vertex
     placement (identity, no event increment), not the nonlinear continuity
     map. Source/target authority binds the actual resource write. The history
-    bundle names C rederivation and absence of a carrier. Parents follow this owner's ordinary-commit chain; administrative and
-    crossing parents follow the latest primary. The full ledger retains order.
+    bundle names C rederivation and absence of a carrier. All operations use
+    the accepted previous-successful-primary policy, including auxiliaries.
     """
     ref = before.geometry.reference
     channels, references = _receipt_context(ref)
-    parent = next(
-        (
-            r.receipt_id
-            for r in reversed(ledger)
-            if r.identity_payload["schema_version"] == "grcv4-step-commit-receipt-v1"
-        ),
-        None,
-    )
+    parent = None if not ledger else ledger[-4].receipt_id
     core: dict[str, Any] = {
         "operation_id": before.operation_id,
         **references,
@@ -811,7 +807,6 @@ def _restore_commits(
     commits: list[CommitPayload] = []
     position = 0
     seen: set[str] = set()
-    last_step: str | None = None
     last_primary: str | None = None
     last_reset: str | None = None
     crossings = {} if crossings is None else crossings
@@ -910,14 +905,12 @@ def _restore_commits(
                 )
         core = primary["core"]
         assert isinstance(core, dict)
-        expected_parent = (
-            last_step if kind == "grcv4-step-commit-receipt-v1" else last_primary
-        )
+        expected_parent = last_primary
         if core["parent_receipt_ids"] != (
             [] if expected_parent is None else [expected_parent]
         ):
             raise V4IdentityError(
-                "snapshot does not use this receiver's local parent convention"
+                "snapshot violates the accepted previous-successful-primary parent convention"
             )
         if (
             core["operation_id"],
@@ -1016,7 +1009,6 @@ def _restore_commits(
         if kind == "grcv4-step-commit-receipt-v1":
             if core["source_reset_digest"] != core["target_reset_digest"]:
                 raise V4IdentityError("ordinary step cannot rebase reset")
-            last_step = group[0].receipt_id
         last_primary = group[0].receipt_id
         position += len(group)
         commits.append(commit)
@@ -1198,7 +1190,11 @@ class CandidateCOSOperation:
         snapshot = {
             "schema_version": "grcv4-snapshot-v1",
             "model_family": "GRCV4",
-            "implementation_layout_id": "pygrc-c-os-snapshot-v1",
+            "implementation_layout_id": COS_SNAPSHOT_LAYOUT_ID,
+            "receipt_parent_policy_id": RECEIPT_PARENT_POLICY_ID,
+            "specification_release_id": RELEASE_ID,
+            "reference_registry": [ref.to_payload() for ref in self._registry],
+            "transition_records": [row.to_dict() for row in owned.transitions],
             "reference": owned.reference.to_payload(),
             "scientific_state": inputs.scientific_state_preimage,
             "scientific_state_digest": owned.state.scientific_state_digest,
@@ -1220,14 +1216,6 @@ class CandidateCOSOperation:
             "lifecycle_digest": owned.state.lifecycle_digest,
         }
 
-        if len(self._registry) > 1 or owned.transitions:
-            snapshot["implementation_layout_id"] = "pygrc-c-os-snapshot-v2"
-            snapshot["reference_registry"] = [
-                ref.to_payload() for ref in self._registry
-            ]
-            snapshot["transition_records"] = [
-                row.to_dict() for row in owned.transitions
-            ]
         return snapshot
 
     @classmethod
@@ -1240,20 +1228,10 @@ class CandidateCOSOperation:
         """
         data = cast(dict[str, Any], cos_snapshot_payload(state))
         reference = GRCV4ReferenceGeometry.from_payload(data["reference"])
-        registry = _reference_registry(
-            data.get("reference_registry", [data["reference"]])
-        )
+        registry = _reference_registry(data["reference_registry"])
         if _resolve_reference(registry, *_reference_key(reference)) != reference:
             raise V4IdentityError("current reference contradicts the snapshot registry")
-        transitions = data.get("transition_records", [])
-        if (
-            data["implementation_layout_id"] == "pygrc-c-os-snapshot-v2"
-            and len(registry) == 1
-            and not transitions
-        ):
-            raise V4SchemaError(
-                "extended snapshot must carry additional references or crossings"
-            )
+        transitions = data["transition_records"]
         crossings = _restore_crossings(transitions, registry)
         if params is not None and canonical_json_bytes(params) != canonical_json_bytes(
             reference.profile.params_resolved.to_payload()

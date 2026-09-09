@@ -9,6 +9,7 @@ TOOL = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(TOOL / "src"))
 from grcv4_explorer.paths import repository_root  # noqa: E402
 from grcv4_explorer.phase9_verification import verification_status, pressure_projection  # noqa: E402
+from grcv4_explorer.receipt_parents import parent_authority  # noqa: E402
 
 
 def main():
@@ -40,6 +41,12 @@ def main():
         + "\n"
     )
     probe = namespace["phase9_pressure"]
+    parents = namespace["phase9_parent_authority"]
+    if parents != parent_authority(root, TOOL.parent):
+        raise RuntimeError("notebook/API parent-authority identity mismatch")
+    destination.with_name("notebook-parent-authority.json").write_text(
+        json.dumps(parents, sort_keys=True, separators=(",", ":"), ensure_ascii=False) + "\n"
+    )
     if (
         probe != pressure_projection(root, "normal_entry_forbidden_source")
         or probe["candidate_decision"] != "rejected"

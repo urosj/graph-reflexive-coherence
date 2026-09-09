@@ -1181,7 +1181,7 @@ class AuthoritativeMappedVectorTests(unittest.TestCase):
         root = Path(__file__).resolve().parents[2]
         release = json.loads((root / "specs/grc-v4-specification-release.json").read_text())
         self.assertEqual(release["release_id"], RELEASE_ID)
-        self.assertEqual(RELEASE_ID, "grcv4-spec-release-sha256:7b8b4d4e32e48fd35f70421cce7f547eebb21dd81389764061efe6e1a8c19886")
+        self.assertEqual(RELEASE_ID, "grcv4-spec-release-sha256:f777519824f86c3e9382bcf9b45cba28554351506f354d3f778746e2aaff5c6b")
         load_contract_schema()
         vector = json.loads((root / "specs/grc-v4-conformance-vectors.json").read_text())[
             "grcv4_mapped_topology_event_vectors"][0]

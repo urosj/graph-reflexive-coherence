@@ -6151,6 +6151,56 @@ The current value of an unchanged context contract is not on this list. It remai
 > **Equation/contract rows:** `D10.2-EC-PARENT-L-PROFILE-MIGRATION`, `D10.2-EC-PARENT-L-ORDERED-RECEIPTS`.
 
 
+#### 12.5.1 Successful-commit receipt parents
+
+The [accepted P9-4.9.2 authority](../decisions/P9ReceiptParentAuthority.json)
+adds `P9-EC-RECEIPT-PARENT-CHAIN`, `P9-EC-RECEIPT-PARENT-ADMISSION` and
+`P9-EC-RECEIPT-PARENT-CEILING` under `P9-4.9.2-CL-N-001`. These close an
+absent parent-selection contract; they do not retroactively enlarge D10.2 or
+D11 authority.
+
+Under `grcv4-previous-successful-primary-v1`, partition the persistent ledger
+by the ordered `emitted_receipt_ids` of successful commits. Each nonempty
+group has exactly one operation primary, first, and receipt IDs are unique
+within that ledger. Every receipt in group $k$, including auxiliaries, has:
+
+$$
+\operatorname{parents}(r)=
+\begin{cases}
+(), & k=0,\\
+(\operatorname{primary}(k-1)), & k>0.
+\end{cases}
+$$
+
+The order is successful commit order, not clock or step index. Ordinary
+steps (including zero-duration successes), reset, rebase, profile migration
+and topology events all use this rule. Crossings preserve the ledger prefix.
+Failure, observation, snapshot/save/load, duplication and lawful unreceipted
+`set_state` do not advance the head. Caller overrides, intra-commit parents,
+and multiple parents are forbidden.
+
+Before publication or restoration becomes observable, the lifecycle owner
+checks the full partition, primary kinds, content identities, commit
+backlinks, and every primary/auxiliary parent. Missing, skipped, foreign,
+forward, self, cyclic, duplicate, nonprimary or extra parents reject.
+Content-only receipt construction or comparison is not lineage validation.
+
+Parent edges strictly decrease commit rank, proving a finite DAG, **not**
+authenticated uninterrupted history. In particular, unreceipted assignment
+can make a later source differ from the prior target; no equality or
+fabricated assignment receipt is required. A coherently rewritten valid
+chain may pass structural admission. Duplicates and shared-prefix forks
+retain content IDs; retained run hashes supply external provenance, not
+signatures.
+
+Parent-policy changes may change receipt, commit and lifecycle IDs and their
+descendants, but not scientific, reset or event preimages for the same
+scientific operation. Snapshot admission must declare its versioned parent
+policy and specification release; no implicit legacy conversion or rehashing
+is permitted. Historical executions keep their original identities.
+This generic structural authority does not by itself establish public-facade,
+other-profile, GRC9V4, or G2 conformance.
+
 ### 12.6 Graph-generic Candidate A history-free initializer
 
 Candidate A requires positive edge mobility on the target graph. When a migration or topology event enters an A profile without an admitted map that preserves source A history, the target may not copy unmatched edge values, reinterpret source arrays under target indexing, or infer missing history from stable identifiers alone.

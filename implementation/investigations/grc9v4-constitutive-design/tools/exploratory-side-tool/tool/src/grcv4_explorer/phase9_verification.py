@@ -161,6 +161,14 @@ def verification_status(repo_root: Path) -> dict:
                     "release_id": module.CORRECTED_RELEASE_ID,
                     "path": module.SPECIFICATION_CORRECTION,
                 },
+                receipt_parent_authority={
+                    "record_digest": module.accepted_parent_authority(root)["record_digest"],
+                    "path": module.PARENT_AUTHORITY,
+                    "policy_id": "grcv4-previous-successful-primary-v1",
+                    "release_id": module.current_parent_release(root),
+                    "iteration_id": "P9-4.9.2",
+                    "G2_accepted": False,
+                },
                 implementation_scope=approval["runtime_targets"],
                 dependency_ready_leaves=ready,
                 permitted_runtime_paths=sorted(
@@ -168,7 +176,7 @@ def verification_status(repo_root: Path) -> dict:
                     for r in approval["runtime_targets"]
                     if r["requires_gate"] == "P9-G1" and set(ready) & owners[r["path"]]
                 ),
-                next_gate="P9-4.6/4.7a/4.7b accepted after audit corrections; P9-4.8 is next for separate review; P9-G2 and P9-G3 remain pending",
+                next_gate="P9-4.9.2 parent authority accepted for implementation; P9-4.9.1 facade and P9-4.9.3 final evidence remain pending, then P9-4.8B. P9-G2/G3 remain held.",
                 claim_ceiling="Accepted permission to implement reviewed V4 scope is not executed or accepted runtime conformance.",
             )
         cross = module.read(
@@ -178,7 +186,7 @@ def verification_status(repo_root: Path) -> dict:
             root / module.PHASE / "tranche-1/P9-1.3-VerificationRouting.json"
         )
         payload["source_meaning"] = {
-            "specification_authority": "accepted_frozen",
+            "specification_authority": "accepted_parent_successor_with_historical_crosswalk",
             "forensic_support_disposition": "indeterminate_requires_review",
             "association_count": sum(
                 "indeterminate_requires_review" in r["accepted_claim_support_semantics"]
@@ -209,6 +217,9 @@ def verification_status(repo_root: Path) -> dict:
                 module.RECORD,
             ]
         ]
+        if implementation:
+            payload["source_refs"].append({"path": module.PARENT_AUTHORITY,
+                                           "sha256": module.sha((root / module.PARENT_AUTHORITY).read_bytes())})
         record = module.read(root / module.RECORD)
         payload["iterations"] = [
             {
@@ -317,6 +328,7 @@ def verification_status(repo_root: Path) -> dict:
         payload.pop("os_operations_acceptance", None)
         payload.pop("lifecycle_batch_authorization", None)
         payload.pop("specification_correction", None)
+        payload.pop("receipt_parent_authority", None)
         payload.pop("permitted_runtime_paths", None)
         payload.pop("source_meaning", None)
         payload.pop("tree", None)

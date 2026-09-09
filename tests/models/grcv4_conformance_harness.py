@@ -931,7 +931,7 @@ def inspect_run(root: Path, relative_dir: str) -> dict[str, Any]:
     ):
         same(manifest[field], [], "run cannot promote support")
     same(manifest["parent_lineage_validated"], False, "run cannot certify lineage")
-    if manifest["release_id"] not in {oracle.RELEASE_ID, oracle.PREDECESSOR_RELEASE_ID}:
+    if manifest["release_id"] not in {oracle.RELEASE_ID, oracle.PREDECESSOR_RELEASE_ID, oracle.MAPPED_VECTOR_RELEASE_ID}:
         raise HarnessError("foreign release")
     names = ["actual.json", "expected.json", "inputs.json", "receipts.json"]
     same(

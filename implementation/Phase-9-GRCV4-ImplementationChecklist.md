@@ -65,7 +65,7 @@ coverage, and evidence; a family label alone does not certify all instances.
 
 | Generic profile gate | State | Acceptance route |
 | --- | --- | --- |
-| `P9-G2[C_OS]` | Pending | Early lifecycle and full fixture review at P9-4.8. |
+| `P9-G2[C_OS]` | Pending | P9-4.8 draft HOLD; P9-4.9.1–P9-4.9.3 close its obligations, then P9-4.8B reassesses the full fixture/interface/authority product. |
 | `P9-G2[A_OS]` | Pending | Tranche 5 plus A_OS lifecycle and P9-7.7 review. |
 | `P9-G2[C_CI]` | Pending | P9-6.1a plus profile lifecycle and P9-7.7 review. |
 | `P9-G2[A_CI]` | Pending | P9-6.1b plus profile lifecycle and P9-7.7 review. |
@@ -610,9 +610,105 @@ three bounded batches retain their own results and raw per-run manifests.
   reset after events/migrations, reference maps, and atomic readmission.
   Unsupported targets must reject; mandatory fixtures cannot be waived.
 - [ ] P9-4.8: Draft **HOLD P9-G2[C_OS]**; fixture reconciliation and user
-  review/acceptance remain open. Carry the existing facade and receipt-authority
-  obligations into explicit closure work. Reconcile existing fixture evidence
-  before asserting missing behavior. A_OS and `P9-G3[C_OS]` remain behind G2.
+  review/acceptance remain open. Preserve this original review and its evidence;
+  discharge its obligations through P9-4.9.1–P9-4.9.3 and the successor P9-4.8B
+  result, not by relabeling the historical HOLD. A_OS and `P9-G3[C_OS]` remain
+  behind G2.
+- [ ] P9-4.9.1: Close the public C_OS common/V4 interface integration deferred
+  from P9-2.6 and its consumers (`G2-COS-INTERFACE`). Implement the specified
+  `GRCV4(GRCModel)` facade using the existing sole atomic publication owner.
+  Use the initial P9-4.9.3 inventory and accepted P9-4.9.2 parent contract;
+  combine related implementation and targeted tests. Map constructors/admission,
+  parameter access, stage-tagged observables, common projections, strict/input
+  request boundaries, `step_v4`/`run_v4`, common `step`/`run`, immutable default
+  requests and typed missing-request failures to actual public-receiver tests.
+  Cover restored instances, invalid and zero/subnormal/negative/extreme finite
+  duration inputs, atomic failure, exact profile/model discovery and capability
+  truth. Update stage-local no-facade assertions only with real integration;
+  registered test targets do not establish accepted public support.
+- [x] P9-4.9.2: Resolve P9-2.4/P9-7.6's receipt-parent authority obligation.
+  The user accepted the [uniform predecessor decision](./investigations/grc9v4-constitutive-design/decisions/P9ReceiptParentAuthorityProposal.md)
+  on 2026-09-09; the 9 valid and 16 invalid symbolic controls are design evidence
+  only. Source/debt admission, actual API/notebook/browser access and ordered
+  proposal/paper/spec propagation are implemented. The C_OS runtime applies the
+  rule and explicit versioned snapshot admission. See the
+  [bounded implementation review](./phase-9-grcv4/tranche-4/P9-4.9.2-Review.md)
+  for validation (140 runtime tests; 242 boundary-pressure cases). Implementation
+  review remains pending user acceptance; public-facade, fixture and G2 review
+  remain separate.
+  Own `G2-COS-PARENTS`. Verify accepted provenance with the forensic API;
+  ordered source/target profile identities and acyclic content hashing do not
+  determine parent scope/order.
+  Review the missing contract in the investigation/design, propagate accepted
+  authority through proposal/paper and V4 specs, and use an admitted successor
+  release if required before claiming runtime conformance. Define roots,
+  historical/intra-commit scope, ordering and duplicates across ordinary,
+  administrative and crossing operations. Accept this authority decision before
+  changing the corresponding behavior, then align implementation and tests
+  alongside the facade and demonstrated gap corrections,
+  including valid controls, missing/foreign/forward/self/cyclic references,
+  duplicates/reordering, coherent rehashes and snapshot/restoration. Preserve
+  lawful unreceipted assignment and distinguish future replay from authenticated
+  history. Discharge only the reviewed C_OS scope of the parent obligation.
+- [ ] P9-4.9.3: Reconcile the 33-case catalog index and exact semantic vectors
+  into the full fixture product for a nonempty nominated complete-profile set
+  (`G2-COS-FIXTURES`).
+  Initial bounded inventory is complete in the
+  [gap list](./phase-9-grcv4/tranche-4/P9-4.9.3-EvidenceInventory.md); this row
+  remains unchecked for final public/profile reconciliation. The inventory
+  itself reran no numerical tests and added no runtime support. Subsequent
+  P9-4.9.2 authority/implementation work is recorded above, not as G2 acceptance.
+  Begin with a bounded gap list: requirement, existing usable evidence/limits,
+  actual remaining change/test and owner. This is the first closure activity,
+  not another audit framework or a reason to repeat suites. Final reconciliation
+  follows the integrated P9-4.9.1/P9-4.9.2 implementation and targeted tests.
+  Bind resolved parameters, graph/reference/context/domain, ordered crossing
+  identities and required per-execution result fields. Reuse accepted evidence
+  with its actual source/environment and limits; keep reruns distinct. Resolve
+  `COMMON-STALE-CACHE` using the existing second-beat/no-cache/stage evidence
+  before adding tests, and establish exact-input/layer credit for
+  `SEMANTIC-REJECT-RESOURCE-TRANSFORM-DIMENSIONS`, not schema-only or synthetic
+  shape-test credit. Retain the corrected exact mapped-event execution and all
+  seven migration-class dispositions. Convert demonstrated gaps into tests;
+  use independently justified expectations. Reconcile all seven schema/semantic
+  negatives and algebra/identity/result vectors without promoting foundation
+  credit to live transitions or copying historical holds as current failures.
+  Retain separate history channels, live/reset and reset-only failure coverage,
+  mixed crossings and charge/increment edge-case evidence. Verify affected
+  shared/integration paths against the final facade and parent
+  contract. Preserve explicit unsupported/deferred scopes without waiving a
+  mandatory C_OS case or importing unrelated A/realization/GRC9 blockers.
+- [ ] P9-4.8B: Review the three work packages together once the integrated result
+  and exact-profile evidence are ready; no three preceding full acceptance
+  reviews. Issue the successor full `P9-G2[C_OS]` review using the single current
+  verification path, bound to current authority, release, source and execution
+  product. Reuse the final integrated run rather than automatically rerunning it
+  for review. Preserve the original P9-4.8 draft/checker and runs for historical
+  reconstruction. Recheck the implementation boundary, affected
+  tool surfaces and misleading-acceptance rejection controls: missing/duplicate
+  rows, family/empty-set
+  substitution, unreviewed support, borrowed mapped identity and erased parent
+  debt; include a valid complete-review control as well. Record PASS, HOLD
+  or rejection; a checker pass is not user acceptance. Any unresolved blocker
+  keeps G2 closed and returns to its owning closure child. Only an accepted
+  positive review updates exact support/discovery and gate/checklist states;
+  alias its result through P9-7.7-C_OS without duplicate credit. A_OS and G3
+  require separate continuation/entry review; other gates do not open implicitly.
+
+P9-4.9 is an aggregate of work packages, not new gates or separate full-review
+cycles. Execution order is P9-4.9.3 inventory, P9-4.9.2 authority resolution,
+combined implementation/targeted tests, final P9-4.9.3 reconciliation, then one
+integrated P9-4.8B G2 review. Run necessary integrated checks when the result is
+stable; repeat only checks affected by later corrections. These planning rows
+grant no runtime authorization. Register authorized IDs/dependencies/path owners
+through the existing boundary/work manifest, batching related work where useful;
+update affected tool exposure/tests without adding an authorization framework.
+Maintain one current verification path as corrections land, with G2 held until
+accepted at P9-4.8B. Keep the original checker for historical reconstruction
+only, not as a second evolving acceptance system or a ban on later source.
+The [plan](./Phase-9-GRCV4-ImplementationPlan.md#p9-49-closure-of-the-p9-48-obligations)
+defines the source mapping and exit criteria; the original P9-4.8 records remain
+the starting evidence, not a claim that every apparent fixture gap is a defect.
 
 `P9-4.7` is the parent of P9-4.7a and P9-4.7b. The early state/receipt/replay
 cycle supplies evidence; P9-4.8 grants no reduced form of generic conformance.
@@ -696,8 +792,11 @@ now declares exact C_OS and A_OS lifecycle children, source/target crossing
 scopes, evidence aliases and dependencies. P9-7.1-C_OS and the early C_OS
 P9-7.2a/b–P9-7.6 children have scoped evidence accepted with the P9-4.6/4.7 batch;
 its full audit findings are closed. Generic parent-reference conformance remains
-open. A_OS children remain planned/unexecuted. P9-7.7-C_OS aliases the
-P9-4.8 draft HOLD review, pending fixture reconciliation and user review, with no duplicate execution credit.
+open across other profiles; the accepted P9-4.9.2 authority and bounded internal
+C_OS implementation are recorded in its linked review. A_OS children remain
+planned/unexecuted. P9-7.7-C_OS currently aliases the P9-4.8 draft HOLD review;
+P9-4.8B will supply the successor disposition after closure, with no duplicate
+execution credit.
 Parent completion remains scoped to reviewed child evidence.
 
 The registered C_OS/A_OS migration/event and P9-7.3–P9-7.6 children also own
@@ -732,9 +831,13 @@ may reach G2 without waiting for all Tranche 6 realizations.
   authority before claiming lineage conformance: historical versus intra-commit
   parents, missing/forward/self/cyclic references and duplicate handling.
   Do not infer parent-DAG validity from receipt hashes, commit construction,
-  ledger append equality or content-only comparison evidence.
+  ledger append equality or content-only comparison evidence. P9-4.9.2 owns the
+  C_OS authority/conformance closure, now implemented under the accepted uniform
+  predecessor rule; its review retains the bounded execution evidence. Broader
+  profile completion and public-facade/G2 review remain scoped and pending.
 - [ ] P9-7.7: Review the full applicable fixture product and record `P9-G2[p]`
-  separately for each generic profile; link P9-4.8 for the early C_OS result.
+  separately for each generic profile; link the original P9-4.8 C_OS review and
+  its P9-4.8B successor without duplicate execution credit.
 - [ ] P9-7.8: Review `P9-G3[S]` for the exact accepted generic support set
   before specialization code. Singleton `P9-G3[C_OS]` can run immediately
   after its G2; unrelated lifecycle/realization rows may remain pending.

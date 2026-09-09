@@ -1372,3 +1372,17 @@ P9-3.2 implementation is pending review; runtime support remains empty.
       paths; carry the checklist's resource-boundary ownership on step files.
 - [x] Reject forged/missing acceptance and premature P9-3.4 entry, while
       preserving empty runtime support and unchanged scientific source status.
+
+## Phase 9 Tranche 4 — P9-4.9.2 receipt-parent successor
+
+- [x] Admit the accepted parent claim, debt, object and three contracts through
+      a hash-pinned append-only context; preserve every historical D10/D11 row.
+- [x] Expose actual API, notebook and browser claim/debt/contract views, with
+      source/edge witnesses, trace identities and stale-output clearing.
+- [x] Register source/graph/notebook pressure and desktop/mobile browser
+      scenarios; keep structural authority distinct from runtime conformance.
+- [x] Propagate authority through proposal/paper and the V4 release; register
+      only the existing P9-4.9.2 runtime owners, without facade/G2 permission.
+- [x] Wire current verification and record bounded runtime, pressure and surface
+      results in the P9-4.9.2 review. The normal command binds its final result to
+      exact current inputs. Do not relabel the historical P9-4.8 HOLD as acceptance.

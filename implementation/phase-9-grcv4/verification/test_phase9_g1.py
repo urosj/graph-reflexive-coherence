@@ -343,9 +343,9 @@ def main():
         case(
             "combined_good_and_frozen_edit",
             lambda: registered(
-                source, content, extra=lambda: edit("specs/grc-v4-spec.md", b"changed")
+                source, content, extra=lambda: edit("specs/grc-common-interface.md", b"changed")
             ),
-            "frozen bytes changed",
+            "unrelated release member changed: specs/grc-common-interface.md",
         )
         legacy = "src/pygrc/models/grc_9_v3.py"
         case(
@@ -717,11 +717,11 @@ def main():
                  "untrusted mapped-vector specification correction",
                  scope="isolated_specification_correction_authentication")
         for name, expected in [
-            ("specs/grc-v4-conformance-vectors.json", "mapped-vector correction binding changed"),
-            ("implementation/investigations/grc9v4-constitutive-design/scripts/build_grcv4_specification_vectors.py", "mapped-vector correction binding changed"),
-            ("specs/grc-v4-specification-release.json", "mapped-vector successor output changed"),
-            ("src/pygrc/models/grc_v4_assets/asset-index.json", "mapped-vector successor output changed"),
-            (p.CORRECTION_BUILDER, "untrusted mapped-vector successor release"),
+            ("specs/grc-v4-conformance-vectors.json", "unrelated release member changed"),
+            ("implementation/investigations/grc9v4-constitutive-design/scripts/build_grcv4_specification_vectors.py", "unrelated release member changed"),
+            ("specs/grc-v4-specification-release.json", "parent successor output changed"),
+            ("src/pygrc/models/grc_v4_assets/asset-index.json", "parent successor output changed"),
+            (p.CORRECTION_BUILDER, "unrelated release member changed"),
         ]:
             def changed_correction(name=name):
                 with mutate(name, (root / name).read_bytes() + b"\n"):
@@ -731,12 +731,26 @@ def main():
         def changed_codec_pin():
             name = "src/pygrc/models/grc_v4_codec.py"
             source = (root / name).read_bytes()
-            source = source.replace(p.CORRECTED_RELEASE_ID.split(":")[1].encode(), b"0" * 64)
+            source = source.replace(p.current_parent_release(root).split(":")[1].encode(), b"0" * 64)
             with mutate(name, source):
                 p.accepted_specification_correction(root)
         case("successor_rejects_actual_codec_pin_change", changed_codec_pin,
-             "packaged successor release is not pinned by the codec",
+             "codec does not pin the parent successor release",
              scope="isolated_specification_correction_authentication")
+        for key, replacement in [("status", "proposed"), ("G2_accepted", True),
+                                 ("policy_id", "ordinary-only")]:
+            def forged_parent(key=key, replacement=replacement):
+                value = p.read(root / p.PARENT_AUTHORITY)
+                value[key] = replacement
+                value["record_digest"] = p.digest_record(value)
+                with mutate(p.PARENT_AUTHORITY, p.canonical(value)):
+                    p.accepted_parent_authority(root)
+            case("parent_cannot_self_authorize_" + key, forged_parent,
+                 "untrusted receipt-parent implementation authority",
+                 scope="isolated_receipt_parent_authority")
+        case("parent_owner_ready", lambda: registered("src/pygrc/models/grc_v4_lifecycle.py", content, leaf="P9-4.9.2"))
+        case("parent_cannot_open_facade", lambda: registered("src/pygrc/models/grc_v4.py", content, leaf="P9-4.9.2"),
+             "runtime target belongs to a different owning leaf")
         case("mapped_audit_has_shared_integration_test_owner",
              lambda: registered("tests/models/test_grc_v4.py", content, leaf="P9-4.7b"))
         for name in ["src/pygrc/models/grc_v4_candidate_c.py", "tests/models/test_grc_v4_candidate_c.py"]:

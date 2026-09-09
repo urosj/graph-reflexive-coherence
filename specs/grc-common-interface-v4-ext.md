@@ -791,6 +791,51 @@ Derived observables must name their producing stage. Capability and observable
 presence establishes implementation support only; it is not scientific
 evidence for stability, persistence, preference, or physical attribution.
 
+## Successful-commit receipt-parent policy
+
+The source is [paper §12.5.1](../implementation/investigations/grc9v4-constitutive-design/drafts/2026-09-GRC-V4.md#1251-successful-commit-receipt-parents),
+following [accepted P9-4.9.2 authority](../implementation/investigations/grc9v4-constitutive-design/decisions/P9ReceiptParentAuthority.json)
+(`P9-EC-RECEIPT-PARENT-CHAIN`, `P9-EC-RECEIPT-PARENT-ADMISSION`,
+`P9-EC-RECEIPT-PARENT-CEILING`). The fixed policy ID is
+`grcv4-previous-successful-primary-v1`.
+
+Ordered commit `emitted_receipt_ids` must partition the entire persistent
+ledger without omissions or overlap. Every nonempty group has one operation
+primary first; receipt IDs are unique within the ledger. All receipts in the
+first group have `parent_receipt_ids == ()`. All receipts in each subsequent
+group, including auxiliaries, have exactly `(previous_primary_receipt_id,)`.
+The primary kinds are step-commit, reset, rebase, profile-migration and
+topology-event. Neither clock nor step index defines this ordering.
+
+Zero-duration successes advance the head. Failures, exceptions, observation,
+snapshot/save/load, duplication and lawful unreceipted `set_state` do not.
+Crossings preserve the prior ledger prefix. No caller parent override,
+intra-commit parent or multiple parent is permitted.
+
+The lifecycle owner must validate the full partition, primary kinds, receipt
+content identities, commit backlinks and every receipt's parent before
+publication or restored observability. Missing, skipped, foreign, forward,
+self, cyclic, duplicate, nonprimary and extra parents reject atomically.
+Generic constructors and content comparators alone do not validate lineage.
+
+This proves a finite DAG by decreasing commit rank, not authenticated
+uninterrupted history. Do not require next source = previous target after
+lawful unreceipted assignment. Coherent structural rewrites may validate;
+retained run hashes supply external provenance, not signatures. Duplicates
+and shared-prefix forks may share content IDs. Changing the parent rule can
+change receipt/commit/lifecycle identities and descendants, not the scientific,
+reset or event preimages for the same scientific operations.
+
+The internal C_OS receiver uses the closed `pygrc-c-os-snapshot-v3` layout
+under `grcv4-snapshot-v1`. It always carries `reference_registry` and
+`transition_records`, and declares `receipt_parent_policy_id` equal to this
+policy and `specification_release_id` equal to its installed accepted release.
+Missing or mismatched declarations and historical v1/v2 implementation
+layouts reject explicitly; there is no fallback, migration-by-guessing or
+silent rehashing. Historical execution remains reproducible at its Git
+subject. This implementation layout does not complete the public facade or
+grant G2/other-profile/specialization conformance.
+
 ## Capability and profile discovery
 
 Every `GRCV4` instance must advertise the common V4 capabilities declared in

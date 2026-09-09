@@ -1,0 +1,68 @@
+{
+  "schema_version": "grcv4_p9_receipt_parent_authority_v1",
+  "record_id": "GRCV4-P9-4.9.2-PARENTS-v1",
+  "status": "accepted_by_user_for_implementation",
+  "accepted_on": "2026-09-09",
+  "acceptance": "User approved the bounded design and then requested its full implementation; this is not G2 acceptance.",
+  "design_path": "implementation/investigations/grc9v4-constitutive-design/decisions/P9ReceiptParentAuthorityProposal.md",
+  "policy_id": "grcv4-previous-successful-primary-v1",
+  "predecessor_release_id": "grcv4-spec-release-sha256:7b8b4d4e32e48fd35f70421cce7f547eebb21dd81389764061efe6e1a8c19886",
+  "predecessor_commit": "280f46cec28b06ffd65b6ee04ba8caadc3d8d069",
+  "source_contract_ids": [
+    "D10.2-EC-PARENT-L-ORDERED-RECEIPTS",
+    "D10.2-EC-PARENT-L-ATOMICITY",
+    "D10.2-EC-PARENT-L-SNAPSHOT-RESET",
+    "D10.2-EC-EVENT-READMISSION-RECEIPT"
+  ],
+  "claim": {
+    "claim_id": "P9-4.9.2-CL-N-001",
+    "claim_class": "normative",
+    "status": "accepted_bounded_design",
+    "statement": "Every receipt of a successful commit names exactly the preceding successful commit's primary receipt, or no parent for the first commit.",
+    "scope": "Generic GRCV4 structural contract; this implementation closes only the internal C_OS parent rule.",
+    "not_claimed": ["authenticated_uninterrupted_history", "G2_acceptance", "public_facade_conformance", "other_profile_runtime_support", "GRC9_runtime_support"]
+  },
+  "debt": {
+    "debt_id": "P9-4.9.2-DEBT-PARENTS",
+    "status": "resolved_bounded_design",
+    "transformation": "Absent accepted parent-selection authority is closed by a new explicit contract, not attributed retroactively to D10.2 or D11.",
+    "successor_claim_ids": ["P9-4.9.2-CL-N-001"],
+    "origin": "P9-4.8 G2-COS-PARENTS",
+    "remaining_work": ["runtime_verification_does_not_close_P9-4.9.1", "complete_profile_evidence_P9-4.9.3", "integrated_G2_review_P9-4.8B"]
+  },
+  "object": {
+    "object_id": "P9-L-RECEIPT-PARENTS",
+    "object_role": "ordered successful commit receipt-group parent authority",
+    "accepted_claim_ids": ["P9-4.9.2-CL-N-001"]
+  },
+  "contracts": [
+    {
+      "equation_contract_id": "P9-EC-RECEIPT-PARENT-CHAIN",
+      "parent_object_ids": ["P9-L-RECEIPT-PARENTS", "L-ORDERED-RECEIPTS"],
+      "accepted_claim_ids": ["P9-4.9.2-CL-N-001"],
+      "support_semantics": "required",
+      "normative_equation_or_contract": "For every receipt r in commit group k, parents(r)=[] when k=0, otherwise [primary(k-1)]. Group order is successful commit order; emitted_receipt_ids partitions the persistent ledger exactly, with one operation primary first and globally unique receipt IDs within that ledger.",
+      "primary_kinds": ["step-commit", "reset", "rebase", "profile-migration", "topology-event"],
+      "controls": "Zero-duration successes advance the head; failures, save/load, snapshot, duplicate, observation and lawful unreceipted set_state do not. Crossings retain the prior ledger prefix. Caller overrides and intra-commit parent edges are forbidden."
+    },
+    {
+      "equation_contract_id": "P9-EC-RECEIPT-PARENT-ADMISSION",
+      "parent_object_ids": ["P9-L-RECEIPT-PARENTS", "L-ORDERED-RECEIPTS"],
+      "accepted_claim_ids": ["P9-4.9.2-CL-N-001"],
+      "support_semantics": "required",
+      "normative_equation_or_contract": "The lifecycle owner checks the complete partition, primary types, content identities, commit backlinks and every primary/auxiliary parent before publication or restored observability. Reject missing, skipped, foreign, forward, self, cyclic, duplicate, nonprimary or extra parents. Content constructors/comparators alone do not establish lineage validity.",
+      "snapshot_policy": "The C_OS implementation declares pygrc-c-os-snapshot-v3 with receipt_parent_policy_id and specification_release_id, a complete reference_registry and transition_records. Both identifiers must match the current accepted contract. Historical v1/v2 layouts are explicitly rejected, never guessed, upgraded or silently rehashed. Historical execution remains reconstructible through Git."
+    },
+    {
+      "equation_contract_id": "P9-EC-RECEIPT-PARENT-CEILING",
+      "parent_object_ids": ["P9-L-RECEIPT-PARENTS"],
+      "accepted_claim_ids": ["P9-4.9.2-CL-N-001"],
+      "support_semantics": "required",
+      "normative_equation_or_contract": "Commit rank strictly decreases on parent edges, proving a finite DAG, not an authenticated uninterrupted history. Do not require next source=previous target after lawful unreceipted set_state. Coherent structural rewrites may validate; retained run hashes bind external provenance. Duplicates/forks may share content IDs. Parent changes can change receipt/commit/lifecycle IDs and descendants, not the scientific/reset/event preimages for the same scientific operation."
+    }
+  ],
+  "accepted_generic_runtime_support": [],
+  "admitted_specialization_support_sets": [],
+  "G2_accepted": false,
+  "record_digest": "ba7d69189c527153828b02c2bb3311899b036a634446de9ad8f36af6592c28f8"
+}

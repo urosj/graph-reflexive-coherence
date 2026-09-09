@@ -13,11 +13,25 @@ sys.path.insert(0, str(TOOL / "src"))
 from grcv4_explorer.paths import repository_root  # noqa: E402
 from grcv4_explorer.phase9_verification import verification_status  # noqa: E402
 from grcv4_explorer.phase9_verification import pressure_projection  # noqa: E402
+from grcv4_explorer.receipt_parents import parent_authority  # noqa: E402
 
 
 class Handler(BaseHTTPRequestHandler):
     def do_GET(self):
         request = urlsplit(self.path)
+        if self.path == "/api/receipt-parents":
+            try:
+                content = json.dumps(parent_authority(repository_root(), TOOL.parent)).encode()
+                self.send_response(200)
+            except Exception:
+                content = b'{"error":"Parent authority unavailable; no historical fallback or conformance inferred."}'
+                self.send_response(503)
+            self.send_header("Content-Type", "application/json")
+            self.send_header("Cache-Control", "no-store")
+            self.send_header("Content-Length", str(len(content)))
+            self.end_headers()
+            self.wfile.write(content)
+            return
         if request.path == "/api/probe":
             try:
                 query = parse_qs(request.query, strict_parsing=True)

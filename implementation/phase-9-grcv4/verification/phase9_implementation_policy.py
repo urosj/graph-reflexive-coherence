@@ -9,6 +9,8 @@ import json
 from pathlib import Path
 import re
 import stat
+import subprocess
+import sys
 import tomllib
 
 _HERE = Path(__file__).resolve().parent
@@ -91,6 +93,34 @@ SPECIFICATION_CORRECTION = PHASE + "tranche-4/P9-4.7b-SpecificationCorrection.js
 SPECIFICATION_CORRECTION_DIGEST = "56f1d4378eb8273d261b76aff3b128c526fb5064fa3bceace5c73fbb1f9f9903"
 CORRECTED_RELEASE_ID = "grcv4-spec-release-sha256:7b8b4d4e32e48fd35f70421cce7f547eebb21dd81389764061efe6e1a8c19886"
 CORRECTION_BUILDER = HERE + "build_mapped_vector_release.py"
+PARENT_AUTHORITY = INV + "decisions/P9ReceiptParentAuthority.json"
+PARENT_AUTHORITY_DIGEST = "ba7d69189c527153828b02c2bb3311899b036a634446de9ad8f36af6592c28f8"
+PARENT_RELEASE_BUILDER = HERE + "build_receipt_parent_release.py"
+PARENT_RELEASE_ID = "grcv4-spec-release-sha256:f777519824f86c3e9382bcf9b45cba28554351506f354d3f778746e2aaff5c6b"
+PARENT_RUNTIME_PATHS = {
+    "src/pygrc/models/grc_v4_codec.py", "src/pygrc/models/grc_v4_lifecycle.py",
+    "tests/models/test_grc_v4.py", "tests/models/test_grc_v4_lifecycle.py",
+    "tests/models/grcv4_reference_oracles.py", "tests/models/grcv4_conformance_harness.py",
+    "src/pygrc/models/grc_v4_assets/asset-index.json",
+    "src/pygrc/models/grc_v4_assets/grc-v4-specification-release.json",
+    "src/pygrc/models/grc_v4_assets/grc-v4-specification-release.sha256",
+}
+PARENT_SOURCE_PATHS = {
+    "implementation/Phase-9-GRCV4-Handoff.md",
+    PARENT_AUTHORITY, PARENT_RELEASE_BUILDER,
+    INV + "drafts/GRCV4-proposal.md", INV + "drafts/2026-09-GRC-V4.md",
+    "specs/grc-v4-spec.md", "specs/grc-common-interface-v4-ext.md",
+    "specs/grc-v4-source-manifest.json",
+    SIDE + "records/P9492ReceiptParentAdmission.json",
+    SIDE + "tool/src/grcv4_explorer/successor.py",
+    SIDE + "tool/src/grcv4_explorer/receipt_parents.py",
+    SIDE + "docs/AgenticQueryGuide.md",
+    SIDE + "tool/scripts/serve_phase9.py",
+    SIDE + "tool/scripts/test_p9492_parents.py",
+    SIDE + "tool/scripts/discover_sources.py",
+    SIDE + "tool/phase9-web/verification.css",
+    HERE + "verify_p9492_parents.py",
+}
 CORRECTED_SPECIFICATION_PATHS = {
     "specs/README.md", "specs/grc-v4-conformance-vectors.json",
     "specs/grc-v4-specification-release.json", "specs/grc-v4-specification-release.sha256",
@@ -144,6 +174,12 @@ PATHS = {
     PHASE + "tranche-4/P9-4.8-GateReview.json",
     PHASE + "tranche-4/P9-4.8-Handoff.md",
     HERE + "verify_p948_review.py",
+    # Bounded closure inventory only; no runtime-ready leaf or support change.
+    PHASE + "tranche-4/P9-4.9.3-EvidenceInventory.md",
+    # User-approved P9-4.9.2 successor only; no facade or G2 permission inferred.
+    *PARENT_SOURCE_PATHS,
+    INV + "decisions/P9ReceiptParentAuthorityProposal.md",
+    HERE + "check_p9492_parent_proposal.py",
     APPROVAL,
     POLICY,
     RECORD,
@@ -229,7 +265,7 @@ def acceptance(root):
     """Recorded acceptance plus current source fidelity; not archive retrieval."""
     value = recorded_acceptance(root)
     for row in value["review_bindings"]:
-        if row["path"] not in PORTABLE_REVIEW_PATHS | PORTABLE_SOURCE_PATHS | CORRECTED_SPECIFICATION_PATHS:
+        if row["path"] not in PORTABLE_REVIEW_PATHS | PORTABLE_SOURCE_PATHS | CORRECTED_SPECIFICATION_PATHS | PARENT_SOURCE_PATHS:
             prior.git_exact(root, BASELINE, row["path"])
     check_portable_source_amendments(root)
     check_portable_review_amendments(root)
@@ -715,11 +751,62 @@ def accepted_specification_correction(root):
             and value["paper_or_equation_change"] is False
             and value["schema_change"] is False,
             "invalid mapped-vector specification correction scope")
-    spec = importlib.util.spec_from_file_location("mapped_vector_release", root / CORRECTION_BUILDER)
-    module = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(module)
-    module.verify(root, CORRECTED_RELEASE_ID)
+    # The old correction is historical authority, not a current-tree veto.
+    # The parent successor binds that exact release and freezes all unrelated
+    # members. Do not make the old builder reinterpret new paper/spec bytes.
+    current_parent_release(root)
     return value
+
+
+def accepted_parent_authority(root):
+    value = read(safe_path(root, PARENT_AUTHORITY))
+    require(value["record_digest"] == digest_record(value) == PARENT_AUTHORITY_DIGEST
+            and value["status"] == "accepted_by_user_for_implementation"
+            and value["G2_accepted"] is False
+            and value["accepted_generic_runtime_support"] == []
+            and value["admitted_specialization_support_sets"] == [],
+            "untrusted receipt-parent implementation authority")
+    return value
+
+
+def current_parent_release(root):
+    accepted_parent_authority(root)
+    # Use the builder's own CLI/import context. API and notebook callers must
+    # not depend on the verifier directory being in their sys.path, or mutate
+    # process-global import paths while concurrent read-only queries execute.
+    result = subprocess.run(
+        [sys.executable, str(safe_path(root, PARENT_RELEASE_BUILDER)), "--check"],
+        cwd=root, capture_output=True, text=True,
+    )
+    require(result.returncode == 0,
+            "receipt-parent release check failed: " + result.stdout + result.stderr)
+    require(result.stdout.strip() == "P9492_PARENT_RELEASE_PASS release_id=" + PARENT_RELEASE_ID,
+            "untrusted receipt-parent successor release")
+    return PARENT_RELEASE_ID
+
+
+def parent_runtime_evidence(root):
+    """Admission of retained run facts, not another runtime test implementation."""
+    name = PHASE + "evidence/P9-4.9.2/parent-rule/run.json"
+    record = read(safe_path(root, name))
+    require(record["schema"] == "phase9_leaf_focused_run_v1"
+            and record["iteration_id"] == "P9-4.9.2"
+            and record["status"] == "passed"
+            and record["source_unchanged"] is True
+            and record["coverage"]["passed"] is True
+            and record["release_id"] == current_parent_release(root)
+            and record["G2_accepted"] is False
+            and record["accepted_generic_runtime_support"] == []
+            and record["admitted_specialization_support_sets"] == [],
+            "parent evidence cannot promote scope or hide failed source attribution")
+    for path, expected in record["source_bindings"].items():
+        require(sha(safe_path(root, path).read_bytes()) == expected,
+                "parent evidence input changed: " + path)
+    require(all(record["loaded_sources_after"].get(name) == row
+                for name, row in record["loaded_sources_before"].items()),
+            "parent run loaded-source attribution changed")
+    return {"path": name, "sha256": sha(safe_path(root, name).read_bytes()),
+            "G2_accepted": False}
 
 
 def leaf_permissions(root):
@@ -754,6 +841,8 @@ def leaf_permissions(root):
     # The user explicitly grouped these dependent leaves for one later audit.
     # Preserve the accepted dependency set; add bounded execution permission.
     ready = sorted(set(ready) | set(lifecycle_batch_authorization(root)["authorized_iterations"]))
+    accepted_parent_authority(root)
+    ready = sorted(set(ready) | {"P9-4.9.2"})
     owners = {}
     for module in ownership["modules"]:
         leaves = {
@@ -808,6 +897,11 @@ def leaf_permissions(root):
                 {"P9-2.2", "P9-2.6", "P9-3.1"}
                 if row["path"] == "pyproject.toml" else {"P9-2.6"}
             )
+    for name in PARENT_RUNTIME_PATHS:
+        require(name in owners, "parent successor invents a runtime target")
+        # Source/test owners historically share a set. The parent task may
+        # update a test without authorizing its paired facade source.
+        owners[name] = owners[name] | {"P9-4.9.2"}
     return ready, owners
 
 
@@ -848,6 +942,9 @@ def work_entries(root, approval):
     leaves = set(
         re.findall(r"P9-(?:[2-9]|10)\.\d+(?:[a-zA-Z]|-[A-Za-z0-9_-]+)?", checklist)
     )
+    # The accepted baseline cannot contain later closure IDs. Register exactly
+    # the user-approved successor, not a broad regex-based permission.
+    leaves.add("P9-4.9.2")
     rows = value["entries"]
     require(len({r["path"] for r in rows}) == len(rows), "duplicate work target")
     result = {}
@@ -931,7 +1028,9 @@ def work_entries(root, approval):
                 record = json.loads(content)
                 require(
                     record["iteration_id"] == leaf
-                    and record["release_id"] == prior.RELEASE_ID,
+                    and record["release_id"] == (
+                        current_parent_release(root) if leaf == "P9-4.9.2" else prior.RELEASE_ID
+                    ),
                     "execution record subject mismatch",
                 )
                 require(

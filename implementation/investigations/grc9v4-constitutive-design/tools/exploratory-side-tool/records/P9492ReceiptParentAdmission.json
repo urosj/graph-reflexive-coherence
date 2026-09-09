@@ -1,0 +1,17 @@
+{
+  "schema": "grcv4_p9492_parent_admission_v1",
+  "status": "accepted_source_admission",
+  "source": {
+    "source_id": "GRCV4-P9-4.9.2-PARENTS-v1",
+    "path": "implementation/investigations/grc9v4-constitutive-design/decisions/P9ReceiptParentAuthority.json",
+    "file_sha256": "7e8490a2b1e781645330052f1304650d6f38163310cfe270dcc5fb9000887c22"
+  },
+  "source_record_digest": "ba7d69189c527153828b02c2bb3311899b036a634446de9ad8f36af6592c28f8",
+  "historical_authority_extension_digest": "833acc5988761f8ba68ca573ad270bf7c87cf2fe32061336a71e42647968630a",
+  "historical_graph_digest": "44d8c7d33950af5e5f7c61caa4fe6fbd14fc9aedf14218d0a11de7c705542e09",
+  "source_bundle_digest": "c9fbcabacf22bb554e82dae80f8cc79da811b94baf1350dac5c488aff0503f64",
+  "graph_digest": "a624af16396dfa5eccaede2f5ee9edc378f7bd8bd8f66fd4d7da00f97b8e2eaf",
+  "policy_id": "grcv4-previous-successful-primary-v1",
+  "G2_accepted": false,
+  "record_digest": "3715d198eb15564ea459fcd0fdf9d7f185ddce4800cc9b66c31fed41b3f129a0"
+}

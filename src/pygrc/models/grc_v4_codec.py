@@ -24,10 +24,10 @@ JSONValue: TypeAlias = (
 
 RELEASE_ID = (
     "grcv4-spec-release-sha256:"
-    "7b8b4d4e32e48fd35f70421cce7f547eebb21dd81389764061efe6e1a8c19886"
+    "f777519824f86c3e9382bcf9b45cba28554351506f354d3f778746e2aaff5c6b"
 )
 _ASSET_PACKAGE = "pygrc.models.grc_v4_assets"
-_INDEX_SHA256 = "0ec015d67b2c44eeca20748c16139f6fd743ec21c6de02a10ae4ba40a0cc9d7c"
+_INDEX_SHA256 = "b2b00db16dc7db81be8b5b4cec658e480b5b80ba2e96ddd9516bc089577948f5"
 
 
 class V4DependencyError(RuntimeError):
@@ -54,20 +54,24 @@ class V4IdentityError(ValueError):
     """An identity-bearing payload and a supplied identifier disagree."""
 
 
+RECEIPT_PARENT_POLICY_ID = "grcv4-previous-successful-primary-v1"
+COS_SNAPSHOT_LAYOUT_ID = "pygrc-c-os-snapshot-v3"
+
+
 def cos_snapshot_payload(value: object) -> dict[str, JSONValue]:
     """Closed implementation envelope around the frozen V4 identity payloads.
 
-    The release names grcv4-snapshot-v1 and freezes its constituent preimages,
-    but supplies no top-level snapshot schema. This explicit layout marker
-    limits decoding to this C_OS receiver; it is not a new release schema or
-    permission to restore arbitrary profiles. Numerical/ledger admission is
-    performed by the lifecycle owner, after this defensive wire copy.
+    The P9-4.9.2 successor explicitly binds the parent policy and release.
+    Historical v1/v2 layouts are not implicitly converted. Numerical/ledger
+    admission is performed by the lifecycle owner after this defensive copy.
     """
     data = _copy_json(value, set())
     keys = {
         "schema_version",
         "model_family",
         "implementation_layout_id",
+        "receipt_parent_policy_id",
+        "specification_release_id",
         "reference",
         "scientific_state",
         "scientific_state_digest",
@@ -77,13 +81,11 @@ def cos_snapshot_payload(value: object) -> dict[str, JSONValue]:
         "commit_records",
         "lifecycle",
         "lifecycle_digest",
+        "reference_registry",
+        "transition_records",
     }
-    extended = (
-        isinstance(data, dict)
-        and data.get("implementation_layout_id") == "pygrc-c-os-snapshot-v2"
-    )
-    if extended:
-        keys |= {"reference_registry", "transition_records"}
+    if isinstance(data, dict) and data.get("implementation_layout_id") != COS_SNAPSHOT_LAYOUT_ID:
+        raise V4SchemaError("unsupported C_OS snapshot layout; historical parent policy is not converted")
     if not isinstance(data, dict) or set(data) != keys:
         raise V4SchemaError("expected the complete closed C_OS snapshot envelope")
     if (
@@ -93,9 +95,12 @@ def cos_snapshot_payload(value: object) -> dict[str, JSONValue]:
     ) != (
         "grcv4-snapshot-v1",
         "GRCV4",
-        "pygrc-c-os-snapshot-v2" if extended else "pygrc-c-os-snapshot-v1",
+        COS_SNAPSHOT_LAYOUT_ID,
     ):
         raise V4SchemaError("unsupported snapshot family, version or layout")
+    if (data["receipt_parent_policy_id"] != RECEIPT_PARENT_POLICY_ID
+            or data["specification_release_id"] != RELEASE_ID):
+        raise V4IdentityError("snapshot parent policy or specification release mismatch")
     for field, schema in (
         ("scientific_state", "scientific_state_payload"),
         ("reset", "grcv4_reset_payload"),
@@ -108,34 +113,33 @@ def cos_snapshot_payload(value: object) -> dict[str, JSONValue]:
         data["commit_records"], list
     ):
         raise V4SchemaError("snapshot requires ordered receipt and commit arrays")
-    if extended:
-        if not isinstance(data["reference_registry"], list) or not isinstance(
-            data["transition_records"], list
-        ):
+    if not isinstance(data["reference_registry"], list) or not isinstance(
+        data["transition_records"], list
+    ):
+        raise V4SchemaError(
+            "snapshot requires ordered reference/transition archives"
+        )
+    for row in data["transition_records"]:
+        if not isinstance(row, dict) or set(row) != {
+            "commit_id",
+            "request",
+            "source",
+            "source_reset",
+            "target",
+            "target_reset",
+        }:
             raise V4SchemaError(
-                "snapshot requires ordered reference/transition archives"
+                "expected complete crossing reconstruction preimages"
             )
-        for row in data["transition_records"]:
-            if not isinstance(row, dict) or set(row) != {
-                "commit_id",
-                "request",
-                "source",
-                "source_reset",
-                "target",
-                "target_reset",
-            }:
-                raise V4SchemaError(
-                    "expected complete crossing reconstruction preimages"
-                )
-            for field, schema in (
-                ("source", "scientific_state_payload"),
-                ("target", "scientific_state_payload"),
-                ("source_reset", "grcv4_reset_payload"),
-                ("target_reset", "grcv4_reset_payload"),
-            ):
-                row[field] = validate_payload(schema, row[field])
-            if not isinstance(row["request"], dict):
-                raise V4SchemaError("crossing archive requires its request declaration")
+        for field, schema in (
+            ("source", "scientific_state_payload"),
+            ("target", "scientific_state_payload"),
+            ("source_reset", "grcv4_reset_payload"),
+            ("target_reset", "grcv4_reset_payload"),
+        ):
+            row[field] = validate_payload(schema, row[field])
+        if not isinstance(row["request"], dict):
+            raise V4SchemaError("crossing archive requires its request declaration")
     for record in data["commit_records"]:
         if not isinstance(record, dict) or set(record) != {"commit_id", "payload"}:
             raise V4SchemaError("expected a commit ID and its complete preimage")

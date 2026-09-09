@@ -77,22 +77,28 @@ def verify(root, boundary_only=False):
     policy.prior.run_logged(
         [
             sys.executable,
-            str(root / policy.CORRECTION_BUILDER),
+            str(root / policy.PARENT_RELEASE_BUILDER),
             "--check",
         ],
         root,
-        "current_accepted_vector_correction_release",
+        "current_accepted_receipt_parent_release",
         commands,
     )
     if not boundary_only:
         predecessor_checks(root, commands)
         for label, script in [
+            ("P9492_parent_authority_surfaces", policy.SCRIPTS + "test_p9492_parents.py"),
             ("P9_G1_authority_pressure", policy.HERE + "test_phase9_g1.py"),
             ("P9_G1_API_notebook", policy.SCRIPTS + "test_phase9_g1_surfaces.py"),
         ]:
             policy.prior.run_logged(
                 [sys.executable, str(root / script)], root, label, commands
             )
+        policy.prior.run_logged(
+            [sys.executable, str(root / policy.HERE / "verify_p9492_parents.py"), "--check"],
+            root, "P9492_retained_runtime_evidence_current_inputs", commands,
+        )
+        policy.parent_runtime_evidence(root)
         report = policy.read(root / policy.GENERATED / policy.REPORT_FILE)
         policy.require(
             report["policy_digest"] == boundary["record_digest"]
@@ -116,8 +122,8 @@ def verify(root, boundary_only=False):
         "tree": tree,
         "historical_revision": policy.prior.HISTORICAL,
         "accepted_planning_revision": policy.BASELINE,
-        "release_id": policy.CORRECTED_RELEASE_ID,
-        "predecessor_release_id": policy.prior.RELEASE_ID,
+        "release_id": policy.current_parent_release(root),
+        "predecessor_release_id": policy.CORRECTED_RELEASE_ID,
         "runtime_authorized": True,
         "P9_G1_accepted": True,
         "accepted_generic_runtime_support": [],

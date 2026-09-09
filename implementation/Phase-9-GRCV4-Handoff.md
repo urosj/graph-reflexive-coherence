@@ -1,6 +1,16 @@
-# Phase 9 GRCV4 handoff — P9-4.8 continuation
+# Phase 9 GRCV4 handoff — Tranche 4 closure
 
-Current restart point, 2026-09-09: **read the
+Current restart point, 2026-09-09: use branch
+`impl/phase-9-grcv4-tranche-4-closure` and the
+[P9-4.9.2 implementation review](./phase-9-grcv4/tranche-4/P9-4.9.2-Review.md).
+The user accepted the receipt-parent design and requested full implementation:
+the admitted claim/debt overlay, actual tool UX, proposal/paper/spec successor
+and internal C_OS parent rule are implemented. Consult that review and the
+current checklist for validation/acceptance state. P9-4.9.1 facade and final
+P9-4.9.3 fixture product remain pending, then the single P9-4.8B G2 review.
+G2 remains held; no support set is promoted.
+
+Historical P9-4.8 restart point: **read the
 [P9-4.8 continuation handoff](./phase-9-grcv4/tranche-4/P9-4.8-Handoff.md)**.
 It contains the current checkout/acceptance state, source links, remaining work,
 environment commands, verification limits and files intended for the next commit.

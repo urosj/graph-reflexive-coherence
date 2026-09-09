@@ -1709,3 +1709,24 @@ or forged acceptance, premature P9-3.4 work and self-acceptance remain rejected.
 API/notebook/browser and their exports keep numerical support empty. The
 Phase 9 P9-3.3 review links numerical charge/continuity evidence; these display
 checks do not execute candidate roots or promote source claim dispositions.
+
+## Phase 9 Tranche 4 — P9-4.9.2 receipt-parent successor
+
+The user-approved `grcv4-previous-successful-primary-v1` contract is added as
+one claim, one bounded debt resolution, one object and three contracts in a
+hash-pinned append-only overlay. `load_current_forensic_context` admits it;
+`load_successor_forensic_context` keeps D11 historical. Existing D10/D11 nodes,
+edges and accepted records are not rewritten. New unprocessed sources hold
+current admission without preventing exact historical reconstruction.
+
+The existing Phase 9 browser and notebook expose the same typed source-bound
+traces through `parent_authority` and `/api/receipt-parents`. The browser's
+claim/debt/object/contract selector is operational, not documentation-only.
+The [scenario guide](./docs/Phase9VerificationGuide.md#p9-492-parent-authority-scenarios)
+covers API identity, admission drift, historical scope and stale-result clearing.
+
+Current verification checks the bounded parent release and retained exact-source
+runtime evidence. Frozen historical checks run only on their historical inputs;
+they do not veto the authorized proposal/paper/spec/runtime successor. Permission
+adds exactly P9-4.9.2 on existing owners: 27 ready leaves and the same 29 eligible
+paths. G2 and GRC9V4 remain held. No new governance gate is introduced.
