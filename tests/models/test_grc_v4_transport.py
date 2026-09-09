@@ -291,10 +291,10 @@ class MobilityTests(unittest.TestCase):
 
     def test_construction_does_not_advertise_runtime_support(self) -> None:
         CandidateCMobility(self.graph, self.c)
-        self.assertEqual(list_supported_profiles(), frozenset())
+        self.assertEqual(list_supported_profiles(), frozenset({'grcv4-profile-sha256:a6b853ee382895eb78b1a7955a0df22f95d68b27cb0f762503e8c424c2f59b6d'}))
         import pygrc.models as models
 
-        self.assertFalse(hasattr(models, "GRCV4"))
+        self.assertTrue(hasattr(models, "GRCV4"))
 
 
 def charge_profile(**changes: float) -> Any:

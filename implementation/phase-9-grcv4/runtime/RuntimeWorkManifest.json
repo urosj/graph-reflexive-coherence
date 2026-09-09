@@ -1150,7 +1150,7 @@
     },
     {
       "path": "src/pygrc/models/grc_v4.py",
-      "sha256": "9cc3bf916b546a5ea07d5c1cb93bea7c3e6be8d28ebd6fcae4bd6d15196bedf6",
+      "sha256": "338ad4195d4c27a492738820b6c88a44b570a9376c2ea5992c1a6fc62b5e5dc4",
       "iteration_id": "P9-4.9.1"
     },
     {
@@ -1200,7 +1200,7 @@
     },
     {
       "path": "src/pygrc/models/grc_v4_profile.py",
-      "sha256": "188e4ceb92b6a36fe81849911b88b233b8dd16bf3de07383e1508d76232fdbfb",
+      "sha256": "66441b1c1bd50bd64183dbc39980f2a013f1ce554a10d7364490ff3854ba9988",
       "iteration_id": "P9-2.2"
     },
     {
@@ -1235,22 +1235,22 @@
     },
     {
       "path": "tests/models/test_grc_v4.py",
-      "sha256": "c2fbe2e6f7eb63f77765581056f33878776feca9c86496ff2710d1403613a76f",
+      "sha256": "54ca792640ccef324db22d9c9275a8ebe274de779a05b2463d802edf3d3d83d7",
       "iteration_id": "P9-4.9.3"
     },
     {
       "path": "tests/models/test_grc_v4_candidate_c.py",
-      "sha256": "a9fd322349c67745dda9f915c78f10ecdf452c783064e3b5717acd079b45bfca",
+      "sha256": "c54488109204510e4df2e48b92b651dfcc243f488c1c653f9527742a626867c7",
       "iteration_id": "P9-4.5"
     },
     {
       "path": "tests/models/test_grc_v4_codec.py",
       "iteration_id": "P9-2.6",
-      "sha256": "465bc3448fcc196e01ab0003665e5eeebde581208a5628f0adeeeabebb770983"
+      "sha256": "c9ffa5a9de7e97c1432ab67d308777c78f9982e3b0e9fbed39eb3389f1e16079"
     },
     {
       "path": "tests/models/test_grc_v4_geometry.py",
-      "sha256": "b3383f393fbafa0c7be228e0011fb51f8b705ffaf4b5b2721c0a3cfd0630e69a",
+      "sha256": "d0d4f257a9cb991bd8a0b2a55d66914791fe0925182e4db6976c13acd38194d9",
       "iteration_id": "P9-3.4"
     },
     {
@@ -1260,7 +1260,7 @@
     },
     {
       "path": "tests/models/test_grc_v4_profile.py",
-      "sha256": "6dcd4a0abffca13bc8a0c0e7e697a54e421ba079eaef5d77e4609184d67a0dea",
+      "sha256": "f88de45246927ca3e37a9c60db06eb11d91867b89f58c4b000e95545d8affe6f",
       "iteration_id": "P9-2.2"
     },
     {
@@ -1275,17 +1275,19 @@
     },
     {
       "path": "tests/models/test_grc_v4_step.py",
-      "sha256": "2919ca812f547de37c0c1a735326f7923aacfe32c52d0c2c800a3bc9e6da5fd5",
+      "sha256": "d060883a2b355e51eae035799461f6f030253b1e16269b207d9a66e6476c9c4f",
       "iteration_id": "P9-3.5"
     },
     {
       "path": "tests/models/test_grc_v4_transport.py",
-      "sha256": "ad44a64357ad5cef25deaf2c778a4a4a0ea4ec016f461ce40e07f0724c09f2a9",
+      "sha256": "51551796a0e6e344b66f21d1a5767afe39173e1a77639ba9e9271061bff02684",
       "iteration_id": "P9-3.4"
     }
   ],
-  "accepted_generic_runtime_support": [],
+  "accepted_generic_runtime_support": [
+    "grcv4-profile-sha256:a6b853ee382895eb78b1a7955a0df22f95d68b27cb0f762503e8c424c2f59b6d"
+  ],
   "admitted_specialization_support_sets": [],
-  "claim_ceiling": "Exact current implementation content bindings, not review acceptance or conformance.",
-  "record_digest": "c4e4a3e147722a67d6e6238e80f4313b3f572ae8afe3d1015313284cf342db79"
+  "claim_ceiling": "Work entries grant no conformance; the only accepted support is the separate P9-4.8B exact C_OS singleton. Local targets, other profiles and specialization are not promoted.",
+  "record_digest": "829e0fa8ebb28140d01ff6e29e5ba87df61d035ffe61bb1b35f509910cc10d89"
 }

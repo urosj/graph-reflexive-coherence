@@ -16,14 +16,19 @@ proposal/paper §14.2.1, the V4 specs and the C_OS projection. Consult the
 verification and limits. P9-4.9.3 was accepted by the user's commit instruction
 in `c01526c`. It supplies the exact 33-case product for one
 nominated complete profile, plus exact dimension and mapped-event vectors.
-Control/target identities are not broader support. **P9-4.8B proposes PASS for
-that single exact nomination; user acceptance is still required.** Its
-[record](./phase-9-grcv4/tranche-4/P9-4.8B-GateReview.json) binds the three
-satisfied closure obligations, current release, retained execution and typed
-authority/debt traces. Next is the user's scoped G2 decision, not another
-numerical run. G2 remains closed; no support set is promoted. Acceptance must
-be recorded before exact support/discovery changes; A_OS and G3 still require
-separate continuation/entry review.
+Control/target identities are not broader support. **The user explicitly accepted
+P9-4.8B on 2026-09-09; Tranche 4 is closed.** The
+[explicit G2 acceptance](./phase-9-grcv4/tranche-4/P9-4.8B-G2Acceptance.json) links the original proposed review and execution.
+All three phase closure obligations are discharged for exactly:
+
+`grcv4-profile-sha256:a6b853ee382895eb78b1a7955a0df22f95d68b27cb0f762503e8c424c2f59b6d`
+
+Global runtime discovery reconstructs this exact declaration. Instance-local
+migration targets do not expand the accepted set. API/notebook/browser status
+projects the same acceptance, with `P9-7.7-C_OS` as an alias, not extra credit.
+G3, other profiles and specialization remain closed. Next is a separate user
+choice of A_OS continuation or a scoped G3 entry review—not a further Tranche 4
+numerical run or automatic authorization of new runtime work.
 
 The [P9-4.9.1a proposal](./investigations/grc9v4-constitutive-design/decisions/P9AbundanceInterfaceAuthorityProposal.md)
 is accepted. All three refinements
@@ -38,16 +43,16 @@ and facade runs are retained at their Git subjects, not relabeled as current.
 The user's subsequent instruction to commit accepts the bounded P9-4.9.1a
 implementation and its focused evidence. The review/execution records retain
 their validation-time pending disposition; this handoff and the commit record
-the later acceptance in `1f5f5e9`. G2 remains held; acceptance of fixture closure
-in `c01526c` is not acceptance of generic runtime support.
+the later acceptance in `1f5f5e9`. Those earlier decisions did not grant G2; the separate
+P9-4.8B acceptance above now grants the exact reviewed scope.
 
 Lean checks: use `verification/verify_p948b_review.py --check` and
 `verification/audit_phase9_implementation.py --boundary-only` under
 `implementation/phase-9-grcv4/`, with `.venv/bin/python` from the repository
 root. The accepted parent/facade/abundance runs are checked at their original Git
 subjects; the retained 22-test fixture record binds unchanged scientific
-source, with two exact status-only corrections separately checked against
-their original hashes. The successor also checks PASS/HOLD and misleading-record controls,
+source. Acceptance-only discovery, registry assertions and status projections
+have separate exact bindings; the original source hashes and run are unchanged. The successor also checks PASS/HOLD and misleading-record controls,
 plus existing status/authority API, notebook and HTTP/browser-validator paths.
 Neither command reruns numerical tests or claims fresh full historical/browser
 verification. The current surface remains 30 ready leaves / 29 eligible paths;
@@ -62,7 +67,8 @@ The passed historical stages are reused; the failed pressure stage and remaining
 current-surface/review checks are the continuation, not another numerical run.
 The export probe also uses its frozen pre-integration baseline. Browser
 readiness and API next-work text now match the accepted fixture stage and
-pending G2 review; actual API-to-browser validation guards that boundary.
+then-pending G2 review. The accepted successor now projects the exact singleton;
+actual API-to-browser validation guards that boundary.
 
 ## Historical P9-4.8 snapshot
 

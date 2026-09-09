@@ -57,6 +57,8 @@ APPROVAL_DIGEST = "cd2c52f30477e1042bb903bd0553da237ddccc9cad373afecc1a84e4e0b37
 POLICY = HERE + "Phase9ImplementationBoundary.json"
 RECORD = PHASE + "tranche-1/P9-1.9-ExecutionRecord.json"
 WORK = PHASE + "runtime/RuntimeWorkManifest.json"
+G2_ACCEPTANCE = PHASE + "tranche-4/P9-4.8B-G2Acceptance.json"
+G2_ACCEPTANCE_DIGEST = "e7165dc2f4cfe159d397c7aa61ccfbc89a30909db888e6638ef1ffe5905ec6dd"
 FOUNDATION = PHASE + "tranche-2/P9-2.1-2.2-AcceptanceRecord.json"
 FOUNDATION_DIGEST = "1e3f0ddb06b119fa46dc7609d05b7db0c3a4cbc07428c05b8a032da081ae9dd4"
 REQUEST_ACCEPTANCE = PHASE + "tranche-2/P9-2.3-AcceptanceRecord.json"
@@ -188,6 +190,7 @@ HANDOFF_PATHS = {
     HERE + "handoff/P9-G1-outputs.zip",
 }
 PATHS = {
+    G2_ACCEPTANCE,
     # P9-4.8B is a review-only successor; no runtime leaf or support grant.
     HERE + "verify_p948b_review.py",
     PHASE + "tranche-4/P9-4.8B-Review.md",
@@ -1035,6 +1038,38 @@ def leaf_permissions(root):
     return ready, owners
 
 
+def accepted_g2(root):
+    """Explicit singleton acceptance, never inferred from permission or tests."""
+    value = read(safe_path(root, G2_ACCEPTANCE))
+    require(value["record_digest"] == digest_record(value) == G2_ACCEPTANCE_DIGEST,
+            "untrusted exact-profile G2 acceptance")
+    require(value["status"] == "accepted_by_user" and value["G2_accepted"] is True
+            and value["gate"] == "P9-G2[C_OS]" and value["iteration_id"] == "P9-4.8B"
+            and value["alias"] == "P9-7.7-C_OS" and value["tranche_4_status"] == "closed"
+            and value["G3_accepted"] is False
+            and value["admitted_specialization_support_sets"] == []
+            and value["new_runtime_iterations_authorized"] == [],
+            "invalid G2 acceptance scope")
+    git(root, "merge-base", "--is-ancestor", value["reviewed_commit"], "HEAD")
+    original = git(root, "show", value["reviewed_commit"] + ":" + value["review"]["path"])
+    review = json.loads(original)
+    require(sha(original) == value["review"]["sha256"]
+            and review["record_digest"] == value["review"]["record_digest"]
+            and review["verdict"] == "PASS" and review["open_blockers"] == []
+            and review["proposed_generic_runtime_support"] == value["accepted_generic_runtime_support"]
+            and len(value["accepted_generic_runtime_support"]) == 1
+            and value["accepted_profile"]["complete_profile_id"] == value["accepted_generic_runtime_support"][0],
+            "G2 acceptance does not match reviewed exact scope")
+    require(value["release_id"] == current_abundance_release(root), "stale G2 release")
+    run = value["fixture_run"]
+    require(sha(safe_path(root, run["path"]).read_bytes()) == run["sha256"],
+            "accepted fixture evidence changed")
+    captured = read(safe_path(root, run["path"]))
+    require(value["accepted_profile"] == captured["objects"][run["nominated_prestate_object"]]["reference"]["profile"],
+            "accepted declaration does not match executed profile")
+    return value
+
+
 def work_entries(root, approval):
     value = read(safe_path(root, WORK))
     require(
@@ -1058,11 +1093,6 @@ def work_entries(root, approval):
         and value["record_digest"] == digest_record(value),
         "stale work manifest",
     )
-    require(
-        value["accepted_generic_runtime_support"] == []
-        and value["admitted_specialization_support_sets"] == [],
-        "work manifest cannot grant conformance",
-    )
     targets = {r["path"]: r for r in approval["runtime_targets"]}
     checklist = git(
         root,
@@ -1079,6 +1109,11 @@ def work_entries(root, approval):
     require(len({r["path"] for r in rows}) == len(rows), "duplicate work target")
     result = {}
     ready, owners = leaf_permissions(root)
+    require(
+        value["accepted_generic_runtime_support"] == accepted_g2(root)["accepted_generic_runtime_support"]
+        and value["admitted_specialization_support_sets"] == [],
+        "work manifest cannot grant conformance beyond accepted G2",
+    )
     for row in rows:
         require(
             set(row) == {"path", "sha256", "iteration_id"},

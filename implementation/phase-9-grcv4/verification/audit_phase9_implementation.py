@@ -99,7 +99,7 @@ def verify(root, boundary_only=False):
         # parent/facade/abundance Git subjects without numerical reexecution.
         policy.prior.run_logged(
             [sys.executable, str(root / policy.HERE / "verify_p948b_review.py"), "--check"],
-            root, "P948B_integrated_review_pending_user_acceptance", commands,
+            root, "P948B_accepted_exact_profile_review", commands,
         )
         report = policy.read(root / policy.GENERATED / policy.REPORT_FILE)
         policy.require(
@@ -128,11 +128,11 @@ def verify(root, boundary_only=False):
         "predecessor_release_id": policy.PARENT_RELEASE_ID,
         "runtime_authorized": True,
         "P9_G1_accepted": True,
-        "accepted_generic_runtime_support": [],
+        "accepted_generic_runtime_support": policy.accepted_g2(root)["accepted_generic_runtime_support"],
         "admitted_specialization_support_sets": [],
         "commands": commands,
         "handoff_evidence": policy.handoff_status(root),
-        "claim_ceiling": "accepted_implementation_permission_not_runtime_conformance",
+        "claim_ceiling": "G1_implementation_permission_plus_separate_exact_C_OS_G2_acceptance",
     }
     result["receipt_digest"] = policy.digest_record(result, "receipt_digest")
     return result
@@ -151,7 +151,7 @@ def main():
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_bytes(policy.canonical(result) + b"\n")
     print(
-        f"PHASE9_IMPLEMENTATION_VERIFICATION_PASS version=3 runtime_authorized=true P9_G1=accepted runtime_support=empty scope={result['scope']} handoff={result['handoff_evidence']['status']}"
+        f"PHASE9_IMPLEMENTATION_VERIFICATION_PASS version=3 runtime_authorized=true P9_G1=accepted runtime_support=accepted_exact_C_OS_singleton scope={result['scope']} handoff={result['handoff_evidence']['status']}"
     )
     if result["handoff_evidence"]["status"] != "verified":
         print("PHASE9_HANDOFF_WARNING " + result["handoff_evidence"]["detail"])

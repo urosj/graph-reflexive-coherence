@@ -4,8 +4,9 @@ This panel separates implementation verification from forensic authority.
 P9-4.9.2 adds a separately admitted parent-contract overlay and propagates its
 accepted rule through proposal, paper and a V4 successor release; historical
 D10/D11 graph and acceptance records retain their authority and bytes. P9-G1 is accepted;
-bounded implementation is authorized, but accepted runtime support sets remain
-empty. GRC9V4 still requires its separate P9-G3 admission.
+bounded implementation is authorized. Separately, the user accepted P9-4.8B
+for one exact C_OS profile on 2026-09-09, closing Tranche 4. GRC9V4 still
+requires separate P9-G3 admission; other profiles remain unaccepted.
 
 ## CLI and browser
 
@@ -63,7 +64,11 @@ from grcv4_explorer.phase9_verification import verification_status
 status = verification_status(root)
 assert status["P9_G1_accepted"] is True  # separately accepted implementation scope
 assert status["runtime_authorized"] is True
-assert status["accepted_generic_runtime_support"] == []  # not conformance
+assert status["g2_acceptance"]["G2_accepted"] is True  # separate scoped decision
+assert status["accepted_generic_runtime_support"] == [
+    "grcv4-profile-sha256:a6b853ee382895eb78b1a7955a0df22f95d68b27cb0f762503e8c424c2f59b6d"
+]
+assert status["g2_acceptance"]["G3_accepted"] is False
 ```
 
 The separate `phase9_verification` module does not alter historical exports.
@@ -109,14 +114,16 @@ identity and retains generated output under `tool/generated/phase9-verification/
 
 Current policies: `grcv4-previous-successful-primary-v1` and the separately
 accepted `grcv4-family-abundance-diagnostic-v1`. P9-4.9.1a adds its bounded
-availability permission on existing paths: 29 ready leaves, unchanged 29
-eligible runtime paths, empty accepted support sets. No numeric detector is
-admitted. The next work is final P9-4.9.3 reconciliation, then P9-4.8B.
+availability permission on existing paths. After accepted fixture reconciliation
+and the explicit P9-4.8B decision, readiness remains 30 leaves / 29 eligible
+paths, with only the exact accepted C_OS singleton published. No numeric
+detector is admitted. Choose A_OS continuation or scoped G3 entry review
+separately; acceptance adds no new runtime permission.
 
 For lean current checks:
 
 ```bash
-.venv/bin/python implementation/phase-9-grcv4/verification/verify_p9491a_abundance.py --check
+.venv/bin/python implementation/phase-9-grcv4/verification/verify_p948b_review.py --check
 .venv/bin/python implementation/phase-9-grcv4/verification/audit_phase9_implementation.py --boundary-only
 .venv/bin/python implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/run_phase9_notebook.py --status-only
 ```

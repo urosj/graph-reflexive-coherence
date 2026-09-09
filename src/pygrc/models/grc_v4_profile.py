@@ -491,10 +491,67 @@ def resolve_profile_template(
     return template
 
 
+# P9-4.8B explicit user acceptance; local declarations never expand this set.
+# The declaration is copied losslessly from the accepted fixture, not rebuilt
+# from defaults. No repository/evidence file is needed by an installed package.
+_ACCEPTED_C_OS_ID = 'grcv4-profile-sha256:a6b853ee382895eb78b1a7955a0df22f95d68b27cb0f762503e8c424c2f59b6d'
+_ACCEPTED_C_OS_DECLARATION = (
+    '{"complete_profile_id":"grcv4-profile-sha256:a6b853ee382895eb78b1a7955a0df22f95d68b27cb0'
+    'f762503e8c424c2f59b6d","identity_payload":{"candidate":"C","candidate_c_transport_id":"C'
+    '-HM-STIFFNESS-BASELINE-v1","charge_profile_id":"unit_vertex_measure_v1","composition_gai'
+    'n":null,"context_contract_id":"constant_zero_context_v1","differential_backend_id":"orie'
+    'nted_incidence_d0_equals_BT_v1","domain_id":"fixed_graph_strict_gap_spd_v1","gauge_id":"'
+    'component_zero_mean_potential_v1","geometry_profile_id":"affine_reference_relative_v1","'
+    'lifecycle_policy_id":"grcv4-lifecycle-policy-v1","normalization_id":"unnormalized_vertex'
+    '_stiffness_v1","params_hash":"grcv4-params-sha256:81b0876e6852f2b08755f08cf932abf08d95a4'
+    '763b43fc14bc607f45a5fde48f","profile_family_id":"C_OS","realization":"OS","schema_versio'
+    'n":"grcv4-profile-identity-v1","solver_id":"direct_unique_root_v1","units_id":"grcv4_non'
+    'dimensional_reference_v1"},"params_resolved":{"candidate":{"C_ref":1,"E_H_policy_id":"di'
+    'ag_W_C_tr_structural_hodge_v1","E_M_policy_id":"eta_C_diag_W_C_tr_mobility_v1","Lambda_C'
+    '":1,"W_C_tr":{"e":2},"W_C_tr_content_digest":"grcv4-wctr-sha256:fa845c7788b4d8877437f2c3'
+    '456230a9365981e115465e3a393cc868351419fb","chi_C":1,"current_conditioning_policy_id":"st'
+    'rict_invertible_current_block_v1","eta_C":0.5,"kappa_M_C":0,"kappa_Phi_C":1,"potential_e'
+    'valuator_id":"quadratic_site_potential_zero_derivative_v1","schema_version":"grcv4-candi'
+    'date-c-params-v1","selector_boundary_policy_id":"strict_rank_gap_fail_closed_v1","tau_C"'
+    ':0,"transport_id":"C-HM-STIFFNESS-BASELINE-v1","zeta_C":3},"charge":{"absolute_tolerance'
+    '":0,"accumulation_order":"canonical_live_vertex_balanced_binary_tree","policy_id":"stabl'
+    'e_pairwise_binary64_charge_v1","relative_tolerance":0,"remainder_policy":"compatibility_'
+    'projection_is_none","repair_policy":"never_mutate_resource","rounding_mode":"IEEE754_bin'
+    'ary64_roundTiesToEven","schema_version":"grcv4-charge-policy-v1"},"common":{"boundary_po'
+    'licy_id":"closed_no_flux_v1","context_contract_id":"constant_zero_context_v1","default_s'
+    'tep_request":null,"differential_backend_id":"oriented_incidence_d0_equals_BT_v1","domain'
+    '_id":"fixed_graph_strict_gap_spd_v1","gauge_id":"component_zero_mean_potential_v1","meas'
+    'ure_profile_id":"unit_vertex_measure_v1","normalization_id":"unnormalized_vertex_stiffne'
+    'ss_v1","schema_version":"grcv4-common-params-v1","units_id":"grcv4_nondimensional_refere'
+    'nce_v1"},"geometry":{"K4_base_digest":"grcv4-k4-sha256:bc96c6d5259157dc72a745b81d31e8d3d'
+    '927527ba9115b36ee169706ddac40f5","candidate_adapter_id":"candidate_c_exact_star_adapter_'
+    'v1","flat_sharp_solver_id":"spd_direct_v1","geometry_domain_id":"positive_hodge_fixed_gr'
+    'aph_v1","kappa_H":0,"overlap_normalization_id":"edge_multiplicity_inverse_sqrt_v1","refe'
+    'rence_hodge_digest":"grcv4-hodge-sha256:a02932d58fbfa8b044f724284eb590065f2ee4cc42f3809e'
+    '697781606530683e","schema_version":"grcv4-geometry-profile-params-v1","star_cover_id":"v'
+    'ertex_star_exact_overlap_v1"},"lifecycle":{"history_policy_id":"candidate_c_no_independe'
+    'nt_history_v1","mapped_event_policy_id":"caller_mapped_atomic_topology_event_v1","migrat'
+    'ion_policy_id":"typed_bidirectional_profile_migration_v1","rebase_policy_id":"replace_ba'
+    'seline_append_receipt_v1","receipt_policy_id":"operation_delta_plus_persistent_ledger_v1'
+    '","reset_policy_id":"restore_current_baseline_append_receipt_v1","schema_version":"grcv4'
+    '-lifecycle-policy-v1","target_readmission_policy_id":"full_target_fail_closed_v1"},"real'
+    'ization":{"corrector_policy_id":"one_fresh_geometry_corrector_v1","predictor_policy_id":'
+    '"reference_geometry_predictor_v1","schema_version":"grcv4-os-params-v1","split_residual_'
+    'norm_id":"edge_l2_v1","tolerance":1},"schema_version":"grcv4-resolved-params-v1","solver'
+    '":{"absolute_tolerance":0,"conditioning_limit":100,"failure_policy_id":"fail_closed_no_f'
+    'allback_v1","iteration_limit":1,"relative_tolerance":0,"residual_norm_id":"edge_l2_v1","'
+    'root_selector_id":"unique_admitted_root_v1","schema_version":"grcv4-solver-policy-v1","s'
+    'olver_kind":"direct"}}}'
+)
+
+
 def list_supported_profiles() -> frozenset[str]:
-    """No executable profiles have earned acceptance in this foundation leaf."""
-    return frozenset()
+    """Exact globally accepted G2 support, not all constructible local targets."""
+    return frozenset({_ACCEPTED_C_OS_ID})
 
 
 def get_supported_profile(complete_profile_id: str) -> GRCV4Profile:
-    raise V4IdentityError(f"unsupported executable profile: {complete_profile_id}")
+    """Return the immutable, digest-verified accepted declaration only."""
+    if type(complete_profile_id) is not str or complete_profile_id != _ACCEPTED_C_OS_ID:
+        raise V4IdentityError(f"unsupported executable profile: {complete_profile_id}")
+    return GRCV4Profile.from_canonical_bytes(_ACCEPTED_C_OS_DECLARATION)

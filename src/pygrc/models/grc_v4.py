@@ -260,7 +260,7 @@ def decode_mapped_topology_event_request(
 
 
 class GRCV4(GRCModel):
-    """Public C_OS adapter with one owner, not an accepted G2 support claim.
+    """Public C_OS adapter; accepted G2 support is exact-profile, not family-wide.
 
     Construction accepts complete, fresh reference-stage inputs. The JSON
     configuration is exactly ``{"initial": inputs.to_payload(), "targets":

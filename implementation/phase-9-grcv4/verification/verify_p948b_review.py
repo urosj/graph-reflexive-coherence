@@ -1,7 +1,7 @@
 """P9-4.8B integrated review checks, reusing execution rather than rerunning it.
 
-A consistent PASS proposal is not accepted G2. This checker permits a justified
-HOLD too, and never edits a decision, source claim, gate or support register.
+Validate the historical PASS proposal and the separate explicit user acceptance.
+Retain original execution identities; recheck only the acceptance projection.
 """
 
 import argparse
@@ -10,6 +10,7 @@ from copy import deepcopy
 import json
 import subprocess
 import sys
+from unittest.mock import patch
 
 import phase9_implementation_policy as policy
 import verify_p9493_fixtures as fixtures
@@ -33,20 +34,22 @@ CONTRACTS = (
     "D11-C-EC-C-J0-CURRENT",
 )
 DEBTS = ("P9-4.9.2-DEBT-PARENTS", "P9-4.9.1a-DEBT-ABUNDANCE")
-STATUS_CORRECTIONS = {
-    policy.SIDE + "tool/phase9-web/verification.js": (
-        '"P9-4.9.2","P9-7.2a-C_OS-NH-NH"',
-        '"P9-4.9.2","P9-4.9.3","P9-7.2a-C_OS-NH-NH"',
-    ),
-    policy.SIDE + "tool/src/grcv4_explorer/phase9_verification.py": (
-        "P9-4.9.1a abundance availability authority accepted and propagated; "
-        "bounded C_OS projection implemented, no numeric definition. Next: "
-        "final P9-4.9.3 evidence reconciliation, then one P9-4.8B review. "
-        "P9-G2/G3 remain held.",
-        "P9-4.9.3 fixture reconciliation accepted; P9-4.8B proposes PASS for "
-        "one exact C_OS profile, pending user acceptance. P9-G2/G3 remain "
-        "held; accepted support stays empty. No numeric abundance definition.",
-    ),
+# Finite byte bindings for separately tested acceptance/discovery/status changes.
+# All other captured numerical source remains byte-exact. This is not a waiver
+# for arbitrary edits or a relabeling of the historical run as a new execution.
+ACCEPTANCE_PROJECTIONS = {
+    "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/notebooks/phase9_verification.ipynb": "4789175b7d89d487185761ab9324c311e61e159b2cd789964d1867e6c6c44c69",
+    "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/verification.js": "7c73b10e4bf1909de72fee42ae0c0903c9d17818d2d159d8379770ff4cccf121",
+    "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/phase9_verification.py": "dfc6cf56e70c4bd68b7065df931bf44e3e4544daf8dbf14285a509f69aa9a81b",
+    "src/pygrc/models/grc_v4.py": "338ad4195d4c27a492738820b6c88a44b570a9376c2ea5992c1a6fc62b5e5dc4",
+    "src/pygrc/models/grc_v4_profile.py": "66441b1c1bd50bd64183dbc39980f2a013f1ce554a10d7364490ff3854ba9988",
+    "tests/models/test_grc_v4.py": "54ca792640ccef324db22d9c9275a8ebe274de779a05b2463d802edf3d3d83d7",
+    "tests/models/test_grc_v4_candidate_c.py": "c54488109204510e4df2e48b92b651dfcc243f488c1c653f9527742a626867c7",
+    "tests/models/test_grc_v4_codec.py": "c9ffa5a9de7e97c1432ab67d308777c78f9982e3b0e9fbed39eb3389f1e16079",
+    "tests/models/test_grc_v4_geometry.py": "d0d4f257a9cb991bd8a0b2a55d66914791fe0925182e4db6976c13acd38194d9",
+    "tests/models/test_grc_v4_profile.py": "f88de45246927ca3e37a9c60db06eb11d91867b89f58c4b000e95545d8affe6f",
+    "tests/models/test_grc_v4_step.py": "d060883a2b355e51eae035799461f6f030253b1e16269b207d9a66e6476c9c4f",
+    "tests/models/test_grc_v4_transport.py": "51551796a0e6e344b66f21d1a5767afe39173e1a77639ba9e9271061bff02684"
 }
 
 
@@ -63,40 +66,23 @@ def binding(name):
 
 
 def capture_reuse(current=None):
-    """Reuse the original run, permitting only the two exact status corrections.
-
-    No source binding in the accepted capture is edited or ignored. Scientific
-    code, tests, checker and authority implementation must remain byte-exact.
-    """
+    """Reuse original evidence with exact separately checked projection bindings."""
     captured = policy.read(ROOT / fixtures.RUN)["source_bindings"]
     current = fixtures.source_hashes() if current is None else current
     require(set(current) == set(captured), "captured source population changed")
     corrections = []
     for name, expected in captured.items():
-        if name not in STATUS_CORRECTIONS:
+        if name not in ACCEPTANCE_PROJECTIONS:
             require(current[name] == expected, "reused source changed: " + name)
             continue
-        original = policy.git(ROOT, "show", SUBJECT + ":" + name)
-        require(policy.sha(original) == expected, "original status source changed")
-        old, new = (text.encode() for text in STATUS_CORRECTIONS[name])
-        require(original.count(old) == 1, "ambiguous status-only correction")
-        require(
-            policy.sha(original.replace(old, new)) == current[name],
-            "change exceeds exact status correction: " + name,
-        )
-        corrections.append(
-            {
-                "path": name,
-                "original_sha256": expected,
-                "current_sha256": current[name],
-                "change": "readiness_or_navigation_only_separately_surface_tested",
-            }
-        )
-    return {
-        "original_subject": SUBJECT,
-        "unchanged_capture_bindings": len(captured) - len(corrections),
-        "status_only_corrections": corrections,
-    }
+        require(current[name] == ACCEPTANCE_PROJECTIONS[name],
+                "change exceeds exact acceptance projection: " + name)
+        corrections.append({"path": name, "original_sha256": expected,
+                            "current_sha256": current[name],
+                            "change": "acceptance_discovery_or_status_separately_tested"})
+    return {"original_subject": SUBJECT,
+            "unchanged_capture_bindings": len(captured) - len(corrections),
+            "acceptance_projections": corrections}
 
 
 def retained_fixture_evidence():
@@ -155,11 +141,15 @@ def source_continuity():
         ("src/pygrc/models/grc_v4.py", "7905e7e"),
         ("src/pygrc/models/grc_v4_codec.py", "1f5f5e9"),
     ):
-        require(
-            (ROOT / name).read_bytes() == policy.git(ROOT, "show", commit + ":" + name),
-            "reused public/codec implementation changed: " + name,
-        )
-        result.append({**binding(name), "unchanged_since": commit})
+        original = policy.git(ROOT, "show", commit + ":" + name)
+        if name.endswith("grc_v4.py"):
+            original = original.replace(
+                b"Public C_OS adapter with one owner, not an accepted G2 support claim.",
+                b"Public C_OS adapter; accepted G2 support is exact-profile, not family-wide.",
+            )
+        require((ROOT / name).read_bytes() == original,
+                "reused public/codec implementation changed: " + name)
+        result.append({**binding(name), "implementation_unchanged_since": commit})
     name = "src/pygrc/models/grc_v4_lifecycle.py"
 
     def definitions(raw):
@@ -198,14 +188,17 @@ def review_inputs():
     """Read exact evidence subjects; no tests or numerical operations."""
     from pygrc.core.interfaces import GRCModel
     from pygrc.models.grc_v4 import GRCV4
-    from pygrc.models.grc_v4_profile import list_supported_profiles
+    from pygrc.models.grc_v4_profile import get_supported_profile, list_supported_profiles
 
     policy.git(ROOT, "merge-base", "--is-ancestor", SUBJECT, "HEAD")
     require(
         issubclass(GRCV4, GRCModel) and not GRCV4.__abstractmethods__,
         "public facade incomplete",
     )
-    require(not list_supported_profiles(), "unreviewed global runtime support")
+    acceptance = policy.accepted_g2(ROOT)
+    require(sorted(list_supported_profiles()) == acceptance["accepted_generic_runtime_support"]
+            and get_supported_profile(fixtures.NOMINATED).to_payload() == acceptance["accepted_profile"],
+            "runtime discovery differs from accepted exact declaration")
     run = policy.read(ROOT / fixtures.RUN)
     require(
         binding(fixtures.RUN)["sha256"]
@@ -284,7 +277,7 @@ def review_inputs():
         "public_surface": {
             "GRCModel": True,
             "abstract_methods": [],
-            "global_accepted_support": [],
+            "global_accepted_support": sorted(list_supported_profiles()),
         },
     }
 
@@ -301,7 +294,10 @@ def check_decision(record, actual):
         and record["alias"] == "P9-7.7-C_OS",
         "wrong gate or duplicate credit",
     )
-    require(record["checker"] == binding(SCRIPT), "changed review checker")
+    acceptance = policy.accepted_g2(ROOT)
+    original_checker = policy.git(ROOT, "show", acceptance["reviewed_commit"] + ":" + SCRIPT)
+    require(record["checker"] == {"path": SCRIPT, "sha256": policy.sha(original_checker)},
+            "changed historical review checker")
     require(record["inputs"] == actual, "incomplete/changed/borrowed review inputs")
     require(
         record["review_status"] == "proposed_pending_user_acceptance"
@@ -402,7 +398,7 @@ def pressure(record, actual):
         raise ValueError("review mutation escaped: " + label)
     # Test actual capture-reuse validation, not just a rehashed review payload.
     hashes = fixtures.source_hashes()
-    for name in [*STATUS_CORRECTIONS, "src/pygrc/models/grc_v4.py"]:
+    for name in [*ACCEPTANCE_PROJECTIONS, "src/pygrc/models/grc_v4_lifecycle.py"]:
         changed = {**hashes, name: "0" * 64}
         try:
             capture_reuse(changed)
@@ -415,8 +411,36 @@ def pressure(record, actual):
             "HOLD_with_open_obligation",
         ],
         "rejected_mutations": sorted(mutations),
-        "rejected_source_changes": [*STATUS_CORRECTIONS, "src/pygrc/models/grc_v4.py"],
+        "rejected_source_changes": [*ACCEPTANCE_PROJECTIONS, "src/pygrc/models/grc_v4_lifecycle.py"],
     }
+
+
+def acceptance_pressure():
+    original = policy.accepted_g2(ROOT)
+    real_read = policy.read
+    mutations = {
+        "forged_acceptance": lambda r: r.update(status="proposed_pending_user_acceptance"),
+        "family_support": lambda r: r.update(accepted_generic_runtime_support=["C_OS"]),
+        "other_profile": lambda r: r["accepted_generic_runtime_support"].append("A_OS"),
+        "G3_promotion": lambda r: r.update(G3_accepted=True),
+        "new_runtime_work": lambda r: r.update(new_runtime_iterations_authorized=["P9-8.1"]),
+        "borrowed_declaration": lambda r: r["accepted_profile"].update(complete_profile_id="C_OS"),
+        "stale_release": lambda r: r.update(release_id="stale"),
+        "erased_obligation": lambda r: r["closed_obligations"].pop(),
+    }
+    for label, mutate in mutations.items():
+        changed = deepcopy(original)
+        mutate(changed)
+        changed["record_digest"] = policy.digest_record(changed)
+        def altered(path):
+            return changed if path == ROOT / policy.G2_ACCEPTANCE else real_read(path)
+        with patch.object(policy, "read", side_effect=altered):
+            try:
+                policy.accepted_g2(ROOT)
+            except ValueError:
+                continue
+        raise ValueError("acceptance mutation escaped: " + label)
+    return sorted(mutations)
 
 
 def scoped_surfaces():
@@ -441,7 +465,11 @@ def scoped_surfaces():
             result.returncode == 0,
             (result.stdout + result.stderr).replace(str(ROOT) + "/", ""),
         )
+    sys.path.insert(0, str(ROOT / policy.SCRIPTS))
+    from test_phase9_g1_surfaces import acceptance_status_check
+    acceptance_status_check(ROOT)
     return {
+        "accepted_status_API_browser_and_failure_cleanup": "passed",
         "status_notebook_API": "passed",
         "authority_notebook_HTTP_browser_validator": "passed",
         "full_browser_campaign": "not_rerun",
@@ -453,7 +481,16 @@ def inspect():
     boundary = policy.current_boundary(ROOT)
     reused = retained_fixture_evidence()
     actual = review_inputs()
-    controls = pressure(record, actual)
+    acceptance = policy.accepted_g2(ROOT)
+    original = policy.git(ROOT, "show", acceptance["reviewed_commit"] + ":" + RECORD)
+    require((ROOT / RECORD).read_bytes() == original, "historical review replaced")
+    historical = json.loads(original)["inputs"]
+    # Only discovery/status projections differ. Scientific authority, retained
+    # product, release and all evidence references remain the reviewed inputs.
+    for key in set(actual) - {"capture_reuse", "source_continuity", "public_surface"}:
+        require(actual[key] == historical[key], "accepted review input drift: " + key)
+    controls = pressure(record, historical)
+    controls["rejected_acceptance_changes"] = acceptance_pressure()
     surfaces = scoped_surfaces()
     require(
         policy.current_boundary(ROOT) == boundary and review_inputs() == actual,
@@ -462,7 +499,9 @@ def inspect():
     return {
         "status": "passed",
         "review_verdict": record["verdict"],
-        "G2_accepted": False,
+        "G2_accepted": True,
+        "accepted_generic_runtime_support": acceptance["accepted_generic_runtime_support"],
+        "G3_accepted": False,
         "numerical_tests_rerun": 0,
         "reused_runtime_tests": reused["tests"],
         "catalog_rows": 33,

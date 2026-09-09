@@ -1399,7 +1399,7 @@ P9-3.2 implementation is pending review; runtime support remains empty.
       facade evidence through the existing focused source-capture mechanism.
 - [x] Complete the separate P9-4.9.3 fixture product, accepted in `c01526c`;
       do not infer G2 from targeted facade or boundary checks.
-- [ ] Obtain P9-4.8B acceptance before promoting exact runtime support.
+- [x] Obtain P9-4.8B acceptance before promoting exact runtime support (2026-09-09).
 
 ## Phase 9 Tranche 4 — P9-4.9.1a abundance availability
 
@@ -1437,8 +1437,13 @@ P9-3.2 implementation is pending review; runtime support remains empty.
       validators without a numerical or full desktop/mobile rerun.
 - [x] Record [exact-scope PASS proposal](../../../../phase-9-grcv4/tranche-4/P9-4.8B-Review.md)
       with G2 still closed, no accepted support and unchanged 30 leaves / 29 paths.
-- [ ] Obtain user acceptance before changing exact support/discovery and gate
-      state. P9-7.7-C_OS aliases this review; other profiles/G3 stay separate.
+- [x] Record explicit user acceptance and publish the one exact supported
+      declaration; close Tranche 4. P9-7.7-C_OS aliases this result; other
+      profiles, G3 and specialization remain closed, with no new runtime leaves.
+- [x] Check lossless immutable registry discovery, no ambient promotion,
+      forged/overbroad acceptance rejection, actual API/notebook/browser equality
+      and fail-closed current-support cleanup. Retain historical authority panels
+      and the original review/run; do not infer conformance from source traces.
 - [x] Correct the full-path pressure fixture to use reviewed HEAD, preserving
       historical baselines and testing actual missing-parent/abundance ancestry.
       Continue from the failed stage; do not repeat passed historical checks.
@@ -1446,5 +1451,6 @@ P9-3.2 implementation is pending review; runtime support remains empty.
       lazy hook. Align browser readiness with the actual API's 30 leaves / 29
       paths and test their real payload identity, missing/duplicate leaves and
       premature review permission. Correct API next-work text without gate promotion.
-- [x] Preserve the original numerical capture and hashes; verify only the two
-      exact status replacements separately, rejecting broader source changes.
+- [x] Preserve the original numerical capture and hashes. Bind and test the
+      exact acceptance/discovery/status projections separately; reject other
+      source changes without relabeling the historical run as a current rerun.

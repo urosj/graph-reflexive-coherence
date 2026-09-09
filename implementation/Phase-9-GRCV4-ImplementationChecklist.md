@@ -65,7 +65,7 @@ coverage, and evidence; a family label alone does not certify all instances.
 
 | Generic profile gate | State | Acceptance route |
 | --- | --- | --- |
-| `P9-G2[C_OS]` | Acceptance pending | P9-4.8B proposes PASS for one exact C_OS nomination after accepted closure work. Gate closed; accepted support remains empty until user acceptance. |
+| `P9-G2[C_OS]` | Accepted, exact singleton | [explicit G2 acceptance](./phase-9-grcv4/tranche-4/P9-4.8B-G2Acceptance.json) closes Tranche 4 and aliases P9-7.7-C_OS. Other profiles and G3 remain closed. |
 | `P9-G2[A_OS]` | Pending | Tranche 5 plus A_OS lifecycle and P9-7.7 review. |
 | `P9-G2[C_CI]` | Pending | P9-6.1a plus profile lifecycle and P9-7.7 review. |
 | `P9-G2[A_CI]` | Pending | P9-6.1b plus profile lifecycle and P9-7.7 review. |
@@ -609,12 +609,12 @@ three bounded batches retain their own results and raw per-run manifests.
   early Tranche 7 children: mapped events, migration admission/rejection,
   reset after events/migrations, reference maps, and atomic readmission.
   Unsupported targets must reject; mandatory fixtures cannot be waived.
-- [ ] P9-4.8: Historical **HOLD P9-G2[C_OS]**; its
-  [P9-4.8B successor](./phase-9-grcv4/tranche-4/P9-4.8B-Review.md) now proposes
-  exact-scope PASS, with user acceptance still pending. Preserve the original review and its evidence;
+- [x] P9-4.8: Historical **HOLD P9-G2[C_OS]**; its
+  [P9-4.8B successor](./phase-9-grcv4/tranche-4/P9-4.8B-G2Acceptance.json) is now
+  accepted for the exact nominated scope. Preserve the original review and its evidence;
   discharge its obligations through P9-4.9.1–P9-4.9.3 and the successor P9-4.8B
   result, not by relabeling the historical HOLD. A_OS and `P9-G3[C_OS]` remain
-  behind G2.
+  subject to separate continuation/entry review.
 - [x] P9-4.9.1: Bounded public C_OS facade implementation accepted in `7905e7e`;
   14 focused tests passed at that subject. P9-4.9.1a supplies the subsequent
   abundance authority/projection; final product review is P9-4.9.3/P9-4.8B. See the
@@ -689,8 +689,8 @@ three bounded batches retain their own results and raw per-run manifests.
   nominated complete-profile product, 33 catalog rows and two exact vectors,
   with distinct control/target identities and whole input/output records.
   The original inventory and accepted runs remain historical. This completion
-  mark is not G2 acceptance; P9-4.8B's review is performed but acceptance remains
-  unchecked below.
+  mark is not itself G2 acceptance; the separate accepted P9-4.8B decision
+  is recorded below.
   Begin with a bounded gap list: requirement, existing usable evidence/limits,
   actual remaining change/test and owner. This is the first closure activity,
   not another audit framework or a reason to repeat suites. Final reconciliation
@@ -712,7 +712,7 @@ three bounded batches retain their own results and raw per-run manifests.
   shared/integration paths against the final facade and parent
   contract. Preserve explicit unsupported/deferred scopes without waiving a
   mandatory C_OS case or importing unrelated A/realization/GRC9 blockers.
-- [ ] P9-4.8B: Review the three work packages together once the integrated result
+- [x] P9-4.8B: Review the three work packages together once the integrated result
   and exact-profile evidence are ready; no three preceding full acceptance
   reviews. Issue the successor full `P9-G2[C_OS]` review using the single current
   verification path, bound to current authority, release, source and execution
@@ -733,8 +733,11 @@ three bounded batches retain their own results and raw per-run manifests.
     using the retained 22-test run, 33-row product and current typed authority.
     Valid PASS/HOLD controls and 13 rejection controls, current boundary and
     scoped API/notebook/HTTP/browser-validator checks; no numerical rerun.
-  - [ ] User acceptance and exact support/discovery propagation. G2 stays closed,
-    generic-runtime and specialization support empty; no other gate is opened.
+  - [x] User acceptance on 2026-09-09 and exact support/discovery propagation:
+    [explicit G2 acceptance](./phase-9-grcv4/tranche-4/P9-4.8B-G2Acceptance.json). Tranche 4 is closed; only the nominated complete C_OS profile
+    is accepted. G3, other profiles and specialization remain closed.
+    Registry, API, notebook and browser project the same singleton; local
+    migration targets are not global accepted support.
   Full-path follow-up uses the reviewed HEAD for disposable current-tree
   pressure, with explicit missing-parent/missing-abundance ancestry rejection.
   Historical authorization baselines stay frozen; resume pressure and remaining
@@ -743,8 +746,9 @@ three bounded batches retain their own results and raw per-run manifests.
   Keep the lazy-export probe baseline-relative and reject a duplicate hook.
   Require the actual 30-leaf API payload to pass the browser status validator,
   while missing/duplicate fixture leaves and premature G2 permission reject.
-  Preserve the original numerical capture; permit only the two exact status
-  corrections, not arbitrary changes to captured source.
+  Preserve the original numerical capture. Its acceptance successor binds
+  the exact discovery/status changes and tests them separately; all other
+  captured source remains byte-exact, with no new numerical run implied.
 
 P9-4.9 is an aggregate of work packages, not new gates or separate full-review
 cycles. Execution order is P9-4.9.3 inventory, P9-4.9.2 authority resolution,
@@ -784,8 +788,8 @@ parent-DAG conformance remain outside these accepted leaves.
 Historical P9-4.8 snapshot: draft **HOLD P9-G2[C_OS]**, pending fixture
 reconciliation and user review at that stage. Its
 [continuation handoff](./phase-9-grcv4/tranche-4/P9-4.8-Handoff.md) is historical.
-The current [P9-4.8B review](./phase-9-grcv4/tranche-4/P9-4.8B-Review.md)
-proposes exact-scope PASS, with G2 acceptance still pending.
+The successor [P9-4.8B review](./phase-9-grcv4/tranche-4/P9-4.8B-Review.md)
+is now covered by [explicit G2 acceptance](./phase-9-grcv4/tranche-4/P9-4.8B-G2Acceptance.json) for its one exact C_OS nomination.
 The [gate review](./phase-9-grcv4/tranche-4/P9-4.8-Review.md) and
 [33-case evidence index](./phase-9-grcv4/tranche-4/P9-4.8-GateReview.json)
 record unfinished public-interface integration and deferred receipt-parent
@@ -794,8 +798,9 @@ is not proof of missing behavior. Reassess the stale-cache case using the existi
 second-beat reconstruction test before claiming a new gap. The corrected mandatory
 mapped-event execution retains its scoped credit. A_OS and P9-G3[C_OS] stay
 behind G2. That snapshot had empty runtime support and 26 leaves / 29 eligible
-paths. Current support is still empty; closure work has 30 leaves / 29 paths.
-P9-4.8 and P9-4.8B change review artifacts only.
+paths. Current support is the user-accepted exact C_OS singleton; closure work
+still has 30 leaves / 29 paths. P9-4.8 remains historical; P9-4.8B acceptance
+updates discovery and status without authorizing new runtime leaves.
 
 ## Tranche 5. Candidate A and A_OS
 
@@ -850,8 +855,8 @@ its full audit findings are closed. Generic parent-reference conformance remains
 open across other profiles; the accepted P9-4.9.2 authority and bounded internal
 C_OS implementation are recorded in its linked review. A_OS children remain
 planned/unexecuted. P9-7.7-C_OS aliases the
-[P9-4.8B successor PASS proposal](./phase-9-grcv4/tranche-4/P9-4.8B-Review.md),
-with user acceptance pending and no duplicate execution credit. The original
+[P9-4.8B exact-scope acceptance](./phase-9-grcv4/tranche-4/P9-4.8B-G2Acceptance.json),
+with no duplicate execution credit. The original
 P9-4.8 HOLD and historical child register remain unchanged.
 Parent completion remains scoped to reviewed child evidence.
 
@@ -890,7 +895,8 @@ may reach G2 without waiting for all Tranche 6 realizations.
   ledger append equality or content-only comparison evidence. P9-4.9.2 owns the
   C_OS authority/conformance closure, now implemented under the accepted uniform
   predecessor rule; its review retains the bounded execution evidence. Broader
-  profile completion and public-facade/G2 review remain scoped and pending.
+  profile completion and public-facade/G2 acceptance remain scoped to the
+  P9-4.8B singleton; other profiles remain pending.
 - [ ] P9-7.7: Review the full applicable fixture product and record `P9-G2[p]`
   separately for each generic profile; link the original P9-4.8 C_OS review and
   its P9-4.8B successor without duplicate execution credit.

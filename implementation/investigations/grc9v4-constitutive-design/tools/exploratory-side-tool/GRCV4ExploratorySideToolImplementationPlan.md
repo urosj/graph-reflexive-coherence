@@ -1795,9 +1795,9 @@ another automatic numerical/browser campaign.
 Route normal current verification to `verify_p948b_review.py --check`, reusing
 the accepted `c01526c` fixture product and historical parent/facade/abundance
 subjects. Bind the active release, exact nominated profile, all 33 rows, mapped
-identities and typed contract/debt traces. The review proposes PASS for that
-single nomination; user acceptance remains pending. Preserve the original HOLD
-and source debt dispositions. No new runtime leaf, support or authority claim:
+identities and typed contract/debt traces. The user accepted that
+single nomination on 2026-09-09; Tranche 4 is closed. Preserve the original HOLD
+and source debt dispositions. Only the exact accepted singleton is published; no new runtime leaf:
 readiness stays 30 leaves / 29 eligible paths. Correct the existing browser
 validator's stale 29-leaf list and API navigation to this actual phase; test the
 real API payload through the shipped browser validator, not only synthetic JS
@@ -1810,10 +1810,16 @@ PASS, premature acceptance/registry and stale release rejection. Reuse existing
 status notebook/API and authority notebook/HTTP/browser-validator controls.
 No numerical or desktop/mobile campaign is repeated. See the
 [review and acceptance boundary](../../../../phase-9-grcv4/tranche-4/P9-4.8B-Review.md).
-Only subsequent user acceptance may propagate exact G2 support/discovery.
+The [acceptance record](../../../../phase-9-grcv4/tranche-4/P9-4.8B-G2Acceptance.json)
+now authorizes exact G2 support/discovery. G3, other profiles and specialization
+remain closed. API/notebook/browser show that exact scope; held current
+verification must clear the current accepted-support projection. Source-level
+parent/abundance authority panels still do not themselves grant conformance.
 Full-path pressure uses the reviewed HEAD for current-file candidates and the
 frozen legacy prefix for its additive-export probe. Missing accepted ancestry
 and duplicate hooks remain rejected. Preserve the original 473-file numerical
-capture: 471 bindings unchanged, two exact status-only replacements separately
-source-compared and surface-tested. The successor rejects all other differences;
+capture. Finite exact bindings separately identify acceptance-only registry,
+assertion and status changes, tested for lossless discovery, no ambient support
+expansion, forged/overbroad acceptance rejection and actual surface equality.
+All remaining captured source is byte-exact; the successor rejects other differences;
 it does not rewrite the original run or repeat numerical tests for status work.

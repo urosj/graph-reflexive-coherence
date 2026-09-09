@@ -68,7 +68,18 @@ def verification_status(repo_root: Path) -> dict:
         if implementation:
             approval = module.acceptance(root)
             ready, owners = module.leaf_permissions(root)
+            g2 = module.accepted_g2(root)
             payload.update(
+                g2_acceptance={
+                    "record_digest": g2["record_digest"],
+                    "path": module.G2_ACCEPTANCE,
+                    "gate": g2["gate"], "alias": g2["alias"],
+                    "G2_accepted": True, "G3_accepted": False,
+                    "tranche_4_status": "closed",
+                    "accepted_generic_runtime_support": g2["accepted_generic_runtime_support"],
+                    "new_runtime_iterations_authorized": [],
+                },
+                accepted_generic_runtime_support=g2["accepted_generic_runtime_support"],
                 schema="phase9_governance_status_v2",
                 runtime_authorized=True,
                 P9_G1_accepted=True,
@@ -184,8 +195,8 @@ def verification_status(repo_root: Path) -> dict:
                     for r in approval["runtime_targets"]
                     if r["requires_gate"] == "P9-G1" and set(ready) & owners[r["path"]]
                 ),
-                next_gate="P9-4.9.3 fixture reconciliation accepted; P9-4.8B proposes PASS for one exact C_OS profile, pending user acceptance. P9-G2/G3 remain held; accepted support stays empty. No numeric abundance definition.",
-                claim_ceiling="Accepted permission to implement reviewed V4 scope is not executed or accepted runtime conformance.",
+                next_gate="Tranche 4 closed: P9-4.8B / P9-7.7-C_OS accepted for one exact C_OS profile. G3, other profiles and specialization remain closed. Choose A_OS continuation or a G3 entry review separately; no new runtime leaves authorized. No numeric abundance definition.",
+                claim_ceiling="G1 is bounded implementation permission. Separate user-accepted G2 covers only the listed complete C_OS profile and reviewed domain; no family-wide, other-profile or specialization conformance is inferred.",
             )
         cross = module.read(
             root / module.PHASE / "tranche-1/P9-1.1-SourceCrosswalk.json"
@@ -228,6 +239,9 @@ def verification_status(repo_root: Path) -> dict:
         if implementation:
             payload["source_refs"].append({"path": module.PARENT_AUTHORITY,
                                            "sha256": module.sha((root / module.PARENT_AUTHORITY).read_bytes())})
+        if implementation:
+            payload["source_refs"].append({"path": module.G2_ACCEPTANCE,
+                                           "sha256": module.sha((root / module.G2_ACCEPTANCE).read_bytes())})
         record = module.read(root / module.RECORD)
         payload["iterations"] = [
             {
@@ -338,6 +352,8 @@ def verification_status(repo_root: Path) -> dict:
         payload.pop("specification_correction", None)
         payload.pop("receipt_parent_authority", None)
         payload.pop("abundance_interface_authority", None)
+        payload.pop("g2_acceptance", None)
+        payload["accepted_generic_runtime_support"] = []
         payload.pop("permitted_runtime_paths", None)
         payload.pop("source_meaning", None)
         payload.pop("tree", None)

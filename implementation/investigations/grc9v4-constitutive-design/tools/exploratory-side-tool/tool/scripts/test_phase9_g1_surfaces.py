@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Accepted permission, empty conformance sets, and preserved negative subjects."""
+"""Accepted permission, exact accepted conformance scope, and preserved negative subjects."""
 
 import argparse
 from copy import deepcopy
@@ -54,8 +54,8 @@ def status_only_check(root):
         raise AssertionError("full notebook must still reject stale pressure")
 
 
-def checks(root):
-    status_only_check(root)
+def acceptance_status_check(root):
+    """Current API/browser identity and fail-closed cleanup, without replay."""
     policy = api._policy(root)
     status = api.verification_status(root)
     require = policy.require
@@ -71,6 +71,27 @@ def checks(root):
     )
     require(json.loads(browser_status.stdout) == status,
             "actual browser/API status differs")
+    require(status["g2_acceptance"]["G2_accepted"] is True
+            and status["g2_acceptance"]["G3_accepted"] is False
+            and status["g2_acceptance"]["tranche_4_status"] == "closed"
+            and status["accepted_generic_runtime_support"] == policy.accepted_g2(root)["accepted_generic_runtime_support"],
+            "accepted G2 projection differs")
+    boundary = policy.current_boundary(root)
+    with patch.object(api, "_policy", return_value=policy), patch.object(
+        policy, "current_boundary", side_effect=[boundary, ValueError("changed during read")]
+    ):
+        held = api.verification_status(root)
+    require(held["current_boundary"] == "failed_closed"
+            and held["accepted_generic_runtime_support"] == []
+            and "g2_acceptance" not in held, "held status retained current G2 support")
+
+
+def checks(root):
+    status_only_check(root)
+    acceptance_status_check(root)
+    policy = api._policy(root)
+    status = api.verification_status(root)
+    require = policy.require
     notebook = json.loads((TOOL / "notebooks/phase9_verification.ipynb").read_text())
     query = next(c for c in notebook["cells"] if c["id"] == "query-status")
 
@@ -146,7 +167,7 @@ def checks(root):
         "accepted G1 authority lost",
     )
     require(
-        status["accepted_generic_runtime_support"] == []
+        status["accepted_generic_runtime_support"] == policy.accepted_g2(root)["accepted_generic_runtime_support"]
         and status["admitted_specialization_support_sets"] == [],
         "G1 promoted conformance",
     )
@@ -345,14 +366,14 @@ def checks(root):
             (TOOL / "generated/phase9-verification/notebook-status.json").read_text()
         ),
         "node_stdout": result.stdout,
-        "runtime_support": [],
+        "runtime_support": status["accepted_generic_runtime_support"],
     }
     require(output["notebook"] == status, "notebook/API identity differs")
     (TOOL / "generated/phase9-verification/g1-surface-evidence.json").write_bytes(
         policy.canonical(output) + b"\n"
     )
     print(
-        "PHASE9_G1_SURFACES_PASS API_notebook_identity=byte_exact negative_candidate=rejected P9_G1=accepted runtime_support=empty"
+        "PHASE9_G1_SURFACES_PASS API_notebook_identity=byte_exact negative_candidate=rejected P9_G1=accepted runtime_support=accepted_exact_C_OS_singleton"
     )
 
 

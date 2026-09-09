@@ -178,7 +178,7 @@ runtime debt named by the acceptance gate. All execution remains pending.
 | --- | --- | --- |
 | P9-G0: phase opening | Exact accepted release, completed no-ff merge, branch, plan, checklist, and predecessor bindings. | Recorded. |
 | P9-G1: implementation review | Support order, module ownership, source-to-test mapping, inherited debt routing, and an accepted successor verification policy. | Accepted; [P9-1.9 successor](./phase-9-grcv4/tranche-1/P9-1.9-G1Acceptance.json). |
-| `P9-G2[p]`: generic conformance | All applicable runtime/lifecycle cases for exact profile scope p, with independent evidence. | Pending for each profile; accepted support set empty. |
+| `P9-G2[p]`: generic conformance | All applicable runtime/lifecycle cases for exact profile scope p, with independent evidence. | P9-4.8B accepted for one exact C_OS profile; all other scopes pending. See the acceptance record below. |
 | `P9-G3[S]`: specialization admission | Accepted `P9-G2[p]` for every p in consumed support set S, plus reviewed V4-only mechanics, legacy boundary, and test matrix. | Pending; no consumed set admitted. |
 | P9-G4: release and handoff | Exact advertised support, all applicable evidence, legacy regression results, residual-debt routing, and review acceptance. | Pending. |
 
@@ -782,8 +782,8 @@ parent-DAG conformance remain outside these accepted leaves.
 Historical P9-4.8 snapshot: draft **HOLD P9-G2[C_OS]**, pending fixture
 reconciliation and user review at that stage. Its
 [continuation handoff](./phase-9-grcv4/tranche-4/P9-4.8-Handoff.md) is historical.
-The current [P9-4.8B review](./phase-9-grcv4/tranche-4/P9-4.8B-Review.md)
-proposes exact-scope PASS, with G2 acceptance still pending.
+The successor [P9-4.8B review](./phase-9-grcv4/tranche-4/P9-4.8B-Review.md)
+is now covered by [explicit G2 acceptance](./phase-9-grcv4/tranche-4/P9-4.8B-G2Acceptance.json) for its one exact C_OS nomination.
 The [gate review](./phase-9-grcv4/tranche-4/P9-4.8-Review.md) and
 [33-case evidence index](./phase-9-grcv4/tranche-4/P9-4.8-GateReview.json)
 record unfinished public-interface integration and deferred receipt-parent
@@ -792,8 +792,9 @@ is not proof of missing behavior. Reassess the stale-cache case using the existi
 second-beat reconstruction test before claiming a new gap. The corrected mandatory
 mapped-event execution retains its scoped credit. A_OS and P9-G3[C_OS] stay
 behind G2. That snapshot had empty runtime support and 26 leaves / 29 eligible
-paths. Current support is still empty; closure work has 30 leaves / 29 paths.
-P9-4.8 and P9-4.8B change review artifacts only.
+paths. Current support is the user-accepted exact C_OS singleton; closure work
+still has 30 leaves / 29 paths. P9-4.8 remains historical; P9-4.8B acceptance
+updates discovery and status without authorizing new runtime leaves.
 
 #### P9-4.9. Closure of the P9-4.8 obligations
 
@@ -834,7 +835,8 @@ unless an explicitly reviewed V4 successor is required.
 Maintain one current verification path as corrections land. Retain the original
 P9-4.8 checker only for historical reconstruction of its bound snapshot, not as
 a second evolving acceptance system or a veto on authorized source changes.
-The current path must continue to report G2 held until the P9-4.8B acceptance.
+The current path now reports the separate P9-4.8B singleton acceptance; the
+historical HOLD remains unchanged.
 
 ##### P9-4.9.1. C_OS public common/V4 interface closure
 
@@ -871,7 +873,7 @@ P9-4.9.1a supersedes them with accepted availability authority. `abundance` was 
 because the accepted V4 sources do not define it; no legacy sink semantics or
 new numerical diagnostic is inferred. Verification is focused on this facade
 and affected regressions, preserving the accepted parent run at its Git subject.
-Final fixture reconciliation and P9-4.8B remain separate.
+Final fixture reconciliation and P9-4.8B were separate, now accepted below.
 
 ##### P9-4.9.1a. Abundance interface authority closure
 
@@ -915,7 +917,8 @@ through proposal/paper §12.5.1 into the V4 successor release. Runtime enforceme
 and explicit C_OS v3 snapshot admission are implemented; the
 [P9-4.9.2 review](./phase-9-grcv4/tranche-4/P9-4.9.2-Review.md) records validation.
 No historical acceptance is rewritten. Facade and final fixture closure remain
-P9-4.9.1/P9-4.9.3, followed by the single P9-4.8B review; G2 stays held.
+P9-4.9.1/P9-4.9.3, followed by the single P9-4.8B review; its later
+exact-scope acceptance is recorded below.
 
 Own `G2-COS-PARENTS`: close the P9-2.4 obligation assigned to parent P9-7.6,
 beyond the accepted C_OS child's narrower ledger/duplication evidence. Use the forensic API to
@@ -1012,14 +1015,21 @@ establish this product.
 
 #### P9-4.8B. Successor G2 closure review
 
-The [integrated review](./phase-9-grcv4/tranche-4/P9-4.8B-Review.md) and
-[bound decision](./phase-9-grcv4/tranche-4/P9-4.8B-GateReview.json) now propose
-**PASS for one exact nominated C_OS complete profile**, with all three closure
-obligations satisfied for that scope. User acceptance is pending: G2 remains
-closed and both accepted support sets remain empty. The normal verifier routes
-through the successor, reusing the final 22-test fixture run and checking
-current source/authority/release, misleading-record controls and affected
-status/authority surfaces without a numerical or full browser rerun.
+**Accepted by the user on 2026-09-09; Tranche 4 is closed.** The
+[explicit G2 acceptance](./phase-9-grcv4/tranche-4/P9-4.8B-G2Acceptance.json) binds the unchanged
+[integrated review](./phase-9-grcv4/tranche-4/P9-4.8B-Review.md), original
+execution, current release and all three satisfied closure obligations.
+The accepted generic support set is exactly:
+
+`grcv4-profile-sha256:a6b853ee382895eb78b1a7955a0df22f95d68b27cb0f762503e8c424c2f59b6d`
+
+Global discovery returns that lossless declaration. Locally configured migration
+targets are not additional accepted profiles. `P9-7.7-C_OS` is the same gate
+result, not duplicate credit. G3, all other profiles and specialization remain
+closed; no new implementation leaf is authorized by this decision.
+The normal verifier checks the acceptance link and reuses the retained 22-test
+run: numerical implementation and evidence remain unchanged, while exact
+acceptance/discovery/status changes are separately bound and tested.
 
 Once the integrated corrections and exact-profile evidence are ready, reassess
 the original P9-4.8 obligations under the unchanged full `P9-G2[C_OS]` criteria.

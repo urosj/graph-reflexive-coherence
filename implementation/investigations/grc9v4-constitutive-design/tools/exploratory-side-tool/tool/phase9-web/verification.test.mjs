@@ -41,8 +41,11 @@ test('parent successor cannot promote support or substitute an authority identit
   }]) await assert.rejects(verifiedParents(value));
 });
 
+const acceptedProfile = "grcv4-profile-sha256:a6b853ee382895eb78b1a7955a0df22f95d68b27cb0f762503e8c424c2f59b6d";
 function accepted(extra={}) {
   return fixture({schema:'phase9_governance_status_v2',runtime_authorized:true,P9_G1_accepted:true,
+    accepted_generic_runtime_support:[acceptedProfile],
+    g2_acceptance:{record_digest:'e7165dc2f4cfe159d397c7aa61ccfbc89a30909db888e6638ef1ffe5905ec6dd',gate:'P9-G2[C_OS]',alias:'P9-7.7-C_OS',G2_accepted:true,G3_accepted:false,tranche_4_status:'closed',accepted_generic_runtime_support:[acceptedProfile],new_runtime_iterations_authorized:[]},
     handoff_evidence:{status:'verified'},
     abundance_interface_authority:{record_digest:'d9488700be9624da8500c1e533aa65d33b4f36a3307748ad12fd66449d8fe053',policy_id:'grcv4-family-abundance-diagnostic-v1',release_id:'grcv4-spec-release-sha256:e2acd9df0cc02c5fd4bbed4989ff5d7da3a819adeb2950d922b8a6ef4bf35f24',G2_accepted:false,numeric_definition_admitted:false},
     runtime_authority_state:'accepted_P9_G1_bounded_implementation_not_conformance',
@@ -79,7 +82,7 @@ test('accepted G1 permission does not imply accepted profile support',async()=>{
 });
 test('failed G1 boundary cannot retain permission even with a recomputed digest',async()=>{
   assert.throws(()=>checkedStatus(accepted({current_boundary:'failed_closed'})));
-  const held=accepted({current_boundary:'failed_closed',runtime_authorized:false,P9_G1_accepted:false});
+  const held=accepted({current_boundary:'failed_closed',runtime_authorized:false,P9_G1_accepted:false,accepted_generic_runtime_support:[],g2_acceptance:undefined});
   assert.equal((await verifiedStatus(held)).runtime_authorized,false);
 });
 
@@ -93,9 +96,9 @@ test('missing and invalid handoff evidence do not change accepted permission',as
 });
 
 test('current work can be held while historical acceptance remains verified',async()=>{
-  const value=accepted({current_boundary:'failed_closed',runtime_authorized:false,runtime_authority_state:'accepted_P9_G1_current_work_held'});
+  const value=accepted({current_boundary:'failed_closed',runtime_authorized:false,accepted_generic_runtime_support:[],runtime_authority_state:'accepted_P9_G1_current_work_held'});
   delete value.abundance_interface_authority;
-  for(const key of ['implementation_scope','dependency_ready_leaves','permitted_runtime_paths','foundation_acceptance','request_acceptance','result_acceptance','harness_acceptance','integration_acceptance','geometry_acceptance','stage_acceptance','resource_acceptance','numerical_pressure_acceptance','preservation_acceptance','reference_transport_acceptance','c_current_acceptance','c_controls_acceptance','os_pass_acceptance','os_operations_acceptance','lifecycle_batch_authorization','specification_correction','receipt_parent_authority','status_digest']) delete value[key];
+  for(const key of ['g2_acceptance','implementation_scope','dependency_ready_leaves','permitted_runtime_paths','foundation_acceptance','request_acceptance','result_acceptance','harness_acceptance','integration_acceptance','geometry_acceptance','stage_acceptance','resource_acceptance','numerical_pressure_acceptance','preservation_acceptance','reference_transport_acceptance','c_current_acceptance','c_controls_acceptance','os_pass_acceptance','os_operations_acceptance','lifecycle_batch_authorization','specification_correction','receipt_parent_authority','status_digest']) delete value[key];
   value.status_digest=createHash('sha256').update(canonical(value)).digest('hex');
   assert.equal((await verifiedStatus(value)).P9_G1_accepted,true);
   assert.equal(value.runtime_authorized,false);
@@ -216,4 +219,13 @@ test('accepted fixture readiness cannot imply a detector or open the final revie
   for (const changed of [undefined, {...valid.abundance_interface_authority, record_digest:'0'.repeat(64)}, {...valid.abundance_interface_authority, release_id:'predecessor'}, {...valid.abundance_interface_authority, numeric_definition_admitted:true}, {...valid.abundance_interface_authority, G2_accepted:true}]) assert.throws(()=>checkedStatus(accepted({abundance_interface_authority:changed})));
   // Duplicate fixture permission and premature review permission both reject.
   for (const leaf of ['P9-4.9.3','P9-4.8B']) assert.throws(()=>checkedStatus(accepted({dependency_ready_leaves:[...valid.dependency_ready_leaves,leaf]})));
+});
+
+test('G2 acceptance is an exact singleton, not a family or specialization grant', async () => {
+  const value = await verifiedStatus(accepted());
+  assert.deepEqual(value.accepted_generic_runtime_support, [acceptedProfile]);
+  for (const support of [[], ['C_OS'], [acceptedProfile, 'A_OS'], [acceptedProfile, acceptedProfile]])
+    assert.throws(() => checkedStatus(accepted({accepted_generic_runtime_support:support})), /support/);
+  for (const g2 of [undefined, {...value.g2_acceptance,record_digest:'0'.repeat(64)}, {...value.g2_acceptance,G3_accepted:true}, {...value.g2_acceptance,accepted_generic_runtime_support:['C_OS']}, {...value.g2_acceptance,new_runtime_iterations_authorized:['P9-8.1']}, {...value.g2_acceptance,tranche_4_status:'pending'}])
+    assert.throws(() => checkedStatus(accepted({g2_acceptance:g2})), /G2/);
 });
