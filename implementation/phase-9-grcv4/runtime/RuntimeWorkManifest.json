@@ -1280,8 +1280,8 @@
     },
     {
       "path": "src/pygrc/models/grc_v4_candidate_a.py",
-      "sha256": "cdff3a0701900f1131868b3586e3fa5f7422bf7379636bb93a35247386f6a391",
-      "iteration_id": "P9-6.3b"
+      "sha256": "5040bf690d3da3366be74de6e17b272b52d21adba054426ffda778a744ca862a",
+      "iteration_id": "P9-6.4b"
     },
     {
       "path": "src/pygrc/models/grc_v4_candidate_c.py",
@@ -1322,6 +1322,16 @@
       "path": "src/pygrc/models/grc_v4_realizations.py",
       "sha256": "c869464cc8bc6c78da108e76a60ff11d47e53846f1cd834b0f8518010f90bfdb",
       "iteration_id": "P9-5.3"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_rg2b.py",
+      "sha256": "8fb62895e6c89e9a1da3dbffde451318a00d3879cb9e76dcb532c6033cc7bfea",
+      "iteration_id": "P9-6.4c"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_rg2b_graph.py",
+      "sha256": "29375671582e66006e216de3a9be6d1685db3709e05865b215b103090a96681b",
+      "iteration_id": "P9-6.4c"
     },
     {
       "path": "src/pygrc/models/grc_v4_state.py",
@@ -1404,6 +1414,16 @@
       "iteration_id": "P9-5.3"
     },
     {
+      "path": "tests/models/test_grc_v4_rg2b.py",
+      "sha256": "e77723f9814e2acbb444c8d7c84cbcedc37787b51338d721311406d818a857b9",
+      "iteration_id": "P9-6.4c"
+    },
+    {
+      "path": "tests/models/test_grc_v4_rg2b_graph.py",
+      "sha256": "e08ea466b716fbacd8acfa78ad135d56ccb7fef30240747f9964bcbaf13318b4",
+      "iteration_id": "P9-6.4d"
+    },
+    {
       "path": "tests/models/test_grc_v4_state.py",
       "sha256": "d7ce02acc2d663fd3f4513158193dd473a78c1f42bc985edfa2d2eff0943fb54",
       "iteration_id": "P9-2.4"
@@ -1424,5 +1444,5 @@
   ],
   "admitted_specialization_support_sets": [],
   "claim_ceiling": "Work entries grant no conformance; the only accepted support is the separate P9-4.8B exact C_OS singleton. Local targets, other profiles and specialization are not promoted.",
-  "record_digest": "066636119388c0761ab00f75f391b7adf96007cdd3f3cbee1cd610b45919203b"
+  "record_digest": "2fc0529afe16438e63f8109cf93c93f003aeb838cc6b8372b3921c0bea2279c7"
 }

@@ -76,6 +76,13 @@ a declared nonempty subset after all applicable requirements pass; planned
 profiles stay unadvertised. A partial release must name its remaining work
 and does not close the whole planned population.
 
+The user's 2026-09-10 clarification makes correct execution on larger, complex
+graphs an implementation requirement. Small graphs supply independent equation
+oracles; they do not replace graph-general implementation and demonstrated
+larger-graph execution. Conservative scientific domain and conditioning checks
+remain required. Speed, sparse storage and performance optimization may follow
+correctness; throughput or memory-efficiency targets are not the current gate.
+
 The proposed first runtime slice is `C_OS`: it exercises the accepted D11-C
 transport through an explicit staged realization and early lifecycle closure.
 After `P9-G2[C_OS]`, the next reviewed path may be `A_OS` for retained
@@ -1085,6 +1092,30 @@ implementation. `P9-6.5` reconciles those results; it does not defer all
 testing to the end of Tranche 6. A profile can proceed to its lifecycle and
 G2 review while other children remain pending. RG2b evaluator/certification
 work has its own dependency path and no automatic hold on CI, OS, or PC.
+
+The user revised the RG2b sequence on 2026-09-10. P9-6.4a/b retain their
+two-vertex/one-edge reference constructions and candidate-specific evidence.
+New **P9-6.4c** generalizes evaluation and certification to variable-size finite
+graphs for both A and C. It must extend the scalar bounds and finite evaluator
+to matrix geometry, preserve the complete candidate laws and prove the same
+inverse, self-map, contraction, containment and approximation-error obligations.
+Removing a size guard alone does not discharge this work. Pressure must include
+nonzero A descriptor contrast, C matrix coupling and selector behavior, rich
+graph structures, relabeling/reorientation and repeated ordinary beats on
+declared admissible larger graphs. Retain the scalar case as a reference oracle
+and reuse existing current, writer and validation owners. Record exact graph
+sizes, parameters, commands and outcomes; optimization is deferred.
+
+The former unexecuted P9-6.4c shared audit becomes **P9-6.4d**, following the
+a/b foundations and c generalization. It reviews A and C separately within one
+shared audit, including the generalization's graph coverage and Lipschitz-only
+ceiling. P9-6.5 and subsequent RG2b lifecycle/G2 routing must distinguish the
+scalar reference result from the generalized result and its d review.
+Earlier source crosswalks, debt routing and a/b execution artifacts retain
+their execution-time numbering: their shared-audit `P9-6.4c` now routes to d.
+The [current checklist](./Phase-9-GRCV4-ImplementationChecklist.md#tranche-6-ci-pc-cipc-and-rg2b)
+records this scheduling amendment without changing the scientific sources,
+historical evidence or the separate C1-regularity debt.
 
 ### Tranche 7. Generic lifecycle generalization and conformance
 

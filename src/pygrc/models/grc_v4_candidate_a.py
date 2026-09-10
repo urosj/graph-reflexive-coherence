@@ -274,8 +274,8 @@ class CandidateARetainedAuthority:
         if type(self.profile.params_resolved.candidate) is not CandidateAParams:
             raise TypeError("A retained authority requires Candidate A")
         realization = self.profile.identity_payload.realization
-        if realization not in {"OS", "CI", "PC", "CI+PC"}:
-            raise ValueError("A local construction requires OS, CI, PC or CI+PC")
+        if realization not in {"OS", "CI", "PC", "CI+PC", "RG2b"}:
+            raise ValueError("unimplemented A local realization")
         if type(self.state) is not GRCV4AuthoritativeState:
             raise TypeError("A retained authority requires typed state")
         state = GRCV4AuthoritativeState(self.state.C, self.state.W_A, self.state.Z_4)
@@ -866,7 +866,7 @@ class CandidateAWriter:
                 "A writer requires the current owner and admitted resource boundary"
             )
         inputs = self.point.inputs
-        if inputs.stage not in {"os_corrector", "ci_trial", "cipc_trial", "pc_old_history"} or inputs.dt <= 0:
+        if inputs.stage not in {"os_corrector", "ci_trial", "cipc_trial", "pc_old_history", "rg2b_section"} or inputs.dt <= 0:
             raise ValueError("A writer requires a positive-duration selected OS/CI/PC current")
         if inputs.stage in {"ci_trial", "cipc_trial"} and inputs.trial_current != self.point.current:
             raise ValueError("A CI writer requires the selected root current")

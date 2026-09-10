@@ -1,0 +1,417 @@
+{
+  "schema": "phase9_rg2b_reconciliation_v1",
+  "iteration_ids": [
+    "P9-6.4a",
+    "P9-6.4b",
+    "P9-6.4c",
+    "P9-6.4d"
+  ],
+  "status": "reviewed_verified_pending_user_acceptance",
+  "authority": "User supplied the a/b/c PASS audit and explicitly requested completion of the remaining d reconciliation. User acceptance and commit remain separate.",
+  "original_execution_record": "implementation/phase-9-grcv4/tranche-6/P9-6.4c-ExecutionRecord.json",
+  "original_execution_digest": "59e6f781baf92e3dfdaffd8b3af3c7b3a94f16d2af8c082322f5de4e94e30769",
+  "original_execution_sha256": "e09390aa12eb8fba00eb6fd567c972784ff1d44f2ee02a94f8109b0b5278eac6",
+  "prior_source_delta": {
+    "implementation/phase-9-grcv4/tranche-6/P9-6.4c-Review.md": {
+      "current_sha256": "eeab1ccbee654ff091719c18a6a46e1acc88559624f42ec8804da22e0ecf78f3",
+      "splices_to_original": [
+        {
+          "start": 0,
+          "stop": 1,
+          "old_lines": [
+            "# P9-6.4c \u2014 graph RG2b completion and a/b audit corrections\n"
+          ]
+        },
+        {
+          "start": 2,
+          "stop": 7,
+          "old_lines": [
+            "Status: implementation provided; the [execution record](P9-6.4c-ExecutionRecord.json)\n",
+            "records the verification result. User acceptance and P9-6.4d shared audit remain pending. This record supplements the preserved\n"
+          ]
+        },
+        {
+          "start": 245,
+          "stop": 248,
+          "old_lines": [
+            "Only numerical generalization is supplied. User acceptance and d review remain\n",
+            "pending. Public runtime support remains C_OS. Profile lifecycle, authenticated\n"
+          ]
+        },
+        {
+          "start": 251,
+          "stop": 331,
+          "old_lines": []
+        }
+      ]
+    },
+    "implementation/phase-9-grcv4/verification/verify_p964_rg2b.py": {
+      "current_sha256": "f5edf44559493e390c7b59e1258f84aa468696a13d27d3aacb6f404d99dae940",
+      "splices_to_original": [
+        {
+          "start": 208,
+          "stop": 209,
+          "old_lines": [
+            "def historical_sources(value, follow):\n"
+          ]
+        },
+        {
+          "start": 210,
+          "stop": 215,
+          "old_lines": [
+            "    current = {\n",
+            "        name: p.sha((ROOT / name).read_bytes()) for name in value[\"source_bindings\"]\n",
+            "    }\n",
+            "    for name, entry in follow[\"prior_source_delta\"].items():\n"
+          ]
+        },
+        {
+          "start": 216,
+          "stop": 232,
+          "old_lines": [
+            "        p.require(\n",
+            "            p.sha(raw) == entry[\"current_sha256\"], \"changed corrected RG2b source\"\n",
+            "        )\n",
+            "        lines = raw.decode().splitlines(keepends=True)\n",
+            "        end = len(lines)\n",
+            "        for span in reversed(entry[\"splices_to_original\"]):\n",
+            "            start, stop = span[\"start\"], span[\"stop\"]\n",
+            "            p.require(0 <= start <= stop <= end, \"invalid RG2b original span\")\n",
+            "            lines[start:stop] = span[\"old_lines\"]\n",
+            "            end = start\n",
+            "        current[name] = p.sha(\"\".join(lines).encode())\n"
+          ]
+        },
+        {
+          "start": 239,
+          "stop": 246,
+          "old_lines": []
+        },
+        {
+          "start": 250,
+          "stop": 251,
+          "old_lines": [
+            "        value[\"source_bindings\"] == historical_sources(value, follow),\n"
+          ]
+        },
+        {
+          "start": 312,
+          "stop": 314,
+          "old_lines": [
+            "        {\"P9-6.4a\", \"P9-6.4b\", \"P9-6.4c\"} <= set(ready) and \"P9-6.4d\" not in ready,\n"
+          ]
+        },
+        {
+          "start": 323,
+          "stop": 324,
+          "old_lines": [
+            "        old_shared_c_audit=\"relocated_to_pending_P9_6_4d\",\n"
+          ]
+        }
+      ]
+    },
+    "implementation/phase-9-grcv4/verification/verify_p964c_rg2b_graph.py": {
+      "current_sha256": "904c026cdb2b10c94a5a60e99a8f2b89953a8bde890e64ff3f815abe7fec45d8",
+      "splices_to_original": [
+        {
+          "start": 1,
+          "stop": 2,
+          "old_lines": [
+            "\"\"\"Capture/check one corrected scalar and graph RG2b campaign; d stays pending.\"\"\"\n"
+          ]
+        },
+        {
+          "start": 23,
+          "stop": 31,
+          "old_lines": []
+        },
+        {
+          "start": 116,
+          "stop": 232,
+          "old_lines": []
+        },
+        {
+          "start": 237,
+          "stop": 246,
+          "old_lines": [
+            "    p.require(record[\"source_bindings\"] == sources(), \"changed graph RG2b sources\")\n"
+          ]
+        },
+        {
+          "start": 252,
+          "stop": 260,
+          "old_lines": []
+        },
+        {
+          "start": 287,
+          "stop": 289,
+          "old_lines": [
+            "        P9_6_4d=\"pending_unexecuted\",\n"
+          ]
+        },
+        {
+          "start": 299,
+          "stop": 300,
+          "old_lines": []
+        },
+        {
+          "start": 303,
+          "stop": 305,
+          "old_lines": []
+        }
+      ]
+    },
+    "tests/models/test_grc_v4_rg2b_graph.py": {
+      "current_sha256": "e08ea466b716fbacd8acfa78ad135d56ccb7fef30240747f9964bcbaf13318b4",
+      "splices_to_original": [
+        {
+          "start": 771,
+          "stop": 987,
+          "old_lines": []
+        }
+      ]
+    }
+  },
+  "preserved_graph_test_prefix_bytes": 32821,
+  "source_binding_rule": "Only four changed source files are rebound here; unchanged source identities are inherited from the preserved c record. The full current inventory digest plus reverse spans is checked by the existing verifier. Numerical source changes are forbidden by this reconciliation.",
+  "review": "implementation/phase-9-grcv4/tranche-6/P9-6.4c-Review.md",
+  "independent_audit": {
+    "verdict": "PASS_on_reviewed_numerical_scope",
+    "findings_F1_F2_F3": "CLOSED",
+    "new_numerical_blockers": [],
+    "original_pending_capture": "The auditor reviewed the unfinished upload. The retained native c record now supplies the completed 55 passes, one optional skip and exact source/dependency bindings.",
+    "input_content_sha256": {
+      "P9-6.4c-AuditPressure.json": "cec4d9767a48dd5c4c117ecf6a9591959d4fce450c73ce22664e2e20cbd4b6fb",
+      "P9-6.4c-AuditReproducer.py": "7dbdadf67c35da6ea11ad56cd4a709a7ca6f77bc5f060239e00e2f626af84a47",
+      "audit_verdict_text": "5b6d6a10ab980859db65dfbe5fdf47b3e061f08560c6947f1d152494f85290a5"
+    },
+    "audited_source_bindings": {
+      "src/pygrc/models/grc_v4_rg2b.py": "8fb62895e6c89e9a1da3dbffde451318a00d3879cb9e76dcb532c6033cc7bfea",
+      "src/pygrc/models/grc_v4_rg2b_graph.py": "29375671582e66006e216de3a9be6d1685db3709e05865b215b103090a96681b",
+      "tests/models/test_grc_v4_rg2b.py": "e77723f9814e2acbb444c8d7c84cbcedc37787b51338d721311406d818a857b9",
+      "src/pygrc/models/grc_v4_candidate_a.py": "5040bf690d3da3366be74de6e17b272b52d21adba054426ffda778a744ca862a",
+      "src/pygrc/models/grc_v4_candidate_c.py": "43be859ab21e687a270f85c427e3d63a087fa8d74d8362749ae6278ecff36d17",
+      "src/pygrc/models/grc_v4_ci.py": "395d757adb1cb150558fd7d70d0dc03501525b872f293c49afb25d4853bf9bf9",
+      "src/pygrc/models/grc_v4_geometry.py": "cb2d9b900d0091b59e4fe77ef4acc4037225e79b2ee166c99486c93b307c92a4",
+      "src/pygrc/models/grc_v4_step.py": "741e533c004b3ec8da2fc9e5e3f0c9bc404fb1a4f439d69f6e6d0d07643f59a7"
+    },
+    "audited_graph_test_sha256": "def7f9fec5435aefd535552e2418f26c2de048634a2c9122c48875cd169f7195",
+    "graph_test_relation": "The c execution-time test prefix, with only the later os import and explicit slow-test opt-in decorator removed, has the uploaded test hash. All original methods retain their bytes in the current prefix.",
+    "uploaded_review_sha256": "4c8e88bfa79fbe714aaab542b50d71c27ea24f9399bfa8ecaca8f8445eda998a",
+    "review_relation": "Earlier review text; the uploaded hash is not a claim of external review of later closeout wording.",
+    "external_execution_scope": "ISOLATED numerical execution. RG2b/graph/CI/C and common resource-step numerical definitions come from uploaded files. Missing reference/profile/state/transport infrastructure is scaffolded. A is the preceding supplied source with only RG2b family/stage recognition edits, not the missing pinned A module. Not installed-package conformance, live lifecycle rollback, or replay of the native repository campaign.",
+    "external_environment": {
+      "python": "3.13.5",
+      "packages": {
+        "numpy": "2.3.5",
+        "mpmath": "1.3.0",
+        "sympy": "1.14.0"
+      }
+    },
+    "external_counts": {
+      "submitted_scalar_methods": 39,
+      "submitted_graph_methods": 17,
+      "executed_corrective_method_bodies": 10,
+      "additional_graph_steps": 12,
+      "additional_partial_selector_steps": 4,
+      "sampled_bound_comparisons": 108,
+      "directional_bound_comparisons": 288,
+      "binary64_independent_point_map_comparisons": 36,
+      "exact_WLS_operator_comparisons": 24,
+      "exact_rational_current_source_enclosure_cases": 16,
+      "high_precision_matrix_section_comparisons": 8,
+      "large_Hodge_rounding_controls": 3
+    },
+    "native_scope": "The three integrated proposals run against the pinned native package. Negative and zero geometry-gain companions and an exact inverse-base representability bound extend the large-Hodge proposal. External scaffolded runs are not relabeled native execution."
+  },
+  "children": {
+    "A_RG2b": {
+      "iteration_id": "P9-6.4b",
+      "generalization": "P9-6.4c",
+      "scientific_verdict": "PASS",
+      "basis": "Reviewed corrected scalar foundation plus full graph candidate/descriptor/writer bounds, native independent oracles, graph pressure and repeated 8/16-vertex execution; shared matrix-norm reconciliation.",
+      "authority": "C and W_A only; no persisted section geometry or carrier."
+    },
+    "C_RG2b": {
+      "iteration_id": "P9-6.4a",
+      "generalization": "P9-6.4c",
+      "scientific_verdict": "PASS",
+      "basis": "Reviewed corrected scalar foundation plus full selector/retained-Hodge/filter response, native graph pressure and repeated 8/16-vertex execution; new exact current/source and representability pressure.",
+      "authority": "C only; W_C_tr remains fixed profile/reference context, no ordinary W/carrier writer."
+    }
+  },
+  "reconciliation": {
+    "iteration_id": "P9-6.4d",
+    "scientific_verdict": "PASS",
+    "profiles_reviewed": [
+      "A_RG2b",
+      "C_RG2b"
+    ],
+    "completed_obligations": [
+      "external_audit_subject_and_native_capture_reconciled",
+      "candidate_specific_frozen_completion_and_uniform_bounds",
+      "finite_matrix_error_and_native_postconditions",
+      "one_consumed_current_continuity_and_A_writer_order",
+      "graph_coverage_and_no_cardinality_cap",
+      "completion_relative_Lipschitz_regularity_and_ownership_ceiling"
+    ]
+  },
+  "runtime_corrections": [],
+  "open_leaf_blockers": [],
+  "user_accepted": false,
+  "RG2b_G2_accepted": false,
+  "G3_accepted": false,
+  "reused_results": {
+    "record": "implementation/phase-9-grcv4/tranche-6/P9-6.4c-ExecutionRecord.json",
+    "passed": 55,
+    "optional_skipped": 1,
+    "new_execution": false,
+    "original_ab_record": "implementation/phase-9-grcv4/tranche-6/P9-6.4ab-ExecutionRecord.json",
+    "original_ab_scope": "Historical 29 scalar and 52 affected A methods. The corrected 39 scalar methods are already included in c; no double-counting."
+  },
+  "optional_32_vertex_campaign": {
+    "policy": "Only on explicit request via GRCV4_RUN_SLOW_RG2B=1 with a finite wall-time budget.",
+    "new_execution": false,
+    "C_full_step": "unverified",
+    "observations_record": "implementation/phase-9-grcv4/tranche-6/P9-6.4c-ExecutionRecord.json#/optional_32_vertex_campaign"
+  },
+  "scope_limits": [
+    "Fixed finite nonempty graph and unit vertex measure, positive diagonal reference Hodge.",
+    "Frozen context and positive configured beat, including zero-duration admission recipe.",
+    "Strict candidate charts, computed sufficient inverse/self-map/contraction/containment bounds and finite approximation budget.",
+    "Completion-relative Lipschitz section; no C1/spectrum, indefinite inner-chart invariance or universal-profile theorem.",
+    "No lifecycle publication, authenticated formation, topology/context-change semantics, endpoint successor or RG2b G2/G3."
+  ],
+  "next_work": "P9-6.5 profile-by-profile reconciliation; lifecycle and G2 remain separately owned.",
+  "reconstruction": "From repository root: uv sync --frozen --extra v4 --extra dev; PYTHONPATH=src:. .venv/bin/python -m unittest -v tests.models.test_grc_v4_rg2b_graph.GraphRG2bReconciliation. The existing verify_p964c_rg2b_graph.py --check verifies historical and current bindings without numerical reruns. All required source and oracle inputs are repository-local; no external audit files are runtime or reconstruction dependencies.",
+  "record_digest": "cb17babb9136c8f50bb845d6abbdfc72f849c7310e7951fdf83fff0a00a6ff2c",
+  "source_bindings": {
+    "implementation/phase-9-grcv4/tranche-6/P9-6.4c-Review.md": "eeab1ccbee654ff091719c18a6a46e1acc88559624f42ec8804da22e0ecf78f3",
+    "implementation/phase-9-grcv4/verification/verify_p964_rg2b.py": "f5edf44559493e390c7b59e1258f84aa468696a13d27d3aacb6f404d99dae940",
+    "implementation/phase-9-grcv4/verification/verify_p964c_rg2b_graph.py": "904c026cdb2b10c94a5a60e99a8f2b89953a8bde890e64ff3f815abe7fec45d8",
+    "tests/models/test_grc_v4_rg2b_graph.py": "e08ea466b716fbacd8acfa78ad135d56ccb7fef30240747f9964bcbaf13318b4"
+  },
+  "source_inventory_digest": "b2517698e861ef6210fdf42c2a3691b4e7941c011fc2169be0309017992cda64",
+  "environment": {
+    "python": "3.12.3",
+    "dependencies": {
+      "numpy": "2.4.6",
+      "jsonschema": "4.26.0",
+      "rfc8785": "0.1.4"
+    }
+  },
+  "result": {
+    "started_utc": "2026-09-10T14:29:02.795193+00:00",
+    "completed_utc": "2026-09-10T14:29:08.218069+00:00",
+    "elapsed_seconds": 5.388,
+    "tests_run": 3,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "executed_ids": [
+      "tests.models.test_grc_v4_rg2b_graph.GraphRG2bReconciliation.test_large_hodge_rounding_cannot_hide_section_error",
+      "tests.models.test_grc_v4_rg2b_graph.GraphRG2bReconciliation.test_matrix_error_counts_both_offdiagonal_entries",
+      "tests.models.test_grc_v4_rg2b_graph.GraphRG2bReconciliation.test_rational_noncommuting_current_and_source_error_bridge"
+    ],
+    "output_sha256": "ea29a8755ead1aedae1fd6ccc8a99ba524cec09090689e25a7cef8115c85765b",
+    "command": [
+      ".venv/bin/python",
+      "-m",
+      "unittest",
+      "-v",
+      "tests.models.test_grc_v4_rg2b_graph.GraphRG2bReconciliation"
+    ]
+  },
+  "supplemental_checks": {
+    "ruff": "passed_for_changed_Python_tests_and_verifiers",
+    "browser_validator_methods": 33,
+    "browser_failures": 0,
+    "browser_skips": 0,
+    "browser_test_script": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool//tool/phase9-web/verification.test.mjs",
+    "node_toolchain": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool//tool/toolchain.toml"
+  },
+  "acceptance": {
+    "status": "accepted_by_user",
+    "accepted_at_utc": "2026-09-10T14:39:28.179935+00:00",
+    "authorization": "User explicitly requested: now accept all p9 6.4 and commit changes.",
+    "accepted_iterations": [
+      "P9-6.4a",
+      "P9-6.4b",
+      "P9-6.4c",
+      "P9-6.4d"
+    ],
+    "profiles_reviewed": [
+      "A_RG2b",
+      "C_RG2b"
+    ],
+    "scientific_verdict": "PASS",
+    "reviewed_record_digest": "be14373ed1666a76bb9147bf06247411f039d279e3377b395d890f0a590e2c61",
+    "open_leaf_blockers": [],
+    "new_runtime_iterations_authorized": [],
+    "RG2b_G2_accepted": false,
+    "G3_accepted": false,
+    "source_maintenance": {
+      "implementation/phase-9-grcv4/verification/verify_p964c_rg2b_graph.py": {
+        "current_sha256": "2eb4cfd4ee9ef5677495054178d8cfd8ec9c475c23d776ef15795e6b097c2bdc",
+        "splices_to_original": [
+          {
+            "start": 164,
+            "stop": 185,
+            "old_lines": []
+          },
+          {
+            "start": 264,
+            "stop": 275,
+            "old_lines": [
+              "        == (original.historical_sources(record, follow) if follow else sources()),\n"
+            ]
+          },
+          {
+            "start": 318,
+            "stop": 325,
+            "old_lines": [
+              "        P9_6_4d=\"PASS_pending_user_acceptance\" if follow else \"pending_unexecuted\",\n"
+            ]
+          },
+          {
+            "start": 326,
+            "stop": 327,
+            "old_lines": [
+              "        user_accepted=False,\n"
+            ]
+          }
+        ]
+      },
+      "implementation/phase-9-grcv4/tranche-6/P9-6.4c-Review.md": {
+        "current_sha256": "b7675a13095cd44b254dd7f27ed7d1364582f51c539e71f5a6113077f8dbd0f7",
+        "splices_to_original": [
+          {
+            "start": 3,
+            "stop": 4,
+            "old_lines": [
+              "user acceptance remains pending. The [execution record](P9-6.4c-ExecutionRecord.json)\n"
+            ]
+          },
+          {
+            "start": 245,
+            "stop": 246,
+            "old_lines": [
+              "Only numerical generalization is supplied. User acceptance remains pending;\n"
+            ]
+          },
+          {
+            "start": 317,
+            "stop": 321,
+            "old_lines": [
+              "G2/G3 remain separately owned work. This reconciliation and the supplied audit\n",
+              "do not constitute user acceptance or a commit.\n"
+            ]
+          }
+        ]
+      }
+    },
+    "numerical_tests_rerun": 0,
+    "verification_basis": "Completed native c campaign: 55 passes, one intentional optional skip; d adds three passing native regressions. Numerical sources and all test/oracle bytes are unchanged for acceptance. Original execution records and d execution fields retain their historical status; this object records the later disposition.",
+    "scope": "Completion-relative, Lipschitz-only provisional scalar foundations and finite-graph A_RG2b/C_RG2b section/step evaluation under computed sufficient domains. No lifecycle, topology/context event, C1, endpoint or RG2b G2/G3 promotion. The 32-vertex campaign remains optional and full C completion remains unverified."
+  }
+}

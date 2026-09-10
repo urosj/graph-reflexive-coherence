@@ -1,4 +1,85 @@
-# Phase 9 GRCV4 handoff — P9-6.3a/b/c accepted
+# Phase 9 GRCV4 handoff — P9-6.4a/b/c/d accepted
+
+Current restart point, 2026-09-10: branch `impl/phase-9-grcv4-tranche-6`,
+accepted predecessor `ba45482` (P9-6.3a/b/c).
+
+**P9-6.4a/b/c/d were accepted by the user on 2026-09-10, with bounded scientific
+PASS for A_RG2b and C_RG2b.** The user authorized committing the full batch. Start
+with the [graph proof and audit review](./phase-9-grcv4/tranche-6/P9-6.4c-Review.md)
+and [d followup](./phase-9-grcv4/tranche-6/P9-6.4d-AuditFollowup.json).
+The completed [graph execution record](./phase-9-grcv4/tranche-6/P9-6.4c-ExecutionRecord.json)
+retains 55 passes and one intentional optional skip. The three new d regressions
+pass natively; the original campaign was not repeated. No runtime correction was
+needed after the c audit. The next coordination task is P9-6.5.
+The original [a/b record](./phase-9-grcv4/tranche-6/P9-6.4ab-ExecutionRecord.json)
+retains its original bytes and 29+52 results; minimal reverse source spans in
+the new record recover that uncommitted historical subject.
+
+The a/b audit's reset/final reconstructed-geometry native checks, typed
+`no_admitted_root` propagation and admission-time clock/index checks are fixed.
+All seven proposed regressions were executed natively: 12 failed assertions
+before correction, then all seven methods passed. Three further scalar methods
+pressure ordering, unchanged write counts, causes and programmer exceptions.
+The auditor's isolated larger campaign remains external attribution.
+
+The new graph completion uses every vertex C, every A edge W, and full matrix
+geometry, with state sup norm and Frobenius geometry error. It has no vertex or
+edge-count cap. Whole-chart bounds certify SPD/conditioning, strict C selector
+stratum, A floor chart, global inverse, value/Lipschitz self-map, contraction and
+one-beat containment. Native current, continuity, source assembly and A writer
+owners are reused. C's retained/filtering matrices and A's nonzero descriptor
+contrast remain active. Finite matrix error balls include current-residual,
+inverse, graph-transform tail and stored rounding errors. Oversized rational
+error strings are prevented through conservative outward rounding, without
+changing Python's global digit limit.
+
+```sh
+uv sync --frozen --extra v4 --extra dev
+PYTHONPATH=src:. .venv/bin/python -m unittest -v tests.models.test_grc_v4_rg2b tests.models.test_grc_v4_rg2b_graph
+PYTHONPATH=src:. .venv/bin/python implementation/phase-9-grcv4/verification/verify_p964c_rg2b_graph.py --check
+```
+
+For only the new d pressure, select
+`tests.models.test_grc_v4_rg2b_graph.GraphRG2bReconciliation` with unittest.
+It checks large-Hodge rounding with signed/neutral controls, exact rational
+noncommuting current/source errors and full-dimensional Frobenius rounding.
+The auditor's earlier pending-record observation is resolved by the completed
+native capture. Its scaffolded pressure remains external attribution, not native
+execution. Current runtime/dependency hashes match the audit; its graph test is
+reconstructed by removing only the later opt-in switch. The d record preserves
+both prior execution records and their exact source subjects.
+
+`graph_fixture` in the new test module reconstructs all graph profiles and
+parameter choices. The review maps the independent oracles and pressure to the
+proof. Default tests cover rich structures, repeated 8/16-vertex paths, a 12-vertex
+star, full candidate
+channels, covariance, numerical/domain failures, replay and native postconditions.
+The exact-arithmetic implementation prioritizes correctness; no speed target is
+claimed. Graph admission requires nonempty vertex/edge spaces, unit vertex
+measure, a positive diagonal reference Hodge and the computed chart conditions.
+Fixed graph/context and positive configured beat duration remain restrictions;
+this is not topology-event support. A zero-duration inspection uses the same
+positive-beat section but performs no writes.
+
+The 32-vertex cycle campaign is **optional, only on explicit request**. Its full
+A/C result is not established by the default checks. An earlier long run was
+interrupted; do not interpret it as a pass. To request this campaign separately,
+set `GRCV4_RUN_SLOW_RG2B=1` and select
+`tests.models.test_grc_v4_rg2b_graph.GraphRG2bLargerExecution.test_32_vertex_cycle_native_step_and_independent_current`.
+Use an explicit wall-time budget when running it. The skip is intentional and
+recorded separately from passing methods; it does not waive any default test.
+
+The user-directed split moved the former unexecuted shared c audit to **P9-6.4d**.
+Historical a/b records and older crosswalk references retain that old numbering.
+The d reconciliation now gives separate A/C PASS verdicts for the corrected
+foundations and generalized evaluator. The d followup records the later user
+acceptance; original execution-time statuses remain intact. Acceptance changes
+no numerical source or test, so no scientific campaign was repeated.
+Public support remains C_OS; RG2b lifecycle, formation,
+C1/spectra, endpoint, topology/context events and G2/G3 remain pending. One-beat
+containment does not imply indefinite membership in the smaller entry chart.
+
+## Historical P9-6.3a/b/c acceptance
 
 Current restart point, 2026-09-10: branch `impl/phase-9-grcv4-tranche-6`,
 accepted predecessor `affb214` (P9-6.2a/b/c).
@@ -55,8 +136,8 @@ The scope is provisional local numerical composition, with one C selector
 stratum and conservative domain admission. Public support remains C_OS.
 Live lifecycle/receipts/rollback, formation provenance, topology, matched-forcing
 contraction, endpoint witnesses and composite G2/G3 remain separate pending work.
-Next planned work: P9-6.4a/b RG2b implementation, followed by c review. It remains
-unstarted; begin when requested. The user authorized committing P9-6.3a/b/c.
+The user authorized committing P9-6.3a/b/c. The subsequent P9-6.4a/b work is
+recorded at the current restart point above.
 
 ## Historical P9-6.2a/b/c acceptance
 

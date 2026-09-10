@@ -18,6 +18,7 @@ import verify_p962_pc as pc
 
 ROOT = p.ROOT
 BASE = "affb214"
+ACCEPTED_COMMIT = "ba45482"
 SCRIPT = p.HERE + "verify_p963_cipc.py"
 REVIEW = p.PHASE + "tranche-6/P9-6.3ab-Review.md"
 RECORD = p.PHASE + "tranche-6/P9-6.3ab-ExecutionRecord.json"
@@ -54,7 +55,7 @@ RUNTIME = {
 }
 
 
-def sources():
+def sources(subject=None):
     names = {
         SCRIPT,
         REVIEW,
@@ -65,8 +66,8 @@ def sources():
         + "decisions/GeometryTemporalRealizationHybridCoupledPersistentCarrier.json",
     }
     return {
-        **ci.sources(),
-        **{name: p.sha((ROOT / name).read_bytes()) for name in sorted(names)},
+        **ci.sources(subject),
+        **{name: p.sha(ci.source_bytes(name, subject)) for name in sorted(names)},
     }
 
 
@@ -183,9 +184,9 @@ def capture():
     (ROOT / RECORD).write_text(json.dumps(value, indent=2) + "\n")
 
 
-def execution_bytes(name, follow):
+def execution_bytes(name, follow, subject=None):
     """Recover the reviewed bytes after acceptance-only source maintenance."""
-    raw = (ROOT / name).read_bytes()
+    raw = ci.source_bytes(name, subject)
     accepted = follow.get("acceptance")
     if accepted is None or name not in {SCRIPT, REVIEW}:
         return raw
@@ -206,14 +207,14 @@ def execution_bytes(name, follow):
     return raw
 
 
-def execution_sources(follow):
-    current = sources()
+def execution_sources(follow, subject=None):
+    current = sources(subject)
     for name in (SCRIPT, REVIEW):
-        current[name] = p.sha(execution_bytes(name, follow))
+        current[name] = p.sha(execution_bytes(name, follow, subject))
     return current
 
 
-def original_sources(follow):
+def original_sources(follow, subject=None):
     """Restore only the uncommitted review/runner and appended test prefix.
 
     Numerical sources and original test/oracle bytes must remain unchanged;
@@ -222,9 +223,9 @@ def original_sources(follow):
     delta = follow["prior_source_delta"]
     test = "tests/models/test_grc_v4_cipc.py"
     p.require(set(delta) == {SCRIPT, REVIEW, test}, "changed reconciliation scope")
-    current = execution_sources(follow)
+    current = execution_sources(follow, subject)
     for name, entry in delta.items():
-        raw = execution_bytes(name, follow)
+        raw = execution_bytes(name, follow, subject)
         p.require(current[name] == entry["current_sha256"], "changed audit source")
         lines = raw.decode().splitlines(keepends=True)
         end = len(lines)
@@ -240,14 +241,14 @@ def original_sources(follow):
     return current
 
 
-def check_original(follow=None):
+def check_original(follow=None, subject=None):
     value = p.read(ROOT / RECORD)
     p.require(
         value["record_digest"] == p.digest_record(value), "changed composition record"
     )
     p.require(
         value["source_bindings"]
-        == (sources() if follow is None else original_sources(follow)),
+        == (sources(subject) if follow is None else original_sources(follow, subject)),
         "changed composition execution sources",
     )
     p.require(
@@ -286,15 +287,20 @@ def check_original(follow=None):
     )
     p.git(ROOT, "merge-base", "--is-ancestor", BASE, "HEAD")
     changed = set(
-        p.git(ROOT, "diff", "--name-only", BASE, "--", "src", "tests")
+        p.git(
+            ROOT, "diff", "--name-only", BASE, subject or "HEAD", "--", "src", "tests"
+        )
         .decode()
         .splitlines()
     )
-    changed.update(
-        p.git(ROOT, "ls-files", "--others", "--exclude-standard", "--", "src", "tests")
-        .decode()
-        .splitlines()
-    )
+    if subject is None:
+        changed.update(
+            p.git(
+                ROOT, "ls-files", "--others", "--exclude-standard", "--", "src", "tests"
+            )
+            .decode()
+            .splitlines()
+        )
     p.require(changed == RUNTIME, "composition changed unrelated numerical owners")
     ready, _ = p.leaf_permissions(ROOT)
     p.require(
@@ -389,9 +395,14 @@ def capture_reconciliation():
 def check():
     follow = p.read(ROOT / FOLLOWUP)
     p.require(follow["record_digest"] == p.digest_record(follow), "changed followup")
-    check_original(follow)
+    p.git(ROOT, "merge-base", "--is-ancestor", ACCEPTED_COMMIT, "HEAD")
     p.require(
-        follow["source_bindings"] == execution_sources(follow)
+        (ROOT / FOLLOWUP).read_bytes() == ci.source_bytes(FOLLOWUP, ACCEPTED_COMMIT),
+        "changed accepted composition evidence",
+    )
+    check_original(follow, ACCEPTED_COMMIT)
+    p.require(
+        follow["source_bindings"] == execution_sources(follow, ACCEPTED_COMMIT)
         and follow["source_contracts"] == source_contracts(),
         "changed reconciliation sources/contracts",
     )
