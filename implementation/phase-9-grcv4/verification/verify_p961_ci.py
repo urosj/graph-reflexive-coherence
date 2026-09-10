@@ -1,6 +1,7 @@
 """One CI batch capture/check with separate a/b results and shared evidence."""
 
 import argparse
+import ast
 from datetime import datetime, timezone
 import importlib.metadata
 import importlib.util
@@ -22,6 +23,10 @@ AUDIT = p.PHASE + "tranche-6/P9-6.1ab-AuditReproducer.py"
 PRESSURE = p.PHASE + "tranche-6/P9-6.1ab-AuditPressure.json"
 REVIEW = p.PHASE + "tranche-6/P9-6.1ab-Review.md"
 BASE = "c55960b"
+CHILD_COMMIT = "6d3c0b2"
+RECONCILIATION = p.PHASE + "tranche-6/P9-6.1c-ExecutionRecord.json"
+RECONCILIATION_REVIEW = p.PHASE + "tranche-6/P9-6.1c-Review.md"
+RECONCILIATION_TESTS = ["tests.models.test_grc_v4_ci.CIReconciliationTests"]
 TESTS = ["tests.models.test_grc_v4_ci"]
 REGRESSIONS = [
     "tests.models.test_grc_v4_candidate_a",
@@ -82,7 +87,15 @@ def source_contracts():
     return results
 
 
-def sources():
+def source_bytes(name, subject=None):
+    return (
+        (ROOT / name).read_bytes()
+        if subject is None
+        else p.git(ROOT, "show", subject + ":" + name)
+    )
+
+
+def sources(subject=None):
     # Whole local model/test inputs are cheap to identify and avoid losing a
     # lazily imported oracle. Git supplies their bytes; no archive is created.
     paths = {
@@ -104,7 +117,7 @@ def sources():
         for path in (ROOT / "src/pygrc/models/grc_v4_assets").iterdir()
         if path.is_file()
     )
-    return {name: p.sha((ROOT / name).read_bytes()) for name in sorted(paths)}
+    return {name: p.sha(source_bytes(name, subject)) for name in sorted(paths)}
 
 
 def capture():
@@ -197,16 +210,16 @@ def capture():
     (ROOT / RECORD).write_text(json.dumps(value, indent=2) + "\n")
 
 
-def audit_sources():
+def audit_sources(subject=None):
     return {
-        **sources(),
-        **{name: p.sha((ROOT / name).read_bytes()) for name in (AUDIT, PRESSURE)},
+        **sources(subject),
+        **{name: p.sha(source_bytes(name, subject)) for name in (AUDIT, PRESSURE)},
     }
 
 
-def execution_verifier(value):
+def execution_verifier(value, subject=None):
     """Recover the verifier used by the retained run after acceptance maintenance."""
-    raw = (ROOT / SCRIPT).read_bytes()
+    raw = source_bytes(SCRIPT, subject)
     acceptance = value.get("acceptance")
     if acceptance is not None:
         maintenance = acceptance["verifier_maintenance"]
@@ -227,7 +240,7 @@ def execution_verifier(value):
     return raw
 
 
-def reconstruct_prior(value):
+def reconstruct_prior(value, subject=None):
     """Reverse changed line spans; retain old bytes only, never a source archive.
 
     The pre-audit implementation was uncommitted. Git alone cannot recover its
@@ -244,9 +257,9 @@ def reconstruct_prior(value):
     delta = value["prior_source_delta"]
     for name, digest in prior["source_bindings"].items():
         raw = (
-            execution_verifier(value)
+            execution_verifier(value, subject)
             if name == SCRIPT and "acceptance" in value
-            else (ROOT / name).read_bytes()
+            else source_bytes(name, subject)
         )
         if name in delta:
             entry = delta[name]
@@ -278,12 +291,50 @@ def audit_suite():
     module = importlib.util.module_from_spec(spec)
     sys.modules[spec.name] = module
     spec.loader.exec_module(module)
-    return unittest.TestSuite(
+    suite = unittest.TestSuite(
         [
             unittest.defaultTestLoader.loadTestsFromNames(TESTS + SMOKE),
             unittest.defaultTestLoader.loadTestsFromModule(module),
         ]
     )
+    # Reconciliation is a separate four-method run; never recount it as a/b.
+    return unittest.TestSuite(
+        test for test in leaves(suite) if ".CIReconciliationTests." not in test.id()
+    )
+
+
+def preserved_children():
+    """Reuse committed a/b evidence and unchanged numerics without rerunning it."""
+    p.git(ROOT, "merge-base", "--is-ancestor", CHILD_COMMIT, "HEAD")
+    for name in (RECORD, FOLLOWUP, REVIEW, AUDIT, PRESSURE):
+        p.require(
+            source_bytes(name) == source_bytes(name, CHILD_COMMIT),
+            "changed accepted child evidence: " + name,
+        )
+    old = sources(CHILD_COMMIT)
+    for name, digest in old.items():
+        if name not in {SCRIPT, "tests/models/test_grc_v4_ci.py"}:
+            p.require(
+                p.sha(source_bytes(name)) == digest,
+                "changed reused scientific source: " + name,
+            )
+    name = "tests/models/test_grc_v4_ci.py"
+    before, after = (
+        ast.parse(source_bytes(name, CHILD_COMMIT)),
+        ast.parse(source_bytes(name)),
+    )
+    # Only the new reconciliation class and its additional interval adapter
+    # import are permitted; every existing helper and oracle stays unchanged.
+    after.body = [
+        node
+        for node in after.body
+        if not (isinstance(node, ast.ClassDef) and node.name == "CIReconciliationTests")
+    ]
+    for node in after.body:
+        if isinstance(node, ast.ImportFrom) and node.module == "pygrc.models.grc_v4_ci":
+            node.names = [alias for alias in node.names if alias.name != "_im"]
+    p.require(ast.dump(before) == ast.dump(after), "changed accepted CI oracle or test")
+    return old
 
 
 def capture_audit():
@@ -377,13 +428,14 @@ def capture_audit():
 
 
 def check():
+    preserved_children()
     follow = p.read(ROOT / FOLLOWUP)
     p.require(
         follow["record_digest"] == p.digest_record(follow), "changed audit record"
     )
-    reconstruct_prior(follow)
-    current_sources = audit_sources()
-    current_sources[SCRIPT] = p.sha(execution_verifier(follow))
+    reconstruct_prior(follow, CHILD_COMMIT)
+    current_sources = audit_sources(CHILD_COMMIT)
+    current_sources[SCRIPT] = p.sha(execution_verifier(follow, CHILD_COMMIT))
     p.require(follow["source_bindings"] == current_sources, "changed audit sources")
     p.require(
         follow["source_contracts"] == source_contracts(),
@@ -456,7 +508,7 @@ def check():
     ready, owners = p.leaf_permissions(ROOT)
     p.require(
         {"P9-6.1a", "P9-6.1b"} <= set(ready)
-        and "P9-6.1c" not in ready
+        and "P9-6.1c" in ready
         and "P9-7.1-A_OS" not in ready,
         "CI batch changed dependent permission",
     )
@@ -480,10 +532,186 @@ def check():
         "source_contracts": len(CONTRACTS),
         "permitted_leaves": len(ready),
         "CI_child_reviews": "accepted_by_user" if accepted else "pending",
-        "P9_6_1c": "pending_unexecuted",
+        "P9_6_1c": "authorized_reconciliation",
         "scientific_tests_rerun": 0,
         "CI_G2_accepted": False,
     }
+
+
+def reconciliation_sources():
+    return {
+        **audit_sources(),
+        RECONCILIATION_REVIEW: p.sha(source_bytes(RECONCILIATION_REVIEW)),
+    }
+
+
+def capture_reconciliation():
+    p.require(not (ROOT / RECONCILIATION).exists(), "preserve reconciliation execution")
+    preserved_children()
+    before, contracts = reconciliation_sources(), source_contracts()
+    suite = unittest.defaultTestLoader.loadTestsFromNames(RECONCILIATION_TESTS)
+    ids = [test.id() for test in leaves(suite)]
+    p.require(len(ids) == len(set(ids)) == 4, "incomplete reconciliation pressure")
+    stream = io.StringIO()
+    started = datetime.now(timezone.utc).isoformat()
+    start = time.monotonic()
+    result = unittest.TextTestRunner(stream=stream, verbosity=2).run(suite)
+    elapsed = round(time.monotonic() - start, 3)
+    print(stream.getvalue(), end="")
+    p.require(
+        result.wasSuccessful()
+        and result.testsRun == 4
+        and not result.skipped
+        and not result.expectedFailures,
+        "reconciliation pressure failed",
+    )
+    p.require(before == reconciliation_sources(), "source drift during reconciliation")
+    child = p.read(ROOT / FOLLOWUP)
+    value = {
+        "schema": "phase9_ci_reconciliation_v1",
+        "iteration_id": "P9-6.1c",
+        "status": "reviewed_verified_pending_user_acceptance",
+        "scientific_verdict": "PASS",
+        "open_blockers": [],
+        "profiles_reviewed": ["A_CI", "C_CI"],
+        "authority": "User requested the remaining shared-contract reconciliation and review of corrected enclosures, reusing the accepted a/b audit and run.",
+        "source_git_base": p.git(ROOT, "rev-parse", "HEAD").decode().strip(),
+        "release_id": p.current_abundance_release(ROOT),
+        "review": RECONCILIATION_REVIEW,
+        "source_bindings": before,
+        "source_contracts": contracts,
+        "started_utc": started,
+        "completed_utc": datetime.now(timezone.utc).isoformat(),
+        "elapsed_seconds": elapsed,
+        "command": [".venv/bin/python", SCRIPT, "--capture-reconciliation"],
+        "reconstruction_command": [
+            ".venv/bin/python",
+            "-m",
+            "unittest",
+            "-v",
+            *RECONCILIATION_TESTS,
+        ],
+        "environment": {
+            "python": platform.python_version(),
+            "platform": platform.platform(),
+            "dependencies": {
+                name: importlib.metadata.version(name)
+                for name in ("numpy", "jsonschema", "rfc8785")
+            },
+        },
+        "fresh_result": {
+            "tests_run": 4,
+            "failures": 0,
+            "errors": 0,
+            "skips": 0,
+            "executed_ids": ids,
+            "output_sha256": p.sha(stream.getvalue().encode()),
+        },
+        "reused_execution": {
+            "path": FOLLOWUP,
+            "record_digest": child["record_digest"],
+            "git_subject": CHILD_COMMIT,
+            "tests_run": 48,
+            "rerun": False,
+            "verification": "Accepted evidence bytes and numerical sources match Git; pre-existing CI test/helper ASTs are unchanged.",
+        },
+        "disposition": "The enclosure derivation, operator-coordinate ordering, domain-local theorem and numerical residual contract are consistent. Four added pressure methods expose no new numerical defect. No runtime correction was needed.",
+        "claim_ceiling": "Bounded provisional A_CI and C_CI on the declared reference ball; C covers one whole-ball strict-gap stratum. This is not generic profile publication, live lifecycle, a global branch or stability result.",
+        "user_accepted": False,
+        "CI_G2_accepted": False,
+        "G3_accepted": False,
+        "accepted_generic_runtime_support": [],
+        "admitted_specialization_support_sets": [],
+        "reconstruction": "Use the Git/file subject matching source_bindings, provision .venv from uv.lock and run from repository root with PYTHONPATH=src:. The existing verifier checks the two historical a/b subjects through Git and their retained line spans. No source archive or external file is needed. Timings/output hashes are observations, not reproduction promises.",
+    }
+    value["record_digest"] = p.digest_record(value)
+    (ROOT / RECONCILIATION).write_text(json.dumps(value, indent=2) + "\n")
+
+
+def check_reconciliation():
+    value = p.read(ROOT / RECONCILIATION)
+    p.require(
+        value["record_digest"] == p.digest_record(value),
+        "changed reconciliation record",
+    )
+    current_sources = reconciliation_sources()
+    accepted = value.get("acceptance")
+    if accepted is not None:
+        p.require(
+            accepted["status"] == "accepted_by_user"
+            and accepted["accepted_iterations"] == ["P9-6.1c"]
+            and accepted["profiles_reviewed"] == ["A_CI", "C_CI"]
+            and accepted["open_leaf_blockers"] == []
+            and accepted["new_runtime_iterations_authorized"] == []
+            and accepted["CI_G2_accepted"] is False
+            and accepted["G3_accepted"] is False,
+            "invalid shared CI acceptance",
+        )
+        maintenance = accepted["source_maintenance"]
+        p.require(
+            set(maintenance) == {SCRIPT, RECONCILIATION_REVIEW},
+            "acceptance cannot change scientific execution sources",
+        )
+        for name, entry in maintenance.items():
+            raw = source_bytes(name)
+            p.require(
+                p.sha(raw) == entry["current_sha256"],
+                "changed acceptance source: " + name,
+            )
+            lines = raw.decode().splitlines(keepends=True)
+            end = len(lines)
+            for span in reversed(entry["splices_to_execution"]):
+                start, stop = span["start"], span["stop"]
+                p.require(
+                    0 <= start <= stop <= end, "invalid acceptance reconstruction span"
+                )
+                lines[start:stop] = span["old_lines"]
+                end = start
+            current_sources[name] = p.sha("".join(lines).encode())
+    p.require(
+        value["source_bindings"] == current_sources, "changed reconciliation sources"
+    )
+    p.require(
+        value["source_contracts"] == source_contracts(),
+        "changed reconciliation source authority",
+    )
+    ids = [
+        test.id()
+        for test in leaves(
+            unittest.defaultTestLoader.loadTestsFromNames(RECONCILIATION_TESTS)
+        )
+    ]
+    p.require(
+        value["fresh_result"]["executed_ids"] == ids and len(ids) == 4,
+        "changed reconciliation roster",
+    )
+    p.require(
+        value["profiles_reviewed"] == ["A_CI", "C_CI"]
+        and value["scientific_verdict"] == "PASS"
+        and value["open_blockers"] == []
+        and value["user_accepted"] is False
+        and value["CI_G2_accepted"] is False
+        and value["G3_accepted"] is False
+        and value["accepted_generic_runtime_support"] == []
+        and value["admitted_specialization_support_sets"] == [],
+        "invalid reconciliation claim",
+    )
+    p.require(
+        value["reused_execution"]["record_digest"]
+        == p.read(ROOT / FOLLOWUP)["record_digest"],
+        "changed reused child result",
+    )
+    result = check()
+    result.update(
+        P9_6_1c="accepted_by_user"
+        if accepted
+        else "reviewed_verified_pending_user_acceptance",
+        reconciliation_verdict="PASS",
+        fresh_reconciliation_methods=4,
+        reused_child_methods=48,
+        scientific_tests_rerun=0,
+    )
+    return result
 
 
 if __name__ == "__main__":
@@ -492,8 +720,14 @@ if __name__ == "__main__":
     group.add_argument("--capture", action="store_true")
     group.add_argument("--capture-audit", action="store_true")
     group.add_argument("--check", action="store_true")
+    group.add_argument("--capture-reconciliation", action="store_true")
+    group.add_argument("--check-reconciliation", action="store_true")
     args = parser.parse_args()
-    if args.capture_audit:
+    if args.capture_reconciliation:
+        capture_reconciliation()
+    elif args.check_reconciliation:
+        print(json.dumps(check_reconciliation()))
+    elif args.capture_audit:
         capture_audit()
     elif args.capture:
         capture()

@@ -34,6 +34,7 @@ from pygrc.models.grc_v4_ci import (
     _itanh,
     _iinverse,
     _projector_enclosure,
+    _im,
 )
 from pygrc.models.grc_v4_geometry import (
     GRCV4Geometry,
@@ -1149,3 +1150,225 @@ class CIStepTests(unittest.TestCase):
         restored = ProvisionalCandidateCIStep.from_payload(step.to_payload())
         self.assertEqual(restored.next_inputs, step.next_inputs)
         self.assertEqual(len(list_supported_profiles()), 1)
+
+
+class CIReconciliationTests(unittest.TestCase):
+    """New pressure on the post-audit enclosures; existing child tests are reused."""
+
+    def test_dense_deformed_C_response_against_independent_decimal_equations(self):
+        graph = GRCV4Graph(
+            ("a", "b", "c"),
+            (OrientedEdge("ab", "a", "b"), OrientedEdge("bc", "b", "c")),
+        )
+        before, _ = fixture(
+            "C",
+            graph=graph,
+            C=(3.0, 1.0, 2.0),
+            changes={
+                "candidate": {
+                    "Lambda_C": 3.0,
+                    "kappa_M_C": 0.2,
+                    "tau_C": 0.4,
+                    "chi_C": 0.05,
+                    "zeta_C": 0.05,
+                }
+            },
+        )
+        ref = before.geometry.reference
+        h = ((2.01, 0.007), (0.007, 1.99))
+        j = (1.25, -0.75)
+        trial = CITrial(
+            replace(
+                before,
+                stage="ci_trial",
+                trial_current=PhysicalFlux(graph, j),
+                geometry=GRCV4Geometry(ref, OneFormHodge(graph, h)),
+            )
+        )
+        with localcontext() as ctx:
+            ctx.prec = 180
+            d = Decimal.from_float
+
+            def mm(a, b):
+                return [
+                    [
+                        sum(x * y for x, y in zip(row, col, strict=True))
+                        for col in zip(*b, strict=True)
+                    ]
+                    for row in a
+                ]
+
+            def inv2(a):
+                det = a[0][0] * a[1][1] - a[0][1] * a[1][0]
+                return [
+                    [a[1][1] / det, -a[0][1] / det],
+                    [-a[1][0] / det, a[0][0] / det],
+                ]
+
+            hd = [[d(x) for x in row] for row in h]
+            b = [
+                [Decimal(1), Decimal(0)],
+                [Decimal(-1), Decimal(1)],
+                [Decimal(0), Decimal(-1)],
+            ]
+            bt = list(zip(*b, strict=True))
+            lap = mm(mm(b, hd), bt)
+            trace = sum(lap[i][i] for i in range(3))
+            # The two nonzero path eigenvalues have product 3 det(h).
+            discriminant = (
+                trace * trace - 12 * (hd[0][0] * hd[1][1] - hd[0][1] * hd[1][0])
+            ).sqrt()
+            low, high = (trace - discriminant) / 2, (trace + discriminant) / 2
+            self.assertLess(low, Decimal(3))
+            self.assertGreater(high, Decimal(3))
+            lap2 = mm(lap, lap)
+            # Spectral interpolation: P=I-(L^2-low*L)/(high*(high-low)).
+            projector = [
+                [
+                    Decimal(i == k)
+                    - (lap2[i][k] - low * lap[i][k]) / (high * discriminant)
+                    for k in range(3)
+                ]
+                for i in range(3)
+            ]
+            c = [[d(x)] for x in before.current.C]
+            selected = mm(projector, c)
+            p = ref.profile.params_resolved.candidate
+            rho = []
+            for row in selected:
+                exp = (2 * row[0] / d(p.C_ref)).exp()
+                rho.append((exp - 1) / (exp + 1))
+            deformation = [
+                (d(p.kappa_M_C) / 4 * (rho[i] + rho[i + 1])).exp() for i in range(2)
+            ]
+            self.assertNotEqual(deformation[0], deformation[1])
+            hm = [
+                [deformation[i] * hd[i][k] * deformation[k] for k in range(2)]
+                for i in range(2)
+            ]
+            gram = mm(bt, b)
+            raw = mm(gram, mm(hm, mm(bt, c)))
+            baseline = [-d(p.eta_C) * 2 * d(p.kappa_Phi_C) * row[0] for row in raw]
+            # Solve the retained resolvent and undo I_4M explicitly. This
+            # oracle does not construct the production Q^-1 R Q chain.
+            ih = inv2(hd)
+            incoming = mm(hm, mm(ih, mm(ih, [[d(x)] for x in j])))
+            delta = mm(gram, hm)
+            response = inv2(
+                [
+                    [Decimal(i == k) + d(p.tau_C) * delta[i][k] for k in range(2)]
+                    for i in range(2)
+                ]
+            )
+            lowered = mm(hd, mm(inv2(hm), mm(response, incoming)))
+            flat = [[d(p.chi_C) * row[0]] for row in lowered]
+            flux = mm(hd, flat)
+            fj = [
+                Fraction(d(x) - j0 - d(p.zeta_C) * r[0])
+                for x, j0, r in zip(j, baseline, flux, strict=True)
+            ]
+            fh = [
+                [
+                    Fraction(
+                        hd[i][k]
+                        - Decimal(2 * (i == k))
+                        - d(ref.profile.params_resolved.geometry.kappa_H)
+                        * d(p.zeta_C)
+                        * flat[i][0]
+                        * flat[k][0]
+                        * (1 if i == k else Decimal(".5"))
+                    )
+                    for k in range(2)
+                ]
+                for i in range(2)
+            ]
+            self.assertNotEqual(mm(hd, gram), mm(gram, hd))
+        for interval, expected in zip(trial.analytic_current_residual, fj, strict=True):
+            self.assertLessEqual(interval.lo, expected)
+            self.assertGreaterEqual(interval.hi, expected)
+        for row, other in zip(trial.analytic_geometry_residual, fh, strict=True):
+            for interval, expected in zip(row, other, strict=True):
+                self.assertLessEqual(interval.lo, expected)
+                self.assertGreaterEqual(interval.hi, expected)
+
+    def test_inexact_selector_subspaces_enclose_exact_projector(self):
+        graph = GRCV4Graph(
+            ("a", "b", "c"),
+            (OrientedEdge("ab", "a", "b"), OrientedEdge("bc", "b", "c")),
+        )
+        before, _ = fixture(
+            "C",
+            graph=graph,
+            C=(3.0, 1.0, 2.0),
+            changes={"candidate": {"Lambda_C": 3.0}},
+        )
+        point = CandidateCCurrent(before)
+        exact = (
+            (Fraction(5, 6), Fraction(1, 3), Fraction(-1, 6)),
+            (Fraction(1, 3), Fraction(1, 3), Fraction(1, 3)),
+            (Fraction(-1, 6), Fraction(1, 3), Fraction(5, 6)),
+        )
+        for t in (Fraction(1, 2**40), Fraction(1, 2**10), Fraction(1, 32)):
+            # Tilt the excluded high-mode vector within the zero-mean plane.
+            v = (1 + t, Fraction(-2), 1 - t)
+            square = sum(x * x for x in v)
+            proposed = tuple(
+                tuple(float(Fraction(i == k) - v[i] * v[k] / square) for k in range(3))
+                for i in range(3)
+            )
+            forged, algebra, selector = (
+                copy(point),
+                copy(point.algebra),
+                copy(point.algebra.selector),
+            )
+            object.__setattr__(selector, "projector", proposed)
+            object.__setattr__(algebra, "selector", selector)
+            object.__setattr__(forged, "algebra", algebra)
+            enclosed = _projector_enclosure(forged)
+            self.assertGreater(enclosed[0][0].hi - enclosed[0][0].lo, 0)
+            for row, other in zip(enclosed, exact, strict=True):
+                for interval, expected in zip(row, other, strict=True):
+                    self.assertLessEqual(interval.lo, expected)
+                    self.assertGreaterEqual(interval.hi, expected)
+
+    def test_interval_inverse_near_neumann_boundary_and_exact_point(self):
+        point = ((Fraction(2), Fraction(3)), (Fraction(-1), Fraction(4)))
+        inverse = _iinverse(_im(point))
+        exact = (
+            (Fraction(4, 11), Fraction(-3, 11)),
+            (Fraction(1, 11), Fraction(2, 11)),
+        )
+        self.assertEqual(
+            tuple(tuple((x.lo, x.hi) for x in row) for row in inverse),
+            tuple(tuple((x, x) for x in row) for row in exact),
+        )
+        rho = Fraction(1) - Fraction(1, 2**40)
+        off = _Interval(Fraction(), rho)
+        inverse = _iinverse(((_iv(1), off), (off, _iv(1))))
+        for a in (Fraction(), rho):
+            for b in (Fraction(), rho):
+                det = 1 - a * b
+                exact = ((1 / det, -a / det), (-b / det, 1 / det))
+                for row, other in zip(inverse, exact, strict=True):
+                    for interval, x in zip(row, other, strict=True):
+                        self.assertLessEqual(interval.lo, x)
+                        self.assertGreaterEqual(interval.hi, x)
+        off = _Interval(Fraction(), Fraction(1))
+        with self.assertRaisesRegex(CIStageError, "unresolved") as caught:
+            _iinverse(((_iv(1), off), (off, _iv(1))))
+        self.assertEqual(caught.exception.disposition, "no_admitted_root")
+
+    def test_interval_rounding_keeps_signed_cancellation_and_reciprocals(self):
+        for scale in (Fraction(5e-324), Fraction(1), Fraction(1e308)):
+            a = _Interval(-scale, scale * Fraction(3, 2))
+            b = _Interval(-3 * scale, -scale)
+            expressions = (a + b, a - b, a * b, a / b)
+            for x in (-scale, Fraction(), scale * Fraction(3, 2)):
+                for y in (-3 * scale, -2 * scale, -scale):
+                    for interval, expected in zip(
+                        expressions, (x + y, x - y, x * y, x / y), strict=True
+                    ):
+                        self.assertLessEqual(interval.lo, expected)
+                        self.assertGreaterEqual(interval.hi, expected)
+        with self.assertRaises(CIStageError):
+            _iv(1) / _Interval(Fraction(-1), Fraction(1))

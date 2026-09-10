@@ -1,62 +1,51 @@
-# Phase 9 GRCV4 handoff — P9-6.1a/b CI batch
+# Phase 9 GRCV4 handoff — P9-6.1c reconciliation
 
 Current restart point, 2026-09-10: branch `impl/phase-9-grcv4-tranche-6`,
-created from the Tranche 5 merge at `c55960b` (`--no-ff`, parent `b981be5`).
+after accepted a/b commit `6d3c0b2` (Tranche 5 merge base `c55960b`).
 
-**P9-6.1a (C_CI) and P9-6.1b (A_CI) were accepted by the user on
-2026-09-10 after the F1–F3 corrections.** Separate PASS dispositions are
-recorded for both children. Next is P9-6.1c's shared-contract reconciliation
-and focused review; it remains unexecuted and unaccepted. The user authorized that batch order to
-share validators and review preparation while retaining independent candidate
-oracles. P9-6.1c is not yet executed or accepted.
+**P9-6.1c was accepted by the user on 2026-09-10 for A_CI and C_CI,
+with scientific verdict PASS. All three P9-6.1 children are now accepted.** The combined a/b audit already covered most shared
+obligations. This continuation reconciled that evidence and reviewed the new
+analytic residual-enclosure derivation, with focused pressure on uncovered cases.
+No new runtime defect was found and no runtime code changed.
 
-Start with the [shared CI review/source map](./phase-9-grcv4/tranche-6/P9-6.1ab-Review.md)
-and [audit followup](./phase-9-grcv4/tranche-6/P9-6.1ab-AuditFollowup.json).
-The original execution record remains unchanged and reconstructible. The audit
-followup preserves its execution-time review status and adds the subsequent
-user acceptance separately; acceptance changes no scientific source or test result.
-One CI module and one test module share domain/enclosure checks, joint residual,
-outer solve and provisional continuity composition. A's conductance/floor/current
-bounds and C's selector/Hodge/physical-current bounds remain independent.
-The concrete domain is a profile-bound Frobenius ball about reference Hodge;
-C certifies one strict-gap stratum throughout that ball. Arbitrary multi-stratum
-search and disconnected-root declarations are unsupported. Analytic existence
-and regularity are checked separately from numerical iteration. Acceptance now
-uses independent rational enclosures of the same analytic joint equations,
-including candidate/operator and star rounding, with unchanged absolute tolerance.
-The v2 recipe rejects the audit’s large rounded fixed points. Reset, consumed
-root and final-root failures retain distinct stages; A writer policy is checked
-before any zero/positive-duration root. Natural multiple roots and a final
-regular-current/failed-CI-certificate state are retained pressure tests.
+Start with the [P9-6.1c review and coverage map](./phase-9-grcv4/tranche-6/P9-6.1c-Review.md)
+and [execution record](./phase-9-grcv4/tranche-6/P9-6.1c-ExecutionRecord.json).
+The record preserves the execution-time status and source bindings; its
+subsequent acceptance object records the current disposition. Status-only
+changes to the review and verifier retain reconstructible execution-time bytes.
+The review makes the operator-versus-Frobenius norm roles explicit, derives the
+projector and inverse error bounds, and checks their connection to the absolute
+joint residual and reference-connected contraction theorem.
 
-Both candidates use only the selected current for one continuity. A uses its
-existing writer once after final-C refresh. Reset and final state have separate
-root readmission; the native post-writer singularity pressure returns no partial
-result. Zero duration preserves temporal authority. All outputs remain
-provisional; no CI lifecycle/G2, formation, spectrum, or stability is inferred.
-Current generic support remains the exact accepted C_OS singleton.
+Four new methods in the existing CI test owner passed: dense noncommuting C
+geometry with nonuniform deformation and positive relaxation; slightly wrong
+selector subspaces that still pass the sign checks; inverse enclosures near
+the Neumann boundary; and signed interval arithmetic at extreme scales.
+The accepted 48-method a/b run is reused with unchanged runtime and pre-existing
+test/helper definitions. A second full audit or repository regression was not run.
 
-The affected existing candidate/OS regression run passed **112 methods in
-312.156 seconds**, with no failures, errors or skips. The CI manifest records
-the original candidate and shared run. The audit followup records **40 CI
-methods, four native audit methods and four affected OS boundary regressions**,
-plus six current side-tool contract queries; the 112-method run is reused, not
-recounted as fresh execution. No full repository or opt-in installed-package campaign was repeated.
-Use the lean current-source/publication check from the repository root:
+P9-6.1a and P9-6.1b remain accepted with separate PASS dispositions. Their
+[review](./phase-9-grcv4/tranche-6/P9-6.1ab-Review.md) and
+[audit followup](./phase-9-grcv4/tranche-6/P9-6.1ab-AuditFollowup.json), including
+execution-time pending fields and the later acceptance object, remain byte-identical
+to `6d3c0b2`. Their statements about c are historical. The same verifier now checks
+that Git subject and the new reconciliation; no source archive is needed.
+
+From the repository root, with `.venv` provisioned from `uv.lock`:
 
 ```sh
-.venv/bin/python implementation/phase-9-grcv4/verification/verify_p961_ci.py --check
+PYTHONPATH=src:. .venv/bin/python implementation/phase-9-grcv4/verification/verify_p961_ci.py --check-reconciliation
+PYTHONPATH=src:. .venv/bin/python -m unittest -v tests.models.test_grc_v4_ci.CIReconciliationTests
 ```
 
-For numerical reconstruction, use the commands in the audit followup, from the
-repository root with `PYTHONPATH=src:.`, source matching its Git/file bindings
-and `.venv` provisioned from `uv.lock`. The two supplied audit inputs are retained
-in the repository. The followup stores compact reverse line spans for the
-uncommitted pre-audit source; `--check` reconstructs and verifies every old hash.
-No external files or source archive are required. Accepted Tranche
-5 records and earlier runs remain unchanged. Their original exact-source
-checkers belong to their recorded Git subjects; the Tranche 5 maintenance
-checker below belongs to `c55960b`, before these CI extensions.
+The concrete scope remains provisional CI on a reference Frobenius ball, with
+one whole-ball C selector stratum. Numerical acceptance bounds the analytic
+residual without rescaling the absolute tolerance. CI lifecycle, authenticated
+receipts/rollback, initializer provenance, formation, global branch/stability,
+CI G2 and G3 remain separate pending work. Public support remains the exact
+accepted C_OS singleton. The next planned work is P9-6.2a/b (persistent carrier);
+those leaves have not been started by this acceptance.
 
 The following Tranche 5 closure notes are historical at that predecessor.
 

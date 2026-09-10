@@ -11,11 +11,11 @@
     },
     {
       "path": "implementation/Phase-9-GRCV4-Handoff.md",
-      "sha256": "b7938fcb2bebf756a337d5e68e1b2e2ac683d146c3ab053bbec9ba50833479ea"
+      "sha256": "fa425a572d6c39b3ffdb49c9f9dd7f5a3c5e51de9bbaf5ae8b34482cb0d4dd22"
     },
     {
       "path": "implementation/Phase-9-GRCV4-ImplementationChecklist.md",
-      "sha256": "2278feea43c9d43ab4dcdc275e318c9642681ec47d8c40b60b3aeef0f0d31414"
+      "sha256": "e0c71a18a410be4b17899998cb6a6605493987843928caf6790d4d2ddb5c2248"
     },
     {
       "path": "implementation/Phase-9-GRCV4-ImplementationPlan.md",
@@ -99,11 +99,11 @@
     },
     {
       "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/verification.js",
-      "sha256": "71d3b55ff3af295d646b06b7c7091c3547951d194f7e8196a1e1d28ecdea2b65"
+      "sha256": "d5b7d515e756a485fe85084b3701f2fdaf91dd0699c358169b787a5b095177e4"
     },
     {
       "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/verification.test.mjs",
-      "sha256": "57af2d36c7df303c8a640f85b25c51937a8ef55b400905984a5eb605ff2a73f4"
+      "sha256": "20ee8f1e455a6d1103d6d1eb141048c1f5e2393f744f1030eda9f5289c1cc38a"
     },
     {
       "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/active_phase.py",
@@ -135,7 +135,7 @@
     },
     {
       "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/test_phase9_g1_surfaces.py",
-      "sha256": "46cf8dd22494a7732b05f4dd0cbf66994405c26bb96a1832f4cd54dd290a0fa0"
+      "sha256": "e8689c6f61607b982e15e5be9b8a841e69305ebf97f66cf4019a87888bff892e"
     },
     {
       "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/test_phase9_surfaces.py",
@@ -151,7 +151,7 @@
     },
     {
       "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/phase9_verification.py",
-      "sha256": "82c8440d1015fad5aaeea79bae3099e4c9153eeed387e2705d82e5e91d4d0179"
+      "sha256": "a388d1d2607be8b49fd8dd4a7692818e8762185292a4fba4343e4d7865f7f14f"
     },
     {
       "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/receipt_parents.py",
@@ -334,6 +334,14 @@
       "sha256": "69bb8310cb7f54c381cebb86631898562bec5198ca536264999e238662aaaef5"
     },
     {
+      "path": "implementation/phase-9-grcv4/tranche-6/P9-6.1c-ExecutionRecord.json",
+      "sha256": "7888063f11d7fa8a40fe9e2ffc8ba4de1b2fba535ed68d059279d464bd2f2ebb"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-6/P9-6.1c-Review.md",
+      "sha256": "9eeb4f123bb6feb20f80a8bc3e4e159badfcb373556da8b8af3cb4c10799efd1"
+    },
+    {
       "path": "implementation/phase-9-grcv4/verification/Phase9PathPresentation.json",
       "sha256": "e998284bc41455cbcdda8a9c884aa68c53b0f4770eab0bdb529007a94b86f09a"
     },
@@ -379,7 +387,7 @@
     },
     {
       "path": "implementation/phase-9-grcv4/verification/phase9_implementation_policy.py",
-      "sha256": "20c21f4cfa53232cb4d9048072d1732d1694e7350daaf83bf929a40fd3bab329"
+      "sha256": "5f22bf50f5eabf7dd2b95e145f356e597c6e1d64cf30e28ab9ce18a2b57df748"
     },
     {
       "path": "implementation/phase-9-grcv4/verification/test_evidence_paths.py",
@@ -439,7 +447,7 @@
     },
     {
       "path": "implementation/phase-9-grcv4/verification/verify_p961_ci.py",
-      "sha256": "21700b78f1de13da2d0777b2046a8daa18186463e9cf0e856f07478780562d58"
+      "sha256": "01d86ce615f22f1e122c7d39d0426c1ada1c57cbe17575929cd0714cc45cb2e5"
     },
     {
       "path": "specs/README.md",
@@ -474,5 +482,5 @@
       "sha256": "d3fc6e50bce85685694901e3d6f5f90ead87413877414cf8dc6ea1b9225540ce"
     }
   ],
-  "record_digest": "0fad319ddc99c51e0782cde7f99d6a629abb4379d2d4566413d281f982248814"
+  "record_digest": "8e98016b29c9031c87b20257502508df5acb4a542d428da035d0d95f426858be"
 }

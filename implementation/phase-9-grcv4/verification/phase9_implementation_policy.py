@@ -201,6 +201,8 @@ PATHS = {
     PHASE + "tranche-6/P9-6.1ab-AuditFollowup.json",
     PHASE + "tranche-6/P9-6.1ab-AuditPressure.json",
     PHASE + "tranche-6/P9-6.1ab-AuditReproducer.py",
+    PHASE + "tranche-6/P9-6.1c-Review.md",
+    PHASE + "tranche-6/P9-6.1c-ExecutionRecord.json",
     G2_ACCEPTANCE,
     HERE + "verify_p951_initialization.py",
     HERE + "verify_p952_current_writer.py",
@@ -994,10 +996,21 @@ def leaf_permissions(root):
     accepted_g2(root)
     git(root, "merge-base", "--is-ancestor", "c2cb423", "HEAD")
     ready = sorted(set(ready) | {"P9-5.1"})
-    # Explicit user-authorized a/b batch after accepted Tranche 5. The c child
-    # still requires reviewed inputs; no lifecycle or support gate is opened.
+    # Explicit user-authorized a/b batch after accepted Tranche 5.
     git(root, "merge-base", "--is-ancestor", CI_BATCH_BASE, "HEAD")
     ready = sorted(set(ready) | {"P9-6.1a", "P9-6.1b"})
+    # User requested the remaining c reconciliation after accepting both
+    # children. This opens shared test ownership, not a lifecycle/support gate.
+    git(root, "merge-base", "--is-ancestor", "6d3c0b2", "HEAD")
+    ci_name = PHASE + "tranche-6/P9-6.1ab-AuditFollowup.json"
+    ci_bytes = git(root, "show", "6d3c0b2:" + ci_name)
+    ci = json.loads(ci_bytes)
+    require(safe_path(root,ci_name).read_bytes()==ci_bytes
+            and ci["record_digest"]==digest_record(ci)
+            and ci["acceptance"]["accepted_iterations"]==["P9-6.1a","P9-6.1b"]
+            and ci["acceptance"]["status"]=="accepted_by_user",
+            "CI reconciliation requires both accepted children")
+    ready = sorted(set(ready) | {"P9-6.1c"})
     owners = {}
     for module in ownership["modules"]:
         leaves = {
@@ -1077,6 +1090,7 @@ def leaf_permissions(root):
     owners["src/pygrc/models/grc_v4_candidate_a.py"] |= {"P9-6.1b"}
     for name in CI_BATCH_PATHS:
         owners[name] = {"P9-6.1a", "P9-6.1b"}
+    owners["tests/models/test_grc_v4_ci.py"].add("P9-6.1c")
     return ready, owners
 
 
@@ -1232,7 +1246,7 @@ def work_entries(root, approval):
     )
     # The accepted baseline cannot contain later closure IDs. Register exactly
     # the user-approved successor, not a broad regex-based permission.
-    leaves.update({"P9-4.9.1", "P9-4.9.1a", "P9-4.9.2", "P9-4.9.3", "P9-6.1a", "P9-6.1b"})
+    leaves.update({"P9-4.9.1", "P9-4.9.1a", "P9-4.9.2", "P9-4.9.3", "P9-6.1a", "P9-6.1b", "P9-6.1c"})
     rows = value["entries"]
     require(len({r["path"] for r in rows}) == len(rows), "duplicate work target")
     result = {}

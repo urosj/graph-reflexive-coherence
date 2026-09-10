@@ -891,10 +891,13 @@ coverage. Record bounded shared-audit results for the available profile set.
   by the user on 2026-09-10, with a separate A_CI PASS. The
   [audit followup](./phase-9-grcv4/tranche-6/P9-6.1ab-AuditFollowup.json)
   keeps separate child results and reconstructs the original execution subject.
-- [ ] P9-6.1c: Audit shared CI realization contracts and reconcile independent
+- [x] P9-6.1c: Audit shared CI realization contracts and reconcile independent
   candidate evidence; record exactly which profiles the audit covers.
-  Not started; accepted a/b results are now available for reconciliation. Its agenda is in the shared
-  review, with new tests limited to uncovered interactions or corrections.
+  Accepted by the user for A_CI and C_CI on 2026-09-10; scientific verdict
+  PASS. The [reconciliation review](./phase-9-grcv4/tranche-6/P9-6.1c-Review.md)
+  reuses the combined audit and 48-method child run, reviews the corrected
+  enclosure derivation and records four new focused pressure methods. No
+  runtime correction or expanded CI support is claimed.
 - [ ] P9-6.2a: Implement and verify C_PC old-history reads, one scalar-ZOH
   write, declared tau, and state/reset ownership.
 - [ ] P9-6.2b: Implement and verify A_PC's candidate-specific PC contract.
