@@ -1,0 +1,828 @@
+{
+  "schema": "phase9_rg2b_graph_execution_v1",
+  "iteration_ids": [
+    "P9-6.4a",
+    "P9-6.4b",
+    "P9-6.4c"
+  ],
+  "status": "implemented_verified_pending_P9_6_4d_and_user_acceptance",
+  "authority": "User requested correction of the supplied a/b audit, followed by graph generalization at c. The earlier shared c audit was moved to d. This request does not accept or commit any leaf.",
+  "P9_6_4d": "pending_unexecuted",
+  "user_accepted": false,
+  "RG2b_G2_accepted": false,
+  "G3_accepted": false,
+  "review": "implementation/phase-9-grcv4/tranche-6/P9-6.4c-Review.md",
+  "audit": {
+    "original_verdict": "HOLD for provisional ordinary-step scope; bounded scalar completion theorem and finite sections passed the external review.",
+    "input_content_hashes": {
+      "audit_reproducer_sha256": "43d61d02c731893f2f8afd83de0cb3a49f3258454ba084f5bf56654ba504c39d",
+      "audit_pressure_sha256": "ae6bf21f5753835e67a3d7c40ae1f2dbbbcfa38fd82bc9a9e37963fbcd648f6e"
+    },
+    "findings": [
+      {
+        "id": "F1",
+        "gap": "Reset/final section geometry lacked the native fixed-h current postcondition.",
+        "correction": "Validate both reconstructed geometries natively; preserve one consumed current, continuity and A writer."
+      },
+      {
+        "id": "F2",
+        "gap": "Native no_admitted_root was collapsed to domain_failure.",
+        "correction": "Preserve typed disposition and cause at the owning boundary stage."
+      },
+      {
+        "id": "F3",
+        "gap": "Unsafe index and clock overflow were detected after dependent work.",
+        "correction": "Validate the prospective index and finite clock at admission."
+      }
+    ],
+    "native_original": {
+      "methods": 7,
+      "failed_assertions": 12,
+      "errors": 0,
+      "elapsed_seconds": 49.978
+    },
+    "native_corrected_proposals": {
+      "methods": 7,
+      "failures": 0,
+      "errors": 0,
+      "elapsed_seconds": 40.329
+    },
+    "native_tests": "tests.models.test_grc_v4_rg2b.RG2bAuditRegressions",
+    "additional_pressure": "tests.models.test_grc_v4_rg2b.RG2bBoundaryPressure",
+    "external_scope": "The auditor used isolated scaffolding for its larger campaign. The original native replay reproduced seven methods with twelve failed assertions; the integrated repository methods are the portable reproducer. The isolated 180 log, 24 parameter, 216 point/derivative, 24 step and 8 inverse comparisons are attributed audit context, not a new native run."
+  },
+  "development_findings": [
+    {
+      "gap": "Matrix error fractions exceeded the default Python integer-string digit limit.",
+      "correction": "Outward 160-bit bounds before certificate use and error serialization; no global interpreter setting change."
+    },
+    {
+      "gap": "A zero cutoff at an intermediate inverse iterate cannot imply zero output at the target.",
+      "correction": "Require the inverse residual bound before returning reference geometry."
+    },
+    {
+      "gap": "A private point enclosure could receive exact coordinates differing from the native represented state.",
+      "correction": "Require identical represented state, geometry and reference before using its residual."
+    }
+  ],
+  "original_execution": {
+    "record": "implementation/phase-9-grcv4/tranche-6/P9-6.4ab-ExecutionRecord.json",
+    "record_digest": "113d71fb3bdd3f8bfee6bf321296a820bbea32d915ab5f229d81f1568e94cbbe",
+    "scalar_methods": 29,
+    "affected_A_methods": 52,
+    "new_execution": false,
+    "interpretation": "Historical a/b subject only; scalar RG2b is freshly rerun after correction. A current/writer source and the 52 consumer tests have not changed since that run."
+  },
+  "prior_source_delta": {
+    "src/pygrc/models/grc_v4_rg2b.py": {
+      "current_sha256": "8fb62895e6c89e9a1da3dbffde451318a00d3879cb9e76dcb532c6033cc7bfea",
+      "splices_to_original": [
+        {
+          "start": 0,
+          "stop": 1,
+          "old_lines": [
+            "\"\"\"Finite, certified scalar RG2b completions; no lifecycle/support authority.\n"
+          ]
+        },
+        {
+          "start": 2,
+          "stop": 4,
+          "old_lines": [
+            "The initial domain is two vertices joined by one non-loop edge. Both complete\n",
+            "candidate laws remain active. A fixed compact cutoff extends the lagged maps;\n"
+          ]
+        },
+        {
+          "start": 13,
+          "stop": 14,
+          "old_lines": []
+        },
+        {
+          "start": 43,
+          "stop": 51,
+          "old_lines": []
+        },
+        {
+          "start": 220,
+          "stop": 231,
+          "old_lines": []
+        },
+        {
+          "start": 234,
+          "stop": 237,
+          "old_lines": [
+            "        and params.approximation_policy_id == APPROXIMATION\n",
+            "        and params.error_norm_id == ERROR_NORM\n",
+            "        and params.containment_certificate_id == CONTAINMENT\n"
+          ]
+        },
+        {
+          "start": 241,
+          "stop": 242,
+          "old_lines": [
+            "    domain = RG2bDomain.from_identity(params.extension_evaluator_id)\n"
+          ]
+        },
+        {
+          "start": 244,
+          "stop": 251,
+          "old_lines": [
+            "        len(graph.live_node_ids) == 2\n",
+            "        and len(graph.live_edge_ids) == 1\n",
+            "        and graph.oriented_edges[0].tail_node_id\n",
+            "        != graph.oriented_edges[0].head_node_id,\n"
+          ]
+        },
+        {
+          "start": 265,
+          "stop": 270,
+          "old_lines": [
+            "        ref.pairings.vertex.matrix == ((1.0, 0.0), (0.0, 1.0)),\n"
+          ]
+        },
+        {
+          "start": 294,
+          "stop": 296,
+          "old_lines": []
+        },
+        {
+          "start": 303,
+          "stop": 313,
+          "old_lines": []
+        },
+        {
+          "start": 405,
+          "stop": 406,
+          "old_lines": []
+        },
+        {
+          "start": 409,
+          "stop": 417,
+          "old_lines": []
+        },
+        {
+          "start": 559,
+          "stop": 565,
+          "old_lines": []
+        },
+        {
+          "start": 677,
+          "stop": 681,
+          "old_lines": [
+            "            numerics=APPROXIMATION,\n"
+          ]
+        },
+        {
+          "start": 694,
+          "stop": 703,
+          "old_lines": [
+            "        _require(data[\"numerics\"] == APPROXIMATION, \"unknown RG2b approximation\")\n"
+          ]
+        },
+        {
+          "start": 704,
+          "stop": 705,
+          "old_lines": [
+            "            GeometryStageInputs.from_payload(data[\"inputs\"]),\n"
+          ]
+        },
+        {
+          "start": 731,
+          "stop": 733,
+          "old_lines": []
+        },
+        {
+          "start": 756,
+          "stop": 786,
+          "old_lines": []
+        },
+        {
+          "start": 790,
+          "stop": 791,
+          "old_lines": [
+            "                centers = (d.center_C, d.center_C) + (\n",
+            "                    (d.center_W,) if len(coords) == 3 else ()\n",
+            "                )\n"
+          ]
+        },
+        {
+          "start": 801,
+          "stop": 802,
+          "old_lines": []
+        },
+        {
+          "start": 804,
+          "stop": 806,
+          "old_lines": [
+            "            selected = replace(before, geometry=section.geometry, stage=\"rg2b_section\")\n",
+            "            point = (\n",
+            "                CandidateACurrent(\n",
+            "                    selected,\n",
+            "                    cast(CandidateADifferentialReference, self.differential_reference),\n",
+            "                )\n",
+            "                if isinstance(ref.profile.params_resolved.candidate, CandidateAParams)\n",
+            "                else CandidateCCurrent(selected)\n",
+            "            )\n"
+          ]
+        },
+        {
+          "start": 822,
+          "stop": 823,
+          "old_lines": []
+        },
+        {
+          "start": 825,
+          "stop": 825,
+          "old_lines": [
+            "                _require(\n",
+            "                    before.step_index < 2**53 - 1,\n",
+            "                    \"RG2b step index exceeds safe integer range\",\n",
+            "                )\n"
+          ]
+        },
+        {
+          "start": 843,
+          "stop": 844,
+          "old_lines": [
+            "                    time=float(Fraction(before.time) + Fraction(before.dt)),\n"
+          ]
+        },
+        {
+          "start": 847,
+          "stop": 848,
+          "old_lines": [
+            "                x = _coordinates(before, before.current)\n",
+            "                y = _coordinates(following, following.current)\n",
+            "                h = section.geometry.one_form_hodge.matrix[0][0]\n",
+            "                jets = [_Jet(_iv(v)) for v in (*x, h)]\n",
+            "                f, g, j = _raw(before, d, section.certificate.selector_rank, jets)\n",
+            "                native_current_error = (\n",
+            "                    _iv(point.current.values[0]) - j.value\n",
+            "                ).magnitude\n",
+            "                native_state_error = max(\n",
+            "                    (_iv(actual) - old - delta.value).magnitude\n",
+            "                    for actual, old, delta in zip(y, x, f, strict=True)\n",
+            "                )\n"
+          ]
+        },
+        {
+          "start": 849,
+          "stop": 878,
+          "old_lines": [
+            "                analytic_generated = (\n",
+            "                    _iv(ref.pairings.one_form.matrix[0][0]) + kh * g.value\n",
+            "                )\n",
+            "                native_geometry_error = (\n",
+            "                    _iv(generated.one_form_hodge.matrix[0][0]) - analytic_generated\n",
+            "                ).magnitude\n"
+          ]
+        },
+        {
+          "start": 890,
+          "stop": 891,
+          "old_lines": [
+            "                    + Fraction(solver.relative_tolerance) * j.value.magnitude\n"
+          ]
+        },
+        {
+          "start": 906,
+          "stop": 916,
+          "old_lines": [
+            "                residual = abs(\n",
+            "                    Fraction(restart.geometry.one_form_hodge.matrix[0][0])\n",
+            "                    - Fraction(generated.one_form_hodge.matrix[0][0])\n"
+          ]
+        },
+        {
+          "start": 921,
+          "stop": 928,
+          "old_lines": []
+        },
+        {
+          "start": 955,
+          "stop": 959,
+          "old_lines": []
+        },
+        {
+          "start": 965,
+          "stop": 967,
+          "old_lines": []
+        },
+        {
+          "start": 977,
+          "stop": 981,
+          "old_lines": [
+            "            numerics=APPROXIMATION,\n"
+          ]
+        },
+        {
+          "start": 990,
+          "stop": 999,
+          "old_lines": [
+            "        _require(data[\"numerics\"] == APPROXIMATION, \"unknown RG2b step recipe\")\n"
+          ]
+        },
+        {
+          "start": 1000,
+          "stop": 1001,
+          "old_lines": [
+            "            GeometryStageInputs.from_payload(data[\"inputs\"]),\n"
+          ]
+        }
+      ]
+    },
+    "tests/models/test_grc_v4_rg2b.py": {
+      "current_sha256": "e77723f9814e2acbb444c8d7c84cbcedc37787b51338d721311406d818a857b9",
+      "splices_to_original": [
+        {
+          "start": 28,
+          "stop": 31,
+          "old_lines": []
+        },
+        {
+          "start": 692,
+          "stop": 984,
+          "old_lines": []
+        }
+      ]
+    },
+    "implementation/phase-9-grcv4/verification/verify_p964_rg2b.py": {
+      "current_sha256": "82492a1ba2d771725033708046afe387cfbb4248fa3fe32a3477c428d2054ac2",
+      "splices_to_original": [
+        {
+          "start": 208,
+          "stop": 229,
+          "old_lines": []
+        },
+        {
+          "start": 232,
+          "stop": 240,
+          "old_lines": [
+            "    p.require(value[\"source_bindings\"] == sources(), \"changed RG2b sources\")\n"
+          ]
+        },
+        {
+          "start": 250,
+          "stop": 260,
+          "old_lines": []
+        },
+        {
+          "start": 288,
+          "stop": 297,
+          "old_lines": [
+            "    p.require(changed == RUNTIME, \"RG2b changed unrelated numerical owners\")\n"
+          ]
+        },
+        {
+          "start": 299,
+          "stop": 300,
+          "old_lines": [
+            "        {\"P9-6.4a\", \"P9-6.4b\"} <= set(ready) and \"P9-6.4c\" not in ready,\n"
+          ]
+        },
+        {
+          "start": 308,
+          "stop": 310,
+          "old_lines": [
+            "        children=\"verified_pending_independent_review\",\n",
+            "        P9_6_4c=\"pending_unexecuted\",\n"
+          ]
+        }
+      ]
+    }
+  },
+  "concrete_fixtures": {
+    "module": "tests.models.test_grc_v4_rg2b_graph",
+    "function": "graph_fixture",
+    "ordinary_paths": [
+      8,
+      16
+    ],
+    "repeated_beats_per_size": 2,
+    "high_degree_vertices": 12,
+    "cycle_vertices": {
+      "vertices": 32,
+      "execution": "optional_only_on_explicit_request",
+      "full_campaign": "not_completed"
+    },
+    "rich_graph_vertices": 7,
+    "rich_edges": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        4,
+        5
+      ]
+    ],
+    "reconstruction": "Exact profiles, signed/relabelled graphs, numerical tolerances, nonzero parameter values and assertions are in the identified test module."
+  },
+  "claim_ceiling": "Provisional completion-relative, Lipschitz-only A/C sections and ordinary beats for computed fixed finite graph domains. No arbitrary graph-size cap, C1 section, global base-state invariance, topology/context event semantics, live lifecycle or G2/G3 support is granted.",
+  "record_digest": "59e6f781baf92e3dfdaffd8b3af3c7b3a94f16d2af8c082322f5de4e94e30769",
+  "source_git_base": "ba45482daa40841b5c10997409f7f6254ea09532",
+  "source_bindings": {
+    "implementation/investigations/grc9v4-constitutive-design/drafts/2026-09-GRC-V4.md": "8a7f86b51e1df0a3bb9d5503007c15784d27ca99dbbd85cf5d4b61ab4a27d3fc",
+    "implementation/investigations/grc9v4-constitutive-design/drafts/GRCV4-proposal.md": "6a1935c9158e3391e8ed1ad7ab9cc891f4aad1ce2fbd12da89aa8b6469a5b7c0",
+    "implementation/phase-9-grcv4/verification/verify_p951_initialization.py": "f115c6de4b8ac74a678a05b77834ed40baf1e18b2e0a6082626f226ea6948310",
+    "implementation/phase-9-grcv4/verification/verify_p961_ci.py": "bd7a257b30fcef38a6c9f6dd57ac97bd3012d848de669a52aa79db4223e5f7d7",
+    "pyproject.toml": "018c364413f75ee49186975c05e9cdaba7a78e171d47833609fbebc223a64a66",
+    "specs/grc-v4-conformance-vectors.json": "9d9917511816f8d6ca97feca14de3ffca6b720504041f879bb1fa3e8e57b4e22",
+    "specs/grc-v4-spec.md": "b0f885af7a40c55334c55ca26441c1bbdf1cf62dbfa4c7218c412d9dd44e0ce9",
+    "src/pygrc/models/__init__.py": "3253def6cdda3527bdf5989bc004421f0fbc11b5df39d932127f65e84e46e234",
+    "src/pygrc/models/_base.py": "e5e2a310def994b0583ba0185e3243253095a5a919804da2fce860df1911eeff",
+    "src/pygrc/models/grc_9.py": "a857f41ea919bb311d283681a13609e4bac6c5295d975ab61e57559454131de1",
+    "src/pygrc/models/grc_9_checkpoints.py": "283b662b3ac232465504082ae68a874d5b00f7745ee39eeee2d03828bbfa85d7",
+    "src/pygrc/models/grc_9_coarse.py": "43a20c5ae379e488ce7abcdc8b1f2b68007ba27fd27b3561f361d180e5906b49",
+    "src/pygrc/models/grc_9_expansion.py": "f71b7370e56b59328692000831842435e6512dcc3539f8dd9e5ac059f1eb1569",
+    "src/pygrc/models/grc_9_grcl9_lowering.py": "40a855d6f56417cabf442c68cd32280b1c07dcc4075a8cad2570750c9cca6c7c",
+    "src/pygrc/models/grc_9_grcl9_provenance.py": "c21593818c52c905c19f865d9fbe22937d560478b2c0f65efd44ae635b9fb122",
+    "src/pygrc/models/grc_9_landscape.py": "6f3059b701e28413b0252442d4b8449cfb8ccb341338b14da71d810d5965f244",
+    "src/pygrc/models/grc_9_ports.py": "7f9142f96de1e1a2880db5b0d767df4a78866093a8b051a2615778d3fa8ac780",
+    "src/pygrc/models/grc_9_state.py": "b3d979fe4bffbc86fe256f71ff4894c3da03fd4af706457a281f650242ca26b7",
+    "src/pygrc/models/grc_9_v3.py": "d297def1eddfaf79a7ad3d6b676caaeebb29e6d7235f4fac5c6729bd7e26ca9e",
+    "src/pygrc/models/grc_9_v3_choice.py": "ab8be0391a37e71d4610022afe3f64dac6102b929ade4448a59e7f4e02167933",
+    "src/pygrc/models/grc_9_v3_grcl9v3_lowering.py": "653d0963d4df55c278cf1f6fc475a764ef03a13eee7d2ada756f5605434a1f05",
+    "src/pygrc/models/grc_9_v3_grcl9v3_provenance.py": "607c65b7dc28e45c5c73801e76144f112e122948d9b478b2722575788407e33b",
+    "src/pygrc/models/grc_9_v3_runtime.py": "f6f12de4e9bf66cd97b4063854ea225ae00874fed7073d4e72775891db54f502",
+    "src/pygrc/models/grc_9_v3_sparks.py": "fa1db78355e1dba41245da44c9c515ac09820035ca451723873da779420ee820",
+    "src/pygrc/models/grc_9_v3_state.py": "4ab5ffcb95d69a0767b24d6c95277ba3619a5d477c4865cc0d31735a2377918e",
+    "src/pygrc/models/grc_v2.py": "949bbb90766193934c96e4c4cbb84d3838e175b92968d93f9650477cce9e925e",
+    "src/pygrc/models/grc_v2_checkpoints.py": "e51abbec14fd03d5a54ab022529a2fce1b55d2f5cfce574ffdceae388225e45e",
+    "src/pygrc/models/grc_v2_landscape.py": "a531e7c4c8dee941b353696ff47b6265ecc03ac0ded07ab0fe9756479842661e",
+    "src/pygrc/models/grc_v2_state.py": "d9edff07065309059d030531febec4dd63c9586745f26cb9dd8eb309b357a659",
+    "src/pygrc/models/grc_v3.py": "01081bc3f2b394a0797d93c38539a3d6139c6bb412323f6eda09a4fe7c66b473",
+    "src/pygrc/models/grc_v3_checkpoints.py": "ed27a01eb18decc506450d0a25cd5fc7861c1f1bcf3fce5af84373b42eb67b96",
+    "src/pygrc/models/grc_v3_differential.py": "3e88a76d7eea94b255c588300305e5119cebc1e2599dd9a43e0aaf80cc9af837",
+    "src/pygrc/models/grc_v3_landscape.py": "a6d81d828bcf6e8c67d3e2e40bdbffd311d7126cf0a4b3b5efb72559aef687ad",
+    "src/pygrc/models/grc_v3_landscape_native.py": "d4a93b18bfeb71eb5098309b9ed0c2ae42c41b387b964a1ebbf5a43fd9ddb019",
+    "src/pygrc/models/grc_v3_state.py": "d0399ce9a733b8aeb1662de72ad0088cceab239e9b0dcf51c52367e70eb65e1c",
+    "src/pygrc/models/grc_v4.py": "338ad4195d4c27a492738820b6c88a44b570a9376c2ea5992c1a6fc62b5e5dc4",
+    "src/pygrc/models/grc_v4_assets/__init__.py": "a1f3aba168a9f9331d1fc9580d5055404f8bc4c705936c7e388e7a47f80a0051",
+    "src/pygrc/models/grc_v4_assets/asset-index.json": "6d4adce3ac2d98a1c16c82f31768be7e1a1480df5aaf886d2507b0e1a7dc55b2",
+    "src/pygrc/models/grc_v4_assets/grc-v4-contract-schema.json": "3fd072fc8c2b315f1b5dc32a4e4821a5082b5f3fc9d9a4794c007419a7aa0bea",
+    "src/pygrc/models/grc_v4_assets/grc-v4-specification-release.json": "946c8944b4b06645209d159ec056b891bf6fd153c51dedef38de0a862e127fff",
+    "src/pygrc/models/grc_v4_assets/grc-v4-specification-release.sha256": "d3fc6e50bce85685694901e3d6f5f90ead87413877414cf8dc6ea1b9225540ce",
+    "src/pygrc/models/grc_v4_candidate_a.py": "5040bf690d3da3366be74de6e17b272b52d21adba054426ffda778a744ca862a",
+    "src/pygrc/models/grc_v4_candidate_c.py": "43be859ab21e687a270f85c427e3d63a087fa8d74d8362749ae6278ecff36d17",
+    "src/pygrc/models/grc_v4_ci.py": "395d757adb1cb150558fd7d70d0dc03501525b872f293c49afb25d4853bf9bf9",
+    "src/pygrc/models/grc_v4_codec.py": "0b16ebcb1172c079b72410c0ae9b0c1fec47ed6bd5eb2360bf3a6b5507d2874c",
+    "src/pygrc/models/grc_v4_geometry.py": "cb2d9b900d0091b59e4fe77ef4acc4037225e79b2ee166c99486c93b307c92a4",
+    "src/pygrc/models/grc_v4_lifecycle.py": "25debf6d1e7a04fe8b1511500cdad4088a9a7cd4b3929b6dc1c263fde280826f",
+    "src/pygrc/models/grc_v4_pc.py": "6c0465b9225b2a824ca8d1429bde6a72b85508c0c161fb66faa28b184ef0f234",
+    "src/pygrc/models/grc_v4_profile.py": "66441b1c1bd50bd64183dbc39980f2a013f1ce554a10d7364490ff3854ba9988",
+    "src/pygrc/models/grc_v4_realizations.py": "c869464cc8bc6c78da108e76a60ff11d47e53846f1cd834b0f8518010f90bfdb",
+    "src/pygrc/models/grc_v4_rg2b.py": "8fb62895e6c89e9a1da3dbffde451318a00d3879cb9e76dcb532c6033cc7bfea",
+    "src/pygrc/models/grc_v4_rg2b_graph.py": "29375671582e66006e216de3a9be6d1685db3709e05865b215b103090a96681b",
+    "src/pygrc/models/grc_v4_state.py": "b0ccf06ef91b66feb8670fb67281465998f4bcb085c4d547fedd3ce6d85ad3cb",
+    "src/pygrc/models/grc_v4_step.py": "741e533c004b3ec8da2fc9e5e3f0c9bc404fb1a4f439d69f6e6d0d07643f59a7",
+    "src/pygrc/models/grc_v4_transport.py": "4ead39ae9343c4873a7cef149471e72ce6df562f82b2a6f03c3c00f1b07f4730",
+    "src/pygrc/models/lgrc_9_v3.py": "37f9f9a0452fba447c875f7e652d8632dc49bb159c0d1af5caecb4ce4acf48bb",
+    "src/pygrc/models/lgrc_9_v3_construction.py": "c59f8d0747a5a6f5c954927fd1e1b1d71464bdffbdbf0401e39b17219a364938",
+    "src/pygrc/models/lgrc_9_v3_contract.py": "b86fb41ab530a7aa01abdf01dbc048da10c2e312a18c8b874cbd1386c4794680",
+    "src/pygrc/models/lgrc_9_v3_identity.py": "02a7b9dddb16b925042e014725aa13f66883f16f05f04ca754883dd002fc4ac2",
+    "src/pygrc/models/lgrc_9_v3_packets.py": "14d99292e18e2fe34e0fd5c6a1f69051e82115a051d142f10792775e2321e58f",
+    "src/pygrc/models/lgrc_9_v3_restoration.py": "e7c6b143c08eb0bda210152aeb0f6b12e0efcb666268416404ed3b649dd46931",
+    "src/pygrc/models/lgrc_9_v3_runtime.py": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4",
+    "src/pygrc/models/lgrc_9_v3_runtime_state.py": "ef409403954749a45fbf444116a9a253b95b3e2d74a119006f1cbb364a83630c",
+    "src/pygrc/models/lgrc_9_v3_timing.py": "3a8528da792ee57ea6a229cdf952af38a52c3f2689525cf12adf63a27a63983c",
+    "src/pygrc/models/lgrc_9_v3_topology.py": "f3cf7e2281c4073531a5951a19f9ae9141a336f9f9b6398f76eda7e1493abde4",
+    "tests/models/__init__.py": "a75a97f69ccfe9043bca38dcb91a41a7393d299d8af2fe804cc034930fb6c440",
+    "tests/models/grcv4_conformance_harness.py": "d25ec2fd7a8f27a39003a0f1b6a15152a4b6751c5f440d3d911b992e86df0849",
+    "tests/models/grcv4_reference_oracles.py": "f24407aad2f54ebb6910c073fc69fbb58ffc858c7affeb6cc51c2196606813ff",
+    "tests/models/test_family_stubs.py": "68693ccd01da4760a6d099d9cd5e4e52a6d5084b03b684eee1847fe972fa9c9d",
+    "tests/models/test_grc9v3_spec_reconciliation.py": "6ee26588ebebab2b64bd89814bda4baf98dfe3430be7858f597b11769351f94a",
+    "tests/models/test_grc_9_coarse.py": "6d6552d1381ecc5bd41b77b479d619853f9e75306dec089f642fd2441eaaabc8",
+    "tests/models/test_grc_9_expansion.py": "de1e080fa26b841ab46089269b71394160a94c15730edb621dae643ef8c63eb3",
+    "tests/models/test_grc_9_grcl9_lowering.py": "3b4345e29661324acb48a2d7b99f8e3fa8603e3dce74e062a37984b6ab25845c",
+    "tests/models/test_grc_9_landscape.py": "1d5cbca650e6fcea4c7c106dff5bf24067445dadceb9eb5ece32e2f5076650a5",
+    "tests/models/test_grc_9_runtime.py": "3df5f4c98ac18e43266511246e21e3ba62926beb34570090ffdac87481ec3ae0",
+    "tests/models/test_grc_9_sparks.py": "b33b02efecfca729d72715de08c3a6248ccd690a9d3498bfdc0ff3cd0ed74447",
+    "tests/models/test_grc_9_state.py": "1dbdb68d8c9b78539c667e6a548c4673d7a27d86f02f24faa5dc216584919d9a",
+    "tests/models/test_grc_9_step.py": "962d266938a06c1894361e9f3d97cdea59ba048ba8a8c6e43cc5832c001a9e05",
+    "tests/models/test_grc_9_tensor.py": "cc8ce248febbec9d6ef24db28e3a2a40241ebe2d5aa1e6bd4cd987a23a13c191",
+    "tests/models/test_grc_9_v3_choice_budget.py": "a3e203069b470e62da185930abdf52d98848666d7ef627b23ea6ea7445e0fff9",
+    "tests/models/test_grc_9_v3_coarse.py": "36945571d4d9bdcee8fa24d07119a0f47f83b015524ec0f370e9da5a28187841",
+    "tests/models/test_grc_9_v3_column_h_assisted.py": "11216319f7bd26b38316d0fa0b1b0ad5dd482eafeabda0e97e10efb411228858",
+    "tests/models/test_grc_9_v3_differential.py": "6db9601146e851e686c96bafb1fa8bb972fe117ef9e02c2ccceade9b6049b906",
+    "tests/models/test_grc_9_v3_grcl9v3_lowering.py": "a94250d721c479475a39d014c43494b5fc5e204b2b32d076526deeb6f476ed29",
+    "tests/models/test_grc_9_v3_hessian_readiness.py": "c1ed11fe4fcab3d83ce29caf9457a0999e110857e486385dd7d157289a282936",
+    "tests/models/test_grc_9_v3_representative_runtime.py": "0c841de19954f98019dbedb90174bd53cac731862e8b503e3a161464e7347b00",
+    "tests/models/test_grc_9_v3_sparks.py": "53b6337b50ffa97bfa4cbe34676b5817837fd6864cbe5870c5ed0acf256b310b",
+    "tests/models/test_grc_9_v3_state.py": "fd1bf3f4fe3752c416fdc419f39d1a85bac608d194b5c434634a3602f7f74246",
+    "tests/models/test_grc_9_v3_step.py": "dab5f857f395188c09c70cf0f5d257578e107422268908ec869746eecde52c69",
+    "tests/models/test_grc_9_v3_transport.py": "e5fbd4c3012bbf4afbaceddb990afcceea0a6eec96f3d2f080351becc79fdadd",
+    "tests/models/test_grc_v2_budget_observables.py": "2510fc8efd36b2c927edbbb15fea27b5d6c97d16e124a10fa2019350faef43d6",
+    "tests/models/test_grc_v2_construction.py": "09d9ff8cd56dbd6cc646b19bfcaa2d038b315ed7b5f7635486f7c78f4b3dc5d3",
+    "tests/models/test_grc_v2_landscape_blueprint.py": "dc0bb21973a0571b8c4ccefc059e477498b2cc05ce8e9f85250ef834d84bc942",
+    "tests/models/test_grc_v2_landscape_import.py": "b4d4e3ee60db84769b0b9dc023bdff56a38164898fdc715b1cf139e755288ce7",
+    "tests/models/test_grc_v2_landscape_runtime.py": "0de21b5d85afecbcbd93ee040ab372f5c23feda6eac3af6e6948d8075705891f",
+    "tests/models/test_grc_v2_metric_labels.py": "072031927ba95ac478c1900ee4ec31bf540480fc6ff7f9778f23faa913d5b4d7",
+    "tests/models/test_grc_v2_runtime_persistence.py": "29d3016512f8bf75f9c318c382a6c9f11a689f17ffabd3e7788f9d238bbb319e",
+    "tests/models/test_grc_v2_sparks.py": "b41c5c7170fb41fa5fd675246aa0cd3d5b09878bc961820f27fed1ee775cab2c",
+    "tests/models/test_grc_v2_step_skeleton.py": "09b8144dcf540f4a5d1680834f58e26fb4fc464ce9150728a156f5df8ca88842",
+    "tests/models/test_grc_v2_topology_events.py": "d7181153112da5d56e82dec448c0171df9f7c2ca215b150ca89b8888fdf15966",
+    "tests/models/test_grc_v2_validation_matrix.py": "6814ad6aec6a4743a1666ba3c4ff4f47055a203f6afce33f2ddf161682f6ff45",
+    "tests/models/test_grc_v3_choice.py": "3fa092c6f4d9b65b35173a219537b82d1176d38f9772576c9e41e2f222d8a240",
+    "tests/models/test_grc_v3_differential.py": "148a9422b2a84040b4716a9a1ab4d508f35020a22ad4aac67aa296ab8ba88aea",
+    "tests/models/test_grc_v3_frontier_birth.py": "5078ff981c5cd0b07f08b16fe4c55263a07ab18ff84450322c5bf05381db10e7",
+    "tests/models/test_grc_v3_hierarchy.py": "c40c383d6504986e2353a296c873b137a03a65581454896fd0d7e62cdb4d94a2",
+    "tests/models/test_grc_v3_landscape_runtime.py": "5b09f3e05794480472c58b72016ff055c5957f9c1f0318d7f03fcdb43a1e22be",
+    "tests/models/test_grc_v3_metric_labels.py": "18705d2e29498e83181aea8d6d1b1e348e0e3404d12ed2585bdf17cd7beb2f1e",
+    "tests/models/test_grc_v3_runtime.py": "3dbc5bc167404d70f21a53ed582edd2b0f1371eaa92fd112d9a126790af3fb07",
+    "tests/models/test_grc_v3_serialization.py": "86701f465a94a0eacdde146f5294c61bc1f6db3aec2b4591c66d6e66ca0e356a",
+    "tests/models/test_grc_v3_sparks.py": "32d5fffe5174379f6cb8bf73e3791e403aad0d9979174e0887aac7ed9e944d83",
+    "tests/models/test_grc_v3_state.py": "f3c66862b1ff7c3f9aaf931a94e3abe17c990c18c065d42222d448d81e8d010c",
+    "tests/models/test_grc_v3_step.py": "cec289512df7f33a21c80ed6f46d23f0d34be6208524b4b2ee1a4dddcd2864e2",
+    "tests/models/test_grc_v4.py": "718a1cb287b5f92ffb900bab4cda14b6b8b4148b28bad38010bd26353ab80edc",
+    "tests/models/test_grc_v4_candidate_a.py": "6f54255ee3c766621c30a3f236f4104d3981c757c15d76ccd55b63e98a3464d2",
+    "tests/models/test_grc_v4_candidate_c.py": "10d4d9f2f763803a6c6509389bc834f6e1756ee1a2e1c426a7ad94ba83e13392",
+    "tests/models/test_grc_v4_ci.py": "9dbede3935b494e1ef53424fdc588db08fd1c88925cf9d9c543d3a3b17620cd8",
+    "tests/models/test_grc_v4_cipc.py": "a8b7922377543cb0eca3cf08cb83e0d0d26c09173b1d34f5b65ddfe70bc86ba9",
+    "tests/models/test_grc_v4_codec.py": "c9ffa5a9de7e97c1432ab67d308777c78f9982e3b0e9fbed39eb3389f1e16079",
+    "tests/models/test_grc_v4_geometry.py": "8e954cdf956e0b8aef585c948fc307c2466b9e2a83ac2f6933387297acf73004",
+    "tests/models/test_grc_v4_lifecycle.py": "3af96fc343d33f94dde2066c2092b21d1143a9fbf5fc6d13b68915c5ca7aa788",
+    "tests/models/test_grc_v4_pc.py": "c52e3819a7481c10a36f258facc459b8a24117ac1c92a3fb33d8e4c154990d2e",
+    "tests/models/test_grc_v4_profile.py": "f88de45246927ca3e37a9c60db06eb11d91867b89f58c4b000e95545d8affe6f",
+    "tests/models/test_grc_v4_realizations.py": "68ca00832aa25ee96ed7993a61cf4d56d32af2792bffbbea381d550883da9aa3",
+    "tests/models/test_grc_v4_rg2b.py": "e77723f9814e2acbb444c8d7c84cbcedc37787b51338d721311406d818a857b9",
+    "tests/models/test_grc_v4_rg2b_graph.py": "7050c1e42c295e946f503a1f62cfad77ea580074a6622c181adf070b0d2dfb94",
+    "tests/models/test_grc_v4_state.py": "d7ce02acc2d663fd3f4513158193dd473a78c1f42bc985edfa2d2eff0943fb54",
+    "tests/models/test_grc_v4_step.py": "d060883a2b355e51eae035799461f6f030253b1e16269b207d9a66e6476c9c4f",
+    "tests/models/test_grc_v4_transport.py": "51551796a0e6e344b66f21d1a5767afe39173e1a77639ba9e9271061bff02684",
+    "tests/models/test_lgrc_9_v3_autonomy_contract.py": "1172e6a8caf79fcf57848e8b1dd788251e4978e3f34ee3f595330a5133610e17",
+    "tests/models/test_lgrc_9_v3_construction.py": "ed397b97cb586eec30a882d5b4da92f395ade95f4cba6b3b1b6823fe2c944999",
+    "tests/models/test_lgrc_9_v3_contract.py": "38574deb0bf0790ea9d63800d800478da5ffbe65073dd0c570f361dc85d5ba2b",
+    "tests/models/test_lgrc_9_v3_module_split.py": "50e920647cb35aa824a1a2a15bdd6176e2b9bbcf0f8a4ac864be14caee6a54bb",
+    "tests/models/test_lgrc_9_v3_native_packet_loop_baseline.py": "e9f5fe5a644007b8246a548c687c51bd5b561d0364cd3a2ffc31c40f7c31b520",
+    "tests/models/test_lgrc_9_v3_native_packet_loop_control_parity.py": "8cc6dd9fbfca574b8370d46997a2d84e0b910eede52a0d3dee2c67200631cddd",
+    "tests/models/test_lgrc_9_v3_native_packet_loop_route_aspect.py": "9d0a55c702f8e77bd9204752f5f4f6993a493bdb9d1022ad907c9313a30401bd",
+    "tests/models/test_lgrc_9_v3_native_packet_loop_surplus_trigger.py": "ebd56dc1d25a10014dde069c0db2102f7c4a28a10edfa1c2d38b7b619449a193",
+    "tests/models/test_lgrc_9_v3_restoration.py": "881e1596ee39594bb21ce1ae9e3928c1a9eafe79255dbc69438d4de98c9d5b97",
+    "tests/models/test_lgrc_9_v3_restoration_matrix.py": "b5c740545022c3be11e256d95645b57954bce993a46e7cc26edcca33517eb154",
+    "tests/models/test_lgrc_9_v3_runtime.py": "19f310a120c5efaa4ee068fca7c6b7ffc9cedec745bc42e1f8156eb120b8736b",
+    "tests/models/test_reset_baseline_persistence.py": "6236748f6bc7995dda86f7a207ccce373b33d1b7ecd90849106839baa305f01a",
+    "uv.lock": "8935f5c29dd72daf9755b5c495be6e1af5fbbd933e9ce9c6f226a02027c3d3f7",
+    "implementation/investigations/grc9v4-constitutive-design/decisions/GeometryTemporalRealizationSuccessorReconstructedGeometry.json": "b3586ce7bc6fd7e127724b99a490940012a4ee2688ecdac980cea054e86415aa",
+    "implementation/investigations/grc9v4-constitutive-design/decisions/GeometryTemporalRealizationSuccessorReconstructedGeometry.md": "44d386110a7981b2823b779051975ca73ef79c616889248fa0a90b78ba030242",
+    "implementation/phase-9-grcv4/tranche-6/P9-6.4ab-Review.md": "fadf88ca96f3095165026d35304f87266c410ac5c7c718cba38b34f1edcbce5a",
+    "implementation/phase-9-grcv4/verification/verify_p963_cipc.py": "5ec255ba58ba160da63ea209a80cf5f59c2c437c2d582b778539ef041b7de7b9",
+    "implementation/phase-9-grcv4/verification/verify_p964_rg2b.py": "82492a1ba2d771725033708046afe387cfbb4248fa3fe32a3477c428d2054ac2",
+    "implementation/phase-9-grcv4/verification/verify_p964c_rg2b_graph.py": "e7e5c1cd76330b69839584fe03454b4bc1092928c0007a546d9c889f7efeda33",
+    "implementation/phase-9-grcv4/tranche-6/P9-6.4c-Review.md": "c7d34dd701e91eba4095964d3b77666729d067b5ca2be048f5b3faaba0a561bb"
+  },
+  "source_contracts": [
+    {
+      "contract_id": "D10.2-EC-PARENT-REAL-RG2B",
+      "classification": "source_exact_contract_provenance",
+      "source_record_id": "GRC9V4-CD-D10.2-v1",
+      "source_json_pointer": "/normative_equation_contract_registry/38",
+      "trace_digest": "b80a0f961c9ffea148999825d51222e968ed21d200c2992639adbc54325ef0ba",
+      "blocked_overread": "uniqueness_is_relative_to_the_frozen_completion"
+    },
+    {
+      "contract_id": "D10.2-EC-RG-INVARIANCE",
+      "classification": "source_exact_contract_provenance",
+      "source_record_id": "GRC9V4-CD-D10.2-v1",
+      "source_json_pointer": "/normative_equation_contract_registry/132",
+      "trace_digest": "45ac5ecf01970506f152059f048ad117aea63bb64ed16d6d25041bba10305691",
+      "blocked_overread": "uniqueness_is_relative_to_the_frozen_equivariant_extension_profile"
+    },
+    {
+      "contract_id": "D10.2-EC-RG-LIPSCHITZ-CONTRACTION",
+      "classification": "source_exact_contract_provenance",
+      "source_record_id": "GRC9V4-CD-D10.2-v1",
+      "source_json_pointer": "/normative_equation_contract_registry/133",
+      "trace_digest": "ec1b1da6b90726a9578cd0b7fef5005dcd5866fb4418b474b1215e0e042b441c",
+      "blocked_overread": "Lipschitz_section_existence_is_not_C1_regularness"
+    },
+    {
+      "contract_id": "D10.2-EC-RG-DETERMINISM",
+      "classification": "source_exact_contract_provenance",
+      "source_record_id": "GRC9V4-CD-D10.2-v1",
+      "source_json_pointer": "/normative_equation_contract_registry/134",
+      "trace_digest": "e8576b90343c570017c978bbda19a03831f1c121eaa6433636e4cf07595ac24d",
+      "blocked_overread": "reconstructed_geometry_cannot_hide_a_persistent_carrier"
+    },
+    {
+      "contract_id": "D10.2-EC-RG-CLAIM-CEILING",
+      "classification": "source_exact_contract_provenance",
+      "source_record_id": "GRC9V4-CD-D10.2-v1",
+      "source_json_pointer": "/normative_equation_contract_registry/135",
+      "trace_digest": "623f0ba8b160ff6ce6133840c35efaad4cfefd557a4ccb26bf954fabc87e5226",
+      "blocked_overread": "the_current_Lipschitz_profile_cannot_be_differentiated_by_assumption"
+    }
+  ],
+  "environment": {
+    "python": "3.12.3",
+    "platform": "Linux-5.15.167-0515167-generic-x86_64-with-glibc2.39",
+    "dependencies": {
+      "numpy": "2.4.6",
+      "jsonschema": "4.26.0",
+      "rfc8785": "0.1.4"
+    }
+  },
+  "result": {
+    "started_utc": "2026-09-10T14:01:45.261860+00:00",
+    "completed_utc": "2026-09-10T14:13:39.193502+00:00",
+    "elapsed_seconds": 713.472,
+    "tests_run": 56,
+    "failures": 0,
+    "errors": 0,
+    "skips": 1,
+    "skipped_ids": [
+      "tests.models.test_grc_v4_rg2b_graph.GraphRG2bLargerExecution.test_32_vertex_cycle_native_step_and_independent_current"
+    ],
+    "passed": 55,
+    "roster_ids": [
+      "tests.models.test_grc_v4_rg2b.RG2bAuditRegressions.test_A_reset_admission_uses_its_section_geometry",
+      "tests.models.test_grc_v4_rg2b.RG2bAuditRegressions.test_C_native_final_readmission_at_positive_tolerance",
+      "tests.models.test_grc_v4_rg2b.RG2bAuditRegressions.test_C_reset_admission_uses_its_section_geometry",
+      "tests.models.test_grc_v4_rg2b.RG2bAuditRegressions.test_clock_overflow_is_admitted_before_numerical_work",
+      "tests.models.test_grc_v4_rg2b.RG2bAuditRegressions.test_consumed_native_no_admitted_root_keeps_its_code",
+      "tests.models.test_grc_v4_rg2b.RG2bAuditRegressions.test_poststate_native_current_control_is_actually_reached",
+      "tests.models.test_grc_v4_rg2b.RG2bAuditRegressions.test_safe_index_is_admitted_before_numerical_work",
+      "tests.models.test_grc_v4_rg2b.RG2bBoundaryPressure.test_final_readmission_preserves_failure_code_and_programmer_errors",
+      "tests.models.test_grc_v4_rg2b.RG2bBoundaryPressure.test_readmission_currents_are_postconditions_not_extra_writes",
+      "tests.models.test_grc_v4_rg2b.RG2bBoundaryPressure.test_reset_rejection_preserves_typed_cause_and_prevents_continuity",
+      "tests.models.test_grc_v4_rg2b.RG2bCertificateTests.test_A_floor_is_not_a_permitted_nonsmooth_candidate_chart",
+      "tests.models.test_grc_v4_rg2b.RG2bCertificateTests.test_A_zero_descriptor_contrast_is_structural_not_a_beta_ablation",
+      "tests.models.test_grc_v4_rg2b.RG2bCertificateTests.test_candidate_specific_nonzero_coupling_certificates",
+      "tests.models.test_grc_v4_rg2b.RG2bCertificateTests.test_cutoff_joins_and_exact_adjacent_boundary",
+      "tests.models.test_grc_v4_rg2b.RG2bCertificateTests.test_declared_positive_beat_cannot_change_between_queries",
+      "tests.models.test_grc_v4_rg2b.RG2bCertificateTests.test_evaluator_norm_containment_and_failure_ids_are_bound",
+      "tests.models.test_grc_v4_rg2b.RG2bCertificateTests.test_extended_maps_are_identity_and_reference_outside_compact_support",
+      "tests.models.test_grc_v4_rg2b.RG2bCertificateTests.test_log_enclosure_against_independent_high_precision_decimal",
+      "tests.models.test_grc_v4_rg2b.RG2bCertificateTests.test_nested_charts_and_canonical_identity",
+      "tests.models.test_grc_v4_rg2b.RG2bCertificateTests.test_selector_cutoff_and_hodge_boundaries",
+      "tests.models.test_grc_v4_rg2b.RG2bCertificateTests.test_source_bounds_are_whole_chart_not_submitted_equilibrium",
+      "tests.models.test_grc_v4_rg2b.RG2bCertificateTests.test_uniform_inverse_containment_value_and_lipschitz_failures",
+      "tests.models.test_grc_v4_rg2b.RG2bCertificateTests.test_whole_chart_bounds_against_independent_map_differences",
+      "tests.models.test_grc_v4_rg2b.RG2bSectionTests.test_A_section_against_independent_explicit_inverse_oracle",
+      "tests.models.test_grc_v4_rg2b.RG2bSectionTests.test_C_section_against_independent_cubic_preimage_oracle",
+      "tests.models.test_grc_v4_rg2b.RG2bSectionTests.test_budget_and_zero_tolerance_fail_without_neutral_fallback",
+      "tests.models.test_grc_v4_rg2b.RG2bSectionTests.test_lagged_section_is_distinct_from_same_beat_CI_root",
+      "tests.models.test_grc_v4_rg2b.RG2bSectionTests.test_precision_refinement_encloses_consistent_section",
+      "tests.models.test_grc_v4_rg2b.RG2bSectionTests.test_reconstruction_has_no_persisted_geometry_or_solver_values",
+      "tests.models.test_grc_v4_rg2b.RG2bSectionTests.test_relabeling_and_reorientation_covariance",
+      "tests.models.test_grc_v4_rg2b.RG2bSectionTests.test_signed_gains_and_full_C_retained_filter_controls",
+      "tests.models.test_grc_v4_rg2b.RG2bSectionTests.test_unsupported_graphs_reject_explicitly",
+      "tests.models.test_grc_v4_rg2b.RG2bStepTests.test_A_writer_uses_selected_current_and_changes_mobility_once",
+      "tests.models.test_grc_v4_rg2b.RG2bStepTests.test_current_sign_error_cannot_hide_behind_even_source",
+      "tests.models.test_grc_v4_rg2b.RG2bStepTests.test_final_containment_does_not_claim_next_beat_inner_invariance",
+      "tests.models.test_grc_v4_rg2b.RG2bStepTests.test_native_current_and_generated_source_match_independent_equations",
+      "tests.models.test_grc_v4_rg2b.RG2bStepTests.test_replay_and_programmer_errors",
+      "tests.models.test_grc_v4_rg2b.RG2bStepTests.test_reset_and_current_inner_charts_are_independently_required",
+      "tests.models.test_grc_v4_rg2b.RG2bStepTests.test_zero_duration_is_identity_not_a_positive_beat_invariance_claim",
+      "tests.models.test_grc_v4_rg2b_graph.GraphRG2bAdmissionAndCovariance.test_high_degree_graph_with_nonzero_feedback",
+      "tests.models.test_grc_v4_rg2b_graph.GraphRG2bAdmissionAndCovariance.test_native_postconditions_and_failure_provenance_on_matrix_geometry",
+      "tests.models.test_grc_v4_rg2b_graph.GraphRG2bAdmissionAndCovariance.test_outer_cutoff_and_matrix_ball_error_are_not_point_fits",
+      "tests.models.test_grc_v4_rg2b_graph.GraphRG2bAdmissionAndCovariance.test_relabeling_reorientation_covariance_within_reported_errors",
+      "tests.models.test_grc_v4_rg2b_graph.GraphRG2bDescriptorDimensions.test_multidimensional_WLS_coefficients_and_unrepresented_query_rejection",
+      "tests.models.test_grc_v4_rg2b_graph.GraphRG2bLargerExecution.test_32_vertex_cycle_native_step_and_independent_current",
+      "tests.models.test_grc_v4_rg2b_graph.GraphRG2bLargerExecution.test_loop_only_neutral_source_and_empty_space_rejection",
+      "tests.models.test_grc_v4_rg2b_graph.GraphRG2bPartialSelector.test_partial_selector_native_beats_with_both_geometry_gain_signs",
+      "tests.models.test_grc_v4_rg2b_graph.GraphRG2bPressure.test_cycles_branches_parallel_loops_disconnected_and_isolates",
+      "tests.models.test_grc_v4_rg2b_graph.GraphRG2bPressure.test_finite_transform_against_independent_inverse_oracle",
+      "tests.models.test_grc_v4_rg2b_graph.GraphRG2bPressure.test_nonzero_A_descriptor_and_C_noncommuting_response",
+      "tests.models.test_grc_v4_rg2b_graph.GraphRG2bPressure.test_parameter_and_numerical_failure_boundaries",
+      "tests.models.test_grc_v4_rg2b_graph.GraphRG2bPressure.test_recipes_zero_duration_and_no_classical_jacobian",
+      "tests.models.test_grc_v4_rg2b_graph.GraphRG2bPressure.test_scalar_reference_sections_agree_with_matrix_completion",
+      "tests.models.test_grc_v4_rg2b_graph.GraphRG2bPressure.test_variable_graph_sizes_and_repeated_native_beats",
+      "tests.models.test_grc_v4_rg2b_graph.GraphRG2bPressure.test_whole_chart_bounds_against_independent_changes_in_every_axis",
+      "tests.models.test_grc_v4_rg2b_graph.GraphRG2bTests.test_first_matrix_sections_and_steps"
+    ],
+    "executed_ids": [
+      "tests.models.test_grc_v4_rg2b.RG2bAuditRegressions.test_A_reset_admission_uses_its_section_geometry",
+      "tests.models.test_grc_v4_rg2b.RG2bAuditRegressions.test_C_native_final_readmission_at_positive_tolerance",
+      "tests.models.test_grc_v4_rg2b.RG2bAuditRegressions.test_C_reset_admission_uses_its_section_geometry",
+      "tests.models.test_grc_v4_rg2b.RG2bAuditRegressions.test_clock_overflow_is_admitted_before_numerical_work",
+      "tests.models.test_grc_v4_rg2b.RG2bAuditRegressions.test_consumed_native_no_admitted_root_keeps_its_code",
+      "tests.models.test_grc_v4_rg2b.RG2bAuditRegressions.test_poststate_native_current_control_is_actually_reached",
+      "tests.models.test_grc_v4_rg2b.RG2bAuditRegressions.test_safe_index_is_admitted_before_numerical_work",
+      "tests.models.test_grc_v4_rg2b.RG2bBoundaryPressure.test_final_readmission_preserves_failure_code_and_programmer_errors",
+      "tests.models.test_grc_v4_rg2b.RG2bBoundaryPressure.test_readmission_currents_are_postconditions_not_extra_writes",
+      "tests.models.test_grc_v4_rg2b.RG2bBoundaryPressure.test_reset_rejection_preserves_typed_cause_and_prevents_continuity",
+      "tests.models.test_grc_v4_rg2b.RG2bCertificateTests.test_A_floor_is_not_a_permitted_nonsmooth_candidate_chart",
+      "tests.models.test_grc_v4_rg2b.RG2bCertificateTests.test_A_zero_descriptor_contrast_is_structural_not_a_beta_ablation",
+      "tests.models.test_grc_v4_rg2b.RG2bCertificateTests.test_candidate_specific_nonzero_coupling_certificates",
+      "tests.models.test_grc_v4_rg2b.RG2bCertificateTests.test_cutoff_joins_and_exact_adjacent_boundary",
+      "tests.models.test_grc_v4_rg2b.RG2bCertificateTests.test_declared_positive_beat_cannot_change_between_queries",
+      "tests.models.test_grc_v4_rg2b.RG2bCertificateTests.test_evaluator_norm_containment_and_failure_ids_are_bound",
+      "tests.models.test_grc_v4_rg2b.RG2bCertificateTests.test_extended_maps_are_identity_and_reference_outside_compact_support",
+      "tests.models.test_grc_v4_rg2b.RG2bCertificateTests.test_log_enclosure_against_independent_high_precision_decimal",
+      "tests.models.test_grc_v4_rg2b.RG2bCertificateTests.test_nested_charts_and_canonical_identity",
+      "tests.models.test_grc_v4_rg2b.RG2bCertificateTests.test_selector_cutoff_and_hodge_boundaries",
+      "tests.models.test_grc_v4_rg2b.RG2bCertificateTests.test_source_bounds_are_whole_chart_not_submitted_equilibrium",
+      "tests.models.test_grc_v4_rg2b.RG2bCertificateTests.test_uniform_inverse_containment_value_and_lipschitz_failures",
+      "tests.models.test_grc_v4_rg2b.RG2bCertificateTests.test_whole_chart_bounds_against_independent_map_differences",
+      "tests.models.test_grc_v4_rg2b.RG2bSectionTests.test_A_section_against_independent_explicit_inverse_oracle",
+      "tests.models.test_grc_v4_rg2b.RG2bSectionTests.test_C_section_against_independent_cubic_preimage_oracle",
+      "tests.models.test_grc_v4_rg2b.RG2bSectionTests.test_budget_and_zero_tolerance_fail_without_neutral_fallback",
+      "tests.models.test_grc_v4_rg2b.RG2bSectionTests.test_lagged_section_is_distinct_from_same_beat_CI_root",
+      "tests.models.test_grc_v4_rg2b.RG2bSectionTests.test_precision_refinement_encloses_consistent_section",
+      "tests.models.test_grc_v4_rg2b.RG2bSectionTests.test_reconstruction_has_no_persisted_geometry_or_solver_values",
+      "tests.models.test_grc_v4_rg2b.RG2bSectionTests.test_relabeling_and_reorientation_covariance",
+      "tests.models.test_grc_v4_rg2b.RG2bSectionTests.test_signed_gains_and_full_C_retained_filter_controls",
+      "tests.models.test_grc_v4_rg2b.RG2bSectionTests.test_unsupported_graphs_reject_explicitly",
+      "tests.models.test_grc_v4_rg2b.RG2bStepTests.test_A_writer_uses_selected_current_and_changes_mobility_once",
+      "tests.models.test_grc_v4_rg2b.RG2bStepTests.test_current_sign_error_cannot_hide_behind_even_source",
+      "tests.models.test_grc_v4_rg2b.RG2bStepTests.test_final_containment_does_not_claim_next_beat_inner_invariance",
+      "tests.models.test_grc_v4_rg2b.RG2bStepTests.test_native_current_and_generated_source_match_independent_equations",
+      "tests.models.test_grc_v4_rg2b.RG2bStepTests.test_replay_and_programmer_errors",
+      "tests.models.test_grc_v4_rg2b.RG2bStepTests.test_reset_and_current_inner_charts_are_independently_required",
+      "tests.models.test_grc_v4_rg2b.RG2bStepTests.test_zero_duration_is_identity_not_a_positive_beat_invariance_claim",
+      "tests.models.test_grc_v4_rg2b_graph.GraphRG2bAdmissionAndCovariance.test_high_degree_graph_with_nonzero_feedback",
+      "tests.models.test_grc_v4_rg2b_graph.GraphRG2bAdmissionAndCovariance.test_native_postconditions_and_failure_provenance_on_matrix_geometry",
+      "tests.models.test_grc_v4_rg2b_graph.GraphRG2bAdmissionAndCovariance.test_outer_cutoff_and_matrix_ball_error_are_not_point_fits",
+      "tests.models.test_grc_v4_rg2b_graph.GraphRG2bAdmissionAndCovariance.test_relabeling_reorientation_covariance_within_reported_errors",
+      "tests.models.test_grc_v4_rg2b_graph.GraphRG2bDescriptorDimensions.test_multidimensional_WLS_coefficients_and_unrepresented_query_rejection",
+      "tests.models.test_grc_v4_rg2b_graph.GraphRG2bLargerExecution.test_loop_only_neutral_source_and_empty_space_rejection",
+      "tests.models.test_grc_v4_rg2b_graph.GraphRG2bPartialSelector.test_partial_selector_native_beats_with_both_geometry_gain_signs",
+      "tests.models.test_grc_v4_rg2b_graph.GraphRG2bPressure.test_cycles_branches_parallel_loops_disconnected_and_isolates",
+      "tests.models.test_grc_v4_rg2b_graph.GraphRG2bPressure.test_finite_transform_against_independent_inverse_oracle",
+      "tests.models.test_grc_v4_rg2b_graph.GraphRG2bPressure.test_nonzero_A_descriptor_and_C_noncommuting_response",
+      "tests.models.test_grc_v4_rg2b_graph.GraphRG2bPressure.test_parameter_and_numerical_failure_boundaries",
+      "tests.models.test_grc_v4_rg2b_graph.GraphRG2bPressure.test_recipes_zero_duration_and_no_classical_jacobian",
+      "tests.models.test_grc_v4_rg2b_graph.GraphRG2bPressure.test_scalar_reference_sections_agree_with_matrix_completion",
+      "tests.models.test_grc_v4_rg2b_graph.GraphRG2bPressure.test_variable_graph_sizes_and_repeated_native_beats",
+      "tests.models.test_grc_v4_rg2b_graph.GraphRG2bPressure.test_whole_chart_bounds_against_independent_changes_in_every_axis",
+      "tests.models.test_grc_v4_rg2b_graph.GraphRG2bTests.test_first_matrix_sections_and_steps"
+    ],
+    "output_sha256": "f34f842ebe664424d4e425100db56a18d7e1ea35a45a5db7e7858d5ecc72ac0c",
+    "command": [
+      ".venv/bin/python",
+      "-m",
+      "unittest",
+      "-v",
+      "tests.models.test_grc_v4_rg2b",
+      "tests.models.test_grc_v4_rg2b_graph"
+    ]
+  },
+  "reconstruction": "From repository root, provision .venv with uv sync --frozen --extra v4 --extra dev, then use PYTHONPATH=src:. with the recorded unittest command. The 32-vertex campaign is optional and skipped unless GRCV4_RUN_SLOW_RG2B=1 is explicitly set; a skip does not establish its result. The fixture and oracle source is in Git; reverse spans recover the original uncommitted a/b subject. --check verifies source/record bindings without repeating numerical tests. No external files are needed. Output hashes and timings are observations.",
+  "children": {
+    "P9-6.4a": {
+      "profile": "C_RG2b",
+      "implementation_verdict": "PASS_for_declared_numerical_scope",
+      "audit_corrections": "F1_F2_F3_closed_by_native_regressions",
+      "P9_6_4d": "pending",
+      "user_accepted": false
+    },
+    "P9-6.4b": {
+      "profile": "A_RG2b",
+      "implementation_verdict": "PASS_for_declared_numerical_scope",
+      "audit_corrections": "F1_F2_F3_closed_by_native_regressions",
+      "P9_6_4d": "pending",
+      "user_accepted": false
+    }
+  },
+  "generalization": {
+    "iteration_id": "P9-6.4c",
+    "A_RG2b": "PASS_for_declared_graph_domains_and_default_tested_fixtures",
+    "C_RG2b": "PASS_for_declared_graph_domains_and_default_tested_fixtures",
+    "arbitrary_size_cap": false,
+    "user_accepted": false
+  },
+  "optional_32_vertex_campaign": {
+    "method": "tests.models.test_grc_v4_rg2b_graph.GraphRG2bLargerExecution.test_32_vertex_cycle_native_step_and_independent_current",
+    "enable": "GRCV4_RUN_SLOW_RG2B=1",
+    "policy": "Optional; execute only on explicit request with a finite wall-time budget. Default skipping is not a pass.",
+    "result": "C_full_step_unverified; no completed_combined_campaign",
+    "bounded_progress_observation": {
+      "wall_limit_seconds": 120,
+      "exit_code": 124,
+      "A": "Step and all subtest assertions completed; next candidate began at 75.54 seconds.",
+      "C": "Certificate completed at 101.63 seconds overall; first section point entered at 101.64 seconds.",
+      "exact_arithmetic": "Completed monitored condition checks increased from 31 at 90.14 seconds to 39 at 110.16 seconds; completed monitored inertia calls increased from 32 to 40.",
+      "interpretation": "Temporary wrappers and stack sampling observed progress in this new bounded run. They do not prove completion of C, nor retrospectively characterize the earlier interrupted opaque run. This observation is separate from the source-bound default scientific result."
+    }
+  },
+  "maintenance_checks": {
+    "ruff": "passed_for_changed_numerical_tests_and_verifiers",
+    "strict_mypy": "passed_for_both_RG2b_modules",
+    "browser_validator_methods": 33,
+    "browser_failures": 0,
+    "actual_API_to_browser": "passed_with_46_ready_leaves_and_40_runtime_paths",
+    "portability": "No machine-local paths in RG2b sources, tests, reviews, records or verifiers."
+  }
+}

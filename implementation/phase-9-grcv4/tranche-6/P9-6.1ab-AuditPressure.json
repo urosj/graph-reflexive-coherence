@@ -1,0 +1,348 @@
+{
+  "scope": "Independent source/equation review and executed isolated numerical pressure; not repository conformance or the retained verifier rerun.",
+  "subject": {
+    "base": "c55960b8b28f94f5c909a58193e23383fb6a6a26",
+    "release_id": "grcv4-spec-release-sha256:e2acd9df0cc02c5fd4bbed4989ff5d7da3a819adeb2950d922b8a6ef4bf35f24"
+  },
+  "environment": {
+    "python": "3.13.5",
+    "numpy": "2.3.5"
+  },
+  "source_checks": [
+    {
+      "local_file": "grc_v4_ci.py",
+      "bound_path": "src/pygrc/models/grc_v4_ci.py",
+      "sha256": "7ee0217adf5e3807f2cb345d6d1018290b13f4a8172408285c15163af0b9284e",
+      "matches": true
+    },
+    {
+      "local_file": "grc_v4_candidate_a(2).py",
+      "bound_path": "src/pygrc/models/grc_v4_candidate_a.py",
+      "sha256": "bb3d36109ccf83861cb6fe597d567b3998742f95af0229fa2ebc8d155a3e3c47",
+      "matches": true
+    },
+    {
+      "local_file": "grc_v4_candidate_c(3).py",
+      "bound_path": "src/pygrc/models/grc_v4_candidate_c.py",
+      "sha256": "dcd95464b2e7ab01a7f14b9eacea17d4ceca4c747a93ab028327b57a56ece4ca",
+      "matches": true
+    },
+    {
+      "local_file": "test_grc_v4_ci.py",
+      "bound_path": "tests/models/test_grc_v4_ci.py",
+      "sha256": "3d6c08562e430802211e584a2acebc7f083282c4ec6d80743a257b73ed64db7a",
+      "matches": true
+    },
+    {
+      "local_file": "grc_v4_step(5).py",
+      "bound_path": "src/pygrc/models/grc_v4_step.py",
+      "sha256": "741e533c004b3ec8da2fc9e5e3f0c9bc404fb1a4f439d69f6e6d0d07643f59a7",
+      "matches": true
+    }
+  ],
+  "record_digest_valid": true,
+  "submitted_ci_roster_matches": true,
+  "submitted_regression_roster_unique": true,
+  "campaign": {
+    "limitations": "Unchanged uploaded CI and candidate numerical definitions in lightweight fixture/reference/identity scaffolding; not repository-suite execution. H_profile scaffold follows the available earlier declared affine rounding order.",
+    "enclosure_cases": 81,
+    "norm_cases": 100,
+    "candidate_cases": [
+      {
+        "candidate": "A",
+        "case": 0,
+        "vertices": 3,
+        "edges": 2,
+        "iterations": 1,
+        "C_selector_rank": null
+      },
+      {
+        "candidate": "A",
+        "case": 1,
+        "vertices": 4,
+        "edges": 3,
+        "iterations": 1,
+        "C_selector_rank": null
+      },
+      {
+        "candidate": "A",
+        "case": 2,
+        "vertices": 5,
+        "edges": 4,
+        "iterations": 1,
+        "C_selector_rank": null
+      },
+      {
+        "candidate": "A",
+        "case": 3,
+        "vertices": 3,
+        "edges": 2,
+        "iterations": 1,
+        "C_selector_rank": null
+      },
+      {
+        "candidate": "A",
+        "case": 4,
+        "vertices": 4,
+        "edges": 3,
+        "iterations": 1,
+        "C_selector_rank": null
+      },
+      {
+        "candidate": "A",
+        "case": 5,
+        "vertices": 5,
+        "edges": 4,
+        "iterations": 1,
+        "C_selector_rank": null
+      },
+      {
+        "candidate": "A",
+        "case": 6,
+        "vertices": 3,
+        "edges": 2,
+        "iterations": 1,
+        "C_selector_rank": null
+      },
+      {
+        "candidate": "A",
+        "case": 7,
+        "vertices": 4,
+        "edges": 3,
+        "iterations": 1,
+        "C_selector_rank": null
+      },
+      {
+        "candidate": "A",
+        "case": 8,
+        "vertices": 5,
+        "edges": 4,
+        "iterations": 1,
+        "C_selector_rank": null
+      },
+      {
+        "candidate": "A",
+        "case": 9,
+        "vertices": 3,
+        "edges": 2,
+        "iterations": 1,
+        "C_selector_rank": null
+      },
+      {
+        "candidate": "A",
+        "case": 10,
+        "vertices": 4,
+        "edges": 3,
+        "iterations": 1,
+        "C_selector_rank": null
+      },
+      {
+        "candidate": "A",
+        "case": 11,
+        "vertices": 5,
+        "edges": 4,
+        "iterations": 1,
+        "C_selector_rank": null
+      },
+      {
+        "candidate": "C",
+        "case": 0,
+        "vertices": 3,
+        "edges": 2,
+        "iterations": 1,
+        "C_selector_rank": 2
+      },
+      {
+        "candidate": "C",
+        "case": 1,
+        "vertices": 4,
+        "edges": 3,
+        "iterations": 1,
+        "C_selector_rank": 3
+      },
+      {
+        "candidate": "C",
+        "case": 2,
+        "vertices": 5,
+        "edges": 4,
+        "iterations": 1,
+        "C_selector_rank": 4
+      },
+      {
+        "candidate": "C",
+        "case": 3,
+        "vertices": 3,
+        "edges": 2,
+        "iterations": 1,
+        "C_selector_rank": 2
+      },
+      {
+        "candidate": "C",
+        "case": 4,
+        "vertices": 4,
+        "edges": 3,
+        "iterations": 1,
+        "C_selector_rank": 3
+      },
+      {
+        "candidate": "C",
+        "case": 5,
+        "vertices": 5,
+        "edges": 4,
+        "iterations": 1,
+        "C_selector_rank": 4
+      },
+      {
+        "candidate": "C",
+        "case": 6,
+        "vertices": 3,
+        "edges": 2,
+        "iterations": 1,
+        "C_selector_rank": 2
+      },
+      {
+        "candidate": "C",
+        "case": 7,
+        "vertices": 4,
+        "edges": 3,
+        "iterations": 1,
+        "C_selector_rank": 3
+      },
+      {
+        "candidate": "C",
+        "case": 8,
+        "vertices": 5,
+        "edges": 4,
+        "iterations": 1,
+        "C_selector_rank": 4
+      },
+      {
+        "candidate": "C",
+        "case": 9,
+        "vertices": 3,
+        "edges": 2,
+        "iterations": 1,
+        "C_selector_rank": 2
+      },
+      {
+        "candidate": "C",
+        "case": 10,
+        "vertices": 4,
+        "edges": 3,
+        "iterations": 1,
+        "C_selector_rank": 3
+      },
+      {
+        "candidate": "C",
+        "case": 11,
+        "vertices": 5,
+        "edges": 4,
+        "iterations": 1,
+        "C_selector_rank": 4
+      }
+    ],
+    "sampled_domain_comparisons": 72,
+    "elapsed_seconds": 5.857256301999996,
+    "status": "passed"
+  },
+  "rounded_witnesses": {
+    "A": {
+      "current": [
+        -3.0
+      ],
+      "selected_h_hex": "0x1.0000000000001p+100",
+      "reference_h_hex": "0x1.0000000000000p+100",
+      "evaluations": 2,
+      "rounded_joint_residual_squared": "0",
+      "analytic_geometry_residual": "1427247692705962416359486425908579604765868032/20282409603651679431146506027009",
+      "analytic_geometry_residual_float": 70368744177664.1,
+      "tolerance": 1e-11,
+      "certificate_contraction_upper": "147573952589676412928/443075998593763031814988823763703125",
+      "claim": "A discrepancy between analytic and rounded-map residuals, not a counterexample to the smooth-map Banach argument."
+    },
+    "C": {
+      "current": [
+        -4.000000000000001
+      ],
+      "selected_h_hex": "0x1.0000000000001p+100",
+      "reference_h_hex": "0x1.0000000000000p+100",
+      "evaluations": 2,
+      "rounded_joint_residual_squared": "0",
+      "analytic_geometry_residual": "70368744177664",
+      "analytic_geometry_residual_float": 70368744177664.0,
+      "tolerance": 1e-11,
+      "certificate_contraction_upper": "295147905179621261312/443075998593763031814988823763703125",
+      "claim": "A discrepancy between analytic and rounded-map residuals, not a counterexample to the smooth-map Banach argument."
+    }
+  },
+  "targeted": {
+    "A_iteration_failure": {
+      "type": "ResourceBoundaryError",
+      "stage": "pre_read_reconstruction",
+      "code": "no_admitted_root",
+      "cause": "CIStageError",
+      "message": "CI iteration limit exhausted without a joint residual pass"
+    },
+    "C_iteration_failure": {
+      "type": "ResourceBoundaryError",
+      "stage": "pre_read_reconstruction",
+      "code": "no_admitted_root",
+      "cause": "CIStageError",
+      "message": "CI iteration limit exhausted without a joint residual pass"
+    },
+    "writer_0.0": {
+      "returned": true,
+      "writer": false
+    },
+    "writer_6.103515625e-05": {
+      "returned": false,
+      "type": "ValueError",
+      "message": "unimplemented A retained-history writer policy"
+    },
+    "smooth_vs_rounded_map": {
+      "certificate_contraction": 0.0032494397175779934,
+      "found": true,
+      "k": 355,
+      "h": 1.0000000000000788,
+      "h2": 1.000000000000079,
+      "T1": 1.0010884353741496,
+      "T2": 1.0010884353741494,
+      "quotient": 1.0
+    }
+  },
+  "additional": {
+    "A": {
+      "reset_evaluations": 1,
+      "current_failure_stage": "pre_read_reconstruction",
+      "code": "no_admitted_root",
+      "cause_disposition": "no_admitted_root"
+    },
+    "C": {
+      "reset_evaluations": 1,
+      "current_failure_stage": "pre_read_reconstruction",
+      "code": "no_admitted_root",
+      "cause_disposition": "no_admitted_root"
+    },
+    "analytic_vs_runtime_inverse": {
+      "runtime_exceeds_analytic_enclosure": true,
+      "difference": "3677969815395197746821120114535565037567106476496/484005087021906837976791021404408361628639387541415638783230239767",
+      "difference_float": 7.599031320157855e-18,
+      "runtime_W_hat": [
+        0.8187307530779818
+      ],
+      "claim": "This does not refute the smooth analytic bound; it refutes its unqualified application to the rounded operator."
+    }
+  },
+  "verdicts": {
+    "P9-6.1a": "HOLD: analytic/numerical residual bridge and consumed-root failure staging",
+    "P9-6.1b": "HOLD: same shared issues plus zero-duration writer-policy admission"
+  },
+  "limitations": [
+    "The pinned complete repository, verifier, and dependency environment were unavailable. Web retrieval and direct network retrieval failed.",
+    "The numerical A/C/CI definitions and common resource step were executed unchanged by AST extraction. Reference/profile/domain DTOs, serialization/identity, transport constructors and charge/continuity setup use explicitly lightweight scaffolding.",
+    "The available earlier StarAssembly source was executed unchanged; it is not claimed byte-identical to the pinned geometry module. H_profile scaffold follows that available affine binary64 operation order.",
+    "No scientific schema, release/hash validation, current browser/API verification, installed-package conformance, or live lifecycle rollback is claimed by the isolated runs.",
+    "The integrated repository regression script was compiled, not executed. The repository should execute it at the pinned subject to close input-admission uncertainty.",
+    "Finite pressure cases support local checks, not universal proof of the bound formulas."
+  ]
+}

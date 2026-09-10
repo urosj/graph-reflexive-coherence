@@ -1,0 +1,575 @@
+{
+  "schema": "phase9_realization_routing_v1",
+  "iteration_id": "P9-6.5",
+  "status": "reviewed_verified_pending_user_acceptance",
+  "scientific_verdict": "PASS_bounded_reconciliation",
+  "user_accepted": false,
+  "source_git_commit": "739c1238bacbb676398b4cb08d066968585c3c6c",
+  "review": "implementation/phase-9-grcv4/tranche-6/P9-6.5-Review.md",
+  "identity_scope": "Exact seeds reconstruct provisional numerical recipes; graph/reference/context and live/reset initialization must additionally be bound at lifecycle entry. No family-wide support is inferred.",
+  "accepted_records": {
+    "CI_children": {
+      "path": "implementation/phase-9-grcv4/tranche-6/P9-6.1ab-AuditFollowup.json",
+      "sha256": "ca5e4b1283d2526727f8fb80975fe36a9b767e4ac62ddb7b98bec1da263ba552",
+      "acceptance_pointer": "/acceptance"
+    },
+    "CI_shared": {
+      "path": "implementation/phase-9-grcv4/tranche-6/P9-6.1c-ExecutionRecord.json",
+      "sha256": "7888063f11d7fa8a40fe9e2ffc8ba4de1b2fba535ed68d059279d464bd2f2ebb",
+      "acceptance_pointer": "/acceptance"
+    },
+    "PC": {
+      "path": "implementation/phase-9-grcv4/tranche-6/P9-6.2abc-AuditFollowup.json",
+      "sha256": "70112b65c144991aa43f8a0fc204cd436f5e5d53b44c11eba9363e2158cf739c",
+      "acceptance_pointer": "/acceptance"
+    },
+    "CI_PC": {
+      "path": "implementation/phase-9-grcv4/tranche-6/P9-6.3abc-AuditFollowup.json",
+      "sha256": "d245a583203a9d5f8bdab5a8a15144e03f0cb92a8edebae04af89a08002d09a6",
+      "acceptance_pointer": "/acceptance"
+    },
+    "RG2b": {
+      "path": "implementation/phase-9-grcv4/tranche-6/P9-6.4d-AuditFollowup.json",
+      "sha256": "807bcf09de3fbcc3c4757d7489b2f402e93a3bb8d1c2c7a1659d09dfdac1dfc1",
+      "acceptance_pointer": "/acceptance"
+    }
+  },
+  "profiles": [
+    {
+      "profile_family": "A_CI",
+      "candidate": "A",
+      "numerical_status": "accepted_bounded_provisional",
+      "evidence_refs": [
+        "CI_children",
+        "CI_shared"
+      ],
+      "accepted_children": [
+        "P9-6.1b",
+        "P9-6.1c"
+      ],
+      "seed": {
+        "module": "tests.models.test_grc_v4_ci",
+        "function": "fixture",
+        "kwargs": {
+          "candidate": "A"
+        },
+        "complete_profile_id": "grcv4-profile-sha256:16ed65f7f65d4716e1be3e384f6fa0f957d26dd7b7a3f7e1b43ad1aa3f250946"
+      },
+      "authority": [
+        "C",
+        "W_A"
+      ],
+      "required_catalog_ref": {
+        "path": "implementation/phase-9-grcv4/tranche-1/P9-1.4-SupportAndDependencies.json",
+        "json_pointer": "/profiles/0/required_catalog_case_ids"
+      },
+      "lifecycle_children": [
+        "P9-7.1-A_CI",
+        "P9-7.2a-A_CI",
+        "P9-7.2b-A_CI",
+        "P9-7.3-A_CI",
+        "P9-7.4-A_CI",
+        "P9-7.5-A_CI",
+        "P9-7.6-A_CI"
+      ],
+      "lifecycle_status": "pending_exact_scope_binding_and_execution",
+      "conformance_child": "P9-7.7-A_CI",
+      "G2_gate": "P9-G2[A_CI]",
+      "G2_status": "pending_full_applicable_product",
+      "accepted_generic_profile_ids": [],
+      "depends_on_unrelated_siblings": false
+    },
+    {
+      "profile_family": "C_CI",
+      "candidate": "C",
+      "numerical_status": "accepted_bounded_provisional",
+      "evidence_refs": [
+        "CI_children",
+        "CI_shared"
+      ],
+      "accepted_children": [
+        "P9-6.1a",
+        "P9-6.1c"
+      ],
+      "seed": {
+        "module": "tests.models.test_grc_v4_ci",
+        "function": "fixture",
+        "kwargs": {
+          "candidate": "C"
+        },
+        "complete_profile_id": "grcv4-profile-sha256:a56ef981821478cc50a3551a914dd6240e0dc62c9ca69d52305bd59a3405f69e"
+      },
+      "authority": [
+        "C"
+      ],
+      "required_catalog_ref": {
+        "path": "implementation/phase-9-grcv4/tranche-1/P9-1.4-SupportAndDependencies.json",
+        "json_pointer": "/profiles/1/required_catalog_case_ids"
+      },
+      "lifecycle_children": [
+        "P9-7.1-C_CI",
+        "P9-7.2a-C_CI",
+        "P9-7.2b-C_CI",
+        "P9-7.3-C_CI",
+        "P9-7.4-C_CI",
+        "P9-7.5-C_CI",
+        "P9-7.6-C_CI"
+      ],
+      "lifecycle_status": "pending_exact_scope_binding_and_execution",
+      "conformance_child": "P9-7.7-C_CI",
+      "G2_gate": "P9-G2[C_CI]",
+      "G2_status": "pending_full_applicable_product",
+      "accepted_generic_profile_ids": [],
+      "depends_on_unrelated_siblings": false
+    },
+    {
+      "profile_family": "A_PC",
+      "candidate": "A",
+      "numerical_status": "accepted_bounded_provisional",
+      "evidence_refs": [
+        "PC"
+      ],
+      "accepted_children": [
+        "P9-6.2b",
+        "P9-6.2c"
+      ],
+      "seed": {
+        "module": "tests.models.test_grc_v4_pc",
+        "function": "fixture",
+        "kwargs": {
+          "candidate": "A"
+        },
+        "complete_profile_id": "grcv4-profile-sha256:058ae6b1f923c85952ffdfa083af74e3b56dd450f309190f307c3ea56ac2aa75"
+      },
+      "authority": [
+        "C",
+        "W_A",
+        "Z4"
+      ],
+      "required_catalog_ref": {
+        "path": "implementation/phase-9-grcv4/tranche-1/P9-1.4-SupportAndDependencies.json",
+        "json_pointer": "/profiles/6/required_catalog_case_ids"
+      },
+      "lifecycle_children": [
+        "P9-7.1-A_PC",
+        "P9-7.2a-A_PC",
+        "P9-7.2b-A_PC",
+        "P9-7.3-A_PC",
+        "P9-7.4-A_PC",
+        "P9-7.5-A_PC",
+        "P9-7.6-A_PC"
+      ],
+      "lifecycle_status": "pending_exact_scope_binding_and_execution",
+      "conformance_child": "P9-7.7-A_PC",
+      "G2_gate": "P9-G2[A_PC]",
+      "G2_status": "pending_full_applicable_product",
+      "accepted_generic_profile_ids": [],
+      "depends_on_unrelated_siblings": false
+    },
+    {
+      "profile_family": "C_PC",
+      "candidate": "C",
+      "numerical_status": "accepted_bounded_provisional",
+      "evidence_refs": [
+        "PC"
+      ],
+      "accepted_children": [
+        "P9-6.2a",
+        "P9-6.2c"
+      ],
+      "seed": {
+        "module": "tests.models.test_grc_v4_pc",
+        "function": "fixture",
+        "kwargs": {
+          "candidate": "C"
+        },
+        "complete_profile_id": "grcv4-profile-sha256:6105daf6f5111fdc51640194298b1b8398d608684791050d85b696bcd681f64f"
+      },
+      "authority": [
+        "C",
+        "Z4"
+      ],
+      "required_catalog_ref": {
+        "path": "implementation/phase-9-grcv4/tranche-1/P9-1.4-SupportAndDependencies.json",
+        "json_pointer": "/profiles/7/required_catalog_case_ids"
+      },
+      "lifecycle_children": [
+        "P9-7.1-C_PC",
+        "P9-7.2a-C_PC",
+        "P9-7.2b-C_PC",
+        "P9-7.3-C_PC",
+        "P9-7.4-C_PC",
+        "P9-7.5-C_PC",
+        "P9-7.6-C_PC"
+      ],
+      "lifecycle_status": "pending_exact_scope_binding_and_execution",
+      "conformance_child": "P9-7.7-C_PC",
+      "G2_gate": "P9-G2[C_PC]",
+      "G2_status": "pending_full_applicable_product",
+      "accepted_generic_profile_ids": [],
+      "depends_on_unrelated_siblings": false
+    },
+    {
+      "profile_family": "A_CI_PC",
+      "candidate": "A",
+      "numerical_status": "accepted_bounded_provisional",
+      "evidence_refs": [
+        "CI_PC"
+      ],
+      "accepted_children": [
+        "P9-6.3b",
+        "P9-6.3c"
+      ],
+      "seed": {
+        "module": "tests.models.test_grc_v4_cipc",
+        "function": "fixture",
+        "kwargs": {
+          "candidate": "A"
+        },
+        "complete_profile_id": "grcv4-profile-sha256:5f2f848af0f482699ac6cb88e4e1bd1a66458774bac2c3cc6df9f74cc47d7689"
+      },
+      "authority": [
+        "C",
+        "W_A",
+        "Z4"
+      ],
+      "required_catalog_ref": {
+        "path": "implementation/phase-9-grcv4/tranche-1/P9-1.4-SupportAndDependencies.json",
+        "json_pointer": "/profiles/8/required_catalog_case_ids"
+      },
+      "lifecycle_children": [
+        "P9-7.1-A_CI_PC",
+        "P9-7.2a-A_CI_PC",
+        "P9-7.2b-A_CI_PC",
+        "P9-7.3-A_CI_PC",
+        "P9-7.4-A_CI_PC",
+        "P9-7.5-A_CI_PC",
+        "P9-7.6-A_CI_PC"
+      ],
+      "lifecycle_status": "pending_exact_scope_binding_and_execution",
+      "conformance_child": "P9-7.7-A_CI_PC",
+      "G2_gate": "P9-G2[A_CI_PC]",
+      "G2_status": "pending_full_applicable_product",
+      "accepted_generic_profile_ids": [],
+      "depends_on_unrelated_siblings": false
+    },
+    {
+      "profile_family": "C_CI_PC",
+      "candidate": "C",
+      "numerical_status": "accepted_bounded_provisional",
+      "evidence_refs": [
+        "CI_PC"
+      ],
+      "accepted_children": [
+        "P9-6.3a",
+        "P9-6.3c"
+      ],
+      "seed": {
+        "module": "tests.models.test_grc_v4_cipc",
+        "function": "fixture",
+        "kwargs": {
+          "candidate": "C"
+        },
+        "complete_profile_id": "grcv4-profile-sha256:3a7a084788c59a55b4232fb98e9c5529c1aa4c7c71074c9d3288982fa2fd2a5b"
+      },
+      "authority": [
+        "C",
+        "Z4"
+      ],
+      "required_catalog_ref": {
+        "path": "implementation/phase-9-grcv4/tranche-1/P9-1.4-SupportAndDependencies.json",
+        "json_pointer": "/profiles/9/required_catalog_case_ids"
+      },
+      "lifecycle_children": [
+        "P9-7.1-C_CI_PC",
+        "P9-7.2a-C_CI_PC",
+        "P9-7.2b-C_CI_PC",
+        "P9-7.3-C_CI_PC",
+        "P9-7.4-C_CI_PC",
+        "P9-7.5-C_CI_PC",
+        "P9-7.6-C_CI_PC"
+      ],
+      "lifecycle_status": "pending_exact_scope_binding_and_execution",
+      "conformance_child": "P9-7.7-C_CI_PC",
+      "G2_gate": "P9-G2[C_CI_PC]",
+      "G2_status": "pending_full_applicable_product",
+      "accepted_generic_profile_ids": [],
+      "depends_on_unrelated_siblings": false
+    },
+    {
+      "profile_family": "A_RG2b",
+      "candidate": "A",
+      "numerical_status": "accepted_bounded_provisional",
+      "evidence_refs": [
+        "RG2b"
+      ],
+      "accepted_children": [
+        "P9-6.4b",
+        "P9-6.4c",
+        "P9-6.4d"
+      ],
+      "seed": {
+        "module": "tests.models.test_grc_v4_rg2b_graph",
+        "function": "graph_fixture",
+        "kwargs": {
+          "candidate": "A"
+        },
+        "complete_profile_id": "grcv4-profile-sha256:12abb2946bfaa616df2a42bd571732e2be3000736f5078d45f8dbf53682b212b"
+      },
+      "authority": [
+        "C",
+        "W_A"
+      ],
+      "required_catalog_ref": {
+        "path": "implementation/phase-9-grcv4/tranche-1/P9-1.4-SupportAndDependencies.json",
+        "json_pointer": "/profiles/4/required_catalog_case_ids"
+      },
+      "lifecycle_children": [
+        "P9-7.1-A_RG2b",
+        "P9-7.2a-A_RG2b",
+        "P9-7.2b-A_RG2b",
+        "P9-7.3-A_RG2b",
+        "P9-7.4-A_RG2b",
+        "P9-7.5-A_RG2b",
+        "P9-7.6-A_RG2b"
+      ],
+      "lifecycle_status": "pending_exact_scope_binding_and_execution",
+      "conformance_child": "P9-7.7-A_RG2b",
+      "G2_gate": "P9-G2[A_RG2b]",
+      "G2_status": "pending_full_applicable_product",
+      "accepted_generic_profile_ids": [],
+      "depends_on_unrelated_siblings": false
+    },
+    {
+      "profile_family": "C_RG2b",
+      "candidate": "C",
+      "numerical_status": "accepted_bounded_provisional",
+      "evidence_refs": [
+        "RG2b"
+      ],
+      "accepted_children": [
+        "P9-6.4a",
+        "P9-6.4c",
+        "P9-6.4d"
+      ],
+      "seed": {
+        "module": "tests.models.test_grc_v4_rg2b_graph",
+        "function": "graph_fixture",
+        "kwargs": {
+          "candidate": "C"
+        },
+        "complete_profile_id": "grcv4-profile-sha256:413497bec4f219ec402d82d5cd2aced01dca25a58d2ab906c348472b98d596b0"
+      },
+      "authority": [
+        "C"
+      ],
+      "required_catalog_ref": {
+        "path": "implementation/phase-9-grcv4/tranche-1/P9-1.4-SupportAndDependencies.json",
+        "json_pointer": "/profiles/5/required_catalog_case_ids"
+      },
+      "lifecycle_children": [
+        "P9-7.1-C_RG2b",
+        "P9-7.2a-C_RG2b",
+        "P9-7.2b-C_RG2b",
+        "P9-7.3-C_RG2b",
+        "P9-7.4-C_RG2b",
+        "P9-7.5-C_RG2b",
+        "P9-7.6-C_RG2b"
+      ],
+      "lifecycle_status": "pending_exact_scope_binding_and_execution",
+      "conformance_child": "P9-7.7-C_RG2b",
+      "G2_gate": "P9-G2[C_RG2b]",
+      "G2_status": "pending_full_applicable_product",
+      "accepted_generic_profile_ids": [],
+      "depends_on_unrelated_siblings": false
+    }
+  ],
+  "prior_OS_scope": {
+    "C_OS": {
+      "G2_acceptance": "implementation/phase-9-grcv4/tranche-4/P9-4.8B-G2Acceptance.json",
+      "accepted_generic_profile_ids": [
+        "grcv4-profile-sha256:a6b853ee382895eb78b1a7955a0df22f95d68b27cb0f762503e8c424c2f59b6d"
+      ]
+    },
+    "A_OS": {
+      "acceptance": "implementation/phase-9-grcv4/tranche-5/P9-5.4-AuditFollowup.json",
+      "numerical_status": "accepted_provisional",
+      "lifecycle_status": "pending",
+      "G2_status": "pending"
+    }
+  },
+  "migration_classes_ref": {
+    "path": "implementation/phase-9-grcv4/tranche-1/P9-1.4-SupportAndDependencies.json",
+    "json_pointer": "/migration_classes"
+  },
+  "migration_entry_rule": "Bind exact source/target and applicability before execution. Keep positive, negative, pending and justified nonapplicable distinct. Construction rejection is not migration evidence; no automatic waiver for an unavailable positive endpoint.",
+  "forward_obligations": [
+    {
+      "obligation_id": "D11-C-VERIFY-IMPLEMENTATION-COVARIANCE-AND-SOLVER-CONFORMANCE",
+      "source_ref": {
+        "path": "implementation/phase-9-grcv4/tranche-1/P9-1.3-VerificationRouting.json",
+        "json_pointer": "/obligations/7"
+      },
+      "disposition": "scoped_evidence_reconciled_full_obligation_pending",
+      "next_owners": [
+        "P9-7.2a",
+        "P9-7.2b",
+        "P9-7.7"
+      ]
+    },
+    {
+      "obligation_id": "D9-VERIFY-QUANTITATIVE-PARAMETER-ENVELOPES",
+      "source_ref": {
+        "path": "implementation/phase-9-grcv4/tranche-1/P9-1.3-VerificationRouting.json",
+        "json_pointer": "/obligations/17"
+      },
+      "disposition": "scoped_evidence_reconciled_full_obligation_pending",
+      "next_owners": [
+        "P9-EVID-ENVELOPES"
+      ]
+    }
+  ],
+  "covariance_examples": [
+    "tests.models.test_grc_v4_ci.CISharedTests.test_root_orientation_covariance_in_both_candidates",
+    "tests.models.test_grc_v4_pc.CandidateCPCTests.test_orientation_covariance_including_carrier",
+    "tests.models.test_grc_v4_cipc.CIPCSharedTests.test_signed_orientation_covariance_with_dense_history",
+    "tests.models.test_grc_v4_rg2b_graph.GraphRG2bAdmissionAndCovariance.test_relabeling_reorientation_covariance_within_reported_errors"
+  ],
+  "retained_deferred_gates_ref": {
+    "path": "implementation/phase-9-grcv4/tranche-1/P9-1.2-DebtInventory.json",
+    "json_pointer": "/deferred_gates"
+  },
+  "scientific_debts_closed": [],
+  "public_support_added": [],
+  "G3_accepted": false,
+  "new_runtime_iterations_authorized": [],
+  "RG2b_scope": {
+    "numerical_variant": "generalized_finite_graph_after_scalar_foundation",
+    "shared_audit": "P9-6.4d",
+    "regularity": "completion_relative_Lipschitz_only",
+    "indefinite_entry_chart_invariance": false,
+    "optional_32_vertex_full_campaign": "not_established_not_required_without_explicit_request"
+  },
+  "verification": {
+    "command": "PYTHONPATH=src:. .venv/bin/python implementation/phase-9-grcv4/verification/verify_p965_routing.py --check",
+    "numerical_tests_rerun": 0,
+    "optional_32_vertex_campaign_run": false,
+    "reuse": "Accepted numerical runs retain their own source subjects and counts. One existing Tranche 6 source/acceptance chain is checked; eight seed identities and routing mutation pressure are fresh mechanical checks.",
+    "result": {
+      "status": "passed",
+      "recorded_at_utc": "2026-09-10T15:04:30.773131+00:00",
+      "profile_seeds_reconstructed": 8,
+      "routing_mutations_rejected": [
+        "C1_promotion",
+        "conflated_history",
+        "dropped_debt",
+        "duplicate_candidate",
+        "missing_candidate",
+        "missing_shared_audit",
+        "optional_skip_as_pass",
+        "other_candidate_seed",
+        "partial_fixture_product",
+        "reopen_resolved_PC_debt",
+        "sibling_hold",
+        "unsupported_G2",
+        "wrong_candidate_child"
+      ],
+      "inherited_source_and_acceptance_chain": "passed",
+      "side_tool_API_browser": "passed",
+      "browser_validator_tests": 33,
+      "browser_validator_passed": 33,
+      "numerical_tests_rerun": 0,
+      "optional_32_vertex_campaign_run": false,
+      "lint_relative_links_and_dispositions": "passed"
+    }
+  },
+  "source_bindings": {
+    "implementation/investigations/grc9v4-constitutive-design/decisions/D9ResidualDebtLedger.json": "fc5cf30d1eca35dda5a12f8799665d33a7041f47d1b53fa94137f021fc69609a",
+    "implementation/investigations/grc9v4-constitutive-design/decisions/GeometryTemporalRealizationComparativeSynthesis.json": "a2ce74ae0f644f923dd8d5f0a4e4327ef3ae94f499d253141abcf6e0a69f3d38",
+    "implementation/phase-9-grcv4/tranche-1/P9-1.2-DebtInventory.json": "9811da71ad7f5cbefcf84d85be3baa91e245c130c37f3d32a625cd0d33e246d8",
+    "implementation/phase-9-grcv4/tranche-1/P9-1.3-VerificationRouting.json": "8b926fda8edc7c0ed025b19721c5fb57c1d5aa448b082696eba9bef9459e3ddc",
+    "implementation/phase-9-grcv4/tranche-1/P9-1.4-SupportAndDependencies.json": "e984ebcd61d294e1a87b149c48db11511e7eab62f2b0f7bedcd0123e27f5f66a",
+    "implementation/phase-9-grcv4/tranche-4/P9-4.8B-G2Acceptance.json": "b8be072df369b6dfc64b96ccecf4766c9186ad7444baa85133f71fd71898b6be",
+    "implementation/phase-9-grcv4/tranche-5/P9-5.4-AuditFollowup.json": "1622ac065d1b427c060190e2c04703b9de6224687fdb085c7894443f24fbfb86",
+    "implementation/phase-9-grcv4/tranche-6/P9-6.1ab-AuditFollowup.json": "ca5e4b1283d2526727f8fb80975fe36a9b767e4ac62ddb7b98bec1da263ba552",
+    "implementation/phase-9-grcv4/tranche-6/P9-6.1c-ExecutionRecord.json": "7888063f11d7fa8a40fe9e2ffc8ba4de1b2fba535ed68d059279d464bd2f2ebb",
+    "implementation/phase-9-grcv4/tranche-6/P9-6.2abc-AuditFollowup.json": "70112b65c144991aa43f8a0fc204cd436f5e5d53b44c11eba9363e2158cf739c",
+    "implementation/phase-9-grcv4/tranche-6/P9-6.3abc-AuditFollowup.json": "d245a583203a9d5f8bdab5a8a15144e03f0cb92a8edebae04af89a08002d09a6",
+    "implementation/phase-9-grcv4/tranche-6/P9-6.4d-AuditFollowup.json": "807bcf09de3fbcc3c4757d7489b2f402e93a3bb8d1c2c7a1659d09dfdac1dfc1"
+  },
+  "record_digest": "e67d675a3694bd595804cf832b192939d330b66f83947b059abb2ff17763659e",
+  "historical_PC_debt_dispositions": [
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/GeometryTemporalRealizationComparativeSynthesis.json",
+      "json_pointer": "/immediate_predecessor_debt_disposition/38",
+      "debt_id": "GTRS-PC-DEBT-COMPARATIVE-SYNTHESIS",
+      "status": "resolved",
+      "successor": null
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/GeometryTemporalRealizationComparativeSynthesis.json",
+      "json_pointer": "/immediate_predecessor_debt_disposition/39",
+      "debt_id": "GTRS-PC-DEBT-CARRIER-DOMAIN-WRITER-AND-PARAMETERS",
+      "status": "superseded",
+      "successor": "GTRS-COMP-DEBT-PC-PARAMETRIC-ENVELOPE-AND-WRITER"
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D9ResidualDebtLedger.json",
+      "json_pointer": "/predecessor_dispositions/37",
+      "debt_id": "GTRS-PC-DEBT-TOPOLOGY-EVENT-INTERSPACE",
+      "status": "resolved",
+      "successor": null
+    },
+    {
+      "path": "implementation/investigations/grc9v4-constitutive-design/decisions/D9ResidualDebtLedger.json",
+      "json_pointer": "/predecessor_dispositions/40",
+      "debt_id": "GTRS-COMP-DEBT-PC-PARAMETRIC-ENVELOPE-AND-WRITER",
+      "status": "resolved",
+      "successor": "D9-VERIFY-QUANTITATIVE-PARAMETER-ENVELOPES"
+    }
+  ],
+  "acceptance": {
+    "status": "accepted_by_user",
+    "recorded_at_utc": "2026-09-10T15:08:21.480805+00:00",
+    "request": "great, accept and commit and close tranche 6, make tranche 7 work as next step for handoff",
+    "accepted_iterations": [
+      "P9-6.5"
+    ],
+    "profiles_reviewed": [
+      "A_CI",
+      "A_CI_PC",
+      "A_PC",
+      "A_RG2b",
+      "C_CI",
+      "C_CI_PC",
+      "C_PC",
+      "C_RG2b"
+    ],
+    "scientific_verdict": "PASS",
+    "open_leaf_blockers": [],
+    "reviewed_record_digest": "e557517497788b1fed66954fdb2871d1901537652938dbb1e20306ca745d9806",
+    "tranche_6_status": "accepted_closed",
+    "tranche_iterations": [
+      "P9-6.1a",
+      "P9-6.1b",
+      "P9-6.1c",
+      "P9-6.2a",
+      "P9-6.2b",
+      "P9-6.2c",
+      "P9-6.3a",
+      "P9-6.3b",
+      "P9-6.3c",
+      "P9-6.4a",
+      "P9-6.4b",
+      "P9-6.4c",
+      "P9-6.4d",
+      "P9-6.5"
+    ],
+    "scope": "Accepted bounded numerical candidate realizations, shared audits and concrete lifecycle/G2 routing. Earlier numerical records retain their own exact scope and execution subjects.",
+    "next_work": "P9-7.1-A_OS",
+    "new_runtime_iterations_authorized": [],
+    "public_support_added": [],
+    "G3_accepted": false,
+    "record_preservation": "Original routing fields, execution-time status, user_accepted flag, source bindings and verification results remain unchanged. This object records the later acceptance and Tranche 6 closure. No numerical tests were rerun for acceptance."
+  }
+}

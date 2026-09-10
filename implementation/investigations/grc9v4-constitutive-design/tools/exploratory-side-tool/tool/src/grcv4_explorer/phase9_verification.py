@@ -180,7 +180,7 @@ def verification_status(repo_root: Path) -> dict:
                     "iteration_id": "P9-4.9.2",
                     "G2_accepted": False,
                 },
-                implementation_scope=approval["runtime_targets"],
+                implementation_scope=module.runtime_targets(approval),
                 abundance_interface_authority={
                     "record_digest": module.accepted_abundance_authority(root)["record_digest"],
                     "path": module.ABUNDANCE_AUTHORITY,
@@ -192,10 +192,10 @@ def verification_status(repo_root: Path) -> dict:
                 dependency_ready_leaves=ready,
                 permitted_runtime_paths=sorted(
                     r["path"]
-                    for r in approval["runtime_targets"]
+                    for r in module.runtime_targets(approval)
                     if r["requires_gate"] == "P9-G1" and set(ready) & owners[r["path"]]
                 ),
-                next_gate="Tranche 4 closed: P9-4.8B / P9-7.7-C_OS accepted for one exact C_OS profile. G3, other profiles and specialization remain closed. P9-5.3 is accepted and P9-5.4 claim separation is authorized. A initialization and provisional dynamics do not certify native formation, source-history preservation or live lifecycle. P9-7.1-A_OS, A_OS conformance and G3 remain pending their own acceptance or entry. No numeric abundance definition.",
+                next_gate="Tranche 4 closed: P9-4.8B / P9-7.7-C_OS accepted for one exact C_OS profile. G3, other profiles and specialization remain closed. Tranche 5 is accepted. P9-6.1a C_CI and P9-6.1b A_CI are accepted after audit corrections; P9-6.1c shared-contract reconciliation is accepted for A_CI and C_CI; all P9-6.1 children are accepted. P9-6.2a C_PC, P9-6.2b A_PC and P9-6.2c shared reconciliation are accepted after audit corrections; all P9-6.2 children are accepted. P9-6.3a C_CI_PC, P9-6.3b A_CI_PC and P9-6.3c shared reconciliation are accepted by the user, each with bounded numerical PASS. All P9-6.3 children are accepted. The eight new native pressure methods pass; the unchanged 175-method campaign is reused. Composite lifecycle/G2 remain pending. P9-6.4a C_RG2b and P9-6.4b A_RG2b retain scalar reference foundations with corrected native reset/final admission and failure ordering. P9-6.4c provides provisional variable-size graph evaluation and matrix error certification for A/C; its execution record supplies the verification result. P9-6.4d shared reconciliation (formerly c) has bounded scientific PASS for A_RG2b and C_RG2b. The three new native regressions pass; the existing 55 passes and one optional 32-vertex skip are reused. The user accepted P9-6.4a/b/c/d on 2026-09-10 for the bounded numerical scope of both A_RG2b and C_RG2b. Correctness on larger complex graphs precedes performance optimization. RG2b lifecycle/G2 remain pending. P9-6.5 is accepted by the user; Tranche 6 is accepted and closed in its declared scope. All eight numerical realizations are reconciled and independently routed to exact-scope lifecycle/G2 work. Next handoff task: P9-7.1-A_OS snapshot/load/replay, reset, rebase and duplication; implementation entry remains separate. Tranche 6 support remains the exact C_OS singleton; scientific debts and the optional 32-vertex campaign remain separate. A initialization and provisional dynamics do not certify native formation, source-history preservation or live lifecycle. P9-7.1-A_OS, A_OS conformance and G3 remain pending their own acceptance or entry. No numeric abundance definition.",
                 claim_ceiling="G1 is bounded implementation permission. Separate user-accepted G2 covers only the listed complete C_OS profile and reviewed domain; no family-wide, other-profile or specialization conformance is inferred.",
             )
         cross = module.read(

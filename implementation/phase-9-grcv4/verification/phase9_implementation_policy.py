@@ -57,6 +57,17 @@ APPROVAL_DIGEST = "cd2c52f30477e1042bb903bd0553da237ddccc9cad373afecc1a84e4e0b37
 POLICY = HERE + "Phase9ImplementationBoundary.json"
 RECORD = PHASE + "tranche-1/P9-1.9-ExecutionRecord.json"
 WORK = PHASE + "runtime/RuntimeWorkManifest.json"
+PC_BATCH_PATHS = {
+    "src/pygrc/models/grc_v4_pc.py",
+    "tests/models/test_grc_v4_pc.py",
+}
+CIPC_BATCH_PATHS = {"tests/models/test_grc_v4_cipc.py"}
+RG_BATCH_PATHS = {"src/pygrc/models/grc_v4_rg2b.py", "tests/models/test_grc_v4_rg2b.py", "src/pygrc/models/grc_v4_rg2b_graph.py", "tests/models/test_grc_v4_rg2b_graph.py"}
+CI_BATCH_BASE = "c55960b"
+CI_BATCH_PATHS = {
+    "src/pygrc/models/grc_v4_ci.py",
+    "tests/models/test_grc_v4_ci.py",
+}
 G2_ACCEPTANCE = PHASE + "tranche-4/P9-4.8B-G2Acceptance.json"
 G2_ACCEPTANCE_DIGEST = "e7165dc2f4cfe159d397c7aa61ccfbc89a30909db888e6638ef1ffe5905ec6dd"
 FOUNDATION = PHASE + "tranche-2/P9-2.1-2.2-AcceptanceRecord.json"
@@ -190,6 +201,32 @@ HANDOFF_PATHS = {
     HERE + "handoff/P9-G1-outputs.zip",
 }
 PATHS = {
+    HERE + "verify_p965_routing.py",
+    PHASE + "tranche-6/P9-6.5-Review.md",
+    PHASE + "tranche-6/P9-6.5-RealizationRouting.json",
+    HERE + "verify_p964_rg2b.py",
+    HERE + "verify_p964c_rg2b_graph.py",
+    PHASE + "tranche-6/P9-6.4c-Review.md",
+    PHASE + "tranche-6/P9-6.4c-ExecutionRecord.json",
+    PHASE + "tranche-6/P9-6.4d-AuditFollowup.json",
+    PHASE + "tranche-6/P9-6.4ab-Review.md",
+    PHASE + "tranche-6/P9-6.4ab-ExecutionRecord.json",
+    HERE + "verify_p962_pc.py",
+    PHASE + "tranche-6/P9-6.2ab-Review.md",
+    PHASE + "tranche-6/P9-6.2ab-ExecutionRecord.json",
+    PHASE + "tranche-6/P9-6.2abc-AuditFollowup.json",
+    PHASE + "tranche-6/P9-6.3ab-Review.md",
+    PHASE + "tranche-6/P9-6.3ab-ExecutionRecord.json",
+    PHASE + "tranche-6/P9-6.3abc-AuditFollowup.json",
+    HERE + "verify_p963_cipc.py",
+    HERE + "verify_p961_ci.py",
+    PHASE + "tranche-6/P9-6.1ab-Review.md",
+    PHASE + "tranche-6/P9-6.1ab-ExecutionRecord.json",
+    PHASE + "tranche-6/P9-6.1ab-AuditFollowup.json",
+    PHASE + "tranche-6/P9-6.1ab-AuditPressure.json",
+    PHASE + "tranche-6/P9-6.1ab-AuditReproducer.py",
+    PHASE + "tranche-6/P9-6.1c-Review.md",
+    PHASE + "tranche-6/P9-6.1c-ExecutionRecord.json",
     G2_ACCEPTANCE,
     HERE + "verify_p951_initialization.py",
     HERE + "verify_p952_current_writer.py",
@@ -983,6 +1020,49 @@ def leaf_permissions(root):
     accepted_g2(root)
     git(root, "merge-base", "--is-ancestor", "c2cb423", "HEAD")
     ready = sorted(set(ready) | {"P9-5.1"})
+    # Explicit user-authorized a/b batch after accepted Tranche 5.
+    git(root, "merge-base", "--is-ancestor", CI_BATCH_BASE, "HEAD")
+    ready = sorted(set(ready) | {"P9-6.1a", "P9-6.1b"})
+    # User requested the remaining c reconciliation after accepting both
+    # children. This opens shared test ownership, not a lifecycle/support gate.
+    git(root, "merge-base", "--is-ancestor", "6d3c0b2", "HEAD")
+    ci_name = PHASE + "tranche-6/P9-6.1ab-AuditFollowup.json"
+    ci_bytes = git(root, "show", "6d3c0b2:" + ci_name)
+    ci = json.loads(ci_bytes)
+    require(safe_path(root,ci_name).read_bytes()==ci_bytes
+            and ci["record_digest"]==digest_record(ci)
+            and ci["acceptance"]["accepted_iterations"]==["P9-6.1a","P9-6.1b"]
+            and ci["acceptance"]["status"]=="accepted_by_user",
+            "CI reconciliation requires both accepted children")
+    ready = sorted(set(ready) | {"P9-6.1c"})
+    # Explicit PC batch after accepted CI reconciliation; c is now user-authorized.
+    git(root, "merge-base", "--is-ancestor", "d1ab4bb", "HEAD")
+    pc_predecessor = PHASE + "tranche-6/P9-6.1c-ExecutionRecord.json"
+    require(safe_path(root, pc_predecessor).read_bytes() == git(root, "show", "d1ab4bb:" + pc_predecessor),
+            "PC batch requires preserved CI reconciliation acceptance")
+    # User explicitly combined the a/b audit correction with c reconciliation.
+    # This supersedes the former review-before-c execution order, not acceptance.
+    ready = sorted(set(ready) | {"P9-6.2a", "P9-6.2b", "P9-6.2c"})
+    # Explicit a/b composition request after acceptance of the full PC batch.
+    git(root, "merge-base", "--is-ancestor", "affb214", "HEAD")
+    pc_record = PHASE + "tranche-6/P9-6.2abc-AuditFollowup.json"
+    require(safe_path(root, pc_record).read_bytes() == git(root, "show", "affb214:" + pc_record),
+            "composition requires preserved PC acceptance")
+    # User supplied the a/b audit and explicitly requested c reconciliation.
+    ready = sorted(set(ready) | {"P9-6.3a", "P9-6.3b", "P9-6.3c"})
+    # RG2b follows accepted composition; the user now requests d reconciliation.
+    git(root, "merge-base", "--is-ancestor", "ba45482", "HEAD")
+    rg_predecessor = PHASE + "tranche-6/P9-6.3abc-AuditFollowup.json"
+    require(safe_path(root, rg_predecessor).read_bytes() == git(root, "show", "ba45482:" + rg_predecessor),
+            "RG2b requires preserved composition acceptance")
+    ready = sorted(set(ready) | {"P9-6.4a", "P9-6.4b", "P9-6.4c", "P9-6.4d"})
+    # User-requested coordination only, after acceptance of the full RG2b batch.
+    # No additional runtime owners, paths, lifecycle or support are opened.
+    git(root, "merge-base", "--is-ancestor", "739c123", "HEAD")
+    rg_record = PHASE + "tranche-6/P9-6.4d-AuditFollowup.json"
+    require(safe_path(root, rg_record).read_bytes() == git(root, "show", "739c123:" + rg_record),
+            "realization routing requires preserved RG2b acceptance")
+    ready = sorted(set(ready) | {"P9-6.5"})
     owners = {}
     for module in ownership["modules"]:
         leaves = {
@@ -1058,7 +1138,34 @@ def leaf_permissions(root):
     # this diagnostic field; it opens no A lifecycle operation or commit.
     name = "src/pygrc/models/grc_v4_lifecycle.py"
     owners[name] = owners[name] | {"P9-5.3"}
+    owners["src/pygrc/models/grc_v4_candidate_c.py"] |= {"P9-6.1a"}
+    owners["src/pygrc/models/grc_v4_candidate_a.py"] |= {"P9-6.1b"}
+    for name in CI_BATCH_PATHS:
+        owners[name] = {"P9-6.1a", "P9-6.1b"}
+    owners["tests/models/test_grc_v4_ci.py"].add("P9-6.1c")
+    owners["src/pygrc/models/grc_v4_candidate_a.py"] |= {"P9-6.2b"}
+    for name in PC_BATCH_PATHS:
+        owners[name] = {"P9-6.2a", "P9-6.2b", "P9-6.2c"}
+    for name in ("src/pygrc/models/grc_v4_ci.py", "src/pygrc/models/grc_v4_pc.py"):
+        owners[name] |= {"P9-6.3a", "P9-6.3b"}
+    owners["src/pygrc/models/grc_v4_candidate_a.py"] |= {"P9-6.3b"}
+    owners["src/pygrc/models/grc_v4_candidate_c.py"] |= {"P9-6.3a"}
+    for name in CIPC_BATCH_PATHS:
+        owners[name] = {"P9-6.3a", "P9-6.3b", "P9-6.3c"}
+    owners["src/pygrc/models/grc_v4_candidate_a.py"] |= {"P9-6.4b"}
+    for name in RG_BATCH_PATHS:
+        owners[name] = {"P9-6.4a", "P9-6.4b", "P9-6.4c"}
+    owners["tests/models/test_grc_v4_rg2b_graph.py"].add("P9-6.4d")
     return ready, owners
+
+
+def runtime_targets(approval):
+    """Add the CI/PC files owned by the explicitly authorized batches."""
+    return [*approval["runtime_targets"], *(
+        {"path": name, "requires_gate": "P9-G1", "before_sha256": None,
+         "operation": "v4_owned_add_or_update", "module_owner": "grc_v4_realizations"}
+        for name in sorted(CI_BATCH_PATHS | PC_BATCH_PATHS | CIPC_BATCH_PATHS | RG_BATCH_PATHS)
+    )]
 
 
 def accepted_a_initialization(root):
@@ -1193,7 +1300,7 @@ def work_entries(root, approval):
         and value["record_digest"] == digest_record(value),
         "stale work manifest",
     )
-    targets = {r["path"]: r for r in approval["runtime_targets"]}
+    targets = {r["path"]: r for r in runtime_targets(approval)}
     checklist = git(
         root,
         "show",
@@ -1204,7 +1311,7 @@ def work_entries(root, approval):
     )
     # The accepted baseline cannot contain later closure IDs. Register exactly
     # the user-approved successor, not a broad regex-based permission.
-    leaves.update({"P9-4.9.1", "P9-4.9.1a", "P9-4.9.2", "P9-4.9.3"})
+    leaves.update({"P9-4.9.1", "P9-4.9.1a", "P9-4.9.2", "P9-4.9.3", "P9-6.1a", "P9-6.1b", "P9-6.1c", "P9-6.2a", "P9-6.2b", "P9-6.2c", "P9-6.3a", "P9-6.3b", "P9-6.3c", "P9-6.4a", "P9-6.4b", "P9-6.4c", "P9-6.4d", "P9-6.5"})
     rows = value["entries"]
     require(len({r["path"] for r in rows}) == len(rows), "duplicate work target")
     result = {}
@@ -1376,7 +1483,7 @@ def current_boundary(root):
     # may be summarized in the leaf record (see P9-1.9-EvidenceHandoff.md).
     # Removing a manifest row or staging deletion cannot rewrite that evidence.
     runtime_names = {
-        r["path"] for r in approval["runtime_targets"] if r["before_sha256"] is None
+        r["path"] for r in runtime_targets(approval) if r["before_sha256"] is None
     }
     for item in filter(None, git(root, "ls-tree", "-r", "-z", "HEAD").split(b"\0")):
         header, raw_name = item.split(b"\t", 1)

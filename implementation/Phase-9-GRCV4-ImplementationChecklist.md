@@ -73,8 +73,8 @@ coverage, and evidence; a family label alone does not certify all instances.
 | `P9-G2[A_PC]` | Pending | P9-6.2b plus profile lifecycle and P9-7.7 review. |
 | `P9-G2[C_CI_PC]` | Pending | P9-6.3a plus profile lifecycle and P9-7.7 review. |
 | `P9-G2[A_CI_PC]` | Pending | P9-6.3b plus profile lifecycle and P9-7.7 review. |
-| `P9-G2[C_RG2b]` | Pending | P9-6.4a certification plus profile lifecycle and P9-7.7 review. |
-| `P9-G2[A_RG2b]` | Pending | P9-6.4b certification plus profile lifecycle and P9-7.7 review. |
+| `P9-G2[C_RG2b]` | Pending | P9-6.4a foundation, P9-6.4c generalization and P9-6.4d audit for C, plus profile lifecycle and P9-7.7 review. |
+| `P9-G2[A_RG2b]` | Pending | P9-6.4b foundation, P9-6.4c generalization and P9-6.4d audit for A, plus profile lifecycle and P9-7.7 review. |
 
 `P9-G3[C_OS]` denotes singleton set `{C_OS}`. It may be reviewed through
 P9-7.8 after P9-G2[C_OS], independently of other profiles. Adding profiles
@@ -870,34 +870,157 @@ with their owning leaves; this acceptance grants no new execution permission.
 ## Tranche 6. CI, PC, CI+PC, and RG2b
 
 P9-6.1–P9-6.4 are parent registers. Their candidate children carry numerical
-and failure oracles with each implementation; the `c` children audit shared
-realization behavior once their reviewed inputs are available. Each profile
+and failure oracles with each implementation; P9-6.1c, P9-6.2c and P9-6.3c audit
+shared realization behavior once their reviewed inputs are available. RG2b
+adds generalization at P9-6.4c before its shared audit at P9-6.4d. Each profile
 also needs applicable shared-contract evidence before its G2 review, but a
 pending sibling implementation cannot substitute for or impose unrelated
 coverage. Record bounded shared-audit results for the available profile set.
 
-- [ ] P9-6.1a: Implement and verify C_CI's selected bounded root and exact
+The 2026-09-10 user-directed split moves the former unexecuted P9-6.4c audit
+to P9-6.4d. Historical crosswalk/debt references and the a/b review/execution
+record use the former numbering; their shared-audit c means d under this
+amendment. No historical execution, scientific authority or acceptance changes.
+
+- [x] P9-6.1a: Implement and verify C_CI's selected bounded root and exact
   failure/domain rules.
-- [ ] P9-6.1b: Implement and verify A_CI's selected bounded root and exact
+  Accepted by the user on 2026-09-10, with a separate C_CI PASS after F1/F2
+  corrections: analytic residual enclosure and consumed-root failure staging. The
+  [shared review/source map](./phase-9-grcv4/tranche-6/P9-6.1ab-Review.md)
+  declares the concrete whole-ball single-stratum scope and its limitations.
+- [x] P9-6.1b: Implement and verify A_CI's selected bounded root and exact
   failure/domain rules.
-- [ ] P9-6.1c: Audit shared CI realization contracts and reconcile independent
+  Implemented in the same batch with independent A oracles and refreshed
+  in-root conductance, one selected-current continuity/write, and separate
+  reset/final-root admission. F1–F3 corrections include analytic residual
+  enclosure, failure staging and zero-duration writer-policy admission. Accepted
+  by the user on 2026-09-10, with a separate A_CI PASS. The
+  [audit followup](./phase-9-grcv4/tranche-6/P9-6.1ab-AuditFollowup.json)
+  keeps separate child results and reconstructs the original execution subject.
+- [x] P9-6.1c: Audit shared CI realization contracts and reconcile independent
   candidate evidence; record exactly which profiles the audit covers.
-- [ ] P9-6.2a: Implement and verify C_PC old-history reads, one scalar-ZOH
+  Accepted by the user for A_CI and C_CI on 2026-09-10; scientific verdict
+  PASS. The [reconciliation review](./phase-9-grcv4/tranche-6/P9-6.1c-Review.md)
+  reuses the combined audit and 48-method child run, reviews the corrected
+  enclosure derivation and records four new focused pressure methods. No
+  runtime correction or expanded CI support is claimed.
+- [x] P9-6.2a: Implement and verify C_PC old-history reads, one scalar-ZOH
   write, declared tau, and state/reset ownership.
-- [ ] P9-6.2b: Implement and verify A_PC's candidate-specific PC contract.
-- [ ] P9-6.2c: Audit shared PC behavior and independent history/state coverage.
-- [ ] P9-6.3a: Implement and verify C_CI_PC same-source composition and gain two.
-- [ ] P9-6.3b: Implement and verify A_CI_PC same-source composition and gain two.
-- [ ] P9-6.3c: Audit shared CI+PC composition against the exact root/carrier
+  Accepted by the user on 2026-09-10 after correction and P9-6.2c review;
+  scientific verdict PASS. Computed zero is canonicalized in the shared writer and C source;
+  exact selector-cutoff failure is attributed to domain admission before current.
+  The [shared review](./phase-9-grcv4/tranche-6/P9-6.2ab-Review.md) preserves
+  the bounded whole-chart and provisional ownership scope.
+- [x] P9-6.2b: Implement and verify A_PC's candidate-specific PC contract.
+  Accepted by the user on 2026-09-10 in the same corrected/reviewed batch;
+  scientific verdict PASS. A's exponent certificate respects repeated loop endpoints;
+  the G_W law and W writer remain unchanged. Old Z is preserved through the
+  refreshed A writer until the single carrier update.
+- [x] P9-6.2c: Audit shared PC behavior and independent history/state coverage.
+  Completed at the user's request together with the a/b external audit, covering
+  A_PC and C_PC; accepted by the user on 2026-09-10 with scientific verdict PASS. The
+  [combined followup](./phase-9-grcv4/tranche-6/P9-6.2abc-AuditFollowup.json)
+  records 48 fresh PC methods (32 original, eight audit regressions, eight
+  additional pressure methods), reuses the unchanged 80 A/OS/CI regressions,
+  and restores the original source hashes without a source archive.
+  No PC lifecycle, formation provenance, matched-forcing contraction certificate,
+  endpoint witness, G2 or G3 is inferred from this reconciliation.
+- [x] P9-6.3a: Implement and verify C_CI_PC same-source composition and gain two.
+  Accepted by the user on 2026-09-10; independent audit and bounded review PASS.
+  The [shared review](./phase-9-grcv4/tranche-6/P9-6.3ab-Review.md) covers the
+  entire B_2R image, uniform source/contraction bounds, one C selector stratum,
+  complete trial-chain refresh and the exact same-root carrier source.
+- [x] P9-6.3b: Implement and verify A_CI_PC same-source composition and gain two.
+  Accepted by the user on 2026-09-10; independent audit and bounded review PASS.
+  The existing CI/PC validators are shared. A's refreshed
+  W writer preserves old Z until the single held-source carrier update.
+  The [run record](./phase-9-grcv4/tranche-6/P9-6.3ab-ExecutionRecord.json)
+  records 32 composition tests and 143 affected regressions. No composite
+  lifecycle, formation, endpoint, G2 or G3 is inferred.
+- [x] P9-6.3c: Audit shared CI+PC composition against the exact root/carrier
   source and candidate-specific evidence.
-- [ ] P9-6.4a: Bind, certify, and verify the admitted C_RG2b evaluator and
+  Accepted by the user on 2026-09-10 with bounded numerical PASS. The
+  [followup](./phase-9-grcv4/tranche-6/P9-6.3abc-AuditFollowup.json) closes the
+  native-execution and record-integrity gaps: four audit proposals plus four
+  additional methods pass. Numerical code and original test/oracle bytes are
+  unchanged, so the 175 original passes are reused. The shared review records
+  CI/PC ownership, cross-module coupling and the separate lifecycle ceiling.
+- [x] P9-6.4a: Bind, certify, and verify the admitted C_RG2b evaluator and
   Lipschitz section; reject unsupported classical derivative claims.
-- [ ] P9-6.4b: Bind, certify, and verify A_RG2b independently.
-- [ ] P9-6.4c: Audit the RG2b evaluator/certification scope and regularity
-  ceiling for the exact reviewed profiles.
-- [ ] P9-6.5: Reconcile concrete realization results profile-by-profile,
+  Implemented, verified and externally reviewed for a frozen two-vertex/one-edge
+  completion; bounded scientific PASS, accepted by the user on 2026-09-10. The
+  [shared review](./phase-9-grcv4/tranche-6/P9-6.4ab-Review.md) derives candidate-specific
+  inverse, value/Lipschitz, contraction, containment and finite-error bounds.
+  C retains its selector, retained Hodge and filtered response. This is the
+  scalar reference foundation; generalization is owned by P9-6.4c and the
+  combined audit by P9-6.4d. Lifecycle/G2 remain separate work.
+- [x] P9-6.4b: Bind, certify, and verify A_RG2b independently.
+  Implemented, verified and externally reviewed on the corresponding bounded A
+  domain; bounded scientific PASS, accepted by the user on 2026-09-10. A geometry feedback and the refreshed W
+  writer remain active; descriptor contrast vanishes structurally on this graph.
+  The [single run record](./phase-9-grcv4/tranche-6/P9-6.4ab-ExecutionRecord.json)
+  binds 29 RG2b methods and 52 affected A regressions, including independent
+  section/preimage/writer oracles and nonzero-coupling separation from CI.
+  The supplied a/b HOLD is corrected in the new c record: native reset/final
+  section checks, preserved root disposition, and clock/index admission ordering.
+  The original run is historical; generalization and shared audit are c/d.
+- [x] P9-6.4c: Generalize the A_RG2b and C_RG2b evaluator and certification
+  from the two-vertex/one-edge foundations to variable-size finite graphs.
+  Implemented and reviewed with bounded scientific PASS; accepted by the user on 2026-09-10.
+  The [graph review](./phase-9-grcv4/tranche-6/P9-6.4c-Review.md) and
+  [current run](./phase-9-grcv4/tranche-6/P9-6.4c-ExecutionRecord.json) include the
+  a/b audit corrections. The seven proposals pass natively after reproducing
+  12 original failed assertions; three additional scalar methods pressure the
+  neighboring boundaries. The following scope is required for completion.
+  Reuse the scalar oracles and common owners,
+  while reporting separate A and C outcomes. Bind a graph-general frozen
+  completion, matrix error norms, finite deterministic evaluation and computed
+  inverse, value/Lipschitz self-map, contraction and containment certificates.
+  Arbitrary tiny-graph caps must disappear; scientific admission conditions
+  remain explicit, and removing the existing guard alone is insufficient.
+  Exercise nonzero A descriptor contrast, C retained-Hodge/filtering and
+  noncommuting matrix behavior, paths/cycles/branching and high-degree graphs,
+  parallel edges, loops, disconnected components and isolates where admitted
+  by the source contracts. Include relabeling/reorientation, certificate
+  boundaries, precision exhaustion, independent reset admission, replay and
+  repeated ordinary beats. Demonstrate correct nonzero-coupling execution on
+  larger graphs at several declared sizes, with independently justified
+  expectations and exact reconstruction commands; tiny fixtures alone cannot
+  complete this leaf. Failures to admit a case need a scientific or numerical
+  reason, not a graph-size shortcut. Correctness and ability to execute larger
+  graphs are required; speed and performance optimization are deferred.
+  The 32-vertex campaign is opt-in on explicit request; default verification
+  records its intentional skip separately and does not imply completion at that size.
+  Preserve the Lipschitz-only, completion-relative claim and distinguish
+  one-beat containment from indefinite invariance of the entry chart.
+- [x] P9-6.4d: Audit the RG2b evaluator/certification scope and regularity
+  ceiling for the exact reviewed profiles (formerly P9-6.4c).
+  Reviewed and verified: **bounded scientific PASS for A_RG2b and C_RG2b**;
+  accepted by the user on 2026-09-10. The [d followup](./phase-9-grcv4/tranche-6/P9-6.4d-AuditFollowup.json)
+  closes the audit's earlier pending-record observation against the completed
+  55-pass/one-optional-skip native campaign. Three new regressions pass for
+  large-Hodge representation (both signs and zero gain), exact rational
+  noncommuting current/source errors and dimensional Frobenius rounding.
+  Runtime sources and the original methods are unchanged; the prior runs are
+  reused without another full campaign. External isolated pressure remains
+  attributed as such. No open numerical leaf blocker remains.
+  Reconcile their evidence in one shared audit with separate A/C verdicts;
+  challenge graph coverage, complete candidate behavior and finite error
+  certificates. Preserve the one-beat containment and Lipschitz-only ceilings.
+  Generalized numerical acceptance does not grant lifecycle, topology-event,
+  C1-section or G2/G3 claims.
+- [x] P9-6.5: Reconcile concrete realization results profile-by-profile,
   route each ready profile to lifecycle/G2 review, and retain pending or
   deferred siblings. Tranche-wide completion is not an entry condition.
+  Accepted by the user on 2026-09-10; bounded review PASS. Tranche 6 is accepted
+  and closed in its declared scope. The [review](./phase-9-grcv4/tranche-6/P9-6.5-Review.md) and
+  [routing record](./phase-9-grcv4/tranche-6/P9-6.5-RealizationRouting.json)
+  bind all eight accepted numerical candidate results and shared audits,
+  reproducible exact seeds, independent lifecycle/conformance routes and both
+  P9-6.5 forward obligations. The generalized RG2b result remains distinct from
+  its scalar foundation. Lifecycle/G2, scientific debts and the optional
+  32-vertex campaign retain their limits; public support remains exact C_OS.
+  The next handoff task is P9-7.1-A_OS, starting generic lifecycle generalization.
 
 ## Tranche 7. Generic lifecycle generalization and P9-G2
 

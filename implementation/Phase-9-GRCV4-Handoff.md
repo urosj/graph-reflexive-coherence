@@ -1,4 +1,293 @@
-# Phase 9 GRCV4 handoff — Tranche 5 completion and regression closure
+# Phase 9 GRCV4 handoff — Tranche 6 closed; Tranche 7 next
+
+Current restart point, 2026-09-10: branch `impl/phase-9-grcv4-tranche-6`,
+accepted numerical predecessor `739c123` (P9-6.4a/b/c/d). The commit containing
+this closure handoff records P9-6.5 acceptance and completes Tranche 6.
+
+**P9-6.5 is accepted by the user; bounded coordination review PASS. Tranche 6
+is accepted and closed in its declared scope.** All eight candidate realizations have accepted numerical
+results and applicable shared audits. Start with the
+[reconciliation review](./phase-9-grcv4/tranche-6/P9-6.5-Review.md) and its
+[single routing record](./phase-9-grcv4/tranche-6/P9-6.5-RealizationRouting.json).
+The record binds exact reproducible provisional seeds, accepted evidence,
+independent lifecycle/G2 routes, separate W/Z history ownership and the two
+forward scientific obligations assigned to P9-6.5. Historical records remain
+unchanged; there is no new numerical implementation or duplicate validator.
+
+```sh
+uv sync --frozen --extra v4 --extra dev
+PYTHONPATH=src:. .venv/bin/python implementation/phase-9-grcv4/verification/verify_p965_routing.py --check
+```
+
+The check reconstructs eight seed identities, challenges routing mistakes and
+reuses the existing numerical source/acceptance chain and side-tool checks.
+Prior native runs retain their original counts; no full suite or optional
+32-vertex RG2b campaign is rerun for this coordination leaf.
+Verification passed: eight reconstructed seeds, 13 rejected routing mutations,
+inherited source/acceptance checks, actual API/browser agreement and all 33
+existing browser-validator tests. The routing record contains the compact result.
+
+**Next task: P9-7.1-A_OS**, beginning Tranche 7 generic lifecycle
+generalization. Bind and implement exact lifecycle children independently; the
+[entry steps below](#next-bounded-implementation-step-tranche-7) identify its
+scope and sources. Migration/event children require explicit
+source/target and map scope; no positive crossing is silently waived. Public
+support remains the accepted exact C_OS singleton. Formation, endpoint,
+quantitative-envelope, runtime comparison and RG2b C1 obligations retain their
+own gates. The historical PC five-debt list has successor dispositions: COMP
+resolved comparative synthesis/profile-kernel quotient and D9 resolved carrier
+event and writer design contracts. Their runtime/numeric evidence remains
+pending; the review maps these distinctions without rewriting old records.
+Neither Tranche 6 closure nor pending siblings determine an
+unrelated profile's G2/G3 outcome. The user authorized this closure commit;
+Tranche 7 implementation and any merge/new-branch work are subsequent steps.
+
+## Historical P9-6.4a/b/c/d acceptance
+
+Current restart point, 2026-09-10: branch `impl/phase-9-grcv4-tranche-6`,
+accepted predecessor `ba45482` (P9-6.3a/b/c).
+
+**P9-6.4a/b/c/d were accepted by the user on 2026-09-10, with bounded scientific
+PASS for A_RG2b and C_RG2b.** The user authorized committing the full batch. Start
+with the [graph proof and audit review](./phase-9-grcv4/tranche-6/P9-6.4c-Review.md)
+and [d followup](./phase-9-grcv4/tranche-6/P9-6.4d-AuditFollowup.json).
+The completed [graph execution record](./phase-9-grcv4/tranche-6/P9-6.4c-ExecutionRecord.json)
+retains 55 passes and one intentional optional skip. The three new d regressions
+pass natively; the original campaign was not repeated. No runtime correction was
+needed after the c audit. The next coordination task is P9-6.5.
+The original [a/b record](./phase-9-grcv4/tranche-6/P9-6.4ab-ExecutionRecord.json)
+retains its original bytes and 29+52 results; minimal reverse source spans in
+the new record recover that uncommitted historical subject.
+
+The a/b audit's reset/final reconstructed-geometry native checks, typed
+`no_admitted_root` propagation and admission-time clock/index checks are fixed.
+All seven proposed regressions were executed natively: 12 failed assertions
+before correction, then all seven methods passed. Three further scalar methods
+pressure ordering, unchanged write counts, causes and programmer exceptions.
+The auditor's isolated larger campaign remains external attribution.
+
+The new graph completion uses every vertex C, every A edge W, and full matrix
+geometry, with state sup norm and Frobenius geometry error. It has no vertex or
+edge-count cap. Whole-chart bounds certify SPD/conditioning, strict C selector
+stratum, A floor chart, global inverse, value/Lipschitz self-map, contraction and
+one-beat containment. Native current, continuity, source assembly and A writer
+owners are reused. C's retained/filtering matrices and A's nonzero descriptor
+contrast remain active. Finite matrix error balls include current-residual,
+inverse, graph-transform tail and stored rounding errors. Oversized rational
+error strings are prevented through conservative outward rounding, without
+changing Python's global digit limit.
+
+```sh
+uv sync --frozen --extra v4 --extra dev
+PYTHONPATH=src:. .venv/bin/python -m unittest -v tests.models.test_grc_v4_rg2b tests.models.test_grc_v4_rg2b_graph
+PYTHONPATH=src:. .venv/bin/python implementation/phase-9-grcv4/verification/verify_p964c_rg2b_graph.py --check
+```
+
+For only the new d pressure, select
+`tests.models.test_grc_v4_rg2b_graph.GraphRG2bReconciliation` with unittest.
+It checks large-Hodge rounding with signed/neutral controls, exact rational
+noncommuting current/source errors and full-dimensional Frobenius rounding.
+The auditor's earlier pending-record observation is resolved by the completed
+native capture. Its scaffolded pressure remains external attribution, not native
+execution. Current runtime/dependency hashes match the audit; its graph test is
+reconstructed by removing only the later opt-in switch. The d record preserves
+both prior execution records and their exact source subjects.
+
+`graph_fixture` in the new test module reconstructs all graph profiles and
+parameter choices. The review maps the independent oracles and pressure to the
+proof. Default tests cover rich structures, repeated 8/16-vertex paths, a 12-vertex
+star, full candidate
+channels, covariance, numerical/domain failures, replay and native postconditions.
+The exact-arithmetic implementation prioritizes correctness; no speed target is
+claimed. Graph admission requires nonempty vertex/edge spaces, unit vertex
+measure, a positive diagonal reference Hodge and the computed chart conditions.
+Fixed graph/context and positive configured beat duration remain restrictions;
+this is not topology-event support. A zero-duration inspection uses the same
+positive-beat section but performs no writes.
+
+The 32-vertex cycle campaign is **optional, only on explicit request**. Its full
+A/C result is not established by the default checks. An earlier long run was
+interrupted; do not interpret it as a pass. To request this campaign separately,
+set `GRCV4_RUN_SLOW_RG2B=1` and select
+`tests.models.test_grc_v4_rg2b_graph.GraphRG2bLargerExecution.test_32_vertex_cycle_native_step_and_independent_current`.
+Use an explicit wall-time budget when running it. The skip is intentional and
+recorded separately from passing methods; it does not waive any default test.
+
+The user-directed split moved the former unexecuted shared c audit to **P9-6.4d**.
+Historical a/b records and older crosswalk references retain that old numbering.
+The d reconciliation now gives separate A/C PASS verdicts for the corrected
+foundations and generalized evaluator. The d followup records the later user
+acceptance; original execution-time statuses remain intact. Acceptance changes
+no numerical source or test, so no scientific campaign was repeated.
+Public support remains C_OS; RG2b lifecycle, formation,
+C1/spectra, endpoint, topology/context events and G2/G3 remain pending. One-beat
+containment does not imply indefinite membership in the smaller entry chart.
+
+## Historical P9-6.3a/b/c acceptance
+
+Current restart point, 2026-09-10: branch `impl/phase-9-grcv4-tranche-6`,
+accepted predecessor `affb214` (P9-6.2a/b/c).
+
+**P9-6.3a C_CI_PC, P9-6.3b A_CI_PC and P9-6.3c shared reconciliation were
+accepted by the user on 2026-09-10, each with bounded scientific verdict PASS.**
+The audit found no runtime defect requiring correction.
+Start with the [review/proof/pressure map](./phase-9-grcv4/tranche-6/P9-6.3ab-Review.md)
+and [audit followup](./phase-9-grcv4/tranche-6/P9-6.3abc-AuditFollowup.json).
+The [original run manifest](./phase-9-grcv4/tranche-6/P9-6.3ab-ExecutionRecord.json)
+retains its execution-time status and bytes.
+The followup's acceptance object records the later user disposition. Numerical
+and test sources are unchanged by acceptance; no scientific suite was rerun.
+
+The existing CI root/trial/residual and PC envelope/writer owners now compose
+through typed CIPCParams, with rho_inst=1 and composition_gain=2. Admission
+covers the entire B_2R geometry image, a computed strict uniform source envelope,
+and a separate uniform composite contraction. Old Z is a fixed root input.
+Each trial rebuilds the candidate chain. The selected root's exact stored source
+feeds one post-root ZOH write after one continuity and A's refreshed W write.
+Reset and final states have independent base/carrier/root admission.
+
+Verification records 32 composition tests and 143 affected CI/PC/A-current/
+C-current regressions. Pressure includes dense signed histories, negative gates,
+loops/parallel/isolated nodes, B_2R and selector boundaries, source-envelope and
+contraction failures, numerical stagnation, independent resets, zero duration,
+writer/resource/clock failures, and a C constant-source gain-two equilibrium at
+nonzero geometry gain. The shared source conversion canonicalizes computed zero;
+input negative zero remains invalid. No second validators or copied evidence
+bundle were added. Prior accepted CI/PC records are unchanged and their checkers
+inspect the exact historical Git subjects; the current regression run is separate.
+
+For c, four auditor-proposed regressions now execute natively, plus four focused
+extensions: signed cancellation and one-ULP neighbours, differing-history
+source behavior, programmer exceptions, and dense source derivative pressure.
+All eight pass. The unchanged 32+143 original methods are reused, not rerun.
+The external auditor's larger isolated campaign remains attributed evidence;
+its lightweight scaffolding is not relabeled as native execution. Full original
+record digest and source identities were checked locally. The one followup
+preserves only essential audit context and minimal original-source line spans.
+
+The review also maps the split CI/PC admission ownership and the single step
+orchestrator. Private cross-imports remain a maintenance cost; no numerical
+refactor was justified by this audit. In particular, plain PC already depends
+on CI utilities. Reassess explicit shared APIs and dependency direction when
+adding composite lifecycle ownership.
+
+```sh
+PYTHONPATH=src:. .venv/bin/python -m unittest -v tests.models.test_grc_v4_cipc
+PYTHONPATH=src:. .venv/bin/python implementation/phase-9-grcv4/verification/verify_p963_cipc.py --check
+```
+
+The scope is provisional local numerical composition, with one C selector
+stratum and conservative domain admission. Public support remains C_OS.
+Live lifecycle/receipts/rollback, formation provenance, topology, matched-forcing
+contraction, endpoint witnesses and composite G2/G3 remain separate pending work.
+The user authorized committing P9-6.3a/b/c. The subsequent P9-6.4a/b work is
+recorded at the current restart point above.
+
+## Historical P9-6.2a/b/c acceptance
+
+Current restart point, 2026-09-10: branch `impl/phase-9-grcv4-tranche-6`,
+accepted predecessor `d1ab4bb` (P9-6.1c).
+
+**P9-6.2a C_PC, P9-6.2b A_PC and P9-6.2c shared reconciliation were accepted
+by the user on 2026-09-10, each with scientific verdict PASS.** The user
+explicitly combined the a/b external audit with c. The external audit held the
+original subject; the corrections and post-fix review are recorded here, with
+no assertion of a second external audit.
+
+Start with the [review/source/pressure map](./phase-9-grcv4/tranche-6/P9-6.2ab-Review.md)
+and [combined audit followup](./phase-9-grcv4/tranche-6/P9-6.2abc-AuditFollowup.json).
+F1 is corrected at the originating arithmetic sites: canonical computed +0 in
+the shared ZOH writer and C's external source gain. Negative-zero inputs stay
+forbidden. F2 corrects A's uniform endpoint-sum bound to account for loops
+(norm 2 rather than sqrt(2)); the conductance law is unchanged. C's exact
+selector-cutoff failure now reports a domain failure before a physical-current
+solve. Additional pressure covers mixed graphs, exact exponent boundaries,
+signed underflow covariance, actual precision refinement, source dependence,
+weight-chart corners, and independent reset resource/weight/carrier admission.
+
+One fresh campaign runs 48 PC methods: the original 32, the auditor's eight
+proposed regressions, and eight new reconciliation methods. The original 80
+A/OS/CI regressions are reused against unchanged consumers/oracles, not rerun or
+recounted. The [original record](./phase-9-grcv4/tranche-6/P9-6.2ab-ExecutionRecord.json)
+remains unchanged. Minimal prior-line spans restore its four changed source
+files to their original hashes; no copied source archive or external file
+reference is needed. The followup distinguishes external isolated pressure,
+local defect reproduction, fresh corrected tests and historical reuse.
+Its acceptance object records the subsequent user disposition while preserving
+execution-time fields and results. Acceptance changed no numerical/test source
+and required no repeat scientific campaign; review/verifier status edits retain
+reconstructible execution-time bytes.
+
+```sh
+PYTHONPATH=src:. .venv/bin/python -m unittest -v tests.models.test_grc_v4_pc
+PYTHONPATH=src:. .venv/bin/python implementation/phase-9-grcv4/verification/verify_p962_pc.py --check
+```
+
+Old Z determines the consumed geometry/current. Continuity executes once,
+A's refreshed W writer preserves old Z, and one carrier writer consumes the
+already held source. Reset and final states admit independently. Carrier
+invariance does not prove base-chart invariance or matched-forcing contraction;
+local formation/release equations do not establish formation provenance or a
+nonzero committed base-state endpoint witness.
+
+PC remains provisional local numerical support. Live lifecycle, reset/migration
+operations, authenticated receipts/rollback, PC G2/G3 and CI+PC composition
+remain separate. Public support remains the exact accepted C_OS singleton.
+The next planned batch is P9-6.3a/b (CI+PC composition), followed by P9-6.3c
+reconciliation; begin when requested. Existing CI
+checks inspect their exact accepted Git subjects and historical inventories;
+accepted CI/C_OS records have not changed.
+
+## Historical P9-6.1c reconciliation closure
+
+Current restart point, 2026-09-10: branch `impl/phase-9-grcv4-tranche-6`,
+after accepted a/b commit `6d3c0b2` (Tranche 5 merge base `c55960b`).
+
+**P9-6.1c was accepted by the user on 2026-09-10 for A_CI and C_CI,
+with scientific verdict PASS. All three P9-6.1 children are now accepted.** The combined a/b audit already covered most shared
+obligations. This continuation reconciled that evidence and reviewed the new
+analytic residual-enclosure derivation, with focused pressure on uncovered cases.
+No new runtime defect was found and no runtime code changed.
+
+Start with the [P9-6.1c review and coverage map](./phase-9-grcv4/tranche-6/P9-6.1c-Review.md)
+and [execution record](./phase-9-grcv4/tranche-6/P9-6.1c-ExecutionRecord.json).
+The record preserves the execution-time status and source bindings; its
+subsequent acceptance object records the current disposition. Status-only
+changes to the review and verifier retain reconstructible execution-time bytes.
+The review makes the operator-versus-Frobenius norm roles explicit, derives the
+projector and inverse error bounds, and checks their connection to the absolute
+joint residual and reference-connected contraction theorem.
+
+Four new methods in the existing CI test owner passed: dense noncommuting C
+geometry with nonuniform deformation and positive relaxation; slightly wrong
+selector subspaces that still pass the sign checks; inverse enclosures near
+the Neumann boundary; and signed interval arithmetic at extreme scales.
+The accepted 48-method a/b run is reused with unchanged runtime and pre-existing
+test/helper definitions. A second full audit or repository regression was not run.
+
+P9-6.1a and P9-6.1b remain accepted with separate PASS dispositions. Their
+[review](./phase-9-grcv4/tranche-6/P9-6.1ab-Review.md) and
+[audit followup](./phase-9-grcv4/tranche-6/P9-6.1ab-AuditFollowup.json), including
+execution-time pending fields and the later acceptance object, remain byte-identical
+to `6d3c0b2`. Their statements about c are historical. The same verifier now checks
+that Git subject and the new reconciliation; no source archive is needed.
+
+From the repository root, with `.venv` provisioned from `uv.lock`:
+
+```sh
+PYTHONPATH=src:. .venv/bin/python implementation/phase-9-grcv4/verification/verify_p961_ci.py --check-reconciliation
+PYTHONPATH=src:. .venv/bin/python -m unittest -v tests.models.test_grc_v4_ci.CIReconciliationTests
+```
+
+The concrete scope remains provisional CI on a reference Frobenius ball, with
+one whole-ball C selector stratum. Numerical acceptance bounds the analytic
+residual without rescaling the absolute tolerance. CI lifecycle, authenticated
+receipts/rollback, initializer provenance, formation, global branch/stability,
+CI G2 and G3 remain separate pending work. Public support remains the exact
+accepted C_OS singleton. The next planned work is P9-6.2a/b (persistent carrier);
+those leaves have not been started by this acceptance.
+
+The following Tranche 5 closure notes are historical at that predecessor.
 
 Current restart point, 2026-09-10: branch `impl/phase-9-grcv4-tranche-5`.
 
@@ -522,59 +811,72 @@ identity, request, result, packaging and ownership boundaries.
 provide the bounded prefix harness and independent oracles. An imported
 callback/control remains a control even when its bytes match real execution.
 
-## Next bounded implementation step, when requested
+## Next bounded implementation step: Tranche 7
 
-P9-3.1 implements deterministic graph/differential identities, typed
-Hodge/one-form/physical-flux maps, and candidate-local mobility ownership.
-Carry forward the P9-2.6 storage decision: V4-local immutable stable-ID lookup
-for pure graph maps, not a shallow wrapper around mutable legacy backends,
-integer allocation tables, or mutation journals. Map the exact applicable
-spec, paper and accepted contracts before implementing it.
-In particular, do not identify Hodge pairing, physical-flux conversion and
-candidate mobility merely because their matrices have compatible shapes.
+Start with **P9-7.1-A_OS**: snapshot/save/load/replay, reset, rebase and independent
+duplication for an exact Candidate A OS profile. Its registered scope is in the
+[P9-1.4 child register](./phase-9-grcv4/tranche-1/P9-1.4-SupportAndDependencies.json);
+[Tranche 5](./phase-9-grcv4/tranche-5/P9-5.4-Review.md) supplies accepted initializer,
+retained-W and provisional-dynamics evidence. [P9-6.5](./phase-9-grcv4/tranche-6/P9-6.5-Review.md)
+provides the current routes for the other eight realizations.
 
-Keep the later obligations with their owners: stage/cache admission P9-3.2;
-one-resource-write/charge boundary P9-3.3; conditioning, signed covariance and
-invariant-projector pressure P9-3.4; rejection-state preservation P9-3.5.
-Actual facade/full-step admission, zero/subnormal/extreme-duration checks and
-rollback belong to the Tranche 4 consumers. Parent-reference scope/order remains
-P9-7.6; specialization and exact legacy delegation remain Tranches 8–9.
-The first intended numerical slice is C_OS, not all ten profiles at once.
+Before execution, bind the exact A_OS profile/reference/graph/context, initializer,
+policies, deliberately distinct live/reset fixtures and runtime ownership. Update
+the current work manifest and permission surfaces for that bounded request.
+The existing boundary stops at Tranche 6; closure is not a blanket lifecycle grant.
+Use the [lifecycle specification](../specs/grc-v4-spec.md#lifecycle-migration-and-topology-events),
+[common interface §7.5](../specs/grc-common-interface-v4-ext.md) and the accepted
+receipt-parent authority already used by C_OS.
+
+Reuse `src/pygrc/models/grc_v4_lifecycle.py`, `grc_v4_codec.py`, existing Candidate A
+owners and `tests/models/grcv4_conformance_harness.py`. Add candidate/profile
+adapters where needed while retaining one canonical serializer, transaction and
+receipt-validation path. Pressure independent reset admission, post-ordinary-step
+save/load/reset/rebase, exact replay, invalid identity/lineage, deep duplicate
+independence and complete authority/receipt rollback. A's W is retained authority;
+A_OS has no Z carrier, so its carrier channel is `not_applicable`.
+
+Then bind the relevant P9-7.2a migration pairs and P9-7.2b mapped events, with
+P9-7.3–P9-7.6 history, target readmission, atomicity and receipt obligations.
+Keep live/reset maps and W/Z channels separate. Positive crossing evidence needs
+both exact endpoints; unavailable-source rejection is not migration coverage.
+Reuse C_OS evidence only in its accepted scope. Review each full applicable
+product at P9-7.7 / P9-G2[p], with P9-G3[S] separate. Other families need not wait
+for unrelated siblings. RG2b's 32-vertex campaign remains optional, only on an
+explicit request; follow the existing proportionate-verification policy.
 
 ## Moving to another machine
 
-Publish the handoff-bearing `main`, including the Tranche 2 merge, through the
-usual Git remote before switching machines. Unpushed local commits are not
-available to another clone. This note does not assert that a push has occurred.
-Keep full Git history: acceptance checks inspect historical committed subjects.
+Transfer the closure-bearing `impl/phase-9-grcv4-tranche-6` branch through the
+usual Git remote before switching machines, or use a later `main` that contains
+this closure commit. No push or merge is implied by this handoff. Keep full Git
+history: acceptance checks inspect historical committed subjects.
 
-After obtaining the updated `main`, run from the repository root:
+After obtaining the updated branch, run from the repository root:
 
 ```bash
-git switch main
+git switch impl/phase-9-grcv4-tranche-6
 git status --short
-git merge-base --is-ancestor 5307343e34d33ab4a95a5712fbafe0ebd1df1a62 HEAD
-git show --no-patch --format=full 5307343
-git log --first-parent --merges -1 --format='%H %P %s'
+git merge-base --is-ancestor 739c123 HEAD
+git log -1 --format='%H %s'
 ```
 
-Use the checkout's `.venv`; do not copy another machine's virtual environment
-or point tools at a foreign checkout. The following are Linux/macOS shell
-commands, not a claim that the whole test suite has been validated on every OS:
+Confirm that the checkout includes P9-6.5's `/acceptance` object with
+`tranche_6_status: accepted_closed`, not only the numerical predecessor above.
+If working from merged `main`, use that branch instead. Create the Tranche 7
+branch from the accepted closure when beginning its implementation.
+
+Rebuild the checkout-local environment from the committed lock; do not copy a
+virtual environment between machines:
 
 ```bash
+uv sync --frozen --extra v4 --extra dev
 GRCV4_TOOL=implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool
-python3 "$GRCV4_TOOL/scripts/bootstrap.py" --python-only
-.venv/bin/python -m pip install -e '.[v4,dev]' build setuptools wheel
 ```
 
-Host Python is used only for bootstrap, which creates/re-enters `.venv`.
-Python 3.11+ is declared; the accepted P9-2.6 run used CPython 3.12.3 on Linux
-x86_64. Bootstrap's side-tool Python lock currently has no package requirements:
-bootstrap alone does **not** install the V4 extra or repository package.
-The install command above provisions a working environment, not an exact replay
-of all recorded package versions. Consult the retained environments below for
-exact comparisons; record any changed resolution/platform as a new run.
+The accepted Tranche 6 runs used Python 3.12.3. Their records retain environment
+and source identities; a different platform or resolution is a new execution,
+not an exact replay of those observations.
 
 For Node/browser checks, run the full bootstrap once:
 
