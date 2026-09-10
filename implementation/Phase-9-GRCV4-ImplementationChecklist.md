@@ -919,10 +919,26 @@ coverage. Record bounded shared-audit results for the available profile set.
   and restores the original source hashes without a source archive.
   No PC lifecycle, formation provenance, matched-forcing contraction certificate,
   endpoint witness, G2 or G3 is inferred from this reconciliation.
-- [ ] P9-6.3a: Implement and verify C_CI_PC same-source composition and gain two.
-- [ ] P9-6.3b: Implement and verify A_CI_PC same-source composition and gain two.
-- [ ] P9-6.3c: Audit shared CI+PC composition against the exact root/carrier
+- [x] P9-6.3a: Implement and verify C_CI_PC same-source composition and gain two.
+  Accepted by the user on 2026-09-10; independent audit and bounded review PASS.
+  The [shared review](./phase-9-grcv4/tranche-6/P9-6.3ab-Review.md) covers the
+  entire B_2R image, uniform source/contraction bounds, one C selector stratum,
+  complete trial-chain refresh and the exact same-root carrier source.
+- [x] P9-6.3b: Implement and verify A_CI_PC same-source composition and gain two.
+  Accepted by the user on 2026-09-10; independent audit and bounded review PASS.
+  The existing CI/PC validators are shared. A's refreshed
+  W writer preserves old Z until the single held-source carrier update.
+  The [run record](./phase-9-grcv4/tranche-6/P9-6.3ab-ExecutionRecord.json)
+  records 32 composition tests and 143 affected regressions. No composite
+  lifecycle, formation, endpoint, G2 or G3 is inferred.
+- [x] P9-6.3c: Audit shared CI+PC composition against the exact root/carrier
   source and candidate-specific evidence.
+  Accepted by the user on 2026-09-10 with bounded numerical PASS. The
+  [followup](./phase-9-grcv4/tranche-6/P9-6.3abc-AuditFollowup.json) closes the
+  native-execution and record-integrity gaps: four audit proposals plus four
+  additional methods pass. Numerical code and original test/oracle bytes are
+  unchanged, so the 175 original passes are reused. The shared review records
+  CI/PC ownership, cross-module coupling and the separate lifecycle ceiling.
 - [ ] P9-6.4a: Bind, certify, and verify the admitted C_RG2b evaluator and
   Lipschitz section; reject unsupported classical derivative claims.
 - [ ] P9-6.4b: Bind, certify, and verify A_RG2b independently.

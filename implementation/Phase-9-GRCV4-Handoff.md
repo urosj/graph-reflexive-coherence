@@ -1,4 +1,64 @@
-# Phase 9 GRCV4 handoff — P9-6.2a/b/c accepted
+# Phase 9 GRCV4 handoff — P9-6.3a/b/c accepted
+
+Current restart point, 2026-09-10: branch `impl/phase-9-grcv4-tranche-6`,
+accepted predecessor `affb214` (P9-6.2a/b/c).
+
+**P9-6.3a C_CI_PC, P9-6.3b A_CI_PC and P9-6.3c shared reconciliation were
+accepted by the user on 2026-09-10, each with bounded scientific verdict PASS.**
+The audit found no runtime defect requiring correction.
+Start with the [review/proof/pressure map](./phase-9-grcv4/tranche-6/P9-6.3ab-Review.md)
+and [audit followup](./phase-9-grcv4/tranche-6/P9-6.3abc-AuditFollowup.json).
+The [original run manifest](./phase-9-grcv4/tranche-6/P9-6.3ab-ExecutionRecord.json)
+retains its execution-time status and bytes.
+The followup's acceptance object records the later user disposition. Numerical
+and test sources are unchanged by acceptance; no scientific suite was rerun.
+
+The existing CI root/trial/residual and PC envelope/writer owners now compose
+through typed CIPCParams, with rho_inst=1 and composition_gain=2. Admission
+covers the entire B_2R geometry image, a computed strict uniform source envelope,
+and a separate uniform composite contraction. Old Z is a fixed root input.
+Each trial rebuilds the candidate chain. The selected root's exact stored source
+feeds one post-root ZOH write after one continuity and A's refreshed W write.
+Reset and final states have independent base/carrier/root admission.
+
+Verification records 32 composition tests and 143 affected CI/PC/A-current/
+C-current regressions. Pressure includes dense signed histories, negative gates,
+loops/parallel/isolated nodes, B_2R and selector boundaries, source-envelope and
+contraction failures, numerical stagnation, independent resets, zero duration,
+writer/resource/clock failures, and a C constant-source gain-two equilibrium at
+nonzero geometry gain. The shared source conversion canonicalizes computed zero;
+input negative zero remains invalid. No second validators or copied evidence
+bundle were added. Prior accepted CI/PC records are unchanged and their checkers
+inspect the exact historical Git subjects; the current regression run is separate.
+
+For c, four auditor-proposed regressions now execute natively, plus four focused
+extensions: signed cancellation and one-ULP neighbours, differing-history
+source behavior, programmer exceptions, and dense source derivative pressure.
+All eight pass. The unchanged 32+143 original methods are reused, not rerun.
+The external auditor's larger isolated campaign remains attributed evidence;
+its lightweight scaffolding is not relabeled as native execution. Full original
+record digest and source identities were checked locally. The one followup
+preserves only essential audit context and minimal original-source line spans.
+
+The review also maps the split CI/PC admission ownership and the single step
+orchestrator. Private cross-imports remain a maintenance cost; no numerical
+refactor was justified by this audit. In particular, plain PC already depends
+on CI utilities. Reassess explicit shared APIs and dependency direction when
+adding composite lifecycle ownership.
+
+```sh
+PYTHONPATH=src:. .venv/bin/python -m unittest -v tests.models.test_grc_v4_cipc
+PYTHONPATH=src:. .venv/bin/python implementation/phase-9-grcv4/verification/verify_p963_cipc.py --check
+```
+
+The scope is provisional local numerical composition, with one C selector
+stratum and conservative domain admission. Public support remains C_OS.
+Live lifecycle/receipts/rollback, formation provenance, topology, matched-forcing
+contraction, endpoint witnesses and composite G2/G3 remain separate pending work.
+Next planned work: P9-6.4a/b RG2b implementation, followed by c review. It remains
+unstarted; begin when requested. The user authorized committing P9-6.3a/b/c.
+
+## Historical P9-6.2a/b/c acceptance
 
 Current restart point, 2026-09-10: branch `impl/phase-9-grcv4-tranche-6`,
 accepted predecessor `d1ab4bb` (P9-6.1c).

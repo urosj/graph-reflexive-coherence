@@ -1,0 +1,546 @@
+{
+  "schema": "phase9_combined_audit_reconciliation_v1",
+  "iteration_ids": [
+    "P9-6.3a",
+    "P9-6.3b",
+    "P9-6.3c"
+  ],
+  "status": "reviewed_verified_pending_user_acceptance",
+  "authority": "User supplied the P9-6.3a/b audit, requested closing its gaps then continuing with P9-6.3c, and supplied architectural considerations. Acceptance and commit remain separate.",
+  "original_execution_digest": "3663e2a856edd68c565e1985e68a483e71febabf79ada6a4028fb02723bfe62d",
+  "original_execution_sha256": "129ae3104c8ef9a656c7edfd51c28fca6842dfc98f881f4698e268dab7f5f4e2",
+  "prior_source_delta": {
+    "implementation/phase-9-grcv4/verification/verify_p963_cipc.py": {
+      "current_sha256": "ce8f2247124e7a91a7bceeab05b85f3cd1765680520bbe0a67c689188da410a7",
+      "splices_to_original": [
+        {
+          "start": 1,
+          "stop": 2,
+          "old_lines": [
+            "\"\"\"One CI+PC a/b campaign; existing CI/PC validators and accepted history.\"\"\"\n"
+          ]
+        },
+        {
+          "start": 23,
+          "stop": 24,
+          "old_lines": []
+        },
+        {
+          "start": 25,
+          "stop": 29,
+          "old_lines": []
+        },
+        {
+          "start": 185,
+          "stop": 213,
+          "old_lines": [
+            "def check():\n"
+          ]
+        },
+        {
+          "start": 218,
+          "stop": 221,
+          "old_lines": [
+            "        value[\"source_bindings\"] == sources(), \"changed composition execution sources\"\n"
+          ]
+        },
+        {
+          "start": 231,
+          "stop": 239,
+          "old_lines": []
+        },
+        {
+          "start": 270,
+          "stop": 271,
+          "old_lines": [
+            "        {\"P9-6.3a\", \"P9-6.3b\"} <= set(ready) and \"P9-6.3c\" not in ready,\n"
+          ]
+        },
+        {
+          "start": 272,
+          "stop": 402,
+          "old_lines": []
+        },
+        {
+          "start": 406,
+          "stop": 409,
+          "old_lines": [
+            "        composition_methods=32,\n",
+            "        affected_regression_methods=143,\n"
+          ]
+        },
+        {
+          "start": 410,
+          "stop": 412,
+          "old_lines": [
+            "        children=\"verified_pending_independent_review\",\n",
+            "        P9_6_3c=\"pending_unexecuted\",\n"
+          ]
+        },
+        {
+          "start": 421,
+          "stop": 422,
+          "old_lines": []
+        },
+        {
+          "start": 424,
+          "stop": 427,
+          "old_lines": [
+            "    if args.capture:\n"
+          ]
+        }
+      ]
+    },
+    "implementation/phase-9-grcv4/tranche-6/P9-6.3ab-Review.md": {
+      "current_sha256": "55b23ba79cbdd43e0b0d3c17c6956a697dbf72ca01fc5bce10ffe419f3a848c6",
+      "splices_to_original": [
+        {
+          "start": 0,
+          "stop": 1,
+          "old_lines": [
+            "# P9-6.3a/b \u2014 same-source CI+PC composition\n"
+          ]
+        },
+        {
+          "start": 2,
+          "stop": 7,
+          "old_lines": [
+            "Status: **implemented; independent review and user acceptance pending**. Separate\n",
+            "children are P9-6.3a / C_CI_PC and P9-6.3b / A_CI_PC. P9-6.3c remains a later\n",
+            "shared reconciliation. Predecessor: accepted P9-6.2a/b/c commit `affb214`.\n"
+          ]
+        },
+        {
+          "start": 158,
+          "stop": 256,
+          "old_lines": [
+            "P9-6.3a/b implementation verification does not execute or accept P9-6.3c, and\n",
+            "neither child is accepted until the user records that disposition.\n"
+          ]
+        }
+      ]
+    },
+    "tests/models/test_grc_v4_cipc.py": {
+      "current_sha256": "a8b7922377543cb0eca3cf08cb83e0d0d26c09173b1d34f5b65ddfe70bc86ba9",
+      "splices_to_original": [
+        {
+          "start": 711,
+          "stop": 1035,
+          "old_lines": []
+        }
+      ]
+    }
+  },
+  "independent_audit": {
+    "verdict": {
+      "P9-6.3a": "PASS_bounded_numerical_scope",
+      "P9-6.3b": "PASS_bounded_numerical_scope"
+    },
+    "new_blockers": [],
+    "reviewed_source_git_base": "affb2140efc332bfbdad9a3eea4e8e925cb6a5fb",
+    "declared_execution_digest": "3663e2a856edd68c565e1985e68a483e71febabf79ada6a4028fb02723bfe62d",
+    "audited_source_bindings": {
+      "src/pygrc/models/grc_v4_ci.py": "395d757adb1cb150558fd7d70d0dc03501525b872f293c49afb25d4853bf9bf9",
+      "src/pygrc/models/grc_v4_pc.py": "6c0465b9225b2a824ca8d1429bde6a72b85508c0c161fb66faa28b184ef0f234",
+      "src/pygrc/models/grc_v4_candidate_a.py": "cdff3a0701900f1131868b3586e3fa5f7422bf7379636bb93a35247386f6a391",
+      "src/pygrc/models/grc_v4_candidate_c.py": "43be859ab21e687a270f85c427e3d63a087fa8d74d8362749ae6278ecff36d17",
+      "tests/models/test_grc_v4_cipc.py": "a035047dc5b7563fd61372e41c27eaa7327f099ced65e04ab183dc794830e3f6",
+      "implementation/phase-9-grcv4/tranche-6/P9-6.3ab-Review.md": "c4fc1b09e08b8c6e7d8319f70ea6cad9b2449ef6fd577fe19e8e4d2a6fc08ade",
+      "src/pygrc/models/grc_v4_step.py": "741e533c004b3ec8da2fc9e5e3f0c9bc404fb1a4f439d69f6e6d0d07643f59a7"
+    },
+    "environment": {
+      "python": "3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]",
+      "platform": "Linux-6.18.35-x86_64-with-glibc2.41",
+      "numpy": "2.3.5",
+      "mpmath": "1.3.0"
+    },
+    "isolated_pressure": {
+      "multigraph_root_step_cases": 16,
+      "whole_domain_samples": 48,
+      "flat_read_directional_comparisons": 48,
+      "signed_coordinate_cases": 4,
+      "scalar_analytic_residual_comparisons": 12,
+      "boundary_control_cases": 24,
+      "result": "passed_as_reported_by_independent_auditor"
+    },
+    "limits": "Executed submitted numerical definitions and matching common resource-step bodies with lightweight profile/reference/state/transport scaffolding; some earlier geometry helper arithmetic. Not complete-checkout, installed-package or live lifecycle validation. Original 32+143 results were submission-reported; proposed four native regressions were compiled only. Full execution-record digest was not recomputed by the external auditor.",
+    "retained_proposals": "tests/models/test_grc_v4_cipc.py:CIPCAdditionalAuditPressure",
+    "native_followup": "The four proposals execute against the repository with four additional reconciliation methods. The original record digest and all source identities were checked locally. Native outcomes do not relabel the separate isolated audit campaign."
+  },
+  "user_accepted": false,
+  "open_blockers": [],
+  "composite_G2_accepted": false,
+  "G3_accepted": false,
+  "accepted_generic_runtime_support": [],
+  "admitted_specialization_support_sets": [],
+  "claim_ceiling": "Provisional same-root unit-immediate/unit-retained A_CI_PC and C_CI_PC on the declared compact base chart, reference Hodge ball and carrier ball; one C selector stratum. No live lifecycle, authenticated initializer/formation provenance, topology maps, matched-forcing contraction, endpoint witness, G2/G3 or amplitude equivalence.",
+  "reconstruction": "From repository root, provision .venv from uv.lock and use PYTHONPATH=src:. with the recorded unittest command. --check restores original source hashes using the retained minimal spans and verifies current sources, results and accepted CI/PC Git subjects without rerunning science. Original 175 passes are reused; eight added methods are the fresh native campaign. Isolated external observations are attributed context, not a retained executable campaign. No external file is required.",
+  "command": [
+    ".venv/bin/python",
+    "implementation/phase-9-grcv4/verification/verify_p963_cipc.py",
+    "--capture-reconciliation"
+  ],
+  "source_bindings": {
+    "implementation/investigations/grc9v4-constitutive-design/drafts/2026-09-GRC-V4.md": "8a7f86b51e1df0a3bb9d5503007c15784d27ca99dbbd85cf5d4b61ab4a27d3fc",
+    "implementation/investigations/grc9v4-constitutive-design/drafts/GRCV4-proposal.md": "6a1935c9158e3391e8ed1ad7ab9cc891f4aad1ce2fbd12da89aa8b6469a5b7c0",
+    "implementation/phase-9-grcv4/verification/verify_p951_initialization.py": "f115c6de4b8ac74a678a05b77834ed40baf1e18b2e0a6082626f226ea6948310",
+    "implementation/phase-9-grcv4/verification/verify_p961_ci.py": "bd7a257b30fcef38a6c9f6dd57ac97bd3012d848de669a52aa79db4223e5f7d7",
+    "pyproject.toml": "018c364413f75ee49186975c05e9cdaba7a78e171d47833609fbebc223a64a66",
+    "specs/grc-v4-conformance-vectors.json": "9d9917511816f8d6ca97feca14de3ffca6b720504041f879bb1fa3e8e57b4e22",
+    "specs/grc-v4-spec.md": "b0f885af7a40c55334c55ca26441c1bbdf1cf62dbfa4c7218c412d9dd44e0ce9",
+    "src/pygrc/models/__init__.py": "3253def6cdda3527bdf5989bc004421f0fbc11b5df39d932127f65e84e46e234",
+    "src/pygrc/models/_base.py": "e5e2a310def994b0583ba0185e3243253095a5a919804da2fce860df1911eeff",
+    "src/pygrc/models/grc_9.py": "a857f41ea919bb311d283681a13609e4bac6c5295d975ab61e57559454131de1",
+    "src/pygrc/models/grc_9_checkpoints.py": "283b662b3ac232465504082ae68a874d5b00f7745ee39eeee2d03828bbfa85d7",
+    "src/pygrc/models/grc_9_coarse.py": "43a20c5ae379e488ce7abcdc8b1f2b68007ba27fd27b3561f361d180e5906b49",
+    "src/pygrc/models/grc_9_expansion.py": "f71b7370e56b59328692000831842435e6512dcc3539f8dd9e5ac059f1eb1569",
+    "src/pygrc/models/grc_9_grcl9_lowering.py": "40a855d6f56417cabf442c68cd32280b1c07dcc4075a8cad2570750c9cca6c7c",
+    "src/pygrc/models/grc_9_grcl9_provenance.py": "c21593818c52c905c19f865d9fbe22937d560478b2c0f65efd44ae635b9fb122",
+    "src/pygrc/models/grc_9_landscape.py": "6f3059b701e28413b0252442d4b8449cfb8ccb341338b14da71d810d5965f244",
+    "src/pygrc/models/grc_9_ports.py": "7f9142f96de1e1a2880db5b0d767df4a78866093a8b051a2615778d3fa8ac780",
+    "src/pygrc/models/grc_9_state.py": "b3d979fe4bffbc86fe256f71ff4894c3da03fd4af706457a281f650242ca26b7",
+    "src/pygrc/models/grc_9_v3.py": "d297def1eddfaf79a7ad3d6b676caaeebb29e6d7235f4fac5c6729bd7e26ca9e",
+    "src/pygrc/models/grc_9_v3_choice.py": "ab8be0391a37e71d4610022afe3f64dac6102b929ade4448a59e7f4e02167933",
+    "src/pygrc/models/grc_9_v3_grcl9v3_lowering.py": "653d0963d4df55c278cf1f6fc475a764ef03a13eee7d2ada756f5605434a1f05",
+    "src/pygrc/models/grc_9_v3_grcl9v3_provenance.py": "607c65b7dc28e45c5c73801e76144f112e122948d9b478b2722575788407e33b",
+    "src/pygrc/models/grc_9_v3_runtime.py": "f6f12de4e9bf66cd97b4063854ea225ae00874fed7073d4e72775891db54f502",
+    "src/pygrc/models/grc_9_v3_sparks.py": "fa1db78355e1dba41245da44c9c515ac09820035ca451723873da779420ee820",
+    "src/pygrc/models/grc_9_v3_state.py": "4ab5ffcb95d69a0767b24d6c95277ba3619a5d477c4865cc0d31735a2377918e",
+    "src/pygrc/models/grc_v2.py": "949bbb90766193934c96e4c4cbb84d3838e175b92968d93f9650477cce9e925e",
+    "src/pygrc/models/grc_v2_checkpoints.py": "e51abbec14fd03d5a54ab022529a2fce1b55d2f5cfce574ffdceae388225e45e",
+    "src/pygrc/models/grc_v2_landscape.py": "a531e7c4c8dee941b353696ff47b6265ecc03ac0ded07ab0fe9756479842661e",
+    "src/pygrc/models/grc_v2_state.py": "d9edff07065309059d030531febec4dd63c9586745f26cb9dd8eb309b357a659",
+    "src/pygrc/models/grc_v3.py": "01081bc3f2b394a0797d93c38539a3d6139c6bb412323f6eda09a4fe7c66b473",
+    "src/pygrc/models/grc_v3_checkpoints.py": "ed27a01eb18decc506450d0a25cd5fc7861c1f1bcf3fce5af84373b42eb67b96",
+    "src/pygrc/models/grc_v3_differential.py": "3e88a76d7eea94b255c588300305e5119cebc1e2599dd9a43e0aaf80cc9af837",
+    "src/pygrc/models/grc_v3_landscape.py": "a6d81d828bcf6e8c67d3e2e40bdbffd311d7126cf0a4b3b5efb72559aef687ad",
+    "src/pygrc/models/grc_v3_landscape_native.py": "d4a93b18bfeb71eb5098309b9ed0c2ae42c41b387b964a1ebbf5a43fd9ddb019",
+    "src/pygrc/models/grc_v3_state.py": "d0399ce9a733b8aeb1662de72ad0088cceab239e9b0dcf51c52367e70eb65e1c",
+    "src/pygrc/models/grc_v4.py": "338ad4195d4c27a492738820b6c88a44b570a9376c2ea5992c1a6fc62b5e5dc4",
+    "src/pygrc/models/grc_v4_assets/__init__.py": "a1f3aba168a9f9331d1fc9580d5055404f8bc4c705936c7e388e7a47f80a0051",
+    "src/pygrc/models/grc_v4_assets/asset-index.json": "6d4adce3ac2d98a1c16c82f31768be7e1a1480df5aaf886d2507b0e1a7dc55b2",
+    "src/pygrc/models/grc_v4_assets/grc-v4-contract-schema.json": "3fd072fc8c2b315f1b5dc32a4e4821a5082b5f3fc9d9a4794c007419a7aa0bea",
+    "src/pygrc/models/grc_v4_assets/grc-v4-specification-release.json": "946c8944b4b06645209d159ec056b891bf6fd153c51dedef38de0a862e127fff",
+    "src/pygrc/models/grc_v4_assets/grc-v4-specification-release.sha256": "d3fc6e50bce85685694901e3d6f5f90ead87413877414cf8dc6ea1b9225540ce",
+    "src/pygrc/models/grc_v4_candidate_a.py": "cdff3a0701900f1131868b3586e3fa5f7422bf7379636bb93a35247386f6a391",
+    "src/pygrc/models/grc_v4_candidate_c.py": "43be859ab21e687a270f85c427e3d63a087fa8d74d8362749ae6278ecff36d17",
+    "src/pygrc/models/grc_v4_ci.py": "395d757adb1cb150558fd7d70d0dc03501525b872f293c49afb25d4853bf9bf9",
+    "src/pygrc/models/grc_v4_codec.py": "0b16ebcb1172c079b72410c0ae9b0c1fec47ed6bd5eb2360bf3a6b5507d2874c",
+    "src/pygrc/models/grc_v4_geometry.py": "cb2d9b900d0091b59e4fe77ef4acc4037225e79b2ee166c99486c93b307c92a4",
+    "src/pygrc/models/grc_v4_lifecycle.py": "25debf6d1e7a04fe8b1511500cdad4088a9a7cd4b3929b6dc1c263fde280826f",
+    "src/pygrc/models/grc_v4_pc.py": "6c0465b9225b2a824ca8d1429bde6a72b85508c0c161fb66faa28b184ef0f234",
+    "src/pygrc/models/grc_v4_profile.py": "66441b1c1bd50bd64183dbc39980f2a013f1ce554a10d7364490ff3854ba9988",
+    "src/pygrc/models/grc_v4_realizations.py": "c869464cc8bc6c78da108e76a60ff11d47e53846f1cd834b0f8518010f90bfdb",
+    "src/pygrc/models/grc_v4_state.py": "b0ccf06ef91b66feb8670fb67281465998f4bcb085c4d547fedd3ce6d85ad3cb",
+    "src/pygrc/models/grc_v4_step.py": "741e533c004b3ec8da2fc9e5e3f0c9bc404fb1a4f439d69f6e6d0d07643f59a7",
+    "src/pygrc/models/grc_v4_transport.py": "4ead39ae9343c4873a7cef149471e72ce6df562f82b2a6f03c3c00f1b07f4730",
+    "src/pygrc/models/lgrc_9_v3.py": "37f9f9a0452fba447c875f7e652d8632dc49bb159c0d1af5caecb4ce4acf48bb",
+    "src/pygrc/models/lgrc_9_v3_construction.py": "c59f8d0747a5a6f5c954927fd1e1b1d71464bdffbdbf0401e39b17219a364938",
+    "src/pygrc/models/lgrc_9_v3_contract.py": "b86fb41ab530a7aa01abdf01dbc048da10c2e312a18c8b874cbd1386c4794680",
+    "src/pygrc/models/lgrc_9_v3_identity.py": "02a7b9dddb16b925042e014725aa13f66883f16f05f04ca754883dd002fc4ac2",
+    "src/pygrc/models/lgrc_9_v3_packets.py": "14d99292e18e2fe34e0fd5c6a1f69051e82115a051d142f10792775e2321e58f",
+    "src/pygrc/models/lgrc_9_v3_restoration.py": "e7c6b143c08eb0bda210152aeb0f6b12e0efcb666268416404ed3b649dd46931",
+    "src/pygrc/models/lgrc_9_v3_runtime.py": "55d05aa03a4cf62cb42f18753aa572119011b6c4424bf2051a7ed0f6c78932d4",
+    "src/pygrc/models/lgrc_9_v3_runtime_state.py": "ef409403954749a45fbf444116a9a253b95b3e2d74a119006f1cbb364a83630c",
+    "src/pygrc/models/lgrc_9_v3_timing.py": "3a8528da792ee57ea6a229cdf952af38a52c3f2689525cf12adf63a27a63983c",
+    "src/pygrc/models/lgrc_9_v3_topology.py": "f3cf7e2281c4073531a5951a19f9ae9141a336f9f9b6398f76eda7e1493abde4",
+    "tests/models/__init__.py": "a75a97f69ccfe9043bca38dcb91a41a7393d299d8af2fe804cc034930fb6c440",
+    "tests/models/grcv4_conformance_harness.py": "d25ec2fd7a8f27a39003a0f1b6a15152a4b6751c5f440d3d911b992e86df0849",
+    "tests/models/grcv4_reference_oracles.py": "f24407aad2f54ebb6910c073fc69fbb58ffc858c7affeb6cc51c2196606813ff",
+    "tests/models/test_family_stubs.py": "68693ccd01da4760a6d099d9cd5e4e52a6d5084b03b684eee1847fe972fa9c9d",
+    "tests/models/test_grc9v3_spec_reconciliation.py": "6ee26588ebebab2b64bd89814bda4baf98dfe3430be7858f597b11769351f94a",
+    "tests/models/test_grc_9_coarse.py": "6d6552d1381ecc5bd41b77b479d619853f9e75306dec089f642fd2441eaaabc8",
+    "tests/models/test_grc_9_expansion.py": "de1e080fa26b841ab46089269b71394160a94c15730edb621dae643ef8c63eb3",
+    "tests/models/test_grc_9_grcl9_lowering.py": "3b4345e29661324acb48a2d7b99f8e3fa8603e3dce74e062a37984b6ab25845c",
+    "tests/models/test_grc_9_landscape.py": "1d5cbca650e6fcea4c7c106dff5bf24067445dadceb9eb5ece32e2f5076650a5",
+    "tests/models/test_grc_9_runtime.py": "3df5f4c98ac18e43266511246e21e3ba62926beb34570090ffdac87481ec3ae0",
+    "tests/models/test_grc_9_sparks.py": "b33b02efecfca729d72715de08c3a6248ccd690a9d3498bfdc0ff3cd0ed74447",
+    "tests/models/test_grc_9_state.py": "1dbdb68d8c9b78539c667e6a548c4673d7a27d86f02f24faa5dc216584919d9a",
+    "tests/models/test_grc_9_step.py": "962d266938a06c1894361e9f3d97cdea59ba048ba8a8c6e43cc5832c001a9e05",
+    "tests/models/test_grc_9_tensor.py": "cc8ce248febbec9d6ef24db28e3a2a40241ebe2d5aa1e6bd4cd987a23a13c191",
+    "tests/models/test_grc_9_v3_choice_budget.py": "a3e203069b470e62da185930abdf52d98848666d7ef627b23ea6ea7445e0fff9",
+    "tests/models/test_grc_9_v3_coarse.py": "36945571d4d9bdcee8fa24d07119a0f47f83b015524ec0f370e9da5a28187841",
+    "tests/models/test_grc_9_v3_column_h_assisted.py": "11216319f7bd26b38316d0fa0b1b0ad5dd482eafeabda0e97e10efb411228858",
+    "tests/models/test_grc_9_v3_differential.py": "6db9601146e851e686c96bafb1fa8bb972fe117ef9e02c2ccceade9b6049b906",
+    "tests/models/test_grc_9_v3_grcl9v3_lowering.py": "a94250d721c479475a39d014c43494b5fc5e204b2b32d076526deeb6f476ed29",
+    "tests/models/test_grc_9_v3_hessian_readiness.py": "c1ed11fe4fcab3d83ce29caf9457a0999e110857e486385dd7d157289a282936",
+    "tests/models/test_grc_9_v3_representative_runtime.py": "0c841de19954f98019dbedb90174bd53cac731862e8b503e3a161464e7347b00",
+    "tests/models/test_grc_9_v3_sparks.py": "53b6337b50ffa97bfa4cbe34676b5817837fd6864cbe5870c5ed0acf256b310b",
+    "tests/models/test_grc_9_v3_state.py": "fd1bf3f4fe3752c416fdc419f39d1a85bac608d194b5c434634a3602f7f74246",
+    "tests/models/test_grc_9_v3_step.py": "dab5f857f395188c09c70cf0f5d257578e107422268908ec869746eecde52c69",
+    "tests/models/test_grc_9_v3_transport.py": "e5fbd4c3012bbf4afbaceddb990afcceea0a6eec96f3d2f080351becc79fdadd",
+    "tests/models/test_grc_v2_budget_observables.py": "2510fc8efd36b2c927edbbb15fea27b5d6c97d16e124a10fa2019350faef43d6",
+    "tests/models/test_grc_v2_construction.py": "09d9ff8cd56dbd6cc646b19bfcaa2d038b315ed7b5f7635486f7c78f4b3dc5d3",
+    "tests/models/test_grc_v2_landscape_blueprint.py": "dc0bb21973a0571b8c4ccefc059e477498b2cc05ce8e9f85250ef834d84bc942",
+    "tests/models/test_grc_v2_landscape_import.py": "b4d4e3ee60db84769b0b9dc023bdff56a38164898fdc715b1cf139e755288ce7",
+    "tests/models/test_grc_v2_landscape_runtime.py": "0de21b5d85afecbcbd93ee040ab372f5c23feda6eac3af6e6948d8075705891f",
+    "tests/models/test_grc_v2_metric_labels.py": "072031927ba95ac478c1900ee4ec31bf540480fc6ff7f9778f23faa913d5b4d7",
+    "tests/models/test_grc_v2_runtime_persistence.py": "29d3016512f8bf75f9c318c382a6c9f11a689f17ffabd3e7788f9d238bbb319e",
+    "tests/models/test_grc_v2_sparks.py": "b41c5c7170fb41fa5fd675246aa0cd3d5b09878bc961820f27fed1ee775cab2c",
+    "tests/models/test_grc_v2_step_skeleton.py": "09b8144dcf540f4a5d1680834f58e26fb4fc464ce9150728a156f5df8ca88842",
+    "tests/models/test_grc_v2_topology_events.py": "d7181153112da5d56e82dec448c0171df9f7c2ca215b150ca89b8888fdf15966",
+    "tests/models/test_grc_v2_validation_matrix.py": "6814ad6aec6a4743a1666ba3c4ff4f47055a203f6afce33f2ddf161682f6ff45",
+    "tests/models/test_grc_v3_choice.py": "3fa092c6f4d9b65b35173a219537b82d1176d38f9772576c9e41e2f222d8a240",
+    "tests/models/test_grc_v3_differential.py": "148a9422b2a84040b4716a9a1ab4d508f35020a22ad4aac67aa296ab8ba88aea",
+    "tests/models/test_grc_v3_frontier_birth.py": "5078ff981c5cd0b07f08b16fe4c55263a07ab18ff84450322c5bf05381db10e7",
+    "tests/models/test_grc_v3_hierarchy.py": "c40c383d6504986e2353a296c873b137a03a65581454896fd0d7e62cdb4d94a2",
+    "tests/models/test_grc_v3_landscape_runtime.py": "5b09f3e05794480472c58b72016ff055c5957f9c1f0318d7f03fcdb43a1e22be",
+    "tests/models/test_grc_v3_metric_labels.py": "18705d2e29498e83181aea8d6d1b1e348e0e3404d12ed2585bdf17cd7beb2f1e",
+    "tests/models/test_grc_v3_runtime.py": "3dbc5bc167404d70f21a53ed582edd2b0f1371eaa92fd112d9a126790af3fb07",
+    "tests/models/test_grc_v3_serialization.py": "86701f465a94a0eacdde146f5294c61bc1f6db3aec2b4591c66d6e66ca0e356a",
+    "tests/models/test_grc_v3_sparks.py": "32d5fffe5174379f6cb8bf73e3791e403aad0d9979174e0887aac7ed9e944d83",
+    "tests/models/test_grc_v3_state.py": "f3c66862b1ff7c3f9aaf931a94e3abe17c990c18c065d42222d448d81e8d010c",
+    "tests/models/test_grc_v3_step.py": "cec289512df7f33a21c80ed6f46d23f0d34be6208524b4b2ee1a4dddcd2864e2",
+    "tests/models/test_grc_v4.py": "718a1cb287b5f92ffb900bab4cda14b6b8b4148b28bad38010bd26353ab80edc",
+    "tests/models/test_grc_v4_candidate_a.py": "6f54255ee3c766621c30a3f236f4104d3981c757c15d76ccd55b63e98a3464d2",
+    "tests/models/test_grc_v4_candidate_c.py": "10d4d9f2f763803a6c6509389bc834f6e1756ee1a2e1c426a7ad94ba83e13392",
+    "tests/models/test_grc_v4_ci.py": "9dbede3935b494e1ef53424fdc588db08fd1c88925cf9d9c543d3a3b17620cd8",
+    "tests/models/test_grc_v4_cipc.py": "a8b7922377543cb0eca3cf08cb83e0d0d26c09173b1d34f5b65ddfe70bc86ba9",
+    "tests/models/test_grc_v4_codec.py": "c9ffa5a9de7e97c1432ab67d308777c78f9982e3b0e9fbed39eb3389f1e16079",
+    "tests/models/test_grc_v4_geometry.py": "8e954cdf956e0b8aef585c948fc307c2466b9e2a83ac2f6933387297acf73004",
+    "tests/models/test_grc_v4_lifecycle.py": "3af96fc343d33f94dde2066c2092b21d1143a9fbf5fc6d13b68915c5ca7aa788",
+    "tests/models/test_grc_v4_pc.py": "c52e3819a7481c10a36f258facc459b8a24117ac1c92a3fb33d8e4c154990d2e",
+    "tests/models/test_grc_v4_profile.py": "f88de45246927ca3e37a9c60db06eb11d91867b89f58c4b000e95545d8affe6f",
+    "tests/models/test_grc_v4_realizations.py": "68ca00832aa25ee96ed7993a61cf4d56d32af2792bffbbea381d550883da9aa3",
+    "tests/models/test_grc_v4_state.py": "d7ce02acc2d663fd3f4513158193dd473a78c1f42bc985edfa2d2eff0943fb54",
+    "tests/models/test_grc_v4_step.py": "d060883a2b355e51eae035799461f6f030253b1e16269b207d9a66e6476c9c4f",
+    "tests/models/test_grc_v4_transport.py": "51551796a0e6e344b66f21d1a5767afe39173e1a77639ba9e9271061bff02684",
+    "tests/models/test_lgrc_9_v3_autonomy_contract.py": "1172e6a8caf79fcf57848e8b1dd788251e4978e3f34ee3f595330a5133610e17",
+    "tests/models/test_lgrc_9_v3_construction.py": "ed397b97cb586eec30a882d5b4da92f395ade95f4cba6b3b1b6823fe2c944999",
+    "tests/models/test_lgrc_9_v3_contract.py": "38574deb0bf0790ea9d63800d800478da5ffbe65073dd0c570f361dc85d5ba2b",
+    "tests/models/test_lgrc_9_v3_module_split.py": "50e920647cb35aa824a1a2a15bdd6176e2b9bbcf0f8a4ac864be14caee6a54bb",
+    "tests/models/test_lgrc_9_v3_native_packet_loop_baseline.py": "e9f5fe5a644007b8246a548c687c51bd5b561d0364cd3a2ffc31c40f7c31b520",
+    "tests/models/test_lgrc_9_v3_native_packet_loop_control_parity.py": "8cc6dd9fbfca574b8370d46997a2d84e0b910eede52a0d3dee2c67200631cddd",
+    "tests/models/test_lgrc_9_v3_native_packet_loop_route_aspect.py": "9d0a55c702f8e77bd9204752f5f4f6993a493bdb9d1022ad907c9313a30401bd",
+    "tests/models/test_lgrc_9_v3_native_packet_loop_surplus_trigger.py": "ebd56dc1d25a10014dde069c0db2102f7c4a28a10edfa1c2d38b7b619449a193",
+    "tests/models/test_lgrc_9_v3_restoration.py": "881e1596ee39594bb21ce1ae9e3928c1a9eafe79255dbc69438d4de98c9d5b97",
+    "tests/models/test_lgrc_9_v3_restoration_matrix.py": "b5c740545022c3be11e256d95645b57954bce993a46e7cc26edcca33517eb154",
+    "tests/models/test_lgrc_9_v3_runtime.py": "19f310a120c5efaa4ee068fca7c6b7ffc9cedec745bc42e1f8156eb120b8736b",
+    "tests/models/test_reset_baseline_persistence.py": "6236748f6bc7995dda86f7a207ccce373b33d1b7ecd90849106839baa305f01a",
+    "uv.lock": "8935f5c29dd72daf9755b5c495be6e1af5fbbd933e9ce9c6f226a02027c3d3f7",
+    "implementation/investigations/grc9v4-constitutive-design/decisions/GeometryTemporalRealizationHybridCoupledPersistentCarrier.json": "d30a8078aaa9fa5b39e3646b0c481e48494cf90a909eb2722d8c8c04293d9480",
+    "implementation/investigations/grc9v4-constitutive-design/decisions/GeometryTemporalRealizationHybridCoupledPersistentCarrier.md": "4fb77e610575322381c7dbeb260c41d44023fdcb569ad5eddad6157d46f5076b",
+    "implementation/phase-9-grcv4/tranche-6/P9-6.3ab-Review.md": "55b23ba79cbdd43e0b0d3c17c6956a697dbf72ca01fc5bce10ffe419f3a848c6",
+    "implementation/phase-9-grcv4/verification/verify_p962_pc.py": "8e8cc0a1be2bf0ab92477457ef604b820f1eadcc46567a9a7111613a934576a0",
+    "implementation/phase-9-grcv4/verification/verify_p963_cipc.py": "ce8f2247124e7a91a7bceeab05b85f3cd1765680520bbe0a67c689188da410a7"
+  },
+  "source_contracts": [
+    {
+      "contract_id": "D10.2-EC-PARENT-REAL-CI-PC",
+      "classification": "source_exact_contract_provenance",
+      "source_record_id": "GRC9V4-CD-D10.2-v1",
+      "source_json_pointer": "/normative_equation_contract_registry/40",
+      "trace_digest": "509f2b18e9ae893925d49516fcd19704890abe3defebd5086506a2f45b35c729",
+      "blocked_overread": "gain_two_profile_is_not_amplitude_equivalent_to_CI_or_PC"
+    },
+    {
+      "contract_id": "D10.2-EC-CI-PC-A-COMPOSITION",
+      "classification": "source_exact_contract_provenance",
+      "source_record_id": "GRC9V4-CD-D10.2-v1",
+      "source_json_pointer": "/normative_equation_contract_registry/117",
+      "trace_digest": "aaf6d38a605d601b3f35530d0d0ed17dd0d18f42f3089debe810cc53963a7181",
+      "blocked_overread": "the_unit_plus_unit_profile_is_not_amplitude_equivalent_to_CI_or_PC"
+    },
+    {
+      "contract_id": "D10.2-EC-CI-PC-A-ROOT",
+      "classification": "source_exact_contract_provenance",
+      "source_record_id": "GRC9V4-CD-D10.2-v1",
+      "source_json_pointer": "/normative_equation_contract_registry/118",
+      "trace_digest": "c7fa51bb2f87e4fae875a645db24d51551d6c130ebb26b6b89e1026e65c31566",
+      "blocked_overread": "hybrid_root_admission_does_not_establish_numeric_or_global_envelopes"
+    },
+    {
+      "contract_id": "D10.2-EC-CI-PC-C-COMPOSITION",
+      "classification": "source_exact_contract_provenance",
+      "source_record_id": "GRC9V4-CD-D10.2-v1",
+      "source_json_pointer": "/normative_equation_contract_registry/119",
+      "trace_digest": "aa8a8bf36d8565252037fee1a9e764237f15e95f39828fff6a72f3bbe39ac77c",
+      "blocked_overread": "the_C_hybrid_must_not_apply_chi_or_zeta_twice"
+    },
+    {
+      "contract_id": "D10.2-EC-CI-PC-C-CONTRACTION",
+      "classification": "source_exact_contract_provenance",
+      "source_record_id": "GRC9V4-CD-D10.2-v1",
+      "source_json_pointer": "/normative_equation_contract_registry/120",
+      "trace_digest": "49797f8c90e7849bd6b4459af312fa9d91fb2a09650e96b723ccb4db7748b652",
+      "blocked_overread": "composite_contraction_is_not_cross_stratum_or_global_stability"
+    },
+    {
+      "contract_id": "D10.2-EC-CI-PC-C-ROOT-SELECTION",
+      "classification": "source_exact_contract_provenance",
+      "source_record_id": "GRC9V4-CD-D10.2-v1",
+      "source_json_pointer": "/normative_equation_contract_registry/121",
+      "trace_digest": "607c0ee9d3e03ffe21f16d9d736d7b678c64013cfac086a61124aea78cc53de2",
+      "blocked_overread": "one_admitted_local_root_is_not_a_global_uniqueness_theorem"
+    },
+    {
+      "contract_id": "D10.2-EC-CI-PC-ABLATIONS",
+      "classification": "source_exact_contract_provenance",
+      "source_record_id": "GRC9V4-CD-D10.2-v1",
+      "source_json_pointer": "/normative_equation_contract_registry/122",
+      "trace_digest": "26d8d2d2e9657020749ae9afc5203aa5f3f8e9e582f19d2a08087bc6eb9de01d",
+      "blocked_overread": "ablation_identity_does_not_make_the_enabled_hybrid_equivalent_to_its_components"
+    }
+  ],
+  "environment": {
+    "python": "3.12.3",
+    "platform": "Linux-5.15.167-0515167-generic-x86_64-with-glibc2.39",
+    "dependencies": {
+      "numpy": "2.4.6",
+      "jsonschema": "4.26.0",
+      "rfc8785": "0.1.4"
+    }
+  },
+  "result": {
+    "started_utc": "2026-09-10T10:28:46.503069+00:00",
+    "completed_utc": "2026-09-10T10:30:03.993475+00:00",
+    "elapsed_seconds": 77.452,
+    "tests_run": 8,
+    "failures": 0,
+    "errors": 0,
+    "skips": 0,
+    "executed_ids": [
+      "tests.models.test_grc_v4_cipc.CIPCAdditionalAuditPressure.test_carrier_only_rounding_stagnation_is_not_analytic_zero",
+      "tests.models.test_grc_v4_cipc.CIPCAdditionalAuditPressure.test_exact_old_source_cancellation_does_not_erase_writer_source",
+      "tests.models.test_grc_v4_cipc.CIPCAdditionalAuditPressure.test_final_CI_chart_can_fail_after_PC_chart_and_fixed_current_pass",
+      "tests.models.test_grc_v4_cipc.CIPCAdditionalAuditPressure.test_reset_and_consumed_root_exhaustion_have_distinct_stages",
+      "tests.models.test_grc_v4_cipc.CIPCReconciliationTests.test_negative_source_cancellation_and_one_ulp_history_neighbours",
+      "tests.models.test_grc_v4_cipc.CIPCReconciliationTests.test_programmer_errors_are_not_scientific_dispositions",
+      "tests.models.test_grc_v4_cipc.CIPCReconciliationTests.test_same_forcing_different_histories_do_not_have_the_same_source",
+      "tests.models.test_grc_v4_cipc.CIPCReconciliationTests.test_uniform_source_h_derivative_bound_with_native_dense_candidate_chain"
+    ],
+    "output_sha256": "afeacba469b02fcd1166242ee81334b08a45cba6aaeb13814e3e9ffdf81b077d",
+    "command": [
+      ".venv/bin/python",
+      "-m",
+      "unittest",
+      "-v",
+      "tests.models.test_grc_v4_cipc.CIPCAdditionalAuditPressure",
+      "tests.models.test_grc_v4_cipc.CIPCReconciliationTests"
+    ]
+  },
+  "reused_execution": {
+    "record": "implementation/phase-9-grcv4/tranche-6/P9-6.3ab-ExecutionRecord.json",
+    "record_digest": "3663e2a856edd68c565e1985e68a483e71febabf79ada6a4028fb02723bfe62d",
+    "composition_methods": 32,
+    "affected_regressions": 143,
+    "new_execution": false,
+    "reason": "All numerical sources, original test/oracle bytes and dependency bindings are unchanged. Only eight methods were appended; the original 175 passes are reused, not rerun."
+  },
+  "children": {
+    "P9-6.3a": {
+      "profile": "C_CI_PC",
+      "scientific_verdict": "PASS",
+      "independent_review": "PASS_bounded_original_subject"
+    },
+    "P9-6.3b": {
+      "profile": "A_CI_PC",
+      "scientific_verdict": "PASS",
+      "independent_review": "PASS_bounded_original_subject"
+    }
+  },
+  "reconciliation": {
+    "iteration_id": "P9-6.3c",
+    "profiles_reviewed": [
+      "A_CI_PC",
+      "C_CI_PC"
+    ],
+    "scientific_verdict": "PASS",
+    "runtime_corrections": [],
+    "review": "implementation/phase-9-grcv4/tranche-6/P9-6.3ab-Review.md"
+  },
+  "record_digest": "5fc895fa7729bba3ef56ab67b1f48dd6f88ed874dedd8a0ab05a621d3b4fae89",
+  "acceptance": {
+    "status": "accepted_by_user",
+    "recorded_utc": "2026-09-10T10:46:37.345299+00:00",
+    "request": "ok, let's use this. i accept, please commit.",
+    "accepted_iterations": [
+      "P9-6.3a",
+      "P9-6.3b",
+      "P9-6.3c"
+    ],
+    "profiles_reviewed": [
+      "A_CI_PC",
+      "C_CI_PC"
+    ],
+    "scientific_verdict": "PASS",
+    "scope": "Provisional same-root A_CI_PC and C_CI_PC on the declared compact base/carrier/Hodge domains, complete candidate trial chains, uniform source and contraction bounds, once-held source writing, independent reset/final admission, and shared composition reconciliation.",
+    "open_leaf_blockers": [],
+    "new_runtime_iterations_authorized": [],
+    "P9_6_3_status": "all_children_accepted",
+    "composite_G2_accepted": false,
+    "G3_accepted": false,
+    "remaining_integration_obligations": [
+      "Composite lifecycle authentication, atomic publication/rollback, receipts and initializer/formation provenance remain pending.",
+      "Topology maps, matched-forcing contraction certificates, endpoint witnesses, design-wide minimal-carrier synthesis, composite G2 and G3 remain outside this acceptance.",
+      "The documented private CI/PC cross-module dependencies remain a maintenance cost; reassess explicit shared APIs and dependency direction when adding composite lifecycle ownership."
+    ],
+    "record_preservation": "Execution-time status, user_accepted field, child dispositions, source bindings, original-source deltas and results remain unchanged. This object records subsequent user acceptance. Review/verifier status edits are reconstructed below; numerical and test sources are unchanged. No scientific tests were rerun for acceptance.",
+    "source_maintenance": {
+      "implementation/phase-9-grcv4/verification/verify_p963_cipc.py": {
+        "current_sha256": "91004156ced932a35f3b709731a5769898ec480e3a012cb7ba50a707edf16f94",
+        "splices_to_execution": [
+          {
+            "start": 185,
+            "stop": 215,
+            "old_lines": []
+          },
+          {
+            "start": 224,
+            "stop": 225,
+            "old_lines": [
+              "    current = sources()\n"
+            ]
+          },
+          {
+            "start": 226,
+            "stop": 227,
+            "old_lines": [
+              "        raw = (ROOT / name).read_bytes()\n"
+            ]
+          },
+          {
+            "start": 393,
+            "stop": 394,
+            "old_lines": [
+              "        follow[\"source_bindings\"] == sources()\n"
+            ]
+          },
+          {
+            "start": 433,
+            "stop": 447,
+            "old_lines": []
+          },
+          {
+            "start": 454,
+            "stop": 456,
+            "old_lines": [
+              "        children=\"PASS_pending_user_acceptance\",\n",
+              "        P9_6_3c=\"PASS_pending_user_acceptance\",\n"
+            ]
+          }
+        ]
+      },
+      "implementation/phase-9-grcv4/tranche-6/P9-6.3ab-Review.md": {
+        "current_sha256": "b25e72aab39565643a6dbf2af89ce394e4d8fb3e393c9f6f4c3d96d876a5e87e",
+        "splices_to_execution": [
+          {
+            "start": 2,
+            "stop": 4,
+            "old_lines": [
+              "Status: **a/b independent audit PASS; P9-6.3c reconciliation PASS within the\n",
+              "declared provisional numerical scope; user acceptance pending for all three**.\n"
+            ]
+          },
+          {
+            "start": 160,
+            "stop": 164,
+            "old_lines": [
+              "[audit followup](./P9-6.3abc-AuditFollowup.json); user acceptance remains separate.\n"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

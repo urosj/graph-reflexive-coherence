@@ -274,15 +274,15 @@ class CandidateARetainedAuthority:
         if type(self.profile.params_resolved.candidate) is not CandidateAParams:
             raise TypeError("A retained authority requires Candidate A")
         realization = self.profile.identity_payload.realization
-        if realization not in {"OS", "CI", "PC"}:
-            raise ValueError("A local construction requires A_OS, A_CI or A_PC")
+        if realization not in {"OS", "CI", "PC", "CI+PC"}:
+            raise ValueError("A local construction requires OS, CI, PC or CI+PC")
         if type(self.state) is not GRCV4AuthoritativeState:
             raise TypeError("A retained authority requires typed state")
         state = GRCV4AuthoritativeState(self.state.C, self.state.W_A, self.state.Z_4)
         if (
             len(state.C) != len(self.graph.live_node_ids)
             or state.W_A is None
-            or (state.Z_4 is not None) != (realization == "PC")
+            or (state.Z_4 is not None) != (realization in {"PC", "CI+PC"})
             or (state.Z_4 is not None and len(state.Z_4) != len(self.graph.live_edge_ids) ** 2)
         ):
             raise ValueError(
@@ -571,7 +571,7 @@ class CandidateACurrent:
             or not _fixed_current_policy(profile)
         ):
             raise ValueError("unimplemented A current/profile declaration")
-        if self.inputs.trial_current is not None and self.inputs.stage != "ci_trial":
+        if self.inputs.trial_current is not None and self.inputs.stage not in {"ci_trial", "cipc_trial"}:
             raise ValueError("fixed A_OS stage does not consume a trial-current cache")
         backend = self.differential_reference
         if (
@@ -866,9 +866,9 @@ class CandidateAWriter:
                 "A writer requires the current owner and admitted resource boundary"
             )
         inputs = self.point.inputs
-        if inputs.stage not in {"os_corrector", "ci_trial", "pc_old_history"} or inputs.dt <= 0:
+        if inputs.stage not in {"os_corrector", "ci_trial", "cipc_trial", "pc_old_history"} or inputs.dt <= 0:
             raise ValueError("A writer requires a positive-duration selected OS/CI/PC current")
-        if inputs.stage == "ci_trial" and inputs.trial_current != self.point.current:
+        if inputs.stage in {"ci_trial", "cipc_trial"} and inputs.trial_current != self.point.current:
             raise ValueError("A CI writer requires the selected root current")
         ref = inputs.geometry.reference
         if ref.profile.params_resolved.lifecycle.history_policy_id != HISTORY_POLICY:

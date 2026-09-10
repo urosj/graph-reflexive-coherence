@@ -24,6 +24,7 @@ REVIEW = p.PHASE + "tranche-6/P9-6.2ab-Review.md"
 RECORD = p.PHASE + "tranche-6/P9-6.2ab-ExecutionRecord.json"
 FOLLOWUP = p.PHASE + "tranche-6/P9-6.2abc-AuditFollowup.json"
 BASE = "d1ab4bb"
+ACCEPTED_COMMIT = "affb214"
 TESTS = ["tests.models.test_grc_v4_pc"]
 REGRESSIONS = [
     "tests.models.test_grc_v4_candidate_a",
@@ -72,12 +73,12 @@ def source_contracts():
     return result
 
 
-def sources():
+def sources(subject=None):
     # Reuse the common model/test/asset/spec/paper/lock source inventory. Git
     # supplies source bytes; no source archive or external input is retained.
     return {
-        **ci.sources(),
-        **{name: p.sha((ROOT / name).read_bytes()) for name in (SCRIPT, REVIEW)},
+        **ci.sources(subject),
+        **{name: p.sha(ci.source_bytes(name, subject)) for name in (SCRIPT, REVIEW)},
     }
 
 
@@ -171,9 +172,9 @@ def capture():
     (ROOT / RECORD).write_text(json.dumps(value, indent=2) + "\n")
 
 
-def execution_bytes(name, follow):
+def execution_bytes(name, follow, subject=None):
     """Recover reviewed execution bytes after status-only acceptance edits."""
-    raw = (ROOT / name).read_bytes()
+    raw = ci.source_bytes(name, subject)
     accepted = follow.get("acceptance")
     if accepted is None or name not in {SCRIPT, REVIEW}:
         return raw
@@ -194,7 +195,7 @@ def execution_bytes(name, follow):
     return raw
 
 
-def reconstruct_prior(follow):
+def reconstruct_prior(follow, subject=None):
     """Restore the original uncommitted subject using minimal old-line spans.
 
     Scientific execution records stay immutable. All unchanged bytes come
@@ -218,13 +219,13 @@ def reconstruct_prior(follow):
     p.require(
         set(delta) == allowed, "audit broadened the reconstructed scientific delta"
     )
-    current = sources()
+    current = sources(subject)
     p.require(
         set(current) == set(value["source_bindings"]), "changed PC source inventory"
     )
     reconstructed = {}
     for name in value["source_bindings"]:
-        raw = execution_bytes(name, follow)
+        raw = execution_bytes(name, follow, subject)
         if name in delta:
             entry = delta[name]
             p.require(
@@ -383,8 +384,11 @@ def check():
         follow["record_digest"] == p.digest_record(follow),
         "changed reconciliation record",
     )
-    reconstruct_prior(follow)
-    current_sources = sources()
+    p.git(ROOT, "merge-base", "--is-ancestor", ACCEPTED_COMMIT, "HEAD")
+    p.require((ROOT / FOLLOWUP).read_bytes() == ci.source_bytes(FOLLOWUP, ACCEPTED_COMMIT),
+              "changed accepted PC evidence")
+    reconstruct_prior(follow, ACCEPTED_COMMIT)
+    current_sources = sources(ACCEPTED_COMMIT)
     accepted = follow.get("acceptance")
     if accepted is not None:
         p.require(
@@ -400,7 +404,7 @@ def check():
             "invalid bounded PC acceptance",
         )
         for name in (SCRIPT, REVIEW):
-            current_sources[name] = p.sha(execution_bytes(name, follow))
+            current_sources[name] = p.sha(execution_bytes(name, follow, ACCEPTED_COMMIT))
     p.require(follow["source_bindings"] == current_sources, "changed reconciliation sources")
     p.require(
         follow["source_contracts"] == source_contracts(),
@@ -433,12 +437,7 @@ def check():
     )
     p.git(ROOT, "merge-base", "--is-ancestor", BASE, "HEAD")
     changed = set(
-        p.git(ROOT, "diff", "--name-only", BASE, "--", "src", "tests")
-        .decode()
-        .splitlines()
-    )
-    changed.update(
-        p.git(ROOT, "ls-files", "--others", "--exclude-standard", "--", "src", "tests")
+        p.git(ROOT, "diff", "--name-only", BASE, ACCEPTED_COMMIT, "--", "src", "tests")
         .decode()
         .splitlines()
     )

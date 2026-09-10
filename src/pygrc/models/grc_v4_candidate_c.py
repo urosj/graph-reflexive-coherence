@@ -170,7 +170,7 @@ def _fixed_current_policy(profile: GRCV4Profile) -> bool:
     return policy.residual_norm_id == "edge_l2_v1" and (
         (identity.solver_id == "direct_unique_root_v1" and policy.solver_kind == "direct")
         or (
-            identity.realization == "CI"
+            identity.realization in {"CI", "CI+PC"}
             and identity.solver_id == "ci_reduced_fixed_point_v1"
             and policy.solver_kind == "fixed_point"
         )

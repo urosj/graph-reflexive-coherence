@@ -61,6 +61,7 @@ PC_BATCH_PATHS = {
     "src/pygrc/models/grc_v4_pc.py",
     "tests/models/test_grc_v4_pc.py",
 }
+CIPC_BATCH_PATHS = {"tests/models/test_grc_v4_cipc.py"}
 CI_BATCH_BASE = "c55960b"
 CI_BATCH_PATHS = {
     "src/pygrc/models/grc_v4_ci.py",
@@ -203,6 +204,10 @@ PATHS = {
     PHASE + "tranche-6/P9-6.2ab-Review.md",
     PHASE + "tranche-6/P9-6.2ab-ExecutionRecord.json",
     PHASE + "tranche-6/P9-6.2abc-AuditFollowup.json",
+    PHASE + "tranche-6/P9-6.3ab-Review.md",
+    PHASE + "tranche-6/P9-6.3ab-ExecutionRecord.json",
+    PHASE + "tranche-6/P9-6.3abc-AuditFollowup.json",
+    HERE + "verify_p963_cipc.py",
     HERE + "verify_p961_ci.py",
     PHASE + "tranche-6/P9-6.1ab-Review.md",
     PHASE + "tranche-6/P9-6.1ab-ExecutionRecord.json",
@@ -1027,6 +1032,13 @@ def leaf_permissions(root):
     # User explicitly combined the a/b audit correction with c reconciliation.
     # This supersedes the former review-before-c execution order, not acceptance.
     ready = sorted(set(ready) | {"P9-6.2a", "P9-6.2b", "P9-6.2c"})
+    # Explicit a/b composition request after acceptance of the full PC batch.
+    git(root, "merge-base", "--is-ancestor", "affb214", "HEAD")
+    pc_record = PHASE + "tranche-6/P9-6.2abc-AuditFollowup.json"
+    require(safe_path(root, pc_record).read_bytes() == git(root, "show", "affb214:" + pc_record),
+            "composition requires preserved PC acceptance")
+    # User supplied the a/b audit and explicitly requested c reconciliation.
+    ready = sorted(set(ready) | {"P9-6.3a", "P9-6.3b", "P9-6.3c"})
     owners = {}
     for module in ownership["modules"]:
         leaves = {
@@ -1110,6 +1122,12 @@ def leaf_permissions(root):
     owners["src/pygrc/models/grc_v4_candidate_a.py"] |= {"P9-6.2b"}
     for name in PC_BATCH_PATHS:
         owners[name] = {"P9-6.2a", "P9-6.2b", "P9-6.2c"}
+    for name in ("src/pygrc/models/grc_v4_ci.py", "src/pygrc/models/grc_v4_pc.py"):
+        owners[name] |= {"P9-6.3a", "P9-6.3b"}
+    owners["src/pygrc/models/grc_v4_candidate_a.py"] |= {"P9-6.3b"}
+    owners["src/pygrc/models/grc_v4_candidate_c.py"] |= {"P9-6.3a"}
+    for name in CIPC_BATCH_PATHS:
+        owners[name] = {"P9-6.3a", "P9-6.3b", "P9-6.3c"}
     return ready, owners
 
 
@@ -1118,7 +1136,7 @@ def runtime_targets(approval):
     return [*approval["runtime_targets"], *(
         {"path": name, "requires_gate": "P9-G1", "before_sha256": None,
          "operation": "v4_owned_add_or_update", "module_owner": "grc_v4_realizations"}
-        for name in sorted(CI_BATCH_PATHS | PC_BATCH_PATHS)
+        for name in sorted(CI_BATCH_PATHS | PC_BATCH_PATHS | CIPC_BATCH_PATHS)
     )]
 
 
@@ -1265,7 +1283,7 @@ def work_entries(root, approval):
     )
     # The accepted baseline cannot contain later closure IDs. Register exactly
     # the user-approved successor, not a broad regex-based permission.
-    leaves.update({"P9-4.9.1", "P9-4.9.1a", "P9-4.9.2", "P9-4.9.3", "P9-6.1a", "P9-6.1b", "P9-6.1c", "P9-6.2a", "P9-6.2b", "P9-6.2c"})
+    leaves.update({"P9-4.9.1", "P9-4.9.1a", "P9-4.9.2", "P9-4.9.3", "P9-6.1a", "P9-6.1b", "P9-6.1c", "P9-6.2a", "P9-6.2b", "P9-6.2c", "P9-6.3a", "P9-6.3b", "P9-6.3c"})
     rows = value["entries"]
     require(len({r["path"] for r in rows}) == len(rows), "duplicate work target")
     result = {}

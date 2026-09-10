@@ -30,7 +30,8 @@ from .grc_v4_candidate_c import (
     _c_transpose,
 )
 
-# Shared exact norm/exponential utilities. No CI root or CI domain is invoked.
+# Shared exact norm/exponential utilities; standalone PC invokes no CI root.
+# Composite declarations also resolve the explicit CI+PC domain.
 from .grc_v4_ci import CIStageError, _exp_bounds, _norm, _opnorm, _sqrt_upper
 from .grc_v4_geometry import (
     GRCV4Geometry,
@@ -45,7 +46,7 @@ from .grc_v4_geometry import (
     _identity,
     _local_payload,
 )
-from .grc_v4_profile import CandidateAParams, CandidateCParams, PCParams
+from .grc_v4_profile import CandidateAParams, CandidateCParams, PCParams, CIPCParams
 from .grc_v4_state import FrozenJSONMap, GRCV4AuthoritativeState, _number, _vector
 
 if TYPE_CHECKING:
@@ -57,10 +58,8 @@ NUMERICS = "pc_exact_input_enclosed_scalar_zoh_binary64_v1"
 Point = CandidateACurrent | CandidateCCurrent
 
 
-class PCStageError(ValueError):
-    def __init__(self, disposition: str, message: str) -> None:
-        super().__init__(message)
-        self.disposition = disposition
+class PCStageError(CIStageError):
+    """Carrier/domain failure, also handled by a composite root owner."""
 
 
 def _require(condition: bool, message: str) -> None:
@@ -112,23 +111,44 @@ class PCBaseChart:
         return result
 
 
-def _declarations(inputs: GeometryStageInputs) -> tuple[PCParams, PCBaseChart]:
+def _declarations(
+    inputs: GeometryStageInputs,
+) -> tuple[PCParams | CIPCParams, PCBaseChart]:
     if type(inputs) is not GeometryStageInputs:
         raise TypeError("PC requires typed captured inputs")
     profile = inputs.geometry.reference.profile
     identity, params = profile.identity_payload, profile.params_resolved
     pc = params.realization
     _require(
-        identity.profile_family_id in {"A_PC", "C_PC"}
-        and type(pc) is PCParams
+        (
+            (identity.profile_family_id in {"A_PC", "C_PC"} and type(pc) is PCParams)
+            or (
+                identity.profile_family_id in {"A_CI_PC", "C_CI_PC"}
+                and type(pc) is CIPCParams
+            )
+        )
         and pc.carrier_norm_id == NORM_ID
         and pc.writer_id == "zero_order_hold_exponential_v1"
-        and identity.solver_id == "direct_unique_root_v1"
-        and params.solver.solver_kind == "direct"
+        and (
+            (
+                type(pc) is PCParams
+                and identity.solver_id == "direct_unique_root_v1"
+                and params.solver.solver_kind == "direct"
+            )
+            or (
+                type(pc) is CIPCParams
+                and identity.solver_id == "ci_reduced_fixed_point_v1"
+                and params.solver.solver_kind == "fixed_point"
+            )
+        )
         and params.solver.residual_norm_id == "edge_l2_v1",
         "unimplemented or inconsistent PC declaration",
     )
-    assert isinstance(pc, PCParams)
+    assert isinstance(pc, (PCParams, CIPCParams))
+    if isinstance(pc, CIPCParams):
+        from .grc_v4_ci import _declarations as ci_declarations
+
+        ci_declarations(inputs)
     chart = PCBaseChart.from_identity(pc.source_envelope_id)
     if identity.candidate == "C":
         _require(
@@ -146,7 +166,7 @@ def _ball(values: Any, radius: float, label: str) -> None:
 
 
 def _base_state(
-    state: GRCV4AuthoritativeState, chart: PCBaseChart, pc: PCParams
+    state: GRCV4AuthoritativeState, chart: PCBaseChart, pc: PCParams | CIPCParams
 ) -> None:
     _ball(state.C, chart.resource_radius, "resource")
     if state.W_A is not None:
@@ -252,6 +272,17 @@ class PCEnvelopeCertificate:
         radius = abs(Fraction(ref.profile.params_resolved.geometry.kappa_H)) * Fraction(
             pc.radius
         )
+        if isinstance(pc, CIPCParams):
+            from .grc_v4_ci import CIBoundedDomain
+
+            composite_radius = Fraction(
+                CIBoundedDomain.from_identity(pc.contraction_domain_id).radius
+            )
+            _require(
+                composite_radius >= 2 * radius,
+                "CI+PC domain must cover the entire B_2R geometry image",
+            )
+            radius = composite_radius
         lower, upper = min(weights) - radius, max(weights) + radius
         limit = Fraction(ref.profile.params_resolved.solver.conditioning_limit)
         _require(
@@ -285,6 +316,13 @@ class PCEnvelopeCertificate:
             margin, response = 1 - beta, Fraction(1)
             _require(margin > 0, "A PC whole-chart current inverse is uncertified")
             current = baseline / margin
+            baseline_lip = Fraction(p.eta) * w * b2 * abs(Fraction(p.kappa_Ah)) * dc
+            # log(max(floor, exp(x))) = max(log(floor), x) is 1-Lipschitz.
+            # The contrast derivative w.r.t. log target has magnitude <= 1/2.
+            contrast_lip = abs(Fraction(p.gamma)) * baseline * baseline_lip / 2
+            current_lip = (
+                baseline_lip / margin + baseline * beta * contrast_lip / margin**2
+            )
             descriptor = _descriptor_bound(backend, Fraction(chart.resource_radius))
             # ||e_u + e_v|| is sqrt(2) for distinct endpoints, but 2 for
             # a loop: its resource term counts the same endpoint twice.
@@ -305,6 +343,9 @@ class PCEnvelopeCertificate:
                 "A PC conductance is not finite-certified over the base chart",
             )
             gain, chi = abs(Fraction(p.zeta_A)), abs(Fraction(p.chi_A))
+            flat_lip = chi * (
+                current / lower**2 + (contrast_lip * current + current_lip) / lower
+            )
             extra.update(
                 conductance_exponent_absolute_upper=exponent,
                 descriptor_norm_upper=descriptor,
@@ -364,6 +405,39 @@ class PCEnvelopeCertificate:
             )
             current = baseline / margin
             gain, chi = abs(Fraction(p.zeta_C)), abs(Fraction(p.chi_C))
+            sector_lip = 2 * b2 * Fraction(chart.resource_radius) / gap
+            d_lip = (
+                d * abs(Fraction(p.kappa_M_C)) * sector_lip / (2 * Fraction(p.C_ref))
+            )
+            retained_lip = d * d + 2 * d * upper * d_lip
+            baseline_lip = (
+                mobility * abs(Fraction(p.kappa_Phi_C)) * b2 * dc * retained_lip
+            )
+            if p.tau_C == 0:
+                response_lip = Fraction()
+            else:
+                q, qi = retained_upper / lower**2, upper**2 / retained_lower
+                lq = retained_lip / lower**2 + 2 * retained_upper / lower**3
+                lqi = (
+                    2 * upper / retained_lower
+                    + upper**2 * retained_lip / retained_lower**2
+                )
+                resolvent = _sqrt_upper(retained_upper / retained_lower)
+                resolvent_lip = resolvent**2 * Fraction(p.tau_C) * b2 * retained_lip
+                response_lip = (
+                    lqi * resolvent * q + qi * resolvent_lip * q + qi * resolvent * lq
+                )
+            current_lip = (
+                baseline_lip / margin
+                + baseline
+                * abs(Fraction(p.zeta_C) * Fraction(p.chi_C))
+                * response_lip
+                / margin**2
+            )
+            flat_lip = chi * (
+                response * current / lower**2
+                + (response_lip * current + response * current_lip) / lower
+            )
             extra.update(
                 selector_gap_lower=gap,
                 admitted_strata=1,
@@ -379,6 +453,11 @@ class PCEnvelopeCertificate:
             source <= Fraction(pc.radius),
             "PC uniform source envelope exceeds the carrier radius",
         )
+        if isinstance(pc, CIPCParams):
+            _require(
+                source < Fraction(pc.radius),
+                "CI+PC requires strict uniform source slack",
+            )
         extra.update(
             geometry_radius=radius,
             hodge_lower=lower,
@@ -387,6 +466,7 @@ class PCEnvelopeCertificate:
             current_inverse_upper=1 / margin,
             current_conditioning_upper=conditioning,
             flat_norm_upper=flat,
+            flat_geometry_lipschitz_upper=flat_lip,
             source_norm_upper=source,
             carrier_radius=Fraction(pc.radius),
         )
@@ -456,6 +536,7 @@ class CandidatePCRead:
 
     def __post_init__(self) -> None:
         pc, _ = _declarations(self.inputs)
+        _require(type(pc) is PCParams, "CI+PC requires a coupled root, not a PC read")
         _require(
             self.inputs.stage == "pre_read"
             and self.inputs.evaluation_index == 0

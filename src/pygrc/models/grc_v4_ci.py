@@ -1,4 +1,4 @@
-"""Certified local A/C coupled roots, with no lifecycle or support authority.
+"""Certified local A/C CI and CI+PC roots; no lifecycle or support authority.
 
 The declared closed Frobenius ball is centred on the reference Hodge. Bounds
 are derived from the supplied scientific inputs, never supplied as assertions
@@ -7,6 +7,8 @@ union, a disconnected branch, and an uncertified domain are unsupported.
 The same bounds hold for every geometry gain between zero and the declared
 gain, proving reference-branch connection. Numerical residuals are evaluated
 independently of the contraction admission; convergence alone grants nothing.
+CI+PC reads fixed old Z in the same root and retains its selected source for
+one subsequent carrier write. Its uniform domain must cover the B_2R image.
 """
 
 from __future__ import annotations
@@ -43,11 +45,12 @@ from .grc_v4_geometry import (
     PhysicalFlux,
     StarAssembly,
     VertexScalar,
+    _computed,
     _identity,
     _local_payload,
 )
-from .grc_v4_profile import CandidateAParams, CISolverParams
-from .grc_v4_state import FrozenJSONMap, _number
+from .grc_v4_profile import CandidateAParams, CISolverParams, CIPCParams
+from .grc_v4_state import FrozenJSONMap, GRCV4AuthoritativeState, _number
 
 if TYPE_CHECKING:
     from .grc_v4_step import OperationStage, ProvisionalResourceStep
@@ -56,6 +59,7 @@ DOMAIN_PREFIX = "ci_reference_frobenius_ball_v1:"
 SOLVER_ID = "ci_reduced_fixed_point_v1"
 JOINT_NORM = "joint_current_geometry_l2_v1"
 NUMERICS = "ci_analytic_residual_enclosure_binary64_v2"
+CIPC_NUMERICS = "cipc_same_root_source_enclosed_zoh_binary64_v1"
 Point = CandidateACurrent | CandidateCCurrent
 
 
@@ -504,6 +508,8 @@ def _analytic_residual(point: Point, current: PhysicalFlux) -> tuple[Any, Any]:
     counts = [sum(i in star for star in stars) for i in range(len(h))]
     href = _c_exact(ref.pairings.one_form.matrix)
     gain = Fraction(ref.profile.params_resolved.geometry.kappa_H) * _gain(point)
+    old = _old_carrier(inputs)
+    geometry_gain = Fraction(ref.profile.params_resolved.geometry.kappa_H)
     fh = []
     for i, row in enumerate(h):
         out = []
@@ -513,7 +519,10 @@ def _analytic_residual(point: Point, current: PhysicalFlux) -> tuple[Any, Any]:
             upper = _sqrt_upper(radicand)
             coefficient = _iv(count) / _Interval(radicand / upper, upper)
             out.append(
-                x - Fraction(href[i][k]) - gain * coefficient * flat[i][0] * flat[k][0]
+                x
+                - Fraction(href[i][k])
+                - geometry_gain * old[i][k]
+                - gain * coefficient * flat[i][0] * flat[k][0]
             )
         fh.append(tuple(out))
     return fj, tuple(fh)
@@ -555,17 +564,52 @@ def _declarations(inputs: GeometryStageInputs) -> CIBoundedDomain:
     identity, params = profile.identity_payload, profile.params_resolved
     realization, solver = params.realization, params.solver
     _require(
-        identity.profile_family_id in {"A_CI", "C_CI"}
+        (
+            (
+                identity.profile_family_id in {"A_CI", "C_CI"}
+                and type(realization) is CISolverParams
+            )
+            or (
+                identity.profile_family_id in {"A_CI_PC", "C_CI_PC"}
+                and type(realization) is CIPCParams
+                and realization.rho_inst == 1
+            )
+        )
         and identity.solver_id == SOLVER_ID
         and solver.solver_kind == "fixed_point"
-        and type(realization) is CISolverParams
         and realization.residual_norm_id == JOINT_NORM
         and solver.residual_norm_id == "edge_l2_v1"
         and realization.iteration_limit == solver.iteration_limit,
         "unimplemented or inconsistent CI solver declaration",
     )
-    assert isinstance(realization, CISolverParams)
+    assert isinstance(realization, (CISolverParams, CIPCParams))
     return CIBoundedDomain.from_identity(realization.contraction_domain_id)
+
+
+def _old_carrier(inputs: GeometryStageInputs) -> tuple[tuple[Fraction, ...], ...]:
+    """Old Z is a fixed root input; CI has the exact zero offset."""
+    n = len(inputs.geometry.reference.graph.live_edge_ids)
+    z = inputs.current.Z_4
+    return tuple(
+        tuple(Fraction(0 if z is None else z[i * n + j]) for j in range(n))
+        for i in range(n)
+    )
+
+
+def _effective_source(inputs: GeometryStageInputs, source: K4Tensor) -> K4Tensor:
+    if inputs.current.Z_4 is None:
+        return source
+    old = _old_carrier(inputs)
+    try:
+        increment = tuple(
+            tuple(_computed(float(z + Fraction(s))) for z, s in zip(a, b, strict=True))
+            for a, b in zip(old, source.increment, strict=True)
+        )
+    except OverflowError as exc:
+        raise CIStageError(
+            "nonfinite", "CI+PC effective structural input exceeds binary64 range"
+        ) from exc
+    return K4Tensor(source.graph, source.base, increment)
 
 
 def _point(
@@ -605,7 +649,7 @@ def _source(point: Point, current: PhysicalFlux) -> K4Tensor:
             tuple((0.0,) * n for _ in range(n))
             if gain == 0
             else tuple(
-                tuple(float(gain * Fraction(x)) for x in row)
+                tuple(_computed(float(gain * Fraction(x))) for x in row)
                 for row in StarAssembly(point.read_back(current).causal_flat).matrix
             )
         )
@@ -633,7 +677,9 @@ class CITrial:
     def __post_init__(self) -> None:
         domain = _declarations(self.inputs)
         _require(
-            self.inputs.stage == "ci_trial", "CI residual requires a joint trial stage"
+            self.inputs.stage
+            == ("cipc_trial" if self.inputs.current.Z_4 is not None else "ci_trial"),
+            "CI residual requires its realization's joint trial stage",
         )
         _in_ball(self.inputs.geometry, domain)
         trial = self.inputs.trial_current
@@ -643,7 +689,7 @@ class CITrial:
         ref = self.inputs.geometry.reference
         source = _source(point, trial)
         generated = H_profile(
-            source,
+            _effective_source(self.inputs, source),
             reference=ref,
             context=ref.context,
             profile=ref.profile,
@@ -658,12 +704,14 @@ class CITrial:
             tuple(
                 Fraction(x)
                 - Fraction(y)
-                - Fraction(ref.profile.params_resolved.geometry.kappa_H) * Fraction(s)
-                for x, y, s in zip(a, b, c, strict=True)
+                - Fraction(ref.profile.params_resolved.geometry.kappa_H)
+                * (z + Fraction(s))
+                for x, y, z, s in zip(a, b, old, c, strict=True)
             )
-            for a, b, c in zip(
+            for a, b, old, c in zip(
                 self.inputs.geometry.one_form_hodge.matrix,
                 ref.pairings.one_form.matrix,
+                _old_carrier(self.inputs),
                 source.increment,
                 strict=True,
             )
@@ -935,6 +983,14 @@ class CIContractionCertificate:
             self.inputs.stage == "pre_read" and self.inputs.geometry == ref.geometry(),
             "CI certification requires reference pre-read inputs",
         )
+        composite = ref.profile.params_resolved.realization
+        envelope = None
+        if isinstance(composite, CIPCParams):
+            from .grc_v4_pc import PCEnvelopeCertificate
+
+            # Certify B_2R/current regularity and same-root source over the full
+            # compact base chart before any candidate solve is attempted.
+            envelope = PCEnvelopeCertificate(self.inputs, self.differential_reference)
         point = _point(self.inputs, self.differential_reference)
         weights = tuple(
             Fraction(cast(float, ref.edge_weights[e])) for e in ref.graph.live_edge_ids
@@ -960,6 +1016,26 @@ class CIContractionCertificate:
         )
         displacement = gain * bounds["flat"] ** 2
         contraction = 2 * gain * bounds["flat"] * bounds["flat_lip"]
+        if envelope is not None:
+            assert isinstance(composite, CIPCParams)
+            uniform = envelope.bounds
+            kh = abs(Fraction(ref.profile.params_resolved.geometry.kappa_H))
+            source_upper = Fraction(cast(str, uniform["source_norm_upper"]))
+            displacement = kh * (Fraction(composite.radius) + source_upper)
+            contraction = (
+                2
+                * gain
+                * Fraction(cast(str, uniform["flat_norm_upper"]))
+                * Fraction(cast(str, uniform["flat_geometry_lipschitz_upper"]))
+            )
+            bounds.update(
+                carrier_radius=Fraction(composite.radius),
+                composite_geometry_radius=2 * kh * Fraction(composite.radius),
+                uniform_source_upper=source_upper,
+                uniform_source_slack=Fraction(composite.radius) - source_upper,
+                rho_inst=composite.rho_inst,
+                composite_envelope=envelope.bounds,
+            )
         _require(
             displacement <= radius, "CI bounded map is not certified to be a self-map"
         )
@@ -1005,14 +1081,14 @@ class CandidateCIRoot:
         certificate = CIContractionCertificate(before, self.differential_reference)
         ref = before.geometry.reference
         params = ref.profile.params_resolved.realization
-        assert isinstance(params, CISolverParams)
+        assert isinstance(params, (CISolverParams, CIPCParams))
         h = ref.geometry()
         zero = PhysicalFlux(ref.graph, (0.0,) * len(ref.graph.live_edge_ids))
         for index in range(params.iteration_limit):
             seed = replace(
                 before,
                 geometry=h,
-                stage="ci_trial",
+                stage="cipc_trial" if isinstance(params, CIPCParams) else "ci_trial",
                 evaluation_index=index,
                 trial_current=zero,
             )
@@ -1025,6 +1101,14 @@ class CandidateCIRoot:
                 "CI residual reconstruction changed the eliminated current",
             )
             _in_ball(trial.generated, domain)
+            if isinstance(params, CIPCParams):
+                from .grc_v4_pc import _ball
+
+                _ball(
+                    (x for row in trial.structural_source.increment for x in row),
+                    params.radius,
+                    "stored same-root source",
+                )
             if trial.residual_squared <= Fraction(params.tolerance) ** 2:
                 for name, value in (
                     ("certificate", certificate),
@@ -1046,7 +1130,7 @@ class CandidateCIRoot:
     def to_payload(self) -> dict[str, Any]:
         return dict(
             schema_version="grcv4-ci-root-recipe-v1",
-            numerics=NUMERICS,
+            numerics=CIPC_NUMERICS if self.inputs.current.Z_4 is not None else NUMERICS,
             inputs=self.inputs.to_payload(),
             differential_reference=None
             if self.differential_reference is None
@@ -1065,10 +1149,15 @@ class CandidateCIRoot:
             "schema_version",
             "grcv4-ci-root-recipe-v1",
         )
-        _require(data["numerics"] == NUMERICS, "unsupported CI numerical recipe")
+        inputs = GeometryStageInputs.from_payload(data["inputs"])
+        _require(
+            data["numerics"]
+            == (CIPC_NUMERICS if inputs.current.Z_4 is not None else NUMERICS),
+            "unsupported CI numerical recipe",
+        )
         backend = data["differential_reference"]
         return cls(
-            GeometryStageInputs.from_payload(data["inputs"]),
+            inputs,
             None
             if backend is None
             else CandidateADifferentialReference.from_payload(backend),
@@ -1077,7 +1166,7 @@ class CandidateCIRoot:
 
 @dataclass(frozen=True, slots=True)
 class ProvisionalCandidateCIStep:
-    """Selected CI current, one continuity, A-only writer, full root readmission.
+    """Selected CI/CI+PC current, one continuity, ordered writers and readmission.
 
     Both initial current/reset states and the final state have their own CI
     domain/root admission. The final root is a postcondition, never fed back
@@ -1094,6 +1183,7 @@ class ProvisionalCandidateCIStep:
     writer: CandidateAWriter | None = field(init=False)
     restart: CandidateCIRoot = field(init=False)
     next_inputs: GeometryStageInputs = field(init=False)
+    carrier_writes: int = field(init=False)
 
     def __post_init__(self) -> None:
         from .grc_v4_step import (
@@ -1106,6 +1196,7 @@ class ProvisionalCandidateCIStep:
         before = self.inputs
         _declarations(before)
         ref = before.geometry.reference
+        params = ref.profile.params_resolved.realization
         if (
             ref.profile.identity_payload.candidate == "A"
             and ref.profile.params_resolved.lifecycle.history_policy_id
@@ -1160,6 +1251,19 @@ class ProvisionalCandidateCIStep:
                     final = resource.consume(
                         expected_prestate=before, expected_selection=selection
                     )
+                if isinstance(params, CIPCParams):
+                    from .grc_v4_pc import _ball, scalar_zoh
+
+                    stage = "history_write"
+                    assert before.current.Z_4 is not None
+                    source = tuple(
+                        x
+                        for row in root.selected.structural_source.increment
+                        for x in row
+                    )
+                    z = scalar_zoh(before.current.Z_4, source, before.dt, params.tau_PC)
+                    _ball(z, params.radius, "written carrier")
+                    final = GRCV4AuthoritativeState(final.C, final.W_A, z)
                 stage = "final_reconstruction"
                 following = replace(
                     before,
@@ -1176,9 +1280,12 @@ class ProvisionalCandidateCIStep:
             CandidateCStageError,
             GeometryDomainError,
             NonfiniteGeometryError,
+            OverflowError,
         ) as exc:
             disposition = getattr(exc, "disposition", "domain_failure")
-            if disposition == "nonfinite" or isinstance(exc, NonfiniteGeometryError):
+            if disposition == "nonfinite" or isinstance(
+                exc, (NonfiniteGeometryError, OverflowError)
+            ):
                 raise ResourceBoundaryError(stage, "nonfinite_value", str(exc)) from exc
             if disposition == "singular":
                 raise ResourceBoundaryError(stage, "singular_solver", str(exc)) from exc
@@ -1198,13 +1305,14 @@ class ProvisionalCandidateCIStep:
             ("writer", writer),
             ("restart", restart),
             ("next_inputs", following),
+            ("carrier_writes", int(before.dt > 0 and isinstance(params, CIPCParams))),
         ):
             object.__setattr__(self, name, value)
 
     def to_payload(self) -> dict[str, Any]:
         return dict(
             schema_version="grcv4-ci-step-recipe-v1",
-            numerics=NUMERICS,
+            numerics=CIPC_NUMERICS if self.inputs.current.Z_4 is not None else NUMERICS,
             inputs=self.inputs.to_payload(),
             differential_reference=None
             if self.differential_reference is None
@@ -1219,10 +1327,15 @@ class ProvisionalCandidateCIStep:
             "schema_version",
             "grcv4-ci-step-recipe-v1",
         )
-        _require(data["numerics"] == NUMERICS, "unsupported CI step recipe")
+        inputs = GeometryStageInputs.from_payload(data["inputs"])
+        _require(
+            data["numerics"]
+            == (CIPC_NUMERICS if inputs.current.Z_4 is not None else NUMERICS),
+            "unsupported CI step recipe",
+        )
         backend = data["differential_reference"]
         return cls(
-            GeometryStageInputs.from_payload(data["inputs"]),
+            inputs,
             None
             if backend is None
             else CandidateADifferentialReference.from_payload(backend),

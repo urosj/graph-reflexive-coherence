@@ -1280,18 +1280,18 @@
     },
     {
       "path": "src/pygrc/models/grc_v4_candidate_a.py",
-      "sha256": "d0b665589078eae436c8328474d435bcdd6801085a0754215a32987af6d0534f",
-      "iteration_id": "P9-6.2b"
+      "sha256": "cdff3a0701900f1131868b3586e3fa5f7422bf7379636bb93a35247386f6a391",
+      "iteration_id": "P9-6.3b"
     },
     {
       "path": "src/pygrc/models/grc_v4_candidate_c.py",
-      "sha256": "dcd95464b2e7ab01a7f14b9eacea17d4ceca4c747a93ab028327b57a56ece4ca",
-      "iteration_id": "P9-6.1a"
+      "sha256": "43be859ab21e687a270f85c427e3d63a087fa8d74d8362749ae6278ecff36d17",
+      "iteration_id": "P9-6.3a"
     },
     {
       "path": "src/pygrc/models/grc_v4_ci.py",
-      "sha256": "55e7c7e179896418589db5aefb3cf61c6f200ff10f466bd97231c095dcb74435",
-      "iteration_id": "P9-6.1a"
+      "sha256": "395d757adb1cb150558fd7d70d0dc03501525b872f293c49afb25d4853bf9bf9",
+      "iteration_id": "P9-6.3a"
     },
     {
       "path": "src/pygrc/models/grc_v4_codec.py",
@@ -1310,8 +1310,8 @@
     },
     {
       "path": "src/pygrc/models/grc_v4_pc.py",
-      "sha256": "d1976f99ad14f4639b346b50587fcc68b759d76116f24172246965edbfb928c9",
-      "iteration_id": "P9-6.2a"
+      "sha256": "6c0465b9225b2a824ca8d1429bde6a72b85508c0c161fb66faa28b184ef0f234",
+      "iteration_id": "P9-6.3a"
     },
     {
       "path": "src/pygrc/models/grc_v4_profile.py",
@@ -1369,6 +1369,11 @@
       "iteration_id": "P9-6.1c"
     },
     {
+      "path": "tests/models/test_grc_v4_cipc.py",
+      "sha256": "a8b7922377543cb0eca3cf08cb83e0d0d26c09173b1d34f5b65ddfe70bc86ba9",
+      "iteration_id": "P9-6.3c"
+    },
+    {
       "path": "tests/models/test_grc_v4_codec.py",
       "iteration_id": "P9-2.6",
       "sha256": "c9ffa5a9de7e97c1432ab67d308777c78f9982e3b0e9fbed39eb3389f1e16079"
@@ -1419,5 +1424,5 @@
   ],
   "admitted_specialization_support_sets": [],
   "claim_ceiling": "Work entries grant no conformance; the only accepted support is the separate P9-4.8B exact C_OS singleton. Local targets, other profiles and specialization are not promoted.",
-  "record_digest": "74e978051589b24624b4374d3fcc8b1a87ebecdcc98cb608d3a47c675ffb6352"
+  "record_digest": "066636119388c0761ab00f75f391b7adf96007cdd3f3cbee1cd610b45919203b"
 }
