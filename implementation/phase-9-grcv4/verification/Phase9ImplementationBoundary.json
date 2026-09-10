@@ -11,15 +11,15 @@
     },
     {
       "path": "implementation/Phase-9-GRCV4-Handoff.md",
-      "sha256": "7f69a9c51347364287e499ded6f2deac6b9b21fe18069cbc3250f39fc15db87e"
+      "sha256": "b663da54ec4e54739998bfb1a1a6122724f7261ac7bef082154a7159f2763c47"
     },
     {
       "path": "implementation/Phase-9-GRCV4-ImplementationChecklist.md",
-      "sha256": "eadd15e0febd16da4c817d504db4540eff192b60dd8a359e2a88f8a1a39b8a16"
+      "sha256": "432d908bfc09254586bb6d79e4df5a3c37a129b383b4bea8f073d39d32d9a5e6"
     },
     {
       "path": "implementation/Phase-9-GRCV4-ImplementationPlan.md",
-      "sha256": "6f42288d5dcb0575b24aa79f2c7c67678789d50a7daf0040a1653165fe90bebc"
+      "sha256": "1bdb80fb16b976b1cd5b2df750e31ca2f83416a8d0b5322b9de3fc4a33246411"
     },
     {
       "path": "implementation/Phase-9-GRCV4-PhaseOpening.json",
@@ -99,11 +99,11 @@
     },
     {
       "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/verification.js",
-      "sha256": "0c769ccd39b304066b2fb5f393ac794b5be7ca55a6c68de2dd231c2ccdd9740d"
+      "sha256": "4e466a87f9a97f18c9239435a8657bed06343e2d5122e551e7e06ff9437cb9eb"
     },
     {
       "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/verification.test.mjs",
-      "sha256": "b1d26eb3868ccdcd42f84c68020978626f8264db9d2c60b06f8e7117944ab794"
+      "sha256": "664e5aafed4b7c13f5f13c8945ba437ed1a2571e3eb72fdc4e9ebe21bb59e36a"
     },
     {
       "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/active_phase.py",
@@ -135,7 +135,7 @@
     },
     {
       "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/test_phase9_g1_surfaces.py",
-      "sha256": "8487588a4d0b96540eb7e4794bb4aec8a5ca79ce97568f0fa88b6f6f6cf7a259"
+      "sha256": "ed40878e95f5496d8e72853ba460cf87b22a2ee09c5411105573e94879a6157b"
     },
     {
       "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/scripts/test_phase9_surfaces.py",
@@ -151,7 +151,7 @@
     },
     {
       "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/phase9_verification.py",
-      "sha256": "f241344291d5c2923d8a17322e077fc8a5a487656960246d1d865aad1b7216ac"
+      "sha256": "b3ce8cc18685a3b8fc11512d502dbf888fad54ab9170d5f4b7c4081ad32b67d9"
     },
     {
       "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/receipt_parents.py",
@@ -386,6 +386,14 @@
       "sha256": "807bcf09de3fbcc3c4757d7489b2f402e93a3bb8d1c2c7a1659d09dfdac1dfc1"
     },
     {
+      "path": "implementation/phase-9-grcv4/tranche-6/P9-6.5-RealizationRouting.json",
+      "sha256": "8ef52d4d6c7107b67e88418fdde6deaf07f0d5a5243e0571daab0a748e21f24d"
+    },
+    {
+      "path": "implementation/phase-9-grcv4/tranche-6/P9-6.5-Review.md",
+      "sha256": "2e9c3fe864ba63b20c49f25a4a25712ed75d5256099458a30b5c5ed931530c58"
+    },
+    {
       "path": "implementation/phase-9-grcv4/verification/Phase9PathPresentation.json",
       "sha256": "e998284bc41455cbcdda8a9c884aa68c53b0f4770eab0bdb529007a94b86f09a"
     },
@@ -431,7 +439,7 @@
     },
     {
       "path": "implementation/phase-9-grcv4/verification/phase9_implementation_policy.py",
-      "sha256": "83e998280f53ffd235b0eea166ff88334474f840af08c230cf3c605e96e105c4"
+      "sha256": "a42baea1efcc382fffe5c80037c042b05982f8d0a03d2cd8fa79e67a1a0c2456"
     },
     {
       "path": "implementation/phase-9-grcv4/verification/test_evidence_paths.py",
@@ -510,6 +518,10 @@
       "sha256": "2eb4cfd4ee9ef5677495054178d8cfd8ec9c475c23d776ef15795e6b097c2bdc"
     },
     {
+      "path": "implementation/phase-9-grcv4/verification/verify_p965_routing.py",
+      "sha256": "c30fb269491f1ea0322ca158e3d5d6bfcfa45623b5dbe9803eaa0c372820457b"
+    },
+    {
       "path": "specs/README.md",
       "sha256": "91d56600b0c79cda19448818acf03ccba90356071adc338ea44e81dddb00ea5e"
     },
@@ -542,5 +554,5 @@
       "sha256": "d3fc6e50bce85685694901e3d6f5f90ead87413877414cf8dc6ea1b9225540ce"
     }
   ],
-  "record_digest": "56ae0d9a7268b5e576b3f67e604793a4d1e39e0d7d44d933472591b290927f81"
+  "record_digest": "6cabc1bfb3c07334b894c7f8266c705d5b6b7d4c7c503e66f613135fc6d12148"
 }

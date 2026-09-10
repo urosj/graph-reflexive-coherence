@@ -1009,9 +1009,18 @@ amendment. No historical execution, scientific authority or acceptance changes.
   certificates. Preserve the one-beat containment and Lipschitz-only ceilings.
   Generalized numerical acceptance does not grant lifecycle, topology-event,
   C1-section or G2/G3 claims.
-- [ ] P9-6.5: Reconcile concrete realization results profile-by-profile,
+- [x] P9-6.5: Reconcile concrete realization results profile-by-profile,
   route each ready profile to lifecycle/G2 review, and retain pending or
   deferred siblings. Tranche-wide completion is not an entry condition.
+  Accepted by the user on 2026-09-10; bounded review PASS. Tranche 6 is accepted
+  and closed in its declared scope. The [review](./phase-9-grcv4/tranche-6/P9-6.5-Review.md) and
+  [routing record](./phase-9-grcv4/tranche-6/P9-6.5-RealizationRouting.json)
+  bind all eight accepted numerical candidate results and shared audits,
+  reproducible exact seeds, independent lifecycle/conformance routes and both
+  P9-6.5 forward obligations. The generalized RG2b result remains distinct from
+  its scalar foundation. Lifecycle/G2, scientific debts and the optional
+  32-vertex campaign retain their limits; public support remains exact C_OS.
+  The next handoff task is P9-7.1-A_OS, starting generic lifecycle generalization.
 
 ## Tranche 7. Generic lifecycle generalization and P9-G2
 

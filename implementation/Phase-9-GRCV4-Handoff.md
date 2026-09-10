@@ -1,4 +1,48 @@
-# Phase 9 GRCV4 handoff — P9-6.4a/b/c/d accepted
+# Phase 9 GRCV4 handoff — Tranche 6 closed; Tranche 7 next
+
+Current restart point, 2026-09-10: branch `impl/phase-9-grcv4-tranche-6`,
+accepted numerical predecessor `739c123` (P9-6.4a/b/c/d). The commit containing
+this closure handoff records P9-6.5 acceptance and completes Tranche 6.
+
+**P9-6.5 is accepted by the user; bounded coordination review PASS. Tranche 6
+is accepted and closed in its declared scope.** All eight candidate realizations have accepted numerical
+results and applicable shared audits. Start with the
+[reconciliation review](./phase-9-grcv4/tranche-6/P9-6.5-Review.md) and its
+[single routing record](./phase-9-grcv4/tranche-6/P9-6.5-RealizationRouting.json).
+The record binds exact reproducible provisional seeds, accepted evidence,
+independent lifecycle/G2 routes, separate W/Z history ownership and the two
+forward scientific obligations assigned to P9-6.5. Historical records remain
+unchanged; there is no new numerical implementation or duplicate validator.
+
+```sh
+uv sync --frozen --extra v4 --extra dev
+PYTHONPATH=src:. .venv/bin/python implementation/phase-9-grcv4/verification/verify_p965_routing.py --check
+```
+
+The check reconstructs eight seed identities, challenges routing mistakes and
+reuses the existing numerical source/acceptance chain and side-tool checks.
+Prior native runs retain their original counts; no full suite or optional
+32-vertex RG2b campaign is rerun for this coordination leaf.
+Verification passed: eight reconstructed seeds, 13 rejected routing mutations,
+inherited source/acceptance checks, actual API/browser agreement and all 33
+existing browser-validator tests. The routing record contains the compact result.
+
+**Next task: P9-7.1-A_OS**, beginning Tranche 7 generic lifecycle
+generalization. Bind and implement exact lifecycle children independently; the
+[entry steps below](#next-bounded-implementation-step-tranche-7) identify its
+scope and sources. Migration/event children require explicit
+source/target and map scope; no positive crossing is silently waived. Public
+support remains the accepted exact C_OS singleton. Formation, endpoint,
+quantitative-envelope, runtime comparison and RG2b C1 obligations retain their
+own gates. The historical PC five-debt list has successor dispositions: COMP
+resolved comparative synthesis/profile-kernel quotient and D9 resolved carrier
+event and writer design contracts. Their runtime/numeric evidence remains
+pending; the review maps these distinctions without rewriting old records.
+Neither Tranche 6 closure nor pending siblings determine an
+unrelated profile's G2/G3 outcome. The user authorized this closure commit;
+Tranche 7 implementation and any merge/new-branch work are subsequent steps.
+
+## Historical P9-6.4a/b/c/d acceptance
 
 Current restart point, 2026-09-10: branch `impl/phase-9-grcv4-tranche-6`,
 accepted predecessor `ba45482` (P9-6.3a/b/c).
@@ -767,59 +811,72 @@ identity, request, result, packaging and ownership boundaries.
 provide the bounded prefix harness and independent oracles. An imported
 callback/control remains a control even when its bytes match real execution.
 
-## Next bounded implementation step, when requested
+## Next bounded implementation step: Tranche 7
 
-P9-3.1 implements deterministic graph/differential identities, typed
-Hodge/one-form/physical-flux maps, and candidate-local mobility ownership.
-Carry forward the P9-2.6 storage decision: V4-local immutable stable-ID lookup
-for pure graph maps, not a shallow wrapper around mutable legacy backends,
-integer allocation tables, or mutation journals. Map the exact applicable
-spec, paper and accepted contracts before implementing it.
-In particular, do not identify Hodge pairing, physical-flux conversion and
-candidate mobility merely because their matrices have compatible shapes.
+Start with **P9-7.1-A_OS**: snapshot/save/load/replay, reset, rebase and independent
+duplication for an exact Candidate A OS profile. Its registered scope is in the
+[P9-1.4 child register](./phase-9-grcv4/tranche-1/P9-1.4-SupportAndDependencies.json);
+[Tranche 5](./phase-9-grcv4/tranche-5/P9-5.4-Review.md) supplies accepted initializer,
+retained-W and provisional-dynamics evidence. [P9-6.5](./phase-9-grcv4/tranche-6/P9-6.5-Review.md)
+provides the current routes for the other eight realizations.
 
-Keep the later obligations with their owners: stage/cache admission P9-3.2;
-one-resource-write/charge boundary P9-3.3; conditioning, signed covariance and
-invariant-projector pressure P9-3.4; rejection-state preservation P9-3.5.
-Actual facade/full-step admission, zero/subnormal/extreme-duration checks and
-rollback belong to the Tranche 4 consumers. Parent-reference scope/order remains
-P9-7.6; specialization and exact legacy delegation remain Tranches 8–9.
-The first intended numerical slice is C_OS, not all ten profiles at once.
+Before execution, bind the exact A_OS profile/reference/graph/context, initializer,
+policies, deliberately distinct live/reset fixtures and runtime ownership. Update
+the current work manifest and permission surfaces for that bounded request.
+The existing boundary stops at Tranche 6; closure is not a blanket lifecycle grant.
+Use the [lifecycle specification](../specs/grc-v4-spec.md#lifecycle-migration-and-topology-events),
+[common interface §7.5](../specs/grc-common-interface-v4-ext.md) and the accepted
+receipt-parent authority already used by C_OS.
+
+Reuse `src/pygrc/models/grc_v4_lifecycle.py`, `grc_v4_codec.py`, existing Candidate A
+owners and `tests/models/grcv4_conformance_harness.py`. Add candidate/profile
+adapters where needed while retaining one canonical serializer, transaction and
+receipt-validation path. Pressure independent reset admission, post-ordinary-step
+save/load/reset/rebase, exact replay, invalid identity/lineage, deep duplicate
+independence and complete authority/receipt rollback. A's W is retained authority;
+A_OS has no Z carrier, so its carrier channel is `not_applicable`.
+
+Then bind the relevant P9-7.2a migration pairs and P9-7.2b mapped events, with
+P9-7.3–P9-7.6 history, target readmission, atomicity and receipt obligations.
+Keep live/reset maps and W/Z channels separate. Positive crossing evidence needs
+both exact endpoints; unavailable-source rejection is not migration coverage.
+Reuse C_OS evidence only in its accepted scope. Review each full applicable
+product at P9-7.7 / P9-G2[p], with P9-G3[S] separate. Other families need not wait
+for unrelated siblings. RG2b's 32-vertex campaign remains optional, only on an
+explicit request; follow the existing proportionate-verification policy.
 
 ## Moving to another machine
 
-Publish the handoff-bearing `main`, including the Tranche 2 merge, through the
-usual Git remote before switching machines. Unpushed local commits are not
-available to another clone. This note does not assert that a push has occurred.
-Keep full Git history: acceptance checks inspect historical committed subjects.
+Transfer the closure-bearing `impl/phase-9-grcv4-tranche-6` branch through the
+usual Git remote before switching machines, or use a later `main` that contains
+this closure commit. No push or merge is implied by this handoff. Keep full Git
+history: acceptance checks inspect historical committed subjects.
 
-After obtaining the updated `main`, run from the repository root:
+After obtaining the updated branch, run from the repository root:
 
 ```bash
-git switch main
+git switch impl/phase-9-grcv4-tranche-6
 git status --short
-git merge-base --is-ancestor 5307343e34d33ab4a95a5712fbafe0ebd1df1a62 HEAD
-git show --no-patch --format=full 5307343
-git log --first-parent --merges -1 --format='%H %P %s'
+git merge-base --is-ancestor 739c123 HEAD
+git log -1 --format='%H %s'
 ```
 
-Use the checkout's `.venv`; do not copy another machine's virtual environment
-or point tools at a foreign checkout. The following are Linux/macOS shell
-commands, not a claim that the whole test suite has been validated on every OS:
+Confirm that the checkout includes P9-6.5's `/acceptance` object with
+`tranche_6_status: accepted_closed`, not only the numerical predecessor above.
+If working from merged `main`, use that branch instead. Create the Tranche 7
+branch from the accepted closure when beginning its implementation.
+
+Rebuild the checkout-local environment from the committed lock; do not copy a
+virtual environment between machines:
 
 ```bash
+uv sync --frozen --extra v4 --extra dev
 GRCV4_TOOL=implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool
-python3 "$GRCV4_TOOL/scripts/bootstrap.py" --python-only
-.venv/bin/python -m pip install -e '.[v4,dev]' build setuptools wheel
 ```
 
-Host Python is used only for bootstrap, which creates/re-enters `.venv`.
-Python 3.11+ is declared; the accepted P9-2.6 run used CPython 3.12.3 on Linux
-x86_64. Bootstrap's side-tool Python lock currently has no package requirements:
-bootstrap alone does **not** install the V4 extra or repository package.
-The install command above provisions a working environment, not an exact replay
-of all recorded package versions. Consult the retained environments below for
-exact comparisons; record any changed resolution/platform as a new run.
+The accepted Tranche 6 runs used Python 3.12.3. Their records retain environment
+and source identities; a different platform or resolution is a new execution,
+not an exact replay of those observations.
 
 For Node/browser checks, run the full bootstrap once:
 

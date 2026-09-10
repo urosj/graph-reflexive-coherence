@@ -201,6 +201,9 @@ HANDOFF_PATHS = {
     HERE + "handoff/P9-G1-outputs.zip",
 }
 PATHS = {
+    HERE + "verify_p965_routing.py",
+    PHASE + "tranche-6/P9-6.5-Review.md",
+    PHASE + "tranche-6/P9-6.5-RealizationRouting.json",
     HERE + "verify_p964_rg2b.py",
     HERE + "verify_p964c_rg2b_graph.py",
     PHASE + "tranche-6/P9-6.4c-Review.md",
@@ -1053,6 +1056,13 @@ def leaf_permissions(root):
     require(safe_path(root, rg_predecessor).read_bytes() == git(root, "show", "ba45482:" + rg_predecessor),
             "RG2b requires preserved composition acceptance")
     ready = sorted(set(ready) | {"P9-6.4a", "P9-6.4b", "P9-6.4c", "P9-6.4d"})
+    # User-requested coordination only, after acceptance of the full RG2b batch.
+    # No additional runtime owners, paths, lifecycle or support are opened.
+    git(root, "merge-base", "--is-ancestor", "739c123", "HEAD")
+    rg_record = PHASE + "tranche-6/P9-6.4d-AuditFollowup.json"
+    require(safe_path(root, rg_record).read_bytes() == git(root, "show", "739c123:" + rg_record),
+            "realization routing requires preserved RG2b acceptance")
+    ready = sorted(set(ready) | {"P9-6.5"})
     owners = {}
     for module in ownership["modules"]:
         leaves = {
@@ -1301,7 +1311,7 @@ def work_entries(root, approval):
     )
     # The accepted baseline cannot contain later closure IDs. Register exactly
     # the user-approved successor, not a broad regex-based permission.
-    leaves.update({"P9-4.9.1", "P9-4.9.1a", "P9-4.9.2", "P9-4.9.3", "P9-6.1a", "P9-6.1b", "P9-6.1c", "P9-6.2a", "P9-6.2b", "P9-6.2c", "P9-6.3a", "P9-6.3b", "P9-6.3c", "P9-6.4a", "P9-6.4b", "P9-6.4c", "P9-6.4d"})
+    leaves.update({"P9-4.9.1", "P9-4.9.1a", "P9-4.9.2", "P9-4.9.3", "P9-6.1a", "P9-6.1b", "P9-6.1c", "P9-6.2a", "P9-6.2b", "P9-6.2c", "P9-6.3a", "P9-6.3b", "P9-6.3c", "P9-6.4a", "P9-6.4b", "P9-6.4c", "P9-6.4d", "P9-6.5"})
     rows = value["entries"]
     require(len({r["path"] for r in rows}) == len(rows), "duplicate work target")
     result = {}

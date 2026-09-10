@@ -1119,6 +1119,15 @@ historical evidence or the separate C1-regularity debt.
 
 ### Tranche 7. Generic lifecycle generalization and conformance
 
+The [P9-6.5 routing review](./phase-9-grcv4/tranche-6/P9-6.5-Review.md) and
+[current record](./phase-9-grcv4/tranche-6/P9-6.5-RealizationRouting.json) reconcile
+the eight accepted Tranche 6 numerical results. P9-6.5 was accepted by the user
+on 2026-09-10, closing Tranche 6; P9-7.1-A_OS is the next handoff task.
+The records supply concrete seed
+identities and pending family routes, preserving the historical P9-1.4 register.
+Exact lifecycle/profile-pair/event scope must be bound before child execution;
+the routes themselves add no runtime permission or generic support.
+
 Generalize the early C_OS lifecycle through profile-indexed iterations.
 Complete save/load/replay, reset after ordinary/migration/event operations,
 rebase, independent duplication, profile migration, and caller-mapped generic
