@@ -57,6 +57,10 @@ APPROVAL_DIGEST = "cd2c52f30477e1042bb903bd0553da237ddccc9cad373afecc1a84e4e0b37
 POLICY = HERE + "Phase9ImplementationBoundary.json"
 RECORD = PHASE + "tranche-1/P9-1.9-ExecutionRecord.json"
 WORK = PHASE + "runtime/RuntimeWorkManifest.json"
+PC_BATCH_PATHS = {
+    "src/pygrc/models/grc_v4_pc.py",
+    "tests/models/test_grc_v4_pc.py",
+}
 CI_BATCH_BASE = "c55960b"
 CI_BATCH_PATHS = {
     "src/pygrc/models/grc_v4_ci.py",
@@ -195,6 +199,10 @@ HANDOFF_PATHS = {
     HERE + "handoff/P9-G1-outputs.zip",
 }
 PATHS = {
+    HERE + "verify_p962_pc.py",
+    PHASE + "tranche-6/P9-6.2ab-Review.md",
+    PHASE + "tranche-6/P9-6.2ab-ExecutionRecord.json",
+    PHASE + "tranche-6/P9-6.2abc-AuditFollowup.json",
     HERE + "verify_p961_ci.py",
     PHASE + "tranche-6/P9-6.1ab-Review.md",
     PHASE + "tranche-6/P9-6.1ab-ExecutionRecord.json",
@@ -1011,6 +1019,14 @@ def leaf_permissions(root):
             and ci["acceptance"]["status"]=="accepted_by_user",
             "CI reconciliation requires both accepted children")
     ready = sorted(set(ready) | {"P9-6.1c"})
+    # Explicit PC batch after accepted CI reconciliation; c is now user-authorized.
+    git(root, "merge-base", "--is-ancestor", "d1ab4bb", "HEAD")
+    pc_predecessor = PHASE + "tranche-6/P9-6.1c-ExecutionRecord.json"
+    require(safe_path(root, pc_predecessor).read_bytes() == git(root, "show", "d1ab4bb:" + pc_predecessor),
+            "PC batch requires preserved CI reconciliation acceptance")
+    # User explicitly combined the a/b audit correction with c reconciliation.
+    # This supersedes the former review-before-c execution order, not acceptance.
+    ready = sorted(set(ready) | {"P9-6.2a", "P9-6.2b", "P9-6.2c"})
     owners = {}
     for module in ownership["modules"]:
         leaves = {
@@ -1091,15 +1107,18 @@ def leaf_permissions(root):
     for name in CI_BATCH_PATHS:
         owners[name] = {"P9-6.1a", "P9-6.1b"}
     owners["tests/models/test_grc_v4_ci.py"].add("P9-6.1c")
+    owners["src/pygrc/models/grc_v4_candidate_a.py"] |= {"P9-6.2b"}
+    for name in PC_BATCH_PATHS:
+        owners[name] = {"P9-6.2a", "P9-6.2b", "P9-6.2c"}
     return ready, owners
 
 
 def runtime_targets(approval):
-    """Add only the two CI files owned by the authorized realization batch."""
+    """Add the CI/PC files owned by the explicitly authorized batches."""
     return [*approval["runtime_targets"], *(
         {"path": name, "requires_gate": "P9-G1", "before_sha256": None,
          "operation": "v4_owned_add_or_update", "module_owner": "grc_v4_realizations"}
-        for name in sorted(CI_BATCH_PATHS)
+        for name in sorted(CI_BATCH_PATHS | PC_BATCH_PATHS)
     )]
 
 
@@ -1246,7 +1265,7 @@ def work_entries(root, approval):
     )
     # The accepted baseline cannot contain later closure IDs. Register exactly
     # the user-approved successor, not a broad regex-based permission.
-    leaves.update({"P9-4.9.1", "P9-4.9.1a", "P9-4.9.2", "P9-4.9.3", "P9-6.1a", "P9-6.1b", "P9-6.1c"})
+    leaves.update({"P9-4.9.1", "P9-4.9.1a", "P9-4.9.2", "P9-4.9.3", "P9-6.1a", "P9-6.1b", "P9-6.1c", "P9-6.2a", "P9-6.2b", "P9-6.2c"})
     rows = value["entries"]
     require(len({r["path"] for r in rows}) == len(rows), "duplicate work target")
     result = {}

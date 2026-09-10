@@ -273,18 +273,20 @@ class CandidateARetainedAuthority:
             raise TypeError("A retained authority requires graph and complete profile")
         if type(self.profile.params_resolved.candidate) is not CandidateAParams:
             raise TypeError("A retained authority requires Candidate A")
-        if self.profile.identity_payload.realization not in {"OS", "CI"}:
-            raise ValueError("A local construction requires A_OS or A_CI without a carrier")
+        realization = self.profile.identity_payload.realization
+        if realization not in {"OS", "CI", "PC"}:
+            raise ValueError("A local construction requires A_OS, A_CI or A_PC")
         if type(self.state) is not GRCV4AuthoritativeState:
             raise TypeError("A retained authority requires typed state")
         state = GRCV4AuthoritativeState(self.state.C, self.state.W_A, self.state.Z_4)
         if (
             len(state.C) != len(self.graph.live_node_ids)
             or state.W_A is None
-            or state.Z_4 is not None
+            or (state.Z_4 is not None) != (realization == "PC")
+            or (state.Z_4 is not None and len(state.Z_4) != len(self.graph.live_edge_ids) ** 2)
         ):
             raise ValueError(
-                "A_OS authority requires graph-sized C, W_A and no carrier"
+                "A authority requires graph-sized C, W_A and realization-owned carrier"
             )
         mobility = CandidateAMobility(
             self.graph, self.profile.params_resolved.candidate, state.W_A
@@ -864,15 +866,15 @@ class CandidateAWriter:
                 "A writer requires the current owner and admitted resource boundary"
             )
         inputs = self.point.inputs
-        if inputs.stage not in {"os_corrector", "ci_trial"} or inputs.dt <= 0:
-            raise ValueError("A writer requires a positive-duration selected OS/CI current")
+        if inputs.stage not in {"os_corrector", "ci_trial", "pc_old_history"} or inputs.dt <= 0:
+            raise ValueError("A writer requires a positive-duration selected OS/CI/PC current")
         if inputs.stage == "ci_trial" and inputs.trial_current != self.point.current:
             raise ValueError("A CI writer requires the selected root current")
         ref = inputs.geometry.reference
         if ref.profile.params_resolved.lifecycle.history_policy_id != HISTORY_POLICY:
             raise ValueError("unimplemented A retained-history writer policy")
         expected_before = replace(
-            inputs, geometry=ref.geometry(), stage="pre_read",
+            inputs, geometry=inputs.geometry if inputs.stage == "pc_old_history" else ref.geometry(), stage="pre_read",
             evaluation_index=0, trial_current=None,
         )
         final = self.resource.consume(
@@ -892,7 +894,7 @@ class CandidateAWriter:
                 inputs.current.W_A, target, inputs.dt, params.tau_A
             )
             authority = CandidateARetainedAuthority(
-                ref.graph, ref.profile, GRCV4AuthoritativeState(final.C, weights, None)
+                ref.graph, ref.profile, GRCV4AuthoritativeState(final.C, weights, final.Z_4)
             )
         except NonfiniteGeometryError as exc:
             raise CandidateAStageError("nonfinite", str(exc)) from exc

@@ -24,6 +24,7 @@ PRESSURE = p.PHASE + "tranche-6/P9-6.1ab-AuditPressure.json"
 REVIEW = p.PHASE + "tranche-6/P9-6.1ab-Review.md"
 BASE = "c55960b"
 CHILD_COMMIT = "6d3c0b2"
+RECONCILIATION_COMMIT = "d1ab4bb"
 RECONCILIATION = p.PHASE + "tranche-6/P9-6.1c-ExecutionRecord.json"
 RECONCILIATION_REVIEW = p.PHASE + "tranche-6/P9-6.1c-Review.md"
 RECONCILIATION_TESTS = ["tests.models.test_grc_v4_ci.CIReconciliationTests"]
@@ -108,15 +109,19 @@ def sources(subject=None):
         p.INV + "drafts/2026-09-GRC-V4.md",
         p.INV + "drafts/GRCV4-proposal.md",
     }
-    for folder in ("src/pygrc/models", "tests/models"):
-        paths.update(
-            path.relative_to(ROOT).as_posix() for path in (ROOT / folder).rglob("*.py")
-        )
-    paths.update(
-        path.relative_to(ROOT).as_posix()
-        for path in (ROOT / "src/pygrc/models/grc_v4_assets").iterdir()
-        if path.is_file()
-    )
+    if subject is None:
+        for folder in ("src/pygrc/models", "tests/models"):
+            paths.update(path.relative_to(ROOT).as_posix()
+                         for path in (ROOT / folder).rglob("*.py"))
+        paths.update(path.relative_to(ROOT).as_posix()
+                     for path in (ROOT / "src/pygrc/models/grc_v4_assets").iterdir()
+                     if path.is_file())
+    else:
+        # Enumerate the historical tree itself. A new successor file must not
+        # become a purported dependency of an earlier scientific execution.
+        paths.update(name for name in p.git(ROOT, "ls-tree", "-r", "--name-only",
+                     subject, "--", "src/pygrc/models", "tests/models").decode().splitlines()
+                     if name.endswith(".py") or name.startswith("src/pygrc/models/grc_v4_assets/"))
     return {name: p.sha(source_bytes(name, subject)) for name in sorted(paths)}
 
 
@@ -303,8 +308,8 @@ def audit_suite():
     )
 
 
-def preserved_children():
-    """Reuse committed a/b evidence and unchanged numerics without rerunning it."""
+def preserved_children(subject=None):
+    """Verify a/b reuse at the stated subject; successor code is separate."""
     p.git(ROOT, "merge-base", "--is-ancestor", CHILD_COMMIT, "HEAD")
     for name in (RECORD, FOLLOWUP, REVIEW, AUDIT, PRESSURE):
         p.require(
@@ -315,13 +320,13 @@ def preserved_children():
     for name, digest in old.items():
         if name not in {SCRIPT, "tests/models/test_grc_v4_ci.py"}:
             p.require(
-                p.sha(source_bytes(name)) == digest,
+                p.sha(source_bytes(name, subject)) == digest,
                 "changed reused scientific source: " + name,
             )
     name = "tests/models/test_grc_v4_ci.py"
     before, after = (
         ast.parse(source_bytes(name, CHILD_COMMIT)),
-        ast.parse(source_bytes(name)),
+        ast.parse(source_bytes(name, subject)),
     )
     # Only the new reconciliation class and its additional interval adapter
     # import are permitted; every existing helper and oracle stays unchanged.
@@ -428,7 +433,7 @@ def capture_audit():
 
 
 def check():
-    preserved_children()
+    preserved_children(RECONCILIATION_COMMIT)
     follow = p.read(ROOT / FOLLOWUP)
     p.require(
         follow["record_digest"] == p.digest_record(follow), "changed audit record"
@@ -487,12 +492,7 @@ def check():
         "CI execution cannot grant support",
     )
     changed = set(
-        p.git(ROOT, "diff", "--name-only", BASE, "--", "src", "tests")
-        .decode()
-        .splitlines()
-    )
-    changed.update(
-        p.git(ROOT, "ls-files", "--others", "--exclude-standard", "--", "src", "tests")
+        p.git(ROOT, "diff", "--name-only", BASE, CHILD_COMMIT, "--", "src", "tests")
         .decode()
         .splitlines()
     )
@@ -538,10 +538,10 @@ def check():
     }
 
 
-def reconciliation_sources():
+def reconciliation_sources(subject=None):
     return {
-        **audit_sources(),
-        RECONCILIATION_REVIEW: p.sha(source_bytes(RECONCILIATION_REVIEW)),
+        **audit_sources(subject),
+        RECONCILIATION_REVIEW: p.sha(source_bytes(RECONCILIATION_REVIEW, subject)),
     }
 
 
@@ -634,7 +634,10 @@ def check_reconciliation():
         value["record_digest"] == p.digest_record(value),
         "changed reconciliation record",
     )
-    current_sources = reconciliation_sources()
+    p.git(ROOT, "merge-base", "--is-ancestor", RECONCILIATION_COMMIT, "HEAD")
+    p.require(source_bytes(RECONCILIATION) == source_bytes(RECONCILIATION, RECONCILIATION_COMMIT),
+              "changed accepted reconciliation evidence")
+    current_sources = reconciliation_sources(RECONCILIATION_COMMIT)
     accepted = value.get("acceptance")
     if accepted is not None:
         p.require(
@@ -653,7 +656,7 @@ def check_reconciliation():
             "acceptance cannot change scientific execution sources",
         )
         for name, entry in maintenance.items():
-            raw = source_bytes(name)
+            raw = source_bytes(name, RECONCILIATION_COMMIT)
             p.require(
                 p.sha(raw) == entry["current_sha256"],
                 "changed acceptance source: " + name,

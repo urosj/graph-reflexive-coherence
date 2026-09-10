@@ -898,10 +898,27 @@ coverage. Record bounded shared-audit results for the available profile set.
   reuses the combined audit and 48-method child run, reviews the corrected
   enclosure derivation and records four new focused pressure methods. No
   runtime correction or expanded CI support is claimed.
-- [ ] P9-6.2a: Implement and verify C_PC old-history reads, one scalar-ZOH
+- [x] P9-6.2a: Implement and verify C_PC old-history reads, one scalar-ZOH
   write, declared tau, and state/reset ownership.
-- [ ] P9-6.2b: Implement and verify A_PC's candidate-specific PC contract.
-- [ ] P9-6.2c: Audit shared PC behavior and independent history/state coverage.
+  Accepted by the user on 2026-09-10 after correction and P9-6.2c review;
+  scientific verdict PASS. Computed zero is canonicalized in the shared writer and C source;
+  exact selector-cutoff failure is attributed to domain admission before current.
+  The [shared review](./phase-9-grcv4/tranche-6/P9-6.2ab-Review.md) preserves
+  the bounded whole-chart and provisional ownership scope.
+- [x] P9-6.2b: Implement and verify A_PC's candidate-specific PC contract.
+  Accepted by the user on 2026-09-10 in the same corrected/reviewed batch;
+  scientific verdict PASS. A's exponent certificate respects repeated loop endpoints;
+  the G_W law and W writer remain unchanged. Old Z is preserved through the
+  refreshed A writer until the single carrier update.
+- [x] P9-6.2c: Audit shared PC behavior and independent history/state coverage.
+  Completed at the user's request together with the a/b external audit, covering
+  A_PC and C_PC; accepted by the user on 2026-09-10 with scientific verdict PASS. The
+  [combined followup](./phase-9-grcv4/tranche-6/P9-6.2abc-AuditFollowup.json)
+  records 48 fresh PC methods (32 original, eight audit regressions, eight
+  additional pressure methods), reuses the unchanged 80 A/OS/CI regressions,
+  and restores the original source hashes without a source archive.
+  No PC lifecycle, formation provenance, matched-forcing contraction certificate,
+  endpoint witness, G2 or G3 is inferred from this reconciliation.
 - [ ] P9-6.3a: Implement and verify C_CI_PC same-source composition and gain two.
 - [ ] P9-6.3b: Implement and verify A_CI_PC same-source composition and gain two.
 - [ ] P9-6.3c: Audit shared CI+PC composition against the exact root/carrier

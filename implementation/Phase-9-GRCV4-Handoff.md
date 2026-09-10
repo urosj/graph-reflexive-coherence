@@ -1,4 +1,59 @@
-# Phase 9 GRCV4 handoff — P9-6.1c reconciliation
+# Phase 9 GRCV4 handoff — P9-6.2a/b/c accepted
+
+Current restart point, 2026-09-10: branch `impl/phase-9-grcv4-tranche-6`,
+accepted predecessor `d1ab4bb` (P9-6.1c).
+
+**P9-6.2a C_PC, P9-6.2b A_PC and P9-6.2c shared reconciliation were accepted
+by the user on 2026-09-10, each with scientific verdict PASS.** The user
+explicitly combined the a/b external audit with c. The external audit held the
+original subject; the corrections and post-fix review are recorded here, with
+no assertion of a second external audit.
+
+Start with the [review/source/pressure map](./phase-9-grcv4/tranche-6/P9-6.2ab-Review.md)
+and [combined audit followup](./phase-9-grcv4/tranche-6/P9-6.2abc-AuditFollowup.json).
+F1 is corrected at the originating arithmetic sites: canonical computed +0 in
+the shared ZOH writer and C's external source gain. Negative-zero inputs stay
+forbidden. F2 corrects A's uniform endpoint-sum bound to account for loops
+(norm 2 rather than sqrt(2)); the conductance law is unchanged. C's exact
+selector-cutoff failure now reports a domain failure before a physical-current
+solve. Additional pressure covers mixed graphs, exact exponent boundaries,
+signed underflow covariance, actual precision refinement, source dependence,
+weight-chart corners, and independent reset resource/weight/carrier admission.
+
+One fresh campaign runs 48 PC methods: the original 32, the auditor's eight
+proposed regressions, and eight new reconciliation methods. The original 80
+A/OS/CI regressions are reused against unchanged consumers/oracles, not rerun or
+recounted. The [original record](./phase-9-grcv4/tranche-6/P9-6.2ab-ExecutionRecord.json)
+remains unchanged. Minimal prior-line spans restore its four changed source
+files to their original hashes; no copied source archive or external file
+reference is needed. The followup distinguishes external isolated pressure,
+local defect reproduction, fresh corrected tests and historical reuse.
+Its acceptance object records the subsequent user disposition while preserving
+execution-time fields and results. Acceptance changed no numerical/test source
+and required no repeat scientific campaign; review/verifier status edits retain
+reconstructible execution-time bytes.
+
+```sh
+PYTHONPATH=src:. .venv/bin/python -m unittest -v tests.models.test_grc_v4_pc
+PYTHONPATH=src:. .venv/bin/python implementation/phase-9-grcv4/verification/verify_p962_pc.py --check
+```
+
+Old Z determines the consumed geometry/current. Continuity executes once,
+A's refreshed W writer preserves old Z, and one carrier writer consumes the
+already held source. Reset and final states admit independently. Carrier
+invariance does not prove base-chart invariance or matched-forcing contraction;
+local formation/release equations do not establish formation provenance or a
+nonzero committed base-state endpoint witness.
+
+PC remains provisional local numerical support. Live lifecycle, reset/migration
+operations, authenticated receipts/rollback, PC G2/G3 and CI+PC composition
+remain separate. Public support remains the exact accepted C_OS singleton.
+The next planned batch is P9-6.3a/b (CI+PC composition), followed by P9-6.3c
+reconciliation; begin when requested. Existing CI
+checks inspect their exact accepted Git subjects and historical inventories;
+accepted CI/C_OS records have not changed.
+
+## Historical P9-6.1c reconciliation closure
 
 Current restart point, 2026-09-10: branch `impl/phase-9-grcv4-tranche-6`,
 after accepted a/b commit `6d3c0b2` (Tranche 5 merge base `c55960b`).
