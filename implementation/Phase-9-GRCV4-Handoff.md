@@ -1,4 +1,64 @@
-# Phase 9 GRCV4 handoff — Tranche 5 completion and regression closure
+# Phase 9 GRCV4 handoff — P9-6.1a/b CI batch
+
+Current restart point, 2026-09-10: branch `impl/phase-9-grcv4-tranche-6`,
+created from the Tranche 5 merge at `c55960b` (`--no-ff`, parent `b981be5`).
+
+**P9-6.1a (C_CI) and P9-6.1b (A_CI) were accepted by the user on
+2026-09-10 after the F1–F3 corrections.** Separate PASS dispositions are
+recorded for both children. Next is P9-6.1c's shared-contract reconciliation
+and focused review; it remains unexecuted and unaccepted. The user authorized that batch order to
+share validators and review preparation while retaining independent candidate
+oracles. P9-6.1c is not yet executed or accepted.
+
+Start with the [shared CI review/source map](./phase-9-grcv4/tranche-6/P9-6.1ab-Review.md)
+and [audit followup](./phase-9-grcv4/tranche-6/P9-6.1ab-AuditFollowup.json).
+The original execution record remains unchanged and reconstructible. The audit
+followup preserves its execution-time review status and adds the subsequent
+user acceptance separately; acceptance changes no scientific source or test result.
+One CI module and one test module share domain/enclosure checks, joint residual,
+outer solve and provisional continuity composition. A's conductance/floor/current
+bounds and C's selector/Hodge/physical-current bounds remain independent.
+The concrete domain is a profile-bound Frobenius ball about reference Hodge;
+C certifies one strict-gap stratum throughout that ball. Arbitrary multi-stratum
+search and disconnected-root declarations are unsupported. Analytic existence
+and regularity are checked separately from numerical iteration. Acceptance now
+uses independent rational enclosures of the same analytic joint equations,
+including candidate/operator and star rounding, with unchanged absolute tolerance.
+The v2 recipe rejects the audit’s large rounded fixed points. Reset, consumed
+root and final-root failures retain distinct stages; A writer policy is checked
+before any zero/positive-duration root. Natural multiple roots and a final
+regular-current/failed-CI-certificate state are retained pressure tests.
+
+Both candidates use only the selected current for one continuity. A uses its
+existing writer once after final-C refresh. Reset and final state have separate
+root readmission; the native post-writer singularity pressure returns no partial
+result. Zero duration preserves temporal authority. All outputs remain
+provisional; no CI lifecycle/G2, formation, spectrum, or stability is inferred.
+Current generic support remains the exact accepted C_OS singleton.
+
+The affected existing candidate/OS regression run passed **112 methods in
+312.156 seconds**, with no failures, errors or skips. The CI manifest records
+the original candidate and shared run. The audit followup records **40 CI
+methods, four native audit methods and four affected OS boundary regressions**,
+plus six current side-tool contract queries; the 112-method run is reused, not
+recounted as fresh execution. No full repository or opt-in installed-package campaign was repeated.
+Use the lean current-source/publication check from the repository root:
+
+```sh
+.venv/bin/python implementation/phase-9-grcv4/verification/verify_p961_ci.py --check
+```
+
+For numerical reconstruction, use the commands in the audit followup, from the
+repository root with `PYTHONPATH=src:.`, source matching its Git/file bindings
+and `.venv` provisioned from `uv.lock`. The two supplied audit inputs are retained
+in the repository. The followup stores compact reverse line spans for the
+uncommitted pre-audit source; `--check` reconstructs and verifies every old hash.
+No external files or source archive are required. Accepted Tranche
+5 records and earlier runs remain unchanged. Their original exact-source
+checkers belong to their recorded Git subjects; the Tranche 5 maintenance
+checker below belongs to `c55960b`, before these CI extensions.
+
+The following Tranche 5 closure notes are historical at that predecessor.
 
 Current restart point, 2026-09-10: branch `impl/phase-9-grcv4-tranche-5`.
 

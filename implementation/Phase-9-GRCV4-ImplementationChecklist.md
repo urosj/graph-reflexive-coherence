@@ -876,12 +876,25 @@ also needs applicable shared-contract evidence before its G2 review, but a
 pending sibling implementation cannot substitute for or impose unrelated
 coverage. Record bounded shared-audit results for the available profile set.
 
-- [ ] P9-6.1a: Implement and verify C_CI's selected bounded root and exact
+- [x] P9-6.1a: Implement and verify C_CI's selected bounded root and exact
   failure/domain rules.
-- [ ] P9-6.1b: Implement and verify A_CI's selected bounded root and exact
+  Accepted by the user on 2026-09-10, with a separate C_CI PASS after F1/F2
+  corrections: analytic residual enclosure and consumed-root failure staging. The
+  [shared review/source map](./phase-9-grcv4/tranche-6/P9-6.1ab-Review.md)
+  declares the concrete whole-ball single-stratum scope and its limitations.
+- [x] P9-6.1b: Implement and verify A_CI's selected bounded root and exact
   failure/domain rules.
+  Implemented in the same batch with independent A oracles and refreshed
+  in-root conductance, one selected-current continuity/write, and separate
+  reset/final-root admission. F1–F3 corrections include analytic residual
+  enclosure, failure staging and zero-duration writer-policy admission. Accepted
+  by the user on 2026-09-10, with a separate A_CI PASS. The
+  [audit followup](./phase-9-grcv4/tranche-6/P9-6.1ab-AuditFollowup.json)
+  keeps separate child results and reconstructs the original execution subject.
 - [ ] P9-6.1c: Audit shared CI realization contracts and reconcile independent
   candidate evidence; record exactly which profiles the audit covers.
+  Not started; accepted a/b results are now available for reconciliation. Its agenda is in the shared
+  review, with new tests limited to uncovered interactions or corrections.
 - [ ] P9-6.2a: Implement and verify C_PC old-history reads, one scalar-ZOH
   write, declared tau, and state/reset ownership.
 - [ ] P9-6.2b: Implement and verify A_PC's candidate-specific PC contract.

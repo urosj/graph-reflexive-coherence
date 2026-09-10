@@ -273,8 +273,8 @@ class CandidateARetainedAuthority:
             raise TypeError("A retained authority requires graph and complete profile")
         if type(self.profile.params_resolved.candidate) is not CandidateAParams:
             raise TypeError("A retained authority requires Candidate A")
-        if self.profile.identity_payload.realization != "OS":
-            raise ValueError("P9-5.1 admits only the A_OS local construction surface")
+        if self.profile.identity_payload.realization not in {"OS", "CI"}:
+            raise ValueError("A local construction requires A_OS or A_CI without a carrier")
         if type(self.state) is not GRCV4AuthoritativeState:
             raise TypeError("A retained authority requires typed state")
         state = GRCV4AuthoritativeState(self.state.C, self.state.W_A, self.state.Z_4)
@@ -518,7 +518,7 @@ class CandidateAReadBack:
 
 @dataclass(frozen=True, slots=True)
 class CandidateACurrent:
-    """Fresh fixed-geometry A_OS current from incoming retained authority.
+    """Fresh fixed-geometry A current from incoming retained authority.
 
     This stage primitive is not an OS pass or lifecycle admission. Only the
     declared zero-derivative site potential is implemented. The contrast stays
@@ -546,6 +546,8 @@ class CandidateACurrent:
     closure_residual_squared: str = field(init=False)
 
     def __post_init__(self) -> None:
+        from .grc_v4_candidate_c import _fixed_current_policy
+
         if type(self.inputs) is not GeometryStageInputs:
             raise TypeError("A current requires exact typed stage inputs")
         if type(self.differential_reference) is not CandidateADifferentialReference:
@@ -564,12 +566,10 @@ class CandidateACurrent:
             or common.domain_id != "fixed_graph_strict_gap_spd_v1"
             or common.gauge_id != "component_zero_mean_potential_v1"
             or common.normalization_id != "unnormalized_vertex_stiffness_v1"
-            or profile.identity_payload.solver_id != "direct_unique_root_v1"
-            or policy.solver_kind != "direct"
-            or policy.residual_norm_id != "edge_l2_v1"
+            or not _fixed_current_policy(profile)
         ):
             raise ValueError("unimplemented A current/profile declaration")
-        if self.inputs.trial_current is not None:
+        if self.inputs.trial_current is not None and self.inputs.stage != "ci_trial":
             raise ValueError("fixed A_OS stage does not consume a trial-current cache")
         backend = self.differential_reference
         if (
@@ -864,12 +864,17 @@ class CandidateAWriter:
                 "A writer requires the current owner and admitted resource boundary"
             )
         inputs = self.point.inputs
-        if inputs.stage != "os_corrector" or inputs.dt <= 0:
-            raise ValueError("A writer requires a positive-duration OS corrector")
+        if inputs.stage not in {"os_corrector", "ci_trial"} or inputs.dt <= 0:
+            raise ValueError("A writer requires a positive-duration selected OS/CI current")
+        if inputs.stage == "ci_trial" and inputs.trial_current != self.point.current:
+            raise ValueError("A CI writer requires the selected root current")
         ref = inputs.geometry.reference
         if ref.profile.params_resolved.lifecycle.history_policy_id != HISTORY_POLICY:
             raise ValueError("unimplemented A retained-history writer policy")
-        expected_before = replace(inputs, geometry=ref.geometry(), stage="pre_read")
+        expected_before = replace(
+            inputs, geometry=ref.geometry(), stage="pre_read",
+            evaluation_index=0, trial_current=None,
+        )
         final = self.resource.consume(
             expected_prestate=expected_before,
             expected_selection=CurrentSelection(

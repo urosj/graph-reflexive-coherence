@@ -57,6 +57,11 @@ APPROVAL_DIGEST = "cd2c52f30477e1042bb903bd0553da237ddccc9cad373afecc1a84e4e0b37
 POLICY = HERE + "Phase9ImplementationBoundary.json"
 RECORD = PHASE + "tranche-1/P9-1.9-ExecutionRecord.json"
 WORK = PHASE + "runtime/RuntimeWorkManifest.json"
+CI_BATCH_BASE = "c55960b"
+CI_BATCH_PATHS = {
+    "src/pygrc/models/grc_v4_ci.py",
+    "tests/models/test_grc_v4_ci.py",
+}
 G2_ACCEPTANCE = PHASE + "tranche-4/P9-4.8B-G2Acceptance.json"
 G2_ACCEPTANCE_DIGEST = "e7165dc2f4cfe159d397c7aa61ccfbc89a30909db888e6638ef1ffe5905ec6dd"
 FOUNDATION = PHASE + "tranche-2/P9-2.1-2.2-AcceptanceRecord.json"
@@ -190,6 +195,12 @@ HANDOFF_PATHS = {
     HERE + "handoff/P9-G1-outputs.zip",
 }
 PATHS = {
+    HERE + "verify_p961_ci.py",
+    PHASE + "tranche-6/P9-6.1ab-Review.md",
+    PHASE + "tranche-6/P9-6.1ab-ExecutionRecord.json",
+    PHASE + "tranche-6/P9-6.1ab-AuditFollowup.json",
+    PHASE + "tranche-6/P9-6.1ab-AuditPressure.json",
+    PHASE + "tranche-6/P9-6.1ab-AuditReproducer.py",
     G2_ACCEPTANCE,
     HERE + "verify_p951_initialization.py",
     HERE + "verify_p952_current_writer.py",
@@ -983,6 +994,10 @@ def leaf_permissions(root):
     accepted_g2(root)
     git(root, "merge-base", "--is-ancestor", "c2cb423", "HEAD")
     ready = sorted(set(ready) | {"P9-5.1"})
+    # Explicit user-authorized a/b batch after accepted Tranche 5. The c child
+    # still requires reviewed inputs; no lifecycle or support gate is opened.
+    git(root, "merge-base", "--is-ancestor", CI_BATCH_BASE, "HEAD")
+    ready = sorted(set(ready) | {"P9-6.1a", "P9-6.1b"})
     owners = {}
     for module in ownership["modules"]:
         leaves = {
@@ -1058,7 +1073,20 @@ def leaf_permissions(root):
     # this diagnostic field; it opens no A lifecycle operation or commit.
     name = "src/pygrc/models/grc_v4_lifecycle.py"
     owners[name] = owners[name] | {"P9-5.3"}
+    owners["src/pygrc/models/grc_v4_candidate_c.py"] |= {"P9-6.1a"}
+    owners["src/pygrc/models/grc_v4_candidate_a.py"] |= {"P9-6.1b"}
+    for name in CI_BATCH_PATHS:
+        owners[name] = {"P9-6.1a", "P9-6.1b"}
     return ready, owners
+
+
+def runtime_targets(approval):
+    """Add only the two CI files owned by the authorized realization batch."""
+    return [*approval["runtime_targets"], *(
+        {"path": name, "requires_gate": "P9-G1", "before_sha256": None,
+         "operation": "v4_owned_add_or_update", "module_owner": "grc_v4_realizations"}
+        for name in sorted(CI_BATCH_PATHS)
+    )]
 
 
 def accepted_a_initialization(root):
@@ -1193,7 +1221,7 @@ def work_entries(root, approval):
         and value["record_digest"] == digest_record(value),
         "stale work manifest",
     )
-    targets = {r["path"]: r for r in approval["runtime_targets"]}
+    targets = {r["path"]: r for r in runtime_targets(approval)}
     checklist = git(
         root,
         "show",
@@ -1204,7 +1232,7 @@ def work_entries(root, approval):
     )
     # The accepted baseline cannot contain later closure IDs. Register exactly
     # the user-approved successor, not a broad regex-based permission.
-    leaves.update({"P9-4.9.1", "P9-4.9.1a", "P9-4.9.2", "P9-4.9.3"})
+    leaves.update({"P9-4.9.1", "P9-4.9.1a", "P9-4.9.2", "P9-4.9.3", "P9-6.1a", "P9-6.1b"})
     rows = value["entries"]
     require(len({r["path"] for r in rows}) == len(rows), "duplicate work target")
     result = {}
@@ -1376,7 +1404,7 @@ def current_boundary(root):
     # may be summarized in the leaf record (see P9-1.9-EvidenceHandoff.md).
     # Removing a manifest row or staging deletion cannot rewrite that evidence.
     runtime_names = {
-        r["path"] for r in approval["runtime_targets"] if r["before_sha256"] is None
+        r["path"] for r in runtime_targets(approval) if r["before_sha256"] is None
     }
     for item in filter(None, git(root, "ls-tree", "-r", "-z", "HEAD").split(b"\0")):
         header, raw_name = item.split(b"\t", 1)

@@ -160,6 +160,23 @@ _CExact: TypeAlias = tuple[tuple[Fraction, ...], ...]
 C_STAGE_NUMERICS = "grcv4-c-stage-exact-linear-binary64-v1"
 
 
+def _fixed_current_policy(profile: GRCV4Profile) -> bool:
+    """The CI algorithm eliminates its current block by the same direct solve.
+
+    The outer fixed-point algorithm is declared explicitly; this is not a
+    solver fallback or an admission of an arbitrary CI domain.
+    """
+    identity, policy = profile.identity_payload, profile.params_resolved.solver
+    return policy.residual_norm_id == "edge_l2_v1" and (
+        (identity.solver_id == "direct_unique_root_v1" and policy.solver_kind == "direct")
+        or (
+            identity.realization == "CI"
+            and identity.solver_id == "ci_reduced_fixed_point_v1"
+            and policy.solver_kind == "fixed_point"
+        )
+    )
+
+
 class CandidateCStageError(ValueError):
     """Observed numeric failure; the operation owner supplies stage and receipt.
 
@@ -679,7 +696,7 @@ class _CandidateCAlgebra:
             != "strict_invertible_current_block_v1"
         ):
             raise ValueError("unimplemented C current conditioning policy")
-        if policy.solver_kind != "direct" or policy.residual_norm_id != "edge_l2_v1":
+        if not _fixed_current_policy(self.transport.profile):
             raise ValueError("unimplemented C fixed-geometry solver policy")
         selector = CandidateCSelector(self.resource, self.pairings, params.Lambda_C)
         # tanh of an overflowed finite-input quotient is its correctly rounded
@@ -930,7 +947,7 @@ class CandidateCCurrent:
             or common.domain_id != "fixed_graph_strict_gap_spd_v1"
             or common.gauge_id != "component_zero_mean_potential_v1"
             or common.normalization_id != "unnormalized_vertex_stiffness_v1"
-            or profile.identity_payload.solver_id != "direct_unique_root_v1"
+            or not _fixed_current_policy(profile)
         ):
             raise ValueError("unimplemented C current/profile declaration")
         transport = CandidateCTransport(ref.graph, profile)

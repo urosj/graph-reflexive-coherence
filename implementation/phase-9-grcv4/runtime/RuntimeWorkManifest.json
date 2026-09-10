@@ -1280,13 +1280,18 @@
     },
     {
       "path": "src/pygrc/models/grc_v4_candidate_a.py",
-      "sha256": "f3517d1bb5af440bb212fe4870355c1193ba55169478a8766d32e2f947fb1db1",
-      "iteration_id": "P9-5.2"
+      "sha256": "bb3d36109ccf83861cb6fe597d567b3998742f95af0229fa2ebc8d155a3e3c47",
+      "iteration_id": "P9-6.1b"
     },
     {
       "path": "src/pygrc/models/grc_v4_candidate_c.py",
-      "sha256": "59dde00ff754e9ce8879bdb6b3980fa2db9eefab98b02698cb0600fda356c2c6",
-      "iteration_id": "P9-4.5"
+      "sha256": "dcd95464b2e7ab01a7f14b9eacea17d4ceca4c747a93ab028327b57a56ece4ca",
+      "iteration_id": "P9-6.1a"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_ci.py",
+      "sha256": "55e7c7e179896418589db5aefb3cf61c6f200ff10f466bd97231c095dcb74435",
+      "iteration_id": "P9-6.1a"
     },
     {
       "path": "src/pygrc/models/grc_v4_codec.py",
@@ -1354,6 +1359,11 @@
       "iteration_id": "P9-4.5"
     },
     {
+      "path": "tests/models/test_grc_v4_ci.py",
+      "sha256": "fb378f49cc2dffc1aa27ae4e6b1b9543944a7a0f2ce1561195aabb52a653fda3",
+      "iteration_id": "P9-6.1a"
+    },
+    {
       "path": "tests/models/test_grc_v4_codec.py",
       "iteration_id": "P9-2.6",
       "sha256": "c9ffa5a9de7e97c1432ab67d308777c78f9982e3b0e9fbed39eb3389f1e16079"
@@ -1399,5 +1409,5 @@
   ],
   "admitted_specialization_support_sets": [],
   "claim_ceiling": "Work entries grant no conformance; the only accepted support is the separate P9-4.8B exact C_OS singleton. Local targets, other profiles and specialization are not promoted.",
-  "record_digest": "6b818e569bf7c9303a6be0ff58403dbd4aa111a50f37db2874adc5a860e4a54e"
+  "record_digest": "b5681e597232597e13784217f8f5dc6aa48d1531a601ab6df19c2207eb4b6e12"
 }

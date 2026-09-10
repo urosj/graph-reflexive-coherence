@@ -180,7 +180,7 @@ def verification_status(repo_root: Path) -> dict:
                     "iteration_id": "P9-4.9.2",
                     "G2_accepted": False,
                 },
-                implementation_scope=approval["runtime_targets"],
+                implementation_scope=module.runtime_targets(approval),
                 abundance_interface_authority={
                     "record_digest": module.accepted_abundance_authority(root)["record_digest"],
                     "path": module.ABUNDANCE_AUTHORITY,
@@ -192,10 +192,10 @@ def verification_status(repo_root: Path) -> dict:
                 dependency_ready_leaves=ready,
                 permitted_runtime_paths=sorted(
                     r["path"]
-                    for r in approval["runtime_targets"]
+                    for r in module.runtime_targets(approval)
                     if r["requires_gate"] == "P9-G1" and set(ready) & owners[r["path"]]
                 ),
-                next_gate="Tranche 4 closed: P9-4.8B / P9-7.7-C_OS accepted for one exact C_OS profile. G3, other profiles and specialization remain closed. P9-5.3 is accepted and P9-5.4 claim separation is authorized. A initialization and provisional dynamics do not certify native formation, source-history preservation or live lifecycle. P9-7.1-A_OS, A_OS conformance and G3 remain pending their own acceptance or entry. No numeric abundance definition.",
+                next_gate="Tranche 4 closed: P9-4.8B / P9-7.7-C_OS accepted for one exact C_OS profile. G3, other profiles and specialization remain closed. Tranche 5 is accepted. P9-6.1a C_CI and P9-6.1b A_CI are accepted after audit corrections; P9-6.1c reconciliation remains pending. A initialization and provisional dynamics do not certify native formation, source-history preservation or live lifecycle. P9-7.1-A_OS, A_OS conformance and G3 remain pending their own acceptance or entry. No numeric abundance definition.",
                 claim_ceiling="G1 is bounded implementation permission. Separate user-accepted G2 covers only the listed complete C_OS profile and reviewed domain; no family-wide, other-profile or specialization conformance is inferred.",
             )
         cross = module.read(
