@@ -27,6 +27,14 @@ The implementation strategy assumed by these specs is:
 
 ## GRCV4 phase boundary
 
+The [Candidate A reference-pass supplement](grc-v4-a-initializer-spec.md) and
+[closed schema](grc-v4-a-initializer-schema.json) propagate the accepted P9
+initializer from the proposal and paper (`448e420`, `7d45218`). They are
+specification candidates awaiting review, not a new packaged release or positive
+C→A execution. Their current byte identities are checked separately from the
+unchanged release and source manifest below, which retain their original Git
+subjects. Older specification families are unchanged.
+
 The current release also binds the [accepted abundance availability authority](../implementation/investigations/grc9v4-constitutive-design/decisions/P9AbundanceInterfaceAuthority.json),
 propagated through proposal/paper §14.2.1 and the V4 interface/family specs.
 `grcv4-family-abundance-diagnostic-v1` preserves the required key with explicit
@@ -75,6 +83,13 @@ The full `verify-iteration9` command follows the active Phase-9 successor.
 The older specification auditors retain their exact historical subjects.
 
 ## Documents
+
+- `grc-v4-a-initializer-spec.md`, `grc-v4-a-initializer-schema.json` and
+  `grc-v4-a-initializer-vectors.json`
+  Review-stage V4 supplement for the optional target-reference-pass producer:
+  exact numerical staging, acyclic policy/profile/construction identities,
+  closed reconstruction payloads, migration/restoration and release applicability.
+  Wire examples include canonical preimages and IDs, not execution evidence.
 
 - `grc-common-interface.md`
   Common abstract model interface, shared datatypes, lifecycle, events, diagnostics, and capability model.

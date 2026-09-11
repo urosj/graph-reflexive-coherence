@@ -221,8 +221,13 @@ PATHS = {
     HERE + "verify_p972a_initializer_authority.py",
     PROPOSAL_RELEASE_CHECKER,
     HERE + "test_p972a_proposal.py",
+    HERE + "test_p972a_specification.py",
+    "specs/grc-v4-a-initializer-spec.md",
+    "specs/grc-v4-a-initializer-schema.json",
+    "specs/grc-v4-a-initializer-vectors.json",
     PHASE + "tranche-7/P9-7.2a-ProposalReview.md",
     PHASE + "tranche-7/P9-7.2a-PaperReview.md",
+    PHASE + "tranche-7/P9-7.2a-SpecificationReview.md",
     PHASE + "tranche-7/P9-7.2a-InitializerAuthority.md",
     HERE + "verify_p972a_migrations.py",
     PHASE + "tranche-7/P9-7.2a-Review.md",
@@ -906,8 +911,8 @@ def accepted_abundance_authority(root):
 
 def current_abundance_release(root):
     accepted_abundance_authority(root)
-    # Keep released proposal/paper bytes at their Git subject while the paper
-    # successor is reviewed. Do not regenerate the release from newer prose.
+    # Keep evolved release documents at their Git subject while the exact
+    # initializer spec candidate is reviewed. No release is regenerated.
     # Use the checker's own CLI/import context. API and notebook callers must
     # not depend on the verifier directory being in their sys.path, or mutate
     # process-global import paths while concurrent read-only queries execute.

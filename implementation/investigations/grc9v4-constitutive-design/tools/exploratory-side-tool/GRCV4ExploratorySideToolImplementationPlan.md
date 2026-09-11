@@ -1933,11 +1933,18 @@ tested directly; historical scenario counts are not reclassified as new evidence
 
 During document propagation, normal release checking uses the same
 `verify_p972a_proposal.py` to distinguish the accepted proposal at `448e420`,
-the exact paper review candidate and the released proposal/paper at `f36b3ba`. All other
+paper at `7d45218`, exact six-file specification candidate and released
+proposal/paper/generic/interface/registry documents at `f36b3ba`. All other
 release members and packaged assets remain current-byte exact; the original
 release builder stays unchanged and is reproducible at its historical subject.
-Seven focused methods cover source/release separation, missing Git history,
-paper drift and exact transferred equations, staging and claim ceilings.
+Focused methods cover source/release separation, missing Git history,
+paper/spec drift and exact transferred equations, staging and claim ceilings.
+The additional spec tests cover the closed supplement schema, static/invocation
+IDs, recipes, dimensions, current/reset roles, receipt and snapshot versions,
+wire negatives and explicit nonauthentication of coherent output forgeries.
 The user accepted the paper through the commit-and-continue request on 2026-09-11.
-The existing API/notebook/browser status names V4 specification binding as next,
-with no new executable support.
+The user accepted the specification and authorized release binding and implementation;
+the existing API/notebook/browser status names those as next.
+The base schema, assets, executable release and source authority remain unchanged;
+an accepted successor release/codec binding and real producer/migration tests
+must follow review, without relabeling old evidence or granting new support.

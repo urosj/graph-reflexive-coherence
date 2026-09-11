@@ -1529,8 +1529,13 @@ P9-3.2 implementation is pending review; runtime support remains empty.
       transferred sections, retained historical proposal/paper release subjects,
       and independent paper-review status without new runtime/release support.
 - [x] User accepted the exact paper revision through the commit-and-continue request.
-- [ ] Verify V4-spec propagation,
-      including the closed static-policy and construction-record payloads.
+- [x] Prepare and check V4-spec propagation: separate supplement/schema/wire
+      vectors, closed static/current/reset/pair payloads, v2 receipt linkage,
+      explicit snapshot layout and release applicability. Keep historical
+      released documents separate from the exact six-file candidate; no producer run.
+- [x] User accepted the spec through the commit-and-implement request.
+- [ ] Bind its own successor release and codec applicability before producer
+      execution. Keep current public support unchanged.
 - [ ] Extend the existing migration evidence/check path for the admitted common
       producer and all five A target realizations, with nontrivial active-channel,
       source-independence, numerical-boundary and current/reset admission tests.

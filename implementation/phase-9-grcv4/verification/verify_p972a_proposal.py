@@ -1,4 +1,4 @@
-"""Accepted proposal and paper-review fidelity, separate from the executable release."""
+"""Accepted documents and spec candidate fidelity, separate from the executable release."""
 
 import argparse
 import ast
@@ -11,6 +11,7 @@ from verify_p972a_initializer_authority import historical_blobs
 
 BASE = "f36b3ba7c7087ca457177c6644bb9a3093085744"
 PROPOSAL_COMMIT = "448e420df55ee6b2c86c113ff6b9bf38ba16c498"
+PAPER_COMMIT = "7d45218eb9a16bd1fe29205b39602a39ad62637e"
 PROPOSAL = p.INV + "drafts/GRCV4-proposal.md"
 PAPER = p.INV + "drafts/2026-09-GRC-V4.md"
 SOURCE_MANIFEST = "specs/grc-v4-source-manifest.json"
@@ -18,6 +19,19 @@ PROPOSAL_SHA256 = "09c080fd835d096372cff6204e42ddf0baba2b2da674fee905c7b5df2c83e
 PAPER_SHA256 = "6060e28698c07068f91a5e40d5335d1cf8ae2c4292baf3a7c817a36f1ede57a9"
 PROJECTION_DIGEST = "fa59abda356446daca516b33028a07a48ec63aaacb8f961cd274a425dca48dd1"
 GROUPS = ("artifact_members", "packaged_source_bytes", "creation_tools")
+SPECIFICATION_REVIEW_PATHS = {
+    "specs/grc-v4-spec.md", "specs/grc-common-interface-v4-ext.md", "specs/README.md",
+}
+SPECIFICATION_BINDINGS = {
+    "specs/README.md": "9fb5b8d531051479af0ff1194f210be84a3911a0a11e8353309ff46e575feb32",
+    "specs/grc-common-interface-v4-ext.md": "af100fda919eea460e7c4a8d2412832863a24e5254e99a4506e5cd1aac3f9cdc",
+    "specs/grc-v4-a-initializer-schema.json": "c1db8b898efb902a40521d99196458ba0bfb9811d555d8e3e89e31ce0574b08d",
+    "specs/grc-v4-a-initializer-spec.md": "ff5990571197d7c843a16bd404694e35f8c6fc5da01856e5639d51ad5f2b36e6",
+    "specs/grc-v4-a-initializer-vectors.json": "3408ca55bad43b61763163e6f193608f47cb7597d02da1b91915785c0dbf60a6",
+    "specs/grc-v4-spec.md": "f388758ccc12812d6845833abb9cba7f1dac370bb6e2461a67507f0021cd4877",
+}
+SUPPLEMENT_SCHEMA = "specs/grc-v4-a-initializer-schema.json"
+SUPPLEMENT_VECTORS = "specs/grc-v4-a-initializer-vectors.json"
 TRANSFERRED_SECTIONS = (
     ("### 8.11", "### 8.12"), ("### 12.5", "### 12.6"),
     ("### 12.6", "### 12.7"), ("### 14.4", "### 14.5"),
@@ -45,6 +59,8 @@ def proposal_status():
               "accepted proposal subject changed")
     paper = (p.ROOT / PAPER).read_bytes()
     p.require(p.sha(paper) == PAPER_SHA256, "unreviewed paper candidate drift")
+    p.require(paper == historical_blobs([PAPER], commit=PAPER_COMMIT)[PAPER],
+              "accepted paper subject changed")
     transferred = check_transferred_sections(proposal.decode(), paper.decode())
     sys.path.insert(0, str(p.ROOT / p.SIDE / "tool/src"))
     from grcv4_explorer.a_initializer import initializer_authority
@@ -57,17 +73,33 @@ def proposal_status():
                 source_projection_digest=view["projection_digest"],
                 paper_propagated=True, paper_status="accepted",
                 paper_path=PAPER, paper_sha256=PAPER_SHA256, paper_revision_accepted=True,
-                exact_transferred_sections=transferred, specification_propagated=False,
-                semantic_review_automated=False)
+                paper_acceptance_commit=PAPER_COMMIT,
+                exact_transferred_sections=transferred,
+                semantic_review_automated=False, **specification_status())
+
+
+def specification_status():
+    """Exact candidate only; no semantic review, packaging or producer execution."""
+    expected_paths = SPECIFICATION_REVIEW_PATHS | {
+        "specs/grc-v4-a-initializer-spec.md", SUPPLEMENT_SCHEMA, SUPPLEMENT_VECTORS}
+    p.require(set(SPECIFICATION_BINDINGS) == expected_paths, "incomplete specification bindings")
+    for name, expected in SPECIFICATION_BINDINGS.items():
+        p.require(p.sha((p.ROOT / name).read_bytes()) == expected,
+                  "specification candidate drift: " + name)
+    return dict(specification_propagated=True, specification_status="accepted",
+                specification_revision_accepted=True, payload_binding_prepared=True,
+                executable_successor_released=False)
 
 
 def verify_release():
     """Retain the exact release and its original source bytes; never rebuild it
     from a newer draft or relabel this as a new generator/runtime execution.
-    Only the proposal/paper sources are read from their declared Git subject.
+    Only evolved documents are read from their declared historical Git subject.
     Every other released member and packaged asset must still match live bytes.
     """
-    frozen = historical_blobs([RELEASE, PROPOSAL, PAPER], commit=BASE)
+    specification_status()
+    released_documents = {PROPOSAL, PAPER} | SPECIFICATION_REVIEW_PATHS
+    frozen = historical_blobs([RELEASE, *released_documents], commit=BASE)
     raw = (p.ROOT / RELEASE).read_bytes()
     p.require(raw == frozen[RELEASE], "accepted executable release changed")
     release = json.loads(raw)
@@ -84,7 +116,7 @@ def verify_release():
               "released identity is not exact")
 
     def subject_bytes(name):
-        return frozen[name] if name in {PROPOSAL, PAPER} else p.safe_path(p.ROOT, name).read_bytes()
+        return frozen[name] if name in released_documents else p.safe_path(p.ROOT, name).read_bytes()
 
     for row in rows:
         p.require(p.sha(subject_bytes(row["path"])) == row["sha256"],
@@ -120,6 +152,7 @@ def verify_release():
     return dict(release_id=release["release_id"], release_status="unchanged_accepted_release",
                 released_proposal_commit=BASE, released_proposal_sha256=p.sha(frozen[PROPOSAL]),
                 released_paper_commit=BASE, released_paper_sha256=p.sha(frozen[PAPER]),
+                released_specification_commit=BASE,
                 released_members=len(rows), release_regenerated=False,
                 generator_rerun=False, runtime_support_changed=False)
 

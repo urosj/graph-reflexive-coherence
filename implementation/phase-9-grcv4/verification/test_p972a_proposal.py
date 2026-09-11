@@ -30,7 +30,10 @@ class ProposalReviewTests(unittest.TestCase):
         self.assertTrue(stage["paper_revision_accepted"])
         self.assertEqual(stage["exact_transferred_sections"], 6)
         self.assertNotEqual(stage["paper_sha256"], release["released_paper_sha256"])
-        self.assertFalse(stage["specification_propagated"])
+        self.assertTrue(stage["specification_propagated"])
+        self.assertEqual(stage["specification_status"], "accepted")
+        self.assertTrue(stage["specification_revision_accepted"])
+        self.assertFalse(stage["executable_successor_released"])
         self.assertFalse(release["release_regenerated"])
         self.assertFalse(release["runtime_support_changed"])
         self.assertEqual(release["release_id"], v.p.ABUNDANCE_RELEASE_ID)
@@ -49,7 +52,7 @@ class ProposalReviewTests(unittest.TestCase):
                 v.proposal_status()
 
     def test_specs_source_and_old_generator_are_not_draft_exemptions(self):
-        for name in ("specs/grc-v4-spec.md", v.SOURCE_MANIFEST,
+        for name in ("specs/grc-9-v4-spec.md", "specs/grc-v4-contract-schema.json", v.SOURCE_MANIFEST,
                      v.p.ABUNDANCE_AUTHORITY, v.p.ABUNDANCE_RELEASE_BUILDER):
             with self.subTest(path=name), self.override(name, (v.p.ROOT / name).read_bytes() + b"\n"):
                 with self.assertRaisesRegex(ValueError, "released source/member changed"):
@@ -79,7 +82,7 @@ class ProposalReviewTests(unittest.TestCase):
 
     def test_missing_or_changed_historical_documents_cannot_use_new_bytes(self):
         original = v.historical_blobs
-        for target in (v.PROPOSAL, v.PAPER):
+        for target in (v.PROPOSAL, v.PAPER, *sorted(v.SPECIFICATION_REVIEW_PATHS)):
             def altered(names, commit):
                 result = original(names, commit)
                 if target in result:
@@ -104,6 +107,21 @@ class ProposalReviewTests(unittest.TestCase):
             return result
         with patch.object(v, "historical_blobs", side_effect=changed):
             with self.assertRaisesRegex(ValueError, "accepted proposal subject changed"):
+                v.proposal_status()
+
+    def test_spec_candidates_have_no_free_current_tree_exemption(self):
+        for name in v.SPECIFICATION_BINDINGS:
+            with self.subTest(name=name), self.override(name, (v.p.ROOT / name).read_bytes() + b"\n"):
+                with self.assertRaisesRegex(ValueError, "specification candidate drift"):
+                    v.verify_release()
+        original = v.historical_blobs
+        def changed(names, commit):
+            result = original(names, commit)
+            if commit == v.PAPER_COMMIT:
+                result[v.PAPER] += b"\n"
+            return result
+        with patch.object(v, "historical_blobs", side_effect=changed):
+            with self.assertRaisesRegex(ValueError, "accepted paper subject changed"):
                 v.proposal_status()
 
     def test_copied_equation_staging_and_claim_ceiling_are_not_hash_only(self):

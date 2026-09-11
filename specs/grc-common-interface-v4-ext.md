@@ -276,6 +276,17 @@ type.
 
 ## V4 input-bearing operations
 
+The [Candidate A initializer supplement](grc-v4-a-initializer-spec.md) is a
+review-stage addition for the selected reference-pass policy. It fixes the
+closed static policy, independent current/reset construction payloads and pair
+identity, v2 migration-receipt link and explicitly versioned snapshot layout.
+The caller selects fixed target inputs, not a supplied reference flux or W.
+Import recomputes construction and final admission from archived inputs; ordinary
+evolved W is not required to equal an initializer rerun. No existing request,
+profile, receipt or snapshot version is silently reinterpreted. The current
+packaged release and its executable support are unchanged pending a separately
+accepted successor and implementation.
+
 The additive public request surface is:
 
 ```python

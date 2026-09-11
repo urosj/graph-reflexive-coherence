@@ -27,7 +27,7 @@ binding, implementation and positive current/reset evidence. Neither source
 admission nor the old refusals close the seventh class or aggregate 7.2a.
 Generic topology events remain P9-7.2b.
 
-## Active next step: bind the accepted initializer in V4 specifications
+## Active next step: implement the accepted initializer and C→A migration
 
 The [initializer proposal](./investigations/grc9v4-constitutive-design/decisions/P9CandidateAInitializerReferencePassProposal.md)
 defines one target-only pass: fresh differentials → auxiliary `G_W(C, 0)` →
@@ -54,8 +54,14 @@ the definition in §12.6 and its lifecycle, optional-claim and appendix crosswal
 on 2026-09-11**, committed at `448e420`. The subsequent
 [paper revision](./phase-9-grcv4/tranche-7/P9-7.2a-PaperReview.md) now contains
 the initializer and is user-accepted through the next commit-and-continue request
-on 2026-09-11. Proceed to V4 specification → runtime and focused tests. The accepted proposal, specs,
-released assets and runtime remain unchanged by paper propagation. No new runtime permission or
+on 2026-09-11, at `7d45218`. The
+[specification supplement](../specs/grc-v4-a-initializer-spec.md) and its
+[review record](./phase-9-grcv4/tranche-7/P9-7.2a-SpecificationReview.md) now
+define closed policy/construction/pair payloads, receipt linkage, restoration
+and release applicability. The user accepted the exact specification through
+the commit-and-implement request, authorizing a separately identified successor
+release and runtime implementation. The accepted proposal/paper,
+base schema, released assets and runtime remain unchanged. No new runtime permission or
 G2/G3 is granted. The current scoped checker
 preserves the accepted 25/17-test records and reconstructs their exact historical
 sources from Git plus the existing correction spans, without a zip or numerical
@@ -63,9 +69,10 @@ rerun. The new producer needs its own bounded execution evidence.
 
 The released documents, accepted proposal and current paper draft have separate
 verification subjects. The same `verify_p972a_proposal.py` checker now validates
-the proposal at `448e420`, exact transfer of six sections, and the paper candidate
-against the admitted forensic projection. It retains both released proposal and
-paper bytes at `f36b3ba`. Every other release member, source, generator and packaged asset matches its
+the proposal at `448e420`, paper at `7d45218`, six transferred sections and the
+exact six-file specification candidate against the admitted forensic projection.
+It retains the released proposal, paper, generic/interface specs and registry
+at `f36b3ba`. Every other release member, source, generator and packaged asset matches its
 accepted bytes. No release, codec pin or original run is regenerated. A normal
 clone contains the required Git subject; a shallow/export-only checkout must
 obtain it explicitly and fails closed if absent. No archive is introduced.
@@ -79,7 +86,7 @@ PYTHONPATH=src:. .venv/bin/python implementation/phase-9-grcv4/verification/veri
 ```
 
 `--check` dispatches to `verify_p972a_initializer_authority.py --check`:
-current source admission, accepted proposal, exact paper review candidate and preserved original
+current source admission, accepted proposal/paper, exact spec candidate and preserved original
 evidence, without numerical execution. `verify_p972a_proposal.py --check` is the
 same scoped route. Normal verification/API status uses its `--check-release`
 route to retain the executable release's original document subjects. The unchanged

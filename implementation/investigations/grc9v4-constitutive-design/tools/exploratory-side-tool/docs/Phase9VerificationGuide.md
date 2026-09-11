@@ -189,11 +189,14 @@ and a fresh output; positive C→A needs a later, separately bound execution.
 The initializer-integrated **GRCV4-proposal revision is user-accepted** at
 `448e420` through the 2026-09-11 commit-and-continue request. Its content is now
 in the paper, also user-accepted through the subsequent commit-and-continue
-request on 2026-09-11. V4 specification binding is next. The current scoped check binds the
-accepted proposal, its typed source projection, the exact paper candidate and
-six transferred sections. `verify_p972a_proposal.py --check` is the same route; its
+request on 2026-09-11, at `7d45218`. The V4 initializer supplement, closed schema
+and wire vectors are now user-accepted through the commit-and-implement request.
+Their successor release and runtime implementation are authorized next. The current scoped check binds the accepted
+proposal/paper, typed source projection, six transferred sections and exact
+six-file specification candidate. `verify_p972a_proposal.py --check` is the same route; its
 `--check-release` mode is used by normal verification and API status. It keeps
-the released proposal and paper bytes at `f36b3ba`, checking their original hashes, while
+the released proposal, paper, generic/interface spec and registry bytes at
+`f36b3ba`, checking their original hashes, while
 all other released sources/members, generators, packaged assets and codec pins
 must match current bytes. Draft identity is not executable-release identity.
 Neither the source manifest nor the release is regenerated from newer prose.
@@ -202,11 +205,17 @@ The unchanged `build_abundance_release.py --check` reconstructs its original
 release at `f36b3ba`; it is not a current-draft validator. A regular clone has
 that subject. A shallow clone or source export without the required Git object
 fails closed until it is obtained; it cannot substitute the live draft or a rerun.
-No new archive is needed. Seven methods in `test_p972a_proposal.py` cover allowed
+No new archive is needed. Focused methods in `test_p972a_proposal.py` cover allowed
 document evolution, coherently rehashed overclaims, drift in transferred equations,
 staging and claim ceilings, unintended document/spec/source edits, release and
 package/codec tampering, and unavailable/substituted historical document bytes.
 These checks do not automate scientific prose review or grant C→A conformance.
+`test_p972a_specification.py` adds closed-shape, canonical-byte, static/profile/
+invocation identity, graph/dimension, recipe, role and old-receipt/layout pressure.
+Its explicitly synthetic wire vectors are not producer/target admission or
+migration evidence; valid shapes and hashes cannot authenticate computed W.
+The original forensic source still reports its design-stage forward obligations;
+the current verification status separately reports specification acceptance separately from pending execution.
 
 The [scenario register](../../../../../phase-9-grcv4/tranche-1/P9-1.7-1.8-Scenarios.json)
 links all six independent-review pressures and the live access scenarios to

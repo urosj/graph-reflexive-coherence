@@ -80,14 +80,15 @@ def preserved_migrations():
         p.require(p.sha(old_sources[name]) == delta["original_sha256"], "original source recovery failed")
     for name, expected in original["source_bindings"].items():
         p.require(p.sha(old_sources[name]) == expected, "original source mismatch: " + name)
-    # Paper propagation grants no runtime, test or specification edit. The
-    # original paper binding was verified above at BASE; current paper fidelity
-    # is checked separately against the accepted proposal and exact review hash.
+    # Original document/spec bindings are verified above at BASE. The exact
+    # accepted documents and bounded current spec candidate are checked through
+    # proposal_status separately; there is no runtime or old-family exemption.
+    from verify_p972a_proposal import SPECIFICATION_REVIEW_PATHS
     for name in names:
-        if name == p.INV + "drafts/2026-09-GRC-V4.md":
+        if name == p.INV + "drafts/2026-09-GRC-V4.md" or name in SPECIFICATION_REVIEW_PATHS:
             continue
         if name in {"pyproject.toml", "uv.lock"} or name.startswith(("src/", "tests/", "specs/", p.INV + "drafts/")):
-            p.require((p.ROOT / name).read_bytes() == sources[name], "paper-review scope violated: " + name)
+            p.require((p.ROOT / name).read_bytes() == sources[name], "spec-review scope violated: " + name)
     sys.path.insert(0, str(p.ROOT / p.SIDE / "tool/src"))
     from grcv4_explorer.abundance import load_abundance_forensic_context
     from grcv4_explorer.forensic import contract_provenance
@@ -121,7 +122,7 @@ def check():
                   "payload_specification_complete", "positive_migration_verified", "aggregate_closed",
                   "G2_accepted", "G3_accepted", "runtime_conformance_inferred")), "initializer design overclaim")
     p.current_boundary(p.ROOT)
-    return dict(status="passed", scope="initializer_paper_review_and_preserved_migration_evidence",
+    return dict(status="passed", scope="initializer_specification_review_and_preserved_migration_evidence",
                 design_accepted=True, producer_choice_resolved=True, source_admitted=True,
                 payload_specification_complete=False, positive_migration_verified=False,
                 aggregate_closed=False, new_G2_support=[], G3_accepted=False,
