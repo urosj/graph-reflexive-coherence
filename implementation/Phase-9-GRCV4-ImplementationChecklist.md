@@ -1154,9 +1154,16 @@ may reach G2 without waiting for all Tranche 6 realizations.
     traces with design-versus-implementation status. See the
     [admission review](./phase-9-grcv4/tranche-7/P9-7.2a-InitializerAuthority.md).
     Preserve the original 25/17-test subjects; no new migration execution.
-  - [ ] Update and review GRCV4-proposal §12.6, then propagate to the paper and
-    V4 specification successor, including the closed policy/numerical/identity
-    payload. No old-family changes or automatic GRC9V3 initializer binding.
+  - [x] Update GRCV4-proposal §12.6 and the related lifecycle, optional-claim and
+    appendix crosswalks from admitted typed authority. Separate the review draft
+    from historical release inputs in current validators; keep paper/specs,
+    runtime assets and original executions unchanged. See the
+    [review candidate](./phase-9-grcv4/tranche-7/P9-7.2a-ProposalReview.md).
+  - [x] User accepted that exact proposal revision through the commit-and-continue
+    request on 2026-09-11, authorizing paper propagation next.
+  - [ ] Propagate the accepted revision to paper and then the V4 specification
+    successor, including the closed policy/numerical/identity payload. No
+    old-family changes or automatic GRC9V3 initializer binding.
   - [ ] Implement one graph-generic target-current producer and C→A map; use
     separate current/reset inputs, directional W/Z policies and existing target
     admission/publication owners. Preserve the old explicit-flux constructor's

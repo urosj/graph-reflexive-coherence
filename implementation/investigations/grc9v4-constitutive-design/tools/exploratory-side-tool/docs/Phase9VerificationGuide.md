@@ -186,6 +186,25 @@ correction spans. It does not run numerical tests or relabel old C→A refusal
 evidence. Historical reproduction uses the checker/source subject at `49b83ba`
 and a fresh output; positive C→A needs a later, separately bound execution.
 
+The subsequent initializer-integrated **GRCV4-proposal revision is user-accepted**
+through the 2026-09-11 commit-and-continue request. Paper propagation is next.
+The current scoped check additionally binds that exact candidate and its typed
+source projection. `verify_p972a_proposal.py --check` is the same route; its
+`--check-release` mode is used by normal verification and API status. It keeps
+the released proposal bytes at `f36b3ba`, checking their original hash, while
+all other released sources/members, generators, packaged assets and codec pins
+must match current bytes. Draft identity is not executable-release identity.
+Neither the source manifest nor the release is regenerated from the new draft.
+
+The unchanged `build_abundance_release.py --check` reconstructs its original
+release at `f36b3ba`; it is not a current-draft validator. A regular clone has
+that subject. A shallow clone or source export without the required Git object
+fails closed until it is obtained; it cannot substitute the live draft or a rerun.
+No new archive is needed. `test_p972a_proposal.py` covers allowed draft evolution,
+coherently rehashed overclaims, unintended paper/spec/source edits, release and
+package/codec tampering, and unavailable/substituted historical proposal bytes.
+These checks do not automate scientific prose review or grant C→A conformance.
+
 The [scenario register](../../../../../phase-9-grcv4/tranche-1/P9-1.7-1.8-Scenarios.json)
 links all six independent-review pressures and the live access scenarios to
 executable checks. The [review](../../../../../phase-9-grcv4/tranche-1/P9-1.7-1.8-VerificationReview.md)

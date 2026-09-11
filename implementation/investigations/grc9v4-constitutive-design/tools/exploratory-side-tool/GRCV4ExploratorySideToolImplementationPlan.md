@@ -1899,7 +1899,8 @@ nodes retain D10/D11/P9 predecessor rows and support semantics unchanged.
 **Load initializer authority** browser controls expose source/edge/classification/
 digest traces and clear stale output on failure. Current discovery fails closed;
 the pinned historical abundance context is an explicit query, not a fallback.
-Next audit propagation to GRCV4-proposal, paper and V4 specifications. The source defines
+The user accepted the GRCV4-proposal revision; paper and V4 specification
+propagation follow in that order. The source defines
 one reference pass, not a new solver or unconditional target admission.
 
 When implemented, extend the existing migration verifier and affected UX for
@@ -1929,3 +1930,11 @@ and the current read-only successor check. It preserves the exact 25/17-test
 migration records, source subjects and 7.1 predecessor without numerical reruns.
 Desktop/mobile controls, notebook reexecution and the real HTTP handler are
 tested directly; historical scenario counts are not reclassified as new evidence.
+
+During proposal review, normal release checking uses `verify_p972a_proposal.py`
+to separate the exact draft from the released proposal at `f36b3ba`. All other
+release members and packaged assets remain current-byte exact; the original
+release builder stays unchanged and is reproducible at its historical subject.
+Five focused mutation checks cover this separation and missing Git history.
+The existing API/notebook/browser status names paper propagation as next, with no new
+support or acceptance. Paper and specification propagation require that review.

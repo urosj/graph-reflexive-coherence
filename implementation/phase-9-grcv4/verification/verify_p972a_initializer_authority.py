@@ -80,10 +80,10 @@ def preserved_migrations():
         p.require(p.sha(old_sources[name]) == delta["original_sha256"], "original source recovery failed")
     for name, expected in original["source_bindings"].items():
         p.require(p.sha(old_sources[name]) == expected, "original source mismatch: " + name)
-    # This source/tool step grants no runtime, test, paper or specification edit.
+    # Proposal review grants no runtime, test, paper or specification edit.
     for name in names:
         if name in {"pyproject.toml", "uv.lock"} or name.startswith(("src/", "tests/", "specs/", p.INV + "drafts/")):
-            p.require((p.ROOT / name).read_bytes() == sources[name], "source-admission-only scope violated: " + name)
+            p.require((p.ROOT / name).read_bytes() == sources[name], "proposal-review scope violated: " + name)
     sys.path.insert(0, str(p.ROOT / p.SIDE / "tool/src"))
     from grcv4_explorer.abundance import load_abundance_forensic_context
     from grcv4_explorer.forensic import contract_provenance
@@ -106,6 +106,8 @@ def check():
     # Do not cache file integrity across checks in a long-running process.
     preserved_migrations.cache_clear()
     preserved = preserved_migrations()
+    from verify_p972a_proposal import proposal_status
+    proposal = proposal_status()
     from grcv4_explorer.a_initializer import initializer_authority
     from grcv4_explorer.canonical import record_digest
     view = initializer_authority(p.ROOT, p.ROOT / p.SIDE)
@@ -115,12 +117,12 @@ def check():
                   "payload_specification_complete", "positive_migration_verified", "aggregate_closed",
                   "G2_accepted", "G3_accepted", "runtime_conformance_inferred")), "initializer design overclaim")
     p.current_boundary(p.ROOT)
-    return dict(status="passed", scope="initializer_source_admission_and_preserved_migration_evidence",
+    return dict(status="passed", scope="initializer_proposal_review_and_preserved_migration_evidence",
                 design_accepted=True, producer_choice_resolved=True, source_admitted=True,
                 payload_specification_complete=False, positive_migration_verified=False,
                 aggregate_closed=False, new_G2_support=[], G3_accepted=False,
                 authority_extension_digest=view["authority_extension_digest"],
-                projection_digest=view["projection_digest"], **preserved)
+                projection_digest=view["projection_digest"], **proposal, **preserved)
 
 
 if __name__ == "__main__":

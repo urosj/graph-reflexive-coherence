@@ -125,6 +125,7 @@ PARENT_RUN_SHA256 = "d499ba3aa205ace577c317f2ced98837ff1ee593ccd20c4b80ec6a0392a
 ABUNDANCE_AUTHORITY = INV + "decisions/P9AbundanceInterfaceAuthority.json"
 ABUNDANCE_AUTHORITY_DIGEST = "d9488700be9624da8500c1e533aa65d33b4f36a3307748ad12fd66449d8fe053"
 ABUNDANCE_RELEASE_BUILDER = HERE + "build_abundance_release.py"
+PROPOSAL_RELEASE_CHECKER = HERE + "verify_p972a_proposal.py"
 ABUNDANCE_RELEASE_ID = "grcv4-spec-release-sha256:e2acd9df0cc02c5fd4bbed4989ff5d7da3a819adeb2950d922b8a6ef4bf35f24"
 FACADE_IMPLEMENTATION_COMMIT = "7905e7e22bb2fb37f09d0de01f3f161b83332618"
 ABUNDANCE_RUNTIME_PATHS = {
@@ -218,6 +219,9 @@ PATHS = {
     SIDE + "tool/src/grcv4_explorer/a_initializer.py",
     SCRIPTS + "test_p972a_initializer.py",
     HERE + "verify_p972a_initializer_authority.py",
+    PROPOSAL_RELEASE_CHECKER,
+    HERE + "test_p972a_proposal.py",
+    PHASE + "tranche-7/P9-7.2a-ProposalReview.md",
     PHASE + "tranche-7/P9-7.2a-InitializerAuthority.md",
     HERE + "verify_p972a_migrations.py",
     PHASE + "tranche-7/P9-7.2a-Review.md",
@@ -901,16 +905,18 @@ def accepted_abundance_authority(root):
 
 def current_abundance_release(root):
     accepted_abundance_authority(root)
-    # Use the builder's own CLI/import context. API and notebook callers must
+    # Keep the released proposal at its Git subject while its successor draft
+    # is reviewed. Do not regenerate the executable release from draft bytes.
+    # Use the checker's own CLI/import context. API and notebook callers must
     # not depend on the verifier directory being in their sys.path, or mutate
     # process-global import paths while concurrent read-only queries execute.
     result = subprocess.run(
-        [sys.executable, str(safe_path(root, ABUNDANCE_RELEASE_BUILDER)), "--check"],
+        [sys.executable, str(safe_path(root, PROPOSAL_RELEASE_CHECKER)), "--check-release"],
         cwd=root, capture_output=True, text=True,
     )
     require(result.returncode == 0,
             "abundance release check failed: " + result.stdout + result.stderr)
-    require(result.stdout.strip() == "P9491A_ABUNDANCE_RELEASE_PASS release_id=" + ABUNDANCE_RELEASE_ID,
+    require(result.stdout.strip() == "P972A_RELEASE_SUBJECT_PASS release_id=" + ABUNDANCE_RELEASE_ID,
             "untrusted abundance successor release")
     return ABUNDANCE_RELEASE_ID
 
