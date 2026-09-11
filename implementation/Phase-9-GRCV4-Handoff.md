@@ -1,4 +1,45 @@
-# Phase 9 GRCV4 handoff — Tranche 6 closed; Tranche 7 next
+# Phase 9 GRCV4 handoff — P9-7.1 generic lifecycle
+
+Current work, 2026-09-11: branch `impl/phase-9-grcv4-tranche-7`, created from
+merged Tranche 6 closure `b45d0af`. The user requested the **complete P9-7.1**
+parent, superseding the earlier A_OS-only scheduling hint. Ten concrete A/C ×
+OS/CI/RG2b/PC/CI+PC lifecycle children use one publication owner. See the
+[review](./phase-9-grcv4/tranche-7/P9-7.1-Review.md) and
+[source/input/output record](./phase-9-grcv4/tranche-7/P9-7.1-Lifecycle.json).
+P9-7.1 is implemented: the original 26 focused lifecycle/legacy tests passed,
+along with the scoped record/source check, 34 browser controls and actual
+API/notebook/browser agreement. The user accepted P9-7.1, including its audit
+corrections, on 2026-09-11 by authorizing this commit. No new numerical solver,
+wider G2 support or 7.2 work is included.
+
+The independent audit held acceptance for RG2b state-versus-step readmission
+and historical zero/frozen-duration clock contradictions. Corrections also
+cover non-OS reconstruction labels and native A post-writer rollback. The
+[audit follow-up](./phase-9-grcv4/tranche-7/P9-7.1-AuditFollowup.json) captures
+nine native audit methods plus six compatibility methods: **15/15 passed**
+without failures/errors/skips. The original run is preserved with exact source recovery, not silently
+replaced. See the review's correction table for all findings and controls.
+
+Current read-only evidence check, from the repository root:
+
+```sh
+PYTHONPATH=src:. .venv/bin/python implementation/phase-9-grcv4/verification/verify_p971_lifecycle.py --check
+```
+
+The checker inspects retained exact evidence and source bindings without
+rerunning numerical campaigns. Its explicit `--run --output <new-relative-path>`
+route produces a new focused execution record and refuses to overwrite an old
+one. Use `--audit-run --output <new-relative-path>` for the correction-only
+roster. No new zip, machine-local input dependency or wider conformance claim.
+P9-7.1 is accepted; next work is separately scoped 7.2 migration/events and
+requires its own implementation request. Execution records and checker flags
+remain capture-time metadata; the later acceptance is recorded in the review
+and this handoff, without rewriting the accepted execution evidence.
+C_OS keeps its accepted exact G2; all other G2 profiles, G3 and specialization
+remain pending. The following Tranche 6 section is historical context; use the
+current checker above on this branch, not its historical source assertions.
+
+## Historical Tranche 6 closure
 
 Current restart point, 2026-09-10: branch `impl/phase-9-grcv4-tranche-6`,
 accepted numerical predecessor `739c123` (P9-6.4a/b/c/d). The commit containing
@@ -813,17 +854,19 @@ callback/control remains a control even when its bytes match real execution.
 
 ## Next bounded implementation step: Tranche 7
 
-Start with **P9-7.1-A_OS**: snapshot/save/load/replay, reset, rebase and independent
-duplication for an exact Candidate A OS profile. Its registered scope is in the
+The active task is the **full P9-7.1 parent**, not just A_OS: snapshot/save/load/
+replay, reset, rebase and independent duplication for ten exact family fixtures.
+The current [record](./phase-9-grcv4/tranche-7/P9-7.1-Lifecycle.json) supersedes
+the A_OS-only scheduling hint. The historical registered scope is in the
 [P9-1.4 child register](./phase-9-grcv4/tranche-1/P9-1.4-SupportAndDependencies.json);
 [Tranche 5](./phase-9-grcv4/tranche-5/P9-5.4-Review.md) supplies accepted initializer,
 retained-W and provisional-dynamics evidence. [P9-6.5](./phase-9-grcv4/tranche-6/P9-6.5-Review.md)
 provides the current routes for the other eight realizations.
 
-Before execution, bind the exact A_OS profile/reference/graph/context, initializer,
-policies, deliberately distinct live/reset fixtures and runtime ownership. Update
-the current work manifest and permission surfaces for that bounded request.
-The existing boundary stops at Tranche 6; closure is not a blanket lifecycle grant.
+The 7.1 record binds exact profile/reference/graph/context, initializer/backend,
+policies, deliberately distinct live/reset fixtures and runtime ownership.
+Current permissions open only this user-requested parent and its ten children;
+Tranche 6 acceptance alone is not the authorization.
 Use the [lifecycle specification](../specs/grc-v4-spec.md#lifecycle-migration-and-topology-events),
 [common interface §7.5](../specs/grc-common-interface-v4-ext.md) and the accepted
 receipt-parent authority already used by C_OS.
@@ -847,24 +890,25 @@ explicit request; follow the existing proportionate-verification policy.
 
 ## Moving to another machine
 
-Transfer the closure-bearing `impl/phase-9-grcv4-tranche-6` branch through the
-usual Git remote before switching machines, or use a later `main` that contains
-this closure commit. No push or merge is implied by this handoff. Keep full Git
+Transfer `impl/phase-9-grcv4-tranche-7` after committing it through the usual
+Git remote before switching machines, or use a later `main` that contains
+that commit. No commit, push or merge is implied by this handoff. Keep full Git
 history: acceptance checks inspect historical committed subjects.
 
 After obtaining the updated branch, run from the repository root:
 
 ```bash
-git switch impl/phase-9-grcv4-tranche-6
+git switch impl/phase-9-grcv4-tranche-7
 git status --short
-git merge-base --is-ancestor 739c123 HEAD
+git merge-base --is-ancestor b45d0af HEAD
 git log -1 --format='%H %s'
 ```
 
 Confirm that the checkout includes P9-6.5's `/acceptance` object with
 `tranche_6_status: accepted_closed`, not only the numerical predecessor above.
-If working from merged `main`, use that branch instead. Create the Tranche 7
-branch from the accepted closure when beginning its implementation.
+If working from a later merged `main`, use that branch instead. The current
+Tranche 7 implementation and record must also be present; Tranche 6 closure
+alone is not P9-7.1 execution or acceptance evidence.
 
 Rebuild the checkout-local environment from the committed lock; do not copy a
 virtual environment between machines:

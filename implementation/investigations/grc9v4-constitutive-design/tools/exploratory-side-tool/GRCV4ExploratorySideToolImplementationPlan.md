@@ -1823,3 +1823,31 @@ assertion and status changes, tested for lossless discovery, no ambient support
 expansion, forged/overbroad acceptance rejection and actual surface equality.
 All remaining captured source is byte-exact; the successor rejects other differences;
 it does not rewrite the original run or repeat numerical tests for status work.
+
+## Phase 9 Tranche 7 — P9-7.1 generic lifecycle
+
+After accepted Tranches 5 and 6, the user authorized the complete 7.1 parent,
+not only A_OS. Register A/C × OS, CI, RG2b, PC, CI+PC concrete children,
+preserving the accepted C_OS route. The shared lifecycle owner reconstructs
+each realization from C/W/Z and an identity-bound explicit A differential
+reference; it does not serialize solver caches or infer formed A history.
+
+Use [the scoped record](../../../../phase-9-grcv4/tranche-7/P9-7.1-Lifecycle.json)
+and [review](../../../../phase-9-grcv4/tranche-7/P9-7.1-Review.md). A read-only
+successor checker binds the current source, exact fixture/output identities,
+and unchanged numerical predecessors without relabeling old runs. The API,
+status notebook and browser expose the same bounded 7.1 permission. Historical
+forensic claims and their support dispositions remain untouched. No new G2/G3,
+migration/event execution or scientific closure follows from this status.
+
+The 7.1 audit follow-up separates RG2b state/core readmission from step-entry
+eligibility, enforces decidable historical clock/identity rules and corrects
+non-OS current stages. Keep the original 26-method subject byte-recoverable;
+bind the separate 15-method native correction capture. The normal scoped
+successor checks both records, missing coverage and premature promotion without
+rerunning numerical campaigns. No claim graph, numerical authority or UI scope
+changes are required for these lifecycle corrections.
+
+The user accepted the 7.1 batch and its corrections on 2026-09-11 through commit
+authorization. The review/handoff records this later disposition; historical
+execution flags and identities remain unchanged. No wider support gate opens.

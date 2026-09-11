@@ -1,4 +1,4 @@
-"""Generic V4 requests and the bounded C_OS public model facade.
+"""Generic V4 requests and the profile-explicit public lifecycle facade.
 
 Step input shape is weaker than the strict operation request. Migration
 records are declarations only: decoding cannot resolve profiles, authenticate
@@ -28,6 +28,7 @@ from .grc_v4_state import (
 
 if TYPE_CHECKING:
     from .grc_v4_geometry import GeometryStageInputs, GRCV4ReferenceGeometry
+    from .grc_v4_candidate_a import CandidateADifferentialReference
 
 _T = TypeVar("_T", bound=_Record)
 
@@ -260,13 +261,15 @@ def decode_mapped_topology_event_request(
 
 
 class GRCV4(GRCModel):
-    """Public C_OS adapter; accepted G2 support is exact-profile, not family-wide.
+    """Public generic lifecycle adapter; accepted G2 support stays exact-profile.
 
     Construction accepts complete, fresh reference-stage inputs. The JSON
     configuration is exactly ``{"initial": inputs.to_payload(), "targets":
-    [reference.to_payload(), ...]}``; targets defaults to an empty array.
-    Snapshots use the existing complete C_OS v3 envelope, including defaults
-    within resolved profile parameters. No facade cache or request queue exists.
+    [reference.to_payload(), ...]}``; targets defaults to an empty array and is
+    currently restricted to C_OS. Candidate A additionally requires the explicit
+    ``differential_reference`` payload bound by its profile. C_OS snapshots keep
+    their v3 envelope; other families use the generic v1 envelope. No facade
+    cache or request queue exists. Resolved parameters contain any defaults.
 
     The inherited legacy ABC annotates mutable dataclasses/its own snapshot
     layout, which cannot store V4 authority. Only those inherited return slots
@@ -281,27 +284,32 @@ class GRCV4(GRCModel):
         initial: GeometryStageInputs,
         *,
         targets: tuple[GRCV4ReferenceGeometry, ...] = (),
+        differential_reference: CandidateADifferentialReference | None = None,
     ) -> None:
         # Lazy import keeps legacy package imports free of V4 numerical extras
         # and avoids a request/lifecycle import cycle.
-        from .grc_v4_lifecycle import CandidateCOSOperation
+        from .grc_v4_lifecycle import GRCV4Operation
 
-        self._operation = CandidateCOSOperation(initial, targets=targets)
+        self._operation = GRCV4Operation(initial, targets=targets,
+                                       differential_reference=differential_reference)
 
     @classmethod
     def from_config(cls, config: Mapping[str, Any]) -> Self:
         from .grc_v4_geometry import GeometryStageInputs, GRCV4ReferenceGeometry
+        from .grc_v4_candidate_a import CandidateADifferentialReference
 
         if not isinstance(config, Mapping):
             raise TypeError("V4 configuration must be a mapping")
-        if set(config) not in ({"initial"}, {"initial", "targets"}):
-            raise V4SchemaError("V4 configuration requires initial and optional targets")
+        if "initial" not in config or set(config) - {"initial", "targets", "differential_reference"}:
+            raise V4SchemaError("V4 configuration requires initial and optional targets/differential_reference")
         targets = config.get("targets", [])
         if type(targets) is not list:
             raise V4SchemaError("configuration targets must be an ordered array")
         return cls(
             GeometryStageInputs.from_payload(config["initial"]),
             targets=tuple(GRCV4ReferenceGeometry.from_payload(v) for v in targets),
+            differential_reference=(None if config.get("differential_reference") is None else
+                CandidateADifferentialReference.from_payload(config["differential_reference"])),
         )
 
     @classmethod
@@ -428,10 +436,15 @@ class GRCV4(GRCModel):
         return self.list_supported_profiles()
 
     def list_capabilities(self) -> set[str]:
-        """Executable C_OS methods only; no G2, other profile or GRC9 claim."""
-        return {
+        """Executable active-profile methods, not a G2/GRC9 advertisement."""
+        identity = self._operation.reference.profile.identity_payload
+        capabilities = {
             "profile_explicit_v4", "single_resource_ledger",
             "authoritative_current", "structural_hodge_geometry",
-            "typed_topology_events", "profile_migration", "quadrature_budget",
-            "v4_candidate_c_derived_sector", "v4_realization_os",
+            "quadrature_budget",
+            "v4_candidate_c_derived_sector" if identity.candidate == "C" else "v4_candidate_a_retained_history",
+            "v4_realization_" + identity.realization.lower().replace("+", "_"),
         }
+        if identity.profile_family_id == "C_OS":
+            capabilities.update({"typed_topology_events", "profile_migration"})
+        return capabilities

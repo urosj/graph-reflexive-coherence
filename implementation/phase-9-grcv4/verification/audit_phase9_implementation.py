@@ -98,8 +98,8 @@ def verify(root, boundary_only=False):
         # The successor review verifies the current fixture run and original
         # parent/facade/abundance Git subjects without numerical reexecution.
         policy.prior.run_logged(
-            [sys.executable, str(root / policy.HERE / "verify_p948b_review.py"), "--check"],
-            root, "P948B_accepted_exact_profile_review", commands,
+            [sys.executable, str(root / policy.HERE / "verify_p971_lifecycle.py"), "--check"],
+            root, "P971_current_lifecycle_and_preserved_predecessors", commands,
         )
         report = policy.read(root / policy.GENERATED / policy.REPORT_FILE)
         policy.require(

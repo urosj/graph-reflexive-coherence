@@ -1122,11 +1122,45 @@ historical evidence or the separate C1-regularity debt.
 The [P9-6.5 routing review](./phase-9-grcv4/tranche-6/P9-6.5-Review.md) and
 [current record](./phase-9-grcv4/tranche-6/P9-6.5-RealizationRouting.json) reconcile
 the eight accepted Tranche 6 numerical results. P9-6.5 was accepted by the user
-on 2026-09-10, closing Tranche 6; P9-7.1-A_OS is the next handoff task.
+on 2026-09-10, closing Tranche 6. The user subsequently authorized the complete
+P9-7.1 parent on branch `impl/phase-9-grcv4-tranche-7`, not only the handoff's
+first suggested A_OS child.
 The records supply concrete seed
 identities and pending family routes, preserving the historical P9-1.4 register.
 Exact lifecycle/profile-pair/event scope must be bound before child execution;
 the routes themselves add no runtime permission or generic support.
+
+P9-7.1 binds ten concrete family children: A/C × OS, CI, RG2b, PC, CI+PC.
+Use one shared lifecycle/commit owner and the already accepted provisional
+numerical owners. Reuse C_OS acceptance as historical exact-scope evidence,
+and check compatibility of its existing v3 snapshot route. The other nine
+children bind their exact graph/profile/reference, explicit A backend where
+applicable, distinct live/reset C/W/Z and deterministic fixture recipe in the
+[7.1 record](./phase-9-grcv4/tranche-7/P9-7.1-Lifecycle.json).
+Save/load/replay, ordinary-step reset, rebase, independent duplication and
+fresh current/reset readmission belong to this batch. No stored CI root,
+RG2b section, PC geometry or derived C sector becomes authoritative history.
+Migration/event reset tests belong to 7.2–7.5; they are not silently counted
+as 7.1 work. Each new child requires its own reviewed evidence; the ten concrete
+children below are now accepted. No all-parameter/graph conformance or G2 promotion.
+
+Implementation status: all ten concrete children are implemented and verified
+in the [7.1 review](./phase-9-grcv4/tranche-7/P9-7.1-Review.md): 26 focused tests,
+retained source-exact evidence, and API/notebook/browser checks passed. The user
+accepted this batch and its audit corrections on 2026-09-11 by authorizing the
+commit; no later lifecycle or support gate was opened.
+
+The independent 7.1 audit requires separating RG2b state readmission on K
+from ordinary entry on K_minus, validating zero-step own-operation identity
+and exact frozen RG2b historical clocks, and correcting non-OS reconstruction
+labels. Include the native A post-writer rollback witness with a populated
+ledger, lawful assignment/zero-step controls, large-clock rounding and rejection
+outside the core domain. Nine focused audit methods plus six compatibility
+methods bind a new [correction record](./phase-9-grcv4/tranche-7/P9-7.1-AuditFollowup.json);
+preserve the original run and recover its source bytes with compact reverse
+edits. All 15 correction/compatibility methods passed with source stability;
+no numerical realization or scope/gate change. User acceptance includes these
+corrections; execution records retain their original pre-acceptance flags.
 
 Generalize the early C_OS lifecycle through profile-indexed iterations.
 Complete save/load/replay, reset after ordinary/migration/event operations,

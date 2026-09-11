@@ -57,6 +57,10 @@ APPROVAL_DIGEST = "cd2c52f30477e1042bb903bd0553da237ddccc9cad373afecc1a84e4e0b37
 POLICY = HERE + "Phase9ImplementationBoundary.json"
 RECORD = PHASE + "tranche-1/P9-1.9-ExecutionRecord.json"
 WORK = PHASE + "runtime/RuntimeWorkManifest.json"
+LIFECYCLE_FAMILIES = tuple(c + "_" + r for r in ("OS", "CI", "RG2b", "PC", "CI_PC") for c in ("A", "C"))
+LIFECYCLE_LEAVES = {"P9-7.1", *("P9-7.1-" + family for family in LIFECYCLE_FAMILIES)}
+LIFECYCLE_PATHS = {"src/pygrc/models/grc_v4.py", "src/pygrc/models/grc_v4_codec.py",
+                   "src/pygrc/models/grc_v4_lifecycle.py", "tests/models/test_grc_v4_generic_lifecycle.py"}
 PC_BATCH_PATHS = {
     "src/pygrc/models/grc_v4_pc.py",
     "tests/models/test_grc_v4_pc.py",
@@ -201,6 +205,12 @@ HANDOFF_PATHS = {
     HERE + "handoff/P9-G1-outputs.zip",
 }
 PATHS = {
+    HERE + "verify_p971_lifecycle.py",
+    PHASE + "tranche-7/P9-7.1-Review.md",
+    PHASE + "tranche-7/P9-7.1-Lifecycle.json",
+    PHASE + "tranche-7/P9-7.1-AuditFollowup.json",
+    PHASE + "tranche-7/P9-7.1-AuditPressure.json",
+    PHASE + "tranche-7/P9-7.1-OriginalSources.json",
     HERE + "verify_p965_routing.py",
     PHASE + "tranche-6/P9-6.5-Review.md",
     PHASE + "tranche-6/P9-6.5-RealizationRouting.json",
@@ -1063,6 +1073,14 @@ def leaf_permissions(root):
     require(safe_path(root, rg_record).read_bytes() == git(root, "show", "739c123:" + rg_record),
             "realization routing requires preserved RG2b acceptance")
     ready = sorted(set(ready) | {"P9-6.5"})
+    # Explicit user request for the complete 7.1 parent, not just A_OS.
+    # Execution permission is not child acceptance or a wider G2/G3 grant.
+    git(root, "merge-base", "--is-ancestor", "b45d0af", "HEAD")
+    lifecycle_predecessor = PHASE + "tranche-6/P9-6.5-RealizationRouting.json"
+    require(safe_path(root, lifecycle_predecessor).read_bytes()
+            == git(root, "show", "b45d0af:" + lifecycle_predecessor),
+            "generic lifecycle requires preserved Tranche 6 acceptance")
+    ready = sorted(set(ready) | LIFECYCLE_LEAVES)
     owners = {}
     for module in ownership["modules"]:
         leaves = {
@@ -1156,6 +1174,8 @@ def leaf_permissions(root):
     for name in RG_BATCH_PATHS:
         owners[name] = {"P9-6.4a", "P9-6.4b", "P9-6.4c"}
     owners["tests/models/test_grc_v4_rg2b_graph.py"].add("P9-6.4d")
+    for name in LIFECYCLE_PATHS:
+        owners[name] = owners.get(name, set()) | LIFECYCLE_LEAVES
     return ready, owners
 
 
@@ -1163,8 +1183,10 @@ def runtime_targets(approval):
     """Add the CI/PC files owned by the explicitly authorized batches."""
     return [*approval["runtime_targets"], *(
         {"path": name, "requires_gate": "P9-G1", "before_sha256": None,
-         "operation": "v4_owned_add_or_update", "module_owner": "grc_v4_realizations"}
-        for name in sorted(CI_BATCH_PATHS | PC_BATCH_PATHS | CIPC_BATCH_PATHS | RG_BATCH_PATHS)
+         "operation": "v4_owned_add_or_update", "module_owner":
+         "grc_v4_lifecycle" if name == "tests/models/test_grc_v4_generic_lifecycle.py" else "grc_v4_realizations"}
+        for name in sorted(CI_BATCH_PATHS | PC_BATCH_PATHS | CIPC_BATCH_PATHS | RG_BATCH_PATHS
+                           | {"tests/models/test_grc_v4_generic_lifecycle.py"})
     )]
 
 
@@ -1312,6 +1334,7 @@ def work_entries(root, approval):
     # The accepted baseline cannot contain later closure IDs. Register exactly
     # the user-approved successor, not a broad regex-based permission.
     leaves.update({"P9-4.9.1", "P9-4.9.1a", "P9-4.9.2", "P9-4.9.3", "P9-6.1a", "P9-6.1b", "P9-6.1c", "P9-6.2a", "P9-6.2b", "P9-6.2c", "P9-6.3a", "P9-6.3b", "P9-6.3c", "P9-6.4a", "P9-6.4b", "P9-6.4c", "P9-6.4d", "P9-6.5"})
+    leaves.update(LIFECYCLE_LEAVES)
     rows = value["entries"]
     require(len({r["path"] for r in rows}) == len(rows), "duplicate work target")
     result = {}

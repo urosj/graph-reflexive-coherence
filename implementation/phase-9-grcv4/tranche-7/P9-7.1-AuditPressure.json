@@ -1,0 +1,662 @@
+{
+  "schema": "external_p971_pressure_v1",
+  "audit_disposition": "HOLD_two_lifecycle_corrections_plus_minor_observation_stage_label",
+  "subject": {
+    "iteration": "P9-7.1",
+    "base_commit": "b45d0af8fb2c2d9c2e64b21c785b71839744076a",
+    "source": "supplied attachments and matching numerical attachments"
+  },
+  "environment": {
+    "python": "3.13.5",
+    "platform": "Linux-6.18.35-x86_64-with-glibc2.41",
+    "numpy": "2.3.5",
+    "node": "v22.16.0"
+  },
+  "execution_ceiling": {
+    "native_repository_26_method_suite": false,
+    "native_full_snapshot_loader": false,
+    "native_public_facade": false,
+    "verification_script_API_notebook_browser": false,
+    "executed_unchanged_lifecycle_bodies": [
+      "_profile_step",
+      "_receipt_context",
+      "_ordinary_receipts",
+      "_restore_commits"
+    ],
+    "numerical_kernel_infrastructure": "Explicit lightweight graph/reference/profile/state/transport infrastructure. Hash-matching C/CI/RG2b/graph-RG2b/common-resource definitions; preceding A source plus two recognition-only edits; older StarAssembly helper. This is not native schema/identity/installed-package conformance.",
+    "receipt_infrastructure": "Independent sorted-key ECMAScript JSON serializer via Node; lightweight DTOs/charge/reference. All 80 receipt,20 commit,20 endpoint lifecycle IDs first matched the submitted record. Not a full schema/runtime execution.",
+    "source_path_inferences": "The full loader and compute_observables call the isolated-tested zero-duration profile dispatcher. Historical mutations are accepted by the actual extracted ledger validator; remaining current-snapshot checks were source-reviewed, not natively run.",
+    "retrieval": "Pinned complete repository/dependency environment unavailable; attempted retrieval failed."
+  },
+  "integrity": {
+    "record_sha256": "9a8e992433a3f36b436ec6ebc48e7a3f526f7e2f9f2d0c0307c5bfc7fc945c2e",
+    "record_digest": "6cd53fc0c7c5ef597921a5b254ab6d1264087f8f3eec20a9d80f0b6ca83df07c",
+    "record_digest_verified": true,
+    "review_sha256": "0f7c60e740d3c51f6c858585a1401f0cb14e58841b3298ab6834facb58b216f8",
+    "source_binding_count": 440,
+    "attachments": [
+      {
+        "source": "src/pygrc/models/grc_v4.py",
+        "uploaded_name": "grc_v4(2).py",
+        "sha256": "a213cef02da144763bbc1220a5d07b7d7e760527b52105b0f723f58bebc3f8a8",
+        "matching": true,
+        "compiled": true
+      },
+      {
+        "source": "src/pygrc/models/grc_v4_lifecycle.py",
+        "uploaded_name": "grc_v4_lifecycle(4).py",
+        "sha256": "2da9e479bc5bf3ecb6108fb1ba6d5fdba72075c89f3d8691892dada98b8ad469",
+        "matching": true,
+        "compiled": true
+      },
+      {
+        "source": "src/pygrc/models/grc_v4_codec.py",
+        "uploaded_name": "grc_v4_codec(5).py",
+        "sha256": "e85d4c2e89e441e22573c334f11bd8670aa62c43f6d69eeffe624294866ca949",
+        "matching": true,
+        "compiled": true
+      },
+      {
+        "source": "tests/models/test_grc_v4_generic_lifecycle.py",
+        "uploaded_name": "test_grc_v4_generic_lifecycle.py",
+        "sha256": "0d2a86c339c468754193c60835039f69025581e3e7cffec510be8655454c1acd",
+        "matching": true,
+        "compiled": true
+      }
+    ],
+    "numerical_harness_inputs": [
+      {
+        "uploaded_name": "grc_v4_candidate_c(4).py",
+        "source": "src/pygrc/models/grc_v4_candidate_c.py",
+        "sha256": "43be859ab21e687a270f85c427e3d63a087fa8d74d8362749ae6278ecff36d17",
+        "expected_sha256": "43be859ab21e687a270f85c427e3d63a087fa8d74d8362749ae6278ecff36d17",
+        "matching": true
+      },
+      {
+        "uploaded_name": "grc_v4_ci(2).py",
+        "source": "src/pygrc/models/grc_v4_ci.py",
+        "sha256": "395d757adb1cb150558fd7d70d0dc03501525b872f293c49afb25d4853bf9bf9",
+        "expected_sha256": "395d757adb1cb150558fd7d70d0dc03501525b872f293c49afb25d4853bf9bf9",
+        "matching": true
+      },
+      {
+        "uploaded_name": "grc_v4_rg2b(1).py",
+        "source": "src/pygrc/models/grc_v4_rg2b.py",
+        "sha256": "8fb62895e6c89e9a1da3dbffde451318a00d3879cb9e76dcb532c6033cc7bfea",
+        "expected_sha256": "8fb62895e6c89e9a1da3dbffde451318a00d3879cb9e76dcb532c6033cc7bfea",
+        "matching": true
+      },
+      {
+        "uploaded_name": "grc_v4_rg2b_graph.py",
+        "source": "src/pygrc/models/grc_v4_rg2b_graph.py",
+        "sha256": "29375671582e66006e216de3a9be6d1685db3709e05865b215b103090a96681b",
+        "expected_sha256": "29375671582e66006e216de3a9be6d1685db3709e05865b215b103090a96681b",
+        "matching": true
+      },
+      {
+        "uploaded_name": "grc_v4_step(5).py",
+        "source": "src/pygrc/models/grc_v4_step.py",
+        "sha256": "741e533c004b3ec8da2fc9e5e3f0c9bc404fb1a4f439d69f6e6d0d07643f59a7",
+        "expected_sha256": "741e533c004b3ec8da2fc9e5e3f0c9bc404fb1a4f439d69f6e6d0d07643f59a7",
+        "matching": true
+      },
+      {
+        "uploaded_name": "grc_v4_candidate_a(4).py",
+        "source": "src/pygrc/models/grc_v4_candidate_a.py",
+        "sha256": "cdff3a0701900f1131868b3586e3fa5f7422bf7379636bb93a35247386f6a391",
+        "expected_sha256": "5040bf690d3da3366be74de6e17b272b52d21adba054426ffda778a744ca862a",
+        "matching": false
+      },
+      {
+        "uploaded_name": "grc_v4_geometry(3).py",
+        "source": "src/pygrc/models/grc_v4_geometry.py",
+        "sha256": "6055247c06e5feaaceac2eafa515dc1895ece45a44b2325cec4bb28dc227bb72",
+        "expected_sha256": "cb2d9b900d0091b59e4fe77ef4acc4037225e79b2ee166c99486c93b307c92a4",
+        "matching": false
+      }
+    ],
+    "roster": {
+      "total": 26,
+      "generic_family_methods": 20,
+      "selected_legacy_methods": 6,
+      "exact_generic_roster_matched": true
+    },
+    "reported_results": {
+      "tests_run": 26,
+      "failures": [],
+      "errors": [],
+      "skips": []
+    },
+    "reported_results_independently_rerun": false,
+    "loaded_source_record": {
+      "before_count": 179,
+      "after_count": 180,
+      "added": [
+        "pygrc.models.grc_v4_assets"
+      ],
+      "removed": [],
+      "changed": [],
+      "all_after_hashes_bound": true,
+      "actual_loaded_source_guard_rerun": false
+    },
+    "new_G2_support": [],
+    "G3_accepted": false
+  },
+  "pressure_summary": {
+    "RG_candidates": 2,
+    "reported_first_resource_endpoints_reproduced_exactly": 2,
+    "RG_admitted_boundary_start_positive_steps": 2,
+    "RG_final_native_section_reads_passed": 2,
+    "RG_zero_duration_step_readmission_rejections": 2,
+    "RG_legitimate_next_beat_rejections": 2,
+    "RG_reset_recovery_controls_passed": 2,
+    "family_receipt_reconstructions": 10,
+    "receipt_ids_matched": 80,
+    "commit_ids_matched": 20,
+    "endpoint_lifecycle_ids_matched": 20,
+    "unmodified_ledgers_admitted": 10,
+    "contradictory_zero_duration_ledgers_accepted": 10,
+    "contradictory_RG_frozen_clock_ledgers_accepted": 2,
+    "negative_ledger_controls_rejected": 30
+  },
+  "findings": [
+    {
+      "id": "F1",
+      "severity": "blocking",
+      "scope": [
+        "A_RG2b",
+        "C_RG2b"
+      ],
+      "title": "State admission conflated with ordinary-step entry admission",
+      "correction": "Separate read-only section/native-current state readmission from K_minus ordinary-step entry. Committed K states must remain restorable/readable; retain fail-closed next-beat entry."
+    },
+    {
+      "id": "F2",
+      "severity": "blocking",
+      "scope": "shared importer; additional RG2b frozen-duration rule",
+      "title": "Historical clock relations omit zero-step identity and frozen-duration consistency",
+      "correction": "Where previous clock is known, unchanged index requires own source==own target science; RG positive advancement uses exact frozen beat with declared binary64 rounding. Do not require cross-operation source==previous target after assignment."
+    },
+    {
+      "id": "F3",
+      "severity": "minor_projection_correction",
+      "scope": "eight non-OS families",
+      "title": "Reconstructed-current key retains misleading reference-geometry stage",
+      "correction": "Use a truthful reconstruction stage for CI/PC/CI+PC/RG2b, including zero-duration authoritative_current metadata. No numerical change required."
+    }
+  ],
+  "rg_boundary": {
+    "scope": "P9-7.1 numerical bridge pressure, NOT a native lifecycle/package replay.\nUses unmodified uploaded RG/graph/CI/C/step numeric bodies through the labelled\nprior scaffold. A uses the preceding uploaded A body with two family/stage\nrecognition edits. The P9-7.1 _profile_step dispatcher body is unmodified.\nNo full profile/schema/receipt admission is claimed by this harness.\n",
+    "rows": [
+      {
+        "candidate": "C",
+        "submitted_profile_id": "grcv4-profile-sha256:413497bec4f219ec402d82d5cd2aced01dca25a58d2ab906c348472b98d596b0",
+        "fixture_first_resource_max_discrepancy": 0.0,
+        "inner": 0.125,
+        "core": 0.25,
+        "dt": 9.5367431640625e-07,
+        "assigned_current": [
+          2.125,
+          1.875,
+          2.125,
+          1.90625
+        ],
+        "original_reset": [
+          2.031494140625,
+          1.9375,
+          2.09375,
+          1.968505859375
+        ],
+        "returned_current": [
+          2.1250000041316572,
+          1.8749999894088063,
+          2.1250000119330505,
+          1.906249994526486
+        ],
+        "returned_W": null,
+        "returned_radius_exact": "281475003581497/2251799813685248",
+        "native_final_section_current": [
+          -0.004332356765775942,
+          0.006773315692668027,
+          -0.0057393958770327195
+        ],
+        "rejections": {
+          "zero_duration_readmission": {
+            "type": "ResourceBoundaryError",
+            "stage": "pre_read_reconstruction",
+            "code": "domain_failure",
+            "message": "RG2b current/reset ordinary prestate is outside K_minus"
+          },
+          "next_positive_beat": {
+            "type": "ResourceBoundaryError",
+            "stage": "pre_read_reconstruction",
+            "code": "domain_failure",
+            "message": "RG2b current/reset ordinary prestate is outside K_minus"
+          },
+          "rebase_readmission": {
+            "type": "ResourceBoundaryError",
+            "stage": "pre_read_reconstruction",
+            "code": "domain_failure",
+            "message": "RG2b current/reset ordinary prestate is outside K_minus"
+          }
+        },
+        "reset_to_original_baseline": "passed",
+        "lifecycle_call_path": "from_state and compute_observables call this same zero-duration _profile_step; full lifecycle integration is not executed here"
+      },
+      {
+        "candidate": "A",
+        "submitted_profile_id": "grcv4-profile-sha256:12abb2946bfaa616df2a42bd571732e2be3000736f5078d45f8dbf53682b212b",
+        "fixture_first_resource_max_discrepancy": 0.0,
+        "inner": 0.125,
+        "core": 0.25,
+        "dt": 9.5367431640625e-07,
+        "assigned_current": [
+          2.125,
+          1.875,
+          2.125,
+          1.90625
+        ],
+        "original_reset": [
+          2.031494140625,
+          1.9375,
+          2.09375,
+          1.968505859375
+        ],
+        "returned_current": [
+          2.1250000139830423,
+          1.874999967483781,
+          2.125000032031838,
+          1.9062499865013387
+        ],
+        "returned_W": [
+          1.9687486525342788,
+          1.9999986016249902,
+          2.0312485486956073
+        ],
+        "returned_radius_exact": "17592190620667/140737488355328",
+        "native_final_section_current": [
+          -0.014662265319720988,
+          0.01943342162634573,
+          -0.01415435537395005
+        ],
+        "rejections": {
+          "zero_duration_readmission": {
+            "type": "ResourceBoundaryError",
+            "stage": "pre_read_reconstruction",
+            "code": "domain_failure",
+            "message": "RG2b current/reset ordinary prestate is outside K_minus"
+          },
+          "next_positive_beat": {
+            "type": "ResourceBoundaryError",
+            "stage": "pre_read_reconstruction",
+            "code": "domain_failure",
+            "message": "RG2b current/reset ordinary prestate is outside K_minus"
+          },
+          "rebase_readmission": {
+            "type": "ResourceBoundaryError",
+            "stage": "pre_read_reconstruction",
+            "code": "domain_failure",
+            "message": "RG2b current/reset ordinary prestate is outside K_minus"
+          }
+        },
+        "reset_to_original_baseline": "passed",
+        "lifecycle_call_path": "from_state and compute_observables call this same zero-duration _profile_step; full lifecycle integration is not executed here"
+      }
+    ]
+  },
+  "ledger_pressure": {
+    "scope": "P9-7.1 exact-record reconstruction and isolated ledger-validation pressure.\nExecutes the unchanged submitted receipt builder/context and _restore_commits.\nMissing package DTO/schema infrastructure is represented by lightweight wrappers;\nthis is not the native snapshot loader. Node's ECMAScript JSON number/string\nserialization is used in a sorted-key serializer for these I-JSON fixtures.\nEvery reconstructed native fixture receipt/commit/state ID is compared to the\nsubmitted record before mutation. No numerical trajectory is rerun here.\n",
+    "reconstruction": [
+      {
+        "family": "A_CI_PC",
+        "receipt_ids_matched": 8,
+        "commit_ids_matched": 2,
+        "endpoint_state_and_lifecycle_ids_matched": true
+      },
+      {
+        "family": "A_CI",
+        "receipt_ids_matched": 8,
+        "commit_ids_matched": 2,
+        "endpoint_state_and_lifecycle_ids_matched": true
+      },
+      {
+        "family": "A_OS",
+        "receipt_ids_matched": 8,
+        "commit_ids_matched": 2,
+        "endpoint_state_and_lifecycle_ids_matched": true
+      },
+      {
+        "family": "A_PC",
+        "receipt_ids_matched": 8,
+        "commit_ids_matched": 2,
+        "endpoint_state_and_lifecycle_ids_matched": true
+      },
+      {
+        "family": "A_RG2b",
+        "receipt_ids_matched": 8,
+        "commit_ids_matched": 2,
+        "endpoint_state_and_lifecycle_ids_matched": true
+      },
+      {
+        "family": "C_CI_PC",
+        "receipt_ids_matched": 8,
+        "commit_ids_matched": 2,
+        "endpoint_state_and_lifecycle_ids_matched": true
+      },
+      {
+        "family": "C_CI",
+        "receipt_ids_matched": 8,
+        "commit_ids_matched": 2,
+        "endpoint_state_and_lifecycle_ids_matched": true
+      },
+      {
+        "family": "C_OS",
+        "receipt_ids_matched": 8,
+        "commit_ids_matched": 2,
+        "endpoint_state_and_lifecycle_ids_matched": true
+      },
+      {
+        "family": "C_PC",
+        "receipt_ids_matched": 8,
+        "commit_ids_matched": 2,
+        "endpoint_state_and_lifecycle_ids_matched": true
+      },
+      {
+        "family": "C_RG2b",
+        "receipt_ids_matched": 8,
+        "commit_ids_matched": 2,
+        "endpoint_state_and_lifecycle_ids_matched": true
+      }
+    ],
+    "counterexamples": [
+      {
+        "family": "A_CI_PC",
+        "defect": "inferred_zero_duration_changes_scientific_identity",
+        "validator_accepts": true,
+        "second_source": "grcv4-state-sha256:7b914f9776fe4b0b2b20363bbad46b3aa2757f33cfd353d6d43ad8e352003e8f",
+        "second_target": "grcv4-state-sha256:9ad213d5ee15a568690de1e1aa449e775b9a02a0a6b48e1565e66c17b34cc72d"
+      },
+      {
+        "family": "A_CI",
+        "defect": "inferred_zero_duration_changes_scientific_identity",
+        "validator_accepts": true,
+        "second_source": "grcv4-state-sha256:c54618cb5840021ee4bc7a0783bcd179c6909212db5c227e9f58ceeb6b60dda6",
+        "second_target": "grcv4-state-sha256:0b7424e4f387e596673c6d4b8790f7256154f52604caa5f0929703d9187d5186"
+      },
+      {
+        "family": "A_OS",
+        "defect": "inferred_zero_duration_changes_scientific_identity",
+        "validator_accepts": true,
+        "second_source": "grcv4-state-sha256:284cba51786917db54a1511d80b29607992e503d32631aff17e1434d78a3c0e9",
+        "second_target": "grcv4-state-sha256:a1a289916943d865ee8cc932ed9e236cabd19caa583f05e681fe01c460690af2"
+      },
+      {
+        "family": "A_PC",
+        "defect": "inferred_zero_duration_changes_scientific_identity",
+        "validator_accepts": true,
+        "second_source": "grcv4-state-sha256:c6bb06228473090bbcd5b53e265406c58253819bd83c41b5a71109a6dd2f9d59",
+        "second_target": "grcv4-state-sha256:a4f5862371ced8b98ec6f5a78f32985bd10f105412ab2dccbcdf8a42ba72bc7e"
+      },
+      {
+        "family": "A_RG2b",
+        "defect": "inferred_zero_duration_changes_scientific_identity",
+        "validator_accepts": true,
+        "second_source": "grcv4-state-sha256:e136f86044c0a0979b28fdcdb17b1adcc2b74222b625f34b4d73c2f14238c240",
+        "second_target": "grcv4-state-sha256:91046601c484ae9fc3b3bb99d38c46ca3351f7da7bfc4069a064dc4eafb67f10"
+      },
+      {
+        "family": "A_RG2b",
+        "defect": "frozen_duration_clock_mismatch",
+        "validator_accepts": true,
+        "first_time": 4.76837158203125e-07,
+        "second_time": 1.9073486328125e-06,
+        "frozen_dt": 9.5367431640625e-07,
+        "required_second_time": 1.430511474609375e-06,
+        "clock_increment_ratio": 1.5
+      },
+      {
+        "family": "C_CI_PC",
+        "defect": "inferred_zero_duration_changes_scientific_identity",
+        "validator_accepts": true,
+        "second_source": "grcv4-state-sha256:941b16e5eec2959e469e5f40076853f829742a1a04bfc4a08ea11f280733a630",
+        "second_target": "grcv4-state-sha256:878306616bba768454b7fa1f162a769d39bd6553ec508a860f6011ee9557aa33"
+      },
+      {
+        "family": "C_CI",
+        "defect": "inferred_zero_duration_changes_scientific_identity",
+        "validator_accepts": true,
+        "second_source": "grcv4-state-sha256:0d5b9859a971b69df0ad80e7fb35e4cac001020a0549ee22b51d71cb700dc639",
+        "second_target": "grcv4-state-sha256:a1bd4c80df753a47fcfda48d18b6d2d3c67c164ae5e53af2a36711d45bcbe77e"
+      },
+      {
+        "family": "C_OS",
+        "defect": "inferred_zero_duration_changes_scientific_identity",
+        "validator_accepts": true,
+        "second_source": "grcv4-state-sha256:f58f68ea090d22cde035c5fd78e0d9892fca751a496b4e2ad9274e0a66c7819e",
+        "second_target": "grcv4-state-sha256:68a7d3deb764b0a33dcdecfc4802f23611109e711a20470844b8d2bfeee051d5"
+      },
+      {
+        "family": "C_PC",
+        "defect": "inferred_zero_duration_changes_scientific_identity",
+        "validator_accepts": true,
+        "second_source": "grcv4-state-sha256:3ac839403c09be3991ab722e89d8ef6f614b5294ef67d87e1012ad1ca572be3d",
+        "second_target": "grcv4-state-sha256:2a409ee1f944a200730b4feb1e11ca7233f85efdc6a8233c3cb01fb6dfb5f11c"
+      },
+      {
+        "family": "C_RG2b",
+        "defect": "inferred_zero_duration_changes_scientific_identity",
+        "validator_accepts": true,
+        "second_source": "grcv4-state-sha256:d54b12c76096f11341ec06fc2286bc973a00013c79659512f6a7348ac9d391d0",
+        "second_target": "grcv4-state-sha256:3f366fcea55997d3c520d9fe02e8a77860eb1fa989dbb825b909949dc08fa11d"
+      },
+      {
+        "family": "C_RG2b",
+        "defect": "frozen_duration_clock_mismatch",
+        "validator_accepts": true,
+        "first_time": 4.76837158203125e-07,
+        "second_time": 1.9073486328125e-06,
+        "frozen_dt": 9.5367431640625e-07,
+        "required_second_time": 1.430511474609375e-06,
+        "clock_increment_ratio": 1.5
+      }
+    ],
+    "negative_controls": [
+      {
+        "family": "A_CI_PC",
+        "control": "backwards",
+        "rejected": true,
+        "message": "impossible clock transition in local commit history"
+      },
+      {
+        "family": "A_CI_PC",
+        "control": "skipped_index",
+        "rejected": true,
+        "message": "impossible clock transition in local commit history"
+      },
+      {
+        "family": "A_CI_PC",
+        "control": "rehash_wrong_parent",
+        "rejected": true,
+        "message": "snapshot violates the accepted previous-successful-primary parent convention"
+      },
+      {
+        "family": "A_CI",
+        "control": "backwards",
+        "rejected": true,
+        "message": "impossible clock transition in local commit history"
+      },
+      {
+        "family": "A_CI",
+        "control": "skipped_index",
+        "rejected": true,
+        "message": "impossible clock transition in local commit history"
+      },
+      {
+        "family": "A_CI",
+        "control": "rehash_wrong_parent",
+        "rejected": true,
+        "message": "snapshot violates the accepted previous-successful-primary parent convention"
+      },
+      {
+        "family": "A_OS",
+        "control": "backwards",
+        "rejected": true,
+        "message": "impossible clock transition in local commit history"
+      },
+      {
+        "family": "A_OS",
+        "control": "skipped_index",
+        "rejected": true,
+        "message": "impossible clock transition in local commit history"
+      },
+      {
+        "family": "A_OS",
+        "control": "rehash_wrong_parent",
+        "rejected": true,
+        "message": "snapshot violates the accepted previous-successful-primary parent convention"
+      },
+      {
+        "family": "A_PC",
+        "control": "backwards",
+        "rejected": true,
+        "message": "impossible clock transition in local commit history"
+      },
+      {
+        "family": "A_PC",
+        "control": "skipped_index",
+        "rejected": true,
+        "message": "impossible clock transition in local commit history"
+      },
+      {
+        "family": "A_PC",
+        "control": "rehash_wrong_parent",
+        "rejected": true,
+        "message": "snapshot violates the accepted previous-successful-primary parent convention"
+      },
+      {
+        "family": "A_RG2b",
+        "control": "backwards",
+        "rejected": true,
+        "message": "impossible clock transition in local commit history"
+      },
+      {
+        "family": "A_RG2b",
+        "control": "skipped_index",
+        "rejected": true,
+        "message": "impossible clock transition in local commit history"
+      },
+      {
+        "family": "A_RG2b",
+        "control": "rehash_wrong_parent",
+        "rejected": true,
+        "message": "snapshot violates the accepted previous-successful-primary parent convention"
+      },
+      {
+        "family": "C_CI_PC",
+        "control": "backwards",
+        "rejected": true,
+        "message": "impossible clock transition in local commit history"
+      },
+      {
+        "family": "C_CI_PC",
+        "control": "skipped_index",
+        "rejected": true,
+        "message": "impossible clock transition in local commit history"
+      },
+      {
+        "family": "C_CI_PC",
+        "control": "rehash_wrong_parent",
+        "rejected": true,
+        "message": "snapshot violates the accepted previous-successful-primary parent convention"
+      },
+      {
+        "family": "C_CI",
+        "control": "backwards",
+        "rejected": true,
+        "message": "impossible clock transition in local commit history"
+      },
+      {
+        "family": "C_CI",
+        "control": "skipped_index",
+        "rejected": true,
+        "message": "impossible clock transition in local commit history"
+      },
+      {
+        "family": "C_CI",
+        "control": "rehash_wrong_parent",
+        "rejected": true,
+        "message": "snapshot violates the accepted previous-successful-primary parent convention"
+      },
+      {
+        "family": "C_OS",
+        "control": "backwards",
+        "rejected": true,
+        "message": "impossible clock transition in local commit history"
+      },
+      {
+        "family": "C_OS",
+        "control": "skipped_index",
+        "rejected": true,
+        "message": "impossible clock transition in local commit history"
+      },
+      {
+        "family": "C_OS",
+        "control": "rehash_wrong_parent",
+        "rejected": true,
+        "message": "snapshot violates the accepted previous-successful-primary parent convention"
+      },
+      {
+        "family": "C_PC",
+        "control": "backwards",
+        "rejected": true,
+        "message": "impossible clock transition in local commit history"
+      },
+      {
+        "family": "C_PC",
+        "control": "skipped_index",
+        "rejected": true,
+        "message": "impossible clock transition in local commit history"
+      },
+      {
+        "family": "C_PC",
+        "control": "rehash_wrong_parent",
+        "rejected": true,
+        "message": "snapshot violates the accepted previous-successful-primary parent convention"
+      },
+      {
+        "family": "C_RG2b",
+        "control": "backwards",
+        "rejected": true,
+        "message": "impossible clock transition in local commit history"
+      },
+      {
+        "family": "C_RG2b",
+        "control": "skipped_index",
+        "rejected": true,
+        "message": "impossible clock transition in local commit history"
+      },
+      {
+        "family": "C_RG2b",
+        "control": "rehash_wrong_parent",
+        "rejected": true,
+        "message": "snapshot violates the accepted previous-successful-primary parent convention"
+      }
+    ]
+  },
+  "native_regression_proposal": {
+    "filename": "P9-7.1-AuditReproducer.py",
+    "sha256": "4c7e95c84fef1bd172771dcb9c1397347852b151be4aa6c0fe7018633f2c65c6",
+    "methods": 7,
+    "compiled": true,
+    "executed": false
+  },
+  "audit_scripts": {
+    "P9-7.1-AuditReproducer.py": "4c7e95c84fef1bd172771dcb9c1397347852b151be4aa6c0fe7018633f2c65c6",
+    "check_integrity.py": "aaec29b502a33f66fb5a4ea01dbaa24e7a86d9c2768967973aa70178bed56d2f",
+    "isolated/ledger_pressure.py": "bc33a8ee00df1802e6cc90ef0e132bac799c6dde804ccf519de02adb8af9e9c3",
+    "isolated/rg_boundary.py": "7fc2d4e11b0731640d9afad0fb17f29a0deadcd3a6b004a6d92366906fe6643b",
+    "isolated/scaffold/base_scaffold.py": "7d6e27145c82064bb3a9580302a192d77ac8963a1740dd5645f7b3b7e24c6ee4",
+    "isolated/scaffold/current_loader.py": "12937b46d7c8e246cfb3e6d16d6f79ee3125ee406f36ab08bec04d2019344acf"
+  },
+  "historical_scope": "No numerical law, accepted predecessor numerical result, formation or initializer provenance is reclassified. Historical C_OS passing executions remain their historical evidence. New G2/G3 is not granted."
+}

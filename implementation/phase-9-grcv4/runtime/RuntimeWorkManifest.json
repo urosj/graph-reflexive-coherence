@@ -1250,8 +1250,8 @@
     },
     {
       "path": "src/pygrc/models/grc_v4.py",
-      "sha256": "338ad4195d4c27a492738820b6c88a44b570a9376c2ea5992c1a6fc62b5e5dc4",
-      "iteration_id": "P9-4.9.1"
+      "sha256": "a213cef02da144763bbc1220a5d07b7d7e760527b52105b0f723f58bebc3f8a8",
+      "iteration_id": "P9-7.1"
     },
     {
       "path": "src/pygrc/models/grc_v4_assets/__init__.py",
@@ -1295,8 +1295,8 @@
     },
     {
       "path": "src/pygrc/models/grc_v4_codec.py",
-      "sha256": "0b16ebcb1172c079b72410c0ae9b0c1fec47ed6bd5eb2360bf3a6b5507d2874c",
-      "iteration_id": "P9-4.9.1a"
+      "sha256": "e85d4c2e89e441e22573c334f11bd8670aa62c43f6d69eeffe624294866ca949",
+      "iteration_id": "P9-7.1"
     },
     {
       "path": "src/pygrc/models/grc_v4_geometry.py",
@@ -1305,8 +1305,8 @@
     },
     {
       "path": "src/pygrc/models/grc_v4_lifecycle.py",
-      "sha256": "25debf6d1e7a04fe8b1511500cdad4088a9a7cd4b3929b6dc1c263fde280826f",
-      "iteration_id": "P9-5.3"
+      "sha256": "96c2cd42a1d6f269558709e6a9d8bf56f6fdd1f9ea086918d0aa25c9a5f18be4",
+      "iteration_id": "P9-7.1"
     },
     {
       "path": "src/pygrc/models/grc_v4_pc.py",
@@ -1389,6 +1389,11 @@
       "sha256": "c9ffa5a9de7e97c1432ab67d308777c78f9982e3b0e9fbed39eb3389f1e16079"
     },
     {
+      "path": "tests/models/test_grc_v4_generic_lifecycle.py",
+      "sha256": "6b22807881dfe1fe1afa0ffd0b3057a67b3d1d612134ea7846e2d427cc134b38",
+      "iteration_id": "P9-7.1"
+    },
+    {
       "path": "tests/models/test_grc_v4_geometry.py",
       "sha256": "8e954cdf956e0b8aef585c948fc307c2466b9e2a83ac2f6933387297acf73004",
       "iteration_id": "P9-3.4"
@@ -1444,5 +1449,5 @@
   ],
   "admitted_specialization_support_sets": [],
   "claim_ceiling": "Work entries grant no conformance; the only accepted support is the separate P9-4.8B exact C_OS singleton. Local targets, other profiles and specialization are not promoted.",
-  "record_digest": "2fc0529afe16438e63f8109cf93c93f003aeb838cc6b8372b3921c0bea2279c7"
+  "record_digest": "b9f00eb24c4b1d10d19e6192edb446cf61ef66ed3fc741a46c19c9577b4fe06e"
 }

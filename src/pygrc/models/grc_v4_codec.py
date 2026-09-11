@@ -56,9 +56,23 @@ class V4IdentityError(ValueError):
 
 RECEIPT_PARENT_POLICY_ID = "grcv4-previous-successful-primary-v1"
 COS_SNAPSHOT_LAYOUT_ID = "pygrc-c-os-snapshot-v3"
+GENERIC_SNAPSHOT_LAYOUT_ID = "pygrc-generic-snapshot-v1"
 
 
 def cos_snapshot_payload(value: object) -> dict[str, JSONValue]:
+    return _snapshot_payload(value, COS_SNAPSHOT_LAYOUT_ID)
+
+
+def snapshot_payload(value: object) -> dict[str, JSONValue]:
+    """Dispatch closed envelopes; never upgrade a historical layout implicitly."""
+    data = _copy_json(value, set())
+    layout = data.get("implementation_layout_id") if isinstance(data, dict) else None
+    if layout not in (COS_SNAPSHOT_LAYOUT_ID, GENERIC_SNAPSHOT_LAYOUT_ID):
+        raise V4SchemaError("unsupported V4 snapshot layout")
+    return _snapshot_payload(data, layout)
+
+
+def _snapshot_payload(value: object, layout: str) -> dict[str, JSONValue]:
     """Closed implementation envelope around the frozen V4 identity payloads.
 
     The P9-4.9.2 successor explicitly binds the parent policy and release.
@@ -84,10 +98,12 @@ def cos_snapshot_payload(value: object) -> dict[str, JSONValue]:
         "reference_registry",
         "transition_records",
     }
-    if isinstance(data, dict) and data.get("implementation_layout_id") != COS_SNAPSHOT_LAYOUT_ID:
+    if layout == GENERIC_SNAPSHOT_LAYOUT_ID:
+        keys.add("differential_reference")
+    if isinstance(data, dict) and data.get("implementation_layout_id") != layout:
         raise V4SchemaError("unsupported C_OS snapshot layout; historical parent policy is not converted")
     if not isinstance(data, dict) or set(data) != keys:
-        raise V4SchemaError("expected the complete closed C_OS snapshot envelope")
+        raise V4SchemaError("expected the complete closed V4 snapshot envelope")
     if (
         data["schema_version"],
         data["model_family"],
@@ -95,7 +111,7 @@ def cos_snapshot_payload(value: object) -> dict[str, JSONValue]:
     ) != (
         "grcv4-snapshot-v1",
         "GRCV4",
-        COS_SNAPSHOT_LAYOUT_ID,
+        layout,
     ):
         raise V4SchemaError("unsupported snapshot family, version or layout")
     if (data["receipt_parent_policy_id"] != RECEIPT_PARENT_POLICY_ID

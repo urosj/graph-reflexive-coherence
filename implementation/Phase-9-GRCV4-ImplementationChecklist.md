@@ -1020,7 +1020,8 @@ amendment. No historical execution, scientific authority or acceptance changes.
   P9-6.5 forward obligations. The generalized RG2b result remains distinct from
   its scalar foundation. Lifecycle/G2, scientific debts and the optional
   32-vertex campaign retain their limits; public support remains exact C_OS.
-  The next handoff task is P9-7.1-A_OS, starting generic lifecycle generalization.
+  That handoff suggested P9-7.1-A_OS first. The user's later full-parent request
+  supersedes that scheduling hint; see the ten-child batch below.
 
 ## Tranche 7. Generic lifecycle generalization and P9-G2
 
@@ -1030,8 +1031,9 @@ scopes, evidence aliases and dependencies. P9-7.1-C_OS and the early C_OS
 P9-7.2a/b–P9-7.6 children have scoped evidence accepted with the P9-4.6/4.7 batch;
 its full audit findings are closed. Generic parent-reference conformance remains
 open across other profiles; the accepted P9-4.9.2 authority and bounded internal
-C_OS implementation are recorded in its linked review. A_OS children remain
-planned/unexecuted. P9-7.7-C_OS aliases the
+C_OS implementation are recorded in its linked review. A_OS migration/event
+and wider conformance children remain unexecuted; P9-7.1 is the active batch
+below. P9-7.7-C_OS aliases the
 [P9-4.8B exact-scope acceptance](./phase-9-grcv4/tranche-4/P9-4.8B-G2Acceptance.json),
 with no duplicate execution credit. The original
 P9-4.8 HOLD and historical child register remain unchanged.
@@ -1049,8 +1051,42 @@ run during Tranche 4; later work generalizes their machinery and reuses their
 evidence without claiming all-profile coverage. A_OS and each later profile
 may reach G2 without waiting for all Tranche 6 realizations.
 
-- [ ] P9-7.1: Execute save/load/replay, reset, rebase, and independent
+- [x] P9-7.1: Execute save/load/replay, reset, rebase, and independent
   duplication with canonical authority and receipt identities.
+  Implemented and verified on `impl/phase-9-grcv4-tranche-7`: 26 focused tests
+  passed, with scoped source/record and API/notebook/browser checks. These marks
+  record completed execution, not user acceptance or wider G2. See the
+  [concrete lifecycle record](./phase-9-grcv4/tranche-7/P9-7.1-Lifecycle.json).
+  Later disposition: **accepted by the user on 2026-09-11**, including the
+  audit corrections, through commit authorization. This accepts the bounded
+  ten-child lifecycle batch, not new G2/G3 or migration/event scope. Original
+  execution records retain their pre-acceptance flags and exact identities.
+  - [x] P9-7.1-C_OS: reuse the accepted exact-scope lifecycle/G2 evidence;
+    current shared-owner compatibility is checked without duplicate gate credit.
+  - [x] P9-7.1-A_OS: explicit retained-W/backend lifecycle.
+  - [x] P9-7.1-A_CI: retained-W, newly selected CI root on readmission.
+  - [x] P9-7.1-C_CI: derived C sector, newly selected CI root on readmission.
+  - [x] P9-7.1-A_RG2b: retained-W, fresh completion-relative graph section.
+  - [x] P9-7.1-C_RG2b: derived C sector, fresh completion-relative graph section.
+  - [x] P9-7.1-A_PC: independently retained W and Z, geometry rebuilt from Z.
+  - [x] P9-7.1-C_PC: independently retained Z, geometry rebuilt from Z.
+  - [x] P9-7.1-A_CI_PC: independent W/Z and newly selected coupled root.
+  - [x] P9-7.1-C_CI_PC: retained Z and newly selected coupled root.
+  Distinct live/reset authority, content-bound receipts, reset-only failure,
+  canonical replay and atomic rollback are required per new concrete child.
+  These checks do not close migration/events, formation, wider G2 or G3.
+  - [x] Audit follow-up: verify RG2b K state readmission independently of
+    K_minus step entry, current/reset rejection outside K, core-state lifecycle
+    continuation and next-beat atomic rejection.
+  - [x] Audit follow-up: reject incoherent zero-step and frozen-beat history;
+    preserve lawful unreceipted assignment and rounded large-clock advancement.
+  - [x] Audit follow-up: correct non-OS stage labels and verify the native
+    A post-writer singularity against a populated immutable publication.
+  - [x] Retain a separate source-bound 15-method correction capture and exact
+    original source recovery; refresh the read-only successor without rerunning
+    the full original campaign or granting acceptance/support.
+    All 15 methods passed without failures/errors/skips; see the
+    [follow-up](./phase-9-grcv4/tranche-7/P9-7.1-AuditFollowup.json).
 - [ ] P9-7.2a: Execute required profile migration classes over current and
   reset state, independently by source/target identities and failure surface.
   A decoded P9-2.3 declaration is not migration admission: test unresolved

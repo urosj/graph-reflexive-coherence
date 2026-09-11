@@ -1454,3 +1454,22 @@ P9-3.2 implementation is pending review; runtime support remains empty.
 - [x] Preserve the original numerical capture and hashes. Bind and test the
       exact acceptance/discovery/status projections separately; reject other
       source changes without relabeling the historical run as a current rerun.
+
+## Phase 9 Tranche 7 — P9-7.1 generic lifecycle
+
+- [x] Register the user-authorized full 7.1 parent and ten concrete children,
+      with one added test owner and the three existing lifecycle/facade/codec owners.
+- [x] Preserve accepted C_OS G2 and numerical Tranche 5/6 records; do not infer
+      A formation, wider support, events/migrations or specialization entry.
+- [x] Bind focused all-profile lifecycle execution and exact source/input/output
+      identities in the 7.1 record; check it without rerunning numerical campaigns.
+- [x] Verify actual API/status-notebook/browser agreement and fail-closed
+      permission/support projections; keep new child acceptance pending.
+      The 26-test lifecycle run, read-only successor check, 34 browser controls,
+      actual API/browser comparison and status-only notebook checks passed.
+- [x] Verify the separate 7.1 audit correction capture and exact original-source
+      recovery through the normal scoped successor; retain native RG2b boundary,
+      zero/frozen-clock, non-OS stage and A rollback controls without gate promotion.
+- [x] Record user acceptance of the ten-child 7.1 batch and audit corrections
+      on 2026-09-11 through commit authorization. Preserve execution-time flags;
+      no new G2/G3, migration/event permission or numerical rerun is implied.

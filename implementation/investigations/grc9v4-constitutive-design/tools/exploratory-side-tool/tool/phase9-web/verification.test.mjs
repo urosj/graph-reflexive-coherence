@@ -60,7 +60,7 @@ function accepted(extra={}) {
     specification_correction:{record_digest:'56f1d4378eb8273d261b76aff3b128c526fb5064fa3bceace5c73fbb1f9f9903',release_id:'grcv4-spec-release-sha256:7b8b4d4e32e48fd35f70421cce7f547eebb21dd81389764061efe6e1a8c19886'},
     receipt_parent_authority:{record_digest:'ba7d69189c527153828b02c2bb3311899b036a634446de9ad8f36af6592c28f8',policy_id:'grcv4-previous-successful-primary-v1',release_id:'grcv4-spec-release-sha256:f777519824f86c3e9382bcf9b45cba28554351506f354d3f778746e2aaff5c6b',G2_accepted:false},
     lifecycle_batch_authorization:{record_digest:'fe11cfd2db36a9e1a74301aeaf89e316a3e93e7d3f5ea9d5f1197e199ee27d6b',execution_order:['P9-4.7a','P9-4.7b'],audit_status:'findings_closed_after_correction',combined_audit_scope:['P9-4.6','P9-4.7a','P9-4.7b']},
-    implementation_scope:Array.from({length:52},(_,i)=>({path:`synthetic/${i}`})),
+    implementation_scope:Array.from({length:53},(_,i)=>({path:`synthetic/${i}`})),
     foundation_acceptance:{record_digest:'1e3f0ddb06b119fa46dc7609d05b7db0c3a4cbc07428c05b8a032da081ae9dd4',accepted_iterations:['P9-2.1','P9-2.2']},
     request_acceptance:{record_digest:'ac07a2f7c93538454d9663aba78ca0eb5af385d7975582e4c21682f41ce4c17f',accepted_iterations:['P9-2.3']},
     result_acceptance:{record_digest:'9d2fd4f0bb0445b9b3c46fd6f7e5b0ff710a8a85aceaeabacad44a477ff365a0',accepted_iterations:['P9-2.4']},
@@ -68,12 +68,12 @@ function accepted(extra={}) {
     integration_acceptance:{record_digest:'e5ba16731e03dc916b8755c5999ab2b59acf431255612e76e0dcebe108104bc2',accepted_iterations:['P9-2.6']},
     geometry_acceptance:{record_digest:'f119e1361500e72f58297bc8186f868954b4065c853fcdd089280a5d28f88618',accepted_iterations:['P9-3.1']},
     stage_acceptance:{record_digest:'425cd05eb85213185a4b531a09c16cefec4be992ac4755d404b5f263e09ebd0a',accepted_iterations:['P9-3.2']},
-    dependency_ready_leaves:["P9-2.1","P9-2.2","P9-2.3","P9-2.4","P9-2.5","P9-2.6","P9-3.1","P9-3.2","P9-3.3","P9-3.4","P9-3.5","P9-4.1","P9-4.2","P9-4.3","P9-4.4","P9-4.5","P9-4.6","P9-4.7a","P9-4.7b","P9-4.9.1","P9-4.9.1a","P9-4.9.2","P9-4.9.3","P9-5.1","P9-5.2","P9-5.3","P9-5.4","P9-6.1a","P9-6.1b","P9-6.1c","P9-6.2a","P9-6.2b","P9-6.2c","P9-6.3a","P9-6.3b","P9-6.3c","P9-6.4a","P9-6.4b","P9-6.4c","P9-6.4d","P9-6.5","P9-7.2a-C_OS-NH-NH","P9-7.2a-C_OS-UNSUPPORTED","P9-7.2b-C_OS-MAPPED","P9-7.3-C_OS","P9-7.4-C_OS","P9-7.5-C_OS","P9-7.6-C_OS"],permitted_runtime_paths:[...Array.from({length:15},(_,i)=>`synthetic/${i}`),'pyproject.toml','tests/models/grcv4_conformance_harness.py','tests/models/grcv4_reference_oracles.py','src/pygrc/models/__init__.py',"src/pygrc/models/grc_v4_geometry.py","src/pygrc/models/grc_v4_transport.py","tests/models/test_grc_v4_geometry.py","tests/models/test_grc_v4_transport.py","src/pygrc/models/grc_v4_candidate_c.py","tests/models/test_grc_v4_candidate_c.py","src/pygrc/models/grc_v4_realizations.py","tests/models/test_grc_v4_realizations.py","src/pygrc/models/grc_v4_lifecycle.py","tests/models/test_grc_v4_lifecycle.py","src/pygrc/models/grc_v4_candidate_a.py","tests/models/test_grc_v4_candidate_a.py","src/pygrc/models/grc_v4_ci.py","tests/models/test_grc_v4_ci.py","src/pygrc/models/grc_v4_pc.py","tests/models/test_grc_v4_pc.py","tests/models/test_grc_v4_cipc.py","src/pygrc/models/grc_v4_rg2b.py","tests/models/test_grc_v4_rg2b.py","src/pygrc/models/grc_v4_rg2b_graph.py","tests/models/test_grc_v4_rg2b_graph.py"],
+    dependency_ready_leaves:["P9-2.1","P9-2.2","P9-2.3","P9-2.4","P9-2.5","P9-2.6","P9-3.1","P9-3.2","P9-3.3","P9-3.4","P9-3.5","P9-4.1","P9-4.2","P9-4.3","P9-4.4","P9-4.5","P9-4.6","P9-4.7a","P9-4.7b","P9-4.9.1","P9-4.9.1a","P9-4.9.2","P9-4.9.3","P9-5.1","P9-5.2","P9-5.3","P9-5.4","P9-6.1a","P9-6.1b","P9-6.1c","P9-6.2a","P9-6.2b","P9-6.2c","P9-6.3a","P9-6.3b","P9-6.3c","P9-6.4a","P9-6.4b","P9-6.4c","P9-6.4d","P9-6.5","P9-7.1","P9-7.1-A_CI","P9-7.1-A_CI_PC","P9-7.1-A_OS","P9-7.1-A_PC","P9-7.1-A_RG2b","P9-7.1-C_CI","P9-7.1-C_CI_PC","P9-7.1-C_OS","P9-7.1-C_PC","P9-7.1-C_RG2b","P9-7.2a-C_OS-NH-NH","P9-7.2a-C_OS-UNSUPPORTED","P9-7.2b-C_OS-MAPPED","P9-7.3-C_OS","P9-7.4-C_OS","P9-7.5-C_OS","P9-7.6-C_OS"],permitted_runtime_paths:[...Array.from({length:15},(_,i)=>`synthetic/${i}`),'pyproject.toml','tests/models/grcv4_conformance_harness.py','tests/models/grcv4_reference_oracles.py','src/pygrc/models/__init__.py',"src/pygrc/models/grc_v4_geometry.py","src/pygrc/models/grc_v4_transport.py","tests/models/test_grc_v4_geometry.py","tests/models/test_grc_v4_transport.py","src/pygrc/models/grc_v4_candidate_c.py","tests/models/test_grc_v4_candidate_c.py","src/pygrc/models/grc_v4_realizations.py","tests/models/test_grc_v4_realizations.py","src/pygrc/models/grc_v4_lifecycle.py","tests/models/test_grc_v4_lifecycle.py","src/pygrc/models/grc_v4_candidate_a.py","tests/models/test_grc_v4_candidate_a.py","src/pygrc/models/grc_v4_ci.py","tests/models/test_grc_v4_ci.py","src/pygrc/models/grc_v4_pc.py","tests/models/test_grc_v4_pc.py","tests/models/test_grc_v4_cipc.py","src/pygrc/models/grc_v4_rg2b.py","tests/models/test_grc_v4_rg2b.py","src/pygrc/models/grc_v4_rg2b_graph.py","tests/models/test_grc_v4_rg2b_graph.py","tests/models/test_grc_v4_generic_lifecycle.py"],
     iterations:[4,5,6,7,8,9].map(i=>({iteration_id:`P9-1.${i}`,status:'implemented_and_verified',reviewer_decision:'accepted_by_user'})),...extra});
 }
 test('accepted G1 permission does not imply accepted profile support',async()=>{
   assert.equal((await verifiedStatus(accepted())).P9_G1_accepted,true);
-  const missingPackage=accepted({permitted_runtime_paths:Array.from({length:40},(_,i)=>`synthetic/${i}`)});
+  const missingPackage=accepted({permitted_runtime_paths:Array.from({length:41},(_,i)=>`synthetic/${i}`)});
   assert.throws(()=>checkedStatus(missingPackage),/dependency-ready/);
   const missingExport=accepted();
   missingExport.permitted_runtime_paths[18]='synthetic/no-export-owner';
@@ -214,7 +214,7 @@ test('successor specification authority cannot be omitted or forged', () => {
 test('accepted fixture readiness cannot imply a detector or open the final review', () => {
   const valid = accepted();
   checkedStatus(valid);
-  assert.equal(valid.dependency_ready_leaves.length, 48);
+  assert.equal(valid.dependency_ready_leaves.length, 59);
   assert.throws(()=>checkedStatus(accepted({dependency_ready_leaves:valid.dependency_ready_leaves.filter(leaf=>leaf!=='P9-4.9.3')})), /dependency-ready/);
   for (const changed of [undefined, {...valid.abundance_interface_authority, record_digest:'0'.repeat(64)}, {...valid.abundance_interface_authority, release_id:'predecessor'}, {...valid.abundance_interface_authority, numeric_definition_admitted:true}, {...valid.abundance_interface_authority, G2_accepted:true}]) assert.throws(()=>checkedStatus(accepted({abundance_interface_authority:changed})));
   // Duplicate fixture permission and premature review permission both reject.
@@ -233,10 +233,24 @@ test('G2 acceptance is an exact singleton, not a family or specialization grant'
 test('A current/writer permission cannot imply later A work or A conformance', () => {
   const valid = accepted();
   checkedStatus(valid);
-  for (const leaves of [valid.dependency_ready_leaves.filter(x => x !== 'P9-5.1'), valid.dependency_ready_leaves.filter(x => x !== 'P9-5.4'), [...valid.dependency_ready_leaves, 'P9-7.1-A_OS']])
+  for (const leaves of [valid.dependency_ready_leaves.filter(x => x !== 'P9-5.1'), valid.dependency_ready_leaves.filter(x => x !== 'P9-5.4'), [...valid.dependency_ready_leaves, 'P9-7.2a-A_OS']])
     assert.throws(() => checkedStatus(accepted({dependency_ready_leaves: leaves})), /dependency-ready/);
   const paths = valid.permitted_runtime_paths.filter(x => x !== 'src/pygrc/models/grc_v4_candidate_a.py');
   paths.push('synthetic/replacement');
   assert.throws(() => checkedStatus(accepted({permitted_runtime_paths:paths})), /dependency-ready/);
   assert.throws(() => checkedStatus(accepted({accepted_generic_runtime_support:[acceptedProfile, 'A_OS']})), /support/);
+});
+
+test('full 7.1 permission requires every child without opening 7.2 or G2', () => {
+  const valid = accepted();
+  for (const candidate of ['A', 'C']) for (const realization of ['OS', 'CI', 'RG2b', 'PC', 'CI_PC']) {
+    const id = `P9-7.1-${candidate}_${realization}`;
+    assert.ok(valid.dependency_ready_leaves.includes(id));
+    assert.throws(() => checkedStatus(accepted({dependency_ready_leaves: valid.dependency_ready_leaves.filter(x => x !== id)})), /dependency-ready/);
+  }
+  assert.throws(() => checkedStatus(accepted({dependency_ready_leaves: [...valid.dependency_ready_leaves, 'P9-7.2b-A_PC']})), /dependency-ready/);
+  assert.throws(() => checkedStatus(accepted({accepted_generic_runtime_support: [acceptedProfile, 'C_PC']})), /support/);
+  const paths = valid.permitted_runtime_paths.filter(x => x !== 'tests/models/test_grc_v4_generic_lifecycle.py');
+  paths.push('synthetic/replacement');
+  assert.throws(() => checkedStatus(accepted({permitted_runtime_paths: paths})), /dependency-ready/);
 });

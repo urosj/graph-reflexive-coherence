@@ -1,4 +1,4 @@
-"""Bounded C_OS operation, lifecycle and mapped-transition owner.
+"""Shared generic lifecycle owner, with bounded C_OS mapped transitions.
 
 One immutable lifecycle tuple is published only after numerical admission,
 reference restart admission, receipt construction and result binding succeed.
@@ -24,14 +24,16 @@ from .grc_v4 import (
     GRCV4MappedTopologyEventRequest,
 )
 from .grc_v4_candidate_c import CandidateCCurrent, CandidateCStageError
+from .grc_v4_candidate_a import CandidateADifferentialReference, CandidateAStageError
 from .grc_v4_codec import (
     COS_SNAPSHOT_LAYOUT_ID,
+    GENERIC_SNAPSHOT_LAYOUT_ID,
     RECEIPT_PARENT_POLICY_ID,
     RELEASE_ID,
     V4IdentityError,
     V4SchemaError,
     canonical_json_bytes,
-    cos_snapshot_payload,
+    snapshot_payload,
     decode_canonical_json,
     payload_identity,
 )
@@ -63,6 +65,7 @@ from .grc_v4_step import (
     GRCV4Failure,
     OperationStage,
     ProvisionalCandidateCOSStep,
+    ProvisionalCandidateAOSStep,
     ResourceBoundaryError,
     SuccessfulReceiptEnvelope,
     _RESOURCE_SOLVER_FAILURES,
@@ -75,6 +78,100 @@ from .grc_v4_step import (
 
 from .grc_v4_transport import ChargeEvaluation, ChargeDomainError
 from .grc_v4_profile import GRCV4Profile
+
+
+def _fresh_geometry(inputs: GeometryStageInputs) -> GeometryStageInputs:
+    """Rebuild derived geometry only; C/W/Z and the reduced reset stay authority."""
+    reference = inputs.geometry.reference
+    if reference.profile.identity_payload.realization == "PC":
+        from .grc_v4_pc import carrier_geometry
+        return replace(inputs, geometry=carrier_geometry(inputs, inputs.current))
+    return replace(inputs, geometry=reference.geometry())
+
+
+def _profile_step(inputs: GeometryStageInputs, backend: CandidateADifferentialReference | None) -> Any:
+    """Dispatch existing provisional numerical owners, never a second writer."""
+    identity = inputs.geometry.reference.profile.identity_payload
+    if identity.candidate == "A":
+        if type(backend) is not CandidateADifferentialReference:
+            raise V4IdentityError("Candidate A requires its explicit differential reference")
+    elif backend is not None:
+        raise V4IdentityError("Candidate C cannot import Candidate A differential authority")
+    if identity.realization == "OS":
+        return (ProvisionalCandidateCOSStep(inputs) if identity.candidate == "C"
+                else ProvisionalCandidateAOSStep(inputs, backend))
+    if identity.realization in ("CI", "CI+PC"):
+        from .grc_v4_ci import ProvisionalCandidateCIStep
+        return ProvisionalCandidateCIStep(inputs, backend)
+    if identity.realization == "PC":
+        from .grc_v4_pc import ProvisionalCandidatePCStep
+        return ProvisionalCandidatePCStep(inputs, backend)
+    if identity.realization == "RG2b":
+        from .grc_v4_rg2b import ProvisionalCandidateRG2bStep, RG2bStageError
+        try:
+            return ProvisionalCandidateRG2bStep(inputs, backend)
+        except RG2bStageError as exc:
+            # The provisional owner's declaration check precedes its numerical
+            # try block. In particular, a decoded positive request can disagree
+            # with the frozen completion duration: reject it as input admission.
+            raise ResourceBoundaryError("admission", "domain_failure", str(exc)) from exc
+    raise V4IdentityError("unimplemented generic lifecycle realization")
+
+
+def _step_currents(step: Any) -> tuple[Any, Any, str]:
+    """Return consumed/read current and freshly reconstructed restart current."""
+    realization = step.inputs.geometry.reference.profile.identity_payload.realization
+    if realization == "OS":
+        # C_OS historically checks restart separately; retain that postcondition.
+        restart = (CandidateCCurrent(replace(step.next_inputs, dt=0))
+                   if type(step) is ProvisionalCandidateCOSStep else step.restart)
+        return (step.os_pass.corrector if step.os_pass is not None else restart,
+                restart, "os_corrector")
+    if realization in ("CI", "CI+PC"):
+        return step.root, step.restart, "ci_selected_root"
+    if realization == "PC":
+        return step.read.point, step.restart.point, "pc_old_history"
+    return step.point, step.restart_point, "rg2b_section"
+
+
+def _readmit_state(
+    inputs: GeometryStageInputs, backend: CandidateADifferentialReference | None,
+) -> tuple[Any, ChargeEvaluation]:
+    """Read current/reset authority without imposing eligibility for a new beat.
+
+    RG2b publishes in K, while its ordinary entry (including a zero step)
+    requires K_minus. A section/native-current read on K is not another step.
+    Other realizations retain their existing zero-writer readmission path.
+    No derived section, solver work or geometry becomes lifecycle authority.
+    """
+    inputs = replace(inputs, dt=0)
+    ref = inputs.geometry.reference
+    if ref.profile.identity_payload.realization != "RG2b":
+        step = _profile_step(inputs, backend)
+        return _step_currents(step)[1], step.resource.charge
+    from .grc_v4_rg2b import CandidateRG2bSection
+    from .grc_v4_candidate_a import CandidateACurrent
+
+    charge = _resource_charge(inputs, VertexScalar(ref.graph, inputs.current.C), "admission")
+    _resource_charge(inputs, VertexScalar(ref.graph, inputs.reset.C), "admission")
+
+    def native(state: GRCV4AuthoritativeState) -> Any:
+        section = CandidateRG2bSection(replace(inputs, current=state), backend)
+        selected = replace(section.inputs, geometry=section.geometry, stage="rg2b_section")
+        return (CandidateACurrent(selected, cast(CandidateADifferentialReference, backend))
+                if ref.profile.identity_payload.candidate == "A" else CandidateCCurrent(selected))
+
+    native(inputs.reset)
+    return native(inputs.current), charge
+
+
+def _rg2b_beat(reference: GRCV4ReferenceGeometry) -> float:
+    """Read the duration from the active frozen completion, not a new policy."""
+    from .grc_v4_rg2b import RG2bDomain
+    from .grc_v4_rg2b_graph import EXTENSION, RG2bGraphDomain
+    identity = reference.profile.params_resolved.realization.extension_evaluator_id
+    domain = RG2bGraphDomain if identity.startswith(EXTENSION) else RG2bDomain
+    return domain.from_identity(identity).beat_dt
 
 
 def _validate_abundance_projection(
@@ -128,7 +225,7 @@ def _public_observables(
     inputs: GeometryStageInputs,
     ledger: tuple[SuccessfulReceiptEnvelope, ...],
     charge: ChargeEvaluation,
-    current: CandidateCCurrent,
+    current: Any,
     *,
     stage: str,
     current_stage: str,
@@ -169,7 +266,7 @@ def _public_observables(
         },
         "geometry_profile_id": identity.geometry_profile_id,
         "receipt_ledger": [r.to_payload() for r in ledger],
-        "support_status": "local_C_OS_execution_not_G2_acceptance",
+        "support_status": "local_" + identity.profile_family_id + "_execution_not_G2_acceptance",
     }
 
 
@@ -212,7 +309,7 @@ def _failed_solver(error: BaseException) -> SolverDisposition:
     current: BaseException | None = error
     while current is not None and id(current) not in seen:
         seen.add(id(current))
-        if isinstance(current, CandidateCStageError):
+        if isinstance(current, (CandidateCStageError, CandidateAStageError)):
             return current.disposition
         if isinstance(current, (NonfiniteGeometryError, OverflowError)):
             return "nonfinite"
@@ -249,9 +346,11 @@ def _receipt_context(
             (
                 "candidate",
                 ref.profile.params_resolved.lifecycle.history_policy_id,
-                "rederived",
+                "rederived" if ref.profile.identity_payload.candidate == "C" else "exact_transport",
             ),
-            ("carrier", "no_persistent_carrier_v1", "not_applicable"),
+            ("carrier", "no_persistent_carrier_v1", "not_applicable")
+            if ref.profile.identity_payload.realization not in ("PC", "CI+PC")
+            else ("carrier", "identity_carrier_coordinates_v1", "exact_transport"),
         )
     }
     return channels, {
@@ -278,7 +377,7 @@ def _receipt_context(
 def _ordinary_receipts(
     before: GeometryStageInputs,
     after: GeometryStageInputs,
-    step: ProvisionalCandidateCOSStep,
+    charge: ChargeEvaluation,
     ledger: tuple[SuccessfulReceiptEnvelope, ...],
 ) -> list[dict[str, Any]]:
     """Actual ordinary-operation receipts, with no event or history transport.
@@ -286,7 +385,10 @@ def _ordinary_receipts(
     The universal core's resource transform identifies unchanged vertex
     placement (identity, no event increment), not the nonlinear continuity
     map. Source/target authority binds the actual resource write. The history
-    bundle names C rederivation and absence of a carrier. All operations use
+    bundle names identity coordinate placement for retained W/Z (not an
+    assertion that a writer or reset leaves their values unchanged), C
+    rederivation, and absent channels. Actual endpoint authority binds every
+    writer/reset value. No topology/history-map execution is claimed. All operations use
     the accepted previous-successful-primary policy, including auxiliaries.
     """
     ref = before.geometry.reference
@@ -297,7 +399,7 @@ def _ordinary_receipts(
         **references,
         "actual_charge_delta": _computed(
             float(
-                Fraction(step.resource.charge.actual)
+                Fraction(charge.actual)
                 - Fraction(
                     _resource_charge(
                         before, VertexScalar(ref.graph, before.current.C), "admission"
@@ -332,7 +434,7 @@ def _ordinary_receipts(
         {
             "schema_version": "grcv4-charge-receipt-v1",
             "core": core,
-            **step.resource.charge.receipt_values(),
+            **charge.receipt_values(),
         },
         *(
             {
@@ -362,7 +464,7 @@ def _state_inputs(
     state: GRCV4LifecycleState,
     operation_id: str = "lifecycle_readmission",
 ) -> GeometryStageInputs:
-    return GeometryStageInputs(
+    return _fresh_geometry(GeometryStageInputs(
         reference.geometry(),
         reference.context,
         state.current,
@@ -376,7 +478,7 @@ def _state_inputs(
         "pre_read",
         0,
         None,
-    )
+    ))
 
 
 class _CrossingFailure(ValueError):
@@ -397,7 +499,7 @@ def _reference_key(ref: GRCV4ReferenceGeometry) -> tuple[str, str]:
     return ref.profile.complete_profile_id, ref.graph.graph_digest
 
 
-def _reference_registry(references: object) -> tuple[GRCV4ReferenceGeometry, ...]:
+def _reference_registry(references: object, *, generic: bool = False) -> tuple[GRCV4ReferenceGeometry, ...]:
     if type(references) not in (tuple, list) or not references:
         raise V4SchemaError("expected a nonempty ordered reference registry")
     rows: list[GRCV4ReferenceGeometry] = []
@@ -406,7 +508,7 @@ def _reference_registry(references: object) -> tuple[GRCV4ReferenceGeometry, ...
         ref = GRCV4ReferenceGeometry.from_payload(
             value.to_payload() if type(value) is GRCV4ReferenceGeometry else value
         )
-        if ref.profile.identity_payload.profile_family_id != "C_OS":
+        if not generic and ref.profile.identity_payload.profile_family_id != "C_OS":
             raise V4IdentityError(
                 "reference registry supports only bounded C_OS targets"
             )
@@ -958,7 +1060,7 @@ def _restore_commits(
             "grcv4-profile-migration-receipt-v1",
             "grcv4-topology-event-receipt-v1",
         }:
-            raise V4SchemaError("unsupported lifecycle operation in C_OS snapshot")
+            raise V4SchemaError("unsupported lifecycle operation in V4 snapshot")
         source_reference = reference
         target_reference = reference
         crossing = crossings.get(commit_id)
@@ -1012,10 +1114,21 @@ def _restore_commits(
                 # index once and adds at least the smallest positive duration.
                 valid_clock = (
                     index_delta == 0 and commit.target_time == previous.target_time
+                    and commit.source_state_digest == commit.target_state_digest
                 ) or (
                     index_delta == 1
                     and commit.target_time >= previous.target_time + 5e-324
                 )
+                if index_delta == 1 and reference.profile.identity_payload.realization == "RG2b":
+                    # Retained clocks decide this contradiction without an
+                    # invented origin, trajectory replay or adjacency rule.
+                    # Exact input sum, rounded once to binary64; large clocks
+                    # may lawfully retain the same represented time.
+                    try:
+                        expected = float(Fraction(previous.target_time) + Fraction(_rg2b_beat(reference)))
+                    except OverflowError as exc:
+                        raise V4IdentityError("historical RG2b clock overflow") from exc
+                    valid_clock = isfinite(expected) and commit.target_time == expected
             else:
                 valid_clock = (
                     index_delta == 0 and commit.target_time == previous.target_time
@@ -1093,7 +1206,7 @@ def _restore_commits(
         for receipt, subject, disposition in zip(
             group[2:],
             ("candidate", "carrier"),
-            ("rederived", "not_applicable"),
+            tuple(channel["disposition"] for channel in _receipt_context(reference)[0].values()),
             strict=True,
         ):
             p = receipt.identity_payload
@@ -1110,7 +1223,7 @@ def _restore_commits(
             ):
                 raise V4IdentityError("snapshot invents candidate/carrier history")
         if core["information_losses"]:
-            raise V4IdentityError("C_OS local operations have no history loss")
+            raise V4IdentityError("ordinary local operations cannot claim topology history loss")
         if kind == "grcv4-reset-receipt-v1" and not (
             primary["reset_baseline_digest"]
             == core["source_reset_digest"]
@@ -1175,7 +1288,7 @@ def _validate_publication(
         if kind == "grcv4-rebase-receipt-v1"
         else None
     )
-    if expected_administrative is not None and after != expected_administrative:
+    if expected_administrative is not None and after != _fresh_geometry(expected_administrative):
         raise V4IdentityError(
             "administrative target changes undeclared lifecycle authority"
         )
@@ -1253,8 +1366,8 @@ def _validate_publication(
     )
 
 
-class CandidateCOSOperation:
-    """Sole bounded C_OS lifecycle owner, also used by the public GRCV4 facade.
+class GRCV4Operation:
+    """Sole generic lifecycle owner, also used by the public GRCV4 facade.
 
     Fresh construction has an empty ledger. from_state/load restore a complete
     snapshot, including commit preimages. References, current/reset coordinates,
@@ -1262,22 +1375,28 @@ class CandidateCOSOperation:
     Calls that publish state are serialized, with one immutable pointer swap.
     """
 
-    __slots__ = ("_registry", "_owned", "_lock")
+    __slots__ = ("_registry", "_owned", "_lock", "_backend")
 
     def __init__(
         self,
         initial: GeometryStageInputs,
         *,
         targets: tuple[GRCV4ReferenceGeometry, ...] = (),
+        differential_reference: CandidateADifferentialReference | None = None,
     ) -> None:
-        before = _os_inputs(initial)
+        before = GeometryStageInputs.from_payload(initial.to_payload())
+        backend = (None if differential_reference is None else
+                   CandidateADifferentialReference.from_payload(differential_reference.to_payload()))
         if before.receipt_ids:
-            raise ValueError("fresh C_OS owner cannot import unauthenticated receipts")
-        # dt=0 performs all reference/current/reset/charge admission, no writer.
-        ProvisionalCandidateCOSStep(replace(before, dt=0))
+            raise ValueError("fresh lifecycle owner cannot import unauthenticated receipts")
+        _readmit_state(replace(before, dt=0), backend)
         if type(targets) is not tuple:
             raise TypeError("targets must be an ordered tuple of complete references")
-        self._registry = _reference_registry((before.geometry.reference, *targets))
+        generic = before.geometry.reference.profile.identity_payload.profile_family_id != "C_OS"
+        if generic and targets:
+            raise V4IdentityError("non-C_OS migration/event targets require P9-7.2 admission")
+        self._registry = _reference_registry((before.geometry.reference, *targets), generic=generic)
+        self._backend = backend
         self._owned = _OwnedCOS(
             _lifecycle_state(before, ()), (), before.geometry.reference
         )
@@ -1336,7 +1455,11 @@ class CandidateCOSOperation:
             },
             "lifecycle_digest": owned.state.lifecycle_digest,
         }
-
+        if owned.reference.profile.identity_payload.profile_family_id != "C_OS":
+            snapshot["implementation_layout_id"] = GENERIC_SNAPSHOT_LAYOUT_ID
+            snapshot["differential_reference"] = (
+                None if self._backend is None else self._backend.to_payload()
+            )
         return snapshot
 
     @classmethod
@@ -1347,9 +1470,17 @@ class CandidateCOSOperation:
         the public common-interface facade or a migration route. No missing
         identity, history, baseline, commit preimage or reference is synthesized.
         """
-        data = cast(dict[str, Any], cos_snapshot_payload(state))
+        data = cast(dict[str, Any], snapshot_payload(state))
         reference = GRCV4ReferenceGeometry.from_payload(data["reference"])
-        registry = _reference_registry(data["reference_registry"])
+        generic = reference.profile.identity_payload.profile_family_id != "C_OS"
+        expected_layout = GENERIC_SNAPSHOT_LAYOUT_ID if generic else COS_SNAPSHOT_LAYOUT_ID
+        if data["implementation_layout_id"] != expected_layout:
+            raise V4IdentityError("snapshot layout does not match its active profile family")
+        backend = (None if data.get("differential_reference") is None else
+                   CandidateADifferentialReference.from_payload(data["differential_reference"]))
+        registry = _reference_registry(data["reference_registry"], generic=generic)
+        if generic and (registry != (reference,) or data["transition_records"]):
+            raise V4IdentityError("non-C_OS crossing archives require P9-7.2 admission")
         if _resolve_reference(registry, *_reference_key(reference)) != reference:
             raise V4IdentityError("current reference contradicts the snapshot registry")
         transitions = data["transition_records"]
@@ -1444,10 +1575,11 @@ class CandidateCOSOperation:
             inputs.time,
         ):
             raise V4IdentityError("restored clock differs from the last local commit")
-        # Fresh profile, reset and current admission at the OS reference geometry.
-        # dt=0 deliberately performs no next-beat predictor/corrector or writer.
-        inputs = _os_inputs(inputs)
-        ProvisionalCandidateCOSStep(inputs)
+        # Fresh profile/reset/current admission. Derived geometry, roots and
+        # sections are reconstructed, never imported as persistent authority.
+        # State admission is not ordinary-step entry admission (RG2b K vs K_minus).
+        inputs = _fresh_geometry(inputs)
+        _readmit_state(inputs, backend)
         target = _lifecycle_state(inputs, ledger)
         publication = _OwnedCOS(
             target,
@@ -1458,6 +1590,7 @@ class CandidateCOSOperation:
         result = cls.__new__(cls)
         result._lock = Lock()
         result._registry = registry
+        result._backend = backend
         result._owned = publication
         return result
 
@@ -1484,7 +1617,7 @@ class CandidateCOSOperation:
         return duplicate
 
     def set_state(self, state: GRCV4LifecycleState) -> None:
-        """Assign compatible C only; the live clock and lifecycle remain fixed."""
+        """Assign compatible current authority; clock and lifecycle remain fixed."""
         if type(state) is not GRCV4LifecycleState:
             raise TypeError("set_state requires a typed complete lifecycle state")
         # Revalidate storage even if the caller supplied an existing frozen DTO.
@@ -1508,8 +1641,8 @@ class CandidateCOSOperation:
             ):
                 if getattr(state, name) != getattr(live.state, name):
                     raise V4IdentityError("set_state cannot replace " + name)
-            inputs = _os_inputs(_state_inputs(self._reference, state))
-            ProvisionalCandidateCOSStep(inputs)
+            inputs = _state_inputs(self._reference, state)
+            _readmit_state(inputs, self._backend)
             ledger = _ledger([r.to_dict() for r in state.receipt_ledger])
             target = _lifecycle_state(inputs, ledger)
             if target != state:
@@ -1535,15 +1668,15 @@ class CandidateCOSOperation:
             )
             ledger = _ledger([r.to_dict() for r in owned.state.receipt_ledger])
             # The frozen reduced baseline has no clock or receipt list. Reset
-            # changes C only and retains live clock; rebase changes reset only.
+            # changes current C/W/Z and retains clock; rebase changes reset only.
             following = (
                 replace(before, current=before.reset)
                 if kind == "reset"
                 else replace(before, reset=before.current)
             )
-            following = _os_inputs(following)
-            admitted = ProvisionalCandidateCOSStep(following)
-            payloads = _ordinary_receipts(before, following, admitted, ledger)
+            following = _fresh_geometry(following)
+            _, charge = _readmit_state(following, self._backend)
+            payloads = _ordinary_receipts(before, following, charge, ledger)
             core = payloads[0]["core"]
             core["parent_receipt_ids"] = (
                 [] if not owned.commits else [owned.commits[-1].emitted_receipt_ids[0]]
@@ -1586,7 +1719,7 @@ class CandidateCOSOperation:
             self._owned = publication
 
     def list_supported_profiles(self) -> frozenset[str]:
-        """Locally registered C_OS targets; not public conformance advertisement."""
+        """Locally admitted declarations; not global conformance advertisement."""
         return frozenset(ref.profile.complete_profile_id for ref in self._registry)
 
     def get_supported_profile(self, complete_profile_id: str) -> GRCV4Profile:
@@ -1602,19 +1735,19 @@ class CandidateCOSOperation:
         owned = self._owned
         state, ref = owned.state, owned.reference
         ledger = _ledger([r.to_dict() for r in state.receipt_ledger])
-        inputs = GeometryStageInputs(
-            ref.geometry(), ref.context, state.current, state.reset.authoritative,
-            "read-only-observation", state.Q_target,
-            tuple(r.receipt_id for r in ledger), state.step_index, state.time,
-            0, "pre_read", 0, None,
-        )
-        current = CandidateCCurrent(inputs)
+        inputs = _state_inputs(ref, state, "read-only-observation")
+        if ref.profile.identity_payload.profile_family_id == "C_OS":
+            current = CandidateCCurrent(inputs)
+        else:
+            current, _ = _readmit_state(inputs, self._backend)
         charge = _resource_charge(
             inputs, VertexScalar(ref.graph, state.current.C), "pre_read_reconstruction"
         )
+        observed_stage = ("read_only_reference" if ref.profile.identity_payload.realization == "OS"
+                          else "read_only_" + ref.profile.identity_payload.realization.lower().replace("+", "_"))
         result = _public_observables(
-            inputs, ledger, charge, current, stage="read_only_reference",
-            current_stage="read_only_reference", solver=None, consumed=False,
+            inputs, ledger, charge, current, stage=observed_stage,
+            current_stage=observed_stage, solver=None, consumed=False,
         )
         # Same serializable, recursively owned domain as successful results.
         return FrozenJSONMap(result).to_dict()
@@ -1636,6 +1769,8 @@ class CandidateCOSOperation:
             return self._crossing(request)
 
     def _crossing(self, request: _CrossingRequest) -> GRCV4LifecycleResult:
+        if self._reference.profile.identity_payload.profile_family_id != "C_OS":
+            raise V4IdentityError("non-C_OS crossings remain outside P9-7.1; require P9-7.2")
         owned = self._owned
         before = _state_inputs(owned.reference, owned.state, request.operation_id)
         ledger = _ledger([r.to_dict() for r in owned.state.receipt_ledger])
@@ -1749,23 +1884,8 @@ class CandidateCOSOperation:
         return result
 
     def _inputs(self, request: GRCV4StepRequestInput) -> GeometryStageInputs:
-        state = self._state
-        ledger = _ledger([r.to_dict() for r in state.receipt_ledger])
-        return GeometryStageInputs(
-            self._reference.geometry(),
-            self._reference.context,
-            state.current,
-            state.reset.authoritative,
-            request.operation_id,
-            state.Q_target,
-            tuple(r.receipt_id for r in ledger),
-            state.step_index,
-            state.time,
-            max(0, request.dt),
-            "pre_read",
-            0,
-            None,
-        )
+        return replace(_state_inputs(self._reference, self._state, request.operation_id),
+                       dt=max(0, request.dt))
 
     def step_v4(self, request: GRCV4StepRequestInput) -> GRCV4StepResult:
         if type(request) is not GRCV4StepRequestInput:
@@ -1810,24 +1930,24 @@ class CandidateCOSOperation:
                 raise ResourceBoundaryError(
                     "admission",
                     "domain_failure",
-                    "C_OS requires constant-zero context and no external input",
+                    "local lifecycle requires constant-zero context and no external input",
                 )
             stage = "pre_read_reconstruction"
             # Rebuild from owned immutable values; caller caches are never inputs.
-            before = _os_inputs(before)
             stage = "candidate_solve"
-            step = ProvisionalCandidateCOSStep(before)
+            step = _profile_step(before, self._backend)
             solver = "valid_root"
             stage = "final_reconstruction"
             following = step.next_inputs
             _check_step_target(before, following)
             # Final-C at consumed h1 does not establish next-reference admission.
             # This is a read-only commit postcondition, never another OS pass.
-            restart = CandidateCCurrent(replace(following, dt=0))
+            selected, restart, selected_stage = _step_currents(step)
         except (
             ResourceBoundaryError,
             OSStageError,
             CandidateCStageError,
+            CandidateAStageError,
             GeometryDomainError,
             NonfiniteGeometryError,
         ) as exc:
@@ -1836,6 +1956,9 @@ class CandidateCOSOperation:
                 solver = (
                     None
                     if stage in ("admission", "pre_read_reconstruction")
+                    else next((disposition for disposition, failure_code in _RESOURCE_SOLVER_FAILURES.items()
+                               if failure_code == code), "valid_root")
+                    if stage == "candidate_solve"
                     else "valid_root"
                 )
             elif isinstance(exc, OSStageError):
@@ -1911,7 +2034,7 @@ class CandidateCOSOperation:
         # observations of a scientific domain failure. Publication is still last.
         stage = "commit"
         commit, emitted = make_commit_receipts(
-            _ordinary_receipts(before, following, step, ledger),
+            _ordinary_receipts(before, following, step.resource.charge, ledger),
             operation_id=request.operation_id,
             source_state_digest=before.scientific_state_id,
             target_state_digest=following.scientific_state_id,
@@ -1920,22 +2043,28 @@ class CandidateCOSOperation:
         )
         target_ledger = ledger + emitted
         target = _lifecycle_state(following, target_ledger)
+        reconstruction_stage = ("commit_reference_readmission"
+                                if self._reference.profile.identity_payload.realization == "OS"
+                                else "commit_reconstruction")
         observations = _public_observables(
             following, target_ledger, step.resource.charge,
-            step.os_pass.corrector if step.os_pass is not None else restart,
+            selected if request.dt > 0 else restart,
             stage="commit", solver="valid_root",
-            current_stage="os_corrector" if step.os_pass is not None else "commit_reference_readmission",
-            consumed=step.os_pass is not None,
+            current_stage=selected_stage if request.dt > 0 else reconstruction_stage,
+            consumed=request.dt > 0,
         )
         observations.update({
             "charge": step.resource.charge.receipt_values(),
             "reference_current": {
-                "stage": "commit_reference_readmission",
+                "stage": reconstruction_stage,
                 "values": list(restart.current.values),
             },
             "continuity_evaluations": step.resource.continuity_evaluations,
         })
-        if step.os_pass is not None:
+        if self._reference.profile.identity_payload.realization != "OS":
+            # A CI root, RG2b section or PC carrier geometry is not h_reference.
+            observations["reconstructed_current"] = observations.pop("reference_current")
+        if getattr(step, "os_pass", None) is not None:
             observations["os"] = {
                 "stage": "os_corrector",
                 "current": list(step.os_pass.corrector.current.values),
@@ -1946,7 +2075,8 @@ class CandidateCOSOperation:
                 "exact_split_residual": [
                     list(row) for row in step.os_pass.residual.exact_values
                 ],
-                "selector_path_segments": step.os_pass.selector_path_segments,
+                **({"selector_path_segments": step.os_pass.selector_path_segments}
+                   if type(step) is ProvisionalCandidateCOSStep else {}),
             }
         result = GRCV4StepResult(
             target.step_index,
@@ -1994,3 +2124,7 @@ class CandidateCOSOperation:
         )
         self._owned = publication
         return result
+
+
+# Historical import spelling; both names resolve to the one publication owner.
+CandidateCOSOperation = GRCV4Operation
