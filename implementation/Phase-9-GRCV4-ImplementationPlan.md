@@ -1199,7 +1199,9 @@ separate; no paper/spec/claim authority is changed by this implementation.
 Scoped verification completed: 25 focused tests (13 positive pairs, nine
 negative/rollback methods, three legacy checks), five read-only evidence
 controls, 35 browser-validator tests and actual API/notebook/browser checks
-passed. User acceptance of this finite scope and positive C→A remain pending.
+passed. The user accepted this finite scope and its audit corrections by the
+commit request recorded at `924fca9`; positive C→A and aggregate closure remain
+pending. Capture-time acceptance flags stay unchanged in historical records.
 
 The subsequent independent audit requires two bounded lifecycle corrections:
 typed semantic exception classification (F1) and consistent commitments for a
@@ -1212,6 +1214,49 @@ separate focused correction capture. No migration law, numerical owner,
 scientific authority, C→A obligation or G2/G3 scope is changed.
 The seventeen-method correction capture passed. Stop at the bounded fixes and
 minimal record consistency; defer aggregate 7.2 closure while C→A remains open.
+
+The user subsequently authorized a concrete
+[C→A initializer-source proposal](./investigations/grc9v4-constitutive-design/decisions/P9CandidateAInitializerReferencePassProposal.md).
+It is a bounded successor definition inside P9-7.2a, not a new tranche or an
+accepted reinterpretation of D10. Select for review one target-only reference
+pass: fixed target differential recipe → auxiliary `G_W(C, 0)` → reference
+potential/baseline flux → unchanged full `G_W(C, J_ref)`. Keep auxiliary W,
+retained W and reference geometry separately typed; specify numerical rounding,
+floor/range failures and identity before implementation. No implicit fixed-point
+solve, supplied-flux provenance shortcut, source history or extra ordinary beat.
+
+The draft registers the open source-rule debt and a proposed optional Candidate
+A construction claim without adding them to accepted authority. Review the
+exact policy first; after acceptance admit the bounded source through the side
+tool, update/review the paper proposal, then propagate to paper and the V4
+specification successor before runtime. Generic and exact GRC9V3 initializer
+bindings remain separate; no older family changes. Preserve P9-5.1/P9-5.4's
+accepted conditional-constructor scope and the existing migration records.
+
+Implementation follow-through must use one graph-generic producer with distinct
+current/reset executions and real target admission for A_OS, A_CI, A_PC,
+A_CI+PC and A_RG2b. Exercise active descriptor/current channels, both gamma
+signs, graph/order controls, source-history independence, floor/rounding/range
+edges, reset-only failures, restoration and F1/F2 publication consistency.
+No all-parameter guarantee or Cartesian source/target campaign is required.
+Use focused changed-path evidence and the existing verifier/API/notebook/browser
+surfaces; review aggregate 7.2a only after the positive seventh class exists.
+Proposal preparation/review is complete; structured authority admission,
+paper/spec propagation, numerical implementation and gate closure remain pending.
+
+The supplied design review passed with refinements now incorporated: retain the
+existing unit-vertex pairing and admitted boundary/normalization scope; forbid
+auxiliary total-current admission even when `CandidateACurrent` is a convenient
+baseline source; keep static policy/profile identity upstream of output-bearing
+construction records; derive reset-only failures from actual reset inputs; and
+keep target PC/CI/RG2b charts fixed. Restore initialized crossing endpoints,
+not a fictitious initializer constraint on ordinarily evolved W. Retain the
+auxiliary-singular/final-reference-regular fixture as an explicit regression;
+one native primitive check confirmed its rounded operands but is not migration
+evidence. The user subsequently accepted the clarified design by requesting its
+commit and continuation on 2026-09-11. Producer choice is now resolved; binding,
+propagation and runtime evidence remain, not another mathematical source-rule
+search. Proceed first with structured authority and side-tool admission.
 
 Exercise missing lineage, invalid reference maps, readmission failure, and
 receipt ownership. `P9-G2[p]` is available only for profiles whose full

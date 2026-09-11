@@ -1882,3 +1882,41 @@ known and repeated scientific-state commitments, archived target clocks and
 prospective publication. Preserve lawful assignment and the historical trust
 ceiling; include a distinct A-backend migration/continuation control. No new
 claim graph, registry, signature service, numerical law or global history archive.
+
+### P9-7.2a C→A initializer-source definition and follow-through
+
+The user accepted the six-class migration/audit scope at `924fca9` and then
+authorized the [target-only reference-pass proposal](../../decisions/P9CandidateAInitializerReferencePassProposal.md).
+The clarified bounded design is now user-accepted, but not yet admitted by the
+tool or executable. Structured source/adapter admission is the next task; no
+runtime support leaf or gate is granted by making the source queryable.
+
+Following design acceptance, append its explicit policy, optional Candidate A claim,
+open-to-design-resolved debt and still-forward runtime obligations through the
+existing source-admission mechanism. Expose actual source/edge/classification/
+digest traces in the API, notebook and browser, retaining D10/D11/P9 predecessor
+identities and support semantics. Admit that authority before auditing its
+propagation to GRCV4-proposal, paper and V4 specifications. The source defines
+one reference pass, not a new solver or unconditional target admission.
+
+When implemented, extend the existing migration verifier and affected UX for
+one shared initializer and positive C→A targets in all five A realization
+families. Construction evidence must exercise nontrivial graphs, all conductance
+channels, both gamma signs, fixed differential references, numerical boundaries
+and source-history independence. Migration evidence binds distinct current/reset,
+directional carrier/W policy, actual target readmission, rollback and replay;
+RG2b state admission is distinct from next-beat eligibility. Reuse unchanged
+historical 25/17-test evidence, preserve the F1/F2 corrections and don't rewrite
+negative-only C→A captures as positive support. Aggregate 7.2a closure, wider G2/G3
+and generic events remain separate from this proposal and source admission.
+
+The design review is PASS with refinements incorporated; the user accepted the
+clarified design through the commit/continuation request on 2026-09-11.
+Structured source admission is next. Bind the unit-vertex/boundary/normalization scope,
+static-policy → profile → invocation-record identity order, auxiliary baseline
+versus full-current admission, fixed target charts and independent reset inputs.
+The auxiliary-singular/final-reference-regular fixture must become a producer
+regression; the local rounded-value check alone is not runtime migration
+evidence. Once accepted, display producer choice as resolved while keeping
+source/payload binding, runtime evidence and aggregate closure pending. Never
+require ordinarily evolved W to equal an initializer rerun during restoration.

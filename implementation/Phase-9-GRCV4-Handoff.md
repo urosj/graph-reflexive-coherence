@@ -1,13 +1,14 @@
 # Phase 9 GRCV4 handoff — P9-7.2a profile migration
 
-Current work, 2026-09-11: `impl/phase-9-grcv4-tranche-7`, accepted predecessor
-`5d8dbe2` (complete P9-7.1 and audit corrections). The user requested 7.2a.
+Current work, 2026-09-11: `impl/phase-9-grcv4-tranche-7`, accepted migration
+baseline `924fca9`, following `5d8dbe2` (complete P9-7.1 and audit corrections).
 See the [migration review](./phase-9-grcv4/tranche-7/P9-7.2a-Review.md) for the
 13 exact source/target fixtures, six implemented classes and focused evidence.
 The focused capture passed 25/25 tests: all 13 positive pairs plus nine
 negative/rollback and three legacy checks. The read-only successor, 35 browser
-controls and actual API/notebook/browser checks passed. This finite scope is
-not yet accepted or committed; aggregate closure remains pending below.
+controls and actual API/notebook/browser checks passed. This finite scope was
+accepted by the user's commit request, including the audit
+corrections below, and committed at `924fca9`. Aggregate closure remains pending.
 
 The subsequent audit held the scoped work for two lifecycle corrections:
 programmer exceptions must not become scientific failure receipts, and known
@@ -15,14 +16,42 @@ or repeated scientific identities must have consistent component commitments.
 Both reproduced natively and are corrected; the focused correction capture
 passed 17/17 methods. See the review's audit section. The original 25-test record
 and exact source subject remain recoverable and are not relabeled as a rerun.
-The user directed a lean stopping point: C→A will be resolved later, so no
-aggregate 7.2 closure campaign or additional support/acceptance step is performed.
+That commit stopped at the bounded corrections as requested; it did not close
+C→A or grant wider support. The user has now authorized the source-rule proposal
+below, not an aggregate 7.2 closure campaign.
 
 **C→A positive migration remains pending:** P9-5.4 does not admit the initializer's
 target reference-current source. Native rejection tests preserve this boundary;
 they do not close the seventh class or aggregate 7.2a. The remaining work needs
 a source-backed initializer resolution for current and reset, not an editorial
 zero seed or supplied-W bypass. Generic topology events remain P9-7.2b.
+
+## Active next step: admit the accepted C→A reference-pass definition
+
+The [initializer proposal](./investigations/grc9v4-constitutive-design/decisions/P9CandidateAInitializerReferencePassProposal.md)
+defines one target-only pass: fresh differentials → auxiliary `G_W(C, 0)` →
+reference baseline flux → full `G_W(C, J_ref)`. It includes fixed reference-data
+separation, rounding/floor/range semantics, new policy identities, independent
+current/reset construction and required admission evidence for all five A
+realizations. The supplied design review is **PASS**, with the unit-vertex/
+boundary/normalization scope clarified and the auxiliary-singularity regression
+retained. Identity ordering, genuine reset-only pressure, fixed target charts
+and restoration of archived versus evolved W are explicit. A single native
+value/current probe confirmed the rounded adversarial fixture; it is not a
+producer or migration execution. The user has now **accepted the clarified
+design by requesting its commit and continuation**. It is new bounded authority,
+not an inherited D10 interpretation or an implemented migration. Claim/debt IDs
+await structured source admission before they become queryable graph nodes.
+
+Next: structured successor authority/tool admission. The producer choice is
+resolved at design scope, without another search for a law. Use the existing
+authority/tool admission → proposal review → paper → V4 specification → runtime
+and focused tests route. No paper/specification, accepted claim source, runtime
+or evidence record was changed for this design decision. No new runtime permission or G2/G3
+is granted. Keep the accepted 25/17-test subjects; the new producer needs its own
+bounded evidence rather than relabeling the earlier C→A refusals as success.
+
+## Existing scoped verification
 
 Current scoped check, repository root:
 

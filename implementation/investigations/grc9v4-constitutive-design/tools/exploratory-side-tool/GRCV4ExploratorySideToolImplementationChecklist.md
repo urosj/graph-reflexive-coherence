@@ -1489,8 +1489,9 @@ P9-3.2 implementation is pending review; runtime support remains empty.
       missing-child rejection and fail-closed exact C_OS support cleanup.
       Five record controls and 35 browser-validator tests passed alongside the
       actual API/browser and status-notebook checks.
-- [ ] User review/acceptance of this finite six-class scope; unresolved C→A
-      remains a positive obligation and generic events remain P9-7.2b.
+- [x] User accepted this finite six-class scope and audit corrections by the
+      commit request at `924fca9`; unresolved C→A remains a positive obligation
+      and generic events remain P9-7.2b. Capture-time flags are not rewritten.
 - [x] Audit follow-up: bind native F1/F2 corrections, lawful historical gaps and
       distinct-backend pressure; retain the original 25-test subject and exact
       reverse source spans, with no numerical campaign rerun for the read-only check.
@@ -1498,3 +1499,26 @@ P9-3.2 implementation is pending review; runtime support remains empty.
       missing correction coverage/outcomes and erased C→A obligations. The
       17-method native capture passed. Limit final checking to record consistency;
       unchanged UX evidence is reused, and aggregate 7.2/C→A closure stays pending.
+
+### P9-7.2a C→A initializer-source definition and follow-through
+
+- [x] Register the [reference-pass proposal](../../decisions/P9CandidateAInitializerReferencePassProposal.md)
+      as draft design with source/choice separation and a bounded open debt;
+      no accepted source JSON, graph node, new runtime permission or gate claim.
+- [x] Incorporate the design-review PASS and executable-domain clarification;
+      register auxiliary-singularity, identity-ordering, true reset-input,
+      fixed-chart and archived-versus-evolved W restoration controls. The local
+      native fixture check is not producer or migration acceptance evidence.
+- [x] User accepted the clarified source rule through the commit/continuation
+      request on 2026-09-11. Producer choice resolves at bounded design scope.
+- [ ] Append its authority and debt/claim routing without rewriting history;
+      source admission, propagation/runtime/aggregate completion stay distinct.
+- [ ] Expose accepted initializer/debt/claim traces through the actual forensic
+      API, notebook and browser, with source/edge witnesses and design/runtime
+      boundaries; then verify ordered proposal/paper/V4-spec propagation.
+- [ ] Extend the existing migration evidence/check path for the admitted common
+      producer and all five A target realizations, with nontrivial active-channel,
+      source-independence, numerical-boundary and current/reset admission tests.
+- [ ] Bind new exact runtime evidence and affected surface agreement, preserving
+      F1/F2 and the old 25/17-test subjects; distinguish positive C→A, aggregate
+      7.2a review and unrelated G2/G3/event support without a new broad campaign.

@@ -1094,7 +1094,9 @@ may reach G2 without waiting for all Tranche 6 realizations.
   consumer, including separate candidate/carrier channel decisions.
   The parent stays pending: C→A lacks an admitted initializer source. The
   [review](./phase-9-grcv4/tranche-7/P9-7.2a-Review.md) binds the finite fixture
-  declarations in `CASES`; child marks below mean executed, not accepted/G2.
+  declarations in `CASES`. The user accepted this finite six-class scope and
+  audit corrections at `924fca9`; child marks do not imply C→A, parent closure
+  or new G2 support. Historical capture-time flags remain unchanged.
 
   - [x] P9-7.2a-A_NH_NH: A_OS → A_CI.
   - [x] P9-7.2a-C_NH_NH: C_OS → C_CI.
@@ -1122,8 +1124,6 @@ may reach G2 without waiting for all Tranche 6 realizations.
     accepted 7.1 sources/records in Git and exact C_OS-only G2 discovery.
     The source-bound capture passed 25/25; five evidence-mutation controls,
     35 browser-validator tests and actual API/notebook/browser checks passed.
-  - [ ] Resolve/admit C→A initializer source, implement and execute its positive
-    current/reset migration, then review aggregate 7.2a closure separately.
   - [x] Audit F1: propagate unexpected mapper/source/target ValueError and
     V4IdentityError unchanged; retain typed declaration/backend/domain failures
     and whole-publication atomicity without message matching.
@@ -1136,6 +1136,41 @@ may reach G2 without waiting for all Tranche 6 realizations.
   - [x] Preserve original evidence and exact source recovery; verify the separate
     correction capture: 17/17 passed. Per user direction, defer aggregate 7.2
     closure; positive C→A remains open for later work.
+  - [x] Prepare the bounded [target-only reference-pass proposal](./investigations/grc9v4-constitutive-design/decisions/P9CandidateAInitializerReferencePassProposal.md)
+    with source/choice separation, fixed target differential data, one bootstrap
+    pass, full conductance channels, numerical/floor/range rules, versioned
+    identity and independent current/reset lifecycle obligations. Draft only;
+    proposed debt/claim identifiers do not create accepted authority.
+  - [x] Incorporate the supplied design-review PASS: clarify unit-vertex pairing
+    and boundary/normalization scope; retain auxiliary-singular/final-regular
+    pressure, acyclic policy/profile/invocation identity, genuine reset-only
+    failures, fixed target charts and archived-versus-evolved W restoration.
+    One native primitive probe confirms the rounded fixture, not migration.
+  - [x] User accepted the clarified initializer definition by requesting its
+    commit and continuation on 2026-09-11. Producer choice is resolved; keep
+    propagation/runtime verification distinct from this design acceptance.
+  - [ ] Admit the bounded successor/debt/claim through the existing side tool;
+    preserve historical classifications and expose real API/notebook/browser
+    traces with design-versus-implementation status.
+  - [ ] Update and review GRCV4-proposal §12.6, then propagate to the paper and
+    V4 specification successor, including the closed policy/numerical/identity
+    payload. No old-family changes or automatic GRC9V3 initializer binding.
+  - [ ] Implement one graph-generic target-current producer and C→A map; use
+    separate current/reset inputs, directional W/Z policies and existing target
+    admission/publication owners. Preserve the old explicit-flux constructor's
+    identity and evidence; new behavior requires the admitted policy/release.
+  - [ ] Execute focused nontrivial active-channel/signed-gamma, graph/covariance,
+    floor/rounding/range and source-history-independence controls; positive C→A
+    through all five A realization paths on declared admitted fixtures.
+    Include the auxiliary-singularity regression at the actual producer, reject
+    output-dependent target chart repair, and check identical current/reset
+    operands give identical values despite different construction-record roles.
+  - [ ] Verify distinct current/reset outputs, reset-only failures, full rollback,
+    F1/F2 consistency, restoration/reset/duplication and admitted continuation;
+    bind new exact evidence in the existing scoped verifier and affected UX.
+  - [ ] Review all seven migration classes for aggregate P9-7.2a closure. Reuse
+    unchanged 25/17-test evidence, but do not count negative C→A pressure as
+    positive completion or grant unrelated G2/G3/event support.
 - [ ] P9-7.2b: Execute caller-mapped generic topology events over current and
   reset state, with their own map/identity/admission failure evidence.
 - [ ] P9-7.3: Verify separate candidate/carrier history channels, explicit

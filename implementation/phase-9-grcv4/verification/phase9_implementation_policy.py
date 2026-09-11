@@ -211,6 +211,8 @@ HANDOFF_PATHS = {
     HERE + "handoff/P9-G1-outputs.zip",
 }
 PATHS = {
+    # Draft-only P9-7.2a source-rule proposal; no accepted authority/runtime grant.
+    INV + "decisions/P9CandidateAInitializerReferencePassProposal.md",
     HERE + "verify_p972a_migrations.py",
     PHASE + "tranche-7/P9-7.2a-Review.md",
     PHASE + "tranche-7/P9-7.2a-Migrations.json",
