@@ -1,4 +1,4 @@
-"""Focused proposal/release separation pressure; no model or numerical campaign."""
+"""Focused proposal/paper/release separation; no model or numerical campaign."""
 
 from copy import deepcopy
 import json
@@ -19,13 +19,17 @@ class ProposalReviewTests(unittest.TestCase):
         return patch.object(Path, "read_bytes",
                             lambda path: content if path == target else original(path))
 
-    def test_accepted_proposal_is_not_a_new_release_or_paper_acceptance(self):
+    def test_accepted_documents_are_not_a_new_release_or_spec_acceptance(self):
         stage = v.proposal_status()
         release = v.verify_release()
         self.assertNotEqual(stage["proposal_sha256"], release["released_proposal_sha256"])
         self.assertEqual(stage["proposal_status"], "accepted")
         self.assertTrue(stage["proposal_revision_accepted"])
-        self.assertFalse(stage["paper_propagated"])
+        self.assertTrue(stage["paper_propagated"])
+        self.assertEqual(stage["paper_status"], "accepted")
+        self.assertTrue(stage["paper_revision_accepted"])
+        self.assertEqual(stage["exact_transferred_sections"], 6)
+        self.assertNotEqual(stage["paper_sha256"], release["released_paper_sha256"])
         self.assertFalse(stage["specification_propagated"])
         self.assertFalse(release["release_regenerated"])
         self.assertFalse(release["runtime_support_changed"])
@@ -44,8 +48,8 @@ class ProposalReviewTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "authority drift"):
                 v.proposal_status()
 
-    def test_paper_specs_source_and_old_generator_are_not_draft_exemptions(self):
-        for name in (v.PAPER, "specs/grc-v4-spec.md", v.SOURCE_MANIFEST,
+    def test_specs_source_and_old_generator_are_not_draft_exemptions(self):
+        for name in ("specs/grc-v4-spec.md", v.SOURCE_MANIFEST,
                      v.p.ABUNDANCE_AUTHORITY, v.p.ABUNDANCE_RELEASE_BUILDER):
             with self.subTest(path=name), self.override(name, (v.p.ROOT / name).read_bytes() + b"\n"):
                 with self.assertRaisesRegex(ValueError, "released source/member changed"):
@@ -73,19 +77,48 @@ class ProposalReviewTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "codec release pins changed"):
                 v.verify_release()
 
-    def test_missing_or_changed_historical_proposal_cannot_use_live_draft(self):
+    def test_missing_or_changed_historical_documents_cannot_use_new_bytes(self):
         original = v.historical_blobs
-        def altered(names, commit):
-            result = original(names, commit)
-            if v.PROPOSAL in result:
-                result[v.PROPOSAL] = (v.p.ROOT / v.PROPOSAL).read_bytes()
-            return result
-        with patch.object(v, "historical_blobs", side_effect=altered):
-            with self.assertRaisesRegex(ValueError, "released source/member changed"):
-                v.verify_release()
+        for target in (v.PROPOSAL, v.PAPER):
+            def altered(names, commit):
+                result = original(names, commit)
+                if target in result:
+                    result[target] = (v.p.ROOT / target).read_bytes()
+                return result
+            with self.subTest(target=target), patch.object(v, "historical_blobs", side_effect=altered):
+                with self.assertRaisesRegex(ValueError, "released source/member changed"):
+                    v.verify_release()
         with patch.object(v, "historical_blobs", side_effect=ValueError("missing historical source")):
             with self.assertRaisesRegex(ValueError, "missing historical source"):
                 v.verify_release()
+
+    def test_paper_drift_and_wrong_proposal_acceptance_subject_reject(self):
+        with self.override(v.PAPER, (v.p.ROOT / v.PAPER).read_bytes() + b"\nC-to-A complete.\n"):
+            with self.assertRaisesRegex(ValueError, "paper candidate drift"):
+                v.proposal_status()
+        original = v.historical_blobs
+        def changed(names, commit):
+            result = original(names, commit)
+            if commit == v.PROPOSAL_COMMIT:
+                result[v.PROPOSAL] += b"\n"
+            return result
+        with patch.object(v, "historical_blobs", side_effect=changed):
+            with self.assertRaisesRegex(ValueError, "accepted proposal subject changed"):
+                v.proposal_status()
+
+    def test_copied_equation_staging_and_claim_ceiling_are_not_hash_only(self):
+        proposal = (v.p.ROOT / v.PROPOSAL).read_text()
+        paper = (v.p.ROOT / v.PAPER).read_text()
+        for before, after in (
+            ("Exactly one pass is selected", "Two passes are selected"),
+            ("\\gamma}{2}J_{\\mathrm{ref},e}^{2}", "\\gamma}{3}J_{\\mathrm{ref},e}^{2}"),
+            ("Specification binding, implementation and positive C→A through all five A",
+             "Verified implementation and positive C→A through all five A"),
+            ("Keep target PC/CI/RG2b charts fixed", "Adjust target PC/CI/RG2b charts to the output"),
+        ):
+            self.assertTrue(before in paper, "missing mutation target: " + before)
+            with self.subTest(before=before), self.assertRaisesRegex(ValueError, "transfer drift"):
+                v.check_transferred_sections(proposal, paper.replace(before, after))
 
 
 if __name__ == "__main__":

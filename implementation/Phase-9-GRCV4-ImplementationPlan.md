@@ -1230,8 +1230,8 @@ construction claim; the user accepted the clarified policy at `49b83ba`.
 Its [structured admission](./phase-9-grcv4/tranche-7/P9-7.2a-InitializerAuthority.md)
 now exposes that optional claim, design-resolved debt and still-forward
 obligations through the side tool. The user accepted the GRCV4-proposal revision
-through the commit-and-continue request; now propagate to paper and the V4
-specification successor before runtime. Generic and exact GRC9V3 initializer
+at `448e420`, then accepted the paper through the commit-and-continue request
+on 2026-09-11. V4 specification binding is next, before runtime. Generic and exact GRC9V3 initializer
 bindings remain separate; no older family changes. Preserve P9-5.1/P9-5.4's
 accepted conditional-constructor scope and the existing migration records.
 
@@ -1244,10 +1244,12 @@ No all-parameter guarantee or Cartesian source/target campaign is required.
 Use focused changed-path evidence and the existing verifier/API/notebook/browser
 surfaces; review aggregate 7.2a only after the positive seventh class exists.
 Design preparation/review and structured authority admission are complete.
-GRCV4-proposal §12.6 and its related crosswalks are accepted by the user;
-paper/spec propagation, numerical implementation and aggregate
-closure remain pending. The review-stage validator retains the released proposal
-at `f36b3ba` and separately binds the new draft. Released specs, other source
+GRCV4-proposal §12.6 and its related crosswalks are accepted by the user.
+The paper now incorporates that content and is user-accepted; specification
+propagation, numerical implementation and aggregate closure remain pending.
+The same review-stage validator retains released proposal/paper bytes at
+`f36b3ba`, checks the accepted proposal at `448e420`, and separately binds the
+paper candidate with six exact transferred sections. Released specs, other source
 members, generators, runtime assets and codec pins remain unchanged; the old
 release builder is reconstructed only on its original source subject. No draft
 revision grants a new executable release or retroactive runtime evidence.

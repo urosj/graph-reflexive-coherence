@@ -1525,7 +1525,11 @@ P9-3.2 implementation is pending review; runtime support remains empty.
       source, asset, codec-pin and historical-substitution drift. Keep current
       API/browser status explicit that prose review, not runtime closure, is next.
 - [x] User accepted the exact proposal revision through the commit-and-continue request.
-- [ ] Verify paper → V4-spec propagation,
+- [x] Verify paper propagation from accepted proposal `448e420`: six exact
+      transferred sections, retained historical proposal/paper release subjects,
+      and independent paper-review status without new runtime/release support.
+- [x] User accepted the exact paper revision through the commit-and-continue request.
+- [ ] Verify V4-spec propagation,
       including the closed static-policy and construction-record payloads.
 - [ ] Extend the existing migration evidence/check path for the admitted common
       producer and all five A target realizations, with nontrivial active-channel,

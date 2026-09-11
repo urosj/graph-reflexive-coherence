@@ -1931,10 +1931,13 @@ migration records, source subjects and 7.1 predecessor without numerical reruns.
 Desktop/mobile controls, notebook reexecution and the real HTTP handler are
 tested directly; historical scenario counts are not reclassified as new evidence.
 
-During proposal review, normal release checking uses `verify_p972a_proposal.py`
-to separate the exact draft from the released proposal at `f36b3ba`. All other
+During document propagation, normal release checking uses the same
+`verify_p972a_proposal.py` to distinguish the accepted proposal at `448e420`,
+the exact paper review candidate and the released proposal/paper at `f36b3ba`. All other
 release members and packaged assets remain current-byte exact; the original
 release builder stays unchanged and is reproducible at its historical subject.
-Five focused mutation checks cover this separation and missing Git history.
-The existing API/notebook/browser status names paper propagation as next, with no new
-support or acceptance. Paper and specification propagation require that review.
+Seven focused methods cover source/release separation, missing Git history,
+paper drift and exact transferred equations, staging and claim ceilings.
+The user accepted the paper through the commit-and-continue request on 2026-09-11.
+The existing API/notebook/browser status names V4 specification binding as next,
+with no new executable support.

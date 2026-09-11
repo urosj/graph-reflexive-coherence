@@ -1161,9 +1161,15 @@ may reach G2 without waiting for all Tranche 6 realizations.
     [review candidate](./phase-9-grcv4/tranche-7/P9-7.2a-ProposalReview.md).
   - [x] User accepted that exact proposal revision through the commit-and-continue
     request on 2026-09-11, authorizing paper propagation next.
-  - [ ] Propagate the accepted revision to paper and then the V4 specification
-    successor, including the closed policy/numerical/identity payload. No
-    old-family changes or automatic GRC9V3 initializer binding.
+  - [x] Propagate the accepted revision to the paper, preserving paper-specific
+    corrections and historical source/evidence identities. Check exact transfer
+    of six sections, numerical/claim boundaries and the separate paper candidate.
+    See the [paper review](./phase-9-grcv4/tranche-7/P9-7.2a-PaperReview.md).
+  - [x] User accepted the paper revision through the commit-and-continue request
+    on 2026-09-11, authorizing specification propagation next.
+  - [ ] Propagate to the V4 specification successor, including closed
+    policy/numerical/identity payloads and release applicability. No old-family
+    changes or automatic GRC9V3 initializer binding.
   - [ ] Implement one graph-generic target-current producer and C→A map; use
     separate current/reset inputs, directional W/Z policies and existing target
     admission/publication owners. Preserve the old explicit-flux constructor's

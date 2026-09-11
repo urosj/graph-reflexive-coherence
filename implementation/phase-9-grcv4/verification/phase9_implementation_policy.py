@@ -222,6 +222,7 @@ PATHS = {
     PROPOSAL_RELEASE_CHECKER,
     HERE + "test_p972a_proposal.py",
     PHASE + "tranche-7/P9-7.2a-ProposalReview.md",
+    PHASE + "tranche-7/P9-7.2a-PaperReview.md",
     PHASE + "tranche-7/P9-7.2a-InitializerAuthority.md",
     HERE + "verify_p972a_migrations.py",
     PHASE + "tranche-7/P9-7.2a-Review.md",
@@ -905,8 +906,8 @@ def accepted_abundance_authority(root):
 
 def current_abundance_release(root):
     accepted_abundance_authority(root)
-    # Keep the released proposal at its Git subject while its successor draft
-    # is reviewed. Do not regenerate the executable release from draft bytes.
+    # Keep released proposal/paper bytes at their Git subject while the paper
+    # successor is reviewed. Do not regenerate the release from newer prose.
     # Use the checker's own CLI/import context. API and notebook callers must
     # not depend on the verifier directory being in their sys.path, or mutate
     # process-global import paths while concurrent read-only queries execute.
