@@ -1264,6 +1264,16 @@
       "iteration_id": "P9-4.9.1a"
     },
     {
+      "path": "src/pygrc/models/grc_v4_assets/grc-v4-a-initializer-release.json",
+      "sha256": "245cf8a25709880c5ea57ca0a617d2c39f6bede26d59e650d753039230c6cd0b",
+      "iteration_id": "P9-7.2a"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_assets/grc-v4-a-initializer-schema.json",
+      "sha256": "c1db8b898efb902a40521d99196458ba0bfb9811d555d8e3e89e31ce0574b08d",
+      "iteration_id": "P9-7.2a"
+    },
+    {
       "path": "src/pygrc/models/grc_v4_assets/grc-v4-contract-schema.json",
       "sha256": "3fd072fc8c2b315f1b5dc32a4e4821a5082b5f3fc9d9a4794c007419a7aa0bea",
       "iteration_id": "P9-2.2"
@@ -1280,8 +1290,8 @@
     },
     {
       "path": "src/pygrc/models/grc_v4_candidate_a.py",
-      "sha256": "5040bf690d3da3366be74de6e17b272b52d21adba054426ffda778a744ca862a",
-      "iteration_id": "P9-6.4b"
+      "sha256": "feed80ab108a354e5b6a0fa3a725130ab5235707f9ce283b8eff71dedbd29bd5",
+      "iteration_id": "P9-7.2a"
     },
     {
       "path": "src/pygrc/models/grc_v4_candidate_c.py",
@@ -1290,12 +1300,12 @@
     },
     {
       "path": "src/pygrc/models/grc_v4_ci.py",
-      "sha256": "395d757adb1cb150558fd7d70d0dc03501525b872f293c49afb25d4853bf9bf9",
-      "iteration_id": "P9-6.3a"
+      "sha256": "948027b168191d428423421d19a4c354fb9a1c18df25dd47b93e6275bcfd7b02",
+      "iteration_id": "P9-7.2a"
     },
     {
       "path": "src/pygrc/models/grc_v4_codec.py",
-      "sha256": "574159e2090b5edc3923f3b9ebe44dd187a08692e67023ea5b80bc9443a98f6c",
+      "sha256": "814b7771f77b2ed02d0139e867a4e6012508bbea592c77950b6a774a1e9fd5e7",
       "iteration_id": "P9-7.2a"
     },
     {
@@ -1304,19 +1314,24 @@
       "iteration_id": "P9-4.5"
     },
     {
+      "path": "src/pygrc/models/grc_v4_initializer.py",
+      "sha256": "a1922092b5dcb11d33eef471ebf2410c9d59f812e55b635299ecd80db29974c4",
+      "iteration_id": "P9-7.2a"
+    },
+    {
       "path": "src/pygrc/models/grc_v4_lifecycle.py",
-      "sha256": "21f1da9f2b2cd82098acdc8c364fad18058a0cc72892253d40762720578f35a4",
+      "sha256": "7204c3eb5774c4294475371bddf64779a5386cd28da700e16b3b88b356ad6edd",
       "iteration_id": "P9-7.2a"
     },
     {
       "path": "src/pygrc/models/grc_v4_migration.py",
-      "sha256": "cbc484219702ee67cfd0de464878aed4dadf8d0c0bab6100283288e052758f11",
+      "sha256": "714f37b346842370eb4d49ec279edc82a82e91d668b066942846e655f0d92dc0",
       "iteration_id": "P9-7.2a"
     },
     {
       "path": "src/pygrc/models/grc_v4_pc.py",
-      "sha256": "6c0465b9225b2a824ca8d1429bde6a72b85508c0c161fb66faa28b184ef0f234",
-      "iteration_id": "P9-6.3a"
+      "sha256": "bedf18a7f89a9266dfbd7833f76792f300892c80d1e0b8f1fa409c7545a55ddf",
+      "iteration_id": "P9-7.2a"
     },
     {
       "path": "src/pygrc/models/grc_v4_profile.py",
@@ -1325,13 +1340,13 @@
     },
     {
       "path": "src/pygrc/models/grc_v4_realizations.py",
-      "sha256": "c869464cc8bc6c78da108e76a60ff11d47e53846f1cd834b0f8518010f90bfdb",
-      "iteration_id": "P9-5.3"
+      "sha256": "f15f4854acb5815244f55ce2054c5893da16be34c377331baaef7dce7d8dcc9f",
+      "iteration_id": "P9-7.2a"
     },
     {
       "path": "src/pygrc/models/grc_v4_rg2b.py",
-      "sha256": "8fb62895e6c89e9a1da3dbffde451318a00d3879cb9e76dcb532c6033cc7bfea",
-      "iteration_id": "P9-6.4c"
+      "sha256": "5bd9b12cd72edcf2e1f82fcea9e4472ba0bfc6cda22712e95cac958a7ae1f347",
+      "iteration_id": "P9-7.2a"
     },
     {
       "path": "src/pygrc/models/grc_v4_rg2b_graph.py",
@@ -1345,8 +1360,8 @@
     },
     {
       "path": "src/pygrc/models/grc_v4_step.py",
-      "sha256": "741e533c004b3ec8da2fc9e5e3f0c9bc404fb1a4f439d69f6e6d0d07643f59a7",
-      "iteration_id": "P9-5.3"
+      "sha256": "f0df51eecdeb1b001240560271eba8e219ef289cdf93d594c24f27c769868da3",
+      "iteration_id": "P9-7.2a"
     },
     {
       "path": "src/pygrc/models/grc_v4_transport.py",
@@ -1404,6 +1419,11 @@
       "iteration_id": "P9-3.4"
     },
     {
+      "path": "tests/models/test_grc_v4_initializer.py",
+      "sha256": "052530f478927ee7ead58d00b269ba8dcb30b0e5745e793a13fd6bb6f715ae0c",
+      "iteration_id": "P9-7.2a"
+    },
+    {
       "path": "tests/models/test_grc_v4_lifecycle.py",
       "sha256": "3af96fc343d33f94dde2066c2092b21d1143a9fbf5fc6d13b68915c5ca7aa788",
       "iteration_id": "P9-4.9.2"
@@ -1459,5 +1479,5 @@
   ],
   "admitted_specialization_support_sets": [],
   "claim_ceiling": "Work entries grant no conformance; the only accepted support is the separate P9-4.8B exact C_OS singleton. Local targets, other profiles and specialization are not promoted.",
-  "record_digest": "bdb397aebd724bd87c545592c14339c484c7d0a8a5b92a69047294456feb14c7"
+  "record_digest": "9a42a4890a5ebdf278b1868c2d53d06c1c0f93e80c7cbb8f643eb5f261ff3da0"
 }

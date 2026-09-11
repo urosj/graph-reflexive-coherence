@@ -29,6 +29,8 @@ from .grc_v4_codec import (
     COS_SNAPSHOT_LAYOUT_ID,
     GENERIC_SNAPSHOT_LAYOUT_ID,
     MIGRATION_SNAPSHOT_LAYOUT_ID,
+    INITIALIZER_SNAPSHOT_LAYOUT_ID,
+    INITIALIZER_RELEASE_ID,
     RECEIPT_PARENT_POLICY_ID,
     RELEASE_ID,
     V4IdentityError,
@@ -575,7 +577,7 @@ def _crossing_declaration(reference: GRCV4ReferenceGeometry) -> None:
     admission proof. Their domain/solver checks still run. Unexpected exceptions
     from those constructors must not be relabeled as scientific negatives.
     """
-    from .grc_v4_candidate_a import A_SITE_POTENTIAL, HISTORY_POLICY
+    from .grc_v4_candidate_a import A_SITE_POTENTIAL, ADMITTED_HISTORY_POLICIES
     from .grc_v4_candidate_c import _fixed_current_policy
 
     profile = reference.profile
@@ -598,12 +600,15 @@ def _crossing_declaration(reference: GRCV4ReferenceGeometry) -> None:
         realization.predictor_policy_id != "reference_geometry_predictor_v1"
         or realization.corrector_policy_id != "one_fresh_geometry_corrector_v1"
         or realization.split_residual_norm_id != "edge_l2_v1"
-        or identity.candidate == "A" and params.lifecycle.history_policy_id != HISTORY_POLICY
+        or identity.candidate == "A" and params.lifecycle.history_policy_id not in ADMITTED_HISTORY_POLICIES
     ):
         raise _CrossingDeclarationError("unsupported crossing OS declaration")
 
 
 def _snapshot_layout(reference: GRCV4ReferenceGeometry, registry: tuple[GRCV4ReferenceGeometry, ...], transitions: object) -> str:
+    from .grc_v4_initializer import HISTORY_POLICY
+    if any(ref.profile.params_resolved.lifecycle.history_policy_id == HISTORY_POLICY for ref in registry):
+        return INITIALIZER_SNAPSHOT_LAYOUT_ID
     if any(ref.profile.identity_payload.profile_family_id != "C_OS" for ref in registry) and (len(registry) > 1 or transitions):
         return MIGRATION_SNAPSHOT_LAYOUT_ID
     return (COS_SNAPSHOT_LAYOUT_ID if reference.profile.identity_payload.profile_family_id == "C_OS"
@@ -782,8 +787,15 @@ def _map_crossing(
     before: GeometryStageInputs,
     request: _CrossingRequest,
     target: GRCV4ReferenceGeometry,
+    initializer_pair: dict | None = None,
 ) -> GeometryStageInputs:
     source = before.geometry.reference
+    if initializer_pair is not None and not (
+        type(request) is GRCV4MigrationRequest
+        and source.profile.identity_payload.candidate == "C"
+        and target.profile.identity_payload.candidate == "A"
+    ):
+        raise _CrossingFailure("admission", "invalid_migration", "extraneous initializer pair")
     if request.source_state_digest != before.scientific_state_id:
         raise _CrossingFailure(
             "admission",
@@ -818,9 +830,10 @@ def _map_crossing(
         if legacy:
             following = replace(before, geometry=target.geometry(), context=target.context)
         else:
-            from .grc_v4_migration import map_migration, MigrationAdmissionError
+            from .grc_v4_migration import map_migration, _map_migration, MigrationAdmissionError
             try:
-                following = map_migration(before, target, request.history_policy)
+                following = (map_migration(before, target, request.history_policy) if initializer_pair is None
+                             else _map_migration(before, target, request.history_policy, initializer_pair))
             except MigrationAdmissionError as exc:
                 raise _CrossingFailure("admission", "invalid_migration", str(exc)) from exc
     else:
@@ -893,18 +906,20 @@ def _prepare_crossing(
     request: _CrossingRequest,
     target: GRCV4ReferenceGeometry,
     backends: tuple[CandidateADifferentialReference, ...] = (),
+    initializer_pair: dict | None = None,
 ) -> GeometryStageInputs:
     from .grc_v4_pc import PCStageError
 
     try:
-        following = _map_crossing(before, request, target)
+        following = _map_crossing(before, request, target, initializer_pair)
     except _CrossingFailure:
         raise
     except (GeometryDomainError, NonfiniteGeometryError, PCStageError) as exc:
         # Target geometry reconstruction can fail before numerical readmission,
         # including removal of the immediate CI path from a persistent state.
         raise _CrossingFailure("target_construction", "domain_failure", str(exc)) from exc
-    _readmit_crossing(before, "pre_read_reconstruction", backends)
+    if initializer_pair is None:
+        _readmit_crossing(before, "pre_read_reconstruction", backends)
     # Provisional admission checks current AND reset at the target reference.
     _readmit_crossing(following, "target_readmission", backends)
     return following
@@ -915,6 +930,7 @@ def _crossing_receipts(
     after: GeometryStageInputs,
     request: _CrossingRequest,
     ledger: tuple[SuccessfulReceiptEnvelope, ...],
+    initializer_pair: dict | None = None,
 ) -> list[dict[str, Any]]:
     source, target = before.geometry.reference, after.geometry.reference
     old_charge = ChargeEvaluation(
@@ -987,6 +1003,9 @@ def _crossing_receipts(
         "core": core,
         "history": history,
     }
+    if initializer_pair is not None:
+        primary.update(schema_version="grcv4-profile-migration-receipt-v2",
+                       initializer_pair_id=initializer_pair["initializer_pair_id"])
     if type(request) is GRCV4MappedTopologyEventRequest:
         primary["schema_version"] = "grcv4-topology-event-receipt-v1"
         primary["event_id"] = payload_identity(
@@ -1025,6 +1044,7 @@ class _Crossing:
     request: _CrossingRequest
     before: GeometryStageInputs
     after: GeometryStageInputs
+    initializer_pair: dict | None = None
 
 
 def _archive_inputs(
@@ -1087,12 +1107,19 @@ def _restore_crossings(
         after = _archive_inputs(
             registry, row["target"], row["target_reset"], request.operation_id
         )
+        pair = row.get("initializer_pair")
+        if pair is not None and readmit:
+            from .grc_v4_initializer import CandidateAReferencePassPair
+            _readmit_crossing(before, "pre_read_reconstruction", backends)
+            rebuilt = CandidateAReferencePassPair.from_record(pair).to_record()
+            if canonical_json_bytes(pair) != canonical_json_bytes(rebuilt):
+                raise V4IdentityError("archived initializer pair does not recompute")
         # Live archives have already passed whole-tuple admission before their
         # immutable publication. Imported archives must reconstruct that proof.
         expected = (
-            _prepare_crossing(before, request, after.geometry.reference, backends)
+            _prepare_crossing(before, request, after.geometry.reference, backends, pair)
             if readmit
-            else _map_crossing(before, request, after.geometry.reference)
+            else _map_crossing(before, request, after.geometry.reference, pair)
         )
         if expected.scientific_state_id != after.scientific_state_id:
             raise V4IdentityError(
@@ -1100,7 +1127,7 @@ def _restore_crossings(
             )
         if not isinstance(row["commit_id"], str) or row["commit_id"] in result:
             raise V4IdentityError("duplicate or missing crossing commit identity")
-        result[row["commit_id"]] = _Crossing(request, before, after)
+        result[row["commit_id"]] = _Crossing(request, before, after, pair)
     return result
 
 
@@ -1170,6 +1197,7 @@ def _restore_commits(
             "grcv4-reset-receipt-v1",
             "grcv4-rebase-receipt-v1",
             "grcv4-profile-migration-receipt-v1",
+            "grcv4-profile-migration-receipt-v2",
             "grcv4-topology-event-receipt-v1",
         }:
             raise V4SchemaError("unsupported lifecycle operation in V4 snapshot")
@@ -1178,6 +1206,7 @@ def _restore_commits(
         crossing = crossings.get(commit_id)
         if kind in {
             "grcv4-profile-migration-receipt-v1",
+            "grcv4-profile-migration-receipt-v2",
             "grcv4-topology-event-receipt-v1",
         }:
             if crossing is None:
@@ -1192,7 +1221,7 @@ def _restore_commits(
                     "crossing source breaks ordered profile/charge lineage"
                 )
             expected = _crossing_receipts(
-                crossing.before, crossing.after, crossing.request, ledger[:position]
+                crossing.before, crossing.after, crossing.request, ledger[:position], crossing.initializer_pair
             )
             if canonical_json_bytes(expected) != canonical_json_bytes(
                 [r.identity_payload.to_dict() for r in group]
@@ -1622,8 +1651,12 @@ class GRCV4Operation:
         }
         layout = _snapshot_layout(owned.reference, self._registry, owned.transitions)
         snapshot["implementation_layout_id"] = layout
-        if layout == MIGRATION_SNAPSHOT_LAYOUT_ID:
+        if layout in (MIGRATION_SNAPSHOT_LAYOUT_ID, INITIALIZER_SNAPSHOT_LAYOUT_ID):
             snapshot["differential_reference_registry"] = [b.to_payload() for b in self._backends]
+            if layout == INITIALIZER_SNAPSHOT_LAYOUT_ID:
+                snapshot["specification_release_id"] = INITIALIZER_RELEASE_ID
+                snapshot["transition_records"] = [dict(row, initializer_pair=row.get("initializer_pair"))
+                                                  for row in snapshot["transition_records"]]
         elif layout == GENERIC_SNAPSHOT_LAYOUT_ID:
             backend = _backend_for(owned.reference, self._backends)
             snapshot["differential_reference"] = (
@@ -1645,7 +1678,7 @@ class GRCV4Operation:
         expected_layout = _snapshot_layout(reference, registry, data["transition_records"])
         if data["implementation_layout_id"] != expected_layout:
             raise V4IdentityError("snapshot layout does not match its active profile family")
-        values = (data["differential_reference_registry"] if expected_layout == MIGRATION_SNAPSHOT_LAYOUT_ID else
+        values = (data["differential_reference_registry"] if expected_layout in (MIGRATION_SNAPSHOT_LAYOUT_ID, INITIALIZER_SNAPSHOT_LAYOUT_ID) else
                   [] if data.get("differential_reference") is None else [data["differential_reference"]])
         backends = _backend_registry(values, registry)
         backend = _backend_for(reference, backends)
@@ -1951,7 +1984,26 @@ class GRCV4Operation:
             )
             if type(request) is GRCV4MappedTopologyEventRequest and target_ref.profile.identity_payload.profile_family_id != "C_OS":
                 raise _CrossingFailure("admission", "unsupported_profile", "non-C_OS events require P9-7.2b")
-            following = _prepare_crossing(before, request, target_ref, self._backends)
+            pair = None
+            if (type(request) is GRCV4MigrationRequest
+                    and owned.reference.profile.identity_payload.candidate == "C"
+                    and target_ref.profile.identity_payload.candidate == "A"):
+                from .grc_v4_initializer import CandidateAReferencePassPair, InitializerStageError
+                from .grc_v4_migration import migration_history_policy, MigrationAdmissionError
+                _readmit_crossing(before, "pre_read_reconstruction", self._backends)
+                try:
+                    if request.history_policy != migration_history_policy(before, target_ref):
+                        raise MigrationAdmissionError("initializer migration history policy mismatch")
+                    _crossing_declaration(target_ref)
+                    backend = _backend_for(target_ref, self._backends)
+                except (MigrationAdmissionError, _CrossingDeclarationError) as exc:
+                    raise _CrossingFailure("admission", "invalid_migration", str(exc)) from exc
+                try:
+                    pair = CandidateAReferencePassPair.construct(
+                        target_ref, backend, before.current.C, before.reset.C).to_record()
+                except InitializerStageError as exc:
+                    raise _CrossingFailure("target_construction", "domain_failure", str(exc)) from exc
+            following = _prepare_crossing(before, request, target_ref, self._backends, pair)
         except _CrossingFailure as exc:
             identity_payload = FailureReceiptIdentityPayload(
                 "grcv4-failure-receipt-v1",
@@ -1982,11 +2034,11 @@ class GRCV4Operation:
             return GRCV4LifecycleResult("rejected", False, None, failure, (receipt,))
         # Everything below is internal content/result preparation. Unexpected
         # errors propagate with the old whole publication intact.
-        if following != _map_crossing(before, request, target_ref):
+        if following != _map_crossing(before, request, target_ref, pair):
             raise V4IdentityError(
                 "crossing target contradicts its declared lifecycle map"
             )
-        payloads = _crossing_receipts(before, following, request, ledger)
+        payloads = _crossing_receipts(before, following, request, ledger, pair)
         commit, emitted = make_commit_receipts(
             payloads,
             operation_id=request.operation_id,
@@ -2002,8 +2054,7 @@ class GRCV4Operation:
         request_payload = request.to_payload()
         if type(request) is GRCV4MappedTopologyEventRequest:
             request_payload["metadata"] = {}
-        archive = FrozenJSONMap(
-            {
+        archive_payload = {
                 "commit_id": emitted[0].commit_id,
                 "request": request_payload,
                 "source": before.scientific_state_preimage,
@@ -2011,7 +2062,9 @@ class GRCV4Operation:
                 "target": following.scientific_state_preimage,
                 "target_reset": following.reset_preimage,
             }
-        )
+        if pair is not None:
+            archive_payload["initializer_pair"] = pair
+        archive = FrozenJSONMap(archive_payload)
         _validate_publication(
             before,
             following,
@@ -2021,7 +2074,7 @@ class GRCV4Operation:
             emitted,
             self._registry,
             owned.transitions + (archive,),
-            "grcv4-profile-migration-receipt-v1"
+            ("grcv4-profile-migration-receipt-v2" if pair is not None else "grcv4-profile-migration-receipt-v1")
             if type(request) is GRCV4MigrationRequest
             else "grcv4-topology-event-receipt-v1",
         )

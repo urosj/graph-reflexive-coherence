@@ -203,6 +203,7 @@ _SUCCESS_SCHEMAS = {
 _SUCCESS_SCHEMAS["grc9v4-legacy-compatibility-receipt-v1"] = (
     "legacy_compatibility_receipt_identity_payload"
 )
+_SUCCESS_SCHEMAS["grcv4-profile-migration-receipt-v2"] = "initializer_migration_receipt"
 
 
 @dataclass(frozen=True, slots=True, eq=False)

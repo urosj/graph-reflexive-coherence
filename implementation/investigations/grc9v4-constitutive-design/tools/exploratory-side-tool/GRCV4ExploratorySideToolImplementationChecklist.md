@@ -1534,11 +1534,17 @@ P9-3.2 implementation is pending review; runtime support remains empty.
       explicit snapshot layout and release applicability. Keep historical
       released documents separate from the exact six-file candidate; no producer run.
 - [x] User accepted the spec through the commit-and-implement request.
-- [ ] Bind its own successor release and codec applicability before producer
+- [x] Bind its own successor release and codec applicability before producer
       execution. Keep current public support unchanged.
-- [ ] Extend the existing migration evidence/check path for the admitted common
+- [x] Extend the existing migration evidence/check path for the admitted common
       producer and all five A target realizations, with nontrivial active-channel,
       source-independence, numerical-boundary and current/reset admission tests.
-- [ ] Bind new exact runtime evidence and affected surface agreement, preserving
+- [x] Bind new exact runtime evidence and affected surface agreement, preserving
       F1/F2 and the old 25/17-test subjects; distinguish positive C→A, aggregate
       7.2a review and unrelated G2/G3/event support without a new broad campaign.
+      The retained 25/25 numerical/compatibility capture and four read-only
+      evidence/actual notebook/HTTP/browser-validator methods pass. Runtime
+      evidence is separate from the immutable design-stage forensic projection.
+- [x] User accepted the initializer runtime implementation on 2026-09-11;
+      its runtime review supplies the subsequent decision while the original
+      execution-time flags remain unchanged. Final aggregate review follows.

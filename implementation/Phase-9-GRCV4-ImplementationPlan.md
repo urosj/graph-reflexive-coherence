@@ -1190,7 +1190,8 @@ The seventh class, **C→A**, has no admitted target reference-current initializ
 source in the accepted [P9-5.4 review](./phase-9-grcv4/tranche-5/P9-5.4-Review.md).
 Record real-consumer rejection pressure as `P9-7.2a-C_TO_A_UNRESOLVED`, not as
 positive completion. Do not choose a flux source, supplied W or zero seed
-editorially. Positive C→A and aggregate 7.2a closure remain pending a source-backed
+editorially. At that six-class execution subject, positive C→A and aggregate
+7.2a closure remained pending a source-backed
 resolution for both current and reset; acceptance of six classes cannot waive it.
 The scoped successor checks the new run and Git-preserved 7.1 evidence without
 replaying historical numerical campaigns. Generic events, wider G2 and G3 remain
@@ -1248,15 +1249,28 @@ Design preparation/review and structured authority admission are complete.
 GRCV4-proposal §12.6 and its related crosswalks are accepted by the user.
 The paper now incorporates that content and is user-accepted. The
 [specification supplement](../specs/grc-v4-a-initializer-spec.md), closed schema
-and wire examples are user-accepted. Successor-release packaging and numerical
-implementation are authorized; aggregate acceptance remains separate.
+and wire examples are user-accepted at `f7962e4`. The additive successor package,
+shared producer and five-target C→A integration are now implemented; see the
+[runtime review](./phase-9-grcv4/tranche-7/P9-7.2a-InitializerRuntimeReview.md).
+Its own focused record binds the new execution. Aggregate acceptance remains separate.
+The user accepted this runtime implementation through the accept-and-commit
+request on 2026-09-11, authorizing the final aggregate review next. Its runtime
+review records acceptance separately from the immutable capture-time flags.
 The same review-stage validator retains released proposal/paper bytes at
 `f36b3ba`, checks the accepted proposal at `448e420` and paper at `7d45218`,
 and separately binds the exact six-file spec candidate. Released generic and
 interface specs/registry retain their historical bytes; the base schema, other source
-members, generators, runtime assets and codec pins remain unchanged; the old
+members, old generators, predecessor runtime assets and old codec pins remain unchanged; the old
 release builder is reconstructed only on its original source subject. No draft
 revision grants a new executable release or retroactive runtime evidence.
+
+The existing migration `--check` now also validates the additive initializer
+package and source-bound runtime record, without executing numerical tests.
+Only explicit initializer runtime paths evolve past the historical migration
+subject; the new record binds their exact current bytes. API/notebook/browser
+status presents this execution separately from the unchanged design-stage
+forensic projection. Next is review of the positive seventh class and aggregate
+7.2a, not an automatic wider support grant or the event implementation.
 
 The supplied design review passed with refinements now incorporated: retain the
 existing unit-vertex pairing and admitted boundary/normalization scope; forbid

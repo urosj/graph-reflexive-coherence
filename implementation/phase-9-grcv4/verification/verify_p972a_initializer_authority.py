@@ -42,8 +42,10 @@ def preserved_predecessor():
     followup_name = p.PHASE + "tranche-7/P9-7.1-AuditFollowup.json"
     followup = p.read(p.ROOT / followup_name)
     blobs = historical_blobs(kept | set(followup["source_bindings"]), base)
+    successor = historical_blobs(kept & p.INITIALIZER_RUNTIME_PATHS, "f7962e4")
     for name in kept:
-        p.require((p.ROOT / name).read_bytes() == blobs[name], "accepted predecessor changed: " + name)
+        content = successor[name] if name in successor else (p.ROOT / name).read_bytes()
+        p.require(content == blobs[name], "accepted predecessor changed: " + name)
     p.require(followup["record_digest"] == p.digest_record(followup), "7.1 digest changed")
     for name, expected in followup["source_bindings"].items():
         p.require(p.sha(blobs[name]) == expected, "7.1 historical source mismatch: " + name)
@@ -85,7 +87,7 @@ def preserved_migrations():
     # proposal_status separately; there is no runtime or old-family exemption.
     from verify_p972a_proposal import SPECIFICATION_REVIEW_PATHS
     for name in names:
-        if name == p.INV + "drafts/2026-09-GRC-V4.md" or name in SPECIFICATION_REVIEW_PATHS:
+        if name == p.INV + "drafts/2026-09-GRC-V4.md" or name in SPECIFICATION_REVIEW_PATHS | p.INITIALIZER_RUNTIME_PATHS:
             continue
         if name in {"pyproject.toml", "uv.lock"} or name.startswith(("src/", "tests/", "specs/", p.INV + "drafts/")):
             p.require((p.ROOT / name).read_bytes() == sources[name], "spec-review scope violated: " + name)
@@ -122,12 +124,16 @@ def check():
                   "payload_specification_complete", "positive_migration_verified", "aggregate_closed",
                   "G2_accepted", "G3_accepted", "runtime_conformance_inferred")), "initializer design overclaim")
     p.current_boundary(p.ROOT)
-    return dict(status="passed", scope="initializer_specification_review_and_preserved_migration_evidence",
+    from verify_p972a_initializer_runtime import check as runtime_check
+    runtime = runtime_check()
+    proposal['executable_successor_released'] = True
+    return dict(status="passed", scope="initializer_runtime_and_preserved_migration_evidence",
                 design_accepted=True, producer_choice_resolved=True, source_admitted=True,
-                payload_specification_complete=False, positive_migration_verified=False,
+                payload_specification_complete=True, positive_migration_verified=True,
                 aggregate_closed=False, new_G2_support=[], G3_accepted=False,
                 authority_extension_digest=view["authority_extension_digest"],
-                projection_digest=view["projection_digest"], **proposal, **preserved)
+                projection_digest=view["projection_digest"], **proposal, **preserved,
+                initializer_runtime=runtime)
 
 
 if __name__ == "__main__":

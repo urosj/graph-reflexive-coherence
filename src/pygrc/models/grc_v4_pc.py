@@ -19,7 +19,7 @@ from .grc_v4_candidate_a import (
     CandidateADifferentialReference,
     CandidateAStageError,
     CandidateAWriter,
-    HISTORY_POLICY,
+    ADMITTED_HISTORY_POLICIES,
 )
 from .grc_v4_candidate_c import (
     CandidateCCurrent,
@@ -620,7 +620,7 @@ class ProvisionalCandidatePCStep:
         if (
             ref.profile.identity_payload.candidate == "A"
             and ref.profile.params_resolved.lifecycle.history_policy_id
-            != HISTORY_POLICY
+            not in ADMITTED_HISTORY_POLICIES
         ):
             raise ValueError("unimplemented A retained-history writer policy")
         _resource_charge(before, VertexScalar(ref.graph, before.current.C), "admission")

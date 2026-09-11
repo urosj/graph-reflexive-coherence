@@ -1,0 +1,724 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/urosj/graph-reflexive-coherence/specs/grc-v4-a-initializer-schema.json",
+  "title": "GRCV4 optional target-reference-pass payload supplement",
+  "schema_version": "grcv4-a-initializer-contract-schema-v1",
+  "authority": "specification_candidate_not_runtime_admission",
+  "canonicalization": "RFC8785_JCS_over_I_JSON",
+  "$ref": "#/$defs/pair_record",
+  "$defs": {
+    "static_policy": {
+      "const": {
+        "schema_version": "grcv4-a-reference-pass-policy-v1",
+        "policy_id": "grcv4-a-target-reference-pass-v1",
+        "numerical_id": "grcv4-a-reference-pass-binary64-v1",
+        "history_policy_id": "candidate_a_target_reference_pass_initialization_log_history_v1",
+        "differential_recipe_id": "grcv3_host_frame_reference_weighted_gradient_v1",
+        "differential_rounding_id": "exact_binary64_input_normal_equations_then_binary64_gradient_v1",
+        "site_potential_id": "quadratic_site_potential_zero_derivative_v1",
+        "passes": 1
+      }
+    },
+    "vector": {
+      "type": "array",
+      "items": {
+        "$ref": "grc-v4-contract-schema.json#/$defs/finite_number"
+      }
+    },
+    "matrix": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/vector"
+      }
+    },
+    "positive_vector": {
+      "type": "array",
+      "items": {
+        "$ref": "grc-v4-contract-schema.json#/$defs/positive_number"
+      }
+    },
+    "resource_vector": {
+      "type": "array",
+      "items": {
+        "$ref": "grc-v4-contract-schema.json#/$defs/nonnegative_number"
+      }
+    },
+    "profile": {
+      "type": "object",
+      "required": [
+        "identity_payload",
+        "params_resolved",
+        "complete_profile_id"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "identity_payload": {
+          "allOf": [
+            {
+              "$ref": "grc-v4-contract-schema.json#/$defs/profile_identity_payload"
+            },
+            {
+              "properties": {
+                "candidate": {
+                  "const": "A"
+                }
+              }
+            }
+          ]
+        },
+        "params_resolved": {
+          "allOf": [
+            {
+              "$ref": "grc-v4-contract-schema.json#/$defs/resolved_params"
+            },
+            {
+              "properties": {
+                "candidate": {
+                  "allOf": [
+                    {
+                      "$ref": "grc-v4-contract-schema.json#/$defs/candidate_a_params"
+                    },
+                    {
+                      "properties": {
+                        "site_potential_id": {
+                          "const": "quadratic_site_potential_zero_derivative_v1"
+                        }
+                      }
+                    }
+                  ]
+                },
+                "lifecycle": {
+                  "properties": {
+                    "history_policy_id": {
+                      "const": "candidate_a_target_reference_pass_initialization_log_history_v1"
+                    }
+                  }
+                },
+                "common": {
+                  "properties": {
+                    "measure_profile_id": {
+                      "const": "unit_vertex_measure_v1"
+                    },
+                    "boundary_policy_id": {
+                      "const": "closed_no_flux_v1"
+                    },
+                    "normalization_id": {
+                      "const": "unnormalized_vertex_stiffness_v1"
+                    },
+                    "units_id": {
+                      "const": "grcv4_nondimensional_reference_v1"
+                    },
+                    "context_contract_id": {
+                      "const": "constant_zero_context_v1"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "complete_profile_id": {
+          "$ref": "grc-v4-contract-schema.json#/$defs/grcv4_profile_id"
+        }
+      }
+    },
+    "context": {
+      "type": "object",
+      "required": [
+        "contract_id",
+        "value"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "contract_id": {
+          "const": "constant_zero_context_v1"
+        },
+        "value": {
+          "const": {}
+        }
+      }
+    },
+    "target_reference": {
+      "type": "object",
+      "required": [
+        "descriptor_version",
+        "structural_coordinates_id",
+        "graph",
+        "profile",
+        "context",
+        "K4_base",
+        "reference_hodge"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "descriptor_version": {
+          "const": "grcv4-reference-geometry-v1"
+        },
+        "structural_coordinates_id": {
+          "const": "grcv4-vertex-star-dense-row-major-v1"
+        },
+        "graph": {
+          "$ref": "grc-v4-contract-schema.json#/$defs/serialized_graph_payload"
+        },
+        "profile": {
+          "$ref": "#/$defs/profile"
+        },
+        "context": {
+          "$ref": "#/$defs/context"
+        },
+        "K4_base": {
+          "$ref": "#/$defs/matrix"
+        },
+        "reference_hodge": {
+          "$ref": "grc-v4-contract-schema.json#/$defs/reference_hodge_identity_payload"
+        }
+      }
+    },
+    "differential_reference": {
+      "type": "object",
+      "required": [
+        "backend",
+        "graph",
+        "dimension",
+        "positions",
+        "reference_weights",
+        "regularization",
+        "rounding"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "backend": {
+          "const": "grcv3_host_frame_reference_weighted_gradient_v1"
+        },
+        "graph": {
+          "$ref": "grc-v4-contract-schema.json#/$defs/serialized_graph_payload"
+        },
+        "dimension": {
+          "$ref": "grc-v4-contract-schema.json#/$defs/positive_integer"
+        },
+        "positions": {
+          "$ref": "#/$defs/matrix"
+        },
+        "reference_weights": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "minLength": 1
+          },
+          "additionalProperties": {
+            "$ref": "grc-v4-contract-schema.json#/$defs/positive_number"
+          }
+        },
+        "regularization": {
+          "$ref": "grc-v4-contract-schema.json#/$defs/positive_number"
+        },
+        "rounding": {
+          "const": "exact_binary64_input_normal_equations_then_binary64_gradient_v1"
+        }
+      }
+    },
+    "derived": {
+      "type": "object",
+      "required": [
+        "W_base",
+        "Phi_base",
+        "J_ref"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "W_base": {
+          "$ref": "#/$defs/positive_vector"
+        },
+        "Phi_base": {
+          "$ref": "#/$defs/vector"
+        },
+        "J_ref": {
+          "$ref": "#/$defs/vector"
+        }
+      }
+    },
+    "construction_payload": {
+      "type": "object",
+      "required": [
+        "schema_version",
+        "role",
+        "policy",
+        "target_reference",
+        "differential_reference",
+        "target_C",
+        "W_A_init",
+        "derived"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "grcv4-a-reference-pass-construction-v1"
+        },
+        "role": {
+          "enum": [
+            "current",
+            "reset"
+          ]
+        },
+        "policy": {
+          "$ref": "#/$defs/static_policy"
+        },
+        "target_reference": {
+          "$ref": "#/$defs/target_reference"
+        },
+        "differential_reference": {
+          "$ref": "#/$defs/differential_reference"
+        },
+        "target_C": {
+          "$ref": "#/$defs/resource_vector"
+        },
+        "W_A_init": {
+          "$ref": "#/$defs/positive_vector"
+        },
+        "derived": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/$defs/derived"
+            }
+          ]
+        }
+      }
+    },
+    "construction_record": {
+      "type": "object",
+      "required": [
+        "construction_id",
+        "payload"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "construction_id": {
+          "type": "string",
+          "pattern": "^grcv4-a-reference-pass-construction-sha256:[0-9a-f]{64}$"
+        },
+        "payload": {
+          "$ref": "#/$defs/construction_payload"
+        }
+      }
+    },
+    "pair_payload": {
+      "type": "object",
+      "required": [
+        "schema_version",
+        "current",
+        "reset"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "grcv4-a-reference-pass-pair-v1"
+        },
+        "current": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/construction_record"
+            },
+            {
+              "properties": {
+                "payload": {
+                  "properties": {
+                    "role": {
+                      "const": "current"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "reset": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/construction_record"
+            },
+            {
+              "properties": {
+                "payload": {
+                  "properties": {
+                    "role": {
+                      "const": "reset"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "pair_record": {
+      "type": "object",
+      "required": [
+        "initializer_pair_id",
+        "payload"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "initializer_pair_id": {
+          "type": "string",
+          "pattern": "^grcv4-a-reference-pass-pair-sha256:[0-9a-f]{64}$"
+        },
+        "payload": {
+          "$ref": "#/$defs/pair_payload"
+        }
+      }
+    },
+    "candidate_history_policy": {
+      "allOf": [
+        {
+          "$ref": "grc-v4-contract-schema.json#/$defs/history_channel_policy"
+        },
+        {
+          "properties": {
+            "subject": {
+              "const": "candidate"
+            },
+            "policy_id": {
+              "const": "candidate_a_target_reference_pass_initialization_log_history_v1"
+            },
+            "disposition": {
+              "const": "target_initializer"
+            },
+            "source_history_digest": {
+              "type": "null"
+            },
+            "target_initializer_id": {
+              "const": "grcv4-a-target-reference-pass-v1"
+            },
+            "information_loss": {
+              "const": "none"
+            }
+          }
+        }
+      ]
+    },
+    "migration_receipt_payload": {
+      "type": "object",
+      "required": [
+        "schema_version",
+        "core",
+        "history",
+        "initializer_pair_id"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "grcv4-profile-migration-receipt-v2"
+        },
+        "core": {
+          "allOf": [
+            {
+              "$ref": "grc-v4-contract-schema.json#/$defs/receipt_core"
+            },
+            {
+              "properties": {
+                "source_model_identity": {
+                  "$ref": "grc-v4-contract-schema.json#/$defs/grcv4_profile_id"
+                },
+                "target_model_identity": {
+                  "$ref": "grc-v4-contract-schema.json#/$defs/grcv4_profile_id"
+                },
+                "actual_charge_delta": {
+                  "const": 0
+                },
+                "information_losses": {
+                  "enum": [
+                    [],
+                    [
+                      "carrier_history_loss"
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "history": {
+          "allOf": [
+            {
+              "$ref": "grc-v4-contract-schema.json#/$defs/history_bundle_receipt"
+            },
+            {
+              "properties": {
+                "candidate": {
+                  "properties": {
+                    "disposition": {
+                      "const": "target_initializer"
+                    },
+                    "source_history_digest": {
+                      "type": "null"
+                    },
+                    "information_loss": {
+                      "const": "none"
+                    },
+                    "target_history_digest": {
+                      "$ref": "grc-v4-contract-schema.json#/$defs/history_content_id"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "initializer_pair_id": {
+          "type": "string",
+          "pattern": "^grcv4-a-reference-pass-pair-sha256:[0-9a-f]{64}$"
+        }
+      }
+    },
+    "archived_profile": {
+      "type": "object",
+      "required": [
+        "identity_payload",
+        "params_resolved",
+        "complete_profile_id"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "identity_payload": {
+          "$ref": "grc-v4-contract-schema.json#/$defs/profile_identity_payload"
+        },
+        "params_resolved": {
+          "$ref": "grc-v4-contract-schema.json#/$defs/resolved_params"
+        },
+        "complete_profile_id": {
+          "$ref": "grc-v4-contract-schema.json#/$defs/grcv4_profile_id"
+        }
+      }
+    },
+    "archived_reference": {
+      "type": "object",
+      "required": [
+        "descriptor_version",
+        "structural_coordinates_id",
+        "graph",
+        "profile",
+        "context",
+        "K4_base",
+        "reference_hodge"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "descriptor_version": {
+          "const": "grcv4-reference-geometry-v1"
+        },
+        "structural_coordinates_id": {
+          "const": "grcv4-vertex-star-dense-row-major-v1"
+        },
+        "graph": {
+          "$ref": "grc-v4-contract-schema.json#/$defs/serialized_graph_payload"
+        },
+        "profile": {
+          "$ref": "#/$defs/archived_profile"
+        },
+        "context": {
+          "$ref": "#/$defs/context"
+        },
+        "K4_base": {
+          "$ref": "#/$defs/matrix"
+        },
+        "reference_hodge": {
+          "$ref": "grc-v4-contract-schema.json#/$defs/reference_hodge_identity_payload"
+        }
+      }
+    },
+    "transition_record": {
+      "type": "object",
+      "required": [
+        "commit_id",
+        "request",
+        "source",
+        "source_reset",
+        "target",
+        "target_reset",
+        "initializer_pair"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "commit_id": {
+          "$ref": "grc-v4-contract-schema.json#/$defs/commit_id"
+        },
+        "request": {
+          "oneOf": [
+            {
+              "$ref": "grc-v4-contract-schema.json#/$defs/migration_request"
+            },
+            {
+              "$ref": "grc-v4-contract-schema.json#/$defs/mapped_topology_event_request"
+            }
+          ]
+        },
+        "source": {
+          "$ref": "grc-v4-contract-schema.json#/$defs/scientific_state_payload"
+        },
+        "source_reset": {
+          "$ref": "grc-v4-contract-schema.json#/$defs/grcv4_reset_payload"
+        },
+        "target": {
+          "$ref": "grc-v4-contract-schema.json#/$defs/scientific_state_payload"
+        },
+        "target_reset": {
+          "$ref": "grc-v4-contract-schema.json#/$defs/grcv4_reset_payload"
+        },
+        "initializer_pair": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/$defs/pair_record"
+            }
+          ]
+        }
+      }
+    },
+    "receipt_envelope": {
+      "type": "object",
+      "required": [
+        "schema_version",
+        "receipt_id",
+        "commit_id",
+        "identity_payload"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "grcv4-successful-receipt-envelope-v1"
+        },
+        "receipt_id": {
+          "$ref": "grc-v4-contract-schema.json#/$defs/receipt_id"
+        },
+        "commit_id": {
+          "$ref": "grc-v4-contract-schema.json#/$defs/commit_id"
+        },
+        "identity_payload": {
+          "oneOf": [
+            {
+              "$ref": "grc-v4-contract-schema.json#/$defs/successful_receipt_identity_payload"
+            },
+            {
+              "$ref": "#/$defs/migration_receipt_payload"
+            }
+          ]
+        }
+      }
+    },
+    "snapshot_payload": {
+      "type": "object",
+      "required": [
+        "schema_version",
+        "model_family",
+        "implementation_layout_id",
+        "receipt_parent_policy_id",
+        "specification_release_id",
+        "reference",
+        "scientific_state",
+        "scientific_state_digest",
+        "reset",
+        "reset_digest",
+        "receipt_ledger",
+        "commit_records",
+        "lifecycle",
+        "lifecycle_digest",
+        "reference_registry",
+        "differential_reference_registry",
+        "transition_records"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "grcv4-snapshot-v1"
+        },
+        "model_family": {
+          "const": "GRCV4"
+        },
+        "implementation_layout_id": {
+          "const": "pygrc-generic-initializer-migration-snapshot-v1"
+        },
+        "receipt_parent_policy_id": {
+          "const": "grcv4-previous-successful-primary-v1"
+        },
+        "specification_release_id": {
+          "type": "string",
+          "pattern": "^grcv4-spec-release-sha256:[0-9a-f]{64}$",
+          "not": {
+            "const": "grcv4-spec-release-sha256:e2acd9df0cc02c5fd4bbed4989ff5d7da3a819adeb2950d922b8a6ef4bf35f24"
+          }
+        },
+        "reference": {
+          "$ref": "#/$defs/archived_reference"
+        },
+        "scientific_state": {
+          "$ref": "grc-v4-contract-schema.json#/$defs/scientific_state_payload"
+        },
+        "scientific_state_digest": {
+          "$ref": "grc-v4-contract-schema.json#/$defs/state_id"
+        },
+        "reset": {
+          "$ref": "grc-v4-contract-schema.json#/$defs/grcv4_reset_payload"
+        },
+        "reset_digest": {
+          "$ref": "grc-v4-contract-schema.json#/$defs/reset_id"
+        },
+        "receipt_ledger": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/receipt_envelope"
+          }
+        },
+        "commit_records": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "commit_id",
+              "payload"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "commit_id": {
+                "$ref": "grc-v4-contract-schema.json#/$defs/commit_id"
+              },
+              "payload": {
+                "$ref": "grc-v4-contract-schema.json#/$defs/commit_payload"
+              }
+            }
+          }
+        },
+        "lifecycle": {
+          "$ref": "grc-v4-contract-schema.json#/$defs/lifecycle_envelope_payload"
+        },
+        "lifecycle_digest": {
+          "$ref": "grc-v4-contract-schema.json#/$defs/lifecycle_id"
+        },
+        "reference_registry": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/archived_reference"
+          }
+        },
+        "differential_reference_registry": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/differential_reference"
+          }
+        },
+        "transition_records": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/transition_record"
+          }
+        }
+      },
+      "description": "Closed new-layout shape only. A hash-shaped nonpredecessor release is not admission: an explicitly accepted and packaged successor is required; archive linkage and execution remain semantic checks."
+    }
+  }
+}

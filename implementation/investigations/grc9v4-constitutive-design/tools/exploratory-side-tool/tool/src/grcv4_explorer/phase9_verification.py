@@ -69,7 +69,14 @@ def verification_status(repo_root: Path) -> dict:
             approval = module.acceptance(root)
             ready, owners = module.leaf_permissions(root)
             g2 = module.accepted_g2(root)
+            # Separate runtime evidence from the immutable forensic source trace.
+            # This is a read-only check; opening the UX never runs numerical tests.
+            import sys
+            sys.path.insert(0, str(root / module.HERE))
+            from verify_p972a_initializer_runtime import check as initializer_runtime_check
+            initializer_runtime = initializer_runtime_check()
             payload.update(
+                initializer_runtime=initializer_runtime,
                 g2_acceptance={
                     "record_digest": g2["record_digest"],
                     "path": module.G2_ACCEPTANCE,
@@ -195,7 +202,7 @@ def verification_status(repo_root: Path) -> dict:
                     for r in module.runtime_targets(approval)
                     if r["requires_gate"] == "P9-G1" and set(ready) & owners[r["path"]]
                 ),
-                next_gate="Tranches 4–6 and P9-7.1 retain their accepted scope. P9-7.2a's six-class migration/audit scope is accepted at 924fca9. The target-only A reference-pass design is accepted at 49b83ba and source/tool admission at f36b3ba. The user accepted the initializer-integrated GRCV4-proposal at 448e420; the paper is accepted at 7d45218. The V4 initializer supplement, closed schema and wire vectors are user-accepted; explicit successor release/codec binding and implementation are authorized next. Released documents retain their original Git subject; packaged assets and runtime are unchanged. C-to-A positive migration remains pending payload/spec binding, implementation and five-realization evidence; aggregate 7.2a stays open. Load initializer authority for exact claim/debt/contract traces. Generic events (7.2b), wider G2/G3, formation and numeric abundance remain separate. Public support is still the accepted exact C_OS singleton.",
+                next_gate="Review the new P9-7.2a initializer runtime evidence and then aggregate seven-class migration closure. The spec is accepted at f7962e4; an additive package and shared producer now cover positive C-to-A through all five A targets. initializer_runtime binds the focused execution separately from the historical 25/17-test records and immutable design/source traces. Aggregate acceptance, generic events (7.2b), wider G2/G3, formation and numeric abundance remain separate. Public support is still the accepted exact C_OS singleton.",
                 claim_ceiling="G1 is bounded implementation permission. Separate user-accepted G2 covers only the listed complete C_OS profile and reviewed domain; no family-wide, other-profile or specialization conformance is inferred.",
             )
         cross = module.read(

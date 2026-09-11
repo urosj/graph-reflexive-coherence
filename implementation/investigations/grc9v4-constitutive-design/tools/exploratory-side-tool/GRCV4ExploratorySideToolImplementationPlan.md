@@ -1862,10 +1862,12 @@ Keep source-exact forensic dispositions and scientific authority unchanged.
 
 Route normal scoped verification to `verify_p972a_migrations.py --check`, binding
 the focused migration run, exact declarations/endpoints and accepted 7.1 Git
-subjects. No repeat of the old numerical campaigns. API/status notebook/browser
-must agree on 74 ready leaves, 43 eligible paths and 55 registered runtime paths;
-these are execution permissions, not acceptance. Show pending C→A/aggregate
-closure and retain exact C_OS-only G2 support with fail-closed cleanup.
+subjects. No repeat of the old numerical campaigns. At that six-class stage,
+API/status notebook/browser agreed on 74 ready leaves, 43 eligible paths and 55
+registered runtime paths. The initializer implementation below adds four paths
+(47 eligible, 59 registered), without adding ready leaves or granting acceptance.
+Show positive C→A evidence separately from pending aggregate closure and retain
+exact C_OS-only G2 support with fail-closed cleanup.
 
 Scenarios: 13 actual migrations with distinct current/reset, separate W/Z
 policies/losses, restoration after candidate switch, seeded lineage and next
@@ -1943,8 +1945,16 @@ The additional spec tests cover the closed supplement schema, static/invocation
 IDs, recipes, dimensions, current/reset roles, receipt and snapshot versions,
 wire negatives and explicit nonauthentication of coherent output forgeries.
 The user accepted the paper through the commit-and-continue request on 2026-09-11.
-The user accepted the specification and authorized release binding and implementation;
-the existing API/notebook/browser status names those as next.
-The base schema, assets, executable release and source authority remain unchanged;
-an accepted successor release/codec binding and real producer/migration tests
-must follow review, without relabeling old evidence or granting new support.
+The user accepted the specification at `f7962e4`; the additive package,
+explicit codec selection and shared C→A implementation now have a separately
+bound runtime record. The existing API/notebook/browser status exposes
+`initializer_runtime` (actual five-target execution, release and evidence digest)
+and names runtime/aggregate review next. This read-only query never runs a
+numerical campaign and fails closed on missing/stale evidence. The immutable
+initializer-authority trace still reports its historical design-stage scope.
+The base schema, predecessor assets/release and source authority remain unchanged;
+no old evidence is relabeled and no wider support is granted. See the
+[runtime review](../../../../phase-9-grcv4/tranche-7/P9-7.2a-InitializerRuntimeReview.md).
+The user subsequently accepted that implementation on 2026-09-11 and requested
+commit followed by final aggregate review. The runtime review owns the later
+decision; the bound execution record and its capture-time flags stay unchanged.

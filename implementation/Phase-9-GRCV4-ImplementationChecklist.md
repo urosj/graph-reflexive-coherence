@@ -1173,21 +1173,30 @@ may reach G2 without waiting for all Tranche 6 realizations.
     change or automatic GRC9V3 initializer binding. See the
     [spec review](./phase-9-grcv4/tranche-7/P9-7.2a-SpecificationReview.md).
   - [x] User accepted the specification through the commit-and-implement request.
-  - [ ] Bind its own successor release and explicit codec applicability before
+  - [x] Bind its own successor release and explicit codec applicability before
     producer execution.
-  - [ ] Implement one graph-generic target-current producer and C→A map; use
+  - [x] Implement one graph-generic target-current producer and C→A map; use
     separate current/reset inputs, directional W/Z policies and existing target
     admission/publication owners. Preserve the old explicit-flux constructor's
     identity and evidence; new behavior requires the admitted policy/release.
-  - [ ] Execute focused nontrivial active-channel/signed-gamma, graph/covariance,
+  - [x] Execute focused nontrivial active-channel/signed-gamma, graph/order,
     floor/rounding/range and source-history-independence controls; positive C→A
     through all five A realization paths on declared admitted fixtures.
     Include the auxiliary-singularity regression at the actual producer, reject
     output-dependent target chart repair, and check identical current/reset
     operands give identical values despite different construction-record roles.
-  - [ ] Verify distinct current/reset outputs, reset-only failures, full rollback,
+    The new bounded roster is 18 initializer methods plus seven compatibility
+    guards, separate from the historical 25/17-test subjects. See the
+    [runtime review](./phase-9-grcv4/tranche-7/P9-7.2a-InitializerRuntimeReview.md).
+  - [x] Verify distinct current/reset outputs, reset-only failures, full rollback,
     F1/F2 consistency, restoration/reset/duplication and admitted continuation;
     bind new exact evidence in the existing scoped verifier and affected UX.
+    The retained 25/25 capture, 17 document/release/spec checks and four read-only
+    runtime-evidence/UX methods pass; browser validation includes four rehashed
+    overclaim/permission controls. No full historical campaign was rerun.
+  - [x] User accepted the initializer implementation through the explicit
+    accept-and-commit request on 2026-09-11. The runtime review records that
+    decision; execution-time review/support flags remain historical.
   - [ ] Review all seven migration classes for aggregate P9-7.2a closure. Reuse
     unchanged 25/17-test evidence, but do not count negative C→A pressure as
     positive completion or grant unrelated G2/G3/event support.

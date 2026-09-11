@@ -58,6 +58,7 @@ if TYPE_CHECKING:
 
 
 HISTORY_POLICY = "candidate_a_explicit_reference_initialization_log_history_v1"
+ADMITTED_HISTORY_POLICIES = (HISTORY_POLICY, "candidate_a_target_reference_pass_initialization_log_history_v1")
 BACKEND = "grcv3_host_frame_reference_weighted_gradient_v1"
 
 
@@ -871,7 +872,7 @@ class CandidateAWriter:
         if inputs.stage in {"ci_trial", "cipc_trial"} and inputs.trial_current != self.point.current:
             raise ValueError("A CI writer requires the selected root current")
         ref = inputs.geometry.reference
-        if ref.profile.params_resolved.lifecycle.history_policy_id != HISTORY_POLICY:
+        if ref.profile.params_resolved.lifecycle.history_policy_id not in ADMITTED_HISTORY_POLICIES:
             raise ValueError("unimplemented A retained-history writer policy")
         expected_before = replace(
             inputs, geometry=inputs.geometry if inputs.stage == "pc_old_history" else ref.geometry(), stage="pre_read",

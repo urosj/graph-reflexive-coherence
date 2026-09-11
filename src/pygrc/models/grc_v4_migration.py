@@ -1,8 +1,8 @@
 """Bounded same-graph profile maps; no solver, lifecycle owner or initializer guess.
 
-P9-7.2a implements the specification's preserving, zero-initializing and lossy
-maps. C-to-A stays unresolved until an admitted target reference-current source
-exists. A declaration or a supplied W array cannot discharge that obligation.
+P9-7.2a implements preserving, zero-initializing and lossy maps. C-to-A uses
+the accepted target-reference-pass producer; a declaration or supplied W array
+alone cannot discharge that obligation.
 """
 
 from dataclasses import replace
@@ -62,7 +62,8 @@ def migration_history_policy(
     """
     source = before.geometry.reference
     a, b = source.profile.identity_payload.candidate, target.profile.identity_payload.candidate
-    if a == "C" and b == "A":
+    from .grc_v4_initializer import HISTORY_POLICY, POLICY_ID
+    if a == "C" and b == "A" and target.profile.params_resolved.lifecycle.history_policy_id != HISTORY_POLICY:
         raise MigrationAdmissionError("C-to-A requires an admitted target reference-current initializer source for current and reset")
 
     def channel(subject: str, policy: str, disposition: str,
@@ -76,6 +77,8 @@ def migration_history_policy(
         candidate = channel("candidate", "identity_candidate_history_v1", "exact_transport")
     elif a == "A":
         candidate = channel("candidate", "archive_drop_candidate_history_v1", "explicit_loss", "candidate_history_loss")
+    elif b == "A":
+        candidate = channel("candidate", HISTORY_POLICY, "target_initializer", initializer=POLICY_ID)
     else:
         candidate = channel("candidate", "candidate_c_rederive_no_history_v1", "rederived")
     old, new = _persistent(source), _persistent(target)
@@ -100,7 +103,18 @@ def migration_history_policy(
 def map_migration(
     before: GeometryStageInputs, target: GRCV4ReferenceGeometry,
     policy: ResolvedHistoryBundlePolicy,
+    initializer_pair: dict | None = None,
 ) -> GeometryStageInputs:
+    """Public map: authenticate any supplied reconstruction, not just its hash."""
+    if initializer_pair is not None:
+        from .grc_v4_initializer import CandidateAReferencePassPair
+        initializer_pair = CandidateAReferencePassPair.from_record(initializer_pair).to_record()
+    return _map_migration(before, target, policy, initializer_pair)
+
+
+def _map_migration(before, target, policy, initializer_pair=None) -> GeometryStageInputs:
+    # Lifecycle-owned pairs were computed live or authenticated during import.
+    # Publication rechecks their identities/endpoints without repeating numerics.
     """Apply the declared whole-current/reset map, without performing a beat."""
     source = before.geometry.reference
     if source.graph != target.graph:
@@ -111,12 +125,28 @@ def map_migration(
     if policy != expected:
         raise MigrationAdmissionError("migration history policy does not bind the required current/reset map")
     same = source.profile.identity_payload.candidate == target.profile.identity_payload.candidate
+    needs_initializer = not same and target.profile.identity_payload.candidate == "A"
+    if needs_initializer != (initializer_pair is not None):
+        raise MigrationAdmissionError("missing or extraneous initializer pair")
+    if initializer_pair is not None:
+        from .grc_v4_codec import validate_initializer_payload, initializer_identity
+        record = validate_initializer_payload("pair_record", initializer_pair)
+        initializer_identity("pair_payload", record["payload"], expected=record["initializer_pair_id"])
+        for role, old in (("current", before.current), ("reset", before.reset)):
+            row = record["payload"][role]
+            p = row["payload"]
+            initializer_identity("construction_payload", p, expected=row["construction_id"])
+            if (canonical_json_bytes(p["target_reference"]) != canonical_json_bytes(target.to_payload())
+                    or tuple(p["target_C"]) != old.C):
+                raise MigrationAdmissionError("initializer pair does not bind requested target inputs")
 
-    def state(old: GRCV4AuthoritativeState) -> GRCV4AuthoritativeState:
+    def state(old: GRCV4AuthoritativeState, role: str) -> GRCV4AuthoritativeState:
         weight = old.W_A if target.profile.identity_payload.candidate == "A" else None
+        if needs_initializer:
+            weight = tuple(initializer_pair["payload"][role]["payload"]["W_A_init"])
         carrier = ((old.Z_4 if same and _persistent(source) else
                     (0.0,) * len(target.graph.live_edge_ids)**2) if _persistent(target) else None)
         return GRCV4AuthoritativeState(old.C, weight, carrier)
 
     return replace(before, geometry=target.geometry(), context=target.context,
-                   current=state(before.current), reset=state(before.reset))
+                   current=state(before.current, "current"), reset=state(before.reset, "reset"))

@@ -67,6 +67,16 @@ MIGRATION_LEAVES = {"P9-7.2a", "P9-7.2a-C_TO_A_UNRESOLVED", *("P9-7.2a-" + case 
 MIGRATION_PATHS = {"src/pygrc/models/grc_v4.py", "src/pygrc/models/grc_v4_codec.py",
                    "src/pygrc/models/grc_v4_lifecycle.py", "src/pygrc/models/grc_v4_migration.py",
                    "tests/models/test_grc_v4_migration.py"}
+INITIALIZER_RUNTIME_PATHS = {
+    "src/pygrc/models/grc_v4_" + name + ".py" for name in (
+        "candidate_a", "ci", "codec", "initializer", "lifecycle", "migration",
+        "pc", "realizations", "rg2b", "step")
+} | {"tests/models/test_grc_v4_initializer.py",
+     "src/pygrc/models/grc_v4_assets/grc-v4-a-initializer-release.json",
+     "src/pygrc/models/grc_v4_assets/grc-v4-a-initializer-schema.json"}
+INITIALIZER_NEW_PATHS = {"src/pygrc/models/grc_v4_initializer.py", "tests/models/test_grc_v4_initializer.py",
+                       "src/pygrc/models/grc_v4_assets/grc-v4-a-initializer-release.json",
+                       "src/pygrc/models/grc_v4_assets/grc-v4-a-initializer-schema.json"}
 PC_BATCH_PATHS = {
     "src/pygrc/models/grc_v4_pc.py",
     "tests/models/test_grc_v4_pc.py",
@@ -212,6 +222,12 @@ HANDOFF_PATHS = {
     HERE + "handoff/P9-G1-outputs.zip",
 }
 PATHS = {
+    HERE + "build_p972a_initializer_release.py",
+    HERE + "verify_p972a_initializer_runtime.py",
+    HERE + "test_p972a_initializer_runtime.py",
+    "specs/grc-v4-a-initializer-release.json",
+    PHASE + "tranche-7/P9-7.2a-InitializerRuntime.json",
+    PHASE + "tranche-7/P9-7.2a-InitializerRuntimeReview.md",
     # Accepted P9-7.2a initializer design/source admission; no new runtime grant.
     INV + "decisions/P9CandidateAInitializerReferencePassProposal.md",
     INV + "decisions/P9CandidateAInitializerReferencePassAuthority.json",
@@ -1217,6 +1233,9 @@ def leaf_permissions(root):
         owners[name] = owners.get(name, set()) | LIFECYCLE_LEAVES
     for name in MIGRATION_PATHS:
         owners[name] = owners.get(name, set()) | MIGRATION_LEAVES
+    for name in INITIALIZER_RUNTIME_PATHS:
+        owners[name] = owners.get(name, set()) | {"P9-7.2a"}
+    git(root, "merge-base", "--is-ancestor", "f7962e4", "HEAD")
     return ready, owners
 
 
@@ -1225,9 +1244,10 @@ def runtime_targets(approval):
     return [*approval["runtime_targets"], *(
         {"path": name, "requires_gate": "P9-G1", "before_sha256": None,
          "operation": "v4_owned_add_or_update", "module_owner":
+         "grc_v4_initializer" if name in INITIALIZER_NEW_PATHS else
          "grc_v4_migration" if name in {"src/pygrc/models/grc_v4_migration.py", "tests/models/test_grc_v4_migration.py"}
          else "grc_v4_lifecycle" if name == "tests/models/test_grc_v4_generic_lifecycle.py" else "grc_v4_realizations"}
-        for name in sorted(CI_BATCH_PATHS | PC_BATCH_PATHS | CIPC_BATCH_PATHS | RG_BATCH_PATHS
+        for name in sorted(CI_BATCH_PATHS | PC_BATCH_PATHS | CIPC_BATCH_PATHS | RG_BATCH_PATHS | INITIALIZER_NEW_PATHS
                            | {"tests/models/test_grc_v4_generic_lifecycle.py", "src/pygrc/models/grc_v4_migration.py", "tests/models/test_grc_v4_migration.py"})
     )]
 
