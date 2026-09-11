@@ -1,0 +1,206 @@
+{
+  "schema": "p972a_original_sources_v1",
+  "prior_source_delta": {
+    "src/pygrc/models/grc_v4_lifecycle.py": {
+      "current_sha256": "21f1da9f2b2cd82098acdc8c364fad18058a0cc72892253d40762720578f35a4",
+      "original_sha256": "00c04f9124126fcedeb790823516ee2568e8405b0abfb78c5fd7921089232097",
+      "splices_to_original": [
+        {
+          "start": 554,
+          "stop": 558,
+          "old_lines": []
+        },
+        {
+          "start": 565,
+          "stop": 566,
+          "old_lines": [
+            "                raise V4IdentityError(\"Candidate A target differential graph/weights mismatch\")\n"
+          ]
+        },
+        {
+          "start": 567,
+          "stop": 603,
+          "old_lines": [
+            "    raise V4IdentityError(\"Candidate A reference has no registered differential recipe\")\n"
+          ]
+        },
+        {
+          "start": 614,
+          "stop": 617,
+          "old_lines": []
+        },
+        {
+          "start": 618,
+          "stop": 619,
+          "old_lines": []
+        },
+        {
+          "start": 620,
+          "stop": 623,
+          "old_lines": [
+            "    except ValueError as exc:\n",
+            "        # Numerical owners also use ValueError for unsupported decoded target\n",
+            "        # declarations. These are admission failures, not partial publications.\n",
+            "        # Programmer/publication faults (e.g. RuntimeError) still propagate.\n"
+          ]
+        },
+        {
+          "start": 896,
+          "stop": 898,
+          "old_lines": []
+        },
+        {
+          "start": 902,
+          "stop": 903,
+          "old_lines": [
+            "    except ValueError as exc:\n"
+          ]
+        },
+        {
+          "start": 1380,
+          "stop": 1418,
+          "old_lines": []
+        },
+        {
+          "start": 1502,
+          "stop": 1505,
+          "old_lines": []
+        },
+        {
+          "start": 1517,
+          "stop": 1524,
+          "old_lines": [
+            "        _restore_crossings(\n",
+            "            [row.to_dict() for row in transitions], registry, readmit=False\n",
+            "        ),\n"
+          ]
+        },
+        {
+          "start": 1715,
+          "stop": 1720,
+          "old_lines": [
+            "        authority_id = payload_identity(\n",
+            "            \"authoritative_state_identity_payload\",\n",
+            "            {\n",
+            "                \"schema_version\": \"grcv4-authoritative-state-identity-v1\",\n",
+            "                \"authoritative\": scientific[\"authoritative\"],\n",
+            "            },\n"
+          ]
+        },
+        {
+          "start": 1721,
+          "stop": 1721,
+          "old_lines": [
+            "        for receipt in ledger:\n",
+            "            core = cast(FrozenJSONMap, receipt.identity_payload[\"core\"])\n",
+            "            for prefix in (\"source\", \"target\"):\n",
+            "                if core[prefix + \"_state_digest\"] == inputs.scientific_state_id and (\n",
+            "                    core[prefix + \"_authoritative_digest\"] != authority_id\n",
+            "                    or core[prefix + \"_reset_digest\"] != inputs.reset_id\n",
+            "                ):\n",
+            "                    raise V4IdentityError(\n",
+            "                        \"receipt subdigests contradict the embedded scientific state\"\n",
+            "                    )\n",
+            "        for commit in commits:\n",
+            "            if commit.target_state_digest == inputs.scientific_state_id and (\n",
+            "                commit.target_step_index,\n",
+            "                commit.target_time,\n",
+            "            ) != (inputs.step_index, inputs.time):\n",
+            "                raise V4IdentityError(\n",
+            "                    \"commit clock contradicts its embedded target state\"\n",
+            "                )\n"
+          ]
+        }
+      ]
+    },
+    "tests/models/test_grc_v4_migration.py": {
+      "current_sha256": "22f4dbf8245365c6dcb475c6dc8c17829d173c2acd0de0dc728a1c518f11b4a2",
+      "original_sha256": "d2ad2487213af802b3b1dc46d107b30b566bfc1b189207c5288e10e26fed4e34",
+      "splices_to_original": [
+        {
+          "start": 5,
+          "stop": 6,
+          "old_lines": []
+        },
+        {
+          "start": 8,
+          "stop": 9,
+          "old_lines": []
+        },
+        {
+          "start": 15,
+          "stop": 20,
+          "old_lines": [
+            "from pygrc.models.grc_v4_codec import canonical_json_bytes, MIGRATION_SNAPSHOT_LAYOUT_ID, payload_identity\n"
+          ]
+        },
+        {
+          "start": 42,
+          "stop": 43,
+          "old_lines": []
+        },
+        {
+          "start": 305,
+          "stop": 625,
+          "old_lines": []
+        }
+      ]
+    },
+    "implementation/phase-9-grcv4/verification/verify_p972a_migrations.py": {
+      "current_sha256": "0eee84484d57292bf26df243afe6b8a1874fd1aee97c2605abdfa8a550907e21",
+      "original_sha256": "bcde87fe9df9cc3dcc261899631c30a37d0be95a7a9ed1cd057716271777aae7",
+      "splices_to_original": [
+        {
+          "start": 20,
+          "stop": 24,
+          "old_lines": []
+        },
+        {
+          "start": 120,
+          "stop": 188,
+          "old_lines": []
+        },
+        {
+          "start": 190,
+          "stop": 191,
+          "old_lines": [
+            "    sources = bindings()\n"
+          ]
+        },
+        {
+          "start": 192,
+          "stop": 194,
+          "old_lines": []
+        },
+        {
+          "start": 213,
+          "stop": 228,
+          "old_lines": [
+            "    return dict(status=\"passed\", tests=len(roster()), positive_pairs=13, numerical_tests_rerun=0,\n"
+          ]
+        },
+        {
+          "start": 267,
+          "stop": 301,
+          "old_lines": []
+        },
+        {
+          "start": 306,
+          "stop": 307,
+          "old_lines": []
+        },
+        {
+          "start": 309,
+          "stop": 312,
+          "old_lines": [
+            "    if args.run and not args.output:\n",
+            "        parser.error(\"--run requires a new relative --output\")\n",
+            "    print(json.dumps(run(args.output) if args.run else check()))\n"
+          ]
+        }
+      ]
+    }
+  },
+  "original_record_digest": "b5cc1060dd1e9fbbfc96eca85379da4b1933b0aef2c6533a599a5e24c0c89af9",
+  "original_record_sha256": "d17f412fc43bfc426ba48778828601ea549f411a9de93c716ac35d33d2a0e2d4"
+}

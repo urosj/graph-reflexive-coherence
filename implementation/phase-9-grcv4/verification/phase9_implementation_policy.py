@@ -61,6 +61,12 @@ LIFECYCLE_FAMILIES = tuple(c + "_" + r for r in ("OS", "CI", "RG2b", "PC", "CI_P
 LIFECYCLE_LEAVES = {"P9-7.1", *("P9-7.1-" + family for family in LIFECYCLE_FAMILIES)}
 LIFECYCLE_PATHS = {"src/pygrc/models/grc_v4.py", "src/pygrc/models/grc_v4_codec.py",
                    "src/pygrc/models/grc_v4_lifecycle.py", "tests/models/test_grc_v4_generic_lifecycle.py"}
+MIGRATION_CASES = ("A_NH_NH", "C_NH_NH", "A_NH_PC", "C_NH_PC", "A_PC_NH", "C_PC_NH",
+                   "A_PC_CIPC", "C_PC_CIPC", "A_CIPC_PC", "C_CIPC_PC", "A_C_NH", "A_C_PC", "A_C_DROP")
+MIGRATION_LEAVES = {"P9-7.2a", "P9-7.2a-C_TO_A_UNRESOLVED", *("P9-7.2a-" + case for case in MIGRATION_CASES)}
+MIGRATION_PATHS = {"src/pygrc/models/grc_v4.py", "src/pygrc/models/grc_v4_codec.py",
+                   "src/pygrc/models/grc_v4_lifecycle.py", "src/pygrc/models/grc_v4_migration.py",
+                   "tests/models/test_grc_v4_migration.py"}
 PC_BATCH_PATHS = {
     "src/pygrc/models/grc_v4_pc.py",
     "tests/models/test_grc_v4_pc.py",
@@ -205,6 +211,12 @@ HANDOFF_PATHS = {
     HERE + "handoff/P9-G1-outputs.zip",
 }
 PATHS = {
+    HERE + "verify_p972a_migrations.py",
+    PHASE + "tranche-7/P9-7.2a-Review.md",
+    PHASE + "tranche-7/P9-7.2a-Migrations.json",
+    PHASE + "tranche-7/P9-7.2a-AuditPressure.json",
+    PHASE + "tranche-7/P9-7.2a-AuditFollowup.json",
+    PHASE + "tranche-7/P9-7.2a-OriginalSources.json",
     HERE + "verify_p971_lifecycle.py",
     PHASE + "tranche-7/P9-7.1-Review.md",
     PHASE + "tranche-7/P9-7.1-Lifecycle.json",
@@ -1081,6 +1093,13 @@ def leaf_permissions(root):
             == git(root, "show", "b45d0af:" + lifecycle_predecessor),
             "generic lifecycle requires preserved Tranche 6 acceptance")
     ready = sorted(set(ready) | LIFECYCLE_LEAVES)
+    # The user requests 7.2a after accepting the full 7.1 batch. A missing
+    # C-to-A initializer source stays an explicit negative/pending child.
+    git(root, "merge-base", "--is-ancestor", "5d8dbe2", "HEAD")
+    lifecycle_review = PHASE + "tranche-7/P9-7.1-Review.md"
+    require(safe_path(root, lifecycle_review).read_bytes() == git(root, "show", "5d8dbe2:" + lifecycle_review),
+            "migration requires preserved 7.1 acceptance")
+    ready = sorted(set(ready) | MIGRATION_LEAVES)
     owners = {}
     for module in ownership["modules"]:
         leaves = {
@@ -1176,6 +1195,8 @@ def leaf_permissions(root):
     owners["tests/models/test_grc_v4_rg2b_graph.py"].add("P9-6.4d")
     for name in LIFECYCLE_PATHS:
         owners[name] = owners.get(name, set()) | LIFECYCLE_LEAVES
+    for name in MIGRATION_PATHS:
+        owners[name] = owners.get(name, set()) | MIGRATION_LEAVES
     return ready, owners
 
 
@@ -1184,9 +1205,10 @@ def runtime_targets(approval):
     return [*approval["runtime_targets"], *(
         {"path": name, "requires_gate": "P9-G1", "before_sha256": None,
          "operation": "v4_owned_add_or_update", "module_owner":
-         "grc_v4_lifecycle" if name == "tests/models/test_grc_v4_generic_lifecycle.py" else "grc_v4_realizations"}
+         "grc_v4_migration" if name in {"src/pygrc/models/grc_v4_migration.py", "tests/models/test_grc_v4_migration.py"}
+         else "grc_v4_lifecycle" if name == "tests/models/test_grc_v4_generic_lifecycle.py" else "grc_v4_realizations"}
         for name in sorted(CI_BATCH_PATHS | PC_BATCH_PATHS | CIPC_BATCH_PATHS | RG_BATCH_PATHS
-                           | {"tests/models/test_grc_v4_generic_lifecycle.py"})
+                           | {"tests/models/test_grc_v4_generic_lifecycle.py", "src/pygrc/models/grc_v4_migration.py", "tests/models/test_grc_v4_migration.py"})
     )]
 
 
@@ -1335,6 +1357,7 @@ def work_entries(root, approval):
     # the user-approved successor, not a broad regex-based permission.
     leaves.update({"P9-4.9.1", "P9-4.9.1a", "P9-4.9.2", "P9-4.9.3", "P9-6.1a", "P9-6.1b", "P9-6.1c", "P9-6.2a", "P9-6.2b", "P9-6.2c", "P9-6.3a", "P9-6.3b", "P9-6.3c", "P9-6.4a", "P9-6.4b", "P9-6.4c", "P9-6.4d", "P9-6.5"})
     leaves.update(LIFECYCLE_LEAVES)
+    leaves.update(MIGRATION_LEAVES)
     rows = value["entries"]
     require(len({r["path"] for r in rows}) == len(rows), "duplicate work target")
     result = {}

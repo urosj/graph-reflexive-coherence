@@ -285,13 +285,15 @@ class GRCV4(GRCModel):
         *,
         targets: tuple[GRCV4ReferenceGeometry, ...] = (),
         differential_reference: CandidateADifferentialReference | None = None,
+        target_differential_references: tuple[CandidateADifferentialReference, ...] = (),
     ) -> None:
         # Lazy import keeps legacy package imports free of V4 numerical extras
         # and avoids a request/lifecycle import cycle.
         from .grc_v4_lifecycle import GRCV4Operation
 
         self._operation = GRCV4Operation(initial, targets=targets,
-                                       differential_reference=differential_reference)
+                                       differential_reference=differential_reference,
+                                       target_differential_references=target_differential_references)
 
     @classmethod
     def from_config(cls, config: Mapping[str, Any]) -> Self:
@@ -300,16 +302,20 @@ class GRCV4(GRCModel):
 
         if not isinstance(config, Mapping):
             raise TypeError("V4 configuration must be a mapping")
-        if "initial" not in config or set(config) - {"initial", "targets", "differential_reference"}:
+        if "initial" not in config or set(config) - {"initial", "targets", "differential_reference", "target_differential_references"}:
             raise V4SchemaError("V4 configuration requires initial and optional targets/differential_reference")
         targets = config.get("targets", [])
         if type(targets) is not list:
             raise V4SchemaError("configuration targets must be an ordered array")
+        backends = config.get("target_differential_references", [])
+        if type(backends) is not list:
+            raise V4SchemaError("target differential references must be an ordered array")
         return cls(
             GeometryStageInputs.from_payload(config["initial"]),
             targets=tuple(GRCV4ReferenceGeometry.from_payload(v) for v in targets),
             differential_reference=(None if config.get("differential_reference") is None else
                 CandidateADifferentialReference.from_payload(config["differential_reference"])),
+            target_differential_references=tuple(CandidateADifferentialReference.from_payload(v) for v in backends),
         )
 
     @classmethod
@@ -447,4 +453,6 @@ class GRCV4(GRCModel):
         }
         if identity.profile_family_id == "C_OS":
             capabilities.update({"typed_topology_events", "profile_migration"})
+        elif len(self.list_supported_profiles()) > 1:
+            capabilities.add("profile_migration")
         return capabilities

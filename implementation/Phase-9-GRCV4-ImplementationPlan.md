@@ -1174,6 +1174,45 @@ are separate execution surfaces. Instantiate children by exact source/target
 profile or event scope before execution. Link previously accepted C_OS
 evidence rather than reinterpreting it as all-profile coverage.
 
+The user authorized **P9-7.2a** after accepting 7.1 at `5d8dbe2`. Its
+[scoped review](./phase-9-grcv4/tranche-7/P9-7.2a-Review.md) binds 13 concrete
+source/target pairs in six source-backed classes, not a Cartesian family-wide
+claim. Same-candidate nonhistory changes preserve W where present; entry to
+persistent history initializes Z to canonical zero; exit archives/drops Z;
+PC↔CI+PC preserves Z only under identical carrier contracts. A→C explicitly
+drops W, rederives C authority and drops/zeros incompatible carrier history.
+Each map applies independently to current and reset with unchanged resource,
+charge target and clock; the existing target numerical owner readmits both.
+Bind actual before/after/reset/continuation endpoints, channel-specific history
+digests/losses, seeded lineage, snapshot/backend reconstruction and atomic failure.
+
+The seventh class, **C→A**, has no admitted target reference-current initializer
+source in the accepted [P9-5.4 review](./phase-9-grcv4/tranche-5/P9-5.4-Review.md).
+Record real-consumer rejection pressure as `P9-7.2a-C_TO_A_UNRESOLVED`, not as
+positive completion. Do not choose a flux source, supplied W or zero seed
+editorially. Positive C→A and aggregate 7.2a closure remain pending a source-backed
+resolution for both current and reset; acceptance of six classes cannot waive it.
+The scoped successor checks the new run and Git-preserved 7.1 evidence without
+replaying historical numerical campaigns. Generic events, wider G2 and G3 remain
+separate; no paper/spec/claim authority is changed by this implementation.
+
+Scoped verification completed: 25 focused tests (13 positive pairs, nine
+negative/rollback methods, three legacy checks), five read-only evidence
+controls, 35 browser-validator tests and actual API/notebook/browser checks
+passed. User acceptance of this finite scope and positive C→A remain pending.
+
+The subsequent independent audit requires two bounded lifecycle corrections:
+typed semantic exception classification (F1) and consistent commitments for a
+known/repeated scientific identity (F2). Apply the same temporary lookup to
+import and prospective publication, including archived endpoints and known
+target clocks; do not impose uninterrupted adjacency or attest external
+history. Add distinct-A-backend migration/restoration/continuation pressure.
+Preserve the original 25-test subject with exact source recovery and bind a
+separate focused correction capture. No migration law, numerical owner,
+scientific authority, C→A obligation or G2/G3 scope is changed.
+The seventeen-method correction capture passed. Stop at the bounded fixes and
+minimal record consistency; defer aggregate 7.2 closure while C→A remains open.
+
 Exercise missing lineage, invalid reference maps, readmission failure, and
 receipt ownership. `P9-G2[p]` is available only for profiles whose full
 applicable fixture product has executed. Keep other planned profiles pending.

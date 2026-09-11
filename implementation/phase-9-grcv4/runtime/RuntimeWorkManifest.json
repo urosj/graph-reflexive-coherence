@@ -1250,8 +1250,8 @@
     },
     {
       "path": "src/pygrc/models/grc_v4.py",
-      "sha256": "a213cef02da144763bbc1220a5d07b7d7e760527b52105b0f723f58bebc3f8a8",
-      "iteration_id": "P9-7.1"
+      "sha256": "ec90166c77762e1509e5b67ecc218dc6213b8dee927a133ea02b6f8bdcb6b88a",
+      "iteration_id": "P9-7.2a"
     },
     {
       "path": "src/pygrc/models/grc_v4_assets/__init__.py",
@@ -1295,8 +1295,8 @@
     },
     {
       "path": "src/pygrc/models/grc_v4_codec.py",
-      "sha256": "e85d4c2e89e441e22573c334f11bd8670aa62c43f6d69eeffe624294866ca949",
-      "iteration_id": "P9-7.1"
+      "sha256": "574159e2090b5edc3923f3b9ebe44dd187a08692e67023ea5b80bc9443a98f6c",
+      "iteration_id": "P9-7.2a"
     },
     {
       "path": "src/pygrc/models/grc_v4_geometry.py",
@@ -1305,8 +1305,13 @@
     },
     {
       "path": "src/pygrc/models/grc_v4_lifecycle.py",
-      "sha256": "96c2cd42a1d6f269558709e6a9d8bf56f6fdd1f9ea086918d0aa25c9a5f18be4",
-      "iteration_id": "P9-7.1"
+      "sha256": "21f1da9f2b2cd82098acdc8c364fad18058a0cc72892253d40762720578f35a4",
+      "iteration_id": "P9-7.2a"
+    },
+    {
+      "path": "src/pygrc/models/grc_v4_migration.py",
+      "sha256": "cbc484219702ee67cfd0de464878aed4dadf8d0c0bab6100283288e052758f11",
+      "iteration_id": "P9-7.2a"
     },
     {
       "path": "src/pygrc/models/grc_v4_pc.py",
@@ -1404,6 +1409,11 @@
       "iteration_id": "P9-4.9.2"
     },
     {
+      "path": "tests/models/test_grc_v4_migration.py",
+      "sha256": "22f4dbf8245365c6dcb475c6dc8c17829d173c2acd0de0dc728a1c518f11b4a2",
+      "iteration_id": "P9-7.2a"
+    },
+    {
       "path": "tests/models/test_grc_v4_pc.py",
       "sha256": "c52e3819a7481c10a36f258facc459b8a24117ac1c92a3fb33d8e4c154990d2e",
       "iteration_id": "P9-6.2c"
@@ -1449,5 +1459,5 @@
   ],
   "admitted_specialization_support_sets": [],
   "claim_ceiling": "Work entries grant no conformance; the only accepted support is the separate P9-4.8B exact C_OS singleton. Local targets, other profiles and specialization are not promoted.",
-  "record_digest": "b9f00eb24c4b1d10d19e6192edb446cf61ef66ed3fc741a46c19c9577b4fe06e"
+  "record_digest": "bdb397aebd724bd87c545592c14339c484c7d0a8a5b92a69047294456feb14c7"
 }

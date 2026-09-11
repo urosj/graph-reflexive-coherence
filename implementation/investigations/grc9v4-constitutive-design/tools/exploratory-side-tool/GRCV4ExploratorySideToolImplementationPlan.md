@@ -1851,3 +1851,34 @@ changes are required for these lifecycle corrections.
 The user accepted the 7.1 batch and its corrections on 2026-09-11 through commit
 authorization. The review/handoff records this later disposition; historical
 execution flags and identities remain unchanged. No wider support gate opens.
+
+## Phase 9 Tranche 7 — P9-7.2a profile migration
+
+Register the user-authorized migration parent, 13 finite positive-pair children
+and the unresolved C→A negative-pressure child after accepted 7.1 (`5d8dbe2`).
+Six classes use specified preservation/drop/zero maps for both current/reset;
+C→A needs an admitted initializer source and cannot close from rejection tests.
+Keep source-exact forensic dispositions and scientific authority unchanged.
+
+Route normal scoped verification to `verify_p972a_migrations.py --check`, binding
+the focused migration run, exact declarations/endpoints and accepted 7.1 Git
+subjects. No repeat of the old numerical campaigns. API/status notebook/browser
+must agree on 74 ready leaves, 43 eligible paths and 55 registered runtime paths;
+these are execution permissions, not acceptance. Show pending C→A/aggregate
+closure and retain exact C_OS-only G2 support with fail-closed cleanup.
+
+Scenarios: 13 actual migrations with distinct current/reset, separate W/Z
+policies/losses, restoration after candidate switch, seeded lineage and next
+ordinary step; invalid source/target/history/backend, carrier-contract mismatch,
+reset-only target failure, core-versus-inner RG2b and atomic rollback. Record
+mutations must not erase C→A, omit a pair/pressure test or promote the parent/G2.
+The [review](../../../../phase-9-grcv4/tranche-7/P9-7.2a-Review.md) owns scope;
+generic events and new support gates stay separate.
+
+The 7.2a audit follow-up keeps the same permission/UX scope. The existing
+successor verifies the original run through exact source recovery and a separate
+native correction capture. Pressure typed semantic versus programmer errors,
+known and repeated scientific-state commitments, archived target clocks and
+prospective publication. Preserve lawful assignment and the historical trust
+ceiling; include a distinct A-backend migration/continuation control. No new
+claim graph, registry, signature service, numerical law or global history archive.

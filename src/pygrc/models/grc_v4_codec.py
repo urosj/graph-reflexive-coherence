@@ -57,6 +57,7 @@ class V4IdentityError(ValueError):
 RECEIPT_PARENT_POLICY_ID = "grcv4-previous-successful-primary-v1"
 COS_SNAPSHOT_LAYOUT_ID = "pygrc-c-os-snapshot-v3"
 GENERIC_SNAPSHOT_LAYOUT_ID = "pygrc-generic-snapshot-v1"
+MIGRATION_SNAPSHOT_LAYOUT_ID = "pygrc-generic-migration-snapshot-v1"
 
 
 def cos_snapshot_payload(value: object) -> dict[str, JSONValue]:
@@ -67,7 +68,7 @@ def snapshot_payload(value: object) -> dict[str, JSONValue]:
     """Dispatch closed envelopes; never upgrade a historical layout implicitly."""
     data = _copy_json(value, set())
     layout = data.get("implementation_layout_id") if isinstance(data, dict) else None
-    if layout not in (COS_SNAPSHOT_LAYOUT_ID, GENERIC_SNAPSHOT_LAYOUT_ID):
+    if layout not in (COS_SNAPSHOT_LAYOUT_ID, GENERIC_SNAPSHOT_LAYOUT_ID, MIGRATION_SNAPSHOT_LAYOUT_ID):
         raise V4SchemaError("unsupported V4 snapshot layout")
     return _snapshot_payload(data, layout)
 
@@ -100,6 +101,8 @@ def _snapshot_payload(value: object, layout: str) -> dict[str, JSONValue]:
     }
     if layout == GENERIC_SNAPSHOT_LAYOUT_ID:
         keys.add("differential_reference")
+    if layout == MIGRATION_SNAPSHOT_LAYOUT_ID:
+        keys.add("differential_reference_registry")
     if isinstance(data, dict) and data.get("implementation_layout_id") != layout:
         raise V4SchemaError("unsupported C_OS snapshot layout; historical parent policy is not converted")
     if not isinstance(data, dict) or set(data) != keys:

@@ -1,4 +1,45 @@
-# Phase 9 GRCV4 handoff — P9-7.1 generic lifecycle
+# Phase 9 GRCV4 handoff — P9-7.2a profile migration
+
+Current work, 2026-09-11: `impl/phase-9-grcv4-tranche-7`, accepted predecessor
+`5d8dbe2` (complete P9-7.1 and audit corrections). The user requested 7.2a.
+See the [migration review](./phase-9-grcv4/tranche-7/P9-7.2a-Review.md) for the
+13 exact source/target fixtures, six implemented classes and focused evidence.
+The focused capture passed 25/25 tests: all 13 positive pairs plus nine
+negative/rollback and three legacy checks. The read-only successor, 35 browser
+controls and actual API/notebook/browser checks passed. This finite scope is
+not yet accepted or committed; aggregate closure remains pending below.
+
+The subsequent audit held the scoped work for two lifecycle corrections:
+programmer exceptions must not become scientific failure receipts, and known
+or repeated scientific identities must have consistent component commitments.
+Both reproduced natively and are corrected; the focused correction capture
+passed 17/17 methods. See the review's audit section. The original 25-test record
+and exact source subject remain recoverable and are not relabeled as a rerun.
+The user directed a lean stopping point: C→A will be resolved later, so no
+aggregate 7.2 closure campaign or additional support/acceptance step is performed.
+
+**C→A positive migration remains pending:** P9-5.4 does not admit the initializer's
+target reference-current source. Native rejection tests preserve this boundary;
+they do not close the seventh class or aggregate 7.2a. The remaining work needs
+a source-backed initializer resolution for current and reset, not an editorial
+zero seed or supplied-W bypass. Generic topology events remain P9-7.2b.
+
+Current scoped check, repository root:
+
+```sh
+PYTHONPATH=src:. .venv/bin/python implementation/phase-9-grcv4/verification/verify_p972a_migrations.py --check
+```
+
+The explicit `--run --output <new-repository-relative-json-path>` route runs only
+the focused migration roster and produces a new source/input/output-bound record.
+Use `--audit-run --output <new-repository-relative-json-path>` for only the
+correction roster. `--check` inspects both records without numerical execution.
+Old 7.1 records remain unchanged; their sources are retrievable at `5d8dbe2`.
+Use the new current checker, not old current-tree assertions. No new G2/G3,
+specialization permission, paper/spec claim or numerical authority is granted.
+Public support remains the exact accepted C_OS singleton.
+
+## Historical P9-7.1 acceptance
 
 Current work, 2026-09-11: branch `impl/phase-9-grcv4-tranche-7`, created from
 merged Tranche 6 closure `b45d0af`. The user requested the **complete P9-7.1**

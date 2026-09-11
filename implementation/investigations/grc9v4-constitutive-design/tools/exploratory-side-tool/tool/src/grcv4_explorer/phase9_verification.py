@@ -195,7 +195,7 @@ def verification_status(repo_root: Path) -> dict:
                     for r in module.runtime_targets(approval)
                     if r["requires_gate"] == "P9-G1" and set(ready) & owners[r["path"]]
                 ),
-                next_gate="Tranches 4–6 retain their accepted scope. The user authorized the full P9-7.1 parent: A/C × OS, CI, RG2b, PC and CI+PC lifecycle children, with historical C_OS evidence reused. See implementation/phase-9-grcv4/tranche-7/P9-7.1-Lifecycle.json for concrete inputs and verification. New children remain pending acceptance; migrations/events (7.2), full fixture-product G2 review, G3, formation and numeric abundance remain separate. Public support is still the accepted exact C_OS singleton.",
+                next_gate="Tranches 4–6 and the full P9-7.1 lifecycle retain their accepted scope (7.1 accepted at 5d8dbe2). The user authorized P9-7.2a: 13 finite migration pairs across six classes plus native C-to-A rejection pressure. C-to-A positive migration remains pending an admitted target reference-current initializer source; aggregate 7.2a closure and user acceptance remain pending. See implementation/phase-9-grcv4/tranche-7/P9-7.2a-Review.md and P9-7.2a-Migrations.json. Generic events (7.2b), full fixture-product G2 review, G3, formation and numeric abundance remain separate. Public support is still the accepted exact C_OS singleton.",
                 claim_ceiling="G1 is bounded implementation permission. Separate user-accepted G2 covers only the listed complete C_OS profile and reviewed domain; no family-wide, other-profile or specialization conformance is inferred.",
             )
         cross = module.read(

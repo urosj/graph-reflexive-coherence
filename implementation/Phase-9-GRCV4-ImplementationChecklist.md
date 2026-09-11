@@ -1031,9 +1031,9 @@ scopes, evidence aliases and dependencies. P9-7.1-C_OS and the early C_OS
 P9-7.2a/b–P9-7.6 children have scoped evidence accepted with the P9-4.6/4.7 batch;
 its full audit findings are closed. Generic parent-reference conformance remains
 open across other profiles; the accepted P9-4.9.2 authority and bounded internal
-C_OS implementation are recorded in its linked review. A_OS migration/event
-and wider conformance children remain unexecuted; P9-7.1 is the active batch
-below. P9-7.7-C_OS aliases the
+C_OS implementation are recorded in its linked review. P9-7.1 is accepted;
+P9-7.2a is the active scoped migration batch below. Generic event and wider
+conformance children remain pending. P9-7.7-C_OS aliases the
 [P9-4.8B exact-scope acceptance](./phase-9-grcv4/tranche-4/P9-4.8B-G2Acceptance.json),
 with no duplicate execution credit. The original
 P9-4.8 HOLD and historical child register remain unchanged.
@@ -1092,6 +1092,50 @@ may reach G2 without waiting for all Tranche 6 realizations.
   A decoded P9-2.3 declaration is not migration admission: test unresolved
   history/initializers, unsupported targets and missing mappings at the real
   consumer, including separate candidate/carrier channel decisions.
+  The parent stays pending: C→A lacks an admitted initializer source. The
+  [review](./phase-9-grcv4/tranche-7/P9-7.2a-Review.md) binds the finite fixture
+  declarations in `CASES`; child marks below mean executed, not accepted/G2.
+
+  - [x] P9-7.2a-A_NH_NH: A_OS → A_CI.
+  - [x] P9-7.2a-C_NH_NH: C_OS → C_CI.
+  - [x] P9-7.2a-A_NH_PC: A_CI → A_PC, separate preserved W / zero Z.
+  - [x] P9-7.2a-C_NH_PC: C_CI → C_PC, zero Z.
+  - [x] P9-7.2a-A_PC_NH: A_PC → A_RG2b, archive/drop Z.
+  - [x] P9-7.2a-C_PC_NH: C_PC → C_RG2b, archive/drop Z.
+  - [x] P9-7.2a-A_PC_CIPC: A_PC → A_CI_PC, exact carrier preservation.
+  - [x] P9-7.2a-C_PC_CIPC: C_PC → C_CI_PC, exact carrier preservation.
+  - [x] P9-7.2a-A_CIPC_PC: A_CI_PC → A_PC, exact carrier preservation.
+  - [x] P9-7.2a-C_CIPC_PC: C_CI_PC → C_PC, exact carrier preservation.
+  - [x] P9-7.2a-A_C_NH: A_OS → C_OS, explicit candidate-history loss.
+  - [x] P9-7.2a-A_C_PC: A_PC → C_PC, W loss and whole-carrier reset.
+  - [x] P9-7.2a-A_C_DROP: A_CI_PC → C_CI, separate W/Z losses.
+  - [x] P9-7.2a-C_TO_A_UNRESOLVED: native C_OS → A_OS and C_PC → A_PC
+    rejection pressure; a negative result does not discharge positive migration.
+  - [x] Verify exact current/reset maps, source/target readmission, reset and
+    ordinary continuation, fresh load/replay, independent duplication, seeded
+    receipt parent/delta, separate history channels and immutable publication.
+  - [x] Pressure unlisted/stale requests, substituted history/initializer,
+    exact carrier-contract mismatches, reset-only failure, missing A backend,
+    injected early target-geometry failure,
+    core-only RG2b readmission, archive tampering and late publication faults.
+  - [x] Read-only successor and actual API/notebook/browser checks; retain
+    accepted 7.1 sources/records in Git and exact C_OS-only G2 discovery.
+    The source-bound capture passed 25/25; five evidence-mutation controls,
+    35 browser-validator tests and actual API/notebook/browser checks passed.
+  - [ ] Resolve/admit C→A initializer source, implement and execute its positive
+    current/reset migration, then review aggregate 7.2a closure separately.
+  - [x] Audit F1: propagate unexpected mapper/source/target ValueError and
+    V4IdentityError unchanged; retain typed declaration/backend/domain failures
+    and whole-publication atomicity without message matching.
+  - [x] Audit F2: bind known live/archived and repeated unknown scientific
+    identities to consistent graph/model/authority/reset commitments and clocks
+    in both restoration and prospective publication; preserve lawful assignment
+    and the external-history trust ceiling.
+  - [x] Audit additional pressure: switch to a distinct A backend, restore both
+    archived recipes, reject an omitted old recipe and execute continuation.
+  - [x] Preserve original evidence and exact source recovery; verify the separate
+    correction capture: 17/17 passed. Per user direction, defer aggregate 7.2
+    closure; positive C→A remains open for later work.
 - [ ] P9-7.2b: Execute caller-mapped generic topology events over current and
   reset state, with their own map/identity/admission failure evidence.
 - [ ] P9-7.3: Verify separate candidate/carrier history channels, explicit

@@ -1473,3 +1473,28 @@ P9-3.2 implementation is pending review; runtime support remains empty.
 - [x] Record user acceptance of the ten-child 7.1 batch and audit corrections
       on 2026-09-11 through commit authorization. Preserve execution-time flags;
       no new G2/G3, migration/event permission or numerical rerun is implied.
+
+## Phase 9 Tranche 7 — P9-7.2a profile migration
+
+- [x] Register 13 finite positive pairs plus native unresolved C→A pressure;
+      preserve all accepted 7.1 evidence at its Git subject.
+- [x] Implement a scoped current-record successor and route normal verification
+      to it; keep C→A positive and aggregate closure explicitly pending.
+- [x] Capture migration/replay/reset/continuation and negative/atomicity checks
+      with exact source/input/output identities, retaining separate W/Z channels.
+      All 25 focused methods passed; no historical numerical campaign was rerun.
+- [x] Reject coherently rehashed missing pairs/pressure, waived initializer,
+      closed parent and unaccepted G2 support without rerunning numerical work.
+- [x] Check actual API/notebook/browser equality, all scoped permission children,
+      missing-child rejection and fail-closed exact C_OS support cleanup.
+      Five record controls and 35 browser-validator tests passed alongside the
+      actual API/browser and status-notebook checks.
+- [ ] User review/acceptance of this finite six-class scope; unresolved C→A
+      remains a positive obligation and generic events remain P9-7.2b.
+- [x] Audit follow-up: bind native F1/F2 corrections, lawful historical gaps and
+      distinct-backend pressure; retain the original 25-test subject and exact
+      reverse source spans, with no numerical campaign rerun for the read-only check.
+- [x] Keep normal verification on the two-subject successor with controls for
+      missing correction coverage/outcomes and erased C→A obligations. The
+      17-method native capture passed. Limit final checking to record consistency;
+      unchanged UX evidence is reused, and aggregate 7.2/C→A closure stays pending.

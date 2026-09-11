@@ -28,6 +28,7 @@ from .grc_v4_candidate_a import CandidateADifferentialReference, CandidateAStage
 from .grc_v4_codec import (
     COS_SNAPSHOT_LAYOUT_ID,
     GENERIC_SNAPSHOT_LAYOUT_ID,
+    MIGRATION_SNAPSHOT_LAYOUT_ID,
     RECEIPT_PARENT_POLICY_ID,
     RELEASE_ID,
     V4IdentityError,
@@ -47,7 +48,7 @@ from .grc_v4_geometry import (
     _state_from_payload,
     _computed,
 )
-from .grc_v4_realizations import OSStageError, _os_inputs
+from .grc_v4_realizations import OSStageError
 from .grc_v4_state import (
     FrozenJSONMap,
     GRCV4LifecycleState,
@@ -533,15 +534,93 @@ def _resolve_reference(
     )
 
 
-def _readmit_crossing(inputs: GeometryStageInputs, stage: OperationStage) -> None:
+def _backend_registry(values: object, references: tuple[GRCV4ReferenceGeometry, ...]) -> tuple[CandidateADifferentialReference, ...]:
+    if type(values) not in (list, tuple):
+        raise V4SchemaError("differential registry requires an ordered array")
+    result: list[CandidateADifferentialReference] = []
+    for value in values:
+        backend = CandidateADifferentialReference.from_payload(
+            value.to_payload() if type(value) is CandidateADifferentialReference else value)
+        if any(row.identity == backend.identity for row in result):
+            raise V4IdentityError("duplicate differential recipe")
+        if not any(ref.profile.identity_payload.candidate == "A"
+                   and ref.profile.params_resolved.candidate.descriptor_backend_id == backend.identity
+                   and ref.graph == backend.graph and ref.edge_weights == backend.reference_weights
+                   for ref in references):
+            raise V4IdentityError("differential recipe has no matching registered target")
+        result.append(backend)
+    return tuple(result)
+
+
+class _CrossingDeclarationError(V4IdentityError):
+    """An explicitly unsupported declaration at the lifecycle admission owner."""
+
+
+def _backend_for(reference: GRCV4ReferenceGeometry, backends: tuple[CandidateADifferentialReference, ...]) -> CandidateADifferentialReference | None:
+    if reference.profile.identity_payload.candidate == "C":
+        return None
+    identity = reference.profile.params_resolved.candidate.descriptor_backend_id
+    for backend in backends:
+        if backend.identity == identity:
+            if backend.graph != reference.graph or backend.reference_weights != reference.edge_weights:
+                raise _CrossingDeclarationError("Candidate A target differential graph/weights mismatch")
+            return backend
+    raise _CrossingDeclarationError("Candidate A reference has no registered differential recipe")
+
+
+def _crossing_declaration(reference: GRCV4ReferenceGeometry) -> None:
+    """Classify unsupported dispatch declarations before constructing numerics.
+
+    These are the existing owners' supported declaration IDs, not a numerical
+    admission proof. Their domain/solver checks still run. Unexpected exceptions
+    from those constructors must not be relabeled as scientific negatives.
+    """
+    from .grc_v4_candidate_a import A_SITE_POTENTIAL, HISTORY_POLICY
+    from .grc_v4_candidate_c import _fixed_current_policy
+
+    profile = reference.profile
+    identity, params = profile.identity_payload, profile.params_resolved
+    common, candidate, realization = params.common, params.candidate, params.realization
+    if (common.domain_id != "fixed_graph_strict_gap_spd_v1"
+            or common.gauge_id != "component_zero_mean_potential_v1"
+            or common.normalization_id != "unnormalized_vertex_stiffness_v1"
+            or common.measure_profile_id != "unit_vertex_measure_v1"
+            or identity.charge_profile_id != "unit_vertex_measure_v1"
+            or identity.realization != "RG2b" and not _fixed_current_policy(profile)):
+        raise _CrossingDeclarationError("unsupported crossing current/charge declaration")
+    if identity.candidate == "A":
+        if candidate.site_potential_id != A_SITE_POTENTIAL:
+            raise _CrossingDeclarationError("unsupported A potential declaration")
+    elif (candidate.potential_evaluator_id != "quadratic_site_potential_zero_derivative_v1"
+          or candidate.current_conditioning_policy_id != "strict_invertible_current_block_v1"):
+        raise _CrossingDeclarationError("unsupported C potential/conditioning declaration")
+    if identity.realization == "OS" and (
+        realization.predictor_policy_id != "reference_geometry_predictor_v1"
+        or realization.corrector_policy_id != "one_fresh_geometry_corrector_v1"
+        or realization.split_residual_norm_id != "edge_l2_v1"
+        or identity.candidate == "A" and params.lifecycle.history_policy_id != HISTORY_POLICY
+    ):
+        raise _CrossingDeclarationError("unsupported crossing OS declaration")
+
+
+def _snapshot_layout(reference: GRCV4ReferenceGeometry, registry: tuple[GRCV4ReferenceGeometry, ...], transitions: object) -> str:
+    if any(ref.profile.identity_payload.profile_family_id != "C_OS" for ref in registry) and (len(registry) > 1 or transitions):
+        return MIGRATION_SNAPSHOT_LAYOUT_ID
+    return (COS_SNAPSHOT_LAYOUT_ID if reference.profile.identity_payload.profile_family_id == "C_OS"
+            else GENERIC_SNAPSHOT_LAYOUT_ID)
+
+
+def _readmit_crossing(inputs: GeometryStageInputs, stage: OperationStage,
+                      backends: tuple[CandidateADifferentialReference, ...] = ()) -> None:
+    from .grc_v4_ci import CIStageError
+    from .grc_v4_rg2b import RG2bStageError
+
     try:
-        ProvisionalCandidateCOSStep(_os_inputs(inputs))
-    except (
-        ResourceBoundaryError,
-        CandidateCStageError,
-        GeometryDomainError,
-        NonfiniteGeometryError,
-    ) as exc:
+        _crossing_declaration(inputs.geometry.reference)
+        _readmit_state(_fresh_geometry(inputs), _backend_for(inputs.geometry.reference, backends))
+    except (ResourceBoundaryError, CandidateCStageError, CandidateAStageError,
+            CIStageError, RG2bStageError, OSStageError, GeometryDomainError,
+            NonfiniteGeometryError, _CrossingDeclarationError) as exc:
         raise _CrossingFailure(
             stage,
             "target_readmission_failure"
@@ -717,7 +796,12 @@ def _map_crossing(
             "unsupported_profile",
             "request target differs from the resolved profile",
         )
-    _history_bundle(request, source, target)
+    legacy = (source.profile.identity_payload.profile_family_id == "C_OS"
+              and target.profile.identity_payload.profile_family_id == "C_OS")
+    if type(request) is GRCV4MappedTopologyEventRequest and not legacy:
+        raise _CrossingFailure("admission", "unsupported_profile", "non-C_OS events require P9-7.2b")
+    if type(request) is GRCV4MappedTopologyEventRequest or legacy:
+        _history_bundle(request, source, target)
     if type(request) is GRCV4MigrationRequest:
         if source.graph != target.graph:
             raise _CrossingFailure(
@@ -731,7 +815,14 @@ def _map_crossing(
                 "invalid_migration",
                 "target requires constant-zero context",
             )
-        following = replace(before, geometry=target.geometry(), context=target.context)
+        if legacy:
+            following = replace(before, geometry=target.geometry(), context=target.context)
+        else:
+            from .grc_v4_migration import map_migration, MigrationAdmissionError
+            try:
+                following = map_migration(before, target, request.history_policy)
+            except MigrationAdmissionError as exc:
+                raise _CrossingFailure("admission", "invalid_migration", str(exc)) from exc
     else:
         assert isinstance(request, GRCV4MappedTopologyEventRequest)
         if (
@@ -794,18 +885,28 @@ def _map_crossing(
             reset=reset,
             Q_target=new_charge,
         )
-    return following
+    return _fresh_geometry(following)
 
 
 def _prepare_crossing(
     before: GeometryStageInputs,
     request: _CrossingRequest,
     target: GRCV4ReferenceGeometry,
+    backends: tuple[CandidateADifferentialReference, ...] = (),
 ) -> GeometryStageInputs:
-    following = _map_crossing(before, request, target)
-    _readmit_crossing(before, "pre_read_reconstruction")
+    from .grc_v4_pc import PCStageError
+
+    try:
+        following = _map_crossing(before, request, target)
+    except _CrossingFailure:
+        raise
+    except (GeometryDomainError, NonfiniteGeometryError, PCStageError) as exc:
+        # Target geometry reconstruction can fail before numerical readmission,
+        # including removal of the immediate CI path from a persistent state.
+        raise _CrossingFailure("target_construction", "domain_failure", str(exc)) from exc
+    _readmit_crossing(before, "pre_read_reconstruction", backends)
     # Provisional admission checks current AND reset at the target reference.
-    _readmit_crossing(following, "target_readmission")
+    _readmit_crossing(following, "target_readmission", backends)
     return following
 
 
@@ -868,6 +969,19 @@ def _crossing_receipts(
             )
         },
     }
+    if type(request) is GRCV4MigrationRequest and not (
+        source.profile.identity_payload.profile_family_id == "C_OS"
+        and target.profile.identity_payload.profile_family_id == "C_OS"
+    ):
+        from .grc_v4_migration import history_digest
+        for subject in ("candidate", "carrier"):
+            channel = getattr(request.history_policy, subject)
+            history[subject] = dict(subject=subject, disposition=channel.disposition,
+                                    source_history_digest=history_digest(before, subject),
+                                    target_history_digest=history_digest(after, subject),
+                                    information_loss=channel.information_loss)
+        core["information_losses"] = [history[s]["information_loss"] for s in ("candidate", "carrier")
+                                      if history[s]["information_loss"] != "none"]
     primary: dict[str, Any] = {
         "schema_version": "grcv4-profile-migration-receipt-v1",
         "core": core,
@@ -899,12 +1013,9 @@ def _crossing_receipts(
                 "core": core,
                 "subject": subject,
                 "history_disposition": disposition,
-                "information_loss": "none",
+                "information_loss": history[subject]["information_loss"],
             }
-            for subject, disposition in (
-                ("candidate", "rederived"),
-                ("carrier", "not_applicable"),
-            )
+            for subject, disposition in ((s, history[s]["disposition"]) for s in ("candidate", "carrier"))
         ),
     ]
 
@@ -954,6 +1065,7 @@ def _restore_crossings(
     registry: tuple[GRCV4ReferenceGeometry, ...],
     *,
     readmit: bool = True,
+    backends: tuple[CandidateADifferentialReference, ...] = (),
 ) -> dict[str, _Crossing]:
     result: dict[str, _Crossing] = {}
     for row in records:
@@ -978,9 +1090,9 @@ def _restore_crossings(
         # Live archives have already passed whole-tuple admission before their
         # immutable publication. Imported archives must reconstruct that proof.
         expected = (
-            _prepare_crossing(before, request, after.geometry.reference)
+            _prepare_crossing(before, request, after.geometry.reference, backends)
             if readmit
-            else after
+            else _map_crossing(before, request, after.geometry.reference)
         )
         if expected.scientific_state_id != after.scientific_state_id:
             raise V4IdentityError(
@@ -1203,10 +1315,12 @@ def _restore_commits(
             raise V4IdentityError("unrepresentable receipted charge residual") from None
         if actual < 0 or abs(delta) > bound or residual != charge["residual"]:
             raise V4IdentityError("charge receipt is outside its declared admission")
+        channels = (primary["history"] if crossing is not None else
+                    _receipt_context(reference)[0])
         for receipt, subject, disposition in zip(
             group[2:],
             ("candidate", "carrier"),
-            tuple(channel["disposition"] for channel in _receipt_context(reference)[0].values()),
+            tuple(channels[s]["disposition"] for s in ("candidate", "carrier")),
             strict=True,
         ):
             p = receipt.identity_payload
@@ -1219,10 +1333,10 @@ def _restore_commits(
                 "grcv4-history-disposition-receipt-v1",
                 subject,
                 disposition,
-                "none",
+                channels[subject]["information_loss"],
             ):
                 raise V4IdentityError("snapshot invents candidate/carrier history")
-        if core["information_losses"]:
+        if crossing is None and core["information_losses"]:
             raise V4IdentityError("ordinary local operations cannot claim topology history loss")
         if kind == "grcv4-reset-receipt-v1" and not (
             primary["reset_baseline_digest"]
@@ -1262,6 +1376,44 @@ def _restore_commits(
     if position != len(ledger):
         raise V4IdentityError("snapshot has receipts without their commit preimages")
     return tuple(commits)
+
+
+def _validate_scientific_commitments(
+    ledger: tuple[SuccessfulReceiptEnvelope, ...],
+    commits: tuple[CommitPayload, ...],
+    known_states: tuple[dict[str, Any], ...],
+) -> None:
+    """One scientific identity cannot carry conflicting component commitments.
+
+    Use available preimages, then compare repeated claims even without one.
+    This temporary lookup neither requires adjacent states nor attests that an
+    external historical computation occurred. No solver or persistent registry.
+    """
+    components: dict[str, tuple[str, ...]] = {}
+    clocks: dict[str, tuple[int, float]] = {}
+    names = ("graph_digest", "model_identity", "authoritative_digest", "reset_digest")
+    for scientific in known_states:
+        state_id = payload_identity("scientific_state_payload", scientific)
+        authority = payload_identity("authoritative_state_identity_payload", {
+            "schema_version": "grcv4-authoritative-state-identity-v1",
+            "authoritative": scientific["authoritative"],
+        })
+        value = (scientific["graph_digest"], scientific["active_model_identity"],
+                 authority, scientific["reset_digest"])
+        if components.setdefault(state_id, value) != value:
+            raise V4IdentityError("known scientific preimages contradict component commitments")
+        clocks[state_id] = (scientific["step_index"], scientific["time"])
+    for receipt in ledger:
+        core = cast(FrozenJSONMap, receipt.identity_payload["core"])
+        for prefix in ("source", "target"):
+            state_id = core[prefix + "_state_digest"]
+            value = tuple(core[prefix + "_" + name] for name in names)
+            if components.setdefault(state_id, value) != value:
+                raise V4IdentityError("receipt commitments contradict one scientific-state identity")
+    for commit in commits:
+        clock = (commit.target_step_index, commit.target_time)
+        if clocks.setdefault(commit.target_state_digest, clock) != clock:
+            raise V4IdentityError("commit clock contradicts its scientific-state identity")
 
 
 def _validate_publication(
@@ -1348,6 +1500,9 @@ def _validate_publication(
     if target != _lifecycle_state(after, ledger + emitted):
         raise V4IdentityError("publication state contradicts the committed delta")
     commits = owned.commits + (commit,)
+    crossings = _restore_crossings(
+        [row.to_dict() for row in transitions], registry, readmit=False
+    )
     _restore_commits(
         [
             {
@@ -1360,9 +1515,13 @@ def _validate_publication(
         after.geometry.reference,
         after.Q_target,
         after.reset_id,
-        _restore_crossings(
-            [row.to_dict() for row in transitions], registry, readmit=False
-        ),
+        crossings,
+    )
+    _validate_scientific_commitments(
+        ledger + emitted, commits,
+        (before.scientific_state_preimage, after.scientific_state_preimage,
+         *(endpoint.scientific_state_preimage for crossing in crossings.values()
+           for endpoint in (crossing.before, crossing.after))),
     )
 
 
@@ -1375,7 +1534,7 @@ class GRCV4Operation:
     Calls that publish state are serialized, with one immutable pointer swap.
     """
 
-    __slots__ = ("_registry", "_owned", "_lock", "_backend")
+    __slots__ = ("_registry", "_owned", "_lock", "_backends")
 
     def __init__(
         self,
@@ -1383,6 +1542,7 @@ class GRCV4Operation:
         *,
         targets: tuple[GRCV4ReferenceGeometry, ...] = (),
         differential_reference: CandidateADifferentialReference | None = None,
+        target_differential_references: tuple[CandidateADifferentialReference, ...] = (),
     ) -> None:
         before = GeometryStageInputs.from_payload(initial.to_payload())
         backend = (None if differential_reference is None else
@@ -1392,11 +1552,10 @@ class GRCV4Operation:
         _readmit_state(replace(before, dt=0), backend)
         if type(targets) is not tuple:
             raise TypeError("targets must be an ordered tuple of complete references")
-        generic = before.geometry.reference.profile.identity_payload.profile_family_id != "C_OS"
-        if generic and targets:
-            raise V4IdentityError("non-C_OS migration/event targets require P9-7.2 admission")
-        self._registry = _reference_registry((before.geometry.reference, *targets), generic=generic)
-        self._backend = backend
+        if type(target_differential_references) is not tuple:
+            raise TypeError("target differential references must be an ordered tuple")
+        self._registry = _reference_registry((before.geometry.reference, *targets), generic=True)
+        self._backends = _backend_registry((() if backend is None else (backend,)) + target_differential_references, self._registry)
         self._owned = _OwnedCOS(
             _lifecycle_state(before, ()), (), before.geometry.reference
         )
@@ -1418,6 +1577,12 @@ class GRCV4Operation:
     @property
     def _state(self) -> GRCV4LifecycleState:
         return self._owned.state
+
+    @property
+    def _backend(self) -> CandidateADifferentialReference | None:
+        # Active backend selection is part of the same reference publication;
+        # migrations never mutate a second live backend pointer.
+        return _backend_for(self._owned.reference, self._backends)
 
     def get_state(self) -> GRCV4LifecycleState:
         return self.state
@@ -1455,10 +1620,14 @@ class GRCV4Operation:
             },
             "lifecycle_digest": owned.state.lifecycle_digest,
         }
-        if owned.reference.profile.identity_payload.profile_family_id != "C_OS":
-            snapshot["implementation_layout_id"] = GENERIC_SNAPSHOT_LAYOUT_ID
+        layout = _snapshot_layout(owned.reference, self._registry, owned.transitions)
+        snapshot["implementation_layout_id"] = layout
+        if layout == MIGRATION_SNAPSHOT_LAYOUT_ID:
+            snapshot["differential_reference_registry"] = [b.to_payload() for b in self._backends]
+        elif layout == GENERIC_SNAPSHOT_LAYOUT_ID:
+            backend = _backend_for(owned.reference, self._backends)
             snapshot["differential_reference"] = (
-                None if self._backend is None else self._backend.to_payload()
+                None if backend is None else backend.to_payload()
             )
         return snapshot
 
@@ -1472,19 +1641,18 @@ class GRCV4Operation:
         """
         data = cast(dict[str, Any], snapshot_payload(state))
         reference = GRCV4ReferenceGeometry.from_payload(data["reference"])
-        generic = reference.profile.identity_payload.profile_family_id != "C_OS"
-        expected_layout = GENERIC_SNAPSHOT_LAYOUT_ID if generic else COS_SNAPSHOT_LAYOUT_ID
+        registry = _reference_registry(data["reference_registry"], generic=True)
+        expected_layout = _snapshot_layout(reference, registry, data["transition_records"])
         if data["implementation_layout_id"] != expected_layout:
             raise V4IdentityError("snapshot layout does not match its active profile family")
-        backend = (None if data.get("differential_reference") is None else
-                   CandidateADifferentialReference.from_payload(data["differential_reference"]))
-        registry = _reference_registry(data["reference_registry"], generic=generic)
-        if generic and (registry != (reference,) or data["transition_records"]):
-            raise V4IdentityError("non-C_OS crossing archives require P9-7.2 admission")
+        values = (data["differential_reference_registry"] if expected_layout == MIGRATION_SNAPSHOT_LAYOUT_ID else
+                  [] if data.get("differential_reference") is None else [data["differential_reference"]])
+        backends = _backend_registry(values, registry)
+        backend = _backend_for(reference, backends)
         if _resolve_reference(registry, *_reference_key(reference)) != reference:
             raise V4IdentityError("current reference contradicts the snapshot registry")
         transitions = data["transition_records"]
-        crossings = _restore_crossings(transitions, registry)
+        crossings = _restore_crossings(transitions, registry, backends=backends)
         if params is not None and canonical_json_bytes(params) != canonical_json_bytes(
             reference.profile.params_resolved.to_payload()
         ):
@@ -1545,31 +1713,12 @@ class GRCV4Operation:
             != data["lifecycle_digest"]
         ):
             raise V4IdentityError("lifecycle digest does not match content")
-        authority_id = payload_identity(
-            "authoritative_state_identity_payload",
-            {
-                "schema_version": "grcv4-authoritative-state-identity-v1",
-                "authoritative": scientific["authoritative"],
-            },
+        _validate_scientific_commitments(
+            ledger, commits,
+            (inputs.scientific_state_preimage,
+             *(endpoint.scientific_state_preimage for crossing in crossings.values()
+               for endpoint in (crossing.before, crossing.after))),
         )
-        for receipt in ledger:
-            core = cast(FrozenJSONMap, receipt.identity_payload["core"])
-            for prefix in ("source", "target"):
-                if core[prefix + "_state_digest"] == inputs.scientific_state_id and (
-                    core[prefix + "_authoritative_digest"] != authority_id
-                    or core[prefix + "_reset_digest"] != inputs.reset_id
-                ):
-                    raise V4IdentityError(
-                        "receipt subdigests contradict the embedded scientific state"
-                    )
-        for commit in commits:
-            if commit.target_state_digest == inputs.scientific_state_id and (
-                commit.target_step_index,
-                commit.target_time,
-            ) != (inputs.step_index, inputs.time):
-                raise V4IdentityError(
-                    "commit clock contradicts its embedded target state"
-                )
         if commits and (commits[-1].target_step_index, commits[-1].target_time) != (
             inputs.step_index,
             inputs.time,
@@ -1590,7 +1739,7 @@ class GRCV4Operation:
         result = cls.__new__(cls)
         result._lock = Lock()
         result._registry = registry
-        result._backend = backend
+        result._backends = backends
         result._owned = publication
         return result
 
@@ -1739,7 +1888,7 @@ class GRCV4Operation:
         if ref.profile.identity_payload.profile_family_id == "C_OS":
             current = CandidateCCurrent(inputs)
         else:
-            current, _ = _readmit_state(inputs, self._backend)
+            current, _ = _readmit_state(inputs, _backend_for(ref, self._backends))
         charge = _resource_charge(
             inputs, VertexScalar(ref.graph, state.current.C), "pre_read_reconstruction"
         )
@@ -1769,12 +1918,12 @@ class GRCV4Operation:
             return self._crossing(request)
 
     def _crossing(self, request: _CrossingRequest) -> GRCV4LifecycleResult:
-        if self._reference.profile.identity_payload.profile_family_id != "C_OS":
-            raise V4IdentityError("non-C_OS crossings remain outside P9-7.1; require P9-7.2")
         owned = self._owned
         before = _state_inputs(owned.reference, owned.state, request.operation_id)
         ledger = _ledger([r.to_dict() for r in owned.state.receipt_ledger])
         try:
+            if type(request) is GRCV4MappedTopologyEventRequest and owned.reference.profile.identity_payload.profile_family_id != "C_OS":
+                raise _CrossingFailure("admission", "unsupported_profile", "non-C_OS events require P9-7.2b")
             if request.source_state_digest != before.scientific_state_id:
                 raise _CrossingFailure(
                     "admission",
@@ -1800,7 +1949,9 @@ class GRCV4Operation:
             target_ref = _resolve_reference(
                 self._registry, request.target_profile_id, graph_digest
             )
-            following = _prepare_crossing(before, request, target_ref)
+            if type(request) is GRCV4MappedTopologyEventRequest and target_ref.profile.identity_payload.profile_family_id != "C_OS":
+                raise _CrossingFailure("admission", "unsupported_profile", "non-C_OS events require P9-7.2b")
+            following = _prepare_crossing(before, request, target_ref, self._backends)
         except _CrossingFailure as exc:
             identity_payload = FailureReceiptIdentityPayload(
                 "grcv4-failure-receipt-v1",
