@@ -15,14 +15,17 @@ from grcv4_explorer.phase9_verification import verification_status  # noqa: E402
 from grcv4_explorer.phase9_verification import pressure_projection  # noqa: E402
 from grcv4_explorer.receipt_parents import parent_authority  # noqa: E402
 from grcv4_explorer.abundance import abundance_authority  # noqa: E402
+from grcv4_explorer.a_initializer import initializer_authority  # noqa: E402
 
 
 class Handler(BaseHTTPRequestHandler):
     def do_GET(self):
         request = urlsplit(self.path)
-        if self.path in {"/api/receipt-parents", "/api/abundance"}:
+        if self.path in {"/api/receipt-parents", "/api/abundance", "/api/a-initializer"}:
             try:
-                query = abundance_authority if self.path == "/api/abundance" else parent_authority
+                query = {"/api/abundance": abundance_authority,
+                         "/api/receipt-parents": parent_authority,
+                         "/api/a-initializer": initializer_authority}[self.path]
                 content = json.dumps(query(repository_root(), TOOL.parent)).encode()
                 self.send_response(200)
             except Exception:

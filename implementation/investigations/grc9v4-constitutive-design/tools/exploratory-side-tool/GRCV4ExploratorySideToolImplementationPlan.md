@@ -1887,16 +1887,19 @@ claim graph, registry, signature service, numerical law or global history archiv
 
 The user accepted the six-class migration/audit scope at `924fca9` and then
 authorized the [target-only reference-pass proposal](../../decisions/P9CandidateAInitializerReferencePassProposal.md).
-The clarified bounded design is now user-accepted, but not yet admitted by the
-tool or executable. Structured source/adapter admission is the next task; no
-runtime support leaf or gate is granted by making the source queryable.
+The clarified bounded design was accepted at `49b83ba` and is now admitted by
+the tool, but is not executable. No runtime support leaf or gate is granted by
+making the source queryable. See the
+[admission review](../../../../phase-9-grcv4/tranche-7/P9-7.2a-InitializerAuthority.md).
 
-Following design acceptance, append its explicit policy, optional Candidate A claim,
-open-to-design-resolved debt and still-forward runtime obligations through the
-existing source-admission mechanism. Expose actual source/edge/classification/
-digest traces in the API, notebook and browser, retaining D10/D11/P9 predecessor
-identities and support semantics. Admit that authority before auditing its
-propagation to GRCV4-proposal, paper and V4 specifications. The source defines
+The append-only source now binds its explicit policy, optional Candidate A claim,
+design-resolved debt and still-forward integration obligation. Six new graph
+nodes retain D10/D11/P9 predecessor rows and support semantics unchanged.
+`initializer_authority`, `/api/a-initializer`, the executable notebook cell and
+**Load initializer authority** browser controls expose source/edge/classification/
+digest traces and clear stale output on failure. Current discovery fails closed;
+the pinned historical abundance context is an explicit query, not a fallback.
+Next audit propagation to GRCV4-proposal, paper and V4 specifications. The source defines
 one reference pass, not a new solver or unconditional target admission.
 
 When implemented, extend the existing migration verifier and affected UX for
@@ -1912,11 +1915,17 @@ and generic events remain separate from this proposal and source admission.
 
 The design review is PASS with refinements incorporated; the user accepted the
 clarified design through the commit/continuation request on 2026-09-11.
-Structured source admission is next. Bind the unit-vertex/boundary/normalization scope,
+Structured source admission binds the unit-vertex/boundary/normalization scope,
 static-policy → profile → invocation-record identity order, auxiliary baseline
 versus full-current admission, fixed target charts and independent reset inputs.
 The auxiliary-singular/final-reference-regular fixture must become a producer
 regression; the local rounded-value check alone is not runtime migration
-evidence. Once accepted, display producer choice as resolved while keeping
-source/payload binding, runtime evidence and aggregate closure pending. Never
+evidence. The visible surfaces display producer choice as resolved while keeping
+payload/spec binding, runtime evidence and aggregate closure pending. Never
 require ordinarily evolved W to equal an initializer rerun during restoration.
+
+The normal verification route includes focused initializer source/surface tests
+and the current read-only successor check. It preserves the exact 25/17-test
+migration records, source subjects and 7.1 predecessor without numerical reruns.
+Desktop/mobile controls, notebook reexecution and the real HTTP handler are
+tested directly; historical scenario counts are not reclassified as new evidence.

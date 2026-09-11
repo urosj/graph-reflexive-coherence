@@ -147,7 +147,44 @@ browser campaign.
 pressure. It clears the isolated-pressure value to `None` and writes separate
 `notebook-current-status.json`; it cannot refresh a stale full-pressure run.
 Default/full mode still rejects stale evidence. Normal verification dispatches
-to the abundance successor without applying older current-tree assertions to it.
+to the current successor without applying older current-tree assertions to it.
+
+### P9-7.2a initializer design admission
+
+The accepted `grcv4-a-target-reference-pass-v1` design is queryable, not yet an
+implemented migration. **Load initializer authority** opens claim/debt/object/
+contract selectors; `/api/a-initializer` and the notebook's
+`a-initializer-authority` cell return the same `initializer_authority` projection.
+Producer choice is resolved; payload/spec binding, runtime evidence and aggregate
+7.2a remain pending. No G2/G3 or wider support is added.
+
+Focused access and failure scenarios, owned by `test_p972a_initializer.py`:
+
+- Inspect the optional claim and required contract support without promoting
+  either to executed conformance; retain exact source, edge and trace identities.
+- Follow the design-resolved debt to its separate **forward** verification row.
+- Rehash changed source/admission/claim/status candidates: current loading holds.
+  Missing, changed or unknown sources never trigger a historical fallback.
+- Execute/reexecute the actual notebook cell and HTTP handler; failure clears
+  the notebook value or returns error-only HTTP 503.
+- Use all four actual browser selectors on desktop/mobile, fail then recover a
+  refresh, and ensure a delayed older response cannot repopulate held output.
+  The browser test intercepts transport; handler identity is checked separately.
+
+These are additional source-access scenarios, not changes to the historical
+scientific scenario inventory. The normal verification entry includes them.
+For a lean source/evidence check, use:
+
+```bash
+PYTHONPATH=src:. .venv/bin/python implementation/phase-9-grcv4/verification/verify_p972a_initializer_authority.py --check
+```
+
+The existing migration `--check` delegates to that same successor. It verifies
+the current source admission and unchanged accepted 25/17-test records, their
+original source identities and 7.1 predecessor through Git reads and existing
+correction spans. It does not run numerical tests or relabel old C→A refusal
+evidence. Historical reproduction uses the checker/source subject at `49b83ba`
+and a fresh output; positive C→A needs a later, separately bound execution.
 
 The [scenario register](../../../../../phase-9-grcv4/tranche-1/P9-1.7-1.8-Scenarios.json)
 links all six independent-review pressures and the live access scenarios to

@@ -89,17 +89,18 @@ def verify(root, boundary_only=False):
         for label, script in [
             ("P9492_parent_authority_surfaces", policy.SCRIPTS + "test_p9492_parents.py"),
             ("P9491a_abundance_authority_surfaces", policy.SCRIPTS + "test_p9491a_abundance.py"),
+            ("P972a_initializer_authority_surfaces", policy.SCRIPTS + "test_p972a_initializer.py"),
             ("P9_G1_authority_pressure", policy.HERE + "test_phase9_g1.py"),
             ("P9_G1_API_notebook", policy.SCRIPTS + "test_phase9_g1_surfaces.py"),
         ]:
             policy.prior.run_logged(
                 [sys.executable, str(root / script)], root, label, commands
             )
-        # The successor review verifies the current fixture run and original
-        # parent/facade/abundance Git subjects without numerical reexecution.
+        # Admit current design authority while retaining the accepted migration
+        # executions and predecessor subjects without numerical reexecution.
         policy.prior.run_logged(
-            [sys.executable, str(root / policy.HERE / "verify_p972a_migrations.py"), "--check"],
-            root, "P971_current_lifecycle_and_preserved_predecessors", commands,
+            [sys.executable, str(root / policy.HERE / "verify_p972a_initializer_authority.py"), "--check"],
+            root, "P972a_current_initializer_authority_and_preserved_migrations", commands,
         )
         report = policy.read(root / policy.GENERATED / policy.REPORT_FILE)
         policy.require(

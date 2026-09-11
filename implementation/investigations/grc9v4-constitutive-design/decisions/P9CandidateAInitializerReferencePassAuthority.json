@@ -1,0 +1,120 @@
+{
+  "schema_version": "grcv4_p972a_initializer_authority_v1",
+  "record_id": "GRCV4-P9-7.2a-A-INITIALIZER-v1",
+  "status": "accepted_bounded_design",
+  "accepted_on": "2026-09-11",
+  "acceptance": "The user accepted the audit-refined reference-pass definition by requesting its commit and continuation. Producer choice is resolved; source/payload propagation, implementation and positive migration evidence are distinct.",
+  "design_commit": "49b83ba1e05a3e657293ca561e9dec0a80472f5c",
+  "design_path": "implementation/investigations/grc9v4-constitutive-design/decisions/P9CandidateAInitializerReferencePassProposal.md",
+  "design_sha256": "3758106377a8e88f8e48e110f1bf171f4437812f81a9c97282261b6693b5e5f6",
+  "policy_id": "grcv4-a-target-reference-pass-v1",
+  "numerical_id": "grcv4-a-reference-pass-binary64-v1",
+  "history_policy_id": "candidate_a_target_reference_pass_initialization_log_history_v1",
+  "source_contract_ids": [
+    "D10.2-EC-PARENT-L-A-INITIALIZER-GRC",
+    "D10.2-EC-PARENT-L-PROFILE-MIGRATION",
+    "D10.2-EC-PARENT-L-SNAPSHOT-RESET",
+    "D10.2-EC-PARENT-L-ATOMICITY"
+  ],
+  "claim": {
+    "claim_id": "P9-7.2a-CL-O-INIT-001",
+    "claim_class": "optional",
+    "status": "accepted_bounded_design",
+    "statement": "The target-only one-pass Candidate A initializer reconstructs D(C), evaluates auxiliary G_W(C,0), computes its reference-geometry baseline flux and evaluates full G_W(C,J_ref). On declared inputs it returns provisional initialized W or a declared arithmetic failure; only the final target undergoes whole-realization admission.",
+    "scope": "Optional graph-generic Candidate A initialization policy; one shared producer for OS, CI, PC, CI+PC and RG2b with independent current/reset construction and realization-owned target admission.",
+    "not_claimed": ["inherited_D10_producer_choice", "unique_GRC_completion", "reference_neutrality", "native_formation", "source_A_history_preservation", "arbitrary_backend_implementation", "exact_GRC9V3_initialization", "positive_C_to_A_execution", "aggregate_P9_7_2a_closure", "G2_or_G3_support"]
+  },
+  "debt": {
+    "debt_id": "P9-7.2a-DEBT-A-INITIALIZER-SOURCE",
+    "status": "resolved_bounded_design",
+    "transformation": "resolved_producer_choice_with_forward_binding_and_runtime_obligations",
+    "origin": "D10.2 defines the history-free initializer role but not this current producer; P9-5.1 supplies a conditional explicit-flux constructor; P9-5.4 and P9-7.2a retain the source-rule obligation.",
+    "successor_claim_ids": ["P9-7.2a-CL-O-INIT-001"],
+    "verification_obligation": "P9-7.2a-VO-A-INITIALIZER-INTEGRATION",
+    "remaining_work": ["reviewed_proposal_then_paper_propagation", "V4_specification_release_and_closed_payload_binding", "common_producer_and_five_A_target_migration_paths", "focused_numerical_lifecycle_and_surface_evidence", "aggregate_P9_7_2a_reconciliation"]
+  },
+  "object": {
+    "object_id": "P9-O-A-INITIALIZER-REFERENCE-PASS",
+    "object_role": "history-free target-only Candidate A initializer, not an ordinary writer or target-admission solver",
+    "accepted_claim_ids": ["P9-7.2a-CL-O-INIT-001"]
+  },
+  "contracts": [
+    {
+      "equation_contract_id": "P9-EC-A-INITIALIZER-REFERENCE-PASS",
+      "parent_object_ids": ["P9-O-A-INITIALIZER-REFERENCE-PASS"],
+      "accepted_claim_ids": ["P9-7.2a-CL-O-INIT-001"],
+      "support_semantics": "required",
+      "normative_equation_or_contract": "Exactly one target-only reference transport pass supplies J_ref for the unchanged full G_W; fixed reference data, auxiliary conductance and final retained W have distinct authority. No full-current solve or final-target chart check is imposed on auxiliary W.",
+      "inputs": ["complete_target_graph_orientation_boundary_profile_context", "target_C", "identity_bound_fixed_differential_and_site_recipes"],
+      "construction": [
+        "D = rebuild_target_differentials(C; fixed_target_recipe)",
+        "E_e = -(alpha*(C_u+C_v) + beta*norm(D_u-D_v)^2)/2",
+        "W_base_e = max(W_floor, exp(E_e)) = G_W_e(C,0)",
+        "Phi_base = kappa_c*B*Diag(W_base)*B^T*C - V_site_prime(C;U)",
+        "J_ref = -eta*Diag(W_base)*B^T*Phi_base",
+        "W_init_e = max(W_floor, exp(E_e-gamma*J_ref_e^2/2)) = G_W_e(C,J_ref)"
+      ],
+      "staging": {
+        "incidence": "tail_plus_head_minus; loops have zero columns; parallel edges contribute separately",
+        "passes": 1,
+        "geometry": "reference_stage_only; reference_relative_increment_zero; final_target_geometry_not_disabled",
+        "forbidden_inputs": ["discarded_source_W_or_Z", "source_current_or_descriptor_cache", "caller_supplied_flux", "final_W_being_initialized"],
+        "fixed_reference_data": "differential weights/frames/regularization and Hodge/reference geometry preexist independently of W_base and W_init",
+        "auxiliary_admission": "declared differential/conductance/mobility/potential/baseline arithmetic only; no CandidateACurrent, Read-Back, total-current solve or target realization W chart",
+        "final_admission": "existing whole-target owner with fixed declared domains; no recentering, enlargement or fallback",
+        "history_free": "identical declared target inputs yield identical numeric W regardless of discarded source history; target C may carry historical influence",
+        "not_required": ["fixed_point", "zero_A_contrast", "native_formation", "arbitrary_parameter_target_admission"]
+      },
+      "initial_executable_domain": ["unit_vertex_pairing", "existing_admitted_boundary_and_normalization", "identity_bound_host_frame_WLS", "declared_zero_derivative_site_potential", "existing_nonnegative_resource_and_finite_parameter_domain"],
+      "numerics": [
+        "Existing exact binary64-input WLS with rounded gradient outputs.",
+        "Auxiliary G_W accumulates its combined exponent exactly before one binary64 rounding, existing math.exp and positive floor; retain the documented far-negative floor branch.",
+        "Round eta*W_base once as existing mobility; nonfinite or nonpositive results reject, including mobility underflow to zero.",
+        "Accumulate each full reference potential exactly from rounded W_base and declared site outputs, then round once; no edgewise partial rounding or initializer gauge projection.",
+        "Use rounded potential and rounded mobility, accumulate each incidence difference/product exactly and round flux once; signed underflow may become canonical zero, unlike positive mobility.",
+        "Final G_W combines original unfloored alpha/beta channels and rounded J_ref gamma channel before one exponent rounding. No rounded-E addition, log(W_base), floored-product shortcut or extra bootstrap pass.",
+        "Retain representable subnormals; intermediate potential/flux/exp range failures reject with typed stage/disposition. No clipping, log-domain replacement or fallback current.",
+        "Existing math.exp is not a new cross-platform correctly-rounded guarantee; retain source/environment and input/output identities without machine-local paths."
+      ],
+      "identity_and_restoration": [
+        "Static policy/numerical/recipe identities precede complete target profile, then output-bearing current/reset invocation records, then migration evidence; no identity cycle or new persistent coordinate.",
+        "Each invocation binds role, complete target inputs, recipes, policy/numerical identities and resulting W. Derived intermediates must be recomputed if retained; matching claimed flux or hash is not production provenance.",
+        "The closed payload and release applicability must be specified before runtime. Old explicit-flux records retain their meaning and are not silently upgraded or rehashed.",
+        "Restoration checks archived crossing inputs and initialized endpoints, not a fresh-initializer constraint on subsequently ordinarily evolved W; external-history trust ceiling remains."
+      ],
+      "lifecycle": [
+        "Apply one policy independently to current/reset target C and context. Identical operands give identical numeric outputs despite different record roles; do not manufacture a reset-only failure using caller-supplied unequal fluxes.",
+        "Preserve current/reset C, charge target and clock on same-graph C-to-A. Receipt history-free A W construction separately from source C carrier loss; initialize target A persistent carriers to zero, never reinterpret source C carrier history.",
+        "Readmit both complete final targets using existing OS/CI/PC/CI+PC/RG2b owners; RG2b state/section admission is not next-beat eligibility.",
+        "No continuity, resource repair, clock advance, ordinary W write or carrier/formation beat. Publish authority, references, archives, receipts and commit identity atomically after all checks.",
+        "Typed semantic failures preserve stage/disposition; unexpected programmer exceptions propagate. Preserve accepted F1/F2 known/repeated-state checks and lawful unreceipted assignment without forced adjacency."
+      ]
+    }
+  ],
+  "verification_obligations": [
+    {
+      "obligation_id": "P9-7.2a-VO-A-INITIALIZER-INTEGRATION",
+      "status": "pending_forward",
+      "owner": "P9-7.2a",
+      "obligations": [
+        "Reviewed GRCV4-proposal, then paper, then V4 successor specification with closed identity/payload and release applicability.",
+        "One common producer and positive real C-to-A migration through all five A realizations; no scalar-only or disabled-channel completion.",
+        "Active alpha/beta/gamma, both gamma signs, nonzero descriptor/current, nontrivial graph, loops/parallel/isolate where admitted, relabeling/reorientation and backend-scoped covariance.",
+        "Auxiliary-total-current-singular/final-reference-regular regression at the actual producer, with rounded operands; final target still owns admission.",
+        "Floor/rounding/cancellation/subnormal/overflow, source-history independence, equal-input current/reset and genuine reset-only failure controls; fixed target charts must not be repaired.",
+        "Static/invocation identity, real migration receipts, restoration/reset/duplication/continuation and F1/F2 whole-publication rollback.",
+        "Focused source/input/output-bound evidence and actual API/notebook/browser agreement; retain original 25/17-test subjects without relabeling old C-to-A refusals as success.",
+        "Aggregate seven-class reconciliation and acceptance; generic events, wider G2/G3 and GRC9V4 specialization remain separate."
+      ]
+    }
+  ],
+  "accepted_generic_runtime_support": [],
+  "admitted_specialization_support_sets": [],
+  "producer_choice_resolved": true,
+  "payload_specification_complete": false,
+  "positive_migration_verified": false,
+  "aggregate_closed": false,
+  "G2_accepted": false,
+  "G3_accepted": false,
+  "record_digest": "32f938ccb19e94d94023bb3c83c8597495fb6e5a2b1e0c84ef1feded4456a8f3"
+}

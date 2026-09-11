@@ -1139,8 +1139,8 @@ may reach G2 without waiting for all Tranche 6 realizations.
   - [x] Prepare the bounded [target-only reference-pass proposal](./investigations/grc9v4-constitutive-design/decisions/P9CandidateAInitializerReferencePassProposal.md)
     with source/choice separation, fixed target differential data, one bootstrap
     pass, full conductance channels, numerical/floor/range rules, versioned
-    identity and independent current/reset lifecycle obligations. Draft only;
-    proposed debt/claim identifiers do not create accepted authority.
+    identity and independent current/reset lifecycle obligations. This initial
+    drafting step did not itself create accepted authority.
   - [x] Incorporate the supplied design-review PASS: clarify unit-vertex pairing
     and boundary/normalization scope; retain auxiliary-singular/final-regular
     pressure, acyclic policy/profile/invocation identity, genuine reset-only
@@ -1149,9 +1149,11 @@ may reach G2 without waiting for all Tranche 6 realizations.
   - [x] User accepted the clarified initializer definition by requesting its
     commit and continuation on 2026-09-11. Producer choice is resolved; keep
     propagation/runtime verification distinct from this design acceptance.
-  - [ ] Admit the bounded successor/debt/claim through the existing side tool;
+  - [x] Admit the bounded successor/debt/claim through the existing side tool;
     preserve historical classifications and expose real API/notebook/browser
-    traces with design-versus-implementation status.
+    traces with design-versus-implementation status. See the
+    [admission review](./phase-9-grcv4/tranche-7/P9-7.2a-InitializerAuthority.md).
+    Preserve the original 25/17-test subjects; no new migration execution.
   - [ ] Update and review GRCV4-proposal §12.6, then propagate to the paper and
     V4 specification successor, including the closed policy/numerical/identity
     payload. No old-family changes or automatic GRC9V3 initializer binding.

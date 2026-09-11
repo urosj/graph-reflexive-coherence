@@ -17,16 +17,17 @@ Both reproduced natively and are corrected; the focused correction capture
 passed 17/17 methods. See the review's audit section. The original 25-test record
 and exact source subject remain recoverable and are not relabeled as a rerun.
 That commit stopped at the bounded corrections as requested; it did not close
-C→A or grant wider support. The user has now authorized the source-rule proposal
-below, not an aggregate 7.2 closure campaign.
+C→A or grant wider support. The user subsequently accepted the initializer
+design at `49b83ba`; the source/tool continuation below is not aggregate closure.
 
-**C→A positive migration remains pending:** P9-5.4 does not admit the initializer's
-target reference-current source. Native rejection tests preserve this boundary;
-they do not close the seventh class or aggregate 7.2a. The remaining work needs
-a source-backed initializer resolution for current and reset, not an editorial
-zero seed or supplied-W bypass. Generic topology events remain P9-7.2b.
+**C→A positive migration remains pending:** P9-5.4's conditional constructor
+and native refusal evidence remain unchanged. The newly admitted design now
+resolves the reference-current producer choice, but still needs specification
+binding, implementation and positive current/reset evidence. Neither source
+admission nor the old refusals close the seventh class or aggregate 7.2a.
+Generic topology events remain P9-7.2b.
 
-## Active next step: admit the accepted C→A reference-pass definition
+## Active next step: propagate the admitted design to GRCV4-proposal for review
 
 The [initializer proposal](./investigations/grc9v4-constitutive-design/decisions/P9CandidateAInitializerReferencePassProposal.md)
 defines one target-only pass: fresh differentials → auxiliary `G_W(C, 0)` →
@@ -40,16 +41,19 @@ and restoration of archived versus evolved W are explicit. A single native
 value/current probe confirmed the rounded adversarial fixture; it is not a
 producer or migration execution. The user has now **accepted the clarified
 design by requesting its commit and continuation**. It is new bounded authority,
-not an inherited D10 interpretation or an implemented migration. Claim/debt IDs
-await structured source admission before they become queryable graph nodes.
+not an inherited D10 interpretation or an implemented migration. The subsequent
+[source/tool admission](./phase-9-grcv4/tranche-7/P9-7.2a-InitializerAuthority.md)
+adds queryable optional claim, resolved-design debt, contract and forward
+verification obligation. Actual API, notebook and browser controls expose the
+same source-exact traces. Historical graph rows and support remain unchanged.
 
-Next: structured successor authority/tool admission. The producer choice is
-resolved at design scope, without another search for a law. Use the existing
-authority/tool admission → proposal review → paper → V4 specification → runtime
-and focused tests route. No paper/specification, accepted claim source, runtime
-or evidence record was changed for this design decision. No new runtime permission or G2/G3
-is granted. Keep the accepted 25/17-test subjects; the new producer needs its own
-bounded evidence rather than relabeling the earlier C→A refusals as success.
+Next: update and review **GRCV4-proposal §12.6**, using the new typed authority.
+After that review, propagate to paper → V4 specification → runtime and focused
+tests. Paper, proposal, specs and runtime remain unchanged in this admission
+step. No new runtime permission or G2/G3 is granted. The current scoped checker
+preserves the accepted 25/17-test records and reconstructs their exact historical
+sources from Git plus the existing correction spans, without a zip or numerical
+rerun. The new producer needs its own bounded execution evidence.
 
 ## Existing scoped verification
 
@@ -59,10 +63,13 @@ Current scoped check, repository root:
 PYTHONPATH=src:. .venv/bin/python implementation/phase-9-grcv4/verification/verify_p972a_migrations.py --check
 ```
 
-The explicit `--run --output <new-repository-relative-json-path>` route runs only
-the focused migration roster and produces a new source/input/output-bound record.
-Use `--audit-run --output <new-repository-relative-json-path>` for only the
-correction roster. `--check` inspects both records without numerical execution.
+`--check` now dispatches to `verify_p972a_initializer_authority.py --check`:
+current source admission plus preserved original evidence, without numerical
+execution. To deliberately reproduce the historical migration/audit rosters,
+use their original checker and sources at `49b83ba` (the original 25-test source
+is additionally recoverable with `P9-7.2a-OriginalSources.json`). Its explicit
+`--run` / `--audit-run` routes require a fresh repository-relative JSON output;
+a rerun is a new execution, never a replacement for retained evidence.
 Old 7.1 records remain unchanged; their sources are retrievable at `5d8dbe2`.
 Use the new current checker, not old current-tree assertions. No new G2/G3,
 specialization permission, paper/spec claim or numerical authority is granted.

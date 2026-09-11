@@ -57,7 +57,7 @@ export async function verifiedStatus(value) {
 }
 
 export async function verifiedParents(value) {
-  if (value?.authority_extension_digest !== 'f50b4623cf0400532cda0c6c4ea600d1d55552d7927fbfcef62931524380188e') throw new Error('Unadmitted parent authority identity');
+  if (value?.authority_extension_digest !== 'd9ba802c9fd29169bcea4adac3adc83cad1f1ef6a79e2dba99b6dff3f1a10188') throw new Error('Unadmitted parent authority identity');
   if (value?.schema !== 'grcv4_p9492_parent_surface_v1' || value.policy_id !== 'grcv4-previous-successful-primary-v1' || value.G2_accepted !== false || value.runtime_conformance_inferred !== false || !Array.isArray(value.contracts) || value.contracts.length !== 3) throw new Error('Unknown parent authority or widened conformance');
   const {projection_digest, ...body} = value;
   const hash = async v => Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256', new TextEncoder().encode(canonical(v)))), b => b.toString(16).padStart(2, '0')).join('');
@@ -102,7 +102,7 @@ if (typeof document !== 'undefined') {
 }
 
 export async function verifiedAbundance(value) {
-  if (value?.authority_extension_digest !== 'f50b4623cf0400532cda0c6c4ea600d1d55552d7927fbfcef62931524380188e') throw new Error('Unadmitted abundance authority identity');
+  if (value?.authority_extension_digest !== 'd9ba802c9fd29169bcea4adac3adc83cad1f1ef6a79e2dba99b6dff3f1a10188') throw new Error('Unadmitted abundance authority identity');
   if (value?.schema !== 'grcv4_p9491a_abundance_surface_v1' || value.policy_id !== 'grcv4-family-abundance-diagnostic-v1' || value.numeric_definition_admitted !== false || value.G2_accepted !== false || value.runtime_conformance_inferred !== false || !Array.isArray(value.contracts) || value.contracts.length !== 3) throw new Error('Unknown abundance authority or widened conformance');
   const {projection_digest, ...body} = value;
   const hash = async v => Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256', new TextEncoder().encode(canonical(v)))), b => b.toString(16).padStart(2, '0')).join('');
@@ -144,6 +144,53 @@ async function loadAbundance() {
 if (typeof document !== 'undefined') {
   document.querySelector('#abundance-refresh')?.addEventListener('click', loadAbundance);
   document.querySelector('#abundance-view')?.addEventListener('change', renderAbundance);
+}
+
+export async function verifiedInitializer(value) {
+  const expected = 'fa59abda356446daca516b33028a07a48ec63aaacb8f961cd274a425dca48dd1';
+  const {projection_digest, ...body} = value ?? {};
+  const hash = async v => Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256', new TextEncoder().encode(canonical(v)))), b => b.toString(16).padStart(2, '0')).join('');
+  // Pin the entire source-exact projection, not only rehashable status labels.
+  if (projection_digest !== expected || await hash(body) !== expected ||
+      value.schema !== 'grcv4_p972a_initializer_surface_v1' ||
+      value.authority_extension_digest !== 'd9ba802c9fd29169bcea4adac3adc83cad1f1ef6a79e2dba99b6dff3f1a10188' ||
+      value.producer_choice_resolved !== true ||
+      ['payload_specification_complete', 'positive_migration_verified', 'aggregate_closed', 'G2_accepted', 'G3_accepted', 'runtime_conformance_inferred'].some(k => value[k] !== false)) {
+    throw new Error('Unadmitted initializer authority or widened completion claim');
+  }
+  return value;
+}
+
+let initializerGeneration = 0;
+let initializerValue = null;
+function renderInitializer() {
+  const output = document.querySelector('#initializer-output');
+  output.textContent = '';
+  if (!initializerValue) return;
+  const key = document.querySelector('#initializer-view').value;
+  output.textContent = JSON.stringify(key === 'contract' ? initializerValue.contracts[0] : initializerValue[key], null, 2);
+}
+async function loadInitializer() {
+  const generation = ++initializerGeneration;
+  initializerValue = null;
+  renderInitializer();
+  const status = document.querySelector('#initializer-status');
+  status.textContent = 'Checking accepted initializer source…';
+  try {
+    const response = await fetch('/api/a-initializer', {cache: 'no-store'});
+    if (!response.ok) throw new Error('Initializer authority unavailable');
+    const value = await verifiedInitializer(await response.json());
+    if (generation !== initializerGeneration) return;
+    initializerValue = value;
+    status.textContent = 'Producer choice resolved (accepted optional A design). Payload/spec binding, positive migration and aggregate 7.2a remain pending; no new G2/G3.';
+    renderInitializer();
+  } catch (error) {
+    if (generation === initializerGeneration) status.textContent = `Held: ${error.message}`;
+  }
+}
+if (typeof document !== 'undefined') {
+  document.querySelector('#initializer-refresh')?.addEventListener('click', loadInitializer);
+  document.querySelector('#initializer-view')?.addEventListener('change', renderInitializer);
 }
 
 let refreshGeneration = 0;

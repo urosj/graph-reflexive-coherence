@@ -1511,11 +1511,17 @@ P9-3.2 implementation is pending review; runtime support remains empty.
       native fixture check is not producer or migration acceptance evidence.
 - [x] User accepted the clarified source rule through the commit/continuation
       request on 2026-09-11. Producer choice resolves at bounded design scope.
-- [ ] Append its authority and debt/claim routing without rewriting history;
+- [x] Append its authority and debt/claim routing without rewriting history;
       source admission, propagation/runtime/aggregate completion stay distinct.
-- [ ] Expose accepted initializer/debt/claim traces through the actual forensic
+- [x] Expose accepted initializer/debt/claim traces through the actual forensic
       API, notebook and browser, with source/edge witnesses and design/runtime
-      boundaries; then verify ordered proposal/paper/V4-spec propagation.
+      boundaries. Verify pinned-source/admission rejection, forward-debt routing,
+      compatibility loaders and stale clearing, including desktop/mobile controls.
+- [x] Route normal verification and the existing migration `--check` to current
+      source admission plus exact retained 25/17-test and predecessor subjects;
+      no historical numerical rerun or new runtime permission.
+- [ ] Verify ordered GRCV4-proposal review → paper → V4-spec propagation,
+      including the closed static-policy and construction-record payloads.
 - [ ] Extend the existing migration evidence/check path for the admitted common
       producer and all five A target realizations, with nontrivial active-channel,
       source-independence, numerical-boundary and current/reset admission tests.

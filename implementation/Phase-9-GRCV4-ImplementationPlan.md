@@ -1225,10 +1225,12 @@ retained W and reference geometry separately typed; specify numerical rounding,
 floor/range failures and identity before implementation. No implicit fixed-point
 solve, supplied-flux provenance shortcut, source history or extra ordinary beat.
 
-The draft registers the open source-rule debt and a proposed optional Candidate
-A construction claim without adding them to accepted authority. Review the
-exact policy first; after acceptance admit the bounded source through the side
-tool, update/review the paper proposal, then propagate to paper and the V4
+The initial draft registered source-rule debt and an optional Candidate A
+construction claim; the user accepted the clarified policy at `49b83ba`.
+Its [structured admission](./phase-9-grcv4/tranche-7/P9-7.2a-InitializerAuthority.md)
+now exposes that optional claim, design-resolved debt and still-forward
+obligations through the side tool. Next update/review the paper proposal, then
+propagate to paper and the V4
 specification successor before runtime. Generic and exact GRC9V3 initializer
 bindings remain separate; no older family changes. Preserve P9-5.1/P9-5.4's
 accepted conditional-constructor scope and the existing migration records.
@@ -1241,8 +1243,9 @@ edges, reset-only failures, restoration and F1/F2 publication consistency.
 No all-parameter guarantee or Cartesian source/target campaign is required.
 Use focused changed-path evidence and the existing verifier/API/notebook/browser
 surfaces; review aggregate 7.2a only after the positive seventh class exists.
-Proposal preparation/review is complete; structured authority admission,
-paper/spec propagation, numerical implementation and gate closure remain pending.
+Design preparation/review and structured authority admission are complete;
+GRCV4-proposal/paper/spec propagation, numerical implementation and aggregate
+closure remain pending.
 
 The supplied design review passed with refinements now incorporated: retain the
 existing unit-vertex pairing and admitted boundary/normalization scope; forbid
@@ -1256,7 +1259,10 @@ one native primitive check confirmed its rounded operands but is not migration
 evidence. The user subsequently accepted the clarified design by requesting its
 commit and continuation on 2026-09-11. Producer choice is now resolved; binding,
 propagation and runtime evidence remain, not another mathematical source-rule
-search. Proceed first with structured authority and side-tool admission.
+search. Source admission is now complete, with actual API/notebook/browser
+access and no runtime permission change. The current scoped checker preserves
+the 25/17-test subjects and their 7.1 predecessor using batched Git reads;
+those are historical executions, not new producer evidence.
 
 Exercise missing lineage, invalid reference maps, readmission failure, and
 receipt ownership. `P9-G2[p]` is available only for profiles whose full

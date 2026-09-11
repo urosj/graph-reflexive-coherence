@@ -187,6 +187,14 @@ def validate_audit(value):
 
 
 def check():
+    # The accepted producer source now has a current authority successor.
+    # Preserve this checker's original 25/17-test source at its Git subject;
+    # never relabel those executions against the new forensic context.
+    from verify_p972a_initializer_authority import check as current_check
+    return current_check()
+
+
+def historical_check():
     value = p.read(p.ROOT / RECORD)
     sources = original_sources()
     validate(value, sources)
