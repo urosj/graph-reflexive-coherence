@@ -11,15 +11,15 @@
     },
     {
       "path": "implementation/Phase-9-GRCV4-Handoff.md",
-      "sha256": "706109256b0c98eec2e2cc62d61e637c2cbfdb3e5f48a7773f2ec2551c4fed55"
+      "sha256": "b398f343e57ad8ac8171f2bef5ff348a9463faaaadde2039effe0d8da60f9d9c"
     },
     {
       "path": "implementation/Phase-9-GRCV4-ImplementationChecklist.md",
-      "sha256": "02d419c0731f7cfd7b82408b40b591afcb5987a3e2cbec46b7f0a39ec9e1e1ee"
+      "sha256": "909d54044f9f5059adee1efe7140528b74a037523c395e8097dcd6e42dc33980"
     },
     {
       "path": "implementation/Phase-9-GRCV4-ImplementationPlan.md",
-      "sha256": "30dfc403b8d4796ebb62b3192084502565c1efad83f933b8764522a36402cb8f"
+      "sha256": "ac48cad99e3ec964ba11bde75b767ade4505d70591dfc002aae046076bc03f95"
     },
     {
       "path": "implementation/Phase-9-GRCV4-PhaseOpening.json",
@@ -67,11 +67,11 @@
     },
     {
       "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/GRCV4ExploratorySideToolImplementationChecklist.md",
-      "sha256": "ce43ca2f965743488bbb0b69e74543c498c438fc2b7b79239651b54f691e81c7"
+      "sha256": "196b73be931c98a726114c3f6ed119d6d58073cad83bf8925086fac9498ee9c0"
     },
     {
       "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/GRCV4ExploratorySideToolImplementationPlan.md",
-      "sha256": "0b669fe80e43f5332656c86e55f6e505af478708e37b18289b55ea0525b2f4c3"
+      "sha256": "faf967dc1f9c7ce85d1ad5a520c213b863682524ceb094738437f72f73fab7ab"
     },
     {
       "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/docs/AgenticQueryGuide.md",
@@ -111,7 +111,7 @@
     },
     {
       "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/verification.js",
-      "sha256": "df4edfdcc402f6e8176171ad6b981ef9dc971a4d52a6a7d6fdf303af851109da"
+      "sha256": "ced35d80e597c58b02ef55d50e3f4f35fee85a3e493858dc01a67983ae0b95da"
     },
     {
       "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/phase9-web/verification.test.mjs",
@@ -171,7 +171,7 @@
     },
     {
       "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/phase9_verification.py",
-      "sha256": "15344b2720b80d0b705b877437ed625183af28ec24c1151d6e506fa280f90b6c"
+      "sha256": "9ae0aca90df9b8deaa8fa2cbe1d039cce4c5192f95d57ca783bdb0ded196b7e5"
     },
     {
       "path": "implementation/investigations/grc9v4-constitutive-design/tools/exploratory-side-tool/tool/src/grcv4_explorer/receipt_parents.py",
@@ -451,7 +451,7 @@
     },
     {
       "path": "implementation/phase-9-grcv4/tranche-7/P9-7.2a-InitializerRuntimeReview.md",
-      "sha256": "c0edb9c76b54c24fd244ea03d8b039f11ecb7817c3a2ef6ef4fe87e1c9d1bc76"
+      "sha256": "a64bfe5e90e331495b7351d0b010c73b1de01f44332232b6b4d7b23046d23191"
     },
     {
       "path": "implementation/phase-9-grcv4/tranche-7/P9-7.2a-Migrations.json",
@@ -539,7 +539,7 @@
     },
     {
       "path": "implementation/phase-9-grcv4/verification/test_p972a_initializer_runtime.py",
-      "sha256": "c66fdf97ac25cc1211042d8336a7f9c806305007140925a33a81d0ff1778cfb1"
+      "sha256": "5da5d401dae7bee0a5d22bc14388cfc7f7aa54c62ce6acefb40fb6029f541cf0"
     },
     {
       "path": "implementation/phase-9-grcv4/verification/test_p972a_proposal.py",
@@ -627,11 +627,11 @@
     },
     {
       "path": "implementation/phase-9-grcv4/verification/verify_p972a_initializer_authority.py",
-      "sha256": "f31fc9f08ab8053c8291ffb5edb5dfe2d1ecc7e817065658834687bbb376fc81"
+      "sha256": "8e8ef1f464d3ea62361bf6325429b4fca460918b84c4c5d3d03ca1288c8cbdb3"
     },
     {
       "path": "implementation/phase-9-grcv4/verification/verify_p972a_initializer_runtime.py",
-      "sha256": "6e6da7a593b16a24d989dba375eb82ec29e94aaeb0fbbfeb215bd2e74d5d78f4"
+      "sha256": "1ca644adbf510857446972c70dd352ac3409d3cd6e5500aa4fd17c77d291a4ca"
     },
     {
       "path": "implementation/phase-9-grcv4/verification/verify_p972a_migrations.py",
@@ -690,5 +690,5 @@
       "sha256": "d3fc6e50bce85685694901e3d6f5f90ead87413877414cf8dc6ea1b9225540ce"
     }
   ],
-  "record_digest": "75a0df675da10505a7b350fb418eec2678f55dcc2cbdef8aa18005ac7d4b94b5"
+  "record_digest": "a168462e9ae71551324744822e6b2d1b6d0aafa2972eeb3ce10b00f537494545"
 }

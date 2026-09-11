@@ -1,5 +1,18 @@
 # Phase 9 GRCV4 handoff — P9-7.2a profile migration
 
+**Current disposition: P9-7.2a accepted and closed on 2026-09-11.** The user
+accepted all seven reviewed migration classes and the final codec-reference
+correction. See the [acceptance](./phase-9-grcv4/tranche-7/P9-7.2a-InitializerRuntimeReview.md).
+The unchanged 25/17-test migration subjects and separate 25/25 initializer
+capture remain inspectable at their original identities. Current tool status
+reports later acceptance separately from historical capture/design flags.
+
+**Next planned step: P9-7.2b caller-mapped generic topology events**, on a
+separate continuation request. It has not been started here. No new G2/G3,
+formation or specialization support follows from P9-7.2a closure.
+
+## Historical P9-7.2a implementation sequence
+
 Current work, 2026-09-11: `impl/phase-9-grcv4-tranche-7`, accepted migration
 baseline `924fca9`, following `5d8dbe2` (complete P9-7.1 and audit corrections).
 See the [migration review](./phase-9-grcv4/tranche-7/P9-7.2a-Review.md) for the
@@ -30,7 +43,7 @@ request on 2026-09-11 accepts the new runtime scope; the runtime review records
 that later decision without changing execution-time flags. Aggregate review
 and acceptance remain separate; generic topology events remain P9-7.2b.
 
-## Active next step: final aggregate P9-7.2a review
+## Historical initializer authority and propagation sequence
 
 The [initializer proposal](./investigations/grc9v4-constitutive-design/decisions/P9CandidateAInitializerReferencePassProposal.md)
 defines one target-only pass: fresh differentials → auxiliary `G_W(C, 0)` →

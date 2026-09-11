@@ -5,6 +5,7 @@ export function checkedStatus(value) {
   if (typeof value.P9_G1_accepted !== 'boolean' || value.runtime_authorized !== implementation || (implementation && !value.P9_G1_accepted) || (value.schema === 'phase9_governance_status_v1' && value.P9_G1_accepted) || !Array.isArray(value.accepted_generic_runtime_support) || JSON.stringify(value.accepted_generic_runtime_support) !== JSON.stringify(implementation ? [acceptedProfile] : []) || !Array.isArray(value.admitted_specialization_support_sets) || value.admitted_specialization_support_sets.length !== 0) throw new Error("Unverified runtime authority or support");
   if (implementation && (value.g2_acceptance?.record_digest !== 'e7165dc2f4cfe159d397c7aa61ccfbc89a30909db888e6638ef1ffe5905ec6dd' || value.g2_acceptance?.gate !== 'P9-G2[C_OS]' || value.g2_acceptance?.alias !== 'P9-7.7-C_OS' || value.g2_acceptance?.G2_accepted !== true || value.g2_acceptance?.G3_accepted !== false || value.g2_acceptance?.tranche_4_status !== 'closed' || JSON.stringify(value.g2_acceptance?.accepted_generic_runtime_support) !== JSON.stringify([acceptedProfile]) || JSON.stringify(value.g2_acceptance?.new_runtime_iterations_authorized) !== '[]')) throw new Error('Missing or widened exact-profile G2 acceptance');
   if (!implementation && value.g2_acceptance !== undefined) throw new Error('Unverified boundary cannot advertise current G2 support');
+  if (!implementation && value.initializer_runtime !== undefined) throw new Error('Unverified boundary cannot advertise migration acceptance');
   if (value.P9_G1_accepted && value.approval_digest !== 'cd2c52f30477e1042bb903bd0553da237ddccc9cad373afecc1a84e4e0b37ea2') throw new Error('Missing recorded P9-G1 acceptance');
   if (implementation && (value.runtime_authority_state !== 'accepted_P9_G1_bounded_implementation_not_conformance' || !Array.isArray(value.implementation_scope) || value.implementation_scope.length !== 59)) throw new Error('Missing accepted P9-G1 scope');
   if (!implementation && value.P9_G1_accepted && (value.current_boundary !== 'failed_closed' || value.runtime_authority_state !== 'accepted_P9_G1_current_work_held' || value.implementation_scope !== undefined || value.permitted_runtime_paths !== undefined || value.dependency_ready_leaves !== undefined || value.foundation_acceptance !== undefined || value.request_acceptance !== undefined || value.result_acceptance !== undefined || value.harness_acceptance !== undefined || value.integration_acceptance !== undefined || value.geometry_acceptance !== undefined || value.stage_acceptance !== undefined || value.resource_acceptance !== undefined || value.numerical_pressure_acceptance !== undefined || value.preservation_acceptance !== undefined || value.reference_transport_acceptance !== undefined || value.c_current_acceptance !== undefined || value.c_controls_acceptance !== undefined || value.os_pass_acceptance !== undefined || value.os_operations_acceptance !== undefined || value.lifecycle_batch_authorization !== undefined || value.specification_correction !== undefined || value.receipt_parent_authority !== undefined || value.abundance_interface_authority !== undefined)) throw new Error('Held work cannot retain implementation permission');
@@ -35,10 +36,12 @@ export function checkedStatus(value) {
   if (value.current_boundary === 'passed') {
     if (implementation) {
       const runtime = value.initializer_runtime;
-      if (runtime?.status !== 'verified_pending_review' || runtime.release_id !== 'grcv4-spec-release-sha256:e44dcd77a78a752c0e62f559243b88faff0bf90af1ee11a587f25d27e8a8abc7' ||
+      if (runtime?.status !== 'accepted' || runtime.release_id !== 'grcv4-spec-release-sha256:e44dcd77a78a752c0e62f559243b88faff0bf90af1ee11a587f25d27e8a8abc7' ||
           runtime.record_path !== 'implementation/phase-9-grcv4/tranche-7/P9-7.2a-InitializerRuntime.json' || !/^[0-9a-f]{64}$/.test(runtime.record_digest) || runtime.tests_run !== 25 ||
           !['producer_implemented', 'payload_specification_complete', 'positive_migration_verified'].every(k => runtime[k] === true) ||
-          !['aggregate_closed', 'user_accepted', 'G3_accepted'].every(k => runtime[k] === false) || runtime.numerical_tests_rerun !== 0 ||
+          !['aggregate_closed', 'user_accepted'].every(k => runtime[k] === true) || runtime.G3_accepted !== false || runtime.numerical_tests_rerun !== 0 ||
+          runtime.acceptance_path !== 'implementation/phase-9-grcv4/tranche-7/P9-7.2a-InitializerRuntimeReview.md' || runtime.acceptance_sha256 !== 'a64bfe5e90e331495b7351d0b010c73b1de01f44332232b6b4d7b23046d23191' ||
+          JSON.stringify(runtime.accepted_migration_classes) !== JSON.stringify(['nonhistory_to_nonhistory','nonhistory_to_persistent','persistent_to_nonhistory','PC_to_CI_PC','CI_PC_to_PC','A_to_C','C_to_A']) ||
           JSON.stringify(runtime.new_G2_support) !== '[]' || JSON.stringify(runtime.positive_target_families) !== JSON.stringify(['A_OS','A_CI','A_PC','A_CI_PC','A_RG2b'])) throw new Error('Missing or widened initializer runtime evidence');
     }
     if (!/^[0-9a-f]{64}$/.test(value.policy_digest) || !Array.isArray(value.source_refs) || !value.source_refs.length || !value.source_refs.every(r => typeof r.path === 'string' && /^[0-9a-f]{64}$/.test(r.sha256))) throw new Error('Missing verified source bindings');
@@ -190,7 +193,7 @@ async function loadInitializer() {
     const value = await verifiedInitializer(await response.json());
     if (generation !== initializerGeneration) return;
     initializerValue = value;
-    status.textContent = 'Accepted optional A design trace, not runtime evidence. Current payload/producer/migration verification is shown above; aggregate review and wider G2/G3 remain separate.';
+    status.textContent = 'Accepted optional A design trace, not runtime evidence. Later seven-class P9-7.2a acceptance is shown in current verification above; wider G2/G3 remain separate.';
     renderInitializer();
   } catch (error) {
     if (generation === initializerGeneration) status.textContent = `Held: ${error.message}`;

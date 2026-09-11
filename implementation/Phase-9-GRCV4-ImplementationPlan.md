@@ -1174,6 +1174,14 @@ are separate execution surfaces. Instantiate children by exact source/target
 profile or event scope before execution. Link previously accepted C_OS
 evidence rather than reinterpreting it as all-profile coverage.
 
+**Current disposition: P9-7.2a accepted and closed on 2026-09-11.** The
+[acceptance](./phase-9-grcv4/tranche-7/P9-7.2a-InitializerRuntimeReview.md)
+covers the seven reviewed migration classes, including all five C→A target
+realizations and the final codec-reference correction. Historical execution
+records remain unchanged. P9-7.2b is next planned work, not started by closure;
+no broader G2/G3 or specialization support is granted.
+
+The following records the historical implementation and acceptance sequence.
 The user authorized **P9-7.2a** after accepting 7.1 at `5d8dbe2`. Its
 [scoped review](./phase-9-grcv4/tranche-7/P9-7.2a-Review.md) binds 13 concrete
 source/target pairs in six source-backed classes, not a Cartesian family-wide
@@ -1268,9 +1276,10 @@ The existing migration `--check` now also validates the additive initializer
 package and source-bound runtime record, without executing numerical tests.
 Only explicit initializer runtime paths evolve past the historical migration
 subject; the new record binds their exact current bytes. API/notebook/browser
-status presents this execution separately from the unchanged design-stage
-forensic projection. Next is review of the positive seventh class and aggregate
-7.2a, not an automatic wider support grant or the event implementation.
+status presents the later aggregate acceptance separately from the unchanged
+execution records and design-stage forensic projection. The scoped checker
+preserves exact source identities across the codec-reference correction;
+closure is not a wider support grant or an event implementation.
 
 The supplied design review passed with refinements now incorporated: retain the
 existing unit-vertex pairing and admitted boundary/normalization scope; forbid

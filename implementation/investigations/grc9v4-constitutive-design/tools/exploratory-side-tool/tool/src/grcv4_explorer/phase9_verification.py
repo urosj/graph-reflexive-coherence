@@ -73,8 +73,8 @@ def verification_status(repo_root: Path) -> dict:
             # This is a read-only check; opening the UX never runs numerical tests.
             import sys
             sys.path.insert(0, str(root / module.HERE))
-            from verify_p972a_initializer_runtime import check as initializer_runtime_check
-            initializer_runtime = initializer_runtime_check()
+            from verify_p972a_initializer_authority import check as migration_check
+            initializer_runtime = migration_check()['initializer_runtime']
             payload.update(
                 initializer_runtime=initializer_runtime,
                 g2_acceptance={
@@ -202,7 +202,7 @@ def verification_status(repo_root: Path) -> dict:
                     for r in module.runtime_targets(approval)
                     if r["requires_gate"] == "P9-G1" and set(ready) & owners[r["path"]]
                 ),
-                next_gate="Review the new P9-7.2a initializer runtime evidence and then aggregate seven-class migration closure. The spec is accepted at f7962e4; an additive package and shared producer now cover positive C-to-A through all five A targets. initializer_runtime binds the focused execution separately from the historical 25/17-test records and immutable design/source traces. Aggregate acceptance, generic events (7.2b), wider G2/G3, formation and numeric abundance remain separate. Public support is still the accepted exact C_OS singleton.",
+                next_gate="P9-7.2a is user-accepted and closed for the seven reviewed migration classes, including C-to-A through all five A targets. initializer_runtime reports later acceptance separately from the original 25/17/25-test records and immutable design traces. Next planned work is P9-7.2b generic mapped events, on a separate continuation request; it has not been started by this closure. Wider G2/G3, formation and numeric abundance remain separate. Public support is still the accepted exact C_OS singleton.",
                 claim_ceiling="G1 is bounded implementation permission. Separate user-accepted G2 covers only the listed complete C_OS profile and reviewed domain; no family-wide, other-profile or specialization conformance is inferred.",
             )
         cross = module.read(
@@ -360,6 +360,7 @@ def verification_status(repo_root: Path) -> dict:
         payload.pop("receipt_parent_authority", None)
         payload.pop("abundance_interface_authority", None)
         payload.pop("g2_acceptance", None)
+        payload.pop("initializer_runtime", None)
         payload["accepted_generic_runtime_support"] = []
         payload.pop("permitted_runtime_paths", None)
         payload.pop("source_meaning", None)

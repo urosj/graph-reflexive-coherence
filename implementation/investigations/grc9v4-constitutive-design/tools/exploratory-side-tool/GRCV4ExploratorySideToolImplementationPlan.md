@@ -1854,6 +1854,15 @@ execution flags and identities remain unchanged. No wider support gate opens.
 
 ## Phase 9 Tranche 7 — P9-7.2a profile migration
 
+Current disposition: **accepted and closed on 2026-09-11** for the seven
+reviewed migration classes. The existing
+[runtime review](../../../../phase-9-grcv4/tranche-7/P9-7.2a-InitializerRuntimeReview.md)
+records acceptance; normal scoped verification and API/notebook/browser status
+expose it separately from immutable execution and forensic design flags.
+Retain the exact codec-reference correction and negative schema/source controls.
+Generic events and wider G2/G3 remain separate. The following preserves the
+historical implementation sequence and its earlier scope boundaries.
+
 Register the user-authorized migration parent, 13 finite positive-pair children
 and the unresolved C→A negative-pressure child after accepted 7.1 (`5d8dbe2`).
 Six classes use specified preservation/drop/zero maps for both current/reset;
@@ -1949,7 +1958,7 @@ The user accepted the specification at `f7962e4`; the additive package,
 explicit codec selection and shared C→A implementation now have a separately
 bound runtime record. The existing API/notebook/browser status exposes
 `initializer_runtime` (actual five-target execution, release and evidence digest)
-and names runtime/aggregate review next. This read-only query never runs a
+and now reports the later user-accepted aggregate closure. This read-only query never runs a
 numerical campaign and fails closed on missing/stale evidence. The immutable
 initializer-authority trace still reports its historical design-stage scope.
 The base schema, predecessor assets/release and source authority remain unchanged;
@@ -1958,3 +1967,5 @@ no old evidence is relabeled and no wider support is granted. See the
 The user subsequently accepted that implementation on 2026-09-11 and requested
 commit followed by final aggregate review. The runtime review owns the later
 decision; the bound execution record and its capture-time flags stay unchanged.
+The subsequent final review and codec-reference correction passed, and the user
+accepted aggregate P9-7.2a closure. Next planned work is P9-7.2b, not started here.

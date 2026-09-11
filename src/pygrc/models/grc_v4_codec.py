@@ -448,15 +448,15 @@ def _identity_pattern(
 def validate_payload(schema_ref: str, value: object) -> dict[str, JSONValue]:
     """Closed-schema data validation only; returns detached primitive fields."""
     data = json_value(value)
-    if (schema_ref == "successful_receipt_identity_payload" and isinstance(data, dict)
+    name = schema_ref.removeprefix("#/$defs/")
+    if (name == "successful_receipt_identity_payload" and isinstance(data, dict)
             and data.get("schema_version") == "grcv4-profile-migration-receipt-v2"):
         return validate_initializer_payload("migration_receipt_payload", data)
-    if (schema_ref == "successful_receipt_envelope" and isinstance(data, dict)
+    if (name == "successful_receipt_envelope" and isinstance(data, dict)
             and isinstance(data.get("identity_payload"), dict)
             and data["identity_payload"].get("schema_version") == "grcv4-profile-migration-receipt-v2"):
         return validate_initializer_payload("receipt_envelope", data)
     schema = load_contract_schema()
-    name = schema_ref.removeprefix("#/$defs/")
     definitions = schema["$defs"]
     if not isinstance(definitions, dict) or name not in definitions:
         raise V4SchemaError("unknown local contract definition")

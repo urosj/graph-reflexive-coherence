@@ -1305,7 +1305,7 @@
     },
     {
       "path": "src/pygrc/models/grc_v4_codec.py",
-      "sha256": "814b7771f77b2ed02d0139e867a4e6012508bbea592c77950b6a774a1e9fd5e7",
+      "sha256": "59b0d373f6ed682ef079d7e150ee3a108dc0b1d53a960a81d11109f87aaeab5f",
       "iteration_id": "P9-7.2a"
     },
     {
@@ -1479,5 +1479,5 @@
   ],
   "admitted_specialization_support_sets": [],
   "claim_ceiling": "Work entries grant no conformance; the only accepted support is the separate P9-4.8B exact C_OS singleton. Local targets, other profiles and specialization are not promoted.",
-  "record_digest": "9a42a4890a5ebdf278b1868c2d53d06c1c0f93e80c7cbb8f643eb5f261ff3da0"
+  "record_digest": "0cf86312e2e838d09c5bca8e033f20ecc94538fc2f8c53511bc28abb0f4b07ad"
 }

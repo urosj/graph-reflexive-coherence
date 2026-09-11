@@ -130,7 +130,8 @@ def check():
     return dict(status="passed", scope="initializer_runtime_and_preserved_migration_evidence",
                 design_accepted=True, producer_choice_resolved=True, source_admitted=True,
                 payload_specification_complete=True, positive_migration_verified=True,
-                aggregate_closed=False, new_G2_support=[], G3_accepted=False,
+                aggregate_closed=runtime['aggregate_closed'], user_accepted=runtime['user_accepted'],
+                new_G2_support=[], G3_accepted=False,
                 authority_extension_digest=view["authority_extension_digest"],
                 projection_digest=view["projection_digest"], **proposal, **preserved,
                 initializer_runtime=runtime)

@@ -1476,6 +1476,10 @@ P9-3.2 implementation is pending review; runtime support remains empty.
 
 ## Phase 9 Tranche 7 — P9-7.2a profile migration
 
+Current disposition: **accepted and closed on 2026-09-11**. The checked entries
+below preserve the execution sequence; earlier pending statements describe
+their historical stage, not the later aggregate acceptance recorded at the end.
+
 - [x] Register 13 finite positive pairs plus native unresolved C→A pressure;
       preserve all accepted 7.1 evidence at its Git subject.
 - [x] Implement a scoped current-record successor and route normal verification
@@ -1547,4 +1551,9 @@ P9-3.2 implementation is pending review; runtime support remains empty.
       evidence is separate from the immutable design-stage forensic projection.
 - [x] User accepted the initializer runtime implementation on 2026-09-11;
       its runtime review supplies the subsequent decision while the original
-      execution-time flags remain unchanged. Final aggregate review follows.
+      execution-time flags remain unchanged.
+- [x] Final seven-class review passed; fix the codec-reference dispatch and
+      retain positive/negative regression coverage. User accepted and closed
+      P9-7.2a on 2026-09-11. Expose later acceptance through the existing scoped
+      checker/API/notebook/browser without rewriting original runs or design
+      authority. P9-7.2b and wider G2/G3 support remain separate.

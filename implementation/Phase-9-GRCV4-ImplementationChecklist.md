@@ -1032,7 +1032,7 @@ P9-7.2a/b–P9-7.6 children have scoped evidence accepted with the P9-4.6/4.7 ba
 its full audit findings are closed. Generic parent-reference conformance remains
 open across other profiles; the accepted P9-4.9.2 authority and bounded internal
 C_OS implementation are recorded in its linked review. P9-7.1 is accepted;
-P9-7.2a is the active scoped migration batch below. Generic event and wider
+P9-7.2a is accepted and closed within the reviewed scope below. Generic event and wider
 conformance children remain pending. P9-7.7-C_OS aliases the
 [P9-4.8B exact-scope acceptance](./phase-9-grcv4/tranche-4/P9-4.8B-G2Acceptance.json),
 with no duplicate execution credit. The original
@@ -1087,16 +1087,18 @@ may reach G2 without waiting for all Tranche 6 realizations.
     the full original campaign or granting acceptance/support.
     All 15 methods passed without failures/errors/skips; see the
     [follow-up](./phase-9-grcv4/tranche-7/P9-7.1-AuditFollowup.json).
-- [ ] P9-7.2a: Execute required profile migration classes over current and
+- [x] P9-7.2a: Execute required profile migration classes over current and
   reset state, independently by source/target identities and failure surface.
   A decoded P9-2.3 declaration is not migration admission: test unresolved
   history/initializers, unsupported targets and missing mappings at the real
   consumer, including separate candidate/carrier channel decisions.
-  The parent stays pending: C→A lacks an admitted initializer source. The
-  [review](./phase-9-grcv4/tranche-7/P9-7.2a-Review.md) binds the finite fixture
-  declarations in `CASES`. The user accepted this finite six-class scope and
-  audit corrections at `924fca9`; child marks do not imply C→A, parent closure
-  or new G2 support. Historical capture-time flags remain unchanged.
+  The user accepted aggregate seven-class closure on 2026-09-11. The
+  [historical review](./phase-9-grcv4/tranche-7/P9-7.2a-Review.md) binds the
+  six-class fixtures accepted at `924fca9`; the
+  [current acceptance](./phase-9-grcv4/tranche-7/P9-7.2a-InitializerRuntimeReview.md)
+  additionally binds positive C→A through all five A targets and the final
+  codec correction. No Cartesian family-wide or new G2 support is inferred.
+  Historical capture-time flags remain unchanged.
 
   - [x] P9-7.2a-A_NH_NH: A_OS → A_CI.
   - [x] P9-7.2a-C_NH_NH: C_OS → C_CI.
@@ -1134,8 +1136,8 @@ may reach G2 without waiting for all Tranche 6 realizations.
   - [x] Audit additional pressure: switch to a distinct A backend, restore both
     archived recipes, reject an omitted old recipe and execute continuation.
   - [x] Preserve original evidence and exact source recovery; verify the separate
-    correction capture: 17/17 passed. Per user direction, defer aggregate 7.2
-    closure; positive C→A remains open for later work.
+    correction capture: 17/17 passed. At that stage, aggregate 7.2 closure and
+    positive C→A were deferred; their later completion is recorded below.
   - [x] Prepare the bounded [target-only reference-pass proposal](./investigations/grc9v4-constitutive-design/decisions/P9CandidateAInitializerReferencePassProposal.md)
     with source/choice separation, fixed target differential data, one bootstrap
     pass, full conductance channels, numerical/floor/range rules, versioned
@@ -1197,9 +1199,12 @@ may reach G2 without waiting for all Tranche 6 realizations.
   - [x] User accepted the initializer implementation through the explicit
     accept-and-commit request on 2026-09-11. The runtime review records that
     decision; execution-time review/support flags remain historical.
-  - [ ] Review all seven migration classes for aggregate P9-7.2a closure. Reuse
+  - [x] Review all seven migration classes for aggregate P9-7.2a closure. Reuse
     unchanged 25/17-test evidence, but do not count negative C→A pressure as
     positive completion or grant unrelated G2/G3/event support.
+    Review passed; the codec-reference finding is corrected with focused
+    regression coverage. The user accepted and closed P9-7.2a through the
+    explicit accept-and-commit request on 2026-09-11.
 - [ ] P9-7.2b: Execute caller-mapped generic topology events over current and
   reset state, with their own map/identity/admission failure evidence.
 - [ ] P9-7.3: Verify separate candidate/carrier history channels, explicit

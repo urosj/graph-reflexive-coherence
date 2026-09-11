@@ -13,6 +13,17 @@ import phase9_implementation_policy as p
 RECORD = p.PHASE + "tranche-7/P9-7.2a-InitializerRuntime.json"
 SCRIPT = p.HERE + "verify_p972a_initializer_runtime.py"
 TEST = "tests.models.test_grc_v4_initializer"
+ACCEPTED_COMMIT = "1afbc02aa4282a1575aef491700312cc1774dae7"
+ACCEPTED_RECORD_DIGEST = "446e37a1764f8863f973ad5443ccde3c68d4eecdc07242e3d7c1f64f82f8be61"
+CODEC = "src/pygrc/models/grc_v4_codec.py"
+CODEC_REFERENCE_FIX_SHA256 = "59b0d373f6ed682ef079d7e150ee3a108dc0b1d53a960a81d11109f87aaeab5f"
+STATUS_API = p.SIDE + "tool/src/grcv4_explorer/phase9_verification.py"
+ACCEPTANCE_STATUS_SHA256 = "9ae0aca90df9b8deaa8fa2cbe1d039cce4c5192f95d57ca783bdb0ded196b7e5"
+ACCEPTANCE_REVIEW = p.PHASE + "tranche-7/P9-7.2a-InitializerRuntimeReview.md"
+ACCEPTANCE_SHA256 = "a64bfe5e90e331495b7351d0b010c73b1de01f44332232b6b4d7b23046d23191"
+MIGRATION_CLASSES = ["nonhistory_to_nonhistory", "nonhistory_to_persistent",
+                     "persistent_to_nonhistory", "PC_to_CI_PC", "CI_PC_to_PC",
+                     "A_to_C", "C_to_A"]
 LEGACY = ["tests.models.test_grc_v4_migration." + name for name in (
     "MigrationTests.test_positive_A_PC_CIPC",
     "MigrationTests.test_positive_A_C_NH",
@@ -46,6 +57,30 @@ def package():
     return INITIALIZER_RELEASE_ID
 
 
+def execution_sources(value, sources):
+    """Preserve the accepted run across the exact codec fix and acceptance UX.
+
+    The original codec and checker remain recoverable at their accepted Git
+    subject, alongside the original status API. Current acceptance is not a
+    relabeling of that run. The checker is maintained by the implementation boundary;
+    codec-reference regressions are separate from the old numerical execution.
+    A deliberately new run still binds its own current sources directly.
+    """
+    if value['source_bindings'] == sources:
+        return sources
+    p.require(value['record_digest'] == ACCEPTED_RECORD_DIGEST,
+              "initializer execution is not the accepted predecessor")
+    p.require(sources.get(CODEC) == CODEC_REFERENCE_FIX_SHA256,
+              "initializer codec changed beyond the exact reference fix")
+    p.require(sources.get(STATUS_API) == ACCEPTANCE_STATUS_SHA256,
+              "initializer status changed beyond the accepted closure view")
+    from verify_p972a_initializer_authority import historical_blobs
+    original = historical_blobs((CODEC, SCRIPT, STATUS_API), ACCEPTED_COMMIT)
+    retained = {**sources, **{name: p.sha(data) for name, data in original.items()}}
+    p.require(value['source_bindings'] == retained, "initializer execution source drift")
+    return retained
+
+
 def validate(value, sources):
     from pygrc.models.grc_v4_codec import initializer_identity, payload_identity
     from tests.models.test_grc_v4_initializer import FAMILIES
@@ -54,13 +89,13 @@ def validate(value, sources):
               and value['status'] == 'verified_pending_review' and value['user_accepted'] is False
               and value['aggregate_closed'] is False and value['new_G2_support'] == []
               and value['G3_accepted'] is False, "initializer execution overclaim")
-    p.require(value['source_bindings'] == sources, "initializer execution source drift")
+    captured_sources = execution_sources(value, sources)
     p.require(value['release_id'] == package(), "initializer execution package mismatch")
     p.require(value['test_ids'] == roster() and value['results'] == dict(
         tests_run=len(roster()), failures=[], errors=[], skips=[]), "incomplete initializer execution")
     before, after = value['loaded_sources_before'], value['loaded_sources_after']
     p.require(before and after and all(after.get(k) == v for k, v in before.items()), "loaded source changed")
-    p.require(all(sources.get(v['path']) == v['sha256'] for v in after.values()), "unbound loaded source")
+    p.require(all(captured_sources.get(v['path']) == v['sha256'] for v in after.values()), "unbound loaded source")
     p.require(set(value['cases']) == set(FAMILIES) | {'auxiliary_singular', 'nontrivial_migration',
               'target_construction', 'target_readmission', 'oracle_-0.3_False', 'oracle_-0.3_True',
               'oracle_0.3_False', 'oracle_0.3_True'}, "initializer evidence roster drift")
@@ -84,15 +119,24 @@ def validate(value, sources):
                   "initializer receipt endpoint mismatch")
 
 
+def acceptance():
+    p.require(p.sha((p.ROOT / ACCEPTANCE_REVIEW).read_bytes()) == ACCEPTANCE_SHA256,
+              "P9-7.2a aggregate acceptance missing or changed")
+    return dict(acceptance_path=ACCEPTANCE_REVIEW, acceptance_sha256=ACCEPTANCE_SHA256,
+                accepted_migration_classes=list(MIGRATION_CLASSES))
+
+
 def check():
     value = p.read(p.ROOT / RECORD)
+    p.require(value['record_digest'] == ACCEPTED_RECORD_DIGEST,
+              "aggregate acceptance binds the original run, not a replacement execution")
     validate(value, bindings())
-    return dict(status='verified_pending_review', record_path=RECORD, record_digest=value['record_digest'],
+    return dict(status='accepted', record_path=RECORD, record_digest=value['record_digest'],
                 release_id=value['release_id'], tests_run=value['results']['tests_run'],
                 positive_target_families=['A_OS', 'A_CI', 'A_PC', 'A_CI_PC', 'A_RG2b'],
                 producer_implemented=True, payload_specification_complete=True, positive_migration_verified=True,
-                aggregate_closed=False, user_accepted=False, new_G2_support=[], G3_accepted=False,
-                numerical_tests_rerun=0)
+                aggregate_closed=True, user_accepted=True, new_G2_support=[], G3_accepted=False,
+                numerical_tests_rerun=0, **acceptance())
 
 
 def run():
