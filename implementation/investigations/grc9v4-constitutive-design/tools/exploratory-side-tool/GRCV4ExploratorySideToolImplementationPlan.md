@@ -2031,3 +2031,12 @@ execution flags remain unchanged and no later leaf is closed.
 Before commit the user requested the three suggested sharp regressions; all
 passed. Acceptance projects six original plus three supplemental tests with
 separate evidence identities, not a fabricated combined execution.
+
+P9-7.4 adds `target_reference_verification` to that same API/notebook/browser
+path. Its separate four-method capture covers 40 reference-map rejection cases,
+five C target realizations, changed-graph dense-equation reconstruction, and
+both-role admission/atomic rollback. The user accepted P9-7.4 on 2026-09-12
+after a passing independent audit/rerun. The view projects that bounded decision
+without changing original execution flags or forensic design authority. Reads check
+retained identities without numerical reruns; accepted 7.2/7.3 evidence and
+runtime permissions remain unchanged. P9-7.5/7.6 stay separately open.

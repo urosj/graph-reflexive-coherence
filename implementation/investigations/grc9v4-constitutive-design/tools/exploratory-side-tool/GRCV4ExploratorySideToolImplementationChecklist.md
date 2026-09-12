@@ -1605,3 +1605,14 @@ their historical stage, not the later aggregate acceptance recorded at the end.
 - [x] Include the separately executed three suggested regressions in the
       acceptance view: six original tests plus three additional tests, with
       both record identities retained and no runtime changes.
+
+### P9-7.4 Candidate C target-reference verification
+
+- [x] Bind a separate execution to current runtime sources, V4 paper/specs and
+      typed C-reference/lifecycle forensic traces, preserving their dispositions.
+- [x] Expose `target_reference_verification` through existing API, notebook and
+      browser status with pending-review flags and unchanged G2/G3 support.
+- [x] Check surface agreement and reject fabricated acceptance or widened scope.
+- [x] Review and accept P9-7.4. User accepted on 2026-09-12 after the passing
+      independent audit/rerun; project that decision separately from original
+      execution flags. No later leaf closure follows automatically.

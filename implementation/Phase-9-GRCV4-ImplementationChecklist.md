@@ -1258,8 +1258,17 @@ may reach G2 without waiting for all Tranche 6 realizations.
   - [x] Before commit, execute the user's requested three sharper regressions:
     subnormal round-once accumulation, admitted charge offset and changed
     coordinate hashes without loss. All three passed in a separate record.
-- [ ] P9-7.4: Verify Candidate C target reference-map completeness and full
+- [x] P9-7.4: Verify Candidate C target reference-map completeness and full
   target reconstruction/readmission before atomic commit.
+  - [x] Implement focused reference-map rejection, five-realization current/reset
+    admission, changed-graph numerical reconstruction and whole-publication
+    rollback checks; retain separate source/claim-bound execution.
+  - [x] Expose [bounded verification](./phase-9-grcv4/tranche-7/P9-7.4-Review.md)
+    through existing API/notebook/browser status without rewriting accepted
+    runs or widening runtime permissions and G2/G3.
+  - [x] Independently review and accept P9-7.4. User accepted on 2026-09-12
+    following the passing audit and independently reported numerical rerun.
+    P9-7.5 and P9-7.6 remain separate.
 - [ ] P9-7.5: Execute missing-lineage, invalid-map, and readmission failure
   cases, including reset after ordinary steps, migrations, and events.
 - [ ] P9-7.6: Verify receipt lineage ownership and deep duplicate independence.

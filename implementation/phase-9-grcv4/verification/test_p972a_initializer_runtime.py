@@ -138,6 +138,10 @@ class RuntimeEvidenceTests(unittest.TestCase):
         self.assertEqual(status['history_policy_verification'], history_check())
         self.assertEqual(status['history_policy_verification']['test_count'], 9)
         self.assertTrue(status['history_policy_verification']['user_accepted'])
+        from verify_p974_acceptance import check as target_check
+        self.assertEqual(status['target_reference_verification'], target_check())
+        self.assertTrue(status['target_reference_verification']['user_accepted'])
+        self.assertTrue(status['target_reference_verification']['aggregate_closed'])
         self.assertEqual(status['event_runtime']['original_record_digest'],
                          'c3fb9823ae040408fd86963754ce6b3f7acbc897c7a5a88504582193d0cc4391')
         self.assertIn('P9-7.2a is user-accepted and closed', status['next_gate'])
@@ -149,6 +153,7 @@ class RuntimeEvidenceTests(unittest.TestCase):
         self.assertEqual(namespace['phase9_status']['initializer_runtime'], status['initializer_runtime'])
         self.assertEqual(namespace['phase9_status']['event_runtime'], status['event_runtime'])
         self.assertEqual(namespace['phase9_status']['history_policy_verification'], status['history_policy_verification'])
+        self.assertEqual(namespace['phase9_status']['target_reference_verification'], status['target_reference_verification'])
         spec = importlib.util.spec_from_file_location('p972a_runtime_http', tool / 'scripts/serve_phase9.py')
         server = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(server)
@@ -164,6 +169,7 @@ class RuntimeEvidenceTests(unittest.TestCase):
         self.assertEqual(json.loads(handler.wfile.getvalue())['initializer_runtime'], status['initializer_runtime'])
         self.assertEqual(json.loads(handler.wfile.getvalue())['event_runtime'], status['event_runtime'])
         self.assertEqual(json.loads(handler.wfile.getvalue())['history_policy_verification'], status['history_policy_verification'])
+        self.assertEqual(json.loads(handler.wfile.getvalue())['target_reference_verification'], status['target_reference_verification'])
         from grcv4_explorer.tooling import managed_node, tool_environment
         code = """
 import assert from 'node:assert/strict';
@@ -184,20 +190,26 @@ for (const edit of [v=>v.initializer_runtime.aggregate_closed=false,
  v=>v.event_runtime.case_count=0,
  v=>v.history_policy_verification.user_accepted=false,
  v=>v.history_policy_verification.new_G2_support=['A_PC'],
- v=>v.history_policy_verification.regression_record_digest='0'.repeat(64)]) {
+ v=>v.history_policy_verification.regression_record_digest='0'.repeat(64),
+ v=>v.target_reference_verification.user_accepted=false,
+ v=>v.target_reference_verification.acceptance_sha256='0'.repeat(64),
+ v=>v.target_reference_verification.new_G2_support=['C_PC'],
+ v=>v.target_reference_verification.c_target_families.pop(),
+ v=>v.target_reference_verification.record_digest='0'.repeat(64),
+ v=>v.target_reference_verification.reference_rejections=0]) {
  const bad=structuredClone(value); edit(bad); delete bad.status_digest;
  bad.status_digest=createHash('sha256').update(canonical(bad)).digest('hex');
  await assert.rejects(verifiedStatus(bad));
 }
 const held={...value, current_boundary:'failed_closed', runtime_authorized:false};
 await assert.rejects(verifiedStatus(held));
-console.log('INITIALIZER_EVENT_RUNTIME_BROWSER_PASS controls=14');
+console.log('INITIALIZER_EVENT_RUNTIME_BROWSER_PASS controls=20');
 """
         browser = subprocess.run([str(managed_node()), '--input-type=module', '-e', code],
                                  cwd=tool / 'phase9-web', input=json.dumps(status), capture_output=True,
                                  text=True, env=tool_environment(), timeout=60)
         self.assertEqual(browser.returncode, 0, browser.stderr)
-        self.assertIn('INITIALIZER_EVENT_RUNTIME_BROWSER_PASS controls=14', browser.stdout)
+        self.assertIn('INITIALIZER_EVENT_RUNTIME_BROWSER_PASS controls=20', browser.stdout)
 
 
 if __name__ == '__main__':

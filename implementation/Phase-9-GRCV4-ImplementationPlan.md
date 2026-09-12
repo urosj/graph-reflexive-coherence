@@ -1250,6 +1250,17 @@ to execute the three suggested stronger regressions before commit; all three
 passed in a separate record with no runtime changes. The original six-test
 run is unchanged; 7.4–7.6 and G2/G3 stay separate.
 
+P9-7.4 adds [bounded target-reference verification](./phase-9-grcv4/tranche-7/P9-7.4-Review.md)
+over the accepted runtime: malformed stable-edge C maps at reference construction,
+both-role numerical admission before publication for all five C realizations,
+a changed-graph target checked against independent dense equations, and
+reset-only domain/late-publication rollback. The user accepted and closed this
+bounded scope on 2026-09-12 following a passing independent audit and reported
+native rerun. Acceptance is projected over the unchanged original execution,
+not a new transport law or runtime permission.
+The broader failure-sequence and receipt-lineage tasks stay with 7.5 and 7.6;
+all earlier evidence, public support and G2/G3 boundaries remain unchanged.
+
 The following records the historical implementation and acceptance sequence.
 The user authorized **P9-7.2a** after accepting 7.1 at `5d8dbe2`. Its
 [scoped review](./phase-9-grcv4/tranche-7/P9-7.2a-Review.md) binds 13 concrete
