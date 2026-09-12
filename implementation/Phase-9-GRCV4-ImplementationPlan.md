@@ -1223,6 +1223,21 @@ context/chart targets despite valid graph maps. Contract tests are not runtime
 acceptance. The user accepted the corrected contract package on 2026-09-12
 through “commit changes”; runtime implementation and aggregate closure remain open.
 
+The subsequent user request authorizes the full two-operation implementation.
+[P9-7.2b runtime review](./phase-9-grcv4/tranche-7/P9-7.2b-RuntimeReview.md)
+records explicit reconstruction and representation APIs, versioned replay,
+variable-size receipt groups and the finite execution roster. Runtime code is
+implemented; retained verification and independent review remain separate from
+user acceptance and aggregate closure. No additional support gate is opened.
+The runtime audit's F1/F2 corrections preserve continued joint-archive admission
+and the declaration/programmer-error boundary. Eight native audit regression
+methods join the ten original runtime tests; a separate correction capture
+retains the original source subject instead of relabeling its evidence.
+The user accepted and closed P9-7.2b on 2026-09-12 through “accept and commit
+7.2b”, including those corrections and the 18-test run. The runtime review
+records acceptance separately from historical execution flags. P9-7.3 onward
+and wider G2/G3 support remain outside this closure.
+
 The following records the historical implementation and acceptance sequence.
 The user authorized **P9-7.2a** after accepting 7.1 at `5d8dbe2`. Its
 [scoped review](./phase-9-grcv4/tranche-7/P9-7.2a-Review.md) binds 13 concrete

@@ -1569,9 +1569,12 @@ their historical stage, not the later aggregate acceptance recorded at the end.
       operation contract/scope on 2026-09-12; runtime and aggregate 7.2b stay open.
 - [x] Package the joint event/representation wire binding with explicit
       installed-asset and unknown-release checks, without model dispatch.
-- [ ] Implement the exact event/representation execution children.
-- [ ] Surface verified event execution in existing API/notebook/browser status;
+- [x] Implement the finite event/representation execution children under the
+      separately requested runtime continuation.
+- [x] Surface bounded event execution in existing API/notebook/browser status;
       do not promote contract examples or historical 7.2a runs into that evidence.
+- [x] Integrate runtime-audit F1/F2 regressions and distinguish the correction
+      capture from the preserved original run. User accepted on 2026-09-12.
 - [x] Include pure representation transport as a separate current contract;
       leave genuine topology-history maps deferred.
 - [x] Bind representation wire/receipt/archive/release identities separately.
@@ -1580,8 +1583,10 @@ their historical stage, not the later aggregate acceptance recorded at the end.
       with explicit commit/parent links; no runtime credit from these checks.
 - [x] User accepted the corrected contract package on 2026-09-12 through
       “commit changes”; no runtime or aggregate P9-7.2b acceptance is implied.
-- [ ] Verify runtime representation transport before advertising support;
+- [x] Review and accept runtime representation transport before promoting support;
       fallback checks cannot discharge covariance or replay obligations.
+      User accepted and closed P9-7.2b through “accept and commit 7.2b” on
+      2026-09-12; no wider G2/G3 support is promoted by this acceptance.
       No new runtime/API capability is granted by contract packaging.
       Carry inverse scientific recovery versus ledger retention, identity
       transport versus reconstruction, mixed migration/representation/evolution/

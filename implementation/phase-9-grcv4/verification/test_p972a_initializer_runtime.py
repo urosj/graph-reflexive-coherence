@@ -129,6 +129,13 @@ class RuntimeEvidenceTests(unittest.TestCase):
         status = verification_status(root)
         self.assertEqual(status['current_boundary'], 'passed', status.get('error'))
         self.assertEqual(status['initializer_runtime'], runtime.check())
+        from verify_p972b_acceptance import check as event_check
+        self.assertEqual(status['event_runtime'], event_check())
+        self.assertEqual(status['event_runtime']['test_count'], 18)
+        self.assertTrue(status['event_runtime']['aggregate_closed'])
+        self.assertTrue(status['event_runtime']['user_accepted'])
+        self.assertEqual(status['event_runtime']['original_record_digest'],
+                         'c3fb9823ae040408fd86963754ce6b3f7acbc897c7a5a88504582193d0cc4391')
         self.assertIn('P9-7.2a is user-accepted and closed', status['next_gate'])
         book = json.loads((tool / 'notebooks/phase9_verification.ipynb').read_text())
         cell = next(c for c in book['cells'] if c['id'] == 'query-status')
@@ -136,6 +143,7 @@ class RuntimeEvidenceTests(unittest.TestCase):
                          PHASE9_STATUS_ONLY=True, verification_status=verification_status)
         exec(compile(''.join(cell['source']), 'phase9_verification.ipynb:query-status', 'exec'), namespace)
         self.assertEqual(namespace['phase9_status']['initializer_runtime'], status['initializer_runtime'])
+        self.assertEqual(namespace['phase9_status']['event_runtime'], status['event_runtime'])
         spec = importlib.util.spec_from_file_location('p972a_runtime_http', tool / 'scripts/serve_phase9.py')
         server = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(server)
@@ -149,6 +157,7 @@ class RuntimeEvidenceTests(unittest.TestCase):
         handler.do_GET()
         self.assertEqual(statuses, [200])
         self.assertEqual(json.loads(handler.wfile.getvalue())['initializer_runtime'], status['initializer_runtime'])
+        self.assertEqual(json.loads(handler.wfile.getvalue())['event_runtime'], status['event_runtime'])
         from grcv4_explorer.tooling import managed_node, tool_environment
         code = """
 import assert from 'node:assert/strict';
@@ -162,20 +171,24 @@ for (const edit of [v=>v.initializer_runtime.aggregate_closed=false,
  v=>v.initializer_runtime.accepted_migration_classes.pop(),
  v=>v.initializer_runtime.new_G2_support=['A_OS'],
  v=>v.initializer_runtime.positive_target_families.pop(),
- v=>v.permitted_runtime_paths.push('src/unrelated.py')]) {
+ v=>v.permitted_runtime_paths.push('src/unrelated.py'),
+ v=>v.event_runtime.aggregate_closed=false,
+ v=>v.event_runtime.acceptance_sha256='0'.repeat(64),
+ v=>v.event_runtime.new_G2_support=['A_OS'],
+ v=>v.event_runtime.case_count=0]) {
  const bad=structuredClone(value); edit(bad); delete bad.status_digest;
  bad.status_digest=createHash('sha256').update(canonical(bad)).digest('hex');
  await assert.rejects(verifiedStatus(bad));
 }
 const held={...value, current_boundary:'failed_closed', runtime_authorized:false};
 await assert.rejects(verifiedStatus(held));
-console.log('INITIALIZER_RUNTIME_BROWSER_PASS controls=7');
+console.log('INITIALIZER_EVENT_RUNTIME_BROWSER_PASS controls=11');
 """
         browser = subprocess.run([str(managed_node()), '--input-type=module', '-e', code],
                                  cwd=tool / 'phase9-web', input=json.dumps(status), capture_output=True,
                                  text=True, env=tool_environment(), timeout=60)
         self.assertEqual(browser.returncode, 0, browser.stderr)
-        self.assertIn('INITIALIZER_RUNTIME_BROWSER_PASS controls=7', browser.stdout)
+        self.assertIn('INITIALIZER_EVENT_RUNTIME_BROWSER_PASS controls=11', browser.stdout)
 
 
 if __name__ == '__main__':

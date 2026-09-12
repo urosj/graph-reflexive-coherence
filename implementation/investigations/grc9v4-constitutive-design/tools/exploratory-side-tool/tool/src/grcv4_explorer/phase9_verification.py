@@ -75,8 +75,11 @@ def verification_status(repo_root: Path) -> dict:
             sys.path.insert(0, str(root / module.HERE))
             from verify_p972a_initializer_authority import check as migration_check
             initializer_runtime = migration_check()['initializer_runtime']
+            from verify_p972b_acceptance import check as event_check
+            event_runtime = event_check()
             payload.update(
                 initializer_runtime=initializer_runtime,
+                event_runtime=event_runtime,
                 g2_acceptance={
                     "record_digest": g2["record_digest"],
                     "path": module.G2_ACCEPTANCE,
@@ -202,7 +205,7 @@ def verification_status(repo_root: Path) -> dict:
                     for r in module.runtime_targets(approval)
                     if r["requires_gate"] == "P9-G1" and set(ready) & owners[r["path"]]
                 ),
-                next_gate="P9-7.2a is user-accepted and closed for the seven reviewed migration classes, including C-to-A through all five A targets. initializer_runtime reports later acceptance separately from the original 25/17/25-test records and immutable design traces. Next planned work is P9-7.2b generic mapped events, on a separate continuation request; it has not been started by this closure. Wider G2/G3, formation and numeric abundance remain separate. Public support is still the accepted exact C_OS singleton.",
+                next_gate=f"P9-7.2a is user-accepted and closed. P9-7.2b is user-accepted and closed: {event_runtime['test_count']} focused tests, {event_runtime['case_count']} retained cases covering reconstruction, representation and audit corrections. P9-7.3 is next; no wider G2/G3 support. The only accepted public support remains the exact C_OS singleton.",
                 claim_ceiling="G1 is bounded implementation permission. Separate user-accepted G2 covers only the listed complete C_OS profile and reviewed domain; no family-wide, other-profile or specialization conformance is inferred.",
             )
         cross = module.read(
@@ -361,6 +364,7 @@ def verification_status(repo_root: Path) -> dict:
         payload.pop("abundance_interface_authority", None)
         payload.pop("g2_acceptance", None)
         payload.pop("initializer_runtime", None)
+        payload.pop("event_runtime", None)
         payload["accepted_generic_runtime_support"] = []
         payload.pop("permitted_runtime_paths", None)
         payload.pop("source_meaning", None)

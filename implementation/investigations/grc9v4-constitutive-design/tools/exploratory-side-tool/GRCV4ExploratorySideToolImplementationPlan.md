@@ -2005,3 +2005,17 @@ The package record carries the bounded runtime follow-through: scientific
 inverse is not ledger rollback; identity transport is not reconstruction;
 mixed operation history, charge-order/signed-zero and incompatible-target
 controls remain required. Package corrections do not discharge those runs.
+
+The user subsequently authorized P9-7.2b runtime implementation. The
+[runtime review](../../../../phase-9-grcv4/tranche-7/P9-7.2b-RuntimeReview.md)
+and retained run separate executed reconstruction/representation cases from
+the accepted package and historical migrations. Verification status exposes
+`event_runtime` through its existing API/notebook/page path, with pending review
+and no G2/G3 promotion. Source drift holds that projection; reading it does not
+execute tests. Existing C_OS v1 entry and old snapshot meanings remain intact.
+The runtime-audit continuation fixes prospective joint-archive closure and the
+internal-error boundary. Status now reads a separate 18-test correction capture;
+the original 10-test capture and reconstructable source subject remain unchanged.
+The user accepted and closed P9-7.2b on 2026-09-12. The status surface projects
+that recorded decision separately from unchanged execution-time flags. No wider
+G2/G3 support or later tranche leaf is closed by this decision.

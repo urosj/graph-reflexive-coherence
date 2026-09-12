@@ -39,7 +39,7 @@ LEGACY = ["tests.models.test_grc_v4_migration." + name for name in (
 
 def bindings():
     names = {n for n in p.git(p.ROOT, "ls-files", "src", "tests", p.SIDE + "tool/src").decode().splitlines() if n.endswith('.py')}
-    names |= p.INITIALIZER_RUNTIME_PATHS | {SCRIPT, EVENT_PACKAGE_CODEC, p.HERE + "build_p972a_initializer_release.py",
+    names |= p.INITIALIZER_RUNTIME_PATHS | p.EVENT_NEW_PATHS | {SCRIPT, EVENT_PACKAGE_CODEC, p.HERE + "build_p972a_initializer_release.py",
         "pyproject.toml", "uv.lock", "specs/grc-v4-a-initializer-release.json"}
     return {name: p.sha((p.ROOT / name).read_bytes()) for name in sorted(names)}
 
@@ -72,6 +72,25 @@ def execution_sources(value, sources):
         return sources
     p.require(value['record_digest'] == ACCEPTED_RECORD_DIGEST,
               "initializer execution is not the accepted predecessor")
+    # During the authorized event successor, current work is checked against
+    # its own manifest; original migration inputs remain the accepted Git blobs.
+    work = p.read(p.ROOT / p.WORK)
+    entries = {row['path']: row for row in work['entries']}
+    if any(row['iteration_id'] == 'P9-7.2b' for row in entries.values()):
+        p.require(work['record_digest'] == p.digest_record(work), 'event work manifest drift')
+        maintenance = p.read(p.ROOT / p.POLICY)
+        p.require(maintenance['record_digest'] == p.digest_record(maintenance), 'event maintenance digest drift')
+        pins = {row['path']: row['sha256'] for row in maintenance['artifact_bindings']}
+        adopted = p.EVENT_RUNTIME_PATHS | {SCRIPT, STATUS_API}
+        sources = dict(sources)
+        for name in adopted:
+            expected = entries[name]['sha256'] if name in p.EVENT_RUNTIME_PATHS else pins[name]
+            p.require(sources.get(name) == expected == p.sha((p.ROOT / name).read_bytes()),
+                      'event successor source is not bound: ' + name)
+            if name in p.EVENT_NEW_PATHS:
+                sources.pop(name)
+            else:
+                sources[name] = p.sha(p.git(p.ROOT, 'show', 'ee8885e:' + name))
     p.require(sources.get(CODEC) == CODEC_REFERENCE_FIX_SHA256,
               "initializer codec changed beyond the exact reference fix")
     p.require(sources.get(STATUS_API) == ACCEPTANCE_STATUS_SHA256,

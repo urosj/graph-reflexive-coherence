@@ -86,11 +86,20 @@ def preserved_migrations():
     # accepted documents and bounded current spec candidate are checked through
     # proposal_status separately; there is no runtime or old-family exemption.
     from verify_p972a_proposal import SPECIFICATION_REVIEW_PATHS
+    work = p.read(p.ROOT / p.WORK)
+    p.require(work['record_digest'] == p.digest_record(work), 'runtime work digest drift')
+    entries = {row['path']: row for row in work['entries']}
     for name in names:
         if name == p.INV + "drafts/2026-09-GRC-V4.md" or name in SPECIFICATION_REVIEW_PATHS | p.INITIALIZER_RUNTIME_PATHS:
             continue
         if name in {"pyproject.toml", "uv.lock"} or name.startswith(("src/", "tests/", "specs/", p.INV + "drafts/")):
-            p.require((p.ROOT / name).read_bytes() == sources[name], "spec-review scope violated: " + name)
+            content = (p.ROOT / name).read_bytes()
+            if name in p.EVENT_RUNTIME_PATHS and entries.get(name, {}).get('iteration_id') == 'P9-7.2b':
+                p.require(p.sha(content) == entries[name]['sha256'], 'unbound event successor: ' + name)
+                # The current implementation has its own evidence; preserve
+                # the migration subject at the accepted pre-event Git bytes.
+                content = p.git(p.ROOT, 'show', 'ee8885e:' + name)
+            p.require(content == sources[name], "spec-review scope violated: " + name)
     sys.path.insert(0, str(p.ROOT / p.SIDE / "tool/src"))
     from grcv4_explorer.abundance import load_abundance_forensic_context
     from grcv4_explorer.forensic import contract_provenance

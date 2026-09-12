@@ -449,6 +449,17 @@ def validate_payload(schema_ref: str, value: object) -> dict[str, JSONValue]:
     """Closed-schema data validation only; returns detached primitive fields."""
     data = json_value(value)
     name = schema_ref.removeprefix("#/$defs/")
+    if name == "representation_request":
+        from .grc_v4_event_codec import validate_event_payload
+        return validate_event_payload("representation/request", data)
+    if name in ("successful_receipt_identity_payload", "successful_receipt_envelope") and isinstance(data, dict):
+        p = data if name == "successful_receipt_identity_payload" else data.get("identity_payload", {})
+        family = {"grcv4-topology-event-receipt-v2": "event",
+                  "grcv4-representation-transport-receipt-v1": "representation"}.get(p.get("schema_version")) if isinstance(p, dict) else None
+        if family is not None:
+            from .grc_v4_event_codec import validate_event_payload
+            definition = ("event_receipt_payload" if family == "event" else "receipt_payload") if name == "successful_receipt_identity_payload" else "receipt_envelope"
+            return validate_event_payload(family + "/" + definition, data)
     if (name == "successful_receipt_identity_payload" and isinstance(data, dict)
             and data.get("schema_version") == "grcv4-profile-migration-receipt-v2"):
         return validate_initializer_payload("migration_receipt_payload", data)
@@ -566,6 +577,13 @@ def payload_identity(
     name = schema_ref.removeprefix("#/$defs/")
     if name == "initializer_migration_receipt":
         return initializer_identity("migration_receipt_payload", value, expected=expected)
+    if name in ("event_receipt", "representation_receipt"):
+        from .grc_v4_event_codec import validate_event_payload
+        data = validate_event_payload("event/event_receipt_payload" if name == "event_receipt" else "representation/receipt_payload", value)
+        result = "grc-receipt-sha256:" + sha256(canonical_json_bytes(data)).hexdigest()
+        if expected is not None and expected != result:
+            raise V4IdentityError("event receipt differs from preimage")
+        return result
     if name not in _IDENTITY_PREFIXES:
         raise V4SchemaError("definition is not an identity preimage")
     data = validate_payload(name, value)

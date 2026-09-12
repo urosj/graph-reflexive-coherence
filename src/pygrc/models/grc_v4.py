@@ -250,6 +250,20 @@ class GRCV4MappedTopologyEventRequest(_Record):
         _Record.__post_init__(self)
 
 
+@dataclass(frozen=True, slots=True, eq=False)
+class GRCV4RepresentationRequest(_Record):
+    """Explicit lossless coordinate declaration, distinct from reconstruction."""
+    SCHEMA: ClassVar[str] = "representation_request"
+    schema_version: Literal["grcv4-representation-transport-request-v1"]
+    operation_id: str
+    source_state_digest: str
+    source_graph_digest: str
+    target_graph: FrozenJSONMap
+    target_profile_id: str
+    correspondence: FrozenJSONMap
+    metadata: FrozenJSONMap
+
+
 def decode_mapped_topology_event_request(
     data: bytes | str,
     *,
@@ -423,6 +437,12 @@ class GRCV4(GRCModel):
     def compute_observables(self) -> dict[str, Any]:
         return self._operation.compute_observables()
 
+    def reconstruct_topology_event(self, request: GRCV4MappedTopologyEventRequest) -> GRCV4LifecycleResult:
+        return self._operation.reconstruct_topology_event(request)
+
+    def transport_representation(self, request: GRCV4RepresentationRequest) -> GRCV4LifecycleResult:
+        return self._operation.transport_representation(request)
+
     @property
     def active_profile_id(self) -> str:
         return self._operation.reference.profile.complete_profile_id
@@ -448,6 +468,7 @@ class GRCV4(GRCModel):
             "profile_explicit_v4", "single_resource_ledger",
             "authoritative_current", "structural_hodge_geometry",
             "quadrature_budget",
+            "v4_explicit_history_reconstruction", "v4_pure_representation_transport",
             "v4_candidate_c_derived_sector" if identity.candidate == "C" else "v4_candidate_a_retained_history",
             "v4_realization_" + identity.realization.lower().replace("+", "_"),
         }

@@ -57,6 +57,11 @@ APPROVAL_DIGEST = "cd2c52f30477e1042bb903bd0553da237ddccc9cad373afecc1a84e4e0b37
 POLICY = HERE + "Phase9ImplementationBoundary.json"
 RECORD = PHASE + "tranche-1/P9-1.9-ExecutionRecord.json"
 WORK = PHASE + "runtime/RuntimeWorkManifest.json"
+EVENT_RUNTIME_PATHS = {"src/pygrc/models/" + n + ".py" for n in
+                       ("grc_v4", "grc_v4_codec", "grc_v4_step", "grc_v4_lifecycle", "grc_v4_events")}
+EVENT_NEW_PATHS = {"src/pygrc/models/grc_v4_events.py", "tests/models/test_grc_v4_events.py",
+                   "tests/models/test_grc_v4_event_audit.py"}
+EVENT_RUNTIME_PATHS |= EVENT_NEW_PATHS
 LIFECYCLE_FAMILIES = tuple(c + "_" + r for r in ("OS", "CI", "RG2b", "PC", "CI_PC") for c in ("A", "C"))
 LIFECYCLE_LEAVES = {"P9-7.1", *("P9-7.1-" + family for family in LIFECYCLE_FAMILIES)}
 LIFECYCLE_PATHS = {"src/pygrc/models/grc_v4.py", "src/pygrc/models/grc_v4_codec.py",
@@ -231,6 +236,13 @@ PATHS = {
     "specs/grc-v4-representation-transport-schema.json",
     "specs/grc-v4-representation-transport-vectors.json",
     "specs/grc-v4-event-contract-release.json",
+    HERE + "verify_p972b_runtime.py",
+    HERE + "verify_p972b_acceptance.py",
+    PHASE + "tranche-7/P9-7.2b-Runtime.json",
+    PHASE + "tranche-7/P9-7.2b-RuntimeReview.md",
+    PHASE + "tranche-7/P9-7.2b-RuntimeAuditCorrection.json",
+    PHASE + "tranche-7/P9-7.2b-RuntimeOriginalSources.json",
+    PHASE + "tranche-7/P9-7.2b-RuntimeAuditPressure.json",
     HERE + "build_p972b_event_release.py",
     HERE + "test_p972b_event_release.py",
     HERE + "verify_p972b_event_package.py",
@@ -1256,6 +1268,15 @@ def leaf_permissions(root):
     for name in INITIALIZER_RUNTIME_PATHS:
         owners[name] = owners.get(name, set()) | {"P9-7.2a"}
     git(root, "merge-base", "--is-ancestor", "f7962e4", "HEAD")
+    # User-authorized P9-7.2b follows the accepted joint contract package.
+    git(root, "merge-base", "--is-ancestor", "ee8885e", "HEAD")
+    for name in ("specs/grc-v4-event-contract-release.json", "specs/grc-v4-representation-transport-spec.md",
+                 "specs/grc-v4-topology-event-spec.md"):
+        require(safe_path(root, name).read_bytes() == git(root, "show", "ee8885e:" + name),
+                "event execution requires unchanged accepted contract: " + name)
+    ready = sorted(set(ready) | {"P9-7.2b"})
+    for name in EVENT_RUNTIME_PATHS:
+        owners[name] = owners.get(name, set()) | {"P9-7.2b"}
     return ready, owners
 
 
@@ -1264,10 +1285,11 @@ def runtime_targets(approval):
     return [*approval["runtime_targets"], *(
         {"path": name, "requires_gate": "P9-G1", "before_sha256": None,
          "operation": "v4_owned_add_or_update", "module_owner":
+         "grc_v4_events" if name in EVENT_NEW_PATHS else
          "grc_v4_initializer" if name in INITIALIZER_NEW_PATHS else
          "grc_v4_migration" if name in {"src/pygrc/models/grc_v4_migration.py", "tests/models/test_grc_v4_migration.py"}
          else "grc_v4_lifecycle" if name == "tests/models/test_grc_v4_generic_lifecycle.py" else "grc_v4_realizations"}
-        for name in sorted(CI_BATCH_PATHS | PC_BATCH_PATHS | CIPC_BATCH_PATHS | RG_BATCH_PATHS | INITIALIZER_NEW_PATHS
+        for name in sorted(CI_BATCH_PATHS | PC_BATCH_PATHS | CIPC_BATCH_PATHS | RG_BATCH_PATHS | INITIALIZER_NEW_PATHS | EVENT_NEW_PATHS
                            | {"tests/models/test_grc_v4_generic_lifecycle.py", "src/pygrc/models/grc_v4_migration.py", "tests/models/test_grc_v4_migration.py"})
     )]
 

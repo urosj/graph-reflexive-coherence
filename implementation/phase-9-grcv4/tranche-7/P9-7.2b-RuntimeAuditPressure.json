@@ -1,0 +1,2766 @@
+{
+  "schema": "independent_p972b_runtime_audit_v1",
+  "subject_record_digest": "c3fb9823ae040408fd86963754ce6b3f7acbc897c7a5a88504582193d0cc4391",
+  "subject_release_id": "grcv4-spec-release-sha256:a6861c38271f3f4ea41fae35807c399255353c384c44a9455f334556df6cdec8",
+  "verdict": "HOLD_two_local_lifecycle_corrections",
+  "findings": [
+    {
+      "id": "F1",
+      "name": "joint_archive_closure_after_legacy_append",
+      "severity": "blocking",
+      "basis": "source control flow plus isolated execution; joint legacy alias predicate from available predecessor supplement is corroborated by submitted current test",
+      "observed": [
+        {
+          "entry": "representation",
+          "entry_layout": "pygrc-generic-coordinate-transport-snapshot-v1",
+          "legacy_operation_committed": true,
+          "target_publication_changed": true,
+          "final_layout": "pygrc-generic-coordinate-transport-snapshot-v1",
+          "restoration_rejected": true,
+          "alias": "unregistered_legacy_alias"
+        },
+        {
+          "entry": "reconstruction",
+          "entry_layout": "pygrc-generic-topology-event-snapshot-v1",
+          "legacy_operation_committed": true,
+          "target_publication_changed": true,
+          "final_layout": "pygrc-generic-topology-event-snapshot-v1",
+          "restoration_rejected": true,
+          "alias": "unregistered_legacy_alias"
+        }
+      ],
+      "required": "validate prospective archive against resulting release/layout for every publishing operation; reject newly introduced incompatible rows before swap; preserve old-only behavior"
+    },
+    {
+      "id": "F2",
+      "name": "internal_coordinate_identity_schema_exceptions_reclassified",
+      "severity": "blocking_error_semantics",
+      "basis": "unchanged new map/lifecycle bodies with injected programmer exceptions in coordinate_reference",
+      "observed": [
+        {
+          "origin": "coordinate_reference",
+          "injected": "ValueError",
+          "unchanged_publication": true,
+          "returned": false,
+          "exception": "ValueError",
+          "identical": true
+        },
+        {
+          "origin": "coordinate_reference",
+          "injected": "V4IdentityError",
+          "unchanged_publication": true,
+          "returned": true,
+          "committed": false,
+          "stage": "admission",
+          "code": "invalid_topology_event"
+        },
+        {
+          "origin": "coordinate_reference",
+          "injected": "V4SchemaError",
+          "unchanged_publication": true,
+          "returned": true,
+          "committed": false,
+          "stage": "admission",
+          "code": "invalid_topology_event"
+        },
+        {
+          "origin": "coordinate_reference",
+          "injected": "RuntimeError",
+          "unchanged_publication": true,
+          "returned": false,
+          "exception": "RuntimeError",
+          "identical": true
+        },
+        {
+          "origin": "coordinate_reference",
+          "injected": "EventAdmissionError",
+          "unchanged_publication": true,
+          "returned": true,
+          "committed": false,
+          "stage": "admission",
+          "code": "invalid_topology_event"
+        }
+      ],
+      "required": "narrow correspondence-declaration adaptation; do not catch internal V4IdentityError/V4SchemaError from generated reference/authority as scientific rejection"
+    }
+  ],
+  "executed": {
+    "integrity": {
+      "source_matches": {
+        "src/pygrc/models/grc_v4.py": true,
+        "src/pygrc/models/grc_v4_lifecycle.py": true,
+        "src/pygrc/models/grc_v4_codec.py": true,
+        "src/pygrc/models/grc_v4_step.py": true,
+        "src/pygrc/models/grc_v4_events.py": true,
+        "tests/models/test_grc_v4_events.py": true
+      },
+      "record_digest": true,
+      "test_roster": [
+        "tests.models.test_grc_v4_events.EventRuntimeTests.test_a_source_loss_to_each_a_target_and_discarded_history_independence",
+        "tests.models.test_grc_v4_events.EventRuntimeTests.test_all_ten_reconstruction_targets_and_independent_roles",
+        "tests.models.test_grc_v4_events.EventRuntimeTests.test_all_ten_representation_targets_inverse_preserves_science_not_ledger",
+        "tests.models.test_grc_v4_events.EventRuntimeTests.test_c_reconstruction_and_representation_smoke",
+        "tests.models.test_grc_v4_events.EventRuntimeTests.test_charge_order_witness_and_reset_only_rejection",
+        "tests.models.test_grc_v4_events.EventRuntimeTests.test_declaration_and_late_publication_failures_are_atomic",
+        "tests.models.test_grc_v4_events.EventRuntimeTests.test_identity_transport_is_not_identity_reconstruction_and_mixed_replay",
+        "tests.models.test_grc_v4_events.EventRuntimeTests.test_legacy_event_initializer_migration_and_new_archive_tampering",
+        "tests.models.test_grc_v4_events.EventRuntimeTests.test_representation_signed_parallel_loop_carrier_and_rehashed_charge_tamper",
+        "tests.models.test_grc_v4_events.EventRuntimeTests.test_topology_edge_count_change_affine_increment_and_carrier_size"
+      ],
+      "case_ids": [
+        {
+          "case": "A_loss_OS",
+          "receipts": 4,
+          "primary": true,
+          "commit": true
+        },
+        {
+          "case": "A_loss_CI",
+          "receipts": 4,
+          "primary": true,
+          "commit": true
+        },
+        {
+          "case": "A_loss_RG2b",
+          "receipts": 4,
+          "primary": true,
+          "commit": true
+        },
+        {
+          "case": "A_loss_PC",
+          "receipts": 4,
+          "primary": true,
+          "commit": true
+        },
+        {
+          "case": "A_loss_CI_PC",
+          "receipts": 4,
+          "primary": true,
+          "commit": true
+        },
+        {
+          "case": "reconstruction_C_OS",
+          "receipts": 4,
+          "primary": true,
+          "commit": true
+        },
+        {
+          "case": "reconstruction_C_CI",
+          "receipts": 4,
+          "primary": true,
+          "commit": true
+        },
+        {
+          "case": "reconstruction_C_RG2b",
+          "receipts": 4,
+          "primary": true,
+          "commit": true
+        },
+        {
+          "case": "reconstruction_C_PC",
+          "receipts": 4,
+          "primary": true,
+          "commit": true
+        },
+        {
+          "case": "reconstruction_C_CI_PC",
+          "receipts": 4,
+          "primary": true,
+          "commit": true
+        },
+        {
+          "case": "reconstruction_A_OS",
+          "receipts": 4,
+          "primary": true,
+          "commit": true
+        },
+        {
+          "case": "reconstruction_A_CI",
+          "receipts": 4,
+          "primary": true,
+          "commit": true
+        },
+        {
+          "case": "reconstruction_A_RG2b",
+          "receipts": 4,
+          "primary": true,
+          "commit": true
+        },
+        {
+          "case": "reconstruction_A_PC",
+          "receipts": 4,
+          "primary": true,
+          "commit": true
+        },
+        {
+          "case": "reconstruction_A_CI_PC",
+          "receipts": 4,
+          "primary": true,
+          "commit": true
+        },
+        {
+          "case": "representation_C_OS",
+          "receipts": 1,
+          "primary": true,
+          "commit": true
+        },
+        {
+          "case": "representation_C_CI",
+          "receipts": 1,
+          "primary": true,
+          "commit": true
+        },
+        {
+          "case": "representation_C_RG2b",
+          "receipts": 1,
+          "primary": true,
+          "commit": true
+        },
+        {
+          "case": "representation_C_PC",
+          "receipts": 1,
+          "primary": true,
+          "commit": true
+        },
+        {
+          "case": "representation_C_CI_PC",
+          "receipts": 1,
+          "primary": true,
+          "commit": true
+        },
+        {
+          "case": "representation_A_OS",
+          "receipts": 1,
+          "primary": true,
+          "commit": true
+        },
+        {
+          "case": "representation_A_CI",
+          "receipts": 1,
+          "primary": true,
+          "commit": true
+        },
+        {
+          "case": "representation_A_RG2b",
+          "receipts": 1,
+          "primary": true,
+          "commit": true
+        },
+        {
+          "case": "representation_A_PC",
+          "receipts": 1,
+          "primary": true,
+          "commit": true
+        },
+        {
+          "case": "representation_A_CI_PC",
+          "receipts": 1,
+          "primary": true,
+          "commit": true
+        },
+        {
+          "case": "legacy_migration_event",
+          "receipts": 4,
+          "primary": true,
+          "commit": true
+        },
+        {
+          "case": "signed_parallel_loop",
+          "receipts": 1,
+          "primary": true,
+          "commit": true
+        }
+      ],
+      "receipt_count": 75
+    },
+    "coordinate_mapper_cases": 96,
+    "coordinate_results": {
+      "scope": "96 unchanged mapper/reference-action executions with independent exact matrix oracle; infrastructure scaffolded; no numerical candidate/domain admission",
+      "cases": [
+        {
+          "candidate": "A",
+          "vertices": [
+            3,
+            1,
+            2,
+            0
+          ],
+          "edges": [
+            0,
+            2,
+            3,
+            1
+          ],
+          "signs": [
+            1,
+            -1,
+            1,
+            1
+          ],
+          "typed_action": true,
+          "reference_backend_inverse": true,
+          "native_domain_admission": false
+        },
+        {
+          "candidate": "A",
+          "vertices": [
+            2,
+            1,
+            3,
+            0
+          ],
+          "edges": [
+            3,
+            1,
+            2,
+            0
+          ],
+          "signs": [
+            -1,
+            1,
+            -1,
+            -1
+          ],
+          "typed_action": true,
+          "reference_backend_inverse": true,
+          "native_domain_admission": false
+        },
+        {
+          "candidate": "A",
+          "vertices": [
+            3,
+            2,
+            1,
+            0
+          ],
+          "edges": [
+            1,
+            2,
+            0,
+            3
+          ],
+          "signs": [
+            1,
+            -1,
+            -1,
+            -1
+          ],
+          "typed_action": true,
+          "reference_backend_inverse": true,
+          "native_domain_admission": false
+        },
+        {
+          "candidate": "A",
+          "vertices": [
+            3,
+            0,
+            2,
+            1
+          ],
+          "edges": [
+            2,
+            1,
+            0,
+            3
+          ],
+          "signs": [
+            1,
+            -1,
+            -1,
+            1
+          ],
+          "typed_action": true,
+          "reference_backend_inverse": true,
+          "native_domain_admission": false
+        },
+        {
+          "candidate": "A",
+          "vertices": [
+            0,
+            1,
+            3,
+            2
+          ],
+          "edges": [
+            2,
+            0,
+            1,
+            3
+          ],
+          "signs": [
+            -1,
+            -1,
+            1,
+            1
+          ],
+          "typed_action": true,
+          "reference_backend_inverse": true,
+          "native_domain_admission": false
+        },
+        {
+          "candidate": "A",
+          "vertices": [
+            3,
+            2,
+            0,
+            1
+          ],
+          "edges": [
+            3,
+            2,
+            1,
+            0
+          ],
+          "signs": [
+            -1,
+            1,
+            1,
+            -1
+          ],
+          "typed_action": true,
+          "reference_backend_inverse": true,
+          "native_domain_admission": false
+        },
+        {
+          "candidate": "A",
+          "vertices": [
+            2,
+            1,
+            0,
+            3
+          ],
+          "edges": [
+            2,
+            1,
+            0,
+            3
+          ],
+          "signs": [
+            1,
+            1,
+            1,
+            -1
+          ],
+          "typed_action": true,
+          "reference_backend_inverse": true,
+          "native_domain_admission": false
+        },
+        {
+          "candidate": "A",
+          "vertices": [
+            0,
+            1,
+            3,
+            2
+          ],
+          "edges": [
+            3,
+            1,
+            2,
+            0
+          ],
+          "signs": [
+            1,
+            -1,
+            -1,
+            1
+          ],
+          "typed_action": true,
+          "reference_backend_inverse": true,
+          "native_domain_admission": false
+        },
+        {
+          "candidate": "A",
+          "vertices": [
+            0,
+            2,
+            1,
+            3
+          ],
+          "edges": [
+            1,
+            0,
+            2,
+            3
+          ],
+          "signs": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "typed_action": true,
+          "reference_backend_inverse": true,
+          "native_domain_admission": false
+        },
+        {
+          "candidate": "A",
+          "vertices": [
+            3,
+            0,
+            2,
+            1
+          ],
+          "edges": [
+            2,
+            1,
+            3,
+            0
+          ],
+          "signs": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "typed_action": true,
+          "reference_backend_inverse": true,
+          "native_domain_admission": false
+        },
+        {
+          "candidate": "A",
+          "vertices": [
+            2,
+            0,
+            1,
+            3
+          ],
+          "edges": [
+            2,
+            0,
+            1,
+            3
+          ],
+          "signs": [
+            1,
+            -1,
+            1,
+            -1
+          ],
+          "typed_action": true,
+          "reference_backend_inverse": true,
+          "native_domain_admission": false
+        },
+        {
+          "candidate": "A",
+          "vertices": [
+            3,
+            2,
+            0,
+            1
+          ],
+          "edges": [
+            3,
+            1,
+            0,
+            2
+          ],
+          "signs": [
+            1,
+            -1,
+            1,
+            -1
+          ],
+          "typed_action": true,
+          "reference_backend_inverse": true,
+          "native_domain_admission": false
+        },
+        {
+          "candidate": "A",
+          "vertices": [
+            2,
+            0,
+            1,
+            3
+          ],
+          "edges": [
+            2,
+            3,
+            0,
+            1
+          ],
+          "signs": [
+            1,
+            -1,
+            1,
+            -1
+          ],
+          "typed_action": true,
+          "reference_backend_inverse": true,
+          "native_domain_admission": false
+        },
+        {
+          "candidate": "A",
+          "vertices": [
+            0,
+            2,
+            3,
+            1
+          ],
+          "edges": [
+            3,
+            0,
+            2,
+            1
+          ],
+          "signs": [
+            -1,
+            1,
+            1,
+            -1
+          ],
+          "typed_action": true,
+          "reference_backend_inverse": true,
+          "native_domain_admission": false
+        },
+        {
+          "candidate": "A",
+          "vertices": [
+            2,
+            1,
+            3,
+            0
+          ],
+          "edges": [
+            1,
+            3,
+            2,
+            0
+          ],
+          "signs": [
+            1,
+            1,
+            1,
+            -1
+          ],
+          "typed_action": true,
+          "reference_backend_inverse": true,
+          "native_domain_admission": false
+        },
+        {
+          "candidate": "A",
+          "vertices": [
+            0,
+            2,
+            3,
+            1
+          ],
+          "edges": [
+            1,
+            0,
+            2,
+            3
+          ],
+          "signs": [
+            1,
+            1,
+            -1,
+            -1
+          ],
+          "typed_action": true,
+          "reference_backend_inverse": true,
+          "native_domain_admission": false
+        },
+        {
+          "candidate": "A",
+          "vertices": [
+            2,
+            1,
+            0,
+            3
+          ],
+          "edges": [
+            3,
+            0,
+            1,
+            2
+          ],
+          "signs": [
+            1,
+            -1,
+            -1,
+            1
+          ],
+          "typed_action": true,
+          "reference_backend_inverse": true,
+          "native_domain_admission": false
+        },
+        {
+          "candidate": "A",
+          "vertices": [
+            3,
+            2,
+            1,
+            0
+          ],
+          "edges": [
+            1,
+            3,
+            2,
+            0
+          ],
+          "signs": [
+            -1,
+            -1,
+            1,
+            -1
+          ],
+          "typed_action": true,
+          "reference_backend_inverse": true,
+          "native_domain_admission": false
+        },
+        {
+          "candidate": "A",
+          "vertices": [
+            3,
+            0,
+            1,
+            2
+          ],
+          "edges": [
+            0,
+            2,
+            3,
+            1
+          ],
+          "signs": [
+            -1,
+            1,
+            -1,
+            1
+          ],
+          "typed_action": true,
+          "reference_backend_inverse": true,
+          "native_domain_admission": false
+        },
+        {
+          "candidate": "A",
+          "vertices": [
+            1,
+            0,
+            3,
+            2
+          ],
+          "edges": [
+            3,
+            1,
+            0,
+            2
+          ],
+          "signs": [
+            1,
+            1,
+            -1,
+            -1
+          ],
+          "typed_action": true,
+          "reference_backend_inverse": true,
+          "native_domain_admission": false
+        },
+        {
+          "candidate": "A",
+          "vertices": [
+            3,
+            2,
+            0,
+            1
+          ],
+          "edges": [
+            0,
+            3,
+            2,
+            1
+          ],
+          "signs": [
+            1,
+            1,
+            -1,
+            1
+          ],
+          "typed_action": true,
+          "reference_backend_inverse": true,
+          "native_domain_admission": false
+        },
+        {
+          "candidate": "A",
+          "vertices": [
+            2,
+            0,
+            1,
+            3
+          ],
+          "edges": [
+            3,
+            0,
+            2,
+            1
+          ],
+          "signs": [
+            1,
+            -1,
+            -1,
+            1
+          ],
+          "typed_action": true,
+          "reference_backend_inverse": true,
+          "native_domain_admission": false
+        },
+        {
+          "candidate": "A",
+          "vertices": [
+            3,
+            2,
+            1,
+            0
+          ],
+          "edges": [
+            0,
+            2,
+            3,
+            1
+          ],
+          "signs": [
+            -1,
+            -1,
+            1,
+            1
+          ],
+          "typed_action": true,
+          "reference_backend_inverse": true,
+          "native_domain_admission": false
+        },
+        {
+          "candidate": "A",
+          "vertices": [
+            2,
+            0,
+            3,
+            1
+          ],
+          "edges": [
+            0,
+            1,
+            3,
+            2
+          ],
+          "signs": [
+            -1,
+            1,
+            -1,
+            1
+          ],
+          "typed_action": true,
+          "reference_backend_inverse": true,
+          "native_domain_admission": false
+        },
+        {
+          "candidate": "A",
+          "vertices": [
+            1,
+            3,
+            0,
+            2
+          ],
+          "edges": [
+            3,
+            0,
+            2,
+            1
+          ],
+          "signs": [
+            -1,
+            1,
+            -1,
+            1
+          ],
+          "typed_action": true,
+          "reference_backend_inverse": true,
+          "native_domain_admission": false
+        },
+        {
+          "candidate": "A",
+          "vertices": [
+            1,
+            2,
+            3,
+            0
+          ],
+          "edges": [
+            1,
+            0,
+            3,
+            2
+          ],
+          "signs": [
+            -1,
+            1,
+            1,
+            -1
+          ],
+          "typed_action": true,
+          "reference_backend_inverse": true,
+          "native_domain_admission": false
+        },
+        {
+          "candidate": "A",
+          "vertices": [
+            1,
+            3,
+            0,
+            2
+          ],
+          "edges": [
+            0,
+            3,
+            1,
+            2
+          ],
+          "signs": [
+            1,
+            -1,
+            -1,
+            -1
+          ],
+          "typed_action": true,
+          "reference_backend_inverse": true,
+          "native_domain_admission": false
+        },
+        {
+          "candidate": "A",
+          "vertices": [
+            0,
+            3,
+            1,
+            2
+          ],
+          "edges": [
+            3,
+            1,
+            0,
+            2
+          ],
+          "signs": [
+            1,
+            -1,
+            -1,
+            1
+          ],
+          "typed_action": true,
+          "reference_backend_inverse": true,
+          "native_domain_admission": false
+        },
+        {
+          "candidate": "A",
+          "vertices": [
+            3,
+            2,
+            0,
+            1
+          ],
+          "edges": [
+            2,
+            3,
+            0,
+            1
+          ],
+          "signs": [
+            -1,
+            -1,
+            -1,
+            1
+          ],
+          "typed_action": true,
+          "reference_backend_inverse": true,
+          "native_domain_admission": false
+        },
+        {
+          "candidate": "A",
+          "vertices": [
+            3,
+            0,
+            2,
+            1
+          ],
+          "edges": [
+            2,
+            1,
+            0,
+            3
+          ],
+          "signs": [
+            1,
+            1,
+            -1,
+            -1
+          ],
+          "typed_action": true,
+          "reference_backend_inverse": true,
+          "native_domain_admission": false
+        },
+        {
+          "candidate": "A",
+          "vertices": [
+            0,
+            1,
+            3,
+            2
+          ],
+          "edges": [
+            2,
+            0,
+            3,
+            1
+          ],
+          "signs": [
+            1,
+            1,
+            1,
+            -1
+          ],
+          "typed_action": true,
+          "reference_backend_inverse": true,
+          "native_domain_admission": false
+        },
+        {
+          "candidate": "A",
+          "vertices": [
+            3,
+            2,
+            0,
+            1
+          ],
+          "edges": [
+            0,
+            1,
+            3,
+            2
+          ],
+          "signs": [
+            1,
+            -1,
+            -1,
+            -1
+          ],
+          "typed_action": true,
+          "reference_backend_inverse": true,
+          "native_domain_admission": false
+        },
+        {
+          "candidate": "A",
+          "vertices": [
+            2,
+            0,
+            3,
+            1
+          ],
+          "edges": [
+            1,
+            3,
+            2,
+            0
+          ],
+          "signs": [
+            -1,
+            1,
+            1,
+            1
+          ],
+          "typed_action": true,
+          "reference_backend_inverse": true,
+          "native_domain_admission": false
+        },
+        {
+          "candidate": "A",
+          "vertices": [
+            1,
+            0,
+            3,
+            2
+          ],
+          "edges": [
+            1,
+            3,
+            2,
+            0
+          ],
+          "signs": [
+            1,
+            1,
+            -1,
+            -1
+          ],
+          "typed_action": true,
+          "reference_backend_inverse": true,
+          "native_domain_admission": false
+        },
+        {
+          "candidate": "A",
+          "vertices": [
+            0,
+            2,
+            3,
+            1
+          ],
+          "edges": [
+            2,
+            1,
+            0,
+            3
+          ],
+          "signs": [
+            1,
+            1,
+            1,
+            -1
+          ],
+          "typed_action": true,
+          "reference_backend_inverse": true,
+          "native_domain_admission": false
+        },
+        {
+          "candidate": "A",
+          "vertices": [
+            2,
+            0,
+            3,
+            1
+          ],
+          "edges": [
+            2,
+            1,
+            3,
+            0
+          ],
+          "signs": [
+            1,
+            -1,
+            1,
+            -1
+          ],
+          "typed_action": true,
+          "reference_backend_inverse": true,
+          "native_domain_admission": false
+        },
+        {
+          "candidate": "A",
+          "vertices": [
+            3,
+            2,
+            0,
+            1
+          ],
+          "edges": [
+            2,
+            0,
+            3,
+            1
+          ],
+          "signs": [
+            1,
+            1,
+            -1,
+            -1
+          ],
+          "typed_action": true,
+          "reference_backend_inverse": true,
+          "native_domain_admission": false
+        },
+        {
+          "candidate": "A",
+          "vertices": [
+            2,
+            0,
+            3,
+            1
+          ],
+          "edges": [
+            3,
+            0,
+            1,
+            2
+          ],
+          "signs": [
+            1,
+            1,
+            1,
+            -1
+          ],
+          "typed_action": true,
+          "reference_backend_inverse": true,
+          "native_domain_admission": false
+        },
+        {
+          "candidate": "A",
+          "vertices": [
+            0,
+            2,
+            1,
+            3
+          ],
+          "edges": [
+            2,
+            3,
+            0,
+            1
+          ],
+          "signs": [
+            -1,
+            -1,
+            1,
+            -1
+          ],
+          "typed_action": true,
+          "reference_backend_inverse": true,
+          "native_domain_admission": false
+        },
+        {
+          "candidate": "A",
+          "vertices": [
+            0,
+            3,
+            2,
+            1
+          ],
+          "edges": [
+            0,
+            2,
+            3,
+            1
+          ],
+          "signs": [
+            1,
+            1,
+            1,
+            -1
+          ],
+          "typed_action": true,
+          "reference_backend_inverse": true,
+          "native_domain_admission": false
+        },
+        {
+          "candidate": "A",
+          "vertices": [
+            3,
+            1,
+            0,
+            2
+          ],
+          "edges": [
+            1,
+            3,
+            2,
+            0
+          ],
+          "signs": [
+            1,
+            -1,
+            1,
+            -1
+          ],
+          "typed_action": true,
+          "reference_backend_inverse": true,
+          "native_domain_admission": false
+        },
+        {
+          "candidate": "A",
+          "vertices": [
+            1,
+            2,
+            3,
+            0
+          ],
+          "edges": [
+            1,
+            0,
+            2,
+            3
+          ],
+          "signs": [
+            1,
+            1,
+            -1,
+            -1
+          ],
+          "typed_action": true,
+          "reference_backend_inverse": true,
+          "native_domain_admission": false
+        },
+        {
+          "candidate": "A",
+          "vertices": [
+            0,
+            2,
+            3,
+            1
+          ],
+          "edges": [
+            1,
+            2,
+            3,
+            0
+          ],
+          "signs": [
+            -1,
+            -1,
+            -1,
+            -1
+          ],
+          "typed_action": true,
+          "reference_backend_inverse": true,
+          "native_domain_admission": false
+        },
+        {
+          "candidate": "A",
+          "vertices": [
+            2,
+            3,
+            0,
+            1
+          ],
+          "edges": [
+            0,
+            2,
+            1,
+            3
+          ],
+          "signs": [
+            -1,
+            1,
+            -1,
+            1
+          ],
+          "typed_action": true,
+          "reference_backend_inverse": true,
+          "native_domain_admission": false
+        },
+        {
+          "candidate": "A",
+          "vertices": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "edges": [
+            0,
+            3,
+            2,
+            1
+          ],
+          "signs": [
+            -1,
+            -1,
+            1,
+            1
+          ],
+          "typed_action": true,
+          "reference_backend_inverse": true,
+          "native_domain_admission": false
+        },
+        {
+          "candidate": "A",
+          "vertices": [
+            0,
+            2,
+            1,
+            3
+          ],
+          "edges": [
+            3,
+            1,
+            0,
+            2
+          ],
+          "signs": [
+            1,
+            1,
+            1,
+            -1
+          ],
+          "typed_action": true,
+          "reference_backend_inverse": true,
+          "native_domain_admission": false
+        },
+        {
+          "candidate": "A",
+          "vertices": [
+            1,
+            0,
+            3,
+            2
+          ],
+          "edges": [
+            3,
+            1,
+            0,
+            2
+          ],
+          "signs": [
+            1,
+            -1,
+            -1,
+            -1
+          ],
+          "typed_action": true,
+          "reference_backend_inverse": true,
+          "native_domain_admission": false
+        },
+        {
+          "candidate": "A",
+          "vertices": [
+            3,
+            2,
+            1,
+            0
+          ],
+          "edges": [
+            2,
+            1,
+            0,
+            3
+          ],
+          "signs": [
+            1,
+            1,
+            -1,
+            1
+          ],
+          "typed_action": true,
+          "reference_backend_inverse": true,
+          "native_domain_admission": false
+        },
+        {
+          "candidate": "C",
+          "vertices": [
+            0,
+            2,
+            3,
+            1
+          ],
+          "edges": [
+            1,
+            0,
+            3,
+            2
+          ],
+          "signs": [
+            1,
+            1,
+            1,
+            -1
+          ],
+          "typed_action": true,
+          "reference_backend_inverse": true,
+          "native_domain_admission": false
+        },
+        {
+          "candidate": "C",
+          "vertices": [
+            1,
+            2,
+            0,
+            3
+          ],
+          "edges": [
+            0,
+            2,
+            1,
+            3
+          ],
+          "signs": [
+            -1,
+            1,
+            -1,
+            -1
+          ],
+          "typed_action": true,
+          "reference_backend_inverse": true,
+          "native_domain_admission": false
+        },
+        {
+          "candidate": "C",
+          "vertices": [
+            0,
+            3,
+            1,
+            2
+          ],
+          "edges": [
+            1,
+            3,
+            2,
+            0
+          ],
+          "signs": [
+            -1,
+            1,
+            -1,
+            -1
+          ],
+          "typed_action": true,
+          "reference_backend_inverse": true,
+          "native_domain_admission": false
+        },
+        {
+          "candidate": "C",
+          "vertices": [
+            2,
+            1,
+            3,
+            0
+          ],
+          "edges": [
+            0,
+            3,
+            2,
+            1
+          ],
+          "signs": [
+            -1,
+            1,
+            1,
+            1
+          ],
+          "typed_action": true,
+          "reference_backend_inverse": true,
+          "native_domain_admission": false
+        },
+        {
+          "candidate": "C",
+          "vertices": [
+            3,
+            2,
+            1,
+            0
+          ],
+          "edges": [
+            3,
+            0,
+            1,
+            2
+          ],
+          "signs": [
+            -1,
+            -1,
+            1,
+            -1
+          ],
+          "typed_action": true,
+          "reference_backend_inverse": true,
+          "native_domain_admission": false
+        },
+        {
+          "candidate": "C",
+          "vertices": [
+            0,
+            3,
+            1,
+            2
+          ],
+          "edges": [
+            3,
+            0,
+            2,
+            1
+          ],
+          "signs": [
+            -1,
+            1,
+            -1,
+            1
+          ],
+          "typed_action": true,
+          "reference_backend_inverse": true,
+          "native_domain_admission": false
+        },
+        {
+          "candidate": "C",
+          "vertices": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "edges": [
+            2,
+            3,
+            1,
+            0
+          ],
+          "signs": [
+            -1,
+            1,
+            -1,
+            -1
+          ],
+          "typed_action": true,
+          "reference_backend_inverse": true,
+          "native_domain_admission": false
+        },
+        {
+          "candidate": "C",
+          "vertices": [
+            3,
+            2,
+            1,
+            0
+          ],
+          "edges": [
+            1,
+            2,
+            3,
+            0
+          ],
+          "signs": [
+            -1,
+            -1,
+            -1,
+            -1
+          ],
+          "typed_action": true,
+          "reference_backend_inverse": true,
+          "native_domain_admission": false
+        },
+        {
+          "candidate": "C",
+          "vertices": [
+            2,
+            1,
+            3,
+            0
+          ],
+          "edges": [
+            0,
+            3,
+            2,
+            1
+          ],
+          "signs": [
+            1,
+            1,
+            1,
+            -1
+          ],
+          "typed_action": true,
+          "reference_backend_inverse": true,
+          "native_domain_admission": false
+        },
+        {
+          "candidate": "C",
+          "vertices": [
+            1,
+            0,
+            3,
+            2
+          ],
+          "edges": [
+            3,
+            1,
+            0,
+            2
+          ],
+          "signs": [
+            1,
+            1,
+            1,
+            -1
+          ],
+          "typed_action": true,
+          "reference_backend_inverse": true,
+          "native_domain_admission": false
+        },
+        {
+          "candidate": "C",
+          "vertices": [
+            3,
+            0,
+            2,
+            1
+          ],
+          "edges": [
+            2,
+            3,
+            0,
+            1
+          ],
+          "signs": [
+            1,
+            1,
+            1,
+            -1
+          ],
+          "typed_action": true,
+          "reference_backend_inverse": true,
+          "native_domain_admission": false
+        },
+        {
+          "candidate": "C",
+          "vertices": [
+            1,
+            3,
+            2,
+            0
+          ],
+          "edges": [
+            1,
+            2,
+            3,
+            0
+          ],
+          "signs": [
+            1,
+            -1,
+            1,
+            1
+          ],
+          "typed_action": true,
+          "reference_backend_inverse": true,
+          "native_domain_admission": false
+        },
+        {
+          "candidate": "C",
+          "vertices": [
+            1,
+            2,
+            3,
+            0
+          ],
+          "edges": [
+            0,
+            1,
+            3,
+            2
+          ],
+          "signs": [
+            1,
+            -1,
+            -1,
+            1
+          ],
+          "typed_action": true,
+          "reference_backend_inverse": true,
+          "native_domain_admission": false
+        },
+        {
+          "candidate": "C",
+          "vertices": [
+            0,
+            3,
+            2,
+            1
+          ],
+          "edges": [
+            2,
+            0,
+            1,
+            3
+          ],
+          "signs": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "typed_action": true,
+          "reference_backend_inverse": true,
+          "native_domain_admission": false
+        },
+        {
+          "candidate": "C",
+          "vertices": [
+            0,
+            2,
+            3,
+            1
+          ],
+          "edges": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "signs": [
+            1,
+            -1,
+            1,
+            1
+          ],
+          "typed_action": true,
+          "reference_backend_inverse": true,
+          "native_domain_admission": false
+        },
+        {
+          "candidate": "C",
+          "vertices": [
+            2,
+            1,
+            0,
+            3
+          ],
+          "edges": [
+            0,
+            2,
+            1,
+            3
+          ],
+          "signs": [
+            1,
+            -1,
+            1,
+            1
+          ],
+          "typed_action": true,
+          "reference_backend_inverse": true,
+          "native_domain_admission": false
+        },
+        {
+          "candidate": "C",
+          "vertices": [
+            1,
+            2,
+            0,
+            3
+          ],
+          "edges": [
+            0,
+            2,
+            1,
+            3
+          ],
+          "signs": [
+            -1,
+            1,
+            1,
+            -1
+          ],
+          "typed_action": true,
+          "reference_backend_inverse": true,
+          "native_domain_admission": false
+        },
+        {
+          "candidate": "C",
+          "vertices": [
+            3,
+            2,
+            0,
+            1
+          ],
+          "edges": [
+            3,
+            0,
+            1,
+            2
+          ],
+          "signs": [
+            -1,
+            1,
+            1,
+            -1
+          ],
+          "typed_action": true,
+          "reference_backend_inverse": true,
+          "native_domain_admission": false
+        },
+        {
+          "candidate": "C",
+          "vertices": [
+            2,
+            1,
+            3,
+            0
+          ],
+          "edges": [
+            1,
+            3,
+            0,
+            2
+          ],
+          "signs": [
+            1,
+            -1,
+            -1,
+            1
+          ],
+          "typed_action": true,
+          "reference_backend_inverse": true,
+          "native_domain_admission": false
+        },
+        {
+          "candidate": "C",
+          "vertices": [
+            1,
+            2,
+            0,
+            3
+          ],
+          "edges": [
+            2,
+            3,
+            0,
+            1
+          ],
+          "signs": [
+            1,
+            -1,
+            1,
+            1
+          ],
+          "typed_action": true,
+          "reference_backend_inverse": true,
+          "native_domain_admission": false
+        },
+        {
+          "candidate": "C",
+          "vertices": [
+            3,
+            2,
+            0,
+            1
+          ],
+          "edges": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "signs": [
+            -1,
+            1,
+            -1,
+            -1
+          ],
+          "typed_action": true,
+          "reference_backend_inverse": true,
+          "native_domain_admission": false
+        },
+        {
+          "candidate": "C",
+          "vertices": [
+            2,
+            1,
+            3,
+            0
+          ],
+          "edges": [
+            2,
+            3,
+            0,
+            1
+          ],
+          "signs": [
+            -1,
+            -1,
+            1,
+            -1
+          ],
+          "typed_action": true,
+          "reference_backend_inverse": true,
+          "native_domain_admission": false
+        },
+        {
+          "candidate": "C",
+          "vertices": [
+            0,
+            1,
+            3,
+            2
+          ],
+          "edges": [
+            2,
+            1,
+            0,
+            3
+          ],
+          "signs": [
+            -1,
+            -1,
+            -1,
+            -1
+          ],
+          "typed_action": true,
+          "reference_backend_inverse": true,
+          "native_domain_admission": false
+        },
+        {
+          "candidate": "C",
+          "vertices": [
+            0,
+            2,
+            3,
+            1
+          ],
+          "edges": [
+            3,
+            2,
+            1,
+            0
+          ],
+          "signs": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "typed_action": true,
+          "reference_backend_inverse": true,
+          "native_domain_admission": false
+        },
+        {
+          "candidate": "C",
+          "vertices": [
+            3,
+            2,
+            1,
+            0
+          ],
+          "edges": [
+            1,
+            2,
+            3,
+            0
+          ],
+          "signs": [
+            -1,
+            -1,
+            1,
+            -1
+          ],
+          "typed_action": true,
+          "reference_backend_inverse": true,
+          "native_domain_admission": false
+        },
+        {
+          "candidate": "C",
+          "vertices": [
+            3,
+            2,
+            1,
+            0
+          ],
+          "edges": [
+            0,
+            3,
+            2,
+            1
+          ],
+          "signs": [
+            -1,
+            1,
+            1,
+            -1
+          ],
+          "typed_action": true,
+          "reference_backend_inverse": true,
+          "native_domain_admission": false
+        },
+        {
+          "candidate": "C",
+          "vertices": [
+            0,
+            2,
+            1,
+            3
+          ],
+          "edges": [
+            2,
+            0,
+            3,
+            1
+          ],
+          "signs": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "typed_action": true,
+          "reference_backend_inverse": true,
+          "native_domain_admission": false
+        },
+        {
+          "candidate": "C",
+          "vertices": [
+            0,
+            1,
+            3,
+            2
+          ],
+          "edges": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "signs": [
+            -1,
+            1,
+            -1,
+            -1
+          ],
+          "typed_action": true,
+          "reference_backend_inverse": true,
+          "native_domain_admission": false
+        },
+        {
+          "candidate": "C",
+          "vertices": [
+            3,
+            0,
+            1,
+            2
+          ],
+          "edges": [
+            1,
+            2,
+            0,
+            3
+          ],
+          "signs": [
+            1,
+            1,
+            1,
+            -1
+          ],
+          "typed_action": true,
+          "reference_backend_inverse": true,
+          "native_domain_admission": false
+        },
+        {
+          "candidate": "C",
+          "vertices": [
+            2,
+            3,
+            1,
+            0
+          ],
+          "edges": [
+            3,
+            2,
+            1,
+            0
+          ],
+          "signs": [
+            1,
+            1,
+            1,
+            -1
+          ],
+          "typed_action": true,
+          "reference_backend_inverse": true,
+          "native_domain_admission": false
+        },
+        {
+          "candidate": "C",
+          "vertices": [
+            0,
+            2,
+            3,
+            1
+          ],
+          "edges": [
+            1,
+            2,
+            0,
+            3
+          ],
+          "signs": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "typed_action": true,
+          "reference_backend_inverse": true,
+          "native_domain_admission": false
+        },
+        {
+          "candidate": "C",
+          "vertices": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "edges": [
+            2,
+            0,
+            1,
+            3
+          ],
+          "signs": [
+            1,
+            -1,
+            -1,
+            1
+          ],
+          "typed_action": true,
+          "reference_backend_inverse": true,
+          "native_domain_admission": false
+        },
+        {
+          "candidate": "C",
+          "vertices": [
+            0,
+            2,
+            1,
+            3
+          ],
+          "edges": [
+            2,
+            3,
+            0,
+            1
+          ],
+          "signs": [
+            1,
+            1,
+            -1,
+            -1
+          ],
+          "typed_action": true,
+          "reference_backend_inverse": true,
+          "native_domain_admission": false
+        },
+        {
+          "candidate": "C",
+          "vertices": [
+            1,
+            0,
+            3,
+            2
+          ],
+          "edges": [
+            2,
+            1,
+            0,
+            3
+          ],
+          "signs": [
+            1,
+            1,
+            1,
+            -1
+          ],
+          "typed_action": true,
+          "reference_backend_inverse": true,
+          "native_domain_admission": false
+        },
+        {
+          "candidate": "C",
+          "vertices": [
+            1,
+            2,
+            3,
+            0
+          ],
+          "edges": [
+            3,
+            2,
+            1,
+            0
+          ],
+          "signs": [
+            -1,
+            -1,
+            1,
+            -1
+          ],
+          "typed_action": true,
+          "reference_backend_inverse": true,
+          "native_domain_admission": false
+        },
+        {
+          "candidate": "C",
+          "vertices": [
+            2,
+            1,
+            0,
+            3
+          ],
+          "edges": [
+            1,
+            2,
+            0,
+            3
+          ],
+          "signs": [
+            -1,
+            -1,
+            -1,
+            -1
+          ],
+          "typed_action": true,
+          "reference_backend_inverse": true,
+          "native_domain_admission": false
+        },
+        {
+          "candidate": "C",
+          "vertices": [
+            2,
+            1,
+            3,
+            0
+          ],
+          "edges": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "signs": [
+            1,
+            -1,
+            -1,
+            -1
+          ],
+          "typed_action": true,
+          "reference_backend_inverse": true,
+          "native_domain_admission": false
+        },
+        {
+          "candidate": "C",
+          "vertices": [
+            0,
+            3,
+            1,
+            2
+          ],
+          "edges": [
+            3,
+            0,
+            2,
+            1
+          ],
+          "signs": [
+            -1,
+            -1,
+            1,
+            -1
+          ],
+          "typed_action": true,
+          "reference_backend_inverse": true,
+          "native_domain_admission": false
+        },
+        {
+          "candidate": "C",
+          "vertices": [
+            3,
+            1,
+            2,
+            0
+          ],
+          "edges": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "signs": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "typed_action": true,
+          "reference_backend_inverse": true,
+          "native_domain_admission": false
+        },
+        {
+          "candidate": "C",
+          "vertices": [
+            1,
+            3,
+            2,
+            0
+          ],
+          "edges": [
+            0,
+            2,
+            1,
+            3
+          ],
+          "signs": [
+            1,
+            -1,
+            -1,
+            -1
+          ],
+          "typed_action": true,
+          "reference_backend_inverse": true,
+          "native_domain_admission": false
+        },
+        {
+          "candidate": "C",
+          "vertices": [
+            2,
+            3,
+            0,
+            1
+          ],
+          "edges": [
+            3,
+            2,
+            0,
+            1
+          ],
+          "signs": [
+            1,
+            -1,
+            -1,
+            -1
+          ],
+          "typed_action": true,
+          "reference_backend_inverse": true,
+          "native_domain_admission": false
+        },
+        {
+          "candidate": "C",
+          "vertices": [
+            2,
+            1,
+            0,
+            3
+          ],
+          "edges": [
+            0,
+            1,
+            3,
+            2
+          ],
+          "signs": [
+            -1,
+            1,
+            1,
+            -1
+          ],
+          "typed_action": true,
+          "reference_backend_inverse": true,
+          "native_domain_admission": false
+        },
+        {
+          "candidate": "C",
+          "vertices": [
+            0,
+            1,
+            3,
+            2
+          ],
+          "edges": [
+            3,
+            2,
+            1,
+            0
+          ],
+          "signs": [
+            1,
+            -1,
+            1,
+            1
+          ],
+          "typed_action": true,
+          "reference_backend_inverse": true,
+          "native_domain_admission": false
+        },
+        {
+          "candidate": "C",
+          "vertices": [
+            3,
+            2,
+            1,
+            0
+          ],
+          "edges": [
+            1,
+            2,
+            0,
+            3
+          ],
+          "signs": [
+            -1,
+            1,
+            -1,
+            -1
+          ],
+          "typed_action": true,
+          "reference_backend_inverse": true,
+          "native_domain_admission": false
+        },
+        {
+          "candidate": "C",
+          "vertices": [
+            0,
+            3,
+            2,
+            1
+          ],
+          "edges": [
+            2,
+            3,
+            0,
+            1
+          ],
+          "signs": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "typed_action": true,
+          "reference_backend_inverse": true,
+          "native_domain_admission": false
+        },
+        {
+          "candidate": "C",
+          "vertices": [
+            3,
+            1,
+            2,
+            0
+          ],
+          "edges": [
+            1,
+            2,
+            0,
+            3
+          ],
+          "signs": [
+            1,
+            -1,
+            -1,
+            1
+          ],
+          "typed_action": true,
+          "reference_backend_inverse": true,
+          "native_domain_admission": false
+        },
+        {
+          "candidate": "C",
+          "vertices": [
+            1,
+            0,
+            2,
+            3
+          ],
+          "edges": [
+            2,
+            1,
+            3,
+            0
+          ],
+          "signs": [
+            -1,
+            -1,
+            1,
+            -1
+          ],
+          "typed_action": true,
+          "reference_backend_inverse": true,
+          "native_domain_admission": false
+        },
+        {
+          "candidate": "C",
+          "vertices": [
+            0,
+            2,
+            1,
+            3
+          ],
+          "edges": [
+            1,
+            2,
+            3,
+            0
+          ],
+          "signs": [
+            1,
+            1,
+            -1,
+            1
+          ],
+          "typed_action": true,
+          "reference_backend_inverse": true,
+          "native_domain_admission": false
+        }
+      ]
+    },
+    "archive_mutations": {
+      "scope": "actual importer control flow, fake numerical admission and schema bridge as documented",
+      "cases": [
+        {
+          "name": "embedded_target_reset_charge",
+          "rejected": true,
+          "error": "V4IdentityError",
+          "message": "crossing receipts contradict their reconstructed whole-lifecycle operation"
+        },
+        {
+          "name": "embedded_source_current_charge",
+          "rejected": true,
+          "error": "V4IdentityError",
+          "message": "crossing receipts contradict their reconstructed whole-lifecycle operation"
+        },
+        {
+          "name": "wrong_delta_semantics",
+          "rejected": true,
+          "error": "V4IdentityError",
+          "message": "crossing receipts contradict their reconstructed whole-lifecycle operation"
+        },
+        {
+          "name": "invented_exact_charge_delta",
+          "rejected": true,
+          "error": "V4IdentityError",
+          "message": "crossing receipts contradict their reconstructed whole-lifecycle operation"
+        },
+        {
+          "name": "representation_history_loss",
+          "rejected": true,
+          "error": "V4IdentityError",
+          "message": "crossing receipts contradict their reconstructed whole-lifecycle operation"
+        },
+        {
+          "name": "invented_candidate_history",
+          "rejected": true,
+          "error": "V4IdentityError",
+          "message": "crossing receipts contradict their reconstructed whole-lifecycle operation"
+        },
+        {
+          "name": "wrong_representation_id",
+          "rejected": true,
+          "error": "V4IdentityError",
+          "message": "crossing receipts contradict their reconstructed whole-lifecycle operation"
+        },
+        {
+          "name": "skipped_parent",
+          "rejected": true,
+          "error": "V4IdentityError",
+          "message": "crossing receipts contradict their reconstructed whole-lifecycle operation"
+        },
+        {
+          "name": "auxiliary_as_parent",
+          "rejected": true,
+          "error": "V4IdentityError",
+          "message": "crossing receipts contradict their reconstructed whole-lifecycle operation"
+        },
+        {
+          "name": "extra_parent",
+          "rejected": true,
+          "error": "V4IdentityError",
+          "message": "crossing receipts contradict their reconstructed whole-lifecycle operation"
+        },
+        {
+          "name": "known_state_authority_conflict",
+          "rejected": true,
+          "error": "V4IdentityError",
+          "message": "duplicate receipt or inconsistent commit/core ownership"
+        },
+        {
+          "name": "crossing_clock_change",
+          "rejected": true,
+          "error": "V4IdentityError",
+          "message": "crossing commit changes its readmitted target clock"
+        },
+        {
+          "name": "duplicate_crossing_archive",
+          "rejected": true,
+          "error": "V4IdentityError",
+          "message": "duplicate or missing crossing commit identity"
+        },
+        {
+          "name": "missing_crossing_archive",
+          "rejected": true,
+          "error": "V4IdentityError",
+          "message": "crossing receipt has no reconstruction preimages"
+        },
+        {
+          "name": "reordered_crossing_archives",
+          "rejected": true,
+          "error": "V4IdentityError",
+          "message": "crossing archive is missing, extra or out of ledger order"
+        },
+        {
+          "name": "coherent_wrong_orientation",
+          "rejected": true,
+          "error": "_CrossingFailure",
+          "message": "edge orientation/endpoints contradict declared vertex map"
+        }
+      ],
+      "positive_roundtrip": true
+    },
+    "alias_controls": [
+      {
+        "order": "old_then_representation",
+        "rejected_before_publication": true
+      },
+      {
+        "order": "representation_then_valid_legacy",
+        "alias": "candidate_c_no_independent_history_v1",
+        "restored": true
+      },
+      {
+        "order": "representation_then_valid_legacy",
+        "alias": "candidate_c_rederive_no_history_v1",
+        "restored": true
+      },
+      {
+        "order": "old_then_reconstruction",
+        "rejected_before_publication": true
+      },
+      {
+        "order": "reconstruction_then_valid_legacy",
+        "alias": "candidate_c_no_independent_history_v1",
+        "restored": true
+      },
+      {
+        "order": "reconstruction_then_valid_legacy",
+        "alias": "candidate_c_rederive_no_history_v1",
+        "restored": true
+      }
+    ],
+    "mixed_sequence": {
+      "operations": [
+        "representation",
+        "reset",
+        "event2",
+        "representation",
+        "rebase",
+        "legacy",
+        "reset"
+      ],
+      "cumulative_receipts": [
+        1,
+        5,
+        9,
+        10,
+        14,
+        18,
+        22
+      ],
+      "all_checkpoints_restored": true
+    }
+  },
+  "environment": {
+    "python": "3.13.5",
+    "platform": "Linux-6.18.35-x86_64-with-glibc2.41"
+  },
+  "limits": [
+    "No production candidate solver or initializer ran. No complete pinned repository unittest/verifier/API/browser campaign was independently rerun.",
+    "New uploaded event module and selected lifecycle bodies were executed unchanged with explicit record/reference/state/geometry/readmission scaffolds.",
+    "Canonical identity checks use independent Node ECMAScript number serialization and lexicographic key order on the supplied binary64-compatible data.",
+    "Current event package release a6861c... is not the older attached d803df... package. Its current manifest/schema/decoder pins could not be independently loaded; no substitution credited as package validation.",
+    "Legacy alias rejection in the isolated loader uses the explicit predicate from the available predecessor event supplement. The new submitted test confirms the same unregistered alias must be rejected by the joint archive.",
+    "96 mapper cases establish typed-action arithmetic and inverse reference/backend reconstruction under wrappers, not additional numerical profile-domain admission or executable trajectory covariance.",
+    "Eight native repository regression proposals compiled; none executed in a complete native environment. The changed-graph A-target test is additional pressure, not a reproduced defect.",
+    "Reported 10 native runtime tests, 10 package checks, two legacy checks, 11 browser negatives are submission-reported. Record integrity does not independently attest those executions."
+  ],
+  "reviewed_files": {
+    "P9-7.2b-Runtime.json": "d4c67cae22e9452b6321093b479e302a8936066b20ff171c37675a7fba86c769",
+    "P9-7.2b-RuntimeReview.md": "c2c5c2b2b23d4eefde1eafad1fe10b14f0b1f92aed321c5eef49b880fa5040de",
+    "grc_v4_events.py": "c29e71c7d4b35a2c5646785622a07737bf6c0775573958b1332150da30dae7e0",
+    "grc_v4_lifecycle(6).py": "9a8ded05a79debc88bb5db904792a4fd3685c33adb0a61e42b711eb57855d095",
+    "grc_v4(4).py": "eaf8fb26d0f3cb4f9f6ac9c761fb17d90d3d1142f0e145c0bd0ab746a3c477d1",
+    "grc_v4_codec(7).py": "c7e835d7d371737e4c983573da4c2139d21c2dd52f02cd9539f1f1029c2063cf",
+    "grc_v4_step(6).py": "185e00a0ad73a79f10e5a66acd24970365976bb54b3cba9397dc2aff71673b1b",
+    "test_grc_v4_events.py": "2227987bd17d2ed0b3a90dd63450234d89b90310351e2523229f629b86ab3165"
+  },
+  "native_proposal_methods": 8,
+  "no_new_G2_or_G3": true
+}

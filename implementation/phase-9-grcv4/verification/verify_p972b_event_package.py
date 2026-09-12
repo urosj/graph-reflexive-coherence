@@ -12,7 +12,7 @@ def check(root=None):
             raise ValueError("joint event package drift: " + name)
     load_event_schemas()
     return dict(release_id=EVENT_RELEASE_ID, contract_package_verified=True,
-                model_operations_implemented=False, new_G2_support=[], G3_accepted=False)
+                runtime_evidence_evaluated=False, new_G2_support=[], G3_accepted=False)
 
 
 if __name__ == "__main__":
