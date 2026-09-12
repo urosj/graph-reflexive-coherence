@@ -1238,6 +1238,18 @@ The user accepted and closed P9-7.2b on 2026-09-12 through “accept and commit
 records acceptance separately from historical execution flags. P9-7.3 onward
 and wider G2/G3 support remain outside this closure.
 
+P9-7.3 is a separate verification of candidate/carrier policy independence,
+directional losses and whole-current/reset resource/charge accounting. Its
+[bounded review](./phase-9-grcv4/tranche-7/P9-7.3-Review.md) distinguishes 32
+discrete declaration cells from five native crossing witnesses and separate
+representation, hostile-history and charge pressure. Reuse accepted 7.2
+numerical owners without changing their evidence or claiming all-pair admission.
+The user accepted and closed P9-7.3 on 2026-09-12 following two passing audits,
+including a separately reported independent native rerun. The user then asked
+to execute the three suggested stronger regressions before commit; all three
+passed in a separate record with no runtime changes. The original six-test
+run is unchanged; 7.4–7.6 and G2/G3 stay separate.
+
 The following records the historical implementation and acceptance sequence.
 The user authorized **P9-7.2a** after accepting 7.1 at `5d8dbe2`. Its
 [scoped review](./phase-9-grcv4/tranche-7/P9-7.2a-Review.md) binds 13 concrete

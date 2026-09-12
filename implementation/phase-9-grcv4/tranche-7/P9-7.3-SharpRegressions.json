@@ -1,0 +1,728 @@
+{
+  "schema": "phase9_history_policy_sharp_regressions_v1",
+  "iteration_id": "P9-7.3",
+  "captured_at": "2026-09-12T14:58:04.164236+00:00",
+  "baseline_record_digest": "3dd332471957d0adae6597842ec6f2c90dfa2baa8c55e642b52fe6a3d03ba653",
+  "source_bindings": {
+    "implementation/phase-9-grcv4/tranche-7/P9-7.2b-RuntimeOriginalSources.json": "8f5711c7934ac594f2e2bb4d1e05eeebc1f5da119a074fb7d677c98485e8a7d5",
+    "implementation/phase-9-grcv4/verification/verify_p972b_runtime.py": "b4ce7e807b5934e6ea51abf0e8bf1f96be3733401d447ae357a4987d36f66895",
+    "pyproject.toml": "018c364413f75ee49186975c05e9cdaba7a78e171d47833609fbebc223a64a66",
+    "specs/grc-v4-event-contract-release.json": "e1ae563880b03cab512e5481f2db556032853bf8d558eeed689ec09e577ea699",
+    "src/pygrc/__init__.py": "87cbe85db2f0f16b428df7f76701b68db79ffe1908e76ee71b2134ef20453a40",
+    "src/pygrc/core/__init__.py": "1de90ece2242642584f399b744240207a15f1d56b1ee62247bfb1389647ec7ae",
+    "src/pygrc/core/backends.py": "344f13dcf664ecbc1ec591cd1cc4c9be241d8c292ca736551201eee81a2c8c07",
+    "src/pygrc/core/capabilities.py": "40fb8fc51284c25d99b7bb9310ebff7055f170d46a0a978d190ccd9f2b97a41b",
+    "src/pygrc/core/digests.py": "c54fdedbea3dc9547ae9450bcc4d69385a7f0cba5b9e592dee8d785fbd3c5f07",
+    "src/pygrc/core/errors.py": "6cebc00fd55fb6f78f505510c71ff6e41fc76877621dbb8832c342b1ec728a31",
+    "src/pygrc/core/events.py": "a77be381e49e84745a687be432fd03ca0cbc394efe749db2538542d3cc80f9b2",
+    "src/pygrc/core/graph.py": "7a7383934a6c8fa78e05a4f7a6435b3293acfc59bcfdcdc8e3b73310f51867c6",
+    "src/pygrc/core/ids.py": "f57ae8530b5b943aad37b247b0716df583dafbf6ceffaa970cbf02cc6907d428",
+    "src/pygrc/core/interfaces.py": "551d68fc103285608cef1a7ea4a69b9455181de21d9f91ea61cdd80c6065bc8f",
+    "src/pygrc/core/mutations.py": "8072749b817b7a8e6f0b750b6e476e4355845f75ffe15315cec926d67369b207",
+    "src/pygrc/core/observables.py": "7e91df6d1ba0929e45f22f34e928551270a5c55828199876c4c8d463e2febf5e",
+    "src/pygrc/core/params.py": "ff1a1a12ba050fc8654c88b0d786e9a342b6fd1bab656a12b95cdc45a5976ca4",
+    "src/pygrc/core/serialization.py": "a1ce1489870962af1032b8e69acc09ba8b9dcbcefaf86ea97250fc9a47009cf4",
+    "src/pygrc/core/storage.py": "a73d30238bc81dc3c366f04f3e8d5e8a266d0a683e7db88560196930d279c397",
+    "src/pygrc/core/types.py": "63932777bcf619cf8719a69b16adce0dd61e4b9296308ab6f8e41f925048c6f8",
+    "src/pygrc/models/__init__.py": "3253def6cdda3527bdf5989bc004421f0fbc11b5df39d932127f65e84e46e234",
+    "src/pygrc/models/grc_v4.py": "eaf8fb26d0f3cb4f9f6ac9c761fb17d90d3d1142f0e145c0bd0ab746a3c477d1",
+    "src/pygrc/models/grc_v4_assets/__init__.py": "a1f3aba168a9f9331d1fc9580d5055404f8bc4c705936c7e388e7a47f80a0051",
+    "src/pygrc/models/grc_v4_candidate_a.py": "feed80ab108a354e5b6a0fa3a725130ab5235707f9ce283b8eff71dedbd29bd5",
+    "src/pygrc/models/grc_v4_candidate_c.py": "43be859ab21e687a270f85c427e3d63a087fa8d74d8362749ae6278ecff36d17",
+    "src/pygrc/models/grc_v4_ci.py": "948027b168191d428423421d19a4c354fb9a1c18df25dd47b93e6275bcfd7b02",
+    "src/pygrc/models/grc_v4_codec.py": "c7e835d7d371737e4c983573da4c2139d21c2dd52f02cd9539f1f1029c2063cf",
+    "src/pygrc/models/grc_v4_event_codec.py": "6955698da860261a145a2b825ce217de010c814b579e076fabf324262a277f04",
+    "src/pygrc/models/grc_v4_events.py": "66d4778ed273871066a020ee8d8c5e33122c31f56b26569711876c1c4c2b8a11",
+    "src/pygrc/models/grc_v4_geometry.py": "cb2d9b900d0091b59e4fe77ef4acc4037225e79b2ee166c99486c93b307c92a4",
+    "src/pygrc/models/grc_v4_initializer.py": "a1922092b5dcb11d33eef471ebf2410c9d59f812e55b635299ecd80db29974c4",
+    "src/pygrc/models/grc_v4_lifecycle.py": "21e308326722b7ee6ef5b2e936153b11502bcd233c4839813d4025bb8358b724",
+    "src/pygrc/models/grc_v4_migration.py": "714f37b346842370eb4d49ec279edc82a82e91d668b066942846e655f0d92dc0",
+    "src/pygrc/models/grc_v4_pc.py": "bedf18a7f89a9266dfbd7833f76792f300892c80d1e0b8f1fa409c7545a55ddf",
+    "src/pygrc/models/grc_v4_profile.py": "66441b1c1bd50bd64183dbc39980f2a013f1ce554a10d7364490ff3854ba9988",
+    "src/pygrc/models/grc_v4_realizations.py": "f15f4854acb5815244f55ce2054c5893da16be34c377331baaef7dce7d8dcc9f",
+    "src/pygrc/models/grc_v4_rg2b.py": "5bd9b12cd72edcf2e1f82fcea9e4472ba0bfc6cda22712e95cac958a7ae1f347",
+    "src/pygrc/models/grc_v4_rg2b_graph.py": "29375671582e66006e216de3a9be6d1685db3709e05865b215b103090a96681b",
+    "src/pygrc/models/grc_v4_state.py": "b0ccf06ef91b66feb8670fb67281465998f4bcb085c4d547fedd3ce6d85ad3cb",
+    "src/pygrc/models/grc_v4_step.py": "185e00a0ad73a79f10e5a66acd24970365976bb54b3cba9397dc2aff71673b1b",
+    "src/pygrc/models/grc_v4_transport.py": "4ead39ae9343c4873a7cef149471e72ce6df562f82b2a6f03c3c00f1b07f4730",
+    "tests/__init__.py": "b8c1c2c06b79a3cda0ddac97e383a7023ef0b2901a0866925d7b96699a562434",
+    "tests/models/__init__.py": "a75a97f69ccfe9043bca38dcb91a41a7393d299d8af2fe804cc034930fb6c440",
+    "tests/models/test_grc_v4.py": "718a1cb287b5f92ffb900bab4cda14b6b8b4148b28bad38010bd26353ab80edc",
+    "tests/models/test_grc_v4_candidate_a.py": "6f54255ee3c766621c30a3f236f4104d3981c757c15d76ccd55b63e98a3464d2",
+    "tests/models/test_grc_v4_candidate_c.py": "10d4d9f2f763803a6c6509389bc834f6e1756ee1a2e1c426a7ad94ba83e13392",
+    "tests/models/test_grc_v4_ci.py": "9dbede3935b494e1ef53424fdc588db08fd1c88925cf9d9c543d3a3b17620cd8",
+    "tests/models/test_grc_v4_cipc.py": "a8b7922377543cb0eca3cf08cb83e0d0d26c09173b1d34f5b65ddfe70bc86ba9",
+    "tests/models/test_grc_v4_codec.py": "c9ffa5a9de7e97c1432ab67d308777c78f9982e3b0e9fbed39eb3389f1e16079",
+    "tests/models/test_grc_v4_event_audit.py": "279285e142184798f63e36baa0edbc4f9381b7d663ac2c966abb746bff1a43fd",
+    "tests/models/test_grc_v4_events.py": "2227987bd17d2ed0b3a90dd63450234d89b90310351e2523229f629b86ab3165",
+    "tests/models/test_grc_v4_generic_lifecycle.py": "6b22807881dfe1fe1afa0ffd0b3057a67b3d1d612134ea7846e2d427cc134b38",
+    "tests/models/test_grc_v4_geometry.py": "8e954cdf956e0b8aef585c948fc307c2466b9e2a83ac2f6933387297acf73004",
+    "tests/models/test_grc_v4_initializer.py": "052530f478927ee7ead58d00b269ba8dcb30b0e5745e793a13fd6bb6f715ae0c",
+    "tests/models/test_grc_v4_lifecycle.py": "3af96fc343d33f94dde2066c2092b21d1143a9fbf5fc6d13b68915c5ca7aa788",
+    "tests/models/test_grc_v4_migration.py": "22f4dbf8245365c6dcb475c6dc8c17829d173c2acd0de0dc728a1c518f11b4a2",
+    "tests/models/test_grc_v4_pc.py": "c52e3819a7481c10a36f258facc459b8a24117ac1c92a3fb33d8e4c154990d2e",
+    "tests/models/test_grc_v4_profile.py": "f88de45246927ca3e37a9c60db06eb11d91867b89f58c4b000e95545d8affe6f",
+    "tests/models/test_grc_v4_realizations.py": "68ca00832aa25ee96ed7993a61cf4d56d32af2792bffbbea381d550883da9aa3",
+    "tests/models/test_grc_v4_rg2b.py": "e77723f9814e2acbb444c8d7c84cbcedc37787b51338d721311406d818a857b9",
+    "tests/models/test_grc_v4_rg2b_graph.py": "e08ea466b716fbacd8acfa78ad135d56ccb7fef30240747f9964bcbaf13318b4",
+    "tests/models/test_grc_v4_state.py": "d7ce02acc2d663fd3f4513158193dd473a78c1f42bc985edfa2d2eff0943fb54",
+    "tests/models/test_grc_v4_step.py": "d060883a2b355e51eae035799461f6f030253b1e16269b207d9a66e6476c9c4f",
+    "tests/models/test_grc_v4_transport.py": "51551796a0e6e344b66f21d1a5767afe39173e1a77639ba9e9271061bff02684",
+    "uv.lock": "8935f5c29dd72daf9755b5c495be6e1af5fbbd933e9ce9c6f226a02027c3d3f7",
+    "implementation/investigations/grc9v4-constitutive-design/drafts/2026-09-GRC-V4.md": "6060e28698c07068f91a5e40d5335d1cf8ae2c4292baf3a7c817a36f1ede57a9",
+    "implementation/phase-9-grcv4/tranche-7/P9-7.2a-InitializerRuntimeReview.md": "a64bfe5e90e331495b7351d0b010c73b1de01f44332232b6b4d7b23046d23191",
+    "implementation/phase-9-grcv4/tranche-7/P9-7.2b-RuntimeReview.md": "9ac06f87275fe656a2650334517be319b9eb7c98c2b9710dae263a349237120d",
+    "implementation/phase-9-grcv4/verification/test_p973_history_policy.py": "811628cb4a2388b2db7790c83f43bd83616bf666e412ebf503ca7cfe53df3eda",
+    "implementation/phase-9-grcv4/verification/verify_p973_history_policy.py": "9bf4da122ea82b12ef3eae0b0daf25116f07d39a431e47a55657826eb11a1a52",
+    "specs/grc-v4-representation-transport-spec.md": "f8392f10b2e547a5287767312655843d20c60d6b4a75cd8f50f1a990ca523388",
+    "specs/grc-v4-spec.md": "f388758ccc12812d6845833abb9cba7f1dac370bb6e2461a67507f0021cd4877",
+    "specs/grc-v4-topology-event-spec.md": "d94c6081981489d05f9261ccefbf5574aa5273f1ca35eac4e4d8c6bc4d214bcd",
+    "implementation/phase-9-grcv4/verification/test_p973_sharp_regressions.py": "1347ef5a07159322fd20d6ecf1f000ac70cbcb90d6b8491a6376221e0a5afa78"
+  },
+  "test_ids": [
+    "test_p973_sharp_regressions.SharpRegressions.test_admitted_charge_offset_is_not_silently_repaired",
+    "test_p973_sharp_regressions.SharpRegressions.test_lossless_two_edge_transport_changes_both_history_hashes",
+    "test_p973_sharp_regressions.SharpRegressions.test_subnormal_products_must_accumulate_before_rounding"
+  ],
+  "results": {
+    "tests_run": 3,
+    "failures": [],
+    "errors": [],
+    "skips": []
+  },
+  "cases": {
+    "charge_offset": {
+      "source_Q": 4.000000000000227,
+      "source_actual": 4.0,
+      "target_Q": 4.250000000000227,
+      "target_actual": 4.25,
+      "residual": -2.2737367544323206e-13,
+      "request": {
+        "schema_version": "grcv4-mapped-topology-event-request-v1",
+        "operation_id": "event",
+        "source_state_digest": "grcv4-state-sha256:d1c77632f91c66c120e20ee8622f7867f9b645b028946f8e925c0ffc091356a2",
+        "source_graph_digest": "grc-graph-sha256:114331dacd9a3358c6b151de48f8548e19315c6b1e3315818e6a6beec705fe69",
+        "target_graph": {
+          "schema_version": "grcv4-serialized-graph-v1",
+          "live_node_ids": [
+            "u",
+            "v"
+          ],
+          "oriented_edges": [
+            {
+              "edge_id": "e",
+              "tail_node_id": "u",
+              "head_node_id": "v"
+            }
+          ]
+        },
+        "target_profile_id": "grcv4-profile-sha256:ac3101442242ef71e4d39bcf8e52e288c7ee5f5c3a7dc76de9e405fb72a735e2",
+        "resource_transform": {
+          "schema_version": "grcv4-resource-event-transform-v1",
+          "policy_id": "caller_affine_resource_transport_v1",
+          "source_vertex_ids": [
+            "u",
+            "v"
+          ],
+          "target_vertex_ids": [
+            "u",
+            "v"
+          ],
+          "row_major_coefficients": [
+            1,
+            0,
+            0,
+            1
+          ],
+          "target_increment": [
+            0.25,
+            0.0
+          ]
+        },
+        "history_policy": {
+          "schema_version": "grcv4-history-bundle-policy-v1",
+          "candidate": {
+            "schema_version": "grcv4-history-channel-policy-v1",
+            "subject": "candidate",
+            "policy_id": "candidate_c_rederive_no_history_v1",
+            "disposition": "rederived",
+            "source_history_digest": null,
+            "target_initializer_id": null,
+            "information_loss": "none"
+          },
+          "carrier": {
+            "schema_version": "grcv4-history-channel-policy-v1",
+            "subject": "carrier",
+            "policy_id": "no_persistent_carrier_v1",
+            "disposition": "not_applicable",
+            "source_history_digest": null,
+            "target_initializer_id": null,
+            "information_loss": "none"
+          }
+        },
+        "metadata": {}
+      },
+      "receipts": [
+        {
+          "schema_version": "grcv4-successful-receipt-envelope-v1",
+          "receipt_id": "grc-receipt-sha256:f563d99f39afece4834d3c2953a1cd7f484de0a90ffb912823ab5eb97da677aa",
+          "commit_id": "grc-commit-sha256:f00c49794f0fda3534f88d93a77ef64443effb9513437f04d3f4950c195e261f",
+          "identity_payload": {
+            "schema_version": "grcv4-topology-event-receipt-v2",
+            "core": {
+              "operation_id": "event",
+              "resource_transform_digest": "grcv4-resource-transform-sha256:a8aa1e99622276333788183771600519dae6fd1407f63acfd4f04466c91679fa",
+              "history_bundle_digest": "grcv4-history-map-sha256:07b40502b0c5dab73b66f43c4b33af38ccb008143b404ee6adc369bd4681d280",
+              "actual_charge_delta": 0.25,
+              "information_losses": [],
+              "disposition": "committed",
+              "parent_receipt_ids": [],
+              "source_state_digest": "grcv4-state-sha256:d1c77632f91c66c120e20ee8622f7867f9b645b028946f8e925c0ffc091356a2",
+              "source_graph_digest": "grc-graph-sha256:114331dacd9a3358c6b151de48f8548e19315c6b1e3315818e6a6beec705fe69",
+              "source_model_identity": "grcv4-profile-sha256:ac3101442242ef71e4d39bcf8e52e288c7ee5f5c3a7dc76de9e405fb72a735e2",
+              "source_reset_digest": "grcv4-reset-sha256:e7d5b5a7086a9c2c96912ab414c4df9d558ffa929d3216384ed3184c82565a5e",
+              "source_authoritative_digest": "grcv4-authoritative-sha256:a183d7380474ab0b967b5c22c69557bb429a9d570f91ad0793d28147097a58e7",
+              "target_state_digest": "grcv4-state-sha256:c2d323f69e84eaa182a8dc20431a254edce8c2e30058c68b35289cec662bc0d8",
+              "target_graph_digest": "grc-graph-sha256:114331dacd9a3358c6b151de48f8548e19315c6b1e3315818e6a6beec705fe69",
+              "target_model_identity": "grcv4-profile-sha256:ac3101442242ef71e4d39bcf8e52e288c7ee5f5c3a7dc76de9e405fb72a735e2",
+              "target_reset_digest": "grcv4-reset-sha256:b9cde9c5703b601e5e8fd16dd6543ceaaed821e0aa0b4c73362551476ea6bef3",
+              "target_authoritative_digest": "grcv4-authoritative-sha256:2b316989b132269b77597c3af84fc8788ddf93826881506904ab1689b37053e9"
+            },
+            "history": {
+              "schema_version": "grcv4-history-bundle-receipt-v1",
+              "candidate": {
+                "subject": "candidate",
+                "disposition": "rederived",
+                "source_history_digest": null,
+                "target_history_digest": null,
+                "information_loss": "none"
+              },
+              "carrier": {
+                "subject": "carrier",
+                "disposition": "not_applicable",
+                "source_history_digest": null,
+                "target_history_digest": null,
+                "information_loss": "none"
+              }
+            },
+            "initializer_pair_id": null,
+            "event_id": "grc-event-sha256:27ae56761a8e58cc302ca455d7f0fa7481b0cd518b75ec455664ab76e9e2090d"
+          }
+        },
+        {
+          "schema_version": "grcv4-successful-receipt-envelope-v1",
+          "receipt_id": "grc-receipt-sha256:ae195c3149f8ec793cd9dbd6337505bd853efa5e6bdccf645eedbfde072adc6b",
+          "commit_id": "grc-commit-sha256:f00c49794f0fda3534f88d93a77ef64443effb9513437f04d3f4950c195e261f",
+          "identity_payload": {
+            "schema_version": "grcv4-charge-receipt-v1",
+            "core": {
+              "operation_id": "event",
+              "resource_transform_digest": "grcv4-resource-transform-sha256:a8aa1e99622276333788183771600519dae6fd1407f63acfd4f04466c91679fa",
+              "history_bundle_digest": "grcv4-history-map-sha256:07b40502b0c5dab73b66f43c4b33af38ccb008143b404ee6adc369bd4681d280",
+              "actual_charge_delta": 0.25,
+              "information_losses": [],
+              "disposition": "committed",
+              "parent_receipt_ids": [],
+              "source_state_digest": "grcv4-state-sha256:d1c77632f91c66c120e20ee8622f7867f9b645b028946f8e925c0ffc091356a2",
+              "source_graph_digest": "grc-graph-sha256:114331dacd9a3358c6b151de48f8548e19315c6b1e3315818e6a6beec705fe69",
+              "source_model_identity": "grcv4-profile-sha256:ac3101442242ef71e4d39bcf8e52e288c7ee5f5c3a7dc76de9e405fb72a735e2",
+              "source_reset_digest": "grcv4-reset-sha256:e7d5b5a7086a9c2c96912ab414c4df9d558ffa929d3216384ed3184c82565a5e",
+              "source_authoritative_digest": "grcv4-authoritative-sha256:a183d7380474ab0b967b5c22c69557bb429a9d570f91ad0793d28147097a58e7",
+              "target_state_digest": "grcv4-state-sha256:c2d323f69e84eaa182a8dc20431a254edce8c2e30058c68b35289cec662bc0d8",
+              "target_graph_digest": "grc-graph-sha256:114331dacd9a3358c6b151de48f8548e19315c6b1e3315818e6a6beec705fe69",
+              "target_model_identity": "grcv4-profile-sha256:ac3101442242ef71e4d39bcf8e52e288c7ee5f5c3a7dc76de9e405fb72a735e2",
+              "target_reset_digest": "grcv4-reset-sha256:b9cde9c5703b601e5e8fd16dd6543ceaaed821e0aa0b4c73362551476ea6bef3",
+              "target_authoritative_digest": "grcv4-authoritative-sha256:2b316989b132269b77597c3af84fc8788ddf93826881506904ab1689b37053e9"
+            },
+            "target_charge": 4.250000000000227,
+            "admitted_charge": 4.25,
+            "residual": -2.2737367544323206e-13
+          }
+        },
+        {
+          "schema_version": "grcv4-successful-receipt-envelope-v1",
+          "receipt_id": "grc-receipt-sha256:a0f08d6fb0047834afc71a0bd4c84499a659a7942f3628e61c2ae163c2213d1e",
+          "commit_id": "grc-commit-sha256:f00c49794f0fda3534f88d93a77ef64443effb9513437f04d3f4950c195e261f",
+          "identity_payload": {
+            "schema_version": "grcv4-history-disposition-receipt-v1",
+            "core": {
+              "operation_id": "event",
+              "resource_transform_digest": "grcv4-resource-transform-sha256:a8aa1e99622276333788183771600519dae6fd1407f63acfd4f04466c91679fa",
+              "history_bundle_digest": "grcv4-history-map-sha256:07b40502b0c5dab73b66f43c4b33af38ccb008143b404ee6adc369bd4681d280",
+              "actual_charge_delta": 0.25,
+              "information_losses": [],
+              "disposition": "committed",
+              "parent_receipt_ids": [],
+              "source_state_digest": "grcv4-state-sha256:d1c77632f91c66c120e20ee8622f7867f9b645b028946f8e925c0ffc091356a2",
+              "source_graph_digest": "grc-graph-sha256:114331dacd9a3358c6b151de48f8548e19315c6b1e3315818e6a6beec705fe69",
+              "source_model_identity": "grcv4-profile-sha256:ac3101442242ef71e4d39bcf8e52e288c7ee5f5c3a7dc76de9e405fb72a735e2",
+              "source_reset_digest": "grcv4-reset-sha256:e7d5b5a7086a9c2c96912ab414c4df9d558ffa929d3216384ed3184c82565a5e",
+              "source_authoritative_digest": "grcv4-authoritative-sha256:a183d7380474ab0b967b5c22c69557bb429a9d570f91ad0793d28147097a58e7",
+              "target_state_digest": "grcv4-state-sha256:c2d323f69e84eaa182a8dc20431a254edce8c2e30058c68b35289cec662bc0d8",
+              "target_graph_digest": "grc-graph-sha256:114331dacd9a3358c6b151de48f8548e19315c6b1e3315818e6a6beec705fe69",
+              "target_model_identity": "grcv4-profile-sha256:ac3101442242ef71e4d39bcf8e52e288c7ee5f5c3a7dc76de9e405fb72a735e2",
+              "target_reset_digest": "grcv4-reset-sha256:b9cde9c5703b601e5e8fd16dd6543ceaaed821e0aa0b4c73362551476ea6bef3",
+              "target_authoritative_digest": "grcv4-authoritative-sha256:2b316989b132269b77597c3af84fc8788ddf93826881506904ab1689b37053e9"
+            },
+            "subject": "candidate",
+            "history_disposition": "rederived",
+            "information_loss": "none"
+          }
+        },
+        {
+          "schema_version": "grcv4-successful-receipt-envelope-v1",
+          "receipt_id": "grc-receipt-sha256:a0d07a440f3ed56949f72fbb5530198294e1a40469729eec171d48e5742e627c",
+          "commit_id": "grc-commit-sha256:f00c49794f0fda3534f88d93a77ef64443effb9513437f04d3f4950c195e261f",
+          "identity_payload": {
+            "schema_version": "grcv4-history-disposition-receipt-v1",
+            "core": {
+              "operation_id": "event",
+              "resource_transform_digest": "grcv4-resource-transform-sha256:a8aa1e99622276333788183771600519dae6fd1407f63acfd4f04466c91679fa",
+              "history_bundle_digest": "grcv4-history-map-sha256:07b40502b0c5dab73b66f43c4b33af38ccb008143b404ee6adc369bd4681d280",
+              "actual_charge_delta": 0.25,
+              "information_losses": [],
+              "disposition": "committed",
+              "parent_receipt_ids": [],
+              "source_state_digest": "grcv4-state-sha256:d1c77632f91c66c120e20ee8622f7867f9b645b028946f8e925c0ffc091356a2",
+              "source_graph_digest": "grc-graph-sha256:114331dacd9a3358c6b151de48f8548e19315c6b1e3315818e6a6beec705fe69",
+              "source_model_identity": "grcv4-profile-sha256:ac3101442242ef71e4d39bcf8e52e288c7ee5f5c3a7dc76de9e405fb72a735e2",
+              "source_reset_digest": "grcv4-reset-sha256:e7d5b5a7086a9c2c96912ab414c4df9d558ffa929d3216384ed3184c82565a5e",
+              "source_authoritative_digest": "grcv4-authoritative-sha256:a183d7380474ab0b967b5c22c69557bb429a9d570f91ad0793d28147097a58e7",
+              "target_state_digest": "grcv4-state-sha256:c2d323f69e84eaa182a8dc20431a254edce8c2e30058c68b35289cec662bc0d8",
+              "target_graph_digest": "grc-graph-sha256:114331dacd9a3358c6b151de48f8548e19315c6b1e3315818e6a6beec705fe69",
+              "target_model_identity": "grcv4-profile-sha256:ac3101442242ef71e4d39bcf8e52e288c7ee5f5c3a7dc76de9e405fb72a735e2",
+              "target_reset_digest": "grcv4-reset-sha256:b9cde9c5703b601e5e8fd16dd6543ceaaed821e0aa0b4c73362551476ea6bef3",
+              "target_authoritative_digest": "grcv4-authoritative-sha256:2b316989b132269b77597c3af84fc8788ddf93826881506904ab1689b37053e9"
+            },
+            "subject": "carrier",
+            "history_disposition": "not_applicable",
+            "information_loss": "none"
+          }
+        }
+      ]
+    },
+    "changed_hashes_without_loss": {
+      "source_current": {
+        "C": [
+          2.125,
+          1.875
+        ],
+        "W_A": [
+          1.25,
+          1.75
+        ],
+        "Z_4": [
+          0.125,
+          0.0625,
+          0.0625,
+          -0.25
+        ]
+      },
+      "source_reset": {
+        "C": [
+          2.0625,
+          1.9375
+        ],
+        "W_A": [
+          1.5,
+          1.625
+        ],
+        "Z_4": [
+          0.25,
+          -0.03125,
+          -0.03125,
+          0.125
+        ]
+      },
+      "target_current": {
+        "C": [
+          2.125,
+          1.875
+        ],
+        "W_A": [
+          1.75,
+          1.25
+        ],
+        "Z_4": [
+          -0.25,
+          -0.0625,
+          -0.0625,
+          0.125
+        ]
+      },
+      "target_reset": {
+        "C": [
+          2.0625,
+          1.9375
+        ],
+        "W_A": [
+          1.625,
+          1.5
+        ],
+        "Z_4": [
+          0.125,
+          0.03125,
+          0.03125,
+          0.25
+        ]
+      },
+      "request": {
+        "schema_version": "grcv4-representation-transport-request-v1",
+        "operation_id": "coordinate",
+        "source_state_digest": "grcv4-state-sha256:5880513567d580c5f8bbb46fc951eedd508251ffd9143af14f8197e0fb61faea",
+        "source_graph_digest": "grc-graph-sha256:468a9586ea1efe79a74da729c02bb29aff1b90f0c0936f1825ce182a9d1bba40",
+        "target_graph": {
+          "schema_version": "grcv4-serialized-graph-v1",
+          "live_node_ids": [
+            "u",
+            "v"
+          ],
+          "oriented_edges": [
+            {
+              "edge_id": "f0",
+              "tail_node_id": "v",
+              "head_node_id": "u"
+            },
+            {
+              "edge_id": "f1",
+              "tail_node_id": "u",
+              "head_node_id": "v"
+            }
+          ]
+        },
+        "target_profile_id": "grcv4-profile-sha256:204941a87322564fc1319101c71aeaa5b19ca76b522a84fcacca1ade78d5e454",
+        "correspondence": {
+          "correspondence_id": "grcv4-coordinate-map-sha256:f92ba21c1ef4b1e5297137fcf58eed620721c6cc2643963add0d1d658ef20495",
+          "payload": {
+            "schema_version": "grcv4-coordinate-map-v1",
+            "policy_id": "grcv4-pure-representation-transport-v1",
+            "source_graph_digest": "grc-graph-sha256:468a9586ea1efe79a74da729c02bb29aff1b90f0c0936f1825ce182a9d1bba40",
+            "target_graph_digest": "grc-graph-sha256:6e2891cea01dc8f80955fc93f0a3a8a925e118b593c70fce7c5cb5fa659ae405",
+            "vertex_map": [
+              {
+                "source_vertex_id": "u",
+                "target_vertex_id": "u"
+              },
+              {
+                "source_vertex_id": "v",
+                "target_vertex_id": "v"
+              }
+            ],
+            "edge_map": [
+              {
+                "source_edge_id": "e0",
+                "target_edge_id": "f1",
+                "orientation": 1
+              },
+              {
+                "source_edge_id": "e1",
+                "target_edge_id": "f0",
+                "orientation": -1
+              }
+            ]
+          }
+        },
+        "metadata": {}
+      },
+      "receipt": {
+        "schema_version": "grcv4-successful-receipt-envelope-v1",
+        "receipt_id": "grc-receipt-sha256:ee663fa20cb90dc0afb754f9322925e6f85ab29933cb3b5e64b98faf55958d31",
+        "commit_id": "grc-commit-sha256:df2a9fd1c50de6b6acbdf1d9848307c4eed6aa23cfdcd1bfca60c064f1113b97",
+        "identity_payload": {
+          "schema_version": "grcv4-representation-transport-receipt-v1",
+          "core": {
+            "operation_id": "coordinate",
+            "actual_charge_delta": 0,
+            "information_losses": [],
+            "disposition": "committed",
+            "parent_receipt_ids": [],
+            "source_state_digest": "grcv4-state-sha256:5880513567d580c5f8bbb46fc951eedd508251ffd9143af14f8197e0fb61faea",
+            "source_graph_digest": "grc-graph-sha256:468a9586ea1efe79a74da729c02bb29aff1b90f0c0936f1825ce182a9d1bba40",
+            "source_model_identity": "grcv4-profile-sha256:015ee5427565f9ca8d573207f5b483b693ec6ce4c33b2b6b6273400c718e5168",
+            "source_reset_digest": "grcv4-reset-sha256:2d14a763bf9dec08e80c54bf6b3d16cd241f11e700e8482137009ff4b916b1ec",
+            "source_authoritative_digest": "grcv4-authoritative-sha256:e9ad33eab3813427922e879efa0a042fe23f8d8d575fda9e5bce90c36771828b",
+            "target_state_digest": "grcv4-state-sha256:d5f9cf213799089bdf2823efd997d8fea7cfab43969dee9a97ffb0f5bae3122f",
+            "target_graph_digest": "grc-graph-sha256:6e2891cea01dc8f80955fc93f0a3a8a925e118b593c70fce7c5cb5fa659ae405",
+            "target_model_identity": "grcv4-profile-sha256:204941a87322564fc1319101c71aeaa5b19ca76b522a84fcacca1ade78d5e454",
+            "target_reset_digest": "grcv4-reset-sha256:a0300306891604cba1a4aad94cae38e1baa9a88de681f3386d78b14bfaf6c8c2",
+            "target_authoritative_digest": "grcv4-authoritative-sha256:377ec96ad2c5f63609351f29f8f2fbcb39e85603e4fdc6ce56553a5e7b8e925b"
+          },
+          "history": {
+            "schema_version": "grcv4-history-bundle-receipt-v1",
+            "candidate": {
+              "subject": "candidate",
+              "disposition": "exact_transport",
+              "information_loss": "none",
+              "source_history_digest": "grcv4-history-content-sha256:e4bdfe55de2d56cf929cc68883e368feb99b33965b454842f70d136dc2872f5b",
+              "target_history_digest": "grcv4-history-content-sha256:141818250a595dced16c1e2c5b9a14272baaecc479d5eca0a26d354c2640db96"
+            },
+            "carrier": {
+              "subject": "carrier",
+              "disposition": "exact_transport",
+              "information_loss": "none",
+              "source_history_digest": "grcv4-history-content-sha256:ec29f4b2896b396bdba8a1d7a29f963f9b005147b4647e0ac288566ed72dc71b",
+              "target_history_digest": "grcv4-history-content-sha256:918a86b4830f479d095f45c1da3ec14b9adf3471689bde2056c312d22a42f444"
+            }
+          },
+          "representation_id": "grcv4-representation-change-sha256:a431a24289621ece8a35c161101bc6dff867e624691d65beba4c2b356a318189",
+          "correspondence_id": "grcv4-coordinate-map-sha256:f92ba21c1ef4b1e5297137fcf58eed620721c6cc2643963add0d1d658ef20495",
+          "charge": {
+            "schema_version": "grcv4-representation-charge-evidence-v1",
+            "delta_semantics": "exact_coordinate_action",
+            "current": {
+              "source": {
+                "target_charge": 4.0,
+                "admitted_charge": 4.0,
+                "residual": 0.0
+              },
+              "target": {
+                "target_charge": 4.0,
+                "admitted_charge": 4.0,
+                "residual": 0.0
+              }
+            },
+            "reset": {
+              "source": {
+                "target_charge": 4.0,
+                "admitted_charge": 4.0,
+                "residual": 0.0
+              },
+              "target": {
+                "target_charge": 4.0,
+                "admitted_charge": 4.0,
+                "residual": 0.0
+              }
+            }
+          }
+        }
+      }
+    },
+    "round_once": {
+      "source_current": [
+        5e-324,
+        5e-324
+      ],
+      "source_reset": [
+        0.0,
+        1e-323
+      ],
+      "target_current": [
+        5e-324,
+        5e-324
+      ],
+      "target_reset": [
+        5e-324,
+        5e-324
+      ],
+      "correct_component": 5e-324,
+      "premature_component": 0.0,
+      "Q_target": 1e-323,
+      "request": {
+        "schema_version": "grcv4-mapped-topology-event-request-v1",
+        "operation_id": "event",
+        "source_state_digest": "grcv4-state-sha256:9f1440e698d51df9638114b6aa40aa68b64f933ef3c04cbb96cfd2651f6e6ecb",
+        "source_graph_digest": "grc-graph-sha256:114331dacd9a3358c6b151de48f8548e19315c6b1e3315818e6a6beec705fe69",
+        "target_graph": {
+          "schema_version": "grcv4-serialized-graph-v1",
+          "live_node_ids": [
+            "u",
+            "v"
+          ],
+          "oriented_edges": [
+            {
+              "edge_id": "e",
+              "tail_node_id": "u",
+              "head_node_id": "v"
+            }
+          ]
+        },
+        "target_profile_id": "grcv4-profile-sha256:6e46277997272d0917d793a320107662d47492d84bf5b4260b27c52daf080a73",
+        "resource_transform": {
+          "schema_version": "grcv4-resource-event-transform-v1",
+          "policy_id": "caller_affine_resource_transport_v1",
+          "source_vertex_ids": [
+            "u",
+            "v"
+          ],
+          "target_vertex_ids": [
+            "u",
+            "v"
+          ],
+          "row_major_coefficients": [
+            0.5,
+            0.5,
+            0.5,
+            0.5
+          ],
+          "target_increment": [
+            0,
+            0
+          ]
+        },
+        "history_policy": {
+          "schema_version": "grcv4-history-bundle-policy-v1",
+          "candidate": {
+            "schema_version": "grcv4-history-channel-policy-v1",
+            "subject": "candidate",
+            "policy_id": "candidate_c_rederive_no_history_v1",
+            "disposition": "rederived",
+            "source_history_digest": null,
+            "target_initializer_id": null,
+            "information_loss": "none"
+          },
+          "carrier": {
+            "schema_version": "grcv4-history-channel-policy-v1",
+            "subject": "carrier",
+            "policy_id": "no_persistent_carrier_v1",
+            "disposition": "not_applicable",
+            "source_history_digest": null,
+            "target_initializer_id": null,
+            "information_loss": "none"
+          }
+        },
+        "metadata": {}
+      },
+      "receipts": [
+        {
+          "schema_version": "grcv4-successful-receipt-envelope-v1",
+          "receipt_id": "grc-receipt-sha256:9f4d0a1d6a52024136b1814fc46ba5de3616d7d359b68403f99c1a3a289666c5",
+          "commit_id": "grc-commit-sha256:f6c877e96d5ea4e3c2f233c21d7947fbc767b68b44f425ddb52e5404e42e2c0c",
+          "identity_payload": {
+            "schema_version": "grcv4-topology-event-receipt-v2",
+            "core": {
+              "operation_id": "event",
+              "resource_transform_digest": "grcv4-resource-transform-sha256:14a1314555eae166b9ddc9638ed5709f5b3e9ee6ae5b861fd82b5fa6982c9fa9",
+              "history_bundle_digest": "grcv4-history-map-sha256:07b40502b0c5dab73b66f43c4b33af38ccb008143b404ee6adc369bd4681d280",
+              "actual_charge_delta": 0.0,
+              "information_losses": [],
+              "disposition": "committed",
+              "parent_receipt_ids": [],
+              "source_state_digest": "grcv4-state-sha256:9f1440e698d51df9638114b6aa40aa68b64f933ef3c04cbb96cfd2651f6e6ecb",
+              "source_graph_digest": "grc-graph-sha256:114331dacd9a3358c6b151de48f8548e19315c6b1e3315818e6a6beec705fe69",
+              "source_model_identity": "grcv4-profile-sha256:6e46277997272d0917d793a320107662d47492d84bf5b4260b27c52daf080a73",
+              "source_reset_digest": "grcv4-reset-sha256:af93b7ac2fbbf045592065a9ee7ed69b595b0422ca0e91fcb8227ab778430d29",
+              "source_authoritative_digest": "grcv4-authoritative-sha256:598eb9841d8a2b85c9469101979a51c7e8a647c86a8dc109aa2c162948af5d73",
+              "target_state_digest": "grcv4-state-sha256:6a3068089504c4046695ac5159467203fea44e705b1915e091b6b8b2677c4efe",
+              "target_graph_digest": "grc-graph-sha256:114331dacd9a3358c6b151de48f8548e19315c6b1e3315818e6a6beec705fe69",
+              "target_model_identity": "grcv4-profile-sha256:6e46277997272d0917d793a320107662d47492d84bf5b4260b27c52daf080a73",
+              "target_reset_digest": "grcv4-reset-sha256:c1d9d763288dcaef8325f4f2f1aaaa37ed1a308b59fe2128fed1f1b9be86a0f1",
+              "target_authoritative_digest": "grcv4-authoritative-sha256:598eb9841d8a2b85c9469101979a51c7e8a647c86a8dc109aa2c162948af5d73"
+            },
+            "history": {
+              "schema_version": "grcv4-history-bundle-receipt-v1",
+              "candidate": {
+                "subject": "candidate",
+                "disposition": "rederived",
+                "source_history_digest": null,
+                "target_history_digest": null,
+                "information_loss": "none"
+              },
+              "carrier": {
+                "subject": "carrier",
+                "disposition": "not_applicable",
+                "source_history_digest": null,
+                "target_history_digest": null,
+                "information_loss": "none"
+              }
+            },
+            "initializer_pair_id": null,
+            "event_id": "grc-event-sha256:05c08ebff0ae11d25d5246a8cd30ecf8e6d8a979048cdee815dfc89982ff808e"
+          }
+        },
+        {
+          "schema_version": "grcv4-successful-receipt-envelope-v1",
+          "receipt_id": "grc-receipt-sha256:bc45543cdf08becb058c31956e60453518dd9372f3973a2ee0faa1503c88c406",
+          "commit_id": "grc-commit-sha256:f6c877e96d5ea4e3c2f233c21d7947fbc767b68b44f425ddb52e5404e42e2c0c",
+          "identity_payload": {
+            "schema_version": "grcv4-charge-receipt-v1",
+            "core": {
+              "operation_id": "event",
+              "resource_transform_digest": "grcv4-resource-transform-sha256:14a1314555eae166b9ddc9638ed5709f5b3e9ee6ae5b861fd82b5fa6982c9fa9",
+              "history_bundle_digest": "grcv4-history-map-sha256:07b40502b0c5dab73b66f43c4b33af38ccb008143b404ee6adc369bd4681d280",
+              "actual_charge_delta": 0.0,
+              "information_losses": [],
+              "disposition": "committed",
+              "parent_receipt_ids": [],
+              "source_state_digest": "grcv4-state-sha256:9f1440e698d51df9638114b6aa40aa68b64f933ef3c04cbb96cfd2651f6e6ecb",
+              "source_graph_digest": "grc-graph-sha256:114331dacd9a3358c6b151de48f8548e19315c6b1e3315818e6a6beec705fe69",
+              "source_model_identity": "grcv4-profile-sha256:6e46277997272d0917d793a320107662d47492d84bf5b4260b27c52daf080a73",
+              "source_reset_digest": "grcv4-reset-sha256:af93b7ac2fbbf045592065a9ee7ed69b595b0422ca0e91fcb8227ab778430d29",
+              "source_authoritative_digest": "grcv4-authoritative-sha256:598eb9841d8a2b85c9469101979a51c7e8a647c86a8dc109aa2c162948af5d73",
+              "target_state_digest": "grcv4-state-sha256:6a3068089504c4046695ac5159467203fea44e705b1915e091b6b8b2677c4efe",
+              "target_graph_digest": "grc-graph-sha256:114331dacd9a3358c6b151de48f8548e19315c6b1e3315818e6a6beec705fe69",
+              "target_model_identity": "grcv4-profile-sha256:6e46277997272d0917d793a320107662d47492d84bf5b4260b27c52daf080a73",
+              "target_reset_digest": "grcv4-reset-sha256:c1d9d763288dcaef8325f4f2f1aaaa37ed1a308b59fe2128fed1f1b9be86a0f1",
+              "target_authoritative_digest": "grcv4-authoritative-sha256:598eb9841d8a2b85c9469101979a51c7e8a647c86a8dc109aa2c162948af5d73"
+            },
+            "target_charge": 1e-323,
+            "admitted_charge": 1e-323,
+            "residual": 0.0
+          }
+        },
+        {
+          "schema_version": "grcv4-successful-receipt-envelope-v1",
+          "receipt_id": "grc-receipt-sha256:7c8facbb223e783de5d52d204228489ed5465effea886176f983be3a371a5105",
+          "commit_id": "grc-commit-sha256:f6c877e96d5ea4e3c2f233c21d7947fbc767b68b44f425ddb52e5404e42e2c0c",
+          "identity_payload": {
+            "schema_version": "grcv4-history-disposition-receipt-v1",
+            "core": {
+              "operation_id": "event",
+              "resource_transform_digest": "grcv4-resource-transform-sha256:14a1314555eae166b9ddc9638ed5709f5b3e9ee6ae5b861fd82b5fa6982c9fa9",
+              "history_bundle_digest": "grcv4-history-map-sha256:07b40502b0c5dab73b66f43c4b33af38ccb008143b404ee6adc369bd4681d280",
+              "actual_charge_delta": 0.0,
+              "information_losses": [],
+              "disposition": "committed",
+              "parent_receipt_ids": [],
+              "source_state_digest": "grcv4-state-sha256:9f1440e698d51df9638114b6aa40aa68b64f933ef3c04cbb96cfd2651f6e6ecb",
+              "source_graph_digest": "grc-graph-sha256:114331dacd9a3358c6b151de48f8548e19315c6b1e3315818e6a6beec705fe69",
+              "source_model_identity": "grcv4-profile-sha256:6e46277997272d0917d793a320107662d47492d84bf5b4260b27c52daf080a73",
+              "source_reset_digest": "grcv4-reset-sha256:af93b7ac2fbbf045592065a9ee7ed69b595b0422ca0e91fcb8227ab778430d29",
+              "source_authoritative_digest": "grcv4-authoritative-sha256:598eb9841d8a2b85c9469101979a51c7e8a647c86a8dc109aa2c162948af5d73",
+              "target_state_digest": "grcv4-state-sha256:6a3068089504c4046695ac5159467203fea44e705b1915e091b6b8b2677c4efe",
+              "target_graph_digest": "grc-graph-sha256:114331dacd9a3358c6b151de48f8548e19315c6b1e3315818e6a6beec705fe69",
+              "target_model_identity": "grcv4-profile-sha256:6e46277997272d0917d793a320107662d47492d84bf5b4260b27c52daf080a73",
+              "target_reset_digest": "grcv4-reset-sha256:c1d9d763288dcaef8325f4f2f1aaaa37ed1a308b59fe2128fed1f1b9be86a0f1",
+              "target_authoritative_digest": "grcv4-authoritative-sha256:598eb9841d8a2b85c9469101979a51c7e8a647c86a8dc109aa2c162948af5d73"
+            },
+            "subject": "candidate",
+            "history_disposition": "rederived",
+            "information_loss": "none"
+          }
+        },
+        {
+          "schema_version": "grcv4-successful-receipt-envelope-v1",
+          "receipt_id": "grc-receipt-sha256:1a05b54b76f0f066c789a338a9ae04d4874aa8442aa9cafb2ce0c732b64ac1a3",
+          "commit_id": "grc-commit-sha256:f6c877e96d5ea4e3c2f233c21d7947fbc767b68b44f425ddb52e5404e42e2c0c",
+          "identity_payload": {
+            "schema_version": "grcv4-history-disposition-receipt-v1",
+            "core": {
+              "operation_id": "event",
+              "resource_transform_digest": "grcv4-resource-transform-sha256:14a1314555eae166b9ddc9638ed5709f5b3e9ee6ae5b861fd82b5fa6982c9fa9",
+              "history_bundle_digest": "grcv4-history-map-sha256:07b40502b0c5dab73b66f43c4b33af38ccb008143b404ee6adc369bd4681d280",
+              "actual_charge_delta": 0.0,
+              "information_losses": [],
+              "disposition": "committed",
+              "parent_receipt_ids": [],
+              "source_state_digest": "grcv4-state-sha256:9f1440e698d51df9638114b6aa40aa68b64f933ef3c04cbb96cfd2651f6e6ecb",
+              "source_graph_digest": "grc-graph-sha256:114331dacd9a3358c6b151de48f8548e19315c6b1e3315818e6a6beec705fe69",
+              "source_model_identity": "grcv4-profile-sha256:6e46277997272d0917d793a320107662d47492d84bf5b4260b27c52daf080a73",
+              "source_reset_digest": "grcv4-reset-sha256:af93b7ac2fbbf045592065a9ee7ed69b595b0422ca0e91fcb8227ab778430d29",
+              "source_authoritative_digest": "grcv4-authoritative-sha256:598eb9841d8a2b85c9469101979a51c7e8a647c86a8dc109aa2c162948af5d73",
+              "target_state_digest": "grcv4-state-sha256:6a3068089504c4046695ac5159467203fea44e705b1915e091b6b8b2677c4efe",
+              "target_graph_digest": "grc-graph-sha256:114331dacd9a3358c6b151de48f8548e19315c6b1e3315818e6a6beec705fe69",
+              "target_model_identity": "grcv4-profile-sha256:6e46277997272d0917d793a320107662d47492d84bf5b4260b27c52daf080a73",
+              "target_reset_digest": "grcv4-reset-sha256:c1d9d763288dcaef8325f4f2f1aaaa37ed1a308b59fe2128fed1f1b9be86a0f1",
+              "target_authoritative_digest": "grcv4-authoritative-sha256:598eb9841d8a2b85c9469101979a51c7e8a647c86a8dc109aa2c162948af5d73"
+            },
+            "subject": "carrier",
+            "history_disposition": "not_applicable",
+            "information_loss": "none"
+          }
+        }
+      ]
+    }
+  },
+  "new_G2_support": [],
+  "G3_accepted": false,
+  "record_digest": "b42ecf99e7168b97d91502bcdc2b68d3213e4c6527255f5a628cd30ac9ff3498"
+}

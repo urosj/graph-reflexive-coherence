@@ -2019,3 +2019,15 @@ the original 10-test capture and reconstructable source subject remain unchanged
 The user accepted and closed P9-7.2b on 2026-09-12. The status surface projects
 that recorded decision separately from unchanged execution-time flags. No wider
 G2/G3 support or later tranche leaf is closed by this decision.
+
+P9-7.3 adds a separate source/claim-bound channel and charge verification view.
+The existing API/notebook/browser path exposes `history_policy_verification`:
+six tests, 32 declaration cells and five native migration/event witnesses,
+with representation and negative charge/history pressure. The prior accepted
+views remain unchanged. No solver runs on surface read and no new G2/G3 scope
+follows from the execution record. The user's subsequent acceptance on
+2026-09-12, after two passing audits, is projected separately; historical
+execution flags remain unchanged and no later leaf is closed.
+Before commit the user requested the three suggested sharp regressions; all
+passed. Acceptance projects six original plus three supplemental tests with
+separate evidence identities, not a fabricated combined execution.

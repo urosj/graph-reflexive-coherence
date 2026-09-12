@@ -77,9 +77,12 @@ def verification_status(repo_root: Path) -> dict:
             initializer_runtime = migration_check()['initializer_runtime']
             from verify_p972b_acceptance import check as event_check
             event_runtime = event_check()
+            from verify_p973_acceptance import check as history_check
+            history_policy_verification = history_check()
             payload.update(
                 initializer_runtime=initializer_runtime,
                 event_runtime=event_runtime,
+                history_policy_verification=history_policy_verification,
                 g2_acceptance={
                     "record_digest": g2["record_digest"],
                     "path": module.G2_ACCEPTANCE,
@@ -205,7 +208,7 @@ def verification_status(repo_root: Path) -> dict:
                     for r in module.runtime_targets(approval)
                     if r["requires_gate"] == "P9-G1" and set(ready) & owners[r["path"]]
                 ),
-                next_gate=f"P9-7.2a is user-accepted and closed. P9-7.2b is user-accepted and closed: {event_runtime['test_count']} focused tests, {event_runtime['case_count']} retained cases covering reconstruction, representation and audit corrections. P9-7.3 is next; no wider G2/G3 support. The only accepted public support remains the exact C_OS singleton.",
+                next_gate=f"P9-7.2a is user-accepted and closed. P9-7.2b is user-accepted and closed. P9-7.3 is user-accepted and closed: {history_policy_verification['baseline_test_count']} original tests plus {history_policy_verification['regression_test_count']} supplemental regressions, {history_policy_verification['policy_cells']} discrete policy cells. P9-7.4 is next. No wider G2/G3 support. The only accepted public support remains the exact C_OS singleton.",
                 claim_ceiling="G1 is bounded implementation permission. Separate user-accepted G2 covers only the listed complete C_OS profile and reviewed domain; no family-wide, other-profile or specialization conformance is inferred.",
             )
         cross = module.read(
@@ -365,6 +368,7 @@ def verification_status(repo_root: Path) -> dict:
         payload.pop("g2_acceptance", None)
         payload.pop("initializer_runtime", None)
         payload.pop("event_runtime", None)
+        payload.pop("history_policy_verification", None)
         payload["accepted_generic_runtime_support"] = []
         payload.pop("permitted_runtime_paths", None)
         payload.pop("source_meaning", None)

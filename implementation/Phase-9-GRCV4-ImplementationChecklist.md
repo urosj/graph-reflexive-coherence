@@ -1245,8 +1245,19 @@ may reach G2 without waiting for all Tranche 6 realizations.
     accepted and closed P9-7.2b on 2026-09-12 through “accept and commit 7.2b”.
   Genuine topology-preserving maps remain deferred; isolated zero-resource
   vertex addition with declared old-edge lineage is the next bounded candidate.
-- [ ] P9-7.3: Verify separate candidate/carrier history channels, explicit
+- [x] P9-7.3: Verify separate candidate/carrier history channels, explicit
   loss receipts, and target resource/charge policies.
+  - [x] Implement the [bounded verification](./phase-9-grcv4/tranche-7/P9-7.3-Review.md):
+    32 policy cells, five native migration/event witnesses, separate lossless
+    representation, channel/reset tampering and exact affine/charge pressure.
+  - [x] Retain a separate source/claim-bound execution and expose it in the
+    existing API/notebook/browser status without changing accepted 7.2 evidence.
+  - [x] Review and accept P9-7.3; user accepted on 2026-09-12 following two
+    passing audits, including the separately reported native six-test rerun.
+    No additional G2/G3 or later leaf closure.
+  - [x] Before commit, execute the user's requested three sharper regressions:
+    subnormal round-once accumulation, admitted charge offset and changed
+    coordinate hashes without loss. All three passed in a separate record.
 - [ ] P9-7.4: Verify Candidate C target reference-map completeness and full
   target reconstruction/readmission before atomic commit.
 - [ ] P9-7.5: Execute missing-lineage, invalid-map, and readmission failure

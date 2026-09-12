@@ -1592,3 +1592,16 @@ their historical stage, not the later aggregate acceptance recorded at the end.
       transport versus reconstruction, mixed migration/representation/evolution/
       event/restore/reset, charge-order/signed-zero and incompatible-target
       pressure into execution; see the package record for exact boundaries.
+
+### P9-7.3 channel and charge verification
+
+- [x] Keep discrete policy cells separate from native numerical witnesses and
+      bind specs, paper and typed contract-provenance traces.
+- [x] Expose the retained six-test channel/charge verification through the
+      existing API/notebook/browser path, distinct from accepted 7.2a/7.2b.
+- [x] Review and accept P9-7.3. User accepted on 2026-09-12 after two passing
+      audits. No new runtime source, G2/G3 support or later lifecycle-leaf
+      closure is granted by this decision.
+- [x] Include the separately executed three suggested regressions in the
+      acceptance view: six original tests plus three additional tests, with
+      both record identities retained and no runtime changes.
