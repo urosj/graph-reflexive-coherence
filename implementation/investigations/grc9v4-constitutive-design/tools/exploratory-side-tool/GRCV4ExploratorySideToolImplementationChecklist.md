@@ -1616,3 +1616,14 @@ their historical stage, not the later aggregate acceptance recorded at the end.
 - [x] Review and accept P9-7.4. User accepted on 2026-09-12 after the passing
       independent audit/rerun; project that decision separately from original
       execution flags. No later leaf closure follows automatically.
+
+### P9-7.5 failure-sequence and reset verification
+
+- [x] Retain focused mixed-prefix execution with literal reset/map expectations,
+      explicit rejection boundaries and conservative typed authority traces.
+- [x] Expose `failure_sequence_verification` through existing API/notebook/browser
+      status, without changing accepted evidence or runtime permission.
+- [x] Check surface agreement and reject fabricated acceptance/widened scope.
+- [x] Review and accept P9-7.5. User accepted on 2026-09-12 after the passing
+      independent audit/rerun; expose acceptance separately from original run
+      flags. P9-7.6 and G2/G3 remain separate.

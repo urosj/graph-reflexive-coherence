@@ -1269,8 +1269,17 @@ may reach G2 without waiting for all Tranche 6 realizations.
   - [x] Independently review and accept P9-7.4. User accepted on 2026-09-12
     following the passing audit and independently reported numerical rerun.
     P9-7.5 and P9-7.6 remain separate.
-- [ ] P9-7.5: Execute missing-lineage, invalid-map, and readmission failure
+- [x] P9-7.5: Execute missing-lineage, invalid-map, and readmission failure
   cases, including reset after ordinary steps, migrations, and events.
+  - [x] Add [bounded sequence pressure](./phase-9-grcv4/tranche-7/P9-7.5-Review.md):
+    distinct live/reset states after positive steps and crossings, missing
+    crossing/receipt evidence, invalid operation maps/history and mixed-prefix
+    reset-only admission rejection. Check ledger versus delta and whole rollback.
+  - [x] Retain separate source/claim-bound evidence and expose pending review
+    through existing API/notebook/browser status; keep prior runs unchanged.
+  - [x] Independently review and accept P9-7.5. User accepted on 2026-09-12
+    after the passing audit and independently reported rerun. Parent-DAG conformance and
+    deep duplicate ownership remain P9-7.6; no new G2/G3 support.
 - [ ] P9-7.6: Verify receipt lineage ownership and deep duplicate independence.
   Resolve P9-2.4's open parent-reference scope/order question from accepted
   authority before claiming lineage conformance: historical versus intra-commit

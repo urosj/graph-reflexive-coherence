@@ -1261,6 +1261,18 @@ not a new transport law or runtime permission.
 The broader failure-sequence and receipt-lineage tasks stay with 7.5 and 7.6;
 all earlier evidence, public support and G2/G3 boundaries remain unchanged.
 
+P9-7.5 adds [mixed-prefix failure/reset verification](./phase-9-grcv4/tranche-7/P9-7.5-Review.md)
+over the accepted numerical owners. It exercises distinct live/reset authority
+after ordinary evolution, migration and events; literal transported targets;
+persistent ledger versus emitted receipt delta; absent crossing/receipt evidence;
+invalid runtime maps/history; and reset-only readmission rejection after a
+successful mixed prefix. Invalid C reference construction remains covered by
+7.4: no fabricated invalid typed registry entry is needed to exercise rejected
+target selection or invalid operation maps. The user accepted and closed P9-7.5
+on 2026-09-12 after the passing independent audit and reported native rerun.
+Acceptance is projected over the unchanged execution; no parent-DAG or arbitrary
+profile/graph conformance is inferred.
+
 The following records the historical implementation and acceptance sequence.
 The user authorized **P9-7.2a** after accepting 7.1 at `5d8dbe2`. Its
 [scoped review](./phase-9-grcv4/tranche-7/P9-7.2a-Review.md) binds 13 concrete

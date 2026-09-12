@@ -7,6 +7,10 @@ export function checkedStatus(value) {
   if (!implementation && value.g2_acceptance !== undefined) throw new Error('Unverified boundary cannot advertise current G2 support');
   if (!implementation && value.initializer_runtime !== undefined) throw new Error('Unverified boundary cannot advertise migration acceptance');
   if (!implementation && value.event_runtime !== undefined) throw new Error('Unverified boundary cannot advertise event execution');
+  if (value.failure_sequence_verification !== undefined) {
+    const f = value.failure_sequence_verification;
+    if (!implementation || f.status !== 'accepted' || f.user_accepted !== true || f.aggregate_closed !== true || f.acceptance_sha256 !== 'cfd83f4b1c5e9ae04f5deb04ca79788af04327660b82415f3d45306deb64a647' || f.acceptance_path !== 'implementation/phase-9-grcv4/tranche-7/P9-7.5-Review.md' || f.G3_accepted !== false || JSON.stringify(f.new_G2_support) !== '[]' || f.test_count !== 4 || f.rejection_cases !== 21 || f.numerical_tests_rerun !== 0 || JSON.stringify(f.reset_contexts) !== JSON.stringify(['ordinary','migration','event']) || f.record_path !== 'implementation/phase-9-grcv4/tranche-7/P9-7.5-FailureSequences.json' || f.record_digest !== '8563c051871a681654da4767031916357840a55e50f3cdb4b39e07089b843329') throw new Error('Unverified or widened failure-sequence scope');
+  }
   if (value.target_reference_verification !== undefined) {
     const t = value.target_reference_verification;
     if (t.record_digest !== '547e2c932a121189dcc6b5ea8b33d3d6524167a74a142c526d6898a2be597e51') throw new Error('Target-reference execution identity changed');

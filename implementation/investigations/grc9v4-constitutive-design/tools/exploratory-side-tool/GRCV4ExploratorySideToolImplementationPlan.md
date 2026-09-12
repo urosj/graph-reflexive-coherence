@@ -2040,3 +2040,11 @@ after a passing independent audit/rerun. The view projects that bounded decision
 without changing original execution flags or forensic design authority. Reads check
 retained identities without numerical reruns; accepted 7.2/7.3 evidence and
 runtime permissions remain unchanged. P9-7.5/7.6 stay separately open.
+
+P9-7.5 adds `failure_sequence_verification` on the same status surfaces: four
+focused methods, 21 declared rejection cases across runtime, wire and restore
+boundaries, and reset following ordinary evolution, migration and events.
+The user accepted and closed P9-7.5 on 2026-09-12 following the passing independent
+audit/rerun. The view projects that decision separately from unchanged execution
+flags, with no runtime permission or G2/G3 promotion. It checks identities without numerical replay;
+7.6's parent-DAG and deep-copy ownership work is not discharged by these cases.
