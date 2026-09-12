@@ -1557,3 +1557,21 @@ their historical stage, not the later aggregate acceptance recorded at the end.
       P9-7.2a on 2026-09-11. Expose later acceptance through the existing scoped
       checker/API/notebook/browser without rewriting original runs or design
       authority. P9-7.2b and wider G2/G3 support remain separate.
+
+## Phase 9 Tranche 7 — P9-7.2b event contract preparation
+
+- [x] Query the typed event, D11-C lifecycle and A initializer contracts;
+      preserve their support dispositions in the
+      [source crosswalk](../../../../phase-9-grcv4/tranche-7/P9-7.2b-ContractExtension.md).
+- [x] Prepare additive event schema/vectors and focused contract checks without
+      changing accepted migration/source/release bytes or runtime permissions.
+- [x] User accepted the corrected fallback binding and separate representation
+      operation contract/scope on 2026-09-12; runtime and aggregate 7.2b stay open.
+- [ ] Package the event binding and implement its exact event children.
+- [ ] Surface verified event execution in existing API/notebook/browser status;
+      do not promote contract examples or historical 7.2a runs into that evidence.
+- [x] Include pure representation transport as a separate current contract;
+      leave genuine topology-history maps deferred.
+- [ ] Bind and verify representation transport separately before advertising
+      support; fallback checks cannot discharge its wire, covariance or replay
+      obligations. No new runtime/API capability is granted by this scope update.

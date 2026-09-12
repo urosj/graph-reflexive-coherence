@@ -1207,6 +1207,26 @@ may reach G2 without waiting for all Tranche 6 realizations.
     explicit accept-and-commit request on 2026-09-11.
 - [ ] P9-7.2b: Execute caller-mapped generic topology events over current and
   reset state, with their own map/identity/admission failure evidence.
+  - [x] Prepare the additive [event contract extension](./phase-9-grcv4/tranche-7/P9-7.2b-ContractExtension.md):
+    separate candidate/carrier losses, mapped current/reset initializer inputs,
+    event receipt v2 and new snapshot applicability; preserve accepted 7.2a.
+  - [x] User accepted the corrected fallback binding and separate representation
+    operation contract/scope on 2026-09-12 through “accept and commit”.
+  - [ ] Explicitly package/admit the successor release before runtime dispatch.
+    Contract acceptance is not runtime execution authority or aggregate closure.
+    Include mixed-version archive declarations and unknown-release dispatch;
+    execute the mixed-operation restore/evolve/reset pressure with the runtime.
+  - [ ] Instantiate and execute the exact event children/negative cases listed
+    in the binding review; preserve old C_OS evidence and distinguish new runs.
+  - [x] Include the pure-representation coordinate law as a separate current
+    operation contract, not the lossy fallback or a general topology map.
+  - [ ] Complete its closed request/receipt/archive/release binding, including
+    declared correspondence and coordinate-sensitive identity handling.
+  - [ ] Implement and verify representation transport independently: both
+    current/reset, inverse/covariance, no initializer/loss, readmission,
+    rollback and snapshot/restore/reset. Fallback tests do not close this work.
+  Genuine topology-preserving maps remain deferred; isolated zero-resource
+  vertex addition with declared old-edge lineage is the next bounded candidate.
 - [ ] P9-7.3: Verify separate candidate/carrier history channels, explicit
   loss receipts, and target resource/charge policies.
 - [ ] P9-7.4: Verify Candidate C target reference-map completeness and full

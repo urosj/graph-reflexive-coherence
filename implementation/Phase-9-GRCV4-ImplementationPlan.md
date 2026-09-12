@@ -1181,6 +1181,29 @@ realizations and the final codec-reference correction. Historical execution
 records remain unchanged. P9-7.2b is next planned work, not started by closure;
 no broader G2/G3 or specialization support is granted.
 
+**P9-7.2b contract preparation:** the user authorized the narrow
+[mapped-event fallback binding](./phase-9-grcv4/tranche-7/P9-7.2b-ContractExtension.md).
+The additive [specification](../specs/grc-v4-topology-event-spec.md) reuses the
+accepted A initializer on independently mapped current/reset inputs, separates
+fresh initialization from W/Z loss, and versions event receipts/snapshot
+applicability without changing 7.2a. The user accepted the corrected contract
+and separate representation-operation scope on 2026-09-12. Closed fallback
+schema/wire checks pass; successor packaging remains before runtime execution. The
+paper already permits this fallback; no new scientific claim, lossless history
+map, specialization grant or numerical execution is inferred. P9-7.2b remains
+open, with exact execution children and pressure listed in the binding review.
+
+The subsequent user-approved scope update includes **pure representation
+transport now**, as a separate operation from reconstruction. Its coordinate
+law, source/target correspondence and no-loss boundary are specified in the
+[representation contract](../specs/grc-v4-topology-event-spec.md#pure-representation-transport-current-contract-scope).
+Complete its own closed wire/release binding before implementation; require
+inverse/covariance/current-reset/rollback/replay checks separately from fallback
+tests. Current schema examples prove neither this operation nor full 7.2b
+closure. Genuine topology-history transport stays deferred, with isolated
+zero-resource vertex addition and explicit existing-edge lineage identified
+as the next bounded contract candidate, not silently admitted support.
+
 The following records the historical implementation and acceptance sequence.
 The user authorized **P9-7.2a** after accepting 7.1 at `5d8dbe2`. Its
 [scoped review](./phase-9-grcv4/tranche-7/P9-7.2a-Review.md) binds 13 concrete

@@ -1,0 +1,1075 @@
+{
+  "schema_version": "grcv4-topology-event-wire-vectors-v1",
+  "scope": "synthetic_shape_identity_and_declaration_only_not_event_execution",
+  "source_bindings": {
+    "implementation/investigations/grc9v4-constitutive-design/decisions/D10_2FullSubstrateProvenanceAndPromotionAudit.json": "59c2b956cec7d258b1db09d43d6df44deb8c0be0453a5d741f7e2733d6881a33",
+    "implementation/investigations/grc9v4-constitutive-design/decisions/D11CCandidateBaselineTransportProvenanceSupplement.json": "43bb028c6c7b09952a35dee280067470f2ff5cde4395d39c5b5e7aba6fae29fb",
+    "implementation/investigations/grc9v4-constitutive-design/decisions/P9CandidateAInitializerReferencePassAuthority.json": "c74ba38858ae539b53625f5a9e24fb2921d749fe5c99340c53844d155bf3e126",
+    "implementation/investigations/grc9v4-constitutive-design/drafts/2026-09-GRC-V4.md": "6060e28698c07068f91a5e40d5335d1cf8ae2c4292baf3a7c817a36f1ede57a9",
+    "implementation/investigations/grc9v4-constitutive-design/drafts/GRCV4-proposal.md": "09c080fd835d096372cff6204e42ddf0baba2b2da674fee905c7b5df2c83ed84",
+    "implementation/phase-9-grcv4/tranche-7/P9-7.2b-ContractExtension.md": "e8efe1d1168328bddbf3e795d41c475d8cfef7747b0cb150f4260ab3d2dd632b",
+    "specs/grc-v4-a-initializer-release.json": "245cf8a25709880c5ea57ca0a617d2c39f6bede26d59e650d753039230c6cd0b",
+    "specs/grc-v4-a-initializer-schema.json": "c1db8b898efb902a40521d99196458ba0bfb9811d555d8e3e89e31ce0574b08d",
+    "specs/grc-v4-a-initializer-spec.md": "ff5990571197d7c843a16bd404694e35f8c6fc5da01856e5639d51ad5f2b36e6",
+    "specs/grc-v4-a-initializer-vectors.json": "3408ca55bad43b61763163e6f193608f47cb7597d02da1b91915785c0dbf60a6",
+    "specs/grc-v4-contract-schema.json": "3fd072fc8c2b315f1b5dc32a4e4821a5082b5f3fc9d9a4794c007419a7aa0bea",
+    "specs/grc-v4-specification-release.json": "946c8944b4b06645209d159ec056b891bf6fd153c51dedef38de0a862e127fff",
+    "specs/grc-v4-topology-event-spec.md": "9a24f5b41ec5016b3749480b14224938468a93481a62401f54c0d8395ff27ab1"
+  },
+  "schema_sha256": "17bb626ac4e6271c24ae24c7b01180cdfb51713fe2ae01677a2cf1d285ac29e0",
+  "pair_record": {
+    "initializer_pair_id": "grcv4-a-reference-pass-pair-sha256:a40eead8f29cf78f83097e424c55142be5e016c3b16a2a9d896bd9d8e381efbc",
+    "payload": {
+      "schema_version": "grcv4-a-reference-pass-pair-v1",
+      "current": {
+        "construction_id": "grcv4-a-reference-pass-construction-sha256:3bb434c269612cffb6a1892b300350b723a133969af8815f45b1313497e5e1d3",
+        "payload": {
+          "schema_version": "grcv4-a-reference-pass-construction-v1",
+          "role": "current",
+          "policy": {
+            "schema_version": "grcv4-a-reference-pass-policy-v1",
+            "policy_id": "grcv4-a-target-reference-pass-v1",
+            "numerical_id": "grcv4-a-reference-pass-binary64-v1",
+            "history_policy_id": "candidate_a_target_reference_pass_initialization_log_history_v1",
+            "differential_recipe_id": "grcv3_host_frame_reference_weighted_gradient_v1",
+            "differential_rounding_id": "exact_binary64_input_normal_equations_then_binary64_gradient_v1",
+            "site_potential_id": "quadratic_site_potential_zero_derivative_v1",
+            "passes": 1
+          },
+          "target_reference": {
+            "descriptor_version": "grcv4-reference-geometry-v1",
+            "structural_coordinates_id": "grcv4-vertex-star-dense-row-major-v1",
+            "graph": {
+              "schema_version": "grcv4-serialized-graph-v1",
+              "live_node_ids": [
+                "u",
+                "v"
+              ],
+              "oriented_edges": [
+                {
+                  "edge_id": "e",
+                  "tail_node_id": "u",
+                  "head_node_id": "v"
+                }
+              ]
+            },
+            "profile": {
+              "identity_payload": {
+                "schema_version": "grcv4-profile-identity-v1",
+                "profile_family_id": "A_OS",
+                "candidate": "A",
+                "realization": "OS",
+                "differential_backend_id": "oriented_incidence_d0_equals_BT_v1",
+                "charge_profile_id": "unit_vertex_measure_v1",
+                "geometry_profile_id": "affine_reference_relative_v1",
+                "context_contract_id": "constant_zero_context_v1",
+                "units_id": "grcv4_nondimensional_reference_v1",
+                "gauge_id": "component_zero_mean_potential_v1",
+                "normalization_id": "unnormalized_vertex_stiffness_v1",
+                "domain_id": "fixed_graph_strict_gap_spd_v1",
+                "solver_id": "direct_unique_root_v1",
+                "lifecycle_policy_id": "grcv4-lifecycle-policy-v1",
+                "candidate_c_transport_id": null,
+                "composition_gain": null,
+                "params_hash": "grcv4-params-sha256:32f276823cfaeb51cbe8556791daafecac4f1e878331aed3212917d14a4487e8"
+              },
+              "params_resolved": {
+                "schema_version": "grcv4-resolved-params-v1",
+                "common": {
+                  "schema_version": "grcv4-common-params-v1",
+                  "differential_backend_id": "oriented_incidence_d0_equals_BT_v1",
+                  "boundary_policy_id": "closed_no_flux_v1",
+                  "measure_profile_id": "unit_vertex_measure_v1",
+                  "context_contract_id": "constant_zero_context_v1",
+                  "units_id": "grcv4_nondimensional_reference_v1",
+                  "gauge_id": "component_zero_mean_potential_v1",
+                  "normalization_id": "unnormalized_vertex_stiffness_v1",
+                  "domain_id": "fixed_graph_strict_gap_spd_v1",
+                  "default_step_request": null
+                },
+                "candidate": {
+                  "schema_version": "grcv4-candidate-a-params-v1",
+                  "eta": 1,
+                  "kappa_c": 0,
+                  "site_potential_id": "quadratic_site_potential_zero_derivative_v1",
+                  "W_floor": 1e-12,
+                  "alpha": 1.0,
+                  "beta": 1.0,
+                  "gamma": 1.0,
+                  "kappa_Ah": 0,
+                  "chi_A": 1,
+                  "zeta_A": 1,
+                  "tau_A": 1,
+                  "descriptor_backend_id": "grcv4-a-descriptor-sha256:6aaa0de5fbfcda770a02d928fe8bb0da0c10ed1191c7d50e21ce79cda67ab391",
+                  "conductance_evaluator_id": "curvature_disabled_G_W_v1"
+                },
+                "realization": {
+                  "schema_version": "grcv4-os-params-v1",
+                  "predictor_policy_id": "reference_geometry_predictor_v1",
+                  "corrector_policy_id": "one_fresh_geometry_corrector_v1",
+                  "split_residual_norm_id": "edge_l2_v1",
+                  "tolerance": 0
+                },
+                "geometry": {
+                  "schema_version": "grcv4-geometry-profile-params-v1",
+                  "K4_base_digest": "grcv4-k4-sha256:bc96c6d5259157dc72a745b81d31e8d3d927527ba9115b36ee169706ddac40f5",
+                  "reference_hodge_digest": "grcv4-hodge-sha256:39c788e2af9fd01ac76ebce739e40362ffee1388fef552c59840adba1c51f037",
+                  "star_cover_id": "vertex_star_exact_overlap_v1",
+                  "overlap_normalization_id": "edge_multiplicity_inverse_sqrt_v1",
+                  "candidate_adapter_id": "candidate_a_exact_star_adapter_v1",
+                  "flat_sharp_solver_id": "spd_direct_v1",
+                  "geometry_domain_id": "positive_hodge_fixed_graph_v1",
+                  "kappa_H": 0.5
+                },
+                "solver": {
+                  "schema_version": "grcv4-solver-policy-v1",
+                  "solver_kind": "direct",
+                  "root_selector_id": "unique_admitted_root_v1",
+                  "iteration_limit": 1,
+                  "conditioning_limit": 100,
+                  "residual_norm_id": "edge_l2_v1",
+                  "absolute_tolerance": 0,
+                  "relative_tolerance": 0,
+                  "failure_policy_id": "fail_closed_no_fallback_v1"
+                },
+                "charge": {
+                  "schema_version": "grcv4-charge-policy-v1",
+                  "policy_id": "stable_pairwise_binary64_charge_v1",
+                  "accumulation_order": "canonical_live_vertex_balanced_binary_tree",
+                  "rounding_mode": "IEEE754_binary64_roundTiesToEven",
+                  "absolute_tolerance": 0,
+                  "relative_tolerance": 0,
+                  "repair_policy": "never_mutate_resource",
+                  "remainder_policy": "compatibility_projection_is_none"
+                },
+                "lifecycle": {
+                  "schema_version": "grcv4-lifecycle-policy-v1",
+                  "migration_policy_id": "typed_bidirectional_profile_migration_v1",
+                  "mapped_event_policy_id": "caller_mapped_atomic_topology_event_v1",
+                  "reset_policy_id": "restore_current_baseline_append_receipt_v1",
+                  "rebase_policy_id": "replace_baseline_append_receipt_v1",
+                  "history_policy_id": "candidate_a_target_reference_pass_initialization_log_history_v1",
+                  "receipt_policy_id": "operation_delta_plus_persistent_ledger_v1",
+                  "target_readmission_policy_id": "full_target_fail_closed_v1"
+                }
+              },
+              "complete_profile_id": "grcv4-profile-sha256:9e81c12d0eaee583dc5138f0c27149ee129a7cb18590e12e6d01412223b6413c"
+            },
+            "context": {
+              "contract_id": "constant_zero_context_v1",
+              "value": {}
+            },
+            "K4_base": [
+              [
+                1.0
+              ]
+            ],
+            "reference_hodge": {
+              "schema_version": "grcv4-reference-hodge-identity-v1",
+              "edge_weights": {
+                "e": 1.0
+              }
+            }
+          },
+          "differential_reference": {
+            "backend": "grcv3_host_frame_reference_weighted_gradient_v1",
+            "graph": {
+              "schema_version": "grcv4-serialized-graph-v1",
+              "live_node_ids": [
+                "u",
+                "v"
+              ],
+              "oriented_edges": [
+                {
+                  "edge_id": "e",
+                  "tail_node_id": "u",
+                  "head_node_id": "v"
+                }
+              ]
+            },
+            "dimension": 1,
+            "positions": [
+              [
+                0.0
+              ],
+              [
+                1.0
+              ]
+            ],
+            "reference_weights": {
+              "e": 1.0
+            },
+            "regularization": 1.0,
+            "rounding": "exact_binary64_input_normal_equations_then_binary64_gradient_v1"
+          },
+          "target_C": [
+            0.0,
+            0.0
+          ],
+          "W_A_init": [
+            1.0
+          ],
+          "derived": null
+        }
+      },
+      "reset": {
+        "construction_id": "grcv4-a-reference-pass-construction-sha256:fc20c376a9c0e6f688a8e7dea6e14478ea5ca1b42a4b7fd6123701d017688596",
+        "payload": {
+          "schema_version": "grcv4-a-reference-pass-construction-v1",
+          "role": "reset",
+          "policy": {
+            "schema_version": "grcv4-a-reference-pass-policy-v1",
+            "policy_id": "grcv4-a-target-reference-pass-v1",
+            "numerical_id": "grcv4-a-reference-pass-binary64-v1",
+            "history_policy_id": "candidate_a_target_reference_pass_initialization_log_history_v1",
+            "differential_recipe_id": "grcv3_host_frame_reference_weighted_gradient_v1",
+            "differential_rounding_id": "exact_binary64_input_normal_equations_then_binary64_gradient_v1",
+            "site_potential_id": "quadratic_site_potential_zero_derivative_v1",
+            "passes": 1
+          },
+          "target_reference": {
+            "descriptor_version": "grcv4-reference-geometry-v1",
+            "structural_coordinates_id": "grcv4-vertex-star-dense-row-major-v1",
+            "graph": {
+              "schema_version": "grcv4-serialized-graph-v1",
+              "live_node_ids": [
+                "u",
+                "v"
+              ],
+              "oriented_edges": [
+                {
+                  "edge_id": "e",
+                  "tail_node_id": "u",
+                  "head_node_id": "v"
+                }
+              ]
+            },
+            "profile": {
+              "identity_payload": {
+                "schema_version": "grcv4-profile-identity-v1",
+                "profile_family_id": "A_OS",
+                "candidate": "A",
+                "realization": "OS",
+                "differential_backend_id": "oriented_incidence_d0_equals_BT_v1",
+                "charge_profile_id": "unit_vertex_measure_v1",
+                "geometry_profile_id": "affine_reference_relative_v1",
+                "context_contract_id": "constant_zero_context_v1",
+                "units_id": "grcv4_nondimensional_reference_v1",
+                "gauge_id": "component_zero_mean_potential_v1",
+                "normalization_id": "unnormalized_vertex_stiffness_v1",
+                "domain_id": "fixed_graph_strict_gap_spd_v1",
+                "solver_id": "direct_unique_root_v1",
+                "lifecycle_policy_id": "grcv4-lifecycle-policy-v1",
+                "candidate_c_transport_id": null,
+                "composition_gain": null,
+                "params_hash": "grcv4-params-sha256:32f276823cfaeb51cbe8556791daafecac4f1e878331aed3212917d14a4487e8"
+              },
+              "params_resolved": {
+                "schema_version": "grcv4-resolved-params-v1",
+                "common": {
+                  "schema_version": "grcv4-common-params-v1",
+                  "differential_backend_id": "oriented_incidence_d0_equals_BT_v1",
+                  "boundary_policy_id": "closed_no_flux_v1",
+                  "measure_profile_id": "unit_vertex_measure_v1",
+                  "context_contract_id": "constant_zero_context_v1",
+                  "units_id": "grcv4_nondimensional_reference_v1",
+                  "gauge_id": "component_zero_mean_potential_v1",
+                  "normalization_id": "unnormalized_vertex_stiffness_v1",
+                  "domain_id": "fixed_graph_strict_gap_spd_v1",
+                  "default_step_request": null
+                },
+                "candidate": {
+                  "schema_version": "grcv4-candidate-a-params-v1",
+                  "eta": 1,
+                  "kappa_c": 0,
+                  "site_potential_id": "quadratic_site_potential_zero_derivative_v1",
+                  "W_floor": 1e-12,
+                  "alpha": 1.0,
+                  "beta": 1.0,
+                  "gamma": 1.0,
+                  "kappa_Ah": 0,
+                  "chi_A": 1,
+                  "zeta_A": 1,
+                  "tau_A": 1,
+                  "descriptor_backend_id": "grcv4-a-descriptor-sha256:6aaa0de5fbfcda770a02d928fe8bb0da0c10ed1191c7d50e21ce79cda67ab391",
+                  "conductance_evaluator_id": "curvature_disabled_G_W_v1"
+                },
+                "realization": {
+                  "schema_version": "grcv4-os-params-v1",
+                  "predictor_policy_id": "reference_geometry_predictor_v1",
+                  "corrector_policy_id": "one_fresh_geometry_corrector_v1",
+                  "split_residual_norm_id": "edge_l2_v1",
+                  "tolerance": 0
+                },
+                "geometry": {
+                  "schema_version": "grcv4-geometry-profile-params-v1",
+                  "K4_base_digest": "grcv4-k4-sha256:bc96c6d5259157dc72a745b81d31e8d3d927527ba9115b36ee169706ddac40f5",
+                  "reference_hodge_digest": "grcv4-hodge-sha256:39c788e2af9fd01ac76ebce739e40362ffee1388fef552c59840adba1c51f037",
+                  "star_cover_id": "vertex_star_exact_overlap_v1",
+                  "overlap_normalization_id": "edge_multiplicity_inverse_sqrt_v1",
+                  "candidate_adapter_id": "candidate_a_exact_star_adapter_v1",
+                  "flat_sharp_solver_id": "spd_direct_v1",
+                  "geometry_domain_id": "positive_hodge_fixed_graph_v1",
+                  "kappa_H": 0.5
+                },
+                "solver": {
+                  "schema_version": "grcv4-solver-policy-v1",
+                  "solver_kind": "direct",
+                  "root_selector_id": "unique_admitted_root_v1",
+                  "iteration_limit": 1,
+                  "conditioning_limit": 100,
+                  "residual_norm_id": "edge_l2_v1",
+                  "absolute_tolerance": 0,
+                  "relative_tolerance": 0,
+                  "failure_policy_id": "fail_closed_no_fallback_v1"
+                },
+                "charge": {
+                  "schema_version": "grcv4-charge-policy-v1",
+                  "policy_id": "stable_pairwise_binary64_charge_v1",
+                  "accumulation_order": "canonical_live_vertex_balanced_binary_tree",
+                  "rounding_mode": "IEEE754_binary64_roundTiesToEven",
+                  "absolute_tolerance": 0,
+                  "relative_tolerance": 0,
+                  "repair_policy": "never_mutate_resource",
+                  "remainder_policy": "compatibility_projection_is_none"
+                },
+                "lifecycle": {
+                  "schema_version": "grcv4-lifecycle-policy-v1",
+                  "migration_policy_id": "typed_bidirectional_profile_migration_v1",
+                  "mapped_event_policy_id": "caller_mapped_atomic_topology_event_v1",
+                  "reset_policy_id": "restore_current_baseline_append_receipt_v1",
+                  "rebase_policy_id": "replace_baseline_append_receipt_v1",
+                  "history_policy_id": "candidate_a_target_reference_pass_initialization_log_history_v1",
+                  "receipt_policy_id": "operation_delta_plus_persistent_ledger_v1",
+                  "target_readmission_policy_id": "full_target_fail_closed_v1"
+                }
+              },
+              "complete_profile_id": "grcv4-profile-sha256:9e81c12d0eaee583dc5138f0c27149ee129a7cb18590e12e6d01412223b6413c"
+            },
+            "context": {
+              "contract_id": "constant_zero_context_v1",
+              "value": {}
+            },
+            "K4_base": [
+              [
+                1.0
+              ]
+            ],
+            "reference_hodge": {
+              "schema_version": "grcv4-reference-hodge-identity-v1",
+              "edge_weights": {
+                "e": 1.0
+              }
+            }
+          },
+          "differential_reference": {
+            "backend": "grcv3_host_frame_reference_weighted_gradient_v1",
+            "graph": {
+              "schema_version": "grcv4-serialized-graph-v1",
+              "live_node_ids": [
+                "u",
+                "v"
+              ],
+              "oriented_edges": [
+                {
+                  "edge_id": "e",
+                  "tail_node_id": "u",
+                  "head_node_id": "v"
+                }
+              ]
+            },
+            "dimension": 1,
+            "positions": [
+              [
+                0.0
+              ],
+              [
+                1.0
+              ]
+            ],
+            "reference_weights": {
+              "e": 1.0
+            },
+            "regularization": 1.0,
+            "rounding": "exact_binary64_input_normal_equations_then_binary64_gradient_v1"
+          },
+          "target_C": [
+            0.0,
+            0.0
+          ],
+          "W_A_init": [
+            1.0
+          ],
+          "derived": null
+        }
+      }
+    }
+  },
+  "policy_cases": [
+    {
+      "source_candidate": "A",
+      "target_candidate": "A",
+      "source_persistent": false,
+      "target_persistent": false,
+      "history_policy": {
+        "schema_version": "grcv4-history-bundle-policy-v1",
+        "candidate": {
+          "schema_version": "grcv4-history-channel-policy-v1",
+          "subject": "candidate",
+          "policy_id": "candidate_a_event_loss_reference_pass_v1",
+          "disposition": "explicit_loss",
+          "source_history_digest": "grcv4-history-content-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+          "target_initializer_id": "grcv4-a-target-reference-pass-v1",
+          "information_loss": "candidate_history_loss"
+        },
+        "carrier": {
+          "schema_version": "grcv4-history-channel-policy-v1",
+          "subject": "carrier",
+          "policy_id": "no_persistent_carrier_v1",
+          "disposition": "not_applicable",
+          "source_history_digest": null,
+          "target_initializer_id": null,
+          "information_loss": "none"
+        }
+      }
+    },
+    {
+      "source_candidate": "A",
+      "target_candidate": "A",
+      "source_persistent": false,
+      "target_persistent": true,
+      "history_policy": {
+        "schema_version": "grcv4-history-bundle-policy-v1",
+        "candidate": {
+          "schema_version": "grcv4-history-channel-policy-v1",
+          "subject": "candidate",
+          "policy_id": "candidate_a_event_loss_reference_pass_v1",
+          "disposition": "explicit_loss",
+          "source_history_digest": "grcv4-history-content-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+          "target_initializer_id": "grcv4-a-target-reference-pass-v1",
+          "information_loss": "candidate_history_loss"
+        },
+        "carrier": {
+          "schema_version": "grcv4-history-channel-policy-v1",
+          "subject": "carrier",
+          "policy_id": "canonical_zero_carrier_initialization_v1",
+          "disposition": "target_initializer",
+          "source_history_digest": null,
+          "target_initializer_id": "canonical_zero_carrier_v1",
+          "information_loss": "none"
+        }
+      }
+    },
+    {
+      "source_candidate": "A",
+      "target_candidate": "A",
+      "source_persistent": true,
+      "target_persistent": false,
+      "history_policy": {
+        "schema_version": "grcv4-history-bundle-policy-v1",
+        "candidate": {
+          "schema_version": "grcv4-history-channel-policy-v1",
+          "subject": "candidate",
+          "policy_id": "candidate_a_event_loss_reference_pass_v1",
+          "disposition": "explicit_loss",
+          "source_history_digest": "grcv4-history-content-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+          "target_initializer_id": "grcv4-a-target-reference-pass-v1",
+          "information_loss": "candidate_history_loss"
+        },
+        "carrier": {
+          "schema_version": "grcv4-history-channel-policy-v1",
+          "subject": "carrier",
+          "policy_id": "archive_drop_carrier_history_v1",
+          "disposition": "explicit_loss",
+          "source_history_digest": "grcv4-history-content-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+          "target_initializer_id": null,
+          "information_loss": "carrier_history_loss"
+        }
+      }
+    },
+    {
+      "source_candidate": "A",
+      "target_candidate": "A",
+      "source_persistent": true,
+      "target_persistent": true,
+      "history_policy": {
+        "schema_version": "grcv4-history-bundle-policy-v1",
+        "candidate": {
+          "schema_version": "grcv4-history-channel-policy-v1",
+          "subject": "candidate",
+          "policy_id": "candidate_a_event_loss_reference_pass_v1",
+          "disposition": "explicit_loss",
+          "source_history_digest": "grcv4-history-content-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+          "target_initializer_id": "grcv4-a-target-reference-pass-v1",
+          "information_loss": "candidate_history_loss"
+        },
+        "carrier": {
+          "schema_version": "grcv4-history-channel-policy-v1",
+          "subject": "carrier",
+          "policy_id": "event_loss_and_zero_target_carrier_v1",
+          "disposition": "whole_carrier_reset",
+          "source_history_digest": "grcv4-history-content-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+          "target_initializer_id": "canonical_zero_carrier_v1",
+          "information_loss": "carrier_history_loss"
+        }
+      }
+    },
+    {
+      "source_candidate": "A",
+      "target_candidate": "C",
+      "source_persistent": false,
+      "target_persistent": false,
+      "history_policy": {
+        "schema_version": "grcv4-history-bundle-policy-v1",
+        "candidate": {
+          "schema_version": "grcv4-history-channel-policy-v1",
+          "subject": "candidate",
+          "policy_id": "archive_drop_candidate_history_v1",
+          "disposition": "explicit_loss",
+          "source_history_digest": "grcv4-history-content-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+          "target_initializer_id": null,
+          "information_loss": "candidate_history_loss"
+        },
+        "carrier": {
+          "schema_version": "grcv4-history-channel-policy-v1",
+          "subject": "carrier",
+          "policy_id": "no_persistent_carrier_v1",
+          "disposition": "not_applicable",
+          "source_history_digest": null,
+          "target_initializer_id": null,
+          "information_loss": "none"
+        }
+      }
+    },
+    {
+      "source_candidate": "A",
+      "target_candidate": "C",
+      "source_persistent": false,
+      "target_persistent": true,
+      "history_policy": {
+        "schema_version": "grcv4-history-bundle-policy-v1",
+        "candidate": {
+          "schema_version": "grcv4-history-channel-policy-v1",
+          "subject": "candidate",
+          "policy_id": "archive_drop_candidate_history_v1",
+          "disposition": "explicit_loss",
+          "source_history_digest": "grcv4-history-content-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+          "target_initializer_id": null,
+          "information_loss": "candidate_history_loss"
+        },
+        "carrier": {
+          "schema_version": "grcv4-history-channel-policy-v1",
+          "subject": "carrier",
+          "policy_id": "canonical_zero_carrier_initialization_v1",
+          "disposition": "target_initializer",
+          "source_history_digest": null,
+          "target_initializer_id": "canonical_zero_carrier_v1",
+          "information_loss": "none"
+        }
+      }
+    },
+    {
+      "source_candidate": "A",
+      "target_candidate": "C",
+      "source_persistent": true,
+      "target_persistent": false,
+      "history_policy": {
+        "schema_version": "grcv4-history-bundle-policy-v1",
+        "candidate": {
+          "schema_version": "grcv4-history-channel-policy-v1",
+          "subject": "candidate",
+          "policy_id": "archive_drop_candidate_history_v1",
+          "disposition": "explicit_loss",
+          "source_history_digest": "grcv4-history-content-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+          "target_initializer_id": null,
+          "information_loss": "candidate_history_loss"
+        },
+        "carrier": {
+          "schema_version": "grcv4-history-channel-policy-v1",
+          "subject": "carrier",
+          "policy_id": "archive_drop_carrier_history_v1",
+          "disposition": "explicit_loss",
+          "source_history_digest": "grcv4-history-content-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+          "target_initializer_id": null,
+          "information_loss": "carrier_history_loss"
+        }
+      }
+    },
+    {
+      "source_candidate": "A",
+      "target_candidate": "C",
+      "source_persistent": true,
+      "target_persistent": true,
+      "history_policy": {
+        "schema_version": "grcv4-history-bundle-policy-v1",
+        "candidate": {
+          "schema_version": "grcv4-history-channel-policy-v1",
+          "subject": "candidate",
+          "policy_id": "archive_drop_candidate_history_v1",
+          "disposition": "explicit_loss",
+          "source_history_digest": "grcv4-history-content-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+          "target_initializer_id": null,
+          "information_loss": "candidate_history_loss"
+        },
+        "carrier": {
+          "schema_version": "grcv4-history-channel-policy-v1",
+          "subject": "carrier",
+          "policy_id": "event_loss_and_zero_target_carrier_v1",
+          "disposition": "whole_carrier_reset",
+          "source_history_digest": "grcv4-history-content-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+          "target_initializer_id": "canonical_zero_carrier_v1",
+          "information_loss": "carrier_history_loss"
+        }
+      }
+    },
+    {
+      "source_candidate": "C",
+      "target_candidate": "A",
+      "source_persistent": false,
+      "target_persistent": false,
+      "history_policy": {
+        "schema_version": "grcv4-history-bundle-policy-v1",
+        "candidate": {
+          "schema_version": "grcv4-history-channel-policy-v1",
+          "subject": "candidate",
+          "policy_id": "candidate_a_target_reference_pass_initialization_log_history_v1",
+          "disposition": "target_initializer",
+          "source_history_digest": null,
+          "target_initializer_id": "grcv4-a-target-reference-pass-v1",
+          "information_loss": "none"
+        },
+        "carrier": {
+          "schema_version": "grcv4-history-channel-policy-v1",
+          "subject": "carrier",
+          "policy_id": "no_persistent_carrier_v1",
+          "disposition": "not_applicable",
+          "source_history_digest": null,
+          "target_initializer_id": null,
+          "information_loss": "none"
+        }
+      }
+    },
+    {
+      "source_candidate": "C",
+      "target_candidate": "A",
+      "source_persistent": false,
+      "target_persistent": true,
+      "history_policy": {
+        "schema_version": "grcv4-history-bundle-policy-v1",
+        "candidate": {
+          "schema_version": "grcv4-history-channel-policy-v1",
+          "subject": "candidate",
+          "policy_id": "candidate_a_target_reference_pass_initialization_log_history_v1",
+          "disposition": "target_initializer",
+          "source_history_digest": null,
+          "target_initializer_id": "grcv4-a-target-reference-pass-v1",
+          "information_loss": "none"
+        },
+        "carrier": {
+          "schema_version": "grcv4-history-channel-policy-v1",
+          "subject": "carrier",
+          "policy_id": "canonical_zero_carrier_initialization_v1",
+          "disposition": "target_initializer",
+          "source_history_digest": null,
+          "target_initializer_id": "canonical_zero_carrier_v1",
+          "information_loss": "none"
+        }
+      }
+    },
+    {
+      "source_candidate": "C",
+      "target_candidate": "A",
+      "source_persistent": true,
+      "target_persistent": false,
+      "history_policy": {
+        "schema_version": "grcv4-history-bundle-policy-v1",
+        "candidate": {
+          "schema_version": "grcv4-history-channel-policy-v1",
+          "subject": "candidate",
+          "policy_id": "candidate_a_target_reference_pass_initialization_log_history_v1",
+          "disposition": "target_initializer",
+          "source_history_digest": null,
+          "target_initializer_id": "grcv4-a-target-reference-pass-v1",
+          "information_loss": "none"
+        },
+        "carrier": {
+          "schema_version": "grcv4-history-channel-policy-v1",
+          "subject": "carrier",
+          "policy_id": "archive_drop_carrier_history_v1",
+          "disposition": "explicit_loss",
+          "source_history_digest": "grcv4-history-content-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+          "target_initializer_id": null,
+          "information_loss": "carrier_history_loss"
+        }
+      }
+    },
+    {
+      "source_candidate": "C",
+      "target_candidate": "A",
+      "source_persistent": true,
+      "target_persistent": true,
+      "history_policy": {
+        "schema_version": "grcv4-history-bundle-policy-v1",
+        "candidate": {
+          "schema_version": "grcv4-history-channel-policy-v1",
+          "subject": "candidate",
+          "policy_id": "candidate_a_target_reference_pass_initialization_log_history_v1",
+          "disposition": "target_initializer",
+          "source_history_digest": null,
+          "target_initializer_id": "grcv4-a-target-reference-pass-v1",
+          "information_loss": "none"
+        },
+        "carrier": {
+          "schema_version": "grcv4-history-channel-policy-v1",
+          "subject": "carrier",
+          "policy_id": "event_loss_and_zero_target_carrier_v1",
+          "disposition": "whole_carrier_reset",
+          "source_history_digest": "grcv4-history-content-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+          "target_initializer_id": "canonical_zero_carrier_v1",
+          "information_loss": "carrier_history_loss"
+        }
+      }
+    },
+    {
+      "source_candidate": "C",
+      "target_candidate": "C",
+      "source_persistent": false,
+      "target_persistent": false,
+      "history_policy": {
+        "schema_version": "grcv4-history-bundle-policy-v1",
+        "candidate": {
+          "schema_version": "grcv4-history-channel-policy-v1",
+          "subject": "candidate",
+          "policy_id": "candidate_c_rederive_no_history_v1",
+          "disposition": "rederived",
+          "source_history_digest": null,
+          "target_initializer_id": null,
+          "information_loss": "none"
+        },
+        "carrier": {
+          "schema_version": "grcv4-history-channel-policy-v1",
+          "subject": "carrier",
+          "policy_id": "no_persistent_carrier_v1",
+          "disposition": "not_applicable",
+          "source_history_digest": null,
+          "target_initializer_id": null,
+          "information_loss": "none"
+        }
+      }
+    },
+    {
+      "source_candidate": "C",
+      "target_candidate": "C",
+      "source_persistent": false,
+      "target_persistent": true,
+      "history_policy": {
+        "schema_version": "grcv4-history-bundle-policy-v1",
+        "candidate": {
+          "schema_version": "grcv4-history-channel-policy-v1",
+          "subject": "candidate",
+          "policy_id": "candidate_c_rederive_no_history_v1",
+          "disposition": "rederived",
+          "source_history_digest": null,
+          "target_initializer_id": null,
+          "information_loss": "none"
+        },
+        "carrier": {
+          "schema_version": "grcv4-history-channel-policy-v1",
+          "subject": "carrier",
+          "policy_id": "canonical_zero_carrier_initialization_v1",
+          "disposition": "target_initializer",
+          "source_history_digest": null,
+          "target_initializer_id": "canonical_zero_carrier_v1",
+          "information_loss": "none"
+        }
+      }
+    },
+    {
+      "source_candidate": "C",
+      "target_candidate": "C",
+      "source_persistent": true,
+      "target_persistent": false,
+      "history_policy": {
+        "schema_version": "grcv4-history-bundle-policy-v1",
+        "candidate": {
+          "schema_version": "grcv4-history-channel-policy-v1",
+          "subject": "candidate",
+          "policy_id": "candidate_c_rederive_no_history_v1",
+          "disposition": "rederived",
+          "source_history_digest": null,
+          "target_initializer_id": null,
+          "information_loss": "none"
+        },
+        "carrier": {
+          "schema_version": "grcv4-history-channel-policy-v1",
+          "subject": "carrier",
+          "policy_id": "archive_drop_carrier_history_v1",
+          "disposition": "explicit_loss",
+          "source_history_digest": "grcv4-history-content-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+          "target_initializer_id": null,
+          "information_loss": "carrier_history_loss"
+        }
+      }
+    },
+    {
+      "source_candidate": "C",
+      "target_candidate": "C",
+      "source_persistent": true,
+      "target_persistent": true,
+      "history_policy": {
+        "schema_version": "grcv4-history-bundle-policy-v1",
+        "candidate": {
+          "schema_version": "grcv4-history-channel-policy-v1",
+          "subject": "candidate",
+          "policy_id": "candidate_c_rederive_no_history_v1",
+          "disposition": "rederived",
+          "source_history_digest": null,
+          "target_initializer_id": null,
+          "information_loss": "none"
+        },
+        "carrier": {
+          "schema_version": "grcv4-history-channel-policy-v1",
+          "subject": "carrier",
+          "policy_id": "event_loss_and_zero_target_carrier_v1",
+          "disposition": "whole_carrier_reset",
+          "source_history_digest": "grcv4-history-content-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+          "target_initializer_id": "canonical_zero_carrier_v1",
+          "information_loss": "carrier_history_loss"
+        }
+      }
+    }
+  ],
+  "synthetic_receipts": [
+    {
+      "history_policy": {
+        "schema_version": "grcv4-history-bundle-policy-v1",
+        "candidate": {
+          "schema_version": "grcv4-history-channel-policy-v1",
+          "subject": "candidate",
+          "policy_id": "candidate_a_event_loss_reference_pass_v1",
+          "disposition": "explicit_loss",
+          "source_history_digest": "grcv4-history-content-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+          "target_initializer_id": "grcv4-a-target-reference-pass-v1",
+          "information_loss": "candidate_history_loss"
+        },
+        "carrier": {
+          "schema_version": "grcv4-history-channel-policy-v1",
+          "subject": "carrier",
+          "policy_id": "event_loss_and_zero_target_carrier_v1",
+          "disposition": "whole_carrier_reset",
+          "source_history_digest": "grcv4-history-content-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+          "target_initializer_id": "canonical_zero_carrier_v1",
+          "information_loss": "carrier_history_loss"
+        }
+      },
+      "event_identity_payload": {
+        "schema_version": "grcv4-mapped-topology-event-identity-v1",
+        "source_state_digest": "grcv4-state-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "source_graph_digest": "grc-graph-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "target_graph_digest": "grc-graph-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "resource_transform_digest": "grcv4-resource-transform-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "history_bundle_digest": "grcv4-history-map-sha256:c17b94104c0d51b24a30c879c5abed4c8ee3cc658fc73982b792cd80beb368e9",
+        "target_profile_id": "grcv4-profile-sha256:0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "payload": {
+        "schema_version": "grcv4-topology-event-receipt-v2",
+        "core": {
+          "operation_id": "synthetic-event-wire-not-an-execution",
+          "source_state_digest": "grcv4-state-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+          "target_state_digest": "grcv4-state-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+          "source_graph_digest": "grc-graph-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+          "target_graph_digest": "grc-graph-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+          "source_model_identity": "grcv4-profile-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+          "target_model_identity": "grcv4-profile-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+          "source_authoritative_digest": "grcv4-authoritative-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+          "target_authoritative_digest": "grcv4-authoritative-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+          "source_reset_digest": "grcv4-reset-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+          "target_reset_digest": "grcv4-reset-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+          "resource_transform_digest": "grcv4-resource-transform-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+          "history_bundle_digest": "grcv4-history-map-sha256:c17b94104c0d51b24a30c879c5abed4c8ee3cc658fc73982b792cd80beb368e9",
+          "actual_charge_delta": 0.5,
+          "information_losses": [
+            "candidate_history_loss",
+            "carrier_history_loss"
+          ],
+          "disposition": "committed",
+          "parent_receipt_ids": []
+        },
+        "history": {
+          "schema_version": "grcv4-history-bundle-receipt-v1",
+          "candidate": {
+            "subject": "candidate",
+            "disposition": "explicit_loss",
+            "source_history_digest": "grcv4-history-content-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+            "information_loss": "candidate_history_loss",
+            "target_history_digest": "grcv4-history-content-sha256:0000000000000000000000000000000000000000000000000000000000000000"
+          },
+          "carrier": {
+            "subject": "carrier",
+            "disposition": "whole_carrier_reset",
+            "source_history_digest": "grcv4-history-content-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+            "information_loss": "carrier_history_loss",
+            "target_history_digest": "grcv4-history-content-sha256:0000000000000000000000000000000000000000000000000000000000000000"
+          }
+        },
+        "initializer_pair_id": "grcv4-a-reference-pass-pair-sha256:a40eead8f29cf78f83097e424c55142be5e016c3b16a2a9d896bd9d8e381efbc",
+        "event_id": "grc-event-sha256:f7e65155223dfe92dc101ea8722580c22078b52fba0e91176297e04d6e049538"
+      },
+      "receipt_id": "grc-receipt-sha256:6adfc6abb1487564aa1ab07f5c5652873d53501457ab6635b6cb37e52a8278c1",
+      "canonical_jcs_utf8": "{\"core\":{\"actual_charge_delta\":0.5,\"disposition\":\"committed\",\"history_bundle_digest\":\"grcv4-history-map-sha256:c17b94104c0d51b24a30c879c5abed4c8ee3cc658fc73982b792cd80beb368e9\",\"information_losses\":[\"candidate_history_loss\",\"carrier_history_loss\"],\"operation_id\":\"synthetic-event-wire-not-an-execution\",\"parent_receipt_ids\":[],\"resource_transform_digest\":\"grcv4-resource-transform-sha256:0000000000000000000000000000000000000000000000000000000000000000\",\"source_authoritative_digest\":\"grcv4-authoritative-sha256:0000000000000000000000000000000000000000000000000000000000000000\",\"source_graph_digest\":\"grc-graph-sha256:0000000000000000000000000000000000000000000000000000000000000000\",\"source_model_identity\":\"grcv4-profile-sha256:0000000000000000000000000000000000000000000000000000000000000000\",\"source_reset_digest\":\"grcv4-reset-sha256:0000000000000000000000000000000000000000000000000000000000000000\",\"source_state_digest\":\"grcv4-state-sha256:0000000000000000000000000000000000000000000000000000000000000000\",\"target_authoritative_digest\":\"grcv4-authoritative-sha256:0000000000000000000000000000000000000000000000000000000000000000\",\"target_graph_digest\":\"grc-graph-sha256:0000000000000000000000000000000000000000000000000000000000000000\",\"target_model_identity\":\"grcv4-profile-sha256:0000000000000000000000000000000000000000000000000000000000000000\",\"target_reset_digest\":\"grcv4-reset-sha256:0000000000000000000000000000000000000000000000000000000000000000\",\"target_state_digest\":\"grcv4-state-sha256:0000000000000000000000000000000000000000000000000000000000000000\"},\"event_id\":\"grc-event-sha256:f7e65155223dfe92dc101ea8722580c22078b52fba0e91176297e04d6e049538\",\"history\":{\"candidate\":{\"disposition\":\"explicit_loss\",\"information_loss\":\"candidate_history_loss\",\"source_history_digest\":\"grcv4-history-content-sha256:0000000000000000000000000000000000000000000000000000000000000000\",\"subject\":\"candidate\",\"target_history_digest\":\"grcv4-history-content-sha256:0000000000000000000000000000000000000000000000000000000000000000\"},\"carrier\":{\"disposition\":\"whole_carrier_reset\",\"information_loss\":\"carrier_history_loss\",\"source_history_digest\":\"grcv4-history-content-sha256:0000000000000000000000000000000000000000000000000000000000000000\",\"subject\":\"carrier\",\"target_history_digest\":\"grcv4-history-content-sha256:0000000000000000000000000000000000000000000000000000000000000000\"},\"schema_version\":\"grcv4-history-bundle-receipt-v1\"},\"initializer_pair_id\":\"grcv4-a-reference-pass-pair-sha256:a40eead8f29cf78f83097e424c55142be5e016c3b16a2a9d896bd9d8e381efbc\",\"schema_version\":\"grcv4-topology-event-receipt-v2\"}"
+    },
+    {
+      "history_policy": {
+        "schema_version": "grcv4-history-bundle-policy-v1",
+        "candidate": {
+          "schema_version": "grcv4-history-channel-policy-v1",
+          "subject": "candidate",
+          "policy_id": "candidate_a_target_reference_pass_initialization_log_history_v1",
+          "disposition": "target_initializer",
+          "source_history_digest": null,
+          "target_initializer_id": "grcv4-a-target-reference-pass-v1",
+          "information_loss": "none"
+        },
+        "carrier": {
+          "schema_version": "grcv4-history-channel-policy-v1",
+          "subject": "carrier",
+          "policy_id": "canonical_zero_carrier_initialization_v1",
+          "disposition": "target_initializer",
+          "source_history_digest": null,
+          "target_initializer_id": "canonical_zero_carrier_v1",
+          "information_loss": "none"
+        }
+      },
+      "event_identity_payload": {
+        "schema_version": "grcv4-mapped-topology-event-identity-v1",
+        "source_state_digest": "grcv4-state-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "source_graph_digest": "grc-graph-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "target_graph_digest": "grc-graph-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "resource_transform_digest": "grcv4-resource-transform-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "history_bundle_digest": "grcv4-history-map-sha256:fa73a1370a3909ad1f0954f0eaa1ade811d037921d2253c16e348cbfbd086acc",
+        "target_profile_id": "grcv4-profile-sha256:0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "payload": {
+        "schema_version": "grcv4-topology-event-receipt-v2",
+        "core": {
+          "operation_id": "synthetic-event-wire-not-an-execution",
+          "source_state_digest": "grcv4-state-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+          "target_state_digest": "grcv4-state-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+          "source_graph_digest": "grc-graph-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+          "target_graph_digest": "grc-graph-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+          "source_model_identity": "grcv4-profile-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+          "target_model_identity": "grcv4-profile-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+          "source_authoritative_digest": "grcv4-authoritative-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+          "target_authoritative_digest": "grcv4-authoritative-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+          "source_reset_digest": "grcv4-reset-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+          "target_reset_digest": "grcv4-reset-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+          "resource_transform_digest": "grcv4-resource-transform-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+          "history_bundle_digest": "grcv4-history-map-sha256:fa73a1370a3909ad1f0954f0eaa1ade811d037921d2253c16e348cbfbd086acc",
+          "actual_charge_delta": 0.5,
+          "information_losses": [],
+          "disposition": "committed",
+          "parent_receipt_ids": []
+        },
+        "history": {
+          "schema_version": "grcv4-history-bundle-receipt-v1",
+          "candidate": {
+            "subject": "candidate",
+            "disposition": "target_initializer",
+            "source_history_digest": null,
+            "information_loss": "none",
+            "target_history_digest": "grcv4-history-content-sha256:0000000000000000000000000000000000000000000000000000000000000000"
+          },
+          "carrier": {
+            "subject": "carrier",
+            "disposition": "target_initializer",
+            "source_history_digest": null,
+            "information_loss": "none",
+            "target_history_digest": "grcv4-history-content-sha256:0000000000000000000000000000000000000000000000000000000000000000"
+          }
+        },
+        "initializer_pair_id": "grcv4-a-reference-pass-pair-sha256:a40eead8f29cf78f83097e424c55142be5e016c3b16a2a9d896bd9d8e381efbc",
+        "event_id": "grc-event-sha256:a5b266c92fd0554999d4b3b33ef7d97ed956f15e55b14857293683785e5d66f3"
+      },
+      "receipt_id": "grc-receipt-sha256:b0e5b1ad66eb516870d7f34eb2c7fd0d2043da7e34dcc291445a20304772f178",
+      "canonical_jcs_utf8": "{\"core\":{\"actual_charge_delta\":0.5,\"disposition\":\"committed\",\"history_bundle_digest\":\"grcv4-history-map-sha256:fa73a1370a3909ad1f0954f0eaa1ade811d037921d2253c16e348cbfbd086acc\",\"information_losses\":[],\"operation_id\":\"synthetic-event-wire-not-an-execution\",\"parent_receipt_ids\":[],\"resource_transform_digest\":\"grcv4-resource-transform-sha256:0000000000000000000000000000000000000000000000000000000000000000\",\"source_authoritative_digest\":\"grcv4-authoritative-sha256:0000000000000000000000000000000000000000000000000000000000000000\",\"source_graph_digest\":\"grc-graph-sha256:0000000000000000000000000000000000000000000000000000000000000000\",\"source_model_identity\":\"grcv4-profile-sha256:0000000000000000000000000000000000000000000000000000000000000000\",\"source_reset_digest\":\"grcv4-reset-sha256:0000000000000000000000000000000000000000000000000000000000000000\",\"source_state_digest\":\"grcv4-state-sha256:0000000000000000000000000000000000000000000000000000000000000000\",\"target_authoritative_digest\":\"grcv4-authoritative-sha256:0000000000000000000000000000000000000000000000000000000000000000\",\"target_graph_digest\":\"grc-graph-sha256:0000000000000000000000000000000000000000000000000000000000000000\",\"target_model_identity\":\"grcv4-profile-sha256:0000000000000000000000000000000000000000000000000000000000000000\",\"target_reset_digest\":\"grcv4-reset-sha256:0000000000000000000000000000000000000000000000000000000000000000\",\"target_state_digest\":\"grcv4-state-sha256:0000000000000000000000000000000000000000000000000000000000000000\"},\"event_id\":\"grc-event-sha256:a5b266c92fd0554999d4b3b33ef7d97ed956f15e55b14857293683785e5d66f3\",\"history\":{\"candidate\":{\"disposition\":\"target_initializer\",\"information_loss\":\"none\",\"source_history_digest\":null,\"subject\":\"candidate\",\"target_history_digest\":\"grcv4-history-content-sha256:0000000000000000000000000000000000000000000000000000000000000000\"},\"carrier\":{\"disposition\":\"target_initializer\",\"information_loss\":\"none\",\"source_history_digest\":null,\"subject\":\"carrier\",\"target_history_digest\":\"grcv4-history-content-sha256:0000000000000000000000000000000000000000000000000000000000000000\"},\"schema_version\":\"grcv4-history-bundle-receipt-v1\"},\"initializer_pair_id\":\"grcv4-a-reference-pass-pair-sha256:a40eead8f29cf78f83097e424c55142be5e016c3b16a2a9d896bd9d8e381efbc\",\"schema_version\":\"grcv4-topology-event-receipt-v2\"}"
+    },
+    {
+      "history_policy": {
+        "schema_version": "grcv4-history-bundle-policy-v1",
+        "candidate": {
+          "schema_version": "grcv4-history-channel-policy-v1",
+          "subject": "candidate",
+          "policy_id": "archive_drop_candidate_history_v1",
+          "disposition": "explicit_loss",
+          "source_history_digest": "grcv4-history-content-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+          "target_initializer_id": null,
+          "information_loss": "candidate_history_loss"
+        },
+        "carrier": {
+          "schema_version": "grcv4-history-channel-policy-v1",
+          "subject": "carrier",
+          "policy_id": "archive_drop_carrier_history_v1",
+          "disposition": "explicit_loss",
+          "source_history_digest": "grcv4-history-content-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+          "target_initializer_id": null,
+          "information_loss": "carrier_history_loss"
+        }
+      },
+      "event_identity_payload": {
+        "schema_version": "grcv4-mapped-topology-event-identity-v1",
+        "source_state_digest": "grcv4-state-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "source_graph_digest": "grc-graph-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "target_graph_digest": "grc-graph-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "resource_transform_digest": "grcv4-resource-transform-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "history_bundle_digest": "grcv4-history-map-sha256:129aa02df4356b94b8523a0785e6a655687030a883154ca2f5be40201020491a",
+        "target_profile_id": "grcv4-profile-sha256:0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "payload": {
+        "schema_version": "grcv4-topology-event-receipt-v2",
+        "core": {
+          "operation_id": "synthetic-event-wire-not-an-execution",
+          "source_state_digest": "grcv4-state-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+          "target_state_digest": "grcv4-state-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+          "source_graph_digest": "grc-graph-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+          "target_graph_digest": "grc-graph-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+          "source_model_identity": "grcv4-profile-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+          "target_model_identity": "grcv4-profile-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+          "source_authoritative_digest": "grcv4-authoritative-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+          "target_authoritative_digest": "grcv4-authoritative-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+          "source_reset_digest": "grcv4-reset-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+          "target_reset_digest": "grcv4-reset-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+          "resource_transform_digest": "grcv4-resource-transform-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+          "history_bundle_digest": "grcv4-history-map-sha256:129aa02df4356b94b8523a0785e6a655687030a883154ca2f5be40201020491a",
+          "actual_charge_delta": 0.5,
+          "information_losses": [
+            "candidate_history_loss",
+            "carrier_history_loss"
+          ],
+          "disposition": "committed",
+          "parent_receipt_ids": []
+        },
+        "history": {
+          "schema_version": "grcv4-history-bundle-receipt-v1",
+          "candidate": {
+            "subject": "candidate",
+            "disposition": "explicit_loss",
+            "source_history_digest": "grcv4-history-content-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+            "information_loss": "candidate_history_loss",
+            "target_history_digest": null
+          },
+          "carrier": {
+            "subject": "carrier",
+            "disposition": "explicit_loss",
+            "source_history_digest": "grcv4-history-content-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+            "information_loss": "carrier_history_loss",
+            "target_history_digest": null
+          }
+        },
+        "initializer_pair_id": null,
+        "event_id": "grc-event-sha256:fc4759ff2a2ed3672e56a1765a4ff9309146376996956720a12035c874d77aa9"
+      },
+      "receipt_id": "grc-receipt-sha256:90046286e71bc33710081880d4da1ecebf2f8d6535396c113c86046ec6778f7f",
+      "canonical_jcs_utf8": "{\"core\":{\"actual_charge_delta\":0.5,\"disposition\":\"committed\",\"history_bundle_digest\":\"grcv4-history-map-sha256:129aa02df4356b94b8523a0785e6a655687030a883154ca2f5be40201020491a\",\"information_losses\":[\"candidate_history_loss\",\"carrier_history_loss\"],\"operation_id\":\"synthetic-event-wire-not-an-execution\",\"parent_receipt_ids\":[],\"resource_transform_digest\":\"grcv4-resource-transform-sha256:0000000000000000000000000000000000000000000000000000000000000000\",\"source_authoritative_digest\":\"grcv4-authoritative-sha256:0000000000000000000000000000000000000000000000000000000000000000\",\"source_graph_digest\":\"grc-graph-sha256:0000000000000000000000000000000000000000000000000000000000000000\",\"source_model_identity\":\"grcv4-profile-sha256:0000000000000000000000000000000000000000000000000000000000000000\",\"source_reset_digest\":\"grcv4-reset-sha256:0000000000000000000000000000000000000000000000000000000000000000\",\"source_state_digest\":\"grcv4-state-sha256:0000000000000000000000000000000000000000000000000000000000000000\",\"target_authoritative_digest\":\"grcv4-authoritative-sha256:0000000000000000000000000000000000000000000000000000000000000000\",\"target_graph_digest\":\"grc-graph-sha256:0000000000000000000000000000000000000000000000000000000000000000\",\"target_model_identity\":\"grcv4-profile-sha256:0000000000000000000000000000000000000000000000000000000000000000\",\"target_reset_digest\":\"grcv4-reset-sha256:0000000000000000000000000000000000000000000000000000000000000000\",\"target_state_digest\":\"grcv4-state-sha256:0000000000000000000000000000000000000000000000000000000000000000\"},\"event_id\":\"grc-event-sha256:fc4759ff2a2ed3672e56a1765a4ff9309146376996956720a12035c874d77aa9\",\"history\":{\"candidate\":{\"disposition\":\"explicit_loss\",\"information_loss\":\"candidate_history_loss\",\"source_history_digest\":\"grcv4-history-content-sha256:0000000000000000000000000000000000000000000000000000000000000000\",\"subject\":\"candidate\",\"target_history_digest\":null},\"carrier\":{\"disposition\":\"explicit_loss\",\"information_loss\":\"carrier_history_loss\",\"source_history_digest\":\"grcv4-history-content-sha256:0000000000000000000000000000000000000000000000000000000000000000\",\"subject\":\"carrier\",\"target_history_digest\":null},\"schema_version\":\"grcv4-history-bundle-receipt-v1\"},\"initializer_pair_id\":null,\"schema_version\":\"grcv4-topology-event-receipt-v2\"}"
+    }
+  ]
+}

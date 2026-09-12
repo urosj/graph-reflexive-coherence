@@ -222,6 +222,13 @@ HANDOFF_PATHS = {
     HERE + "handoff/P9-G1-outputs.zip",
 }
 PATHS = {
+    # Contract-only P9-7.2b supplement; no new runtime permission or acceptance.
+    "specs/grc-v4-topology-event-spec.md",
+    "specs/grc-v4-topology-event-schema.json",
+    "specs/grc-v4-topology-event-vectors.json",
+    PHASE + "tranche-7/P9-7.2b-ContractExtension.md",
+    HERE + "build_p972b_contract.py",
+    HERE + "test_p972b_contract.py",
     HERE + "build_p972a_initializer_release.py",
     HERE + "verify_p972a_initializer_runtime.py",
     HERE + "test_p972a_initializer_runtime.py",

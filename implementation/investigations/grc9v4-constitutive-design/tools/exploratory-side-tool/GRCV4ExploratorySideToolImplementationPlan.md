@@ -1969,3 +1969,25 @@ commit followed by final aggregate review. The runtime review owns the later
 decision; the bound execution record and its capture-time flags stay unchanged.
 The subsequent final review and codec-reference correction passed, and the user
 accepted aggregate P9-7.2a closure. Next planned work is P9-7.2b, not started here.
+
+## Phase 9 Tranche 7 — P9-7.2b event contract preparation
+
+The user authorized the additive
+[event binding](../../../../phase-9-grcv4/tranche-7/P9-7.2b-ContractExtension.md).
+Use the forensic contract surface to preserve the D10.2 support boundary,
+D11-C target reference-map requirement and optional A initializer authority.
+The accepted paper already permits the selected loss/initialization fallback;
+this work supplies new wire applicability, not a new scientific claim.
+Keep accepted source traces, 7.2a runs, releases and runtime status unchanged.
+The new schema/vectors have focused contract checks and exact maintenance
+bindings; they do not grant runtime event or G2/G3 support. The user accepted
+the corrected contract and representation-operation scope on 2026-09-12.
+Packaging and actual P9-7.2b execution remain separate. API/notebook/browser runtime
+support must change only with separately verified implementation evidence.
+
+The user subsequently included pure representation transport in current 7.2b
+contract scope, separately from reconstruction. Its coordinate-law contract
+is documented, but its own wire/release binding and runtime covariance/replay
+verification remain open. Do not infer that fallback schema or execution
+covers it. General topology-preserving maps remain deferred; the next bounded
+candidate is isolated-vertex addition with explicit existing-edge lineage.
