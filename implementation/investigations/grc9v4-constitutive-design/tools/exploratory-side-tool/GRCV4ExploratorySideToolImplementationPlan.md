@@ -1991,3 +1991,17 @@ is documented, but its own wire/release binding and runtime covariance/replay
 verification remain open. Do not infer that fallback schema or execution
 covers it. General topology-preserving maps remain deferred; the next bounded
 candidate is isolated-vertex addition with explicit existing-edge lineage.
+
+The joint package and representation wire binding are now supplied in the
+[package record](../../../../phase-9-grcv4/tranche-7/P9-7.2b-PackageBinding.md).
+Normal boundary verification checks their artifact and installed-package
+integrity separately from retained 7.2a execution. The explicit decoder checks
+wire/declaration admission only; actual model operations, covariance and mixed
+runtime replay remain unimplemented and unadvertised.
+
+Pre-acceptance audit R1/R2 now specify exact-action zero charge delta with
+embedded numerical endpoint evidence and the complete singleton-primary group.
+The package record carries the bounded runtime follow-through: scientific
+inverse is not ledger rollback; identity transport is not reconstruction;
+mixed operation history, charge-order/signed-zero and incompatible-target
+controls remain required. Package corrections do not discharge those runs.

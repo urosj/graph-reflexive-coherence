@@ -1212,19 +1212,30 @@ may reach G2 without waiting for all Tranche 6 realizations.
     event receipt v2 and new snapshot applicability; preserve accepted 7.2a.
   - [x] User accepted the corrected fallback binding and separate representation
     operation contract/scope on 2026-09-12 through “accept and commit”.
-  - [ ] Explicitly package/admit the successor release before runtime dispatch.
-    Contract acceptance is not runtime execution authority or aggregate closure.
+  - [x] Package/admit the joint contract release through its explicit wire
+    decoder; predecessor loaders and model lifecycle dispatch remain unchanged.
+    Package admission is not runtime execution or aggregate closure.
     Include mixed-version archive declarations and unknown-release dispatch;
     execute the mixed-operation restore/evolve/reset pressure with the runtime.
   - [ ] Instantiate and execute the exact event children/negative cases listed
     in the binding review; preserve old C_OS evidence and distinguish new runs.
   - [x] Include the pure-representation coordinate law as a separate current
     operation contract, not the lossy fallback or a general topology map.
-  - [ ] Complete its closed request/receipt/archive/release binding, including
+  - [x] Complete its closed request/receipt/archive/release binding, including
     declared correspondence and coordinate-sensitive identity handling.
+  - [x] Resolve pre-acceptance R1/R2: exact coordinate-action zero delta with
+    embedded numerical charge evidence; singleton successful primary group,
+    commit/envelope binding and explicit previous-primary head semantics.
+  - [x] User accepted the corrected wire/package and R1/R2 work on 2026-09-12
+    through “commit changes”; runtime implementation and aggregate closure remain open.
   - [ ] Implement and verify representation transport independently: both
     current/reset, inverse/covariance, no initializer/loss, readmission,
     rollback and snapshot/restore/reset. Fallback tests do not close this work.
+    Inverse scientific/reset/reference recovery must retain both ledger groups;
+    distinguish identity transport from identity reconstruction with nontrivial
+    histories. Exercise migration → representation → evolution → lossy event →
+    restore/reset, charge-order and signed-zero controls, and incompatible
+    reference/backend/context/chart targets despite valid correspondences.
   Genuine topology-preserving maps remain deferred; isolated zero-resource
   vertex addition with declared old-edge lineage is the next bounded candidate.
 - [ ] P9-7.3: Verify separate candidate/carrier history channels, explicit

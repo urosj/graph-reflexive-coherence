@@ -222,6 +222,19 @@ HANDOFF_PATHS = {
     HERE + "handoff/P9-G1-outputs.zip",
 }
 PATHS = {
+    # Additive wire/package decoder only; no event numerical/lifecycle grant.
+    "src/pygrc/models/grc_v4_event_codec.py",
+    "src/pygrc/models/grc_v4_assets/grc-v4-topology-event-schema.json",
+    "src/pygrc/models/grc_v4_assets/grc-v4-representation-transport-schema.json",
+    "src/pygrc/models/grc_v4_assets/grc-v4-event-contract-release.json",
+    "specs/grc-v4-representation-transport-spec.md",
+    "specs/grc-v4-representation-transport-schema.json",
+    "specs/grc-v4-representation-transport-vectors.json",
+    "specs/grc-v4-event-contract-release.json",
+    HERE + "build_p972b_event_release.py",
+    HERE + "test_p972b_event_release.py",
+    HERE + "verify_p972b_event_package.py",
+    PHASE + "tranche-7/P9-7.2b-PackageBinding.md",
     # Contract-only P9-7.2b supplement; no new runtime permission or acceptance.
     "specs/grc-v4-topology-event-spec.md",
     "specs/grc-v4-topology-event-schema.json",
@@ -1609,6 +1622,8 @@ def current_boundary(root):
         require(actual_mode == mode, "frozen mode changed: " + name)
         frozen += 1
     accepted_specification_correction(root)
+    from verify_p972b_event_package import check as event_package_check
+    event_package_check(root)
     entries = set(
         filter(
             None,

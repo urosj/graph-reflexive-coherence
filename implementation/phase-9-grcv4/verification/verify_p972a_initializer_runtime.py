@@ -17,6 +17,8 @@ ACCEPTED_COMMIT = "1afbc02aa4282a1575aef491700312cc1774dae7"
 ACCEPTED_RECORD_DIGEST = "446e37a1764f8863f973ad5443ccde3c68d4eecdc07242e3d7c1f64f82f8be61"
 CODEC = "src/pygrc/models/grc_v4_codec.py"
 CODEC_REFERENCE_FIX_SHA256 = "59b0d373f6ed682ef079d7e150ee3a108dc0b1d53a960a81d11109f87aaeab5f"
+EVENT_PACKAGE_CODEC = "src/pygrc/models/grc_v4_event_codec.py"
+EVENT_PACKAGE_CODEC_SHA256 = "6955698da860261a145a2b825ce217de010c814b579e076fabf324262a277f04"
 STATUS_API = p.SIDE + "tool/src/grcv4_explorer/phase9_verification.py"
 ACCEPTANCE_STATUS_SHA256 = "9ae0aca90df9b8deaa8fa2cbe1d039cce4c5192f95d57ca783bdb0ded196b7e5"
 ACCEPTANCE_REVIEW = p.PHASE + "tranche-7/P9-7.2a-InitializerRuntimeReview.md"
@@ -37,7 +39,7 @@ LEGACY = ["tests.models.test_grc_v4_migration." + name for name in (
 
 def bindings():
     names = {n for n in p.git(p.ROOT, "ls-files", "src", "tests", p.SIDE + "tool/src").decode().splitlines() if n.endswith('.py')}
-    names |= p.INITIALIZER_RUNTIME_PATHS | {SCRIPT, p.HERE + "build_p972a_initializer_release.py",
+    names |= p.INITIALIZER_RUNTIME_PATHS | {SCRIPT, EVENT_PACKAGE_CODEC, p.HERE + "build_p972a_initializer_release.py",
         "pyproject.toml", "uv.lock", "specs/grc-v4-a-initializer-release.json"}
     return {name: p.sha((p.ROOT / name).read_bytes()) for name in sorted(names)}
 
@@ -74,6 +76,11 @@ def execution_sources(value, sources):
               "initializer codec changed beyond the exact reference fix")
     p.require(sources.get(STATUS_API) == ACCEPTANCE_STATUS_SHA256,
               "initializer status changed beyond the accepted closure view")
+    # Explicitly separate this new, independently pinned wire decoder from
+    # the old execution. No old codec/producer/loaded source is exempted.
+    p.require(sources.get(EVENT_PACKAGE_CODEC) == EVENT_PACKAGE_CODEC_SHA256,
+              "event package decoder differs from the bounded additive source")
+    sources = {name: digest for name, digest in sources.items() if name != EVENT_PACKAGE_CODEC}
     from verify_p972a_initializer_authority import historical_blobs
     original = historical_blobs((CODEC, SCRIPT, STATUS_API), ACCEPTED_COMMIT)
     retained = {**sources, **{name: p.sha(data) for name, data in original.items()}}

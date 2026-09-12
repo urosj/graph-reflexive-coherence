@@ -1204,6 +1204,25 @@ closure. Genuine topology-history transport stays deferred, with isolated
 zero-resource vertex addition and explicit existing-edge lineage identified
 as the next bounded contract candidate, not silently admitted support.
 
+The subsequent [wire/package follow-through](./phase-9-grcv4/tranche-7/P9-7.2b-PackageBinding.md)
+completes representation request/receipt/archive shapes and jointly packages
+both contracts. The additive decoder checks installed assets, explicit release
+selection and graph-map declarations; it is not a numerical/lifecycle owner.
+Next instantiate the exact execution children and implement operation-specific
+dispatch/readmission/replay. No old release, initializer run or G2/G3 support
+is reclassified by contract packaging.
+
+The package audit's R1/R2 clarifications now bind exact coordinate-action zero
+delta (not equality of rounded charges) and a singleton representation primary
+with embedded charge/history evidence. Runtime tests must separately establish
+inverse scientific/reset recovery without ledger rollback, identity transport
+versus identity reconstruction on nontrivial histories, and preserving migration
+→ representation → evolution → lossy event → restore/reset. Include the
+charge-order witness, signed-zero controls and incompatible reference/backend/
+context/chart targets despite valid graph maps. Contract tests are not runtime
+acceptance. The user accepted the corrected contract package on 2026-09-12
+through “commit changes”; runtime implementation and aggregate closure remain open.
+
 The following records the historical implementation and acceptance sequence.
 The user authorized **P9-7.2a** after accepting 7.1 at `5d8dbe2`. Its
 [scoped review](./phase-9-grcv4/tranche-7/P9-7.2a-Review.md) binds 13 concrete

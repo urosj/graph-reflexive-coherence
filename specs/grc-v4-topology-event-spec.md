@@ -2,8 +2,9 @@
 
 Status: **contract extension accepted by the user on 2026-09-12; not a released
 or implemented event capability**. Acceptance covers the fallback binding and
-the separately scoped representation-transport operation contract. Its pending
-wire binding and both runtime workstreams remain explicit below. P9-7.2a is
+the separately scoped representation-transport operation contract. Its wire
+binding is now supplied by the [separate supplement](grc-v4-representation-transport-spec.md);
+both runtime workstreams remain open below. P9-7.2a is
 unchanged; aggregate P9-7.2b execution and closure remain open.
 
 ## Authority and scope
@@ -43,7 +44,7 @@ its effects cannot be attributed to topology alone.
 
 ## Pure representation transport: current contract scope
 
-**Included now as a separate operation contract; closed payload/release binding,
+**Separate operation contract with a completed [wire/package binding](grc-v4-representation-transport-spec.md);
 runtime implementation and executable covariance verification remain pending.**
 This is the declared coordinate action already required by paper §2.1.5 and
 the representation-covariance contract, not a new topology-changing law.
@@ -94,8 +95,8 @@ request, receipt, archive/replay and release dispatch without retroactively
 changing existing scientific-state IDs or treating a fallback receipt as proof
 of coordinate equivalence.
 
-P9-7.2b now tracks this operation separately from reconstruction. Before claiming
-support, complete that wire binding and test inverse/round-trip transport,
+P9-7.2b tracks this operation separately from reconstruction. Before claiming
+runtime support, integrate its wire binding and test inverse/round-trip transport,
 signed edge permutations (including loops/parallel edges), distinct current/
 reset histories, no initializer/loss, target covariance/admission, rollback and
 snapshot/restore/reset. The existing fallback schema/vectors do not cover this
@@ -316,7 +317,10 @@ admits this new receipt/layout. A separately identified release
 must bind this spec/schema/vectors, their source crosswalk, inherited schema
 bytes and unchanged initializer static-policy digest. Codec dispatch must
 explicitly admit the release/layout/receipt combination before execution.
-Unknown hash-shaped releases still reject. Do not modify old manifests,
+The [joint contract package](grc-v4-event-contract-release.json) now supplies
+that additive wire admission alongside representation transport; it does not
+enable model lifecycle dispatch. Unknown hash-shaped releases still reject.
+Do not modify old manifests,
 packaged assets, accepted run hashes, or the old layout's null-pair rule.
 
 [Wire vectors](grc-v4-topology-event-vectors.json) and their focused checker

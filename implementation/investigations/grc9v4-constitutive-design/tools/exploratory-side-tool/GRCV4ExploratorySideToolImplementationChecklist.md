@@ -1567,11 +1567,23 @@ their historical stage, not the later aggregate acceptance recorded at the end.
       changing accepted migration/source/release bytes or runtime permissions.
 - [x] User accepted the corrected fallback binding and separate representation
       operation contract/scope on 2026-09-12; runtime and aggregate 7.2b stay open.
-- [ ] Package the event binding and implement its exact event children.
+- [x] Package the joint event/representation wire binding with explicit
+      installed-asset and unknown-release checks, without model dispatch.
+- [ ] Implement the exact event/representation execution children.
 - [ ] Surface verified event execution in existing API/notebook/browser status;
       do not promote contract examples or historical 7.2a runs into that evidence.
 - [x] Include pure representation transport as a separate current contract;
       leave genuine topology-history maps deferred.
-- [ ] Bind and verify representation transport separately before advertising
-      support; fallback checks cannot discharge its wire, covariance or replay
-      obligations. No new runtime/API capability is granted by this scope update.
+- [x] Bind representation wire/receipt/archive/release identities separately.
+- [x] Close package-audit R1/R2 declarations: exact-action zero charge delta,
+      embedded current/reset numerical evidence and one successful primary
+      with explicit commit/parent links; no runtime credit from these checks.
+- [x] User accepted the corrected contract package on 2026-09-12 through
+      “commit changes”; no runtime or aggregate P9-7.2b acceptance is implied.
+- [ ] Verify runtime representation transport before advertising support;
+      fallback checks cannot discharge covariance or replay obligations.
+      No new runtime/API capability is granted by contract packaging.
+      Carry inverse scientific recovery versus ledger retention, identity
+      transport versus reconstruction, mixed migration/representation/evolution/
+      event/restore/reset, charge-order/signed-zero and incompatible-target
+      pressure into execution; see the package record for exact boundaries.

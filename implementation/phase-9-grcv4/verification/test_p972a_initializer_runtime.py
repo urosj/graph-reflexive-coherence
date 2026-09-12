@@ -66,10 +66,12 @@ class RuntimeEvidenceTests(unittest.TestCase):
         sources = runtime.bindings()
         value = runtime.p.read(runtime.p.ROOT / runtime.RECORD)
         self.assertEqual(runtime.execution_sources(value, sources), value['source_bindings'])
-        for name in (runtime.CODEC, runtime.STATUS_API, 'src/pygrc/models/grc_v4_initializer.py'):
+        for name in (runtime.CODEC, runtime.STATUS_API, runtime.EVENT_PACKAGE_CODEC, 'src/pygrc/models/grc_v4_initializer.py'):
             bad = {**sources, name: '0' * 64}
             with self.subTest(path=name), self.assertRaises(ValueError):
                 runtime.execution_sources(value, bad)
+        with self.assertRaises(ValueError):
+            runtime.execution_sources(value, {k: v for k, v in sources.items() if k != runtime.EVENT_PACKAGE_CODEC})
         rewritten = deepcopy(value)
         rewritten['created_utc'] = '2000-01-01T00:00:00+00:00'
         rewritten['record_digest'] = runtime.p.digest_record(rewritten)

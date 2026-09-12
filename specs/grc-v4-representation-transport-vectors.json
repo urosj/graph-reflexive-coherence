@@ -1,0 +1,359 @@
+{
+  "schema_version": "grcv4-representation-wire-vectors-v1",
+  "scope": "synthetic_wire_and_correspondence_declaration_not_transport_execution",
+  "source_graph": {
+    "schema_version": "grcv4-serialized-graph-v1",
+    "live_node_ids": [
+      "u",
+      "v",
+      "w"
+    ],
+    "oriented_edges": [
+      {
+        "edge_id": "e",
+        "tail_node_id": "u",
+        "head_node_id": "v"
+      },
+      {
+        "edge_id": "parallel",
+        "tail_node_id": "u",
+        "head_node_id": "v"
+      },
+      {
+        "edge_id": "loop",
+        "tail_node_id": "w",
+        "head_node_id": "w"
+      }
+    ]
+  },
+  "target_graph": {
+    "schema_version": "grcv4-serialized-graph-v1",
+    "live_node_ids": [
+      "z",
+      "x",
+      "y"
+    ],
+    "oriented_edges": [
+      {
+        "edge_id": "loop2",
+        "tail_node_id": "x",
+        "head_node_id": "x"
+      },
+      {
+        "edge_id": "reverse",
+        "tail_node_id": "z",
+        "head_node_id": "y"
+      },
+      {
+        "edge_id": "e2",
+        "tail_node_id": "y",
+        "head_node_id": "z"
+      }
+    ]
+  },
+  "correspondence_record": {
+    "correspondence_id": "grcv4-coordinate-map-sha256:4151bafe7c4d17b8a34077f1d3e5b013f5edbb525a14de03806226e2f3a6cc90",
+    "payload": {
+      "schema_version": "grcv4-coordinate-map-v1",
+      "policy_id": "grcv4-pure-representation-transport-v1",
+      "source_graph_digest": "grc-graph-sha256:bd91682051489d6f2536c238cd3d938bd242458a6f64ce57534cf00176e6cb66",
+      "target_graph_digest": "grc-graph-sha256:fc74a143a4cef79426ad6b165d20dd385f100790fc112b8dec24ebf50f282fc9",
+      "vertex_map": [
+        {
+          "source_vertex_id": "u",
+          "target_vertex_id": "y"
+        },
+        {
+          "source_vertex_id": "v",
+          "target_vertex_id": "z"
+        },
+        {
+          "source_vertex_id": "w",
+          "target_vertex_id": "x"
+        }
+      ],
+      "edge_map": [
+        {
+          "source_edge_id": "e",
+          "target_edge_id": "e2",
+          "orientation": 1
+        },
+        {
+          "source_edge_id": "parallel",
+          "target_edge_id": "reverse",
+          "orientation": -1
+        },
+        {
+          "source_edge_id": "loop",
+          "target_edge_id": "loop2",
+          "orientation": -1
+        }
+      ]
+    }
+  },
+  "request": {
+    "schema_version": "grcv4-representation-transport-request-v1",
+    "operation_id": "synthetic-coordinate-wire",
+    "source_state_digest": "grcv4-state-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+    "source_graph_digest": "grc-graph-sha256:bd91682051489d6f2536c238cd3d938bd242458a6f64ce57534cf00176e6cb66",
+    "target_graph": {
+      "schema_version": "grcv4-serialized-graph-v1",
+      "live_node_ids": [
+        "z",
+        "x",
+        "y"
+      ],
+      "oriented_edges": [
+        {
+          "edge_id": "loop2",
+          "tail_node_id": "x",
+          "head_node_id": "x"
+        },
+        {
+          "edge_id": "reverse",
+          "tail_node_id": "z",
+          "head_node_id": "y"
+        },
+        {
+          "edge_id": "e2",
+          "tail_node_id": "y",
+          "head_node_id": "z"
+        }
+      ]
+    },
+    "target_profile_id": "grcv4-profile-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+    "correspondence": {
+      "correspondence_id": "grcv4-coordinate-map-sha256:4151bafe7c4d17b8a34077f1d3e5b013f5edbb525a14de03806226e2f3a6cc90",
+      "payload": {
+        "schema_version": "grcv4-coordinate-map-v1",
+        "policy_id": "grcv4-pure-representation-transport-v1",
+        "source_graph_digest": "grc-graph-sha256:bd91682051489d6f2536c238cd3d938bd242458a6f64ce57534cf00176e6cb66",
+        "target_graph_digest": "grc-graph-sha256:fc74a143a4cef79426ad6b165d20dd385f100790fc112b8dec24ebf50f282fc9",
+        "vertex_map": [
+          {
+            "source_vertex_id": "u",
+            "target_vertex_id": "y"
+          },
+          {
+            "source_vertex_id": "v",
+            "target_vertex_id": "z"
+          },
+          {
+            "source_vertex_id": "w",
+            "target_vertex_id": "x"
+          }
+        ],
+        "edge_map": [
+          {
+            "source_edge_id": "e",
+            "target_edge_id": "e2",
+            "orientation": 1
+          },
+          {
+            "source_edge_id": "parallel",
+            "target_edge_id": "reverse",
+            "orientation": -1
+          },
+          {
+            "source_edge_id": "loop",
+            "target_edge_id": "loop2",
+            "orientation": -1
+          }
+        ]
+      }
+    },
+    "metadata": {}
+  },
+  "operation_identity_payload": {
+    "schema_version": "grcv4-representation-change-identity-v1",
+    "policy_id": "grcv4-pure-representation-transport-v1",
+    "source_state_digest": "grcv4-state-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+    "source_graph_digest": "grc-graph-sha256:bd91682051489d6f2536c238cd3d938bd242458a6f64ce57534cf00176e6cb66",
+    "target_graph_digest": "grc-graph-sha256:fc74a143a4cef79426ad6b165d20dd385f100790fc112b8dec24ebf50f282fc9",
+    "target_profile_id": "grcv4-profile-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+    "correspondence_id": "grcv4-coordinate-map-sha256:4151bafe7c4d17b8a34077f1d3e5b013f5edbb525a14de03806226e2f3a6cc90"
+  },
+  "receipt_payload": {
+    "schema_version": "grcv4-representation-transport-receipt-v1",
+    "core": {
+      "operation_id": "synthetic-coordinate-wire",
+      "source_state_digest": "grcv4-state-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+      "target_state_digest": "grcv4-state-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+      "source_graph_digest": "grc-graph-sha256:bd91682051489d6f2536c238cd3d938bd242458a6f64ce57534cf00176e6cb66",
+      "target_graph_digest": "grc-graph-sha256:fc74a143a4cef79426ad6b165d20dd385f100790fc112b8dec24ebf50f282fc9",
+      "source_model_identity": "grcv4-profile-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+      "target_model_identity": "grcv4-profile-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+      "source_authoritative_digest": "grcv4-authoritative-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+      "target_authoritative_digest": "grcv4-authoritative-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+      "source_reset_digest": "grcv4-reset-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+      "target_reset_digest": "grcv4-reset-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+      "actual_charge_delta": 0,
+      "information_losses": [],
+      "disposition": "committed",
+      "parent_receipt_ids": []
+    },
+    "representation_id": "grcv4-representation-change-sha256:2af673441bf6c0955581d75b1fd193876d0760b3faeac5d75a2c90eef24e28e2",
+    "correspondence_id": "grcv4-coordinate-map-sha256:4151bafe7c4d17b8a34077f1d3e5b013f5edbb525a14de03806226e2f3a6cc90",
+    "history": {
+      "schema_version": "grcv4-history-bundle-receipt-v1",
+      "candidate": {
+        "subject": "candidate",
+        "disposition": "exact_transport",
+        "information_loss": "none",
+        "source_history_digest": "grcv4-history-content-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "target_history_digest": "grcv4-history-content-sha256:0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "carrier": {
+        "subject": "carrier",
+        "disposition": "exact_transport",
+        "information_loss": "none",
+        "source_history_digest": "grcv4-history-content-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "target_history_digest": "grcv4-history-content-sha256:0000000000000000000000000000000000000000000000000000000000000000"
+      }
+    },
+    "charge": {
+      "schema_version": "grcv4-representation-charge-evidence-v1",
+      "delta_semantics": "exact_coordinate_action",
+      "current": {
+        "source": {
+          "target_charge": 1,
+          "admitted_charge": 1,
+          "residual": 0
+        },
+        "target": {
+          "target_charge": 1,
+          "admitted_charge": 1.0000000000000002,
+          "residual": 2.220446049250313e-16
+        }
+      },
+      "reset": {
+        "source": {
+          "target_charge": 1,
+          "admitted_charge": 1,
+          "residual": 0
+        },
+        "target": {
+          "target_charge": 1,
+          "admitted_charge": 1,
+          "residual": 0
+        }
+      }
+    }
+  },
+  "operation_group": {
+    "commit_record": {
+      "commit_id": "grc-commit-sha256:50e560bab30d881b324973a8eb54a8ee85f82352c944e26e0deab07289c709c0",
+      "payload": {
+        "schema_version": "grcv4-commit-payload-v1",
+        "operation_id": "synthetic-coordinate-wire",
+        "source_state_digest": "grcv4-state-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "target_state_digest": "grcv4-state-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "emitted_receipt_ids": [
+          "grc-receipt-sha256:f9afefa4a7e924438f264a3080227bf9986876c18fc158cbd69d224eef9ca369"
+        ],
+        "target_step_index": 0,
+        "target_time": 0
+      }
+    },
+    "receipts": [
+      {
+        "schema_version": "grcv4-successful-receipt-envelope-v1",
+        "receipt_id": "grc-receipt-sha256:f9afefa4a7e924438f264a3080227bf9986876c18fc158cbd69d224eef9ca369",
+        "commit_id": "grc-commit-sha256:50e560bab30d881b324973a8eb54a8ee85f82352c944e26e0deab07289c709c0",
+        "identity_payload": {
+          "schema_version": "grcv4-representation-transport-receipt-v1",
+          "core": {
+            "operation_id": "synthetic-coordinate-wire",
+            "source_state_digest": "grcv4-state-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+            "target_state_digest": "grcv4-state-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+            "source_graph_digest": "grc-graph-sha256:bd91682051489d6f2536c238cd3d938bd242458a6f64ce57534cf00176e6cb66",
+            "target_graph_digest": "grc-graph-sha256:fc74a143a4cef79426ad6b165d20dd385f100790fc112b8dec24ebf50f282fc9",
+            "source_model_identity": "grcv4-profile-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+            "target_model_identity": "grcv4-profile-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+            "source_authoritative_digest": "grcv4-authoritative-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+            "target_authoritative_digest": "grcv4-authoritative-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+            "source_reset_digest": "grcv4-reset-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+            "target_reset_digest": "grcv4-reset-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+            "actual_charge_delta": 0,
+            "information_losses": [],
+            "disposition": "committed",
+            "parent_receipt_ids": []
+          },
+          "representation_id": "grcv4-representation-change-sha256:2af673441bf6c0955581d75b1fd193876d0760b3faeac5d75a2c90eef24e28e2",
+          "correspondence_id": "grcv4-coordinate-map-sha256:4151bafe7c4d17b8a34077f1d3e5b013f5edbb525a14de03806226e2f3a6cc90",
+          "history": {
+            "schema_version": "grcv4-history-bundle-receipt-v1",
+            "candidate": {
+              "subject": "candidate",
+              "disposition": "exact_transport",
+              "information_loss": "none",
+              "source_history_digest": "grcv4-history-content-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+              "target_history_digest": "grcv4-history-content-sha256:0000000000000000000000000000000000000000000000000000000000000000"
+            },
+            "carrier": {
+              "subject": "carrier",
+              "disposition": "exact_transport",
+              "information_loss": "none",
+              "source_history_digest": "grcv4-history-content-sha256:0000000000000000000000000000000000000000000000000000000000000000",
+              "target_history_digest": "grcv4-history-content-sha256:0000000000000000000000000000000000000000000000000000000000000000"
+            }
+          },
+          "charge": {
+            "schema_version": "grcv4-representation-charge-evidence-v1",
+            "delta_semantics": "exact_coordinate_action",
+            "current": {
+              "source": {
+                "target_charge": 1,
+                "admitted_charge": 1,
+                "residual": 0
+              },
+              "target": {
+                "target_charge": 1,
+                "admitted_charge": 1.0000000000000002,
+                "residual": 2.220446049250313e-16
+              }
+            },
+            "reset": {
+              "source": {
+                "target_charge": 1,
+                "admitted_charge": 1,
+                "residual": 0
+              },
+              "target": {
+                "target_charge": 1,
+                "admitted_charge": 1,
+                "residual": 0
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "canonical_vectors": [
+    {
+      "pointer": "correspondence_record/payload",
+      "canonical_jcs_utf8": "{\"edge_map\":[{\"orientation\":1,\"source_edge_id\":\"e\",\"target_edge_id\":\"e2\"},{\"orientation\":-1,\"source_edge_id\":\"parallel\",\"target_edge_id\":\"reverse\"},{\"orientation\":-1,\"source_edge_id\":\"loop\",\"target_edge_id\":\"loop2\"}],\"policy_id\":\"grcv4-pure-representation-transport-v1\",\"schema_version\":\"grcv4-coordinate-map-v1\",\"source_graph_digest\":\"grc-graph-sha256:bd91682051489d6f2536c238cd3d938bd242458a6f64ce57534cf00176e6cb66\",\"target_graph_digest\":\"grc-graph-sha256:fc74a143a4cef79426ad6b165d20dd385f100790fc112b8dec24ebf50f282fc9\",\"vertex_map\":[{\"source_vertex_id\":\"u\",\"target_vertex_id\":\"y\"},{\"source_vertex_id\":\"v\",\"target_vertex_id\":\"z\"},{\"source_vertex_id\":\"w\",\"target_vertex_id\":\"x\"}]}",
+      "identity_prefix": "grcv4-coordinate-map-sha256",
+      "expected_identifier": "grcv4-coordinate-map-sha256:4151bafe7c4d17b8a34077f1d3e5b013f5edbb525a14de03806226e2f3a6cc90"
+    },
+    {
+      "pointer": "operation_identity_payload",
+      "canonical_jcs_utf8": "{\"correspondence_id\":\"grcv4-coordinate-map-sha256:4151bafe7c4d17b8a34077f1d3e5b013f5edbb525a14de03806226e2f3a6cc90\",\"policy_id\":\"grcv4-pure-representation-transport-v1\",\"schema_version\":\"grcv4-representation-change-identity-v1\",\"source_graph_digest\":\"grc-graph-sha256:bd91682051489d6f2536c238cd3d938bd242458a6f64ce57534cf00176e6cb66\",\"source_state_digest\":\"grcv4-state-sha256:0000000000000000000000000000000000000000000000000000000000000000\",\"target_graph_digest\":\"grc-graph-sha256:fc74a143a4cef79426ad6b165d20dd385f100790fc112b8dec24ebf50f282fc9\",\"target_profile_id\":\"grcv4-profile-sha256:0000000000000000000000000000000000000000000000000000000000000000\"}",
+      "identity_prefix": "grcv4-representation-change-sha256",
+      "expected_identifier": "grcv4-representation-change-sha256:2af673441bf6c0955581d75b1fd193876d0760b3faeac5d75a2c90eef24e28e2"
+    },
+    {
+      "pointer": "receipt_payload",
+      "canonical_jcs_utf8": "{\"charge\":{\"current\":{\"source\":{\"admitted_charge\":1,\"residual\":0,\"target_charge\":1},\"target\":{\"admitted_charge\":1.0000000000000002,\"residual\":2.220446049250313e-16,\"target_charge\":1}},\"delta_semantics\":\"exact_coordinate_action\",\"reset\":{\"source\":{\"admitted_charge\":1,\"residual\":0,\"target_charge\":1},\"target\":{\"admitted_charge\":1,\"residual\":0,\"target_charge\":1}},\"schema_version\":\"grcv4-representation-charge-evidence-v1\"},\"core\":{\"actual_charge_delta\":0,\"disposition\":\"committed\",\"information_losses\":[],\"operation_id\":\"synthetic-coordinate-wire\",\"parent_receipt_ids\":[],\"source_authoritative_digest\":\"grcv4-authoritative-sha256:0000000000000000000000000000000000000000000000000000000000000000\",\"source_graph_digest\":\"grc-graph-sha256:bd91682051489d6f2536c238cd3d938bd242458a6f64ce57534cf00176e6cb66\",\"source_model_identity\":\"grcv4-profile-sha256:0000000000000000000000000000000000000000000000000000000000000000\",\"source_reset_digest\":\"grcv4-reset-sha256:0000000000000000000000000000000000000000000000000000000000000000\",\"source_state_digest\":\"grcv4-state-sha256:0000000000000000000000000000000000000000000000000000000000000000\",\"target_authoritative_digest\":\"grcv4-authoritative-sha256:0000000000000000000000000000000000000000000000000000000000000000\",\"target_graph_digest\":\"grc-graph-sha256:fc74a143a4cef79426ad6b165d20dd385f100790fc112b8dec24ebf50f282fc9\",\"target_model_identity\":\"grcv4-profile-sha256:0000000000000000000000000000000000000000000000000000000000000000\",\"target_reset_digest\":\"grcv4-reset-sha256:0000000000000000000000000000000000000000000000000000000000000000\",\"target_state_digest\":\"grcv4-state-sha256:0000000000000000000000000000000000000000000000000000000000000000\"},\"correspondence_id\":\"grcv4-coordinate-map-sha256:4151bafe7c4d17b8a34077f1d3e5b013f5edbb525a14de03806226e2f3a6cc90\",\"history\":{\"candidate\":{\"disposition\":\"exact_transport\",\"information_loss\":\"none\",\"source_history_digest\":\"grcv4-history-content-sha256:0000000000000000000000000000000000000000000000000000000000000000\",\"subject\":\"candidate\",\"target_history_digest\":\"grcv4-history-content-sha256:0000000000000000000000000000000000000000000000000000000000000000\"},\"carrier\":{\"disposition\":\"exact_transport\",\"information_loss\":\"none\",\"source_history_digest\":\"grcv4-history-content-sha256:0000000000000000000000000000000000000000000000000000000000000000\",\"subject\":\"carrier\",\"target_history_digest\":\"grcv4-history-content-sha256:0000000000000000000000000000000000000000000000000000000000000000\"},\"schema_version\":\"grcv4-history-bundle-receipt-v1\"},\"representation_id\":\"grcv4-representation-change-sha256:2af673441bf6c0955581d75b1fd193876d0760b3faeac5d75a2c90eef24e28e2\",\"schema_version\":\"grcv4-representation-transport-receipt-v1\"}",
+      "identity_prefix": "grc-receipt-sha256",
+      "expected_identifier": "grc-receipt-sha256:f9afefa4a7e924438f264a3080227bf9986876c18fc158cbd69d224eef9ca369"
+    },
+    {
+      "pointer": "operation_group/commit_record/payload",
+      "canonical_jcs_utf8": "{\"emitted_receipt_ids\":[\"grc-receipt-sha256:f9afefa4a7e924438f264a3080227bf9986876c18fc158cbd69d224eef9ca369\"],\"operation_id\":\"synthetic-coordinate-wire\",\"schema_version\":\"grcv4-commit-payload-v1\",\"source_state_digest\":\"grcv4-state-sha256:0000000000000000000000000000000000000000000000000000000000000000\",\"target_state_digest\":\"grcv4-state-sha256:0000000000000000000000000000000000000000000000000000000000000000\",\"target_step_index\":0,\"target_time\":0}",
+      "identity_prefix": "grc-commit-sha256",
+      "expected_identifier": "grc-commit-sha256:50e560bab30d881b324973a8eb54a8ee85f82352c944e26e0deab07289c709c0"
+    }
+  ]
+}
