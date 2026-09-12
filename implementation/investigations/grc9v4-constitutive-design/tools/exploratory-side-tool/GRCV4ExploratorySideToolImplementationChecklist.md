@@ -1627,3 +1627,15 @@ their historical stage, not the later aggregate acceptance recorded at the end.
 - [x] Review and accept P9-7.5. User accepted on 2026-09-12 after the passing
       independent audit/rerun; expose acceptance separately from original run
       flags. P9-7.6 and G2/G3 remain separate.
+
+### P9-7.6 receipt-lineage and duplicate-ownership verification
+
+- [x] Bind the accepted parent rule through typed contract-provenance queries;
+      distinguish symbolic self/cycle projections from content-hashed execution.
+- [x] Retain focused native lineage/ownership evidence and expose
+      `lineage_ownership_verification` through existing API/notebook/browser status.
+- [x] Check surface agreement and reject fabricated acceptance/widened scope.
+- [x] Independently review and accept P9-7.6. User accepted on 2026-09-12 after
+      the passing independent audit/rerun; project acceptance separately from
+      original execution flags. Earlier accepted records and runtime permissions
+      remain unchanged, with no new G2/G3 support.

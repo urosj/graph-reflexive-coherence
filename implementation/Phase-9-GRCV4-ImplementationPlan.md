@@ -1273,6 +1273,19 @@ on 2026-09-12 after the passing independent audit and reported native rerun.
 Acceptance is projected over the unchanged execution; no parent-DAG or arbitrary
 profile/graph conformance is inferred.
 
+P9-7.6 adds [receipt-lineage and duplicate-ownership verification](./phase-9-grcv4/tranche-7/P9-7.6-Review.md)
+under the already accepted P9-4.9.2 uniform previous-successful-primary rule.
+Exercise mixed four-receipt and singleton representation groups, coherently
+rehashed invalid parents, ledger partition rejection, prospective crossing
+publication rejection, unreceipted assignment and independent mutable forks.
+Keep symbolic self/cycle pressure distinct from real content-hashed executions;
+shared fork content IDs do not imply shared mutable ownership or authenticated
+uninterrupted history. The user accepted and closed this bounded scope on
+2026-09-12 following the passing independent audit and reported native rerun.
+Project acceptance over the unchanged source/authority-bound execution through
+existing status surfaces. P9-7.7/G2 and P9-7.8/G3 remain separate; no runtime,
+scientific authority or accepted execution evidence is rewritten.
+
 The following records the historical implementation and acceptance sequence.
 The user authorized **P9-7.2a** after accepting 7.1 at `5d8dbe2`. Its
 [scoped review](./phase-9-grcv4/tranche-7/P9-7.2a-Review.md) binds 13 concrete

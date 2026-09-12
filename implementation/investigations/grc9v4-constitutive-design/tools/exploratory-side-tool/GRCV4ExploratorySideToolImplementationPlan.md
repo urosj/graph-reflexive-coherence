@@ -2048,3 +2048,13 @@ The user accepted and closed P9-7.5 on 2026-09-12 following the passing independ
 audit/rerun. The view projects that decision separately from unchanged execution
 flags, with no runtime permission or G2/G3 promotion. It checks identities without numerical replay;
 7.6's parent-DAG and deep-copy ownership work is not discharged by these cases.
+
+P9-7.6 adds `lineage_ownership_verification` to the existing API/notebook/browser
+path. Its separate capture binds the accepted parent-chain, admission and ceiling
+contracts through typed forensic queries. Report native mixed-arity lineage,
+coherently rehashed parent/partition rejection and mutable fork independence
+separately from symbolic cycle projections. Retained-evidence reads must not run
+numerical tests, infer user acceptance or add G2/G3 support. The user accepted
+and closed P9-7.6 on 2026-09-12 following the passing independent audit/rerun;
+project that decision separately from unchanged original execution flags.
+The accepted 7.2–7.5 views and runtime permissions remain unchanged.

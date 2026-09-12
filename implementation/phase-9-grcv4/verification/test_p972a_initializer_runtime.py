@@ -146,6 +146,11 @@ class RuntimeEvidenceTests(unittest.TestCase):
         self.assertEqual(status['failure_sequence_verification'], failure_check())
         self.assertTrue(status['failure_sequence_verification']['user_accepted'])
         self.assertTrue(status['failure_sequence_verification']['aggregate_closed'])
+        from verify_p976_acceptance import check as lineage_check
+        self.assertEqual(status['lineage_ownership_verification'], lineage_check())
+        self.assertEqual(status['lineage_ownership_verification']['coherent_parent_rejections'], 10)
+        self.assertTrue(status['lineage_ownership_verification']['user_accepted'])
+        self.assertTrue(status['lineage_ownership_verification']['aggregate_closed'])
         self.assertEqual(status['event_runtime']['original_record_digest'],
                          'c3fb9823ae040408fd86963754ce6b3f7acbc897c7a5a88504582193d0cc4391')
         self.assertIn('P9-7.2a is user-accepted and closed', status['next_gate'])
@@ -159,6 +164,7 @@ class RuntimeEvidenceTests(unittest.TestCase):
         self.assertEqual(namespace['phase9_status']['history_policy_verification'], status['history_policy_verification'])
         self.assertEqual(namespace['phase9_status']['target_reference_verification'], status['target_reference_verification'])
         self.assertEqual(namespace['phase9_status']['failure_sequence_verification'], status['failure_sequence_verification'])
+        self.assertEqual(namespace['phase9_status']['lineage_ownership_verification'], status['lineage_ownership_verification'])
         spec = importlib.util.spec_from_file_location('p972a_runtime_http', tool / 'scripts/serve_phase9.py')
         server = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(server)
@@ -176,6 +182,7 @@ class RuntimeEvidenceTests(unittest.TestCase):
         self.assertEqual(json.loads(handler.wfile.getvalue())['history_policy_verification'], status['history_policy_verification'])
         self.assertEqual(json.loads(handler.wfile.getvalue())['target_reference_verification'], status['target_reference_verification'])
         self.assertEqual(json.loads(handler.wfile.getvalue())['failure_sequence_verification'], status['failure_sequence_verification'])
+        self.assertEqual(json.loads(handler.wfile.getvalue())['lineage_ownership_verification'], status['lineage_ownership_verification'])
         from grcv4_explorer.tooling import managed_node, tool_environment
         code = """
 import assert from 'node:assert/strict';
@@ -208,20 +215,26 @@ for (const edit of [v=>v.initializer_runtime.aggregate_closed=false,
  v=>v.failure_sequence_verification.new_G2_support=['C_PC'],
  v=>v.failure_sequence_verification.rejection_cases=0,
  v=>v.failure_sequence_verification.reset_contexts.pop(),
- v=>v.failure_sequence_verification.record_digest='0'.repeat(64)]) {
+ v=>v.failure_sequence_verification.record_digest='0'.repeat(64),
+ v=>v.lineage_ownership_verification.user_accepted=false,
+ v=>v.lineage_ownership_verification.acceptance_sha256='0'.repeat(64),
+ v=>v.lineage_ownership_verification.new_G2_support=['A_PC'],
+ v=>v.lineage_ownership_verification.coherent_parent_rejections=0,
+ v=>v.lineage_ownership_verification.symbolic_rejections=0,
+ v=>v.lineage_ownership_verification.record_digest='0'.repeat(64)]) {
  const bad=structuredClone(value); edit(bad); delete bad.status_digest;
  bad.status_digest=createHash('sha256').update(canonical(bad)).digest('hex');
  await assert.rejects(verifiedStatus(bad));
 }
 const held={...value, current_boundary:'failed_closed', runtime_authorized:false};
 await assert.rejects(verifiedStatus(held));
-console.log('INITIALIZER_EVENT_RUNTIME_BROWSER_PASS controls=26');
+console.log('INITIALIZER_EVENT_RUNTIME_BROWSER_PASS controls=32');
 """
         browser = subprocess.run([str(managed_node()), '--input-type=module', '-e', code],
                                  cwd=tool / 'phase9-web', input=json.dumps(status), capture_output=True,
                                  text=True, env=tool_environment(), timeout=60)
         self.assertEqual(browser.returncode, 0, browser.stderr)
-        self.assertIn('INITIALIZER_EVENT_RUNTIME_BROWSER_PASS controls=26', browser.stdout)
+        self.assertIn('INITIALIZER_EVENT_RUNTIME_BROWSER_PASS controls=32', browser.stdout)
 
 
 if __name__ == '__main__':

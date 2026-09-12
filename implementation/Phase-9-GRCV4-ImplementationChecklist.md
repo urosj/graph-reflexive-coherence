@@ -1280,7 +1280,7 @@ may reach G2 without waiting for all Tranche 6 realizations.
   - [x] Independently review and accept P9-7.5. User accepted on 2026-09-12
     after the passing audit and independently reported rerun. Parent-DAG conformance and
     deep duplicate ownership remain P9-7.6; no new G2/G3 support.
-- [ ] P9-7.6: Verify receipt lineage ownership and deep duplicate independence.
+- [x] P9-7.6: Verify receipt lineage ownership and deep duplicate independence.
   Resolve P9-2.4's open parent-reference scope/order question from accepted
   authority before claiming lineage conformance: historical versus intra-commit
   parents, missing/forward/self/cyclic references and duplicate handling.
@@ -1290,6 +1290,17 @@ may reach G2 without waiting for all Tranche 6 realizations.
   predecessor rule; its review retains the bounded execution evidence. Broader
   profile completion and public-facade/G2 acceptance remain scoped to the
   P9-4.8B singleton; other profiles remain pending.
+  - [x] Apply accepted P9-4.9.2 parent authority to a mixed generic sequence,
+    including singleton representation groups and lawful unreceipted assignment.
+  - [x] Add [bounded lineage/ownership pressure](./phase-9-grcv4/tranche-7/P9-7.6-Review.md):
+    coherently rehashed bad parents, partition rejection, crossing-publication
+    rollback, representation-root history and independent mutable duplicate forks.
+    Keep symbolic self/cycle projections distinct from content-hashed execution.
+  - [x] Retain the execution and verify existing API/notebook/browser exposure
+    with pending-review flags and no change to runtime permissions or G2/G3.
+  - [x] Independently review and accept P9-7.6. User accepted on 2026-09-12
+    following the passing audit and reported independent native rerun.
+    P9-7.7/G2 and P9-7.8/G3 remain separate; original execution flags are unchanged.
 - [ ] P9-7.7: Review the full applicable fixture product and record `P9-G2[p]`
   separately for each generic profile; link the original P9-4.8 C_OS review and
   its P9-4.8B successor without duplicate execution credit.
