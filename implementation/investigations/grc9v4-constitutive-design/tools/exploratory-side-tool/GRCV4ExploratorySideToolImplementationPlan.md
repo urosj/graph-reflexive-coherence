@@ -2058,3 +2058,30 @@ numerical tests, infer user acceptance or add G2/G3 support. The user accepted
 and closed P9-7.6 on 2026-09-12 following the passing independent audit/rerun;
 project that decision separately from unchanged original execution flags.
 The accepted 7.2–7.5 views and runtime permissions remain unchanged.
+
+P9-7.7 adds `profile_conformance_review` on the same status path. Distinguish a
+truthful coverage HOLD from a failed source/implementation boundary: ten exact
+nominations, 305 required cells, one existing accepted C_OS alias and nine held
+new scopes. Expose the retained review and its count/identity boundaries without
+numeric reruns or public-support expansion. The bounded review checker preserves
+accepted execution bytes, typed contract traces and endpoint distinctions; it
+does not create a new general-purpose G2 acceptance engine. The next substantive
+work is exact-product/ordered-endpoint reconciliation for held children, not an
+automatic G3 transition.
+
+The A_OS local continuation exposes `a_os_local_product` separately from the
+unchanged initial profile review: 21 verified local cells, seven remaining
+crossing cells, pending review and no G2/G3 promotion. Check exact nomination
+and control relationships, observed result fields and receipt deltas using the
+retained record; surface reads do not run numerical tests. The older records
+retain their original identities and coverage-time statuses.
+
+The A_OS crossing continuation adds `a_os_crossings` alongside that historical
+local view: seven reconciled crossing obligations, five retained aliases and
+six new execution cases. Keep exact positive and negative endpoints distinct
+from separate PC↔CI+PC evidence. Never convert this to all-pairs execution or
+G2 acceptance. API/notebook/browser consume the same retained check; source
+drift fails closed without numerical reruns or replacing earlier records.
+The 2026-09-13 user decision accepts bounded A_OS local/crossing reconciliation.
+Project it over the unchanged capture via the existing crossing status, while
+keeping the historical local view and G2/G3/all-pairs/aggregate flags unchanged.

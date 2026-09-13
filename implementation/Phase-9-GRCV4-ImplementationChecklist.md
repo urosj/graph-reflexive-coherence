@@ -66,15 +66,15 @@ coverage, and evidence; a family label alone does not certify all instances.
 | Generic profile gate | State | Acceptance route |
 | --- | --- | --- |
 | `P9-G2[C_OS]` | Accepted, exact singleton | [explicit G2 acceptance](./phase-9-grcv4/tranche-4/P9-4.8B-G2Acceptance.json) closes Tranche 4 and aliases P9-7.7-C_OS. Other profiles and G3 remain closed. |
-| `P9-G2[A_OS]` | Pending | Tranche 5 plus A_OS lifecycle and P9-7.7 review. |
-| `P9-G2[C_CI]` | Pending | P9-6.1a plus profile lifecycle and P9-7.7 review. |
-| `P9-G2[A_CI]` | Pending | P9-6.1b plus profile lifecycle and P9-7.7 review. |
-| `P9-G2[C_PC]` | Pending | P9-6.2a plus profile lifecycle and P9-7.7 review. |
-| `P9-G2[A_PC]` | Pending | P9-6.2b plus profile lifecycle and P9-7.7 review. |
-| `P9-G2[C_CI_PC]` | Pending | P9-6.3a plus profile lifecycle and P9-7.7 review. |
-| `P9-G2[A_CI_PC]` | Pending | P9-6.3b plus profile lifecycle and P9-7.7 review. |
-| `P9-G2[C_RG2b]` | Pending | P9-6.4a foundation, P9-6.4c generalization and P9-6.4d audit for C, plus profile lifecycle and P9-7.7 review. |
-| `P9-G2[A_RG2b]` | Pending | P9-6.4b foundation, P9-6.4c generalization and P9-6.4d audit for A, plus profile lifecycle and P9-7.7 review. |
+| `P9-G2[A_OS]` | HOLD, bounded reconciliation accepted | 21 local cells plus seven crossing evidence/dispositions accepted on 2026-09-13; integrated G2 applicability review and acceptance remain, not all-pairs support. |
+| `P9-G2[C_CI]` | HOLD, draft P9-7.7 review | Accepted bounded numerical/lifecycle evidence; reconcile the 33-cell exact product and ordered endpoints. |
+| `P9-G2[A_CI]` | HOLD, draft P9-7.7 review | Accepted bounded numerical/lifecycle evidence; reconcile the 28-cell exact product and ordered endpoints. |
+| `P9-G2[C_PC]` | HOLD, draft P9-7.7 review | Accepted bounded numerical/lifecycle evidence; reconcile the 33-cell exact product and ordered endpoints. |
+| `P9-G2[A_PC]` | HOLD, draft P9-7.7 review | Accepted bounded numerical/lifecycle evidence; reconcile the 28-cell exact product and ordered endpoints. |
+| `P9-G2[C_CI_PC]` | HOLD, draft P9-7.7 review | Accepted bounded numerical/lifecycle evidence; reconcile the 33-cell exact product and ordered endpoints. |
+| `P9-G2[A_CI_PC]` | HOLD, draft P9-7.7 review | Accepted bounded numerical/lifecycle evidence; reconcile the 28-cell exact product and ordered endpoints. |
+| `P9-G2[C_RG2b]` | HOLD, draft P9-7.7 review | Accepted generalized numerical/lifecycle evidence; reconcile the 33-cell exact product and ordered endpoints. |
+| `P9-G2[A_RG2b]` | HOLD, draft P9-7.7 review | Accepted generalized numerical/lifecycle evidence; reconcile the 28-cell exact product and ordered endpoints. |
 
 `P9-G3[C_OS]` denotes singleton set `{C_OS}`. It may be reviewed through
 P9-7.8 after P9-G2[C_OS], independently of other profiles. Adding profiles
@@ -1029,11 +1029,11 @@ The [P9-1.4 child register](./phase-9-grcv4/tranche-1/P9-1.4-SupportAndDependenc
 now declares exact C_OS and A_OS lifecycle children, source/target crossing
 scopes, evidence aliases and dependencies. P9-7.1-C_OS and the early C_OS
 P9-7.2a/b–P9-7.6 children have scoped evidence accepted with the P9-4.6/4.7 batch;
-its full audit findings are closed. Generic parent-reference conformance remains
-open across other profiles; the accepted P9-4.9.2 authority and bounded internal
-C_OS implementation are recorded in its linked review. P9-7.1 is accepted;
-P9-7.2a is accepted and closed within the reviewed scope below. Generic event and wider
-conformance children remain pending. P9-7.7-C_OS aliases the
+its full audit findings are closed. P9-7.1–P9-7.6 are now accepted in their
+bounded numerical/lifecycle scopes, including generic events and the accepted
+P9-4.9.2 parent rule's later verification. This does not establish the full
+exact-profile product required by P9-7.7. Its current review holds nine new
+nominations for evidence/endpoint reconciliation. P9-7.7-C_OS aliases the
 [P9-4.8B exact-scope acceptance](./phase-9-grcv4/tranche-4/P9-4.8B-G2Acceptance.json),
 with no duplicate execution credit. The original
 P9-4.8 HOLD and historical child register remain unchanged.
@@ -1304,6 +1304,36 @@ may reach G2 without waiting for all Tranche 6 realizations.
 - [ ] P9-7.7: Review the full applicable fixture product and record `P9-G2[p]`
   separately for each generic profile; link the original P9-4.8 C_OS review and
   its P9-4.8B successor without duplicate execution credit.
+  - [x] Add the [305-cell exact-profile review](./phase-9-grcv4/tranche-7/P9-7.7-Review.md),
+    with lossless nominations, source pointers and all seven ordered migration
+    classes. Retain the 33-cell C_OS alias; do not substitute its 7.1 seed.
+  - [x] Record HOLD for A_CI, C_CI, A_OS, A_RG2b, C_RG2b, A_PC, C_PC,
+    A_CI+PC and C_CI+PC. The 272 uncredited product cells are not failed tests
+    or a mandate to rerun all cases. Matching execution evidence remains valid.
+  - [ ] Close G2-EXACT-PRODUCT, G2-ORDERED-ENDPOINTS and G2-INTEGRATED-REVIEW
+    for each nominated child: reuse exact retained assertions, capture only
+    missing evidence, then independently review and obtain scoped acceptance.
+  - [x] Verify review/status integrity: three focused tests, fourteen review
+    mutations and API/notebook/HTTP/browser agreement with forty browser controls.
+    No numerical campaign was rerun.
+  - [ ] Independently review this reconciliation. No new G2/G3 support or
+    aggregate closure is implied.
+  - [x] P9-7.7-A_OS-local: add the [exact local product](./phase-9-grcv4/tranche-7/P9-7.7-A_OS-LocalReview.md)
+    with 21 catalog rows from three focused methods. Retain scalar/log oracles,
+    actual stage values, source/control identities, result fields and complete
+    publication evidence. Labeled fault controls are not natural-failure claims;
+    shared executions and provisional stages are not extra committed runs.
+  - [x] Reconcile the seven A_OS crossing cells through the
+    [bounded crossing record](./phase-9-grcv4/tranche-7/P9-7.7-A_OS-CrossingReview.md).
+    Reuse exact retained witnesses; add persistent crossings, mapped-event reset,
+    reset-only rejection and incoming-initializer negative pressure. Keep the
+    seven-class matrix's separate endpoints and negative boundaries explicit.
+  - [x] User accepted the bounded A_OS local/crossing reconciliation on
+    2026-09-13 through “accept and commit.” Preserve original execution flags;
+    this does not assert an independent audit or close G2/P9-7.7.
+  - [ ] Independently review the combined local/crossing product and integrated
+    applicability before G2 acceptance. No all-pairs claim or automatic waiver:
+    the original nomination and initializer-enabled target remain distinct.
 - [ ] P9-7.8: Review `P9-G3[S]` for the exact accepted generic support set
   before specialization code. Singleton `P9-G3[C_OS]` can run immediately
   after its G2; unrelated lifecycle/realization rows may remain pending.

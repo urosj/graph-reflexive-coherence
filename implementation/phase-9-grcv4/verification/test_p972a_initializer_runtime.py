@@ -151,6 +151,20 @@ class RuntimeEvidenceTests(unittest.TestCase):
         self.assertEqual(status['lineage_ownership_verification']['coherent_parent_rejections'], 10)
         self.assertTrue(status['lineage_ownership_verification']['user_accepted'])
         self.assertTrue(status['lineage_ownership_verification']['aggregate_closed'])
+        from verify_p977_profile_review import check as profile_review_check
+        self.assertEqual(status['profile_conformance_review'], profile_review_check(prior=status['lineage_ownership_verification']))
+        self.assertEqual(status['profile_conformance_review']['required_cells'], 305)
+        self.assertEqual(len(status['profile_conformance_review']['held_profiles']), 9)
+        self.assertFalse(status['profile_conformance_review']['user_accepted'])
+        from verify_p977_a_os_local import check as local_check
+        self.assertEqual(status['a_os_local_product'],local_check(initial_review=status['profile_conformance_review']))
+        self.assertEqual(status['a_os_local_product']['verified_local_cells'],21)
+        self.assertFalse(status['a_os_local_product']['G2_accepted'])
+        from verify_p977_a_os_acceptance import check as crossing_check
+        self.assertEqual(status['a_os_crossings'],crossing_check(local_product=status['a_os_local_product']))
+        self.assertEqual(status['a_os_crossings']['reconciled_crossing_cells'],7)
+        self.assertFalse(status['a_os_crossings']['all_ordered_pairs_verified'])
+        self.assertTrue(status['a_os_crossings']['user_accepted'])
         self.assertEqual(status['event_runtime']['original_record_digest'],
                          'c3fb9823ae040408fd86963754ce6b3f7acbc897c7a5a88504582193d0cc4391')
         self.assertIn('P9-7.2a is user-accepted and closed', status['next_gate'])
@@ -165,6 +179,9 @@ class RuntimeEvidenceTests(unittest.TestCase):
         self.assertEqual(namespace['phase9_status']['target_reference_verification'], status['target_reference_verification'])
         self.assertEqual(namespace['phase9_status']['failure_sequence_verification'], status['failure_sequence_verification'])
         self.assertEqual(namespace['phase9_status']['lineage_ownership_verification'], status['lineage_ownership_verification'])
+        self.assertEqual(namespace['phase9_status']['profile_conformance_review'], status['profile_conformance_review'])
+        self.assertEqual(namespace['phase9_status']['a_os_local_product'],status['a_os_local_product'])
+        self.assertEqual(namespace['phase9_status']['a_os_crossings'],status['a_os_crossings'])
         spec = importlib.util.spec_from_file_location('p972a_runtime_http', tool / 'scripts/serve_phase9.py')
         server = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(server)
@@ -183,6 +200,9 @@ class RuntimeEvidenceTests(unittest.TestCase):
         self.assertEqual(json.loads(handler.wfile.getvalue())['target_reference_verification'], status['target_reference_verification'])
         self.assertEqual(json.loads(handler.wfile.getvalue())['failure_sequence_verification'], status['failure_sequence_verification'])
         self.assertEqual(json.loads(handler.wfile.getvalue())['lineage_ownership_verification'], status['lineage_ownership_verification'])
+        self.assertEqual(json.loads(handler.wfile.getvalue())['profile_conformance_review'], status['profile_conformance_review'])
+        self.assertEqual(json.loads(handler.wfile.getvalue())['a_os_local_product'],status['a_os_local_product'])
+        self.assertEqual(json.loads(handler.wfile.getvalue())['a_os_crossings'],status['a_os_crossings'])
         from grcv4_explorer.tooling import managed_node, tool_environment
         code = """
 import assert from 'node:assert/strict';
@@ -221,20 +241,40 @@ for (const edit of [v=>v.initializer_runtime.aggregate_closed=false,
  v=>v.lineage_ownership_verification.new_G2_support=['A_PC'],
  v=>v.lineage_ownership_verification.coherent_parent_rejections=0,
  v=>v.lineage_ownership_verification.symbolic_rejections=0,
- v=>v.lineage_ownership_verification.record_digest='0'.repeat(64)]) {
+ v=>v.lineage_ownership_verification.record_digest='0'.repeat(64),
+ v=>v.profile_conformance_review.user_accepted=true,
+ v=>v.profile_conformance_review.new_G2_support=['A_OS'],
+ v=>v.profile_conformance_review.G3_accepted=true,
+ v=>v.profile_conformance_review.required_cells=0,
+ v=>v.profile_conformance_review.held_profiles.pop(),
+ v=>v.profile_conformance_review.accepted_aliases.push('A_PC'),
+ v=>v.profile_conformance_review.new_execution_credit=305,
+ v=>v.profile_conformance_review.record_digest='0'.repeat(64),
+ v=>v.a_os_local_product.G2_accepted=true,
+ v=>v.a_os_local_product.verified_local_cells=28,
+ v=>v.a_os_local_product.remaining_catalog_cases.pop(),
+ v=>v.a_os_local_product.complete_profile_id='A_OS',
+ v=>v.a_os_local_product.user_accepted=true,
+ v=>v.a_os_local_product.record_digest='0'.repeat(64),
+ v=>v.a_os_crossings.all_ordered_pairs_verified=true,
+ v=>v.a_os_crossings.G2_accepted=true,
+ v=>v.a_os_crossings.reconciled_crossing_cells=28,
+ v=>v.a_os_crossings.complete_profile_id='A_OS',
+ v=>v.a_os_crossings.matrix_scope='all_pairs',
+ v=>v.a_os_crossings.record_digest='0'.repeat(64)]) {
  const bad=structuredClone(value); edit(bad); delete bad.status_digest;
  bad.status_digest=createHash('sha256').update(canonical(bad)).digest('hex');
  await assert.rejects(verifiedStatus(bad));
 }
 const held={...value, current_boundary:'failed_closed', runtime_authorized:false};
 await assert.rejects(verifiedStatus(held));
-console.log('INITIALIZER_EVENT_RUNTIME_BROWSER_PASS controls=32');
+console.log('INITIALIZER_EVENT_RUNTIME_BROWSER_PASS controls=52');
 """
         browser = subprocess.run([str(managed_node()), '--input-type=module', '-e', code],
                                  cwd=tool / 'phase9-web', input=json.dumps(status), capture_output=True,
                                  text=True, env=tool_environment(), timeout=60)
         self.assertEqual(browser.returncode, 0, browser.stderr)
-        self.assertIn('INITIALIZER_EVENT_RUNTIME_BROWSER_PASS controls=32', browser.stdout)
+        self.assertIn('INITIALIZER_EVENT_RUNTIME_BROWSER_PASS controls=52', browser.stdout)
 
 
 if __name__ == '__main__':

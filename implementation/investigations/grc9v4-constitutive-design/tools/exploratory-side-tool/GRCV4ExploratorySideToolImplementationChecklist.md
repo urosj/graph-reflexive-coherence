@@ -1639,3 +1639,37 @@ their historical stage, not the later aggregate acceptance recorded at the end.
       the passing independent audit/rerun; project acceptance separately from
       original execution flags. Earlier accepted records and runtime permissions
       remain unchanged, with no new G2/G3 support.
+
+### P9-7.7 exact-profile conformance review
+
+- [x] Account for the full catalog product and retain exact nominations, ordered
+      endpoint evidence and the unchanged C_OS acceptance alias.
+- [x] Verify the bounded review and expose `profile_conformance_review` through
+      existing API/notebook/browser status; HOLD must not imply a broken runtime.
+- [x] Reject missing/duplicate product rows, family-label/borrowed identities,
+      fabricated acceptance and widened G2/G3 support.
+- [ ] Independently review this reconciliation; held profile products and their
+      eventual scoped acceptance remain separate work.
+
+### P9-7.7 A_OS local-product continuation
+
+- [x] Retain the exact 21-cell local execution and check control/nomination
+      identities, result fields and ledger deltas without altering older runs.
+- [x] Check `a_os_local_product` across API/notebook/browser status and reject
+      fabricated completion, nomination substitution and support promotion.
+- [ ] Independently review the local product together with the subsequent
+      crossing continuation below. Integrated G2 acceptance remains open;
+      no other profile or G3 is promoted.
+
+### P9-7.7 A_OS crossing continuation
+
+- [x] Retain bounded crossing execution and exact old aliases, with explicit
+      seven-class positive/negative/separate-endpoint dispositions.
+- [x] Expose `a_os_crossings` separately from the unchanged historical local view.
+- [x] Check API/notebook/browser agreement and reject invented all-pairs scope,
+      acceptance, source substitution and record drift.
+- [ ] Independently review combined local/crossing applicability before G2;
+      no mandatory positive class is waived and no other profile is promoted.
+- [x] Record the user's 2026-09-13 acceptance of bounded local/crossing
+      reconciliation separately from original execution flags. Preserve G2,
+      G3, all-pairs and aggregate-closure boundaries.

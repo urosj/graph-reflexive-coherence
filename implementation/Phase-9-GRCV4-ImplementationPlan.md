@@ -1403,6 +1403,45 @@ access and no runtime permission change. The current scoped checker preserves
 the 25/17-test subjects and their 7.1 predecessor using batched Git reads;
 those are historical executions, not new producer evidence.
 
+P9-7.7's [exact-profile review](./phase-9-grcv4/tranche-7/P9-7.7-Review.md)
+reconciles all ten rows against the 305-cell catalog product. C_OS preserves
+its 33-cell accepted alias. The nine new exact 7.1 seed nominations are held
+for result/endpoint reconciliation, not rejected numerical implementations:
+272 cells remain uncredited as a full exact product. In particular, all five
+A reconstruction targets and C_RG2b's target differ from their lifecycle seed
+IDs. Retain each identity and ordered pair instead of joining family labels.
+The bounded checker links existing witnesses, preserves original run identities
+and reports zero new execution credit. Close `G2-EXACT-PRODUCT`,
+`G2-ORDERED-ENDPOINTS` and `G2-INTEGRATED-REVIEW` separately for each held child;
+recover exact retained assertions first and execute only genuinely uncovered
+cases. A_OS may be the first continuation. Do not automatically rerun the
+entire numerical campaign or widen public support. Review acceptance and
+P9-7.7 closure remain pending; G3 is separate.
+
+The first continuation, [A_OS local reconciliation](./phase-9-grcv4/tranche-7/P9-7.7-A_OS-LocalReview.md),
+captures 21 local cells for the unchanged 7.1 nomination using three focused
+methods and existing scalar/logarithmic oracles. Preserve required result fields,
+actual stage outputs, labeled fault controls and distinct chi/zeta control IDs.
+The initial 305-cell review remains a historical snapshot; the local execution
+is a separate progress record, not a replacement or new G2 acceptance. Seven
+crossing cells remain. The event/initializer target changes writer coefficients
+and history policy, so bind its exact identity rather than joining on A_OS.
+Next reconcile those ordered endpoint/history/reset/readmission cases; no broad
+numerical rerun or public support promotion follows from local verification.
+
+The [A_OS crossing continuation](./phase-9-grcv4/tranche-7/P9-7.7-A_OS-CrossingReview.md)
+now links the seven remaining obligations: five unchanged retained aliases and
+six focused execution cases in three methods. Preserve the literal seven-class
+disposition matrix: positive exact nominated endpoints, separate PC↔CI+PC pairs,
+and negative C→nominated-A admission versus positive differently identified
+initializer targets. All seven obligations have evidence/dispositions, not an
+all-pairs execution claim. Integrated applicability review must decide the
+supported endpoint scope before G2 acceptance; no mandatory positive row is
+silently waived. Existing records and the 21-cell local capture remain unchanged.
+The user accepted this bounded A_OS local/crossing reconciliation on 2026-09-13
+through “accept and commit.” Record that decision separately from captured
+execution flags; integrated G2 review and aggregate P9-7.7 closure remain open.
+
 Exercise missing lineage, invalid reference maps, readmission failure, and
 receipt ownership. `P9-G2[p]` is available only for profiles whose full
 applicable fixture product has executed. Keep other planned profiles pending.
