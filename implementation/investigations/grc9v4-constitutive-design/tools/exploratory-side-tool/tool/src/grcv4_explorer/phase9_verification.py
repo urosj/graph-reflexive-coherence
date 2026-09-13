@@ -91,6 +91,8 @@ def verification_status(repo_root: Path) -> dict:
             a_os_local_product = a_os_local_check(initial_review=profile_conformance_review)
             from verify_p977_a_os_acceptance import check as a_os_crossing_check
             a_os_crossings = a_os_crossing_check(local_product=a_os_local_product)
+            from verify_p977_a_os_g2 import check as a_os_g2_check
+            a_os_g2_review = a_os_g2_check(bounded_acceptance=a_os_crossings)
             payload.update(
                 initializer_runtime=initializer_runtime,
                 event_runtime=event_runtime,
@@ -101,6 +103,7 @@ def verification_status(repo_root: Path) -> dict:
                 profile_conformance_review=profile_conformance_review,
                 a_os_local_product=a_os_local_product,
                 a_os_crossings=a_os_crossings,
+                a_os_g2_review=a_os_g2_review,
                 g2_acceptance={
                     "record_digest": g2["record_digest"],
                     "path": module.G2_ACCEPTANCE,
@@ -226,7 +229,7 @@ def verification_status(repo_root: Path) -> dict:
                     for r in module.runtime_targets(approval)
                     if r["requires_gate"] == "P9-G1" and set(ready) & owners[r["path"]]
                 ),
-                next_gate=f"P9-7.2a is user-accepted and closed. P9-7.2b is user-accepted and closed. P9-7.3 is user-accepted and closed: {history_policy_verification['baseline_test_count']} original tests plus {history_policy_verification['regression_test_count']} supplemental regressions, {history_policy_verification['policy_cells']} discrete policy cells. P9-7.4 is user-accepted and closed: {target_reference_verification['test_count']} focused tests. P9-7.5 is user-accepted and closed: {failure_sequence_verification['test_count']} focused tests. P9-7.6 is user-accepted and closed: {lineage_ownership_verification['test_count']} focused tests. P9-7.7 review holds nine new exact-profile nominations for product and ordered-endpoint reconciliation; the existing C_OS alias is unchanged. A_OS bounded reconciliation is user-accepted: 21 local cells plus seven crossing evidence/dispositions; integrated G2 applicability review remains pending; negative incoming initializer and separate PC-pair scopes are not all-pairs support. Other held children, G2 acceptance and P9-7.8 remain separate. No wider G2/G3 support. The only accepted public support remains the exact C_OS singleton.",
+                next_gate=f"P9-7.2a is user-accepted and closed. P9-7.2b is user-accepted and closed. P9-7.3 is user-accepted and closed: {history_policy_verification['baseline_test_count']} original tests plus {history_policy_verification['regression_test_count']} supplemental regressions, {history_policy_verification['policy_cells']} discrete policy cells. P9-7.4 is user-accepted and closed: {target_reference_verification['test_count']} focused tests. P9-7.5 is user-accepted and closed: {failure_sequence_verification['test_count']} focused tests. P9-7.6 is user-accepted and closed: {lineage_ownership_verification['test_count']} focused tests. P9-7.7 review holds nine new exact-profile nominations for product and ordered-endpoint reconciliation; the existing C_OS alias is unchanged. A_OS bounded reconciliation is user-accepted: 21 local cells plus seven crossing evidence/dispositions; integrated G2 review proposes PASS for the exact 28-case scope and awaits a separate G2 acceptance decision; negative incoming initializer and separate PC-pair scopes are not all-pairs support. Other held children, G2 acceptance and P9-7.8 remain separate. No wider G2/G3 support. The only accepted public support remains the exact C_OS singleton.",
                 claim_ceiling="G1 is bounded implementation permission. Separate user-accepted G2 covers only the listed complete C_OS profile and reviewed domain; no family-wide, other-profile or specialization conformance is inferred.",
             )
         cross = module.read(
@@ -393,6 +396,7 @@ def verification_status(repo_root: Path) -> dict:
         payload.pop("profile_conformance_review", None)
         payload.pop("a_os_local_product", None)
         payload.pop("a_os_crossings", None)
+        payload.pop("a_os_g2_review", None)
         payload["accepted_generic_runtime_support"] = []
         payload.pop("permitted_runtime_paths", None)
         payload.pop("source_meaning", None)

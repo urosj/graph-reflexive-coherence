@@ -2085,3 +2085,10 @@ drift fails closed without numerical reruns or replacing earlier records.
 The 2026-09-13 user decision accepts bounded A_OS local/crossing reconciliation.
 Project it over the unchanged capture via the existing crossing status, while
 keeping the historical local view and G2/G3/all-pairs/aggregate flags unchanged.
+
+The integrated A_OS review adds `a_os_g2_review`: a 28-cell PASS proposal with
+three satisfied scoped obligations, not a new acceptance. Reuse the bounded
+execution records, validate the one facade supplement and query typed current
+authority. API/notebook/browser display the proposed additional identity
+separately from the unchanged accepted C_OS singleton; false acceptance,
+all-pairs scope, borrowed identity or missing product must reject.

@@ -1673,3 +1673,13 @@ their historical stage, not the later aggregate acceptance recorded at the end.
 - [x] Record the user's 2026-09-13 acceptance of bounded local/crossing
       reconciliation separately from original execution flags. Preserve G2,
       G3, all-pairs and aggregate-closure boundaries.
+
+### P9-7.7 A_OS integrated G2 proposal
+
+- [x] Reconcile all 28 catalog obligations, scoped ordered endpoints and the
+      public facade against current source/release and typed authority.
+- [x] Expose the PASS proposal as `a_os_g2_review`, separately from accepted
+      bounded reconciliation and unchanged global G2 support.
+- [x] Check API/notebook/browser agreement and false proposal/acceptance controls.
+- [ ] Obtain the explicit G2 decision before updating exact support/discovery;
+      aggregate P9-7.7, other profiles and G3 are not closed by the proposal.

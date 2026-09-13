@@ -165,6 +165,10 @@ class RuntimeEvidenceTests(unittest.TestCase):
         self.assertEqual(status['a_os_crossings']['reconciled_crossing_cells'],7)
         self.assertFalse(status['a_os_crossings']['all_ordered_pairs_verified'])
         self.assertTrue(status['a_os_crossings']['user_accepted'])
+        from verify_p977_a_os_g2 import check as g2_check
+        self.assertEqual(status['a_os_g2_review'],g2_check(bounded_acceptance=status['a_os_crossings']))
+        self.assertEqual(status['a_os_g2_review']['catalog_cells'],28)
+        self.assertFalse(status['a_os_g2_review']['G2_accepted'])
         self.assertEqual(status['event_runtime']['original_record_digest'],
                          'c3fb9823ae040408fd86963754ce6b3f7acbc897c7a5a88504582193d0cc4391')
         self.assertIn('P9-7.2a is user-accepted and closed', status['next_gate'])
@@ -182,6 +186,7 @@ class RuntimeEvidenceTests(unittest.TestCase):
         self.assertEqual(namespace['phase9_status']['profile_conformance_review'], status['profile_conformance_review'])
         self.assertEqual(namespace['phase9_status']['a_os_local_product'],status['a_os_local_product'])
         self.assertEqual(namespace['phase9_status']['a_os_crossings'],status['a_os_crossings'])
+        self.assertEqual(namespace['phase9_status']['a_os_g2_review'],status['a_os_g2_review'])
         spec = importlib.util.spec_from_file_location('p972a_runtime_http', tool / 'scripts/serve_phase9.py')
         server = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(server)
@@ -203,6 +208,7 @@ class RuntimeEvidenceTests(unittest.TestCase):
         self.assertEqual(json.loads(handler.wfile.getvalue())['profile_conformance_review'], status['profile_conformance_review'])
         self.assertEqual(json.loads(handler.wfile.getvalue())['a_os_local_product'],status['a_os_local_product'])
         self.assertEqual(json.loads(handler.wfile.getvalue())['a_os_crossings'],status['a_os_crossings'])
+        self.assertEqual(json.loads(handler.wfile.getvalue())['a_os_g2_review'],status['a_os_g2_review'])
         from grcv4_explorer.tooling import managed_node, tool_environment
         code = """
 import assert from 'node:assert/strict';
@@ -261,20 +267,26 @@ for (const edit of [v=>v.initializer_runtime.aggregate_closed=false,
  v=>v.a_os_crossings.reconciled_crossing_cells=28,
  v=>v.a_os_crossings.complete_profile_id='A_OS',
  v=>v.a_os_crossings.matrix_scope='all_pairs',
- v=>v.a_os_crossings.record_digest='0'.repeat(64)]) {
+ v=>v.a_os_crossings.record_digest='0'.repeat(64),
+ v=>v.a_os_g2_review.G2_accepted=true,
+ v=>v.a_os_g2_review.proposed_additional_support=['A_OS'],
+ v=>v.a_os_g2_review.catalog_cells=27,
+ v=>delete v.a_os_g2_review.obligations['G2-ORDERED-ENDPOINTS'],
+ v=>v.a_os_g2_review.all_ordered_pairs_verified=true,
+ v=>v.a_os_g2_review.record_digest='0'.repeat(64)]) {
  const bad=structuredClone(value); edit(bad); delete bad.status_digest;
  bad.status_digest=createHash('sha256').update(canonical(bad)).digest('hex');
  await assert.rejects(verifiedStatus(bad));
 }
 const held={...value, current_boundary:'failed_closed', runtime_authorized:false};
 await assert.rejects(verifiedStatus(held));
-console.log('INITIALIZER_EVENT_RUNTIME_BROWSER_PASS controls=52');
+console.log('INITIALIZER_EVENT_RUNTIME_BROWSER_PASS controls=58');
 """
         browser = subprocess.run([str(managed_node()), '--input-type=module', '-e', code],
                                  cwd=tool / 'phase9-web', input=json.dumps(status), capture_output=True,
                                  text=True, env=tool_environment(), timeout=60)
         self.assertEqual(browser.returncode, 0, browser.stderr)
-        self.assertIn('INITIALIZER_EVENT_RUNTIME_BROWSER_PASS controls=52', browser.stdout)
+        self.assertIn('INITIALIZER_EVENT_RUNTIME_BROWSER_PASS controls=58', browser.stdout)
 
 
 if __name__ == '__main__':

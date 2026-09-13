@@ -66,7 +66,7 @@ coverage, and evidence; a family label alone does not certify all instances.
 | Generic profile gate | State | Acceptance route |
 | --- | --- | --- |
 | `P9-G2[C_OS]` | Accepted, exact singleton | [explicit G2 acceptance](./phase-9-grcv4/tranche-4/P9-4.8B-G2Acceptance.json) closes Tranche 4 and aliases P9-7.7-C_OS. Other profiles and G3 remain closed. |
-| `P9-G2[A_OS]` | HOLD, bounded reconciliation accepted | 21 local cells plus seven crossing evidence/dispositions accepted on 2026-09-13; integrated G2 applicability review and acceptance remain, not all-pairs support. |
+| `P9-G2[A_OS]` | PASS proposal, G2 acceptance pending | [Integrated review](./phase-9-grcv4/tranche-7/P9-7.7-A_OS-G2Review.md) covers the exact 28-case scope; bounded reconciliation is accepted, but G2/discovery are unchanged. No all-pairs support. |
 | `P9-G2[C_CI]` | HOLD, draft P9-7.7 review | Accepted bounded numerical/lifecycle evidence; reconcile the 33-cell exact product and ordered endpoints. |
 | `P9-G2[A_CI]` | HOLD, draft P9-7.7 review | Accepted bounded numerical/lifecycle evidence; reconcile the 28-cell exact product and ordered endpoints. |
 | `P9-G2[C_PC]` | HOLD, draft P9-7.7 review | Accepted bounded numerical/lifecycle evidence; reconcile the 33-cell exact product and ordered endpoints. |
@@ -1331,9 +1331,13 @@ may reach G2 without waiting for all Tranche 6 realizations.
   - [x] User accepted the bounded A_OS local/crossing reconciliation on
     2026-09-13 through “accept and commit.” Preserve original execution flags;
     this does not assert an independent audit or close G2/P9-7.7.
-  - [ ] Independently review the combined local/crossing product and integrated
-    applicability before G2 acceptance. No all-pairs claim or automatic waiver:
-    the original nomination and initializer-enabled target remain distinct.
+  - [x] Perform the [integrated A_OS G2 assessment](./phase-9-grcv4/tranche-7/P9-7.7-A_OS-G2Review.md):
+    PASS proposal with 28 exact case links, explicit crossing applicability,
+    one focused facade supplement and unchanged scientific/legacy sources.
+    This is not a second independent audit or G2 acceptance.
+  - [ ] Accept or return the A_OS G2 proposal; only a separate positive decision
+    permits its exact support/discovery update. Keep all-pairs, other profiles
+    and aggregate P9-7.7 closure separate.
 - [ ] P9-7.8: Review `P9-G3[S]` for the exact accepted generic support set
   before specialization code. Singleton `P9-G3[C_OS]` can run immediately
   after its G2; unrelated lifecycle/realization rows may remain pending.

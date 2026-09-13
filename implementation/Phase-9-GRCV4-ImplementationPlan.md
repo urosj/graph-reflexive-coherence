@@ -1442,6 +1442,14 @@ The user accepted this bounded A_OS local/crossing reconciliation on 2026-09-13
 through “accept and commit.” Record that decision separately from captured
 execution flags; integrated G2 review and aggregate P9-7.7 closure remain open.
 
+The [integrated A_OS G2 review](./phase-9-grcv4/tranche-7/P9-7.7-A_OS-G2Review.md)
+now proposes PASS for the original exact nomination. Its 28-case index joins
+unchanged local/crossing evidence and one focused zero-duration facade method;
+no numerical campaign is rerun. The seven-class applicability decision retains
+unselected incoming C→A rejection and separate PC/initializer endpoints without
+all-pairs support. G2 acceptance and the exact discovery update remain pending;
+the bounded reconciliation acceptance is not silently promoted.
+
 Exercise missing lineage, invalid reference maps, readmission failure, and
 receipt ownership. `P9-G2[p]` is available only for profiles whose full
 applicable fixture product has executed. Keep other planned profiles pending.
