@@ -52,7 +52,7 @@ def check():
     p.require(value['schema'] == 'phase9_target_reference_execution_v1'
               and value['iteration_id'] == 'P9-7.4'
               and value['record_digest'] == p.digest_record(value), 'target-reference evidence drift')
-    p.require(value['source_bindings'] == bindings(), 'target-reference source drift')
+    p.require(p.g2_bindings_match(value['source_bindings'], bindings()), 'target-reference source drift')
     p.require(value['authority'] == authority() and value['predecessor'] == predecessor(),
               'target-reference authority or predecessor drift')
     p.require(value['test_ids'] == roster()

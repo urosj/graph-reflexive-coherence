@@ -66,7 +66,7 @@ coverage, and evidence; a family label alone does not certify all instances.
 | Generic profile gate | State | Acceptance route |
 | --- | --- | --- |
 | `P9-G2[C_OS]` | Accepted, exact singleton | [explicit G2 acceptance](./phase-9-grcv4/tranche-4/P9-4.8B-G2Acceptance.json) closes Tranche 4 and aliases P9-7.7-C_OS. Other profiles and G3 remain closed. |
-| `P9-G2[A_OS]` | PASS proposal, G2 acceptance pending | [Integrated review](./phase-9-grcv4/tranche-7/P9-7.7-A_OS-G2Review.md) covers the exact 28-case scope; bounded reconciliation is accepted, but G2/discovery are unchanged. No all-pairs support. |
+| `P9-G2[A_OS]` | Accepted, exact nomination | [Explicit G2 acceptance](./phase-9-grcv4/tranche-7/P9-7.7-A_OS-G2Acceptance.json) accepts the reviewed 28-case scope. Discovery now contains exact C_OS and A_OS declarations; no all-pairs or G3 support. |
 | `P9-G2[C_CI]` | HOLD, draft P9-7.7 review | Accepted bounded numerical/lifecycle evidence; reconcile the 33-cell exact product and ordered endpoints. |
 | `P9-G2[A_CI]` | HOLD, draft P9-7.7 review | Accepted bounded numerical/lifecycle evidence; reconcile the 28-cell exact product and ordered endpoints. |
 | `P9-G2[C_PC]` | HOLD, draft P9-7.7 review | Accepted bounded numerical/lifecycle evidence; reconcile the 33-cell exact product and ordered endpoints. |
@@ -1032,7 +1032,7 @@ P9-7.2a/b–P9-7.6 children have scoped evidence accepted with the P9-4.6/4.7 ba
 its full audit findings are closed. P9-7.1–P9-7.6 are now accepted in their
 bounded numerical/lifecycle scopes, including generic events and the accepted
 P9-4.9.2 parent rule's later verification. This does not establish the full
-exact-profile product required by P9-7.7. Its current review holds nine new
+exact-profile product required by P9-7.7. Its original review held nine new
 nominations for evidence/endpoint reconciliation. P9-7.7-C_OS aliases the
 [P9-4.8B exact-scope acceptance](./phase-9-grcv4/tranche-4/P9-4.8B-G2Acceptance.json),
 with no duplicate execution credit. The original
@@ -1335,9 +1335,14 @@ may reach G2 without waiting for all Tranche 6 realizations.
     PASS proposal with 28 exact case links, explicit crossing applicability,
     one focused facade supplement and unchanged scientific/legacy sources.
     This is not a second independent audit or G2 acceptance.
-  - [ ] Accept or return the A_OS G2 proposal; only a separate positive decision
-    permits its exact support/discovery update. Keep all-pairs, other profiles
-    and aggregate P9-7.7 closure separate.
+  - [x] User accepted exact A_OS G2 on 2026-09-13 through “accept and commit”:
+    [acceptance](./phase-9-grcv4/tranche-7/P9-7.7-A_OS-G2Acceptance.json).
+    Discovery contains only exact C_OS and A_OS declarations. Eight profile
+    gates, all-pairs, aggregate P9-7.7 and G3 remain open. A_CI is next.
+    Acceptance checks cover exact registry identity, source-reuse integrity,
+    original evidence preservation, rehashed overclaims and required browser
+    acceptance. API/notebook/HTTP/browser agreement passed with 58 existing
+    mutation controls; no numerical campaign was rerun.
 - [ ] P9-7.8: Review `P9-G3[S]` for the exact accepted generic support set
   before specialization code. Singleton `P9-G3[C_OS]` can run immediately
   after its G2; unrelated lifecycle/realization rows may remain pending.

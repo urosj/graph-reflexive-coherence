@@ -2325,7 +2325,7 @@ class ResourceBoundaryTests(unittest.TestCase):
                         ),
                         result.provisional_state,
                     )
-        self.assertEqual(list_supported_profiles(), frozenset({'grcv4-profile-sha256:a6b853ee382895eb78b1a7955a0df22f95d68b27cb0f762503e8c424c2f59b6d'}))
+        self.assertEqual(list_supported_profiles(), frozenset({'grcv4-profile-sha256:a6b853ee382895eb78b1a7955a0df22f95d68b27cb0f762503e8c424c2f59b6d', 'grcv4-profile-sha256:e4c04a83240a33d77c50a26ca6effbb6ce142774bd01f0966861dd517a94e2c4'}))
 
     def test_every_failed_solver_disposition_blocks_fallback_before_continuity(
         self,
@@ -2675,7 +2675,7 @@ assert result.charge.residual==0. and result.charge.remainder is None
 try: ProvisionalResourceStep(before,replace(selected,solver_disposition='singular'))
 except ResourceBoundaryError as error: assert (error.stage,error.code)==('candidate_solve','singular_solver')
 else: raise AssertionError('installed fallback current was consumed')
-assert list_supported_profiles() == frozenset({'grcv4-profile-sha256:a6b853ee382895eb78b1a7955a0df22f95d68b27cb0f762503e8c424c2f59b6d'})
+assert list_supported_profiles() == frozenset({'grcv4-profile-sha256:a6b853ee382895eb78b1a7955a0df22f95d68b27cb0f762503e8c424c2f59b6d', 'grcv4-profile-sha256:e4c04a83240a33d77c50a26ca6effbb6ce142774bd01f0966861dd517a94e2c4'})
 print(json.dumps(result.to_payload(),sort_keys=True))
 """
         environment = {

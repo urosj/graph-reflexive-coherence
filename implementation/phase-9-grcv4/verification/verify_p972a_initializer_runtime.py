@@ -103,8 +103,8 @@ def execution_sources(value, sources):
     from verify_p972a_initializer_authority import historical_blobs
     original = historical_blobs((CODEC, SCRIPT, STATUS_API), ACCEPTED_COMMIT)
     retained = {**sources, **{name: p.sha(data) for name, data in original.items()}}
-    p.require(value['source_bindings'] == retained, "initializer execution source drift")
-    return retained
+    p.require(p.g2_bindings_match(value['source_bindings'], retained), "initializer execution source drift")
+    return dict(value['source_bindings'])
 
 
 def validate(value, sources):

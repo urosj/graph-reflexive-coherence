@@ -2092,3 +2092,9 @@ execution records, validate the one facade supplement and query typed current
 authority. API/notebook/browser display the proposed additional identity
 separately from the unchanged accepted C_OS singleton; false acceptance,
 all-pairs scope, borrowed identity or missing product must reject.
+
+The user separately accepted exact A_OS G2 on 2026-09-13. The current
+`a_os_g2_review` projects that explicit acceptance over the preserved proposal,
+while top-level discovery contains the exact C_OS/A_OS pair. Check the pinned
+acceptance and finite before/after source-reuse identities; original runs are
+not regenerated. Reject wider profiles, all-pairs, aggregate or G3 promotion.

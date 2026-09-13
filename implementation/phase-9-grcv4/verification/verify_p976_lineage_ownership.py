@@ -52,7 +52,7 @@ def check():
     p.require(value['schema'] == 'phase9_lineage_ownership_execution_v1'
               and value['iteration_id'] == 'P9-7.6'
               and value['record_digest'] == p.digest_record(value), 'lineage evidence drift')
-    p.require(value['source_bindings'] == bindings(), 'lineage source drift')
+    p.require(p.g2_bindings_match(value['source_bindings'], bindings()), 'lineage source drift')
     p.require(value['authority'] == authority() and value['predecessor'] == predecessor(),
               'lineage authority or predecessor drift')
     p.require(value['test_ids'] == roster()

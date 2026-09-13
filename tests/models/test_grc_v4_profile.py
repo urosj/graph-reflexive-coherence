@@ -249,7 +249,7 @@ class ProfileTests(unittest.TestCase):
                                           else CandidateCParams)
                     with self.assertRaises(V4IdentityError):
                         get_supported_profile(profile.complete_profile_id)
-        self.assertEqual(list_supported_profiles(), frozenset({'grcv4-profile-sha256:a6b853ee382895eb78b1a7955a0df22f95d68b27cb0f762503e8c424c2f59b6d'}))
+        self.assertEqual(list_supported_profiles(), frozenset({'grcv4-profile-sha256:a6b853ee382895eb78b1a7955a0df22f95d68b27cb0f762503e8c424c2f59b6d', 'grcv4-profile-sha256:e4c04a83240a33d77c50a26ca6effbb6ce142774bd01f0966861dd517a94e2c4'}))
 
     def test_every_required_parameter_and_unknown_field(self) -> None:
         for candidate, realization in [("A", "CI+PC"), ("C", "OS"), ("C", "RG2b")]:
@@ -531,7 +531,7 @@ class AcceptedG2RegistryTests(unittest.TestCase):
         run = json.loads((ROOT / acceptance["fixture_run"]["path"]).read_text())
         prestate = run["objects"][acceptance["fixture_run"]["nominated_prestate_object"]]
         profile = get_supported_profile(self.accepted_id)
-        self.assertEqual(list_supported_profiles(), frozenset({self.accepted_id}))
+        self.assertEqual(list_supported_profiles(), frozenset({self.accepted_id, 'grcv4-profile-sha256:e4c04a83240a33d77c50a26ca6effbb6ce142774bd01f0966861dd517a94e2c4'}))
         self.assertEqual(acceptance["accepted_generic_runtime_support"], [self.accepted_id])
         self.assertEqual(profile.to_payload(), acceptance["accepted_profile"])
         self.assertEqual(profile.to_payload(), prestate["reference"]["profile"])
@@ -551,7 +551,7 @@ class AcceptedG2RegistryTests(unittest.TestCase):
                 declared = resolve_profile(*family_fixture(candidate, realization))
                 with self.assertRaises(V4IdentityError):
                     get_supported_profile(declared.complete_profile_id)
-        self.assertEqual(list_supported_profiles(), frozenset({self.accepted_id}))
+        self.assertEqual(list_supported_profiles(), frozenset({self.accepted_id, 'grcv4-profile-sha256:e4c04a83240a33d77c50a26ca6effbb6ce142774bd01f0966861dd517a94e2c4'}))
 
     def test_family_labels_and_unknown_exact_ids_fail_closed(self) -> None:
         for key in ("C_OS", "A_OS", "GRC9V4", "grcv4-profile-sha256:" + "0" * 64,

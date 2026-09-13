@@ -45,7 +45,8 @@ def preserved_predecessor():
     successor = historical_blobs(kept & p.INITIALIZER_RUNTIME_PATHS, "f7962e4")
     for name in kept:
         content = successor[name] if name in successor else (p.ROOT / name).read_bytes()
-        p.require(content == blobs[name], "accepted predecessor changed: " + name)
+        p.require(p.g2_bindings_match({name: p.sha(blobs[name])}, {name: p.sha(content)}),
+                  "accepted predecessor changed: " + name)
     p.require(followup["record_digest"] == p.digest_record(followup), "7.1 digest changed")
     for name, expected in followup["source_bindings"].items():
         p.require(p.sha(blobs[name]) == expected, "7.1 historical source mismatch: " + name)
@@ -99,7 +100,8 @@ def preserved_migrations():
                 # The current implementation has its own evidence; preserve
                 # the migration subject at the accepted pre-event Git bytes.
                 content = p.git(p.ROOT, 'show', 'ee8885e:' + name)
-            p.require(content == sources[name], "spec-review scope violated: " + name)
+            p.require(p.g2_bindings_match({name: p.sha(sources[name])}, {name: p.sha(content)}),
+                      "spec-review scope violated: " + name)
     sys.path.insert(0, str(p.ROOT / p.SIDE / "tool/src"))
     from grcv4_explorer.abundance import load_abundance_forensic_context
     from grcv4_explorer.forensic import contract_provenance

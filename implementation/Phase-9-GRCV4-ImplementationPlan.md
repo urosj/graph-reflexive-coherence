@@ -1405,9 +1405,9 @@ those are historical executions, not new producer evidence.
 
 P9-7.7's [exact-profile review](./phase-9-grcv4/tranche-7/P9-7.7-Review.md)
 reconciles all ten rows against the 305-cell catalog product. C_OS preserves
-its 33-cell accepted alias. The nine new exact 7.1 seed nominations are held
+its 33-cell accepted alias. That original review held nine new exact 7.1 seed nominations
 for result/endpoint reconciliation, not rejected numerical implementations:
-272 cells remain uncredited as a full exact product. In particular, all five
+272 cells were then uncredited as a full exact product. In particular, all five
 A reconstruction targets and C_RG2b's target differ from their lifecycle seed
 IDs. Retain each identity and ordered pair instead of joining family labels.
 The bounded checker links existing witnesses, preserves original run identities
@@ -1447,8 +1447,12 @@ now proposes PASS for the original exact nomination. Its 28-case index joins
 unchanged local/crossing evidence and one focused zero-duration facade method;
 no numerical campaign is rerun. The seven-class applicability decision retains
 unselected incoming C→A rejection and separate PC/initializer endpoints without
-all-pairs support. G2 acceptance and the exact discovery update remain pending;
-the bounded reconciliation acceptance is not silently promoted.
+all-pairs support. The user separately accepted this exact G2 scope on
+2026-09-13 through “accept and commit”; see the [acceptance record](./phase-9-grcv4/tranche-7/P9-7.7-A_OS-G2Acceptance.json).
+Discovery now exposes exact C_OS and A_OS declarations. Original review/run
+records remain unchanged, with a finite byte-bound discovery source-reuse
+record. Eight profile gates and aggregate P9-7.7 remain open; A_CI reconciliation
+is next. No all-pairs or G3 acceptance follows.
 
 Exercise missing lineage, invalid reference maps, readmission failure, and
 receipt ownership. `P9-G2[p]` is available only for profiles whose full

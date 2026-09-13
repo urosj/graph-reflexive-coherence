@@ -46,7 +46,7 @@ def validate(value):
     p.require(value['schema']=='phase9_exact_profile_local_product_v1'
               and value['iteration_id']=='P9-7.7-A_OS-local'
               and value['record_digest']==p.digest_record(value),'A_OS local record drift')
-    p.require(value['source_bindings']==bindings(),'A_OS local execution source drift')
+    p.require(p.g2_bindings_match(value['source_bindings'], bindings()),'A_OS local execution source drift')
     original=review.read(review.RECORD)
     p.require(value['initial_review_digest']==original['record_digest']==p.digest_record(original),
               'initial reconciliation changed')

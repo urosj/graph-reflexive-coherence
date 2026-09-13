@@ -48,8 +48,15 @@ def preserved_original():
     sources.pop(ORIGINAL_SOURCES)
     sources.pop('tests/models/test_grc_v4_event_audit.py')
     for name, delta in bridge['prior_source_delta'].items():
+        content = (p.ROOT / name).read_bytes()
+        if sources.get(name) != delta['current_sha256']:
+            p.require(p.g2_bindings_match({name: delta['current_sha256']}, {name: sources.get(name)}),
+                      'unreviewed discovery correction source: ' + name)
+            from a_os_g2_source_reuse import BASE
+            content = p.git(p.ROOT, 'show', BASE + ':' + name)
+            sources[name] = p.sha(content)
         p.require(sources.get(name) == delta['current_sha256'], 'correction source drift: ' + name)
-        lines = (p.ROOT / name).read_text().splitlines(keepends=True)
+        lines = content.decode().splitlines(keepends=True)
         end = len(lines)
         for span in reversed(delta['splices_to_original']):
             start, stop = span['start'], span['stop']
@@ -58,7 +65,7 @@ def preserved_original():
             end = start
         sources[name] = p.sha(''.join(lines).encode())
         p.require(sources[name] == delta['original_sha256'], 'original source recovery failed')
-    p.require(sources == value['source_bindings'], 'original execution source mismatch')
+    p.require(p.g2_bindings_match(value['source_bindings'], sources), 'original execution source mismatch')
     return ORIGINAL_DIGEST
 
 
@@ -68,7 +75,7 @@ def check():
     original = preserved_original()
     value = p.read(p.ROOT / CURRENT_RECORD)
     p.require(value['record_digest'] == p.digest_record(value), 'event evidence digest drift')
-    p.require(value['source_bindings'] == bindings(), 'event execution source drift')
+    p.require(p.g2_bindings_match(value['source_bindings'], bindings()), 'event execution source drift')
     p.require(value['original_record_digest'] == original, 'correction predecessor drift')
     p.require(value['release_id'] == EVENT_RELEASE_ID and value['iteration_id'] == 'P9-7.2b', 'event execution subject drift')
     p.require(value['test_ids'] == roster() and value['results'] == dict(tests_run=len(roster()), failures=[], errors=[], skips=[]), 'event execution incomplete')

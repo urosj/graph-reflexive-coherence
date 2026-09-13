@@ -86,7 +86,7 @@ def validate(value, sources):
               and value["aggregate_closed"] is False and value["new_G2_support"] == []
               and value["G3_accepted"] is False, "partial migration evidence cannot close the parent or grant support")
     p.require(value["pending_positive_classes"] == ["C_to_A_initializer_source"], "initializer obligation erased")
-    p.require(value["source_bindings"] == sources, "migration source drift")
+    p.require(p.g2_bindings_match(value["source_bindings"], sources), "migration source drift")
     p.require(value["authority"] == authority() and value["release_id"] == p.current_abundance_release(p.ROOT),
               "migration authority drift")
     p.require(value["test_ids"] == roster() and value["results"] == dict(tests_run=len(roster()), failures=[], errors=[], skips=[]),

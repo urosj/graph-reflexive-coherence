@@ -165,10 +165,10 @@ class RuntimeEvidenceTests(unittest.TestCase):
         self.assertEqual(status['a_os_crossings']['reconciled_crossing_cells'],7)
         self.assertFalse(status['a_os_crossings']['all_ordered_pairs_verified'])
         self.assertTrue(status['a_os_crossings']['user_accepted'])
-        from verify_p977_a_os_g2 import check as g2_check
+        from verify_p977_a_os_g2_acceptance import check as g2_check
         self.assertEqual(status['a_os_g2_review'],g2_check(bounded_acceptance=status['a_os_crossings']))
         self.assertEqual(status['a_os_g2_review']['catalog_cells'],28)
-        self.assertFalse(status['a_os_g2_review']['G2_accepted'])
+        self.assertTrue(status['a_os_g2_review']['G2_accepted'])
         self.assertEqual(status['event_runtime']['original_record_digest'],
                          'c3fb9823ae040408fd86963754ce6b3f7acbc897c7a5a88504582193d0cc4391')
         self.assertIn('P9-7.2a is user-accepted and closed', status['next_gate'])
@@ -268,7 +268,7 @@ for (const edit of [v=>v.initializer_runtime.aggregate_closed=false,
  v=>v.a_os_crossings.complete_profile_id='A_OS',
  v=>v.a_os_crossings.matrix_scope='all_pairs',
  v=>v.a_os_crossings.record_digest='0'.repeat(64),
- v=>v.a_os_g2_review.G2_accepted=true,
+ v=>v.a_os_g2_review.G2_accepted=false,
  v=>v.a_os_g2_review.proposed_additional_support=['A_OS'],
  v=>v.a_os_g2_review.catalog_cells=27,
  v=>delete v.a_os_g2_review.obligations['G2-ORDERED-ENDPOINTS'],

@@ -129,7 +129,7 @@ def roster():
 def check():
     value = p.read(p.ROOT/RECORD)
     prior = baseline.check()
-    p.require(value['record_digest'] == p.digest_record(value) and value['source_bindings'] == bindings(), 'sharp regression evidence/source drift')
+    p.require(value['record_digest'] == p.digest_record(value) and p.g2_bindings_match(value['source_bindings'], bindings()), 'sharp regression evidence/source drift')
     p.require(value['baseline_record_digest'] == prior['record_digest']
               and value['test_ids'] == roster() and value['results'] == dict(tests_run=3, failures=[], errors=[], skips=[]), 'sharp regression execution incomplete')
     p.require(set(value['cases']) == {'round_once', 'charge_offset', 'changed_hashes_without_loss'}

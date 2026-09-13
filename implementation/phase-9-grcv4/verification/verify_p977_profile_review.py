@@ -192,7 +192,7 @@ def build(prior=None):
     p.require(prior['user_accepted'] and prior['aggregate_closed'], 'P9-7.6 not accepted')
     value = dict(schema='phase9_profile_conformance_review_v1', iteration_id='P9-7.7',
         status='reviewed_hold_pending_independent_review', user_accepted=False, aggregate_closed=False,
-        new_G2_support=[], G3_accepted=False, source_bindings=bindings(),
+        new_G2_support=[], G3_accepted=False, source_bindings=p.g2_retained_bindings(bindings()),
         predecessor={k: prior[k] for k in ('record_digest', 'acceptance_sha256')},
         authority=authority(), **reconcile())
     value['record_digest'] = p.digest_record(value)

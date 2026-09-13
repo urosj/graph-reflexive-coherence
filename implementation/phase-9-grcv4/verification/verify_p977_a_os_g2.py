@@ -33,7 +33,7 @@ def interface_bindings():
 def validate_interface(value):
     p.require(value['schema'] == 'phase9_a_os_g2_interface_execution_v1'
               and value['record_digest'] == p.digest_record(value)
-              and value['source_bindings'] == interface_bindings(), 'interface execution/source drift')
+              and p.g2_bindings_match(value['source_bindings'], interface_bindings()), 'interface execution/source drift')
     p.require(value['test_ids'] == [INTERFACE_TEST]
               and value['results'] == dict(tests_run=1, failures=[], errors=[], skips=[])
               and value['G2_accepted'] is False, 'interface execution incomplete or promoted')
@@ -109,8 +109,8 @@ def build(bounded_acceptance=None):
         'specs/grc-v4-a-initializer-spec.md', 'specs/grc-v4-topology-event-spec.md')})
     value = dict(schema='phase9_a_os_integrated_g2_review_v1', gate='P9-G2[A_OS]', verdict='PASS_PROPOSAL',
         user_accepted=False, G2_accepted=False, G3_accepted=False, aggregate_closed=False, new_G2_support=[],
-        source_bindings=sources, nomination=a['nomination'], proposed_additional_support=[NOMINATED],
-        accepted_support_unchanged=sorted(list_supported_profiles()), releases=dict(base=RELEASE_ID, initializer=INITIALIZER_RELEASE_ID, event=EVENT_RELEASE_ID),
+        source_bindings=p.g2_retained_bindings(sources), nomination=a['nomination'], proposed_additional_support=[NOMINATED],
+        accepted_support_unchanged=p.accepted_g2(p.ROOT)['accepted_generic_runtime_support'], releases=dict(base=RELEASE_ID, initializer=INITIALIZER_RELEASE_ID, event=EVENT_RELEASE_ID),
         bounded_acceptance=dict(path=acceptance.REVIEW, sha256=acceptance.ACCEPTANCE_SHA256, execution_digest=b['record_digest']),
         evidence_digests={local.RECORD:a['record_digest'], crossing.RECORD:b['record_digest'], INTERFACE:interface['record_digest']},
         catalog_product=product, interface_evidence=review.ref(INTERFACE, '/evidence'),

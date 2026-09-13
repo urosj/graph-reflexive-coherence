@@ -227,6 +227,11 @@ HANDOFF_PATHS = {
     HERE + "handoff/P9-G1-outputs.zip",
 }
 PATHS = {
+    HERE + "a_os_g2_source_reuse.py",
+    HERE + "verify_p977_a_os_g2_acceptance.py",
+    HERE + "test_p977_a_os_g2_acceptance.py",
+    PHASE + "tranche-7/P9-7.7-A_OS-G2Acceptance.json",
+    PHASE + "tranche-7/P9-7.7-A_OS-G2SourceReuse.json",
     # Additive wire/package decoder only; no event numerical/lifecycle grant.
     "src/pygrc/models/grc_v4_event_codec.py",
     "src/pygrc/models/grc_v4_assets/grc-v4-topology-event-schema.json",
@@ -1414,6 +1419,16 @@ def accepted_a_os(root):
     return value["acceptance"]
 
 
+def g2_retained_bindings(current):
+    from a_os_g2_source_reuse import retained_bindings
+    return retained_bindings(current)
+
+
+def g2_bindings_match(expected, current):
+    from a_os_g2_source_reuse import matches
+    return matches(expected, current)
+
+
 def accepted_g2(root):
     """Explicit singleton acceptance, never inferred from permission or tests."""
     value = read(safe_path(root, G2_ACCEPTANCE))
@@ -1444,6 +1459,41 @@ def accepted_g2(root):
     require(value["accepted_profile"] == captured["objects"][run["nominated_prestate_object"]]["reference"]["profile"],
             "accepted declaration does not match executed profile")
     return value
+
+
+def accepted_a_os_g2(root):
+    name = PHASE + 'tranche-7/P9-7.7-A_OS-G2Acceptance.json'
+    value = read(safe_path(root, name))
+    require(value['record_digest'] == digest_record(value) == 'bb84b02362a6b5ac1e1a4b5ba921f63ff3f454c27c82fb99d3da1836d088a2bb' and value['status'] == 'accepted_by_user'
+            and value['gate'] == 'P9-G2[A_OS]' and value['G2_accepted'] is True
+            and value['G3_accepted'] is False and value['aggregate_closed'] is False,
+            'invalid A_OS G2 acceptance')
+    proposal = read(safe_path(root, value['review']['path']))
+    require(sha(safe_path(root, value['review']['path']).read_bytes()) == value['review']['sha256']
+            and proposal['record_digest'] == value['review']['record_digest'] == digest_record(proposal)
+            and proposal['verdict'] == 'PASS_PROPOSAL'
+            and value['accepted_profile'] == proposal['nomination']
+            and value['accepted_additional_support'] == proposal['proposed_additional_support'],
+            'A_OS acceptance does not match reviewed proposal')
+    git(root, 'merge-base', '--is-ancestor', value['reviewed_commit'], 'HEAD')
+    require(sha(git(root, 'show', value['reviewed_commit'] + ':' + value['review']['path'])) == value['review']['sha256'],
+            'A_OS reviewed Git subject differs')
+    require(sha(safe_path(root, value['review_text']['path']).read_bytes()) == value['review_text']['sha256'],
+            'A_OS reviewed scope text changed')
+    require(sha(safe_path(root, value['source_reuse']['path']).read_bytes()) == value['source_reuse']['sha256'],
+            'A_OS discovery source-reuse identity changed')
+    return value
+
+
+def accepted_generic_support(root):
+    old = accepted_g2(root)['accepted_generic_runtime_support']
+    new = accepted_a_os_g2(root)['accepted_additional_support']
+    from pygrc.models.grc_v4_profile import list_supported_profiles, get_supported_profile
+    support = sorted(set(old + new))
+    require(set(list_supported_profiles()) == set(support)
+            and get_supported_profile(new[0]).to_payload() == accepted_a_os_g2(root)['accepted_profile'],
+            'published G2 discovery differs from accepted declarations')
+    return support
 
 
 def work_entries(root, approval):
@@ -1488,7 +1538,7 @@ def work_entries(root, approval):
     result = {}
     ready, owners = leaf_permissions(root)
     require(
-        value["accepted_generic_runtime_support"] == accepted_g2(root)["accepted_generic_runtime_support"]
+        value["accepted_generic_runtime_support"] == accepted_generic_support(root)
         and value["admitted_specialization_support_sets"] == [],
         "work manifest cannot grant conformance beyond accepted G2",
     )

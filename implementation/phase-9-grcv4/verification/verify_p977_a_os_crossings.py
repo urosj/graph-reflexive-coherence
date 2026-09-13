@@ -97,7 +97,7 @@ def validate(value):
     p.require(value['schema'] == 'phase9_exact_profile_crossing_reconciliation_v1'
               and value['iteration_id'] == 'P9-7.7-A_OS-crossings'
               and value['record_digest'] == p.digest_record(value), 'crossing record drift')
-    p.require(value['source_bindings'] == bindings(), 'crossing source drift')
+    p.require(p.g2_bindings_match(value['source_bindings'], bindings()), 'crossing source drift')
     p.require(value['nomination'] == review.read(local.RECORD)['nomination']
               and value['local_record_digest'] == review.read(local.RECORD)['record_digest'], 'nomination/local record drift')
     p.require(value['results'] == dict(tests_run=3, failures=[], errors=[], skips=[])

@@ -160,7 +160,7 @@ def validate(value, sources):
     p.require(value["iteration_id"] == "P9-7.1" and value["status"] == "verified_pending_user_acceptance"
               and value["user_accepted"] is False and value["new_G2_support"] == []
               and value["G3_accepted"] is False, "lifecycle evidence cannot grant acceptance/support")
-    p.require(value["source_bindings"] == sources, "focused source drift")
+    p.require(p.g2_bindings_match(value["source_bindings"], sources), "focused source drift")
     p.require(value["authority"] == authority(), "forensic authority drift")
     p.require(value["release_id"] == p.current_abundance_release(p.ROOT), "release mismatch")
     p.require(value["base_commit"] == p.git(p.ROOT, "rev-parse", BASE).decode().strip(), "wrong predecessor")

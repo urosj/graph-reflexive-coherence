@@ -123,7 +123,7 @@ if order != 'foundation-first':
 imports()
 from pygrc.models import grc_v4_codec as c, grc_v4_profile as p, grc_v4 as api
 from pygrc.models import grc_v4_step as step, grc_v4_state as state
-check('support-exact-accepted-singleton', p.list_supported_profiles() == frozenset({'grcv4-profile-sha256:a6b853ee382895eb78b1a7955a0df22f95d68b27cb0f762503e8c424c2f59b6d'}))
+check('support-exact-accepted-singleton', p.list_supported_profiles() == frozenset({'grcv4-profile-sha256:a6b853ee382895eb78b1a7955a0df22f95d68b27cb0f762503e8c424c2f59b6d', 'grcv4-profile-sha256:e4c04a83240a33d77c50a26ca6effbb6ce142774bd01f0966861dd517a94e2c4'}))
 if mode in ('absent','rfc-only','validator-only'):
     for name in ('rfc8785', 'jsonschema'):
         present = (mode=='rfc-only' and name=='rfc8785') or (mode=='validator-only' and name=='jsonschema')
@@ -223,7 +223,7 @@ else:
                 lambda: state.GRCV4StepResult(**{k:v for k,v in invalid.items() if k!='schema_version'}))
     projection=reconstructed.to_payload(); projection['observables'].clear()
     check('result-projection-owned', reconstructed.to_payload()==captured)
-    check('support-not-expanded', p.list_supported_profiles()==frozenset({'grcv4-profile-sha256:a6b853ee382895eb78b1a7955a0df22f95d68b27cb0f762503e8c424c2f59b6d'}))
+    check('support-not-expanded', p.list_supported_profiles()==frozenset({'grcv4-profile-sha256:a6b853ee382895eb78b1a7955a0df22f95d68b27cb0f762503e8c424c2f59b6d', 'grcv4-profile-sha256:e4c04a83240a33d77c50a26ca6effbb6ce142774bd01f0966861dd517a94e2c4'}))
 after=legacy()
 check('mixed-legacy-behavior-unchanged',before==after)
 check('no-test-or-investigation-imports',not any(n.startswith(('tests.','grcv4_explorer')) for n in sys.modules))

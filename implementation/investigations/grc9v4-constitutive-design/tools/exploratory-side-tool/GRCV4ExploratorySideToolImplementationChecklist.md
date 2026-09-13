@@ -1681,5 +1681,7 @@ their historical stage, not the later aggregate acceptance recorded at the end.
 - [x] Expose the PASS proposal as `a_os_g2_review`, separately from accepted
       bounded reconciliation and unchanged global G2 support.
 - [x] Check API/notebook/browser agreement and false proposal/acceptance controls.
-- [ ] Obtain the explicit G2 decision before updating exact support/discovery;
-      aggregate P9-7.7, other profiles and G3 are not closed by the proposal.
+- [x] Record the user’s 2026-09-13 exact A_OS G2 acceptance separately; update
+      API/notebook/browser and discovery to the exact C_OS/A_OS pair. Preserve
+      original evidence through pinned source reuse. Aggregate P9-7.7, eight
+      other profile gates, all-pairs support and G3 remain open.

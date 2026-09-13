@@ -56,7 +56,7 @@ def check():
     p.require(value['schema'] == 'phase9_history_policy_execution_v1'
               and value['iteration_id'] == 'P9-7.3'
               and value['record_digest'] == p.digest_record(value), 'history-policy evidence drift')
-    p.require(value['source_bindings'] == bindings(), 'history-policy source drift')
+    p.require(p.g2_bindings_match(value['source_bindings'], bindings()), 'history-policy source drift')
     p.require(value['authority'] == authority() and value['predecessors'] == predecessors(),
               'history-policy authority or predecessor drift')
     p.require(value['test_ids'] == roster() and value['results'] == dict(tests_run=len(roster()), failures=[], errors=[], skips=[]),
