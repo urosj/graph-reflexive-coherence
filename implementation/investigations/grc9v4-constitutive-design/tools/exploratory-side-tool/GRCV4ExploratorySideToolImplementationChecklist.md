@@ -1750,4 +1750,7 @@ their historical stage, not the later aggregate acceptance recorded at the end.
       modules, wrong origins and partial results; keep scientific checks distinct.
 - [x] Validate retained-review mutations and API/notebook/HTTP/browser status,
       including proposed-versus-accepted display and late-failure cleanup.
-- [ ] Explicit C_CI G2 review/acceptance remains; no proposal auto-promotion.
+- [x] User accepted exact C_CI G2 on 2026-09-14, bound to `8ec744e`. Shared
+      acceptance projection and discovery now publish C_OS/A_OS/A_CI/C_CI.
+      Preserve original evidence and exact source-reuse identities; no
+      all-pairs, G3, aggregate closure or new runtime permission.

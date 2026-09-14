@@ -16,8 +16,8 @@ class RegistryTests(unittest.TestCase):
     def test_real_legacy_acceptances_and_proposal_remain_distinct(self):
         result = g.checked(p.ROOT)
         self.assertEqual([(r['profile_family_id'], r['state']) for r in result['profiles']],
-                         [('C_OS', 'accepted'), ('A_OS', 'accepted'), ('A_CI', 'accepted'), ('C_CI', 'proposed')])
-        self.assertEqual(len(result['accepted_generic_runtime_support']), 3)
+                         [('C_OS', 'accepted'), ('A_OS', 'accepted'), ('A_CI', 'accepted'), ('C_CI', 'accepted')])
+        self.assertEqual(len(result['accepted_generic_runtime_support']), 4)
         self.assertIn(result['profiles'][2]['complete_profile_id'], result['accepted_generic_runtime_support'])
         self.assertEqual(g.support_before(p.ROOT, result['profiles'][2]['complete_profile_id']),
                          sorted(r['complete_profile_id'] for r in result['profiles'][:2]))
@@ -146,7 +146,7 @@ const v=JSON.parse(readFileSync(0,'utf8'));
 checkedG2(v,true);
 checkedG2({},false);
 assert.throws(()=>checkedG2(v,false));
-for(const key of ['a_os_g2_review','a_ci_g2_review']) {
+for(const key of ['a_os_g2_review','a_ci_g2_review','c_ci_g2_review']) {
   for(const metric of ['catalog_cells','supplemental_interface_methods','numerical_tests_rerun']) {
     const bad=structuredClone(v); bad[key][metric]++;
     assert.throws(()=>checkedG2(bad,true));

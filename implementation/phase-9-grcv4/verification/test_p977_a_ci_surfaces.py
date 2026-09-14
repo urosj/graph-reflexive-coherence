@@ -28,7 +28,8 @@ class ACISurfaceTests(unittest.TestCase):
         self.assertEqual(status['a_ci_crossings']['reconciled_crossing_cells'], 7)
         self.assertTrue(status['a_ci_crossings']['user_accepted'])
         self.assertFalse(status['a_ci_crossings']['all_ordered_pairs_verified'])
-        self.assertEqual(len(status['accepted_generic_runtime_support']), 3)
+        from profile_g2_registry import checked
+        self.assertEqual(status['accepted_generic_runtime_support'], checked(p.ROOT)['accepted_generic_runtime_support'])
         self.assertIn(status['a_ci_local_product']['complete_profile_id'], status['accepted_generic_runtime_support'])
         from profile_g2_registry import registry, view
         from verify_p977_a_ci_g2 import RECORD
@@ -78,8 +79,8 @@ assert.deepEqual(await verifiedStatus(value), value);
 const element = tag => ({tag, children:[], textContent:'', append(child){this.children.push(child);}, replaceChildren(){this.children=[];}});
 const body=element('tbody');
 renderG2Profiles(value,body,element);
-assert.equal(body.children.length,3);
-assert.deepEqual(body.children.map(r=>r.children[2].textContent),['G2 accepted','G2 accepted','G2 accepted']);
+assert.equal(body.children.length,value.profile_g2.length);
+assert.deepEqual(body.children.map(r=>r.children[2].textContent),value.profile_g2.map(r=>r.state==='accepted'?'G2 accepted':'G2 proposal — not accepted'));
 assert.equal(body.children[2].children[1].textContent,value.a_ci_g2_review.proposed_additional_support[0]);
 renderG2Profiles({},body,element);
 assert.equal(body.children.length,0);

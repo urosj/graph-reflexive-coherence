@@ -1149,7 +1149,7 @@ class CIStepTests(unittest.TestCase):
         step = ProvisionalCandidateCIStep(before, backend)
         restored = ProvisionalCandidateCIStep.from_payload(step.to_payload())
         self.assertEqual(restored.next_inputs, step.next_inputs)
-        self.assertEqual(len(list_supported_profiles()), 3)
+        self.assertEqual(len(list_supported_profiles()), 4)
 
 
 class CIReconciliationTests(unittest.TestCase):

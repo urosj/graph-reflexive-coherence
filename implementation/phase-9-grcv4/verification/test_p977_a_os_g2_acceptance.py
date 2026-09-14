@@ -36,7 +36,7 @@ for (const view of [undefined, null]) {
     def test_exact_discovery_and_detached_declaration(self):
         accepted = p.accepted_a_os_g2(p.ROOT)
         self.assertEqual(set(p.accepted_generic_support(p.ROOT)), set(list_supported_profiles()))
-        self.assertEqual(len(list_supported_profiles()), 3)
+        self.assertLessEqual(set(accepted['accepted_generic_runtime_support']), set(list_supported_profiles()))
         key = accepted['accepted_additional_support'][0]
         profile = get_supported_profile(key)
         self.assertEqual(profile.to_payload(), accepted['accepted_profile'])

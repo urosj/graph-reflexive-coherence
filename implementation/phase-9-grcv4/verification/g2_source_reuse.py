@@ -21,11 +21,13 @@ def record():
 
 
 def retained_bindings(current):
-    result = dict(current)
+    from c_ci_g2_source_reuse import retained_bindings as successor_bindings
+    result = successor_bindings(current)
     for name, row in record()['changes'].items():
         if name not in result:
             continue
-        p.require(p.sha(p.safe_path(p.ROOT, name).read_bytes()) == row['after_sha256'],
+        live = successor_bindings({name: p.sha(p.safe_path(p.ROOT, name).read_bytes())})[name]
+        p.require(live == row['after_sha256'],
                   'unreviewed change after G2 discovery: ' + name)
         p.require(p.sha(p.git(p.ROOT, 'show', BASE + ':' + name)) == row['before_sha256'],
                   'unrecoverable pre-discovery source: ' + name)
@@ -42,7 +44,11 @@ def matches(expected, current):
     if not changed:
         return True
     desired = {n: expected[n] for n in changed}
-    projected = retained_bindings(changed)
+    from c_ci_g2_source_reuse import retained_bindings as newest_bindings
+    newest = newest_bindings(changed)
+    if desired == newest:
+        return True
+    projected = retained_bindings(newest)
     if desired == projected:
         return True
     from a_os_g2_source_reuse import matches as historical_matches

@@ -115,6 +115,8 @@ def build(bounded_acceptance=None):
     sources.update({n: p.sha((p.ROOT/n).read_bytes()) for n in (INTERFACE, crossing.RECORD,
         acceptance.REVIEW, p.HERE+'verify_p977_c_ci_acceptance.py', 'specs/grc-common-interface.md',
         'specs/grc-v4-a-initializer-spec.md', 'specs/grc-v4-topology-event-spec.md')})
+    from c_ci_g2_source_reuse import retained_bindings
+    sources = retained_bindings(sources)  # Recover the reviewed pre-discovery identities only.
     value = dict(schema='phase9_c_ci_integrated_g2_review_v1', gate='P9-G2[C_CI]', verdict='PASS_PROPOSAL',
         user_accepted=False, G2_accepted=False, G3_accepted=False, aggregate_closed=False, new_G2_support=[],
         source_bindings=sources, nomination=a['nomination'], proposed_additional_support=[NOMINATED],

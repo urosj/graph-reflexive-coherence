@@ -193,7 +193,7 @@ export const G2_REGISTRY = {
       "verified_local_cells": 26
     }
   },
-  "record_digest": "48df340680b9acba3bdfa4276dfd2c57875d2796a611c2358ef97039b6897b59",
+  "record_digest": "1ac9cb64d8229755fc53b5f76dfbe9648cd37633f0e9649d7c5b6bb63309739e",
   "records": [
     {
       "acceptance": {
@@ -258,7 +258,10 @@ export const G2_REGISTRY = {
       "view_key": "a_ci_g2_review"
     },
     {
-      "acceptance": null,
+      "acceptance": {
+        "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_CI-G2Acceptance.json",
+        "record_digest": "9ccd568fea897089fd94ea4174247a4421dc2bdba675421f7c8abe2995904de6"
+      },
       "adapter": "exact_profile_v1",
       "bounded_view_key": "c_ci_crossings",
       "complete_profile_id": "grcv4-profile-sha256:a56ef981821478cc50a3551a914dd6240e0dc62c9ca69d52305bd59a3405f69e",
@@ -273,7 +276,7 @@ export const G2_REGISTRY = {
         "numerical_tests_rerun": 0,
         "supplemental_interface_methods": 1
       },
-      "state": "proposed",
+      "state": "accepted",
       "view_key": "c_ci_g2_review"
     }
   ],

@@ -2178,3 +2178,10 @@ Scientific modules and historical schemas are not merged. The browser remains
 registry-driven, showing three accepted declarations and one proposal. One
 current status supports transport/rendering checks; no scientific campaign is
 rerun for dispatch or display changes.
+
+The user accepted exact C_CI G2 on 2026-09-14. The common acceptance adapter
+binds checkpoint `8ec744e` without rewriting its proposal or retained executions.
+The same registry-driven API/notebook/browser path now shows four accepted
+declarations: C_OS/A_OS/A_CI/C_CI. Finite discovery-source comparisons preserve
+older evidence checks while rejecting unrelated drift. Six other profile G2
+decisions, all-pairs, aggregate P9-7.7 and G3 remain open.

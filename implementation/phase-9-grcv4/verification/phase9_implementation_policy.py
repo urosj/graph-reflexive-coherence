@@ -229,6 +229,11 @@ HANDOFF_PATHS = {
 PATHS = {
     HERE + "verify_p977_c_ci_g2.py",
     HERE + "test_p977_c_ci_g2.py",
+    HERE + "test_p977_c_ci_g2_acceptance.py",
+    HERE + "c_ci_g2_source_reuse.py",
+    PHASE + "tranche-7/P9-7.7-C_CI-G2Acceptance.json",
+    PHASE + "tranche-7/P9-7.7-C_CI-G2Acceptance.md",
+    PHASE + "tranche-7/P9-7.7-C_CI-G2SourceReuse.json",
     HERE + "test_profile_materializers.py",
     PHASE + "tranche-7/P9-7.7-C_CI-G2Interface.json",
     PHASE + "tranche-7/P9-7.7-C_CI-G2Review.json",

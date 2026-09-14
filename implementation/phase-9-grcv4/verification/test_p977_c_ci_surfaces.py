@@ -33,12 +33,12 @@ class CCISurfaceTests(unittest.TestCase):
         self.assertEqual(status['c_ci_crossings']['new_execution_cases'], 5)
         self.assertTrue(status['c_ci_crossings']['user_accepted'])
         self.assertFalse(status['c_ci_crossings']['G2_accepted'])
-        self.assertEqual(len(status['accepted_generic_runtime_support']), 3)
-        self.assertNotIn(status['c_ci_local_product']['complete_profile_id'], status['accepted_generic_runtime_support'])
+        self.assertEqual(len(status['accepted_generic_runtime_support']), 4)
+        self.assertIn(status['c_ci_local_product']['complete_profile_id'], status['accepted_generic_runtime_support'])
         self.assertEqual(status['c_ci_g2_review']['catalog_cells'], 33)
-        self.assertEqual(status['c_ci_g2_review']['status'], 'pass_proposal_pending_G2_acceptance')
-        self.assertFalse(status['c_ci_g2_review']['G2_accepted'])
-        self.assertEqual(status['profile_g2'][-1]['state'], 'proposed')
+        self.assertEqual(status['c_ci_g2_review']['status'], 'accepted')
+        self.assertTrue(status['c_ci_g2_review']['G2_accepted'])
+        self.assertEqual(status['profile_g2'][-1]['state'], 'accepted')
         from profile_g2_registry import checked_reconciliation, registry
         expected=registry(p.ROOT)['reconciliation_views']
         views={key:status[key] for key in expected}
@@ -93,7 +93,7 @@ const element = tag => ({tag, children:[], textContent:'', append(child){this.ch
 const body=element('tbody');
 renderG2Profiles(value,body,element);
 assert.equal(body.children.length,4);
-assert.deepEqual(body.children.map(r=>r.children[2].textContent),['G2 accepted','G2 accepted','G2 accepted','G2 proposal — not accepted']);
+assert.deepEqual(body.children.map(r=>r.children[2].textContent),['G2 accepted','G2 accepted','G2 accepted','G2 accepted']);
 assert.equal(body.children[2].children[1].textContent,value.a_ci_g2_review.proposed_additional_support[0]);
 renderReconciliation(value,body,element);
 assert.equal(body.children.length,6);
@@ -164,11 +164,11 @@ for(const edit of [v=>v.c_ci_local_product.verified_local_cells=33,
  await assert.rejects(verifiedStatus(bad));count++;
 }
 assert.equal(count,34);
-for(const edit of [v=>delete v.c_ci_g2_review,v=>v.c_ci_g2_review.G2_accepted=true,
- v=>v.c_ci_g2_review.user_accepted=true,v=>v.c_ci_g2_review.catalog_cells=28,
+for(const edit of [v=>delete v.c_ci_g2_review,v=>v.c_ci_g2_review.G2_accepted=false,
+ v=>v.c_ci_g2_review.user_accepted=false,v=>v.c_ci_g2_review.catalog_cells=28,
  v=>v.c_ci_g2_review.all_ordered_pairs_verified=true,v=>v.c_ci_g2_review.record_digest='0'.repeat(64),
  v=>v.c_ci_g2_review.proposed_additional_support=['C_CI'],v=>v.c_ci_g2_review.accepted_support_unchanged=[],
- v=>v.profile_g2[3].state='accepted',v=>v.accepted_generic_runtime_support.push(v.c_ci_g2_review.proposed_additional_support[0])]) {
+ v=>v.profile_g2[3].state='proposed',v=>v.accepted_generic_runtime_support.push(v.c_ci_g2_review.proposed_additional_support[0])]) {
  const bad=structuredClone(value);edit(bad);delete bad.status_digest;
  bad.status_digest=createHash('sha256').update(canonical(bad)).digest('hex');
  await assert.rejects(verifiedStatus(bad));

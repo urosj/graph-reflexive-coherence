@@ -1533,7 +1533,12 @@ After committing bounded acceptance as `565418a`, the
 is a PASS proposal for all 33 obligations and the declared ordered endpoints.
 One zero-duration public-facade supplement adds no positive-step numerical
 credit. Original local/crossing runs and all earlier acceptances remain intact.
-C_CI is registered as proposed, not supported; explicit G2 acceptance remains.
+The user accepted exact C_CI G2 on 2026-09-14, binding reviewed checkpoint
+`8ec744e` in the [acceptance](./phase-9-grcv4/tranche-7/P9-7.7-C_CI-G2Acceptance.json).
+Discovery now publishes exactly C_OS/A_OS/A_CI/C_CI. Original proposal and
+execution bytes remain unchanged; finite source comparisons account for
+discovery/assertion changes only. Six other profile gates, all-pairs, aggregate
+P9-7.7 and G3 remain open; no numerical law or runtime permission changes.
 
 This fourth G2 profile also closes the remaining Python dispatch seam. Pinned
 registry materializers define the ordered local/crossing/G2 calls and required

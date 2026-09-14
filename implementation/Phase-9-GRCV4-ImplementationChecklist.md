@@ -60,7 +60,7 @@ pending while an accepted C_OS path advances to reviewed specialization work.
 | P9-G4 | Pending | Runtime conformance, regression evidence, reviewed support set, and handoff. |
 
 The initially empty generic support set now contains exact C_OS, A_OS and
-A_CI declarations. Each family-level gate
+A_CI and C_CI declarations. Each family-level gate
 record must bind the actual complete-profile IDs, parameters/domains, fixture
 coverage, and evidence; a family label alone does not certify all instances.
 
@@ -68,8 +68,8 @@ coverage, and evidence; a family label alone does not certify all instances.
 | --- | --- | --- |
 | `P9-G2[C_OS]` | Accepted, exact singleton | [explicit G2 acceptance](./phase-9-grcv4/tranche-4/P9-4.8B-G2Acceptance.json) closes Tranche 4 and aliases P9-7.7-C_OS. Other profiles and G3 remain closed. |
 | `P9-G2[A_OS]` | Accepted, exact nomination | [Explicit G2 acceptance](./phase-9-grcv4/tranche-7/P9-7.7-A_OS-G2Acceptance.json) accepts the reviewed 28-case scope; no all-pairs or G3 support. |
-| `P9-G2[C_CI]` | PASS proposal, G2 acceptance pending | [Integrated 33-cell review](./phase-9-grcv4/tranche-7/P9-7.7-C_CI-G2Review.md) over accepted bounded reconciliation, exact ordered scope and one facade supplement. Public support remains unchanged. |
-| `P9-G2[A_CI]` | Accepted, exact nomination | [Explicit G2 acceptance](./phase-9-grcv4/tranche-7/P9-7.7-A_CI-G2Acceptance.json) accepts the reviewed 28-case scope. Current discovery is exactly C_OS/A_OS/A_CI; no all-pairs or G3 support. |
+| `P9-G2[C_CI]` | Accepted, exact nomination | [Explicit G2 acceptance](./phase-9-grcv4/tranche-7/P9-7.7-C_CI-G2Acceptance.json) accepts the reviewed 33-cell scope at `8ec744e`; distinct initializer/event targets and dense controls are not added support. |
+| `P9-G2[A_CI]` | Accepted, exact nomination | [Explicit G2 acceptance](./phase-9-grcv4/tranche-7/P9-7.7-A_CI-G2Acceptance.json) accepts the reviewed 28-case scope. Discovery at acceptance was exactly C_OS/A_OS/A_CI; no all-pairs or G3 support. |
 | `P9-G2[C_PC]` | HOLD, draft P9-7.7 review | Accepted bounded numerical/lifecycle evidence; reconcile the 33-cell exact product and ordered endpoints. |
 | `P9-G2[A_PC]` | HOLD, draft P9-7.7 review | Accepted bounded numerical/lifecycle evidence; reconcile the 28-cell exact product and ordered endpoints. |
 | `P9-G2[C_CI_PC]` | HOLD, draft P9-7.7 review | Accepted bounded numerical/lifecycle evidence; reconcile the 33-cell exact product and ordered endpoints. |
@@ -1396,8 +1396,10 @@ may reach G2 without waiting for all Tranche 6 realizations.
     view/review seeding and cleanup with pinned ordered registry materializers.
     Check dependencies, source bindings/origins and complete projection;
     preserve distinct scientific checkers, accepted records and permissions.
-  - [ ] Independently review/explicitly accept exact C_CI G2. Its registered
-    proposal does not publish support or close aggregate P9-7.7/G3.
+  - [x] User accepted exact C_CI G2 on 2026-09-14: [acceptance](./phase-9-grcv4/tranche-7/P9-7.7-C_CI-G2Acceptance.json)
+    binds reviewed checkpoint `8ec744e`. Publish exactly C_OS/A_OS/A_CI/C_CI;
+    preserve original evidence and record finite discovery-source comparisons.
+    Six other profile decisions, all-pairs, aggregate P9-7.7 and G3 remain open.
 - [ ] P9-7.8: Review `P9-G3[S]` for the exact accepted generic support set
   before specialization code. Singleton `P9-G3[C_OS]` can run immediately
   after its G2; unrelated lifecycle/realization rows may remain pending.

@@ -610,7 +610,7 @@ class CandidateAInitializationTests(unittest.TestCase):
         self.assertEqual(result.identity, before)
         with self.assertRaises(FrozenInstanceError):
             result.authority.state.W_A = (10.0,)
-        self.assertEqual(len(list_supported_profiles()), 3)
+        self.assertEqual(len(list_supported_profiles()), 4)
         self.assertTrue(
             all(
                 get_supported_profile(p).identity_payload.candidate in ("A", "C")
@@ -1169,7 +1169,7 @@ class CandidateACurrentWriterTests(unittest.TestCase):
                 CandidateAWriter.from_payload(payload)
         with self.assertRaises(FrozenInstanceError):
             writer.authority.state.W_A = (1.0,)
-        self.assertEqual(len(list_supported_profiles()), 3)
+        self.assertEqual(len(list_supported_profiles()), 4)
 
     def test_current_range_failures_and_exact_potential_cancellation(self):
         inputs, backend = current_fixture(

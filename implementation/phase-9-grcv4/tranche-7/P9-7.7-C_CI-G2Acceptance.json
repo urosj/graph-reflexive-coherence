@@ -1,0 +1,157 @@
+{
+  "schema": "phase9_exact_profile_g2_acceptance_v1",
+  "status": "accepted_by_user",
+  "date": "2026-09-14",
+  "user_instruction": "great, accept and commit",
+  "gate": "P9-G2[C_CI]",
+  "reviewed_commit": "8ec744ef1139adb0a019faa8bc2b93ba35752af2",
+  "review": {
+    "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_CI-G2Review.json",
+    "sha256": "5669358f6cc3e63adbec7da717598636c5bf2584a64d812ba675ea8c463a7e27",
+    "record_digest": "56edc8d0a725a693a0363bf66f23bdcbe000357403928f9fd84da991c542bedc"
+  },
+  "review_text": {
+    "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_CI-G2Review.md",
+    "sha256": "d1fb894b564f42f97171f14c995dd79da7fed7939d6c536685cf34436e917e69"
+  },
+  "accepted_profile": {
+    "identity_payload": {
+      "schema_version": "grcv4-profile-identity-v1",
+      "profile_family_id": "C_CI",
+      "candidate": "C",
+      "realization": "CI",
+      "differential_backend_id": "oriented_incidence_d0_equals_BT_v1",
+      "charge_profile_id": "unit_vertex_measure_v1",
+      "geometry_profile_id": "affine_reference_relative_v1",
+      "context_contract_id": "constant_zero_context_v1",
+      "units_id": "grcv4_nondimensional_reference_v1",
+      "gauge_id": "component_zero_mean_potential_v1",
+      "normalization_id": "unnormalized_vertex_stiffness_v1",
+      "domain_id": "fixed_graph_strict_gap_spd_v1",
+      "solver_id": "ci_reduced_fixed_point_v1",
+      "lifecycle_policy_id": "grcv4-lifecycle-policy-v1",
+      "candidate_c_transport_id": "C-HM-STIFFNESS-BASELINE-v1",
+      "composition_gain": null,
+      "params_hash": "grcv4-params-sha256:c2c2fee30e1508304d6cc8fb7842ba694845b40f4c377eace1e6d8745fd9d31a"
+    },
+    "params_resolved": {
+      "schema_version": "grcv4-resolved-params-v1",
+      "common": {
+        "schema_version": "grcv4-common-params-v1",
+        "differential_backend_id": "oriented_incidence_d0_equals_BT_v1",
+        "boundary_policy_id": "closed_no_flux_v1",
+        "measure_profile_id": "unit_vertex_measure_v1",
+        "context_contract_id": "constant_zero_context_v1",
+        "units_id": "grcv4_nondimensional_reference_v1",
+        "gauge_id": "component_zero_mean_potential_v1",
+        "normalization_id": "unnormalized_vertex_stiffness_v1",
+        "domain_id": "fixed_graph_strict_gap_spd_v1",
+        "default_step_request": null
+      },
+      "candidate": {
+        "schema_version": "grcv4-candidate-c-params-v1",
+        "transport_id": "C-HM-STIFFNESS-BASELINE-v1",
+        "Lambda_C": 1,
+        "selector_boundary_policy_id": "strict_rank_gap_fail_closed_v1",
+        "C_ref": 1,
+        "kappa_M_C": 0.0,
+        "kappa_Phi_C": 1,
+        "eta_C": 0.5,
+        "W_C_tr": {
+          "e": 2.0
+        },
+        "W_C_tr_content_digest": "grcv4-wctr-sha256:fa845c7788b4d8877437f2c3456230a9365981e115465e3a393cc868351419fb",
+        "potential_evaluator_id": "quadratic_site_potential_zero_derivative_v1",
+        "tau_C": 0.25,
+        "chi_C": 0.25,
+        "zeta_C": 0.25,
+        "current_conditioning_policy_id": "strict_invertible_current_block_v1",
+        "E_H_policy_id": "diag_W_C_tr_structural_hodge_v1",
+        "E_M_policy_id": "eta_C_diag_W_C_tr_mobility_v1"
+      },
+      "realization": {
+        "schema_version": "grcv4-ci-params-v1",
+        "contraction_domain_id": "ci_reference_frobenius_ball_v1:0x1.0000000000000p-3",
+        "root_selector_id": "unique_admitted_root_v1",
+        "iteration_limit": 60,
+        "residual_norm_id": "joint_current_geometry_l2_v1",
+        "tolerance": 1e-11
+      },
+      "geometry": {
+        "schema_version": "grcv4-geometry-profile-params-v1",
+        "K4_base_digest": "grcv4-k4-sha256:bc96c6d5259157dc72a745b81d31e8d3d927527ba9115b36ee169706ddac40f5",
+        "reference_hodge_digest": "grcv4-hodge-sha256:a02932d58fbfa8b044f724284eb590065f2ee4cc42f3809e697781606530683e",
+        "star_cover_id": "vertex_star_exact_overlap_v1",
+        "overlap_normalization_id": "edge_multiplicity_inverse_sqrt_v1",
+        "candidate_adapter_id": "candidate_c_exact_star_adapter_v1",
+        "flat_sharp_solver_id": "spd_direct_v1",
+        "geometry_domain_id": "positive_hodge_fixed_graph_v1",
+        "kappa_H": 1e-05
+      },
+      "solver": {
+        "schema_version": "grcv4-solver-policy-v1",
+        "solver_kind": "fixed_point",
+        "root_selector_id": "unique_admitted_root_v1",
+        "iteration_limit": 60,
+        "conditioning_limit": 100000000.0,
+        "residual_norm_id": "edge_l2_v1",
+        "absolute_tolerance": 1e-11,
+        "relative_tolerance": 1e-11,
+        "failure_policy_id": "fail_closed_no_fallback_v1"
+      },
+      "charge": {
+        "schema_version": "grcv4-charge-policy-v1",
+        "policy_id": "stable_pairwise_binary64_charge_v1",
+        "accumulation_order": "canonical_live_vertex_balanced_binary_tree",
+        "rounding_mode": "IEEE754_binary64_roundTiesToEven",
+        "absolute_tolerance": 1e-11,
+        "relative_tolerance": 0,
+        "repair_policy": "never_mutate_resource",
+        "remainder_policy": "compatibility_projection_is_none"
+      },
+      "lifecycle": {
+        "schema_version": "grcv4-lifecycle-policy-v1",
+        "migration_policy_id": "typed_bidirectional_profile_migration_v1",
+        "mapped_event_policy_id": "caller_mapped_atomic_topology_event_v1",
+        "reset_policy_id": "restore_current_baseline_append_receipt_v1",
+        "rebase_policy_id": "replace_baseline_append_receipt_v1",
+        "history_policy_id": "candidate_c_no_independent_history_v1",
+        "receipt_policy_id": "operation_delta_plus_persistent_ledger_v1",
+        "target_readmission_policy_id": "full_target_fail_closed_v1"
+      }
+    },
+    "complete_profile_id": "grcv4-profile-sha256:a56ef981821478cc50a3551a914dd6240e0dc62c9ca69d52305bd59a3405f69e"
+  },
+  "accepted_additional_support": [
+    "grcv4-profile-sha256:a56ef981821478cc50a3551a914dd6240e0dc62c9ca69d52305bd59a3405f69e"
+  ],
+  "predecessor_support": [
+    "grcv4-profile-sha256:16ed65f7f65d4716e1be3e384f6fa0f957d26dd7b7a3f7e1b43ad1aa3f250946",
+    "grcv4-profile-sha256:a6b853ee382895eb78b1a7955a0df22f95d68b27cb0f762503e8c424c2f59b6d",
+    "grcv4-profile-sha256:e4c04a83240a33d77c50a26ca6effbb6ce142774bd01f0966861dd517a94e2c4"
+  ],
+  "releases": {
+    "base": "grcv4-spec-release-sha256:e2acd9df0cc02c5fd4bbed4989ff5d7da3a819adeb2950d922b8a6ef4bf35f24",
+    "initializer": "grcv4-spec-release-sha256:e44dcd77a78a752c0e62f559243b88faff0bf90af1ee11a587f25d27e8a8abc7",
+    "event": "grcv4-spec-release-sha256:a6861c38271f3f4ea41fae35807c399255353c384c44a9455f334556df6cdec8"
+  },
+  "accepted_generic_runtime_support": [
+    "grcv4-profile-sha256:16ed65f7f65d4716e1be3e384f6fa0f957d26dd7b7a3f7e1b43ad1aa3f250946",
+    "grcv4-profile-sha256:a56ef981821478cc50a3551a914dd6240e0dc62c9ca69d52305bd59a3405f69e",
+    "grcv4-profile-sha256:a6b853ee382895eb78b1a7955a0df22f95d68b27cb0f762503e8c424c2f59b6d",
+    "grcv4-profile-sha256:e4c04a83240a33d77c50a26ca6effbb6ce142774bd01f0966861dd517a94e2c4"
+  ],
+  "source_reuse": {
+    "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_CI-G2SourceReuse.json",
+    "sha256": "31cafd0ef23f345f629f520784eb7d4dfde4a2ebe2e7f9bf0b1009c27d35f922",
+    "record_digest": "fa704bd13caa4139b020260f9cec6751ab9e96aa47f5e588cd9e2b0bbdd86bf7"
+  },
+  "G2_accepted": true,
+  "G3_accepted": false,
+  "aggregate_closed": false,
+  "all_ordered_pairs_verified": false,
+  "new_runtime_iterations_authorized": [],
+  "admitted_specialization_support_sets": [],
+  "scope": "Exact C_CI nomination and reviewed 33-cell finite product only. Nonzero-deformation controls and initializer/event targets are separate declarations, not added support. No global CI uniqueness, arbitrary pairs, G3 or aggregate closure.",
+  "record_digest": "9ccd568fea897089fd94ea4174247a4421dc2bdba675421f7c8abe2995904de6"
+}
