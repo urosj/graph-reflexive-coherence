@@ -1770,3 +1770,6 @@ their historical stage, not the later aggregate acceptance recorded at the end.
 - [x] Register the integrated A_PC G2 proposal through the existing exact-profile
       adapter/materializer. Expose its 28-cell review and pending decision across
       API/notebook/browser; keep four accepted declarations and all original runs.
+- [x] Project the user's 2026-09-14 exact A_PC G2 acceptance through the shared
+      adapter. Publish five exact declarations, preserve all historical review
+      and execution bytes, and bind only finite discovery/assertion changes.

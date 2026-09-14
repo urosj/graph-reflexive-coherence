@@ -11,7 +11,7 @@ import phase9_implementation_policy as p
 
 REGISTRY = p.PHASE + 'tranche-7/ProfileG2Registry.json'
 BROWSER = p.SIDE + 'tool/phase9-web/g2-registry.js'
-REGISTRY_DIGEST = 'a6fcca104d2b955555b22a33ffeae172a1ef74ee5d272561aa8855cac6dd60a0'
+REGISTRY_DIGEST = '8847cb8c0b871320686eb97015356c9583aaf21426a0a5a85581c34f9bedf736'
 ACCEPTANCE_SCHEMA = 'phase9_exact_profile_g2_acceptance_v1'
 FIELDS = {'profile_family_id', 'complete_profile_id', 'gate', 'state', 'adapter',
           'acceptance', 'review', 'view_key', 'bounded_view_key', 'review_metrics'}

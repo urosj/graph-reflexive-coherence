@@ -1578,6 +1578,12 @@ registry row/materializer only; four existing accepted declarations remain
 unchanged. Native release, explicit loss and independent current/reset admission
 stay distinct; no matched-forcing contraction or base-chart invariance is inferred.
 G2 acceptance is still a separate decision.
+The user then accepted exact A_PC G2 on 2026-09-14. The common acceptance
+record binds checkpoint `b4909a3`; discovery now publishes exactly
+C_OS/A_OS/A_CI/C_CI/A_PC. Preserve proposal and execution bytes and use finite
+source comparisons for discovery-only changes. Controls and initializer/event
+targets do not become supported. C_PC is next; five other G2 decisions,
+all-pairs, aggregate P9-7.7 and G3 remain open.
 
 `P9-7.8` may review `P9-G3[C_OS]` immediately after its G2 acceptance;
 completion of the other Tranche 7 or Tranche 6 rows is not a prerequisite.

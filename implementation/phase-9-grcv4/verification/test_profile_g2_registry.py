@@ -17,12 +17,12 @@ class RegistryTests(unittest.TestCase):
         result = g.checked(p.ROOT)
         self.assertEqual(result['profiles'],[g.view(row) for row in g.registry(p.ROOT)['records']])
         self.assertEqual([(r['profile_family_id'], r['state']) for r in result['profiles'] if r['state']=='accepted'],
-                         [('C_OS', 'accepted'), ('A_OS', 'accepted'), ('A_CI', 'accepted'), ('C_CI', 'accepted')])
+                         [('C_OS', 'accepted'), ('A_OS', 'accepted'), ('A_CI', 'accepted'), ('C_CI', 'accepted'), ('A_PC', 'accepted')])
         for row in result['profiles']:
             if row['state']=='proposed':
                 self.assertFalse(row['G2_accepted'])
                 self.assertNotIn(row['complete_profile_id'],result['accepted_generic_runtime_support'])
-        self.assertEqual(len(result['accepted_generic_runtime_support']), 4)
+        self.assertEqual(len(result['accepted_generic_runtime_support']), 5)
         self.assertIn(result['profiles'][2]['complete_profile_id'], result['accepted_generic_runtime_support'])
         self.assertEqual(g.support_before(p.ROOT, result['profiles'][2]['complete_profile_id']),
                          sorted(r['complete_profile_id'] for r in result['profiles'][:2]))

@@ -2204,3 +2204,7 @@ The integrated A_PC G2 proposal adds one `exact_profile_v1` row and dependent
 G2 materializer to that registry. No new profile dispatch/rendering branches;
 status distinguishes four accepted declarations from the pending A_PC proposal.
 Validate proposal/interface mutations and reuse one real status across transports.
+The subsequent explicit A_PC G2 acceptance uses the same adapter and materializer:
+five accepted exact declarations, no widened controls/targets, G3 or all-pairs.
+Finite source comparisons preserve the reviewed checkpoint and old execution
+identities while allowing the exact discovery addition.

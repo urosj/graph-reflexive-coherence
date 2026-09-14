@@ -33,21 +33,21 @@ class CCISurfaceTests(unittest.TestCase):
         self.assertEqual(status['c_ci_crossings']['new_execution_cases'], 5)
         self.assertTrue(status['c_ci_crossings']['user_accepted'])
         self.assertFalse(status['c_ci_crossings']['G2_accepted'])
-        self.assertEqual(len(status['accepted_generic_runtime_support']), 4)
+        self.assertEqual(len(status['accepted_generic_runtime_support']), 5)
         self.assertIn(status['c_ci_local_product']['complete_profile_id'], status['accepted_generic_runtime_support'])
         self.assertEqual(status['c_ci_g2_review']['catalog_cells'], 33)
         self.assertEqual(status['c_ci_g2_review']['status'], 'accepted')
         self.assertTrue(status['c_ci_g2_review']['G2_accepted'])
         self.assertEqual(status['profile_g2'][3]['state'], 'accepted')
         self.assertEqual(status['profile_g2'][-1]['profile_family_id'],'A_PC')
-        self.assertEqual(status['profile_g2'][-1]['state'],'proposed')
+        self.assertEqual(status['profile_g2'][-1]['state'],'accepted')
         proposal=status['a_pc_g2_review']
-        self.assertEqual(proposal['status'],'pass_proposal_pending_G2_acceptance')
+        self.assertEqual(proposal['status'],'accepted')
         self.assertEqual(proposal['catalog_cells'],28)
-        self.assertFalse(proposal['G2_accepted'])
-        self.assertFalse(proposal['user_accepted'])
-        self.assertEqual(proposal['new_G2_support'],[])
-        self.assertEqual(proposal['accepted_support_unchanged'],sorted(status['accepted_generic_runtime_support']))
+        self.assertTrue(proposal['G2_accepted'])
+        self.assertTrue(proposal['user_accepted'])
+        self.assertEqual(proposal['new_G2_support'],proposal['proposed_additional_support'])
+        self.assertEqual(proposal['accepted_support_unchanged'],sorted(set(status['accepted_generic_runtime_support'])-set(proposal['new_G2_support'])))
         from profile_g2_registry import checked_reconciliation, registry
         expected=registry(p.ROOT)['reconciliation_views']
         views={key:status[key] for key in expected}
@@ -58,7 +58,7 @@ class CCISurfaceTests(unittest.TestCase):
         self.assertTrue(apc['user_accepted'])
         self.assertFalse(apc['G2_accepted'])
         self.assertFalse(apc['all_ordered_pairs_verified'])
-        self.assertNotIn(apc['complete_profile_id'],status['accepted_generic_runtime_support'])
+        self.assertIn(apc['complete_profile_id'],status['accepted_generic_runtime_support'])
         for key in views:
             bad=deepcopy(views); bad.pop(key)
             with self.assertRaises(ValueError): checked_reconciliation(p.ROOT,bad)
@@ -109,7 +109,7 @@ const element = tag => ({tag, children:[], textContent:'', append(child){this.ch
 const body=element('tbody');
 renderG2Profiles(value,body,element);
 assert.equal(body.children.length,5);
-assert.deepEqual(body.children.map(r=>r.children[2].textContent),['G2 accepted','G2 accepted','G2 accepted','G2 accepted','G2 proposal — not accepted']);
+assert.deepEqual(body.children.map(r=>r.children[2].textContent),['G2 accepted','G2 accepted','G2 accepted','G2 accepted','G2 accepted']);
 assert.equal(body.children[4].children[1].textContent,value.a_pc_g2_review.proposed_additional_support[0]);
 assert.equal(body.children[2].children[1].textContent,value.a_ci_g2_review.proposed_additional_support[0]);
 renderReconciliation(value,body,element);
@@ -194,23 +194,23 @@ for(const edit of [v=>delete v.c_ci_g2_review,v=>v.c_ci_g2_review.G2_accepted=fa
  await assert.rejects(verifiedStatus(bad));
 }
 console.log('C_CI_BROWSER_PASS registered reconciliation controls='+count);
-for(const edit of [v=>delete v.a_pc_g2_review,v=>v.a_pc_g2_review.G2_accepted=true,
- v=>v.a_pc_g2_review.user_accepted=true,v=>v.a_pc_g2_review.catalog_cells=27,
+for(const edit of [v=>delete v.a_pc_g2_review,v=>v.a_pc_g2_review.G2_accepted=false,
+ v=>v.a_pc_g2_review.user_accepted=false,v=>v.a_pc_g2_review.catalog_cells=27,
  v=>v.a_pc_g2_review.all_ordered_pairs_verified=true,v=>v.a_pc_g2_review.record_digest='0'.repeat(64),
  v=>v.a_pc_g2_review.proposed_additional_support=['A_PC'],v=>v.a_pc_g2_review.accepted_support_unchanged=[],
- v=>v.profile_g2[4].state='accepted',v=>v.accepted_generic_runtime_support.push(v.a_pc_g2_review.proposed_additional_support[0])]) {
+ v=>v.profile_g2[4].state='proposed',v=>v.accepted_generic_runtime_support.push(v.a_pc_g2_review.proposed_additional_support[0])]) {
  const bad=structuredClone(value);edit(bad);delete bad.status_digest;
  bad.status_digest=createHash('sha256').update(canonical(bad)).digest('hex');
  await assert.rejects(verifiedStatus(bad));
 }
-console.log('A_PC_G2_PROPOSAL_BROWSER_PASS');
+console.log('A_PC_G2_ACCEPTANCE_BROWSER_PASS');
 """
         browser = subprocess.run([str(managed_node()), '--input-type=module', '-e', code],
             cwd=tool / 'phase9-web', input=json.dumps(status), capture_output=True,
             text=True, env=tool_environment(), timeout=30)
         self.assertEqual(browser.returncode, 0, browser.stderr)
         self.assertIn('C_CI_BROWSER_PASS registered reconciliation controls=', browser.stdout)
-        self.assertIn('A_PC_G2_PROPOSAL_BROWSER_PASS',browser.stdout)
+        self.assertIn('A_PC_G2_ACCEPTANCE_BROWSER_PASS',browser.stdout)
 
 
 if __name__ == '__main__':

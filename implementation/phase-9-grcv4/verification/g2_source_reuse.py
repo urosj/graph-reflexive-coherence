@@ -44,11 +44,15 @@ def matches(expected, current):
     if not changed:
         return True
     desired = {n: expected[n] for n in changed}
+    from a_pc_g2_source_reuse import retained_bindings as current_successor
+    newest = current_successor(changed)
+    if desired == newest:
+        return True
     from c_ci_g2_source_reuse import retained_bindings as newest_bindings
     newest = newest_bindings(changed)
     if desired == newest:
         return True
-    projected = retained_bindings(newest)
+    projected = retained_bindings(changed)
     if desired == projected:
         return True
     from a_os_g2_source_reuse import matches as historical_matches

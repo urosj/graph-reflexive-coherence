@@ -1,4 +1,4 @@
-"""Exact C_CI decision, unchanged evidence, and finite source-reuse pressure."""
+"""Exact A_PC decision, unchanged evidence, and finite source-reuse pressure."""
 
 from copy import deepcopy
 import unittest
@@ -6,25 +6,25 @@ from unittest.mock import patch
 
 import phase9_implementation_policy as p
 import profile_g2_registry as g
-import c_ci_g2_source_reuse as reuse
+import a_pc_g2_source_reuse as reuse
 
 
 class AcceptanceTests(unittest.TestCase):
     def test_exact_discovery_and_no_control_or_target_promotion(self):
         from pygrc.models.grc_v4_profile import get_supported_profile, list_supported_profiles, resolve_profile
         from pygrc.models.grc_v4_codec import payload_identity
-        row = next(r for r in g.registry(p.ROOT)['records'] if r['profile_family_id']=='C_CI')
-        self.assertEqual(row['profile_family_id'], 'C_CI')
+        row = g.registry(p.ROOT)['records'][-1]
+        self.assertEqual(row['profile_family_id'], 'A_PC')
         accepted = g.common_acceptance(p.ROOT, row)
         profile = g.checked_profile(p.ROOT, row)
-        self.assertLessEqual(set(accepted['accepted_generic_runtime_support']),set(list_supported_profiles()))
-        self.assertEqual(set(list_supported_profiles()),set(g.checked(p.ROOT)['accepted_generic_runtime_support']))
+        self.assertEqual(set(list_supported_profiles()), set(accepted['accepted_generic_runtime_support']))
+        self.assertEqual(len(list_supported_profiles()), 5)
         self.assertEqual(get_supported_profile(row['complete_profile_id']).to_payload(), profile)
         proposal = g.bound_record(p.ROOT, row['review'])
-        for target in ('initializer_target', 'event_target'):
+        for target in ('initializer_target',):
             with self.assertRaises(ValueError): get_supported_profile(proposal['ordered_scope'][target])
         params = deepcopy(profile['params_resolved'])
-        params['candidate']['kappa_M_C'] = 0.01
+        params['candidate']['chi_A'] = 0.
         identity = deepcopy(profile['identity_payload'])
         identity['params_hash'] = payload_identity('resolved_params', params)
         control = resolve_profile(params, identity)
@@ -40,8 +40,7 @@ class AcceptanceTests(unittest.TestCase):
         for name, row in value['changes'].items():
             with self.subTest(path=name):
                 live = p.sha((p.ROOT/name).read_bytes())
-                from a_pc_g2_source_reuse import retained_bindings as successor
-                self.assertEqual(successor({name:live})[name],row['after_sha256'])
+                self.assertEqual(live, row['after_sha256'])
                 self.assertEqual(reuse.retained_bindings({name:live}), {name:row['before_sha256']})
                 self.assertTrue(p.g2_bindings_match({name:row['before_sha256']}, {name:live}))
                 with self.assertRaises(ValueError): reuse.retained_bindings({name:'0'*64})
@@ -56,9 +55,9 @@ class AcceptanceTests(unittest.TestCase):
 
     def test_review_runs_and_prior_acceptances_unchanged(self):
         prefix = p.PHASE+'tranche-7/P9-7.7-'
-        names = [prefix+'C_CI-'+suffix for suffix in (
+        names = [prefix+'A_PC-'+suffix for suffix in (
             'G2Review.json', 'G2Review.md', 'G2Interface.json', 'LocalProduct.json', 'Crossings.json')]
-        names += [prefix+family+'-'+suffix for family in ('A_CI', 'A_OS')
+        names += [prefix+family+'-'+suffix for family in ('A_CI', 'A_OS', 'C_CI')
                   for suffix in ('G2Acceptance.json', 'G2SourceReuse.json', 'G2Review.json', 'G2Interface.json')]
         names += [p.G2_ACCEPTANCE]
         for name in names:

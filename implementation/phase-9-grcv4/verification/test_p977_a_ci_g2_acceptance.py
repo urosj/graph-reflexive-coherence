@@ -39,7 +39,7 @@ class AcceptanceTests(unittest.TestCase):
             with self.subTest(path=name):
                 from c_ci_g2_source_reuse import retained_bindings as successor
                 self.assertEqual(successor({name:p.sha((p.ROOT/name).read_bytes())})[name],row['after_sha256'])
-                self.assertEqual(reuse.retained_bindings({name:row['after_sha256']}),{name:row['before_sha256']})
+                self.assertEqual(reuse.retained_bindings({name:p.sha((p.ROOT/name).read_bytes())}),{name:row['before_sha256']})
                 with self.assertRaises(ValueError): reuse.retained_bindings({name:'0'*64})
         target=next(iter(value['changes']))
         bad=deepcopy(value);bad['changes'][target]['after_sha256']='0'*64
