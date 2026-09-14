@@ -1585,6 +1585,24 @@ source comparisons for discovery-only changes. Controls and initializer/event
 targets do not become supported. C_PC is next; five other G2 decisions,
 all-pairs, aggregate P9-7.7 and G3 remain open.
 
+The next [C_PC local reconciliation](./phase-9-grcv4/tranche-7/P9-7.7-C_PC-LocalReview.md)
+verifies 26 local cells in five native methods. Rebuild the full C baseline
+at old-Z geometry and both independent readmission targets; forbid A-history
+state/writers and post-continuity source refresh into the held ZOH write.
+Separate native release from reset/drop, fixed-stage dense derivative controls
+from nomination execution, and carrier envelopes from stronger trajectory claims.
+Expose the local product through the shared registry only. The subsequent
+[C_PC crossing reconciliation](./phase-9-grcv4/tranche-7/P9-7.7-C_PC-CrossingReview.md)
+addresses the remaining seven cells through seven retained aliases and four new
+cases in three methods. Preserve exact carrier transport for PC↔CI+PC, explicit
+loss/drop/reset channels, and the distinct C→A initializer target. A changed-edge
+C event independently rederives both target baselines before publication; changed
+carrier contracts and reset-only resource admission failures reject atomically.
+All 33 cells are reconciled, not every ordered pair executed. Bounded acceptance
+and integrated G2 remain separate; public support stays five. On 2026-09-14 the
+user accepted the combined bounded result and requested its commit before G2.
+Preserve original execution identities and project this decision separately.
+
 `P9-7.8` may review `P9-G3[C_OS]` immediately after its G2 acceptance;
 completion of the other Tranche 7 or Tranche 6 rows is not a prerequisite.
 

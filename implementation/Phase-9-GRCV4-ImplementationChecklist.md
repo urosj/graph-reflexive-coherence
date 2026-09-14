@@ -70,7 +70,7 @@ coverage, and evidence; a family label alone does not certify all instances.
 | `P9-G2[A_OS]` | Accepted, exact nomination | [Explicit G2 acceptance](./phase-9-grcv4/tranche-7/P9-7.7-A_OS-G2Acceptance.json) accepts the reviewed 28-case scope; no all-pairs or G3 support. |
 | `P9-G2[C_CI]` | Accepted, exact nomination | [Explicit G2 acceptance](./phase-9-grcv4/tranche-7/P9-7.7-C_CI-G2Acceptance.json) accepts the reviewed 33-cell scope at `8ec744e`; distinct initializer/event targets and dense controls are not added support. |
 | `P9-G2[A_CI]` | Accepted, exact nomination | [Explicit G2 acceptance](./phase-9-grcv4/tranche-7/P9-7.7-A_CI-G2Acceptance.json) accepts the reviewed 28-case scope. Discovery at acceptance was exactly C_OS/A_OS/A_CI; no all-pairs or G3 support. |
-| `P9-G2[C_PC]` | HOLD, draft P9-7.7 review | Accepted bounded numerical/lifecycle evidence; reconcile the 33-cell exact product and ordered endpoints. |
+| `P9-G2[C_PC]` | HOLD, bounded reconciliation accepted | [26 local cells](./phase-9-grcv4/tranche-7/P9-7.7-C_PC-LocalReview.md) plus [seven crossing cells](./phase-9-grcv4/tranche-7/P9-7.7-C_PC-CrossingReview.md) accepted by the user on 2026-09-14; integrated G2 remains separate. |
 | `P9-G2[A_PC]` | Accepted by user, 2026-09-14 | Exact 28-cell product and bounded ordered endpoints; [acceptance](./phase-9-grcv4/tranche-7/P9-7.7-A_PC-G2Acceptance.json). No all-pairs or G3. |
 | `P9-G2[C_CI_PC]` | HOLD, draft P9-7.7 review | Accepted bounded numerical/lifecycle evidence; reconcile the 33-cell exact product and ordered endpoints. |
 | `P9-G2[A_CI_PC]` | HOLD, draft P9-7.7 review | Accepted bounded numerical/lifecycle evidence; reconcile the 28-cell exact product and ordered endpoints. |
@@ -1422,6 +1422,20 @@ may reach G2 without waiting for all Tranche 6 realizations.
     G2 decisions, all-pairs, aggregate P9-7.7 and G3 remain open.
   - [ ] Continue persistent profiles in order A_PC, C_PC, A_CI+PC, C_CI+PC;
     leave A_RG2b/C_RG2b last. This is scheduling, not weaker acceptance criteria.
+  - [x] P9-7.7-C_PC-local: capture 26 local cells in five passing methods.
+    Independently reconstruct the complete C chain at old-carrier, reset and
+    post-write geometry; zero A writers, one held-source ZOH write, native release,
+    fixed-stage derivative controls and complete C/Z lifecycle rollback.
+    [Bounded review](./phase-9-grcv4/tranche-7/P9-7.7-C_PC-LocalReview.md).
+  - [x] Reconcile seven C_PC crossing obligations using seven retained aliases
+    and four new cases in three passing methods. Preserve exact PC↔CI+PC
+    contracts, independent C→A initialization, two-channel losses, target
+    reference rederivation, reset, replay and whole-publication rollback.
+    [Crossing review](./phase-9-grcv4/tranche-7/P9-7.7-C_PC-CrossingReview.md).
+  - [x] User accepted combined C_PC local/crossing reconciliation on 2026-09-14
+    and requested its commit before G2. Preserve original execution flags and
+    project bounded acceptance separately. No new public support.
+  - [ ] Complete integrated C_PC G2 review; G2 acceptance remains separate.
 - [ ] P9-7.8: Review `P9-G3[S]` for the exact accepted generic support set
   before specialization code. Singleton `P9-G3[C_OS]` can run immediately
   after its G2; unrelated lifecycle/realization rows may remain pending.

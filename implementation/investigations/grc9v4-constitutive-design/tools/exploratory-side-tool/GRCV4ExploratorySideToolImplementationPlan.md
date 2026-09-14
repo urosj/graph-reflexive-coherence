@@ -2208,3 +2208,18 @@ The subsequent explicit A_PC G2 acceptance uses the same adapter and materialize
 five accepted exact declarations, no widened controls/targets, G3 or all-pairs.
 Finite source comparisons preserve the reviewed checkpoint and old execution
 identities while allowing the exact discovery addition.
+
+C_PC local reconciliation adds a pinned `c_pc_local_product` view and local
+materializer to the same registry. Display 26 verified local cells and seven
+remaining crossings, with no acceptance or G2 credit. Preserve complete C
+baseline readmission, no W writer, one held-source ZOH update and native-release
+ceilings. Check rehashed evidence and one frozen-input status reused across
+notebook/HTTP/browser, keeping the five accepted declarations unchanged.
+
+The subsequent `c_pc_crossings` materializer consumes that exact local result.
+Project seven retained aliases and four new native cases across seven crossing
+cells, preserving the whole-carrier loss versus native release distinction and
+the separate initializer target. Reuse the same generic API/notebook/browser
+views; keep all 33 reconciled cells distinct from bounded acceptance and G2.
+The user's subsequent bounded acceptance is projected from the pinned crossing
+review. Execution flags remain historical; integrated G2 is a separate decision.

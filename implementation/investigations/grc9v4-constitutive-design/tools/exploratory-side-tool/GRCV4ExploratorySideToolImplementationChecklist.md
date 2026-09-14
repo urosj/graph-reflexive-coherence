@@ -1773,3 +1773,21 @@ their historical stage, not the later aggregate acceptance recorded at the end.
 - [x] Project the user's 2026-09-14 exact A_PC G2 acceptance through the shared
       adapter. Publish five exact declarations, preserve all historical review
       and execution bytes, and bind only finite discovery/assertion changes.
+
+### P9-7.7 C_PC local reconciliation
+
+- [x] Register `c_pc_local_product` as a pinned local view/materializer: 26 cells,
+      five methods, seven crossing obligations remaining. Use shared Python,
+      API/notebook/browser paths; no profile-specific dispatch/rendering branch.
+- [x] Preserve PC and D11 C provenance, candidate/carrier authority separation,
+      independent reset/restart equations and pending acceptance/G2 boundaries.
+
+### P9-7.7 C_PC crossing reconciliation
+
+- [x] Register `c_pc_crossings` after its local predecessor in the shared
+      materializer: seven retained aliases, four new cases, seven crossing cells.
+- [x] Preserve exact ordered-endpoint scope, complete target C reconstruction,
+      carrier-contract rejection and independent reset-only failure evidence.
+      No bounded acceptance, G2, all-pairs or G3 promotion.
+- [x] Project the user's subsequent 2026-09-14 bounded C_PC acceptance without
+      changing execution records. Keep integrated G2 separate and support at five.

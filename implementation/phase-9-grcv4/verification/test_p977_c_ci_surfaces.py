@@ -53,6 +53,23 @@ class CCISurfaceTests(unittest.TestCase):
         views={key:status[key] for key in expected}
         self.assertEqual(checked_reconciliation(p.ROOT,views),views)
         self.assertEqual(status['a_pc_local_product']['verified_local_cells'],21)
+        cpc=status['c_pc_local_product']
+        self.assertEqual((cpc['test_count'],cpc['verified_local_cells']),(5,26))
+        self.assertEqual(len(cpc['remaining_catalog_cases']),7)
+        self.assertFalse(cpc['user_accepted'])
+        self.assertFalse(cpc['G2_accepted'])
+        self.assertFalse(cpc['aggregate_closed'])
+        self.assertFalse(cpc['G3_accepted'])
+        self.assertEqual(cpc['new_G2_support'],[])
+        self.assertNotIn(cpc['complete_profile_id'],status['accepted_generic_runtime_support'])
+        cpc_crossings=status['c_pc_crossings']
+        self.assertEqual((cpc_crossings['test_count'],cpc_crossings['new_execution_cases'],cpc_crossings['retained_alias_count']),(3,4,7))
+        self.assertEqual((cpc_crossings['local_cells'],cpc_crossings['reconciled_crossing_cells']),(26,7))
+        self.assertEqual(cpc_crossings['complete_profile_id'],cpc['complete_profile_id'])
+        self.assertTrue(cpc_crossings['user_accepted'])
+        self.assertFalse(cpc_crossings['G2_accepted'])
+        self.assertFalse(cpc_crossings['all_ordered_pairs_verified'])
+        self.assertNotIn('c_pc_g2_review',status)
         apc=status['a_pc_crossings']
         self.assertEqual((apc['reconciled_crossing_cells'],apc['new_execution_cases'],apc['retained_alias_count']),(7,5,7))
         self.assertTrue(apc['user_accepted'])
@@ -115,6 +132,12 @@ assert.equal(body.children[2].children[1].textContent,value.a_ci_g2_review.propo
 renderReconciliation(value,body,element);
 assert.equal(body.children.length,Object.keys(value).filter(k=>k.endsWith('_local_product')||k.endsWith('_crossings')).length);
 const cci=body.children.find(r=>r.children[0].textContent==='c_ci_local_product');
+const cpc=body.children.find(r=>r.children[0].textContent==='c_pc_local_product');
+assert.equal(cpc.children[1].textContent,'26');
+assert.equal(cpc.children[2].textContent,'Local evidence pending review');
+const cpcCrossings=body.children.find(r=>r.children[0].textContent==='c_pc_crossings');
+assert.equal(cpcCrossings.children[1].textContent,'7');
+assert.equal(cpcCrossings.children[2].textContent,'Bounded reconciliation accepted');
 assert.equal(cci.children[1].textContent,'26');
 assert.equal(cci.children[2].textContent,'Local evidence pending review');
 const crossings=body.children.find(r=>r.children[0].textContent==='c_ci_crossings');
