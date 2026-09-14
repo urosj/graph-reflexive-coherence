@@ -227,6 +227,12 @@ HANDOFF_PATHS = {
     HERE + "handoff/P9-G1-outputs.zip",
 }
 PATHS = {
+    HERE + "verify_p977_c_ci_g2.py",
+    HERE + "test_p977_c_ci_g2.py",
+    HERE + "test_profile_materializers.py",
+    PHASE + "tranche-7/P9-7.7-C_CI-G2Interface.json",
+    PHASE + "tranche-7/P9-7.7-C_CI-G2Review.json",
+    PHASE + "tranche-7/P9-7.7-C_CI-G2Review.md",
     HERE + "verify_p977_c_ci_acceptance.py",
     HERE + "test_p977_c_ci_acceptance.py",
     HERE + "verify_p977_c_ci_crossings.py",

@@ -44,6 +44,7 @@ def verification_status(repo_root: Path) -> dict:
         "next_gate": "P9-1.9 explicit user review; no runtime work yet",
         "claim_ceiling": "Current planning integrity and recorded tool execution are not scientific authority or runtime conformance.",
     }
+    profile_view_keys = set()
     recorded = None
     if hasattr(module, "recorded_acceptance"):
         payload["schema"] = "phase9_governance_status_v2"
@@ -87,37 +88,11 @@ def verification_status(repo_root: Path) -> dict:
             lineage_ownership_verification = lineage_check()
             from verify_p977_profile_review import check as profile_review_check
             profile_conformance_review = profile_review_check(prior=lineage_ownership_verification)
-            from verify_p977_a_os_local import check as a_os_local_check
-            a_os_local_product = a_os_local_check(initial_review=profile_conformance_review)
-            from verify_p977_a_os_acceptance import check as a_os_crossing_check
-            a_os_crossings = a_os_crossing_check(local_product=a_os_local_product)
-            from verify_p977_a_os_g2 import check as a_os_g2_check
-            a_os_g2_review = a_os_g2_check(bounded_acceptance=a_os_crossings)
-            from verify_p977_a_ci_local import check as a_ci_local_check
-            a_ci_local_product = a_ci_local_check(initial_review=profile_conformance_review)
-            from verify_p977_c_ci_local import check as c_ci_local_check
-            c_ci_local_product = c_ci_local_check(initial_review=profile_conformance_review)
-            from verify_p977_c_ci_acceptance import check as c_ci_crossing_check
-            c_ci_crossings = c_ci_crossing_check(local_product=c_ci_local_product)
-            from verify_p977_a_ci_acceptance import check as a_ci_crossing_check
-            a_ci_crossings = a_ci_crossing_check(local_product=a_ci_local_product)
-            from verify_p977_a_ci_g2 import check as a_ci_g2_check
-            from profile_g2_registry import checked as g2_registry_check, registry, project_review, checked_reconciliation
-            a_ci_g2_review = a_ci_g2_check(bounded_acceptance=a_ci_crossings)
-            profile_g2 = g2_registry_check(root)
-            bounded_views = checked_reconciliation(root, dict(
-                a_os_local_product=a_os_local_product, a_os_crossings=a_os_crossings,
-                a_ci_local_product=a_ci_local_product, a_ci_crossings=a_ci_crossings,
-                c_ci_local_product=c_ci_local_product, c_ci_crossings=c_ci_crossings))
-            reviews = dict(a_os_g2_review=a_os_g2_review, a_ci_g2_review=a_ci_g2_review)
-            for row in registry(root)['records']:
-                if row['view_key'] in reviews:
-                    reviews[row['view_key']] = project_review(
-                        root, row, reviews[row['view_key']], profile_g2['accepted_generic_runtime_support'])
+            from profile_g2_registry import materialize
+            profile_views, accepted_support = materialize(root, profile_conformance_review)
+            profile_view_keys = set(profile_views)
             payload.update(
-                **reviews,
-                **bounded_views,
-                profile_g2=profile_g2['profiles'],
+                **profile_views,
                 initializer_runtime=initializer_runtime,
                 event_runtime=event_runtime,
                 history_policy_verification=history_policy_verification,
@@ -134,7 +109,7 @@ def verification_status(repo_root: Path) -> dict:
                     "accepted_generic_runtime_support": g2["accepted_generic_runtime_support"],
                     "new_runtime_iterations_authorized": [],
                 },
-                accepted_generic_runtime_support=profile_g2['accepted_generic_runtime_support'],
+                accepted_generic_runtime_support=accepted_support,
                 schema="phase9_governance_status_v2",
                 runtime_authorized=True,
                 P9_G1_accepted=True,
@@ -250,7 +225,7 @@ def verification_status(repo_root: Path) -> dict:
                     for r in module.runtime_targets(approval)
                     if r["requires_gate"] == "P9-G1" and set(ready) & owners[r["path"]]
                 ),
-                next_gate=f"P9-7.2a is user-accepted and closed. P9-7.2b is user-accepted and closed. P9-7.3 is user-accepted and closed: {history_policy_verification['baseline_test_count']} original tests plus {history_policy_verification['regression_test_count']} supplemental regressions, {history_policy_verification['policy_cells']} discrete policy cells. P9-7.4 is user-accepted and closed: {target_reference_verification['test_count']} focused tests. P9-7.5 is user-accepted and closed: {failure_sequence_verification['test_count']} focused tests. P9-7.6 is user-accepted and closed: {lineage_ownership_verification['test_count']} focused tests. The original P9-7.7 review held nine new nominations; seven remain pending after the A_OS and A_CI acceptances. The existing C_OS alias is unchanged. A_OS bounded reconciliation is user-accepted: 21 local cells plus seven crossing evidence/dispositions; the user accepted its exact 28-case G2 scope; negative incoming initializer and separate PC-pair scopes are not all-pairs support. Other held profile gates and P9-7.8 remain separate. No wider G2/G3 support. Accepted public support is the exact C_OS, A_OS and A_CI set; A_CI bounded local/crossing reconciliation is user-accepted: 21 local cells plus seven crossing evidence/dispositions. The user accepted the integrated 28-cell A_CI G2 scope, bound to reviewed checkpoint fa94cd2; the zero-duration facade supplement is not additional numerical coverage. The shared exact-profile registry separates proposals from accepted support. This is not all-pairs support; seven other profile decisions and G3 remain separate. C_CI now has 26 local cells plus seven crossing dispositions: five retained migration aliases and five new cases in three methods. The user accepted combined bounded C_CI reconciliation; integrated C_CI G2 remains separate. The initializer and renamed event targets are separate exact declarations, not new public support.",
+                next_gate=f"P9-7.2a is user-accepted and closed. P9-7.2b is user-accepted and closed. P9-7.3 is user-accepted and closed: {history_policy_verification['baseline_test_count']} original tests plus {history_policy_verification['regression_test_count']} supplemental regressions, {history_policy_verification['policy_cells']} discrete policy cells. P9-7.4 is user-accepted and closed: {target_reference_verification['test_count']} focused tests. P9-7.5 is user-accepted and closed: {failure_sequence_verification['test_count']} focused tests. P9-7.6 is user-accepted and closed: {lineage_ownership_verification['test_count']} focused tests. The original P9-7.7 review held nine new nominations; seven remain pending after the A_OS and A_CI acceptances. The existing C_OS alias is unchanged. A_OS bounded reconciliation is user-accepted: 21 local cells plus seven crossing evidence/dispositions; the user accepted its exact 28-case G2 scope; negative incoming initializer and separate PC-pair scopes are not all-pairs support. Other held profile gates and P9-7.8 remain separate. No wider G2/G3 support. Accepted public support is the exact C_OS, A_OS and A_CI set; A_CI bounded local/crossing reconciliation is user-accepted: 21 local cells plus seven crossing evidence/dispositions. The user accepted the integrated 28-cell A_CI G2 scope, bound to reviewed checkpoint fa94cd2; the zero-duration facade supplement is not additional numerical coverage. The shared exact-profile registry separates proposals from accepted support. This is not all-pairs support; seven other profile decisions and G3 remain separate. C_CI now has 26 local cells plus seven crossing dispositions: five retained migration aliases and five new cases in three methods. The user accepted combined bounded C_CI reconciliation. Its integrated 33-cell G2 review is a PASS proposal with one facade supplement; explicit G2 acceptance remains. Pinned registry materializers now drive profile status dispatch and cleanup. The initializer and renamed event targets are separate exact declarations, not new public support.",
                 claim_ceiling="G1 is bounded implementation permission. Separate user-accepted G2 covers only the listed complete C_OS profile and reviewed domain; no family-wide, other-profile or specialization conformance is inferred.",
             )
         cross = module.read(
@@ -418,15 +393,8 @@ def verification_status(repo_root: Path) -> dict:
         payload.pop("failure_sequence_verification", None)
         payload.pop("lineage_ownership_verification", None)
         payload.pop("profile_conformance_review", None)
-        payload.pop("a_os_local_product", None)
-        payload.pop("a_os_crossings", None)
-        payload.pop("a_os_g2_review", None)
-        payload.pop("a_ci_local_product", None)
-        payload.pop("c_ci_local_product", None)
-        payload.pop("c_ci_crossings", None)
-        payload.pop("a_ci_crossings", None)
-        payload.pop("a_ci_g2_review", None)
-        payload.pop("profile_g2", None)
+        for key in profile_view_keys:
+            payload.pop(key, None)
         payload["accepted_generic_runtime_support"] = []
         payload.pop("permitted_runtime_paths", None)
         payload.pop("source_meaning", None)

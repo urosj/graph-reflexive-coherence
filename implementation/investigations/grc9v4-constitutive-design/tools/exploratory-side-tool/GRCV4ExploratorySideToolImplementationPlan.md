@@ -2166,3 +2166,15 @@ on 2026-09-14. Project that decision over the original capture without changing
 its flags or public support. Integrated G2 review is the next task. The remaining
 Python per-profile dispatch duplication is a bounded follow-up alongside the
 fourth G2 profile, not a reason to rewrite accepted evidence or scientific checks.
+
+C_CI is now that fourth G2 proposal: `c_ci_g2_review` reports the integrated
+33-cell product and one facade-only supplement, pending explicit acceptance.
+The Python entry point uses the registry's ordered materializers for local,
+bounded crossing and G2 checks, generic input dictionaries and produced-key
+cleanup. It has no per-profile import or view seed to edit for the next entry.
+Check exact dependency topology, maintenance-bound module bytes and import
+origins before materialization; keep results private until every check succeeds.
+Scientific modules and historical schemas are not merged. The browser remains
+registry-driven, showing three accepted declarations and one proposal. One
+current status supports transport/rendering checks; no scientific campaign is
+rerun for dispatch or display changes.

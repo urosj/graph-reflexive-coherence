@@ -1738,3 +1738,16 @@ their historical stage, not the later aggregate acceptance recorded at the end.
       Preserve ordered scope, separate target identities and original records.
 - [x] User accepted combined local/crossing scope on 2026-09-14; C_CI G2 remains separate.
       Public support stays exactly C_OS/A_OS/A_CI.
+
+### P9-7.7 C_CI integrated G2 and Python dispatch
+
+- [x] Reconcile the 33-cell product, exact crossing applicability and one
+      facade supplement as a PASS proposal. Preserve scientific scope ceilings.
+- [x] Register C_CI as proposed and expose `c_ci_g2_review` through the shared
+      registry without modifying accepted discovery or runtime permissions.
+- [x] Drive checker imports/call order, bounded/review inputs and cleanup from
+      pinned materializer rows. Reject missing/forward dependencies, unbound
+      modules, wrong origins and partial results; keep scientific checks distinct.
+- [x] Validate retained-review mutations and API/notebook/HTTP/browser status,
+      including proposed-versus-accepted display and late-failure cleanup.
+- [ ] Explicit C_CI G2 review/acceptance remains; no proposal auto-promotion.

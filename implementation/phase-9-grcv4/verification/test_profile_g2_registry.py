@@ -16,7 +16,7 @@ class RegistryTests(unittest.TestCase):
     def test_real_legacy_acceptances_and_proposal_remain_distinct(self):
         result = g.checked(p.ROOT)
         self.assertEqual([(r['profile_family_id'], r['state']) for r in result['profiles']],
-                         [('C_OS', 'accepted'), ('A_OS', 'accepted'), ('A_CI', 'accepted')])
+                         [('C_OS', 'accepted'), ('A_OS', 'accepted'), ('A_CI', 'accepted'), ('C_CI', 'proposed')])
         self.assertEqual(len(result['accepted_generic_runtime_support']), 3)
         self.assertIn(result['profiles'][2]['complete_profile_id'], result['accepted_generic_runtime_support'])
         self.assertEqual(g.support_before(p.ROOT, result['profiles'][2]['complete_profile_id']),

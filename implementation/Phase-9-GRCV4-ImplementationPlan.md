@@ -1528,6 +1528,21 @@ reference map before independent live/reset numerical admission. The combined
 its explicit acceptance are still separate. The original local snapshot is
 unchanged; `c_ci_crossings` reports the continuation through the shared registry.
 
+After committing bounded acceptance as `565418a`, the
+[integrated C_CI G2 review](./phase-9-grcv4/tranche-7/P9-7.7-C_CI-G2Review.md)
+is a PASS proposal for all 33 obligations and the declared ordered endpoints.
+One zero-duration public-facade supplement adds no positive-step numerical
+credit. Original local/crossing runs and all earlier acceptances remain intact.
+C_CI is registered as proposed, not supported; explicit G2 acceptance remains.
+
+This fourth G2 profile also closes the remaining Python dispatch seam. Pinned
+registry materializers define the ordered local/crossing/G2 calls and required
+dependencies. The entry point publishes their complete checked result and tracks
+its keys for generic late-failure cleanup. Module names never come from status
+input; source bindings and import origins are checked. Scientific equations and
+historical record schemas stay in their separate checkers. Validate orchestration
+with focused mutations and one actual cross-surface check, not numerical reruns.
+
 `P9-7.8` may review `P9-G3[C_OS]` immediately after its G2 acceptance;
 completion of the other Tranche 7 or Tranche 6 rows is not a prerequisite.
 

@@ -62,9 +62,28 @@
         "supplemental_interface_methods": 1,
         "numerical_tests_rerun": 0
       }
+    },
+    {
+      "profile_family_id": "C_CI",
+      "complete_profile_id": "grcv4-profile-sha256:a56ef981821478cc50a3551a914dd6240e0dc62c9ca69d52305bd59a3405f69e",
+      "gate": "P9-G2[C_CI]",
+      "state": "proposed",
+      "adapter": "exact_profile_v1",
+      "acceptance": null,
+      "review": {
+        "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_CI-G2Review.json",
+        "record_digest": "56edc8d0a725a693a0363bf66f23bdcbe000357403928f9fd84da991c542bedc"
+      },
+      "view_key": "c_ci_g2_review",
+      "bounded_view_key": "c_ci_crossings",
+      "review_metrics": {
+        "catalog_cells": 33,
+        "supplemental_interface_methods": 1,
+        "numerical_tests_rerun": 0
+      }
     }
   ],
-  "record_digest": "c8822d2c709f20823699867c54abe65b726552f7f610fb0acc393e6f2edfd35b",
+  "record_digest": "48df340680b9acba3bdfa4276dfd2c57875d2796a611c2358ef97039b6897b59",
   "reconciliation_views": {
     "a_os_local_product": {
       "status": "local_product_verified_pending_review",
@@ -201,5 +220,61 @@
       "acceptance_path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_CI-CrossingReview.md",
       "acceptance_sha256": "6855f835006f1502acae874189b0476cb307ce4bc1dec0e8467ebf2fa3e2ab5c"
     }
-  }
+  },
+  "materializers": [
+    {
+      "view_key": "a_os_local_product",
+      "module": "verify_p977_a_os_local",
+      "kind": "local",
+      "dependency": "profile_conformance_review"
+    },
+    {
+      "view_key": "a_os_crossings",
+      "module": "verify_p977_a_os_acceptance",
+      "kind": "crossing",
+      "dependency": "a_os_local_product"
+    },
+    {
+      "view_key": "a_os_g2_review",
+      "module": "verify_p977_a_os_g2",
+      "kind": "g2",
+      "dependency": "a_os_crossings"
+    },
+    {
+      "view_key": "a_ci_local_product",
+      "module": "verify_p977_a_ci_local",
+      "kind": "local",
+      "dependency": "profile_conformance_review"
+    },
+    {
+      "view_key": "a_ci_crossings",
+      "module": "verify_p977_a_ci_acceptance",
+      "kind": "crossing",
+      "dependency": "a_ci_local_product"
+    },
+    {
+      "view_key": "a_ci_g2_review",
+      "module": "verify_p977_a_ci_g2",
+      "kind": "g2",
+      "dependency": "a_ci_crossings"
+    },
+    {
+      "view_key": "c_ci_local_product",
+      "module": "verify_p977_c_ci_local",
+      "kind": "local",
+      "dependency": "profile_conformance_review"
+    },
+    {
+      "view_key": "c_ci_crossings",
+      "module": "verify_p977_c_ci_acceptance",
+      "kind": "crossing",
+      "dependency": "c_ci_local_product"
+    },
+    {
+      "view_key": "c_ci_g2_review",
+      "module": "verify_p977_c_ci_g2",
+      "kind": "g2",
+      "dependency": "c_ci_crossings"
+    }
+  ]
 }

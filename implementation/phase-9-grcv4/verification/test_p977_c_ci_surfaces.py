@@ -35,6 +35,10 @@ class CCISurfaceTests(unittest.TestCase):
         self.assertFalse(status['c_ci_crossings']['G2_accepted'])
         self.assertEqual(len(status['accepted_generic_runtime_support']), 3)
         self.assertNotIn(status['c_ci_local_product']['complete_profile_id'], status['accepted_generic_runtime_support'])
+        self.assertEqual(status['c_ci_g2_review']['catalog_cells'], 33)
+        self.assertEqual(status['c_ci_g2_review']['status'], 'pass_proposal_pending_G2_acceptance')
+        self.assertFalse(status['c_ci_g2_review']['G2_accepted'])
+        self.assertEqual(status['profile_g2'][-1]['state'], 'proposed')
         from profile_g2_registry import checked_reconciliation, registry
         expected=registry(p.ROOT)['reconciliation_views']
         views={key:status[key] for key in expected}
@@ -88,8 +92,8 @@ assert.deepEqual(await verifiedStatus(value), value);
 const element = tag => ({tag, children:[], textContent:'', append(child){this.children.push(child);}, replaceChildren(){this.children=[];}});
 const body=element('tbody');
 renderG2Profiles(value,body,element);
-assert.equal(body.children.length,3);
-assert.deepEqual(body.children.map(r=>r.children[2].textContent),['G2 accepted','G2 accepted','G2 accepted']);
+assert.equal(body.children.length,4);
+assert.deepEqual(body.children.map(r=>r.children[2].textContent),['G2 accepted','G2 accepted','G2 accepted','G2 proposal — not accepted']);
 assert.equal(body.children[2].children[1].textContent,value.a_ci_g2_review.proposed_additional_support[0]);
 renderReconciliation(value,body,element);
 assert.equal(body.children.length,6);
@@ -160,13 +164,22 @@ for(const edit of [v=>v.c_ci_local_product.verified_local_cells=33,
  await assert.rejects(verifiedStatus(bad));count++;
 }
 assert.equal(count,34);
-console.log('C_CI_BROWSER_PASS controls=70');
+for(const edit of [v=>delete v.c_ci_g2_review,v=>v.c_ci_g2_review.G2_accepted=true,
+ v=>v.c_ci_g2_review.user_accepted=true,v=>v.c_ci_g2_review.catalog_cells=28,
+ v=>v.c_ci_g2_review.all_ordered_pairs_verified=true,v=>v.c_ci_g2_review.record_digest='0'.repeat(64),
+ v=>v.c_ci_g2_review.proposed_additional_support=['C_CI'],v=>v.c_ci_g2_review.accepted_support_unchanged=[],
+ v=>v.profile_g2[3].state='accepted',v=>v.accepted_generic_runtime_support.push(v.c_ci_g2_review.proposed_additional_support[0])]) {
+ const bad=structuredClone(value);edit(bad);delete bad.status_digest;
+ bad.status_digest=createHash('sha256').update(canonical(bad)).digest('hex');
+ await assert.rejects(verifiedStatus(bad));
+}
+console.log('C_CI_BROWSER_PASS controls=80');
 """
         browser = subprocess.run([str(managed_node()), '--input-type=module', '-e', code],
             cwd=tool / 'phase9-web', input=json.dumps(status), capture_output=True,
             text=True, env=tool_environment(), timeout=30)
         self.assertEqual(browser.returncode, 0, browser.stderr)
-        self.assertIn('C_CI_BROWSER_PASS controls=70', browser.stdout)
+        self.assertIn('C_CI_BROWSER_PASS controls=80', browser.stdout)
 
 
 if __name__ == '__main__':

@@ -11,7 +11,7 @@ import phase9_implementation_policy as p
 
 REGISTRY = p.PHASE + 'tranche-7/ProfileG2Registry.json'
 BROWSER = p.SIDE + 'tool/phase9-web/g2-registry.js'
-REGISTRY_DIGEST = 'c8822d2c709f20823699867c54abe65b726552f7f610fb0acc393e6f2edfd35b'
+REGISTRY_DIGEST = '48df340680b9acba3bdfa4276dfd2c57875d2796a611c2358ef97039b6897b59'
 ACCEPTANCE_SCHEMA = 'phase9_exact_profile_g2_acceptance_v1'
 FIELDS = {'profile_family_id', 'complete_profile_id', 'gate', 'state', 'adapter',
           'acceptance', 'review', 'view_key', 'bounded_view_key', 'review_metrics'}
@@ -23,7 +23,7 @@ def browser_source(value):
 
 
 def validate_registry(value):
-    p.require(set(value) == {'schema', 'records', 'reconciliation_views', 'record_digest'}
+    p.require(set(value) == {'schema', 'records', 'reconciliation_views', 'materializers', 'record_digest'}
               and value['schema'] == 'phase9_exact_profile_g2_registry_v1'
               and value['record_digest'] == p.digest_record(value) == REGISTRY_DIGEST,
               'untrusted exact-profile G2 registry')
@@ -49,6 +49,68 @@ def validate_registry(value):
             if ref is not None:
                 p.require(set(ref) == {'path', 'record_digest'}, 'invalid G2 record reference')
                 p.safe_path(p.ROOT, ref['path'])
+    validate_materializers(value)
+
+
+def validate_materializers(value):
+    """A pinned ordered call graph, not module names supplied by status input."""
+    import re
+    gates={r['view_key']:r for r in value['records'] if r['adapter']!='historical_c_os'}
+    expected=set(value['reconciliation_views']) | set(gates)
+    seen={'profile_conformance_review'}
+    for row in value['materializers']:
+        p.require(set(row)=={'view_key','module','kind','dependency'}
+                  and row['view_key'] in expected and row['view_key'] not in seen
+                  and row['dependency'] in seen
+                  and re.fullmatch(r'verify_p977_[a-z0-9_]+',row['module']) is not None,
+                  'invalid or out-of-order profile materializer')
+        key=row['view_key'];kind=row['kind']
+        if kind=='local':
+            p.require(key.endswith('_local_product') and row['dependency']=='profile_conformance_review',
+                      'local materializer dependency changed')
+        elif kind=='crossing':
+            p.require(key.endswith('_crossings') and row['dependency']==key.removesuffix('_crossings')+'_local_product',
+                      'crossing materializer dependency changed')
+        else:
+            p.require(kind=='g2' and key in gates and row['dependency']==gates[key]['bounded_view_key'],
+                      'G2 materializer dependency changed')
+        seen.add(key)
+    p.require(seen-{'profile_conformance_review'}==expected,'missing profile materializer')
+
+
+def _checker(root, name):
+    """Resolve only current, maintenance-bound checker code under verification/."""
+    import importlib
+    path=p.HERE+name+'.py'
+    source=p.safe_path(root,path)
+    bindings={r['path']:r['sha256'] for r in p.read(p.safe_path(root,p.POLICY))['artifact_bindings']}
+    p.require(path in p.PATHS and bindings.get(path)==p.sha(source.read_bytes()),'unbound profile checker')
+    module=importlib.import_module(name)
+    from pathlib import Path
+    p.require(Path(module.__file__).resolve()==source.resolve(),'profile checker imported outside pinned source')
+    return module.check
+
+
+def materialize(root, initial_review):
+    """Run distinct scientific checkers through one dispatch path.
+
+    Results remain private until every checker and projection succeeds. Callers
+    can track the returned keys for cleanup after any later status failure.
+    """
+    roster=registry(root)
+    normalized=checked(root)
+    gates={r['view_key']:r for r in roster['records'] if r['adapter']!='historical_c_os'}
+    values={'profile_conformance_review':initial_review}
+    arguments=dict(local='initial_review',crossing='local_product',g2='bounded_acceptance')
+    for row in roster['materializers']:
+        result=_checker(root,row['module'])(**{arguments[row['kind']]:values[row['dependency']]})
+        if row['kind']=='g2':
+            result=project_review(root,gates[row['view_key']],result,normalized['accepted_generic_runtime_support'])
+        values[row['view_key']]=result
+    checked_reconciliation(root,{key:values[key] for key in roster['reconciliation_views']})
+    result={row['view_key']:values[row['view_key']] for row in roster['materializers']}
+    result['profile_g2']=normalized['profiles']
+    return result,normalized['accepted_generic_runtime_support']
 
 
 def registry(root):

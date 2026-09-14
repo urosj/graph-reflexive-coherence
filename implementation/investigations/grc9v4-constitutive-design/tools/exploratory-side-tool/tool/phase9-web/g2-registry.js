@@ -1,5 +1,61 @@
 // Generated from ProfileG2Registry.json; checked by the registry validator.
 export const G2_REGISTRY = {
+  "materializers": [
+    {
+      "dependency": "profile_conformance_review",
+      "kind": "local",
+      "module": "verify_p977_a_os_local",
+      "view_key": "a_os_local_product"
+    },
+    {
+      "dependency": "a_os_local_product",
+      "kind": "crossing",
+      "module": "verify_p977_a_os_acceptance",
+      "view_key": "a_os_crossings"
+    },
+    {
+      "dependency": "a_os_crossings",
+      "kind": "g2",
+      "module": "verify_p977_a_os_g2",
+      "view_key": "a_os_g2_review"
+    },
+    {
+      "dependency": "profile_conformance_review",
+      "kind": "local",
+      "module": "verify_p977_a_ci_local",
+      "view_key": "a_ci_local_product"
+    },
+    {
+      "dependency": "a_ci_local_product",
+      "kind": "crossing",
+      "module": "verify_p977_a_ci_acceptance",
+      "view_key": "a_ci_crossings"
+    },
+    {
+      "dependency": "a_ci_crossings",
+      "kind": "g2",
+      "module": "verify_p977_a_ci_g2",
+      "view_key": "a_ci_g2_review"
+    },
+    {
+      "dependency": "profile_conformance_review",
+      "kind": "local",
+      "module": "verify_p977_c_ci_local",
+      "view_key": "c_ci_local_product"
+    },
+    {
+      "dependency": "c_ci_local_product",
+      "kind": "crossing",
+      "module": "verify_p977_c_ci_acceptance",
+      "view_key": "c_ci_crossings"
+    },
+    {
+      "dependency": "c_ci_crossings",
+      "kind": "g2",
+      "module": "verify_p977_c_ci_g2",
+      "view_key": "c_ci_g2_review"
+    }
+  ],
   "reconciliation_views": {
     "a_ci_crossings": {
       "G2_accepted": false,
@@ -137,7 +193,7 @@ export const G2_REGISTRY = {
       "verified_local_cells": 26
     }
   },
-  "record_digest": "c8822d2c709f20823699867c54abe65b726552f7f610fb0acc393e6f2edfd35b",
+  "record_digest": "48df340680b9acba3bdfa4276dfd2c57875d2796a611c2358ef97039b6897b59",
   "records": [
     {
       "acceptance": {
@@ -200,6 +256,25 @@ export const G2_REGISTRY = {
       },
       "state": "accepted",
       "view_key": "a_ci_g2_review"
+    },
+    {
+      "acceptance": null,
+      "adapter": "exact_profile_v1",
+      "bounded_view_key": "c_ci_crossings",
+      "complete_profile_id": "grcv4-profile-sha256:a56ef981821478cc50a3551a914dd6240e0dc62c9ca69d52305bd59a3405f69e",
+      "gate": "P9-G2[C_CI]",
+      "profile_family_id": "C_CI",
+      "review": {
+        "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_CI-G2Review.json",
+        "record_digest": "56edc8d0a725a693a0363bf66f23bdcbe000357403928f9fd84da991c542bedc"
+      },
+      "review_metrics": {
+        "catalog_cells": 33,
+        "numerical_tests_rerun": 0,
+        "supplemental_interface_methods": 1
+      },
+      "state": "proposed",
+      "view_key": "c_ci_g2_review"
     }
   ],
   "schema": "phase9_exact_profile_g2_registry_v1"

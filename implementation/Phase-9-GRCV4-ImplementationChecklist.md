@@ -68,7 +68,7 @@ coverage, and evidence; a family label alone does not certify all instances.
 | --- | --- | --- |
 | `P9-G2[C_OS]` | Accepted, exact singleton | [explicit G2 acceptance](./phase-9-grcv4/tranche-4/P9-4.8B-G2Acceptance.json) closes Tranche 4 and aliases P9-7.7-C_OS. Other profiles and G3 remain closed. |
 | `P9-G2[A_OS]` | Accepted, exact nomination | [Explicit G2 acceptance](./phase-9-grcv4/tranche-7/P9-7.7-A_OS-G2Acceptance.json) accepts the reviewed 28-case scope; no all-pairs or G3 support. |
-| `P9-G2[C_CI]` | HOLD, bounded reconciliation accepted | [26 local cells](./phase-9-grcv4/tranche-7/P9-7.7-C_CI-LocalReview.md) plus [seven crossing dispositions](./phase-9-grcv4/tranche-7/P9-7.7-C_CI-CrossingReview.md) accepted by the user; integrated G2 and explicit acceptance remain. |
+| `P9-G2[C_CI]` | PASS proposal, G2 acceptance pending | [Integrated 33-cell review](./phase-9-grcv4/tranche-7/P9-7.7-C_CI-G2Review.md) over accepted bounded reconciliation, exact ordered scope and one facade supplement. Public support remains unchanged. |
 | `P9-G2[A_CI]` | Accepted, exact nomination | [Explicit G2 acceptance](./phase-9-grcv4/tranche-7/P9-7.7-A_CI-G2Acceptance.json) accepts the reviewed 28-case scope. Current discovery is exactly C_OS/A_OS/A_CI; no all-pairs or G3 support. |
 | `P9-G2[C_PC]` | HOLD, draft P9-7.7 review | Accepted bounded numerical/lifecycle evidence; reconcile the 33-cell exact product and ordered endpoints. |
 | `P9-G2[A_PC]` | HOLD, draft P9-7.7 review | Accepted bounded numerical/lifecycle evidence; reconcile the 28-cell exact product and ordered endpoints. |
@@ -1388,6 +1388,16 @@ may reach G2 without waiting for all Tranche 6 realizations.
   - [x] Share local/crossing evidence presentation through pinned expected
     views in the existing registry; keep profile-specific scientific checkers
     and original accepted evidence. No new gate or runtime permission.
+  - [x] Perform the [integrated C_CI G2 review](./phase-9-grcv4/tranche-7/P9-7.7-C_CI-G2Review.md):
+    PASS proposal for 33 exact catalog obligations, explicit initializer/event
+    target boundaries and one zero-duration facade supplement. Reuse the
+    four local and three crossing methods without a numerical campaign rerun.
+  - [x] At the fourth G2 profile, replace Python per-profile status dispatch,
+    view/review seeding and cleanup with pinned ordered registry materializers.
+    Check dependencies, source bindings/origins and complete projection;
+    preserve distinct scientific checkers, accepted records and permissions.
+  - [ ] Independently review/explicitly accept exact C_CI G2. Its registered
+    proposal does not publish support or close aggregate P9-7.7/G3.
 - [ ] P9-7.8: Review `P9-G3[S]` for the exact accepted generic support set
   before specialization code. Singleton `P9-G3[C_OS]` can run immediately
   after its G2; unrelated lifecycle/realization rows may remain pending.
