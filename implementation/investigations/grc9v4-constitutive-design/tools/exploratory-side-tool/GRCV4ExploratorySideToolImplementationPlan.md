@@ -2138,3 +2138,31 @@ unchanged. Compose a finite current-to-pre-discovery source map before the
 historical A_OS bridge; fresh executions retain actual source identities.
 Local/crossing browser branches remain a bounded follow-up for the next
 matching profile, not a new gate or a reason to rewrite scientific evidence.
+
+The C_CI local continuation addresses that presentation follow-up. The existing
+registry now pins the checked local/crossing summaries, preserving historical
+shapes and using one Python/browser comparison. Profile-specific scientific
+checkers still validate each record before projection. The browser table clears
+on refresh/failure and exposes the checked scope, not inferred acceptance.
+
+`c_ci_local_product` reports 26 local cells from four methods, with seven
+crossing obligations remaining and no new G2/G3 support. Distinguish nominal
+zero mobility deformation from nonzero-deformation derivative controls and
+local CI certification from global root claims. Validate retained preimages,
+rehashed mutations, and one actual status across notebook/HTTP/browser; do not
+repeat the numerical campaign for presentation changes.
+
+The C_CI crossing continuation now adds `c_ci_crossings`: seven reconciled
+obligations, five retained migration aliases and five new cases in three methods.
+Register its checked summary alongside the unchanged local view. The shared
+browser table distinguishes pending crossing evidence from local evidence and
+accepted G2 declarations; no bespoke per-profile verification branch is added.
+Preserve separate PC-pair applicability, initializer/event target identities,
+and pending user/G2 decisions. Check retained mutations and one current status
+across API/notebook/HTTP/browser without repeating the local numerical suite.
+
+The user subsequently accepted the bounded C_CI local/crossing reconciliation
+on 2026-09-14. Project that decision over the original capture without changing
+its flags or public support. Integrated G2 review is the next task. The remaining
+Python per-profile dispatch duplication is a bounded follow-up alongside the
+fourth G2 profile, not a reason to rewrite accepted evidence or scientific checks.

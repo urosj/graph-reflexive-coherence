@@ -11,7 +11,7 @@ import phase9_implementation_policy as p
 
 REGISTRY = p.PHASE + 'tranche-7/ProfileG2Registry.json'
 BROWSER = p.SIDE + 'tool/phase9-web/g2-registry.js'
-REGISTRY_DIGEST = '56f47a0c704a5ced85345e0422d61a0928b12bf0a0022519b7df1af1a8876474'
+REGISTRY_DIGEST = 'c8822d2c709f20823699867c54abe65b726552f7f610fb0acc393e6f2edfd35b'
 ACCEPTANCE_SCHEMA = 'phase9_exact_profile_g2_acceptance_v1'
 FIELDS = {'profile_family_id', 'complete_profile_id', 'gate', 'state', 'adapter',
           'acceptance', 'review', 'view_key', 'bounded_view_key', 'review_metrics'}
@@ -23,10 +23,18 @@ def browser_source(value):
 
 
 def validate_registry(value):
-    p.require(set(value) == {'schema', 'records', 'record_digest'}
+    p.require(set(value) == {'schema', 'records', 'reconciliation_views', 'record_digest'}
               and value['schema'] == 'phase9_exact_profile_g2_registry_v1'
               and value['record_digest'] == p.digest_record(value) == REGISTRY_DIGEST,
               'untrusted exact-profile G2 registry')
+    views=value['reconciliation_views']
+    p.require(isinstance(views,dict) and views,'missing bounded reconciliation views')
+    for key,expected in views.items():
+        p.require(key.endswith(('_local_product','_crossings'))
+                  and expected['G2_accepted'] is False and expected['G3_accepted'] is False
+                  and expected['aggregate_closed'] is False and expected['new_G2_support']==[]
+                  and expected['numerical_tests_rerun']==0,'bounded view widened authority')
+        p.safe_path(p.ROOT,expected['record_path'])
     ids, keys = set(), set()
     for row in value['records']:
         p.require(set(row) == FIELDS and row['complete_profile_id'] not in ids
@@ -56,6 +64,21 @@ def bound_record(root, ref):
     p.require(value['record_digest'] == p.digest_record(value) == ref['record_digest'],
               'G2 record identity changed: ' + ref['path'])
     return value
+
+
+def checked_reconciliation(root, views):
+    """Pin the display projection after each scientific checker has run.
+
+    Historical status shapes remain intact. This grants no execution credit,
+    acceptance or runtime permission and does not replace scientific checks.
+    """
+    from pygrc.models.grc_v4_codec import canonical_json_bytes
+    expected=registry(root)['reconciliation_views']
+    p.require(canonical_json_bytes(views)==canonical_json_bytes(expected),
+              'untrusted or incomplete bounded reconciliation projection')
+    for value in views.values():
+        bound_record(root,dict(path=value['record_path'],record_digest=value['record_digest']))
+    return views
 
 
 def support_before(root, complete_profile_id):

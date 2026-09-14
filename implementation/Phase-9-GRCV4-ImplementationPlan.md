@@ -1503,6 +1503,31 @@ and aggregate P9-7.7/G3 remain open. At the next matching profile, evaluate
 sharing bounded local/crossing presentation checks as the review suggested;
 this does not reopen the accepted scientific product or block A_CI G2.
 
+The next [C_CI local reconciliation](./phase-9-grcv4/tranche-7/P9-7.7-C_CI-LocalReview.md)
+captures 26 of its 33 obligations through four focused methods. Keep the
+nomination's zero mobility deformation distinct from a separately declared
+nonzero-deformation, noncommuting derivative control. C baseline, selector,
+potential and read-back are checked against independent equations; CI current,
+reset and post-continuity restart are independently admitted without A history
+or a writer. The local certificate is not global root uniqueness. Seven
+crossing obligations and integrated G2 remain separate; review the bounded
+local result first. C_CI adds no public support at this stage.
+
+Local/crossing presentation now uses pinned expected views in the existing
+profile registry, shared by Python and the browser. This removes repeated
+profile-specific display branches, not the scientific checkers or historical
+record shapes. Missing, altered, unsupported and unverified views fail closed.
+
+The [C_CI crossing continuation](./phase-9-grcv4/tranche-7/P9-7.7-C_CI-CrossingReview.md)
+now reconciles the remaining seven rows through five retained migration aliases
+and five new cases in three methods. Explicitly distinguish nomination source
+from nomination target, separate PC-pair applicability, and newly declared
+initializer/event target identities. The renamed C target supplies its complete
+reference map before independent live/reset numerical admission. The combined
+26+7 bounded reconciliation was accepted by the user on 2026-09-14; integrated G2 review and
+its explicit acceptance are still separate. The original local snapshot is
+unchanged; `c_ci_crossings` reports the continuation through the shared registry.
+
 `P9-7.8` may review `P9-G3[C_OS]` immediately after its G2 acceptance;
 completion of the other Tranche 7 or Tranche 6 rows is not a prerequisite.
 

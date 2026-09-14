@@ -59,16 +59,17 @@ pending while an accepted C_OS path advances to reviewed specialization work.
 | `P9-G3[S]` | Pending per consumed set | Accepted G2 for every profile in S and reviewed GRC9V4 specialization scope. |
 | P9-G4 | Pending | Runtime conformance, regression evidence, reviewed support set, and handoff. |
 
-The accepted generic support set is initially empty. Each family-level gate
+The initially empty generic support set now contains exact C_OS, A_OS and
+A_CI declarations. Each family-level gate
 record must bind the actual complete-profile IDs, parameters/domains, fixture
 coverage, and evidence; a family label alone does not certify all instances.
 
 | Generic profile gate | State | Acceptance route |
 | --- | --- | --- |
 | `P9-G2[C_OS]` | Accepted, exact singleton | [explicit G2 acceptance](./phase-9-grcv4/tranche-4/P9-4.8B-G2Acceptance.json) closes Tranche 4 and aliases P9-7.7-C_OS. Other profiles and G3 remain closed. |
-| `P9-G2[A_OS]` | Accepted, exact nomination | [Explicit G2 acceptance](./phase-9-grcv4/tranche-7/P9-7.7-A_OS-G2Acceptance.json) accepts the reviewed 28-case scope. Discovery now contains exact C_OS and A_OS declarations; no all-pairs or G3 support. |
-| `P9-G2[C_CI]` | HOLD, draft P9-7.7 review | Accepted bounded numerical/lifecycle evidence; reconcile the 33-cell exact product and ordered endpoints. |
-| `P9-G2[A_CI]` | HOLD, bounded reconciliation accepted | [21 local cells](./phase-9-grcv4/tranche-7/P9-7.7-A_CI-LocalReview.md) plus [seven crossing evidence/dispositions](./phase-9-grcv4/tranche-7/P9-7.7-A_CI-CrossingReview.md) accepted by the user; integrated review and explicit G2 acceptance remain. |
+| `P9-G2[A_OS]` | Accepted, exact nomination | [Explicit G2 acceptance](./phase-9-grcv4/tranche-7/P9-7.7-A_OS-G2Acceptance.json) accepts the reviewed 28-case scope; no all-pairs or G3 support. |
+| `P9-G2[C_CI]` | HOLD, bounded reconciliation accepted | [26 local cells](./phase-9-grcv4/tranche-7/P9-7.7-C_CI-LocalReview.md) plus [seven crossing dispositions](./phase-9-grcv4/tranche-7/P9-7.7-C_CI-CrossingReview.md) accepted by the user; integrated G2 and explicit acceptance remain. |
+| `P9-G2[A_CI]` | Accepted, exact nomination | [Explicit G2 acceptance](./phase-9-grcv4/tranche-7/P9-7.7-A_CI-G2Acceptance.json) accepts the reviewed 28-case scope. Current discovery is exactly C_OS/A_OS/A_CI; no all-pairs or G3 support. |
 | `P9-G2[C_PC]` | HOLD, draft P9-7.7 review | Accepted bounded numerical/lifecycle evidence; reconcile the 33-cell exact product and ordered endpoints. |
 | `P9-G2[A_PC]` | HOLD, draft P9-7.7 review | Accepted bounded numerical/lifecycle evidence; reconcile the 28-cell exact product and ordered endpoints. |
 | `P9-G2[C_CI_PC]` | HOLD, draft P9-7.7 review | Accepted bounded numerical/lifecycle evidence; reconcile the 33-cell exact product and ordered endpoints. |
@@ -1370,9 +1371,23 @@ may reach G2 without waiting for all Tranche 6 realizations.
     binding reviewed checkpoint `fa94cd2`. Discovery contains exactly C_OS,
     A_OS and A_CI; original evidence remains unchanged. Seven other profile
     decisions, all-pairs, aggregate P9-7.7 and G3 remain open.
-  - [ ] With the next similarly structured profile, evaluate shared local/
-    crossing evidence presentation to avoid repeated browser branches; retain
-    profile-specific scientific checks. This is not an A_CI acceptance blocker.
+  - [x] P9-7.7-C_CI-local: capture 26 local cells through four focused methods:
+    independent C baseline/derivatives, bounded CI root and per-trial/restart
+    rederivation, exact controls, native common and fixed-profile lifecycle
+    operations. Dense nonzero-deformation controls are separately identified,
+    not additional nominated runtime support.
+    [Review and evidence](./phase-9-grcv4/tranche-7/P9-7.7-C_CI-LocalReview.md).
+  - [x] Reconcile seven C_CI crossing obligations using five retained aliases
+    and five new cases in three methods. Verify returning carrier loss,
+    outgoing reference-pass initialization, renamed target reference map with
+    both-role numerical readmission, mapped reset/charge and reset-only failure.
+    [Scoped crossing review](./phase-9-grcv4/tranche-7/P9-7.7-C_CI-CrossingReview.md).
+  - [x] User accepted the combined bounded C_CI local/crossing product on
+    2026-09-14; preserve original capture flags. Integrated G2 review and
+    explicit G2 acceptance remain separate.
+  - [x] Share local/crossing evidence presentation through pinned expected
+    views in the existing registry; keep profile-specific scientific checkers
+    and original accepted evidence. No new gate or runtime permission.
 - [ ] P9-7.8: Review `P9-G3[S]` for the exact accepted generic support set
   before specialization code. Singleton `P9-G3[C_OS]` can run immediately
   after its G2; unrelated lifecycle/realization rows may remain pending.

@@ -1721,6 +1721,20 @@ their historical stage, not the later aggregate acceptance recorded at the end.
 - [x] User accepted exact A_CI G2 on 2026-09-14. Use the common acceptance
       adapter over `fa94cd2`, publish exactly C_OS/A_OS/A_CI and preserve all
       original records through bounded, composable source-reuse checks.
-- [ ] At the next profile with the same local/crossing shape, evaluate a
-      shared evidence-view projection; do not merge scientific checks or
-      treat this presentation follow-up as an A_CI G2 blocker.
+- [x] Share bounded evidence-view projection in the existing registry;
+      preserve historical records and profile-specific scientific checks.
+
+### P9-7.7 C_CI local reconciliation
+
+- [x] Retain four focused methods for 26 local cells, C-specific independent
+      equations and scoped CI certificates. Separate nonzero-deformation
+      controls from the exact zero-deformation nomination.
+- [x] Expose `c_ci_local_product` through API/notebook/browser, with a shared
+      pinned local/crossing display projection and actual browser table.
+- [x] Reject changed evidence, missing views, premature support and borrowed
+      profile scope; use one checked status for transport tests.
+- [x] Reconcile seven crossing obligations with five retained aliases and
+      five new cases; expose `c_ci_crossings` through the shared display path.
+      Preserve ordered scope, separate target identities and original records.
+- [x] User accepted combined local/crossing scope on 2026-09-14; C_CI G2 remains separate.
+      Public support stays exactly C_OS/A_OS/A_CI.
