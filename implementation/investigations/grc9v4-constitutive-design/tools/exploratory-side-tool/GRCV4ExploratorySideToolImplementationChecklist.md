@@ -1833,3 +1833,30 @@ their historical stage, not the later aggregate acceptance recorded at the end.
       seven declarations through the existing adapter/materializer. Pin the
       reviewed checkpoint and finite discovery-source comparisons; retain old
       records and keep other targets, all-pairs, aggregate and G3 separate.
+
+### P9-7.7 C_CI+PC local reconciliation
+
+- [x] Register `c_ci_pc_local_product` through the shared materializer:
+      26 local cells, complete C reconstruction at coupled trials/readmissions,
+      one source for geometry/ZOH and no W writer. Preserve typed authority.
+- [x] Verify retained-equation mutations and shared API/notebook/browser access.
+      Keep seven accepted declarations; crossing evidence is tracked separately.
+      Local evidence is not bounded acceptance, G2, all-pairs or G3 support.
+- [x] Derive the next-gate narrative from checked registry views instead of
+      stale hard-coded accepted families; test current and later crossing text.
+
+### P9-7.7 C_CI+PC crossing reconciliation
+
+- [x] Register `c_ci_pc_crossings` with its local predecessor through the shared
+      materializer. Reconcile seven cells using eight new cases and three
+      retained aliases without borrowing separate endpoint support.
+- [x] Verify coupled current/reset roots and C reconstruction, explicit
+      candidate/carrier losses, exact preservation boundaries, selected
+      initializer scope and whole-publication rollback.
+- [x] Reject 55 rehashed evidence mutations; pass 12 registry/materializer
+      tests and one shared API/notebook/browser check with 162 browser controls.
+      The next-gate narrative shows seven reconciled cells, not seven remaining.
+- [x] Record the user's 2026-09-14 combined bounded acceptance through the
+      acceptance adapter, preserving original execution records and flags.
+- [ ] Complete the separate C_CI+PC G2 review; seven accepted declarations,
+      all-pairs and G3 are unchanged until a separate G2 decision.

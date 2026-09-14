@@ -227,6 +227,18 @@ HANDOFF_PATHS = {
     HERE + "handoff/P9-G1-outputs.zip",
 }
 PATHS = {
+    HERE + "verify_p977_c_ci_pc_acceptance.py",
+    HERE + "test_p977_c_ci_pc_acceptance.py",
+    HERE + "test_p977_c_ci_pc_crossings.py",
+    HERE + "test_p977_c_ci_pc_crossing_evidence.py",
+    HERE + "verify_p977_c_ci_pc_crossings.py",
+    PHASE + "tranche-7/P9-7.7-C_CI_PC-Crossings.json",
+    PHASE + "tranche-7/P9-7.7-C_CI_PC-CrossingReview.md",
+    HERE + "verify_p977_c_ci_pc_local.py",
+    HERE + "test_p977_c_ci_pc_local.py",
+    HERE + "test_p977_c_ci_pc_local_evidence.py",
+    PHASE + "tranche-7/P9-7.7-C_CI_PC-LocalProduct.json",
+    PHASE + "tranche-7/P9-7.7-C_CI_PC-LocalReview.md",
     HERE + "verify_p977_c_ci_g2.py",
     HERE + "test_p977_c_ci_g2.py",
     HERE + "test_p977_a_pc_local.py",

@@ -1652,6 +1652,27 @@ adapter, retaining original proposal/execution bytes and finite discovery-source
 comparisons. Three other profile G2 decisions, both separate targets, all-pairs,
 aggregate P9-7.7 and G3 are not promoted. No next-profile work is begun here.
 
+The next [C_CI+PC local product](./phase-9-grcv4/tranche-7/P9-7.7-C_CI_PC-LocalReview.md)
+reconciles 26 exact cells. Rebuild the full C chain at every retained consumed
+trial and at independent current/reset/restart roots. One selected source
+drives immediate geometry and prospective ZOH; no candidate W writer exists.
+Preserve signed history, zero-source release, local contraction/envelope limits,
+fixed-stage control identities and whole-publication rollback. Register a local
+view first. The subsequent
+[crossing reconciliation](./phase-9-grcv4/tranche-7/P9-7.7-C_CI_PC-CrossingReview.md)
+adds four methods/eight native cases and three retained aliases for seven cells.
+Check C_CI↔nomination, A_CI+PC→nomination and nomination→the separate
+initializer-selected A_CI+PC target, retaining exact PC↔CI+PC transport witnesses.
+Reconstruct both roles at a renamed-edge coupled event, with zero carrier but
+nonzero immediate geometry; reject altered carrier contracts and reset-only
+target readmission failures atomically. Retain class/endpoint boundaries rather
+than all-pairs credit. Bounded acceptance and integrated G2 remain separate;
+the seven existing exact G2 declarations stay unchanged.
+
+The user accepted the combined C_CI+PC local/crossing reconciliation on
+2026-09-14. Commit that bounded checkpoint before the integrated G2 review;
+retain execution identities/flags and keep G2 acceptance a separate decision.
+
 `P9-7.8` may review `P9-G3[C_OS]` immediately after its G2 acceptance;
 completion of the other Tranche 7 or Tranche 6 rows is not a prerequisite.
 

@@ -72,7 +72,7 @@ coverage, and evidence; a family label alone does not certify all instances.
 | `P9-G2[A_CI]` | Accepted, exact nomination | [Explicit G2 acceptance](./phase-9-grcv4/tranche-7/P9-7.7-A_CI-G2Acceptance.json) accepts the reviewed 28-case scope. Discovery at acceptance was exactly C_OS/A_OS/A_CI; no all-pairs or G3 support. |
 | `P9-G2[C_PC]` | Accepted by user, 2026-09-14 | Exact 33-cell product and bounded ordered endpoints; [acceptance](./phase-9-grcv4/tranche-7/P9-7.7-C_PC-G2Acceptance.json) pins review checkpoint `06475b2`. No all-pairs or G3. |
 | `P9-G2[A_PC]` | Accepted by user, 2026-09-14 | Exact 28-cell product and bounded ordered endpoints; [acceptance](./phase-9-grcv4/tranche-7/P9-7.7-A_PC-G2Acceptance.json). No all-pairs or G3. |
-| `P9-G2[C_CI_PC]` | HOLD, draft P9-7.7 review | Accepted bounded numerical/lifecycle evidence; reconcile the 33-cell exact product and ordered endpoints. |
+| `P9-G2[C_CI_PC]` | HOLD, bounded reconciliation ready for review | The 26 local plus seven crossing cells are reconciled; bounded acceptance and integrated G2 remain separate. [Crossing review](./phase-9-grcv4/tranche-7/P9-7.7-C_CI_PC-CrossingReview.md). |
 | `P9-G2[A_CI_PC]` | Accepted by user, 2026-09-14 | Exact 28-cell product and bounded ordered endpoints; [acceptance](./phase-9-grcv4/tranche-7/P9-7.7-A_CI_PC-G2Acceptance.json) pins checkpoint `07859cc`. Separate targets, all-pairs and G3 are not promoted. |
 | `P9-G2[C_RG2b]` | HOLD, draft P9-7.7 review | Accepted generalized numerical/lifecycle evidence; reconcile the 33-cell exact product and ordered endpoints. |
 | `P9-G2[A_RG2b]` | HOLD, draft P9-7.7 review | Accepted generalized numerical/lifecycle evidence; reconcile the 28-cell exact product and ordered endpoints. |
@@ -1468,6 +1468,22 @@ may reach G2 without waiting for all Tranche 6 realizations.
     `07859cc`, preserve original review/execution bytes and publish seven exact
     declarations through the shared adapter. Three other profile G2 decisions,
     all-pairs, aggregate P9-7.7 and G3 remain separate.
+  - [x] P9-7.7-C_CI_PC-local: verify 26 exact local cells with complete C
+    reconstruction at coupled trials and current/reset/restart roots, one
+    selected geometry/ZOH source, no W writer, signed history/release and exact
+    lifecycle ownership. Five native methods, 47 evidence mutations and shared
+    surfaces pass. Keep seven accepted G2 declarations; crossing evidence is below.
+    [Local review](./phase-9-grcv4/tranche-7/P9-7.7-C_CI_PC-LocalReview.md).
+  - [x] P9-7.7-C_CI_PC-crossings: reconcile all seven remaining cells with
+    eight native cases in four methods and three retained aliases. Verify
+    exact ordered endpoints, separate initializer scope, coupled target roots,
+    two-channel history loss, reset/replay and atomic failure. All 55 rehashed
+    mutations, 12 registry/materializer tests and shared surfaces pass.
+    [Crossing review](./phase-9-grcv4/tranche-7/P9-7.7-C_CI_PC-CrossingReview.md).
+  - [x] User accepted the combined 26+7-cell C_CI+PC reconciliation on
+    2026-09-14. Preserve original execution records; this is not G2 acceptance.
+  - [ ] Separate exact C_CI+PC G2 proposal/review and explicit G2 acceptance;
+    do not widen the seven accepted declarations from bounded evidence alone.
 - [ ] P9-7.8: Review `P9-G3[S]` for the exact accepted generic support set
   before specialization code. Singleton `P9-G3[C_OS]` can run immediately
   after its G2; unrelated lifecycle/realization rows may remain pending.

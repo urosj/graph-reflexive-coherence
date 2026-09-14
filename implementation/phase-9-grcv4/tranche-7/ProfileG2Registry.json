@@ -152,7 +152,7 @@
       }
     }
   ],
-  "record_digest": "4915098b13c1637c591860b65d86f58ecb3e35f35f451a0f1da7aa5959ed856f",
+  "record_digest": "3285afc670edf3888264b23599f66b7e9f9ddddbf3b080fa61ed5e246ec03c86",
   "reconciliation_views": {
     "a_os_local_product": {
       "status": "local_product_verified_pending_review",
@@ -423,6 +423,51 @@
       "numerical_tests_rerun": 0,
       "acceptance_path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_CI_PC-CrossingReview.md",
       "acceptance_sha256": "b4fde37466d1c222e02d7e4352e431fb569142e6d7658d7181455bc337875275"
+    },
+    "c_ci_pc_local_product": {
+      "status": "local_product_verified_pending_review",
+      "record_path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_CI_PC-LocalProduct.json",
+      "record_digest": "abc34f0442d9e2bc1aeecb18c946e7fd894070a4be7a9894d6a79593fd23d5f6",
+      "complete_profile_id": "grcv4-profile-sha256:3a7a084788c59a55b4232fb98e9c5529c1aa4c7c71074c9d3288982fa2fd2a5b",
+      "test_count": 5,
+      "verified_local_cells": 26,
+      "remaining_catalog_cases": [
+        "ALL-MIGRATION-CLASSES",
+        "C-LIFECYCLE-REFERENCE-MAP",
+        "HISTORY-DISPOSITION",
+        "RESET-AFTER-EVENT",
+        "RESET-AFTER-MIGRATION",
+        "TARGET-READMISSION-FAILURE",
+        "WHOLE-LIFECYCLE-TUPLE-MAP"
+      ],
+      "user_accepted": false,
+      "aggregate_closed": false,
+      "G2_accepted": false,
+      "new_G2_support": [],
+      "G3_accepted": false,
+      "numerical_tests_rerun": 0
+    },
+    "c_ci_pc_crossings": {
+      "status": "accepted_bounded_reconciliation",
+      "record_path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_CI_PC-Crossings.json",
+      "record_digest": "c15ae17c287fe89aab2f41cff778fa7a086d88f1e9713ed04e9564dacf173c5b",
+      "complete_profile_id": "grcv4-profile-sha256:3a7a084788c59a55b4232fb98e9c5529c1aa4c7c71074c9d3288982fa2fd2a5b",
+      "test_count": 4,
+      "new_execution_cases": 8,
+      "retained_alias_count": 3,
+      "reconciled_crossing_cells": 7,
+      "local_cells": 26,
+      "ordered_migration_classes": 7,
+      "matrix_scope": "exact_PC_pairs_and_two_channel_losses; separate_nonhistory_and_initializer_target; not_all_pairs",
+      "user_accepted": true,
+      "aggregate_closed": false,
+      "G2_accepted": false,
+      "G3_accepted": false,
+      "new_G2_support": [],
+      "all_ordered_pairs_verified": false,
+      "numerical_tests_rerun": 0,
+      "acceptance_path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_CI_PC-CrossingReview.md",
+      "acceptance_sha256": "8d41aa8203542c157a3593fbd6c938123aef0ef593885c81292c12b9caa33d7e"
     }
   },
   "materializers": [
@@ -533,6 +578,18 @@
       "module": "verify_p977_a_ci_pc_g2",
       "kind": "g2",
       "dependency": "a_ci_pc_crossings"
+    },
+    {
+      "view_key": "c_ci_pc_local_product",
+      "module": "verify_p977_c_ci_pc_local",
+      "kind": "local",
+      "dependency": "profile_conformance_review"
+    },
+    {
+      "view_key": "c_ci_pc_crossings",
+      "module": "verify_p977_c_ci_pc_acceptance",
+      "kind": "crossing",
+      "dependency": "c_ci_pc_local_product"
     }
   ]
 }

@@ -54,6 +54,27 @@ class CCISurfaceTests(unittest.TestCase):
         self.assertEqual(proposal['accepted_support_unchanged'],sorted(r['complete_profile_id'] for r in status['profile_g2'][:4]))
         from profile_g2_registry import checked_reconciliation, registry
         expected=registry(p.ROOT)['reconciliation_views']
+        from verify_p977_c_ci_pc_local import check as c_coupled_check
+        c_coupled=status['c_ci_pc_local_product']
+        self.assertEqual(c_coupled,c_coupled_check(initial_review=status['profile_conformance_review']))
+        self.assertEqual((c_coupled['test_count'],c_coupled['verified_local_cells']),(5,26))
+        self.assertEqual(len(c_coupled['remaining_catalog_cases']),7)
+        for flag in ('user_accepted','G2_accepted','G3_accepted','aggregate_closed'):
+            self.assertFalse(c_coupled[flag])
+        self.assertEqual(c_coupled['new_G2_support'],[])
+        self.assertNotIn(c_coupled['complete_profile_id'],status['accepted_generic_runtime_support'])
+        from verify_p977_c_ci_pc_acceptance import check as c_coupled_crossing_check
+        c_coupled_crossings=status['c_ci_pc_crossings']
+        self.assertEqual(c_coupled_crossings,c_coupled_crossing_check(local_product=c_coupled))
+        self.assertEqual((c_coupled_crossings['test_count'],c_coupled_crossings['new_execution_cases'],c_coupled_crossings['retained_alias_count']),(4,8,3))
+        self.assertEqual((c_coupled_crossings['local_cells'],c_coupled_crossings['reconciled_crossing_cells']),(26,7))
+        self.assertEqual(c_coupled_crossings['complete_profile_id'],c_coupled['complete_profile_id'])
+        self.assertTrue(c_coupled_crossings['user_accepted'])
+        for flag in ('G2_accepted','G3_accepted','aggregate_closed','all_ordered_pairs_verified'):
+            self.assertFalse(c_coupled_crossings[flag])
+        self.assertEqual(c_coupled_crossings['new_G2_support'],[])
+        self.assertIn('C_CI_PC: 26 local cells; 7 crossing cells reconciled',status['next_gate'])
+        self.assertNotIn('c_ci_pc_g2_review',status)
         views={key:status[key] for key in expected}
         self.assertEqual(checked_reconciliation(p.ROOT,views),views)
         self.assertEqual(status['a_pc_local_product']['verified_local_cells'],21)
@@ -174,6 +195,14 @@ assert.equal(body.children[2].children[1].textContent,value.a_ci_g2_review.propo
 renderReconciliation(value,body,element);
 assert.equal(body.children.length,Object.keys(value).filter(k=>k.endsWith('_local_product')||k.endsWith('_crossings')).length);
 const cci=body.children.find(r=>r.children[0].textContent==='c_ci_local_product');
+const cCoupled=body.children.find(r=>r.children[0].textContent==='c_ci_pc_local_product');
+assert.ok(cCoupled);
+assert.equal(cCoupled.children[1].textContent,'26');
+assert.equal(cCoupled.children[2].textContent,'Local evidence pending review');
+const cCoupledCrossings=body.children.find(r=>r.children[0].textContent==='c_ci_pc_crossings');
+assert.ok(cCoupledCrossings);
+assert.equal(cCoupledCrossings.children[1].textContent,'7');
+assert.equal(cCoupledCrossings.children[2].textContent,'Bounded reconciliation accepted');
 const coupled=body.children.find(r=>r.children[0].textContent==='a_ci_pc_local_product');
 assert.ok(coupled);
 assert.equal(coupled.children[2].textContent,'Local evidence pending review');
@@ -296,6 +325,26 @@ for(const edit of [v=>delete v.a_ci_pc_g2_review,v=>v.a_ci_pc_g2_review.G2_accep
  await assert.rejects(verifiedStatus(bad));
 }
 console.log('A_CI_PC_G2_ACCEPTANCE_BROWSER_PASS');
+for(const edit of [v=>v.c_ci_pc_local_product.verified_local_cells=33,
+ v=>v.c_ci_pc_local_product.remaining_catalog_cases.pop(),
+ v=>v.c_ci_pc_local_product.user_accepted=true,v=>v.c_ci_pc_local_product.G3_accepted=true]) {
+ const bad=structuredClone(value);edit(bad);delete bad.status_digest;
+ bad.status_digest=createHash('sha256').update(canonical(bad)).digest('hex');
+ await assert.rejects(verifiedStatus(bad));
+}
+console.log('C_CI_PC_LOCAL_BROWSER_PASS');
+for(const edit of [v=>v.c_ci_pc_crossings.user_accepted=false,
+ v=>v.c_ci_pc_crossings.G3_accepted=true,v=>v.c_ci_pc_crossings.aggregate_closed=true,
+ v=>v.c_ci_pc_crossings.all_ordered_pairs_verified=true,
+ v=>v.c_ci_pc_crossings.reconciled_crossing_cells=33,
+ v=>v.c_ci_pc_crossings.new_execution_cases=7,
+ v=>v.c_ci_pc_crossings.retained_alias_count=7,
+ v=>v.c_ci_pc_crossings=structuredClone(v.a_ci_pc_crossings)]) {
+ const bad=structuredClone(value);edit(bad);delete bad.status_digest;
+ bad.status_digest=createHash('sha256').update(canonical(bad)).digest('hex');
+ await assert.rejects(verifiedStatus(bad));
+}
+console.log('C_CI_PC_CROSSINGS_BROWSER_PASS');
 """
         browser = subprocess.run([str(managed_node()), '--input-type=module', '-e', code],
             cwd=tool / 'phase9-web', input=json.dumps(status), capture_output=True,
@@ -305,6 +354,8 @@ console.log('A_CI_PC_G2_ACCEPTANCE_BROWSER_PASS');
         self.assertIn('A_PC_G2_ACCEPTANCE_BROWSER_PASS',browser.stdout)
         self.assertIn('C_PC_G2_ACCEPTANCE_BROWSER_PASS',browser.stdout)
         self.assertIn('A_CI_PC_G2_ACCEPTANCE_BROWSER_PASS',browser.stdout)
+        self.assertIn('C_CI_PC_LOCAL_BROWSER_PASS',browser.stdout)
+        self.assertIn('C_CI_PC_CROSSINGS_BROWSER_PASS',browser.stdout)
 
 
 if __name__ == '__main__':

@@ -2263,3 +2263,26 @@ The subsequent user acceptance uses the same adapter/materializer to project
 seven accepted exact declarations. Bind the finite discovery-source successor
 without changing the original review/execution bytes or numerical laws; other
 targets, runtime permissions, all-pairs and G3 remain outside the decision.
+
+C_CI+PC local reconciliation adds one pinned `c_ci_pc_local_product` view and
+local materializer. The 26-cell product retains complete C trial/role baseline
+reconstruction, same-root geometry/ZOH, no W writer, signed histories and native
+release controls. Rehashed evidence must reject stale trials, borrowed roles,
+source replacement and claim widening. Use the generic API/notebook/browser
+views without new dispatch or rendering branches; seven accepted G2 profiles
+remain unchanged while seven crossings and later acceptance/G2 stay separate.
+The next-gate narrative also derives accepted families and local/crossing counts
+from checked views; it must not contradict the registry with historical literals.
+
+The subsequent `c_ci_pc_crossings` view adds a dependent materializer for seven
+crossing cells: eight new cases and three retained aliases, with exact ordered
+nomination endpoints, two independent history channels, coupled target roots,
+mapped reset authority and fail-closed readmission. Reuse generic Python and
+browser projections; expose the pending result through API and notebook as well.
+Pressure rehashed evidence and display substitutions without rerunning accepted
+campaigns. Seven G2 declarations remain unchanged; bounded acceptance and the
+later C_CI+PC G2 review are distinct from these execution results.
+
+The user's bounded C_CI+PC acceptance is projected through the acceptance
+adapter without rewriting the original local/crossing records. Commit this
+checkpoint first, then materialize the separate integrated G2 proposal.

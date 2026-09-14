@@ -65,6 +65,30 @@ class MaterializerTests(unittest.TestCase):
         with patch('importlib.import_module',return_value=SimpleNamespace(__file__='wrong-checker.py',check=lambda:None)):
             with self.assertRaisesRegex(ValueError,'outside pinned source'):g._checker(p.ROOT,name)
 
+    def test_next_gate_text_uses_checked_registry_not_historical_family_literals(self):
+        source=(p.ROOT/p.SIDE/'tool/src/grcv4_explorer/phase9_verification.py').read_text()
+        tree=ast.parse(source)
+        node=next(n for n in tree.body if isinstance(n,ast.FunctionDef) and n.name=='_profile_next_gate')
+        namespace={}
+        exec(compile(ast.fix_missing_locations(ast.Module(body=[node],type_ignores=[])),
+                     'phase9_verification.py:next-gate','exec'),namespace)
+        roster=g.registry(p.ROOT)
+        views=dict(roster['reconciliation_views'],profile_g2=[g.view(r) for r in roster['records']])
+        views.pop('c_ci_pc_crossings',None)
+        summary=namespace['_profile_next_gate'](views)
+        self.assertIn('Exact accepted G2 declarations (7)',summary)
+        self.assertIn('C_PC, A_CI_PC',summary)
+        self.assertIn('C_CI_PC: 26 local cells; 7 crossing cells remaining',summary)
+        self.assertIn('Local evidence is not G2 acceptance',summary)
+        # A later reconciled crossing must not retain the stale "remaining" claim.
+        views['c_ci_pc_crossings']={'reconciled_crossing_cells':7}
+        changed=namespace['_profile_next_gate'](views)
+        self.assertIn('7 crossing cells reconciled',changed)
+        self.assertNotIn('7 crossing cells remaining',changed)
+        calls=[n.value for n in ast.walk(tree) if isinstance(n,ast.keyword) and n.arg=='next_gate']
+        self.assertTrue(any(isinstance(n,ast.Call) and isinstance(n.func,ast.Name)
+                            and n.func.id=='_profile_next_gate' for n in calls))
+
     def test_actual_entrypoint_cleanup_loop_removes_every_produced_key(self):
         # Execute the real except-block loop with a synthetic late-failure
         # payload; do not repeat the full status/scientific predecessor chain.

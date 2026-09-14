@@ -20,6 +20,24 @@ def _policy(root):
     return module
 
 
+def _profile_next_gate(views):
+    """Display only: consume checked materializer views, never grant authority."""
+    accepted=[r for r in views['profile_g2'] if r['state']=='accepted']
+    ids={r['complete_profile_id'] for r in accepted}
+    labels=', '.join(r['profile_family_id'] for r in accepted)
+    parts=[f"P9-7.7 remains open. Exact accepted G2 declarations ({len(accepted)}): {labels}."]
+    for key,value in views.items():
+        if not key.endswith('_local_product') or value['complete_profile_id'] in ids:
+            continue
+        family=key.removesuffix('_local_product')
+        crossing=views.get(family+'_crossings')
+        extent=(f"{len(value['remaining_catalog_cases'])} crossing cells remaining" if crossing is None
+                else f"{crossing['reconciled_crossing_cells']} crossing cells reconciled; see their separate acceptance state")
+        parts.append(f"{family.upper()}: {value['verified_local_cells']} local cells; {extent}. Local evidence is not G2 acceptance.")
+    parts.append('Other profile decisions, all-pairs, aggregate P9-7.7 and P9-G3 remain separate. Initializer/event targets and arbitrary parameterizations are not added support.')
+    return ' '.join(parts)
+
+
 def verification_status(repo_root: Path) -> dict:
     """Recheck current authority bytes; label historical execution as recorded.
 
@@ -225,7 +243,7 @@ def verification_status(repo_root: Path) -> dict:
                     for r in module.runtime_targets(approval)
                     if r["requires_gate"] == "P9-G1" and set(ready) & owners[r["path"]]
                 ),
-                next_gate=f"P9-7.2a is user-accepted and closed. P9-7.2b is user-accepted and closed. P9-7.3 is user-accepted and closed: {history_policy_verification['baseline_test_count']} original tests plus {history_policy_verification['regression_test_count']} supplemental regressions, {history_policy_verification['policy_cells']} discrete policy cells. P9-7.4 is user-accepted and closed: {target_reference_verification['test_count']} focused tests. P9-7.5 is user-accepted and closed: {failure_sequence_verification['test_count']} focused tests. P9-7.6 is user-accepted and closed: {lineage_ownership_verification['test_count']} focused tests. The original P9-7.7 review held nine new nominations; six remain pending after the A_OS, A_CI and C_CI acceptances. The existing C_OS alias is unchanged. A_OS bounded reconciliation is user-accepted: 21 local cells plus seven crossing evidence/dispositions; the user accepted its exact 28-case G2 scope; negative incoming initializer and separate PC-pair scopes are not all-pairs support. Other held profile gates and P9-7.8 remain separate. No wider G2/G3 support. Accepted public support is the exact C_OS, A_OS, A_CI and C_CI set; A_CI bounded local/crossing reconciliation is user-accepted: 21 local cells plus seven crossing evidence/dispositions. The user accepted the integrated 28-cell A_CI G2 scope, bound to reviewed checkpoint fa94cd2; the zero-duration facade supplement is not additional numerical coverage. The shared exact-profile registry separates proposals from accepted support. This is not all-pairs support; six other profile decisions and G3 remain separate. C_CI now has 26 local cells plus seven crossing dispositions: five retained migration aliases and five new cases in three methods. The user accepted combined bounded C_CI reconciliation. The user accepted its integrated 33-cell G2 scope at checkpoint 8ec744e, with one facade supplement and unchanged numerical evidence. Pinned registry materializers now drive profile status dispatch and cleanup. The initializer and renamed event targets are separate exact declarations, not new public support.",
+                next_gate=_profile_next_gate(profile_views),
                 claim_ceiling="G1 is bounded implementation permission. Separate user-accepted G2 covers only the listed complete profiles and reviewed domains; no family-wide, unlisted-profile or specialization conformance is inferred.",
             )
         cross = module.read(
