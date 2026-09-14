@@ -2200,3 +2200,7 @@ review to G2. Exact PC pairs, separate nonhistory/initializer endpoints and
 two-channel losses remain visible; no bespoke dispatch/rendering branch is added.
 The user's 2026-09-14 bounded acceptance is projected through the same crossing
 materializer while original local/crossing execution flags remain unchanged.
+The integrated A_PC G2 proposal adds one `exact_profile_v1` row and dependent
+G2 materializer to that registry. No new profile dispatch/rendering branches;
+status distinguishes four accepted declarations from the pending A_PC proposal.
+Validate proposal/interface mutations and reuse one real status across transports.

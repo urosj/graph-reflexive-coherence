@@ -1767,3 +1767,6 @@ their historical stage, not the later aggregate acceptance recorded at the end.
       and negative incoming initializer evidence distinct from a positive target.
       Combined local/crossing review was accepted by the user on 2026-09-14;
       project it separately, preserving original runs. A_PC G2 remains pending.
+- [x] Register the integrated A_PC G2 proposal through the existing exact-profile
+      adapter/materializer. Expose its 28-cell review and pending decision across
+      API/notebook/browser; keep four accepted declarations and all original runs.

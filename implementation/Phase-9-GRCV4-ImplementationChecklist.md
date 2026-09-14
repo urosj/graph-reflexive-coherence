@@ -1412,7 +1412,12 @@ may reach G2 without waiting for all Tranche 6 realizations.
     [Scoped review](./phase-9-grcv4/tranche-7/P9-7.7-A_PC-CrossingReview.md).
   - [x] User accepted the combined A_PC local/crossing result on 2026-09-14.
     Preserve original execution records and project bounded acceptance separately.
-  - [ ] Perform integrated A_PC G2 review; its acceptance remains separate.
+  - [x] Perform the [integrated A_PC G2 review](./phase-9-grcv4/tranche-7/P9-7.7-A_PC-G2Review.md):
+    28 cells, exact PC pair contracts, separate W/Z losses and native release,
+    typed contract/debt ceilings and one zero-duration public-facade supplement.
+    Reuse four local and three crossing methods without a numerical campaign rerun.
+  - [ ] Accept or return the exact A_PC G2 proposal. Public support stays
+    C_OS/A_OS/A_CI/C_CI until a separate decision.
   - [ ] Continue persistent profiles in order A_PC, C_PC, A_CI+PC, C_CI+PC;
     leave A_RG2b/C_RG2b last. This is scheduling, not weaker acceptance criteria.
 - [ ] P9-7.8: Review `P9-G3[S]` for the exact accepted generic support set

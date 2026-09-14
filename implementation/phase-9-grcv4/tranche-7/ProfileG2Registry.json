@@ -84,9 +84,28 @@
         "supplemental_interface_methods": 1,
         "numerical_tests_rerun": 0
       }
+    },
+    {
+      "profile_family_id": "A_PC",
+      "complete_profile_id": "grcv4-profile-sha256:058ae6b1f923c85952ffdfa083af74e3b56dd450f309190f307c3ea56ac2aa75",
+      "gate": "P9-G2[A_PC]",
+      "state": "proposed",
+      "adapter": "exact_profile_v1",
+      "acceptance": null,
+      "review": {
+        "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_PC-G2Review.json",
+        "record_digest": "7077df309bb98e3e214667b0ca903cd318c4e9036ef8c61f7aeadb2bbfc95cac"
+      },
+      "view_key": "a_pc_g2_review",
+      "bounded_view_key": "a_pc_crossings",
+      "review_metrics": {
+        "catalog_cells": 28,
+        "supplemental_interface_methods": 1,
+        "numerical_tests_rerun": 0
+      }
     }
   ],
-  "record_digest": "f6a6b2557456eb7131ad080faf159abf4a95692731b62c713636524139cf3a1a",
+  "record_digest": "a6fcca104d2b955555b22a33ffeae172a1ef74ee5d272561aa8855cac6dd60a0",
   "reconciliation_views": {
     "a_os_local_product": {
       "status": "local_product_verified_pending_review",
@@ -335,6 +354,12 @@
       "module": "verify_p977_a_pc_acceptance",
       "kind": "crossing",
       "dependency": "a_pc_local_product"
+    },
+    {
+      "view_key": "a_pc_g2_review",
+      "module": "verify_p977_a_pc_g2",
+      "kind": "g2",
+      "dependency": "a_pc_crossings"
     }
   ]
 }

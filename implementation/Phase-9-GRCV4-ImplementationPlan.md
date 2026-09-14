@@ -1571,6 +1571,13 @@ review/acceptance and integrated G2 remain separate; public support stays
 C_OS/A_OS/A_CI/C_CI. On 2026-09-14 the user accepted the combined bounded
 local/crossing result and requested its commit before integrated G2 review.
 Project that acceptance separately without rewriting the original run flags.
+The [integrated A_PC G2 review](./phase-9-grcv4/tranche-7/P9-7.7-A_PC-G2Review.md)
+then reconciles all 28 cells, exact ordered carrier/history contracts, typed
+contract/debt ceilings and one zero-duration facade supplement. Add a proposed
+registry row/materializer only; four existing accepted declarations remain
+unchanged. Native release, explicit loss and independent current/reset admission
+stay distinct; no matched-forcing contraction or base-chart invariance is inferred.
+G2 acceptance is still a separate decision.
 
 `P9-7.8` may review `P9-G3[C_OS]` immediately after its G2 acceptance;
 completion of the other Tranche 7 or Tranche 6 rows is not a prerequisite.

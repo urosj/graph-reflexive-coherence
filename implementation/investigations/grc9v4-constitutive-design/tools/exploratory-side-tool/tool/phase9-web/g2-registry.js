@@ -66,6 +66,12 @@ export const G2_REGISTRY = {
       "kind": "crossing",
       "module": "verify_p977_a_pc_acceptance",
       "view_key": "a_pc_crossings"
+    },
+    {
+      "dependency": "a_pc_crossings",
+      "kind": "g2",
+      "module": "verify_p977_a_pc_g2",
+      "view_key": "a_pc_g2_review"
     }
   ],
   "reconciliation_views": {
@@ -250,7 +256,7 @@ export const G2_REGISTRY = {
       "verified_local_cells": 26
     }
   },
-  "record_digest": "f6a6b2557456eb7131ad080faf159abf4a95692731b62c713636524139cf3a1a",
+  "record_digest": "a6fcca104d2b955555b22a33ffeae172a1ef74ee5d272561aa8855cac6dd60a0",
   "records": [
     {
       "acceptance": {
@@ -335,6 +341,25 @@ export const G2_REGISTRY = {
       },
       "state": "accepted",
       "view_key": "c_ci_g2_review"
+    },
+    {
+      "acceptance": null,
+      "adapter": "exact_profile_v1",
+      "bounded_view_key": "a_pc_crossings",
+      "complete_profile_id": "grcv4-profile-sha256:058ae6b1f923c85952ffdfa083af74e3b56dd450f309190f307c3ea56ac2aa75",
+      "gate": "P9-G2[A_PC]",
+      "profile_family_id": "A_PC",
+      "review": {
+        "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_PC-G2Review.json",
+        "record_digest": "7077df309bb98e3e214667b0ca903cd318c4e9036ef8c61f7aeadb2bbfc95cac"
+      },
+      "review_metrics": {
+        "catalog_cells": 28,
+        "numerical_tests_rerun": 0,
+        "supplemental_interface_methods": 1
+      },
+      "state": "proposed",
+      "view_key": "a_pc_g2_review"
     }
   ],
   "schema": "phase9_exact_profile_g2_registry_v1"
