@@ -11,7 +11,7 @@ import phase9_implementation_policy as p
 
 REGISTRY = p.PHASE + 'tranche-7/ProfileG2Registry.json'
 BROWSER = p.SIDE + 'tool/phase9-web/g2-registry.js'
-REGISTRY_DIGEST = '65339ab9ad86bba77d222ebe3f111fa20d8d900b2ff013ca30c0b760491525f4'
+REGISTRY_DIGEST = '56f47a0c704a5ced85345e0422d61a0928b12bf0a0022519b7df1af1a8876474'
 ACCEPTANCE_SCHEMA = 'phase9_exact_profile_g2_acceptance_v1'
 FIELDS = {'profile_family_id', 'complete_profile_id', 'gate', 'state', 'adapter',
           'acceptance', 'review', 'view_key', 'bounded_view_key', 'review_metrics'}
@@ -90,6 +90,11 @@ def common_acceptance(root, row):
     p.require(value['accepted_generic_runtime_support'] ==
               sorted(set(value['predecessor_support'] + value['accepted_additional_support'])),
               'acceptance widened predecessor support')
+    if 'source_reuse' in value:
+        ref = value['source_reuse']
+        p.require(p.sha(p.safe_path(root, ref['path']).read_bytes()) == ref['sha256'],
+                  'accepted source-reuse subject changed')
+        bound_record(root, {k: ref[k] for k in ('path', 'record_digest')})
     return value
 
 

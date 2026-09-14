@@ -227,6 +227,11 @@ HANDOFF_PATHS = {
     HERE + "handoff/P9-G1-outputs.zip",
 }
 PATHS = {
+    HERE + "g2_source_reuse.py",
+    HERE + "test_p977_a_ci_g2_acceptance.py",
+    PHASE + "tranche-7/P9-7.7-A_CI-G2SourceReuse.json",
+    PHASE + "tranche-7/P9-7.7-A_CI-G2Acceptance.json",
+    PHASE + "tranche-7/P9-7.7-A_CI-G2Acceptance.md",
     HERE + "profile_g2_registry.py",
     HERE + "test_profile_g2_registry.py",
     HERE + "verify_p977_a_ci_g2.py",
@@ -1443,11 +1448,12 @@ def accepted_a_os(root):
 
 def g2_retained_bindings(current):
     from a_os_g2_source_reuse import retained_bindings
-    return retained_bindings(current)
+    from g2_source_reuse import retained_bindings as successor_bindings
+    return retained_bindings(successor_bindings(current))
 
 
 def g2_bindings_match(expected, current):
-    from a_os_g2_source_reuse import matches
+    from g2_source_reuse import matches
     return matches(expected, current)
 
 

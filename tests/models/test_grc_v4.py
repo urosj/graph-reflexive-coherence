@@ -72,7 +72,7 @@ class FoundationIntegrationTests(unittest.TestCase):
         from tests.models.test_grc_v4_profile import bundle
         from tests.models.test_grc_v4_state import result_fixture
 
-        self.assertEqual(profiles.list_supported_profiles(), frozenset({'grcv4-profile-sha256:a6b853ee382895eb78b1a7955a0df22f95d68b27cb0f762503e8c424c2f59b6d', 'grcv4-profile-sha256:e4c04a83240a33d77c50a26ca6effbb6ce142774bd01f0966861dd517a94e2c4'}))
+        self.assertEqual(profiles.list_supported_profiles(), frozenset({'grcv4-profile-sha256:a6b853ee382895eb78b1a7955a0df22f95d68b27cb0f762503e8c424c2f59b6d', 'grcv4-profile-sha256:e4c04a83240a33d77c50a26ca6effbb6ce142774bd01f0966861dd517a94e2c4', 'grcv4-profile-sha256:16ed65f7f65d4716e1be3e384f6fa0f957d26dd7b7a3f7e1b43ad1aa3f250946'}))
         for row in bundle()["identity_vectors"]:
             if row["schema_ref"] == "#/$defs/profile_template_payload":
                 template = profiles.GRCV4ProfileTemplate.from_payload(row["payload"])
@@ -100,7 +100,7 @@ class FoundationIntegrationTests(unittest.TestCase):
         discovery = profiles.list_supported_profiles()
         with self.assertRaises(AttributeError):
             getattr(discovery, "add")("C_OS")
-        self.assertEqual(profiles.list_supported_profiles(), frozenset({'grcv4-profile-sha256:a6b853ee382895eb78b1a7955a0df22f95d68b27cb0f762503e8c424c2f59b6d', 'grcv4-profile-sha256:e4c04a83240a33d77c50a26ca6effbb6ce142774bd01f0966861dd517a94e2c4'}))
+        self.assertEqual(profiles.list_supported_profiles(), frozenset({'grcv4-profile-sha256:a6b853ee382895eb78b1a7955a0df22f95d68b27cb0f762503e8c424c2f59b6d', 'grcv4-profile-sha256:e4c04a83240a33d77c50a26ca6effbb6ce142774bd01f0966861dd517a94e2c4', 'grcv4-profile-sha256:16ed65f7f65d4716e1be3e384f6fa0f957d26dd7b7a3f7e1b43ad1aa3f250946'}))
 
     def test_shared_acyclic_wide_context_survives_projection_and_reconstruction(self) -> None:
         shared: dict[str, Any] = {"nested": [True, {"weight": 0.125}]}
@@ -195,7 +195,7 @@ class FoundationIntegrationTests(unittest.TestCase):
                                           tolerance=tolerance, label=label):
                             with self.assertRaisesRegex(V4IdentityError, "unsupported executable"):
                                 get_supported_profile(label)
-                    self.assertEqual(list_supported_profiles(), frozenset({'grcv4-profile-sha256:a6b853ee382895eb78b1a7955a0df22f95d68b27cb0f762503e8c424c2f59b6d', 'grcv4-profile-sha256:e4c04a83240a33d77c50a26ca6effbb6ce142774bd01f0966861dd517a94e2c4'}))
+                    self.assertEqual(list_supported_profiles(), frozenset({'grcv4-profile-sha256:a6b853ee382895eb78b1a7955a0df22f95d68b27cb0f762503e8c424c2f59b6d', 'grcv4-profile-sha256:e4c04a83240a33d77c50a26ca6effbb6ce142774bd01f0966861dd517a94e2c4', 'grcv4-profile-sha256:16ed65f7f65d4716e1be3e384f6fa0f957d26dd7b7a3f7e1b43ad1aa3f250946'}))
         self.assertEqual(len(ids), 20)
 
     def test_duration_validation_still_does_not_admit_a_profile_or_context(self) -> None:
@@ -403,7 +403,7 @@ class PublicFacadeTests(unittest.TestCase):
         for invalid in ("C_OS", "A_OS", "grcv4-profile-sha256:" + "0" * 64):
             with self.assertRaises(ValueError):
                 model.get_supported_profile(invalid)
-        self.assertEqual(list_supported_profiles(), frozenset({'grcv4-profile-sha256:a6b853ee382895eb78b1a7955a0df22f95d68b27cb0f762503e8c424c2f59b6d', 'grcv4-profile-sha256:e4c04a83240a33d77c50a26ca6effbb6ce142774bd01f0966861dd517a94e2c4'}))  # no ambient expansion of accepted support
+        self.assertEqual(list_supported_profiles(), frozenset({'grcv4-profile-sha256:a6b853ee382895eb78b1a7955a0df22f95d68b27cb0f762503e8c424c2f59b6d', 'grcv4-profile-sha256:e4c04a83240a33d77c50a26ca6effbb6ce142774bd01f0966861dd517a94e2c4', 'grcv4-profile-sha256:16ed65f7f65d4716e1be3e384f6fa0f957d26dd7b7a3f7e1b43ad1aa3f250946'}))  # no ambient expansion of accepted support
         self.assertEqual(model.list_capabilities(), {
             "profile_explicit_v4", "single_resource_ledger", "authoritative_current",
             "structural_hodge_geometry", "typed_topology_events", "profile_migration",
@@ -892,7 +892,7 @@ class RequestTests(unittest.TestCase):
         self.assertEqual(api.decode_migration_request(raw, encoding="canonical"), decoded)
         with self.assertRaises(V4WireError):
             api.decode_migration_request(raw)
-        self.assertEqual(list_supported_profiles(), frozenset({'grcv4-profile-sha256:a6b853ee382895eb78b1a7955a0df22f95d68b27cb0f762503e8c424c2f59b6d', 'grcv4-profile-sha256:e4c04a83240a33d77c50a26ca6effbb6ce142774bd01f0966861dd517a94e2c4'}))
+        self.assertEqual(list_supported_profiles(), frozenset({'grcv4-profile-sha256:a6b853ee382895eb78b1a7955a0df22f95d68b27cb0f762503e8c424c2f59b6d', 'grcv4-profile-sha256:e4c04a83240a33d77c50a26ca6effbb6ce142774bd01f0966861dd517a94e2c4', 'grcv4-profile-sha256:16ed65f7f65d4716e1be3e384f6fa0f957d26dd7b7a3f7e1b43ad1aa3f250946'}))
         for name in ["admitted", "committed", "dt", "state", "commit_id"]:
             self.assertFalse(hasattr(decoded, name))
 
@@ -961,7 +961,7 @@ class RequestTests(unittest.TestCase):
         data["context_value"] = {"harness_fault": fault}
         value = api.decode_step_request_input(json.dumps(data))
         self.assertEqual(value.context_value.to_dict(), data["context_value"])
-        self.assertEqual(list_supported_profiles(), frozenset({'grcv4-profile-sha256:a6b853ee382895eb78b1a7955a0df22f95d68b27cb0f762503e8c424c2f59b6d', 'grcv4-profile-sha256:e4c04a83240a33d77c50a26ca6effbb6ce142774bd01f0966861dd517a94e2c4'}))
+        self.assertEqual(list_supported_profiles(), frozenset({'grcv4-profile-sha256:a6b853ee382895eb78b1a7955a0df22f95d68b27cb0f762503e8c424c2f59b6d', 'grcv4-profile-sha256:e4c04a83240a33d77c50a26ca6effbb6ce142774bd01f0966861dd517a94e2c4', 'grcv4-profile-sha256:16ed65f7f65d4716e1be3e384f6fa0f957d26dd7b7a3f7e1b43ad1aa3f250946'}))
         self.assertTrue(hasattr(api, "GRCV4"))
 
     def test_migration_nested_typed_declaration_and_roundtrip(self) -> None:

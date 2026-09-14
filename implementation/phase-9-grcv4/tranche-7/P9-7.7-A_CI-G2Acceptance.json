@@ -1,0 +1,150 @@
+{
+  "schema": "phase9_exact_profile_g2_acceptance_v1",
+  "status": "accepted_by_user",
+  "date": "2026-09-14",
+  "user_instruction": "great. accept A_CI G2",
+  "gate": "P9-G2[A_CI]",
+  "reviewed_commit": "fa94cd2a82f5798a9ba6c507f569470ab32ec908",
+  "review": {
+    "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_CI-G2Review.json",
+    "sha256": "14fd078fc7053195b6a35a6e062cb3a3998058201202db56badddb8fa97c041a",
+    "record_digest": "2a1211974eaa047456c9a8f791c501e4c3087d2d2037ff1e8bf577b38ae093ae"
+  },
+  "review_text": {
+    "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_CI-G2Review.md",
+    "sha256": "c0235ba369fb4a6fdd2db5eaaac13dd4ec684343b17500355d49b48a2a3711c6"
+  },
+  "accepted_profile": {
+    "identity_payload": {
+      "schema_version": "grcv4-profile-identity-v1",
+      "profile_family_id": "A_CI",
+      "candidate": "A",
+      "realization": "CI",
+      "differential_backend_id": "oriented_incidence_d0_equals_BT_v1",
+      "charge_profile_id": "unit_vertex_measure_v1",
+      "geometry_profile_id": "affine_reference_relative_v1",
+      "context_contract_id": "constant_zero_context_v1",
+      "units_id": "grcv4_nondimensional_reference_v1",
+      "gauge_id": "component_zero_mean_potential_v1",
+      "normalization_id": "unnormalized_vertex_stiffness_v1",
+      "domain_id": "fixed_graph_strict_gap_spd_v1",
+      "solver_id": "ci_reduced_fixed_point_v1",
+      "lifecycle_policy_id": "grcv4-lifecycle-policy-v1",
+      "candidate_c_transport_id": null,
+      "composition_gain": null,
+      "params_hash": "grcv4-params-sha256:3a3907be149626365702aab85407957551c39f02c0e556ff3885c8ee54c5b687"
+    },
+    "params_resolved": {
+      "schema_version": "grcv4-resolved-params-v1",
+      "common": {
+        "schema_version": "grcv4-common-params-v1",
+        "differential_backend_id": "oriented_incidence_d0_equals_BT_v1",
+        "boundary_policy_id": "closed_no_flux_v1",
+        "measure_profile_id": "unit_vertex_measure_v1",
+        "context_contract_id": "constant_zero_context_v1",
+        "units_id": "grcv4_nondimensional_reference_v1",
+        "gauge_id": "component_zero_mean_potential_v1",
+        "normalization_id": "unnormalized_vertex_stiffness_v1",
+        "domain_id": "fixed_graph_strict_gap_spd_v1",
+        "default_step_request": null
+      },
+      "candidate": {
+        "schema_version": "grcv4-candidate-a-params-v1",
+        "eta": 0.25,
+        "kappa_c": 0.5,
+        "site_potential_id": "quadratic_site_potential_zero_derivative_v1",
+        "W_floor": 1e-12,
+        "alpha": 0.0,
+        "beta": 0.0,
+        "gamma": 0.1,
+        "kappa_Ah": 0.25,
+        "chi_A": 0.5,
+        "zeta_A": 0.75,
+        "tau_A": 1,
+        "descriptor_backend_id": "grcv4-a-descriptor-sha256:6aaa0de5fbfcda770a02d928fe8bb0da0c10ed1191c7d50e21ce79cda67ab391",
+        "conductance_evaluator_id": "curvature_disabled_G_W_v1"
+      },
+      "realization": {
+        "schema_version": "grcv4-ci-params-v1",
+        "contraction_domain_id": "ci_reference_frobenius_ball_v1:0x1.0000000000000p-3",
+        "root_selector_id": "unique_admitted_root_v1",
+        "iteration_limit": 60,
+        "residual_norm_id": "joint_current_geometry_l2_v1",
+        "tolerance": 1e-11
+      },
+      "geometry": {
+        "schema_version": "grcv4-geometry-profile-params-v1",
+        "K4_base_digest": "grcv4-k4-sha256:bc96c6d5259157dc72a745b81d31e8d3d927527ba9115b36ee169706ddac40f5",
+        "reference_hodge_digest": "grcv4-hodge-sha256:39c788e2af9fd01ac76ebce739e40362ffee1388fef552c59840adba1c51f037",
+        "star_cover_id": "vertex_star_exact_overlap_v1",
+        "overlap_normalization_id": "edge_multiplicity_inverse_sqrt_v1",
+        "candidate_adapter_id": "candidate_a_exact_star_adapter_v1",
+        "flat_sharp_solver_id": "spd_direct_v1",
+        "geometry_domain_id": "positive_hodge_fixed_graph_v1",
+        "kappa_H": 1e-05
+      },
+      "solver": {
+        "schema_version": "grcv4-solver-policy-v1",
+        "solver_kind": "fixed_point",
+        "root_selector_id": "unique_admitted_root_v1",
+        "iteration_limit": 60,
+        "conditioning_limit": 100000000.0,
+        "residual_norm_id": "edge_l2_v1",
+        "absolute_tolerance": 1e-11,
+        "relative_tolerance": 1e-11,
+        "failure_policy_id": "fail_closed_no_fallback_v1"
+      },
+      "charge": {
+        "schema_version": "grcv4-charge-policy-v1",
+        "policy_id": "stable_pairwise_binary64_charge_v1",
+        "accumulation_order": "canonical_live_vertex_balanced_binary_tree",
+        "rounding_mode": "IEEE754_binary64_roundTiesToEven",
+        "absolute_tolerance": 1e-11,
+        "relative_tolerance": 0,
+        "repair_policy": "never_mutate_resource",
+        "remainder_policy": "compatibility_projection_is_none"
+      },
+      "lifecycle": {
+        "schema_version": "grcv4-lifecycle-policy-v1",
+        "migration_policy_id": "typed_bidirectional_profile_migration_v1",
+        "mapped_event_policy_id": "caller_mapped_atomic_topology_event_v1",
+        "reset_policy_id": "restore_current_baseline_append_receipt_v1",
+        "rebase_policy_id": "replace_baseline_append_receipt_v1",
+        "history_policy_id": "candidate_a_explicit_reference_initialization_log_history_v1",
+        "receipt_policy_id": "operation_delta_plus_persistent_ledger_v1",
+        "target_readmission_policy_id": "full_target_fail_closed_v1"
+      }
+    },
+    "complete_profile_id": "grcv4-profile-sha256:16ed65f7f65d4716e1be3e384f6fa0f957d26dd7b7a3f7e1b43ad1aa3f250946"
+  },
+  "accepted_additional_support": [
+    "grcv4-profile-sha256:16ed65f7f65d4716e1be3e384f6fa0f957d26dd7b7a3f7e1b43ad1aa3f250946"
+  ],
+  "predecessor_support": [
+    "grcv4-profile-sha256:a6b853ee382895eb78b1a7955a0df22f95d68b27cb0f762503e8c424c2f59b6d",
+    "grcv4-profile-sha256:e4c04a83240a33d77c50a26ca6effbb6ce142774bd01f0966861dd517a94e2c4"
+  ],
+  "releases": {
+    "base": "grcv4-spec-release-sha256:e2acd9df0cc02c5fd4bbed4989ff5d7da3a819adeb2950d922b8a6ef4bf35f24",
+    "initializer": "grcv4-spec-release-sha256:e44dcd77a78a752c0e62f559243b88faff0bf90af1ee11a587f25d27e8a8abc7",
+    "event": "grcv4-spec-release-sha256:a6861c38271f3f4ea41fae35807c399255353c384c44a9455f334556df6cdec8"
+  },
+  "accepted_generic_runtime_support": [
+    "grcv4-profile-sha256:16ed65f7f65d4716e1be3e384f6fa0f957d26dd7b7a3f7e1b43ad1aa3f250946",
+    "grcv4-profile-sha256:a6b853ee382895eb78b1a7955a0df22f95d68b27cb0f762503e8c424c2f59b6d",
+    "grcv4-profile-sha256:e4c04a83240a33d77c50a26ca6effbb6ce142774bd01f0966861dd517a94e2c4"
+  ],
+  "source_reuse": {
+    "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_CI-G2SourceReuse.json",
+    "sha256": "55ea2df78a9b23786626dcffec14ee45b91906f2be5c7f00303893fe7324efa9",
+    "record_digest": "81484b9c23c028fe95b24f63aa77bdaa5f7de09294a11a986009f91d65b155bb"
+  },
+  "G2_accepted": true,
+  "G3_accepted": false,
+  "aggregate_closed": false,
+  "all_ordered_pairs_verified": false,
+  "new_runtime_iterations_authorized": [],
+  "admitted_specialization_support_sets": [],
+  "scope": "Exact supplied-history A_CI declaration and reviewed 28-cell finite product only; separate initializer/PC endpoints, arbitrary pairs, global CI roots, G3 and aggregate closure are not accepted.",
+  "record_digest": "aa3dc998282ac66bd7ff5d6865fb9175242f44d52ea2c9b5b7b5a6e91657e5cb"
+}

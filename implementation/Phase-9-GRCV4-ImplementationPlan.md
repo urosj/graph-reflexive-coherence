@@ -1494,6 +1494,15 @@ runtime leaf permissions, old evidence and production numerical code do not
 change. Validate scoped record/authority mutations and the current surfaces,
 without repeating the accepted local/crossing numerical campaigns.
 
+The user then accepted exact A_CI G2 on 2026-09-14. The common acceptance record
+binds reviewed checkpoint `fa94cd2`; exact public support is now C_OS/A_OS/A_CI.
+Preserve all original records and use a finite source-reuse successor for the
+discovery/assertion changes. No runtime permissions, initializer endpoints,
+global CI branches or arbitrary ordered pairs follow. Seven profile decisions
+and aggregate P9-7.7/G3 remain open. At the next matching profile, evaluate
+sharing bounded local/crossing presentation checks as the review suggested;
+this does not reopen the accepted scientific product or block A_CI G2.
+
 `P9-7.8` may review `P9-G3[C_OS]` immediately after its G2 acceptance;
 completion of the other Tranche 7 or Tranche 6 rows is not a prerequisite.
 

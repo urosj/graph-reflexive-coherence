@@ -1365,9 +1365,14 @@ may reach G2 without waiting for all Tranche 6 realizations.
     the A_CI proposal, using pinned C_OS/A_OS historical adapters and a common
     new-profile schema. Preserve original acceptance/run evidence and runtime
     permissions; expose accepted versus proposed scope in API/notebook/browser.
-  - [ ] Independently review and explicitly accept or return exact A_CI G2.
-    Until accepted, discovery remains exactly C_OS/A_OS; no A_CI acceptance
-    record or additional supported declaration is created.
+  - [x] User accepted exact A_CI G2 on 2026-09-14 after the integrated review:
+    [acceptance](./phase-9-grcv4/tranche-7/P9-7.7-A_CI-G2Acceptance.json),
+    binding reviewed checkpoint `fa94cd2`. Discovery contains exactly C_OS,
+    A_OS and A_CI; original evidence remains unchanged. Seven other profile
+    decisions, all-pairs, aggregate P9-7.7 and G3 remain open.
+  - [ ] With the next similarly structured profile, evaluate shared local/
+    crossing evidence presentation to avoid repeated browser branches; retain
+    profile-specific scientific checks. This is not an A_CI acceptance blocker.
 - [ ] P9-7.8: Review `P9-G3[S]` for the exact accepted generic support set
   before specialization code. Singleton `P9-G3[C_OS]` can run immediately
   after its G2; unrelated lifecycle/realization rows may remain pending.

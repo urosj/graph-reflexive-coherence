@@ -1,6 +1,6 @@
 // Generated from ProfileG2Registry.json; checked by the registry validator.
 export const G2_REGISTRY = {
-  "record_digest": "65339ab9ad86bba77d222ebe3f111fa20d8d900b2ff013ca30c0b760491525f4",
+  "record_digest": "56f47a0c704a5ced85345e0422d61a0928b12bf0a0022519b7df1af1a8876474",
   "records": [
     {
       "acceptance": {
@@ -43,7 +43,10 @@ export const G2_REGISTRY = {
       "view_key": "a_os_g2_review"
     },
     {
-      "acceptance": null,
+      "acceptance": {
+        "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_CI-G2Acceptance.json",
+        "record_digest": "aa3dc998282ac66bd7ff5d6865fb9175242f44d52ea2c9b5b7b5a6e91657e5cb"
+      },
       "adapter": "exact_profile_v1",
       "bounded_view_key": "a_ci_crossings",
       "complete_profile_id": "grcv4-profile-sha256:16ed65f7f65d4716e1be3e384f6fa0f957d26dd7b7a3f7e1b43ad1aa3f250946",
@@ -58,7 +61,7 @@ export const G2_REGISTRY = {
         "numerical_tests_rerun": 0,
         "supplemental_interface_methods": 1
       },
-      "state": "proposed",
+      "state": "accepted",
       "view_key": "a_ci_g2_review"
     }
   ],

@@ -2130,3 +2130,11 @@ self-rehashed status that invents acceptance, changes review identities or
 widens scope. Clear rows on refresh/failure. Notebook and HTTP expose the same
 status. Reuse one real current-status check across transport tests, with a
 focused browser rendering/negative-pressure test; no numerical campaign rerun.
+
+The user subsequently accepted exact A_CI G2. Its common-schema acceptance
+binds `fa94cd2`; the same registry-driven projection now shows three accepted
+declarations. The reviewed JSON/text, captures and older acceptances remain
+unchanged. Compose a finite current-to-pre-discovery source map before the
+historical A_OS bridge; fresh executions retain actual source identities.
+Local/crossing browser branches remain a bounded follow-up for the next
+matching profile, not a new gate or a reason to rewrite scientific evidence.

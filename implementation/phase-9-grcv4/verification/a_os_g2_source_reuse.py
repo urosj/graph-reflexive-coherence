@@ -20,7 +20,9 @@ def retained_bindings(current):
     for name, row in value['changes'].items():
         if name not in result:
             continue
-        p.require(p.sha((p.ROOT / name).read_bytes()) == row['after_sha256'],
+        from g2_source_reuse import retained_bindings as successor_bindings
+        live = successor_bindings({name: p.sha((p.ROOT / name).read_bytes())})[name]
+        p.require(live == row['after_sha256'],
                   'unreviewed change after A_OS discovery: ' + name)
         p.require(p.sha(p.git(p.ROOT, 'show', BASE + ':' + name)) == row['before_sha256'],
                   'unrecoverable pre-discovery source: ' + name)

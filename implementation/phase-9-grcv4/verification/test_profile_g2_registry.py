@@ -16,17 +16,17 @@ class RegistryTests(unittest.TestCase):
     def test_real_legacy_acceptances_and_proposal_remain_distinct(self):
         result = g.checked(p.ROOT)
         self.assertEqual([(r['profile_family_id'], r['state']) for r in result['profiles']],
-                         [('C_OS', 'accepted'), ('A_OS', 'accepted'), ('A_CI', 'proposed')])
-        self.assertEqual(len(result['accepted_generic_runtime_support']), 2)
-        self.assertNotIn(result['profiles'][2]['complete_profile_id'], result['accepted_generic_runtime_support'])
+                         [('C_OS', 'accepted'), ('A_OS', 'accepted'), ('A_CI', 'accepted')])
+        self.assertEqual(len(result['accepted_generic_runtime_support']), 3)
+        self.assertIn(result['profiles'][2]['complete_profile_id'], result['accepted_generic_runtime_support'])
         self.assertEqual(g.support_before(p.ROOT, result['profiles'][2]['complete_profile_id']),
-                         result['accepted_generic_runtime_support'])
+                         sorted(r['complete_profile_id'] for r in result['profiles'][:2]))
         with self.assertRaises(ValueError): g.support_before(p.ROOT, 'unregistered')
 
     def test_rehashed_untrusted_rosters_cannot_create_authority(self):
         value = g.registry(p.ROOT)
         edits = {
-            'promoted_proposal': lambda v: v['records'][2].update(state='accepted'),
+            'demoted_acceptance': lambda v: v['records'][2].update(state='proposed'),
             'changed_review': lambda v: v['records'][2]['review'].update(record_digest='0'*64),
             'invented_acceptance': lambda v: v['records'][2].update(acceptance=v['records'][1]['acceptance']),
             'duplicate': lambda v: v['records'].append(deepcopy(v['records'][0])),
@@ -43,7 +43,8 @@ class RegistryTests(unittest.TestCase):
             with self.assertRaises(ValueError): g.registry(p.ROOT)
 
     def test_proposal_semantic_ceilings_even_under_rehashed_fixture(self):
-        row = g.registry(p.ROOT)['records'][2]
+        row = deepcopy(g.registry(p.ROOT)['records'][2])
+        row.update(state='proposed', acceptance=None)  # historical proposal test fixture
         proposal = g.bound_record(p.ROOT, row['review'])
         edits = {
             'premature_G2': lambda v: v.update(G2_accepted=True),

@@ -45,9 +45,12 @@
       "profile_family_id": "A_CI",
       "complete_profile_id": "grcv4-profile-sha256:16ed65f7f65d4716e1be3e384f6fa0f957d26dd7b7a3f7e1b43ad1aa3f250946",
       "gate": "P9-G2[A_CI]",
-      "state": "proposed",
+      "state": "accepted",
       "adapter": "exact_profile_v1",
-      "acceptance": null,
+      "acceptance": {
+        "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_CI-G2Acceptance.json",
+        "record_digest": "aa3dc998282ac66bd7ff5d6865fb9175242f44d52ea2c9b5b7b5a6e91657e5cb"
+      },
       "review": {
         "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-A_CI-G2Review.json",
         "record_digest": "2a1211974eaa047456c9a8f791c501e4c3087d2d2037ff1e8bf577b38ae093ae"
@@ -61,5 +64,5 @@
       }
     }
   ],
-  "record_digest": "65339ab9ad86bba77d222ebe3f111fa20d8d900b2ff013ca30c0b760491525f4"
+  "record_digest": "56f47a0c704a5ced85345e0422d61a0928b12bf0a0022519b7df1af1a8876474"
 }

@@ -1718,5 +1718,9 @@ their historical stage, not the later aggregate acceptance recorded at the end.
 - [x] Pressure unaccepted profiles, changed bindings/declarations, widened
       scope, predecessor drift and discovery mismatch; test current status
       agreement plus browser rejection/rendering with one checked API result.
-- [ ] Independent review and explicit A_CI G2 acceptance; published support
-      remains exactly C_OS/A_OS until that separate decision.
+- [x] User accepted exact A_CI G2 on 2026-09-14. Use the common acceptance
+      adapter over `fa94cd2`, publish exactly C_OS/A_OS/A_CI and preserve all
+      original records through bounded, composable source-reuse checks.
+- [ ] At the next profile with the same local/crossing shape, evaluate a
+      shared evidence-view projection; do not merge scientific checks or
+      treat this presentation follow-up as an A_CI G2 blocker.

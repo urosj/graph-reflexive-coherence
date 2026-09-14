@@ -1,6 +1,7 @@
 """Acceptance/discovery pressure without rerunning numerical evidence."""
 
 from copy import deepcopy
+import json
 import subprocess
 import sys
 import unittest
@@ -16,24 +17,26 @@ class AcceptanceTests(unittest.TestCase):
         tool = p.ROOT / p.SIDE / 'tool'
         sys.path.insert(0, str(tool / 'src'))
         from grcv4_explorer.tooling import managed_node, tool_environment
+        from profile_g2_registry import registry, view
+        fixture = dict(profile_g2=[view(r) for r in registry(p.ROOT)['records']], g2_acceptance={})
         code = """
 import assert from 'node:assert/strict';
-import {checkedStatus} from './verification.js';
+import {readFileSync} from 'node:fs';
+import {checkedG2} from './verification.js';
+const fixture=JSON.parse(readFileSync(0,'utf8'));
 for (const view of [undefined, null]) {
-  assert.throws(() => checkedStatus({schema:'phase9_governance_status_v2',
-    output_class:'implementation_verification_status_not_forensic_trace',
-    current_boundary:'passed', a_os_g2_review:view}), /Missing accepted A_OS G2 view/);
+  assert.throws(() => checkedG2({...fixture, a_os_g2_review:view}, true), /Missing registered G2 view/);
 }
 """
         result = subprocess.run([str(managed_node()), '--input-type=module', '-e', code],
-            cwd=tool / 'phase9-web', capture_output=True, text=True,
+            cwd=tool / 'phase9-web', input=json.dumps(fixture), capture_output=True, text=True,
             env=tool_environment(), timeout=30)
         self.assertEqual(result.returncode, 0, result.stderr)
 
     def test_exact_discovery_and_detached_declaration(self):
         accepted = p.accepted_a_os_g2(p.ROOT)
         self.assertEqual(set(p.accepted_generic_support(p.ROOT)), set(list_supported_profiles()))
-        self.assertEqual(len(list_supported_profiles()), 2)
+        self.assertEqual(len(list_supported_profiles()), 3)
         key = accepted['accepted_additional_support'][0]
         profile = get_supported_profile(key)
         self.assertEqual(profile.to_payload(), accepted['accepted_profile'])

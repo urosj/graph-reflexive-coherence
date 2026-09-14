@@ -1340,7 +1340,7 @@
     },
     {
       "path": "src/pygrc/models/grc_v4_profile.py",
-      "sha256": "3fde7936c722b923755ae1626108393210934c541f595a660e6c4861d7419844",
+      "sha256": "34711698560dfa0f6991756f900eb66534802c718b1a33d114ab1fd306a6597b",
       "iteration_id": "P9-2.2"
     },
     {
@@ -1385,33 +1385,33 @@
     },
     {
       "path": "tests/models/test_grc_v4.py",
-      "sha256": "5526bd3a7a07e1b989052e9ec895ec4d3fd155b31dcd00335b80888c4810fb0e",
+      "sha256": "e91f4a6360e62ba5d75fdc94c6470bada5e8174682c4f62d21390e2b4c850dad",
       "iteration_id": "P9-4.9.3"
     },
     {
       "path": "tests/models/test_grc_v4_candidate_a.py",
-      "sha256": "3899e5e5c0691e8a1ad66b0e1ede66b852fe3e420c563e34f9900a575710f967",
+      "sha256": "0107307fadefec1c5fd3bbc45de5c00d56e0754aa68fcd0497280b494a099ddb",
       "iteration_id": "P9-5.2"
     },
     {
       "path": "tests/models/test_grc_v4_candidate_c.py",
-      "sha256": "724cd5d70be5b262352fca7a7f764dd060736fc17d753af02a349b2ddf53ce8f",
+      "sha256": "502e493c90f1389ed90239525b538ce2e2e6ea80a62bd341f5da77d732974c73",
       "iteration_id": "P9-4.5"
     },
     {
       "path": "tests/models/test_grc_v4_ci.py",
-      "sha256": "413deb46a333a3eaa5997f7a9df60328a4b84e8bea4f279fba774a2c7562173b",
+      "sha256": "cf3c90ee7ada5dbdf3c4a0982f559ab78bc93731cc326f3ff0b2b8d209038d58",
       "iteration_id": "P9-6.1c"
     },
     {
       "path": "tests/models/test_grc_v4_cipc.py",
-      "sha256": "922f4ce2a175e61a0ca06276409758d6d436d1bab094b4ae8dfb49a944199770",
+      "sha256": "e414a0a89d0c001e98834ed89c3f5e094215fbd464c8357a75fea91a3f68453a",
       "iteration_id": "P9-6.3c"
     },
     {
       "path": "tests/models/test_grc_v4_codec.py",
       "iteration_id": "P9-2.6",
-      "sha256": "c35976511b5a0a642ae0c887cc5ce643c518c634ad804fb8916254aab7b78a03"
+      "sha256": "47ce41430290e06d9654f25c4003305215e836062d261a5bf27fdb471532217c"
     },
     {
       "path": "tests/models/test_grc_v4_event_audit.py",
@@ -1430,7 +1430,7 @@
     },
     {
       "path": "tests/models/test_grc_v4_geometry.py",
-      "sha256": "3f13ff494a4e7c06dd560b9be27a4698ac9f323eacca0533ca83f47328164c1c",
+      "sha256": "d2d92f7fb78f537f84a9bbe1de33fea21f016b16f36979ae94e75da0983b230f",
       "iteration_id": "P9-3.4"
     },
     {
@@ -1450,12 +1450,12 @@
     },
     {
       "path": "tests/models/test_grc_v4_pc.py",
-      "sha256": "e394e67aeab053c089691b3bc198df07b3993d2a7c3587296bb3a83f35fd0111",
+      "sha256": "ee4e9ec332ed15027d1e482280d97de566c34853f8d6c9548f26c885005f5ac0",
       "iteration_id": "P9-6.2c"
     },
     {
       "path": "tests/models/test_grc_v4_profile.py",
-      "sha256": "deb16a59940952cdc3bc7ba638614ab9498443255893db4313a6954725cfecd8",
+      "sha256": "496c3dfd0bcfa9636ae4c939e89c8eb4a9b0484b4b6a6713cd31fe5664f0fdc3",
       "iteration_id": "P9-2.2"
     },
     {
@@ -1480,20 +1480,21 @@
     },
     {
       "path": "tests/models/test_grc_v4_step.py",
-      "sha256": "f92edbefda5a413dad786e60afeada3b888a771daa9348d241b02bbb75174a45",
+      "sha256": "26d09af2447691bffcbc614e66408320ba3307c56d8c976ef432f49bcb51209e",
       "iteration_id": "P9-3.5"
     },
     {
       "path": "tests/models/test_grc_v4_transport.py",
-      "sha256": "7ba142592b56d02714fe4a5babe3b56aee437c52c6109d858ef78a37176f4d82",
+      "sha256": "83c96cb442c3e1ab994d7f41c53b4320e3a50240928e20945a65693377e116d3",
       "iteration_id": "P9-3.4"
     }
   ],
   "accepted_generic_runtime_support": [
+    "grcv4-profile-sha256:16ed65f7f65d4716e1be3e384f6fa0f957d26dd7b7a3f7e1b43ad1aa3f250946",
     "grcv4-profile-sha256:a6b853ee382895eb78b1a7955a0df22f95d68b27cb0f762503e8c424c2f59b6d",
     "grcv4-profile-sha256:e4c04a83240a33d77c50a26ca6effbb6ce142774bd01f0966861dd517a94e2c4"
   ],
   "admitted_specialization_support_sets": [],
   "claim_ceiling": "Work entries grant no conformance. Separate exact C_OS and A_OS G2 acceptance records define the two supported declarations. Other local targets, ordered pairs and specialization are not promoted.",
-  "record_digest": "90748be55d2858842bf00c5bedaa4bff1846af436b6e625041dcb8e4f8d92dc2"
+  "record_digest": "9af47c6131235ae11db3ad43f320730eb85a86b0021b688239e496361161e8ea"
 }

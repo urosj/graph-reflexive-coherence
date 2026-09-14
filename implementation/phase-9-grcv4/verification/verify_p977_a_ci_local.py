@@ -57,7 +57,7 @@ def validate(value):
     p.require(value['schema']=='phase9_exact_profile_local_product_v1'
               and value['iteration_id']=='P9-7.7-A_CI-local'
               and value['record_digest']==p.digest_record(value),'A_CI local record drift')
-    p.require(value['source_bindings'] == bindings(),'A_CI local execution source drift')
+    p.require(p.g2_bindings_match(value['source_bindings'], bindings()),'A_CI local execution source drift')
     p.require(value['authority'] == authority(), 'A_CI authority drift or support promotion')
     original=review.read(review.RECORD)
     p.require(value['initial_review_digest']==original['record_digest']==p.digest_record(original),
