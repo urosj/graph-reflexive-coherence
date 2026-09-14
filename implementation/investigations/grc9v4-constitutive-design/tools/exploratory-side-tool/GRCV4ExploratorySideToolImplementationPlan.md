@@ -2098,3 +2098,21 @@ The user separately accepted exact A_OS G2 on 2026-09-13. The current
 while top-level discovery contains the exact C_OS/A_OS pair. Check the pinned
 acceptance and finite before/after source-reuse identities; original runs are
 not regenerated. Reject wider profiles, all-pairs, aggregate or G3 promotion.
+
+The A_CI continuation adds `a_ci_local_product` to current API/notebook/browser
+status: 21 exact local cells from three focused methods, seven crossing rows
+pending, no new acceptance or G2/G3 support. Preserve CI root/contraction trace
+dispositions and the original A_OS/C_OS records. Reuse one actually checked
+status across transport tests; do not rerun the numerical campaign for a UI
+refresh or multiply coverage credit for shared executions.
+
+The subsequent `a_ci_crossings` view adds seven explicit catalog dispositions,
+five retained aliases and six new execution cases. Keep exact nominated
+source/target evidence separate from PC-pair and initializer endpoints. The
+view remains pending review: no all-pairs, G2/G3 or user acceptance promotion.
+Use the same one-check transport test and retain original local capture flags.
+
+The subsequent 2026-09-14 user decision accepts bounded A_CI local/crossing
+reconciliation only. Expose that decision over the unchanged capture through
+`a_ci_crossings`; retain false G2/G3/all-pairs/aggregate flags and unchanged
+public discovery. A separate integrated G2 review remains the next step.

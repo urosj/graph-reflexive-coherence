@@ -1685,3 +1685,22 @@ their historical stage, not the later aggregate acceptance recorded at the end.
       API/notebook/browser and discovery to the exact C_OS/A_OS pair. Preserve
       original evidence through pinned source reuse. Aggregate P9-7.7, eight
       other profile gates, all-pairs support and G3 remain open.
+
+### P9-7.7 A_CI local-product continuation
+
+- [x] Retain the exact 21-cell local execution and CI-specific branch/writer
+      observations; keep typed contract status and source identities intact.
+- [x] Expose `a_ci_local_product` through current API, notebook and browser;
+      reject omitted evidence, borrowed identity and premature scope promotion.
+- [x] Record the user's 2026-09-14 bounded local/crossing acceptance separately
+      from original execution flags; integrated G2 review and acceptance remain separate.
+
+### P9-7.7 A_CI crossing continuation
+
+- [x] Reconcile seven crossing rows with five exact retained aliases and six
+      new cases; preserve incoming/outgoing, initializer and separate PC scopes.
+- [x] Expose `a_ci_crossings` through API/notebook/browser; reject missing
+      evidence, borrowed scope and premature acceptance with rehashed controls.
+- [x] Record the user's 2026-09-14 acceptance of combined local/crossing scope.
+      This is not an independent audit or G2 decision. Integrated G2
+      applicability/public-facade review and explicit acceptance remain separate.

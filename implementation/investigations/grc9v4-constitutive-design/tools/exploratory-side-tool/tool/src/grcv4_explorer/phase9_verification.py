@@ -93,7 +93,13 @@ def verification_status(repo_root: Path) -> dict:
             a_os_crossings = a_os_crossing_check(local_product=a_os_local_product)
             from verify_p977_a_os_g2_acceptance import check as a_os_g2_check
             a_os_g2_review = a_os_g2_check(bounded_acceptance=a_os_crossings)
+            from verify_p977_a_ci_local import check as a_ci_local_check
+            a_ci_local_product = a_ci_local_check(initial_review=profile_conformance_review)
+            from verify_p977_a_ci_acceptance import check as a_ci_crossing_check
+            a_ci_crossings = a_ci_crossing_check(local_product=a_ci_local_product)
             payload.update(
+                a_ci_crossings=a_ci_crossings,
+                a_ci_local_product=a_ci_local_product,
                 initializer_runtime=initializer_runtime,
                 event_runtime=event_runtime,
                 history_policy_verification=history_policy_verification,
@@ -229,7 +235,7 @@ def verification_status(repo_root: Path) -> dict:
                     for r in module.runtime_targets(approval)
                     if r["requires_gate"] == "P9-G1" and set(ready) & owners[r["path"]]
                 ),
-                next_gate=f"P9-7.2a is user-accepted and closed. P9-7.2b is user-accepted and closed. P9-7.3 is user-accepted and closed: {history_policy_verification['baseline_test_count']} original tests plus {history_policy_verification['regression_test_count']} supplemental regressions, {history_policy_verification['policy_cells']} discrete policy cells. P9-7.4 is user-accepted and closed: {target_reference_verification['test_count']} focused tests. P9-7.5 is user-accepted and closed: {failure_sequence_verification['test_count']} focused tests. P9-7.6 is user-accepted and closed: {lineage_ownership_verification['test_count']} focused tests. The original P9-7.7 review held nine new nominations; eight remain pending after this A_OS acceptance. The existing C_OS alias is unchanged. A_OS bounded reconciliation is user-accepted: 21 local cells plus seven crossing evidence/dispositions; the user accepted its exact 28-case G2 scope; negative incoming initializer and separate PC-pair scopes are not all-pairs support. Other held profile gates and P9-7.8 remain separate. No wider G2/G3 support. Accepted public support is the exact C_OS and A_OS pair; A_CI is the next candidate for reconciliation.",
+                next_gate=f"P9-7.2a is user-accepted and closed. P9-7.2b is user-accepted and closed. P9-7.3 is user-accepted and closed: {history_policy_verification['baseline_test_count']} original tests plus {history_policy_verification['regression_test_count']} supplemental regressions, {history_policy_verification['policy_cells']} discrete policy cells. P9-7.4 is user-accepted and closed: {target_reference_verification['test_count']} focused tests. P9-7.5 is user-accepted and closed: {failure_sequence_verification['test_count']} focused tests. P9-7.6 is user-accepted and closed: {lineage_ownership_verification['test_count']} focused tests. The original P9-7.7 review held nine new nominations; eight remain pending after this A_OS acceptance. The existing C_OS alias is unchanged. A_OS bounded reconciliation is user-accepted: 21 local cells plus seven crossing evidence/dispositions; the user accepted its exact 28-case G2 scope; negative incoming initializer and separate PC-pair scopes are not all-pairs support. Other held profile gates and P9-7.8 remain separate. No wider G2/G3 support. Accepted public support is the exact C_OS and A_OS pair; A_CI bounded local/crossing reconciliation is user-accepted: 21 local cells plus seven crossing evidence/dispositions. Integrated applicability/public-facade G2 review and separate acceptance remain; this is not all-pairs support. Exact accepted support is unchanged.",
                 claim_ceiling="G1 is bounded implementation permission. Separate user-accepted G2 covers only the listed complete C_OS profile and reviewed domain; no family-wide, other-profile or specialization conformance is inferred.",
             )
         cross = module.read(
@@ -397,6 +403,8 @@ def verification_status(repo_root: Path) -> dict:
         payload.pop("a_os_local_product", None)
         payload.pop("a_os_crossings", None)
         payload.pop("a_os_g2_review", None)
+        payload.pop("a_ci_local_product", None)
+        payload.pop("a_ci_crossings", None)
         payload["accepted_generic_runtime_support"] = []
         payload.pop("permitted_runtime_paths", None)
         payload.pop("source_meaning", None)

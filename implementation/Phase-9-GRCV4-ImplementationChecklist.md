@@ -68,7 +68,7 @@ coverage, and evidence; a family label alone does not certify all instances.
 | `P9-G2[C_OS]` | Accepted, exact singleton | [explicit G2 acceptance](./phase-9-grcv4/tranche-4/P9-4.8B-G2Acceptance.json) closes Tranche 4 and aliases P9-7.7-C_OS. Other profiles and G3 remain closed. |
 | `P9-G2[A_OS]` | Accepted, exact nomination | [Explicit G2 acceptance](./phase-9-grcv4/tranche-7/P9-7.7-A_OS-G2Acceptance.json) accepts the reviewed 28-case scope. Discovery now contains exact C_OS and A_OS declarations; no all-pairs or G3 support. |
 | `P9-G2[C_CI]` | HOLD, draft P9-7.7 review | Accepted bounded numerical/lifecycle evidence; reconcile the 33-cell exact product and ordered endpoints. |
-| `P9-G2[A_CI]` | HOLD, draft P9-7.7 review | Accepted bounded numerical/lifecycle evidence; reconcile the 28-cell exact product and ordered endpoints. |
+| `P9-G2[A_CI]` | HOLD, bounded reconciliation accepted | [21 local cells](./phase-9-grcv4/tranche-7/P9-7.7-A_CI-LocalReview.md) plus [seven crossing evidence/dispositions](./phase-9-grcv4/tranche-7/P9-7.7-A_CI-CrossingReview.md) accepted by the user; integrated review and explicit G2 acceptance remain. |
 | `P9-G2[C_PC]` | HOLD, draft P9-7.7 review | Accepted bounded numerical/lifecycle evidence; reconcile the 33-cell exact product and ordered endpoints. |
 | `P9-G2[A_PC]` | HOLD, draft P9-7.7 review | Accepted bounded numerical/lifecycle evidence; reconcile the 28-cell exact product and ordered endpoints. |
 | `P9-G2[C_CI_PC]` | HOLD, draft P9-7.7 review | Accepted bounded numerical/lifecycle evidence; reconcile the 33-cell exact product and ordered endpoints. |
@@ -1343,6 +1343,22 @@ may reach G2 without waiting for all Tranche 6 realizations.
     original evidence preservation, rehashed overclaims and required browser
     acceptance. API/notebook/HTTP/browser agreement passed with 58 existing
     mutation controls; no numerical campaign was rerun.
+  - [x] P9-7.7-A_CI-local: capture the exact nomination's 21 local catalog
+    cells through three focused methods, including independent implicit-root
+    equations, local contraction/residual, trial-current-dependent W-hat,
+    one post-continuity writer and distinct live/reset lifecycle pressure.
+    [Review and evidence](./phase-9-grcv4/tranche-7/P9-7.7-A_CI-LocalReview.md).
+    Original A_OS/C_OS acceptance and all retained runs remain unchanged.
+  - [x] Reconcile the seven A_CI crossing rows through five retained aliases
+    and six new cases in three focused methods. Reuse exact incoming A_OS and
+    outgoing PC witnesses; add returning PC, outgoing C, mapped event/reset,
+    reset-only readmission contrast and unselected incoming-initializer rejection.
+    [Scoped crossing review](./phase-9-grcv4/tranche-7/P9-7.7-A_CI-CrossingReview.md).
+  - [x] User accepted the bounded A_CI local/crossing reconciliation on
+    2026-09-14, explicitly reserving A_CI G2 review for later. Preserve the
+    original execution flags and exact C_OS/A_OS public support.
+  - [ ] Perform integrated A_CI G2 applicability/public-facade review. Its
+    initializer/event target differs from the nomination; no all-pairs shortcut.
 - [ ] P9-7.8: Review `P9-G3[S]` for the exact accepted generic support set
   before specialization code. Singleton `P9-G3[C_OS]` can run immediately
   after its G2; unrelated lifecycle/realization rows may remain pending.

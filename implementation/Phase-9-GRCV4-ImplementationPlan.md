@@ -1457,6 +1457,26 @@ is next. No all-pairs or G3 acceptance follows.
 Exercise missing lineage, invalid reference maps, readmission failure, and
 receipt ownership. `P9-G2[p]` is available only for profiles whose full
 applicable fixture product has executed. Keep other planned profiles pending.
+
+The [A_CI local continuation](./phase-9-grcv4/tranche-7/P9-7.7-A_CI-LocalReview.md)
+now captures 21 of its 28 catalog cells for the original exact nomination,
+pending review. Three methods cover native common/lifecycle operations and
+independent implicit-root/writer equations; the local contraction certificate
+does not grant global root uniqueness. The subsequent
+[crossing reconciliation](./phase-9-grcv4/tranche-7/P9-7.7-A_CI-CrossingReview.md)
+links all seven crossing rows through five retained aliases and six new cases
+from three focused methods. Preserve exact incoming versus outgoing scope,
+the separate initializer/event target and the negative incoming C boundary.
+Review the combined bounded reconciliation before integrated applicability/
+public-facade G2 review and separate acceptance. Public discovery remains the
+exact C_OS/A_OS pair; neither all-pairs nor G3 support is inferred. Status
+exposes `a_ci_crossings` without changing the historical local coverage snapshot.
+
+The user accepted the bounded A_CI local/crossing reconciliation on 2026-09-14,
+explicitly reserving A_CI G2 review for later. Project that decision separately
+over the unchanged execution records. Next is integrated applicability and
+public-facade review, not a discovery/support update or another numerical rerun.
+
 `P9-7.8` may review `P9-G3[C_OS]` immediately after its G2 acceptance;
 completion of the other Tranche 7 or Tranche 6 rows is not a prerequisite.
 
