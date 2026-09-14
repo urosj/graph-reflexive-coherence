@@ -1616,6 +1616,26 @@ Preserve original records and finite source comparisons. Controls and other
 targets are not support additions; four other G2 decisions, all-pairs and G3
 remain separate.
 
+The next [A_CI+PC local product](./phase-9-grcv4/tranche-7/P9-7.7-A_CI_PC-LocalReview.md)
+checks 21 exact catalog cells with coupled same-root geometry/ZOH, old trial
+C/W/Z, refreshed post-continuity W, independent reset/restart and signed-carrier
+release controls. Retain local root/envelope ceilings and six accepted G2
+declarations. Seven crossing cells, bounded acceptance and A_CI+PC G2 remain
+separate. The shared registry/materializer exposes this local evidence without
+new profile-specific dispatch or rendering.
+
+The [A_CI+PC crossing product](./phase-9-grcv4/tranche-7/P9-7.7-A_CI_PC-CrossingReview.md)
+reconciles the remaining seven cells: five retained aliases plus seven new
+native cases across four methods. Cover same-candidate nonpersistent↔nomination,
+exact preserving PC pairs, explicit W/Z loss, an initializer-selected coupled
+event target, reset-only coupled target rejection and admission boundaries.
+The event's separate stronger/tighter declaration makes immediate geometry
+discriminating even with zero target Z; it is not nomination support. Keep all
+28 cells distinct from bounded acceptance, G2 and all-pairs/G3 closure.
+The user's subsequent 2026-09-14 acceptance covers this bounded local/crossing
+product, not G2. Preserve original execution bytes and project acceptance from
+the pinned crossing review; integrated G2 follows the committed checkpoint.
+
 `P9-7.8` may review `P9-G3[C_OS]` immediately after its G2 acceptance;
 completion of the other Tranche 7 or Tranche 6 rows is not a prerequisite.
 

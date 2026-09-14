@@ -2232,3 +2232,21 @@ scientific support classes, old records and runtime permissions remain unchanged
 The subsequent user acceptance uses the same adapter/materializer to project
 six accepted exact declarations, with finite discovery-source comparisons.
 Old review/execution bytes, unreviewed endpoints and G3 boundaries are preserved.
+
+A_CI+PC local reconciliation adds one pinned `a_ci_pc_local_product` view and
+local materializer. The 21-cell product binds coupled same-source geometry/ZOH,
+separate W refresh, old C/W/Z during trials, independent reset/restart and
+signed-carrier release controls. Rehashed evidence and shared transport checks
+must reject lost source/role identities or promoted support. No bespoke Python
+dispatch or browser branches are needed. Six exact G2 declarations remain
+accepted; seven crossing cells, bounded acceptance and A_CI+PC G2 are separate.
+
+The dependent `a_ci_pc_crossings` materializer reconciles those seven cells with
+five exact retained aliases and seven new cases. Distinguish same-candidate
+carrier initialization/drop, exact PC-pair preservation, candidate/carrier loss
+and the separately declared event initializer. Its tighter coupled root must
+not be presented as fixed-reference geometry merely because target Z is zero.
+Generic API/notebook/browser views expose the pending crossing product; no new
+dispatch branch, bounded acceptance, G2 support, all-pairs or G3 promotion.
+The user's subsequent bounded acceptance is projected from the pinned crossing
+review without changing execution flags. Integrated G2 remains a separate step.

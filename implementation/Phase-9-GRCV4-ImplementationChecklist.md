@@ -1444,6 +1444,21 @@ may reach G2 without waiting for all Tranche 6 realizations.
     preserve original review/execution bytes and publish six exact declarations
     through the shared adapter. Four other G2 decisions, all-pairs, aggregate
     P9-7.7 and G3 remain open.
+  - [x] P9-7.7-A_CI_PC-local: verify 21 exact local cells, coupled same-root
+    geometry/ZOH, separate W refresh, signed-carrier release, independent
+    reset/restart, lifecycle ownership and rehashed evidence pressure. Five
+    native methods, 33 evidence mutations and shared surfaces pass; acceptance
+    remains separate.
+    [Local review](./phase-9-grcv4/tranche-7/P9-7.7-A_CI_PC-LocalReview.md).
+  - [x] P9-7.7-A_CI_PC-crossings: reconcile seven crossing cells with five
+    retained aliases and seven native cases in four methods; verify two-role
+    implicit admission, carrier/W loss distinctions, reset and rejection.
+    Four native methods, 39 rehashed mutations and shared surfaces passed.
+    [Crossing review](./phase-9-grcv4/tranche-7/P9-7.7-A_CI_PC-CrossingReview.md).
+  - [x] User accepted combined A_CI+PC local/crossing reconciliation on
+    2026-09-14: all 28 cells at their exact declared scope. Preserve execution
+    records and six existing G2 declarations; no all-pairs or G3 promotion.
+  - [ ] Perform separate integrated A_CI+PC G2 review.
 - [ ] P9-7.8: Review `P9-G3[S]` for the exact accepted generic support set
   before specialization code. Singleton `P9-G3[C_OS]` can run immediately
   after its G2; unrelated lifecycle/realization rows may remain pending.

@@ -55,6 +55,25 @@ class CCISurfaceTests(unittest.TestCase):
         views={key:status[key] for key in expected}
         self.assertEqual(checked_reconciliation(p.ROOT,views),views)
         self.assertEqual(status['a_pc_local_product']['verified_local_cells'],21)
+        from verify_p977_a_ci_pc_local import check as coupled_check
+        coupled=status['a_ci_pc_local_product']
+        self.assertEqual(coupled,coupled_check(initial_review=status['profile_conformance_review']))
+        self.assertEqual((coupled['test_count'],coupled['verified_local_cells']),(5,21))
+        self.assertEqual(len(coupled['remaining_catalog_cases']),7)
+        for flag in ('user_accepted','G2_accepted','G3_accepted','aggregate_closed'):
+            self.assertFalse(coupled[flag])
+        self.assertEqual(coupled['new_G2_support'],[])
+        self.assertNotIn(coupled['complete_profile_id'],status['accepted_generic_runtime_support'])
+        from verify_p977_a_ci_pc_acceptance import check as coupled_crossing_check
+        coupled_crossings=status['a_ci_pc_crossings']
+        self.assertEqual(coupled_crossings,coupled_crossing_check(local_product=coupled))
+        self.assertEqual((coupled_crossings['test_count'],coupled_crossings['new_execution_cases'],coupled_crossings['retained_alias_count']),(4,7,5))
+        self.assertEqual((coupled_crossings['local_cells'],coupled_crossings['reconciled_crossing_cells']),(21,7))
+        self.assertEqual(coupled_crossings['complete_profile_id'],coupled['complete_profile_id'])
+        self.assertTrue(coupled_crossings['user_accepted'])
+        for flag in ('G2_accepted','G3_accepted','aggregate_closed','all_ordered_pairs_verified'):
+            self.assertFalse(coupled_crossings[flag])
+        self.assertEqual(coupled_crossings['new_G2_support'],[])
         cpc=status['c_pc_local_product']
         self.assertEqual((cpc['test_count'],cpc['verified_local_cells']),(5,26))
         self.assertEqual(len(cpc['remaining_catalog_cases']),7)
@@ -142,6 +161,13 @@ assert.equal(body.children[2].children[1].textContent,value.a_ci_g2_review.propo
 renderReconciliation(value,body,element);
 assert.equal(body.children.length,Object.keys(value).filter(k=>k.endsWith('_local_product')||k.endsWith('_crossings')).length);
 const cci=body.children.find(r=>r.children[0].textContent==='c_ci_local_product');
+const coupled=body.children.find(r=>r.children[0].textContent==='a_ci_pc_local_product');
+assert.ok(coupled);
+assert.equal(coupled.children[2].textContent,'Local evidence pending review');
+const coupledCrossings=body.children.find(r=>r.children[0].textContent==='a_ci_pc_crossings');
+assert.ok(coupledCrossings);
+assert.equal(coupledCrossings.children[1].textContent,'7');
+assert.equal(coupledCrossings.children[2].textContent,'Bounded reconciliation accepted');
 const cpc=body.children.find(r=>r.children[0].textContent==='c_pc_local_product');
 assert.equal(cpc.children[1].textContent,'26');
 assert.equal(cpc.children[2].textContent,'Local evidence pending review');

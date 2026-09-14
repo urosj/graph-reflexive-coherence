@@ -1802,3 +1802,21 @@ their historical stage, not the later aggregate acceptance recorded at the end.
 - [x] Record the user's 2026-09-14 exact C_PC G2 acceptance and publish six
       declarations. Preserve historical evidence and finite source identities;
       no controls, other targets, all-pairs or G3 are promoted.
+
+### P9-7.7 A_CI+PC local reconciliation
+
+- [x] Register the exact coupled local product through one shared materializer:
+      21 cells, coupled source/root and carrier semantics, both-role readmission,
+      history ownership and explicit controls. Preserve typed authority ceilings.
+- [x] Verify retained-equation mutations and shared API/notebook/browser access.
+      Keep six accepted G2 declarations; no crossing, acceptance or G2 promotion.
+
+### P9-7.7 A_CI+PC crossing reconciliation
+
+- [x] Register the dependent crossing materializer: seven reconciled cells,
+      five retained aliases, seven native cases in four methods. Retain exact
+      two-role maps, coupled readmission and separate history/initializer scope.
+- [x] Verify rehashed mutations and shared API/notebook/browser access; preserve
+      six accepted declarations and pending bounded acceptance/G2/all-pairs/G3.
+- [x] Project the user's 2026-09-14 bounded A_CI+PC acceptance from its pinned
+      review. Keep original execution bytes and separate integrated G2 authority.
