@@ -1673,6 +1673,16 @@ The user accepted the combined C_CI+PC local/crossing reconciliation on
 2026-09-14. Commit that bounded checkpoint before the integrated G2 review;
 retain execution identities/flags and keep G2 acceptance a separate decision.
 
+The [C_CI+PC integrated G2 proposal](./phase-9-grcv4/tranche-7/P9-7.7-C_CI_PC-G2Review.md)
+binds checkpoint `6ab241f`, all 33 catalog IDs, ordered endpoint dispositions,
+22 contract/four debt traces and one narrow zero-duration facade supplement.
+Rebuild the proposal from the accepted local/crossing evidence without rerunning
+those campaigns. Preserve complete C trial/role reconstruction, one coupled
+geometry/ZOH source, frozen C/Z, no W writer, local root/envelope ceilings and
+the separate initializer/event targets. Register a proposed exact-profile row
+and G2 materializer; seven accepted declarations remain unchanged until the
+separate G2 decision. This does not close aggregate P9-7.7 or G3.
+
 `P9-7.8` may review `P9-G3[C_OS]` immediately after its G2 acceptance;
 completion of the other Tranche 7 or Tranche 6 rows is not a prerequisite.
 

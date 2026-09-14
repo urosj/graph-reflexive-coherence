@@ -2286,3 +2286,10 @@ later C_CI+PC G2 review are distinct from these execution results.
 The user's bounded C_CI+PC acceptance is projected through the acceptance
 adapter without rewriting the original local/crossing records. Commit this
 checkpoint first, then materialize the separate integrated G2 proposal.
+
+The C_CI+PC G2 proposal adds one `exact_profile_v1` row and one dependent
+materializer. Bind the 33-cell product, accepted checkpoint, facade supplement
+and typed C-CI+PC/D11-C/initializer/parent/abundance/lifecycle traces. Expose seven
+accepted declarations plus one proposal through the same API/notebook/browser
+UX; test false acceptance, borrowed target, count and discovery mutations.
+No new dispatch/rendering branch, runtime permission or public support is added.

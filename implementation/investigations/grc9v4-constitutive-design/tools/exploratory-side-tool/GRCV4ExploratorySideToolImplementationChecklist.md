@@ -1858,5 +1858,11 @@ their historical stage, not the later aggregate acceptance recorded at the end.
       The next-gate narrative shows seven reconciled cells, not seven remaining.
 - [x] Record the user's 2026-09-14 combined bounded acceptance through the
       acceptance adapter, preserving original execution records and flags.
-- [ ] Complete the separate C_CI+PC G2 review; seven accepted declarations,
-      all-pairs and G3 are unchanged until a separate G2 decision.
+- [x] Complete the separate C_CI+PC G2 proposal with one shared registry row and
+      dependent materializer: 33 cells, accepted checkpoint, facade supplement
+      and typed contract/debt traces. No new dispatch/rendering branch is needed.
+- [x] Pass 38 rehashed interface/proposal mutations, 14 focused methods and one
+      shared API/notebook/browser run with 172 rejection controls. Expose seven
+      accepted declarations plus one proposal, with no support widening.
+- [ ] Explicit C_CI+PC G2 acceptance; all-pairs, aggregate P9-7.7, G3 and other
+      profile decisions remain separate.
