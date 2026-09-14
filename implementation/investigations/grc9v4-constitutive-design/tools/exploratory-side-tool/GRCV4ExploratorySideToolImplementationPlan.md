@@ -2259,3 +2259,7 @@ Reuse the accepted local/crossing numerical runs and one real shared status
 across API/notebook/browser transports. Six accepted declarations and the
 unaccepted proposal must remain visibly distinct; no new dispatch/rendering
 branch, runtime authorization or support widening is needed.
+The subsequent user acceptance uses the same adapter/materializer to project
+seven accepted exact declarations. Bind the finite discovery-source successor
+without changing the original review/execution bytes or numerical laws; other
+targets, runtime permissions, all-pairs and G3 remain outside the decision.

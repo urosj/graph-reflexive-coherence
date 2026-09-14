@@ -1829,3 +1829,7 @@ their historical stage, not the later aggregate acceptance recorded at the end.
 - [x] Verify proposal/interface mutations and shared API/notebook/browser
       access: six accepted declarations plus the separate unaccepted proposal.
       Preserve original evidence, runtime permissions and all-pairs/G3 ceilings.
+- [x] Record the user's 2026-09-14 exact A_CI+PC G2 acceptance and publish
+      seven declarations through the existing adapter/materializer. Pin the
+      reviewed checkpoint and finite discovery-source comparisons; retain old
+      records and keep other targets, all-pairs, aggregate and G3 separate.

@@ -708,7 +708,7 @@ class CIPCSharedTests(unittest.TestCase):
         self.assertLess(abs(float(wrong.geometry_residual[0][0]) + 4e-5), 1e-10)
 
     def test_public_capabilities_are_unchanged(self):
-        self.assertEqual(len(list_supported_profiles()), 6)
+        self.assertEqual(len(list_supported_profiles()), 7)
 
 
 # Independent audit proposals, executed natively and retained once for P9-6.3c.

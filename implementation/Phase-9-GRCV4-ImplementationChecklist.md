@@ -60,7 +60,7 @@ pending while an accepted C_OS path advances to reviewed specialization work.
 | P9-G4 | Pending | Runtime conformance, regression evidence, reviewed support set, and handoff. |
 
 The initially empty generic support set now contains exact C_OS, A_OS,
-A_CI, C_CI and A_PC declarations. Each family-level gate
+A_CI, C_CI, A_PC, C_PC and A_CI+PC declarations. Each family-level gate
 record must bind the actual complete-profile IDs, parameters/domains, fixture
 coverage, and evidence; a family label alone does not certify all instances.
 
@@ -73,7 +73,7 @@ coverage, and evidence; a family label alone does not certify all instances.
 | `P9-G2[C_PC]` | Accepted by user, 2026-09-14 | Exact 33-cell product and bounded ordered endpoints; [acceptance](./phase-9-grcv4/tranche-7/P9-7.7-C_PC-G2Acceptance.json) pins review checkpoint `06475b2`. No all-pairs or G3. |
 | `P9-G2[A_PC]` | Accepted by user, 2026-09-14 | Exact 28-cell product and bounded ordered endpoints; [acceptance](./phase-9-grcv4/tranche-7/P9-7.7-A_PC-G2Acceptance.json). No all-pairs or G3. |
 | `P9-G2[C_CI_PC]` | HOLD, draft P9-7.7 review | Accepted bounded numerical/lifecycle evidence; reconcile the 33-cell exact product and ordered endpoints. |
-| `P9-G2[A_CI_PC]` | HOLD, pending G2 acceptance | Integrated 28-cell exact-product proposal and ordered endpoints; six existing accepted declarations unchanged. |
+| `P9-G2[A_CI_PC]` | Accepted by user, 2026-09-14 | Exact 28-cell product and bounded ordered endpoints; [acceptance](./phase-9-grcv4/tranche-7/P9-7.7-A_CI_PC-G2Acceptance.json) pins checkpoint `07859cc`. Separate targets, all-pairs and G3 are not promoted. |
 | `P9-G2[C_RG2b]` | HOLD, draft P9-7.7 review | Accepted generalized numerical/lifecycle evidence; reconcile the 33-cell exact product and ordered endpoints. |
 | `P9-G2[A_RG2b]` | HOLD, draft P9-7.7 review | Accepted generalized numerical/lifecycle evidence; reconcile the 28-cell exact product and ordered endpoints. |
 
@@ -1464,8 +1464,10 @@ may reach G2 without waiting for all Tranche 6 realizations.
     five local and four crossing methods; distinguish both separate targets.
     Facade supplement, 13 focused methods and one shared status/UX check pass.
     [G2 proposal](./phase-9-grcv4/tranche-7/P9-7.7-A_CI_PC-G2Review.md).
-  - [ ] User decision on exact A_CI+PC G2. Preserve six accepted declarations
-    until explicit acceptance; no all-pairs, aggregate P9-7.7 or G3 promotion.
+  - [x] User accepted exact A_CI+PC G2 on 2026-09-14. Bind checkpoint
+    `07859cc`, preserve original review/execution bytes and publish seven exact
+    declarations through the shared adapter. Three other profile G2 decisions,
+    all-pairs, aggregate P9-7.7 and G3 remain separate.
 - [ ] P9-7.8: Review `P9-G3[S]` for the exact accepted generic support set
   before specialization code. Singleton `P9-G3[C_OS]` can run immediately
   after its G2; unrelated lifecycle/realization rows may remain pending.

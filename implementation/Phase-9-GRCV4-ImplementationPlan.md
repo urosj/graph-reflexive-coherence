@@ -1646,6 +1646,12 @@ neither proposed for support. Typed claim/debt traces retain their status.
 The shared registry projects six accepted declarations and this unaccepted
 proposal; G2 acceptance, all-pairs, aggregate P9-7.7 and G3 remain separate.
 
+The user's subsequent 2026-09-14 exact A_CI+PC G2 acceptance binds reviewed
+checkpoint `07859cc`. Publish seven exact declarations through the shared
+adapter, retaining original proposal/execution bytes and finite discovery-source
+comparisons. Three other profile G2 decisions, both separate targets, all-pairs,
+aggregate P9-7.7 and G3 are not promoted. No next-profile work is begun here.
+
 `P9-7.8` may review `P9-G3[C_OS]` immediately after its G2 acceptance;
 completion of the other Tranche 7 or Tranche 6 rows is not a prerequisite.
 
