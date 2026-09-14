@@ -1603,6 +1603,14 @@ and integrated G2 remain separate; public support stays five. On 2026-09-14 the
 user accepted the combined bounded result and requested its commit before G2.
 Preserve original execution identities and project this decision separately.
 
+The [integrated C_PC G2 proposal](./phase-9-grcv4/tranche-7/P9-7.7-C_PC-G2Review.md)
+uses accepted checkpoint `b90bb9e`: 33 unique catalog cells, exact ordered
+contracts, optional initializer and D11-C/PC authority, plus one zero-duration
+facade supplement. The complete C baseline is rederived at each target role;
+no A-history state/writer or mobility transfer from structural Hodge is inferred.
+Register one proposed common-adapter row, not a sixth accepted declaration.
+G2 acceptance, all-pairs and G3 remain separate; old numerical campaigns are reused.
+
 `P9-7.8` may review `P9-G3[C_OS]` immediately after its G2 acceptance;
 completion of the other Tranche 7 or Tranche 6 rows is not a prerequisite.
 

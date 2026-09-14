@@ -2223,3 +2223,9 @@ the separate initializer target. Reuse the same generic API/notebook/browser
 views; keep all 33 reconciled cells distinct from bounded acceptance and G2.
 The user's subsequent bounded acceptance is projected from the pinned crossing
 review. Execution flags remain historical; integrated G2 is a separate decision.
+
+C_PC integrated G2 uses one proposed `exact_profile_v1` row and a dependent G2
+materializer. The review checks the 33-cell product, complete C target baseline,
+exact carrier transport/loss boundaries and a narrow facade supplement. Shared
+UX must distinguish five accepted declarations from this unaccepted proposal;
+scientific support classes, old records and runtime permissions remain unchanged.

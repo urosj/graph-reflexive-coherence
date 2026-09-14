@@ -1791,3 +1791,12 @@ their historical stage, not the later aggregate acceptance recorded at the end.
       No bounded acceptance, G2, all-pairs or G3 promotion.
 - [x] Project the user's subsequent 2026-09-14 bounded C_PC acceptance without
       changing execution records. Keep integrated G2 separate and support at five.
+
+### P9-7.7 C_PC integrated G2 proposal
+
+- [x] Register one proposed common-adapter G2 row/materializer after accepted
+      `c_pc_crossings`: 33 catalog cells, one facade supplement, typed C/PC and
+      lifecycle contract/debt ceilings. No new dispatch or rendering branch.
+- [x] Expose five accepted declarations plus a separate C_PC proposal through
+      shared API/notebook/browser views; preserve public support and old records.
+- [ ] Record explicit C_PC G2 acceptance before changing public discovery.
