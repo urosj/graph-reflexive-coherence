@@ -227,6 +227,11 @@ HANDOFF_PATHS = {
     HERE + "handoff/P9-G1-outputs.zip",
 }
 PATHS = {
+    HERE + "c_ci_pc_g2_source_reuse.py",
+    HERE + "test_p977_c_ci_pc_g2_acceptance.py",
+    PHASE + "tranche-7/P9-7.7-C_CI_PC-G2SourceReuse.json",
+    PHASE + "tranche-7/P9-7.7-C_CI_PC-G2Acceptance.json",
+    PHASE + "tranche-7/P9-7.7-C_CI_PC-G2Acceptance.md",
     HERE + "verify_p977_c_ci_pc_g2.py",
     HERE + "test_p977_c_ci_pc_g2.py",
     PHASE + "tranche-7/P9-7.7-C_CI_PC-G2Interface.json",

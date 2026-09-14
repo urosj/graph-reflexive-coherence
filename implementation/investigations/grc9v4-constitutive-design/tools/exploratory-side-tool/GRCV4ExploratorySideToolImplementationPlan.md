@@ -2293,3 +2293,8 @@ and typed C-CI+PC/D11-C/initializer/parent/abundance/lifecycle traces. Expose se
 accepted declarations plus one proposal through the same API/notebook/browser
 UX; test false acceptance, borrowed target, count and discovery mutations.
 No new dispatch/rendering branch, runtime permission or public support is added.
+
+The subsequent user acceptance projects eight exact declarations through the
+same adapter/materializer. Bind checkpoint `2b7e974`, preserve original review
+and execution bytes, and verify the finite discovery-source changes. Separate
+controls/targets, both RG2b decisions, all-pairs, aggregate and G3 are not promoted.

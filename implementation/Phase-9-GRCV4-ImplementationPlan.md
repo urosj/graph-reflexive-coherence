@@ -1683,6 +1683,12 @@ the separate initializer/event targets. Register a proposed exact-profile row
 and G2 materializer; seven accepted declarations remain unchanged until the
 separate G2 decision. This does not close aggregate P9-7.7 or G3.
 
+The user accepted exact C_CI+PC G2 on 2026-09-14, binding the reviewed proposal
+at `2b7e974`. Publish eight exact declarations through the shared adapter and
+pin the finite discovery-source changes without rewriting earlier evidence.
+Both RG2b decisions, separate controls/targets, all-pairs, aggregate P9-7.7 and
+G3 remain separate. No next-profile work is begun as part of this acceptance.
+
 `P9-7.8` may review `P9-G3[C_OS]` immediately after its G2 acceptance;
 completion of the other Tranche 7 or Tranche 6 rows is not a prerequisite.
 

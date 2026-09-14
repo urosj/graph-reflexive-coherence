@@ -1,0 +1,171 @@
+{
+  "schema": "phase9_exact_profile_g2_acceptance_v1",
+  "status": "accepted_by_user",
+  "date": "2026-09-14",
+  "user_instruction": "accept and commit",
+  "gate": "P9-G2[C_CI_PC]",
+  "reviewed_commit": "2b7e97457a6c32afacbe65c4038af9f827046666",
+  "review": {
+    "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_CI_PC-G2Review.json",
+    "sha256": "7d4f52d9807a9fbde4811abe0d99e468e4b86f377f513fd285605fb38257e2d5",
+    "record_digest": "863730d90209e4813075c7b517a68df3e9587fe87c1ef4b04638a03f4a340858"
+  },
+  "review_text": {
+    "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_CI_PC-G2Review.md",
+    "sha256": "18f0defe3c4597c2d59c0c55644b82e2a4e70607c7e79c1d009fd55bf850a0b1"
+  },
+  "accepted_profile": {
+    "identity_payload": {
+      "schema_version": "grcv4-profile-identity-v1",
+      "profile_family_id": "C_CI_PC",
+      "candidate": "C",
+      "realization": "CI+PC",
+      "differential_backend_id": "oriented_incidence_d0_equals_BT_v1",
+      "charge_profile_id": "unit_vertex_measure_v1",
+      "geometry_profile_id": "affine_reference_relative_v1",
+      "context_contract_id": "constant_zero_context_v1",
+      "units_id": "grcv4_nondimensional_reference_v1",
+      "gauge_id": "component_zero_mean_potential_v1",
+      "normalization_id": "unnormalized_vertex_stiffness_v1",
+      "domain_id": "fixed_graph_strict_gap_spd_v1",
+      "solver_id": "ci_reduced_fixed_point_v1",
+      "lifecycle_policy_id": "grcv4-lifecycle-policy-v1",
+      "candidate_c_transport_id": "C-HM-STIFFNESS-BASELINE-v1",
+      "composition_gain": 2,
+      "params_hash": "grcv4-params-sha256:e77e7fe48b70b646c5ddb3292273f0837d4031cd400078bebb7e49e555ca6c89"
+    },
+    "params_resolved": {
+      "schema_version": "grcv4-resolved-params-v1",
+      "common": {
+        "schema_version": "grcv4-common-params-v1",
+        "differential_backend_id": "oriented_incidence_d0_equals_BT_v1",
+        "boundary_policy_id": "closed_no_flux_v1",
+        "measure_profile_id": "unit_vertex_measure_v1",
+        "context_contract_id": "constant_zero_context_v1",
+        "units_id": "grcv4_nondimensional_reference_v1",
+        "gauge_id": "component_zero_mean_potential_v1",
+        "normalization_id": "unnormalized_vertex_stiffness_v1",
+        "domain_id": "fixed_graph_strict_gap_spd_v1",
+        "default_step_request": null
+      },
+      "candidate": {
+        "schema_version": "grcv4-candidate-c-params-v1",
+        "transport_id": "C-HM-STIFFNESS-BASELINE-v1",
+        "Lambda_C": 1,
+        "selector_boundary_policy_id": "strict_rank_gap_fail_closed_v1",
+        "C_ref": 1,
+        "kappa_M_C": 0.0,
+        "kappa_Phi_C": 1,
+        "eta_C": 0.5,
+        "W_C_tr": {
+          "e": 2.0
+        },
+        "W_C_tr_content_digest": "grcv4-wctr-sha256:fa845c7788b4d8877437f2c3456230a9365981e115465e3a393cc868351419fb",
+        "potential_evaluator_id": "quadratic_site_potential_zero_derivative_v1",
+        "tau_C": 0.25,
+        "chi_C": 0.25,
+        "zeta_C": 0.25,
+        "current_conditioning_policy_id": "strict_invertible_current_block_v1",
+        "E_H_policy_id": "diag_W_C_tr_structural_hodge_v1",
+        "E_M_policy_id": "eta_C_diag_W_C_tr_mobility_v1"
+      },
+      "realization": {
+        "schema_version": "grcv4-cipc-params-v1",
+        "contraction_domain_id": "ci_reference_frobenius_ball_v1:0x1.0000000000000p-3",
+        "root_selector_id": "unique_admitted_root_v1",
+        "iteration_limit": 60,
+        "residual_norm_id": "joint_current_geometry_l2_v1",
+        "tolerance": 1e-11,
+        "tau_PC": 0.5,
+        "radius": 64.0,
+        "carrier_norm_id": "symmetric_star_frobenius_v1",
+        "source_envelope_id": "pc_compact_base_chart_v1:0x1.0000000000000p+2:0x1.0000000000000p+0:0x1.0000000000000p+0",
+        "writer_id": "zero_order_hold_exponential_v1",
+        "rho_inst": 1
+      },
+      "geometry": {
+        "schema_version": "grcv4-geometry-profile-params-v1",
+        "K4_base_digest": "grcv4-k4-sha256:bc96c6d5259157dc72a745b81d31e8d3d927527ba9115b36ee169706ddac40f5",
+        "reference_hodge_digest": "grcv4-hodge-sha256:a02932d58fbfa8b044f724284eb590065f2ee4cc42f3809e697781606530683e",
+        "star_cover_id": "vertex_star_exact_overlap_v1",
+        "overlap_normalization_id": "edge_multiplicity_inverse_sqrt_v1",
+        "candidate_adapter_id": "candidate_c_exact_star_adapter_v1",
+        "flat_sharp_solver_id": "spd_direct_v1",
+        "geometry_domain_id": "positive_hodge_fixed_graph_v1",
+        "kappa_H": 1e-05
+      },
+      "solver": {
+        "schema_version": "grcv4-solver-policy-v1",
+        "solver_kind": "fixed_point",
+        "root_selector_id": "unique_admitted_root_v1",
+        "iteration_limit": 60,
+        "conditioning_limit": 100000000.0,
+        "residual_norm_id": "edge_l2_v1",
+        "absolute_tolerance": 1e-11,
+        "relative_tolerance": 1e-11,
+        "failure_policy_id": "fail_closed_no_fallback_v1"
+      },
+      "charge": {
+        "schema_version": "grcv4-charge-policy-v1",
+        "policy_id": "stable_pairwise_binary64_charge_v1",
+        "accumulation_order": "canonical_live_vertex_balanced_binary_tree",
+        "rounding_mode": "IEEE754_binary64_roundTiesToEven",
+        "absolute_tolerance": 1e-11,
+        "relative_tolerance": 0,
+        "repair_policy": "never_mutate_resource",
+        "remainder_policy": "compatibility_projection_is_none"
+      },
+      "lifecycle": {
+        "schema_version": "grcv4-lifecycle-policy-v1",
+        "migration_policy_id": "typed_bidirectional_profile_migration_v1",
+        "mapped_event_policy_id": "caller_mapped_atomic_topology_event_v1",
+        "reset_policy_id": "restore_current_baseline_append_receipt_v1",
+        "rebase_policy_id": "replace_baseline_append_receipt_v1",
+        "history_policy_id": "candidate_c_no_independent_history_v1",
+        "receipt_policy_id": "operation_delta_plus_persistent_ledger_v1",
+        "target_readmission_policy_id": "full_target_fail_closed_v1"
+      }
+    },
+    "complete_profile_id": "grcv4-profile-sha256:3a7a084788c59a55b4232fb98e9c5529c1aa4c7c71074c9d3288982fa2fd2a5b"
+  },
+  "accepted_additional_support": [
+    "grcv4-profile-sha256:3a7a084788c59a55b4232fb98e9c5529c1aa4c7c71074c9d3288982fa2fd2a5b"
+  ],
+  "predecessor_support": [
+    "grcv4-profile-sha256:058ae6b1f923c85952ffdfa083af74e3b56dd450f309190f307c3ea56ac2aa75",
+    "grcv4-profile-sha256:16ed65f7f65d4716e1be3e384f6fa0f957d26dd7b7a3f7e1b43ad1aa3f250946",
+    "grcv4-profile-sha256:5f2f848af0f482699ac6cb88e4e1bd1a66458774bac2c3cc6df9f74cc47d7689",
+    "grcv4-profile-sha256:6105daf6f5111fdc51640194298b1b8398d608684791050d85b696bcd681f64f",
+    "grcv4-profile-sha256:a56ef981821478cc50a3551a914dd6240e0dc62c9ca69d52305bd59a3405f69e",
+    "grcv4-profile-sha256:a6b853ee382895eb78b1a7955a0df22f95d68b27cb0f762503e8c424c2f59b6d",
+    "grcv4-profile-sha256:e4c04a83240a33d77c50a26ca6effbb6ce142774bd01f0966861dd517a94e2c4"
+  ],
+  "releases": {
+    "base": "grcv4-spec-release-sha256:e2acd9df0cc02c5fd4bbed4989ff5d7da3a819adeb2950d922b8a6ef4bf35f24",
+    "initializer": "grcv4-spec-release-sha256:e44dcd77a78a752c0e62f559243b88faff0bf90af1ee11a587f25d27e8a8abc7",
+    "event": "grcv4-spec-release-sha256:a6861c38271f3f4ea41fae35807c399255353c384c44a9455f334556df6cdec8"
+  },
+  "accepted_generic_runtime_support": [
+    "grcv4-profile-sha256:058ae6b1f923c85952ffdfa083af74e3b56dd450f309190f307c3ea56ac2aa75",
+    "grcv4-profile-sha256:16ed65f7f65d4716e1be3e384f6fa0f957d26dd7b7a3f7e1b43ad1aa3f250946",
+    "grcv4-profile-sha256:3a7a084788c59a55b4232fb98e9c5529c1aa4c7c71074c9d3288982fa2fd2a5b",
+    "grcv4-profile-sha256:5f2f848af0f482699ac6cb88e4e1bd1a66458774bac2c3cc6df9f74cc47d7689",
+    "grcv4-profile-sha256:6105daf6f5111fdc51640194298b1b8398d608684791050d85b696bcd681f64f",
+    "grcv4-profile-sha256:a56ef981821478cc50a3551a914dd6240e0dc62c9ca69d52305bd59a3405f69e",
+    "grcv4-profile-sha256:a6b853ee382895eb78b1a7955a0df22f95d68b27cb0f762503e8c424c2f59b6d",
+    "grcv4-profile-sha256:e4c04a83240a33d77c50a26ca6effbb6ce142774bd01f0966861dd517a94e2c4"
+  ],
+  "source_reuse": {
+    "path": "implementation/phase-9-grcv4/tranche-7/P9-7.7-C_CI_PC-G2SourceReuse.json",
+    "sha256": "26275f67627ae98b57191201a6ae38a4ddccedfe330ccd7ecf477ee025b4c834",
+    "record_digest": "f777a3c05e5138955a5fb558f71b8ced3b9bd61cdee6ee152edd4ef609b3b96b"
+  },
+  "G2_accepted": true,
+  "G3_accepted": false,
+  "aggregate_closed": false,
+  "all_ordered_pairs_verified": false,
+  "new_runtime_iterations_authorized": [],
+  "admitted_specialization_support_sets": [],
+  "scope": "Exact C_CI_PC nomination and reviewed 33-cell finite product only. Complete C trial/role baseline, same-selected-root geometry/ZOH and no W writer retain local root/envelope ceilings. Separate controls and initializer/event targets are not added support. Exact PC pairs require exact carrier contract; no all-pairs, global root uniqueness, settled-trajectory gain, matched-forcing contraction, indefinite base-chart invariance, G3 or aggregate closure.",
+  "record_digest": "7fa14783afb04f5a105f2dc35fe843c87c2a5a80efc414823494be37334b87b5"
+}

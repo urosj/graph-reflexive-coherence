@@ -1,0 +1,88 @@
+{
+  "schema": "phase9_exact_discovery_source_reuse_v1",
+  "base_commit": "2b7e974",
+  "scope": "Exact accepted C_CI_PC discovery and finite retained-source projections only; no numerical law or accepted execution changed",
+  "changes": {
+    "implementation/phase-9-grcv4/verification/a_ci_pc_g2_source_reuse.py": {
+      "before_sha256": "ebba47187fb2a8637f8a24769747f37c1452655438f803583371acfe26c49a70",
+      "after_sha256": "e322ffb0ce83b931e89aaa9c6f7732649a466058cda586fcd73ffc0132f5827f",
+      "reason": "Exact discovery addition/assertion or finite retained-source comparison; no numerical law changed"
+    },
+    "implementation/phase-9-grcv4/verification/g2_source_reuse.py": {
+      "before_sha256": "83c2656b00526aea4a90251acdda6a07db37cbcc02f06a95a9c9a3ff771481d3",
+      "after_sha256": "b04f25053f206b8e0abcadb5ddd603ff8b09705941bb87cdd0849d711b25158f",
+      "reason": "Exact discovery addition/assertion or finite retained-source comparison; no numerical law changed"
+    },
+    "implementation/phase-9-grcv4/verification/test_p977_c_ci_pc_g2.py": {
+      "before_sha256": "0d480837f4b1cea6681560fa5efae42ee80d68304f8d1108b6304ec9ea9aca1c",
+      "after_sha256": "e926e739ae915b3c0395320416a39ed908a1eea2eac79566753c548b50ea8eeb",
+      "reason": "Exact discovery addition/assertion or finite retained-source comparison; no numerical law changed"
+    },
+    "implementation/phase-9-grcv4/verification/verify_p977_c_ci_pc_g2.py": {
+      "before_sha256": "f2a30d4ab03122471bbe1ff99fc5b6bb577a5921653b9df6195ad6ca8f53dda3",
+      "after_sha256": "b4ac9b53d5a67854f3d918a4af9476034ce7ecc0ff1478aaa481529c66341ccb",
+      "reason": "Exact discovery addition/assertion or finite retained-source comparison; no numerical law changed"
+    },
+    "src/pygrc/models/grc_v4_profile.py": {
+      "before_sha256": "f90f4987e01010035fb9a8fc877404c4088d2166574de8f57dcb19826d77b554",
+      "after_sha256": "ad69bd3385c2ab3e075c4c841561006a612cb5898d0edda79c4f1e79a683c1cb",
+      "reason": "Exact discovery addition/assertion or finite retained-source comparison; no numerical law changed"
+    },
+    "tests/models/test_grc_v4.py": {
+      "before_sha256": "910578f8ce7aa430f858ef227f74688c587f6723bea2023601c67fcccd3595be",
+      "after_sha256": "a6d9c74e675155f37fa919889a7d1ff7a79f7bbb18c7f464db8001629b0b4fce",
+      "reason": "Exact discovery addition/assertion or finite retained-source comparison; no numerical law changed"
+    },
+    "tests/models/test_grc_v4_candidate_a.py": {
+      "before_sha256": "ea0bb6101d03927a235b439dc17dd533de32186779b0fce3e5b5c77cae4da145",
+      "after_sha256": "921e8a64fda05a5c56517600a5dfc10eb6db0389b513bd340f1b2b92bac64933",
+      "reason": "Exact discovery addition/assertion or finite retained-source comparison; no numerical law changed"
+    },
+    "tests/models/test_grc_v4_candidate_c.py": {
+      "before_sha256": "722add8e8109418398bc1d1eb99540039ce268d96598480d359073f56669ef3c",
+      "after_sha256": "054e353777daaaac77ca2326dce3333fa0dcb7096aafdd8da4255b47ea0f8d7b",
+      "reason": "Exact discovery addition/assertion or finite retained-source comparison; no numerical law changed"
+    },
+    "tests/models/test_grc_v4_ci.py": {
+      "before_sha256": "c542f0da83a466d0b3bcc9a4febd9cc67b0e7bb8eecbb23d154d63a7a0cb053c",
+      "after_sha256": "420305e1c22102502d3661b30ccd6c5d0897c95ba929da92e39a7c8fcd05fc0d",
+      "reason": "Exact discovery addition/assertion or finite retained-source comparison; no numerical law changed"
+    },
+    "tests/models/test_grc_v4_cipc.py": {
+      "before_sha256": "4b944efec65ab7d8fe0970080d6402b9d16ed32c3e6899a7bc11ae6a096ce8c4",
+      "after_sha256": "a1ccbc56f3dd051d1ab9c69b5f70c04f48d66280130f561071c8a067e76f9456",
+      "reason": "Exact discovery addition/assertion or finite retained-source comparison; no numerical law changed"
+    },
+    "tests/models/test_grc_v4_codec.py": {
+      "before_sha256": "ab837144de23fd81d7945ed5baaa9f502a95a2b81489a4a0057573cb40f89200",
+      "after_sha256": "c017466c8fcbfde11a45af69b7de84a7194340cc73783379124323bed38cf16a",
+      "reason": "Exact discovery addition/assertion or finite retained-source comparison; no numerical law changed"
+    },
+    "tests/models/test_grc_v4_geometry.py": {
+      "before_sha256": "43189c5adfd832846f0f0d52a7f40fe76857f7580ea1e9b81bdb3614df2902bd",
+      "after_sha256": "fef68e98a2abe19a6f68a3cceb70e4b0f3d74b3c0fad0fddf71818649eceb5b2",
+      "reason": "Exact discovery addition/assertion or finite retained-source comparison; no numerical law changed"
+    },
+    "tests/models/test_grc_v4_pc.py": {
+      "before_sha256": "67efa6cffb34912acddc1f601b5ca039b653e1009fe89ced6db46b20e33630f9",
+      "after_sha256": "08c0b20116bba8c9c92c2806529531e41f35a8fdb48c57255202b762c5de074e",
+      "reason": "Exact discovery addition/assertion or finite retained-source comparison; no numerical law changed"
+    },
+    "tests/models/test_grc_v4_profile.py": {
+      "before_sha256": "9a2068bcbfde1ef721aa0572b0d4c80d37c83c65360e8eb722b43264c7abac6f",
+      "after_sha256": "17490843ef383e56c4e855d3fe44f8c2f17d13590f140675ff0648e5ac0b9cd9",
+      "reason": "Exact discovery addition/assertion or finite retained-source comparison; no numerical law changed"
+    },
+    "tests/models/test_grc_v4_step.py": {
+      "before_sha256": "e7c23bb3d2c8dc5f45f5122a27440ce0d0fb15d346eba6abca2d1cbf4137359d",
+      "after_sha256": "43cee946bd141927f80bb420e2e061c19a80ea898dc8e2a4d527fdd2ac35a133",
+      "reason": "Exact discovery addition/assertion or finite retained-source comparison; no numerical law changed"
+    },
+    "tests/models/test_grc_v4_transport.py": {
+      "before_sha256": "072728101413af181cc5fc4a77c85a2ea3491320b093f3461a7882dcecf4c2eb",
+      "after_sha256": "4ed54781db33f30d3f7acb980c6a0a3ae9aec7fe1e7cdabba4efd5d799522452",
+      "reason": "Exact discovery addition/assertion or finite retained-source comparison; no numerical law changed"
+    }
+  },
+  "record_digest": "f777a3c05e5138955a5fb558f71b8ced3b9bd61cdee6ee152edd4ef609b3b96b"
+}

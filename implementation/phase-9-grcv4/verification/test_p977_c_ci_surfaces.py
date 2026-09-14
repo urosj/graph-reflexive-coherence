@@ -33,7 +33,7 @@ class CCISurfaceTests(unittest.TestCase):
         self.assertEqual(status['c_ci_crossings']['new_execution_cases'], 5)
         self.assertTrue(status['c_ci_crossings']['user_accepted'])
         self.assertFalse(status['c_ci_crossings']['G2_accepted'])
-        self.assertEqual(len(status['accepted_generic_runtime_support']), 7)
+        self.assertEqual(len(status['accepted_generic_runtime_support']), 8)
         self.assertIn(status['c_ci_local_product']['complete_profile_id'], status['accepted_generic_runtime_support'])
         self.assertEqual(status['c_ci_g2_review']['catalog_cells'], 33)
         self.assertEqual(status['c_ci_g2_review']['status'], 'accepted')
@@ -46,7 +46,7 @@ class CCISurfaceTests(unittest.TestCase):
         self.assertEqual(status['profile_g2'][6]['profile_family_id'],'A_CI_PC')
         self.assertEqual(status['profile_g2'][6]['state'],'accepted')
         self.assertEqual(status['profile_g2'][-1]['profile_family_id'],'C_CI_PC')
-        self.assertEqual(status['profile_g2'][-1]['state'],'proposed')
+        self.assertEqual(status['profile_g2'][-1]['state'],'accepted')
         proposal=status['a_pc_g2_review']
         self.assertEqual(proposal['status'],'accepted')
         self.assertEqual(proposal['catalog_cells'],28)
@@ -64,7 +64,7 @@ class CCISurfaceTests(unittest.TestCase):
         for flag in ('user_accepted','G2_accepted','G3_accepted','aggregate_closed'):
             self.assertFalse(c_coupled[flag])
         self.assertEqual(c_coupled['new_G2_support'],[])
-        self.assertNotIn(c_coupled['complete_profile_id'],status['accepted_generic_runtime_support'])
+        self.assertIn(c_coupled['complete_profile_id'],status['accepted_generic_runtime_support'])
         from verify_p977_c_ci_pc_acceptance import check as c_coupled_crossing_check
         c_coupled_crossings=status['c_ci_pc_crossings']
         self.assertEqual(c_coupled_crossings,c_coupled_crossing_check(local_product=c_coupled))
@@ -75,15 +75,18 @@ class CCISurfaceTests(unittest.TestCase):
         for flag in ('G2_accepted','G3_accepted','aggregate_closed','all_ordered_pairs_verified'):
             self.assertFalse(c_coupled_crossings[flag])
         self.assertEqual(c_coupled_crossings['new_G2_support'],[])
-        self.assertIn('C_CI_PC: 26 local cells; 7 crossing cells reconciled',status['next_gate'])
+        self.assertIn('Exact accepted G2 declarations (8)',status['next_gate'])
+        self.assertNotIn('C_CI_PC: 26 local cells',status['next_gate'])
         c_coupled_gate=status['c_ci_pc_g2_review']
-        self.assertEqual(c_coupled_gate['status'],'pass_proposal_pending_G2_acceptance')
+        self.assertEqual(c_coupled_gate['status'],'accepted')
         self.assertEqual(c_coupled_gate['catalog_cells'],33)
         self.assertEqual(c_coupled_gate['proposed_additional_support'],[c_coupled['complete_profile_id']])
-        self.assertEqual(c_coupled_gate['accepted_support_unchanged'],sorted(status['accepted_generic_runtime_support']))
-        for flag in ('user_accepted','G2_accepted','G3_accepted','aggregate_closed','all_ordered_pairs_verified'):
+        self.assertEqual(c_coupled_gate['accepted_support_unchanged'],sorted(set(status['accepted_generic_runtime_support'])-{c_coupled['complete_profile_id']}))
+        self.assertTrue(c_coupled_gate['user_accepted'])
+        self.assertTrue(c_coupled_gate['G2_accepted'])
+        for flag in ('G3_accepted','aggregate_closed','all_ordered_pairs_verified'):
             self.assertFalse(c_coupled_gate[flag])
-        self.assertEqual(c_coupled_gate['new_G2_support'],[])
+        self.assertEqual(c_coupled_gate['new_G2_support'],c_coupled_gate['proposed_additional_support'])
         self.assertEqual(c_coupled_gate['supplemental_interface_methods'],1)
         self.assertEqual(c_coupled_gate['numerical_tests_rerun'],0)
         views={key:status[key] for key in expected}
@@ -112,7 +115,7 @@ class CCISurfaceTests(unittest.TestCase):
         self.assertEqual(coupled_gate['status'],'accepted')
         self.assertEqual(coupled_gate['catalog_cells'],28)
         self.assertEqual(coupled_gate['proposed_additional_support'],[coupled['complete_profile_id']])
-        self.assertEqual(coupled_gate['accepted_support_unchanged'],sorted(set(status['accepted_generic_runtime_support'])-{coupled['complete_profile_id']}))
+        self.assertEqual(coupled_gate['accepted_support_unchanged'],sorted(r['complete_profile_id'] for r in status['profile_g2'][:6]))
         for flag in ('user_accepted','G2_accepted'):
             self.assertTrue(coupled_gate[flag])
         for flag in ('G3_accepted','aggregate_closed','all_ordered_pairs_verified'):
@@ -198,7 +201,7 @@ const element = tag => ({tag, children:[], textContent:'', append(child){this.ch
 const body=element('tbody');
 renderG2Profiles(value,body,element);
 assert.equal(body.children.length,8);
-assert.deepEqual(body.children.map(r=>r.children[2].textContent),['G2 accepted','G2 accepted','G2 accepted','G2 accepted','G2 accepted','G2 accepted','G2 accepted','G2 proposal — not accepted']);
+assert.deepEqual(body.children.map(r=>r.children[2].textContent),['G2 accepted','G2 accepted','G2 accepted','G2 accepted','G2 accepted','G2 accepted','G2 accepted','G2 accepted']);
 assert.equal(body.children[7].children[1].textContent,value.c_ci_pc_g2_review.proposed_additional_support[0]);
 assert.equal(body.children[6].children[1].textContent,value.a_ci_pc_g2_review.proposed_additional_support[0]);
 assert.equal(body.children[5].children[1].textContent,value.c_pc_g2_review.proposed_additional_support[0]);
@@ -357,16 +360,16 @@ for(const edit of [v=>v.c_ci_pc_crossings.user_accepted=false,
  await assert.rejects(verifiedStatus(bad));
 }
 console.log('C_CI_PC_CROSSINGS_BROWSER_PASS');
-for(const edit of [v=>delete v.c_ci_pc_g2_review,v=>v.c_ci_pc_g2_review.G2_accepted=true,
- v=>v.c_ci_pc_g2_review.user_accepted=true,v=>v.c_ci_pc_g2_review.catalog_cells=28,
+for(const edit of [v=>delete v.c_ci_pc_g2_review,v=>v.c_ci_pc_g2_review.G2_accepted=false,
+ v=>v.c_ci_pc_g2_review.user_accepted=false,v=>v.c_ci_pc_g2_review.catalog_cells=28,
  v=>v.c_ci_pc_g2_review.all_ordered_pairs_verified=true,v=>v.c_ci_pc_g2_review.record_digest='0'.repeat(64),
  v=>v.c_ci_pc_g2_review.proposed_additional_support=['C_CI_PC'],v=>v.c_ci_pc_g2_review.accepted_support_unchanged=[],
- v=>v.profile_g2[7].state='accepted',v=>v.accepted_generic_runtime_support.push(v.c_ci_pc_g2_review.proposed_additional_support[0])]) {
+ v=>v.profile_g2[7].state='proposed',v=>v.accepted_generic_runtime_support.push(v.c_ci_pc_g2_review.proposed_additional_support[0])]) {
  const bad=structuredClone(value);edit(bad);delete bad.status_digest;
  bad.status_digest=createHash('sha256').update(canonical(bad)).digest('hex');
  await assert.rejects(verifiedStatus(bad));
 }
-console.log('C_CI_PC_G2_PROPOSAL_BROWSER_PASS');
+console.log('C_CI_PC_G2_ACCEPTANCE_BROWSER_PASS');
 """
         browser = subprocess.run([str(managed_node()), '--input-type=module', '-e', code],
             cwd=tool / 'phase9-web', input=json.dumps(status), capture_output=True,
@@ -378,7 +381,7 @@ console.log('C_CI_PC_G2_PROPOSAL_BROWSER_PASS');
         self.assertIn('A_CI_PC_G2_ACCEPTANCE_BROWSER_PASS',browser.stdout)
         self.assertIn('C_CI_PC_LOCAL_BROWSER_PASS',browser.stdout)
         self.assertIn('C_CI_PC_CROSSINGS_BROWSER_PASS',browser.stdout)
-        self.assertIn('C_CI_PC_G2_PROPOSAL_BROWSER_PASS',browser.stdout)
+        self.assertIn('C_CI_PC_G2_ACCEPTANCE_BROWSER_PASS',browser.stdout)
 
 
 if __name__ == '__main__':

@@ -1864,5 +1864,7 @@ their historical stage, not the later aggregate acceptance recorded at the end.
 - [x] Pass 38 rehashed interface/proposal mutations, 14 focused methods and one
       shared API/notebook/browser run with 172 rejection controls. Expose seven
       accepted declarations plus one proposal, with no support widening.
-- [ ] Explicit C_CI+PC G2 acceptance; all-pairs, aggregate P9-7.7, G3 and other
-      profile decisions remain separate.
+- [x] Record the user's 2026-09-14 exact C_CI+PC G2 acceptance and publish
+      eight declarations through the existing adapter/materializer. Bind
+      checkpoint `2b7e974` and finite discovery-source comparisons; preserve
+      original evidence. Both RG2b decisions, all-pairs, aggregate and G3 stay separate.
